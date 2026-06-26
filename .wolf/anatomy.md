@@ -1,12 +1,12 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-26T22:57:19.333Z
-> Files: 24 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-06-26T23:21:08.150Z
+> Files: 25 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.DS_Store` (~1640 tok)
-- `.gitignore` — Git ignore rules (~3 tok)
+- `.gitignore` — Git ignore rules (~112 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `compass_artifact_wf-4de53b09-4e06-4e6e-ab7f-c78e13af886f_text_markdown.md` — LLM Ön Eğitimi, Ölçek Yasaları ve Öğrenme Dinamikleri: Teknik Bir İnceleme (2026) (~8057 tok)
 - `compass_artifact_wf-5c80ab31-d499-4551-9707-1c016a089a53_text_markdown.md` — Anlamın Temsili: Representation Learning, Embedding ve LLM'lerde Anlamın Geometrisi (~10407 tok)
@@ -34,6 +34,10 @@
 ## .claude/rules/
 
 - `openwolf.md` (~313 tok)
+
+## docs/superpowers/specs/
+
+- `2026-06-27-anil-lib-reader-prompts-design.md` — anil-lib Reader Prompts Design (~2821 tok)
 
 ## prompts/
 
