@@ -48,6 +48,18 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-26T23:10:16Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-06-26T23:34:12Z",
+      "error_message": "fatal: could not read Username for 'https://github.com': Device not configured",
+      "file": "/Users/nacianilakman/.gitconfig",
+      "root_cause": "The GitHub CLI session was valid, but the Git credential helper entry was missing from the active global Git configuration.",
+      "fix": "Ran `gh auth setup-git` to register `gh auth git-credential`, then pushed commit 58fe8dd successfully.",
+      "tags": ["git", "github", "credential-helper", "gh", "push"],
+      "related_bugs": ["bug-004"],
+      "occurrences": 1,
+      "last_seen": "2026-06-26T23:34:12Z"
     }
   ]
 }
