@@ -1,0 +1,31 @@
+# Dependencies and build output
+node_modules/
+.pnpm-store/
+.next/
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+
+# Environment and local tooling
+.env
+.env.*
+!.env.example
+.cache/
+*.log
+.claude/settings.local.json
+
+# OpenWolf runtime artifacts
+.wolf/token-ledger.json
+.wolf/hooks/_session.json
+.wolf/designqc-captures/
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+*.swp
+*~

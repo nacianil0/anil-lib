@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-06-26T22:57:18Z",
+      "error_message": "EPERM: operation not permitted, mkdir '/Users/nacianilakman/.wolf'",
+      "file": ".wolf",
+      "root_cause": "The folder had no local project marker, so OpenWolf selected a parent project root in the user home directory.",
+      "fix": "Created a temporary .project marker, ran openwolf init successfully in anil-lib, removed the marker, and rescanned anatomy.",
+      "tags": ["openwolf", "project-root", "sandbox", "init"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-26T22:57:18Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-06-26T22:59:00Z",
+      "error_message": "zsh: parse error near ')' while running the initial secret-scan regex",
+      "file": ".wolf/buglog.json",
+      "root_cause": "The shell command mixed nested single and double quotes inside one regular expression.",
+      "fix": "Split the scan into two simpler ripgrep expressions; the rerun completed and found no credentials.",
+      "tags": ["shell", "ripgrep", "secret-scan", "quoting"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-26T22:59:00Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-06-26T23:01:00Z",
+      "error_message": "git diff --cached --check reports trailing whitespace in imported research Markdown files",
+      "file": "*.md",
+      "root_cause": "The source research documents already contain trailing spaces and blank lines.",
+      "fix": "Preserved the imported source text unchanged and treated this as a non-blocking content-format warning for the initial archive commit.",
+      "tags": ["git", "markdown", "whitespace", "import"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-26T23:01:00Z"
+    }
+  ]
+}
