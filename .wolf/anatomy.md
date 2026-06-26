@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-26T23:21:08.150Z
-> Files: 25 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-06-26T23:32:21.707Z
+> Files: 27 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -41,4 +41,6 @@
 
 ## prompts/
 
+- `01-classify-and-order-articles.md` — Claude Code Prompt 01: Makaleleri Siniflandir ve Okuma Sirasina Ekle (~2717 tok)
+- `02-build-reader-app.md` — Claude Code Prompt 02: Premium Makale Okuyucu Uygulamasini Kur (~3790 tok)
 - `writing-handoff.md` — Yazi Istegi Handoff (~2160 tok)
