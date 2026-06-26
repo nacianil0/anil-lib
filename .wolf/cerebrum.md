@@ -14,6 +14,7 @@
 
 - **Project:** anil-lib
 - OpenWolf 1.0.4 resolves the project root from markers such as `.git` or `package.json`; without a local marker it may select a parent repository.
+- GitHub publishing on this machine uses `gh` HTTPS credentials; SSH private keys are not configured.
 
 ## Do-Not-Repeat
 

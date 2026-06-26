@@ -36,6 +36,18 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-26T23:01:00Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-06-26T23:10:16Z",
+      "error_message": "remote: Invalid username or token. Password authentication is not supported for Git operations.",
+      "file": ".git/config",
+      "root_cause": "The repository used an HTTPS remote before GitHub CLI credentials were configured; no SSH private key was available and the connected GitHub app could not write repository contents.",
+      "fix": "Installed GitHub CLI 2.95.0, authenticated the nacianil0 account through GitHub device login, configured HTTPS Git credentials, and pushed main successfully.",
+      "tags": ["git", "github", "authentication", "gh", "push"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-26T23:10:16Z"
     }
   ]
 }
