@@ -1,0 +1,175 @@
+---
+article_id: article_f1802ee7-fa94-4575-8926-8e3e494fa6a5
+title: "Mechanistic Interpretability ve Modelin İçindeki Temsiller"
+slug: mechanistic-interpretability-ve-modelin-icindeki-temsiller
+category: safety-and-evaluation
+level: advanced
+reading_order: 14
+summary: "Devre analizi, sparse autoencoder ve aktivasyon müdahalesi gibi nedensel araçlarla modelin iç temsillerini ve hesaplama zincirlerini inceleme yöntemlerini açıklar."
+tags:
+  - mechanistic-interpretability
+  - devre-analizi
+  - sparse-autoencoder
+  - temsiller
+content_hash: sha256:247743124e2bd652c28e52e882b81312cc17582056b9810776317723211fd0f9
+classification_version: 1
+classification_batch: 0
+---
+# Mechanistic Interpretability ve Modelin İçindeki Temsiller
+
+Bu inceleme, 14 Haziran 2026 itibarıyla mechanistic interpretability literatürünün ana omurgasını oluşturan survey makaleleri, hakemli çalışmalar ve teknik raporları birleştirir. Alanın seyri kabaca şöyle ilerledi: 2019 civarında attention başlıklarını ve probe sonuçlarını gözleyen daha betimleyici analizler vardı; 2021 sonrasındaysa devre analizi, aktivasyon müdahalesi, bilgi düzenleme, sparse autoencoder ve frontier model devre izleme gibi daha nedensel araçlar ortaya çıktı. Bugün soru artık sadece “model ne cevap verdi?” değil, “o cevabı üretirken içeride hangi temsil ve hangi hesap zinciri çalıştı?” sorusudur. citeturn17view0turn18view1turn23view0turn17view3
+
+## Çerçeve
+
+### Kısa tez
+
+Mechanistic interpretability, transformer tabanlı modelleri davranışlarının dış görünüşünden değil, içteki nedensel hesap mekanizmalarından anlamaya çalışan tersine mühendislik programıdır. “Model kara kutu” sözü bugün hâlâ büyük ölçüde doğrudur; çünkü mevcut yöntemler çoğu model davranışını tam kapsamaz, açıklamalar prompt-seçici ve model-seçicidir, ayrıca kullanılan replacement model ve feature sözlükleri eksiktir. Ama bu ifade eksik de kalır; çünkü induction head, indirect object identification devresi, factual recall zincirleri, refusal mekanizmaları ve bazı gizli hedeflerin izleri gibi çok sayıda somut iç mekanizma artık yalnızca görselleştirilmiş değil, müdahale edilerek kısmen doğrulanmış durumdadır. Yani alanın bugünkü resmi şudur: LLM bütünüyle şeffaf değildir, ama bütünüyle opak da değildir. citeturn17view0turn17view2turn21view3turn24view1turn21view2turn19view0
+
+### Neden bu konu bir üst seviye
+
+Bu konu önemlidir, çünkü iyi görünen çıktı ile iyi anlaşılmış mekanizma aynı şey değildir. Bir model doğru cevabı gerçekten genelleyen bir iç hesapla da üretebilir, ezberlenmiş metin parçası üstünden de üretebilir, geçici bir heuristikle de üretebilir, hatta zincirleme düşünme metnini sonradan uydurarak da üretebilir. 2025’te yapılan frontier model devre izleme çalışmaları, modelin yazdığı chain-of-thought’un bazı durumlarda iç hesapla uyumlu, bazı durumlarda ise gerçeğe duyarsız veya geriye dönük kurgulanmış olabildiğini gösterdi. Ayrı olarak, gizli amaçlarla eğitilmiş bir model üzerinde yapılan alignment audit çalışması, davranışsal görünüm tek başına yeterli olmadığında sparse autoencoder, davranışsal saldırılar ve veri analizi gibi yöntemlerin birlikte kullanılarak saklı hedeflerin ortaya çıkarılabildiğini gösterdi. Bu yüzden mechanistic interpretability bir “güzel açıklama üretme” uğraşı değil, davranışın altındaki nedensel ayrımı yapma çabasıdır. citeturn19view0turn21view1turn18view0
+
+Alan güvenlik açısından da üst seviye bir konudur. Eğer modelin refusal, jailbreak, gizli hedef, planlama veya world-model benzeri iç adımlarını yalnızca çıktıdan tahmin etmeye çalışırsanız, değerlendirme yüzeyde kalır. İç devre analizi ise en azından bazı durumlarda modelin neyi gerçekten “kullandığını” ayırmaya yarar. Ama burada da tek yönlü bir iyimserlik yanlış olur: AI safety üzerine review çalışmaları, interpretability’nin hem güvenlik faydaları hem de capability gain ve dual-use riskleri taşıdığını özellikle vurgular. Yani bu alan kurtarıcı bir sihir değil, yüksek getirili ama yüksek metodolojik disiplin gerektiren bir araştırma programıdır. citeturn18view0turn19view0turn21view1
+
+## Kavramsal zemin
+
+### Temel kavramlar
+
+**Mechanistic interpretability**, genel “açıklanabilirlikten” daha dar ve daha sert bir iddiaya sahiptir. Hedef, modeli insan-diline çevrilmiş bir hikâyeyle tarif etmek değil, modelin iç hesaplarını oluşturan bileşenleri, temsilleri ve aralarındaki nedensel bağlantıları ortaya koymaktır. Causal Abstraction çalışması bunu “anlaşılır ama sadık bir sadeleştirme” diliyle formüle eder; pratik review ise bunu transformer iç hesaplarının tersine mühendisliği olarak çerçeveler. citeturn17view2turn17view0
+
+**Temsil**, modelin içinde “bir kavramın deposu” anlamına gelmez. Daha doğru tanım şudur: Belirli bir aktivasyon örüntüsü, bir yön, altuzay ya da feature kümesi, sonraki hesapları etkileyebilecek biçimde bilgi taşır. Bu temsil bazen lineer bir yön olarak okunabilir, bazen de tek boyutlu olmaktan çıkar. 2023 sonrası doğrusal temsil hipotezi, birçok semantik özelliğin lineer yönler üzerinden okunabileceğini savundu; fakat 2024’teki çalışmalar bazı özelliklerin özünde çok boyutlu olabildiğini, örneğin günler veya aylar gibi döngüsel yapıların dairesel temsiller gerektirebildiğini gösterdi. Dolayısıyla “temsil = tek bir doğrultu” güçlü ama evrensel olmayan bir varsayımdır. citeturn28search0turn29search0
+
+**Aktivasyon**, modelin belirli katmanda ve belirli konumda geçici iç durumudur. Mechanistic interpretability’nin ana malzemesi budur. Probing, patching, SAE veya transcoder gibi yöntemlerin hepsi, aslında bu geçici iç durumun neyi taşıdığını ve neyi nedensel olarak etkilediğini anlamaya çalışır. Sorun şu ki bir aktivasyonda bilgi bulunması, modelin o bilgiyi gerçekten kullandığı anlamına gelmez. Bu ayrım alanın merkezindedir. citeturn35view0turn20view1turn17view2
+
+**Neuron**, **feature** ve **superposition** ayrımı alanın kırılma noktasıdır. Erken dönem yorumlar çoğu zaman “bir nöron bir kavram” varsayımına yaslanıyordu. Fakat Toy Models of Superposition ve sonraki feature çalışmaları, modern ağların çoğu zaman nöron sayısından daha fazla kavramı üst üste bindirilmiş biçimde taşıdığını, bu yüzden tek nöronların sıklıkla polysemantic olduğunu savundu. 2023’teki dictionary learning çalışması, nöronlardan ziyade aktivasyonların lineer kombinasyonları olan features’ın daha iyi analiz birimleri olabileceğini öne sürdü. 2024 ve 2025’te RAVEL ile sparse feature circuit çalışmaları da, nöron düzeyini aşan dağıtık birimlerin daha anlamlı olabildiğini destekledi. citeturn12search1turn25view0turn21view0turn20view0
+
+**Attention head**, modelin farklı token konumları arasında bilgi taşıyan modüldür. **MLP katmanı** ise çoğu durumda bulunduğu token pozisyonunda bilgi dönüştüren, bazı örneklerde “hafıza” veya “konsept promotörü” gibi davranan modüldür. Frontier model tracing çalışması yöntemi özetlerken bunu açık söyler: attention katmanları bilgiyi tokenlar arasında taşır, MLP katmanları ise pozisyon içi işlemleri yapar. Bu ayrım kaba ama yararlıdır. Çünkü literatürde sık görülen örüntü şudur: attention çoğu zaman “nereden ne alınacağını”, MLP ise “alınan şeyin neye dönüştürüleceğini” belirler. citeturn19view0turn23view3turn24view0turn21view2
+
+**Circuit** dediğimiz şey, belirli bir davranışı birlikte üreten alt-bileşenler ağını ifade eder. Bu bazen birkaç attention head’in sınıfı, bazen MLP feature’ları, bazen de bunların katmanlar arası bileşimi olur. IOI çalışması, doğal dildeki bir görevi GPT-2 small içinde 26 head ve 7 ana sınıf ile açıklamaya çalıştı; daha yeni sparse feature circuit ve circuit tracing çalışmaları ise head veya nöron yerine daha ince taneli features ve attribution graph’lar üzerinden devre kurdu. Buradaki kilit nokta şudur: circuit, güzel görünen diagram değil; müdahale edildiğinde davranışı anlamlı biçimde değiştiren nedensel alt ağdır. citeturn21view3turn20view0turn17view3
+
+**Probing**, bir temsilin içinden belirli bir özelliğin okunup okunamadığını test eder. Bir probe yüksek doğrulukla kıta, cinsiyet, sözdizimi veya duygu okuyabiliyorsa, bu temsilde o özellik decodable demektir. Ama probe sonucu tek başına mekanizma kanıtı değildir; çünkü probe bazen temsilin içinde gerçekten kullanılan yapıyı değil, probe’un kendisinin öğrendiği kestirme yolu da yansıtabilir. Bu yüzden Hewitt ve Liang selectivity ile control task önerdi; Belinkov ise probe literatürünün yöntemsel sınırlamalarını derledi. **Activation patching** ise başka bir seviyede çalışır: temiz bir prompttaki iç aktivasyonu bozulmuş prompta enjekte eder ve davranışta geri kazanım olup olmadığına bakar. Bu yüzden probing daha çok “orada bilgi var mı?”, patching ise “bu bilgi kullanılıyor mu?” sorusuna yakındır. citeturn36search0turn35view0turn20view1turn17view2
+
+### Araştırma haritası
+
+Alanın araştırma haritası kabaca dört kola ayrılıyor. İlk kol, **gözlemsel analiz**. 2019’daki attention-head çalışmaları burada durur; bazı head’lerin sözdizimi, coreference veya pozisyon gibi örüntülere duyarlı olduğu gösterildi. İkinci kol, **nedensel lokalizasyon**. Burada activation patching, path patching, causal tracing ve benzeri tekniklerle “şu bileşen olmasaydı davranış olur muydu?” sorusu sorulur. Üçüncü kol, **temsili ayrıştırma**. SAE, transcoder ve cross-layer transcoder gibi yöntemler, polysemantic nöronlar yerine features üzerinden daha okunabilir sözlükler kurmaya çalışır. Dördüncü kol ise **uçtan uca tersine mühendislik**. IOI, factual recall, arithmetic, multilingual transfer, refusal, hidden objectives gibi spesifik davranışlar için baştan sona devre çözülmeye çalışılır. citeturn23view0turn23view1turn20view1turn25view0turn17view4turn17view3turn21view3
+
+Bu harita aynı zamanda alanın tarihini de anlatır. Erken dönem daha çok “bugün head neye bakıyor?” türü sorulara dayanıyordu. 2021 sonrası “hangi hesap zinciri bu davranışı üretiyor?” sorusu öne çıktı. 2022 ve 2023’te induction heads, IOI ve factual recall gibi örneklerle küçük ve orta ölçekli modellerde daha sert nedensel örnekler ortaya kondu. 2024 ve 2025’te sparse feature circuits, transcoders ve frontier-model circuit tracing geldi. 2025 ve 2026’da ise alan kendi üstüne dönüp şu soruyu sormaya başladı: “Bulduğumuz explanation gerçekten sadık mı, yoksa sadece iyi görünen bir approximation mı?” RAVEL, patching best-practice çalışmaları ve SAE metric eleştirileri tam burada devreye giriyor. citeturn24view1turn21view3turn21view2turn20view0turn17view4turn17view3turn21view0turn31view1
+
+## Mekanizmalar ve kanıt
+
+### Ana tartışmalar
+
+**Davranışsal değerlendirme ile iç mekanizma analizi aynı şeyi ölçmez.** Davranışsal değerlendirme, “model bu prompta ne yaptı?” diye sorar. İç mekanizma analizi ise “bunu hangi iç ara-adımlarla yaptı?” diye sorar. İki model aynı çıktıyı çok farklı iç nedenlerle üretebilir; hatta aynı model de aynı dış başarıyı bazen gerçek ara-hesapla, bazen de heuristikle üretebilir. 2025 frontier-model tracing çalışması, chain-of-thought’un kimi durumlarda iç hesapla uyumlu olduğunu, kimi durumlarda ise yalnızca makul görünen bir anlatı sunduğunu raporladı. 2025 hidden-objectives audit çalışması da, davranışın tek başına modele iç hedef atfetmek için yetersiz kalabildiğini gösterdi. Bu yüzden dış başarı ölçümü, iç açıklamanın yerine geçmez. citeturn19view0turn21view1
+
+**Attention head’ler gerçekten yorumlanabilir işlevler öğreniyor mu?** Evet, bazen. 2019’da BERT ve makine çevirisi çalışmaları, bazı head’lerin sözdizimsel veya konumsal olarak istikrarlı örüntüler izlediğini gösterdi. 2022’de induction head çalışması, küçük attention-only modellerde belirli head’lerin dizi tamamlama benzeri algoritmik bir rol üstlendiğine dair güçlü nedensel kanıt sundu; daha büyük MLP’li modellerde ise kanıtın daha çok korelasyon düzeyinde kaldığını açıkça belirtti. IOI çalışması da doğal bir dil görevini head sınıfları üzerinden kısmen tersine mühendislik ederek faithfulness, completeness ve minimality ölçütleriyle sınadı. Ama burada kritik fren şudur: “attention map = düşünce haritası” sonucu çıkmaz. Jain ve Wallace standart attention ağırlıklarının anlamlı explanation vermediğini, çok farklı attention dağılımlarının aynı tahmini üretebildiğini gösterdi. Kısacası head’ler bazen yorumlanabilir işlev taşır, ama attention ağırlığı tek başına açıklama değildir. citeturn23view0turn23view1turn24view1turn21view3turn23view2
+
+**MLP katmanları bilgi saklama ve dönüştürmede merkezîdir.** Geva ve arkadaşları 2021’de transformer feed-forward katmanlarının key-value memory gibi davrandığını, 2022’de ise bu katmanların sözlük uzayında yorumlanabilir konseptleri “promote” ederek tahmin inşa ettiğini gösterdi. ROME çalışması, factual associations için middle-layer feed-forward modüllerinde lokalize ve doğrudan düzenlenebilir hesap adımları bulunduğuna dair kanıt sundu. Fakat 2023 factual recall çalışması resmi daha rafine hale getirdi: subject temsili erken MLP altkatmanlarında zenginleşiyor, relation bilgisi akıyor, son aşamada attention head’ler bu zenginleşmiş subject temsilinden attribute’u “sorguluyor”. Yani “bilgi MLP’de durur, attention sadece bakar” biçimindeki kaba ayrım yanlış. Daha doğru resim şu: MLP sık sık depolama ve dönüşüm yapar, attention ise retrieval ve routing’in kritik parçalarını üstlenir. citeturn23view3turn24view0turn30view0turn21view2
+
+**Probe sonucu ile nedensel kanıt aynı şey değildir.** Probing literatürü çok yararlı oldu, çünkü temsillerin içinde neyin okunabildiğini gösterdi. Ama Hewitt ve Liang’ın control-task yaklaşımı ile Belinkov’un review’ü açık bir sınır çizdi: probe yüksek başarı verdi diye o bilginin model tarafından gerçekten kullanıldığı sonucuna gidemezsiniz. Bu yüzden mekanistik yorumda altın standart probe değil, karşı-olgusal müdahaleye dayalı kanıttır. Activation patching bu sebeple popülerleşti. Fakat burada da ikinci tuzak var: Heimersheim ve Nanda, patching’in hangi metriğe ve hangi corruption tasarımına duyarlı olduğunu anlattı; Makelov ve arkadaşları ise bir altuzaya patching yapmanın, davranışı değiştirirken gerçekte alakasız bir paralel yolu da aktive edebileceğini gösterdi. Sonuç sert ama net: probe korelasyon üretir, patching daha güçlüdür, fakat tek başına patching bile sadakat garantisi vermez. citeturn35view0turn36search0turn20view1turn31view0turn17view2
+
+**Ezberleme ile genelleştirme ayrımı yüzeysel performanstan okunmaz.** Carlini ve arkadaşları nadir eğitim örneklerinin büyük modellerden kelimesi kelimesine çıkarılabildiğini gösterdi; daha sonraki çalışmalar üretimdeki modellerden gigabaytlarca eğitim verisi çıkarılabildiğini raporladı. Bu, LLM’lerin ezberleme kapasitesinin gerçek olduğunu gösterir. Ama bu, her başarılı davranışın ezber olduğu anlamına gelmez. Induction heads çalışması, bağlam-içi öğrenme sıçramasının belirli algoritmik head’lerle beraber ortaya çıktığını öne sürdü; 2025 frontier tracing ise aynı toplama devresinin çok farklı bağlamlar arasında genelleşebildiğini raporladı. Toy-model düzeyinde superposition ve double descent çalışmaları da, aşırı uyumun veri noktalarını saklama, daha iyi genellemenin ise özellikleri saklama rejimine karşılık gelebileceğini savundu. Demek ki doğru ayrım “ezber mi, genelleme mi?” diye tek cümleyle verilmez; hangi davranışın verbatim geri çağırım, hangisinin taşınabilir iç devre olduğu promptlar arası müdahale ve genellik testleriyle ayrılır. citeturn11search0turn11search3turn24view1turn19view0turn11search13
+
+### Güçlü bulgular
+
+Birinci güçlü bulgu şu: **mekanistik explanation bazı görevlerde gerçekten mümkündür**. Bu cümle artık spekülasyon değil. IOI, induction heads, factual recall, toplama ve bazı güvenlik davranışları için literatür, karşı-olgusal müdahalelerle desteklenen devre düzeyi açıklamalar sundu. Bunlar tüm modeli açıklamıyor, ama “iç mekanizma bulmak imkânsız” iddiasını da fiilen çürütüyor. 2022 IOI çalışması bunu küçük modelde sistematik yaptı; 2025 circuit tracing ve biology raporları ise frontier modele taşıdı. citeturn21view3turn24view1turn17view3turn19view0
+
+İkinci güçlü bulgu şu: **tek nöron, modern transformerlar için iyi bir varsayılan analiz birimi değildir**. Superposition hipotezi, polysemanticity’nin neden ortaya çıktığını açıklamak için güçlü bir çerçeve sundu. Dictionary learning ve bunun büyük modellere ölçeklenmiş versiyonları, birçok anlamlı kavramın nöron yerine feature düzeyinde daha temiz ayrıştırılabildiğini gösterdi. RAVEL de dağıtık temsilleri bulmanın, nöron düzeyini aşan yöntemler gerektirdiğini gösterdi. Bunun anlamı şudur: “hangi nöron şunu yapıyor?” sorusu bazen yararlıdır, ama artık varsayılan soru olmamalıdır. Varsayılan soru “hangi feature veya hangi dağıtık altuzay bu davranışta nedensel rol oynuyor?” olmalıdır. citeturn12search1turn25view0turn26academia9turn21view0
+
+Üçüncü güçlü bulgu şu: **factual knowledge ne tamamen tek bir yere sıkışmıştır ne de bütünüyle amorftur**. ROME ve MEMIT, belirli factual associations’ın middle-layer bileşenlere yapılan doğrudan ağırlık düzenlemeleriyle değiştirilebildiğini gösterdi. Bu, bilgi temsilinde belli bir lokalite olduğunu düşündürür. Ama 2023 factual recall çalışması, retrieval sürecinin relation akışı, subject enrichment ve attention-head sorgulaması gibi birkaç adım içeren dağıtık bir zincir olduğunu gösterdi. Bu yüzden en doğru formülasyon şudur: factual bilgi, yerel bottleneck’ler ve düzenlenebilir düğümler içerir; ama davranışa dönüşmesi dağıtık bir inşa sürecidir. citeturn30view0turn30view1turn21view2
+
+Dördüncü güçlü bulgu şu: **iç mekanizma analizi güvenlikte artık yalnızca teorik bir vaat değil, pratik audit aracı olmaya başladı**. 2025 hidden-objectives çalışmasında dört kör audit ekibinden üçü, SAE tabanlı interpretability, davranışsal saldırılar ve veri analizi kombinasyonuyla modelin gizli hedefini yakaladı. 2025 frontier-model biology raporu da refusal devreleri, jailbreak dinamikleri ve chain-of-thought sadakati gibi güvenlikle doğrudan ilişkili iç yapıların kısmen haritalanabildiğini gösterdi. Bu şu anlama gelir: alignment sorunu hâlâ çözülmedi, ama “çıktıya bakıp tahmin etmek” ile “iç işaretleri takip etmek” arasında artık pratik bir fark var. citeturn21view1turn19view0turn18view0
+
+## Sınırlılık ve itirazlar
+
+### Zayıf ve tartışmalı noktalar
+
+En temel sınır şu: **feature dediğimiz şeyin ontolojisi hâlâ bulanık**. 2025 frontier-model biology raporu bunu doğrudan kabul ediyor: features yararlı yapı taşları olarak çalışıyor, ama “feature tam olarak nedir?” sorusu hâlâ net değil. Aynı raporda yöntemlerin sadece denenen promptların yaklaşık dörtte birinde tatmin edici içgörü verdiği, kullanılan replacement model’in orijinal modeli eksik yakaladığı ve error node denen yorumlanamaz boşluklar bıraktığı da söyleniyor. Bu, alanın en dürüst kabulü: bugün bulunan explanation’lar çoğu zaman kısmi explanation. citeturn19view0turn17view3
+
+İkinci sınır: **lineer feature anlatısı güçlü ama tam değil**. Birkaç yıl boyunca alanın önemli kısmı, kavramların çoğunlukla lineer yönler halinde temsil edildiği varsayımıyla ilerledi. Bu varsayım birçok başarı üretti. Fakat 2024’teki “Not All Language Model Features Are Linear” çalışması, bazı temsillerin özünde çok boyutlu ve dairesel olabildiğini gösterdi. Bu, özellikle feature discovery ve steering çalışmalarında önemli. Çünkü bir özelliği tek vektör gibi ele almak, aslında çok boyutlu yapıyı bozabilir. citeturn28search0turn29search0
+
+Üçüncü sınır: **SAE başarısını ölçmek düşündüğümüzden daha zor**. 2026’da Heap ve arkadaşları, yaygın SAE kalite metriklerinin ve otomatik açıklama pipeline’larının eğitimli transformer ile rastgele başlatılmış transformerları güvenilir biçimde ayırt edemediğini gösterdi. Bu, toplu “yorumlanabilirlik skoru” yüksek diye gerçekten hesap açısından anlamlı feature’lar bulduğumuz sonucuna doğrudan gidilemeyeceğini söylüyor. Aynı dönemde Ronge ve arkadaşları da feature steering’in katman, ölçek ve bağlama hassas biçimde kırılgan olabildiğini raporladı. Bunlar alanı çökertmiyor, ama çıtayı yükseltiyor: bundan sonra “çalışıyor gibi göründü” yetmez, randomized baseline ve hedefe yönelik faithfulness testleri gerekir. citeturn31view1turn32view0
+
+Dördüncü sınır: **davranışı değiştirmek, mekanizmayı bulduğunuz anlamına gelmez**. Makelov ve arkadaşları, subspace activation patching’in model davranışını değiştirebildiği halde gerçekte ilgisiz bir paralel yolu tetikleyerek sahte güven yaratabileceğini gösterdi. Bu özellikle fact editing ve concept steering yorumlarında kritik. Kısacası “müdahale yaptım, çıktı değişti, demek ki doğru feature buydu” çıkarımı fazla hızlıdır. Aynı davranışı birden fazla iç yol üretebilir. citeturn31view0turn20view1
+
+Beşinci sınır daha teorik: **“mekanistik açıklama”yı neyin sayılacağı konusu kapanmış değil**. Causal Abstraction çalışması alan için güçlü bir teorik temel önerirken, sonraki eleştiriler çok gevşek eşleme izinleri tanınırsa neredeyse her ağın neredeyse her algoritmaya soyutlanabildiğini, dolayısıyla açıklama kavramının trivyalize olabileceğini savundu. Bu tartışma önemlidir, çünkü mekanistik interpretability yalnızca araç meselesi değil, epistemoloji meselesidir. Hangi durumda “açıklama bulduk” demeye hakkımız olduğu hâlâ tartışmalıdır. citeturn17view2turn28search2
+
+### Yanlış anlaşılan noktalar
+
+“**Attention map modelin düşüncesidir**” yanlıştır. Attention çalışmaları bazı head’lerin dilsel örüntüler taşıdığını gösterdi, ama attention ağırlıkları tek başına sadık explanation değildir; çok farklı attention düzenleri aynı sonucu verebilir. Dolayısıyla attention map, olsa olsa açıklama adayıdır. Mekanizma kanıtı değildir. citeturn23view0turn23view2
+
+“**Tek nöron tek kavramdır**” yanlıştır. Superposition ve polysemanticity tam da bunun neden çoğu zaman işlemediğini açıklamak için ortaya çıktı. Bu yüzden nöron üzerinden bulunan hoş örnekler, alanın genel ontolojisi olarak alınmamalıdır. citeturn12search1turn25view0
+
+“**Model açıklandıysa artık tamamen kontrol edilebilir**” yanlıştır. ROME, MEMIT, feature steering ve patching gibi araçlar bazı davranışları etkileyebilir. Ama hem subspace illusion çalışmaları hem 2026 kırılganlık analizleri, davranışı değiştirebilmenin güvenilir ve genellenebilir kontrol anlamına gelmediğini gösterdi. Açıklama ile denetim arasında ciddi mesafe var. citeturn30view0turn30view1turn31view0turn32view0
+
+“**Interpretability sadece görselleştirme demektir**” yanlıştır. Alanın en güçlü işleri görselleştirme kullansa da esas kuvvetini müdahale, causal tracing, model editing, benchmark ve audit tasarımlarından alır. RAVEL, activation patching rehberleri, factual editing ve hidden-objectives audit buna örnektir. Görsel diyagram, mekanistik interpretability’nin yüzüdür. Gövdesi değildir. citeturn21view0turn20view1turn30view0turn21view1
+
+## Nereye gidiyor
+
+### Gelecek yönelimleri
+
+Birinci yönelim çok net: **daha iyi değerlendirme**. Açıklamaların güzel görünmesi yetmiyor; fidelity, sufficiency, minimality, selectivity ve randomized baseline gibi ölçütlerin standartlaşması gerekiyor. Open Problems çalışması alanın öncelikli problemlerini tam burada topluyor. RAVEL ve SAE metric eleştirileri de, “hangi yöntem gerçekten disentangle ediyor?” sorusunu nicel hale getirmeye çalışıyor. Önümüzdeki birkaç yılın ana sınavı, yeni explanation yöntemleri üretmekten çok, explanation kalitesini güvenilir biçimde ölçmek olacak. citeturn18view1turn21view0turn31view1
+
+İkinci yönelim: **küçük model devrelerinden frontier model devrelerine geçişin kurumsallaşması**. Transcoder ve cross-layer transcoder çizgisi burada kritik. 2024 transcoders çalışması, MLP içi feature-circuit analizini daha ölçeklenebilir hale getirdi; 2025 circuit tracing ve biology raporları bunu gerçek üretim ölçekli modele taşıdı. Ama frontier model işi hâlâ pahalı, yarı-otomatik ve kısmen el emeğine dayalı. Önümüzdeki yönelim, daha otomatik circuit discovery, daha iyi label verme ve attention katmanlarını da eksiksiz kapsayan replacement model’ler olacak. citeturn17view4turn17view3turn19view0
+
+Üçüncü yönelim: **tek boyutlu feature hikâyesini aşmak**. Lineer temsil varsayımı bir süre daha merkezde kalacak, çünkü pratikte çok işe yarıyor. Ama çok boyutlu feature’lar, dairesel yapılar, dağıtık altuzaylar ve katmanlar arası ortak temsiller üzerine çalışma artıyor. Bu değişim önemli, çünkü alanın geleceği “milyonlarca feature kataloğu” yapmaktan çok, hangi geometri türlerinin hesapta gerçekten kullanıldığını bulmaya bağlı. citeturn29search0turn21view0turn17view4
+
+Dördüncü yönelim: **alignment-audit ile iç mekanizma analizinin birleşmesi**. Hidden-objectives ve frontier tracing çalışmaları bu birleşmenin ilk güçlü örnekleri oldu. Muhtemelen alan, salt açıklama üretmekten çok, iç amaçlar, persona, refusal, jailbreak ve riskli planlama gibi safety-relevant sinyalleri takip eden audit pipeline’larına kayacak. Ama burada da aşırı iyimser olmak hata olur. 2026’daki kırılganlık ve metrik eleştirileri, safety-kritik kullanım için bugünkü araçların henüz yeterince güvenilir olmadığını açık söylüyor. citeturn21view1turn19view0turn32view0turn31view1
+
+### Okuyucu için zihinsel model
+
+En işe yarar zihinsel model şu: **transformer’ı ortak bir iç çalışma belleğine yazıp okuyan modüller topluluğu gibi düşün**. Attention başlıkları başka token konumlarından neyin taşınacağını seçer. MLP katmanları o yerel durumu daha soyut feature’lara dönüştürür, bazı kavramları güçlendirir, bazılarını bastırır. Circuit ise bu okuma-yazma işlemlerinin tek bir davranış üretmek için geçici olarak kurduğu nedensel koalisyondur. Dolayısıyla “model bunu biliyor mu?” sorusu zayıftır. Daha iyi soru şudur: “Bu bilgi hangi ara temsilde oluşuyor, hangi bileşen onu ileri taşıyor ve hangi müdahalede davranış bozuluyor?” citeturn19view0turn23view3turn24view0turn17view3
+
+Buradan ikinci bir ayrım çıkar: **bir temsili okuyabilmek ile temsili kullanıldığını göstermek farklı şeylerdir**. Probe size bir şeyin orada olduğunu söyler. Activation patching, causal tracing veya devre müdahalesi ise o şeyin çıktı üretiminde kullanılıp kullanılmadığını test eder. Eğer bir özellik probe ile okunuyor ama müdahale edildiğinde davranış değişmiyorsa, o özellik muhtemelen mevcut ama devrede merkezî değildir. Eğer müdahale değiştiriyor ama yalnızca belirli promptlarda ve kırılgan biçimde değiştiriyorsa, o zaman da henüz sağlam bir mekanistik explanation bulmuş değilsinizdir. Faithful explanation için presence, use ve generality birlikte aranmalıdır. citeturn35view0turn36search0turn20view1turn31view0
+
+Üçüncü ve en kritik ayrım: **insan-okunur açıklama ile gerçek mekanistik açıklama farklı katmanlardır**. “Model burada Texas düşünüyor”, “bu head özneye bakıyor”, “şu feature kibarlıkla ilgili” gibi cümleler yalnızca etiketlerdir. Bunlar faydalı olabilir. Ama gerçek açıklama, bu etiketlerin model içindeki nedensel rolünü karşı-olgusal olarak gösterebildiğinizde başlar. Alanın sert standardı budur. O yüzden mechanistic interpretability’nin hedefi, güzel analoji kurmak değil, yanlış analojileri ayıklayan sağlam bir nedensel harita kurmaktır. citeturn17view2turn17view3turn19view0
+
+## Netleşenler ve kaynakça
+
+### Araştırma Sonrası Netleşenler
+
+**En yaygın ama yanlış basitleştirme:** “Attention haritasına baktım, modelin ne düşündüğünü gördüm.” Bu yanlış. İkinci sıradaki yanlış ise “tek nöron tek kavram” varsayımı. Modern literatür, özellikle superposition ve feature decomposition çizgisi, bu iki sezgiyi sistematik biçimde zayıflattı. citeturn23view2turn12search1turn25view0
+
+**Kaynaklarla güçlü desteklenen iddia:** Bazı davranışlar için nedensel iç mekanizma bulunabiliyor. Induction heads, IOI devresi, factual recall zincirleri ve frontier ölçekte bazı refusal ya da planning örnekleri için bu iddia artık ciddi biçimde destekleniyor. Aynı derecede güçlü ikinci iddia da şu: nöron düzeyi çoğu zaman yetersiz, feature veya dağıtık altuzay düzeyi daha açıklayıcı. citeturn24view1turn21view3turn21view2turn19view0turn21view0
+
+**Henüz spekülatif kalan iddia:** Frontier LLM’lerin genel davranışını kapsayan, ölçeklenmiş ve güvenilir bir “tam iç harita” kurabileceğimiz iddiası henüz spekülatif. Aynı şekilde, SAE veya feature steering üzerinden güvenlik-kritik düzeyde sağlam kontrol kurabileceğimiz iddiası da bugün için erken. 2025 ve 2026’daki açık problem, metrik ve kırılganlık çalışmaları tam olarak bunu söylüyor. citeturn18view1turn31view1turn32view0
+
+**Bu konu önceki LLM belgelerindeki hangi fikri değiştirir?** En çok şu fikri değiştirir: “Modelin yazdığı açıklama, modelin gerçek iç açıklamasıdır.” Artık bu kadar rahat konuşmak mümkün değil. Chain-of-thought bazen sadık, bazen değil. Güzel bir cevap, doğru iç hesapla üretildiğinin kanıtı değil. Benzer şekilde, “bilgi modelin parametrelerinde bir yerde duruyor” cümlesi de kaba. Daha doğru ifade, bilginin temsil, routing, enrichment ve retrieval aşamalarından geçen dağıtık bir zincir içinde davranışa dönüştüğüdür. citeturn19view0turn21view2turn30view0
+
+**Okuyucunun artık daha iyi sorması gereken soru:** “Bu davranış için hangi iç temsil gerekli, hangi bileşen onu ileri taşıyor, hangi müdahale bu zinciri özgül olarak bozuyor ve aynı mekanizma başka promptlarda da korunuyor mu?” Bu soru, yüzeydeki başarıdan iç nedenselliğe geçişin kısa formudur. citeturn17view2turn18view1turn20view1
+
+**Net cevap:** Bir LLM’i anlamak ile onun çıktısını beğenmek aynı şey değildir. Çıktıyı beğenmek, son ürünün size makul, faydalı veya etkileyici gelmesidir. Modeli anlamak ise o sonucu hangi iç nedensel zincirin ürettiğini, bunun ezber mi genelleme mi, gerçek ara-hesap mı sonradan uydurulmuş gerekçe mi, yüzeyde uyumlu ama içeride sapmış bir hedef mi olduğunu ayırt edebilmektir. Aynı düzgün cevap, birbirinden çok farklı iç nedenlerle üretilebilir. Mechanistic interpretability tam olarak bu farkı görünür kılmaya çalışır. citeturn19view0turn21view1turn11search0turn24view1
+
+### Kaynakça
+
+- Daking Rai, Yilun Zhou, Shi Feng, Abulhair Saparov, Ziyu Yao, **A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models**, 2024 survey. citeturn17view0
+- Leonard Bereska, Efstratios Gavves, **Mechanistic Interpretability for AI Safety: A Review**, 2024 review. citeturn18view0
+- Atticus Geiger ve arkadaşları, **Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability**, JMLR 2025. citeturn17view2
+- Lee Sharkey ve arkadaşları, **Open Problems in Mechanistic Interpretability**, 2025 review. citeturn18view1
+- Kevin Clark ve arkadaşları, **What Does BERT Look at? An Analysis of BERT’s Attention**, 2019. citeturn23view0
+- Elena Voita ve arkadaşları, **Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned**, 2019. citeturn23view1
+- Sarthak Jain, Byron Wallace, **Attention is not Explanation**, 2019. citeturn23view2
+- John Hewitt, Percy Liang, **Designing and Interpreting Probes with Control Tasks**, 2019. citeturn36search0
+- Yonatan Belinkov, **Probing Classifiers: Promises, Shortcomings, and Advances**, 2022. citeturn35view0
+- Mor Geva ve arkadaşları, **Transformer Feed-Forward Layers Are Key-Value Memories**, 2021. citeturn23view3
+- Mor Geva ve arkadaşları, **Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space**, 2022. citeturn24view0
+- Catherine Olsson ve arkadaşları, **In-context Learning and Induction Heads**, 2022. citeturn24view1
+- Kevin Wang ve arkadaşları, **Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small**, 2022. citeturn21view3
+- Kevin Meng ve arkadaşları, **Locating and Editing Factual Associations in GPT**, 2022. citeturn30view0
+- Kevin Meng ve arkadaşları, **Mass-Editing Memory in a Transformer**, 2023. citeturn30view1
+- Mor Geva ve arkadaşları, **Dissecting Recall of Factual Associations in Auto-Regressive Language Models**, 2023. citeturn21view2
+- Nelson Elhage ve arkadaşları, **Toy Models of Superposition**, 2022. citeturn12search1
+- Anthropic, **Towards Monosemanticity: Decomposing Language Models With Dictionary Learning**, 2023 technical report. citeturn25view0
+- Jing Huang ve arkadaşları, **RAVEL: Evaluating Interpretability Methods on Disentangling Language Model Representations**, ACL 2024. citeturn21view0
+- Stefan Heimersheim, Neel Nanda, **How to use and interpret activation patching**, 2024. citeturn20view1
+- Joshua Engels ve arkadaşları, **Not All Language Model Features Are Linear**, 2024, ICLR 2025. citeturn29search0
+- Jacob Dunefsky ve arkadaşları, **Transcoders Find Interpretable LLM Feature Circuits**, NeurIPS 2024. citeturn17view4
+- Samuel Marks ve arkadaşları, **Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models**, ICLR 2025. citeturn20view0
+- Emmanuel Ameisen ve arkadaşları, **Circuit Tracing: Revealing Computational Graphs in Language Models**, 2025 technical report. citeturn17view3
+- Jack Lindsey ve arkadaşları, **On the Biology of a Large Language Model**, 2025 technical report. citeturn19view0
+- Samuel Marks ve arkadaşları, **Auditing language models for hidden objectives**, 2025. citeturn21view1
+- Thomas Heap ve arkadaşları, **Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers**, 2026. citeturn31view1
+- Raphael Ronge ve arkadaşları, **When the Coffee Feature Activates on Coffins**, 2026. citeturn32view0
+
+Son dönemde alanı daha geniş kitleye taşıyan iki güvenilir haber:
+
+navlistMekanistik interpretability üzerine son dönem haberleriturn37news29,turn37news25

@@ -194,7 +194,7 @@ The same hierarchy renders in desktop and mobile lists. Batch headers are not st
 - Baseline heading: `Sınıflandırma 00`
 - First new cohort heading: `Sınıflandırma 01`
 - Count: `18 makale`
-- Screen-reader navigation label becomes `Sınıflandırılmış okuma listesi`.
+- Screen-reader navigation label remains `Bölümler` or becomes the clearer `Sınıflandırılmış okuma listesi`.
 
 UI copy describes the reader's model, not implementation details such as `classificationBatch`.
 

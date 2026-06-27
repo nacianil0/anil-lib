@@ -79,6 +79,7 @@ tags:
   - ai-history
 content_hash: sha256:<hex-digest>
 classification_version: 1
+classification_batch: 0
 ---
 ```
 
@@ -92,6 +93,7 @@ Kurallar:
 - `summary` tek cumle ve ayirt edici olmalidir; pazarlama dili kullanma.
 - Etiketler kucuk harfli kebab-case ve en fazla 6 adet olmalidir.
 - `classification_version` bu prompt icin `1` degeridir.
+- `classification_batch` makalenin kalici ingestion grubunu belirtir.
 - Govdeyi kisaltma, yeniden yazma, cevirme veya birlestirme. Yalnizca frontmatter ekle; ilk H1 genel/eksikse frontmatter basligiyla eslestir.
 
 `content_hash`, frontmatter haric Markdown govdesinin su normalize edilmis halinin SHA-256 degeridir:
@@ -110,7 +112,7 @@ Hash bicimi `sha256:<64-kucuk-harf-hex>` olmalidir.
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "classificationVersion": 1,
   "generatedAt": "ISO-8601 timestamp",
   "articles": []
@@ -131,7 +133,8 @@ Her `articles` kaydi su alanlari icermeli:
   "tags": ["ai-history"],
   "contentHash": "sha256:<digest>",
   "path": "content/articles/foundations/stable-slug.md",
-  "relatedArticleIds": []
+  "relatedArticleIds": [],
+  "classificationBatch": 0
 }
 ```
 
@@ -143,7 +146,7 @@ Yeni adaylari islemeden once katalogdaki her makaleyi denetle:
 
 - dosya mevcut mu;
 - frontmatter gecerli mi;
-- `article_id`, slug, yol ve kategori katalogla uyumlu mu;
+- `article_id`, slug, yol, kategori ve batch katalogla uyumlu mu;
 - ayni ID, slug veya yol birden fazla kez kullanilmis mi;
 - normalize govde hash'i katalog ve frontmatter ile uyumlu mu.
 
@@ -168,28 +171,37 @@ Frontmatter'da ID olup katalog kaydi olmayan veya katalogda kayitli olup dosyasi
 - Topikal olarak ilgili ayri makaleleri koru ve gerekiyorsa `relatedArticleIds` ile bagla.
 - Benzerlik konusunda emin degilsen icerigi koruma tarafinda kal; otomatik birlestirme yapma.
 
-## Okuma Sirasi
+## Okuma Sirasi ve Sınıflandırma Batch'leri (Cohorts)
 
-Dosya adina veya olusturma tarihine gore siralama yapma. Pedagojik onkosullari kullan:
+Yeni makaleler tek bir "Sınıflandırma Batch" (ingestion cohort) oluşturur.
 
-1. tarih ve temel zihinsel modeller;
-2. next-token, temsil ve Transformer;
-3. pretraining, scaling ve post-training;
-4. reasoning, verification, uzun baglam ve bellek;
-5. retrieval ve agent sistemleri;
-6. alignment, yorumlanabilirlik, guvenilirlik ve degerlendirme;
-7. multimodal, verimlilik ve world models;
-8. kavramsal onkosullarindan sonra case study'ler.
+1. **Batch Ataması**:
+   - Yeni adayları incele, duplicate'leri çıkar. Eğer en az bir yeni makale varsa, `nextBatch = max(existing classificationBatch) + 1` hesapla. İlk yeni kohort Batch 1 olur.
+   - Bu tek batch numarasını yeni eklenen tüm makalelere ata.
+   - Exact duplicate'ler veya sadece bakım/reclassification içeren run'lar yeni batch yaratmaz.
+   - Mevcut makalelerin batch'ini ASLA değiştirme.
 
-Kategori icinde genellikle `beginner -> intermediate -> advanced` akisini kullan. Yeni makaleyi mevcut siraya en anlamli yere ekle ve eski makalelerin goreli sirasini gereksiz yere bozma. Gerekirse tum `reading_order` / `readingOrder` degerlerini 1'den baslayan, benzersiz ve kesintisiz bir dizi olarak yeniden numaralandir. Bu yeniden numaralandirma yeniden siniflandirma degildir.
+2. **Okuma Sırası (readingOrder)**:
+   - Eski batch'lerin sıralamasını ve içsel pedagojik düzenini koru. Yeni batch, her zaman son batch'in bitiminden sonra eklenir (append-only history önceliği).
+   - Yeni batch içindeki makaleleri pedagojik sıraya göre kendi içinde şöyle sırala:
+     1. tarih ve temel zihinsel modeller;
+     2. next-token, temsil ve Transformer;
+     3. pretraining, scaling ve post-training;
+     4. reasoning, verification, uzun baglam ve bellek;
+     5. retrieval ve agent sistemleri;
+     6. alignment, yorumlanabilirlik, guvenilirlik ve degerlendirme;
+     7. multimodal, verimlilik ve world models;
+     8. kavramsal onkosullarindan sonra case study'ler.
+     Kategori icinde genellikle `beginner -> intermediate -> advanced` akisini kullan.
+   - Gerekirse tum `reading_order` / `readingOrder` degerlerini 1'den baslayan, benzersiz ve kesintisiz bir dizi olarak yeniden numaralandir.
 
 ## Uygulama Akisi
 
-1. **Preflight:** Git durumunu ve kapsami incele. `inbox/` ve legacy kok makaleleri disinda ilgisiz, cakisan degisiklik varsa mutasyondan once dur. Aday dosyalarin untracked olmasi beklenen bir durumdur.
+1. **Preflight:** Git durumunu ve kapsami incele. Tum mevcut batch degerlerini kontrol et. Katalog sadece baslangic cohortunu (18 makale) iceriyorsa ve batch yoksa onlari Batch 0'a tasi. Eger batchlerde mantiksiz araliklar/karmasalar varsa mutasyondan once dur.
 2. **Envanter:** Mevcut katalog, islenmis makaleler ve yeni adaylar icin ayri listeler cikar.
 3. **Audit:** Mevcut katalog sozlesmesini ve hash'leri denetle; guvenli bakim guncellemelerini plana ekle.
 4. **Icerik analizi:** Her yeni makaleyi tam oku. Baslik, konu, seviye, kategori, ozet, etiketler, onkosullar ve olasi exact duplicate durumunu belirle.
-5. **Dry plan:** Her aday icin `eski yol -> yeni yol`, baslik, kategori, level, okuma konumu, duplicate sonucu ve gerekceyi tablo halinde yaz. Mutasyondan once cakisma olmadigini kontrol et.
+5. **Dry plan:** Hedef batch'i (`Sınıflandırma N`) belirt. Her aday icin `eski yol -> yeni yol`, baslik, kategori, level, okuma konumu, duplicate sonucu ve gerekceyi tablo halinde yaz. Mutasyondan once cakisma olmadigini kontrol et.
 6. **Uygulama:** Hedef klasorleri olustur. Takip edilen dosyalarda `git mv`, untracked dosyalarda normal `mv` kullan. Frontmatter'i ekle, katalogu tek bir tutarli guncelleme olarak yaz ve raporu olustur/guncelle.
 7. **Dogrulama:** Tum katalog ve dosya sozlesmesini bastan kontrol et. ID, slug, yol, hash ve sira benzersizligini kanitla.
 8. **No-op simulasyonu:** Ayni durumda ikinci calistirmanin hangi adaylari gorecegini yeniden tara. Degisiklik plani bos degilse idempotence hatasini duzeltmeden bitirme.
@@ -197,12 +209,12 @@ Kategori icinde genellikle `beginner -> intermediate -> advanced` akisini kullan
 
 `content/ingestion-report.md` en az sunlari icermeli:
 
-- calisma ozeti;
+- calisma ozeti (hangi batch Sınıflandırma N üretildi);
 - yeni eklenen makaleler ve hedef yollari;
 - mevcut makale bakim guncellemeleri;
 - exact duplicate ve atlanan dosyalar;
 - belirsiz siniflandirma gerekceleri;
-- son okuma sirasi;
+- son okuma sirasi (batchler halinde);
 - calistirilan dogrulamalar.
 
 No-op calistirmada rapor icerigi degismiyorsa yalnizca timestamp degistirmek icin yeniden yazma.

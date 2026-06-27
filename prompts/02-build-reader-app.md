@@ -116,7 +116,7 @@ Kurulum tamamlaninca su isaret dosyasini olustur:
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "app": "anil-lib-reader"
 }
 ```
@@ -131,7 +131,8 @@ Zod ile hem `content/catalog.json` kayitlarini hem makale frontmatter'ini dogrul
 - level: `beginner`, `intermediate`, `advanced`;
 - `articleId` / `article_id`: `article_` ile baslayan kalici UUID;
 - hash: `sha256:` ile baslayan 64 haneli kucuk harf hex;
-- `readingOrder`: 1'den baslayan kesintisiz benzersiz tam sayilar.
+- `readingOrder`: 1'den baslayan kesintisiz benzersiz tam sayilar;
+- `classificationBatch`: 0'dan baslayan negatif olmayan tam sayi.
 
 Build su durumlarda acik ve dosya yolunu gosteren bir hatayla durmali:
 
@@ -163,7 +164,8 @@ Bu bir operasyonel okuyucu uygulamasidir; hero, urun tanitimi veya landing page 
 ### Desktop
 
 - Sol tarafta sabit ve stabil genislikte sticky sidebar.
-- Sidebar kategori basliklari altinda tum makaleleri tek global okuma sirasiyla gosterir.
+- Sidebar makaleleri oncelikle `classificationBatch`'e gore gruplar. Her batch (ornegin `Sınıflandırma 00 · 18 makale`) icin iki basamakli (0 dolgulu) indeks ve ogretici basligi gosterilir.
+- Batch icerisinde makaleler pedagojik kategori basliklari altinda siralanir.
 - Her satirda sira numarasi, kisa baslik ve okunma durumu bulunur.
 - Aktif makale belirgin fakat abartisiz vurgulanir.
 - Sidebar kendi icinde scroll olabilir; aktif madde gorunur alana getirilir.

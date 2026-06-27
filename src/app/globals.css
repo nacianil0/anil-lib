@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------------------------------
+   Design tokens
+   Quiet premium reading tool: neutral paper surfaces, graphite text,
+   a restrained burgundy accent, and a distinct cool steel-blue secondary.
+---------------------------------------------------------------------------- */
+:root {
+  --bg: #faf9f7;
+  --surface: #ffffff;
+  --surface-muted: #f1efea;
+  --border: #e5e2db;
+  --border-strong: #d4d0c6;
+  --text: #1b1d1f;
+  --text-muted: #5b5f66;
+  --text-faint: #898d94;
+  --accent: #8a2e43;
+  --accent-fill: #8a2e43;
+  --accent-soft: #f4e4e7;
+  --cool: #2f5d74;
+  --cool-soft: #e4edf1;
+
+  --toolbar-offset: 4.75rem;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #121417;
+  --surface: #181b1f;
+  --surface-muted: #1f242a;
+  --border: #2a2f36;
+  --border-strong: #3a414a;
+  --text: #e9e8e4;
+  --text-muted: #a3a8af;
+  --text-faint: #71777f;
+  --accent: #d98597;
+  --accent-fill: #b5435a;
+  --accent-soft: #36222a;
+  --cool: #7aa6c0;
+  --cool-soft: #1d2c37;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: theme("fontFamily.sans");
+    font-feature-settings: "cv11", "ss01";
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Account for the sticky toolbar when jumping to a heading anchor. */
+  :target {
+    scroll-margin-top: var(--toolbar-offset);
+  }
+}
+
+@layer components {
+  /* --------------------------------------------------------------------------
+     The reading spine — the page's signature element.
+     A continuous hairline threads every numbered chapter; it fills with the
+     burgundy accent up to the reader's current position in the curriculum.
+  -------------------------------------------------------------------------- */
+  .spine-rail {
+    position: absolute;
+    left: 0.625rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--border-strong);
+  }
+
+  .spine-rail[data-filled="true"] {
+    background-color: var(--accent);
+    opacity: 0.55;
+  }
+
+  .spine-node {
+    position: absolute;
+    left: 0.625rem;
+    top: 1.15rem;
+    width: 9px;
+    height: 9px;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    background-color: var(--bg);
+    border: 1.5px solid var(--border-strong);
+    transition:
+      border-color 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .spine-node[data-status="completed"] {
+    background-color: var(--accent-fill);
+    border-color: var(--accent-fill);
+  }
+
+  .spine-node[data-status="in-progress"] {
+    border-color: var(--cool);
+    background-color: var(--cool-soft);
+  }
+
+  .spine-node[data-current="true"] {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  /* --------------------------------------------------------------------------
+     Editorial prose — a hand-set type scale for the reading column.
+  -------------------------------------------------------------------------- */
+  .prose-reader {
+    font-family: var(--reader-font-family, theme("fontFamily.serif"));
+    color: var(--text);
+    font-size: var(--reader-font-size, 1.1875rem);
+    line-height: var(--reader-line-height, 1.72);
+    font-weight: 420;
+    max-width: var(--reader-measure, 68ch);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prose-reader > *:first-child {
+    margin-top: 0;
+  }
+
+  .prose-reader :is(h1, h2, h3, h4) {
+    font-family: var(--reader-font-family, theme("fontFamily.serif"));
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.22;
+    scroll-margin-top: var(--toolbar-offset);
+    text-wrap: balance;
+  }
+
+  .prose-reader h1 {
+    font-size: 1.768em;
+    letter-spacing: -0.012em;
+    margin: 0 0 1.4rem;
+  }
+
+  .prose-reader h2 {
+    font-size: 1.305em;
+    margin: 2.6rem 0 0.9rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .prose-reader h3 {
+    font-size: 1.052em;
+    margin: 2rem 0 0.7rem;
+  }
+
+  .prose-reader h4 {
+    font-size: 0.905em;
+    font-weight: 620;
+    margin: 1.6rem 0 0.5rem;
+  }
+
+  .prose-reader p {
+    margin: 0 0 1.25rem;
+  }
+
+  .prose-reader a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    transition: text-decoration-color 150ms ease;
+  }
+
+  .prose-reader a:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  .prose-reader strong {
+    font-weight: 650;
+    color: var(--text);
+  }
+
+  .prose-reader em {
+    font-style: italic;
+  }
+
+  .prose-reader :is(ul, ol) {
+    margin: 0 0 1.25rem;
+    padding-left: 1.4rem;
+  }
+
+  .prose-reader li {
+    margin: 0.4rem 0;
+    padding-left: 0.3rem;
+  }
+
+  .prose-reader ul > li::marker {
+    color: var(--accent);
+  }
+
+  .prose-reader ol > li::marker {
+    color: var(--text-faint);
+    font-family: theme("fontFamily.sans");
+    font-size: 0.9em;
+  }
+
+  .prose-reader blockquote {
+    margin: 1.6rem 0;
+    padding: 0.2rem 0 0.2rem 1.25rem;
+    border-left: 2px solid var(--accent);
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .prose-reader blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  .prose-reader hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  /* Inline code (anything not inside a fenced block). */
+  .prose-reader :not(pre) > code {
+    font-family: theme("fontFamily.mono");
+    font-size: 0.86em;
+    background-color: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.12em 0.36em;
+    word-break: break-word;
+  }
+
+  .prose-reader pre {
+    font-family: theme("fontFamily.mono");
+    background-color: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    margin: 0 0 1.5rem;
+    overflow-x: auto;
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .prose-reader pre code {
+    font-family: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: inherit;
+    color: var(--text);
+  }
+
+  .prose-reader .table-scroll {
+    margin: 0 0 1.5rem;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .prose-reader table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: theme("fontFamily.sans");
+    font-size: 0.92rem;
+  }
+
+  .prose-reader :is(th, td) {
+    padding: 0.55rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .prose-reader th {
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--surface-muted);
+    white-space: nowrap;
+  }
+
+  .prose-reader tbody tr:last-child :is(th, td) {
+    border-bottom: 0;
+  }
+
+  .prose-reader img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

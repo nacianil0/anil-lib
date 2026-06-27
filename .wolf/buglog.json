@@ -8,7 +8,12 @@
       "file": ".wolf",
       "root_cause": "The folder had no local project marker, so OpenWolf selected a parent project root in the user home directory.",
       "fix": "Created a temporary .project marker, ran openwolf init successfully in anil-lib, removed the marker, and rescanned anatomy.",
-      "tags": ["openwolf", "project-root", "sandbox", "init"],
+      "tags": [
+        "openwolf",
+        "project-root",
+        "sandbox",
+        "init"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-26T22:57:18Z"
@@ -20,7 +25,12 @@
       "file": ".wolf/buglog.json",
       "root_cause": "The shell command mixed nested single and double quotes inside one regular expression.",
       "fix": "Split the scan into two simpler ripgrep expressions; the rerun completed and found no credentials.",
-      "tags": ["shell", "ripgrep", "secret-scan", "quoting"],
+      "tags": [
+        "shell",
+        "ripgrep",
+        "secret-scan",
+        "quoting"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-26T22:59:00Z"
@@ -32,7 +42,12 @@
       "file": "*.md",
       "root_cause": "The source research documents already contain trailing spaces and blank lines.",
       "fix": "Preserved the imported source text unchanged and treated this as a non-blocking content-format warning for the initial archive commit.",
-      "tags": ["git", "markdown", "whitespace", "import"],
+      "tags": [
+        "git",
+        "markdown",
+        "whitespace",
+        "import"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-26T23:01:00Z"
@@ -44,7 +59,13 @@
       "file": ".git/config",
       "root_cause": "The repository used an HTTPS remote before GitHub CLI credentials were configured; no SSH private key was available and the connected GitHub app could not write repository contents.",
       "fix": "Installed GitHub CLI 2.95.0, authenticated the nacianil0 account through GitHub device login, configured HTTPS Git credentials, and pushed main successfully.",
-      "tags": ["git", "github", "authentication", "gh", "push"],
+      "tags": [
+        "git",
+        "github",
+        "authentication",
+        "gh",
+        "push"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-26T23:10:16Z"
@@ -56,10 +77,134 @@
       "file": "/Users/nacianilakman/.gitconfig",
       "root_cause": "The GitHub CLI session was valid, but the Git credential helper entry was missing from the active global Git configuration.",
       "fix": "Ran `gh auth setup-git` to register `gh auth git-credential`, then pushed commit 58fe8dd successfully.",
-      "tags": ["git", "github", "credential-helper", "gh", "push"],
-      "related_bugs": ["bug-004"],
+      "tags": [
+        "git",
+        "github",
+        "credential-helper",
+        "gh",
+        "push"
+      ],
+      "related_bugs": [
+        "bug-004"
+      ],
       "occurrences": 1,
       "last_seen": "2026-06-26T23:34:12Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-06-27T00:25:25.465Z",
+      "error_message": "Significant refactor of ",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→15 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T00:25:25.465Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-06-27T03:22:00Z",
+      "error_message": "ESLint: '.wolf/hooks/*.js' Empty block statement (no-empty); 'last' assigned but never used in reader.spec.ts",
+      "file": "eslint.config.mjs, tests/e2e/reader.spec.ts",
+      "root_cause": "The flat ESLint config did not ignore OpenWolf's own .wolf/hooks scripts (which use empty catch blocks), and the e2e spec declared an unused 'last' binding.",
+      "fix": "Added '.wolf/**' to the eslint ignores list and removed the unused 'last' variable from the Playwright spec.",
+      "tags": [
+        "eslint",
+        "flat-config",
+        "openwolf",
+        "no-empty",
+        "unused-vars"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T03:22:00Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-06-27T03:24:00Z",
+      "error_message": "Playwright: expect(locator('main button[aria-pressed=\"true\"]')).toBeVisible() failed - element(s) not found after clicking the completion toggle",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Against `next dev`, the click on the completion button landed before React finished hydrating, so the onClick handler never ran and aria-pressed stayed false.",
+      "fix": "Wrapped the toggle in expect(async () => { if (notPressed) await click(); await expect(pressed).toBeVisible(); }).toPass(), so the click retries until hydration completes while only clicking when still unpressed (never double-toggling).",
+      "tags": [
+        "playwright",
+        "hydration",
+        "next-dev",
+        "race-condition",
+        "e2e"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T03:25:00Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-06-27T01:20:31.630Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/content/labels.ts",
+      "root_cause": "Had \"Okuma listen hazırlanıyor…\"",
+      "fix": "Changed to \"Kilidi kapat\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T01:20:31.630Z"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-06-27T04:43:24.224Z",
+      "error_message": "Missing await",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T04:43:24.224Z"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-06-27T04:59:33.733Z",
+      "error_message": "Missing await",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T04:59:33.733Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-06-27T05:10:06.608Z",
+      "error_message": "Null/undefined access in ",
+      "file": "tests/e2e/auth.spec.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T05:10:06.608Z"
     }
   ]
 }

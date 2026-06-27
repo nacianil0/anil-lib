@@ -16,6 +16,11 @@ coverage/
 *.log
 .claude/settings.local.json
 
+# Test artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
 # OpenWolf runtime artifacts
 .wolf/token-ledger.json
 .wolf/hooks/_session.json

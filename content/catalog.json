@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 2,
+  "classificationVersion": 1,
+  "generatedAt": "2026-06-26T23:43:35Z",
+  "articles": [
+    {
+      "articleId": "article_2fb55e6e-a52a-4e8c-8e40-85719f34e57d",
+      "title": "Modern Yapay Zeka: Birikim ve Dönüm Noktaları",
+      "slug": "modern-yapay-zeka-birikim-ve-donum-noktalari",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 1,
+      "summary": "Yapay zekânın 1950'lerden günümüze uzanan tarihsel birikimini ve LLM'lerin doğuşuna yol açan dönüm noktalarını inceler.",
+      "tags": [
+        "ai-tarihi",
+        "yapay-zeka",
+        "donum-noktalari",
+        "sinir-aglari",
+        "derin-ogrenme"
+      ],
+      "contentHash": "sha256:0e633552dc32a481c06bd59fd79a0bd2a3409bba0026ede53dc775334ca8c771",
+      "path": "content/articles/foundations/modern-yapay-zeka-birikim-ve-donum-noktalari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_7f309312-f24c-4a9e-b58f-503f3912bab8",
+      "title": "LLM'ler ve Sonraki Token Paradigması: 2026 Analizi",
+      "slug": "llmler-ve-sonraki-token-paradigmasi",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 2,
+      "summary": "LLM'lerin sonraki-token tahmini hedefinin ötesinde öğrendikleri temsilleri ve ek eğitim aşamalarının bu paradigmayı nasıl genişlettiğini analiz eder.",
+      "tags": [
+        "llm",
+        "sonraki-token",
+        "next-token-prediction",
+        "transformer",
+        "dil-modeli"
+      ],
+      "contentHash": "sha256:0627eb838677834f8ea346cfd632f084730b9d166efc00acd9da20ab4643720b",
+      "path": "content/articles/foundations/llmler-ve-sonraki-token-paradigmasi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_0ccce8a2-b0bf-4654-9bd2-6a127e8c6325",
+      "title": "Anlamın Temsili: Representation Learning, Embedding ve LLM'lerde Anlamın Geometrisi",
+      "slug": "anlamin-temsili-representation-learning-embedding",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 3,
+      "summary": "Embedding ve representation learning kavramlarını, LLM katmanlarında anlamın geometrik ve dağıtılmış biçimde nasıl temsil edildiğini teknik derinlikte açıklar.",
+      "tags": [
+        "representation-learning",
+        "embedding",
+        "vektor-uzayi",
+        "anlam-geometrisi",
+        "llm"
+      ],
+      "contentHash": "sha256:4ef92ff01dc2821ba19620f57b3f69dad14d5659f4f987ba6f7e16886936fb3f",
+      "path": "content/articles/models-and-training/anlamin-temsili-representation-learning-embedding.md",
+      "relatedArticleIds": [
+        "article_68f8ef63-a141-44fe-a25a-a3c003bde4bd"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_68f8ef63-a141-44fe-a25a-a3c003bde4bd",
+      "title": "Transformer Mimarisi: Bilgi Akışı, Temsil Dönüşümü ve Ölçeklenebilir Hesaplama",
+      "slug": "transformer-mimarisi-bilgi-akisi-temsil-donusumu",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 4,
+      "summary": "Transformer mimarisini residual stream, attention, MLP ve pozisyon kodlaması eksenleriyle ele alarak bilgi akışı ve temsil dönüşümü mekanizmalarını detaylandırır.",
+      "tags": [
+        "transformer",
+        "attention",
+        "residual-stream",
+        "mlp",
+        "mimari"
+      ],
+      "contentHash": "sha256:35177b5389d27950dfc3d0e7562e0d74a52ab6b75447fa410adf3cd9d4e8db27",
+      "path": "content/articles/models-and-training/transformer-mimarisi-bilgi-akisi-temsil-donusumu.md",
+      "relatedArticleIds": [
+        "article_0ccce8a2-b0bf-4654-9bd2-6a127e8c6325"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_3e813c35-db23-49e7-9993-2885362a8068",
+      "title": "Scaling Laws ve LLM Kabiliyetinin Doğuşu",
+      "slug": "scaling-laws-ve-llm-kabiliyetinin-dogusu",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 5,
+      "summary": "Model boyutu, veri kalitesi, eğitim bütçesi ve test-time compute arasındaki etkileşimlerin ölçek yasalarını nasıl şekillendirdiğini ve kabiliyet doğuşunu inceler.",
+      "tags": [
+        "scaling-laws",
+        "llm",
+        "emergent-capabilities",
+        "veri-kalitesi",
+        "test-time-compute"
+      ],
+      "contentHash": "sha256:e3a03b36a561c5a74530a138984985b06856c0f76899b7deaf4edd637cec36a6",
+      "path": "content/articles/models-and-training/scaling-laws-ve-llm-kabiliyetinin-dogusu.md",
+      "relatedArticleIds": [
+        "article_fdbb2b23-0c87-4162-ba32-91dc1d276c95"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_d4ac7f65-e8cc-4b73-94b3-5328d0907bc8",
+      "title": "Pretraining, Post-training ve Alignmentın Gerçek Rolü",
+      "slug": "pretraining-post-training-ve-alignmentin-rolu",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 6,
+      "summary": "Bir LLM'in ham dil modelinden kullanılabilir asistana dönüşüm sürecinde pretraining, instruction tuning ve alignment aşamalarının rollerini ayrıştırır.",
+      "tags": [
+        "pretraining",
+        "post-training",
+        "alignment",
+        "instruction-tuning",
+        "rlhf"
+      ],
+      "contentHash": "sha256:482a5be0680d06eae3d4736347adfe102d32e15e61119cdc23dff22dc9dd6d31",
+      "path": "content/articles/models-and-training/pretraining-post-training-ve-alignmentin-rolu.md",
+      "relatedArticleIds": [
+        "article_fdbb2b23-0c87-4162-ba32-91dc1d276c95"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_fdbb2b23-0c87-4162-ba32-91dc1d276c95",
+      "title": "LLM Ön Eğitimi, Ölçek Yasaları ve Öğrenme Dinamikleri: Teknik Bir İnceleme",
+      "slug": "llm-on-egitimi-olcek-yasalari-ogrenme-dinamikleri",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 7,
+      "summary": "Ön eğitim hedefi, optimizasyon dinamikleri, ölçek yasaları ve test-zamanı hesaplama kaymasını teknik düzeyde inceleyen kapsamlı bir derleme.",
+      "tags": [
+        "on-egitim",
+        "olcek-yasalari",
+        "optimizasyon",
+        "ogrenme-dinamikleri",
+        "test-zamani"
+      ],
+      "contentHash": "sha256:7b32ed2c3d5115cb1c960810460c06b872350077666a812ed6aa10c5e7693bdb",
+      "path": "content/articles/models-and-training/llm-on-egitimi-olcek-yasalari-ogrenme-dinamikleri.md",
+      "relatedArticleIds": [
+        "article_3e813c35-db23-49e7-9993-2885362a8068",
+        "article_d4ac7f65-e8cc-4b73-94b3-5328d0907bc8"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_1907ac99-989b-41e0-86b5-40095b27c100",
+      "title": "LLM Reasoning, Test-Time Compute ve Verification",
+      "slug": "llm-reasoning-test-time-compute-ve-verification",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 8,
+      "summary": "LLM'lerde reasoning'i aday üretme, arama, doğrulama ve durdurma döngüsü olarak ele alarak test-time compute'un performansa etkisini açıklar.",
+      "tags": [
+        "reasoning",
+        "test-time-compute",
+        "verification",
+        "llm",
+        "arama"
+      ],
+      "contentHash": "sha256:5ae4b9514af61abd8365439df9f68d26e137d6ddcf909ee11810adb2ab2a8ec4",
+      "path": "content/articles/reasoning-and-memory/llm-reasoning-test-time-compute-ve-verification.md",
+      "relatedArticleIds": [
+        "article_000b0a9e-a406-46aa-b5c5-2b0b0e779ad1"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_000b0a9e-a406-46aa-b5c5-2b0b0e779ad1",
+      "title": "LLM Reasoning: Test-Time Compute, Arama, Doğrulama ve Süreç Denetimi Üzerine Teknik Bir İnceleme",
+      "slug": "llm-reasoning-teknik-inceleme",
+      "category": "reasoning-and-memory",
+      "level": "advanced",
+      "readingOrder": 9,
+      "summary": "Test-time compute, sampling/search stratejileri, process/outcome reward ve doğrulama mekanizmalarını teknik derinlikte analiz eden kapsamlı inceleme.",
+      "tags": [
+        "reasoning",
+        "test-time-compute",
+        "process-reward",
+        "dogrulama",
+        "surec-denetimi"
+      ],
+      "contentHash": "sha256:382b6b158b9259fc3c87d7f3612723eaee2748091637abc2fffaffb10582f1a1",
+      "path": "content/articles/reasoning-and-memory/llm-reasoning-teknik-inceleme.md",
+      "relatedArticleIds": [
+        "article_1907ac99-989b-41e0-86b5-40095b27c100"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_97b8ffae-dc04-43a2-8418-5089a4a99b6a",
+      "title": "Uzun Context, Bellek ve Long-Horizon Understanding",
+      "slug": "uzun-context-bellek-ve-long-horizon-understanding",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 10,
+      "summary": "Uzun bağlam penceresi ile gerçek bellek arasındaki farkı, dikkat mekanizmalarının sınırlarını ve uzun-horizon anlama problemlerini inceler.",
+      "tags": [
+        "uzun-baglam",
+        "bellek",
+        "long-context",
+        "dikkat-mekanizmasi"
+      ],
+      "contentHash": "sha256:2f0057b9d9aab5005c7047a39600096670b284db9f68c949e2d8b06774ec20fe",
+      "path": "content/articles/reasoning-and-memory/uzun-context-bellek-ve-long-horizon-understanding.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_b4ad2667-6930-49fd-9c04-624db6ba1b49",
+      "title": "Agent Sistemlerini Kontrol Döngüsü Olarak Okumak",
+      "slug": "agent-sistemlerini-kontrol-dongusu-olarak-okumak",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 11,
+      "summary": "LLM agent sistemlerini klasik kontrol kuramı ve reinforcement learning çerçevesiyle birleştirerek kapalı çevrim kontrol döngüsü olarak analiz eder.",
+      "tags": [
+        "agent",
+        "kontrol-dongusu",
+        "reinforcement-learning",
+        "arac-kullanimi",
+        "llm"
+      ],
+      "contentHash": "sha256:28fbafbbe42373b11e7ab3aded9f2f97983f99bc58db3b639fa5cd35374ec2d3",
+      "path": "content/articles/agents-and-retrieval/agent-sistemlerini-kontrol-dongusu-olarak-okumak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_f1fbd490-d51d-4e38-8eb6-95dcb4f4aec1",
+      "title": "RAG'den Retrieval-Reasoning Sistemlerine",
+      "slug": "ragden-retrieval-reasoning-sistemlerine",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 12,
+      "summary": "Klasik RAG'den retrieval-reasoning sistemlerine evrilme sürecini, arama ve akıl yürütme entegrasyonu ile mimari tasarım kararlarını inceler.",
+      "tags": [
+        "rag",
+        "retrieval",
+        "retrieval-reasoning",
+        "bilgi-erisimi",
+        "arama"
+      ],
+      "contentHash": "sha256:6ad1fd8d4bfb2c34af254256020fd3a516435cda2987c24879e792dca48739c4",
+      "path": "content/articles/agents-and-retrieval/ragden-retrieval-reasoning-sistemlerine.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_c5f79dc9-fa9a-423e-82a5-cee69326fe91",
+      "title": "LLM Güvenilirliği: Belirsizlik, Kalibrasyon ve Şeffaflık",
+      "slug": "llm-guvenilirligi-belirsizlik-kalibrasyon-seffaflik",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 13,
+      "summary": "LLM güvenilirliğini doğruluk oranının ötesinde belirsizlik, kalibrasyon ve şeffaflık boyutlarıyla ele alarak güvenilir yapay zekâ gereksinimlerini tartışır.",
+      "tags": [
+        "guvenilirlik",
+        "belirsizlik",
+        "kalibrasyon",
+        "seffaflik",
+        "llm"
+      ],
+      "contentHash": "sha256:b696a98bbdf87543c855cb0add466a82c69be7d03618b911d243d992fd8c904c",
+      "path": "content/articles/safety-and-evaluation/llm-guvenilirligi-belirsizlik-kalibrasyon-seffaflik.md",
+      "relatedArticleIds": [
+        "article_9e7cdfdc-8292-472f-ad9f-559f6269a573"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_f1802ee7-fa94-4575-8926-8e3e494fa6a5",
+      "title": "Mechanistic Interpretability ve Modelin İçindeki Temsiller",
+      "slug": "mechanistic-interpretability-ve-modelin-icindeki-temsiller",
+      "category": "safety-and-evaluation",
+      "level": "advanced",
+      "readingOrder": 14,
+      "summary": "Devre analizi, sparse autoencoder ve aktivasyon müdahalesi gibi nedensel araçlarla modelin iç temsillerini ve hesaplama zincirlerini inceleme yöntemlerini açıklar.",
+      "tags": [
+        "mechanistic-interpretability",
+        "devre-analizi",
+        "sparse-autoencoder",
+        "temsiller"
+      ],
+      "contentHash": "sha256:247743124e2bd652c28e52e882b81312cc17582056b9810776317723211fd0f9",
+      "path": "content/articles/safety-and-evaluation/mechanistic-interpretability-ve-modelin-icindeki-temsiller.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_9e7cdfdc-8292-472f-ad9f-559f6269a573",
+      "title": "LLM Güvenilirlik Bilimi: Belirsizlik, Halüsinasyon ve Değerlendirme Tasarımı",
+      "slug": "llm-guvenilirlik-bilimi-belirsizlik-halusilasyon-degerlendirme",
+      "category": "safety-and-evaluation",
+      "level": "advanced",
+      "readingOrder": 15,
+      "summary": "Kalibrasyon, epistemik/aleatorik belirsizlik, halüsinasyon, factuality, benchmark güvenilirliği ve LLM-as-judge konularını teknik-kavramsal düzeyde derler.",
+      "tags": [
+        "guvenilirlik",
+        "halusilasyon",
+        "kalibrasyon",
+        "degerlendirme",
+        "llm-as-judge",
+        "benchmark"
+      ],
+      "contentHash": "sha256:da2b5634656816b4ea22d34df574ae49f1fa552d19a0b4ce42abea5b25b9055b",
+      "path": "content/articles/safety-and-evaluation/llm-guvenilirlik-bilimi-belirsizlik-halusilasyon-degerlendirme.md",
+      "relatedArticleIds": [
+        "article_c5f79dc9-fa9a-423e-82a5-cee69326fe91"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_1691754e-e287-4e54-a0e4-a6ba3b9fa90f",
+      "title": "LLM Ötesi Yapay Zekâ: Çoklu-Modalite, Verimlilik ve Dünya Modelleri",
+      "slug": "llm-otesi-yapay-zeka-coklu-modalite-verimlilik",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 16,
+      "summary": "Çoklu modalite, hesaplama verimliliği ve dünya modelleme yaklaşımlarının metin-dil modellerinin ötesinde AI'nin geleceğini nasıl şekillendireceğini analiz eder.",
+      "tags": [
+        "multimodal",
+        "verimlilik",
+        "dunya-modelleri",
+        "coklu-modalite"
+      ],
+      "contentHash": "sha256:51ba0718acb0c38b4f8da725674b62af0cc445eb142f55babf62e16f4e1bbc36",
+      "path": "content/articles/multimodal-and-future/llm-otesi-yapay-zeka-coklu-modalite-verimlilik.md",
+      "relatedArticleIds": [
+        "article_0c98cd4a-3e97-4228-a9cb-e24cfeb9d475"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_0c98cd4a-3e97-4228-a9cb-e24cfeb9d475",
+      "title": "Multimodal, Efficient AI ve World Models",
+      "slug": "multimodal-efficient-ai-ve-world-models",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 17,
+      "summary": "Multimodal modeller, efficient AI teknikleri ve world models kavramını derinlemesine inceleyerek yapay zekânın gelecek yönlerini teknik düzeyde değerlendirir.",
+      "tags": [
+        "multimodal",
+        "efficient-ai",
+        "world-models",
+        "gelecek-yonleri"
+      ],
+      "contentHash": "sha256:4fea7c728f62a4416e6a4602fd62b7bea1442eeaa0dc0453a52d0a822db53dcf",
+      "path": "content/articles/multimodal-and-future/multimodal-efficient-ai-ve-world-models.md",
+      "relatedArticleIds": [
+        "article_1691754e-e287-4e54-a0e4-a6ba3b9fa90f"
+      ],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_a25eaac3-1025-4423-acd7-706843f3efa8",
+      "title": "Claude'u Nasıl Okumalıyız?",
+      "slug": "claudeu-nasil-okumaliyiz",
+      "category": "case-studies",
+      "level": "intermediate",
+      "readingOrder": 18,
+      "summary": "Anthropic'in Claude model ailesini güvenlik-uyum felsefesi, çok modlu yetenekleri ve ürün ekosistemi açısından değerlendiren kapsamlı bir inceleme.",
+      "tags": [
+        "claude",
+        "anthropic",
+        "model-ailesi",
+        "guvenlik",
+        "constitutional-ai",
+        "urun-ekosistemi"
+      ],
+      "contentHash": "sha256:702059db6ac97bd8a8799073a778bd8de62a94e40a4526f0dfd79f8042424836",
+      "path": "content/articles/case-studies/claudeu-nasil-okumaliyiz.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    }
+  ]
+}
