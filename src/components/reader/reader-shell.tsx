@@ -6,7 +6,10 @@ import { TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import { CATEGORY_LABELS, LEVEL_LABELS, UI } from "@/lib/content/labels";
 import type { AdjacentArticle, ArticleDescriptor, CurrentArticle } from "@/lib/content/types";
 import { ReaderProgressProvider, useReaderProgress } from "@/lib/progress/use-reader-progress";
-import { ReaderPreferencesProvider, useReaderPreferences } from "@/lib/preferences/use-reader-preferences";
+import {
+  ReaderPreferencesProvider,
+  useReaderPreferences,
+} from "@/lib/preferences/use-reader-preferences";
 import { ReaderSidebar } from "./reader-sidebar";
 import { MobileReadingList } from "./mobile-reading-list";
 import { ArticleProgress } from "./article-progress";
@@ -163,7 +166,7 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
             </div>
             <div className="flex shrink-0 items-center gap-3">
               {!preferences.focusMode && (
-                <p className="hidden items-center gap-2 font-sans text-2xs text-text-muted sm:flex mr-1">
+                <p className="mr-1 hidden items-center gap-2 font-sans text-2xs text-text-muted sm:flex">
                   <span>{LEVEL_LABELS[current.level]}</span>
                   <span className="text-text-faint">·</span>
                   <span>{UI.readingTime(current.readingMinutes)}</span>

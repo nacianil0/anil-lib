@@ -18,7 +18,7 @@ describe("ArticleToc helpers", () => {
         <h2 class="no-id">Ignore no id</h2>
       `;
       document.body.appendChild(div);
-      
+
       const headings = extractHeadings(div);
       expect(headings.length).toBe(3);
       expect(headings[0].id).toBe("intro");

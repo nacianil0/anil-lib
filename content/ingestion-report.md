@@ -26,6 +26,8 @@
 
 ## Yeni Eklenen Makaleler
 
+### Sınıflandırma 00
+
 | Sıra | Başlık | Kategori | Seviye | Hedef Yol |
 |:----:|--------|----------|--------|-----------|
 | 1 | Modern Yapay Zeka: Birikim ve Dönüm Noktaları | foundations | beginner | `content/articles/foundations/modern-yapay-zeka-birikim-ve-donum-noktalari.md` |
@@ -73,6 +75,8 @@ Exact duplicate bulunamadı. Tüm 18 makale benzersiz content hash'e sahip.
 
 ## Son Okuma Sırası
 
+### Sınıflandırma 00
+
 1. **Modern Yapay Zeka: Birikim ve Dönüm Noktaları** (foundations, beginner)
 2. **LLM'ler ve Sonraki Token Paradigması: 2026 Analizi** (foundations, beginner)
 3. **Anlamın Temsili: Representation Learning, Embedding ve LLM'lerde Anlamın Geometrisi** (models-and-training, intermediate)
@@ -103,6 +107,8 @@ Exact duplicate bulunamadı. Tüm 18 makale benzersiz content hash'e sahip.
 | path benzersizliği | ✓ Geçti |
 | content_hash benzersizliği | ✓ Geçti |
 | readingOrder benzersizliği ve 1..18 kesintisiz | ✓ Geçti |
+| classificationBatch değerleri Batch 0 ve tek bitişik blok | ✓ Geçti |
+| Catalog/frontmatter batch alanları eşleşiyor | ✓ Geçti |
 | Kategori değerleri kontrollü listede | ✓ Geçti |
 | Level değerleri kontrollü listede | ✓ Geçti |
 | Exact duplicate dosyalar kataloglanmamış | ✓ Geçti (duplicate yok) |

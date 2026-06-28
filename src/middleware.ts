@@ -10,11 +10,7 @@ import {
 const PUBLIC_FILE = /\.(?:avif|gif|ico|jpg|jpeg|png|svg|webp|woff2?)$/i;
 
 function isPublicPath(pathname: string): boolean {
-  return (
-    pathname === "/login" ||
-    pathname.startsWith("/_next/") ||
-    PUBLIC_FILE.test(pathname)
-  );
+  return pathname === "/login" || pathname.startsWith("/_next/") || PUBLIC_FILE.test(pathname);
 }
 
 export async function middleware(request: NextRequest) {

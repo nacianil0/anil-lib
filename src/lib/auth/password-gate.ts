@@ -90,10 +90,7 @@ export function isGateIntended(): boolean {
   return Boolean(process.env.SITE_PASSWORD_SHA256 || process.env.AUTH_COOKIE_SECRET);
 }
 
-export async function verifyPasswordHash(
-  password: string,
-  expectedHash: string,
-): Promise<boolean> {
+export async function verifyPasswordHash(password: string, expectedHash: string): Promise<boolean> {
   const expectedBytes = hexToBytes(expectedHash);
   if (!expectedBytes) return false;
   const actualBytes = hexToBytes(await hashPassword(password));
@@ -101,10 +98,7 @@ export async function verifyPasswordHash(
   return timingSafeBytesEqual(actualBytes, expectedBytes);
 }
 
-export async function buildSignedSession(
-  secret: string,
-  nowMs = Date.now(),
-): Promise<string> {
+export async function buildSignedSession(secret: string, nowMs = Date.now()): Promise<string> {
   const payload = base64UrlEncode(
     JSON.stringify({
       exp: nowMs + AUTH_COOKIE_MAX_AGE_SECONDS * 1000,

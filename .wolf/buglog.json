@@ -205,6 +205,74 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-27T05:10:06.608Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-06-28T20:18:00Z",
+      "error_message": "Classification batch schema fields existed, but catalog-level Batch 0, gap, and interleaving invariants were not enforced",
+      "file": "src/lib/content/catalog.ts, src/lib/content/articles.ts",
+      "root_cause": "The initial implementation validated each batch value independently and omitted cross-record ordering plus catalog/frontmatter batch-version comparisons.",
+      "fix": "Added ordered catalog invariants for the baseline, contiguous batch numbers, and non-interleaved blocks; also compare classification version and batch against frontmatter during article rendering.",
+      "tags": [
+        "classification-batch",
+        "catalog",
+        "validation",
+        "frontmatter"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T20:18:00Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-06-28T20:20:00Z",
+      "error_message": "The folio header rendered visually as 'Sınıflandırma00' even though its intended text included spacing",
+      "file": "src/components/reader/reading-list.tsx",
+      "root_cause": "Whitespace at the boundary of adjacent flex children collapsed and CSS layout did not create an accessible textual separator.",
+      "fix": "Use flex gap for visible separation and set the complete 'Sınıflandırma 00 · N makale' phrase as the heading's accessible label; updated component and E2E assertions to target that contract.",
+      "tags": [
+        "accessibility",
+        "classification-batch",
+        "flexbox",
+        "visual-qc"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T20:20:00Z"
+    },
+    {
+      "id": "bug-015",
+      "timestamp": "2026-06-28T20:12:00Z",
+      "error_message": "Bundled pnpm dependency setup aborted on a non-interactive modules purge and minimum-release-age policy",
+      "file": "node_modules, pnpm-lock.yaml",
+      "root_cause": "The runtime selected pnpm 11 while the project pins pnpm 10.22.0; the newer wrapper applied a release-age policy to the already committed frozen lockfile.",
+      "fix": "Reinstalled from the unchanged frozen lockfile through `corepack pnpm`, which selected the repository-pinned pnpm 10.22.0, then rebuilt esbuild.",
+      "tags": [
+        "pnpm",
+        "dependencies",
+        "tooling",
+        "supply-chain-policy"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T20:12:00Z"
+    },
+    {
+      "id": "bug-016",
+      "timestamp": "2026-06-28T20:25:00Z",
+      "error_message": "`pnpm format:check` reported style differences in nine pre-existing source files",
+      "file": "src/components/reader, src/lib/auth, src/lib/preferences, src/middleware.ts",
+      "root_cause": "The committed source had not been normalized by the formatter version resolved in the frozen lockfile.",
+      "fix": "Ran the repository's pinned Prettier command only on the nine listed files, then reran the complete quality suite.",
+      "tags": [
+        "prettier",
+        "format-check",
+        "quality-gate",
+        "tooling"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T20:25:00Z"
     }
   ]
 }

@@ -33,7 +33,10 @@ export const UI = {
   closeReadingList: "Okuma listesini kapat",
   readingList: "Okuma listesi",
   batchAriaLabel: "Sınıflandırılmış okuma listesi",
-  batchHeader: (batch: number, count: number) => `Sınıflandırma ${pad(batch)} · ${count} makale`,
+  classification: "Sınıflandırma",
+  articleCount: (count: number) => `${count} makale`,
+  batchHeader: (batch: number, count: number) =>
+    `Sınıflandırma ${pad(batch)} · ${count} makale`,
   progressSummary: (done: number, total: number) => `${done}/${total} bölüm tamamlandı`,
   chapter: (order: number, total: number) => `Bölüm ${pad(order)} / ${total}`,
   readingTime: (minutes: number) => `${minutes} dk okuma`,

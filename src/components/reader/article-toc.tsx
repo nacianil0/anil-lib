@@ -23,7 +23,11 @@ export function extractHeadings(container: HTMLElement | null): HeadingInfo[] {
   }));
 }
 
-export function computeActiveHeading(headings: HeadingInfo[], scrollY: number, offset: number): string | null {
+export function computeActiveHeading(
+  headings: HeadingInfo[],
+  scrollY: number,
+  offset: number,
+): string | null {
   let activeId: string | null = null;
   for (const heading of headings) {
     if (heading.top <= scrollY + offset + 4) {
@@ -35,7 +39,11 @@ export function computeActiveHeading(headings: HeadingInfo[], scrollY: number, o
   return activeId;
 }
 
-export function ArticleToc({ containerRef }: { containerRef: React.RefObject<HTMLElement | null> }) {
+export function ArticleToc({
+  containerRef,
+}: {
+  containerRef: React.RefObject<HTMLElement | null>;
+}) {
   const [headings, setHeadings] = useState<HeadingInfo[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -72,7 +80,7 @@ export function ArticleToc({ containerRef }: { containerRef: React.RefObject<HTM
         // recalculate headings top just in case they moved
         const fresh = extractHeadings(containerRef.current);
         if (fresh.length > 0) {
-            setActiveId(computeActiveHeading(fresh, window.scrollY, TOOLBAR_OFFSET_PX));
+          setActiveId(computeActiveHeading(fresh, window.scrollY, TOOLBAR_OFFSET_PX));
         }
       });
     };
@@ -134,10 +142,12 @@ export function ArticleToc({ containerRef }: { containerRef: React.RefObject<HTM
           ref={panelRef}
           role="dialog"
           aria-label={UI.tableOfContents}
-          className="absolute right-0 top-full mt-2 w-64 max-h-[60vh] overflow-y-auto rounded-lg border border-border bg-surface shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:w-full max-sm:max-h-[50vh] max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0 sm:right-auto z-50 p-3 font-sans"
+          className="absolute right-0 top-full z-50 mt-2 max-h-[60vh] w-64 overflow-y-auto rounded-lg border border-border bg-surface p-3 font-sans shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:max-h-[50vh] max-sm:w-full max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0 sm:right-auto"
         >
           <div className="mb-2 px-2">
-            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">{UI.tableOfContents}</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">
+              {UI.tableOfContents}
+            </span>
           </div>
           <ul className="flex flex-col">
             {headings.map((h) => {
@@ -151,7 +161,7 @@ export function ArticleToc({ containerRef }: { containerRef: React.RefObject<HTM
                       h.level === 3 ? "ml-4" : ""
                     } ${
                       isActive
-                        ? "bg-surface-muted text-accent font-medium"
+                        ? "bg-surface-muted font-medium text-accent"
                         : "text-text hover:bg-surface-muted hover:text-text"
                     }`}
                   >

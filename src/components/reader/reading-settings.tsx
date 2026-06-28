@@ -49,7 +49,8 @@ export function ReadingSettings() {
     if (currentSizeIndex > 0) updatePreference("fontScale", sizes[currentSizeIndex - 1]);
   }
   function increaseSize() {
-    if (currentSizeIndex < sizes.length - 1) updatePreference("fontScale", sizes[currentSizeIndex + 1]);
+    if (currentSizeIndex < sizes.length - 1)
+      updatePreference("fontScale", sizes[currentSizeIndex + 1]);
   }
 
   function handleReset() {
@@ -84,7 +85,7 @@ export function ReadingSettings() {
           ref={panelRef}
           role="dialog"
           aria-label={UI.readingSettings}
-          className="absolute right-0 top-full mt-2 w-[18rem] rounded-lg border border-border bg-surface shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:w-full max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0 sm:right-auto z-50 p-4 font-sans text-text"
+          className="absolute right-0 top-full z-50 mt-2 w-[18rem] rounded-lg border border-border bg-surface p-4 font-sans text-text shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:w-full max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0 sm:right-auto"
         >
           {/* Text Size */}
           <div className="mb-5 flex items-center justify-between">
@@ -98,7 +99,9 @@ export function ReadingSettings() {
               >
                 <Minus className="h-4 w-4" />
               </button>
-              <span className="w-10 text-center text-sm font-medium tabular-nums">{sizePercentage}%</span>
+              <span className="w-10 text-center text-sm font-medium tabular-nums">
+                {sizePercentage}%
+              </span>
               <button
                 disabled={currentSizeIndex >= sizes.length - 1}
                 onClick={increaseSize}
@@ -124,7 +127,11 @@ export function ReadingSettings() {
                       : "text-text-muted hover:text-text"
                   }`}
                 >
-                  {v === "compact" ? UI.spacingCompact : v === "balanced" ? UI.spacingBalanced : UI.spacingRelaxed}
+                  {v === "compact"
+                    ? UI.spacingCompact
+                    : v === "balanced"
+                      ? UI.spacingBalanced
+                      : UI.spacingRelaxed}
                 </button>
               ))}
             </div>
@@ -144,7 +151,11 @@ export function ReadingSettings() {
                       : "text-text-muted hover:text-text"
                   }`}
                 >
-                  {v === "narrow" ? UI.measureNarrow : v === "standard" ? UI.measureStandard : UI.measureWide}
+                  {v === "narrow"
+                    ? UI.measureNarrow
+                    : v === "standard"
+                      ? UI.measureStandard
+                      : UI.measureWide}
                 </button>
               ))}
             </div>
@@ -175,7 +186,8 @@ export function ReadingSettings() {
             <div className="flex rounded-md border border-border bg-surface-muted p-0.5">
               {(["light", "system", "dark"] as const).map((v) => {
                 const Icon = v === "light" ? Sun : v === "dark" ? Moon : Monitor;
-                const label = v === "light" ? UI.themeLight : v === "dark" ? UI.themeDark : UI.themeSystem;
+                const label =
+                  v === "light" ? UI.themeLight : v === "dark" ? UI.themeDark : UI.themeSystem;
                 return (
                   <button
                     key={v}
@@ -223,7 +235,9 @@ export function ReadingSettings() {
             <button
               onClick={handleReset}
               className={`rounded px-2 py-1 text-xs font-medium transition-colors ${
-                resetConfirm ? "bg-accent text-surface hover:bg-accent-fill" : "text-text hover:bg-surface-muted"
+                resetConfirm
+                  ? "bg-accent text-surface hover:bg-accent-fill"
+                  : "text-text hover:bg-surface-muted"
               }`}
             >
               {resetConfirm ? UI.resetConfirm : UI.resetPreferences}

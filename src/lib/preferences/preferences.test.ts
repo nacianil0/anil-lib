@@ -1,6 +1,11 @@
 import { describe, expect, it, beforeEach } from "vitest";
 import { DEFAULT_PREFERENCES, preferencesSchema } from "./schema";
-import { parsePreferences, readPreferences, writePreferences, isPreferencesStorageAvailable } from "./storage";
+import {
+  parsePreferences,
+  readPreferences,
+  writePreferences,
+  isPreferencesStorageAvailable,
+} from "./storage";
 import { PREFERENCES_STORAGE_KEY, THEME_STORAGE_KEY } from "@/lib/reader/version";
 
 describe("preferencesSchema", () => {
@@ -47,9 +52,15 @@ describe("storage and migration", () => {
   const store: Record<string, string> = {};
   const mockLocalStorage = {
     getItem: (key: string) => store[key] ?? null,
-    setItem: (key: string, value: string) => { store[key] = value; },
-    removeItem: (key: string) => { delete store[key]; },
-    clear: () => { Object.keys(store).forEach((k) => delete store[k]); },
+    setItem: (key: string, value: string) => {
+      store[key] = value;
+    },
+    removeItem: (key: string) => {
+      delete store[key];
+    },
+    clear: () => {
+      Object.keys(store).forEach((k) => delete store[k]);
+    },
   };
 
   beforeEach(() => {
@@ -94,8 +105,10 @@ describe("storage and migration", () => {
 
   it("handles throwing localStorage gracefully", () => {
     const setItem = window.localStorage.setItem;
-    window.localStorage.setItem = () => { throw new Error("Quota Exceeded"); };
-    
+    window.localStorage.setItem = () => {
+      throw new Error("Quota Exceeded");
+    };
+
     expect(isPreferencesStorageAvailable()).toBe(false);
     expect(readPreferences()).toEqual(DEFAULT_PREFERENCES);
     expect(() => writePreferences({ ...DEFAULT_PREFERENCES })).not.toThrow();

@@ -57,6 +57,33 @@ function assertContiguousReadingOrder(orders: number[]): void {
   }
 }
 
+function assertValidClassificationBatches(articles: CatalogArticle[]): void {
+  const ordered = [...articles].sort((a, b) => a.readingOrder - b.readingOrder);
+  const first = ordered[0];
+
+  if (first.classificationBatch !== 0) {
+    throw new Error(
+      `[content] Batch 0 başlangıç kohortu eksik; ilk makale ${first.path} Batch ${first.classificationBatch} içinde`,
+    );
+  }
+
+  let previousBatch = 0;
+  for (const article of ordered.slice(1)) {
+    const batch = article.classificationBatch;
+    if (batch < previousBatch) {
+      throw new Error(
+        `[content] Batch blokları okuma sırasında iç içe geçemez: ${article.path} Batch ${batch}, Batch ${previousBatch} bloğundan sonra geliyor`,
+      );
+    }
+    if (batch > previousBatch + 1) {
+      throw new Error(
+        `[content] Batch numaraları 0'dan başlayan kesintisiz dizi olmalı: ${article.path} için Batch ${previousBatch + 1} beklenirken Batch ${batch} bulundu`,
+      );
+    }
+    previousBatch = batch;
+  }
+}
+
 /**
  * Validate raw JSON against the catalog schema plus cross-field invariants.
  * Pure (no filesystem): the building block used by unit tests.
@@ -85,6 +112,7 @@ export function validateCatalog(input: unknown): Catalog {
     "readingOrder",
   );
   assertContiguousReadingOrder(catalog.articles.map((a) => a.readingOrder));
+  assertValidClassificationBatches(catalog.articles);
 
   for (const article of catalog.articles) {
     resolveArticlePath(article.path);

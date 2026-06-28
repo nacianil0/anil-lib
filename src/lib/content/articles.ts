@@ -38,7 +38,11 @@ export function estimateReadingMinutes(body: string): number {
 }
 
 /** Fail the build when the catalog record and the file frontmatter disagree. */
-function assertCatalogMatch(meta: CatalogArticle, fm: Frontmatter): void {
+function assertCatalogMatch(
+  meta: CatalogArticle,
+  fm: Frontmatter,
+  classificationVersion: number,
+): void {
   const mismatches: string[] = [];
   const compare = (field: string, catalogValue: unknown, fmValue: unknown) => {
     if (catalogValue !== fmValue) {
@@ -53,6 +57,8 @@ function assertCatalogMatch(meta: CatalogArticle, fm: Frontmatter): void {
   compare("level", meta.level, fm.level);
   compare("reading_order", meta.readingOrder, fm.reading_order);
   compare("content_hash", meta.contentHash, fm.content_hash);
+  compare("classification_version", classificationVersion, fm.classification_version);
+  compare("classification_batch", meta.classificationBatch, fm.classification_batch);
 
   if (mismatches.length > 0) {
     throw new Error(
@@ -89,7 +95,7 @@ export async function renderArticleBySlug(slug: string): Promise<RenderedArticle
       `[content] Frontmatter geçersiz (${article.path}):\n${formatZodError(parsedFrontmatter.error)}`,
     );
   }
-  assertCatalogMatch(article, parsedFrontmatter.data);
+  assertCatalogMatch(article, parsedFrontmatter.data, loadCatalog().classificationVersion);
 
   const processed = await createProcessor().process(body);
   const content = processed.result as ReactNode;

@@ -15,6 +15,11 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 23:18 | Completed classification-batch implementation audit and fixes | content/, prompts/, src/lib/content/, src/components/reader/, tests/e2e/ | Added Batch 0 invariants, catalog/frontmatter checks, batch folio grouping, and focused coverage | ~4200 |
+| 23:20 | Ran typecheck, lint, 98 unit/component tests, production build, and Playwright suite | repository | Green; 18 E2E passed and the future cross-batch test skipped because only Batch 0 exists | ~1800 |
+| 23:22 | Verified desktop and mobile reader visuals in the production app | reading-list.tsx, labels.ts | Folio spacing, accessible heading, mobile drawer hierarchy, and responsive layout verified | ~1200 |
+| 23:25 | Normalized nine pre-existing source files after the full format gate exposed drift | src/components/reader/, src/lib/auth/, src/lib/preferences/, src/middleware.ts | Mechanical Prettier-only rewrite; semantic gates queued for rerun | ~300 |
+| 23:28 | Completed final classification-batch quality suite | repository | Format, typecheck, lint, 98 tests, build, 18 E2E flows, desktop/mobile browser checks, and OpenWolf design QC passed; one future Batch 1 boundary test skipped | ~900 |
 | 02:45 | Ran Prompt 01: classified 18 root articles, added frontmatter with UUIDs and content hashes, git mv to content/articles/ categories, created catalog.json, ingestion-report.md, inbox/.gitkeep | content/articles/**/*.md, content/catalog.json, content/ingestion-report.md, inbox/.gitkeep | All 18 articles classified, 7 categories, reading order 1-18, all verifications passed, no-op confirmed | ~8000 |
 
 ## Session: 2026-06-26 02:50
@@ -131,3 +136,4 @@ Quality gates — all green: `pnpm typecheck`, `pnpm lint`, `pnpm test` (35 unit
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 23:24 | designqc: captured 6 screenshots (677KB, ~15000 tok) | /read/modern-yapay-zeka-birikim-ve-donum-noktalari | ready for eval | ~0 |

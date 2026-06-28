@@ -24,6 +24,7 @@
 - Article Markdown is rendered with a `unified` pipeline (`remark-parse` → `remark-gfm` → `remark-rehype` (no allowDangerousHtml) → `rehype-slug` → `rehype-react`), NOT `next-mdx-remote`. This drops raw HTML by default and never chokes on Turkish prose containing `<`/`{`.
 - `next/font/google` self-hosts Newsreader/Inter/JetBrains Mono at build time (build needs network once; no runtime external font request).
 - pnpm 10 blocks dependency build scripts: run `pnpm rebuild esbuild` (Vitest/Vite needs the esbuild binary) and `pnpm exec playwright install chromium` after install.
+- This Codex runtime may invoke a newer pnpm with a supply-chain age policy; use `corepack pnpm` to honor the repository's pinned pnpm 10.22.0 and frozen lockfile without changing dependency resolution.
 - Next 15.5 appends a `./.next/types/routes.d.ts` reference to `next-env.d.ts` and shows a dev-only floating "N" indicator (absent in `next start` production).
 - A stray `~/package-lock.json` makes Next infer the wrong workspace root; pin `outputFileTracingRoot: import.meta.dirname` in `next.config.mjs`.
 - Visual QC: `openwolf designqc --url <running-dev-url> --routes <route>` saves sectioned JPEGs to `.wolf/designqc-captures/`.
@@ -34,6 +35,8 @@
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
 
 - [2026-06-27] Do not hold explicit install or publish operations behind creative-design brainstorming. Complete independent operational work first, then use the design gate for the generated prompt or application architecture.
+- [2026-06-28] Do not report a goal as effectively done while final visual checks, repository checks, or the goal status are still open; name the remaining gates and close them before handing off.
+- [2026-06-28] Do not rely on whitespace between flex children for visible or accessible separation. Use CSS `gap` for the visual rhythm and one explicit accessible label for the complete phrase.
 - [2026-06-27] ESLint 9 flat config scans `.wolf/hooks/*.js` (OpenWolf's own scripts) and fails on their empty catch blocks; add `".wolf/**"` to the eslint `ignores`.
 - [2026-06-27] In the reader, child effects (ReaderShellInner) run before the provider's hydrate effect on mount; gate `setCurrentArticle`/`recordPosition` behind `ready`, or the first write clobbers saved localStorage progress before it is read back.
 - [2026-06-27] Node scripts placed in the session scratchpad cannot resolve the project's `node_modules`; run them with `NODE_PATH=<project>/node_modules node script.cjs`.
@@ -45,7 +48,8 @@
 
 - [2026-06-27] Build a single Next.js reader backed by a file contract instead of copying the full nacianilcom Studio monorepo; authoring UI and API services are outside the requested scope.
 - [2026-06-27] Make article ingestion idempotent with persistent `article_id` frontmatter, normalized content hashes, and `content/catalog.json`; normal reruns never reclassify existing articles.
-- [2026-06-27] Track ingestion cohorts with immutable append-only `classification_batch` values separate from `classification_version`; the current 18 articles are Batch 1 and each successful future import creates one next batch.
+- [2026-06-27] Track ingestion cohorts with immutable append-only `classification_batch` values separate from `classification_version`; the current 18 articles are the reserved Batch 0 baseline and each successful future import creates one next batch.
+- [2026-06-28] Validate classification batches as a catalog-level invariant after sorting by global reading order: Batch 0 must exist, batch numbers must be contiguous, and a lower batch may never appear after a higher batch.
 - [2026-06-27] Protect the Vercel reader with the existing nacianilcom password hash, a new app-specific env-only HMAC secret, and a seven-day signed httpOnly cookie; production must fail closed when env is missing.
 - [2026-06-27] Render article Markdown with the `unified` remark/rehype→React pipeline instead of `next-mdx-remote`: guarantees raw HTML is dropped (no `rehype-raw`), avoids MDX parsing arbitrary prose, and is fully RSC/React-19 compatible while still using gray-matter, remark-gfm, and rehype-slug.
 - [2026-06-27] Signature UI is a continuous "reading spine" threading all 18 numbered chapters in the sidebar — justified because the catalog is a single pedagogically ordered sequence, so reading-order numbers carry real information.

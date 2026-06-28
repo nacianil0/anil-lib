@@ -11,13 +11,21 @@ import {
 } from "react";
 import { PREFERENCES_STORAGE_KEY } from "@/lib/reader/version";
 import { CSS_MAPPINGS, DEFAULT_PREFERENCES, type ReaderPreferences } from "./schema";
-import { isPreferencesStorageAvailable, parsePreferences, readPreferences, writePreferences } from "./storage";
+import {
+  isPreferencesStorageAvailable,
+  parsePreferences,
+  readPreferences,
+  writePreferences,
+} from "./storage";
 
 type PreferencesContextValue = {
   ready: boolean;
   storageAvailable: boolean;
   preferences: ReaderPreferences;
-  updatePreference: <K extends keyof ReaderPreferences>(key: K, value: ReaderPreferences[K]) => void;
+  updatePreference: <K extends keyof ReaderPreferences>(
+    key: K,
+    value: ReaderPreferences[K],
+  ) => void;
   resetPreferences: () => void;
 };
 
@@ -85,7 +93,7 @@ export function ReaderPreferencesProvider({ children }: { children: ReactNode })
         return next;
       });
     },
-    []
+    [],
   );
 
   const resetPreferences = useCallback(() => {
@@ -104,7 +112,7 @@ export function ReaderPreferencesProvider({ children }: { children: ReactNode })
       updatePreference,
       resetPreferences,
     }),
-    [ready, storageAvailable, preferences, updatePreference, resetPreferences]
+    [ready, storageAvailable, preferences, updatePreference, resetPreferences],
   );
 
   return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>;

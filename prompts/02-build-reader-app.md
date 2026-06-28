@@ -134,6 +134,8 @@ Zod ile hem `content/catalog.json` kayitlarini hem makale frontmatter'ini dogrul
 - `readingOrder`: 1'den baslayan kesintisiz benzersiz tam sayilar;
 - `classificationBatch`: 0'dan baslayan negatif olmayan tam sayi.
 
+Katalog ayrica Batch 0'in varligini, batch numaralarinin bosluksuz ilerledigini ve her batch'in global `readingOrder` icinde tek bir bitisik blok oldugunu dogrulamali. Catalog ile frontmatter arasinda `classificationVersion` / `classification_version` ve `classificationBatch` / `classification_batch` dahil tum kimlik ve siralama alanlari ayni olmali.
+
 Build su durumlarda acik ve dosya yolunu gosteren bir hatayla durmali:
 
 - katalog veya makale eksik;
@@ -166,6 +168,7 @@ Bu bir operasyonel okuyucu uygulamasidir; hero, urun tanitimi veya landing page 
 - Sol tarafta sabit ve stabil genislikte sticky sidebar.
 - Sidebar makaleleri oncelikle `classificationBatch`'e gore gruplar. Her batch (ornegin `Sınıflandırma 00 · 18 makale`) icin iki basamakli (0 dolgulu) indeks ve ogretici basligi gosterilir.
 - Batch icerisinde makaleler pedagojik kategori basliklari altinda siralanir.
+- Batch indeksini monospaced folio isareti olarak goster; okuma listesi `Sınıflandırılmış okuma listesi` erisilebilir adini kullanir.
 - Her satirda sira numarasi, kisa baslik ve okunma durumu bulunur.
 - Aktif makale belirgin fakat abartisiz vurgulanir.
 - Sidebar kendi icinde scroll olabilir; aktif madde gorunur alana getirilir.

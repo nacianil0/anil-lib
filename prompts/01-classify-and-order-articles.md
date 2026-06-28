@@ -147,6 +147,7 @@ Yeni adaylari islemeden once katalogdaki her makaleyi denetle:
 - dosya mevcut mu;
 - frontmatter gecerli mi;
 - `article_id`, slug, yol, kategori ve batch katalogla uyumlu mu;
+- batch numaralari 0'dan baslayan kesintisiz tam sayilar mi ve her batch okuma sirasinda tek bir bitisik blok mu;
 - ayni ID, slug veya yol birden fazla kez kullanilmis mi;
 - normalize govde hash'i katalog ve frontmatter ile uyumlu mu.
 
@@ -176,7 +177,8 @@ Frontmatter'da ID olup katalog kaydi olmayan veya katalogda kayitli olup dosyasi
 Yeni makaleler tek bir "Sınıflandırma Batch" (ingestion cohort) oluşturur.
 
 1. **Batch Ataması**:
-   - Yeni adayları incele, duplicate'leri çıkar. Eğer en az bir yeni makale varsa, `nextBatch = max(existing classificationBatch) + 1` hesapla. İlk yeni kohort Batch 1 olur.
+   - Batch alanı olmayan legacy katalog yalnızca ilk 18 makalelik başlangıç kohortuysa hepsini Batch 0'a taşı. Bazı kayıtlarda batch eksikse, Batch 0 yoksa, numaralarda boşluk varsa veya batch blokları okuma sırasında iç içe geçiyorsa tahmin yürütme; mutasyondan önce kesin hatayı bildir ve dur.
+   - Yeni adayları incele ve exact duplicate'leri import planından çıkar. Ancak en az bir gerçekten yeni makalenin içe aktarılacağı kesinleştikten sonra `nextBatch = max(existing classificationBatch) + 1` hesapla. İlk yeni kohort Batch 1 olur.
    - Bu tek batch numarasını yeni eklenen tüm makalelere ata.
    - Exact duplicate'ler veya sadece bakım/reclassification içeren run'lar yeni batch yaratmaz.
    - Mevcut makalelerin batch'ini ASLA değiştirme.
@@ -193,11 +195,11 @@ Yeni makaleler tek bir "Sınıflandırma Batch" (ingestion cohort) oluşturur.
      7. multimodal, verimlilik ve world models;
      8. kavramsal onkosullarindan sonra case study'ler.
      Kategori icinde genellikle `beginner -> intermediate -> advanced` akisini kullan.
-   - Gerekirse tum `reading_order` / `readingOrder` degerlerini 1'den baslayan, benzersiz ve kesintisiz bir dizi olarak yeniden numaralandir.
+   - Gecerli mevcut `reading_order` / `readingOrder` degerlerini degistirme. Yeni batch'e son mevcut degerden sonraki 1..N kesintisiz degerleri ata. Mevcut sira zaten gecersizse yeni adaylari islemeden once dur ve tutarsizligi bildir.
 
 ## Uygulama Akisi
 
-1. **Preflight:** Git durumunu ve kapsami incele. Tum mevcut batch degerlerini kontrol et. Katalog sadece baslangic cohortunu (18 makale) iceriyorsa ve batch yoksa onlari Batch 0'a tasi. Eger batchlerde mantiksiz araliklar/karmasalar varsa mutasyondan once dur.
+1. **Preflight:** Git durumunu ve kapsami incele. Yeni aday dosyalarini okumadan once tum mevcut batch degerlerini ve bloklarini kontrol et. Katalog sadece baslangic kohortunu (18 makale) iceriyorsa ve batch alani hicbir kayitta yoksa hepsini Batch 0'a tasi. Yalnizca bazi kayitlarda batch eksikse veya batchlerde bosluk/ic ice gecme varsa mutasyondan once dur.
 2. **Envanter:** Mevcut katalog, islenmis makaleler ve yeni adaylar icin ayri listeler cikar.
 3. **Audit:** Mevcut katalog sozlesmesini ve hash'leri denetle; guvenli bakim guncellemelerini plana ekle.
 4. **Icerik analizi:** Her yeni makaleyi tam oku. Baslik, konu, seviye, kategori, ozet, etiketler, onkosullar ve olasi exact duplicate durumunu belirle.

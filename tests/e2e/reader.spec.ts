@@ -2,7 +2,12 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { expect, test, type Page } from "@playwright/test";
 
-type CatalogArticle = { slug: string; title: string; readingOrder: number };
+type CatalogArticle = {
+  slug: string;
+  title: string;
+  readingOrder: number;
+  classificationBatch: number;
+};
 
 const catalog = JSON.parse(
   readFileSync(path.join(process.cwd(), "content", "catalog.json"), "utf8"),
@@ -11,6 +16,10 @@ const catalog = JSON.parse(
 const ordered = [...catalog.articles].sort((a, b) => a.readingOrder - b.readingOrder);
 const first = ordered[0];
 const second = ordered[1];
+const firstBatchBoundary = ordered.findIndex(
+  (article, index) =>
+    index > 0 && article.classificationBatch !== ordered[index - 1].classificationBatch,
+);
 
 const PROGRESS_KEY = "anil-lib:reader-progress:v1";
 const TEST_PASSWORD = "test-reader-pass";
@@ -41,7 +50,12 @@ test.describe("desktop reader", () => {
   test("sidebar lists the catalog order and navigates on click", async ({ page }) => {
     await gotoFirst(page);
 
-    await expect(page.locator("aside")).toContainText("Sınıflandırma 00 · 18 makale");
+    await expect(
+      page.locator("aside").getByRole("heading", { name: "Sınıflandırma 00 · 18 makale" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("navigation", { name: "Sınıflandırılmış okuma listesi" }),
+    ).toBeVisible();
 
     const activeLink = page.locator('aside a[aria-current="page"]');
     await expect(activeLink).toContainText(first.title);
@@ -65,6 +79,20 @@ test.describe("desktop reader", () => {
       .locator('a[rel="prev"]')
       .click();
     await page.waitForURL(`**/read/${first.slug}`);
+  });
+
+  test("next navigation crosses a classification batch boundary", async ({ page }) => {
+    test.skip(firstBatchBoundary < 1, "The fixture has no post-baseline batch yet");
+    const beforeBoundary = ordered[firstBatchBoundary - 1];
+    const afterBoundary = ordered[firstBatchBoundary];
+
+    await page.goto(`/read/${beforeBoundary.slug}`);
+    await expect(page.locator("main h1")).toBeVisible();
+    await page
+      .getByRole("navigation", { name: "Bölümler arası gezinme" })
+      .locator('a[rel="next"]')
+      .click();
+    await page.waitForURL(`**/read/${afterBoundary.slug}`);
   });
 
   test("restores the article and scroll position after reload", async ({ page }) => {
@@ -138,7 +166,9 @@ test.describe("mobile reader", () => {
 
     const dialog = page.getByRole("dialog", { name: "Okuma listesi" });
     await expect(dialog).toBeVisible();
-    await expect(dialog).toContainText("Sınıflandırma 00 · 18 makale");
+    await expect(
+      dialog.getByRole("heading", { name: "Sınıflandırma 00 · 18 makale" }),
+    ).toBeVisible();
 
     const focusedInDialog = await page.evaluate(
       () => !!document.activeElement?.closest('[role="dialog"]'),

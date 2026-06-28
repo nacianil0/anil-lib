@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   getAdjacent,
   getArticleBySlug,
+  getDescriptors,
   getOrderedArticles,
   loadCatalog,
   resolveArticlePath,
@@ -47,6 +48,18 @@ describe("validateCatalog", () => {
     expect(result.articles).toHaveLength(2);
   });
 
+  it("accepts contiguous append-only batch blocks", () => {
+    const result = validateCatalog(
+      catalog([
+        article(1),
+        article(2),
+        article(3, { classificationBatch: 1 }),
+        article(4, { classificationBatch: 1 }),
+      ]),
+    );
+    expect(result.articles.map((entry) => entry.classificationBatch)).toEqual([0, 0, 1, 1]);
+  });
+
   it("rejects a duplicate articleId", () => {
     const dup = article(2, { articleId: id(1) });
     expect(() => validateCatalog(catalog([article(1), dup]))).toThrow(/yinelenen articleId/);
@@ -69,6 +82,32 @@ describe("validateCatalog", () => {
 
   it("rejects a non-contiguous readingOrder sequence", () => {
     expect(() => validateCatalog(catalog([article(1), article(3)]))).toThrow(/kesintisiz/);
+  });
+
+  it("rejects a catalog without the Batch 0 baseline", () => {
+    expect(() =>
+      validateCatalog(catalog([article(1, { classificationBatch: 1 })])),
+    ).toThrow(/Batch 0 başlangıç kohortu eksik/);
+  });
+
+  it("rejects missing intermediate batch numbers", () => {
+    expect(() =>
+      validateCatalog(
+        catalog([article(1), article(2, { classificationBatch: 2 })]),
+      ),
+    ).toThrow(/Batch numaraları.*kesintisiz/);
+  });
+
+  it("rejects interleaved batch blocks in reading order", () => {
+    expect(() =>
+      validateCatalog(
+        catalog([
+          article(1),
+          article(2, { classificationBatch: 1 }),
+          article(3, { classificationBatch: 0 }),
+        ]),
+      ),
+    ).toThrow(/Batch blokları.*iç içe geçemez/);
   });
 
   it("rejects an unsupported category", () => {
@@ -119,6 +158,13 @@ describe("real catalog", () => {
     expect(articles).toHaveLength(loadCatalog().articles.length);
     expect(articles.length).toBeGreaterThanOrEqual(18);
     articles.forEach((a, index) => expect(a.readingOrder).toBe(index + 1));
+  });
+
+  it("exposes the 18-article Batch 0 baseline through descriptors", () => {
+    const descriptors = getDescriptors();
+    const baseline = descriptors.filter((article) => article.classificationBatch === 0);
+    expect(baseline).toHaveLength(18);
+    expect(descriptors.every((article) => article.classificationBatch >= 0)).toBe(true);
   });
 
   it("resolves the first article and its neighbours", () => {

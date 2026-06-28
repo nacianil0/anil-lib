@@ -39,13 +39,13 @@ export function readPreferences(): ReaderPreferences {
   // Legacy theme migration
   const legacyTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
   const prefs: ReaderPreferences = { ...DEFAULT_PREFERENCES };
-  
+
   if (legacyTheme === "light" || legacyTheme === "dark" || legacyTheme === "system") {
     prefs.theme = legacyTheme;
   }
 
   writePreferences(prefs);
-  
+
   // Remove legacy key after successful write
   try {
     window.localStorage.removeItem(THEME_STORAGE_KEY);
