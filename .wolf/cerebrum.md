@@ -28,6 +28,7 @@
 - Next 15.5 appends a `./.next/types/routes.d.ts` reference to `next-env.d.ts` and shows a dev-only floating "N" indicator (absent in `next start` production).
 - A stray `~/package-lock.json` makes Next infer the wrong workspace root; pin `outputFileTracingRoot: import.meta.dirname` in `next.config.mjs`.
 - Visual QC: `openwolf designqc --url <running-dev-url> --routes <route>` saves sectioned JPEGs to `.wolf/designqc-captures/`.
+- Vercel CLI is linked to `naci-anls-projects/anil-lib`; Production and Preview both require `SITE_PASSWORD_SHA256` and `AUTH_COOKIE_SECRET`, and environment changes require a fresh deployment before they take effect.
 
 ## Do-Not-Repeat
 

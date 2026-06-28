@@ -15,6 +15,7 @@ coverage/
 .cache/
 *.log
 .claude/settings.local.json
+.vercel/
 
 # Test artifacts
 /test-results/
