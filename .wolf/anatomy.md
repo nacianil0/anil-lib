@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-28T20:43:49.007Z
-> Files: 99 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-06-28T21:09:43.188Z
+> Files: 101 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -21,7 +21,7 @@
 - `skills-lock.json` (~285 tok)
 - `tailwind.config.ts` — Tailwind CSS configuration (~351 tok)
 - `tsconfig.json` — TypeScript configuration (~197 tok)
-- `tsconfig.tsbuildinfo` (~54099 tok)
+- `tsconfig.tsbuildinfo` (~54026 tok)
 - `vitest.config.ts` — Vitest test configuration (~121 tok)
 - `vitest.setup.ts` (~13 tok)
 
@@ -87,6 +87,7 @@
 - `2026-06-27-classification-batches-design.md` — Classification Batches Design (~3089 tok)
 - `2026-06-27-reader-ux-preferences-design.md` — Reader UX and Persistent Preferences Design (~3890 tok)
 - `2026-06-27-vercel-password-gate-design.md` — Vercel Password Gate Design (~2447 tok)
+- `2026-06-28-reader-typography-preferences-design.md` — Reader Typography Preferences Design (~859 tok)
 
 ## inbox/
 
@@ -105,7 +106,7 @@
 ## src/app/
 
 - `error.tsx` — Error — uses useEffect (~243 tok)
-- `globals.css` — Styles: 7 rules, 27 vars, 1 media queries, 2 layers (~2132 tok)
+- `globals.css` — Styles: 7 rules, 27 vars, 1 media queries, 2 layers (~2259 tok)
 - `layout.tsx` — newsreader (~498 tok)
 - `not-found.tsx` — NotFound (~259 tok)
 - `page.tsx` — HomePage (~238 tok)
@@ -137,7 +138,8 @@
 - `reading-list-groups.ts` — Build the sidebar view model without reordering the catalog sequence. (~406 tok)
 - `reading-list.test.tsx` — article (~468 tok)
 - `reading-list.tsx` — StatusMark — uses useMemo (~1450 tok)
-- `reading-settings.tsx` — ReadingSettings — uses useState, useEffect (~2820 tok)
+- `reading-settings.test.tsx` — dialog (~700 tok)
+- `reading-settings.tsx` — PreferenceSegments — uses useState, useEffect (~3256 tok)
 - `resume-notice.tsx` — ResumeNotice — uses useEffect (~399 tok)
 
 ## src/lib/
@@ -154,17 +156,17 @@
 - `articles.ts` — Build a fresh Markdown → React processor. (~1183 tok)
 - `catalog.test.ts` — RawArticle: article, catalog (~1811 tok)
 - `catalog.ts` — Resolve a catalog `path` to a safe absolute path inside content/articles. (~1749 tok)
-- `labels.ts` — Turkish display labels for the controlled categories. (~866 tok)
+- `labels.ts` — Turkish display labels for the controlled categories. (~983 tok)
 - `schema.test.ts` — Declares validFrontmatter (~1093 tok)
 - `schema.ts` — Controlled category vocabulary, in pedagogical order. (~826 tok)
 - `types.ts` — Minimal, serializable article shape passed from server components to the UI. (~238 tok)
 
 ## src/lib/preferences/
 
-- `preferences.test.ts` — Declares result (~1068 tok)
-- `schema.ts` — Zod schemas: preferencesSchema (~390 tok)
+- `preferences.test.ts` — Declares result (~1586 tok)
+- `schema.ts` — Zod schemas: preferencesSchema (~650 tok)
 - `storage.ts` — Exports isPreferencesStorageAvailable, parsePreferences, readPreferences, writePreferences (~513 tok)
-- `use-reader-preferences.tsx` — PreferencesContext (~1124 tok)
+- `use-reader-preferences.tsx` — PreferencesContext (~1248 tok)
 
 ## src/lib/progress/
 
@@ -184,4 +186,4 @@
 ## tests/e2e/
 
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~1170 tok)
-- `reader.spec.ts` — Page: authenticate, gotoFirst (~2020 tok)
+- `reader.spec.ts` — Page: authenticate, gotoFirst (~2630 tok)

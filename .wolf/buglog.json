@@ -254,8 +254,8 @@
         "supply-chain-policy"
       ],
       "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-06-28T20:12:00Z"
+      "occurrences": 2,
+      "last_seen": "2026-06-28T20:58:28Z"
     },
     {
       "id": "bug-016",
@@ -273,6 +273,93 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-28T20:25:00Z"
+    },
+    {
+      "id": "bug-021",
+      "timestamp": "2026-06-28T21:09:00Z",
+      "error_message": "In-app browser read-only evaluation raised TypeError while reading localStorage.getItem during visual verification",
+      "file": "browser visual-QC session",
+      "root_cause": "The restricted page-evaluation scope exposes DOM inspection primitives but not the window localStorage API.",
+      "fix": "Kept persistence verification in the passing Playwright E2E test and limited visual-QC evaluation to DOM state and computed styles.",
+      "tags": [
+        "browser",
+        "visual-qc",
+        "local-storage",
+        "tooling"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T21:09:00Z"
+    },
+    {
+      "id": "bug-022",
+      "timestamp": "2026-06-28T21:10:00Z",
+      "error_message": "Browser verification recovery command referenced `appliedStyles` after the earlier failed call had not created that binding",
+      "file": "browser visual-QC session",
+      "root_cause": "The previous evaluation failed before its reusable result binding was initialized, so assigning to that undeclared name in strict mode raised a reference error.",
+      "fix": "Created a fresh `appliedStyles2` binding and reran the DOM-only computed-style check successfully.",
+      "tags": [
+        "browser",
+        "visual-qc",
+        "recovery",
+        "tooling"
+      ],
+      "related_bugs": [
+        "bug-021"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T21:10:00Z"
+    },
+    {
+      "id": "bug-019",
+      "timestamp": "2026-06-28T21:04:00Z",
+      "error_message": "In-app browser expectNavigation timed out even though the login submission had already reached the reader route",
+      "file": "browser visual-QC session",
+      "root_cause": "The browser helper's URL glob wait did not recognize the completed local navigation pattern, while a fresh DOM snapshot confirmed successful authentication and rendering.",
+      "fix": "Used the post-action DOM snapshot as the authoritative navigation signal and continued visual verification from the loaded reader page.",
+      "tags": [
+        "browser",
+        "visual-qc",
+        "navigation",
+        "false-negative"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T21:04:00Z"
+    },
+    {
+      "id": "bug-020",
+      "timestamp": "2026-06-28T21:06:00Z",
+      "error_message": "The expanded reading-settings panel overflowed beyond the right edge of the desktop viewport",
+      "file": "src/components/reader/reading-settings.tsx",
+      "root_cause": "The responsive `sm:right-auto` utility overrode `right-0`, causing the absolutely positioned panel to grow to the right of a toolbar trigger near the viewport edge.",
+      "fix": "Removed `sm:right-auto` so the panel remains right-aligned to its trigger, and added an E2E assertion that its bounding box stays within the viewport.",
+      "tags": [
+        "responsive-layout",
+        "visual-qc",
+        "preferences",
+        "playwright"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T21:06:00Z"
+    },
+    {
+      "id": "bug-018",
+      "timestamp": "2026-06-28T21:00:00Z",
+      "error_message": "TypeScript TS2339: Property 'getByRole' does not exist on type 'HTMLElement' in the new reading-settings component test",
+      "file": "src/components/reader/reading-settings.test.tsx",
+      "root_cause": "The initial test called a Testing Library query method directly on a DOM element instead of creating a scoped query set with `within(element)`.",
+      "fix": "Created a scoped dialog query with `within(dialog)` and used it to locate each preference group before querying its buttons.",
+      "tags": [
+        "typescript",
+        "testing-library",
+        "component-test",
+        "preferences"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T21:00:00Z"
     },
     {
       "id": "bug-017",

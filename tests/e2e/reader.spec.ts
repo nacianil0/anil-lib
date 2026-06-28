@@ -22,6 +22,7 @@ const firstBatchBoundary = ordered.findIndex(
 );
 
 const PROGRESS_KEY = "anil-lib:reader-progress:v1";
+const PREFERENCES_KEY = "anil-lib:reader-preferences:v1";
 const TEST_PASSWORD = "test-reader-pass";
 
 async function authenticate(page: Page) {
@@ -142,6 +143,65 @@ test.describe("desktop reader", () => {
     await page.goto(`/read/${first.slug}`);
     await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator("aside")).toBeVisible();
+  });
+
+  test("applies and persists typography preferences", async ({ page }) => {
+    await gotoFirst(page);
+
+    await page.getByRole("button", { name: "Okuma ayarları" }).click();
+    const dialog = page.getByRole("dialog", { name: "Okuma ayarları" });
+    await expect(dialog).toBeVisible();
+
+    const dialogBox = await dialog.boundingBox();
+    const viewport = page.viewportSize();
+    expect(dialogBox).not.toBeNull();
+    expect(viewport).not.toBeNull();
+    expect(dialogBox!.x).toBeGreaterThanOrEqual(0);
+    expect(dialogBox!.x + dialogBox!.width).toBeLessThanOrEqual(viewport!.width);
+
+    await dialog
+      .getByRole("group", { name: "Metin hizası" })
+      .getByRole("button", { name: "İki yana" })
+      .click();
+    await dialog
+      .getByRole("group", { name: "Paragraf aralığı" })
+      .getByRole("button", { name: "Ferah" })
+      .click();
+    await dialog
+      .getByRole("group", { name: "İlk satır girintisi" })
+      .getByRole("button", { name: "Klasik" })
+      .click();
+    await dialog
+      .getByRole("group", { name: "Heceleme" })
+      .getByRole("button", { name: "Otomatik" })
+      .click();
+
+    const paragraph = page.locator(".prose-reader p").first();
+    await expect(paragraph).toHaveCSS("text-align", "justify");
+    await expect(paragraph).toHaveCSS("hyphens", "auto");
+
+    const spacing = await paragraph.evaluate((element) => {
+      const style = getComputedStyle(element);
+      return {
+        marginBottom: Number.parseFloat(style.marginBottom),
+        textIndent: Number.parseFloat(style.textIndent),
+      };
+    });
+    expect(spacing.marginBottom).toBeGreaterThan(20);
+    expect(spacing.textIndent).toBeGreaterThan(20);
+
+    await expect
+      .poll(() =>
+        page.evaluate(
+          (key) => JSON.parse(window.localStorage.getItem(key) ?? "{}")?.textAlign,
+          PREFERENCES_KEY,
+        ),
+      )
+      .toBe("justify");
+
+    await page.reload();
+    await expect(page.locator("main h1")).toBeVisible();
+    await expect(page.locator(".prose-reader p").first()).toHaveCSS("text-align", "justify");
   });
 
   test("returns a real 404 for an unknown slug", async ({ page }) => {

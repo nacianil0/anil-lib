@@ -180,7 +180,24 @@
   }
 
   .prose-reader p {
-    margin: 0 0 1.25rem;
+    margin: 0 0 var(--reader-paragraph-spacing, 1.25rem);
+    text-indent: var(--reader-first-line-indent, 0);
+  }
+
+  .prose-reader :is(p, li, blockquote) {
+    text-align: var(--reader-text-align, left);
+    text-justify: inter-word;
+    hyphens: var(--reader-hyphens, none);
+    overflow-wrap: break-word;
+  }
+
+  .prose-reader :is(li, blockquote) p {
+    text-indent: 0;
+  }
+
+  .prose-reader :is(h1, h2, h3, h4, pre, table) {
+    text-align: left;
+    hyphens: none;
   }
 
   .prose-reader a {

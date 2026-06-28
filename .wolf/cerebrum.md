@@ -11,6 +11,7 @@
 - Execute explicit setup and GitHub publishing requests promptly, and report the verified state directly.
 - Expects real verification before any "done" claim: run typecheck, lint, unit tests, production build, e2e, and capture desktop/mobile screenshots; never claim success without evidence.
 - Values distinctive, non-templated UI with one justified signature element, but when a brief pins the visual direction (fonts, palette, radius limits) follow it exactly.
+- When the user explicitly says to finish an already-scoped feature, proceed through implementation and verification without reopening settled design questions.
 
 ## Key Learnings
 
@@ -29,6 +30,8 @@
 - A stray `~/package-lock.json` makes Next infer the wrong workspace root; pin `outputFileTracingRoot: import.meta.dirname` in `next.config.mjs`.
 - Visual QC: `openwolf designqc --url <running-dev-url> --routes <route>` saves sectioned JPEGs to `.wolf/designqc-captures/`.
 - Vercel CLI is linked to `naci-anls-projects/anil-lib`; Production and Preview both require `SITE_PASSWORD_SHA256` and `AUTH_COOKIE_SECRET`, and environment changes require a fresh deployment before they take effect.
+- Reader preferences can remain on schema version 1 for additive fields by giving only the new Zod fields defaults; this normalizes older valid v1 records without discarding their existing choices.
+- The reading-settings popover sits beside the right edge of the toolbar, so it must keep `right-0`; overriding that with `right-auto` at desktop breakpoints causes viewport overflow.
 
 ## Do-Not-Repeat
 
@@ -42,6 +45,7 @@
 - [2026-06-27] In the reader, child effects (ReaderShellInner) run before the provider's hydrate effect on mount; gate `setCurrentArticle`/`recordPosition` behind `ready`, or the first write clobbers saved localStorage progress before it is read back.
 - [2026-06-27] Node scripts placed in the session scratchpad cannot resolve the project's `node_modules`; run them with `NODE_PATH=<project>/node_modules node script.cjs`.
 - [2026-06-27] In Playwright against `next dev`, a single click can race React hydration; use `await expect(async () => { if (notPressed) click(); await expect(pressed).toBeVisible(); }).toPass()` so retries never double-toggle.
+- [2026-06-29] Do not override the reading-settings panel's `right-0` anchoring at desktop breakpoints. Its toolbar trigger is near the viewport edge, so rightward expansion clips the panel; retain right alignment and assert its bounding box in E2E.
 
 ## Decision Log
 
@@ -56,3 +60,4 @@
 - [2026-06-27] Signature UI is a continuous "reading spine" threading all 18 numbered chapters in the sidebar — justified because the catalog is a single pedagogically ordered sequence, so reading-order numbers carry real information.
 - [2026-06-27] Disable ESLint during `next build` (`eslint.ignoreDuringBuilds`) and enforce lint as a separate `pnpm lint` gate, decoupling the production build from ESLint plugin resolution.
 - [2026-06-27] Keep the live per-article scroll ratio in shell-local state, not the progress context, so the 18-row sidebar does not re-render on every scroll frame.
+- [2026-06-29] Expand reader typography with a focused semantic pack (`textAlign`, `paragraphSpacing`, `firstLineIndent`, `hyphenation`) mapped to root CSS variables; apply alignment/hyphenation only to paragraphs, list items, and blockquotes while headings, code, and tables remain left-aligned.

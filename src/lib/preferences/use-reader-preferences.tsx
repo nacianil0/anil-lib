@@ -38,12 +38,22 @@ function applyTheme(theme: ReaderPreferences["theme"]) {
   document.documentElement.classList.toggle("dark", dark);
 }
 
-function applyCssVariables(prefs: ReaderPreferences) {
+export function applyCssVariables(prefs: ReaderPreferences) {
   const root = document.documentElement;
   root.style.setProperty("--reader-font-size", CSS_MAPPINGS.fontScale[prefs.fontScale]);
   root.style.setProperty("--reader-line-height", CSS_MAPPINGS.lineSpacing[prefs.lineSpacing]);
   root.style.setProperty("--reader-measure", CSS_MAPPINGS.measure[prefs.measure]);
   root.style.setProperty("--reader-font-family", CSS_MAPPINGS.fontFamily[prefs.fontFamily]);
+  root.style.setProperty("--reader-text-align", CSS_MAPPINGS.textAlign[prefs.textAlign]);
+  root.style.setProperty(
+    "--reader-paragraph-spacing",
+    CSS_MAPPINGS.paragraphSpacing[prefs.paragraphSpacing],
+  );
+  root.style.setProperty(
+    "--reader-first-line-indent",
+    CSS_MAPPINGS.firstLineIndent[prefs.firstLineIndent],
+  );
+  root.style.setProperty("--reader-hyphens", CSS_MAPPINGS.hyphenation[prefs.hyphenation]);
 }
 
 export function ReaderPreferencesProvider({ children }: { children: ReactNode }) {

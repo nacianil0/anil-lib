@@ -1,5 +1,6 @@
 import { describe, expect, it, beforeEach } from "vitest";
-import { DEFAULT_PREFERENCES, preferencesSchema } from "./schema";
+import { applyCssVariables } from "./use-reader-preferences";
+import { CSS_MAPPINGS, DEFAULT_PREFERENCES, preferencesSchema } from "./schema";
 import {
   parsePreferences,
   readPreferences,
@@ -23,6 +24,10 @@ describe("preferencesSchema", () => {
       measure: "wide",
       fontFamily: "sans",
       focusMode: true,
+      textAlign: "justify",
+      paragraphSpacing: "relaxed",
+      firstLineIndent: "classic",
+      hyphenation: "auto",
     };
     expect(preferencesSchema.parse(prefs)).toEqual(prefs);
   });
@@ -45,6 +50,55 @@ describe("parsePreferences", () => {
   it("parses valid payload", () => {
     const payload = JSON.stringify({ ...DEFAULT_PREFERENCES, theme: "light" });
     expect(parsePreferences(payload).theme).toBe("light");
+  });
+
+  it("fills new typography fields when reading a legacy version-1 payload", () => {
+    const legacyPayload = {
+      version: 1,
+      theme: "dark",
+      fontScale: "large",
+      lineSpacing: "relaxed",
+      measure: "wide",
+      fontFamily: "sans",
+      focusMode: true,
+    };
+
+    expect(parsePreferences(JSON.stringify(legacyPayload))).toEqual({
+      ...legacyPayload,
+      textAlign: "left",
+      paragraphSpacing: "balanced",
+      firstLineIndent: "none",
+      hyphenation: "off",
+    });
+  });
+
+  it("falls back to all defaults when a typography value is invalid", () => {
+    const payload = JSON.stringify({ ...DEFAULT_PREFERENCES, textAlign: "center" });
+    expect(parsePreferences(payload)).toEqual(DEFAULT_PREFERENCES);
+  });
+});
+
+describe("applyCssVariables", () => {
+  it("maps typography preferences to reader CSS variables", () => {
+    const preferences = {
+      ...DEFAULT_PREFERENCES,
+      textAlign: "justify" as const,
+      paragraphSpacing: "relaxed" as const,
+      firstLineIndent: "classic" as const,
+      hyphenation: "auto" as const,
+    };
+
+    applyCssVariables(preferences);
+
+    const style = document.documentElement.style;
+    expect(style.getPropertyValue("--reader-text-align")).toBe(CSS_MAPPINGS.textAlign.justify);
+    expect(style.getPropertyValue("--reader-paragraph-spacing")).toBe(
+      CSS_MAPPINGS.paragraphSpacing.relaxed,
+    );
+    expect(style.getPropertyValue("--reader-first-line-indent")).toBe(
+      CSS_MAPPINGS.firstLineIndent.classic,
+    );
+    expect(style.getPropertyValue("--reader-hyphens")).toBe(CSS_MAPPINGS.hyphenation.auto);
   });
 });
 

@@ -139,3 +139,16 @@ Quality gates — all green: `pnpm typecheck`, `pnpm lint`, `pnpm test` (35 unit
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 23:24 | designqc: captured 6 screenshots (677KB, ~15000 tok) | /read/modern-yapay-zeka-birikim-ve-donum-noktalari | ready for eval | ~0 |
+
+## Session: 2026-06-29 00:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:09 | Designed and implemented expanded reader typography preferences | schema.ts, use-reader-preferences.tsx, reading-settings.tsx, globals.css, labels.ts | Added justify alignment, paragraph spacing, first-line indent, and hyphenation with immediate application, reset, persistence, and legacy v1 normalization | ~4200 |
+| 00:09 | Added preference regression coverage | preferences.test.ts, reading-settings.test.tsx, reader.spec.ts | Covered schema migration, CSS mappings, control persistence, computed styles, reload persistence, and desktop viewport bounds | ~2200 |
+| 00:09 | Completed desktop/mobile visual QC and fixed panel overflow | reading-settings.tsx, .wolf/buglog.json | Kept the panel inside 1280px desktop and 390px mobile viewports; verified scrollability and live justify/spacing/indent/hyphen styles | ~1800 |
+| 00:09 | Completed quality gates | repository | Typecheck, lint, 102 unit/component tests, production build, 19 E2E passes (1 fixture-dependent skip), targeted overflow regression, and desktop/mobile browser checks passed | ~900 |
+
+## Session summary: 2026-06-29 — Expanded reader preferences
+
+Added a focused long-form typography pack to the existing reading-settings panel: left/justified alignment, compact/balanced/relaxed paragraph spacing, none/subtle/classic first-line indent, and off/automatic hyphenation. The existing storage key and schema version remain compatible because missing additive fields receive Zod defaults. Semantic CSS variables update immediately and deliberately exclude headings, code blocks, and tables from justification/hyphenation. The panel now scrolls on short viewports, exposes pressed states, and remains inside the desktop/mobile viewport. All repository and browser gates passed; visual QC also found and fixed the pre-existing desktop right-edge overflow.
