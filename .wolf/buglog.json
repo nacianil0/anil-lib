@@ -273,6 +273,23 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-28T20:25:00Z"
+    },
+    {
+      "id": "bug-017",
+      "timestamp": "2026-06-28T20:42:00Z",
+      "error_message": "Production login showed 'Erişim yapılandırması eksik. Vercel ortam değişkenlerini kontrol et.' and disabled the password form",
+      "file": "Vercel project naci-anls-projects/anil-lib",
+      "root_cause": "The linked Vercel project had no environment variables; production middleware therefore entered its intended fail-closed configuration-error path.",
+      "fix": "Added SITE_PASSWORD_SHA256 and AUTH_COOKIE_SECRET as Sensitive variables for Production and Preview, then redeployed the latest production deployment without uploading the dirty local worktree.",
+      "tags": [
+        "vercel",
+        "environment-variables",
+        "password-gate",
+        "production"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-28T20:42:00Z"
     }
   ]
 }

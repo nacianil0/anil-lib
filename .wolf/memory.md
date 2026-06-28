@@ -20,6 +20,8 @@
 | 23:22 | Verified desktop and mobile reader visuals in the production app | reading-list.tsx, labels.ts | Folio spacing, accessible heading, mobile drawer hierarchy, and responsive layout verified | ~1200 |
 | 23:25 | Normalized nine pre-existing source files after the full format gate exposed drift | src/components/reader/, src/lib/auth/, src/lib/preferences/, src/middleware.ts | Mechanical Prettier-only rewrite; semantic gates queued for rerun | ~300 |
 | 23:28 | Completed final classification-batch quality suite | repository | Format, typecheck, lint, 98 tests, build, 18 E2E flows, desktop/mobile browser checks, and OpenWolf design QC passed; one future Batch 1 boundary test skipped | ~900 |
+| 23:31 | Installed Vercel Coding Agent Plugin 0.44.0 for Codex user scope | ~/.codex/plugins/, ~/.codex/config.toml | 28 skills installed; Codex restart required to load them | ~400 |
+| 23:42 | Fixed fail-closed production login configuration | Vercel naci-anls-projects/anil-lib | Added both auth secrets to Production/Preview, redeployed the prior production source, and verified error=config is absent on libr-anil.vercel.app | ~900 |
 | 02:45 | Ran Prompt 01: classified 18 root articles, added frontmatter with UUIDs and content hashes, git mv to content/articles/ categories, created catalog.json, ingestion-report.md, inbox/.gitkeep | content/articles/**/*.md, content/catalog.json, content/ingestion-report.md, inbox/.gitkeep | All 18 articles classified, 7 categories, reading order 1-18, all verifications passed, no-op confirmed | ~8000 |
 
 ## Session: 2026-06-26 02:50

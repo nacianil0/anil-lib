@@ -1,13 +1,13 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-28T20:28:55.429Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-06-28T20:43:49.007Z
 > Files: 99 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.anil-lib-reader.json` (~16 tok)
 - `.DS_Store` (~1640 tok)
-- `.gitignore` — Git ignore rules (~131 tok)
+- `.gitignore` — Git ignore rules (~134 tok)
 - `.prettierignore` (~63 tok)
 - `.prettierrc.json` — Prettier configuration (~44 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
