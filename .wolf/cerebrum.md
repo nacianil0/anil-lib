@@ -32,6 +32,7 @@
 - Vercel CLI is linked to `naci-anls-projects/anil-lib`; Production and Preview both require `SITE_PASSWORD_SHA256` and `AUTH_COOKIE_SECRET`, and environment changes require a fresh deployment before they take effect.
 - Reader preferences can remain on schema version 1 for additive fields by giving only the new Zod fields defaults; this normalizes older valid v1 records without discarding their existing choices.
 - The reading-settings popover sits beside the right edge of the toolbar, so it must keep `right-0`; overriding that with `right-auto` at desktop breakpoints causes viewport overflow.
+- Vercel Postgres is no longer available for new databases; for this project, provision Neon Postgres through the Vercel Marketplace so Vercel injects server-only credentials into the existing deployment.
 
 ## Do-Not-Repeat
 
@@ -61,3 +62,4 @@
 - [2026-06-27] Disable ESLint during `next build` (`eslint.ignoreDuringBuilds`) and enforce lint as a separate `pnpm lint` gate, decoupling the production build from ESLint plugin resolution.
 - [2026-06-27] Keep the live per-article scroll ratio in shell-local state, not the progress context, so the 18-row sidebar does not re-render on every scroll frame.
 - [2026-06-29] Expand reader typography with a focused semantic pack (`textAlign`, `paragraphSpacing`, `firstLineIndent`, `hyphenation`) mapped to root CSS variables; apply alignment/hyphenation only to paragraphs, list items, and blockquotes while headings, code, and tables remain left-aligned.
+- [2026-06-29] Cross-device reading state uses a single-user local-first architecture: Neon Postgres behind an authenticated Vercel sync route is canonical, while the browser retains an offline cache and idempotent mutation outbox.

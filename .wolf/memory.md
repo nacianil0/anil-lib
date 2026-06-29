@@ -152,3 +152,9 @@ Quality gates — all green: `pnpm typecheck`, `pnpm lint`, `pnpm test` (35 unit
 ## Session summary: 2026-06-29 — Expanded reader preferences
 
 Added a focused long-form typography pack to the existing reading-settings panel: left/justified alignment, compact/balanced/relaxed paragraph spacing, none/subtle/classic first-line indent, and off/automatic hyphenation. The existing storage key and schema version remain compatible because missing additive fields receive Zod defaults. Semantic CSS variables update immediately and deliberately exclude headings, code blocks, and tables from justification/hyphenation. The panel now scrolls on short viewports, exposes pressed states, and remains inside the desktop/mobile viewport. All repository and browser gates passed; visual QC also found and fixed the pre-existing desktop right-edge overflow.
+
+## Session: 2026-06-29 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:00 | Designed cross-device reading marks, saved places, dashboard, and sync | docs/superpowers/specs/2026-06-29-synced-reading-marks-dashboard-design.md | Selected single-user local-first sync through an authenticated Vercel Function and Neon Marketplace Postgres; documented migration, conflicts, offline recovery, UI, deployment, and verification | ~5200 |

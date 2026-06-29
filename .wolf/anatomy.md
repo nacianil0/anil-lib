@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-28T21:09:43.188Z
-> Files: 101 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-06-29T18:04:09.506Z
+> Files: 103 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -81,6 +81,10 @@
 - `llm-guvenilirlik-bilimi-belirsizlik-halusilasyon-degerlendirme.md` — LLM Güvenilirlik Bilimi: Belirsizlik, Halüsinasyon ve Değerlendirme Tasarımı (~11403 tok)
 - `mechanistic-interpretability-ve-modelin-icindeki-temsiller.md` — Mechanistic Interpretability ve Modelin İçindeki Temsiller (~8400 tok)
 
+## docs/superpowers/plans/
+
+- `2026-06-29-synced-reading-marks-dashboard.md` — Synced Reading Marks and Dashboard Implementation Plan (~2460 tok)
+
 ## docs/superpowers/specs/
 
 - `2026-06-27-anil-lib-reader-prompts-design.md` — anil-lib Reader Prompts Design (~2821 tok)
@@ -88,6 +92,7 @@
 - `2026-06-27-reader-ux-preferences-design.md` — Reader UX and Persistent Preferences Design (~3890 tok)
 - `2026-06-27-vercel-password-gate-design.md` — Vercel Password Gate Design (~2447 tok)
 - `2026-06-28-reader-typography-preferences-design.md` — Reader Typography Preferences Design (~859 tok)
+- `2026-06-29-synced-reading-marks-dashboard-design.md` — Synced Reading Marks and Dashboard Design (~4237 tok)
 
 ## inbox/
 

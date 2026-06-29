@@ -292,6 +292,42 @@
       "last_seen": "2026-06-28T21:09:00Z"
     },
     {
+      "id": "bug-024",
+      "timestamp": "2026-06-29T18:03:00Z",
+      "error_message": "env: node: No such file or directory when invoking /opt/homebrew/bin/openwolf",
+      "file": ".wolf/anatomy.md",
+      "root_cause": "The absolute OpenWolf executable uses an env-based Node shebang, but the resumed shell PATH also omitted the Node binary.",
+      "fix": "Run OpenWolf's JavaScript entrypoint with the absolute Codex bundled Node binary.",
+      "tags": [
+        "openwolf",
+        "node",
+        "path",
+        "tooling"
+      ],
+      "related_bugs": [
+        "bug-023"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:03:00Z"
+    },
+    {
+      "id": "bug-023",
+      "timestamp": "2026-06-29T18:02:36Z",
+      "error_message": "zsh: command not found: openwolf while updating project anatomy after writing the synced-reader design spec",
+      "file": ".wolf/anatomy.md",
+      "root_cause": "The resumed non-login shell did not include /opt/homebrew/bin on PATH even though OpenWolf remained installed there.",
+      "fix": "Use the known absolute executable path /opt/homebrew/bin/openwolf for anatomy scans in resumed shells.",
+      "tags": [
+        "openwolf",
+        "path",
+        "shell",
+        "tooling"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:02:36Z"
+    },
+    {
       "id": "bug-022",
       "timestamp": "2026-06-28T21:10:00Z",
       "error_message": "Browser verification recovery command referenced `appliedStyles` after the earlier failed call had not created that binding",
