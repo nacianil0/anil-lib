@@ -6,6 +6,7 @@ import { TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import { CATEGORY_LABELS, LEVEL_LABELS, UI } from "@/lib/content/labels";
 import type { AdjacentArticle, ArticleDescriptor, CurrentArticle } from "@/lib/content/types";
 import { ReaderProgressProvider, useReaderProgress } from "@/lib/progress/use-reader-progress";
+import { useReaderData } from "@/lib/reader-data/use-reader-data";
 import {
   ReaderPreferencesProvider,
   useReaderPreferences,
@@ -18,6 +19,11 @@ import { CompletionControl } from "./completion-control";
 import { ReadingSettings } from "./reading-settings";
 import { ArticleToc } from "./article-toc";
 import { ResumeNotice } from "./resume-notice";
+import { SavedPlaceControl } from "./saved-place-control";
+import { ArticleMarks } from "./article-marks";
+import { HighlightLayer } from "./highlight-layer";
+import { HighlightSelectionAction } from "./highlight-selection-action";
+import { SyncStatus } from "./sync-status";
 
 const COLUMN = "mx-auto w-full max-w-reading px-5";
 
@@ -31,6 +37,7 @@ type Props = {
 
 function ReaderShellInner({ articles, current, prev, next, children }: Props) {
   const { ready, setCurrentArticle, recordPosition, entryOf } = useReaderProgress();
+  const { savedPlaceOf } = useReaderData();
   const { preferences } = useReaderPreferences();
   const bodyRef = useRef<HTMLDivElement>(null);
   const [liveRatio, setLiveRatio] = useState(0);
@@ -57,6 +64,17 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
       else break;
     }
     return { ratio, headingId };
+  }, []);
+
+  const jumpToPosition = useCallback((headingId: string | null, ratio: number) => {
+    const el = bodyRef.current;
+    if (!el) return;
+    const elTop = el.getBoundingClientRect().top + window.scrollY;
+    const heading = headingId ? document.getElementById(headingId) : null;
+    const target = heading
+      ? heading.getBoundingClientRect().top + window.scrollY - TOOLBAR_OFFSET_PX
+      : elTop + ratio * el.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: Math.max(0, target), behavior: "smooth" });
   }, []);
 
   // Record the visited article once progress has hydrated (avoids clobbering saved state).
@@ -97,7 +115,11 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
     if (restoredForRef.current === current.articleId) return;
     restoredForRef.current = current.articleId;
 
-    const entry = entryOf(current.articleId);
+    const automaticEntry = entryOf(current.articleId);
+    const explicitPlace = new URLSearchParams(window.location.search).has("place")
+      ? savedPlaceOf(current.articleId)
+      : null;
+    const entry = explicitPlace ?? automaticEntry;
     setLiveRatio(entry.scrollRatio);
     if (!entry.headingId && entry.scrollRatio <= 0) return;
 
@@ -132,7 +154,7 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
     } else {
       window.requestAnimationFrame(run);
     }
-  }, [ready, current.articleId, entryOf]);
+  }, [ready, current.articleId, entryOf, savedPlaceOf]);
 
   return (
     <div className="flex min-h-screen bg-bg">
@@ -173,7 +195,18 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
                 </p>
               )}
               <ArticleToc containerRef={bodyRef} />
+              <SavedPlaceControl
+                articleId={current.articleId}
+                containerRef={bodyRef}
+                measure={measure}
+              />
+              <ArticleMarks
+                articleId={current.articleId}
+                containerRef={bodyRef}
+                onJumpToPlace={jumpToPosition}
+              />
               <ReadingSettings />
+              <SyncStatus />
             </div>
           </div>
           <ArticleProgress ratio={liveRatio} />
@@ -190,6 +223,8 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
             <div ref={bodyRef} className="prose-reader">
               {children}
             </div>
+            <HighlightLayer articleId={current.articleId} containerRef={bodyRef} />
+            <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
             <footer className="mt-14 flex flex-col gap-6 border-t border-border pt-6">
               <CompletionControl articleId={current.articleId} />
               <ArticleNavigation prev={prev} next={next} />

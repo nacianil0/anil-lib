@@ -342,3 +342,12 @@
     scroll-behavior: auto !important;
   }
 }
+
+::highlight(reader-marks) {
+  color: inherit;
+  background-color: color-mix(in srgb, var(--accent) 28%, transparent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}

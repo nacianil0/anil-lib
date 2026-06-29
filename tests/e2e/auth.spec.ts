@@ -9,9 +9,9 @@ async function loginWith(page: Page, password: string) {
 }
 
 async function authenticate(page: Page) {
-  await page.goto("/login");
+  await page.goto("/login?next=/read/modern-yapay-zeka-birikim-ve-donum-noktalari");
   await loginWith(page, TEST_PASSWORD);
-  await page.waitForURL(/\/read\//);
+  await page.waitForURL((url) => url.pathname.startsWith("/read/"));
 }
 
 test.describe("password gate", () => {
@@ -43,7 +43,7 @@ test.describe("password gate", () => {
   test("correct password redirects to requested article with httpOnly cookie", async ({ page }) => {
     await page.goto("/login?next=/read/modern-yapay-zeka-birikim-ve-donum-noktalari");
     await loginWith(page, TEST_PASSWORD);
-    await page.waitForURL(/\/read\//);
+    await page.waitForURL((url) => url.pathname.startsWith("/read/"));
     expect(page.url()).toContain("modern-yapay-zeka");
 
     const jsAccess = await page.evaluate(() => document.cookie);
@@ -67,14 +67,14 @@ test.describe("password gate", () => {
     expect(authCookie).toBeUndefined();
   });
 
-  test("root redirect preserves through login", async ({ page }) => {
+  test("root dashboard preserves through login", async ({ page }) => {
     await page.goto("/");
     const url = new URL(page.url());
     if (url.pathname === "/login") {
       await loginWith(page, TEST_PASSWORD);
-      await page.waitForURL(/\/read\//);
+      await page.waitForURL((nextUrl) => nextUrl.pathname === "/");
     }
-    await expect(page.locator("main h1")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Kaldığım yerler" })).toBeVisible();
   });
 });
 

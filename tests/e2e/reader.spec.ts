@@ -26,10 +26,10 @@ const PREFERENCES_KEY = "anil-lib:reader-preferences:v1";
 const TEST_PASSWORD = "test-reader-pass";
 
 async function authenticate(page: Page) {
-  await page.goto("/login");
+  await page.goto(`/login?next=/read/${first.slug}`);
   await page.locator('input[name="password"]').fill(TEST_PASSWORD);
   await page.locator('button[type="submit"]').click();
-  await page.waitForURL(/\/read\//);
+  await page.waitForURL((url) => url.pathname.startsWith("/read/"));
 }
 
 async function gotoFirst(page: Page) {
@@ -42,10 +42,11 @@ test.describe("desktop reader", () => {
     await authenticate(page);
   });
 
-  test("redirects the root to the first article on a fresh visit", async ({ page }) => {
+  test("renders the private reading dashboard at the root", async ({ page }) => {
     await page.goto("/");
-    await page.waitForURL(/\/read\/.+/);
-    expect(new URL(page.url()).pathname).toBe(`/read/${first.slug}`);
+    expect(new URL(page.url()).pathname).toBe("/");
+    await expect(page.getByRole("heading", { name: "Kaldığım yerler" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "İşaretlediklerim" })).toBeVisible();
   });
 
   test("sidebar lists the catalog order and navigates on click", async ({ page }) => {

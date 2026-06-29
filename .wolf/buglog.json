@@ -292,6 +292,166 @@
       "last_seen": "2026-06-28T21:09:00Z"
     },
     {
+      "id": "bug-033",
+      "timestamp": "2026-06-29T18:38:00Z",
+      "error_message": "Browser skill read failed because cached plugin path 26.623.31921 no longer existed",
+      "file": "Codex browser plugin cache",
+      "root_cause": "The bundled browser plugin had been updated to cache version 26.623.61825 after the earlier session.",
+      "fix": "Discover the current control-in-app-browser SKILL.md path with rg and use the latest cached version.",
+      "tags": [
+        "browser-plugin",
+        "cache",
+        "skill",
+        "tooling"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:38:00Z"
+    },
+    {
+      "id": "bug-032",
+      "timestamp": "2026-06-29T18:33:30Z",
+      "error_message": "Highlight dashboard E2E locator became ambiguous after the persistent Neon test database contained multiple highlights with the same quote",
+      "file": "tests/e2e/reader-data.spec.ts",
+      "root_cause": "The test selected by quote text even though repeated runs intentionally preserve cloud records and can create identical visible quotes with different UUIDs.",
+      "fix": "Read the newly created highlight UUID from the local v2 store and target its exact deep-link href.",
+      "tags": [
+        "playwright",
+        "neon",
+        "persistent-data",
+        "highlights"
+      ],
+      "related_bugs": [
+        "bug-029"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:33:30Z"
+    },
+    {
+      "id": "bug-031",
+      "timestamp": "2026-06-29T18:33:00Z",
+      "error_message": "Full E2E suite produced cascading unauthenticated reader failures after login helpers returned before navigation completed",
+      "file": "tests/e2e/auth.spec.ts, tests/e2e/reader.spec.ts",
+      "root_cause": "The `/\\/read\\//` URL regex also matched the login page's `next=/read/...` query string, so waitForURL succeeded on the starting URL and subsequent navigation canceled or raced the login submission.",
+      "fix": "Wait for a URL whose pathname starts with `/read/`, independent of query-string contents.",
+      "tags": [
+        "playwright",
+        "authentication",
+        "race-condition",
+        "url"
+      ],
+      "related_bugs": [
+        "bug-008"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:33:00Z"
+    },
+    {
+      "id": "bug-029",
+      "timestamp": "2026-06-29T18:27:00Z",
+      "error_message": "Reader-data E2E highlight test hit a strict locator violation because `İşaretle` also prefix-matched the `İşaretler` toolbar button",
+      "file": "tests/e2e/reader-data.spec.ts",
+      "root_cause": "Playwright role-name matching is substring-based unless exact matching is requested.",
+      "fix": "Use the exact accessible name for the contextual `İşaretle` action.",
+      "tags": [
+        "playwright",
+        "accessibility",
+        "highlights",
+        "locator"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:27:00Z"
+    },
+    {
+      "id": "bug-030",
+      "timestamp": "2026-06-29T18:27:30Z",
+      "error_message": "Reader sync API returned 403 origin_mismatch for legitimate same-origin requests in Next dev",
+      "file": "src/lib/auth/require-reader-session.ts",
+      "root_cause": "request.nextUrl.host reflected Next's internal/default host rather than the forwarded browser host used by the Playwright server.",
+      "fix": "Compare Origin against x-forwarded-host or Host first, with nextUrl.host only as fallback.",
+      "tags": [
+        "csrf",
+        "origin",
+        "nextjs",
+        "sync-api"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:27:30Z"
+    },
+    {
+      "id": "bug-028",
+      "timestamp": "2026-06-29T18:24:00Z",
+      "error_message": "Playwright webServer exited with code 1 before reader-data E2E tests started",
+      "file": "playwright.config.ts",
+      "root_cause": "In the resumed Codex shell, Playwright's configured `pnpm exec next dev` inherited the atypical pnpm/Node PATH setup and could not reliably bootstrap, while the same Next server started successfully through the project-local binary with the bundled Node PATH.",
+      "fix": "Start the project-local Next dev server explicitly with the test auth environment and let Playwright reuse the verified running server for this session.",
+      "tags": [
+        "playwright",
+        "web-server",
+        "path",
+        "tooling"
+      ],
+      "related_bugs": [
+        "bug-025"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:24:00Z"
+    },
+    {
+      "id": "bug-027",
+      "timestamp": "2026-06-29T18:22:00Z",
+      "error_message": "ESLint reported an unused `entry` callback parameter in the ReaderProgress compatibility view",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "The Object.entries mapping used only the record key after delegating value conversion to entryOf().",
+      "fix": "Map Object.keys directly so the compatibility object contains the same data without an unused binding.",
+      "tags": [
+        "eslint",
+        "reader-data",
+        "unused-variable"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:22:00Z"
+    },
+    {
+      "id": "bug-026",
+      "timestamp": "2026-06-29T18:15:00Z",
+      "error_message": "Initial reader-sync typecheck failed with TS2345 because Neon query strings were passed to the tagged-template call signature; Prettier also could not infer parsers for .gitignore, .env.example, and SQL migration files",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "The Neon client exposes parameterized string queries through `sql.query(...)`, while `sql(...)` is reserved for tagged template literals. The formatting command also included file types not configured with parsers.",
+      "fix": "Use `sql.query(text, params)` for all parameterized sync queries and limit subsequent Prettier runs to supported source formats.",
+      "tags": [
+        "typescript",
+        "neon",
+        "prettier",
+        "database"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:15:00Z"
+    },
+    {
+      "id": "bug-025",
+      "timestamp": "2026-06-29T18:06:00Z",
+      "error_message": "Vercel CLI pnpm dlx setup failed: esbuild postinstall reported `sh: node: command not found`",
+      "file": "temporary pnpm dlx environment",
+      "root_cause": "The resumed shell PATH exposed the bundled pnpm wrapper but not its sibling Node binary, so dependency lifecycle scripts could not launch Node.",
+      "fix": "Prepend the bundled Node bin directory to PATH for all pnpm dlx and project commands in this resumed environment.",
+      "tags": [
+        "pnpm",
+        "node",
+        "vercel-cli",
+        "path"
+      ],
+      "related_bugs": [
+        "bug-024"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-06-29T18:06:00Z"
+    },
+    {
       "id": "bug-024",
       "timestamp": "2026-06-29T18:03:00Z",
       "error_message": "env: node: No such file or directory when invoking /opt/homebrew/bin/openwolf",

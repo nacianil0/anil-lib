@@ -6,6 +6,8 @@ export const READER_APP = "anil-lib-reader" as const;
 
 export const PROGRESS_STORAGE_KEY = "anil-lib:reader-progress:v1" as const;
 
+export const READER_DATA_STORAGE_KEY = "anil-lib:reader-data:v2" as const;
+
 export const THEME_STORAGE_KEY = "anil-lib:theme" as const;
 
 export const PREFERENCES_STORAGE_KEY = "anil-lib:reader-preferences:v1" as const;

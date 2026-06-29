@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ListTree, X } from "lucide-react";
+import Link from "next/link";
+import { Home, ListTree, X } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import { LockButton } from "./lock-button";
@@ -131,6 +132,14 @@ export function MobileReadingList({ articles, currentArticleId }: Props) {
               />
             </div>
             <div className="flex shrink-0 items-center justify-between border-t border-border px-4 py-3">
+              <Link
+                href="/"
+                onClick={close}
+                className="inline-flex items-center gap-1.5 font-sans text-xs text-text-muted"
+              >
+                <Home className="h-4 w-4" aria-hidden="true" />
+                {UI.home}
+              </Link>
               <LockButton />
             </div>
           </div>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { Home } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import { LockButton } from "./lock-button";
@@ -39,7 +41,13 @@ export function ReaderSidebar({ articles, currentArticleId }: Props) {
         <ReadingList articles={articles} currentArticleId={currentArticleId} idPrefix="desktop" />
       </div>
       <div className="flex shrink-0 items-center justify-between border-t border-border px-5 py-3">
-        <span className="font-sans text-2xs text-text-faint">anil-lib</span>
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"
+        >
+          <Home className="h-3.5 w-3.5" aria-hidden="true" />
+          {UI.home}
+        </Link>
         <div className="flex items-center gap-1">
           <LockButton />
         </div>
