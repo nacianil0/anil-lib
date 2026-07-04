@@ -4,17 +4,18 @@ import { useEffect, useRef, useState, type RefObject } from "react";
 import { Highlighter, MapPin, Trash2 } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import { resolveTextAnchor } from "@/lib/highlights/text-anchor";
-import { TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import { useReaderData } from "@/lib/reader-data/use-reader-data";
 
 export function ArticleMarks({
   articleId,
   containerRef,
   onJumpToPlace,
+  onJumpToTarget,
 }: {
   articleId: string;
   containerRef: RefObject<HTMLElement | null>;
   onJumpToPlace: (headingId: string | null, ratio: number) => void;
+  onJumpToTarget: (target: Range) => void;
 }) {
   const { savedPlaceOf, removeSavedPlace, highlightsFor, removeHighlight } = useReaderData();
   const savedPlace = savedPlaceOf(articleId);
@@ -127,13 +128,7 @@ export function ArticleMarks({
                   onClick={() => {
                     const root = containerRef.current;
                     const range = root ? resolveTextAnchor(root, highlight) : null;
-                    if (range) {
-                      const rect = range.getBoundingClientRect();
-                      window.scrollTo({
-                        top: Math.max(0, rect.top + window.scrollY - TOOLBAR_OFFSET_PX - 12),
-                        behavior: "smooth",
-                      });
-                    }
+                    if (range) onJumpToTarget(range);
                     setOpen(false);
                   }}
                 >

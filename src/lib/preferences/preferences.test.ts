@@ -28,6 +28,9 @@ describe("preferencesSchema", () => {
       paragraphSpacing: "relaxed",
       firstLineIndent: "classic",
       hyphenation: "auto",
+      readingMode: "paged",
+      letterSpacing: "relaxed",
+      fontWeight: "regular",
     };
     expect(preferencesSchema.parse(prefs)).toEqual(prefs);
   });
@@ -69,6 +72,9 @@ describe("parsePreferences", () => {
       paragraphSpacing: "balanced",
       firstLineIndent: "none",
       hyphenation: "off",
+      readingMode: "flow",
+      letterSpacing: "normal",
+      fontWeight: "regular",
     });
   });
 
@@ -86,6 +92,8 @@ describe("applyCssVariables", () => {
       paragraphSpacing: "relaxed" as const,
       firstLineIndent: "classic" as const,
       hyphenation: "auto" as const,
+      measure: "full" as const,
+      letterSpacing: "relaxed" as const,
     };
 
     applyCssVariables(preferences);
@@ -99,6 +107,11 @@ describe("applyCssVariables", () => {
       CSS_MAPPINGS.firstLineIndent.classic,
     );
     expect(style.getPropertyValue("--reader-hyphens")).toBe(CSS_MAPPINGS.hyphenation.auto);
+    expect(style.getPropertyValue("--reader-flow-width")).toBe(CSS_MAPPINGS.measure.full);
+    expect(style.getPropertyValue("--reader-paged-width")).toBe(CSS_MAPPINGS.pagedMeasure.full);
+    expect(style.getPropertyValue("--reader-letter-spacing")).toBe(
+      CSS_MAPPINGS.letterSpacing.relaxed,
+    );
   });
 });
 

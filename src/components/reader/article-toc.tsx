@@ -41,8 +41,12 @@ export function computeActiveHeading(
 
 export function ArticleToc({
   containerRef,
+  activeHeadingId,
+  onNavigate,
 }: {
   containerRef: React.RefObject<HTMLElement | null>;
+  activeHeadingId?: string | null;
+  onNavigate?: (headingId: string) => void;
 }) {
   const [headings, setHeadings] = useState<HeadingInfo[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -70,6 +74,7 @@ export function ArticleToc({
   }, [containerRef]);
 
   useEffect(() => {
+    if (activeHeadingId !== undefined) return;
     if (headings.length === 0) return;
 
     let frame = 0;
@@ -91,7 +96,7 @@ export function ArticleToc({
       window.removeEventListener("scroll", onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [headings, containerRef]);
+  }, [headings, containerRef, activeHeadingId]);
 
   useEffect(() => {
     if (!open) return;
@@ -151,12 +156,20 @@ export function ArticleToc({
           </div>
           <ul className="flex flex-col">
             {headings.map((h) => {
-              const isActive = h.id === activeId;
+              const currentActiveId = activeHeadingId !== undefined ? activeHeadingId : activeId;
+              const isActive = h.id === currentActiveId;
               return (
                 <li key={h.id} className="flex">
                   <a
                     href={`#${h.id}`}
-                    onClick={() => setOpen(false)}
+                    onClick={(event) => {
+                      if (onNavigate) {
+                        event.preventDefault();
+                        window.history.pushState(null, "", `#${h.id}`);
+                        onNavigate(h.id);
+                      }
+                      setOpen(false);
+                    }}
                     className={`flex-1 rounded-md px-2 py-1.5 text-sm transition-colors ${
                       h.level === 3 ? "ml-4" : ""
                     } ${

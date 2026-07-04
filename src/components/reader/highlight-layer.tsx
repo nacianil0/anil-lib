@@ -1,16 +1,19 @@
 "use client";
 
 import { useEffect, type RefObject } from "react";
-import { TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import { useReaderData } from "@/lib/reader-data/use-reader-data";
 import { clearRegisteredHighlights, registerHighlights } from "@/lib/highlights/highlight-registry";
 
 export function HighlightLayer({
   articleId,
   containerRef,
+  layoutVersion,
+  onNavigateToTarget,
 }: {
   articleId: string;
   containerRef: RefObject<HTMLElement | null>;
+  layoutVersion: number;
+  onNavigateToTarget: (target: Range, behavior?: ScrollBehavior) => void;
 }) {
   const { highlightsFor } = useReaderData();
   const highlights = highlightsFor(articleId);
@@ -22,14 +25,10 @@ export function HighlightLayer({
     const highlightId = new URLSearchParams(window.location.search).get("highlight");
     const target = highlightId ? resolved.get(highlightId) : null;
     if (target) {
-      const rect = target.getBoundingClientRect();
-      window.scrollTo({
-        top: Math.max(0, rect.top + window.scrollY - TOOLBAR_OFFSET_PX - 12),
-        behavior: "smooth",
-      });
+      onNavigateToTarget(target, "smooth");
     }
     return clearRegisteredHighlights;
-  }, [containerRef, highlights]);
+  }, [containerRef, highlights, layoutVersion, onNavigateToTarget]);
 
   return null;
 }

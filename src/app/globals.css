@@ -43,6 +43,23 @@
   color-scheme: dark;
 }
 
+.sepia {
+  --bg: #f4efe4;
+  --surface: #fbf7ef;
+  --surface-muted: #e9e0d0;
+  --border: #d8cbb6;
+  --border-strong: #c3b296;
+  --text: #2c261e;
+  --text-muted: #6f6251;
+  --text-faint: #95836b;
+  --accent: #8b3f2f;
+  --accent-fill: #8b3f2f;
+  --accent-soft: #ead8cc;
+  --cool: #466675;
+  --cool-soft: #dbe4e3;
+  color-scheme: light;
+}
+
 @layer base {
   * {
     border-color: var(--border);
@@ -79,6 +96,19 @@
 }
 
 @layer components {
+  .reader-area {
+    width: 100%;
+    max-width: var(--reader-flow-width, 68ch);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .reader-area {
+    max-width: var(--reader-paged-width, 76rem);
+  }
+
   /* --------------------------------------------------------------------------
      The reading spine — the page's signature element.
      A continuous hairline threads every numbered chapter; it fills with the
@@ -136,10 +166,38 @@
     color: var(--text);
     font-size: var(--reader-font-size, 1.1875rem);
     line-height: var(--reader-line-height, 1.72);
-    font-weight: 420;
+    font-weight: var(--reader-font-weight, 420);
+    letter-spacing: var(--reader-letter-spacing, 0);
     max-width: var(--reader-measure, 68ch);
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .prose-reader {
+    width: 100%;
+    max-width: none;
+    height: clamp(30rem, calc(100dvh - 11.5rem), 52rem);
+    columns: 2;
+    column-fill: auto;
+    column-gap: clamp(2rem, 4vw, 4.5rem);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .prose-reader::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .prose-reader :is(h1, h2, h3, h4) {
+    break-after: avoid-column;
+    break-inside: avoid-column;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .prose-reader :is(blockquote, pre, .table-scroll, img) {
+    break-inside: avoid-column;
   }
 
   .prose-reader > *:first-child {
@@ -329,6 +387,28 @@
     height: auto;
     border-radius: 8px;
     border: 1px solid var(--border);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reader-shell[data-reading-mode="paged"] .prose-reader {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  .reader-shell .reader-area {
+    max-width: none;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .prose-reader {
+    height: auto;
+    columns: auto;
+    overflow: visible;
+  }
+
+  .reader-pager {
+    display: none;
   }
 }
 

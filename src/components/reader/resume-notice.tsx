@@ -9,9 +9,10 @@ type Props = {
   articleId: string;
   show: boolean;
   onDismiss: () => void;
+  onStartOver: () => void;
 };
 
-export function ResumeNotice({ articleId, show, onDismiss }: Props) {
+export function ResumeNotice({ articleId, show, onDismiss, onStartOver }: Props) {
   const { resetPosition } = useReaderProgress();
 
   useEffect(() => {
@@ -34,7 +35,7 @@ export function ResumeNotice({ articleId, show, onDismiss }: Props) {
         type="button"
         onClick={() => {
           resetPosition(articleId);
-          window.scrollTo(0, 0);
+          onStartOver();
           onDismiss();
         }}
         className="font-medium text-accent hover:underline"

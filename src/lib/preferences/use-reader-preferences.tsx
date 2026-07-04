@@ -36,6 +36,7 @@ function applyTheme(theme: ReaderPreferences["theme"]) {
     theme === "dark" ||
     (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
   document.documentElement.classList.toggle("dark", dark);
+  document.documentElement.classList.toggle("sepia", theme === "sepia");
 }
 
 export function applyCssVariables(prefs: ReaderPreferences) {
@@ -43,6 +44,8 @@ export function applyCssVariables(prefs: ReaderPreferences) {
   root.style.setProperty("--reader-font-size", CSS_MAPPINGS.fontScale[prefs.fontScale]);
   root.style.setProperty("--reader-line-height", CSS_MAPPINGS.lineSpacing[prefs.lineSpacing]);
   root.style.setProperty("--reader-measure", CSS_MAPPINGS.measure[prefs.measure]);
+  root.style.setProperty("--reader-flow-width", CSS_MAPPINGS.measure[prefs.measure]);
+  root.style.setProperty("--reader-paged-width", CSS_MAPPINGS.pagedMeasure[prefs.measure]);
   root.style.setProperty("--reader-font-family", CSS_MAPPINGS.fontFamily[prefs.fontFamily]);
   root.style.setProperty("--reader-text-align", CSS_MAPPINGS.textAlign[prefs.textAlign]);
   root.style.setProperty(
@@ -54,6 +57,11 @@ export function applyCssVariables(prefs: ReaderPreferences) {
     CSS_MAPPINGS.firstLineIndent[prefs.firstLineIndent],
   );
   root.style.setProperty("--reader-hyphens", CSS_MAPPINGS.hyphenation[prefs.hyphenation]);
+  root.style.setProperty(
+    "--reader-letter-spacing",
+    CSS_MAPPINGS.letterSpacing[prefs.letterSpacing],
+  );
+  root.style.setProperty("--reader-font-weight", CSS_MAPPINGS.fontWeight[prefs.fontWeight]);
 }
 
 export function ReaderPreferencesProvider({ children }: { children: ReactNode }) {

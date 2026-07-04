@@ -10,9 +10,12 @@ type Position = { ratio: number; headingId: string | null };
 
 function previewNearViewport(root: HTMLElement): string {
   const blocks = Array.from(root.querySelectorAll<HTMLElement>("p, li, blockquote"));
-  const target = blocks.find(
-    (block) => block.getBoundingClientRect().bottom > TOOLBAR_OFFSET_PX + 24,
-  );
+  const rootRect = root.getBoundingClientRect();
+  const target = blocks.find((block) => {
+    const rect = block.getBoundingClientRect();
+    const horizontallyVisible = rect.right > rootRect.left && rect.left < rootRect.right;
+    return horizontallyVisible && rect.bottom > Math.max(rootRect.top, TOOLBAR_OFFSET_PX) + 24;
+  });
   return (target?.textContent ?? "").replace(/\s+/g, " ").trim().slice(0, 280);
 }
 

@@ -3,6 +3,7 @@ import path from "node:path";
 import { expect, test, type Page } from "@playwright/test";
 
 type CatalogArticle = {
+  articleId: string;
   slug: string;
   title: string;
   readingOrder: number;
@@ -23,6 +24,7 @@ const firstBatchBoundary = ordered.findIndex(
 
 const PROGRESS_KEY = "anil-lib:reader-progress:v1";
 const PREFERENCES_KEY = "anil-lib:reader-preferences:v1";
+const READER_DATA_KEY = "anil-lib:reader-data:v2";
 const TEST_PASSWORD = "test-reader-pass";
 
 async function authenticate(page: Page) {
@@ -100,7 +102,16 @@ test.describe("desktop reader", () => {
   test("restores the article and scroll position after reload", async ({ page }) => {
     await gotoFirst(page);
     await page.evaluate(() => window.scrollTo(0, 1600));
-    await page.waitForTimeout(600);
+    await expect
+      .poll(() =>
+        page.evaluate(
+          ([key, articleId]) =>
+            JSON.parse(window.localStorage.getItem(key) ?? "{}")?.progress?.[articleId]
+              ?.scrollRatio ?? 0,
+          [READER_DATA_KEY, first.articleId],
+        ),
+      )
+      .toBeGreaterThan(0.05);
 
     await page.reload();
     await expect(page.locator("main h1")).toBeVisible();
@@ -159,6 +170,8 @@ test.describe("desktop reader", () => {
     expect(viewport).not.toBeNull();
     expect(dialogBox!.x).toBeGreaterThanOrEqual(0);
     expect(dialogBox!.x + dialogBox!.width).toBeLessThanOrEqual(viewport!.width);
+    expect(dialogBox!.width).toBeGreaterThan(560);
+    expect(dialogBox!.height).toBeLessThan(650);
 
     await dialog
       .getByRole("group", { name: "Metin hizası" })
@@ -176,10 +189,19 @@ test.describe("desktop reader", () => {
       .getByRole("group", { name: "Heceleme" })
       .getByRole("button", { name: "Otomatik" })
       .click();
+    await dialog
+      .getByRole("group", { name: "Harf aralığı" })
+      .getByRole("button", { name: "Ferah" })
+      .click();
+    await dialog
+      .getByRole("group", { name: "Tema" })
+      .getByRole("button", { name: "Sepya" })
+      .click();
 
     const paragraph = page.locator(".prose-reader p").first();
     await expect(paragraph).toHaveCSS("text-align", "justify");
     await expect(paragraph).toHaveCSS("hyphens", "auto");
+    await expect(page.locator("html")).toHaveClass(/sepia/);
 
     const spacing = await paragraph.evaluate((element) => {
       const style = getComputedStyle(element);
@@ -203,6 +225,85 @@ test.describe("desktop reader", () => {
     await page.reload();
     await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator(".prose-reader p").first()).toHaveCSS("text-align", "justify");
+    await expect(page.locator("html")).toHaveClass(/sepia/);
+  });
+
+  test("expands the real reading area and navigates a two-column paged layout", async ({
+    page,
+  }) => {
+    await gotoFirst(page);
+
+    const article = page.locator("article.reader-area");
+    const standardWidth = await article.evaluate(
+      (element) => element.getBoundingClientRect().width,
+    );
+    await page.getByRole("button", { name: "Okuma ayarları" }).click();
+    const dialog = page.getByRole("dialog", { name: "Okuma ayarları" });
+
+    await dialog
+      .getByRole("group", { name: "Okuma alanı" })
+      .getByRole("button", { name: "Geniş" })
+      .click();
+    await expect
+      .poll(() => article.evaluate((element) => element.getBoundingClientRect().width))
+      .toBeGreaterThan(standardWidth + 60);
+
+    const wideWidth = await article.evaluate((element) => element.getBoundingClientRect().width);
+    await dialog
+      .getByRole("group", { name: "Okuma alanı" })
+      .getByRole("button", { name: "Tam" })
+      .click();
+    await expect
+      .poll(() => article.evaluate((element) => element.getBoundingClientRect().width))
+      .toBeGreaterThan(wideWidth);
+
+    await dialog
+      .getByRole("group", { name: "Okuma düzeni" })
+      .getByRole("button", { name: "Sayfalı" })
+      .click();
+    await expect(page.locator(".reader-shell")).toHaveAttribute("data-reading-mode", "paged");
+    await expect(page.locator(".prose-reader")).toHaveCSS("column-count", "2");
+
+    await page.getByRole("button", { name: "Okuma ayarları" }).click();
+    const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
+    await expect(pager).toBeVisible();
+    const nextPage = pager.getByRole("button", { name: "Sonraki sayfa" });
+    await expect(nextPage).toBeEnabled();
+
+    const before = await page.locator(".prose-reader").evaluate((element) => element.scrollLeft);
+    await nextPage.click();
+    await expect
+      .poll(() => page.locator(".prose-reader").evaluate((element) => element.scrollLeft))
+      .toBeGreaterThan(before);
+    await expect(pager).toContainText("Sayfa 2 /");
+    await expect
+      .poll(() =>
+        page.evaluate(
+          ([key, articleId]) =>
+            JSON.parse(window.localStorage.getItem(key) ?? "{}")?.progress?.[articleId]
+              ?.scrollRatio ?? 0,
+          [READER_DATA_KEY, first.articleId],
+        ),
+      )
+      .toBeGreaterThan(0.15);
+
+    await expect
+      .poll(() =>
+        page.evaluate(
+          (key) => JSON.parse(window.localStorage.getItem(key) ?? "{}")?.readingMode,
+          PREFERENCES_KEY,
+        ),
+      )
+      .toBe("paged");
+
+    await page.reload();
+    await expect(page.locator(".reader-shell")).toHaveAttribute("data-reading-mode", "paged");
+    const restoredPager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
+    await expect(restoredPager).toBeVisible();
+    await expect(restoredPager).toContainText("Sayfa 2 /");
+    await expect
+      .poll(() => page.locator(".prose-reader").evaluate((element) => element.scrollLeft))
+      .toBeGreaterThan(0);
   });
 
   test("returns a real 404 for an unknown slug", async ({ page }) => {
@@ -255,5 +356,26 @@ test.describe("mobile reader", () => {
       () => document.activeElement?.getAttribute("aria-label") === "Okuma listesini aç",
     );
     expect(triggerFocused).toBe(true);
+  });
+
+  test("preserves paged preference while using the mobile flow fallback", async ({ page }) => {
+    await gotoFirst(page);
+    await page.getByRole("button", { name: "Okuma ayarları" }).click();
+    const dialog = page.getByRole("dialog", { name: "Okuma ayarları" });
+    await dialog
+      .getByRole("group", { name: "Okuma düzeni" })
+      .getByRole("button", { name: "Sayfalı" })
+      .click();
+
+    await expect(page.locator(".reader-shell")).toHaveAttribute("data-reading-mode", "flow");
+    await expect(page.getByRole("navigation", { name: "Sayfa gezintisi" })).toHaveCount(0);
+    await expect
+      .poll(() =>
+        page.evaluate(
+          (key) => JSON.parse(window.localStorage.getItem(key) ?? "{}")?.readingMode,
+          PREFERENCES_KEY,
+        ),
+      )
+      .toBe("paged");
   });
 });

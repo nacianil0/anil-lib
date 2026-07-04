@@ -1,8 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { clamp } from "@/lib/utils";
-import { TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import { CATEGORY_LABELS, LEVEL_LABELS, UI } from "@/lib/content/labels";
 import type { AdjacentArticle, ArticleDescriptor, CurrentArticle } from "@/lib/content/types";
 import { ReaderProgressProvider, useReaderProgress } from "@/lib/progress/use-reader-progress";
@@ -24,8 +22,8 @@ import { ArticleMarks } from "./article-marks";
 import { HighlightLayer } from "./highlight-layer";
 import { HighlightSelectionAction } from "./highlight-selection-action";
 import { SyncStatus } from "./sync-status";
-
-const COLUMN = "mx-auto w-full max-w-reading px-5";
+import { ReaderPager } from "./reader-pager";
+import { useReaderLayout } from "@/lib/reader-layout/use-reader-layout";
 
 type Props = {
   articles: ArticleDescriptor[];
@@ -41,7 +39,34 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
   const { preferences } = useReaderPreferences();
   const bodyRef = useRef<HTMLDivElement>(null);
   const [liveRatio, setLiveRatio] = useState(0);
+  const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
   const [showNotice, setShowNotice] = useState(false);
+  const reflowKey = [
+    preferences.fontScale,
+    preferences.lineSpacing,
+    preferences.measure,
+    preferences.fontFamily,
+    preferences.textAlign,
+    preferences.paragraphSpacing,
+    preferences.firstLineIndent,
+    preferences.hyphenation,
+    preferences.letterSpacing,
+  ].join(":");
+  const {
+    effectiveMode,
+    measure,
+    navigateTo,
+    navigateToElement,
+    pageIndex,
+    pageCount,
+    previousPage,
+    nextPage,
+    layoutVersion,
+  } = useReaderLayout({
+    containerRef: bodyRef,
+    preferredMode: preferences.readingMode,
+    reflowKey,
+  });
 
   const readyRef = useRef(ready);
   readyRef.current = ready;
@@ -49,33 +74,12 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
   const lastRecordRef = useRef(0);
   const restoredForRef = useRef<string | null>(null);
 
-  const measure = useCallback((): { ratio: number; headingId: string | null } => {
-    const el = bodyRef.current;
-    if (!el) return { ratio: 0, headingId: null };
-    const elTop = el.getBoundingClientRect().top + window.scrollY;
-    const elHeight = el.offsetHeight || 1;
-    const scrolledPast = window.scrollY + window.innerHeight - elTop;
-    const ratio = clamp(scrolledPast / elHeight, 0, 1);
-
-    let headingId: string | null = null;
-    const headings = el.querySelectorAll<HTMLElement>("h1[id], h2[id], h3[id], h4[id]");
-    for (const heading of headings) {
-      if (heading.getBoundingClientRect().top <= TOOLBAR_OFFSET_PX + 4) headingId = heading.id;
-      else break;
-    }
-    return { ratio, headingId };
-  }, []);
-
-  const jumpToPosition = useCallback((headingId: string | null, ratio: number) => {
-    const el = bodyRef.current;
-    if (!el) return;
-    const elTop = el.getBoundingClientRect().top + window.scrollY;
-    const heading = headingId ? document.getElementById(headingId) : null;
-    const target = heading
-      ? heading.getBoundingClientRect().top + window.scrollY - TOOLBAR_OFFSET_PX
-      : elTop + ratio * el.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: Math.max(0, target), behavior: "smooth" });
-  }, []);
+  const jumpToPosition = useCallback(
+    (headingId: string | null, ratio: number) => {
+      navigateTo({ headingId, ratio }, "smooth");
+    },
+    [navigateTo],
+  );
 
   // Record the visited article once progress has hydrated (avoids clobbering saved state).
   useEffect(() => {
@@ -86,34 +90,57 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
   // Track scroll: live ratio every frame, persisted position at a gentler cadence.
   useEffect(() => {
     let frame = 0;
+    let recordTimer: ReturnType<typeof setTimeout> | null = null;
+
+    function capturePosition(persist: boolean) {
+      const { ratio, headingId } = measure();
+      setLiveRatio(ratio);
+      setActiveHeadingId(headingId);
+      if (!persist || !readyRef.current) return;
+      lastRecordRef.current = Date.now();
+      recordPosition(current.articleId, headingId, ratio);
+    }
+
     function onScroll() {
       if (restoringRef.current || frame) return;
       frame = window.requestAnimationFrame(() => {
         frame = 0;
-        const { ratio, headingId } = measure();
-        setLiveRatio(ratio);
-        if (!readyRef.current) return;
-        const now = Date.now();
-        if (now - lastRecordRef.current >= 200) {
-          lastRecordRef.current = now;
-          recordPosition(current.articleId, headingId, ratio);
+        const elapsed = Date.now() - lastRecordRef.current;
+        if (elapsed >= 200) {
+          if (recordTimer) {
+            clearTimeout(recordTimer);
+            recordTimer = null;
+          }
+          capturePosition(true);
+          return;
+        }
+
+        capturePosition(false);
+        if (!recordTimer) {
+          recordTimer = setTimeout(() => {
+            recordTimer = null;
+            if (!restoringRef.current) capturePosition(true);
+          }, 200 - elapsed);
         }
       });
     }
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const scrollTarget = effectiveMode === "paged" ? bodyRef.current : window;
+    scrollTarget?.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      scrollTarget?.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (frame) window.cancelAnimationFrame(frame);
+      if (recordTimer) clearTimeout(recordTimer);
     };
-  }, [measure, recordPosition, current.articleId]);
+  }, [effectiveMode, measure, recordPosition, current.articleId]);
 
   // Restore the saved position once, after fonts and layout settle.
   useEffect(() => {
     if (!ready) return;
-    if (restoredForRef.current === current.articleId) return;
-    restoredForRef.current = current.articleId;
+    const restoreKey = `${current.articleId}:${effectiveMode}`;
+    if (restoredForRef.current === restoreKey) return;
+    restoredForRef.current = restoreKey;
 
     const automaticEntry = entryOf(current.articleId);
     const explicitPlace = new URLSearchParams(window.location.search).has("place")
@@ -121,26 +148,13 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
       : null;
     const entry = explicitPlace ?? automaticEntry;
     setLiveRatio(entry.scrollRatio);
+    setActiveHeadingId(entry.headingId);
     if (!entry.headingId && entry.scrollRatio <= 0) return;
 
     const run = () => {
-      const el = bodyRef.current;
-      if (!el) return;
       restoringRef.current = true;
-
-      const elTop = el.getBoundingClientRect().top + window.scrollY;
-      let target = 0;
-      const heading = entry.headingId ? document.getElementById(entry.headingId) : null;
-      if (heading) {
-        target = heading.getBoundingClientRect().top + window.scrollY - TOOLBAR_OFFSET_PX;
-      } else if (entry.scrollRatio > 0) {
-        target = elTop + entry.scrollRatio * el.offsetHeight - window.innerHeight;
-      }
-
-      if (target > 0) {
-        window.scrollTo(0, Math.max(0, target));
-        setShowNotice(true);
-      }
+      navigateTo({ headingId: entry.headingId, ratio: entry.scrollRatio }, "auto");
+      setShowNotice(true);
       window.requestAnimationFrame(() =>
         window.requestAnimationFrame(() => {
           restoringRef.current = false;
@@ -154,10 +168,10 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
     } else {
       window.requestAnimationFrame(run);
     }
-  }, [ready, current.articleId, entryOf, savedPlaceOf]);
+  }, [ready, current.articleId, effectiveMode, entryOf, savedPlaceOf, navigateTo]);
 
   return (
-    <div className="flex min-h-screen bg-bg">
+    <div className="reader-shell flex min-h-screen bg-bg" data-reading-mode={effectiveMode}>
       <a
         href="#main"
         className="sr-only z-[60] rounded-md border border-border bg-surface px-3 py-2 font-sans text-sm text-text focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
@@ -171,7 +185,7 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 border-b border-border bg-bg">
-          <div className={`${COLUMN} flex h-14 items-center justify-between gap-3`}>
+          <div className="reader-area flex h-14 items-center justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
               <MobileReadingList articles={articles} currentArticleId={current.articleId} />
               <p className="truncate font-sans text-2xs text-text-muted">
@@ -194,7 +208,11 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
                   <span>{UI.readingTime(current.readingMinutes)}</span>
                 </p>
               )}
-              <ArticleToc containerRef={bodyRef} />
+              <ArticleToc
+                containerRef={bodyRef}
+                activeHeadingId={effectiveMode === "paged" ? activeHeadingId : undefined}
+                onNavigate={(headingId) => navigateTo({ headingId, ratio: 0 })}
+              />
               <SavedPlaceControl
                 articleId={current.articleId}
                 containerRef={bodyRef}
@@ -204,6 +222,7 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
                 articleId={current.articleId}
                 containerRef={bodyRef}
                 onJumpToPlace={jumpToPosition}
+                onJumpToTarget={navigateToElement}
               />
               <ReadingSettings />
               <SyncStatus />
@@ -216,14 +235,28 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
           articleId={current.articleId}
           show={showNotice}
           onDismiss={() => setShowNotice(false)}
+          onStartOver={() => navigateTo({ headingId: null, ratio: 0 }, "auto")}
         />
 
         <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
-          <article className={`${COLUMN} py-10`}>
+          <article className="reader-area py-10">
             <div ref={bodyRef} className="prose-reader">
               {children}
             </div>
-            <HighlightLayer articleId={current.articleId} containerRef={bodyRef} />
+            {effectiveMode === "paged" && (
+              <ReaderPager
+                pageIndex={pageIndex}
+                pageCount={pageCount}
+                onPrevious={previousPage}
+                onNext={nextPage}
+              />
+            )}
+            <HighlightLayer
+              articleId={current.articleId}
+              containerRef={bodyRef}
+              layoutVersion={layoutVersion}
+              onNavigateToTarget={navigateToElement}
+            />
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
             <footer className="mt-14 flex flex-col gap-6 border-t border-border pt-6">
               <CompletionControl articleId={current.articleId} />

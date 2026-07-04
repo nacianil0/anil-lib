@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 // Apply the persisted (or system) theme before paint to avoid a flash.
-const themeScript = `(()=>{try{var p=localStorage.getItem("anil-lib:reader-preferences:v1");var t="system";if(p){try{var o=JSON.parse(p);if(o&&o.theme)t=o.theme;}catch(e){}}else{var m=localStorage.getItem("anil-lib:theme");if(m==="dark"||m==="light")t=m;}var d=t==="dark"||(t==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d);}catch(e){}})();`;
+const themeScript = `(()=>{try{var p=localStorage.getItem("anil-lib:reader-preferences:v1");var t="system";if(p){try{var o=JSON.parse(p);if(o&&o.theme)t=o.theme;}catch(e){}}else{var m=localStorage.getItem("anil-lib:theme");if(m==="dark"||m==="light")t=m;}var d=t==="dark"||(t==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d);document.documentElement.classList.toggle("sepia",t==="sepia");}catch(e){}})();`;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
