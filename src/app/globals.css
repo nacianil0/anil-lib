@@ -22,6 +22,11 @@
   --cool: #2f5d74;
   --cool-soft: #e4edf1;
 
+  --line-color-1: rgba(59, 130, 246, 0.12);
+  --line-color-2: rgba(239, 68, 68, 0.08);
+  --line-color-3: rgba(34, 197, 94, 0.12);
+  --line-color-4: rgba(245, 158, 11, 0.12);
+
   --toolbar-offset: 4.75rem;
   color-scheme: light;
 }
@@ -38,8 +43,14 @@
   --accent: #d98597;
   --accent-fill: #b5435a;
   --accent-soft: #36222a;
-  --cool: #7aa6c0;
-  --cool-soft: #1d2c37;
+  --cool: #5b9dbf;
+  --cool-soft: #233440;
+
+  --line-color-1: rgba(59, 130, 246, 0.18);
+  --line-color-2: rgba(239, 68, 68, 0.12);
+  --line-color-3: rgba(34, 197, 94, 0.18);
+  --line-color-4: rgba(245, 158, 11, 0.18);
+
   color-scheme: dark;
 }
 
@@ -57,6 +68,12 @@
   --accent-soft: #ead8cc;
   --cool: #466675;
   --cool-soft: #dbe4e3;
+
+  --line-color-1: rgba(139, 63, 47, 0.1);
+  --line-color-2: rgba(70, 102, 117, 0.1);
+  --line-color-3: rgba(180, 83, 9, 0.1);
+  --line-color-4: rgba(21, 128, 61, 0.1);
+
   color-scheme: light;
 }
 
@@ -247,6 +264,31 @@
     text-justify: inter-word;
     hyphens: var(--reader-hyphens, none);
     overflow-wrap: break-word;
+  }
+
+  .reader-shell[data-colored-lines="true"] .prose-reader :is(p, li) {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 13.75%,
+      var(--line-color-1) 13.75%,
+      var(--line-color-1) 23.75%,
+      transparent 23.75%,
+      transparent 38.75%,
+      var(--line-color-2) 38.75%,
+      var(--line-color-2) 48.75%,
+      transparent 48.75%,
+      transparent 63.75%,
+      var(--line-color-3) 63.75%,
+      var(--line-color-3) 73.75%,
+      transparent 73.75%,
+      transparent 88.75%,
+      var(--line-color-4) 88.75%,
+      var(--line-color-4) 98.75%,
+      transparent 98.75%,
+      transparent 100%
+    );
+    background-size: 100% calc(1em * var(--reader-line-height, 1.72) * 4);
   }
 
   .prose-reader :is(li, blockquote) p {

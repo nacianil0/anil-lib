@@ -31,6 +31,7 @@ describe("preferencesSchema", () => {
       readingMode: "paged",
       letterSpacing: "relaxed",
       fontWeight: "regular",
+      coloredLines: false,
     };
     expect(preferencesSchema.parse(prefs)).toEqual(prefs);
   });
@@ -75,6 +76,7 @@ describe("parsePreferences", () => {
       readingMode: "flow",
       letterSpacing: "normal",
       fontWeight: "regular",
+      coloredLines: false,
     });
   });
 

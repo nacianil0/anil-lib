@@ -35,6 +35,7 @@ export const preferencesSchema = z.object({
   readingMode: z.enum(READING_MODES).default("flow"),
   letterSpacing: z.enum(LETTER_SPACINGS).default("normal"),
   fontWeight: z.enum(FONT_WEIGHTS).default("regular"),
+  coloredLines: z.boolean().default(false),
 });
 
 export type ReaderPreferences = z.infer<typeof preferencesSchema>;
@@ -54,6 +55,7 @@ export const DEFAULT_PREFERENCES: ReaderPreferences = {
   readingMode: "flow",
   letterSpacing: "normal",
   fontWeight: "regular",
+  coloredLines: false,
 };
 
 // CSS variables mapping
