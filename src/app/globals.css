@@ -266,29 +266,41 @@
     overflow-wrap: break-word;
   }
 
-  .reader-shell[data-colored-lines="true"] .prose-reader :is(p, li) {
-    background-image: repeating-linear-gradient(
+  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="0"] {
+    background-image: linear-gradient(
       to bottom,
-      transparent 0%,
-      transparent 13.75%,
-      var(--line-color-1) 13.75%,
-      var(--line-color-1) 23.75%,
-      transparent 23.75%,
-      transparent 38.75%,
-      var(--line-color-2) 38.75%,
-      var(--line-color-2) 48.75%,
-      transparent 48.75%,
-      transparent 63.75%,
-      var(--line-color-3) 63.75%,
-      var(--line-color-3) 73.75%,
-      transparent 73.75%,
-      transparent 88.75%,
-      var(--line-color-4) 88.75%,
-      var(--line-color-4) 98.75%,
-      transparent 98.75%,
-      transparent 100%
+      transparent 55%,
+      var(--line-color-1) 55%,
+      var(--line-color-1) 95%,
+      transparent 95%
     );
-    background-size: 100% calc(1em * var(--reader-line-height, 1.72) * 4);
+  }
+  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="1"] {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 55%,
+      var(--line-color-2) 55%,
+      var(--line-color-2) 95%,
+      transparent 95%
+    );
+  }
+  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="2"] {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 55%,
+      var(--line-color-3) 55%,
+      var(--line-color-3) 95%,
+      transparent 95%
+    );
+  }
+  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="3"] {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 55%,
+      var(--line-color-4) 55%,
+      var(--line-color-4) 95%,
+      transparent 95%
+    );
   }
 
   .prose-reader :is(li, blockquote) p {
