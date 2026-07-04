@@ -171,7 +171,11 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
   }, [ready, current.articleId, effectiveMode, entryOf, savedPlaceOf, navigateTo]);
 
   return (
-    <div className="reader-shell flex min-h-screen bg-bg" data-reading-mode={effectiveMode}>
+    <div
+      className="reader-shell flex min-h-screen bg-bg"
+      data-reading-mode={effectiveMode}
+      data-colored-lines={preferences.coloredLines}
+    >
       <a
         href="#main"
         className="sr-only z-[60] rounded-md border border-border bg-surface px-3 py-2 font-sans text-sm text-text focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
