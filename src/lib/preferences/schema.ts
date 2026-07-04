@@ -9,7 +9,7 @@ export const TEXT_SIZES = [
   "huge",
 ] as const;
 export const LINE_SPACINGS = ["compact", "balanced", "relaxed"] as const;
-export const MEASURES = ["narrow", "standard", "wide", "full"] as const;
+export const MEASURES = ["standard", "wide", "extra-wide", "full"] as const;
 export const FONT_FAMILIES = ["editorial", "sans"] as const;
 export const THEMES = ["system", "light", "sepia", "dark"] as const;
 export const TEXT_ALIGNMENTS = ["left", "justify"] as const;
@@ -72,15 +72,15 @@ export const CSS_MAPPINGS = {
     relaxed: "1.9",
   },
   measure: {
-    narrow: "58ch",
-    standard: "68ch",
-    wide: "84ch",
+    standard: "84ch",
+    wide: "100ch",
+    "extra-wide": "120ch",
     full: "100%",
   },
   pagedMeasure: {
-    narrow: "64rem",
-    standard: "76rem",
-    wide: "92rem",
+    standard: "92rem",
+    wide: "108rem",
+    "extra-wide": "124rem",
     full: "100%",
   },
   fontFamily: {

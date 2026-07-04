@@ -173,9 +173,9 @@ export function ReadingSettings() {
                   label={UI.columnWidth}
                   value={preferences.measure}
                   options={[
-                    { value: "narrow", label: UI.measureNarrow },
                     { value: "standard", label: UI.measureStandard },
                     { value: "wide", label: UI.measureWide },
+                    { value: "extra-wide", label: UI.measureExtraWide },
                     { value: "full", label: UI.measureFull },
                   ]}
                   onChange={(value) => updatePreference("measure", value)}
