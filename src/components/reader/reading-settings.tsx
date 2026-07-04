@@ -306,7 +306,7 @@ export function ReadingSettings() {
             <div className="border-t border-border" />
 
             <SettingsSection title={UI.settingsAppearance}>
-              <div className="grid items-end gap-3 sm:grid-cols-2">
+              <div className="grid items-end gap-3 sm:grid-cols-3">
                 <div>
                   <span className="mb-1.5 block text-xs font-medium text-text-muted">
                     {UI.theme}
@@ -353,6 +353,16 @@ export function ReadingSettings() {
                     })}
                   </div>
                 </div>
+
+                <PreferenceSegments
+                  label={UI.coloredLines}
+                  value={preferences.coloredLines ? "on" : "off"}
+                  options={[
+                    { value: "off", label: UI.coloredLinesOff },
+                    { value: "on", label: UI.coloredLinesOn },
+                  ]}
+                  onChange={(value) => updatePreference("coloredLines", value === "on")}
+                />
 
                 <div className="flex h-[31px] items-center justify-between rounded-md border border-border bg-surface-muted px-2.5 transition-colors hover:bg-surface">
                   <span className="text-[11px] font-medium text-text-muted">{UI.focusMode}</span>

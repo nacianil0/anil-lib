@@ -128,6 +128,9 @@ export const UI = {
   restoredNotice: "Kaldığın yere dönüldü",
   startOver: "Baştan başla",
   dismiss: "Kapat",
+  coloredLines: "Renkli Satırlar",
+  coloredLinesOn: "Açık",
+  coloredLinesOff: "Kapalı",
 } as const;
 
 export function pad(order: number): string {
