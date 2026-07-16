@@ -158,3 +158,16 @@ Added a focused long-form typography pack to the existing reading-settings panel
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 21:00 | Designed cross-device reading marks, saved places, dashboard, and sync | docs/superpowers/specs/2026-06-29-synced-reading-marks-dashboard-design.md | Selected single-user local-first sync through an authenticated Vercel Function and Neon Marketplace Postgres; documented migration, conflicts, offline recovery, UI, deployment, and verification | ~5200 |
+
+## Session: 2026-07-16 15:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:14 | Started repository-grounded book-production handoff audit | pasted brief, repository docs, content/catalog.json, reader/content architecture | Confirmed brainstorming approval gate, preserved dirty user worktree, and split 18 full-text articles into three read-only subagent batches | ~6500 |
+| 15:28 | Audited current app integration seams and corpus sizing | src/lib/content/**, src/components/reader/**, src/app/**, progress/reader-data, tests, git history | Found article-only catalog/path/sidebar contracts, generic persisted string IDs, separate dashboard, no search UI, and 65,521 corpus words with 415 invalid tool citation markers | ~9000 |
+| 15:34 | Began 2026 source-family verification | primary arXiv papers and current surveys | Identified current evidence families for test-time compute, scaling/data constraints, calibration/evaluation, long context, agents/RAG, interpretability, and multimodality | ~3200 |
+| 15:35 | Completed external book-planning evidence pack | C:\dev\anil-lib-book-planning-audit\20260716-151446\*.md | Consolidated three full-corpus audits, app integration options, three book concepts, and a 13-family/121-source research and citation plan without changing book/article/catalog files | ~7800 |
+
+## Session summary: 2026-07-16 — Book-production brainstorming audit
+
+Read all 18 articles through three independent full-text audit batches and inspected the current reader/dashboard/progress/sync architecture. The corpus is approximately 65,521 words; only three articles are light-edit structural cores, eleven require substantial rewrites, four are research-only, and seven files contain 415 leaked tool citation markers. Prepared external reports under `C:\dev\anil-lib-book-planning-audit\20260716-151446`. Recommended the system-layered concept “Tahminden Sisteme,” a separate `content/books/**` source contract normalized with articles through a shared library adapter, and a claim-level citation protocol backed by 13 source families. The brainstorming skills require explicit user approval before the sole requested repository artifact, `prompts/03-build-zero-to-hero-ai-book.md`, may be written; approval remains pending.

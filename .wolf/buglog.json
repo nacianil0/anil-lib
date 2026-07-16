@@ -573,6 +573,30 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-28T20:42:00Z"
+    },
+    {
+      "id": "bug-034",
+      "timestamp": "2026-07-16T15:21:00+03:00",
+      "error_message": "Get-Content reported that parameter Raw was unavailable while reading src/app/read/[slug]/page.tsx",
+      "file": "PowerShell read command",
+      "root_cause": "The App Router path contains square brackets, so normal PowerShell path binding interpreted it as a wildcard expression instead of a literal path.",
+      "fix": "Reran the read with Get-Content -LiteralPath; the route file was read successfully without changing repository code.",
+      "tags": ["powershell", "literal-path", "nextjs", "tooling"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T15:21:00+03:00"
+    },
+    {
+      "id": "bug-035",
+      "timestamp": "2026-07-16T15:29:00+03:00",
+      "error_message": "PowerShell ParserError while computing corpus word counts with an inline Unicode regex",
+      "file": "PowerShell audit command",
+      "root_cause": "Nested apostrophe and Unicode punctuation characters terminated the inline single-quoted regular expression incorrectly.",
+      "fix": "Replaced the linguistic token regex with a whitespace-delimited sizing metric; the rerun completed and reported 65,521 corpus words and 415 invalid citation markers.",
+      "tags": ["powershell", "quoting", "corpus-audit", "tooling"],
+      "related_bugs": ["bug-002"],
+      "occurrences": 1,
+      "last_seen": "2026-07-16T15:29:00+03:00"
     }
   ]
 }
