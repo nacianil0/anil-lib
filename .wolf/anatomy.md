@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T10:35:57.339Z
-> Files: 157 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T11:14:52.043Z
+> Files: 131 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -37,62 +37,6 @@
 ## .claude/rules/
 
 - `openwolf.md` (~313 tok)
-
-## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/
-
-- `hash-body.cjs` — Usage: node hash-body.cjs <file.md> [...] (~156 tok)
-- `review-workflow.js` — Exports meta (~1948 tok)
-- `svg-onizleme.html` — onizleme (~504 tok)
-- `write-workflow.js` — Exports meta (~5804 tok)
-
-## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/
-
-- `03-sinir-aglari-katmanlarin-icinde-ne-oluyor.md` — Doğrunun duvarı (~6229 tok)
-- `04-dili-sayilara-cevirmek-token-ve-embedding.md` — Ağın kapısında bekleyen dil (~5769 tok)
-- `05-sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md` — Harf tahmin oyunundan dev modellere (~5689 tok)
-
-## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/
-
-- `noron-anatomisi.svg` (~647 tok)
-- `sinir-agi-tarihi.svg` (~725 tok)
-- `temsil-katmanlari.svg` (~1174 tok)
-
-## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu/
-
-- `seyreklik-duvari.svg` (~1484 tok)
-- `shannon-oyunu.svg` (~539 tok)
-- `sonraki-token-dagilimi.svg` (~548 tok)
-
-## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/
-
-- `01-tahmin-makinesi.md` — Research Pack — Article 1: "Tahmin Makinesi" (~14802 tok)
-- `02-veriden-ogrenmek.md` — Research Pack — Article 2: "Veriden Öğrenmek" (~15796 tok)
-- `03-sinir-aglari.md` — Research Pack — Article 3: "Neural networks: what happens inside the layers" (~15626 tok)
-- `04-token-embedding.md` — Research Pack — Article 4: "Turning language into numbers: tokenization and embeddings" (~17835 tok)
-- `05-dil-modeli.md` — Research Pack — Article 5: "Predicting the Next Word: The Birth of the Language Model" (~13958 tok)
-- `06-pedagoji.md` — 06 — Pedagoji: Evidence-Based Learning Science for the Series' Editorial Contract (~22858 tok)
-
-## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/
-
-- `integrate.cjs` — Batch 0 entegrasyonu: scratchpad taslaklarını content/series/ altına frontmatter'lı (~1603 tok)
-- `render-check.mjs` — Gerçek taslak SVG'lerini tam render hattından geçirir ve ürettiği HTML'i (~737 tok)
-- `svg-preview.html` — SVG onay (~447 tok)
-- `write-gap-workflow.js` — Exports meta (~5374 tok)
-
-## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/
-
-- `01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md` — Kuralları yazmayı bir dene (~5700 tok)
-
-## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/
-
-- `anlam-haritasi.svg` (~667 tok)
-- `bpe-adimlari.svg` (~1283 tok)
-- `cumleden-vektore.svg` (~1263 tok)
-
-## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/
-
-- `ai-ml-dl-llm.svg` (~421 tok)
-- `kural-vs-ogrenme.svg` (~1075 tok)
 
 ## content/
 
@@ -140,23 +84,25 @@
 
 ## content/series/
 
-- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0: makale 1–5) (~1200 tok)
-- `roadmap.json` — 100 başlıklık seri omurgası, 10 faz, yayında/planlandı durumları (~3600 tok)
-- `roadmap.json` (~3636 tok)
+- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0: makale 1–5) (~1400 tok)
+- `roadmap.json` — 100 başlıklık seri omurgası, 10 faz, yayında/planlandı durumları (~3636 tok)
 
 ## content/series/articles/foundations/
 
+- `dili-sayilara-cevirmek-token-ve-embedding.md` — Makale 4: tokenizasyon/BPE, embedding, dağılımsal hipotez, Türkçe token maliyeti (~5800 tok)
+- `sinir-aglari-katmanlarin-icinde-ne-oluyor.md` — Makale 3: nöron, aktivasyon, katmanlar, temsil öğrenimi, geriye yayılım, tarih (~6200 tok)
+- `sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md` — Makale 5: dil modeli tanımı, n-gram duvarı, Bengio 2003, perplexity, ölçek (~5800 tok)
+- `tahmin-makinesi-yapay-zekaya-ilk-bakis.md` — Makale 1: kural yazmak vs veriden öğrenmek; model = ayarlanabilir fonksiyon; AI⊃ML⊃temsil öğrenimi⊃derin öğrenme (~5600 tok)
+- `veriden-ogrenmek-model-parametre-ve-kayip.md` — Makale 2: parametre, kayıp, gradyan inişi (sayısal örnek), öğrenme oranı eşiği, aşırı öğrenme (~6700 tok)
 
 ## content/series/assets/
 
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~1903 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~2819 tok)
 - `SOZLESME.md` — serinin değişmez kurallar sözleşmesi (editoryal/pedagojik/teknik/handoff) (~4500 tok)
-- `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~3868 tok)
-- `YOL-HARITASI.md` — 100 makale omurgası + prerequisite grafı + kavram-tekrar defteri + terim defteri (~5500 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~3574 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~4342 tok)
 
 ## docs/superpowers/plans/
 
@@ -190,7 +136,7 @@
 ## src/app/
 
 - `error.tsx` — Error — uses useEffect (~243 tok)
-- `globals.css` — Styles: 9 rules, 52 vars (~3674 tok)
+- `globals.css` — Styles: 7 rules, 52 vars (~3823 tok)
 - `layout.tsx` — newsreader (~498 tok)
 - `not-found.tsx` — NotFound (~259 tok)
 - `page.tsx` — HomePage (~143 tok)
@@ -257,8 +203,8 @@
 - `catalog.test.ts` — RawArticle: article, catalog (~1902 tok)
 - `catalog.ts` — Resolve a catalog `path` to a safe absolute path inside content/articles. (~1812 tok)
 - `labels.ts` — Turkish display labels for the controlled categories. (~983 tok)
-- `rehype-inline-svg.test.ts` — assetsDir: transform, firstElement (~1442 tok)
-- `rehype-inline-svg.ts` — Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline (~1478 tok)
+- `rehype-inline-svg.test.ts` — assetsDir: transform, firstElement (~1512 tok)
+- `rehype-inline-svg.ts` — Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline (~1580 tok)
 - `schema.test.ts` — Declares validFrontmatter (~1093 tok)
 - `schema.ts` — Controlled category vocabulary, in pedagogical order. (~826 tok)
 - `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~792 tok)
@@ -301,7 +247,7 @@
 
 ## tools/
 
-- `README.md` — Project documentation (~1248 tok)
+- `README.md` — tools klasoru kullanim rehberi: dev, publish ve seri denetim giris noktalari (~1248 tok)
 
 ## tools/dev/
 
@@ -314,4 +260,5 @@
 
 ## tools/series/
 
+- `check-series-content.cjs` — Seri makaleleri için sözleşme denetimi (docs/seri/SOZLESME.md §2, §3, §5, §6). (~1640 tok)
 - `check-series-svg.cjs` — Seri diyagramları için sözleşme denetimi (docs/seri/SOZLESME.md §6). (~1178 tok)

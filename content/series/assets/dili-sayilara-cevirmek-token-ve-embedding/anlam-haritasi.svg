@@ -1,0 +1,41 @@
+<svg viewBox="0 0 720 388" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-anlam" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <rect x="32" y="24" width="656" height="344" rx="6" fill="var(--surface)" stroke="var(--border)"/>
+
+  <ellipse cx="175" cy="115" rx="105" ry="68" fill="var(--cool-soft)" stroke="var(--border)"/>
+  <circle cx="120" cy="92" r="4.5" fill="var(--text)"/>
+  <text x="132" y="97" font-size="15" fill="var(--text)">kedi</text>
+  <circle cx="196" cy="76" r="4.5" fill="var(--text)"/>
+  <text x="208" y="81" font-size="15" fill="var(--text)">köpek</text>
+  <circle cx="152" cy="152" r="4.5" fill="var(--text)"/>
+  <text x="164" y="157" font-size="15" fill="var(--text)">kuş</text>
+  <text x="175" y="200" font-size="14" text-anchor="middle" fill="var(--text-muted)">hayvanlar</text>
+
+  <ellipse cx="580" cy="268" rx="95" ry="58" fill="var(--cool-soft)" stroke="var(--border)"/>
+  <circle cx="528" cy="244" r="4.5" fill="var(--text)"/>
+  <text x="540" y="249" font-size="15" fill="var(--text)">araba</text>
+  <circle cx="600" cy="232" r="4.5" fill="var(--text)"/>
+  <text x="612" y="237" font-size="15" fill="var(--text)">otobüs</text>
+  <circle cx="560" cy="300" r="4.5" fill="var(--text)"/>
+  <text x="572" y="305" font-size="15" fill="var(--text)">tren</text>
+  <text x="580" y="346" font-size="14" text-anchor="middle" fill="var(--text-muted)">taşıtlar</text>
+
+  <line x1="296" y1="152" x2="401" y2="114" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#ok-anlam)"/>
+  <circle cx="296" cy="152" r="4.5" fill="var(--accent)"/>
+  <circle cx="401" cy="114" r="4.5" fill="var(--accent)"/>
+  <text x="296" y="176" font-size="15" text-anchor="middle" fill="var(--text)">kral</text>
+  <text x="401" y="100" font-size="15" text-anchor="middle" fill="var(--text)">kraliçe</text>
+
+  <line x1="296" y1="288" x2="401" y2="250" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#ok-anlam)"/>
+  <circle cx="296" cy="288" r="4.5" fill="var(--accent)"/>
+  <circle cx="401" cy="250" r="4.5" fill="var(--accent)"/>
+  <text x="296" y="312" font-size="15" text-anchor="middle" fill="var(--text)">erkek</text>
+  <text x="401" y="236" font-size="15" text-anchor="middle" fill="var(--text)">kadın</text>
+
+  <text x="48" y="342" font-size="13" fill="var(--text-muted)">gerçek uzay yüzlerce boyutlu; bu bir izdüşüm</text>
+</svg>

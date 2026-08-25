@@ -352,3 +352,66 @@ basarisizligi bu gorevin disinda; publish akisi bunlari gizlemiyor.
 | 13:45 | SVG sozlesme denetleyicisi + gercek render regresyon testi eklendi; 10 diyagram gecti, rehype-react SVG namespace dogrulandi | tools/series/check-series-svg.cjs, src/lib/content/series-assets.test.ts | ok | ~8k |
 | 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/ai-ml-dl-llm.svg | 3→3 lines | ~63 |
 | 13:36 | Session end: 114 writes across 58 files (2026-08-25-sifirdan-yuze-series-design.md, 2026-08-25-sifirdan-yuze-batch-01.md, SOZLESME.md, YOL-HARITASI.md, roadmap.json) | 61 reads | ~351384 tok |
+| 13:37 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | — | ~6763 |
+| 13:38 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~27 |
+| 13:38 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~34 |
+| 13:38 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~21 |
+| 13:38 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | "yapay zekâ sistemi" → "yapay zekâ (artificial in" | ~31 |
+| 13:38 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~71 |
+| 13:38 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~43 |
+| 13:39 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~33 |
+| 13:39 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/ogrenme-dongusu.svg | — | ~542 |
+| 13:39 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~32 |
+| 13:39 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~16 |
+| 13:39 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/kayip-inisi.svg | — | ~515 |
+| 13:39 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~15 |
+| 13:39 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg | — | ~389 |
+| 13:39 | Edited docs/seri/YOL-HARITASI.md | modified notu() | ~780 |
+| 13:39 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~15 |
+| 13:39 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~33 |
+| 13:40 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~55 |
+| 13:40 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~54 |
+| 13:40 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | "ilişkiyi anlamıyor" → "anlamıyor" | ~97 |
+| 13:40 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | 3→3 lines | ~288 |
+| 13:41 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | "ın ücretsiz makine öğrenm" → "ın ücretsiz makine öğrenm" | ~125 |
+| 13:41 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~119 |
+| 13:41 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~72 |
+| 13:41 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~145 |
+| 13:42 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | "nun 1951" → "nun 1951 tarihli çalışmas" | ~213 |
+| 13:42 | Created tools/series/check-series-content.cjs | — | ~1422 |
+| 13:43 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~16 |
+| 13:43 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~33 |
+| 13:43 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~97 |
+| 13:43 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~60 |
+| 13:43 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~105 |
+| 13:43 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/svg-preview-02.html | — | ~482 |
+| 13:43 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~60 |
+| 13:44 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | "ın 1981 tarihli incelemes" → "ın 1981 tarihli incelemes" | ~58 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/kayip-inisi.svg | "0 0 720 410" → "0 0 720 390" | ~17 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/kayip-inisi.svg | "390" → "650" | ~26 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/kayip-inisi.svg | inline fix | ~26 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg | "0 0 720 410" → "0 0 720 390" | ~17 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg | "390" → "650" | ~27 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg | inline fix | ~27 |
+| 13:46 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg | inline fix | ~27 |
+| 13:49 | Edited tools/series/check-series-content.cjs | modified 2() | ~36 |
+| 13:49 | Edited tools/series/check-series-content.cjs | modified countProseWords() | ~230 |
+| 13:53 | Edited src/lib/content/rehype-inline-svg.ts | modified if() | ~165 |
+| 13:54 | Edited src/app/globals.css | CSS: overflow-x, overscroll-behavior-x, min-width | ~187 |
+| 13:54 | Edited src/lib/content/rehype-inline-svg.test.ts | 5→9 lines | ~106 |
+| 13:54 | Edited src/lib/content/rehype-inline-svg.test.ts | 4→4 lines | ~69 |
+| 13:54 | Edited src/lib/content/rehype-inline-svg.test.ts | 3→4 lines | ~49 |
+| 14:04 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/fix1.py | — | ~625 |
+| 14:05 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/fix2.py | — | ~726 |
+| 14:06 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/fix3.py | — | ~1012 |
+| 14:06 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~87 |
+| 14:07 | Edited docs/seri/YOL-HARITASI.md | modified Kural() | ~745 |
+| 14:10 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/clean-anatomy.py | — | ~615 |
+| 14:14 | Edited docs/seri/HANDOFF.md | modified sorunlar() | ~1086 |
+| 13:55 | Batch 0 entegre edildi: 5 makale + 14 diyagram content/series altina, catalog.json uretildi | content/series/** | temiz | ~15k |
+| 14:00 | MOBIL HATASI bulundu ve duzeltildi: 375px'te diyagram etiketleri 5,8px -> okunmaz; series-figure-scroll kabi + min-width 34rem | globals.css, rehype-inline-svg.ts | 9,8-11,3px | ~10k |
+| 14:10 | Opus inceleme turu (11 ajan): 1 blocker + coklu major bulgu; hepsi dogrulanip uygulandi (yanlis capraz referans, sapma sayimi, terim sapmasi, jargon sizintisi) | content/series/articles/** | uygulandi | ~1.3M (subagent) |
+| 14:15 | Terim defteri 14 -> 38 satira genisletildi + bicim kurallari; kavram-tekrar defteri gerceklesen/planlanan olarak ayrildi | docs/seri/YOL-HARITASI.md | ok | ~8k |
+| 14:20 | Final: typecheck + 152 test + build (29 sayfa) + 2 seri denetleyicisi temiz; gorsel dogrulama 3 tema x mobil/desktop | tum repo | GECTI | ~12k |
+| 14:25 | Temizlik: anatomy proje disi bolumlerden arindirildi, buglog 8 gercek kayitla guncellendi, cerebrum ogrenme+karar notlari islendi, HANDOFF final sonuclarla yazildi | .wolf/**, docs/seri/HANDOFF.md | ok | ~8k |
+| 14:17 | Session end: 170 writes across 68 files (2026-08-25-sifirdan-yuze-series-design.md, 2026-08-25-sifirdan-yuze-batch-01.md, SOZLESME.md, YOL-HARITASI.md, roadmap.json) | 86 reads | ~375840 tok |

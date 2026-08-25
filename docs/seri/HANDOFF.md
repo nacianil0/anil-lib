@@ -56,13 +56,67 @@ progressive disclosure) SOZLESME §3'teki sınır koşullarıyla uygulanır, mek
   sentez ve son kabul ana agent'ta. Araştırma paketleri her batch için yeniden üretilir
   (scratchpad kalıcı değildir — paketlerin kritik bulguları bu dosyaya ve YOL-HARITASI'na işlenir).
 
-## Doğrulama durumu (Batch 0)
+## Doğrulama durumu (Batch 0) — tamamlandı
 
-- `corepack pnpm typecheck` ✓ · `corepack pnpm test` ✓ (136 test) · `corepack pnpm build` ✓
-- Dev server görsel doğrulama: `/`, `/seri`, `/seri/[1–5]`, `/read/[örnek]` — desktop + mobil,
-  light/dark/sepia. (Ayrıntı: oturum kapanış raporu.)
-- Bilinen önceden-var sorunlar: `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı; bunlar
-  batch kapısı DEĞİL (cerebrum notu).
+| Kapı | Sonuç |
+|---|---|
+| `corepack pnpm typecheck` | ✓ temiz |
+| `corepack pnpm test` | ✓ 152 test / 18 dosya (14 diyagramın gerçek render testi dahil) |
+| `corepack pnpm build` | ✓ 29 statik sayfa: `/seri` + 5 seri makalesi + mevcut 18 `/read` rotası |
+| `node tools/series/check-series-content.cjs` | ✓ 5 makale, sorun yok |
+| `node tools/series/check-series-svg.cjs` | ✓ 14 diyagram, sorun yok |
+| Görsel doğrulama (dev server) | ✓ `/`, `/seri`, 5 seri makalesi, `/read/[örnek]` |
+
+**Diyagram ölçümü (canlı sayfada, light/dark/sepia × mobil 375px + desktop):** 14 diyagramda
+metin çakışması 0, viewBox taşması 0, sayfa yatay taşması yok; en küçük etiket mobilde 9,8 px
+(düzeltme öncesi 5,8 px idi — bkz. buglog `bug-071`).
+
+**Regresyon:** mevcut kütüphane etkilenmedi — `/read/[slug]` "Bölüm 01 / 18", sidebar'da 18 link
+ve sıfır seri sızıntısı, ana sayfa linki `/`.
+
+**Bilinen önceden-var sorunlar (batch kapısı DEĞİL):** `pnpm lint` ve `pnpm format:check` main'de
+zaten kırmızı. Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama
+çevrimdışı moduna düşer — beklenen davranış.
+
+## İnceleme turu (Opus 5) ve uygulanan düzeltmeler
+
+11 Opus ajanı çalıştı: makale başına adversarial fact-check + sözleşme/zincir denetimi + 1 seri
+çapında tutarlılık denetçisi. Ana agent bulguları doğrulayıp uyguladı:
+
+- **Blocker:** Makale 4, makale 1'de bulunmayan bir "klavye örneği"ne atıf yapıyordu → makale 1'de
+  gerçekten geçen `"Bugün hava çok ___"` örneğine bağlandı.
+- Makale 1: "etiket kümesi dilin bütün kelimeleridir" teknik olarak yanlıştı → sonlu token dağarcığı
+  + 4. makaleye ileri işaret; "ChatGPT'nin altında yatan mekanizma" post-training'i atlıyordu →
+  ön eğitim hedefine sabitlendi; gövde 4 halka anlatırken şekil 5 halka çiziyordu → hizalandı;
+  şekildeki "kullanım" etiketi metindeki "çıkarım" terimine çevrildi.
+- Makale 2: `sinir ağı` glossuz kullanılıyordu → ilk geçişte gloss; "ezberleyen öğrenci" benzetmesi
+  makale 1'e bağlandı; "Sırada ne var" geriye yayılımı da haber verecek şekilde tamamlandı.
+- Makale 3: "dört ağırlık, **iki** sapma" → örnekte üç sapma var, düzeltildi.
+- Makale 4: Şekil 1 her kelimeyi tek token gösteriyordu (gerçekte "Kediler süt içer" = 7 token) →
+  şeklin sadeleştirme olduğu metinde açıkça söylendi; `korpus` → `derlem` terim birliği.
+- Makale 5: "Batch'in kapanış cümlesi" üretim jargonu + "beş makale önce" aritmetik hatası → yeniden
+  yazıldı; Markov zinciri köken iddiası yumuşatıldı; Shannon ve GPT-3 için makale 1'e geri bağlar
+  eklendi; tanımsız "istem" terimi kaldırıldı; "yüz" örneği makale 4'teki kanonik biçime hizalandı;
+  13 yüzde geçişi seri biçimine (`yüzde N`) çevrildi.
+- **Sözleşme/defter:** Terim defteri 14 → 38 satıra genişletildi (ilk geçiş makale numarasıyla) ve
+  biçim kuralları (yüzde yazımı, ondalık virgül, satır başı `1\.` kaçırma) eklendi. `korpus/derlem`
+  sapması tam da defterde satır olmadığı için oluşmuştu.
+
+**Uygulanmayan bulgular:** İncelemenin bazı bulguları ajanların okuduğu ara sürümden kaynaklıydı ve
+son metinde zaten yoktu (makale 2'de "en kötü ikinci değer" ve "dokuz kat" ifadeleri, makale 1'de
+"çeyrek yüzyıl" iddiası). Her biri son dosyada tek tek doğrulandı.
+
+## Bağımsız doğrulanan sayısal iddialar (ana agent)
+
+- Makale 2'nin tüm aritmetiği elle yeniden hesaplandı: w\* = 31/14 ≈ 2,214; L(0) = 23; L(w\*) = 0,119;
+  dL/dw = (2/3)(14w − 31); uzaklık çarpanı (1 − α·28/3); yakınsama eşiği α < 3/14 ≈ 0,2143 ve tablo
+  çarpanları (0,533 / 0,067 / −0,867 / −1,000 / −1,333).
+- Makale 4'ün tokenizer ölçümü `tiktoken` kurulup bağımsız tekrarlandı: İnsan Hakları Evrensel
+  Bildirgesi 1. madde — İngilizce 33 token, Türkçe cl100k 60 (1,82×), o200k 46 (1,39×);
+  "kitaplarımda" → `kit·ap·ları·md·a`. Makaledeki değerlerle birebir.
+- Makale 5: GPT-3 aritmetik değerleri Tablo 3.9'un birebir değerleri (100,0 / 80,4 / 25,5 / 9,3);
+  PTB perplexity 20,50 ve "15 puan" farkı; Shannon 1951'de 129 harflik pasajın yüzde 69'u;
+  bigram tablosu sayımları ve perplexity 3,4 hesabı — hepsi kaynaktan/elle doğrulandı.
 
 ## Next batch preparation — Batch 1 (Makale 6–10)
 

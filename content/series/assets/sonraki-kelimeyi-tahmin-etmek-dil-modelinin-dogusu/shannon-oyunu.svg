@@ -1,0 +1,34 @@
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="42" font-size="18" fill="var(--text)">Shannon'un tahmin oyunu</text>
+
+  <text x="40" y="82" font-size="14" fill="var(--text-muted)">Kısmî metin</text>
+
+  <rect x="40" y="96" width="56" height="56" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="68" y="132" font-size="19" text-anchor="middle" fill="var(--text)">K</text>
+
+  <rect x="104" y="96" width="56" height="56" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="132" y="132" font-size="19" text-anchor="middle" fill="var(--text)">E</text>
+
+  <rect x="168" y="96" width="56" height="56" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="196" y="132" font-size="19" text-anchor="middle" fill="var(--text)">D</text>
+
+  <rect x="232" y="96" width="56" height="56" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="6 4"/>
+  <text x="260" y="132" font-size="19" text-anchor="middle" fill="var(--text)">?</text>
+
+  <line x1="312" y1="124" x2="396" y2="124" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-muted)"/>
+
+  <text x="420" y="82" font-size="14" fill="var(--text-muted)">Tahmin sırası</text>
+  <text x="420" y="118" font-size="15" fill="var(--text-muted)">1. A — yanlış</text>
+  <rect x="412" y="128" width="168" height="28" rx="6" fill="var(--accent-soft)"/>
+  <text x="420" y="147" font-size="15" fill="var(--text)">2. İ — doğru</text>
+  <text x="420" y="184" font-size="13" fill="var(--text-faint)">doğru bilinene kadar sürer</text>
+
+  <line x1="40" y1="214" x2="680" y2="214" stroke="var(--border)"/>
+  <text x="40" y="248" font-size="14" fill="var(--text-muted)">Shannon (1951): 129 harflik denemede tahminlerin %69'u ilk seferde doğru</text>
+</svg>

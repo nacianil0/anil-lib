@@ -1,0 +1,23 @@
+<svg viewBox="0 0 720 390" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-asiri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <line x1="110" y1="336" x2="110" y2="48" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-asiri)"/>
+  <line x1="110" y1="336" x2="668" y2="336" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-asiri)"/>
+
+  <text x="96" y="60" font-size="15" text-anchor="end" fill="var(--text)">Hata</text>
+  <text x="650" y="364" font-size="15" text-anchor="end" fill="var(--text)">Model karmaşıklığı</text>
+
+  <path d="M 140,120 C 235,255 330,300 620,318" fill="none" stroke="var(--cool)" stroke-width="2.5"/>
+  <path d="M 140,86 C 235,205 290,228 360,228 C 445,228 530,190 620,128" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+
+  <text x="250" y="288" font-size="15" text-anchor="middle" fill="var(--cool)">Eğitim hatası</text>
+  <text x="600" y="112" font-size="15" text-anchor="end" fill="var(--accent)">Test hatası</text>
+  <text x="545" y="255" font-size="15" text-anchor="middle" fill="var(--text-muted)">aşırı öğrenme</text>
+
+  <line x1="360" y1="228" x2="360" y2="344" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="360" y="364" font-size="15" text-anchor="middle" fill="var(--text)">en iyi denge</text>
+</svg>

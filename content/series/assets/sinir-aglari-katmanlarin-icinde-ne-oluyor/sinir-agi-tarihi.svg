@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-tarih" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <rect x="340" y="28" width="140" height="194" rx="6" fill="var(--surface-muted)"/>
+  <rect x="506" y="28" width="80" height="194" rx="6" fill="var(--surface-muted)"/>
+  <text x="410" y="48" font-size="13" text-anchor="middle" fill="var(--text)">ilk kış</text>
+  <text x="546" y="48" font-size="13" text-anchor="middle" fill="var(--text)">durgunluk</text>
+
+  <line x1="44" y1="140" x2="692" y2="140" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-tarih)"/>
+
+  <circle cx="80" cy="140" r="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="220" cy="140" r="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="340" cy="140" r="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="480" cy="140" r="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="640" cy="140" r="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+
+  <text x="80" y="78" font-size="13" text-anchor="middle" fill="var(--text-muted)">fikir</text>
+  <text x="80" y="98" font-size="14" text-anchor="middle" fill="var(--text)">yapay nöron</text>
+  <text x="80" y="120" font-size="15" text-anchor="middle" fill="var(--text)">1943</text>
+
+  <text x="220" y="166" font-size="15" text-anchor="middle" fill="var(--text)">1958</text>
+  <text x="220" y="186" font-size="14" text-anchor="middle" fill="var(--text)">perceptron</text>
+  <text x="220" y="206" font-size="13" text-anchor="middle" fill="var(--text-muted)">öğrenme</text>
+
+  <text x="340" y="78" font-size="13" text-anchor="middle" fill="var(--text-muted)">duvar</text>
+  <text x="340" y="98" font-size="14" text-anchor="middle" fill="var(--text)">Perceptrons kitabı</text>
+  <text x="340" y="120" font-size="15" text-anchor="middle" fill="var(--text)">1969</text>
+
+  <text x="480" y="166" font-size="15" text-anchor="middle" fill="var(--text)">1986</text>
+  <text x="480" y="186" font-size="14" text-anchor="middle" fill="var(--text)">geriye yayılım</text>
+  <text x="480" y="206" font-size="13" text-anchor="middle" fill="var(--text-muted)">motor</text>
+
+  <text x="640" y="78" font-size="13" text-anchor="middle" fill="var(--text-muted)">patlama</text>
+  <text x="640" y="98" font-size="14" text-anchor="middle" fill="var(--text)">AlexNet</text>
+  <text x="640" y="120" font-size="15" text-anchor="middle" fill="var(--text)">2012</text>
+</svg>

@@ -1030,8 +1030,8 @@
       "timestamp": "2026-08-25T13:40:00+03:00",
       "error_message": ".wolf/anatomy.md icine proje disi scratchpad yollari eklendi ve elle eklenen girdiler otomatik taramayla yinelendi",
       "file": ".wolf/anatomy.md",
-      "root_cause": "post-write hook yolu path.relative(projectRoot, absolutePath) ile cozuyor ve yalnizca '.wolf/' onekini atliyor. Scratchpad baska surucude (C:) oldugu icin path.relative mutlak yolu donduruyor ve bu mutlak yol anatomy'de yeni bir bolum aciyor. Ayrica elle eklenen aciklamali girdiler, hook'un ayni dosya icin urettigi girdiyle yan yana durup yineleniyor.",
-      "fix": "Vendor OpenWolf hook'u degistirilmedi. Batch sonunda anatomy.md'den proje disi bolumler ve yinelenen satirlar temizlendi. Kural: scratchpad dosyalari anatomy'ye ait degildir; elle girdi eklerken hook'un ayni dosya icin zaten satir uretecegini hesaba kat.",
+      "root_cause": "Iki ayri neden. (1) post-write hook yolu path.relative(projectRoot, absolutePath) ile cozuyor ve yalnizca '.wolf/' onekini atliyor; scratchpad baska surucude (C:) oldugu icin path.relative mutlak yolu donduruyor ve bu mutlak yol anatomy'de yeni bir bolum aciyor. (2) Hook'un tam yeniden taramasi yalnizca belirli uzantilari izliyor; .cmd/.ps1/.psm1/.svg dosyalari taranmadigi icin tools/dev, tools/lib, tools/publish ve content/series/assets bolumleri her taramada BOSALIYOR — elle eklenen girdiler bir sonraki yazma isleminde siliniyor.",
+      "fix": "Vendor OpenWolf hook'u degistirilmedi. Batch sonunda proje disi bolumler ve gercek yinelenen satirlar temizlendi (clean-anatomy.py). Bos kalan 4 bolum hook'un uzanti filtresinden kaynaklandigi icin elle doldurulmadi: bir sonraki taramada yine silinirdi. Kural: scratchpad dosyalari anatomy'ye ait degildir; .cmd/.ps1/.svg iceren klasorlerin icerigi anatomy yerine tools/README.md ve docs/seri/SOZLESME.md'de belgelenir.",
       "tags": [
         "openwolf",
         "anatomy",
@@ -1041,8 +1041,8 @@
         "cleanup"
       ],
       "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-08-25T13:40:00+03:00"
+      "occurrences": 2,
+      "last_seen": "2026-08-25T14:20:00+03:00"
     },
     {
       "id": "bug-062",
@@ -1075,6 +1075,208 @@
       "related_bugs": [],
       "occurrences": 3,
       "last_seen": "2026-08-25T10:35:57.352Z"
+    },
+    {
+      "id": "bug-064",
+      "timestamp": "2026-08-25T10:38:37.382Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md",
+      "root_cause": "Had \"yapay zekâ sistemi\"",
+      "fix": "Changed to \"yapay zekâ (artificial intelligence, AI) sistemi\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T10:38:37.382Z"
+    },
+    {
+      "id": "bug-065",
+      "timestamp": "2026-08-25T10:39:27.957Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "16 lines replaced/restructured",
+      "fix": "Rewrote 19→28 lines (16 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T10:39:27.957Z"
+    },
+    {
+      "id": "bug-066",
+      "timestamp": "2026-08-25T10:40:40.153Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/02-veriden-ogrenmek-model-parametre-ve-kayip.md",
+      "root_cause": "Had \"ilişkiyi anlamıyor\"",
+      "fix": "Changed to \"anlamıyor\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-08-25T10:44:14.163Z"
+    },
+    {
+      "id": "bug-067",
+      "timestamp": "2026-08-25T10:46:01.048Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/kayip-inisi.svg",
+      "root_cause": "Had \"0 0 720 410\"",
+      "fix": "Changed to \"0 0 720 390\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-25T10:46:08.995Z"
+    },
+    {
+      "id": "bug-068",
+      "timestamp": "2026-08-25T10:46:12.825Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg",
+      "root_cause": "Had \"0 0 720 410\"",
+      "fix": "Changed to \"0 0 720 390\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-08-25T10:46:24.773Z"
+    },
+    {
+      "id": "bug-069",
+      "timestamp": "2026-08-25T10:49:38.569Z",
+      "error_message": "Incorrect value in code",
+      "file": "tools/series/check-series-content.cjs",
+      "root_cause": "Had `kelime sayısı ${words} (hedef 2.000–3.500)`",
+      "fix": "Changed to `düzyazı kelime sayısı ${words} (hedef 2.000–3.500",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T10:49:38.570Z"
+    },
+    {
+      "id": "bug-070",
+      "timestamp": "2026-08-25T11:07:26.781Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "17 lines replaced/restructured",
+      "fix": "Rewrote 19→49 lines (17 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T11:07:26.781Z"
+    },
+    {
+      "id": "bug-071",
+      "timestamp": "2026-08-25T13:52:00+03:00",
+      "error_message": "Mobil (375px) gercek render'da seri diyagramlarinin etiketleri 5,8 px'e dusuyor ve okunmuyor (14 diyagramin tamaminda, uc temada)",
+      "file": "src/app/globals.css, src/lib/content/rehype-inline-svg.ts",
+      "root_cause": "Diyagramlar 720 birimlik viewBox ile ciziliyor ve SVG width:100% ile kabin genisligine olcekleniyordu. 375px ekranda okuma kolonu 298px olunca olcek 0,414'e dusuyor ve 14 birimlik etiket 5,8 CSS px oluyor.",
+      "fix": "SVG rehype adiminda kendi `.series-figure-scroll` kabina alindi; CSS'te `min-width: 34rem` verilip kap `overflow-x: auto` yapildi (tablolardaki .table-scroll deseninin aynisi). figcaption kabin disinda birakildi ki dar ekranda tam gorunur kalsin. Sonuc: minimum metin 5,8px -> 9,8-11,3px, sayfada yatay tasma yok.",
+      "tags": [
+        "responsive",
+        "mobile",
+        "svg",
+        "readability",
+        "visual-qc",
+        "series"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T13:52:00+03:00"
+    },
+    {
+      "id": "bug-072",
+      "timestamp": "2026-08-25T14:05:00+03:00",
+      "error_message": "[content] Katalog ile frontmatter uyusmuyor: content_hash katalog != frontmatter (dev sunucusunda, icerik guncellendikten sonra)",
+      "file": "src/lib/content/series.ts",
+      "root_cause": "loadSeriesCatalog() katalogu modul duzeyinde onbellege aliyor (`let cached`). next dev surecinde modul yasadigi icin disk uzerindeki katalog/makale yenilendiginde eski katalog onbellekte kaliyor ve hash karsilastirmasi patliyor. Ayrica next dev calisirken pnpm build calistirmak paylasilan .next dizinini bozup 'Cannot find module ./vendor-chunks/zod' ve 'segment-explorer-node' hatalarina yol aciyor.",
+      "fix": "Kod degistirilmedi; onbellek uretimde dogru davranis ve hash korumasi bayat icerigi yayina birakmadi. Is akisi kurali: icerik entegrasyonundan sonra dev sunucusunu yeniden baslat, build almadan once dev sunucusunu durdur.",
+      "tags": [
+        "nextjs",
+        "dev-server",
+        "module-cache",
+        "content-hash",
+        "build-collision"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T14:05:00+03:00"
+    },
+    {
+      "id": "bug-073",
+      "timestamp": "2026-08-25T14:12:00+03:00",
+      "error_message": "Makale 4 '1. makaledeki klavye ornegini hatirla' diyor ama makale 1'de klavye ornegi yok (Opus tutarlilik denetcisi: blocker)",
+      "file": "content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md",
+      "root_cause": "Makale 1 ve 4 farkli ajanlarca paralel yazildi; makale 4'un yazari makale 1'i okuyamadigi icin brief'teki klavye ornegini makale 1'de kurulmus varsaydi, makale 1 ise spam filtresi ornegiyle acti.",
+      "fix": "Atif, makale 1'de gercekten gecen ornege baglandi: '1\\. makalede sonraki kelimeyi tahmin etmeyi \"Bugun hava cok ___\" ornegiyle gormustuk'. Kural: paralel yazilan makalelerde capraz referans yalnizca brief'te SABITLENEN kavramlara yapilabilir; somut ornege atif entegrasyonda dogrulanmali.",
+      "tags": [
+        "series",
+        "cross-reference",
+        "parallel-agents",
+        "chain-consistency",
+        "review"
+      ],
+      "related_bugs": [
+        "bug-060"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T14:12:00+03:00"
+    },
+    {
+      "id": "bug-074",
+      "timestamp": "2026-08-25T14:10:00+03:00",
+      "error_message": "Makale 3: 'Iki katman, dort agirlik, iki sapma' — ornekte uc sapma var (y1=2x+1, y2=3x-2, z=4y1-y2+5)",
+      "file": "content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md",
+      "root_cause": "Dogrusal bilesim ornegindeki sabit terimler sayilirken ikinci katmanin sabiti (+5) atlanmis.",
+      "fix": "'uc sapma' olarak duzeltildi. Bulgu adversarial fact-check ajani tarafindan yakalandi; ana agent ornegi elle yeniden hesaplayarak dogruladi.",
+      "tags": [
+        "series",
+        "fact-check",
+        "arithmetic",
+        "content"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T14:10:00+03:00"
+    },
+    {
+      "id": "bug-075",
+      "timestamp": "2026-08-25T11:14:52.056Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 7→61 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T11:14:52.056Z"
     }
   ]
 }

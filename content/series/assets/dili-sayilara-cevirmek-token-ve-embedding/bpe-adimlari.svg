@@ -1,0 +1,60 @@
+<svg viewBox="0 0 720 276" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-bpe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <text x="300" y="28" font-size="17" text-anchor="middle" fill="var(--text)">"okullarda"</text>
+
+  <rect x="106" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="124" y="70" font-size="15" text-anchor="middle" fill="var(--text)">o</text>
+  <rect x="150" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="168" y="70" font-size="15" text-anchor="middle" fill="var(--text)">k</text>
+  <rect x="194" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="212" y="70" font-size="15" text-anchor="middle" fill="var(--text)">u</text>
+  <rect x="238" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="256" y="70" font-size="15" text-anchor="middle" fill="var(--text)">l</text>
+  <rect x="282" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="300" y="70" font-size="15" text-anchor="middle" fill="var(--text)">l</text>
+  <rect x="326" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="344" y="70" font-size="15" text-anchor="middle" fill="var(--text)">a</text>
+  <rect x="370" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="388" y="70" font-size="15" text-anchor="middle" fill="var(--text)">r</text>
+  <rect x="414" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="432" y="70" font-size="15" text-anchor="middle" fill="var(--text)">d</text>
+  <rect x="458" y="46" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="476" y="70" font-size="15" text-anchor="middle" fill="var(--text)">a</text>
+
+  <line x1="520" y1="84" x2="520" y2="114" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-bpe)"/>
+  <text x="616" y="94" font-size="14" text-anchor="middle" fill="var(--text)">birleştir</text>
+  <text x="616" y="112" font-size="13" text-anchor="middle" fill="var(--text-muted)">o–k, l–a, d–a</text>
+
+  <rect x="148" y="118" width="52" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="174" y="142" font-size="15" text-anchor="middle" fill="var(--text)">ok</text>
+  <rect x="208" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="226" y="142" font-size="15" text-anchor="middle" fill="var(--text)">u</text>
+  <rect x="252" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="270" y="142" font-size="15" text-anchor="middle" fill="var(--text)">l</text>
+  <rect x="296" y="118" width="52" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="322" y="142" font-size="15" text-anchor="middle" fill="var(--text)">la</text>
+  <rect x="356" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="374" y="142" font-size="15" text-anchor="middle" fill="var(--text)">r</text>
+  <rect x="400" y="118" width="52" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="426" y="142" font-size="15" text-anchor="middle" fill="var(--text)">da</text>
+
+  <line x1="520" y1="156" x2="520" y2="186" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-bpe)"/>
+  <text x="616" y="166" font-size="14" text-anchor="middle" fill="var(--text)">birleştir</text>
+  <text x="616" y="184" font-size="13" text-anchor="middle" fill="var(--text-muted)">ok–u, oku–l, la–r</text>
+
+  <rect x="150" y="190" width="76" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="188" y="216" font-size="15" text-anchor="middle" fill="var(--text)">okul</text>
+  <rect x="282" y="190" width="60" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="312" y="216" font-size="15" text-anchor="middle" fill="var(--text)">lar</text>
+  <rect x="398" y="190" width="52" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="424" y="216" font-size="15" text-anchor="middle" fill="var(--text)">da</text>
+
+  <text x="188" y="252" font-size="13" text-anchor="middle" fill="var(--text-muted)">kök</text>
+  <text x="312" y="252" font-size="13" text-anchor="middle" fill="var(--text-muted)">çoğul eki</text>
+  <text x="424" y="252" font-size="13" text-anchor="middle" fill="var(--text-muted)">bulunma eki</text>
+</svg>

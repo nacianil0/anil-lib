@@ -164,43 +164,82 @@ Gösterim: `makale ← dayandıkları`.
 
 ## Kavram-tekrar defteri (Batch 0 kavramları)
 
-Her satır: kavram → ilk kurulduğu makale → planlanan geri çağrımlar (kısa yeniden kurulumla).
+Her satır: kavram → ilk kurulduğu makale → Batch 0 içinde **gerçekleşen** geri çağrımlar →
+ileride **planlanan** geri çağrımlar (her biri kısa yeniden kurulumla).
 
-| Kavram | İlk | Planlanan geri çağrımlar |
-|---|---|---|
-| Kural yazmak vs veriden öğrenmek | 1 | 8 (ön eğitimde "kural yok, veri var"), 22 (prompt kural mı?), 51 (ajan döngüsünde kurallar geri döner) |
-| Model = ayarlanabilir fonksiyon | 1 | 2 (parametrelerle somutlaşır), 7 (dev fonksiyon olarak Transformer), 18 (bilgi fonksiyonun içinde) |
-| Parametre / ağırlık | 2 | 3 (nöron bağlantıları), 8 (milyarlarca parametre), 19 (LoRA: az parametre değişir), 27 (kuantizasyon) |
-| Kayıp fonksiyonu | 2 | 5 (sonraki-token kaybı), 9 (ölçek yasası eğrileri kayıpla çizilir), 13 (ödül ≈ ters kayıp), 38 (süreç ödülü) |
-| Gradyan inişi | 2 | 3 (backprop ile birleşir), 8 (dev ölçekte aynı döngü), 12–13 (fine-tuning aynı mekanizma) |
-| Genelleme / aşırı öğrenme | 2 | 8 (tek epoch/veri tekrarı), 16 (benchmark ezberi), 72 (contamination), 18 (ezber vs genelleme) |
-| Nöron, katman, aktivasyon | 3 | 7 (Transformer blokları), 74–76 (interpretability aynı katmanlara bakar) |
-| Temsil (representation) | 3 | 4 (embedding = temsil), 29 (anlamsal arama), 75 (features) |
-| Token | 4 | 5 (dil modelinin birimi), 10 (token token üretim), 15 (tokenizer derinlemesine), 21 (bağlam token sayar), 26 (maliyet token başına) |
-| Embedding | 4 | 5 (nöral DM'nin girişi), 6 (statik→bağlamsal), 29 (arama), 43 (vektör DB) |
-| Dağılımsal hipotez | 4 | 5 (bağlamdan tahmin aynı fikir), 8 (ölçekte anlamın örtük öğrenimi) |
-| Dil modeli = sonraki-token dağılımı | 5 | 6–8 (mimari bu hedefe hizmet eder), 10 (dağılımdan örnekleme), 17 (halüsinasyonun kökü), 23 (ICL) |
-| Perplexity | 5 | 9 (ölçek yasası metriği), 16 (değerlendirme metriği olarak sınırı) |
+Kanıt notu (SOZLESME §3): bir sonraki makaledeki hatırlatma köprü işlevi görür; kalıcılığı
+sağlayan asıl tekrar 10+ makale sonraki bilinçli geri çağrımlardır (Cepeda ve ark. 2008).
+Aşağıdaki "planlanan" sütunu bu uzun aralıklı tekrarları tutar.
+
+| Kavram | İlk | Batch 0'da gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Kural yazmak vs veriden öğrenmek | 1 | 2 (giriş köprüsü: "yol ayrımı") | 8 (ön eğitimde "kural yok, veri var"), 22 (prompt kural mı?), 51 (ajan döngüsünde kurallar geri döner) |
+| Model = ayarlanabilir fonksiyon | 1 | 2 (parametrelerle somutlaştı), 3 (doğrunun duvarı) | 7 (dev fonksiyon olarak Transformer), 18 (bilgi fonksiyonun içinde) |
+| Tahmin = görülmemiş girdiye çıktı | 1 | 5 (dil modelinde aynı tanım) | 16 (değerlendirme neyi ölçer), 31 (reasoning tahmin midir) |
+| Parametre / ağırlık | 2 | 3 ("ağırlık ve sapma = 2. makaledeki parametreler"), 4 (embedding satırları da parametredir) | 8 (milyarlarca parametre), 19 (LoRA: az parametre değişir), 27 (kuantizasyon) |
+| Kayıp fonksiyonu | 2 | 3 (gradyanın kaynağı), 4 (embedding'i kim yazıyor), 5 (sonraki-token kaybı = perplexity) | 9 (ölçek yasası eğrileri kayıpla çizilir), 13 (ödül ≈ ters kayıp), 38 (süreç ödülü) |
+| Gradyan inişi | 2 | 3 (backprop ile birleşti), 4 (defteri eğitim yazar), 5 (dil modeli aynı döngü) | 8 (dev ölçekte aynı döngü), 12–13 (fine-tuning aynı mekanizma) |
+| Öğrenme döngüsü şeması (Şekil 1/2) | 2 | 5 ("2. makaledeki döngünün aynısı") | 8 (ön eğitim aynı döngü — şekli yeniden çağır) |
+| Genelleme / aşırı öğrenme | 2 | 3 (AlexNet'te dropout'a selam) | 8 (veri tekrarı), 16 (benchmark ezberi), 72 (contamination), 18 (ezber vs genelleme) |
+| İndirgenemez hata | 2 | — | 16 (tavan neden var), 65 (belirsizlik türleri) |
+| Nöron, katman, aktivasyon | 3 | 4 (ağın kapısı) | 7 (Transformer blokları), 74–76 (interpretability aynı katmanlara bakar) |
+| Temsil (representation) | 3 | 4 (embedding = temsil, açık atıfla) | 29 (anlamsal arama), 75 (features) |
+| Token | 4 | 5 (dil modelinin birimi) | 10 (token token üretim), 15 (tokenizer derinlemesine), 21 (bağlam token sayar), 26 (maliyet token başına) |
+| Embedding | 4 | 5 (Bengio köprüsü: embedding'in tarihsel kökeni) | 6 (statik→bağlamsal), 29 (arama), 43 (vektör DB) |
+| Dağılımsal hipotez | 4 | 5 (bağlamdan tahmin aynı fikir) | 8 (ölçekte anlamın örtük öğrenimi) |
+| Statik vektörün duvarı ("yüz") | 4 | 5 (kapanış köprüsü, aynı örnekle) | **6 (açılış problemi — aynı örnekle başlanacak)** |
+| Dil modeli = sonraki-token dağılımı | 5 | — | 6–8 (mimari bu hedefe hizmet eder), 10 (dağılımdan örnekleme), 17 (halüsinasyonun kökü), 23 (ICL) |
+| Perplexity | 5 | — | 9 (ölçek yasası metriği), 16 (değerlendirme metriği olarak sınırı) |
 
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
-| Türkçe kullanım | İlk geçişte parantez içi | Not |
-|---|---|---|
-| yapay zekâ | (artificial intelligence, AI) | "AI" kısaltması serbest |
-| makine öğrenmesi | (machine learning, ML) | |
-| model | — | "ayarlanabilir fonksiyon" sezgisiyle kuruldu (1) |
-| parametre / ağırlık | (parameter/weight) | ikisi eşanlamlı kullanılır, ilk geçişte söylenir |
-| kayıp fonksiyonu | (loss function) | |
-| gradyan inişi | (gradient descent) | |
-| geriye yayılım | (backpropagation) | |
-| sinir ağı | (neural network) | |
-| aktivasyon | (activation) | |
-| temsil | (representation) | |
-| token | — | Türkçeleştirilmez |
-| embedding | — | Türkçeleştirilmez ("gömme" kullanılmaz) |
-| dil modeli | (language model) | |
-| sonraki token tahmini | (next-token prediction) | |
-| perplexity | — | Türkçeleştirilmez; sezgisi "şaşkınlık ölçüsü" |
+Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
+verilir; sonraki makalelerde **parantezsiz** kullanılır. Giriş köprülerinde geri çağrılan terimler
+yeniden gloss'lanmaz. Yeni bir terim kurulduğunda bu defter aynı batch içinde güncellenir —
+Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için oluştu.
+
+| Türkçe kullanım | İlk geçişte parantez içi | İlk | Not |
+|---|---|---|---|
+| yapay zekâ | (artificial intelligence, AI) | 1 | "AI" kısaltması serbest |
+| makine öğrenmesi | (machine learning, ML) | 1 | |
+| model | — | 1 | "ayarlanabilir fonksiyon" sezgisiyle kuruldu |
+| tahmin | — | 1 | ML anlamı: görülmemiş girdiye çıktı üretmek (gelecek kestirimi değil) |
+| eğitim | (training) | 1 | |
+| çıkarım | (inference) | 1 | Şekil etiketlerinde de "çıkarım" kullanılır |
+| temsil öğrenimi | (representation learning) | 1 | Goodfellow Fig 1.4 halkası |
+| derin öğrenme | (deep learning) | 1 | |
+| büyük dil modeli | (large language model) | 1 | |
+| parametre / ağırlık | (parameter / weight) | 2 | ikisi eşanlamlı; ilk geçişte söylenir |
+| hiperparametre | (hyperparameter) | 2 | veriden öğrenilmeyen ayar (ör. öğrenme oranı) |
+| kayıp fonksiyonu | (loss function) | 2 | |
+| gradyan inişi | (gradient descent) | 2 | |
+| öğrenme oranı | (learning rate) | 2 | |
+| stokastik gradyan inişi | (stochastic gradient descent, SGD) | 2 | |
+| genelleme | — | 2 | |
+| aşırı öğrenme | (overfitting) | 2 | |
+| indirgenemez hata | — | 2 | gürültü tabanı |
+| düzenlileştirme | (regularization) | 2 | ayrıntı ileride |
+| sinir ağı | (neural network) | 2 | 2'de gloss'landı, 3'te mekanizması kurulur |
+| geriye yayılım | (backpropagation) | 3 | 2'de adı kondu, 3'te açıldı |
+| nöron | (neuron) | 3 | |
+| sapma | (bias) | 3 | nöronun sabit terimi |
+| aktivasyon | (activation) | 3 | |
+| temsil | (representation) | 3 | 4'te embedding buna bağlanır |
+| token | — | 4 | Türkçeleştirilmez |
+| tokenizasyon | (tokenization) | 4 | |
+| alt-kelime | (subword) | 4 | |
+| sözlük | (vocabulary) | 4 | modelin token dağarcığı |
+| embedding | — | 4 | Türkçeleştirilmez ("gömme" kullanılmaz) |
+| dağılımsal hipotez | (distributional hypothesis) | 4 | |
+| derlem | (corpus) | 4 | **"korpus" kullanılmaz** |
+| dil modeli | (language model) | 5 | |
+| sonraki token tahmini | (next-token prediction) | 5 | |
+| boyutluluk laneti | (curse of dimensionality) | 5 | |
+| perplexity | — | 5 | Türkçeleştirilmez; sezgisi "şaşkınlık ölçüsü" |
+
+**Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
+serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
+kaçırılır (`1\.`) — aksi hâlde Markdown numarayı liste işareti sanıp yutar.
 
 ## Batch 0 öğrenme notları (yazım tamamlandı)
 

@@ -454,9 +454,22 @@
     background-color: var(--surface);
   }
 
+  /*
+     Diyagramlar 720 birimlik bir tuval için çizilir. Dar ekranlarda tuvali
+     kabın genişliğine sıkıştırmak etiketleri okunamaz hâle getirdiği için
+     (375px'te 14 birim ≈ 5,8 px), SVG okunaklı bir taban genişliğin altına
+     inmez ve bunun yerine kendi kabı içinde yatayda kaydırılır — tablolarda
+     kullanılan .table-scroll deseninin aynısı.
+  */
+  .prose-reader figure.series-figure .series-figure-scroll {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
   .prose-reader figure.series-figure svg {
     display: block;
     width: 100%;
+    min-width: 34rem;
     height: auto;
     font-family: theme("fontFamily.sans");
   }

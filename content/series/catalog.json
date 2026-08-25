@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "classificationVersion": 1,
+  "generatedAt": "2026-08-25T00:00:00.000Z",
+  "articles": [
+    {
+      "articleId": "article_0d9a4d5a-7ca8-4d11-b60a-74f25dce3f86",
+      "title": "Tahmin Makinesi: Yapay Zekâya İlk Bakış",
+      "slug": "tahmin-makinesi-yapay-zekaya-ilk-bakis",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 1,
+      "summary": "Kural yazmakla veriden öğrenmek arasındaki farkı kurar; modelin ayarlanabilir bir fonksiyon olduğunu ve yapay zekâ, makine öğrenmesi, temsil öğrenimi ile derin öğrenmenin nasıl iç içe geçtiğini gösterir.",
+      "tags": [
+        "yapay-zeka",
+        "makine-ogrenmesi",
+        "model",
+        "tahmin",
+        "temeller"
+      ],
+      "contentHash": "sha256:e8ee32f82479afb89f9d6b47f220dc11c17be4122799495db8c8d742ccb0ec01",
+      "path": "content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_51824a21-d8fe-4db1-bd4a-5b79e21f721d",
+      "title": "Veriden Öğrenmek: Model, Parametre ve Kayıp",
+      "slug": "veriden-ogrenmek-model-parametre-ve-kayip",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 2,
+      "summary": "Parametre, kayıp fonksiyonu ve gradyan inişini elle hesaplanan sayısal bir örnekle kurar; öğrenme oranının yakınsama eşiğini, genellemeyi ve aşırı öğrenmeyi gösterir.",
+      "tags": [
+        "parametre",
+        "kayip-fonksiyonu",
+        "gradyan-inisi",
+        "genelleme",
+        "asiri-ogrenme"
+      ],
+      "contentHash": "sha256:a78cfeb1ae66d17f748239c3b497556d352d96a995b9c392d9653fe56d1b002a",
+      "path": "content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_e97ef8ba-1ea2-4ffd-9c0d-53c0df68ba95",
+      "title": "Sinir Ağları: Katmanların İçinde Ne Oluyor?",
+      "slug": "sinir-aglari-katmanlarin-icinde-ne-oluyor",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 3,
+      "summary": "Nörondan katmana, aktivasyonun neden zorunlu olduğundan geriye yayılıma: katmanlı ağların girdiyi nasıl yeni temsillere çevirdiğini ve seksen yıllık iniş çıkışları anlatır.",
+      "tags": [
+        "sinir-aglari",
+        "aktivasyon",
+        "geriye-yayilim",
+        "temsil-ogrenimi",
+        "derin-ogrenme"
+      ],
+      "contentHash": "sha256:6c5587d892287d16a97b2f6121ec622518c1e4bd0b35a853ee8dd8017b9cfe98",
+      "path": "content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_e0871ce4-0b1a-4b5c-9d72-b713ba8c6cf1",
+      "title": "Dili Sayılara Çevirmek: Token ve Embedding",
+      "slug": "dili-sayilara-cevirmek-token-ve-embedding",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 4,
+      "summary": "Metnin ağa girebilmesi için geçtiği iki aşamayı kurar: token'lara ayıran BPE ve anlamı geometriye çeviren embedding; Türkçenin token maliyetini ölçümle gösterir.",
+      "tags": [
+        "token",
+        "tokenizasyon",
+        "embedding",
+        "bpe",
+        "dagilimsal-hipotez"
+      ],
+      "contentHash": "sha256:055b9df9d5839f503c976380514e9cb11d1e22d9e36fd4ed02ba13ad1585610d",
+      "path": "content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_ad607086-8637-40fd-a240-bd9d5c23aba1",
+      "title": "Sonraki Kelimeyi Tahmin Etmek: Dil Modelinin Doğuşu",
+      "slug": "sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu",
+      "category": "foundations",
+      "level": "beginner",
+      "readingOrder": 5,
+      "summary": "Shannon'un tahmin oyunundan n-gram'ların seyreklik duvarına ve Bengio'nun nöral köprüsüne: dil modelinin tanımını, perplexity'yi ve ölçeğin ne değiştirdiğini kurar.",
+      "tags": [
+        "dil-modeli",
+        "n-gram",
+        "perplexity",
+        "sonraki-token",
+        "shannon"
+      ],
+      "contentHash": "sha256:62a325242ca156954286c322231ca3f7c93d0760626350ac54bf3b9b06707f9f",
+      "path": "content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    }
+  ]
+}

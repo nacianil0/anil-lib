@@ -1,0 +1,74 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <text x="190" y="38" font-size="17" text-anchor="middle" fill="var(--text)">Sayarak (n-gram)</text>
+  <text x="530" y="38" font-size="17" text-anchor="middle" fill="var(--text)">Embedding + ağ (nöral)</text>
+
+  <rect x="40" y="54" width="300" height="220" rx="6" fill="var(--surface)" stroke="var(--border)"/>
+
+  <rect x="64" y="70" width="38" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="83" y="92" font-size="13" text-anchor="middle" fill="var(--text)">3</text>
+  <rect x="110" y="70" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="156" y="70" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="202" y="70" width="38" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="221" y="92" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <rect x="248" y="70" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="294" y="70" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+
+  <rect x="64" y="112" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="110" y="112" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="156" y="112" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="202" y="112" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="248" y="112" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="294" y="112" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+
+  <rect x="64" y="154" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="110" y="154" width="38" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="129" y="176" font-size="13" text-anchor="middle" fill="var(--text)">2</text>
+  <rect x="156" y="154" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="202" y="154" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="248" y="154" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="294" y="154" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+
+  <rect x="64" y="196" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="110" y="196" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="156" y="196" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="202" y="196" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="248" y="196" width="38" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="267" y="218" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <rect x="294" y="196" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+
+  <rect x="64" y="238" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="110" y="238" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="156" y="238" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="202" y="238" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="248" y="238" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <rect x="294" y="238" width="38" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)"/>
+
+  <text x="190" y="298" font-size="14" text-anchor="middle" fill="var(--text-muted)">çoğu hücre: hiç görülmedi</text>
+
+  <rect x="380" y="54" width="300" height="220" rx="6" fill="var(--surface)" stroke="var(--border)"/>
+
+  <text x="500" y="98" font-size="13" text-anchor="middle" fill="var(--text)">sıcak</text>
+  <circle cx="500" cy="115" r="7" fill="var(--cool-soft)" stroke="var(--cool)"/>
+
+  <text x="445" y="143" font-size="13" text-anchor="middle" fill="var(--text)">güzel</text>
+  <circle cx="445" cy="160" r="7" fill="var(--cool-soft)" stroke="var(--cool)"/>
+
+  <text x="510" y="180" font-size="13" text-anchor="end" fill="var(--text)">soğuk</text>
+  <circle cx="525" cy="175" r="7" fill="var(--cool-soft)" stroke="var(--cool)"/>
+
+  <circle cx="620" cy="235" r="7" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="620" y="260" font-size="13" text-anchor="middle" fill="var(--text)">serin (yeni)</text>
+
+  <line x1="605" y1="225" x2="545" y2="190" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ok-accent)"/>
+
+  <text x="530" y="298" font-size="14" text-anchor="middle" fill="var(--text-muted)">yakın vektörler yardımlaşır</text>
+
+  <rect x="40" y="316" width="640" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="360" y="345" font-size="15" text-anchor="middle" fill="var(--text)">benzer cümleler birbirine yardım eder</text>
+</svg>

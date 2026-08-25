@@ -105,7 +105,17 @@ function buildFigure(image: Element, options: InlineSvgOptions): Element {
   svg.properties.role = "img";
   if (alt) svg.properties.ariaLabel = alt;
 
-  const children: ElementContent[] = [svg];
+  // SVG kendi kaydırma kabında durur: dar ekranlarda diyagram okunaklı
+  // kalacak kadar geniş tutulur ve kullanıcı yatayda kaydırır. Şekil başlığı
+  // kabın dışındadır, böylece her zaman görünür genişlikte kalır.
+  const children: ElementContent[] = [
+    {
+      type: "element",
+      tagName: "div",
+      properties: { className: ["series-figure-scroll"] },
+      children: [svg],
+    },
+  ];
   if (caption) {
     children.push({
       type: "element",

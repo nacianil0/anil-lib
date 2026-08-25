@@ -53,7 +53,11 @@ describe("rehypeInlineSvg", () => {
     expect(figure.tagName).toBe("figure");
     expect(figure.properties.className).toEqual(["series-figure"]);
 
-    const [svg, caption] = figure.children as Element[];
+    const [scroll, caption] = figure.children as Element[];
+    expect(scroll.tagName).toBe("div");
+    expect(scroll.properties.className).toEqual(["series-figure-scroll"]);
+
+    const svg = scroll.children[0] as Element;
     expect(svg.tagName).toBe("svg");
     expect(svg.properties.role).toBe("img");
     expect(svg.properties.ariaLabel).toBe("Erişilebilir açıklama");
@@ -66,7 +70,7 @@ describe("rehypeInlineSvg", () => {
   it("drops script elements and on* attributes", async () => {
     const tree = await transform(`![t](assets/kirli.svg "Şekil")`);
     const figure = firstElement(tree);
-    const svg = figure.children[0] as Element;
+    const svg = (figure.children[0] as Element).children[0] as Element;
 
     expect(svg.properties.onClick ?? svg.properties.onclick).toBeUndefined();
     expect(
@@ -118,6 +122,7 @@ describe("rehypeInlineSvg", () => {
 
     expect(html).toContain("<figure");
     expect(html).toContain("series-figure");
+    expect(html).toContain("series-figure-scroll");
     expect(html).toContain("<svg");
     expect(html).toContain('viewBox="0 0 100 50"');
     expect(html).toContain('role="img"');

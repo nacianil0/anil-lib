@@ -1,0 +1,66 @@
+<svg viewBox="0 0 720 376" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-kural" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="34" font-size="15" fill="var(--text-muted)">Klasik programlama</text>
+
+  <rect x="28" y="50" width="124" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--text-muted)"/>
+  <text x="90" y="72" font-size="15" text-anchor="middle" fill="var(--text)">Kurallar</text>
+
+  <rect x="28" y="96" width="124" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--text-muted)"/>
+  <text x="90" y="118" font-size="15" text-anchor="middle" fill="var(--text)">Veri</text>
+
+  <line x1="152" y1="72" x2="204" y2="85" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+  <line x1="152" y1="114" x2="204" y2="101" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+
+  <rect x="210" y="68" width="132" height="48" rx="6" fill="var(--surface)" stroke="var(--text-muted)"/>
+  <text x="276" y="97" font-size="15" text-anchor="middle" fill="var(--text)">Program</text>
+
+  <line x1="342" y1="92" x2="394" y2="92" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+
+  <rect x="400" y="68" width="132" height="48" rx="6" fill="var(--surface-muted)" stroke="var(--text-muted)"/>
+  <text x="466" y="97" font-size="15" text-anchor="middle" fill="var(--text)">Cevaplar</text>
+
+  <line x1="16" y1="152" x2="704" y2="152" stroke="var(--text-faint)" stroke-width="1"/>
+
+  <text x="20" y="180" font-size="15" fill="var(--text-muted)">Makine öğrenmesi</text>
+
+  <text x="28" y="200" font-size="13" fill="var(--text-muted)">eğitim</text>
+
+  <rect x="28" y="210" width="124" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--text-muted)"/>
+  <text x="90" y="232" font-size="15" text-anchor="middle" fill="var(--text)">Veri</text>
+
+  <rect x="28" y="254" width="124" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--text-muted)"/>
+  <text x="90" y="276" font-size="15" text-anchor="middle" fill="var(--text)">Cevaplar</text>
+
+  <line x1="152" y1="232" x2="204" y2="245" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+  <line x1="152" y1="272" x2="204" y2="262" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+
+  <rect x="210" y="229" width="132" height="48" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="276" y="258" font-size="15" text-anchor="middle" fill="var(--text)">Öğrenme</text>
+
+  <line x1="342" y1="253" x2="394" y2="253" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+
+  <rect x="400" y="229" width="132" height="48" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="466" y="258" font-size="15" text-anchor="middle" fill="var(--text)">Model</text>
+
+  <line x1="466" y1="279" x2="466" y2="314" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ok-kural)"/>
+
+  <text x="210" y="312" font-size="13" fill="var(--text-muted)">çıkarım</text>
+
+  <rect x="210" y="320" width="132" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--text-muted)"/>
+  <text x="276" y="343" font-size="15" text-anchor="middle" fill="var(--text)">Yeni girdi</text>
+
+  <line x1="342" y1="338" x2="394" y2="338" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+
+  <rect x="400" y="318" width="132" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="466" y="343" font-size="15" text-anchor="middle" fill="var(--text)">Model</text>
+
+  <line x1="532" y1="338" x2="584" y2="338" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-kural)"/>
+
+  <rect x="590" y="320" width="114" height="36" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="647" y="343" font-size="15" text-anchor="middle" fill="var(--text)">Tahmin</text>
+</svg>
