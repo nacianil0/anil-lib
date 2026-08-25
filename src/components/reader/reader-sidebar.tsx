@@ -12,9 +12,20 @@ import { ProgressMeter } from "./progress-meter";
 type Props = {
   articles: ArticleDescriptor[];
   currentArticleId: string;
+  basePath?: string;
+  title?: string;
+  subtitle?: string;
+  homeHref?: string;
 };
 
-export function ReaderSidebar({ articles, currentArticleId }: Props) {
+export function ReaderSidebar({
+  articles,
+  currentArticleId,
+  basePath = "/read",
+  title = UI.libraryTitle,
+  subtitle = UI.librarySubtitle,
+  homeHref = "/",
+}: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const articleIds = articles.map((article) => article.articleId);
 
@@ -29,20 +40,23 @@ export function ReaderSidebar({ articles, currentArticleId }: Props) {
       aria-label={UI.readingList}
     >
       <div className="shrink-0 px-5 pb-3 pt-6">
-        <p className="font-serif text-lg font-semibold leading-tight text-text">
-          {UI.libraryTitle}
-        </p>
-        <p className="mt-1 font-sans text-2xs leading-snug text-text-muted">{UI.librarySubtitle}</p>
+        <p className="font-serif text-lg font-semibold leading-tight text-text">{title}</p>
+        <p className="mt-1 font-sans text-2xs leading-snug text-text-muted">{subtitle}</p>
       </div>
       <div className="shrink-0 border-y border-border">
         <ProgressMeter articleIds={articleIds} />
       </div>
       <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto pt-3">
-        <ReadingList articles={articles} currentArticleId={currentArticleId} idPrefix="desktop" />
+        <ReadingList
+          articles={articles}
+          currentArticleId={currentArticleId}
+          idPrefix="desktop"
+          basePath={basePath}
+        />
       </div>
       <div className="flex shrink-0 items-center justify-between border-t border-border px-5 py-3">
         <Link
-          href="/"
+          href={homeHref}
           className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"
         >
           <Home className="h-3.5 w-3.5" aria-hidden="true" />

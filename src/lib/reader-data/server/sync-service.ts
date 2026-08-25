@@ -2,6 +2,7 @@ import "server-only";
 
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import { loadCatalog } from "@/lib/content/catalog";
+import { loadSeriesCatalog } from "@/lib/content/series";
 import type {
   HighlightRecord,
   ProgressRecord,
@@ -15,7 +16,10 @@ type SqlClient = NeonQueryFunction<false, false>;
 const MAX_FUTURE_SKEW_MS = 5 * 60 * 1000;
 
 function validArticleIds(): Set<string> {
-  return new Set(loadCatalog().articles.map((article) => article.articleId));
+  return new Set([
+    ...loadCatalog().articles.map((article) => article.articleId),
+    ...loadSeriesCatalog().articles.map((article) => article.articleId),
+  ]);
 }
 
 function timestampIsValid(value: string, now: number): boolean {

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-25 (tools/ elle eklendi)
-> Files: 111 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T10:35:57.339Z
+> Files: 157 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -31,11 +31,68 @@
 
 ## .claude/
 
+- `launch.json` (~56 tok)
 - `settings.json` (~442 tok)
 
 ## .claude/rules/
 
 - `openwolf.md` (~313 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/
+
+- `hash-body.cjs` — Usage: node hash-body.cjs <file.md> [...] (~156 tok)
+- `review-workflow.js` — Exports meta (~1948 tok)
+- `svg-onizleme.html` — onizleme (~504 tok)
+- `write-workflow.js` — Exports meta (~5804 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/
+
+- `03-sinir-aglari-katmanlarin-icinde-ne-oluyor.md` — Doğrunun duvarı (~6229 tok)
+- `04-dili-sayilara-cevirmek-token-ve-embedding.md` — Ağın kapısında bekleyen dil (~5769 tok)
+- `05-sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md` — Harf tahmin oyunundan dev modellere (~5689 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/
+
+- `noron-anatomisi.svg` (~647 tok)
+- `sinir-agi-tarihi.svg` (~725 tok)
+- `temsil-katmanlari.svg` (~1174 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu/
+
+- `seyreklik-duvari.svg` (~1484 tok)
+- `shannon-oyunu.svg` (~539 tok)
+- `sonraki-token-dagilimi.svg` (~548 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/
+
+- `01-tahmin-makinesi.md` — Research Pack — Article 1: "Tahmin Makinesi" (~14802 tok)
+- `02-veriden-ogrenmek.md` — Research Pack — Article 2: "Veriden Öğrenmek" (~15796 tok)
+- `03-sinir-aglari.md` — Research Pack — Article 3: "Neural networks: what happens inside the layers" (~15626 tok)
+- `04-token-embedding.md` — Research Pack — Article 4: "Turning language into numbers: tokenization and embeddings" (~17835 tok)
+- `05-dil-modeli.md` — Research Pack — Article 5: "Predicting the Next Word: The Birth of the Language Model" (~13958 tok)
+- `06-pedagoji.md` — 06 — Pedagoji: Evidence-Based Learning Science for the Series' Editorial Contract (~22858 tok)
+
+## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/
+
+- `integrate.cjs` — Batch 0 entegrasyonu: scratchpad taslaklarını content/series/ altına frontmatter'lı (~1603 tok)
+- `render-check.mjs` — Gerçek taslak SVG'lerini tam render hattından geçirir ve ürettiği HTML'i (~737 tok)
+- `svg-preview.html` — SVG onay (~447 tok)
+- `write-gap-workflow.js` — Exports meta (~5374 tok)
+
+## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/
+
+- `01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md` — Kuralları yazmayı bir dene (~5700 tok)
+
+## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/
+
+- `anlam-haritasi.svg` (~667 tok)
+- `bpe-adimlari.svg` (~1283 tok)
+- `cumleden-vektore.svg` (~1263 tok)
+
+## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/
+
+- `ai-ml-dl-llm.svg` (~421 tok)
+- `kural-vs-ogrenme.svg` (~1075 tok)
 
 ## content/
 
@@ -81,9 +138,30 @@
 - `llm-guvenilirlik-bilimi-belirsizlik-halusilasyon-degerlendirme.md` — LLM Güvenilirlik Bilimi: Belirsizlik, Halüsinasyon ve Değerlendirme Tasarımı (~11403 tok)
 - `mechanistic-interpretability-ve-modelin-icindeki-temsiller.md` — Mechanistic Interpretability ve Modelin İçindeki Temsiller (~8400 tok)
 
+## content/series/
+
+- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0: makale 1–5) (~1200 tok)
+- `roadmap.json` — 100 başlıklık seri omurgası, 10 faz, yayında/planlandı durumları (~3600 tok)
+- `roadmap.json` (~3636 tok)
+
+## content/series/articles/foundations/
+
+
+## content/series/assets/
+
+
+## docs/seri/
+
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~1903 tok)
+- `SOZLESME.md` — serinin değişmez kurallar sözleşmesi (editoryal/pedagojik/teknik/handoff) (~4500 tok)
+- `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~3868 tok)
+- `YOL-HARITASI.md` — 100 makale omurgası + prerequisite grafı + kavram-tekrar defteri + terim defteri (~5500 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~3574 tok)
+
 ## docs/superpowers/plans/
 
 - `2026-06-29-synced-reading-marks-dashboard.md` — Synced Reading Marks and Dashboard Implementation Plan (~2460 tok)
+- `2026-08-25-sifirdan-yuze-batch-01.md` — "Sıfırdan Yüze" Serisi — Altyapı + Batch 0 (Makale 1–5) Uygulama Planı (~2034 tok)
 
 ## docs/superpowers/specs/
 
@@ -93,6 +171,7 @@
 - `2026-06-27-vercel-password-gate-design.md` — Vercel Password Gate Design (~2447 tok)
 - `2026-06-28-reader-typography-preferences-design.md` — Reader Typography Preferences Design (~859 tok)
 - `2026-06-29-synced-reading-marks-dashboard-design.md` — Synced Reading Marks and Dashboard Design (~4237 tok)
+- `2026-08-25-sifirdan-yuze-series-design.md` — "Sıfırdan Yüze" — 100 Makalelik AI/LLM Serisi Tasarımı (~1587 tok)
 
 ## inbox/
 
@@ -111,10 +190,10 @@
 ## src/app/
 
 - `error.tsx` — Error — uses useEffect (~243 tok)
-- `globals.css` — Styles: 7 rules, 27 vars, 1 media queries, 2 layers (~2259 tok)
+- `globals.css` — Styles: 9 rules, 52 vars (~3674 tok)
 - `layout.tsx` — newsreader (~498 tok)
 - `not-found.tsx` — NotFound (~259 tok)
-- `page.tsx` — HomePage (~238 tok)
+- `page.tsx` — HomePage (~143 tok)
 - `root-redirect.tsx` — RootRedirect — uses useRouter, useEffect (~242 tok)
 
 ## src/app/login/
@@ -126,26 +205,42 @@
 
 - `page.tsx` — dynamicParams (~346 tok)
 
+## src/app/seri/
+
+- `page.tsx` — metadata (~141 tok)
+
+## src/app/seri/[slug]/
+
+- `page.tsx` — dynamicParams (~424 tok)
+
+## src/components/dashboard/
+
+- `reader-dashboard.tsx` — formatDate (~3930 tok)
+
 ## src/components/reader/
 
-- `article-navigation.tsx` — NavItem (~635 tok)
+- `article-navigation.tsx` — NavItem (~694 tok)
 - `article-progress.tsx` — Thin reading-progress bar for the current article. Driven by the shell's live scroll ratio. (~178 tok)
 - `article-toc.test.tsx` — div (~593 tok)
 - `article-toc.tsx` — extractHeadings — uses useState, useEffect (~1581 tok)
 - `completion-control.tsx` — CompletionControl (~354 tok)
 - `lock-button.tsx` — LockButton — renders form (~123 tok)
 - `markdown-components.tsx` — Wrap tables so wide content scrolls horizontally instead of stretching the page. (~328 tok)
-- `mobile-reading-list.tsx` — FOCUSABLE — uses useState, useCallback, useEffect (~1371 tok)
+- `mobile-reading-list.tsx` — FOCUSABLE (~1573 tok)
 - `progress-meter.tsx` — ProgressMeter (~354 tok)
-- `reader-shell.tsx` — COLUMN — uses useState, useRef, useCallback, useEffect (~2272 tok)
-- `reader-sidebar.tsx` — ReaderSidebar — uses useEffect (~520 tok)
+- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~3223 tok)
+- `reader-sidebar.tsx` — ReaderSidebar (~671 tok)
 - `reading-list-groups.test.ts` — Declares article (~497 tok)
 - `reading-list-groups.ts` — Build the sidebar view model without reordering the catalog sequence. (~406 tok)
 - `reading-list.test.tsx` — article (~468 tok)
-- `reading-list.tsx` — StatusMark — uses useMemo (~1450 tok)
+- `reading-list.tsx` — StatusMark (~1502 tok)
 - `reading-settings.test.tsx` — dialog (~700 tok)
 - `reading-settings.tsx` — PreferenceSegments — uses useState, useEffect (~3256 tok)
 - `resume-notice.tsx` — ResumeNotice — uses useEffect (~399 tok)
+
+## src/components/series/
+
+- `series-landing.tsx` — LandingContent (~2654 tok)
 
 ## src/lib/
 
@@ -158,12 +253,19 @@
 
 ## src/lib/content/
 
-- `articles.ts` — Build a fresh Markdown → React processor. (~1183 tok)
-- `catalog.test.ts` — RawArticle: article, catalog (~1811 tok)
-- `catalog.ts` — Resolve a catalog `path` to a safe absolute path inside content/articles. (~1749 tok)
+- `articles.ts` — Build a fresh Markdown → React processor. (~1218 tok)
+- `catalog.test.ts` — RawArticle: article, catalog (~1902 tok)
+- `catalog.ts` — Resolve a catalog `path` to a safe absolute path inside content/articles. (~1812 tok)
 - `labels.ts` — Turkish display labels for the controlled categories. (~983 tok)
+- `rehype-inline-svg.test.ts` — assetsDir: transform, firstElement (~1442 tok)
+- `rehype-inline-svg.ts` — Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline (~1478 tok)
 - `schema.test.ts` — Declares validFrontmatter (~1093 tok)
 - `schema.ts` — Controlled category vocabulary, in pedagogical order. (~826 tok)
+- `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~792 tok)
+- `series-roadmap.test.ts` — Declares roadmap (~660 tok)
+- `series-roadmap.ts` — content/series/roadmap.json — UI'nin gösterdiği 100 başlıklık omurga. (~1127 tok)
+- `series.test.ts` — RawArticle: article, catalog (~693 tok)
+- `series.ts` — "Sıfırdan Yüze" serisinin içerik sözleşmesi. Ana kütüphaneyle aynı şema ve (~2076 tok)
 - `types.ts` — Minimal, serializable article shape passed from server components to the UI. (~238 tok)
 
 ## src/lib/preferences/
@@ -180,6 +282,10 @@
 - `storage.ts` — Feature-detect a writable localStorage (private mode / blocked storage returns false). (~414 tok)
 - `use-reader-progress.tsx` — SAVE_THROTTLE_MS — uses useState, useEffect, useCallback, useContext (~2126 tok)
 
+## src/lib/reader-data/server/
+
+- `sync-service.ts` — Exports synchronizeReaderData (~3036 tok)
+
 ## src/lib/reader/
 
 - `version.ts` — Versioned identifiers for the reader application and its persisted state. (~195 tok)
@@ -195,20 +301,17 @@
 
 ## tools/
 
-- `README.md` - tools klasoru kullanim rehberi: dev ve publish giris noktalari (~1068 tok)
+- `README.md` — Project documentation (~1248 tok)
 
 ## tools/dev/
 
-- `00-Dev-Durdur.cmd` - dev portunu tutan node surecini durduran launcher (~89 tok)
-- `01-Dev-Baslat.cmd` - local dev sunucusu launcher (Start-Dev.ps1) (~90 tok)
 
 ## tools/lib/
 
-- `Common.psm1` - ortak yardimcilar: repo koku, Node/pnpm cozumu, port sorgusu, guvenli silme (~2221 tok)
-- `Invoke-Publish.ps1` - temizlik + kapilar + next build + smoke + paketleme + zip (~2908 tok)
-- `Start-Dev.ps1` - Node/bagimlilik/env/port kontrolu sonrasi next dev baslatir (~1023 tok)
-- `Stop-Dev.ps1` - verilen portu dinleyen node surecini durdurur (~418 tok)
 
 ## tools/publish/
 
-- `04-Publish-And-Zip.cmd` - publish + zip launcher (Invoke-Publish.ps1) (~90 tok)
+
+## tools/series/
+
+- `check-series-svg.cjs` — Seri diyagramları için sözleşme denetimi (docs/seri/SOZLESME.md §6). (~1178 tok)

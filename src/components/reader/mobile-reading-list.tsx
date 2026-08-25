@@ -13,11 +13,22 @@ import { useReaderPreferences } from "@/lib/preferences/use-reader-preferences";
 type Props = {
   articles: ArticleDescriptor[];
   currentArticleId: string;
+  basePath?: string;
+  title?: string;
+  subtitle?: string;
+  homeHref?: string;
 };
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-export function MobileReadingList({ articles, currentArticleId }: Props) {
+export function MobileReadingList({
+  articles,
+  currentArticleId,
+  basePath = "/read",
+  title = UI.libraryTitle,
+  subtitle = UI.librarySubtitle,
+  homeHref = "/",
+}: Props) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -107,9 +118,9 @@ export function MobileReadingList({ articles, currentArticleId }: Props) {
             <div className="flex shrink-0 items-center justify-between gap-2 border-b border-border px-4 py-3">
               <div>
                 <p className="font-serif text-base font-semibold leading-tight text-text">
-                  {UI.libraryTitle}
+                  {title}
                 </p>
-                <p className="mt-0.5 font-sans text-2xs text-text-muted">{UI.librarySubtitle}</p>
+                <p className="mt-0.5 font-sans text-2xs text-text-muted">{subtitle}</p>
               </div>
               <button
                 type="button"
@@ -129,11 +140,12 @@ export function MobileReadingList({ articles, currentArticleId }: Props) {
                 currentArticleId={currentArticleId}
                 onNavigate={close}
                 idPrefix="mobile"
+                basePath={basePath}
               />
             </div>
             <div className="flex shrink-0 items-center justify-between border-t border-border px-4 py-3">
               <Link
-                href="/"
+                href={homeHref}
                 onClick={close}
                 className="inline-flex items-center gap-1.5 font-sans text-xs text-text-muted"
               >

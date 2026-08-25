@@ -38,7 +38,7 @@ export function estimateReadingMinutes(body: string): number {
 }
 
 /** Fail the build when the catalog record and the file frontmatter disagree. */
-function assertCatalogMatch(
+export function assertCatalogMatch(
   meta: CatalogArticle,
   fm: Frontmatter,
   classificationVersion: number,

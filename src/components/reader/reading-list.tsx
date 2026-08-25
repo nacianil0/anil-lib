@@ -23,9 +23,16 @@ type Props = {
   currentArticleId: string;
   onNavigate?: () => void;
   idPrefix?: string;
+  basePath?: string;
 };
 
-export function ReadingList({ articles, currentArticleId, onNavigate, idPrefix = "spine" }: Props) {
+export function ReadingList({
+  articles,
+  currentArticleId,
+  onNavigate,
+  idPrefix = "spine",
+  basePath = "/read",
+}: Props) {
   const { statusOf } = useReaderProgress();
   const batches = useMemo(() => groupByBatchAndCategory(articles), [articles]);
 
@@ -68,7 +75,7 @@ export function ReadingList({ articles, currentArticleId, onNavigate, idPrefix =
                     return (
                       <li key={article.articleId} className="relative">
                         <Link
-                          href={`/read/${article.slug}`}
+                          href={`${basePath}/${article.slug}`}
                           aria-current={isActive ? "page" : undefined}
                           onClick={onNavigate}
                           className={cn(

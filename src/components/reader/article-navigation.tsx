@@ -6,7 +6,15 @@ import type { AdjacentArticle } from "@/lib/content/types";
 
 type Direction = "prev" | "next";
 
-function NavItem({ article, direction }: { article: AdjacentArticle; direction: Direction }) {
+function NavItem({
+  article,
+  direction,
+  basePath,
+}: {
+  article: AdjacentArticle;
+  direction: Direction;
+  basePath: string;
+}) {
   const isPrev = direction === "prev";
   const eyebrow = isPrev ? UI.previous : UI.next;
 
@@ -30,7 +38,7 @@ function NavItem({ article, direction }: { article: AdjacentArticle; direction: 
 
   return (
     <Link
-      href={`/read/${article.slug}`}
+      href={`${basePath}/${article.slug}`}
       rel={isPrev ? "prev" : "next"}
       className={cn(
         "group flex min-h-[3.5rem] flex-col gap-1 rounded-md border border-border p-3 transition-colors hover:border-border-strong hover:bg-surface-muted",
@@ -52,14 +60,16 @@ function NavItem({ article, direction }: { article: AdjacentArticle; direction: 
 export function ArticleNavigation({
   prev,
   next,
+  basePath = "/read",
 }: {
   prev: AdjacentArticle;
   next: AdjacentArticle;
+  basePath?: string;
 }) {
   return (
     <nav className="grid grid-cols-2 gap-3" aria-label="Bölümler arası gezinme">
-      <NavItem article={prev} direction="prev" />
-      <NavItem article={next} direction="next" />
+      <NavItem article={prev} direction="prev" basePath={basePath} />
+      <NavItem article={next} direction="next" basePath={basePath} />
     </nav>
   );
 }

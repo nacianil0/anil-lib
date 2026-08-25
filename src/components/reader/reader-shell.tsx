@@ -31,9 +31,24 @@ type Props = {
   prev: AdjacentArticle;
   next: AdjacentArticle;
   children: ReactNode;
+  /** Route base for article links; the series reader passes "/seri". */
+  basePath?: string;
+  listTitle?: string;
+  listSubtitle?: string;
+  homeHref?: string;
 };
 
-function ReaderShellInner({ articles, current, prev, next, children }: Props) {
+function ReaderShellInner({
+  articles,
+  current,
+  prev,
+  next,
+  children,
+  basePath = "/read",
+  listTitle,
+  listSubtitle,
+  homeHref,
+}: Props) {
   const { ready, setCurrentArticle, recordPosition, entryOf } = useReaderProgress();
   const { savedPlaceOf } = useReaderData();
   const { preferences } = useReaderPreferences();
@@ -184,14 +199,28 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
       </a>
 
       {!preferences.focusMode && (
-        <ReaderSidebar articles={articles} currentArticleId={current.articleId} />
+        <ReaderSidebar
+          articles={articles}
+          currentArticleId={current.articleId}
+          basePath={basePath}
+          title={listTitle}
+          subtitle={listSubtitle}
+          homeHref={homeHref}
+        />
       )}
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 border-b border-border bg-bg">
           <div className="reader-area flex h-14 items-center justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
-              <MobileReadingList articles={articles} currentArticleId={current.articleId} />
+              <MobileReadingList
+                articles={articles}
+                currentArticleId={current.articleId}
+                basePath={basePath}
+                title={listTitle}
+                subtitle={listSubtitle}
+                homeHref={homeHref}
+              />
               <p className="truncate font-sans text-2xs text-text-muted">
                 <span className="font-medium text-text">
                   {UI.chapter(current.readingOrder, current.totalCount)}
@@ -264,7 +293,7 @@ function ReaderShellInner({ articles, current, prev, next, children }: Props) {
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
             <footer className="mt-14 flex flex-col gap-6 border-t border-border pt-6">
               <CompletionControl articleId={current.articleId} />
-              <ArticleNavigation prev={prev} next={next} />
+              <ArticleNavigation prev={prev} next={next} basePath={basePath} />
             </footer>
           </article>
         </main>

@@ -224,3 +224,131 @@ Uygulama kodu ve `next.config.mjs` degistirilmedi. Onceden var olan iki lint hat
 (`markdown-components.tsx`, commit db414b3) ve repo genelindeki `format:check`
 basarisizligi bu gorevin disinda; publish akisi bunlari gizlemiyor.
 | 09:50 | Session end: 1 writes across 1 files (README.md) | 0 reads | ~1221 tok |
+
+## Session: 2026-08-25 09:56
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:03 | Created docs/superpowers/specs/2026-08-25-sifirdan-yuze-series-design.md | — | ~1693 |
+| 10:05 | Created docs/superpowers/plans/2026-08-25-sifirdan-yuze-batch-01.md | — | ~2169 |
+| 10:08 | Created docs/seri/SOZLESME.md | — | ~3161 |
+| 10:11 | Created docs/seri/YOL-HARITASI.md | — | ~3812 |
+| 10:12 | Created content/series/roadmap.json | — | ~3636 |
+| 10:13 | Edited src/lib/content/catalog.ts | inline fix | ~24 |
+| 10:13 | Edited src/lib/content/catalog.ts | inline fix | ~20 |
+| 10:13 | Edited src/lib/content/catalog.ts | inline fix | ~24 |
+| 10:14 | Created src/lib/content/rehype-inline-svg.ts | — | ~1422 |
+| 10:14 | Edited src/lib/content/rehype-inline-svg.ts | added 1 condition(s) | ~82 |
+| 10:14 | Edited src/lib/content/articles.ts | modified assertCatalogMatch() | ~34 |
+| 10:14 | Created src/lib/content/series.ts | — | ~2076 |
+| 10:15 | Created src/lib/content/series-roadmap.ts | — | ~1127 |
+| 10:15 | Created src/lib/content/series.test.ts | — | ~693 |
+| 10:15 | Created src/lib/content/series-roadmap.test.ts | — | ~660 |
+| 10:15 | Created src/lib/content/rehype-inline-svg.test.ts | — | ~1159 |
+| 10:16 | Edited src/lib/content/rehype-inline-svg.test.ts | 7→4 lines | ~45 |
+| 10:17 | Edited src/components/reader/reading-list.tsx | modified ReadingList() | ~80 |
+| 10:17 | Edited src/components/reader/reading-list.tsx | 2→2 lines | ~27 |
+| 10:17 | Edited src/components/reader/article-navigation.tsx | CSS: basePath | ~39 |
+| 10:17 | Edited src/components/reader/article-navigation.tsx | 2→2 lines | ~15 |
+| 10:17 | Edited src/components/reader/article-navigation.tsx | modified ArticleNavigation() | ~116 |
+| 10:17 | Edited src/components/reader/reader-sidebar.tsx | modified ReaderSidebar() | ~96 |
+| 10:17 | Edited src/components/reader/reader-sidebar.tsx | 4→2 lines | ~52 |
+| 10:17 | Edited src/components/reader/reader-sidebar.tsx | 1→6 lines | ~48 |
+| 10:17 | Edited src/components/reader/reader-sidebar.tsx | 4→4 lines | ~45 |
+| 10:17 | Edited src/components/reader/mobile-reading-list.tsx | modified MobileReadingList() | ~122 |
+| 10:17 | Edited src/components/reader/mobile-reading-list.tsx | 4→4 lines | ~65 |
+| 10:17 | Edited src/components/reader/mobile-reading-list.tsx | 6→7 lines | ~68 |
+| 10:17 | Edited src/components/reader/mobile-reading-list.tsx | 3→3 lines | ~24 |
+| 10:17 | Edited src/components/reader/reader-shell.tsx | modified ReaderShellInner() | ~134 |
+| 10:18 | Edited src/components/reader/reader-shell.tsx | expanded (+7 lines) | ~79 |
+| 10:18 | Edited src/components/reader/reader-shell.tsx | expanded (+7 lines) | ~82 |
+| 10:18 | Edited src/components/reader/reader-shell.tsx | inline fix | ~23 |
+| 10:18 | Created src/app/seri/[slug]/page.tsx | — | ~424 |
+| 10:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/02-veriden-ogrenmek.md | — | ~16849 |
+| 10:19 | Created src/components/series/series-landing.tsx | — | ~2650 |
+| 10:19 | Created src/app/seri/page.tsx | — | ~141 |
+| 10:19 | Edited src/lib/reader-data/server/sync-service.ts | added 1 import(s) | ~32 |
+| 10:19 | Edited src/lib/reader-data/server/sync-service.ts | modified validArticleIds() | ~60 |
+| 10:19 | Edited src/components/dashboard/reader-dashboard.tsx | modified DashboardContent() | ~218 |
+| 10:19 | Edited src/components/dashboard/reader-dashboard.tsx | modified get() | ~45 |
+| 10:19 | Edited src/components/dashboard/reader-dashboard.tsx | 4→4 lines | ~75 |
+| 10:19 | Edited src/components/dashboard/reader-dashboard.tsx | 3→3 lines | ~39 |
+| 10:19 | Edited src/components/dashboard/reader-dashboard.tsx | 3→3 lines | ~43 |
+| 10:19 | Edited src/components/dashboard/reader-dashboard.tsx | 5→5 lines | ~65 |
+| 10:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/01-tahmin-makinesi.md | — | ~15789 |
+| 10:20 | Edited src/components/dashboard/reader-dashboard.tsx | CSS: sm, sm, hover | ~409 |
+| 10:20 | Edited src/components/dashboard/reader-dashboard.tsx | expanded (+8 lines) | ~36 |
+| 10:20 | Edited src/components/dashboard/reader-dashboard.tsx | CSS: props | ~67 |
+| 10:20 | Created src/app/page.tsx | — | ~143 |
+| 10:20 | Edited src/app/globals.css | modified is() | ~44 |
+| 10:20 | Edited src/app/globals.css | expanded (+27 lines) | ~243 |
+| 10:20 | Edited src/components/series/series-landing.tsx | inline fix | ~25 |
+| 10:20 | Edited src/components/series/series-landing.tsx | inline fix | ~22 |
+| 10:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/03-sinir-aglari.md | — | ~16668 |
+| 10:21 | Edited src/lib/content/catalog.test.ts | 6→7 lines | ~95 |
+| 10:21 | Edited src/lib/content/catalog.test.ts | added 1 import(s) | ~22 |
+| 10:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/05-dil-modeli.md | — | ~14888 |
+| 10:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/04-token-embedding.md | — | ~19024 |
+| 10:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/research/06-pedagoji.md | — | ~24382 |
+| 10:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/write-workflow.js | — | ~5606 |
+| 10:26 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/write-workflow.js | inline fix | ~150 |
+| 10:26 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/write-workflow.js | inline fix | ~91 |
+| 10:26 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/write-workflow.js | inline fix | ~85 |
+| 10:27 | Edited docs/seri/SOZLESME.md | modified rma() | ~342 |
+| 10:28 | Edited docs/seri/SOZLESME.md | modified disiplini() | ~504 |
+| 10:28 | Edited docs/seri/SOZLESME.md | modified ilkeleri() | ~118 |
+| 10:28 | Edited docs/seri/SOZLESME.md | modified kal() | ~488 |
+| 10:00 | Sifirdan Yuze serisi: spec + plan + SOZLESME + YOL-HARITASI + roadmap.json yazildi | docs/seri/*, content/series/roadmap.json | ok | ~9k |
+| 10:20 | Seri altyapisi: series.ts, series-roadmap.ts, rehype-inline-svg.ts + 20 birim test; basePath prop'lari; /seri rotalari; dashboard seri karti; sync union | src/lib/content/*, src/components/*, src/app/seri/* | typecheck+testler temiz | ~25k |
+| 10:45 | Arastirma workflow tamam (6 Opus ajani, 25+ dogrulanmis kaynak/paket); yazim workflow'u baslatildi (5 ajan) | scratchpad/research/*, scratchpad/drafts/* | calisiyor | ~1M (subagent) |
+| 10:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/hash-body.cjs | — | ~156 |
+| 10:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/review-workflow.js | — | ~1865 |
+| 10:32 | Created docs/seri/HANDOFF.md | — | ~2030 |
+| 10:32 | Session end: 72 writes across 34 files (2026-08-25-sifirdan-yuze-series-design.md, 2026-08-25-sifirdan-yuze-batch-01.md, SOZLESME.md, YOL-HARITASI.md, roadmap.json) | 36 reads | ~283163 tok |
+| 10:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/05-sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | — | ~6068 |
+| 10:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu/shannon-oyunu.svg | — | ~539 |
+| 10:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu/sonraki-token-dagilimi.svg | — | ~548 |
+| 10:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu/seyreklik-duvari.svg | — | ~1484 |
+| 10:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/04-dili-sayilara-cevirmek-token-ve-embedding.md | — | ~6154 |
+| 10:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/03-sinir-aglari-katmanlarin-icinde-ne-oluyor.md | — | ~6644 |
+| 13:23 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/write-gap-workflow.js | — | ~5374 |
+| 13:26 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/integrate.cjs | — | ~1603 |
+| 13:26 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/cumleden-vektore.svg | — | ~1240 |
+| 13:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/noron-anatomisi.svg | — | ~647 |
+| 13:27 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/bpe-adimlari.svg | — | ~1283 |
+| 13:27 | Created tools/series/check-series-svg.cjs | — | ~1159 |
+| 13:27 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/anlam-haritasi.svg | — | ~667 |
+| 13:27 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/review-workflow.js | "C:/Users/ANIL~1.AKM/AppDa" → "C:/Users/anil.akman/AppDa" | ~40 |
+| 13:27 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/review-workflow.js | 2→3 lines | ~116 |
+| 13:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/temsil-katmanlari.svg | — | ~1174 |
+| 13:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/sinir-agi-tarihi.svg | — | ~725 |
+| 13:28 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/kural-vs-ogrenme.svg | — | ~1067 |
+| 13:28 | Edited tools/series/check-series-svg.cjs | modified resolve() | ~85 |
+| 13:28 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/ai-ml-dl-llm.svg | — | ~428 |
+| 13:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/svg-onizleme.html | — | ~504 |
+| 13:29 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/svg-onizleme.html | inline fix | ~6 |
+| 13:29 | Edited tools/README.md | 13→15 lines | ~126 |
+| 13:29 | Edited tools/README.md | expanded (+14 lines) | ~168 |
+| 13:30 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/bpe-adimlari.svg | 3→3 lines | ~84 |
+| 13:30 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/bpe-adimlari.svg | 3→3 lines | ~86 |
+| 13:30 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/cumleden-vektore.svg | 1→3 lines | ~81 |
+| 13:30 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/cumleden-vektore.svg | 4→2 lines | ~26 |
+| 13:30 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/cumleden-vektore.svg | "0 0 720 420" → "0 0 720 400" | ~17 |
+| 13:31 | Edited src/lib/content/rehype-inline-svg.test.ts | expanded (+22 lines) | ~372 |
+| 13:31 | Edited src/lib/content/rehype-inline-svg.test.ts | added 4 import(s) | ~134 |
+| 13:32 | Created .claude/launch.json | — | ~56 |
+| 13:32 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/01-tahmin-makinesi-yapay-zekaya-ilk-bakis.md | — | ~6080 |
+| 13:32 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/render-check.mjs | — | ~737 |
+| 13:32 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/svg-preview.html | — | ~447 |
+| 13:33 | Created src/lib/content/series-assets.test.ts | — | ~792 |
+| 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/kural-vs-ogrenme.svg | inline fix | ~24 |
+| 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/kural-vs-ogrenme.svg | inline fix | ~15 |
+| 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/kural-vs-ogrenme.svg | inline fix | ~11 |
+| 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/ai-ml-dl-llm.svg | inline fix | ~30 |
+| 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/ai-ml-dl-llm.svg | inline fix | ~9 |
+| 13:30 | Oturum limiti sonrasi Opus 5 ile devam: yarim kalan yazim workflow'u envanterlendi, eksikler icin hedefli workflow (2 makale + 6 SVG) baslatildi | scratchpad/write-gap-workflow.js | calisiyor | ~30k |
+| 13:35 | Taslak 03/04/05 ana agent incelemesi: matematik (bigram tablosu, perplexity 3.4, XOR, 10^50, w*=31/14, alfa esigi 3/14) elle dogrulandi | scratchpad/drafts/*.md | temiz | ~20k |
+| 13:38 | tiktoken olcumu bagimsiz dogrulandi (EN=33, TR cl100k=60/1.82x, o200k=46/1.39x, kitaplarimda -> kit-ap-lari-md-a) | makale 04 iddiasi | dogru | ~5k |
+| 13:45 | SVG sozlesme denetleyicisi + gercek render regresyon testi eklendi; 10 diyagram gecti, rehype-react SVG namespace dogrulandi | tools/series/check-series-svg.cjs, src/lib/content/series-assets.test.ts | ok | ~8k |
+| 13:35 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/ai-ml-dl-llm.svg | 3→3 lines | ~63 |
+| 13:36 | Session end: 114 writes across 58 files (2026-08-25-sifirdan-yuze-series-design.md, 2026-08-25-sifirdan-yuze-batch-01.md, SOZLESME.md, YOL-HARITASI.md, roadmap.json) | 61 reads | ~351384 tok |

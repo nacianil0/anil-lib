@@ -1,3 +1,4 @@
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   getAdjacent,
@@ -138,8 +139,9 @@ describe("validateCatalog", () => {
 
 describe("resolveArticlePath", () => {
   it("resolves a path inside content/articles", () => {
+    // path.join keeps the assertion valid on both POSIX and Windows separators.
     expect(resolveArticlePath("content/articles/foundations/a.md")).toContain(
-      "content/articles/foundations/a.md",
+      path.join("content", "articles", "foundations", "a.md"),
     );
   });
 

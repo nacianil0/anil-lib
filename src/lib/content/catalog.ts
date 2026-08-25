@@ -34,7 +34,7 @@ export function resolveArticlePath(relPath: string): string {
   return absolute;
 }
 
-function assertUnique(values: Array<string | number>, field: string): void {
+export function assertUnique(values: Array<string | number>, field: string): void {
   const seen = new Set<string | number>();
   const duplicates = new Set<string | number>();
   for (const value of values) {
@@ -46,7 +46,7 @@ function assertUnique(values: Array<string | number>, field: string): void {
   }
 }
 
-function assertContiguousReadingOrder(orders: number[]): void {
+export function assertContiguousReadingOrder(orders: number[]): void {
   const sorted = [...orders].sort((a, b) => a - b);
   for (let i = 0; i < sorted.length; i += 1) {
     if (sorted[i] !== i + 1) {
@@ -57,7 +57,7 @@ function assertContiguousReadingOrder(orders: number[]): void {
   }
 }
 
-function assertValidClassificationBatches(articles: CatalogArticle[]): void {
+export function assertValidClassificationBatches(articles: CatalogArticle[]): void {
   const ordered = [...articles].sort((a, b) => a.readingOrder - b.readingOrder);
   const first = ordered[0];
 

@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Bookmark, CheckCircle2, Highlighter, Library, RotateCcw } from "lucide-react";
+import {
+  ArrowRight,
+  Bookmark,
+  CheckCircle2,
+  Highlighter,
+  Library,
+  RotateCcw,
+  Sparkles,
+} from "lucide-react";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import { CATEGORY_LABELS, UI } from "@/lib/content/labels";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
@@ -19,14 +27,29 @@ function formatDate(value: string): string {
   }
 }
 
-function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
+type DashboardProps = {
+  articles: ArticleDescriptor[];
+  seriesArticles: ArticleDescriptor[];
+  seriesTitle: string;
+  seriesSubtitle: string;
+};
+
+function DashboardContent({ articles, seriesArticles, seriesTitle, seriesSubtitle }: DashboardProps) {
   const { ready, data, statusOf } = useReaderData();
-  const byId = new Map(articles.map((article) => [article.articleId, article]));
+  const byId = new Map(
+    [...articles, ...seriesArticles].map((article) => [article.articleId, article]),
+  );
+  const seriesIds = new Set(seriesArticles.map((article) => article.articleId));
+  const hrefFor = (article: ArticleDescriptor) =>
+    seriesIds.has(article.articleId) ? `/seri/${article.slug}` : `/read/${article.slug}`;
+  const seriesCompleted = seriesArticles.filter(
+    (article) => statusOf(article.articleId) === "completed",
+  ).length;
   const progressEntries = Object.values(data.progress).sort((a, b) =>
     b.lastReadAt.localeCompare(a.lastReadAt),
   );
   const currentId = data.currentArticleId ?? progressEntries[0]?.articleId;
-  const current = currentId ? byId.get(currentId) : articles[0];
+  const current = (currentId ? byId.get(currentId) : undefined) ?? articles[0];
   const currentProgress = current ? data.progress[current.articleId] : null;
   const places = Object.values(data.savedPlaces)
     .filter((place) => !place.deletedAt && byId.has(place.articleId))
@@ -73,7 +96,7 @@ function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
                   {currentProgress && ` · %${Math.round(currentProgress.scrollRatio * 100)}`}
                 </p>
                 <Link
-                  href={`/read/${current.slug}`}
+                  href={hrefFor(current)}
                   className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
                 >
                   Okumaya dön
@@ -110,6 +133,36 @@ function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
           </section>
         </div>
 
+        <section
+          aria-labelledby="series-entry-title"
+          className="mb-10 rounded-md border border-border bg-surface p-5 sm:p-6"
+        >
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="mb-2 flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.22em] text-cool">
+                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                Yeni seri · 100 makale
+              </p>
+              <h2 id="series-entry-title" className="font-serif text-2xl font-semibold sm:text-3xl">
+                {seriesTitle}
+              </h2>
+              <p className="mt-1.5 max-w-xl font-sans text-sm leading-relaxed text-text-muted">
+                {seriesSubtitle}
+              </p>
+              <p className="mt-3 font-sans text-2xs text-text-faint">
+                {seriesArticles.length} makale yayında · {seriesCompleted} tamamladın
+              </p>
+            </div>
+            <Link
+              href="/seri"
+              className="inline-flex items-center gap-2 rounded-md border border-cool px-4 py-2.5 font-sans text-sm font-semibold text-cool transition-colors hover:bg-cool-soft"
+            >
+              Seriye git
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+
         {!ready ? (
           <p role="status" className="py-12 text-center font-sans text-sm text-text-muted">
             Okuma kayıtların hazırlanıyor…
@@ -140,7 +193,7 @@ function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
                     return (
                       <Link
                         key={place.articleId}
-                        href={`/read/${article.slug}?place=1`}
+                        href={`${hrefFor(article)}?place=1`}
                         className="group flex items-start gap-4 py-4"
                       >
                         <span className="font-mono text-2xs text-accent">
@@ -188,7 +241,7 @@ function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
                     return (
                       <Link
                         key={highlight.id}
-                        href={`/read/${article.slug}?highlight=${highlight.id}`}
+                        href={`${hrefFor(article)}?highlight=${highlight.id}`}
                         className="border-accent/40 block border-l-2 py-1 pl-4 hover:border-accent"
                       >
                         <blockquote className="line-clamp-3 font-serif text-base leading-relaxed text-text">
@@ -218,7 +271,7 @@ function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
                   return (
                     <Link
                       key={entry.articleId}
-                      href={`/read/${article.slug}`}
+                      href={hrefFor(article)}
                       className="bg-surface p-4 transition-colors hover:bg-surface-muted"
                     >
                       <span className="flex items-center justify-between font-mono text-2xs text-text-faint">
@@ -240,11 +293,11 @@ function DashboardContent({ articles }: { articles: ArticleDescriptor[] }) {
   );
 }
 
-export function ReaderDashboard({ articles }: { articles: ArticleDescriptor[] }) {
+export function ReaderDashboard(props: DashboardProps) {
   return (
     <ReaderPreferencesProvider>
       <ReaderDataProvider>
-        <DashboardContent articles={articles} />
+        <DashboardContent {...props} />
       </ReaderDataProvider>
     </ReaderPreferencesProvider>
   );

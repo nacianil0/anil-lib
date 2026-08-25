@@ -728,6 +728,353 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-25T09:50:00Z"
+    },
+    {
+      "id": "bug-043",
+      "timestamp": "2026-08-25T07:16:07.637Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/content/rehype-inline-svg.test.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→4 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:16:07.637Z"
+    },
+    {
+      "id": "bug-044",
+      "timestamp": "2026-08-25T07:17:15.310Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/reading-list.tsx",
+      "root_cause": "Had `/read/${article.slug}`",
+      "fix": "Changed to `${basePath}/${article.slug}`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:17:15.310Z"
+    },
+    {
+      "id": "bug-045",
+      "timestamp": "2026-08-25T07:17:18.179Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/article-navigation.tsx",
+      "root_cause": "Had `/read/${article.slug}`",
+      "fix": "Changed to `${basePath}/${article.slug}`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:17:18.179Z"
+    },
+    {
+      "id": "bug-046",
+      "timestamp": "2026-08-25T07:19:35.817Z",
+      "error_message": "Wrong return value",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "Was returning: new Set(loadCatalog().articles.map((article) => ar",
+      "fix": "Now returns: new Set([",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:19:35.817Z"
+    },
+    {
+      "id": "bug-047",
+      "timestamp": "2026-08-25T07:19:43.857Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→18 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:19:43.857Z"
+    },
+    {
+      "id": "bug-048",
+      "timestamp": "2026-08-25T07:19:55.182Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "Had `/read/${article.slug}?place=1`",
+      "fix": "Changed to `${hrefFor(article)}?place=1`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-25T07:19:56.608Z"
+    },
+    {
+      "id": "bug-049",
+      "timestamp": "2026-08-25T07:20:27.294Z",
+      "error_message": "CSS fix: prose-reader",
+      "file": "src/app/globals.css",
+      "root_cause": "prose-reader: is(blockquote, pre, .table-scroll, img) { → is(blockquote, pre, .table-scroll, img, figure) {",
+      "fix": "Changed prose-reader: is(blockquote, pre, .table-scroll, img) { → is(blockquote, pre, .table-scroll, img, figure) {",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:20:27.294Z"
+    },
+    {
+      "id": "bug-050",
+      "timestamp": "2026-08-25T07:20:54.073Z",
+      "error_message": "Type error",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:20:54.073Z"
+    },
+    {
+      "id": "bug-051",
+      "timestamp": "2026-08-25T07:20:55.482Z",
+      "error_message": "Wrong reference: Map should be MapIcon",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Used \"Map\" instead of \"MapIcon\"",
+      "fix": "Changed Map → MapIcon",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:20:55.482Z"
+    },
+    {
+      "id": "bug-052",
+      "timestamp": "2026-08-25T07:21:36.164Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/content/catalog.test.ts",
+      "root_cause": "Had \"vitest\"",
+      "fix": "Changed to \"node:path\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:21:36.164Z"
+    },
+    {
+      "id": "bug-053",
+      "timestamp": "2026-08-25T07:28:03.027Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/SOZLESME.md",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 5→21 lines (5 removed) | Also: Bu sözleşmenin §3 ilkeleri şu literatüre dayanır (; dağıtılmış tekrar/spacing (Ebbinghaus 1885; Cepeda",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-25T07:28:32.400Z"
+    },
+    {
+      "id": "bug-054",
+      "timestamp": "2026-08-25T10:27:38.636Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/review-workflow.js",
+      "root_cause": "Had 'C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--",
+      "fix": "Changed to 'C:/Users/anil.akman/AppData/Local/Temp/claude/D--",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-25T10:27:47.640Z"
+    },
+    {
+      "id": "bug-055",
+      "timestamp": "2026-08-25T10:29:01.611Z",
+      "error_message": "Wrong reference: 938ko should be 938a6f",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/svg-onizleme.html",
+      "root_cause": "Used \"938ko\" instead of \"938a6f\"",
+      "fix": "Changed 938ko → 938a6f",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "html"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T10:29:01.611Z"
+    },
+    {
+      "id": "bug-056",
+      "timestamp": "2026-08-25T10:30:17.022Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/bpe-adimlari.svg",
+      "root_cause": "Had \"300\"",
+      "fix": "Changed to \"520\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-25T10:30:22.778Z"
+    },
+    {
+      "id": "bug-057",
+      "timestamp": "2026-08-25T10:30:27.756Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/dili-sayilara-cevirmek-token-ve-embedding/cumleden-vektore.svg",
+      "root_cause": "Had \"322\"",
+      "fix": "Changed to \"308\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-25T10:30:37.343Z"
+    },
+    {
+      "id": "bug-058",
+      "timestamp": "2026-08-25T10:21:00+03:00",
+      "error_message": "AssertionError: expected 'D:\\dev\\anil-lib\\content\\articles\\foun...' to contain 'content/articles/foundations/a.md' (catalog.test.ts > resolveArticlePath)",
+      "file": "src/lib/content/catalog.test.ts",
+      "root_cause": "Test, path.resolve ciktisini POSIX ayracli sabit bir string ile karsilastiriyordu. Windows'ta ayrac ters bolu oldugu icin assertion basarisiz oldu; test POSIX varsayimiyla yazilmis ve bu platformda daha once hic calistirilmamisti.",
+      "fix": "Beklenen deger path.join('content','articles','foundations','a.md') ile uretildi; assertion iki platformda da gecerli. Yeni seri testleri (series.test.ts) ayni tuzaga dusmemek icin regex/path.join kullaniyor.",
+      "tags": [
+        "vitest",
+        "windows",
+        "path-separator",
+        "cross-platform",
+        "test"
+      ],
+      "related_bugs": [
+        "bug-034"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T10:21:00+03:00"
+    },
+    {
+      "id": "bug-059",
+      "timestamp": "2026-08-25T10:20:54+03:00",
+      "error_message": "TS7009: 'new' expression, whose target lacks a construct signature; TS2345: type not assignable to LucideProps (series-landing.tsx)",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "lucide-react'ten `Map` ikonu import edilince bu modul-kapsamli binding global `Map` constructor'ini golgeledi; ayni dosyadaki `new Map(...)` cagrisi React bilesenini constructor gibi cagirmaya calisti.",
+      "fix": "Ikon `Map as MapIcon` olarak import edildi. Kural: lucide-react'ten global bir isimle cakisan ikon (Map, Set, Image, Text, Menu) import edilirken daima takma ad verilmeli.",
+      "tags": [
+        "typescript",
+        "lucide-react",
+        "shadowing",
+        "import-alias",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T10:20:54+03:00"
+    },
+    {
+      "id": "bug-060",
+      "timestamp": "2026-08-25T13:10:00+03:00",
+      "error_message": "Workflow 'sifirdan-yuze-write': 5/5 ajan \"You've hit your session limit\" ile basarisiz; workflow sonucu bos dizi dondu",
+      "file": "scratchpad/write-workflow.js",
+      "root_cause": "Bes uzun yazim ajani ayni anda calisti; her biri buyuk arastirma paketini okuyup ~3000 kelimelik makale + 3 SVG uretiyordu. Toplam tuketim oturum limitini asti. Ajanlar oldugunde diske yazdiklari dosyalar kaldi ama schema donmedigi icin workflow sonucu bos gorundu.",
+      "fix": "Yeniden calistirmadan once diskteki kismi cikti envanterlendi (3 makale + 4 SVG vardi), sonra YALNIZCA eksikler icin hedefli bir workflow (write-gap-workflow.js: 2 makale yazari + 2 diyagram cizeri) yazildi. Kural: uzun uretim workflow'larinda ajanlara ciktiyi dosyaya YAZDIR (yalnizca donus degerine guvenme) ve yeniden calistirmadan once diski envanterle.",
+      "tags": [
+        "workflow",
+        "session-limit",
+        "subagent",
+        "partial-output",
+        "recovery"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T13:10:00+03:00"
+    },
+    {
+      "id": "bug-061",
+      "timestamp": "2026-08-25T13:40:00+03:00",
+      "error_message": ".wolf/anatomy.md icine proje disi scratchpad yollari eklendi ve elle eklenen girdiler otomatik taramayla yinelendi",
+      "file": ".wolf/anatomy.md",
+      "root_cause": "post-write hook yolu path.relative(projectRoot, absolutePath) ile cozuyor ve yalnizca '.wolf/' onekini atliyor. Scratchpad baska surucude (C:) oldugu icin path.relative mutlak yolu donduruyor ve bu mutlak yol anatomy'de yeni bir bolum aciyor. Ayrica elle eklenen aciklamali girdiler, hook'un ayni dosya icin urettigi girdiyle yan yana durup yineleniyor.",
+      "fix": "Vendor OpenWolf hook'u degistirilmedi. Batch sonunda anatomy.md'den proje disi bolumler ve yinelenen satirlar temizlendi. Kural: scratchpad dosyalari anatomy'ye ait degildir; elle girdi eklerken hook'un ayni dosya icin zaten satir uretecegini hesaba kat.",
+      "tags": [
+        "openwolf",
+        "anatomy",
+        "hook",
+        "path-relative",
+        "cross-drive",
+        "cleanup"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T13:40:00+03:00"
+    },
+    {
+      "id": "bug-062",
+      "timestamp": "2026-08-25T10:35:26.562Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/kural-vs-ogrenme.svg",
+      "root_cause": "Had \"var(--border)\"",
+      "fix": "Changed to \"var(--text-faint)\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-25T10:35:33.625Z"
+    },
+    {
+      "id": "bug-063",
+      "timestamp": "2026-08-25T10:35:37.625Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/a18177e3-e7a9-4a31-baec-c41b63d998f8/scratchpad/drafts/assets/tahmin-makinesi-yapay-zekaya-ilk-bakis/ai-ml-dl-llm.svg",
+      "root_cause": "Had \"var(--border)\"",
+      "fix": "Changed to \"var(--text-muted)\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-25T10:35:57.352Z"
     }
   ]
 }

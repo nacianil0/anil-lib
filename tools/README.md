@@ -15,6 +15,8 @@ tools/
     00-Dev-Durdur.cmd      -> dev portunda kalan node surecini durdurur
   publish/
     04-Publish-And-Zip.cmd -> production build + paket + zip
+  series/
+    check-series-svg.cjs   -> "Sifirdan Yuze" seri diyagramlari icin sozlesme denetimi
   lib/
     Common.psm1            -> ortak yardimcilar (kok cozumu, pnpm, port, guvenli silme)
     Start-Dev.ps1
@@ -96,6 +98,20 @@ corepack pnpm start
 ```
 
 Ayrintilar paketin icindeki `RELEASE.txt` dosyasinda.
+
+## Seri diyagram denetimi
+
+```
+node tools\series\check-series-svg.cjs
+```
+
+"Sifirdan Yuze" serisinin `content/series/assets/**` altindaki SVG diyagramlarini
+`docs/seri/SOZLESME.md` §6 kurallarina gore denetler: `viewBox` zorunlu, kok
+etiketde `width`/`height` olmamali, renkler yalnizca `var(--...)` (sabit hex
+yasak, cunku diyagramlar acik/koyu/sepya uc temada da okunakli olmali),
+`script`/`foreignObject`/`on*` yasak, `font-family` belirtilmemeli, yazi boyutu
+en az 13 ve metinler `viewBox` disina tasmamali. Sorun bulursa sifirdan farkli
+exit code doner. Baska bir klasoru denetlemek icin yol argumani verilebilir.
 
 ## Notlar
 
