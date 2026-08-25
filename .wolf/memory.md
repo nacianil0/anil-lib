@@ -171,3 +171,56 @@ Added a focused long-form typography pack to the existing reading-settings panel
 ## Session summary: 2026-07-16 — Book-production brainstorming audit
 
 Read all 18 articles through three independent full-text audit batches and inspected the current reader/dashboard/progress/sync architecture. The corpus is approximately 65,521 words; only three articles are light-edit structural cores, eleven require substantial rewrites, four are research-only, and seven files contain 415 leaked tool citation markers. Prepared external reports under `C:\dev\anil-lib-book-planning-audit\20260716-151446`. Recommended the system-layered concept “Tahminden Sisteme,” a separate `content/books/**` source contract normalized with articles through a shared library adapter, and a claim-level citation protocol backed by 13 source families. The brainstorming skills require explicit user approval before the sole requested repository artifact, `prompts/03-build-zero-to-hero-ai-book.md`, may be written; approval remains pending.
+
+## Session: 2026-08-25 09:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-25 09:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:29 | Created tools/lib/Common.psm1 | — | ~2148 |
+| 09:29 | Edited tools/lib/Common.psm1 | modified foreach() | ~50 |
+| 09:30 | Created tools/lib/Start-Dev.ps1 | — | ~951 |
+| 09:30 | Edited tools/lib/Common.psm1 | 3→4 lines | ~36 |
+| 09:30 | Edited tools/lib/Common.psm1 | added 1 condition(s) | ~53 |
+| 09:30 | Edited tools/lib/Start-Dev.ps1 | added 1 condition(s) | ~106 |
+| 09:30 | Created tools/lib/Stop-Dev.ps1 | — | ~418 |
+| 09:32 | Created tools/lib/Invoke-Publish.ps1 | — | ~2544 |
+| 09:32 | Created tools/dev/01-Dev-Baslat.cmd | — | ~90 |
+| 09:32 | Created tools/dev/00-Dev-Durdur.cmd | — | ~89 |
+| 09:32 | Created tools/publish/04-Publish-And-Zip.cmd | — | ~90 |
+| 09:32 | Edited next.config.mjs | 4→8 lines | ~88 |
+| 09:33 | Created tools/README.md | — | ~882 |
+| 09:34 | Edited tools/lib/Invoke-Publish.ps1 | expanded (+6 lines) | ~110 |
+| 09:34 | Edited tools/lib/Invoke-Publish.ps1 | 2→3 lines | ~19 |
+| 09:34 | Edited tools/lib/Invoke-Publish.ps1 | added 2 condition(s) | ~147 |
+| 09:35 | Edited tools/lib/Invoke-Publish.ps1 | 2→3 lines | ~29 |
+| 09:35 | Edited tools/lib/Invoke-Publish.ps1 | added 1 condition(s) | ~52 |
+| 09:37 | Edited next.config.mjs | removed 8 lines | ~14 |
+| 09:37 | Edited tools/lib/Common.psm1 | modified if() | ~138 |
+| 09:38 | Created tools/lib/Invoke-Publish.ps1 | — | ~2908 |
+
+## Session: 2026-08-25 09:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:47 | Created tools/README.md | — | ~1140 |
+| 09:38 | tools/ iskeleti: Common.psm1, Start-Dev, Stop-Dev, Invoke-Publish + cmd launcher | tools/** | olusturuldu | ~4200 |
+| 09:39 | standalone build denendi, Windows+pnpm symlink EPERM | next.config.mjs | geri alindi, standalone terk edildi | ~1500 |
+| 09:44 | publish uctan uca dogrulandi: typecheck+build+smoke+paket+zip 2.7 MB | tools/lib/Invoke-Publish.ps1 | basarili, exit 0 | ~2000 |
+| 09:46 | zip temiz dizine acilip pnpm install --prod + next start ile calistirildi | artifacts/*.zip | / ve /read/<slug> 200, icerik render | ~1800 |
+| 09:47 | dev launcher dogrulandi: 3000 ve 3010, port cakismasi fail, durdurma idempotent | tools/dev/*.cmd | basarili | ~900 |
+| 09:48 | -StrictLint fail yolu: exit 1, build calismadi, zip uretilmedi | tools/publish/04-Publish-And-Zip.cmd | dogrulandi | ~600 |
+
+### Session ozeti (2026-08-25)
+
+`tools/` klasoru olusturuldu: `tools\dev-Dev-Baslat.cmd` local calistirma,
+`tools\publish-Publish-And-Zip.cmd` publish + zip giris noktasi. Repoda kalici
+degisiklik yalnizca `.gitignore` icine `/artifacts/` satiri ve yeni `tools/` klasoru.
+Uygulama kodu ve `next.config.mjs` degistirilmedi. Onceden var olan iki lint hatasi
+(`markdown-components.tsx`, commit db414b3) ve repo genelindeki `format:check`
+basarisizligi bu gorevin disinda; publish akisi bunlari gizlemiyor.
+| 09:50 | Session end: 1 writes across 1 files (README.md) | 0 reads | ~1221 tok |

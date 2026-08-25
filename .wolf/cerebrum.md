@@ -37,10 +37,19 @@
 - The reading-settings popover sits beside the right edge of the toolbar, so it must keep `right-0`; overriding that with `right-auto` at desktop breakpoints causes viewport overflow.
 - Vercel Postgres is no longer available for new databases; for this project, provision Neon Postgres through the Vercel Marketplace so Vercel injects server-only credentials into the existing deployment.
 
+- **tools/ (2026-08-25):** Local calistirma `tools\dev-Dev-Baslat.cmd`, publish `tools\publish-Publish-And-Zip.cmd`. PowerShell mantigi `tools/lib` altinda (`Common.psm1` + uc script); `.cmd` dosyalari yalnizca ince launcher. Cikti `artifacts/` altinda ve gitignore'da.
+- Next `output: "standalone"` bu projede kullanilamiyor: pnpm'in symlink tabanli node_modules duzeni + Windows'ta kapali Developer Mode = `EPERM: symlink`. Publish paketi bu yuzden `.next` + `content` + manifest dosyalari seklinde ve hedefte `pnpm install --prod` gerektiriyor.
+- Depoda `pnpm-workspace.yaml` yalnizca placeholder `allowBuilds` icerigi tasiyor; PATH'teki yeni global pnpm bunu "packages field missing or empty" diye reddediyor, `corepack pnpm` (10.22.0) ise yalnizca uyarip devam ediyor. Bu yuzden tum tooling pnpm'i corepack uzerinden cagirmali.
+- `main` uzerinde `pnpm lint` (markdown-components.tsx, iki `no-explicit-any`) ve `pnpm format:check` (90 dosya) zaten basarisiz. Yeni bir kapi eklerken bunlari "benim degisikligim bozdu" diye yorumlama.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
+
+- [2026-08-25] Batch launcher'da argumanlari `shift` dongusuyle ayristiriyorsan script dizinini dongu ONCESINDE bir degiskene al: `shift` %0'i da kaydirir ve sonrasindaki `%~dp0` yanlis yolu gosterir.
+- [2026-08-25] PowerShell fonksiyonu icinde native komut cagirip exit code donuyorsan cikti akisini `| Out-Host` ile ayir; aksi halde komutun stdout'u fonksiyonun donus degerine karisir.
+- [2026-08-25] Portal'daki `nopause` kalibi tum argumanlari siliyor; token bazli ayristir ki `nopause -StrictLint` gibi kullanimlar sessizce yutulmasin. Sessizce yutulan bir switch, testi yanlislikla "gecti" gosterir.
 
 - [2026-06-27] Do not hold explicit install or publish operations behind creative-design brainstorming. Complete independent operational work first, then use the design gate for the generated prompt or application architecture.
 - [2026-06-28] Do not report a goal as effectively done while final visual checks, repository checks, or the goal status are still open; name the remaining gates and close them before handing off.
@@ -67,3 +76,5 @@
 - [2026-06-27] Keep the live per-article scroll ratio in shell-local state, not the progress context, so the 18-row sidebar does not re-render on every scroll frame.
 - [2026-06-29] Expand reader typography with a focused semantic pack (`textAlign`, `paragraphSpacing`, `firstLineIndent`, `hyphenation`) mapped to root CSS variables; apply alignment/hyphenation only to paragraphs, list items, and blockquotes while headings, code, and tables remain left-aligned.
 - [2026-06-29] Cross-device reading state uses a single-user local-first architecture: Neon Postgres behind an authenticated Vercel sync route is canonical, while the browser retains an offline cache and idempotent mutation outbox.
+- [2026-08-25] tools/ publish akisi Next standalone yerine normal `next build` ciktisini paketler. Standalone daha tasinabilir olurdu ama pnpm+Windows'ta symlink izni olmadan hic uretilemiyor; proje yapilandirmasini degistirmek yerine calisan ve dogrulanabilen sekil secildi.
+- [2026-08-25] Publish'te `typecheck` sert kapi, `lint` varsayilan olarak uyari. Gerekce: proje zaten `eslint.ignoreDuringBuilds: true` ile lint'i build'den ayirmis ve `main` su an lint'ten geciyor degil; lint'i sert kapi yapmak araci ilk gunden kullanilamaz kilardi. `-StrictLint` ile sert kapiya cevrilebilir.

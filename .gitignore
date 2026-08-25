@@ -6,6 +6,7 @@ dist/
 build/
 out/
 coverage/
+/artifacts/
 *.tsbuildinfo
 
 # Environment and local tooling

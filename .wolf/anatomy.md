@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-29T18:04:09.506Z
-> Files: 103 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-25 (tools/ elle eklendi)
+> Files: 111 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -192,3 +192,23 @@
 
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~1170 tok)
 - `reader.spec.ts` — Page: authenticate, gotoFirst (~2630 tok)
+
+## tools/
+
+- `README.md` - tools klasoru kullanim rehberi: dev ve publish giris noktalari (~1068 tok)
+
+## tools/dev/
+
+- `00-Dev-Durdur.cmd` - dev portunu tutan node surecini durduran launcher (~89 tok)
+- `01-Dev-Baslat.cmd` - local dev sunucusu launcher (Start-Dev.ps1) (~90 tok)
+
+## tools/lib/
+
+- `Common.psm1` - ortak yardimcilar: repo koku, Node/pnpm cozumu, port sorgusu, guvenli silme (~2221 tok)
+- `Invoke-Publish.ps1` - temizlik + kapilar + next build + smoke + paketleme + zip (~2908 tok)
+- `Start-Dev.ps1` - Node/bagimlilik/env/port kontrolu sonrasi next dev baslatir (~1023 tok)
+- `Stop-Dev.ps1` - verilen portu dinleyen node surecini durdurur (~418 tok)
+
+## tools/publish/
+
+- `04-Publish-And-Zip.cmd` - publish + zip launcher (Invoke-Publish.ps1) (~90 tok)

@@ -581,7 +581,12 @@
       "file": "PowerShell read command",
       "root_cause": "The App Router path contains square brackets, so normal PowerShell path binding interpreted it as a wildcard expression instead of a literal path.",
       "fix": "Reran the read with Get-Content -LiteralPath; the route file was read successfully without changing repository code.",
-      "tags": ["powershell", "literal-path", "nextjs", "tooling"],
+      "tags": [
+        "powershell",
+        "literal-path",
+        "nextjs",
+        "tooling"
+      ],
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-07-16T15:21:00+03:00"
@@ -593,10 +598,136 @@
       "file": "PowerShell audit command",
       "root_cause": "Nested apostrophe and Unicode punctuation characters terminated the inline single-quoted regular expression incorrectly.",
       "fix": "Replaced the linguistic token regex with a whitespace-delimited sizing metric; the rerun completed and reported 65,521 corpus words and 415 invalid citation markers.",
-      "tags": ["powershell", "quoting", "corpus-audit", "tooling"],
-      "related_bugs": ["bug-002"],
+      "tags": [
+        "powershell",
+        "quoting",
+        "corpus-audit",
+        "tooling"
+      ],
+      "related_bugs": [
+        "bug-002"
+      ],
       "occurrences": 1,
       "last_seen": "2026-07-16T15:29:00+03:00"
+    },
+    {
+      "id": "bug-036",
+      "timestamp": "2026-08-25T06:30:27.001Z",
+      "error_message": "Wrong condition in logic",
+      "file": "tools/lib/Common.psm1",
+      "root_cause": "Condition was: if ($code -ne 0)",
+      "fix": "Changed to: if ($PassThruExitCode)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "psm1"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T06:30:27.001Z"
+    },
+    {
+      "id": "bug-037",
+      "timestamp": "2026-08-25T06:34:52.947Z",
+      "error_message": "Wrong reference: $NoSmoke should be $StrictLint",
+      "file": "tools/lib/Invoke-Publish.ps1",
+      "root_cause": "Used \"$NoSmoke\" instead of \"$StrictLint\"",
+      "fix": "Changed $NoSmoke → $StrictLint",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "ps1"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T06:34:52.947Z"
+    },
+    {
+      "id": "bug-038",
+      "timestamp": "2026-08-25T06:37:25.490Z",
+      "error_message": "Significant refactor of ",
+      "file": "next.config.mjs",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 8→4 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T06:37:25.490Z"
+    },
+    {
+      "id": "bug-039",
+      "timestamp": "2026-08-25T06:37:33.082Z",
+      "error_message": "Significant refactor of ",
+      "file": "tools/lib/Common.psm1",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→9 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "psm1"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T06:37:33.082Z"
+    },
+    {
+      "id": "bug-040",
+      "timestamp": "2026-08-25T09:50:00Z",
+      "error_message": "Build error occurred [Error: EPERM: operation not permitted, symlink '...node_modules/.pnpm/@next+env@15.5.19/node_modules/@next/env' -> '.next/standalone/...']",
+      "file": "next.config.mjs",
+      "root_cause": "Next'in output:'standalone' ciktisi izlenen bagimliliklari .next/standalone altina symlink ile kopyaliyor. pnpm'in symlink tabanli node_modules duzeni ile birlikte, Windows'ta Developer Mode kapali ve surec admin degilken symlink olusturma izni yok.",
+      "fix": "standalone ciktisindan tamamen vazgecildi; next.config.mjs degistirilmeden birakildi. tools/publish akisi normal `next build` ciktisini (.next, cache haric) + content + package.json + pnpm-lock.yaml + next.config.mjs olarak paketliyor; hedefte bir kez `pnpm install --prod --frozen-lockfile` gerekiyor.",
+      "tags": [
+        "next",
+        "standalone",
+        "pnpm",
+        "windows",
+        "symlink",
+        "eperm",
+        "publish"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T09:50:00Z"
+    },
+    {
+      "id": "bug-041",
+      "timestamp": "2026-08-25T09:50:00Z",
+      "error_message": "[UYARI] lint basarisiz (exit code  > anil-lib-reader@0.1.0 lint ... eslint . ... 1).",
+      "file": "tools/lib/Common.psm1",
+      "root_cause": "PowerShell'de native komutun stdout'u success stream'e yazilir; fonksiyon icinde borulanmadigi icin fonksiyonun donus degerine karisti ve cagiran taraf exit code yerine tum log satirlarini aldi.",
+      "fix": "Invoke-Pnpm icinde native cagri `| Out-Host` ile borulandi; fonksiyon yalnizca exit code donuyor.",
+      "tags": [
+        "powershell",
+        "native-command",
+        "output-stream",
+        "exit-code"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T09:50:00Z"
+    },
+    {
+      "id": "bug-042",
+      "timestamp": "2026-08-25T09:50:00Z",
+      "error_message": "The argument 'D:\\dev\u0007nil-lib\tools\\..\\lib\\Invoke-Publish.ps1' to the -File parameter does not exist.",
+      "file": "tools/publish/04-Publish-And-Zip.cmd",
+      "root_cause": "Batch'te `shift` yalnizca %1..%9'u degil %0'i da kaydiriyor. Argumanlari ayristiran shift dongusunden sonra %~dp0 artik script dizinini gostermiyordu.",
+      "fix": "Script dizini dongu baslamadan once `set \"TOOLS_DIR=%~dp0..\"` ile sabitlendi ve PowerShell cagrisinda %TOOLS_DIR% kullanildi.",
+      "tags": [
+        "batch",
+        "cmd",
+        "shift",
+        "%~dp0",
+        "launcher"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T09:50:00Z"
     }
   ]
 }
