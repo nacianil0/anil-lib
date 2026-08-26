@@ -415,3 +415,115 @@ basarisizligi bu gorevin disinda; publish akisi bunlari gizlemiyor.
 | 14:20 | Final: typecheck + 152 test + build (29 sayfa) + 2 seri denetleyicisi temiz; gorsel dogrulama 3 tema x mobil/desktop | tum repo | GECTI | ~12k |
 | 14:25 | Temizlik: anatomy proje disi bolumlerden arindirildi, buglog 8 gercek kayitla guncellendi, cerebrum ogrenme+karar notlari islendi, HANDOFF final sonuclarla yazildi | .wolf/**, docs/seri/HANDOFF.md | ok | ~8k |
 | 14:17 | Session end: 170 writes across 68 files (2026-08-25-sifirdan-yuze-series-design.md, 2026-08-25-sifirdan-yuze-batch-01.md, SOZLESME.md, YOL-HARITASI.md, roadmap.json) | 86 reads | ~375840 tok |
+
+## Session: 2026-08-25 15:10
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-25 16:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-26 11:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-26 11:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-26 11:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-26 11:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/BRIEF.md | — | ~1136 |
+| 11:39 | Created tools/series/sync-series-hashes.cjs | — | ~835 |
+| 11:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/DIYAGRAM-KILAVUZU.md | — | ~1056 |
+| 11:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | — | ~4610 |
+| 11:45 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/inceleme-workflow.js | — | ~2903 |
+| 11:46 | Session end: 5 writes across 5 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 6 reads | ~11821 tok |
+| 11:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/01-dikkat.md | — | ~13967 |
+| 11:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/06-pedagoji-zincir.md | — | ~15996 |
+| 11:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/04-olcek-yasalari.md | — | ~12846 |
+| 11:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/02-transformer.md | — | ~15586 |
+| 11:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/03-on-egitim.md | — | ~15114 |
+| 11:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/05-uretim-decoding.md | — | ~16323 |
+| 12:22 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | 2→7 lines | ~184 |
+| 12:22 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | modified HEDEFI() | ~127 |
+| 12:22 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | expanded (+8 lines) | ~253 |
+| 12:23 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | modified alan() | ~519 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/00-ana-agent-dogrulamasi.md | — | ~1160 |
+| 12:24 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | 1→3 lines | ~75 |
+| 12:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/entegre.cjs | — | ~1360 |
+| 12:25 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/entegre.cjs | added 1 condition(s) | ~326 |
+| 12:25 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/entegre.cjs | 3→4 lines | ~75 |
+| 12:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/00-url-denetimi.md | — | ~3295 |
+| 12:26 | Session end: 21 writes across 14 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 14 reads | ~199043 tok |
+| 12:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/00-aritmetik-denetimi.md | — | ~7833 |
+| 12:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/00-celiski-kapsam.md | — | ~10509 |
+| 12:36 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/research/00-ana-agent-dogrulamasi.md | modified t() | ~234 |
+| 12:37 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | added 1 condition(s) | ~682 |
+| 12:38 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | modified DUZELTMELER() | ~1174 |
+| 12:39 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | modified gayet() | ~1065 |
+| 12:39 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | modified butce() | ~1118 |
+| 12:40 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | expanded (+48 lines) | ~1220 |
+| 12:40 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/yazim-workflow.js | expanded (+7 lines) | ~123 |
+| 12:41 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/inceleme-workflow.js | modified dosyalari() | ~112 |
+| 12:42 | Session end: 31 writes across 16 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 16 reads | ~224439 tok |
+| 12:49 | Created content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | — | ~5430 |
+| 12:50 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 1→3 lines | ~245 |
+| 12:50 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 1→3 lines | ~254 |
+| 12:50 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | modified r() | ~168 |
+| 12:50 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 3→3 lines | ~294 |
+| 12:51 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 5→5 lines | ~277 |
+| 12:51 | Session end: 37 writes across 17 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 17 reads | ~237129 tok |
+| 12:52 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~104 |
+| 12:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/diagrams/6-spec.md | — | ~4086 |
+| 12:55 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~9 |
+| 12:55 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~116 |
+| 13:07 | Created content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | — | ~6554 |
+| 13:14 | Created content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | — | ~6630 |
+| 13:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/diagrams/7-spec.md | — | ~4146 |
+| 13:27 | Created content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | — | ~6650 |
+| 13:27 | Session end: 45 writes across 21 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 22 reads | ~278005 tok |
+| 13:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/diagrams/8-spec.md | — | ~3660 |
+| 13:32 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | 9→11 lines | ~112 |
+| 13:32 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | reduced (-7 lines) | ~107 |
+| 13:33 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~39 |
+| 13:33 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~25 |
+| 13:33 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~43 |
+| 13:33 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~65 |
+| 13:38 | Created docs/seri/CHECKPOINT-BATCH1.md | — | ~2513 |
+
+## Oturum notu — 2026-08-26 · Batch 1 DURAKLATILDI (publish arası)
+
+**Nerede durduk:** Makale 6, 7, 8 yazıldı ve mekanik denetimden geçti. Makale 9 ve 10 YAZILMADI.
+Diyagram üretimi, inceleme turu, entegrasyon, doğrulama kapıları ve +1 hazırlık işi başlamadı.
+Workflow `w23pt2rrj` (run `wf_65048600-28c`) yazar-8 döndükten hemen sonra kontrollü durduruldu;
+yazar-9 ajanı tek dosya yazmadan sonlandı.
+
+**Yapılanlar:** 6 araştırma paketi + 3 çapraz denetim (URL/aritmetik/çelişki) + 16 bağlayıcı karar;
+`tools/series/sync-series-hashes.cjs` eklendi; `entegre.cjs`, `inceleme-workflow.js` ve
+`yazim-workflow-devam-9-10.js` hazır.
+
+**Kalıcı durum:** `D:\dev\anil-lib-seri-batch1-state\` (644 KB, 19 dosya) — scratchpad silinse bile
+araştırma paketleri, workflow script'leri ve diyagram spesifikasyonları burada.
+
+**Devam kaydı:** `docs/seri/CHECKPOINT-BATCH1.md` — adım adım devam talimatları ve açık bulgular
+(A1: makale 6'da 0,691×2 = 1,382 olmalı, metinde 1,383 yazıyor; A2: makale 9 token/parametre 38,5;
+A3: 6ND geri bağı; A4: inceleme turu hiç çalışmadı).
+
+**Publish güvenliği doğrulandı:** makale 6–8 katalogda değil, `corepack pnpm test` 152/152 ✓,
+`corepack pnpm build` ✓ (29 sayfa: /seri + 5 seri makalesi + 18 /read rotası — 6–8 siteye çıkmıyor).
+`.wolf/anatomy.md` hook tarafından bozulmuştu (131 → 20 kayıt); `git checkout` ile geri alınıp
+yalnızca iki yeni satır eklendi.
+| 13:40 | Session end: 53 writes across 23 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 23 reads | ~291290 tok |

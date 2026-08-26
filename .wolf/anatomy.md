@@ -101,6 +101,7 @@
 ## docs/seri/
 
 - `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~2819 tok)
+- `CHECKPOINT-BATCH1.md` — Batch 1 duraklatma kaydı: 6–8 yazıldı, 9–10 bekliyor; kalıcı durum dizini ve devam adımları. Batch bitince silinir. (~2400 tok)
 - `SOZLESME.md` — serinin değişmez kurallar sözleşmesi (editoryal/pedagojik/teknik/handoff) (~4500 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~4342 tok)
 
@@ -262,3 +263,4 @@
 
 - `check-series-content.cjs` — Seri makaleleri için sözleşme denetimi (docs/seri/SOZLESME.md §2, §3, §5, §6). (~1640 tok)
 - `check-series-svg.cjs` — Seri diyagramları için sözleşme denetimi (docs/seri/SOZLESME.md §6). (~1178 tok)
+- `sync-series-hashes.cjs` — Seri makalelerinin content_hash değerlerini doğrular; --write ile frontmatter + katalogu günceller. (~800 tok)
