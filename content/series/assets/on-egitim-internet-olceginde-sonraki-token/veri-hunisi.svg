@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 452" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-oe-huni-asama" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="24" width="600" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="44" font-size="15" text-anchor="middle" fill="var(--text)">Common Crawl, aylık ham metin</text>
+  <text x="360" y="62" font-size="13" text-anchor="middle" fill="var(--text-muted)">2,61 milyar sayfa · 468 TiB (Ekim 2025)</text>
+
+  <line x1="360" y1="70" x2="360" y2="88" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-huni-asama)"/>
+
+  <rect x="110" y="90" width="500" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="110" font-size="15" text-anchor="middle" fill="var(--text)">Metin çıkarma</text>
+  <text x="360" y="128" font-size="13" text-anchor="middle" fill="var(--text-muted)">aylık yaklaşık 20 TB metin (T5'in ölçtüğü, 2019)</text>
+
+  <line x1="360" y1="136" x2="360" y2="154" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-huni-asama)"/>
+
+  <rect x="160" y="156" width="400" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="360" y="176" font-size="15" text-anchor="middle" fill="var(--text)">Kalite filtreleri</text>
+  <text x="360" y="194" font-size="13" text-anchor="middle" fill="var(--text-muted)">C4: 20 TB → 750 GB · Dolma: 200 TB → 11,5 TB</text>
+  <text x="574" y="176" font-size="14" text-anchor="start" fill="var(--accent)">yüzde 95'i</text>
+  <text x="574" y="194" font-size="14" text-anchor="start" fill="var(--accent)">atılıyor</text>
+
+  <line x1="360" y1="202" x2="360" y2="220" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-huni-asama)"/>
+
+  <rect x="210" y="222" width="300" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="242" font-size="15" text-anchor="middle" fill="var(--text)">Tekilleştirme</text>
+  <text x="360" y="260" font-size="13" text-anchor="middle" fill="var(--text-muted)">yinelenen metin çıkarılır</text>
+
+  <line x1="360" y1="268" x2="360" y2="286" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-huni-asama)"/>
+
+  <rect x="250" y="288" width="220" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="308" font-size="15" text-anchor="middle" fill="var(--text)">Veri karışımı</text>
+  <text x="360" y="326" font-size="13" text-anchor="middle" fill="var(--text-muted)">hangi kaynaktan kaç kez</text>
+
+  <line x1="360" y1="334" x2="360" y2="352" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-huni-asama)"/>
+
+  <rect x="280" y="354" width="160" height="46" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="383" font-size="15" text-anchor="middle" fill="var(--text)">Eğitim token akışı</text>
+
+  <text x="60" y="430" font-size="13" text-anchor="start" fill="var(--text-faint)">her aşama bir tasarım kararıdır</text>
+</svg>

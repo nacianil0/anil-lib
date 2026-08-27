@@ -1,0 +1,135 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-transfor-capraz" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <text x="85" y="28" font-size="15" text-anchor="middle" fill="var(--text)">Kodlayıcı-yalnız</text>
+  <text x="85" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">BERT · 2019</text>
+  <rect x="40" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="58" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="76" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="94" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="112" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="40" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="58" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="76" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="94" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="112" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="40" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="58" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="76" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="94" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="112" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="40" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="58" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="76" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="94" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="112" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="40" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="58" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="76" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="94" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="112" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="35" y="61" width="100" height="100" rx="2" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="85" y="178" font-size="14" text-anchor="middle" fill="var(--cool)">Maske yok</text>
+
+  <text x="295" y="28" font-size="15" text-anchor="middle" fill="var(--text)">Kod çözücü-yalnız</text>
+  <text x="295" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">GPT · 2018</text>
+  <rect x="250" y="66" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="268" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="286" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="304" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="322" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="250" y="84" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="268" y="84" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="286" y="84" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="304" y="84" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="322" y="84" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="250" y="102" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="268" y="102" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="286" y="102" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="304" y="102" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="322" y="102" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="250" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="268" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="286" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="304" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="322" y="120" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="250" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="268" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="286" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="304" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="322" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="245" y="61" width="100" height="100" rx="2" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="352" y="71" font-size="13" fill="var(--text-muted)">boş:</text>
+  <text x="352" y="89" font-size="13" fill="var(--text-muted)">bakamaz</text>
+  <text x="352" y="143" font-size="13" fill="var(--accent)">dolu:</text>
+  <text x="352" y="161" font-size="13" fill="var(--accent)">bakabilir</text>
+  <text x="295" y="178" font-size="14" text-anchor="middle" fill="var(--accent)">Nedensel maske</text>
+  <text x="295" y="202" font-size="13" text-anchor="middle" fill="var(--text-faint)">satır: sorgu konumu</text>
+  <text x="295" y="220" font-size="13" text-anchor="middle" fill="var(--text-faint)">sütun: anahtar konumu</text>
+
+  <text x="564" y="28" font-size="15" text-anchor="middle" fill="var(--text)">Kodlayıcı-kod çözücü</text>
+  <text x="564" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">Transformer · 2017</text>
+  <rect x="440" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="458" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="476" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="494" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="512" y="66" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="440" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="458" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="476" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="494" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="512" y="84" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="440" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="458" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="476" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="494" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="512" y="102" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="440" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="458" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="476" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="494" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="512" y="120" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="440" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="458" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="476" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="494" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="512" y="138" width="18" height="18" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="435" y="61" width="100" height="100" rx="2" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <rect x="598" y="66" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="616" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="634" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="652" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="670" y="66" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="598" y="84" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="616" y="84" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="634" y="84" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="652" y="84" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="670" y="84" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="598" y="102" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="616" y="102" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="634" y="102" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="652" y="102" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="670" y="102" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="598" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="616" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="634" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="652" y="120" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="670" y="120" width="18" height="18" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="598" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="616" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="634" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="652" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="670" y="138" width="18" height="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="593" y="61" width="100" height="100" rx="2" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="564" y="96" font-size="13" text-anchor="middle" fill="var(--text-muted)">Çapraz</text>
+  <text x="564" y="114" font-size="13" text-anchor="middle" fill="var(--text-muted)">dikkat</text>
+  <line x1="535" y1="132" x2="591" y2="132" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-transfor-capraz)"/>
+  <text x="564" y="178" font-size="14" text-anchor="middle" fill="var(--text-muted)">İkisi bir arada</text>
+
+  <text x="360" y="270" font-size="14" text-anchor="middle" fill="var(--text)">Blok aynı, ileri beslemeli katman aynı, normalleştirme aynı</text>
+  <text x="360" y="290" font-size="14" text-anchor="middle" fill="var(--accent)">Değişen tek şey maske</text>
+</svg>

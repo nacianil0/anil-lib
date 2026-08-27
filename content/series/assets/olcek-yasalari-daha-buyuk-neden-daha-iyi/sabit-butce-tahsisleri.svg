@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eksenler -->
+  <line x1="90" y1="270" x2="570" y2="270" stroke="var(--border)" stroke-width="1"/>
+  <line x1="90" y1="60" x2="90" y2="270" stroke="var(--border)" stroke-width="1"/>
+
+  <!-- Dikey eksen keneleri: D = 100 milyar / 200 milyar / 500 milyar / 1 trilyon / 2 trilyon -->
+  <line x1="85" y1="256.4" x2="90" y2="256.4" stroke="var(--border)" stroke-width="1"/>
+  <line x1="85" y1="214.1" x2="90" y2="214.1" stroke="var(--border)" stroke-width="1"/>
+  <line x1="85" y1="158.2" x2="90" y2="158.2" stroke="var(--border)" stroke-width="1"/>
+  <line x1="85" y1="115.9" x2="90" y2="115.9" stroke="var(--border)" stroke-width="1"/>
+  <line x1="85" y1="73.6" x2="90" y2="73.6" stroke="var(--border)" stroke-width="1"/>
+
+  <!-- Yatay eksen keneleri: N = 50 / 100 / 200 / 400 / 800 milyar -->
+  <line x1="120.8" y1="270" x2="120.8" y2="275" stroke="var(--border)" stroke-width="1"/>
+  <line x1="216.3" y1="270" x2="216.3" y2="275" stroke="var(--border)" stroke-width="1"/>
+  <line x1="311.9" y1="270" x2="311.9" y2="275" stroke="var(--border)" stroke-width="1"/>
+  <line x1="407.5" y1="270" x2="407.5" y2="275" stroke="var(--border)" stroke-width="1"/>
+  <line x1="503.1" y1="270" x2="503.1" y2="275" stroke="var(--border)" stroke-width="1"/>
+
+  <!-- Sabit hesap doğrusu: 6ND = 5,76x10^23 -->
+  <line x1="90" y1="62.5" x2="559" y2="270" stroke="var(--accent)" stroke-width="2.5"/>
+  <text x="150" y="52" font-size="13" text-anchor="start" fill="var(--accent)">sabit hesap: 6ND ≈ 5,76×10²³ FLOP (kaba kestirim)</text>
+
+  <!-- Chinchilla: 70 milyar parametre, 1,4 trilyon token -->
+  <circle cx="167.2" cy="95.4" r="6" fill="var(--accent)"/>
+  <text x="182" y="76" font-size="14" text-anchor="start" fill="var(--accent)">Chinchilla</text>
+  <text x="182" y="93" font-size="13" text-anchor="start" fill="var(--text-muted)">70 milyar / 1,4 trilyon</text>
+
+  <!-- Gopher: 280 milyar parametre, 300 milyar token (6ND sapması yüzünden doğrunun altında) -->
+  <circle cx="358.3" cy="189.4" r="6" fill="var(--text-muted)"/>
+  <text x="346" y="205" font-size="14" text-anchor="end" fill="var(--text)">Gopher</text>
+  <text x="346" y="222" font-size="13" text-anchor="end" fill="var(--text-muted)">280 milyar / 300 milyar</text>
+
+  <!-- Kaplan'ın tahsisi: 800 milyar parametre, 120 milyar token -->
+  <circle cx="503.1" cy="245.3" r="6" fill="var(--cool)"/>
+  <text x="520" y="230" font-size="14" text-anchor="start" fill="var(--cool)">Kaplan'ın tahsisi</text>
+  <text x="520" y="247" font-size="13" text-anchor="start" fill="var(--text-muted)">800 milyar / 120 milyar</text>
+
+  <!-- Eksen etiketleri -->
+  <text x="10" y="34" font-size="13" text-anchor="start" fill="var(--text-muted)">Token sayısı D (log ölçek)</text>
+  <text x="82" y="77.6" font-size="13" text-anchor="end" fill="var(--text-faint)">2 trilyon</text>
+  <text x="82" y="119.9" font-size="13" text-anchor="end" fill="var(--text-faint)">1 trilyon</text>
+  <text x="82" y="162.2" font-size="13" text-anchor="end" fill="var(--text-faint)">500 milyar</text>
+  <text x="82" y="218.1" font-size="13" text-anchor="end" fill="var(--text-faint)">200 milyar</text>
+  <text x="82" y="260.4" font-size="13" text-anchor="end" fill="var(--text-faint)">100 milyar</text>
+  <text x="120.8" y="290" font-size="13" text-anchor="middle" fill="var(--text-faint)">50 milyar</text>
+  <text x="216.3" y="290" font-size="13" text-anchor="middle" fill="var(--text-faint)">100 milyar</text>
+  <text x="311.9" y="290" font-size="13" text-anchor="middle" fill="var(--text-faint)">200 milyar</text>
+  <text x="407.5" y="290" font-size="13" text-anchor="middle" fill="var(--text-faint)">400 milyar</text>
+  <text x="503.1" y="290" font-size="13" text-anchor="middle" fill="var(--text-faint)">800 milyar</text>
+  <text x="330" y="314" font-size="13" text-anchor="middle" fill="var(--text-muted)">Parametre sayısı N (log ölçek)</text>
+</svg>

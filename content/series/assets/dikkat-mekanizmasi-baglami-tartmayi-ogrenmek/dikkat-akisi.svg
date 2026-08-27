@@ -1,0 +1,76 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-dikkat-m-akis" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+    <marker id="ok-dikkat-m-akis-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <text x="706" y="30" font-size="13" text-anchor="end" fill="var(--text-faint)">"serin denizde yüz"</text>
+
+  <rect x="20" y="176" width="92" height="44" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="66" y="196" font-size="15" text-anchor="middle" fill="var(--text)">girdi</text>
+  <text x="66" y="214" font-size="15" text-anchor="middle" fill="var(--text)">vektörleri</text>
+  <text x="66" y="238" font-size="13" text-anchor="middle" fill="var(--text-faint)">üç token</text>
+
+  <line x1="112" y1="186" x2="208" y2="94" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+  <line x1="112" y1="198" x2="208" y2="198" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+  <line x1="112" y1="210" x2="208" y2="344" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+
+  <text x="158" y="128" font-size="13" text-anchor="middle" fill="var(--text-muted)">birinci dönüşüm</text>
+  <text x="158" y="190" font-size="13" text-anchor="middle" fill="var(--text-muted)">ikinci dönüşüm</text>
+  <text x="158" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">üçüncü dönüşüm</text>
+
+  <rect x="212" y="74" width="100" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="262" y="99" font-size="15" text-anchor="middle" fill="var(--text)">sorgu</text>
+  <text x="262" y="66" font-size="13" text-anchor="middle" fill="var(--text-muted)">yalnızca "yüz"</text>
+
+  <rect x="212" y="178" width="100" height="40" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5"/>
+  <text x="262" y="203" font-size="15" text-anchor="middle" fill="var(--text)">anahtarlar</text>
+  <text x="262" y="236" font-size="13" text-anchor="middle" fill="var(--text-faint)">üç token</text>
+
+  <rect x="212" y="328" width="100" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="262" y="353" font-size="15" text-anchor="middle" fill="var(--text)">değerler</text>
+  <text x="262" y="386" font-size="13" text-anchor="middle" fill="var(--text-faint)">üç token</text>
+
+  <line x1="312" y1="94" x2="336" y2="120" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+  <line x1="312" y1="198" x2="336" y2="140" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+
+  <rect x="340" y="110" width="124" height="40" rx="6" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.5"/>
+  <text x="402" y="135" font-size="15" text-anchor="middle" fill="var(--text)">nokta çarpım</text>
+  <text x="402" y="170" font-size="13" text-anchor="middle" fill="var(--text-muted)">skorlar: 2 · 5 · 2</text>
+
+  <line x1="464" y1="130" x2="480" y2="130" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+
+  <rect x="484" y="110" width="124" height="40" rx="6" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.5"/>
+  <text x="546" y="135" font-size="15" text-anchor="middle" fill="var(--text)">karekökle böl</text>
+  <text x="546" y="170" font-size="13" text-anchor="middle" fill="var(--text-muted)">1 · 2,5 · 1</text>
+
+  <path d="M 608,130 H 646 V 226 H 612" fill="none" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+
+  <rect x="484" y="206" width="124" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="546" y="232" font-size="16" text-anchor="middle" fill="var(--text)">softmax</text>
+
+  <line x1="546" y1="246" x2="546" y2="264" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis-vurgu)"/>
+
+  <text x="546" y="282" font-size="14" text-anchor="middle" fill="var(--accent)">dikkat ağırlıkları</text>
+  <text x="476" y="304" font-size="14" text-anchor="middle" fill="var(--accent)">0,154</text>
+  <text x="546" y="304" font-size="14" text-anchor="middle" fill="var(--accent)">0,691</text>
+  <text x="616" y="304" font-size="14" text-anchor="middle" fill="var(--accent)">0,154</text>
+
+  <line x1="546" y1="314" x2="546" y2="330" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis-vurgu)"/>
+
+  <line x1="312" y1="348" x2="526" y2="348" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis)"/>
+  <text x="420" y="336" font-size="14" text-anchor="middle" fill="var(--text)">ağırlıklı ortalama</text>
+
+  <circle cx="546" cy="348" r="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="546" y="355" font-size="17" text-anchor="middle" fill="var(--text)">+</text>
+
+  <line x1="562" y1="348" x2="586" y2="348" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-dikkat-m-akis-vurgu)"/>
+
+  <rect x="590" y="326" width="124" height="44" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="652" y="344" font-size="15" text-anchor="middle" fill="var(--text)">çıktı</text>
+  <text x="652" y="363" font-size="13" text-anchor="middle" fill="var(--text)">(1,691 ; 0,154)</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg viewBox="0 0 720 404" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-oe-merdiven-notr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+    <marker id="ok-oe-merdiven-geri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <text x="44" y="26" font-size="14" text-anchor="start" fill="var(--text-muted)">Bağlam (girdi)</text>
+  <text x="560" y="26" font-size="14" text-anchor="middle" fill="var(--text-muted)">Hedef</text>
+
+  <text x="32" y="60" font-size="13" text-anchor="end" fill="var(--text-faint)">1</text>
+  <rect x="44" y="40" width="96" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="60" font-size="13" text-anchor="start" fill="var(--text)">metin başı</text>
+  <line x1="148" y1="55" x2="492" y2="55" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="40" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="60" font-size="14" text-anchor="middle" fill="var(--text)">Bugün</text>
+
+  <text x="32" y="102" font-size="13" text-anchor="end" fill="var(--text-faint)">2</text>
+  <rect x="44" y="82" width="60" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="102" font-size="13" text-anchor="start" fill="var(--text)">Bugün</text>
+  <line x1="112" y1="97" x2="492" y2="97" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="82" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="102" font-size="14" text-anchor="middle" fill="var(--text)">hava</text>
+
+  <text x="32" y="144" font-size="13" text-anchor="end" fill="var(--text-faint)">3</text>
+  <rect x="44" y="124" width="96" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="144" font-size="13" text-anchor="start" fill="var(--text)">Bugün hava</text>
+  <line x1="148" y1="139" x2="492" y2="139" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="124" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="144" font-size="14" text-anchor="middle" fill="var(--text)">çok</text>
+
+  <text x="32" y="186" font-size="13" text-anchor="end" fill="var(--text-faint)">4</text>
+  <rect x="44" y="166" width="125" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="186" font-size="13" text-anchor="start" fill="var(--text)">Bugün hava çok</text>
+  <line x1="177" y1="181" x2="492" y2="181" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="166" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="186" font-size="14" text-anchor="middle" fill="var(--text)">güzel</text>
+
+  <text x="32" y="228" font-size="13" text-anchor="end" fill="var(--text-faint)">5</text>
+  <rect x="44" y="208" width="168" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="228" font-size="13" text-anchor="start" fill="var(--text)">Bugün hava çok güzel</text>
+  <line x1="220" y1="223" x2="492" y2="223" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="208" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="228" font-size="14" text-anchor="middle" fill="var(--text)">olduğu</text>
+
+  <text x="32" y="270" font-size="13" text-anchor="end" fill="var(--text-faint)">6</text>
+  <rect x="44" y="250" width="218" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="270" font-size="13" text-anchor="start" fill="var(--text)">Bugün hava çok güzel olduğu</text>
+  <line x1="270" y1="265" x2="492" y2="265" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="250" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="270" font-size="14" text-anchor="middle" fill="var(--text)">için</text>
+
+  <text x="32" y="312" font-size="13" text-anchor="end" fill="var(--text-faint)">7</text>
+  <rect x="44" y="292" width="254" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="312" font-size="13" text-anchor="start" fill="var(--text)">Bugün hava çok güzel olduğu için</text>
+  <line x1="306" y1="307" x2="492" y2="307" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="292" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="312" font-size="14" text-anchor="middle" fill="var(--text)">parka</text>
+
+  <text x="32" y="354" font-size="13" text-anchor="end" fill="var(--text-faint)">8</text>
+  <rect x="44" y="334" width="298" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="56" y="354" font-size="13" text-anchor="start" fill="var(--text)">Bugün hava çok güzel olduğu için parka</text>
+  <line x1="350" y1="349" x2="492" y2="349" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-notr)"/>
+  <rect x="500" y="334" width="120" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="560" y="354" font-size="14" text-anchor="middle" fill="var(--text)">gittik</text>
+
+  <line x1="500" y1="70" x2="104" y2="82" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+  <line x1="500" y1="112" x2="140" y2="124" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+  <line x1="500" y1="154" x2="169" y2="166" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+  <line x1="500" y1="196" x2="212" y2="208" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+  <line x1="500" y1="238" x2="262" y2="250" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+  <line x1="500" y1="280" x2="298" y2="292" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+  <line x1="500" y1="322" x2="342" y2="334" stroke="var(--accent)" stroke-dasharray="4 4" stroke-width="1.5" marker-end="url(#ok-oe-merdiven-geri)"/>
+
+  <text x="44" y="390" font-size="13" text-anchor="start" fill="var(--text-muted)">hedef, bir sonraki satırın bağlamına eklenir</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
+  <line x1="90" y1="300" x2="670" y2="300" stroke="var(--border)" stroke-width="1.5"/>
+  <line x1="90" y1="60" x2="90" y2="300" stroke="var(--border)" stroke-width="1.5"/>
+
+  <line x1="90" y1="278" x2="660" y2="278" stroke="var(--border)" stroke-dasharray="4 5" stroke-width="1"/>
+
+  <line x1="150" y1="300" x2="150" y2="308" stroke="var(--text-faint)" stroke-width="1.5"/>
+  <line x1="560" y1="300" x2="560" y2="308" stroke="var(--text-faint)" stroke-width="1.5"/>
+
+  <path d="M 90 300 L 150 80 C 260 90 400 240 560 278 L 660 278" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="150" cy="80" r="4" fill="var(--accent)"/>
+
+  <text x="32" y="40" font-size="13" text-anchor="start" fill="var(--text-muted)">öğrenme oranı</text>
+  <text x="120" y="52" font-size="14" text-anchor="middle" fill="var(--accent)">Isınma</text>
+  <text x="350" y="130" font-size="14" text-anchor="middle" fill="var(--accent)">Kosinüs sönümü</text>
+  <text x="650" y="230" font-size="14" text-anchor="end" fill="var(--text-muted)">Taban</text>
+  <text x="650" y="248" font-size="13" text-anchor="end" fill="var(--text-muted)">tepe değerinin yüzde 10'u</text>
+  <text x="150" y="322" font-size="13" text-anchor="middle" fill="var(--text-faint)">375 milyon token</text>
+  <text x="560" y="322" font-size="13" text-anchor="middle" fill="var(--text-faint)">260 milyar token</text>
+  <text x="375" y="348" font-size="13" text-anchor="middle" fill="var(--text-muted)">işlenen token</text>
+  <text x="90" y="372" font-size="13" text-anchor="start" fill="var(--text-faint)">GPT-3'ün ön eğitim çizelgesi</text>
+</svg>

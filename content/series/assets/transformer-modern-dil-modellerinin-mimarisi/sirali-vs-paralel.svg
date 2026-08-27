@@ -1,0 +1,68 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-transfor-zincir" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <line x1="360" y1="40" x2="360" y2="300" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="30" y="30" font-size="17" text-anchor="start" fill="var(--text)">Yinelemeli katman</text>
+
+  <text x="53" y="138" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="117" y="138" font-size="13" text-anchor="middle" fill="var(--accent)">2</text>
+  <text x="181" y="138" font-size="13" text-anchor="middle" fill="var(--accent)">3</text>
+  <text x="245" y="138" font-size="13" text-anchor="middle" fill="var(--accent)">4</text>
+  <text x="309" y="138" font-size="13" text-anchor="middle" fill="var(--accent)">5</text>
+
+  <rect x="30" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="94" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="158" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="222" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="286" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+
+  <text x="53" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t1</text>
+  <text x="117" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t2</text>
+  <text x="181" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t3</text>
+  <text x="245" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t4</text>
+  <text x="309" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t5</text>
+
+  <line x1="78" y1="170" x2="92" y2="170" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-transfor-zincir)"/>
+  <line x1="142" y1="170" x2="156" y2="170" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-transfor-zincir)"/>
+  <line x1="206" y1="170" x2="220" y2="170" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-transfor-zincir)"/>
+  <line x1="270" y1="170" x2="284" y2="170" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-transfor-zincir)"/>
+
+  <text x="30" y="256" font-size="16" text-anchor="start" fill="var(--accent)">5 sıralı adım</text>
+  <text x="30" y="278" font-size="13" text-anchor="start" fill="var(--text-muted)">her token bir öncekini bekler</text>
+
+  <text x="396" y="30" font-size="17" text-anchor="start" fill="var(--text)">Öz-dikkat</text>
+
+  <path d="M419,150 Q451,90 483,150" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M483,150 Q515,90 547,150" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M547,150 Q579,90 611,150" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M611,150 Q643,90 675,150" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M419,150 Q547,30 675,150" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+
+  <path d="M419,190 Q483,242 547,190" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M483,190 Q547,254 611,190" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M547,190 Q611,242 675,190" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M419,190 Q515,266 611,190" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <path d="M483,190 Q579,278 675,190" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+
+  <rect x="396" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="460" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="524" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="588" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="652" y="150" width="46" height="40" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+
+  <text x="419" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t1</text>
+  <text x="483" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t2</text>
+  <text x="547" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t3</text>
+  <text x="611" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t4</text>
+  <text x="675" y="175" font-size="14" text-anchor="middle" fill="var(--text-muted)">t5</text>
+
+  <text x="396" y="256" font-size="16" text-anchor="start" fill="var(--accent)">1 sıralı adım</text>
+  <text x="396" y="278" font-size="13" text-anchor="start" fill="var(--text-muted)">5 × 5 = 25 skor, hepsi aynı anda</text>
+
+  <text x="360" y="316" font-size="13" text-anchor="middle" fill="var(--text-faint)">Sağ tarafta daha çok iş var, daha çok bekleme yok</text>
+</svg>

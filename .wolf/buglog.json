@@ -1329,20 +1329,21 @@
     {
       "id": "bug-079",
       "timestamp": "2026-08-26T09:51:30.611Z",
-      "error_message": "Makale 6 worked example: gosterilen toplam 0,154 + 1,382 + 0,154 = 1,691 yaziyordu; yuvarlanmis terimlerin gercek toplami 1,690.",
+      "error_message": "Makale 6 worked example: gosterilen carpim ve toplam tutmuyordu (0,691x2 icin 1,383 yazilmisti, toplam 1,691 gosteriliyordu).",
       "file": "content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md",
-      "root_cause": "Yazar ajani nihai degeri tam agirliklardan (0,15428 / 0,69144) hesaplayip 1,6914 -> 1,691 yazdi, ama ara adimlari uc basamaga yuvarlanmis agirliklarla gosterdi. Okuyucu gosterilen sayilari toplayinca 1,690 buluyor ve gorunur bir tutarsizlik olusuyor.",
-      "fix": "Nihai deger 1,690 yapildi; boylece gosterilen aritmetik birebir tutuyor. Fark (0,0014) pedagojik noktayi (1,690 vs 0,154 karsitligi) etkilemiyor. Kural: okuyucuya gosterilen ara adimlar hangi basamaktaysa nihai deger de o basamaktan hesaplanmali.",
+      "root_cause": "Yazar ajani nihai degeri tam agirliklardan (0,15428/0,69144 -> 1,6914) hesaplayip 1,691 yazdi, ara adimlari ise uc basamaga yuvarlanmis agirliklarla gosterdi. Toplami tutturmak icin carpimi 1,383 diye duzeltince bu sefer carpim yanlis oldu (0,691x2 = 1,382). Ayrica ilk duzeltme denemesi, yazar ajani hâlâ calisirken yapildigi icin ajan tarafindan uzerine yazildi.",
+      "fix": "Uc basamak disiplini butun zincire uygulandi: 0,691x2 = 1,382 ve 0,154 + 1,382 + 0,154 = 1,690; cikti vektorleri (1,690 ; 0,154) ve (0,154 ; 1,690). Yedi gecisin hepsi guncellendi. Kural: okuyucuya gosterilen ara adimlar hangi basamaktaysa nihai deger de o basamaktan hesaplanir. Ikinci kural: bir yazar ajani calisirken dosyasina dokunma; once journal-daki result satirini gor.",
       "tags": [
         "seri",
         "batch-1",
         "worked-example",
         "yuvarlama",
-        "aritmetik"
+        "aritmetik",
+        "ajan-yazma-yarisi"
       ],
       "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-08-26T09:51:30.611Z"
+      "occurrences": 2,
+      "last_seen": "2026-08-26T16:48:58.128Z"
     },
     {
       "id": "bug-080",
@@ -1375,6 +1376,297 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-26T10:33:12.697Z"
+    },
+    {
+      "id": "bug-082",
+      "timestamp": "2026-08-26T17:14:48.587Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md",
+      "root_cause": "Had \"rastgele seçilmiş küçük veri parçası\"",
+      "fix": "Changed to \"rastgele seçilmiş küçük bir parça\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T17:14:48.587Z"
+    },
+    {
+      "id": "bug-083",
+      "timestamp": "2026-08-26T17:20:04.752Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar/uretim-dongusu.svg",
+      "root_cause": "Had \"var(--accent)\"",
+      "fix": "Changed to \"var(--text-muted)\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T17:20:04.752Z"
+    },
+    {
+      "id": "bug-084",
+      "timestamp": "2026-08-26T19:21:19.532Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/gen3.cjs",
+      "root_cause": "Had \"\\n\"",
+      "fix": "Changed to `  <rect x=\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T19:21:19.532Z"
+    },
+    {
+      "id": "bug-085",
+      "timestamp": "2026-08-26T19:21:29.990Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/guc-yasasi-iki-eksen.svg",
+      "root_cause": "Had \"232\"",
+      "fix": "Changed to \"228\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-26T19:21:38.642Z"
+    },
+    {
+      "id": "bug-086",
+      "timestamp": "2026-08-26T19:21:43.058Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/sabit-butce-tahsisleri.svg",
+      "root_cause": "Had \"250\"",
+      "fix": "Changed to \"247\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T19:21:43.058Z"
+    },
+    {
+      "id": "bug-087",
+      "timestamp": "2026-08-26T19:21:47.536Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/ayni-egri-iki-cetvel.svg",
+      "root_cause": "Had \"600\"",
+      "fix": "Changed to \"594\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T19:21:47.536Z"
+    },
+    {
+      "id": "bug-080",
+      "timestamp": "2026-08-26T19:25:33.230Z",
+      "error_message": "entegre.cjs kuru calismasi: roadmap 9: baslik \"Olcek Yasalari: Neden \"Daha Buyuk\"...\" != frontmatter (ters bolulu hâli)",
+      "file": "scratchpad/batch1/entegre.cjs (kalici kopya: D:/dev/anil-lib-seri-batch1-state/entegre.cjs)",
+      "root_cause": "El yapimi minimal YAML ayristiricisi, cift tirnakli bir skalerin icindeki kacirilmis tirnaklari (\\\") cozmuyordu; yalnizca bastaki ve sondaki tirnagi siliyordu. Makale 9-un basligi tirnak iceriyor (Neden \"Daha Buyuk\" Cogu Zaman \"Daha Iyi\"?). Sonuc: katalog basligina ters bolu sizacak ve build-de assertCatalogMatch katalog<->frontmatter esitligini kiracakti.",
+      "fix": "Ayristirici, uygulamanin kullandigi gray-matter ile degistirildi (proje node_modules-undan mutlak yolla require edilerek; scratchpad script-i proje modullerini kendiliginden cozemiyor). Boylece entegrasyon ile build birebir ayni ayristirmayi kullaniyor. Kuru calisma artik temiz.",
+      "tags": [
+        "seri",
+        "batch-1",
+        "entegrasyon",
+        "yaml",
+        "frontmatter",
+        "gray-matter"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T19:25:33.230Z"
+    },
+    {
+      "id": "bug-089",
+      "timestamp": "2026-08-26T20:35:07.344Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 10→12 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T20:35:07.344Z"
+    },
+    {
+      "id": "bug-090",
+      "timestamp": "2026-08-26T20:36:07.123Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md",
+      "root_cause": "Had 'de işlemi üç role bölüp isimlendirdi ve bugün kul",
+      "fix": "Changed to 'de işlemi üç role bölüp isimlendirdi ve bugün kul",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-26T20:38:10.253Z"
+    },
+    {
+      "id": "bug-091",
+      "timestamp": "2026-08-26T20:36:36.195Z",
+      "error_message": "Wrong reference: 690 should be 691",
+      "file": "content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md",
+      "root_cause": "Used \"690\" instead of \"691\"",
+      "fix": "Changed 690 → 691",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-26T20:37:13.419Z"
+    },
+    {
+      "id": "bug-092",
+      "timestamp": "2026-08-26T20:36:36.904Z",
+      "error_message": "Wrong reference: NeurIPS should be NIPS",
+      "file": "content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md",
+      "root_cause": "Used \"NeurIPS\" instead of \"NIPS\"",
+      "fix": "Changed NeurIPS → NIPS",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T20:36:36.904Z"
+    },
+    {
+      "id": "bug-093",
+      "timestamp": "2026-08-26T20:41:07.192Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (2 removed) | Also: ## Kaybın üçüncü ondalık basamağı; Aynı bütçeyi iki reçeteyle paylaştırınca ne oluyor",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-26T20:41:56.211Z"
+    },
+    {
+      "id": "bug-094",
+      "timestamp": "2026-08-26T21:50:15.136Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→5 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T21:50:15.136Z"
+    },
+    {
+      "id": "bug-095",
+      "timestamp": "2026-08-26T21:51:19.161Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md",
+      "root_cause": "Had 'da tanıttığı BERT yalnızca kodlayıcı tarafını kul",
+      "fix": "Changed to 'da tanıttığı BERT yalnızca kodlayıcı tarafını kul",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-26T21:51:45.150Z"
+    },
+    {
+      "id": "bug-096",
+      "timestamp": "2026-08-26T21:52:29.278Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md",
+      "root_cause": "Had 'te Chinchilla'",
+      "fix": "Changed to 'te o çalışmanın üçüncü kestirim yöntemini —grafik",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-08-26T21:58:33.154Z"
+    },
+    {
+      "id": "bug-097",
+      "timestamp": "2026-08-26T21:53:10.130Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→5 lines (2 removed) | Also: yani üç katına sıçrar. Sıçrama gerçek; kaynağı üst; Aynı çalışma, BIG-Bench adlı geniş görev kümesinde",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-26T21:53:25.356Z"
+    },
+    {
+      "id": "bug-098",
+      "timestamp": "2026-08-26T21:53:51.272Z",
+      "error_message": "Wrong reference: Hoffmann should be Hestness",
+      "file": "content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md",
+      "root_cause": "Used \"Hoffmann\" instead of \"Hestness\"",
+      "fix": "Changed Hoffmann → Hestness",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T21:53:51.272Z"
+    },
+    {
+      "id": "bug-099",
+      "timestamp": "2026-08-26T21:54:38.665Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/transformer-modern-dil-modellerinin-mimarisi/dikkat-maskesi-kollari.svg",
+      "root_cause": "Had \"360\"",
+      "fix": "Changed to \"85\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-26T21:54:38.665Z"
     }
   ]
 }

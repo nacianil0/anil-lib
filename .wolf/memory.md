@@ -527,3 +527,207 @@ A3: 6ND geri bağı; A4: inceleme turu hiç çalışmadı).
 `.wolf/anatomy.md` hook tarafından bozulmuştu (131 → 20 kayıt); `git checkout` ile geri alınıp
 yalnızca iki yeni satır eklendi.
 | 13:40 | Session end: 53 writes across 23 files (BRIEF.md, sync-series-hashes.cjs, DIYAGRAM-KILAVUZU.md, yazim-workflow.js, inceleme-workflow.js) | 23 reads | ~291290 tok |
+
+## Session: 2026-08-26 19:47
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-26 19:47
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 19:49 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/inceleme-workflow.js | modified ESLESMESI() | ~715 |
+| 19:50 | Session end: 1 writes across 1 files (inceleme-workflow.js) | 10 reads | ~6697 tok |
+| 19:57 | Created content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | — | ~6089 |
+| 20:03 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/diagrams/9-spec.md | — | ~4095 |
+| 20:03 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~27 |
+| 20:13 | Created content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | — | ~6163 |
+| 20:14 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~44 |
+| 20:14 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | "rastgele seçilmiş küçük v" → "rastgele seçilmiş küçük b" | ~37 |
+| 20:16 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/diagrams/10-spec.md | — | ~2718 |
+| 20:18 | Created content/series/assets/on-egitim-internet-olceginde-sonraki-token/oz-denetimli-hedef.svg | — | ~1922 |
+| 20:18 | Created content/series/assets/on-egitim-internet-olceginde-sonraki-token/veri-hunisi.svg | — | ~860 |
+| 20:19 | Created content/series/assets/on-egitim-internet-olceginde-sonraki-token/ogrenme-orani-cizelgesi.svg | — | ~451 |
+| 20:19 | Created content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/guc-yasasi-iki-eksen.svg | — | ~1011 |
+| 20:19 | Created content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/sabit-butce-tahsisleri.svg | — | ~863 |
+| 20:19 | Session end: 13 writes across 10 files (inceleme-workflow.js, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, 9-spec.md, metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md, 10-spec.md) | 18 reads | ~36550 tok |
+| 20:20 | Created content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/ayni-egri-iki-cetvel.svg | — | ~784 |
+| 20:20 | Edited content/series/assets/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar/uretim-dongusu.svg | inline fix | ~23 |
+| 20:20 | Edited content/series/assets/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar/sicaklik-uc-panel.svg | 2→2 lines | ~38 |
+| 20:23 | Created content/series/assets/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek/dikkat-akisi.svg | — | ~1397 |
+| 20:24 | Created content/series/assets/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek/baglamsal-cikti.svg | — | ~822 |
+| 20:25 | Sekil 1-3 SVG yazildi + check-series-svg temiz | content/series/assets/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek/*.svg | Sorun yok. | ~3400 |
+| 20:34 | Makale 10 Sekil 1-3 SVG yazildi + check-series-svg temiz | content/series/assets/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar/*.svg | Sorun yok. | ~3600 |
+| 22:21 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/gen3.cjs | 2→3 lines | ~45 |
+| 22:21 | Edited content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/guc-yasasi-iki-eksen.svg | inline fix | ~26 |
+| 22:21 | Edited content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/guc-yasasi-iki-eksen.svg | 2→5 lines | ~71 |
+| 22:21 | Edited content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/guc-yasasi-iki-eksen.svg | 2→2 lines | ~49 |
+| 22:21 | Edited content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/sabit-butce-tahsisleri.svg | 2→2 lines | ~54 |
+| 22:21 | Edited content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/ayni-egri-iki-cetvel.svg | 2→2 lines | ~50 |
+| 22:26 | Session end: 24 writes across 16 files (inceleme-workflow.js, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, 9-spec.md, metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md, 10-spec.md) | 29 reads | ~40149 tok |
+| 22:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/pdftxt.py | — | ~174 |
+| 22:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/olgu-10.md | — | ~4590 |
+| 22:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/olgu-6.md | — | ~4300 |
+| 22:39 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/olgu-7.md | — | ~6321 |
+| 22:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/olgu-8.md | — | ~7598 |
+| 22:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/olgu-9.md | — | ~7875 |
+| 22:53 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/sozlesme-7.md | — | ~5599 |
+| 22:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/sozlesme-6.md | — | ~6308 |
+| 22:55 | sozlesme/zincir denetimi: makale 6 (dikkat mekanizmasi) | content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 0 BLOCKER / 7 MAJOR / 7 MINOR; rapor scratchpad/batch1/review/sozlesme-6.md | ~55k |
+| 22:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/sozlesme-8.md | — | ~7084 |
+| 22:59 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/sozlesme-10.md | — | ~6591 |
+| 23:01 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/sozlesme-9.md | — | ~8061 |
+| 23:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/diyagram-tutarlilik.md | — | ~2024 |
+| 23:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/seri-butunlugu.md | — | ~13487 |
+| 23:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/duzeltme-workflow.js | — | ~5238 |
+| 23:30 | Session end: 38 writes across 30 files (inceleme-workflow.js, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, 9-spec.md, metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md, 10-spec.md) | 43 reads | ~169323 tok |
+| 23:34 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~51 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | 10→12 lines | ~372 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | 7→7 lines | ~291 |
+| 23:35 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 5→3 lines | ~269 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~35 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~20 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~17 |
+| 23:35 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~166 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~43 |
+| 23:35 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~87 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~63 |
+| 23:35 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~55 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~55 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~13 |
+| 23:36 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 3→3 lines | ~288 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~95 |
+| 23:36 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~17 |
+| 23:36 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~41 |
+| 23:36 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 5→5 lines | ~277 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | 7→5 lines | ~317 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~10 |
+| 23:36 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~56 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~18 |
+| 23:36 | Edited content/series/assets/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar/sicaklik-uc-panel.svg | inline fix | ~7 |
+| 23:36 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~12 |
+| 23:36 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 3→3 lines | ~242 |
+| 23:37 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~141 |
+| 23:37 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~16 |
+| 23:37 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 3→1 lines | ~189 |
+| 23:37 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~46 |
+| 23:37 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~85 |
+| 23:37 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | 1→3 lines | ~19 |
+| 23:38 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~14 |
+| 23:38 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | 3→3 lines | ~288 |
+| 23:38 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~100 |
+| 23:38 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~50 |
+| 23:38 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~19 |
+| 23:38 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~113 |
+| 23:39 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~112 |
+| 23:39 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~21 |
+| 23:39 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~19 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~72 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~83 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~151 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~139 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~27 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~20 |
+| 23:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/fix8/apply.py | — | ~6119 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~27 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~130 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~115 |
+| 23:40 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~16 |
+| 23:41 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→3 lines | ~200 |
+| 23:41 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→3 lines | ~148 |
+| 23:41 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 16→18 lines | ~875 |
+
+## Session: 2026-08-26 00:40
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:49 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | 3→5 lines | ~266 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | 5→5 lines | ~403 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~36 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~13 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~22 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~10 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~21 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~64 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~62 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~32 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~46 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~17 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~46 |
+| 00:50 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~83 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~43 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~17 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | "da tanıttığı BERT yalnızc" → "da tanıttığı BERT yalnızc" | ~256 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | "gelecek" → "şimdilik bakma" | ~95 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~194 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~11 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | "nin taban modelinden Llam" → "nin taban modelinden Llam" | ~118 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~30 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~126 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~37 |
+| 00:51 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | 1→2 lines | ~76 |
+| 00:52 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | removed 3 lines | ~4 |
+| 00:52 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→3 lines | ~294 |
+| 00:52 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 5→3 lines | ~195 |
+| 00:52 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~93 |
+| 00:52 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~55 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→5 lines | ~388 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~84 |
+| 00:53 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~44 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→3 lines | ~53 |
+| 00:53 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~28 |
+| 00:53 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~71 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→3 lines | ~121 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~39 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~14 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 2→3 lines | ~84 |
+| 00:53 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 1→3 lines | ~188 |
+| 00:54 | Edited content/series/assets/transformer-modern-dil-modellerinin-mimarisi/dikkat-maskesi-kollari.svg | removed 3 lines | ~6 |
+| 00:54 | Edited content/series/assets/transformer-modern-dil-modellerinin-mimarisi/dikkat-maskesi-kollari.svg | 2→6 lines | ~118 |
+| 00:55 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 9→5 lines | ~311 |
+| 00:55 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | "den türettiğimiz 120 mily" → "den türettiğimiz 120 mily" | ~84 |
+| 00:55 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | "dir; yani bütçe doğrusu d" → "dir. Benzetmenin biçimsel" | ~77 |
+| 00:56 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~106 |
+| 00:56 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~77 |
+| 00:56 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~194 |
+| 00:56 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~107 |
+| 00:58 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~38 |
+| 00:58 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~75 |
+| 00:58 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→3 lines | ~126 |
+| 00:58 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | "ın tahsisi o doğru üzerin" → "yi çarpımları sabit kalac" | ~96 |
+| 00:58 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | "nin çarpımı sabittir. İyi" → "nin çarpımı sabittir. İyi" | ~98 |
+| 00:58 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~38 |
+| 00:59 | Created content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/sabit-butce-tahsisleri.svg | — | ~1049 |
+| 06:19 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~28 |
+| 06:19 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~40 |
+| 06:19 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 2→2 lines | ~88 |
+| 06:20 | makale 9 duzeltme tamamlama: cift inis randevusu odendi, yuzde 3,9 aritmetigi, Sekil 2 SVG yeni tahsis degerlerine tasindi, Snell basligi ICLR kaynagindan dogrulanip korundu | content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md, content/series/assets/olcek-yasalari-daha-buyuk-neden-daha-iyi/sabit-butce-tahsisleri.svg | denetleyiciler temiz, 2.998 kelime | ~90k |
+| 06:24 | Session end: 60 writes across 4 files (transformer-modern-dil-modellerinin-mimarisi.md, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, dikkat-maskesi-kollari.svg, sabit-butce-tahsisleri.svg) | 12 reads | ~56140 tok |
+| 07:20 | Session end: 60 writes across 4 files (transformer-modern-dil-modellerinin-mimarisi.md, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, dikkat-maskesi-kollari.svg, sabit-butce-tahsisleri.svg) | 17 reads | ~61926 tok |
+| 07:24 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/son-dogrulama-9.md | — | ~4679 |
+| 07:24 | Session end: 61 writes across 5 files (transformer-modern-dil-modellerinin-mimarisi.md, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, dikkat-maskesi-kollari.svg, sabit-butce-tahsisleri.svg, son-dogrulama-9.md) | 18 reads | ~66940 tok |
+| 07:28 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/son-dogrulama-6.md | — | ~4346 |
+| 07:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/son-dogrulama-7.md | — | ~3718 |
+| 07:30 | makale 7 son doğrulama denetimi (değişen 24 satır + 15 kaynak + aritmetik + 3 SVG) | transformer-modern-dil-modellerinin-mimarisi.md | 0 BLOCKER/MAJOR, 6 MINOR | ~55k |
+| 07:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/son-dogrulama-10.md | — | ~6643 |
+| 07:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/son-dogrulama-8.md | — | ~5808 |
+| 07:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2394560-2e30-492e-8a25-1703c27a36d2/scratchpad/batch1/review/son-regresyon.md | — | ~8694 |
+| 07:52 | Created docs/seri/CHECKPOINT-BATCH1.md | — | ~2222 |
+
+## Oturum notu — 2026-08-27 · Batch 1 son doğrulama bitti, entegrasyon öncesi durduruldu
+
+**Tamamlanan:** araştırma → yazım (10 makale) → 15 diyagram → inceleme (12 ajan, 20 BLOCKER) →
+düzeltme (7 ajan) → son doğrulama (6 ajan). Değişen pasajların tamamı birincil kaynaktan bağımsız
+doğrulandı; düzeltmeler yeni olgusal hata sokmadı.
+
+**Kalan:** 1 BLOCKER (makale 6 satır 137: "geliştirme kümesi" → "doğrulama kümesi"), 6 MAJOR
+(biri Snell künyesinde arXiv vs ICLR başlık çelişkisi — ana agent kararı gerekli), ~29 MINOR.
+
+**YAPILMADI:** entegrasyon, hash, typecheck/test/build, görsel doğrulama, YOL-HARITASI, HANDOFF.
+Çalışan workflow/ajan yok.
+
+**Devam kaydı:** docs/seri/CHECKPOINT-BATCH1.md (8 adımlık sıra).
+**Kalıcı durum:** D:\dev\anil-lib-seri-batch1-state\ — 18 inceleme raporu dahil her şey burada.
+Regresyon raporu §7 YOL-HARITASI için kopyala-yapıştır hazır satırları taşıyor.
+| 07:53 | Session end: 67 writes across 11 files (transformer-modern-dil-modellerinin-mimarisi.md, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, dikkat-maskesi-kollari.svg, sabit-butce-tahsisleri.svg, son-dogrulama-9.md) | 26 reads | ~106605 tok |

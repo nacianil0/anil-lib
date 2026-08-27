@@ -1,0 +1,69 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-dikkat-m-notr" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+    <marker id="ok-dikkat-m-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="28" font-size="17" text-anchor="start" fill="var(--text-muted)">Tek özet</text>
+
+  <rect x="40" y="42" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="40" y="78" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="40" y="114" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="40" y="150" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="88" y="62" font-size="15" text-anchor="middle" fill="var(--text)">token 1</text>
+  <text x="88" y="98" font-size="15" text-anchor="middle" fill="var(--text)">token 2</text>
+  <text x="88" y="134" font-size="15" text-anchor="middle" fill="var(--text)">token 3</text>
+  <text x="88" y="170" font-size="15" text-anchor="middle" fill="var(--text)">token 4</text>
+
+  <line x1="140" y1="57" x2="296" y2="120" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="140" y1="93" x2="296" y2="124" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="140" y1="129" x2="296" y2="128" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="140" y1="165" x2="296" y2="132" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+
+  <rect x="300" y="110" width="120" height="34" rx="6" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.5"/>
+  <text x="360" y="132" font-size="15" text-anchor="middle" fill="var(--text)">bağlam vektörü</text>
+  <text x="360" y="162" font-size="13" text-anchor="middle" fill="var(--text-muted)">sabit uzunluklu</text>
+
+  <line x1="424" y1="120" x2="556" y2="74" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="424" y1="127" x2="556" y2="114" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="424" y1="134" x2="556" y2="154" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-dikkat-m-notr)"/>
+
+  <rect x="560" y="59" width="110" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="560" y="99" width="110" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="560" y="139" width="110" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="615" y="79" font-size="13" text-anchor="middle" fill="var(--text)">üretim adımı 1</text>
+  <text x="615" y="119" font-size="13" text-anchor="middle" fill="var(--text)">üretim adımı 2</text>
+  <text x="615" y="159" font-size="13" text-anchor="middle" fill="var(--text)">üretim adımı 3</text>
+
+  <text x="40" y="230" font-size="17" text-anchor="start" fill="var(--accent)">Adıma özel tartım</text>
+
+  <rect x="40" y="250" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="40" y="286" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="40" y="322" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <rect x="40" y="358" width="96" height="30" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.5"/>
+  <text x="88" y="270" font-size="15" text-anchor="middle" fill="var(--text)">token 1</text>
+  <text x="88" y="306" font-size="15" text-anchor="middle" fill="var(--text)">token 2</text>
+  <text x="88" y="342" font-size="15" text-anchor="middle" fill="var(--text)">token 3</text>
+  <text x="88" y="378" font-size="15" text-anchor="middle" fill="var(--text)">token 4</text>
+
+  <text x="225" y="250" font-size="14" text-anchor="middle" fill="var(--accent)">dikkat ağırlığı</text>
+
+  <line x1="140" y1="265" x2="310" y2="296" stroke="var(--text-muted)" stroke-width="1" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="140" y1="301" x2="310" y2="300" stroke="var(--accent)" stroke-width="4" marker-end="url(#ok-dikkat-m-vurgu)"/>
+  <line x1="140" y1="337" x2="310" y2="304" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-dikkat-m-notr)"/>
+  <line x1="140" y1="373" x2="311" y2="307" stroke="var(--text-muted)" stroke-width="1" marker-end="url(#ok-dikkat-m-notr)"/>
+
+
+  <circle cx="330" cy="300" r="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="330" y="307" font-size="17" text-anchor="middle" fill="var(--text)">+</text>
+
+  <line x1="346" y1="300" x2="476" y2="300" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-dikkat-m-vurgu)"/>
+
+  <rect x="480" y="283" width="150" height="34" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="555" y="305" font-size="15" text-anchor="middle" fill="var(--text)">bağlam vektörü</text>
+  <text x="555" y="335" font-size="13" text-anchor="middle" fill="var(--text-muted)">her adımda yeniden</text>
+</svg>

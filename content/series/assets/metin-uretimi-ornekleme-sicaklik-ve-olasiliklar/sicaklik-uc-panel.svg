@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="195" y="44" font-size="16" text-anchor="middle" fill="var(--text)">T = 0,5</text>
+  <text x="195" y="66" font-size="14" text-anchor="middle" fill="var(--text-muted)">sivrilir</text>
+  <text x="395" y="44" font-size="16" text-anchor="middle" fill="var(--text)">T = 1</text>
+  <text x="395" y="66" font-size="14" text-anchor="middle" fill="var(--text-muted)">çalışma dağılımı</text>
+  <text x="595" y="44" font-size="16" text-anchor="middle" fill="var(--text)">T = 1,5</text>
+  <text x="595" y="66" font-size="14" text-anchor="middle" fill="var(--text-muted)">düzleşir</text>
+
+  <line x1="295" y1="98" x2="295" y2="278" stroke="var(--border)" stroke-width="1"/>
+  <line x1="495" y1="98" x2="495" y2="278" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="20" y="121" font-size="15" fill="var(--text)">güzel</text>
+  <rect x="100" y="107" width="147.7" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="253.7" y="121" font-size="13" fill="var(--text-muted)">0,519</text>
+  <rect x="300" y="107" width="110.1" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="416.1" y="121" font-size="13" fill="var(--text-muted)">0,387</text>
+  <rect x="500" y="107" width="96.5" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="602.5" y="121" font-size="13" fill="var(--text-muted)">0,339</text>
+
+  <text x="20" y="157" font-size="15" fill="var(--text)">sıcak</text>
+  <rect x="100" y="143" width="74.6" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="180.6" y="157" font-size="13" fill="var(--text-muted)">0,262</text>
+  <rect x="300" y="143" width="78.3" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="384.3" y="157" font-size="13" fill="var(--text-muted)">0,275</text>
+  <rect x="500" y="143" width="76.8" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="582.8" y="157" font-size="13" fill="var(--text-muted)">0,270</text>
+
+  <text x="20" y="193" font-size="15" fill="var(--text)">soğuk</text>
+  <rect x="100" y="179" width="49.8" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="155.8" y="193" font-size="13" fill="var(--text-muted)">0,175</text>
+  <rect x="300" y="179" width="64" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="370" y="193" font-size="13" fill="var(--text-muted)">0,225</text>
+  <rect x="500" y="179" width="67.2" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="573.2" y="193" font-size="13" fill="var(--text-muted)">0,236</text>
+
+  <text x="20" y="229" font-size="15" fill="var(--text)">yağmurlu</text>
+  <rect x="100" y="215" width="12.5" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="118.5" y="229" font-size="13" fill="var(--text-muted)">0,044</text>
+  <rect x="300" y="215" width="31.9" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="337.9" y="229" font-size="13" fill="var(--text-muted)">0,112</text>
+  <rect x="500" y="215" width="42.4" height="18" rx="3" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="548.4" y="229" font-size="13" fill="var(--text-muted)">0,149</text>
+
+  <text x="20" y="265" font-size="15" fill="var(--accent)">mikroskop</text>
+  <rect x="100" y="251" width="2" height="18" fill="var(--accent)"/>
+  <text x="108" y="265" font-size="13" fill="var(--accent)">0,000</text>
+  <rect x="300" y="251" width="2" height="18" fill="var(--accent)"/>
+  <text x="308" y="265" font-size="13" fill="var(--accent)">0,001</text>
+  <rect x="500" y="251" width="2" height="18" fill="var(--accent)"/>
+  <text x="508" y="265" font-size="13" fill="var(--accent)">0,007</text>
+</svg>

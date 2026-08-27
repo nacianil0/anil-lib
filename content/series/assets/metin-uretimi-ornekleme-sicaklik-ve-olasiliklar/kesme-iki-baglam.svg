@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+  <text x="195" y="26" font-size="15" text-anchor="middle" fill="var(--text-muted)">top-k, k = 3</text>
+  <text x="525" y="26" font-size="15" text-anchor="middle" fill="var(--text-muted)">çekirdek örnekleme</text>
+  <text x="525" y="46" font-size="15" text-anchor="middle" fill="var(--text-muted)">p = 0,9</text>
+
+  <text x="16" y="80" font-size="14" fill="var(--text-muted)">düz dağılım</text>
+  <text x="16" y="100" font-size="13" fill="var(--text-muted)">"Bugün hava çok ___"</text>
+
+  <line x1="40" y1="210" x2="350" y2="210" stroke="var(--border)" stroke-width="1"/>
+  <rect x="58" y="122.9" width="26" height="87.1" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="120" y="148.1" width="26" height="61.9" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="182" y="159.4" width="26" height="50.6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="244" y="184.8" width="26" height="25.2" fill="var(--text-faint)"/>
+  <rect x="306" y="208" width="26" height="2" fill="var(--text-faint)"/>
+  <text x="71" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">güzel</text>
+  <text x="133" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">sıcak</text>
+  <text x="195" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">soğuk</text>
+  <text x="257" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">yağmurlu</text>
+  <text x="319" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">mikroskop</text>
+  <line x1="226" y1="116" x2="226" y2="218" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="226" y="110" font-size="13" text-anchor="middle" fill="var(--accent)">3 aday</text>
+
+  <line x1="380" y1="210" x2="690" y2="210" stroke="var(--border)" stroke-width="1"/>
+  <rect x="398" y="122.9" width="26" height="87.1" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="460" y="148.1" width="26" height="61.9" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="522" y="159.4" width="26" height="50.6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="584" y="184.8" width="26" height="25.2" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="646" y="208" width="26" height="2" fill="var(--text-faint)"/>
+  <text x="411" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">güzel</text>
+  <text x="473" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">sıcak</text>
+  <text x="535" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">soğuk</text>
+  <text x="597" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">yağmurlu</text>
+  <text x="659" y="226" font-size="13" text-anchor="middle" fill="var(--text-muted)">mikroskop</text>
+  <line x1="628" y1="116" x2="628" y2="218" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="628" y="110" font-size="13" text-anchor="middle" fill="var(--accent)">4 aday</text>
+
+  <text x="16" y="266" font-size="14" fill="var(--text-muted)">sivri dağılım</text>
+  <text x="16" y="286" font-size="13" fill="var(--text-muted)">"Türkiye'nin başkenti ___"</text>
+
+  <line x1="40" y1="396" x2="350" y2="396" stroke="var(--border)" stroke-width="1"/>
+  <rect x="58" y="313.2" width="26" height="82.8" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="120" y="393.3" width="26" height="2.7" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="182" y="394" width="26" height="2" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="244" y="394" width="26" height="2" fill="var(--text-faint)"/>
+  <rect x="306" y="394" width="26" height="2" fill="var(--text-faint)"/>
+  <text x="71" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">Ankara</text>
+  <text x="133" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">İstanbul</text>
+  <text x="195" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">Konya</text>
+  <text x="257" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">İzmir</text>
+  <text x="319" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">Bursa</text>
+  <line x1="226" y1="302" x2="226" y2="404" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="226" y="296" font-size="13" text-anchor="middle" fill="var(--accent)">3 aday</text>
+
+  <line x1="380" y1="396" x2="690" y2="396" stroke="var(--border)" stroke-width="1"/>
+  <rect x="398" y="313.2" width="26" height="82.8" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <rect x="460" y="393.3" width="26" height="2.7" fill="var(--text-faint)"/>
+  <rect x="522" y="394" width="26" height="2" fill="var(--text-faint)"/>
+  <rect x="584" y="394" width="26" height="2" fill="var(--text-faint)"/>
+  <rect x="646" y="394" width="26" height="2" fill="var(--text-faint)"/>
+  <text x="411" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">Ankara</text>
+  <text x="473" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">İstanbul</text>
+  <text x="535" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">Konya</text>
+  <text x="597" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">İzmir</text>
+  <text x="659" y="412" font-size="13" text-anchor="middle" fill="var(--text-muted)">Bursa</text>
+  <line x1="442" y1="302" x2="442" y2="404" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="442" y="296" font-size="13" text-anchor="middle" fill="var(--accent)">1 aday</text>
+</svg>
