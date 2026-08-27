@@ -12,7 +12,7 @@ tags:
   - cok-basli-dikkat
   - pozisyon-kodlama
   - paralellik
-content_hash: sha256:0000000000000000000000000000000000000000000000000000000000000000
+content_hash: sha256:55070e571f68ae03272806b44f5336b73fb6ee6f5019d1ff17fb80c472c0e83b
 classification_version: 1
 classification_batch: 1
 ---

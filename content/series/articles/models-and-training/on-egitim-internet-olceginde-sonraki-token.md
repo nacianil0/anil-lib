@@ -12,7 +12,7 @@ tags:
   - egitim-verisi
   - hesap-butcesi
   - tekillestirme
-content_hash: sha256:0000000000000000000000000000000000000000000000000000000000000000
+content_hash: sha256:4d8d68c190c60692d89ec2ea9523ce86db3957d2dc02e4278e2af3feb7f3fe5e
 classification_version: 1
 classification_batch: 1
 ---

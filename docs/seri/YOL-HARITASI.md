@@ -6,7 +6,7 @@
 > (yayımlanmış makaleler asla). UI listesi `content/series/roadmap.json` ile başlık düzeyinde
 > senkron tutulur.
 
-Son güncelleme: 2026-08-25 · Yayında: 1–5 (Batch 0) · Sıradaki batch: 6–10 (Batch 1)
+Son güncelleme: 2026-08-27 · Yayında: 1–10 (Batch 0 + Batch 1) · Sıradaki batch: 11–15 (Batch 2)
 
 ## Serinin tezi
 
@@ -24,11 +24,11 @@ kısa yeniden kurulumlarla geri çağrılır.
 3. **Sinir Ağları: Katmanların İçinde Ne Oluyor?** — nöron, aktivasyon, derinlik, temsil öğrenimi, backprop. `[yayında]`
 4. **Dili Sayılara Çevirmek: Token ve Embedding** — tokenizasyon (BPE), dağılımsal anlambilim, vektör uzayı. `[yayında]`
 5. **Sonraki Kelimeyi Tahmin Etmek: Dil Modelinin Doğuşu** — dil modelleme hedefi, n-gram→nöral DM, perplexity. `[yayında]`
-6. **Dikkat Mekanizması: Bağlamı Tartmayı Öğrenmek** — statik embedding'in yetmezliği; query/key/value sezgisi.
-7. **Transformer: Modern Dil Modellerinin Mimarisi** — katman yığını, çok başlı dikkat, paralellik.
-8. **Ön Eğitim: İnternet Ölçeğinde Sonraki Token** — veri, hedef, eğitim döngüsü büyük ölçekte.
-9. **Ölçek Yasaları: Neden "Daha Büyük" Çoğu Zaman "Daha İyi"?** — scaling laws, compute-optimal eğitim.
-10. **Metin Üretimi: Örnekleme, Sıcaklık ve Olasılıklar** — decoding stratejileri; determinizm ve çeşitlilik.
+6. **Dikkat Mekanizması: Bağlamı Tartmayı Öğrenmek** — statik embedding'in yetmezliği; query/key/value sezgisi. `[yayında]`
+7. **Transformer: Modern Dil Modellerinin Mimarisi** — katman yığını, çok başlı dikkat, paralellik. `[yayında]`
+8. **Ön Eğitim: İnternet Ölçeğinde Sonraki Token** — veri, hedef, eğitim döngüsü büyük ölçekte. `[yayında]`
+9. **Ölçek Yasaları: Neden "Daha Büyük" Çoğu Zaman "Daha İyi"?** — scaling laws, compute-optimal eğitim. `[yayında]`
+10. **Metin Üretimi: Örnekleme, Sıcaklık ve Olasılıklar** — decoding stratejileri; determinizm ve çeşitlilik. `[yayında]`
 
 ### Faz 2 — Modeli Biçimlendirmek: Eğitimden Asistana (11–20)
 
@@ -147,7 +147,7 @@ kısa yeniden kurulumlarla geri çağrılır.
 99. **AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri** — kavramsal temizlik.
 100. **Yüzüncü Adım: Haritayı Yeniden Çizmek** — serinin sentezi; okuyucunun kendi haritası.
 
-## Prerequisite grafı — Batch 0 + Batch 1
+## Prerequisite grafı — Batch 0 + Batch 1 (+ Batch 2 taslağı)
 
 Gösterim: `makale ← dayandıkları`.
 
@@ -156,13 +156,21 @@ Gösterim: `makale ← dayandıkları`.
 - 3 ← 2 (parametre, kayıp, gradyan inişi)
 - 4 ← 1 (temsil fikri), 3 (öğrenilen ağırlıklar → embedding de öğrenilir)
 - 5 ← 2 (kayıp/eğitim), 4 (token, embedding)
-- 6 ← 4 (statik embedding sınırı), 5 (bağlam olasılığı) — *Batch 1*
-- 7 ← 3 (katmanlar), 6 (dikkat) — *Batch 1*
-- 8 ← 5 (dil modelleme hedefi), 7 (mimari) — *Batch 1*
-- 9 ← 2 (kayıp eğrisi), 8 (ön eğitim) — *Batch 1*
-- 10 ← 5 (olasılık dağılımı) — *Batch 1*
+- 6 ← 4 (statik embedding'in duvarı, defter/satır imgesi, tokenizer gerçeği), 5 (sonraki-token hedefi, yinelemeli ağlar), 3 (katman = öğrenilmiş dönüşüm) `[yayında]`
+- 7 ← 6 (dikkat, maskeleme, iki eksik), 3 (katman yığını, aktivasyon zorunluluğu, sönen gradyan), 5 (sonraki-token dağılımı, Transformer'ın telaffuzu), 1 (düğmeli kutu), 2 (öğrenme döngüsü) `[yayında]`
+- 8 ← 7 (boş mimari), 5 (hedef + "kendi kendinin cevap anahtarı"), 2 (döngü, mini yığın, aşırı öğrenme, Robbins–Monro), 1 (kural vs veri, denetimli öğrenme), 3 (geriye yayılım), 4 (tokenizer maliyeti, dağılımsal hipotez) `[yayında]`
+- 9 ← 8 (ön eğitim, 6ND, öğrenme oranı çizelgesi), 2 (kayıp eğrisi, aşırı öğrenme, indirgenemez hata, çift iniş notu), 5 (perplexity, beliren yetenekler tartışması) `[yayında]`
+- 10 ← 9 (eğitilmiş model, ekonomi), 5 (sonraki-token dağılımı + Şekil 2'nin beş adayı, perplexity), 7 (logit, paralelliğin sınırı), 4 (token ≠ kelime), 2 (rastgeleliğin iki anlamı), 1 (tahmin tanımı) `[yayında]`
 
-## Kavram-tekrar defteri (Batch 0 kavramları)
+**Batch 2 taslağı (11–15).** Bu satırlar Batch 1'in metinde açıkça verdiği sözlerden türetilmiştir:
+
+- 11 ← 8 (temel model: elde edilen şey bir metin tamamlayıcı), 10 (üretim bir çekiliştir; en olası devam bir cevap değil), 5 ("2020'nin GPT-3'ü bir sohbet asistanı değildi"), 1 (ham tahminciyi asistana çeviren ek eğitim aşamaları) — *Batch 2*
+- 12 ← 11 (post-training haritasındaki yeri), 2 (aynı döngü: kayıp + gradyan inişi), 8 (öz-denetimli hedefin karşıtı — etiket burada geri geliyor), 3 (geriye yayılım) — *Batch 2*
+- 13 ← 12 (SFT'nin bıraktığı yer), 2 (kayıp ↔ ödül simetrisi), 10 (tercih verisi örneklemeyle üretilir), 9 (ölçek/bütçe muhasebesi) — *Batch 2*
+- 14 ← 8 (veri hunisi, tekilleştirme, veri karışımı — 8'in açıkça "ayrıntısı 14'te" dediği borç), 9 (veri duvarı, epok tekrarının getirisi), 2 (aşırı öğrenme), 4 (derlem) — *Batch 2*
+- 15 ← 4 (BPE, sözlük, Türkçenin token maliyeti), 8 ("bu farkın yeteneklere yansıması 15\. makalenin konusu" borcu), 10 (kesme kuralları token üzerinde çalışır), 7 (embedding tablosu sözlük boyuyla ölçeklenir) — *Batch 2*
+
+## Kavram-tekrar defteri (Batch 0 + Batch 1 kavramları)
 
 Her satır: kavram → ilk kurulduğu makale → Batch 0 içinde **gerçekleşen** geri çağrımlar →
 ileride **planlanan** geri çağrımlar (her biri kısa yeniden kurulumla).
@@ -190,6 +198,51 @@ Aşağıdaki "planlanan" sütunu bu uzun aralıklı tekrarları tutar.
 | Statik vektörün duvarı ("yüz") | 4 | 5 (kapanış köprüsü, aynı örnekle) | **6 (açılış problemi — aynı örnekle başlanacak)** |
 | Dil modeli = sonraki-token dağılımı | 5 | — | 6–8 (mimari bu hedefe hizmet eder), 10 (dağılımdan örnekleme), 17 (halüsinasyonun kökü), 23 (ICL) |
 | Perplexity | 5 | — | 9 (ölçek yasası metriği), 16 (değerlendirme metriği olarak sınırı) |
+
+### Batch 1'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Batch 0 kavramlarının 6–10'da fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 1'de gerçekleşen |
+|---|---|
+| Kural yazmak vs veriden öğrenmek | 8 ("kuralları elle yazmayı denemiş ve tükenmiştik; ön eğitimde tek bir kural yazılmaz") ✓ |
+| Model = ayarlanabilir fonksiyon | 7 (kapanış: "düğmeli kutu hâlâ geçerli; değişen tek şey düğme sayısı") ✓ |
+| Tahmin = görülmemiş girdiye çıktı | 10 (tek cümlelik geri çağırma) ✓ |
+| Parametre / ağırlık | 7 (blok parametre hesabı: 62.984.192), 8 (N), 9 (tahsis ekseni) ✓ |
+| Kayıp fonksiyonu | 8 (sonraki-token kaybı, her konumda ayrı), 9 (L(N,D) = 1,69 + …) ✓ |
+| Gradyan inişi | 7 (bir cümle), 8 (dev ölçekte aynı döngü + AdamW notu) ✓ |
+| Öğrenme döngüsü şeması (2, Şekil 1) | 8 (açılış köprüsü, **adıyla** anıldı) ✓ |
+| Genelleme / aşırı öğrenme | 8 (veri tekrarı bir bütçe kararıdır), 9 (aşırı eğitim ≠ aşırı öğrenme + çift iniş) ✓ |
+| İndirgenemez hata | 9 (Chinchilla'nın 1,69 tabanı) ✓ **Batch 0'da boştu, ilk kez gerçekleşti** |
+| Nöron, katman, aktivasyon | 6 (dönüşüm = katmanın işi), 7 (blok anatomisi + "aktivasyonsuz tek doğru") ✓ |
+| Temsil | 6 (bağlamsal temsil), 7 (her blok yeni bir temsil üretir) ✓ |
+| Token | 8 (eğitim bütçesinin birimi), 10 ("model kelime değil token üretir") ✓ |
+| Embedding | 6 (defterden çekilen satırın üzerine yazmak), 7 (paylaşılan embedding tablosu) ✓ |
+| Dağılımsal hipotez | 8 ("kimse modele 'çay' ile 'kahve'nin benzer olduğunu söylemedi") ✓ |
+| Statik vektörün duvarı ("yüz") | 6 (açılış problemi, **aynı üç cümleyle**) ✓ |
+| Dil modeli = sonraki-token dağılımı | 6, 7 (logit → softmax → dağılım), 8, 9, 10 ✓ |
+| Perplexity | 9 (nat/token'ın üsteli), 10 (kavşak sezgisi + "modelin kendi metnine verdiği perplexity" ayrımı) ✓ |
+
+### Batch 1'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 1'de gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Bağlamsal temsil (dikkat) | 6 | 7 (blok içinde), 10 (üretimde) | 29 (anlamsal arama), 74–77 (devreleri okuma), 86 (SSM eleştirisi) |
+| Sorgu / anahtar / değer | 6 | 7 (çok başlı dikkat) | 25 (uzun bağlam), 26 (KV cache — K ve V tam olarak bunlar) |
+| Softmax | 6 | 7 (logit → dağılım), 10 (sıcaklık softmax'ın şeklini değiştirir) | 30 (kısıtlı üretim), 65 (kalibrasyon) |
+| Nedensel maske | 7 | 10 (üretim yönü) | 26 (KV cache neden çalışır) |
+| Transformer bloğu / katman yığını | 7 | 8 (ölçeklenen şey bu) | 85 (MoE bloğu değiştirir), 86 (alternatif mimariler) |
+| Paralellik ↔ üretimin sıralılığı | 7 | 10 (otoregresif döngü paralelleşmez) | 26, 28 (serving ekonomisinin kökü) |
+| Ön eğitim / temel model | 8 | 9 (ölçek yasaları ön eğitim kaybını ölçer), 10 (elimizdeki şey bir metin tamamlayıcı) | 11 (post-training haritası), 96 (uçtan uca sentez) |
+| Öz-denetimli öğrenme | 8 | — | 12 (SFT: etiket geri geliyor), 41 (parametrik bilginin sınırı) |
+| Hesap bütçesi / FLOP / 6ND | 8 | 9 (bütün tahsis aritmetiği buna dayanır) | 27 (kuantizasyon), 33 (çıkarım-zamanı hesap), 89–90 (donanım, enerji) |
+| Veri karışımı / tekilleştirme | 8 | 9 (veri duvarı, epok tekrarı) | 14 (ayrıntı), 18 + 72 (ezber), 93 (sürekli öğrenme) |
+| Ölçek yasası / güç yasası | 9 | — | 33 (test-time ölçekleme), 78 (emergence), 87 (damıtma), 98 (açık sorular) |
+| Hesap-optimal eğitim | 9 | — | 19 (LoRA ekonomisi), 28 (çıkarım maliyetiyle birleşik tahsis), 96 |
+| Aynı eğri, iki cetvel (metrik seçimi) | 9 | — | 16 (değerlendirme), 71–73, 78 (emergence tartışması) |
+| Otoregresif üretim döngüsü | 10 | — | 25, 26, 28 (üretimin maliyet yapısı), 32 (CoT aynı döngüde uzar), 40 (uzun ufuk) |
+| Sıcaklık / kesme aileleri | 10 | — | 30 (yapılandırılmış çıktı), 36 (self-consistency çekilişe dayanır), 66 (model karakteri) |
+| Akıcılık ≠ doğruluk | 10 | — | 17 (halüsinasyon), 45 (kaynak sadakati), 65 (kalibrasyon) |
 
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
@@ -236,10 +289,97 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | sonraki token tahmini | (next-token prediction) | 5 | |
 | boyutluluk laneti | (curse of dimensionality) | 5 | |
 | perplexity | — | 5 | Türkçeleştirilmez; sezgisi "şaşkınlık ölçüsü" |
+| doğrulama kümesi | — | 2 | "geliştirme sırasında tekrar tekrar bakılan küme"; **"geliştirme kümesi" KULLANILMAZ** |
+| ortalama karesel hata | (mean squared error) | 2 | |
+| mini yığın | — | 2 | 8'de "yığın (batch)" olarak resmîleşti |
+| çift iniş | (double descent) | 2 | ileri okuma notu; randevusu 9'da kapandı |
+| yinelemeli | (recurrent) | 5 | 6 ve 7'de parantezsiz kullanılır |
+| sorgu | (query) | 6 | "Q" kısaltması kullanılmaz |
+| anahtar | (key) | 6 | |
+| değer | (value) | 6 | dikkat üçlüsünün rolü; ileride RL "value" ile karıştırılmaz |
+| nokta çarpım | (dot product) | 6 | benzerlik skorunun kaynağı |
+| softmax | — | 6 | Türkçeleştirilmez; "skorları toplamı 1 olan ağırlıklara çevirir" |
+| dikkat ağırlığı | (attention weight) | 6 | toplamı 1 olan tartım katsayıları |
+| ölçekli nokta çarpım dikkati | (scaled dot-product attention) | 6 | mekanizmanın alandaki tam adı |
+| öz-dikkat | (self-attention) | 6 | dizinin kendi içine bakması |
+| bağlamsal temsil | (contextual representation) | 6 | statik embedding'in karşıtı; 3'teki temsil üzerine biner |
+| çok başlı dikkat | (multi-head attention) | 6 | 6'da adlandırıldı, mekanizması 7'de kuruldu |
+| maskeleme | (masking) | 6 | yasak konumların skorunu eksi sonsuz yapmak; 7'de "nedensel maske" olarak özelleşir |
+| hizalama | (alignment) | 6 | Bahdanau'nun çeviri terimi. **Uyarı:** 61. makalenin "alignment"ı (hizalama sorunu) ayrı kavramdır; orada ayrım açıkça yapılmalı |
+| BLEU | — | 6 | kısaltma açılmaz; "çeviri kalitesini 0–100 arasında ölçen cetvel", yüksek iyidir |
+| pozisyon kodlaması | (positional encoding) | 7 | |
+| dikkat başı | (attention head) | 7 | |
+| ileri beslemeli katman | (feed-forward layer) | 7 | 5'te gloss'suz geçmişti; resmî kurulum 7'de |
+| artık bağlantı | (residual connection) | 7 | He ve ark. 2016'nın **bozulma** çerçevesi; "sönen gradyanı çözer" DENMEZ |
+| katman normalleştirme | (layer normalization) | 7 | bir vektörün kendi içindeki sayılar üzerinde |
+| kodlayıcı / kod çözücü | (encoder / decoder) | 7 | |
+| nedensel maske | (causal mask) | 7 | 6'daki maskelemenin dil modeli biçimi |
+| logit | — | 7 | softmax öncesi ham skor — **ilk geçiş 7'dedir**, 10 geri bağ verir |
+| evrişimli | (convolutional) | 7 | yalnızca 2017 karşılaştırması için |
+| permütasyona eşdeğerlik | (permutation equivariance) | 7 | dikkatin sırayı görmemesinin biçimsel adı |
+| ön eğitim | (pre-training) | 8 | 1'de bir kez gloss'suz geçti; resmî kurulum 8'de |
+| öz-denetimli öğrenme | (self-supervised learning) | 8 | denetimsiz öğrenme DEĞİLDİR; etiket veriden kesilir |
+| denetimsiz öğrenme | (unsupervised learning) | 8 | yalnızca öz-denetimliden ayırmak için kuruldu |
+| yığın | (batch) | 8 | 2'deki "mini yığın"ın resmî adı |
+| tekilleştirme | (deduplication) | 8 | ayrıntısı 14'te |
+| veri karışımı | (data mixture) | 8 | ayrıntısı 14'te |
+| epok | (epoch) | 8 | verinin üzerinden bir tam geçiş |
+| ısınma | (warmup) | 8 | öğrenme oranı çizelgesinin ilk kolu |
+| kosinüs sönümü | (cosine decay) | 8 | çizelgenin uzun inen kolu |
+| veri paralelliği | (data parallelism) | 8 | |
+| model paralelliği | (model parallelism) | 8 | |
+| hesap bütçesi | (compute budget) | 8 | FLOP birimiyle birlikte |
+| FLOP | — | 8 | kayan noktalı tek işlem |
+| kontrol noktası | (checkpoint) | 8 | ağırlıklar + optimizatör durumu |
+| temel model | (base model) | 8 | 11'e köprü terimi |
+| ölçek yasaları | (scaling laws) | 9 | ailenin toplu adı |
+| güç yasası | (power law) | 9 | log-log grafikte doğru |
+| hesap-optimal eğitim | (compute-optimal training) | 9 | Chinchilla tartışmasının adı |
+| nat/token | — | 9 | kaybın birimi; perplexity onun üsteli |
+| PF-gün | — | 9 | bir petaFLOP/s makinenin bir günlük iş miktarı |
+| eğri uydurma | (curve fitting) | 9 | |
+| yeniden üretme | (replication) | 9 | bir çalışmanın bağımsız tekrarı |
+| aşırı eğitim | (overtraining) | 9 | hesap-optimalin ötesinde eğitmek; 2'deki **aşırı öğrenmeyle karıştırılmaz** |
+| kod çözme | (decoding) | 10 | gövdede çoğunlukla "üretim kuralı" denir |
+| otoregresif | (autoregressive) | 10 | modelin girdisi kendi çıktısıdır |
+| açgözlü seçim | (greedy decoding) | 10 | |
+| örnekleme | (sampling) | 10 | 2'deki veri rastgeleliğinden ayrı |
+| sıcaklık | (temperature) | 10 | logit'leri T'ye bölmek |
+| top-k örnekleme | — | 10 | Türkçeleştirilmez; "en olası k aday" |
+| çekirdek örnekleme | (nucleus sampling, top-p) | 10 | kümülatif eşiğe göre kesme |
+| min-p | — | 10 | Türkçeleştirilmez; üstünlük iddiası kapanmamış tartışma |
+| ışın arama | (beam search) | 10 | ileri okuma notu düzeyinde |
+| istem | (prompt) | 10 | 21–30. makalelerde yerleşik terim; parantezsiz kullanılır |
+| halüsinasyon | (hallucination) | 10 | yalnızca teaser; ayrıntı 17'de |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
 kaçırılır (`1\.`) — aksi hâlde Markdown numarayı liste işareti sanıp yutar.
+
+## Batch 1 öğrenme notları (yazım tamamlandı)
+
+- **Makale 6:** Açılış problemi 4. makalenin "yüz" örneğinin **aynı üç cümlesi**. Çekirdek: bağlamsal
+  temsil + tartım (ağırlıklı ortalama) + sorgu/anahtar/değer. Elle softmax hesabı iki cümle üzerinde
+  yürütülür ve aynı token'ın iki farklı çıktı vektörü üretilir. Ana analoji "defterden çekilen satırın
+  üzerine yazmak" (4'ün defterine biner). Diyagramlar: sabit vektör darboğazı; dikkat akışı; iki
+  bağlamdaki çıktı. Köprü → 7: sıra bilgisi ve tek tartımın yetmezliği **eksik olarak işaretlenir**,
+  çözülmez.
+- **Makale 7:** Çekirdek: Transformer bloğu + çok başlı dikkat + pozisyon kodlaması/paralellik.
+  Artık bağlantı ve katman normalleştirme tek bir ileri okuma notunda, **işlev düzeyinde**. Yığının
+  sonundaki logit → softmax → dağılım halkası burada kurulur (5. makalenin hedefine bağlanan yer).
+  Köprü → 8: mimari hazır, eksik olan ölçek ve veri.
+- **Makale 8:** Ekseni 2. makalenin "döngünün şekli değişmeyecek" sözünün tahsili. Çekirdek: ön
+  eğitim + öz-denetimli öğrenme + veri/hesap bütçesi. 6ND kuralı burada kurulur ve "yüzde on
+  mertebesinde sapma" kaydıyla 9'a devredilir. Ölçek sezgisi: aynı metni bir insan yaklaşık doksan
+  bin yılda okurdu (varsayımları ve Türkçe token uyarısıyla).
+- **Makale 9:** Çekirdek: güç yasası + hesap-optimal eğitim + ölçeğin sınırları. Kaplan'ın mutlak
+  reçetesi (N = 1,3×10⁹ · C^0,73) elle uygulanır; aynı bütçede Chinchilla ile karşılaştırılır.
+  2. makalenin çift iniş randevusu burada ödenir. Kaplan'ın hakemsizliği tezin kanıtı olarak
+  metinde söylenir. Köprü → 10: model eğitildi ama tek kelime üretmedi.
+- **Makale 10:** Çekirdek: örnekleme vs açgözlü seçim + sıcaklık + kesme aileleri. Bütün sayısal
+  örnekler 5. makaledeki dağılımın (0,31 / 0,22 / 0,18 / 0,09 / 0,001) üzerinde yürür; toplamın
+  0,801 olduğu ve bunun kapalı bir dünya olduğu açıkça söylenir. Faz 1'i kapatır ve 11. makaleye,
+  "elimizdeki şey hâlâ bir metin tamamlayıcı" gerilimiyle bağlanır.
 
 ## Batch 0 öğrenme notları (yazım tamamlandı)
 

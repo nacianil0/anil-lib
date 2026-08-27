@@ -731,3 +731,32 @@ doğrulandı; düzeltmeler yeni olgusal hata sokmadı.
 **Kalıcı durum:** D:\dev\anil-lib-seri-batch1-state\ — 18 inceleme raporu dahil her şey burada.
 Regresyon raporu §7 YOL-HARITASI için kopyala-yapıştır hazır satırları taşıyor.
 | 07:53 | Session end: 67 writes across 11 files (transformer-modern-dil-modellerinin-mimarisi.md, olcek-yasalari-daha-buyuk-neden-daha-iyi.md, dikkat-maskesi-kollari.svg, sabit-butce-tahsisleri.svg, son-dogrulama-9.md) | 26 reads | ~106605 tok |
+
+## Session: 2026-08-27 08:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-27 08:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-27 09:02
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:16 | Created docs/seri/HANDOFF.md | — | ~4031 |
+
+## Oturum notu — 2026-08-27 · Batch 1 (Makale 6–10) TAMAMLANDI
+
+Kapanış turu: tek BLOCKER (makale 6 "geliştirme kümesi" → "doğrulama kümesi") uygulandı; Snell
+künyesi ICLR sayfası açılarak çözüldü (ICLR sürümünün başlığı arXiv v1'den farklı — yayın yeri ICLR
+olduğu için başlık da ICLR'den); makale 10'da `istem (prompt)` gloss'landı. Entegrasyon
+(catalog 10 kayıt, roadmap 6–10 yayında, hash senkronu), YOL-HARITASI (prerequisite grafı +
+kavram-tekrar defteri + 60'tan fazla terim satırı + Batch 1 öğrenme notları), HANDOFF (Batch 2
+hazırlık kaydı ve borç tablosu) tamamlandı. CHECKPOINT-BATCH1.md silindi.
+
+Kalan ~29 MINOR bilinçli olarak uygulanmadı (yayın doğruluğunu engellemiyor); tam listeleri
+D:\dev\anil-lib-seri-batch1-state\review\ altında.
+| 09:20 | Session end: 1 writes across 1 files (HANDOFF.md) | 0 reads | ~4319 tok |

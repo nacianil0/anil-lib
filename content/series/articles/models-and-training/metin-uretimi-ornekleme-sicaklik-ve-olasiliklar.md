@@ -12,7 +12,7 @@ tags:
   - sicaklik
   - cekirdek-ornekleme
   - acgozlu-secim
-content_hash: sha256:0000000000000000000000000000000000000000000000000000000000000000
+content_hash: sha256:c4b45db3b8badd82ce33893ea2e5ef76b8e6506807e95d5613cb7b0e0703e988
 classification_version: 1
 classification_batch: 1
 ---
@@ -111,7 +111,7 @@ Dağılım sivrilir, en olası aday neredeyse bütün payı alır ve üretim aç
 
 Yaygın anlatı sıcaklığı böyle tanıtır. Ölçüldüğünde bu kadar temiz çıkmıyor.
 
-Max Peeperkorn, Tom Kouwenhoven, Dan Brown ve Anna Jordanous'un 2024'te Hesaplamalı Yaratıcılık Konferansı'nda en iyi öğrenci bildirisi ödülü alan çalışması, tek bir modele tek ve sabit bir hikâye yazma istemi verip yedi ayrı sıcaklık değerinde yüzer hikâye üretti. Sonuç: sıcaklık, yenilikle zayıf ve tutarsızlıkla orta düzeyde ilişkili çıktı; tutunum ve tipiklikle hiçbir ilişkisi bulunmadı.
+Max Peeperkorn, Tom Kouwenhoven, Dan Brown ve Anna Jordanous'un 2024'te Hesaplamalı Yaratıcılık Konferansı'nda en iyi öğrenci bildirisi ödülü alan çalışması, tek bir modele tek ve sabit bir hikâye yazma istemi (prompt) verip yedi ayrı sıcaklık değerinde yüzer hikâye üretti. Sonuç: sıcaklık, yenilikle zayıf ve tutarsızlıkla orta düzeyde ilişkili çıktı; tutunum ve tipiklikle hiçbir ilişkisi bulunmadı.
 
 Bu bulguyu da fazla uzatmamak gerekir; ölçüm tek model ve tek istem üzerinde kurulmuştur. Dürüst formülasyon şu: sıcaklık, dağılımın ne kadar sivri olacağını ayarlayan tek bir sayıdır ve çeşitlilik bunun doğrudan sonucudur. Sıcaklığı yükseltmek modele yeni bir fikir vermez — zaten dağılımda payı olan ama arkalarda kalmış adayların şansını artırır.
 

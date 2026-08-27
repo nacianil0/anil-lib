@@ -102,6 +102,106 @@
       "path": "content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
+    },
+    {
+      "articleId": "article_b7d892a3-a696-472a-840e-1ddf681246e0",
+      "title": "Dikkat Mekanizması: Bağlamı Tartmayı Öğrenmek",
+      "slug": "dikkat-mekanizmasi-baglami-tartmayi-ogrenmek",
+      "category": "models-and-training",
+      "level": "beginner",
+      "readingOrder": 6,
+      "summary": "Statik embedding'in duvarını yıkan mekanizmayı kurar: sorgu, anahtar ve değer üçlüsü, softmax'la elde edilen dikkat ağırlıkları ve elle hesaplanmış bir örnekle bağlamsal temsilin doğuşu.",
+      "tags": [
+        "dikkat-mekanizmasi",
+        "sorgu-anahtar-deger",
+        "softmax",
+        "baglamsal-temsil",
+        "oz-dikkat"
+      ],
+      "contentHash": "sha256:2aa8652d2a30fbfa9c7dcd05e0341061c52a1fbc07799dd6c36c2bfedc65f72b",
+      "path": "content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
+    },
+    {
+      "articleId": "article_bbe0959b-8e31-451f-9c73-32b50dcc254f",
+      "title": "Transformer: Modern Dil Modellerinin Mimarisi",
+      "slug": "transformer-modern-dil-modellerinin-mimarisi",
+      "category": "models-and-training",
+      "level": "beginner",
+      "readingOrder": 7,
+      "summary": "Tek bir dikkat işlemini çalışan bir mimariye çeviren adımı kurar: Transformer bloğunun anatomisi, çok başlı dikkat, sırayı dışarıdan veren pozisyon kodlaması ve yinelemeyi atmanın getirdiği paralellik.",
+      "tags": [
+        "transformer",
+        "transformer-blogu",
+        "cok-basli-dikkat",
+        "pozisyon-kodlama",
+        "paralellik"
+      ],
+      "contentHash": "sha256:55070e571f68ae03272806b44f5336b73fb6ee6f5019d1ff17fb80c472c0e83b",
+      "path": "content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
+    },
+    {
+      "articleId": "article_6938db00-d07b-4b21-82ea-31f95a10d443",
+      "title": "Ön Eğitim: İnternet Ölçeğinde Sonraki Token",
+      "slug": "on-egitim-internet-olceginde-sonraki-token",
+      "category": "models-and-training",
+      "level": "beginner",
+      "readingOrder": 8,
+      "summary": "2. makaledeki öğrenme döngüsünün trilyonlarca token üzerinde nasıl koştuğunu gösterir: etiketi metnin kendisinin yazdığı öz-denetimli hedef, ham web verisinden derleme giden temizlik hattı ve bir eğitim koşusunun gerçek faturası.",
+      "tags": [
+        "on-egitim",
+        "oz-denetimli-ogrenme",
+        "egitim-verisi",
+        "hesap-butcesi",
+        "tekillestirme"
+      ],
+      "contentHash": "sha256:4d8d68c190c60692d89ec2ea9523ce86db3957d2dc02e4278e2af3feb7f3fe5e",
+      "path": "content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
+    },
+    {
+      "articleId": "article_adf92e93-e5fe-4f69-8b2f-f621b3d8c083",
+      "title": "Ölçek Yasaları: Neden \"Daha Büyük\" Çoğu Zaman \"Daha İyi\"?",
+      "slug": "olcek-yasalari-daha-buyuk-neden-daha-iyi",
+      "category": "models-and-training",
+      "level": "beginner",
+      "readingOrder": 9,
+      "summary": "Sabit bir hesap bütçesini model boyu ile veri arasında paylaştırma sorusunu ölçülebilir hâle getiren çalışmaları anlatır: güç yasası eğrileri, Kaplan'dan Chinchilla'ya giden düzeltme ve bu eğrilerin nerede bittiği.",
+      "tags": [
+        "olcek-yasalari",
+        "guc-yasasi",
+        "hesap-optimal-egitim",
+        "chinchilla",
+        "beliren-yetenekler"
+      ],
+      "contentHash": "sha256:23849b7dcfb3ebeba6d91ef79e717efdbddf9f50ce2d2fd9e9d387e05320df69",
+      "path": "content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
+    },
+    {
+      "articleId": "article_ffb7fe2e-37b4-4cbd-a1de-01044c11886e",
+      "title": "Metin Üretimi: Örnekleme, Sıcaklık ve Olasılıklar",
+      "slug": "metin-uretimi-ornekleme-sicaklik-ve-olasiliklar",
+      "category": "models-and-training",
+      "level": "beginner",
+      "readingOrder": 10,
+      "summary": "Eğitilmiş bir modelin her adımda ürettiği olasılık dağılımından metnin nasıl çıktığını anlatır: otoregresif döngü, açgözlü seçim, sıcaklığın elle hesaplanmış etkisi ve kuyruğu kesen yöntemler.",
+      "tags": [
+        "metin-uretimi",
+        "ornekleme",
+        "sicaklik",
+        "cekirdek-ornekleme",
+        "acgozlu-secim"
+      ],
+      "contentHash": "sha256:c4b45db3b8badd82ce33893ea2e5ef76b8e6506807e95d5613cb7b0e0703e988",
+      "path": "content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
     }
   ]
 }

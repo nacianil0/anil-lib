@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T11:14:52.043Z
-> Files: 131 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-27T06:16:37.698Z
+> Files: 133 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -100,8 +100,7 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~2819 tok)
-- `CHECKPOINT-BATCH1.md` — Batch 1 duraklatma kaydı: 6–8 yazıldı, 9–10 bekliyor; kalıcı durum dizini ve devam adımları. Batch bitince silinir. (~2400 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~3779 tok)
 - `SOZLESME.md` — serinin değişmez kurallar sözleşmesi (editoryal/pedagojik/teknik/handoff) (~4500 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~4342 tok)
 

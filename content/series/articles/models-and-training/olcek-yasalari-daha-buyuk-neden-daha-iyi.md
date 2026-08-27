@@ -12,7 +12,7 @@ tags:
   - hesap-optimal-egitim
   - chinchilla
   - beliren-yetenekler
-content_hash: sha256:0000000000000000000000000000000000000000000000000000000000000000
+content_hash: sha256:23849b7dcfb3ebeba6d91ef79e717efdbddf9f50ce2d2fd9e9d387e05320df69
 classification_version: 1
 classification_batch: 1
 ---
@@ -164,7 +164,7 @@ Hayır. Eğri kaybı ölçer; bir görevdeki başarı ise kaybın üstüne konan
 - Epoch AI (2025). *Training open-weight models is becoming more data intensive*. Epoch AI veri notu (hakemli değildir; araştırma kuruluşu derlemesi). [Bağlantı](https://epoch.ai/data-insights/training-tokens-per-parameter)
 - Belkin, M., Hsu, D., Ma, S. & Mandal, S. (2019). *Reconciling Modern Machine-Learning Practice and the Classical Bias–Variance Trade-off*. PNAS. [Bağlantı](https://www.pnas.org/doi/10.1073/pnas.1903070116)
 - Curth, A., Jeffares, A. & van der Schaar, M. (2023). *A U-turn on Double Descent: Rethinking Parameter Counting in Statistical Learning*. NeurIPS. [Bağlantı](https://arxiv.org/abs/2310.18988)
-- Snell, C., Lee, J., Xu, K. & Kumar, A. (2025). *Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters*. ICLR 2025 (sözlü sunum). [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html)
+- Snell, C., Lee, J., Xu, K. & Kumar, A. (2025). *Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Parameters for Reasoning*. ICLR 2025 (sözlü sunum). [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html)
 - Wei, J. ve ark. (2022). *Emergent Abilities of Large Language Models*. Transactions on Machine Learning Research. [Bağlantı](https://arxiv.org/abs/2206.07682)
 - Schaeffer, R., Miranda, B. & Koyejo, S. (2023). *Are Emergent Abilities of Large Language Models a Mirage?* NeurIPS 2023. [Bağlantı](https://arxiv.org/abs/2304.15004)
 - Du, Z., Zeng, A., Dong, Y. & Tang, J. (2024). *Understanding Emergent Abilities of Language Models from the Loss Perspective*. NeurIPS 2024. [Bağlantı](https://arxiv.org/abs/2403.15796)

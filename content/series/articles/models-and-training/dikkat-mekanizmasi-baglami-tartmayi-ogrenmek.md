@@ -12,7 +12,7 @@ tags:
   - softmax
   - baglamsal-temsil
   - oz-dikkat
-content_hash: sha256:0000000000000000000000000000000000000000000000000000000000000000
+content_hash: sha256:2aa8652d2a30fbfa9c7dcd05e0341061c52a1fbc07799dd6c36c2bfedc65f72b
 classification_version: 1
 classification_batch: 1
 ---
@@ -134,7 +134,7 @@ Elimizde tek bir işlem var ve iş görüyor. Ama bir işlem bir mimari değil; 
 
 Değişmez; toplamada sıra önemsizdir. Bunun bedeli şu: dikkat kelimelerin sırasını kendiliğinden bilmez. Kalemi al ve dene: birinci cümlede "serin" ile "denizde"nin yerini değiştir, yani "denizde serin yüz". Skorlar aynı üç çarpımdan çıkar — "denizde" 5, "serin" 2, "yüz" 2 — ve ağırlıklar yine aynı token'lara yapışır: 0,691 · 0,154 · 0,154. "Yüz"ün çıktısı yine (1,691 ; 0,154); token'ların yerini değiştirdiğinde her token'ın kendi çıktı vektörü zerre değişmez, yalnızca dizideki yeri değişir. Aynı örnek ikinci cümlede daha rahatsız edicidir: maskesiz bir dikkat katmanı için "yüz lira" ile "lira yüz" ayırt edilemez. Az önceki maske kısmi bir istisnadır — hangi komşunun görülebildiğini konum belirlediği için sıra tümüyle kaybolmaz — ama maske yalnızca "öncesi mi, sonrası mı" ayrımını taşır, "kaçıncı komşu" bilgisini taşımaz. Sıra bilgisi mekanizmanın içinde yoktur; dışarıdan, ayrı bir sinyal olarak eklenmesi gerekir.
 
-İkinci eksik daha incedir. Bir cümlede aynı anda birden çok ilişki türü vardır: hangi kelime hangi fiilin öznesi, hangi zamir hangi ismi işaret ediyor, hangi sıfat hangi ismi niteliyor. Tek bir ağırlık kümesi bunların hepsini tek bir tartıya sıkıştırmak zorundadır ve kaçınılmaz olarak bulanıklaşır. Çözümün adı çok başlı dikkat (multi-head attention): aynı anda birden çok tartım çalıştırmak. Vaswani ve arkadaşları bunun ölçüsünü de verir — geliştirme kümesinde ölçüldüğünde tek başlı ayar, kendi en iyi ayarlarından 0,9 BLEU geride kalıyor. Nasıl kurulduğu 7\. makalenin işi.
+İkinci eksik daha incedir. Bir cümlede aynı anda birden çok ilişki türü vardır: hangi kelime hangi fiilin öznesi, hangi zamir hangi ismi işaret ediyor, hangi sıfat hangi ismi niteliyor. Tek bir ağırlık kümesi bunların hepsini tek bir tartıya sıkıştırmak zorundadır ve kaçınılmaz olarak bulanıklaşır. Çözümün adı çok başlı dikkat (multi-head attention): aynı anda birden çok tartım çalıştırmak. Vaswani ve arkadaşları bunun ölçüsünü de verir — doğrulama kümesinde ölçüldüğünde tek başlı ayar, kendi en iyi ayarlarından 0,9 BLEU geride kalıyor. Nasıl kurulduğu 7\. makalenin işi.
 
 Kazandığımız şeyi sayalım: bir kelimenin temsili artık cümleye göre yeniden yazılıyor, tartım öğreniliyor ve uzak komşular tek adımda erişilebiliyor. Fazlası iddia edilmiyor.
 
