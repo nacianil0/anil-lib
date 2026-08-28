@@ -1,507 +1,303 @@
-# Fable 5 Master Prompt — Mevcut AI Serisini Yeniden Kur ve Boğaziçi CmpE Scientific Interview Serisini Tek Görevde İnşa Et
+# Fable 5 Master Prompt — AI ve Boğaziçi CmpE Serilerini Tek Ana Oturumda Kur
 
-## /goal
+> **Kanonik rol:** Bu dosya, kurulum görevinin kapsamı, iki serinin amaçları, değişmez sınırlar ve kabul ölçütleri için tek source of truth’tur. Yürütme bütçesi, `N+1` semantiği, helper politikası ve kalıcı trigger sözleşmesi yalnızca `fable5-master-ek-goal-tetikleyici-5plus1-tek-helper.md` dosyasında tanımlanır.
 
-Bu görevi **tek Fable 5 ana agent olarak, tek oturumda ve sonuna kadar** tamamla. İşi iki ayrı chate, iki ayrı agente, background workflow’lara veya daha sonra yapılacak bir “ikinci faz” görevine bölme. Bu prompt iki büyük sonucu aynı görev içinde ister:
+## 0. Yetki ve source-of-truth hiyerarşisi
 
-1. `C:\dev\anil-lib` içindeki mevcut **“Sıfırdan Yüze: Yapay Zekâ”** serisinin yayımlanmış ilk 10 makalesini ve çalışan kullanıcı deneyimini koruyarak, yayımlanmamış geleceğini akademik + teorik + araştırma + mühendislik açısından yeniden tasarla ve kalıcı seri sistemini buna göre güncelle.
-2. Aynı platformda, AI serisinden ayrı fakat aynı kalite standardını taşıyan **Boğaziçi Üniversitesi Computer Engineering M.Sc. scientific interview hazırlık serisini** araştır, tasarla, kalıcı seri sistemini kur ve platforma güvenli biçimde hazır hale getir.
+Bu üç prompt artifact’ını şu sırayla yorumla:
 
-**Bu görevde makale gövdesi yazma.** Görevin çıktısı iki serinin de konuları, kapsamı, prerequisite yapısı, pedagojik/editoryal sözleşmesi, yaşayan roadmap/handoff düzeni ve gerektiği ölçüde platformdaki güvenli altyapısı tamamlanmış, sonraki yazım oturumlarında doğrudan kullanılabilir hale gelmiş olmasıdır.
+1. Platform/system kuralları ve kullanıcının aynı oturumdaki en güncel açık talimatı.
+2. Mevcut ve yayımlanmış durum hakkında repo’dan gözlenen gerçekler: Git state’i, makale dosyaları, katalog/frontmatter, testler ve çalışan tüketiciler.
+3. **Bu master prompt:** kurulum görevinin amacı, kapsamı, değişmezleri ve tamamlanma ölçütleri.
+4. **Ek `/goal` dosyası:** yalnızca yürütme modeli, `BATCH=N+1` çözümü, yaşayan state hiyerarşisi ve trigger sözleşmesi.
+5. **Kısa chat eki:** yalnızca bu iki kanonik dosyayı yükleyen başlatıcıdır; bağımsız kural koyamaz.
 
-Kapsamı “önce bir kısmını yapayım, gerisi sonra” diye daraltma. AI tarafını bitirip BOUN tarafını başka göreve bırakma veya BOUN araştırmasını yapıp platform entegrasyonunu erteleme. Gerçek bir dış engel yoksa aşağıdaki bütün kabul kriterleri karşılanana kadar çalışmaya devam et.
+Eski promptlar ve görevin başlangıcındaki `SOZLESME` / `HANDOFF` / roadmap kayıtları mevcut durumu anlamak için girdidir. Bu master prompt, eski “tam 100 makale” ve “değişmez 5+1” hükümlerini değiştirmek için açık kullanıcı yetkisidir. Buna karşılık yayımlanmış içerik ve kullanıcı state’i hakkında repo gerçeği, prompt içindeki tarihsel bir özetten üstündür.
+
+Dosyalar arasında çelişki görürsen önce bu hiyerarşiyle çöz ve artifact’ları birbiriyle tutarlı hale getir. Yalnızca güvenli biçimde çıkarılamayan gerçek bir ürün kararı veya zorunlu breaking migration kullanıcı kararı gerektirir.
 
 ---
 
-# I. Önce mevcut gerçekliği doğrula
+## /goal
 
-Repo içindeki gerçek mevcut durum, eski promptlardan daha yüksek önceliklidir. Önce mevcut kodu ve kalıcı seri belgelerini okuyarak state’i doğrula.
+Bu görevi **mevcut Fable ana oturumunda, kasıtlı olarak ikinci bir chat’e veya sonraki faza bırakmadan** tamamla. İki sonuç aynı kurulum görevinin ayrılmaz parçalarıdır:
 
-Özellikle mevcut AI serisinde:
+1. `C:\dev\anil-lib` içindeki **“Sıfırdan Yüze: Yapay Zekâ”** serisinin yayımlanmış ilk 10 makalesini ve çalışan kullanıcı state’ini koruyarak, yayımlanmamış geleceğini akademik + teorik + araştırma + mühendislik eksenlerinde yeniden tasarla.
+2. Aynı platform için, AI serisinden bağımsız bir **Boğaziçi Üniversitesi Computer Engineering M.Sc. scientific interview hazırlık serisi** araştır, tasarla ve sonraki üretim oturumlarına güvenli biçimde hazırla.
+
+Bu görevde **hiçbir makale gövdesi yazma**. Çıktı; iki serinin amaç, kapsam, prerequisite, pedagojik/editoryal sözleşme, roadmap, yaşayan handoff, kısa trigger ve gerektiği kadar platform state’inin tamamlanmasıdır.
+
+“Kapsam büyük” gerekçesiyle hedefi küçültme; bunun yerine tekrarları kaldır, araştırmayı karar taşıyan kanıtla sınırla, değişiklik yüzeyine uygun doğrulama yap ve aşağıdaki teslim defterini tek oturumda kapat. Platformun oturumu zorla sonlandırması veya erişilemeyen zorunlu bir dış sistem gibi promptla kontrol edilemeyen olaylar garanti edilemez; bunlar yoksa işi bilinçli biçimde bölme.
+
+---
+
+## 1. Önce gerçek state’i ve değişiklik sınırını doğrula
+
+Başlangıçta Git durumunu kaydet ve kullanıcıya ait mevcut değişiklikleri koru. Ardından en az şu state zincirini incele:
 
 - `docs/seri/SOZLESME.md`
 - `docs/seri/HANDOFF.md`
 - `docs/seri/YOL-HARITASI.md`
-- gerçek article/catalog/roadmap/assets yapısı
-- yayımlanmış 1–10 makalenin kendileri
-- seri route’ları ve reader davranışı
-- progress/bookmark/sync yapısı
-- shared component ve veri sözleşmeleri
-- mevcut doğrulama/test araçları
+- `content/series/catalog.json` ve `content/series/roadmap.json`
+- yayımlanmış AI makaleleri ile bunların frontmatter/id/slug/order/hash bilgileri
+- seri route’ları, reader ve dashboard tüketicileri
+- progress, saved-place/bookmark, highlight ve sync kimlik doğrulaması
+- shared component/schema tüketicileri
+- ilgili doğrulama araçları ve testler
 
-incelensin.
+Audit başlangıç noktası olarak 2026-08-28 repo state’i 1–10’u yayımlanmış, 11 ve sonrasını planlanmış gösteriyor; bunu çalıştırma anında yeniden doğrula. State daha sonra değişmişse repo kazanır.
 
-Mevcut kayıtlara göre ilk 10 AI makalesi yayımlanmış durumda; 11’den sonrası henüz yayımlanmamış roadmap’tir. Eski sözleşme toplam 100 makale ve sabit 5+1 üretim ritmi üzerine kurulmuştur. Bu görev, kullanıcının **açık sözleşme değişikliği talebidir**: toplam makale sayısı artık sabit bir akademik hedef değildir ve gelecekteki yazım oturumları yalnızca 5’li batch’e bağlı olmak zorunda değildir. Buna karşılık mevcut sözleşmedeki güçlü akademik, editoryal, pedagojik, kaynak, görselleştirme ve doğrulama ilkeleri korunmalıdır.
+Değişiklikten önce yayımlanmış makalelerin en az şu kimlik snapshot’ını al: article id, slug, URL/route, reading order, path, classification/historical batch ve content hash. Finalde aynı snapshot ile karşılaştır.
 
-Daha önce hazırlanmış ancak hiç tetiklenmemiş “100 yazılık AI akademi/literatür serisi”, “200 yazılık AI research & engineering serisi” ve bunları birleştirmeyi amaçlayan promptlar **yeni bağımsız seriler için bağlayıcı planlar değildir**. Bunları yalnızca geçmiş niyeti ve konu havuzunu anlamak için kullan. Bu master prompt nihai kullanıcı niyetidir.
+Şu sınırlar bağlayıcıdır:
+
+- Yayımlanmış AI makalelerinin gövdesini, id/slug/order/path bilgisini veya historical batch metadata’sını değiştirme.
+- Kullanıcı progress/bookmark/highlight geçmişini geçersiz kılma.
+- Yalnızca yeni roadmap’e uysun diye 1–10’u yeniden yazma veya onlar için genel fact-check turu başlatma.
+- Eski “100 yazılık akademi” ve “200 yazılık research & engineering” fikirlerini ayrı yeni AI serileri olarak kurma; yalnızca değerli konu sinyalleri olarak değerlendir.
+- Repo’da önceden var olan, bu değişiklikle ilgisiz bir hata varsa bunu sahiplenip kapsam dışı refactor’a dönüşme. Baseline ile ayır ve finalde dürüstçe belirt.
+- Repo talimatlarını ve mevcut veri sözleşmelerini izle; çözümü dosya adlarından tahmin etme.
 
 ---
 
-# II. İş Paketi A — Mevcut AI serisinin geleceğini yeniden tasarla
+## 2. İş Paketi A — Mevcut AI serisinin geleceği
 
-## A1. Temel karar
+### A1. Değişmez tez
 
-**İkinci bir AI serisi oluşturma.**
+İkinci bir AI serisi oluşturma. “Sıfırdan Yüze: Yapay Zekâ”, sıfırdan başlayan okuyucuyu zamanla:
 
-Daha önce ayrı bir akademik/literatür serisine veya ayrı research & engineering serisine koymayı düşündüğümüz değerli içeriklerin yeri, uygunsa, mevcut “Sıfırdan Yüze: Yapay Zekâ” serisinin yayımlanmamış geleceğidir.
+- akademik AI okuryazarlığına,
+- araştırma sorusu kurup kanıt değerlendirebilme pratiğine,
+- ciddi model ve AI-systems mühendisliği düşünebilme düzeyine
 
-Ama bunu mevcut 11–100 listesinin üzerine birkaç yeni başlık serpiştirmek gibi ele alma. 11’den sonrasını gerçek akademik ve pedagojik gerekçelerle baştan değerlendir.
+taşıyan tek öğrenme yolu olarak gelişsin.
 
-Yayımlanmış **1–10 makale sabittir**:
+“Sıfırdan Yüze” bir marka adıdır, makale sayısı taahhüdü değildir. Yayımlanmış kimliği ve linkleri etkileyen gereksiz bir yeniden adlandırma yapma.
 
-- article id / slug / URL / reading order korunmalı;
-- kullanıcı progress ve bookmark geçmişi bozulmamalı;
-- onları sırf yeni roadmap’e uydurmak için yeniden yazma;
-- bu görevde 1–10 için genel bir “content improvement” veya yeni fact-check turu başlatma.
+### A2. Yayımlanmış temel ile bağ
 
-Ancak 1–10’u okuyarak onların:
+1–10’u yalnızca şu amaçlarla oku:
 
-- hangi kavramları gerçekten kurduğunu,
-- hangi ileri konular için söz verdiğini,
-- hangi terim ve prerequisite’leri oluşturduğunu,
-- hangi kavramların daha sonra formal/akademik düzeyde yeniden kurulması gerektiğini
+- gerçekten kurulmuş kavram ve terimleri çıkarmak;
+- açık veya örtük ileri konu vaatlerini kaydetmek;
+- prerequisite mirasını belirlemek;
+- ileride formal düzeyde yeniden kurulması gereken sezgileri saptamak.
 
-çıkar. Gelecek roadmap bu gerçek geçmişin üzerine oturmalı.
+Yeni matematiksel/teorik konuları geçmişe zorla ekleme. “Önce sezgisel gördük, şimdi formal kuruyoruz” köprüleriyle geleceğe yerleştir. Bu bilinçli formalizasyon tekrar sayılmaz; hangi eski kavramın nerede derinleşeceği roadmap’te izlenebilir olsun.
 
-11’den sonrası yayımlanmamış olduğundan güçlü gerekçeyle:
+11’den sonrası yayımlanmamış plandır. Akademik ve pedagojik gerekçeyle korunabilir, çıkarılabilir, birleştirilebilir, bölünebilir, taşınabilir veya değiştirilebilir. Eski sırayı korumak değil, daha güçlü prerequisite ve öğrenme zinciri kurmak başarıdır.
 
-- korunabilir,
-- çıkarılabilir,
-- birleştirilebilir,
-- bölünebilir,
-- sırası değiştirilebilir,
-- yeni konularla değiştirilebilir,
-- yeni fazlara taşınabilir.
+### A3. Doğal akademik kapsam
 
-Eski sıralamayı korumak başarı kriteri değildir. Öğrenme zincirinin daha iyi olması başarı kriteridir.
+Önce hedef yetkinlikleri, bilgi grafını, prerequisite ilişkilerini, formalizasyon/recall noktalarını ve fazların doğal sınırlarını kur; makale sayısı bunların sonucu olsun. 70, 100, 130 veya başka bir sayı baştan hedef değildir.
 
-## A2. AI serisinin yeni nihai amacı
+Aşağıdaki alanlar **zorunlu kota veya makale-başı checklist değil**, araştırılıp öğrenme getirisine göre seçilecek aday kapsam kümeleridir:
 
-Seri sıfırdan başlayıp giderek **akademik olarak okuryazar, araştırma yapabilen ve ciddi AI mühendisliği düşünebilen** okuyucuya dönüşen tek bir öğrenme yolu olmalı.
-
-Yalnızca LLM ürünlerini veya güncel AI araçlarını anlatan bir seri olarak kalmamalı. Aşağıdaki eksenlerin seride gerçekten gerekli olup olmadığını, prerequisite ilişkilerini ve uygun derinliğini güncel akademik kaynaklarla araştır:
-
-- AI için gerekli matematiksel ve teorik temeller;
-- linear algebra, calculus/optimization, probability/statistics, information-theoretic veya başka matematiksel araçlar yalnızca gerçekten AI öğrenme grafında gerektikleri ölçüde;
-- klasik ve modern machine learning / deep learning fikirleri;
-- öğrenme, optimization, generalization, representation ve scaling;
-- klasik ve modern akademik eserlerin literatüre kazandırdığı önemli fikirler;
-- modern model mimarileri, Transformer ailesi ve alternatifleri;
-- data, pre-training, post-training, preference learning ve evaluation;
-- inference ve model davranışı;
-- AI araştırma pratiği: paper okuma, araştırma sorusu, hipotez, baseline, ablation, experiment design, reproducibility, negative results, statistical/measurement discipline ve benchmark problemleri;
-- modeli veya kritik model bileşenlerini temelden inşa ederek anlama;
+- AI için gerekli ölçüde linear algebra, calculus/optimization, probability/statistics, information theory ve diğer matematiksel araçlar;
+- klasik ve modern ML/deep learning; learning, optimization, generalization, representation ve scaling;
+- model mimarileri, Transformer ailesi ve anlamlı alternatifler; data, pre-training, post-training, preference learning, inference ve evaluation;
+- paper okuma, araştırma sorusu, hipotez, baseline, ablation, experiment design, reproducibility, negative results, ölçüm ve benchmark disiplini;
+- model veya kritik model bileşenlerini temelden kurarak anlama;
 - reinforcement learning, sequential decision making, control ve agentic AI;
 - retrieval, tools, memory, planning ve long-horizon systems;
-- mechanistic interpretability, features/representations, circuits, probing, causal intervention ve model içi mekanizma araştırması;
-- multimodality ve önemli üretken model aileleri;
-- AI systems: GPU/accelerator zihinsel modeli, compute/memory/communication maliyetleri, training systems, distributed computation, inference systems, serving, optimization, reliability ve production trade-off’ları;
-- robustness, safety, alignment, evaluation science ve responsible deployment;
-- gerektiği yerde governance ve frontier/open research questions.
+- mechanistic interpretability, feature/representation, circuit, probing ve causal intervention çalışmaları;
+- multimodality ve önemli generative model aileleri;
+- GPU/accelerator zihinsel modeli, compute-memory-communication maliyetleri, distributed training, inference/serving, optimizasyon, reliability ve production trade-off’ları;
+- robustness, safety, alignment, evaluation science, responsible deployment ve gerçekten gerekli governance/open-research soruları.
 
-Bunları “her birine belli sayıda makale” diye kota haline getirme. Güncel ileri seviye üniversite dersleri, canonical textbooks/papers, güçlü konferans çalışmaları ve aktif araştırma programlarını karşılaştırarak doğal kapsamı çıkar. Örneğin modern dil modeli eğitimi ve systems tarafında Stanford’un “Language Modeling from Scratch” yaklaşımı gibi uçtan uca model kurma müfredatları ve CMU’nun LLM systems çizgisi yararlı sinyaller olabilir; fakat hiçbir müfredatı mekanik biçimde kopyalama.
+Her alanı şu filtreyle değerlendir: ciddi bir AI araştırmacısı veya mühendisi olma yolunda yetkinlik/prerequisite kuruyor mu; mevcut 1–10 ile anlamlı bağ kuruyor mu; yoksa roadmap’i yalnızca büyütüyor mu?
 
-Önemli soru her başlık için şudur:
+Güncel ileri seviye dersler, canonical textbook/paper’lar, güçlü konferans çalışmaları ve aktif araştırma programları karşılaştırılabilir; hiçbir müfredatı mekanik biçimde kopyalama.
 
-**Bu konu gerçekten okunmaya ve öğrenilmeye değer mi, ciddi AI araştırmacısı/mühendisi olma yolunda bir yetkinlik veya prerequisite kuruyor mu, yoksa roadmap’i yalnızca büyütüyor mu?**
+### A4. AI yaşayan state’i
 
-## A3. “100” artık hedef değil
+Mevcut güçlü editoryal/pedagojik ilkeleri koru: birincil ve güvenilir kaynak, hakem durumunun dürüstlüğü, ciddi ama okunabilir Türkçe, sezgi → mekanizma → teknik/formal ayrıntı → akademik bağlam, küçük gerçek worked example, progressive disclosure, prerequisite zinciri, spaced recall/retrieval practice, cognitive-load yönetimi, scaffolding/fading, terim/sembol tutarlılığı, öğretici görselleştirme ve iddia/URL/sayısal veri doğrulaması.
 
-Toplam makale sayısını 100’e, 200’e veya herhangi bir rakama göre tasarlama.
+Bunları yaşayan state’te şu sorumluluklarla normalize et:
 
-Önce:
+- `SOZLESME.md`: uzun ömürlü normatif kurallar; ek `/goal` dosyasındaki kanonik `5+1 default / explicit N+1 override` semantiğini içerir.
+- `YOL-HARITASI.md` ve UI roadmap state’i: planlanan bilgi grafı, fazlar, prerequisite, recall ve yayımlanma durumları.
+- `HANDOFF.md`: yalnızca güncel operasyonel state, açık borçlar ve bir sonraki güvenli başlangıç; kalıcı kuralları kopyalamak yerine sözleşme/roadmap’e referans verir.
+- Katalog/frontmatter/makale dosyaları: yayımlanmış tarihsel gerçek.
 
-- nihai öğrenme hedefini,
-- bilgi grafını,
-- prerequisite ilişkilerini,
-- kavramların formalizasyon ve tekrar noktalarını,
-- fazların doğal sınırlarını
-
-kur.
-
-Makale sayısı bundan sonra ortaya çıksın. Güçlü seri 70 makaleyse 70, 130 gerekiyorsa 130, 200’den fazla gerçekten değerli konu gerekiyorsa daha uzun olabilir.
-
-“Sıfırdan Yüze” adının bu yeni doğal uzunlukta marka olarak korunmasının mantıklı olup olmadığını değerlendirebilirsin. Ancak isim konusu çalışan linkleri, progress’i, bookmark’ları veya kullanıcı beklentisini bozacak gereksiz bir migration’a dönüşmemeli. Teknik geriye uyumluluk ve yayımlanmış içerik stabilitesi önceliklidir.
-
-## A4. İlk 10’dan formal ve akademik derinliğe geçiş
-
-İlk 10’u yeniden sıralayamadığın için, yeni matematiksel/teorik konuları geçmişe zorla eklemeye çalışma.
-
-Bunun yerine “sezgisel olarak gördük, şimdi formal olarak kuruyoruz” yaklaşımını kullanabilirsin. Daha önce sezgisel anlatılan loss, gradient, attention, probability distribution veya başka bir fikir ileride matematiksel/formal düzeyde yeniden ele alınabilir. Bu tekrar değil, **sezgiden formalizme bilinçli geçiş** olmalı ve eski makaleye açık pedagojik bağ taşımalı.
-
-Mevcut 1–10’da geleceğe bırakılmış açık borçları sessizce yok etme. Yeni roadmap hangi eski sözün nerede ödeneceğini açıkça izleyebilmeli.
-
-## A5. AI sözleşmesi ve yaşayan state
-
-Mevcut AI `SOZLESME`, `YOL-HARITASI` ve `HANDOFF` modelinin güçlü taraflarını koru fakat yeni kullanıcı kararına göre normalize et.
-
-Korunması beklenen temel ilkeler:
-
-- deep research;
-- mümkün olduğunca birincil ve güvenilir akademik kaynak;
-- hakemli/hakemsiz ayrımının dürüstlüğü;
-- ciddi ama okunabilir Türkçe;
-- sezgi → mekanizma → teknik ayrıntı → akademik bağlam;
-- formülü önce kavramsal olarak kurma ve gerektiğinde küçük gerçek örnekle gösterme;
-- prerequisite zinciri;
-- progressive disclosure;
-- spaced recall ve retrieval practice;
-- worked examples;
-- cognitive load yönetimi;
-- scaffolding/fading;
-- terim tutarlılığı;
-- tanımsız sembol/kavram kullanmama;
-- dekoratif değil öğretici görselleştirme;
-- kaynak/URL/sayısal iddia doğrulaması;
-- yayımlanmış içeriğin stabil olması;
-- yaşayan handoff ve roadmap.
-
-Değiştirilecek tarihsel kısıtlar:
-
-- “seri mutlaka 100 makaledir”;
-- “üretim mutlaka 5 makale + 1 hazırlık işi olarak yapılır”.
-
-Gelecekte kullanıcı “1 yazı yaz”, “2 yazı yaz” veya “5 yazı yaz” diyebilmeli. Batch büyüklüğü değişse bile continuity bozulmamalı. Her yazım görevi sonunda kalıcı state, prerequisite/recall kayıtları ve sıradaki güvenli başlangıç noktası güncellenmeli.
-
-Gerekirse mevcut sözleşmeyi sürümle ve tarihli değişiklik kaydı bırak. Mevcut ilk 10’un historical metadata’sını yeni modele uydurmak için bozma.
+Eski aktif “100’e kadar” ve “her handoff’a aynı 5+1 metnini kopyala” hükümlerini kaldır veya tarihsel not olarak açıkça etkisizleştir. Tarihsel üretim kayıtlarını silme; normatif talimatla geçmiş günlüğünü ayır.
 
 ---
 
-# III. İş Paketi B — Boğaziçi CmpE Scientific Interview hazırlık serisini kur
+## 3. İş Paketi B — Boğaziçi CmpE scientific interview serisi
 
-AI serisinin yeni geleceğini netleştirdikten sonra **aynı görev içinde** BOUN serisine geç. AI tarafını başka chat’e bırakma ve BOUN için yeni agent gerektirme.
+### B1. Ayrı amaç
 
-## B1. Ayrı seri, ortak kalite
+BOUN serisi AI serisinin fazı veya prerequisite’i değildir. Amacı, Boğaziçi CmpE M.Sc. scientific interview bağlamında unutulmuş CS/CmpE temellerini yeniden kurarak adayın:
 
-BOUN serisi mevcut AI serisinin bir fazı değildir. Platformda ayrı bir seri olmalı.
+- kavramı açık ve teknik biçimde anlatabilmesini;
+- küçük problem çözebilmesini;
+- gerektiğinde formal tanım veya kısa ispat kurabilmesini;
+- correctness, complexity, memory, concurrency ve sistem trade-off’larını savunabilmesini;
+- takip sorularına dayanabilmesini
 
-Ama iki seri aynı yüksek kalite standardını kullanabilir ve platform altyapısını güvenli biçimde paylaşabilir.
+sağlamaktır.
 
-BOUN serisinin amacı:
+Bu, “kesin çıkacak sorular” ezberi veya bütün lisans müfredatını tekrar etme projesi değildir. Oral reasoning ve whiteboard/problem-solving, serinin pedagojik tasarım hedefidir; üniversitenin ilan ettiği kesin soru formatı gibi sunulamaz.
 
-**Boğaziçi Üniversitesi Computer Engineering M.Sc. scientific interview için, unutulmuş bilgisayar bilimi ve bilgisayar mühendisliği temellerini yeniden kurarak kısa akademik görüşmede teknik bilgisini açıklayabilen, küçük problem çözebilen, ispat/matematiksel muhakeme yapabilen ve trade-off tartışabilen aday yetiştirmek.**
+### B2. Resmî gerçekle başla, syllabus uydurma
 
-Bu bir “mülakat soru ezberi” serisi değildir ve genel bir “bilgisayar mühendisliği lisansını yeniden oku” projesi de değildir.
+Kapsam kararından hemen önce güncel resmî kaynakları yeniden doğrula. Başlangıç anchor’ları:
 
-## B2. Güncel resmi Boğaziçi gerçeğini yeniden doğrula
+- M.Sc. programı ve scientific interview: `https://cmpe.bogazici.edu.tr/graduate/ms-program/`
+- güncel lisans müfredatı: `https://cmpe.bogazici.edu.tr/undergraduate/curriculum/`
+- güncel ders kataloğu: `https://cmpe.bogazici.edu.tr/courses/`
+- CMPE300 örneği: `https://cmpe.bogazici.edu.tr/courses/cmpe300/`
 
-Kapsam kararlarını başlamadan güncel resmi Boğaziçi CmpE kaynaklarıyla doğrula.
-
-2026 Ağustos sonu itibarıyla resmi M.Sc. sayfasındaki güçlü başlangıç sinyalleri:
-
-- scientific interview, pre-evaluation’ı geçen adaylarla yapılıyor;
-- en az iki faculty member interview yapıyor;
-- her görüşme yaklaşık 10 veya 15 dakika;
-- görüşmede past academic record, research direction, skillset ve technical knowledge konuşuluyor;
-- Scientific Preparation altında CMPE220 — Discrete Computational Structures, CMPE250 — Data Structures ve CMPE322 — Operating Systems listeleniyor.
-
-Bunlar **güçlü çekirdek sinyalleridir ama kesin interview syllabus değildir**.
-
-Güncel resmi bölüm kaynaklarından ayrıca:
-
-- undergraduate curriculum,
-- course catalog,
-- prerequisite yapısı,
-- erişilebilen syllabus / lecture material / homework / exam kaynakları
-
-incelensin.
-
-CMPE300 — Analysis of Algorithms resmi olarak CMPE250 prerequisite’ine sahip ve algorithm analysis, complexity, divide-and-conquer, dynamic/greedy/graph algorithms, lower bounds, parallel/probabilistic algorithms ve matematiksel analiz araçları içeriyor; bu nedenle güçlü ikinci-halka adaylarından biridir.
-
-Güncel lisans çekirdeğindeki probability/statistics, programming languages, formal languages/automata, operating systems ve diğer supporting fundamentals da değerlendirilebilir. Computer organization/architecture, systems programming, databases veya başka alanlar tarihsel/current curriculum farkları nedeniyle yalnızca güncel kaynak ve interview-readiness getirisiyle değerlendirilmeli.
-
-Eski/legacy Boğaziçi sayfaları veya geçmiş öğrenci deneyimleri yardımcı sinyal olabilir ama güncel resmi kaynakla aynı ağırlıkta değildir. Informal deneyimden “bu soru kesin gelir” çıkarımı yapma.
+Resmî sayfadaki interview süreci, konuşulan genel alanlar ve Scientific Preparation dersleri güçlü sinyallerdir; **hiçbiri tek başına kesin interview syllabus değildir**. Güncel curriculum, course catalog, prerequisite ve erişilebilen resmî syllabus/material ile birlikte değerlendir. Legacy sayfalar ve öğrenci deneyimleri yalnızca düşük ağırlıklı yardımcı kanıttır; “bu soru kesin gelir” sonucu üretmez.
 
 Kaynak önceliği:
 
-1. güncel resmi Boğaziçi CmpE graduate/program/interview bilgisi;
-2. güncel resmi curriculum/course catalog/syllabus/material;
-3. standart ve güvenilir textbook / üniversite dersi / akademik kaynak;
-4. geçmiş interview deneyimi yalnızca düşük ağırlıklı yardımcı sinyal.
+1. güncel resmî Boğaziçi CmpE graduate/interview bilgisi;
+2. güncel resmî curriculum, course catalog, prerequisite ve ders materyali;
+3. standart textbook, güvenilir üniversite dersi ve akademik kaynak;
+4. açıkça “informal/legacy sinyal” diye etiketlenmiş geçmiş deneyim.
 
-## B3. BOUN için doğal kapsam
+Erişim tarihi ve karar taşıyan URL’leri kalıcı araştırma notunda tut. Değişebilecek ayrıntıları prompttan yaşayan state’e kopyalanmış ebedî gerçekler haline getirme.
 
-Şu başlıkları nihai liste olarak değil, araştırılması gereken çekirdek adaylar olarak değerlendir:
+### B3. Doğal kapsam ve sınır
 
-- logic ve proof techniques;
-- sets, functions, relations;
-- induction, recursion;
-- counting ve combinatorics;
-- graphs, trees ve discrete structures;
-- data structures ve doğru veri yapısını seçme;
-- sorting/searching/hashing/heaps/search structures;
-- graph representations ve traversals;
-- asymptotic reasoning ve complexity;
-- recurrences ve mathematical analysis of algorithms;
-- divide-and-conquer;
-- greedy;
-- dynamic programming;
-- shortest paths, MST ve gerekli graph algorithm düşüncesi;
-- correctness ve lower-bound reasoning;
-- processes ve threads;
-- CPU scheduling;
-- concurrency;
-- synchronization ve critical sections;
-- deadlocks;
-- memory management;
-- paging ve virtual memory;
-- file systems;
-- I/O;
-- protection/security;
-- system-level trade-offs.
+Şu kümeleri final liste değil aday bilgi grafı olarak değerlendir:
 
-Bunların yanında yalnızca gerçekten yüksek hazırlık getirisi veya gerçek prerequisite değeri varsa:
+- çekirdek sinyaller: discrete computational structures, data structures/algorithms ve operating systems;
+- yüksek getirili ikinci halka: algorithm analysis, asymptotic/recurrence/correctness/lower-bound reasoning, divide-and-conquer, greedy, dynamic programming ve graph algorithms;
+- interview-readiness için gerektiği ölçüde logic/proof, sets/functions/relations, induction/recursion, counting/combinatorics, graphs/trees;
+- operating-systems temelleri: process/thread, scheduling, concurrency/synchronization, deadlock, memory/virtual memory, file/I/O ve protection;
+- yalnızca gerçek prerequisite veya yüksek hazırlık getirisi kanıtlanırsa probability/statistics, computer organization/architecture, systems programming, databases, programming languages, formal languages/automata veya başka supporting fundamentals.
 
-- probability/statistics;
-- computer organization/architecture;
-- systems programming;
-- databases;
-- programming languages;
-- formal languages/automata;
-- başka gerekli matematik/CS temelleri
+Önce interview-readiness tanımını ve prerequisite grafını kur; makale sayısı doğal olarak ortaya çıksın. 30/50/100 kotası koyma.
 
-dahil edilebilir.
+Gelecekteki makaleler içerik uygunsa worked example, kısa proof, küçük algoritmik problem, pseudocode/kod, diyagram, comparison ve oral checkpoint kullanabilsin; her makaleye aynı mekanik şablonu yapıştırma.
 
-Serinin uzunluğunu 30/50/100 gibi bir sayıya kilitleme. Önce interview-readiness tanımı ve bilgi grafı kurulsun, sonra doğal makale sayısı ortaya çıksın.
+### B4. AI–BOUN ayrımı
 
-## B4. BOUN’un ayırt edici pedagojisi
+- BOUN, graph/probability/algorithms/systems konularını temel CS amacıyla ve kendi içinde yeterli biçimde öğretir.
+- AI serisi model, training, interpretability, agents, AI research ve AI systems derinliğinin sahibidir.
+- BOUN, AI serisini prerequisite yapmaz. İki tarafta da bağımsız öğrenme tamamlandıktan sonra yararlı bir çapraz referans eklenebilir.
+- Ortak editoryal kalite paylaşılabilir; seri amacı, roadmap, namespace, katalog/state ve handoff birbirine karıştırılmaz.
 
-AI serisinin kanıta dayalı pedagojik yaklaşımını referans al ama BOUN serisine özel başarı kriterini ekle:
-
-**oral reasoning + whiteboard/problem solving.**
-
-Bir okuyucu ilgili konuyu tamamladığında:
-
-- kavramı sezgisel olarak açıklayabilmeli;
-- gerekliyse formal tanımı verebilmeli;
-- küçük bir problem üzerinde uygulayabilmeli;
-- çözümün neden doğru olduğunu savunabilmeli;
-- complexity / memory / resource / correctness / concurrency trade-off’larını tartışabilmeli;
-- “neden?”, “hangi durumda bozulur?”, “alternatifi ne?”, “karmaşıklığı nedir?”, “bunu nasıl ispatlarsın?” takip sorularına dayanabilmeli.
-
-Gelecekteki makalelerde uygun yerde:
-
-- worked example;
-- kısa proof;
-- küçük algoritmik/problem-solving egzersizi;
-- pseudocode veya kod;
-- diyagram;
-- comparison;
-- oral checkpoint / whiteboard-style question
-
-kullanılabilsin.
-
-Ancak bunu her makaleye aynı şablonu yapıştıran mekanik checklist’e dönüştürme.
-
-## B5. AI ve BOUN serilerinin sınırı
-
-İki seri birbirini kopyalamamalı.
-
-BOUN serisinde graph theory, probability, algorithms veya systems gibi bir konu **CS temeli olarak** gerekiyorsa öğretilsin. O konunun AI’daki ileri kullanımı varsa uygun bir çapraz referans düşünülebilir, fakat BOUN içeriği AI serisini prerequisite yapmamalı.
-
-AI’ya özgü model, training, interpretability, agents veya AI systems derinliği mevcut AI serisine aittir.
-
-BOUN serisinin amacı AI öğretmek değil, bilim mülakatında ortaya konabilecek bilgisayar bilimi temeli ve muhakeme yeteneğini güçlendirmektir.
+BOUN için ayrı `SOZLESME + roadmap + HANDOFF` zinciri ve kısa trigger oluştur. Kalıcı path’leri repo mimarisine göre seç, finalde açıkça bildir.
 
 ---
 
-# IV. Platform mimarisi ve regresyon sınırları
+## 4. Platform ve geriye uyumluluk sınırları
 
-Bu görev yalnızca roadmap markdown’ları yazıp bırakmak değildir. İki seri de sonraki yazım oturumlarına **repo içinde kalıcı ve güvenli biçimde hazır** olmalıdır.
+İki seriyi yalnızca Markdown planı olarak bırakma; sonraki üretim oturumlarının repo içinde güvenle başlayacağı kadar kalıcı state kur. Ancak gelecekte lazım olabilir diye genel bir multi-series framework tasarlama.
 
-Fakat çözüm mimarisini bu prompttan tahmin etme. Repo içindeki mevcut seri sistemini inceleyip en sade, mevcut yapıyla uyumlu tasarımı seç.
+Çözüm:
 
-Gerektiği ölçüde:
-
-- AI serisinin güncellenmiş yaşayan state’i;
-- BOUN serisinin ayrı roadmap/sözleşme/handoff state’i;
-- yeni seri kimliğinin platform tarafından temsil edilmesi;
-- progress/bookmark/sync izolasyonu;
-- route ve catalog ayrımı;
-- shared reader/component davranışı;
-- seri seçimi veya keşfi için gerekli minimal UI/meta entegrasyonu
-
-ele alınabilir.
-
-Ortak bir component, schema veya reader altyapısına dokunmadan önce bütün tüketicilerini incele. Görünen tek kullanım noktasına göre karar verme.
-
-Tercih:
-
-- additive;
-- backwards-compatible;
+- additive ve backwards-compatible;
+- seri kimlikleri ve kullanıcı state’i açısından izole;
 - mevcut veriyle uyumlu;
-- gelecekte üçüncü seri gerekirse yapıyı kilitlemeyen
+- gerekirse üçüncü seriye alan bırakacak kadar açık, fakat spekülatif soyutlama üretmeyecek kadar sade
 
-çözüm olsun.
+olsun.
 
-Mevcut AI serisinin:
+Ortak component/schema/reader/sync koduna dokunmadan önce bütün tüketicilerini bul. Özellikle şunları koru:
 
-- `/seri` deneyimi,
-- yayımlanmış 1–10 içeriği,
-- user progress,
-- bookmark,
-- mevcut catalog/hash davranışı,
-- mevcut kütüphane `/read` tarafı,
-- başka çalışan ekran/consumer’lar
+- mevcut `/seri` ve `/seri/[slug]` deneyimi;
+- yayımlanmış AI 1–10;
+- article-id temelli progress, saved-place/bookmark ve highlight state’i;
+- katalog/frontmatter/hash davranışı;
+- ana kütüphanenin `/read` tarafı;
+- dashboard, navigation ve sync valid-id tüketicileri.
 
-bozulmamalı.
+BOUN henüz makalesiz veya yalnızca plan state’ine sahipken UI/sync tarafında null, empty veya partial-data hatası üretmemeli. Minimal keşif/seri seçimi entegrasyonu gerçekten gerekiyorsa ekle; makale varmış gibi sahte katalog kaydı oluşturma.
 
-Zorunlu breaking change görürsen sessizce yapma. Önce etkisini kanıtla ve güvenli migration/backward-compatibility yolu oluştur.
-
-Bu görevde yeni makale olmadığı için boş/planlanan seri state’inin UI veya sync tarafında null/empty/partial data hatasına yol açmadığını da düşün.
+Zorunlu breaking change görürsen sessizce uygulama. Etkiyi ve migration seçeneklerini kanıtla; gerçek kullanıcı kararı olmadan güvenli seçenek yoksa bu, ara karar gerektiren dış engeldir.
 
 ---
 
-# V. Tek agent çalışma kuralı — workflow ve subagent YOK
+## 5. Araştırma, akademik ve güvenlik standardı
 
-Bu görevde **tek agent sensin**.
+Araştırma karar kalitesini yükseltmeli, görevin kendisine dönüşmemelidir.
 
-- Background workflow açma.
-- `/workflow` veya `/workflows` kullanma.
-- Subagent oluşturma.
-- Sonnet/Opus helper çağırma.
-- Topic-per-agent yapma.
-- Reviewer swarm oluşturma.
-- Nested delegation yapma.
-- Otomatik retry agent döngüsü kurma.
+- Karar taşıyan iddialarda resmî/birincil kaynak, canonical eser veya güçlü akademik çalışma kullan.
+- Güncel ürün, model, müfredat ve başvuru davranışını çalıştırma anında doğrula; doğrulanmayanı garanti gibi yazma.
+- Kaynaklar çelişirse otorite, tarih ve bağlam farkını kaydet; belirsizliği uydurarak kapatma.
+- Her aday başlık için bibliyografya toplamaya çalışma; seçme/eleme veya prerequisite kararını gerçekten etkileyen kaynakları kaydet.
+- Geçici research dump, agent scratch veya workflow script’ini repoda bırakma.
 
-Web research, repo arama/okuma, shell, mevcut proje araçları ve gerekli skill’leri **kendin, ana chat içinde** kullan.
+AI safety, robustness, red teaming, OS protection ve systems security gibi meşru akademik alanları savunmacı/teorik/eğitsel amaçları içinde değerlendirebilirsin. Platform güvenlik politikasını normal biçimde uygula; classifier, model routing veya safeguard bypass etmeye çalışma. Gereksiz operasyonel zarar ayrıntısı doğarsa yalnızca o alt kapsamı güvenli seviyede sınırla; izin verilen yüksek seviyeli akademik roadmap tasarımını terk etme.
 
-Bu kural kaliteyi düşürmek için değil, geçmişte yaşanan aşırı orkestrasyonu ve token israfını engellemek içindir. Önceki üretim turlarında aynı işi farklı araştırma/reviewer ajanlarına tekrar tekrar yaptırmak usage limitlerini tüketti ve kapanmayan loop’lar yarattı. Bu görevde aynı hatayı tekrarlama.
-
-Token disiplinin:
-
-- dosyayı ihtiyaç yokken tekrar tekrar okuma;
-- aynı web sorusunu farklı biçimlerde defalarca araştırma;
-- aynı kararı art arda farklı “review turlarıyla” yeniden tartışma;
-- her küçük değişiklikten sonra bütün projeyi baştan audit etme;
-- çalışma sırasında sürekli uzun durum raporları üretme.
-
-Bunun yerine kanıtı bir kez topla, karar ver, uygula ve finalde gerekli doğrulamayı yap.
-
-Kurulu skill’leri gerektiğinde kullanabilirsin. Özellikle seri kapsamı ve tasarım kararında brainstorming, gerçek hata veya regresyonda systematic-debugging, onaylanmış kapsamın uygulanmasında planlama/uygulama ve tamamlanma iddiasında verification yaklaşımı yararlı olabilir. Ancak skill kullanımı yeni agent/workflow üretmemeli ve seremoniye dönüşmemeli.
+Model adı, serving route’u, helper modeli veya fallback davranışı promptla garanti edilemez. Bu konudaki kanonik çalışma kuralı ek `/goal` dosyasındadır.
 
 ---
 
-# VI. Eğitim ve güvenlik bağlamı
+## 6. Yürütme politikası
 
-Bütün çalışma kullanıcının:
+Tek ana oturum sahipliği, opsiyonel tek bounded helper, skill kullanımı, token/review disiplini, `N+1` çözümü ve iki trigger’ın sözleşmesi için yalnızca:
 
-- kişisel eğitimi,
-- bilgisayar bilimi temellerini tazelemesi,
-- AI alanında akademik ve mühendislik uzmanlığını geliştirmesi,
-- olası yüksek lisans/tez çalışması,
-- Boğaziçi CmpE scientific interview hazırlığı
+`fable5-master-ek-goal-tetikleyici-5plus1-tek-helper.md`
 
-içindir.
-
-AI safety, adversarial robustness, model misuse, red teaming, OS protection, systems security veya cyber security gibi akademik başlıkların roadmap’te görünmesi tek başına görevi zararlı yapmaz.
-
-Yalnızca “cyber”, “attack”, “security”, “red team” gibi kelimeler gördüğün için bütün görevi terk etme veya erken sonlandırma. Her alt konuyu gerçek eğitim ve akademik niyetine göre değerlendir.
-
-Belirli bir alt başlık gerçekten sakıncalı operasyonel ayrıntıya yaklaşırsa yalnızca o alt kısmı güvenli, savunmacı, teorik veya akademik seviyede sınırla; **geri kalan meşru seri tasarımı ve eğitim görevini bitirmeye devam et.**
-
-Geçici belirsizlik, bir URL’nin kırık olması, eski/yeni müfredat çelişkisi, zor bir araştırma konusu veya ilk başarısız yaklaşım görevi bırakma nedeni değildir. Doğrulanabilir alternatif kaynaktan ilerle.
-
-Yalnızca gerçekten kullanıcı kararı olmadan güvenli biçimde çözülemeyen bir dış engel varsa dur.
+dosyasını uygula. Bu master içindeki kapsamı addendum gerekçesiyle daraltma. Aynı araştırmayı veya incelemeyi farklı agent/model turlarında tekrarlama.
 
 ---
 
-# VII. Makale yazma yasağı
+## 7. Tamamlanma ve doğrulama defteri
 
-Bu master görev **seri mimarisi + araştırma + kalıcı repo kurulumu** görevidir.
+Görev ancak aşağıdaki maddeler taze kanıtla kapatıldığında tamamdır.
 
-Bu görevde:
+### AI
 
-- AI makale 11’i yazma;
-- BOUN makale 1’i yazma;
-- “örnek olsun” diye tam makale üretme;
-- yayımlanmış AI 1–10’u yeniden yazma.
+- Yayımlanmış baseline snapshot final snapshot ile aynıdır; 1–10’un gövde/id/slug/order/path/hash/historical batch bilgileri değişmemiştir.
+- 1–10’un prerequisite mirası, formalizasyon noktaları ve açık ileri borçları yeni roadmap’te izlenebilir.
+- 11’den sonrası güncel akademik + araştırma + mühendislik hedefine göre gerçekten yeniden değerlendirilmiştir.
+- Eski akademi/research-engineering fikirlerindeki değerli eksenler ikinci AI serisi açılmadan entegre edilmiş veya gerekçeli biçimde elenmiştir.
+- Doğal faz/prerequisite yapısı ve doğal makale sayısı oluşmuştur; 100/200 sayısı hedef değildir.
+- AI `SOZLESME / roadmap / HANDOFF` zinciri yeni source-of-truth sorumlulukları ve ek `/goal` dosyasındaki ritim semantiğiyle tutarlıdır.
 
-Gelecekte yazılacak makalelerin:
+### BOUN
 
-- başlık/odak;
-- prerequisite;
-- pedagojik amaç;
-- araştırma yönü;
-- olası worked example/görselleştirme ihtiyacı
+- Güncel resmî Boğaziçi kaynakları erişim tarihiyle doğrulanmıştır.
+- Resmî gerçek, tasarım çıkarımı ve informal sinyal birbirinden ayrılmıştır; Scientific Preparation “kesin interview syllabus” değildir.
+- Interview-readiness, doğal çekirdek/supporting kapsam, prerequisite grafı ve oral/problem-solving pedagojisi tanımlıdır.
+- Makale sayısı akademik hazırlık getirisinden çıkmıştır.
+- BOUN’un ayrı yaşayan `SOZLESME / roadmap / HANDOFF` zinciri vardır ve ilk üretim oturumu yalnızca bu state’i okuyarak başlayabilir.
+- BOUN, AI serisini prerequisite yapmaz ve iki seri arasında kopya roadmap oluşmaz.
 
-roadmap/handoff seviyesinde tanımlanabilir.
+### Trigger ve yaşayan state
 
-Ama article body üretimi sonraki görevlerin işidir.
+- Her seri için bir kısa trigger vardır; kesin path’leri finalde verilir.
+- Her trigger yalnızca ilgili HANDOFF giriş noktasını, tek bir `BATCH=5+1` direktifini ve kısa “yükle → üret/doğrula → +1 → dur” komutunu taşır.
+- Trigger’lar konu listesi, kaynak listesi, geçmiş batch özeti, uzun editoryal kurallar, model routing veya helper ayrıntısı kopyalamaz.
+- Default ve override davranışı ek `/goal` dosyasındaki karar tablosuyla statik olarak doğrulanmıştır.
+- Aktif living-state talimatlarında sabit 100, değişmez 5’li batch, her handoff’a kural kopyalama, paralel reviewer/Opus swarm veya repo-dışı geçici state zorunluluğu kalmamıştır. Tarihsel kayıtlar kalırsa açıkça non-normative history olarak işaretlidir.
 
----
+### Platform ve final kanıt
 
-# VIII. Görevin tek seferde tamamlanma kriterleri
+Her durumda:
 
-Bu taskı ancak aşağıdakilerin **tamamı** gerçekleştiğinde bitmiş say.
+- final `git diff --check`, hedefli `git diff` ve `git status` incelemesi;
+- Markdown path/link ve source-of-truth çapraz referans kontrolü;
+- yayımlanmış kimlik snapshot karşılaştırması;
+- ana kütüphane + bütün seri kataloglarında global article-id benzersizliği;
+- yayımlanmış roadmap kayıtlarının katalogla slug yanında title/order/status eşleşmesi;
+- ilgili catalog/frontmatter/roadmap/state doğrulayıcıları
 
-## AI tarafı
+çalıştırılır.
 
-- Mevcut yayımlanmış 1–10 korunmuş ve yeni roadmap bunlarla çelişmiyor.
-- 1–10’un açık ileri borçları ve prerequisite mirası kaybolmamış.
-- 11’den sonrası güncel akademik/araştırma/mühendislik hedeflerine göre gerçekten yeniden değerlendirilmiş.
-- Eski ayrı akademik ve research-engineering seri fikirlerindeki değerli konular ikinci seri açılmadan mevcut AI serisine entegre edilmiş veya gerekçeli biçimde dışarıda bırakılmış.
-- Doğal faz/prerequisite yapısı kurulmuş.
-- Toplam makale sayısı akademik/pedagojik kapsamın sonucu olmuş, 100/200 sayısına göre şişirilmemiş.
-- `SOZLESME`, `YOL-HARITASI`, `HANDOFF` ve gerekiyorsa ilgili platform state’i yeni kararla tutarlı.
-- Sabit 5+1 yerine 1/2/5 gibi küçük değişken batch’lerle devam edilebilecek continuity modeli kurulmuş.
-- Sonraki AI yazım chat’i yalnızca kalıcı repo state’ini okuyarak ne yazacağını anlayabiliyor.
+Yalnızca doküman/data değiştiyse ilgili statik/content doğrulamalarını çalıştır. Schema, shared component, route, sync veya UI kodu değiştiyse etkilenen testlere ek olarak typecheck/build ve ilgili gerçek render/navigation/empty-state kontrollerini çalıştır. Bu durumda ayrıca library/AI/BOUN link çözümünü, bütün yayımlanmış serilerin sync valid-id kümesine alınmasını, bilinmeyen id’nin reddini, mevcut on AI static route’un korunmasını ve sıfır makaleli BOUN planning state’inde sahte article oluşmamasını kanıtla. Değişiklik yüzeyinin kanıtlamadığı geniş bir “her şeyi yeniden audit et” döngüsü başlatma.
 
-## BOUN tarafı
-
-- Güncel resmi Boğaziçi kaynakları doğrulanmış.
-- Scientific Preparation ile interview syllabus birbirine karıştırılmamış.
-- Interview-readiness açıkça tanımlanmış.
-- Doğal çekirdek + supporting fundamentals seçilmiş.
-- Gereksiz lisans konuları roadmap’i şişirmiyor.
-- Fazlar ve prerequisite grafı akademik gerekçeyle kurulmuş.
-- Oral reasoning + problem solving pedagojisi sözleşmeye yansımış.
-- Makale sayısı doğal kapsamdan çıkmış.
-- Ayrı yaşayan roadmap/sözleşme/handoff state’i mevcut.
-- Sonraki BOUN yazım chat’i yalnızca kalıcı state’i okuyarak ilk 1/2/5 makaleyi güvenle yazmaya başlayabiliyor.
-
-## Platform tarafı
-
-- İki seri birbirinden güvenli biçimde ayrılmış.
-- Shared altyapıda yapılmış değişiklikler başka consumer’ları bozmuyor.
-- Existing AI 1–10, progress/bookmark/sync ve mevcut library davranışında regresyon yok.
-- BOUN serisinin henüz makalesi olmaması veya yalnızca plan state’ine sahip olması null/empty-state hatası oluşturmuyor.
-- Repo’da agent scratch, geçici research dump, workflow script’i veya gereksiz generated çöp bırakılmamış.
-- Gerekli docs/config/metadata değişiklikleri kalıcı ve anlaşılır durumda.
-
-## Final doğrulama
-
-Repo’nun mevcut doğrulama araçlarını ve gerçek build/test düzenini kendin keşfet. Taze kanıtla:
-
-- ilgili content/schema/roadmap tutarlılığını;
-- type/build/test durumunu;
-- gerekiyorsa gerçek render ve iki seri arasındaki navigasyon/izolasyonu;
-- final `git diff` / `git status` kapsamını
-
-kontrol et.
-
-Bir hata bulursan kök nedene yönelik en küçük güvenli düzeltmeyi yap ve yalnızca etkilenen kısmı yeniden doğrula. Yeni genel audit/reviewer loop’u başlatma.
-
-Taze doğrulama olmadan “tamamlandı” deme. Fakat gerekli kanıtlar temiz olduğunda da “bir tur daha bakalım” diyerek görevi uzatma.
+Bir doğrulama hatası kendi değişikliğinden kaynaklanıyorsa kök nedene yönelik en küçük düzeltmeyi yap ve yalnızca etkilenen kapıları yeniden çalıştır. Baseline’dan gelen ilgisiz hata varsa kanıtıyla ayır. Temiz bir final denetiminden sonra yeni reviewer turu açma.
 
 ---
 
-# IX. Final teslim biçimi
+## 8. Final teslim
 
-Görevin sonunda uzun çalışma günlüğü verme.
+Uzun düşünce günlüğü verme. Kısa ve kanıtlı biçimde bildir:
 
-Kısa ve karar odaklı olarak şunları bildir:
+1. AI serisinin yeni tezi, doğal kapsamı/uzunluğu ve önemli roadmap kararları;
+2. eski 100/200 fikirlerinden entegre edilen veya gerekçeli elenen ana eksenler;
+3. BOUN serisinin tezi, doğal kapsamı/uzunluğu ve resmî akademik dayanakları;
+4. iki serinin sınırı ve yaşayan `SOZLESME → roadmap → HANDOFF → trigger` modeli;
+5. değişen dosyalar ve iki trigger’ın kesin path’leri;
+6. yayımlanmış AI 1–10 ile kullanıcı/platform state’inin korunduğunu gösteren snapshot/diff kanıtı;
+7. çalıştırılan doğrulamalar, sonuçları ve yalnızca gerçekten kalan dış engel.
 
-1. AI serisinin yeni tezi, doğal kapsamı ve önemli roadmap değişiklikleri;
-2. eski 100/200 bağımsız seri fikirlerinden mevcut AI serisine hangi ana eksenlerin entegre edildiği;
-3. AI serisinin yeni doğal uzunluğu veya kapsam aralığı ve bunun gerekçesi;
-4. BOUN serisinin adı/tezi, çekirdek kapsamı, doğal uzunluğu veya kapsam aralığı;
-5. BOUN için kullanılan güncel resmi akademik dayanakların özeti;
-6. iki serinin birbirinden nasıl ayrıldığı ve nerede tamamlayıcı olduğu;
-7. yaşayan sözleşme/roadmap/handoff modelinin nasıl çalışacağı;
-8. platformda yapılan gerekli değişiklikler ve regresyon doğrulaması;
-9. sonraki AI ve BOUN yazım görevlerinin hangi kalıcı state’ten başlayacağı;
-10. yalnızca gerçekten kalan dış engel varsa o engel.
-
-Bu sonuçları üretmeden ve iki seri de sonraki yazım görevine hazır hale gelmeden görevi bitmiş sayma.
+İki seri sonraki üretim görevine hazır, prompt setiyle living state çelişkisiz ve taze doğrulama tamamlanmışsa görevi kapat; “bir tur daha” diyerek uzatma.

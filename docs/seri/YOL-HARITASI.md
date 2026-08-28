@@ -1,21 +1,52 @@
 # "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri
 
-> Bu dosya serinin 100 makalelik omurgasını, prerequisite grafını, kavram-tekrar defterini ve
-> terim defterini tutar. Kurallar: `docs/seri/SOZLESME.md`. Durum takibi: `docs/seri/HANDOFF.md`.
-> 6–100 arası başlıklar **taslaktır**; batch hazırlığında pedagojik gerekçeyle güncellenebilir
-> (yayımlanmış makaleler asla). UI listesi `content/series/roadmap.json` ile başlık düzeyinde
-> senkron tutulur.
+> Bu dosya serinin yaşayan omurgasını (şu an 118 başlık, 14 faz), prerequisite grafını,
+> yayımlanmış vaat defterini, kavram-tekrar defterini ve terim defterini tutar. Kurallar:
+> `docs/seri/SOZLESME.md`. Durum takibi: `docs/seri/HANDOFF.md`. Yayımlanmamış başlıklar
+> **taslaktır**; batch hazırlığında pedagojik gerekçeyle güncellenebilir (yayımlanmış makaleler
+> ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
+> düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-08-27 · Yayında: 1–10 (Batch 0 + Batch 1) · Sıradaki batch: 11–15 (Batch 2)
+Son güncelleme: 2026-08-28 · Yayında: 1–10 (Batch 0 + Batch 1) · Sıradaki batch: 11–15
 
 ## Serinin tezi
 
-Okuyucu sıfırdan başlar ve 100 adımda LLM çağının tamamını —öğrenmenin matematiksel sezgisinden
-frontier güvenlik tartışmalarına— tek bir kesintisiz öğrenme zinciriyle kat eder. Her makale
-önceki kavramların üzerine biner; kritik kavramlar unutulmuş olabileceği varsayılarak ileride
-kısa yeniden kurulumlarla geri çağrılır.
+"Sıfırdan Yüze: Yapay Zekâ", sıfırdan başlayan okuyucuyu tek kesintisiz öğrenme zinciriyle
+zamanla dört yetkinliğe taşıyan **tek** öğrenme yoludur:
 
-## Fazlar ve 100 başlık
+1. **Akademik AI okuryazarlığı** — modern yapay zekânın mekanizmalarını, sınırlarını ve
+   literatürünü birincil kaynak düzeyinde okuyabilmek;
+2. **Matematiksel/teorik derinlik** — erken makalelerde sezgiyle kurulan kavramları ileride
+   formal düzeyde yeniden kurabilmek (bilinçli formalizasyon, SOZLESME §3);
+3. **Araştırma pratiği** — araştırma sorusu kurup deney tasarlayabilme, kanıt değerlendirebilme
+   ve ölçüm disiplini;
+4. **Ciddi model ve AI-systems mühendisliği** — modeli temelden kurarak anlamak ve eğitim/çıkarım
+   sistemlerinin gerçek maliyet yapısını düşünebilmek.
+
+Makale sayısı bir hedef değil, bu yetkinlik grafının sonucudur; "Sıfırdan Yüze" marka adıdır.
+Her makale önceki kavramların üzerine biner; kritik kavramlar unutulmuş olabileceği varsayılarak
+ileride kısa yeniden kurulumlarla geri çağrılır.
+
+## Yayımlanmış vaatler (bağlayıcı koordinat defteri)
+
+Yayımlanmış 1–10, metin içinde şu numaralara açık söz verdi. Bu koordinatlar **değiştirilemez**;
+yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunur:
+
+| Vaat | Nerede verildi | Bağlandığı numara |
+|---|---|---|
+| Post-training / asistanlaştırma aşamaları | 5, 7, 8, 10 ("Sırada ne var") | 11–13 |
+| Veri temizlik hattının ayrıntısı | 8 | 14 |
+| Tokenizer farkının yeteneklere yansıması | 8 | 15 |
+| Değerlendirme kümeleri neyi ölçer/ölçemez; perplexity karşılaştırma tuzakları | 5, 9 | 16 |
+| Halüsinasyonun ciddiyetle ele alınması | 10 | 17 |
+| Ezber ↔ genelleme gerilimi | 8 | 18 ve 72 |
+| Örnekle öğrenme (in-context learning) | 5 | 23 |
+| Çıkarım anında hesap harcama ekseni | 9 | 33 |
+| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6 | 74–77 |
+| Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 |
+| Karesel maliyeti ödemeyen alternatif mimariler | 7 | 86 |
+
+## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
 
@@ -61,10 +92,10 @@ kısa yeniden kurulumlarla geri çağrılır.
 31. **Akıl Yürütme Nedir? LLM'lerde Reasoning Tartışması** — kavramın kendisi ve ölçümü.
 32. **Zincirleme Düşünce: Chain-of-Thought** — ara adımların gücü.
 33. **Test-Time Compute: Düşünme Süresi Satın Almak** — inference'ta ölçekleme.
-34. **Reasoning Modelleri: Yeni Nesil** — reasoning-eğitimli modeller.
+34. **Reasoning Modelleri: Doğrulanabilir Ödülle Eğitim** — reasoning-eğitimli modeller; matematik ve kodun test alanı rolü.
 35. **Doğrulama: Modelin Cevabını Kontrol Etmek** — verifier'lar, self-check.
 36. **Arama ve Planlama: Self-Consistency ve Ağaçlar** — birden çok yol deneme.
-37. **Matematik ve Kod: Reasoning'in Test Alanları** — neden bu iki alan?
+37. **Pekiştirmeli Öğrenmenin Temelleri: MDP, Politika, Ödül** — 13 (RLHF) ve 34'ün (RLVR) biçimsel zemini; "değer" teriminin dikkat üçlüsündeki değerden ayrışması.
 38. **Süreç Denetimi: Adım Adım Ödüllendirme** — outcome vs process supervision.
 39. **Bellek: Sohbet İçinde ve Sohbetler Arasında** — bağlam, özetleme, kalıcı bellek.
 40. **Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık** — long-horizon problemi.
@@ -111,7 +142,7 @@ kısa yeniden kurulumlarla geri çağrılır.
 ### Faz 8 — Değerlendirme ve Yorumlanabilirlik (71–80)
 
 71. **Değerlendirme Bilimi: Benchmark'ların Ötesi** — 16'nın ileri düzey geri çağrımı.
-72. **Kirlilik ve Ezber: Benchmark'lara Güven Krizi** — contamination.
+72. **Kirlilik ve Ezber: Benchmark'lara Güven Krizi** — contamination; 8'in vaadi (18 ile birlikte).
 73. **İnsan Değerlendirmesi ve LLM-as-Judge** — değerlendiren modeller.
 74. **Mechanistic Interpretability: Devreleri Okumak** — modelin içine bakmak.
 75. **Özellikler ve Süperpozisyon: Modelin İç Dili** — features, SAE'ler.
@@ -131,21 +162,70 @@ kısa yeniden kurulumlarla geri çağrılır.
 86. **Attention'ın Ötesi: SSM ve Alternatif Mimariler** — 6–7'nin eleştirel geri çağrımı.
 87. **Küçük ama Güçlü: Damıtma ve Küçük Modeller** — distillation.
 88. **Uçta Yapay Zekâ: Telefonda ve Cihazda LLM** — on-device.
-89. **Donanım: GPU'dan Özel Çiplere** — hesaplama altyapısı.
+89. **Donanım Ekosistemi: GPU'dan Özel Çiplere** — çip ve altyapı manzarası (mühendislik derinliği Faz 13'te).
 90. **Enerji, Maliyet ve Çevresel Ayak İzi** — ölçeğin bedeli.
 
-### Faz 10 — Sınır ve Sentez (91–100)
+### Faz 10 — Matematiksel Omurga: Sezgiden İspata (91–97)
 
-91. **Dünya Modelleri: Metnin Ötesinde Anlamak** — world models.
-92. **Robotik ve Somutlaşmış Yapay Zekâ** — embodiment.
-93. **Sürekli Öğrenme: Model Nasıl Güncel Kalır?** — continual learning.
-94. **Kişiselleştirme ve Uzun Süreli Bellek** — 39/56'nın ürün düzeyinde geri çağrımı.
-95. **Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM** — AI for science.
-96. **Vaka İncelemesi: Bir Frontier Model Nasıl Yapılır?** — uçtan uca sentez (8–13'ün geri çağrımı).
-97. **Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?** — mühendislik sentezi (41–60'ın geri çağrımı).
-98. **Açık Sorular: Alanın Bilmedikleri** — dürüst envanter.
-99. **AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri** — kavramsal temizlik.
-100. **Yüzüncü Adım: Haritayı Yeniden Çizmek** — serinin sentezi; okuyucunun kendi haritası.
+Erken makalelerde sezgiyle kurulan kavramların bilinçli formalizasyonu (SOZLESME §3);
+araştırmacı formasyonunun giriş kapısı.
+
+91. **Vektörler ve Matrisler: Embedding'in Matematiği** — vektör uzayı, doğrusal dönüşüm; 4/6/7'nin formal yeniden kurulumu.
+92. **Matrisin İçini Okumak: Rank, Özdeğer ve SVD** — düşük ranklılık; 19'un (LoRA) ve 74–77'nin matematiksel zemini.
+93. **Olasılığın Dili: Dağılımlar, Beklenti ve MLE** — 5/10'daki dağılım sezgisinin formal hâli.
+94. **Bilgi Kuramı: Entropi, Çapraz Entropi ve KL** — kayıp ve perplexity'nin formal kimliği (2/5/9'un geri çağrımı).
+95. **Optimizasyonun Kuramı: Gradyanın Matematiği** — SGD/Adam; yakınsama sezgisi; 2/8'in formal yeniden kurulumu.
+96. **Genelleme Kuramı: Ezber ile Öğrenme Arasında** — bias-variance, çift iniş; 18/72'nin teorik zemini.
+97. **Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında** — ağaçlar, SVM, kNN, kümeleme; baseline kültürünün temeli.
+
+### Faz 11 — Araştırma Pratiği: Kanıtla Düşünmek (98–102)
+
+98. **Paper Nasıl Okunur: İddia, Kanıt ve Hakemlik** — yapı, iddia-kanıt eşleşmesi, hakem sürecinin anlamı.
+99. **Araştırma Sorusu ve Deney Tasarımı: Hipotez, Baseline, Ablation** — deneyin anatomisi.
+100. **Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi** — ilk 99 adımın planlı büyük geri çağrımı; okuyucunun kendi haritası.
+101. **Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi** — 16/71–73'ün formal geri çağrımı; belirsizlik aralıkları.
+102. **Tekrarlanabilirlik: Reproducibility, Negatif Sonuç ve Açık Bilim** — 9'daki replikasyon temasının pratiğe dökülmesi.
+
+### Faz 12 — Temelden Kurmak: Modeli Elle İnşa Etmek (103–105)
+
+103. **Mikro-GPT: Bir Transformer'ı Elle Kurmak** — 6/7'nin bütün parçalarının gerçek küçük sayılarla uçtan uca kurulumu.
+104. **Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü** — 8/14/15'in küçük ölçekte uygulaması.
+105. **Kendi Asistanın: Küçük Ölçekte SFT ve DPO** — 11–13'ün küçük ölçekte uygulaması.
+
+### Faz 13 — Eğitim Sistemleri Mühendisliği (106–109)
+
+106. **GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği** — roofline sezgisi; 26–28'in eğitim tarafındaki karşılığı.
+107. **Dağıtık Eğitim: Paralellik Stratejileri** — 8'de adı konan veri/model paralelliğinin tam kurulumu; TP/PP/ZeRO.
+108. **Performans Mühendisliği: Attention'ı Hızlandırmak** — bellek erişimi, kernel füzyonu, karışık duyarlık.
+109. **Koşunun Güvenilirliği: Checkpoint, Spike ve Gözlem** — üretim eğitiminin operasyon gerçeği (8'deki kontrol noktasının derinleşmesi).
+
+### Faz 14 — Sınır ve Sentez (110–118)
+
+110. **Dünya Modelleri: Metnin Ötesinde Anlamak** — world models.
+111. **Robotik ve Somutlaşmış Yapay Zekâ** — embodiment.
+112. **Sürekli Öğrenme ve Kişiselleştirme** — model nasıl güncel kalır; 39/56'nın ürün düzeyinde geri çağrımı.
+113. **Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM** — AI for science.
+114. **Vaka İncelemesi: Bir Frontier Model Nasıl Yapılır?** — uçtan uca sentez (8–13 + 106–109'un geri çağrımı).
+115. **Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?** — mühendislik sentezi (41–60'ın geri çağrımı).
+116. **Açık Sorular: Alanın Bilmedikleri** — dürüst envanter.
+117. **AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri** — kavramsal temizlik.
+118. **Son Adım: Haritayı Yeniden Çizmek** — serinin sentezi; okuyucunun araştırmacı/mühendis yol haritası.
+
+## Eski fikirlerin entegrasyonu (2026-08-28 revizyonunun izlenebilirliği)
+
+Eski "100 yazılık akademi" ve "200 yazılık research & engineering" fikirleri ayrı seri olarak
+**açılmadı**; değerli eksenleri tek seriye entegre edildi:
+
+- Akademi ekseni → Faz 10 (matematiksel omurga), Faz 11 (araştırma pratiği) ve her makaledeki
+  "akademik bağlam" katmanı (SOZLESME §2).
+- Research & engineering ekseni → Faz 12 (temelden kurma), Faz 13 (eğitim sistemleri) ve mevcut
+  26–28/85–90 mühendislik başlıkları.
+- Elenenler (gerekçeli): ikinci bir AI serisi (tek öğrenme yolu tezini bölerdi); makale-başına
+  sabit kota/şablon (SOZLESME §3 ilkeleriyle çelişir); eski taslak 37 "Matematik ve Kod:
+  Reasoning'in Test Alanları" (34'ün doğal alt konusu — yerine RL temelleri kondu); eski taslak
+  93 "Sürekli Öğrenme" ile 94 "Kişiselleştirme" (112'de birleşti — ikisi de aynı ürün sorusunun
+  iki yüzü); eski taslak 96–100 sentez başlıkları 114–118'e taşındı (sistem fazlarından sonra
+  daha zengin sentez kurulabildiği için).
 
 ## Prerequisite grafı — Batch 0 + Batch 1 (+ Batch 2 taslağı)
 
@@ -170,6 +250,14 @@ Gösterim: `makale ← dayandıkları`.
 - 14 ← 8 (veri hunisi, tekilleştirme, veri karışımı — 8'in açıkça "ayrıntısı 14'te" dediği borç), 9 (veri duvarı, epok tekrarının getirisi), 2 (aşırı öğrenme), 4 (derlem) — *Batch 2*
 - 15 ← 4 (BPE, sözlük, Türkçenin token maliyeti), 8 ("bu farkın yeteneklere yansıması 15\. makalenin konusu" borcu), 10 (kesme kuralları token üzerinde çalışır), 7 (embedding tablosu sözlük boyuyla ölçeklenir) — *Batch 2*
 
+**Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
+
+- Faz 10 ← Faz 1–2 çekirdeği (formalize edilen kavramların sezgisel kurulumları) + 19 (92 için LoRA).
+- Faz 11 ← Faz 10 (istatistiksel test için 93/94), 16 ve 71–73 (ölçüm pratiği).
+- Faz 12 ← Faz 10 (matematiksel dil) + 6–8 (mimari/eğitim) + 11–13 (post-training, 105 için).
+- Faz 13 ← 8–9 (eğitim koşusu, bütçe), 26–28 (çıkarım sistemleri karşılığı), Faz 12 (elle kurulmuş model zihinsel somutluk sağlar).
+- Faz 14 ← serbest sentez; 114 ← 8–13 + 106–109; 115 ← 41–60.
+
 ## Kavram-tekrar defteri (Batch 0 + Batch 1 kavramları)
 
 Her satır: kavram → ilk kurulduğu makale → Batch 0 içinde **gerçekleşen** geri çağrımlar →
@@ -182,22 +270,22 @@ Aşağıdaki "planlanan" sütunu bu uzun aralıklı tekrarları tutar.
 | Kavram | İlk | Batch 0'da gerçekleşen | Planlanan (uzun aralıklı) |
 |---|---|---|---|
 | Kural yazmak vs veriden öğrenmek | 1 | 2 (giriş köprüsü: "yol ayrımı") | 8 (ön eğitimde "kural yok, veri var"), 22 (prompt kural mı?), 51 (ajan döngüsünde kurallar geri döner) |
-| Model = ayarlanabilir fonksiyon | 1 | 2 (parametrelerle somutlaştı), 3 (doğrunun duvarı) | 7 (dev fonksiyon olarak Transformer), 18 (bilgi fonksiyonun içinde) |
+| Model = ayarlanabilir fonksiyon | 1 | 2 (parametrelerle somutlaştı), 3 (doğrunun duvarı) | 7 (dev fonksiyon olarak Transformer), 18 (bilgi fonksiyonun içinde), 103 (fonksiyonu elle kurmak) |
 | Tahmin = görülmemiş girdiye çıktı | 1 | 5 (dil modelinde aynı tanım) | 16 (değerlendirme neyi ölçer), 31 (reasoning tahmin midir) |
-| Parametre / ağırlık | 2 | 3 ("ağırlık ve sapma = 2. makaledeki parametreler"), 4 (embedding satırları da parametredir) | 8 (milyarlarca parametre), 19 (LoRA: az parametre değişir), 27 (kuantizasyon) |
-| Kayıp fonksiyonu | 2 | 3 (gradyanın kaynağı), 4 (embedding'i kim yazıyor), 5 (sonraki-token kaybı = perplexity) | 9 (ölçek yasası eğrileri kayıpla çizilir), 13 (ödül ≈ ters kayıp), 38 (süreç ödülü) |
-| Gradyan inişi | 2 | 3 (backprop ile birleşti), 4 (defteri eğitim yazar), 5 (dil modeli aynı döngü) | 8 (dev ölçekte aynı döngü), 12–13 (fine-tuning aynı mekanizma) |
-| Öğrenme döngüsü şeması (Şekil 1/2) | 2 | 5 ("2. makaledeki döngünün aynısı") | 8 (ön eğitim aynı döngü — şekli yeniden çağır) |
-| Genelleme / aşırı öğrenme | 2 | 3 (AlexNet'te dropout'a selam) | 8 (veri tekrarı), 16 (benchmark ezberi), 72 (contamination), 18 (ezber vs genelleme) |
+| Parametre / ağırlık | 2 | 3 ("ağırlık ve sapma = 2. makaledeki parametreler"), 4 (embedding satırları da parametredir) | 8 (milyarlarca parametre), 19 (LoRA: az parametre değişir), 27 (kuantizasyon), 92 (rank ve SVD ile içyapı) |
+| Kayıp fonksiyonu | 2 | 3 (gradyanın kaynağı), 4 (embedding'i kim yazıyor), 5 (sonraki-token kaybı = perplexity) | 9 (ölçek yasası eğrileri kayıpla çizilir), 13 (ödül ≈ ters kayıp), 38 (süreç ödülü), 94 (çapraz entropi olarak formal kimliği) |
+| Gradyan inişi | 2 | 3 (backprop ile birleşti), 4 (defteri eğitim yazar), 5 (dil modeli aynı döngü) | 8 (dev ölçekte aynı döngü), 12–13 (fine-tuning aynı mekanizma), 95 (yakınsama kuramı) |
+| Öğrenme döngüsü şeması (Şekil 1/2) | 2 | 5 ("2. makaledeki döngünün aynısı") | 8 (ön eğitim aynı döngü — şekli yeniden çağır), 104 (döngüyü elle kurmak) |
+| Genelleme / aşırı öğrenme | 2 | 3 (AlexNet'te dropout'a selam) | 8 (veri tekrarı), 16 (benchmark ezberi), 72 (contamination), 18 (ezber vs genelleme), 96 (genelleme kuramı) |
 | İndirgenemez hata | 2 | — | 16 (tavan neden var), 65 (belirsizlik türleri) |
 | Nöron, katman, aktivasyon | 3 | 4 (ağın kapısı) | 7 (Transformer blokları), 74–76 (interpretability aynı katmanlara bakar) |
-| Temsil (representation) | 3 | 4 (embedding = temsil, açık atıfla) | 29 (anlamsal arama), 75 (features) |
-| Token | 4 | 5 (dil modelinin birimi) | 10 (token token üretim), 15 (tokenizer derinlemesine), 21 (bağlam token sayar), 26 (maliyet token başına) |
-| Embedding | 4 | 5 (Bengio köprüsü: embedding'in tarihsel kökeni) | 6 (statik→bağlamsal), 29 (arama), 43 (vektör DB) |
+| Temsil (representation) | 3 | 4 (embedding = temsil, açık atıfla) | 29 (anlamsal arama), 75 (features), 91 (vektör uzayı olarak formal hâli) |
+| Token | 4 | 5 (dil modelinin birimi) | 10 (token token üretim), 15 (tokenizer derinlemesine), 21 (bağlam token sayar), 26 (maliyet token başına), 104 (tokenizer'ı kurmak) |
+| Embedding | 4 | 5 (Bengio köprüsü: embedding'in tarihsel kökeni) | 6 (statik→bağlamsal), 29 (arama), 43 (vektör DB), 91 (matematiği) |
 | Dağılımsal hipotez | 4 | 5 (bağlamdan tahmin aynı fikir) | 8 (ölçekte anlamın örtük öğrenimi) |
-| Statik vektörün duvarı ("yüz") | 4 | 5 (kapanış köprüsü, aynı örnekle) | **6 (açılış problemi — aynı örnekle başlanacak)** |
-| Dil modeli = sonraki-token dağılımı | 5 | — | 6–8 (mimari bu hedefe hizmet eder), 10 (dağılımdan örnekleme), 17 (halüsinasyonun kökü), 23 (ICL) |
-| Perplexity | 5 | — | 9 (ölçek yasası metriği), 16 (değerlendirme metriği olarak sınırı) |
+| Statik vektörün duvarı ("yüz") | 4 | 5 (kapanış köprüsü, aynı örnekle) | **6 (açılış problemi — aynı örnekle başlanacak)** ✓ gerçekleşti |
+| Dil modeli = sonraki-token dağılımı | 5 | — | 6–8 (mimari bu hedefe hizmet eder), 10 (dağılımdan örnekleme), 17 (halüsinasyonun kökü), 23 (ICL), 93 (koşullu dağılım olarak formal hâli) |
+| Perplexity | 5 | — | 9 (ölçek yasası metriği), 16 (değerlendirme metriği olarak sınırı), 94 (entropinin üsteli olarak formal kimliği) |
 
 ### Batch 1'de gerçekleşen tekrarlar (planlananların tahsili)
 
@@ -228,18 +316,18 @@ Batch 0 kavramlarının 6–10'da fiilen nerede geri çağrıldığı:
 | Kavram | İlk | Batch 1'de gerçekleşen | Planlanan (uzun aralıklı) |
 |---|---|---|---|
 | Bağlamsal temsil (dikkat) | 6 | 7 (blok içinde), 10 (üretimde) | 29 (anlamsal arama), 74–77 (devreleri okuma), 86 (SSM eleştirisi) |
-| Sorgu / anahtar / değer | 6 | 7 (çok başlı dikkat) | 25 (uzun bağlam), 26 (KV cache — K ve V tam olarak bunlar) |
-| Softmax | 6 | 7 (logit → dağılım), 10 (sıcaklık softmax'ın şeklini değiştirir) | 30 (kısıtlı üretim), 65 (kalibrasyon) |
+| Sorgu / anahtar / değer | 6 | 7 (çok başlı dikkat) | 25 (uzun bağlam), 26 (KV cache — K ve V tam olarak bunlar), 37 (RL "değer"inden ayrışma), 103 (elle kurulum) |
+| Softmax | 6 | 7 (logit → dağılım), 10 (sıcaklık softmax'ın şeklini değiştirir) | 30 (kısıtlı üretim), 65 (kalibrasyon), 93 (olasılık dağılımı olarak formal hâli) |
 | Nedensel maske | 7 | 10 (üretim yönü) | 26 (KV cache neden çalışır) |
-| Transformer bloğu / katman yığını | 7 | 8 (ölçeklenen şey bu) | 85 (MoE bloğu değiştirir), 86 (alternatif mimariler) |
-| Paralellik ↔ üretimin sıralılığı | 7 | 10 (otoregresif döngü paralelleşmez) | 26, 28 (serving ekonomisinin kökü) |
-| Ön eğitim / temel model | 8 | 9 (ölçek yasaları ön eğitim kaybını ölçer), 10 (elimizdeki şey bir metin tamamlayıcı) | 11 (post-training haritası), 96 (uçtan uca sentez) |
+| Transformer bloğu / katman yığını | 7 | 8 (ölçeklenen şey bu) | 85 (MoE bloğu değiştirir), 86 (alternatif mimariler), 103 (elle kurulum) |
+| Paralellik ↔ üretimin sıralılığı | 7 | 10 (otoregresif döngü paralelleşmez) | 26, 28 (serving ekonomisinin kökü), 106–108 (donanım gerçeği) |
+| Ön eğitim / temel model | 8 | 9 (ölçek yasaları ön eğitim kaybını ölçer), 10 (elimizdeki şey bir metin tamamlayıcı) | 11 (post-training haritası), 114 (uçtan uca sentez) |
 | Öz-denetimli öğrenme | 8 | — | 12 (SFT: etiket geri geliyor), 41 (parametrik bilginin sınırı) |
-| Hesap bütçesi / FLOP / 6ND | 8 | 9 (bütün tahsis aritmetiği buna dayanır) | 27 (kuantizasyon), 33 (çıkarım-zamanı hesap), 89–90 (donanım, enerji) |
-| Veri karışımı / tekilleştirme | 8 | 9 (veri duvarı, epok tekrarı) | 14 (ayrıntı), 18 + 72 (ezber), 93 (sürekli öğrenme) |
-| Ölçek yasası / güç yasası | 9 | — | 33 (test-time ölçekleme), 78 (emergence), 87 (damıtma), 98 (açık sorular) |
-| Hesap-optimal eğitim | 9 | — | 19 (LoRA ekonomisi), 28 (çıkarım maliyetiyle birleşik tahsis), 96 |
-| Aynı eğri, iki cetvel (metrik seçimi) | 9 | — | 16 (değerlendirme), 71–73, 78 (emergence tartışması) |
+| Hesap bütçesi / FLOP / 6ND | 8 | 9 (bütün tahsis aritmetiği buna dayanır) | 27 (kuantizasyon), 33 (çıkarım-zamanı hesap), 89–90 (donanım, enerji), 106 (roofline) |
+| Veri karışımı / tekilleştirme | 8 | 9 (veri duvarı, epok tekrarı) | 14 (ayrıntı), 18 + 72 (ezber), 112 (sürekli öğrenme) |
+| Ölçek yasası / güç yasası | 9 | — | 33 (test-time ölçekleme), 78 (emergence), 87 (damıtma), 116 (açık sorular) |
+| Hesap-optimal eğitim | 9 | — | 19 (LoRA ekonomisi), 28 (çıkarım maliyetiyle birleşik tahsis), 114 |
+| Aynı eğri, iki cetvel (metrik seçimi) | 9 | — | 16 (değerlendirme), 71–73, 78 (emergence tartışması), 101 (ölçüm disiplini) |
 | Otoregresif üretim döngüsü | 10 | — | 25, 26, 28 (üretimin maliyet yapısı), 32 (CoT aynı döngüde uzar), 40 (uzun ufuk) |
 | Sıcaklık / kesme aileleri | 10 | — | 30 (yapılandırılmış çıktı), 36 (self-consistency çekilişe dayanır), 66 (model karakteri) |
 | Akıcılık ≠ doğruluk | 10 | — | 17 (halüsinasyon), 45 (kaynak sadakati), 65 (kalibrasyon) |
@@ -296,7 +384,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | yinelemeli | (recurrent) | 5 | 6 ve 7'de parantezsiz kullanılır |
 | sorgu | (query) | 6 | "Q" kısaltması kullanılmaz |
 | anahtar | (key) | 6 | |
-| değer | (value) | 6 | dikkat üçlüsünün rolü; ileride RL "value" ile karıştırılmaz |
+| değer | (value) | 6 | dikkat üçlüsünün rolü; ileride RL "value" ile karıştırılmaz (ayrışma: 37) |
 | nokta çarpım | (dot product) | 6 | benzerlik skorunun kaynağı |
 | softmax | — | 6 | Türkçeleştirilmez; "skorları toplamı 1 olan ağırlıklara çevirir" |
 | dikkat ağırlığı | (attention weight) | 6 | toplamı 1 olan tartım katsayıları |
@@ -326,8 +414,8 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | epok | (epoch) | 8 | verinin üzerinden bir tam geçiş |
 | ısınma | (warmup) | 8 | öğrenme oranı çizelgesinin ilk kolu |
 | kosinüs sönümü | (cosine decay) | 8 | çizelgenin uzun inen kolu |
-| veri paralelliği | (data parallelism) | 8 | |
-| model paralelliği | (model parallelism) | 8 | |
+| veri paralelliği | (data parallelism) | 8 | tam kurulumu 107'de |
+| model paralelliği | (model parallelism) | 8 | tam kurulumu 107'de |
 | hesap bütçesi | (compute budget) | 8 | FLOP birimiyle birlikte |
 | FLOP | — | 8 | kayan noktalı tek işlem |
 | kontrol noktası | (checkpoint) | 8 | ağırlıklar + optimizatör durumu |
@@ -355,6 +443,30 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
 kaçırılır (`1\.`) — aksi hâlde Markdown numarayı liste işareti sanıp yutar.
+
+## Bağlayıcı olgu kararları (seri boyunca geçerli)
+
+Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği olgu kararları:
+
+1. **GPT-2 boyutları** OpenAI model kartı serisiyle verilir: 124 / 355 / 774 milyon ve **1,5 milyar**.
+   Makalenin kendi tablosu 117/345/762/1542 der; model kartında **"1558" dizisi geçmez**.
+2. **"Artık bağlantı sönen gradyanı çözer" YAZILAMAZ.** He ve ark. (CVPR 2016) bunu açıkça reddeder;
+   çözülen şey **bozulma** (eğitilebilirlik) sorunudur.
+3. **Öz-dikkat girdisinin doğrusal fonksiyonu değildir** — ağırlıklar softmax üzerinden girdiye bağlı.
+   "Ağırlıklı ortalama" yalnızca ağırlıklar sabitken, değerlere göre doğrusallık demektir.
+4. **Kaplan tahsisi** (5,76×10²³ FLOP): N = 1,3×10⁹ · C^0,73 → **800 milyar parametre**,
+   D = C/(6N) → **~120 milyar token**, **0,15 token/parametre**. Kayıp L = 2,051 vs Chinchilla 1,937
+   (fark 0,114 nat/token). Kaplan'ın ayrı veri fiti aynı bütçede ~216 milyar verir ve 6ND ile
+   uyuşmaz (çarpan 1,8) — bu, "yasa değil, uydurulmuş eğri" tezinin kanıtı olarak metinde durur.
+5. **Llama 3 = 15,6 trilyon token** (bütün seride aynı sayı; token/parametre 38,5).
+6. Hakemsiz kaynaklar metinde işaretlenir: Kaplan 2020, Besiroglu 2024, Epoch AI, Llama 3 raporu,
+   Ba ve ark. 2016, Keskar ve ark. 2019, Thinking Machines blogu, Kalai ve ark. 2025.
+7. **Snell ve ark.** künyesi ICLR 2025 sürümüne göredir ("…than Scaling Parameters for Reasoning");
+   arXiv v1 başlığı farklıdır ("…than Scaling Model Parameters"). Yayın yeri ICLR olduğu için
+   başlık da ICLR sürümündendir.
+8. `logit` terimi **7. makalede** kurulur; 10. makale geri bağ verir.
+9. Oran ve farklar her zaman tam değerlerden hesaplanır, sonra yuvarlanır.
+10. Samuel'in "without being explicitly programmed" alıntısı kaynaklarda yok — seri boyunca **kullanma**.
 
 ## Batch 1 öğrenme notları (yazım tamamlandı)
 

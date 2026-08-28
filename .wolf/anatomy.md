@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-27T06:16:37.698Z
-> Files: 133 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-28T15:52:27.704Z
+> Files: 143 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -37,6 +37,16 @@
 ## .claude/rules/
 
 - `openwolf.md` (~313 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/883cb5bb-ed11-4944-95dd-d2b9ffa4d5d2/scratchpad/
+
+- `final-checks.cjs` — fs: resolve (~1311 tok)
+
+## boun/
+
+- `fable5-master-ai-ve-bogazici-serileri-tek-agent-ana-prompt.md` — Fable 5 ana kurulum promptu: scope/authority, AI–BOUN hedefleri, regresyon sınırları ve ölçülebilir kabul (~4100 tok)
+- `fable5-master-ek-goal-tetikleyici-5plus1-tek-helper.md` — Kanonik yürütme, exact BATCH=N+1, tek-helper, living-state ve trigger sözleşmesi (~2300 tok)
+- `fable5-master-skill-ve-kapatma-chat-eki.md` — Master ile ek goal'ü yükleyen non-normative kısa launcher (~150 tok)
 
 ## content/
 
@@ -84,8 +94,16 @@
 
 ## content/series/
 
-- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0: makale 1–5) (~1400 tok)
-- `roadmap.json` — 100 başlıklık seri omurgası, 10 faz, yayında/planlandı durumları (~3636 tok)
+- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0+1: makale 1–10) (~2800 tok)
+- `roadmap.json` — 118 başlıklık yaşayan seri omurgası, 14 faz, yayında/planlandı durumları (~4563 tok)
+
+## content/series/articles/models-and-training/
+
+- `dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md` — Makale 6: sorgu/anahtar/değer, elle softmax, bağlamsal temsil (~6000 tok)
+- `metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md` — Makale 10: otoregresif döngü, sıcaklık, top-k/çekirdek örnekleme (~6000 tok)
+- `olcek-yasalari-daha-buyuk-neden-daha-iyi.md` — Makale 9: güç yasası, Kaplan→Chinchilla, veri duvarı, emergence (~6300 tok)
+- `on-egitim-internet-olceginde-sonraki-token.md` — Makale 8: öz-denetimli hedef, veri hunisi, 6ND, koşu anatomisi (~6300 tok)
+- `transformer-modern-dil-modellerinin-mimarisi.md` — Makale 7: blok anatomisi, çok başlı dikkat, pozisyon kodlaması, logit halkası (~6500 tok)
 
 ## content/series/articles/foundations/
 
@@ -98,11 +116,20 @@
 ## content/series/assets/
 
 
+## docs/seri-boun/
+
+- `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~1266 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~971 tok)
+- `SOZLESME.md` — "Mülakat Aynası: Boğaziçi CmpE" — Seri Sözleşmesi (~2218 tok)
+- `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~131 tok)
+- `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~2405 tok)
+
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~3779 tok)
-- `SOZLESME.md` — serinin değişmez kurallar sözleşmesi (editoryal/pedagojik/teknik/handoff) (~4500 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~4342 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~1909 tok)
+- `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~4914 tok)
+- `TRIGGER.md` — "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı (~114 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~9556 tok)
 
 ## docs/superpowers/plans/
 
@@ -161,7 +188,7 @@
 
 ## src/components/dashboard/
 
-- `reader-dashboard.tsx` — formatDate (~3930 tok)
+- `reader-dashboard.tsx` — formatDate (~3935 tok)
 
 ## src/components/reader/
 
@@ -209,9 +236,9 @@
 - `schema.ts` — Controlled category vocabulary, in pedagogical order. (~826 tok)
 - `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~792 tok)
 - `series-roadmap.test.ts` — Declares roadmap (~660 tok)
-- `series-roadmap.ts` — content/series/roadmap.json — UI'nin gösterdiği 100 başlıklık omurga. (~1127 tok)
+- `series-roadmap.ts` — content/series/roadmap.json — UI'nin gösterdiği yaşayan omurga. (~1126 tok)
 - `series.test.ts` — RawArticle: article, catalog (~693 tok)
-- `series.ts` — "Sıfırdan Yüze" serisinin içerik sözleşmesi. Ana kütüphaneyle aynı şema ve (~2076 tok)
+- `series.ts` — "Sıfırdan Yüze" serisinin içerik sözleşmesi. Ana kütüphaneyle aynı şema ve (~2085 tok)
 - `types.ts` — Minimal, serializable article shape passed from server components to the UI. (~238 tok)
 
 ## src/lib/preferences/
@@ -247,7 +274,7 @@
 
 ## tools/
 
-- `README.md` — tools klasoru kullanim rehberi: dev, publish ve seri denetim giris noktalari (~1248 tok)
+- `README.md` — Project documentation (~1431 tok)
 
 ## tools/dev/
 
@@ -261,5 +288,7 @@
 ## tools/series/
 
 - `check-series-content.cjs` — Seri makaleleri için sözleşme denetimi (docs/seri/SOZLESME.md §2, §3, §5, §6). (~1640 tok)
+- `entegre-batch.cjs` — Batch-bağımsız entegrasyon: katalogda olmayan makaleleri frontmatter'dan catalog.json+roadmap.json'a ekler; kuru çalışma varsayılan, --write yazar (~1500 tok)
 - `check-series-svg.cjs` — Seri diyagramları için sözleşme denetimi (docs/seri/SOZLESME.md §6). (~1178 tok)
+- `entegre-batch.cjs` — Seri batch entegrasyonu (batch-bağımsız): katalogda henüz bulunmayan seri makalelerinin (~1811 tok)
 - `sync-series-hashes.cjs` — Seri makalelerinin content_hash değerlerini doğrular; --write ile frontmatter + katalogu günceller. (~800 tok)

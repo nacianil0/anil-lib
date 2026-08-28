@@ -141,7 +141,7 @@ function DashboardContent({ articles, seriesArticles, seriesTitle, seriesSubtitl
             <div>
               <p className="mb-2 flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.22em] text-cool">
                 <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-                Yeni seri · 100 makale
+                Öğrenme serisi · Yaşayan yol haritası
               </p>
               <h2 id="series-entry-title" className="font-serif text-2xl font-semibold sm:text-3xl">
                 {seriesTitle}

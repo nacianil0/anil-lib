@@ -1667,6 +1667,57 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-26T21:54:38.665Z"
+    },
+    {
+      "id": "bug-100",
+      "timestamp": "2026-08-28T18:15:27+03:00",
+      "error_message": "Prompt verification commands failed during construction: PowerShell 'Missing ) in method call', 'An empty pipe element is not allowed', and rg Windows wildcard os error 123",
+      "file": "verification commands (PowerShell/rg)",
+      "root_cause": "The ad-hoc checks used typographic apostrophes inside PowerShell single-quoted strings, piped directly from a foreach statement, and passed a Windows-unexpanded boun/*.md glob to ripgrep.",
+      "fix": "Used ASCII-safe substring assertions, assigned foreach output before piping, and passed the boun directory to rg; every corrected verification command completed with exit code 0.",
+      "tags": [
+        "verification",
+        "powershell",
+        "quoting",
+        "ripgrep",
+        "windows"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-28T18:15:27+03:00"
+    },
+    {
+      "id": "bug-101",
+      "timestamp": "2026-08-28T15:44:58.321Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/content/series.ts",
+      "root_cause": "Had \"Sıfırdan ileri seviyeye, 100 adımlık öğrenme yolc",
+      "fix": "Changed to \"Sıfırdan başlayıp araştırmacı ve mühendis derinli",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T15:44:58.321Z"
+    },
+    {
+      "id": "bug-102",
+      "timestamp": "2026-08-28T18:55:00Z",
+      "error_message": "Statik dogrulama kapisi (yasakli aktif hukum regex taramasi) SOZLESME.md degisiklik notundaki ve non-normative kuralindaki birebir alintilari aktif hukum sanip FAIL verdi; dosya 3 kez duzenlendi",
+      "file": "docs/seri/SOZLESME.md",
+      "root_cause": "Kaldirilan eski kurallar degisiklik notunda ve tarihsel-kural maddesinde birebir alintilanmisti; kaba regex taramasi alinti ile aktif hukmu ayirt edemez",
+      "fix": "Alintilar notr ifadeyle yeniden yazildi (eski sabit ritim / sabit kapsam gibi), boylece kati regex kapisi yesil kaldi ve dokuman anlami korundu",
+      "tags": [
+        "verification",
+        "living-state",
+        "regex-gate",
+        "docs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T18:55:00Z"
     }
   ]
 }

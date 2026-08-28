@@ -40,7 +40,8 @@ const SERIES_CATALOG_PATH = path.join(SERIES_DIR, "catalog.json");
 
 export const SERIES_BASE_PATH = "/seri";
 export const SERIES_TITLE = "Sıfırdan Yüze: Yapay Zekâ";
-export const SERIES_SUBTITLE = "Sıfırdan ileri seviyeye, 100 adımlık öğrenme yolculuğu.";
+export const SERIES_SUBTITLE =
+  "Sıfırdan başlayıp araştırmacı ve mühendis derinliğine uzanan yaşayan öğrenme yolculuğu.";
 
 let cached: Catalog | null = null;
 

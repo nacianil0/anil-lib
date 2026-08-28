@@ -1,36 +1,44 @@
 # "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi
 
-> **Bu dosya serinin değişmez referans sözleşmesidir.** 1'den 100'e kadar her makale, her batch
-> ve her handoff bu kurallara bağlıdır. Yeni bir oturum seriye devam etmeden önce bu dosyayı,
-> `docs/seri/HANDOFF.md`'yi ve son "next batch preparation" kaydını okumak **zorundadır**.
-> Sözleşme ancak kullanıcının açık talebiyle değiştirilebilir; değişiklik yapılırsa sonuna
-> tarihli bir değişiklik notu eklenir ve mevcut makalelerle çelişki oluşturulmaz.
+> **Bu dosya serinin kalıcı normatif sözleşmesidir.** Yayımlanmış ve yayımlanacak her makale,
+> her üretim run'ı ve her handoff bu kurallara bağlıdır. Yeni bir oturum seriye devam etmeden
+> önce bu dosyayı, `docs/seri/HANDOFF.md`'yi ve yol haritasının ilgili bölümlerini okumak
+> **zorundadır**. Sözleşme ancak kullanıcının açık talebiyle değiştirilebilir; değişiklik
+> yapılırsa sonuna tarihli bir değişiklik notu eklenir ve mevcut makalelerle çelişki oluşturulmaz.
 
-Sürüm: 1.0 · Oluşturma: 2026-08-25 · Kapsam: Makale 1–100
+Sürüm: 2.0 · Oluşturma: 2026-08-25 · Son revizyon: 2026-08-28 · Kapsam: serinin bütün yaşam döngüsü
 
 ---
 
 ## 1. Seri kimliği ve teknik sözleşme
 
-- Seri adı: **Sıfırdan Yüze: Yapay Zekâ**. Rota: `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu).
+- Seri adı: **Sıfırdan Yüze: Yapay Zekâ**. "Sıfırdan Yüze" bir marka adıdır, makale sayısı
+  taahhüdü değildir; serinin uzunluğu yol haritasındaki bilgi grafından doğar.
+- Rota: `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu).
 - İçerik: `content/series/articles/<kategori>/<slug>.md` · Katalog: `content/series/catalog.json` ·
   Diyagram: `content/series/assets/<slug>/*.svg` · UI yol haritası: `content/series/roadmap.json`.
 - Frontmatter ve katalog şeması mevcut kütüphaneyle aynı şekildedir (article_id `article_<uuid>`,
   kebab-case slug, kategori, level, reading_order, summary, tags, content_hash `sha256:<hex>`
   = makale gövdesinin (frontmatter sonrası, trim edilmiş) UTF-8 SHA-256'sı, classification_version 1,
   classification_batch).
-- `classification_batch` = üretim batch'i: Batch 0 → makale 1–5, Batch 1 → 6–10, … Batch 19 → 96–100.
+- `classification_batch` = üretim kohortu: her başarılı üretim run'ı, makale sayısından bağımsız
+  olarak bir sonraki kesintisiz batch numarasını alır. Batch 0 → makale 1–5 ve Batch 1 → 6–10
+  tarihsel gerçektir; "Batch k daima beş makaledir" gibi bir aralık formülü **yoktur**.
   `reading_order` seri içinde 1'den kesintisiz artar. Bir makale yayımlandıktan sonra id, slug ve
   reading_order **asla değişmez**.
 - Kategoriler mevcut kontrollü sözlüktür: `foundations`, `models-and-training`,
   `reasoning-and-memory`, `agents-and-retrieval`, `safety-and-evaluation`,
-  `multimodal-and-future`, `case-studies`. Level: `beginner` (1–35 civarı), `intermediate`
-  (36–70 civarı), `advanced` (71–100 civarı); sınırlar makale bazında pedagojiye göre esner.
+  `multimodal-and-future`, `case-studies`. Level (`beginner`/`intermediate`/`advanced`) makale
+  bazında pedagojiye göre verilir; genel eğilim faz yapısını izler (giriş fazları beginner,
+  orta fazlar intermediate, matematiksel omurga ve sonrası advanced) fakat sabit numara aralığına
+  bağlanmaz.
 - Ham HTML markdown'da düşürülür; **asla ham HTML yazma**. Görseller için yalnızca
   `![alt](assets/dosya.svg "Şekil N — başlık")` sözdizimi (bkz. §6).
 - Yayın öncesi her batch için zorunlu kapılar: `corepack pnpm typecheck`, `corepack pnpm test`,
   `corepack pnpm build` + dev server'da gerçek render (mobil/desktop; light/dark/sepia temalar;
   konsol hatasız). `catalog.json` ↔ frontmatter alanları birebir eşleşmek zorundadır (build doğrular).
+  İçerik denetleyicileri: `node tools/series/check-series-content.cjs`,
+  `node tools/series/check-series-svg.cjs`, `node tools/series/sync-series-hashes.cjs`.
 
 ## 2. Editoryal kurallar
 
@@ -58,6 +66,10 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
 - **Prerequisite zinciri:** Her makale, yol haritasında listelenen önkoşul makalelerin kavramlarına
   dayanır ve **yeni bir kavramı ancak önkoşulları kurulmuşsa** kullanır. Bir kavram henüz
   anlatılmadıysa ismi telaffuz edilip "ileride" işareti konur (progressive disclosure).
+- **Bilinçli formalizasyon:** Erken makalelerde sezgiyle kurulan kavramlar, ileri fazlarda
+  "önce sezgisel gördük, şimdi formal kuruyoruz" köprüsüyle matematiksel/biçimsel düzeyde
+  yeniden kurulur. Bu bilinçli yeniden kurulum tekrar sayılmaz; hangi kavramın nerede
+  derinleşeceği YOL-HARITASI'nda izlenir.
 - **Bilinçli yeniden çağırma (spaced repetition):** Önceki makalelerin kritik kavramları sonraki
   makalelerde artan aralıklarla yeniden kullanılır. Okuyucunun unutmuş olabileceği varsayılır:
   kritik kavram geri çağrılırken 1–3 cümlelik mini yeniden kurulum yapılır ve ilk anlatıldığı
@@ -85,8 +97,9 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
 - **Scaffolding ve fade schedule:** Yeni kavram eski kavramların üzerine açıkça bindirilir; iskele
   (tam adım adım örnek, analoji-önce anlatım, terim yeniden tanımı) serinin başında yoğundur ve
   seri ilerledikçe **bilinçli olarak azaltılır** (expertise reversal — Kalyuga ve ark. 2003:
-  acemiye yardım eden destek, uzmanlaşan okuyucuya yük olur). 1–35 arası tam iskele, 36–70 arası
-  seçici iskele, 71–100 arası yalnızca yeni kavramlarda iskele.
+  acemiye yardım eden destek, uzmanlaşan okuyucuya yük olur). Giriş fazlarında tam iskele, orta
+  fazlarda seçici iskele, ileri fazlarda (matematiksel omurga ve sonrası) yalnızca yeni
+  kavramlarda iskele.
 - **Analoji disiplini (concreteness fading):** Her analoji sınırıyla birlikte verilir ("bu benzetme
   şurada bozulur: …") ve **mutlaka biçimsel karşılığına bağlanır** ("bu benzetmenin gerçek nesnesi
   şudur: …") — somutta başlayıp soyuta açıkça köprülenmeyen analoji yarım bırakılmış sayılır
@@ -120,8 +133,13 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
   kavramların üzerine bineceğini 2–4 cümleyle hatırlatır ve bu makalenin sorusunu netleştirir.
 - **İleri köprü:** "### Sırada ne var" bölümü bir sonraki makalenin sorusunu merak uyandıracak ama
   spoiler vermeyecek şekilde kurar.
-- **Batch içi bütünlük + batch'ler arası bağ:** Her 5'li batch kendi içinde tutarlı bir mini-yay
+- **Batch içi bütünlük + batch'ler arası bağ:** Her batch kendi içinde tutarlı bir mini-yay
   oluşturur; ilk makalesi önceki batch'in özetine, son makalesi sonraki batch'in sorusuna bağlanır.
+- **Numaralı ileri vaat disiplini:** Metin içinde "N. makalede ele alacağız" biçiminde numaralı söz
+  vermek bağlayıcıdır: yayımlanmış bir makalenin verdiği numaralı vaat, yol haritasında o numarada
+  karşılanmak zorundadır (vaat defteri: YOL-HARITASI §Yayımlanmış vaatler). Yeni makalelerde
+  numaralı vaat yalnızca gerçekten gerekliyse ve yol haritasının sağlam bölgesine verilir;
+  konu yeterince yakınsa numarasız ("ileride") işaret tercih edilir.
 - Makaleler arası bağlantı verilecekse rota `/seri/<slug>` biçimindedir (mutlak, site içi).
   Mevcut kütüphane makalelerine bağlantı verilmez (seri kendi başına anlaşılır olmalı).
 
@@ -139,52 +157,78 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
   (light/dark/sepia üç temada da okunaklı olmak zorunda). Yazı tipi belirtilmez (CSS devralır).
 - SVG'de `script`, `foreignObject`, olay öznitelikleri (`on*`) yasak (pipeline zaten düşürür).
   `viewBox` zorunlu; genişlik ~640–760 birim; metin boyutu ≥13 birim; mobilde okunaklılık
-  dev server'da doğrulanır.
+  dev server'da doğrulanır. Marker/defs id'leri sayfa genelinde benzersizdir (pipeline id'leri
+  yeniden yazmaz).
 - Diyagram etiketleri Türkçedir ve metindeki terimlerle birebir aynıdır.
 - Çoklu ortam ilkeleri (Mayer & Fiorella 2014): **tutarlılık** — dekoratif öğe yok (d=0.86);
   **işaretleme** — yalnızca önemli olan yol vurgulanır, her şeyi vurgulamak hiçbir şeyi
   vurgulamamaktır (d=0.41); **uzamsal yakınlık** — etiketler şeklin üzerinde/içinde durur,
   ayrı lejant kullanılmaz ve şekil, metinde onu açıklayan paragrafın hemen yanına konur (d≈0.7+).
 
-## 7. 5+1 çalışma ritmi (değişmez)
+## 7. Üretim ritmi — kanonik batch sözleşmesi
 
-- İçerik üretimi **her zaman 5'li batch** halindedir: bir görevde yalnızca sıradaki 5 makale yazılır.
-  Bir batch tamamlanmadan sonrakine geçilmez; tek seferde 5'ten fazla makale yazılmaz.
-- **+1 hazırlık işi:** 5 makale tamamlanıp doğrulandıktan hemen sonra, aynı görev içinde
-  `docs/seri/HANDOFF.md`'ye bir **"Next batch preparation"** kaydı yazılır: sonraki 5 makalenin
-  (a) pedagojik hedefleri, (b) prerequisite ilişkileri, (c) yeniden çağrılacak eski kavramlar ve
-  planlanan hatırlatmalar, (d) araştırılması gereken güncel akademik alanlar, (e) olası
-  görselleştirme ihtiyaçları. **Sonraki 5 makale o görevde yazılmaz.**
-- Yeni oturum akışı: (1) bu sözleşmeyi oku, (2) HANDOFF.md'yi ve son hazırlık kaydını oku,
-  (3) YOL-HARITASI'ndan ilgili batch'in öğrenme notlarını oku, (4) araştırma → yazım → inceleme →
-  entegrasyon → doğrulama → yeni handoff + yeni hazırlık kaydı.
-- Bu ritim, zincirleme atıf yapısı ve sözleşmeye bağlılık **100. makaleye kadar her handoff'a
-  aynen miras bırakılır**; her HANDOFF.md sürümü bu maddeyi açıkça tekrarlar.
+Bu bölüm, serinin üretim ritminin **tek kalıcı tanımıdır**. HANDOFF ve trigger bu semantiği
+yeniden anlatmaz; yalnızca buraya referans verir.
 
-## 8. Handoff ve kalıcı öğrenme notları
+- **Varsayılan ritim `BATCH=5+1`'dir:** bir üretim run'ında sıradaki 5 yayımlanmamış makale
+  üretilir, ardından tek bir hazırlık/state-geçiş fazı yapılır.
+- **Override yalnızca exact assignment ile olur:** geçerli tek biçim `BATCH=N+1` satırıdır
+  (regex: `^BATCH=([1-9][0-9]*)\+1$`). Çözüm önceliği: (1) kullanıcının mevcut mesajındaki en
+  güncel geçerli assignment, (2) çalıştırılan trigger'daki tek assignment, (3) güvenli fallback
+  `5+1`. Düz yazıdaki "2 makale" gibi ifadeler, roadmap sıra numaraları veya tarihsel batch
+  adları override **değildir**. Güncel bir kullanıcı assignment'ı yalnızca o run'ı etkiler;
+  kalıcı varsayılanı değiştirmez.
+- **`N`:** bu run içinde sırada bulunan tam olarak kaç yayımlanmamış makalenin araştırılıp
+  yazılacağını, repoya entegre edilip doğrulama kapılarından geçirileceğini söyler. Roadmap'te
+  kalan makale sayısı `N`'den azsa doldurma konusu icat edilmez; kalan gerçek makaleler
+  tamamlanır ve `+1` fazında seri tamamlanmış/yeniden planlama gerektirir state'ine geçirilir.
+- **`+1`:** bir makale değil, `N` makalenin entegrasyonu ve doğrulaması bittikten sonra yapılan
+  **tek hazırlık/state-geçiş fazıdır**: HANDOFF cursor'ı ve bir sonraki güvenli başlangıç,
+  yol haritasındaki durum/prerequisite/tekrar kayıtları, açık borçlar ve sıradaki run için
+  bounded hazırlık notu güncellenir; çapraz state tutarlılığı doğrulanır. `+1` sırasında sonraki
+  makalenin gövdesi yazılmaz. `N` tamamlanmadan gerçek bir dış engel oluşursa `+1` yapılmış gibi
+  gösterilmez; mevcut state ve engel dürüstçe kaydedilir.
+- **Kohort numarası:** her başarılı run, makale sayısından bağımsız olarak bir sonraki kesintisiz
+  `classification_batch` değerini alır (bkz. §1).
+- Batch büyüklüğü değişse de akademik kalite, prerequisite zinciri, kaynak doğrulaması, görsel
+  standardı, entegrasyon ve doğrulama kapıları düşürülemez.
 
-- `docs/seri/HANDOFF.md` yaşayan devir dosyasıdır: seri durumu, tamamlanan makaleler, sıradaki batch,
-  önemli editoryal/teknik kararlar, son hazırlık kaydı. Her batch sonunda güncellenir.
-- `docs/seri/YOL-HARITASI.md` kalıcı öğrenme defteridir: 100 makalelik omurga, makale-başına odak,
-  **prerequisite grafı** (hangi makale hangilerine dayanır), **kavram-tekrar defteri** (hangi kavram
-  hangi makalelerde yeniden çağrılacak), terim defteri. Batch tamamlandıkça gerçekleşen tekrarlar
-  işaretlenir, gelecek tekrarlar planlanır.
-- `content/series/roadmap.json` UI'nin gösterdiği listedir; bir batch yayına girdiğinde ilgili
-  kayıtların `status` değeri `yayinda` yapılır ve `slug` eklenir. YOL-HARITASI ile başlık düzeyinde
-  senkron tutulmak zorundadır (başlık değişirse ikisi birden güncellenir).
-- Roadmap'teki 6–100 başlıkları **taslaktır**; batch hazırlığında pedagojik gerekçeyle
-  değiştirilebilir (yayımlanmış makaleler asla).
+## 8. Yaşayan state sahipliği
+
+Sorumluluklar domain bazlıdır; çelişki kabul edilmez ve şu sırayla çözülür:
+
+1. **Yayımlanmış gerçek:** makale dosyaları + frontmatter + `catalog.json` ve doğrulanan
+   route/id/hash bilgileri. Geçmiş hakkında en yüksek otoritedir; hiçbir plan dosyası onu
+   geçersiz kılamaz.
+2. **Bu sözleşme (`SOZLESME.md`):** uzun ömürlü normatif kurallar, kalite kapıları, üretim
+   ritmi (§7) ve state sahipliği. Yalnızca policy değişince güncellenir.
+3. **`YOL-HARITASI.md` + `content/series/roadmap.json`:** yayımlanmamış plan, fazlar,
+   prerequisite grafı, kavram-tekrar defteri, terim defteri, yayımlanmış vaat defteri ve doğal
+   kapsam. `roadmap.json` bunun UI'ye senkron izdüşümüdür; başlık düzeyinde birlikte güncellenir.
+   Yayımlanmamış başlıklar taslaktır ve batch hazırlığında pedagojik gerekçeyle değiştirilebilir
+   (yayımlanmış makaleler ve yayımlanmış numaralı vaatler asla).
+4. **`HANDOFF.md`:** yalnızca güncel operasyonel state: cursor (yayımlanan son makale, sıradaki
+   güvenli başlangıç), açık borçlar, bilinen önceden-var sorunlar ve sıradaki run hazırlığı.
+   Kalıcı kural veya roadmap kopyalamaz; sahiplerine referans verir. HANDOFF, sözleşmeyi veya
+   yol haritasını override edemez.
+5. **`TRIGGER.md`:** state değildir. Yalnızca HANDOFF'u işaret eder, o run'ın `BATCH`
+   assignment'ını taşır ve yürütmeyi başlatır.
+
+Tarihsel üretim günlükleri tutulabilir fakat açıkça **non-normative history** olarak işaretlenir;
+v2.0 öncesinin sabit kapsam (100 makale), sabit batch ritmi, handoff'lara kural kopyalama veya
+belirli bir agent/model mimarisini zorunlu kılan hükümleri aktif komut olarak okunamaz.
 
 ## 9. Üretim süreci kuralları
 
 - Araştırma, kaynak doğrulama, eleştirel inceleme ve zincir tutarlılık kontrolü ayrıştırılabilir
-  işlerdir ve subagent'lara dağıtılabilir; **kritik kararlar, sentez, çelişki çözümü ve son kabul
-  ana agent'tadır**. Güçlü model erişimi varsa araştırma/doğrulama/final inceleme işleri en güçlü
-  Opus sınıfı modele verilir.
-- Her makale yayına girmeden: (a) iddia-kaynak eşleşmesi adversarial kontrol edilir,
-  (b) zincir tutarlılığı (terimler, köprüler, tekrar planı) denetlenir, (c) diyagramlar üç temada
-  gerçek render'da görülür.
-- Bir inceleme bulgusunda çelişki varsa karar ana agent'ındır ve gerekçesi HANDOFF'a not edilir.
+  işlerdir; **kritik kararlar, sentez, çelişki çözümü ve son kabul her zaman run'ı çalıştıran ana
+  oturumdadır.** Yardımcı agent/araç kullanımı, o oturumun platform kurallarına ve kullanıcı
+  talimatlarına tabidir; bu sözleşme belirli bir model, model sürümü, paralel reviewer düzeni
+  veya harness zorunlu kılmaz ve repo dışındaki geçici çalışma alanlarına bağımlılık kuramaz.
+- Her makale yayına girmeden: (a) iddia-kaynak eşleşmesi bağımsız/eleştirel biçimde kontrol edilir,
+  (b) zincir tutarlılığı (terimler, köprüler, tekrar planı, numaralı vaatler) denetlenir,
+  (c) diyagramlar üç temada gerçek render'da görülür.
+- Bir inceleme bulgusunda çelişki varsa karar ana oturumundur ve gerekçesi HANDOFF'a not edilir.
 
 ## 10. Pedagoji kaynakları (sözleşmenin dayanağı)
 
@@ -211,3 +255,17 @@ paket: Batch 0 araştırma kayıtları, `06-pedagoji`):
   akıcılık yanılsaması: Soderstrom & Bjork 2015.
 - Somuttan soyuta köprü: Fyfe ve ark. 2014. Uzman kör noktası: Nathan, Koedinger & Alibali 2001.
 - Öğrenme stilleri miti reddi: Pashler ve ark. 2008 (seri asla "görsel öğrenen" vaadi vermez).
+
+---
+
+## Değişiklik notları
+
+- **2026-08-28 (v2.0, kullanıcının açık talebiyle — Fable 5 master kurulum görevi):**
+  (a) "1–100" kapsam taahhüdü kaldırıldı; seri uzunluğu bilgi grafından doğar, "Sıfırdan Yüze"
+  marka adıdır. (b) §7'deki eski sabit ritim ve miras-kopyalama hükümleri, kanonik
+  `5+1 varsayılan / exact BATCH=N+1 override` semantiğiyle değiştirildi; `classification_batch`
+  sabit aralık formülünden ardışık run kohortuna çevrildi. (c) §8 yaşayan state sahipliği
+  hiyerarşisi ve non-normative history kuralı eklendi. (d) §9'daki belirli model/subagent düzeni
+  zorunluluğu kaldırıldı; kalite kapıları korundu. (e) §3'e bilinçli formalizasyon ilkesi, §5'e
+  numaralı ileri vaat disiplini eklendi. (f) Level ve iskele bantları sabit numara aralıklarından
+  faz-göreli tanımlara çevrildi. Yayımlanmış 1–10 makale bu revizyondan etkilenmez.

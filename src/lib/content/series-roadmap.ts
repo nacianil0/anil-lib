@@ -5,7 +5,7 @@ import { formatZodError } from "./schema";
 import { loadSeriesCatalog } from "./series";
 
 /**
- * content/series/roadmap.json — UI'nin gösterdiği 100 başlıklık omurga.
+ * content/series/roadmap.json — UI'nin gösterdiği yaşayan omurga.
  * Pedagojik ayrıntı docs/seri/YOL-HARITASI.md'dedir; iki dosya başlık düzeyinde
  * senkron tutulur (docs/seri/SOZLESME.md §8).
  */

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "seriesTitle": "Sıfırdan Yüze: Yapay Zekâ",
-  "seriesSubtitle": "LLM çağını sıfırdan anlamak için 100 adımlık öğrenme yolculuğu.",
+  "seriesSubtitle": "Sıfırdan başlayıp araştırmacı ve mühendis derinliğine uzanan yaşayan öğrenme yolculuğu.",
   "phases": [
     {
       "id": "faz-01",
@@ -40,7 +40,7 @@
     {
       "id": "faz-03",
       "title": "Modelle Konuşmak: Inference, Prompt ve Bağlam",
-      "description": "Bağlam penceresinden üretim maliyetine: modeli kullanmanın mekaniği.",
+      "description": "Bağlam penceresinden yapılandırılmış çıktıya: modeli kullanmanın mekaniği ve ekonomisi.",
       "articles": [
         { "order": 21, "title": "Bağlam Penceresi: Prompt'un Anatomisi", "status": "planlandi" },
         { "order": 22, "title": "Prompt Mühendisliği: Kanıta Dayalı Bir Bakış", "status": "planlandi" },
@@ -57,15 +57,15 @@
     {
       "id": "faz-04",
       "title": "Akıl Yürütme: Reasoning ve Test-Time Compute",
-      "description": "Zincirleme düşünceden süreç denetimine: modeller nasıl \"düşünür\"?",
+      "description": "Zincirleme düşünceden pekiştirmeli öğrenmenin temellerine: modelin düşünme süresi.",
       "articles": [
         { "order": 31, "title": "Akıl Yürütme Nedir? LLM'lerde Reasoning Tartışması", "status": "planlandi" },
         { "order": 32, "title": "Zincirleme Düşünce: Chain-of-Thought", "status": "planlandi" },
         { "order": 33, "title": "Test-Time Compute: Düşünme Süresi Satın Almak", "status": "planlandi" },
-        { "order": 34, "title": "Reasoning Modelleri: Yeni Nesil", "status": "planlandi" },
+        { "order": 34, "title": "Reasoning Modelleri: Doğrulanabilir Ödülle Eğitim", "status": "planlandi" },
         { "order": 35, "title": "Doğrulama: Modelin Cevabını Kontrol Etmek", "status": "planlandi" },
         { "order": 36, "title": "Arama ve Planlama: Self-Consistency ve Ağaçlar", "status": "planlandi" },
-        { "order": 37, "title": "Matematik ve Kod: Reasoning'in Test Alanları", "status": "planlandi" },
+        { "order": 37, "title": "Pekiştirmeli Öğrenmenin Temelleri: MDP, Politika, Ödül", "status": "planlandi" },
         { "order": 38, "title": "Süreç Denetimi: Adım Adım Ödüllendirme", "status": "planlandi" },
         { "order": 39, "title": "Bellek: Sohbet İçinde ve Sohbetler Arasında", "status": "planlandi" },
         { "order": 40, "title": "Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık", "status": "planlandi" }
@@ -74,7 +74,7 @@
     {
       "id": "faz-05",
       "title": "Bilgiyle Bağlamak: Retrieval ve Araçlar",
-      "description": "RAG'den araç kullanımına: modeli dış dünyaya bağlamak.",
+      "description": "Parametrik bilginin sınırından araç ekosistemlerine: modeli dünyaya bağlamak.",
       "articles": [
         { "order": 41, "title": "Modelin Bilgisi Neden Yetmez? RAG'e Giriş", "status": "planlandi" },
         { "order": 42, "title": "Retrieval: Aramanın Modern Hali", "status": "planlandi" },
@@ -91,7 +91,7 @@
     {
       "id": "faz-06",
       "title": "Ajanlar: Araç Kullanan Modeller",
-      "description": "Kontrol döngüsü olarak LLM: planlayan, eyleyen, gözlemleyen sistemler.",
+      "description": "Plan-eylem-gözlem döngüsünden ajan güvenliğine ve ekonomisine.",
       "articles": [
         { "order": 51, "title": "Ajan Nedir? Kontrol Döngüsü Olarak LLM", "status": "planlandi" },
         { "order": 52, "title": "Ajan Mimarileri", "status": "planlandi" },
@@ -108,7 +108,7 @@
     {
       "id": "faz-07",
       "title": "Güvenlik ve Hizalama",
-      "description": "Hizalama sorunundan sorumlu ölçeklemeye: güçlü modelleri güvenli kılmak.",
+      "description": "Hizalama sorunundan sorumlu ölçeklemeye: modeli güvenli kılma çabası.",
       "articles": [
         { "order": 61, "title": "Hizalama Sorunu: Ne İstediğimizi Söylemek Zor", "status": "planlandi" },
         { "order": 62, "title": "Güvenlik Eğitimi: Reddetme, Sınırlar ve Dengeler", "status": "planlandi" },
@@ -125,7 +125,7 @@
     {
       "id": "faz-08",
       "title": "Değerlendirme ve Yorumlanabilirlik",
-      "description": "Ölçme bilimi ve modelin içine bakma sanatı.",
+      "description": "Benchmark'lara güven krizinden modelin içini okumaya.",
       "articles": [
         { "order": 71, "title": "Değerlendirme Bilimi: Benchmark'ların Ötesi", "status": "planlandi" },
         { "order": 72, "title": "Kirlilik ve Ezber: Benchmark'lara Güven Krizi", "status": "planlandi" },
@@ -142,7 +142,7 @@
     {
       "id": "faz-09",
       "title": "Çoklu Modalite ve Verimlilik",
-      "description": "Metnin ötesine geçen ve daha azla daha çok yapan modeller.",
+      "description": "Görüntüden sese, MoE'den alternatif mimarilere: modelin sınırlarını genişletmek.",
       "articles": [
         { "order": 81, "title": "Görüntüyü Anlamak: Vision-Language Modelleri", "status": "planlandi" },
         { "order": 82, "title": "Ses, Konuşma ve Gerçek Zamanlı Modeller", "status": "planlandi" },
@@ -152,25 +152,71 @@
         { "order": 86, "title": "Attention'ın Ötesi: SSM ve Alternatif Mimariler", "status": "planlandi" },
         { "order": 87, "title": "Küçük ama Güçlü: Damıtma ve Küçük Modeller", "status": "planlandi" },
         { "order": 88, "title": "Uçta Yapay Zekâ: Telefonda ve Cihazda LLM", "status": "planlandi" },
-        { "order": 89, "title": "Donanım: GPU'dan Özel Çiplere", "status": "planlandi" },
+        { "order": 89, "title": "Donanım Ekosistemi: GPU'dan Özel Çiplere", "status": "planlandi" },
         { "order": 90, "title": "Enerji, Maliyet ve Çevresel Ayak İzi", "status": "planlandi" }
       ]
     },
     {
       "id": "faz-10",
+      "title": "Matematiksel Omurga: Sezgiden İspata",
+      "description": "Erken makalelerde sezgiyle kurulan kavramların bilinçli formalizasyonu.",
+      "articles": [
+        { "order": 91, "title": "Vektörler ve Matrisler: Embedding'in Matematiği", "status": "planlandi" },
+        { "order": 92, "title": "Matrisin İçini Okumak: Rank, Özdeğer ve SVD", "status": "planlandi" },
+        { "order": 93, "title": "Olasılığın Dili: Dağılımlar, Beklenti ve MLE", "status": "planlandi" },
+        { "order": 94, "title": "Bilgi Kuramı: Entropi, Çapraz Entropi ve KL", "status": "planlandi" },
+        { "order": 95, "title": "Optimizasyonun Kuramı: Gradyanın Matematiği", "status": "planlandi" },
+        { "order": 96, "title": "Genelleme Kuramı: Ezber ile Öğrenme Arasında", "status": "planlandi" },
+        { "order": 97, "title": "Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-11",
+      "title": "Araştırma Pratiği: Kanıtla Düşünmek",
+      "description": "Paper okumaktan deney tasarımına ve ölçüm disiplinine: araştırmacı formasyonu.",
+      "articles": [
+        { "order": 98, "title": "Paper Nasıl Okunur: İddia, Kanıt ve Hakemlik", "status": "planlandi" },
+        { "order": 99, "title": "Araştırma Sorusu ve Deney Tasarımı: Hipotez, Baseline, Ablation", "status": "planlandi" },
+        { "order": 100, "title": "Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi", "status": "planlandi" },
+        { "order": 101, "title": "Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi", "status": "planlandi" },
+        { "order": 102, "title": "Tekrarlanabilirlik: Reproducibility, Negatif Sonuç ve Açık Bilim", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-12",
+      "title": "Temelden Kurmak: Modeli Elle İnşa Etmek",
+      "description": "Mikro ölçekte Transformer, eğitim döngüsü ve asistan: kurarak anlamak.",
+      "articles": [
+        { "order": 103, "title": "Mikro-GPT: Bir Transformer'ı Elle Kurmak", "status": "planlandi" },
+        { "order": 104, "title": "Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü", "status": "planlandi" },
+        { "order": 105, "title": "Kendi Asistanın: Küçük Ölçekte SFT ve DPO", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-13",
+      "title": "Eğitim Sistemleri Mühendisliği",
+      "description": "GPU zihinsel modelinden dağıtık eğitime: büyük koşuların gerçek maliyet yapısı.",
+      "articles": [
+        { "order": 106, "title": "GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği", "status": "planlandi" },
+        { "order": 107, "title": "Dağıtık Eğitim: Paralellik Stratejileri", "status": "planlandi" },
+        { "order": 108, "title": "Performans Mühendisliği: Attention'ı Hızlandırmak", "status": "planlandi" },
+        { "order": 109, "title": "Koşunun Güvenilirliği: Checkpoint, Spike ve Gözlem", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-14",
       "title": "Sınır ve Sentez",
       "description": "Dünya modellerinden AGI tartışmasına: alanın sınırı ve serinin sentezi.",
       "articles": [
-        { "order": 91, "title": "Dünya Modelleri: Metnin Ötesinde Anlamak", "status": "planlandi" },
-        { "order": 92, "title": "Robotik ve Somutlaşmış Yapay Zekâ", "status": "planlandi" },
-        { "order": 93, "title": "Sürekli Öğrenme: Model Nasıl Güncel Kalır?", "status": "planlandi" },
-        { "order": 94, "title": "Kişiselleştirme ve Uzun Süreli Bellek", "status": "planlandi" },
-        { "order": 95, "title": "Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM", "status": "planlandi" },
-        { "order": 96, "title": "Vaka İncelemesi: Bir Frontier Model Nasıl Yapılır?", "status": "planlandi" },
-        { "order": 97, "title": "Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?", "status": "planlandi" },
-        { "order": 98, "title": "Açık Sorular: Alanın Bilmedikleri", "status": "planlandi" },
-        { "order": 99, "title": "AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri", "status": "planlandi" },
-        { "order": 100, "title": "Yüzüncü Adım: Haritayı Yeniden Çizmek", "status": "planlandi" }
+        { "order": 110, "title": "Dünya Modelleri: Metnin Ötesinde Anlamak", "status": "planlandi" },
+        { "order": 111, "title": "Robotik ve Somutlaşmış Yapay Zekâ", "status": "planlandi" },
+        { "order": 112, "title": "Sürekli Öğrenme ve Kişiselleştirme", "status": "planlandi" },
+        { "order": 113, "title": "Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM", "status": "planlandi" },
+        { "order": 114, "title": "Vaka İncelemesi: Bir Frontier Model Nasıl Yapılır?", "status": "planlandi" },
+        { "order": 115, "title": "Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?", "status": "planlandi" },
+        { "order": 116, "title": "Açık Sorular: Alanın Bilmedikleri", "status": "planlandi" },
+        { "order": 117, "title": "AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri", "status": "planlandi" },
+        { "order": 118, "title": "Son Adım: Haritayı Yeniden Çizmek", "status": "planlandi" }
       ]
     }
   ]

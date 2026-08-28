@@ -781,7 +781,53 @@ D:\dev\anil-lib-seri-batch1-state\review\ altında.
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 
+## Session: 2026-08-28 12:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 12:33 | Fable prompt audit bağlamı ve zorunlu skill/OpenWolf kuralları yüklendi; başlangıç Git durumu doğrulandı | `.wolf/*`, Downloads audit brief, `boun/*` | Repo temiz; üç hedef prompt bulundu; karar kapıları kullanıcı talimatıyla uzlaştırıldı | ~6000 |
+| 15:40 | Prompt mimarisi, repo invariantları ve güncel resmî Boğaziçi/Claude iddiaları üç odaklı salt-okunur audit ile doğrulandı | `boun/*`, `docs/seri/*`, series consumers, official web sources | Tek-agent/helper çelişkisi, state ownership drift'i, fixed-five cohort ve model-guarantee riskleri kanıtlandı | ~18000 |
+| 17:45 | Üç prompt artifact'ı source-of-truth sorumluluklarına göre normalize edildi | `boun/*.md` | Master scope/kabul, ek goal exact N+1/helper/state, chat eki non-normative launcher oldu; kapsam korundu | ~14000 |
+| 18:15 | Taze diff, semantic assertions, Prettier ve final bounded reviewer kontrolü çalıştırıldı | `boun/*.md`, `.wolf/*` | Static kapılar temiz; reviewer blocker bulmadı; yalnız OpenWolf metadata + üç prompt değişti | ~6000 |
+
 ## Session: 2026-08-27 15:09
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-08-28 18:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-28 18:19
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-28 18:20
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 18:37 | Created docs/seri/SOZLESME.md | — | ~5244 |
+| 18:41 | Created docs/seri/YOL-HARITASI.md | — | ~9710 |
+| 18:42 | Created content/series/roadmap.json | — | ~4563 |
+| 18:43 | Edited docs/seri/YOL-HARITASI.md | expanded (+24 lines) | ~556 |
+| 18:44 | Created docs/seri/HANDOFF.md | — | ~2036 |
+| 18:44 | Created docs/seri/TRIGGER.md | — | ~122 |
+| 18:44 | Created tools/series/entegre-batch.cjs | — | ~1811 |
+| 18:44 | Edited src/lib/content/series.ts | 1→2 lines | ~36 |
+| 18:44 | Edited src/components/dashboard/reader-dashboard.tsx | inline fix | ~16 |
+| 18:45 | Edited src/lib/content/series-roadmap.ts | inline fix | ~19 |
+| 18:46 | Created docs/seri-boun/ARASTIRMA.md | — | ~1351 |
+| 18:47 | Created docs/seri-boun/SOZLESME.md | — | ~2366 |
+| 18:48 | Created docs/seri-boun/YOL-HARITASI.md | — | ~2566 |
+| 18:49 | Created docs/seri-boun/HANDOFF.md | — | ~1036 |
+| 18:49 | Created docs/seri-boun/TRIGGER.md | — | ~140 |
+| 18:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/883cb5bb-ed11-4944-95dd-d2b9ffa4d5d2/scratchpad/final-checks.cjs | — | ~1311 |
+| 18:51 | Edited docs/seri/SOZLESME.md | 4→4 lines | ~89 |
+| 18:51 | Edited tools/README.md | 2→5 lines | ~102 |
+| 18:51 | Edited tools/README.md | expanded (+7 lines) | ~140 |
+| 18:52 | Edited docs/seri/SOZLESME.md | 3→3 lines | ~75 |
+| 19:00 | OTURUM OZETI: Fable5 master kurulum — AI serisi SOZLESME v2 (kanonik 5+1/N+1), YOL-HARITASI 118 baslik/14 faz + vaat defteri, HANDOFF inceltildi, TRIGGER eklendi; BOUN zinciri docs/seri-boun (5 dosya, 41 baslik/5 faz); entegre-batch.cjs; UI 100-sabitleri kaldirildi | docs/seri/*, docs/seri-boun/*, content/series/roadmap.json, tools/series/entegre-batch.cjs, src (3 dosya) | typecheck+167 test+build+render dogrulandi; 1-10 snapshot bit-duzeyi ayni | ~60k |
+| 18:56 | Session end: 20 writes across 12 files (SOZLESME.md, YOL-HARITASI.md, roadmap.json, HANDOFF.md, TRIGGER.md) | 12 reads | ~57151 tok |

@@ -1,275 +1,183 @@
-# Ek /goal — İki Seri İçin Kalıcı Tetikleyici, Varsayılan 5+1 Ritmi, Tek-Helper Politikası ve Fable 5 Ana-Agent Kuralı
+# Ek /goal — Kanonik Yürütme, `N+1`, Living-State ve Trigger Sözleşmesi
 
-/goal `fable5-master-ai-ve-bogazici-serileri-tek-agent-ana-prompt.md` içindeki ana hedefi ve kapsamı **daraltmadan** tamamla; bu ek talimat yalnızca çalışma modeli, gelecekteki seri üretim ritmi ve iki seri için bırakılacak kalıcı tetikleyici sözleşmesini netleştirir. Ana görev yine tek Fable 5 oturumunda mevcut AI serisinin geleceğini yeniden tasarlamak, ayrı Boğaziçi CmpE scientific interview serisini kurmak, gerekli kalıcı repo state’lerini oluşturmak ve iki seriyi sonraki yazım oturumlarına hazır teslim etmektir. Bu görevde makale gövdesi yazma.
+> **Kanonik rol:** Bu dosya yalnızca (1) ana oturum sahipliği, (2) helper/skill bütçesi, (3) araştırma ve review disiplini, (4) `BATCH=N+1` çözümü ve (5) living-state/trigger çalışma sözleşmesi için source of truth’tur. Kapsam, iki serinin amaçları, değişmez yayın sınırları ve final kabul ölçütleri master prompttadır. Bu dosya onları genişletemez veya daraltamaz.
 
-## 1. Amaç odaklı çalışma ve konu seçme özgürlüğü
+## 1. Tek ana oturum ve karar sahipliği
 
-Fable 5 bu görevin **ana düşünme, sentez, mimari karar ve final kabul agentıdır**. Promptta sayılan konu başlıklarını kapatılması gereken mekanik checklist olarak görme. Kullanıcının gerçek amacı, iki serinin de kendi öğrenme hedeflerine uygun, ciddi, okunmaya değer ve akademik olarak savunulabilir bir bilgi grafına sahip olmasıdır.
+Master görevi mevcut ana oturum tamamlar. Ana oturum:
 
-Bu nedenle Fable:
+- araştırma sentezi, mimari karar, çelişki çözümü, dosya değişiklikleri ve final kabulün sahibidir;
+- işi isteyerek ikinci bir ana chat’e, “faz 2” görevine veya başka modele handoff ederek bitmiş saymaz;
+- promptla kontrol edilemeyen bir platform kesintisi yoksa audit → karar → uygulama → doğrulama zincirini aynı oturumda kapatır.
 
-- seri uzunluğunu, doğal fazları, konu sırasını ve yayımlanmamış başlıkları araştırma sonucuna göre belirlemekte;
-- mevcut yayımlanmamış roadmap’teki konuları korumak, çıkarmak, birleştirmek, bölmek, taşımak veya yeni akademik konularla değiştirmekte;
-- gerekli matematiksel, teorik, sistemsel veya araştırma temellerini eklemekte;
-- gereksiz, düşük getirili veya başka yazıyla tekrar eden konuları elemekte;
-- kaynak setini, canonical paper/textbook/university material dengesini ve pedagojik köprüleri seçmekte
+“Fable 5” oturum/launcher seçimidir; prompt metni gerçek serving modeli garanti edemez. Platform safety fallback’i, model erişimi veya kuruluş politikası modeli değiştirebilir. Böyle bir geçişi bypass etmeye çalışma, modelin değişmediğini iddia etme veya aynı isteği güvenlik mekanizmasını aşmak için yeniden yazma. Oturum devam edebiliyorsa ana karar sahipliğini aynı konuşmada sürdür.
 
-özgürdür.
+Gelecekteki trigger’lar da belirli bir model sürümünü garanti etmez; çalıştırıldıkları ana oturumu sorumlu karar sahibi yapar.
 
-Bu özgürlük kapsamı keyfi büyütmek anlamına gelmez. Her önemli karar serinin amacı, prerequisite ilişkisi, öğrenme getirisi, güncel akademik gerçeklik ve mevcut yayımlanmış içerikle tutarlılık üzerinden gerekçelendirilsin.
+## 2. En fazla bir bounded helper
 
-AI serisinin hedefi, sıfırdan başlayan okuyucuyu zamanla ciddi AI akademik okuryazarlığına, araştırma pratiğine ve mühendislik düşüncesine taşımaktır. Boğaziçi serisinin hedefi ise CmpE scientific interview bağlamında temel CS/CmpE bilgisini, problem solving’i, formal reasoning’i ve oral technical reasoning’i yeniden kurmaktır. Bu iki amaç konu seçiminin ana filtresidir.
+Helper zorunlu değildir. Yalnızca belirgin bir kör noktayı ana oturumdan daha verimli kapatacaksa **tek bir helper kimliği ve tek bir bounded iş paketi** kullanılabilir.
 
-## 2. Deep research ve akademik kaynak standardı
+İzin verilen helper rolü:
 
-Her iki seri için de arka plandaki çalışma **deep research** niteliğinde olsun. Konuları yüzeysel web özeti veya popüler anlatı üzerinden seçme.
+- salt-okunur repo incelemesi;
+- güncel resmî/akademik kaynak bulma ve doğrulama;
+- sınırlı prerequisite, kapsam veya regresyon sanity-check’i;
+- ana oturumun verdiği somut soruya kanıtlı advisory rapor.
 
-Kaynak seçiminde görevin bağlamına göre:
+Helper:
 
-- resmi üniversite/bölüm kaynakları;
-- güncel ders katalogları ve syllabus/material;
-- canonical textbooks;
-- hakemli makaleler ve güçlü konferans çalışmaları;
-- önemli tarihsel/orijinal çalışmalar;
-- araştırma laboratuvarlarının resmi teknik yayınları;
-- güncel ve güvenilir araştırma programları
+- dosya yazmaz ve planı uygulamaz;
+- yeni helper, agent team, dynamic fan-out, workflow, batch review veya advisor çağırmaz;
+- nihai mimari ya da kabul kararı vermez;
+- bütün görevi yeniden audit etmez;
+- başarısız olursa yerine ikinci helper açılmaz; ana oturum eldeki kanıtla devam eder veya gerçek engeli bildirir.
 
-öncelikli olsun.
+Aynı helper’ı yalnızca ilk bounded iş paketini netleştiren kısa bir follow-up için resume etmek yeni helper sayılmaz; kapsamı yeni bir review turuna genişletme.
 
-AI serisinde konu mimarisini yalnızca güncel LLM trendlerine indirgeme; matematiksel/teorik temel, klasik AI/ML fikirleri, modern modeller, research practice, model building, RL/control/agents, interpretability, multimodality, AI systems, evaluation/safety ve açık araştırma problemleri doğal prerequisite grafında gerektiği ölçüde yer alabilsin.
+Harness izin veriyorsa helper’a yalnızca gereken read/search/web araçlarını ver; file-write ile agent/workflow oluşturma araçlarını engelle ve spawn depth’i `1` ile sınırla. Harness bunu teknik olarak zorlayamıyorsa davranışsal sınırı uygula ve bunun platform garantisi olduğunu iddia etme.
 
-BOUN serisinde güncel resmi Boğaziçi CmpE kaynakları en yüksek akademik otoritedir. Scientific Preparation derslerini kesin interview syllabus olarak kabul etme; güncel curriculum, course catalog, prerequisites, resmi ders materyalleri ve interview-readiness hedefiyle birlikte değerlendir. Informal öğrenci deneyimleri yalnızca yardımcı sinyal olabilir.
+Belirli bir helper modelini talep edebilirsin; gerçek model çözümü runtime’a aittir. İstenen model ikame edilirse bunu telafi etmek için ikinci helper açma.
 
-Kaynaklar arasında çelişki olduğunda Fable karar versin, freshness ve kaynak otoritesini açıkça hesaba katsın. Belirsizliği uydurarak kapatma.
+## 3. Skill ve araç kullanımı
 
-## 3. Pedagojik ve editoryal çizgi değişmez
+Kurulu skill’leri isim listesi tamamlamak için değil, doğrudan karar veya doğrulama kalitesi artırıyorsa kullan. Örnek yetenekler: tasarım seçeneklerini karşılaştırma, gerçek teknik hatayı teşhis etme, net değişikliği uygulama, handoff/state tasarlama ve tamamlanma kanıtı toplama.
 
-Mevcut AI `SOZLESME.md` içindeki güçlü pedagojik/editoryal ilkeleri yeniden tasarım sırasında kaybetme. Yeni BOUN sözleşmesi de aynı kalite seviyesinde, fakat kendi amacına göre uyarlanmış olsun.
+Şu sınırlar geçerlidir:
 
-Korunması gereken temel karakter:
+- Skill kendi başına yeni agent ağı veya tekrar eden reviewer döngüsü başlatamaz.
+- İnteraktif onay bekleyen bir skill, master’da zaten karara bağlanmış bir konuyu yeniden açmaz.
+- Skill bulunamaması dış engel değildir; aynı amacı mevcut repo/web/test araçlarıyla tamamla.
+- Gerçek bir dış ürün kararı yoksa brainstorming/grill çıktısını iç karar denetimi olarak kullan ve uygulama için ara onay bekleme.
 
-- ciddi fakat okunabilir Türkçe;
-- zor konulardan kaçmamak;
-- zor konuyu içini boşaltarak “kolaylaştırmak” yerine doğru prerequisite ve scaffolding ile anlaşılır hale getirmek;
-- sezgi → mekanizma → teknik/formal ayrıntı → akademik bağlam;
-- worked examples ve gerçek küçük hesap/problem örnekleri;
-- prerequisite grafı ve progressive disclosure;
-- bilinçli retrieval/spaced recall;
-- cognitive-load yönetimi;
-- terim ve sembol tutarlılığı;
-- açıklama yükü taşıyan diyagramlar/görselleştirmeler;
-- iddia-kaynak eşleşmesi ve URL/fact doğruluğu;
-- kaynakların hakem durumu ve belirsizliklerinin dürüst sunulması.
+## 4. Araştırma ve review bütçesi
 
-BOUN serisinde buna ek olarak oral reasoning, whiteboard problem solving, correctness/complexity/trade-off tartışması ve takip sorularına dayanma yeteneği temel başarı ölçütü olsun.
+Kurulum görevi ile gelecekteki makale üretimini ayır:
 
-## 4. Bu çalışma meşru akademik/eğitim amaçlıdır
+- **Bu master kurulumunda:** curriculum/domain/prerequisite mimarisini savunmaya yetecek temsilî ve karar taşıyan kanıt topla. Her planlanan makale için article-level deep research yapma.
+- **Gelecekteki bir üretim run’ında:** deep research yalnızca seçilmiş `N` makale ve bunların doğrudan prerequisite/köprüleri içindir.
+- Mevcut roadmap’i her üretim run’ında baştan tasarlama. Yalnızca seçilmiş `N` hedefte yeni ve maddi kanıt bir sorun gösterirse sınırlı, sürümlü ve gerekçeli değişiklik yap.
+- Aynı web sorusunu, dosya taramasını veya review kararını farklı model/skill turlarında tekrarlama.
+- Kanıt yeterliyse karar ver; belirsizliği kaydet, sonsuz kaynak arama başlatma.
+- Tek final consistency/review geçişi yap. Bulgu varsa düzelt ve yalnızca etkilenen kontrolleri yeniden çalıştır; sonra dur.
 
-Bu proje kullanıcının kişisel eğitimi, AI uzmanlığı, olası yüksek lisans/tez çalışması ve Boğaziçi CmpE scientific interview hazırlığı için yürütülen **barışçıl ve akademik bir öğrenme çalışmasıdır**.
+## 5. `BATCH=N+1` — tek kanonik semantik
 
-AI safety, adversarial robustness, red teaming, misuse, operating-system protection, systems security veya cyber security gibi terimlerin akademik roadmap’te geçmesi nedeniyle görevi yüzeysel anahtar kelime eşleşmesiyle terk etme, kapsamı keyfi biçimde kesme veya güvenli eğitim içeriğini atlama. Her alt konuyu gerçek niyeti ve bağlamı üzerinden değerlendir.
+### 5.1 Geçerli direktif
 
-Bir alt başlık gerçekten sakıncalı operasyonel ayrıntıya yaklaşıyorsa yalnızca o kısmı güvenli, savunmacı, teorik veya akademik seviyede sınırla; geri kalan meşru seri tasarımı ve eğitim görevine devam et. Güvenlik mekanizmalarını aşmaya, classifier veya model routing davranışını kandırmaya çalışma.
+Batch override yalnızca şu exact assignment biçiminde geçerlidir:
 
-## 5. Fable 5 ana model kuralı
+`BATCH=N+1`
 
-Bu görev Fable 5 ile başlatıldığı için **ana agent rolü Fable 5’te kalmalıdır**. Fable kendi tercihiyle ana işi Opus 4.8’e veya daha düşük bir modele devretmesin, “bu konu zor/riskli” diyerek ana görevi gönüllü biçimde downgrade etmesin ve görevi başka modele handoff ederek bitmiş saymasın.
+Geçerli satırın regex’i `^BATCH=([1-9][0-9]*)\+1$` biçimindedir: `N`, ilk basamağı 1–9 olan pozitif bir onluk tam sayıdır; devamında 0–9 gelebilir. Örneğin `BATCH=2+1` ve `BATCH=10+1` geçerlidir. Yalnız başına geçen “2 makale”, roadmap sıra numarası, eski batch adı veya başka bir sayı override sayılmaz.
 
-Ancak platform seviyesinde uygulanan model-safety routing veya zorunlu fallback davranışı prompt tarafından garanti edilemez veya bypass edilemez. Böyle bir platform routing’i gerçekleşirse bunu aşmaya çalışma veya yanıltıcı prompt mühendisliği kullanma. Bu ek kuralın anlamı şudur: **Fable’ın kontrol edebildiği model/agent kararlarında ana görev Fable 5’tedir; gönüllü Opus 4.8 downgrade yoktur.** Platformun zorunlu güvenlik politikasını değiştirmeye çalışma.
+Bir trigger dosyasında tam olarak bir assignment satırı bulunur ve dağıtılan varsayılan değer şudur:
 
-## 6. Workflow yok; en fazla bir Opus 5 subagent
+`BATCH=5+1`
 
-Master prompttaki “workflow yok” kuralı aynen devam eder:
+### 5.2 Çözüm önceliği
 
-- background workflow açma;
-- `/workflow` veya `/workflows` kullanma;
-- parallel agent swarm kurma;
-- konu başına agent açma;
-- reviewer zinciri kurma;
-- nested delegation kullanma;
-- helper’ın başka helper çağırmasına izin verme;
-- otomatik retry/subagent loop’u kurma.
+Bir üretim oturumu `N` değerini yalnızca şu sırayla çözer:
 
-Bunun tek istisnası şudur: Fable 5 gerçekten fayda görürse **aynı anda ve toplamda en fazla bir adet Opus 5 subagent** görevlendirebilir.
+1. Kullanıcının mevcut mesajındaki en son geçerli ve açık `BATCH=N+1` assignment’ı.
+2. Kullanıcı mesajında yoksa, çalıştırılan trigger’daki tek assignment.
+3. O da yok veya geçersizse güvenli fallback `BATCH=5+1`.
 
-Bu tek helper, örneğin:
+`SOZLESME`, roadmap, HANDOFF, historical batch kaydı, helper önerisi veya model tercihi bu run için başka `N` seçemez. En güncel açık kullanıcı assignment’ı yalnızca o üretim run’ını override eder; kalıcı varsayılanı değiştirmez.
 
-- geniş konu havuzunun bağımsız akademik sanity-check’i;
-- seçilen/elenen başlıkların doğrulanması;
-- kritik prerequisite veya roadmap çelişkilerinin kontrolü;
-- güncel web/akademik kaynak bulma ve source-validation;
-- Boğaziçi resmi kaynakları ile plan arasındaki uyum kontrolü;
-- AI serisindeki akademik kapsamın kör nokta taraması
+Bu master **kurulum** görevi bir production run değildir: `BATCH` değeri ne olursa olsun burada sıfır makale gövdesi yazılır.
 
-gibi sınırlı ve açık bir görev paketi alabilir.
+### 5.3 `N` ne demektir?
 
-Gerekirse aynı **tek** Opus 5 helper’a birden fazla ilişkili doğrulama alt görevi tek çağrıda ver; beş ayrı konuda beş agent açma. Helper araştırma/eleştiri sağlar, nihai seri mimarisi ve kabul kararı Fable 5’indir. Helper kendi subagent/workflow’unu açmamalıdır.
+`N`, yaşayan roadmap’te sırada bulunan, henüz yayımlanmamış **tam olarak kaç makalenin** bu run içinde:
 
-Bu bir zorunluluk değildir. Fable görevi tek başına doğru ve verimli tamamlayabiliyorsa helper çağırmasın.
+- gerekli article-level research’ünün yapılacağını;
+- yazılacağını;
+- repo’ya entegre edileceğini;
+- ilgili kapılardan geçirilip doğrulanacağını
 
-## 7. Skill kullanımı
+belirtir.
 
-Fable ve izin verilen tek Opus 5 helper, kurulu skill’leri görevin doğruluğunu anlamlı ölçüde artırdığı yerde kullanabilir.
+Roadmap’te kalan makale sayısı `N`’den azsa doldurma konusu icat etme; kalan gerçek makaleleri tamamla ve `+1` fazında seriyi tamamlanmış/yeniden planlama gerektirir state’ine geçir.
 
-Örneğin:
+Her başarılı production run, makale sayısından bağımsız olarak bir sonraki kesintisiz historical `classificationBatch`/cohort kimliğini alır. Mevcut Batch 0 ve Batch 1 metadata’sı korunur. “Batch 2 daima 11–15’tir” gibi beşli aralık formülü aktif kural değildir.
 
-- yeni seri/roadmap tasarımında brainstorming;
-- kritik karar belirsizliğinde uygun decision/grill yaklaşımı;
-- gerçek teknik hata veya regresyonda systematic-debugging;
-- uygulanacak net değişikliklerde planning/execution;
-- tamamlanma iddiasından önce verification;
-- kalıcı devir state’i oluştururken handoff yaklaşımı
+### 5.4 `+1` ne demektir?
 
-kullanılabilir.
+`+1` bir makale, helper veya tek dosya değildir. `N` makalenin entegrasyonu ve doğrulaması başarıyla bittikten sonra yapılan **tek preparation/state-transition fazıdır**.
 
-Ancak skill sırf mevcut olduğu için tetiklenmesin. Skill kullanımı yeni workflow/agent ağına dönüşmesin ve ana görevin önüne geçmesin.
+Bu faz, yalnızca gerektiği kadar:
 
-## 8. Üretim ritmi: varsayılan 5+1, kullanıcı override edebilir
+- HANDOFF’taki yayımlanmış cursor ve bir sonraki güvenli başlangıcı;
+- roadmap’teki durum, prerequisite ve recall kayıtlarını;
+- açık kaynak/editoryal/teknik borçları;
+- sıradaki run için bounded hazırlık notunu
 
-İki seri için de **varsayılan üretim ritmi `5+1`** olsun.
+günceller ve çapraz state tutarlılığını doğrular.
 
-Anlamı:
+`+1` sırasında sonraki makalenin gövdesi yazılmaz. Seride makale kalmadıysa yeni konu uydurmak yerine completion state’i kaydedilir. `N` tamamlanmadan gerçek bir dış engel oluşursa `+1` yapılmış gibi gösterme; mevcut state’i ve engeli dürüstçe kaydet.
 
-- `N+1` içindeki `N`, o üretim oturumunda sıradaki kaç makalenin eksiksiz yazılıp entegre edilip doğrulanacağını belirtir;
-- `+1`, aynı oturum sonunda bir sonraki üretim için tek bir hazırlık/devir işinin yapılmasıdır;
-- +1 sırasında sonraki makale batch’i yazılmaz.
+Batch büyüklüğü değişse de akademik kalite, prerequisite zinciri, kaynak doğrulaması, görsel standardı, entegrasyon ve doğrulama kapıları düşürülemez.
 
-Kullanıcı başka sayı belirtmezse **5+1** çalışır.
+### 5.5 Karar tablosu
 
-Kullanıcı açıkça örneğin:
+| Girdi | Çözülen run | Anlam |
+|---|---:|---|
+| Hiç assignment yok | `5+1` | Varsayılan beş makale, ardından bir preparation fazı |
+| Trigger: `BATCH=2+1` | `2+1` | İki makale, ardından bir preparation fazı |
+| Trigger: `BATCH=5+1`; current user: `BATCH=3+1` | `3+1` | En güncel açık kullanıcı assignment’ı kazanır |
+| Sadece “2 makale” ifadesi | `5+1` | Exact assignment olmadığı için override oluşmaz |
 
-- `1+1`
-- `2+1`
-- `3+1`
-- `5+1`
+Bu tablo semantiğin test oracle’ıdır; trigger dosyalarına kopyalanmaz.
 
-isterse o oturum yalnızca belirtilen `N` makaleyi üretir ve ardından +1 devir/hazırlık işini yapar.
+## 6. Her seri için yaşayan state hiyerarşisi
 
-Batch büyüklüğü değişse bile:
+Her seri kendi namespace’i ve kendi state zincirine sahiptir. Sorumluluklar domain bazlıdır:
 
-- akademik kalite;
-- prerequisite zinciri;
-- kavram-tekrar defteri;
-- kaynak doğrulaması;
-- görselleştirme standardı;
-- integration/test/build/render kapıları;
-- yaşayan HANDOFF/roadmap güncellemesi
+1. **Yayımlanmış gerçek:** article dosyaları + frontmatter + catalog ve bunların doğrulanan route/id/hash bilgileri. Geçmiş hakkında en yüksek otoritedir.
+2. **`SOZLESME`:** uzun ömürlü normatif kurallar, kalite kapıları, state sahipliği ve bu dosyadaki kanonik `5+1 default / explicit N+1 override` semantiğinin kalıcı kopyası. Yalnız policy değişince güncellenir.
+3. **Roadmap / `YOL-HARITASI`:** yayımlanmamış plan, fazlar, prerequisite grafı, recall/borç kayıtları ve doğal kapsam. Machine-readable UI roadmap bunun senkron izdüşümüdür.
+4. **`HANDOFF`:** trigger’ın giriş noktası; mevcut cursor, son yayımlanan makale, sıradaki güvenli başlangıç, açık borçlar ve ilgili path’ler. Kalıcı kuralları veya tüm roadmap’i kopyalamaz; sahiplerine link verir.
+5. **Trigger:** state değildir. Yalnız HANDOFF’u yükler, o run’ın `BATCH` değerini taşır ve yürütmeyi başlatır.
 
-azaltılamaz.
+Çelişki kabul edilmez. Önce yayımlanmış gerçeği koru; sonra kuralı `SOZLESME`’den, gelecekteki sırayı roadmap’ten, mevcut cursor’ı HANDOFF’tan çöz ve dosyaları uzlaştır. HANDOFF, `SOZLESME` veya roadmap’i override edemez.
 
-Bu kullanıcı mesajı mevcut AI sözleşmesindeki “5+1 değişmez” hükmünü **“5+1 varsayılandır; kullanıcı açıkça N+1 isterse o oturum için N+1 uygulanır”** şeklinde değiştirmek için açık yetkidir. Mevcut historical batch kayıtlarını geriye dönük bozma. BOUN sözleşmesi ilk oluşturulurken doğrudan bu yeni kuralı kullansın.
+Historical üretim günlüğü tutulabilir fakat “non-normative history” diye ayrılır; eski sabit 100/5’li batch veya paralel-agent ifadeleri aktif komut olarak okunamaz.
 
-## 9. Her seri için tek, sabit ve soyut tetikleyici prompt oluştur
+## 7. İki kısa trigger’ın sözleşmesi
 
-Master görevin kalıcı çıktılarından biri olarak **iki adet kısa, sabit, tekrar kullanılabilir Claude Code tetikleyici promptu** oluştur:
+Master kurulumunda biri AI, biri BOUN için iki ayrı, kısa ve model-sürümünden bağımsız **Claude Code production trigger** oluştur. Trigger metni belirli bir serving modele veya değişken komut adına bağlanmasın.
 
-1. mevcut AI serisi için bir trigger;
-2. BOUN scientific interview serisi için bir trigger.
+Her trigger:
 
-Bu trigger’lar uzun seri kurallarını kopyalamamalı ve konu listelerini kendi içinde taşımamalıdır. Amaçları yalnızca doğru yaşayan state’i yükleyip üretim oturumunu başlatmaktır.
+- ilgili serinin kesin HANDOFF path’ini gösterir;
+- tam olarak bir editable assignment satırı taşır: `BATCH=5+1`;
+- öz olarak “HANDOFF’u ve işaret ettiği state zincirini yükle → §5’e göre batch’i çöz → sıradaki `N` makaleyi araştır/yaz/entegre et/doğrula → `+1` fazını tamamla → sonraki makale gövdesine başlamadan dur” der;
+- ana oturumu karar ve kabul sahibi bırakır.
 
-### AI trigger
+Trigger şunları içermez:
 
-AI trigger, mevcut kalıcı state’in başlangıç noktası olarak açıkça:
+- sabit veya sıradaki konu başlıkları;
+- kaynak/bibliyografya listesi;
+- makale başına uzun editoryal/pedagojik kurallar;
+- geçmiş batch özeti veya açık borç listesi;
+- model sürümü, routing/fallback iddiası;
+- helper/skill/workflow ayrıntısı;
+- ikinci bir `BATCH=...` assignment’ı veya karar tablosu.
 
-`C:\dev\anil-lib\docs\seri\HANDOFF.md`
+Trigger’ın değiştirilmesi gereken tek operasyonel alan assignment satırıdır. Güncel state değiştikçe trigger değil, ilgili owner artifact güncellenir.
 
-dosyasını işaret etsin.
+## 8. Ek operasyonel kabul kapıları
 
-HANDOFF’un yönlendirdiği güncel `SOZLESME.md`, `YOL-HARITASI.md` ve repo state’i tek kaynak gerçeklik olarak okunsun. Trigger’ın kendisi roadmap’i tekrar anlatmasın.
+Master kabul kriterlerine ek olarak şunları taze diff üzerinde kanıtla:
 
-### BOUN trigger
+- Bu dosya, prompt setinde `N+1` semantiğinin tek ayrıntılı tanımıdır.
+- Helper politikası yalnızca burada ayrıntılıdır; master ve chat eki referans verir.
+- AI ve BOUN `SOZLESME` dosyaları kanonik batch semantiğini kendi yaşam döngüleri için bir kez taşır; HANDOFF ve trigger bunu yeniden anlatmaz.
+- Aktif living state’te “sabit beşli batch”, “Batch k = sabit beşli sıra”, paralel agent/reviewer zorunluluğu veya repo-dışı scratch state bağımlılığı kalmaz.
+- İki trigger’da da exact assignment sayısı birdir ve varsayılan `BATCH=5+1`’dır.
+- §5.5 karar tablosundaki dört senaryo statik olarak doğrulanır.
+- Setup sırasında hiçbir article body oluşturulmamış veya değiştirilmemiştir.
+- Model/helper kimliği hakkında gözlemlenemeyen garanti verilmemiştir.
 
-BOUN serisini kurarken onun için seçtiğin kalıcı ve açık HANDOFF konumunu belirle. BOUN trigger doğrudan o dosyayı işaret etsin; HANDOFF kendi sözleşme/roadmap/state zincirini tarif etsin.
-
-### Trigger tasarım ilkesi
-
-Her trigger içinde kullanıcının kolayca değiştirebileceği **tek bir batch direktifi** bulunmalı ve varsayılan değeri:
-
-`5+1`
-
-olmalıdır.
-
-Trigger’ın geri kalanı sabit kalabilsin.
-
-Kullanıcı örneğin trigger’daki `5+1` değerini `2+1` yapıp Claude Code’a verdiğinde agent:
-
-- güncel HANDOFF/sözleşme/roadmap’i okusun;
-- sıradaki **2** makaleyi mevcut kurallara göre deep research ile üretsin;
-- integrate ve doğrulasın;
-- ardından **1 adet next-batch preparation/handoff** işi yapsın;
-- üçüncü makaleye başlamadan görevi kapatsın.
-
-Kullanıcı trigger metnini değiştirmeden çalıştırırsa 5+1 uygulansın.
-
-Kullanıcı aynı chat mesajında trigger’daki değerden daha açık bir `N+1` talimatı verirse **en güncel açık kullanıcı talimatı kazanır**.
-
-Trigger şu bilgileri kendi içinde çoğaltmamalı:
-
-- sabit konu listesi;
-- kaynak listesi;
-- makale başına uzun kurallar;
-- hardcoded sıradaki makale isimleri;
-- geçmiş batch özeti.
-
-Bunların tamamı yaşayan HANDOFF/SOZLESME/YOL-HARITASI state’inde bulunmalı. Böylece trigger yıllar boyunca mümkün olduğunca değişmeden kullanılabilsin.
-
-## 10. Trigger agent çalışma sözleşmesi
-
-Her iki kalıcı trigger da Claude Code’a öz olarak şunu yaptırmalı:
-
-- önce ilgili HANDOFF’u ve onun işaret ettiği kalıcı kuralları oku;
-- repo state’ini doğrula;
-- kullanıcı tarafından seçilmiş `N+1` ritmini çöz;
-- sıradaki N yazının konularını yaşayan roadmap’ten al;
-- gerekiyorsa roadmap’teki yayımlanmamış konuyu güncel akademik kanıtla yeniden değerlendirebil, ancak yayımlanmış içeriği sessizce değiştirme;
-- deep research yap;
-- mevcut editoryal/pedagojik sözleşmeye uygun yaz;
-- gerekli öğretici görselleri üret;
-- integrate et;
-- taze doğrulama kapılarını çalıştır;
-- state/HANDOFF/roadmap’i güncelle;
-- +1 hazırlık işini tamamla;
-- sonraki batch’i yazmadan dur.
-
-Trigger agent de ana Fable 5 modelinde çalışmalıdır. Workflow kullanmamalıdır. Gerekiyorsa yukarıdaki sınırlar içinde **tek bir Opus 5 helper** kullanabilir. Nihai karar ana agentındır.
-
-## 11. Kalıcı state tasarımını trigger’ların gerçekten kısa kalacağı şekilde düzelt
-
-Master görev sırasında iki serinin kalıcı belgelerini öyle normalize et ki trigger promptları zamanla büyümek zorunda kalmasın.
-
-Her seri için yaşayan state, sonraki agentın en azından şunları kendi başına çözebilmesini sağlamalı:
-
-- seri kimliği ve amacı;
-- yayımlanmış son makale;
-- sıradaki aday makaleler;
-- prerequisite grafı;
-- planlanan uzun aralıklı recall’lar;
-- açık pedagojik/teknik borçlar;
-- güncel konu değişiklikleri;
-- kaynak ve editoryal kurallar;
-- görselleştirme kuralları;
-- integration/verification beklentisi;
-- ilgili teknik path’ler;
-- bilinen fakat kapsam dışı problemler;
-- bir sonraki güvenli başlangıç noktası.
-
-Trigger’ın görevi bu state’i yeniden anlatmak değil, **yüklemek ve yürütmek** olmalıdır.
-
-## 12. Tamamlanma şartına ek
-
-Master görevi ancak ana prompttaki bütün kabul kriterlerine ek olarak şunlar da tamamlandığında bitmiş say:
-
-- AI sözleşmesi/handoff’u `5+1 default, explicit N+1 override` semantiğiyle güncellenmiş;
-- BOUN sözleşmesi baştan aynı semantik ile kurulmuş;
-- mevcut historical AI batch metadata’sı bozulmamış;
-- iki serinin de kendi yaşayan HANDOFF + sözleşme + roadmap zinciri eksiksiz;
-- AI için tek sabit trigger prompt repo içinde oluşturulmuş;
-- BOUN için tek sabit trigger prompt repo içinde oluşturulmuş;
-- her iki trigger’ın default 5+1 ve en az bir farklı örnek N+1 davranışı statik olarak denetlenmiş;
-- trigger’larda workflow/subagent swarm’a yol açacak eski talimat kalmamış;
-- ilgili HANDOFF’larda eski “her batch’te paralel Opus ajanları aç” gibi yeni çalışma politikasıyla çelişen aktif talimatlar normalize edilmiş;
-- Fable ana-agent + opsiyonel tek Opus 5 helper politikası kalıcı kurallara yansımış;
-- final teslimde iki trigger dosyasının kesin repo path’i açıkça verilmiş.
-
-Bu işleri “sonraki göreve bırakma”. Ana master görev içinde iki seri mimarisiyle birlikte tamamla.
+Bu kapılar temiz olduğunda master’ın final teslim biçimiyle görevi kapat.

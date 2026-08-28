@@ -1,0 +1,123 @@
+# "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası
+
+> Serinin yaşayan omurgası (şu an 41 başlık, 5 faz), prerequisite grafı ve tasarım gerekçeleri.
+> Kurallar: `docs/seri-boun/SOZLESME.md`. Durum: `docs/seri-boun/HANDOFF.md`. Kanıt defteri:
+> `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
+> pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
+
+Son güncelleme: 2026-08-28 · Yayında: 0 · Sıradaki: 1–5 (ilk run platform entegrasyonunu da kurar)
+
+## Serinin tezi
+
+Boğaziçi CmpE M.Sc. scientific interview'una hazırlanan aday, lisans temellerini yıllar önce
+görmüş ve büyük ölçüde unutmuş kabul edilir. Seri bu temelleri **mülakat-hazır** biçimde yeniden
+kurar: her kavram anlatılabilir (sözlü), çözülebilir (küçük problem), gerekirse ispatlanabilir
+(formal tanım/kısa ispat) ve savunulabilir (correctness/complexity/memory/concurrency/sistem
+trade-off'ları + takip soruları) düzeye taşınır.
+
+**Interview-readiness tanımı** (SOZLESME §1'deki beş yetenek) her makalenin tasarım filtresidir:
+bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
+
+## Resmî dayanak (özet; ayrıntı ve erişim tarihleri ARASTIRMA.md'de)
+
+- Resmî mülakat tanımı: en az iki öğretim üyesi, 10–15 dakika; "past academic record, research
+  direction, skillset, and technical knowledge" konuşulur.
+- Scientific Preparation üçlüsü **CmpE220 (ayrık yapılar), CmpE250 (veri yapıları/algoritmalar),
+  CmpE322 (işletim sistemleri)** çekirdek kapsamın en güçlü resmî sinyalidir; CMPE300 (algoritma
+  analizi) bu çekirdeğin müfredattaki doğal devamıdır.
+- Bunlar **kesin interview syllabus değildir**; seri kapsamı bir tasarım çıkarımıdır ve informal
+  "çıkmış soru" iddiası taşımaz.
+
+## Fazlar ve başlıklar
+
+### Faz A — Mülakatın Dili: Matematiksel Temel ve İspat (1–8) · CMPE220 ekseni
+
+1. **Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?** — resmî süreç (kaynağıyla), beş yetenek hedefi, sözlü çalışma yöntemi; dürüst sınırlar.
+2. **Önermeler ve Niceleyiciler: Mantığın Dili** — doğruluk tabloları, çıkarım kuralları, ∀/∃; "her/bazı" tuzakları.
+3. **İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle** — ispatın anatomisi; √2 klasiği; karşı örnek disiplini.
+4. **Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü** — zayıf/güçlü tümevarım; özyinelemeli tanım; algoritma ispatlarına köprü.
+5. **Kümeler, Fonksiyonlar ve Bağıntılar** — birebir/örten, denklik bağıntıları, kısmi sıralar; sayılabilirlik teaser'ı.
+6. **Sayma: Kombinatoriğin Temel Araçları** — permütasyon/kombinasyon, güvercin yuvası, binom; analiz için sayma refleksi.
+7. **Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar** — derece, yol/döngü, bağlılık, ağaç karakterizasyonları; el sıkışma lemması.
+8. **Cebirsel Yapılar ve Boolean Cebiri** — grup/yarıgrup, kafes, Boolean cebiri; devre ve mantık sadeleştirme bağı.
+
+### Faz B — Veri Yapıları: Maliyetiyle Düşünmek (9–16) · CMPE250 ekseni
+
+9. **Karmaşıklık: Big-O ile Düşünmeye Başlamak** — RAM modeli, büyüme sınıfları, en kötü/ortalama durum; sezgisel kurulum (formal ispatlar 17'de).
+10. **Diziler, Bağlı Listeler, Yığın ve Kuyruk** — temel işlemler ve maliyet tablosu; hangi yapı ne zaman.
+11. **Ağaçlar ve İkili Arama Ağaçları** — BST değişmezi, arama/ekleme/silme, dengesizliğin bedeli.
+12. **Dengeli Arama: AVL'den B-Ağacına** — dönüşler (kavramsal), yükseklik garantisi; B-ağacı ve disk/dosya organizasyonu bağı.
+13. **Heap ve Öncelik Kuyruğu** — heap değişmezi, build-heap, heapsort; öncelik kuyruğu kullanımları.
+14. **Hashing: Sabit Zamanın Bedeli** — hash fonksiyonu, çakışma çözümü (zincir/açık adresleme), yük faktörü; en kötü durum savunması.
+15. **Sıralama Algoritmaları: Karşılaştırmalı ve Ötesi** — insertion/merge/quick/heap karşılaştırması, kararlılık; sayma/radix teaser'ı (alt sınır 24'te).
+16. **Graf Temsilleri, BFS ve DFS** — komşuluk listesi/matrisi; dolaşmaların maliyeti; topolojik sıralama, bağlı bileşenler.
+
+### Faz C — Algoritma Analizi ve Tasarımı (17–25) · CMPE300 ekseni
+
+17. **Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma** — O/Ω/Θ formal tanımları, limit testleri; 9'un formal yeniden kurulumu.
+18. **Yinelemeler ve Master Teoremi** — yerine koyma, özyineleme ağacı, Master Teoremi; mergesort/ikili arama analizleri.
+19. **Doğruluk: Döngü Değişmezleriyle İspat** — başlatma/koruma/sonuçlanma; insertion sort ve ikili aramanın doğruluğu.
+20. **Böl ve Yönet** — tasarım deseni olarak; max-subarray/karpma örnekleri; ne zaman işe yarar.
+21. **Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?** — greedy-choice + optimal altyapı; değişim argümanı; etkinlik seçimi, Huffman.
+22. **Dinamik Programlama** — örtüşen altproblemler, memoization/tabulation; LCS/knapsack; greedy ile karşılaştırma (klasik takip sorusu).
+23. **Graf Algoritmaları: MST ve En Kısa Yollar** — Kruskal/Prim, Dijkstra/Bellman-Ford; doğruluk sezgisi + karmaşıklık savunması.
+24. **Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar** — karar ağacı ve Ω(n log n); randomized quicksort beklentisi; paralellik kavramları (CMPE300 kataloğundaki üç ileri başlık).
+25. **NP-Tamlık: Hesaplamanın Sınırları** — P/NP, indirgeme sezgisi, NP-tam örnekler; Turing makinesi ve karar verilemezlik kısa köprüsü.
+
+### Faz D — İşletim Sistemleri: Kaynakları Yönetmek (26–35) · CMPE322 ekseni
+
+26. **İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim** — kullanıcı/çekirdek modu, kesmeler, multiprogramming/time-sharing tarihi.
+27. **Süreçler ve İş Parçacıkları** — PCB, durum makinesi, bağlam anahtarı; process vs thread trade-off'u.
+28. **CPU Zamanlama** — FCFS/SJF/RR/öncelik/çok seviyeli; ölçütler ve karşılaştırma; küçük hesap örnekleri.
+29. **Senkronizasyon: Kritik Kesim, Kilit, Semafor** — yarış koşulu, kritik kesim gereksinimleri, mutex/semafor/monitör.
+30. **Klasik Eşzamanlılık Problemleri** — üretici-tüketici, okuyucu-yazar, yemek yiyen filozoflar; çözüm savunmaları.
+31. **Kilitlenme: Koşullar ve Stratejiler** — dört koşul; önleme/kaçınma (Banker), tespit ve kurtarma.
+32. **Bellek Yönetimi: Adres Çevirisi ve Sayfalama** — mantıksal/fiziksel adres, sayfalama/bölütleme, sayfa tablosu, TLB.
+33. **Sanal Bellek: Talep Sayfalama ve Değiştirme** — sayfa hatası, LRU/clock, thrashing, çalışma kümesi.
+34. **Dosya Sistemleri ve Giriş/Çıkış** — dosya/dizin yapıları, ayırma yöntemleri, tamponlama; B-ağacı geri çağrımı (12).
+35. **Koruma, Güvenlik ve Linux Somutlaması** — erişim matrisi, yetenekler; kavramların Linux'taki karşılıkları; faz sentezi.
+
+### Faz E — Destekleyici Temeller ve Mülakat Provası (36–41)
+
+36. **Olasılık ve İstatistik: Mülakat İçin Çekirdek** — koşullu olasılık, beklenen değer, temel dağılımlar; 24'ün beklenti analizinin zemini (CMPE343 sinyali).
+37. **Bilgisayar Organizasyonu: OS'nin Altındaki Makine** — bellek hiyerarşisi, önbellek, komut yürütme; OS kavramlarının donanım gerekçesi (CMPE240/244 sinyali).
+38. **C ve Bellek: Sistem Programlama Penceresi** — pointer, yığın/heap, süreç bellek düzeni; OS kavramlarının koda inmesi (CMPE230 sinyali).
+39. **Veritabanları: İlişkisel Model, İndeks ve İşlem** — savunma düzeyinde: ilişkisel model, anahtarlar, indeks=B-ağacı (12'nin geri çağrımı), ACID.
+40. **Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü** — 60–90 saniyelik anlatım kalıpları; takip zinciri provası; "past academic record + research direction" konuşmasına hazırlık.
+41. **Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı** — öz-değerlendirme matrisi (beş yetenek × beş faz), spaced tekrar planı, mülakat günü protokolü.
+
+## Prerequisite grafı (faz düzeyi; makale düzeyi satırlar batch hazırlıklarında yazılır)
+
+- Faz A ← (giriş; önkoşulsuz — CMPE220'nin kendisi de önkoşulsuzdur).
+- Faz B ← A4 (özyineleme), A7 (graf tanımları), A6 (sayma — analiz için).
+- Faz C ← B9 (Big-O sezgisi; 17 formal kurar), B15/B16 (analiz edilecek algoritmalar), A3/A4 (ispat teknikleri).
+- Faz D ← B (yapılar: kuyruk→zamanlama, ağaç→dosya sistemi), A2 (mantık); C'den bağımsız okunabilir, karmaşıklık savunması için C17 önerilir.
+- Faz E ← 36: A6; 37–38: D; 39: B12; 40–41: bütün fazların sentezi.
+
+**İlk run (Batch 0) taslak satırları:**
+- 1 ← (yok; giriş noktası — resmî kaynak aktarımı + yöntem)
+- 2 ← 1 (yöntem: tanım disiplini burada başlar)
+- 3 ← 2 (çıkarım kuralları ispatın adımlarıdır)
+- 4 ← 3 (tümevarım bir ispat tekniğidir), 2 (niceleyiciler)
+- 5 ← 2 (önerme/koşul dili), 3 (birebir/örten ispatları)
+
+## Kapsam kararları ve elenenler (gerekçeli)
+
+- **Çekirdek = 220 + 250 + 322 + 300:** Scientific Preparation üçlüsü resmî sinyal; CMPE300,
+  250'nin müfredattaki devamı ve "complexity/lower bound" savunmasının kaynağı (35 makale).
+- **Destek (6 makale):** olasılık (343; randomized analiz zorunlu kılar), organizasyon (240/244;
+  OS savunması donanım gerekçesi ister), C/bellek (230; OS kavramlarının somutlaşması),
+  veritabanı (transkript savunması + B-ağacı tahsili), sözlü prova ve sentez (mülakatın
+  "anlatabilme" doğası).
+- **Elenenler:** biçimsel diller/otomata ayrı makalesi (25 içinde kısa köprü; SP üçlüsünde yok,
+  hazırlık getirisi düşük) · sinyal işleme, gömülü sistemler, yazılım mühendisliği süreçleri
+  (mülakat çekirdeğine uzak) · programlama dilleri kuramı ayrı makalesi (38–39 içinde değinilir)
+  · "çıkmış soru" derlemesi (resmî dayanağı yok; SOZLESME §1 yasaklar).
+- **AI serisiyle çakışma yönetimi:** olasılık (36) ve graf/algoritma konuları burada temel CS
+  amacıyla, kendi içinde yeterli biçimde işlenir; AI serisinin 91–97 matematik omurgası ML
+  bağlamına odaklıdır. İki seri birbirine prerequisite vermez.
+
+## Terim defteri
+
+İlk üretim run'ında, ilk batch'in terimleriyle başlatılır (kural: SOZLESME §2 — Türkçe kullanım +
+ilk geçişte İngilizce; mülakat için İngilizce teknik ad görünür kalır).

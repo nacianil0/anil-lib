@@ -16,7 +16,10 @@ tools/
   publish/
     04-Publish-And-Zip.cmd -> production build + paket + zip
   series/
-    check-series-svg.cjs   -> "Sifirdan Yuze" seri diyagramlari icin sozlesme denetimi
+    check-series-content.cjs -> "Sifirdan Yuze" seri makaleleri icin sozlesme denetimi
+    check-series-svg.cjs     -> "Sifirdan Yuze" seri diyagramlari icin sozlesme denetimi
+    sync-series-hashes.cjs   -> content_hash dogrulama; --write ile frontmatter+katalog guncelleme
+    entegre-batch.cjs        -> yeni batch makalelerini katalog+roadmap'e entegre etme (--write)
   lib/
     Common.psm1            -> ortak yardimcilar (kok cozumu, pnpm, port, guvenli silme)
     Start-Dev.ps1
@@ -112,6 +115,13 @@ yasak, cunku diyagramlar acik/koyu/sepya uc temada da okunakli olmali),
 `script`/`foreignObject`/`on*` yasak, `font-family` belirtilmemeli, yazi boyutu
 en az 13 ve metinler `viewBox` disina tasmamali. Sorun bulursa sifirdan farkli
 exit code doner. Baska bir klasoru denetlemek icin yol argumani verilebilir.
+
+Diger seri araclari: `check-series-content.cjs` makale yapisini (bolumler, kelime
+sayisi, sekil sozdizimi, "Kendini yokla" kutulari) denetler;
+`sync-series-hashes.cjs` govde SHA-256'sinin frontmatter ve katalogla esitligini
+dogrular (`--write` ikisini gunceller); `entegre-batch.cjs` katalogda olmayan
+yeni makaleleri frontmatter'dan katalog+roadmap'e entegre eder (varsayilan kuru
+calisma, `--write` yazar). Uretim akisi: `docs/seri/HANDOFF.md`.
 
 ## Notlar
 
