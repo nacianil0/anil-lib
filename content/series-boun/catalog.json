@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "classificationVersion": 1,
+  "generatedAt": "2026-08-28T21:44:31.889Z",
+  "articles": [
+    {
+      "articleId": "article_ddc8070c-beee-43dd-b171-295a82e2266d",
+      "title": "Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?",
+      "slug": "bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor",
+      "category": "interview-method",
+      "level": "beginner",
+      "readingOrder": 1,
+      "summary": "Boğaziçi CmpE yüksek lisans bilimsel mülakatının resmî çerçevesini kaynağıyla aktarır, on beş dakikalık formatın cevap biçimine ne yaptığını gösterir ve serinin beş yetenek hedefiyle sözlü çalışma yöntemini kurar.",
+      "tags": [
+        "bogazici",
+        "bilimsel-mulakat",
+        "yuksek-lisans",
+        "calisma-yontemi",
+        "scientific-preparation"
+      ],
+      "contentHash": "sha256:6e7bd9360fef67c9cff468e1db2833fc1b6b846058a86c524d77e23e21d0534b",
+      "path": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_8aee91f6-deeb-4218-a4fd-09f6f31c60b0",
+      "title": "Önermeler ve Niceleyiciler: Mantığın Dili",
+      "slug": "onermeler-ve-niceleyiciler-mantigin-dili",
+      "category": "discrete-math",
+      "level": "beginner",
+      "readingOrder": 2,
+      "summary": "Önerme, bağlaç ve doğruluk tablosundan başlayıp koşullu önermenin dört akrabasını, temel çıkarım kurallarını ve iç içe niceleyicileri kurar; her tanımı mülakatta savunulabilir bir cümleye bağlar.",
+      "tags": [
+        "mantik",
+        "onerme",
+        "dogruluk-tablosu",
+        "niceleyici",
+        "cikarim-kurallari"
+      ],
+      "contentHash": "sha256:5c8b5dec791056748c082c3e5aecd09b1369de60d552ed70ca1121e113faa8c1",
+      "path": "content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_402c5768-db61-4d1a-a76c-17cc4aeaa531",
+      "title": "İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle",
+      "slug": "ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle",
+      "category": "discrete-math",
+      "level": "intermediate",
+      "readingOrder": 3,
+      "summary": "İspatın anatomisini kurar; doğrudan, karşıt tersiyle ve çelişkiyle ispatı çalışılmış örneklerle yürütür, karşı örnek disiplinini ve sık yapılan ispat hatalarını mülakatta savunulabilir bir strateji seçimine bağlar.",
+      "tags": [
+        "ispat",
+        "dogrudan-ispat",
+        "celiskiyle-ispat",
+        "karsi-ornek",
+        "kok-iki"
+      ],
+      "contentHash": "sha256:7bf193df15dbe5f2a21ef990e5a0db87642eade6a98c3b46611c55dd669375fa",
+      "path": "content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    }
+  ]
+}

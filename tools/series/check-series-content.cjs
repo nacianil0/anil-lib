@@ -10,17 +10,46 @@
  *  - Kelime sayısı 2.000–3.500.
  *  - En az 2 diyagram; her diyagram kendi paragrafında, alt metni ve başlığı var.
  *  - Her şekil metinde "Şekil N" ile referanslanmış.
- *  - "Kendini yokla" kutuları blockquote içinde ve 1–3 adet.
+ *  - Geri çağırma kutuları blockquote içinde ve 1–3 adet (AI: "Kendini yokla",
+ *    BOUN: "Sesli anlat" — docs/seri-boun/SOZLESME.md §3).
  *  - Ham HTML yok (pipeline zaten düşürür, sessiz kayıp olmasın).
  *
- * Kullanım: node tools/series/check-series-content.cjs
+ * Kullanım: node tools/series/check-series-content.cjs [--series=ai|boun] [klasör]
  */
 const { readFileSync, readdirSync, statSync, existsSync } = require("node:fs");
 const path = require("node:path");
 
-const ARTICLES_DIR = process.argv[2]
-  ? path.resolve(process.argv[2])
-  : path.resolve(__dirname, "../../content/series/articles");
+/**
+ * Seri profilleri: yalnızca serilerin sözleşmeleri arasında gerçekten farklı
+ * olan kurallar burada ayrışır; yapısal denetimlerin tamamı ortaktır.
+ */
+const PROFILES = {
+  ai: {
+    articlesDir: "../../content/series/articles",
+    minWords: 2000,
+    maxWords: 3500,
+    checkpointLabel: "Kendini yokla",
+  },
+  boun: {
+    articlesDir: "../../content/series-boun/articles",
+    minWords: 1800,
+    maxWords: 3200,
+    checkpointLabel: "Sesli anlat",
+  },
+};
+
+const seriesArg = process.argv.find((a) => a.startsWith("--series="));
+const seriesKey = seriesArg ? seriesArg.slice("--series=".length) : "ai";
+const profile = PROFILES[seriesKey];
+if (!profile) {
+  console.error(`Bilinmeyen seri: ${seriesKey} (geçerli: ${Object.keys(PROFILES).join(", ")})`);
+  process.exit(1);
+}
+
+const dirArg = process.argv.slice(2).find((a) => !a.startsWith("--"));
+const ARTICLES_DIR = dirArg
+  ? path.resolve(dirArg)
+  : path.resolve(__dirname, profile.articlesDir);
 
 function walkMarkdown(dir) {
   if (!existsSync(dir)) return [];
@@ -87,7 +116,11 @@ function checkArticle(file) {
   }
 
   const words = countProseWords(body);
-  if (words < 2000 || words > 3500) add(`düzyazı kelime sayısı ${words} (hedef 2.000–3.500)`);
+  if (words < profile.minWords || words > profile.maxWords) {
+    add(
+      `düzyazı kelime sayısı ${words} (hedef ${profile.minWords.toLocaleString("tr-TR")}–${profile.maxWords.toLocaleString("tr-TR")})`,
+    );
+  }
 
   // Diyagramlar
   const figures = [...body.matchAll(/!\[([^\]]*)\]\((assets\/[a-z0-9-]+\.svg)\s+"([^"]*)"\)/g)];
@@ -118,16 +151,19 @@ function checkArticle(file) {
     }
   });
 
-  // Kendini yokla kutuları
-  const recalls = lines.filter((l) => /^>\s*\*\*Kendini yokla:\*\*/.test(l.trim()));
-  const strayRecalls = lines.filter(
-    (l) => l.includes("**Kendini yokla:**") && !l.trim().startsWith(">"),
-  );
+  // Geri çağırma / sözlü checkpoint kutuları
+  const marker = `**${profile.checkpointLabel}:**`;
+  const isCheckpointLine = (line) => {
+    const trimmed = line.trim();
+    return trimmed.startsWith(">") && trimmed.slice(1).trimStart().startsWith(marker);
+  };
+  const recalls = lines.filter(isCheckpointLine);
+  const strayRecalls = lines.filter((l) => l.includes(marker) && !l.trim().startsWith(">"));
   if (recalls.length < 1 || recalls.length > 3) {
-    add(`"Kendini yokla" kutusu sayısı ${recalls.length} (1–3 olmalı)`);
+    add(`"${profile.checkpointLabel}" kutusu sayısı ${recalls.length} (1–3 olmalı)`);
   }
   for (const stray of strayRecalls) {
-    add(`"Kendini yokla" blockquote (>) içinde olmalı: "${stray.slice(0, 40)}…"`);
+    add(`"${profile.checkpointLabel}" blockquote (>) içinde olmalı: "${stray.slice(0, 40)}…"`);
   }
 
   if (/<[a-z][a-z0-9]*(\s[^>]*)?>/i.test(body.replace(/`[^`]*`/g, ""))) {

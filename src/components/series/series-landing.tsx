@@ -14,9 +14,15 @@ import { SyncStatus } from "@/components/reader/sync-status";
 type Props = {
   roadmap: SeriesRoadmap;
   articles: ArticleDescriptor[];
+  /** Rota tabanı, ör. "/seri" veya "/boun". */
+  basePath: string;
+  /** Giriş paragrafının okuma sırası vurgusu; seri kendi cümlesini verir. */
+  intro: string;
+  /** Sayfa sonundaki yayım ritmi notu. */
+  footerNote: string;
 };
 
-function LandingContent({ roadmap, articles }: Props) {
+function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Props) {
   const { ready, statusOf } = useReaderData();
   const bySlug = new Map(articles.map((article) => [article.slug, article]));
   const published = roadmap.phases
@@ -60,13 +66,12 @@ function LandingContent({ roadmap, articles }: Props) {
           {roadmap.seriesTitle}
         </h1>
         <p className="mt-4 max-w-2xl font-serif text-lg leading-relaxed text-text-muted">
-          {roadmap.seriesSubtitle} Hiçbir ön bilgi varsaymadan başlar; her makale bir öncekinin
-          üzerine biner. Sıra önemlidir: en iyi sonucu baştan sona okuyarak alırsın.
+          {roadmap.seriesSubtitle} {intro}
         </p>
 
         {continueTarget && (
           <Link
-            href={`/seri/${continueTarget.slug}`}
+            href={`${basePath}/${continueTarget.slug}`}
             className="mt-7 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
           >
             {started ? "Kaldığın yerden devam et" : "Seriye başla"}
@@ -141,7 +146,7 @@ function LandingContent({ roadmap, articles }: Props) {
                     return (
                       <li key={article.order}>
                         <Link
-                          href={`/seri/${descriptor.slug}`}
+                          href={`${basePath}/${descriptor.slug}`}
                           className="group grid grid-cols-[2rem_1fr_auto] items-baseline gap-x-2.5 rounded-md py-[0.45rem] pl-1 pr-2 transition-colors hover:bg-surface-muted"
                         >
                           <span className="font-sans text-2xs tabular-nums text-accent">
@@ -194,8 +199,7 @@ function LandingContent({ roadmap, articles }: Props) {
         </section>
 
         <p className="mt-12 border-t border-border pt-6 font-sans text-2xs leading-relaxed text-text-faint">
-          Seri 5&apos;er makalelik gruplar halinde yayımlanır; planlanan başlıklar yeni gruplar
-          hazırlanırken güncellenebilir.
+          {footerNote}
         </p>
       </main>
     </div>

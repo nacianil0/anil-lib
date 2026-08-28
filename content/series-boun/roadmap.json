@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "seriesTitle": "Mülakat Aynası: Boğaziçi CmpE",
+  "seriesSubtitle": "Boğaziçi CmpE bilimsel mülakatı için unutulmuş bilgisayar mühendisliği temellerini anlatılabilir, çözülebilir ve savunulabilir düzeyde yeniden kuran hazırlık serisi.",
+  "phases": [
+    {
+      "id": "faz-01",
+      "title": "Mülakatın Dili: Matematiksel Temel ve İspat",
+      "description": "Mantık, ispat, tümevarım, küme ve graf temelleri: her savunmanın üzerine kurulduğu zemin.",
+      "articles": [
+        { "order": 1, "title": "Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?", "status": "yayinda", "slug": "bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor" },
+        { "order": 2, "title": "Önermeler ve Niceleyiciler: Mantığın Dili", "status": "yayinda", "slug": "onermeler-ve-niceleyiciler-mantigin-dili" },
+        { "order": 3, "title": "İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle", "status": "yayinda", "slug": "ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle" },
+        { "order": 4, "title": "Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü", "status": "planlandi" },
+        { "order": 5, "title": "Kümeler, Fonksiyonlar ve Bağıntılar", "status": "planlandi" },
+        { "order": 6, "title": "Sayma: Kombinatoriğin Temel Araçları", "status": "planlandi" },
+        { "order": 7, "title": "Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar", "status": "planlandi" },
+        { "order": 8, "title": "Cebirsel Yapılar ve Boolean Cebiri", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-02",
+      "title": "Veri Yapıları: Maliyetiyle Düşünmek",
+      "description": "Her yapının ne sunduğunu ve karşılığında ne istediğini maliyet tablosuyla kurar.",
+      "articles": [
+        { "order": 9, "title": "Karmaşıklık: Big-O ile Düşünmeye Başlamak", "status": "planlandi" },
+        { "order": 10, "title": "Diziler, Bağlı Listeler, Yığın ve Kuyruk", "status": "planlandi" },
+        { "order": 11, "title": "Ağaçlar ve İkili Arama Ağaçları", "status": "planlandi" },
+        { "order": 12, "title": "Dengeli Arama: AVL'den B-Ağacına", "status": "planlandi" },
+        { "order": 13, "title": "Heap ve Öncelik Kuyruğu", "status": "planlandi" },
+        { "order": 14, "title": "Hashing: Sabit Zamanın Bedeli", "status": "planlandi" },
+        { "order": 15, "title": "Sıralama Algoritmaları: Karşılaştırmalı ve Ötesi", "status": "planlandi" },
+        { "order": 16, "title": "Graf Temsilleri, BFS ve DFS", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-03",
+      "title": "Algoritma Analizi ve Tasarımı",
+      "description": "Asimptotik analizden tasarım desenlerine ve hesaplamanın sınırlarına.",
+      "articles": [
+        { "order": 17, "title": "Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma", "status": "planlandi" },
+        { "order": 18, "title": "Yinelemeler ve Master Teoremi", "status": "planlandi" },
+        { "order": 19, "title": "Doğruluk: Döngü Değişmezleriyle İspat", "status": "planlandi" },
+        { "order": 20, "title": "Böl ve Yönet", "status": "planlandi" },
+        { "order": 21, "title": "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?", "status": "planlandi" },
+        { "order": 22, "title": "Dinamik Programlama", "status": "planlandi" },
+        { "order": 23, "title": "Graf Algoritmaları: MST ve En Kısa Yollar", "status": "planlandi" },
+        { "order": 24, "title": "Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar", "status": "planlandi" },
+        { "order": 25, "title": "NP-Tamlık: Hesaplamanın Sınırları", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-04",
+      "title": "İşletim Sistemleri: Kaynakları Yönetmek",
+      "description": "Süreçten sanal belleğe: donanımı paylaştıran katmanın kavramları ve trade-off'ları.",
+      "articles": [
+        { "order": 26, "title": "İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim", "status": "planlandi" },
+        { "order": 27, "title": "Süreçler ve İş Parçacıkları", "status": "planlandi" },
+        { "order": 28, "title": "CPU Zamanlama", "status": "planlandi" },
+        { "order": 29, "title": "Senkronizasyon: Kritik Kesim, Kilit, Semafor", "status": "planlandi" },
+        { "order": 30, "title": "Klasik Eşzamanlılık Problemleri", "status": "planlandi" },
+        { "order": 31, "title": "Kilitlenme: Koşullar ve Stratejiler", "status": "planlandi" },
+        { "order": 32, "title": "Bellek Yönetimi: Adres Çevirisi ve Sayfalama", "status": "planlandi" },
+        { "order": 33, "title": "Sanal Bellek: Talep Sayfalama ve Değiştirme", "status": "planlandi" },
+        { "order": 34, "title": "Dosya Sistemleri ve Giriş/Çıkış", "status": "planlandi" },
+        { "order": 35, "title": "Koruma, Güvenlik ve Linux Somutlaması", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-05",
+      "title": "Destekleyici Temeller ve Mülakat Provası",
+      "description": "Olasılık, donanım, C, veritabanı ve sözlü anlatım provasıyla mülakat gününe hazırlık.",
+      "articles": [
+        { "order": 36, "title": "Olasılık ve İstatistik: Mülakat İçin Çekirdek", "status": "planlandi" },
+        { "order": 37, "title": "Bilgisayar Organizasyonu: OS'nin Altındaki Makine", "status": "planlandi" },
+        { "order": 38, "title": "C ve Bellek: Sistem Programlama Penceresi", "status": "planlandi" },
+        { "order": 39, "title": "Veritabanları: İlişkisel Model, İndeks ve İşlem", "status": "planlandi" },
+        { "order": 40, "title": "Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü", "status": "planlandi" },
+        { "order": 41, "title": "Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı", "status": "planlandi" }
+      ]
+    }
+  ]
+}

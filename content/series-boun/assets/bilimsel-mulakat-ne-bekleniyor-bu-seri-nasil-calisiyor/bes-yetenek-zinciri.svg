@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 196" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a1-zincir-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="21" y="28" font-size="13" fill="var(--text-muted)">Görüşmeci soruyu derinleştirdikçe</text>
+
+  <rect x="21" y="46" width="118" height="62" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="80" y="72" font-size="13" text-anchor="middle" fill="var(--text)">Anlatabilmek</text>
+  <text x="80" y="93" font-size="13" text-anchor="middle" fill="var(--text-muted)">Bu nedir?</text>
+
+  <rect x="161" y="46" width="118" height="62" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="220" y="72" font-size="13" text-anchor="middle" fill="var(--text)">Çözebilmek</text>
+  <text x="220" y="93" font-size="13" text-anchor="middle" fill="var(--text-muted)">Örnekte kullan</text>
+
+  <rect x="301" y="46" width="118" height="62" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="360" y="72" font-size="13" text-anchor="middle" fill="var(--text)">İspatlayabilmek</text>
+  <text x="360" y="93" font-size="13" text-anchor="middle" fill="var(--text-muted)">Neden doğru?</text>
+
+  <rect x="441" y="46" width="118" height="62" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="500" y="72" font-size="13" text-anchor="middle" fill="var(--text)">Savunabilmek</text>
+  <text x="500" y="93" font-size="13" text-anchor="middle" fill="var(--text-muted)">Neden bu seçim?</text>
+
+  <rect x="581" y="46" width="118" height="62" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="640" y="72" font-size="13" text-anchor="middle" fill="var(--text)">Dayanabilmek</text>
+  <text x="640" y="93" font-size="13" text-anchor="middle" fill="var(--text-muted)">Ya şu durumda?</text>
+
+  <line x1="141" y1="77" x2="157" y2="77" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a1-zincir-ok)" />
+  <line x1="281" y1="77" x2="297" y2="77" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a1-zincir-ok)" />
+  <line x1="421" y1="77" x2="437" y2="77" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a1-zincir-ok)" />
+  <line x1="561" y1="77" x2="577" y2="77" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a1-zincir-ok)" />
+
+  <path d="M 21 132 L 21 140 L 699 140 L 699 132" fill="none" stroke="var(--border)" stroke-width="1" />
+  <text x="360" y="166" font-size="13" text-anchor="middle" fill="var(--text-muted)">Her halka bir öncekinin üzerine biner</text>
+  <text x="360" y="186" font-size="13" text-anchor="middle" fill="var(--text-faint)">Ayırt edici halka çoğunlukla savunma halkasıdır</text>
+</svg>

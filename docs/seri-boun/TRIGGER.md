@@ -1,6 +1,6 @@
 # "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı
 
-BATCH=5+1
+BATCH=3+1
 
 `docs/seri-boun/HANDOFF.md`'yi ve işaret ettiği state zincirini yükle. Bu run'ın batch değerini
 `docs/seri-boun/SOZLESME.md` §6'ya göre çöz. Sıradaki `N` yayımlanmamış makaleyi araştır, yaz,

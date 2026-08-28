@@ -831,3 +831,48 @@ D:\dev\anil-lib-seri-batch1-state\review\ altında.
 | 18:52 | Edited docs/seri/SOZLESME.md | 3→3 lines | ~75 |
 | 19:00 | OTURUM OZETI: Fable5 master kurulum — AI serisi SOZLESME v2 (kanonik 5+1/N+1), YOL-HARITASI 118 baslik/14 faz + vaat defteri, HANDOFF inceltildi, TRIGGER eklendi; BOUN zinciri docs/seri-boun (5 dosya, 41 baslik/5 faz); entegre-batch.cjs; UI 100-sabitleri kaldirildi | docs/seri/*, docs/seri-boun/*, content/series/roadmap.json, tools/series/entegre-batch.cjs, src (3 dosya) | typecheck+167 test+build+render dogrulandi; 1-10 snapshot bit-duzeyi ayni | ~60k |
 | 18:56 | Session end: 20 writes across 12 files (SOZLESME.md, YOL-HARITASI.md, roadmap.json, HANDOFF.md, TRIGGER.md) | 12 reads | ~57151 tok |
+
+## Session: 2026-08-28 00:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-28 00:10
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:21 | Edited src/lib/content/schema.ts | expanded (+23 lines) | ~390 |
+| 00:21 | Edited src/lib/content/schema.ts | modified makeCatalogArticleSchema() | ~790 |
+| 00:21 | Edited src/lib/content/labels.ts | expanded (+6 lines) | ~203 |
+| 00:22 | Created src/lib/content/series-content.ts | — | ~2494 |
+| 00:22 | Created src/lib/content/series.ts | — | ~659 |
+| 00:23 | Created src/lib/content/series-roadmap.ts | — | ~1363 |
+| 00:23 | Edited src/lib/content/series-roadmap.ts | 5→3 lines | ~38 |
+| 00:23 | Edited src/lib/content/series-roadmap.ts | reduced (-6 lines) | ~57 |
+| 00:23 | Created src/lib/content/series-boun.ts | — | ~817 |
+| 00:24 | Created src/app/seri/page.tsx | — | ~242 |
+| 00:24 | Created src/app/boun/page.tsx | — | ~265 |
+| 00:24 | Created src/app/boun/[slug]/page.tsx | — | ~416 |
+| 00:24 | Created src/app/page.tsx | — | ~266 |
+| 00:24 | Edited src/lib/reader-data/server/sync-service.ts | added 1 import(s) | ~49 |
+| 00:24 | Edited src/lib/reader-data/server/sync-service.ts | modified validArticleIds() | ~101 |
+| 00:33 | Created content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | — | ~4235 |
+| 00:34 | Created content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/bes-yetenek-zinciri.svg | — | ~756 |
+| 00:34 | Created content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/seri-faz-haritasi.svg | — | ~965 |
+| 00:35 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | 1→5 lines | ~355 |
+| 00:35 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~12 |
+| 00:38 | Created content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md | — | ~3938 |
+| 00:39 | Created content/series-boun/assets/onermeler-ve-niceleyiciler-mantigin-dili/kosullu-onermenin-akrabalari.svg | — | ~732 |
+| 00:39 | Created content/series-boun/assets/onermeler-ve-niceleyiciler-mantigin-dili/cikarim-kurallari.svg | — | ~601 |
+| 00:39 | Edited content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md | 1→3 lines | ~153 |
+| 00:42 | Created content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | — | ~3391 |
+| 00:43 | Created content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/ispat-strateji-akisi.svg | — | ~890 |
+| 00:43 | Created content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/kok-iki-celiski-zinciri.svg | — | ~624 |
+| 00:43 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | expanded (+18 lines) | ~373 |
+| 00:44 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | 1→3 lines | ~205 |
+| 00:44 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | 1→3 lines | ~121 |
+| 00:46 | Created src/lib/content/series-assets.test.ts | — | ~886 |
+| 00:49 | Created content/series-boun/assets/onermeler-ve-niceleyiciler-mantigin-dili/kosullu-onermenin-akrabalari.svg | — | ~732 |
+| 00:49 | Created content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/kok-iki-celiski-zinciri.svg | — | ~624 |
+| 00:52 | Created docs/seri-boun/HANDOFF.md | — | ~1652 |
+| 00:56 | Session end: 34 writes across 19 files (schema.ts, labels.ts, series-content.ts, series.ts, series-roadmap.ts) | 1 reads | ~30852 tok |

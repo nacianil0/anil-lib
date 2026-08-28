@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-28T15:52:27.704Z
-> Files: 143 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-28T21:52:58.547Z
+> Files: 162 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -92,18 +92,34 @@
 - `llm-guvenilirlik-bilimi-belirsizlik-halusilasyon-degerlendirme.md` — LLM Güvenilirlik Bilimi: Belirsizlik, Halüsinasyon ve Değerlendirme Tasarımı (~11403 tok)
 - `mechanistic-interpretability-ve-modelin-icindeki-temsiller.md` — Mechanistic Interpretability ve Modelin İçindeki Temsiller (~8400 tok)
 
+## content/series-boun/articles/discrete-math/
+
+- `ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md` — Mantıktan ispata (~3748 tok)
+- `onermeler-ve-niceleyiciler-mantigin-dili.md` — Neden mantıkla başlıyoruz (~3814 tok)
+
+## content/series-boun/articles/interview-method/
+
+- `bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md` — Kapı çalınmadan önce (~4240 tok)
+
+## content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/
+
+- `bes-yetenek-zinciri.svg` (~756 tok)
+- `seri-faz-haritasi.svg` (~965 tok)
+
+## content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/
+
+- `ispat-strateji-akisi.svg` (~890 tok)
+- `kok-iki-celiski-zinciri.svg` (~624 tok)
+
+## content/series-boun/assets/onermeler-ve-niceleyiciler-mantigin-dili/
+
+- `cikarim-kurallari.svg` (~601 tok)
+- `kosullu-onermenin-akrabalari.svg` (~732 tok)
+
 ## content/series/
 
 - `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0+1: makale 1–10) (~2800 tok)
 - `roadmap.json` — 118 başlıklık yaşayan seri omurgası, 14 faz, yayında/planlandı durumları (~4563 tok)
-
-## content/series/articles/models-and-training/
-
-- `dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md` — Makale 6: sorgu/anahtar/değer, elle softmax, bağlamsal temsil (~6000 tok)
-- `metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md` — Makale 10: otoregresif döngü, sıcaklık, top-k/çekirdek örnekleme (~6000 tok)
-- `olcek-yasalari-daha-buyuk-neden-daha-iyi.md` — Makale 9: güç yasası, Kaplan→Chinchilla, veri duvarı, emergence (~6300 tok)
-- `on-egitim-internet-olceginde-sonraki-token.md` — Makale 8: öz-denetimli hedef, veri hunisi, 6ND, koşu anatomisi (~6300 tok)
-- `transformer-modern-dil-modellerinin-mimarisi.md` — Makale 7: blok anatomisi, çok başlı dikkat, pozisyon kodlaması, logit halkası (~6500 tok)
 
 ## content/series/articles/foundations/
 
@@ -113,13 +129,21 @@
 - `tahmin-makinesi-yapay-zekaya-ilk-bakis.md` — Makale 1: kural yazmak vs veriden öğrenmek; model = ayarlanabilir fonksiyon; AI⊃ML⊃temsil öğrenimi⊃derin öğrenme (~5600 tok)
 - `veriden-ogrenmek-model-parametre-ve-kayip.md` — Makale 2: parametre, kayıp, gradyan inişi (sayısal örnek), öğrenme oranı eşiği, aşırı öğrenme (~6700 tok)
 
+## content/series/articles/models-and-training/
+
+- `dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md` — Makale 6: sorgu/anahtar/değer, elle softmax, bağlamsal temsil (~6000 tok)
+- `metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md` — Makale 10: otoregresif döngü, sıcaklık, top-k/çekirdek örnekleme (~6000 tok)
+- `olcek-yasalari-daha-buyuk-neden-daha-iyi.md` — Makale 9: güç yasası, Kaplan→Chinchilla, veri duvarı, emergence (~6300 tok)
+- `on-egitim-internet-olceginde-sonraki-token.md` — Makale 8: öz-denetimli hedef, veri hunisi, 6ND, koşu anatomisi (~6300 tok)
+- `transformer-modern-dil-modellerinin-mimarisi.md` — Makale 7: blok anatomisi, çok başlı dikkat, pozisyon kodlaması, logit halkası (~6500 tok)
+
 ## content/series/assets/
 
 
 ## docs/seri-boun/
 
 - `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~1266 tok)
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~971 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~1549 tok)
 - `SOZLESME.md` — "Mülakat Aynası: Boğaziçi CmpE" — Seri Sözleşmesi (~2218 tok)
 - `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~131 tok)
 - `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~2405 tok)
@@ -166,8 +190,16 @@
 - `globals.css` — Styles: 7 rules, 52 vars (~3823 tok)
 - `layout.tsx` — newsreader (~498 tok)
 - `not-found.tsx` — NotFound (~259 tok)
-- `page.tsx` — HomePage (~143 tok)
+- `page.tsx` — HomePage (~266 tok)
 - `root-redirect.tsx` — RootRedirect — uses useRouter, useEffect (~242 tok)
+
+## src/app/boun/
+
+- `page.tsx` — metadata (~265 tok)
+
+## src/app/boun/[slug]/
+
+- `page.tsx` — dynamicParams (~416 tok)
 
 ## src/app/login/
 
@@ -180,7 +212,7 @@
 
 ## src/app/seri/
 
-- `page.tsx` — metadata (~141 tok)
+- `page.tsx` — metadata (~242 tok)
 
 ## src/app/seri/[slug]/
 
@@ -229,16 +261,18 @@
 - `articles.ts` — Build a fresh Markdown → React processor. (~1218 tok)
 - `catalog.test.ts` — RawArticle: article, catalog (~1902 tok)
 - `catalog.ts` — Resolve a catalog `path` to a safe absolute path inside content/articles. (~1812 tok)
-- `labels.ts` — Turkish display labels for the controlled categories. (~983 tok)
+- `labels.ts` — Turkish display labels for the controlled categories of every series. (~1456 tok)
 - `rehype-inline-svg.test.ts` — assetsDir: transform, firstElement (~1512 tok)
 - `rehype-inline-svg.ts` — Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline (~1580 tok)
 - `schema.test.ts` — Declares validFrontmatter (~1093 tok)
-- `schema.ts` — Controlled category vocabulary, in pedagogical order. (~826 tok)
-- `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~792 tok)
+- `schema.ts` — Controlled category vocabulary of the main library and the AI series, (~1460 tok)
+- `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~886 tok)
+- `series-boun.ts` — "Mülakat Aynası: Boğaziçi CmpE" serisinin içerik sözleşmesi. AI serisiyle aynı (~817 tok)
+- `series-content.ts` — Bir serinin içerik sözleşmesi. Ana kütüphaneyle aynı şemayı ve invariantları (~2494 tok)
 - `series-roadmap.test.ts` — Declares roadmap (~660 tok)
-- `series-roadmap.ts` — content/series/roadmap.json — UI'nin gösterdiği yaşayan omurga. (~1126 tok)
+- `series-roadmap.ts` — content/<seri>/roadmap.json — UI'nin gösterdiği yaşayan omurga. (~1310 tok)
 - `series.test.ts` — RawArticle: article, catalog (~693 tok)
-- `series.ts` — "Sıfırdan Yüze" serisinin içerik sözleşmesi. Ana kütüphaneyle aynı şema ve (~2085 tok)
+- `series.ts` — "Sıfırdan Yüze" serisinin içerik sözleşmesi. Ana kütüphaneyle aynı şema ve (~659 tok)
 - `types.ts` — Minimal, serializable article shape passed from server components to the UI. (~238 tok)
 
 ## src/lib/preferences/
@@ -257,7 +291,7 @@
 
 ## src/lib/reader-data/server/
 
-- `sync-service.ts` — Exports synchronizeReaderData (~3036 tok)
+- `sync-service.ts` — Ana kütüphane ∪ AI serisi ∪ BOUN serisi; bilinmeyen id reddedilir. (~3095 tok)
 
 ## src/lib/reader/
 
@@ -288,7 +322,7 @@
 ## tools/series/
 
 - `check-series-content.cjs` — Seri makaleleri için sözleşme denetimi (docs/seri/SOZLESME.md §2, §3, §5, §6). (~1640 tok)
-- `entegre-batch.cjs` — Batch-bağımsız entegrasyon: katalogda olmayan makaleleri frontmatter'dan catalog.json+roadmap.json'a ekler; kuru çalışma varsayılan, --write yazar (~1500 tok)
 - `check-series-svg.cjs` — Seri diyagramları için sözleşme denetimi (docs/seri/SOZLESME.md §6). (~1178 tok)
+- `entegre-batch.cjs` — Batch-bağımsız entegrasyon: katalogda olmayan makaleleri frontmatter'dan catalog.json+roadmap.json'a ekler; kuru çalışma varsayılan, --write yazar (~1500 tok)
 - `entegre-batch.cjs` — Seri batch entegrasyonu (batch-bağımsız): katalogda henüz bulunmayan seri makalelerinin (~1811 tok)
 - `sync-series-hashes.cjs` — Seri makalelerinin content_hash değerlerini doğrular; --write ile frontmatter + katalogu günceller. (~800 tok)

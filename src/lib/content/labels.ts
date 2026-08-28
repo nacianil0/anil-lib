@@ -1,7 +1,7 @@
 import type { Category, Level } from "./schema";
 import type { ReadingStatus } from "./types";
 
-/** Turkish display labels for the controlled categories. */
+/** Turkish display labels for the controlled categories of every series. */
 export const CATEGORY_LABELS: Record<Category, string> = {
   foundations: "Temeller",
   "models-and-training": "Modeller ve Eğitim",
@@ -10,6 +10,12 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   "safety-and-evaluation": "Güvenlik ve Değerlendirme",
   "multimodal-and-future": "Çoklu-Modalite ve Gelecek",
   "case-studies": "Vaka İncelemeleri",
+  "interview-method": "Mülakat ve Yöntem",
+  "discrete-math": "Ayrık Matematik",
+  "data-structures": "Veri Yapıları",
+  algorithms: "Algoritmalar",
+  "operating-systems": "İşletim Sistemleri",
+  "supporting-fundamentals": "Destekleyici Temeller",
 };
 
 export const LEVEL_LABELS: Record<Level, string> = {

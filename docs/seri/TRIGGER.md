@@ -1,6 +1,6 @@
 # "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı
 
-BATCH=5+1
+BATCH=4+1
 
 `docs/seri/HANDOFF.md`'yi ve işaret ettiği state zincirini yükle. Bu run'ın batch değerini
 `docs/seri/SOZLESME.md` §7'ye göre çöz. Sıradaki `N` yayımlanmamış makaleyi araştır, yaz,

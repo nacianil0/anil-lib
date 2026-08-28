@@ -16,8 +16,8 @@ tools/
   publish/
     04-Publish-And-Zip.cmd -> production build + paket + zip
   series/
-    check-series-content.cjs -> "Sifirdan Yuze" seri makaleleri icin sozlesme denetimi
-    check-series-svg.cjs     -> "Sifirdan Yuze" seri diyagramlari icin sozlesme denetimi
+    check-series-content.cjs -> seri makaleleri icin sozlesme denetimi (--series=ai|boun)
+    check-series-svg.cjs     -> seri diyagramlari icin sozlesme denetimi (asset klasoru argumani)
     sync-series-hashes.cjs   -> content_hash dogrulama; --write ile frontmatter+katalog guncelleme
     entegre-batch.cjs        -> yeni batch makalelerini katalog+roadmap'e entegre etme (--write)
   lib/
@@ -117,11 +117,39 @@ en az 13 ve metinler `viewBox` disina tasmamali. Sorun bulursa sifirdan farkli
 exit code doner. Baska bir klasoru denetlemek icin yol argumani verilebilir.
 
 Diger seri araclari: `check-series-content.cjs` makale yapisini (bolumler, kelime
-sayisi, sekil sozdizimi, "Kendini yokla" kutulari) denetler;
+sayisi, sekil sozdizimi, geri cagirma kutulari) denetler;
 `sync-series-hashes.cjs` govde SHA-256'sinin frontmatter ve katalogla esitligini
 dogrular (`--write` ikisini gunceller); `entegre-batch.cjs` katalogda olmayan
 yeni makaleleri frontmatter'dan katalog+roadmap'e entegre eder (varsayilan kuru
 calisma, `--write` yazar). Uretim akisi: `docs/seri/HANDOFF.md`.
+
+### Iki seri, ayni araclar
+
+Ucu de `--series=<ai|boun>` bayragini kabul eder; varsayilan `ai`
+("Sifirdan Yuze: Yapay Zeka", `content/series/`). `boun` degeri
+"Mulakat Aynasi: Bogazici CmpE" serisini (`content/series-boun/`) hedefler ve
+`check-series-content.cjs` icin kural profilini de degistirir: kelime araligi
+1.800-3.200 ve geri cagirma kutusu etiketi "Sesli anlat"
+(AI serisinde 2.000-3.500 ve "Kendini yokla").
+
+`check-series-svg.cjs` bayrak degil, dogrudan klasor yolu alir.
+
+Bir serinin ilk uretim run'inda katalog henuz yoktur; bu durumda
+`sync-series-hashes.cjs` makale klasorunu gezip yalnizca frontmatter hash'lerini
+duzeltir, `entegre-batch.cjs` ise bos bir katalogdan baslayarak
+`catalog.json` dosyasini uretir.
+
+BOUN icin tipik sira:
+
+```
+node tools/series/check-series-content.cjs --series=boun
+node tools/series/check-series-svg.cjs content/series-boun/assets
+node tools/series/sync-series-hashes.cjs --series=boun --write
+node tools/series/entegre-batch.cjs --series=boun --write
+node tools/series/sync-series-hashes.cjs --series=boun
+```
+
+Uretim akisi: `docs/seri-boun/HANDOFF.md`.
 
 ## Notlar
 

@@ -6,8 +6,9 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-08-28** (bütün URL'ler bu tarihte doğrulandı; üretim run'ları kapsam
-kararını etkileyen sayfaları yeniden doğrular ve bu defteri günceller).
+Erişim tarihi: **2026-08-29** (bütün URL'ler bu tarihte yeniden doğrulandı; üretim run'ları
+kapsam kararını etkileyen sayfaları yeniden doğrular ve bu defteri günceller).
+Önceki doğrulama: 2026-08-28 (kurulum görevi).
 
 ## 1. Resmî gerçekler (doğrudan sayfadan)
 
@@ -42,7 +43,10 @@ URL kökü: <https://cmpe.bogazici.edu.tr/courses/>
   lattices and Boolean algebra." Önkoşulsuz.
 - **CMPE250** (<https://cmpe.bogazici.edu.tr/courses/cmpe250/>): "Graphs. Advanced Sorting.
   Hashing. Heap Structures. Search Structures. Complexity. Parallel algorithms. File
-  organization." Önkoşul: CMPE160.
+  organization." Önkoşul: CMPE160. **Ad farkı (2026-08-29):** ders katalog sayfası dersin adını
+  *Data Structures and Algorithms* olarak veriyor; M.Sc. programı sayfası Scientific Preparation
+  listesinde *CmpE250: Data Structures* diyor. Aynı derstir; makalelerde hangi sayfadan
+  aktarıldığı belirtilir.
 - **CMPE300** (<https://cmpe.bogazici.edu.tr/courses/cmpe300/>): algoritma analizi; karşılaştırmalı,
   özyinelemeli, böl-yönet, dinamik, açgözlü, sayısal ve graf algoritmaları; **lower bound theory**;
   paralel ve olasılıksal algoritmalar; Master Teoremi. Önkoşul: CMPE250.
@@ -80,3 +84,35 @@ URL kökü: <https://cmpe.bogazici.edu.tr/courses/>
   Arpaci-Dusseau, *Operating Systems: Three Easy Pieces* (ücretsiz, güncel).
 - Olasılık: Ross, *A First Course in Probability* (CMPE343 düzeyi için).
 - Bilgisayar organizasyonu: Patterson & Hennessy, *Computer Organization and Design*.
+
+## 5. Batch 0 üretim run'ında yeniden doğrulanan kaynaklar (2026-08-29)
+
+Aşağıdaki resmî sayfalar bu run'da tek tek yeniden okundu; §1'deki bütün alıntılar sayfalarla
+birebir eşleşiyor ve kapsam kararını değiştiren bir fark bulunmadı (tek fark yukarıdaki CMPE250
+ad farkıdır).
+
+- M.Sc. programı ve scientific interview: <https://cmpe.bogazici.edu.tr/graduate/ms-program/>
+- CMPE220: <https://cmpe.bogazici.edu.tr/courses/cmpe220/>
+- CMPE250: <https://cmpe.bogazici.edu.tr/courses/cmpe250/>
+- CMPE322: <https://cmpe.bogazici.edu.tr/courses/cmpe322/>
+- Lisans müfredatı: <https://cmpe.bogazici.edu.tr/undergraduate/curriculum/> — CMPE220 ve
+  CMPE250 üçüncü dönemde; CMPE300, CMPE322 ve CMPE343 beşinci dönemde.
+
+### Makale 1–3'te kullanılan akademik kaynaklar
+
+- Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J. & Willingham, D. T. (2013).
+  *Improving Students' Learning With Effective Learning Techniques*. Psychological Science in the
+  Public Interest, 14(1). <https://journals.sagepub.com/doi/10.1177/1529100612453266> — pratik
+  test etme ve aralıklı çalışma yüksek fayda; yeniden okuma ve vurgulama düşük fayda.
+- Fiorella, L. & Mayer, R. E. (2013). *The relative benefits of learning by teaching and teaching
+  expectancy*. Contemporary Educational Psychology, 38(4).
+  <https://www.sciencedirect.com/science/article/abs/pii/S0361476X13000209> — sözlü checkpoint
+  pedagojisinin dayanağı.
+- Rosen, K. H. *Discrete Mathematics and Its Applications*. McGraw Hill.
+  <https://www.mheducation.com/highered/product/Discrete-Mathematics-and-Its-Applications-Rosen.html>
+  — ürün sayfası canlı bir baskı sürümü gösterdiği için makalelerde baskı yılı iddia edilmedi.
+- Lehman, E., Leighton, T. & Meyer, A. *Mathematics for Computer Science* (ders notları).
+  MIT OpenCourseWare 6.042J.
+  <https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/>
+  — yazar atfı OCW'nin 6.042J Güz 2010 readings sayfasındaki "courtesy of Eric Lehman, Tom
+  Leighton, and Albert Meyer" ifadesiyle doğrulandı.

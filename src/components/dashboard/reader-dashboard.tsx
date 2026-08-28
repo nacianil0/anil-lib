@@ -27,24 +27,36 @@ function formatDate(value: string): string {
   }
 }
 
-type DashboardProps = {
+/** Ana sayfada kendi kartıyla görünen bir öğrenme serisi. */
+export type DashboardSeries = {
+  key: string;
+  title: string;
+  subtitle: string;
+  /** Rota tabanı, ör. "/seri" veya "/boun". */
+  basePath: string;
   articles: ArticleDescriptor[];
-  seriesArticles: ArticleDescriptor[];
-  seriesTitle: string;
-  seriesSubtitle: string;
 };
 
-function DashboardContent({ articles, seriesArticles, seriesTitle, seriesSubtitle }: DashboardProps) {
+type DashboardProps = {
+  articles: ArticleDescriptor[];
+  series: DashboardSeries[];
+};
+
+function DashboardContent({ articles, series }: DashboardProps) {
   const { ready, data, statusOf } = useReaderData();
+  const seriesArticles = series.flatMap((entry) => entry.articles);
   const byId = new Map(
     [...articles, ...seriesArticles].map((article) => [article.articleId, article]),
   );
-  const seriesIds = new Set(seriesArticles.map((article) => article.articleId));
+  // Bir makalenin rotası hangi katalogdan geldiğine bağlıdır; bilinmeyen id ana
+  // kütüphaneye düşer, böylece seri eklemek bu haritayı kırmaz.
+  const basePathById = new Map(
+    series.flatMap((entry) =>
+      entry.articles.map((article) => [article.articleId, entry.basePath] as const),
+    ),
+  );
   const hrefFor = (article: ArticleDescriptor) =>
-    seriesIds.has(article.articleId) ? `/seri/${article.slug}` : `/read/${article.slug}`;
-  const seriesCompleted = seriesArticles.filter(
-    (article) => statusOf(article.articleId) === "completed",
-  ).length;
+    `${basePathById.get(article.articleId) ?? "/read"}/${article.slug}`;
   const progressEntries = Object.values(data.progress).sort((a, b) =>
     b.lastReadAt.localeCompare(a.lastReadAt),
   );
@@ -133,35 +145,46 @@ function DashboardContent({ articles, seriesArticles, seriesTitle, seriesSubtitl
           </section>
         </div>
 
-        <section
-          aria-labelledby="series-entry-title"
-          className="mb-10 rounded-md border border-border bg-surface p-5 sm:p-6"
-        >
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="mb-2 flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.22em] text-cool">
-                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-                Öğrenme serisi · Yaşayan yol haritası
-              </p>
-              <h2 id="series-entry-title" className="font-serif text-2xl font-semibold sm:text-3xl">
-                {seriesTitle}
-              </h2>
-              <p className="mt-1.5 max-w-xl font-sans text-sm leading-relaxed text-text-muted">
-                {seriesSubtitle}
-              </p>
-              <p className="mt-3 font-sans text-2xs text-text-faint">
-                {seriesArticles.length} makale yayında · {seriesCompleted} tamamladın
-              </p>
-            </div>
-            <Link
-              href="/seri"
-              className="inline-flex items-center gap-2 rounded-md border border-cool px-4 py-2.5 font-sans text-sm font-semibold text-cool transition-colors hover:bg-cool-soft"
-            >
-              Seriye git
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-        </section>
+        <div className="mb-10 flex flex-col gap-4">
+          {series.map((entry) => {
+            const entryCompleted = entry.articles.filter(
+              (article) => statusOf(article.articleId) === "completed",
+            ).length;
+            const titleId = `series-entry-title-${entry.key}`;
+            return (
+              <section
+                key={entry.key}
+                aria-labelledby={titleId}
+                className="rounded-md border border-border bg-surface p-5 sm:p-6"
+              >
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <p className="mb-2 flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.22em] text-cool">
+                      <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                      Öğrenme serisi · Yaşayan yol haritası
+                    </p>
+                    <h2 id={titleId} className="font-serif text-2xl font-semibold sm:text-3xl">
+                      {entry.title}
+                    </h2>
+                    <p className="mt-1.5 max-w-xl font-sans text-sm leading-relaxed text-text-muted">
+                      {entry.subtitle}
+                    </p>
+                    <p className="mt-3 font-sans text-2xs text-text-faint">
+                      {entry.articles.length} makale yayında · {entryCompleted} tamamladın
+                    </p>
+                  </div>
+                  <Link
+                    href={entry.basePath}
+                    className="inline-flex items-center gap-2 rounded-md border border-cool px-4 py-2.5 font-sans text-sm font-semibold text-cool transition-colors hover:bg-cool-soft"
+                  >
+                    Seriye git
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
+              </section>
+            );
+          })}
+        </div>
 
         {!ready ? (
           <p role="status" className="py-12 text-center font-sans text-sm text-text-muted">

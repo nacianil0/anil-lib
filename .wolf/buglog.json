@@ -1718,6 +1718,108 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-28T18:55:00Z"
+    },
+    {
+      "id": "bug-103",
+      "timestamp": "2026-08-28T21:21:11.043Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/content/schema.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 19→42 lines (2 removed) | Also: /** A single record inside content/catalog.json. *; export const catalogArticleSchema = z.object({",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-28T21:21:27.731Z"
+    },
+    {
+      "id": "bug-104",
+      "timestamp": "2026-08-28T21:23:24.404Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/content/series-roadmap.ts",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 11→5 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T21:23:24.404Z"
+    },
+    {
+      "id": "bug-105",
+      "timestamp": "2026-08-28T21:35:22.932Z",
+      "error_message": "Wrong reference: Makaleyi should be Metni",
+      "file": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
+      "root_cause": "Used \"Makaleyi\" instead of \"Metni\"",
+      "fix": "Changed Makaleyi → Metni",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T21:35:22.932Z"
+    },
+    {
+      "id": "bug-106",
+      "timestamp": "2026-08-29T00:00:00.000Z",
+      "error_message": "SyntaxError: Invalid regular expression: /^>s***Kendini yokla:**/: Nothing to repeat",
+      "file": "tools/series/check-series-content.cjs",
+      "root_cause": "Dinamik `new RegExp(`^>\\s*\\*\\*${label}:\\*\\*`)` shell heredoc + Python replace zinciriyle yazıldı; ters bölü kaçışları iki denemede de tek bölüye indi ve regex bozuldu.",
+      "fix": "Regex tamamen kaldırıldı; kaçış gerektirmeyen düz string kontrolüyle değiştirildi: satır trim edilip `>` ile başlıyor mu ve kalanı `**<etiket>:**` ile mi başlıyor.",
+      "tags": [
+        "regex",
+        "escaping",
+        "tooling",
+        "heredoc",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-29T00:00:00.000Z"
+    },
+    {
+      "id": "bug-107",
+      "timestamp": "2026-08-29T00:00:00.000Z",
+      "error_message": "check-series-content: satır 103: çapraz referans kaçırılmamış — \"1. Makaleyi bir kez başt…\"",
+      "file": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
+      "root_cause": "Denetleyicinin `^\\d+\\.\\s+(makale|bölüm)` sezgiseli, gerçek bir numaralı liste maddesi olan \"1. Makaleyi bir kez baştan sona oku\" satırını kaçırılmamış çapraz referans sandı (yanlış pozitif).",
+      "fix": "Liste maddesi \"1. Metni bir kez baştan sona oku\" olarak yazıldı; anlam değişmedi, sezgisel tetiklenmiyor. Denetleyici sezgiseli bilinçli olarak gevşetilmedi — çapraz referans tuzağını yakalaması daha değerli.",
+      "tags": [
+        "content-check",
+        "false-positive",
+        "markdown",
+        "boun"
+      ],
+      "related_bugs": [
+        "bug-105"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T00:00:00.000Z"
+    },
+    {
+      "id": "bug-108",
+      "timestamp": "2026-08-29T00:00:00.000Z",
+      "error_message": "check-series-content --series=boun: düzyazı kelime sayısı 1483/1690/1699/1768/1777 (hedef 1.800–3.200)",
+      "file": "content/series-boun/articles/",
+      "root_cause": "Kelime sayısı `countProseWords` ile ölçülüyor: Kaynakça bölümü, görsel sözdizimi, bağlantı hedefleri ve tablo boruları sayılmıyor. Taslak yazarken ham uzunluğa bakıldığı için üç makale de alt sınırın altında kaldı.",
+      "fix": "Doldurma cümle eklenmedi; her makaleye gerçek içerik eklendi (takip sorusu zinciri örneği, boş evrende ∀/∃ asimetrisi, durum ayrımıyla ispat bölümü, çift koşullu iddia kuralı). Yazarken hedefin düzyazı kelimesi olduğu unutulmamalı.",
+      "tags": [
+        "content-check",
+        "word-count",
+        "boun",
+        "editorial"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-08-29T00:00:00.000Z"
     }
   ]
 }

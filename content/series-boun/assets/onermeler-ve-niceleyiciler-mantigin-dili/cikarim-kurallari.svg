@@ -1,0 +1,27 @@
+<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="24" width="210" height="172" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="125" y="50" font-size="14" text-anchor="middle" fill="var(--text)">Modus ponens</text>
+  <text x="125" y="82" font-size="14" text-anchor="middle" fill="var(--text-muted)">p → q</text>
+  <text x="125" y="106" font-size="14" text-anchor="middle" fill="var(--text-muted)">p</text>
+  <line x1="60" y1="120" x2="190" y2="120" stroke="var(--border)" stroke-width="1.5" />
+  <text x="125" y="146" font-size="14" text-anchor="middle" fill="var(--text)">∴ q</text>
+  <text x="125" y="178" font-size="13" text-anchor="middle" fill="var(--text-muted)">geçerli</text>
+
+  <rect x="255" y="24" width="210" height="172" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="360" y="50" font-size="14" text-anchor="middle" fill="var(--text)">Modus tollens</text>
+  <text x="360" y="82" font-size="14" text-anchor="middle" fill="var(--text-muted)">p → q</text>
+  <text x="360" y="106" font-size="14" text-anchor="middle" fill="var(--text-muted)">¬q</text>
+  <line x1="295" y1="120" x2="425" y2="120" stroke="var(--border)" stroke-width="1.5" />
+  <text x="360" y="146" font-size="14" text-anchor="middle" fill="var(--text)">∴ ¬p</text>
+  <text x="360" y="178" font-size="13" text-anchor="middle" fill="var(--text-muted)">geçerli</text>
+
+  <rect x="490" y="24" width="210" height="172" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="595" y="50" font-size="14" text-anchor="middle" fill="var(--text)">Sonucu doğrulama</text>
+  <text x="595" y="82" font-size="14" text-anchor="middle" fill="var(--text-muted)">p → q</text>
+  <text x="595" y="106" font-size="14" text-anchor="middle" fill="var(--text-muted)">q</text>
+  <line x1="530" y1="120" x2="660" y2="120" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="595" y="146" font-size="14" text-anchor="middle" fill="var(--text)">∴ p</text>
+  <text x="595" y="178" font-size="13" text-anchor="middle" fill="var(--accent)">geçersiz</text>
+
+  <text x="360" y="228" font-size="13" text-anchor="middle" fill="var(--text-muted)">Üçüncü kalıp ilk ikisine benzer ama sonucu garanti etmez</text>
+</svg>

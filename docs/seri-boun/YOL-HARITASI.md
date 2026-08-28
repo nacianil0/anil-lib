@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-08-28 · Yayında: 0 · Sıradaki: 1–5 (ilk run platform entegrasyonunu da kurar)
+Son güncelleme: 2026-08-29 · Yayında: 3 (1–3, Batch 0) · Sıradaki: 4
 
 ## Serinin tezi
 
@@ -32,9 +32,9 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 
 ### Faz A — Mülakatın Dili: Matematiksel Temel ve İspat (1–8) · CMPE220 ekseni
 
-1. **Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?** — resmî süreç (kaynağıyla), beş yetenek hedefi, sözlü çalışma yöntemi; dürüst sınırlar.
-2. **Önermeler ve Niceleyiciler: Mantığın Dili** — doğruluk tabloları, çıkarım kuralları, ∀/∃; "her/bazı" tuzakları.
-3. **İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle** — ispatın anatomisi; √2 klasiği; karşı örnek disiplini.
+1. **Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?** — *yayında* · resmî süreç (kaynağıyla), beş yetenek hedefi, sözlü çalışma yöntemi; dürüst sınırlar.
+2. **Önermeler ve Niceleyiciler: Mantığın Dili** — *yayında* · doğruluk tabloları, koşullunun dört akrabası, çıkarım kuralları, ∀/∃ ve niceleyici sırası; "her/bazı" tuzakları.
+3. **İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle** — *yayında* · ispatın anatomisi, karşıt ters, durum ayrımı, √2 klasiği; karşı örnek disiplini.
 4. **Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü** — zayıf/güçlü tümevarım; özyinelemeli tanım; algoritma ispatlarına köprü.
 5. **Kümeler, Fonksiyonlar ve Bağıntılar** — birebir/örten, denklik bağıntıları, kısmi sıralar; sayılabilirlik teaser'ı.
 6. **Sayma: Kombinatoriğin Temel Araçları** — permütasyon/kombinasyon, güvercin yuvası, binom; analiz için sayma refleksi.
@@ -94,12 +94,17 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - Faz D ← B (yapılar: kuyruk→zamanlama, ağaç→dosya sistemi), A2 (mantık); C'den bağımsız okunabilir, karmaşıklık savunması için C17 önerilir.
 - Faz E ← 36: A6; 37–38: D; 39: B12; 40–41: bütün fazların sentezi.
 
-**İlk run (Batch 0) taslak satırları:**
+**Batch 0 (yayımlanmış, artık bağlayıcı):**
 - 1 ← (yok; giriş noktası — resmî kaynak aktarımı + yöntem)
 - 2 ← 1 (yöntem: tanım disiplini burada başlar)
-- 3 ← 2 (çıkarım kuralları ispatın adımlarıdır)
+- 3 ← 2 (mantıksal denklikler ispat tekniklerine dönüşür; karşıt ters, niceleyici değillemesi)
+
+**Batch 1 taslak satırları:**
 - 4 ← 3 (tümevarım bir ispat tekniğidir), 2 (niceleyiciler)
 - 5 ← 2 (önerme/koşul dili), 3 (birebir/örten ispatları)
+- 6 ← 5 (fonksiyon/küme dili)
+- 7 ← 5 (bağıntı), 4 (ağaç ispatlarında tümevarım)
+- 8 ← 2 (Boolean bağlaçlar), 5 (bağıntı/kısmi sıra)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -117,7 +122,67 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
   amacıyla, kendi içinde yeterli biçimde işlenir; AI serisinin 91–97 matematik omurgası ML
   bağlamına odaklıdır. İki seri birbirine prerequisite vermez.
 
+## Kategori sözlüğü (platform)
+
+BOUN kataloğu kendi kontrollü kategori sözlüğünü kullanır; ana kütüphanenin ve AI serisinin
+sözlüğü değişmez (SOZLESME §5). Klasör adı `category` alanıyla birebir aynıdır.
+
+| Kategori | Etiket | Kapsanan makaleler |
+|---|---|---|
+| `interview-method` | Mülakat ve Yöntem | 1, 40, 41 |
+| `discrete-math` | Ayrık Matematik | 2–8 |
+| `data-structures` | Veri Yapıları | 9–16 |
+| `algorithms` | Algoritmalar | 17–25 |
+| `operating-systems` | İşletim Sistemleri | 26–35 |
+| `supporting-fundamentals` | Destekleyici Temeller | 36–39 |
+
+SOZLESME §5'teki öneri listesine `interview-method` eklendi: 1, 40 ve 41 diğer beş kategorinin
+hiçbirine düşmüyor ve sahte bir kategori ataması yapmak yerine sözlük genişletildi.
+
 ## Terim defteri
 
-İlk üretim run'ında, ilk batch'in terimleriyle başlatılır (kural: SOZLESME §2 — Türkçe kullanım +
-ilk geçişte İngilizce; mülakat için İngilizce teknik ad görünür kalır).
+Batch 0 ile başlatıldı (kural: SOZLESME §2 — Türkçe kullanım + ilk geçişte İngilizce; mülakat
+için İngilizce teknik ad görünür kalır). Bir terim bir kez bu biçimde yerleştikten sonra seri
+boyunca aynı kalır.
+
+| Türkçe | İngilizce | İlk geçtiği makale |
+|---|---|---|
+| bilimsel mülakat | scientific interview | 1 |
+| doğruluk | correctness | 1 |
+| karmaşıklık | complexity | 1 |
+| bellek | memory | 1 |
+| eşzamanlılık | concurrency | 1 |
+| önerme | proposition | 2 |
+| bağlaç | connective | 2 |
+| değilleme | negation | 2 |
+| ve / veya | conjunction / disjunction | 2 |
+| koşullu önerme | conditional (implication) | 2 |
+| çift koşullu | biconditional | 2 |
+| doğruluk tablosu | truth table | 2 |
+| boş doğruluk | vacuous truth | 2 |
+| karşıt | converse | 2 |
+| ters | inverse | 2 |
+| karşıt ters | contrapositive | 2 |
+| totoloji | tautology | 2 |
+| çelişki | contradiction | 2 |
+| mantıksal denklik | logical equivalence | 2 |
+| çıkarım kuralı | rule of inference | 2 |
+| sonucu doğrulama | affirming the consequent | 2 |
+| yüklem | predicate | 2 |
+| niceleyici (evrensel / varlıksal) | quantifier (universal / existential) | 2 |
+| söylem evreni | domain of discourse | 2 |
+| ispat | proof | 3 |
+| durum ayrımı | proof by cases | 3 |
+| yapıcı / yapıcı olmayan ispat | constructive / nonconstructive proof | 3 |
+| varsayım | conjecture | 3 |
+
+## Kavram-tekrar defteri
+
+Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktalar:
+
+- **Boş doğruluk (2)** → 19'da döngü değişmezlerinin başlatma adımında yeniden kullanılır.
+- **Niceleyici sırası (2)** → 17'de asimptotik tanımların "her ε için bir N vardır" kalıbında
+  formal olarak yeniden kurulur.
+- **Karşı örnek disiplini (3)** → 21'de açgözlü algoritmaların ne zaman çalışmadığını göstermede.
+- **Yapıcı olmayan ispat (3)** → 21 ve 25'te varlık argümanlarının algoritma vermemesi tartışmasında.
+- **Hash tablosu takip zinciri (1)** → 14'te gerçek konu olarak açılır; 1'deki örnek oraya köprüdür.

@@ -11,20 +11,34 @@
  *  - roadmap başlığı frontmatter başlığıyla birebir eşleşir;
  *  - catalog.json 2 boşluklu JSON.stringify ile, roadmap.json satır bazlı replace ile yazılır.
  *
- * Kullanım: node tools/series/entegre-batch.cjs            (kuru çalışma, denetim)
- *           node tools/series/entegre-batch.cjs --write    (yaz)
+ * Kullanım: node tools/series/entegre-batch.cjs                  (kuru çalışma, denetim)
+ *           node tools/series/entegre-batch.cjs --write          (yaz)
+ *           node tools/series/entegre-batch.cjs --series=boun    (BOUN serisi)
+ *
+ * Katalog henüz yoksa (bir serinin ilk üretim run'ı) boş bir katalogdan başlanır:
+ * ilk set reading_order 1'den ve classification_batch 0'dan devam etmek zorundadır.
  */
-const { readFileSync, writeFileSync, readdirSync, statSync } = require("node:fs");
+const { existsSync, readFileSync, writeFileSync, readdirSync, statSync } = require("node:fs");
 const path = require("node:path");
 
 // Frontmatter, uygulamanın kullandığı ayrıştırıcıyla okunur (gray-matter). El yapımı bir
 // ayrıştırıcı YAML'ın kaçırılmış tırnaklarını çözemez ve katalog başlığına ters bölü sızdırır.
 const matter = require("gray-matter");
 
+const SERIES_DIRS = { ai: "series", boun: "series-boun" };
+
+const seriesArg = process.argv.find((a) => a.startsWith("--series="));
+const seriesKey = seriesArg ? seriesArg.slice("--series=".length) : "ai";
+const seriesDir = SERIES_DIRS[seriesKey];
+if (!seriesDir) {
+  console.error(`Bilinmeyen seri: ${seriesKey} (geçerli: ${Object.keys(SERIES_DIRS).join(", ")})`);
+  process.exit(1);
+}
+
 const ROOT = path.resolve(__dirname, "../..");
-const ARTICLES_DIR = path.join(ROOT, "content", "series", "articles");
-const CATALOG = path.join(ROOT, "content", "series", "catalog.json");
-const ROADMAP = path.join(ROOT, "content", "series", "roadmap.json");
+const ARTICLES_DIR = path.join(ROOT, "content", seriesDir, "articles");
+const CATALOG = path.join(ROOT, "content", seriesDir, "catalog.json");
+const ROADMAP = path.join(ROOT, "content", seriesDir, "roadmap.json");
 const WRITE = process.argv.includes("--write");
 
 function walkMarkdown(dir) {
@@ -37,7 +51,14 @@ function walkMarkdown(dir) {
   return out;
 }
 
-const catalog = JSON.parse(readFileSync(CATALOG, "utf8"));
+const catalog = existsSync(CATALOG)
+  ? JSON.parse(readFileSync(CATALOG, "utf8"))
+  : {
+      schemaVersion: 2,
+      classificationVersion: 1,
+      generatedAt: new Date().toISOString(),
+      articles: [],
+    };
 const roadmap = JSON.parse(readFileSync(ROADMAP, "utf8"));
 const problems = [];
 
