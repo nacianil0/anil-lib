@@ -1087,3 +1087,140 @@ D:\dev\anil-lib-seri-batch1-state\review\ altında.
 
 | 12:38 | Session end: 60 writes across 24 files (graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md, tokenizerin-gucu-ve-tuzagi.md, el-sikisma-lemmasi.svg, agac-karakterizasyonlari.svg, cebirsel-yapilar-ve-boolean-cebiri.md) | 14 reads | ~58705 tok |
 | 12:43 | Session end: 60 writes across 24 files (graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md, tokenizerin-gucu-ve-tuzagi.md, el-sikisma-lemmasi.svg, agac-karakterizasyonlari.svg, cebirsel-yapilar-ve-boolean-cebiri.md) | 15 reads | ~62199 tok |
+
+## Session: 2026-08-29 12:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 12:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 12:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:05 | Created content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | — | ~4251 |
+| 13:05 | Edited content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | expanded (+8 lines) | ~423 |
+| 13:07 | Created content/series-boun/assets/diziler-bagli-listeler-yigin-ve-kuyruk/dizi-ve-bagli-liste.svg | — | ~1808 |
+| 13:07 | Created content/series-boun/assets/diziler-bagli-listeler-yigin-ve-kuyruk/amortize-buyutme.svg | — | ~986 |
+| 13:09 | Created content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | — | ~4985 |
+| 13:10 | Created content/series/assets/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak/tam-matris-ve-dusuk-rank.svg | — | ~543 |
+| 13:10 | Created content/series/assets/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak/agirliga-yazmak-mi-onune-koymak-mi.svg | — | ~513 |
+| 13:10 | Created content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | — | ~4075 |
+| 13:11 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | 1→3 lines | ~160 |
+| 13:11 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | expanded (+8 lines) | ~302 |
+| 13:12 | Created content/series-boun/assets/agaclar-ve-ikili-arama-agaclari/bst-degismezi.svg | — | ~1081 |
+| 13:13 | Created content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | — | ~4074 |
+| 13:13 | Created content/series-boun/assets/agaclar-ve-ikili-arama-agaclari/bst-yukseklik.svg | — | ~1246 |
+| 13:13 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | 5→5 lines | ~287 |
+| 13:14 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | 5→9 lines | ~254 |
+| 13:15 | Created content/series/assets/acik-agirliklar-ve-model-ekosistemi/kim-egitebilir-pf-gun.svg | — | ~400 |
+| 13:15 | Created content/series/assets/acik-agirliklar-ve-model-ekosistemi/acikligin-eksenleri.svg | — | ~879 |
+| 13:16 | Created content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | — | ~4389 |
+| 13:16 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | expanded (+16 lines) | ~820 |
+| 13:16 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | 1→2 lines | ~117 |
+| 13:16 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | "nin sol alt ağacı, sonra " → "deki iki şekilde de y" | ~112 |
+| 13:17 | Created content/series-boun/assets/dengeli-arama-avlden-b-agacina/donus.svg | — | ~992 |
+| 13:18 | Created content/series-boun/assets/dengeli-arama-avlden-b-agacina/b-agaci-blok.svg | — | ~1180 |
+| 13:20 | Created content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | — | ~3683 |
+| 13:20 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~24 |
+| 13:21 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | 3→3 lines | ~216 |
+| 13:21 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~100 |
+| 13:22 | Created content/series/assets/baglam-penceresi-istemin-anatomisi/baglam-penceresinin-anatomisi.svg | — | ~708 |
+| 13:22 | Created content/series/assets/baglam-penceresi-istemin-anatomisi/ilan-edilen-ve-etkin-uzunluk.svg | — | ~710 |
+| 13:22 | Created content/series/assets/baglam-penceresi-istemin-anatomisi/ortadaki-bilgi.svg | — | ~524 |
+| 13:23 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | 1→3 lines | ~204 |
+| 13:23 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | expanded (+12 lines) | ~420 |
+| 13:23 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | 1→3 lines | ~235 |
+| 13:24 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | 1→5 lines | ~268 |
+| 13:24 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | 1→3 lines | ~166 |
+| 13:24 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | 1→3 lines | ~218 |
+| 13:27 | Created content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | — | ~3954 |
+| 13:27 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~76 |
+| 13:28 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~81 |
+| 13:29 | Created content/series/assets/istem-muhendisligi-kanita-dayali-bir-bakis/ayni-gorev-farkli-bicim.svg | — | ~651 |
+| 13:29 | Created content/series/assets/istem-muhendisligi-kanita-dayali-bir-bakis/ara-adimlarin-kazanci.svg | — | ~496 |
+| 13:30 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | 1→3 lines | ~212 |
+| 13:30 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | expanded (+16 lines) | ~586 |
+| 13:31 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~187 |
+| 13:31 | Created docs/seri-boun/HANDOFF.md | — | ~4834 |
+| 13:31 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | 1→3 lines | ~221 |
+| 13:31 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | 1→3 lines | ~110 |
+| 13:32 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~79 |
+| 13:32 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~40 |
+| 13:32 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~41 |
+| 13:32 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~27 |
+| 13:32 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~46 |
+| 13:36 | BOUN Batch 3 (BATCH=3+1): makale 10-12 yazildi, 6 SVG uretildi, katalog+roadmap entegre edildi, hash senkronize edildi | content/series-boun/** | 12 makale yayinda, denetleyiciler temiz | ~62000 |
+| 13:36 | Dogrulama: typecheck temiz, test 218/218, build 55 sayfa, 27 render kombinasyonu + 6 diyagram gorseli, Playwright 21 gecti / 4 onceden-var basarisiz | repo geneli | kapilar gecti | ~9000 |
+| 13:36 | +1 fazi: ARASTIRMA §8, YOL-HARITASI (durum, 10-12 yayinda, terim defteri, tekrar defteri, Batch 4 taslagi), HANDOFF yeniden yazildi | docs/seri-boun/** | state Batch 4'e devredildi | ~7000 |
+| 13:33 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~142 |
+| 13:33 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~105 |
+| 13:34 | Session end: 54 writes across 23 files (diziler-bagli-listeler-yigin-ve-kuyruk.md, dizi-ve-bagli-liste.svg, amortize-buyutme.svg, fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md, tam-matris-ve-dusuk-rank.svg) | 15 reads | ~57043 tok |
+| 13:34 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~56 |
+| 13:34 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~143 |
+| 13:34 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~118 |
+| 13:35 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~122 |
+| 13:35 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~110 |
+| 13:35 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~111 |
+| 13:35 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~40 |
+| 13:35 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~37 |
+| 13:36 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~94 |
+| 13:36 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | 3→3 lines | ~238 |
+| 13:37 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~93 |
+| 13:37 | Edited content/series/roadmap.json | 4→4 lines | ~114 |
+| 13:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/refs.cjs | — | ~228 |
+| 13:44 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~104 |
+| 13:44 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~42 |
+| 13:44 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~31 |
+| 13:44 | Edited docs/seri/YOL-HARITASI.md | inline fix | ~34 |
+| 13:44 | Edited docs/seri/YOL-HARITASI.md | 2→2 lines | ~47 |
+| 13:44 | Edited docs/seri/YOL-HARITASI.md | 4→9 lines | ~167 |
+| 13:45 | Edited docs/seri/YOL-HARITASI.md | 6→11 lines | ~229 |
+| 13:45 | Edited docs/seri/YOL-HARITASI.md | 3→7 lines | ~125 |
+| 13:45 | Edited docs/seri/YOL-HARITASI.md | 9→9 lines | ~170 |
+| 13:45 | Edited docs/seri/YOL-HARITASI.md | expanded (+8 lines) | ~726 |
+| 13:46 | Edited docs/seri/YOL-HARITASI.md | expanded (+53 lines) | ~1232 |
+| 13:47 | Edited docs/seri/YOL-HARITASI.md | modified alan() | ~681 |
+| 13:49 | Edited docs/seri/YOL-HARITASI.md | modified Liang() | ~2696 |
+| 13:51 | Created docs/seri/HANDOFF.md | — | ~3219 |
+| 13:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/statecheck.cjs | — | ~921 |
+| 13:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/cerebrum_update.py | — | ~1744 |
+| 13:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/buglog_update.py | — | ~2049 |
+
+## Oturum özeti — 2026-08-29 · "Sıfırdan Yüze: Yapay Zekâ" Batch 4 (BATCH=4+1)
+
+`docs/seri/TRIGGER.md` çalıştırıldı; SOZLESME §7'ye göre `BATCH=4+1` çözüldü → 19, 20, 21, 22.
+
+**Üretilen içerik.** Dört makale, dokuz elle yazılmış SVG diyagram:
+- 19 `fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak` (models-and-training) — LoRA, içsel boyut, öğrenme ↔ unutma, QLoRA, bilgi enjeksiyonunun ölçülmüş sınırı.
+- 20 `acik-agirliklar-ve-model-ekosistemi` (models-and-training) — Faz 2'yi kapattı; 6ND ile PF-gün çapraz doğrulaması, 14 eksenli açıklık çerçevesi, lisanslar, OSI tanımı, şeffaflık endeksi, geri alınamazlık.
+- 21 `baglam-penceresi-istemin-anatomisi` (reasoning-and-memory) — Faz 3'ü açtı; durumsuzluk, karesel tur maliyeti, ilan edilen ↔ etkin uzunluk, ortadaki bilginin kaybı.
+- 22 `istem-muhendisligi-kanita-dayali-bir-bakis` (reasoning-and-memory) — biçim/sıra duyarlılığı, rol ve kibarlık kurallarının sınanması, ara adımların dar kazancı, ölçme disiplini.
+
+**Alınan kararlar.** Faz 3 kategorisi `reasoning-and-memory` (YOL-HARITASI karar #50); yayımlanmamış 21, 22, 24 başlıklarındaki "Prompt" → "İstem" (karar #51). Yeni bağlayıcı olgu kararları #31–#51.
+
+**Doğrulama.** `check-series-content.cjs` ve `check-series-svg.cjs` temiz (22 makale, 61 diyagram); `entegre-batch.cjs --write` + `sync-series-hashes.cjs --write`; `pnpm typecheck`; `pnpm test` 223/223; `pnpm build` 59 sayfa; 55 rotanın tamamı 200; üç temada DOM ölçümüyle render doğrulaması (body ve SVG renkleri, viewBox taşması yok, mobil/tablet/masaüstünde sayfa gövdesinde yatay taşma yok); çapraz state tutarlılık betiği temiz. Piksel ekran görüntüsü ortam nedeniyle alınamadı.
+
+**Güncellenen state.** `docs/seri/HANDOFF.md` (cursor 22 → sıradaki 23, kohort 5), `docs/seri/YOL-HARITASI.md` (vaat defteri, faz listeleri, prerequisite grafı, kavram-tekrar defteri, terim defteri, bağlayıcı kararlar, Batch 4 öğrenme notları), `content/series/catalog.json`, `content/series/roadmap.json`, `.wolf/anatomy.md`, `.wolf/cerebrum.md`, `.wolf/buglog.json` (bug-139…bug-148).
+| 13:56 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/finalcheck.cjs | — | ~575 |
+| 13:56 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~37 |
+| 13:59 | Session end: 86 writes across 30 files (diziler-bagli-listeler-yigin-ve-kuyruk.md, dizi-ve-bagli-liste.svg, amortize-buyutme.svg, fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md, tam-matris-ve-dusuk-rank.svg) | 15 reads | ~74262 tok |
+
+## Session: 2026-08-29 16:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 16:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 16:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

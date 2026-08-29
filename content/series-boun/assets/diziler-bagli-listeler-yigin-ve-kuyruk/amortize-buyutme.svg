@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+  <text x="30" y="30" font-size="14" fill="var(--text)">Dinamik dizi: tek işlem maliyeti ve amortize maliyet</text>
+  <text x="30" y="52" font-size="13" fill="var(--text-muted)">kapasite dolduğunda ikiye katlanır; pahalı adımların arası her seferinde iki katına çıkar</text>
+
+  <line x1="66" y1="60" x2="66" y2="250" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="66" y1="250" x2="664" y2="250" stroke="var(--border)" stroke-width="1.4" />
+
+  <rect x="76" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="112" y="210" width="30" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <rect x="148" y="190" width="30" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <rect x="184" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="220" y="150" width="30" height="100" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <rect x="256" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="292" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="328" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="364" y="70" width="30" height="180" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <rect x="400" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="436" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="472" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="508" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="544" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="580" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="616" y="230" width="30" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+
+  <line x1="66" y1="211" x2="664" y2="211" stroke="var(--text)" stroke-width="1.4" stroke-dasharray="7 5" />
+  <text x="470" y="204" font-size="13" fill="var(--text)">amortize maliyet ≈ 2 adım</text>
+
+  <text x="404" y="84" font-size="13" fill="var(--text-muted)">dokuzuncu ekleme: 8 kopyalama + 1 ekleme</text>
+
+  <text x="91" y="270" font-size="13" text-anchor="middle" fill="var(--text-faint)">1</text>
+  <text x="235" y="270" font-size="13" text-anchor="middle" fill="var(--text-faint)">5</text>
+  <text x="379" y="270" font-size="13" text-anchor="middle" fill="var(--text-faint)">9</text>
+  <text x="523" y="270" font-size="13" text-anchor="middle" fill="var(--text-faint)">13</text>
+  <text x="360" y="292" font-size="13" text-anchor="middle" fill="var(--text-muted)">sona ekleme işleminin sırası</text>
+
+  <rect x="76" y="306" width="568" height="80" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="94" y="330" font-size="13" fill="var(--text)">16 ekleme, toplam 31 adım = 16 ekleme + 15 kopyalama</text>
+  <text x="94" y="352" font-size="13" fill="var(--text-muted)">kopyalama toplamı 1 + 2 + 4 + 8 = 15, her zaman 2n sınırının altında</text>
+  <text x="94" y="374" font-size="13" fill="var(--text-muted)">işlem başına 31 / 16 ≈ 1,9 adım: tek işlem doğrusal olsa da dizi sabit</text>
+</svg>

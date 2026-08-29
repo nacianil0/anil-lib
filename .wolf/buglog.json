@@ -2170,6 +2170,341 @@
       ],
       "occurrences": 1,
       "last_seen": "2026-08-29T12:35:00Z"
+    },
+    {
+      "id": "bug-129",
+      "timestamp": "2026-08-29T10:14:55.242Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→9 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T10:14:55.242Z"
+    },
+    {
+      "id": "bug-130",
+      "timestamp": "2026-08-29T10:16:50.532Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md",
+      "root_cause": "Had 'nin sol alt ağacı, sonra y, sonra ortadaki alt ağ",
+      "fix": "Changed to 'deki iki şekilde de y'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T10:16:50.532Z"
+    },
+    {
+      "id": "bug-131",
+      "timestamp": "2026-08-29T10:20:45.470Z",
+      "error_message": "Wrong reference: yer should be kapar",
+      "file": "content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md",
+      "root_cause": "Used \"yer\" instead of \"kapar\"",
+      "fix": "Changed yer → kapar",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T10:20:45.470Z"
+    },
+    {
+      "id": "bug-132",
+      "timestamp": "2026-08-29T10:21:41.542Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md",
+      "root_cause": "Had 'de eşiği geçebiliyor. 128.000 ilan eden başka bir",
+      "fix": "Changed to 'e kadar koruyabildi. Aynı sayıyı ilan eden Comman",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T10:21:41.542Z"
+    },
+    {
+      "id": "bug-133",
+      "timestamp": "2026-08-29T13:35:00.000Z",
+      "error_message": "/usr/bin/bash: -c: line 64: unexpected EOF while looking for matching `'",
+      "file": "content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md",
+      "root_cause": "Bash tool komutu kabuga cift tirnak icinde ulastigi icin, quoted heredoc (<<'EOF') govdesindeki backtick karakterleri komut ikamesi olarak yorumlanip tirnak dengesini bozdu.",
+      "fix": "Uzun Turkce icerik dosyalari Write tool'uyla yazildi; bash heredoc'larinda backtick kullanilmiyor (URL'ler icin <...> bicimi tercih edildi).",
+      "tags": [
+        "bash",
+        "heredoc",
+        "backtick",
+        "tooling",
+        "encoding"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T13:35:00.000Z"
+    },
+    {
+      "id": "bug-134",
+      "timestamp": "2026-08-29T13:35:00.000Z",
+      "error_message": "content_hash bagimsiz dogrulama betigi 12 makaleden birinde uyusmazlik verdi (govde hash != katalog hash)",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "Depodaki makale dosyalari CRLF satir sonu kullaniyor ve content_hash ham metin uzerinden hesaplaniyor. Python'da io.open(..., encoding=...) evrensel satir sonu cevirisi yapip CRLF'i LF'e indirdigi icin farkli hash uretti.",
+      "fix": "Dogrulama betigi dosyayi open(...,'rb') ile ham bayt olarak okuyup UTF-8 decode edecek sekilde degistirildi; 12/12 esitlik dogrulandi.",
+      "tags": [
+        "content-hash",
+        "crlf",
+        "python",
+        "verification",
+        "series"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T13:35:00.000Z"
+    },
+    {
+      "id": "bug-135",
+      "timestamp": "2026-08-29T13:35:00.000Z",
+      "error_message": "check-series-content.cjs: 'Sekil 1 metinde referanslanmamis' ve 'duzyazi kelime sayisi 1736 (hedef 1.800-3.200)'",
+      "file": "content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md",
+      "root_cause": "Diyagram, metinde 'Sekil N' ifadesiyle anilmadan dogrudan yerlestirildi; ayrica govde alt kelime sinirinin altinda kaldi (Kaynakca ve tablo borulari sayilmiyor).",
+      "fix": "Her diyagram icin metne acik 'Sekil N' referans cumlesi eklendi ve makalelere birer Problem/Strateji/Adimlar/Savunma blogu yazilarak kelime sayisi sozlesme araligina cikarildi.",
+      "tags": [
+        "series",
+        "check-series-content",
+        "figure-reference",
+        "word-count"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T13:35:00.000Z"
+    },
+    {
+      "id": "bug-136",
+      "timestamp": "2026-08-29T13:35:00.000Z",
+      "error_message": "check-series-svg.cjs: metin viewBox disina tasiyor olabilir: 'olmasi gereken: (10, 15)' (x=596, tahmini 596..768, genislik 720)",
+      "file": "content/series-boun/assets/agaclar-ve-ikili-arama-agaclari/bst-degismezi.svg",
+      "root_cause": "Etiket, vurgulanan dugumun sagina start-anchor ile konuldu; denetleyicinin kaba genislik tahmini (karakter x font x 0.55) tuvali asti.",
+      "fix": "Etiket dugumun altina text-anchor=middle ile tasindi, viewBox yuksekligi 330'dan 344'e cikarildi ve alt satirlar asagi kaydirildi.",
+      "tags": [
+        "svg",
+        "viewbox",
+        "overflow",
+        "series"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T13:35:00.000Z"
+    },
+    {
+      "id": "bug-137",
+      "timestamp": "2026-08-29T10:36:37.662Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md",
+      "root_cause": "Had 'e düşüyor; açık ağırlıklı bir modelde düşüş çok d",
+      "fix": "Changed to 'in doğruluğu en nazik düzeyde 60,02 iken en kaba ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T10:36:37.662Z"
+    },
+    {
+      "id": "bug-138",
+      "timestamp": "2026-08-29T10:44:51.984Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 4→9 lines (3 removed) | Also: **Batch 4 taslağı (19'dan devam).** Yayımlanmış bo; - 19 ← 11 (ince ayar tanımı, \"LoRA biçimi 19'da\"),",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-29T10:45:56.477Z"
+    },
+    {
+      "id": "bug-139",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "sync-series-hashes.cjs '18 makale denetlendi. Sorun yok.' dedi ama katalogda 22 makale vardi ve yeni dordunun content_hash'i yer tutucuydu",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "Arac katalog varsa yalnizca catalog.articles kayitlarini geziyor; diskteki ama katalogda olmayan yeni makaleleri hic gormuyor",
+      "fix": "Dogru sira uygulandi: entegre-batch.cjs --write (yeni kayitlar kataloga girer) once, sync-series-hashes.cjs --write sonra. Sira HANDOFF entegrasyon notuna yazildi.",
+      "tags": [
+        "seri",
+        "arac",
+        "hash",
+        "sira",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-140",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "bash: -c: line 78: unexpected EOF while looking for matching `''",
+      "file": "content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md",
+      "root_cause": "Bash heredoc (<<'MDEOF') ile uzun Turkce markdown yazmak bu ortamda parse hatasi veriyor; dosya hic olusmadi",
+      "fix": "Uzun icerik Write araciyla yazildi; Bash yalnizca komut/denetim icin kullanildi.",
+      "tags": [
+        "bash",
+        "heredoc",
+        "encoding",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-141",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "UnicodeEncodeError: 'charmap' codec can't encode character '\\u011f'",
+      "file": ".wolf/anatomy.md",
+      "root_cause": "Windows'ta Python varsayilan stdout kodlamasi cp1252; Turkce karakter iceren print patliyor. Dosya yazimi zaten gerceklesmis oluyor, hata mesaji yaniltici.",
+      "fix": "PYTHONUTF8=1 / PYTHONIOENCODING=utf-8 ile calistirildi; dosya icerigi grep ile dogrulandi.",
+      "tags": [
+        "python",
+        "windows",
+        "encoding",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-142",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "Sekil 2 alt metni 'kalanlar kapali' diyordu ama SVG'de iki hucre 'kismi' isaretliydi",
+      "file": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
+      "root_cause": "SVG once tasarlandi, alt metin taslak halinden guncellenmedi (Batch 3'teki ayni sinif bulgunun tekrari)",
+      "fix": "Alt metin SVG'ye bakilarak yeniden yazildi; ayni kontrol dort makalenin dokuz seklinin hepsinde tekrarlandi.",
+      "tags": [
+        "seri",
+        "sekil",
+        "alt-metin",
+        "erisilebilirlik",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-143",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "Terim defteri ihlali: 'perplexity' yerine 'saskinlik degeri' yazilmisti",
+      "file": "content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md",
+      "root_cause": "Terim defteri perplexity'yi Turkcelestirmiyor; 'saskinlik olcusu' yalnizca sezgi aciklamasidir",
+      "fix": "'perplexity degerini' olarak duzeltildi; butun parantezli gloss'lar terim defteriyle karsilastirildi.",
+      "tags": [
+        "seri",
+        "terim-defteri",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-144",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "Makale kendi numarasina atif yapiyordu: 22. makalenin govdesinde '22. makalenin ana fikri'",
+      "file": "content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md",
+      "root_cause": "Taslak cumlesi baska bir numarayla yazilip tasindi",
+      "fix": "'bu makalenin sonunda donecegimiz fikir' olarak degistirildi; her makalede kendi numarasi arandi.",
+      "tags": [
+        "seri",
+        "capraz-referans",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-145",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "Ayni kavram bir paragrafta 'ayri bir kanal', iki paragraf sonra 'kanal degil' diye anlatiliyordu (sistem istemi)",
+      "file": "content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md",
+      "root_cause": "Ileri vaat cumlesi ('neden ayri bir kanal oldugu 24'te'), kavram govdede aciklandiktan sonra tekrar okunmadi",
+      "fix": "Ileri vaat 'sistem isteminin nasil yazildigi 24. makalenin konusu' olarak duzeltildi.",
+      "tags": [
+        "seri",
+        "tutarlilik",
+        "ileri-vaat",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-146",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "Kaynaksiz nicelik iddiasi: 'Bu birlesim, dunyada onlarca kurumun elinde.'",
+      "file": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
+      "root_cause": "SOZLESME §2 kaynaksiz sayisal iddiayi yasakliyor; 'onlarca' da bir sayidir",
+      "fix": "Yapisal ifadeye cevrildi: hangi dort kosulun ayni anda gerektigi sayildi, sayi okura birakildi. Ayrica 'on binlerce hizlandirici' iddiasi kaynaga baglandi (2.048 kartlik kume).",
+      "tags": [
+        "seri",
+        "kaynak",
+        "sayisal-iddia",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-147",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "Ingilizcesi Turkcesiyle ayni olan terime parantez ici gloss verilmisti: 'rank (rank)'",
+      "file": "content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md",
+      "root_cause": "SOZLESME §2 gloss kurali mekanik uygulandi; terim defteri bu durumda tire kullaniyor (token, logit, perplexity)",
+      "fix": "'eklenen guncellemenin rankidir' olarak yeniden yazildi; terim deftrine 'gloss verilmez' notuyla kaydedildi.",
+      "tags": [
+        "seri",
+        "terim-defteri",
+        "gloss",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-148",
+      "timestamp": "2026-08-29T11:05:00.000Z",
+      "error_message": "check-series-content.cjs: 'duzyazi kelime sayisi 1708 (hedef 2.000-3.500)' — dort makalenin dordu de ilk taslakta esigin altinda kaldi",
+      "file": "content/series/articles/",
+      "root_cause": "Taslaklar ~1.500-1.800 kelimeyle cikti; Batch 3'te de ayni sinif sorun gorulmustu",
+      "fix": "Eksik her seferinde gercek icerikle kapatildi (20'de 'Geri alinamayan bir karar', 21'de 'Pencere doldugunda', 22'de 'Peki ne ise yariyor'), doldurma cumlesi kullanilmadi.",
+      "tags": [
+        "seri",
+        "kelime-sayisi",
+        "batch4"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-08-29T11:05:00.000Z"
     }
   ]
 }

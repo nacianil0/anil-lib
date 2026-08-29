@@ -33,8 +33,8 @@
         { "order": 16, "title": "Değerlendirme 101: Benchmark'lar Ne Ölçer, Ne Ölçemez?", "status": "yayinda", "slug": "degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez" },
         { "order": 17, "title": "Halüsinasyon: Model Neden ve Ne Zaman Uydurur?", "status": "yayinda", "slug": "halusinasyon-model-neden-ve-ne-zaman-uydurur" },
         { "order": 18, "title": "Bilgi Parametrelerde Nasıl Durur? Model Hafızası", "status": "yayinda", "slug": "bilgi-parametrelerde-nasil-durur-model-hafizasi" },
-        { "order": 19, "title": "Fine-Tuning ve LoRA: Modeli Kendi İşine Uyarlamak", "status": "planlandi" },
-        { "order": 20, "title": "Açık Ağırlıklar ve Model Ekosistemi", "status": "planlandi" }
+        { "order": 19, "title": "Fine-Tuning ve LoRA: Modeli Kendi İşine Uyarlamak", "status": "yayinda", "slug": "fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak" },
+        { "order": 20, "title": "Açık Ağırlıklar ve Model Ekosistemi", "status": "yayinda", "slug": "acik-agirliklar-ve-model-ekosistemi" }
       ]
     },
     {
@@ -42,10 +42,10 @@
       "title": "Modelle Konuşmak: Inference, Prompt ve Bağlam",
       "description": "Bağlam penceresinden yapılandırılmış çıktıya: modeli kullanmanın mekaniği ve ekonomisi.",
       "articles": [
-        { "order": 21, "title": "Bağlam Penceresi: Prompt'un Anatomisi", "status": "planlandi" },
-        { "order": 22, "title": "Prompt Mühendisliği: Kanıta Dayalı Bir Bakış", "status": "planlandi" },
+        { "order": 21, "title": "Bağlam Penceresi: İstemin Anatomisi", "status": "yayinda", "slug": "baglam-penceresi-istemin-anatomisi" },
+        { "order": 22, "title": "İstem Mühendisliği: Kanıta Dayalı Bir Bakış", "status": "yayinda", "slug": "istem-muhendisligi-kanita-dayali-bir-bakis" },
         { "order": 23, "title": "In-Context Learning: Örnekle Öğrenme", "status": "planlandi" },
-        { "order": 24, "title": "Sistem Prompt'ları, Roller ve Sohbet Formatı", "status": "planlandi" },
+        { "order": 24, "title": "Sistem İstemleri, Roller ve Sohbet Formatı", "status": "planlandi" },
         { "order": 25, "title": "Uzun Bağlam: Pencereyi Büyütmenin Bedeli", "status": "planlandi" },
         { "order": 26, "title": "KV Cache ve Inference Ekonomisi", "status": "planlandi" },
         { "order": 27, "title": "Kuantizasyon: Modeli Küçültme Sanatı", "status": "planlandi" },

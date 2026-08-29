@@ -1,0 +1,37 @@
+<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Anlamı birebir aynı istemlerin verdiği sonuçlar</text>
+
+  <text x="365" y="74" font-size="13" text-anchor="middle" fill="var(--text-muted)">eşdeğer biçimlerin yarattığı aralık</text>
+  <line x1="130" y1="88" x2="600" y2="88" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="130" y1="82" x2="130" y2="94" stroke="var(--text-muted)" stroke-width="2"/>
+  <line x1="600" y1="82" x2="600" y2="94" stroke="var(--text-muted)" stroke-width="2"/>
+  <text x="130" y="112" font-size="13" text-anchor="middle" fill="var(--text-faint)">en düşük biçim</text>
+  <text x="600" y="112" font-size="13" text-anchor="middle" fill="var(--text-faint)">en yüksek biçim</text>
+
+  <circle cx="134" cy="176" r="4" fill="var(--cool)"/>
+  <circle cx="168" cy="150" r="4" fill="var(--cool)"/>
+  <circle cx="196" cy="182" r="4" fill="var(--cool)"/>
+  <circle cx="224" cy="158" r="4" fill="var(--cool)"/>
+  <circle cx="248" cy="188" r="4" fill="var(--cool)"/>
+  <circle cx="272" cy="146" r="4" fill="var(--cool)"/>
+  <circle cx="296" cy="172" r="4" fill="var(--cool)"/>
+  <circle cx="318" cy="152" r="4" fill="var(--cool)"/>
+  <circle cx="340" cy="186" r="4" fill="var(--cool)"/>
+  <circle cx="362" cy="162" r="4" fill="var(--cool)"/>
+  <circle cx="384" cy="142" r="4" fill="var(--cool)"/>
+  <circle cx="406" cy="178" r="4" fill="var(--cool)"/>
+  <circle cx="428" cy="150" r="4" fill="var(--cool)"/>
+  <circle cx="478" cy="184" r="4" fill="var(--cool)"/>
+  <circle cx="500" cy="156" r="4" fill="var(--cool)"/>
+  <circle cx="522" cy="176" r="4" fill="var(--cool)"/>
+  <circle cx="546" cy="148" r="4" fill="var(--cool)"/>
+  <circle cx="570" cy="180" r="4" fill="var(--cool)"/>
+  <circle cx="592" cy="160" r="4" fill="var(--cool)"/>
+
+  <circle cx="455" cy="164" r="7" fill="var(--accent)"/>
+  <line x1="455" y1="174" x2="490" y2="212" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="498" y="218" font-size="13" text-anchor="start" fill="var(--accent)">tek denemede gördüğün sonuç</text>
+
+  <text x="16" y="254" font-size="13" text-anchor="start" fill="var(--text-muted)">aynı görev, aynı model, yalnızca noktalama ve boşluk farkı</text>
+  <text x="16" y="278" font-size="13" text-anchor="start" fill="var(--text-faint)">tipik görevde aralık 7,5 puan; ölçülen en geniş aralık 76 puan</text>
+</svg>

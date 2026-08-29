@@ -1,0 +1,29 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı ağırlık matrisi, iki ayrı eğitim bütçesi</text>
+
+  <text x="130" y="60" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam ince ayar</text>
+  <rect x="50" y="70" width="160" height="160" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="130" y="156" font-size="13" text-anchor="middle" fill="var(--text)">4.096 × 4.096</text>
+  <text x="130" y="252" font-size="13" text-anchor="middle" fill="var(--text-muted)">16.777.216 parametre eğitilir</text>
+
+  <line x1="300" y1="56" x2="300" y2="290" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="523" y="60" font-size="13" text-anchor="middle" fill="var(--text-muted)">LoRA ile uyarlama</text>
+  <rect x="350" y="70" width="160" height="160" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="2"/>
+  <text x="430" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">donmuş</text>
+  <text x="430" y="170" font-size="13" text-anchor="middle" fill="var(--text-faint)">4.096 × 4.096</text>
+
+  <text x="530" y="158" font-size="14" text-anchor="middle" fill="var(--text-muted)">+</text>
+
+  <rect x="552" y="70" width="20" height="160" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="2"/>
+  <text x="562" y="252" font-size="13" text-anchor="middle" fill="var(--cool)">4.096 × 8</text>
+
+  <text x="590" y="158" font-size="14" text-anchor="middle" fill="var(--text-muted)">×</text>
+
+  <rect x="608" y="140" width="88" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="2"/>
+  <text x="652" y="188" font-size="13" text-anchor="middle" fill="var(--cool)">8 × 4.096</text>
+
+  <text x="523" y="284" font-size="13" text-anchor="middle" fill="var(--text-muted)">65.536 parametre eğitilir</text>
+
+  <text x="16" y="332" font-size="13" text-anchor="start" fill="var(--text-faint)">eğitilen parametre oranı: 65.536 ÷ 16.777.216 = binde 3,9</text>
+</svg>

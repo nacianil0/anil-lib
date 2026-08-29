@@ -1,0 +1,30 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Doğru belgenin yeri değiştikçe doğruluk</text>
+
+  <line x1="90" y1="46" x2="90" y2="258" stroke="var(--border)" stroke-width="1"/>
+  <line x1="90" y1="258" x2="690" y2="258" stroke="var(--border)" stroke-width="1"/>
+  <text x="84" y="60" font-size="13" text-anchor="end" fill="var(--text-muted)">doğruluk</text>
+
+  <line x1="90" y1="59" x2="690" y2="59" stroke="var(--cool)" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="130" y="52" font-size="13" text-anchor="start" fill="var(--cool)">yalnızca doğru belge verildiğinde: 88,3</text>
+
+  <line x1="90" y1="220" x2="690" y2="220" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="400" y="213" font-size="13" text-anchor="start" fill="var(--text-muted)">hiç belge verilmediğinde: 56,1</text>
+
+  <path d="M 120 121 C 200 165, 300 225, 390 231 C 480 237, 570 205, 660 184" fill="none" stroke="var(--accent)" stroke-width="2"/>
+
+  <circle cx="120" cy="121" r="4" fill="var(--accent)"/>
+  <text x="130" y="112" font-size="13" text-anchor="start" fill="var(--accent)">75,8</text>
+
+  <circle cx="390" cy="231" r="4" fill="var(--accent)"/>
+  <text x="390" y="250" font-size="13" text-anchor="middle" fill="var(--accent)">53,8</text>
+
+  <circle cx="660" cy="184" r="4" fill="var(--accent)"/>
+  <text x="650" y="176" font-size="13" text-anchor="end" fill="var(--accent)">63,2</text>
+
+  <text x="120" y="280" font-size="13" text-anchor="middle" fill="var(--text-faint)">1. sıra</text>
+  <text x="390" y="280" font-size="13" text-anchor="middle" fill="var(--text-faint)">10. sıra</text>
+  <text x="660" y="280" font-size="13" text-anchor="middle" fill="var(--text-faint)">20. sıra</text>
+
+  <text x="16" y="310" font-size="13" text-anchor="start" fill="var(--text-faint)">doğru belge ortadayken sonuç, hiç belge vermemenin altına düşüyor</text>
+</svg>

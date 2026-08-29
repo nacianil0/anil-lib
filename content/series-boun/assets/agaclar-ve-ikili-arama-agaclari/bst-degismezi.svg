@@ -1,0 +1,56 @@
+<svg viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg">
+  <text x="30" y="34" font-size="14" fill="var(--text)">Geçerli ikili arama ağacı</text>
+
+  <line x1="190" y1="92" x2="110" y2="162" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="190" y1="92" x2="270" y2="162" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="110" y1="162" x2="66" y2="232" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="110" y1="162" x2="154" y2="232" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="270" y1="162" x2="226" y2="232" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="270" y1="162" x2="314" y2="232" stroke="var(--border)" stroke-width="1.6" />
+
+  <circle cx="190" cy="92" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="110" cy="162" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="270" cy="162" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="66" cy="232" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="154" cy="232" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="226" cy="232" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="314" cy="232" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+
+  <text x="190" y="97" font-size="13" text-anchor="middle" fill="var(--text)">10</text>
+  <text x="110" y="167" font-size="13" text-anchor="middle" fill="var(--text)">5</text>
+  <text x="270" y="167" font-size="13" text-anchor="middle" fill="var(--text)">15</text>
+  <text x="66" y="237" font-size="13" text-anchor="middle" fill="var(--text)">2</text>
+  <text x="154" y="237" font-size="13" text-anchor="middle" fill="var(--text)">7</text>
+  <text x="226" y="237" font-size="13" text-anchor="middle" fill="var(--text)">12</text>
+  <text x="314" y="237" font-size="13" text-anchor="middle" fill="var(--text)">18</text>
+
+  <text x="118" y="124" font-size="13" text-anchor="end" fill="var(--cool)">(−∞, 10)</text>
+  <text x="266" y="124" font-size="13" fill="var(--cool)">(10, ∞)</text>
+  <text x="146" y="198" font-size="13" fill="var(--cool)">(5, 10)</text>
+
+  <text x="30" y="298" font-size="13" fill="var(--text-muted)">sıralı dolaşma: 2, 5, 7, 10, 12, 15, 18</text>
+  <text x="30" y="320" font-size="13" fill="var(--text-muted)">her anahtar kendi aralığının içinde</text>
+
+  <line x1="360" y1="24" x2="360" y2="330" stroke="var(--border)" stroke-width="1.2" />
+
+  <text x="380" y="34" font-size="14" fill="var(--text)">Yerel denetimi geçen ihlal</text>
+
+  <line x1="540" y1="92" x2="470" y2="162" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="540" y1="92" x2="615" y2="162" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="615" y1="162" x2="570" y2="232" stroke="var(--border)" stroke-width="1.6" />
+
+  <circle cx="540" cy="92" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="470" cy="162" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="615" cy="162" r="20" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <circle cx="570" cy="232" r="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2" />
+
+  <text x="540" y="97" font-size="13" text-anchor="middle" fill="var(--text)">10</text>
+  <text x="470" y="167" font-size="13" text-anchor="middle" fill="var(--text)">5</text>
+  <text x="615" y="167" font-size="13" text-anchor="middle" fill="var(--text)">15</text>
+  <text x="570" y="237" font-size="13" text-anchor="middle" fill="var(--text)">8</text>
+
+  <text x="570" y="274" font-size="13" text-anchor="middle" fill="var(--accent)">olması gereken aralık: (10, 15)</text>
+
+  <text x="380" y="298" font-size="13" fill="var(--text-muted)">8, kökün sağ alt ağacında ama 10'dan küçük</text>
+  <text x="380" y="320" font-size="13" fill="var(--text-muted)">sıralı dolaşma: 5, 10, 8, 15 — artan değil</text>
+</svg>

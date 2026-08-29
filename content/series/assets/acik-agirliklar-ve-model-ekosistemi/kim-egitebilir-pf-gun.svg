@@ -1,0 +1,18 @@
+<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı birimle iki ön eğitim koşusu</text>
+
+  <line x1="206" y1="56" x2="206" y2="220" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="196" y="102" font-size="13" text-anchor="end" fill="var(--text-muted)">GPT-3</text>
+  <rect x="206" y="80" width="38" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="252" y="102" font-size="13" text-anchor="start" fill="var(--text-muted)">3.640 PF-gün</text>
+  <text x="206" y="132" font-size="13" text-anchor="start" fill="var(--text-faint)">175 milyar parametre × 300 milyar token × 6</text>
+
+  <text x="196" y="182" font-size="13" text-anchor="end" fill="var(--text-muted)">DeepSeek-V3</text>
+  <rect x="206" y="160" width="400" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="614" y="182" font-size="13" text-anchor="start" fill="var(--accent)">38.000 PF-gün</text>
+  <text x="206" y="212" font-size="13" text-anchor="start" fill="var(--text-faint)">37 milyar aktif parametre × 14,8 trilyon token × 6</text>
+
+  <text x="16" y="262" font-size="13" text-anchor="start" fill="var(--text-muted)">hesap = 6 × parametre × token · 1 PF-gün = 8,64 × 10¹⁹ işlem</text>
+  <text x="16" y="290" font-size="13" text-anchor="start" fill="var(--text-faint)">birim aynı kaldığı için dört yıl arayla iki koşu karşılaştırılabiliyor</text>
+</svg>

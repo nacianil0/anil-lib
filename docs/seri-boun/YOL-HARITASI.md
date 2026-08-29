@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-08-29 · Yayında: 9 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2) · Sıradaki: 10
+Son güncelleme: 2026-08-29 · Yayında: 12 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3) · Sıradaki: 13
 
 ## Serinin tezi
 
@@ -44,9 +44,9 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 ### Faz B — Veri Yapıları: Maliyetiyle Düşünmek (9–16) · CMPE250 ekseni
 
 9. **Karmaşıklık: Big-O ile Düşünmeye Başlamak** — *yayında* · RAM modeli ve varsayımları, adım sayma, büyüme sınıflarının sayısal karşılaştırması, Big-O sezgisi ve sınırları, en iyi/en kötü/ortalama durum, sık yapılan hatalar (formal ispatlar 17'de).
-10. **Diziler, Bağlı Listeler, Yığın ve Kuyruk** — temel işlemler ve maliyet tablosu; hangi yapı ne zaman.
-11. **Ağaçlar ve İkili Arama Ağaçları** — BST değişmezi, arama/ekleme/silme, dengesizliğin bedeli.
-12. **Dengeli Arama: AVL'den B-Ağacına** — dönüşler (kavramsal), yükseklik garantisi; B-ağacı ve disk/dosya organizasyonu bağı.
+10. **Diziler, Bağlı Listeler, Yığın ve Kuyruk** — *yayında* · arayüz ile temsil ayrımı, dizinin bitişik belleği ve indis aritmetiği, bağlı listenin işaretçi maliyeti, dinamik dizi büyütmesiyle amortize maliyet (ortalama durumdan ayrılarak), iki yığınla kuyruk problemi, yığın ile kuyruğun arayüz olarak tanımı, dört yapının maliyet tablosu.
+11. **Ağaçlar ve İkili Arama Ağaçları** — *yayında* · köklü ikili ağacın dili (derinlik, yükseklik, sıralı dolaşma), BST değişmezinin formal tanımı ve yerel denetimin yetmediği karşı örnek, arama/ekleme/üç durumlu silme, yükseklik alt sınırının tümevarımla ispatı, zincir durumu, sıralı diziden en kısa ağacın kurulması.
+12. **Dengeli Arama: AVL'den B-Ağacına** — *yayında* · dönüşün sıralı dolaşmayı koruması, AVL yükseklik dengesi ve en seyrek ağaç argümanıyla logaritmik yükseklik ispatı (Fibonacci sıkılaştırmasıyla), kırmızı-siyah ile 2-3 ağaçlarının aynı fikri kurması, RAM modelinin bilinçli terki: dış bellek modeli, blok ve B-ağacı.
 13. **Heap ve Öncelik Kuyruğu** — heap değişmezi, build-heap, heapsort; öncelik kuyruğu kullanımları.
 14. **Hashing: Sabit Zamanın Bedeli** — hash fonksiyonu, çakışma çözümü (zincir/açık adresleme), yük faktörü; en kötü durum savunması.
 15. **Sıralama Algoritmaları: Karşılaştırmalı ve Ötesi** — insertion/merge/quick/heap karşılaştırması, kararlılık; sayma/radix teaser'ı (alt sınır 24'te).
@@ -109,12 +109,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 8 ← 5 (kısmi sıra; kafes bir kısmi sıradır, güç kümesi kafesi), 2 (mantıksal denklikler ve De Morgan; üçlü karşılığın bir ayağı), 7 (Hasse diyagramı bir graftır)
 - 9 ← 6 (adım sayma: C(n,2), 2ⁿ, n! büyüklükleri), 4 (özyinelemeli maliyet ve yığın derinliği sezgisi)
 
-**Batch 3 taslak satırları (Faz B'nin gövdesi; batch büyüklüğü run'da çözülür):**
-- 10 ← 9 (maliyet dili), 5 (dizi bir fonksiyondur: indis → değer)
-- 11 ← 7 (ağaç tanımı ve yaprak/kök dili), 10 (bağlı liste düğümü = ağaç düğümünün özel hâli), 4 (ağaç işlemlerinin özyinelemeli tanımı)
-- 12 ← 11 (BST değişmezi ve dengesizliğin bedeli), 9 (yükseklik garantisinin karmaşıklığa çevrilmesi)
-- 13 ← 11 (ağaç dili), 10 (dizi üzerinde tam ikili ağaç temsili), 4 (heap değişmezinin tümevarımla korunması)
-- 14 ← 6 (güvercin yuvası: çakışma kaçınılmazdır), 9 (en kötü durum savunması), 8 (mod aritmetiği bir grup yapısıdır)
+**Batch 3 (yayımlanmış, artık bağlayıcı):**
+- 10 ← 9 (maliyet dili: adım sayma; amortizenin ortalama durumdan ayrılması), 5 (dizi bir fonksiyondur: indis → değer)
+- 11 ← 10 (dizi ile bağlı listenin çözemediği "sırasız arama" hücresi; düğüm ve işaretçi dili), 7 (ağaç = bağlı ve döngüsüz graf, n − 1 kenar, yaprak/kök dili), 4 (sıralı dolaşmanın yapısal tümevarımla ispatı)
+- 12 ← 11 (BST değişmezi ve h ile n ilişkisinin garantisiz oluşu), 9 (RAM modelinin varsayımları — burada bilinçli olarak terk edilir), 6 (en seyrek ağacı sayarak alt sınır kurma refleksi)
+
+**Batch 4 taslak satırları (Faz B'nin ikinci yarısı; batch büyüklüğü run'da çözülür):**
+- 13 ← 11 (ağaç dili: yükseklik, alt ağaç), 10 (dizi üzerinde tam ikili ağaç temsili; dinamik dizi), 4 (heap değişmezinin tümevarımla korunması), 12 (değişmezi zayıflatmanın ne kazandırdığı)
+- 14 ← 6 (güvercin yuvası: çakışma kaçınılmazdır), 9 (en kötü durum savunması ve ortalama durumun dağılım varsayımı), 8 (mod aritmetiği bir grup yapısıdır), 10 (zincirleme bir bağlı listedir, açık adresleme bir dizidir)
+- 15 ← 13 (heapsort için heap), 9 (büyüme sınıfları tablosu), 4 (mergesort'un tümevarımlı doğruluk sezgisi), 10 (kararlılık ve ek bellek maliyeti)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -269,6 +272,37 @@ boyunca aynı kalır.
 | en kötü durum | worst case | 1 (9'da tanımlandı) |
 | ortalama durum | average case | 9 |
 | yer karmaşıklığı | space complexity | 9 |
+| arayüz | interface | 10 |
+| temsil | representation | 10 |
+| dizi | array | 10 |
+| bitişik bellek | contiguous memory | 10 |
+| bağlı liste | linked list | 10 |
+| işaretçi | pointer | 10 |
+| baş | head | 10 |
+| çift yönlü bağlı liste | doubly linked list | 10 |
+| dinamik dizi | dynamic array | 10 |
+| amortize maliyet | amortized cost | 10 |
+| yığın | stack | 10 |
+| kuyruk | queue | 10 |
+| dairesel tampon | circular buffer | 10 |
+| ikili ağaç | binary tree | 11 |
+| kök | root | 11 |
+| ebeveyn / çocuk | parent / child | 11 |
+| derinlik | depth | 11 |
+| yükseklik | height | 11 |
+| sıralı dolaşma | in-order traversal | 11 |
+| ikili arama ağacı | binary search tree | 11 |
+| değişmez | invariant | 11 |
+| sıralı ardıl | in-order successor | 11 |
+| dengeli arama ağacı | balanced search tree | 12 |
+| dönüş | rotation | 12 |
+| AVL ağacı | AVL tree | 12 |
+| yükseklik dengesi | height balance | 12 |
+| kırmızı-siyah ağaç | red-black tree | 12 |
+| 2-3 ağacı | 2-3 tree | 12 |
+| B-ağacı | B-tree | 12 |
+| blok | block | 12 |
+| dış bellek modeli | external memory model | 12 |
 
 ## Kavram-tekrar defteri
 
@@ -308,13 +342,30 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
 - **Mod aritmetiğinin grup yapısı (8)** → 14'te hash fonksiyonunun mod tabanlı kurulumunda.
 - **Boolean sadeleştirme (8)** → 37'de devre düzeyinde, 39'da sorgu yüklemi sadeleştirmesinde.
 - **Hasse diyagramı ve kısmi sıra (8)** → 16'da topolojik sıralamanın çizimi; DAG bir kısmi sıradır.
-- **RAM modeli ve varsayımları (9)** → 12 ve 34'te disk/blok modeline geçerken model bilinçli
-  olarak değiştirilir; 37'de bellek hiyerarşisi modelin dışarıda bıraktığı şeyi geri getirir.
+- **RAM modeli ve varsayımları (9)** → 12'de model **bilinçli olarak terk edildi** (dış bellek
+  modeli ve blok sayımı); 34'te dosya sistemlerinde aynı model tekrar kullanılır ve 37'de bellek
+  hiyerarşisi modelin dışarıda bıraktığı şeyi geri getirir.
 - **Büyüme sınıfları tablosu (9)** → 15'te sıralama algoritmalarının karşılaştırılmasında;
   17'de aynı sınıflar formal tanımlarla yeniden kurulur.
 - **En kötü / ortalama durum ayrımı (9)** → 14'te hash tablosunun en kötü durum savunmasında,
   24'te randomized quicksort beklentisinde, 36'da dağılım varsayımının adlandırılmasında.
-- **Amortize maliyet pini (9)** → 10'da dinamik dizi büyütmesiyle açılır; 9'da yalnızca
-  "ortalama ile karıştırılmamalı" diye işaretlendi.
+- **Amortize maliyet pini (9)** → **10'da dinamik dizi büyütmesiyle açıldı** ve ortalama durumdan
+  açıkça ayrıldı (iki yığınla kuyruk problemi ikinci örnektir); 13'te heap kurma ve 14'te hash
+  tablosunun yeniden boyutlandırılmasında geri çağrılacak.
+- **Arayüz ↔ temsil ayrımı (10)** → 13'te öncelik kuyruğu arayüzünün heap temsilinden ayrılmasında;
+  16'da komşuluk listesi ile matrisin aynı graf arayüzünü farklı fiyata tutmasında.
+- **Dizinin indis aritmetiği (10)** → 13'te tam ikili ağacın dizi temsilinde (çocuk indisleri
+  2i + 1 ve 2i + 2); 14'te açık adreslemede.
+- **Yığın ve kuyruk (10)** → 16'da BFS kuyrukla, DFS yığınla yazılır; 27–28'de çağrı yığını ve
+  zamanlayıcı kuyruğu aynı yapıların işletim sistemi karşılıklarıdır.
+- **BST değişmezi ve sıralı dolaşma (11)** → 12'de dengeleme bu değişmezin üstüne kurulur; 19'da
+  "değişmezi koruyan yerel işlem" kalıbı döngü değişmezleriyle formalleşir; 39'da veritabanı
+  indeksinin neden sıralı bir yapı olduğu tartışmasında.
+- **Yükseklik ile maliyet ilişkisi (11)** → 13'te heap yüksekliği ve build-heap analizinde; 18'de
+  özyineleme ağacının derinliğinde.
+- **En seyrek ağacı sayarak alt sınır kurma (12)** → 24'te karar ağacı argümanıyla karşılaştırmalı
+  sıralamanın n log n alt sınırında.
+- **Dış bellek modeli ve blok sayımı (12)** → 34'te dosya sistemleri ve ayırma yöntemlerinde;
+  37'de bellek hiyerarşisinde; 39'da indeks = B-ağacı geri çağrımında.
 - **Özyineleme derinliği = bellek maliyeti (9)** → 11 ve 20'de özyinelemeli çözümlerin yer
   karmaşıklığı savunmasında.

@@ -183,6 +183,66 @@
       "path": "content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
+    },
+    {
+      "articleId": "article_8f8aabe8-a41a-4f75-b02f-62c8ae0ebf0c",
+      "title": "Diziler, Bağlı Listeler, Yığın ve Kuyruk",
+      "slug": "diziler-bagli-listeler-yigin-ve-kuyruk",
+      "category": "data-structures",
+      "level": "intermediate",
+      "readingOrder": 10,
+      "summary": "Faz B'nin ilk somut yapıları: arayüz ile temsil ayrımı, dizinin bitişik bellek düzeni ve indis aritmetiği, bağlı listenin işaretçi maliyeti, dinamik dizi büyütmesiyle amortize maliyetin kurulması ve ortalama durumdan ayrılması, yığın ile kuyruğun arayüz olarak tanımlanması ve dört yapının işlem başına maliyet tablosu.",
+      "tags": [
+        "dizi",
+        "bagli-liste",
+        "yigin",
+        "kuyruk",
+        "amortize-maliyet"
+      ],
+      "contentHash": "sha256:cd0e0b22b774b4d32c206ad53c4e13cd729a616dd3b8b2fb9bdf2b6720b475f7",
+      "path": "content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
+    },
+    {
+      "articleId": "article_8b402a30-5d8c-43c1-8b85-c61950e09a28",
+      "title": "Ağaçlar ve İkili Arama Ağaçları",
+      "slug": "agaclar-ve-ikili-arama-agaclari",
+      "category": "data-structures",
+      "level": "intermediate",
+      "readingOrder": 11,
+      "summary": "Köklü ikili ağacın dili (derinlik, yükseklik, sıralı dolaşma), ikili arama ağacının değişmezinin formal tanımı ve yerel denetimin neden yetmediği, arama ile eklemenin ve üç durumlu silmenin yükseklikle ilişkisi, yüksekliğin alt ve üst sınırlarının ispatı ve dengesizliğin somut bedeli.",
+      "tags": [
+        "ikili-agac",
+        "ikili-arama-agaci",
+        "degismez",
+        "yukseklik",
+        "siral-dolasma"
+      ],
+      "contentHash": "sha256:d127461f5a4eeddc209976baf840bd79e4c40f0f7f509f5ff3adb465132dc2a5",
+      "path": "content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
+    },
+    {
+      "articleId": "article_ea3f03f4-8752-402b-8880-e9e6582737d0",
+      "title": "Dengeli Arama: AVL'den B-Ağacına",
+      "slug": "dengeli-arama-avlden-b-agacina",
+      "category": "data-structures",
+      "level": "advanced",
+      "readingOrder": 12,
+      "summary": "Yüksekliği garanti altına alan mekanizmalar: sıralı dolaşmayı koruyan dönüşler, AVL'nin yükseklik dengesi ve logaritmik yükseklik ispatı, kırmızı-siyah ile 2-3 ağaçlarının aynı fikri kurma biçimi ve RAM modelinin bilinçli olarak terk edildiği yer — blok tabanlı dış bellek modeli ve B-ağacı.",
+      "tags": [
+        "dengeli-agac",
+        "avl",
+        "donus",
+        "kirmizi-siyah-agac",
+        "b-agaci"
+      ],
+      "contentHash": "sha256:7b51a5cd9cf22bf83a3490a1094d504f580972867e3f2a56519304bcc16b2117",
+      "path": "content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
     }
   ]
 }

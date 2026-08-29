@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 262" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Bağlam penceresi tek bir dizidir</text>
+
+  <text x="680" y="58" font-size="13" text-anchor="end" fill="var(--text-muted)">pencere sınırı</text>
+
+  <rect x="40" y="70" width="90" height="40" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="130" y="70" width="170" height="40" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="300" y="70" width="150" height="40" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="450" y="70" width="70" height="40" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="520" y="70" width="80" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="600" y="70" width="80" height="40" fill="none" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <line x1="680" y1="62" x2="680" y2="122" stroke="var(--text-muted)" stroke-width="2"/>
+
+  <line x1="85" y1="110" x2="85" y2="122" stroke="var(--border)" stroke-width="1"/>
+  <text x="85" y="138" font-size="13" text-anchor="middle" fill="var(--text-muted)">sistem istemi</text>
+
+  <line x1="215" y1="110" x2="215" y2="146" stroke="var(--border)" stroke-width="1"/>
+  <text x="215" y="162" font-size="13" text-anchor="middle" fill="var(--cool)">önceki turlar</text>
+
+  <line x1="375" y1="110" x2="375" y2="122" stroke="var(--border)" stroke-width="1"/>
+  <text x="375" y="138" font-size="13" text-anchor="middle" fill="var(--text-muted)">eklenen belgeler</text>
+
+  <line x1="485" y1="110" x2="485" y2="146" stroke="var(--border)" stroke-width="1"/>
+  <text x="485" y="162" font-size="13" text-anchor="middle" fill="var(--cool)">güncel mesaj</text>
+
+  <line x1="560" y1="110" x2="560" y2="122" stroke="var(--border)" stroke-width="1"/>
+  <text x="560" y="138" font-size="13" text-anchor="middle" fill="var(--accent)">üretilen cevap</text>
+
+  <line x1="640" y1="110" x2="640" y2="146" stroke="var(--border)" stroke-width="1"/>
+  <text x="640" y="162" font-size="13" text-anchor="middle" fill="var(--text-faint)">kalan boşluk</text>
+
+  <text x="16" y="198" font-size="13" text-anchor="start" fill="var(--text-muted)">hepsi aynı türden token olarak sayılır; model bunları ayrı kutular olarak görmez</text>
+  <text x="16" y="224" font-size="13" text-anchor="start" fill="var(--text-muted)">üretilen cevap da pencereden yer kapar</text>
+  <text x="16" y="250" font-size="13" text-anchor="start" fill="var(--text-faint)">model her turda bu şeridin tamamını baştan okur</text>
+</svg>

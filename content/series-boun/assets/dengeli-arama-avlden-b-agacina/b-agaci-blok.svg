@@ -1,0 +1,56 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <text x="30" y="32" font-size="14" fill="var(--text)">İkili ağaç: düğüm başına 1 anahtar</text>
+
+  <line x1="182" y1="90" x2="122" y2="125" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="182" y1="90" x2="242" y2="125" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="122" y1="155" x2="92" y2="190" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="122" y1="155" x2="152" y2="190" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="242" y1="155" x2="212" y2="190" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="242" y1="155" x2="272" y2="190" stroke="var(--border)" stroke-width="1.6" />
+
+  <rect x="160" y="60" width="44" height="30" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.4" />
+  <rect x="100" y="125" width="44" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="220" y="125" width="44" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="70" y="190" width="44" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="130" y="190" width="44" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="190" y="190" width="44" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="250" y="190" width="44" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+
+  <text x="182" y="80" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="122" y="145" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="242" y="145" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="92" y="210" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="152" y="210" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="212" y="210" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="272" y="210" font-size="13" text-anchor="middle" fill="var(--text)">k</text>
+  <text x="182" y="242" font-size="13" text-anchor="middle" fill="var(--text-faint)">. . .</text>
+
+  <text x="30" y="272" font-size="13" fill="var(--text)">her düğüm ayrı bir blok okuması</text>
+  <text x="30" y="294" font-size="13" fill="var(--text-muted)">bloğun geri kalanı boşa gider</text>
+  <text x="30" y="322" font-size="13" fill="var(--text)">10⁹ anahtar: ≈ 30 seviye, ≈ 30 blok</text>
+
+  <line x1="360" y1="20" x2="360" y2="336" stroke="var(--border)" stroke-width="1.2" />
+
+  <text x="380" y="32" font-size="14" fill="var(--text)">B-ağacı: düğüm başına bir blok</text>
+
+  <line x1="555" y1="92" x2="429" y2="130" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="555" y1="92" x2="547" y2="130" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="555" y1="92" x2="665" y2="130" stroke="var(--border)" stroke-width="1.6" />
+
+  <rect x="470" y="60" width="170" height="32" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="555" y="81" font-size="13" text-anchor="middle" fill="var(--text)">anahtar 1 … anahtar 100</text>
+
+  <rect x="384" y="130" width="90" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="502" y="130" width="90" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="620" y="130" width="90" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="429" y="150" font-size="13" text-anchor="middle" fill="var(--text)">100 anahtar</text>
+  <text x="547" y="150" font-size="13" text-anchor="middle" fill="var(--text)">100 anahtar</text>
+  <text x="665" y="150" font-size="13" text-anchor="middle" fill="var(--text)">100 anahtar</text>
+  <text x="547" y="186" font-size="13" text-anchor="middle" fill="var(--text-faint)">. . .</text>
+
+  <text x="380" y="272" font-size="13" fill="var(--text)">her düğüm bir bloğa tam oturur</text>
+  <text x="380" y="294" font-size="13" fill="var(--text-muted)">arama alanı her adımda yüze bölünür</text>
+  <text x="380" y="322" font-size="13" fill="var(--text)">10⁹ anahtar: 5 seviye, 5 blok</text>
+
+  <text x="30" y="356" font-size="13" fill="var(--text-muted)">log₁₀₀(10⁹) = 4,5 — taban değişimi otuz okumayı beşe indirir</text>
+</svg>

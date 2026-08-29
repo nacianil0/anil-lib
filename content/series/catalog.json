@@ -362,6 +362,86 @@
       "path": "content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
+    },
+    {
+      "articleId": "article_7c3c04c1-dc47-48e7-b31d-b37a94e6916b",
+      "title": "Fine-Tuning ve LoRA: Modeli Kendi İşine Uyarlamak",
+      "slug": "fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 19,
+      "summary": "11. makalede adı konan ince ayarın verimli biçimini kurar: tam ince ayarın bellek faturası, ince ayarın düşük içsel boyutu, LoRA'nın iki küçük matrisi, rankın ne kadar küçülebileceği, öğrenme ile unutma arasındaki değiş tokuş ve düşük ranklı bir güncellemenin neden kötü bir bilgi kanalı olduğu.",
+      "tags": [
+        "ince-ayar",
+        "lora",
+        "dusuk-rank",
+        "parametre-verimli-uyarlama",
+        "qlora"
+      ],
+      "contentHash": "sha256:82e7a3642c680193bdcfdd5a26aa750fddd56ceac97f606350f7d1aa382cd570",
+      "path": "content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
+    },
+    {
+      "articleId": "article_50c7623c-ebdb-4c81-ab42-8835193ad1d4",
+      "title": "Açık Ağırlıklar ve Model Ekosistemi",
+      "slug": "acik-agirliklar-ve-model-ekosistemi",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 20,
+      "summary": "Faz 2'yi kapatır: bir modelin ağırlıklarını üretmek bugün ne kadar hesap istiyor, 'açık' sözcüğü ağırlık, veri, kod, lisans ve belgelendirme eksenlerinde ne anlama geliyor, açık ağırlık ile açık kaynak nerede ayrışıyor ve şeffaflık nasıl ölçülüyor.",
+      "tags": [
+        "acik-agirlik",
+        "acik-kaynak",
+        "lisans",
+        "seffaflik",
+        "model-ekosistemi"
+      ],
+      "contentHash": "sha256:3e85a2a5055dfb6f914bad2897ea02dc2a3e4de21fbba80c587d0f161d5b5f44",
+      "path": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
+    },
+    {
+      "articleId": "article_913d5536-ba0f-404e-843f-92d216e77535",
+      "title": "Bağlam Penceresi: İstemin Anatomisi",
+      "slug": "baglam-penceresi-istemin-anatomisi",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 21,
+      "summary": "Faz 3'ü açar: modelin durumsuz olması ve her turda bütün sohbetin yeniden gönderilmesi, pencerenin içinde tam olarak ne bulunduğu, sınırın eğitim uzunluğu ile karesel maliyetten doğması, ilan edilen uzunlukla ölçülen etkin uzunluğun ayrışması ve bilginin pencerede nereye konduğunun doğruluğu değiştirmesi.",
+      "tags": [
+        "baglam-penceresi",
+        "istem",
+        "durumsuzluk",
+        "etkin-uzunluk",
+        "uzun-baglam"
+      ],
+      "contentHash": "sha256:b4bbaf649863a4a12f325c14e52756cac133874ef08042867786d3eeed239c9f",
+      "path": "content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
+    },
+    {
+      "articleId": "article_51d77c35-dfb2-4404-8243-e24d2d3666a4",
+      "title": "İstem Mühendisliği: Kanıta Dayalı Bir Bakış",
+      "slug": "istem-muhendisligi-kanita-dayali-bir-bakis",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 22,
+      "summary": "Pencerenin içine ne yazılacağı sorusunu ölçümle ele alır: anlamı değiştirmeyen biçim farklarının yarattığı puan aralığı, örnek sırasının etkisi, rol verme ve kibarlık gibi halk kurallarının sınanmış hâli, ara adımların kazancının hangi alanlarda gerçek olduğu ve insanların neden sistematik değil fırsatçı denediği.",
+      "tags": [
+        "istem-muhendisligi",
+        "bicim-duyarliligi",
+        "rol-istemi",
+        "kanit",
+        "olcum-disiplini"
+      ],
+      "contentHash": "sha256:85f87b2498ee2362f78de70aea98ec8aa3821c41bd6dfeefb2224da951f7bd82",
+      "path": "content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
     }
   ]
 }
