@@ -1,0 +1,54 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a4-merdiven-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="boun-a4-acilim-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <line x1="360" y1="28" x2="360" y2="330" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+
+  <text x="170" y="40" font-size="15" text-anchor="middle" fill="var(--text)">Tümevarım — ispat yönü</text>
+  <text x="170" y="62" font-size="13" text-anchor="middle" fill="var(--text-muted)">tabandan yukarı</text>
+
+  <text x="550" y="40" font-size="15" text-anchor="middle" fill="var(--text)">Özyineleme — hesap yönü</text>
+  <text x="550" y="62" font-size="13" text-anchor="middle" fill="var(--text-muted)">tepeden tabana</text>
+
+  <rect x="60" y="82" width="220" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="170" y="108" font-size="14" text-anchor="middle" fill="var(--text)">P(n) ve ötesi</text>
+
+  <rect x="60" y="144" width="220" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="170" y="170" font-size="14" text-anchor="middle" fill="var(--text)">P(3)</text>
+
+  <rect x="60" y="206" width="220" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="170" y="232" font-size="14" text-anchor="middle" fill="var(--text)">P(2)</text>
+
+  <rect x="60" y="268" width="220" height="42" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="170" y="294" font-size="14" text-anchor="middle" fill="var(--text)">P(1) — taban durumu</text>
+
+  <line x1="170" y1="268" x2="170" y2="252" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-merdiven-ok)" />
+  <line x1="170" y1="206" x2="170" y2="190" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-merdiven-ok)" />
+  <line x1="170" y1="144" x2="170" y2="128" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-merdiven-ok)" />
+  <text x="186" y="264" font-size="13" fill="var(--accent)">adım</text>
+
+  <rect x="440" y="82" width="220" height="42" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="550" y="108" font-size="14" text-anchor="middle" fill="var(--text)">f(n) çağrısı</text>
+
+  <rect x="440" y="144" width="220" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="550" y="170" font-size="14" text-anchor="middle" fill="var(--text)">f(n − 1)</text>
+
+  <rect x="440" y="206" width="220" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="550" y="232" font-size="14" text-anchor="middle" fill="var(--text)">f(2)</text>
+
+  <rect x="440" y="268" width="220" height="42" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="550" y="294" font-size="14" text-anchor="middle" fill="var(--text)">f(1) — taban durumu</text>
+
+  <line x1="550" y1="124" x2="550" y2="140" stroke="var(--cool)" stroke-width="1.5" marker-end="url(#boun-a4-acilim-ok)" />
+  <line x1="550" y1="186" x2="550" y2="202" stroke="var(--cool)" stroke-width="1.5" marker-end="url(#boun-a4-acilim-ok)" />
+  <line x1="550" y1="248" x2="550" y2="264" stroke="var(--cool)" stroke-width="1.5" marker-end="url(#boun-a4-acilim-ok)" />
+  <text x="566" y="136" font-size="13" fill="var(--cool)">çağrı</text>
+
+  <text x="360" y="352" font-size="13" text-anchor="middle" fill="var(--text-muted)">Taban durumu ile özyineleme kuralı, tümevarımın taban durumu ile adımıdır</text>
+</svg>

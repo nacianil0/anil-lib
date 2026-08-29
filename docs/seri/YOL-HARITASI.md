@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-08-28 · Yayında: 1–10 (Batch 0 + Batch 1) · Sıradaki batch: 11–15
+Son güncelleme: 2026-08-29 · Yayında: 1–14 (Batch 0 + Batch 1 + Batch 2) · Sıradaki güvenli başlangıç: 15
 
 ## Serinin tezi
 
@@ -29,22 +29,33 @@ ileride kısa yeniden kurulumlarla geri çağrılır.
 
 ## Yayımlanmış vaatler (bağlayıcı koordinat defteri)
 
-Yayımlanmış 1–10, metin içinde şu numaralara açık söz verdi. Bu koordinatlar **değiştirilemez**;
-yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunur:
+Yayımlanmış 1–14, metin içinde şu numaralara açık söz verdi. Bu koordinatlar **değiştirilemez**;
+yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunur.
 
-| Vaat | Nerede verildi | Bağlandığı numara |
-|---|---|---|
-| Post-training / asistanlaştırma aşamaları | 5, 7, 8, 10 ("Sırada ne var") | 11–13 |
-| Veri temizlik hattının ayrıntısı | 8 | 14 |
-| Tokenizer farkının yeteneklere yansıması | 8 | 15 |
-| Değerlendirme kümeleri neyi ölçer/ölçemez; perplexity karşılaştırma tuzakları | 5, 9 | 16 |
-| Halüsinasyonun ciddiyetle ele alınması | 10 | 17 |
-| Ezber ↔ genelleme gerilimi | 8 | 18 ve 72 |
-| Örnekle öğrenme (in-context learning) | 5 | 23 |
-| Çıkarım anında hesap harcama ekseni | 9 | 33 |
-| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6 | 74–77 |
-| Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 |
-| Karesel maliyeti ödemeyen alternatif mimariler | 7 | 86 |
+| Vaat | Nerede verildi | Bağlandığı numara | Durum |
+|---|---|---|---|
+| Post-training / asistanlaştırma aşamaları | 5, 7, 8, 10 ("Sırada ne var") | 11–13 | ödendi (Batch 2) |
+| Veri temizlik hattının ayrıntısı | 8 | 14 | ödendi (Batch 2) |
+| Tercih optimizasyonunun mekanizması | 11 | 13 | ödendi (Batch 2) |
+| Tokenizer farkının yeteneklere yansıması | 8, 14 | 15 | açık |
+| Değerlendirme kümeleri neyi ölçer/ölçemez; perplexity karşılaştırma tuzakları | 5, 9 | 16 | açık |
+| Halüsinasyonun ciddiyetle ele alınması | 10 | 17 | açık |
+| Ezber ↔ genelleme gerilimi | 8 | 18 ve 72 | açık |
+| Örnekle öğrenme (in-context learning) | 5 | 23 | açık |
+| Çıkarım anında hesap harcama ekseni | 9 | 33 | açık |
+| İlkelere dayalı tercih etiketleri ve ölçeklenebilir denetim | 13 | 64 | açık |
+| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6 | 74–77 | açık |
+| Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | açık |
+| Karesel maliyeti ödemeyen alternatif mimariler | 7 | 86 | açık |
+
+**Numarasız (bağlayıcı olmayan) ileri işaretler — Batch 2'de verildi.** Bunlar koordinat değil,
+yalnızca "seride ileride" düzeyinde işaretlerdir; yol haritası değişirse yeri değişebilir:
+hizalama sorununun kendisi (11 → 61), ince ayarın kendi işine uyarlama biçimi (11 → 19),
+doğrulanabilir ödülle eğitim ve model üretimi tercih etiketleri (11 → 34, 64),
+yardımseverlik ↔ zararsızlık gerilimi (11, 13 → 62), sohbet biçimi ve roller (12 → 24),
+pekiştirmeli öğrenmenin biçimsel çerçevesi (13 → 37), KL ıraksamasının biçimsel kurulumu (13 → 94),
+üretmek ↔ doğrulamak asimetrisi (13 → 35), dalkavukluk ve model karakteri (13 → 66),
+kirliliğin değerlendirmeye etkisi (14 → 72), benchmark'ların ne ölçtüğü (14 → 16).
 
 ## Fazlar ve başlıklar
 
@@ -63,10 +74,10 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 
 ### Faz 2 — Modeli Biçimlendirmek: Eğitimden Asistana (11–20)
 
-11. **Ham Modelden Asistana: Post-Training Haritası** — base model vs asistan; post-training aşamaları.
-12. **Talimatla Eğitim: Supervised Fine-Tuning** — talimat verisi, davranış şekillendirme.
-13. **İnsan Tercihlerinden Öğrenmek: RLHF ve Ötesi** — tercih verisi, ödül modeli, DPO ailesi.
-14. **Eğitim Verisi: Toplama, Temizlik, Karışım ve Tekrar** — verinin kalitesi ve etkisi.
+11. **Ham Modelden Asistana: Post-Training Haritası** — base model vs asistan; post-training aşamaları. `[yayında]`
+12. **Talimatla Eğitim: Supervised Fine-Tuning** — talimat verisi, davranış şekillendirme. `[yayında]`
+13. **İnsan Tercihlerinden Öğrenmek: RLHF ve Ötesi** — tercih verisi, ödül modeli, DPO ailesi. `[yayında]`
+14. **Eğitim Verisi: Toplama, Temizlik, Karışım ve Tekrar** — verinin kalitesi ve etkisi. `[yayında]`
 15. **Tokenizer'ın Gücü ve Tuzağı** — tokenizasyonun yeteneklere etkisi; Türkçe gibi eklemeli diller.
 16. **Değerlendirme 101: Benchmark'lar Ne Ölçer, Ne Ölçemez?** — ölçme sorunu ilk kez ciddi biçimde.
 17. **Halüsinasyon: Model Neden ve Ne Zaman Uydurur?** — olasılıksal üretimin doğal sonucu; azaltma yolları.
@@ -242,13 +253,20 @@ Gösterim: `makale ← dayandıkları`.
 - 9 ← 8 (ön eğitim, 6ND, öğrenme oranı çizelgesi), 2 (kayıp eğrisi, aşırı öğrenme, indirgenemez hata, çift iniş notu), 5 (perplexity, beliren yetenekler tartışması) `[yayında]`
 - 10 ← 9 (eğitilmiş model, ekonomi), 5 (sonraki-token dağılımı + Şekil 2'nin beş adayı, perplexity), 7 (logit, paralelliğin sınırı), 4 (token ≠ kelime), 2 (rastgeleliğin iki anlamı), 1 (tahmin tanımı) `[yayında]`
 
-**Batch 2 taslağı (11–15).** Bu satırlar Batch 1'in metinde açıkça verdiği sözlerden türetilmiştir:
+**Batch 2 (11–14) — gerçekleşen graf.** Aşağıdakiler yazılan metinde fiilen kullanılan bağlardır;
+batch öncesi taslak dört satırlıktı, gerçekleşen graf daha yoğun çıktı.
 
-- 11 ← 8 (temel model: elde edilen şey bir metin tamamlayıcı), 10 (üretim bir çekiliştir; en olası devam bir cevap değil), 5 ("2020'nin GPT-3'ü bir sohbet asistanı değildi"), 1 (ham tahminciyi asistana çeviren ek eğitim aşamaları) — *Batch 2*
-- 12 ← 11 (post-training haritasındaki yeri), 2 (aynı döngü: kayıp + gradyan inişi), 8 (öz-denetimli hedefin karşıtı — etiket burada geri geliyor), 3 (geriye yayılım) — *Batch 2*
-- 13 ← 12 (SFT'nin bıraktığı yer), 2 (kayıp ↔ ödül simetrisi), 10 (tercih verisi örneklemeyle üretilir), 9 (ölçek/bütçe muhasebesi) — *Batch 2*
-- 14 ← 8 (veri hunisi, tekilleştirme, veri karışımı — 8'in açıkça "ayrıntısı 14'te" dediği borç), 9 (veri duvarı, epok tekrarının getirisi), 2 (aşırı öğrenme), 4 (derlem) — *Batch 2*
-- 15 ← 4 (BPE, sözlük, Türkçenin token maliyeti), 8 ("bu farkın yeteneklere yansıması 15\. makalenin konusu" borcu), 10 (kesme kuralları token üzerinde çalışır), 7 (embedding tablosu sözlük boyuyla ölçeklenir) — *Batch 2*
+- 11 ← 8 (temel model; öz-denetimli hedefin bedava etiketi; GPT-1'in iki yarımı), 10 (metin tamamlayıcı gerilimi; üretim bir çekiliştir), 9 (PF-gün birimi; "aynı eğri, iki cetvel"), 5 (few-shot düzeninin adı), 6 (hizalama sözcüğünün ilk anlamı — ayrım burada yapıldı), 2 (öğrenme döngüsü, genelleme), 1 (denetimli öğrenme) `[yayında]`
+- 12 ← 11 (haritanın ilk durağı), 8 (merdiven: tek cümleden n hedef), 6 (maskeleme), 7 (nedensel maske), 10 (otoregresif döngü durmaz; üretim bir çekiliştir), 9 (aynı koşu, iki cetvel), 2 (aşırı öğrenme, kapasite) `[yayında]`
+- 13 ← 12 (SFT'nin tavanı: "bu şundan kötü" denemez), 11 (ödül modeli, maliyet merdiveni, yardımseverlik ↔ zararsızlık), 10 (tercih verisi çekilişle üretilir), 3 (sigmoid), 2 (kayıp ↔ ödül simetrisi), 9 (cetvel uyarısı), 8 (SFT modeli referans olarak) `[yayında]`
+- 14 ← 8 (veri hunisi, tekilleştirme, veri karışımı, C4 kuralları — "ayrıntısı 14'te" borcu), 9 (veri duvarı, epok tekrarı, hesap-optimal tahsis), 13 (vekil ölçü uyarısı), 12 (LIMA'nın token bütçesi, Self-Instruct kalite denetimi), 4 (derlem, embedding), 2 (aşırı öğrenme) `[yayında]`
+
+**Batch 3 taslağı (15'ten devam).** Yayımlanmış borçlardan türetilmiştir:
+
+- 15 ← 4 (BPE, sözlük, Türkçenin token maliyeti), 8 ve 14 ("bu farkın yeteneklere yansıması" borcu), 10 (kesme kuralları token üzerinde çalışır), 7 (embedding tablosu sözlük boyuyla ölçeklenir)
+- 16 ← 5 (perplexity), 9 (aynı eğri iki cetvel), 12 (doğrulama kaybı ↔ insan tercihi ayrışması), 11 (kullanım dağılımı: çoğu görev otomatik puanlanamaz), 14 (kirlilik bir veri sorunudur)
+- 17 ← 10 (akıcılık ≠ doğruluk; halüsinasyon teaser'ı), 13 (ödülün memnuniyeti ölçmesi), 11 (yüzde 21 ↔ 41 uydurma oranı), 16 (ikili puanlayan değerlendirmelerin teşviki)
+- 18 ← 8 (ezber ölçümü), 14 (tekilleştirme ↔ ezber bağı), 2 (genelleme), 12 (bilgi ön eğitimden gelir)
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -331,6 +349,61 @@ Batch 0 kavramlarının 6–10'da fiilen nerede geri çağrıldığı:
 | Otoregresif üretim döngüsü | 10 | — | 25, 26, 28 (üretimin maliyet yapısı), 32 (CoT aynı döngüde uzar), 40 (uzun ufuk) |
 | Sıcaklık / kesme aileleri | 10 | — | 30 (yapılandırılmış çıktı), 36 (self-consistency çekilişe dayanır), 66 (model karakteri) |
 | Akıcılık ≠ doğruluk | 10 | — | 17 (halüsinasyon), 45 (kaynak sadakati), 65 (kalibrasyon) |
+
+### Batch 2'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Batch 0 ve Batch 1 kavramlarının 11–14'te fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 2'de gerçekleşen |
+|---|---|
+| Öğrenme döngüsü + kayıp (2) | 11 ("dört adım aynen geçerlidir"), 12 (SFT aynı döngü, etiket insandan), 13 (ödül = tersine çevrilmiş kayıp) ✓ |
+| Denetimli öğrenme (1) | 11 ("SFT üçüncü bir öğrenme türü değil") ✓ |
+| Öz-denetimli öğrenme (8) | 11 ("bedava öğle yemeği biter"), 12 (merdivenin yalnızca yarısı) ✓ |
+| Temel model (8) | 11 (açılış kavramı) ✓ |
+| Sıcaklık / örnekleme / açgözlü seçim (10) | 13 ("dört cevap nereden geliyor" — tercih verisi çekilişle üretilir) ✓ |
+| Otoregresif döngü (10) | 12 ("cevap sonu" işareti olmadan üretim durmaz) ✓ |
+| Maskeleme (6) ve nedensel maske (7) | 12 (kayıp maskesi — aynı fikrin üçüncü kullanımı) ✓ |
+| Sigmoid (3) | 13 (Bradley-Terry olasılığı) ✓ **on makale aralıklı geri çağırma** |
+| Aşırı öğrenme / kapasite (2) | 12 (küçük modelde talimat ince ayarının zararı; 16 epok paradoksu), 14 (tekrarın eşiği) ✓ |
+| Genelleme (2) | 11 (hizalama vergisinin sebebi) ✓ |
+| Perplexity (5) | 12 (LIMA: perplexity üretim kalitesiyle bağlantılı değil) ✓ |
+| Aynı eğri, iki cetvel (9) | 11 (1,3 milyar > 175 milyar), 12 (doğrulama kaybı ↔ insan tercihi), 13 (cetvel optimize edilince bozulur) ✓ |
+| PF-gün ve hesap bütçesi (8, 9) | 11 (3.640 ↔ 4,9 ↔ 60 PF-gün) ✓ |
+| Hesap-optimal tahsis (9) | 14 (karışım da bir tahsis kararıdır) ✓ |
+| Veri hunisi / tekilleştirme / veri karışımı (8) | 14 (tam kurulum; "ayrıntısı 14'te" borcu ödendi) ✓ |
+| Veri duvarı ve epok tekrarı (9) | 14 (16 epok yarılanma, etkin token) ✓ |
+| Derlem (4) | 14 (C4, FineWeb, FineWeb-Edu) ✓ |
+| Embedding (4) | 14 (FineWeb-Edu puanlayıcısı embedding üstünde çalışır) ✓ |
+| Token (4) | 12 (kayıp maskesi token düzeyinde), 14 (bütçenin birimi) ✓ |
+| Hizalama — çeviri anlamı (6) | 11 (ikinci anlamla ayrımı açıkça yapıldı) ✓ **defterdeki uyarı tahsil edildi** |
+| few-shot (5) | 11 (istemle kurulan davranışın sınırı) ✓ |
+| Akıcılık ≠ doğruluk (10) | 12 ("akıcı bir cevap üretir, doğru olmasının bir sebebi yoktur") ✓ |
+
+### Batch 2'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 2'de gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Post-training (üç duraklı hat) | 11 | 12, 13, 14 (her biri bir durağı açar) | 19 (LoRA post-training'in içinde), 34 (doğrulanabilir ödül dördüncü durak), 105 (küçük ölçekte uygulama), 114 (uçtan uca sentez) |
+| İnce ayar | 11 | 12 (SFT), 13 (tercih ince ayarı) | 19 (LoRA), 104–105 |
+| Denetimli ince ayar (SFT) | 11 | 12 (mekanizma), 13 (referans model) | 61 (hizalama sorunu), 105 |
+| Hizalama vergisi | 11 | 13 (tasmanın bedeli) | 61, 62 (güvenlik eğitiminin bedeli), 71 (ölçüm) |
+| Hizalanmamış model / niyet açığı | 11 | 13 | 61 (hizalama sorunu tam kurulumu), 67 |
+| Kayıp maskesi | 12 | 13 (kaybın neyi saydığı) | 103–105 (elle kurulum) |
+| Sohbet biçimi / özel işaretler | 12 | — | 24 (roller ve sistem istemleri), 30 (kısıtlı üretim) |
+| Yüzeysel hizalama hipotezi | 12 | 14 (post-training verisinin ölçeği) | 18 (bilgi nerede durur), 61, 116 (açık sorular) |
+| Sentetik veri | 12 | 14 (model çöküşü tartışması) | 34 (doğrulanabilir ödülle üretim), 64 (RLAIF), 87 (damıtma) |
+| Ödül modeli | 11 | 13 (Bradley-Terry, vekil olma) | 34, 35 (doğrulayıcılar), 38 (süreç ödülü), 73 (LLM-as-judge) |
+| Tercih optimizasyonu / DPO | 13 | — | 37 (RL temelleri), 61–62, 105 |
+| Politika | 13 | — | 37 (MDP içinde biçimsel tanım), 34 |
+| KL ıraksaması | 13 | — | 65 (kalibrasyon), 94 (bilgi kuramı: formal kurulum) |
+| Aşırı optimizasyon / Goodhart | 13 | 14 (kalite vekili olarak sınıflandırıcı) | 16 (benchmark'lar hedefe dönüşünce), 63 (jailbreak), 71–73, 116 |
+| Üretmek ↔ doğrulamak asimetrisi | 13 | — | 35 (doğrulama), 36 (self-consistency), 73 |
+| Engel listesi / filtrenin taraflılığı | 14 | — | 68 (kötüye kullanım), 79 (robustluk), 80 (model kartları) |
+| Kirlilik (contamination) | 14 | — | 16 (değerlendirme), 72 (tam kurulum) |
+| Model çöküşü | 14 | — | 87 (damıtma), 112 (sürekli öğrenme), 116 (açık sorular) |
+| Etkin token / tekrarın getirisi | 14 | — | 104 (kendi eğitim koşun), 107 (dağıtık eğitim bütçesi) |
+| Veri rızası ve lisans | 14 | — | 69 (yönetişim), 80 (şeffaflık), 116 |
+
 
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
@@ -439,6 +512,31 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | ışın arama | (beam search) | 10 | ileri okuma notu düzeyinde |
 | istem | (prompt) | 10 | 21–30. makalelerde yerleşik terim; parantezsiz kullanılır |
 | halüsinasyon | (hallucination) | 10 | yalnızca teaser; ayrıntı 17'de |
+| few-shot | — | 5 | Türkçeleştirilmez; isteme birkaç çözülmüş örnek koymak. **"az atışlı" KULLANILMAZ**; mekanizması 23'te |
+| zero-shot | — | 11 | Türkçeleştirilmez; hiç örnek verilmemiş istem. **"sıfır atışlı" KULLANILMAZ** |
+| post-training | — | 11 | Türkçeleştirilmez; ön eğitim sonrasındaki bütün eğitim aşamalarının şemsiye adı |
+| hizalanmamış | (misaligned) | 11 | davranışla niyet arasındaki açı. 6'daki **çeviri hizalamasından ayrı kavramdır**; ayrım 11'de açıkça yapıldı, tam kurulum 61'de |
+| ince ayar | (fine-tuning) | 11 | eğitilmiş bir modeli yeni veriyle bir kez daha eğitmek; LoRA biçimi 19'da |
+| denetimli ince ayar | (supervised fine-tuning, SFT) | 11 | post-training'in ilk durağı |
+| talimat ince ayarı | (instruction tuning) | 11 | SFT'nin talimat verisiyle yapılan biçimi; çoğu metinde SFT ile eşanlamlı |
+| ödül modeli | (reward model) | 11 | istem + cevap → tek sayı |
+| insan geri bildiriminden pekiştirmeli öğrenme | (reinforcement learning from human feedback, RLHF) | 11 | üçüncü durağın klasik biçimi; post-training'in tamamı değildir |
+| tercih optimizasyonu | — | 11 | üçüncü durağın **toplu** adı; RLHF ve DPO onun üyeleridir |
+| hizalama vergisi | (alignment tax) | 11 | post-training'in bazı görevlerde yol açtığı gerileme; küçük modellerde ceza, büyüklerde ikramiye olabilir |
+| kayıp maskesi | (loss mask) | 12 | talimat token'larının kayba katkısını sıfırlamak; 6/7'deki maskelemenin üçüncü kullanımı |
+| sohbet biçimi | — | 12 | konuşmacı ve cevap sınırlarını işaretleyen özel token'lar; roller ve sistem istemleri 24'te |
+| yüzeysel hizalama hipotezi | (superficial alignment hypothesis) | 12 | LIMA'nın tezi; **tartışmalıdır**, karşı kanıtıyla birlikte verilir |
+| sentetik veri | — | 12 | model üretimi eğitim verisi |
+| politika | (policy) | 13 | eğitilen modelin pekiştirmeli öğrenme bağlamındaki adı; biçimsel tanımı 37'de |
+| Bradley-Terry modeli | — | 13 | eşleştirmeli karşılaştırmaların olasılık modeli |
+| referans model | — | 13 | KL cezasının ölçüldüğü sabit başlangıç noktası (SFT modeli) |
+| KL ıraksaması | (Kullback–Leibler divergence) | 13 | iki dağılımın ayrışma ölçüsü; biçimsel kurulumu 94'te |
+| aşırı optimizasyon | — | 13 | vekil ölçüyü fazla kovalayınca gerçek ölçütün bozulması; Goodhart yasası |
+| doğrudan tercih optimizasyonu | (direct preference optimization, DPO) | 13 | ödül modeli kurmadan tercih çiftleriyle eğitim |
+| engel listesi | (blocklist) | 14 | kelime listesine göre sayfa eleyen filtre |
+| kirlilik | (contamination) | 14 | değerlendirme örneklerinin eğitim derlemine sızması; ayrıntısı 72'de |
+| model çöküşü | (model collapse) | 14 | ardışık kuşaklarda sentetik veriyle eğitimin dağılım kuyruklarını yok etmesi |
+| etkin token | — | 14 | tekrarlanan ya da eklenen verinin taze token cinsinden karşılığı |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -467,6 +565,56 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
 8. `logit` terimi **7. makalede** kurulur; 10. makale geri bağ verir.
 9. Oran ve farklar her zaman tam değerlerden hesaplanır, sonra yuvarlanır.
 10. Samuel'in "without being explicitly programmed" alıntısı kaynaklarda yok — seri boyunca **kullanma**.
+11. **InstructGPT veri kümesi boyutları** çalışmanın Tablo 6'sına göredir: SFT eğitimi 11.295 etiketleyici
+    + 1.430 müşteri = **12.725** istem; ödül modeli 6.623 + 26.584 = **33.207**; PPO **31.144**. Metinde
+    yuvarlanabilir ("yaklaşık on iki bin") ama başka sayı kullanılmaz.
+12. **InstructGPT hesap sayıları:** GPT-3 ön eğitimi 3.640 PF-gün, 175B SFT 4,9 PF-gün, 175B PPO-ptx 60 PF-gün.
+    Türetilen oranlar: üçüncü aşama yüzde 1,6; SFT binde 1,3; toplam yüzde 1,8.
+13. **Stiennon ve ark. künyesi NeurIPS 2020 sürümüne göredir:** *Learning to summarize **with** human feedback*
+    (arXiv sürümünde "from" geçer). Karar #7'deki Snell emsalinin aynısı.
+14. **LIMA sayıları:** 1.000 örnek (200 + 200 Stack Exchange, 200 wikiHow, 150 yazma forumu, 50 mevcut talimat
+    kümesi, 200 elle yazılmış), yaklaşık 750.000 token, 65 milyar parametreli LLaMa, 15 epok, kontrol noktası
+    5.–10. epoklar arasından elle seçildi. Karşılaştırma: GPT-4 yüzde 43, Bard yüzde 58, DaVinci003 yüzde 65.
+15. **LLaMA-1 eğitim token'ları:** 7B/13B = 1,0 trilyon; 33B/65B = **1,4 trilyon**. Karar #5'teki Llama 3'ün
+    15,6 trilyonuyla **karıştırılmaz**; ikisi farklı model ailesidir.
+16. **Tekrar eşikleri (Muennighoff ve ark.):** 4 epoka kadar taze veriyle kayıp farkı ihmal edilebilir;
+    R*_D ≈ 15, yani **16 epok**, tekrarlanan token'ın değerinin 1 − 1/*e*'sini (yaklaşık yüzde 63) yitirdiği
+    noktadır; sonrasında getiri hızla sıfıra gider. "Dördüncüden sonra değersiz" **denmez**.
+17. **C4 engel listesi oranları:** Afrikalı Amerikalı İngilizcesi yüzde 42, Hispanik hizalı İngilizce yüzde 32,
+    Beyaz Amerikalı İngilizcesi yüzde 6,2, diğer İngilizce yüzde 7,2 çıkarıldı; nihai derlemde bu iki lehçenin
+    payı yüzde 0,07 ve yüzde 0,09'dur.
+18. **FineWeb-Edu:** 460.000 sayfa Llama 3'ün 70 milyar parametreli talimat sürümüyle 0–5 arası puanlandı,
+    eşik 3; 15 trilyondan 1,3 trilyon token kaldı (yüzde 8,7). MMLU 33 → 37, ARC 46 → 57.
+19. **Level bandı:** Faz 2 ve sonrası yeni makaleler `intermediate` taşır; yayımlanmış 1–10 `beginner` kalır
+    (SOZLESME §1'in faz-göreli level kuralı). Karar Batch 2'de verildi.
+20. **few-shot / zero-shot yazımı:** 5\. makalede kurulan "few-shot" biçimi bağlayıcıdır; Türkçeleştirilmiş
+    "az atışlı" / "sıfır atışlı" biçimleri **kullanılmaz**.
+21. **Gerstgrasser ve ark. (2024) künyesi COLM 2024 olarak verilir.** DBLP yalnızca CoRR sürümünü indeksler ve
+    OpenReview'ın doğrulama duvarı aşılamadı; venue iki bağımsız ikincil kaynakla doğrulandı, birincil venue
+    sayfası teyidi **alınamadı**. Değişirse yalnızca bu künye güncellenir; metindeki bulgu etkilenmez.
+
+## Batch 2 öğrenme notları (yazım tamamlandı)
+
+- **Makale 11:** Faz 2'nin açılışı ve serinin ilk `intermediate` makalesi. Çekirdek: post-training haritası +
+  hizalama vergisi + "bildikleri ön eğitimden, davranışı post-training'den gelir". Makalenin taşıyıcı sayısı
+  hesap asimetrisi (yüzde 1,8). 6\. makalenin terim defterindeki hizalama uyarısı burada tahsil edildi —
+  ikinci anlam 61'e ertelenmeden, ayrım açıkça yapıldı. Kullanım dağılımı tablosu (üretim yüzde 45,6, kapalı
+  alan soru-cevap yüzde 2,6) 13'ün "cevap anahtarı yok" tezinin zeminini kurar. Köprü → 12: mekanizma sorusu.
+- **Makale 12:** Çekirdek: kayıp maskesi + talimat verisinin üç kaynağı + kalite/miktar tartışması. Worked
+  example 8\. makalenin merdiveninin devamıdır (13 token, 5 hedef, yüzde 38). En öğretici iki bulgu bilinçli
+  olarak "başarısızlık" biçiminde verildi: FLAN'ın 8 milyar altındaki modellerde zarar vermesi ve InstructGPT'nin
+  birinci epoktan sonra aşırı öğrenmesine rağmen 16 epoka devam etmesi. LIMA ↔ Gudibande gerilimi çözülmeden,
+  "biçim ucuz / bilgi pahalı" ayrımıyla kapatıldı. Köprü → 13: SFT "bu şundan kötü" diyemez.
+- **Makale 13:** Çekirdek: tercih çifti → ödül modeli + KL tasması + aşırı optimizasyon. Bradley-Terry kaybı
+  elle hesaplanır (0,8 farkı → 0,690 olasılık → 0,371 kayıp) ve tablo 10\. makaledeki sıcaklık tablosuyla aynı
+  biçimdedir. 3\. makalenin sigmoid'i on makale sonra geri çağrıldı — serinin ilk gerçek uzun aralıklı tekrarı.
+  DPO, RLHF'nin yerine geçen bir şey olarak değil, aynı ailenin kısayolu olarak kuruldu; Tajwar ve ark. ile
+  tartışmanın "kayıp biçimi değil, verinin kaynağı" olduğu söylendi. Köprü → 14: her aşamada veriye çarptık.
+- **Makale 14:** 8\. makalenin iki borcunu birden ödüyor (temizlik hattı + tekilleştirmenin sınırı). Ekseni
+  "filtre nötr değildir": C4 engel listesi ölçümü makalenin ahlaki ağırlığını taşır. Tekilleştirmenin ters
+  yüzü (küresel dedup kaliteyi **düşürür**) 8\. makaledeki tuhaflığın mekanizmasını açar. Karışım bölümü
+  8'in "veri karışımı — ayrıntısı 14'te" borcunu DoReMi ile kapatır. Model çöküşü tartışması tek taraflı
+  bırakılmadı: "yerine koymak" ile "yanına eklemek" ayrımı belirleyicidir. Köprü → 15: token'ın kendisi.
 
 ## Batch 1 öğrenme notları (yazım tamamlandı)
 

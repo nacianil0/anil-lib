@@ -1,0 +1,24 @@
+<svg viewBox="0 0 720 392" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="13" text-anchor="start" fill="var(--text-muted)">doğrulama kaybı — düşük olanı iyidir</text>
+
+  <line x1="80" y1="44" x2="80" y2="164" stroke="var(--border)" stroke-width="1"/>
+  <line x1="80" y1="164" x2="672" y2="164" stroke="var(--border)" stroke-width="1"/>
+  <path d="M80,64 C96,132 104,146 112,148 C240,150 460,110 672,66" fill="none" stroke="var(--cool)" stroke-width="2"/>
+  <text x="212" y="80" font-size="13" text-anchor="start" fill="var(--cool)">birinci epoktan sonra yükseliyor</text>
+
+  <text x="16" y="222" font-size="13" text-anchor="start" fill="var(--text-muted)">insan tercih puanı — yüksek olanı iyidir</text>
+
+  <line x1="80" y1="240" x2="80" y2="360" stroke="var(--border)" stroke-width="1"/>
+  <line x1="80" y1="360" x2="672" y2="360" stroke="var(--border)" stroke-width="1"/>
+  <path d="M80,352 C160,300 300,266 596,250 C630,248 652,250 672,252" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <text x="212" y="292" font-size="13" text-anchor="start" fill="var(--accent)">aynı epoklarda yükselmeye devam ediyor</text>
+
+  <line x1="112" y1="44" x2="112" y2="360" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="596" y1="44" x2="596" y2="360" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <text x="112" y="380" font-size="13" text-anchor="middle" fill="var(--text-faint)">1. epok</text>
+  <text x="596" y="380" font-size="13" text-anchor="middle" fill="var(--text-faint)">16. epok</text>
+  <text x="672" y="380" font-size="13" text-anchor="end" fill="var(--text-faint)">epok</text>
+
+  <text x="16" y="196" font-size="13" text-anchor="start" fill="var(--text-faint)">eğrilerin biçimi şematiktir; ölçülmüş olan yönleridir</text>
+</svg>

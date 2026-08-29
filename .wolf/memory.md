@@ -876,3 +876,87 @@ D:\dev\anil-lib-seri-batch1-state\review\ altında.
 | 00:49 | Created content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/kok-iki-celiski-zinciri.svg | — | ~624 |
 | 00:52 | Created docs/seri-boun/HANDOFF.md | — | ~1652 |
 | 00:56 | Session end: 34 writes across 19 files (schema.ts, labels.ts, series-content.ts, series.ts, series-roadmap.ts) | 1 reads | ~30852 tok |
+
+## Session: 2026-08-28 01:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-28 01:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-28 01:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 01:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/toc.py | — | ~227 |
+| 01:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/toc2.py | — | ~231 |
+| 01:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/toc3.py | — | ~208 |
+| 01:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/grep.py | — | ~258 |
+| 01:11 | Created content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | — | ~4424 |
+| 01:13 | Created content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/tumevarim-merdiveni-ozyineleme-acilimi.svg | — | ~1004 |
+| 01:13 | Created content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/zayif-guclu-tumevarim-iyi-siralama.svg | — | ~1334 |
+| 01:17 | Created content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md | — | ~4119 |
+| 01:17 | Created content/series-boun/assets/kumeler-fonksiyonlar-ve-bagintilar/fonksiyon-turleri.svg | — | ~1257 |
+| 01:17 | Created content/series-boun/assets/kumeler-fonksiyonlar-ve-bagintilar/bagintidan-denklige-ve-siraya.svg | — | ~874 |
+| 01:18 | Edited content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md | 1→3 lines | ~165 |
+| 01:18 | Created content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | — | ~4158 |
+| 01:20 | Created content/series/assets/ham-modelden-asistana-post-training-haritasi/ayni-istem-uc-davranis.svg | — | ~990 |
+| 01:20 | Created content/series/assets/ham-modelden-asistana-post-training-haritasi/ayni-istem-uc-davranis.svg | — | ~946 |
+| 01:20 | Created content/series/assets/ham-modelden-asistana-post-training-haritasi/post-training-haritasi.svg | — | ~1108 |
+| 01:21 | Created content/series/assets/ham-modelden-asistana-post-training-haritasi/post-training-haritasi.svg | — | ~1083 |
+| 01:21 | Created content/series/assets/ham-modelden-asistana-post-training-haritasi/hesap-ve-davranis.svg | — | ~627 |
+| 01:21 | Created content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md | — | ~3805 |
+| 01:22 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | expanded (+23 lines) | ~634 |
+| 01:22 | Created content/series-boun/assets/sayma-kombinatorigin-temel-araclari/pascal-ucgeni-ve-ozdeslik.svg | — | ~1430 |
+| 01:22 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | expanded (+6 lines) | ~294 |
+| 01:23 | Created content/series-boun/assets/sayma-kombinatorigin-temel-araclari/guvercin-yuvasi-ilkesi.svg | — | ~855 |
+| 01:23 | Edited content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md | expanded (+10 lines) | ~260 |
+| 01:24 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | "Her n için 2 sayısı n" → "n = n + 1" | ~92 |
+| 01:24 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | "e böyle bir örnekli istem" → "e böyle bir few-shot iste" | ~174 |
+| 01:24 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | inline fix | ~39 |
+| 01:28 | Created content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | — | ~4504 |
+| 01:29 | Created content/series/assets/talimatla-egitim-supervised-fine-tuning/kayip-maskesi.svg | — | ~1316 |
+| 01:30 | Created content/series/assets/talimatla-egitim-supervised-fine-tuning/sablonla-talimata.svg | — | ~764 |
+| 01:30 | Created content/series/assets/talimatla-egitim-supervised-fine-tuning/iki-cetvel-sft.svg | — | ~486 |
+| 01:30 | Edited content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | modified de() | ~309 |
+| 01:31 | Edited content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | expanded (+6 lines) | ~429 |
+| 01:31 | Edited content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | 1→3 lines | ~160 |
+| 01:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/shot.mjs | — | ~1102 |
+| 01:34 | Created content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | — | ~4204 |
+| 01:36 | Created content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/tercihten-odule.svg | — | ~1013 |
+| 01:36 | Edited content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/zayif-guclu-tumevarim-iyi-siralama.svg | inline fix | ~26 |
+| 01:37 | Created content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/odul-dongusu-ve-kisayol.svg | — | ~900 |
+| 01:37 | Created content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/asiri-optimizasyon.svg | — | ~342 |
+| 01:37 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 1→3 lines | ~243 |
+| 01:37 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 1→5 lines | ~158 |
+| 01:38 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 1→3 lines | ~310 |
+| 01:38 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 1→3 lines | ~171 |
+| 01:39 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 1→3 lines | ~247 |
+| 01:40 | Created docs/seri-boun/HANDOFF.md | — | ~2808 |
+| 01:40 | Edited docs/seri-boun/HANDOFF.md | expanded (+6 lines) | ~247 |
+| 01:42 | Created content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | — | ~4780 |
+| 01:42 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/addbugs.py | — | ~1266 |
+| 01:45 | BOUN Batch 1 (BATCH=3+1): makale 4-6 yazildi, entegre edildi, dogrulandi; +1 state gecisi tamamlandi | content/series-boun/**, docs/seri-boun/{HANDOFF,YOL-HARITASI,ARASTIRMA}.md | 6 makale/12 diyagram temiz, typecheck temiz, test 188/188, build 41 statik sayfa, 27 render kombinasyonu ekran goruntusuyle dogrulandi | ~180k |
+| 01:43 | Created content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/filtre-kimin-metnini-atiyor.svg | — | ~461 |
+| 01:44 | Created content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/tekillestirmenin-iki-kolu.svg | — | ~667 |
+| 01:44 | Created content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/tekrarin-getirisi.svg | — | ~539 |
+| 01:44 | Session end: 51 writes across 32 files (toc.py, toc2.py, toc3.py, grep.py, tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md) | 13 reads | ~74048 tok |
+| 01:45 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | expanded (+10 lines) | ~400 |
+| 01:56 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/refs.py | — | ~239 |
+| 02:03 | Created docs/seri/HANDOFF.md | — | ~2458 |
+| 02:12 | AI serisi Batch 2 (BATCH=4+1): makale 11-14 yazildi, entegre edildi, dogrulandi; +1 state gecisi tamamlandi | content/series/**, docs/seri/{HANDOFF,YOL-HARITASI}.md, .wolf/* | 14 makale/41 diyagram temiz, typecheck temiz, test 191/191, build 45 statik sayfa, 40 rota 200, uc temada render dogrulandi | ~250k |
+| 02:09 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/stats.py | — | ~300 |
+| 02:10 | Session end: 55 writes across 34 files (toc.py, toc2.py, toc3.py, grep.py, tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md) | 13 reads | ~77649 tok |
+
+## Session: 2026-08-29 11:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 11:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

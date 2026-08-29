@@ -11,9 +11,9 @@
         { "order": 1, "title": "Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?", "status": "yayinda", "slug": "bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor" },
         { "order": 2, "title": "Önermeler ve Niceleyiciler: Mantığın Dili", "status": "yayinda", "slug": "onermeler-ve-niceleyiciler-mantigin-dili" },
         { "order": 3, "title": "İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle", "status": "yayinda", "slug": "ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle" },
-        { "order": 4, "title": "Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü", "status": "planlandi" },
-        { "order": 5, "title": "Kümeler, Fonksiyonlar ve Bağıntılar", "status": "planlandi" },
-        { "order": 6, "title": "Sayma: Kombinatoriğin Temel Araçları", "status": "planlandi" },
+        { "order": 4, "title": "Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü", "status": "yayinda", "slug": "tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu" },
+        { "order": 5, "title": "Kümeler, Fonksiyonlar ve Bağıntılar", "status": "yayinda", "slug": "kumeler-fonksiyonlar-ve-bagintilar" },
+        { "order": 6, "title": "Sayma: Kombinatoriğin Temel Araçları", "status": "yayinda", "slug": "sayma-kombinatorigin-temel-araclari" },
         { "order": 7, "title": "Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar", "status": "planlandi" },
         { "order": 8, "title": "Cebirsel Yapılar ve Boolean Cebiri", "status": "planlandi" }
       ]

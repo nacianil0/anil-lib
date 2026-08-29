@@ -1,0 +1,58 @@
+<svg viewBox="0 0 740 384" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-11-harita" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <rect x="156" y="20" width="170" height="44" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="241" y="48" font-size="15" text-anchor="middle" fill="var(--text)">Ön eğitim</text>
+
+  <line x1="328" y1="42" x2="350" y2="42" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-11-harita)"/>
+
+  <rect x="356" y="20" width="170" height="44" rx="6" fill="var(--surface-muted)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="441" y="48" font-size="15" text-anchor="middle" fill="var(--text)">Denetimli ince ayar</text>
+
+  <line x1="528" y1="42" x2="550" y2="42" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-11-harita)"/>
+
+  <rect x="556" y="20" width="170" height="44" rx="6" fill="var(--surface-muted)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="641" y="48" font-size="15" text-anchor="middle" fill="var(--text)">Tercih optimizasyonu</text>
+
+  <line x1="12" y1="84" x2="726" y2="84" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="12" y="112" font-size="13" text-anchor="start" fill="var(--text-faint)">veri</text>
+  <text x="241" y="112" font-size="13" text-anchor="middle" fill="var(--text)">trilyonlarca token</text>
+  <text x="241" y="132" font-size="13" text-anchor="middle" fill="var(--text-muted)">web metni</text>
+  <text x="441" y="112" font-size="13" text-anchor="middle" fill="var(--text)">12.725 istem</text>
+  <text x="441" y="132" font-size="13" text-anchor="middle" fill="var(--text-muted)">insan yazımı cevaplar</text>
+  <text x="641" y="112" font-size="13" text-anchor="middle" fill="var(--text)">33.207 istem</text>
+  <text x="641" y="132" font-size="13" text-anchor="middle" fill="var(--text-muted)">cevap sıralamaları</text>
+
+  <line x1="12" y1="152" x2="726" y2="152" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="12" y="180" font-size="13" text-anchor="start" fill="var(--text-faint)">etiketi kim yazıyor</text>
+  <text x="241" y="180" font-size="13" text-anchor="middle" fill="var(--text)">kimse</text>
+  <text x="241" y="200" font-size="13" text-anchor="middle" fill="var(--text-muted)">etiket metinden kesilir</text>
+  <text x="441" y="180" font-size="13" text-anchor="middle" fill="var(--text)">insan</text>
+  <text x="441" y="200" font-size="13" text-anchor="middle" fill="var(--text-muted)">cevabı baştan yazar</text>
+  <text x="641" y="180" font-size="13" text-anchor="middle" fill="var(--text)">insan</text>
+  <text x="641" y="200" font-size="13" text-anchor="middle" fill="var(--text-muted)">cevapları sıralar</text>
+
+  <line x1="12" y1="220" x2="726" y2="220" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="12" y="248" font-size="13" text-anchor="start" fill="var(--text-faint)">ne kazanılıyor</text>
+  <text x="241" y="248" font-size="13" text-anchor="middle" fill="var(--text)">modelin bildikleri</text>
+  <text x="441" y="248" font-size="13" text-anchor="middle" fill="var(--text)">talimatı cevaplama</text>
+  <text x="641" y="248" font-size="13" text-anchor="middle" fill="var(--text)">hangi cevap yeğlenir</text>
+
+  <line x1="12" y1="268" x2="726" y2="268" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="12" y="296" font-size="13" text-anchor="start" fill="var(--text-faint)">hesap payı</text>
+  <text x="241" y="296" font-size="13" text-anchor="middle" fill="var(--text)">3.640 PF-gün</text>
+  <text x="441" y="296" font-size="13" text-anchor="middle" fill="var(--text)">4,9 PF-gün</text>
+  <text x="641" y="296" font-size="13" text-anchor="middle" fill="var(--text)">60 PF-gün</text>
+
+  <line x1="12" y1="316" x2="726" y2="316" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="12" y="348" font-size="13" text-anchor="start" fill="var(--text-faint)">sayılar InstructGPT'nin 175 milyar parametreli sürümüne aittir</text>
+</svg>

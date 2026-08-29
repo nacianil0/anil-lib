@@ -1,0 +1,23 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="28" font-size="14" text-anchor="start" fill="var(--text)">Engel listesinin çıkardığı belge oranı</text>
+
+  <line x1="260" y1="46" x2="260" y2="254" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="250" y="76" font-size="13" text-anchor="end" fill="var(--text)">Afrikalı Amerikalı İngilizcesi</text>
+  <rect x="260" y="56" width="420" height="30" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="688" y="76" font-size="14" text-anchor="start" fill="var(--accent)">42</text>
+
+  <text x="250" y="126" font-size="13" text-anchor="end" fill="var(--text)">Hispanik hizalı İngilizce</text>
+  <rect x="260" y="106" width="320" height="30" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="588" y="126" font-size="14" text-anchor="start" fill="var(--accent)">32</text>
+
+  <text x="250" y="176" font-size="13" text-anchor="end" fill="var(--text)">Beyaz Amerikalı İngilizcesi</text>
+  <rect x="260" y="156" width="62" height="30" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="330" y="176" font-size="14" text-anchor="start" fill="var(--text-muted)">6,2</text>
+
+  <text x="250" y="226" font-size="13" text-anchor="end" fill="var(--text)">Diğer İngilizce</text>
+  <rect x="260" y="206" width="72" height="30" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="340" y="226" font-size="14" text-anchor="start" fill="var(--text-muted)">7,2</text>
+
+  <text x="16" y="278" font-size="13" text-anchor="start" fill="var(--text-faint)">değerler yüzdedir; kural setinde hiçbir lehçenin adı geçmez</text>
+</svg>

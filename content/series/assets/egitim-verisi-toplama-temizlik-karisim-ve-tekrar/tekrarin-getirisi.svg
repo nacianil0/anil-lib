@@ -1,0 +1,26 @@
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="28" font-size="14" text-anchor="start" fill="var(--text)">Tekrarlanan token'ın taze token'a kıyasla değeri</text>
+
+  <line x1="70" y1="46" x2="70" y2="252" stroke="var(--border)" stroke-width="1"/>
+  <line x1="70" y1="252" x2="690" y2="252" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="100" y="52" width="100" height="200" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="150" y="44" font-size="13" text-anchor="middle" fill="var(--accent)">tam</text>
+  <text x="150" y="276" font-size="13" text-anchor="middle" fill="var(--text)">1. epok</text>
+
+  <rect x="255" y="52" width="100" height="200" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="305" y="44" font-size="13" text-anchor="middle" fill="var(--accent)">tam sayılır</text>
+  <text x="305" y="276" font-size="13" text-anchor="middle" fill="var(--text)">4. epok</text>
+  <text x="305" y="296" font-size="13" text-anchor="middle" fill="var(--text-faint)">kayıpta fark yok</text>
+
+  <rect x="410" y="178" width="100" height="74" rx="3" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="460" y="170" font-size="13" text-anchor="middle" fill="var(--cool)">yaklaşık 1/3</text>
+  <text x="460" y="276" font-size="13" text-anchor="middle" fill="var(--text)">16. epok</text>
+  <text x="460" y="296" font-size="13" text-anchor="middle" fill="var(--text-faint)">değerin 1 − 1/e'si gitti</text>
+
+  <rect x="565" y="244" width="100" height="8" rx="2" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="615" y="236" font-size="13" text-anchor="middle" fill="var(--text-muted)">sıfıra yakın</text>
+  <text x="615" y="276" font-size="13" text-anchor="middle" fill="var(--text)">sonrası</text>
+
+  <text x="16" y="322" font-size="13" text-anchor="start" fill="var(--text-faint)">sabit hesap bütçesinde ölçülmüştür; yükseklikler oranları gösterir</text>
+</svg>

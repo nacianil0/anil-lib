@@ -202,6 +202,86 @@
       "path": "content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
+    },
+    {
+      "articleId": "article_8ac0c0b8-aa30-49d8-b838-0850d9059cc1",
+      "title": "Ham Modelden Asistana: Post-Training Haritası",
+      "slug": "ham-modelden-asistana-post-training-haritasi",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 11,
+      "summary": "Ön eğitimden çıkan metin tamamlayıcının nasıl asistana dönüştüğünü uçtan uca haritalar: post-training'in üç aşaması, etiketi kimin yazdığı, ölçülmüş davranış farkı ve bu farkın hesap bütçesindeki şaşırtıcı derecede küçük payı.",
+      "tags": [
+        "post-training",
+        "temel-model",
+        "talimat-takibi",
+        "hizalama-vergisi",
+        "instructgpt"
+      ],
+      "contentHash": "sha256:5c95883a270bb2f80796988d81949e1b7bd5274f26f747901c05ba26581b7522",
+      "path": "content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
+    },
+    {
+      "articleId": "article_74b3baef-a0ec-400d-8fdf-75e2acfbe086",
+      "title": "Talimatla Eğitim: Supervised Fine-Tuning",
+      "slug": "talimatla-egitim-supervised-fine-tuning",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 12,
+      "summary": "Bir talimat-cevap çiftinin kayba tam olarak nasıl döndüğünü adım adım kurar: hangi token'ların kayba girdiği, sınırı çizen özel işaretler, talimat verisinin ölçekle ilişkisi ve 'bin örnek yeter mi' tartışmasının ölçülmüş iki yüzü.",
+      "tags": [
+        "denetimli-ince-ayar",
+        "talimat-ince-ayari",
+        "kayip-maskesi",
+        "lima",
+        "sentetik-veri"
+      ],
+      "contentHash": "sha256:42b3b0bf7b18fe5dbf4161b10749e9517982a9240ab8a77755041298f4ddd7a6",
+      "path": "content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
+    },
+    {
+      "articleId": "article_d74128a8-4e91-4f16-82e2-7e020cf37daf",
+      "title": "İnsan Tercihlerinden Öğrenmek: RLHF ve Ötesi",
+      "slug": "insan-tercihlerinden-ogrenmek-rlhf-ve-otesi",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 13,
+      "summary": "Cevap anahtarı olmayan görevlerde insanın 'bu daha iyi' yargısının nasıl eğitim sinyaline çevrildiğini kurar: tercih çifti, ödül modelinin elle hesaplanmış kaybı, referans modele bağlanan tasma, aşırı optimizasyon ve DPO'nun kısayolu.",
+      "tags": [
+        "rlhf",
+        "odul-modeli",
+        "tercih-optimizasyonu",
+        "dpo",
+        "asiri-optimizasyon"
+      ],
+      "contentHash": "sha256:b023bfcca42499f680a62f88180f2fb88d1402765bb211fdf9e01f9dc792c804",
+      "path": "content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
+    },
+    {
+      "articleId": "article_23ea987c-09e7-424a-bab6-2ad1dcb328b6",
+      "title": "Eğitim Verisi: Toplama, Temizlik, Karışım ve Tekrar",
+      "slug": "egitim-verisi-toplama-temizlik-karisim-ve-tekrar",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 14,
+      "summary": "8. makalenin bıraktığı temizlik hattı borcunu öder: filtrelerin kimin metnini attığı, kaliteyi bir modele sordurmanın sonuçları, tekilleştirmenin ters yüzü, tekrarın ölçülmüş getirisi ve sentetik verinin çöküş tartışması.",
+      "tags": [
+        "egitim-verisi",
+        "veri-temizligi",
+        "tekillestirme",
+        "sentetik-veri",
+        "model-cokusu"
+      ],
+      "contentHash": "sha256:208d67ad2ab9d231e6de3f60f9b93d8e31aad1293bd0732fb428b534f30b393a",
+      "path": "content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
     }
   ]
 }

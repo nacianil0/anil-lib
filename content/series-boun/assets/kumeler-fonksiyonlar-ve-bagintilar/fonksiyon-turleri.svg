@@ -1,0 +1,60 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a5-fonksiyon-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <line x1="246" y1="24" x2="246" y2="280" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+  <line x1="474" y1="24" x2="474" y2="280" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+
+  <text x="132" y="34" font-size="15" text-anchor="middle" fill="var(--text)">Birebir, örten değil</text>
+  <text x="132" y="56" font-size="13" text-anchor="middle" fill="var(--text-muted)">injective</text>
+  <text x="80" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">A</text>
+  <text x="184" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">B</text>
+  <circle cx="80" cy="104" r="5" fill="var(--accent)" />
+  <circle cx="80" cy="148" r="5" fill="var(--accent)" />
+  <circle cx="80" cy="192" r="5" fill="var(--accent)" />
+  <circle cx="184" cy="100" r="5" fill="var(--text-muted)" />
+  <circle cx="184" cy="140" r="5" fill="var(--text-muted)" />
+  <circle cx="184" cy="180" r="5" fill="var(--text-muted)" />
+  <circle cx="184" cy="220" r="5" fill="none" stroke="var(--text-faint)" />
+  <line x1="88" y1="104" x2="176" y2="100" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="88" y1="148" x2="176" y2="140" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="88" y1="192" x2="176" y2="180" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <text x="132" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">her b en fazla bir kez</text>
+
+  <text x="360" y="34" font-size="15" text-anchor="middle" fill="var(--text)">Örten, birebir değil</text>
+  <text x="360" y="56" font-size="13" text-anchor="middle" fill="var(--text-muted)">surjective</text>
+  <text x="308" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">A</text>
+  <text x="412" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">B</text>
+  <circle cx="308" cy="100" r="5" fill="var(--accent)" />
+  <circle cx="308" cy="140" r="5" fill="var(--accent)" />
+  <circle cx="308" cy="180" r="5" fill="var(--accent)" />
+  <circle cx="308" cy="220" r="5" fill="var(--accent)" />
+  <circle cx="412" cy="104" r="5" fill="var(--text-muted)" />
+  <circle cx="412" cy="148" r="5" fill="var(--text-muted)" />
+  <circle cx="412" cy="192" r="5" fill="var(--text-muted)" />
+  <line x1="316" y1="100" x2="404" y2="104" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="316" y1="140" x2="404" y2="106" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="316" y1="180" x2="404" y2="148" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="316" y1="220" x2="404" y2="192" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <text x="360" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">her b en az bir kez</text>
+
+  <text x="588" y="34" font-size="15" text-anchor="middle" fill="var(--text)">Birebir örten</text>
+  <text x="588" y="56" font-size="13" text-anchor="middle" fill="var(--text-muted)">bijective</text>
+  <text x="536" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">A</text>
+  <text x="640" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">B</text>
+  <circle cx="536" cy="104" r="5" fill="var(--accent)" />
+  <circle cx="536" cy="148" r="5" fill="var(--accent)" />
+  <circle cx="536" cy="192" r="5" fill="var(--accent)" />
+  <circle cx="640" cy="104" r="5" fill="var(--accent)" />
+  <circle cx="640" cy="148" r="5" fill="var(--accent)" />
+  <circle cx="640" cy="192" r="5" fill="var(--accent)" />
+  <line x1="544" y1="104" x2="632" y2="104" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="544" y1="148" x2="632" y2="148" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <line x1="544" y1="192" x2="632" y2="192" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#boun-a5-fonksiyon-ok)" />
+  <text x="588" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">her b tam olarak bir kez</text>
+
+  <text x="360" y="300" font-size="13" text-anchor="middle" fill="var(--text-muted)">Birebirlik ve örtenlik formülün değil, tanım ve değer kümesiyle birlikte üçlünün özelliğidir</text>
+</svg>

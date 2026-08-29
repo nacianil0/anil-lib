@@ -1820,6 +1820,231 @@
       "related_bugs": [],
       "occurrences": 5,
       "last_seen": "2026-08-29T00:00:00.000Z"
+    },
+    {
+      "id": "bug-109",
+      "timestamp": "2026-08-28T22:24:22.694Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md",
+      "root_cause": "Had \"Her n için 2 sayısı n'",
+      "fix": "Changed to \"n = n + 1\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T22:24:22.694Z"
+    },
+    {
+      "id": "bug-110",
+      "timestamp": "2026-08-28T22:24:25.940Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md",
+      "root_cause": "Had 'e böyle bir örnekli istem verildiğinde bile, etik",
+      "fix": "Changed to 'e böyle bir few-shot istem verildiğinde bile, eti",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T22:24:25.940Z"
+    },
+    {
+      "id": "bug-111",
+      "timestamp": "2026-08-28T22:36:51.906Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/zayif-guclu-tumevarim-iyi-siralama.svg",
+      "root_cause": "Had \"164\"",
+      "fix": "Changed to \"158\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T22:36:51.906Z"
+    },
+    {
+      "id": "bug-112",
+      "timestamp": "2026-08-28T22:40:46.886Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 6→12 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-28T22:40:46.886Z"
+    },
+    {
+      "error_message": "sync-series-hashes.cjs --series=boun --write yeni makalelerin content_hash yer tutucusunu duzeltmedi; '3 makale denetlendi' dedi",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "Katalog var oldugunda arac hedef listesini catalog.articles'tan alir; henuz katalogda olmayan yeni makale dosyalarini hic gezmez. HANDOFF'taki 'once sync, sonra entegre' sirasi yalnizca katalogsuz bootstrap durumu icin dogruydu.",
+      "fix": "Artimli batch'te dogru sira: entegre-batch --write (katalog+roadmap) ONCE, sonra sync-series-hashes --write (frontmatter VE katalog hash'lerini birlikte duzeltir). Sira docs/seri-boun/HANDOFF.md 'Sonraki run'da hatirlanacak' bolumune yazildi.",
+      "tags": [
+        "series",
+        "boun",
+        "tooling",
+        "content-hash",
+        "ordering"
+      ],
+      "id": "bug-113",
+      "timestamp": "2026-08-29T01:45:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T01:45:00.000Z"
+    },
+    {
+      "error_message": "check-series-content.cjs: 'Sekil 1 metinde referanslanmamis' / sekil numarasi beklenen ile uyusmuyor",
+      "file": "content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md",
+      "root_cause": "Denetleyici sekil numaralarinin GOVDEDEKI GORUNME SIRASINA gore 1'den artmasini bekler. Makale 6'da guvercin yuvasi sekli 'Sekil 1' etiketiyle yazildi ama belgede Pascal seklinden SONRA geliyordu.",
+      "fix": "Numaralar belge sirasina gore yeniden atandi: Pascal ucgeni Sekil 1, guvercin yuvasi Sekil 2; metindeki referanslar da guncellendi.",
+      "tags": [
+        "series",
+        "boun",
+        "markdown",
+        "figure-numbering",
+        "checker"
+      ],
+      "id": "bug-114",
+      "timestamp": "2026-08-29T01:45:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T01:45:00.000Z"
+    },
+    {
+      "error_message": "pnpm test:e2e -> [WebServer] ERROR packages field missing or empty / Process from config.webServer was not able to start",
+      "file": "playwright.config.ts",
+      "root_cause": "webServer komutu 'pnpm exec next dev' cagiriyor ve PATH'teki global pnpm depodaki placeholder pnpm-workspace.yaml'i reddediyor (bilinen cerebrum notu: tooling corepack pnpm kullanmali).",
+      "fix": "Sunucu elle baslatildi: 'corepack pnpm exec next dev -p 3100 -H 127.0.0.1', ardindan PLAYWRIGHT_PORT=3100 ile playwright calistirildi; config reuseExistingServer:true oldugu icin mevcut sunucuyu kullandi. Kalici duzeltme yapilmadi (kapsam disi), HANDOFF'a not dusuldu.",
+      "tags": [
+        "e2e",
+        "playwright",
+        "pnpm",
+        "workspace",
+        "windows"
+      ],
+      "id": "bug-115",
+      "timestamp": "2026-08-29T01:45:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T01:45:00.000Z"
+    },
+    {
+      "error_message": "Playwright strict mode violation: getByRole('button', { name: 'Gecis' iki ogeye eslesti (Genis / Ekstra Genis)",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Okuma alani grubuna 'Ekstra Genis' secenegi eklendi (src/lib/content/labels.ts measureExtraWide) ama e2e secicisi hala 'Genis' ile substring esleme yapiyor; 'Ekstra Genis' de eslesiyor.",
+      "fix": "DUZELTILMEDI - BOUN batch kapsamı disi, src/ ve tests/ bu run'da hic degistirilmedi. Tek satirlik duzeltme: getByRole('button', { name: 'Genis', exact: true }). HANDOFF 'Bilinen onceden-var sorunlar' listesine yazildi.",
+      "tags": [
+        "e2e",
+        "playwright",
+        "pre-existing",
+        "reader-settings",
+        "not-fixed"
+      ],
+      "id": "bug-116",
+      "timestamp": "2026-08-29T01:45:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T01:45:00.000Z"
+    },
+    {
+      "error_message": "Sepia temasi headless dogrulamada uygulanmadi; html sinifi ve body arka plani light kaldi",
+      "file": "src/lib/preferences/use-reader-preferences.tsx",
+      "root_cause": "Dogrulama betigi temayi localStorage['anil-lib:theme'] anahtarina yaziyordu; saglayici tercihleri PREFERENCES_STORAGE_KEY yani 'anil-lib:reader-preferences:v1' altindaki tam preferencesSchema nesnesinden okuyor. Dark tesadufen uygulandi, sepia uygulanmadi.",
+      "fix": "Betik 'anil-lib:reader-preferences:v1' anahtarina tam DEFAULT_PREFERENCES nesnesini theme alani degistirilmis halde yaziyor. Sonra uc tema da dogru uygulandi (light rgb(250,249,247) / dark rgb(18,20,23) / sepia rgb(244,239,228)).",
+      "tags": [
+        "verification",
+        "theme",
+        "localStorage",
+        "playwright"
+      ],
+      "id": "bug-117",
+      "timestamp": "2026-08-29T01:45:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T01:45:00.000Z"
+    },
+    {
+      "id": "bug-118",
+      "timestamp": "2026-08-29T02:10:00.000Z",
+      "error_message": "/seri/<yeni-slug> dev server'da 404 dondu; landing sayfasi ise 14 makaleyi dogru gosterdi",
+      "file": "content/series/articles/models-and-training/*.md",
+      "root_cause": "next dev, seri makale modulunu onbellege alir; yeni .md dosyalari calisan surecte gorunmez. roadmap.json/catalog.json degisiklikleri ise aninda yansidigi icin sorun 'entegrasyon calismadi' gibi gorunuyor.",
+      "fix": "Dev server durdurulur, `pnpm build` (zorunlu kapi) calistirilir, dev server yeniden baslatilir; ancak ondan sonra gercek render dogrulamasi yapilir. Sira HANDOFF entegrasyon notuna yazildi.",
+      "tags": [
+        "next-dev",
+        "module-cache",
+        "series",
+        "404",
+        "verification-order"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T02:10:00.000Z"
+    },
+    {
+      "id": "bug-119",
+      "timestamp": "2026-08-29T02:10:00.000Z",
+      "error_message": "Makale 12'de 'geliştirme kümesi' kullanildi; terim defteri bu bicimi acikca yasakliyor",
+      "file": "content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md",
+      "root_cause": "LIMA'nin 'development set' ifadesi dogrudan cevrildi; YOL-HARITASI terim defterindeki 'doğrulama kümesi | ... | \"geliştirme kümesi\" KULLANILMAZ' satiri yazim sirasinda kontrol edilmedi.",
+      "fix": "'doğrulama kümesi' olarak degistirildi. Yazim sonrasi denetime `grep -rn 'geliştirme kümesi\\|korpus'` taramasi eklendi.",
+      "tags": [
+        "terim-defteri",
+        "seri",
+        "terminology-drift"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T02:10:00.000Z"
+    },
+    {
+      "id": "bug-120",
+      "timestamp": "2026-08-29T02:10:00.000Z",
+      "error_message": "DPO kisaltmasi makale 13'un govdesinde hic acilmadi; yalnizca frontmatter ozetinde ve kaynakcada geciyordu",
+      "file": "content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md",
+      "root_cause": "SOZLESME §2 her terimin ilk gecisinde Turkce karsilik + Ingilizcesini istiyor; kisaltma dogrudan kullanilmaya baslandi. Otomatik denetleyiciler gloss kontrolu yapmiyor.",
+      "fix": "Ilk govde gecisine 'doğrudan tercih optimizasyonu (direct preference optimization, DPO)' eklendi. Denetime, glosslanan terimleri regexle cikarip terim defteriyle karsilastiran bir tarama eklendi.",
+      "tags": [
+        "seri",
+        "gloss",
+        "SOZLESME-2",
+        "terminology"
+      ],
+      "related_bugs": [
+        "bug-119"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T02:10:00.000Z"
+    },
+    {
+      "id": "bug-121",
+      "timestamp": "2026-08-29T02:10:00.000Z",
+      "error_message": "Makale 11 ilk taslakta 'sıfır atışlı' / 'örnekli istem' kullandi; 5. makale ayni kavrami 'few-shot' olarak yayimlamis",
+      "file": "content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md",
+      "root_cause": "few-shot terimi 5. makalede kurulmus ama YOL-HARITASI terim defterine hic girmemisti; defter tek dogruluk kaynagi sanildigi icin sapma fark edilmedi.",
+      "fix": "Metin 'few-shot'/'zero-shot' bicimine cevrildi; her ikisi terim defterine eklendi ve bağlayıcı olgu karari #20 olarak kayda gecti.",
+      "tags": [
+        "terim-defteri",
+        "seri",
+        "terminology-drift",
+        "few-shot"
+      ],
+      "related_bugs": [
+        "bug-119"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T02:10:00.000Z"
     }
   ]
 }

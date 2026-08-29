@@ -1,0 +1,68 @@
+<svg viewBox="0 0 720 348" xmlns="http://www.w3.org/2000/svg">
+  <line x1="400" y1="40" x2="400" y2="300" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+
+  <text x="210" y="46" font-size="15" text-anchor="middle" fill="var(--text)">Pascal üçgeni</text>
+
+  <line x1="164" y1="252" x2="187" y2="268" stroke="var(--accent)" stroke-width="1.6" />
+  <line x1="210" y1="252" x2="187" y2="268" stroke="var(--accent)" stroke-width="1.6" />
+
+  <circle cx="210" cy="80" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="210" y="85" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+
+  <circle cx="187" cy="120" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="187" y="125" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <circle cx="233" cy="120" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="233" y="125" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+
+  <circle cx="164" cy="160" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="164" y="165" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <circle cx="210" cy="160" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="210" y="165" font-size="13" text-anchor="middle" fill="var(--text-muted)">2</text>
+  <circle cx="256" cy="160" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="256" y="165" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+
+  <circle cx="141" cy="200" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="141" y="205" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <circle cx="187" cy="200" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="187" y="205" font-size="13" text-anchor="middle" fill="var(--text-muted)">3</text>
+  <circle cx="233" cy="200" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="233" y="205" font-size="13" text-anchor="middle" fill="var(--text-muted)">3</text>
+  <circle cx="279" cy="200" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="279" y="205" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+
+  <circle cx="118" cy="240" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="118" y="245" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <circle cx="164" cy="240" r="15" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="164" y="245" font-size="13" text-anchor="middle" fill="var(--text)">4</text>
+  <circle cx="210" cy="240" r="15" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="210" y="245" font-size="13" text-anchor="middle" fill="var(--text)">6</text>
+  <circle cx="256" cy="240" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="256" y="245" font-size="13" text-anchor="middle" fill="var(--text-muted)">4</text>
+  <circle cx="302" cy="240" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="302" y="245" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+
+  <circle cx="95" cy="280" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="95" y="285" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <circle cx="141" cy="280" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="141" y="285" font-size="13" text-anchor="middle" fill="var(--text-muted)">5</text>
+  <circle cx="187" cy="280" r="15" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="187" y="285" font-size="13" text-anchor="middle" fill="var(--text)">10</text>
+  <circle cx="233" cy="280" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="233" y="285" font-size="13" text-anchor="middle" fill="var(--text-muted)">10</text>
+  <circle cx="279" cy="280" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="279" y="285" font-size="13" text-anchor="middle" fill="var(--text-muted)">5</text>
+  <circle cx="325" cy="280" r="15" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="325" y="285" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+
+  <text x="560" y="60" font-size="15" text-anchor="middle" fill="var(--text)">Pascal özdeşliği</text>
+  <text x="560" y="100" font-size="14" text-anchor="middle" fill="var(--text)">C(n, k) = C(n − 1, k − 1) + C(n − 1, k)</text>
+  <text x="560" y="140" font-size="13" text-anchor="middle" fill="var(--text-muted)">Örnek: C(5, 2) = C(4, 1) + C(4, 2)</text>
+  <text x="560" y="162" font-size="13" text-anchor="middle" fill="var(--text-muted)">yani 10 = 4 + 6</text>
+
+  <text x="560" y="212" font-size="13" text-anchor="middle" fill="var(--text)">Kombinatoryal ispat:</text>
+  <text x="560" y="234" font-size="13" text-anchor="middle" fill="var(--text-muted)">bir elemanı sabitle.</text>
+  <text x="560" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">k elemanlı altkümeler ya</text>
+  <text x="560" y="278" font-size="13" text-anchor="middle" fill="var(--text-muted)">onu içerir ya da içermez.</text>
+
+  <text x="360" y="328" font-size="13" text-anchor="middle" fill="var(--text-muted)">Her sayı üstündeki iki sayının toplamıdır; satır toplamları 2 üzeri n verir</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 720 336" xmlns="http://www.w3.org/2000/svg">
+  <text x="24" y="30" font-size="15" text-anchor="start" fill="var(--text)">Harcanan hesap</text>
+
+  <text x="24" y="66" font-size="13" text-anchor="start" fill="var(--text-muted)">Ön eğitim · 3.640 PF-gün</text>
+  <rect x="24" y="76" width="280" height="30" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="24" y="146" font-size="13" text-anchor="start" fill="var(--text-muted)">Post-training · 64,9 PF-gün</text>
+  <rect x="24" y="156" width="5" height="30" rx="1" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="30" y1="171" x2="128" y2="171" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="134" y="176" font-size="14" text-anchor="start" fill="var(--accent)">yüzde 1,8</text>
+
+  <text x="24" y="228" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı hesap ekseninde, aynı ölçekte</text>
+
+  <line x1="352" y1="16" x2="352" y2="320" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="380" y="30" font-size="15" text-anchor="start" fill="var(--text)">InstructGPT'nin tercih edilme oranı</text>
+
+  <line x1="380" y1="264" x2="700" y2="264" stroke="var(--border)" stroke-width="1"/>
+  <line x1="380" y1="174" x2="700" y2="174" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="380" y="168" font-size="13" text-anchor="start" fill="var(--text-faint)">eşitlik çizgisi: yüzde 50</text>
+
+  <rect x="430" y="111" width="90" height="153" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="475" y="104" font-size="14" text-anchor="middle" fill="var(--text)">yüzde 85</text>
+  <text x="475" y="286" font-size="13" text-anchor="middle" fill="var(--text-muted)">ham GPT-3'e</text>
+  <text x="475" y="304" font-size="13" text-anchor="middle" fill="var(--text-muted)">karşı</text>
+
+  <rect x="570" y="136" width="90" height="128" rx="3" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="615" y="129" font-size="14" text-anchor="middle" fill="var(--text)">yüzde 71</text>
+  <text x="615" y="286" font-size="13" text-anchor="middle" fill="var(--text-muted)">few-shot istemli</text>
+  <text x="615" y="304" font-size="13" text-anchor="middle" fill="var(--text-muted)">GPT-3'e karşı</text>
+</svg>

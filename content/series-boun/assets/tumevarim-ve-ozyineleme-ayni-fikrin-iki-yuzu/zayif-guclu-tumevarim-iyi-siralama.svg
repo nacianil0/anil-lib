@@ -1,0 +1,59 @@
+<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a4-kapsam-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <line x1="246" y1="24" x2="246" y2="300" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+  <line x1="474" y1="24" x2="474" y2="300" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+
+  <text x="132" y="38" font-size="15" text-anchor="middle" fill="var(--text)">Zayıf tümevarım</text>
+  <text x="132" y="60" font-size="13" text-anchor="middle" fill="var(--text-muted)">hipotez: yalnızca P(n)</text>
+
+  <rect x="52" y="76" width="160" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="132" y="96" font-size="13" text-anchor="middle" fill="var(--text-muted)">P(1)</text>
+  <rect x="52" y="116" width="160" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="132" y="136" font-size="13" text-anchor="middle" fill="var(--text-muted)">P(2)</text>
+  <text x="132" y="158" font-size="14" text-anchor="middle" fill="var(--text-faint)">...</text>
+  <rect x="52" y="172" width="160" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="132" y="192" font-size="13" text-anchor="middle" fill="var(--text)">P(n)</text>
+  <rect x="42" y="166" width="180" height="42" rx="7" fill="none" stroke="var(--accent)" stroke-dasharray="5 4" />
+  <line x1="132" y1="208" x2="132" y2="246" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-kapsam-ok)" />
+  <text x="140" y="232" font-size="13" fill="var(--accent)">adım</text>
+  <rect x="52" y="250" width="160" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="132" y="270" font-size="13" text-anchor="middle" fill="var(--text)">P(n + 1)</text>
+
+  <text x="360" y="38" font-size="15" text-anchor="middle" fill="var(--text)">Güçlü tümevarım</text>
+  <text x="360" y="60" font-size="13" text-anchor="middle" fill="var(--text-muted)">hipotez: P(1) ... P(n)</text>
+
+  <rect x="280" y="76" width="160" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="360" y="96" font-size="13" text-anchor="middle" fill="var(--text)">P(1)</text>
+  <rect x="280" y="116" width="160" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="360" y="136" font-size="13" text-anchor="middle" fill="var(--text)">P(2)</text>
+  <text x="360" y="164" font-size="14" text-anchor="middle" fill="var(--text)">...</text>
+  <rect x="280" y="172" width="160" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="360" y="192" font-size="13" text-anchor="middle" fill="var(--text)">P(n)</text>
+  <rect x="270" y="70" width="180" height="138" rx="7" fill="none" stroke="var(--accent)" stroke-dasharray="5 4" />
+  <line x1="360" y1="208" x2="360" y2="246" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-kapsam-ok)" />
+  <text x="368" y="232" font-size="13" fill="var(--accent)">adım</text>
+  <rect x="280" y="250" width="160" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="360" y="270" font-size="13" text-anchor="middle" fill="var(--text)">P(n + 1)</text>
+
+  <text x="588" y="38" font-size="15" text-anchor="middle" fill="var(--text)">İyi sıralama ilkesi</text>
+  <text x="588" y="60" font-size="13" text-anchor="middle" fill="var(--text-muted)">en küçük karşı örnek</text>
+
+  <rect x="498" y="76" width="180" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="588" y="96" font-size="13" text-anchor="middle" fill="var(--text)">karşı örnekler kümesi C</text>
+  <line x1="588" y1="106" x2="588" y2="124" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-kapsam-ok)" />
+  <rect x="498" y="128" width="180" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="588" y="148" font-size="13" text-anchor="middle" fill="var(--text)">en küçük eleman c</text>
+  <line x1="588" y1="158" x2="588" y2="176" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-kapsam-ok)" />
+  <rect x="498" y="180" width="180" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="588" y="200" font-size="13" text-anchor="middle" fill="var(--text)">daha küçük karşı örnek</text>
+  <line x1="588" y1="210" x2="588" y2="246" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a4-kapsam-ok)" />
+  <rect x="498" y="250" width="180" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="588" y="270" font-size="13" text-anchor="middle" fill="var(--text)">çelişki: C boştur</text>
+
+  <text x="360" y="330" font-size="13" text-anchor="middle" fill="var(--text-muted)">Üçü de aynı gerçeğin sunumudur: doğal sayılarda sonsuza kadar geriye gidilemez</text>
+</svg>

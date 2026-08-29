@@ -1,0 +1,51 @@
+<svg viewBox="0 0 740 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-13-dongu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <text x="16" y="26" font-size="15" text-anchor="start" fill="var(--text)">RLHF: ödül modeli üzerinden döngü</text>
+
+  <rect x="40" y="44" width="170" height="44" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="125" y="71" font-size="14" text-anchor="middle" fill="var(--text)">Referans model (SFT)</text>
+
+  <line x1="125" y1="88" x2="125" y2="120" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="134" y="112" font-size="13" text-anchor="start" fill="var(--accent)">KL cezası</text>
+
+  <rect x="40" y="124" width="170" height="50" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="125" y="154" font-size="15" text-anchor="middle" fill="var(--text)">Politika</text>
+
+  <line x1="210" y1="149" x2="282" y2="149" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-dongu)"/>
+
+  <rect x="290" y="124" width="170" height="50" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="375" y="154" font-size="14" text-anchor="middle" fill="var(--text)">Üretilen cevap</text>
+
+  <line x1="460" y1="149" x2="532" y2="149" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-dongu)"/>
+
+  <rect x="540" y="124" width="170" height="50" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="625" y="146" font-size="14" text-anchor="middle" fill="var(--text)">Ödül modeli</text>
+  <text x="625" y="164" font-size="13" text-anchor="middle" fill="var(--text-muted)">tercih çiftleriyle eğitilmiş</text>
+
+  <path d="M625,174 L625,236 L472,236" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-dongu)"/>
+
+  <rect x="290" y="214" width="170" height="44" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="375" y="241" font-size="14" text-anchor="middle" fill="var(--text)">Güncelleme adımı</text>
+
+  <path d="M290,236 L125,236 L125,186" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-dongu)"/>
+
+  <line x1="16" y1="290" x2="724" y2="290" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="322" font-size="15" text-anchor="start" fill="var(--text)">DPO: aynı tercih verisi, ödül modeli kurulmadan</text>
+
+  <rect x="40" y="340" width="170" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="125" y="369" font-size="14" text-anchor="middle" fill="var(--text)">Tercih çiftleri</text>
+
+  <line x1="210" y1="363" x2="282" y2="363" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-13-dongu)"/>
+
+  <rect x="290" y="340" width="170" height="46" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="375" y="369" font-size="14" text-anchor="middle" fill="var(--text)">Politika</text>
+
+  <text x="480" y="358" font-size="13" text-anchor="start" fill="var(--text-faint)">ayrı ödül modeli yok; tasma</text>
+  <text x="480" y="378" font-size="13" text-anchor="start" fill="var(--text-faint)">kaybın içine gömülü</text>
+</svg>

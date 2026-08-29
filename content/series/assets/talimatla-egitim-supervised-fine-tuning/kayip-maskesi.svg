@@ -1,0 +1,58 @@
+<svg viewBox="0 0 740 268" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-12-maske" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+    <marker id="ok-12-maske-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <text x="232" y="24" font-size="13" text-anchor="middle" fill="var(--text-muted)">talimat — hedef değil</text>
+  <line x1="14" y1="34" x2="451" y2="34" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="590" y="24" font-size="13" text-anchor="middle" fill="var(--accent)">cevap — hedef</text>
+  <line x1="454" y1="34" x2="726" y2="34" stroke="var(--accent)" stroke-width="1"/>
+
+  <rect x="14" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="40" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">Şu</text>
+  <rect x="69" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="95" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">cümleyi</text>
+  <rect x="124" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="150" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">soruya</text>
+  <rect x="179" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="205" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">çevir</text>
+  <rect x="234" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="260" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">:</text>
+  <rect x="289" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="315" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">Kedi</text>
+  <rect x="344" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="370" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">uyudu</text>
+  <rect x="399" y="48" width="52" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="425" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">.</text>
+
+  <rect x="454" y="48" width="52" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="480" y="70" font-size="13" text-anchor="middle" fill="var(--text)">Kedi</text>
+  <rect x="509" y="48" width="52" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="535" y="70" font-size="13" text-anchor="middle" fill="var(--text)">uyudu</text>
+  <rect x="564" y="48" width="52" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="590" y="70" font-size="13" text-anchor="middle" fill="var(--text)">mu</text>
+  <rect x="619" y="48" width="52" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="645" y="70" font-size="13" text-anchor="middle" fill="var(--text)">?</text>
+  <rect x="674" y="48" width="52" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="700" y="70" font-size="13" text-anchor="middle" fill="var(--text)">son</text>
+
+  <line x1="20" y1="112" x2="446" y2="112" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-12-maske)"/>
+  <text x="20" y="134" font-size="13" text-anchor="start" fill="var(--text-muted)">bağlam olarak okunur, kayba katkısı yoktur</text>
+
+  <line x1="480" y1="82" x2="480" y2="150" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-12-maske-vurgu)"/>
+  <line x1="535" y1="82" x2="535" y2="150" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-12-maske-vurgu)"/>
+  <line x1="590" y1="82" x2="590" y2="150" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-12-maske-vurgu)"/>
+  <line x1="645" y1="82" x2="645" y2="150" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-12-maske-vurgu)"/>
+  <line x1="700" y1="82" x2="700" y2="150" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-12-maske-vurgu)"/>
+
+  <rect x="454" y="154" width="272" height="40" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="590" y="179" font-size="15" text-anchor="middle" fill="var(--text)">kayıp toplamı: 5 hedef</text>
+
+  <text x="14" y="232" font-size="13" text-anchor="start" fill="var(--text-faint)">on üç token, beş hedef; "son" cevabın bittiğini bildiren özel işarettir</text>
+</svg>

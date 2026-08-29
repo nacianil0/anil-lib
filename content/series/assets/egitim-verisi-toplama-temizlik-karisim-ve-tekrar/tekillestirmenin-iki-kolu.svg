@@ -1,0 +1,30 @@
+<svg viewBox="0 0 740 328" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-14-dedup" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <rect x="190" y="20" width="360" height="52" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="370" y="43" font-size="15" text-anchor="middle" fill="var(--text)">96 anlık görüntü, kalite filtresinden geçmiş</text>
+  <text x="370" y="63" font-size="13" text-anchor="middle" fill="var(--text-muted)">tekilleştirme öncesi havuz</text>
+
+  <path d="M370,72 L370,94 L190,94 L190,118" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-14-dedup)"/>
+  <path d="M370,72 L370,94 L550,94 L550,118" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-14-dedup)"/>
+
+  <rect x="30" y="124" width="320" height="140" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="190" y="150" font-size="15" text-anchor="middle" fill="var(--text)">Küresel tekilleştirme</text>
+  <text x="190" y="172" font-size="13" text-anchor="middle" fill="var(--text-muted)">96 görüntünün tamamı arasında</text>
+  <text x="190" y="202" font-size="15" text-anchor="middle" fill="var(--text)">4 trilyon token</text>
+  <text x="190" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">kalan veri atılandan daha kötü:</text>
+  <text x="190" y="250" font-size="13" text-anchor="middle" fill="var(--text-faint)">reklam ve anahtar kelime listeleri</text>
+
+  <rect x="390" y="124" width="320" height="140" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="550" y="150" font-size="15" text-anchor="middle" fill="var(--text)">Görüntü başına tekilleştirme</text>
+  <text x="550" y="172" font-size="13" text-anchor="middle" fill="var(--text-muted)">her görüntü kendi içinde</text>
+  <text x="550" y="202" font-size="15" text-anchor="middle" fill="var(--text)">20 trilyon token</text>
+  <text x="550" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">görüntüler arası tekrar kalite</text>
+  <text x="550" y="250" font-size="13" text-anchor="middle" fill="var(--text-faint)">işareti sayılır, kusur değil</text>
+
+  <text x="30" y="296" font-size="13" text-anchor="start" fill="var(--text-faint)">algoritma iki kolda da aynıdır; değişen tek şey tekilleştirmenin penceresidir</text>
+</svg>

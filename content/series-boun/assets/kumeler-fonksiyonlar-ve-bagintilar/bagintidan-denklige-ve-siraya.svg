@@ -1,0 +1,42 @@
+<svg viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a5-baginti-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="360" y="30" font-size="15" text-anchor="middle" fill="var(--text)">İkili bağıntı R, A × A altkümesi</text>
+
+  <rect x="30" y="46" width="150" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="105" y="68" font-size="13" text-anchor="middle" fill="var(--text)">yansımalı</text>
+  <rect x="208" y="46" width="150" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="283" y="68" font-size="13" text-anchor="middle" fill="var(--text)">simetrik</text>
+  <rect x="386" y="46" width="150" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="461" y="68" font-size="13" text-anchor="middle" fill="var(--text)">ters simetrik</text>
+  <rect x="564" y="46" width="150" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="639" y="68" font-size="13" text-anchor="middle" fill="var(--text)">geçişli</text>
+
+  <line x1="190" y1="88" x2="190" y2="142" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a5-baginti-ok)" />
+  <line x1="530" y1="88" x2="530" y2="142" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a5-baginti-ok)" />
+
+  <rect x="40" y="146" width="300" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="190" y="170" font-size="14" text-anchor="middle" fill="var(--text)">Denklik bağıntısı</text>
+  <text x="190" y="192" font-size="13" text-anchor="middle" fill="var(--text-muted)">yansımalı + simetrik + geçişli</text>
+
+  <rect x="380" y="146" width="300" height="60" rx="7" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="530" y="170" font-size="14" text-anchor="middle" fill="var(--text)">Kısmi sıra</text>
+  <text x="530" y="192" font-size="13" text-anchor="middle" fill="var(--text-muted)">yansımalı + ters simetrik + geçişli</text>
+
+  <line x1="190" y1="206" x2="190" y2="230" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a5-baginti-ok)" />
+  <line x1="530" y1="206" x2="530" y2="230" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#boun-a5-baginti-ok)" />
+
+  <rect x="40" y="234" width="300" height="62" rx="7" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="190" y="258" font-size="13" text-anchor="middle" fill="var(--text)">Denklik sınıfları kümeyi parçalara ayırır</text>
+  <text x="190" y="280" font-size="13" text-anchor="middle" fill="var(--text-muted)">örnek: mod 5 ile beş sınıf</text>
+
+  <rect x="380" y="234" width="300" height="62" rx="7" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="530" y="258" font-size="13" text-anchor="middle" fill="var(--text)">Karşılaştırılamaz çiftler olabilir</text>
+  <text x="530" y="280" font-size="13" text-anchor="middle" fill="var(--text-muted)">örnek: bölünebilirlikte 2 ile 3</text>
+
+  <text x="360" y="326" font-size="13" text-anchor="middle" fill="var(--text-muted)">Denklik bağıntısı eşitliği gevşetir, kısmi sıra sıralamayı gevşetir</text>
+</svg>

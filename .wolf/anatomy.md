@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-28T21:52:58.547Z
-> Files: 162 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-28T23:09:43.237Z
+> Files: 195 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -38,9 +38,23 @@
 
 - `openwolf.md` (~313 tok)
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/
+
+- `refs.py` (~239 tok)
+- `stats.py` — prose (~300 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/883cb5bb-ed11-4944-95dd-d2b9ffa4d5d2/scratchpad/
 
 - `final-checks.cjs` — fs: resolve (~1311 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/
+
+- `addbugs.py` — listesini (~1266 tok)
+- `grep.py` (~258 tok)
+- `shot.mjs` — Declares BASE (~1102 tok)
+- `toc.py` (~227 tok)
+- `toc2.py` — page_text (~231 tok)
+- `toc3.py` (~208 tok)
 
 ## boun/
 
@@ -95,7 +109,10 @@
 ## content/series-boun/articles/discrete-math/
 
 - `ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md` — Mantıktan ispata (~3748 tok)
+- `kumeler-fonksiyonlar-ve-bagintilar.md` — Mülakatın nesne dili (~3999 tok)
 - `onermeler-ve-niceleyiciler-mantigin-dili.md` — Neden mantıkla başlıyoruz (~3814 tok)
+- `sayma-kombinatorigin-temel-araclari.md` — Neden saymayı hatırlaman gerekiyor (~3832 tok)
+- `tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md` — Sonsuz aileler hakkındaki iddialar (~4185 tok)
 
 ## content/series-boun/articles/interview-method/
 
@@ -111,14 +128,29 @@
 - `ispat-strateji-akisi.svg` (~890 tok)
 - `kok-iki-celiski-zinciri.svg` (~624 tok)
 
+## content/series-boun/assets/kumeler-fonksiyonlar-ve-bagintilar/
+
+- `bagintidan-denklige-ve-siraya.svg` (~874 tok)
+- `fonksiyon-turleri.svg` (~1257 tok)
+
 ## content/series-boun/assets/onermeler-ve-niceleyiciler-mantigin-dili/
 
 - `cikarim-kurallari.svg` (~601 tok)
 - `kosullu-onermenin-akrabalari.svg` (~732 tok)
 
+## content/series-boun/assets/sayma-kombinatorigin-temel-araclari/
+
+- `guvercin-yuvasi-ilkesi.svg` (~855 tok)
+- `pascal-ucgeni-ve-ozdeslik.svg` (~1430 tok)
+
+## content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/
+
+- `tumevarim-merdiveni-ozyineleme-acilimi.svg` (~1004 tok)
+- `zayif-guclu-tumevarim-iyi-siralama.svg` (~1334 tok)
+
 ## content/series/
 
-- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0+1: makale 1–10) (~2800 tok)
+- `catalog.json` — "Sıfırdan Yüze" seri kataloğu (Batch 0+1+2: makale 1–14) (~2800 tok)
 - `roadmap.json` — 118 başlıklık yaşayan seri omurgası, 14 faz, yayında/planlandı durumları (~4563 tok)
 
 ## content/series/articles/foundations/
@@ -132,25 +164,53 @@
 ## content/series/articles/models-and-training/
 
 - `dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md` — Makale 6: sorgu/anahtar/değer, elle softmax, bağlamsal temsil (~6000 tok)
+- `egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md` — Makale 14: filtrenin taraflılığı (C4 engel listesi), FineWeb-Edu, tekilleştirmenin ters yüzü, DoReMi karışımı, 4/16 epok eşiği, model çöküşü, veri rızası (~4835 tok)
+- `ham-modelden-asistana-post-training-haritasi.md` — Makale 11: post-training'in üç durağı, InstructGPT sayıları, hesap asimetrisi (yüzde 1,8), hizalama vergisi (~4654 tok)
+- `insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md` — Makale 13: tercih çifti → ödül modeli (Bradley-Terry elle hesap), KL tasması, aşırı optimizasyon/Goodhart, DPO (~4862 tok)
 - `metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md` — Makale 10: otoregresif döngü, sıcaklık, top-k/çekirdek örnekleme (~6000 tok)
 - `olcek-yasalari-daha-buyuk-neden-daha-iyi.md` — Makale 9: güç yasası, Kaplan→Chinchilla, veri duvarı, emergence (~6300 tok)
 - `on-egitim-internet-olceginde-sonraki-token.md` — Makale 8: öz-denetimli hedef, veri hunisi, 6ND, koşu anatomisi (~6300 tok)
+- `talimatla-egitim-supervised-fine-tuning.md` — Makale 12: kayıp maskesi (13 token/5 hedef), sohbet biçimi, FLAN ölçek bulgusu, LIMA tartışması, Self-Instruct kalite denetimi (~4786 tok)
 - `transformer-modern-dil-modellerinin-mimarisi.md` — Makale 7: blok anatomisi, çok başlı dikkat, pozisyon kodlaması, logit halkası (~6500 tok)
 
 ## content/series/assets/
 
 
+## content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/
+
+- `filtre-kimin-metnini-atiyor.svg` (~461 tok)
+- `tekillestirmenin-iki-kolu.svg` (~667 tok)
+- `tekrarin-getirisi.svg` (~539 tok)
+
+## content/series/assets/ham-modelden-asistana-post-training-haritasi/
+
+- `ayni-istem-uc-davranis.svg` (~946 tok)
+- `hesap-ve-davranis.svg` (~627 tok)
+- `post-training-haritasi.svg` (~1083 tok)
+
+## content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/
+
+- `asiri-optimizasyon.svg` (~342 tok)
+- `odul-dongusu-ve-kisayol.svg` (~900 tok)
+- `tercihten-odule.svg` (~1013 tok)
+
+## content/series/assets/talimatla-egitim-supervised-fine-tuning/
+
+- `iki-cetvel-sft.svg` (~486 tok)
+- `kayip-maskesi.svg` (~1316 tok)
+- `sablonla-talimata.svg` (~764 tok)
+
 ## docs/seri-boun/
 
 - `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~1266 tok)
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~1549 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~2731 tok)
 - `SOZLESME.md` — "Mülakat Aynası: Boğaziçi CmpE" — Seri Sözleşmesi (~2218 tok)
 - `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~131 tok)
 - `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~2405 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~1909 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~2305 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~4914 tok)
 - `TRIGGER.md` — "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı (~114 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~9556 tok)

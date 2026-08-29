@@ -1,0 +1,46 @@
+<svg viewBox="0 0 740 336" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-13-tercih" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <rect x="16" y="20" width="180" height="46" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="106" y="40" font-size="14" text-anchor="middle" fill="var(--text)">Tek bir istem</text>
+  <text x="106" y="58" font-size="13" text-anchor="middle" fill="var(--text-muted)">model dört cevap üretir</text>
+
+  <line x1="106" y1="66" x2="106" y2="92" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-tercih)"/>
+
+  <rect x="16" y="96" width="180" height="40" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="106" y="121" font-size="13" text-anchor="middle" fill="var(--text)">Cevap A · 1. sıra</text>
+  <rect x="16" y="148" width="180" height="40" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="106" y="173" font-size="13" text-anchor="middle" fill="var(--text)">Cevap B · 2. sıra</text>
+  <rect x="16" y="200" width="180" height="40" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="106" y="225" font-size="13" text-anchor="middle" fill="var(--text)">Cevap C · 3. sıra</text>
+  <rect x="16" y="252" width="180" height="40" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="106" y="277" font-size="13" text-anchor="middle" fill="var(--text)">Cevap D · 4. sıra</text>
+
+  <line x1="196" y1="194" x2="250" y2="194" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-tercih)"/>
+
+  <rect x="256" y="96" width="200" height="196" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="356" y="120" font-size="14" text-anchor="middle" fill="var(--text)">Altı eğitim çifti</text>
+  <text x="356" y="146" font-size="13" text-anchor="middle" fill="var(--text-muted)">A yeğlenir B'ye</text>
+  <text x="356" y="168" font-size="13" text-anchor="middle" fill="var(--text-muted)">A yeğlenir C'ye</text>
+  <text x="356" y="190" font-size="13" text-anchor="middle" fill="var(--text-muted)">A yeğlenir D'ye</text>
+  <text x="356" y="212" font-size="13" text-anchor="middle" fill="var(--text-muted)">B yeğlenir C'ye</text>
+  <text x="356" y="234" font-size="13" text-anchor="middle" fill="var(--text-muted)">B yeğlenir D'ye</text>
+  <text x="356" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">C yeğlenir D'ye</text>
+  <text x="356" y="282" font-size="13" text-anchor="middle" fill="var(--text-faint)">tek sıralama, altı örnek</text>
+
+  <line x1="456" y1="194" x2="510" y2="194" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-13-tercih)"/>
+
+  <rect x="516" y="96" width="208" height="196" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="620" y="122" font-size="14" text-anchor="middle" fill="var(--text)">Ödül modeli</text>
+  <text x="620" y="148" font-size="13" text-anchor="middle" fill="var(--text-muted)">her cevaba tek bir sayı</text>
+  <text x="620" y="182" font-size="14" text-anchor="middle" fill="var(--text)">A için 1,2</text>
+  <text x="620" y="206" font-size="14" text-anchor="middle" fill="var(--text)">B için 0,4</text>
+  <text x="620" y="244" font-size="13" text-anchor="middle" fill="var(--text-faint)">eğitim hedefi: yeğlenenin</text>
+  <text x="620" y="264" font-size="13" text-anchor="middle" fill="var(--text-faint)">sayısı daha büyük olsun</text>
+
+  <text x="16" y="320" font-size="13" text-anchor="start" fill="var(--text-faint)">insan hiçbir yerde cevap yazmaz; yalnızca sıralar</text>
+</svg>

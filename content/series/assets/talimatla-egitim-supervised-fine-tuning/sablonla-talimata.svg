@@ -1,0 +1,36 @@
+<svg viewBox="0 0 740 336" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ok-12-sablon" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)"/>
+    </marker>
+  </defs>
+
+  <text x="16" y="30" font-size="13" text-anchor="start" fill="var(--text-faint)">var olan veri kümesinden tek satır</text>
+
+  <rect x="16" y="44" width="256" height="96" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="30" y="70" font-size="13" text-anchor="start" fill="var(--text-muted)">metin:</text>
+  <text x="30" y="90" font-size="13" text-anchor="start" fill="var(--text)">Film beklediğimden</text>
+  <text x="30" y="108" font-size="13" text-anchor="start" fill="var(--text)">çok daha iyiydi.</text>
+  <text x="30" y="130" font-size="13" text-anchor="start" fill="var(--text-muted)">etiket: olumlu</text>
+
+  <path d="M272,92 L292,92 L292,42 L308,42" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-12-sablon)"/>
+  <path d="M272,92 L308,92" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-12-sablon)"/>
+  <path d="M272,92 L292,92 L292,232 L308,232" fill="none" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#ok-12-sablon)"/>
+
+  <rect x="314" y="18" width="410" height="52" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="328" y="40" font-size="13" text-anchor="start" fill="var(--text)">Bu yorumun duygusu olumlu mu olumsuz mu? Film...</text>
+  <text x="328" y="60" font-size="13" text-anchor="start" fill="var(--text-muted)">hedef: olumlu</text>
+
+  <rect x="314" y="88" width="410" height="52" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="328" y="110" font-size="13" text-anchor="start" fill="var(--text)">Film... Bu yorumu yazan filmi beğenmiş mi?</text>
+  <text x="328" y="130" font-size="13" text-anchor="start" fill="var(--text-muted)">hedef: Evet</text>
+
+  <rect x="314" y="208" width="410" height="52" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="328" y="230" font-size="13" text-anchor="start" fill="var(--text)">Olumlu bir film yorumu yaz.</text>
+  <text x="328" y="250" font-size="13" text-anchor="start" fill="var(--text-muted)">hedef: Film beklediğimden çok daha iyiydi.</text>
+
+  <text x="314" y="176" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı satır için elle yazılmış on şablondan üçü</text>
+  <text x="314" y="286" font-size="13" text-anchor="start" fill="var(--accent)">bu şablon görevi tersine çevirir: etiket girdi olur</text>
+
+  <text x="16" y="316" font-size="13" text-anchor="start" fill="var(--text-faint)">eğitimde her örnek, o veri kümesinin şablonlarından rastgele biriyle biçimlenir</text>
+</svg>

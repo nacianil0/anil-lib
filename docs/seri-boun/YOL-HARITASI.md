@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-08-29 · Yayında: 3 (1–3, Batch 0) · Sıradaki: 4
+Son güncelleme: 2026-08-29 · Yayında: 6 (1–3 Batch 0, 4–6 Batch 1) · Sıradaki: 7
 
 ## Serinin tezi
 
@@ -35,9 +35,9 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 1. **Bilimsel Mülakat: Ne Bekleniyor, Bu Seri Nasıl Çalışıyor?** — *yayında* · resmî süreç (kaynağıyla), beş yetenek hedefi, sözlü çalışma yöntemi; dürüst sınırlar.
 2. **Önermeler ve Niceleyiciler: Mantığın Dili** — *yayında* · doğruluk tabloları, koşullunun dört akrabası, çıkarım kuralları, ∀/∃ ve niceleyici sırası; "her/bazı" tuzakları.
 3. **İspat Teknikleri: Doğrudan, Çelişkiyle, Karşı Örnekle** — *yayında* · ispatın anatomisi, karşıt ters, durum ayrımı, √2 klasiği; karşı örnek disiplini.
-4. **Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü** — zayıf/güçlü tümevarım; özyinelemeli tanım; algoritma ispatlarına köprü.
-5. **Kümeler, Fonksiyonlar ve Bağıntılar** — birebir/örten, denklik bağıntıları, kısmi sıralar; sayılabilirlik teaser'ı.
-6. **Sayma: Kombinatoriğin Temel Araçları** — permütasyon/kombinasyon, güvercin yuvası, binom; analiz için sayma refleksi.
+4. **Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü** — *yayında* · zayıf/güçlü tümevarım, iyi sıralama ilkesi; özyinelemeli tanım ve yapısal tümevarım; hatalı tümevarım örneği; özyinelemeli algoritmanın doğruluk savunması.
+5. **Kümeler, Fonksiyonlar ve Bağıntılar** — *yayında* · çift kapsama ile küme eşitliği, birebir/örten ispat kalıpları ve bileşke, dört bağıntı özelliği, denklik bağıntısı ↔ parçalanış, kısmi sıra; sayılabilirlik ve hesaplanamayan fonksiyonlar.
+6. **Sayma: Kombinatoriğin Temel Araçları** — *yayında* · çarpma/toplama kuralları, eşleyerek sayma, içerme-dışarma, permütasyon/kombinasyon, Pascal özdeşliği ve kombinatoryal ispat, güvercin yuvası (hash çakışması, sıkıştırma sınırı).
 7. **Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar** — derece, yol/döngü, bağlılık, ağaç karakterizasyonları; el sıkışma lemması.
 8. **Cebirsel Yapılar ve Boolean Cebiri** — grup/yarıgrup, kafes, Boolean cebiri; devre ve mantık sadeleştirme bağı.
 
@@ -99,12 +99,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 2 ← 1 (yöntem: tanım disiplini burada başlar)
 - 3 ← 2 (mantıksal denklikler ispat tekniklerine dönüşür; karşıt ters, niceleyici değillemesi)
 
-**Batch 1 taslak satırları:**
-- 4 ← 3 (tümevarım bir ispat tekniğidir), 2 (niceleyiciler)
-- 5 ← 2 (önerme/koşul dili), 3 (birebir/örten ispatları)
-- 6 ← 5 (fonksiyon/küme dili)
-- 7 ← 5 (bağıntı), 4 (ağaç ispatlarında tümevarım)
-- 8 ← 2 (Boolean bağlaçlar), 5 (bağıntı/kısmi sıra)
+**Batch 1 (yayımlanmış, artık bağlayıcı):**
+- 4 ← 3 (tümevarım bir ispat tekniğidir; koşullu önerme ispatı), 2 (niceleyiciler, koşullunun anlamı)
+- 5 ← 2 (dağılma kuralı küme özdeşliklerinde), 3 (çift kapsama = "ancak ve ancak"; yapıcı ispat)
+- 6 ← 5 (birebir örten eşleme ile sayma; güç kümesi), 4 (özyinelemeli/kombinatoryal argüman refleksi)
+
+**Batch 2 taslak satırları:**
+- 7 ← 5 (bağıntı ve küme dili), 6 (derece toplamı için sayma), 4 (ağaç ispatlarında tümevarım)
+- 8 ← 2 (Boolean bağlaçlar), 5 (bağıntı/kısmi sıra; kafes bir kısmi sıradır)
+- 9 ← 6 (adım sayma), 4 (özyinelemeli maliyet sezgisi)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -175,6 +178,39 @@ boyunca aynı kalır.
 | durum ayrımı | proof by cases | 3 |
 | yapıcı / yapıcı olmayan ispat | constructive / nonconstructive proof | 3 |
 | varsayım | conjecture | 3 |
+| tümevarım | mathematical induction | 4 |
+| taban durumu | base case | 4 |
+| tümevarım adımı | inductive step | 4 |
+| tümevarım hipotezi | induction hypothesis | 4 |
+| güçlü tümevarım | strong induction | 4 |
+| iyi sıralama ilkesi | well ordering principle | 4 |
+| özyineleme | recursion | 4 |
+| özyinelemeli tanım | recursive definition | 4 |
+| yapısal tümevarım | structural induction | 4 |
+| küme | set | 5 |
+| güç kümesi | power set | 5 |
+| kartezyen çarpım | Cartesian product | 5 |
+| fonksiyon | function | 5 |
+| tanım kümesi / değer kümesi / görüntü kümesi | domain / codomain / range | 5 |
+| birebir | injective | 5 |
+| örten | surjective | 5 |
+| birebir örten | bijective | 5 |
+| bileşke | composition | 5 |
+| bağıntı | relation | 5 |
+| yansımalı / simetrik / ters simetrik / geçişli | reflexive / symmetric / antisymmetric / transitive | 5 |
+| denklik bağıntısı | equivalence relation | 5 |
+| parçalanış | partition | 5 |
+| kısmi sıra / tam sıra | partial order / total order | 5 |
+| sayılabilir / sayılamaz | countable / uncountable | 5 |
+| çarpma kuralı / toplama kuralı | product rule / sum rule | 6 |
+| bölme kuralı | division rule | 6 |
+| içerme-dışarma | inclusion-exclusion | 6 |
+| permütasyon | permutation | 6 |
+| kombinasyon | combination | 6 |
+| binom katsayısı | binomial coefficient | 6 |
+| Pascal özdeşliği | Pascal's identity | 6 |
+| kombinatoryal ispat | combinatorial proof | 6 |
+| güvercin yuvası ilkesi | pigeonhole principle | 6 |
 
 ## Kavram-tekrar defteri
 
@@ -186,3 +222,17 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
 - **Karşı örnek disiplini (3)** → 21'de açgözlü algoritmaların ne zaman çalışmadığını göstermede.
 - **Yapıcı olmayan ispat (3)** → 21 ve 25'te varlık argümanlarının algoritma vermemesi tartışmasında.
 - **Hash tablosu takip zinciri (1)** → 14'te gerçek konu olarak açılır; 1'deki örnek oraya köprüdür.
+- **Güçlü tümevarım ve parçalama adımı (4)** → 18'de böl-yönet yinelemelerinde ve 19'da döngü
+  değişmezlerinde; mergesort doğruluğu 4'te örnek olarak adıyla anıldı.
+- **Yapısal tümevarım (4)** → 7'de ağaç karakterizasyonlarında, 11–13'te ağaç/heap değişmezlerinde.
+- **Hanoi yinelemesi T(n) = 2T(n−1) + 1 (4)** → 18'de Master Teoremi öncesi ısınma örneği.
+- **Kısmi sıra ve topolojik sıralama (5)** → 16'da algoritmasıyla açılır; 5'teki bağımlılık grafı
+  örneği oraya köprüdür.
+- **Sayılabilirlik ve hesaplanamayan fonksiyonlar (5)** → 25'te durma problemi ve karar
+  verilemezlik tartışmasının sayma zemini.
+- **Birebir olmayan hash fonksiyonu (5, 6)** → 14'te çakışma çözümü ve yük faktörü tartışmasının
+  gerekçesi; 6'da güvercin yuvasıyla ispatlandı.
+- **C(n, 2), 2ⁿ ve n! büyüklükleri (6)** → 9 ve 17'de karmaşıklık sınıflarının somut zemini;
+  24'te karşılaştırmalı sıralamanın n! alt sınırı.
+- **Doğum günü ilkesi (6)** → 36'da olasılık aracıyla; 6'da yalnızca etiketli ileri gönderme olarak
+  geçti (kesinlik ile olasılık ayrımı).

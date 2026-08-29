@@ -1,0 +1,18 @@
+<svg viewBox="0 0 720 336" xmlns="http://www.w3.org/2000/svg">
+  <line x1="70" y1="52" x2="70" y2="266" stroke="var(--border)" stroke-width="1"/>
+  <line x1="70" y1="266" x2="668" y2="266" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="44" font-size="13" text-anchor="start" fill="var(--text-muted)">puan</text>
+  <text x="668" y="290" font-size="13" text-anchor="end" fill="var(--text-muted)">referans modelden uzaklaşma</text>
+
+  <path d="M70,254 C200,192 380,142 660,94" fill="none" stroke="var(--cool)" stroke-width="2"/>
+  <text x="404" y="120" font-size="13" text-anchor="start" fill="var(--cool)">ödül modelinin verdiği puan</text>
+
+  <path d="M70,254 C160,152 240,120 300,120 C420,120 540,192 660,234" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <text x="440" y="226" font-size="13" text-anchor="start" fill="var(--accent)">gerçek insan tercihi</text>
+
+  <line x1="300" y1="66" x2="300" y2="266" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="308" y="80" font-size="13" text-anchor="start" fill="var(--text-faint)">tepe: buradan sonrası bozar</text>
+
+  <text x="16" y="322" font-size="13" text-anchor="start" fill="var(--text-faint)">eğrilerin biçimi şematiktir; ölçülmüş olan ayrışmanın kendisidir</text>
+</svg>
