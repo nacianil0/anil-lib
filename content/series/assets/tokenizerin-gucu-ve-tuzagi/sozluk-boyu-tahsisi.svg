@@ -1,0 +1,24 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Sabit hesap bütçesi, iki farklı paylaşım</text>
+
+  <text x="16" y="72" font-size="13" text-anchor="start" fill="var(--text-muted)">küçük sözlük</text>
+  <rect x="150" y="52" width="120" height="36" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="210" y="75" font-size="13" text-anchor="middle" fill="var(--accent)">embedding</text>
+  <rect x="270" y="52" width="400" height="36" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="470" y="75" font-size="13" text-anchor="middle" fill="var(--text)">katmanlar</text>
+
+  <text x="150" y="112" font-size="13" text-anchor="start" fill="var(--text-faint)">dizi uzun: aynı metin daha çok token tutar</text>
+
+  <text x="16" y="176" font-size="13" text-anchor="start" fill="var(--text-muted)">büyük sözlük</text>
+  <rect x="150" y="156" width="230" height="36" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="265" y="179" font-size="13" text-anchor="middle" fill="var(--accent)">embedding</text>
+  <rect x="380" y="156" width="290" height="36" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="525" y="179" font-size="13" text-anchor="middle" fill="var(--text)">katmanlar</text>
+
+  <text x="150" y="216" font-size="13" text-anchor="start" fill="var(--text-faint)">dizi kısa: aynı metin daha az token tutar</text>
+
+  <line x1="150" y1="240" x2="670" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <text x="410" y="262" font-size="13" text-anchor="middle" fill="var(--text-muted)">iki çubuğun toplam uzunluğu aynıdır</text>
+
+  <text x="16" y="290" font-size="13" text-anchor="start" fill="var(--text-faint)">optimal paylaşım hesap bütçesine bağlıdır; büyük modeller büyük sözlük ister</text>
+</svg>

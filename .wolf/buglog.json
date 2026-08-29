@@ -2045,6 +2045,131 @@
       ],
       "occurrences": 1,
       "last_seen": "2026-08-29T02:10:00.000Z"
+    },
+    {
+      "id": "bug-122",
+      "timestamp": "2026-08-29T08:59:46.942Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md",
+      "root_cause": "Had \"Şekil 2 — Aynı sayı, iki farklı öbekleme\"",
+      "fix": "Changed to 'ı iki bağlamda gösterilir: tek başınayken üç yüz ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T08:59:46.942Z"
+    },
+    {
+      "id": "bug-123",
+      "timestamp": "2026-08-29T09:06:07.783Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md",
+      "root_cause": "Had \"Şekil 3 — Bir sütun mu, yedi sütun mu\"",
+      "fix": "Changed to \"Şekil 3 — Tabloya giren ölçü, girmeyen altısı\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T09:06:07.783Z"
+    },
+    {
+      "id": "bug-124",
+      "timestamp": "2026-08-29T09:13:28.484Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→7 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T09:13:28.484Z"
+    },
+    {
+      "id": "bug-125",
+      "timestamp": "2026-08-29T12:40:00Z",
+      "error_message": "Playwright: 23 failed / 3 passed (auth.spec.ts ve reader.spec.ts'in tamami), onceki baseline 21 gecti / 4 basarisiz idi",
+      "file": "playwright.config.ts",
+      "root_cause": "Config gate env'ini (SITE_PASSWORD_SHA256, AUTH_COOKIE_SECRET) yalnizca kendi webServer surecine verir. Render dogrulamasi icin gate env'siz elle baslatilmis bir dev sunucusu 3100'de dinliyordu ve reuseExistingServer:true oldugu icin Playwright onu sessizce yeniden kullandi; sifre kapisi hic kurulmadi, auth testleri ve onlara bagli butun testler kirmizi oldu.",
+      "fix": "Gate'siz sunucuyu durdur (Get-NetTCPConnection -LocalPort 3100 | Stop-Process), sonra sunucuyu config'deki test degerleriyle yeniden baslat ve playwright'i oyle calistir. Render dogrulamasi ile E2E ayni sunucuyla yapilamaz: biri gate'siz, digeri gate'li ister.",
+      "tags": [
+        "playwright",
+        "e2e",
+        "auth",
+        "dev-server",
+        "reuseExistingServer",
+        "false-negative"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T12:40:00Z"
+    },
+    {
+      "id": "bug-126",
+      "timestamp": "2026-08-29T12:30:00+03:00",
+      "error_message": "/seri/<yeni-slug> dev sunucuda 404 döndü (once 200 dönmüş sayfa, location.reload() ve viewport degisimi sonrasi 404: This page could not be found)",
+      "file": "content/series/articles/models-and-training/*.md (yeni slug'lar)",
+      "root_cause": "Next dev sunucusunun sunucu-ici modul/icerik onbellegi, sunucu ayaktayken eklenen seri makalelerini bazi istek yollarinda gormuyor; ilk gezinme calisirken reload/resize sonrasi ayni rota 404 donuyor.",
+      "fix": "Dev sunucusunu durdurup yeniden baslatmak sorunu tamamen cozdu. Dogrulama sirasi: dev server durdur -> pnpm build -> dev server baslat -> render dogrulamasi; render sirasinda location.reload() yerine navigate kullan.",
+      "tags": [
+        "nextjs",
+        "dev-server",
+        "cache",
+        "404",
+        "series",
+        "verification"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-29T12:30:00+03:00"
+    },
+    {
+      "id": "bug-127",
+      "timestamp": "2026-08-29T12:30:00+03:00",
+      "error_message": "check-series-content.cjs: duzyazi kelime sayisi 1792/1590/1648/1564 (hedef 2.000-3.500)",
+      "file": "content/series/articles/models-and-training/{tokenizerin-gucu-ve-tuzagi,degerlendirme-101-...,halusinasyon-...,bilgi-parametrelerde-...}.md",
+      "root_cause": "Denetleyici duzyazi kelimesini frontmatter, sekil satirlari ve Kaynakca haric sayiyor; wc -w ile arasinda ~%18 fark var. wc -w ile 2.600 hedeflenmezse esik altinda kaliniyor.",
+      "fix": "Dort makaleye de gercek icerik eklendi (doldurma degil): worked example'lar, kaynak kayitlari ve eksik kavram baglari. Sonraki batch'te taslak hedefi wc -w >= 2.600 tutulmali.",
+      "tags": [
+        "series",
+        "content-check",
+        "word-count",
+        "workflow"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-08-29T12:30:00+03:00"
+    },
+    {
+      "id": "bug-128",
+      "timestamp": "2026-08-29T12:35:00Z",
+      "error_message": "Playwright sayfa anlik goruntusu: 'missing required error components, refreshing...'; auth.spec ve reader.spec testleri 30sn timeout ile toplu basarisiz",
+      "file": ".next (paylasilan dev cikti dizini)",
+      "root_cause": "Ayni depoda paralel bir oturum 'pnpm dev' (port 3000) calistiriyordu; benim 3100'deki dev sunucum ayni .next dizinini paylasti ve ikisi birbirinin ciktisini bozdu. Bozulma Next'in 'missing required error components' hatasi olarak gorunuyor ve icerikle ilgisiz kitlesel E2E hatasi uretiyor.",
+      "fix": "Dogrulamayi yalitilmis bir kopyada calistir: depoyu ayni surucude bir dizine tar ile kopyala (node_modules/.next/.git haric), kopyanin node_modules dizini icin depodakine 'cmd /c mklink /J' ile junction kur, build/dev/e2e'yi orada calistir. Farkli surucude junction webpack'in mutlak yol cozumunu bozar. Temizlikte once junction'i 'cmd /c rmdir' ile kaldir; 'rm -rf' junction'i takip edip gercek node_modules'u silebilir.",
+      "tags": [
+        "next",
+        "dev-server",
+        "dot-next",
+        "paralel-oturum",
+        "playwright",
+        "false-negative",
+        "izole-dogrulama"
+      ],
+      "related_bugs": [
+        "bug-125"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-29T12:35:00Z"
     }
   ]
 }

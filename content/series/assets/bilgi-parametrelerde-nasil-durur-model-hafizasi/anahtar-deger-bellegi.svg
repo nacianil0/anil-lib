@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Ankara ile başkent bir arada geldiğinde</text>
+
+  <rect x="16" y="142" width="140" height="56" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="86" y="166" font-size="13" text-anchor="middle" fill="var(--text)">gelen temsil</text>
+  <text x="86" y="186" font-size="13" text-anchor="middle" fill="var(--text-muted)">(Ankara, başkent)</text>
+
+  <line x1="158" y1="170" x2="180" y2="170" stroke="var(--text-muted)" stroke-width="1"/>
+  <polygon points="188,170 178,165 178,175" fill="var(--text-muted)"/>
+
+  <text x="270" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">anahtarlar (1. matris)</text>
+  <rect x="195" y="84" width="150" height="32" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="270" y="105" font-size="13" text-anchor="middle" fill="var(--text-faint)">sonek örüntüsü</text>
+  <rect x="195" y="124" width="150" height="32" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="270" y="145" font-size="13" text-anchor="middle" fill="var(--text-faint)">kalıp örüntüsü</text>
+  <rect x="195" y="164" width="150" height="32" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="270" y="185" font-size="13" text-anchor="middle" fill="var(--accent)">başkent ilişkisi</text>
+  <rect x="195" y="204" width="150" height="32" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="270" y="225" font-size="13" text-anchor="middle" fill="var(--text-faint)">konu örüntüsü</text>
+
+  <text x="425" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">değerler (2. matris)</text>
+  <rect x="365" y="84" width="120" height="32" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="365" y="124" width="120" height="32" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="365" y="164" width="120" height="32" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="425" y="185" font-size="13" text-anchor="middle" fill="var(--accent)">itilen adaylar</text>
+  <rect x="365" y="204" width="120" height="32" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+
+  <line x1="345" y1="180" x2="365" y2="180" stroke="var(--accent)" stroke-width="2"/>
+
+  <line x1="487" y1="180" x2="512" y2="180" stroke="var(--accent)" stroke-width="1"/>
+  <polygon points="520,180 510,175 510,185" fill="var(--accent)"/>
+
+  <rect x="528" y="118" width="176" height="124" rx="4" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="616" y="142" font-size="13" text-anchor="middle" fill="var(--text-muted)">sözlük üzerinde dağılım</text>
+  <text x="616" y="172" font-size="15" text-anchor="middle" fill="var(--accent)">Türkiye</text>
+  <text x="616" y="198" font-size="14" text-anchor="middle" fill="var(--text-faint)">Almanya</text>
+  <text x="616" y="224" font-size="14" text-anchor="middle" fill="var(--text-faint)">İstanbul</text>
+
+  <text x="16" y="286" font-size="13" text-anchor="start" fill="var(--text-faint)">olgu ne embedding satırında ne dikkat ağırlıklarındadır; eşleşen anahtar-değer çiftindedir</text>
+</svg>

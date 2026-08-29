@@ -960,3 +960,130 @@ D:\dev\anil-lib-seri-batch1-state\review\ altında.
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 11:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 11:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 11:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 11:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:57 | Created content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | — | ~4857 |
+| 11:57 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | 5→5 lines | ~289 |
+| 11:57 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | inline fix | ~53 |
+| 11:58 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | 1→3 lines | ~236 |
+| 11:58 | Created content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | — | ~4363 |
+| 11:58 | Created content/series-boun/assets/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar/el-sikisma-lemmasi.svg | — | ~987 |
+| 11:59 | Created content/series-boun/assets/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar/agac-karakterizasyonlari.svg | — | ~643 |
+| 11:59 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | 3→3 lines | ~137 |
+| 12:00 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | 1→3 lines | ~298 |
+| 12:00 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | 1→5 lines | ~366 |
+| 12:02 | Created content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md | — | ~4401 |
+| 12:03 | Created content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | — | ~4085 |
+| 12:03 | Created content/series-boun/assets/cebirsel-yapilar-ve-boolean-cebiri/cebirsel-yapi-merdiveni.svg | — | ~576 |
+| 12:03 | Created content/series-boun/assets/cebirsel-yapilar-ve-boolean-cebiri/altkume-kafesi.svg | — | ~1163 |
+| 12:05 | Created content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/ayni-model-farkli-siralama.svg | — | ~1111 |
+| 12:05 | Created content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/secici-yayimlama.svg | — | ~538 |
+| 12:06 | Created content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/tek-sayi-yetmez.svg | — | ~789 |
+| 12:06 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | "Şekil 3 — Bir sütun mu, y" → "Şekil 3 — Tabloya giren ö" | ~78 |
+| 12:06 | Edited content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/ayni-model-farkli-siralama.svg | inline fix | ~47 |
+| 12:06 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 1→3 lines | ~236 |
+| 12:06 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 1→3 lines | ~202 |
+| 12:07 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 1→3 lines | ~207 |
+| 12:07 | Created content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | — | ~3931 |
+| 12:07 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | inline fix | ~48 |
+| 12:07 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 1→3 lines | ~229 |
+| 12:07 | Created content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/ram-modeli.svg | — | ~914 |
+| 12:07 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~103 |
+| 12:07 | Created content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari.svg | — | ~437 |
+| 12:08 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 1→3 lines | ~118 |
+| 12:08 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | expanded (+10 lines) | ~528 |
+| 12:08 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | inline fix | ~171 |
+| 12:09 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | 1→3 lines | ~232 |
+| 12:11 | Created content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | — | ~4130 |
+| 12:11 | Created artifacts/boun-render/shot-batch2.mjs | — | ~1311 |
+| 12:11 | Created content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/bir-kez-gorulen-olgular.svg | — | ~410 |
+| 12:12 | Created content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/sinavin-tesviki.svg | — | ~579 |
+| 12:12 | Created content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/anlam-obekleri.svg | — | ~843 |
+| 12:12 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~80 |
+| 12:12 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | 1→3 lines | ~298 |
+| 12:13 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | 5→7 lines | ~552 |
+| 12:13 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | expanded (+6 lines) | ~312 |
+| 12:16 | Created content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | — | ~3983 |
+| 12:17 | Created content/series/assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/anahtar-deger-bellegi.svg | — | ~906 |
+| 12:18 | Created content/series/assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/kapasite-ve-genelleme.svg | — | ~442 |
+| 12:18 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 1→3 lines | ~153 |
+| 12:18 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 1→3 lines | ~178 |
+| 12:18 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 1→3 lines | ~185 |
+| 12:19 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 1→3 lines | ~94 |
+| 12:19 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 3→5 lines | ~218 |
+| 12:19 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 1→3 lines | ~149 |
+| 12:19 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~59 |
+| 12:20 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | inline fix | ~35 |
+| 12:20 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~38 |
+| 12:21 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~46 |
+| 12:21 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~65 |
+| 12:21 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~97 |
+| 12:21 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~58 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/791bd47e-e985-4412-bcb6-24c47570592c/scratchpad/rendercheck.js | — | ~522 |
+| 12:29 | Created docs/seri-boun/HANDOFF.md | — | ~3727 |
+
+## Oturum özeti — 2026-08-29 · BOUN Batch 2 (`BATCH=3+1`)
+
+- Makale 7 (Graflar ve Ağaçlar), 8 (Cebirsel Yapılar ve Boolean Cebiri), 9 (Karmaşıklık: Big-O)
+  yazıldı, altı yeni SVG diyagramla birlikte repoya entegre edildi. Faz A kapandı, Faz B açıldı;
+  `content/series-boun/articles/data-structures/` klasörü bu run'da açıldı.
+- Kaynaklar birincil metinden doğrulandı: CMPE220 + CMPE250 katalog sayfaları, MIT 6.042J S15 PDF
+  (Lemma 11.2.1, Theorem 11.10.3, §13.7), Applied Discrete Structures (Tanım 13.3.5),
+  Encyclopedia of Mathematics (yarıgrup), CLRS 4. baskı ve Rosen bölüm numaraları.
+- Doğrulama: içerik/SVG/hash/entegrasyon denetleyicileri temiz, typecheck temiz, unit test 203/203,
+  build 48 statik sayfa, global id/slug benzersizliği 41/41, 27 render kombinasyonu + 6 diyagram
+  görsel incelemesi.
+- Yeni bulgu (buglog bug-125): Playwright gate env'ini yalnızca kendi webServer'ına verir;
+  gate'siz elle başlatılmış dev sunucusu `reuseExistingServer` ile sessizce kullanılır ve auth'a
+  bağlı 23 test yanlışlıkla kırmızı olur.
+- State zinciri güncellendi: ARASTIRMA §7, YOL-HARITASI (durumlar, prerequisite, terim defteri,
+  kavram-tekrar defteri), HANDOFF (cursor 10, Batch 3 hazırlığı, iki-sunuculu doğrulama sırası).
+| 12:34 | Created docs/seri/HANDOFF.md | — | ~2991 |
+
+## Oturum özeti — 2026-08-29, AI serisi Batch 3 (makale 15–18)
+
+- Trigger: `docs/seri/TRIGGER.md`, `BATCH=4+1`. SOZLESME §7'ye göre N=4 çözüldü (kullanıcı mesajında
+  assignment yok, trigger'da tek assignment var).
+- Üretilen: 15 Tokenizer'ın Gücü ve Tuzağı, 16 Değerlendirme 101, 17 Halüsinasyon, 18 Bilgi
+  Parametrelerde Nasıl Durur. Dördü de `models-and-training` / `intermediate` / `classification_batch: 3`.
+  11 elle yazılmış SVG diyagram.
+- Araştırma birincil kaynaklardan yapıldı (CUTE ve Singh–Strouse PDF'leri pypdf ile metne çevrildi);
+  tokenizer sayıları `tiktoken` ile yerelde yeniden üretildi ve 4\. makalenin ölçümüyle birebir uyuştu
+  (33 / 60 / 46).
+- Hakemsiz olarak işaretlenen kaynaklar: Singh & Strouse 2024, Miller 2024, Kalai ve ark. 2025,
+  Morris ve ark. 2025 (DBLP'den venue doğrulaması yapıldı).
+- Kendi kendine inceleme turunda yakalananlar: terim yeniden gloss'lama (BPE, halüsinasyon), gloss'suz
+  yeni terimler (benchmark, liderlik tablosu, kalibrasyon, anahtar-değer belleği, nedensel izleme,
+  içsel/dışsal uydurma, atomik olgu), bir şekil alt metni ile şeklin uyuşmaması, dört makalenin de
+  ilk taslakta kelime eşiğinin altında kalması.
+- Doğrulama: içerik/SVG/hash/entegrasyon denetleyicileri temiz, typecheck temiz, 208/208 test,
+  `pnpm build` 52 statik sayfa, 48 rotanın tamamı 200, üç temada DOM ölçümüyle render doğrulaması
+  (piksel ekran görüntüsü alınamadı — tarayıcı panosu görüntülenemiyor), mobil/tablet/masaüstünde
+  yatay taşma yok, 11 diyagramın metinleri viewBox içinde.
+- State zinciri güncellendi: YOL-HARITASI (vaat defteri, faz durumları, prerequisite grafı, Batch 3
+  tekrar defterleri, terim defteri +11 satır, bağlayıcı kararlar #22–#30, Batch 3 öğrenme notları),
+  HANDOFF (cursor 18 → 19, kohort 4, açık borçlar, Batch 4 hazırlığı, dev server davranışı).
+- Gözlem (bu oturumun işi değil): `content/series-boun/**` altında harici bir değişiklik var
+  (7–9. makaleler entegre, commit'lenmemiş). AI serisi araçları o dizine dokunmaz; kendi
+  denetleyicileriyle tutarlı olduğu doğrulandı.
+
+| 12:38 | Session end: 60 writes across 24 files (graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md, tokenizerin-gucu-ve-tuzagi.md, el-sikisma-lemmasi.svg, agac-karakterizasyonlari.svg, cebirsel-yapilar-ve-boolean-cebiri.md) | 14 reads | ~58705 tok |
+| 12:43 | Session end: 60 writes across 24 files (graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md, tokenizerin-gucu-ve-tuzagi.md, el-sikisma-lemmasi.svg, agac-karakterizasyonlari.svg, cebirsel-yapilar-ve-boolean-cebiri.md) | 15 reads | ~62199 tok |

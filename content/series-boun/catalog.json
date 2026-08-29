@@ -123,6 +123,66 @@
       "path": "content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
+    },
+    {
+      "articleId": "article_13f4a74b-8d5b-4363-a38d-2db536b3cd53",
+      "title": "Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar",
+      "slug": "graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar",
+      "category": "discrete-math",
+      "level": "intermediate",
+      "readingOrder": 7,
+      "summary": "Bilgisayar mühendisliğinin en çok kullandığı yapıyı kurar: düğüm, kenar ve derece tanımları, el sıkışma lemmasının sayma refleksiyle ispatı ve tek dereceli düğüm sonucu, yürüyüş/yol/döngü/bağlılık dili, ağaçların yapısal tümevarımla kurulan üç denk karakterizasyonu ve kapsayan ağaç.",
+      "tags": [
+        "graf",
+        "agac",
+        "derece",
+        "el-sikisma-lemmasi",
+        "kapsayan-agac"
+      ],
+      "contentHash": "sha256:58991b594768267cfc7cb8450ead5ce05020b0b64ae6d098bc11bc6a5583f926",
+      "path": "content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
+    },
+    {
+      "articleId": "article_af059184-faf5-4f7e-a38f-72e361d05f4a",
+      "title": "Cebirsel Yapılar ve Boolean Cebiri",
+      "slug": "cebirsel-yapilar-ve-boolean-cebiri",
+      "category": "discrete-math",
+      "level": "intermediate",
+      "readingOrder": 8,
+      "summary": "Faz A'yı kapatan soyutlama katmanı: ikili işlem, kapalılık, birleşme, birim ve ters; yarıgrup, monoid ve grup merdiveni ile birleşmenin paralel indirgemeye bakan yüzü; kısmi sıradan kafese, kafesten Boolean cebirine geçiş ve mantık, küme cebiri ile devre tasarımının aynı kural setini paylaştığının gösterimi.",
+      "tags": [
+        "cebirsel-yapilar",
+        "grup",
+        "monoid",
+        "kafes",
+        "boolean-cebiri"
+      ],
+      "contentHash": "sha256:51856dc2da091442eb644752266db6fd813c05ab070297aa91eb9c94815a7e2f",
+      "path": "content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
+    },
+    {
+      "articleId": "article_bf7d6b36-de5b-4525-8028-4b3a1253cee7",
+      "title": "Karmaşıklık: Big-O ile Düşünmeye Başlamak",
+      "slug": "karmasiklik-big-o-ile-dusunmeye-baslamak",
+      "category": "data-structures",
+      "level": "intermediate",
+      "readingOrder": 9,
+      "summary": "Faz B'yi açan maliyet dili: RAM modeli ve neden makineden bağımsız ölçüye ihtiyaç duyulduğu, adım sayma pratiği, büyüme sınıflarının somut sayılarla karşılaştırılması, Big-O gösteriminin sezgisel anlamı ve sınırları, en kötü ile ortalama durum ayrımı ve sık yapılan karmaşıklık hataları.",
+      "tags": [
+        "karmasiklik",
+        "big-o",
+        "ram-modeli",
+        "buyume-siniflari",
+        "en-kotu-durum"
+      ],
+      "contentHash": "sha256:0fa1ec5f4e726c4dd604069eab89e6f65fb12a78956b601f675ec5775b383cfe",
+      "path": "content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
     }
   ]
 }

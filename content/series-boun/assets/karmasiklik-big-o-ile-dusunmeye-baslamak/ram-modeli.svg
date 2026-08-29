@@ -1,0 +1,43 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a9-ram-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <rect x="30" y="46" width="240" height="120" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="150" y="72" font-size="14" text-anchor="middle" fill="var(--text)">İşlemci: tek akış</text>
+  <text x="48" y="100" font-size="13" fill="var(--text-muted)">toplama, karşılaştırma,</text>
+  <text x="48" y="122" font-size="13" fill="var(--text-muted)">atama, dizi elemanına erişim</text>
+  <text x="48" y="150" font-size="13" fill="var(--text)">her biri 1 adım sayılır</text>
+
+  <text x="500" y="42" font-size="14" text-anchor="middle" fill="var(--text)">Bellek: her hücre eşit maliyet</text>
+
+  <rect x="340" y="58" width="40" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="380" y="58" width="40" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="420" y="58" width="40" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <rect x="460" y="58" width="40" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="500" y="58" width="40" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="540" y="58" width="40" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="580" y="58" width="40" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <rect x="620" y="58" width="40" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+
+  <text x="500" y="124" font-size="13" text-anchor="middle" fill="var(--text-muted)">ilk hücre ile son hücre arasında fark yok</text>
+
+  <line x1="276" y1="106" x2="334" y2="86" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a9-ram-ok)" />
+  <text x="304" y="150" font-size="13" text-anchor="middle" fill="var(--text-muted)">oku / yaz</text>
+
+  <rect x="30" y="196" width="310" height="130" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="48" y="224" font-size="14" fill="var(--text)">Model ne sayar</text>
+  <text x="48" y="252" font-size="13" fill="var(--text-muted)">adım sayısı: kaç temel işlem</text>
+  <text x="48" y="276" font-size="13" fill="var(--text-muted)">girdi boyutuna göre nasıl büyüdüğü</text>
+  <text x="48" y="300" font-size="13" fill="var(--text-muted)">en kötü ve ortalama durum ayrımı</text>
+
+  <rect x="370" y="196" width="310" height="130" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="388" y="224" font-size="14" fill="var(--text)">Model neyi görmezden gelir</text>
+  <text x="388" y="252" font-size="13" fill="var(--text-muted)">önbellek ve bellek hiyerarşisi</text>
+  <text x="388" y="276" font-size="13" fill="var(--text-muted)">paralellik ve giriş/çıkış maliyeti</text>
+  <text x="388" y="300" font-size="13" fill="var(--text-muted)">sabit çarpanlar ve donanım farkı</text>
+
+  <text x="360" y="358" font-size="13" text-anchor="middle" fill="var(--text-muted)">Model gerçeği taklit etmez; algoritmalar arasında taşınabilir bir karşılaştırma kurar</text>
+</svg>

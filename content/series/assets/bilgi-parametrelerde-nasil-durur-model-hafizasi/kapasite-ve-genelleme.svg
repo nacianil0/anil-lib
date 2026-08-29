@@ -1,0 +1,23 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Eğitim verisi büyüdükçe modelin sakladığı şey değişir</text>
+
+  <line x1="90" y1="56" x2="90" y2="252" stroke="var(--border)" stroke-width="1"/>
+  <line x1="90" y1="252" x2="668" y2="252" stroke="var(--border)" stroke-width="1"/>
+  <text x="84" y="66" font-size="13" text-anchor="end" fill="var(--text-muted)">bit</text>
+
+  <line x1="90" y1="110" x2="668" y2="110" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="98" y="100" font-size="13" text-anchor="start" fill="var(--text-muted)">kapasite tavanı: parametre sayısı × parametre başına bit</text>
+
+  <path d="M 90 248 C 170 246 225 168 285 128 C 315 110 335 110 352 110 L 660 110" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <path d="M 90 246 L 330 240 C 430 232 520 190 660 138" fill="none" stroke="var(--cool)" stroke-width="2"/>
+
+  <line x1="352" y1="110" x2="352" y2="252" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="360" y="146" font-size="13" text-anchor="start" fill="var(--text-faint)">kapasite dolar</text>
+
+  <text x="470" y="86" font-size="13" text-anchor="start" fill="var(--accent)">ezberlenen bilgi</text>
+  <text x="470" y="176" font-size="13" text-anchor="start" fill="var(--cool)">genelleme</text>
+
+  <text x="380" y="278" font-size="13" text-anchor="middle" fill="var(--text-muted)">eğitim verisi miktarı</text>
+
+  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-faint)">genellemeyi getiren şey iyi niyet değil, yer darlığıdır</text>
+</svg>

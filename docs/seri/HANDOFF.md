@@ -6,15 +6,15 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-08-29 · Durum: **1–14 yayında (kohort Batch 0 + Batch 1 + Batch 2) · Sıradaki: 15**
+Son güncelleme: 2026-08-29 · Durum: **1–18 yayında (kohort Batch 0 + Batch 1 + Batch 2 + Batch 3) · Sıradaki: 19**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 14 — `egitim-verisi-toplama-temizlik-karisim-ve-tekrar` |
-| Sıradaki güvenli başlangıç | Makale 15 ("Tokenizer'ın Gücü ve Tuzağı"); run kapsamı SOZLESME §7'ye göre çözülür |
-| Sıradaki kohort | `classification_batch: 3` |
+| Yayımlanan son makale | 18 — `bilgi-parametrelerde-nasil-durur-model-hafizasi` |
+| Sıradaki güvenli başlangıç | Makale 19 ("Fine-Tuning ve LoRA: Modeli Kendi İşine Uyarlamak"); run kapsamı SOZLESME §7'ye göre çözülür |
+| Sıradaki kohort | `classification_batch: 4` |
 | Rotalar | `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu) |
 | İçerik sözleşmesi | `content/series/catalog.json` + `content/series/articles/**` + `content/series/assets/<slug>/*.svg` |
 | Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer, elle güncelleme gerekmez |
@@ -24,63 +24,69 @@ Son güncelleme: 2026-08-29 · Durum: **1–14 yayında (kohort Batch 0 + Batch 
 ## Açık borçlar
 
 - **Yayımlanmış numaralı vaatler:** bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış
-  vaatler"dedir ve artık "durum" sütunu taşır. Batch 2'de 11–13 ve 14 vaatleri **ödendi**.
-  Sıradaki run'ın doğrudan ödeyecekleri: 15 (tokenizer→yetenekler; 8 ve 14 iki kez söz verdi),
-  16 (değerlendirme), 17 (halüsinasyon), 18 (bilgi parametrelerde). Batch 2'de **bir yeni
-  koordinat** doğdu: 13 → 64 (ilkelere dayalı tercih etiketleri, ölçeklenebilir denetim).
+  vaatler"dedir. Batch 3'te 15, 16, 17 vaatleri ve 18'in ayağı **ödendi**. Sıradaki run'ın
+  doğrudan ödeyeceği vaat **yok**: 19 ve 20 için yayımlanmış numaralı vaat bulunmuyor
+  (11 → 19 işareti numarasızdır). Batch 3'te **üç yeni koordinat** doğdu: 15 → 32 (ara adımlarla
+  doğruluğun geri kazanılması), 16 → 101 (ölçümün istatistiksel disiplini), 17 → 41 (dış kaynağa
+  bağlanma). Ayrıca 72, 74–77 ve 86 koordinatlarına yeni kaynak makaleler eklendi.
 - **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR (terim hijyeni,
   alt metin/şekil uyumu, ifade inceliği) yayın doğruluğunu engellemediği için hâlâ uygulanmadı.
   Tam listeler repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
 - **Doğrulanamayan tek künye:** Gerstgrasser ve ark. (2024) için COLM 2024 venue'sü iki bağımsız
-  ikincil kaynakla doğrulandı, birincil venue sayfası teyidi alınamadı (OpenReview doğrulama
-  duvarı, DBLP yalnızca CoRR indeksler). Ayrıntı ve gerekçe: YOL-HARITASI bağlayıcı karar #21.
-  Metindeki bulgu bundan etkilenmez; yalnızca künye satırı revize edilebilir.
+  ikincil kaynakla doğrulandı, birincil venue sayfası teyidi alınamadı. Ayrıntı: YOL-HARITASI
+  bağlayıcı karar #21. Batch 3'te yeni doğrulanamayan künye çıkmadı.
+- **Kategori kararı bekliyor (Faz 3 için):** 19–20 `models-and-training` altında kalabilir; 21'den
+  itibaren (bağlam, istem, çıkarım ekonomisi) kontrollü sözlükteki hangi kategorinin kullanılacağı
+  **henüz kararlaştırılmadı**. En yakın adaylar `reasoning-and-memory` (bağlam/bellek ekseni) ve
+  mevcut `models-and-training`. Karar 21'i içeren run'da verilmeli ve YOL-HARITASI'na yazılmalıdır.
 
-## Next batch preparation — 15'ten devam
+## Next batch preparation — 19'dan devam
 
-**Pedagojik hedefler.** Batch 2 sonunda okuyucu "karşımdaki asistan neden böyle davranıyor ve bu
-davranış nereden geliyor" sorusuna cevap verebiliyor: post-training haritası, SFT'nin mekaniği,
-tercih optimizasyonunun ekonomisi ve bütün bunları besleyen verinin nasıl kurulduğu. Sıradaki
-yay, kurulan bu resmin **ölçülmesi ve sınırları** üzerinedir. 15 en alttaki birimi (token'ı)
-sorgulayarak Faz 1'in kapanmamış tek borcunu öder; 16 "iyi model" iddiasının nasıl ölçüldüğünü
-ilk kez ciddiye alır; 17 ve 18 modelin bildiği ve uydurduğu şeyin nerede durduğunu açar.
+**Pedagojik hedefler.** Batch 3 sonunda okuyucu, bir modelin "iyi" olduğu iddiasının nasıl ölçüldüğünü,
+ölçümün nerede kırıldığını, modelin neden uydurduğunu ve bildiği şeyin ağırlıklarda nerede durduğunu
+biliyor. Bu yayın boyunca model hep **sabit** varsayıldı: eğitildi, biz inceledik. Sıradaki yay bu
+varsayımı kaldırıyor — hazır bir modeli kendi işine uyarlamak (19) ve bu modellerin hangi koşullarda
+elde edilebildiği (20) Faz 2'yi kapatır; 21'den itibaren odak eğitimden **kullanıma** kayar.
 
-**Sıradaki makaleler ve prerequisite'ler.** YOL-HARITASI "Batch 3 taslağı (15'ten devam)"
-satırları geçerlidir (15 ← 4, 8, 14, 10, 7 · 16 ← 5, 9, 12, 11, 14 · 17 ← 10, 13, 11, 16 ·
-18 ← 8, 14, 2, 12). Kaç makale üretileceği bu run'ın `BATCH` assignment'ıyla belirlenir.
+**Sıradaki makaleler ve prerequisite'ler.** YOL-HARITASI "Batch 4 taslağı (19'dan devam)" satırları
+geçerlidir (19 ← 11, 18, 2, 7, 12 · 20 ← 8, 9, 14, 19 · 21 ← 4, 7, 15, 10 · 22 ← 21, 16, 12, 10).
+Kaç makale üretileceği bu run'ın `BATCH` assignment'ıyla belirlenir.
 
 **Yeniden çağrılacak eski kavramlar (planlı hatırlatmalar):**
-- BPE, sözlük, Türkçenin 1,4–1,8 kat token maliyeti (4) → 15'te ölçülebilir sonuçlarıyla.
-- Embedding tablosunun sözlük boyuyla ölçeklenmesi (7) → 15'te maliyet tarafı.
-- Kesme kurallarının token üzerinde çalışması (10) → 15'te.
-- Perplexity (5) ve "aynı eğri, iki cetvel" (9) → 16'da ölçme sorununun merkezi.
-- Doğrulama kaybı ↔ insan tercihi ayrışması (12) → 16'da genelleştirilecek.
-- Kirlilik (14) → 16'da değerlendirmeye etkisi, tam kurulum 72'de.
-- Akıcılık ≠ doğruluk (10) ve ödülün memnuniyeti ölçmesi (13) → 17'de halüsinasyonun kökü.
-- Ezber ölçümü (8) ve tekilleştirme ↔ ezber bağı (14) → 18'de.
+- İnce ayar (11) ve denetimli ince ayar mekaniği (12) → 19'da verimli biçimiyle.
+- Parametre/ağırlık (2) ve blok içindeki matris boyutları (7) → 19'da düşük ranklı güncellemenin zemini.
+- Anahtar-değer belleği ve kapasite (18) → 19'da "LoRA ne ekleyebilir, ne ekleyemez" sorusunda.
+- İnce ayarın kötü bir bilgi kanalı olması (17, 18) → 19'da dürüst sınır olarak.
+- Hizalama vergisi (11) → 19'da uyarlamanın bedeli.
+- Veri rızası ve lisans (14) → 20'de yönetişim tarafı.
+- Hesap bütçesi ve PF-gün (8, 9) → 20'de "kim eğitebilir" sorusunda.
+- Token ızgarası ve dil başına maliyet (4, 15) → 21'de bağlam sınırının gerçek bedeli.
+- Karesel dikkat maliyeti (7) → 21'de pencere büyütmenin fiyatı.
+- İstem biçimi duyarlılığı (16) → 22'de kanıta dayalı bakışın zemini.
 
-**Araştırılacak güncel akademik alanlar (15 için öncelikli):** tokenizer'ın yeteneklere etkisi ve
-diller arası maliyet eşitsizliği (Petrov ve ark. 2023 ve sonrası); harf sayma/ters çevirme gibi
-karakter düzeyi görevlerin token düzeyinde neden zor olduğu; sayıların bölünme biçimi ile
-aritmetik başarısı arasındaki ilişki (basamak bazlı tokenizasyon kararları); sözlük boyunun
-ölçek yasalarındaki yeri; byte düzeyinde ve tokenizer'sız mimariler (BLT 2024 ve akrabaları)
-**yalnızca teaser düzeyinde** — mimari tartışması 86'ya aittir. Türkçe örnekleri 4\. makalenin
-ölçümüyle tutarlı olmalıdır. Aritmetik ve URL doğrulaması yazımdan **bağımsız** bir gözle
-çapraz denetlenir; süreç kuralları SOZLESME §9'dadır.
+**Araştırılacak güncel akademik alanlar (19 için öncelikli):** düşük ranklı uyarlamanın kurucu
+çalışması ve ardılları (LoRA ve QLoRA çizgisi); ince ayarın içsel boyutu tartışması; LoRA'nın tam
+ince ayara kıyasla ne kazandırıp ne kaybettiğini ölçen karşılaştırmalar (öğrenme ↔ unutma dengesi);
+adapter ve prefix-tuning ailesinin tarihsel yeri; **19'un dürüst sorusu:** düşük ranklı bir güncelleme
+modele yeni olgusal bilgi ekleyebilir mi — 17 ve 18'in bulgularıyla çelişmeyen bir cevap gerekir.
+20 için: açık ağırlık ↔ açık kaynak ayrımı, lisans tipolojisi ve OSI tanımıyla uyuşmazlık,
+şeffaflık ölçümleri; düzenleyici çerçeveler yalnızca **işaret düzeyinde** — tam kurulum 69'a aittir.
+Sayısal iddialar ve URL doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları
+SOZLESME §9'dadır.
 
 **Görselleştirme ihtiyaçları (öngörü):**
-- 15: aynı cümlenin farklı tokenizer'larda bölünmesi (4\. makale Şekil 2 ile görsel süreklilik);
-  harf sayma görevinin token düzeyinde neden zor olduğu; dil başına token maliyeti karşılaştırması.
-- 16: aynı modelin farklı benchmark'larda farklı sıralanması; ölçüm ile iddia arasındaki boşluk.
-- 17: dağılımdan örneklemenin uydurmaya nasıl dönüştüğü; azaltma yollarının nereye müdahale ettiği.
-- 18: bilginin parametrelere yazılması ile ezber arasındaki gerilimin görselleştirilmesi.
+- 19: tam ağırlık matrisi ile düşük ranklı iki matrisin parametre sayısı karşılaştırması
+  (7\. makalenin blok sayımıyla görsel süreklilik); aynı taban modele takılıp çıkarılan adaptörler.
+- 20: açıklığın tek eksen olmadığı — ağırlık, veri, kod, lisans ve rapor ayrı ayrı.
+- 21: bağlam penceresinin neleri kapsadığı; aynı metnin dile göre pencereden ne kadar yer kapladığı.
+- 22: aynı görevin farklı istem biçimlerinde dağılan doğruluğu (16\. makale Şekil 1 ile süreklilik).
 
-**Teknik plan.** Yeni makaleler `content/series/articles/models-and-training/` altına (15–18 için
-kategori uygundur), catalog.json'a `classificationBatch: 3` ve `readingOrder` 15'ten kesintisiz
-devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir; YOL-HARITASI
-prerequisite grafı, kavram-tekrar defteri, terim defteri ve gerekiyorsa bağlayıcı olgu kararları
-güncellenir; doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni cursor ve sonraki run
-hazırlığıyla güncellenir.
+**Teknik plan.** 19–20 için `content/series/articles/models-and-training/` uygundur; 21 ve sonrası
+için kategori kararı yukarıdaki açık borçta. Yeni makaleler catalog.json'a `classificationBatch: 4`
+ve `readingOrder` 19'dan kesintisiz devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda`
+yapılır + slug eklenir; YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri ve
+gerekiyorsa bağlayıcı olgu kararları güncellenir; doğrulama kapıları çalıştırılır; `+1` fazında bu
+dosya yeni cursor ve sonraki run hazırlığıyla güncellenir.
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -92,16 +98,27 @@ corepack pnpm typecheck && corepack pnpm test && corepack pnpm build
 ```
 Notlar: frontmatter **gray-matter ile** okunur; `catalog.json` 2 boşluklu `JSON.stringify` ile
 byte-identical round-trip yapar; `roadmap.json`'un kompakt satır biçimi satır bazlı replace ile
-korunur. `next dev` açıkken `pnpm build` çalıştırılmaz. **Batch 2'de doğrulanan davranış:** dev
-server yeni makale dosyalarını modül önbelleği yüzünden görmez ve `/seri/<yeni-slug>` 404 döner;
-roadmap/katalog değişikliği ise anında yansır. Doğru sıra: dev server'ı durdur → `pnpm build`
-(zorunlu kapı) → dev server'ı yeniden başlat → gerçek render doğrulaması.
+korunur. `next dev` açıkken `pnpm build` çalıştırılmaz. Araçların üçü de varsayılan olarak
+**yalnızca AI serisini** işler (`--series=boun` ayrı seri içindir) — repoda ikinci bir seri
+bulunduğu için bu ayrım önemlidir.
+
+**Dev server davranışı (Batch 3'te yeniden doğrulandı).** Doğru sıra: dev server'ı durdur →
+`pnpm build` (zorunlu kapı) → dev server'ı başlat → gerçek render doğrulaması. Yeni slug'lar
+sunucu içi modül önbelleği yüzünden bazen 404 döner; Batch 3'te bu, `location.reload()` ve
+viewport değişimi sonrasında görüldü ve **dev server yeniden başlatılınca** düzeldi. Tarayıcı
+panosunun görüntülenemediği ortamlarda piksel ekran görüntüsü alınamaz; gerçek render bu durumda
+DOM ölçümüyle doğrulanır (üç temada `body` arka plan/metin rengi, `figure svg` metinlerinin
+viewBox içinde kalması, mobil/tablet/masaüstünde yatay taşma yokluğu, şekil altyazıları, rota
+sweep'iyle HTTP 200) ve bu sınırlama raporda açıkça belirtilir.
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
 
 - `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı.
 - Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama çevrimdışı
   moduna düşer — beklenen davranış; konsolda görülen tek hata sınıfı budur.
+- Repoda ikinci bir seri (`content/series-boun/**`) bulunuyor ve ayrı bir üretim hattıyla
+  ilerliyor. Batch 3 sırasında bu seride harici bir değişiklik gözlendi (7–9. makaleler entegre
+  edilmiş, worktree'de commit'lenmemiş); AI serisinin araçları bu dizine dokunmaz.
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
 
@@ -111,15 +128,21 @@ roadmap/katalog değişikliği ise anında yansır. Doğru sıra: dev server'ı 
   araştırma → yazım → inceleme → düzeltme → doğrulama turlarıyla yürüdü; inceleme turu
   20 BLOCKER + ~40 MAJOR buldu (en ağırı: makale 9'un Kaplan tahsisinin baştan yanlış kurulması).
   Alınan bağlayıcı olgu kararları YOL-HARITASI §"Bağlayıcı olgu kararları"na taşındı.
-- **Batch 2 (2026-08-29):** Makale 11–14, `models-and-training`, seri içindeki ilk `intermediate`
-  kohortu. `BATCH=4+1` assignment'ıyla çalıştı. Üretim tek oturumda, yardımcı agent kullanmadan
-  yürüdü: birincil kaynaklardan sayı çıkarma (InstructGPT Tablo 6 dâhil PDF üzerinden),
-  yazım, kendi kendine eleştirel inceleme turu, düzeltme, entegrasyon ve doğrulama. İnceleme
-  turunda yakalanan başlıca sorunlar: terim defteri ihlali ("geliştirme kümesi"), DPO'nun gövdede
-  hiç açılmaması, `few-shot`/`zero-shot` yazımının 5\. makaleyle çelişmesi, bir şekil alt metninin
-  şekille uyuşmaması, iki şekil başlığında ölçülmemiş "tepe" iddiası ve `tercih optimizasyonu`
-  teriminin 11 ile 13 arasında farklı kapsamda kullanılması. Doğrulama kapılarının tamamı geçti:
-  191 test, `pnpm build`, 40 rotanın tamamı 200, üç temada gerçek render, 12 diyagramın tamamı
+- **Batch 2 (2026-08-29):** Makale 11–14, `models-and-training`, serinin ilk `intermediate`
+  kohortu. `BATCH=4+1` ile, tek oturumda, yardımcı agent kullanmadan yürüdü. İnceleme turunda
+  yakalanan başlıca sorunlar terim defteri ihlali, DPO'nun gövdede açılmaması ve şekil–alt metin
+  uyumsuzluğuydu. Bütün kapılar geçti: 191 test, `pnpm build`, 40 rota 200.
+- **Batch 3 (2026-08-29):** Makale 15–18, `models-and-training`. `BATCH=4+1` ile, tek oturumda,
+  yardımcı agent kullanmadan yürüdü: birincil kaynaklardan sayı çıkarma (CUTE ve Singh–Strouse
+  için PDF üzerinden), tokenizer ölçümlerinin `tiktoken` ile yerelde yeniden üretilmesi, yazım,
+  kendi kendine eleştirel inceleme turu, düzeltme, entegrasyon ve doğrulama. İnceleme turunda
+  yakalanan başlıca sorunlar: 4\. ve 10\. makalede kurulmuş terimlerin yeniden gloss'lanması
+  (BPE, halüsinasyon), yeni terimlerin gloss'suz bırakılması (benchmark, liderlik tablosu,
+  kalibrasyon, anahtar-değer belleği, nedensel izleme, içsel/dışsal uydurma, atomik olgu), bir
+  şekil alt metninin şekille uyuşmaması ve dört makalenin de ilk taslakta 2.000 kelime eşiğinin
+  altında kalması (eksik olan her seferinde gerçek içerikle kapatıldı, doldurma yapılmadı).
+  Doğrulama kapılarının tamamı geçti: 208 test, `pnpm typecheck`, `pnpm build` (52 sayfa),
+  48 rotanın tamamı 200, üç temada DOM ölçümüyle render doğrulaması, 11 diyagramın tamamı
   viewBox içinde, mobil/tablet/masaüstünde yatay taşma yok.
 - Batch 0/1'in ham üretim kayıtları (araştırma paketleri, 18 inceleme raporu, workflow
   script'leri, `entegre.cjs`'in orijinali) `D:\dev\anil-lib-seri-batch1-state\` altında **arşiv**

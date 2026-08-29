@@ -1,0 +1,46 @@
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı modeller, aynı sınav, yalnızca istem biçimi farklı</text>
+
+  <text x="145" y="62" font-size="13" text-anchor="middle" fill="var(--text-muted)">1. biçimle sıralama</text>
+  <text x="575" y="62" font-size="13" text-anchor="middle" fill="var(--text-muted)">2. biçimle sıralama</text>
+
+  <text x="46" y="105" font-size="13" text-anchor="end" fill="var(--text-faint)">1</text>
+  <rect x="60" y="84" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="145" y="105" font-size="14" text-anchor="middle" fill="var(--text)">A modeli</text>
+  <text x="46" y="145" font-size="13" text-anchor="end" fill="var(--text-faint)">2</text>
+  <rect x="60" y="124" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="145" y="145" font-size="14" text-anchor="middle" fill="var(--text)">B modeli</text>
+  <text x="46" y="185" font-size="13" text-anchor="end" fill="var(--text-faint)">3</text>
+  <rect x="60" y="164" width="170" height="32" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="145" y="185" font-size="14" text-anchor="middle" fill="var(--accent)">C modeli</text>
+  <text x="46" y="225" font-size="13" text-anchor="end" fill="var(--text-faint)">4</text>
+  <rect x="60" y="204" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="145" y="225" font-size="14" text-anchor="middle" fill="var(--text)">D modeli</text>
+  <text x="46" y="265" font-size="13" text-anchor="end" fill="var(--text-faint)">5</text>
+  <rect x="60" y="244" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="145" y="265" font-size="14" text-anchor="middle" fill="var(--text)">E modeli</text>
+
+  <line x1="232" y1="100" x2="488" y2="140" stroke="var(--border)" stroke-width="1"/>
+  <line x1="232" y1="140" x2="488" y2="220" stroke="var(--border)" stroke-width="1"/>
+  <line x1="232" y1="180" x2="488" y2="100" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="232" y1="220" x2="488" y2="260" stroke="var(--border)" stroke-width="1"/>
+  <line x1="232" y1="260" x2="488" y2="180" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="676" y="105" font-size="13" text-anchor="start" fill="var(--text-faint)">1</text>
+  <rect x="490" y="84" width="170" height="32" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="575" y="105" font-size="14" text-anchor="middle" fill="var(--accent)">C modeli</text>
+  <text x="676" y="145" font-size="13" text-anchor="start" fill="var(--text-faint)">2</text>
+  <rect x="490" y="124" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="575" y="145" font-size="14" text-anchor="middle" fill="var(--text)">A modeli</text>
+  <text x="676" y="185" font-size="13" text-anchor="start" fill="var(--text-faint)">3</text>
+  <rect x="490" y="164" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="575" y="185" font-size="14" text-anchor="middle" fill="var(--text)">E modeli</text>
+  <text x="676" y="225" font-size="13" text-anchor="start" fill="var(--text-faint)">4</text>
+  <rect x="490" y="204" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="575" y="225" font-size="14" text-anchor="middle" fill="var(--text)">B modeli</text>
+  <text x="676" y="265" font-size="13" text-anchor="start" fill="var(--text-faint)">5</text>
+  <rect x="490" y="244" width="170" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="575" y="265" font-size="14" text-anchor="middle" fill="var(--text)">D modeli</text>
+
+  <text x="16" y="310" font-size="13" text-anchor="start" fill="var(--text-faint)">şık sırası ya da cevabı okuma yöntemi sıralamayı sekiz basamağa kadar oynatabiliyor</text>
+</svg>

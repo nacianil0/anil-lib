@@ -1,0 +1,31 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Bir sağlayıcının arenada denediği özel sürümler</text>
+
+  <line x1="120" y1="56" x2="120" y2="230" stroke="var(--border)" stroke-width="1"/>
+  <text x="110" y="66" font-size="13" text-anchor="end" fill="var(--text-muted)">puan</text>
+
+  <line x1="120" y1="230" x2="470" y2="230" stroke="var(--border)" stroke-width="1"/>
+
+  <circle cx="150" cy="184" r="5" fill="var(--text-faint)"/>
+  <circle cx="176" cy="160" r="5" fill="var(--text-faint)"/>
+  <circle cx="202" cy="203" r="5" fill="var(--text-faint)"/>
+  <circle cx="228" cy="147" r="5" fill="var(--text-faint)"/>
+  <circle cx="254" cy="192" r="5" fill="var(--text-faint)"/>
+  <circle cx="280" cy="129" r="5" fill="var(--text-faint)"/>
+  <circle cx="306" cy="176" r="5" fill="var(--text-faint)"/>
+  <circle cx="332" cy="212" r="5" fill="var(--text-faint)"/>
+  <circle cx="358" cy="141" r="5" fill="var(--text-faint)"/>
+  <circle cx="384" cy="168" r="5" fill="var(--text-faint)"/>
+  <circle cx="410" cy="197" r="5" fill="var(--text-faint)"/>
+  <circle cx="436" cy="90" r="7" fill="var(--accent)"/>
+
+  <line x1="120" y1="171" x2="470" y2="171" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="478" y="176" font-size="13" text-anchor="start" fill="var(--text-muted)">denemelerin ortalaması</text>
+
+  <line x1="443" y1="90" x2="516" y2="90" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="516" y="72" width="188" height="36" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="610" y="95" font-size="13" text-anchor="middle" fill="var(--accent)">tabloya yazılan puan</text>
+
+  <text x="295" y="252" font-size="13" text-anchor="middle" fill="var(--text-faint)">denenen sürümler</text>
+  <text x="16" y="284" font-size="13" text-anchor="start" fill="var(--text-faint)">yayımlanan sonuç rastgele bir örneklem değil, birçok denemenin maksimumudur</text>
+</svg>

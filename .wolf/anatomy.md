@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-28T23:09:43.237Z
-> Files: 195 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-29T09:34:37.506Z
+> Files: 218 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -43,6 +43,10 @@
 - `refs.py` (~239 tok)
 - `stats.py` — prose (~300 tok)
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/791bd47e-e985-4412-bcb6-24c47570592c/scratchpad/
+
+- `rendercheck.js` — Declares measure (~522 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/883cb5bb-ed11-4944-95dd-d2b9ffa4d5d2/scratchpad/
 
 - `final-checks.cjs` — fs: resolve (~1311 tok)
@@ -55,6 +59,10 @@
 - `toc.py` (~227 tok)
 - `toc2.py` — page_text (~231 tok)
 - `toc3.py` (~208 tok)
+
+## artifacts/boun-render/
+
+- `shot-batch2.mjs` — Declares BASE (~1311 tok)
 
 ## boun/
 
@@ -106,8 +114,14 @@
 - `llm-guvenilirlik-bilimi-belirsizlik-halusilasyon-degerlendirme.md` — LLM Güvenilirlik Bilimi: Belirsizlik, Halüsinasyon ve Değerlendirme Tasarımı (~11403 tok)
 - `mechanistic-interpretability-ve-modelin-icindeki-temsiller.md` — Mechanistic Interpretability ve Modelin İçindeki Temsiller (~8400 tok)
 
+## content/series-boun/articles/data-structures/
+
+- `karmasiklik-big-o-ile-dusunmeye-baslamak.md` — "Kaç saniye sürüyor" neden yanlış soru (~4245 tok)
+
 ## content/series-boun/articles/discrete-math/
 
+- `cebirsel-yapilar-ve-boolean-cebiri.md` — Aynı kuralları paylaşan yapılar (~4126 tok)
+- `graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md` — Neden graf dili? (~4672 tok)
 - `ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md` — Mantıktan ispata (~3748 tok)
 - `kumeler-fonksiyonlar-ve-bagintilar.md` — Mülakatın nesne dili (~3999 tok)
 - `onermeler-ve-niceleyiciler-mantigin-dili.md` — Neden mantıkla başlıyoruz (~3814 tok)
@@ -123,10 +137,25 @@
 - `bes-yetenek-zinciri.svg` (~756 tok)
 - `seri-faz-haritasi.svg` (~965 tok)
 
+## content/series-boun/assets/cebirsel-yapilar-ve-boolean-cebiri/
+
+- `altkume-kafesi.svg` (~1163 tok)
+- `cebirsel-yapi-merdiveni.svg` (~576 tok)
+
+## content/series-boun/assets/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar/
+
+- `agac-karakterizasyonlari.svg` (~643 tok)
+- `el-sikisma-lemmasi.svg` (~987 tok)
+
 ## content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/
 
 - `ispat-strateji-akisi.svg` (~890 tok)
 - `kok-iki-celiski-zinciri.svg` (~624 tok)
+
+## content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/
+
+- `buyume-siniflari.svg` (~437 tok)
+- `ram-modeli.svg` (~914 tok)
 
 ## content/series-boun/assets/kumeler-fonksiyonlar-ve-bagintilar/
 
@@ -163,24 +192,45 @@
 
 ## content/series/articles/models-and-training/
 
+- `bilgi-parametrelerde-nasil-durur-model-hafizasi.md` — Defterden ağırlığa (~4562 tok)
+- `degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md` — Cetvel arayışı (~4719 tok)
 - `dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md` — Makale 6: sorgu/anahtar/değer, elle softmax, bağlamsal temsil (~6000 tok)
 - `egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md` — Makale 14: filtrenin taraflılığı (C4 engel listesi), FineWeb-Edu, tekilleştirmenin ters yüzü, DoReMi karışımı, 4/16 epok eşiği, model çöküşü, veri rızası (~4835 tok)
+- `halusinasyon-model-neden-ve-ne-zaman-uydurur.md` — Akıcılıkla doğruluk arasındaki boşluk (~4600 tok)
 - `ham-modelden-asistana-post-training-haritasi.md` — Makale 11: post-training'in üç durağı, InstructGPT sayıları, hesap asimetrisi (yüzde 1,8), hizalama vergisi (~4654 tok)
 - `insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md` — Makale 13: tercih çifti → ödül modeli (Bradley-Terry elle hesap), KL tasması, aşırı optimizasyon/Goodhart, DPO (~4862 tok)
 - `metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md` — Makale 10: otoregresif döngü, sıcaklık, top-k/çekirdek örnekleme (~6000 tok)
 - `olcek-yasalari-daha-buyuk-neden-daha-iyi.md` — Makale 9: güç yasası, Kaplan→Chinchilla, veri duvarı, emergence (~6300 tok)
 - `on-egitim-internet-olceginde-sonraki-token.md` — Makale 8: öz-denetimli hedef, veri hunisi, 6ND, koşu anatomisi (~6300 tok)
 - `talimatla-egitim-supervised-fine-tuning.md` — Makale 12: kayıp maskesi (13 token/5 hedef), sohbet biçimi, FLAN ölçek bulgusu, LIMA tartışması, Self-Instruct kalite denetimi (~4786 tok)
+- `tokenizerin-gucu-ve-tuzagi.md` — Ölçtüğümüz her şeyin birimi (~4476 tok)
 - `transformer-modern-dil-modellerinin-mimarisi.md` — Makale 7: blok anatomisi, çok başlı dikkat, pozisyon kodlaması, logit halkası (~6500 tok)
 
 ## content/series/assets/
 
+
+## content/series/assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/
+
+- `anahtar-deger-bellegi.svg` (~906 tok)
+- `kapasite-ve-genelleme.svg` (~442 tok)
+
+## content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/
+
+- `ayni-model-farkli-siralama.svg` (~1107 tok)
+- `secici-yayimlama.svg` (~538 tok)
+- `tek-sayi-yetmez.svg` (~789 tok)
 
 ## content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/
 
 - `filtre-kimin-metnini-atiyor.svg` (~461 tok)
 - `tekillestirmenin-iki-kolu.svg` (~667 tok)
 - `tekrarin-getirisi.svg` (~539 tok)
+
+## content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/
+
+- `anlam-obekleri.svg` (~843 tok)
+- `bir-kez-gorulen-olgular.svg` (~410 tok)
+- `sinavin-tesviki.svg` (~579 tok)
 
 ## content/series/assets/ham-modelden-asistana-post-training-haritasi/
 
@@ -203,14 +253,14 @@
 ## docs/seri-boun/
 
 - `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~1266 tok)
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~2731 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~3494 tok)
 - `SOZLESME.md` — "Mülakat Aynası: Boğaziçi CmpE" — Seri Sözleşmesi (~2218 tok)
 - `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~131 tok)
 - `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~2405 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~2305 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~2804 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~4914 tok)
 - `TRIGGER.md` — "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı (~114 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~9556 tok)
@@ -386,3 +436,14 @@
 - `entegre-batch.cjs` — Batch-bağımsız entegrasyon: katalogda olmayan makaleleri frontmatter'dan catalog.json+roadmap.json'a ekler; kuru çalışma varsayılan, --write yazar (~1500 tok)
 - `entegre-batch.cjs` — Seri batch entegrasyonu (batch-bağımsız): katalogda henüz bulunmayan seri makalelerinin (~1811 tok)
 - `sync-series-hashes.cjs` — Seri makalelerinin content_hash değerlerini doğrular; --write ile frontmatter + katalogu günceller. (~800 tok)
+
+## content/series/ — Batch 3 (makale 15–18)
+
+- `articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md` — Makale 15: token ızgarasının harf sayma, aritmetik ve dil maliyeti üzerindeki etkisi; sözlük boyu bir tahsis kararı; byte-level mimari teaser'ı. 3 diyagram. (~4200 tok)
+- `articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md` — Makale 16: perplexity'nin sınırı, MMLU ve hataları, istem biçimi duyarlılığı, hata payı, arena ve seçici yayımlama, HELM. 3 diyagram. (~4300 tok)
+- `articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md` — Makale 17: içsel/dışsal uydurma, FActScore, Good-Turing tabanı, sınavın teşviki, anlam öbekleriyle tespit, üç müdahale noktası. 3 diyagram. (~4400 tok)
+- `articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md` — Makale 18: ileri beslemeli katman = anahtar-değer belleği, nedensel izleme, yerelleştirme ↔ düzenleme ayrımı, bit kapasitesi, ezber→genelleme geçişi, ters çevirme laneti. 2 diyagram. (~4300 tok)
+- `assets/tokenizerin-gucu-ve-tuzagi/*.svg` — token ızgarası ve harfler, sayıların bölünmesi, sözlük boyu tahsisi (3 dosya).
+- `assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/*.svg` — aynı model farklı sıralama, seçici yayımlama, tek sayı yetmez (3 dosya).
+- `assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/*.svg` — bir kez görülen olgular, sınavın teşviki, anlam öbekleri (3 dosya).
+- `assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/*.svg` — anahtar-değer belleği, kapasite ve genelleme (2 dosya).

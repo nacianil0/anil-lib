@@ -14,8 +14,8 @@
         { "order": 4, "title": "Tümevarım ve Özyineleme: Aynı Fikrin İki Yüzü", "status": "yayinda", "slug": "tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu" },
         { "order": 5, "title": "Kümeler, Fonksiyonlar ve Bağıntılar", "status": "yayinda", "slug": "kumeler-fonksiyonlar-ve-bagintilar" },
         { "order": 6, "title": "Sayma: Kombinatoriğin Temel Araçları", "status": "yayinda", "slug": "sayma-kombinatorigin-temel-araclari" },
-        { "order": 7, "title": "Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar", "status": "planlandi" },
-        { "order": 8, "title": "Cebirsel Yapılar ve Boolean Cebiri", "status": "planlandi" }
+        { "order": 7, "title": "Graflar ve Ağaçlar: Tanımlar ve İlk İspatlar", "status": "yayinda", "slug": "graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar" },
+        { "order": 8, "title": "Cebirsel Yapılar ve Boolean Cebiri", "status": "yayinda", "slug": "cebirsel-yapilar-ve-boolean-cebiri" }
       ]
     },
     {
@@ -23,7 +23,7 @@
       "title": "Veri Yapıları: Maliyetiyle Düşünmek",
       "description": "Her yapının ne sunduğunu ve karşılığında ne istediğini maliyet tablosuyla kurar.",
       "articles": [
-        { "order": 9, "title": "Karmaşıklık: Big-O ile Düşünmeye Başlamak", "status": "planlandi" },
+        { "order": 9, "title": "Karmaşıklık: Big-O ile Düşünmeye Başlamak", "status": "yayinda", "slug": "karmasiklik-big-o-ile-dusunmeye-baslamak" },
         { "order": 10, "title": "Diziler, Bağlı Listeler, Yığın ve Kuyruk", "status": "planlandi" },
         { "order": 11, "title": "Ağaçlar ve İkili Arama Ağaçları", "status": "planlandi" },
         { "order": 12, "title": "Dengeli Arama: AVL'den B-Ağacına", "status": "planlandi" },

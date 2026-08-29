@@ -1,0 +1,33 @@
+<svg viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı model, iki farklı rapor</text>
+
+  <text x="30" y="64" font-size="13" text-anchor="start" fill="var(--text-muted)">liderlik tablosu</text>
+  <rect x="30" y="78" width="180" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="120" y="100" font-size="14" text-anchor="middle" fill="var(--accent)">doğruluk</text>
+  <text x="30" y="138" font-size="13" text-anchor="start" fill="var(--text-faint)">tek sayı, tek sıralama</text>
+
+  <line x1="250" y1="56" x2="250" y2="312" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="284" y="64" font-size="13" text-anchor="start" fill="var(--text-muted)">her senaryo için yedi ölçü</text>
+  <rect x="284" y="78" width="300" height="28" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="296" y="97" font-size="13" text-anchor="start" fill="var(--accent)">doğruluk</text>
+  <rect x="284" y="112" width="300" height="28" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="296" y="131" font-size="13" text-anchor="start" fill="var(--text-muted)">kalibrasyon</text>
+  <rect x="284" y="146" width="300" height="28" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="296" y="165" font-size="13" text-anchor="start" fill="var(--text-muted)">dayanıklılık</text>
+  <rect x="284" y="180" width="300" height="28" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="296" y="199" font-size="13" text-anchor="start" fill="var(--text-muted)">adillik</text>
+  <rect x="284" y="214" width="300" height="28" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="296" y="233" font-size="13" text-anchor="start" fill="var(--text-muted)">taraflılık</text>
+  <rect x="284" y="248" width="300" height="28" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="296" y="267" font-size="13" text-anchor="start" fill="var(--text-muted)">zararlılık</text>
+  <rect x="284" y="282" width="300" height="28" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="296" y="301" font-size="13" text-anchor="start" fill="var(--text-muted)">verimlilik</text>
+
+  <line x1="596" y1="112" x2="596" y2="310" stroke="var(--border)" stroke-width="1"/>
+  <text x="608" y="216" font-size="13" text-anchor="start" fill="var(--text-faint)">tabloya</text>
+  <text x="608" y="234" font-size="13" text-anchor="start" fill="var(--text-faint)">girmeyen</text>
+  <text x="608" y="252" font-size="13" text-anchor="start" fill="var(--text-faint)">altı ölçü</text>
+
+  <text x="16" y="338" font-size="13" text-anchor="start" fill="var(--text-faint)">hangi sütunu yayımladığın, alanın neyi iyileştirmeye çalışacağını belirler</text>
+</svg>

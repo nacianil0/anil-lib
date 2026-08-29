@@ -1,0 +1,29 @@
+<svg viewBox="0 0 720 378" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a8-merdiven-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <rect x="20" y="288" width="340" height="56" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="38" y="313" font-size="14" fill="var(--text)">Kapalı ikili işlem</text>
+  <text x="38" y="334" font-size="13" fill="var(--text-muted)">örnek: çıkarma; birleşmeli değil</text>
+
+  <rect x="110" y="214" width="340" height="56" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="128" y="239" font-size="14" fill="var(--text)">Yarıgrup = + birleşme</text>
+  <text x="128" y="260" font-size="13" fill="var(--text-muted)">örnek: boş olmayan diziler, birleştirme</text>
+
+  <rect x="200" y="140" width="340" height="56" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="218" y="165" font-size="14" fill="var(--text)">Monoid = + birim eleman</text>
+  <text x="218" y="186" font-size="13" fill="var(--text-muted)">örnek: bütün diziler; birim boş dizi</text>
+
+  <rect x="290" y="66" width="340" height="56" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="308" y="91" font-size="14" fill="var(--text)">Grup = + ters eleman</text>
+  <text x="308" y="112" font-size="13" fill="var(--text-muted)">örnek: bit dizileri, XOR; ters kendisi</text>
+
+  <line x1="70" y1="286" x2="160" y2="274" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a8-merdiven-ok)" />
+  <line x1="160" y1="212" x2="250" y2="200" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a8-merdiven-ok)" />
+  <line x1="250" y1="138" x2="340" y2="126" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a8-merdiven-ok)" />
+
+  <text x="360" y="366" font-size="13" text-anchor="middle" fill="var(--text-muted)">Her basamak bir öncekine tek bir aksiyom ekler; değişme özelliği hiçbirinde zorunlu değildir</text>
+</svg>

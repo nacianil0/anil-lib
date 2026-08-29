@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 366" xmlns="http://www.w3.org/2000/svg">
+  <line x1="356" y1="34" x2="356" y2="330" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4" />
+
+  <text x="170" y="30" font-size="15" text-anchor="middle" fill="var(--text)">6 kenarlı bir graf</text>
+
+  <line x1="150" y1="86" x2="80" y2="166" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="150" y1="86" x2="240" y2="166" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="150" y1="86" x2="100" y2="256" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="80" y1="166" x2="240" y2="166" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="240" y1="166" x2="220" y2="256" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="100" y1="256" x2="220" y2="256" stroke="var(--border)" stroke-width="1.6" />
+
+  <circle cx="150" cy="86" r="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="150" y="91" font-size="14" text-anchor="middle" fill="var(--text)">a</text>
+  <text x="150" y="56" font-size="13" text-anchor="middle" fill="var(--text-muted)">derece 3</text>
+
+  <circle cx="80" cy="166" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.6" />
+  <text x="80" y="171" font-size="14" text-anchor="middle" fill="var(--text)">b</text>
+  <text x="42" y="146" font-size="13" text-anchor="middle" fill="var(--text-muted)">der. 2</text>
+
+  <circle cx="240" cy="166" r="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="240" y="171" font-size="14" text-anchor="middle" fill="var(--text)">c</text>
+  <text x="288" y="146" font-size="13" text-anchor="middle" fill="var(--text-muted)">der. 3</text>
+
+  <circle cx="100" cy="256" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.6" />
+  <text x="100" y="261" font-size="14" text-anchor="middle" fill="var(--text)">d</text>
+  <text x="58" y="292" font-size="13" text-anchor="middle" fill="var(--text-muted)">der. 2</text>
+
+  <circle cx="220" cy="256" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.6" />
+  <text x="220" y="261" font-size="14" text-anchor="middle" fill="var(--text)">e</text>
+  <text x="264" y="292" font-size="13" text-anchor="middle" fill="var(--text-muted)">der. 2</text>
+
+  <text x="170" y="330" font-size="13" text-anchor="middle" fill="var(--text-muted)">Renkli düğümlerin derecesi tektir</text>
+
+  <text x="388" y="34" font-size="15" fill="var(--text)">Aynı koleksiyonu iki yoldan say</text>
+
+  <text x="388" y="68" font-size="14" fill="var(--text-muted)">Düğümlerden: 3 + 2 + 3 + 2 + 2 = 12</text>
+  <text x="388" y="92" font-size="14" fill="var(--text-muted)">Kenarlardan: 6 kenar × 2 uç = 12</text>
+
+  <rect x="382" y="112" width="316" height="42" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="540" y="139" font-size="14" text-anchor="middle" fill="var(--text)">derece toplamı = 2 × kenar sayısı</text>
+
+  <text x="388" y="192" font-size="14" fill="var(--text)">Tek dereceli düğümler: a ve c</text>
+  <text x="388" y="216" font-size="14" fill="var(--text-muted)">sayıları 2, yani çift</text>
+
+  <text x="388" y="252" font-size="13" fill="var(--text-muted)">Neden: toplam çift olmak zorunda,</text>
+  <text x="388" y="274" font-size="13" fill="var(--text-muted)">çift dereceliler çift katkı verir,</text>
+  <text x="388" y="296" font-size="13" fill="var(--text-muted)">geriye kalan tek terimler ancak</text>
+  <text x="388" y="318" font-size="13" fill="var(--text-muted)">çift sayıdaysa toplam çift kalır.</text>
+
+  <text x="360" y="356" font-size="13" text-anchor="middle" fill="var(--text-muted)">Her kenar tam iki kez sayılır: her ucunda bir kez</text>
+</svg>

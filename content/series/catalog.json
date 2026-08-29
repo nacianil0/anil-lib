@@ -282,6 +282,86 @@
       "path": "content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
+    },
+    {
+      "articleId": "article_82f2ddf3-a9a1-438a-9e2f-105292d3b8c9",
+      "title": "Tokenizer'ın Gücü ve Tuzağı",
+      "slug": "tokenizerin-gucu-ve-tuzagi",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 15,
+      "summary": "8. ve 14. makalenin bıraktığı borcu öder: token ızgarasının harf sayma, aritmetik ve dil maliyeti üzerindeki ölçülmüş etkisi; sözlük boyunun bir tahsis kararı oluşu ve tokenizer'sız mimarilerin ilk işareti.",
+      "tags": [
+        "tokenizer",
+        "tokenizasyon",
+        "sozluk-boyu",
+        "aritmetik",
+        "turkce"
+      ],
+      "contentHash": "sha256:eea61b68c815422ab851c2f3d9b9b06d098734e91c4808364c7be141a873fdac",
+      "path": "content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
+    },
+    {
+      "articleId": "article_6ad715f2-4c0e-435d-a210-406a82ebb0c5",
+      "title": "Değerlendirme 101: Benchmark'lar Ne Ölçer, Ne Ölçemez?",
+      "slug": "degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 16,
+      "summary": "5. ve 9. makalenin bıraktığı ölçme borcunu öder: perplexity'nin sınırı, çoktan seçmeli sınavların kırılganlığı, istem biçiminin sıralamayı değiştirmesi, insan tercihine dayalı arenaların çarpıklıkları ve tek sayının neden yetmediği.",
+      "tags": [
+        "degerlendirme",
+        "benchmark",
+        "mmlu",
+        "olcum",
+        "siralama"
+      ],
+      "contentHash": "sha256:239d690a5e8d081b7cf6322b0f758cb3fc8686b73511edf0c854470b10decd58",
+      "path": "content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
+    },
+    {
+      "articleId": "article_bff5d1a5-b14e-4a4a-992a-2e5df2e0e80b",
+      "title": "Halüsinasyon: Model Neden ve Ne Zaman Uydurur?",
+      "slug": "halusinasyon-model-neden-ve-ne-zaman-uydurur",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 17,
+      "summary": "10. makalenin bıraktığı borcu öder: uydurmanın tanımı, ölçülmüş sıklığı, bir kez görülmüş olgulardan doğan istatistiksel tabanı, ikili puanlayan sınavların tahmini ödüllendirmesi ve tespit ile azaltma yollarının nereye müdahale ettiği.",
+      "tags": [
+        "halusinasyon",
+        "kalibrasyon",
+        "belirsizlik",
+        "olgusallik",
+        "degerlendirme"
+      ],
+      "contentHash": "sha256:143765df0ce5d232edef1c002f0d0a24fed390ed41710a6a633b725d71355d1b",
+      "path": "content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
+    },
+    {
+      "articleId": "article_cca9681e-46dc-4113-8aea-5deeffcab68b",
+      "title": "Bilgi Parametrelerde Nasıl Durur? Model Hafızası",
+      "slug": "bilgi-parametrelerde-nasil-durur-model-hafizasi",
+      "category": "models-and-training",
+      "level": "intermediate",
+      "readingOrder": 18,
+      "summary": "8. makalenin bıraktığı ezber-genelleme gerilimini öder: ileri beslemeli katmanların anahtar-değer belleği oluşu, bir olgunun yerini bulan nedensel izleme, yeri bilmenin düzenlemeyi getirmemesi, parametre başına kaç bit sığdığı ve kapasite dolduğunda ezberin yerini genellemeye bırakması.",
+      "tags": [
+        "model-hafizasi",
+        "ezber",
+        "genelleme",
+        "bilgi-kapasitesi",
+        "model-duzenleme"
+      ],
+      "contentHash": "sha256:28c38cae9cca0922d9e8a748104c63fd9f583aa3fd3a61d4314e93906ff651f1",
+      "path": "content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
     }
   ]
 }

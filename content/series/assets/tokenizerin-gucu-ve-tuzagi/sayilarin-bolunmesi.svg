@@ -1,0 +1,30 @@
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Soldan sağa üçerli öbekleme (GPT-4 tokenizer'ı)</text>
+
+  <text x="110" y="76" font-size="13" text-anchor="end" fill="var(--text-muted)">tek başına</text>
+  <rect x="124" y="52" width="110" height="38" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="179" y="77" font-size="16" text-anchor="middle" fill="var(--text)">374</text>
+  <text x="252" y="77" font-size="14" text-anchor="start" fill="var(--text-muted)">bu token burada üç yüz yetmiş dörttür</text>
+
+  <text x="110" y="136" font-size="13" text-anchor="end" fill="var(--text-muted)">3742 içinde</text>
+  <rect x="124" y="112" width="110" height="38" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="179" y="137" font-size="16" text-anchor="middle" fill="var(--accent)">374</text>
+  <rect x="234" y="112" width="46" height="38" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="257" y="137" font-size="16" text-anchor="middle" fill="var(--text)">2</text>
+  <text x="298" y="137" font-size="14" text-anchor="start" fill="var(--accent)">aynı token burada üç bin yedi yüz kırktır</text>
+
+  <line x1="16" y1="178" x2="704" y2="178" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="212" font-size="14" text-anchor="start" fill="var(--text)">Virgülle sağdan sola öbekleme</text>
+
+  <text x="110" y="262" font-size="13" text-anchor="end" fill="var(--text-muted)">3,742 içinde</text>
+  <rect x="124" y="238" width="46" height="38" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="147" y="263" font-size="16" text-anchor="middle" fill="var(--text)">3</text>
+  <rect x="170" y="238" width="34" height="38" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="187" y="263" font-size="16" text-anchor="middle" fill="var(--text-faint)">,</text>
+  <rect x="204" y="238" width="110" height="38" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="259" y="263" font-size="16" text-anchor="middle" fill="var(--cool)">742</text>
+  <text x="332" y="263" font-size="14" text-anchor="start" fill="var(--cool)">son öbek her zaman birler dilimidir</text>
+
+  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-faint)">toplama birler basamağından başlar; ızgara bir yönde, aritmetik öbür yönde kurulur</text>
+</svg>

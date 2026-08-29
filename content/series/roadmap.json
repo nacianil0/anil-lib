@@ -29,10 +29,10 @@
         { "order": 12, "title": "Talimatla Eğitim: Supervised Fine-Tuning", "status": "yayinda", "slug": "talimatla-egitim-supervised-fine-tuning" },
         { "order": 13, "title": "İnsan Tercihlerinden Öğrenmek: RLHF ve Ötesi", "status": "yayinda", "slug": "insan-tercihlerinden-ogrenmek-rlhf-ve-otesi" },
         { "order": 14, "title": "Eğitim Verisi: Toplama, Temizlik, Karışım ve Tekrar", "status": "yayinda", "slug": "egitim-verisi-toplama-temizlik-karisim-ve-tekrar" },
-        { "order": 15, "title": "Tokenizer'ın Gücü ve Tuzağı", "status": "planlandi" },
-        { "order": 16, "title": "Değerlendirme 101: Benchmark'lar Ne Ölçer, Ne Ölçemez?", "status": "planlandi" },
-        { "order": 17, "title": "Halüsinasyon: Model Neden ve Ne Zaman Uydurur?", "status": "planlandi" },
-        { "order": 18, "title": "Bilgi Parametrelerde Nasıl Durur? Model Hafızası", "status": "planlandi" },
+        { "order": 15, "title": "Tokenizer'ın Gücü ve Tuzağı", "status": "yayinda", "slug": "tokenizerin-gucu-ve-tuzagi" },
+        { "order": 16, "title": "Değerlendirme 101: Benchmark'lar Ne Ölçer, Ne Ölçemez?", "status": "yayinda", "slug": "degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez" },
+        { "order": 17, "title": "Halüsinasyon: Model Neden ve Ne Zaman Uydurur?", "status": "yayinda", "slug": "halusinasyon-model-neden-ve-ne-zaman-uydurur" },
+        { "order": 18, "title": "Bilgi Parametrelerde Nasıl Durur? Model Hafızası", "status": "yayinda", "slug": "bilgi-parametrelerde-nasil-durur-model-hafizasi" },
         { "order": 19, "title": "Fine-Tuning ve LoRA: Modeli Kendi İşine Uyarlamak", "status": "planlandi" },
         { "order": 20, "title": "Açık Ağırlıklar ve Model Ekosistemi", "status": "planlandi" }
       ]

@@ -1,0 +1,46 @@
+<svg viewBox="0 0 720 262" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">arkadaşlarımla — GPT-4 tokenizer'ında altı token</text>
+
+  <text x="88" y="76" font-size="13" text-anchor="end" fill="var(--text-muted)">token</text>
+  <rect x="100" y="50" width="114" height="40" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="157" y="76" font-size="15" text-anchor="middle" fill="var(--text)">ark</text>
+  <rect x="214" y="50" width="114" height="40" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="271" y="76" font-size="15" text-anchor="middle" fill="var(--text)">ada</text>
+  <rect x="328" y="50" width="38" height="40" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="347" y="76" font-size="15" text-anchor="middle" fill="var(--text)">ş</text>
+  <rect x="366" y="50" width="152" height="40" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="442" y="76" font-size="15" text-anchor="middle" fill="var(--text)">ları</text>
+  <rect x="518" y="50" width="76" height="40" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="556" y="76" font-size="15" text-anchor="middle" fill="var(--text)">ml</text>
+  <rect x="594" y="50" width="38" height="40" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="613" y="76" font-size="15" text-anchor="middle" fill="var(--text)">a</text>
+
+  <line x1="100" y1="104" x2="632" y2="104" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="88" y="140" font-size="13" text-anchor="end" fill="var(--text-muted)">harf</text>
+  <text x="119" y="140" font-size="15" text-anchor="middle" fill="var(--accent)">a</text>
+  <text x="157" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">r</text>
+  <text x="195" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">k</text>
+  <text x="233" y="140" font-size="15" text-anchor="middle" fill="var(--accent)">a</text>
+  <text x="271" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">d</text>
+  <text x="309" y="140" font-size="15" text-anchor="middle" fill="var(--accent)">a</text>
+  <text x="347" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">ş</text>
+  <text x="385" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">l</text>
+  <text x="423" y="140" font-size="15" text-anchor="middle" fill="var(--accent)">a</text>
+  <text x="461" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">r</text>
+  <text x="499" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">ı</text>
+  <text x="537" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">m</text>
+  <text x="575" y="140" font-size="15" text-anchor="middle" fill="var(--text-faint)">l</text>
+  <text x="613" y="140" font-size="15" text-anchor="middle" fill="var(--accent)">a</text>
+
+  <text x="88" y="186" font-size="13" text-anchor="end" fill="var(--text-muted)">token'daki a</text>
+  <text x="157" y="186" font-size="15" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="271" y="186" font-size="15" text-anchor="middle" fill="var(--accent)">2</text>
+  <text x="347" y="186" font-size="15" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="442" y="186" font-size="15" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="556" y="186" font-size="15" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="613" y="186" font-size="15" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="648" y="186" font-size="15" text-anchor="start" fill="var(--text)">= 5</text>
+
+  <text x="16" y="230" font-size="13" text-anchor="start" fill="var(--text-faint)">sınırlar dilbilgisine göre değil sıklığa göre çizilir; aranan harf altı kutunun dördüne dağılır</text>
+</svg>

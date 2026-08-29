@@ -1,0 +1,39 @@
+<svg viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı soruya üretilen beş cevap</text>
+
+  <text x="140" y="58" font-size="13" text-anchor="middle" fill="var(--text-muted)">dizeler</text>
+  <text x="525" y="58" font-size="13" text-anchor="middle" fill="var(--text-muted)">anlam öbekleri</text>
+
+  <rect x="40" y="76" width="200" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="140" y="97" font-size="14" text-anchor="middle" fill="var(--text)">1897</text>
+  <rect x="40" y="116" width="200" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="140" y="137" font-size="14" text-anchor="middle" fill="var(--text)">1897 yılında</text>
+  <rect x="40" y="156" width="200" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="140" y="177" font-size="14" text-anchor="middle" fill="var(--text)">1902</text>
+  <rect x="40" y="196" width="200" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="140" y="217" font-size="14" text-anchor="middle" fill="var(--text)">1902 senesinde</text>
+  <rect x="40" y="236" width="200" height="32" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="140" y="257" font-size="14" text-anchor="middle" fill="var(--text)">1888</text>
+
+  <line x1="242" y1="92" x2="398" y2="112" stroke="var(--border)" stroke-width="1"/>
+  <line x1="242" y1="132" x2="398" y2="112" stroke="var(--border)" stroke-width="1"/>
+  <line x1="242" y1="172" x2="398" y2="196" stroke="var(--border)" stroke-width="1"/>
+  <line x1="242" y1="212" x2="398" y2="196" stroke="var(--border)" stroke-width="1"/>
+  <line x1="242" y1="252" x2="398" y2="264" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="400" y="76" width="250" height="72" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="525" y="102" font-size="14" text-anchor="middle" fill="var(--accent)">1897</text>
+  <text x="525" y="130" font-size="14" text-anchor="middle" fill="var(--accent)">1897 yılında</text>
+
+  <rect x="400" y="160" width="250" height="72" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="525" y="186" font-size="14" text-anchor="middle" fill="var(--accent)">1902</text>
+  <text x="525" y="214" font-size="14" text-anchor="middle" fill="var(--accent)">1902 senesinde</text>
+
+  <rect x="400" y="244" width="250" height="40" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="525" y="270" font-size="14" text-anchor="middle" fill="var(--accent)">1888</text>
+
+  <text x="140" y="300" font-size="13" text-anchor="middle" fill="var(--text-faint)">beş farklı dize</text>
+  <text x="525" y="310" font-size="13" text-anchor="middle" fill="var(--text-faint)">üç farklı anlam</text>
+
+  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı anlamın farklı yazımı belirsizlik değildir; belirsizlik öbek sayısında görünür</text>
+</svg>

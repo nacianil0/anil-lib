@@ -1,0 +1,22 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <text x="90" y="44" font-size="13" fill="var(--text-muted)">adım sayısı</text>
+
+  <line x1="90" y1="310" x2="640" y2="310" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="90" y1="310" x2="90" y2="56" stroke="var(--border)" stroke-width="1.4" />
+
+  <path d="M 115.5 310 L 141 304 L 192 298 L 294 292 L 498 286 L 600 284" fill="none" stroke="var(--text-faint)" stroke-width="2" />
+  <path d="M 90 310 L 600 190" fill="none" stroke="var(--text-muted)" stroke-width="2" />
+  <path d="M 115.5 310 L 141 298 L 192 262 L 243 217 L 294 166 L 345 111 L 381 70" fill="none" stroke="var(--text)" stroke-width="2" />
+  <path d="M 90 310 L 141 286 L 192 214 L 217.5 160 L 243 94 L 251 70" fill="none" stroke="var(--cool)" stroke-width="2.2" />
+  <path d="M 90 304 L 115.5 298 L 141 286 L 166.5 262 L 192 214 L 217.5 118 L 226 70" fill="none" stroke="var(--accent)" stroke-width="2.4" />
+
+  <text x="222" y="60" font-size="14" text-anchor="middle" fill="var(--accent)">2ⁿ</text>
+  <text x="262" y="60" font-size="14" text-anchor="middle" fill="var(--cool)">n²</text>
+  <text x="390" y="60" font-size="14" fill="var(--text)">n log n</text>
+  <text x="610" y="194" font-size="14" fill="var(--text-muted)">n</text>
+  <text x="610" y="288" font-size="14" fill="var(--text-muted)">log n</text>
+
+  <text x="365" y="336" font-size="13" text-anchor="middle" fill="var(--text-muted)">girdi boyutu n</text>
+
+  <text x="360" y="364" font-size="13" text-anchor="middle" fill="var(--text-muted)">n = 1000 için: log n ≈ 10 · n log n ≈ 9.966 · n² = 1.000.000 · 2ⁿ ≈ 1,07 × 10³⁰¹</text>
+</svg>
