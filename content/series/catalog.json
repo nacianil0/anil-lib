@@ -522,6 +522,86 @@
       "path": "content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
+    },
+    {
+      "articleId": "article_b7dd6202-b513-4d55-9e96-33cb155445eb",
+      "title": "Kuantizasyon: Modeli Küçültme Sanatı",
+      "slug": "kuantizasyon-modeli-kucultme-sanati",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 27,
+      "summary": "Ağırlıkları daha kaba bir ızgaraya yuvarlamanın mekanizmasını kurar: tek bir aykırı değerin bütün bloğu nasıl çökerttiğini, akıllı yuvarlamanın en yakına yuvarlamadan neyi kurtardığını, dört bitin neden tatlı nokta olduğunu, kaybın nerede ölçülmesi gerektiğini ve fazla eğitilmiş modellerin kuantizasyona neden daha kırılgan olduğunu gösterir.",
+      "tags": [
+        "kuantizasyon",
+        "aykiri-deger",
+        "egitim-sonrasi-kuantizasyon",
+        "bit-genisligi",
+        "olcum-disiplini"
+      ],
+      "contentHash": "sha256:00f2ffc17dec6b28fb7abe7ab26222464683ad40f4b5b88e71cf37579e2541f4",
+      "path": "content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
+    },
+    {
+      "articleId": "article_a4244401-5d43-47ed-9e0a-ffe4b3634e36",
+      "title": "Hız ve Maliyet: Servis, Yığınlama ve Spekülatif Üretim",
+      "slug": "hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 28,
+      "summary": "Boşta duran hesap gücünün nasıl doldurulduğunu kurar: sabit yığının neden israf olduğunu ve yineleme düzeyinde çizelgelemenin bunu nasıl çözdüğünü, ön dolumun devam eden üretimleri nasıl durdurduğunu ve iki ayrı çözüm yolunu, spekülatif üretimin çıktıyı değiştirmeden nasıl hızlandırdığını ve kabul oranıyla taslak maliyetinin değiş tokuşunu gösterir.",
+      "tags": [
+        "surekli-yiginlama",
+        "spekulatif-uretim",
+        "parcali-on-dolum",
+        "is-hacmi",
+        "gecikme"
+      ],
+      "contentHash": "sha256:86ef0544cb31d6f16a0b89ba1544cad641ce33c4c4936a5a733fc02becc7f8b1",
+      "path": "content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
+    },
+    {
+      "articleId": "article_96a66445-c969-40f3-b704-df7bf7012ef6",
+      "title": "Embedding'lerin Dönüşü: Anlamsal Arama",
+      "slug": "embeddinglerin-donusu-anlamsal-arama",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 29,
+      "summary": "4. makalenin vektör uzayını bir ürün bileşenine çevirir: sorguyla belgeyi birlikte okuyan modelin neden ölçeklenemediğini, ikili kodlayıcının bu maliyeti nasıl düşürdüğünü ve karşılığında neyi feda ettiğini, sözcük eşleşmesinin nerede hâlâ öne geçtiğini ve tek bir vektörün taşıyabileceği ilişki sayısının matematiksel sınırını gösterir.",
+      "tags": [
+        "anlamsal-arama",
+        "ikili-kodlayici",
+        "getirme",
+        "embedding-boyutu",
+        "olcum-disiplini"
+      ],
+      "contentHash": "sha256:9d1b8db77e75999ce7c5a893bebf3c3c24d3fe79d0d9f525e0003ed954bc388f",
+      "path": "content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
+    },
+    {
+      "articleId": "article_a37e544d-fb75-401b-891b-ae6b095f6b35",
+      "title": "Yapılandırılmış Çıktı: JSON, Kod ve Kısıtlı Üretim",
+      "slug": "yapilandirilmis-cikti-json-kod-ve-kisitli-uretim",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 30,
+      "summary": "Modelin çıktısını bir biçime zorlamanın üç yolunu ve kod çözme katmanındaki maskenin mekanizmasını kurar: maskenin neden yerel bir karar olduğunu ve dilbilgisine uygun ama olasılıksız çıktılar üretebildiğini, token ızgarasıyla dilbilgisinin uyuşmamasının doğruluğu nasıl düşürdüğünü ve şemanın alan sırasının ara adımları nasıl sildiğini ölçümlerle gösterir.",
+      "tags": [
+        "kisitli-uretim",
+        "yapilandirilmis-cikti",
+        "dilbilgisi",
+        "sema-tasarimi",
+        "kod-cozme"
+      ],
+      "contentHash": "sha256:09e56d93703ba2be09589877866d199ed29c906206293c5b90cbc0060ee7f7a2",
+      "path": "content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
     }
   ]
 }

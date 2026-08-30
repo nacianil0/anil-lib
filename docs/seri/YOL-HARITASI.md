@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-08-30 · Yayında: 1–26 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5) · Sıradaki güvenli başlangıç: 27
+Son güncelleme: 2026-08-30 · Yayında: 1–30 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5 + Batch 6) · Sıradaki güvenli başlangıç: 31
 
 ## Serinin tezi
 
@@ -29,7 +29,7 @@ ileride kısa yeniden kurulumlarla geri çağrılır.
 
 ## Yayımlanmış vaatler (bağlayıcı koordinat defteri)
 
-Yayımlanmış 1–26, metin içinde şu numaralara açık söz verdi. Bu koordinatlar **değiştirilemez**;
+Yayımlanmış 1–30, metin içinde şu numaralara açık söz verdi. Bu koordinatlar **değiştirilemez**;
 yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunur.
 
 | Vaat | Nerede verildi | Bağlandığı numara | Durum |
@@ -45,11 +45,11 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Sistem istemi, roller ve sohbet biçiminin kurulumu | 21 | 24 | ödendi (Batch 5) |
 | Pencereyi eğitim uzunluğunun ötesine esnetme yolları | 21 | 25 | ödendi (Batch 5) |
 | Anahtar-değer önbelleğinin maliyet yapısı | 21 | 26 | ödendi (Batch 5) |
-| Kuantizasyonun mekanizması ve neyi bozduğu | 19, 20, 26 | 27 | açık |
+| Kuantizasyonun mekanizması ve neyi bozduğu | 19, 20, 26 | 27 | ödendi (Batch 6) |
 | Ara adımların gücü (istemi yeniden yazdırarak doğruluğu geri kazanma) | 15, 22 | 32 | açık |
 | Çıkarım anında hesap harcama ekseni | 9 | 33 | açık |
 | Sohbetler arası kalıcı bellek | 21 | 39 | açık |
-| Modelin bilgisinin yetmediği yer ve dış kaynağa bağlanma | 17, 19, 21, 25 | 41 | açık |
+| Modelin bilgisinin yetmediği yer ve dış kaynağa bağlanma | 17, 19, 21, 25, 29 | 41 | açık |
 | İlkelere dayalı tercih etiketleri ve ölçeklenebilir denetim | 13 | 64 | açık |
 | Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | açık |
 | Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | açık |
@@ -83,6 +83,12 @@ numaralıdır ve yukarıdaki tabloda kayıtlıdır.
 (24 → güvenlik fazı, 61–70); kuantizasyonun mekanizması (26 → 27, tabloda zaten numaralı).
 Batch 5 yeni bir numaralı koordinat **açmadı**: 23–26'nın bütün ileri göndermeleri ya bu batch'te
 ödendi (24 → 26, 25 → 26) ya da defterde hâlihazırda kayıtlı bir koordinata eklendi (25 → 41).
+
+**Numarasız ileri işaretler — Batch 6'da verildi.** Ajan döngüleri ve önek paylaşımı (28 → 51–60);
+getirilen belgenin güvenilmez içerik olması (29 → 61–70); metnin nereden kesileceği kararı
+(29 → getirme hattı, 41–50); akıl yürütmenin ne olduğu sorusu (30 → 31, sonraki makale olduğu için
+numarasız bırakıldı). Batch 6 yeni bir numaralı koordinat **açmadı**; 29 yalnızca defterde
+hâlihazırda kayıtlı olan 41 koordinatına dördüncü kaynak makale olarak eklendi.
 
 ## Fazlar ve başlıklar
 
@@ -120,10 +126,10 @@ Batch 5 yeni bir numaralı koordinat **açmadı**: 23–26'nın bütün ileri g�
 24. **Sistem İstemleri, Roller ve Sohbet Biçimi** — sohbetin perde arkası. `[yayında]`
 25. **Uzun Bağlam: Pencereyi Büyütmenin Bedeli** — uzun bağlam teknikleri ve sınırları. `[yayında]`
 26. **KV Cache ve Çıkarım Ekonomisi** — üretimin maliyet yapısı. `[yayında]`
-27. **Kuantizasyon: Modeli Küçültme Sanatı** — hassasiyet/performans dengesi.
-28. **Hız ve Maliyet: Serving, Batching, Spekülatif Decoding** — üretim sistemleri.
-29. **Embedding'lerin Dönüşü: Anlamsal Arama** — embedding'ler ürün bileşeni olarak (4'ün geri çağrımı).
-30. **Yapılandırılmış Çıktı: JSON, Kod ve Kısıtlı Üretim** — üretimi biçimle sınırlamak.
+27. **Kuantizasyon: Modeli Küçültme Sanatı** — hassasiyet/performans dengesi. `[yayında]`
+28. **Hız ve Maliyet: Servis, Yığınlama ve Spekülatif Üretim** — üretim sistemleri. `[yayında]`
+29. **Embedding'lerin Dönüşü: Anlamsal Arama** — embedding'ler ürün bileşeni olarak (4'ün geri çağrımı). `[yayında]`
+30. **Yapılandırılmış Çıktı: JSON, Kod ve Kısıtlı Üretim** — üretimi biçimle sınırlamak. `[yayında]`
 
 ### Faz 4 — Akıl Yürütme: Reasoning ve Test-Time Compute (31–40)
 
@@ -312,12 +318,20 @@ gerçekleşen graf yine daha yoğun çıktı.
 - 25 ← 21 (üç sınır kaynağı; ilan edilen ↔ etkin uzunluk; RULER'ın on yedi modeli), 7 (pozisyon kodlaması; karesel dikkat maliyeti), 6 (softmax toplamı bir olan ağırlıklar üretir → dikkat çukurunun sebebi), 16 (kısa ve uzun görevleri ayrı ölçme disiplini; MMLU), 5 (perplexity içsel bir ölçüdür), 26 ve 41 (ileri bağlar) `[yayında]`
 - 26 ← 21 (27.500 token'lık karesel tur hesabı; anahtar-değer önbelleğinin adı), 7 (nedensel maske → anahtar ve değerler değişmez; blok yapısı), 6 (sorgu/anahtar/değer üçlüsü), 8 (2N işlem; 6ND kuralının ileri geçiş payı), 10 (otoregresif döngü = adım adım üretim; "kod çözme" ile "decode" ayrımı), 25 (kare hâlâ kare), 24 (sistem isteminin sabit yükü), 23 (997 örneklik önek bir kez ödenebilir), 19 (kuantizasyonun adı konmuştu), 16 (ölçüm disiplininin donanım karşılığı) `[yayında]`
 
-**Batch 6 taslağı (27'den devam).** Yayımlanmış borçlardan türetilmiştir; batch hazırlığında güncellenir:
+**Batch 6 (27–30) — gerçekleşen graf.** Yazılan metinde fiilen kullanılan bağlar; taslak dört satırlıktı,
+gerçekleşen graf yine daha yoğun çıktı.
 
-- 27 ← 26 (darboğaz bellek: ağırlık taşımak ve önbellek taşımak), 19 ve 20 ("kuantizasyonun mekanizması 27'de" borcu), 2 (parametre = sayı), 3 (aktivasyon), 16 (kaybın nerede ölçüleceği)
-- 28 ← 26 (ön dolum ↔ üretim ayrımı; yığın büyüklüğü ve bellek bant genişliği), 27 (kuantize model servis edilir), 10 (üretim kuralları), 21 (pencere ve önbellek)
-- 29 ← 4 (embedding), 6 (bağlamsal temsil), 23 (örneklerin seçimi bir arama işidir), 41 (getirme hattının bileşeni; sıra kararı batch hazırlığında)
-- 30 ← 22 (belirsizliği azaltmak: biçim kısıtı), 24 (sistem isteminde çıktı biçimi kuralı), 10 (üretimi kısıtlamak kod çözme katmanında olur)
+- 27 ← 26 (darboğaz bellek; 2N bayt taşıma; 42 gigabaytlık önbellek hesabı), 19 ("kuantizasyonun mekanizması 27'de" borcu; QLoRA'nın dört biti; kuantizasyon sabiti), 18 (parametre başına 2 bit kapasite — int4'te 0,7'ye düşüyor), 16 (neredeyse aynı, hangi cetvelde), 9 (Chinchilla oranı ve fazla eğitilmiş modeller), 3 (aktivasyon), 2 (parametre = sayı; aşırı öğrenmenin kalibrasyon kümesindeki karşılığı), 7 (Transformer bloğu ↔ kuantizasyon bloğu ayrımı), 5 (perplexity içsel bir ölçüdür) `[yayında]`
+- 28 ← 26 (229 işlem/bayt oranı; ön dolum ↔ adım adım üretim; 2N işlem; sayfalı dikkatin önek paylaşımı; iki ayrı gecikme ölçüsü), 27 (kuantizasyon çipi hızlandırmaz, yığına yer açar), 10 (otoregresif döngü; üretim bir çekiliştir; sıcaklık kabul oranını değiştirir), 24 (sistem istemi sabit önektir), 23 (997 örneklik önek), 5 (bigram modeli taslak olarak), 21 (pencere ve önbellek) `[yayında]`
+- 29 ← 4 (embedding defteri; anlam haritası; defteri eğitim yazar), 6 (çapraz kodlayıcıda karşılıklı dikkat; nokta çarpım), 23 (gösterim seçimi bir arama işidir), 16 (SQuAD'ın kelime örtüşmesi; hiçbir model her görevde önde değil), 2 (aynı öğrenme döngüsü, farklı kayıp), 26 ve 28 (değişmeyeni bir kez öde; ucuz aday üret, pahalı olan karar versin), 27 (vektörleri daha az bitle saklamak), 24 (getirilen belge güvenilmez içeriktir), 41 (ileri bağ) `[yayında]`
+- 30 ← 10 (kod çözme adımındaki dağılım; kesme kuralları maskeden önce mi sonra mı; otoregresif koşullanma), 15 (token ızgarası ↔ dilbilgisi hizasızlığı; köprü token'ları), 22 (belirsizliği azaltmak; ara adımların ölçülen kazancı), 24 (sistem istemine biçim kuralı yazmak), 6, 7 ve 12 (maskelemenin önceki üç kullanımı), 28 (spekülatif üretim kısıtlı üretimi hızlandırıyor), 17 (kusursuz biçimlenmiş uydurma) `[yayında]`
+
+**Batch 7 taslağı (31'den devam).** Yayımlanmış borçlardan türetilmiştir; batch hazırlığında güncellenir:
+
+- 31 ← 30 (şema sırası ara adımları siliyor), 22 (ara adımların dar uygulama alanı), 10 (üretim bir çekiliştir), 16 (kavramı ölçmenin disiplini), 5 (dil modeli = sonraki token dağılımı)
+- 32 ← 31 (kavramın kurulumu), 22 ve 15 ("ara adımların gücü 32'de" borcu), 10 (aynı döngü uzuyor), 23 (gösterimler ara adım da taşır)
+- 33 ← 32 (uzayan üretim bir maliyet kararıdır), 9 ("çıkarım anında hesap harcama ekseni 33'te" borcu), 26 ve 28 (o hesabın gerçek faturası), 10
+- 34 ← 32, 13 (ödül modeli ve tercih optimizasyonu), 11 (post-training haritasının dördüncü durağı), 16 (doğrulanabilir ödül neyi ölçüyor)
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -623,6 +637,72 @@ Batch 0 ve Batch 1 kavramlarının 11–14'te fiilen nerede geri çağrıldığ�
 | Sayfalı dikkat | 26 | — | 28 (servis sistemleri), 51–60 (ajan oturumları) |
 
 
+### Batch 6'da gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 27–30'da fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 6'da gerçekleşen |
+|---|---|
+| Kuantizasyon (19) | 27 (defterdeki "tam kurulum 27'de" randevusu kapandı) ✓ **sekiz makale aralıklı** |
+| Parametre = sayı (2) | 27 (ızgaraya yuvarlanan şey) ✓ **yirmi beş makale aralıklı geri çağırma** |
+| Aktivasyon (3) | 27 (aykırı değerlerin yaşadığı yer) ✓ **yirmi dört makale aralıklı geri çağırma** |
+| Parametre başına bilgi kapasitesi (18) | 27 (int8'de 2 bit korunuyor, int4'te 0,7'ye düşüyor — 18'de geçilen kısım tahsil edildi) ✓ |
+| Aşırı öğrenme (2) | 27 (kalibrasyon kümesine fazla uyum) ✓ |
+| Hesap-optimal tahsis ve Chinchilla oranı (9) | 27 (fazla eğitilmiş model kuantizasyona daha kırılgan) ✓ |
+| Ölçüm disiplini / iki cetvel (9, 16) | 27 ("neredeyse aynı, hangi cetvelde"), 29 (embedding liderlik tabloları) ✓ |
+| Perplexity içsel bir ölçüdür (5, 16) | 27 (GPTQ tablosunun okunma biçimi) ✓ |
+| Transformer bloğu (7) | 27 (kuantizasyon bloğuyla karıştırılmaması için ayrım) ✓ |
+| 229 işlem/bayt oranı (26) | 28 (makalenin açılış hesabı) ✓ |
+| Ön dolum ↔ adım adım üretim (26) | 27 (hangisini hızlandırıyor), 28 (çatışmanın kaynağı) ✓ |
+| 2N işlem / 6ND kuralı (8, 26) | 28 (312 katlık ön dolum ↔ üretim asimetrisi bundan türetildi) ✓ |
+| Bellek bant genişliği (26) | 27, 28 (yığının tavanını bellek belirler) ✓ |
+| Sayfalı dikkat ve önek paylaşımı (26) | 28 (radix ağacıyla otomatikleşti) ✓ |
+| Otoregresif döngü (10) | 28 (bir istek token sayısı kadar geçiş ister), 30 (cevap alanı önce gelince koşullanacak ara adım kalmıyor) ✓ |
+| Sıcaklık ve açgözlü seçim (10) | 28 (kabul oranı açgözlü seçimde yükseliyor) ✓ |
+| Bigram modeli (5) | 28 (sıfır maliyetli taslak model) ✓ **yirmi üç makale aralıklı geri çağırma** |
+| Sistem istemi sabit önektir (24) | 28 (önek paylaşımının asıl faydalanıcısı) ✓ |
+| 997 örneklik istem (23) | 28 (değişmeyen önek olarak bir kez ödenir) ✓ |
+| Embedding defteri ve anlam haritası (4) | 29 (defterdeki "29: anlamsal arama" planı tahsil edildi) ✓ **yirmi beş makale aralıklı** |
+| Bağlamsal temsil ve nokta çarpım (6) | 29 (çapraz kodlayıcının üstünlüğü ve ikili kodlayıcının benzerlik ölçüsü) ✓ |
+| Öğrenme döngüsü ve kayıp (2) | 29 (aynı döngü, sıralama hedefi ölçen bir kayıpla) ✓ |
+| Gösterim seçimi bir arama işidir (23) | 29 (getirilen şeyin belge ya da örnek olması mekanizmayı değiştirmiyor) ✓ |
+| İstem enjeksiyonu (24) | 29 (getirilen belge güvenilmez içeriktir) ✓ |
+| Kod çözme adımındaki dağılım (10) | 30 (maske çekilişten önce dağılımı daraltıyor) ✓ |
+| Kesme aileleri (10) | 30 (maskeden önce mi sonra mı uygulandığı sonucu değiştiriyor) ✓ |
+| Token ızgarası bir tümevarım yanlılığıdır (15) | 30 (köprü token'ları; hizasız kısıt on puana varan kayıp veriyor) ✓ |
+| Maskeleme (6), nedensel maske (7), kayıp maskesi (12) | 30 (dördüncü kullanım açıkça ayrıştırıldı) ✓ |
+| Ara adımların ölçülen kazancı (22) | 30 (şemanın alan sırası onu siliyor) ✓ |
+| Belirsizliği azaltmak: biçim kuralı (22, 24) | 30 (defterdeki "30: kısıtlı üretim" planı tahsil edildi) ✓ |
+| Akıcılık ≠ doğruluk / uydurma (17) | 30 (kusursuz biçimlenmiş bir uydurma) ✓ |
+
+### Batch 6'da ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 6'da gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Aykırı değer | 27 | 28 (—) | 74–77 (yorumlanabilirlik: aynı boyutlar), 86 (alternatif mimariler), 106–108 (çekirdek tasarımı) |
+| Kuantizasyon bloğu ve kuantizasyon sabiti | 27 | 29 (vektör depolamasına genişledi) | 87 (damıtma), 88 (uçta yapay zekâ), 106 (bellek bütçesi) |
+| Eğitim sonrası kuantizasyon ↔ kuantizasyona duyarlı eğitim | 27 | — | 87, 88, 106–109 (eğitim sistemleri) |
+| Cevap değişimi (dağılım uzaklığı ölçüsü) | 27 | — | 71 (değerlendirme bilimi), 73 (LLM-as-judge), 101 (ölçüm disiplini) |
+| Bit genişliği ↔ parametre sayısı değiş tokuşu | 27 | 28 (yığına yer açmak) | 87, 88, 90 (enerji ve maliyet), 106 |
+| Fazla eğitilmiş model kuantizasyona daha kırılgan | 27 | — | 96 (genelleme kuramı), 106–107, 116 (açık sorular) |
+| Sürekli yığınlama ve yineleme düzeyinde çizelgeleme | 28 | — | 51–60 (ajan oturumları), 60 (ajan ekonomisi), 115 (ürün kurmak) |
+| Seçici yığınlama | 28 | — | 106–108 (çekirdek ve bellek mühendisliği) |
+| Parçalı ön dolum ↔ ayrıştırma | 28 | — | 106–109 (eğitim ve servis sistemleri), 115 |
+| İlk token süresi ↔ çıktı token'ı başına süre | 28 | 29 (kurulum ↔ sorgu maliyeti ayrımının aynı biçimi) | 33 (test anında hesap), 60, 115 |
+| Spekülatif üretim, taslak model ve kabul oranı | 28 | 30 (kısıtlı üretimi hızlandırmak için kullanılıyor) | 33 (test anında hesap), 35 (doğrulama asimetrisi), 87 (damıtma) |
+| Önek ağacıyla otomatik yeniden kullanım | 28 | 29 (—) | 39 (bellek), 51–60 (ajan döngüleri) |
+| Anlamsal arama ve getirme | 29 | 30 (—) | 41–50 (getirme fazının tamamı), 56 (ajan belleği), 112 (kişiselleştirme) |
+| Çapraz kodlayıcı ↔ ikili kodlayıcı | 29 | — | 42–44 (getirme hattı), 73 (değerlendiren modeller), 45 (kaynak sadakati) |
+| Bulma oranı | 29 | — | 45 (RAG değerlendirmesi), 71, 101 |
+| Tek vektörün boyut sınırı | 29 | — | 43 (vektör veritabanları), 46 (getirme-akıl yürütme sistemleri), 91–92 (matematiksel kurulum), 116 |
+| Hibrit arama ve yeniden sıralama | 29 | — | 42, 44, 45 |
+| İç içe temsil (kısaltılabilir embedding) | 29 | — | 43 (indeksleme maliyeti), 87, 92 |
+| Kısıtlı üretim ve üretim maskesi | 30 | — | 47 (araç çağırma), 51–60 (ajan çıktıları), 103 (elle kurulum) |
+| Yerel maske ↔ küresel olasılık ayrışması | 30 | — | 36 (arama ve planlama), 93 (olasılık kuramı), 116 |
+| Şemanın alan sırası bir performans kararıdır | 30 | — | 32 (ara adımlar), 47 (function calling), 57 (ajan değerlendirmesi) |
+| Sözdizimsel geçerlilik ≠ anlamsal geçerlilik | 30 | — | 35 (doğrulama), 47–48 (kod ve araçlar), 55 (kod yazan ajanlar) |
+
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -804,6 +884,38 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | bellek bant genişliği | (memory bandwidth) | 26 | yavaş bellekten hesap çekirdeklerine saniyede taşınabilen bayt miktarı |
 | gruplandırılmış sorgu dikkati | (grouped-query attention, GQA) | 26 | birden çok sorgu başının aynı anahtar-değer çiftini paylaşması; kısaltma "GQA" serbest |
 | sayfalı dikkat | (PagedAttention) | 26 | anahtar-değer önbelleğini bitişik blok yerine küçük sayfalar hâlinde dağıtmak |
+| iş hacmi | (throughput) | 26 | birim zamanda tamamlanan iş; 26'da gloss'suz kullanıldı, 28'de gecikmeden açıkça ayrıldı |
+| aykırı değer | (outlier) | 27 | aktivasyonlarda ötekilerden çok büyük çıkan, az sayıda ve düzenli boyut; ölçeği gerdiği için bloğun geri kalanını sıfıra yuvarlatır |
+| blok | — | 27 | tek bir kuantizasyon sabitini paylaşan ardışık ağırlık kümesi. 7\. makaledeki **Transformer bloğuyla karıştırılmaz**; ayrım 27'de açıkça yapıldı |
+| kuantizasyon sabiti | — | 19 | bloğun en büyük mutlak değeri; ızgaranın ölçeğini verir. 19'da adı geçti, mekanizması 27'de kuruldu |
+| en yakına yuvarlama | (round-to-nearest) | 27 | her ağırlığı bağımsız olarak en yakın ızgara noktasına yuvarlamak |
+| eğitim sonrası kuantizasyon | (post-training quantization) | 27 | eğitilmiş modeli yeniden eğitmeden, tek geçişte kuantize etmek |
+| kuantizasyona duyarlı eğitim | (quantization-aware training) | 27 | ağırlıkları eğitim sırasında kaba ızgaraya alıştırmak; eğitim maliyetini düşürmez |
+| cevap değişimi | (flips) | 27 | sıkıştırılmış modelde doğrudan yanlışa ya da yanlıştan doğruya dönen cevapların oranı; doğruluktan bağımsız bir uzaklık ölçüsü |
+| sürekli yığınlama | (continuous batching) | 28 | çizelgeleme kararının istek yerine yineleme düzeyinde verilmesi |
+| seçici yığınlama | (selective batching) | 28 | dikkat işleminin yığınlanmaması; parametresi olmadığı için yığınlamanın kazancı yoktur |
+| parçalı ön dolum | (chunked prefill) | 28 | istemi eşit parçalara bölüp üretim adımlarıyla aynı yığında işlemek |
+| ayrıştırma | (disaggregation) | 28 | ön dolum ile üretimi ayrı kartlara koymak. 27'deki **karma hassasiyetli ayrıştırmayla** aynı sözcüğün farklı kullanımıdır |
+| ilk token süresi | (time to first token) | 28 | ön dolumun süresi; 26'da adsız ölçülmüştü |
+| çıktı token'ı başına süre | (time per output token) | 28 | akışın hızı; 26'da adsız ölçülmüştü |
+| spekülatif üretim | (speculative decoding) | 28 | küçük bir taslak modelin önerdiği token'ların büyük modelce tek geçişte doğrulanması; çıktı dağılımını değiştirmez |
+| taslak model | (draft model) | 28 | öneriyi üreten küçük ve hızlı model |
+| kabul oranı | — | 28 | taslağın önerdiği bir token'ın kabul edilme olasılığı; metinde α ile gösterilir |
+| anlamsal arama | (semantic search) | 29 | sorgu ve belgeleri aynı vektör uzayına yerleştirip yakınlığa göre getirmek |
+| getirme | (retrieval) | 29 | pencereye konacak metni bir derlemden bulma işinin genel adı |
+| çapraz kodlayıcı | (cross-encoder) | 29 | sorgu ve belgeyi birlikte okuyup tek bir ilgi puanı üreten düzen |
+| ikili kodlayıcı | (bi-encoder) | 29 | sorgu ve belgeyi bağımsız kodlayıp nokta çarpımla karşılaştıran düzen |
+| bulma oranı | (recall) | 29 | getirilen ilk k sonuç içinde doğru belgenin bulunma oranı. 18 ve 21'deki **geri çağırmayla karıştırılmaz** |
+| yeniden sıralayıcı | (reranker) | 29 | ilk aşamanın adaylarını pahalı bir modelle yeniden sıralayan katman |
+| geç etkileşimli | (late interaction) | 29 | belgeyi tek vektör yerine token vektörleriyle temsil edip karşılaştırmayı sona bırakan düzen |
+| BM25 | — | 29 | Türkçeleştirilmez ve **parantez içi gloss verilmez**; sözcük eşleşmesine dayanan klasik sıralama işlevi. Gövdede "sözcük eşleşmesi" ile eşanlamlı kullanılır |
+| kısıtlı üretim | (constrained decoding) | 30 | kod çözme anında geçersiz token'ların olasılığını sıfırlamak; biçim garantisi verir |
+| ayrıştırıcı | (parser) | 30 | üretilen metni izleyip geçerli devamları hesaplayan bileşen |
+| şema | (schema) | 30 | beklenen alan adlarını, türlerini ve sırasını tanımlayan biçim sözleşmesi |
+| dilbilgisi | (grammar) | 30 | biçimsel dil tanımı; sıradan dilbilgisi anlamıyla karıştırılmaması için ilk geçişte "biçimsel" denir |
+| bağlamdan bağımsız dilbilgisi | (context-free grammar) | 30 | iç içe yapıları tanımlayabilen dilbilgisi sınıfı |
+| köprü token'ı | (bridge token) | 30 | birden çok dilbilgisi birimini kapsayan token; naif maske onu eleyince tokenizasyon bozulur |
+| üretim maskesi | — | 30 | serinin **dördüncü** maske kullanımı: 6 (maskeleme), 7 (nedensel maske), 12 (kayıp maskesi) ile karıştırılmaz; ayrım 30'da açıkça yapıldı |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -1062,6 +1174,182 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Chen ve ark. 2023 (pozisyon enterpolasyonu). Meta'nın Llama 3 sohbet şablonu belgelendirmesi
     akademik bir çalışma değil, üreticinin resmî ürün belgelendirmesidir ve öyle işaretlenir.
     Karar #6'daki liste bunlarla genişler.
+
+65. **Faz 3'ün kalan kategori kararı (Batch 6'da verildi).** 27, 28 ve 30 `reasoning-and-memory`;
+    29 `agents-and-retrieval` kategorisindedir. Gerekçe: kontrollü sözlükte sistem mühendisliği için
+    bir kalem yok ve karar #50'nin ölçütü geçerli — `models-and-training` modelin **nasıl kurulduğunu**
+    kapsar, oysa 27 ve 28 kurulmuş bir modeli bellek bütçesi içinde çalıştırır; `reasoning-and-memory`
+    başlığındaki bellek ekseni 26 → 27 → 28 zincirinin ta kendisidir. 30 da tek bir çağrının kod çözme
+    katmanına aittir. 29 ise konusu gereği getirmedir ve `agents-and-retrieval` ekseni onunla açılır;
+    41–50 aynı kategoride devam eder. Sonuç, Batch 6'nın okuma listesinde kategorinin iki ayrı öbek
+    hâlinde görünmesidir (27–28, sonra 29, sonra 30); UI bu durumu destekler ve
+    `src/components/reader/reading-list-groups.test.ts` tam olarak bunu sınar.
+66. **Başlık düzeltmesi (Batch 6'da verildi).** Yayımlanmamış 28'in başlığındaki İngilizce sözcükler
+    terim defterine uyarlandı: "Hız ve Maliyet: Serving, Batching, Spekülatif Decoding" →
+    **"Hız ve Maliyet: Servis, Yığınlama ve Spekülatif Üretim"**. Karşılıklar: "servis" 26\. makalede
+    gövdede zaten kullanılıyordu, "yığın" 8\. makalede kurulmuştu, "üretim" 26'daki adım adım üretimden
+    gelir. Kararlar #51 ve #52'nin aynı gerekçesi. 29 ve 30'un başlıkları değiştirilmedi ("embedding"
+    ve "JSON" Türkçeleştirilmeyen kalemlerdir). **Faz başlıkları katmanına yine dokunulmadı**
+    (karar #52'deki açık soru sürüyor); 31–33'ün başlıklarındaki "Reasoning", "Chain-of-Thought" ve
+    "Test-Time Compute" sözcükleri Batch 7 hazırlığında ele alınacaktır.
+67. **Aykırı değer sayıları (Dettmers ve ark., NeurIPS 2022).** Aykırı değerler aktivasyonlardadır,
+    ağırlıklarda değil. Ötekilerden **yirmi kata** kadar büyük; küçük modellerde katmanların yaklaşık
+    dörtte birinde, 6,7 milyar parametrede faz geçişiyle bütün katmanlarda. 6,7 milyar ölçeğinde bir
+    dizide **150.000** aykırı değer yalnızca **altı** boyutta toplanır. Sıfırlanınca dikkatin en yüksek
+    olasılıklı seçime verdiği pay yüzde 20'den fazla düşer, doğrulama perplexity'si yüzde 600–1.000
+    bozulur; aynı sayıda rastgele boyutta bu düşüşler en fazla yüzde 0,3 ve yüzde 0,1'dir. Karma
+    hassasiyetli ayrıştırma BLOOM-176B'nin ayak izini **1,96 kat** küçültür.
+68. **GPTQ sayıları (Frantar ve ark., ICLR 2023).** WikiText2 perplexity — OPT-66B: 16 bit 9,34;
+    4 bit en yakına **110**; 4 bit GPTQ 9,55; 3 bit en yakına 6,1×10³; 3 bit GPTQ 14,16. OPT-175B:
+    8,34 / 10,54 / 8,37 / 7,3×10³ / 8,68. Kalibrasyon: C4'ten 128 tane 2.048 token'lık parça.
+    Süre: OPT-175B 4,2 saat, BLOOM-176B 3,8 saat (tek A100 80GB). 3 bitlik OPT-175B ≈ 63 GB
+    (gömme ve çıkış katmanları 16 bitte) + 2.048 token için ≈ 9 GB önbellek → tek 80GB karta sığar;
+    16 bit 5 kart, LLM.int8() 3 kart ister. Token başına gecikme A100'de 230 → 71 ms (3,24×),
+    A6000'de 589 → 130 ms (4,53×). Sınır: çarpımların kendisi hızlanmaz.
+69. **Bit genişliği ölçek yasası (Dettmers & Zettlemoyer, ICML 2023).** 35.000'den fazla deney;
+    19M–176B; 3–16 bit; BLOOM, BLOOMZ, OPT, NeoX/Pythia, GPT-2. Sabit toplam model bitinde 16'dan
+    4 bite inmek başarıyı istikrarlı biçimde artırır; **3 bitte ilişki tersine döner**. Blok boyu
+    64–128 önerilir; 16 bitlik sabit 64 ağırlıkta bir yazılırsa parametre başına **0,25 bit** ek
+    maliyet gelir. 175 milyarlık bir model 16 bitte 352 GB'a kadar bellek ister.
+70. **Kapasitenin bit genişliğine duyarlılığı (Allen-Zhu & Li, ICLR 2025).** Karar #28'in devamı:
+    int8'de parametre başına 2 bit korunur, **int4'te 0,7 bite düşer** (iki kattan fazla kayıp).
+    Ölçüm GPTQ ile yapılmıştır. Bu sonuç, "4 bit optimaldir" cümlesinin hangi cetvelde geçerli
+    olduğunu sınırlar: çoktan seçmeli değerlendirmede evet, olgu saklama kapasitesinde hayır.
+71. **Cevap değişimi (Dutta ve ark., NeurIPS 2024).** Altı kuantizasyon düzeni, yedi değerlendirme
+    kümesi. Doğruluk farkı 0–2 puan; cevap değişimi **yüzde 13,6'ya** kadar. Yalnızca 8 bit ağırlık +
+    16 bit aktivasyon düzeni hem doğruluğu hem davranışı korur. Yanlıştan yanlışa geçişler de
+    sayılsaydı oranlar HellaSwag'de yüzde 19, ARC'de 41, MMLU'da 43 daha artardı. Serbest metin
+    değerlendirmesinde cevap değişimi yüksek modeller belirgin biçimde geriliyor.
+72. **Aktivasyon ve önbellek kuantizasyonu.** SmoothQuant (Xiao ve ark., ICML 2023): ağırlıklar kolay,
+    aktivasyonlar zordur; zorluk matematiksel olarak eşdeğer bir kanal ölçeklemesiyle ağırlıklara
+    taşınır. 1,56 kata varan hızlanma, 2 kat bellek tasarrufu, 530 milyarlık modelin tek sekiz kartlı
+    düğümde servisi. KIVI (Liu ve ark., ICML 2024): önbellek 2 bit; **anahtarlar kanal bazında,
+    değerler token bazında**; tepe bellek 2,6 kat azalır, yığın 4 kata kadar büyür, iş hacmi
+    2,35–3,47 kat artar.
+73. **Hassasiyet ölçek yasası (Kumar ve ark., ICLR 2025).** 465 ön eğitim koşusu; 30–220 milyon
+    parametre, 1,5–26 milyar token; 1,7 milyara kadar doğrulama. Bulgu: eğitim sonrası kuantizasyonun
+    bozulması **veriyle birlikte artar**, dolayısıyla yeterince yüksek token/parametre oranında ek
+    ön eğitim verisi çıkarım zamanında zararlı olabilir. Ağırlık hassasiyetinin kazancı parametre
+    başına **6–7 bit** civarında doyar. Llama-3-8B'nin token/parametre oranı ≈ 2.000; Chinchilla ≈ 20.
+74. **Servis sistemleri sayıları.** Orca (Yu ve ark., OSDI 2022): yineleme düzeyinde çizelgeleme ve
+    seçici yığınlama; GPT-3 175B'de aynı gecikme düzeyinde **36,9 kat** iş hacmi (FasterTransformer'a
+    karşı); 341 milyara kadar ölçek. Dikkat işlemi yığınlanmaz çünkü **parametresi yoktur**.
+    Sarathi-Serve (Agrawal ve ark., OSDI 2024): parçalı ön dolum; Mistral-7B tek A100'de 2,6 kat,
+    Yi-34B iki A100'de 3,7 kata kadar, Falcon-180B boru hattı paralelliğiyle 5,6 kata kadar servis
+    kapasitesi (vLLM'e karşı). DistServe (Zhong ve ark., OSDI 2024): ayrıştırma; 7,4 kat daha çok
+    istek ya da 12,6 kat daha sıkı kısıt, isteklerin yüzde 90'ından fazlası kısıt içinde.
+75. **Spekülatif üretim sayıları (Leviathan ve ark., ICML 2023).** Hedef T5-XXL (11 milyar).
+    EnDe, sıcaklık 1, γ=7: T5-small (77M) α=0,62 → 2,6×; T5-base (250M) α=0,68 → 2,4×;
+    T5-large (800M) α=0,71 → 1,4×. Açgözlü seçimde T5-small α=0,75 → 3,4×. Bigram taslakla EnDe'de
+    α=0,20 ve yine 1,25× hızlanma. Beklenen token sayısı (1 − α^(γ+1)) ÷ (1 − α); α=0,62 ve γ=7 için
+    **2,57**. Çıktı dağılımı değişmez. Bağımsız bir uygulama Chinchilla 70B'de 2–2,5× bildirdi.
+    Sınır: gecikme, işlem sayısı artırılarak iyileştirilir; boşta hesap yoksa fayda erir.
+76. **Önek ağacı (Zheng ve ark., NeurIPS 2024).** Bütün isteklerin önbellekleri bir radix ağacında
+    LRU önbellek olarak tutulur; en uzun ortak önek otomatik yeniden kullanılır. Önek paylaşımının
+    yoğun olduğu iş yüklerinde **6,4 kata** varan iş hacmi. Aynı çalışma, dilbilgisi durumlarını
+    sıkıştırarak tek devamlı zincirleri tek adımda geçmeyi de sağlar (30\. makalede kullanıldı).
+77. **İkili kodlayıcının gerekçesi ve getirme sayıları.** Sentence-BERT (Reimers & Gurevych,
+    EMNLP-IJCNLP 2019): 10.000 cümlede en benzer çifti bulmak 49.995.000 çıkarım ≈ **65 saat**;
+    ikili kodlayıcıyla ≈ **5 saniye**. DPR (Karpukhin ve ark., EMNLP 2020): iki bağımsız BERT-base,
+    d = 768; Wikipedia 100 kelimelik ayrık parçalara bölünür → **21.015.324** pasaj. İlk 20'de bulma
+    oranı (tek küme eğitimi) — NQ: BM25 59,1 / DPR 78,4 / birlikte 76,6; TREC: 70,9 / 79,8 / 85,2;
+    SQuAD: 68,8 / **63,2** / 71,5. Yığın içi olumsuz örnek: B soruluk yığında her soruya B−1 yanlış
+    belge, toplam B² çift; en iyi düzen buna bir de sözcük eşleşmesinden gelen zor örnek ekler.
+    Kurulum: gömme hesabı 8 kartta ≈ 8,8 saat, dizin kurulumu ≈ 8,5 saat; ters dizin ≈ 30 dakika.
+    Sorgu: bellekteki dizin saniyede 995 soru, sözcük tabanlı dizin işlemci başına 23,7 soru.
+    **Seri türetir:** 21.015.324 × 768 × 4 bayt ≈ **65 gigabayt**.
+78. **Getirme değerlendirmesi.** BEIR (Thakur ve ark., NeurIPS 2021 D&B): 18 küme, 10 sistem, alan
+    dışı; BM25 sağlam taban, ortalamada en iyi sonuç yeniden sıralayıcılar ve geç etkileşimli
+    modellerde ama yüksek maliyetle, ucuz tek vektörlü modeller alan dışında geriliyor.
+    MTEB (Muennighoff ve ark., EACL 2023): 8 görev türü, 58 küme, 112 dil, 33 model;
+    **hiçbir yöntem bütün görevlerde önde değil.**
+79. **Tek vektörün sınırı (Weller ve ark., ICLR 2026).** Boyut d için, hiçbir sorgunun
+    döndüremeyeceği ilk-k belge kombinasyonları zorunlu olarak vardır. Serbest embedding
+    eniyilemesiyle bulunan kritik belge sayıları: 500 bin (d=512), 1,7 milyon (768), 4 milyon (1024),
+    107 milyon (3072), 250 milyon (4096). LIMIT: 46 belge, C(46,2) = 1.035 kombinasyon, 1.000 sorgu,
+    50.000 belgelik yığın. LIMIT-small ilk 2'de bulma oranı — BM25 97,8; geç etkileşimli çok vektörlü
+    83,5; en iyi tek vektörlü 54,3; öbür tek vektörlüler 19,0–38,4. Eş anlamlı sürümde sırasıyla
+    10,6 / 25,6 / 12,8 / 8,5–15,1; BM25 yüzde 89'dan fazla düşer. Tam sürümde modeller ilk 100'de bile
+    yüzde 20'ye ulaşamıyor. Alan içi eğitim yardımcı olmuyor (ilk 10'da bulma oranı ≈ 0 → 2,8);
+    46 belgeyi pencereye koyan uzun bağlamlı bir yeniden sıralayıcı 1.000 sorgunun tamamını çözüyor.
+80. **İç içe temsil (Kusupati ve ark., NeurIPS 2022).** ImageNet-1K sınıflandırmada aynı doğruluk
+    **14 kata kadar** küçük temsille; aynı kümede büyük ölçekli getirmede 14 kata varan hızlanma.
+81. **Kısıtlı üretimin dağılımı bozması (Park ve ark., NeurIPS 2024).** "1 ile biten ikili dizi üret"
+    isteminde model kısıtsız yaklaşık yüzde 90 başarılı; beş sıfırdan oluşan diziyi ve 1 ile başlayan
+    beş uzunluklu dizileri kabul eden dilbilgisi dayatılınca oran **yüzde 30'a** düşüyor. İlk token'da
+    P(0) ≈ 0,45 ve P(1) ≈ 0,30; maske ikisini de geçerli saydığı için model sol dala kabaca yarı
+    yarıya giriyor, oysa o daldaki tek dizinin gerçek olasılığı on milyarda iki mertebesinde.
+    Dilbilgisi 1 ile başlayan **on altı** diziyi kabul eder ve bunların **sekizi** 1 ile biter.
+82. **Token hizası ve kısıt maliyeti (Beurer-Kellner ve ark., ICML 2024).** JSON'a çevrilmiş GSM8K,
+    Mistral-7B: kısıtsız 0,415; hizalamayı gözetmeyen iki yaygın araçla 0,345 ve 0,375; token hizalı
+    DOMINO 0,418. İleriye bakış ablasyonu (aynı model): k=0 → 0,308, k=1 → 0,100, k=∞ → 0,418.
+    Şemalı JSON üretiminde hizalı yöntem, spekülatif üretim sayesinde kısıtsız üretimden
+    **1,77 kat** hızlı.
+83. **Biçim kısıtının maliyeti (Tam ve ark., EMNLP 2024 Industry Track).** GSM8K doğruluğu —
+    claude-3-haiku: metin 86,51 / JSON 86,99 / **şemalı JSON 23,44**; gpt-3.5-turbo 75,99 / 74,70 /
+    49,25; LLaMA-3-8B 75,13 / 64,67 / 48,90; gemini-1.5-flash 89,33 / 89,66 / 89,21. Mekanizma:
+    harf birleştirme görevinde GPT-3.5 Turbo'nun JSON kipiyle verdiği cevapların **tamamı** "cevap"
+    alanını "gerekçe" alanından önce koymuş, yani ara adım üretilmeden karar verilmiş. Sınıflandırma
+    görevlerinde aynı kısıt bazı modellerde doğruluğu **yükseltiyor**. Düşüşün sebebi ayrıştırma hatası
+    değil: bir modelde ayrıştırma hata oranı binde 1,5 iken başarı farkı yüzde 38. Önce serbest metin,
+    sonra biçime çevirme düzeni serbest metnin doğruluğunu koruyor.
+84. **Batch 6 hakemsiz kaynak eklemedi.** Kullanılan on dokuz kaynağın tamamı hakemli konferans
+    bildirisidir (NeurIPS, ICLR, ICML, MLSys, OSDI, EMNLP, EACL, NeurIPS Datasets and Benchmarks).
+    Karar #6'daki liste genişlemedi. Batch 6'nın seriye özgü türetmeleri üç tanedir ve karar #38'in
+    yöntemiyle aynıdır: 27'deki sekiz ağırlıklı dört bit örneği (pedagojik kurgu, olgu iddiası değil),
+    28'deki 312 katlık ön dolum ↔ üretim asimetrisi (26'nın 2N işlem muhasebesinden) ve 29'daki
+    65 gigabaytlık depolama hesabı (DPR'nin pasaj sayısı ve boyutundan).
+
+## Batch 6 öğrenme notları (yazım tamamlandı)
+
+- **Makale 27:** 19\. makalenin "kuantizasyonun mekanizması 27'de" randevusunu kapatır. Ekseni tek bir
+  görsel: ızgara. Sekiz ağırlıkla elle yapılan hesap, aykırı değerli ikinci panelle birlikte makalenin
+  bütün mekanizmasını iki panelde veriyor — aykırı değer sorunu bir literatür bulgusu olarak değil,
+  okuyucunun kendi yaptığı hesabın çöküşü olarak geliyor. En değerli iki hamle sonradan yapıldı:
+  18\. makalede geçilmiş olan int4 kapasite sayısının (0,7 bit) tahsil edilmesi ve fazla eğitilmiş
+  modellerin daha kırılgan olduğu bulgusunun kapanışa alınması. İkincisi olmasa makale "4 bit iyidir"
+  reçetesiyle kapanırdı; onunla birlikte 9\. makaledeki tahsis tartışmasına geri bağlanıyor.
+- **Makale 28:** Serinin ikinci saf sistem makalesi. 26'nın 229 işlem/bayt oranı açılışı taşıyor ve
+  27'nin kazancının "çipi hızlandırmak" değil "yığına yer açmak" olduğunu söyleyen paragraf üç makaleyi
+  tek cümlede birbirine bağlıyor. Orca'nın seçici yığınlama gerekçesi — dikkatin parametresi yoktur —
+  26'daki muhasebenin doğrudan sonucu olduğu için bedava bir köprü verdi. Spekülatif üretimde formülün
+  öngördüğü 2,57 ile ölçülen 2,6 katın örtüşmesi makalenin en tatmin edici anı; taslak büyüdükçe
+  hızlanmanın **düşmesi** ise sezgiyi kıran asıl bulgu. Şekil 1'in ilk hâlinde boşta kalan hücreler
+  yalnızca kesik çizgiyle gösterilmişti ve gerçek render'da üç temada da zor seçiliyordu; hücrelere
+  "boşta" etiketi eklendi — renk kontrastına bağlı olmayan bir işaretleme.
+- **Makale 29:** Kategori kararının tek istisnası ve `agents-and-retrieval` eksenini açan makale.
+  Ekseni, ikili kodlayıcının feda ettiği şey: belge vektörü sorgudan önce hesaplanmak zorunda.
+  SBERT'in 65 saat → 5 saniye hesabı bu fedanın neden yapıldığını, LIMIT ölçümü ise bedelinin ne
+  olduğunu gösteriyor. DPR tablosunun SQuAD satırı ve hibrit sütununun Natural Questions satırı
+  bilinçli olarak tabloda bırakıldı: ikisi de "anlamsal arama her zaman kazanır" ve "hibrit her zaman
+  kazanır" cümlelerini aynı anda çürütüyor. Eş anlamlı sürüm ölçümü olmasaydı makale sözcük
+  eşleşmesinin zaferiyle kapanırdı; onunla birlikte iki ayrı kör nokta olarak kapanıyor. 41\. makalenin
+  borcuna girmemek için "modelin bilgisi neden yetmez" tartışması bilinçle dışarıda bırakıldı ve bu,
+  metinde açıkça söylendi.
+- **Makale 30:** Faz 3'ü kapatır ve Faz 4'ün sorusunu kurar. En güçlü malzeme ikili dizi örneği:
+  dilbilgisi kusursuz uygulanırken istemin çiğnenmesi, maskenin neden yerel bir karar olduğunu tek
+  örnekte gösteriyor. İkinci katman (token hizasızlığı) 15\. makaleye, üçüncü katman (şemanın alan
+  sırası) 22\. makaleye bağlanıyor; üçü birlikte "kısıt kötüdür" demeden kısıtın nerede bedel
+  ödettiğini kuruyor. Dördüncü maske kullanımı olduğu için SOZLESME §3'ün karıştırılabilir kavram
+  kuralı gereği önceki üçü tek paragrafta sırayla anıldı. İnceleme turunda yakalanan en somut hata
+  buradaydı: dilbilgisinin 1 ile başlayan **on altı** diziyi kabul ettiği, bunların sekizinin 1 ile
+  bittiği; ilk taslakta ikisi karıştırılmış ve şekil de yanlış etiketlenmişti.
+- **Süreç notu:** Batch 6 `BATCH=4+1` assignment'ıyla, tek oturumda ve yardımcı agent kullanmadan
+  yürüdü. On dokuz birincil kaynak PDF'i `pypdf` ile metne çevrilerek okundu; bütün tablo değerleri
+  özetlerden değil tablolardan alındı ve her künyenin yayın yeri konferans sayfasından ya da ACL
+  Anthology'den doğrulandı — AWQ'nun MLSys başlığı arXiv başlığından farklıdır ve karar #7'deki Snell
+  emsaline uyularak yayın yerindeki başlık kullanıldı. Kendi kendine eleştirel inceleme turunda
+  yakalanan başlıca sorunlar: bir oranın yanlış birimle yazılması (27'de "binde iki" ↔ yüzde 2,2),
+  dört bitlik aralığın −8..7 yerine gerekçesiz −7..7 verilmesi, altı terimin gloss'suz bırakılması
+  (spekülatif üretim, taslak model, kısıtlı üretim, ayrıştırıcı, şema, getirme), üç şekil alt metninin
+  şekille uyuşmaması ve dört makalenin de ilk taslakta 2.000 kelime eşiğinin altında kalması.
+  Gerçek render doğrulaması bu kez **piksel ekran görüntüsüyle** de yapılabildi (Batch 3–5'te
+  alınamıyordu); on iki şeklin tamamı üç temada gözle görüldü. Ekran görüntüsü yalnızca sayfa
+  başındayken çalışıyor; şekilleri görmek için figure düğümleri geçici bir kaplayıcıya klonlandı.
+  Dev server'ın iki tuzağı yeniden gözlendi ve `.wolf/buglog.json`'a yazıldı: `pnpm build` ile
+  `pnpm dev` aynı `.next` dizinini paylaşınca manifest bozuluyor, ve makale gövdesi değiştikten sonra
+  dev server'ın önbelleğe aldığı `catalog.json` bayatlıyor. İkisinin de çaresi `.next`'i silip dev
+  server'ı yeniden başlatmaktır.
 
 ## Batch 5 öğrenme notları (yazım tamamlandı)
 

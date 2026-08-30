@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Çekilişten önce daraltılan dağılım</text>
+
+  <text x="16" y="54" font-size="13" text-anchor="start" fill="var(--text-muted)">bütün adaylar ve olasılıkları</text>
+
+  <line x1="30" y1="210" x2="400" y2="210" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="40" y="133" width="34" height="77" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="84" y="102" width="34" height="108" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="84" y1="210" x2="118" y2="102" stroke="var(--text-faint)" stroke-width="1"/>
+  <rect x="128" y="193" width="34" height="17" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="172" y="168" width="34" height="42" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="216" y="147" width="34" height="63" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="216" y1="210" x2="250" y2="147" stroke="var(--text-faint)" stroke-width="1"/>
+  <rect x="260" y="182" width="34" height="28" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="260" y1="210" x2="294" y2="182" stroke="var(--text-faint)" stroke-width="1"/>
+  <rect x="304" y="200" width="34" height="10" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="304" y1="210" x2="338" y2="200" stroke="var(--text-faint)" stroke-width="1"/>
+  <rect x="348" y="204" width="34" height="6" fill="none" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="348" y1="210" x2="382" y2="204" stroke="var(--text-faint)" stroke-width="1"/>
+
+  <text x="57" y="230" font-size="13" text-anchor="middle" fill="var(--accent)">tırnak</text>
+  <text x="101" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">ad</text>
+  <text x="145" y="230" font-size="13" text-anchor="middle" fill="var(--accent)">}</text>
+  <text x="189" y="230" font-size="13" text-anchor="middle" fill="var(--accent)">boşluk</text>
+  <text x="233" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">[</text>
+  <text x="277" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">5</text>
+  <text x="321" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">x</text>
+  <text x="365" y="230" font-size="13" text-anchor="middle" fill="var(--text-faint)">:</text>
+
+  <line x1="430" y1="44" x2="430" y2="240" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="460" y="54" font-size="13" text-anchor="start" fill="var(--accent)">maskeden sonra, yeniden ölçeklenmiş</text>
+  <line x1="460" y1="210" x2="680" y2="210" stroke="var(--border)" stroke-width="1"/>
+  <rect x="480" y="125" width="40" height="85" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="540" y="164" width="40" height="46" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="600" y="191" width="40" height="19" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="500" y="230" font-size="13" text-anchor="middle" fill="var(--accent)">tırnak</text>
+  <text x="560" y="230" font-size="13" text-anchor="middle" fill="var(--accent)">boşluk</text>
+  <text x="620" y="230" font-size="13" text-anchor="middle" fill="var(--accent)">}</text>
+
+  <text x="16" y="262" font-size="13" text-anchor="start" fill="var(--text-muted)">geçersiz adayların olasılığı sıfırlanır; çekiliş yalnızca kalanlar arasından yapılır</text>
+  <text x="16" y="284" font-size="13" text-anchor="start" fill="var(--text-faint)">hangi adayın geçerli olduğuna, üretilen metni izleyen bir ayrıştırıcı karar verir</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 368" xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="24" font-size="13" fill="var(--text-muted)">T(n) = 2T(n/2) + n: her seviyede aynı iş, log₂ n seviye</text>
+
+  <text x="20" y="88" font-size="13" fill="var(--text-faint)">seviye 0</text>
+  <text x="20" y="136" font-size="13" fill="var(--text-faint)">seviye 1</text>
+  <text x="20" y="184" font-size="13" fill="var(--text-faint)">seviye 2</text>
+  <text x="20" y="264" font-size="13" fill="var(--text-faint)">yapraklar</text>
+
+  <line x1="270" y1="94" x2="188" y2="118" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="270" y1="94" x2="352" y2="118" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="188" y1="142" x2="147" y2="166" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="188" y1="142" x2="229" y2="166" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="352" y1="142" x2="311" y2="166" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="352" y1="142" x2="393" y2="166" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="147" y1="190" x2="147" y2="206" stroke="var(--border)" stroke-width="1.1" stroke-dasharray="4 3" />
+  <line x1="229" y1="190" x2="229" y2="206" stroke="var(--border)" stroke-width="1.1" stroke-dasharray="4 3" />
+  <line x1="311" y1="190" x2="311" y2="206" stroke="var(--border)" stroke-width="1.1" stroke-dasharray="4 3" />
+  <line x1="393" y1="190" x2="393" y2="206" stroke="var(--border)" stroke-width="1.1" stroke-dasharray="4 3" />
+
+  <rect x="110" y="70" width="320" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="270" y="87" font-size="13" text-anchor="middle" fill="var(--text)">n</text>
+
+  <rect x="110" y="118" width="156" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <rect x="274" y="118" width="156" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="188" y="135" font-size="13" text-anchor="middle" fill="var(--text)">n/2</text>
+  <text x="352" y="135" font-size="13" text-anchor="middle" fill="var(--text)">n/2</text>
+
+  <rect x="110" y="166" width="74" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <rect x="192" y="166" width="74" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <rect x="274" y="166" width="74" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <rect x="356" y="166" width="74" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="147" y="183" font-size="13" text-anchor="middle" fill="var(--text)">n/4</text>
+  <text x="229" y="183" font-size="13" text-anchor="middle" fill="var(--text)">n/4</text>
+  <text x="311" y="183" font-size="13" text-anchor="middle" fill="var(--text)">n/4</text>
+  <text x="393" y="183" font-size="13" text-anchor="middle" fill="var(--text)">n/4</text>
+
+  <text x="270" y="224" font-size="13" text-anchor="middle" fill="var(--text-muted)">…</text>
+
+  <rect x="110" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="130" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="150" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="170" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="190" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="210" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="230" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="250" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="270" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="290" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="310" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="330" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="350" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="370" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="390" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <rect x="410" y="242" width="15" height="20" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="270" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">n yaprak</text>
+
+  <text x="460" y="88" font-size="13" fill="var(--text)">2⁰ · n = n</text>
+  <text x="460" y="136" font-size="13" fill="var(--text)">2¹ · (n/2) = n</text>
+  <text x="460" y="184" font-size="13" fill="var(--text)">2² · (n/4) = n</text>
+  <text x="460" y="224" font-size="13" fill="var(--text-muted)">…</text>
+  <text x="460" y="264" font-size="13" fill="var(--text)">toplam = (log₂ n + 1) · n</text>
+  <text x="460" y="286" font-size="13" fill="var(--accent)">= Θ(n log n)</text>
+
+  <line x1="20" y1="308" x2="700" y2="308" stroke="var(--border)" stroke-width="1" />
+  <text x="20" y="332" font-size="13" fill="var(--text)">seviye i: aⁱ alt problem, her biri n/bⁱ boyutunda</text>
+  <text x="20" y="356" font-size="13" fill="var(--text)">derinlik = log_b n · yaprak sayısı = a^(log_b n) = n^(log_b a)</text>
+</svg>

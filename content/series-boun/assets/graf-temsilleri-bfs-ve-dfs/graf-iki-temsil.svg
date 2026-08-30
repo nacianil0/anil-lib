@@ -1,0 +1,161 @@
+<svg viewBox="0 0 720 336" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a16-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="20" y="24" font-size="13" fill="var(--text-muted)">altı düğüm, sekiz kenar; aynı graf iki farklı fiyatla saklanıyor</text>
+
+  <text x="20" y="52" font-size="13" fill="var(--text)">graf</text>
+  <text x="250" y="52" font-size="13" fill="var(--text)">komşuluk listeleri</text>
+  <text x="480" y="52" font-size="13" fill="var(--text)">komşuluk matrisi</text>
+
+  <line x1="50" y1="80" x2="140" y2="60" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="50" y1="80" x2="215" y2="95" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="140" y1="60" x2="215" y2="95" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="140" y1="60" x2="55" y2="175" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="215" y1="95" x2="145" y2="195" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="55" y1="175" x2="145" y2="195" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="55" y1="175" x2="215" y2="150" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="145" y1="195" x2="215" y2="150" stroke="var(--border)" stroke-width="1.6" />
+
+  <circle cx="50" cy="80" r="15" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <circle cx="140" cy="60" r="15" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <circle cx="215" cy="95" r="15" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <circle cx="55" cy="175" r="15" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <circle cx="145" cy="195" r="15" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <circle cx="215" cy="150" r="15" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="50" y="85" font-size="13" text-anchor="middle" fill="var(--text)">a</text>
+  <text x="140" y="65" font-size="13" text-anchor="middle" fill="var(--text)">b</text>
+  <text x="215" y="100" font-size="13" text-anchor="middle" fill="var(--text)">c</text>
+  <text x="55" y="180" font-size="13" text-anchor="middle" fill="var(--text)">d</text>
+  <text x="145" y="200" font-size="13" text-anchor="middle" fill="var(--text)">e</text>
+  <text x="215" y="155" font-size="13" text-anchor="middle" fill="var(--text)">f</text>
+
+  <text x="252" y="82" font-size="13" fill="var(--text)">a</text>
+  <line x1="266" y1="78" x2="286" y2="78" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#boun-a16-ok)" />
+  <rect x="290" y="66" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="307" y="81" font-size="13" text-anchor="middle" fill="var(--text)">b</text>
+  <rect x="328" y="66" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="345" y="81" font-size="13" text-anchor="middle" fill="var(--text)">c</text>
+
+  <text x="252" y="110" font-size="13" fill="var(--text)">b</text>
+  <line x1="266" y1="106" x2="286" y2="106" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#boun-a16-ok)" />
+  <rect x="290" y="94" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="307" y="109" font-size="13" text-anchor="middle" fill="var(--text)">a</text>
+  <rect x="328" y="94" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="345" y="109" font-size="13" text-anchor="middle" fill="var(--text)">c</text>
+  <rect x="366" y="94" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="383" y="109" font-size="13" text-anchor="middle" fill="var(--text)">d</text>
+
+  <text x="252" y="138" font-size="13" fill="var(--text)">c</text>
+  <line x1="266" y1="134" x2="286" y2="134" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#boun-a16-ok)" />
+  <rect x="290" y="122" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="307" y="137" font-size="13" text-anchor="middle" fill="var(--text)">a</text>
+  <rect x="328" y="122" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="345" y="137" font-size="13" text-anchor="middle" fill="var(--text)">b</text>
+  <rect x="366" y="122" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="383" y="137" font-size="13" text-anchor="middle" fill="var(--text)">e</text>
+
+  <text x="252" y="166" font-size="13" fill="var(--text)">d</text>
+  <line x1="266" y1="162" x2="286" y2="162" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#boun-a16-ok)" />
+  <rect x="290" y="150" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="307" y="165" font-size="13" text-anchor="middle" fill="var(--text)">b</text>
+  <rect x="328" y="150" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="345" y="165" font-size="13" text-anchor="middle" fill="var(--text)">e</text>
+  <rect x="366" y="150" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="383" y="165" font-size="13" text-anchor="middle" fill="var(--text)">f</text>
+
+  <text x="252" y="194" font-size="13" fill="var(--text)">e</text>
+  <line x1="266" y1="190" x2="286" y2="190" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#boun-a16-ok)" />
+  <rect x="290" y="178" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="307" y="193" font-size="13" text-anchor="middle" fill="var(--text)">c</text>
+  <rect x="328" y="178" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="345" y="193" font-size="13" text-anchor="middle" fill="var(--text)">d</text>
+  <rect x="366" y="178" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="383" y="193" font-size="13" text-anchor="middle" fill="var(--text)">f</text>
+
+  <text x="252" y="222" font-size="13" fill="var(--text)">f</text>
+  <line x1="266" y1="218" x2="286" y2="218" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#boun-a16-ok)" />
+  <rect x="290" y="206" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="307" y="221" font-size="13" text-anchor="middle" fill="var(--text)">d</text>
+  <rect x="328" y="206" width="34" height="20" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="345" y="221" font-size="13" text-anchor="middle" fill="var(--text)">e</text>
+
+  <text x="250" y="248" font-size="13" fill="var(--text)">toplam uzunluk 16 = 2 × 8 kenar</text>
+
+  <text x="520" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">a</text>
+  <text x="548" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">b</text>
+  <text x="576" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">c</text>
+  <text x="604" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">d</text>
+  <text x="632" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">e</text>
+  <text x="660" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">f</text>
+
+  <rect x="506" y="78" width="168" height="138" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="534" y1="78" x2="534" y2="216" stroke="var(--border)" stroke-width="1" />
+  <line x1="562" y1="78" x2="562" y2="216" stroke="var(--border)" stroke-width="1" />
+  <line x1="590" y1="78" x2="590" y2="216" stroke="var(--border)" stroke-width="1" />
+  <line x1="618" y1="78" x2="618" y2="216" stroke="var(--border)" stroke-width="1" />
+  <line x1="646" y1="78" x2="646" y2="216" stroke="var(--border)" stroke-width="1" />
+  <line x1="506" y1="101" x2="674" y2="101" stroke="var(--border)" stroke-width="1" />
+  <line x1="506" y1="124" x2="674" y2="124" stroke="var(--border)" stroke-width="1" />
+  <line x1="506" y1="147" x2="674" y2="147" stroke="var(--border)" stroke-width="1" />
+  <line x1="506" y1="170" x2="674" y2="170" stroke="var(--border)" stroke-width="1" />
+  <line x1="506" y1="193" x2="674" y2="193" stroke="var(--border)" stroke-width="1" />
+
+  <text x="500" y="95" font-size="13" text-anchor="end" fill="var(--text-muted)">a</text>
+  <text x="500" y="118" font-size="13" text-anchor="end" fill="var(--text-muted)">b</text>
+  <text x="500" y="141" font-size="13" text-anchor="end" fill="var(--text-muted)">c</text>
+  <text x="500" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">d</text>
+  <text x="500" y="187" font-size="13" text-anchor="end" fill="var(--text-muted)">e</text>
+  <text x="500" y="210" font-size="13" text-anchor="end" fill="var(--text-muted)">f</text>
+
+  <text x="520" y="95" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="548" y="95" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="576" y="95" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="604" y="95" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="632" y="95" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="660" y="95" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+
+  <text x="520" y="118" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="548" y="118" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="576" y="118" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="604" y="118" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="632" y="118" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="660" y="118" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+
+  <text x="520" y="141" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="548" y="141" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="576" y="141" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="604" y="141" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="632" y="141" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="660" y="141" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+
+  <text x="520" y="164" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="548" y="164" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="576" y="164" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="604" y="164" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="632" y="164" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="660" y="164" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+
+  <text x="520" y="187" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="548" y="187" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="576" y="187" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="604" y="187" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="632" y="187" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="660" y="187" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+
+  <text x="520" y="210" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="548" y="210" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="576" y="210" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="604" y="210" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="632" y="210" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="660" y="210" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+
+  <text x="480" y="248" font-size="13" fill="var(--text)">36 hücreden 16'sı dolu, simetrik</text>
+
+  <line x1="20" y1="268" x2="700" y2="268" stroke="var(--border)" stroke-width="1" />
+  <text x="20" y="292" font-size="13" fill="var(--text)">u ile v arasında kenar var mı? — matriste sabit zaman, listede deg(u) kadar tarama</text>
+  <text x="20" y="316" font-size="13" fill="var(--text)">u'nun komşularını gez — matriste |V| adım, listede deg(u) adım</text>
+</svg>

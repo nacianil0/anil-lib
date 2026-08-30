@@ -30,7 +30,7 @@
         { "order": 13, "title": "Heap ve Öncelik Kuyruğu", "status": "yayinda", "slug": "heap-ve-oncelik-kuyrugu" },
         { "order": 14, "title": "Hashing: Sabit Zamanın Bedeli", "status": "yayinda", "slug": "hashing-sabit-zamanin-bedeli" },
         { "order": 15, "title": "Sıralama Algoritmaları: Karşılaştırmalı ve Ötesi", "status": "yayinda", "slug": "siralama-algoritmalari-karsilastirmali-ve-otesi" },
-        { "order": 16, "title": "Graf Temsilleri, BFS ve DFS", "status": "planlandi" }
+        { "order": 16, "title": "Graf Temsilleri, BFS ve DFS", "status": "yayinda", "slug": "graf-temsilleri-bfs-ve-dfs" }
       ]
     },
     {
@@ -38,8 +38,8 @@
       "title": "Algoritma Analizi ve Tasarımı",
       "description": "Asimptotik analizden tasarım desenlerine ve hesaplamanın sınırlarına.",
       "articles": [
-        { "order": 17, "title": "Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma", "status": "planlandi" },
-        { "order": 18, "title": "Yinelemeler ve Master Teoremi", "status": "planlandi" },
+        { "order": 17, "title": "Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma", "status": "yayinda", "slug": "asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma" },
+        { "order": 18, "title": "Yinelemeler ve Master Teoremi", "status": "yayinda", "slug": "yinelemeler-ve-master-teoremi" },
         { "order": 19, "title": "Doğruluk: Döngü Değişmezleriyle İspat", "status": "planlandi" },
         { "order": 20, "title": "Böl ve Yönet", "status": "planlandi" },
         { "order": 21, "title": "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?", "status": "planlandi" },

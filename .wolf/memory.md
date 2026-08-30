@@ -1410,3 +1410,82 @@ entegre edildi ve doğrulandı. Tek oturum, yardımcı agent kullanılmadı.
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:56
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:57
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:13 | Created content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | — | ~6283 |
+| 15:15 | Created content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/graf-iki-temsil.svg | — | ~3465 |
+| 15:15 | Created content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md | — | ~5375 |
+| 15:15 | Created content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/bfs-dfs-agaclari.svg | — | ~1474 |
+| 15:16 | Created content/series/assets/kuantizasyon-modeli-kucultme-sanati/izgara-ve-aykiri-deger.svg | — | ~1517 |
+| 15:16 | Created content/series/assets/kuantizasyon-modeli-kucultme-sanati/bit-genisligi-ve-basari.svg | — | ~536 |
+| 15:17 | Created content/series/assets/kuantizasyon-modeli-kucultme-sanati/uc-kalem.svg | — | ~607 |
+| 15:20 | Created content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | — | ~5095 |
+| 15:21 | Created content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | — | ~4502 |
+| 15:21 | Created content/series-boun/assets/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma/o-omega-theta.svg | — | ~483 |
+| 15:22 | Created content/series-boun/assets/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma/buyume-siniflari-ve-kesisim.svg | — | ~908 |
+| 15:22 | Created content/series/assets/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim/sabit-ve-surekli-yiginlama.svg | — | ~1013 |
+| 15:22 | Created content/series/assets/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim/on-dolum-catismasi.svg | — | ~1028 |
+| 15:22 | Created content/series/assets/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim/spekulatif-uretim.svg | — | ~1226 |
+| 15:23 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | 3→5 lines | ~247 |
+| 15:23 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | 3→5 lines | ~323 |
+| 15:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | 10→14 lines | ~822 |
+| 15:28 | Created content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | — | ~5684 |
+| 15:28 | Created content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | — | ~4014 |
+| 15:28 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | 1→5 lines | ~269 |
+| 15:28 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | 5→9 lines | ~478 |
+| 15:29 | Created content/series-boun/assets/yinelemeler-ve-master-teoremi/ozyineleme-agaci.svg | — | ~1542 |
+| 15:29 | Created content/series-boun/assets/yinelemeler-ve-master-teoremi/master-teoremi-uc-durum.svg | — | ~760 |
+| 15:30 | Created content/series/assets/embeddinglerin-donusu-anlamsal-arama/capraz-ve-ikili-kodlayici.svg | — | ~810 |
+| 15:30 | Created content/series/assets/embeddinglerin-donusu-anlamsal-arama/ortak-uzay.svg | — | ~521 |
+| 15:30 | Created content/series/assets/embeddinglerin-donusu-anlamsal-arama/limit-bulma-oranlari.svg | — | ~723 |
+| 15:30 | Edited content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | expanded (+16 lines) | ~614 |
+| 15:31 | Edited content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | 7→8 lines | ~154 |
+| 15:32 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | modified farkl() | ~681 |
+| 15:32 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | 1→3 lines | ~176 |
+| 15:32 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | 1→3 lines | ~104 |
+| 15:35 | Created content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | — | ~3416 |
+| 15:36 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→3 lines | ~207 |
+| 15:36 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→5 lines | ~302 |
+| 15:37 | Created content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/uretim-maskesi.svg | — | ~995 |
+| 15:37 | Created content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/yerel-karar-kuresel-sonuc.svg | — | ~832 |
+| 15:37 | Created content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/sema-sirasi.svg | — | ~545 |
+| 15:38 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→5 lines | ~353 |
+| 15:39 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | expanded (+10 lines) | ~415 |
+| 15:39 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→5 lines | ~260 |
+| 15:39 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/arastirma-10.md | — | ~4479 |
+| 15:40 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→3 lines | ~168 |
+| 15:40 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→3 lines | ~136 |
+| 15:40 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→3 lines | ~131 |
+| 15:44 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/upd_ledger.py | — | ~2601 |
+| 15:48 | Created docs/seri-boun/HANDOFF.md | — | ~6663 |
+| 15:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/wolf_update.py | — | ~1432 |
+| 15:50 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~16 |
+| 15:53 | Session end: 48 writes across 29 files (graf-temsilleri-bfs-ve-dfs.md, graf-iki-temsil.svg, kuantizasyon-modeli-kucultme-sanati.md, bfs-dfs-agaclari.svg, izgara-ve-aykiri-deger.svg) | 8 reads | ~79401 tok |
+| 16:10 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/627b540f-da13-4dd2-a8b5-be70b0c01ea5/scratchpad/b6/pass5.py | — | ~4766 |
+| 16:13 | Created docs/seri/HANDOFF.md | — | ~4429 |
+| 16:14 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/627b540f-da13-4dd2-a8b5-be70b0c01ea5/scratchpad/b6/wolf.py | — | ~2154 |
+| 16:20 | Batch 6 tamamlandi: makale 27-30 yazildi, 12 SVG uretildi, katalog+roadmap entegre edildi, HANDOFF/YOL-HARITASI +1 fazi guncellendi | docs/seri/*, content/series/* | 259 test + typecheck + build(73 sayfa) + 30 rota 200 + uc temada render dogrulamasi gecti | ~— |
+| 16:15 | Session end: 51 writes across 31 files (graf-temsilleri-bfs-ve-dfs.md, graf-iki-temsil.svg, kuantizasyon-modeli-kucultme-sanati.md, bfs-dfs-agaclari.svg, izgara-ve-aykiri-deger.svg) | 8 reads | ~91066 tok |
+
+## Session: 2026-08-30 19:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 19:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 19:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

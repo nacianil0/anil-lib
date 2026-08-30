@@ -1,0 +1,29 @@
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Kuantizasyon üç ayrı kaleme uygulanır</text>
+
+  <rect x="16" y="46" width="216" height="60" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="124" y="82" font-size="13" text-anchor="middle" fill="var(--cool)">ağırlıklar</text>
+
+  <rect x="252" y="46" width="216" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="360" y="82" font-size="13" text-anchor="middle" fill="var(--accent)">aktivasyonlar</text>
+
+  <rect x="488" y="46" width="216" height="60" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="596" y="82" font-size="13" text-anchor="middle" fill="var(--text)">anahtar-değer önbelleği</text>
+
+  <text x="20" y="132" font-size="13" text-anchor="start" fill="var(--text)">kazanç: taşınan bayt azalır</text>
+  <text x="20" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">uyarı: çarpma 16 bitte kalır</text>
+  <text x="20" y="176" font-size="13" text-anchor="start" fill="var(--text-faint)">en olgun yol</text>
+
+  <text x="256" y="132" font-size="13" text-anchor="start" fill="var(--text)">kazanç: tamsayı çarpımı</text>
+  <text x="256" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">koşul: ağırlıkla birlikte</text>
+  <text x="256" y="176" font-size="13" text-anchor="start" fill="var(--text-faint)">aykırı değerler burada</text>
+
+  <text x="492" y="132" font-size="13" text-anchor="start" fill="var(--text)">kazanç: kullanıcı başına yer</text>
+  <text x="492" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">sonuç: yığın büyüyebilir</text>
+  <text x="492" y="176" font-size="13" text-anchor="start" fill="var(--text-faint)">uzun sohbette belirleyici</text>
+
+  <line x1="16" y1="200" x2="704" y2="200" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="224" font-size="13" text-anchor="start" fill="var(--text-muted)">üçü ayrı ayrı ilan edilir; "dört bitlik model" çoğu zaman yalnızca ağırlıkları kasteder</text>
+  <text x="16" y="248" font-size="13" text-anchor="start" fill="var(--text-faint)">bellek kazancıyla hız kazancı farklı kalemlerden gelir</text>
+</svg>

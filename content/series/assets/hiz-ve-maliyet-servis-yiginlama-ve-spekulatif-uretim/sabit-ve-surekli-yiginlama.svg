@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı dört istek, iki çizelgeleme düzeni</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--text)">sabit yığın — yığın bitene kadar ne çıkış ne giriş var</text>
+
+  <text x="16" y="74" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 1</text>
+  <rect x="120" y="62" width="130" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="250" y="62" width="220" height="14" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="360" y="73" font-size="13" text-anchor="middle" fill="var(--text-faint)">boşta</text>
+
+  <text x="16" y="94" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 2</text>
+  <rect x="120" y="82" width="350" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+
+  <text x="16" y="114" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 3</text>
+  <rect x="120" y="102" width="80" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="200" y="102" width="270" height="14" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="335" y="113" font-size="13" text-anchor="middle" fill="var(--text-faint)">boşta</text>
+
+  <text x="16" y="134" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 4</text>
+  <rect x="120" y="122" width="230" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="350" y="122" width="120" height="14" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="410" y="133" font-size="13" text-anchor="middle" fill="var(--text-faint)">boşta</text>
+
+  <text x="16" y="158" font-size="13" text-anchor="start" fill="var(--text-muted)">yeni istek</text>
+  <rect x="120" y="146" width="350" height="16" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="295" y="158" font-size="13" text-anchor="middle" fill="var(--text-faint)">kuyrukta bekler</text>
+  <rect x="470" y="146" width="130" height="16" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+
+  <line x1="16" y1="180" x2="704" y2="180" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="204" font-size="13" text-anchor="start" fill="var(--text)">sürekli yığınlama — çizelgeleme kararı her yinelemede verilir</text>
+
+  <text x="16" y="226" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 1</text>
+  <rect x="120" y="214" width="130" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="250" y="214" width="140" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+
+  <text x="16" y="246" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 2</text>
+  <rect x="120" y="234" width="350" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+
+  <text x="16" y="266" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 3</text>
+  <rect x="120" y="254" width="80" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="200" y="254" width="140" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="340" y="254" width="130" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+
+  <text x="16" y="286" font-size="13" text-anchor="start" fill="var(--text-muted)">istek 4</text>
+  <rect x="120" y="274" width="230" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="350" y="274" width="120" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+
+  <text x="120" y="310" font-size="13" text-anchor="start" fill="var(--text-muted)">zaman →</text>
+  <text x="16" y="332" font-size="13" text-anchor="start" fill="var(--text-faint)">boş kalan hücreler yeni isteklerle dolar; biten istek beklemeden çıkar</text>
+</svg>

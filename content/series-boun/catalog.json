@@ -303,6 +303,67 @@
       "path": "content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
+    },
+    {
+      "articleId": "article_5316c1ca-05cf-4852-82ac-504f751fdbe4",
+      "title": "Graf Temsilleri, BFS ve DFS",
+      "slug": "graf-temsilleri-bfs-ve-dfs",
+      "category": "data-structures",
+      "level": "advanced",
+      "readingOrder": 16,
+      "summary": "Faz B'nin kapanışı: grafın komşuluk listesi ve komşuluk matrisi olarak saklanması ve iki temsilin işlem başına maliyet tablosu; kuyrukla yürüyen genişlik öncelikli aramanın katman katman doğruluk ispatı ve en kısa yollar ağacı; yığınla ya da özyinelemeyle yürüyen derinlik öncelikli arama; bağlı bileşenlerin denklik bağıntısı teoremiyle bağı; yönlü döngüsüz grafta ters bitiş sırasının topolojik sıralama vermesi ve döngü tespiti.",
+      "tags": [
+        "graf",
+        "bfs",
+        "dfs",
+        "topolojik-siralama",
+        "bagli-bilesen"
+      ],
+      "contentHash": "sha256:e0af275b69cb6e6e04651805390fb971e6d1b4b85dc369ca6a826452014101e3",
+      "path": "content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
+    },
+    {
+      "articleId": "article_431a796e-732b-4c24-98e9-4c4a966ca75f",
+      "title": "Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma",
+      "slug": "asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 17,
+      "summary": "Faz C'yi açan makale, veri yapıları fazının biriktirdiği asimptotik borcu ödüyor: Big-O'nun niceleyicili formal tanımı ve niceleyici sırasının neden hayati olduğu, tanımdan yürüyen bir olumlu ve bir olumsuz ispat, Ω ile Θ'nın tanımları ve eşik değerinin anlamı, limit testleri ile küçük o ve küçük omega, karar ağacı argümanındaki yükseklik adımının ispatı ve log₂(n!) = Θ(n log n) sonucu, sabitlerin gizlediği kesişim noktaları ve mülakatta en sık yapılan beş asimptotik hata.",
+      "tags": [
+        "asimptotik-analiz",
+        "big-o",
+        "theta",
+        "omega",
+        "alt-sinir",
+        "karar-agaci"
+      ],
+      "contentHash": "sha256:1e7cfb0e4bd89a05dbb95aebf103aabadc1f827c41d9ce6fd79157eed685d407",
+      "path": "content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
+    },
+    {
+      "articleId": "article_b66ec8dc-ab87-4a3e-a513-10b6e7835522",
+      "title": "Yinelemeler ve Master Teoremi",
+      "slug": "yinelemeler-ve-master-teoremi",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 18,
+      "summary": "Özyinelemeli algoritmaların maliyetini veren yineleme bağıntılarını çözmenin üç yolu: tahmin edip tümevarımla doğrulama ve üst sınır tuzağı, bağıntıyı açarak deseni yakalama, özyineleme ağacıyla seviye seviye toplama. Ardından bu işlerin çoğunu tek hamlede yapan Master Teoreminin üç durumu, teoremin uygulanamadığı yineleme biçimleri ve alt problem boyutunun ek işten neden daha belirleyici olduğu.",
+      "tags": [
+        "yineleme",
+        "master-teoremi",
+        "ozyineleme-agaci",
+        "bol-ve-yonet",
+        "analiz"
+      ],
+      "contentHash": "sha256:b125debc193827650f5b3642da66ec82cc1d679ace894b526b11c56c6a9f5d80",
+      "path": "content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
     }
   ]
 }

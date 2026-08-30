@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-08-30 · Yayında: 15 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4) · Sıradaki: 16
+Son güncelleme: 2026-08-30 · Yayında: 18 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5) · Sıradaki: 19
 
 ## Serinin tezi
 
@@ -50,12 +50,12 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 13. **Heap ve Öncelik Kuyruğu** — *yayında* · öncelik kuyruğu arayüzü ve ilkel gerçekleştirimlerin sınırı (sırasız dizi → seçmeli, sıralı dizi → eklemeli sıralama), heap özelliğinin arama ağacı değişmezini bilinçli zayıflatması, kökün en küçük olduğunun derinlik farkı üzerinden tümevarımla ispatı, tam ikili ağacın dizi temsili ve indis aritmetiği, yukarı/aşağı sızdırma, derinlikler toplamı ile yükseklikler toplamı karşılaştırmasından çıkan doğrusal build-heap, yerinde ve kararsız heapsort.
 14. **Hashing: Sabit Zamanın Bedeli** — *yayında* · karşılaştırma modeli ve karar ağacıyla logaritmik arama alt sınırı, dallanma çarpanını kırmak için doğrudan erişim dizisi ve alan bedeli, güvercin yuvasıyla çakışmanın kaçınılmazlığı, zincirleme ile doğrusal deneme ve öbeklenme, yük faktörünün iki yöntemde farklı okunuşu ve sayısal maliyet tablosu, düzgün dağılım varsayımı, evrensel hash ailesiyle beklentinin girdiden bağımsızlaştırılması, yeniden boyutlandırmanın amortize maliyeti.
 15. **Sıralama Algoritmaları: Karşılaştırmalı ve Ötesi** — *yayında* · yerinde çalışma ile kararlılığın tanımı, iki karesel tabanın öncelik kuyruğu sıralamasıyla bağı, birleştirmeli sıralamanın özyineleme ağacı ve ek bellek bedeli, hızlı sıralamanın ortalama/en kötü ayrımı ve rastgeleleştirme, heapsort'un garanti + yerinde konumu, beş sütunlu karşılaştırma tablosu, karar ağacı argümanıyla n log n alt sınırının sezgisi (formal hâli 24'te), sayma ve radix sıralamalarının modeli terk etmesi.
-16. **Graf Temsilleri, BFS ve DFS** — komşuluk listesi/matrisi; dolaşmaların maliyeti; topolojik sıralama, bağlı bileşenler.
+16. **Graf Temsilleri, BFS ve DFS** — *yayında* · graf arayüzünün "u'nun komşularını ver" işlemine indirgenmesi, komşuluk listesi ile matrisin beş satırlık maliyet tablosu ve yoğunluğa göre karar (10⁶ düğüm / 10⁷ kenar hesabı), el sıkışma lemmasından çıkan Θ(|V| + |E|) yer ve graf algoritmalarında "doğrusal zaman"ın tanımı, BFS'in katman kümeleriyle tanımı ve katman üzerinde tümevarımla doğruluğu, en kısa yollar ağacının ebeveyn işaretçileriyle O(|V|) yerde tutulması, DFS'in özyinelemeli tanımı ve ürettiği ağacın en kısa yol vermemesi (aynı grafta iki farklı ağaç), tam dolaşmayla bağlı bileşenlerin denklik bağıntısı teoremine bağlanması, DAG ve topolojik sıralama tanımı, ters bitiş sırasının iki durumlu ispatı ve döngü tespiti.
 
 ### Faz C — Algoritma Analizi ve Tasarımı (17–25) · CMPE300 ekseni
 
-17. **Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma** — O/Ω/Θ formal tanımları, limit testleri; 9'un formal yeniden kurulumu.
-18. **Yinelemeler ve Master Teoremi** — yerine koyma, özyineleme ağacı, Master Teoremi; mergesort/ikili arama analizleri.
+17. **Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma** — *yayında* · Big-O'nun (c, n₀) tanımı ve niceleyici sırasının tanımı totolojiye çevirmesi, tanımdan yürüyen bir olumlu (3n² + 100n + 10 = O(n²), c = 14 / n₀ = 10) ve bir olumsuz (n² ≠ O(n)) ispat, Ω ile Θ'nın tanımları ve eşiğin solunda hiçbir iddia bulunmaması, limit testleri ile küçük o / küçük omega ve limitin var olmayabileceği uyarısı, karar ağacı yükseklik lemmasının ispatı ve log₂(n!) = Θ(n log n) sonucu, 1000n–n² ile log₂ n–n^0,1 kesişimleri, beş klasik hata ("en az O(n²)", üstel yanılgı, O(1) toplama, eşitlik yanılgısı, O ile en kötü durumun karıştırılması).
+18. **Yinelemeler ve Master Teoremi** — *yayında* · tahmin-et-ve-tümevarımla-doğrula (Hanoi 2ⁿ − 1) ve üst sınır tuzağı ile hipotez güçlendirme, açarak çözme (birleştirmeli sıralamanın n log₂ n − n + 1 kapalı ifadesi), özyineleme ağacında seviye toplamı / derinlik / yaprak sayısı ve a/bᵈ oranından çıkan üç rejim, Master Teoreminin üç durumu ve düzenlilik koşulu, beş yinelemelik uygulama tablosu, teoremin uygulanamadığı üç durum (toplamsal küçülme, eşit olmayan alt problemler, polinomsal boşluk → Akra-Bazzi), taban koşullarının ve yuvarlamaların önemsizliği, alt problem boyutunun ek işten daha belirleyici olması.
 19. **Doğruluk: Döngü Değişmezleriyle İspat** — başlatma/koruma/sonuçlanma; insertion sort ve ikili aramanın doğruluğu.
 20. **Böl ve Yönet** — tasarım deseni olarak; max-subarray/karpma örnekleri; ne zaman işe yarar.
 21. **Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?** — greedy-choice + optimal altyapı; değişim argümanı; etkinlik seçimi, Huffman.
@@ -119,8 +119,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 14 ← 6 (güvercin yuvası: çakışma kaçınılmazdır), 11 (ikili ağacın yükseklik alt sınırı — karar ağacı argümanının aynısı), 9 (RAM modelinde indisle erişimin sabit sayılması; en kötü ile ortalama durum ayrımı), 8 (mod aritmetiği bir grup yapısıdır), 10 (zincirleme bir bağlı listedir, açık adresleme bir dizidir; yeniden boyutlandırmanın amortize muhasebesi)
 - 15 ← 13 (heapsort için heap ve öncelik kuyruğu sıralaması kalıbı), 14 (karar ağacı argümanı; burada n! yaprakla tekrarlanır), 9 (büyüme sınıfları ve ortalama durumun dağılım varsayımı), 4 (birleştirmenin tümevarımlı doğruluğu ve özyineleme ağacı), 10 (yerinde çalışma ve ek bellek maliyeti)
 
-**Batch 5 taslak satırları (Faz B'nin kapanışı; batch büyüklüğü run'da çözülür):**
-- 16 ← 7 (graf ve ağaç tanımları, el sıkışma lemması, bağlılığın denklik bağıntısı olması), 10 (kuyruk ile yığının arayüz olarak tanımı), 5 (kısmi sıra: topolojik sıralamanın zemini), 9 (temsil seçiminin maliyet tablosu)
+**Batch 5 (yayımlanmış, artık bağlayıcı):**
+- 16 ← 7 (graf ve ağaç tanımları, el sıkışma lemması, bağlılığın denklik bağıntısı olması), 10 (kuyruk ile yığının arayüz olarak tanımı ve arayüz ↔ temsil ayrımı), 5 (kısmi sıra ve denklik bağıntısının parçalanış teoremi), 9 (temsil seçiminin maliyet tablosu; "n nedir?" disiplini), 4 (katman üzerinde tümevarım)
+- 17 ← 9 (Big-O sezgisi ve açıkça bırakılan formal tanım borcu), 2 (niceleyici sırası: "bir c vardır ki her n için" kalıbı ve değilleme), 3 (çelişkiyle ispat: n² ≠ O(n)), 6 (n! ve büyüme sınıflarının somut sayıları), 14–15 (karar ağacı argümanlarının yükseklik adımı burada ispatlanır), 11 (ikili ağacın yaprak–yükseklik ilişkisi)
+- 18 ← 17 (O/Ω/Θ tanımları teoremin üç durumunu ayıran ölçüt olarak), 4 (tümevarım, güçlü tümevarım ve Hanoi bağıntısı), 15 (birleştirmeli sıralamanın T(n) = 2T(n/2) + Θ(n) bağıntısı ve özyineleme ağacı), 9 (özyineleme derinliği ve büyüme sınıfları), 11 (ikili aramanın T(n) = T(n/2) + Θ(1) bağıntısı)
+
+**Batch 6 taslak satırları (Faz C'nin gövdesi; batch büyüklüğü run'da çözülür):**
+- 19 ← 4 (tümevarımın döngü hâli), 2 (boş doğruluk: başlatma adımı), 15 (eklemeli sıralamanın doğruluğu), 11 (ikili aramanın değişmezi), 18 (özyinelemeli doğruluk ile döngü doğruluğunun karşılaştırılması)
+- 20 ← 18 (böl-yönet yinelemelerinin çözümü), 15 (birleştirmeli ve hızlı sıralama iki kanonik örnektir), 19 (birleştirme adımının doğruluğu), 4 (özyinelemeli tasarımın tümevarımla savunulması)
+- 21 ← 5 (kısmi sıra ve seçim sırası), 7 (ekstremal argüman ve kapsayan ağaç), 3 (karşı örnek disiplini: açgözlünün ne zaman çalışmadığı), 19 (değişmez koruyan seçim), 13 (Huffman için öncelik kuyruğu)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -341,51 +348,94 @@ boyunca aynı kalır.
 | sayma sıralaması | counting sort | 15 |
 | radix sıralaması | radix sort | 15 |
 | dış sıralama | external sort | 15 |
+| komşuluk listesi | adjacency list | 16 |
+| komşuluk matrisi | adjacency matrix | 16 |
+| seyrek graf / yoğun graf | sparse graph / dense graph | 16 |
+| genişlik öncelikli arama | breadth-first search (BFS) | 16 |
+| derinlik öncelikli arama | depth-first search (DFS) | 16 |
+| uzaklık | distance | 16 |
+| katman | level set | 16 |
+| en kısa yollar ağacı | shortest paths tree | 16 |
+| erişilebilirlik | reachability | 16 |
+| yönlü döngüsüz graf | directed acyclic graph (DAG) | 16 |
+| topolojik sıralama | topological order (sort) | 16 |
+| bitiş sırası | finishing order | 16 |
+| döngü tespiti | cycle detection | 16 |
+| güçlü bağlı bileşen | strongly connected component | 16 |
+| asimptotik gösterim | asymptotic notation | 17 |
+| eşik | threshold | 17 |
+| sıkı sınır | tight bound | 17 |
+| küçük o | little-o | 17 |
+| küçük omega | little-omega | 17 |
+| limit testi | limit test | 17 |
+| büyüme mertebesi | order of growth | 17 |
+| yineleme bağıntısı | recurrence (relation) | 18 |
+| kapalı biçim | closed form | 18 |
+| tahmin et ve doğrula | substitution method | 18 |
+| özyineleme ağacı | recursion tree | 18 |
+| Master Teoremi | Master Theorem | 18 |
+| düzenlilik koşulu | regularity condition | 18 |
+| böl ve yönet | divide and conquer | 15 (18'de İngilizcesiyle) |
+| alt problem | subproblem | 18 |
+| birleştirme adımı | merge step | 18 |
+| Akra-Bazzi formülü | Akra-Bazzi formula | 18 |
 
 ## Kavram-tekrar defteri
 
 Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktalar:
 
 - **Boş doğruluk (2)** → 19'da döngü değişmezlerinin başlatma adımında yeniden kullanılır.
-- **Niceleyici sırası (2)** → 17'de asimptotik tanımların "her ε için bir N vardır" kalıbında
-  formal olarak yeniden kurulur.
+- **Niceleyici sırası (2)** → **17'de ödendi**: Big-O tanımının "öyle bir c ve öyle bir n₀ vardır
+  ki her n ≥ n₀ için" kalıbı ve sıra ters çevrilirse tanımın totolojiye dönüşmesi. 19'da döngü
+  değişmezinin formal yazımında, 25'te P/NP tanımlarında yeniden kullanılır.
 - **Karşı örnek disiplini (3)** → 21'de açgözlü algoritmaların ne zaman çalışmadığını göstermede.
 - **Yapıcı olmayan ispat (3)** → 21 ve 25'te varlık argümanlarının algoritma vermemesi tartışmasında.
 - **Hash tablosu takip zinciri (1)** → **14'te üç halkasıyla birlikte ödendi** (ortalama vs en kötü
   durum → düşman girdi → sıralı işlemler için neden dengeli ağaç gerekir).
-- **Güçlü tümevarım ve parçalama adımı (4)** → 18'de böl-yönet yinelemelerinde ve 19'da döngü
-  değişmezlerinde; mergesort doğruluğu 4'te örnek olarak adıyla anıldı.
+- **Güçlü tümevarım ve parçalama adımı (4)** → **18'de ödendi**: yineleme çözümlerinin tümevarımla
+  doğrulanması ve üst sınır tuzağı (hipotezi güçlendirmeden tümevarımın tıkanması). 19'da döngü
+  değişmezlerinde devam eder; mergesort doğruluğu 4'te örnek olarak adıyla anılmıştı.
 - **Yapısal tümevarım (4)** → 7'de ağaç karakterizasyonlarında, 11–13'te ağaç/heap değişmezlerinde.
-- **Hanoi yinelemesi T(n) = 2T(n−1) + 1 (4)** → 18'de Master Teoremi öncesi ısınma örneği.
-- **Kısmi sıra ve topolojik sıralama (5)** → 16'da algoritmasıyla açılır; 5'teki bağımlılık grafı
-  örneği oraya köprüdür.
+- **Hanoi yinelemesi T(n) = 2T(n−1) + 1 (4)** → **18'de ödendi**: tahmin-et-ve-doğrula örneği
+  (Tₙ = 2ⁿ − 1, T₆₄ ≈ 1,8 × 10¹⁹), üst sınır tuzağı ve "toplamsal küçülme üstel çözüm verir"
+  kuralının kanonik örneği.
+- **Kısmi sıra ve topolojik sıralama (5)** → **16'da ödendi**: DAG tanımı, topolojik sıralamanın
+  ancak ve ancak DAG'da var olması, ters bitiş sırası algoritması ve sıralamanın tek olmaması
+  (kısmi sıranın tam sıraya genişletilmesi). 22'de DAG üzerinde dinamik programlamanın işlem
+  sırası, 28'de bağımlılıklı çizelgeleme olarak geri döner.
 - **Sayılabilirlik ve hesaplanamayan fonksiyonlar (5)** → 25'te durma problemi ve karar
   verilemezlik tartışmasının sayma zemini.
 - **Birebir olmayan hash fonksiyonu (5, 6)** → **14'te ödendi**: çakışma çözümü ve yük faktörü
   tartışmasının gerekçesi; 6'da güvercin yuvasıyla ispatlanmıştı.
-- **C(n, 2), 2ⁿ ve n! büyüklükleri (6)** → 9 ve 17'de karmaşıklık sınıflarının somut zemini;
-  **15'te n! yaprak sayısıyla alt sınır sezgisi kuruldu**, 24'te aynı argüman formalleşir.
+- **C(n, 2), 2ⁿ ve n! büyüklükleri (6)** → 9'da karmaşıklık sınıflarının somut zemini;
+  **15'te n! yaprak sayısıyla alt sınır sezgisi kuruldu**; **17'de log₂(n!) = Θ(n log n) ispatlandı**
+  (C(|V|, 2) ayrıca 16'da kenar sayısının üst sınırı olarak kullanıldı); 24'te aynı argüman genel
+  alt sınır kuramı olarak formalleşir.
 - **Doğum günü ilkesi (6)** → 36'da olasılık aracıyla; 6'da yalnızca etiketli ileri gönderme olarak
   geçti (kesinlik ile olasılık ayrımı).
-- **El sıkışma lemması (7)** → 16'da komşuluk listesinin toplam uzunluğunun 2·|E| olmasının
-  gerekçesi; 12–13'te ağaç/heap derece muhasebesinde.
+- **El sıkışma lemması (7)** → **16'da ödendi**: komşuluk listelerinin toplam uzunluğunun 2·|E|
+  olması, buradan Θ(|V| + |E|) yer ve BFS/DFS maliyet analizinin toplam adım sayısı; 12–13'te
+  ağaç/heap derece muhasebesinde de kullanılmıştı.
 - **Ağacın n − 1 kenarı (7)** → 11–13'te ağaç boyutu ve yükseklik tartışmalarında; 23'te MST'nin
   neden tam n − 1 kenar taşıdığının gerekçesi.
 - **Kapsayan ağaç (7)** → 23'te Kruskal ve Prim'in ürettiği nesne; 7'de yalnızca varlığı ispatlandı.
-- **Bağlılığın denklik bağıntısı olması (7)** → 16'da bağlı bileşenlerin BFS/DFS ile bulunması;
-  parçalanış teoremi (5) burada ikinci kez kullanıldı.
+- **Bağlılığın denklik bağıntısı olması (7)** → **16'da ödendi**: tam dolaşmanın her çalıştırması
+  bir bağlı bileşen verir ve doğruluk savunması, 5'in parçalanış teoreminin doğrudan uygulanmasıdır
+  — yeni teorem ispatlanmadı, eski teorem tanındı.
 - **Ekstremal argüman (7)** → 21'de açgözlü algoritmaların değişim argümanında, 24'te alt sınır
   ispatlarında; sayma ve tümevarımın yanına konan üçüncü ispat refleksi.
 - **Birleşme → paralel indirgeme (8)** → 24'te paralel algoritmalar; monoid, bölünebilir
   indirgemenin teknik adıdır.
 - **Mod aritmetiğinin grup yapısı (8)** → 14'te hash fonksiyonunun mod tabanlı kurulumunda.
 - **Boolean sadeleştirme (8)** → 37'de devre düzeyinde, 39'da sorgu yüklemi sadeleştirmesinde.
-- **Hasse diyagramı ve kısmi sıra (8)** → 16'da topolojik sıralamanın çizimi; DAG bir kısmi sıradır.
+- **Hasse diyagramı ve kısmi sıra (8)** → **16'da ödendi**: topolojik sıralama bölümü, 5'in kısmi
+  sırasını ve 8'in Hasse diyagramını DAG diliyle yeniden kurar.
 - **RAM modeli ve varsayımları (9)** → 12'de model **bilinçli olarak terk edildi** (dış bellek
   modeli ve blok sayımı); 34'te dosya sistemlerinde aynı model tekrar kullanılır ve 37'de bellek
   hiyerarşisi modelin dışarıda bıraktığı şeyi geri getirir.
 - **Büyüme sınıfları tablosu (9)** → **15'te sıralama algoritmalarının beş sütunlu
-  karşılaştırmasında ödendi**; 17'de aynı sınıflar formal tanımlarla yeniden kurulur.
+  karşılaştırmasında, 17'de ise büyüme merdiveni ve üç limit lemmasıyla ödendi** (nᵃ = o(nᵇ),
+  log n = o(nᵋ), nᵇ = o(aⁿ)).
 - **En kötü / ortalama durum ayrımı (9)** → **14'te hash tablosunun en kötü durum savunmasında ve
   15'te hızlı sıralamanın ortalama/en kötü ayrımında ödendi**; 24'te randomized quicksort
   beklentisinde ve 36'da dağılım varsayımının adlandırılmasında formalleşir.
@@ -395,36 +445,65 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
   doğrusal build-heap amortize bir sonuç DEĞİLDİR — aynı işin daha sıkı sayılmasıdır; bu ayrım
   16 ve sonrasında korunmalıdır.
 - **Arayüz ↔ temsil ayrımı (10)** → **13'te öncelik kuyruğu arayüzü heap temsilinden ayrıldı**;
-  16'da komşuluk listesi ile matrisin aynı graf arayüzünü farklı fiyata tutmasında tekrar kullanılır.
+  **16'da ödendi**: graf arayüzü "u'nun komşularını ver" işlemine indirgendi ve komşuluk listesi ile
+  matris aynı sözü farklı fiyata tutan iki temsil olarak karşılaştırıldı.
 - **Dizinin indis aritmetiği (10)** → **13'te tam ikili ağacın dizi temsilinde ödendi** (sol 2i + 1,
   sağ 2i + 2, ebeveyn ⌊(i − 1)/2⌋); **14'te açık adreslemede** ikinci kez kullanıldı.
-- **Yığın ve kuyruk (10)** → 16'da BFS kuyrukla, DFS yığınla yazılır; 27–28'de çağrı yığını ve
+- **Yığın ve kuyruk (10)** → **16'da ödendi**: BFS kuyrukla katman katman, DFS yığınla (ya da
+  özyinelemeyle) derine yürür ve iki arayüz iki algoritmaya dönüşür; 27–28'de çağrı yığını ve
   zamanlayıcı kuyruğu aynı yapıların işletim sistemi karşılıklarıdır.
 - **BST değişmezi ve sıralı dolaşma (11)** → 12'de dengeleme bu değişmezin üstüne kurulur; 19'da
   "değişmezi koruyan yerel işlem" kalıbı döngü değişmezleriyle formalleşir; 39'da veritabanı
   indeksinin neden sıralı bir yapı olduğu tartışmasında.
 - **Yükseklik ile maliyet ilişkisi (11)** → **13'te heap yüksekliği ⌊log₂ n⌋ ve build-heap
-  analizinde ödendi**; 18'de özyineleme ağacının derinliğinde tekrar kullanılır.
+  analizinde, 18'de özyineleme ağacının derinliği ile yaprak sayısı ayrımında ödendi**
+  (derinlik log_b n, yaprak sayısı n^(log_b a) — ikisini karıştırmak sık yapılan hatadır).
 - **En seyrek ağacı sayarak alt sınır kurma (12)** → **14'te karar ağacı argümanının arama hâli,
-  15'te n! yapraklı sıralama hâli sezgisel olarak kuruldu**; 24'te ikisi de formalleşir.
+  15'te n! yapraklı sıralama hâli sezgisel olarak kuruldu; 17'de "yüksekliği h olan bir ikili ağacın
+  en fazla 2ʰ yaprağı vardır" lemması yapısal tümevarımla ispatlandı**; 24'te genel kuram
+  formalleşir.
 - **Dış bellek modeli ve blok sayımı (12)** → 34'te dosya sistemleri ve ayırma yöntemlerinde;
   37'de bellek hiyerarşisinde; 39'da indeks = B-ağacı geri çağrımında.
 - **Özyineleme derinliği = bellek maliyeti (9)** → 11, **15 (hızlı sıralamanın yığın maliyeti)** ve
   20'de özyinelemeli çözümlerin yer karmaşıklığı savunmasında.
-- **Öncelik kuyruğu (13)** → 16'da BFS'in ağırlıksız hâliyle karşılaştırılmasında, **23'te Dijkstra
-  ve Prim'in çekirdek yapısı** olarak, 28'de öncelikli CPU zamanlamasında, 34'te kesikli olay
-  benzetiminde. 13, `azalt_anahtar` işlemini bilinçli olarak dışarıda bıraktı; graf algoritmaları
+- **Öncelik kuyruğu (13)** → **16'da köprü kuruldu**: BFS'in en kısa yol vermesi kenarların
+  ağırlıksız olmasına bağlıdır, ağırlıklı hâl öncelik kuyruğu ister. **23'te Dijkstra ve Prim'in
+  çekirdek yapısı** olarak, 28'de öncelikli CPU zamanlamasında, 34'te kesikli olay benzetiminde
+  açılır. 13, `azalt_anahtar` işlemini bilinçli olarak dışarıda bıraktı; graf algoritmaları
   makalesinde açılması gerekir.
 - **Dallanma çarpanı takası (12, 13, 14)** → 12'de B-ağacı, 13'te d-yollu heap, 14'te doğrudan
   erişim dizisi; üçü aynı fikrin farklı yüzüdür ve 24'te alt sınır ispatının "sabit dallanma"
   varsayımı olarak geri döner.
 - **Karar ağacı argümanı (14, 15)** → 14'te arama için (≥ n + 1 yaprak), 15'te sıralama için
-  (≥ n! yaprak) sezgisel olarak kuruldu; **24'te formal alt sınır kuramı olarak ödenmelidir.**
-  Her iki makale de "bu bir model sonucudur" uyarısını taşıyor.
+  (≥ n! yaprak) sezgisel olarak kuruldu; **17'de argümanın asimptotik adımı ödendi** (yükseklik
+  lemması ve log₂(n!) = Θ(n log n)); **kuramın kendisi 24'te formalleşmelidir.** Üç makale de
+  "bu bir model sonucudur" uyarısını taşıyor.
 - **Rastgeleleştirmeyle beklentiyi girdiden bağımsızlaştırma (14, 15)** → 14'te evrensel hash
   ailesi, 15'te hızlı sıralamanın rastgele karıştırması; **24'te randomized quicksort beklentisi
   ve 36'da olasılık aracı** ile formalleşir.
 - **Kararlılık (15)** → 15'te radix sıralaması için zorunlu koşul olarak kullanıldı; 39'da
   veritabanı sıralamalarında ve çok anahtarlı sorgu sonuçlarında geri çağrılabilir.
 - **Sayma sıralamasının zincirleri = hash zincirleri (14, 15)** → aynı yapı iki farklı amaçla
-  kullanıldı; 17–18'de model seçiminin maliyet üzerindeki etkisi tartışılırken örnek olarak durur.
+  kullanıldı; 17 ve 18'de kullanılmadı, **20 (böl ve yönet) ve 24'te** model seçiminin maliyet
+  üzerindeki etkisi tartışılırken örnek olarak durur.
+
+Batch 5 ile açılan yeni pinler:
+
+- **Graf için doğrusal zaman Θ(|V| + |E|) (16)** → 23'te MST ve en kısa yol algoritmalarının maliyet
+  dili; 25'te indirgemelerin maliyet muhasebesinde.
+- **BFS'in ağırlıksız grafta en kısa yol vermesi (16)** → 23'te Dijkstra bunun ağırlıklı
+  genellemesi olarak sunulur; kuyruğun yerini öncelik kuyruğu alır.
+- **DFS'in bitiş sırası ve ters bitiş sırası (16)** → 22'de DAG üzerinde dinamik programlamanın
+  işlem sırası; 25'te güçlü bağlı bileşenler ve indirgeme grafları.
+- **Niceleyicili tanım kalıbı (17)** → 19'da döngü değişmezinin formal yazımında, 25'te P ve NP
+  tanımlarında aynı kalıp kullanılır.
+- **Eşik ve kesişim noktası: asimptotik ile pratik ayrımı (17)** → 20'de böl-yönetin küçük
+  girdilerde tabana devretmesi; 37'de bellek hiyerarşisinin sabitleri büyütmesi.
+- **log₂(n!) = Θ(n log n) (17)** → 24'te karşılaştırmalı sıralama alt sınırının çekirdek adımı;
+  orada karar ağacı kuramıyla birleşir.
+- **Özyineleme ağacı (18)** → 20'de böl-yönet tasarımının maliyet aracı; 22'de aynı ağacın tekrar
+  eden düğümleri örtüşen altproblem kavramını doğurur.
+- **Master Teoremi ve üç durumu (18)** → 20 ve 23'te doğrudan kullanılır; 24'te teoremin
+  uygulanmadığı eşit olmayan alt problemli bağıntılar (medyan bulma) geri döner.
+- **Tahmin et ve doğrula, hipotezi güçlendirme (18)** → 19'da döngü değişmezini güçlendirmek aynı
+  reflekstir; 21 ve 22'de optimal altyapı iddialarının ispatında.

@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Sorgu ve belgeler aynı haritada</text>
+
+  <rect x="60" y="50" width="620" height="200" fill="none" stroke="var(--border)" stroke-width="1"/>
+
+  <circle cx="460" cy="130" r="78" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <circle cx="150" cy="120" r="5" fill="var(--cool)"/>
+  <text x="150" y="108" font-size="13" text-anchor="middle" fill="var(--text-muted)">vergi hukuku</text>
+
+  <circle cx="230" cy="190" r="5" fill="var(--cool)"/>
+  <text x="230" y="212" font-size="13" text-anchor="middle" fill="var(--text-muted)">ortak kelime var, konu uzak</text>
+
+  <circle cx="430" cy="100" r="5" fill="var(--cool)"/>
+  <text x="430" y="88" font-size="13" text-anchor="middle" fill="var(--text)">sinema tarihi</text>
+
+  <circle cx="500" cy="145" r="5" fill="var(--cool)"/>
+  <text x="514" y="150" font-size="13" text-anchor="start" fill="var(--text)">yönetmenler</text>
+
+  <circle cx="515" cy="175" r="5" fill="var(--cool)"/>
+  <text x="530" y="192" font-size="13" text-anchor="start" fill="var(--text)">senaryo yazımı</text>
+
+  <circle cx="620" cy="90" r="5" fill="var(--cool)"/>
+  <text x="620" y="78" font-size="13" text-anchor="middle" fill="var(--text-muted)">yazılım mimarisi</text>
+
+  <rect x="454" y="124" width="12" height="12" fill="var(--accent)"/>
+  <line x1="404" y1="130" x2="450" y2="130" stroke="var(--accent)" stroke-width="1"/>
+  <text x="400" y="135" font-size="13" text-anchor="end" fill="var(--accent)">sorgu</text>
+
+  <text x="16" y="278" font-size="13" text-anchor="start" fill="var(--text-muted)">belgeler haritaya sorgudan önce yerleşir; sorgu geldiğinde bu sabit haritaya düşer</text>
+  <text x="16" y="302" font-size="13" text-anchor="start" fill="var(--text-faint)">en yakın birkaç belge getirilir — ortak kelime değil, konum belirleyicidir</text>
+</svg>

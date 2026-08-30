@@ -6,10 +6,10 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-08-30** (Batch 4 run'ında kapsam kararını taşıyan CMPE250 sayfası ve bu
-batch'in akademik kaynakları yeniden doğrulandı — §9). Kapsamı etkilemeyen resmî sayfaların son
-tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını etkileyen sayfaları
-yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum görevi).
+Erişim tarihi: **2026-08-30** (Batch 5 run'ında kapsam kararını taşıyan **CMPE250 ve CMPE300**
+sayfaları ile bu batch'in akademik kaynakları yeniden doğrulandı — §10). Kapsamı etkilemeyen resmî
+sayfaların son tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını etkileyen
+sayfaları yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum görevi).
 
 ## 1. Resmî gerçekler (doğrudan sayfadan)
 
@@ -51,6 +51,10 @@ URL kökü: <https://cmpe.bogazici.edu.tr/courses/>
 - **CMPE300** (<https://cmpe.bogazici.edu.tr/courses/cmpe300/>): algoritma analizi; karşılaştırmalı,
   özyinelemeli, böl-yönet, dinamik, açgözlü, sayısal ve graf algoritmaları; **lower bound theory**;
   paralel ve olasılıksal algoritmalar; Master Teoremi. Önkoşul: CMPE250.
+  **Kesinlik notu (2026-08-30):** bu özet, sayfanın *Catalog Description* ve *Course Learning
+  Outcomes* bölümlerini birleştirir. İkisinin birebir metni ve hangi ifadenin hangi bölümde geçtiği
+  §10'dadır; "complexity analysis", "lower bound theory" ve "master theorem" ifadeleri **ders
+  çıktılarında** geçer, katalog tanımında değil.
 - **CMPE322** (<https://cmpe.bogazici.edu.tr/courses/cmpe322/>): işletim sistemlerinin evrimi,
   multiprogramming/time-sharing, eşzamanlı süreçler, CPU zamanlama, senkronizasyon, kritik kesim;
   kilitlenme (önleme/kaçınma/tespit/kurtarma), bellek yönetimi (takas, sayfalama, bölütleme,
@@ -487,3 +491,206 @@ Batch 3'te kaydedilmemiş olan şu bölüm numaraları da doğrulandı:
   kararlılığın neden zorunlu olduğunun somut kanıtı. (6.006 ders notundaki aynı örneğin PDF'ten
   çıkarılan ara adımı tutarsız görünüyor; bu yüzden iz kaynaktan alınmadı, burada baştan
   hesaplandı.)
+
+## 10. Batch 5 üretim run'ında doğrulanan kaynaklar (2026-08-30)
+
+Bu batch iki fazı birden ilgilendirdiği için **iki resmî sayfa** yeniden okundu.
+
+**CMPE250** (<https://cmpe.bogazici.edu.tr/courses/cmpe250/>) katalog tanımı §1, §7, §8 ve §9'daki
+alıntılarla birebir aynıdır ("Graphs. Advanced Sorting. Hashing. Heap Structures. Search
+Structures. Complexity. Parallel algorithms. File organization."; ders adı *Data Structures and
+Algorithms*, 4 kredi / 6 ECTS, önkoşul CMPE160, güz dönemi, 3 saat ders + 2 saat PS). Makale 16'nın
+resmî dayanağı bu tanımdaki **"Graphs"** başlığıdır. Böylece Faz B, katalog tanımındaki sekiz
+başlığın altısını doğrudan karşılamış oldu (kalan ikisi "Parallel algorithms" — Faz C'nin 24.
+makalesi — ve zaten karşılanmış olan "Complexity").
+
+**CMPE300** (<https://cmpe.bogazici.edu.tr/courses/cmpe300/>) HANDOFF'un istediği gibi Faz C
+açılmadan önce yeniden doğrulandı (son doğrulama 2026-08-29 idi). Sayfa iki ayrı bölüm taşıyor ve
+bu batch'te **ikisinin ayrımı netleştirildi** — §1'deki özet ikisini birleştirerek aktarıyordu:
+
+- *Course Information*: ders adı **Analysis of Algorithms**, güz dönemi, Lecture 3 / PS 0 / Labs 2,
+  **3 kredi / 5 ECTS**, önkoşul CMPE250, güncel öğretim üyesi Tunga Güngör.
+- *Catalog Description* (birebir): "Analysis of computer science algorithms: Sorting, searching,
+  paging and parallelism. Analysis of mathematical algorithms: games and puzzles, network
+  algorithms, and probabilistic algorithms."
+- *Course Learning Outcomes* (birebir, ilgili kısım): "The theory of complexity analysis, basic
+  techniques that are commonly used in analyzing the performance, basic classes of algorithms
+  (comparison-based, recursive, divide-and-conquer, dynamic, greedy, numerical, graph), and lower
+  bound theory will be covered. Parallel architectures and parallel algorithms will be studied in
+  detail. Meanwhile, mathematical tools like interpolation, master theorem, etc. will be
+  introduced. The last part of the course will be the study of the topic of probabilistic
+  algorithms, which is a rapidly growing area of research."
+
+**Pratik sonucu:** Faz C'nin resmî dayanağı olan "complexity analysis", "lower bound theory" ve
+"master theorem" ifadeleri **katalog tanımında değil, ders çıktılarında** geçiyor. Makale 17 ve
+18'in kaynakçası bu yüzden "ders çıktıları" diyerek atıf yapar; "katalog tanımı" demek yanlış
+olurdu. §1'deki CMPE300 özeti bu ayrımı yapmıyordu; buradaki kayıt daha kesindir.
+
+### Makale 16–18'de kullanılan akademik kaynaklar
+
+- **MIT 6.006 Introduction to Algorithms, Bahar 2020 (OCW; Demaine, Ku, Solomon)** — üç ders notu
+  PDF'i indirilip tam metin okundu, biri (Lecture 3) tek bir alıntı için yeniden doğrulandı.
+  - **Lecture 9: Breadth-First Search** — G = (V, E) tanımı ve basit graf varsayımı; yönlü/yönsüz
+    kenar ayrımı ve |E| = O(|V|²) sonucu; komşuluk kümeleri Adj⁺/Adj⁻ ve dereceler; grafın "Adj
+    kümesi + düğüm başına komşuluk listesi" ikilisiyle saklanması, Adj için doğrudan erişim dizisi
+    ya da hash tablosu, her Adj(u) için dizi ya da bağlı liste kullanılması; **"Since Σ deg(u) =
+    2|E| by handshaking lemma, graph storable in Θ(|V| + |E|) space"** ve buradan "graf
+    algoritmalarında doğrusal zaman Θ(|V| + |E|) demektir" sonucu; yol, basit yol, yol uzunluğu ve
+    δ(u, v) uzaklık tanımları; erişilebilirlik / tek çift en kısa yol / tek kaynak en kısa yollar
+    problemlerinin zorluk sıralaması; en kısa yollar ağacının ebeveyn işaretçileriyle O(|V|) yerde
+    tutulması ve bütün yolları tek tek saklamanın Θ(|V|²) olabileceği; BFS'in katman kümesi tanımı,
+    "her v ∈ Lᵢ bir u ∈ L_{i−1}'e komşudur" savı, katman üzerinde tümevarımla doğruluğu; maliyet
+    analizinde her düğümün bir katmana girmesi, komşu gezmenin toplamının el sıkışma lemmasıyla
+    O(|E|) olması ve erişilemeyen düğümler için Θ(|V|) eklenmesi ⇒ O(|V| + |E|).
+  - **Lecture 10: Depth-First Search** — DFS'in özyinelemeli `visit(u)` tanımı ve ebeveyn ağacı;
+    "Solves Single Source Reachability, **not** SSSP" ve döndürdüğü ağacın en kısa olmak zorunda
+    olmaması; uzaklık üzerinden tümevarımla doğruluk ispatı; maliyetin O(|E|) olması ve BFS'ten
+    farkının uzaklık döndürmemesi; Full-BFS / Full-DFS sarmalayıcısı ve her ikisinin O(|V| + |E|)
+    olması; bağlılık tanımı, Connected Components probleminin tanımı ve "tek kaynak
+    erişilebilirliği çözen her algoritma A, Full-A ile bağlı bileşenleri çözer" savı; yönlü
+    graflarda bağlılığın daha karmaşık olduğu; DAG ve topolojik sıralama tanımları
+    ("every edge (u, v) ∈ E satisfies f(u) < f(v)"); **bitiş sırası tanımı ve "If G is a DAG, the
+    reverse of a finishing order is a topological order" savının iki durumlu ispatı**; döngü
+    tespitinin ters bitiş sırası üzerinde O(|E|) denetimle yapılması.
+  - **Lecture 1: Introduction** — problem/algoritma/doğruluk/verimlilik çerçevesi; asimptotik
+    gösterimin "sabit çarpanları ve düşük dereceli terimleri yok say" olarak tanıtılması ve
+    O/Ω/Θ'nın üst, alt ve sıkı sınır olarak adlandırılması; büyüme sınıfları tablosu (sabit,
+    logaritmik, doğrusal, log-doğrusal, karesel, polinom, üstel) ve 1 GHz makinede n = 1000 için
+    süre tahminleri; Word-RAM modeli; arayüz (Sequence / Set) ile veri yapısı ayrımı.
+    **Not:** bu ders notu O/Ω/Θ'nın **formal tanımını vermez**; makale 17'nin formal tanımları
+    6.042'den alınmıştır.
+  - **Lecture 3: Sorting** — yalnızca tek bir cümle için yeniden okundu:
+    "Recurrence Tree: complete binary tree with depth log₂ n and n leaves, level i has 2ⁱ nodes
+    with O(n/2ⁱ) work each, total: Σ 2ⁱ · (n/2ⁱ) = Σ n = Θ(n log n)".
+- **Lehman, Leighton & Meyer, *Mathematics for Computer Science* (MIT 6.042J, Bahar 2015 OCW
+  ders kitabı)** — 13.7 ve 21. bölümün tamamı PDF'ten metne çevrilip okundu.
+  - **13.7 Asymptotic Notation** — Tanım 13.7.1 küçük o (limit tanımı); Lemma 13.7.2 (a < b iken
+    xᵃ = o(xᵇ)); Lemma 13.7.3 (log x = o(xᵋ), her ε > 0); Sonuç 13.7.4 (a > 1 iken xᵇ = o(aˣ));
+    Tanım 13.7.5 Big-O'nun lim sup ile tanımı ve limitin var olmadığı hâllerin (oranın 3 ile 5
+    arasında salındığı örnek) neden kapsanması gerektiği; **Tanım 13.7.9** Big-O'nun standart
+    (c, x₀) tanımı; Önerme 13.7.10–13.7.12 (100x² = O(x²), x² + 100x + 10 = O(x²), polinom genel
+    hâli); **Tanım 13.7.13** Theta; **Tanım 13.7.15** Omega (f = Ω(g) ⇔ g = O(f)); Tanım 13.7.16
+    küçük omega; **13.7.4 Pitfalls** — üstel yanılgı (4ˣ = O(2ˣ) sanmak, 4ˣ aslında 2ˣ'in
+    karesidir), sabit karışıklığı ve *False Theorem 13.7.14* (Σᵢ₌₁ⁿ i = O(n) sahte ispatı; i sabit
+    değildir), eşitlik yanılgısı ("O(f) = g asla yazılmaz"), işlem uygulama yanılgısı ve
+    **13.7.5 Omega**: "The running time is at least O(n²)" ifadesinin hatalı olduğu, doğrusunun Ω
+    olduğu.
+  - **21. bölüm Recurrences** — 21.1 Hanoi bağıntısının tahmin-ve-doğrula ile çözümü (Sav 21.1.1,
+    Tₙ = 2ⁿ − 1) ve T₆₄ için "more than 18 billion billion steps"; **21.1.1 The Upper Bound Trap**
+    (Tₙ ≤ 2ⁿ hipotezinin tümevarımda "flaming train wreck" ile tıkanması ve daha güçlü hipotez
+    gereği); 21.1.2 plug-and-chug yönteminin üç adımı ve Hanoi üzerinde uygulanışı; **21.2 Merge
+    Sort** — birleştirmede en fazla n − 1 karşılaştırma yapılmasının gerekçesi, T₁ = 0,
+    Tₙ = 2T_{n/2} + n − 1 bağıntısı, ilk terimlerin desen vermemesi (0, 1, 5, 17, 49), açılımdaki
+    Tₙ = 2ᵏT_{n/2ᵏ} + kn − 2ᵏ + 1 deseni; 21.4 böl-yönet yinelemelerinin genel biçimi
+    T(n) = Σ aᵢT(bᵢn) + g(n); **21.4.1 Akra-Bazzi formülü** ve p'nin Σ aᵢbᵢᵖ = 1 denkleminden
+    çözülmesi; **21.4.2 Two Technical Issues** — asimptotik çözümün taban koşullarından ve
+    tabana/tavana yuvarlamalardan bağımsız olması; 21.4.3 Akra-Bazzi teoreminin tam ifadesi;
+    **21.4.4 Teorem 21.4.2 Master Teoremi** (üç durum ve üçüncü durumdaki düzenlilik koşulu);
+    **21.5 A Feel for Recurrences** — Hanoi ile Merge Sort'un karşılaştırılması, "generating smaller
+    subproblems is far more important to algorithmic speed than reducing the additional steps per
+    recursive call", toplamsal küçülmenin üstel / çarpımsal küçülmenin polinomsal çözüm vermesi ve
+    Tₙ = aT_{n/2} + n − 1 bağıntısının a < 2, a = 2, a > 2 için Θ(n), Θ(n log n), Θ(n^(log a)) üç
+    farklı biçime girmesi.
+  - **Master Teoreminin ε'sı üzerine metodolojik not.** Bu PDF'in metin katmanı matematik
+    yazıtipindeki simgeleri düşürüyor: Teorem 21.4.2'nin metni "Case 1: If g(n) = O(n^(log_b(a) ))
+    for some constant  > 0" biçiminde çıkıyor ve ε ile eksi işareti görünmüyor. Belgenin **kendi
+    kodlaması** karar verdirdi: bütün belge boyunca "+" karakteri "C" olarak, "−" karakteri ise
+    boşluk olarak çıkıyor (ör. "Tn D 2Tn 1 C 1" = "Tₙ = 2Tₙ₋₁ + 1"). Durum 3'ün üssünde "C" var
+    ("nlogb.a/C"), Durum 1'inkinde yok. Buradan Durum 1'in üssü **log_b a − ε**, Durum 3'ünkü
+    **log_b a + ε** olarak okundu. Aynı PDF iki farklı sunucudan indirilip
+    (<https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/>
+    ve <https://people.csail.mit.edu/meyer/mcs.pdf>) aynı sonuç alındı. Ortamda PDF'i görüntüye
+    çeviren bir araç (pdftoppm vb.) bulunmadığı için sayfa görsel olarak denetlenemedi; okuma bu
+    kodlama argümanına dayanıyor ve mantıksal olarak da zorunludur (Durum 1 üst sınır, Durum 3 alt
+    sınırdır; işaretler ters olsaydı iki durum çelişirdi).
+- **MIT 6.046J Design and Analysis of Algorithms, Bahar 2015 (OCW; Demaine, Devadas, Lynch),
+  Lecture 2: Divide and Conquer** — ders notu PDF'i indirilip okundu. Böl-yönet deseninin
+  T(n) = aT(n/b) + [birleştirme işi] biçiminde yazılması (a ≥ 1, b > 1); konveks kabuk
+  algoritmasında bütün (aᵢ, bⱼ) çiftlerine bakan naif teğet bulmanın
+  **T(n) = 2T(n/2) + Θ(n²) = Θ(n²)**, iki parmaklı doğrusal birleştirmenin ise
+  **T(n) = 2T(n/2) + Θ(n) = Θ(n log n)** vermesi; medyan bulmada beşli grupların medyanının
+  seçilmesiyle çıkan T(n) = T(⌈n/5⌉) + T(7n/10 + 6) + Θ(n) bağıntısı, **"Master theorem does not
+  apply"** tespiti, "Intuition: n/5 + 7n/10 < n" sezgisi ve T(n) ≤ c·n tahmininin tümevarımla
+  ispatı (c ≥ 20a ve n ≥ 140 ile).
+- **Sedgewick, R. & Wayne, K. *Algorithms*, 4. baskı** — resmî site algs4.cs.princeton.edu'dan üç
+  bölüm sayfası okundu.
+  - **1.4 Analysis of Algorithms** — çalışma süresinin "ifade başına maliyet × çalışma sıklığı"
+    ile modellenmesi; tilde yaklaşımının tanımı (g(N) ~ f(N) ⇔ oran 1'e yakınsar); büyüme mertebesi
+    sınıflandırmasının g(N) ~ a·f(N), f(N) = N^b log^c N biçiminde toplanması; maliyet modelinin
+    açıkça tanımlanması gereği; girdiye bağımlılıkla başa çıkmanın üç yolu (girdi modeli, en kötü
+    durum garantisi, rastgeleleştirme) ve amortize analizin işlem dizisi üzerinde en kötü durum
+    garantisi vermesi.
+  - **4.1 Undirected Graphs** — graf sözlüğü (ilmek, paralel kenar, komşuluk, derece, yol, basit
+    yol, döngü, bağlılık, bağlı bileşen, ağaç, orman, kapsayan ağaç); **komşuluk listesi temsilinin
+    varsayılan olması** ve aynı API'nin komşuluk matrisiyle de gerçekleştirilebilmesi
+    (`Graph.java` / `AdjMatrixGraph.java`); DFS'in işaretleyerek özyinelemeli dolaşması ve
+    `edgeTo[]` ile ebeveyn bağlantılı ağaç kurması; BFS'in kuyrukla en kısa yolları bulması;
+    **Önerme:** DFS bir kaynağa bağlı bütün düğümleri derecelerin toplamıyla orantılı sürede
+    işaretler; **Önerme:** BFS, s'ten erişilebilir her v için en kısa yolu hesaplar ve en kötü
+    durumda V + E ile orantılı sürer; **Önerme:** DFS, V + E ile orantılı ön işleme ve yerle sabit
+    zamanlı bağlılık sorgusu sağlar; "is connected to" bağıntısının bir denklik bağıntısı olup
+    düğümleri denklik sınıflarına (bağlı bileşenlere) ayırması; DFS'in ayrıca döngü tespiti ve iki
+    renklilik için V + E sürede kullanılabilmesi.
+  - **4.2 Directed Graphs** — yönlü graf sözlüğü (iç/dış derece, yönlü yol, yönlü döngü,
+    erişilebilirlik, güçlü bağlılık, DAG); komşuluk listesi temsilinin yine varsayılan olması;
+    öncelik kısıtlı çizelgeleme probleminin topolojik sıralama olarak formüle edilmesi; DFS'in üç
+    sırası (preorder, postorder, reverse postorder); **Önerme:** bir yönlü grafın topolojik
+    sıralaması ancak ve ancak DAG ise vardır; **Önerme:** DAG'da ters postorder bir topolojik
+    sıralamadır; **Önerme:** DFS ile bir DAG, V + E ile orantılı sürede topolojik sıralanabilir;
+    güçlü bağlılığın bir denklik bağıntısı olması ve Kosaraju-Sharir algoritmasının V + E ön
+    işlemesi.
+
+### Bu batch'te bağımsız hesaplanan ve elle denetlenen iddialar
+
+- **Makale 16'nın örnek grafı bir betikle doğrulandı.** Komşuluk listeleri a → b, c; b → a, c, d;
+  c → a, b, e; d → b, e, f; e → c, d, f; f → d, e. Simetri denetlendi, kenar sayısı 8, dereceler
+  toplamı 16 = 2 × 8 (el sıkışma lemması). **BFS (a'dan):** katmanlar L₀ = {a}, L₁ = {b, c},
+  L₂ = {d, e}, L₃ = {f}; uzaklıklar a 0, b 1, c 1, d 2, e 2, f 3; ebeveynler b ← a, c ← a, d ← b,
+  e ← c, f ← d; ağacın derinliği 3. **DFS (a'dan, aynı liste sırasıyla):** ziyaret sırası
+  a, b, c, e, d, f; ebeveynler b ← a, c ← b, e ← c, d ← e, f ← d; ağaç tek bir zincir ve derinlikler
+  a 0, b 1, c 2, e 3, d 4, f 5. Yani δ(a, f) = 3 iken DFS ağacında f 5. seviyededir ve δ(a, d) = 2
+  iken DFS derinliği 4'tür — makalenin "DFS en kısa yol vermez" iddiasının somut kanıtı.
+  Bitiş sırası f, d, e, c, b, a.
+- **Makale 16'nın topolojik sıralama izi bir betikle doğrulandı.** DAG: a → c, a → d, b → d, c → e,
+  d → e, d → f, e → g, f → g. Düğümler alfabetik sırayla denenerek tam DFS çalıştırıldığında bitiş
+  sırası g, e, c, f, d, a, b; tersi **b, a, d, f, c, e, g**. Sekiz kenarın hepsinde kaynak,
+  hedeften önce geliyor (0 < 2, 1 < 4, 1 < 2, 4 < 5, 2 < 5, 2 < 3, 5 < 6, 3 < 6). Grafa g → a
+  kenarı eklendiğinde ters bitiş sırası değişmiyor ama **tam olarak o kenar** kuralı ihlal ediyor —
+  döngü tespitinin çalıştığının kanıtı.
+- **Graf temsili yer hesabı.** |V| = 10⁶, |E| = 10⁷ için: matris 10¹² hücre, hücre başına 1 bit ile
+  1,25 × 10¹¹ bayt = 125 GB; komşuluk listeleri |V| + 2|E| = 2,1 × 10⁷ girdi. Basit yönsüz grafta
+  üst sınır C(10⁶, 2) ≈ 5 × 10¹¹ kenar, yoğunluk 10⁷ / 5 × 10¹¹ = 2 × 10⁻⁵. Dolaşma maliyeti
+  matriste 10¹², listede 1,1 × 10⁷ adım.
+- **Makale 17'nin olumlu ispatı elle ve sayısal olarak denetlendi.** 3n² + 100n + 10 ≤ 14n²
+  eşitsizliği 11n² − 100n − 10 ≥ 0'a denk; kökü (100 + √10.440)/22 = 9,1898, dolayısıyla c = 14 için
+  **en küçük eşik n₀ = 10**'dur. n = 10: 1.310 ≤ 1.400 ✓; n = 9: 1.153 > 1.134 ✗. İkinci tanık
+  c = 113, n₀ = 1: n = 1'de iki taraf da 113'tür ve 110n² − 100n − 10 ≥ 0 her n ≥ 1 için doğrudur.
+- **4ⁿ / 2ⁿ = 2ⁿ** oranı: n = 10'da 1.024, n = 20'de 1.048.576.
+- **1000n ile n² kesişimi** tam n = 1000'dedir (10⁶ = 10⁶). n = 100'de 100.000'e karşı 10.000;
+  n = 10⁶'da 10⁹'a karşı 10¹².
+- **log₂ n ile n^0,1 kesişimi** ikili aramayla n ≈ 10^17,69 bulundu. n = 10¹⁵: 49,8 > 31,6;
+  n = 10¹⁷: 56,5 > 50,1; n = 10¹⁸: 59,8 < 63,1; n = 10²⁰: 66,4 < 100.
+- **log₂(n!) sınırları.** Alt sınır zinciri: n! ≥ (n/2)^(n/2) ⇒ log₂(n!) ≥ (n/2)(log₂ n − 1);
+  n ≥ 4 iken log₂ n − 1 ≥ (log₂ n)/2 olduğu (n = 4'te eşitlik, n = 3'te sağlanmıyor) sayısal olarak
+  denetlendi, dolayısıyla **c = 1/4, n₀ = 4** tanıklarıyla log₂(n!) = Ω(n log n). Üst sınır
+  n! ≤ nⁿ'den. Değerler: n = 10 → 22 / 33 (oran 0,656); n = 10³ → 8.529 / 9.966 (0,856);
+  n = 10⁶ → 18.488.885 / 19.931.569 (0,928); kaba alt sınır (n/2)log₂(n/2) n = 10⁶ için 9.465.784.
+- **Makale 18'in kapalı ifadesi doğrulandı.** T(1) = 0, T(n) = 2T(n/2) + n − 1 bağıntısı özyinelemeli
+  olarak hesaplandı ve n log₂ n − n + 1 formülüyle karşılaştırıldı: n = 2 → 1, n = 4 → 5, n = 8 → 17,
+  n = 16 → 49, n = 64 → 321, n = 1024 → 9.217; hepsi birebir eşleşti.
+- **Hanoi.** T(n) = 2T(n − 1) + 1, T(1) = 1 döngüyle hesaplandı; T(64) = 2⁶⁴ − 1 =
+  18.446.744.073.709.551.615 ≈ 1,845 × 10¹⁹.
+- **Master Teoremi uygulamaları elle denetlendi.** log₂ 3 = 1,584963 ve log₂ 7 = 2,807355.
+  T(n) = T(n/2) + Θ(1): log₂ 1 = 0, g = Θ(n⁰ log⁰ n) ⇒ Durum 2, k = 0 ⇒ Θ(log n).
+  T(n) = 2T(n/2) + Θ(n) ⇒ Durum 2, k = 0 ⇒ Θ(n log n).
+  T(n) = 2T(n/2) + Θ(n²): n² = Ω(n^(1+1)) ve düzenlilik 2·(n/2)² = n²/2 = ½·g(n), c = ½ < 1 ⇒
+  Durum 3 ⇒ Θ(n²). T(n) = 4T(n/2) + Θ(n) ve T(n) = 3T(n/2) + Θ(n): g = O(n^(log_b a − ε)) ⇒
+  Durum 1 ⇒ Θ(n²) ve Θ(n^1,585).
+- **Üç rejim sayısal olarak doğrulandı.** T(n) = a·T(n/2) + n − 1 bağıntısı a = 1, 2, 3 için
+  n = 2…2²⁰ aralığında hesaplandı; girdi ikiye katlandığında maliyet oranı sırasıyla 2,000, 2,111
+  ve 3,001 çıktı — yani Θ(n), Θ(n log n) ve Θ(n^log₂3). a = 3, n = 2²⁰ için T = 5,23 × 10⁹ ve
+  n^(log₂ 3) = 3,49 × 10⁹ (sabit ≈ 1,5).
+- **Master Teoreminin boşluğu.** T(n) = 2T(n/2) + n/log n: n^(log₂ 2) = n, g = n/log n. Hiçbir
+  ε > 0 için n/log n = O(n^(1−ε)) olmaz (Lemma 13.7.3'ten), Durum 2 k ≥ 0 istediği için uygulanmaz
+  (gereken k = −1), Durum 3 de geçerli değil. Akra-Bazzi ile p = 1 ve ∫ du/(u log u) = log log u
+  integralinden **Θ(n log log n)** çıkar; bu elle hesaplandı.

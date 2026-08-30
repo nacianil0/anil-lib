@@ -2601,8 +2601,8 @@
       "id": "bug-154",
       "timestamp": "2026-08-30T14:40:00Z",
       "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-08-30T14:40:00Z"
+      "occurrences": 2,
+      "last_seen": "2026-08-30T15:20:00Z"
     },
     {
       "error_message": "TaskStop sonrası port 3100 hâlâ LISTENING; Invoke-WebRequest yeni sunucuya değil eskisine bağlanıyor",
@@ -2708,6 +2708,113 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-30T14:50:00.000Z"
+    },
+    {
+      "id": "bug-161",
+      "timestamp": "2026-08-30T12:23:50.739Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→5 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T12:23:50.739Z"
+    },
+    {
+      "id": "bug-162",
+      "timestamp": "2026-08-30T12:28:47.226Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→9 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T12:28:47.226Z"
+    },
+    {
+      "id": "bug-163",
+      "timestamp": "2026-08-30T15:05:00Z",
+      "error_message": "SVG metninde ham < ve > karakterleri; diyagramda 'her a  b icin' gibi bosluklu bozuk metin ciktisi",
+      "file": "content/series-boun/assets/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma/buyume-siniflari-ve-kesisim.svg",
+      "root_cause": "SVG XML'dir; text icerigindeki < ve > kacisilmadan yazilamaz. Kacinmak icin karakterler bilerek silinince metin anlamsizlasti. tools/series/check-series-svg.cjs bunu YAKALAMAZ (yalnizca viewBox, renk, font-size, tasma denetler).",
+      "fix": "Karakterler &lt; / &gt; olarak yazildi; ayrica butun BOUN SVG'leri xml.etree.ElementTree ile ayristirilarak dogrulandi. Bu XML denetimi her batch'te calistirilmali.",
+      "tags": [
+        "svg",
+        "xml",
+        "escaping",
+        "series-boun",
+        "check-series-svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T15:05:00Z"
+    },
+    {
+      "id": "bug-164",
+      "timestamp": "2026-08-30T14:35:00Z",
+      "error_message": "pdftotext ciktisinda Master Teoreminin epsilon ve eksi isaretleri kayip: 'Case 1: If g(n) = O(n^logb(a) ) for some constant  > 0'",
+      "file": "docs/seri-boun/ARASTIRMA.md",
+      "root_cause": "MIT 6.042J ders kitabi PDF'inin metin katmani matematik yazitipi simgelerini eslestiremiyor; pdftoppm bu ortamda YOK, sayfa goruntuye cevrilemedi.",
+      "fix": "Belgenin kendi kodlamasi kullanildi: ayni PDF boyunca '+' karakteri 'C', '-' karakteri bosluk olarak cikiyor (orn. 'Tn D 2Tn 1 C 1' = Tn = 2T(n-1) + 1). Durum 3'un ussunde 'C' var, Durum 1'inkinde yok -> log_b a + eps ve log_b a - eps. Ayni PDF iki farkli sunucudan indirilip dogrulandi ve karar ARASTIRMA §10'a metodolojik not olarak yazildi.",
+      "tags": [
+        "pdftotext",
+        "6.042",
+        "master-theorem",
+        "kaynak-dogrulama",
+        "series-boun"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:35:00Z"
+    },
+    {
+      "id": "bug-165",
+      "timestamp": "2026-08-30T15:55:00Z",
+      "error_message": "500 on /seri/<slug>: ENOENT prerender-manifest.json, ardindan 'SyntaxError: Unexpected end of JSON input at loadManifest'",
+      "file": ".next (build cache)",
+      "root_cause": "corepack pnpm build calistirildiktan hemen sonra ayni .next dizini uzerinde pnpm dev baslatildi. Next 15 build ve dev icin ayni dizini farkli manifest semalariyla kullaniyor; dev sunucusu yarim/eksik manifest okuyor.",
+      "fix": "Dev sunucusunu durdur, `rm -rf .next`, sonra dev sunucusunu baslat. Kalici sira: dev durdur -> rm -rf .next -> pnpm build -> rm -rf .next -> dev baslat.",
+      "tags": [
+        "nextjs",
+        "dev-server",
+        "build-cache",
+        "series",
+        "batch6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T15:55:00Z"
+    },
+    {
+      "id": "bug-166",
+      "timestamp": "2026-08-30T16:02:00Z",
+      "error_message": "500: '[content] Katalog ile frontmatter uyusmuyor (... hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md): content_hash: katalog \"sha256:c894...\" != frontmatter \"sha256:86ef...\"' (assertCatalogMatch)",
+      "file": "src/lib/content/articles.ts / content/series/catalog.json",
+      "root_cause": "Makale govdesi (sekil alt metni) entegrasyondan sonra degistirildi; sync-series-hashes --write diskte hem frontmatter'i hem katalogu duzeltti ve iki dosya tutarli hale geldi. Ancak calisan Next dev sunucusu catalog.json'u modul duzeyinde onbelleklemis oldugu icin ESKI hash'i tutuyordu; disk tutarli, bellek degil.",
+      "fix": "Dev sunucusunu yeniden baslat. Kural: entegrasyondan sonra makale govdesine her dokunusta once `node tools/series/sync-series-hashes.cjs --write`, sonra dev sunucusunu yeniden baslat. Diskteki tutarlilik `sync-series-hashes.cjs` (yazmadan) ile dogrulanir; hata devam ediyorsa sorun onbellektedir.",
+      "tags": [
+        "nextjs",
+        "dev-server",
+        "cache",
+        "content-hash",
+        "series",
+        "batch6"
+      ],
+      "related_bugs": [
+        "bug-165"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T16:02:00Z"
     }
   ]
 }

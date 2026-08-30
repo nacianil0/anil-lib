@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Maskenin göremediği şey</text>
+
+  <text x="360" y="56" font-size="13" text-anchor="middle" fill="var(--text)">başlangıç</text>
+  <circle cx="360" cy="70" r="6" fill="var(--text)"/>
+
+  <line x1="356" y1="76" x2="204" y2="124" stroke="var(--border)" stroke-width="1"/>
+  <text x="272" y="92" font-size="13" text-anchor="middle" fill="var(--text-muted)">0 · 0,45</text>
+  <line x1="364" y1="76" x2="516" y2="124" stroke="var(--border)" stroke-width="1"/>
+  <text x="448" y="92" font-size="13" text-anchor="middle" fill="var(--text-muted)">1 · 0,30</text>
+
+  <circle cx="200" cy="130" r="5" fill="var(--accent)"/>
+  <circle cx="520" cy="130" r="5" fill="var(--cool)"/>
+
+  <line x1="200" y1="136" x2="200" y2="186" stroke="var(--border)" stroke-width="1"/>
+  <rect x="150" y="186" width="100" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="200" y="204" font-size="13" text-anchor="middle" fill="var(--accent)">00000</text>
+
+  <line x1="520" y1="136" x2="420" y2="186" stroke="var(--border)" stroke-width="1"/>
+  <line x1="520" y1="136" x2="470" y2="186" stroke="var(--border)" stroke-width="1"/>
+  <line x1="520" y1="136" x2="520" y2="186" stroke="var(--border)" stroke-width="1"/>
+  <line x1="520" y1="136" x2="570" y2="186" stroke="var(--border)" stroke-width="1"/>
+  <line x1="520" y1="136" x2="620" y2="186" stroke="var(--border)" stroke-width="1"/>
+  <rect x="400" y="186" width="40" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="420" y="204" font-size="13" text-anchor="middle" fill="var(--cool)">…1</text>
+  <rect x="450" y="186" width="40" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="470" y="204" font-size="13" text-anchor="middle" fill="var(--cool)">…1</text>
+  <rect x="500" y="186" width="40" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="520" y="204" font-size="13" text-anchor="middle" fill="var(--cool)">…1</text>
+  <rect x="550" y="186" width="40" height="26" fill="none" stroke="var(--border)" stroke-width="1"/>
+  <text x="570" y="204" font-size="13" text-anchor="middle" fill="var(--text-faint)">…0</text>
+  <rect x="600" y="186" width="40" height="26" fill="none" stroke="var(--border)" stroke-width="1"/>
+  <text x="620" y="204" font-size="13" text-anchor="middle" fill="var(--text-faint)">…0</text>
+
+  <text x="200" y="234" font-size="13" text-anchor="middle" fill="var(--text-muted)">tek tamamlama; 1 ile bitmiyor</text>
+  <text x="520" y="234" font-size="13" text-anchor="middle" fill="var(--text-muted)">on altı tamamlama; sekizi 1 ile bitiyor</text>
+
+  <text x="16" y="262" font-size="13" text-anchor="start" fill="var(--text-muted)">maske her iki dalı da geçerli sayar; model soldaki dalı kabaca yarı yarıya seçer</text>
+  <text x="16" y="284" font-size="13" text-anchor="start" fill="var(--text-faint)">kısıt altında 1 ile bitme oranı yüzde 90'dan yüzde 30'a düşüyor</text>
+</svg>

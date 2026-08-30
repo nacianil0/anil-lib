@@ -1,0 +1,25 @@
+<svg viewBox="0 0 720 276" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı şema, iki farklı alan sırası</text>
+
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--accent)">cevap önce</text>
+  <rect x="16" y="56" width="330" height="100" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="32" y="82" font-size="13" text-anchor="start" fill="var(--text)">{</text>
+  <text x="48" y="104" font-size="13" text-anchor="start" fill="var(--accent)">"cevap": …</text>
+  <text x="48" y="126" font-size="13" text-anchor="start" fill="var(--text-muted)">"gerekce": …</text>
+  <text x="32" y="148" font-size="13" text-anchor="start" fill="var(--text)">}</text>
+
+  <text x="374" y="46" font-size="13" text-anchor="start" fill="var(--cool)">gerekçe önce</text>
+  <rect x="374" y="56" width="330" height="100" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="390" y="82" font-size="13" text-anchor="start" fill="var(--text)">{</text>
+  <text x="406" y="104" font-size="13" text-anchor="start" fill="var(--cool)">"gerekce": …</text>
+  <text x="406" y="126" font-size="13" text-anchor="start" fill="var(--text-muted)">"cevap": …</text>
+  <text x="390" y="148" font-size="13" text-anchor="start" fill="var(--text)">}</text>
+
+  <text x="16" y="182" font-size="13" text-anchor="start" fill="var(--text-muted)">cevap yazılırken hiçbir ara adım üretilmemiştir</text>
+  <text x="374" y="182" font-size="13" text-anchor="start" fill="var(--text-muted)">cevap, üretilmiş ara adımlara koşullanır</text>
+
+  <line x1="16" y1="204" x2="704" y2="204" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="228" font-size="13" text-anchor="start" fill="var(--text-muted)">ikisi de aynı derecede geçerli JSON üretir; ikisi aynı doğruluğu vermez</text>
+  <text x="16" y="250" font-size="13" text-anchor="start" fill="var(--text-faint)">sebep otoregresif döngüdür: model kendi ürettiği metne koşullanarak devam eder</text>
+</svg>
