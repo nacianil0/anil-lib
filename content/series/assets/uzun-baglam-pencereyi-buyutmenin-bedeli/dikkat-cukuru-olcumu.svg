@@ -1,0 +1,26 @@
+<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">İlk dört token atılınca ne oluyor</text>
+
+  <text x="590" y="48" font-size="13" text-anchor="start" fill="var(--text-faint)">perplexity</text>
+
+  <text x="16" y="62" font-size="13" text-anchor="start" fill="var(--text-muted)">önbellekte yalnızca son 1024 token</text>
+  <rect x="16" y="70" width="560" height="24" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4"/>
+  <rect x="536" y="70" width="40" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="590" y="88" font-size="13" text-anchor="start" fill="var(--text)">5158,07</text>
+
+  <text x="16" y="122" font-size="13" text-anchor="start" fill="var(--text-muted)">ilk dört token korunuyor + son 1020 token</text>
+  <rect x="16" y="130" width="560" height="24" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4"/>
+  <rect x="16" y="130" width="10" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="536" y="130" width="40" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="590" y="148" font-size="13" text-anchor="start" fill="var(--accent)">5,40</text>
+
+  <text x="16" y="182" font-size="13" text-anchor="start" fill="var(--text-muted)">ilk dört token yerine dört satır sonu + son 1020</text>
+  <rect x="16" y="190" width="560" height="24" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 4"/>
+  <rect x="16" y="190" width="10" height="24" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="536" y="190" width="40" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="590" y="208" font-size="13" text-anchor="start" fill="var(--cool)">5,60</text>
+
+  <text x="16" y="250" font-size="13" text-anchor="start" fill="var(--text-muted)">şeritler 65.000 token'lık bir kitabı temsil eder; dolu bölgeler önbellekte tutulanlardır</text>
+  <text x="16" y="274" font-size="13" text-anchor="start" fill="var(--text-muted)">kurtaran şey ilk token'ların anlamı değil, o konumların dolu olması</text>
+  <text x="16" y="298" font-size="13" text-anchor="start" fill="var(--text-faint)">ölçüm 13 milyar parametreli Llama 2 ile yapıldı; düşük perplexity iyidir</text>
+</svg>

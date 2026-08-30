@@ -1,0 +1,55 @@
+<svg viewBox="0 0 720 312" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Uzatmak yerine sıkıştırmak</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--text-muted)">eğitilmiş pozisyon aralığı</text>
+  <rect x="16" y="60" width="440" height="24" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="60" y1="60" x2="60" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="104" y1="60" x2="104" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="148" y1="60" x2="148" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="192" y1="60" x2="192" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="236" y1="60" x2="236" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="280" y1="60" x2="280" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="324" y1="60" x2="324" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="368" y1="60" x2="368" y2="84" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="412" y1="60" x2="412" y2="84" stroke="var(--cool)" stroke-width="1"/>
+
+  <text x="16" y="112" font-size="13" text-anchor="start" fill="var(--text-muted)">aynı aralık, dizi uzatılınca</text>
+  <rect x="16" y="120" width="440" height="24" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="456" y="120" width="248" height="24" fill="none" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="60" y1="120" x2="60" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="104" y1="120" x2="104" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="148" y1="120" x2="148" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="192" y1="120" x2="192" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="236" y1="120" x2="236" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="280" y1="120" x2="280" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="324" y1="120" x2="324" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="368" y1="120" x2="368" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="412" y1="120" x2="412" y2="144" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="500" y1="120" x2="500" y2="144" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="544" y1="120" x2="544" y2="144" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="588" y1="120" x2="588" y2="144" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="632" y1="120" x2="632" y2="144" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="676" y1="120" x2="676" y2="144" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="580" y="160" font-size="13" text-anchor="middle" fill="var(--text-faint)">bozulma bölgesi</text>
+
+  <text x="16" y="192" font-size="13" text-anchor="start" fill="var(--text-muted)">aynı dizi, aralığa sıkıştırılmış</text>
+  <rect x="16" y="200" width="440" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="45" y1="200" x2="45" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="75" y1="200" x2="75" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="104" y1="200" x2="104" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="133" y1="200" x2="133" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="163" y1="200" x2="163" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="192" y1="200" x2="192" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="221" y1="200" x2="221" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="251" y1="200" x2="251" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="280" y1="200" x2="280" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="309" y1="200" x2="309" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="339" y1="200" x2="339" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="368" y1="200" x2="368" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="397" y1="200" x2="397" y2="224" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="427" y1="200" x2="427" y2="224" stroke="var(--accent)" stroke-width="1"/>
+
+  <text x="16" y="252" font-size="13" text-anchor="start" fill="var(--text-muted)">alttaki şeritte üsttekinden çok token var; değişen şey konumlar arası mesafe</text>
+  <text x="16" y="276" font-size="13" text-anchor="start" fill="var(--text-muted)">bedeli: komşu token konumları modelin gözünde birbirine yaklaşır</text>
+  <text x="16" y="296" font-size="13" text-anchor="start" fill="var(--text-faint)">kuramsal üst sınır, doğrudan uzatmaya göre en az yaklaşık 600 kat küçük</text>
+</svg>

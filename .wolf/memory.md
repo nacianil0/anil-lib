@@ -1224,3 +1224,189 @@ D:\dev\anil-lib-seri-batch1-state\review\ altında.
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 22:46
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-29 23:01
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 12:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 13:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 13:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 13:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 13:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:54 | Created content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | — | ~5835 |
+| 13:56 | Edited content/series-boun/assets/heap-ve-oncelik-kuyrugu/heap-dizi-temsili.svg | inline fix | ~25 |
+| 13:57 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~180 |
+| 13:57 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~239 |
+| 14:00 | Created content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | — | ~5297 |
+| 14:01 | Created content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | — | ~4864 |
+| 14:01 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~51 |
+| 14:01 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~39 |
+| 14:02 | Created content/series/assets/in-context-learning-ornekle-ogrenme/gosterimlerin-dort-bileseni.svg | — | ~774 |
+| 14:03 | Created content/series/assets/in-context-learning-ornekle-ogrenme/uc-etiket-duzeni.svg | — | ~746 |
+| 14:03 | Created content/series-boun/assets/hashing-sabit-zamanin-bedeli/cakisma-cozumu.svg | — | ~2034 |
+| 14:03 | Created content/series/assets/in-context-learning-ornekle-ogrenme/cok-ornekli-ve-ince-ayar.svg | — | ~701 |
+| 14:03 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~91 |
+| 14:03 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~280 |
+| 14:03 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~267 |
+| 14:04 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | 1→3 lines | ~237 |
+| 14:04 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | 1→3 lines | ~239 |
+| 14:04 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | 1→5 lines | ~345 |
+| 14:04 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | 3→5 lines | ~278 |
+| 14:07 | Created content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | — | ~5433 |
+| 14:08 | Created content/series-boun/assets/siralama-algoritmalari-karsilastirmali-ve-otesi/birlestirme-adimi.svg | — | ~1671 |
+| 14:08 | Created content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | — | ~3798 |
+| 14:08 | Created content/series-boun/assets/siralama-algoritmalari-karsilastirmali-ve-otesi/kararlilik.svg | — | ~1399 |
+| 14:09 | Edited content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | inline fix | ~210 |
+| 14:09 | Edited content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | "Şekil 1 — Birleştirme adı" → "i, sağdaki 9" | ~260 |
+| 14:10 | Created content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/sohbet-sablonunun-anatomisi.svg | — | ~1120 |
+| 14:10 | Created content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/talimat-hiyerarsisinin-kazanci.svg | — | ~999 |
+| 14:10 | Created content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/turlara-bolmenin-bedeli.svg | — | ~474 |
+| 14:10 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 2→1 lines | ~45 |
+| 14:11 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 1→5 lines | ~379 |
+| 14:11 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 3→7 lines | ~447 |
+| 14:11 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 1→3 lines | ~295 |
+| 14:11 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 1→5 lines | ~305 |
+| 14:12 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 1→3 lines | ~263 |
+| 14:12 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 1→3 lines | ~207 |
+| 14:12 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 1→5 lines | ~191 |
+| 14:14 | Edited content/series-boun/assets/heap-ve-oncelik-kuyrugu/heap-sizdirma.svg | "60,250 80,195 110,140 170" → "60,250 80,195 110,140 155" | ~46 |
+| 14:15 | Created content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | — | ~3894 |
+| 14:17 | Created content/series/assets/uzun-baglam-pencereyi-buyutmenin-bedeli/pozisyonlari-sikistirmak.svg | — | ~1264 |
+| 14:17 | Created content/series/assets/uzun-baglam-pencereyi-buyutmenin-bedeli/esnetmenin-kisa-baglam-bedeli.svg | — | ~799 |
+| 14:17 | Created content/series/assets/uzun-baglam-pencereyi-buyutmenin-bedeli/dikkat-cukuru-olcumu.svg | — | ~641 |
+| 14:18 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | 5→9 lines | ~536 |
+| 14:19 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | 1→3 lines | ~217 |
+| 14:19 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | 1→5 lines | ~382 |
+| 14:19 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | 1→3 lines | ~243 |
+| 14:20 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | 1→3 lines | ~243 |
+| 14:20 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | 1→5 lines | ~179 |
+| 14:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/arastirma-9.md | — | ~3464 |
+| 14:21 | Edited docs/seri-boun/ARASTIRMA.md | 3→4 lines | ~99 |
+| 14:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/patch-roadmap.py | — | ~1305 |
+| 14:23 | Created content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | — | ~4029 |
+| 14:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/patch-roadmap2.py | — | ~2199 |
+| 14:24 | Created content/series/assets/kv-cache-ve-cikarim-ekonomisi/onbellekte-ne-saklanir.svg | — | ~904 |
+| 14:24 | Created content/series/assets/kv-cache-ve-cikarim-ekonomisi/on-dolum-ve-uretim.svg | — | ~792 |
+| 14:25 | Created content/series/assets/kv-cache-ve-cikarim-ekonomisi/onbellegin-bellek-yuku.svg | — | ~458 |
+| 14:25 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | expanded (+10 lines) | ~357 |
+| 14:25 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | 1→3 lines | ~190 |
+| 14:25 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | 1→5 lines | ~232 |
+| 14:26 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | 1→3 lines | ~226 |
+| 14:26 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | 1→3 lines | ~122 |
+| 14:26 | Created docs/seri-boun/HANDOFF.md | — | ~5565 |
+| 14:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/scan.py | — | ~438 |
+| 14:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/wolf-update.py | — | ~2238 |
+| 14:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/memory-entry.md | — | ~612 |
+
+## Session: 2026-08-30 — BOUN Batch 4 (`BATCH=3+1`)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:50 | State zinciri okundu (SOZLESME §6 → BATCH=3+1, N=3) | docs/seri-boun/*.md | Sıradaki 13–15 belirlendi | ~18k |
+| 14:00 | Kaynak doğrulama: MIT 6.006 Lec 3/4/5/8 PDF, algs4 2.2/2.3/2.4/3.4, CLRS Selected Solutions, CMPE250 | (repo dışı) | Tümü tam metin okundu; CLRS 2,3,4,5,7,8,9 bölüm adları doğrulandı | ~22k |
+| 14:05 | Bütün sayısal iddialar bağımsız hesaplandı | (python) | ⌈lg n⌉ hatası yakalandı → ⌊log₂ n⌋ | ~4k |
+| 14:10 | Makale 13 + 2 SVG yazıldı | content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md, assets/heap-ve-oncelik-kuyrugu/*.svg | check-series-content/svg temiz | ~9k |
+| 14:20 | Makale 14 + 2 SVG yazıldı | .../hashing-sabit-zamanin-bedeli.md, assets/hashing-sabit-zamanin-bedeli/*.svg | temiz | ~9k |
+| 14:30 | Makale 15 + 2 SVG yazıldı | .../siralama-algoritmalari-karsilastirmali-ve-otesi.md, assets/siralama-.../*.svg | temiz | ~9k |
+| 14:40 | Entegrasyon: entegre-batch --write, sync-series-hashes --write | catalog.json, roadmap.json, 3 makale frontmatter | üçlü hash eşitliği 15/15, order 1–15, kohort 3/3/3/3/3 | ~3k |
+| 14:45 | typecheck / test / build | — | temiz · 235/235 · 62 statik sayfa (15 `/boun`) | ~3k |
+| 14:55 | Render doğrulaması: 27 kombinasyon + `/boun` | artifacts/boun-render/shot-batch4.mjs | "Sorun yok" — taşma/sızıntı/eksik SVG yok | ~6k |
+| 15:00 | 6 diyagram × 2 tema görsel inceleme | artifacts/boun-render/figs-b4* | Şekil 2'de gizli ok ucu bulundu ve düzeltildi | ~9k |
+| 15:10 | E2E: gate'li sunucu + playwright | — | 21 geçti / 1 atlandı / 4 önceden-var başarısız (referansla birebir) | ~3k |
+| 15:20 | +1 fazı: ARASTIRMA §9, YOL-HARITASI (durum, prerequisite, terim, tekrar defteri), HANDOFF yeniden yazıldı | docs/seri-boun/*.md | Cursor 16'ya taşındı, Batch 5 hazırlığı yazıldı | ~14k |
+| 15:30 | OpenWolf: cerebrum 3 karar + 3 öğrenme + 4 do-not-repeat, buglog bug-154..157, anatomy | .wolf/* | — | ~4k |
+
+**Sonuç:** BOUN makale 13–15 yayında (`classification_batch: 4`), Faz B'nin ikinci yarısı kuruldu.
+`src/`, `tests/`, `tools/` altında tek satır değişmedi. Sıradaki güvenli başlangıç: makale 16
+(Graf Temsilleri, BFS ve DFS) — Faz B'nin kapanışı.
+| 14:29 | Edited docs/seri-boun/HANDOFF.md | 5→6 lines | ~154 |
+| 14:30 | Edited docs/seri-boun/HANDOFF.md | 4→6 lines | ~132 |
+| 14:30 | Edited docs/seri-boun/HANDOFF.md | 2→2 lines | ~50 |
+| 14:31 | Session end: 67 writes across 32 files (heap-ve-oncelik-kuyrugu.md, heap-dizi-temsili.svg, hashing-sabit-zamanin-bedeli.md, in-context-learning-ornekle-ogrenme.md, gosterimlerin-dort-bileseni.svg) | 13 reads | ~76723 tok |
+
+## Session: 2026-08-30 14:32
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:45 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/yh_decisions.py | — | ~3486 |
+| 14:47 | Created docs/seri/HANDOFF.md | — | ~3875 |
+| 14:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/cerebrum.py | — | ~938 |
+
+### Batch 5 oturum özeti (2026-08-30)
+
+`BATCH=4+1` · Makale 23–26 (`reasoning-and-memory`, `classification_batch: 5`) yazıldı, incelendi,
+entegre edildi ve doğrulandı. Tek oturum, yardımcı agent kullanılmadı.
+
+- **Üretilen:** 4 makale (2.471–2.752 `wc -w`), 12 SVG diyagram, 21 birincil kaynak künyesi.
+- **Araştırma:** 7 birincil kaynak PDF'i `pypdf` ile metne çevrilip tablolarından okundu
+  (Min EMNLP'22, Pan Findings-ACL'23, von Oswald ICML'23, Wallace 2024, YaRN ICLR'24,
+  StreamingLLM ICLR'24, Pope MLSys'23, vLLM SOSP'23). Laban ICLR 2026 künyesi ve ödülü
+  ICLR'ın kendi duyuru sayfasından doğrulandı.
+- **Başlık kararı:** 24 "Sohbet Formatı" → "Sohbet Biçimi"; 26 "Inference Ekonomisi" →
+  "Çıkarım Ekonomisi" (bağlayıcı karar #52). roadmap.json entegrasyondan önce güncellendi.
+- **Kapılar:** `pnpm typecheck` temiz · `pnpm test` 241/241 · `pnpm build` 66 sayfa ·
+  `check-series-content` 26/26 · `check-series-svg` 73/73 · 26 seri rotası + `/seri` hepsi 200 ·
+  üç temada (light/dark/sepia) DOM ölçümüyle render · 375/768/1280 genişlikte gövdede taşma yok.
+- **Yakalanan kusurlar:** bir SVG'nin son satırı viewBox alt kenarına 2 birim kalıyordu (kırpılma) —
+  6 dosyada alt pay ≥ 12 birime çıkarıldı (bug-159); /seri'de sahte 233 px taşma ölçümü, sıfır
+  genişlikli viewport artefaktı olarak çözüldü (bug-160).
+- **State:** HANDOFF cursor 27'ye taşındı, YOL-HARITASI'na Batch 5 grafı + tekrar defteri +
+  18 yeni terim + bağlayıcı kararlar #52–#64 + öğrenme notları eklendi. Açık kalan tek karar:
+  27–28 için kategori.
+| 14:53 | Session end: 3 writes across 3 files (yh_decisions.py, HANDOFF.md, cerebrum.py) | 0 reads | ~8576 tok |
+
+## Session: 2026-08-30 14:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 14:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

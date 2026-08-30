@@ -1,0 +1,20 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı bilgi, üç veriliş biçimi — ortalama başarı</text>
+
+  <rect x="230" y="64" width="426" height="28" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="220" y="82" font-size="13" text-anchor="end" fill="var(--text-muted)">tam talimat tek mesajda</text>
+  <text x="664" y="82" font-size="13" text-anchor="start" fill="var(--cool)">73,4</text>
+
+  <rect x="230" y="110" width="405" height="28" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="220" y="128" font-size="13" text-anchor="end" fill="var(--text-muted)">parçalar tek mesajda</text>
+  <text x="643" y="128" font-size="13" text-anchor="start" fill="var(--cool)">69,8</text>
+
+  <rect x="230" y="156" width="260" height="28" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="220" y="174" font-size="13" text-anchor="end" fill="var(--text-muted)">parçalar turlara yayılmış</text>
+  <text x="498" y="174" font-size="13" text-anchor="start" fill="var(--accent)">44,8</text>
+
+  <text x="16" y="212" font-size="13" text-anchor="start" fill="var(--text-muted)">ortadaki düzen tam talimatın yüzde 95,1'ini koruyor: sorun metnin miktarı değil</text>
+  <text x="16" y="238" font-size="13" text-anchor="start" fill="var(--text-muted)">turlara yayılınca ortalama düşüş yüzde 39</text>
+  <text x="16" y="262" font-size="13" text-anchor="start" fill="var(--text-muted)">en iyi hâl yüzde 16 geriliyor; denemeler arası savrulma yüzde 112 artıyor</text>
+  <text x="16" y="288" font-size="13" text-anchor="start" fill="var(--text-faint)">on beş model, altı görev, iki yüz binden fazla benzetilmiş sohbet</text>
+</svg>

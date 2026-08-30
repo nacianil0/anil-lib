@@ -442,6 +442,86 @@
       "path": "content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
+    },
+    {
+      "articleId": "article_4e930544-f765-47ec-bf6e-4a4b2fb018da",
+      "title": "In-Context Learning: Örnekle Öğrenme",
+      "slug": "in-context-learning-ornekle-ogrenme",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 23,
+      "summary": "İsteme konan çözülmüş örneklerin ağırlıklara dokunmadan davranışı nasıl değiştirdiğini ölçümlerle kurar: etiketleri bozulmuş gösterimlerin şaşırtıcı dayanıklılığı, gösterimin dört bileşeninin ayrı ayrı tartılması, görevi tanımak ile görevi öğrenmek arasındaki ayrımın ölçekle açılması, yüzlerce örnekli rejimin ince ayarla başa baş gelmesi ve mekanizma açıklamalarının nerede durduğu.",
+      "tags": [
+        "ornekle-ogrenme",
+        "few-shot",
+        "gosterim",
+        "gorev-tanima",
+        "many-shot"
+      ],
+      "contentHash": "sha256:960a10c9c8d9dfe77a10696cba14fa7b8888c7566c4996fc16aff8d8e16e3264",
+      "path": "content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
+    },
+    {
+      "articleId": "article_aba4e5bd-105c-44f8-bacc-e0f511d65cec",
+      "title": "Sistem İstemleri, Roller ve Sohbet Biçimi",
+      "slug": "sistem-istemleri-roller-ve-sohbet-bicimi",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 24,
+      "summary": "Sohbetin perde arkasındaki tek diziyi açar: rolleri işaretleyen özel token'ların somut biçimi, sistem isteminin ayrıcalığının mimari değil eğitimle kurulduğu, talimat hiyerarşisinin ölçülen kazancı ve bedeli, rol vermenin sınırı ve aynı bilginin tek seferde değil turlara yayılarak verilmesinin ölçülen maliyeti.",
+      "tags": [
+        "sistem-istemi",
+        "sohbet-bicimi",
+        "konusmaci-rolu",
+        "talimat-hiyerarsisi",
+        "cok-turlu"
+      ],
+      "contentHash": "sha256:6cfffe49931d79ab13cc3e0f84a7ed24229ff0d2f5d751bfc96e19f3f803a996",
+      "path": "content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
+    },
+    {
+      "articleId": "article_7846ed23-12b4-4966-8f47-d78e0670e3fd",
+      "title": "Uzun Bağlam: Pencereyi Büyütmenin Bedeli",
+      "slug": "uzun-baglam-pencereyi-buyutmenin-bedeli",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 25,
+      "summary": "Eğitim uzunluğunun ötesine geçmenin neden bozulmayla sonuçlandığını, pozisyonları esnetmenin bu bozulmayı nasıl önlediğini ve bedelinin nereden çıktığını ölçümlerle kurar: kısa bağlam başarısındaki gerileme, eğitim maliyeti, karesel hesabın kaybolmaması ve sonsuz akışın sonsuz bağlam anlamına gelmemesi.",
+      "tags": [
+        "uzun-baglam",
+        "pozisyon-enterpolasyonu",
+        "dikkat-cukuru",
+        "flashattention",
+        "etkin-uzunluk"
+      ],
+      "contentHash": "sha256:21e1b134f2e2a52c49b5cb8196d48824582a55b683da1f21c358557bf16f561a",
+      "path": "content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
+    },
+    {
+      "articleId": "article_963a38f0-e30b-40ce-8bf4-a90226c8b4dc",
+      "title": "KV Cache ve Çıkarım Ekonomisi",
+      "slug": "kv-cache-ve-cikarim-ekonomisi",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 26,
+      "summary": "Üretimin maliyet yapısını kurar: anahtar-değer önbelleğinde tam olarak neyin saklandığı ve boyutunun nasıl hesaplandığı, ön dolum ile adım adım üretimin neden bambaşka kaynaklara takıldığı, önbelleğin ağırlıkları geçebilen bellek yükü ve bu yükü küçültmenin iki yolu — anahtar-değer başlarını paylaşmak ve belleği sayfalara bölmek.",
+      "tags": [
+        "anahtar-deger-onbellegi",
+        "on-dolum",
+        "bellek-bant-genisligi",
+        "gruplandirilmis-sorgu-dikkati",
+        "sayfali-dikkat"
+      ],
+      "contentHash": "sha256:d31d3e9409f0246eb0abbca722175f9e3835db53609665e6eda47fcff150876c",
+      "path": "content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 5
     }
   ]
 }

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 720 338" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Sohbet şablonu: roller dizinin içindeki işaretlerdir</text>
+
+  <rect x="16" y="62" width="76" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="54" y="82" font-size="13" text-anchor="middle" fill="var(--accent)">başlangıç</text>
+  <rect x="92" y="62" width="64" height="32" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="124" y="82" font-size="13" text-anchor="middle" fill="var(--cool)">sistem</text>
+  <rect x="156" y="62" width="170" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="241" y="82" font-size="13" text-anchor="middle" fill="var(--text-muted)">sistem istemi</text>
+  <rect x="326" y="62" width="72" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="362" y="82" font-size="13" text-anchor="middle" fill="var(--accent)">tur sonu</text>
+  <rect x="398" y="62" width="74" height="32" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="435" y="82" font-size="13" text-anchor="middle" fill="var(--cool)">kullanıcı</text>
+  <rect x="472" y="62" width="160" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="552" y="82" font-size="13" text-anchor="middle" fill="var(--text-muted)">kullanıcı mesajı</text>
+  <rect x="632" y="62" width="72" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="668" y="82" font-size="13" text-anchor="middle" fill="var(--accent)">tur sonu</text>
+
+  <rect x="16" y="110" width="68" height="32" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="50" y="130" font-size="13" text-anchor="middle" fill="var(--cool)">asistan</text>
+  <rect x="84" y="110" width="190" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="179" y="130" font-size="13" text-anchor="middle" fill="var(--text-muted)">modelin cevabı</text>
+  <rect x="274" y="110" width="72" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="310" y="130" font-size="13" text-anchor="middle" fill="var(--accent)">tur sonu</text>
+  <rect x="346" y="110" width="74" height="32" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="383" y="130" font-size="13" text-anchor="middle" fill="var(--cool)">kullanıcı</text>
+  <rect x="420" y="110" width="150" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="495" y="130" font-size="13" text-anchor="middle" fill="var(--text-muted)">yeni mesaj</text>
+  <rect x="570" y="110" width="72" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="606" y="130" font-size="13" text-anchor="middle" fill="var(--accent)">tur sonu</text>
+  <rect x="642" y="110" width="62" height="32" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="673" y="130" font-size="13" text-anchor="middle" fill="var(--cool)">asistan</text>
+
+  <line x1="673" y1="142" x2="673" y2="158" stroke="var(--border)" stroke-width="1"/>
+  <text x="704" y="174" font-size="13" text-anchor="end" fill="var(--text-muted)">üretim buradan devam eder</text>
+
+  <text x="16" y="212" font-size="13" text-anchor="start" fill="var(--text-muted)">iki satır tek bir dizidir; satır kırılması yalnızca sayfaya sığması içindir</text>
+  <text x="16" y="238" font-size="13" text-anchor="start" fill="var(--text-muted)">renkli kutular özel token'lardır; sözlükte kendi satırları vardır ve eğitimde öğrenilir</text>
+  <text x="16" y="264" font-size="13" text-anchor="start" fill="var(--text-faint)">son asistan başlığı kapatılmaz; model tur sonu token'ını üretince durur</text>
+
+  <text x="16" y="300" font-size="13" text-anchor="start" fill="var(--text-faint)">yazımı — başlangıç: &lt;|begin_of_text|&gt;</text>
+  <text x="16" y="322" font-size="13" text-anchor="start" fill="var(--text-faint)">başlık: &lt;|start_header_id|&gt;rol&lt;|end_header_id|&gt; · tur sonu: &lt;|eot_id|&gt;</text>
+</svg>

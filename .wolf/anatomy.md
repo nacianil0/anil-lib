@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-29T10:56:54.953Z
-> Files: 4 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-30T11:49:57.076Z
+> Files: 1 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -15,7 +15,14 @@
 ## .claude/rules/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/
+
+- `cerebrum.py` (~938 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/
+
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/
 
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/791bd47e-e985-4412-bcb6-24c47570592c/scratchpad/
@@ -23,9 +30,6 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/
 
-- `buglog_update.py` — 2 (~2049 tok)
-- `cerebrum_update.py` (~1744 tok)
-- `finalcheck.cjs` — Declares fs (~575 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/883cb5bb-ed11-4944-95dd-d2b9ffa4d5d2/scratchpad/
 
@@ -90,6 +94,12 @@
 ## content/series-boun/assets/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar/
 
 
+## content/series-boun/assets/hashing-sabit-zamanin-bedeli/
+
+
+## content/series-boun/assets/heap-ve-oncelik-kuyrugu/
+
+
 ## content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/
 
 
@@ -103,6 +113,9 @@
 
 
 ## content/series-boun/assets/sayma-kombinatorigin-temel-araclari/
+
+
+## content/series-boun/assets/siralama-algoritmalari-karsilastirmali-ve-otesi/
 
 
 ## content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/
@@ -119,7 +132,6 @@
 
 ## content/series/articles/models-and-training/
 
-- `acik-agirliklar-ve-model-ekosistemi.md` — Ağırlıklar kimin elinde (~4732 tok)
 
 ## content/series/articles/reasoning-and-memory/
 
@@ -151,13 +163,25 @@
 ## content/series/assets/ham-modelden-asistana-post-training-haritasi/
 
 
+## content/series/assets/in-context-learning-ornekle-ogrenme/
+
+
 ## content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/
 
 
 ## content/series/assets/istem-muhendisligi-kanita-dayali-bir-bakis/
 
 
+## content/series/assets/kv-cache-ve-cikarim-ekonomisi/
+
+
+## content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/
+
+
 ## content/series/assets/talimatla-egitim-supervised-fine-tuning/
+
+
+## content/series/assets/uzun-baglam-pencereyi-buyutmenin-bedeli/
 
 
 ## docs/seri-boun/

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı görev, üç ölçüm düzeni</text>
+
+  <text x="127" y="52" font-size="13" text-anchor="middle" fill="var(--text)">doğru etiketler</text>
+  <text x="361" y="52" font-size="13" text-anchor="middle" fill="var(--text)">rastgele etiketler</text>
+  <text x="594" y="52" font-size="13" text-anchor="middle" fill="var(--text)">soyut simgeler</text>
+
+  <rect x="16" y="62" width="222" height="110" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="30" y="90" font-size="13" text-anchor="start" fill="var(--text-muted)">harikaydı → olumlu</text>
+  <text x="30" y="116" font-size="13" text-anchor="start" fill="var(--text-muted)">berbat → olumsuz</text>
+  <text x="30" y="142" font-size="13" text-anchor="start" fill="var(--text-muted)">fena değil → olumlu</text>
+
+  <rect x="250" y="62" width="222" height="110" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="264" y="90" font-size="13" text-anchor="start" fill="var(--cool)">harikaydı → olumsuz</text>
+  <text x="264" y="116" font-size="13" text-anchor="start" fill="var(--text-muted)">berbat → olumsuz</text>
+  <text x="264" y="142" font-size="13" text-anchor="start" fill="var(--text-muted)">fena değil → olumlu</text>
+
+  <rect x="484" y="62" width="220" height="110" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="498" y="90" font-size="13" text-anchor="start" fill="var(--accent)">harikaydı → B</text>
+  <text x="498" y="116" font-size="13" text-anchor="start" fill="var(--accent)">berbat → A</text>
+  <text x="498" y="142" font-size="13" text-anchor="start" fill="var(--accent)">fena değil → B</text>
+
+  <text x="127" y="198" font-size="13" text-anchor="middle" fill="var(--text-muted)">tanıma + öğrenme</text>
+  <text x="361" y="198" font-size="13" text-anchor="middle" fill="var(--cool)">yalnızca görev tanıma</text>
+  <text x="594" y="198" font-size="13" text-anchor="middle" fill="var(--accent)">yalnızca görev öğrenme</text>
+
+  <text x="127" y="228" font-size="13" text-anchor="middle" fill="var(--text-faint)">her zaman en iyi</text>
+  <text x="361" y="228" font-size="13" text-anchor="middle" fill="var(--text-faint)">ölçekle değişmiyor</text>
+  <text x="594" y="228" font-size="13" text-anchor="middle" fill="var(--text-faint)">ölçekle yükseliyor</text>
+
+  <text x="16" y="272" font-size="13" text-anchor="start" fill="var(--text-muted)">soyut simgeler ön eğitimde hiçbir çağrışım taşımaz; başarı ancak eşlemeyi çıkarmakla gelir</text>
+  <text x="16" y="298" font-size="13" text-anchor="start" fill="var(--text-faint)">on altı sınıflandırma kümesi, üç model ailesi, 8 ile 32 arası gösterim</text>
+</svg>

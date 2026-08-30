@@ -1,0 +1,34 @@
+<svg viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">997 örnek: ince ayara karşı isteme koymak</text>
+
+  <text x="16" y="62" font-size="13" text-anchor="start" fill="var(--text)">İngilizce → Bemba</text>
+
+  <rect x="210" y="74" width="226" height="22" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="200" y="90" font-size="13" text-anchor="end" fill="var(--text-muted)">taban model</text>
+  <text x="444" y="90" font-size="13" text-anchor="start" fill="var(--text-muted)">28,3</text>
+
+  <rect x="210" y="104" width="382" height="22" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="200" y="120" font-size="13" text-anchor="end" fill="var(--text-muted)">denetimli ince ayar</text>
+  <text x="600" y="120" font-size="13" text-anchor="start" fill="var(--cool)">47,7</text>
+
+  <rect x="210" y="134" width="378" height="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="200" y="150" font-size="13" text-anchor="end" fill="var(--text-muted)">997 örnek istemde</text>
+  <text x="596" y="150" font-size="13" text-anchor="start" fill="var(--accent)">47,2</text>
+
+  <text x="16" y="192" font-size="13" text-anchor="start" fill="var(--text)">İngilizce → Kürtçe</text>
+
+  <rect x="210" y="204" width="316" height="22" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="200" y="220" font-size="13" text-anchor="end" fill="var(--text-muted)">taban model</text>
+  <text x="534" y="220" font-size="13" text-anchor="start" fill="var(--text-muted)">39,5</text>
+
+  <rect x="210" y="234" width="372" height="22" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="200" y="250" font-size="13" text-anchor="end" fill="var(--text-muted)">denetimli ince ayar</text>
+  <text x="590" y="250" font-size="13" text-anchor="start" fill="var(--cool)">46,5</text>
+
+  <rect x="210" y="264" width="352" height="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="200" y="280" font-size="13" text-anchor="end" fill="var(--text-muted)">997 örnek istemde</text>
+  <text x="570" y="280" font-size="13" text-anchor="start" fill="var(--accent)">44,0</text>
+
+  <text x="16" y="310" font-size="13" text-anchor="start" fill="var(--text-muted)">puanlar çeviri kalitesini ölçen chrF2++ cetvelindendir; taban, tek örnekli istemdir</text>
+  <text x="16" y="334" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı 997 örnek: bir yanda ağırlığa yazılıyor, öbür yanda pencereye konuyor</text>
+</svg>

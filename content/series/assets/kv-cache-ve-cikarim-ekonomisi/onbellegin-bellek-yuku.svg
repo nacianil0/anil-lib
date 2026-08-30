@@ -1,0 +1,19 @@
+<svg viewBox="0 0 720 316" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Tek bir uzun sohbetin bellek yükü</text>
+
+  <text x="16" y="62" font-size="13" text-anchor="start" fill="var(--text-muted)">model ağırlıkları, 16 bitlik sayılarla</text>
+  <rect x="16" y="70" width="182" height="26" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="206" y="88" font-size="13" text-anchor="start" fill="var(--text)">140 GB</text>
+
+  <text x="16" y="126" font-size="13" text-anchor="start" fill="var(--text-muted)">128.000 token'lık tek sohbetin önbelleği (8 anahtar-değer başı)</text>
+  <rect x="16" y="134" width="55" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="79" y="152" font-size="13" text-anchor="start" fill="var(--cool)">42 GB</text>
+
+  <text x="16" y="190" font-size="13" text-anchor="start" fill="var(--text-muted)">aynı sohbet, her başın kendi anahtar-değer çifti olsaydı (64 baş)</text>
+  <rect x="16" y="198" width="437" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="461" y="216" font-size="13" text-anchor="start" fill="var(--accent)">336 GB</text>
+
+  <text x="16" y="252" font-size="13" text-anchor="start" fill="var(--text-muted)">önbellek kullanıcı başınadır; ağırlıklar bir kez yüklenir ve paylaşılır</text>
+  <text x="16" y="276" font-size="13" text-anchor="start" fill="var(--text-muted)">80 katman, 128 baş boyutu, 16 bitlik sayılar — 70 milyar parametreli model</text>
+  <text x="16" y="300" font-size="13" text-anchor="start" fill="var(--text-faint)">paylaşım oranı 64'e 8 olduğu için fark tam sekiz kat</text>
+</svg>

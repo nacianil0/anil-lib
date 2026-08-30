@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 334" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">32.000 token'a esnetmenin kısa görevlerdeki bedeli</text>
+
+  <text x="40" y="60" font-size="13" text-anchor="start" fill="var(--text-muted)">MMLU (genel bilgi)</text>
+  <line x1="40" y1="250" x2="310" y2="250" stroke="var(--border)" stroke-width="1"/>
+  <rect x="60" y="189" width="60" height="61" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="90" y="181" font-size="13" text-anchor="middle" fill="var(--cool)">35,7</text>
+  <rect x="140" y="206" width="60" height="44" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="170" y="198" font-size="13" text-anchor="middle" fill="var(--text-muted)">25,9</text>
+  <rect x="220" y="199" width="60" height="51" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="250" y="191" font-size="13" text-anchor="middle" fill="var(--accent)">30,0</text>
+  <line x1="40" y1="208" x2="300" y2="208" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="304" y="212" font-size="13" text-anchor="start" fill="var(--text-faint)">rastgele</text>
+  <text x="90" y="270" font-size="13" text-anchor="middle" fill="var(--text-muted)">esnetilmemiş</text>
+  <text x="170" y="270" font-size="13" text-anchor="middle" fill="var(--text-muted)">kaba esnetme</text>
+  <text x="250" y="270" font-size="13" text-anchor="middle" fill="var(--text-muted)">YaRN</text>
+
+  <text x="400" y="60" font-size="13" text-anchor="start" fill="var(--text-muted)">HellaSwag (sağduyu)</text>
+  <line x1="400" y1="250" x2="670" y2="250" stroke="var(--border)" stroke-width="1"/>
+  <rect x="420" y="118" width="60" height="132" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="450" y="110" font-size="13" text-anchor="middle" fill="var(--cool)">77,8</text>
+  <rect x="500" y="131" width="60" height="119" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="530" y="123" font-size="13" text-anchor="middle" fill="var(--text-muted)">70,2</text>
+  <rect x="580" y="119" width="60" height="131" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="610" y="111" font-size="13" text-anchor="middle" fill="var(--accent)">77,2</text>
+  <text x="450" y="270" font-size="13" text-anchor="middle" fill="var(--text-muted)">esnetilmemiş</text>
+  <text x="530" y="270" font-size="13" text-anchor="middle" fill="var(--text-muted)">kaba esnetme</text>
+  <text x="610" y="270" font-size="13" text-anchor="middle" fill="var(--text-muted)">YaRN</text>
+
+  <text x="16" y="300" font-size="13" text-anchor="start" fill="var(--text-muted)">2.000 token'lık pencereyle eğitilip 32.000'e esnetilmiş 7 milyar parametreli model</text>
+  <text x="16" y="318" font-size="13" text-anchor="start" fill="var(--text-faint)">kesikli çizgi: dört şıklı sınavda rastgele tahminin beklenen değeri</text>
+</svg>

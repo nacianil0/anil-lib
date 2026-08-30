@@ -2505,6 +2505,209 @@
       "related_bugs": [],
       "occurrences": 4,
       "last_seen": "2026-08-29T11:05:00.000Z"
+    },
+    {
+      "id": "bug-149",
+      "timestamp": "2026-08-30T10:57:19.112Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md",
+      "root_cause": "Had 'ün çocukları 7 ve 4, 2'",
+      "fix": "Changed to 'nin alt tam sayısı. Altta aynı verinin tam ikili ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T10:57:19.112Z"
+    },
+    {
+      "id": "bug-150",
+      "timestamp": "2026-08-30T11:09:17.951Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md",
+      "root_cause": "Had \"Şekil 1 — Birleştirme adımı ve özyineleme ağacı: ",
+      "fix": "Changed to 'i, sağdaki 9'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T11:09:17.951Z"
+    },
+    {
+      "id": "bug-151",
+      "timestamp": "2026-08-30T11:14:21.220Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/heap-ve-oncelik-kuyrugu/heap-sizdirma.svg",
+      "root_cause": "Had \"60,250 80,195 110,140 170,85\"",
+      "fix": "Changed to \"60,250 80,195 110,140 155,99\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T11:14:21.220Z"
+    },
+    {
+      "id": "bug-152",
+      "timestamp": "2026-08-30T11:18:50.910Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→9 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T11:18:50.910Z"
+    },
+    {
+      "id": "bug-153",
+      "timestamp": "2026-08-30T11:21:09.451Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/ARASTIRMA.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→4 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T11:21:09.451Z"
+    },
+    {
+      "error_message": "/usr/bin/bash: -c: line 95: unexpected EOF while looking for matching `''",
+      "file": "docs/seri-boun/ARASTIRMA.md",
+      "root_cause": "Bash tool'una `cat >> dosya <<'EOF'` heredoc'u ile Türkçe kesme işareti içeren uzun Markdown gönderildi; tek tırnakla kapatılmış heredoc'ta bile tırnak literal işlenmedi ve komut ayrıştırması patladı. Aynı hata daha önce bir SVG bloğunda da alınmıştı.",
+      "fix": "Uzun bloklar Write aracıyla scratchpad'e yazıldı, sonra `cat scratch >> hedef` ile eklendi. SVG'ler doğrudan Write ile yazıldı.",
+      "tags": [
+        "bash",
+        "heredoc",
+        "tooling",
+        "encoding",
+        "turkish"
+      ],
+      "id": "bug-154",
+      "timestamp": "2026-08-30T14:40:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:40:00Z"
+    },
+    {
+      "error_message": "TaskStop sonrası port 3100 hâlâ LISTENING; Invoke-WebRequest yeni sunucuya değil eskisine bağlanıyor",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "TaskStop arka plan görevini sonlandırıyor ama `corepack pnpm exec next dev` süreç ağacındaki gerçek Next sunucusunu öldürmüyor; süreç yetim kalıp portu dinlemeye devam ediyor. Playwright config'i `reuseExistingServer: true` olduğu için gate'siz sunucu sessizce yeniden kullanılıp auth testlerini yanlışlıkla düşürebiliyor.",
+      "fix": "`netstat -ano | grep :3100` ile PID bulunup `Stop-Process -Id <pid> -Force` çalıştırıldı, sonra portun kapandığı doğrulandı. Adım HANDOFF'un doğrulama sırasına 4. madde olarak eklendi.",
+      "tags": [
+        "playwright",
+        "next-dev",
+        "process",
+        "windows",
+        "e2e"
+      ],
+      "id": "bug-155",
+      "timestamp": "2026-08-30T14:40:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:40:00Z"
+    },
+    {
+      "error_message": "Tam ikili ağaç yüksekliği: kaynak ⌈lg n⌉ diyor, gerçek değer ⌊log₂ n⌋",
+      "file": "content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md",
+      "root_cause": "MIT 6.006 Lecture 8 notu 'Height of complete tree perspective of array of n item is ⌈lg n⌉' der; bu gevşek bir üst sınırdır. n = 3, 5, 6, 7 gibi değerlerde gerçek yükseklikten bir fazla çıkıyor (n = 3 → ⌈lg 3⌉ = 2 ama gerçek yükseklik 1).",
+      "fix": "Yükseklik n = 1..16, 100, 1000, 10⁶ için okuma sırası temsili üzerinde hesaplanıp ⌊log₂ n⌋ ile birebir eşleştiği doğrulandı; makale sıkı değeri kullanıyor ve bunu kaynağa atfetmiyor. Ayrım ARASTIRMA §9'a yazıldı.",
+      "tags": [
+        "boun",
+        "heap",
+        "kaynak-dogrulama",
+        "matematik"
+      ],
+      "id": "bug-156",
+      "timestamp": "2026-08-30T14:40:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:40:00Z"
+    },
+    {
+      "error_message": "SVG'de marker-end oku görünmüyor (makale 13, Şekil 2 yukarı sızdırma yolu)",
+      "file": "content/series-boun/assets/heap-ve-oncelik-kuyrugu/heap-sizdirma.svg",
+      "root_cause": "Polyline hedef düğümün tam merkezinde (170,85) bitiyordu; düğüm dairesi polyline'dan sonra çizildiği için r=17'lik daire ok ucunu tamamen örtüyordu. Render ekran görüntüsü incelenmeden fark edilmedi.",
+      "fix": "Polyline yarıçap + birkaç birim öncesinde bitirildi (170,85 → 155,99); diyagram yeniden çekilip ok ucunun göründüğü doğrulandı.",
+      "tags": [
+        "svg",
+        "boun",
+        "diyagram",
+        "render-dogrulama"
+      ],
+      "id": "bug-157",
+      "timestamp": "2026-08-30T14:40:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:40:00Z"
+    },
+    {
+      "id": "bug-158",
+      "timestamp": "2026-08-30T11:29:10.807Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 5→6 lines (4 removed) | Also: - `pnpm typecheck` temiz · `pnpm test` 235/235 · `; `/boun/[slug]` 15 yol, `/read/[slug]` 18, `/seri/[",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-30T11:30:16.810Z"
+    },
+    {
+      "id": "bug-159",
+      "timestamp": "2026-08-30T14:50:00.000Z",
+      "error_message": "Seri Şekil 2 (uzun-baglam) — DOM ölçümünde bir SVG metni kutusunun dışına taşıyor: \"kesikli çizgi: dört şıklı sınavda rastgele...\" alt kenardan 1px taşıyor",
+      "file": "content/series/assets/uzun-baglam-pencereyi-buyutmenin-bedeli/esnetmenin-kisa-baglam-bedeli.svg",
+      "root_cause": "Son metin satırının tabanı y=318, viewBox yüksekliği 320: 2 birimlik pay 13px metnin alt uçlarını (descender) kırpıyor. check-series-svg.cjs yalnızca y > yükseklik durumunu yakalıyor, bu yüzden denetimden geçti.",
+      "fix": "Etkilenen ve riskli bütün yeni SVG'lerin viewBox yüksekliği artırıldı; son metin tabanı ile alt kenar arasındaki pay en az 12 birime çıkarıldı (6 dosya). Kural cerebrum Do-Not-Repeat'e yazıldı.",
+      "tags": [
+        "seri",
+        "svg",
+        "viewbox",
+        "render",
+        "clipping",
+        "batch5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:50:00.000Z"
+    },
+    {
+      "id": "bug-160",
+      "timestamp": "2026-08-30T14:50:00.000Z",
+      "error_message": "/seri sayfasında sahte yatay taşma: documentElement.scrollWidth - clientWidth = 233",
+      "file": "doğrulama yöntemi (tarayıcı ölçümü)",
+      "root_cause": "Tarayıcı panosu görüntülenmediği için viewport 0x0 idi; clientWidth=0 olunca scrollWidth-clientWidth sahte bir taşma üretiyor.",
+      "fix": "Ölçümden önce resize_window ile açık viewport (1280x800 ve 375x812) verildi; her ikisinde de taşma 0 çıktı. Kural cerebrum Do-Not-Repeat'e yazıldı.",
+      "tags": [
+        "seri",
+        "dogrulama",
+        "viewport",
+        "false-positive",
+        "batch5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T14:50:00.000Z"
     }
   ]
 }

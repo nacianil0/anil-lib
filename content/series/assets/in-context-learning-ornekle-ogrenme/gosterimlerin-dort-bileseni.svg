@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Gösterimin dört bileşeni ve bozulduğunda ölçülen kayıp</text>
+
+  <rect x="16" y="50" width="226" height="140" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="30" y="78" font-size="13" text-anchor="start" fill="var(--text)">film harikaydı → olumlu</text>
+  <text x="30" y="106" font-size="13" text-anchor="start" fill="var(--text)">berbat bir gece → olumsuz</text>
+  <text x="30" y="134" font-size="13" text-anchor="start" fill="var(--text)">fena değildi → olumlu</text>
+  <text x="30" y="170" font-size="13" text-anchor="start" fill="var(--accent)">izlemeye değer →</text>
+  <text x="16" y="210" font-size="13" text-anchor="start" fill="var(--text-muted)">üç gösterim ve cevaplanacak girdi</text>
+
+  <line x1="242" y1="120" x2="282" y2="120" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="290" y="68" font-size="13" text-anchor="start" fill="var(--text-faint)">taşınan bilgi</text>
+  <text x="704" y="68" font-size="13" text-anchor="end" fill="var(--text-faint)">bozulunca kaybedilen</text>
+
+  <line x1="290" y1="78" x2="704" y2="78" stroke="var(--border)" stroke-width="1"/>
+  <text x="290" y="100" font-size="13" text-anchor="start" fill="var(--text-muted)">girdi–etiket eşlemesi</text>
+  <text x="704" y="100" font-size="13" text-anchor="end" fill="var(--text-muted)">0–5 puan</text>
+
+  <line x1="290" y1="110" x2="704" y2="110" stroke="var(--border)" stroke-width="1"/>
+  <text x="290" y="132" font-size="13" text-anchor="start" fill="var(--text-muted)">girdi dağılımı</text>
+  <text x="704" y="132" font-size="13" text-anchor="end" fill="var(--cool)">3–16 puan</text>
+
+  <line x1="290" y1="142" x2="704" y2="142" stroke="var(--border)" stroke-width="1"/>
+  <text x="290" y="164" font-size="13" text-anchor="start" fill="var(--text-muted)">etiket kümesi</text>
+  <text x="704" y="164" font-size="13" text-anchor="end" fill="var(--cool)">5–16 puan</text>
+
+  <line x1="290" y1="174" x2="704" y2="174" stroke="var(--border)" stroke-width="1"/>
+  <text x="290" y="196" font-size="13" text-anchor="start" fill="var(--text)">biçim: girdi–etiket çiftleri</text>
+  <text x="704" y="196" font-size="13" text-anchor="end" fill="var(--accent)">kazancın tamamı</text>
+  <line x1="290" y1="206" x2="704" y2="206" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="250" font-size="13" text-anchor="start" fill="var(--text-muted)">aynı üç gösterim bu dört bilgiyi aynı anda taşır</text>
+  <text x="16" y="276" font-size="13" text-anchor="start" fill="var(--text-muted)">etiketleri rastgeleleştirmek en küçük kaybı verir; biçimi bozmak en büyüğünü</text>
+  <text x="16" y="302" font-size="13" text-anchor="start" fill="var(--text-faint)">ölçüm on iki modelde, sınıflandırma ve çoktan seçmeli görevlerde yapıldı</text>
+</svg>

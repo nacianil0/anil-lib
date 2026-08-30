@@ -1,0 +1,33 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Ön dolum ve adım adım üretim</text>
+
+  <text x="16" y="58" font-size="13" text-anchor="start" fill="var(--cool)">ön dolum</text>
+  <rect x="16" y="70" width="310" height="60" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="171" y="105" font-size="13" text-anchor="middle" fill="var(--cool)">istemin bütün token'ları aynı anda</text>
+  <text x="16" y="155" font-size="13" text-anchor="start" fill="var(--text)">sınırlayan: hesap gücü</text>
+  <text x="16" y="180" font-size="13" text-anchor="start" fill="var(--text-muted)">önbelleği doldurur</text>
+
+  <text x="380" y="58" font-size="13" text-anchor="start" fill="var(--accent)">adım adım üretim</text>
+  <rect x="380" y="70" width="52" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="406" y="105" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <line x1="432" y1="100" x2="444" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <rect x="444" y="70" width="52" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="470" y="105" font-size="13" text-anchor="middle" fill="var(--accent)">2</text>
+  <line x1="496" y1="100" x2="508" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <rect x="508" y="70" width="52" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="534" y="105" font-size="13" text-anchor="middle" fill="var(--accent)">3</text>
+  <line x1="560" y1="100" x2="572" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <rect x="572" y="70" width="52" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="598" y="105" font-size="13" text-anchor="middle" fill="var(--accent)">4</text>
+  <line x1="624" y1="100" x2="636" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <rect x="636" y="70" width="52" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="662" y="105" font-size="13" text-anchor="middle" fill="var(--accent)">5</text>
+  <text x="380" y="155" font-size="13" text-anchor="start" fill="var(--text)">sınırlayan: bellek bant genişliği</text>
+  <text x="380" y="180" font-size="13" text-anchor="start" fill="var(--text-muted)">her adımda önbelleği okur ve büyütür</text>
+
+  <line x1="16" y1="200" x2="704" y2="200" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="226" font-size="13" text-anchor="start" fill="var(--text-muted)">ön dolumda ağırlıklar bir kez okunup yüzlerce token için kullanılır</text>
+  <text x="16" y="250" font-size="13" text-anchor="start" fill="var(--text-muted)">üretimde ağırlıkların tamamı her token için yeniden okunur</text>
+  <text x="16" y="276" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı model, aynı çağrı — bambaşka iki darboğaz</text>
+</svg>

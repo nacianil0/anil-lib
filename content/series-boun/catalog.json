@@ -243,6 +243,66 @@
       "path": "content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
+    },
+    {
+      "articleId": "article_83b44d0c-556d-42ed-8dd4-3bafbefa52a3",
+      "title": "Heap ve Öncelik Kuyruğu",
+      "slug": "heap-ve-oncelik-kuyrugu",
+      "category": "data-structures",
+      "level": "advanced",
+      "readingOrder": 13,
+      "summary": "Arama ağacının değişmezini bilinçli olarak zayıflatan yapı: öncelik kuyruğu arayüzü, heap özelliği ve kökün en küçük olduğunun tümevarımla ispatı, tam ikili ağacın dizi üzerindeki indis aritmetiği, yukarı ve aşağı sızdırma, yığın kurmanın neden doğrusal olduğu ve heapsort.",
+      "tags": [
+        "heap",
+        "oncelik-kuyrugu",
+        "heapsort",
+        "build-heap",
+        "tam-ikili-agac"
+      ],
+      "contentHash": "sha256:5ed0571dfc02a0866e8ddbb0d59c289837c881f41f7f4cccdbdef68f3f0941bb",
+      "path": "content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
+    },
+    {
+      "articleId": "article_62b07642-f73f-403f-bf5e-c24609bac6e1",
+      "title": "Hashing: Sabit Zamanın Bedeli",
+      "slug": "hashing-sabit-zamanin-bedeli",
+      "category": "data-structures",
+      "level": "advanced",
+      "readingOrder": 14,
+      "summary": "Karşılaştırma modelinin logaritmik duvarı ve onu aşmanın yolu: doğrudan erişim dizisi, hash fonksiyonu, güvercin yuvasıyla çakışmanın kaçınılmazlığı, zincirleme ile açık adresleme, yük faktörünün maliyete etkisi, ortalama sabit zamanın dayandığı varsayım ve evrensel hash ailesiyle en kötü durum savunması.",
+      "tags": [
+        "hashing",
+        "hash-tablosu",
+        "cakisma",
+        "yuk-faktoru",
+        "evrensel-hash"
+      ],
+      "contentHash": "sha256:74d1063d62d5f1aa0e5db78ffa668f896b8aaf8244844a1700930418b8ffdd1b",
+      "path": "content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
+    },
+    {
+      "articleId": "article_4b599b29-da33-4aac-9e36-113cf9039942",
+      "title": "Sıralama Algoritmaları: Karşılaştırmalı ve Ötesi",
+      "slug": "siralama-algoritmalari-karsilastirmali-ve-otesi",
+      "category": "data-structures",
+      "level": "advanced",
+      "readingOrder": 15,
+      "summary": "Beş klasik sıralama algoritmasının tek çerçevede karşılaştırılması: eklemeli, seçmeli, birleştirmeli, hızlı ve heapsort; yerinde çalışma ile kararlılığın tanımı ve ne zaman önemli olduğu; karar ağacı argümanıyla n log n alt sınırının sezgisi; ve modeli terk eden doğrusal sıralamalar — sayma ve radix.",
+      "tags": [
+        "siralama",
+        "mergesort",
+        "quicksort",
+        "kararlilik",
+        "radix-sort"
+      ],
+      "contentHash": "sha256:f1f0849eb5e761356fe8c24c4f77a0f3cb282f139bff5c9389327724e2622f4b",
+      "path": "content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
     }
   ]
 }

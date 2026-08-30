@@ -17,6 +17,11 @@
 
 ## Key Learnings
 
+- Seri makalelerinde `check-series-content.cjs` düzyazı sayısı ≈ `wc -w` × 0,79. 2.000 eşiğini rahat geçmek için taslağı `wc -w` ≥ 2.550 hedefleyerek yaz; Batch 5'in dördü 2.471–2.752 aralığında geldi ve düzyazı sayıları 1.954–2.180 çıktı.
+- Seri dev sunucusu yerelde parola kapısı olmadan çalışır: `SITE_PASSWORD_SHA256` tanımsızken `getGateConfig()` null döner ve middleware dev modda isteği geçirir. Render doğrulaması için gate env değişkeni gerekmez (Playwright için gerekir — o ayrı).
+- SVG dosyaları makale gövdesinin `content_hash`'ine girmez (hash yalnızca frontmatter sonrası gövdenin SHA-256'sı). Şekil düzeltmesinden sonra `sync-series-hashes.cjs` çalıştırmak gerekmez; makale metni değişmediyse katalog da değişmez.
+- `entegre-batch.cjs` roadmap başlığını frontmatter başlığıyla **birebir** karşılaştırır. Başlık değiştirilecekse `content/series/roadmap.json` (ve YOL-HARITASI faz listesi) entegrasyondan **önce** güncellenmeli; sonra yapılırsa araç "başlık farkı" ile durur.
+
 - **Project:** anil-lib
 - OpenWolf 1.0.4 resolves the project root from markers such as `.git` or `package.json`; without a local marker it may select a parent repository.
 - GitHub publishing on this machine uses `gh` HTTPS credentials; SSH private keys are not configured.
@@ -102,6 +107,10 @@
 - [2026-08-29] Seri diyagramları mobil genişlikte (375px) kendi kaplarında yatay kayıyor: SVG 544 birim, kap ~298 birim. Sayfa gövdesi taşmıyor (`documentElement.scrollWidth == clientWidth`). Bu, yayımlanmış makalelerde de birebir aynı olan yerleşik davranıştır — yeni bir makalede görüldüğünde regresyon sanıp düzeltmeye çalışma, önce yayımlanmış bir makaleyle karşılaştır.
 - [2026-08-29] Seri makalesinin ilk taslağı `check-series-content.cjs` eşiğinin altında kaldığında eksiği doldurma cümlesiyle değil **yeni ölçüm/yeni kaynakla** kapat: Batch 4'te dört makalenin dördü de 1.500–1.800 kelimeyle çıktı ve eklenen bölümler (20'de "Geri alınamayan bir karar", 21'de "Pencere dolduğunda", 22'de "Peki ne işe yarıyor") makalelerin en güçlü kısımları oldu.
 
+- MIT 6.006 Bahar 2020 ders notu PDF'lerine erişim yolu: OCW ders listesi sayfasındaki `resources/mit6_006s20_lecN/` bir HTML sayfasıdır, PDF değil. Gerçek PDF adresi o HTML'in içinde `<hash>_MIT6_006S20_lecN.pdf` biçiminde geçer; grep'le çıkarılıp indirilir, sonra `pdftotext -layout` (mingw64'te mevcut) ile metne çevrilir. Ders notlarındaki tablolar sütun kaymasıyla çıkar — satır/sütun eşleşmesi elle denetlenmelidir.
+- CLRS 4. baskının bölüm numaraları için MIT Press ürün sayfası işe yaramaz (403 / içindekiler yok); çalışan kaynak MIT Press içerik sunucusundaki resmî *Selected Solutions* PDF'idir. Belge 1. ve 18. bölümleri içermez, o yüzden o iki bölümün adı hâlâ doğrulanamıyor.
+- BOUN serisinde bir SVG'yi düzenlemek makalenin `content_hash`'ini **etkilemez** (hash yalnızca .md gövdesinden alınır), ama diyagramı yeniden çekip görsel denetlemek gerekir. Tersi de doğru: gövdeyi düzenledikten sonra `sync-series-hashes.cjs --write` tekrar çalıştırılmalıdır.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -151,9 +160,22 @@
 - [2026-08-29] İngilizcesi Türkçesiyle aynı olan bir terime parantez içi gloss verme ("rank (rank)"). Terim defteri bu durumda tire kullanır (token, logit, perplexity, few-shot gibi); yeni terimi de aynı biçimde kaydet.
 - [2026-08-29] Sayısal görünen ama kaynaksız nicelik iddiaları yazma ("bu birleşim dünyada onlarca kurumun elinde"). SOZLESME §2 kaynaksız sayısal iddiayı yasaklar ve "onlarca" da bir sayıdır. Yapısal ifadeye çevir: hangi dört koşulun aynı anda gerektiğini say, sayıyı okura bırak.
 
+- [2026-08-30] Bash tool'unun heredoc'u (`cat > f <<'EOF'`) Türkçe kesme işareti (`'`) içeren uzun metinlerde "unexpected EOF while looking for matching `''`" ile patlıyor — tırnak literal olması gerekirken öyle davranmıyor. Uzun Markdown/SVG blokları `Write` aracıyla yazılmalı; dosya sonuna eklemek gerekiyorsa önce `Write` ile geçici dosya, sonra `cat >> hedef` kullanılmalı.
+- [2026-08-30] `TaskStop`, arka planda başlatılan Next dev sürecini öldürmüyor: görev "stopped" görünse de süreç 3100'ü dinlemeye devam ediyor ve sonraki sunucu başlatma sessizce yanlış sunucuyu kullandırıyor. Portu gerçekten boşaltmak için `netstat -ano` ile PID bulunup `Stop-Process -Id <pid> -Force` çalıştırılmalı ve portun kapandığı doğrulanmalıdır.
+- [2026-08-30] MIT 6.006 Lecture 8, tam ikili ağacın yüksekliğini `⌈lg n⌉` verir; bu gevşek bir üst sınırdır ve n = 3, 5, 6, 7 gibi değerlerde bir fazla çıkar. Doğru değer `⌊log₂ n⌋`. Ders notundaki formülü kopyalamak yerine hesaplayıp doğrula; makale 13 sıkı değeri kullanır ve kaynağa atfetmez.
+- [2026-08-30] SVG'de `marker-end` taşıyan bir çizgiyi hedef düğümün **merkezinde** bitirme: daire sonradan çizilince ok ucu tamamen görünmez oluyor. Çizgiyi yarıçap + birkaç birim önce bitir (makale 13, Şekil 2'de polyline 170,85 → 155,99 olarak kısaltıldı).
+
+- [2026-08-30] Seri SVG'sinde son metin satırının tabanını viewBox alt kenarına 8 birimden yakın koyma. `check-series-svg.cjs` yalnızca `y > viewBox yüksekliği` durumunu yakalar; 2 birim pay bırakılan bir satır denetimden geçer ama gerçek render'da harflerin alt uçları kırpılır ve DOM ölçümü bunu "metin SVG kutusunun dışında" diye raporlar. Yeni şekillerde alt payı ≥ 12 birim tut; şekil bittikten sonra `h - max(text y)` değerini bir kez hesapla.
+- [2026-08-30] Tarayıcı panosu görüntülenmiyorken `innerWidth` ve `documentElement.clientWidth` 0 döner; `scrollWidth - clientWidth` o zaman sahte bir yatay taşma üretir (bu oturumda /seri için 233 px). Yatay taşma ölçümünden **önce** `resize_window` ile açık bir viewport boyutu ver (ör. 1280x800, sonra 375x812) ve ölçümün döndürdüğü `vw` değerini de raporla.
+- [2026-08-30] Karıştırılabilir kavram ayrımı yaparken bile, önceki bir makalede kurulmuş terimi yeniden gloss'lama. Batch 5'te 24\. makale "22\. makalede **rol** (persona) derken…" yazmıştı; 21\. makalenin emsali parantezsizdir ("18\. makaledeki anahtar-değer **belleğine** benziyor"). Ayrımı vurguyla yap, parantezi yalnızca **yeni** terime ver.
+- [2026-08-30] Seri gövdesine `<|token|>` gibi açılı ayraçlı literal yazma. `check-series-content.cjs`'in ham HTML kalıbı `<[a-z]` ile başladığı için `<|` ona takılmaz, ama Markdown render'ında güvenli değildir. Literal sözdizimini SVG'ye `&lt;` / `&gt;` kaçışıyla koy; gövdede token adlarını düz yaz (begin_of_text, eot_id).
+- [2026-08-30] Uzun Türkçe/Markdown blokları `python - <<'PY'` heredoc'una gömme. Bu oturumda ~90 satırlık bir blok bash'i "unexpected EOF while looking for matching `''" ile patlattı ve dosya hiç yazılmadı. Script'i Write aracıyla scratchpad'e yaz, sonra `python <dosya>` ile çalıştır (kısa bloklarda heredoc sorunsuz).
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
+
+- [2026-08-30] Seri Batch 5: yayımlanmamış 24 ve 26 başlıklarındaki İngilizce sözcükler terim defterine uyarlandı ("Sohbet Formatı" → "Sohbet Biçimi", "Inference Ekonomisi" → "Çıkarım Ekonomisi"). Gerekçe: her ikisinin Türkçe karşılığı 1\. ve 12\. makalelerde kurulmuştu; başlık gövdenin kullanmadığı bir sözcüğü taşımamalı. `roadmap.json`'daki **faz** başlıklarına bilinçli olarak dokunulmadı: o katman İngilizce alan terimlerini (Inference, Reasoning, Retrieval, Test-Time Compute) tutarlı biçimde kullanıyor ve yalnızca birini çevirmek katmanı bozardı. Katmanın tümü kullanıcı kararına bırakıldı ve HANDOFF'a açık borç olarak yazıldı.
 
 - [2026-06-27] Build a single Next.js reader backed by a file contract instead of copying the full nacianilcom Studio monorepo; authoring UI and API services are outside the requested scope.
 - [2026-06-27] Make article ingestion idempotent with persistent `article_id` frontmatter, normalized content hashes, and `content/catalog.json`; normal reruns never reclassify existing articles.
@@ -193,3 +215,8 @@
 - [2026-08-29] Batch 4'te dokuz numaralı ileri vaat verildi (19 → 21/27/41, 20 → 27/61–70/69/85, 21 → 24/25/26/39/41, 22 → 23/32/101), Batch 3'ün üç vaadine karşılık. Gerekçe: Faz 3'ün başlıkları yol haritasının en sağlam bölgesi ve 21 gibi bir "anatomi" makalesi, açtığı her alt konuyu bir yere bağlamadan kapanamıyor. Numarasız bırakılan tek işaret, istem-belge sınırının kırılması (güvenlik fazına).
 - [2026-08-29] 20\. makalede DeepSeek-V3 teknik raporu "hakemli değildir" diye işaretlendi ama aynı ekibin akıl yürütme modelinin *Nature* yayını karşı örnek olarak kullanıldı. Gerekçe: "blog yazısıyla duyurma" eleştirisi tek yanlı bırakılsa alanın bilimsel denetimden yapısal olarak kaçtığı izlenimi doğardı; istisnayı göstermek eleştiriyi zayıflatmıyor, hedefini keskinleştiriyor.
 - [2026-08-29] 20\. makalenin hesap karşılaştırması, 6ND kuralı **önce bilinen bir sayıda sınanarak** kuruldu (GPT-3: 3,14×10²³ ÷ 8,64×10¹⁹ = 3.634 PF-gün ↔ 11\. makalenin bildirdiği 3.640). Gerekçe: dört yıl arayla iki eğitim koşusunu karşılaştırmak, cetvelin hâlâ çalıştığını göstermeden yapılırsa reklam dili olur; çapraz doğrulama okura yöntemin kendisini de öğretiyor.
+
+- [2026-08-30] BOUN makale 13 min-heap ve **0 tabanlı** indis aritmetiği (sol 2i+1, sağ 2i+2, ebeveyn ⌊(i−1)/2⌋) üzerinden yazıldı, Sedgewick'in 1 tabanlı kuralı yerine. Gerekçe: makale 10 kavram-tekrar defterine "2i + 1 ve 2i + 2" olarak pinlenmişti ve makale 12 "en küçüğü ver" sözü vermişti; kaynak seçimi yayımlanmış sözlere uyduruldu, tersi değil. Kaynak ayrımı ARASTIRMA §9'a not düşüldü.
+- [2026-08-30] Makale 13'te doğrusal build-heap'in **amortize bir sonuç olmadığı** açıkça yazıldı ("aynı işin daha sıkı sayılması"). Gerekçe: makale 9/10 amortize maliyeti ortalama durumdan ayırmak için ciddi yer harcadı; build-heap'i üçüncü bir amortize örneği gibi sunmak o ayrımı bulandırırdı. Kavram-tekrar defterine uyarı olarak eklendi.
+- [2026-08-30] Karar ağacı argümanı iki kez, iki farklı makalede kuruldu (14: arama, ≥ n+1 yaprak; 15: sıralama, ≥ n! yaprak) ve ikisi de formal hâlini 24'e bıraktı. Gerekçe: aynı argümanı tek yerde toplamak, hash makalesini alt sınır ispatına, sıralama makalesini de geriye referansa bağımlı kılardı; iki makale de kendi içinde yeterli kalsın diye sezgi tekrarlandı, formalizm tek yere bırakıldı.
+

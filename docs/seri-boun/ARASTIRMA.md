@@ -6,9 +6,10 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-08-29** (bütün URL'ler bu tarihte yeniden doğrulandı; üretim run'ları
-kapsam kararını etkileyen sayfaları yeniden doğrular ve bu defteri günceller).
-Önceki doğrulama: 2026-08-28 (kurulum görevi).
+Erişim tarihi: **2026-08-30** (Batch 4 run'ında kapsam kararını taşıyan CMPE250 sayfası ve bu
+batch'in akademik kaynakları yeniden doğrulandı — §9). Kapsamı etkilemeyen resmî sayfaların son
+tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını etkileyen sayfaları
+yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum görevi).
 
 ## 1. Resmî gerçekler (doğrudan sayfadan)
 
@@ -332,3 +333,157 @@ the MIT Press. Copyright 2022"). Doğrulanan bölüm numaraları ve başlıklar�
   tutarlıdır. n = 10⁹ için gerçek en büyük yükseklik 41, sıkı sınır ≈ 43,06.
   **Not:** 1,44 sabiti kaynaktan alınmadı; yukarıdaki özdeşlikten türetilip sayısal olarak
   doğrulandı. 6.006 ders notu yalnızca kaba 2 log₂ n sınırını verir.
+
+## 9. Batch 4 üretim run'ında doğrulanan kaynaklar (2026-08-30)
+
+Kapsam kararını taşıyan resmî sayfa bu run'da tekrar okundu: CMPE250 katalog tanımı §1, §7 ve
+§8'deki alıntılarla birebir aynıdır ("Graphs. Advanced Sorting. Hashing. Heap Structures. Search
+Structures. Complexity. Parallel algorithms. File organization."; ders adı *Data Structures and
+Algorithms*, 4 kredi / 6 ECTS, önkoşul CMPE160, güz dönemi, 3 saat ders + 2 saat PS). Makale
+13–15'in resmî dayanağı bu tanımdaki **"Heap Structures"**, **"Hashing"** ve **"Advanced Sorting"**
+başlıklarıdır — yani bu batch, katalog tanımındaki sekiz başlıktan üçünü doğrudan karşılar. Diğer
+resmî sayfalar bu batch'in kapsamını etkilemediği için yeniden çekilmedi; §5'teki 2026-08-29
+doğrulaması geçerlidir.
+
+### CLRS 4. baskının bölüm numaraları (Batch 3'ten kalan borcun bir kısmı kapandı)
+
+MIT Press içerik sunucusundaki resmî *Selected Solutions* belgesi yeniden indirildi ve içindekiler
+tablosu doğrudan okundu (<https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf>).
+Batch 3'te kaydedilmemiş olan şu bölüm numaraları da doğrulandı:
+
+- 2 Getting Started · 3 Characterizing Running Times · 4 Divide-and-Conquer · 5 Probabilistic
+  Analysis and Randomized Algorithms · **7 Quicksort** · **8 Sorting in Linear Time** ·
+  9 Medians and Order Statistics. (Batch 3'te doğrulananlar: 6, 10, 11, 12, 13, 14, 15, 16, 17,
+  19, 20, 21, 22, 23, 24.)
+- Alt bölümlerin **varlığı** çözüm başlıklarındaki alıştırma numaralarından doğrulandı:
+  6.1, 6.2, 6.4, 6.5; 7.2; 8.1, 8.2, 8.3; 11.2.
+- **Hâlâ doğrulanamayan:** 18. bölümün adı (belge 1. ve 18. bölümleri içermiyor) ve alt bölüm
+  **başlıkları**. Batch 3'teki karar sürüyor: CLRS'e bölüm düzeyinde atıf yapılır.
+
+### Makale 13–15'te kullanılan akademik kaynaklar
+
+- **MIT 6.006 Introduction to Algorithms, Bahar 2020 (OCW; Demaine, Ku, Solomon)** — dört ders
+  notu PDF'i indirilip tam metin okundu (ders listesi:
+  <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/>).
+  - **Lecture 3: Sorting** — permütasyon ve sıralılık tanımları; yıkıcı (destructive) ile yerinde
+    (in-place = O(1) ek yer; yerinde ⇒ yıkıcı) ayrımı; seçmeli ve eklemeli sıralamanın tümevarımlı
+    doğruluk ispatları ve T(n) = T(n−1) + Θ(n) ⇒ Θ(n²) analizi; birleştirmeli sıralamanın iki
+    parmaklı birleştirmesi, tümevarımlı doğruluğu ve T(n) = 2T(n/2) + Θ(n) ⇒ Θ(n log n) çözümünün
+    hem yerine koyma hem özyineleme ağacıyla verilmesi ("complete binary tree with depth log2 n and
+    n leaves, level i has 2^i nodes with O(n/2^i) work each").
+  - **Lecture 4: Hashing** — karşılaştırma modeli tanımı ve karar ağacı kurulumu; aramanın en az
+    n + 1 yaprak gerektirmesi ve yüksekliğin ⌈lg(n+1)⌉ − 1 = Ω(log n) ile alttan sınırlanması;
+    "to get faster, need an operation that allows super-constant branching factor"; doğrudan erişim
+    dizisi, O(u) alan ve on harfli isimler için 26¹⁰ ≈ 17,6 TB örneği; m < u iken güvercin yuvası
+    ilkesiyle hiçbir hash fonksiyonunun birebir olamaması; zincirleme ile açık adresleme; bölme
+    yönteminin sezgisel oluşu ve m'nin ikinin ve onun kuvvetlerinden uzak asal seçilmesi; "if u ≫ n,
+    every hash function will have some input set that will create O(n) size chain"; evrensel aile
+    h(a,b)(k) = ((ak + b) mod p) mod m (p > u asal, a ≠ 0), çakışma olasılığının 1/m ile sınırlı
+    olması ve beklenen zincir uzunluğunun 1 + (n − 1)/m çıkması; yük faktörü α = n/m sabitken
+    beklenen ve (yeniden boyutlandırma varsa) amortize O(1).
+  - **Lecture 5: Linear Sorting** — karşılaştırmalı sıralama alt sınırı (yaprak sayısı ≥ n!,
+    yükseklik ≥ log(n!) ≥ log((n/2)^(n/2)) = Ω(n log n)) ve "so merge sort is optimal in comparison
+    model"; doğrudan erişim dizisi sıralaması Θ(u); demet (tuple) sıralamasının en anlamsız
+    basamaktan başlaması; kararlılık tanımı ("repeated keys appear in output in same order as
+    input"); sayma sıralamasının zincir tabanlı kurulumu ve Θ(n + u) maliyeti; radix sıralamasının
+    Θ(n + n·log_n u) maliyeti ve u = O(n^c) iken doğrusal olması; kapanış tablosu (Insertion n²
+    yerinde/kararlı, Selection n² yerinde/kararsız + O(n) takas, Merge n log n yerinde değil/kararlı
+    ve karşılaştırma modelinde optimal, Counting n + u, Radix n + n log_n u).
+  - **Lecture 8: Binary Heaps** — öncelik kuyruğu arayüzü (build, insert, delete max, find max) ve
+    kullanım örnekleri (bant genişliği sınırlı yönlendirici, çekirdek süreç zamanlaması, kesikli
+    olay benzetimi, graf algoritmaları); öncelik kuyruğu sıralaması kalıbı ve tablosu: sırasız
+    dinamik dizi → seçmeli sıralama, sıralı dinamik dizi → eklemeli sıralama, Set AVL → AVL sort,
+    ikili yığın → heap sort (n log n, yerinde); tam ikili ağaç tanımı ve dizilerle birebir eşleme;
+    indis aritmetiği left(i) = 2i + 1, right(i) = 2i + 2, parent(i) = ⌊(i − 1)/2⌋; max-heap özelliği
+    ve "every node i satisfies Q[i] ≥ Q[j] for all nodes j in subtree(i)" iddiasının
+    d = depth(j) − depth(i) üzerinden tümevarımla ispatı; max heapify up / max heapify down
+    yordamlarının doğruluğu ve Θ(log n) maliyeti; yerinde öncelik kuyruğu sıralaması (heap, daha
+    büyük bir dizinin öneki); doğrusal kurma — tek tek ekleme ∑ depth(i) = Θ(n lg n), yapraktan köke
+    aşağı sızdırma ∑ height(i) = O(n) — ve bunun heap sort'un O(n lg n) sınırını değiştirmediği.
+- **Sedgewick, R. & Wayne, K. *Algorithms*, 4. baskı** — resmî site algs4.cs.princeton.edu'dan dört
+  bölüm sayfası okundu.
+  - **2.2 Mergesort** — "Mergesort guarantees to sort an array of N items in time proportional to
+    N log N, no matter what the input. Its prime disadvantage is that it uses extra space
+    proportional to N."; yukarıdan aşağı birleştirmeli sıralamanın ½N lg N ile N lg N arasında
+    karşılaştırma ve en fazla 6N lg N dizi erişimi yapması; "No compare-based sorting algorithm can
+    guarantee to sort N items with fewer than lg(N!) ~ N lg N compares."; birleştirmeli sıralamanın
+    asimptotik olarak optimal olması; küçük alt dizilerde eklemeli sıralamaya devretme iyileştirmesi.
+  - **2.3 Quicksort** — yerinde çalışması ("uses only a small auxiliary stack") ve ortalamada
+    N log N; ayırma sürecinin üç koşulu; **Önerme:** farklı anahtarlı N elemanlı dizide ortalama
+    ~2N ln N karşılaştırma ve bunun altıda biri kadar takas; **Önerme:** en kötü durumda ~N²/2
+    karşılaştırma, rastgele karıştırmanın buna karşı koruma sağlaması; 1960'ta C. A. R. Hoare
+    tarafından bulunması; küçük dizilerde eklemeli sıralamaya devretme (eşik 5–15).
+  - **2.4 Priority Queues** — öncelik kuyruğunun iki temel işlemi; bütün ilkel gerçekleştirimlerde
+    ekleme ya da en uçtakini almadan birinin en kötü durumda doğrusal olması; **Tanım:** "A binary
+    tree is heap-ordered if the key in each node is larger than (or equal to) the keys in that
+    node's two children (if any)."; **Önerme:** "The largest key in a heap-ordered binary tree is
+    found at the root."; **Tanım:** ikili yığın = tam yığın-sıralı ikili ağacın seviye sırasıyla
+    dizide tutulması; swim ve sink yordamları; **Önerme:** n öğeli öncelik kuyruğunda ekleme en
+    fazla 1 + lg n, en uçtakini alma en fazla 2 lg n karşılaştırma; **Önerme:** aşağı sızdırma
+    tabanlı kurma doğrusal zamanlıdır; **Önerme:** heapsort n öğeyi 2n lg n'den az karşılaştırma ve
+    takasla sıralar; heapsort'un ek yer istemeden çalışması; çok yollu yığınların dallanma çarpanı
+    takası; yeniden boyutlandırma varsa logaritmik sınırların amortize olması.
+    **Not:** 6.006 max-heap ve 0 tabanlı indisleme, Sedgewick 1 tabanlı indisleme (ebeveyn k/2,
+    çocuklar 2k ve 2k+1) kullanır. Makale 13 min-heap ve 0 tabanlı indisleme üzerinden yazıldı
+    (makale 10'un "2i + 1, 2i + 2" pinine ve makale 12'nin "en küçüğü ver" sözüne uyması için);
+    indis aritmetiği Sedgewick'ten değil 6.006'dan alındı, min/max yönü ise her iki kaynakta da
+    simetrik olduğu için yön çevrilerek kullanıldı.
+  - **3.4 Hash Tables** — hash aramanın iki parçası; modüler hashing ve M'nin asal seçilmesi; iyi
+    bir hash fonksiyonunun üç gereği (belirlenimci, ucuz, düzgün dağıtan); **Varsayım J** (uniform
+    hashing assumption); **Önerme K** ve **Özellik L** (ayrık zincirlemede zincir uzunluğunun ve
+    karşılaştırma sayısının N/M ile orantılı olması); doğrusal denemenin tanımı ve üç olası sonucu;
+    α = N/M yük faktörünün iki yöntemde farklı okunması (zincirlemede liste başına ortalama öğe
+    sayısı, genelde 1'den büyük; açık adreslemede doluluk oranı, 1'den küçük olmak zorunda);
+    **Önerme M:** N = αM iken ortalama deneme sayısı isabetli aramada ~½(1 + 1/(1 − α)), isabetsiz
+    arama ve eklemede ~½(1 + 1/(1 − α)²); Java'nın String için 31 kullanması; hashCode'un sabit
+    döndürmesinin "legal ama bütün anahtarları aynı noktaya düşürür" olması ve *Hash attack*
+    alıştırmasında aynı hashCode değerini veren 2^N dizginin üretilmesi (makale 14'ün "sabit ve
+    bilinen bir hash fonksiyonu saldırılabilir" cümlesinin dayanağı).
+
+### Bu batch'te bağımsız hesaplanan ve elle denetlenen iddialar
+
+- **Tam ikili ağacın yüksekliği ⌊log₂ n⌋'dir**, ⌈log₂ n⌉ değil. n = 1…16, 100, 1000 ve 10⁶ için
+  gerçek yükseklik (okuma sırası temsilinde en büyük ⌊log₂(i+1)⌋) hesaplandı ve ⌊log₂ n⌋ ile birebir
+  eşleşti; n = 3, 5, 6, 7 gibi değerlerde ⌈log₂ n⌉ bir fazla veriyor. 6.006 notu ⌈lg n⌉ der (gevşek
+  üst sınır); **makale 13 sıkı olan ⌊log₂ n⌋ değerini kullanır ve bunu kaynağa atfetmez.** n = 10⁶
+  için 19, n = 10⁹ için 29.
+- **Yığın kurmanın iki yolunun karşılaştırması** (tam ikili ağaç üzerinde gerçek toplamlar):
+  n = 1000 → derinlikler toplamı 7.987, yükseklikler toplamı 994; n = 10⁶ → derinlikler toplamı
+  17.951.445, yükseklikler toplamı 999.993 (≈ 18 kat fark). Yükseklik dağılımı n = 1000 için
+  %50 yaprak (yükseklik 0), %25 yükseklik 1, %12,5 yükseklik 2 biçiminde gidiyor. Teorik sınır
+  ∑ h/2^h = 2 serisinden n çıkar; hesaplanan toplamlar ayrıca "yükseklikler toplamı = n − (n'in
+  ikili gösterimindeki 1 sayısı)" özdeşliğini de doğruluyor (1000 − 6 = 994, 10⁶ − 7 = 999.993).
+- **Heap ekleme ve alma karşılaştırma sınırları** n = 10⁶ için: 1 + lg n ≈ 20,93; 2 lg n ≈ 39,86.
+- **Doğrudan erişim dizisi alan örneği:** 26¹⁰ = 141.167.095.653.376; isim başına 1 bit ile
+  17.645.886.956.672 bayt ≈ **17,6 TB** (1 TB = 10¹² bayt). 6.006'nın verdiği değerle uyumlu.
+- **Doğrusal deneme ortalama deneme sayıları** (Önerme M'den hesaplandı; makale 14'teki tablo):
+  α = 0,25 → 1,17 / 1,39; 0,50 → 1,50 / 2,50; 0,75 → 2,50 / 8,50; 0,90 → 5,50 / 50,50;
+  0,95 → 10,50 / 200,50; 0,99 → 50,50 / 5.000,50 (isabetli / isabetsiz).
+- **Zincirlemede beklenen zincir uzunluğu** 1 + (n − 1)/m: n = m = 1000 → 1,999; n = m = 10⁶ → 2,000.
+- **Karşılaştırma modeli arama alt sınırı** ⌈lg(n+1)⌉ − 1: n = 10³ → 9, n = 10⁶ → 19, n = 10⁹ → 29.
+- **lg(n!) ile n lg n oranı:** n = 10 → 21,8 / 33,2 (0,656); n = 10³ → 8.529 / 9.966 (0,856);
+  n = 10⁶ → 18.488.885 / 19.931.569 (0,928). Stirling tarzı alt sınır (n/2)·lg(n/2) gerçekten altta
+  kalıyor: n = 10⁶ için 9.465.784 < 18.488.885.
+- **Quicksort sabiti:** 2N ln N / (N lg N) = 2 ln 2 = 1,3863, yani ortalama karşılaştırma sayısı
+  ≈ **1,39 · N log₂ N**. Makale 15'teki "yaklaşık 1,39" değeri buradan gelir. n = 10⁶ için ortalama
+  ≈ 2,76 × 10⁷ karşılaştırma, en kötü durum ~N²/2 = 5,0 × 10¹¹.
+- **Radix sıralamasının basamak sayısı** c = log_n u: n = 10⁶, u = 10¹² → c = 2; n = 10³, u = 10⁶ →
+  c = 2; n = 10⁶, u = 2³² → c ≈ 1,61.
+- **Makale 13'ün heap izleri elle denetlendi.** [1, 3, 2, 7, 4, 9, 5] geçerli bir min-heap'tir
+  (0'ın çocukları 3 ve 2; 1'inkiler 7 ve 4; 2'ninkiler 9 ve 5). 0 eklenince yukarı sızdırma üç takas
+  yapar ve [0, 1, 2, 3, 4, 9, 5, 7] çıkar (yükseklik ⌊log₂ 8⌋ = 3 ile tutarlı). En küçüğü alma: kök
+  1 ile son eleman 5 takas edilir, 1 çıkarılır, [5, 3, 2, 7, 4, 9] kalır; aşağı sızdırma 5'i küçük
+  çocuk olan 2 ile takas eder ve [2, 3, 5, 7, 4, 9] verir; yeni konumda tek çocuk 9 > 5 olduğu için
+  durur. Her iki sonuç da heap özelliğini sağlıyor.
+- **Makale 14'ün hash tablosu izi elle denetlendi.** h(k) = k mod 7 için 10 → 3, 22 → 1, 31 → 3,
+  4 → 4, 15 → 1, 28 → 0. Zincirleme yerleşimi: 0:{28}, 1:{22, 15}, 3:{10, 31}, 4:{4}; 2, 5 ve 6
+  boş. Doğrusal denemede ekleme sırası (10, 22, 31, 4, 15, 28) ile tablo 0:28, 1:22, 2:15, 3:10,
+  4:31, 5:4, 6:boş olur — 4 anahtarı hiç çakışmadığı hâlde 31'in kayması yüzünden kendi hücresini
+  bulamaz ve 0–5 arası kesintisiz dolu bir öbek oluşur.
+- **Makale 15'in radix izi elle denetlendi.** [17, 3, 24, 22, 12] dizisi n = 5 tabanında (3,2),
+  (0,3), (4,4), (4,2), (2,2) olur. Düşük basamağa göre kararlı sıralama 17, 22, 12, 3, 24 verir;
+  yüksek basamağa göre kararlı sıralama 3, 12, 17, 22, 24 verir ve bu, dizinin gerçek sıralı hâlidir.
+  Son geçişte 22 ile 24'ün yüksek basamağı eşittir ve doğru sırayı birinci geçiş kurmuştur —
+  kararlılığın neden zorunlu olduğunun somut kanıtı. (6.006 ders notundaki aynı örneğin PDF'ten
+  çıkarılan ara adımı tutarsız görünüyor; bu yüzden iz kaynaktan alınmadı, burada baştan
+  hesaplandı.)
