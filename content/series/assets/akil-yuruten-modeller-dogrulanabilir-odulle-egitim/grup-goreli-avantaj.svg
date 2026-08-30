@@ -1,0 +1,41 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Karşılaştırmayı grubun içinde yapmak</text>
+
+  <rect x="270" y="44" width="180" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="64" font-size="13" text-anchor="middle" fill="var(--text)">tek bir soru</text>
+
+  <line x1="360" y1="74" x2="100" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <line x1="360" y1="74" x2="260" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <line x1="360" y1="74" x2="420" y2="100" stroke="var(--border)" stroke-width="1"/>
+  <line x1="360" y1="74" x2="580" y2="100" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="30" y="100" width="140" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="100" y="121" font-size="13" text-anchor="middle" fill="var(--text)">cevap 1</text>
+  <text x="100" y="156" font-size="13" text-anchor="middle" fill="var(--text-muted)">ödül 1,0</text>
+
+  <rect x="190" y="100" width="140" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="260" y="121" font-size="13" text-anchor="middle" fill="var(--text)">cevap 2</text>
+  <text x="260" y="156" font-size="13" text-anchor="middle" fill="var(--text-muted)">ödül 1,0</text>
+
+  <rect x="350" y="100" width="140" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="420" y="121" font-size="13" text-anchor="middle" fill="var(--text)">cevap 3</text>
+  <text x="420" y="156" font-size="13" text-anchor="middle" fill="var(--text-muted)">ödül 0,5</text>
+
+  <rect x="510" y="100" width="140" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="580" y="121" font-size="13" text-anchor="middle" fill="var(--text)">cevap 4</text>
+  <text x="580" y="156" font-size="13" text-anchor="middle" fill="var(--text-muted)">ödül 0,0</text>
+
+  <line x1="30" y1="176" x2="650" y2="176" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="198" font-size="13" text-anchor="middle" fill="var(--cool)">grup ortalaması 0,625 · standart sapma 0,41</text>
+  <line x1="30" y1="212" x2="650" y2="212" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="100" y="238" font-size="13" text-anchor="middle" fill="var(--accent)">avantaj +0,90</text>
+  <text x="260" y="238" font-size="13" text-anchor="middle" fill="var(--accent)">avantaj +0,90</text>
+  <text x="420" y="238" font-size="13" text-anchor="middle" fill="var(--text-muted)">avantaj −0,30</text>
+  <text x="580" y="238" font-size="13" text-anchor="middle" fill="var(--text-muted)">avantaj −1,51</text>
+
+  <line x1="16" y1="262" x2="704" y2="262" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="284" font-size="13" text-anchor="start" fill="var(--text-muted)">karşılaştırma ayrı bir değer modeliyle değil, grubun kendi içinde yapılır</text>
+  <text x="16" y="306" font-size="13" text-anchor="start" fill="var(--text-muted)">ortalamanın üstündeki cevaplar daha olası, altındakiler daha az olası hâle gelir</text>
+  <text x="16" y="328" font-size="13" text-anchor="start" fill="var(--text-faint)">dört cevap da aynı ödülü alırsa sapma sıfır olur ve o sorudan sinyal çıkmaz</text>
+</svg>

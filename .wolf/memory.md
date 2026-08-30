@@ -1489,3 +1489,193 @@ entegre edildi ve doğrulandı. Tek oturum, yardımcı agent kullanılmadı.
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 19:29
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 19:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 19:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 19:39 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify1.py | — | ~1916 |
+| 19:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify2.py | — | ~2468 |
+| 19:42 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify3.py | — | ~1983 |
+| 19:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify4.py | — | ~1136 |
+| 19:48 | Created content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | — | ~4572 |
+| 19:49 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | 1→3 lines | ~238 |
+| 19:49 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | expanded (+8 lines) | ~329 |
+| 19:49 | Created content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | — | ~6184 |
+| 19:49 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | 1→3 lines | ~179 |
+| 19:49 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | 13→11 lines | ~48 |
+| 19:49 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~17 |
+| 19:50 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | 9→9 lines | ~56 |
+| 19:50 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~8 |
+| 19:50 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | "ten küçüktür; dolayısıyla" → "ten küçükse, sıralılık ne" | ~110 |
+| 19:50 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | 8→8 lines | ~33 |
+| 19:50 | Created content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/ayni-soru-elli-surum.svg | — | ~841 |
+| 19:50 | Created content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/ilgisiz-cumle.svg | — | ~562 |
+| 19:51 | Created content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/soylenen-gerekce.svg | — | ~609 |
+| 19:51 | Created content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/eklemeli-siralama-degismezi.svg | — | ~1633 |
+| 19:51 | Created content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/ikili-arama-degismezi.svg | — | ~1791 |
+| 19:52 | Edited content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/ikili-arama-degismezi.svg | 2→2 lines | ~62 |
+| 19:52 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~331 |
+| 19:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify5.py | — | ~862 |
+| 19:54 | Created content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | — | ~4514 |
+| 19:54 | Edited content/series-boun/roadmap.json | inline fix | ~28 |
+| 19:54 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | expanded (+10 lines) | ~303 |
+| 19:54 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | 1→3 lines | ~150 |
+| 19:54 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | 1→3 lines | ~175 |
+| 19:55 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | 1→3 lines | ~87 |
+| 19:55 | Created content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/kazancin-iki-ekseni.svg | — | ~1101 |
+| 19:56 | Created content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/uc-ablasyon.svg | — | ~691 |
+| 19:56 | Created content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/derinlik-ve-sirali-hesap.svg | — | ~882 |
+| 19:57 | Created content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | — | ~5768 |
+| 19:58 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~56 |
+| 19:58 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | "gruplarınن yarısı en az ü" → "grupların yarısı en az üç" | ~103 |
+| 19:58 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | "den Θ(n³) çıkması, Strass" → "1. Divide the problem int" | ~285 |
+| 19:58 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~171 |
+| 19:59 | Created content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | — | ~3970 |
+| 19:59 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 1→3 lines | ~160 |
+| 19:59 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 1→3 lines | ~169 |
+| 19:59 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 1→3 lines | ~187 |
+| 20:00 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 1→3 lines | ~246 |
+| 20:00 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 1→5 lines | ~137 |
+| 20:00 | Created content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/karatsuba-dallanma-carpani.svg | — | ~2454 |
+| 20:00 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~119 |
+| 20:00 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~97 |
+| 20:00 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~355 |
+| 20:01 | Created content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/konveks-kabuk-birlestirme.svg | — | ~911 |
+| 20:01 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~58 |
+| 20:01 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | 1→5 lines | ~341 |
+| 20:02 | Created content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/paralel-ve-sirali.svg | — | ~1115 |
+| 20:02 | Created content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/doyan-egriler.svg | — | ~744 |
+| 20:02 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 3→3 lines | ~245 |
+| 20:03 | Created content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/hesap-takasi.svg | — | ~632 |
+| 20:06 | Created content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | — | ~5852 |
+| 20:06 | Created content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | — | ~4308 |
+| 20:07 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | 1→5 lines | ~235 |
+| 20:07 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | modified dildeki() | ~127 |
+| 20:07 | Created content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/aralik-cizelgeleme-dort-kural.svg | — | ~1112 |
+| 20:07 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | 1→3 lines | ~198 |
+| 20:07 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | 1→3 lines | ~211 |
+| 20:07 | Created content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/huffman-agaci.svg | — | ~1859 |
+| 20:08 | Edited content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/aralik-cizelgeleme-dort-kural.svg | inline fix | ~27 |
+| 20:08 | Created content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/odul-modeli-ve-kural.svg | — | ~814 |
+| 20:08 | Edited content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/aralik-cizelgeleme-dort-kural.svg | inline fix | ~38 |
+| 20:08 | Edited content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/huffman-agaci.svg | inline fix | ~41 |
+| 20:08 | Created content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/grup-goreli-avantaj.svg | — | ~878 |
+| 20:09 | Created content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/kapsama-egrileri.svg | — | ~571 |
+| 20:09 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify_integration.py | — | ~1428 |
+| 20:09 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify_integration.py | inline fix | ~22 |
+| 20:09 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | inline fix | ~169 |
+| 20:10 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | "Şekil 3 — Cevabı değiştir" → "ünün yeni cevabı destekle" | ~88 |
+| 20:10 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | 3→3 lines | ~112 |
+| 20:11 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~53 |
+| 20:11 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify_integration.py | modified read() | ~44 |
+| 20:11 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~143 |
+| 20:11 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~143 |
+| 20:12 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | 1→5 lines | ~224 |
+| 20:14 | Edited content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/eklemeli-siralama-degismezi.svg | 4→4 lines | ~111 |
+| 20:15 | Edited content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/konveks-kabuk-birlestirme.svg | "60" → "440" | ~28 |
+| 20:15 | Created artifacts/boun-render/pre-b6.mjs | — | ~815 |
+| 20:16 | Created artifacts/b7-render/shot-batch7.mjs | — | ~1788 |
+| 20:20 | Created content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/ayni-soru-elli-surum.svg | — | ~843 |
+| 20:20 | Created content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/doyan-egriler.svg | — | ~744 |
+| 20:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/arastirma-11.md | — | ~5223 |
+| 20:24 | Edited docs/seri-boun/YOL-HARITASI.md | 3→3 lines | ~646 |
+| 20:25 | Edited docs/seri-boun/YOL-HARITASI.md | modified 6() | ~523 |
+| 20:25 | Edited docs/seri-boun/YOL-HARITASI.md | expanded (+30 lines) | ~398 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 4→7 lines | ~147 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 2→5 lines | ~120 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 2→5 lines | ~111 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 2→3 lines | ~74 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 3→3 lines | ~75 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 2→3 lines | ~63 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 5→6 lines | ~135 |
+| 20:26 | Edited docs/seri-boun/YOL-HARITASI.md | 5→5 lines | ~67 |
+| 20:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/pins.txt | — | ~930 |
+| 20:27 | Edited docs/seri-boun/YOL-HARITASI.md | inline fix | ~42 |
+| 20:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/arastirma-11b.md | — | ~448 |
+| 20:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9c68700c-4168-4b93-8b88-e7b6f013eca8/scratchpad/b7-block.md | — | ~3427 |
+| 20:32 | Created docs/seri/HANDOFF.md | — | ~5016 |
+| 20:33 | Created docs/seri-boun/HANDOFF.md | — | ~8042 |
+
+### Oturum ozeti — AI serisi Batch 7 (2026-08-30)
+
+`docs/seri/TRIGGER.md` (BATCH=4+1) calistirildi. Makale 31-34 arastirildi, yazildi, entegre
+edildi ve dogrulandi; ardindan +1 state gecis fazi tamamlandi.
+
+- Uretilen: 31 "Akil Yurutme Nedir? Tanim, Olcum ve Tartisma", 32 "Dusunce Zinciri: Ara
+  Adimlarin Gucu ve Siniri", 33 "Cikarim Aninda Hesap: Dusunme Suresi Satin Almak",
+  34 "Akil Yuruten Modeller: Dogrulanabilir Odulle Egitim". Dordu de reasoning-and-memory,
+  intermediate, classification_batch 7. 12 yeni SVG.
+- Kaynaklar: on dort hakemli calisma (ICLR, NeurIPS, ACL, ICML, PNAS Nexus, Nature); hepsi
+  pypdf ile tam metinden okundu. Hakemsiz kaynak eklenmedi.
+- Baslik kararlari: dort baslikta da Ingilizce sozcukler terim defterine uyarlandi
+  (roadmap.json entegrasyondan ONCE guncellendi).
+- Kapilar: check-series-content + check-series-svg temiz, typecheck temiz, 277 test,
+  pnpm build 80 sayfa, 35 rota 200, 3 genislik x 3 tema DOM olcumu temiz, 12 sekil light/dark
+  piksel dogrulamasi (iki sekil bu sayede duzeltildi).
+- Ortam: paralel bir oturumun dev sunucusu 3100'de calisiyordu; build ve render izole bir
+  kopyada (D:/dev/anil-lib-b7 + node_modules junction) yurutuldu, is bitince temizlendi.
+- State: HANDOFF cursor 35'e alindi; YOL-HARITASI'na Batch 7 grafi, tekrar defteri, 13 yeni
+  terim, baglayici kararlar #85-#97 ve Batch 7 ogrenme notlari eklendi; Batch 8 taslak grafi
+  yazildi. Uc yeni numarali vaat acildi (35, 36, 38), iki vaat odendi (32, 33).
+| 20:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/wolf-update.py | — | ~2658 |
+| 20:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/memory-summary.md | — | ~623 |
+
+### Oturum özeti — BOUN serisi Batch 6 (`BATCH=3+1`), 2026-08-30
+
+**Yapılan:** `docs/seri-boun/TRIGGER.md` çalıştırıldı. Makale **19–21** araştırıldı, yazıldı,
+entegre edildi ve doğrulandı; ardından tek `+1` hazırlık/state-geçiş fazı tamamlandı.
+
+- **19 — "Doğruluk: Döngü Değişmezleriyle İspat"** (`algorithms`): kısmi doğruluk ↔ sonlanma
+  ayrımı, Floyd'un Değişmez İlkesi, üç adım (başlatma/koruma/sonuçlanma), eklemeli sıralama ve
+  ikili aramanın satır satır ispatı, azalan ölçüyle sonlanma, hızlı üs alma.
+- **20 — "Böl ve Yönet: Kazanç Nereden Gelir?"** (`algorithms`): naif bölmenin kazandırmaması,
+  iki kaldıraç (Karatsuba/Strassen ve konveks kabuk), doğrusal medyan bulma ve grup boyutunun
+  neden 5 olduğu, tabana devretme, örtüşen alt problemler. **Taslak başlık genişletildi** →
+  `roadmap.json` önce elle güncellendi.
+- **21 — "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?"** (`algorithms`): dört kural / üç karşı
+  örnek, değişim argümanı, açgözlü seçim özelliği + optimal altyapı, para üstü ve sırt çantası,
+  Huffman kodları (300 → 240 bit).
+
+**Kaynaklar:** 6.042J §5.4 (tamamı), 6.046J S15 Lecture 1, 6.046J F05 Lecture 3 ve 16,
+6.006 F11 Lecture 11, Sedgewick & Wayne 2.1 / 3.1 / 5.5. Bütün sayısal iddialar Python
+betikleriyle sıfırdan hesaplandı (ARASTIRMA §11).
+
+**Doğrulama:** içerik + SVG + hash + entegrasyon denetleyicileri temiz (21 makale, 42 diyagram);
+bağımsız Python denetimi 21/21; `pnpm typecheck` temiz; `pnpm test` **277/277**; `pnpm build`
+başarılı (**76 statik sayfa**, 21'i `/boun`); global id/slug benzersizliği **69/69**; **27 render
+kombinasyonu** (3 makale × 3 genişlik × 3 tema) + `/boun` temiz; 6 diyagram light + dark gözle
+incelendi (2 çakışma bulundu ve düzeltildi); seride ilk kez kullanılan kod bloklarının render'ı
+ayrıca doğrulandı; Playwright 21 geçti / 1 atlandı / **4 önceden-var** başarısız (Batch 1–5 ile
+birebir aynı).
+
+**Kapatılan borç:** Batch 5'ten kalan Master Teoremi ε doğrulaması — ortamda `pypdf` bulundu,
+6.042'nin matematik yazı tipini doğru çözüyor; ε ve "+" doğrudan okundu.
+
+**Güncellenen state:** `docs/seri-boun/{ARASTIRMA.md §11, YOL-HARITASI.md, HANDOFF.md}`,
+`content/series-boun/{catalog.json, roadmap.json}`. `src/`, `tests/`, `tools/` altında **tek satır
+değişmedi**. Sıradaki: makale **22 (Dinamik Programlama)**, kohort `classification_batch: 7`.
+| 20:36 | Session end: 104 writes across 42 files (verify1.py, verify2.py, verify3.py, verify4.py, akil-yurutme-nedir-tanim-olcum-ve-tartisma.md) | 28 reads | ~110539 tok |
+| 20:37 | Edited docs/seri-boun/HANDOFF.md | 6→9 lines | ~216 |
+| 20:37 | Edited docs/seri-boun/HANDOFF.md | 4→5 lines | ~121 |
+| 20:38 | Session end: 106 writes across 42 files (verify1.py, verify2.py, verify3.py, verify4.py, akil-yurutme-nedir-tanim-olcum-ve-tartisma.md) | 28 reads | ~110901 tok |
+
+## Session: 2026-08-30 20:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-08-30 20:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

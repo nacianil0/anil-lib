@@ -2815,6 +2815,400 @@
       ],
       "occurrences": 1,
       "last_seen": "2026-08-30T16:02:00Z"
+    },
+    {
+      "id": "bug-167",
+      "timestamp": "2026-08-30T16:49:52.665Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 13→11 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T16:49:52.665Z"
+    },
+    {
+      "id": "bug-168",
+      "timestamp": "2026-08-30T16:50:17.770Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
+      "root_cause": "Had 'ten küçüktür; dolayısıyla x bu bölgede olamaz ve ",
+      "fix": "Changed to 'ten küçükse, sıralılık nedeniyle A[1..mid] hücrel",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T16:50:17.770Z"
+    },
+    {
+      "id": "bug-169",
+      "timestamp": "2026-08-30T16:52:16.001Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/ikili-arama-degismezi.svg",
+      "root_cause": "Had \"266\"",
+      "fix": "Changed to \"228\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T16:52:16.001Z"
+    },
+    {
+      "id": "bug-170",
+      "timestamp": "2026-08-30T16:54:09.493Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/roadmap.json",
+      "root_cause": "Had \"Böl ve Yönet\"",
+      "fix": "Changed to \"Böl ve Yönet: Kazanç Nereden Gelir?\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T16:54:09.493Z"
+    },
+    {
+      "id": "bug-171",
+      "timestamp": "2026-08-30T16:58:19.642Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md",
+      "root_cause": "Had \"gruplarınن yarısı en az üç eleman katkı verir, x'",
+      "fix": "Changed to \"grupların yarısı en az üç eleman katkı verir, x'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-30T16:58:34.829Z"
+    },
+    {
+      "id": "bug-172",
+      "timestamp": "2026-08-30T17:10:06.263Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md",
+      "root_cause": "Had \"Şekil 3 — Cevabı değiştiren şey, gerekçede geçmiy",
+      "fix": "Changed to 'ünün yeni cevabı destekleyen bir gerekçe kurduğun",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T17:10:06.263Z"
+    },
+    {
+      "id": "bug-173",
+      "timestamp": "2026-08-30T17:10:59.577Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md",
+      "root_cause": "Had 'ü boşaltılıp kalemler 8 kişiye eşit dağıtılıyor. ",
+      "fix": "Changed to 'ından hemen sonra cevabı üretmek zorunda. Yani \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-30T17:11:15.059Z"
+    },
+    {
+      "id": "bug-174",
+      "timestamp": "2026-08-30T17:11:05.348Z",
+      "error_message": "Wrong reference: ikinci should be ortadaki",
+      "file": "content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md",
+      "root_cause": "Used \"ikinci\" instead of \"ortadaki\"",
+      "fix": "Changed ikinci → ortadaki",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T17:11:05.348Z"
+    },
+    {
+      "id": "bug-175",
+      "timestamp": "2026-08-30T17:11:08.560Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/verify_integration.py",
+      "root_cause": "Had \"utf-8\"",
+      "fix": "Changed to \" : satir sonlarini oldugu gibi birak (hash bayt d",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T17:11:08.560Z"
+    },
+    {
+      "id": "bug-176",
+      "timestamp": "2026-08-30T17:15:02.389Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/konveks-kabuk-birlestirme.svg",
+      "root_cause": "Had \"60\"",
+      "fix": "Changed to \"440\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T17:15:02.389Z"
+    },
+    {
+      "id": "bug-177",
+      "timestamp": "2026-08-30T17:24:55.024Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/YOL-HARITASI.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (3 removed) | Also: **Batch 6 taslak satırları (Faz C'nin gövdesi; bat; - 19 ← 4 (tümevarımın döngü hâli), 2 (boş doğruluk | Also: - **Boş doğruluk (2)** → 19'da döngü değişmezlerin; ki her n ≥ n₀ için\" kalıbı ve sıra ters çevrilirse",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-30T17:26:06.354Z"
+    },
+    {
+      "id": "bug-178",
+      "timestamp": "2026-08-30T17:26:28.976Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri-boun/YOL-HARITASI.md",
+      "root_cause": "Had 'de açgözlü algoritmaların değişim argümanında, 24",
+      "fix": "Changed to 'de ödendi**: \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-30T17:26:35.623Z"
+    },
+    {
+      "error_message": "Kontrol kosulunun sonucu ters aktarildi: Li ve ark. (ICLR 2024) 'hint' duzeni tabandan iyi, ara adim uretiminin gerisinde; taslak 'kazanc ortaya cikmiyor' diyordu",
+      "file": "content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md",
+      "root_cause": "Kaynak ozetinden yazilirken 'cot > hint > base' siralamasi 'hint = base' olarak sadelestirildi",
+      "fix": "Paragraf yeniden yazildi: hint duzeninin tabandan iyi ama CoT'un belirgin gerisinde oldugu ve farkin derinlik azaldikca buyudugu belirtildi",
+      "tags": [
+        "seri",
+        "kaynak-dogrulugu",
+        "kontrol-kosulu",
+        "ara-adimlar"
+      ],
+      "id": "bug-179",
+      "timestamp": "2026-08-30T20:35:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:35:00.000Z"
+    },
+    {
+      "error_message": "Elle yurutulen ornekte kullanilmayan sayi: '4 kutu' hesaba girmiyordu",
+      "file": "content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md",
+      "root_cause": "Ornek once yazildi, hesap sonra sadelestirildi; artan sayi silinmedi. 31. makale tam da hesaba girmeyen sayilarin modelleri yaniltmasini anlatiyor, bu yuzden pedagojik olarak da celiskiliydi",
+      "fix": "Soru '3 kutu, her kutuda 12 kalem, 8 kisi' olarak yeniden kuruldu; metindeki sayi listesi de guncellendi",
+      "tags": [
+        "seri",
+        "pedagoji",
+        "worked-example"
+      ],
+      "id": "bug-180",
+      "timestamp": "2026-08-30T20:35:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:35:00.000Z"
+    },
+    {
+      "error_message": "Olasilik yanlis birimle yazildi ('yuzde binde birden kucuk') ve butce artisi 'yuz katlik' denildi (aslinda on katlik)",
+      "file": "content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md",
+      "root_cause": "0,9^100 = 2,66e-5 sozel birime cevrilirken yuzde/binde karistirildi; ikinci hatada 10->100 ve 100->1000 gecisleri tek cumlede toplanip carpan yanlis sayildi",
+      "fix": "'yaklasik yuz binde uc' ve 'yuzden bine cikan aynı on katlik butce artisi' olarak duzeltildi; iki kapsama degeri (0,095 ve 0,632) cumleye acikca yazildi",
+      "tags": [
+        "seri",
+        "sayi-hatasi",
+        "birim",
+        "olasilik"
+      ],
+      "id": "bug-181",
+      "timestamp": "2026-08-30T20:35:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:35:00.000Z"
+    },
+    {
+      "error_message": "SVG'de eksen adi ilk tik etiketinin ustune bindi ('doğru7Ω0k') ve isaretciler egrilerin uzerinde degil bosluktaydi",
+      "file": "content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/ayni-soru-elli-surum.svg",
+      "root_cause": "check-series-svg.cjs metinlerin birbirine binmesini denetlemiyor; yalnizca viewBox tasmasini ve sabit rengi yakaliyor. Egri uzerindeki isaretciler ise Bezier degerleri hesaplanmadan goze gore konmustu",
+      "fix": "Eksen adi ayri bir satira alinip ortalandi ve viewBox yuksekligi 300'den 332'ye cikarildi; doyan-egriler.svg'de isaretciler Bezier degerleri hesaplanarak (166,135), (380,184), (600,224) noktalarina tasindi. Iki hata da yalnizca sekil basina piksel kirpma ile gorulebildi",
+      "tags": [
+        "seri",
+        "svg",
+        "render-dogrulama",
+        "denetleyici-kor-noktasi"
+      ],
+      "id": "bug-182",
+      "timestamp": "2026-08-30T20:35:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:35:00.000Z"
+    },
+    {
+      "error_message": "Dort sekil alt metni cizilen SVG ile birebir uyusmuyordu; ayrica 'sinirsel odul modeli' terimi gloss'suz kaldi",
+      "file": "content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md",
+      "root_cause": "Alt metinler SVG'ler cizilmeden once yazildi (Batch 4/5/6'da da tekrar eden hata); terim ise seride kurulu olan 'sinir agi' karsiligi yerine dogrudan cevrildi",
+      "fix": "Dort alt metin SVG'ye bakilarak yeniden yazildi; terim 'sinir agi tabanli odul modeli' olarak duzeltildi",
+      "tags": [
+        "seri",
+        "alt-metin",
+        "terim-hijyeni",
+        "a11y"
+      ],
+      "id": "bug-183",
+      "timestamp": "2026-08-30T20:35:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:35:00.000Z"
+    },
+    {
+      "id": "bug-184",
+      "error_message": "check-series-svg.cjs: metin viewBox disina tasiyor olabilir (2 satir)",
+      "file": "content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/*.svg",
+      "root_cause": "SVG metin satirlari karakter sayisi x font-size x 0,55 tahminini asti: x=375'ten baslayan 51 karakterlik satir ve x=20'den baslayan 106 karakterlik satir.",
+      "fix": "Iki satir kisaltildi (51 -> 34 ve 106 -> 87 karakter); denetleyici temiz.",
+      "tags": [
+        "svg",
+        "boun",
+        "overflow",
+        "check-series-svg"
+      ],
+      "timestamp": "2026-08-30T20:40:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:40:00.000Z"
+    },
+    {
+      "id": "bug-185",
+      "error_message": "Diyagramda ok dizi hucrelerinin ustunden geciyor, hucre degerleri okunmuyor",
+      "file": "content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/eklemeli-siralama-degismezi.svg",
+      "root_cause": "key kutusuna giden ok, dizi satiriyla ayni y'de (191) yatay cizilmisti; hucreler y=176..206 araliginda oldugu icin ok tam ortalarindan geciyordu. Ne SVG denetleyicisi ne XML ayristirma bunu yakalar.",
+      "fix": "Ok dizinin ALTINDAN gececek sekilde (311,208) -> (484,224) diyagonal yapildi, key kutusu y=211'e indirildi; sekil light ve dark temada yeniden cekilip gozle dogrulandi.",
+      "tags": [
+        "svg",
+        "boun",
+        "collision",
+        "visual-review"
+      ],
+      "timestamp": "2026-08-30T20:40:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:40:00.000Z"
+    },
+    {
+      "id": "bug-186",
+      "error_message": "Diyagramda iki metin ust uste biniyor (alt teget / kesikli kenarlar notu)",
+      "file": "content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/konveks-kabuk-birlestirme.svg",
+      "root_cause": "Aciklama notu x=60,y=236'ya konmustu ve 33 karakterle x=296'ya uzaniyordu; 'alt teget' etiketi x=235 (ortalanmis) ile ayni bolgedeydi.",
+      "fix": "Not, bos olan sag sutuna (x=440, y=250) tasindi.",
+      "tags": [
+        "svg",
+        "boun",
+        "collision",
+        "visual-review"
+      ],
+      "timestamp": "2026-08-30T20:40:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:40:00.000Z"
+    },
+    {
+      "id": "bug-187",
+      "error_message": "Bagimsiz denetim betigi 3 makalede 'content_hash govdeyle uyusmuyor' dedi, tool 'Sorun yok' diyordu",
+      "file": "scratchpad/verify_integration.py",
+      "root_cause": "Python `open(encoding='utf-8')` evrensel satir sonu cevirisi yapiyor; CRLF satir sonlu 3 makalede (7, 8, 9) govde LF'e cevrilip hash'lendi. Depoda `core.autocrlf=true` ve satir sonlari karisik.",
+      "fix": "Dosya `open(..., encoding='utf-8', newline='')` ile okundu; 21/21 temiz. Uygulama bundan etkilenmiyor: articles.ts hash DIZGELERINI karsilastirir, govdeden yeniden hesaplamaz.",
+      "tags": [
+        "hash",
+        "crlf",
+        "boun",
+        "verification"
+      ],
+      "timestamp": "2026-08-30T20:40:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:40:00.000Z"
+    },
+    {
+      "id": "bug-188",
+      "error_message": "Aralik cizelgeleme karsi ornegi gecersiz cikti (acgozlu = optimal)",
+      "file": "scratchpad/verify2.py",
+      "root_cause": "Cakisma sayaci `r is not t` ile 'kendisi haric' filtreliyordu; CPython ayni listedeki esit tuple literallerini interneledigi icin uc ozdes (1,4) araligi tek nesne sayildi ve birbirleriyle cakismalari sayilmadi.",
+      "fix": "Sayac indis tabanli hale getirildi (`r != i`); karsi ornek yeniden kuruldu ve 11 aralikli gecerli bir ornek dogrulandi (acgozlu 3, optimal 4). Ayrica 400.000 rastgele ornek taranarak bagimsiz bir karsi ornek daha bulundu.",
+      "tags": [
+        "python",
+        "identity",
+        "boun",
+        "counterexample"
+      ],
+      "timestamp": "2026-08-30T20:40:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:40:00.000Z"
+    },
+    {
+      "id": "bug-189",
+      "error_message": "unexpected EOF while looking for matching `''",
+      "file": "docs/seri-boun/ARASTIRMA.md",
+      "root_cause": "ARASTIRMA §11 blogu `cat >> dosya << 'EOF'` heredoc'una gomulmustu; Turkce kesme isaretleri bash'in tirnak esleme mantigini bozdu ve dosya HIC yazilmadi.",
+      "fix": "Blok Write araciyla scratchpad'e yazildi, sonra `cat <scratchpad> >> docs/seri-boun/ARASTIRMA.md` ile eklendi.",
+      "tags": [
+        "bash",
+        "heredoc",
+        "turkish",
+        "known-issue"
+      ],
+      "timestamp": "2026-08-30T20:40:00.000Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T20:40:00.000Z"
+    },
+    {
+      "id": "bug-190",
+      "timestamp": "2026-08-30T17:37:27.449Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 6→9 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-30T17:37:27.449Z"
     }
   ]
 }

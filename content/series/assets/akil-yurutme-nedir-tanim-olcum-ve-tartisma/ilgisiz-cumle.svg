@@ -1,0 +1,22 @@
+<svg viewBox="0 0 720 342" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Anlamı değil, biçimi işleme çeviren adım</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--text-muted)">soru</text>
+  <rect x="16" y="60" width="688" height="86" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="32" y="84" font-size="13" text-anchor="start" fill="var(--text)">cuma 44 kivi · cumartesi 58 kivi · pazar cumanın iki katı</text>
+  <rect x="32" y="96" width="430" height="34" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="46" y="118" font-size="13" text-anchor="start" fill="var(--accent)">ama bunların beşi ortalamadan biraz küçüktü</text>
+  <text x="478" y="118" font-size="13" text-anchor="start" fill="var(--text-faint)">hesaba girmez</text>
+
+  <text x="16" y="172" font-size="13" text-anchor="start" fill="var(--text-muted)">modelin ara adımları</text>
+  <rect x="16" y="180" width="688" height="96" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="32" y="202" font-size="13" text-anchor="start" fill="var(--text)">pazar: 2 × 44 = 88</text>
+  <text x="32" y="224" font-size="13" text-anchor="start" fill="var(--accent)">88 − 5 = 83</text>
+  <text x="150" y="224" font-size="13" text-anchor="start" fill="var(--text-faint)">ilgisiz cümle bir çıkarmaya çevrildi</text>
+  <text x="32" y="246" font-size="13" text-anchor="start" fill="var(--text)">44 + 58 + 83 = 185</text>
+  <text x="32" y="268" font-size="13" text-anchor="start" fill="var(--text-muted)">doğru toplam ise 44 + 58 + 88 = 190</text>
+
+  <line x1="16" y1="296" x2="704" y2="296" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="318" font-size="13" text-anchor="start" fill="var(--text-muted)">eklenen cümle hiçbir işlem gerektirmez; model onu anlamına bakmadan bir işleme çevirir</text>
+  <text x="16" y="338" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı sorunun sekiz doğru çözülmüş sürümü isteme konsa bile düşüş kapanmıyor</text>
+</svg>

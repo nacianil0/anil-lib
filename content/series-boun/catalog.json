@@ -364,6 +364,66 @@
       "path": "content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
+    },
+    {
+      "articleId": "article_5720977d-9343-4f86-bee7-b4d9bfc0a034",
+      "title": "Doğruluk: Döngü Değişmezleriyle İspat",
+      "slug": "dogruluk-dongu-degismezleriyle-ispat",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 19,
+      "summary": "Bir algoritmanın doğru olduğunu ispatlamanın iki ayrı işe bölünmesi: kısmi doğruluk ve sonlanma. Floyd'un değişmez ilkesi, döngü değişmezinin üç adımı (başlatma, koruma, sonuçlanma) ve boş doğruluğun başlatma adımını neden bedava kıldığı; eklemeli sıralamanın ve ikili aramanın satır satır ispatı; sonlanmanın azalan bir ölçüyle ayrıca ispatlanması ve değişmezin korunduğu hâlde durmayan bir döngü; hızlı üs almanın kolay okunmayan değişmezi.",
+      "tags": [
+        "dogruluk",
+        "dongu-degismezi",
+        "ispat",
+        "sonlanma",
+        "eklemeli-siralama"
+      ],
+      "contentHash": "sha256:a7d1397da99c24aa13ad1d08d51e7a1e960bf47ed9e10799dd71da87876be2f7",
+      "path": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
+    },
+    {
+      "articleId": "article_cfd02c46-3bbc-4e8b-a354-8015844789a5",
+      "title": "Böl ve Yönet: Kazanç Nereden Gelir?",
+      "slug": "bol-ve-yonet-kazanc-nereden-gelir",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 20,
+      "summary": "Böl ve yönet bir tasarım deseni olarak kuruluyor ve şaşırtıcı bir gözlemle başlıyor: bir problemi ikiye bölmek tek başına hiçbir şey kazandırmaz. Kazanç yalnızca iki yerdedir — alt problem sayısını düşürmek (Karatsuba çarpımı, Strassen) ve birleştirme adımını ucuzlatmak (konveks kabuk). Eşit olmayan alt problemlerle doğrusal medyan bulma, grup boyutunun neden beş olduğu, küçük girdilerde tabana devretme ve desenin çöktüğü yer: örtüşen alt problemler.",
+      "tags": [
+        "bol-ve-yonet",
+        "tasarim-deseni",
+        "karatsuba",
+        "medyan-bulma",
+        "ozyineleme-agaci"
+      ],
+      "contentHash": "sha256:12216fb3d24a0c11db8fd532942e7825072bcb221b59c88177de916f55dc1d7f",
+      "path": "content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
+    },
+    {
+      "articleId": "article_95fcd2e4-41da-4870-958a-7e1886a9a5e3",
+      "title": "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?",
+      "slug": "acgozlu-algoritmalar-ne-zaman-ve-neden-calisir",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 21,
+      "summary": "Her adımda o an en iyi görünen seçimi yapan algoritmalar: aralık çizelgelemede denenen dört kuralın üçünün karşı örnekle çökmesi ve dördüncüsünün değişim argümanıyla ispatlanması. Açgözlünün iki koşulu — açgözlü seçim özelliği ve optimal altyapı — ve üç ispat kalıbı; para üstü, sırt çantası ve ağırlıklı çizelgelemede kuralın yanılması; Huffman kodlarının sayısal olarak çalışılmış bir örneği ve optimalliği.",
+      "tags": [
+        "acgozlu",
+        "degisim-argumani",
+        "huffman",
+        "aralik-cizelgeleme",
+        "karsi-ornek"
+      ],
+      "contentHash": "sha256:690a5792a6dcd41ad1507ec4ad69852f9b156eb777e722de5623b05f30122725",
+      "path": "content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 6
     }
   ]
 }

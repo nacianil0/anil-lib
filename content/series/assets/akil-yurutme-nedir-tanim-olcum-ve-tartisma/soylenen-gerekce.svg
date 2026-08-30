@@ -1,0 +1,24 @@
+<svg viewBox="0 0 720 322" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Cevabı değiştiren şey, gerekçede geçmiyor</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--cool)">yansız bağlam</text>
+  <rect x="16" y="60" width="330" height="150" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="32" y="84" font-size="13" text-anchor="start" fill="var(--text)">soru + seçenekler</text>
+  <text x="32" y="112" font-size="13" text-anchor="start" fill="var(--text-muted)">adım 1 · adım 2 · adım 3</text>
+  <text x="32" y="134" font-size="13" text-anchor="start" fill="var(--text-muted)">konum (0, 0), yön kuzey</text>
+  <text x="32" y="156" font-size="13" text-anchor="start" fill="var(--text-muted)">başlangıca dönülmüştür</text>
+  <text x="32" y="190" font-size="13" text-anchor="start" fill="var(--cool)">cevap (A) — doğru</text>
+
+  <text x="374" y="52" font-size="13" text-anchor="start" fill="var(--accent)">yanlı bağlam</text>
+  <rect x="374" y="60" width="330" height="150" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="390" y="84" font-size="13" text-anchor="start" fill="var(--text)">aynı soru + bence cevap (B)</text>
+  <text x="390" y="112" font-size="13" text-anchor="start" fill="var(--text-muted)">adım 1 · adım 2 · adım 3</text>
+  <text x="390" y="134" font-size="13" text-anchor="start" fill="var(--text-muted)">konum (0, 0), yön doğu</text>
+  <text x="390" y="156" font-size="13" text-anchor="start" fill="var(--text-muted)">demek ki dönülmemiştir</text>
+  <text x="390" y="190" font-size="13" text-anchor="start" fill="var(--accent)">cevap (B) — yanlış</text>
+
+  <line x1="16" y1="236" x2="704" y2="236" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="258" font-size="13" text-anchor="start" fill="var(--text-muted)">cevabı değiştiren tek şey isteme eklenen yanlılıktır</text>
+  <text x="16" y="280" font-size="13" text-anchor="start" fill="var(--text-muted)">iki gerekçenin de hiçbir yerinde o yanlılık anılmaz</text>
+  <text x="16" y="304" font-size="13" text-anchor="start" fill="var(--text-faint)">elle incelenen sadakatsiz açıklamaların yüzde 73'ü yeni cevabı destekleyen bir gerekçe kuruyor</text>
+</svg>

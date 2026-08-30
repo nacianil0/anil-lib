@@ -1,0 +1,43 @@
+<svg viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="24" font-size="13" fill="var(--text)">İki yarının kabukları birleştiriliyor</text>
+  <text x="20" y="46" font-size="13" fill="var(--text-muted)">üst ve alt teğet bulunur, aradaki kenarlar atılır</text>
+
+  <line x1="240" y1="72" x2="240" y2="240" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="246" y="256" font-size="13" fill="var(--text-faint)">L</text>
+
+  <polyline points="70,160 100,110 150,100" fill="none" stroke="var(--border)" stroke-width="1.6" />
+  <polyline points="130,205 70,160" fill="none" stroke="var(--border)" stroke-width="1.6" />
+  <polyline points="150,100 180,150 130,205" fill="none" stroke="var(--text-faint)" stroke-width="1.2" stroke-dasharray="4 3" />
+
+  <polyline points="360,105 390,165 340,210" fill="none" stroke="var(--border)" stroke-width="1.6" />
+  <polyline points="360,105 300,120 340,210" fill="none" stroke="var(--text-faint)" stroke-width="1.2" stroke-dasharray="4 3" />
+
+  <line x1="150" y1="100" x2="360" y2="105" stroke="var(--accent)" stroke-width="2" />
+  <line x1="130" y1="205" x2="340" y2="210" stroke="var(--accent)" stroke-width="2" />
+  <text x="255" y="94" font-size="13" text-anchor="middle" fill="var(--accent)">üst teğet</text>
+  <text x="235" y="228" font-size="13" text-anchor="middle" fill="var(--accent)">alt teğet</text>
+
+  <circle cx="70" cy="160" r="4" fill="var(--surface)" stroke="var(--text)" stroke-width="1.4" />
+  <circle cx="100" cy="110" r="4" fill="var(--surface)" stroke="var(--text)" stroke-width="1.4" />
+  <circle cx="150" cy="100" r="4.5" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" />
+  <circle cx="180" cy="150" r="4" fill="var(--surface)" stroke="var(--text-faint)" stroke-width="1.4" />
+  <circle cx="130" cy="205" r="4.5" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" />
+  <circle cx="300" cy="120" r="4" fill="var(--surface)" stroke="var(--text-faint)" stroke-width="1.4" />
+  <circle cx="360" cy="105" r="4.5" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" />
+  <circle cx="390" cy="165" r="4" fill="var(--surface)" stroke="var(--text)" stroke-width="1.4" />
+  <circle cx="340" cy="210" r="4.5" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" />
+
+  <text x="118" y="158" font-size="13" fill="var(--text-muted)">A</text>
+  <text x="340" y="158" font-size="13" fill="var(--text-muted)">B</text>
+  <text x="440" y="250" font-size="13" fill="var(--text-faint)">kesikli kenarlar birleşmede atılır</text>
+
+  <text x="440" y="110" font-size="13" fill="var(--text-muted)">teğetler nasıl bulunuyor?</text>
+  <text x="440" y="140" font-size="13" fill="var(--text)">bütün (aᵢ, bⱼ) çiftlerini dene: Θ(n²)</text>
+  <text x="440" y="162" font-size="13" fill="var(--text)">T(n) = 2T(n/2) + Θ(n²) ⇒ Θ(n²)</text>
+  <text x="440" y="194" font-size="13" fill="var(--text)">iki parmakla yürü: Θ(n)</text>
+  <text x="440" y="216" font-size="13" fill="var(--accent)">T(n) = 2T(n/2) + Θ(n) ⇒ Θ(n log n)</text>
+
+  <line x1="20" y1="276" x2="700" y2="276" stroke="var(--border)" stroke-width="1" />
+  <text x="20" y="300" font-size="13" fill="var(--text)">alt problem sayısı a = 2 ve bölme çarpanı b = 2 iki durumda da aynıdır</text>
+  <text x="20" y="322" font-size="13" fill="var(--text)">değişen yalnızca birleştirme adımının maliyetidir — ve sınıfı o belirler</text>
+</svg>

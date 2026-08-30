@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 322" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Kazanç iki eksende birden değişiyor</text>
+
+  <rect x="16" y="38" width="14" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="36" y="49" font-size="13" text-anchor="start" fill="var(--text-muted)">doğrudan cevap</text>
+  <rect x="160" y="38" width="14" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="180" y="49" font-size="13" text-anchor="start" fill="var(--accent)">ara adımlarla</text>
+
+  <text x="16" y="76" font-size="13" text-anchor="start" fill="var(--text-muted)">model ölçeği (ilkokul matematiği)</text>
+
+  <rect x="56" y="212" width="26" height="10" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="88" y="214" width="26" height="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="69" y="206" font-size="13" text-anchor="middle" fill="var(--text-muted)">4,9</text>
+  <text x="101" y="206" font-size="13" text-anchor="middle" fill="var(--accent)">4,1</text>
+  <text x="85" y="240" font-size="13" text-anchor="middle" fill="var(--text)">8B</text>
+
+  <rect x="146" y="203" width="26" height="19" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="178" y="162" width="26" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="159" y="197" font-size="13" text-anchor="middle" fill="var(--text-muted)">9,6</text>
+  <text x="191" y="156" font-size="13" text-anchor="middle" fill="var(--accent)">29,9</text>
+  <text x="175" y="240" font-size="13" text-anchor="middle" fill="var(--text)">62B</text>
+
+  <rect x="236" y="186" width="26" height="36" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="268" y="108" width="26" height="114" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="249" y="180" font-size="13" text-anchor="middle" fill="var(--text-muted)">17,9</text>
+  <text x="281" y="102" font-size="13" text-anchor="middle" fill="var(--accent)">56,9</text>
+  <text x="265" y="240" font-size="13" text-anchor="middle" fill="var(--text)">540B</text>
+
+  <line x1="40" y1="222" x2="320" y2="222" stroke="var(--border)" stroke-width="1"/>
+  <line x1="360" y1="72" x2="360" y2="240" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="392" y="76" font-size="13" text-anchor="start" fill="var(--text-muted)">görev zorluğu (540B, aynı model)</text>
+
+  <rect x="426" y="109" width="26" height="113" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="458" y="109" width="26" height="113" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="439" y="103" font-size="13" text-anchor="middle" fill="var(--text-muted)">94,1</text>
+  <text x="471" y="103" font-size="13" text-anchor="middle" fill="var(--accent)">94,1</text>
+  <text x="455" y="240" font-size="13" text-anchor="middle" fill="var(--text)">tek işlemli</text>
+
+  <rect x="566" y="171" width="26" height="51" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="598" y="108" width="26" height="114" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="579" y="165" font-size="13" text-anchor="middle" fill="var(--text-muted)">42,2</text>
+  <text x="611" y="102" font-size="13" text-anchor="middle" fill="var(--accent)">94,7</text>
+  <text x="595" y="240" font-size="13" text-anchor="middle" fill="var(--text)">çok adımlı</text>
+
+  <line x1="410" y1="222" x2="680" y2="222" stroke="var(--border)" stroke-width="1"/>
+
+  <line x1="16" y1="264" x2="704" y2="264" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="286" font-size="13" text-anchor="start" fill="var(--text-muted)">küçük modelde ara adım istemek başarıyı düşürüyor; büyük modelde üçe katlıyor</text>
+  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-faint)">tek işlemle çözülen soruda kazanç sıfır; adım sayısı arttıkça kazanç büyüyor</text>
+</svg>

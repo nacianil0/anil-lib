@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-30T13:14:47.940Z
-> Files: 33 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-30T17:37:35.253Z
+> Files: 74 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -14,6 +14,20 @@
 
 ## .claude/rules/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/
+
+- `arastirma-11.md` — 11. Batch 6 üretim run'ında doğrulanan kaynaklar (2026-08-30) (~4896 tok)
+- `arastirma-11b.md` — ## Batch 5'ten kalan ε borcu kapandı (yöntem notu) (~420 tok)
+- `memory-summary.md` — ## Oturum özeti — BOUN serisi Batch 6 (`BATCH=3+1`), 2026-08-30 (~584 tok)
+- `pins.txt` (~872 tok)
+- `verify_integration.py` — Bagimsiz entegrasyon denetimi: katalog <-> frontmatter <-> govde hash uclusu ve digerleri. (~1458 tok)
+- `verify1.py` — Batch 6 (makale 19-21) sayisal iddia dogrulamasi - bolum 1. (~1916 tok)
+- `verify2.py` — Batch 6 (makale 21) sayisal iddia dogrulamasi. (~2468 tok)
+- `verify3.py` — Batch 6 dogrulama - bolum 3: 'en az cakisan' karsi ornegi + Huffman optimalligi. (~1983 tok)
+- `verify4.py` — 'En az cakisan' kurali icin temiz karsi ornek + makale 20/21 icin ek sayilar. (~1136 tok)
+- `verify5.py` — Makale 20: besli grup vs uclu grup; medyan bulmanin neden 5 ile calistigi. (~862 tok)
+- `wolf-update.py` — OpenWolf cerebrum + buglog guncellemesi (BOUN Batch 6). (~2658 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/
 
@@ -42,14 +56,23 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9c68700c-4168-4b93-8b88-e7b6f013eca8/scratchpad/
+
+- `b7-block.md` — Batch 7 öğrenme notları (yazım tamamlandı) (~3212 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/
 
 - `arastirma-10.md` — 10. Batch 5 üretim run'ında doğrulanan kaynaklar (2026-08-30) (~4199 tok)
 - `upd_ledger.py` (~2601 tok)
 - `wolf_update.py` — --- buglog --- (~1432 tok)
 
+## artifacts/b7-render/
+
+- `shot-batch7.mjs` — Declares BASE (~1788 tok)
+
 ## artifacts/boun-render/
 
+- `pre-b6.mjs` — Declares BASE (~815 tok)
 
 ## boun/
 
@@ -78,9 +101,16 @@
 ## content/articles/safety-and-evaluation/
 
 
+## content/series-boun/
+
+- `roadmap.json` (~1841 tok)
+
 ## content/series-boun/articles/algorithms/
 
+- `acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md` — İleriye bakmayan algoritma (~5487 tok)
 - `asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md` — Sezgiden tanıma (~5369 tok)
+- `bol-ve-yonet-kazanc-nereden-gelir.md` — Analizden tasarıma (~5896 tok)
+- `dogruluk-dongu-degismezleriyle-ispat.md` — Hızlı ama yanlış (~5824 tok)
 - `yinelemeler-ve-master-teoremi.md` — Özyinelemenin faturası (~5572 tok)
 
 ## content/series-boun/articles/data-structures/
@@ -93,6 +123,11 @@
 ## content/series-boun/articles/interview-method/
 
 
+## content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/
+
+- `aralik-cizelgeleme-dort-kural.svg` (~1103 tok)
+- `huffman-agaci.svg` (~1854 tok)
+
 ## content/series-boun/assets/agaclar-ve-ikili-arama-agaclari/
 
 
@@ -104,6 +139,11 @@
 ## content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/
 
 
+## content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/
+
+- `karatsuba-dallanma-carpani.svg` (~2454 tok)
+- `konveks-kabuk-birlestirme.svg` (~911 tok)
+
 ## content/series-boun/assets/cebirsel-yapilar-ve-boolean-cebiri/
 
 
@@ -112,6 +152,11 @@
 
 ## content/series-boun/assets/diziler-bagli-listeler-yigin-ve-kuyruk/
 
+
+## content/series-boun/assets/dogruluk-dongu-degismezleriyle-ispat/
+
+- `eklemeli-siralama-degismezi.svg` (~1634 tok)
+- `ikili-arama-degismezi.svg` (~1791 tok)
 
 ## content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/
 
@@ -171,6 +216,10 @@
 
 ## content/series/articles/reasoning-and-memory/
 
+- `akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md` — Haritanın kenarındaki durak (~4659 tok)
+- `akil-yurutme-nedir-tanim-olcum-ve-tartisma.md` — Adı konmamış bir gözlem (~4904 tok)
+- `cikarim-aninda-hesap-dusunme-suresi-satin-almak.md` — Uzayan üretim bir maliyet kararıdır (~4671 tok)
+- `dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md` — Ara adımların adı (~4883 tok)
 - `hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md` — Boştaki çip (~4707 tok)
 - `kuantizasyon-modeli-kucultme-sanati.md` — Sayıları küçültmek (~5039 tok)
 - `yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md` — Cevabı bir program okuyacaksa (~4618 tok)
@@ -181,14 +230,38 @@
 ## content/series/assets/acik-agirliklar-ve-model-ekosistemi/
 
 
+## content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/
+
+- `grup-goreli-avantaj.svg` (~878 tok)
+- `kapsama-egrileri.svg` (~571 tok)
+- `odul-modeli-ve-kural.svg` (~814 tok)
+
+## content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/
+
+- `ayni-soru-elli-surum.svg` (~843 tok)
+- `ilgisiz-cumle.svg` (~562 tok)
+- `soylenen-gerekce.svg` (~609 tok)
+
 ## content/series/assets/baglam-penceresi-istemin-anatomisi/
 
 
 ## content/series/assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/
 
 
+## content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/
+
+- `doyan-egriler.svg` (~744 tok)
+- `hesap-takasi.svg` (~632 tok)
+- `paralel-ve-sirali.svg` (~1115 tok)
+
 ## content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/
 
+
+## content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/
+
+- `derinlik-ve-sirali-hesap.svg` (~882 tok)
+- `kazancin-iki-ekseni.svg` (~1101 tok)
+- `uc-ablasyon.svg` (~691 tok)
 
 ## content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/
 
@@ -249,11 +322,12 @@
 
 ## docs/seri-boun/
 
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~6247 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~7648 tok)
+- `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~11438 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~4152 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~4703 tok)
 
 ## docs/superpowers/plans/
 

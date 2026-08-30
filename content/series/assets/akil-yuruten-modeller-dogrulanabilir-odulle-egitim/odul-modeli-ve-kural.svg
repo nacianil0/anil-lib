@@ -1,0 +1,34 @@
+<svg viewBox="0 0 720 314" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Puanı bir model mi veriyor, bir kural mı?</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--cool)">öğrenilmiş ödül</text>
+  <rect x="16" y="62" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="181" y="82" font-size="13" text-anchor="middle" fill="var(--text)">modelin cevabı</text>
+  <line x1="181" y1="92" x2="181" y2="110" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="16" y="110" width="330" height="52" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="181" y="132" font-size="13" text-anchor="middle" fill="var(--text)">ödül modeli</text>
+  <text x="181" y="152" font-size="13" text-anchor="middle" fill="var(--text-muted)">insan tercihlerinden eğitilmiş</text>
+  <line x1="181" y1="162" x2="181" y2="180" stroke="var(--cool)" stroke-width="1"/>
+  <rect x="16" y="180" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="181" y="200" font-size="13" text-anchor="middle" fill="var(--text)">puan: 0,73</text>
+  <text x="16" y="234" font-size="13" text-anchor="start" fill="var(--text-muted)">vekil bir ölçüdür</text>
+  <text x="16" y="256" font-size="13" text-anchor="start" fill="var(--text-faint)">fazla kovalanınca bozulur</text>
+
+  <line x1="358" y1="40" x2="358" y2="264" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="374" y="52" font-size="13" text-anchor="start" fill="var(--accent)">kural tabanlı ödül</text>
+  <rect x="374" y="62" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="539" y="82" font-size="13" text-anchor="middle" fill="var(--text)">modelin cevabı</text>
+  <line x1="539" y1="92" x2="539" y2="110" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="374" y="110" width="330" height="52" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="539" y="132" font-size="13" text-anchor="middle" fill="var(--text)">kural</text>
+  <text x="539" y="152" font-size="13" text-anchor="middle" fill="var(--text-muted)">cevap anahtarı · test takımı</text>
+  <line x1="539" y1="162" x2="539" y2="180" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="374" y="180" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="539" y="200" font-size="13" text-anchor="middle" fill="var(--text)">doğru / yanlış</text>
+  <text x="374" y="234" font-size="13" text-anchor="start" fill="var(--text-muted)">kandırılamaz</text>
+  <text x="374" y="256" font-size="13" text-anchor="start" fill="var(--text-faint)">yalnızca doğrulanabilir alanda kurulur</text>
+
+  <line x1="16" y1="276" x2="704" y2="276" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="298" font-size="13" text-anchor="start" fill="var(--text-muted)">iki düzen de aynı soruyu sorar: bu cevap ne kadar iyi? Fark, cevabı kimin verdiğindedir</text>
+</svg>

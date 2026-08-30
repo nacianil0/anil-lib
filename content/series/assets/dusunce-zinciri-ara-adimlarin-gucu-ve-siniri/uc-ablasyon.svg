@@ -1,0 +1,33 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Üç aday açıklama, üç eleme</text>
+
+  <rect x="40" y="164" width="80" height="36" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="80" y="158" font-size="13" text-anchor="middle" fill="var(--text-muted)">taban</text>
+  <text x="80" y="220" font-size="13" text-anchor="middle" fill="var(--text)">doğrudan</text>
+  <text x="80" y="240" font-size="13" text-anchor="middle" fill="var(--text)">cevap</text>
+
+  <rect x="172" y="160" width="80" height="40" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="212" y="220" font-size="13" text-anchor="middle" fill="var(--text)">yalnızca</text>
+  <text x="212" y="240" font-size="13" text-anchor="middle" fill="var(--text)">denklem</text>
+  <text x="212" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">plan var, dil yok</text>
+
+  <rect x="304" y="166" width="80" height="34" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="344" y="220" font-size="13" text-anchor="middle" fill="var(--text)">yalnızca</text>
+  <text x="344" y="240" font-size="13" text-anchor="middle" fill="var(--text)">nokta</text>
+  <text x="344" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">token var, içerik yok</text>
+
+  <rect x="436" y="162" width="80" height="38" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="476" y="220" font-size="13" text-anchor="middle" fill="var(--text)">cevaptan</text>
+  <text x="476" y="240" font-size="13" text-anchor="middle" fill="var(--text)">sonra gerekçe</text>
+  <text x="476" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">içerik var, sıra yok</text>
+
+  <rect x="568" y="86" width="80" height="114" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="608" y="80" font-size="13" text-anchor="middle" fill="var(--accent)">kazanç</text>
+  <text x="608" y="220" font-size="13" text-anchor="middle" fill="var(--accent)">ara adımlar</text>
+  <text x="608" y="240" font-size="13" text-anchor="middle" fill="var(--accent)">cevaptan önce</text>
+
+  <line x1="24" y1="200" x2="696" y2="200" stroke="var(--border)" stroke-width="1"/>
+
+  <line x1="16" y1="278" x2="704" y2="278" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="296" font-size="13" text-anchor="start" fill="var(--text-muted)">kazanç ne fazladan token üretmekten ne de bilgiyi hatırlatmaktan geliyor</text>
+</svg>

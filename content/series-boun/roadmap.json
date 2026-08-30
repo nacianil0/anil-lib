@@ -40,9 +40,9 @@
       "articles": [
         { "order": 17, "title": "Asimptotik Analiz: Tanımlar ve İspatlı Karşılaştırma", "status": "yayinda", "slug": "asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma" },
         { "order": 18, "title": "Yinelemeler ve Master Teoremi", "status": "yayinda", "slug": "yinelemeler-ve-master-teoremi" },
-        { "order": 19, "title": "Doğruluk: Döngü Değişmezleriyle İspat", "status": "planlandi" },
-        { "order": 20, "title": "Böl ve Yönet", "status": "planlandi" },
-        { "order": 21, "title": "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?", "status": "planlandi" },
+        { "order": 19, "title": "Doğruluk: Döngü Değişmezleriyle İspat", "status": "yayinda", "slug": "dogruluk-dongu-degismezleriyle-ispat" },
+        { "order": 20, "title": "Böl ve Yönet: Kazanç Nereden Gelir?", "status": "yayinda", "slug": "bol-ve-yonet-kazanc-nereden-gelir" },
+        { "order": 21, "title": "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?", "status": "yayinda", "slug": "acgozlu-algoritmalar-ne-zaman-ve-neden-calisir" },
         { "order": 22, "title": "Dinamik Programlama", "status": "planlandi" },
         { "order": 23, "title": "Graf Algoritmaları: MST ve En Kısa Yollar", "status": "planlandi" },
         { "order": 24, "title": "Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar", "status": "planlandi" },

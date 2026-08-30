@@ -1,0 +1,35 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Her eğrinin bir tabanı var</text>
+
+  <line x1="70" y1="56" x2="70" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <line x1="70" y1="240" x2="660" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="66" font-size="13" text-anchor="start" fill="var(--text-faint)">çok hata</text>
+  <text x="16" y="236" font-size="13" text-anchor="start" fill="var(--text-faint)">az hata</text>
+
+  <path d="M 84 92 C 140 130, 190 148, 250 152 L 648 155" fill="none" stroke="var(--cool)" stroke-width="2"/>
+  <path d="M 114 84 C 180 128, 240 160, 320 172 L 648 176" fill="none" stroke="var(--cool)" stroke-width="2"/>
+  <path d="M 154 78 C 230 120, 300 165, 400 190 L 648 196" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <path d="M 204 74 C 290 115, 370 170, 480 205 L 648 212" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <path d="M 254 70 C 350 110, 440 175, 560 220 L 648 228" fill="none" stroke="var(--accent)" stroke-width="2"/>
+
+  <text x="664" y="159" font-size="13" text-anchor="start" fill="var(--cool)">410M</text>
+  <text x="664" y="180" font-size="13" text-anchor="start" fill="var(--cool)">1,4B</text>
+  <text x="664" y="200" font-size="13" text-anchor="start" fill="var(--accent)">2,8B</text>
+  <text x="664" y="216" font-size="13" text-anchor="start" fill="var(--accent)">6,9B</text>
+  <text x="664" y="232" font-size="13" text-anchor="start" fill="var(--accent)">12B</text>
+
+  <polygon points="166,129 172,135 166,141 160,135" fill="var(--text)"/>
+  <polygon points="380,178 386,184 380,190 374,184" fill="var(--text)"/>
+  <polygon points="600,218 606,224 600,230 594,224" fill="var(--text)"/>
+  <text x="166" y="122" font-size="13" text-anchor="middle" fill="var(--text)">en iyi</text>
+  <text x="380" y="171" font-size="13" text-anchor="middle" fill="var(--text)">en iyi</text>
+  <text x="600" y="211" font-size="13" text-anchor="middle" fill="var(--text)">en iyi</text>
+
+  <text x="70" y="258" font-size="13" text-anchor="start" fill="var(--text-muted)">az</text>
+  <text x="360" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">soru başına çıkarım işlemi</text>
+  <text x="660" y="258" font-size="13" text-anchor="end" fill="var(--text-muted)">çok</text>
+
+  <line x1="16" y1="274" x2="704" y2="274" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="296" font-size="13" text-anchor="start" fill="var(--text-muted)">her eğri önce düzenli olarak iner, sonra kendi tabanında doyar</text>
+  <text x="16" y="318" font-size="13" text-anchor="start" fill="var(--text-faint)">düşük bütçede küçük model, yüksek bütçede büyük model daha iyi: en iyi boy bütçeyle değişir</text>
+</svg>

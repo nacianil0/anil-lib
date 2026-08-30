@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı bütçeyi harcamanın iki yolu</text>
+
+  <text x="16" y="50" font-size="13" text-anchor="start" fill="var(--cool)">paralel eksen</text>
+  <rect x="110" y="60" width="120" height="30" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="170" y="80" font-size="13" text-anchor="middle" fill="var(--text)">istem</text>
+
+  <line x1="170" y1="90" x2="58" y2="124" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="170" y1="90" x2="138" y2="124" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="170" y1="90" x2="218" y2="124" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="170" y1="90" x2="298" y2="124" stroke="var(--cool)" stroke-width="1"/>
+
+  <rect x="24" y="124" width="68" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="58" y="144" font-size="13" text-anchor="middle" fill="var(--text)">aday 1</text>
+  <rect x="104" y="124" width="68" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="138" y="144" font-size="13" text-anchor="middle" fill="var(--text)">aday 2</text>
+  <rect x="184" y="124" width="68" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="218" y="144" font-size="13" text-anchor="middle" fill="var(--text)">aday 3</text>
+  <rect x="264" y="124" width="68" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="298" y="144" font-size="13" text-anchor="middle" fill="var(--text)">aday 4</text>
+
+  <line x1="58" y1="154" x2="170" y2="186" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="138" y1="154" x2="170" y2="186" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="218" y1="154" x2="170" y2="186" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="298" y1="154" x2="170" y2="186" stroke="var(--cool)" stroke-width="1"/>
+
+  <rect x="110" y="186" width="120" height="30" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="170" y="206" font-size="13" text-anchor="middle" fill="var(--text)">seçim</text>
+
+  <line x1="360" y1="40" x2="360" y2="224" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="380" y="50" font-size="13" text-anchor="start" fill="var(--accent)">sıralı eksen</text>
+  <rect x="380" y="60" width="90" height="30" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="425" y="80" font-size="13" text-anchor="middle" fill="var(--text)">istem</text>
+  <line x1="425" y1="90" x2="425" y2="124" stroke="var(--accent)" stroke-width="1"/>
+
+  <rect x="380" y="124" width="90" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="425" y="144" font-size="13" text-anchor="middle" fill="var(--text)">cevap</text>
+  <line x1="470" y1="139" x2="496" y2="139" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="496" y="124" width="90" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="541" y="144" font-size="13" text-anchor="middle" fill="var(--text)">düzeltme</text>
+  <line x1="586" y1="139" x2="612" y2="139" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="612" y="124" width="90" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="657" y="144" font-size="13" text-anchor="middle" fill="var(--text)">düzeltme</text>
+
+  <line x1="657" y1="154" x2="600" y2="186" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="540" y="186" width="120" height="30" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="600" y="206" font-size="13" text-anchor="middle" fill="var(--text)">son cevap</text>
+
+  <line x1="16" y1="238" x2="704" y2="238" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="260" font-size="13" text-anchor="start" fill="var(--text-muted)">paralel eksende adaylar birbirini görmez; istem bir kez ödenir, adaylar aynı yığında üretilir</text>
+  <text x="16" y="282" font-size="13" text-anchor="start" fill="var(--text-faint)">sıralı eksende her adım bir öncekini görür; gecikme adım sayısıyla doğrusal büyür</text>
+</svg>

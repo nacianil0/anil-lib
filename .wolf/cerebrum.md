@@ -122,6 +122,44 @@
 - Seri render olcumu: pano goruntulenmiyorken `window.innerWidth` 0 doner ve tasma olcumu anlamsiz cikar. Olcumden once mutlaka `resize_window` ile acik bir viewport boyutu ver (masaustu 1280x900, tablet 768x1024, mobil 375x812).
 - Seri kaynak dogrulamasi: bir calismanin arXiv basligi ile yayin yerindeki basligi FARKLI olabilir (AWQ arXiv'de "for LLM Compression", MLSys 2024'te "for On-Device LLM Compression"). Bağlayıcı karar #7 ve #13'un emsali geregi kunye her zaman yayin yerine gore verilir; ACL Anthology ya da konferans proceedings sayfasindan dogrula.
 
+- [2026-08-30] Venue dogrulamasinda ikincil kaynaklara (web araması ozetleri, blog, "Papers with Code") guvenme. Batch 7'de arama sonuclari Brown ve ark. "Large Language Monkeys"in ICLR 2025'te yayimlandigini soyluyordu; DBLP API'si (`https://dblp.org/search/publ/api?q=...&format=json`) yalnizca CoRR surumunu indeksliyor ve DBLP ICLR'i indeksliyor — yani yoklugu bu kez kanit. Calisma hakemsiz sayildi ve yerine ayni olguyu ele alan hakemli bir calisma kullanildi. DBLP API arka arkaya birkac istekten sonra bos yanit donebiliyor; aralik birak.
+- [2026-08-30] Depoda **paralel bir oturum** calisiyor olabilir (BOUN serisi ayri bir hatta ilerliyor). `netstat` ile 3000-3999 arasi dinleyen port ve `tasklist | grep node` ile kontrol et. Paralel dev sunucusu varken depoda `pnpm build` CALISTIRMA: ayni `.next` dizinini paylasirlar ve otekinin sunucusu bozulur. Calisan yol: depoyu ayni surucude bir kopyaya cikar (`tar -c --exclude=./node_modules --exclude=./.next --exclude=./.git --exclude=./artifacts . | tar -x -C <kopya>`), kopyanin `node_modules`'u icin `cmd /c mklink /J` ile junction kur, build+dev'i orada calistir. Temizlerken ONCE `cmd /c rmdir <kopya>
+ode_modules`, sonra kopyayi sil.
+- [2026-08-30] `mklink /J` komutunu Bash tool'undan `cmd /c` ile calistirmak bu ortamda sessizce basarisiz oluyor (cmd banner'i basiyor, junction olusmuyor). PowerShell tool'undan `cmd /c mklink /J "<link>" "<target>"` calisiyor.
+- [2026-08-30] `check-series-svg.cjs` metinlerin BIRBIRINE BINMESINI gormez; yalnizca viewBox tasmasini ve sabit rengi yakalar. Eksen adi ile ilk tik etiketi, ya da bir isaretci ile bir egri ust uste gelebilir ve denetleyici "sorun yok" der. Bu sinifi yakalayan tek yol her sekli tek tek kirpip goze bakmak (`figs-b7.mjs` deseni).
+- [2026-08-30] AI serisi render dogrulamasi icin hazir iki betik var: `artifacts/b7-render/shot-batch7.mjs` (3 genislik x 3 tema; body renkleri, svg text fill cozunurlugu, getBBox tasmasi, yatay tasma, figure sayisi, figcaption, rota sweep) ve `artifacts/b7-render/figs-b7.mjs` (sekil basina light/dark kirpma). Sonraki batch icin yalnizca dosya basindaki SLUGS listesi ve `RENDER_BASE` degisir.
+
+- [2026-08-30] **`pypdf` bu ortamda kurulu ve 6.042 PDF'inin matematik yazi tipini dogru cozuyor** —
+  `pdftotext`'in dusurdugu epsilon (✏ olarak) ve "+" (C olarak) gorunur hale geliyor. Master
+  Teoreminin Durum 1 ve Durum 3 ussu boylece dogrudan okundu ve Batch 5'ten kalan borc kapandi.
+  Eksi isareti pypdf'te de dusuyor; bu tool degil BELGE kaynakli (ayni PDF'te bilinen bir formul
+  `(z − 1)/2` de `.z   1/=2` olarak cikiyor). Formul agirlikli PDF'lerde ONCE pypdf dene.
+  `pdftoppm` / `pymupdf` / `pdf2image` hala yok — sayfa rasterlestirilemiyor.
+- [2026-08-30] **MIT 6.046J Guz 2005 (SMA 5503) OCW yolu Bahar 2015'ten farkli**: PDF baglantilari
+  dogrudan `pages/lecture-notes/` sayfasinda `<hash>_lecN.pdf` biciminde durur, ara `resources/`
+  sayfasi yoktur. Lecture 3 = Divide and Conquer (desenin uc adimi birebir, matris carpimi
+  8T(n/2)+Θ(n²) "no better than the ordinary algorithm", Strassen 7T(n/2)+Θ(n²) ve n ≥ 32 esigi);
+  Lecture 16 = Greedy Algorithms (greedy-choice property "hallmark" tanimi, kes-yapistir).
+  MIT 6.006 **Guz 2011** ise `resources/mit6_006f11_lec11/` deseniyle ve Lecture 11 = Karatsuba.
+- [2026-08-30] **Okuyucu fenced kod blogunu (```) zaten destekliyor**: `globals.css` icinde
+  `.prose-reader pre` (JetBrains Mono, `overflow-x: auto`, surface-muted zemin) ve
+  `.prose-reader :not(pre) > code` kurallari var; kod degisikligi gerekmez. Iki tuzak: (a)
+  `check-series-content.cjs`'in kelime sayaci kod satirlarini **duzyazi sayar**, (b) ham HTML
+  denetimi tek tirnak kaldirmayi kullandigi icin ucluk tirnakli bloklarin ICI de temizlenir —
+  yani blok icindeki `<` guvenlidir ama duzyazidaki degildir.
+- [2026-08-30] **`entegre-batch.cjs`, roadmap basligi frontmatter basligiyla birebir eslesmezse
+  YAZMAZ** (kuru calismada "sorun" listeler, `--write` "Sorunlar var; YAZILMADI" der). Planlanmis
+  bir basligi degistirirken once `content/series-*/roadmap.json` satirini elle guncelle, sonra
+  araci calistir.
+- [2026-08-30] **`check-series-svg.cjs`'in tasma tahmini** `karakter x font-size x 0,55`. Font 13
+  icin pratik sinir: x = 20'den baslayan satir ~97 karakter, x = 375'ten (sag panel) baslayan satir
+  ~48 karakter. Uzun aciklama satirlarini bastan bu sinira gore boy.
+- [2026-08-30] **Depoda satir sonlari karisik** (`core.autocrlf = true`; BOUN makalelerinin 18'i LF,
+  3'u CRLF). `sync-series-hashes.cjs` gövdenin **bayt** halini hash'ler, ama uygulama etkilenmez:
+  `src/lib/content/articles.ts` katalogdaki `contentHash` ile frontmatter'daki `content_hash`
+  DIZGELERINI karsilastirir, govdeden yeniden hesaplamaz. Bagimsiz denetim betiginde dosyayi
+  `open(..., newline="")` ile oku.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -191,11 +229,34 @@
 - [2026-08-30] Yeni bir teknik terimi kalin yazip gloss'suz birakma. Batch 6'da alti terim (spekulatif uretim, taslak model, kisitli uretim, ayristirici, sema, getirme) ilk gecislerinde parantez ici Ingilizcesi olmadan kaldi ve inceleme turunda yakalandi. SOZLESME §2 geregi ilk gecis her zaman "Turkce (English)" bicimindedir; sonraki gecisler parantezsiz.
 - [2026-08-30] Kaynaktaki bir sayiyi metne tasirken "kac tane" ile "kac tanesi kosulu saglıyor" sayilarini karistirma. Batch 6'da 30. makalede dilbilgisinin kabul ettigi 16 dizi ile 1 ile biten 8 dizi karistirildi ve sekil de yanlis etiketlendi.
 
+- [2026-08-30] Somut ornek kurarken KULLANILMAYAN sayi birakma. Batch 7'de 32. makalenin elle yurutulen orneginde "4 kutu" yaziliyor ama hesaba girmiyordu — ustelik 31. makale tam da hesaba girmeyen sayilarin modelleri yanilttigini anlatiyor. Ornekteki her sayi ya kullanilmali ya da kasitli distraktor oldugu acikca soylenmeli.
+- [2026-08-30] Kaynaktaki bir kontrol kosulunun sonucunu tersine cevirme. Batch 7'de Li ve ark.'nin "hint" kosulu ilk taslakta "kazanc ortaya cikmiyor" diye yazildi; calisma ise hint'in tabandan IYI ama CoT'un gerisinde oldugunu soyluyor. Kontrol kosullarinda "hicbir etki yok" ile "daha az etki var" ayrimini kaynaktan birebir dogrula.
+- [2026-08-30] Olasilik ve oran birimlerini govde metninde sozcukle yazarken hesabi tekrar yap. Batch 7'de 0,9^100 icin "yuzde binde birden kucuk" yazildi; dogrusu yaklasik yuz binde uc. Ayrica "yuz katlik butce artisi" denen sey aslinda on katliktir (100 → 1000).
+
+- [2026-08-30] Python'da tuple listesi uzerinde `r is not t` ile "kendisi haric" filtreleme yapma.
+  CPython ayni literal listedeki esit tuple'lari internleyebiliyor; bu oturumda aralik cizelgeleme
+  karsi orneginde uc ozdes `(1, 4)` araligi tek nesneye indi, cakisma sayilari yanlis cikti ve
+  gecersiz bir karsi ornek uretildi. Indis uzerinden calis (`for j in range(len(iv)) if j != i`).
+- [2026-08-30] Hash dogrularken `.md` dosyasini `open(path, encoding="utf-8")` ile okuma. Python'un
+  evrensel satir sonu cevirisi CRLF'i LF'e cevirir ve CRLF dosyalarda sahte hash uyusmazligi
+  uretir (bu oturumda 3 makale icin uretti, tool "Sorun yok" derken). `newline=""` ver.
+- [2026-08-30] Diyagramda bir oku ya da etiketi baska ogelerin ustunden gecirme; hicbir denetleyici
+  bunu yakalamaz. Bu oturumda iki ornek gecti ve yalnizca sekle bakinca goruldu: makale 19'un
+  1. seklinde ok, dizi hucrelerinin tam ortasindan geciyordu (hucre degerleri okunmuyordu) ve
+  makale 20'nin 2. seklinde bir dipnot "alt teget" etiketiyle ust uste biniyordu. Her sekli
+  `figs-b<N>.mjs` ile light + dark kirp ve GOZLE bak — bu adim atlanamaz.
+- [2026-08-30] Uzun Turkce metni `cat >> dosya << 'EOF'` heredoc'una gomme (bu oturumda yine
+  patladi: "unexpected EOF while looking for matching `''"). Blogu `Write` ile scratchpad'e yaz,
+  sonra `cat <scratchpad> >> <hedef>` ile ekle. Bu kural artik yalnizca python heredoc'u icin
+  degil, **bash heredoc'unun tamami** icin gecerlidir.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
 
 - [2026-08-30] Seri Batch 5: yayımlanmamış 24 ve 26 başlıklarındaki İngilizce sözcükler terim defterine uyarlandı ("Sohbet Formatı" → "Sohbet Biçimi", "Inference Ekonomisi" → "Çıkarım Ekonomisi"). Gerekçe: her ikisinin Türkçe karşılığı 1\. ve 12\. makalelerde kurulmuştu; başlık gövdenin kullanmadığı bir sözcüğü taşımamalı. `roadmap.json`'daki **faz** başlıklarına bilinçli olarak dokunulmadı: o katman İngilizce alan terimlerini (Inference, Reasoning, Retrieval, Test-Time Compute) tutarlı biçimde kullanıyor ve yalnızca birini çevirmek katmanı bozardı. Katmanın tümü kullanıcı kararına bırakıldı ve HANDOFF'a açık borç olarak yazıldı.
+
+- [2026-08-30] Seri Batch 7: yayımlanmamış 31–34 başlıklarının dördü de terim defterine uyarlandı ("Reasoning Tartışması" → "Tanım, Ölçüm ve Tartışma"; "Chain-of-Thought" → "Ara Adımların Gücü ve Sınırı"; "Test-Time Compute" → "Çıkarım Anında Hesap"; "Reasoning Modelleri" → "Akıl Yürüten Modeller"). 31'de HANDOFF'un işaret ettiği ikileme sorunu — "akıl yürütme" faz adında zaten geçiyor — başlıkta terimi ikinci kez kullanmayarak çözüldü; 33'ün karşılığı 9\. makalenin vaat defterindeki "çıkarım anında hesap harcama ekseni" ifadesinden alındı. Faz başlıkları katmanına yine dokunulmadı ve artık görünür bir tuhaflık oluştu: Faz 4'ün adı "Reasoning ve Test-Time Compute" derken altındaki dört başlığın hiçbirinde o sözcükler yok. Katman kullanıcı kararına bırakılmaya devam ediyor.
 
 - [2026-06-27] Build a single Next.js reader backed by a file contract instead of copying the full nacianilcom Studio monorepo; authoring UI and API services are outside the requested scope.
 - [2026-06-27] Make article ingestion idempotent with persistent `article_id` frontmatter, normalized content hashes, and `content/catalog.json`; normal reruns never reclassify existing articles.

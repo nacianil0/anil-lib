@@ -694,3 +694,265 @@ olurdu. §1'deki CMPE300 özeti bu ayrımı yapmıyordu; buradaki kayıt daha ke
   ε > 0 için n/log n = O(n^(1−ε)) olmaz (Lemma 13.7.3'ten), Durum 2 k ≥ 0 istediği için uygulanmaz
   (gereken k = −1), Durum 3 de geçerli değil. Akra-Bazzi ile p = 1 ve ∫ du/(u log u) = log log u
   integralinden **Θ(n log log n)** çıkar; bu elle hesaplandı.
+
+## 11. Batch 6 üretim run'ında doğrulanan kaynaklar (2026-08-30)
+
+Bu batch'in üç makalesi de **Faz C** içindedir ve resmî dayanağı CMPE300'dür. CMPE300 sayfası
+aynı gün (Batch 5) doğrulandığı ve Faz C boyunca geçerli sayıldığı için **yeniden çekilmedi**;
+§10'daki birebir alıntılar geçerlidir. Makale 20 ve 21'in kaynakçası, ders çıktılarındaki
+"basic classes of algorithms (comparison-based, recursive, divide-and-conquer, dynamic, greedy,
+numerical, graph)" ifadesine dayanır; makale 19 ise aynı bölümün "the theory of complexity
+analysis, basic techniques that are commonly used in analyzing the performance" kısmına.
+
+### Makale 19–21'de kullanılan akademik kaynaklar
+
+- **MIT 6.042J *Mathematics for Computer Science* ders kitabı (Lehman, Leighton, Meyer)** —
+  §10'daki yöntemle yeniden indirildi; bu batch'te **5.4 State Machines** bölümünün tamamı okundu.
+  - **5.4.1 States and Transitions** — durum makinesinin "bir küme üzerinde ikili bağıntı"
+    olarak tanımı, geçiş bağıntısı, durum grafı ve belirlenmiş başlangıç durumu; 99-sınırlı
+    sayaç örneği.
+  - **5.4.2 Invariant for a Diagonally-Moving Robot** — çapraz hareket eden robotun geçişleri
+    {(m, n) → (m ± 1, n ± 1)}; Even-sum özelliği, Lemma 5.4.1 (geçiş çiftliği korur), Teorem 5.4.2
+    (erişilebilen her durumda koordinat toplamı çifttir, geçiş sayısı üzerinden tümevarımla) ve
+    Sonuç 5.4.3 (robot (1, 0) noktasına ulaşamaz).
+  - **5.4.3 The Invariant Principle** — yürütme (Tanım 5.4.4) ve erişilebilir durum tanımları;
+    **korunan değişmezin tanımı (Tanım 5.4.5)**: "P(q) doğru ve q → r ise P(r) doğrudur";
+    **Değişmez İlkesi**: "korunan bir değişmez başlangıç durumunda doğruysa erişilebilen bütün
+    durumlarda doğrudur"; ilkenin tümevarım ilkesinin yeniden ifadesi olduğu ve başlangıç durumunun
+    taban duruma, korunmanın tümevarım adımına karşılık geldiği. Kutu: ilke **Robert W. Floyd**
+    tarafından **1967'de Carnegie Tech'te** formüle edildi; Floyd, dilbilgisi ve program doğrulama
+    temelleri üzerine çalışmalarıyla **1970'lerin sonunda Turing Ödülü** aldı; kutuda ayrıca
+    ilkenin "aşikâr" görünmesine karşın asıl değerinin bu kadar basit bir yöntemin bu kadar geniş
+    biçimde uygulanabilmesi olduğu anlatılıyor.
+  - **5.4.5 Fast Exponentiation** — Floyd'un iki doğrulama özelliği ayrımı: **kısmi doğruluk
+    (partial correctness)** "bir sonuç varsa doğrudur; süreç bir döngüde takılıp hiç sonuç
+    üretmeyebilir" ve **sonlanma (termination)** "süreç her zaman bir sonuç üretir"; kısmi
+    doğruluğun Değişmez İlkesiyle, sonlanmanın İyi Sıralama İlkesiyle ispatlandığı. Hızlı üs alma
+    programı (x, y, z ilk değerleri a, 1, b; z = 0 olunca y döndürülür; r = z mod 2; z = ⌊z/2⌋;
+    r = 1 ise y = xy; x = x²); durum kümesi ℝ × ℝ × ℕ; **korunan değişmez z ∈ ℕ ve y·xᶻ = aᵇ** ve
+    korunmanın z çift (x², y, z/2) ile z tek (x², xy, (z−1)/2) durumları için ayrı ayrı cebirsel
+    ispatı; kısmi doğruluğun z = 0 durumundan okunması; çarpma sayısının **en fazla
+    2(⌈log b⌉ + 1)** olması, çünkü z her geçişte en az yarılanır ve b sıfırdan büyükken en fazla
+    ⌈log b⌉ + 1 kez yarılanabilir.
+  - **5.4.6 Derived Variables** — sonlanma ispatının durumlara bir "büyüklük" atamaya dayandığı;
+    türetilmiş değişken kavramı ve fizikteki potansiyel fonksiyonlarıyla benzerliği; **Tanım 5.4.6**
+    kesin azalan (q → q′ ise f(q′) < f(q)) ve zayıf azalan tanımları; **Teorem 5.4.7**: kesin azalan
+    N-değerli bir türetilmiş değişken varsa q durumundan başlayan yürütmenin uzunluğu **en fazla
+    f(q)**; **Teorem 5.4.8**: değer kümesi iyi sıralı olan kesin azalan bir değişken varsa her
+    yürütme sonlanır; ve **zayıf azalmanın sonlanmayı garanti etmediği** (sonsuz bir yürütme,
+    değişkenin sabit kaldığı durumlardan geçebilir). Güneydoğuya sıçrayan robot örneği, adım sayısı
+    önceden sınırlanamayan bir sonlanma örneğidir.
+  - **Problem 5.32** — üçlü tabana dayanan bir çarpma algoritmasının durum makinesi olarak
+    modellenmesi ve "Değişmez Yöntemiyle kısmi doğruluğun ispatı" istenmesi; ayrıca 5.4 alıştırma
+    notu: **"Uygun bir değişmezi keşfetmek zor olabilir."**
+- **MIT 6.046J *Design and Analysis of Algorithms*, Bahar 2015, Lecture 1: Introduction
+  (Demaine, Devadas, Lynch)** — PDF §10'daki yöntemle indirilip tam metin okundu.
+  - Aralık çizelgeleme: n istek, tek kaynak, s(i) ve f(i) ile s(i) her zaman f(i)'den küçük;
+    **bağdaşma tanımı** "f(i) ≤ s(j) veya f(j) ≤ s(i)"; amaç en büyük bağdaşan altkümeyi seçmek.
+  - **Açgözlü algoritmanın tanımı**: "a myopic algorithm that processes the input one piece at a
+    time with no apparent look ahead" ve üç adımlı iskelet (basit bir kuralla i seç; i ile
+    bağdaşmayan bütün istekleri reddet; bütün istekler işlenene kadar tekrarla).
+  - **Dört seçim kuralı** ve üçünün "Bad" olarak işaretlenmesi: en erken başlayan (minimum s(i)),
+    en kısa süren (minimum f(i) − s(i)), en az çakışanı seçen; dördüncüsü **en erken biten**
+    (minimum f(i)).
+  - **Sav 1**: çıktının s(i₁) < f(i₁) ≤ s(i₂) < f(i₂) ≤ … biçiminde bir zincir olduğu, çelişkiyle
+    ispat (aksi hâlde algoritmanın ikinci adımıyla çelişki).
+  - **Sav 2**: en erken biten kuralının optimal olduğu, optimal çözümün büyüklüğü k üzerinden
+    tümevarımla; adımda **f(i₁) ≤ f(j₁)** kullanılarak optimal çözümdeki ilk aralığın açgözlünün
+    seçtiğiyle değiştirilmesi ve kalan alt problemin (s(i) ≥ f(i₁) olan istekler) tümevarım
+    hipotezine bağlanması.
+  - **Ağırlıklı aralık çizelgeleme**: "A key observation here is that the greedy algorithm no
+    longer works" ve dinamik programlamaya geçiş (alt problem tanımı Rₓ = {j ∈ R | s(j) ≥ x},
+    opt(R) = max(w(i) + opt(R_{f(i)})), n alt problem ve O(n²) toplam süre).
+- **MIT 6.046J/18.401J *Introduction to Algorithms (SMA 5503)*, Güz 2005, Lecture 3: Divide and
+  Conquer (Demaine, Leiserson)** — PDF indirilip okundu.
+  - **Desenin üç adımı birebir**: "1. Divide the problem (instance) into subproblems. 2. Conquer
+    the subproblems by solving them recursively. 3. Combine subproblem solutions." ve birleştirmeli
+    sıralamanın bu üç adıma oturtulması (Divide: trivial · Conquer: iki alt diziyi özyinelemeli
+    sırala · Combine: doğrusal zamanlı birleştirme), buradan T(n) = 2T(n/2) + Θ(n).
+  - İkili arama T(n) = T(n/2) + Θ(1) çözümüyle Θ(lg n).
+  - **Matris çarpımı**: n × n matrisin 2 × 2'lik (n/2) × (n/2) blok matrisi olarak yazılması,
+    r = ae + bg, s = af + bh, t = ce + dh, u = cf + dg ile **sekiz** özyinelemeli çarpım;
+    T(n) = 8T(n/2) + Θ(n²), n^(log₂8) = n³, Durum 1 ile Θ(n³) ve kayıt: **"No better than the
+    ordinary algorithm."**
+  - **Strassen**: "Multiply 2 × 2 matrices with only 7 recursive mults"; T(n) = 7T(n/2) + Θ(n²),
+    n^(log₂7) ≈ n^2,81, Durum 1 ile Θ(n^(lg 7)); ve pratik not: "üsteki fark küçük görünse de
+    etkisi büyüktür; Strassen bugünün makinelerinde kabaca **n ≥ 32**'den itibaren sıradan
+    algoritmayı geçer." Ayrıca kayıtlı en iyi kuramsal sonuç Θ(n^2,376) olarak anılıyor.
+- **MIT 6.006 *Introduction to Algorithms*, Güz 2011, Lecture 11: Numerics I (Demaine, Devadas)** —
+  PDF indirilip okundu.
+  - n basamaklı iki sayının yarıya bölünmesi: x = x₁·r^(n/2) + x₀, y = y₁·r^(n/2) + y₀ ile
+    z = x·y = x₁y₁·rⁿ + (x₀y₁ + x₁y₀)·r^(n/2) + x₀y₀; "4 multiplications of half-sized ⇒
+    quadratic algorithm Θ(n²)".
+  - **Karatsuba's Method**: z₀ = x₀y₀, z₂ = x₁y₁, z₁ = (x₀ + x₁)(y₀ + y₁) − z₀ − z₂ = x₀y₁ + x₁y₀;
+    "There are three multiplies"; T(n) = 3T(n/2) + Θ(n) = Θ(n^(log₂3)) = Θ(n^1,5849625…).
+  - **Dallanma çarpanı şekli** (Figure 3): 4T(n/2) için 4^(log₂ n) = n², 3T(n/2) için
+    3^(log₂ n) = n^(log₂3). Ayrıca Python'ın büyük tam sayı çarpımında bu yöntemi kullandığı notu.
+- **MIT 6.046J, Bahar 2015, Lecture 2: Divide and Conquer** — §10'da okunmuştu; bu batch'te
+  makale 20 için yeniden kullanıldı (konveks kabuk teğetleri ve medyan bulma). Yeni çıkarılan
+  ayrıntılar: kaba kuvvet konveks kabuğun O(n²) kenar × O(n) denetim, toplam **O(n³)** olması;
+  noktaların x koordinatına göre **bir kez** sıralanması (O(n log n)); y(i, j) tanımı (ayırıcı L
+  doğrusu ile (aᵢ, bⱼ) parçasının kesişme yüksekliği) ve "(aᵢ, bⱼ) üst teğettir ancak ve ancak
+  y(i, j) maksimumdur" savı ile gerekçesi; iki parmaklı yürüyüşün sözde kodu; medyan bulmada rank
+  tanımı, Select(S, i) yordamı, beşerli sütunlar, medyanların medyanı, **"At least 3(⌈n/10⌉ − 2)
+  elements are > x"** sınırı, T(n) = T(⌈n/5⌉) + T(7n/10 + 6) + Θ(n) bağıntısı, **"Master theorem
+  does not apply"** tespiti, n/5 + 7n/10 sezgisi ve T(n) ≤ c·n tahmininin **c ≥ 20a** ile
+  tümevarımla ispatı.
+- **MIT 6.046J, Güz 2005, Lecture 16: Greedy Algorithms (and Graphs) (Leiserson)** — PDF indirilip
+  okundu. Bu batch'te yalnızca **çerçeve** için kullanıldı; MST içeriği bilinçli olarak makale 23'e
+  bırakıldı.
+  - **"Hallmark for greedy algorithms — Greedy-choice property: A locally optimal choice is
+    globally optimal."**
+  - **Optimal altyapının kes-yapıştır ispatı**: MST'den (u, v) kenarı çıkarılınca T₁ ve T₂ alt
+    ağaçları oluşur ve w(T) = w(u, v) + w(T₁) + w(T₂); T₁ daha hafif bir kapsayan ağaçla
+    değiştirilebilseydi bütün de hafifler, çelişki.
+  - Örtüşen alt problemlerin de var olduğu, dolayısıyla dinamik programlamanın **da**
+    uygulanabileceği, ancak açgözlü seçim özelliğinin daha verimli bir algoritma verdiği.
+  - Değişim (swap) argümanının kanonik kullanımı: kesit teoremi ispatında (u, v) kenarı, T içindeki
+    u–v yolunun A ile V∖A arasını geçen ilk kenarıyla takas edilir.
+- **Sedgewick, R. & Wayne, K. *Algorithms*, 4. baskı** — resmî site algs4.cs.princeton.edu'dan üç
+  bölüm sayfası okundu.
+  - **2.1 Elementary Sorts** — eklemeli sıralamanın "briç elini sıralar gibi kartları teker teker
+    alıp önceden bakılanların arasında doğru yere yerleştirmek" tarifi ve gerçekleştirimde büyük
+    öğeleri bir sağa kaydırıp boşalan yere yerleştirme; **Önerme:** rastgele sıralı N elemanlı
+    dizide ortalama ~N²/4 karşılaştırma ve ~N²/4 takas, en kötü durumda ~N²/2 ve ~N²/2, **en iyi
+    durumda N − 1 karşılaştırma ve 0 takas**; ters çift (inversion) tanımı ve **Önerme:** takas
+    sayısı ters çift sayısına eşittir, karşılaştırma sayısı en az ters çift sayısı ve en fazla
+    ters çift sayısı artı dizi uzunluğudur.
+  - **3.1 Elementary Symbol Tables** — ikili aramanın fikri: "**aranan anahtarı içerebilecek alt
+    diziyi sınırlayan indisleri koruruz**"; orta elemanla karşılaştırıp sol ya da sağ yarıya inmek;
+    **Önerme B:** N anahtarlı sıralı bir dizide arama (başarılı ya da başarısız) en kötü durumda
+    **lg N + 1**'den fazla karşılaştırma yapmaz; **Önerme C:** sıralı diziye ekleme en kötü durumda
+    ~2N dizi erişimi ister.
+  - **5.5 Data Compression** — sabit uzunluklu kodun R simge için ⌈lg R⌉ bit istemesi; değişken
+    uzunluklu kodlarda tek anlamlı çözülebilirlik ihtiyacı; **önek-serbest kod tanımı** ve örnek:
+    {01, 10, 0010, 1111} önek-serbesttir, {01, 10, 0010, 1010} değildir (10, 1010'un önekidir);
+    Huffman kodlarının optimal önek-serbest kodları kurması, **David Huffman tarafından 1950'de
+    MIT'de öğrenciyken bulunması** ve **Property A: "No prefix free code uses fewer bits."**
+    Alıştırmalardan iki incelik: (a) "Any optimal prefix-free code can be obtained via Huffman's
+    algorithm" ifadesi **yanlıştır** — A 26, B 24, C 14, D 13, E 12, F 11 frekanslarında C3 kodu
+    optimaldir ama A ile B aynı bitle başlar, oysa Huffman kodunda bu imkânsızdır; (b)
+    Shannon-Fano'nun yukarıdan aşağı bölme yöntemi optimal değildir. **Not:** bu sayfa "under
+    major construction" uyarısı taşır ve kitabın tam metnini değil özetini verir; Huffman
+    algoritmasının adım adım tarifi ve optimallik ispatı bu sayfada **yoktur**, dolayısıyla
+    makale 21'deki açgözlü seçim özelliği ve optimal altyapı argümanları 6.046J'nin genel açgözlü
+    çerçevesine dayandırıldı ve ayrıca sayısal olarak bağımsız doğrulandı (aşağıya bakınız).
+- **CLRS 4. baskı** — bölüm düzeyinde atıf sürüyor (§8'deki borç geçerli). Bu batch'te kullanılan
+  bölüm adları daha önce doğrulanmıştı: **2. bölüm (Getting Started)**, **4. bölüm
+  (Divide-and-Conquer)**, **9. bölüm (Medians and Order Statistics)** ve **15. bölüm (Greedy
+  Algorithms)**. Makale 19'un üç adım adı (initialization / maintenance / termination) CLRS'in
+  2. bölümünden gelir ve bu, **erişilebilir bir birincil kaynakla doğrulanamadı**; bölüm adı
+  doğrulanmış olduğu için atıf bölüm düzeyinde yapıldı ve kavramın kendisi 6.042'nin Değişmez
+  İlkesiyle bağımsız olarak kuruldu.
+
+### Bu batch'te bağımsız hesaplanan ve elle denetlenen iddialar
+
+Aşağıdaki iddiaların hepsi Python betikleriyle sıfırdan hesaplandı; hiçbiri kaynaktan
+kopyalanmadı.
+
+- **Eklemeli sıralamanın izi ve iki değişmezi.** A = [5, 2, 4, 6, 1, 3] üzerinde algoritma
+  çalıştırıldı; **her yinelemede** dış değişmez (A[1..i] sıralı **ve** başlangıçtaki A[1..i]
+  elemanlarının permütasyonu) ve **her iç adımda** iç değişmez (A[j+2..i] hücreleri yinelemenin
+  başındaki A[j+1..i−1] elemanlarını taşır, hepsi key'den büyüktür, sıralıdır; A[1..j]
+  dokunulmamıştır) `assert` ile denetlendi ve ihlal bulunmadı. Ara diziler: i = 2 sonrası
+  [2, 5, 4, 6, 1, 3]; i = 3 sonrası [2, 4, 5, 6, 1, 3]; i = 4 sonrası değişmedi; i = 5 sonrası
+  [1, 2, 4, 5, 6, 3]; i = 6 sonrası [1, 2, 3, 4, 5, 6].
+- **İkili aramanın izi.** A = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] dizisinde 40 arandı: aralıklar
+  [1, 10], [6, 10], [6, 7], [7, 7]; orta elemanlar sırasıyla A[5] = 16, A[8] = 56, A[6] = 23,
+  A[7] = 38; dördüncü karşılaştırmadan sonra lo = 8 ve hi = 7. Aralık uzunlukları 10, 5, 2, 1, 0.
+  x = 0…99 için **bütün** aramalar doğru sonucu verdi ve gözlenen en kötü adım sayısı **4** oldu;
+  Sedgewick'in sınırı lg 10 + 1 ≈ 4,32. Değişmez ("x dizideyse indisi lo..hi arasındadır") her
+  yinelemede `assert` ile denetlendi.
+- **Değişmez korunur ama döngü durmaz.** Yarı açık aralıklı ikili aramada `lo = mid + 1` yerine
+  `lo = mid` yazılan sürüm aynı dizide 91 arandığında 50 yinelemelik sınırı aştı ve (lo, hi) çifti
+  (8, 9) değerinde sabitlendi. Değişmez ihlal edilmedi; ölçü hi − lo kesin azalmadığı için sonlanma
+  bozuldu.
+- **Hızlı üs alma.** a = 3, b = 13 için (x, y, z) izi (3, 1, 13), (9, 3, 6), (81, 3, 3),
+  (6561, 243, 1), (43046721, 1594323, 0); her adımda y·xᶻ = 1.594.323 = 3¹³ olduğu `assert` ile
+  denetlendi. **4 yineleme, 7 çarpma**; naif yöntem 12 çarpma; kaynağın üst sınırı
+  2(⌈log₂13⌉ + 1) = 10. Ayrıca a = 2…11 ve b = 0…19 için 200 çift denendi, hepsinde y = aᵇ çıktı.
+- **Karatsuba.** 1234 × 5678 elle yürütüldü: x₁ = 12, x₀ = 34, y₁ = 56, y₀ = 78; z₂ = 672,
+  z₀ = 2652, z₁ = 46 · 134 − 3324 = 2840 = x₀y₁ + x₁y₀ = 1904 + 936; z = 672·10⁴ + 2840·10² + 2652
+  = **7.006.652** = 1234 · 5678. Ayrıca Karatsuba özyinelemeli olarak kodlandı ve 200 rastgele
+  sekiz basamaklı çift üzerinde doğrulandı.
+- **Dallanma çarpanı sayıları.** log₂3 = 1,5849625007 ve log₂7 = 2,8073549221. n = 2¹⁰ = 1024 için
+  4¹⁰ = 1.048.576 = n² ve 3¹⁰ = **59.049** = n^(log₂3); oran **17,8**. n = 2²⁰ için oran 315,3.
+  Strassen tarafında n = 2¹⁰ için 8¹⁰ = 1.073.741.824 ve 7¹⁰ = 282.475.249; oran 3,80 ve
+  1024^(log₂7) = 7¹⁰ eşitliği sayısal olarak doğrulandı.
+- **Medyan bulmada grup boyutu.** g tek olmak üzere garanti edilen eleme oranı ((g+1)/2)/(2g)
+  değeridir: g = 3 için 1/3, g = 5 için 3/10, g = 7 için 2/7. Alt problem paylarının toplamı
+  1/g + (1 − oran) olur: **g = 3 için tam 1,0000** (geometrik azalma yok), **g = 5 için 0,9000**,
+  g = 7 için 0,8571. Bağıntı T(n) = T(n/g) + T((1 − oran)·n + 6) + n biçiminde sayısal olarak
+  çözüldü (taban n ≤ 200): g = 3 için T(n)/n oranı n = 10³…10⁷ aralığında 4,48 → 8,07 → 11,64 →
+  15,22 → 18,83 diye onluk başına yaklaşık 3,6 sabit artışla büyüyor (logaritmik); **g = 5 için**
+  aynı oran 3,57 → 5,68 → 7,02 → 7,94 → 8,57 diye 1/(1 − 0,9) = 10 sınırına yaklaşarak duruyor
+  (doğrusal). Ayrıca beşerli grup için 3(⌈n/10⌉ − 2) sınırı hesaplandı: n = 1000'de en az **294**
+  eleman her iki tarafta, alt problem en fazla 706 = 0,706 n; n = 10⁴ için 0,7006 n. T(n) ≤ 20·n
+  tahmini n = 141…20.000 aralığında **sıfır ihlal** verdi. Medyan-medyanı seçim algoritması ayrıca
+  kodlandı ve 400 rastgele örnekte doğru sonucu verdiği doğrulandı.
+- **Tabana devretme eşiği.** ~n²/4 (eklemeli, ortalama) ile ~n log₂ n (birleştirmeli)
+  karşılaştırıldı: eşitsizlik n < 4 log₂ n biçimine indirgenir ve **n ≤ 15** için eklemeli sıralama
+  daha az karşılaştırma yapar (n = 16'da eşitlik: 64 = 64).
+- **Naif Fibonacci.** Özyineleme ağacındaki çağrı sayısı **2·F(n+1) − 1** olarak sayıldı ve formül
+  n = 0…29 için birebir doğrulandı: F(20) için 21.891; F(30) için 2.692.537; F(40) için
+  **331.160.281** (döngüyle 40 adım; oran yaklaşık 8,3 × 10⁶); F(50) için 40.730.022.147. F(30)
+  ağacında **F(15) tam 987 kez** hesaplanıyor (987 = F(16)).
+- **Aralık çizelgeleme karşı örnekleri kaba kuvvetle doğrulandı.** Optimal çözüm bütün altkümeler
+  taranarak bulundu; açgözlü kurallar indis tabanlı (nesne özdeşliği değil) çakışma sayımıyla
+  çalıştırıldı — ilk denemede özdeşlik karşılaştırması yüzünden yanlış bir karşı örnek üretilmişti,
+  düzeltildi.
+  - En erken başlayan: [0, 10], [1, 2], [3, 4], [5, 6] ile açgözlü **1**, optimal **3**.
+  - En kısa süren: [0, 5], [4, 6], [5, 10] ile açgözlü **1**, optimal **2**.
+  - En az çakışan: [0, 4], [6, 10], [12, 16], [18, 22], [2, 7], [3, 8], [1, 9], [14, 19], [15, 20],
+    [13, 21], [9, 13] listesinde çakışma sayıları sırasıyla 3, 4, 4, 3, 4, 4, 4, 4, 4, 4 ve
+    **[9, 13] için 2**; açgözlü [9, 13], [0, 4], [18, 22] seçip **3**'te kalıyor, optimal ilk
+    dördüyle **4**. (Bu karşı örnek elle kuruldu; ayrıca 400.000 rastgele örnek taranarak bağımsız
+    bir karşı örnek daha bulundu — dokuz aralıklı bir örnek, açgözlü 3 / optimal 4.)
+  - En erken biten kuralı **200.000 rastgele örnekte** (uç noktalar 0…6, 1–6 aralık) ve ayrıca
+    20.000 farklı örnekte optimal çözümle karşılaştırıldı: **sıfır başarısızlık**. Aynı testte
+    en erken başlayan 2.653, en kısa süren 368 örnekte optimalin altında kaldı.
+- **Para üstü.** {1, 3, 4} sisteminde 6 birim için açgözlü 4 + 1 + 1 = **3 para**, dinamik
+  programlamayla optimal **2 para** (3 + 3). Aynı sistemde 1…30 aralığında **7 tutarda** açgözlü
+  optimal değil. {1, 5, 10, 25, 50} sisteminde 1…300 aralığında **sıfır** sapma; {1, 5, 10, 20, 50}
+  de sapmasız; {1, 7, 10} sisteminde 1…60 aralığında 15 sapma (ilki 14: açgözlü 5, optimal 2).
+- **Sırt çantası.** Eşyalar (10, 60), (20, 100), (30, 120) ve kapasite 50: oranlar 6, 5, 4; kesirli
+  açgözlü **240**; 0/1 açgözlü ilk iki eşyayı alıp **160**; kaba kuvvetle 0/1 optimal ikinci ve
+  üçüncü eşyayla **220**.
+- **Huffman.** A: 34, E: 25, N: 15, R: 12, I: 9, S: 5 (toplam 100) için algoritma öncelik kuyruğuyla
+  çalıştırıldı. Birleştirme sırası S+I = 14, R+14 = 26, N+E = 40, 26+A = 60, 40+60 = 100. Kodlar
+  N = 00, E = 01, A = 11, R = 100, S = 1010, I = 1011; toplam **240 bit**; sabit uzunluklu kod
+  ⌈lg 6⌉ = 3 bit ile **300 bit**; kazanç **%20**; ortalama kod uzunluğu **2,40 bit** (entropi alt
+  sınırı 2,3355 bit). Önek-serbestlik denetlendi. **Optimallik kaba kuvvetle doğrulandı:** altı
+  yapraklı bütün ikili ağaç şekilleri üretildi ve en iyi maliyetin 240 olduğu görüldü; ayrıca
+  1.000 rastgele frekans kümesinde (2–6 simge) Huffman'ın maliyeti kaba kuvvet en iyisiyle
+  **sıfır sapmayla** eşleşti.
+- **"Her optimal önek-serbest kod bir Huffman kodu değildir" doğrulandı.** A: 26, B: 24, C: 14,
+  D: 13, E: 12, F: 11 için Huffman **250 bit** veriyor; C3 kodu (A = 00, B = 01, C = 100, D = 101,
+  E = 110, F = 111) da **250 bit**; kaba kuvvet en iyisi de 250. C3 kodunda A ile B ilk bitte
+  aynı, oysa Huffman ağacında en seyrek iki simge (E ve F) kardeş olmak zorundadır ve bu da
+  betikle denetlendi.
+
+### Batch 5'ten kalan ε borcu kapandı (yöntem notu)
+
+§10, Master Teoreminin ε işaretlerinin `pdftotext` çıktısında görünmediğini ve Durum 1'in üssünün
+log_b(a) − ε, Durum 3'ünkünün log_b(a) + ε olduğunun belgenin kendi karakter kodlamasından
+çıkarıldığını kaydetmişti. Bu run'da ortamda **`pypdf`** bulunduğu görüldü ve aynı sayfa onunla
+yeniden çıkarıldı. `pypdf`, `pdftotext`'in düşürdüğü matematik yazı tipini **doğru çözüyor**:
+
+- **Durum 1** birebir: `If g.n/D logO ( n b .a/ ✏ ) for some constant ✏>0`
+- **Durum 2** birebir: `g.n/D ‚( logn b .a/ logk .n/ )` ve sonuç `‚( logn b .a/ logkC1.n/ )`
+- **Durum 3** birebir: `If g.n/D  ( logn b .a/C✏ ) for some constant ✏>0 and ag.n=b/ < cg.n/
+  for some constant c<1 and sufficiently large n`
+
+Yani **ε her iki durumda da doğrudan görülüyor** (✏ karakteri olarak) ve **Durum 3'ün üssündeki
+"+" işareti "C" kodlamasıyla doğrudan okunuyor** — §10'daki "+" → "C" çıkarımı böylece bağımsız
+olarak doğrulandı.
+
+**Eksi işareti hâlâ kurtarılamıyor** ve bunun tool değil **belge** kaynaklı olduğu ayrıca
+denetlendi: aynı yöntemle §5.4.5'teki bilinen bir formül çıkarıldı ve `(z − 1)/2` ifadesi
+`.z   1/=2` biçiminde, yani eksi yerine boşlukla çıktı. Eksi glifi belgenin gömülü yazı tipinin
+ToUnicode eşlemesinde yok; belgenin her yerinde düşüyor. Dolayısıyla Durum 1'deki
+`log_b(a) ␣ ε` boşluğunun bir eksi olduğu artık **çıkarım değil, aynı belgede doğrulanmış bir
+kodlama davranışının sonucudur**. Pratik sonuç: makale 18'in Master Teoremi ifadesi doğrudur ve
+bu borç kapanmıştır. Ortamda hâlâ PDF'i görüntüye çeviren bir araç (`pdftoppm`, `pymupdf`,
+`pdf2image`) **yoktur**; `pypdf` yalnızca metin çıkarır, sayfayı rasterleştirmez.

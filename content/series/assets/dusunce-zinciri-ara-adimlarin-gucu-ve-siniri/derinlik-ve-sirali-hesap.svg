@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 316" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Derinliği zamana çevirmek</text>
+
+  <text x="16" y="54" font-size="13" text-anchor="start" fill="var(--cool)">tek token, sabit derinlik</text>
+  <rect x="30" y="66" width="120" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="90" y="84" font-size="13" text-anchor="middle" fill="var(--text)">katman 3</text>
+  <rect x="30" y="96" width="120" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="90" y="114" font-size="13" text-anchor="middle" fill="var(--text)">katman 2</text>
+  <rect x="30" y="126" width="120" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="90" y="144" font-size="13" text-anchor="middle" fill="var(--text)">katman 1</text>
+  <text x="16" y="176" font-size="13" text-anchor="start" fill="var(--text-muted)">derinlik girdi uzunluğundan</text>
+  <text x="16" y="196" font-size="13" text-anchor="start" fill="var(--text-muted)">bağımsızdır ve artmaz</text>
+
+  <line x1="196" y1="60" x2="196" y2="230" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="230" y="54" font-size="13" text-anchor="start" fill="var(--accent)">üretilen her token, yığını bir kez daha çalıştırır</text>
+
+  <rect x="230" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="274" y="112" font-size="13" text-anchor="middle" fill="var(--text)">3 × 12</text>
+  <rect x="342" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="386" y="112" font-size="13" text-anchor="middle" fill="var(--text)">= 36</text>
+  <rect x="454" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="498" y="112" font-size="13" text-anchor="middle" fill="var(--text)">36 ÷ 8</text>
+  <rect x="566" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="610" y="112" font-size="13" text-anchor="middle" fill="var(--text)">= 4,5</text>
+
+  <line x1="318" y1="109" x2="342" y2="109" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="430" y1="109" x2="454" y2="109" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="542" y1="109" x2="566" y2="109" stroke="var(--accent)" stroke-width="1"/>
+
+  <text x="230" y="176" font-size="13" text-anchor="start" fill="var(--text-muted)">her kutunun altında aynı sabit yığın çalışır; kutular arasındaki bağ</text>
+  <text x="230" y="196" font-size="13" text-anchor="start" fill="var(--text-muted)">bir önceki adımın çıktısını bir sonrakinin girdisi yapar</text>
+
+  <line x1="16" y1="230" x2="704" y2="230" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="252" font-size="13" text-anchor="start" fill="var(--text-muted)">sabit derinlik, bir çağrıda yapılabilecek ardışık hesabı sınırlar</text>
+  <text x="16" y="274" font-size="13" text-anchor="start" fill="var(--text-muted)">ara adım üretmek, o sınırı zaman ekseninde tekrar tekrar ödeyerek aşar</text>
+  <text x="16" y="298" font-size="13" text-anchor="start" fill="var(--text-faint)">bu yüzden kazanç, sıralı hesap gerektiren görevlerde en büyüktür</text>
+</svg>

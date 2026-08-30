@@ -6,78 +6,92 @@
 > (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili bölümleri. Üretim trigger'ı:
 > `docs/seri-boun/TRIGGER.md`.
 
-Son güncelleme: 2026-08-30 · Durum: **1–18 yayında (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18) · Sıradaki: 19**
+Son güncelleme: 2026-08-30 · Durum: **1–21 yayında (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18, Batch 6: 19–21) · Sıradaki: 22**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 18 — `yinelemeler-ve-master-teoremi` |
-| Sıradaki güvenli başlangıç | Makale 19 ("Doğruluk: Döngü Değişmezleriyle İspat") — Faz C'nin formalleştirme üçlüsünün sonuncusu; run kapsamı SOZLESME §6'ya göre çözülür |
-| Sıradaki kohort | `classification_batch: 6` |
+| Yayımlanan son makale | 21 — `acgozlu-algoritmalar-ne-zaman-ve-neden-calisir` |
+| Sıradaki güvenli başlangıç | Makale 22 ("Dinamik Programlama") — Faz C'nin tasarım deseni üçlüsünün sonuncusu; run kapsamı SOZLESME §6'ya göre çözülür |
+| Sıradaki kohort | `classification_batch: 7` |
 | Rotalar | `/boun` (giriş + yol haritası), `/boun/[slug]` (okuyucu) |
 | İçerik sözleşmesi | `content/series-boun/catalog.json` + `content/series-boun/roadmap.json` + `content/series-boun/articles/<kategori>/<slug>.md` + `content/series-boun/assets/<slug>/*.svg` |
 | Kategori sözlüğü | `interview-method`, `discrete-math`, `data-structures`, `algorithms`, `operating-systems`, `supporting-fundamentals` |
-| Kullanılan kategoriler | 1 → `interview-method`, 2–8 → `discrete-math`, 9–16 → `data-structures`, 17–18 → `algorithms` (klasör adı `category` alanıyla birebir aynı) |
+| Kullanılan kategoriler | 1 → `interview-method`, 2–8 → `discrete-math`, 9–16 → `data-structures`, 17–21 → `algorithms` (klasör adı `category` alanıyla birebir aynı) |
 | Kod dokunuş noktaları | `src/lib/content/series-boun.ts` (seri örneği), `series-content.ts` (ortak fabrika), `schema.ts` (seri başına kategori sözlüğü), `labels.ts`; `SeriesLanding` `basePath/intro/footerNote` prop'ları; `ReaderDashboard` `series[]` prop'u; sync `validArticleIds` = ana ∪ AI ∪ BOUN (katalogdan türetilir, yeni makale kod değişikliği istemez) |
 | Araçlar | `node tools/series/check-series-content.cjs --series=boun`, `check-series-svg.cjs content/series-boun/assets`, `sync-series-hashes.cjs --series=boun [--write]`, `entegre-batch.cjs --series=boun [--write]` |
 
-## Batch 5'te ne yapıldı
+## Batch 6'da ne yapıldı
 
-1. **Makale 16–18 yayımlandı** (`classification_batch: 5`), her biri 2 diyagramla ve 2 sözlü
-   checkpoint kutusuyla. **Faz B kapandı** (16 graf temsilleri, BFS ve DFS) ve **Faz C açıldı**
-   (17 asimptotik tanımlar, 18 yinelemeler ve Master Teoremi).
-2. **Yeni kategori klasörü açıldı:** `content/series-boun/articles/algorithms/`. `algorithms`
-   kategorisi şemada ve etiket sözlüğünde zaten tanımlıydı, bu yüzden **kod değişikliği
-   gerekmedi**. Klasör adı `category` alanıyla birebirdir.
-3. **Resmî dayanak:** makale 16, CMPE250 katalog tanımındaki "Graphs" başlığını karşılar — Faz B
-   böylece sekiz katalog başlığından altısını doğrudan kapsamış oldu. Makale 17 ve 18'in dayanağı
-   **CMPE300'ün ders çıktılarıdır** ("the theory of complexity analysis", "lower bound theory",
-   "master theorem"). **Önemli kesinlik düzeltmesi:** bu ifadeler CMPE300'ün *katalog tanımında*
-   değil, *Course Learning Outcomes* bölümünde geçiyor; ARASTIRMA §1'deki özet ikisini
-   birleştiriyordu, §10 ayrımı birebir metinlerle kaydetti.
-4. **Yayımlanmış sözler ödendi.** Makale 15'in en somut vaadi (graf temsilleri, BFS kuyrukla,
-   DFS yığınla, bağlı bileşenler, topolojik sıralama) 16'da bütünüyle karşılandı; makale 9'un
-   "formal tanımlar asimptotik analiz makalesinde" borcu 17'de kapandı; makale 4'ün Hanoi bağıntısı
-   ve makale 15'in mergesort bağıntısı 18'de çözüldü. **Ekstra:** makale 14 ve 15'in karar ağacı
-   argümanındaki "en az log₂ L yükseklik" adımı 17'de ispatlandı ve log₂(n!) = Θ(n log n) sonucu
-   kuruldu. Ayrıntı: YOL-HARITASI'nın kavram-tekrar defteri.
-5. **Yeni birincil kaynaklar okundu:** MIT 6.006 Bahar 2020 Lecture 1 (Introduction), 9
-   (Breadth-First Search) ve 10 (Depth-First Search); **6.042J ders kitabının 13.7 (Asymptotic
-   Notation) ve 21. bölümünün (Recurrences) tamamı**; **MIT 6.046J Bahar 2015 Lecture 2 (Divide and
-   Conquer)**; Sedgewick & Wayne 1.4, 4.1 ve 4.2 sayfaları. Ayrıntı ARASTIRMA §10'da.
-6. **Bütün sayısal iddialar bağımsız hesaplandı** (ARASTIRMA §10 sonundaki liste): BFS/DFS ve
-   topolojik sıralama izleri betikle üretildi, Big-O tanıkları (c = 14 / n₀ = 10 ve c = 113 / n₀ = 1)
-   ve n₀'ın en küçük değeri denklemden çözüldü, log₂(n!) sınırları ve kesişim noktaları hesaplandı,
-   mergesort kapalı ifadesi altı değerde doğrulandı, üç Master Teoremi rejimi n = 2²⁰'ye kadar
-   sayısal olarak denetlendi.
-7. **Regresyon korundu**: `/read` 18 makalelik ana kütüphane ve AI serisinin `/seri` rotaları,
+1. **Makale 19–21 yayımlandı** (`classification_batch: 6`), her biri 2 diyagramla ve 2–3 sözlü
+   checkpoint kutusuyla. Faz C'nin **formalleştirme üçlüsü kapandı** (17 ölçü, 18 özyinelemeli
+   maliyet, 19 doğruluk) ve **tasarım deseni bölümü açıldı** (20 böl-yönet, 21 açgözlü).
+2. **Makale 20'nin başlığı değiştirildi.** Yol haritasındaki taslak başlık "Böl ve Yönet" idi;
+   makalenin tezi "bölmek tek başına hiçbir şey kazandırmaz, kazanç a'yı düşürmek ya da g(n)'i
+   ucuzlatmaktır" olduğu için başlık **"Böl ve Yönet: Kazanç Nereden Gelir?"** oldu. `roadmap.json`
+   satırı `entegre-batch` çalıştırılmadan **önce** elle güncellendi; araç başlık uyuşmazlığında
+   yazmayı reddediyor (aşağıdaki araç sırası notuna bakınız).
+3. **Seride ilk kez fenced kod bloğu (```) kullanıldı** — makale 19'da üç sözde kod bloğu var
+   (eklemeli sıralama, ikili arama, hızlı üs alma). Platform bunu zaten destekliyordu
+   (`globals.css` içindeki `.prose-reader pre` ve `pre code` kuralları, `overflow-x: auto`,
+   JetBrains Mono); **kod değişikliği gerekmedi** ve render ayrıca doğrulandı. Dikkat: içerik
+   denetleyicisinin kelime sayacı kod satırlarını **düzyazı sayar**, dolayısıyla uzun bloklar
+   1.800–3.200 bandını zorlar.
+4. **Yayımlanmış sözler ödendi.** Makale 18'in en somut vaadi (döngü değişmezinin üç adımı, boş
+   doğruluğun başlatmayı bedava kılması, eklemeli sıralamanın ve ikili aramanın satır satır
+   ispatı) 19'da bütünüyle karşılandı. Makale 17'nin kesişim noktası pini 20'de tabana devretme
+   eşiği olarak, 18'in özyineleme ağacı ve Master Teoremi pinleri 20'de tasarım aracı olarak,
+   3'ün karşı örnek disiplini 21'de dört seçim kuralının üçünün kırılmasında, 7'nin ekstremal
+   argümanı 21'de değişim argümanı olarak ödendi. Ayrıntı: YOL-HARITASI'nın kavram-tekrar defteri.
+5. **Yeni birincil kaynaklar okundu:** 6.042J ders kitabının **5.4 State Machines** bölümünün
+   tamamı (Floyd'un Değişmez İlkesi, kısmi doğruluk/sonlanma ayrımı, hızlı üs alma, türetilmiş
+   değişkenler); **MIT 6.046J Bahar 2015 Lecture 1** (aralık çizelgeleme, dört kural, değişim
+   argümanı); **MIT 6.046J Güz 2005 Lecture 3** (böl-yönetin üç adımı, matris çarpımı, Strassen)
+   ve **Lecture 16** (greedy hallmark, kes-yapıştır); **MIT 6.006 Güz 2011 Lecture 11** (Karatsuba);
+   Sedgewick & Wayne 2.1, 3.1 ve 5.5 sayfaları. Ayrıntı ARASTIRMA §11'de.
+6. **Batch 5'ten kalan ε borcu kapandı.** Ortamda `pypdf` bulunduğu görüldü; 6.042 PDF'inin
+   Master Teoremi sayfası onunla yeniden çıkarıldı ve **ε her iki durumda da doğrudan okundu**,
+   Durum 3'ün üssündeki "+" işareti de "C" kodlamasıyla göründü. Eksi işaretinin belgenin **her
+   yerinde** düştüğü, bilinen bir formülle ((z − 1)/2) ayrıca denetlendi. Ayrıntı ARASTIRMA §11'in
+   sonundaki yöntem notunda.
+7. **Bütün sayısal iddialar bağımsız hesaplandı** (ARASTIRMA §11 sonundaki liste): eklemeli
+   sıralamanın iki değişmezi her adımda `assert` ile denetlendi, ikili aramanın izi ve 0–99 için
+   bütün aramaları doğrulandı, sonsuza dönen hatalı sürüm gösterildi, hızlı üs alma 200 çiftte
+   denendi, Karatsuba kodlanıp 200 rastgele çarpımda doğrulandı, medyan bulmada grup boyutunun
+   neden 5 olduğu bağıntı sayısal olarak çözülerek gösterildi, aralık çizelgelemenin üç karşı
+   örneği kaba kuvvet optimal ile karşılaştırıldı, en erken biten kuralı 200.000 örnekte sınandı,
+   Huffman'ın optimalliği bütün ikili ağaç şekilleri üzerinde kaba kuvvetle doğrulandı.
+8. **Regresyon korundu**: `/read` 18 makalelik ana kütüphane ve AI serisinin `/seri` rotaları,
    id/slug/order/hash bilgileri ve kullanıcı progress/bookmark/highlight state'i değişmedi.
-   `/boun` 15 → 18 sayfa. `src/`, `tests/` ve `tools/` altında tek satır değişmedi; bu batch
-   yalnızca içerik ve dokümandır.
+   `/boun` 18 → 21 sayfa. `src/`, `tests/` ve `tools/` altında tek satır değişmedi; bu batch
+   yalnızca içerik ve dokümandır (`artifacts/` altındaki render betikleri gitignore'dadır).
 
 ## Açık borçlar
 
 - **SOZLESME §5 güncellenmeli (kullanıcı onayı gerekir).** §5 hâlâ "Şu an platformda BOUN içerik
-  sözleşmesi yoktur (0 makale)" diyor; bu artık yayımlanmış gerçekle çelişiyor (18 makale).
+  sözleşmesi yoktur (0 makale)" diyor; bu artık yayımlanmış gerçekle çelişiyor (21 makale).
   Sözleşme yalnızca kullanıcının açık talebiyle değiştirilebildiği için bu run'da da dokunulmadı.
   Nihai kategori sözlüğü yukarıdaki tabloda ve YOL-HARITASI'ndadır.
 - **CLRS 4. baskının 18. bölümünün adı doğrulanamadı** ve alt bölüm **başlıkları** hiçbir bölüm
   için doğrulanamadı (yalnızca alt bölüm numaralarının varlığı doğrulandı). Denenen ve sonuç
   vermeyen yollar ARASTIRMA §8'de listelidir. Pratik sonucu: CLRS'e **bölüm düzeyinde** atıf
-  yapılır. Makale 19 için CLRS 2. bölüm (Getting Started), 20 için 4. bölüm (Divide-and-Conquer),
-  21 için 15. bölüm (Greedy Algorithms) adları doğrulanmış durumdadır.
-- **Master Teoreminin ε'sı görsel olarak doğrulanamadı.** 6.042 PDF'inin metin katmanı matematik
-  simgelerini düşürüyor; Durum 1'in üssünün log_b a − ε, Durum 3'ünkünün log_b a + ε olduğu,
-  belgenin kendi karakter kodlamasından ("+" → "C", "−" → boşluk) çıkarıldı ve mantıksal olarak
-  zorunlu olduğu gösterildi (ARASTIRMA §10'daki metodolojik not). Ortamda PDF'i görüntüye çeviren
-  araç (`pdftoppm`) **yok**; yalnızca `/mingw64/bin/pdftotext` var. Bir sonraki run bir görüntü
-  aracına erişirse sayfa görsel olarak denetlenebilir.
+  yapılır. Batch 7 için **doğrulanması gereken bölüm adları:** 14 (dinamik programlama olduğu
+  varsayılıyor, doğrulanmadı), 21 ve 22 (MST ile en kısa yollar, doğrulanmadı). Doğrulanmış
+  olanlar: 2 (Getting Started), 4 (Divide-and-Conquer), 9 (Medians and Order Statistics),
+  15 (Greedy Algorithms).
+- **Makale 19'un üç adım adı (başlatma/koruma/sonuçlanma) birincil kaynakla doğrulanamadı.**
+  Adlandırma CLRS 2. bölümündendir ve bölüm adı doğrulanmıştır, ama üç adımın metni erişilebilir
+  bir kaynakta görülemedi; kavramın kendisi 6.042'nin Değişmez İlkesiyle bağımsız olarak kuruldu.
+  Erişilebilir bir CLRS örneği bulunursa atıf sıkılaştırılabilir.
 - **Makale 13'ün `azalt_anahtar` (decrease-key) borcu duruyor.** Graf algoritmaları makalesi (23)
-  Dijkstra ve Prim için bu işlemi açmak zorundadır. Makale 16 köprüyü genişletti: BFS'in en kısa
-  yol vermesi kenarların ağırlıksız olmasına bağlıdır ve ağırlıklı hâl öncelik kuyruğu ister.
+  Dijkstra ve Prim için bu işlemi açmak zorundadır. Makale 21 köprüyü genişletti: Huffman'ın
+  "en seyrek iki simgeyi çek" adımı öncelik kuyruğunun ikinci kanonik kullanımıdır.
 - **Yönlü graflarda güçlü bağlı bileşenler makale 16'da bilinçli olarak dışarıda bırakıldı**
   (tanımı verildi, algoritması verilmedi). 25'te indirgeme grafları tartışılırken açılabilir.
+- **Karar ağacı kuramının formal hâli 24'e ertelendi** (14, 15 ve 17'nin ortak borcu). 17,
+  yükseklik lemmasını ve log₂(n!) = Θ(n log n) adımını ödedi; geriye kuramın kendisi ve randomize
+  algoritmaların beklenti analizi kaldı.
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
 
@@ -90,9 +104,17 @@ Son güncelleme: 2026-08-30 · Durum: **1–18 yayında (Batch 0: 1–3, Batch 1
   `getByRole("button", { name: "Geniş" })` iki öğeye eşleşiyor ve Playwright strict-mode ihlali
   veriyor. Kapsam dışı olduğu için bu run'da da dokunulmadı; düzeltme tek satır:
   seçiciye `exact: true` eklemek.
-- **AI serisi paralel bir oturumda ilerliyor.** Bu run sırasında AI kataloğu 26 → 30 makaleye
-  çıktı ve `content/series/articles/` altında git'te takipsiz dosyalar birikti. BOUN kapsamı
-  dışıdır; `pnpm test` sayısı ve `check-series-*` dosya sayıları o oturumun ilerlemesiyle değişir,
+- **Depoda satır sonları karışık ve `sync-series-hashes.cjs` buna duyarlıdır.** `core.autocrlf`
+  repo düzeyinde `true`; BOUN makalelerinin 18'i çalışma ağacında LF, 3'ü (7, 8, 9) CRLF. Hash
+  gövdenin **bayt** hâli üzerinden alındığı için taze bir checkout'ta LF dosyaların hash'i
+  değişebilir. **Uygulama bundan etkilenmez**: `src/lib/content/articles.ts` katalogdaki
+  `contentHash` ile frontmatter'daki `content_hash` **dizgelerini** karşılaştırır, gövdeden
+  yeniden hesaplamaz. Yalnızca `sync-series-hashes.cjs` çalışma ağacına duyarlıdır. Bağımsız bir
+  denetim betiği yazarken dosyayı **binary/`newline=""`** okumak gerekir; aksi hâlde Python'ın
+  evrensel satır sonu çevirisi sahte uyuşmazlık üretir (bu run'da bir kez üretti).
+- **AI serisi paralel bir oturumda ilerliyor.** Bu run sırasında AI kataloğu 30 makaleye çıkmıştı
+  ve `content/series/articles/` altında git'te takipsiz dosyalar birikti. BOUN kapsamı dışıdır;
+  `pnpm test` sayısı ve `check-series-*` dosya sayıları o oturumun ilerlemesiyle değişir,
   dolayısıyla bu HANDOFF'taki sayılarla birebir eşleşmeyebilir. **Aynı depoda iki Next süreci
   `.next` dizinini paylaşır ve birbirini bozar** — doğrulama sırasına bak.
 - `pnpm test:e2e` ve `playwright test` **kendi sunucusunu başlatamaz**: config'in `webServer`
@@ -108,135 +130,155 @@ Son güncelleme: 2026-08-30 · Durum: **1–18 yayında (Batch 0: 1–3, Batch 1
   Markdown/SVG/Python blokları `Write` aracıyla dosyaya yazılmalı, sonra `cat >>` ya da
   `python <dosya>` ile çalıştırılmalıdır.
 - **SVG'de `<` ve `>` karakterleri `&lt;` / `&gt;` olarak yazılmalıdır** (XML). Denetleyici bunu
-  yakalamaz; bu run'da bir SVG'de düz `<` bırakıldığı için metin bozuk çıktı ve düzeltildi.
-  Bütün SVG'ler `xml.etree.ElementTree` ile ayrıca ayrıştırılarak denetlendi.
+  yakalamaz; bütün SVG'ler `xml.etree.ElementTree` ile ayrıca ayrıştırılarak denetlendi (42/42).
+- **SVG metin taşma denetimi karakter sayısına dayanır**: genişlik ≈ `karakter × font-size × 0,55`.
+  Font 13 için x = 20'den başlayan satır **en fazla ~97 karakter**, x = 375'ten başlayan satır
+  **en fazla ~48 karakter** olabilir. Bu run'da iki satır bu sınırı aştı ve kısaltıldı.
+- **Python'ın varsayılan konsol kodlaması Türkçe karakterleri patlatıyor**; betikleri
+  `PYTHONIOENCODING=utf-8` ile çalıştır.
+- **Ortamda PDF'i görüntüye çeviren araç yok** (`pdftoppm`, `pymupdf`, `pdf2image` yok);
+  `/mingw64/bin/pdftotext` ve Python `pypdf` var. **`pypdf`, `pdftotext`'in düşürdüğü matematik
+  yazı tipini doğru çözer** — 6.042 gibi formül ağırlıklı PDF'lerde önce onu dene.
 
 ## Bu run'da doğrulananlar
 
-- İçerik/SVG/hash/entegrasyon denetleyicileri: BOUN 18 makale + 36 diyagram temiz;
+- İçerik/SVG/hash/entegrasyon denetleyicileri: BOUN 21 makale + 42 diyagram temiz;
   `entegre-batch` kuru çalışması yeni 3 makaleyi buldu, `--write` sonrası fark kalmadı. Katalog ↔
   frontmatter ↔ gövde hash üçlüsü **ve** başlık/sıra/kategori/klasör eşleşmesi bağımsız bir
-  betikle de doğrulandı: 18/18. `reading_order` 1–18 kesintisiz; kohort dağılımı 3/3/3/3/3/3;
-  makalelerin gövdesinde referans verilen 36 SVG yolunun hepsi diskte mevcut.
-- `pnpm typecheck` temiz · `pnpm test` **256/256** · `pnpm build` başarılı (69 statik sayfa;
-  `/boun/[slug]` 18 yol, `/read/[slug]` 18, `/seri/[slug]` 26). Kapılar geçildikten sonra makale
-  16'nın maliyet tablosunda tek hücrelik bir kesinlik düzeltmesi yapıldı (kenar ekleme/silme satırı),
-  hash'ler yeniden senkronlandı ve `pnpm build` ile `pnpm test` **tekrar** çalıştırıldı. İkinci
-  koşuda paralel AI oturumu kataloguna dört makale daha eklemiş olduğu için sayılar 73 statik sayfa
-  ve **259/259** test oldu; BOUN tarafı iki koşuda da aynıdır (18 `/boun` yolu) ve her ikisinde de
-  bütün testler geçti. Unit test sayısı sabit bir referans **değildir** (`series-assets.test.ts`
-  asset klasörünü gezer ve AI serisi paralel büyüyor); sabit referans testlerin **tamamının**
-  geçmesidir.
-- Global article-id ve slug benzersizliği: 62/62 (18 ana + 26 AI + 18 BOUN) — ölçüm anındaki AI
-  sayısıyla; AI kataloğu run bitmeden 30'a çıktı.
+  Python betiğiyle de doğrulandı: 21/21. `reading_order` 1–21 kesintisiz; kohort dağılımı
+  3/3/3/3/3/3/3; makalelerin gövdesinde referans verilen 42 SVG yolunun hepsi diskte mevcut;
+  roadmap'in "yayinda" kümesi katalogla birebir aynı.
+- `pnpm typecheck` temiz · `pnpm test` **277/277** · `pnpm build` başarılı. Kapılar iki kez
+  çalıştırıldı: entegrasyondan hemen sonra **76 statik sayfa** (`/boun/[slug]` 21, `/read/[slug]`
+  18, `/seri/[slug]` 30), iki diyagram düzeltmesinden sonra ise **80 statik sayfa** — aradaki fark
+  BOUN'dan değil, paralel AI oturumunun kataloğu 30 → 34'e çıkarmasından gelir. **BOUN tarafı iki
+  koşuda da aynıdır** (21 `/boun` yolu) ve her ikisinde de bütün testler geçti. Unit test sayısı
+  sabit bir referans **değildir** (`series-assets.test.ts` asset klasörünü gezer ve AI serisi
+  paralel büyüyor); sabit referans testlerin **tamamının** geçmesidir.
+- Global article-id ve slug benzersizliği: birinci ölçümde **69/69** (18 ana + 30 AI + 21 BOUN),
+  run sonundaki ikinci ölçümde **73/73** (AI 34'e çıktığı için).
 - **Gerçek render (ekran görüntülü):** üç yeni makale, üç genişlik (375 / 768 / 1440) × üç tema
   (light / dark / sepia) = 27 kombinasyonda tarayıcıda açıldı, ayrıca `/boun` girişi üç genişlikte
   kontrol edildi. Her sayfada 2 inline SVG, doğru figcaption, yatay taşma yok
   (`documentElement.scrollWidth == innerWidth`), raw anahtar / undefined sızıntısı yok, tek console
   hatası bilinen 503 sync çağrısı. 375px'te diyagramlar beklendiği gibi kendi kabında yatayda
-  kayıyor (clientWidth 298 / scrollWidth 544), sayfa kaymıyor. Altı diyagramın hepsi light ve dark
-  temada tek tek görsel olarak incelendi ve sorun bulunmadı.
-- **Markdown kaçış denetimi:** `log_b n` ve `n^(log_b a)` gibi alt çizgili ifadelerin italik'e
-  dönüşmediği render edilmiş DOM üzerinde doğrulandı (CommonMark kelime içi `_` vurgu açmaz);
-  üç makalede `<em>` öğeleri yalnızca kasıtlı İngilizce terimler ve kitap adlarıdır.
+  kayıyor (clientWidth 298 / scrollWidth 544), sayfa kaymıyor. **Altı diyagramın hepsi light ve
+  dark temada tek tek görsel olarak incelendi**; iki çakışma bulundu ve düzeltildi (makale 19'un
+  1. şeklinde ok, dizi hücrelerinin üstünden geçiyordu; makale 20'nin 2. şeklinde bir etiket
+  "alt teğet" yazısıyla üst üste biniyordu), düzeltmeden sonra yeniden çekilip denetlendi.
+- **Kod bloğu render'ı ayrı doğrulandı:** makale 19'daki üç `pre` öğesi desktop ve mobile ×
+  light ve dark kombinasyonlarında açıldı; JetBrains Mono, 13,44px, `overflow-x: auto`, sayfada
+  yatay taşma yok, 375px'te blok kendi içinde kayıyor. Ekran görüntüleriyle gözle de denetlendi.
+- **Markdown kaçış denetimi:** `log_b a` ve `n^(log_b a)` gibi alt çizgili ifadelerin italik'e
+  dönüşmediği önceki batch'lerde doğrulanmıştı; bu batch'te kod blokları içindeki `<` ve `>`
+  karakterlerinin ham HTML denetimini tetiklemediği ve render'da bozulmadığı denetlendi
+  (denetleyici tek tırnaklı kod aralıklarını silerken üçlü tırnaklı blokları da temizliyor).
 - **Playwright: 21 geçti, 1 atlandı, 4 başarısız** — dördü de "önceden-var" listesindedir ve BOUN
   içeriğiyle ilgisizdir: üçü `reader-data.spec.ts` (DATABASE_URL yok), biri `reader.spec.ts:231`
-  (`Ekstra Geniş` strict-mode ihlali). Bu, Batch 1–4'ün referans sonucuyla birebir aynıdır.
+  (`Ekstra Geniş` strict-mode ihlali). Bu, Batch 1–5'in referans sonucuyla birebir aynıdır.
 - Bu run'da build, dev ve E2E **doğrudan depoda** çalıştırıldı; paralel AI oturumu bu sırada
   `pnpm dev` çalıştırmadığı için yalıtılmış kopyaya gerek kalmadı (kopya tarifi aşağıda duruyor).
 
-## Sıradaki batch hazırlığı — Batch 6 (Makale 19'dan itibaren)
+## Sıradaki batch hazırlığı — Batch 7 (Makale 22'den itibaren)
 
-**Pedagojik hedef:** Makale 19, Faz C'nin formalleştirme üçlüsünü kapatır. 17 **ölçüyü**, 18
-**özyinelemeli maliyeti** tanımladı; 19 **doğruluğu** tanımlar ve bunu döngüler için yapar —
-çünkü seride şimdiye kadarki bütün doğruluk savunmaları tümevarımlıydı ve özyinelemeye
-yaslanıyordu, oysa gerçek kodun çoğu döngüdür. 20'den itibaren fazın karakteri yeniden değişir:
-17–19 **analiz**, 20–22 **tasarım desenleri** (böl-yönet, açgözlü, dinamik programlama), 23–25
-**uygulama ve sınırlar**.
+**Pedagojik hedef:** Makale 22, Faz C'nin tasarım deseni üçlüsünü kapatır. 20 **parçalayarak**,
+21 **seçerek** çözüyordu; 22 **hatırlayarak** çözer. İki makale de tam olarak 22'ye çıkan birer
+çöküş bıraktı: 20'de naif Fibonacci'nin örtüşen alt problemleri, 21'de ağırlıklı aralık
+çizelgelemenin açgözlüyü kırması. 23'ten itibaren fazın karakteri yeniden değişir: 17–19 **analiz**,
+20–22 **tasarım desenleri**, 23–25 **uygulama ve sınırlar**.
 
-**Prerequisite satırları (19–21 için taslak; YOL-HARITASI'nda da var):**
-- 19 ← 4 (tümevarımın döngü hâli), 2 (boş doğruluk: başlatma adımı), 15 (eklemeli sıralamanın doğruluğu), 11 (ikili aramanın değişmezi), 18 (özyinelemeli doğruluk ile döngü doğruluğunun karşılaştırılması)
-- 20 ← 18 (böl-yönet yinelemelerinin çözümü), 15 (birleştirmeli ve hızlı sıralama iki kanonik örnektir), 19 (birleştirme adımının doğruluğu), 4 (özyinelemeli tasarımın tümevarımla savunulması)
-- 21 ← 5 (kısmi sıra ve seçim sırası), 7 (ekstremal argüman ve kapsayan ağaç), 3 (karşı örnek disiplini), 19 (değişmez koruyan seçim), 13 (Huffman için öncelik kuyruğu)
+**Prerequisite satırları (22–24 için taslak; YOL-HARITASI'nda da var):**
+- 22 ← 21 (açgözlünün çöktüğü üç yerin ortak nedeni), 20 (özyineleme ağacındaki tekrar eden düğüm = örtüşen alt problem; naif Fibonacci), 18 (yineleme çözme ve maliyet muhasebesi), 16 (DAG üzerinde işlem sırası), 19 (tablolamanın döngü değişmezi)
+- 23 ← 16 (graf temsilleri, BFS ve doğrusal zaman Θ(|V| + |E|)), 13 (öncelik kuyruğu ve ödenmemiş `azalt_anahtar` borcu), 21 (Kruskal ile Prim açgözlüdür; kesit teoremi bir değişim argümanıdır), 7 (kapsayan ağaç ve n − 1 kenar), 18 (Master Teoremiyle maliyet savunması)
+- 24 ← 17 (karar ağacı yükseklik lemması ve log₂(n!) = Θ(n log n)), 14–15 (karar ağacı argümanının arama ve sıralama hâlleri), 15 (rastgeleleştirilmiş hızlı sıralama), 20 (medyan bulmadaki eşit olmayan alt problemler), 8 (birleşme → paralel indirgeme)
 
-**Araştırma ihtiyacı:** Resmî sayfa borcu **yok** — CMPE250 ve CMPE300 bu run'da (2026-08-30)
-yeniden doğrulandı ve Faz C boyunca geçerlidir. Akademik kaynaklar için hazır ipuçları:
-- **19 için birincil kaynak hazır ve doğrulanmış:** 6.042J ders kitabının **5.4 State Machines**
-  bölümü ve içindeki **5.4.3 The Invariant Principle** (Floyd'un değişmez ilkesi, künyesiyle
-  birlikte) — kitabın PDF'i ARASTIRMA §10'daki yöntemle indirilir. İkinci kaynak: CLRS **2. bölüm**
-  (Getting Started; eklemeli sıralamanın döngü değişmezi kanonik örnektir; bölüm adı doğrulanmış).
-  6.006 Bahar 2020 döngü değişmezi kullanmaz, özyineleme üzerinden tümevarım yapar — bu makalede
-  ondan yararlanılmayabilir.
-- **20 için kaynak zaten okunmuş durumda:** 6.046J Bahar 2015 **Lecture 2 (Divide and Conquer)**
-  bu run'da indirilip okundu (konveks kabuk ve medyan bulma; ARASTIRMA §10). CLRS **4. bölüm**
-  adı doğrulanmıştır.
-- **21 için hazır aday:** 6.046J Bahar 2015 **Lecture 1 (Overview, Interval Scheduling)** —
-  aralık çizelgeleme açgözlü algoritmanın kanonik örneğidir; PDF yolu
-  `/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/ff2a7015ff913fc01f0381d8f5126a9a_MIT6_046JS15_lec01.pdf`.
-  Huffman için Sedgewick & Wayne **5.5 (Data Compression)** sayfası kullanılabilir. CLRS
-  **15. bölüm (Greedy Algorithms)** adı doğrulanmıştır.
+**Araştırma ihtiyacı:** Resmî sayfa borcu **yok** — CMPE250 ve CMPE300 son olarak 2026-08-30'da
+doğrulandı ve Faz C boyunca geçerlidir. Akademik kaynaklar için hazır ipuçları:
+- **22 için kaynak kısmen okunmuş durumda:** 6.046J Bahar 2015 **Lecture 1**, ağırlıklı aralık
+  çizelgelemenin DP çözümünü zaten veriyor (Rₓ = {j ∈ R | s(j) ≥ x}, opt(R) = max(w(i) +
+  opt(R_{f(i)})), n alt problem, O(n²) ve O(n log n)'e indirilebileceği). İkinci kaynak olarak
+  6.006 Bahar 2020'nin dinamik programlama ders notları (**Lecture 15–19 aralığı; hangi numaraların
+  DP olduğu doğrulanmalı**) ve CLRS **14. bölüm** (adı doğrulanmalı) kullanılabilir. Klasik
+  örnekler: LCS, 0/1 sırt çantası, ağırlıklı aralık çizelgeleme.
+- **23 için iki kaynak elde:** 6.046J Güz 2005 **Lecture 16** bu run'da indirilip okundu (MST,
+  optimal altyapı, kesit teoremi, Prim); Sedgewick & Wayne **4.3 (Minimum Spanning Trees)** ve
+  **4.4 (Shortest Paths)** sayfaları algs4.cs.princeton.edu'dan okunabilir; 6.006 Bahar 2020'nin
+  ağırlıklı en kısa yol / Bellman-Ford / Dijkstra ders notları da vardır. CLRS 21 ve 22. bölüm
+  adları **doğrulanmalı**.
+- **24 için hazır adaylar:** 6.006 Bahar 2020 **Lecture 5 (Linear Sorting)** alt sınır tartışmasını
+  içerir (Batch 4'te okunmuştu); 6.046J Bahar 2015'in randomize algoritmalar ve paralel algoritmalar
+  dersleri (lecture-notes sayfasındaki başlıklardan seçilmeli); CMPE300 ders çıktısı "Parallel
+  architectures and parallel algorithms will be studied in detail" ve CMPE250 katalog tanımındaki
+  "Parallel algorithms" başlığı bu makalenin resmî dayanağıdır.
 
-**PDF çözümleme yöntemi (Batch 3–5'te çalıştı):** OCW ders listesi sayfasındaki kaynak adresi bir
-HTML sayfasıdır; içindeki `..._MIT6_006S20_lecN.pdf` (ya da `..._MIT6_046JS15_lecNN.pdf`) bağlantısı
-`grep -oE '/courses/[^"\\]*\.pdf'` ile çıkarılıp `https://ocw.mit.edu` ön ekiyle indirilir, sonra
-`/mingw64/bin/pdftotext -layout` ile metne çevrilir. **Uyarılar:** (a) tablolar sütun kaymasıyla
-çıkar, satır–sütun eşleşmesi elle denetlenmelidir; (b) 6.042 kitabının matematik simgeleri metin
-katmanında kaybolur ve "+" karakteri "C", "−" karakteri boşluk olarak çıkar — formül okurken bu
-kodlama akılda tutulmalıdır.
+**PDF çözümleme yöntemi (Batch 3–6'da çalıştı):** OCW ders listesi sayfasındaki kaynak adresi bir
+HTML sayfasıdır; içindeki `..._MIT6_006S20_lecN.pdf` (ya da `..._MIT6_046JS15_lecNN.pdf`,
+`..._MIT6_006F11_lec11.pdf`, `..._lec3.pdf`) bağlantısı `grep -oE '/courses/[^"\\]*\.pdf'` ile
+çıkarılıp `https://ocw.mit.edu` ön ekiyle indirilir. Güz 2005 dersinde bağlantılar doğrudan ders
+listesi sayfasındadır; Bahar 2015 ve Güz 2011 derslerinde önce `resources/lecture-N-notes/`
+sayfası çekilmelidir. Metne çevirmek için **önce `python -c "import pypdf"` ile `pypdf`'i dene**
+(matematik simgelerini doğru çözer), formül yoksa `/mingw64/bin/pdftotext -layout` daha okunaklı
+sütun düzeni verir. **Uyarı:** tablolar `pdftotext`'te sütun kaymasıyla çıkar, satır–sütun
+eşleşmesi elle denetlenmelidir.
 
-**Yayımlanmış makalelerin verdiği sözler.** Makale 16–18 de **numaralı ileri vaat vermedi**;
+**Yayımlanmış makalelerin verdiği sözler.** Makale 19–21 de **numaralı ileri vaat vermedi**;
 bütün ileri göndermeler konu adıyla yapıldı. Teslim edilmesi zorunlu konular:
 
-- **19'da karşılanmalı (makale 18'in "Sırada ne var" sözü, en somut vaat):** döngü değişmezinin
-  üç adımı — **başlatma, koruma, sonuçlanma**; makale 2'nin **boş doğruluk** kavramının başlatma
-  adımını çoğu zaman bedava kılması; **eklemeli sıralamanın** ve **ikili aramanın** doğruluğunun
-  satır satır ispatı. Ayrıca makale 11'in "değişmezi koruyan yerel işlem" kalıbı ve makale 18'in
-  "özyinelemeli doğruluk tümevarımdır" tespiti burada döngü diline çevrilmelidir.
-- **20'de karşılanmalı:** böl-yönetin bir **tasarım deseni** olarak sunulması; makale 18'in
-  Master Teoremi ve özyineleme ağacı araçlarının tasarım kararlarına uygulanması; küçük girdilerde
-  tabana devretmenin gerekçesi (makale 17'nin kesişim noktası argümanı).
-- **24'te karşılanmalı (üç makalenin ortak borcu):** karar ağacı kuramının formal hâli. **17,
-  yükseklik lemmasını ve log₂(n!) = Θ(n log n) adımını ödedi**; geriye kuramın kendisi ve
-  randomize algoritmaların beklenti analizi kaldı.
-- **Konu bazlı, numarasız pinler (16–18'ten):** graf için doğrusal zaman Θ(|V| + |E|) (16 → 23);
-  BFS'in ağırlıklı genellemesi olarak Dijkstra (16 → 23); ters bitiş sırası (16 → 22, 25);
-  niceleyicili tanım kalıbı (17 → 19, 25); eşik ve kesişim noktası (17 → 20, 37); özyineleme
-  ağacının tekrar eden düğümleri = örtüşen altproblem (18 → 22); Master Teoremi (18 → 20, 23);
-  hipotezi güçlendirme refleksi (18 → 19, 21, 22).
-- Batch 0–4'ten devreden numarasız pinler: minimum kapsayan ağaç (7), ortalama durumun dağılım
-  varsayımı → olasılık makalesi (9), girdi boyutunun sayı mı basamak mı olduğu → hesaplamanın
-  sınırları (9), sayılabilirlik → durma problemi (5), alt sınır ispatı (6), doğum günü ilkesinin
-  olasılık hâli (6), zamanlayıcı kuyruğu ve çağrı yığını → işletim sistemleri fazı (10), disk
-  tabanlı arama yapıları ve ayırma yöntemleri → dosya sistemleri (12), indeks = B-ağacı →
-  veritabanları (12), bellek hiyerarşisi (9, 12), d-yollu heap (13 → 24), rastgeleleştirme
-  (14, 15 → 24, 36), kararlılığın veritabanı karşılığı (15 → 39), dış sıralama (15 → 34),
-  `azalt_anahtar` (13 → 23).
+- **22'de karşılanmalı (makale 20 ve 21'in ortak, en somut vaadi):** örtüşen alt problemlerin
+  teşhisi ve çözümü; **yukarıdan aşağı bellekleme ile aşağıdan yukarı tablolama** ayrımı;
+  ağırlıklı aralık çizelgelemenin DP çözümü; "bunu açgözlüyle çözemez miydin?" karşılaştırması
+  (21'in kapanış cümlesi bunu adıyla vaat etti); DP'nin **yalnızca optimal altyapı** istediği,
+  açgözlü seçim özelliğini istemediği; DAG üzerinde işlem sırası (16'nın topolojik sıralama pini);
+  tablolama döngüsünün değişmezi (19'un aracı).
+- **23'te karşılanmalı:** MST ve en kısa yollar; `azalt_anahtar` (13'ün borcu); BFS'in ağırlıklı
+  genellemesi olarak Dijkstra (16); graf için doğrusal zaman dili Θ(|V| + |E|) (16); kesit
+  teoreminin bir değişim argümanı olduğu (21).
+- **24'te karşılanmalı (üç makalenin ortak borcu):** karar ağacı kuramının formal hâli ve
+  randomize algoritmaların beklenti analizi; ayrıca paralel algoritmalar (CMPE250 ve CMPE300'ün
+  karşılanmamış tek başlığı).
+- **Konu bazlı, numarasız pinler (19–21'den):** kısmi doğruluk ↔ sonlanma ayrımı (19 → 22, 29–31);
+  durum makinesi ve korunan değişmez (19 → 26–27, 29, 31); azalan ölçü (19 → 22, 31); değişmezi
+  keşfetmenin zorluğu (19 → 22); iki kaldıraç a ve g(n) (20 → 23, 24); örtüşen alt problemler
+  (20 → 22); eşit olmayan alt problemler (20 → 24); açgözlü seçim özelliği ile optimal altyapının
+  ayrılması (21 → 22, 23); değişim argümanı (21 → 23, 24); ağırlıklı aralık çizelgeleme
+  (21 → 22); önek-serbest kod ve bit muhasebesi (21 → 34, 39).
+- Batch 0–5'ten devreden numarasız pinler: minimum kapsayan ağaç (7 → 23), ortalama durumun dağılım
+  varsayımı → olasılık makalesi (9 → 36), girdi boyutunun sayı mı basamak mı olduğu → hesaplamanın
+  sınırları (9 → 25), sayılabilirlik → durma problemi (5 → 25), alt sınır ispatı (6 → 24), doğum
+  günü ilkesinin olasılık hâli (6 → 36), zamanlayıcı kuyruğu ve çağrı yığını → işletim sistemleri
+  fazı (10 → 27–28), disk tabanlı arama yapıları ve ayırma yöntemleri → dosya sistemleri (12 → 34),
+  indeks = B-ağacı → veritabanları (12 → 39), bellek hiyerarşisi (9, 12 → 37), d-yollu heap
+  (13 → 24), rastgeleleştirme (14, 15 → 24, 36), kararlılığın veritabanı karşılığı (15 → 39),
+  dış sıralama (15 → 34), `azalt_anahtar` (13 → 23), ters bitiş sırası (16 → 22, 25),
+  log₂(n!) = Θ(n log n) (17 → 24), sayma sıralamasının zincirleri (14, 15 → 24).
 
-**Görselleştirme öngörüsü:** 19: bir döngünün üç adımının (başlatma / koruma / sonuçlanma) dizi
-üzerinde adım adım gösterilmesi — eklemeli sıralamanın i'inci adımında "sol önek sıralı" bandının
-büyümesi; ve ikili aramanın arama aralığının her adımda yarılanması, değişmezin "aranan değer
-varsa bu aralıktadır" biçiminde çizilmesi. 20: aynı problemin böl-yönetli ve düz çözümünün
-maliyet karşılaştırması, birleştirme adımının maliyetinin sonucu belirlemesi. 21: açgözlü seçimin
-doğru çalıştığı ve çalışmadığı iki örneğin yan yana konması (aralık çizelgeleme ↔ para üstü karşı
-örneği).
+**Görselleştirme öngörüsü:** 22: aynı özyineleme ağacının bellekleme öncesi ve sonrası hâli —
+tekrar eden düğümlerin tek bir düğüme indirgenmesi ve çağrı sayısının üstelden doğrusala düşmesi;
+ve bir DP tablosunun hücre hücre doldurulması, hücreler arası bağımlılık oklarıyla. 23: aynı graf
+üzerinde MST ile en kısa yollar ağacının **farklı** çıkması (klasik ve çok öğretici bir karşı
+sezgi); ve Dijkstra'nın öncelik kuyruğu adımlarının tablo hâlinde izlenmesi. 24: karar ağacının
+yaprak sayısı ile yükseklik ilişkisinin formal şeması; ve iş/derinlik (work/span) ayrımının paralel
+bir indirgeme ağacında gösterilmesi.
 (SVG sözleşmesi: `docs/seri/SOZLESME.md` §6; tuval `viewBox="0 0 720 H"`, metin ≥13 birim,
 renk yalnızca `var(--...)`, marker id'leri makale genelinde benzersiz — `boun-a<N>-...` kalıbı,
 `<` ve `>` karakterleri `&lt;` / `&gt;` olarak yazılır. Kullanılabilir değişkenler: `--text`,
 `--text-muted`, `--text-faint`, `--border`, `--surface`, `--surface-muted`, `--accent`,
-`--accent-soft`, `--cool`, `--cool-soft`.)
+`--accent-soft`, `--cool`, `--cool-soft`. Satır uzunluğu sınırı için "bilinen sorunlar"a bak.)
 
-**Sözlü checkpoint tohumları:** "Döngü değişmezi nedir, üç adımı nedir ve bir döngünün doğruluğunu
-onunla nasıl ispatlarsın?"; "Eklemeli sıralamanın değişmezini söyle ve sonuçlanma adımının neden
-sonucu verdiğini açıkla"; "Bir algoritmanın durduğunu nasıl ispatlarsın — değişmez bunun için
-yeter mi?"
+**Sözlü checkpoint tohumları:** "Bir problemin dinamik programlamaya uygun olduğunu nereden
+anlarsın — hangi iki özelliği ararsın?"; "Bellekleme ile tablolama arasındaki farkı ve hangisini
+ne zaman seçeceğini anlat"; "Ağırlıklı aralık çizelgelemeyi açgözlüyle çözemiyoruz; DP çözümünü
+tahtaya kur ve maliyetini savun".
 
-**Araç sırası (Batch 1–5'te doğrulandı):** katalog var olduğu için `sync-series-hashes.cjs`
+**Araç sırası (Batch 1–6'da doğrulandı):** katalog var olduğu için `sync-series-hashes.cjs`
 yalnızca **katalogdaki** makaleleri gezer. Doğru sıra:
-1) makaleleri yaz (frontmatter `content_hash` alanına 64 sıfırdan oluşan yer tutucu koy),
-2) `entegre-batch.cjs --series=boun` (kuru çalışma; başlık/sıra/kohort denetimi),
-3) `entegre-batch.cjs --series=boun --write` (katalog + roadmap),
-4) `sync-series-hashes.cjs --series=boun --write` (frontmatter **ve** katalog hash'lerini düzeltir),
-5) denetleyicileri tekrar çalıştır. Gövdeyi sonradan düzenlersen 4. adımı yeniden çalıştır.
+1) **başlık değişecekse `roadmap.json`'daki ilgili satırı önce elle güncelle** — `entegre-batch`
+   roadmap başlığı frontmatter başlığıyla birebir eşleşmezse bunu "sorun" sayar ve **yazmaz**,
+2) makaleleri yaz (frontmatter `content_hash` alanına 64 sıfırdan oluşan yer tutucu koy),
+3) `entegre-batch.cjs --series=boun` (kuru çalışma; başlık/sıra/kohort denetimi),
+4) `entegre-batch.cjs --series=boun --write` (katalog + roadmap),
+5) `sync-series-hashes.cjs --series=boun --write` (frontmatter **ve** katalog hash'lerini düzeltir),
+6) denetleyicileri tekrar çalıştır. Gövdeyi sonradan düzenlersen 5. adımı yeniden çalıştır.
 Yeni kategori klasörü açılırken klasör adı `category` alanıyla birebir aynı olmak zorundadır ve
 kategori `src/lib/content/schema.ts` ile `labels.ts` içinde zaten tanımlı olmalıdır (`algorithms`,
 `operating-systems` ve `supporting-fundamentals` tanımlıdır; yeni makaleler kod değişikliği
@@ -252,12 +294,12 @@ yapılamaz**:
    paylaşamaz).
 2. **Render doğrulaması için:** `corepack pnpm exec next dev -p 3100 -H 127.0.0.1` — gate env'i
    **vermeden**; dev'de kapı devre dışı kalır ve makale sayfaları girişsiz açılır. Betikler
-   gitignore'daki `artifacts/boun-render/` altındadır; bu batch'in sürümleri `shot-batch5.mjs`
-   (27 kombinasyon + `/boun`) ve `figs-b5.mjs` (diyagram başına ekran görüntüsü, light + dark).
-   İkisi de taban adresi `RENDER_BASE` ortam değişkeninden alır ve slug listesi başta durur —
-   sonraki batch için tek yapılacak şey o üç satırı `sed` ile değiştirmektir. Tema,
-   `localStorage["anil-lib:reader-preferences:v1"]` içine tam `preferencesSchema` nesnesi
-   yazılarak seçilir (`anil-lib:theme` anahtarı sepia'yı uygulamaz).
+   gitignore'daki `artifacts/boun-render/` altındadır; bu batch'in sürümleri `shot-batch6.mjs`
+   (27 kombinasyon + `/boun`), `figs-b6.mjs` (diyagram başına ekran görüntüsü, light + dark) ve
+   yeni eklenen `pre-b6.mjs` (kod bloğu denetimi). Üçü de taban adresi `RENDER_BASE` ortam
+   değişkeninden alır ve slug listesi başta durur — sonraki batch için tek yapılacak şey o üç
+   satırı `sed` ile değiştirmektir. Tema, `localStorage["anil-lib:reader-preferences:v1"]` içine
+   tam `preferencesSchema` nesnesi yazılarak seçilir (`anil-lib:theme` anahtarı sepia'yı uygulamaz).
 3. **E2E için:** aynı sunucu **kullanılamaz**. `playwright.config.ts` gate env'ini yalnızca kendi
    `webServer` sürecine verir, o komut da bu makinede çalışmıyor; `reuseExistingServer: true`
    olduğu için gate'siz sunucu sessizce yeniden kullanılır ve `auth.spec.ts` ile ona bağlı bütün
@@ -281,6 +323,15 @@ yapılamaz**:
 
 ## Non-normative history
 
+- **2026-08-30 (Batch 6, `BATCH=3+1`):** Makale 19–21 yayımlandı; Faz C'nin **formalleştirme
+  üçlüsü kapandı ve tasarım deseni bölümü açıldı**. Makale 20'nin taslak başlığı pedagojik
+  gerekçeyle genişletildi, seride ilk kez fenced kod bloğu kullanıldı (kod değişikliği gerekmedi)
+  ve Batch 5'ten kalan Master Teoremi ε borcu `pypdf` ile kapatıldı. Doğrulama: BOUN içerik + SVG
+  + hash + entegrasyon denetleyicileri temiz (21 makale, 42 diyagram), `pnpm typecheck` temiz,
+  `pnpm test` 277/277, `pnpm build` başarılı (21'i `/boun` olmak üzere 76, ikinci koşuda 80 statik
+  sayfa), global id/slug benzersizliği 69/69 ve run sonunda 73/73, Playwright 21 geçti / 1 atlandı
+  / 4 önceden-var başarısız, 27 render kombinasyonu, 6 diyagram (light + dark) ve 3 kod bloğu
+  (desktop + mobile × light + dark) ekran görüntüsüyle doğrulandı.
 - **2026-08-30 (Batch 5, `BATCH=3+1`):** Makale 16–18 yayımlandı; **Faz B kapandı, Faz C açıldı**
   ve `algorithms` kategori klasörü kod değişikliği olmadan devreye girdi. CMPE300 sayfası yeniden
   doğrulandı ve katalog tanımı ile ders çıktıları ayrımı kayda geçti. Doğrulama: BOUN içerik + SVG

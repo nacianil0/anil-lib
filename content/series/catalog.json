@@ -602,6 +602,86 @@
       "path": "content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
+    },
+    {
+      "articleId": "article_680c7501-555f-4c11-9e13-f8b89549ec78",
+      "title": "Akıl Yürütme Nedir? Tanım, Ölçüm ve Tartışma",
+      "slug": "akil-yurutme-nedir-tanim-olcum-ve-tartisma",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 31,
+      "summary": "Faz 4'ü, ara adımların adını doğru koyarak açar: alanın 'akıl yürütme' tanımını, aynı sorunun yüzeysel varyantlarında ölçülen kırılganlığı, konuya eklenen tek bir ilgisiz cümlenin yarattığı çöküşü, modelin yazdığı gerekçenin gerçek sebebi temsil edip etmediğini ve insanların da aynı içerik etkilerini gösterdiğini ölçümlerle kurar.",
+      "tags": [
+        "akil-yurutme",
+        "olcum-disiplini",
+        "sadakat",
+        "kirilganlik",
+        "icerik-etkisi"
+      ],
+      "contentHash": "sha256:3e89d25770034e39cb2247a1f42447e8c57beb06722fd98825ff76cf71f962be",
+      "path": "content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
+    },
+    {
+      "articleId": "article_70332652-9902-4d4d-81e2-5e294088cf60",
+      "title": "Düşünce Zinciri: Ara Adımların Gücü ve Sınırı",
+      "slug": "dusunce-zinciri-ara-adimlarin-gucu-ve-siniri",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 32,
+      "summary": "Ara adımların ölçülen kazancını ve mekanizmasını kurar: kazancın model ölçeğine ve görev zorluğuna nasıl bağlandığını, kazancın ne fazladan hesaptan ne de bilgi hatırlatmadan geldiğini gösteren üç ablasyonu, sabit derinlikli bir modelin sıralı hesap sınırını, eğitim verisinin yerel yapısının rolünü ve gösterimlerdeki akıl yürütmenin geçersiz olmasının neden çok az şey değiştirdiğini.",
+      "tags": [
+        "dusunce-zinciri",
+        "ara-adimlar",
+        "sirali-hesap",
+        "gosterim-tasarimi",
+        "olcek"
+      ],
+      "contentHash": "sha256:2ad54a31ef657628ee5e18c3448458b8286ce09d699519ce977a37b7c3e35e10",
+      "path": "content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
+    },
+    {
+      "articleId": "article_4a385bc9-4619-4aef-a664-7b1d9c1957f2",
+      "title": "Çıkarım Anında Hesap: Düşünme Süresi Satın Almak",
+      "slug": "cikarim-aninda-hesap-dusunme-suresi-satin-almak",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 33,
+      "summary": "9. makalenin çıkarım anında hesap harcama vaadini öder: paralel ve sıralı olmak üzere iki harcama eksenini, kaç denemede çözüldüğünü ölçen kapsama eğrisinin neden güç yasasına benzediğini, çoğunluk oyunun matematiksel doygunluğunu, soru zorluğuna göre değişen en iyi tahsisi ve aynı FLOP bütçesini eğitime mi çıkarıma mı harcamak gerektiğini kurar.",
+      "tags": [
+        "cikarim-aninda-hesap",
+        "kapsama",
+        "cogunluk-oyu",
+        "hesap-tahsisi",
+        "maliyet"
+      ],
+      "contentHash": "sha256:20d772349bb8a238bb4d0d0e0a390d5f2678c410eec4dc8c6d64d5c64f3aa24e",
+      "path": "content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
+    },
+    {
+      "articleId": "article_49466ee0-356e-4c1a-a74f-26ec4427c83d",
+      "title": "Akıl Yürüten Modeller: Doğrulanabilir Ödülle Eğitim",
+      "slug": "akil-yuruten-modeller-dogrulanabilir-odulle-egitim",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 34,
+      "summary": "Post-training haritasının dördüncü durağını açar: doğru cevabın makineyle denetlenebildiği alanlarda ödülü insan yargısı yerine bir kuralın vermesini, kendi çözümlerinden öğrenmenin en sade biçiminden grup göreli politika optimizasyonuna uzanan mekanizmayı, hakemli bir koşuda ölçülen kazancı ve bu eğitimin modelin yetenek sınırını genişletip genişletmediği tartışmasını kurar.",
+      "tags": [
+        "dogrulanabilir-odul",
+        "pekistirmeli-ogrenme",
+        "post-training",
+        "dogrulayici",
+        "yetenek-siniri"
+      ],
+      "contentHash": "sha256:f55cb1566b699454dcfe1322cbc9b903bd676728086b52711b578189351c6ba2",
+      "path": "content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
     }
   ]
 }
