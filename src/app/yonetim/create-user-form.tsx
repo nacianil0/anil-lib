@@ -4,7 +4,8 @@ import { useActionState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { UserPlus } from "lucide-react";
 import { MIN_PASSWORD_LENGTH } from "@/lib/auth/user-schema";
-import { createUserAction, initialCreateUserState } from "./actions";
+import { createUserAction } from "./actions";
+import { initialCreateUserState } from "./create-user-state";
 
 export function CreateUserForm({ disabled }: { disabled?: boolean }) {
   const [state, action, pending] = useActionState(createUserAction, initialCreateUserState);

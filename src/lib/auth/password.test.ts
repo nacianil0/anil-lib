@@ -6,7 +6,7 @@ const PASSWORD = "correct horse battery staple";
 describe("hashPassword", () => {
   it("produces a parameterised scrypt string, never the plaintext", async () => {
     const hash = await hashPassword(PASSWORD);
-    expect(hash).toMatch(/^scrypt\$16384\$8\$1\$[A-Za-z0-9+/=]+\$[A-Za-z0-9+/=]+$/);
+    expect(hash).toMatch(/^scrypt\$32768\$8\$1\$[A-Za-z0-9+/=]+\$[A-Za-z0-9+/=]+$/);
     expect(hash).not.toContain(PASSWORD);
   });
 
@@ -74,7 +74,7 @@ describe("needsRehash", () => {
   });
 
   it("is true for different parameters or a foreign format", () => {
-    expect(needsRehash("scrypt$32768$8$1$c2FsdHNhbHRzYWx0$aGFzaA==")).toBe(true);
+    expect(needsRehash("scrypt$16384$8$1$c2FsdHNhbHRzYWx0$aGFzaA==")).toBe(true);
     expect(needsRehash("scrypt$8192$8$1$c2FsdHNhbHRzYWx0$aGFzaA==")).toBe(true);
     expect(needsRehash("")).toBe(true);
   });
@@ -84,13 +84,13 @@ describe("parameter compatibility", () => {
   it("still verifies a hash written with heavier parameters than today's default", async () => {
     // Lowering the defaults must never invalidate stored hashes: the ceiling used
     // during verification follows the parameters recorded in the hash itself.
-    const legacy = "scrypt$32768$8$1$" + Buffer.from("saltsaltsaltsalt").toString("base64");
+    const legacy = "scrypt$65536$8$1$" + Buffer.from("saltsaltsaltsalt").toString("base64");
     const { scryptSync } = await import("node:crypto");
     const key = scryptSync("legacy-secret".normalize("NFKC"), Buffer.from("saltsaltsaltsalt"), 32, {
-      N: 32768,
+      N: 65536,
       r: 8,
       p: 1,
-      maxmem: 96 * 1024 * 1024,
+      maxmem: 256 * 1024 * 1024,
     });
     const stored = `${legacy}$${key.toString("base64")}`;
 

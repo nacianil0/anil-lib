@@ -4,13 +4,7 @@ import { getOwnerUser } from "@/lib/auth/session-user";
 import { createUserSchema } from "@/lib/auth/user-schema";
 import { createStandardUser, DuplicateUsernameError } from "@/lib/auth/users";
 import { getDatabaseClient } from "@/lib/db/client";
-
-export type CreateUserState =
-  | { status: "idle" }
-  | { status: "success"; username: string }
-  | { status: "error"; message: string };
-
-export const initialCreateUserState: CreateUserState = { status: "idle" };
+import type { CreateUserState } from "./create-user-state";
 
 /**
  * Renders a failure into something the owner can act on. This screen is owner-only,

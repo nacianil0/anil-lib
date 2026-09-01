@@ -1997,3 +1997,8 @@ fazi tamamlandi. Faz C'nin tasarim deseni ucluu kapandi, geriye yalnizca makale 
 | 01:06 | Edited src/lib/auth/password.ts | 2→2 lines | ~36 |
 | 01:06 | Edited src/lib/auth/password.test.ts | expanded (+7 lines) | ~176 |
 | 01:07 | Session end: 31 writes across 14 files (migrate.mjs, package.json, actions.ts, users.ts, user-schema.ts) | 0 reads | ~7416 tok |
+| 01:11 | Created src/app/yonetim/create-user-state.ts | — | ~146 |
+| 01:11 | Edited src/app/yonetim/actions.ts | removed 8 lines | ~1 |
+| 01:11 | Edited src/app/yonetim/actions.ts | added 1 import(s) | ~88 |
+| 01:11 | Edited src/app/yonetim/create-user-form.tsx | added 1 import(s) | ~31 |
+| 01:12 | Created src/app/use-server-exports.test.ts | — | ~663 |

@@ -9,19 +9,17 @@ import { randomBytes, scrypt as scryptCallback, timingSafeEqual } from "node:cry
 
 const SCHEME = "scrypt";
 /**
- * scrypt allocates `128 * COST * BLOCK_SIZE` bytes in one go — 16 MB here.
- *
- * Sized for a small serverless function: this app runs on 256 MB, where a Next.js
- * render plus a 32 MB allocation risks killing the process outright, and a killed
- * process runs no error handler. Verification reads the parameters back out of each
- * stored hash, so hashes written with older, heavier settings keep working.
+ * scrypt allocates `128 * COST * BLOCK_SIZE` bytes in one go — 32 MB here, which is
+ * comfortable inside the 2 GB the deployment target provides. Verification reads the
+ * parameters back out of each stored hash, so a hash written with different settings
+ * keeps working and is rewritten on the owner's next sign-in.
  */
-const COST = 16_384;
+const COST = 32_768;
 const BLOCK_SIZE = 8;
 const PARALLELISM = 1;
 const KEY_LENGTH = 32;
-/** Node's own default. Anything larger than the allocation above is unnecessary. */
-const MAX_MEMORY = 32 * 1024 * 1024;
+/** Headroom above the allocation above; Node's own default (32 MB) is too tight. */
+const MAX_MEMORY = 96 * 1024 * 1024;
 
 /**
  * A syntactically valid hash of a value nobody knows. Verifying against it makes a
@@ -29,7 +27,7 @@ const MAX_MEMORY = 32 * 1024 * 1024;
  * not leak which usernames exist.
  */
 export const DUMMY_PASSWORD_HASH =
-  "scrypt$16384$8$1$rqI9sHPT+wKjgZ1bYwvKeQ==$IwnZowezWq9zqmXj8Ct1ArkqPZ8skex2xAnV1mVUhuM=";
+  "scrypt$32768$8$1$X66gHBvcCQhi+jyHm6kqsw==$oZa3U6lwTFLfhwqsKMd+Tag57wHEeLPhfyQmq8z+GhM=";
 
 function derive(
   password: string,
