@@ -1958,3 +1958,8 @@ fazi tamamlandi. Faz C'nin tasarim deseni ucluu kapandi, geriye yalnizca makale 
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 00:40 | Created scripts/migrate.mjs | — | ~1257 |
+| 00:41 | Edited package.json | 3→4 lines | ~40 |
+| 00:41 | Edited package.json | 3→4 lines | ~47 |
+
+| 01:0x | Vercel build-step migration runner | scripts/migrate.mjs, package.json | push = deploy = migrate; baseline adoption + idempotent | ~6k |

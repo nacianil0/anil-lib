@@ -1,10 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:07:05.133Z
-> Files: 166 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:41:24.200Z
+> Files: 184 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
+- `package.json` — Node.js package manifest (~600 tok)
 - `vitest.config.ts` — /*.test.{ts,tsx}"], (~154 tok)
 
 ## .agents/skills/handoff/
@@ -93,6 +94,13 @@
 - `verify23b.py` — Article 23, part 2: Prim trace with keys, faithful Dijkstra (with a closed set) (~1152 tok)
 - `verify24.py` — Article 24: comparison lower bounds, randomized quicksort expectation, (~1420 tok)
 - `wolf_notes.md` (~495 tok)
+
+## Yeni içerik/yardımcılar (2026-09-02)
+
+- `drizzle/0001_users.sql` — users tablosu, unique + check kısıtları, self FK. (~350 tok)
+- `src/app/read/page.tsx` — Owner-only arşiv indeksi (18 yazı). (~700 tok)
+- `src/lib/content/archive.ts` — Seri öncesi kütüphane sabitleri ve id listesi (owner-only arşiv). (~150 tok)
+- `src/test/server-only-stub.ts` — Vitest için `server-only` alias'ı. (~80 tok)
 
 ## artifacts/b7-render/
 
@@ -420,6 +428,10 @@
 ## prompts/
 
 
+## scripts/
+
+- `migrate.mjs` — Applies pending SQL migrations from `drizzle/` before the app is built. (~1257 tok)
+
 ## src/
 
 
@@ -464,6 +476,13 @@
 - `create-user-form.tsx` — CreateUserForm — renders form (~962 tok)
 - `page.tsx` — dynamic — renders table (~2266 tok)
 
+## src/app/yonetim/ (2026-09-02 eklendi)
+
+- `[userId]/page.tsx` — Owner-only kullanıcı detayı, iki seri bazında makale düzeyi ilerleme. (~1500 tok)
+- `actions.ts` — Owner-only createUser server action; yetkiyi sayfadan bağımsız yeniden doğrular. (~700 tok)
+- `create-user-form.tsx` — useActionState ile client form, satır içi hata/başarı. (~800 tok)
+- `page.tsx` — Owner-only özet tablo + kullanıcı oluşturma formu; force-dynamic. (~1700 tok)
+
 ## src/app/yonetim/[userId]/
 
 - `page.tsx` — dynamic (~1868 tok)
@@ -494,6 +513,14 @@
 - `user-schema.test.ts` — Declares result (~774 tok)
 - `user-schema.ts` — Accounts are keyed by the workspace column every reader table is already partitioned by. (~643 tok)
 - `users.ts` — Internal shape. Only the login path ever sees the stored hash. (~1520 tok)
+
+## src/lib/auth/ (2026-09-02 genişletildi)
+
+- `authenticate.ts` — server-only login doğrulaması: env-sha256 → scrypt geçişi, DB yokken owner env yolu. (~900 tok)
+- `password.ts` — node:crypto scrypt hash/verify, enumeration için sabit dummy hash, needsRehash. (~900 tok)
+- `session-user.ts` — server-only oturum çözümü (React cache'li), getOwnerUser / requireSessionUser / requireOwnerUser. (~800 tok)
+- `user-schema.ts` — Saf: kullanıcı adı normalize/doğrulama, zod şemaları, owner sabitleri, local-owner kimliği. (~700 tok)
+- `users.ts` — server-only kullanıcı tablosu erişimi: owner seed, kimlik arama, listeleme, oluşturma, last_login, scrypt yükseltmesi. (~1300 tok)
 
 ## src/lib/content/
 
@@ -532,6 +559,12 @@
 - `aggregate.ts` — Pure statistics layer. (~1835 tok)
 - `format.ts` — Renders an em dash for absent timestamps so "no data" is never shown as "now". (~216 tok)
 
+## src/lib/stats/ (2026-09-02 eklendi)
+
+- `aggregate.ts` — Saf istatistik katmanı: seri bazlı tamamlanan/başlanan/yüzde, yer imi & işaret sayıları, son etkinlik, kaldığı makale. Veritabanı bilmez, tamamen test edilebilir. (~1600 tok)
+- `format.ts` — Owner ekranı için tr-TR tarih/saat biçimleyici; eksik zaman damgası için em dash. (~250 tok)
+- `server/user-stats.ts` — server-only. Owner guard'ı (tek SQL bile çalışmadan reddeder), dar projeksiyonlu SELECT'ler, genel bakış + kullanıcı detayı. (~1500 tok)
+
 ## src/lib/stats/server/
 
 - `user-stats.test.ts` — OWNER_ID: matchesWorkspace (~1937 tok)
@@ -564,30 +597,3 @@
 
 ## tools/series/
 
-## src/lib/stats/ (2026-09-02 eklendi)
-
-- `aggregate.ts` — Saf istatistik katmanı: seri bazlı tamamlanan/başlanan/yüzde, yer imi & işaret sayıları, son etkinlik, kaldığı makale. Veritabanı bilmez, tamamen test edilebilir. (~1600 tok)
-- `format.ts` — Owner ekranı için tr-TR tarih/saat biçimleyici; eksik zaman damgası için em dash. (~250 tok)
-- `server/user-stats.ts` — server-only. Owner guard'ı (tek SQL bile çalışmadan reddeder), dar projeksiyonlu SELECT'ler, genel bakış + kullanıcı detayı. (~1500 tok)
-
-## src/lib/auth/ (2026-09-02 genişletildi)
-
-- `password.ts` — node:crypto scrypt hash/verify, enumeration için sabit dummy hash, needsRehash. (~900 tok)
-- `user-schema.ts` — Saf: kullanıcı adı normalize/doğrulama, zod şemaları, owner sabitleri, local-owner kimliği. (~700 tok)
-- `users.ts` — server-only kullanıcı tablosu erişimi: owner seed, kimlik arama, listeleme, oluşturma, last_login, scrypt yükseltmesi. (~1300 tok)
-- `authenticate.ts` — server-only login doğrulaması: env-sha256 → scrypt geçişi, DB yokken owner env yolu. (~900 tok)
-- `session-user.ts` — server-only oturum çözümü (React cache'li), getOwnerUser / requireSessionUser / requireOwnerUser. (~800 tok)
-
-## src/app/yonetim/ (2026-09-02 eklendi)
-
-- `page.tsx` — Owner-only özet tablo + kullanıcı oluşturma formu; force-dynamic. (~1700 tok)
-- `[userId]/page.tsx` — Owner-only kullanıcı detayı, iki seri bazında makale düzeyi ilerleme. (~1500 tok)
-- `actions.ts` — Owner-only createUser server action; yetkiyi sayfadan bağımsız yeniden doğrular. (~700 tok)
-- `create-user-form.tsx` — useActionState ile client form, satır içi hata/başarı. (~800 tok)
-
-## Yeni içerik/yardımcılar (2026-09-02)
-
-- `src/lib/content/archive.ts` — Seri öncesi kütüphane sabitleri ve id listesi (owner-only arşiv). (~150 tok)
-- `src/app/read/page.tsx` — Owner-only arşiv indeksi (18 yazı). (~700 tok)
-- `src/test/server-only-stub.ts` — Vitest için `server-only` alias'ı. (~80 tok)
-- `drizzle/0001_users.sql` — users tablosu, unique + check kısıtları, self FK. (~350 tok)

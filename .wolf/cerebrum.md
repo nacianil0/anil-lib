@@ -166,6 +166,9 @@ ode_modules`, sonra kopyayi sil.
 - `markdown-components.tsx` her paragrafı cümle cümle `<span class="colored-sentence">` ile sarar ve bu **koşulsuzdur**; `coloredLines` tercihi yalnızca renklendirmeyi açar. Bir paragrafın `firstChild`'ı hiçbir zaman ham metin düğümü değildir.
 - `server-only` paketi Vitest'te import edilince patlar; `vitest.config.ts` içinde `src/test/server-only-stub.ts`'e alias'landı, böylece sunucu modülleri birim testlenebiliyor.
 
+- Vercel, `package.json`'da `vercel-build` script'i varsa framework varsayılanı yerine onu çalıştırır — ama proje ayarlarında **açık bir Build Command override'ı varsa o kazanır** ve `vercel-build` hiç çalışmaz. Ayrıca `DATABASE_URL` build adımında görünür olmalı; yalnızca runtime'a işaretli bir değişkeni build göremez.
+- Neon HTTP sürücüsü (`neon()`) yalnızca Neon host'larıyla çalışır ve oturum tutmaz; her sorgu bağımsızdır, bu yüzden interaktif transaction ve `pg_advisory_lock` kullanılamaz. Migration runner bu yüzden ifade ifade çalışıp duplicate hatalarını tolere ediyor.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -373,4 +376,6 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-02] Owner istatistiklerinin toplaması SQL yerine saf TypeScript'te (`lib/stats/aggregate.ts`). Gerekçe: doğrulama veritabanısız yapılacaktı; `count(*) FILTER` gibi agregatlar test edilemeyen bir yüzey bırakırdı. SQL üç dar `SELECT`'e indirildi, metrik matematiğinin tamamı birim testli. Kullanıcı sayısı küçük olduğu için maliyet önemsiz.
 - [2026-09-02] Owner ekranında yalnızca sayı gösteriliyor; `highlights.exact_text` ve `saved_places.preview_text` hiç seçilmiyor. Gerekçe: bunlar okurun kendi seçtiği pasajlar, minimum veri ilkesi.
 - [2026-09-02] `users.last_login_at` tek sütun olarak eklendi; IP, user-agent veya giriş geçmişi tablosu eklenmedi. "Hesap açıldı ama hiç girilmedi mi?" sorusunun başka cevabı yok ve `users` yeni tablo olduğu için mevcut veri üzerinde migration riski sıfır.
+
+- [2026-09-02] Vercel'de migration `drizzle-kit migrate` ile değil, kendi runner'ıyla (`scripts/migrate.mjs`) build adımında uygulanıyor. Gerekçe: canlı DB 0000'ı bir migration journal'ı olmadan almış; `drizzle-kit migrate` baseline'ı tekrar oynatmaya kalkıp "already exists" ile build'i kırardı. Runner kendi `app_migrations` tablosunu tutar, `reading_progress` varsa 0000'ı baseline kabul eder, duplicate_table/object/column hatalarını "zaten var" sayar, gerçek hatada exit 1 verip deploy'u kırar. `DATABASE_URL` yoksa temiz atlar (lokal ve DB'siz preview build'leri bozulmasın).
 
