@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { UserPlus } from "lucide-react";
+import { MIN_PASSWORD_LENGTH } from "@/lib/auth/user-schema";
 import { createUserAction, initialCreateUserState } from "./actions";
 
 export function CreateUserForm({ disabled }: { disabled?: boolean }) {
@@ -51,7 +52,7 @@ export function CreateUserForm({ disabled }: { disabled?: boolean }) {
             autoComplete="new-password"
             className="h-10 rounded border border-border bg-bg px-3 font-sans text-sm text-text outline-none transition-colors focus:border-accent disabled:cursor-not-allowed disabled:opacity-50"
             disabled={disabled || pending}
-            minLength={10}
+            minLength={MIN_PASSWORD_LENGTH}
             name="password"
             required
             type="password"

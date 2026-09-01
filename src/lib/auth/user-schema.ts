@@ -44,9 +44,12 @@ export const usernameSchema = z
       ),
   );
 
+/** Deliberately short: this is a small private library, not a public sign-up. */
+export const MIN_PASSWORD_LENGTH = 4;
+
 export const passwordSchema = z
   .string()
-  .min(10, "Parola en az 10 karakter olmalı.")
+  .min(MIN_PASSWORD_LENGTH, `Parola en az ${MIN_PASSWORD_LENGTH} karakter olmalı.`)
   .max(200, "Parola en fazla 200 karakter olabilir.");
 
 export const createUserSchema = z.object({

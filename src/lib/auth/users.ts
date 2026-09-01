@@ -96,8 +96,19 @@ export class DuplicateUsernameError extends Error {
   }
 }
 
+/**
+ * The Neon HTTP driver sometimes wraps the Postgres error, so the code is checked
+ * both on the error itself and on the wrapped original.
+ */
 function isUniqueViolation(error: unknown): boolean {
-  return (error as { code?: string } | null)?.code === "23505";
+  const candidate = error as {
+    code?: unknown;
+    constraint?: unknown;
+    sourceError?: { code?: unknown; constraint?: unknown };
+  } | null;
+  if (candidate?.code === "23505" || candidate?.sourceError?.code === "23505") return true;
+  const constraint = candidate?.constraint ?? candidate?.sourceError?.constraint;
+  return typeof constraint === "string" && constraint.startsWith("users_username");
 }
 
 /**
@@ -115,17 +126,27 @@ export async function createStandardUser(
   // failing the insert on a cast.
   const createdBy = input.createdBy && UUID_PATTERN.test(input.createdBy) ? input.createdBy : null;
   try {
-    const rows = (await sql.query(
+    // Deliberately no RETURNING: every value is already known here, and reading rows
+    // back from an INSERT is the one driver behaviour this codebase never exercises
+    // anywhere else.
+    await sql.query(
       `INSERT INTO users (id, username, workspace_id, role, password_hash, hash_scheme, created_by)
-       VALUES ($1::uuid, $2, $3, 'user', $4, 'scrypt', $5::uuid)
-       RETURNING ${PUBLIC_COLUMNS}`,
+       VALUES ($1::uuid, $2, $3, 'user', $4, 'scrypt', $5::uuid)`,
       [id, input.username, id, passwordHash, createdBy],
-    )) as Record<string, unknown>[];
-    return mapUser(rows[0]);
+    );
   } catch (error) {
     if (isUniqueViolation(error)) throw new DuplicateUsernameError();
     throw error;
   }
+
+  return {
+    id,
+    username: input.username,
+    workspaceId: id,
+    role: "user",
+    lastLoginAt: null,
+    createdAt: new Date().toISOString(),
+  };
 }
 
 export async function recordLogin(sql: SqlClient, userId: string): Promise<void> {

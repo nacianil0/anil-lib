@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:41:24.200Z
-> Files: 184 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:50:17.568Z
+> Files: 185 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -472,8 +472,8 @@
 
 ## src/app/yonetim/
 
-- `actions.ts` — Owner-only account creation. (~621 tok)
-- `create-user-form.tsx` — CreateUserForm — renders form (~962 tok)
+- `actions.ts` — Renders a failure into something the owner can act on. This screen is owner-only, (~1004 tok)
+- `create-user-form.tsx` — CreateUserForm — renders form (~984 tok)
 - `page.tsx` — dynamic — renders table (~2266 tok)
 
 ## src/app/yonetim/ (2026-09-02 eklendi)
@@ -509,10 +509,11 @@
 - `password.test.ts` — Declares PASSWORD (~850 tok)
 - `password.ts` — Password hashing for reader accounts. (~887 tok)
 - `require-reader-session.ts` — Authorizes a reader API request from the signed cookie alone — no database round (~580 tok)
-- `session-user.ts` — Resolves the signed cookie to a real account. Deduplicated per request so a page (~923 tok)
-- `user-schema.test.ts` — Declares result (~774 tok)
-- `user-schema.ts` — Accounts are keyed by the workspace column every reader table is already partitioned by. (~643 tok)
-- `users.ts` — Internal shape. Only the login path ever sees the stored hash. (~1520 tok)
+- `session-user.ts` — Resolves the signed cookie to a real account. Deduplicated per request so a page (~1001 tok)
+- `user-schema.test.ts` — Declares tooShort (~869 tok)
+- `user-schema.ts` — Accounts are keyed by the workspace column every reader table is already partitioned by. (~688 tok)
+- `users.test.ts` — Declares Call (~1473 tok)
+- `users.ts` — Internal shape. Only the login path ever sees the stored hash. (~1730 tok)
 
 ## src/lib/auth/ (2026-09-02 genişletildi)
 

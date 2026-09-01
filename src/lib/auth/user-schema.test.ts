@@ -3,6 +3,7 @@ import {
   createUserSchema,
   DEFAULT_OWNER_USERNAME,
   localOwnerUser,
+  MIN_PASSWORD_LENGTH,
   normalizeUsername,
   OWNER_WORKSPACE_ID,
   ownerUsername,
@@ -38,13 +39,21 @@ describe("usernameSchema", () => {
 });
 
 describe("createUserSchema", () => {
-  it("requires a password of at least ten characters", () => {
-    expect(createUserSchema.safeParse({ username: "reader", password: "short" }).success).toBe(
+  it("enforces the minimum password length and nothing stricter", () => {
+    const tooShort = "x".repeat(MIN_PASSWORD_LENGTH - 1);
+    const justLong = "x".repeat(MIN_PASSWORD_LENGTH);
+    expect(createUserSchema.safeParse({ username: "reader", password: tooShort }).success).toBe(
       false,
     );
+    expect(createUserSchema.safeParse({ username: "reader", password: justLong }).success).toBe(
+      true,
+    );
+  });
+
+  it("rejects a password beyond the upper bound", () => {
     expect(
-      createUserSchema.safeParse({ username: "reader", password: "0123456789" }).success,
-    ).toBe(true);
+      createUserSchema.safeParse({ username: "reader", password: "x".repeat(201) }).success,
+    ).toBe(false);
   });
 
   it("reports a human-readable reason rather than a raw schema path", () => {

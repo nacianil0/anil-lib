@@ -60,7 +60,15 @@ export const getSessionUser = cache(async function getSessionUser(): Promise<Rea
   // it reaches a `::uuid` cast.
   if (!UUID_PATTERN.test(claims.userId)) return null;
 
-  const user = await findUserById(sql, claims.userId);
+  // A database hiccup must not become a 500 on every page and server action; treat
+  // it as "no session" so the request lands on the login screen instead.
+  let user;
+  try {
+    user = await findUserById(sql, claims.userId);
+  } catch (error) {
+    console.error("[auth] session lookup failed", error);
+    return null;
+  }
   if (!user) return null;
   // Defence in depth: the workspace in the cookie must match the stored account.
   if (user.workspaceId !== claims.workspaceId) return null;
