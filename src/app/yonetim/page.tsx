@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Home, Users } from "lucide-react";
-import { requireOwnerUser } from "@/lib/auth/session-user";
-import { getUserStatsOverview } from "@/lib/stats/server/user-stats";
+import { notFound } from "next/navigation";
+import { getSessionUser } from "@/lib/auth/session-user";
+import { getUserStatsOverview, type OverviewResult } from "@/lib/stats/server/user-stats";
 import { formatDateTime } from "@/lib/stats/format";
 import { CreateUserForm } from "./create-user-form";
 
@@ -13,9 +14,69 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+/** Owner-only screen, so the real reason is shown rather than hidden behind a 500. */
+function Failure({ detail }: { detail: string }) {
+  return (
+    <main className="mx-auto max-w-2xl px-5 py-12 sm:px-8">
+      <h1 className="font-serif text-2xl font-semibold text-text">Kullanıcılar</h1>
+      <p
+        role="status"
+        className="mt-4 rounded border border-accent-soft bg-accent-soft px-4 py-3 font-sans text-sm leading-relaxed text-accent"
+      >
+        {detail}
+      </p>
+      <Link
+        href="/"
+        className="mt-6 inline-block font-sans text-2xs text-text-muted hover:text-text"
+      >
+        ← Ana sayfa
+      </Link>
+    </main>
+  );
+}
+
+/**
+ * Renders a failure instead of throwing. A thrown error here becomes an opaque 500
+ * in the browser — including on the re-render that follows a server action — which
+ * is exactly the situation this screen exists to diagnose.
+ */
+function describeError(error: unknown): string {
+  const candidate = error as {
+    code?: unknown;
+    message?: unknown;
+    sourceError?: { code?: unknown; message?: unknown };
+  } | null;
+  const code = candidate?.code ?? candidate?.sourceError?.code;
+  const message = candidate?.message ?? candidate?.sourceError?.message ?? String(error);
+  return code ? `${String(code)}: ${String(message)}` : String(message);
+}
+
 export default async function ManagementPage() {
-  const owner = await requireOwnerUser();
-  const overview = await getUserStatsOverview(owner);
+  let owner;
+  try {
+    owner = await getSessionUser();
+  } catch (error) {
+    console.error("[yonetim] session resolution failed", error);
+    return <Failure detail={`Oturum çözülemedi — ${describeError(error)}`} />;
+  }
+
+  // A signed-in standard user gets a 404 so the route's existence stays hidden. An
+  // unresolvable session is a server-side problem, not an authorization answer.
+  if (owner && owner.role !== "owner") notFound();
+  if (!owner) {
+    return (
+      <Failure detail="Oturum çözülemedi. Veritabanına ulaşılamıyorsa çıkış yapıp tekrar giriş dene." />
+    );
+  }
+
+  let overview: OverviewResult;
+  try {
+    overview = await getUserStatsOverview(owner);
+  } catch (error) {
+    console.error("[yonetim] overview failed", error);
+    return <Failure detail={`İstatistikler okunamadı — ${describeError(error)}`} />;
+  }
+
   const unavailable = overview.status !== "ok";
   const stats = overview.status === "ok" ? overview.stats : [];
   const scopeTitles = stats[0]?.series.map((entry) => entry.title) ?? [];

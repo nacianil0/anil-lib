@@ -1,6 +1,5 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { getOwnerUser } from "@/lib/auth/session-user";
 import { createUserSchema } from "@/lib/auth/user-schema";
 import { createStandardUser, DuplicateUsernameError } from "@/lib/auth/users";
@@ -85,14 +84,10 @@ export async function createUserAction(
       return { status: "error", message: `Kullanıcı oluşturulamadı — ${describeError(error)}` };
     }
 
-    // Refreshing the list must not undo a successful create: report the success
-    // even if the revalidation itself fails.
-    try {
-      revalidatePath("/yonetim");
-    } catch (error) {
-      console.error("[yonetim] revalidate failed after create", error);
-    }
-
+    // Deliberately no revalidatePath here. Revalidating makes Next re-render this
+    // page as part of the action's response, so a rendering problem would surface
+    // as a 500 on the create request and hide whether the account was actually
+    // written. The client refreshes the list separately once it has the result.
     return { status: "success", username: created.username };
   } catch (error) {
     console.error("[yonetim] createUserAction failed", error);

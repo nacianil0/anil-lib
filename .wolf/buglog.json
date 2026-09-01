@@ -3844,6 +3844,105 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-02T00:55:00Z"
+    },
+    {
+      "id": "bug-230",
+      "timestamp": "2026-09-01T21:56:09.904Z",
+      "error_message": "Missing error handling in describeError",
+      "file": "src/app/yonetim/page.tsx",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T21:56:09.904Z"
+    },
+    {
+      "id": "bug-231",
+      "timestamp": "2026-09-01T21:56:37.354Z",
+      "error_message": "Type error",
+      "file": "src/app/yonetim/actions.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T21:56:37.354Z"
+    },
+    {
+      "id": "bug-232",
+      "timestamp": "2026-09-01T21:56:44.093Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/app/yonetim/actions.ts",
+      "root_cause": "Had \"next/cache\"",
+      "fix": "Changed to \"@/lib/auth/session-user\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T21:56:44.093Z"
+    },
+    {
+      "id": "bug-233",
+      "timestamp": "2026-09-01T21:56:48.454Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/app/yonetim/create-user-form.tsx",
+      "root_cause": "Had \"lucide-react\"",
+      "fix": "Changed to \"next/navigation\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T21:56:48.454Z"
+    },
+    {
+      "id": "bug-234",
+      "timestamp": "2026-09-01T21:57:39.098Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/app/yonetim/error.tsx",
+      "root_cause": "Had \"(production'",
+      "fix": "Changed to \"(production&apos;da gizlendi)\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T21:57:54.529Z"
+    },
+    {
+      "id": "bug-235",
+      "timestamp": "2026-09-02T01:15:00Z",
+      "error_message": "POST /yonetim still 500 after the server action was fully wrapped in try/catch",
+      "file": "src/app/yonetim/page.tsx",
+      "root_cause": "The throw was never in the action. revalidatePath(\"/yonetim\") makes Next re-render the page as part of the action response, and requireOwnerUser() -> notFound() sat outside any guard in that render. An unresolvable session during that re-render therefore produced a 500 on the create request instead of a 404, and hid whether the account had actually been written.",
+      "fix": "Page resolves the session itself: notFound() only for a resolved non-owner, a rendered diagnostic for an unresolvable session or a failing stats read. Removed revalidatePath from the action and moved the list refresh to router.refresh() on the client, so account creation and page rendering fail independently. Added src/app/yonetim/error.tsx showing error.digest so a production 500 is traceable in the platform log.",
+      "tags": [
+        "nextjs",
+        "server-action",
+        "render",
+        "notFound",
+        "production",
+        "500"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T01:15:00Z"
     }
   ]
 }

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:50:17.568Z
-> Files: 185 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:57:58.473Z
+> Files: 186 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -472,9 +472,10 @@
 
 ## src/app/yonetim/
 
-- `actions.ts` — Renders a failure into something the owner can act on. This screen is owner-only, (~1004 tok)
-- `create-user-form.tsx` — CreateUserForm — renders form (~984 tok)
-- `page.tsx` — dynamic — renders table (~2266 tok)
+- `actions.ts` — Renders a failure into something the owner can act on. This screen is owner-only, (~1007 tok)
+- `create-user-form.tsx` — CreateUserForm — renders form (~1082 tok)
+- `error.tsx` — Segment error boundary. Production strips the message from server errors, but the (~491 tok)
+- `page.tsx` — Owner-only screen, so the real reason is shown rather than hidden behind a 500. (~2877 tok)
 
 ## src/app/yonetim/ (2026-09-02 eklendi)
 

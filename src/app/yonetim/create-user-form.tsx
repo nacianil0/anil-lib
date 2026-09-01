@@ -1,12 +1,20 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { UserPlus } from "lucide-react";
 import { MIN_PASSWORD_LENGTH } from "@/lib/auth/user-schema";
 import { createUserAction, initialCreateUserState } from "./actions";
 
 export function CreateUserForm({ disabled }: { disabled?: boolean }) {
   const [state, action, pending] = useActionState(createUserAction, initialCreateUserState);
+  const router = useRouter();
+
+  // Refresh the list only after the create has reported back, so a rendering
+  // problem in the table can never be mistaken for a failed account creation.
+  useEffect(() => {
+    if (state.status === "success") router.refresh();
+  }, [state, router]);
 
   return (
     <form
