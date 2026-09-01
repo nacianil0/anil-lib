@@ -1989,3 +1989,11 @@ fazi tamamlandi. Faz C'nin tasarim deseni ucluu kapandi, geriye yalnizca makale 
 | 00:57 | Edited src/app/yonetim/error.tsx | 3→1 lines | ~26 |
 | 00:57 | Edited src/app/yonetim/error.tsx | inline fix | ~24 |
 | 01:00 | Session end: 24 writes across 11 files (migrate.mjs, package.json, actions.ts, users.ts, user-schema.ts) | 0 reads | ~6454 tok |
+| 01:04 | Edited src/lib/auth/password.ts | expanded (+8 lines) | ~186 |
+| 01:05 | Edited src/lib/auth/password.ts | modified derive() | ~213 |
+| 01:05 | Edited src/lib/auth/users.ts | modified updatePasswordHash() | ~162 |
+| 01:05 | Edited src/lib/auth/authenticate.ts | 7→8 lines | ~67 |
+| 01:05 | Edited src/lib/auth/authenticate.ts | added 1 condition(s) | ~122 |
+| 01:06 | Edited src/lib/auth/password.ts | 2→2 lines | ~36 |
+| 01:06 | Edited src/lib/auth/password.test.ts | expanded (+7 lines) | ~176 |
+| 01:07 | Session end: 31 writes across 14 files (migrate.mjs, package.json, actions.ts, users.ts, user-schema.ts) | 0 reads | ~7416 tok |

@@ -3943,6 +3943,70 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-02T01:15:00Z"
+    },
+    {
+      "id": "bug-236",
+      "timestamp": "2026-09-01T22:04:54.019Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/auth/password.ts",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 7→15 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T22:04:54.019Z"
+    },
+    {
+      "id": "bug-237",
+      "timestamp": "2026-09-01T22:05:25.777Z",
+      "error_message": "Missing await",
+      "file": "src/lib/auth/users.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T22:05:25.777Z"
+    },
+    {
+      "id": "bug-238",
+      "timestamp": "2026-09-01T22:06:08.696Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/auth/password.ts",
+      "root_cause": "Had \"scrypt$32768$8$1$X66gHBvcCQhi+jyHm6kqsw==$oZa3U6l",
+      "fix": "Changed to \"scrypt$16384$8$1$rqI9sHPT+wKjgZ1bYwvKeQ==$IwnZowe",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T22:06:08.696Z"
+    },
+    {
+      "id": "bug-239",
+      "timestamp": "2026-09-01T22:06:15.640Z",
+      "error_message": "Type error",
+      "file": "src/lib/auth/password.test.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T22:06:15.640Z"
     }
   ]
 }

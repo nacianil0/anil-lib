@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T21:57:58.473Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-01T22:06:15.619Z
 > Files: 186 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
@@ -504,17 +504,17 @@
 
 ## src/lib/auth/
 
-- `authenticate.ts` — Verifies a username/password pair. (~820 tok)
+- `authenticate.ts` — Verifies a username/password pair. (~912 tok)
 - `password-gate.test.ts` — Declares TEST_PASSWORD (~2254 tok)
 - `password-gate.ts` — Signed cookie payload. Identity lives here so the Edge middleware can authenticate (~1696 tok)
-- `password.test.ts` — Declares PASSWORD (~850 tok)
-- `password.ts` — Password hashing for reader accounts. (~887 tok)
+- `password.test.ts` — Declares PASSWORD (~1233 tok)
+- `password.ts` — Password hashing for reader accounts. (~1102 tok)
 - `require-reader-session.ts` — Authorizes a reader API request from the signed cookie alone — no database round (~580 tok)
 - `session-user.ts` — Resolves the signed cookie to a real account. Deduplicated per request so a page (~1001 tok)
 - `user-schema.test.ts` — Declares tooShort (~869 tok)
 - `user-schema.ts` — Accounts are keyed by the workspace column every reader table is already partitioned by. (~688 tok)
 - `users.test.ts` — Declares Call (~1473 tok)
-- `users.ts` — Internal shape. Only the login path ever sees the stored hash. (~1730 tok)
+- `users.ts` — Internal shape. Only the login path ever sees the stored hash. (~1879 tok)
 
 ## src/lib/auth/ (2026-09-02 genişletildi)
 

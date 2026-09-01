@@ -8,12 +8,20 @@
 import { randomBytes, scrypt as scryptCallback, timingSafeEqual } from "node:crypto";
 
 const SCHEME = "scrypt";
-const COST = 32_768;
+/**
+ * scrypt allocates `128 * COST * BLOCK_SIZE` bytes in one go — 16 MB here.
+ *
+ * Sized for a small serverless function: this app runs on 256 MB, where a Next.js
+ * render plus a 32 MB allocation risks killing the process outright, and a killed
+ * process runs no error handler. Verification reads the parameters back out of each
+ * stored hash, so hashes written with older, heavier settings keep working.
+ */
+const COST = 16_384;
 const BLOCK_SIZE = 8;
 const PARALLELISM = 1;
 const KEY_LENGTH = 32;
-/** 128 * COST * BLOCK_SIZE is ~32 MB; leave headroom above the 32 MB default. */
-const MAX_MEMORY = 96 * 1024 * 1024;
+/** Node's own default. Anything larger than the allocation above is unnecessary. */
+const MAX_MEMORY = 32 * 1024 * 1024;
 
 /**
  * A syntactically valid hash of a value nobody knows. Verifying against it makes a
@@ -21,7 +29,7 @@ const MAX_MEMORY = 96 * 1024 * 1024;
  * not leak which usernames exist.
  */
 export const DUMMY_PASSWORD_HASH =
-  "scrypt$32768$8$1$X66gHBvcCQhi+jyHm6kqsw==$oZa3U6lwTFLfhwqsKMd+Tag57wHEeLPhfyQmq8z+GhM=";
+  "scrypt$16384$8$1$rqI9sHPT+wKjgZ1bYwvKeQ==$IwnZowezWq9zqmXj8Ct1ArkqPZ8skex2xAnV1mVUhuM=";
 
 function derive(
   password: string,
@@ -30,12 +38,21 @@ function derive(
   blockSize: number,
   parallelism: number,
 ): Promise<Buffer> {
+  // The ceiling has to follow the parameters actually being used, not the current
+  // defaults: a hash written with heavier settings must still verify, otherwise
+  // lowering the defaults would lock every existing account out.
+  const required = 128 * cost * blockSize * 2;
   return new Promise((resolve, reject) => {
     scryptCallback(
       password.normalize("NFKC"),
       salt,
       KEY_LENGTH,
-      { N: cost, r: blockSize, p: parallelism, maxmem: MAX_MEMORY },
+      {
+        N: cost,
+        r: blockSize,
+        p: parallelism,
+        maxmem: Math.max(MAX_MEMORY, required),
+      },
       (error, key) => (error ? reject(error) : resolve(key)),
     );
   });

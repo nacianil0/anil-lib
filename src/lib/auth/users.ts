@@ -158,6 +158,23 @@ export async function recordLogin(sql: SqlClient, userId: string): Promise<void>
  * just verified, so the password is never stored or logged anywhere else. Guarded on
  * the old scheme so a concurrent login cannot downgrade an already-upgraded row.
  */
+/**
+ * Rewrites a stored hash with the current parameters. Used when an account still
+ * carries heavier settings than the ones in use, so the expensive shape is not
+ * re-derived on every future sign-in.
+ */
+export async function updatePasswordHash(
+  sql: SqlClient,
+  userId: string,
+  password: string,
+): Promise<void> {
+  const passwordHash = await hashPassword(password);
+  await sql.query(
+    `UPDATE users SET password_hash = $2, hash_scheme = 'scrypt' WHERE id = $1::uuid`,
+    [userId, passwordHash],
+  );
+}
+
 export async function upgradeOwnerToScrypt(
   sql: SqlClient,
   userId: string,

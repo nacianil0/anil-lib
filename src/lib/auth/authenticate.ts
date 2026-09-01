@@ -1,11 +1,12 @@
 import "server-only";
 
 import { verifyLegacyPasswordHash } from "@/lib/auth/password-gate";
-import { DUMMY_PASSWORD_HASH, verifyPassword } from "@/lib/auth/password";
+import { DUMMY_PASSWORD_HASH, needsRehash, verifyPassword } from "@/lib/auth/password";
 import {
   ensureOwnerUser,
   findCredentialsByUsername,
   recordLogin,
+  updatePasswordHash,
   upgradeOwnerToScrypt,
 } from "@/lib/auth/users";
 import {
@@ -69,7 +70,13 @@ export async function authenticateUser(
   if (!ok) return { status: "invalid" };
 
   try {
-    if (usesLegacyScheme) await upgradeOwnerToScrypt(sql, credentials.id, password);
+    if (usesLegacyScheme) {
+      await upgradeOwnerToScrypt(sql, credentials.id, password);
+    } else if (needsRehash(credentials.passwordHash)) {
+      // Stored with different parameters than the current ones; rewrite it now so
+      // the heavier derivation is not repeated on every future sign-in.
+      await updatePasswordHash(sql, credentials.id, password);
+    }
     await recordLogin(sql, credentials.id);
   } catch (error) {
     // A failed bookkeeping write must not block a correct sign-in.
