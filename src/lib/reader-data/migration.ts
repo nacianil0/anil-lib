@@ -7,11 +7,12 @@ function validIso(value: string, fallback: string): string {
 
 export function migrateLegacyProgress(
   rawProgress: string | null,
+  workspaceId: string,
   deviceId = crypto.randomUUID(),
   now = new Date().toISOString(),
 ): ReaderData {
   const legacy = parseProgress(rawProgress);
-  const next = emptyReaderData(deviceId);
+  const next = emptyReaderData(workspaceId, deviceId);
   next.currentArticleId = legacy.currentArticleId;
 
   for (const [articleId, entry] of Object.entries(legacy.articles)) {

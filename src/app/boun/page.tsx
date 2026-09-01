@@ -7,15 +7,24 @@ import {
   loadBounRoadmap,
 } from "@/lib/content/series-boun";
 import { SeriesLanding } from "@/components/series/series-landing";
+import { requireSessionUser } from "@/lib/auth/session-user";
+
+/**
+ * Renders per request: the page resolves the signed-in account and scopes reader
+ * state to it, so it must never be prerendered into shared static HTML.
+ */
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: BOUN_TITLE,
   description: BOUN_SUBTITLE,
 };
 
-export default function BounPage() {
+export default async function BounPage() {
+  const user = await requireSessionUser();
   return (
     <SeriesLanding
+      workspaceId={user.workspaceId}
       roadmap={loadBounRoadmap()}
       articles={getBounDescriptors()}
       basePath={BOUN_BASE_PATH}

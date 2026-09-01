@@ -16,13 +16,20 @@ type SqlClient = NeonQueryFunction<false, false>;
 
 const MAX_FUTURE_SKEW_MS = 5 * 60 * 1000;
 
-/** Ana kütüphane ∪ AI serisi ∪ BOUN serisi; bilinmeyen id reddedilir. */
-function validArticleIds(): Set<string> {
-  return new Set([
-    ...loadCatalog().articles.map((article) => article.articleId),
+/**
+ * AI serisi ∪ BOUN serisi, owner workspace'inde ayrıca arşiv; bilinmeyen id reddedilir.
+ * Arşiv yazıları normal kullanıcı arayüzünde yok, bu yüzden o id'lere ilerleme
+ * yazılması da sunucu tarafında engellenir.
+ */
+function validArticleIds(allowArchive: boolean): Set<string> {
+  const ids = [
     ...loadSeriesCatalog().articles.map((article) => article.articleId),
     ...loadBounCatalog().articles.map((article) => article.articleId),
-  ]);
+  ];
+  if (allowArchive) {
+    ids.push(...loadCatalog().articles.map((article) => article.articleId));
+  }
+  return new Set(ids);
 }
 
 function timestampIsValid(value: string, now: number): boolean {
@@ -217,9 +224,10 @@ export async function synchronizeReaderData(
   workspaceId: string,
   cursor: number,
   operations: SyncMutation[],
+  options: { allowArchive: boolean },
 ): Promise<SyncResponse> {
   const now = Date.now();
-  const articleIds = validArticleIds();
+  const articleIds = validArticleIds(options.allowArchive);
   const errors: SyncOperationError[] = [];
   const accepted = operations.filter((operation) => {
     const articleId = operation.payload.articleId;

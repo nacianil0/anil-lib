@@ -20,8 +20,14 @@ export type ProgressContextValue = {
 };
 
 /** Compatibility boundary while existing reader components consume the progress-only API. */
-export function ReaderProgressProvider({ children }: { children: ReactNode }) {
-  return <ReaderDataProvider>{children}</ReaderDataProvider>;
+export function ReaderProgressProvider({
+  children,
+  workspaceId,
+}: {
+  children: ReactNode;
+  workspaceId: string;
+}) {
+  return <ReaderDataProvider workspaceId={workspaceId}>{children}</ReaderDataProvider>;
 }
 
 export function useReaderProgress(): ProgressContextValue {

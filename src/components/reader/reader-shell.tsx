@@ -302,10 +302,10 @@ function ReaderShellInner({
   );
 }
 
-export function ReaderShell(props: Props) {
+export function ReaderShell({ workspaceId, ...props }: Props & { workspaceId: string }) {
   return (
     <ReaderPreferencesProvider>
-      <ReaderProgressProvider>
+      <ReaderProgressProvider workspaceId={workspaceId}>
         <ReaderShellInner {...props} />
       </ReaderProgressProvider>
     </ReaderPreferencesProvider>

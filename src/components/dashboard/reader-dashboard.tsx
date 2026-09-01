@@ -9,9 +9,10 @@ import {
   Library,
   RotateCcw,
   Sparkles,
+  Users,
 } from "lucide-react";
 import type { ArticleDescriptor } from "@/lib/content/types";
-import { CATEGORY_LABELS, UI } from "@/lib/content/labels";
+import { UI } from "@/lib/content/labels";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
 import { LockButton } from "@/components/reader/lock-button";
@@ -38,18 +39,24 @@ export type DashboardSeries = {
 };
 
 type DashboardProps = {
-  articles: ArticleDescriptor[];
+  workspaceId: string;
   series: DashboardSeries[];
+  /**
+   * Seri öncesi yazılar. Standard kullanıcıda daima boştur; owner'da arşiv girişini
+   * ve kendi eski kayıtlarının listelerde görünmesini sağlar.
+   */
+  archive: ArticleDescriptor[];
+  isOwner: boolean;
+  username: string;
 };
 
-function DashboardContent({ articles, series }: DashboardProps) {
+function DashboardContent({ series, archive, isOwner, username }: DashboardProps) {
   const { ready, data, statusOf } = useReaderData();
+
   const seriesArticles = series.flatMap((entry) => entry.articles);
-  const byId = new Map(
-    [...articles, ...seriesArticles].map((article) => [article.articleId, article]),
-  );
-  // Bir makalenin rotası hangi katalogdan geldiğine bağlıdır; bilinmeyen id ana
-  // kütüphaneye düşer, böylece seri eklemek bu haritayı kırmaz.
+  // Görünür küme kullanıcıya göre değişir: seri dışı yazılar yalnızca owner'da var.
+  const visible = [...seriesArticles, ...archive];
+  const byId = new Map(visible.map((article) => [article.articleId, article]));
   const basePathById = new Map(
     series.flatMap((entry) =>
       entry.articles.map((article) => [article.articleId, entry.basePath] as const),
@@ -57,25 +64,24 @@ function DashboardContent({ articles, series }: DashboardProps) {
   );
   const hrefFor = (article: ArticleDescriptor) =>
     `${basePathById.get(article.articleId) ?? "/read"}/${article.slug}`;
-  const progressEntries = Object.values(data.progress).sort((a, b) =>
-    b.lastReadAt.localeCompare(a.lastReadAt),
-  );
-  const currentId = data.currentArticleId ?? progressEntries[0]?.articleId;
-  const current = (currentId ? byId.get(currentId) : undefined) ?? articles[0];
+
+  const progressEntries = Object.values(data.progress)
+    .filter((entry) => byId.has(entry.articleId))
+    .sort((a, b) => b.lastReadAt.localeCompare(a.lastReadAt));
+  const currentId =
+    (data.currentArticleId && byId.has(data.currentArticleId) ? data.currentArticleId : null) ??
+    progressEntries[0]?.articleId;
+  const current = (currentId ? byId.get(currentId) : undefined) ?? seriesArticles[0];
   const currentProgress = current ? data.progress[current.articleId] : null;
+  const currentBase = current ? basePathById.get(current.articleId) : undefined;
+  const currentSeries = series.find((entry) => entry.basePath === currentBase);
+
   const places = Object.values(data.savedPlaces)
     .filter((place) => !place.deletedAt && byId.has(place.articleId))
     .sort((a, b) => b.clientUpdatedAt.localeCompare(a.clientUpdatedAt));
   const highlights = Object.values(data.highlights)
     .filter((highlight) => !highlight.deletedAt && byId.has(highlight.articleId))
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-  const completed = articles.filter(
-    (article) => statusOf(article.articleId) === "completed",
-  ).length;
-  const inProgress = articles.filter(
-    (article) => statusOf(article.articleId) === "in-progress",
-  ).length;
-  const percent = articles.length ? Math.round((completed / articles.length) * 100) : 0;
 
   return (
     <div className="min-h-screen bg-bg text-text">
@@ -83,9 +89,18 @@ function DashboardContent({ articles, series }: DashboardProps) {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
           <div>
             <p className="font-serif text-xl font-semibold">{UI.libraryTitle}</p>
-            <p className="mt-0.5 font-sans text-2xs text-text-muted">Okuma çalışma alanın</p>
+            <p className="mt-0.5 font-sans text-2xs text-text-muted">{username} · okuma alanın</p>
           </div>
           <div className="flex items-center gap-1">
+            {isOwner && (
+              <Link
+                href="/yonetim"
+                className="mr-1 inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:text-text"
+              >
+                <Users className="h-3.5 w-3.5" aria-hidden="true" />
+                Kullanıcılar
+              </Link>
+            )}
             <SyncStatus />
             <LockButton />
           </div>
@@ -93,63 +108,42 @@ function DashboardContent({ articles, series }: DashboardProps) {
       </header>
 
       <main className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
-        <div className="mb-10 grid gap-8 border-b border-border pb-10 lg:grid-cols-[1.45fr_0.55fr]">
-          <section>
-            <p className="mb-3 font-mono text-2xs uppercase tracking-[0.22em] text-accent">
-              Okumaya devam et
-            </p>
-            {current ? (
-              <>
-                <h1 className="max-w-3xl font-serif text-3xl font-semibold leading-tight sm:text-5xl">
-                  {current.title}
-                </h1>
-                <p className="mt-3 font-sans text-sm text-text-muted">
-                  {CATEGORY_LABELS[current.category]}
-                  {currentProgress && ` · %${Math.round(currentProgress.scrollRatio * 100)}`}
-                </p>
-                <Link
-                  href={hrefFor(current)}
-                  className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
-                >
-                  Okumaya dön
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </>
-            ) : (
-              <p className="font-sans text-sm text-text-muted">Okuma listesi boş.</p>
-            )}
-          </section>
+        <section className="mb-10 border-b border-border pb-10">
+          <p className="mb-3 font-mono text-2xs uppercase tracking-[0.22em] text-accent">
+            Okumaya devam et
+          </p>
+          {current ? (
+            <>
+              <h1 className="max-w-3xl font-serif text-3xl font-semibold leading-tight sm:text-5xl">
+                {current.title}
+              </h1>
+              <p className="mt-3 font-sans text-sm text-text-muted">
+                {currentSeries ? currentSeries.title : "Arşiv"}
+                {currentProgress && ` · %${Math.round(currentProgress.scrollRatio * 100)}`}
+              </p>
+              <Link
+                href={hrefFor(current)}
+                className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
+              >
+                Okumaya dön
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </>
+          ) : (
+            <p className="font-sans text-sm text-text-muted">Okuma listesi boş.</p>
+          )}
+        </section>
 
-          <section className="border-l-0 border-border lg:border-l lg:pl-8">
-            <div className="flex items-end justify-between">
-              <span className="font-serif text-5xl font-semibold tabular-nums">%{percent}</span>
-              <Library className="mb-1 h-6 w-6 text-accent" aria-hidden="true" />
-            </div>
-            <div className="mt-4 h-1 overflow-hidden rounded-full bg-border">
-              <div className="h-full bg-accent" style={{ width: `${percent}%` }} />
-            </div>
-            <dl className="mt-5 grid grid-cols-3 gap-2 text-center font-sans">
-              <div>
-                <dt className="text-2xs text-text-faint">Tamamlandı</dt>
-                <dd className="mt-1 text-lg font-semibold">{completed}</dd>
-              </div>
-              <div>
-                <dt className="text-2xs text-text-faint">Devam</dt>
-                <dd className="mt-1 text-lg font-semibold">{inProgress}</dd>
-              </div>
-              <div>
-                <dt className="text-2xs text-text-faint">Toplam</dt>
-                <dd className="mt-1 text-lg font-semibold">{articles.length}</dd>
-              </div>
-            </dl>
-          </section>
-        </div>
-
+        {/* Her seri kendi ilerlemesini gösterir; tek bir birleşik yüzde iki seriyi
+            birbirine karıştırırdı. */}
         <div className="mb-10 flex flex-col gap-4">
           {series.map((entry) => {
             const entryCompleted = entry.articles.filter(
               (article) => statusOf(article.articleId) === "completed",
             ).length;
+            const percent = entry.articles.length
+              ? Math.round((entryCompleted / entry.articles.length) * 100)
+              : 0;
             const titleId = `series-entry-title-${entry.key}`;
             return (
               <section
@@ -158,7 +152,7 @@ function DashboardContent({ articles, series }: DashboardProps) {
                 className="rounded-md border border-border bg-surface p-5 sm:p-6"
               >
                 <div className="flex flex-wrap items-end justify-between gap-4">
-                  <div>
+                  <div className="min-w-0">
                     <p className="mb-2 flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.22em] text-cool">
                       <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                       Öğrenme serisi · Yaşayan yol haritası
@@ -169,9 +163,6 @@ function DashboardContent({ articles, series }: DashboardProps) {
                     <p className="mt-1.5 max-w-xl font-sans text-sm leading-relaxed text-text-muted">
                       {entry.subtitle}
                     </p>
-                    <p className="mt-3 font-sans text-2xs text-text-faint">
-                      {entry.articles.length} makale yayında · {entryCompleted} tamamladın
-                    </p>
                   </div>
                   <Link
                     href={entry.basePath}
@@ -181,9 +172,37 @@ function DashboardContent({ articles, series }: DashboardProps) {
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
+
+                <div className="mt-5 flex items-center gap-4">
+                  <span className="font-serif text-2xl font-semibold tabular-nums">
+                    %{ready ? percent : 0}
+                  </span>
+                  <span className="h-1 flex-1 overflow-hidden rounded-full bg-border">
+                    <span
+                      className="block h-full bg-accent transition-[width]"
+                      style={{ width: `${ready ? percent : 0}%` }}
+                    />
+                  </span>
+                  <span className="whitespace-nowrap font-sans text-2xs text-text-faint">
+                    {entryCompleted}/{entry.articles.length} tamamlandı
+                  </span>
+                </div>
               </section>
             );
           })}
+
+          {isOwner && archive.length > 0 && (
+            <Link
+              href="/read"
+              className="flex items-center justify-between rounded-md border border-dashed border-border px-5 py-3.5 transition-colors hover:bg-surface-muted"
+            >
+              <span className="flex items-center gap-2 font-sans text-sm text-text-muted">
+                <Library className="h-4 w-4 text-text-faint" aria-hidden="true" />
+                Arşiv · {archive.length} seri öncesi yazı
+              </span>
+              <ArrowRight className="h-4 w-4 text-text-faint" aria-hidden="true" />
+            </Link>
+          )}
         </div>
 
         {!ready ? (
@@ -319,7 +338,7 @@ function DashboardContent({ articles, series }: DashboardProps) {
 export function ReaderDashboard(props: DashboardProps) {
   return (
     <ReaderPreferencesProvider>
-      <ReaderDataProvider>
+      <ReaderDataProvider workspaceId={props.workspaceId}>
         <DashboardContent {...props} />
       </ReaderDataProvider>
     </ReaderPreferencesProvider>

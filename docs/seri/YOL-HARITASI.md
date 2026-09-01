@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-08-30 · Yayında: 1–34 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5 + Batch 6 + Batch 7) · Sıradaki güvenli başlangıç: 35
+Son güncelleme: 2026-09-01 · Yayında: 1–38 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5 + Batch 6 + Batch 7 + Batch 8) · Sıradaki güvenli başlangıç: 39
 
 ## Serinin tezi
 
@@ -54,9 +54,9 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | açık |
 | Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | açık |
 | Kirliliğin değerlendirmeye etkisi ve ezberin benchmark'lara yansıması | 8, 16, 18, 31 | 72 | açık |
-| Doğrulayıcıların eğitimi ve modelin kendi cevabını kontrol etmesi | 33, 34 | 35 | açık |
-| Birden çok yol deneyip aralarında oy verme (self-consistency, arama) | 33 | 36 | açık |
-| Adımların tek tek ödüllendirilmesi (süreç denetimi) | 34 | 38 | açık |
+| Doğrulayıcıların eğitimi ve modelin kendi cevabını kontrol etmesi | 33, 34 | 35 | ödendi (Batch 8) |
+| Birden çok yol deneyip aralarında oy verme (öz-tutarlılık, arama) | 33 | 36 | ödendi (Batch 8) |
+| Adımların tek tek ödüllendirilmesi (süreç denetimi) | 34 | 38 | ödendi (Batch 8) |
 | Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6, 18 | 74–77 | açık |
 | Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | açık |
 | Uzmanlar karışımı mimarisinin kurulumu | 20 | 85 | açık |
@@ -99,6 +99,13 @@ ağırlık yayımlamanın güvenlik tarafı (34 → 61–70); damıtmanın temel
 (34 → 87). Batch 7 üç yeni numaralı koordinat açtı — 35, 36 ve 38 — ve ikisini (32, 33)
 ödedi; 31'in kirlilik göndermesi defterde zaten kayıtlı olan 72 koordinatına dördüncü kaynak
 makale olarak eklendi.
+
+**Numarasız ileri işaretler — Batch 8'de verildi.** Aramanın ihtiyaç duyduğu iki bileşenin
+(durum bilgisi ve doğrulama) araçlarla dışarıdan alınması (36 → ajan fazı, 51–60); bir sohbet
+içinde biriken bilginin taşınması (38 → 39, sonraki makale olduğu için numarasız bırakıldı).
+Batch 8 **yeni bir açık numaralı koordinat açmadı**: 35'in verdiği tek numaralı vaat (token
+düzeyinde puanlamanın tam kurulumu → 38) aynı run içinde ödendi. Batch 8 üç koordinatı — 35,
+36 ve 38 — kapattı; defterde açık kalan en yakın koordinat 39'dur.
 
 ## Fazlar ve başlıklar
 
@@ -143,14 +150,14 @@ makale olarak eklendi.
 
 ### Faz 4 — Akıl Yürütme: Reasoning ve Test-Time Compute (31–40)
 
-31. **Akıl Yürütme Nedir? Tanım, Ölçüm ve Tartışma** — kavramın kendisi ve ölçümü.
-32. **Düşünce Zinciri: Ara Adımların Gücü ve Sınırı** — ara adımların gücü ve mekanizması.
-33. **Çıkarım Anında Hesap: Düşünme Süresi Satın Almak** — çıkarımda ölçekleme.
-34. **Akıl Yürüten Modeller: Doğrulanabilir Ödülle Eğitim** — akıl yürütmeye eğitilmiş modeller; matematik ve kodun test alanı rolü.
-35. **Doğrulama: Modelin Cevabını Kontrol Etmek** — verifier'lar, self-check.
-36. **Arama ve Planlama: Self-Consistency ve Ağaçlar** — birden çok yol deneme.
-37. **Pekiştirmeli Öğrenmenin Temelleri: MDP, Politika, Ödül** — 13 (RLHF) ve 34'ün (RLVR) biçimsel zemini; "değer" teriminin dikkat üçlüsündeki değerden ayrışması.
-38. **Süreç Denetimi: Adım Adım Ödüllendirme** — outcome vs process supervision.
+31. **Akıl Yürütme Nedir? Tanım, Ölçüm ve Tartışma** — kavramın kendisi ve ölçümü. `[yayında]`
+32. **Düşünce Zinciri: Ara Adımların Gücü ve Sınırı** — ara adımların gücü ve mekanizması. `[yayında]`
+33. **Çıkarım Anında Hesap: Düşünme Süresi Satın Almak** — çıkarımda ölçekleme. `[yayında]`
+34. **Akıl Yürüten Modeller: Doğrulanabilir Ödülle Eğitim** — akıl yürütmeye eğitilmiş modeller; matematik ve kodun test alanı rolü. `[yayında]`
+35. **Doğrulama: Modelin Cevabını Kontrol Etmek** — doğrulayıcının eğitimi, iki hata türü, öz-düzeltmenin sınırı. `[yayında]`
+36. **Arama ve Planlama: Öz-Tutarlılık ve Ağaçlar** — birden çok yol deneme; oylama ve ağaç araması. `[yayında]`
+37. **Pekiştirmeli Öğrenmenin Temelleri: Markov Karar Süreci, Politika ve Ödül** — 13 (RLHF) ve 34'ün (RLVR) biçimsel zemini; "değer" teriminin dikkat üçlüsündeki değerden ayrışması. `[yayında]`
+38. **Süreç Denetimi: Adım Adım Ödüllendirme** — sonuç denetimi ↔ süreç denetimi; adım etiketinin maliyeti. `[yayında]`
 39. **Bellek: Sohbet İçinde ve Sohbetler Arasında** — bağlam, özetleme, kalıcı bellek.
 40. **Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık** — long-horizon problemi.
 
@@ -344,12 +351,18 @@ gerçekleşen graf yine daha yoğun çıktı.
 - 33 ← 32 (uzayan üretim bir maliyet kararıdır; zincirin çağrı dışına taşınması), 9 ("çıkarım anında hesap harcama ekseni 33'te" borcu; log-log doğrusu), 26 ve 28 (2N işlem, ön dolum ↔ adım adım üretim, önek paylaşımı, yığınlama, iki gecikme ölçüsü), 10 (üretim bir çekiliştir), 8 (6ND kuralı), 20 (GPT-3'ün 3,14×10²³ işlemi), 16 (zorluk kestiriminin de ölçüm olduğu uyarısı), 35 ve 36 (ileri bağlar) `[yayında]`
 - 34 ← 33 (örneklemenin limiti modelin dağılımıyla belirlenir; kapsama ölçüsü), 13 (ödül modeli, aşırı optimizasyon, KL cezası, kırpma), 11 (post-training haritasının kenarındaki durak; hizalama vergisi), 12 (sentetik veri), 30 (biçim kuralı bu kez ara adımları koruyor), 31 (sadakat sorusunun eğitim tarafındaki karşılığı), 22 ve 23 (bu modellerde birkaç örnekli istem zarar veriyor), 19 ve 20 (ince ayar hizalamayı bozar; açık ağırlık), 38 (ileri bağ) `[yayında]`
 
-**Batch 8 taslağı (35'ten devam).** Yayımlanmış borçlardan türetilmiştir; batch hazırlığında güncellenir:
+**Batch 8 (35–38) — gerçekleşen graf.** Yazılan metinde fiilen kullanılan bağlar; taslak dört
+satırlıktı, gerçekleşen graf yine daha yoğun çıktı.
 
-- 35 ← 33 ve 34 ("doğrulayıcı 35'te" borcu), 30 (sözdizimsel geçerlilik ≠ anlamsal geçerlilik), 28 (üret-doğrula asimetrisi), 17 (uydurmayı yakalamak), 13 (ödül modeli bir doğrulayıcı biçimidir)
-- 36 ← 33 ("birden çok yol ve oy verme 36'da" borcu), 10 (üretim bir çekiliştir; sıcaklık), 32 (aynı soruya farklı zincirler), 30 (yerel maske ↔ küresel olasılık ayrışması), 35 (seçiciyi kim sağlar)
-- 37 ← 13 ("pekiştirmeli öğrenmenin biçimsel çerçevesi 37'de" borcu), 34 (GRPO'nun avantaj tanımı), 6 (dikkat üçlüsündeki "değer" ile RL "değer"inin ayrışması), 2 (kayıp ↔ ödül simetrisi)
-- 38 ← 34 ("adım adım ödüllendirme 38'de" borcu), 35 (doğrulayıcı türleri), 32 (zincirin adımları), 13 (etiketleyici maliyeti)
+- 35 ← 33 (kapsama ↔ seçim açığı; en iyi-N seçimi ve çoğunluk oyu; doğrulayıcının faturayı ikiye katlaması), 34 (kural tabanlı ödül; sonuç ödülü gerekçeyi denetlemez; doğru cevaba varan çözümleri saklayan filtrenin kardeşi), 13 (ödül modeli, aşırı optimizasyon, Gao ve ark.'nın ölçümü, KL ıraksaması; "doğrulamak üretmekten kolaydır" borcu), 28 (spekülatif üretimde doğrulama tek geçişte ve gerçekten ucuz), 32 (ara adımsız cevap için ince ayarda 20,6 → 5,2), 38 (ileri bağ: token düzeyinde puanlama) `[yayında]`
+- 36 ← 35 (doğrulayıcının bedeli ve iki hata türü; büyük üretici ↔ küçük değerlendirici), 33 (çoğunluk oyu, kapsama, paralel eksen, ön dolumun bir kez ödenmesi), 10 (üretim bir çekiliştir; sıcaklık ve kesme kuralları; ışın aramasının ileri okuma notu), 32 (aynı soruya farklı zincirler; zincir cevabı belirler), 30 (yerel olasılık ↔ küresel cevap ayrışması; sabit cevap kümesi zorunluluğu), 34 (öz-tutarlılıkla ulaşılan 86,7), 28 (gecikme ↔ iş hacmi ayrımı), 16 (tutarlılığın kalibrasyon okuması), 6 (RL "değer"i uyarısı, ileri bağ) `[yayında]`
+- 37 ← 13 (politika, ödül modeli, kırpma, KL cezası; "biçimsel çerçeve ileride" borcu), 34 (grup göreli avantaj; 32.768 token'lık cevap; dağılımın daralması), 36 (politika ağı ↔ değer ağı; oylamanın kaynağı çeşitliliktir), 6 (dikkat üçlüsündeki değerden ayrışma), 10 (üretim bir çekiliş = eylem seçimi), 33 (düşünme token'larının faturası), 2 (gradyan inişi döngüsü; kayıp ↔ hata sinyali), 1 (denetimli öğrenmeden ayrım), 4 (sözlük = eylem kümesi), 19 (ikinci bir ağın bellek maliyeti) `[yayında]`
+- 38 ← 37 (kredi atama; değer işlevi; avantaj), 34 ("adım adım ödüllendirme 38'de" borcu; sonuç ödülünün gerekçeyi denetlememesi), 35 (doğrulayıcı türleri; token düzeyinde puanlama ipucu; dört yüz aday eşiği), 31 (sadakat sorusu), 33 (en iyi-N seçimi), 16 (bir puanın hangi dağılımda ölçüldüğü), 21 (durumsuzluk, ileri bağ) `[yayında]`
+
+**Batch 9 taslağı (39'dan devam).** Yayımlanmış borçlardan türetilmiştir; batch hazırlığında güncellenir:
+
+- 39 ← 21 ("sohbetler arası kalıcı bellek 39'da" borcu; durumsuzluk), 25 (pencereyi büyütmenin bedeli ve etkin uzunluk), 24 (sohbet biçimi ve sabit önek), 26 (önbelleğin tek çalışma boyunca yaşaması), 18 (ağırlıktaki bilgi ↔ bağlamdaki bilgi), 29 (getirme bir bellek biçimi olarak)
+- 40 ← 39 (bellek), 36 (arama ve planlama), 33 (çıkarım bütçesi), 31 (akıl yürütmenin ölçümü), 28 (gecikme faturası)
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -770,6 +783,60 @@ Batch 0 ve Batch 1 kavramlarının 11–14'te fiilen nerede geri çağrıldığ�
 | Yetenek sınırı ↔ örnekleme verimliliği ayrımı | 34 | — | 36, 78 (beliren yetenekler), 96, 116 |
 | Damıtma (öğretmenin kalıplarını aktarmak) | 34 | — | 87 (tam kurulum), 88 (uçta yapay zekâ), 108 |
 
+### Batch 8'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 35–38'de fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 8'de gerçekleşen |
+|---|---|
+| Kapsama (33) | 35 (kapsama ↔ seçim açığı doğrulayıcının varlık sebebi), 36 (oylama kapsamayı aşamaz; 24 oyununda çöküş) ✓ |
+| Çoğunluk oyu ve en iyi-N seçimi (33) | 35 (en yüksek puanlı birkaç adayın oyu), 36 (tam kurulum), 38 (üç seçicinin karşılaştırılması) ✓ |
+| Doğrulayıcı (33) | 35 (tam kurulum), 36 (ağaçtaki değerlendirici aynı sorunu taşıyor), 38 (sonuç ve süreç denetimli biçimleri) ✓ |
+| Aşırı optimizasyon ve Goodhart (13) | 35 (en iyi-N seçimi de bir eniyilemedir; dört yüz aday eşiği) ✓ **yirmi iki makale aralıklı geri çağırma** |
+| KL ıraksaması (13) | 35 (en iyi-N seçiminin başlangıç dağılımından uzaklığı), 37 (adım boyunun kısıtı) ✓ |
+| Ödül modeli (11, 13) | 35 (etiket bedava değilse ödül modeline dönülür), 37 (döngünün genel hâli) ✓ |
+| Politika ve referans model (13) | 37 (biçimsel tanım; kırpma teriminin adı konuyor) ✓ **yirmi dört makale aralıklı geri çağırma** |
+| Grup göreli avantaj (34) | 37 (avantajın oynaklık düşürücü rolü), 38 (aynı hesabın adım düzeyine taşınması) ✓ |
+| Doğrulanabilir ödül (34) | 35 (kural tabanlı doğrulayıcı), 38 (sonuç denetiminin sınırı) ✓ |
+| Sonuç ödülü gerekçeyi denetlemez (34) | 35 (yanlış pozitifler), 37 (kredi atamanın somut hâli), 38 (çekirdek gerekçe) ✓ |
+| Sadakat (31) | 38 (süreç denetimi zinciri denetler ama sadakati garanti etmez) ✓ |
+| Yetenek sınırı ↔ örnekleme verimliliği (34) | 37 (dağılım daralınca keşif de daralır) ✓ |
+| Üretim bir çekiliştir; sıcaklık (10) | 36 (çeşitlilik kusur değil kaynaktır), 37 (çekiliş = eylem seçimi) ✓ **yirmi altı makale aralıklı** |
+| Işın araması (10, ileri okuma notu) | 36 (ışın sayısı büyüdükçe başarının düşmesi) ✓ **yirmi altı makale aralıklı geri çağırma** |
+| Yerel maske ↔ küresel olasılık ayrışması (30) | 36 (en olası zincir, en olası cevap değildir) ✓ |
+| Biçim sözleşmesi ve sabit cevap kümesi (30) | 36 (oylama ancak sabit cevap kümesinde yapılabilir) ✓ |
+| Spekülatif üretim ve doğrulama asimetrisi (28) | 35 (asimetrinin gerçekten çalıştığı üç yerden biri) ✓ |
+| Ön dolum ↔ adım adım üretim; iki gecikme ölçüsü (26, 28) | 36 (oylama paralel, ağaç düzey düzey sıralı) ✓ |
+| Ara adımların gücü (32) | 35 (ara adımsız ince ayarda 20,6 → 5,2), 36 (örneklerin yüzde 60'ı ilk adımdan sonra kaybediyor) ✓ |
+| Ölçüm disiplini: puan hangi dağılımda ölçüldü (16) | 38 (süreç doğrulayıcılarının genelleme sorunu) ✓ **yirmi iki makale aralıklı** |
+| Kalibrasyon (16) | 36 (anlaşma oranı ucuz bir belirsizlik ölçüsü) ✓ |
+| Durumsuzluk (21) | 38 (batch'i kapatan köprü) ✓ |
+| Bellek muhasebesi: ağırlık + gradyan + optimizatör (19) | 37 (ikinci bir değer modelinin maliyeti) ✓ |
+| Gradyan inişi ve kayıp (2) | 37 (değer işlevinin kendi tahminiyle öğrenilmesi) ✓ **otuz beş makale aralıklı geri çağırma** |
+| Denetimli öğrenme (1) | 37 (doğru çıktı yok, yalnızca bir sayı var) ✓ **otuz altı makale aralıklı geri çağırma** |
+| Sözlük (4) | 37 (eylem kümesi sözlüğün kendisidir) ✓ **otuz üç makale aralıklı geri çağırma** |
+| Dikkat üçlüsündeki değer (6) | 36 (uyarı konuldu), 37 (ayrım açıkça yapıldı) ✓ **otuz bir makale aralıklı** |
+
+### Batch 8'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 8'de gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Üretici ↔ doğrulayıcı ayrımı | 35 | 36 (üretim mi değerlendirme mi darboğaz), 38 | 45 (kaynak sadakati), 47–48 (araçlar doğrular), 57 (ajan değerlendirmesi) |
+| Yanlış kabul ↔ yanlış ret | 35 | 38 (doğru cevaplı çözümlerde süreç hatası) | 45, 65 (kalibrasyon), 71–73 (değerlendirme bilimi) |
+| Öz-düzeltme ve dış geri bildirim koşulu | 35 | 36 (düzeltme ile ağaç aramasının karşılaştırılması) | 40 (uzun ufuk), 51–60 (ajan döngüleri), 64 (ölçeklenebilir denetim) |
+| Seçmek de bir eniyilemedir | 35 | 38 (iyi doğrulayıcı dönüm noktasını ileri iter) | 45, 64, 101 (ölçüm disiplini) |
+| Öz-tutarlılık | 36 | 38 (çoğunluk oyu taban çizgisi olarak) | 45 (getirmede tutarlılık), 65, 101 |
+| Arama ağacı ve budama | 36 | 37 (aramanın değeri değerlendiricisi kadardır) | 51–60 (ajan döngüleri), 40, 116 |
+| Planlamanın ölçülen zayıflığı | 36 | — | 51–60, 57, 40 |
+| Markov karar süreci (durum, eylem, geçiş, bölüm) | 37 | 38 (adım etiketi bir değer kestirimidir) | 64, 94 (KL'nin biçimsel kurulumu), 96, 106–109 |
+| Değer işlevi ve eylem-değeri | 37 | 38 (otomatik adım etiketleri) | 64, 94, 96 |
+| Getiri ve iskonto | 37 | — | 40 (uzun ufuk), 60 (ajan ekonomisi), 94 |
+| Kredi atama | 37 | 38 (makalenin bütün gerekçesi) | 40, 51–60, 96 |
+| Politika gradyanı ve taban | 37 | 38 (ilerleme ödülü bir avantajdır) | 64, 94, 96 |
+| Sonuç denetimi ↔ süreç denetimi | 38 | — | 45 (kaynak sadakati), 64, 74–77 (yorumlanabilirlik) |
+| İz hatası | 38 | — | 57 (ajan değerlendirmesi), 72, 101 |
+| Adım etiketi ve maliyeti | 38 | — | 64, 71–73 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -998,6 +1065,31 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | doğrulanabilir ödülle pekiştirmeli öğrenme | (reinforcement learning with verifiable rewards, RLVR) | 34 | ödülü bir model değil, doğruluğu deterministik sınayan bir kural verir |
 | grup göreli politika optimizasyonu | (group relative policy optimization, GRPO) | 34 | avantajı ayrı bir değer modeli yerine aynı soruya üretilen cevap grubunun ortalama ve sapmasından hesaplamak; kısaltma "GRPO" serbest |
 | damıtma | (distillation) | 34 | güçlü bir modelin çözümleriyle küçük bir modeli eğitmek; tam kurulumu 87'de |
+
+| üretici | (generator) | 35 | doğrulayıcıya aday çözüm üreten model; doğrulayıcıdan ayrı eğitilir |
+| yanlış pozitif | (false positive) | 35 | yanlış bir cevabın doğru diye kabul edilmesi |
+| yanlış negatif | (false negative) | 35 | doğru bir cevabın yanlış diye reddedilmesi |
+| öz-düzeltme | (self-correction) | 35 | modelin kendi çıktısına geri bildirim yazıp yeniden yazması. Dış geri bildirim olmadan yapılan biçimi ayrıca belirtilir; 17\. makaledeki **içsel/dışsal uydurma** ile karıştırılmaz |
+| sağlam doğrulayıcı | (sound verifier) | 35 | alanın kurallarını gerçekten sınayan, yanılmayan dış bileşen |
+| öz-tutarlılık | (self-consistency) | 36 | aynı sorudan çıkan çok sayıda zincirin cevaplarını sayıp en çok uzlaşılanı seçmek; karar kuralı 33'teki çoğunluk oyudur |
+| ağaç araması | (tree search) | 36 | cevabı ara adım düğümleri hâlinde büyütüp her düzeyde en iyi birkaç düğümü tutmak |
+| Markov karar süreci | (Markov decision process) | 37 | durum, eylem, geçiş ve ödülden oluşan karar çerçevesi; kısaltma "MDP" kullanılmaz |
+| durum | (state) | 37 | karar anında dünyanın bilinen hâli; dil modelinde o ana kadarki dizi |
+| eylem | (action) | 37 | o durumda seçilebilecek şeylerden biri; dil modelinde sonraki token |
+| geçiş | (transition) | 37 | eylemin dünyayı hangi yeni duruma taşıdığı; dil modelinde belirlenimcidir |
+| bölüm | (episode) | 37 | başlangıçtan bitişe tek bir deneme |
+| getiri | (return) | 37 | bir bölümde toplanan ödüllerin iskontolanmış toplamı |
+| iskonto | (discount factor) | 37 | geç gelen ödülü küçülten çarpan; metinde γ ile gösterilir |
+| değer işlevi | (value function) | 37 | bir durumdan itibaren beklenen getiri. 6\. makaledeki **dikkat üçlüsünün değeriyle karıştırılmaz**; ayrım 37'de açıkça yapıldı |
+| eylem-değeri | — | 37 | bir durumda belirli bir eylemi seçmenin beklenen getirisi; Q(s, a) |
+| avantaj | (advantage) | 34 | bir eylemin değeri ile durumun ortalama değeri arasındaki fark; 34'te grup göreli biçimi kuruldu, biçimsel tanımı 37'de |
+| kredi atama | (credit assignment) | 37 | tek bir sonucu üreten kararlardan hangisinin işe yaradığını söyleme sorunu |
+| taban | (baseline) | 37 | getiriden çıkarılan, eyleme bağlı olmayan terim; oynaklığı düşürür |
+| yakınsal politika optimizasyonu | (proximal policy optimization, PPO) | 37 | güven bölgesi kısıtını bir kırpma terimine indirgeyen yaygın algoritma; 13'te adsız kullanılmıştı. Tanıtıldığı çalışma hakemsizdir |
+| sonuç denetimi | (outcome supervision) | 38 | geri bildirimin yalnızca nihai sonuca göre verilmesi |
+| süreç denetimi | (process supervision) | 38 | zincirin her adımına ayrı geri bildirim verilmesi |
+| iz hatası | (trace error) | 38 | zincirde herhangi bir hata bulunma oranı; nihai cevap hatasından bağımsız ölçülür |
+| adım etiketi | — | 38 | tek bir ara adıma verilen olumlu/olumsuz değer; insan eliyle ya da tamamlama ile otomatik üretilir |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -1485,6 +1577,164 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     (yaklaşık 700 milyon soru), 33'teki 258 ve 16 katlık FLOP eşitleme çarpanları (M = 14 ile
     R = 0,08 ve R = 11 için) ve 34'teki GRPO avantaj örneği (ödüller 1,0 · 1,0 · 0,5 · 0,0,
     ortalama 0,625, sapma yaklaşık 0,41, avantajlar 0,90 · 0,90 · −0,30 · −1,51).
+
+98. **Faz 4'ün kalan kategori kararı (Batch 8'de verildi).** 35, 36, 37 ve 38 `reasoning-and-memory`
+    kategorisindedir. 37 biçimsel bir eğitim makalesi olmasına rağmen aynı kategoride bırakıldı:
+    kararlar #50 ve #85'in ölçütü geçerli, ve bu makale genel bir eğitim aşamasını değil 34 ile
+    38'in kullandığı çerçeveyi kuruyor; okuma listesinde yalnız başına üçüncü bir öbek açmak
+    kategoriye değil biçime hizmet ederdi. Faz 4 böylece tek kategoriyle kapanıyor; 39 ve 40'ın
+    kategorisi kendi run'ında kararlaştırılacak.
+99. **Başlık düzeltmesi (Batch 8'de verildi).** Yayımlanmamış iki başlıktaki İngilizce sözcükler
+    terim defterine uyarlandı: "Arama ve Planlama: Self-Consistency ve Ağaçlar" →
+    **"Arama ve Planlama: Öz-Tutarlılık ve Ağaçlar"**; "Pekiştirmeli Öğrenmenin Temelleri: MDP,
+    Politika, Ödül" → **"Pekiştirmeli Öğrenmenin Temelleri: Markov Karar Süreci, Politika ve
+    Ödül"**. Kararlar #51, #52, #66 ve #86'nın aynı gerekçesi. "MDP" kısaltması, HANDOFF'un
+    bıraktığı serbestliğe rağmen açıldı: "Markov karar süreci" Türkçede yerleşik bir karşılıktır
+    ve başlığın kalan iki terimi (politika, ödül) zaten Türkçedir. 35 ve 38'in başlıkları
+    değiştirilmedi. **Faz başlıkları katmanına yine dokunulmadı** (karar #52'deki açık soru sürüyor).
+    Ayrıca Batch 7'den kalan bir eksik kapatıldı: yol haritasındaki 31–34 satırlarına `[yayında]`
+    işareti eklendi.
+100. **Doğrulayıcı sayıları (Cobbe ve ark. 2021, hakemsiz).** GSM8K 8,5 bin soru (7,5 bin eğitim /
+    1 bin test), 2–8 adım. Hat: üretici 2 epok ince ayar → soru başına 100 çözüm → nihai cevaba
+    göre etiket → doğrulayıcı 1 epok. Tam eğitim kümesinde 6 milyar parametreli doğrulama, 175
+    milyar parametreli ince ayarı geçiyor; çalışma bunu **otuz kat model boyu** artışına denk
+    sayıyor. Ara adımsız doğrudan cevap için ince ayar: yüzde 20,6 → 5,2. Aday sayısı **400**'e
+    kadar iyileşiyor, sonra düşüyor (doğrulayıcıyı kandıran düşmanca çözümler). 100 adayda en iyi
+    3–5, 3.200 adayda ilk 30 oy vermeli. Token düzeyi doğrulayıcı çözüm düzeyini geçiyor; büyük
+    üretici + küçük doğrulayıcı düzeni tersinden iyi. **Seri türetimi:** en iyi-N seçiminin
+    ıraksaması ln N − (N−1)/N (Gao ve ark., ICML 2023) → N = 4'te 0,64; 100'de 3,62; 1.000'de
+    5,91 nat.
+101. **Öz-doğrulama ve öz-düzeltme sayıları.** Stechly ve ark. (ICLR 2025), GPT-4, alan başına 100
+    örnek — tek geçiş / kendi kendini eleştiren döngü / sağlam doğrulayıcı (ikili geri bildirim) /
+    yalnızca yeniden sorma (k=25): 24 oyunu 5 / 3 / 36 / 42; grafik boyama 16 / 2 / 38 / 44;
+    blok dünyası 40 / 55 / 60 / 72; örtük blok dünyası 4 / 0 / 10 / 14. Doğrulayıcı olarak modelin
+    doğruluğu, yanlış kabul ve yanlış ret oranları: 87,0 / 10,4 / 20,7 · 72,4 / 6,5 / 95,8 ·
+    71,8 / 18,6 / 15,5 · 79,6 / 0,5 / 97,1. Huang ve ark. (ICLR 2024): cevap anahtarıyla GPT-3.5
+    75,9 → 84,3 ve 75,8 → 89,7; anahtarsız iki turda GPT-3.5 75,9 → 74,7, 75,8 → 41,8, 26,0 → 25,0;
+    GPT-4 95,5 → 89,0, 82,0 → 80,0, 49,0 → 43,0; Llama-2-70B 62,0 → 36,5 ve 64,0 → 36,5. Cevap
+    değişimi (ilkokul matematiği, GPT-3.5): değişmeyen %74,7 · doğru→yanlış %8,8 · yanlış→doğru
+    %7,6 · yanlış→yanlış %8,9. Madaan ve ark. (NeurIPS 2023): yedi görevde ortalama yaklaşık 20
+    puan; diyalog cevabında 25,4 → 74,6; matematikte 64,1 → 64,1, 74,8 → 75,0, 92,9 → 93,1; bir
+    modelin geri bildirimlerinin yüzde 94'ü "her şey iyi görünüyor"; dışarıdan yanlışlık bilgisi
+    verilince matematikte 5 puanın üzerinde kazanç. Kamoi ve ark. (TACL 2024) dört koşulu: istemle
+    üretilen geri bildirimle genel görevlerde başarılı öz-düzeltme gösteren çalışma yok; güvenilir
+    dış geri bildirim varsa çalışıyor; büyük ölçekli ince ayar mümkün kılıyor; ayrıştırılabilir
+    cevaplı görevler istisnai olarak elverişli.
+102. **Öz-tutarlılık sayıları (Wang ve ark., ICLR 2023).** Soru başına 40 zincir, 10 koşu.
+    PaLM-540B: ilkokul matematiği 56,5 → 74,4; çoktan seçmeli cebir 35,8 → 48,3; SVAMP 79,0 → 86,6;
+    StrategyQA 75,3 → 81,6; ARC-Challenge 85,2 → 88,7. UL2-20B ilkokul matematiği 4,1 → 7,3;
+    LaMDA-137B MultiArith 51,8 → 75,7. Işın araması karşılaştırması (UL2-20B, AQuA; 1/5/10/20/40):
+    ışın aramasının en iyi ışını 23,6 → 19,3 → 16,1 → 15,0 → 10,2; örneklemeli oylama
+    19,7 → 24,9 → 25,3 → 26,7 → 26,9. İstem permütasyonu topluluğu (LaMDA-137B, ilkokul matematiği)
+    17,1 → 19,2 iken öz-tutarlılık 27,7. Çalışmanın bildirdiği önceki en iyi sonuç 55'tir ve 175
+    milyar parametreli ince ayarlı modele ayrıca eğitilmiş bir doğrulayıcı eklenerek elde
+    edilmiştir (karar #100'ün düzeneği). Kazanç 5–10 yolda büyük ölçüde doyuyor; yöntem yalnızca
+    sabit cevap kümesi olan sorulara uygulanabiliyor. **Seri türetimi:** tek denemede başarı 0,4
+    ve yanlışlar dağılıyorsa, beş zincirde doğru cevabın en az iki kez gelme olasılığı
+    1 − 0,6⁵ − 5 × 0,4 × 0,6⁴ ≈ 0,663.
+103. **Ağaç araması ve planlama sayıları.** Yao ve ark. (NeurIPS 2023), GPT-4, 24 oyununun zor 100
+    örneği: doğrudan cevap %7,3 · ara adımlı %4,0 · yüz zincirin oyu %9,0 · yüz zincirin en iyisi
+    %49 · ağaç genişlik 1 %45 · genişlik 5 %74. Maliyet: ağaç 5.500 üretilen token, yüz bağımsız
+    zincir 6.700. Ara adımlı örneklerin yaklaşık yüzde 60'ı ilk adımdan sonra kaybediyor. Ablasyon:
+    güçlü üretim + zayıf değerlendirme %64, zayıf üretim + güçlü değerlendirme %31 — darboğaz
+    üretim tarafında. Silver ve ark. (Nature 2016): 495 maçın 494'ü (%99,8), Avrupa şampiyonuna
+    5–0; Deep Blue'nun Kasparov maçında incelediğinden binlerce kat az konum değerlendirildi.
+    Valmeekam ve ark. (NeurIPS 2023 D&B), Blocksworld, GPT-4: plan üretimi 206/600 (%34,3), plan
+    doğrulama 352/600 (%58,6), yeniden planlama 289/600 (%48,1), yürütme sonrası durum 191/600
+    (%31,8).
+104. **Pekiştirmeli öğrenme künyeleri ve DQN sayıları.** Bellman'ın 1957 tarihli çalışması
+    *Journal of Mathematics and Mechanics* 6, s. 679–684'tedir; dergi sonradan *Indiana University
+    Mathematics Journal* adını almıştır ve iki kaynakta sayı numarası farklı verildiği için seri
+    sayı numarası yazmaz. Williams 1992 *Machine Learning* 8, s. 229–256. Sutton, McAllester,
+    Singh & Mansour NIPS 1999. TRPO ICML 2015, GAE ICLR 2016, PPO 2017 (**hakemsiz**). Mnih ve ark.
+    (Nature 2015): 49 Atari oyunu, tek algoritma/mimari/hiperparametre; oyunların yarısından
+    fazlasında (**29 oyun**) profesyonel insan test oyuncusunun puanının yüzde 75'inden fazlası;
+    iskonto 0,99. **Seri türetimi:** 37'deki iki dallı karar örneği (doğrudan cevap 0,5; ara adım
+    sonrası 0,6; γ = 1'de 0,60 > 0,50, γ = 0,8'de 0,48 < 0,50) ve 0-0-1 ödül dizisinin
+    γ = 1 / 0,9 / 0,5 için getirileri (1 / 0,81 / 0,25).
+105. **Süreç denetimi sayıları.** Uesato ve ark. (2022, **hakemsiz**): nihai cevap hatasında iki
+    denetim biçimi benzer (ödül modelsiz 23,5 ↔ 22,3; ödül modelli 16,6 ↔ 14,8); iz hatasında
+    ayrışıyor (nihai cevaba göre pekiştirmeli öğrenmede en iyi %12,4, süreç temelli en iyi %3,8;
+    ödül modeline karşı eğitimde 12,4 → 5,5). En iyi düzen iz hatasını 14,0 → 3,4, nihai cevap
+    hatasını 16,8 → 12,7 yapıyor. Sonuç etiketleriyle eğitilen ödül modelinin tahminleri adım
+    etiketleriyle %85, kendi etiketleriyle %77 uyuşuyor. Lightman ve ark. (ICLR 2024): PRM800K =
+    12 bin soruya 75 bin çözüm üzerinde 800 bin adım etiketi; yalnızca ilk hatalı adıma kadar
+    etiketleme; 500 soruluk MATH alt kümesinde en iyi-1860 ile süreç denetimli %78,2, sonuç
+    denetimli %72,4, çoğunluk oyu %69,6; fark aday sayısıyla açılıyor; aktif öğrenme ≈ 2,6 kat veri
+    verimliliği; çözüm puanı adım olasılıklarının çarpımıdır. Wang ve ark. (ACL 2024): adım etiketi
+    tamamlama ile otomatik üretiliyor (katı ve yumuşak ölçüm); Mistral-7B adım adım eğitimle
+    ilkokul matematiğinde 77,9 → 84,1, zor matematik kümesinde 28,6 → 33,0; doğrulamayla 89,1 ve
+    43,5; sıralamada adımların en düşük puanı kullanılıyor. Setlur ve ark. (ICLR 2025): adım ödülü
+    ilerlemeyi — adım düzeyi avantajı — ölçmeli ve farklı bir tamamlayıcı politikayla
+    hesaplanmalı; çıkarım anında aramada sonuç denetimine göre %8'den fazla doğruluk ve 1,5–5 kat
+    hesap verimliliği, çevrimiçi eğitimde 5–6 kat örnek verimliliği ve %6'dan fazla doğruluk;
+    önceki otomatik süreç doğrulayıcıları yoğun ödül olarak yalnızca %1–2 kazandırıyordu.
+    Zheng ve ark. (ACL 2025): 3.400 örnek; **nihai cevabı doğru** çözümler içinde süreç hatası
+    oranı GSM8K %3,5 · MATH %18,8 · OlympiadBench %32,2 · Omni-MATH %51,8; F1 ortalamaları
+    Math-Shepherd-PRM-7B 31,5 · PRM800K ile eğitilen 56,5 · GPT-4o 61,9 · QwQ-32B-Preview 71,5 ·
+    o1-mini 87,9.
+106. **Batch 8'in hakemsiz kaynakları.** Batch 8, karar #6'daki listeye üç kalem ekledi: Cobbe ve
+    ark. 2021 (doğrulayıcıların kurucu ölçümü), Uesato ve ark. 2022 (sonuç ↔ süreç denetiminin
+    kurucu karşılaştırması) ve Schulman ve ark. 2017 (PPO). Üçü de metinde açıkça "hakemli
+    değildir" kaydıyla verilir; üçünün de yerine konabilecek hakemli bir eşdeğeri bulunamadı ve
+    üçü de yayımlanmış makalelerin doğrudan borcunu ödüyor (33 → 35, 34 → 38, 13 → 37).
+    Kullanılan on yedi kaynağın kalan on dördü hakemlidir: ICLR (Stechly, Huang, Lightman, Setlur,
+    Wang ve ark. 2023, Schulman ve ark. 2016), NeurIPS (Madaan, Yao, Valmeekam, Sutton ve ark.
+    1999), ACL (Wang ve ark. 2024, Zheng), TACL (Kamoi), ICML (Gao, Schulman ve ark. 2015),
+    Nature (Mnih, Silver), Machine Learning (Williams) ve klasik kaynaklar (Bellman 1957;
+    Sutton & Barto 2018).
+
+## Batch 8 öğrenme notları (yazım tamamlandı)
+
+- **Makale 35:** Faz 4'ün ikinci yarısını açar ve üç ayrı borcu tek bir soruda düğümler (33'ün
+  seçim açığı, 34'ün sonuç ödülü, 13'ün "doğrulamak üretmekten kolaydır" işareti). En değerli
+  yapısal karar, öz-düzeltmeyi "işe yaramıyor" diye kapatmamak: Madaan'ın olumlu tablosu ile
+  Huang'ın olumsuz tablosu **aynı** açıklamayla birleşti — kazanç, hatayı tanımanın ucuz olduğu
+  yerde var. Stechly'nin yanlış ret sütunu (grafik boyamada yüzde 95,8) makalenin en çarpıcı
+  sayısı; "geri bildirimin zenginliği fark etmiyor, durdurma kararının doğruluğu fark ediyor"
+  ablasyonu ise en az bilinen ve en öğretici bulgusu. Cobbe'un dört yüz aday eşiği, 13'teki
+  aşırı optimizasyonu doğrulayıcıya taşımak için beklenmedik biçimde temiz bir köprü verdi.
+- **Makale 36:** Kazandıran kurgu, öz-tutarlılığı bir "hile" olarak değil bir **muhasebe
+  düzeltmesi** olarak sunmak oldu: olasılık zincir üzerinde değil cevap üzerinde toplanmalı.
+  Işın aramasının ışın sayısıyla **kötüleşmesi** (23,6 → 10,2) bu tezin en sezgi kıran kanıtı ve
+  10\. makaledeki ileri okuma notunu yirmi altı makale sonra ödedi. İkinci yarıdaki dönüş —
+  24 oyununda oylamanın yüzde 9'da kalması — makalenin dürüstlüğünü kuruyor: aynı bölümde kurulan
+  varsayım (yanlışlar dağılır) aynı makalede çöküyor ve ağaç aramasının gerekçesi oradan doğuyor.
+  ToT'nin üretim ↔ değerlendirme ablasyonunun 35'teki "büyük üretici, küçük doğrulayıcı"
+  bulgusuyla aynı yöne bakması, iki makaleyi bedavaya birbirine bağladı.
+- **Makale 37:** Serinin ilk saf formalizasyon makalesi ve en büyük riski terim yükü. Çözüm,
+  çerçeveyi üç sütuna indirgemek oldu: karar dörtlüsü, değer/avantaj, kredi atama. İskontonun
+  kararı tersine çevirdiği iki satırlık örnek (0,60 > 0,50 ama 0,48 < 0,50) soyut bir katsayıyı
+  33\. makaledeki faturaya bağladı. Asıl pedagojik kazanç dil modelinin eşlemesinde: durum =
+  o ana kadarki dizi, eylem = sonraki token, geçiş belirlenimci, ödül terminal. Bu eşleme
+  yapıldığı anda 34'teki 32.768 token'lık cevap tek bir skalerle eşleşiyor ve 38'in gerekçesi
+  kendiliğinden doğuyor. Çerçevenin dil modeline **yoksul** oturduğunu açıkça yazmak (belirlenimci
+  çevre, seyrek ödül, keşifsizlik, atılan değer modeli) makaleyi ders kitabı özetinden ayırdı.
+- **Makale 38:** Batch'in en çok kaynak dengeleyen makalesi. Uesato'nun "iki denetim nihai cevapta
+  aynı" sonucu ile Lightman'ın "süreç denetimi açık ara önde" sonucu ilk bakışta çelişiyor;
+  ProcessBench'in zorluk kırılımı (%3,5 → %51,8) ikisini tek bir cümlede uzlaştırdı ve makalenin
+  omurgası oldu. İkinci güçlü kurgu, otomatik adım etiketinin 37'deki değer işlevinin ta kendisi
+  olduğunu göstermek; "etiket artık doğruluğu değil, o modelin oradan devam edebilme becerisini
+  ölçüyor" cümlesi bu batch'in en az bilinen ayrıntısı. Kapanışta süreç doğrulayıcılarının
+  istemle eleştiri yapan genel modellerin gerisinde kalması, alanı kapalı göstermemek için
+  bilinçli olarak bırakıldı.
+- **Süreç notu:** Batch 8 `BATCH=4+1` assignment'ıyla, tek oturumda ve yardımcı agent kullanmadan
+  yürüdü. Yirmi bir birincil kaynak PDF'i pypdf ile metne çevrilerek okundu; bütün tablo değerleri
+  özetlerden değil tablolardan alındı. Venue doğrulaması DBLP API'siyle yapıldı ve iki aday kaynak
+  (Chen ve ark.'nın bileşik çıkarım sistemleri çalışması ile Swamy ve ark.'nın üretme-doğrulama
+  açığı çalışması) yalnızca CoRR'de indekslendiği için **kullanılmadı**. Buna karşılık üç hakemsiz
+  kaynak bilinçli olarak kullanıldı ve işaretlendi (karar #106). Kendi kendine eleştirel inceleme
+  turunda yakalanan başlıca sorunlar: 36'nın başlığındaki "öz-tutarlılık" teriminin gövdede hiç
+  tanımlanmamış olması (terim defterine girmeden başlığa girmişti), 35'te en iyi-N ıraksama
+  formülünün kaynağının belirtilmemesi, 35'te iki şekil göndermesinin şeklin çizilen hâliyle
+  uyuşmaması, 37'de bir öz-gönderme ("37. makalenin sözlüğüyle") ve politika gradyanı teoremiyle
+  taban sonucunun aynı çalışmaya atfedilmesi. Yol haritasında Batch 7'den kalan `[yayında]`
+  işaretleri de bu turda tamamlandı.
+- **Ortam notu:** Bu run sırasında depoda paralel bir oturum BOUN serisi üzerinde çalışıyordu ve
+  `content/series-boun/**` ile `docs/seri-boun/**` altında commit edilmemiş değişiklikleri vardı;
+  bunlara hiç dokunulmadı. Dev sunucusu çalışmadığı için build ve render doğrulaması klasik sırayla
+  yürütüldü (build → `.next` temizliği → 3210 portunda dev sunucusu → doğrulama → sunucuyu durdur),
+  izole kopyaya gerek kalmadı.
 
 ## Batch 7 öğrenme notları (yazım tamamlandı)
 

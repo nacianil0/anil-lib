@@ -16,9 +16,10 @@ describe("migrateLegacyProgress", () => {
       },
     });
 
-    const migrated = migrateLegacyProgress(legacy, deviceId, "2026-06-29T10:00:00.000Z");
+    const migrated = migrateLegacyProgress(legacy, "owner", deviceId, "2026-06-29T10:00:00.000Z");
 
     expect(migrated.version).toBe(2);
+    expect(migrated.workspaceId).toBe("owner");
     expect(migrated.currentArticleId).toBe("article-1");
     expect(migrated.progress["article-1"]).toMatchObject({
       headingId: "bolum-2",
@@ -36,6 +37,7 @@ describe("migrateLegacyProgress", () => {
   it("falls back safely when the legacy payload is corrupt", () => {
     const migrated = migrateLegacyProgress(
       "{broken",
+      "owner",
       "11111111-1111-4111-8111-111111111111",
       "2026-06-29T10:00:00.000Z",
     );

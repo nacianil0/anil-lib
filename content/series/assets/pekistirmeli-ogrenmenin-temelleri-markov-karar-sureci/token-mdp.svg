@@ -1,0 +1,49 @@
+<svg viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Token üretimi bir karar dizisi olarak</text>
+
+  <line x1="16" y1="64" x2="420" y2="64" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="16" y1="64" x2="16" y2="72" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="420" y1="64" x2="420" y2="72" stroke="var(--cool)" stroke-width="1"/>
+  <text x="218" y="56" font-size="13" text-anchor="middle" fill="var(--cool)">durum: o ana kadarki dizi</text>
+
+  <text x="456" y="56" font-size="13" text-anchor="middle" fill="var(--accent)">eylem: sonraki token</text>
+  <line x1="456" y1="62" x2="456" y2="74" stroke="var(--accent)" stroke-width="1"/>
+  <polygon points="456,80 452,72 460,72" fill="var(--accent)"/>
+
+  <rect x="16" y="80" width="64" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="48" y="100" font-size="13" text-anchor="middle" fill="var(--text-muted)">istem</text>
+  <rect x="84" y="80" width="64" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="116" y="100" font-size="13" text-anchor="middle" fill="var(--text-muted)">istem</text>
+  <rect x="152" y="80" width="64" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="184" y="100" font-size="13" text-anchor="middle" fill="var(--text-muted)">istem</text>
+  <rect x="220" y="80" width="64" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="252" y="100" font-size="13" text-anchor="middle" fill="var(--text-muted)">istem</text>
+
+  <rect x="288" y="80" width="64" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="320" y="100" font-size="13" text-anchor="middle" fill="var(--text)">token</text>
+  <rect x="356" y="80" width="64" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="388" y="100" font-size="13" text-anchor="middle" fill="var(--text)">token</text>
+  <rect x="424" y="80" width="64" height="32" fill="var(--surface)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="456" y="100" font-size="13" text-anchor="middle" fill="var(--text)">token</text>
+  <rect x="492" y="80" width="64" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="524" y="100" font-size="13" text-anchor="middle" fill="var(--text)">token</text>
+  <rect x="560" y="80" width="64" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="592" y="100" font-size="13" text-anchor="middle" fill="var(--text-faint)">tur sonu</text>
+
+  <rect x="640" y="80" width="64" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="672" y="100" font-size="13" text-anchor="middle" fill="var(--text)">ödül</text>
+
+  <text x="320" y="132" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="388" y="132" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="456" y="132" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="524" y="132" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="592" y="132" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="672" y="132" font-size="13" text-anchor="middle" fill="var(--text)">1 ya da 0</text>
+
+  <line x1="16" y1="156" x2="704" y2="156" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="180" font-size="13" text-anchor="start" fill="var(--text-muted)">geçiş belirlenimcidir: eylem, token'ı dizinin sonuna eklemekten ibarettir</text>
+  <text x="16" y="202" font-size="13" text-anchor="start" fill="var(--text-muted)">ödül seyrektir: ara adımların hiçbiri puan almaz, sayı yalnızca sonda gelir</text>
+
+  <line x1="16" y1="222" x2="704" y2="222" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="246" font-size="13" text-anchor="start" fill="var(--text-faint)">tek bir sayı, binlerce karara dağıtılacak — sorunun adı kredi atama</text>
+</svg>

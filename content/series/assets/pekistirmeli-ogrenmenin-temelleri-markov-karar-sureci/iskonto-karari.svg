@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 342" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı sayılar, iki farklı iskonto</text>
+
+  <rect x="280" y="48" width="160" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="69" font-size="13" text-anchor="middle" fill="var(--text)">soru</text>
+
+  <line x1="360" y1="80" x2="180" y2="130" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="360" y1="80" x2="540" y2="130" stroke="var(--accent)" stroke-width="1"/>
+
+  <rect x="90" y="130" width="180" height="48" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="180" y="152" font-size="13" text-anchor="middle" fill="var(--text)">doğrudan cevap</text>
+  <text x="180" y="170" font-size="13" text-anchor="middle" fill="var(--text-muted)">beklenen getiri 0,50</text>
+
+  <rect x="450" y="130" width="180" height="48" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="540" y="152" font-size="13" text-anchor="middle" fill="var(--text)">önce ara adım</text>
+  <text x="540" y="170" font-size="13" text-anchor="middle" fill="var(--text-muted)">bu adımın ödülü 0</text>
+
+  <line x1="540" y1="178" x2="540" y2="200" stroke="var(--accent)" stroke-width="1"/>
+  <polygon points="540,206 536,198 544,198" fill="var(--accent)"/>
+
+  <rect x="450" y="206" width="180" height="48" fill="var(--surface)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="540" y="228" font-size="13" text-anchor="middle" fill="var(--text)">sonra cevap</text>
+  <text x="540" y="246" font-size="13" text-anchor="middle" fill="var(--text-muted)">beklenen ödül 0,60</text>
+
+  <line x1="16" y1="276" x2="704" y2="276" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="300" font-size="13" text-anchor="start" fill="var(--text-muted)">iskonto 1 · sağ dal 0,60 · sol dal 0,50</text>
+  <text x="400" y="300" font-size="13" text-anchor="start" fill="var(--accent)">ara adım kazanır</text>
+
+  <text x="16" y="326" font-size="13" text-anchor="start" fill="var(--text-muted)">iskonto 0,8 · sağ dal 0,48 · sol dal 0,50</text>
+  <text x="400" y="326" font-size="13" text-anchor="start" fill="var(--cool)">doğrudan cevap kazanır</text>
+</svg>

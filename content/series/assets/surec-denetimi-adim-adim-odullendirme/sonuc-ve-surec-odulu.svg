@@ -1,0 +1,46 @@
+<svg viewBox="0 0 720 362" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı zincir, iki farklı geri bildirim</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--cool)">sonuç denetimi</text>
+
+  <rect x="16" y="66" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="141" y="87" font-size="13" text-anchor="middle" fill="var(--text)">adım 1</text>
+  <rect x="16" y="106" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="141" y="127" font-size="13" text-anchor="middle" fill="var(--text)">adım 2</text>
+  <rect x="16" y="146" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="141" y="167" font-size="13" text-anchor="middle" fill="var(--text)">adım 3</text>
+  <rect x="16" y="186" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="141" y="207" font-size="13" text-anchor="middle" fill="var(--text)">adım 4</text>
+
+  <rect x="16" y="232" width="250" height="36" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="141" y="255" font-size="13" text-anchor="middle" fill="var(--text)">nihai cevap: doğru</text>
+  <text x="306" y="255" font-size="13" text-anchor="middle" fill="var(--cool)">olumlu</text>
+
+  <text x="141" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">tek sayı bütün zincire ait</text>
+
+  <line x1="340" y1="44" x2="340" y2="310" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="374" y="52" font-size="13" text-anchor="start" fill="var(--accent)">süreç denetimi</text>
+
+  <rect x="374" y="66" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="499" y="87" font-size="13" text-anchor="middle" fill="var(--text)">adım 1</text>
+  <text x="664" y="87" font-size="13" text-anchor="middle" fill="var(--text-muted)">olumlu</text>
+  <rect x="374" y="106" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="499" y="127" font-size="13" text-anchor="middle" fill="var(--text)">adım 2</text>
+  <text x="664" y="127" font-size="13" text-anchor="middle" fill="var(--text-muted)">olumlu</text>
+  <rect x="374" y="146" width="250" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="499" y="167" font-size="13" text-anchor="middle" fill="var(--text)">adım 3</text>
+  <text x="664" y="167" font-size="13" text-anchor="middle" fill="var(--accent)">olumsuz</text>
+  <rect x="374" y="186" width="250" height="32" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="499" y="207" font-size="13" text-anchor="middle" fill="var(--text)">adım 4</text>
+  <text x="664" y="207" font-size="13" text-anchor="middle" fill="var(--text-muted)">olumlu</text>
+
+  <rect x="374" y="232" width="250" height="36" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="499" y="255" font-size="13" text-anchor="middle" fill="var(--text)">nihai cevap: doğru</text>
+  <text x="664" y="255" font-size="13" text-anchor="middle" fill="var(--text-muted)">olumlu</text>
+
+  <text x="499" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">hatanın yeri belli, cevap yine doğru</text>
+
+  <line x1="16" y1="318" x2="704" y2="318" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-muted)">zincir aynı zincirdir: üçüncü adım hatalıdır ve sonuç denetimi bunu göremez</text>
+</svg>

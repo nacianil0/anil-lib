@@ -43,9 +43,9 @@
         { "order": 19, "title": "Doğruluk: Döngü Değişmezleriyle İspat", "status": "yayinda", "slug": "dogruluk-dongu-degismezleriyle-ispat" },
         { "order": 20, "title": "Böl ve Yönet: Kazanç Nereden Gelir?", "status": "yayinda", "slug": "bol-ve-yonet-kazanc-nereden-gelir" },
         { "order": 21, "title": "Açgözlü Algoritmalar: Ne Zaman ve Neden Çalışır?", "status": "yayinda", "slug": "acgozlu-algoritmalar-ne-zaman-ve-neden-calisir" },
-        { "order": 22, "title": "Dinamik Programlama", "status": "planlandi" },
-        { "order": 23, "title": "Graf Algoritmaları: MST ve En Kısa Yollar", "status": "planlandi" },
-        { "order": 24, "title": "Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar", "status": "planlandi" },
+        { "order": 22, "title": "Dinamik Programlama: Alt Problemi Bulmak", "status": "yayinda", "slug": "dinamik-programlama-alt-problemi-bulmak" },
+        { "order": 23, "title": "Graf Algoritmaları: MST ve En Kısa Yollar", "status": "yayinda", "slug": "graf-algoritmalari-mst-ve-en-kisa-yollar" },
+        { "order": 24, "title": "Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar", "status": "yayinda", "slug": "alt-sinirlar-olasiliksal-ve-paralel-algoritmalar" },
         { "order": 25, "title": "NP-Tamlık: Hesaplamanın Sınırları", "status": "planlandi" }
       ]
     },

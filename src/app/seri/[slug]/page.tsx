@@ -10,6 +10,13 @@ import {
   SERIES_TITLE,
 } from "@/lib/content/series";
 import { ReaderShell } from "@/components/reader/reader-shell";
+import { requireSessionUser } from "@/lib/auth/session-user";
+
+/**
+ * Renders per request: the page resolves the signed-in account and scopes reader
+ * state to it, so it must never be prerendered into shared static HTML.
+ */
+export const dynamic = "force-dynamic";
 
 export const dynamicParams = false;
 
@@ -37,6 +44,7 @@ export default async function SeriesArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const user = await requireSessionUser();
   const rendered = await renderSeriesArticleBySlug(slug);
   if (!rendered) notFound();
 
@@ -44,6 +52,7 @@ export default async function SeriesArticlePage({
 
   return (
     <ReaderShell
+      workspaceId={user.workspaceId}
       articles={getSeriesDescriptors()}
       current={rendered.meta}
       prev={prev}

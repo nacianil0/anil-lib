@@ -3,6 +3,7 @@ import { mergeSyncResponse } from "./merge";
 import { emptyReaderData, type ProgressRecord } from "./schema";
 
 const DEVICE = "11111111-1111-4111-8111-111111111111";
+const WORKSPACE = "owner";
 const OPERATION = "22222222-2222-4222-8222-222222222222";
 
 function progress(overrides: Partial<ProgressRecord> = {}): ProgressRecord {
@@ -21,7 +22,7 @@ function progress(overrides: Partial<ProgressRecord> = {}): ProgressRecord {
 
 describe("mergeSyncResponse", () => {
   it("acknowledges a local operation and applies its canonical server record", () => {
-    const current = emptyReaderData(DEVICE);
+    const current = emptyReaderData(WORKSPACE, DEVICE);
     const local = progress();
     current.progress[local.articleId] = local;
     current.outbox.push({
@@ -52,7 +53,7 @@ describe("mergeSyncResponse", () => {
   });
 
   it("does not overwrite a newer local entity that remains pending", () => {
-    const current = emptyReaderData(DEVICE);
+    const current = emptyReaderData(WORKSPACE, DEVICE);
     const local = progress({ scrollRatio: 0.8 });
     current.progress[local.articleId] = local;
     current.outbox.push({

@@ -11,7 +11,37 @@ import {
   text,
   timestamp,
   uuid,
+  type AnyPgColumn,
 } from "drizzle-orm/pg-core";
+
+/**
+ * Reader accounts. `workspace_id` is the tenant key every reader table is already
+ * partitioned by, so the owner keeps the pre-existing literal `owner` value and no
+ * historical row has to be rewritten.
+ */
+export const users = pgTable(
+  "users",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    username: text("username").notNull().unique(),
+    workspaceId: text("workspace_id").notNull().unique(),
+    role: text("role").notNull(),
+    passwordHash: text("password_hash").notNull(),
+    hashScheme: text("hash_scheme").notNull(),
+    lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    createdBy: uuid("created_by").references((): AnyPgColumn => users.id),
+  },
+  (table) => [
+    check("users_role_check", sql`${table.role} IN ('owner', 'user')`),
+    check("users_hash_scheme_check", sql`${table.hashScheme} IN ('scrypt', 'env-sha256')`),
+    // The legacy env-backed hash exists only to keep the original owner login working.
+    check(
+      "users_legacy_scheme_owner_only",
+      sql`${table.hashScheme} <> 'env-sha256' OR ${table.role} = 'owner'`,
+    ),
+  ],
+);
 
 export const readerChangeVersion = pgSequence("reader_change_version_seq", {
   startWith: 1,

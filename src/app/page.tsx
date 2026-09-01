@@ -1,4 +1,4 @@
-import { getOrderedArticles, toDescriptor } from "@/lib/content/catalog";
+import { getDescriptors } from "@/lib/content/catalog";
 import {
   getSeriesDescriptors,
   SERIES_BASE_PATH,
@@ -11,12 +11,26 @@ import {
   BOUN_TITLE,
   getBounDescriptors,
 } from "@/lib/content/series-boun";
+import { requireSessionUser } from "@/lib/auth/session-user";
 import { ReaderDashboard } from "@/components/dashboard/reader-dashboard";
 
-export default function HomePage() {
+/**
+ * Renders per request: the page resolves the signed-in account and scopes reader
+ * state to it, so it must never be prerendered into shared static HTML.
+ */
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const user = await requireSessionUser();
+  const isOwner = user.role === "owner";
+
   return (
     <ReaderDashboard
-      articles={getOrderedArticles().map(toDescriptor)}
+      workspaceId={user.workspaceId}
+      username={user.username}
+      isOwner={isOwner}
+      // Seri dışı yazılar normal kullanıcı akışında hiç yok; owner'da arşiv olarak kalır.
+      archive={isOwner ? getDescriptors() : []}
       series={[
         {
           key: "seri",

@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it } from "vitest";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import { ReaderProgressProvider } from "@/lib/progress/use-reader-progress";
 import { ReadingList } from "./reading-list";
@@ -21,9 +21,13 @@ function article(
 }
 
 describe("ReadingList", () => {
+  // Unmount between tests so the reader provider's async work cannot outlive the
+  // jsdom environment, matching the other component suites.
+  afterEach(cleanup);
+
   it("renders one folio header per batch with unique category heading IDs", () => {
     render(
-      <ReaderProgressProvider>
+      <ReaderProgressProvider workspaceId="test-workspace">
         <ReadingList
           currentArticleId="article-1"
           idPrefix="test"

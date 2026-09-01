@@ -1,0 +1,29 @@
+<svg viewBox="0 0 720 302" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">İki tur düzeltmeden sonra cevaplar nereye gitti?</text>
+  <text x="16" y="48" font-size="13" text-anchor="start" fill="var(--text-faint)">ilkokul matematiği kümesi, dış geri bildirim yok</text>
+
+  <text x="16" y="84" font-size="13" text-anchor="start" fill="var(--text-muted)">cevap değişmedi</text>
+  <rect x="190" y="66" width="380" height="26" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="580" y="84" font-size="13" text-anchor="start" fill="var(--text-muted)">yüzde 74,7</text>
+
+  <text x="16" y="126" font-size="13" text-anchor="start" fill="var(--text)">doğru → yanlış</text>
+  <rect x="190" y="108" width="45" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="245" y="126" font-size="13" text-anchor="start" fill="var(--text)">yüzde 8,8</text>
+
+  <text x="16" y="168" font-size="13" text-anchor="start" fill="var(--text)">yanlış → doğru</text>
+  <rect x="190" y="150" width="39" height="26" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="239" y="168" font-size="13" text-anchor="start" fill="var(--text)">yüzde 7,6</text>
+
+  <text x="16" y="210" font-size="13" text-anchor="start" fill="var(--text-muted)">yanlış → yanlış</text>
+  <rect x="190" y="192" width="45" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="245" y="210" font-size="13" text-anchor="start" fill="var(--text-muted)">yüzde 8,9</text>
+
+  <line x1="340" y1="112" x2="340" y2="172" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="340" y1="112" x2="348" y2="112" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="340" y1="172" x2="348" y2="172" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="356" y="146" font-size="13" text-anchor="start" fill="var(--text)">bozulan, düzeltilenden çok</text>
+
+  <line x1="16" y1="238" x2="704" y2="238" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="260" font-size="13" text-anchor="start" fill="var(--text-muted)">düzeltme turu doğru cevapların bir kısmını bozuyor, yanlışların bir kısmını onarıyor</text>
+  <text x="16" y="282" font-size="13" text-anchor="start" fill="var(--text-faint)">bilanço eksi olduğu için toplam başarı düşüyor — üstelik üç kat çağrı harcanarak</text>
+</svg>

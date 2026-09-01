@@ -8,8 +8,22 @@ type GateConfig = {
   cookieSecret: string;
 };
 
+/**
+ * Signed cookie payload. Identity lives here so the Edge middleware can authenticate
+ * a request without a database round trip. `ws` is immutable per account, so it can
+ * never go stale; `role` is deliberately absent — owner checks are resolved from the
+ * database in the Node runtime (see `session-user.ts`).
+ */
 type SessionPayload = {
+  uid: string;
+  ws: string;
   exp: number;
+};
+
+export type SessionClaims = {
+  userId: string;
+  workspaceId: string;
+  expiresAt: number;
 };
 
 function bytesToHex(bytes: ArrayBuffer): string {
@@ -73,7 +87,12 @@ async function sign(value: string, secret: string): Promise<string> {
   return base64UrlEncode(signature);
 }
 
-export async function hashPassword(password: string): Promise<string> {
+/**
+ * The original single-password gate hashed with a bare SHA-256. It survives only to
+ * authenticate the owner against `SITE_PASSWORD_SHA256` until the first successful
+ * login upgrades that account to scrypt (see `lib/auth/users.ts`).
+ */
+export async function hashLegacyPassword(password: string): Promise<string> {
   return bytesToHex(await crypto.subtle.digest("SHA-256", encoder.encode(password)));
 }
 
@@ -90,17 +109,26 @@ export function isGateIntended(): boolean {
   return Boolean(process.env.SITE_PASSWORD_SHA256 || process.env.AUTH_COOKIE_SECRET);
 }
 
-export async function verifyPasswordHash(password: string, expectedHash: string): Promise<boolean> {
+export async function verifyLegacyPasswordHash(
+  password: string,
+  expectedHash: string,
+): Promise<boolean> {
   const expectedBytes = hexToBytes(expectedHash);
   if (!expectedBytes) return false;
-  const actualBytes = hexToBytes(await hashPassword(password));
+  const actualBytes = hexToBytes(await hashLegacyPassword(password));
   if (!actualBytes) return false;
   return timingSafeBytesEqual(actualBytes, expectedBytes);
 }
 
-export async function buildSignedSession(secret: string, nowMs = Date.now()): Promise<string> {
+export async function buildSignedSession(
+  secret: string,
+  session: { userId: string; workspaceId: string },
+  nowMs = Date.now(),
+): Promise<string> {
   const payload = base64UrlEncode(
     JSON.stringify({
+      uid: session.userId,
+      ws: session.workspaceId,
       exp: nowMs + AUTH_COOKIE_MAX_AGE_SECONDS * 1000,
     } satisfies SessionPayload),
   );
@@ -108,29 +136,37 @@ export async function buildSignedSession(secret: string, nowMs = Date.now()): Pr
   return `${payload}.${sig}`;
 }
 
+/**
+ * Returns the claims carried by a valid cookie, or null. Cookies minted before
+ * identity existed in the payload have no `uid`/`ws` and are rejected, so a
+ * pre-upgrade session cannot silently resolve to the owner.
+ */
 export async function verifySignedSession(
   cookieValue: string | undefined,
   secret: string,
   nowMs = Date.now(),
-): Promise<boolean> {
-  if (!cookieValue) return false;
+): Promise<SessionClaims | null> {
+  if (!cookieValue) return null;
 
   const [payload, signature, extra] = cookieValue.split(".");
-  if (!payload || !signature || extra !== undefined) return false;
+  if (!payload || !signature || extra !== undefined) return null;
 
   const expectedSignature = await sign(payload, secret);
   if (!timingSafeBytesEqual(encoder.encode(signature), encoder.encode(expectedSignature))) {
-    return false;
+    return null;
   }
 
   const decoded = base64UrlDecode(payload);
-  if (!decoded) return false;
+  if (!decoded) return null;
 
   try {
     const parsed = JSON.parse(decoded) as Partial<SessionPayload>;
-    return typeof parsed.exp === "number" && nowMs <= parsed.exp;
+    if (typeof parsed.exp !== "number" || nowMs > parsed.exp) return null;
+    if (typeof parsed.uid !== "string" || parsed.uid.length === 0) return null;
+    if (typeof parsed.ws !== "string" || parsed.ws.length === 0) return null;
+    return { userId: parsed.uid, workspaceId: parsed.ws, expiresAt: parsed.exp };
   } catch {
-    return false;
+    return null;
   }
 }
 

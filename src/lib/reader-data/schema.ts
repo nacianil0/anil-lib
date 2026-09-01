@@ -86,6 +86,11 @@ export const syncMutationSchema = z.discriminatedUnion("entityType", [
 
 export const readerDataSchema = z.object({
   version: z.literal(2),
+  /**
+   * Account this blob belongs to. Storage keys are already namespaced by it; the
+   * field is a second check so a mismatched blob is discarded rather than rendered.
+   */
+  workspaceId: z.string().min(1),
   deviceId: z.string().uuid(),
   cursor: z.number().int().nonnegative().default(0),
   currentArticleId: z.string().nullable().default(null),
@@ -103,9 +108,13 @@ export type HighlightRecord = z.infer<typeof highlightRecordSchema>;
 export type SyncMutation = z.infer<typeof syncMutationSchema>;
 export type ReaderData = z.infer<typeof readerDataSchema>;
 
-export function emptyReaderData(deviceId = crypto.randomUUID()): ReaderData {
+export function emptyReaderData(
+  workspaceId: string,
+  deviceId = crypto.randomUUID(),
+): ReaderData {
   return {
     version: 2,
+    workspaceId,
     deviceId,
     cursor: 0,
     currentArticleId: null,

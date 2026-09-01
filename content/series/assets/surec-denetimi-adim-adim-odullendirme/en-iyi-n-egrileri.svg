@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 358" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aday sayısı büyüdükçe fark açılıyor</text>
+
+  <line x1="16" y1="44" x2="40" y2="44" stroke="var(--accent)" stroke-width="2"/>
+  <text x="48" y="49" font-size="13" text-anchor="start" fill="var(--accent)">süreç denetimli</text>
+  <line x1="190" y1="44" x2="214" y2="44" stroke="var(--text-muted)" stroke-width="2"/>
+  <text x="222" y="49" font-size="13" text-anchor="start" fill="var(--text-muted)">sonuç denetimli</text>
+  <line x1="370" y1="44" x2="394" y2="44" stroke="var(--cool)" stroke-width="2"/>
+  <text x="402" y="49" font-size="13" text-anchor="start" fill="var(--cool)">çoğunluk oyu</text>
+
+  <line x1="70" y1="66" x2="70" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <line x1="70" y1="240" x2="640" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="78" font-size="13" text-anchor="start" fill="var(--text-faint)">çözülen soru oranı</text>
+
+  <path d="M 84 206 C 200 190, 340 168, 450 158 S 560 152, 600 150" fill="none" stroke="var(--cool)" stroke-width="2"/>
+  <path d="M 84 200 C 200 180, 340 152, 450 140 S 560 134, 600 132" fill="none" stroke="var(--text-muted)" stroke-width="2"/>
+  <path d="M 84 196 C 200 168, 340 126, 450 104 S 560 90, 600 86" fill="none" stroke="var(--accent)" stroke-width="2"/>
+
+  <text x="608" y="91" font-size="13" text-anchor="start" fill="var(--accent)">%78,2</text>
+  <text x="608" y="137" font-size="13" text-anchor="start" fill="var(--text-muted)">%72,4</text>
+  <text x="608" y="155" font-size="13" text-anchor="start" fill="var(--cool)">%69,6</text>
+
+  <text x="84" y="260" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <text x="215" y="260" font-size="13" text-anchor="middle" fill="var(--text-muted)">10</text>
+  <text x="390" y="260" font-size="13" text-anchor="middle" fill="var(--text-muted)">100</text>
+  <text x="560" y="260" font-size="13" text-anchor="middle" fill="var(--text-muted)">1000</text>
+  <text x="350" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">soru başına aday çözüm sayısı</text>
+
+  <line x1="16" y1="302" x2="704" y2="302" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="324" font-size="13" text-anchor="start" fill="var(--text-muted)">üç eğri de yükselir, ama aradaki fark aday sayısıyla birlikte açılır</text>
+  <text x="16" y="346" font-size="13" text-anchor="start" fill="var(--text-faint)">daha iyi bir doğrulayıcı, arama baskısına daha uzun süre dayanıyor</text>
+</svg>

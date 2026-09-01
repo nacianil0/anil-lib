@@ -6,10 +6,11 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-08-30** (Batch 5 run'ında kapsam kararını taşıyan **CMPE250 ve CMPE300**
-sayfaları ile bu batch'in akademik kaynakları yeniden doğrulandı — §10). Kapsamı etkilemeyen resmî
-sayfaların son tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını etkileyen
-sayfaları yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum görevi).
+Erişim tarihi: **2026-09-01** (Batch 7 run'ında kapsam kararını taşıyan **CMPE250 ve CMPE300**
+sayfaları yeniden çekildi ve ikisinin de metninin değişmediği doğrulandı — §12). Kapsamı etkilemeyen
+resmî sayfaların son tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını
+etkileyen sayfaları yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum
+görevi).
 
 ## 1. Resmî gerçekler (doğrudan sayfadan)
 
@@ -956,3 +957,286 @@ ToUnicode eşlemesinde yok; belgenin her yerinde düşüyor. Dolayısıyla Durum
 kodlama davranışının sonucudur**. Pratik sonuç: makale 18'in Master Teoremi ifadesi doğrudur ve
 bu borç kapanmıştır. Ortamda hâlâ PDF'i görüntüye çeviren bir araç (`pdftoppm`, `pymupdf`,
 `pdf2image`) **yoktur**; `pypdf` yalnızca metin çıkarır, sayfayı rasterleştirmez.
+
+## 12. Batch 7 üretim run'ında doğrulanan kaynaklar (2026-09-01)
+
+Bu batch'in üç makalesi de **Faz C** içindedir ve Faz C'yi kapatır. Resmî dayanağı CMPE300'dür;
+makale 24 ayrıca CMPE250'nin katalog tanımına dayanır.
+
+### Resmî sayfalar yeniden doğrulandı (2026-09-01)
+
+HANDOFF "resmî sayfa borcu yok" diyordu (son doğrulama 2026-08-30) fakat SOZLESME §4 kapsam
+kararını taşıyan sayfaların **üretim run'ında** yeniden doğrulanmasını istediği için iki sayfa da
+yeniden çekildi. **İkisinin de metni değişmemiştir.**
+
+- **CMPE250** (<https://cmpe.bogazici.edu.tr/courses/cmpe250/>) — *Catalog Description* birebir:
+  "Graphs. Advanced Sorting. Hashing. Heap Structures. Search Structures. Complexity. Parallel
+  algorithms. File organization." Önkoşul CMPE160. Makale 24'ün "paralel algoritmalar" başlığının
+  ikinci resmî dayanağı budur.
+- **CMPE300** (<https://cmpe.bogazici.edu.tr/courses/cmpe300/>) — *Course Information* (Analysis of
+  Algorithms, güz, Lecture 3 / PS 0 / Labs 2, 3 kredi / 5 ECTS, önkoşul CMPE250, öğretim üyesi
+  Tunga Güngör), *Catalog Description* ve *Course Learning Outcomes* §10'daki birebir metinle
+  aynıdır. **Bu run'da §10'un kaydetmediği bir paragraf daha okundu** — ders çıktıları bölümünün
+  ilk paragrafı, dersin amacını şöyle tanımlıyor: "This course is intended to introduce the student
+  to the main paradigms of algorithm analysis, methods and mathematical tools used for analyzing
+  the performance of algorithms, **the theory of parallel algorithms**, as well as known sequential
+  and parallel algorithmic solutions to frequently encountered problems." Makale 24'ün paralel
+  algoritmalar bölümü doğrudan bu cümleye dayanır.
+- **Ayrım korunuyor:** "the theory of complexity analysis", "lower bound theory" ve "master
+  theorem" ifadeleri **katalog tanımında değil, ders çıktılarındadır**; katalog tanımı ise
+  "parallelism" ve "probabilistic algorithms" sözcüklerini taşır. Makale 24'ün kaynakçası bu iki
+  bölümü ayrı ayrı ve birebir alıntılayarak gösterir.
+
+### CLRS 4. baskı bölüm adı borcu KAPANDI
+
+HANDOFF'un "Açık borçlar" bölümü, **14, 21 ve 22. bölümlerin adlarının doğrulanması gerektiğini**
+söylüyordu. Bu kayıt **eskimişti**: §8, MIT Press'in resmî *Selected Solutions* belgesinden bu üç
+bölümü zaten doğrulamış durumdaydı. Yine de belge bu run'da **yeniden indirilip** içindekiler
+tablosu baştan okundu (<https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf>,
+83 sayfa; künye "Instructor's Manual to Accompany Introduction to Algorithms, Fourth Edition …
+Copyright © 2022 by The Massachusetts Institute of Technology", sürüm notu "14 March 2022. Initial
+release."). İçindekiler tablosundan **birebir** okunan bölüm adları:
+
+- 2 Getting Started · 3 Characterizing Running Times · 4 Divide-and-Conquer ·
+  **5 Probabilistic Analysis and Randomized Algorithms** · 6 Heapsort · **7 Quicksort** ·
+  **8 Sorting in Linear Time** · 9 Medians and Order Statistics · 10 Elementary Data Structures ·
+  11 Hash Tables · 12 Binary Search Trees · 13 Red-Black Trees · **14 Dynamic Programming** ·
+  15 Greedy Algorithms · 16 Amortized Analysis · 17 Augmenting Data Structures ·
+  19 Data Structures for Disjoint Sets · 20 Elementary Graph Algorithms ·
+  **21 Minimum Spanning Trees** · **22 Single-Source Shortest Paths** ·
+  **23 All-Pairs Shortest Paths** · 24 Maximum Flow.
+- Alt bölümlerin **varlığı** (adları değil) çözüm başlıklarındaki alıştırma numaralarından
+  türetildi; bu run'da tam liste çıkarıldı: 2.2–2.3 · 3.2–3.3 · 4.2, 4.4 · 5.2–5.3 · 6.1–6.2,
+  6.4–6.5 · 7.2 · 8.1–8.3 · 9.3 · 11.2 · 12.1–12.3 · 13.1, 13.3 · **14.2–14.4** · 15.1–15.2 ·
+  16.1–16.2 · 17.1–17.3 · 19.2 · 20.1–20.4 · **21.1** · **22.1, 22.3–22.5** · 23.1–23.3 · 24.2–24.3.
+- **Hâlâ doğrulanamayan:** 1. ve 18. bölümlerin adları (belge yalnızca seçilmiş çözümleri taşıdığı
+  için içindekilerde yoklar) ve **bütün alt bölüm başlıkları**. Bu yüzden makale 22–24'ün kaynakçası
+  CLRS'e yine **bölüm düzeyinde** atıf yapar.
+
+### 6.006 Bahar 2020'de hangi derslerin dinamik programlama olduğu doğrulandı
+
+HANDOFF, "6.006 Bahar 2020'nin dinamik programlama ders notları (Lecture 15–19 aralığı; hangi
+numaraların DP olduğu doğrulanmalı)" diyordu. Ders listesi sayfasından başlıklar birebir okundu ve
+borç kapandı: **DP dersleri 15, 16, 17 ve 18'dir**; 19 "Complexity", 20 "Course Review"dır.
+
+- 5 Linear Sorting · 9 Breadth-First Search · 10 Depth-First Search · **11 Weighted Shortest
+  Paths** · **12 Bellman-Ford** · **13 Dijkstra's Algorithm** · 14 ASP & Johnson's Algorithm ·
+  **15 Dynamic Programming, Part 1: SRBOT, Fib, DAGs, Bowling** · **16 Dynamic Programming, Part 2:
+  LCS, LIS, Coins** · **17 Dynamic Programming, Part 3** · **18 Dynamic Programming, Part 4: Rods,
+  Subsetsums, Pseudopolynomial** · 19 Complexity · 20 Course Review.
+- **Not:** ders listesi sayfasındaki başlık ile PDF'in kendi başlığı her zaman aynı değildir —
+  Lecture 15'in PDF başlığı "Recursive Algorithms", Lecture 16'nınki "Dyn. Prog. Subproblems",
+  Lecture 18'inki "Pseudopolynomial"dır. Kaynakçada PDF başlığı değil, ders listesi başlığı
+  kullanıldı ve içerik özeti PDF'ten alındı.
+- İndirme yolu §10'daki yöntemin aynısıdır; tek istisna Lecture 18'in kaynak sayfasının
+  `mit6_006s20_lec18_pdf` (sondaki `_pdf` ekiyle) adını taşımasıdır.
+
+### Makale 22–24'te kullanılan akademik kaynaklar
+
+- **MIT 6.006 Bahar 2020, Lecture 15 (Recursive Algorithms)** — özyinelemeli çağrıların bağımlılık
+  grafı ve sonlanan algoritmada bu grafın döngüsüz olması; desenlerin graf şekline göre
+  sınıflandırılması (kaba kuvvet → yıldız, azalt-yönet → zincir, böl-yönet → ağaç, **dinamik
+  programlama → DAG**, açgözlü/artımlı → altgraf); DP'nin tanımı "if subproblem dependencies
+  overlap (DAG, in-degree > 1)"; iki slogan "Recurse but re-use" (yukarıdan aşağı) ve "Careful
+  brute force" (aşağıdan yukarı); adın Richard Bellman tarafından konması ("Wanted government
+  funding, needed cool name to disguise doing mathematics!" ve "Updating (dynamic) a plan or
+  schedule (program)"); naif Fibonacci'nin T(n) = T(n−1) + T(n−2) + O(1) > 2T(n−2) ⇒ Ω(2^(n/2))
+  maliyeti ve "Subproblem F(k) computed more than once!" kaydı; belleklemeli ve tablolamalı iki
+  Fibonacci kodu; **Fibonacci sayılarının Θ(n) bit uzunluğundan gelen O(n + n²/w) düzeltmesi**;
+  **SRT BOT** altı adımı (Subproblem, Relate, Topological order, Base cases, Original problem,
+  Time) ve her adımın açılımı; optimal altyapının dipnotta "It is a property of recursion, not just
+  dynamic programming" diye kaydedilmesi; DAG en kısa yollarının SRT BOT ile yazılması ve DAG
+  gevşetmesinin "aynı min değerleri adım adım ve u'nun çıkan komşuları perspektifinden hesapladığı"
+  notu; bowling örneğinde böl-yönet çözümünün T(n) = 4T(n/2) + O(1) = O(n²) vermesi ve son ek
+  alt problemleriyle Θ(n)'e inmesi; bağıntı kurma yöntemi "bir soru sor, cevaplarını yerel olarak
+  kaba kuvvetle dene" ve verimlilik için cevap sayısının polinom olması gerektiği.
+- **MIT 6.006 Bahar 2020, Lecture 16 (Dyn. Prog. Subproblems)** — LCS'in SRT BOT ile tam çözümü
+  (alt problem son ekler üzerinde x(i, j); eşleşme durumunda x(i+1, j+1) + 1, aksi hâlde
+  max{x(i+1, j), x(i, j+1)}; taban durum bir dizgi bitince 0; topolojik sıra azalan i + j; maliyet
+  O(|A|·|B|)) ve `hieroglyphology` / `michaelangelo` örneğinde uzunluk 5 ile dört çözüm (`hello`,
+  `heglo`, `iello`, `ieglo`); LIS'te doğal alt problemin yetmemesi ve **alt problem
+  kısıtlama/genişletme** tekniği; dönüşümlü madenî para oyununda alt problem genişletmesi; alt
+  problem sayısı ile bağıntının dallanması arasındaki takas.
+- **MIT 6.006 Bahar 2020, Lecture 18 (Pseudopolynomial)** — çubuk kesmede birim uzunluk başına en
+  değerli parçayı seçen açgözlünün optimal olmaması (L = 7, v = [0, 1, 10, 13, 18, 20, 31, 32];
+  arg max v[ℓ]/ℓ = 6 ve [6, 1] bölümü 32 verirken optimal 2 + 2 + 3 ile 33'tür); altküme toplamının
+  alt problemi x(i, t) ve O(nT) maliyeti; **yukarıdan aşağının yalnızca erişilebilir alt problemleri
+  çözmesi**; **sözde polinom** tanımı ("running time is bounded above by a constant-degree
+  polynomial in input size and input integers") ve güçlü polinom ile zayıf polinom ayrımı; sayma
+  sıralaması, radix sıralaması, doğrudan erişim dizisi kurulumu ve Fibonacci'nin de sözde polinom
+  olması; sırt çantasının çubuk kesme ile altküme toplamını genellemesi ve yalnızca sözde polinom
+  kalması; altküme toplamının polinom zamanda çözülüp çözülemeyeceğinin P ≠ NP'ye bağlanması.
+- **MIT 6.006 Bahar 2020, Lecture 11 (Weighted Shortest Paths)** — ağırlık fonksiyonu w : E → ℤ;
+  δ(s, t) = inf{w(π)} ve **neden minimum değil infimum** (negatif ağırlıklı çevrim varsa sonlu
+  uzunlukta minimum ağırlıklı yol olmayabilir); negatif çevrim üzerinden erişilen düğümler için
+  δ = −∞; alt yolların da en kısa yol olması; SSSP kısıt/algoritma/maliyet tablosu (BFS ağırlıksız
+  |V| + |E|; DAG gevşetmesi |V| + |E|; Dijkstra negatif olmayan |V| log |V| + |E|; Bellman-Ford
+  serbest |V|·|E|); **üçgen eşitsizliği** ve gevşetmenin tanımı; **gevşetmenin güvenliği**
+  ("Relaxing some edge (u, v) sets d(s, v) to d(s, u) + w(u, v), which is the weight of a path from
+  s to v through u"); DAG gevşetmesinin topolojik sıra üzerinde tümevarımla doğruluğu; en kısa
+  yollar ağacının uzaklıklar bilindikten sonra doğrusal zamanda kurulabilmesi.
+- **MIT 6.006 Bahar 2020, Lecture 12 (Bellman-Ford)** — yönsüz grafta negatif çevrim sorusunun
+  bayağılığı ve tartışmanın yönlü graflara kısıtlanması; **Sav 1** (negatif çevrim yoksa sonlu her
+  en kısa yolun basit olduğu, çelişkiyle ispat) ve buradan en fazla |V| − 1 kenar; **k-kenarlı
+  uzaklık δ_k** tanımı; **tanık (witness)** tanımı δ_{|V|}(s, v) < δ_{|V|−1}(s, v) ve **Sav 2**
+  (δ(s, v) = −∞ olan her düğümün bir tanıktan erişilebilir olduğu); graf çoğaltmasıyla |V| + 1
+  seviyeli bir DAG kurulması ve DAG gevşetmesinin oradan çalıştırılması; **Sav 3** (δ(s₀, v_k) =
+  δ_k(s, v), k üzerinden tümevarım) ve **Sav 4**; O(|V|·|E|) maliyet; geleneksel sürümün "her turda
+  bütün kenarları gevşeten" hâlinin tahminlerinin k-kenarlı uzaklıklara karşılık gelmediği ve
+  analizinin daha çetrefil olduğu uyarısı.
+- **MIT 6.006 Bahar 2020, Lecture 13 (Dijkstra's Algorithm)** — BFS'in "kaynağın etrafında küre
+  büyütme" fikrinin ağırlıklı genellemesi; **Gözlem 1** (negatif olmayan ağırlıklarda en kısa yol
+  boyunca uzaklığın azalmaması) ve **Gözlem 2** (uzaklık sırası bilinseydi problemin DAG
+  gevşetmesine indirgeneceği); **değiştirilebilir öncelik kuyruğu** arayüzü (`build`, `delete_min`,
+  `decrease_key`) ve bunun bir öncelik kuyruğu ile bir sözlüğün **çapraz bağlanmasıyla**
+  gerçekleştirilmesi, düğüm kimlikleri 0..|V|−1 tam sayı olduğu için sözlüğün doğrudan erişim dizisi
+  olabilmesi; doğruluk ispatının zinciri d(s, y) ≤ δ(s, x) + w(x, y) = δ(s, y) ≤ δ(s, v′) ≤ d(s, v′)
+  ≤ d(s, y) ve **negatif olmayan ağırlıkların tam olarak δ(s, y) ≤ δ(s, v′) adımında kullanılması**;
+  maliyetin O(B_{|V|} + |V|·M_{|V|} + |E|·D_{|V|}) biçiminde yazılması ve dizi O(|V|²), ikili heap
+  O(|E| log |V|), Fibonacci heap O(|E| + |V| log |V|) tablosu; seyrek/yoğun graf ayrımı ve
+  "Fibonacci heap kuramda iyidir ama pratikte pek kullanılmaz" notu.
+- **MIT 6.006 Bahar 2020, Lecture 5 (Linear Sorting)** — Batch 4'te okunmuştu, bu batch'te makale
+  24'ün alt sınır bölümü için yeniden okundu. Birebir çekirdek: "Comparison model implies that
+  algorithm decision tree is binary (constant branching factor)"; "Requires # leaves L ≥ # possible
+  outputs"; "Tree height lower bounded by Ω(log L), so worst-case running time is Ω(log L)";
+  sıralamada çıktı sayısının n! olması ve **log(n!) ≥ log((n/2)^(n/2)) = Ω(n log n)** adımı; "So
+  merge sort is optimal in comparison model"; arama alt sınırı "any decision tree with n nodes has
+  height ≥ ⌈lg(n+1)⌉ − 1"; doğrudan erişim dizisinin "an operation with linear branching factor!"
+  olarak modeli kırması.
+- **MIT 6.046J Güz 2005, Lecture 16 (Greedy Algorithms and Graphs)** — Batch 6'da okunmuştu, bu
+  batch'te MST bölümü için yeniden kullanıldı. MST tanımı ve ağırlıkların farklı olduğu basitleştirme;
+  **optimal altyapı teoremi** (T'den (u, v) çıkınca T₁ ve T₂ indüklenmiş alt grafların MST'leridir)
+  ve kes-yapıştır ispatı; "Do we also have overlapping subproblems? Yes." ve "dynamic programming
+  may work … but MST exhibits another powerful property which leads to an even more efficient
+  algorithm"; **kesit teoremi** ("Let T be the MST of G = (V, E), and let A ⊆ V. Suppose that
+  (u, v) ∈ E is the least-weight edge connecting A to V − A. Then, (u, v) ∈ T") ve u'dan v'ye giden
+  tek basit yol üzerindeki ilk kesen kenarla takas ispatı; Prim'in sözde kodu ve **Zaman = Θ(V)·
+  T_EXTRACT-MIN + Θ(E)·T_DECREASE-KEY** formülü; el sıkışma lemmasından Θ(E) örtük DECREASE-KEY;
+  dizi O(V²) / ikili heap O(E lg V) / Fibonacci heap O(E + V lg V) tablosu; Kruskal'ın ayrık küme
+  yapısıyla O(E lg V) maliyeti ve "Best to date: Karger, Klein, and Tarjan [1993], randomized,
+  O(V + E) expected time" notu.
+- **MIT 6.046J Güz 2005, Lecture 17 (Shortest Paths I)** — bu run'da indirilip okundu. Yol ağırlığı
+  ve δ(u, v) tanımları; **optimal altyapı** ("A subpath of a shortest path is a shortest path",
+  kes-yapıştır); **üçgen eşitsizliği** δ(u, v) ≤ δ(u, x) + δ(x, v); negatif çevrim varlığında bazı
+  en kısa yolların var olmaması; Dijkstra'nın üç adımlı açgözlü fikri ve sözde kodu; gevşetmenin
+  **örtük DECREASE-KEY** olması; Doğruluk I (d[v] ≥ δ(s, v) değişmezi, ilk ihlal üzerinden üçgen
+  eşitsizliğiyle çelişki), Doğruluk II (u, v'nin en kısa yoldaki öncülüyse ve d[u] = δ(s, u) ise
+  (u, v) gevşetildikten sonra d[v] = δ(s, v)) ve Doğruluk III (S'ye eklenen her düğüm için
+  d[v] = δ(s, v); ispatta y'nin S dışındaki ilk düğüm seçilmesi ve d[y] = δ(s, y) ≤ δ(s, u) < d[u]
+  çelişkisi); **"Note: Same formula as in the analysis of Prim's minimum spanning tree algorithm."**
+  ve aynı üç satırlık kuyruk tablosu; ağırlıklar 1 iken öncelik kuyruğunun yerini FIFO kuyruğun
+  alması, yani BFS ve O(V + E); BFS'in doğruluk anahtarı olarak "The FIFO Q in breadth-first search
+  mimics the priority queue Q in Dijkstra".
+- **MIT 6.046J Bahar 2015, Lecture 6 (Randomization: Matrix Multiply, Quicksort)** — bu run'da
+  indirilip okundu. Rastgeleleştirilmiş algoritma tanımı ("Algorithm that generates a random number
+  r ∈ {1, ..., R} and makes decisions based on r's value"; aynı girdide farklı çalıştırmalar farklı
+  adım sayısı ve farklı çıktı verebilir); **Monte Carlo / Las Vegas tablosu** ("runs in polynomial
+  time" / "always runs in expected polynomial time"; "output is correct with high probability" /
+  "output always correct"); **Freivalds'ın çarpım denetleyicisi**: rastgele ikili r için A(Br) = Cr
+  denetimi, üç matris-vektör çarpımıyla O(n²), AB = C ise Pr[YES] = 1, AB ≠ C ise Pr[YES] ≤ 1/2 ve
+  ispatın r ↦ r + v birebir eşlemesi; hızlı sıralamanın üç sürümü ve sıralı girdide temel sürümün
+  T(n) = T(0) + T(n−1) + Θ(n) = Θ(n²) olması; **"paranoyak" hızlı sıralama**: iyi eksen tanımı
+  (|L| ve |G| ≤ 3n/4), iyi eksen olasılığının 1/2'den büyük olması, E(#iterations) ≤ 2,
+  T(n) ≤ T(n/4) + T(3n/4) + 2cn, ağaç yüksekliğinin log_{4/3}(2cn) ile sınırlı olması, seviye başına
+  2cn iş ve sonuç Θ(n log n) beklenen süre.
+- **MIT 6.172 Güz 2018, Lecture 7 (Races and Parallelism; Julian Shun, Charles Leiserson)** —
+  **bu run'da keşfedilen yeni kaynak.** Paralel komut akışının DAG olarak modellenmesi ve
+  düğümlerin "a sequence of instructions not containing a spawn, sync, or return from a spawn"
+  tanımı; **T_P**, **T₁ = iş**, **T∞ = açıklık** (kritik yol uzunluğu / hesaplama derinliği)
+  tanımları; **İŞ YASASI T_P ≥ T₁/P** ve **AÇIKLIK YASASI T_P ≥ T∞**; ardışık bileşimde iş ve
+  açıklığın toplanması, paralel bileşimde işin toplanıp açıklığın maksimum alınması;
+  **paralellik = T₁/T∞** ve bunun "the average amount of work per step along the span" olarak
+  okunması; **Amdahl yasası** ve aynı örnekte Amdahl'ın 6 kat sınırı verirken gerçek paralelliğin
+  18/9 = 2 olması; alt-doğrusal / doğrusal / süper-doğrusal hızlanma tanımları ve süper-doğrusalın
+  iş yasası yüzünden bu modelde imkânsız olması; **açgözlü çizelgeleyici teoremi [G68, B75, EZL89]
+  T_P ≤ T₁/P + T∞** ve iki satırlık ispatı (tam adımlar ≤ T₁/P çünkü her tam adım P birim iş
+  bitirir; eksik adımlar ≤ T∞ çünkü her eksik adım kalan DAG'ın açıklığını 1 azaltır); sonuç
+  "any greedy scheduler achieves within a factor of 2 of optimal" ve T₁/T∞ ≫ P olduğunda neredeyse
+  mükemmel doğrusal hızlanma; **paralel gevşeklik T₁/(P·T∞)**; iş / açıklık / paralellik tablosu
+  (birleştirmeli sıralama Θ(n lg n) / Θ(lg³n) / Θ(n/lg²n); matris çarpımı Θ(n³) / Θ(lg n);
+  Strassen; LU; FFT Θ(n lg n) / Θ(lg²n); BFS Θ(E) / Θ(d lg V)); **paralel hızlı sıralamanın**
+  beklenen işi Θ(n lg n), açıklığı Θ(n) ve paralelliği Θ(lg n); Cilk'in iş-çalan çizelgeleyicisinin
+  T_P = T₁/P + O(T∞) beklenen süresi [BL94].
+  - **Neden bu kaynak:** HANDOFF, paralel algoritmalar için "6.046J Bahar 2015'in … paralel
+    algoritmalar dersleri" demişti. Ders listesi bu run'da okundu ve **6.046J Bahar 2015'te paralel
+    algoritmalar dersi olmadığı** görüldü; 19 ve 20. dersler *senkron/asenkron dağıtık
+    algoritmalardır*, paralel değil. İş/açıklık çerçevesinin kanonik OCW kaynağı 6.172'dir.
+- **Sedgewick, R. & Wayne, K. *Algorithms*, 4. baskı, 4.3 (Minimum Spanning Trees) ve 4.4 (Shortest
+  Paths)** — algs4.cs.princeton.edu'dan okundu. 4.3'ten: kesit ve kesen kenar tanımları, ağırlıklar
+  farklıysa MST'nin tek olması, **Kesit özelliği** önermesi ("the crossing edge of minimum weight is
+  in the MST of the graph") ve açgözlü MST algoritmasının bunun genel hâli olarak ifadesi; Prim'in
+  tembel ve istekli gerçekleştirimleri ve **isteklinin her ağaç dışı düğüm için kuyrukta yalnızca
+  tek bir kenar tutması**, bunun için `IndexMinPQ`'nun `decrease-key` işlemini gerektirmesi; tembel
+  E log E, istekli E log V; Kruskal E log E ve union-find. 4.4'ten: en kısa yollar ağacı (SPT)
+  tanımı, `distTo[]` ve `edgeTo[]` dizileri, kenar ve düğüm gevşetme kodları, **en kısa yol
+  optimallik koşulları** önermesi, Dijkstra'nın E log V maliyeti, yönsüz grafın her kenarı iki yönlü
+  kenara çevirerek çözülmesi, ağırlıklı DAG'larda topolojik sırayla **doğrusal zamanlı** ve negatif
+  ağırlıkları da kaldıran çözüm, aynı yapının en uzun yol ve kritik yol yöntemine genişletilmesi.
+
+### Bu batch'te bağımsız hesaplanan ve elle denetlenen iddialar
+
+Bütün sayısal iddialar makaleye girmeden önce ayrı Python betikleriyle hesaplandı; hiçbiri kaynaktan
+kopyalanmadı.
+
+- **Naif Fibonacci çağrı sayısı** üç değerde sayaçla ölçüldü ve 2·F(n+1) − 1 formülüyle karşılaştırıldı:
+  n = 6 → 25, n = 10 → 177, n = 30 → 2.692.537 (üçü de formüle birebir uyuyor). n = 30'da F(15)'in
+  **987 kez** hesaplandığı doğrudan sayaçtan okundu. Makale 22'nin 1. şeklindeki F(5) ağacı 15 düğümlüdür
+  ve düğüm dağılımı (F3 iki, F2 üç, F1 beş, F0 üç kez) sayaçla doğrulandı.
+- **Ağırlıklı aralık çizelgeleme örneği** (A 09–11 / 4, B 11–13 / 8, C 12–15 / 11, D 13–15 / 5,
+  E 13–17 / 10) rastgele arama ile bulundu ve şu özellikleri kaba kuvvetle doğrulandı: optimal **22**
+  ve **tek** (A + B + E); en erken biteni seçen kural 17, en değerliyi seçen kural 15, birim zaman
+  başına en değerliyi seçen kural 17, en kısa süreni seçen kural 17 verir — **dördü de optimalin
+  altında**. p(j) değerleri ve OPT tablosunun beş satırı (4, 12, 15, 17, 22) elle yürütülüp kodla
+  karşılaştırıldı.
+- **LCS**: `hieroglyphology` ile `michaelangelo` için tablo dolduruldu, uzunluk **5** çıktı; `hello`,
+  `heglo`, `iello`, `ieglo` dizgilerinin dördünün de her iki dizginin alt dizisi olduğu ayrı bir
+  denetimle doğrulandı; alt problem sayısı 16 × 14 = 224, makalede kullanılan çarpım |A|·|B| = 195'tir.
+- **0/1 sırt çantası** (kapasite 50; (10, 60), (20, 100), (30, 120)): DP tablosu **220** verdi, kaba
+  kuvvet de 220 verdi, oran sırasıyla dolduran açgözlü **160**'ta kaldı, kesirli sürüm **240** yaptı.
+  Alt problem sayısı (n + 1)(C + 1) = 204.
+- **Çubuk kesme** (L = 7, v = [0, 1, 10, 13, 18, 20, 31, 32]): DP **33** ve parçalar [2, 2, 3];
+  arg max v[ℓ]/ℓ = 6 ve [6, 1] bölümü **32** — ders notundaki iddia doğrulandı.
+- **Para üstü** {1, 3, 4} sisteminde 6 için DP 2 para (3 + 3), açgözlü 3 para (4 + 1 + 1).
+- **Altküme toplamı** A = (3, 4, 3, 1), T = 6: aşağıdan yukarı (n + 1)(T + 1) = **35** hücre,
+  yukarıdan aşağı **15** erişilebilir durum (kendi sayma kuralımla; ders notu 14 diyor, sayım
+  kuralı farkı — makalede kendi ölçtüğüm 15 kullanıldı).
+- **MST ile en kısa yollar ağacının farklılığı**: A–B 4, A–C 3, A–E 7, B–C 2, B–D 5, C–E 6, D–E 1
+  grafında Kruskal ve Prim **aynı** MST'yi verdi (A–C, B–C, B–D, D–E; toplam **11**), Dijkstra'nın
+  ürettiği en kısa yollar ağacı ise **farklı** çıktı (A–B, A–C, A–E, E–D; kenar toplamı **15**;
+  uzaklıklar A 0, C 3, B 4, E 7, D 8). Prim'in anahtar tablosu ve Dijkstra'nın tahmin tablosu adım
+  adım yazdırıldı; makale 23'ün iki şekli bu iki çıktıdır.
+- **Dijkstra'nın negatif kenarda çöktüğü** kapalı küme kullanan bir gerçekleştirimle gösterildi:
+  s → a (1), s → b (2), b → a (−2) grafında Dijkstra δ(a) = 1 der, gerçek uzaklık **0**'dır
+  (Bellman-Ford ile doğrulandı).
+- **Bellman-Ford k-kenarlı uzaklık tabloları** iki kez üretildi: negatif kenarlı ama negatif
+  çevrimsiz grafta tablo k = 2'de sabitlendi ve δ₄ = δ₅ çıktı; tek bir kenar eklenerek ağırlığı −2
+  olan bir çevrim yaratıldığında tablo durulmadı ve k = 5'te bir **tanık** belirdi.
+- **Yoğunluk eşiği**: |V| = 10⁵, |E| = 10⁶ için |E| lg |V| ≈ 1,66 × 10⁷ ile |V|² = 10¹⁰ (heap kazanır);
+  |V| = 10⁴ tam grafta |E| ≈ 5 × 10⁷ için |E| lg |V| ≈ 6,6 × 10⁸ ile |V|² = 10⁸ (dizi kazanır).
+- **Karşılaştırmalı sıralama alt sınırı** somut değerleri: lg(3!) = 2,58 → en az 3; lg(10!) = 21,79
+  → en az 22; lg(20!) = 61,08 → en az 62. Makale 24'ün 1. şeklindeki üç elemanlı karar ağacının altı
+  yaprağının doğru permütasyonlara karşılık geldiği elle denetlendi.
+- **Paranoyak hızlı sıralamada iyi eksen olasılığı** sayıldı: n = 100 → 52/100, n = 1.000 → 502/1.000,
+  n = 10.000 → 5.002/10.000; hepsinde p > 1/2 ve 1/p < 2. Ağaç yüksekliği log_{4/3} n: n = 10⁶ için
+  ≈ 48, lg n ≈ 20. Ayrıca algoritma kodlanıp n = 1.000 ve n = 10.000'de 20'şer kez çalıştırıldı,
+  çıktının sıralı olduğu `assert` ile denetlendi.
+- **Freivalds'ın hata oranı** ampirik olarak ölçüldü: 6 × 6 rastgele 0/1 matrislerde mod 2
+  aritmetiğiyle, çarpımın tek bir hücresi kasten bozulduğunda 20.000 denemede yanlış "evet" oranı
+  **0,4985** çıktı (kuramsal sınır 0,5).
+- **İş/açıklık aritmetiği**: n sayının ikili indirgemesinde iş n − 1, açıklık ⌈lg n⌉; n = 8 için
+  7 / 3 / ≈ 2,3 ve n = 10⁶ için 999.999 / 20 / **50.000**. Açgözlü çizelgeleyici sınırı T₁ = 18,
+  T∞ = 9 için P = 2, 4, 8, 16'da hesaplandı ve optimal alt sınıra oranının sırasıyla 2,00 / 1,50 /
+  1,25 / 1,12 olduğu, yani **hep 2'yi aşmadığı** doğrulandı. Amdahl sınırı 1/α = 6 ile gerçek
+  paralellik T₁/T∞ = 2 karşılaştırıldı.
+
+### Yöntem notu: bu run'da karşılaşılan tuzaklar
+
+- **Bağımsız denetim betiği yazarken `sync-series-hashes.cjs`'in hash tanımını birebir taklit etmek
+  gerekiyor.** Hash, frontmatter'dan sonraki gövdenin **`.trim()` edilmiş** hâlinin UTF-8
+  SHA-256'sıdır. Betiği trim'siz yazınca 24 makalenin **hepsi** sahte uyuşmazlık verdi; trim
+  eklenince 24/24 temiz çıktı. HANDOFF'un satır sonu uyarısına ek olarak bu not da kayda geçiyor.
+- **Dev sunucusu katalog dosyasını süreç ömrü boyunca önbelleğe alıyor.** Makale gövdesi düzenlenip
+  `sync-series-hashes.cjs --write` çalıştırıldıktan sonra çalışan dev sunucusu **eski** katalog
+  hash'ini tutmaya devam etti ve `/boun/<slug>` 500 verdi ("Katalog ile frontmatter uyuşmuyor").
+  Diskteki iki değer birebir aynıydı; sorun yalnızca sunucu önbelleğidir. Çözüm: gövde
+  düzenlendikten sonra dev sunucusunu **yeniden başlatmak**.

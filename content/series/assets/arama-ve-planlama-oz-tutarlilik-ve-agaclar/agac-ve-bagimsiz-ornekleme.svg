@@ -1,0 +1,78 @@
+<svg viewBox="0 0 720 368" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Bağımsız adaylar ile budanan bir ağaç</text>
+
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--cool)">bağımsız örnekleme</text>
+  <rect x="16" y="62" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="181" y="82" font-size="13" text-anchor="middle" fill="var(--text)">soru</text>
+
+  <line x1="181" y1="92" x2="60" y2="112" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="181" y1="92" x2="140" y2="112" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="181" y1="92" x2="220" y2="112" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="181" y1="92" x2="300" y2="112" stroke="var(--cool)" stroke-width="1"/>
+
+  <line x1="60" y1="112" x2="60" y2="212" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="140" y1="112" x2="140" y2="212" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="220" y1="112" x2="220" y2="212" stroke="var(--cool)" stroke-width="1"/>
+  <line x1="300" y1="112" x2="300" y2="212" stroke="var(--cool)" stroke-width="1"/>
+
+  <rect x="34" y="126" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="34" y="160" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="114" y="126" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="114" y="160" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="194" y="126" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="194" y="160" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="274" y="126" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="274" y="160" width="52" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="34" y="212" width="52" height="24" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="114" y="212" width="52" height="24" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="194" y="212" width="52" height="24" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="274" y="212" width="52" height="24" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="181" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">dört tam zincir, hiçbiri ötekini görmez</text>
+  <text x="181" y="280" font-size="13" text-anchor="middle" fill="var(--text-faint)">ilk adım yanlışsa geri dönüş yok</text>
+
+  <line x1="360" y1="44" x2="360" y2="290" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="374" y="52" font-size="13" text-anchor="start" fill="var(--accent)">ağaç araması</text>
+  <rect x="374" y="62" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="539" y="82" font-size="13" text-anchor="middle" fill="var(--text)">soru</text>
+
+  <line x1="539" y1="92" x2="420" y2="118" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="539" y1="92" x2="539" y2="118" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="539" y1="92" x2="658" y2="118" stroke="var(--text-faint)" stroke-width="1"/>
+
+  <rect x="385" y="118" width="70" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="420" y="136" font-size="13" text-anchor="middle" fill="var(--text)">kesin</text>
+  <rect x="504" y="118" width="70" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="539" y="136" font-size="13" text-anchor="middle" fill="var(--text)">belki</text>
+  <rect x="623" y="118" width="70" height="26" fill="var(--surface)" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="658" y="136" font-size="13" text-anchor="middle" fill="var(--text-faint)">imkânsız</text>
+
+  <line x1="640" y1="150" x2="676" y2="166" stroke="var(--text-faint)" stroke-width="1"/>
+  <line x1="676" y1="150" x2="640" y2="166" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="658" y="186" font-size="13" text-anchor="middle" fill="var(--text-faint)">budandı</text>
+
+  <line x1="420" y1="144" x2="410" y2="178" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="420" y1="144" x2="470" y2="178" stroke="var(--accent)" stroke-width="1"/>
+  <line x1="539" y1="144" x2="530" y2="178" stroke="var(--border)" stroke-width="1"/>
+  <line x1="539" y1="144" x2="590" y2="178" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="382" y="178" width="56" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="410" y="196" font-size="13" text-anchor="middle" fill="var(--text-faint)">belki</text>
+  <rect x="442" y="178" width="56" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="470" y="196" font-size="13" text-anchor="middle" fill="var(--text)">kesin</text>
+  <rect x="502" y="178" width="56" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="530" y="196" font-size="13" text-anchor="middle" fill="var(--text-faint)">belki</text>
+  <rect x="562" y="178" width="56" height="26" fill="var(--surface)" stroke="var(--text-faint)" stroke-width="1"/>
+  <text x="590" y="196" font-size="13" text-anchor="middle" fill="var(--text-faint)">yok</text>
+
+  <line x1="470" y1="204" x2="470" y2="222" stroke="var(--accent)" stroke-width="1"/>
+  <rect x="410" y="222" width="120" height="26" fill="var(--surface)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="470" y="240" font-size="13" text-anchor="middle" fill="var(--text)">cevap</text>
+
+  <text x="539" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">her düzeyde en iyi birkaç düğüm tutulur</text>
+
+  <line x1="16" y1="306" x2="704" y2="306" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="328" font-size="13" text-anchor="start" fill="var(--text-muted)">kesilen dallar bütçeyi harcamaz; kazanç fazladan hesaptan değil dağıtımından gelir</text>
+  <text x="16" y="350" font-size="13" text-anchor="start" fill="var(--text-faint)">ama kesin, belki ve imkânsız etiketlerini yine modelin kendisi veriyor</text>
+</svg>

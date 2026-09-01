@@ -24,11 +24,14 @@ const firstBatchBoundary = ordered.findIndex(
 
 const PROGRESS_KEY = "anil-lib:reader-progress:v1";
 const PREFERENCES_KEY = "anil-lib:reader-preferences:v1";
-const READER_DATA_KEY = "anil-lib:reader-data:v2";
+// Reader state is namespaced per account; the owner's workspace keeps its literal key.
+const READER_DATA_KEY = "anil-lib:reader-data:v2:owner";
 const TEST_PASSWORD = "test-reader-pass";
+const TEST_USERNAME = "anil";
 
 async function authenticate(page: Page) {
   await page.goto(`/login?next=/read/${first.slug}`);
+  await page.locator('input[name="username"]').fill(TEST_USERNAME);
   await page.locator('input[name="password"]').fill(TEST_PASSWORD);
   await page.locator('button[type="submit"]').click();
   await page.waitForURL((url) => url.pathname.startsWith("/read/"));

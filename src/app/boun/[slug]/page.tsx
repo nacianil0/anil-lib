@@ -10,6 +10,13 @@ import {
   renderBounArticleBySlug,
 } from "@/lib/content/series-boun";
 import { ReaderShell } from "@/components/reader/reader-shell";
+import { requireSessionUser } from "@/lib/auth/session-user";
+
+/**
+ * Renders per request: the page resolves the signed-in account and scopes reader
+ * state to it, so it must never be prerendered into shared static HTML.
+ */
+export const dynamic = "force-dynamic";
 
 export const dynamicParams = false;
 
@@ -37,6 +44,7 @@ export default async function BounArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const user = await requireSessionUser();
   const rendered = await renderBounArticleBySlug(slug);
   if (!rendered) notFound();
 
@@ -44,6 +52,7 @@ export default async function BounArticlePage({
 
   return (
     <ReaderShell
+      workspaceId={user.workspaceId}
       articles={getBounDescriptors()}
       current={rendered.meta}
       prev={prev}

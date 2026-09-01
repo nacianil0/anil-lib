@@ -63,10 +63,10 @@
         { "order": 32, "title": "Düşünce Zinciri: Ara Adımların Gücü ve Sınırı", "status": "yayinda", "slug": "dusunce-zinciri-ara-adimlarin-gucu-ve-siniri" },
         { "order": 33, "title": "Çıkarım Anında Hesap: Düşünme Süresi Satın Almak", "status": "yayinda", "slug": "cikarim-aninda-hesap-dusunme-suresi-satin-almak" },
         { "order": 34, "title": "Akıl Yürüten Modeller: Doğrulanabilir Ödülle Eğitim", "status": "yayinda", "slug": "akil-yuruten-modeller-dogrulanabilir-odulle-egitim" },
-        { "order": 35, "title": "Doğrulama: Modelin Cevabını Kontrol Etmek", "status": "planlandi" },
-        { "order": 36, "title": "Arama ve Planlama: Self-Consistency ve Ağaçlar", "status": "planlandi" },
-        { "order": 37, "title": "Pekiştirmeli Öğrenmenin Temelleri: MDP, Politika, Ödül", "status": "planlandi" },
-        { "order": 38, "title": "Süreç Denetimi: Adım Adım Ödüllendirme", "status": "planlandi" },
+        { "order": 35, "title": "Doğrulama: Modelin Cevabını Kontrol Etmek", "status": "yayinda", "slug": "dogrulama-modelin-cevabini-kontrol-etmek" },
+        { "order": 36, "title": "Arama ve Planlama: Öz-Tutarlılık ve Ağaçlar", "status": "yayinda", "slug": "arama-ve-planlama-oz-tutarlilik-ve-agaclar" },
+        { "order": 37, "title": "Pekiştirmeli Öğrenmenin Temelleri: Markov Karar Süreci, Politika ve Ödül", "status": "yayinda", "slug": "pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci" },
+        { "order": 38, "title": "Süreç Denetimi: Adım Adım Ödüllendirme", "status": "yayinda", "slug": "surec-denetimi-adim-adim-odullendirme" },
         { "order": 39, "title": "Bellek: Sohbet İçinde ve Sohbetler Arasında", "status": "planlandi" },
         { "order": 40, "title": "Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık", "status": "planlandi" }
       ]

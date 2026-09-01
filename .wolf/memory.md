@@ -1679,3 +1679,282 @@ değişmedi**. Sıradaki: makale **22 (Dinamik Programlama)**, kohort `classific
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-08-31 08:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 16:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 16:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 16:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:22 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/verify22.py | — | ~1695 |
+| 16:22 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/search_wis.py | — | ~826 |
+| 16:23 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/search_wis2.py | — | ~865 |
+| 16:24 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/verify23.py | — | ~1289 |
+| 16:24 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/verify23b.py | — | ~1152 |
+| 16:25 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/verify24.py | — | ~1420 |
+| 16:29 | Created content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | — | ~6692 |
+| 16:31 | Created content/series-boun/assets/dinamik-programlama-alt-problemi-bulmak/fibonacci-agactan-daga.svg | — | ~1998 |
+| 16:32 | Created content/series-boun/assets/dinamik-programlama-alt-problemi-bulmak/agirlikli-aralik-dp-tablosu.svg | — | ~2274 |
+| 16:33 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/alt22.py | — | ~1034 |
+| 16:34 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/alt22.py | — | ~1034 |
+| 16:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/FACTS.md | — | ~3060 |
+| 16:38 | Created content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | — | ~6649 |
+| 16:39 | Created content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | — | ~5034 |
+| 16:39 | Created content/series-boun/assets/graf-algoritmalari-mst-ve-en-kisa-yollar/mst-ile-en-kisa-yollar-agaci.svg | — | ~1311 |
+| 16:39 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | 1→3 lines | ~224 |
+| 16:39 | Created content/series-boun/assets/graf-algoritmalari-mst-ve-en-kisa-yollar/dijkstra-izleme-tablosu.svg | — | ~1411 |
+| 16:39 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~154 |
+| 16:40 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | 1→3 lines | ~164 |
+| 16:40 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/alt23.py | — | ~824 |
+| 16:41 | Created content/series/assets/dogrulama-modelin-cevabini-kontrol-etmek/dogrulayici-hatti.svg | — | ~1306 |
+| 16:41 | Created content/series/assets/dogrulama-modelin-cevabini-kontrol-etmek/iki-hata-turu.svg | — | ~664 |
+| 16:42 | Created content/series/assets/dogrulama-modelin-cevabini-kontrol-etmek/cevap-degisimi.svg | — | ~644 |
+| 16:42 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~220 |
+| 16:42 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | "Şekil 2 — Doğrulayıcının " → "ini kabul ederken doğru c" | ~215 |
+| 16:43 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | "dir. İkinci kol doğru cev" → "dir. İkinci çubuk doğru c" | ~219 |
+| 16:43 | Created content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | — | ~6431 |
+| 16:46 | Created content/series-boun/assets/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar/karar-agaci-alt-sinir.svg | — | ~1858 |
+| 16:46 | Created content/series-boun/assets/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar/is-ve-aciklik.svg | — | ~1496 |
+| 16:46 | Created content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | — | ~4282 |
+| 16:47 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | 1→3 lines | ~243 |
+| 16:47 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~82 |
+| 16:47 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~132 |
+| 16:47 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/alt24.py | — | ~1265 |
+| 16:47 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | 1→5 lines | ~234 |
+| 16:48 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | 1→5 lines | ~190 |
+| 16:48 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~105 |
+| 16:48 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/audit_boun.py | — | ~1716 |
+| 16:49 | Created content/series/assets/arama-ve-planlama-oz-tutarlilik-ve-agaclar/yollar-ve-bulusma.svg | — | ~1106 |
+| 16:49 | Edited C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/audit_boun.py | 8→8 lines | ~168 |
+| 16:49 | Created content/series/assets/arama-ve-planlama-oz-tutarlilik-ve-agaclar/agac-ve-bagimsiz-ornekleme.svg | — | ~1695 |
+| 16:50 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~163 |
+| 16:50 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~264 |
+| 16:54 | Created content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | — | ~4429 |
+| 16:54 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→3 lines | ~202 |
+| 16:54 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→3 lines | ~215 |
+| 16:55 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→3 lines | ~212 |
+| 16:55 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→5 lines | ~178 |
+| 16:55 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→3 lines | ~270 |
+| 16:56 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→3 lines | ~155 |
+| 16:56 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | 10→10 lines | ~88 |
+| 16:56 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | 8→7 lines | ~71 |
+| 16:56 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~82 |
+| 16:57 | Created content/series/assets/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci/karar-dongusu.svg | — | ~762 |
+| 16:57 | Created content/series/assets/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci/iskonto-karari.svg | — | ~600 |
+| 16:57 | Created content/series/assets/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci/token-mdp.svg | — | ~1096 |
+| 16:58 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | inline fix | ~193 |
+| 16:58 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | "larını temsil eden gri ku" → "larını temsil eder ve sol" | ~219 |
+| 22:47 | Created content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | — | ~4338 |
+| 22:48 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~173 |
+| 22:48 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~127 |
+| 22:48 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~181 |
+| 22:49 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→5 lines | ~202 |
+| 22:49 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~139 |
+| 22:49 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~157 |
+| 22:49 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~72 |
+| 22:50 | Created content/series/assets/surec-denetimi-adim-adim-odullendirme/sonuc-ve-surec-odulu.svg | — | ~974 |
+| 22:50 | Created content/series/assets/surec-denetimi-adim-adim-odullendirme/en-iyi-n-egrileri.svg | — | ~688 |
+| 22:50 | Created content/series/assets/surec-denetimi-adim-adim-odullendirme/surec-hatasi-zorluk.svg | — | ~655 |
+| 22:51 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~241 |
+| 22:51 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~191 |
+
+## Session: 2026-09-01 22:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:51 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | 1→3 lines | ~80 |
+| 22:52 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/arastirma12.md | — | ~6330 |
+| 22:52 | Edited docs/seri-boun/ARASTIRMA.md | 4→5 lines | ~106 |
+| 22:52 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~54 |
+| 22:52 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~103 |
+| 22:53 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | "ln N − (N−1)/N" → "ın çalışması, en iyi-N se" | ~173 |
+| 22:53 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | 1→2 lines | ~62 |
+| 22:53 | Edited docs/seri-boun/YOL-HARITASI.md | 3→3 lines | ~615 |
+| 22:53 | Edited docs/seri-boun/YOL-HARITASI.md | modified 7() | ~626 |
+| 22:54 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | 1→3 lines | ~222 |
+
+## Session: 2026-09-01 22:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:54 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | inline fix | ~37 |
+
+## Session: 2026-09-01 22:56
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:58 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/update_roadmap_pins.py | — | ~5319 |
+| 23:03 | Created docs/seri-boun/HANDOFF.md | — | ~8535 |
+| 23:03 | Session end: 2 writes across 2 files (update_roadmap_pins.py, HANDOFF.md) | 14 reads | ~14463 tok |
+| 23:04 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/wolf_notes.md | — | ~528 |
+
+### Batch 7 oturum ozeti (BOUN serisi)
+
+BATCH=3+1 ile makale 22-24 uretildi, entegre edildi ve dogrulandi; ardindan +1 hazirlik/state-gecis
+fazi tamamlandi. Faz C'nin tasarim deseni ucluu kapandi, geriye yalnizca makale 25 kaldi.
+
+- Yazilanlar: `content/series-boun/articles/algorithms/{dinamik-programlama-alt-problemi-bulmak,
+  graf-algoritmalari-mst-ve-en-kisa-yollar,alt-sinirlar-olasiliksal-ve-paralel-algoritmalar}.md`
+  ve her biri icin 2 SVG (toplam 6 yeni diyagram).
+- Guncellenenler: `content/series-boun/{catalog.json,roadmap.json}` ve
+  `docs/seri-boun/{HANDOFF.md,YOL-HARITASI.md,ARASTIRMA.md}`.
+- `src/`, `tests/`, `tools/` altinda tek satir degismedi.
+- Dogrulama: icerik/SVG/hash/entegrasyon denetleyicileri temiz (24 makale, 48 diyagram), bagimsiz
+  Python denetimi 24/24, typecheck temiz, `pnpm test` 291/291, `pnpm build` 83 statik sayfa,
+  global id/slug 76/76, Playwright 21 gecti / 1 atlandi / 4 onceden-var basarisiz, 27 render
+  kombinasyonu + 12 diyagram + 8 kod blogu ekran goruntusu.
+| 23:05 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | 1→3 lines | ~172 |
+| 23:08 | Session end: 4 writes across 4 files (update_roadmap_pins.py, HANDOFF.md, wolf_notes.md, arama-ve-planlama-oz-tutarlilik-ve-agaclar.md) | 15 reads | ~19894 tok |
+| 23:09 | Session end: 4 writes across 4 files (update_roadmap_pins.py, HANDOFF.md, wolf_notes.md, arama-ve-planlama-oz-tutarlilik-ve-agaclar.md) | 15 reads | ~19894 tok |
+| 23:12 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/kararlar.md | — | ~2517 |
+| 23:13 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/ogrenme.md | — | ~1199 |
+| 23:18 | Created docs/seri/HANDOFF.md | — | ~5090 |
+| 23:20 | Created docs/superpowers/specs/2026-09-01-cok-kullanicili-owner-yonetimi-ve-istatistikler-design.md | — | ~2108 |
+| 23:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/cerebrum-dnr.md | — | ~388 |
+| 23:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/cerebrum-dec.md | — | ~460 |
+| 23:21 | Edited src/lib/db/schema.ts | modified references() | ~404 |
+| 23:22 | Created src/lib/auth/password.ts | — | ~887 |
+| 23:23 | Edited src/lib/auth/password-gate.ts | expanded (+14 lines) | ~140 |
+| 23:23 | Edited src/lib/auth/password-gate.ts | modified hashLegacyPassword() | ~118 |
+| 23:23 | Edited src/lib/auth/password-gate.ts | added 3 condition(s) | ~576 |
+| 23:24 | Created src/lib/auth/user-schema.ts | — | ~552 |
+| 23:24 | Created src/lib/auth/users.ts | — | ~1432 |
+| 23:24 | Created src/lib/auth/session-user.ts | — | ~667 |
+| 23:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/memory-ozet.md | — | ~359 |
+
+### Oturum ozeti — AI serisi Batch 8 (2026-09-01)
+
+- `docs/seri/TRIGGER.md` (BATCH=4+1) calistirildi: makale 35-38 arastirildi, yazildi, entegre
+  edildi ve dogrulama kapilarindan gecirildi; ardindan +1 state-gecis fazi yapildi.
+- Yeni dosyalar: `content/series/articles/reasoning-and-memory/` altinda dort makale
+  (dogrulama-modelin-cevabini-kontrol-etmek, arama-ve-planlama-oz-tutarlilik-ve-agaclar,
+  pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci, surec-denetimi-adim-adim-odullendirme),
+  `content/series/assets/` altinda 11 SVG, `artifacts/b8-render/` altinda iki Playwright betigi.
+- Guncellenen state: `content/series/catalog.json`, `content/series/roadmap.json`,
+  `docs/seri/YOL-HARITASI.md` (vaat defteri, prerequisite grafi, kavram-tekrar defteri, terim
+  defteri, baglayici kararlar 98-106, Batch 8 ogrenme notlari), `docs/seri/HANDOFF.md`
+  (cursor 38, sonraki 39, kohort 9).
+- Dogrulama: icerik ve SVG denetleyicileri temiz (38 makale, 108 diyagram), typecheck temiz,
+  `pnpm test` 294/294, `pnpm build` 87 statik sayfa, 39 rota 200, uc genislik x uc temada DOM
+  olcumu (fill degerleri cozuluyor, viewBox tasmasi ve yatay tasma yok), 11 seklin tamami
+  light/dark piksel goruntusuyle gozle dogrulandi.
+- BOUN serisine (paralel oturumun `content/series-boun/**` ve `docs/seri-boun/**` degisiklikleri)
+  hic dokunulmadi.
+| 23:25 | Created src/lib/auth/require-reader-session.ts | — | ~580 |
+| 23:25 | Edited src/lib/auth/user-schema.ts | modified localOwnerUser() | ~104 |
+| 23:25 | Edited src/lib/auth/session-user.ts | reduced (-11 lines) | ~76 |
+| 23:25 | Edited src/lib/auth/session-user.ts | localOwner() → localOwnerUser() | ~10 |
+| 23:26 | Created src/lib/auth/authenticate.ts | — | ~820 |
+| 23:26 | Created src/app/login/actions.ts | — | ~614 |
+| 23:26 | Edited src/app/login/page.tsx | expanded (+18 lines) | ~360 |
+| 23:26 | Edited src/app/login/page.tsx | 18→22 lines | ~310 |
+| 23:26 | Edited src/lib/reader/version.ts | modified readerDataStorageKey() | ~166 |
+| 23:26 | Edited src/lib/reader/version.ts | expanded (+6 lines) | ~91 |
+| 23:26 | Edited src/lib/reader-data/schema.ts | 3→8 lines | ~89 |
+| 23:26 | Edited src/lib/reader-data/schema.ts | modified emptyReaderData() | ~47 |
+| 23:27 | Created src/lib/reader-data/storage.ts | — | ~940 |
+| 23:27 | Edited src/lib/reader-data/migration.ts | modified migrateLegacyProgress() | ~79 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | 1→5 lines | ~30 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | 2→2 lines | ~29 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | CSS: workspaceId | ~132 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | 3→3 lines | ~38 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | 4→4 lines | ~28 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | 7→8 lines | ~68 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | modified onStorage() | ~56 |
+| 23:27 | Edited src/lib/reader-data/use-reader-data.tsx | 6→6 lines | ~68 |
+| 23:28 | Edited src/lib/auth/session-user.ts | added 1 condition(s) | ~100 |
+| 23:28 | Edited src/lib/auth/session-user.ts | added 2 condition(s) | ~226 |
+| 23:28 | Edited src/lib/progress/use-reader-progress.tsx | CSS: workspaceId | ~88 |
+| 23:29 | Edited src/app/seri/page.tsx | added 1 import(s) | ~56 |
+| 23:29 | Edited src/app/boun/page.tsx | modified BounPage() | ~54 |
+| 23:29 | Edited src/app/read/[slug]/page.tsx | CSS: archive | ~238 |
+| 23:30 | Created src/lib/content/archive.ts | — | ~143 |
+| 23:30 | Edited src/app/read/[slug]/page.tsx | added 1 import(s) | ~62 |
+| 23:30 | Created src/app/read/page.tsx | — | ~832 |
+| 23:31 | Created src/lib/stats/aggregate.ts | — | ~1816 |
+| 23:32 | Created src/lib/stats/server/user-stats.ts | — | ~1768 |
+| 23:32 | Created src/app/yonetim/actions.ts | — | ~621 |
+| 23:32 | Edited src/lib/auth/users.ts | modified createStandardUser() | ~230 |
+| 23:32 | Edited src/lib/auth/users.ts | 1→3 lines | ~50 |
+| 23:33 | Created src/app/yonetim/create-user-form.tsx | — | ~962 |
+| 23:33 | Created src/lib/stats/format.ts | — | ~216 |
+| 23:33 | Created src/app/yonetim/page.tsx | — | ~2249 |
+| 23:33 | Edited src/app/yonetim/page.tsx | 4→4 lines | ~56 |
+| 23:33 | Edited src/app/yonetim/page.tsx | inline fix | ~15 |
+| 23:34 | Created src/app/yonetim/[userId]/page.tsx | — | ~1868 |
+| 23:35 | Created src/components/dashboard/reader-dashboard.tsx | — | ~4306 |
+| 23:35 | Created src/app/page.tsx | — | ~354 |
+| 23:35 | Edited src/lib/reader-data/server/sync-service.ts | added 1 condition(s) | ~165 |
+| 23:35 | Edited src/lib/reader-data/server/sync-service.ts | 5→6 lines | ~57 |
+| 23:35 | Edited src/app/api/reader-sync/route.ts | 3→4 lines | ~34 |
+| 23:36 | Edited src/lib/stats/aggregate.ts | 7→7 lines | ~102 |
+| 23:38 | Created src/test/server-only-stub.ts | — | ~74 |
+| 23:39 | Edited vitest.config.ts | 3→4 lines | ~51 |
+| 23:39 | Created src/lib/auth/password.test.ts | — | ~793 |
+| 23:39 | Created src/lib/auth/password.test.ts | — | ~847 |
+| 23:40 | Created src/lib/auth/password.test.ts | — | ~850 |
+| 23:40 | Created src/lib/auth/user-schema.test.ts | — | ~774 |
+| 23:40 | Created src/lib/reader-data/storage.test.ts | — | ~1302 |
+| 23:41 | Created src/lib/stats/aggregate.test.ts | — | ~2280 |
+| 23:41 | Created src/lib/stats/server/user-stats.test.ts | — | ~1548 |
+| 23:42 | Created src/lib/stats/server/user-stats.test.ts | — | ~1937 |
+| 23:42 | Edited src/lib/auth/password-gate.test.ts | expanded (+25 lines) | ~314 |
+| 23:43 | Created artifacts/b8-render/spot36.mjs | — | ~837 |
+| 23:43 | Edited src/lib/reader-data/use-reader-data.tsx | 1→4 lines | ~65 |
+| 23:43 | Edited src/lib/reader-data/use-reader-data.tsx | modified if() | ~67 |
+| 23:44 | Edited src/lib/reader-data/use-reader-data.tsx | added 2 condition(s) | ~155 |
+| 23:44 | Edited src/lib/reader-data/use-reader-data.tsx | 7→8 lines | ~66 |
+| 23:44 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/dnr2.md | — | ~164 |
+| 23:45 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/handoff-ek.md | — | ~177 |
+| 23:45 | Session end: 85 writes across 44 files (update_roadmap_pins.py, HANDOFF.md, wolf_notes.md, arama-ve-planlama-oz-tutarlilik-ve-agaclar.md, kararlar.md) | 17 reads | ~72289 tok |
+| 23:47 | Edited src/lib/auth/session-user.ts | modified if() | ~203 |
+| 23:47 | Edited src/app/read/page.tsx | CSS: request | ~80 |
+| 23:49 | Created tests/e2e/auth.spec.ts | — | ~2324 |
+| 23:53 | Edited tests/e2e/reader.spec.ts | 1→2 lines | ~42 |
+| 23:53 | Edited tests/e2e/reader-data.spec.ts | 1→3 lines | ~34 |
+| 23:55 | Edited src/lib/stats/server/user-stats.ts | added error handling | ~192 |
+| 23:55 | Edited src/lib/stats/server/user-stats.ts | added error handling | ~142 |
+| 23:55 | Edited src/app/yonetim/page.tsx | 2→3 lines | ~71 |
+| 00:05 | Edited src/components/reader/reading-list.test.tsx | 2→2 lines | ~36 |
+| 00:05 | Edited src/components/reader/reading-list.test.tsx | 1→5 lines | ~57 |
+| 00:06 | Edited docs/superpowers/specs/2026-09-01-cok-kullanicili-owner-yonetimi-ve-istatistikler-design.md | 1→5 lines | ~292 |
+| 00:06 | Edited docs/superpowers/specs/2026-09-01-cok-kullanicili-owner-yonetimi-ve-istatistikler-design.md | modified sterilmeyecek() | ~252 |
+| 00:07 | Edited docs/superpowers/specs/2026-09-01-cok-kullanicili-owner-yonetimi-ve-istatistikler-design.md | expanded (+6 lines) | ~400 |
+
+## 2026-09-01/02 — Çok kullanıcılı erişim, owner-only yönetim + istatistikler, seri odaklı arayüz
+
+| 22:5x | Brainstorm + repo denetimi (auth/session/progress/sync/içerik) | src/**, .wolf/anatomy.md | workspace_id izolasyon iskeleti mevcut, currentArticleId sunucuya gitmiyor | ~40k |
+| 23:0x | Spec yazıldı | docs/superpowers/specs/2026-09-01-...-design.md | 16 karar kayıtlı | ~6k |
+| 23:1x | users tablosu + migration | src/lib/db/schema.ts, drizzle/0001_users.sql | additive, mevcut 4 tablo değişmedi | ~4k |
+| 23:2x | scrypt + kimlikli oturum + login akışı | src/lib/auth/* , src/app/login/* | env-sha256 → scrypt yükseltmesi, enumeration direnci | ~12k |
+| 23:3x | Client izolasyonu | src/lib/reader-data/*, src/lib/reader/version.ts | localStorage anahtarı workspace ile namespace'lendi | ~10k |
+| 23:4x | Owner yönetim + istatistik | src/app/yonetim/**, src/lib/stats/** | 4 katman owner enforcement, saf toplama fonksiyonu | ~14k |
+| 23:5x | Seri odaklı arayüz + arşiv | src/app/page.tsx, src/components/dashboard, src/app/read/** | seri dışı içerik owner-only arşive alındı | ~9k |
+| 00:0x | KRİTİK: statik prerender sızıntısı bulundu ve kapatıldı | src/lib/auth/session-user.ts + 7 rota | prerender-manifest artık yalnız /_not-found | ~5k |
+| 00:1x | Doğrulama | vitest 354/354, tsc temiz, build temiz, e2e 28 geçti | 4 e2e hatası: 2 DB gerektiriyor, 2 önceden kırık | ~15k |
+
+**Açık borç:** `DATABASE_URL` olmadan kullanıcı oluşturma / ikinci hesapla giriş / iki hesap izolasyonu / dolu istatistik tablosu tarayıcıda doğrulanamadı (yalnız birim testli). `pnpm-workspace.yaml` `packages:` taşımadığı için pnpm bu ortamda tamamen çalışmıyor — pglite kurulamadı, tüm kapılar node_modules/.bin üzerinden koşuldu.
+| 00:11 | Session end: 98 writes across 48 files (update_roadmap_pins.py, HANDOFF.md, wolf_notes.md, arama-ve-planlama-oz-tutarlilik-ve-agaclar.md, kararlar.md) | 17 reads | ~76481 tok |
+
+## Session: 2026-09-01 00:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 00:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

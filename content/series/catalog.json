@@ -682,6 +682,86 @@
       "path": "content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
+    },
+    {
+      "articleId": "article_168d4dce-361f-446a-aa37-c876fd5203dc",
+      "title": "Doğrulama: Modelin Cevabını Kontrol Etmek",
+      "slug": "dogrulama-modelin-cevabini-kontrol-etmek",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 35,
+      "summary": "Adaylar arasından doğru cevabı seçen bileşeni kurar: doğrulayıcının nasıl eğitildiğini, arama baskısı arttıkça nasıl kandırıldığını, yanlış kabul ile yanlış ret arasındaki ayrımı, modelin kendi cevabını dış geri bildirim olmadan kontrol etmesinin ölçülen sınırını ve üretmek ile doğrulamak arasındaki asimetrinin nerede geçerli olduğunu gösterir.",
+      "tags": [
+        "dogrulayici",
+        "oz-duzeltme",
+        "en-iyi-n-secimi",
+        "asiri-optimizasyon",
+        "cikarim-aninda-hesap"
+      ],
+      "contentHash": "sha256:9ad7e6c7f5e6114a86e7a41f05b2d76041d77018fc4ecb670dfbf7f4071a19bf",
+      "path": "content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
+    },
+    {
+      "articleId": "article_8733b936-e571-41fa-bead-9f8d1274d9eb",
+      "title": "Arama ve Planlama: Öz-Tutarlılık ve Ağaçlar",
+      "slug": "arama-ve-planlama-oz-tutarlilik-ve-agaclar",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 36,
+      "summary": "Aynı soruya farklı yollardan gidip cevapları oylamanın neden işe yaradığını, en olası zinciri seçmenin neden daha kötü olduğunu, kazancın kaç yolda doyduğunu ve bağımsız adaylar yerine bir arama ağacı kurmanın hangi görevlerde zorunlu hâle geldiğini ölçümlerle kurar.",
+      "tags": [
+        "oz-tutarlilik",
+        "cogunluk-oyu",
+        "arama",
+        "planlama",
+        "cikarim-aninda-hesap"
+      ],
+      "contentHash": "sha256:e3664fb1d15e0e304cf7f5719329f4ce03f20ea7ca53a5b723f40f0b807b9726",
+      "path": "content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
+    },
+    {
+      "articleId": "article_b9c5e861-b1de-4dba-9b12-7841f1d929e1",
+      "title": "Pekiştirmeli Öğrenmenin Temelleri: Markov Karar Süreci, Politika ve Ödül",
+      "slug": "pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 37,
+      "summary": "13. ve 34. makalelerde sezgiyle kullanılan politika, ödül ve avantaj kavramlarını biçimsel zemine oturtur: durum, eylem, geçiş ve ödülden oluşan karar çerçevesini, iskontonun ne satın aldığını, değer ile avantaj arasındaki farkı, bir dil modelinin token üretiminin bu çerçeveye nasıl eşlendiğini ve tek bir sondaki ödülün binlerce karara nasıl dağıtılacağı sorusunu kurar.",
+      "tags": [
+        "pekistirmeli-ogrenme",
+        "markov-karar-sureci",
+        "politika",
+        "deger-islevi",
+        "kredi-atama"
+      ],
+      "contentHash": "sha256:65c413c8a1e654e4e76c652149638cd5f71eeace56940f830897f2829bd75b67",
+      "path": "content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
+    },
+    {
+      "articleId": "article_90e32fe9-931e-43a7-a016-15175f7ba5ff",
+      "title": "Süreç Denetimi: Adım Adım Ödüllendirme",
+      "slug": "surec-denetimi-adim-adim-odullendirme",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 38,
+      "summary": "Ödülü zincirin sonunda değil her adımda vermenin ne değiştirdiğini kurar: sonuç denetiminin doğru cevaba yanlış yoldan varmayı neden görmediğini, adım etiketlerinin insan eliyle ve otomatik olarak nasıl üretildiğini, iyi bir adım ödülünün aslında ilerlemeyi ölçtüğünü ve süreç denetimli doğrulayıcıların nerede genelleme yapamadığını ölçümlerle gösterir.",
+      "tags": [
+        "surec-denetimi",
+        "sonuc-denetimi",
+        "dogrulayici",
+        "kredi-atama",
+        "adim-etiketi"
+      ],
+      "contentHash": "sha256:19aa569f8916a3db2489605f61f906080d9f72b9cf5c0f2e5310cd601f19cb17",
+      "path": "content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
     }
   ]
 }

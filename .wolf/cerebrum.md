@@ -2,7 +2,7 @@
 
 > OpenWolf's learning memory. Updated automatically as the AI learns from interactions.
 > Do not edit manually unless correcting an error.
-> Last updated: 2026-06-26
+> Last updated: 2026-09-02
 
 ## User Preferences
 
@@ -160,6 +160,12 @@ ode_modules`, sonra kopyayi sil.
   DIZGELERINI karsilastirir, govdeden yeniden hesaplamaz. Bagimsiz denetim betiginde dosyayi
   `open(..., newline="")` ile oku.
 
+- Reader veri modelinde izolasyon anahtarı `workspace_id`: `reading_progress`, `saved_places`, `highlights`, `sync_mutations` dördünün de PK'si onunla başlar. Çok kullanıcılıya geçerken hiçbir satır taşınmadı; owner'ın workspace'i literal `'owner'` bırakıldı.
+- `currentArticleId` ve `lastSyncAt` yalnızca localStorage'da yaşar; hiçbir sync mutation payload'ında yok, yani sunucuya asla ulaşmaz. Sunucu tarafı "kaldığı makale" bunlardan okunamaz, `server_updated_at` üzerinden türetilir.
+- `reading_progress.last_read_at` kaydırma sırasında güncellenmez (`recordPosition` önceki değeri korur); yalnızca `setCurrentArticle` ve `setCompleted` tazeler. Etkinlik sıralaması için doğru alan sunucu saatli `server_updated_at`.
+- `markdown-components.tsx` her paragrafı cümle cümle `<span class="colored-sentence">` ile sarar ve bu **koşulsuzdur**; `coloredLines` tercihi yalnızca renklendirmeyi açar. Bir paragrafın `firstChild`'ı hiçbir zaman ham metin düğümü değildir.
+- `server-only` paketi Vitest'te import edilince patlar; `vitest.config.ts` içinde `src/test/server-only-stub.ts`'e alias'landı, böylece sunucu modülleri birim testlenebiliyor.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -250,6 +256,37 @@ ode_modules`, sonra kopyayi sil.
   sonra `cat <scratchpad> >> <hedef>` ile ekle. Bu kural artik yalnizca python heredoc'u icin
   degil, **bash heredoc'unun tamami** icin gecerlidir.
 
+- [2026-09-01] Makale basligina, govdede hic tanimlanmayan bir terim koyma. Batch 8'de 36'nin
+  basligi "Oz-Tutarlilik" derken govde o terimi bir kez bile kullanmiyordu (SOZLESME §2 ihlali:
+  terim ilk gectigi makalede Turkce + parantez ici Ingilizcesiyle verilir). Basligi
+  Turkcelestirirken terimin govdede ilk gecisde gloss'landigini da dogrula ve terim defterine ekle.
+- [2026-09-01] Windows'ta dev sunucusunu `pkill -f "next dev"` ile durdurmaya calisma; sure
+  ayakta kalir ve port dinlemeye devam eder. `netstat -ano | grep ":<port>"` ile PID bul, sonra
+  `taskkill //PID <pid> //T //F` kullan.
+- [2026-09-01] Icerik hash'lerini Python ile dogrulama; Python metin modunda CRLF'i LF'e cevirir
+  ve depodaki CRLF satir sonlu eski makalelerde sahte uyusmazlik uretir (Batch 8'de 20, 23, 24,
+  25, 26 icin oldu). Yetkili denetim `node tools/series/sync-series-hashes.cjs`.
+- [2026-09-01] DBLP API'sine art arda sorgu atma; birkac sorgudan sonra 429 ve ardindan baglanti
+  kapanmasi geliyor. Sorgular arasinda 8-10 saniye bekle, sonucu dosyaya yaz ve isi arka planda
+  calistir.
+- [2026-09-01] Sekli yeniden tasarlarsan govdedeki gondermeyi ve alt metni ayni anda guncelle.
+  Batch 8'de "Sekil 3'teki iki kolun kalinlik farki" cumlesi, akis semasi cubuk grafige donusunce
+  yanlis kaldi; alt metinler de once yazilip sonra cizilen sekle gore duzeltilmek zorunda kaldi.
+  Dogru sira: sekli ciz, sonra alt metni ve govde gondermesini sekle bakarak yaz.
+
+- [2026-09-01] `python -c "..."` komutunu CIFT tirnakla sarip icine ters tirnak (backtick) koyma.
+  Bash cift tirnak icinde komut ikamesi yapar; bu oturumda memory.md'ye eklenecek metindeki
+  `docs/seri/HANDOFF.md` gibi ters tirnakli yollar bash tarafindan CALISTIRILDI ve iki markdown
+  dosyasi kabuk betigi gibi satir satir yorumlandi (3.220 satirlik "command not found" ciktisi,
+  120 sn timeout). Zarar olmadi ama kural net: uzun metni `Write` ile scratchpad'e yaz, sonra
+  python betigini de dosyaya yazip `python <betik>` ile calistir. Bu, mevcut heredoc kuralinin
+  cift tirnakli `-c` bicimine uzantisidir.
+
+- [2026-09-02] Next'te oturum çözen bir sayfada dinamik API'yi (ör. `cookies()`) koşullu çağırma. `getSessionUser()` gate env yokken erken dönüyordu; gate env'i olmayan bir build'de `cookies()` hiç çalışmadı ve `/`, `/seri`, `/boun`, `/read` statik HTML olarak üretilip owner kimliğini herkese servis edecek hâle geldi. Dinamik API'yi koşulsuz en başta çağır, ayrıca `export const dynamic = "force-dynamic"` yaz ve `.next/prerender-manifest.json`'ın yalnızca `/_not-found` içerdiğini doğrula. Route listesindeki `●` işareti tek başına prerender kanıtı değildir — manifest'e bak.
+- [2026-09-02] Aynı proje dizinine karşı ikinci bir `next dev` sunucusu başlatma. `.next` paylaşıldığı için bozuluyor ve her rota `ENOENT: .next/server/pages/_document.js` ile 500 veriyor. Bilinen "build-while-dev" tuzağının aynısı; farklı port yetmiyor.
+- [2026-09-02] Bir fonksiyonun parametre listesine başa yeni bir zorunlu parametre eklerken çağrı yerlerini typecheck'e bırakma. `emptyReaderData(deviceId)` ve `migrateLegacyProgress(raw, deviceId, now)` çağrıları `workspaceId` eklenince tip hatası vermeden sessizce kaydı (hepsi string). Aynı tipten parametre ekliyorsan çağrı yerlerini elle gez.
+- [2026-09-02] Tarayıcı panosunda ölçüm yaparken `resize_window` ile açık viewport vermeden yatay taşma okuma. Pano gizliyken `clientWidth` 0 döner ve `scrollWidth - clientWidth` sahte taşma üretir (bu oturumda seri makalesinde 208 px); açık viewport verilince 0 çıktı.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -303,3 +340,37 @@ ode_modules`, sonra kopyayi sil.
 
 - [2026-08-30] Batch 6 kategori karari: 27, 28, 30 → `reasoning-and-memory`; 29 → `agents-and-retrieval`. Alternatif 27–28 icin `models-and-training` idi ve reddedildi: o kategori modelin nasil KURULDUGUNU kapsar, oysa 27 ve 28 kurulmus bir modeli bellek butcesi icinde calistirir. 29 ise konusu geregi getirmedir ve getirme ekseni onunla acilir. Gerekce YOL-HARITASI bağlayıcı karar #65'te.
 - [2026-08-30] Batch 6 baslik karari: 28'in basligindaki Ingilizce sozcukler terim defterine uyarlandi ("Serving, Batching, Spekulatif Decoding" → "Servis, Yiginlama ve Spekulatif Uretim"). 29 ve 30 degismedi cunku "embedding" ve "JSON" Turkcelestirilmeyen kalemler. Faz basliklari katmanina yine dokunulmadi; o karar kullanicinindir.
+
+- [2026-09-01] BOUN Batch 7 (22-24): makale 22'nin taslak basligi "Dinamik Programlama" yerine "Dinamik Programlama: Alt Problemi Bulmak" oldu. Gerekce: makale 19 "degismezi kesfetmek ispatin zor kismidir" pinini 22'ye birakmisti ve makalenin tezi tam olarak odur; ayrica 20-21'in baslik kalibi (iki noktali tez cumlesi) korunmus oldu. 23 ve 24'un taslak basliklari aynen korundu.
+- [2026-09-01] BOUN Batch 7'de yol haritasinin **iki taslak beklentisi yayimlanmis gercege gore duzeltildi**: (a) "23'te Master Teoremiyle maliyet savunmasi" beklentisi gerceklesmedi cunku graf algoritmalarinin maliyeti yineleme cozmekten degil islem sayimindan gelir; (b) "24'te degisim argumani" beklentisi gerceklesmedi cunku alt sinir ispatlari sayma argumanidir. Ikisi de kavram-tekrar defterine acikca duzeltme olarak yazildi. Gerekce: taslak satirlarini sessizce silmek, sonraki oturumun ayni beklentiyi yeniden kurmasina yol acar.
+- [2026-09-01] Makale 24'un paralel algoritmalar bolumu icin HANDOFF'un isaret ettigi kaynak (6.046J Bahar 2015) **yanlisti**: o derste paralel algoritmalar dersi yok, 19-20 dagitik algoritmalardir. Is/aciklik cercevesinin kanonik OCW kaynagi **6.172 Guz 2018 Lecture 7: Races and Parallelism**'dir. Gerekce: HANDOFF ipuclari dogrulanmadan kullanilmamali; ders listesi sayfasi okunarak teyit edildi.
+- [2026-09-01] Makale 22'nin agirlikli aralik cizelgeleme ornegi elle secilmedi, **dort acgozlu kurali birden kiracak** bicimde rastgele arama ile bulundu ve optimalin tekligi kaba kuvvetle dogrulandi (A 09-11/4, B 11-13/8, C 12-15/11, D 13-15/5, E 13-17/10; optimal 22, en iyi acgozlu 17). Gerekce: tek bir kurali kiran ornek "baska bir kural calisir miydi?" sorusunu acik birakir.
+- [2026-09-01] Makale 22'nin alt problemi ders notundaki kesim bicimi (R_x = {j | s(j) >= x}) yerine **onek bicimiyle** (OPT(j) ve p(j)) kuruldu. Gerekce: onek bicimi tablo cizmeye ve ebeveyn isaretcisi yurutmeye uygundur; ikisi denktir ve fark ARASTIRMA §12'ye not dusuldu.
+
+- [2026-09-01] AI Batch 8 kategori karari: 35-38'in dordu de `reasoning-and-memory`. 37 (RL
+  temelleri) icin `models-and-training` alternatifi reddedildi: o kategori modelin nasil
+  KURULDUGUNU kapsar, oysa 37 genel bir egitim asamasini degil 34 ile 38'in kullandigi cerceveyi
+  kuruyor; ayrica okuma listesinde tek makalelik ucuncu bir obek acmak kategoriye degil bicime
+  hizmet ederdi. Gerekce YOL-HARITASI baglayici karar #98'de.
+- [2026-09-01] AI Batch 8 baslik karari: "Self-Consistency" → "Oz-Tutarlilik", "MDP" → "Markov
+  Karar Sureci". HANDOFF kisaltmalarin Turkcelestirilmesini zorunlu kilmiyordu; yine de acildi,
+  cunku "Markov karar sureci" Turkcede yerlesik bir karsilik ve basligin kalan iki terimi
+  (politika, odul) zaten Turkce. "RAG" ve "MCP" icin ayni gerekce gecerli degil; onlar 41+
+  run'inda ayrica kararlastirilacak.
+- [2026-09-01] AI Batch 8, Batch 6-7'nin "hic hakemsiz kaynak eklemedi" serisini bilincli olarak
+  kirdi: Cobbe 2021 (dogrulayicilarin kurucu olcumu), Uesato 2022 (sonuc ↔ surec denetiminin
+  kurucu karsilastirmasi) ve PPO 2017 kullanildi ve metinde "hakemli degildir" kaydiyla
+  isaretlendi. Gerekce: ucu de yayimlanmis makalelerin dogrudan borcunu oduyor (33 → 35, 34 → 38,
+  13 → 37) ve ucunun de hakemli esdegeri yok. Buna karsilik yalnizca CoRR'de indekslenen iki aday
+  kaynak (Chen ve ark. bilesik cikarim sistemleri, Swamy ve ark. uretme-dogrulama acigi)
+  kullanilmadi, cunku ayni bulgu baska hakemli kaynaklardan verilebiliyordu.
+- [2026-09-01] AI Batch 8'de render betigi degistirildi: beklenen sekil sayisi artik makale basina
+  veriliyor (`SLUGS` uclusunun son elemani). Gerekce: b7'nin betigi sabit 3 varsayiyordu ve iki
+  sekilli 36. makale yanlis alarm uretirdi.
+
+- [2026-09-02] Çok kullanıcılı geçişte kimlik, opak session token + `sessions` tablosu yerine mevcut HMAC imzalı cookie payload'ına eklendi (`{uid, ws, exp}`). Gerekçe: middleware Edge'de çalışıyor ve DB göremiyor; opak token her istekte DB lookup gerektirir ve `DATABASE_URL` yokken lokal geliştirmeyi tamamen kilitlerdi. `ws` hesap başına değişmez, bu yüzden bayatlamaz. **Rol bilinçli olarak cookie'ye yazılmadı**; owner kontrolü her yetki noktasında DB'den okunuyor.
+- [2026-09-02] Owner parolası migration'da değil runtime'da ele alınıyor: `ensureOwnerUser()` `ON CONFLICT DO NOTHING` ile satırı açar, ilk başarılı girişte `SITE_PASSWORD_SHA256` ile doğrulanır ve o an bellekteki plaintext scrypt'e çevrilip yazılır. Böylece parola koda/config'e/migration'a hiç girmiyor ve tek kod yolu kalıyor.
+- [2026-09-02] Owner istatistiklerinin toplaması SQL yerine saf TypeScript'te (`lib/stats/aggregate.ts`). Gerekçe: doğrulama veritabanısız yapılacaktı; `count(*) FILTER` gibi agregatlar test edilemeyen bir yüzey bırakırdı. SQL üç dar `SELECT`'e indirildi, metrik matematiğinin tamamı birim testli. Kullanıcı sayısı küçük olduğu için maliyet önemsiz.
+- [2026-09-02] Owner ekranında yalnızca sayı gösteriliyor; `highlights.exact_text` ve `saved_places.preview_text` hiç seçilmiyor. Gerekçe: bunlar okurun kendi seçtiği pasajlar, minimum veri ilkesi.
+- [2026-09-02] `users.last_login_at` tek sütun olarak eklendi; IP, user-agent veya giriş geçmişi tablosu eklenmedi. "Hesap açıldı ama hiç girilmedi mi?" sorusunun başka cevabı yok ve `users` yeni tablo olduğu için mevcut veri üzerinde migration riski sıfır.
+

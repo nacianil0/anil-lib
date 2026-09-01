@@ -40,7 +40,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
             Yapay Zekâyı Okumak
           </h1>
           <p className="mt-3 font-sans text-sm leading-relaxed text-text-muted">
-            Okuma listesine erişmek için şifreyi gir.
+            Okuma listesine erişmek için kullanıcı adını ve şifreni gir.
           </p>
         </div>
 
@@ -49,11 +49,28 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
 
           <label className="flex flex-col gap-1.5">
             <span className="font-mono text-2xs uppercase tracking-[0.15em] text-text-faint">
+              Kullanıcı adı
+            </span>
+            <input
+              autoCapitalize="none"
+              autoComplete="username"
+              autoCorrect="off"
+              autoFocus
+              className="h-10 rounded border border-border bg-surface px-3 font-sans text-sm text-text outline-none transition-colors placeholder:text-text-faint focus:border-accent disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={!isConfigured}
+              name="username"
+              required
+              spellCheck={false}
+              type="text"
+            />
+          </label>
+
+          <label className="flex flex-col gap-1.5">
+            <span className="font-mono text-2xs uppercase tracking-[0.15em] text-text-faint">
               Şifre
             </span>
             <input
               autoComplete="current-password"
-              autoFocus
               className="h-10 rounded border border-border bg-surface px-3 font-sans text-sm text-text outline-none transition-colors placeholder:text-text-faint focus:border-accent disabled:cursor-not-allowed disabled:opacity-50"
               disabled={!isConfigured}
               name="password"
@@ -65,7 +82,12 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
           <div aria-live="polite" className="min-h-[2.5rem]">
             {error === "invalid" && (
               <p className="rounded border border-accent-soft bg-accent-soft px-3 py-2 font-sans text-2xs leading-snug text-accent">
-                Şifre eşleşmedi.
+                Kullanıcı adı veya şifre hatalı.
+              </p>
+            )}
+            {error === "unavailable" && (
+              <p className="rounded border border-cool-soft bg-cool-soft px-3 py-2 font-sans text-2xs leading-snug text-cool">
+                Hesap servisi şu anda yanıt vermiyor. Birazdan tekrar dene.
               </p>
             )}
             {error === "config" && (

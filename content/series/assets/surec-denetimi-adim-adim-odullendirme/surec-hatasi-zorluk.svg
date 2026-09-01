@@ -1,0 +1,30 @@
+<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Doğru cevap, bozuk gerekçe: oran zorlukla büyüyor</text>
+  <text x="16" y="48" font-size="13" text-anchor="start" fill="var(--text-faint)">yalnızca nihai cevabı doğru olan çözümler arasında</text>
+
+  <line x1="40" y1="240" x2="680" y2="240" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="45" y="229" width="90" height="11" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="90" y="220" font-size="13" text-anchor="middle" fill="var(--text)">%3,5</text>
+  <text x="90" y="264" font-size="13" text-anchor="middle" fill="var(--text-muted)">ilkokul</text>
+  <text x="90" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">matematiği</text>
+
+  <rect x="205" y="182" width="90" height="58" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="250" y="173" font-size="13" text-anchor="middle" fill="var(--text)">%18,8</text>
+  <text x="250" y="264" font-size="13" text-anchor="middle" fill="var(--text-muted)">lise ve</text>
+  <text x="250" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">üniversite</text>
+
+  <rect x="365" y="140" width="90" height="100" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="410" y="131" font-size="13" text-anchor="middle" fill="var(--text)">%32,2</text>
+  <text x="410" y="264" font-size="13" text-anchor="middle" fill="var(--text-muted)">olimpiyat</text>
+  <text x="410" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">düzeyi</text>
+
+  <rect x="525" y="80" width="90" height="160" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="570" y="71" font-size="13" text-anchor="middle" fill="var(--text)">%51,8</text>
+  <text x="570" y="264" font-size="13" text-anchor="middle" fill="var(--text-muted)">geniş olimpiyat</text>
+  <text x="570" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">derlemi</text>
+
+  <line x1="16" y1="302" x2="704" y2="302" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="324" font-size="13" text-anchor="start" fill="var(--text-muted)">bunlar sonuç denetiminin kusursuz saydığı çözümler</text>
+  <text x="16" y="346" font-size="13" text-anchor="start" fill="var(--text-faint)">zorluk arttıkça doğru cevap, gerekçe hakkında giderek daha az şey söylüyor</text>
+</svg>

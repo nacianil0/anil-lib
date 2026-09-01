@@ -206,10 +206,10 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
   );
 }
 
-export function SeriesLanding(props: Props) {
+export function SeriesLanding({ workspaceId, ...props }: Props & { workspaceId: string }) {
   return (
     <ReaderPreferencesProvider>
-      <ReaderDataProvider>
+      <ReaderDataProvider workspaceId={workspaceId}>
         <LandingContent {...props} />
       </ReaderDataProvider>
     </ReaderPreferencesProvider>

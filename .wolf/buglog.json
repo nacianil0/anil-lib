@@ -3209,6 +3209,542 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-30T17:37:27.449Z"
+    },
+    {
+      "id": "bug-191",
+      "timestamp": "2026-09-01T13:42:59.679Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md",
+      "root_cause": "Had \"Şekil 2 — Doğrulayıcının iki ayrı yanılma biçimi\"",
+      "fix": "Changed to 'ini kabul ederken doğru cevapların yüzde 95,8'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T13:43:15.432Z"
+    },
+    {
+      "id": "bug-192",
+      "timestamp": "2026-09-01T13:47:20.175Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md",
+      "root_cause": "Had \"aynı\"",
+      "fix": "Changed to 'ya çıkıyor — ve tek satırlık bu hesabın tamamı, y",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T13:47:20.175Z"
+    },
+    {
+      "id": "bug-193",
+      "timestamp": "2026-09-01T13:58:36.060Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md",
+      "root_cause": "Had 'larını temsil eden gri kutular ve onların ardında",
+      "fix": "Changed to 'larını temsil eder ve soluk çizilmiştir; onları d",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T13:58:36.060Z"
+    },
+    {
+      "id": "bug-194",
+      "timestamp": "2026-09-01T19:48:50.580Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md",
+      "root_cause": "Had \"bu adım doğru mu\"",
+      "fix": "Changed to 'dir — en az bir devam vardığı için adım \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T19:49:18.215Z"
+    },
+    {
+      "id": "bug-195",
+      "timestamp": "2026-09-01T19:53:01.521Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md",
+      "root_cause": "Had `ln N − (N−1)/N`",
+      "fix": "Changed to 'ın çalışması, en iyi-N seçiminin başlangıç dağılı",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T19:53:01.521Z"
+    },
+    {
+      "id": "bug-196",
+      "timestamp": "2026-09-01T19:53:11.701Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/YOL-HARITASI.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (3 removed) | Also: **Batch 7 taslak satırları (Faz C'nin kapanışı; ba; - 22 ← 21 (açgözlünün çöktüğü üç yerin ortak neden",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T19:53:44.050Z"
+    },
+    {
+      "id": "bug-197",
+      "timestamp": "2026-09-01T20:10:00.000Z",
+      "error_message": "/boun/<slug> 500: [content] Katalog ile frontmatter uyusmuyor",
+      "file": "content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md",
+      "root_cause": "Calisan Next dev sunucusu catalog.json'u surec omru boyunca onbellege alir. Makale govdesi duzenlenip sync-series-hashes.cjs --write calistirildiktan sonra sunucu ESKI katalog hash'ini tutmaya devam etti; diskteki frontmatter ve katalog degerleri birebir ayniydi.",
+      "fix": "Dev sunucusunu yeniden baslat (netstat -ano ile PID bul, Stop-Process -Force, sonra tekrar next dev). Kural HANDOFF 'bilinen sorunlar' ve 'arac sirasi' bolumlerine yazildi.",
+      "tags": [
+        "boun",
+        "dev-server",
+        "cache",
+        "content-hash",
+        "false-positive"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:10:00.000Z"
+    },
+    {
+      "id": "bug-198",
+      "timestamp": "2026-09-01T20:11:00.000Z",
+      "error_message": "Bagimsiz denetim betigi 24 makalenin HEPSINDE 'govde hash uyusmuyor' dedi",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "Betik govdeyi ham bayt olarak hash'liyordu; aracin gercek tanimi frontmatter sonrasi govdenin .trim() edilmis halinin UTF-8 SHA-256'sidir. Trim atlaninca her dosya sahte uyusmazlik verdi.",
+      "fix": "Denetim betigi body.decode('utf-8').strip().encode('utf-8') uzerinden hash aliyor; sonuc 24/24 temiz. Kural HANDOFF 'bilinen sorunlar'a ve ARASTIRMA §12 yontem notuna yazildi.",
+      "tags": [
+        "boun",
+        "content-hash",
+        "audit-script",
+        "false-positive"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:11:00.000Z"
+    },
+    {
+      "id": "bug-199",
+      "timestamp": "2026-09-01T20:23:34.777Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/auth/password-gate.ts",
+      "root_cause": "9 lines replaced/restructured",
+      "fix": "Rewrote 43→60 lines (9 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:23:34.777Z"
+    },
+    {
+      "id": "bug-200",
+      "timestamp": "2026-09-01T20:25:42.034Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/auth/session-user.ts",
+      "root_cause": "11 lines replaced/restructured",
+      "fix": "Rewrote 20→9 lines (11 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:25:42.034Z"
+    },
+    {
+      "id": "bug-201",
+      "timestamp": "2026-09-01T20:25:45.712Z",
+      "error_message": "Wrong reference: localOwner should be localOwnerUser",
+      "file": "src/lib/auth/session-user.ts",
+      "root_cause": "Used \"localOwner\" instead of \"localOwnerUser\"",
+      "fix": "Changed localOwner → localOwnerUser",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:25:45.712Z"
+    },
+    {
+      "id": "bug-202",
+      "timestamp": "2026-09-01T20:26:30.011Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/app/login/page.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 18→22 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:26:30.011Z"
+    },
+    {
+      "id": "bug-203",
+      "timestamp": "2026-09-01T20:26:39.820Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader/version.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation | Also: /**; * Scroll fraction above which an unfinished article counts a",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T20:26:44.907Z"
+    },
+    {
+      "id": "bug-204",
+      "timestamp": "2026-09-01T20:27:31.711Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:27:31.711Z"
+    },
+    {
+      "id": "bug-205",
+      "timestamp": "2026-09-01T20:27:50.007Z",
+      "error_message": "Wrong condition in logic",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "Condition was: if (event.key !== READER_DATA_STORAGE_KEY)",
+      "fix": "Changed to: if (event.key !== readerDataStorageKey(workspaceId)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:27:50.007Z"
+    },
+    {
+      "id": "bug-206",
+      "timestamp": "2026-09-01T20:28:21.095Z",
+      "error_message": "Wrong return value",
+      "file": "src/lib/auth/session-user.ts",
+      "root_cause": "Was returning: null;",
+      "fix": "Now returns: localOwnerUser();",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:28:21.095Z"
+    },
+    {
+      "id": "bug-207",
+      "timestamp": "2026-09-01T20:28:37.900Z",
+      "error_message": "Wrong return value",
+      "file": "src/lib/progress/use-reader-progress.tsx",
+      "root_cause": "Was returning: <ReaderDataProvider>{children}</ReaderDataProvider",
+      "fix": "Now returns: <ReaderDataProvider workspaceId={workspaceId}>{chi",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:28:37.900Z"
+    },
+    {
+      "id": "bug-208",
+      "timestamp": "2026-09-01T20:29:21.423Z",
+      "error_message": "Missing await",
+      "file": "src/app/boun/page.tsx",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:29:21.423Z"
+    },
+    {
+      "id": "bug-209",
+      "timestamp": "2026-09-01T20:32:42.766Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/auth/users.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 13→16 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:32:42.766Z"
+    },
+    {
+      "id": "bug-210",
+      "timestamp": "2026-09-01T20:35:33.148Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 8→15 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:35:33.148Z"
+    },
+    {
+      "id": "bug-211",
+      "timestamp": "2026-09-01T20:35:41.450Z",
+      "error_message": "Type error",
+      "file": "src/app/api/reader-sync/route.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:35:41.450Z"
+    },
+    {
+      "id": "bug-212",
+      "timestamp": "2026-09-01T20:42:49.326Z",
+      "error_message": "Missing await",
+      "file": "src/lib/auth/password-gate.test.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:42:49.326Z"
+    },
+    {
+      "id": "bug-213",
+      "timestamp": "2026-09-01T20:44:02.434Z",
+      "error_message": "Missing guard clause",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "No early return/throw for edge case: !mountedRef.current",
+      "fix": "Added guard clause: if (!mountedRef.current)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:44:02.434Z"
+    },
+    {
+      "id": "bug-214",
+      "timestamp": "2026-09-01T20:44:07.286Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 7→8 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:44:07.286Z"
+    },
+    {
+      "id": "bug-215",
+      "timestamp": "2026-09-01T20:53:07.402Z",
+      "error_message": "Incorrect value in code",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Had \"anil-lib:reader-data:v2\"",
+      "fix": "Changed to 's workspace keeps its literal key.\nconst READER_D",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:53:07.402Z"
+    },
+    {
+      "id": "bug-216",
+      "timestamp": "2026-09-01T20:53:11.180Z",
+      "error_message": "Incorrect value in code",
+      "file": "tests/e2e/reader-data.spec.ts",
+      "root_cause": "Had \"anil-lib:reader-data:v2\"",
+      "fix": "Changed to \"anil-lib:reader-data:v2:owner\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T20:53:11.180Z"
+    },
+    {
+      "id": "bug-217",
+      "timestamp": "2026-09-01T20:55:05.970Z",
+      "error_message": "Missing error handling in function",
+      "file": "src/lib/stats/server/user-stats.ts",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block | Also: let user: Awaited<ReturnType<typeof findUserById>>;; let rows: Awaited<ReturnType<typeof readWorkspace>>;",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T20:55:12.077Z"
+    },
+    {
+      "id": "bug-218",
+      "timestamp": "2026-09-01T21:05:22.226Z",
+      "error_message": "Function not marked async",
+      "file": "src/components/reader/reading-list.test.tsx",
+      "root_cause": "Function uses await but wasn't declared async",
+      "fix": "Added async modifier",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-01T21:05:22.226Z"
+    },
+    {
+      "id": "bug-219",
+      "timestamp": "2026-09-01T21:06:44.906Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/superpowers/specs/2026-09-01-cok-kullanicili-owner-yonetimi-ve-istatistikler-design.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 7→6 lines (3 removed) | Also: Vitest: scrypt roundtrip, imza kurcalama, env-sha2; Playwright: owner girişi, standard user için `/yon",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-01T21:07:05.149Z"
+    },
+    {
+      "error_message": "ENOENT: no such file or directory, open '.next/server/pages/_document.js' (HTTP 500 on every route)",
+      "file": ".next",
+      "root_cause": "`next build` and two `next dev` servers (ports 3100 and 3101) shared the same .next directory, which corrupts it. Known trap already recorded in cerebrum for build-while-dev; it also applies to two concurrent dev servers.",
+      "fix": "Kill every dev server, `rm -rf .next`, restart a single dev server. Never run a second dev server against the same project directory.",
+      "tags": [
+        "nextjs",
+        "dev-server",
+        "build",
+        "environment"
+      ],
+      "id": "bug-220",
+      "timestamp": "2026-09-02T00:15:00Z",
+      "occurrences": 1,
+      "last_seen": "2026-09-02T00:15:00Z",
+      "related_bugs": []
+    },
+    {
+      "error_message": "Vitest: 'ReferenceError: window is not defined' unhandled error after teardown, from reading-list.test.tsx",
+      "file": "src/components/reader/reading-list.test.tsx",
+      "root_cause": "The suite never unmounted its tree (no afterEach(cleanup), unlike the sibling component suites), so the reader provider's scheduled work outlived the jsdom environment.",
+      "fix": "Added afterEach(cleanup), plus a mountedRef guard in ReaderDataProvider so a sync settling after unmount never writes state. Three consecutive clean runs.",
+      "tags": [
+        "vitest",
+        "react",
+        "testing-library",
+        "flake"
+      ],
+      "id": "bug-221",
+      "timestamp": "2026-09-02T00:15:00Z",
+      "occurrences": 1,
+      "last_seen": "2026-09-02T00:15:00Z",
+      "related_bugs": []
+    },
+    {
+      "error_message": "pnpm add / pnpm install / pnpm --version all fail with 'packages field missing or empty'",
+      "file": "pnpm-workspace.yaml",
+      "root_cause": "pnpm-workspace.yaml declares only `allowBuilds` and no `packages:` key, which the installed pnpm rejects. Every pnpm script in package.json is therefore unusable in this environment.",
+      "fix": "Not fixed (user's config, out of scope). Worked around by invoking node_modules/.bin/tsc, vitest, eslint, next and playwright directly.",
+      "tags": [
+        "pnpm",
+        "environment",
+        "tooling",
+        "pre-existing"
+      ],
+      "id": "bug-222",
+      "timestamp": "2026-09-02T00:15:00Z",
+      "occurrences": 1,
+      "last_seen": "2026-09-02T00:15:00Z",
+      "related_bugs": []
+    },
+    {
+      "error_message": "Session-dependent pages (/, /seri, /boun, /read) were emitted as static HTML by `next build`",
+      "file": "src/lib/auth/session-user.ts",
+      "root_cause": "getSessionUser() returned the local-owner identity before ever calling cookies() when the gate env was absent. A build without SITE_PASSWORD_SHA256 therefore never hit a dynamic API, so Next prerendered the pages with workspaceId=\"owner\" baked in and would have served one account's identity to every visitor.",
+      "fix": "Read the cookie store unconditionally at the top of getSessionUser(), before the gate-config check, and add `export const dynamic = \"force-dynamic\"` to every route that resolves a session. Verified via .next/prerender-manifest.json now listing only /_not-found.",
+      "tags": [
+        "nextjs",
+        "ssg",
+        "auth",
+        "data-isolation",
+        "critical"
+      ],
+      "id": "bug-223",
+      "timestamp": "2026-09-02T00:15:00Z",
+      "occurrences": 1,
+      "last_seen": "2026-09-02T00:15:00Z",
+      "related_bugs": []
     }
   ]
 }

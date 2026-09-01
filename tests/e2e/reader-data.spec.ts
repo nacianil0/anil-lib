@@ -8,10 +8,12 @@ const catalog = JSON.parse(
 const first = catalog.articles[0];
 const second = catalog.articles[1];
 const TEST_PASSWORD = "test-reader-pass";
+const TEST_USERNAME = "anil";
 const QUOTE = "Modern yapay zekâ, tek bir mucizevi buluşun ürünü değildir";
 
 async function authenticate(page: Page, next = `/read/${first.slug}`) {
   await page.goto(`/login?next=${encodeURIComponent(next)}`);
+  await page.locator('input[name="username"]').fill(TEST_USERNAME);
   await page.locator('input[name="password"]').fill(TEST_PASSWORD);
   await page.locator('button[type="submit"]').click();
   await page.waitForURL((url) => url.pathname === next.split("?")[0]);
@@ -57,7 +59,9 @@ test.describe("synced reader data", () => {
 
     await page.getByRole("button", { name: "İşaretle", exact: true }).click();
     const highlightId = await page.evaluate((quote) => {
-      const data = JSON.parse(window.localStorage.getItem("anil-lib:reader-data:v2") ?? "{}");
+      const data = JSON.parse(
+        window.localStorage.getItem("anil-lib:reader-data:v2:owner") ?? "{}",
+      );
       const matches = Object.values(data.highlights ?? {}) as Array<{
         id: string;
         exactText: string;

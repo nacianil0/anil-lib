@@ -424,6 +424,66 @@
       "path": "content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
+    },
+    {
+      "articleId": "article_63de9671-33cd-403a-92e7-746b16585236",
+      "title": "Dinamik Programlama: Alt Problemi Bulmak",
+      "slug": "dinamik-programlama-alt-problemi-bulmak",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 22,
+      "summary": "Böl ve yönetin çöktüğü yer ile açgözlünün çöktüğü yer aynı çözüme bakıyor: her alt problemi bir kez çöz ve sakla. Örtüşen alt problemlerin teşhisi, bellekleme ile tablolama ayrımı, altı adımlı alt problem reçetesi ve tablolama döngüsünün değişmezi; ağırlıklı aralık çizelgelemenin sayısal olarak çalışılmış DP çözümü, LCS ve 0/1 sırt çantası; dinamik programlamanın neden yalnızca optimal altyapı istediği ve sözde polinom tuzağı.",
+      "tags": [
+        "dinamik-programlama",
+        "bellekleme",
+        "ortusen-alt-problemler",
+        "sirt-cantasi",
+        "optimal-altyapi"
+      ],
+      "contentHash": "sha256:3a1a75948c3b91a4f9f841500bdf2e6b28459bdfab01897347fc9b8a8cdf599e",
+      "path": "content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
+    },
+    {
+      "articleId": "article_6a50cd2b-b728-4b06-9589-c3b1b0338783",
+      "title": "Graf Algoritmaları: MST ve En Kısa Yollar",
+      "slug": "graf-algoritmalari-mst-ve-en-kisa-yollar",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 23,
+      "summary": "Kenarların ağırlığı olunca iki farklı soru doğuyor ve aynı graf üzerinde iki farklı ağaç veriyor: minimum kapsayan ağaç ile en kısa yollar ağacı. Kesit teoreminin değişim argümanıyla ispatı, Prim ile Kruskal, heap makalesinden kalan azalt_anahtar borcunun kapanması; gevşetmenin güvenliği, Dijkstra'nın doğruluğu ve negatif kenarda çökmesi, Bellman-Ford'un bir dinamik programlama olarak okunması ve dört algoritmanın maliyet tablosu.",
+      "tags": [
+        "minimum-kapsayan-agac",
+        "en-kisa-yollar",
+        "dijkstra",
+        "bellman-ford",
+        "azalt-anahtar"
+      ],
+      "contentHash": "sha256:dbccdab19371a26517c0086ed49079f82cc584db01946aa0be16aa752693672e",
+      "path": "content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
+    },
+    {
+      "articleId": "article_247248d5-746a-42d4-9fd7-e01241810ac1",
+      "title": "Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar",
+      "slug": "alt-sinirlar-olasiliksal-ve-paralel-algoritmalar",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 24,
+      "summary": "Üç yeni soru: daha hızlısı imkânsız mı, rastgelelik hız kazandırır mı, birden çok işlemci varken maliyet nedir? Karar ağacı kuramının formal hâli ve karşılaştırmalı sıralamanın n log n alt sınırı; Monte Carlo ile Las Vegas ayrımı, Freivalds'ın çarpım denetleyicisi ve rastgeleleştirilmiş hızlı sıralamanın beklenti analizi; iş ile derinlik ayrımı, iş ve açıklık yasaları, açgözlü çizelgeleyici teoremi ve Amdahl yasasından neden daha keskin olduğu.",
+      "tags": [
+        "alt-sinir",
+        "karar-agaci",
+        "rastgelelestirme",
+        "paralel-algoritmalar",
+        "is-ve-derinlik"
+      ],
+      "contentHash": "sha256:557816efadcae35535e676d52fa6aa81d7b39739025e5bd891b189edb04a689b",
+      "path": "content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 7
     }
   ]
 }

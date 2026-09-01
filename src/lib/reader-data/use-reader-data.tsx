@@ -11,7 +11,11 @@ import {
   type ReactNode,
 } from "react";
 import type { ReadingStatus } from "@/lib/content/types";
-import { COMPLETION_THRESHOLD, READER_DATA_STORAGE_KEY } from "@/lib/reader/version";
+import {
+  COMPLETION_THRESHOLD,
+  readerDataStorageKey,
+  STARTED_RATIO,
+} from "@/lib/reader/version";
 import { clamp } from "@/lib/utils";
 import type { ArticleProgress, ReaderProgress } from "@/lib/progress/schema";
 import { mergeSyncResponse } from "./merge";
@@ -33,7 +37,7 @@ import {
 import { requestReaderSync } from "./sync-client";
 
 const SAVE_THROTTLE_MS = 250;
-const STARTED_RATIO = 0.02;
+const PLACEHOLDER_DEVICE_ID = "00000000-0000-4000-8000-000000000000";
 
 export type SyncStatus = "idle" | "syncing" | "pending" | "offline" | "error" | "unavailable";
 
@@ -96,9 +100,20 @@ function withoutPendingEntity(
   );
 }
 
-export function ReaderDataProvider({ children }: { children: ReactNode }) {
+/**
+ * `workspaceId` comes from the server-resolved session. It scopes the storage key,
+ * the in-memory blob and the outbox, so signing in as a different account in the
+ * same browser starts from an empty, isolated state.
+ */
+export function ReaderDataProvider({
+  children,
+  workspaceId,
+}: {
+  children: ReactNode;
+  workspaceId: string;
+}) {
   const [data, setData] = useState<ReaderData>(() =>
-    emptyReaderData("00000000-0000-4000-8000-000000000000"),
+    emptyReaderData(workspaceId, PLACEHOLDER_DEVICE_ID),
   );
   const [ready, setReady] = useState(false);
   const [storageAvailable, setStorageAvailable] = useState(true);
@@ -106,6 +121,9 @@ export function ReaderDataProvider({ children }: { children: ReactNode }) {
   const dataRef = useRef(data);
   dataRef.current = data;
   const syncInFlightRef = useRef(false);
+  // A sync can settle after the provider is gone (navigation, or a test tearing the
+  // environment down); state must not be written at that point.
+  const mountedRef = useRef(true);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastWriteRef = useRef(0);
 
@@ -133,7 +151,7 @@ export function ReaderDataProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const syncNow = useCallback(async () => {
-    if (!ready || syncInFlightRef.current) return;
+    if (!ready || syncInFlightRef.current || !mountedRef.current) return;
     if (typeof navigator !== "undefined" && !navigator.onLine) {
       setSyncStatus("offline");
       return;
@@ -146,18 +164,20 @@ export function ReaderDataProvider({ children }: { children: ReactNode }) {
         cursor: snapshot.cursor,
         operations: snapshot.outbox.slice(0, 100),
       });
+      if (!mountedRef.current) return;
       const merged = mergeSyncResponse(dataRef.current, response);
       persist(merged);
-      finishLegacyMigration();
+      finishLegacyMigration(workspaceId);
       setSyncStatus(merged.outbox.length > 0 ? "pending" : "idle");
       if (merged.outbox.length > 0) setTimeout(() => void syncNow(), 0);
     } catch (error) {
+      if (!mountedRef.current) return;
       const status = (error as { status?: number }).status;
       setSyncStatus(status === 503 ? "unavailable" : navigator.onLine ? "error" : "offline");
     } finally {
       syncInFlightRef.current = false;
     }
-  }, [persist, ready]);
+  }, [persist, ready, workspaceId]);
 
   const scheduleSync = useCallback(() => {
     setSyncStatus((current) => (current === "syncing" ? current : "pending"));
@@ -165,12 +185,13 @@ export function ReaderDataProvider({ children }: { children: ReactNode }) {
   }, [syncNow]);
 
   useEffect(() => {
-    const stored = readReaderData();
+    setReady(false);
+    const stored = readReaderData(workspaceId);
     dataRef.current = stored;
     setData(stored);
     setStorageAvailable(isReaderDataStorageAvailable());
     setReady(true);
-  }, []);
+  }, [workspaceId]);
 
   useEffect(() => {
     if (ready) void syncNow();
@@ -178,8 +199,8 @@ export function ReaderDataProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     function onStorage(event: StorageEvent) {
-      if (event.key !== READER_DATA_STORAGE_KEY) return;
-      const next = parseReaderData(event.newValue);
+      if (event.key !== readerDataStorageKey(workspaceId)) return;
+      const next = parseReaderData(event.newValue, workspaceId);
       if (next) {
         dataRef.current = next;
         setData(next);
@@ -199,15 +220,16 @@ export function ReaderDataProvider({ children }: { children: ReactNode }) {
       window.removeEventListener("online", onOnline);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [syncNow]);
+  }, [syncNow, workspaceId]);
 
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
       writeReaderData(dataRef.current);
-    },
-    [],
-  );
+    };
+  }, []);
 
   const mutateProgress = useCallback(
     (record: ProgressRecord, immediate = false, currentArticleId?: string) => {
