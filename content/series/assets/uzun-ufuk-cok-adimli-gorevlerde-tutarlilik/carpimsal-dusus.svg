@@ -1,0 +1,28 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Adım sayısı arttıkça başarı çarpımsal düşüyor</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">dikey eksen: görevin tamamını doğru bitirme olasılığı</text>
+
+  <line x1="70" y1="230" x2="680" y2="230" stroke="var(--border)" stroke-width="1"/>
+  <line x1="70" y1="56" x2="70" y2="230" stroke="var(--border)" stroke-width="1"/>
+  <text x="62" y="64" font-size="13" text-anchor="end" fill="var(--text-faint)">1,0</text>
+  <text x="62" y="150" font-size="13" text-anchor="end" fill="var(--text-faint)">0,5</text>
+  <text x="62" y="234" font-size="13" text-anchor="end" fill="var(--text-faint)">0,0</text>
+
+  <polyline fill="none" stroke="var(--accent)" stroke-width="2" points="70,60 94,67 118,73 142,79 166,85 190,91 214,96 238,102 262,107 286,112 310,116 334,121 358,125 382,129 406,133 430,137 454,141 478,144 502,148 526,151 550,154 574,157 598,160 622,163 646,165 670,168"/>
+  <polyline fill="none" stroke="var(--cool)" stroke-width="2" points="70,60 94,92 118,117 142,138 166,155 190,169 214,180 238,190 262,197 286,203 310,208 334,212 358,216 382,218 406,220 430,222 454,224 478,225 502,226 526,227 550,227 574,228 598,228 622,228 646,229 670,229"/>
+  <polyline fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="5 3" points="70,60 94,118 118,157 142,182 166,198 190,209 214,216 238,221 262,224 286,226 310,227 334,228 358,229 382,229 406,230 430,230 454,230 478,230 502,230 526,230 550,230 574,230 598,230 622,230 646,230 670,230"/>
+
+  <line x1="452" y1="80" x2="480" y2="80" stroke="var(--accent)" stroke-width="2"/>
+  <text x="488" y="85" font-size="13" text-anchor="start" fill="var(--text)">adım başına %99</text>
+  <line x1="452" y1="106" x2="480" y2="106" stroke="var(--cool)" stroke-width="2"/>
+  <text x="488" y="111" font-size="13" text-anchor="start" fill="var(--text)">adım başına %95</text>
+  <line x1="452" y1="132" x2="480" y2="132" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="488" y="137" font-size="13" text-anchor="start" fill="var(--text-muted)">adım başına %90</text>
+
+  <text x="70" y="256" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="370" y="256" font-size="13" text-anchor="middle" fill="var(--text-faint)">50 adım</text>
+  <text x="670" y="256" font-size="13" text-anchor="middle" fill="var(--text-faint)">100 adım</text>
+
+  <line x1="16" y1="278" x2="704" y2="278" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="302" font-size="13" text-anchor="start" fill="var(--text-muted)">adım başına doğrulukta küçük bir fark, görev düzeyinde büyük bir fark demek</text>
+</svg>

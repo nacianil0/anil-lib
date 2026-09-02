@@ -1,0 +1,66 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a27b-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Tek iş parçacıklı adres uzayı</text>
+
+  <rect x="60" y="40" width="140" height="35" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="60" y="75" width="140" height="35" fill="var(--cool-soft)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="60" y="110" width="140" height="120" fill="var(--surface)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="60" y="230" width="140" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+
+  <text x="130" y="63" font-size="13" text-anchor="middle" fill="var(--text)">kod</text>
+  <text x="130" y="98" font-size="13" text-anchor="middle" fill="var(--text)">heap</text>
+  <text x="130" y="176" font-size="13" text-anchor="middle" fill="var(--text-faint)">(boş)</text>
+  <text x="130" y="255" font-size="13" text-anchor="middle" fill="var(--text)">yığın</text>
+
+  <text x="14" y="52" font-size="13" fill="var(--text-faint)">0 KB</text>
+  <text x="14" y="88" font-size="13" fill="var(--text-faint)">1 KB</text>
+  <text x="14" y="123" font-size="13" fill="var(--text-faint)">2 KB</text>
+  <text x="14" y="243" font-size="13" fill="var(--text-faint)">15 KB</text>
+  <text x="14" y="268" font-size="13" fill="var(--text-faint)">16 KB</text>
+
+  <line x1="212" y1="114" x2="212" y2="152" stroke="var(--cool)" stroke-width="1.8" marker-end="url(#boun-a27b-ok)" />
+  <text x="222" y="136" font-size="13" fill="var(--text-faint)">heap büyür</text>
+  <line x1="212" y1="226" x2="212" y2="188" stroke="var(--cool)" stroke-width="1.8" marker-end="url(#boun-a27b-ok)" />
+  <text x="222" y="208" font-size="13" fill="var(--text-faint)">yığın büyür</text>
+
+  <text x="15" y="296" font-size="13" fill="var(--text)">tek yürütme noktası, tek program sayacı</text>
+  <text x="15" y="316" font-size="13" fill="var(--text-faint)">tek yığın, adres uzayının tepesinde</text>
+
+  <line x1="362" y1="36" x2="362" y2="308" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">Çok iş parçacıklı adres uzayı</text>
+
+  <rect x="420" y="40" width="140" height="35" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="420" y="75" width="140" height="35" fill="var(--cool-soft)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="420" y="110" width="140" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="420" y="150" width="140" height="38" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <rect x="420" y="188" width="140" height="42" fill="var(--surface)" stroke="var(--border)" stroke-width="1.3" />
+  <rect x="420" y="230" width="140" height="40" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+
+  <text x="490" y="63" font-size="13" text-anchor="middle" fill="var(--text)">kod</text>
+  <text x="490" y="98" font-size="13" text-anchor="middle" fill="var(--text)">heap</text>
+  <text x="490" y="135" font-size="13" text-anchor="middle" fill="var(--text-faint)">(boş)</text>
+  <text x="490" y="174" font-size="13" text-anchor="middle" fill="var(--text)">yığın 2</text>
+  <text x="490" y="214" font-size="13" text-anchor="middle" fill="var(--text-faint)">(boş)</text>
+  <text x="490" y="255" font-size="13" text-anchor="middle" fill="var(--text)">yığın 1</text>
+
+  <text x="378" y="52" font-size="13" fill="var(--text-faint)">0 KB</text>
+  <text x="378" y="88" font-size="13" fill="var(--text-faint)">1 KB</text>
+  <text x="378" y="268" font-size="13" fill="var(--text-faint)">16 KB</text>
+
+  <text x="574" y="62" font-size="13" fill="var(--text)">kod ve heap</text>
+  <text x="574" y="82" font-size="13" fill="var(--text)">paylaşılır</text>
+  <text x="574" y="116" font-size="13" fill="var(--text-faint)">her iş parçacığı</text>
+  <text x="574" y="136" font-size="13" fill="var(--text-faint)">kendi yığınını</text>
+  <text x="574" y="156" font-size="13" fill="var(--text-faint)">tutar</text>
+  <text x="574" y="190" font-size="13" fill="var(--text-faint)">yerel değişkenler</text>
+  <text x="574" y="210" font-size="13" fill="var(--text-faint)">orada durur</text>
+
+  <text x="378" y="296" font-size="13" fill="var(--text)">iş parçacığı geçişinde sayfa tablosu değişmez</text>
+  <text x="378" y="316" font-size="13" fill="var(--text-faint)">her iş parçacığı için ayrı bir TCB tutulur</text>
+</svg>

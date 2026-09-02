@@ -1240,3 +1240,241 @@ kopyalanmadı.
   hash'ini tutmaya devam etti ve `/boun/<slug>` 500 verdi ("Katalog ile frontmatter uyuşmuyor").
   Diskteki iki değer birebir aynıydı; sorun yalnızca sunucu önbelleğidir. Çözüm: gövde
   düzenlendikten sonra dev sunucusunu **yeniden başlatmak**.
+## 13. Batch 8 üretim run'ında doğrulanan kaynaklar (2026-09-02)
+
+Makale 25 (NP-Tamlık), 26 (İşletim Sistemi Nedir?) ve 27 (Süreçler ve İş Parçacıkları) bu
+kaynaklara dayanır. Bütün URL'ler bu run'da HTTP 200 ile çekildi; PDF'ler indirilip metne
+çevrildi.
+
+### Resmî sayfa
+
+- **CMPE322** (<https://cmpe.bogazici.edu.tr/courses/cmpe322/>), yeniden doğrulama **2026-09-02**:
+  sayfa yeniden çekildi, §1'deki özetle **birebir uyuşuyor**, kapsam kararını değiştiren bir fark
+  yok. *Catalog Description* birebir: "Evolution of operating systems. Multiprogramming and time
+  sharing concepts. User and program interfaces. Concurrent processes, CPU scheduling, process
+  synchronization, critical section problem. Deadlock prevention, avoidance, detection and
+  recovery. Memory management, swapping, multiple partitions. Paging, segmentation, virtual
+  memory, page replacement algorithms. File system structures, allocation methods, directory
+  implementation. I/O interfaces, secondary storage structure. Protection and Security: Access
+  matrix and rights, capabilities, security issues. LINUX case studies." Sayfada ayrıca şu alanlar
+  var: dönem Güz, önkoşul CMPE250, eşkoşul yok, 4 kredi / 6 ECTS, ders saati "Lecture: 3, PS:0,
+  Labs: 2", öğretim dili İngilizce.
+  **Kesinlik notu:** CMPE300'ün aksine bu sayfada **Course Learning Outcomes bölümü yoktur**;
+  dersle ilgili bütün resmî içerik iddiaları yalnızca *Catalog Description*'a dayanabilir.
+  Bu doğrulama, HANDOFF'un "Faz D açılmadan önce CMPE322 yeniden doğrulanmalı" borcunu kapatır.
+- CMPE250 ve CMPE300 en son 2026-09-01'de (§12) doğrulandı; Faz C'nin son makalesi olan 25 için
+  yeterlidir, bu run'da yeniden çekilmedi.
+
+### Makale 25 için akademik kaynaklar
+
+- **MIT 6.006 Introduction to Algorithms, Bahar 2020, Lecture 19: Complexity.**
+  Kaynak sayfası: <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec19/>
+  · PDF: `.../fda666a4db1dc65b3d71be08115502bd_MIT6_006S20_lec19.pdf` (5 sayfa).
+  Doğrulanan birebir içerik: karar probleminin tanımı ("assignment of inputs to YES (1) or NO
+  (0)") ve yedi satırlık örnek tablosu; program/problem sayma argümanı ("Program is finite
+  (constant) string of bits, i.e., a nonnegative integer ∈ N. Problem is function p : N → {0, 1},
+  i.e., infinite string of bits" ve "(# of programs |N|, countably infinite) ≪ (# of problems
+  |R|, uncountably infinite)"), Cantor köşegen argümanına atıf ve sonuç ("Proves that most
+  decision problems not solvable by any program (undecidable)"); **R / EXP / P** tanımları ve
+  **P ⊊ EXP ⊊ R** kesin kapsamaları (zaman hiyerarşi teoremlerine dayandırılır); satrancın
+  EXP ∖ P'de olması; **NP'nin doğrulayıcı tanımı** üç koşuluyla; P ⊆ NP ve NP ⊆ EXP gerekçeleri;
+  indirgeme ("Because B can be used to solve A, B is at least as hard as A"); NP-hard tanımı ve
+  **NP-complete = NP ∩ NP-hard**; ilk NP-tam problem olarak Circuit SAT; NP-tam problem listesi;
+  **Subset Sum'ın "weakly NP-complete"** olması ("which is what allows a pseudopolynomial-time
+  algorithm, but no polynomial algorithm unless P = NP") ve 3-Partition'ın "strongly NP-complete"
+  olması; 3-boyamanın NP-tam, 2-boyamanın P'de olması.
+  **Çıkarım uyarısı:** PDF'in ToUnicode eşlemesi bozuk olduğu için bazı semboller ham metinde
+  yanlış çıkıyor; doğrulanmış eşlemeler `$` = ⊊, `6=` = ≠, `∈/` = ∉, `\` = ∖.
+- **MIT 6.046J / 18.410J Design and Analysis of Algorithms, Bahar 2015, Lecture 16.**
+  Ders listesindeki başlık "Complexity: P, NP, NP-completeness, Reductions"; PDF içindeki başlık
+  **"Lecture 16: NP-Completeness"** (9 sayfa).
+  Kaynak sayfası: <https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-16-notes/>
+  Doğrulanan birebir içerik: indirgeme tanımı ("a polynomial-time algorithm that converts inputs
+  to problem A into equivalent inputs to problem B"); NP-hard tanımı ve "If P ≠ NP, then X ∉ P";
+  NP-tamlık ispatının iki adımı ve indirgemenin üç ispat yükümlülüğü; 3SAT'ın **Cook tarafından
+  1971'de** NP-tam bulunması ve NP-zorluğunun devre argümanıyla sezgisi; Subset Sum'ın 3DM'den
+  indirgenmesi ve **"only weakly NP-hard"** gerekçesi ("the values of the numbers used in the
+  reduction are exponential in input"); güçlü NP-zorluğun tanımı; Partition indirgemesindeki
+  **"we can reduce Partition to Subset Sum, though this is not the direction we want for the
+  reduction"** uyarısı — makaledeki "indirgemenin yönü" vurgusunun birincil dayanağı.
+  **Kapsam notu:** bu notta EXP ve R **tanımlanmaz**, P ≠ NP diyagramı **yoktur**, karar/optimizasyon
+  ayrımı tartışılmaz ve Vertex Cover / Knapsack / Hamiltonian Path **geçmez**. Ders notundaki
+  NP-tam liste yalnızca şudur: 3SAT, Super Mario Brothers, 3DM, Subset Sum (weak), Partition
+  (weak), Rectangle Packing (weak), 4-Partition (strong), Rectangle Packing (strong), Jigsaw
+  Puzzles.
+  **Kaynaktaki hata notu:** PDF'te "If B ∈ P, then A ∈ NP" yazıyor; doğrusu A ∈ P'dir. Makale bu
+  satırı aktarmaz, doğru ifadeyi kullanır.
+  **Erişim notu:** OCW CDN'i ilk istekte yanlış sayfayı önbellekten döndürdü; doğru içerik
+  `Cache-Control: no-cache` + tarayıcı User-Agent + cache-buster sorgusu ile alındı.
+- **MIT 6.045J / 18.400J Automata, Computability, and Complexity, Bahar 2011, Lecture 6: Turing
+  machines** (yazıcı: Aseem Kishore; ders veren: Scott Aaronson; kaynak 6.080 GITCS, 14 Şubat 2008).
+  PDF: <https://ocw.mit.edu/courses/6-045j-automata-computability-and-complexity-spring-2011/d6c18e634cdf3363ecac909bd2958b8b_MIT6_045JS11_lec06.pdf>
+  Doğrulanan birebir içerik: Turing makinesinin sonlu otomattan farkı (banda yazma + istediği anda
+  durma) ve her adımdaki üç karar; evrensel Turing makinesi ve Turing'in **1936 tarihli *On
+  Computable Numbers*** makalesi; Church-Turing tezi ("anything we would naturally regard as
+  'computable' is actually computable by a Turing machine"); **durma probleminin karar
+  verilemezliği**, birebir ispatıyla: "Let P be a Turing machine that solves the halting problem…
+  we can easily modify P to produce a new Turing machine Q, such that Q(M) runs forever if M(M)
+  halts, or halts if M(M) runs forever. Then the question becomes: what happens with Q(Q)?";
+  Cantor'un köşegen argümanı; Turing makinelerinin sayılabilir, problemlerin sayılamaz olması.
+  **Not:** 6.006 Lecture 19 durma problemi için ayrı bir ispat vermez, 6.045'e yönlendirir; bu
+  yüzden ispatın kaynağı 6.045'tir.
+- **Sedgewick & Wayne, *Algorithms* 4. baskı, 4.2 Directed Graphs**
+  (<https://algs4.cs.princeton.edu/42digraph/>). Doğrulanan birebir içerik: güçlü bağlılığın
+  denklik bağıntısı olması (yansıma/simetri/geçişlilik açıkça listelenir) ve güçlü bileşenlere
+  parçalaması; derinlik öncelikli sıralar (preorder, postorder, **reverse postorder**) ve
+  "Remarkably, a reverse postorder in a DAG provides a topological order"; **Kosaraju-Sharir**
+  algoritmasının üç adımı; maliyet önermesi ("uses preprocessing time and space proportional to
+  V + E"); **iki geçişin sırasının değiştirilebilir olduğunu doğrulayan Q+A maddesi** ("True, the
+  strong components of a digraph are the same as the strong components of its reverse") — makale
+  bu değişkeni kullanır, çünkü 16'nın "ters bitiş sırası" dili böyle korunur; **2-SAT**: imalar
+  grafının kurulumu ("For each clause x + y, include edges from y' to x and from x' to y") ve
+  karar ölçütü ("The formula is satisfiable if and only if no variable x is in the same strong
+  component as its negation x'"), yoğunlaştırma grafı ("kernel DAG (contract each strong component
+  to a single vertex)").
+  **Kapsam notu:** MIT 6.006 Bahar 2020'de **güçlü bağlı bileşen dersi yoktur** (20 ders başlığı
+  tek tek okundu; tanım yalnızca Recitation 9'da geçer, algoritma verilmez). 16'nın SCC borcunun
+  birincil kaynağı bu yüzden Sedgewick'tir, MIT değil.
+- **Sedgewick & Wayne, *Algorithms* 4. baskı, 6.6 Intractability**
+  (<https://algs4.cs.princeton.edu/66intractability/>) — P/NP'nin arama problemi çerçevesi,
+  "nondeterministic polynomial time" adlandırması, Cook-Levin ve SAT'ın NP-tamlığı. Üçüncü kaynak
+  olarak kaynakçada anılır.
+- **CLRS uyarısı korundu:** NP-tamlık bölümü *Selected Solutions* belgesinin kapsadığı 24. bölümün
+  ötesindedir ve bölüm numarası/adı o belgeden doğrulanamaz. **Makale 25 CLRS'e hiç atıf
+  yapmamıştır**; risk böylece bertaraf edildi.
+
+### Makale 26 ve 27 için akademik kaynaklar
+
+- **OSTEP — *Operating Systems: Three Easy Pieces*, Remzi H. Arpaci-Dusseau & Andrea C.
+  Arpaci-Dusseau, Arpaci-Dusseau Books, Sürüm 1.10.** Kanonik adres
+  <https://pages.cs.wisc.edu/~remzi/OSTEP/> (200 döner; `https://www.ostep.org/` 301 döndüğü için
+  atıfta kullanılmadı). İndirilen bölümler: `intro.pdf` (Ch. 2), `cpu-intro.pdf` (Ch. 4),
+  `cpu-mechanisms.pdf` (Ch. 6), `threads-intro.pdf` (Ch. 26).
+  Doğrulanan birebir içerik — **Ch. 2:** sanallaştırma tanımı ("the OS takes a physical resource
+  … and transforms it into a more general, powerful, and easy-to-use virtual form of itself"),
+  sanal makine / standart kütüphane / **kaynak yöneticisi** üçlü okuması, "A typical OS, in fact,
+  exports a few hundred system calls", ve **2.6 Some History** bölümünün tamamı: kütüphane dönemi,
+  **toplu iş** ("as a number of jobs were set up and then run in a 'batch' by the operator") ve
+  etkileşimsizliğin ekonomik gerekçesi (saatte yüz binlerce dolar), **sistem çağrısının Atlas
+  sisteminde icadı**, kullanıcı/çekirdek kipi ve tuzak/tuzaktan dönüş çifti, **çoklu programlama**
+  ("the OS would load a number of jobs into memory and switch rapidly between them, thus improving
+  CPU utilization") ile doğurduğu bellek koruması ve eşzamanlılık problemleri, Unix ve Linux.
+  **Ch. 4:** sürecin tanımı ve **makine durumu** üçlüsü (adres uzayı, yazmaçlar — program sayacı
+  ve yığın/çerçeve işaretçisi —, açık dosyalar), **ilke/düzenek ayrımı** kutusu, programdan sürece
+  geçiş adımları (hevesli/tembel yükleme, yığının argc/argv ile doldurulması, heap, üç varsayılan
+  dosya tanıtıcısı), **üç durum** (running/ready/blocked) ve **scheduled/descheduled** geçiş
+  adları, iki süreç izi tablosu, **süreç listesi** ve **Process Control Block** tanımı, xv6 `proc`
+  yapısının alan listesi, başlangıç durumu ve **zombi**.
+  **Ch. 6:** kullanıcı/çekirdek kipi, tuzak komutunun tek adımda atlaması + ayrıcalık yükseltmesi,
+  donanımın yazmaçları **süreç başına çekirdek yığınına** kaydetmesi, **tuzak tablosunun** açılışta
+  kurulması, **sistem çağrısı numarasının** koruma katmanı olması ("user code cannot specify an
+  exact address to jump to, but rather must request a particular service via number"), argüman
+  denetiminin zorunluluğu, sistem çağrısı sayıları ("a few hundred" / erken Unix'te "around twenty
+  calls"), işbirliğine dayalı yaklaşım ve sonsuz döngüde yeniden başlatma zorunluluğu, **zamanlayıcı
+  kesmesi**, **bağlam anahtarındaki iki ayrı kaydetme** ("the user registers … are implicitly saved
+  by the hardware, using the kernel stack of that process" / "the kernel registers are explicitly
+  saved by the software … into memory in the process structure"), yığın değiştirmenin rolü,
+  **lmbench ölçümleri**: 1996'da 200 MHz P6 üzerinde Linux 1.3.37 ile sistem çağrısı ≈ 4 µs,
+  bağlam anahtarı ≈ 6 µs; modern 2–3 GHz sistemlerde mikrosaniyenin altı; Ousterhout'un gözlemi
+  ("many OS operations are memory intensive, and memory bandwidth has not improved as dramatically
+  as processor speed over time").
+  **Ch. 26:** iş parçacığı tanımı, "they share the same address space and thus can access the same
+  data", **TCB**, "the address space remains the same (i.e., there is no need to switch which page
+  table we are using)", her iş parçacığına bir yığın ve **thread-local storage**, adres uzayı
+  yerleşiminin bozulması ve özyineleme istisnası, **iki kullanım gerekçesi** (paralellik ve
+  giriş/çıkış örtüşmesi: "Threading enables overlap of I/O with other activities within a single
+  program, much like multiprogramming did for processes across programs"), süreç tercihinin ne
+  zaman daha sağlam olduğu, paylaşılan sayaç örneği ve **gözlenen çıktılar 19345221 ile 19221041**
+  (beklenen 20000000), artırmanın üç komutluk x86 dizisi ve adım adım yürütme izi, **yarış koşulu /
+  veri yarışı / belirsiz / kritik kesim / karşılıklı dışlama / atomiklik** tanımları ve terimlerin
+  Dijkstra'ya dayanması.
+  **Eksik:** OSTEP **Chapter 5 (Process API, `cpu-api.pdf`)** bu run'da indirilmedi; `fork()`,
+  `exec()` ve `wait()` anlatımı oradadır. Makale 27 süreç API'sini yalnızca soyut düzeyde
+  (Create/Destroy/Wait/Status) verir. İleride süreç yaratma somutlaştırılacaksa o bölüm gerekir.
+- **xv6: a simple, Unix-like teaching operating system** (RISC-V sürümü, rev4), Russ Cox, Frans
+  Kaashoek, Robert Morris, 31 Ağustos 2024; MIT 6.1810 / 6.828.
+  PDF: <https://pdos.csail.mit.edu/6.828/2024/xv6/book-riscv-rev4.pdf>
+  Doğrulanan birebir içerik: işletim sisteminin üç gereksinimi (multiplexing, isolation,
+  interaction); kütüphane yaklaşımının açığı ("It's more typical for applications to not trust each
+  other, and to have bugs, so one often wants stronger isolation than a cooperative scheme
+  provides"); "Strong isolation requires a hard boundary between applications and the operating
+  system"; RISC-V'nin üç kipi (machine / supervisor / user) ve ayrıcalıklı komut örnekleri;
+  **çekirdeğin tanımı** ("The software running in kernel space (or in supervisor mode) is called
+  the kernel"); giriş noktasının çekirdek tarafından belirlenmesinin zorunluluğu ("if the
+  application could decide the kernel entry point, a malicious application could, for example,
+  enter the kernel at a point where the validation of arguments is skipped"); **monolitik çekirdek
+  ile mikroçekirdek** karşılaştırması, sunucu kavramı, Linux'un monolitik olması, Minix/L4/QNX'in
+  mikroçekirdek olması, seL4'ün biçimsel doğrulanabilecek kadar küçük olması ve "there is no
+  conclusive evidence one way or the other" saptaması; sürecin xv6'da **yalıtım birimi** olması;
+  Unix'in işlemcileri saydam biçimde değiştirmesi.
+  **Not:** kitapta 'kernel' için tek bir formal tanım bloğu yoktur; tanım iki yerde verilir
+  (Ch. 1 girişi ve §2.2), ikisi de yukarıda alıntılandı.
+- **Corbató, F. J. & Vyssotsky, V. A., *Introduction and Overview of the Multics System*, 1965
+  Fall Joint Computer Conference** (<https://multicians.org/fjcc1.html>) — **zaman paylaşımının
+  birincil kaynaktan tanımı**, birebir: "This solution, usually called time-sharing, is basically
+  the rapid time-division multiplexing of a central processor unit among the jobs of several
+  users, each of which is on-line at a typewriter-like console. The rapid switching of the
+  processor unit among user programs is, of course, nothing but a particular form of
+  multiprogramming." Ayrıca toplu iş kurulumlarının kullanıcıyı yalıttığı saptaması, isteğin
+  kaynağının programcıların hata ayıklama sırasındaki engellenmişliği olması ve ilk hedefin
+  "giving to each of them the illusion of having the whole machine at his disposal" olarak ifade
+  edilmesi. Sayfa multicians.org üzerindeki bir HTML transkripsiyondur; alıntılar sayfada
+  göründüğü hâliyle aktarılmıştır.
+  **Erişilemeyen:** Corbató/Daggett/Daley 1962 CTSS makalesinin tam metni
+  (<https://dl.acm.org/doi/10.1145/1461518.1461551>) **HTTP 403** (bot engeli) döndü; künyesi
+  yalnızca yukarıdaki bildirinin kaynakçasından doğrulandı ve makalelerde kullanılmadı.
+- **Silberschatz, A., Galvin, P. B. & Gagne, G., *Operating System Concepts*, onuncu baskı, John
+  Wiley & Sons** — resmî yazar sitesinden doğrulandı (<https://www.os-book.com/OS10/index.html>):
+  başlık, "Tenth Edition", üç yazar, yayıncı ve "This new edition (April 15, 2018)" ifadesi.
+  Resmî içindekiler PDF'inden (<https://www.os-book.com/OS10/toc-dir/toc.pdf>) doğrulanan bölüm ve
+  alt bölüm adları: **Chapter 1 Introduction** (1.1 What Operating Systems Do, 1.4
+  Operating-System Structure, 1.5 Resource Management, 1.6 Protection and Security, 1.7
+  Virtualization), **Chapter 2 Operating-System Structures** (2.1 Operating-System Services, 2.3
+  System Calls, 2.8 Operating-System Structure), **Chapter 3 Processes** (3.1 Process Concept, 3.2
+  Process Scheduling, 3.3 Operations on Processes, 3.4 Interprocess Communication), **Chapter 4
+  Threads & Concurrency** (4.1 Overview, 4.2 Multicore Programming, 4.3 Multithreading Models, 4.6
+  Threading Issues), **Chapter 5 CPU Scheduling**. Bu kaynak makalelerde yalnızca "ders kitabı
+  karşılığı" olarak anılır; içerik iddiaları OSTEP ve xv6'ya dayanır.
+
+### Bu run'da bağımsız hesaplanan sayısal iddialar
+
+Aşağıdakilerin hepsi kaynaktan aktarılmadı, **hesaplandı ya da programla doğrulandı**; betikler
+run'ın çalışma alanındadır.
+
+1. **Sözde polinom aritmetiği:** n = 100 tane 64 bitlik sayı → girdi ≈ 6.464 bit (808 bayt), T ≤
+   2⁶⁴ ≈ 1,845 × 10¹⁹, tablo n·T ≈ 1,845 × 10²¹ hücre. n = 50, T = 10³ / 10⁶ / 10⁹ için tablo
+   5 × 10⁴ / 5 × 10⁷ / 5 × 10¹⁰ hücre; aynı n'de kaba kuvvet 2⁵⁰ = 1.125.899.906.842.624.
+2. **Polinom/üstel karşılaştırma:** n = 100 için n³ = 10⁶ ve 2¹⁰⁰ ≈ 1,268 × 10³⁰; saniyede 10⁹
+   işlemle sırasıyla 1 ms ve ≈ 4,0 × 10¹³ yıl.
+3. **İndirgeme bileşimi:** indirgeme O(n^k) ve B için O(m^j) ise A için O(n^{kj}); dört (k, j)
+   çiftinde tek tek denetlendi.
+4. **3-SAT örneği:** 4 clause'lu, 3 değişkenli formülün 8 atamasından **4'ü** sağlıyor (kaba
+   kuvvet).
+5. **Bağımsız küme ≤p düğüm örtüsü:** C₅ üzerinde en büyük bağımsız küme 2, en küçük düğüm örtüsü
+   3, toplam 5 = |V|; beş maksimum bağımsız kümenin **hepsinin** tümleyeninin örtü olduğu tek tek
+   denetlendi.
+6. **3-SAT ≤p bağımsız küme:** 4 clause / 3 değişken → **12 düğüm, 24 kenar**; boyutu 4 olan bir
+   bağımsız küme bulundu ve ondan okunan atamanın formülü sağladığı doğrulandı. Bütün atamaları
+   kesen 8 clause'luk **sağlanamaz** formülde karşılık gelen grafta boyutu 8 olan bağımsız kümenin
+   **olmadığı** da doğrulandı (iki yön birden).
+7. **Güçlü bağlı bileşenler:** 8 düğüm / 11 kenarlı somut graf üzerinde Kosaraju-Sharir
+   çalıştırıldı. Birinci geçişin bitiş sırası `h, g, f, c, e, d, b, a`; ters bitiş sırası
+   `a, b, d, e, c, f, g, h`; bulunan bileşenler `{a,b,c}`, `{d,e}`, `{f,g,h}`. Aynı sonuç, her
+   düğüm çiftinin karşılıklı erişilebilirliği kaba kuvvetle hesaplanarak **bağımsız olarak
+   doğrulandı** (birebir aynı). Yoğunlaştırma grafının kenarları C₀→C₁, C₀→C₂, C₁→C₂ ve
+   **çevrimsiz** olduğu ayrıca denetlendi.
+8. **2-SAT:** dört formülde (2 sağlanabilir, 2 sağlanamaz) imalar grafı kurulup SCC kararı kaba
+   kuvvet aramayla karşılaştırıldı; **dördünde de eşleşti**. Sağlanamayan örnekte her iki
+   değişkenin de kendi değiliyle aynı bileşende olduğu görüldü.
+9. **2-boyama / 3-boyama eşiği:** C₅ 2-boyanamaz ama 3-boyanabilir, C₆ 2-boyanabilir; BFS
+   sonuçları kaba kuvvetle doğrulandı.
+10. **Bağlam anahtarı çevrim aritmetiği (makale 27):** 200 MHz'de 6 µs = **1.200 çevrim**;
+    3 GHz'de 0,5 µs = **1.500 çevrim**, 1 µs = 3.000 çevrim. Yani süre yaklaşık on kat düşerken
+    çevrim sayısı düşmemiştir — bu çıkarım kaynağın Ousterhout gözlemiyle uyumludur ama sayılar
+    bana aittir.
+11. **Zamanlayıcı kesmesi ek yükü (makale 26):** işleyici 1 µs varsayımıyla, 10 ms'de bir kesme →
+    saniyede 100 kesme → **%0,01**; 1 ms'de bir kesme → saniyede 1000 kesme → **%0,1**.
+    Ayrıca 6 µs'lik bağlam anahtarıyla saniyede 100 anahtar → **%0,06** CPU.
+12. **Yarış koşulu kayıp oranları (makale 27):** OSTEP'in gözlediği 19.345.221 ve 19.221.041
+    değerleri için kayıp sırasıyla 654.779 (**%3,27**) ve 778.959 (**%3,89**); iki çalıştırma
+    arasındaki fark 124.180. İki iş parçacığı × 10⁷ artırma × 3 komut = **60 milyon komut**.

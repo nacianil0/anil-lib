@@ -484,6 +484,66 @@
       "path": "content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
+    },
+    {
+      "articleId": "article_80eba0f5-067c-4906-b677-9bc6fc56922c",
+      "title": "NP-Tamlık: Hesaplamanın Sınırları",
+      "slug": "np-tamlik-hesaplamanin-sinirlari",
+      "category": "algorithms",
+      "level": "advanced",
+      "readingOrder": 25,
+      "summary": "Alt sınır bir modelin içindeyken taşınabilirdi; burada sınır problemin kendisine geçiyor. Karar problemleri ve sayılabilirlik argümanıyla hiç çözülemeyen problemler, durma probleminin iki satırlık çelişki ispatı; P ile NP'nin doğrulayıcı diliyle tanımı, indirgemenin yönü ve maliyet muhasebesi, NP-zor ile NP-tam ayrımı; sözde polinomun neden problemi kolaylaştırmadığı; 2 ile 3 arasındaki eşik ve 2-SAT'ı polinom zamanda çözen güçlü bağlı bileşen algoritması.",
+      "tags": [
+        "np-tamlik",
+        "indirgeme",
+        "karar-verilemezlik",
+        "guclu-bagli-bilesenler",
+        "sozde-polinom"
+      ],
+      "contentHash": "sha256:f0966a726f793d1cafac147bad4ba57c6bf10356348a8531c251f5089521024c",
+      "path": "content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
+    },
+    {
+      "articleId": "article_71e9e26c-46c7-4b5d-a23c-49c74dd0323c",
+      "title": "İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim",
+      "slug": "isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 26,
+      "summary": "Faz D açılıyor ve soru değişiyor: bu program ne kadar hızlı değil, bu makine kime ait? İşletim sisteminin sanallaştırma tanımı ve kaynak yöneticisi rolü, ilke ile düzenek ayrımı; güçlü yalıtımın donanım desteği olan kullanıcı modu ile çekirdek modu, bir sistem çağrısının tuzak komutundan dönüşe kadar yaşam döngüsü ve neden sıradan bir fonksiyon çağrısı olmadığı; zamanlayıcı kesmesiyle denetimin geri alınması ve maliyeti; toplu işten çoklu programlamaya, oradan zaman paylaşımına evrim; monolitik çekirdek ile mikroçekirdek.",
+      "tags": [
+        "isletim-sistemi",
+        "cekirdek",
+        "sistem-cagrisi",
+        "kullanici-modu",
+        "zaman-paylasimi"
+      ],
+      "contentHash": "sha256:869a3534661dea07bc0b3b213613aad2128887476ec67a0c07f03fd07a890c40",
+      "path": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
+    },
+    {
+      "articleId": "article_732fb7f6-659a-4863-b98b-eb0dd05dcef0",
+      "title": "Süreçler ve İş Parçacıkları",
+      "slug": "surecler-ve-is-parcaciklari",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 27,
+      "summary": "İşletim sisteminin en temel soyutlaması: çalışan program. Sürecin makine durumu envanteri, çalışan/hazır/engellenmiş durum makinesi ve korunan değişmezi, süreç denetim bloğu ile süreç listesi; bağlam anahtarında kimin neyi kaydettiği ve ölçülmüş maliyeti; iş parçacığının aynı adres uzayını paylaşıp ayrı yığın tutması, iki kullanım gerekçesi ve iş ile açıklık ayrımının sistem karşılığı; paylaşılan sayaç örneğiyle yarış koşulu, kritik kesim, karşılıklı dışlama ve atomiklik.",
+      "tags": [
+        "surec",
+        "is-parcacigi",
+        "baglam-anahtari",
+        "yaris-kosulu",
+        "kritik-kesim"
+      ],
+      "contentHash": "sha256:b177f7035d79f880ed6e9317e344dd5e6c61320fe0d04fd2b447950dd28cfc75",
+      "path": "content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 8
     }
   ]
 }

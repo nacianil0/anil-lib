@@ -1,0 +1,57 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a26-ok-in" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="boun-a26-ok-out" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">İki kip, dört geçiş</text>
+
+  <rect x="15" y="55" width="100" height="120" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="65" y="92" font-size="13" text-anchor="middle" fill="var(--text)">KULLANICI</text>
+  <text x="65" y="112" font-size="13" text-anchor="middle" fill="var(--text)">KİPİ</text>
+  <text x="65" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">kısıtlı</text>
+
+  <rect x="245" y="55" width="100" height="120" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="295" y="92" font-size="13" text-anchor="middle" fill="var(--text)">ÇEKİRDEK</text>
+  <text x="295" y="112" font-size="13" text-anchor="middle" fill="var(--text)">KİPİ</text>
+  <text x="295" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">tam yetki</text>
+
+  <line x1="118" y1="85" x2="240" y2="85" stroke="var(--accent)" stroke-width="2.2" marker-end="url(#boun-a26-ok-in)" />
+  <text x="180" y="76" font-size="13" text-anchor="middle" fill="var(--text)">tuzak</text>
+  <text x="180" y="104" font-size="13" text-anchor="middle" fill="var(--text)">kesme</text>
+
+  <line x1="242" y1="140" x2="120" y2="140" stroke="var(--cool)" stroke-width="2.2" marker-end="url(#boun-a26-ok-out)" />
+  <text x="180" y="132" font-size="13" text-anchor="middle" fill="var(--text)">dönüş</text>
+  <text x="180" y="160" font-size="13" text-anchor="middle" fill="var(--text)">sonlandır</text>
+
+  <text x="15" y="205" font-size="13" fill="var(--text-faint)">tuzak: uygulama gönüllü olarak çağırır</text>
+  <text x="15" y="225" font-size="13" fill="var(--text-faint)">kesme: dışarıdan, istem dışı gelir</text>
+  <text x="15" y="245" font-size="13" fill="var(--text-faint)">her geçiş ayrıcalık düzeyini de değiştirir</text>
+  <text x="15" y="267" font-size="13" fill="var(--text)">giriş noktasını çekirdek belirler</text>
+
+  <line x1="362" y1="36" x2="362" y2="276" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">Hangi işlem hangi kipte</text>
+
+  <rect x="378" y="36" width="327" height="88" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="390" y="56" font-size="13" fill="var(--text)">Kullanıcı kipinde serbest</text>
+  <text x="390" y="78" font-size="13" fill="var(--text-faint)">· aritmetik ve mantık</text>
+  <text x="390" y="98" font-size="13" fill="var(--text-faint)">· kendi belleğini okuma ve yazma</text>
+  <text x="390" y="118" font-size="13" fill="var(--text-faint)">· fonksiyon çağrısı ve dönüş</text>
+
+  <rect x="378" y="134" width="327" height="128" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="390" y="154" font-size="13" fill="var(--text)">Yalnızca çekirdek kipinde</text>
+  <text x="390" y="176" font-size="13" fill="var(--text-faint)">· giriş ve çıkış isteği başlatma</text>
+  <text x="390" y="196" font-size="13" fill="var(--text-faint)">· sayfa tablosu yazmacını değiştirme</text>
+  <text x="390" y="216" font-size="13" fill="var(--text-faint)">· kesmeleri açma ve kapatma</text>
+  <text x="390" y="236" font-size="13" fill="var(--text-faint)">· tuzak tablosunun yerini bildirme</text>
+  <text x="390" y="256" font-size="13" fill="var(--text-faint)">· zamanlayıcıyı başlatma ve durdurma</text>
+
+  <text x="378" y="284" font-size="13" fill="var(--text)">kullanıcı kipinde denenirse istisna doğar</text>
+
+  <text x="15" y="290" font-size="13" fill="var(--text-faint)">Çekirdek bir dosya değil, bir ayrıcalık düzeyidir</text>
+</svg>

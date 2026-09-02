@@ -4007,6 +4007,529 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-01T22:06:15.640Z"
+    },
+    {
+      "id": "bug-240",
+      "timestamp": "2026-09-02T01:30:00Z",
+      "error_message": "Error: A \"use server\" file can only export async functions, found object. digest 4158335530 — POST /yonetim 500",
+      "file": "src/app/yonetim/actions.ts",
+      "root_cause": "actions.ts carried the \"use server\" directive and also exported initialCreateUserState, a plain object. Such a module fails at LOAD time in a production build, so nothing inside it ever runs — which is why wrapping the action body in try/catch changed nothing, why the platform log showed no outgoing requests, and why it died in 72ms. next build compiles it without complaint; the check is at runtime.",
+      "fix": "Moved the type and the initial value to src/app/yonetim/create-user-state.ts (no directive); actions.ts now exports only the async action. Added src/app/use-server-exports.test.ts, a static guard asserting every \"use server\" module exports async functions only — verified by reintroducing the exact fault and watching it fail. Confirmed end to end against a production build (next start): the action now runs and returns its state instead of a 500.",
+      "tags": [
+        "nextjs",
+        "use-server",
+        "server-action",
+        "production",
+        "module-load",
+        "500"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T01:30:00Z"
+    },
+    {
+      "id": "bug-241",
+      "timestamp": "2026-09-02T04:15:22.690Z",
+      "error_message": "Wrong condition in logic",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Condition was: if (heading)",
+      "fix": "Changed to: if (effectiveMode === \"paged\")",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:15:22.690Z"
+    },
+    {
+      "id": "bug-242",
+      "timestamp": "2026-09-02T04:15:28.875Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "9 lines replaced/restructured",
+      "fix": "Rewrote 18→9 lines (9 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:15:28.875Z"
+    },
+    {
+      "id": "bug-243",
+      "timestamp": "2026-09-02T04:21:49.515Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-layout/reading-anchor.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:21:49.515Z"
+    },
+    {
+      "id": "bug-244",
+      "timestamp": "2026-09-02T04:25:21.486Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
+      "root_cause": "Had \"Bir sistem çağrısı sıradan bir fonksiyon çağrısın",
+      "fix": "Changed to 'nin sol yarısı bu on adımı zaman sırasına dizer v",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:25:21.486Z"
+    },
+    {
+      "id": "bug-245",
+      "timestamp": "2026-09-02T04:25:48.409Z",
+      "error_message": "Wrong condition in logic",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Condition was: if (!anchor && !headingId && ratio <= 0)",
+      "fix": "Changed to: if (params.has(\"highlight\")",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:25:48.409Z"
+    },
+    {
+      "id": "bug-246",
+      "timestamp": "2026-09-02T04:30:27.545Z",
+      "error_message": "Wrong reference: pZiKO1FCLc should be pZiyCaVuti",
+      "file": "content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md",
+      "root_cause": "Used \"pZiKO1FCLc\" instead of \"pZiyCaVuti\"",
+      "fix": "Changed pZiKO1FCLc → pZiyCaVuti",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:30:27.545Z"
+    },
+    {
+      "id": "bug-247",
+      "timestamp": "2026-09-02T04:40:14.523Z",
+      "error_message": "Missing guard clause",
+      "file": "src/components/reader/reader-sidebar.tsx",
+      "root_cause": "No early return/throw for edge case: !container || !active",
+      "fix": "Added guard clause: if (!container || !active)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:40:14.523Z"
+    },
+    {
+      "id": "bug-248",
+      "timestamp": "2026-09-02T04:41:21.973Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 6→11 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:41:21.973Z"
+    },
+    {
+      "id": "bug-249",
+      "timestamp": "2026-09-02T04:45:39.824Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/surecler-ve-is-parcaciklari/surec-durum-makinesi.svg",
+      "root_cause": "Had \"266\"",
+      "fix": "Changed to \"278\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T04:45:39.824Z"
+    },
+    {
+      "id": "bug-250",
+      "timestamp": "2026-09-02T05:01:27.797Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "Had \"fixed left-1/2 top-[5.5rem] z-50 flex max-w-[calc",
+      "fix": "Changed to \"fixed left-1/2 top-[5.5rem] z-50 flex max-w-[calc",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-02T05:01:31.256Z"
+    },
+    {
+      "id": "bug-251",
+      "timestamp": "2026-09-02T05:05:21.129Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T05:05:21.129Z"
+    },
+    {
+      "id": "bug-252",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "Render betikleri /boun icin HTTP 307 aldi; dev sunucusunda parola kapisi acikti",
+      "file": ".env.local",
+      "root_cause": "HANDOFF (Batch 7) 'dev'de gate env'i vermeden baslat, kapi devre disi kalir' diyordu. Depoda artik .env.local var ve SITE_PASSWORD_SHA256 ile AUTH_COOKIE_SECRET tanimliyor; middleware kapiyi aciyor ve makale rotalari /login'e 307 yonlendiriyor.",
+      "fix": "Dev sunucusu playwright.config.ts'teki test degerleriyle baslatildi (kabuk env'i .env.local'i ezer) ve render betiklerine giris adimi eklendi: kullanici 'anil', parola 'test-reader-pass'. Dogru kurulumun isareti: /boun 307, /login 200. HANDOFF'taki eski not gecersiz olarak isaretlendi.",
+      "tags": [
+        "boun",
+        "render",
+        "auth",
+        "env",
+        "handoff-stale"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-253",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "Giris basarili gorunuyor (POST /login 303) ama makale sayfasi yine /login'e donuyor",
+      "file": "artifacts/boun-render/login-b8.mjs",
+      "root_cause": "Betik 127.0.0.1 tabanli adres kullaniyordu; uygulama giris sonrasi localhost'a yonlendiriyor. Cerez 127.0.0.1 icin kuruldugu icin localhost isteklerine gonderilmiyor ve oturum kaybolmus gibi davraniyor.",
+      "fix": "Butun render betiklerinde taban adres http://localhost:<port> yapildi. Bir kez giris yapilip ctx.storageState({path}) ile kaydedildi, sonra her context storageState ile acildi.",
+      "tags": [
+        "boun",
+        "render",
+        "cookie",
+        "playwright",
+        "auth"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-254",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "page.waitForLoadState: Timeout 90000ms exceeded",
+      "file": "artifacts/boun-render/login-b8.mjs",
+      "root_cause": "Next dev sunucusu HMR websocket'ini acik tuttugu icin 'networkidle' durumu hicbir zaman olusmuyor.",
+      "fix": "waitForLoadState('networkidle') yerine Promise.all([page.waitForNavigation(), click]) + kisa waitForTimeout kullanildi.",
+      "tags": [
+        "playwright",
+        "dev-server",
+        "hmr",
+        "timeout"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-255",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "PageNotFoundError: Cannot find module for page: /boun/[slug]/page  -> /boun/<slug> 500",
+      "file": ".next",
+      "root_cause": "Paralel AI oturumu ayni depoda 3200 ve 3300 portlarinda dev sunucusu calistiriyordu. Iki Next sureci ayni .next dizinini paylasip build manifestini bozuyor; /boun 200 donerken dinamik rota 500 veriyor.",
+      "fix": "Depo ayni surucude bir kopyaya cikarildi (tar ile node_modules/.next/.git haric), node_modules icin PowerShell junction kuruldu ve dev/e2e/build orada calistirildi. Bu, HANDOFF'ta 'gerekirse' diye duran tarifi ZORUNLU hale getirir.",
+      "tags": [
+        "boun",
+        "next",
+        "parallel-session",
+        "isolation",
+        "500"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-256",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "cmd /c mklink /J ... Git Bash'ten calismadi; cmd etkilesimli acildi ve junction kurulmadi",
+      "file": "-",
+      "root_cause": "Git Bash, cmd'ye giden argumanlardaki yollari donusturuyor ve /J bayragi yol sanildigi icin komut bozuluyor.",
+      "fix": "PowerShell kullanildi: New-Item -ItemType Junction -Path <kopya>\\node_modules -Target <depo>\\node_modules. Temizlikte de once junction 'cmd /c rmdir' ile kaldirilip sonra kopya silindi (ters sirada rm -rf gercek node_modules'u siler).",
+      "tags": [
+        "windows",
+        "git-bash",
+        "junction",
+        "isolation"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-257",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "check-series-content.cjs: 'Sekil 2 metinde referanslanmamis'",
+      "file": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
+      "root_cause": "Makale 26'da ikinci diyagram eklendi ama gövde metninde 'Sekil 2' ifadesiyle referans verilmemisti. Denetleyici her sekil icin metinde acik referans arar.",
+      "fix": "Sekil 2'nin hemen ardina, iki panelini de aciklayan bir paragraf eklendi. Kural: her diyagrami ekledikten sonra metinde 'Sekil N' ile referansladigini dogrula.",
+      "tags": [
+        "boun",
+        "content-checker",
+        "figure",
+        "seri"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-258",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "Diyagramda yazim hatasi: SVG'de 'saglanabilir' yaziyordu, dogrusu 'sağlanabilir'",
+      "file": "content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/indirgeme-yonu.svg",
+      "root_cause": "SVG elle yazilirken Turkce 'g' harfi atlandi. Denetleyiciler yazim hatasi yakalamaz; yalnizca gorsel inceleme yakalar.",
+      "fix": "Metin duzeltildi ve diyagram yeniden cekilip gozle dogrulandi. Kural: SVG'ler light ve dark temada tek tek goruntulenmeden batch kapatilmaz.",
+      "tags": [
+        "boun",
+        "svg",
+        "typo",
+        "visual-review"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-259",
+      "timestamp": "2026-09-02T08:10:00Z",
+      "error_message": "storageState secenegi viewport nesnesinin ICINE yerlesti; Playwright context'i oturumsuz acildi",
+      "file": "artifacts/boun-render/shot-batch8.mjs",
+      "root_cause": "newContext({...}) icine ekleme yapan regex ilk '}' karakterinde durdu ve secenegi ic ice nesnenin icine koydu.",
+      "fix": "sed ile duzeltildi: viewport: { ... }, storageState: '...' biçimine getirildi. Ders: ic ice nesne iceren JS cagrilarina regex ile alan eklerken sonuc mutlaka grep ile dogrulanmali.",
+      "tags": [
+        "scripting",
+        "regex",
+        "playwright",
+        "self-inflicted"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:10:00Z"
+    },
+    {
+      "id": "bug-260",
+      "timestamp": "2026-09-02T05:10:57.488Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 5→7 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T05:10:57.488Z"
+    },
+    {
+      "id": "bug-261",
+      "timestamp": "2026-09-02T08:35:00.000Z",
+      "error_message": "next build: unhandledRejection [Error [PageNotFoundError]: Cannot find module for page: /_document] (Collecting page data asamasinda); ilk belirti: ENOENT .next/server/app/_not-found/page.js.nft.json",
+      "file": "artifacts/ (gitignore'lu; kod degil)",
+      "root_cause": "next build proje dizinini gezerken gitignore'lu artifacts/ dizinini de kapsiyor. Batch 9'un iki turluk render dogrulamasi artifacts/b9-render altinda shots, shots-final, figs, figs2 klasorlerini (~13,6 MB, yuzlerce PNG) biriktirdi ve dosya izleme/sayfa verisi toplama asamasi coktu. Next gercek hatayi /_document PageNotFoundError olarak maskeliyor.",
+      "fix": "Ham ekran goruntusu klasorleri artifacts/ icinden temizlendi (b9-render 20,4 MB -> 6,8 MB); build exit 0 dondu. Izolasyon yontemi: git worktree ile HEAD, HEAD+icerik, HEAD+src, HEAD+ikisi ve HEAD+.env.local+pnpm-workspace.yaml kombinasyonlari ayri ayri derlenerek kodun ve icerigin temiz oldugu kanitlandi; sonra ana depoda artifacts/ gecici olarak disari alinarak sebep dogrulandi. Kural: her batch dogrulama bittikten sonra kendi ham ekran goruntusu klasorlerini temizlemeli, yalnizca yeniden kullanilacak .mjs betiklerini ve son kanit setini birakmali.",
+      "tags": [
+        "next-build",
+        "artifacts",
+        "file-tracing",
+        "false-error",
+        "seri-batch9",
+        "windows"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:35:00.000Z"
+    },
+    {
+      "id": "bug-262",
+      "timestamp": "2026-09-02T08:35:00.000Z",
+      "error_message": "Diyagram etiketleri egrilerin/cubuklarin uzerine bindi (40-Sekil 1, 42-Sekil 1, 42-Sekil 2); check-series-svg.cjs sorun bildirmedi",
+      "file": "content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/carpimsal-dusus.svg; content/series/assets/getirme-aramanin-modern-hali/terim-sikligi-doyumu.svg; content/series/assets/getirme-aramanin-modern-hali/alan-disi-tersine-donus.svg",
+      "root_cause": "check-series-svg.cjs yalnizca viewBox tasmasini denetliyor; iki metnin ya da metin ile cizginin ust uste binmesini hic gormuyor. Etiketler egri uclarina ve cubuk ic/uclarina yapistirilmisti.",
+      "fix": "Uc sekil yeniden cizildi: cizim alani daraltilip sagda ayri gosterge/aciklama sutunu acildi; yatay cubuk semasi uc sutuna (solda ad, ortada cubuk, sagda deger) donusturuldu. Alt metinler yeni sekle gore guncellendi ve sync-series-hashes.cjs --write yeniden calistirildi. Tespit yolu: artifacts/b9-render/figs-b9.mjs ile her seklin light/dark piksel goruntusune gozle bakmak.",
+      "tags": [
+        "svg",
+        "diyagram",
+        "metin-binmesi",
+        "check-series-svg",
+        "seri-batch9"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T08:35:00.000Z"
+    },
+    {
+      "id": "bug-263",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "pnpm <script> her komutta 'ERROR packages field missing or empty' veriyor; test/typecheck/build/lint hicbiri calismiyor",
+      "file": "pnpm-workspace.yaml",
+      "root_cause": "Dosya f6667d0 commit'inde yariM kalmis bir prompt ciktisiyla yazilmis: 'allowBuilds: esbuild: set this to true or false'. pnpm 10 bir pnpm-workspace.yaml gorunce 'packages' alanini zorunlu kiliyor, gecersiz anahtar da tanimiyor.",
+      "fix": "packages: ['.'] eklendi ve gecersiz allowBuilds anahtari pnpm 10'un gercek anahtari onlyBuiltDependencies ile degistirildi.",
+      "tags": [
+        "pnpm",
+        "workspace",
+        "tooling",
+        "blocker"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-264",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "Kaldigin yerden devam yalnizca bolum basina donuyor; makale ici konum kayboluyor",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "navigateTo, akis modunda headingId cozuldugu anda navigateToElement(heading) cagirip position.ratio'yu tamamen yok sayiyordu. ProgressRecord zaten yalnizca headingId + scrollRatio tutuyordu, yani en ince cozunurluk 'son gecilen baslik'ti.",
+      "fix": "ProgressRecord/SavedPlaceRecord'a cozumlenebilir bir metin cipasi (readingAnchorSchema) eklendi; restore once cipayi cozuyor. Cipa yoksa akis modunda max(headingTop, ratioTop) kullaniliyor, boylece eski kayitlar da baslik tepesine cakilmiyor.",
+      "tags": [
+        "reader",
+        "resume",
+        "scroll-restoration",
+        "anchor"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-265",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "Makale acilir acilmaz ilerleme %13 yaziliyor ve kenar cubugunda 'okunuyor' gorunuyor",
+      "file": "src/components/reader/reader-sidebar.tsx",
+      "root_cause": "active.scrollIntoView({block:'nearest'}) yalnizca listeyi degil, tum kaydirilabilir atalari (document dahil) kaydiriyor. Sayfa her yuklemede ~206px asagi kayiyor, bu da scroll olayi uretip konumu kaydediyordu.",
+      "fix": "scrollIntoView yerine yalnizca liste kabinin scrollTop'unu ayarlayan, ayni 'nearest' semantigini tasiyan hesap kullanildi.",
+      "tags": [
+        "reader",
+        "sidebar",
+        "scroll",
+        "progress"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-266",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "Yazi tipi boyutu degistirilince okunan paragraf ekrandan kayiyor ve yanlis konum kaydediliyor",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Reflow efekti yalnizca sayfali modda eski konuma donuyordu; akis modunda hicbir sey yapmiyordu. Ustelik reflow sirasinda gelen scroll olaylari, metin henuz yerine oturmadan captureAnchor() calistirip hatirlanan paragrafi bozuyordu.",
+      "fix": "Reflow efekti her iki modda da son cipaya donuyor; settledKeyRef ilk yerlesimi reflow'dan ayiriyor ve senkron yaziliyor; settlingRef reflow suresince hem kaydi hem cipa yakalamayi donduruyor (isLayoutSettling).",
+      "tags": [
+        "reader",
+        "reflow",
+        "preferences",
+        "race"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-267",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "Okuma ayarlari paneli 768px'te viewport'un solundan 41px tasiyor",
+      "file": "src/components/reader/reading-settings.tsx",
+      "root_cause": "Panel tetikleyiciye gore 'absolute right-0' konumlaniyordu; genisligi max-w-[calc(100vw-2rem)] ile viewport'a gore sinirliyken sag kenari tetikleyiciye kilitli oldugu icin sol kenar disari tasiyordu.",
+      "fix": "Panel mobile-first yeniden yazildi: <640px alt sayfa, >=640px viewport'a sabitlenmis (fixed right-4 top-[66px]).",
+      "tags": [
+        "reader",
+        "settings",
+        "responsive",
+        "tablet"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-268",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "375px'te baslik cubugundaki 'Bolum 01 / 18' gostergesi 129px yerine 4px yer aliyor",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Sol grupta 'Okuma listesi' metni 82px, sag grupta 5 ikon 224px yer kapliyordu; kalan alan truncate ile 4px'e dusuyordu.",
+      "fix": "Cekmece dugmesinin metni telefonda sr-only, kategori etiketi sm altinda gizli, baslik cubugu bosluklari mobilde daraltildi.",
+      "tags": [
+        "reader",
+        "mobile",
+        "layout",
+        "header"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-269",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "Playwright: strict mode violation - getByRole('button', {name: 'Genis'}) 2 ogeye cozuluyor",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Playwright'ta getByRole name eslesmesi varsayilan olarak alt dize; 'Genis' ayni zamanda 'Ekstra Genis' icinde geciyor. Test HEAD'de de kiriktir.",
+      "fix": "exact: true eklendi. Ayni tuzak sonradan 'Okuma ayarlari' / 'Okuma ayarlarini kapat' cakismasinda tekrarladi; kapatma etiketi 'Ayarlari kapat' yapildi.",
+      "tags": [
+        "playwright",
+        "e2e",
+        "locator",
+        "test"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-270",
+      "timestamp": "2026-09-02T09:10:00.000Z",
+      "error_message": "Playwright: IndexSizeError setEnd - There is no child at offset 58 (highlight testi)",
+      "file": "tests/e2e/reader-data.spec.ts",
+      "root_cause": "markdown-components.tsx her cumleyi <span class='colored-sentence'> icine sariyor, bu yuzden paragrafin firstChild'i metin dugumu degil element.",
+      "fix": "Test TreeWalker ile alintinin gectigi gercek metin dugumunu buluyor.",
+      "tags": [
+        "playwright",
+        "e2e",
+        "highlights",
+        "test"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-02T09:10:00.000Z"
     }
   ]
 }

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı model, iki farklı güvenilirlik çıtası</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">çubuk uzunluğu: modelin o çıtada başarabildiği görevin insan süresi</text>
+
+  <text x="16" y="90" font-size="13" text-anchor="start" fill="var(--text-muted)">%50 çıtası — iki denemenin birinde tutuyor</text>
+  <rect x="16" y="100" width="600" height="36" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="316" y="123" font-size="13" text-anchor="middle" fill="var(--text)">110 dakika</text>
+
+  <text x="16" y="180" font-size="13" text-anchor="start" fill="var(--text-muted)">%80 çıtası — beş denemenin dördünde tutuyor</text>
+  <rect x="16" y="190" width="120" height="36" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="76" y="213" font-size="13" text-anchor="middle" fill="var(--text)">≈ beşte biri</text>
+  <line x1="136" y1="208" x2="616" y2="208" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="628" y="213" font-size="13" text-anchor="start" fill="var(--text-faint)">kayıp</text>
+
+  <line x1="16" y1="252" x2="704" y2="252" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="274" font-size="13" text-anchor="start" fill="var(--text-muted)">değişen tek şey model değil, işin ne kadar güvenilir olmasını istediğin</text>
+  <text x="16" y="294" font-size="13" text-anchor="start" fill="var(--text-faint)">daha güvenilir olmasını istediğin iş, daha kısa olmak zorunda</text>
+</svg>

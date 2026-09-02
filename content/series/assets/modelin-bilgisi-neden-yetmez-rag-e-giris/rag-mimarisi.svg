@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Getirici, dizin ve üretici</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">getirilen belge bir gizli değişkendir: hangisinin doğru olduğu bilinmez</text>
+
+  <rect x="16" y="132" width="86" height="40" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="59" y="157" font-size="13" text-anchor="middle" fill="var(--text)">soru</text>
+  <line x1="102" y1="152" x2="126" y2="152" stroke="var(--text-muted)" stroke-width="1"/>
+
+  <rect x="126" y="132" width="94" height="40" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="173" y="150" font-size="13" text-anchor="middle" fill="var(--text)">soru</text>
+  <text x="173" y="166" font-size="13" text-anchor="middle" fill="var(--text)">kodlayıcısı</text>
+  <line x1="220" y1="152" x2="244" y2="152" stroke="var(--text-muted)" stroke-width="1"/>
+
+  <rect x="244" y="112" width="112" height="80" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="300" y="140" font-size="13" text-anchor="middle" fill="var(--text)">dizin</text>
+  <text x="300" y="160" font-size="13" text-anchor="middle" fill="var(--text-muted)">21 milyon</text>
+  <text x="300" y="178" font-size="13" text-anchor="middle" fill="var(--text-muted)">belge vektörü</text>
+
+  <line x1="356" y1="152" x2="380" y2="90" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="356" y1="152" x2="380" y2="152" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="356" y1="152" x2="380" y2="214" stroke="var(--text-muted)" stroke-width="1"/>
+
+  <rect x="380" y="72" width="102" height="36" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="431" y="95" font-size="13" text-anchor="middle" fill="var(--text-muted)">belge 1</text>
+  <rect x="380" y="134" width="102" height="36" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="431" y="157" font-size="13" text-anchor="middle" fill="var(--text-muted)">belge 2</text>
+  <rect x="380" y="196" width="102" height="36" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="431" y="219" font-size="13" text-anchor="middle" fill="var(--text-muted)">belge 3</text>
+
+  <line x1="482" y1="90" x2="506" y2="90" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="482" y1="152" x2="506" y2="152" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="482" y1="214" x2="506" y2="214" stroke="var(--text-muted)" stroke-width="1"/>
+
+  <rect x="506" y="72" width="88" height="36" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="550" y="95" font-size="13" text-anchor="middle" fill="var(--text)">üretici</text>
+  <rect x="506" y="134" width="88" height="36" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="550" y="157" font-size="13" text-anchor="middle" fill="var(--text)">üretici</text>
+  <rect x="506" y="196" width="88" height="36" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="550" y="219" font-size="13" text-anchor="middle" fill="var(--text)">üretici</text>
+
+  <line x1="594" y1="90" x2="618" y2="146" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="594" y1="152" x2="618" y2="152" stroke="var(--text-muted)" stroke-width="1"/>
+  <line x1="594" y1="214" x2="618" y2="158" stroke="var(--text-muted)" stroke-width="1"/>
+
+  <rect x="618" y="132" width="86" height="40" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="661" y="150" font-size="13" text-anchor="middle" fill="var(--text)">ağırlıklı</text>
+  <text x="661" y="166" font-size="13" text-anchor="middle" fill="var(--text)">cevap</text>
+
+  <line x1="16" y1="266" x2="704" y2="266" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="290" font-size="13" text-anchor="start" fill="var(--text-muted)">her belge için ayrı bir cevap üretilir, belge olasılıklarıyla ağırlıklandırılıp toplanır</text>
+  <text x="16" y="312" font-size="13" text-anchor="start" fill="var(--text-faint)">dizin eğitimden bağımsızdır: ağırlıklara dokunmadan değiştirilebilir</text>
+  <text x="16" y="334" font-size="13" text-anchor="start" fill="var(--text-faint)">soru kodlayıcısı ve üretici birlikte eğitilir</text>
+</svg>

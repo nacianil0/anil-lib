@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-01 · Yayında: 1–38 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5 + Batch 6 + Batch 7 + Batch 8) · Sıradaki güvenli başlangıç: 39
+Son güncelleme: 2026-09-02 · Yayında: 1–42 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5 + Batch 6 + Batch 7 + Batch 8 + Batch 9) · Sıradaki güvenli başlangıç: 43
 
 ## Serinin tezi
 
@@ -48,8 +48,8 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Kuantizasyonun mekanizması ve neyi bozduğu | 19, 20, 26 | 27 | ödendi (Batch 6) |
 | Ara adımların gücü (istemi yeniden yazdırarak doğruluğu geri kazanma) | 15, 22 | 32 | ödendi (Batch 7) |
 | Çıkarım anında hesap harcama ekseni | 9 | 33 | ödendi (Batch 7) |
-| Sohbetler arası kalıcı bellek | 21 | 39 | açık |
-| Modelin bilgisinin yetmediği yer ve dış kaynağa bağlanma | 17, 19, 21, 25, 29 | 41 | açık |
+| Sohbetler arası kalıcı bellek | 21 | 39 | ödendi (Batch 9) |
+| Modelin bilgisinin yetmediği yer ve dış kaynağa bağlanma | 17, 19, 21, 25, 29 | 41 | ödendi (Batch 9) |
 | İlkelere dayalı tercih etiketleri ve ölçeklenebilir denetim | 13 | 64 | açık |
 | Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | açık |
 | Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | açık |
@@ -107,6 +107,15 @@ Batch 8 **yeni bir açık numaralı koordinat açmadı**: 35'in verdiği tek num
 düzeyinde puanlamanın tam kurulumu → 38) aynı run içinde ödendi. Batch 8 üç koordinatı — 35,
 36 ve 38 — kapattı; defterde açık kalan en yakın koordinat 39'dur.
 
+**Numarasız ileri işaretler — Batch 9'da verildi.** Belleğin ajan bağlamındaki karşılığı ve
+kalıcı belleğin ürün düzeyi (39 → 56 ve 112, ikisi de numarasız bırakıldı); getirilen belgenin
+saldırı yüzeyi olması (41 → güvenlik fazı, 61–70); getirme hattının ölçülmesi ve kaynak sadakati
+(41, 42 → 45); yaklaşık komşu araması ve dizin yapıları (42 → 43, sonraki makale olduğu için
+numarasız bırakıldı). Batch 9 **yeni bir açık numaralı koordinat açmadı**; dört makalenin
+metin içi çapraz göndermelerinin tamamı yayımlanmış makalelere (≤42) yapıldı. Batch 9 iki
+koordinatı — 39 ve 41 — kapattı; defterde açık kalan en yakın koordinat 61–70 bandıdır ve
+tekil olarak **64**'tür.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -158,13 +167,13 @@ düzeyinde puanlamanın tam kurulumu → 38) aynı run içinde ödendi. Batch 8 
 36. **Arama ve Planlama: Öz-Tutarlılık ve Ağaçlar** — birden çok yol deneme; oylama ve ağaç araması. `[yayında]`
 37. **Pekiştirmeli Öğrenmenin Temelleri: Markov Karar Süreci, Politika ve Ödül** — 13 (RLHF) ve 34'ün (RLVR) biçimsel zemini; "değer" teriminin dikkat üçlüsündeki değerden ayrışması. `[yayında]`
 38. **Süreç Denetimi: Adım Adım Ödüllendirme** — sonuç denetimi ↔ süreç denetimi; adım etiketinin maliyeti. `[yayında]`
-39. **Bellek: Sohbet İçinde ve Sohbetler Arasında** — bağlam, özetleme, kalıcı bellek.
-40. **Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık** — long-horizon problemi.
+39. **Bellek: Sohbet İçinde ve Sohbetler Arasında** — pencerede kesme, özetleyerek taşıma, kalıcı belleğin yazma-getirme-okuma hattı. `[yayında]`
+40. **Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık** — çarpımsal düşüş, toparlanma tavanı, görev ufkunun süreyle ölçülmesi. `[yayında]`
 
 ### Faz 5 — Bilgiyle Bağlamak: Retrieval ve Araçlar (41–50)
 
-41. **Modelin Bilgisi Neden Yetmez? RAG'e Giriş** — parametrik bilginin sınırı (17–18'in geri çağrımı).
-42. **Retrieval: Aramanın Modern Hali** — sparse/dense arama.
+41. **Modelin Bilgisi Neden Yetmez? RAG'e Giriş** — parametrik bilginin sınırı (17–18'in geri çağrımı); dizin değiştirerek bilgiyi güncellemek. `[yayında]`
+42. **Getirme: Aramanın Modern Hali** — ters dizin ve BM25'in mekaniği; seyrek getirmeyi geçmenin üç yolu. `[yayında]`
 43. **Vektör Veritabanları ve İndeksleme** — embedding tabanlı altyapı.
 44. **Chunking, Rerank ve RAG Hattının İncelikleri** — uçtan uca RAG mühendisliği.
 45. **RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati** — groundedness ölçümü.
@@ -359,10 +368,14 @@ satırlıktı, gerçekleşen graf yine daha yoğun çıktı.
 - 37 ← 13 (politika, ödül modeli, kırpma, KL cezası; "biçimsel çerçeve ileride" borcu), 34 (grup göreli avantaj; 32.768 token'lık cevap; dağılımın daralması), 36 (politika ağı ↔ değer ağı; oylamanın kaynağı çeşitliliktir), 6 (dikkat üçlüsündeki değerden ayrışma), 10 (üretim bir çekiliş = eylem seçimi), 33 (düşünme token'larının faturası), 2 (gradyan inişi döngüsü; kayıp ↔ hata sinyali), 1 (denetimli öğrenmeden ayrım), 4 (sözlük = eylem kümesi), 19 (ikinci bir ağın bellek maliyeti) `[yayında]`
 - 38 ← 37 (kredi atama; değer işlevi; avantaj), 34 ("adım adım ödüllendirme 38'de" borcu; sonuç ödülünün gerekçeyi denetlememesi), 35 (doğrulayıcı türleri; token düzeyinde puanlama ipucu; dört yüz aday eşiği), 31 (sadakat sorusu), 33 (en iyi-N seçimi), 16 (bir puanın hangi dağılımda ölçüldüğü), 21 (durumsuzluk, ileri bağ) `[yayında]`
 
-**Batch 9 taslağı (39'dan devam).** Yayımlanmış borçlardan türetilmiştir; batch hazırlığında güncellenir:
+**Batch 9 (39–42) — gerçekleşen graf.** Yazılan metinde fiilen kullanılan bağlar; 39 ve 40'ın
+taslağı ikişer satırlıktı, gerçekleşen graf yine daha yoğun çıktı. 41 ve 42'nin satırları bu
+run'da ilk kez yazıldı.
 
-- 39 ← 21 ("sohbetler arası kalıcı bellek 39'da" borcu; durumsuzluk), 25 (pencereyi büyütmenin bedeli ve etkin uzunluk), 24 (sohbet biçimi ve sabit önek), 26 (önbelleğin tek çalışma boyunca yaşaması), 18 (ağırlıktaki bilgi ↔ bağlamdaki bilgi), 29 (getirme bir bellek biçimi olarak)
-- 40 ← 39 (bellek), 36 (arama ve planlama), 33 (çıkarım bütçesi), 31 (akıl yürütmenin ölçümü), 28 (gecikme faturası)
+- 39 ← 21 ("sohbetler arası kalıcı bellek 39'da" borcu; durumsuzluk; ortadaki bilginin kaybı), 26 (önbelleğin tek çalışma boyunca yaşaması; "bellek" sözcüğünün donanım anlamından ayrılması; sabit önek), 29 (kalıcı bellek bir getirme problemidir; ikili kodlayıcı belgeyi sorgu bilinmeden kodlar; tek vektörün sınırı), 24 (sistem isteminin uzunluğu her çağrıya biner), 28 (önek maliyetinin muhasebesi), 25 (uzun bağlamın ortasındaki bilginin bulunamaması), 27 (bellek = donanım kullanımının ikinci örneği), 17 (getirme dışsal uydurmayı içsele çevirir; çekimserlik), 5 (perplexity'de küçük olan iyidir), 33 (ileri bağ: bir sonraki makalenin ekseni) `[yayında]`
+- 40 ← 39 (bilgiyi zaman içinde taşımak; hattın kurulumu), 33 (kapsama eğrisinin aynadaki görüntüsü; doğrulayıcının faturası), 31 (hesap grafiği; doğrusallaştırılmış alt grafik eşlemesi), 35 (dış geri bildirim olmadan öz-düzeltmenin sınırı = c'nin içeriden büyütülemezliği), 36 (ağaç aramasında hatalı daldan dönmek), 37 (getiri, iskonto, kredi atamanın zaman eksenine yayılması), 38 (adım ödülü hatayı oluştuğu yerde görünür kılar), 28 (n adımın iki gecikme ölçüsünü birden büyütmesi), 16 (ölçümün hangi belirsizlikle geldiği; kirlilik direnci), 17 ve 18 (ileri bağ: sonraki fazın varsayımı) `[yayında]`
+- 41 ← 18 ("parametre başına iki bit" kapasitesi; ezber ↔ genelleme), 17 ("girdiye müdahalenin tam kurulumu 41'de" borcu; içsel/dışsal uydurma; tam bir kez görülmüş olgular), 29 (ikili kodlayıcı getirici olarak; SQuAD satırının görev bağımlılığı; getirilen belge güvenilmez içeriktir), 21 (pencereye giren her şey aynı diziye karışır; "yok say" kanalı yoktur), 40 (Faz 4'ün kapanışı ve varsayımın kaldırılması) `[yayında]`
+- 42 ← 29 (anlamsal arama, ikili/çapraz kodlayıcı, bulma oranı, ters dizinin kurulum maliyeti, iki aşamalı sıralama, BM25'in adı), 41 (dikkat dağıtıcı belgenin zararı = getiriciye bakma gerekçesi), 16 (alan içi başarı alan dışı genellemenin göstergesi değil; değerlendirme kümesinin kendi yanlılığı), 33 ve 28 (ikinci aşamanın bütçesi), 5 (doyum işlevinin okunması) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -837,6 +850,67 @@ Batch 0 ve Batch 1 kavramlarının 11–14'te fiilen nerede geri çağrıldığ�
 | İz hatası | 38 | — | 57 (ajan değerlendirmesi), 72, 101 |
 | Adım etiketi ve maliyeti | 38 | — | 64, 71–73 |
 
+### Batch 9'da gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 39–42'de fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 9'da gerçekleşen |
+|---|---|
+| Durumsuzluk (21) | 39 (makalenin açılış gerilimi; belleğin varlık sebebi) ✓ **on sekiz makale aralıklı geri çağırma** |
+| Ortadaki bilginin kaybı (21, 25) | 39 (kusursuz getirme ile 115 bin token'lık geçmiş arasındaki düşüş aynı olgunun bellek kılığı) ✓ |
+| Anahtar-değer önbelleği tek çalışma boyunca yaşar (21, 26) | 39 (önbellek ile bellek ayrımı; üç katmanlı şekil) ✓ |
+| Sistem isteminin sabit öneki ve önek maliyeti (24, 26, 28) | 39 (özet de bir önektir; her turda ödenen sabit fatura) ✓ |
+| Ağırlıktaki bilgi ↔ bağlamdaki bilgi (18) | 41 (parametrik ↔ parametrik olmayan bellek; dizin değiştirme) ✓ |
+| Anlamsal arama ve getirme (29) | 39 (kalıcı bellek bir getirme problemidir), 41 (getirici olarak ikili kodlayıcı), 42 (hattın tamamı) ✓ |
+| İkili kodlayıcı belgeyi sorgu bilinmeden kodlar (29) | 39 (anahtarı zenginleştirme gerekçesi) ✓ |
+| Tek vektörün boyut sınırı (29) | 39 (depo büyüdükçe zorlaşan şey doğru olanı bulmaktır) ✓ |
+| Bulma oranı (29) | 41 (fayda-zarar tablosunun ölçüsü), 42 (nDCG ve MRR'den ayrımı) ✓ |
+| Çapraz kodlayıcı ↔ ikili kodlayıcı (29) | 42 (geç etkileşimin ikisinin arasına yerleşmesi) ✓ |
+| BM25 (29, glosssuz) | 42 (tam kurulum: ters dizin, doyum, uzunluk normalleştirmesi) ✓ |
+| İki aşamalı sıralama (29) | 42 (BM25'i alan dışında geçen üçüncü yol; bedeli her sorguda) ✓ |
+| İçsel ↔ dışsal uydurma (17) | 39 (getirilen kayıt ilgisizse), 41 (getirmenin çözmediği) ✓ **yirmi dört makale aralıklı** |
+| Tam bir kez görülmüş olgular (17) | 41 (uzun kuyruk eğrisinin sol ucu aynı bölgedir) ✓ |
+| Parametre başına bilgi kapasitesi (18) | 41 (10¹⁸ parametre tahmininin arka planı) ✓ **yirmi üç makale aralıklı geri çağırma** |
+| Kapsama ve `pass@k` (33) | 40 (çarpımsal düşüş, kapsama eğrisinin aynadaki görüntüsü) ✓ |
+| Çıkarım ↔ eğitim hesabı takası (33) | 40 (toparlanma mekanizmalarının faturası), 42 (yeniden sıralamanın bütçesi) ✓ |
+| Hesap grafiği ve doğrusallaştırılmış alt grafik eşlemesi (31) | 40 (bileşik görevlerde çöküşün ampirik tarafı) ✓ |
+| Öz-düzeltme ve dış geri bildirim koşulu (35) | 40 (`c` neden içeriden büyütülemez) ✓ |
+| Arama ağacı ve budama (36) | 40 (toparlanmanın en doğrudan biçimi) ✓ |
+| Getiri, iskonto ve kredi atama (37) | 40 (uzun ufuk, kredi atamanın zaman eksenine yayılmış hâli) ✓ |
+| Sonuç denetimi ↔ süreç denetimi (38) | 40 (hatayı oluştuğu yerde görünür kılmak) ✓ |
+| İki gecikme ölçüsü (26, 28) | 40 (n adımın toplam gecikmesi tek çağrının n katından fazladır) ✓ |
+| Ölçüm disiplini: puan hangi dağılımda ölçüldü (16) | 40 (eğime tek tek noktalardan çok güvenmek), 42 (alan içi ↔ alan dışı ters dönüş; etiket havuzunun yanlılığı) ✓ |
+| Kirliliğin değerlendirmeye etkisi (16) | 40 (adım sayısı ölçümü sağlamlaştıran bir tasarım kararıdır) ✓ |
+| Perplexity'de küçük olan iyidir (5) | 39 (özet ↔ ham geçmiş karşılaştırması) ✓ **otuz dört makale aralıklı geri çağırma** |
+| Kuantizasyon ve bellek bütçesi (26, 27) | 39 ("bellek" sözcüğünün donanım anlamıyla açıkça ayrıştırılması) ✓ |
+
+### Batch 9'da ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 9'da gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Bellek (ürün anlamı) | 39 | 41 (parametrik olmayan bellek aynı ailedendir) | 56 (ajan belleği), 112 (kişiselleştirme), 115 |
+| Özetleyerek taşıma ve seçili kayıp | 39 | — | 44 (parçalama kararları), 56, 60 |
+| Kalıcı belleğin üç aşaması (yazma-getirme-okuma) | 39 | 41 (aynı hattın getirme ayağı), 42 (getirme ayağının içi) | 44 (RAG hattı), 46, 56 |
+| Anahtar ↔ değer ayrımı (neyle aranır, ne saklanır) | 39 | 42 (belge genişletme aynı fikrin seyrek hâli) | 43, 44, 46 |
+| Geri çağırma puanı: tazelik + önem + ilgi | 39 | — | 44 (yeniden sıralama ölçütleri), 50 (bilgi tazeliği), 56 |
+| Bilgi güncellemesi ve çelişen kayıt | 39 | 41 (dizin değiştirme aynı sorunun dış çözümü) | 50 (güncellik ve kaynak güveni), 65, 112 |
+| Çarpımsal düşüş `(1 − ε)ⁿ` | 40 | — | 57 (ajan değerlendirmesi), 60, 101 |
+| Toparlanma tavanı `c ⁄ (c + ε)` | 40 | — | 51–60 (ajan döngüleri), 59 (insan devri), 64 |
+| Görev ufku (süre cinsinden) | 40 | — | 57, 60, 117 (AGI tartışması) |
+| Güvenilirlik çıtası ↔ ufuk uzunluğu takası | 40 | — | 57, 60, 71 |
+| Parametrik ↔ parametrik olmayan bellek | 41 | 42 (dizinin kendisi) | 43–46, 50, 112 |
+| Uzun kuyruk (olgu sıklığı ↔ doğruluk) | 41 | 42 (alan dışı genellemenin kardeşi) | 45, 72, 96 |
+| Dizin değiştirme | 41 | — | 43, 50, 112 |
+| Dikkat dağıtıcı belge | 41 | 42 (getiricinin üste çıkardığı yanlış) | 44 (yeniden sıralama), 45, 58 |
+| Ezber oranı (bağlam ↔ ezber çatışması) | 41 | — | 45 (kaynak sadakati), 50, 65 |
+| Uyarlanabilir getirme | 41 | — | 44, 46, 60 |
+| Ters dizin | 42 | — | 43 (vektör dizinleriyle karşılaştırma), 44 |
+| Terim sıklığı doyumu ve uzunluk normalleştirmesi | 42 | — | 43, 44 (parçalama uzunluğu kararı) |
+| Öğrenilmiş seyrek getirme | 42 | — | 43, 44, 46 |
+| Sırayla birleştirme (karşılıklı sıra) | 42 | — | 44 (melez hat), 45, 73 |
+| nDCG ve ortalama karşılıklı sıra | 42 | — | 45 (RAG değerlendirmesi), 71, 101 |
+| Değerlendirme kümesinin etiket yanlılığı | 42 | — | 45, 71–73, 101 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -1090,6 +1164,35 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | süreç denetimi | (process supervision) | 38 | zincirin her adımına ayrı geri bildirim verilmesi |
 | iz hatası | (trace error) | 38 | zincirde herhangi bir hata bulunma oranı; nihai cevap hatasından bağımsız ölçülür |
 | adım etiketi | — | 38 | tek bir ara adıma verilen olumlu/olumsuz değer; insan eliyle ya da tamamlama ile otomatik üretilir |
+
+| bellek | (memory) | 39 | bir sohbette biriken bilginin sonraki çağrılarda modelin önüne yeniden konabilecek biçimde saklanması. 26 ve 27'deki **donanım belleğiyle karıştırılmaz**; ayrım 39'da açıkça yapıldı |
+| kalıcı bellek | (long-term memory) | 39 | sohbetler arasında yaşayan, anahtar-değer çiftlerinden oluşan dış depo |
+| yazma | (indexing) | 39 | biten oturumun bir ya da birkaç bellek kaydına çevrilmesi. 42'deki **ters dizin kurma** ile aynı sözcüğün farklı kullanımıdır |
+| okuma | (reading) | 39 | getirilen kayıtların isteme konup cevabın üretilmesi aşaması |
+| tazelik | (recency) | 39 | kaydın en son ne zaman kullanıldığına bakan üstel sönüm terimi |
+| önem | (importance) | 39 | kaydın oluşturulurken 1–10 arasında puanlanan kayda değerliği |
+| yansıma | (reflection) | 39 | modelin kendi kayıtlarını okuyup üst düzey çıkarım yazması ve onu da depoya koyması |
+| bilgi güncellemesi | (knowledge update) | 39 | bir olgunun değişmesi; depoda eskisiyle yenisi birlikte kalır |
+| çekimserlik | (abstention) | 39 | cevabı bilmediğinde susabilme; bellek sistemlerinde ayrı bir yetenek olarak ölçülür |
+| görev ufku | (time horizon) | 40 | modelin belirli bir başarı oranıyla bitirebildiği görevin, uzman bir insan için süresi |
+| toparlanma | — | 40 | yanlış bir girdiden doğru çıktıya varma olasılığı; metinde `c` ile gösterilir. Aynı kestiricinin içinden geldiğinde küçüktür |
+| adım başına hata oranı | — | 40 | tek bir adımın yanlış olma olasılığı; metinde ε ile gösterilir |
+| getirmeyle güçlendirilmiş üretim | (retrieval-augmented generation, RAG) | 41 | cevabı üretmeden önce dış bir dizinden getirilen metnin isteme konması; kısaltma "RAG" serbest ve Türkçeleştirilmez |
+| parametrik bellek | (parametric memory) | 41 | ağırlıklarda duran bilgi |
+| parametrik olmayan bellek | (non-parametric memory) | 41 | dışarıdaki dizinde duran bilgi |
+| uzun kuyruk | (long tail) | 41 | ön eğitim verisinde çok az geçen olguların bölgesi |
+| dizin değiştirme | (index hot-swapping) | 41 | ağırlıklara dokunmadan, dizini yenisiyle değiştirerek modelin bildiğini güncellemek |
+| dikkat dağıtıcı belge | (distracting document) | 41 | getiricinin yüksek puanladığı ama cevabı taşımayan parça; rastgele belgeden daha zararlıdır |
+| ezber oranı | (memorization ratio) | 41 | bağlam ile ezber çatıştığında modelin ezberlediği cevaba dönme sıklığı |
+| uyarlanabilir getirme | (adaptive retrieval) | 41 | yalnızca modelin bilmesi beklenmeyen sorularda getirme yapmak |
+| ters dizin | (inverted index) | 42 | her terim için o terimin geçtiği belgelerin listesi. 29\. makalede glosssuz kullanılmıştı; kurulumu 42'dedir |
+| ters belge sıklığı | (inverse document frequency) | 42 | terimin derlemdeki nadirliğine göre aldığı ağırlık |
+| terim sıklığı doyumu | — | 42 | sıklığın artan ama bir tavana yaklaşan bir işlevden geçirilmesi; parametresi metinde `k₁` |
+| uzunluk normalleştirmesi | — | 42 | terim sıklığının belge uzunluğuna göre yumuşak biçimde bölünmesi; parametresi metinde `b` |
+| öğrenilmiş seyrek getirme | (learned sparse retrieval) | 42 | modelin sözlük üzerinde seyrek bir ağırlık dağılımı üretmesi; ters dizinde çalışır |
+| sırayla birleştirme | (reciprocal rank fusion) | 42 | farklı sistemlerin sonuçlarını ham puanlara bakmadan, sıraların tersini toplayarak birleştirmek |
+| nDCG | — | 42 | Türkçeleştirilmez; ilk k sonucun ilgililiğini üst sıralara ağırlık vererek toplayan ve kusursuz sıralamaya bölen ölçü |
+| ortalama karşılıklı sıra | (mean reciprocal rank, MRR) | 42 | ilk doğru sonucun sırasının tersinin sorgular üzerinden ortalaması. 29'daki **bulma oranından** farkı, sırayı da hesaba katması |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -1683,6 +1786,152 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     1999), ACL (Wang ve ark. 2024, Zheng), TACL (Kamoi), ICML (Gao, Schulman ve ark. 2015),
     Nature (Mnih, Silver), Machine Learning (Williams) ve klasik kaynaklar (Bellman 1957;
     Sutton & Barto 2018).
+
+107. **Faz 4'ün kapanış kategorileri ve Faz 5'in açılışı (Batch 9'da verildi).** 39 ve 40
+    `reasoning-and-memory`; kategori adındaki bellek ekseni 39'un ta kendisidir ve 40, 31'den
+    beri süren akıl yürütme yayının zaman eksenine yayılmış hâlidir. 41 ve 42 ise
+    `agents-and-retrieval`; bu, karar #65'in "29 ile açılan eksen 41–50'de aynı kategoride devam
+    eder" hükmünün uygulanmasıdır ve yeni bir karar gerektirmedi. Batch 9'un okuma listesi bu
+    yüzden iki öbek hâlinde görünür (39–40, sonra 41–42); UI bunu destekler.
+
+108. **Başlık düzeltmesi (Batch 9'da verildi).** Yayımlanmamış 42'nin başlığındaki İngilizce
+    sözcük terim defterine uyarlandı: "Retrieval: Aramanın Modern Hali" →
+    **"Getirme: Aramanın Modern Hali"**. Gerekçe kararlar #51, #52, #66, #86 ve #99 ile aynı:
+    "getirme" 29\. makalede kurulmuş ve defterde kayıtlı bir karşılıktır. **41'in başlığı
+    değiştirilmedi:** "RAG" kısaltması, "token", "embedding", "BM25" ve "FlashAttention" gibi
+    Türkçeleştirilmeyen kalemler sınıfındadır — karar #99'un MDP için uyguladığı ölçüt burada
+    tersine çalışıyor, çünkü "Markov karar süreci"nin aksine "getirmeyle güçlendirilmiş üretim"
+    Türkçede yerleşik bir karşılık değil, bu run'da kurulan bir gloss'tur. Kısaltma gövdede bir
+    kez açılıp işaretlenir ve sonra parantezsiz kullanılır. **Faz başlıkları katmanına yine
+    dokunulmadı** (karar #52'deki açık soru sürüyor); 44, 45 ve 46'daki "RAG" ile 46'daki
+    "Retrieval-Reasoning", 47'deki "Function Calling" ve 49'daki "MCP" o başlıkları içeren
+    run'larda ele alınacaktır. Not: 42'nin başlığı değiştiği için `roadmap.json` entegrasyondan
+    **önce** güncellendi.
+
+109. **Bellek sayıları (Batch 9).** Xu ve ark. (ACL 2022), 1.024 token'lık bütçede oturum 4
+    doğrulama perplexity'si: önceki oturum yok 9,37 (kesilen %0), ham geçmiş 9,16 (%80), özet
+    9,04 (%0). Oturum açılışlarında (oturum 4): geçmiş yok 10,69; ham geçmiş 8,27; özet 7,94;
+    yalnız karşı taraf 8,49; yalnız kendi 8,52. 128 token'lık bütçede ham geçmişin %100'ü
+    kesiliyor. Wu ve ark. (ICLR 2025), 500 soru; LongMemEval_S ≈115 bin token, _M 500 oturum
+    ≈1,5 milyon token. Kusursuz getirme → tam geçmiş: GPT-4o 0,870 → 0,606 (%30,3); Llama 3.1
+    70B 0,744 → 0,334 (%55,1); 8B 0,710 → 0,454 (%36,1); Phi-3 14B 0,702 → 0,380 (%45,9);
+    Phi-3.5 Mini 0,660 → 0,342 (%48,1). Ticari: doğrudan okuma 0,9184; iki asistan 0,5773 ve
+    0,3299. Olgu ile anahtar genişletme: bulma oranı +%9,4, doğruluk +%5,4; zaman damgalı
+    dizinleme ve sorgu genişletme +%6,8–11,3; yapılandırılmış biçim ve not alma 10 puana varan
+    kazanç. Park ve ark. (UIST 2023): puan = tazelik + önem + ilgi, üç ağırlık da 1, min-maks ile
+    sıfır-bir aralığına ölçeklenir; sönüm çarpanı saat başına 0,995; önem 1–10 (örnekler 2 ve 8).
+    TrueSkill ablasyonu: tam mimari 29,89; yansımasız 26,88; yansıma ve planlamasız 25,64;
+    kalabalık işçi 22,95; belleksiz 21,21. Maharana ve ark. (ACL 2024): ortalama 300 tur, 9 bin
+    token, 35 oturuma kadar; kazanç %22–66, insan düzeyinin %56 gerisinde, zaman akıl
+    yürütmesinde %73; tuzak sorularda taban modele göre %83 daha kötü.
+
+110. **Uzun ufuk sayıları (Batch 9).** Dziri ve ark. (NeurIPS 2023), Önerme 4.1: bağımsız `n`
+    uygulamada başarısızlık olasılığı `n` ile üstel hızda bire yaklaşır. Önerme 4.2: yinelemeli
+    uygulamada başarı tavanı `c / (c + ε)`; `c` yanlış girdiden **tesadüfen** doğru çıktıya varma
+    olasılığıdır ve düşük çakışmalı işlemlerde `c` ile ε arasında büyük fark vardır. Üç basamaklı
+    çarpmada iki güçlü model %55 ve %59. Kwa, West ve ark. (NeurIPS 2025): 170 görev (HCAST +
+    RE-Bench + SWAA), 2019–2025 arası on iki sınır modeli, ajan/görev çifti başına 8 koşu.
+    GPT-2'nin %50 ufku 2 saniye; o3'ün 110 dakika ve bazı görevlerde dört saatin üstü. İkiye
+    katlanma 207 gün (%95 önyükleme aralığı 166–240 gün); 2023–2025 hızı 2019–2025'in yaklaşık
+    %20 üstünde. %80 ufku kabaca beş kat kısa. Başarı oranının insan süresi logaritmasına göre
+    üstel uyumu R² ≈ 0,80. Bir aylık (167 iş saatlik) ufuk için ekstrapolasyon 2028 ortası –
+    2031 ortası, açık çekincelerle. İnsan taban çizgileri: yaklaşık 460 denemenin 286'sı
+    başarılı. Mialon ve ark. (ICLR 2024): 466 soru, üç düzey adım sayısına göre tanımlı (en fazla
+    5 adım / 5–10 adım / keyfî uzunluk); insan ortalaması %92, araçlı güçlü model en kolay
+    düzeyde %30'u aşamıyor, en zorda %0, genel %15. Zhou ve ark. (ICLR 2024): uçtan uca görev
+    başarısı %14,41, insan %78,24.
+
+111. **Parametrik bilgi ve RAG sayıları (Batch 9).** Petroni ve ark. (EMNLP-IJCNLP 2019),
+    BERT-large ilk tahmin doğruluğu: bire bir ilişkiler %74,5; çoktan bire %34,2; çoktan çoka
+    %24,3; doğum tarihi %1,4. Açık alan soru cevaplamada ilk on tahminde %57,1; karşılaştırılan
+    bilgi tabanı %63,5. Kandpal ve ark. (ICML 2023): 176 milyar parametreli modelde ilgili belge
+    sayısı 10 → 10.000 iken doğruluk %25 → %55 üstü; beş derlem arasında sıra ilişkisi 0,87–0,97;
+    nadir sorularda ölçek doğrusu R² = 0,98 ve insan/denetimli düzeye 10¹⁸ parametre; altın
+    paragraf verildiğinde eğri yön değiştiriyor. Lewis ve ark. (NeurIPS 2020): Aralık 2018
+    Wikipedia, 100 kelimelik ayrık parçalar, 21 milyon belge; Natural Questions tam eşleşme
+    RAG-Sequence 44,5 / RAG-Token 44,1 / DPR 41,5 / T5-11B+SSM 36,6; getirilen hiçbir belgede
+    cevap geçmediğinde %11,8; insan değerlendirmesinde olgusallık %42,7'ye %7,1; sabit sözcük
+    eşleşmesi getiricisiyle NQ 43,5 → 29,7, olgu doğrulamada sözcük eşleşmesi önde; dizin
+    değiştirme 82 lider, 2016/2016 %70, 2018/2018 %68, çapraz %12 ve %4. Mallen ve ark. (ACL
+    2023): 14 bin soru; dört öbek %24 (0,83), %10 (0,14), %17 (0,88), %49 (0,11), genel bulma
+    oranı 0,42. Longpre ve ark. (EMNLP 2021): ezberlenen cevaba dönme %20–75; altın belgede ezber
+    oranı 4, yüz belge getirildiğinde 77. Cuconasu ve ark. (SIGIR 2024): dikkat dağıtıcı belgeler
+    doğruluğu düşürüyor, rastgele belgeler %35'e varan oranda artırıyor.
+
+112. **Getirme sayıları (Batch 9).** Robertson & Zaragoza (2009, Found. Trends Inf. Retr. 3(4),
+    333–389): B = (1 − b) + b × (belge uzunluğu / ortalama uzunluk), düzeltilmiş sıklık = tf / B,
+    ağırlık = düzeltilmiş sıklık / (k₁ + düzeltilmiş sıklık); çalışma `k₁` ve `b` için **yol
+    göstermediğini açıkça söyler**. Serideki sayısal örnek (k₁ = 1,2, b = 0,75, ortalama uzunluk
+    200) açıklama amaçlıdır ve metinde öyle işaretlenmiştir. Thakur ve ark. (NeurIPS 2021 D&B):
+    alan içi MS MARCO nDCG@10 BM25 0,228'e karşı yoğun 0,408; alan dışı ortalama BM25'e göre
+    −%27,9 · −%20,3 · +%1,6 · −%47,7 · −%7,4 · −%2,8 · −%3,6 · +%2,5 · +%11. TREC-COVID Hole@10:
+    BM25 %6,4, belge genişletmeli %2,8, iki yoğun model %14,4 ve %31,8; 980 çift elle
+    etiketlendikten sonra BM25 0,656 → 0,668, belge genişletmeli 0,713 → 0,714, yoğun
+    0,481 → 0,555 ve 0,332 → 0,445, geç etkileşimli 0,677 → 0,735. Formal ve ark. (SIGIR 2021):
+    BM25 MRR@10 0,184 / R@1000 0,853 / TREC DL R@1000 0,745 / işlem 0,13; öğrenilmiş seyrek
+    0,322 / 0,955 / 0,813 / 0,73; en iyi yoğun 0,335 / 0,964 / 0,720. Khattab & Zaharia (SIGIR
+    2020): yeniden sıralamada BM25 16,7; çapraz kodlayıcı 34,7 (10.700 ms, 97 T) ve 36,5
+    (32.900 ms, 340 T); geç etkileşimli 34,9 (61 ms, 7 G). Uçtan uca 8,8 milyonluk derlemde
+    MRR@10 36,0 ve ilk bin sonuçta bulma oranı %96,8. Cormack ve ark. (SIGIR 2009): puan,
+    sıraların terslerinin toplamıdır ve sabit 60 pilot çalışmada seçilip sonra değiştirilmemiştir;
+    pilot MAP en iyi tekil 0,2016, Condorcet 0,2074, CombMNZ 0,2039, yöntem 0,2145; sabit 10–100
+    arasında 0,2123–0,2147, sıfırda 0,2072, 500'de 0,2098; TREC Robust 0,3686'ya karşı en iyi
+    tekil 0,3586; ortalama kazanç %4–5.
+
+113. **REALM'in yayın yeri (Batch 9).** Guu ve ark.'nın çalışması DBLP'de yalnızca CoRR sürümüyle
+    indeksleniyor, ancak ICML 2020 bildiri sayfası (PMLR 119:3929–3938) doğrudan doğrulandı.
+    Venue doğrulamasında **birincil bildiri sayfası DBLP'nin üstündedir**; kararlar #97 ve
+    #106'daki "yalnızca CoRR'de indeksleniyorsa kullanma" ölçütü, birincil bildiri sayfası
+    bulunduğunda uygulanmaz. Çalışma bu run'da yine de kullanılmadı; ölçüt sonraki run'lar için
+    burada kayıtlıdır.
+
+114. **Batch 9'un kaynaklarının tamamı hakemlidir.** Kullanılan on yedi kaynağın hepsi hakemli bir
+    yerde yayımlanmıştır: ACL (Xu, Maharana, Mallen), ICLR (Wu, Mialon, Zhou), UIST (Park),
+    NeurIPS (Dziri, Kwa, Lewis, Thakur), EMNLP (Petroni, Longpre), ICML (Kandpal), SIGIR (Formal,
+    Khattab, Cormack) ve Found. Trends Inf. Retr. (Robertson & Zaragoza). Karar #6'daki hakemsiz
+    listeye **yeni kalem eklenmedi**; Batch 6 ve 7'nin serisi burada yeniden yakalandı. Aday olup
+    kullanılmayanlar ve gerekçeleri: MemGPT (Packer ve ark.), "LLMs Get Lost In Multi-Turn
+    Conversation" (Laban ve ark.), monoBERT (Nogueira & Cho), doc2query ve "The Illusion of
+    Diminishing Returns" (Sinha ve ark.) yalnızca CoRR'de indeksleniyor. Belge genişletmenin
+    sayıları bu yüzden hakemli ColBERT ve BEIR tablolarından alındı.
+
+## Batch 9 öğrenme notları (yazım tamamlandı)
+
+- **Faz 4 kapandı, Faz 5 açıldı.** 39 ve 40 akıl yürütme yayını bitirdi; 41 ve 42 getirme hattını
+  açtı. Batch tek bir yay olarak okunuyor: bilgi zaman içinde nasıl taşınır (39) → adımlar
+  çoğalınca ne olur (40) → gereken bilgi ağırlıklarda yoksa nereden gelir (41) → o bilgiyi bulan
+  şey nasıl çalışır (42).
+- **En verimli kaynak deseni: aynı çalışmanın iki tablosunu yan yana okumak.** 39'un çekirdeği,
+  Xu ve ark.'nın Tablo 3 ile Tablo 4'ünü birleştirmekten çıktı — biri "aynı bütçe, üç içerik",
+  öbürü "fark nerede ortaya çıkıyor". Tek tablo hiçbirini anlatmıyordu.
+- **Kusursuz getirme koşulu (oracle) altın değerinde bir pedagojik araçtır.** LongMemEval'in
+  "yalnızca ilgili oturumlar" ile "tam geçmiş" karşılaştırması, belleğin bir okuma değil bulma
+  problemi olduğunu tek tabloda kanıtlıyor. Aynı desen Kandpal'ın altın paragraf deneyinde de
+  var ve 41'in dönüm noktasını verdi.
+- **Biçimsel sonucu doğru okumak, onu abartmamaktan geçiyor.** Dziri ve ark.'nın Önerme 4.2'si
+  ilk bakışta "toparlanma kurtarır" gibi okunuyor; çalışmanın kendi uyarısı (tesadüfi toparlanma
+  hata oranından çok daha seyrektir) olmadan 40 yanlış bir sonuca varırdı. Tavanın **düşük**
+  olması, düzeltmenin dışarıdan gelmesi gerektiğinin kanıtı — makalenin çekirdeği bu oldu.
+- **Aynı çalışmanın hakemli sürümü farklı başlık taşıyabiliyor.** METR'in çalışması arXiv'de
+  "Measuring AI Ability to Complete Long Tasks", NeurIPS 2025'te "…Long Software Tasks". Karar
+  #7'nin ölçütü uygulandı: künye ve sayılar hakemli sürümden alındı, PDF NeurIPS bildiri
+  sayfasından indirildi.
+- **29'un kapsamı 42'yi yazmadan önce satır satır çıkarılmalıydı.** İlk taslak DPR sayılarını,
+  BEIR'in nitel sonucunu, hibrit aramayı ve iki aşamalı sıralamayı tekrar anlatıyordu — hepsi 29'da
+  vardı. 42'nin gerçek boşluğu şuydu: 29 "sözcük eşleşmesi" ve "BM25" adlarını kullanıp
+  mekanizmayı hiç açmamıştı. Makale o boşluğa kuruldu ve BEIR'den yalnızca 29'un vermediği
+  sayısal ayrıntı (alan dışı yüzdeler, Hole@10 analizi) alındı.
+- **Diyagramda metin binmesini yalnızca piksel görüntüsü yakalıyor.** `check-series-svg.cjs`
+  viewBox taşmasını görüyor, çakışmayı görmüyor. Bu run'da üç şekil (40-Şekil 1, 42-Şekil 1,
+  42-Şekil 2) ilk çizimde etiketleri eğrilerin ve çubukların üstüne bindirdi ve ancak ekran
+  görüntüsüyle fark edildi. Çözüm deseni: eğri/çubuk alanını daraltıp sağda ayrı bir gösterge
+  ya da açıklama sütunu açmak; etiketi çizginin ucuna yapıştırmamak.
+- **Yatay çubuk şemasında etiket, çubuk ve değer üç ayrı sütun olmalı.** 42-Şekil 2'nin ilk
+  hâlinde etiketler çubukların içine ve değerlerin üstüne taşıyordu. Üç sütunlu düzen (solda ad,
+  ortada çubuk, sağda değer) hem light hem dark temada temiz çıkıyor.
+- **Vaat defteri iki koordinat kapattı, yeni koordinat açılmadı.** Dört makalenin metin içi
+  numaralı göndermelerinin tamamı yayımlanmış makalelere yapıldı; bu, `grep` ile makale başına
+  doğrulandı ve `+1` fazının rutin adımı hâline gelmelidir.
 
 ## Batch 8 öğrenme notları (yazım tamamlandı)
 

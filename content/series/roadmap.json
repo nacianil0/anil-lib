@@ -67,8 +67,8 @@
         { "order": 36, "title": "Arama ve Planlama: Öz-Tutarlılık ve Ağaçlar", "status": "yayinda", "slug": "arama-ve-planlama-oz-tutarlilik-ve-agaclar" },
         { "order": 37, "title": "Pekiştirmeli Öğrenmenin Temelleri: Markov Karar Süreci, Politika ve Ödül", "status": "yayinda", "slug": "pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci" },
         { "order": 38, "title": "Süreç Denetimi: Adım Adım Ödüllendirme", "status": "yayinda", "slug": "surec-denetimi-adim-adim-odullendirme" },
-        { "order": 39, "title": "Bellek: Sohbet İçinde ve Sohbetler Arasında", "status": "planlandi" },
-        { "order": 40, "title": "Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık", "status": "planlandi" }
+        { "order": 39, "title": "Bellek: Sohbet İçinde ve Sohbetler Arasında", "status": "yayinda", "slug": "bellek-sohbet-icinde-ve-sohbetler-arasinda" },
+        { "order": 40, "title": "Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık", "status": "yayinda", "slug": "uzun-ufuk-cok-adimli-gorevlerde-tutarlilik" }
       ]
     },
     {
@@ -76,8 +76,8 @@
       "title": "Bilgiyle Bağlamak: Retrieval ve Araçlar",
       "description": "Parametrik bilginin sınırından araç ekosistemlerine: modeli dünyaya bağlamak.",
       "articles": [
-        { "order": 41, "title": "Modelin Bilgisi Neden Yetmez? RAG'e Giriş", "status": "planlandi" },
-        { "order": 42, "title": "Retrieval: Aramanın Modern Hali", "status": "planlandi" },
+        { "order": 41, "title": "Modelin Bilgisi Neden Yetmez? RAG'e Giriş", "status": "yayinda", "slug": "modelin-bilgisi-neden-yetmez-rag-e-giris" },
+        { "order": 42, "title": "Getirme: Aramanın Modern Hali", "status": "yayinda", "slug": "getirme-aramanin-modern-hali" },
         { "order": 43, "title": "Vektör Veritabanları ve İndeksleme", "status": "planlandi" },
         { "order": 44, "title": "Chunking, Rerank ve RAG Hattının İncelikleri", "status": "planlandi" },
         { "order": 45, "title": "RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati", "status": "planlandi" },

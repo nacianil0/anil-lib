@@ -62,12 +62,12 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 22. **Dinamik Programlama: Alt Problemi Bulmak** — *yayında* · 20 ve 21'in bıraktığı iki çöküşün aynı çözüme bakması, alt problem bağımlılık grafının şekli (böl-yönet ağaç, DP DAG) ve Bellman'ın ad koyuşu, naif Fibonacci'nin 2·F(n+1) − 1 çağrısıyla örtüşme teşhisi ve Θ(n) bit uzunluğundan gelen O(n + n²/w) dürüstlük notu, bellekleme ile tablolamanın üç noktada ayrışması (erişilebilirlik, yığın derinliği, sabitler) ve tablolama döngüsünün topolojik sıraya dayanan değişmezi, altı adımlı alt problem reçetesi ve "bir soru sor, cevaplarını yerel olarak kaba kuvvetle dene" ilkesi, ağırlıklı aralık çizelgelemenin dört açgözlü kuralı da yenen sayısal DP çözümü (optimal 22, en iyi açgözlü 17), LCS ve 0/1 sırt çantası, DP'nin yalnızca optimal altyapı istemesi, sözde polinom tuzağı.
 23. **Graf Algoritmaları: MST ve En Kısa Yollar** — *yayında* · aynı graf üzerinde MST ile en kısa yollar ağacının farklı çıkması (toplam 11'e karşı kenar toplamı 15), kesit ve kesen kenar tanımları, kesit teoreminin değişim argümanıyla ispatı ve MST'nin optimal altyapısı, Prim ile Kruskal'ın aynı teoremin iki yüzü olması, 13'ten kalan `azalt_anahtar` borcunun çapraz bağlı indeksli öncelik kuyruğuyla ödenmesi, Θ(|V|)·extract-min + Θ(|E|)·decrease-key formülü ve üç temsilin maliyet tablosu, gevşetmenin güvenliği ve üçgen eşitsizliği, Dijkstra'nın doğruluk ispatında negatif olmama varsayımının tam yeri ve üç düğümlük karşı örnekle çöküşü, Bellman-Ford'un k-kenarlı uzaklık alt problemiyle bir DP olarak okunması ve negatif çevrim tanığı, dört algoritmanın kısıt–maliyet tablosu.
 24. **Alt Sınırlar, Olasılıksal ve Paralel Algoritmalar** — *yayında* · karar ağacı kuramının formal hâli ve iki adımlı alt sınır makinesi (çıktıyı say, logaritmasını al), lg(n!) = Θ(n log n) ile sıralamanın Ω(n log n) sınırı ve n = 10 için en az 22 karşılaştırma, sınırın modele ait olduğu uyarısı, Monte Carlo ile Las Vegas ayrımı, Freivalds'ın Θ(n²) çarpım denetleyicisi ve 1/2 hata sınırı, paranoyak hızlı sıralamanın beklenti analizi (iyi eksen olasılığı > 1/2, E ≤ 2 deneme, log_{4/3} n yükseklik) ve beklenen zamanın ortalama durumdan ayrılması, iş ile açıklık tanımları, iş ve açıklık yasaları, paralellik = T₁/T∞, açgözlü çizelgeleyici teoremi ve optimalin en fazla iki katı olması, Amdahl yasasından neden daha keskin olduğu.
-25. **NP-Tamlık: Hesaplamanın Sınırları** — P/NP, indirgeme sezgisi, NP-tam örnekler; Turing makinesi ve karar verilemezlik kısa köprüsü.
+25. **NP-Tamlık: Hesaplamanın Sınırları** — *yayında* · sınırın modelden probleme taşınması ve üç kademeli cevap (hiç algoritma yok / hızlısı bilinmiyor / eşik çok ince), karar problemi tanımı ve optimizasyonun karar sürümüne çevrilmesi, sayılabilirlik argümanıyla "problemlerin neredeyse hepsi çözülemez" sonucu ve durma probleminin Q(Q) çelişkisiyle iki satırlık ispatı, R ⊋ EXP ⊋ P katmanları, P ile NP'nin doğrulayıcı ve sertifika diliyle niceleyicili tanımı ve EVET/HAYIR asimetrisi, P ⊆ NP ⊆ EXP gerekçeleri ve n = 100 için 2¹⁰⁰ ≈ 1,27 × 10³⁰ ile n³ = 10⁶ karşılaştırması, indirgemenin tanımı ile iki okuması ve O(n^{kj}) maliyet bileşimi, NP-zor ile NP-tam ayrımı ve NP-zorun NP dışına taşması, Cook 1971 ve 3SAT'ın devre argümanıyla sezgisi, NP-tamlık ispatının iki adımı ve yanlış yön hatası, iki çalışılmış indirgeme (bağımsız küme ≤p düğüm örtüsü tümleyen eşitliğiyle; 3SAT ≤p bağımsız küme 12 düğüm / 24 kenar ile iki yönden doğrulanmış), sözde polinomun zayıf ve güçlü NP-tamlıkla ilişkisi, 2-SAT ile 3-SAT ve 2-boyama ile 3-boyama eşiği, Kosaraju-Sharir ile güçlü bağlı bileşenler (bitiş sırası, ters graf, yoğunlaştırma DAG'ı, Θ(|V| + |E|)) ve 2-SAT'ın imalar grafıyla polinom zamanda çözülmesi.
 
 ### Faz D — İşletim Sistemleri: Kaynakları Yönetmek (26–35) · CMPE322 ekseni
 
-26. **İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim** — kullanıcı/çekirdek modu, kesmeler, multiprogramming/time-sharing tarihi.
-27. **Süreçler ve İş Parçacıkları** — PCB, durum makinesi, bağlam anahtarı; process vs thread trade-off'u.
+26. **İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim** — *yayında* · Faz D'nin açılışı ve sorunun "ne kadar hızlı"dan "bu makine kime ait"e dönmesi, sanallaştırma tanımı ve sanallaştırma/eşzamanlılık/kalıcılık üçlüsü, kaynak yöneticisi rolü, ilke ile düzenek ayrımının arayüz–temsil ayrımıyla aynı fikir olması, kütüphane tasarımının açığı ve güçlü yalıtım gerekçesi, kullanıcı kipi ile çekirdek kipinin donanım desteği ve çekirdeğin bir ayrıcalık düzeyi olarak tanımı, sistem çağrısının on adımlık yaşam döngüsü (tuzak, tuzak tablosu, sistem çağrısı numarası, argüman denetimi, tuzaktan dönüş) ve neden fonksiyon çağrısı olmadığı, işbirliğine dayalı yaklaşımın sonsuz döngüde çökmesi ve zamanlayıcı kesmesinin garantisi (10 ms'de bir kesme ≈ %0,01 ek yük), toplu iş → koruma/Atlas → çoklu programlama → zaman paylaşımı evrimi ve Corbató'nun "zaman paylaşımı çoklu programlamanın belirli bir biçimidir" saptaması, monolitik çekirdek ile mikroçekirdek takası.
+27. **Süreçler ve İş Parçacıkları** — *yayında* · sürecin makine durumu envanteri (adres uzayı, yazmaçlar, program sayacı ve yığın işaretçisi, açık dosyalar) ve programdan sürece geçiş adımları, çalışan/hazır/engellenmiş durum makinesi ile korunan değişmezi ve iki süreç izinin çoklu programlamayı sayısallaştırması, başlangıç ve zombi uç durumları, süreç listesi ile süreç denetim bloğunun alanları, bağlam anahtarındaki iki ayrı kaydetme (donanımın örtük kullanıcı yazmaçları, çekirdeğin açık kaydı) ve ölçülmüş maliyet (1996'da 6 µs = 1.200 çevrim, bugün mikrosaniye altı ama 1.500 çevrim), iş parçacığının aynı adres uzayını paylaşıp ayrı yığın tutması ve sayfa tablosunun değişmemesi, iki kullanım gerekçesi (paralellik ve giriş/çıkış örtüşmesi) ile süreç tercihinin ne zaman daha sağlam olduğu, paylaşılan sayaç örneğiyle yarış koşulu (beklenen 20.000.000, gözlenen 19.345.221 ve 19.221.041), kritik kesim, karşılıklı dışlama ve atomiklik tanımları — çözümler bilinçli olarak 29–30'a bırakıldı.
 28. **CPU Zamanlama** — FCFS/SJF/RR/öncelik/çok seviyeli; ölçütler ve karşılaştırma; küçük hesap örnekleri.
 29. **Senkronizasyon: Kritik Kesim, Kilit, Semafor** — yarış koşulu, kritik kesim gereksinimleri, mutex/semafor/monitör.
 30. **Klasik Eşzamanlılık Problemleri** — üretici-tüketici, okuyucu-yazar, yemek yiyen filozoflar; çözüm savunmaları.
@@ -134,10 +134,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 23 ← 16 (graf temsilleri, BFS'in ağırlıksız en kısa yolu, el sıkışma lemmasından Θ(|V| + |E|)), 13 (öncelik kuyruğu arayüzü ve ödenmemiş `azalt_anahtar` borcu; burada ödendi), 21 (kesit teoremi bir değişim argümanıdır; Prim ile Kruskal açgözlüdür), 7 (kapsayan ağaç, ağacın n − 1 kenarı, tek basit yol), 22 (Bellman-Ford ile DAG gevşetmesi birer dinamik programdır), 14 (doğrudan erişim dizisi: kimlik → indis eşlemesi `azalt_anahtar`ı O(log n) yapar)
 - 24 ← 17 (karar ağacı yükseklik lemması ve log₂(n!) = Θ(n log n)), 14–15 (karar ağacı argümanının arama ve sıralama hâlleri; modeli terk eden sayma/radix sıralamaları), 15 (hızlı sıralamanın ortalama/en kötü ayrımı ve rastgele karıştırma), 9 (en iyi/en kötü/ortalama durum ayrımına dördüncü kavram olarak beklenen zamanın eklenmesi), 8 (birleşme → paralel indirgeme; monoid bölünebilir indirgemenin adıdır), 18 (özyineleme ağacında seviye toplamı: paranoyak hızlı sıralamanın log_{4/3} n yüksekliği)
 
-**Batch 8 taslak satırları (Faz C'nin son makalesi ve Faz D'nin açılışı; batch büyüklüğü run'da çözülür):**
+**Batch 8 (yayımlanmış, artık bağlayıcı):**
 - 25 ← 24 (alt sınırın modele ait olması; şimdi sınır problemin kendisine taşınır), 22 (sözde polinom: altküme toplamının O(nT) çözümü girdi boyutunda polinom değildir), 5 (sayılabilirlik ve hesaplanamayan fonksiyonlar → durma problemi), 2 (P ve NP tanımlarının niceleyici kalıbı), 23 (indirgemelerin maliyet muhasebesi Θ(|V| + |E|) dilinde), 16 (güçlü bağlı bileşenler ve indirgeme grafları — 16'nın bilinçli olarak dışarıda bıraktığı konu)
 - 26 ← (Faz D'nin giriş noktası; C'den bağımsız okunabilir), 19 (durum makinesi modeli: süreç bir durum makinesidir), 2 (kullanıcı/çekirdek modu ayrımının mantıksal ifadesi)
-- 27 ← 26 (çekirdek, sistem çağrısı, kesme), 10 (çağrı yığını ve kuyruk arayüzleri), 19 (süreç durum makinesi ve korunan değişmez), 9 (bağlam anahtarının maliyeti)
+- 27 ← 26 (çekirdek, sistem çağrısı, kesme; tuzağın kaydettiği yazmaçlar), 10 (çağrı yığını ve kuyruk arayüzleri; yığın burada adres uzayında gerçek bir bölge olur), 19 (süreç durum makinesi ve korunan değişmez), 9 (bağlam anahtarının maliyeti ve özyineleme derinliğinin bellek maliyeti), 24 (iş ile açıklık ayrımı iş parçacığı gerekçesinde)
+
+**Batch 9 taslak satırları (Faz D'nin gövdesi; batch büyüklüğü run'da çözülür):**
+- 28 ← 27 (süreç durum makinesi, hazır kümesi, bağlam anahtarının maliyeti), 13 (öncelik kuyruğu: öncelikli ve çok seviyeli zamanlamanın veri yapısı), 21 (açgözlü seçim kuralı ve karşı örnekle kırma refleksi), 24 (açgözlü çizelgeleyici teoremi ve "optimalin en fazla iki katı" kalıbı), 9 (ortalama durum ile en kötü durum ayrımı; ölçüt seçimi)
+- 29 ← 27 (yarış koşulu, kritik kesim, karşılıklı dışlama, atomiklik — problem orada kuruldu), 19 (korunan değişmez dili: bir kilidin ne söz verdiği değişmezle yazılır), 26 (kesmelerin kapatılması ayrıcalıklı bir işlemdir), 2 (kritik kesim koşullarının niceleyicili ifadesi)
+- 30 ← 29 (kilit, semafor ve monitör), 10 (tampon bir kuyruktur; üretici-tüketici), 19 (değişmez ve sonlanma ayrımı: canlılık ile güvenlik)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -456,6 +461,66 @@ boyunca aynı kalır.
 | doğrusal hızlanma | linear speedup | 24 |
 | Amdahl yasası | Amdahl's law | 24 |
 | paralel gevşeklik | parallel slackness | 24 |
+| karar problemi | decision problem | 25 |
+| karar verilebilir | decidable | 25 |
+| karar verilemez | undecidable | 25 |
+| durma problemi | halting problem | 25 |
+| sayılabilir / sayılamaz | countable / uncountable | 25 |
+| köşegen argümanı | diagonalization argument | 25 |
+| Turing makinesi | Turing machine | 25 |
+| Church-Turing tezi | Church-Turing thesis | 25 |
+| sertifika | certificate | 25 |
+| doğrulayıcı | verifier | 25 |
+| indirgeme | reduction | 25 |
+| NP-zor | NP-hard | 25 |
+| NP-tam | NP-complete | 25 |
+| sağlanabilirlik | satisfiability (SAT) | 25 |
+| sözde polinom | pseudo-polynomial | 25 |
+| zayıf / güçlü NP-tam | weakly / strongly NP-complete | 25 |
+| bağımsız küme | independent set | 25 |
+| düğüm örtüsü | vertex cover | 25 |
+| güçlü bağlı bileşen | strongly connected component | 25 |
+| yoğunlaştırma | condensation (kernel DAG) | 25 |
+| imalar grafı | implication graph | 25 |
+| sanallaştırma | virtualization | 26 |
+| kalıcılık | persistence | 26 |
+| kaynak yöneticisi | resource manager | 26 |
+| ilke ve düzenek | policy and mechanism | 26 |
+| güçlü yalıtım | strong isolation | 26 |
+| kullanıcı kipi | user mode | 26 |
+| çekirdek kipi | kernel mode (supervisor mode) | 26 |
+| çekirdek | kernel | 26 |
+| ayrıcalıklı komut | privileged instruction | 26 |
+| tuzak | trap | 26 |
+| tuzak tablosu | trap table | 26 |
+| tuzaktan dönüş | return-from-trap | 26 |
+| sistem çağrısı numarası | system call number | 26 |
+| zamanlayıcı kesmesi | timer interrupt | 26 |
+| toplu iş | batch processing | 26 |
+| çoklu programlama | multiprogramming | 26 |
+| zaman paylaşımı | time-sharing | 26 |
+| monolitik çekirdek | monolithic kernel | 26 |
+| mikroçekirdek | microkernel | 26 |
+| süreç | process | 27 |
+| makine durumu | machine state | 27 |
+| adres uzayı | address space | 27 |
+| program sayacı | program counter | 27 |
+| yığın işaretçisi | stack pointer | 27 |
+| çalışan / hazır / engellenmiş | running / ready / blocked | 27 |
+| çizelgelenmek / çizelgeden çıkarılmak | scheduled / descheduled | 27 |
+| zombi | zombie | 27 |
+| süreç listesi | process list (task list) | 27 |
+| süreç denetim bloğu | Process Control Block (PCB) | 27 |
+| bağlam anahtarı | context switch | 27 |
+| iş parçacığı | thread | 27 |
+| iş parçacığı denetim bloğu | Thread Control Block (TCB) | 27 |
+| iş parçacığına özel depolama | thread-local storage | 27 |
+| yarış koşulu | race condition | 27 |
+| veri yarışı | data race | 27 |
+| belirsiz | indeterminate | 27 |
+| kritik kesim | critical section | 27 |
+| karşılıklı dışlama | mutual exclusion | 27 |
+| atomik | atomic | 27 |
 
 ## Kavram-tekrar defteri
 
@@ -472,7 +537,9 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
   kırılması ve "bir açgözlü kural önerince önce onu kırmayı dene" refleksinin kurulması; ayrıca
   19'un giriş paragrafı ("birkaç girdide çalışmak ispat değildir") aynı pini kullanır.
 - **Yapıcı olmayan ispat (3)** → 21'de **kullanılmadı** (açgözlü ispatların hepsi yapıcıdır);
-  25'te varlık argümanlarının algoritma vermemesi tartışmasında açılacak.
+  **25'te ödendi**: sayma argümanı çözülemez problemlerin varlığını gösterir ama tek bir tanesini
+  bile eline vermez, durma problemi ise elle tutulur örnektir. İki argümanın farkı sözlü
+  checkpoint'in omurgasıdır.
 - **Hash tablosu takip zinciri (1)** → **14'te üç halkasıyla birlikte ödendi** (ortalama vs en kötü
   durum → düşman girdi → sıralı işlemler için neden dengeli ağaç gerekir).
 - **Güçlü tümevarım ve parçalama adımı (4)** → **18'de ödendi**: yineleme çözümlerinin tümevarımla
@@ -491,8 +558,10 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
   grafı bir DAG'dır ve tablolama döngüsünün sırasının topolojik olması bir **doğruluk şartıdır**;
   sıra yanlışsa bağıntı henüz doldurulmamış hücreyi okur. 28'de bağımlılıklı çizelgeleme olarak
   geri döner.
-- **Sayılabilirlik ve hesaplanamayan fonksiyonlar (5)** → 25'te durma problemi ve karar
-  verilemezlik tartışmasının sayma zemini.
+- **Sayılabilirlik ve hesaplanamayan fonksiyonlar (5)** → **25'te ödendi**: program sonlu bir
+  dizgedir ve sonlu dizgeler sayılabilir, karar problemi sonsuz bir bit dizgesidir ve sayılamaz;
+  buradan "problemlerin neredeyse hepsi çözülemez" sonucu çıkar ve durma problemi somut örnek
+  olarak Q(Q) çelişkisiyle verilir.
 - **Birebir olmayan hash fonksiyonu (5, 6)** → **14'te ödendi**: çakışma çözümü ve yük faktörü
   tartışmasının gerekçesi; 6'da güvercin yuvasıyla ispatlanmıştı.
 - **C(n, 2), 2ⁿ ve n! büyüklükleri (6)** → 9'da karmaşıklık sınıflarının somut zemini;
@@ -544,8 +613,9 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
 - **Dizinin indis aritmetiği (10)** → **13'te tam ikili ağacın dizi temsilinde ödendi** (sol 2i + 1,
   sağ 2i + 2, ebeveyn ⌊(i − 1)/2⌋); **14'te açık adreslemede** ikinci kez kullanıldı.
 - **Yığın ve kuyruk (10)** → **16'da ödendi**: BFS kuyrukla katman katman, DFS yığınla (ya da
-  özyinelemeyle) derine yürür ve iki arayüz iki algoritmaya dönüşür; 27–28'de çağrı yığını ve
-  zamanlayıcı kuyruğu aynı yapıların işletim sistemi karşılıklarıdır.
+  özyinelemeyle) derine yürür ve iki arayüz iki algoritmaya dönüşür; **27'de yığın tarafı ödendi**:
+  çağrı yığını soyut bir arayüz değil, adres uzayında gerçek bir bölge ve bir yazmaçtır, ve çok iş
+  parçacıklı bir süreçte her iş parçacığının kendi yığını olur. Zamanlayıcı kuyruğu 28'e kaldı.
 - **BST değişmezi ve sıralı dolaşma (11)** → 12'de dengeleme bu değişmezin üstüne kurulur;
   **19'da "değişmezi koruyan yerel işlem" kalıbı korunan değişmez tanımıyla formalleşti**
   (P(q) ve q → r ise P(r)); 39'da veritabanı indeksinin neden sıralı bir yapı olduğu tartışmasında.
@@ -559,8 +629,9 @@ Yayımlanmış makalelerin ileride bilinçli olarak geri çağrılacağı noktal
 - **Dış bellek modeli ve blok sayımı (12)** → 34'te dosya sistemleri ve ayırma yöntemlerinde;
   37'de bellek hiyerarşisinde; 39'da indeks = B-ağacı geri çağrımında.
 - **Özyineleme derinliği = bellek maliyeti (9)** → 11, **15 (hızlı sıralamanın yığın maliyeti)** ve
-  **20'de tabana devretme gerekçesinin ikinci ayağı** olarak kullanıldı; 27'de çağrı yığını olarak
-  işletim sistemi karşılığını bulur.
+  **20'de tabana devretme gerekçesinin ikinci ayağı** olarak kullanıldı; **27'de ödendi**: yığın
+  adres uzayında gerçek bir bölgedir ve çok iş parçacıklı bir süreçte bu maliyet **iş parçacığı
+  başına** ödenir — ağır özyineleme kullanan programlar bu yüzden istisnadır.
 - **Öncelik kuyruğu (13)** → **16'da köprü kuruldu**: BFS'in en kısa yol vermesi kenarların
   ağırlıksız olmasına bağlıdır, ağırlıklı hâl öncelik kuyruğu ister. **21'de Huffman'ın "en seyrek
   iki simgeyi çek" adımının doğal veri yapısı olarak kullanıldı.** **23'te tamamen ödendi**: hem
@@ -595,16 +666,21 @@ Batch 5 ile açılan yeni pinler:
 
 - **Graf için doğrusal zaman Θ(|V| + |E|) (16)** → **23'te ödendi**: DAG gevşetmesinin maliyeti,
   el sıkışma lemmasından çıkan Θ(|E|) `azalt_anahtar` sayısı ve dört algoritmanın maliyet tablosu;
-  25'te indirgemelerin maliyet muhasebesinde sürer.
+  **25'te iki kez daha kullanıldı**: Kosaraju-Sharir'in iki geçişi ve ters grafın kurulması, ayrıca
+  2-SAT kararının Θ(n + m) olması.
 - **BFS'in ağırlıksız grafta en kısa yol vermesi (16)** → **23'te ödendi**: Dijkstra tam olarak
   bunun ağırlıklı genellemesi olarak sunuldu ve kuyruğun yerini öncelik kuyruğu aldı.
 - **DFS'in bitiş sırası ve ters bitiş sırası (16)** → **22 topolojik sıra pinini ödedi** ama
-  algoritmayı kullanmadı (tablolama sırası soyut bir topolojik sıradır); **ters bitiş sırası
-  algoritmasının kendisi hâlâ 25'e borçludur**, güçlü bağlı bileşenler ve indirgeme graflarıyla
-  birlikte.
+  algoritmayı kullanmadı (tablolama sırası soyut bir topolojik sıradır); **25'te tamamen ödendi**:
+  Kosaraju-Sharir'in iki geçişi (G üzerinde bitiş sırası, G^R üzerinde ters bitiş sırası), sekiz
+  düğümlü somut graf, Θ(|V| + |E|) maliyeti, yoğunlaştırma grafının her zaman DAG olması ve
+  2-SAT'ın imalar grafıyla polinom zamanda çözülmesi. **Uyarı:** birincil kaynak Sedgewick 4.2'dir;
+  MIT 6.006 Bahar 2020'de SCC dersi yoktur.
 - **Niceleyicili tanım kalıbı (17)** → **19'da ödendi**: döngü değişmezi "her i için, i'inci
   yinelemenin başında …" biçiminde yazıldı ve "dizinin başı sıralı" gibi gevşek ifadelerin
-  değişmez sayılmadığı gösterildi; 25'te P ve NP tanımlarında aynı kalıp kullanılır.
+  değişmez sayılmadığı gösterildi; **25'te ikinci kez ödendi**: NP tanımı "öyle bir V vardır ki …
+  öyle bir c vardır ki … her c için" kalıbıyla yazıldı ve EVET/HAYIR asimetrisinin kaynağının
+  niceleyici türü olduğu gösterildi.
 - **Eşik ve kesişim noktası: asimptotik ile pratik ayrımı (17)** → **20'de ödendi**: n²/4 ile
   n log₂ n karşılaştırmasından çıkan n ≤ 15 eşiği ve Strassen'in n ≥ 32 eşiği; 37'de bellek
   hiyerarşisinin sabitleri büyütmesi.
@@ -632,11 +708,15 @@ Batch 6 ile açılan yeni pinler:
 
 - **Kısmi doğruluk ile sonlanma ayrımı (19)** → 20'de böl-yönet doğruluk savunmasının iki ayağı;
   **22'de ödendi**: tablolama döngüsünün değişmezi (başlatma taban durumlar, koruma bağıntının
-  yalnızca dolmuş hücrelere bakması, sonuçlanma özgün problemin okunması); **29–31'de eşzamanlılık
-  değişmezleri ve kilitlenmenin ilerleme argümanı**; 25'te durma problemi bu ayrımın uç hâlidir.
-- **Değişmez İlkesi ve durum makinesi modeli (19)** → 26–27'de süreç durum makinesi olarak
-  modellenir; 29'da kritik kesim koşulları korunan değişmezlerdir; 31'de Banker algoritmasının
-  güvenli durum değişmezi aynı kalıptır.
+  yalnızca dolmuş hücrelere bakması, sonuçlanma özgün problemin okunması); **25'te uç hâli ödendi**:
+  sonlanmayı genel olarak ispatlayacak bir algoritma yoktur, çünkü durma problemi karar
+  verilemezdir — sonlanma ispatı elle yapılır çünkü otomatikleştirilemez. **29–31'de eşzamanlılık
+  değişmezleri ve kilitlenmenin ilerleme argümanı** olarak sürecek.
+- **Değişmez İlkesi ve durum makinesi modeli (19)** → **26 ve 27'de ödendi**: 26'da kullanıcı/çekirdek
+  kipi geçişleri bir durum makinesidir ve korunan değişmez "çekirdek kipine yalnızca çekirdeğin
+  belirlediği noktadan girilir"dir; 27'de süreç durum makinesinin değişmezi "her an en fazla bir
+  süreç çalışan durumdadır ve engellenmiş süreç olayı gelmeden hazır olmaz"dır. 29'da kritik kesim
+  koşulları, 31'de Banker'ın güvenli durumu aynı kalıptır.
 - **Azalan ölçüyle sonlanma, zayıf azalmanın yetmemesi (19)** → **22'de topolojik sıra biçiminde
   ödendi** (bağıntı yalnızca sırada önce gelen alt problemlere bakar, bu yüzden döngü sonlanır ve
   koruma geçerlidir); 31'de açlık ve canlılık tartışmasında sürer.
@@ -671,10 +751,12 @@ Batch 6 ile açılan yeni pinler:
 Batch 7 ile açılan yeni pinler:
 
 - **Alt problem bağımlılık grafının şekli (22)** → desenleri ayıran ölçüt (ağaç = böl-yönet,
-  DAG = dinamik programlama); 25'te indirgeme grafları aynı dili kullanır.
-- **Sözde polinom (22)** → **25'in doğrudan girişi**: altküme toplamının O(nT) çözümü girdi
-  boyutunda polinom değildir ve sorunun polinom zamanda çözülüp çözülemeyeceği P ≠ NP'ye bağlıdır;
-  9'un "girdi boyutu sayı mı basamak mı" pini burada kapanır.
+  DAG = dinamik programlama); **25'te yoğunlaştırma grafı olarak geri döndü** (güçlü bileşenleri
+  büzünce kalan yapı her zaman bir DAG'dır), ama "indirgeme grafı" terimi kullanılmadı.
+- **Sözde polinom (22)** → **25'te ödendi**: altküme toplamının O(nT) çözümü girdi boyutunda
+  polinom değildir (n = 100 tane 64 bitlik sayı 808 bayt girdi, tablo ≈ 1,8 × 10²¹ hücre); teknik
+  adı **zayıf NP-tamlıktır** ve güçlü NP-tam problemlerin sözde polinom algoritması bile yoktur.
+  9'un "girdi boyutu sayı mı basamak mı" pini burada kapandı.
 - **Bellekleme ile tablolama takası (22)** → 33'te sayfa değiştirme ve önbellekleme kararlarının
   "sakla ya da yeniden hesapla" muhasebesi; 37'de bellek hiyerarşisi aynı takasın donanım hâlidir.
 - **Ebeveyn işaretçisiyle çözümü geri yürütmek (22)** → 23'te en kısa yollar ağacının kurulması
@@ -684,20 +766,54 @@ Batch 7 ile açılan yeni pinler:
 - **Gevşetme ve üçgen eşitsizliği (23)** → tahminin hep gerçek değerin üstünde tutulup kademeli
   düşürülmesi kalıbı; 31'de güvenli durum tahmini ve 33'te çalışma kümesi kestiriminde aynı
   refleks kullanılır.
-- **Negatif çevrimde "en kısa yol" sorusunun iyi tanımlı olmaması (23)** → 25'te iyi tanımlı olan
-  ile hiç çözülemeyen problem ayrımının ilk örneğidir; doğru cevap bir sayı değil, çevrimin
-  kendisini raporlamaktır.
+- **Negatif çevrimde "en kısa yol" sorusunun iyi tanımlı olmaması (23)** → **25'te ödendi**:
+  "iyi tanımlı olmamak" ile "zor olmak" ayrı şeylerdir ve bu ayrım mülakat hataları listesine
+  girdi; doğru cevap bir sayı değil, çevrimin kendisini raporlamaktır.
 - **Aynı maliyet formülünün iki farklı algoritmayı yönetmesi (23)** → Prim ile Dijkstra'nın tek
   farkı anahtarın w(u, v) mi d(u) + w(u, v) mi olduğudur; 28'de zamanlama kurallarının aynı
   iskelet üzerinde ayrışması aynı derstir.
-- **Alt sınırın modele ait olması (24)** → **25'in tezi**: orada sınır modelden alınıp problemin
-  kendisine taşınır.
+- **Alt sınırın modele ait olması (24)** → **25'te ödendi ve makalenin tezi oldu**: sınır modelden
+  alınıp problemin kendisine taşındı ve üç kademeye ayrıldı (hiçbir modelde algoritma yok / hızlı
+  algoritma bilinmiyor / eşik 2 ile 3 arasında).
 - **Monte Carlo ile Las Vegas ayrımı (24)** → 36'da olasılık aracıyla formalleşir; 35'te
   olasılıksal güvenlik testlerinde geri çağrılabilir.
-- **İş ile açıklık ayrımı (24)** → 27'de süreç ile iş parçacığı trade-off'unda, 28'de çok işlemcili
-  zamanlamada, 37'de donanım paralelliğinde geri döner.
+- **İş ile açıklık ayrımı (24)** → **27'de kısmen ödendi**: iş parçacığının birinci kullanım
+  gerekçesi olan paralellikte analiz aracı olarak anıldı ve işletim sistemi tarafından gelen ek
+  kısıt eklendi (çizelgelenebilir iş parçacığı sayısı ve geçiş maliyeti tavanı aşağı çeker); 28'de
+  çok işlemcili zamanlamada, 37'de donanım paralelliğinde sürer.
 - **Açgözlü çizelgeleyici teoremi ve 2 kat sınırı (24)** → 28'de CPU zamanlama ölçütlerinin
   optimalle karşılaştırılmasında; bir çizelgeleyicinin "yeterince iyi" olduğunu ispatlamanın
   kanonik kalıbıdır.
 - **Amdahl yasasının fazla iyimser olması (24)** → 37'de bellek hiyerarşisi ve gerçek hızlanma
   ölçümlerinde; tek bir orana bakmanın bağımlılık yapısını göremediği dersi.
+
+Batch 8 ile açılan yeni pinler:
+
+- **İndirgemenin yönü (25)** → bir zorluk iddiasının nasıl kurulacağının kanonik kalıbı: bilinen
+  zor problemden yeniye. 39'da sorgu karmaşıklığı ya da 41'in provasında tekrar sorulabilir.
+- **Güçlü bağlı bileşenler ve yoğunlaştırma DAG'ı (25)** → 2-SAT dışında kullanılmadı; 34'te
+  bağımlılık çözümlemesinde ya da 39'da sorgu grafında geri çağrılabilir.
+- **2 ile 3 arasındaki eşik (25)** → 2-SAT/3-SAT ve 2-boyama/3-boyama; "parametreyi bir artırınca
+  sınıf değişiyor mu?" refleksi, 36'da olasılıksal yaklaşıklamada sürebilir.
+- **Cook-Levin yalnızca sezgi düzeyinde verildi (25)** → devre argümanının kendisi ispatlanmadı;
+  bilinçli bir kapsam kararıdır ve 41'de "ne kadarını savunabilirim" sorusuyla geri gelebilir.
+- **Sanallaştırma, eşzamanlılık, kalıcılık üçlüsü (26)** → Faz D'nin iskeleti; 28–31
+  eşzamanlılığın, 32–33 sanallaştırmanın, 34 kalıcılığın alanıdır.
+- **İlke ile düzenek ayrımı (26)** → 28'de zamanlama ilkeleri ile bağlam anahtarı düzeneğinin
+  ayrılması, 33'te sayfa değiştirme ilkelerinde, 35'te koruma ilkelerinde.
+- **Tuzak ile kesme ayrımı (26)** → tuzağı çalışan program gönüllü doğurur, kesme dışarıdan gelir;
+  32–33'te sayfa hatası bir tuzaktır ve aynı tabloya bakar.
+- **Kesme sırasında kesme (26)** → yalnızca anıldı ("kesmeleri kapatmak" bir seçenek olarak);
+  29'da çekirdek içi eşzamanlılık olarak açılmalıdır.
+- **Monolitik çekirdek ile mikroçekirdek takası (26)** → 35'te Linux somutlamasında; yalıtımın
+  bedelinin iletişim maliyeti olması kalıbı 27'de süreç/iş parçacığı seçiminde tekrarlandı.
+- **Süreç API'si yalnızca soyut düzeyde verildi (27)** → Create/Destroy/Wait/Status; `fork()`,
+  `exec()` ve `wait()` somutlaması 38'e (C ve bellek) ya da 28'in girişine kalmıştır.
+- **Bağlam anahtarının çevrim cinsinden ucuzlamaması (27)** → 37'de bellek hiyerarşisi bu
+  gözlemin donanım gerekçesini verir (Ousterhout).
+- **Zaman dilimi ile ek yük takası (27)** → 28'in ana konusu: dilim küçüldükçe tepki süresi
+  iyileşir, ek yük büyür.
+- **Yarış koşulu, kritik kesim, karşılıklı dışlama, atomiklik (27)** → problem kuruldu, çözüm
+  bilinçli olarak 29'a (kilit, semafor, monitör) ve 30'a (klasik problemler) bırakıldı.
+- **Süreç ile iş parçacığı bellek düzeni (27)** → 32'de adres uzayı çevirisi ve 38'de C'nin
+  yığın/heap ayrımı aynı şekli farklı amaçla kullanır.

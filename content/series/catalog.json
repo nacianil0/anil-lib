@@ -762,6 +762,86 @@
       "path": "content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
+    },
+    {
+      "articleId": "article_e1f28bc3-2db7-4299-bbc9-fef3a9ee2e9a",
+      "title": "Bellek: Sohbet İçinde ve Sohbetler Arasında",
+      "slug": "bellek-sohbet-icinde-ve-sohbetler-arasinda",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 39,
+      "summary": "Durumsuz bir modelin nasıl hatırlıyormuş gibi göründüğünü kurar: pencere dolduğunda neyin atıldığını, aynı bütçeye ham geçmiş yerine özet koymanın ölçülen kazancını, sohbetler arası kalıcı belleğin bir yazma-getirme-okuma hattı olduğunu, geri çağırma puanının tazelik ve önemle nasıl kurulduğunu ve bu hattın en çok nerede — güncellenen bilgide ve zaman sorularında — kırıldığını gösterir.",
+      "tags": [
+        "bellek",
+        "ozetleme",
+        "kalici-bellek",
+        "geri-cagirma-puani",
+        "bilgi-guncellemesi"
+      ],
+      "contentHash": "sha256:409878aa792cb272ecd1044d4e3bbf8f8bddfdd8cb07b53fee21ba6e6f769320",
+      "path": "content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
+    },
+    {
+      "articleId": "article_d123c019-045a-4053-b5c1-c49c59d03304",
+      "title": "Uzun Ufuk: Çok Adımlı Görevlerde Tutarlılık",
+      "slug": "uzun-ufuk-cok-adimli-gorevlerde-tutarlilik",
+      "category": "reasoning-and-memory",
+      "level": "intermediate",
+      "readingOrder": 40,
+      "summary": "Adım sayısı arttıkça başarının neden çarpımsal olarak düştüğünü kurar: bağımsız adımlarda üstel çöküşün biçimsel ifadesini, kendi kendine toparlanma olasılığının koyduğu düşük tavanı, görev süresi cinsinden ölçülen ufkun ne olduğunu, güvenilirlik çıtası yükseltildiğinde ufkun neden kısaldığını ve düzeltmenin neden aynı modelin içinden gelemeyeceğini gösterir.",
+      "tags": [
+        "uzun-ufuk",
+        "hata-birikmesi",
+        "gorev-ufku",
+        "guvenilirlik",
+        "toparlanma"
+      ],
+      "contentHash": "sha256:44f68db96064a262db328a86c45403bcb0f59d58d1853926543430bfe447fae7",
+      "path": "content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
+    },
+    {
+      "articleId": "article_39c655d4-ade1-4cfc-ba06-2ca83b09109a",
+      "title": "Modelin Bilgisi Neden Yetmez? RAG'e Giriş",
+      "slug": "modelin-bilgisi-neden-yetmez-rag-e-giris",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 41,
+      "summary": "Faz 5'i açar: parametrik bilginin hangi olgularda çalışıp hangilerinde çöktüğünü, doğruluğun ön eğitimdeki belge sayısına nasıl bağlandığını, getirmeyle güçlendirilmiş üretimin mimarisini ve dizini değiştirerek bilgiyi güncellemenin ne demek olduğunu, getirmenin ne zaman zarar verdiğini ve modelin bağlam ile kendi ezberi çatıştığında hangisine uyduğunu ölçümlerle gösterir.",
+      "tags": [
+        "rag",
+        "parametrik-bilgi",
+        "baglamsal-bilgi",
+        "uzun-kuyruk",
+        "bilgi-catismasi"
+      ],
+      "contentHash": "sha256:55ed0ed756a34d4bc3bf7bd9fb8f5674c7022ce2d26438cad7a6be6b482cafbf",
+      "path": "content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
+    },
+    {
+      "articleId": "article_fc782600-a7e3-4584-ab7f-db480d1a46ab",
+      "title": "Getirme: Aramanın Modern Hali",
+      "slug": "getirme-aramanin-modern-hali",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 42,
+      "summary": "29. makalede kara kutu bırakılan sözcük eşleşmesini açar: ters dizinin ve BM25'in üç bileşeninin nasıl çalıştığını sayısal örnekle kurar, alan içi sıralamanın alan dışında neden tersine döndüğünü gösterir, seyrek getirmeyi geçmenin üç yolunu — terimleri genişletmek, etkileşimi geciktirmek, ikinci aşama ödemek — ölçümlerle karşılaştırır ve farklı sistemlerin puanlarının neden sıra üzerinden birleştirildiğini anlatır.",
+      "tags": [
+        "getirme",
+        "bm25",
+        "ogrenilmis-seyrek",
+        "gec-etkilesim",
+        "siralamayla-birlestirme"
+      ],
+      "contentHash": "sha256:ee5c3af4a3da93c306c33c8a4ab59123c5efb4c08fb8dca918338603a06b89eb",
+      "path": "content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
     }
   ]
 }

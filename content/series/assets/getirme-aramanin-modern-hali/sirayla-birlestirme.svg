@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Puanları değil, sıraları birleştirmek</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">ham puanların ölçekleri karşılaştırılabilir değildir</text>
+
+  <text x="100" y="76" font-size="13" text-anchor="middle" fill="var(--text-muted)">sözcük eşleşmesi</text>
+  <rect x="24" y="88" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="36" y="108" font-size="13" text-anchor="start" fill="var(--text)">1. belge A</text>
+  <text x="164" y="108" font-size="13" text-anchor="end" fill="var(--text-faint)">18,4</text>
+  <rect x="24" y="124" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="36" y="144" font-size="13" text-anchor="start" fill="var(--text)">…</text>
+  <rect x="24" y="160" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="36" y="180" font-size="13" text-anchor="start" fill="var(--text)">8. belge B</text>
+  <text x="164" y="180" font-size="13" text-anchor="end" fill="var(--text-faint)">9,1</text>
+  <rect x="24" y="196" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="36" y="216" font-size="13" text-anchor="start" fill="var(--text)">…</text>
+
+  <text x="290" y="76" font-size="13" text-anchor="middle" fill="var(--text-muted)">anlamsal arama</text>
+  <rect x="214" y="88" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="226" y="108" font-size="13" text-anchor="start" fill="var(--text)">1. belge C</text>
+  <text x="354" y="108" font-size="13" text-anchor="end" fill="var(--text-faint)">0,84</text>
+  <rect x="214" y="124" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="226" y="144" font-size="13" text-anchor="start" fill="var(--text)">…</text>
+  <rect x="214" y="160" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="226" y="180" font-size="13" text-anchor="start" fill="var(--text)">8. belge B</text>
+  <text x="354" y="180" font-size="13" text-anchor="end" fill="var(--text-faint)">0,61</text>
+  <rect x="214" y="196" width="152" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="226" y="216" font-size="13" text-anchor="start" fill="var(--text)">30. belge A</text>
+  <text x="354" y="216" font-size="13" text-anchor="end" fill="var(--text-faint)">0,29</text>
+
+  <text x="290" y="248" font-size="13" text-anchor="middle" fill="var(--text-faint)">18,4 ile 0,84 toplanamaz</text>
+
+  <line x1="374" y1="152" x2="406" y2="152" stroke="var(--text-muted)" stroke-width="1"/>
+  <text x="390" y="140" font-size="13" text-anchor="middle" fill="var(--text-muted)">sıra</text>
+
+  <text x="530" y="76" font-size="13" text-anchor="middle" fill="var(--text-muted)">birleştirilmiş sıralama</text>
+  <rect x="414" y="88" width="272" height="30" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="426" y="108" font-size="13" text-anchor="start" fill="var(--text)">belge B</text>
+  <text x="674" y="108" font-size="13" text-anchor="end" fill="var(--text)">1/68 + 1/68 = 0,0294</text>
+  <rect x="414" y="124" width="272" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="426" y="144" font-size="13" text-anchor="start" fill="var(--text)">belge A</text>
+  <text x="674" y="144" font-size="13" text-anchor="end" fill="var(--text-muted)">1/61 + 1/90 = 0,0275</text>
+  <rect x="414" y="160" width="272" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="426" y="180" font-size="13" text-anchor="start" fill="var(--text)">belge C</text>
+  <text x="674" y="180" font-size="13" text-anchor="end" fill="var(--text-muted)">yalnızca tek listede</text>
+  <text x="414" y="216" font-size="13" text-anchor="start" fill="var(--text-faint)">sabit k = 60</text>
+
+  <line x1="16" y1="288" x2="704" y2="288" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="312" font-size="13" text-anchor="start" fill="var(--text-muted)">yöntem ham puanlara hiç bakmaz; yalnızca sıraları kullanır</text>
+  <text x="16" y="334" font-size="13" text-anchor="start" fill="var(--text-faint)">iki listede de orta sırada olan belge, bir listede birinci olanı geçebilir</text>
+  <text x="16" y="356" font-size="13" text-anchor="start" fill="var(--text-faint)">k sabiti, tek bir sistemin aykırı tercihinin birleşimi ele geçirmesini engeller</text>
+</svg>

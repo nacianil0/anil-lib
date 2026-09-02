@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a25-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="boun-a25-ok-zayif" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-faint)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Doğru yön: bilinen zordan yeniye</text>
+
+  <rect x="25" y="45" width="90" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="70" y="67" font-size="13" text-anchor="middle" fill="var(--text)">3SAT</text>
+  <line x1="122" y1="62" x2="228" y2="62" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#boun-a25-ok)" />
+  <text x="175" y="52" font-size="13" text-anchor="middle" fill="var(--text-muted)">polinom çeviri</text>
+  <rect x="235" y="45" width="90" height="34" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="280" y="67" font-size="13" text-anchor="middle" fill="var(--text)">X</text>
+  <text x="175" y="97" font-size="13" text-anchor="middle" fill="var(--text)">3SAT ≤p X</text>
+
+  <text x="15" y="124" font-size="13" fill="var(--text-faint)">X kolaysa 3SAT de kolaydır</text>
+  <text x="15" y="144" font-size="13" fill="var(--text-faint)">3SAT zorsa X de zordur</text>
+
+  <rect x="15" y="158" width="330" height="32" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="27" y="179" font-size="13" fill="var(--text)">Bu yön X'in NP-zor olduğunu gösterir</text>
+
+  <text x="15" y="216" font-size="13" fill="var(--text)">Somut: 3SAT ≤p bağımsız küme</text>
+  <text x="15" y="238" font-size="13" fill="var(--text-faint)">4 clause · 3 değişken → 12 düğüm · 24 kenar</text>
+  <text x="15" y="258" font-size="13" fill="var(--text-faint)">her clause bir üçgen, çelişkili literaller bağlı</text>
+  <text x="15" y="278" font-size="13" fill="var(--text-faint)">sağlanabilir ⟺ boyutu 4 olan bağımsız küme var</text>
+
+  <line x1="362" y1="36" x2="362" y2="300" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">Yanlış yön: yaygın hata</text>
+
+  <rect x="388" y="45" width="80" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="428" y="67" font-size="13" text-anchor="middle" fill="var(--text)">X</text>
+  <line x1="475" y1="62" x2="561" y2="62" stroke="var(--text-faint)" stroke-width="1.4" marker-end="url(#boun-a25-ok-zayif)" />
+  <line x1="510" y1="52" x2="526" y2="72" stroke="var(--text-muted)" stroke-width="1.8" />
+  <line x1="526" y1="52" x2="510" y2="72" stroke="var(--text-muted)" stroke-width="1.8" />
+  <rect x="568" y="45" width="90" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="613" y="67" font-size="13" text-anchor="middle" fill="var(--text)">3SAT</text>
+  <text x="518" y="97" font-size="13" text-anchor="middle" fill="var(--text)">X ≤p 3SAT</text>
+
+  <text x="378" y="124" font-size="13" fill="var(--text-faint)">Yalnızca X'in NP'de olduğunu gösterir,</text>
+  <text x="378" y="144" font-size="13" fill="var(--text-faint)">zorluğunu göstermez.</text>
+
+  <text x="378" y="176" font-size="13" fill="var(--text)">Bağımsız küme ≤p düğüm örtüsü</text>
+
+  <line x1="440" y1="196" x2="480" y2="225" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="480" y1="225" x2="465" y2="272" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="465" y1="272" x2="415" y2="272" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="415" y1="272" x2="400" y2="225" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="400" y1="225" x2="440" y2="196" stroke="var(--border)" stroke-width="1.2" />
+  <circle cx="440" cy="196" r="10" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" />
+  <circle cx="480" cy="225" r="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <circle cx="465" cy="272" r="10" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" />
+  <circle cx="415" cy="272" r="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <circle cx="400" cy="225" r="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+
+  <text x="502" y="204" font-size="13" fill="var(--text-faint)">koyu = bağımsız küme (2)</text>
+  <text x="502" y="228" font-size="13" fill="var(--text-faint)">açık = düğüm örtüsü (3)</text>
+  <text x="502" y="252" font-size="13" fill="var(--text-faint)">2 + 3 = 5 = düğüm sayısı</text>
+  <text x="502" y="276" font-size="13" fill="var(--text)">S bağımsız ⟺ V∖S örtü</text>
+
+  <text x="15" y="318" font-size="13" fill="var(--text-faint)">İndirgeme kurarken hangi problemin girdisini hangisine çevirdiğini yüksek sesle söyle</text>
+</svg>

@@ -168,6 +168,36 @@ ode_modules`, sonra kopyayi sil.
 
 - Vercel, `package.json`'da `vercel-build` script'i varsa framework varsayılanı yerine onu çalıştırır — ama proje ayarlarında **açık bir Build Command override'ı varsa o kazanır** ve `vercel-build` hiç çalışmaz. Ayrıca `DATABASE_URL` build adımında görünür olmalı; yalnızca runtime'a işaretli bir değişkeni build göremez.
 - Neon HTTP sürücüsü (`neon()`) yalnızca Neon host'larıyla çalışır ve oturum tutmaz; her sorgu bağımsızdır, bu yüzden interaktif transaction ve `pg_advisory_lock` kullanılamaz. Migration runner bu yüzden ifade ifade çalışıp duplicate hatalarını tolere ediyor.
+- BOUN serisinin doğrulama kapısı artık **yalıtılmış kopya zorunlu** çalışıyor: paralel AI oturumu aynı depoda dev sunucusu tuttuğu sürece iki Next süreci `.next`'i paylaşır ve dinamik rota (`/boun/[slug]`) `PageNotFoundError` ile 500 verir — `/boun` 200 dönerken. Tarif: aynı sürücüde tar kopyası + PowerShell junction (`New-Item -ItemType Junction`) + kopyada dev/e2e/build; temizlikte ÖNCE junction'ı `cmd /c rmdir` ile kaldır.
+- Depoda `.env.local` var ve dev sunucusunda parola kapısını açıyor. Render/E2E için sunucuyu `playwright.config.ts`'teki test değerleriyle başlat (kabuk env'i `.env.local`'i ezer) ve `anil` / `test-reader-pass` ile giriş yap. `DATABASE_URL` yokken `authenticate.ts` tek hesaplı env kapısına düşer ve yalnızca `ownerUsername()` (varsayılan `anil`) kabul edilir.
+- Playwright ile bu uygulamaya girerken taban adres baştan sona `http://localhost:<port>` olmalı: giriş sonrası uygulama `localhost`'a yönlendiriyor ve `127.0.0.1` için kurulan çerez gönderilmiyor, sayfa sessizce `/login`'e dönüyor. En sağlam desen: bir kez giriş yap, `ctx.storageState({path})` ile kaydet, bütün context'leri onunla aç.
+- `check-series-svg.cjs` metin taşmasını `karakter × font-size × 0,55` ile tahmin eder. İki panelli bir şemada (x=15 ve x=378) her panel metni **en fazla ~48 karakter** olabilir; bu sınır SVG'yi çizmeden önce hesaba katılmalıdır, sonradan kısaltmak diyagramın anlamını bozar.
+- Seri makalelerinde `content_hash` yalnızca `.md` gövdesinden hesaplanır; SVG düzeltmek hash'i etkilemez ve `sync-series-hashes` yeniden çalıştırılmasını gerektirmez — ama diyagramın yeniden çekilip **gözle** denetlenmesi gerekir.
+- BOUN makale sayfalarında `main h1` YOKTUR; başlık `document.title`'dadır ve gövde H2 ile başlar. Render betiğinde `h1: null` görmek regresyon değildir — yayımlanmış bir makaleyle karşılaştırarak doğrula.
+- Başarısız E2E testlerini bir batch'e atfetmeden önce **kontrol koşusu** yap: kopyada katalog/roadmap'i `git show HEAD:<yol>` ile geri al, yeni içerik dosyalarını sil, aynı testleri tekrar koş. Bu run'da 9 başarısızın 8'i birebir tekrarlandı, 9'u ise aynı ağaçta üç koşuda iki kez düşüp bir kez geçerek **flaky** olduğunu gösterdi.
+- MIT 6.006 Bahar 2020'de **güçlü bağlı bileşen dersi yoktur** (tanım yalnızca Recitation 9'da geçer, algoritma verilmez). SCC/Kosaraju-Sharir için birincil kaynak Sedgewick & Wayne 4.2'dir; aynı sayfanın Q+A bölümü iki DFS geçişinin sırasının değiştirilebilir olduğunu doğrular, bu yüzden 16'nın 'ters bitiş sırası' dili korunabilir.
+- OCW CDN'i bazen yanlış sayfayı önbellekten döndürüyor; doğru içerik için `Cache-Control: no-cache` + tarayıcı User-Agent + cache-buster sorgusu gerekir. Ayrıca bazı OCW PDF'lerinde ToUnicode eşlemesi bozuktur ve matematik sembolleri yanlış karaktere düşer (6.006 lec19'da `$`=⊊, `6=`=≠, `∈/`=∉, `\`=∖).
+- `docs/seri-boun/` altındaki dosyaların satır sonları aynı değildir: `ARASTIRMA.md` ve `YOL-HARITASI.md` **CRLF**, `HANDOFF.md` **LF**. Betikle birebir metin değiştirirken dosyayı binary okuyup arama dizgesini hedefin satır sonuna çevir.
+- `next build` proje dizinini gezerken **gitignore'lu `artifacts/` dizinini de kapsıyor**. Dizin şiştiğinde (Batch 9'da ~13,6 MB'lık PNG birikimi) build "Collecting page data" aşamasında `PageNotFoundError: Cannot find module for page: /_document` ile düşüyor; ilk belirti `_not-found/page.js.nft.json` için ENOENT. Hata koddaymış gibi görünüyor ama değil. Her batch, doğrulama bitince kendi ham ekran görüntüsü klasörlerini `artifacts/` içinden temizlemeli.
+- `tools/series/check-series-svg.cjs` yalnızca viewBox taşmasını görür; **metinlerin birbirine ya da çizgiye binmesini hiç görmez**. Diyagramları yayına almadan önce `artifacts/b*-render/figs-b*.mjs` ile her şeklin light/dark piksel görüntüsüne gözle bakmak zorunlu.
+- Depoda `.env.local` artık `SITE_PASSWORD_SHA256` ve `AUTH_COOKIE_SECRET` tanımlıyor, yani yerel dev sunucusu **parola kapısı arkasında** ve `/seri` isteği `/login`'e 307 dönüyor. `getGateConfig()` iki değişkenden biri eksikse null döner; izole doğrulama kopyasına `.env.local`'ı kopyalamamak kapıyı kapatmanın en temiz yolu.
+- Bir build/test kırılmasının kime ait olduğunu kanıtlamanın en hızlı yolu `git worktree add <dir> HEAD --detach` + `cmd /c mklink /J <dir>\node_modules <repo>\node_modules`: HEAD, HEAD+içerik, HEAD+src gibi kombinasyonlar ayrı ayrı derlenip sebep bileşen bileşen elenebiliyor. Temizlerken **önce** junction'ı `cmd /c rmdir` ile kaldır.
+- DBLP API'sinde sorgular arasında en az 11 saniye bırak; yoksa 429 döner ve `json.load` "Expecting value" ile patlar. Sayfa numarası için `https://dblp.org/rec/<key>.bib?param=1` en pratik yol. DBLP yalnızca CoRR gösteriyorsa iş bitmemiştir — birincil bildiri sayfası (PMLR, ACL Anthology, papers.nips.cc, OpenReview) DBLP'nin üstündedir (REALM böyle doğrulandı).
+- Aynı çalışmanın hakemli sürümü arXiv sürümünden **farklı başlık** taşıyabiliyor (METR: "…Long Tasks" → NeurIPS 2025 "…Long Software Tasks"). Künye ve sayılar hakemli sürümden alınmalı, PDF bildiri sayfasından indirilmeli.
+- Uzun Türkçe metin içeren Python betiklerini bash heredoc ile geçirmek kırılgan; `Write` ile scratchpad'e dosya yazıp `python <dosya>` çalıştırmak güvenli.
+
+### Reader okuma konumu (2026-09-02)
+- Okuma konumu üç katmanlı: `anchor` (paragraf metni + paragraf içi oran) → `headingId + scrollRatio` → yalnızca ratio. Yeni bir konum türü eklerken üçünü de koru; çıpa çözülemezse sessizce alt katmana düş.
+- `scrollRatio` viewport'un **altını** ölçer (`(scrollY + innerHeight - elementTop) / elementHeight`). Bu yüzden sayfanın en üstünde bile ratio 0 değildir; `STARTED_RATIO = 0.02` ile "başlandı" kararı verirken bunu hatırla.
+- `resolveTextAnchor`'ın döndürdüğü Range'in `startContainer`'ı, bloktan önceki boşluk metin düğümü olabilir. Bloğu bulmak için önce `endContainer`'a bak.
+- `text-anchor.ts` içindeki `ANCHOR_BLOCK_SELECTOR` (`p, li, blockquote`) `blockIndex`'in anlamını belirler; çıpa üreten her yer aynı seçiciyi kullanmalı.
+- `useReaderLayout` içinde reflow efekti ile shell'in restore efekti aynı `document.fonts.ready` üzerinde sıraya girer. Reflow efekti önce kayıtlanır, bu yüzden ilk yerleşimde konumu **değiştirmemelidir**; `settledKeyRef` senkron yazılır ki iptal edilen bir settle "ilk yerleşim" işaretini kaybetmesin.
+- Ayar değişikliği sırasında (`settlingRef` / `isLayoutSettling`) hiçbir konum kaydı yapılmamalı: metin henüz yerine oturmadığı için okunmamış bir yer kaydedilir.
+
+### Test ve araç tuzakları (2026-09-02)
+- Playwright'ta `getByRole(..., { name })` varsayılan olarak **alt dize** eşler. "Geniş" → "Ekstra Geniş", "Okuma ayarları" → "Okuma ayarlarını kapat" gibi çakışmalarda `exact: true` kullan ya da etiketi ayrıştır.
+- Aynı anda birden fazla `next dev` sunucusu (`pnpm dev` + Playwright webServer) tek bir `.next` dizinini paylaşır ve birbirinin derlemesini bozar. Tarayıcı doğrulaması ile e2e'yi aynı anda çalıştırma; şüphede `rm -rf .next`.
+- E2E'de localStorage fixture'ı `page.evaluate` ile yüklemek yarış yaratır: provider'ın 250ms throttle'lı yazması fixture'ı ezer. `page.addInitScript` + `page.goto` kullan.
 
 ## Do-Not-Repeat
 
@@ -184,6 +214,10 @@ ode_modules`, sonra kopyayi sil.
 - [2026-08-26] Yuvarlanmis tablodan oran/fark turetme. Batch 1'de "0,007 / 0,001 = yedi kat" hatasi boyle olustu; tam degerlerle oran 5,92. Oran ve farklar HER ZAMAN tam degerlerden hesaplanip sonra yuvarlanir.
 - [2026-08-28] PowerShell verification snippets can treat smart apostrophes as quote delimiters; use ASCII-safe match fragments. Also assign `foreach` output before piping and pass a directory (not `boun/*.md`) to `rg` on Windows.
 - [2026-08-25] Uzun uretim workflow'larinda ajanlara ciktiyi DOSYAYA yazdir; yalnizca donus degerine guvenme. Oturum limiti ajanlari oldurdugunde dosyalar diskte kalir ve yeniden calistirmadan once envanterlenip yalnizca eksikler icin hedefli workflow yazilabilir.
+- [2026-09-02] Seri doğrulaması bitince `artifacts/<batch>-render/` altındaki ham ekran görüntüsü klasörlerini (`shots`, `shots-final`, `figs`, `figs2`) repoda bırakma; `next build` gitignore'a rağmen dizini geziyor ve şiştiğinde `/_document` PageNotFoundError'ıyla kırılıyor. Yalnızca `.mjs` betiklerini ve gerekiyorsa son kanıt setini bırak.
+- [2026-09-02] Diyagram etiketini eğrinin ucuna ya da çubuğun içine/ucuna yapıştırma; `check-series-svg.cjs` binmeyi görmediği için hata yayına kadar gidiyor. Çizim alanını daralt, sağda ayrı bir gösterge/açıklama sütunu aç; yatay çubuk şemasını üç sütun kur (solda ad, ortada çubuk, sağda değer).
+- [2026-09-02] Yeni bir seri makalesi yazmadan önce, üzerine bindiği yayımlanmış makalenin bölüm bölüm kapsamını çıkar. 42'nin ilk taslağı 29'daki DPR sayılarını, hibrit aramayı ve iki aşamalı sıralamayı tekrar anlatıyordu; gerçek boşluk 29'un adını anıp mekanizmasını hiç açmadığı BM25'ti.
+- [2026-09-02] Depo genelinde bir kapı kırıldığında suçu doğrudan paralel oturumun değişikliklerine atma; `git worktree` ile bileşen bileşen ele. Batch 9'da hem içerik hem `src` tek başına yeşildi, sebep gitignore'lu `artifacts/` dizininin büyüklüğü çıktı.
 - [2026-08-25] Diyagramlari dar ekranda kabin genisligine sikistirma; 720 birimlik tuvalde 14 birimlik etiket 375px'te ~5.8px'e duser ve okunmaz. Taban genislik (min-width) + kendi kabinda yatay kaydirma kullan, figcaption'i kabin disinda birak.
 
 - [2026-08-25] Batch launcher'da argumanlari `shift` dongusuyle ayristiriyorsan script dizinini dongu ONCESINDE bir degiskene al: `shift` %0'i da kaydirir ve sonrasindaki `%~dp0` yanlis yolu gosterir.
@@ -289,6 +323,19 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-02] Aynı proje dizinine karşı ikinci bir `next dev` sunucusu başlatma. `.next` paylaşıldığı için bozuluyor ve her rota `ENOENT: .next/server/pages/_document.js` ile 500 veriyor. Bilinen "build-while-dev" tuzağının aynısı; farklı port yetmiyor.
 - [2026-09-02] Bir fonksiyonun parametre listesine başa yeni bir zorunlu parametre eklerken çağrı yerlerini typecheck'e bırakma. `emptyReaderData(deviceId)` ve `migrateLegacyProgress(raw, deviceId, now)` çağrıları `workspaceId` eklenince tip hatası vermeden sessizce kaydı (hepsi string). Aynı tipten parametre ekliyorsan çağrı yerlerini elle gez.
 - [2026-09-02] Tarayıcı panosunda ölçüm yaparken `resize_window` ile açık viewport vermeden yatay taşma okuma. Pano gizliyken `clientWidth` 0 döner ve `scrollWidth - clientWidth` sahte taşma üretir (bu oturumda seri makalesinde 208 px); açık viewport verilince 0 çıktı.
+- [2026-09-02] Bir `"use server"` dosyasi YALNIZCA async fonksiyon export edebilir. `export const initialState = {...}` gibi bir deger export etmek `next build`'den sorunsuz gecer ama production'da MODUL YUKLENIRKEN patlar; modul hic yuklenmedigi icin icindeki try/catch de calismaz. Belirti: rota 500 veriyor, platform loglarinda hic dis istek yok, sure ~70ms. Degerleri ve tipleri direktifsiz ayri bir module tasi. `src/app/use-server-exports.test.ts` bunu statik olarak korur.
+- [2026-09-02] Vercel log panelindeki "Fluid: 256 MB" KULLANILAN bellektir, limit degil. Limit Hobby planinda 2 GB (Settings -> Functions). Bu ikisini karistirip OOM teorisi kurma; once gercek hata metnini logdan al.
+- [2026-09-02] BOUN render betiklerini `127.0.0.1` taban adresiyle çalıştırma. Giriş sonrası uygulama `localhost`'a yönlendiriyor, çerez ana bilgisayarı uyuşmadığı için oturum düşüyor ve sayfa sessizce `/login`'e dönüyor — hata mesajı vermez, yalnızca 200 dönen bir login sayfası görürsün.
+- [2026-09-02] Playwright'ta Next **dev** sunucusuna karşı `waitForLoadState('networkidle')` kullanma; HMR websocket'i açık kaldığı için hiç yerleşmez ve 90 sn timeout'a düşer. `waitForNavigation()` kullan.
+- [2026-09-02] Git Bash'ten `cmd /c mklink /J` çalıştırma; yol dönüşümü yüzünden cmd etkileşimli açılır ve junction kurulmaz. PowerShell `New-Item -ItemType Junction` kullan. Temizlikte de önce junction'ı kaldır, sonra kopyayı sil — ters sırada `rm -rf` junction'ı takip edip gerçek `node_modules`'ü siler.
+- [2026-09-02] İç içe nesne içeren bir JS çağrısına (`newContext({ viewport: { ... } })`) regex ile alan eklerken ilk `}` karakterinde duran desen kullanma; seçenek iç nesnenin içine düşer ve sessizce etkisiz kalır. Ekledikten sonra sonucu mutlaka `grep` ile doğrula.
+- [2026-09-02] Seri makalesine ikinci diyagramı ekleyip metinde 'Şekil 2' referansını unutma; `check-series-content.cjs` bunu 'metinde referanslanmamış' diye keser. Diyagramı ekledikten hemen sonra referans cümlesini yaz.
+- [2026-09-02] SVG'leri yalnızca denetleyiciyle geçirip batch'i kapatma. Denetleyici yazım hatasını, üst üste binen etiketi ve oklarla çakışan metni yakalamaz; bu run'da iki kusur (bir yazım hatası, bir etiket–ok çakışması) yalnızca light + dark ekran görüntülerini tek tek inceleyerek bulundu.
+
+### 2026-09-02
+- `.claude/launch.json` zaten repoda **izlenen** bir dosyaydı; üzerine yazıp sonra sildim. Yeni bir dosya oluşturmadan önce `git ls-files <path>` ile izlenip izlenmediğine bak.
+- Reader'da konum geri yükleme hatasını tahminle kovalamaya çalıştım (üç tur yanlış hipotez). Doğru yol: `window.scrollTo` ve `Element.prototype.scrollIntoView`'i geçici olarak sarmalayıp çağıran yığınıyla loglayan bir Playwright probe'u yazmaktı — 206px'lik gizemli kaydırmanın kaynağı (sidebar) tek çalıştırmada ortaya çıktı.
+- Görsel doğrulamayı "makul görünüyor" ile geçme: 375px'te bölüm göstergesinin 4px'e düştüğü ve panelin 768px'te 41px taştığı ancak `getBoundingClientRect` ölçümüyle görüldü.
 
 ## Decision Log
 
@@ -379,3 +426,15 @@ ode_modules`, sonra kopyayi sil.
 
 - [2026-09-02] Vercel'de migration `drizzle-kit migrate` ile değil, kendi runner'ıyla (`scripts/migrate.mjs`) build adımında uygulanıyor. Gerekçe: canlı DB 0000'ı bir migration journal'ı olmadan almış; `drizzle-kit migrate` baseline'ı tekrar oynatmaya kalkıp "already exists" ile build'i kırardı. Runner kendi `app_migrations` tablosunu tutar, `reading_progress` varsa 0000'ı baseline kabul eder, duplicate_table/object/column hatalarını "zaten var" sayar, gerçek hatada exit 1 verip deploy'u kırar. `DATABASE_URL` yoksa temiz atlar (lokal ve DB'siz preview build'leri bozulmasın).
 
+
+### Okuma çıpası neden jsonb tek sütun (2026-09-02)
+Çıpanın beş alanını beş ayrı kolona açmak yerine `reading_anchor jsonb` seçildi: migration
+tek `ADD COLUMN`, mapping tek `safeParse`, ve çıpanın şekli ileride değişirse şema
+değişmiyor. Sunucu okuma yolunda `readingAnchorSchema.safeParse` ile yeniden doğruluyor,
+böylece elle düzenlenmiş bir satır istemciye yarım nesne olarak ulaşamıyor.
+
+### Ayar paneli neden viewport'a sabitlendi (2026-09-02)
+Tetikleyiciye göre `absolute right-0` konumlanma, 640–800px arasında panelin sol kenarını
+viewport dışına taşırıyordu. Genişliği kısıtlamak yerine panel `sm:` üstünde viewport'a
+sabitlendi; mobilde zaten alt sayfa. Böylece hiçbir genişlikte taşma matematiksel olarak
+mümkün değil.

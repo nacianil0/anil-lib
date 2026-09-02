@@ -1,0 +1,39 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Bilginin yazıldığı üç ayrı yer</text>
+  <text x="16" y="48" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı sözcük, üç farklı ömür</text>
+
+  <rect x="16" y="68" width="216" height="176" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="124" y="94" font-size="13" text-anchor="middle" fill="var(--text)">bağlam penceresi</text>
+  <rect x="36" y="110" width="176" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="124" y="128" font-size="13" text-anchor="middle" fill="var(--text-muted)">sistem istemi</text>
+  <rect x="36" y="142" width="176" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="124" y="160" font-size="13" text-anchor="middle" fill="var(--text-muted)">güncel tur</text>
+  <text x="124" y="192" font-size="13" text-anchor="middle" fill="var(--text-faint)">ömür: tek çağrı</text>
+  <text x="124" y="212" font-size="13" text-anchor="middle" fill="var(--text-faint)">bedel: her turda</text>
+  <text x="124" y="232" font-size="13" text-anchor="middle" fill="var(--text-faint)">token başına</text>
+
+  <rect x="252" y="68" width="216" height="176" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="94" font-size="13" text-anchor="middle" fill="var(--text)">anahtar-değer önbelleği</text>
+  <rect x="272" y="110" width="176" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="128" font-size="13" text-anchor="middle" fill="var(--text-muted)">anahtar vektörleri</text>
+  <rect x="272" y="142" width="176" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="360" y="160" font-size="13" text-anchor="middle" fill="var(--text-muted)">değer vektörleri</text>
+  <text x="360" y="192" font-size="13" text-anchor="middle" fill="var(--text-faint)">ömür: tek çalışma</text>
+  <text x="360" y="212" font-size="13" text-anchor="middle" fill="var(--text-faint)">amaç: aynı hesabı</text>
+  <text x="360" y="232" font-size="13" text-anchor="middle" fill="var(--text-faint)">tekrarlamamak</text>
+
+  <rect x="488" y="68" width="216" height="176" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="596" y="94" font-size="13" text-anchor="middle" fill="var(--text)">dış bellek deposu</text>
+  <rect x="508" y="110" width="176" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="596" y="128" font-size="13" text-anchor="middle" fill="var(--text-muted)">geçmiş oturum kaydı</text>
+  <rect x="508" y="142" width="176" height="26" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="596" y="160" font-size="13" text-anchor="middle" fill="var(--text-muted)">çıkarılmış olgular</text>
+  <text x="596" y="192" font-size="13" text-anchor="middle" fill="var(--text)">ömür: sınırsız</text>
+  <text x="596" y="212" font-size="13" text-anchor="middle" fill="var(--text)">bedel: her kullanımda</text>
+  <text x="596" y="232" font-size="13" text-anchor="middle" fill="var(--text)">bir getirme adımı</text>
+
+  <line x1="16" y1="272" x2="704" y2="272" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="296" font-size="13" text-anchor="start" fill="var(--text-muted)">sohbet bittiğinde yalnızca en sağdaki katman hayatta kalır</text>
+  <text x="16" y="320" font-size="13" text-anchor="start" fill="var(--text-faint)">ortadaki katman hız içindir, bilgi taşımaz</text>
+  <text x="16" y="344" font-size="13" text-anchor="start" fill="var(--text-faint)">soldaki katman bedavaya okunur ama çağrı bitince gider</text>
+</svg>

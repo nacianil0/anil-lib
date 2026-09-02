@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı pencere, üç farklı doldurma biçimi</text>
+  <text x="16" y="48" font-size="13" text-anchor="start" fill="var(--text-faint)">bütçe her satırda aynı: 1.024 token · sağdaki sayı oturum 4 perplexity'si</text>
+
+  <text x="16" y="88" font-size="13" text-anchor="start" fill="var(--text-muted)">önceki oturum yok</text>
+  <rect x="16" y="98" width="470" height="34" fill="none" stroke="var(--border)" stroke-width="1"/>
+  <rect x="16" y="98" width="180" height="34" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="106" y="120" font-size="13" text-anchor="middle" fill="var(--text-muted)">güncel tur</text>
+  <text x="341" y="120" font-size="13" text-anchor="middle" fill="var(--text-faint)">boş</text>
+  <text x="502" y="120" font-size="13" text-anchor="start" fill="var(--text)">9,37</text>
+  <text x="560" y="120" font-size="13" text-anchor="start" fill="var(--text-faint)">kesilen %0</text>
+
+  <text x="16" y="168" font-size="13" text-anchor="start" fill="var(--text-muted)">önceki oturumun ham geçmişi</text>
+  <rect x="16" y="178" width="470" height="34" fill="none" stroke="var(--border)" stroke-width="1"/>
+  <rect x="16" y="178" width="290" height="34" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="161" y="200" font-size="13" text-anchor="middle" fill="var(--text)">ham geçmiş</text>
+  <rect x="306" y="178" width="180" height="34" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="396" y="200" font-size="13" text-anchor="middle" fill="var(--text-muted)">güncel tur</text>
+  <rect x="486" y="178" width="130" height="34" fill="none" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="551" y="200" font-size="13" text-anchor="middle" fill="var(--text-faint)">kesilen</text>
+  <text x="632" y="200" font-size="13" text-anchor="start" fill="var(--text)">9,16</text>
+  <text x="632" y="222" font-size="13" text-anchor="start" fill="var(--text-faint)">%80</text>
+
+  <text x="16" y="252" font-size="13" text-anchor="start" fill="var(--text-muted)">önceki oturumun özeti</text>
+  <rect x="16" y="262" width="470" height="34" fill="none" stroke="var(--border)" stroke-width="1"/>
+  <rect x="16" y="262" width="96" height="34" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="64" y="284" font-size="13" text-anchor="middle" fill="var(--text)">özet</text>
+  <rect x="112" y="262" width="180" height="34" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="202" y="284" font-size="13" text-anchor="middle" fill="var(--text-muted)">güncel tur</text>
+  <text x="389" y="284" font-size="13" text-anchor="middle" fill="var(--text-faint)">boş</text>
+  <text x="502" y="284" font-size="13" text-anchor="start" fill="var(--text)">9,04</text>
+  <text x="560" y="284" font-size="13" text-anchor="start" fill="var(--text-faint)">kesilen %0</text>
+
+  <line x1="16" y1="310" x2="704" y2="310" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="332" font-size="13" text-anchor="start" fill="var(--text-muted)">üçü de aynı bütçeyi harcıyor; fark, o bütçeye ne konduğunda</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Getirmenin kazandırdığı ve kaybettirdiği sorular</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">parantez içinde: getirilen ilk belgenin cevabı içerme oranı</text>
+
+  <text x="358" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">getirmeli düzen doğru</text>
+  <text x="574" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">getirmeli düzen yanlış</text>
+
+  <text x="16" y="126" font-size="13" text-anchor="start" fill="var(--text-muted)">model tek başına</text>
+  <text x="16" y="144" font-size="13" text-anchor="start" fill="var(--text-muted)">doğru</text>
+
+  <rect x="250" y="92" width="216" height="82" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="358" y="126" font-size="13" text-anchor="middle" fill="var(--text)">%24</text>
+  <text x="358" y="150" font-size="13" text-anchor="middle" fill="var(--text-muted)">bulma 0,83</text>
+
+  <rect x="466" y="92" width="216" height="82" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="574" y="120" font-size="13" text-anchor="middle" fill="var(--text)">%10</text>
+  <text x="574" y="140" font-size="13" text-anchor="middle" fill="var(--text)">bulma 0,14</text>
+  <text x="574" y="162" font-size="13" text-anchor="middle" fill="var(--text-muted)">getirme zarar verdi</text>
+
+  <text x="16" y="216" font-size="13" text-anchor="start" fill="var(--text-muted)">model tek başına</text>
+  <text x="16" y="234" font-size="13" text-anchor="start" fill="var(--text-muted)">yanlış</text>
+
+  <rect x="250" y="182" width="216" height="82" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="358" y="210" font-size="13" text-anchor="middle" fill="var(--text)">%17</text>
+  <text x="358" y="230" font-size="13" text-anchor="middle" fill="var(--text)">bulma 0,88</text>
+  <text x="358" y="252" font-size="13" text-anchor="middle" fill="var(--text-muted)">getirme kazandırdı</text>
+
+  <rect x="466" y="182" width="216" height="82" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="574" y="216" font-size="13" text-anchor="middle" fill="var(--text)">%49</text>
+  <text x="574" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">bulma 0,11</text>
+
+  <line x1="16" y1="292" x2="704" y2="292" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="314" font-size="13" text-anchor="start" fill="var(--text-muted)">iki vurgulu gözün farkı yöntemde değil, getirmenin o soruda tutup tutmamasında</text>
+  <text x="16" y="336" font-size="13" text-anchor="start" fill="var(--text-faint)">genel ortalama bulma oranı 0,42</text>
+</svg>

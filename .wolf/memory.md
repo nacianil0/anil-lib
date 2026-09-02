@@ -2002,3 +2002,217 @@ fazi tamamlandi. Faz C'nin tasarim deseni ucluu kapandi, geriye yalnizca makale 
 | 01:11 | Edited src/app/yonetim/actions.ts | added 1 import(s) | ~88 |
 | 01:11 | Edited src/app/yonetim/create-user-form.tsx | added 1 import(s) | ~31 |
 | 01:12 | Created src/app/use-server-exports.test.ts | — | ~663 |
+| 01:15 | Session end: 36 writes across 16 files (migrate.mjs, package.json, actions.ts, users.ts, user-schema.ts) | 0 reads | ~8345 tok |
+
+## Session: 2026-09-01 01:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 01:16
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 01:17
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 01:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-01 01:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 01:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/appendix.txt | — | ~439 |
+| 01:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/calc25.py | — | ~1731 |
+| 01:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/calc25b.py | — | ~1192 |
+| 01:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/s8-header.txt | — | ~520 |
+| 01:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/calc25c.py | — | ~1222 |
+| 01:31 | Created content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | — | ~7997 |
+
+## Session: 2026-09-02 06:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 06:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 06:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 07:11
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 07:11
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 07:11
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 07:13
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 07:13
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 07:13 | Created src/lib/reader-layout/reading-anchor.ts | — | ~1347 |
+| 07:14 | Created src/lib/reader-layout/use-reader-layout.ts | — | ~4103 |
+| 07:15 | Edited src/lib/reader-layout/use-reader-layout.ts | added 2 condition(s) | ~202 |
+| 07:15 | Edited src/lib/reader-layout/use-reader-layout.ts | reduced (-9 lines) | ~60 |
+| 07:15 | Created content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/p-np-kapsama.svg | — | ~771 |
+| 07:16 | Created content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/indirgeme-yonu.svg | — | ~1332 |
+| 07:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/fixalt25.py | — | ~1198 |
+| 07:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_shell.py | — | ~2384 |
+| 07:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_ui.py | — | ~1500 |
+| 07:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_server.py | — | ~1992 |
+| 07:21 | Created src/lib/reader-layout/reading-anchor.test.ts | — | ~1932 |
+| 07:21 | Edited src/lib/reader-layout/reading-anchor.ts | 9→6 lines | ~101 |
+| 07:21 | Edited src/lib/reader-layout/reading-anchor.ts | added optional chaining | ~78 |
+| 07:22 | Edited src/lib/reader-layout/reading-anchor.test.ts | 3→3 lines | ~56 |
+| 07:22 | Created content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | — | ~7944 |
+| 07:22 | Created src/lib/reader-data/schema.test.ts | — | ~1164 |
+| 07:23 | Created content/series-boun/assets/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim/kullanici-cekirdek-kipi.svg | — | ~1094 |
+| 07:24 | Created content/series-boun/assets/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim/sistem-cagrisi-yasam-dongusu.svg | — | ~1188 |
+| 07:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/fixalt26.py | — | ~1222 |
+| 07:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_settings.py | — | ~2244 |
+| 07:25 | Edited src/components/reader/reading-settings.tsx | inline fix | ~20 |
+| 07:25 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | 1→3 lines | ~109 |
+| 07:25 | Edited src/components/reader/reader-shell.tsx | modified savedPlaceOf() | ~62 |
+| 07:25 | Edited src/components/reader/reader-shell.tsx | 4→6 lines | ~81 |
+| 07:29 | Created tests/e2e/reader-resume.spec.ts | — | ~2814 |
+| 07:29 | Created content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | — | ~4783 |
+| 07:29 | Created content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | — | ~7616 |
+| 07:30 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | inline fix | ~18 |
+| 07:30 | Created content/series-boun/assets/surecler-ve-is-parcaciklari/surec-durum-makinesi.svg | — | ~1295 |
+| 07:31 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | 1→3 lines | ~246 |
+| 07:31 | Created content/series-boun/assets/surecler-ve-is-parcaciklari/surec-ve-is-parcacigi-bellek.svg | — | ~1252 |
+| 07:31 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | expanded (+10 lines) | ~503 |
+| 07:31 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | 1→3 lines | ~60 |
+| 07:31 | Created content/series/assets/bellek-sohbet-icinde-ve-sohbetler-arasinda/ayni-butce-uc-icerik.svg | — | ~880 |
+| 07:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/fixalt27.py | — | ~1149 |
+| 07:32 | Created content/series/assets/bellek-sohbet-icinde-ve-sohbetler-arasinda/bellegin-uc-katmani.svg | — | ~1004 |
+| 07:32 | Created content/series/assets/bellek-sohbet-icinde-ve-sohbetler-arasinda/kusursuz-getirme-ve-tam-gecmis.svg | — | ~1063 |
+| 07:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/denetim.py | — | ~1966 |
+| 07:35 | Created content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | — | ~4222 |
+| 07:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/addlogin.py | — | ~341 |
+| 07:37 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | expanded (+10 lines) | ~396 |
+| 07:37 | Created tests/e2e/zz-probe.spec.ts | — | ~1029 |
+| 07:38 | Created content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/carpimsal-dusus.svg | — | ~662 |
+| 07:38 | Created artifacts/boun-render/login-b8.mjs | — | ~327 |
+| 07:39 | Created content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/toparlanma-tavani.svg | — | ~1204 |
+| 07:39 | Created content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/guvenilirlik-ufku.svg | — | ~440 |
+| 07:40 | Edited src/components/reader/reader-sidebar.tsx | added 3 condition(s) | ~251 |
+| 07:41 | Edited src/lib/reader-layout/use-reader-layout.ts | added 1 condition(s) | ~307 |
+| 07:41 | Edited src/lib/reader-layout/use-reader-layout.ts | 1→3 lines | ~54 |
+| 07:41 | Edited src/components/reader/reader-shell.tsx | CSS: paragraph, 0 | ~161 |
+| 07:41 | Edited src/components/reader/reader-shell.tsx | modified trim() | ~33 |
+| 07:41 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_e2e.py | — | ~1561 |
+| 07:41 | Created artifacts/boun-render/login-b8.mjs | — | ~386 |
+| 07:42 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/usestate.py | — | ~403 |
+| 07:43 | Created content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | — | ~4767 |
+| 07:45 | Edited content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/indirgeme-yonu.svg | inline fix | ~31 |
+| 07:45 | Edited content/series-boun/assets/surecler-ve-is-parcaciklari/surec-durum-makinesi.svg | 2→2 lines | ~43 |
+| 07:45 | Created content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/uzun-kuyruk-egrisi.svg | — | ~812 |
+| 07:46 | Created content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/rag-mimarisi.svg | — | ~1168 |
+| 07:46 | Created content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/getirme-fayda-zarar.svg | — | ~751 |
+| 07:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_e2e2.py | — | ~927 |
+| 07:50 | Created content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | — | ~5407 |
+| 07:54 | Created content/series/assets/getirme-aramanin-modern-hali/terim-sikligi-doyumu.svg | — | ~626 |
+| 07:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/patch_mobile.py | — | ~654 |
+| 07:54 | Created content/series/assets/getirme-aramanin-modern-hali/alan-disi-tersine-donus.svg | — | ~872 |
+| 07:54 | Created content/series/assets/getirme-aramanin-modern-hali/sirayla-birlestirme.svg | — | ~1264 |
+| 07:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/arastirma13.md | — | ~5223 |
+| 07:59 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/yolharita.py | — | ~1921 |
+| 08:01 | Edited src/components/reader/resume-notice.tsx | "fixed left-1/2 top-[5.5re" → "fixed left-1/2 top-[5.5re" | ~68 |
+| 08:01 | Edited src/components/reader/resume-notice.tsx | "ml-1 shrink-0 text-text-m" → "shrink-0 text-text-muted " | ~20 |
+| 08:01 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/yolharita2.py | — | ~4650 |
+| 08:02 | Created content/series/assets/getirme-aramanin-modern-hali/terim-sikligi-doyumu.svg | — | ~796 |
+| 08:02 | Created content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/carpimsal-dusus.svg | — | ~742 |
+| 08:03 | Created content/series/assets/getirme-aramanin-modern-hali/alan-disi-tersine-donus.svg | — | ~993 |
+| 08:04 | Created content/series/assets/getirme-aramanin-modern-hali/terim-sikligi-doyumu.svg | — | ~795 |
+| 08:05 | Edited src/lib/reader-layout/use-reader-layout.ts | modified if() | ~329 |
+| 08:06 | Created docs/seri-boun/HANDOFF.md | — | ~8684 |
+| 08:07 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/buglog.py | — | ~1749 |
+| 08:09 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/cerebrum.py | — | ~1802 |
+| 08:12 | BOUN Batch 8 tamamlandı: makale 25-27 yazıldı, 6 SVG çizildi, entegre edildi | content/series-boun/** | 27 makale + 54 diyagram, denetleyiciler temiz | ~95k |
+| 08:12 | Doğrulama: typecheck temiz, test 407/407, build 87 statik sayfa (27 /boun) | — | geçti | ~6k |
+| 08:12 | 27 render kombinasyonu + 6 diyagram (light/dark) + 1 kod bloğu ekran görüntüsüyle denetlendi | artifacts/boun-render/b8 | 2 diyagram düzeltmesi yapıldı | ~14k |
+| 08:12 | Playwright 31/1/9; 9 başarısızın BOUN ile ilgisiz olduğu kontrol koşusuyla kanıtlandı | tests/e2e/** | 8 birebir tekrarlandı, 1 flaky | ~8k |
+| 08:12 | +1 fazı: ARASTIRMA §13, YOL-HARITASI (25-27 yayında, terim/kavram defterleri, Batch 9 taslağı), HANDOFF yeniden yazıldı | docs/seri-boun/** | cursor 28, kohort 9 | ~22k |
+| 08:10 | Edited docs/seri-boun/HANDOFF.md | 5→7 lines | ~172 |
+| 08:11 | Edited docs/seri-boun/HANDOFF.md | 2→3 lines | ~56 |
+| 08:11 | Edited docs/seri-boun/HANDOFF.md | 3→4 lines | ~90 |
+| 08:13 | Session end: 82 writes across 54 files (reading-anchor.ts, use-reader-layout.ts, p-np-kapsama.svg, indirgeme-yonu.svg, fixalt25.py) | 34 reads | ~123426 tok |
+
+## Session: 2026-09-02 08:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 08:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/03ccb4c3-d4f7-4d0a-86f1-65d9cd447984/scratchpad/dec.py | — | ~2672 |
+| 08:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/03ccb4c3-d4f7-4d0a-86f1-65d9cd447984/scratchpad/notes.py | — | ~953 |
+| 08:30 | Created docs/seri/HANDOFF.md | — | ~4856 |
+| 08:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/03ccb4c3-d4f7-4d0a-86f1-65d9cd447984/scratchpad/cere.py | — | ~1128 |
+
+### Oturum özeti — Seri Batch 9 (makale 39–42)
+
+`BATCH=4+1` çalıştırıldı. Makale 39 (Bellek), 40 (Uzun Ufuk), 41 (RAG'e Giriş) ve 42 (Getirme)
+araştırıldı, yazıldı, repoya entegre edildi ve doğrulandı; ardından `+1` state-geçiş fazı yapıldı.
+On yedi birincil kaynak PDF'ten okundu, hepsi hakemli; venue'ler DBLP + birincil bildiri
+sayfalarıyla doğrulandı. 12 yeni SVG çizildi, üçü metin binmesi yüzünden yeniden çizildi.
+Başlık borcu: 42 "Retrieval" → "Getirme" (karar #108). Kapılar: 419 test, typecheck temiz,
+`pnpm build` exit 0 (91 sayfa), 43 rota 200, 3 genişlik × 3 tema DOM ölçümü temiz.
+Build bir ara `/_document` PageNotFoundError'ıyla kırıldı; kök neden `git worktree` izolasyonuyla
+gitignore'lu `artifacts/` dizininin büyüklüğü olarak bulundu ve dizin küçültülerek çözüldü
+(bug-261, bug-262). Güncellenen state: `docs/seri/HANDOFF.md`, `docs/seri/YOL-HARITASI.md`
+(vaat defteri, faz satırları, gerçekleşen graf, kavram-tekrar defteri, terim defteri,
+kararlar #107–114, Batch 9 öğrenme notları), `content/series/catalog.json`, `roadmap.json`.
+| 08:35 | Session end: 4 writes across 4 files (dec.py, notes.py, HANDOFF.md, cere.py) | 0 reads | ~9956 tok |
+| 08:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/wolf_update.py | — | ~3720 |
+
+## Oturum — Nokta atışı "kaldığın yerden devam" + reader/ayar UX'i (2026-09-02)
+
+Resume artık `headingId + scrollRatio` yerine, okuma çizgisindeki paragrafı ve o paragrafın
+ne kadarının okunduğunu tutan **çözümlenebilir bir metin çıpası** üzerinden çalışıyor
+(`readingAnchorSchema`, `src/lib/reader-layout/reading-anchor.ts`). Çıpa, highlight'ların
+zaten kullandığı `resolveTextAnchor` ile çözülüyor; bulunamazsa heading + ratio'ya, o da
+yoksa yalnızca ratio'ya düşüyor. Kayıt hem localStorage'da hem `reading_progress` /
+`saved_places` tablolarında yeni nullable `reading_anchor` jsonb sütununda taşınıyor
+(`drizzle/0002_reading_anchor.sql` — üretilmiş, uygulanmadı).
+
+Yol boyunca ölçümle bulunan gerçek hatalar: sidebar'ın `scrollIntoView`'ü tüm pencereyi
+206px kaydırıp her açılışta ilerleme yazıyordu; reflow sırasında yanlış konum kaydediliyordu;
+ayar paneli 768px'te 41px taşıyordu; 375px'te bölüm göstergesi 4px'e sıkışıyordu. Ayrıca
+`pnpm-workspace.yaml` bozuk olduğu için repoda hiçbir pnpm script'i çalışmıyordu.
+
+Kapılar: 419 birim testi (27 dosya), typecheck temiz, `pnpm exec eslint src tests` yalnızca
+5 önceden var olan hata, `pnpm build` exit 0, Playwright 42 geçti / 2 başarısız (ikisi de
+gerçek `DATABASE_URL` istiyor ve HEAD'de birebir aynı şekilde başarısız) / 1 atlandı.
+Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek tarayıcı ölçümleriyle.
+| 09:10 | Precise resume + reader/settings UX | 20 files | 12 new e2e + 12 new unit tests green | ~— |
+| 08:41 | Edited src/lib/reader-layout/use-reader-layout.ts | 3→6 lines | ~54 |
+| 08:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/commitmsg.txt | — | ~694 |
+| 08:51 | Session end: 7 writes across 7 files (dec.py, notes.py, HANDOFF.md, cere.py, wolf_update.py) | 0 reads | ~14473 tok |

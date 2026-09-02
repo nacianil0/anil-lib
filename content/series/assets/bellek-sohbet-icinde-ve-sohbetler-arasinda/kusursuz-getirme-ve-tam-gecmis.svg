@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı soru, aynı model: fark yalnızca bulma işinde</text>
+  <text x="16" y="48" font-size="13" text-anchor="start" fill="var(--text-faint)">koyu: yalnızca ilgili oturumlar verilmiş · açık: 115 bin token'lık tam geçmiş</text>
+
+  <line x1="40" y1="250" x2="700" y2="250" stroke="var(--border)" stroke-width="1"/>
+
+  <rect x="50" y="76" width="42" height="174" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="71" y="68" font-size="13" text-anchor="middle" fill="var(--text)">0,870</text>
+  <rect x="96" y="129" width="42" height="121" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="117" y="121" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,606</text>
+  <text x="94" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">GPT-4o</text>
+  <text x="94" y="292" font-size="13" text-anchor="middle" fill="var(--text-faint)">%30,3 düşüş</text>
+
+  <rect x="182" y="101" width="42" height="149" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="203" y="93" font-size="13" text-anchor="middle" fill="var(--text)">0,744</text>
+  <rect x="228" y="183" width="42" height="67" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="249" y="175" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,334</text>
+  <text x="226" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">Llama 3.1 70B</text>
+  <text x="226" y="292" font-size="13" text-anchor="middle" fill="var(--text-faint)">%55,1 düşüş</text>
+
+  <rect x="314" y="108" width="42" height="142" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="335" y="100" font-size="13" text-anchor="middle" fill="var(--text)">0,710</text>
+  <rect x="360" y="159" width="42" height="91" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="381" y="151" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,454</text>
+  <text x="358" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">Llama 3.1 8B</text>
+  <text x="358" y="292" font-size="13" text-anchor="middle" fill="var(--text-faint)">%36,1 düşüş</text>
+
+  <rect x="446" y="110" width="42" height="140" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="467" y="102" font-size="13" text-anchor="middle" fill="var(--text)">0,702</text>
+  <rect x="492" y="174" width="42" height="76" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="513" y="166" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,380</text>
+  <text x="490" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">Phi-3 14B</text>
+  <text x="490" y="292" font-size="13" text-anchor="middle" fill="var(--text-faint)">%45,9 düşüş</text>
+
+  <rect x="578" y="118" width="42" height="132" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="599" y="110" font-size="13" text-anchor="middle" fill="var(--text)">0,660</text>
+  <rect x="624" y="182" width="42" height="68" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="645" y="174" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,342</text>
+  <text x="622" y="272" font-size="13" text-anchor="middle" fill="var(--text-muted)">Phi-3.5 Mini</text>
+  <text x="622" y="292" font-size="13" text-anchor="middle" fill="var(--text-faint)">%48,1 düşüş</text>
+
+  <line x1="16" y1="316" x2="704" y2="316" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-muted)">iki koşulda da aynı model aynı soruları cevaplıyor</text>
+  <text x="16" y="362" font-size="13" text-anchor="start" fill="var(--text-faint)">değişen tek şey: ilgili bilgiyi bulma işinin kime bırakıldığı</text>
+</svg>
