@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type RefObject } from "react";
 import { Highlighter, MapPin, Trash2 } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import { resolveTextAnchor } from "@/lib/highlights/text-anchor";
+import type { SavedPlaceRecord } from "@/lib/reader-data/schema";
 import { useReaderData } from "@/lib/reader-data/use-reader-data";
 
 export function ArticleMarks({
@@ -14,7 +15,7 @@ export function ArticleMarks({
 }: {
   articleId: string;
   containerRef: RefObject<HTMLElement | null>;
-  onJumpToPlace: (headingId: string | null, ratio: number) => void;
+  onJumpToPlace: (place: SavedPlaceRecord) => void;
   onJumpToTarget: (target: Range) => void;
 }) {
   const { savedPlaceOf, removeSavedPlace, highlightsFor, removeHighlight } = useReaderData();
@@ -91,7 +92,7 @@ export function ArticleMarks({
                   type="button"
                   className="min-w-0 flex-1 text-left"
                   onClick={() => {
-                    onJumpToPlace(savedPlace.headingId, savedPlace.scrollRatio);
+                    onJumpToPlace(savedPlace);
                     setOpen(false);
                   }}
                 >

@@ -24,6 +24,9 @@ import { HighlightSelectionAction } from "./highlight-selection-action";
 import { SyncStatus } from "./sync-status";
 import { ReaderPager } from "./reader-pager";
 import { useReaderLayout } from "@/lib/reader-layout/use-reader-layout";
+import { resolveReadingAnchor } from "@/lib/reader-layout/reading-anchor";
+import { STARTED_RATIO } from "@/lib/reader/version";
+import type { SavedPlaceRecord } from "@/lib/reader-data/schema";
 
 type Props = {
   articles: ArticleDescriptor[];
@@ -49,13 +52,14 @@ function ReaderShellInner({
   listSubtitle,
   homeHref,
 }: Props) {
-  const { ready, setCurrentArticle, recordPosition, entryOf } = useReaderProgress();
-  const { savedPlaceOf } = useReaderData();
+  const { ready, setCurrentArticle, recordPosition } = useReaderProgress();
+  const { progressOf, savedPlaceOf } = useReaderData();
   const { preferences } = useReaderPreferences();
   const bodyRef = useRef<HTMLDivElement>(null);
   const [liveRatio, setLiveRatio] = useState(0);
   const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
   const [showNotice, setShowNotice] = useState(false);
+  const [restoredPreview, setRestoredPreview] = useState<string | null>(null);
   const reflowKey = [
     preferences.fontScale,
     preferences.lineSpacing,
@@ -69,8 +73,13 @@ function ReaderShellInner({
   ].join(":");
   const {
     effectiveMode,
+    isPagedAvailable,
     measure,
+    captureAnchor,
+    forgetAnchor,
+    isLayoutSettling,
     navigateTo,
+    navigateToAnchor,
     navigateToElement,
     pageIndex,
     pageCount,
@@ -87,13 +96,23 @@ function ReaderShellInner({
   readyRef.current = ready;
   const restoringRef = useRef(false);
   const lastRecordRef = useRef(0);
-  const restoredForRef = useRef<string | null>(null);
+  /**
+   * Persisting is held back until the saved position has been put back on screen.
+   * Without this a resize — a mobile URL bar collapsing is enough — or an early
+   * scroll event overwrites the stored position with the top of the article before
+   * the reader ever sees where they were.
+   */
+  const restoreRef = useRef({ articleId: "", mode: "", done: false });
 
-  const jumpToPosition = useCallback(
-    (headingId: string | null, ratio: number) => {
-      navigateTo({ headingId, ratio }, "smooth");
+  const jumpToPlace = useCallback(
+    (place: SavedPlaceRecord) => {
+      const root = bodyRef.current;
+      const resolved =
+        root && place.anchor ? resolveReadingAnchor(root, place.anchor, place.headingId) : null;
+      if (resolved && navigateToAnchor(resolved, "smooth")) return;
+      navigateTo({ headingId: place.headingId, ratio: place.scrollRatio }, "smooth");
     },
-    [navigateTo],
+    [navigateTo, navigateToAnchor],
   );
 
   // Record the visited article once progress has hydrated (avoids clobbering saved state).
@@ -112,8 +131,13 @@ function ReaderShellInner({
       setLiveRatio(ratio);
       setActiveHeadingId(headingId);
       if (!persist || !readyRef.current) return;
+      const restore = restoreRef.current;
+      if (!restore.done || restore.articleId !== current.articleId) return;
+      // A preference change reflows the text under the reader before the position is
+      // put back; recording in that window would save a place they never read to.
+      if (isLayoutSettling()) return;
       lastRecordRef.current = Date.now();
-      recordPosition(current.articleId, headingId, ratio);
+      recordPosition(current.articleId, headingId, ratio, captureAnchor());
     }
 
     function onScroll() {
@@ -148,31 +172,58 @@ function ReaderShellInner({
       if (frame) window.cancelAnimationFrame(frame);
       if (recordTimer) clearTimeout(recordTimer);
     };
-  }, [effectiveMode, measure, recordPosition, current.articleId]);
+  }, [effectiveMode, measure, captureAnchor, isLayoutSettling, recordPosition, current.articleId]);
 
   // Restore the saved position once, after fonts and layout settle.
   useEffect(() => {
     if (!ready) return;
-    const restoreKey = `${current.articleId}:${effectiveMode}`;
-    if (restoredForRef.current === restoreKey) return;
-    restoredForRef.current = restoreKey;
+    const restore = restoreRef.current;
+    if (restore.articleId === current.articleId && restore.mode === effectiveMode) return;
+    restoreRef.current = { articleId: current.articleId, mode: effectiveMode, done: false };
 
-    const automaticEntry = entryOf(current.articleId);
-    const explicitPlace = new URLSearchParams(window.location.search).has("place")
-      ? savedPlaceOf(current.articleId)
-      : null;
-    const entry = explicitPlace ?? automaticEntry;
-    setLiveRatio(entry.scrollRatio);
-    setActiveHeadingId(entry.headingId);
-    if (!entry.headingId && entry.scrollRatio <= 0) return;
+    const params = new URLSearchParams(window.location.search);
+    const explicitPlace = params.has("place") ? savedPlaceOf(current.articleId) : null;
+    const entry = explicitPlace ?? progressOf(current.articleId);
+    const headingId = entry?.headingId ?? null;
+    const ratio = entry?.scrollRatio ?? 0;
+    const anchor = entry?.anchor ?? null;
+    setLiveRatio(ratio);
+    setActiveHeadingId(headingId);
+
+    const finish = () => {
+      restoreRef.current = { articleId: current.articleId, mode: effectiveMode, done: true };
+      // Seed the layout's remembered paragraph so a preference change made before the
+      // first scroll still holds the reader's place.
+      captureAnchor();
+    };
+
+    // Nothing to return to when the stored position is the opening paragraph: the
+    // reader is already there, and scrolling the title out of view would be worse
+    // than doing nothing. A highlight deep link is likewise an explicit destination
+    // the automatic restore would only fight; persistence still resumes for both.
+    const atArticleStart = anchor
+      ? anchor.blockIndex === 0 && anchor.blockOffset <= 0
+      : !headingId && ratio <= STARTED_RATIO;
+    if (params.has("highlight") || atArticleStart) {
+      finish();
+      return;
+    }
 
     const run = () => {
       restoringRef.current = true;
-      navigateTo({ headingId: entry.headingId, ratio: entry.scrollRatio }, "auto");
+      const root = bodyRef.current;
+      const resolved = root && anchor ? resolveReadingAnchor(root, anchor, headingId) : null;
+      // A resolved anchor is exact; heading + ratio is the fallback for records written
+      // before anchoring, and for text that has since been edited away.
+      if (!resolved || !navigateToAnchor(resolved, "auto")) {
+        navigateTo({ headingId, ratio }, "auto");
+      }
+      setRestoredPreview(anchor ? anchor.exactText.replace(/\s+/g, " ").trim() : null);
       setShowNotice(true);
       window.requestAnimationFrame(() =>
         window.requestAnimationFrame(() => {
           restoringRef.current = false;
+          finish();
         }),
       );
     };
@@ -183,7 +234,16 @@ function ReaderShellInner({
     } else {
       window.requestAnimationFrame(run);
     }
-  }, [ready, current.articleId, effectiveMode, entryOf, savedPlaceOf, navigateTo]);
+  }, [
+    ready,
+    current.articleId,
+    effectiveMode,
+    progressOf,
+    savedPlaceOf,
+    captureAnchor,
+    navigateTo,
+    navigateToAnchor,
+  ]);
 
   return (
     <div
@@ -212,7 +272,7 @@ function ReaderShellInner({
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 border-b border-border bg-bg">
           <div className="reader-area flex h-14 items-center justify-between gap-3">
-            <div className="flex min-w-0 items-center gap-3">
+            <div className="flex min-w-0 items-center gap-2 sm:gap-3">
               <MobileReadingList
                 articles={articles}
                 currentArticleId={current.articleId}
@@ -226,14 +286,16 @@ function ReaderShellInner({
                   {UI.chapter(current.readingOrder, current.totalCount)}
                 </span>
                 {!preferences.focusMode && (
-                  <>
+                  // Hidden on phones: the chapter number is the position the reader
+                  // needs, and both together leave it 4px of a 129px label.
+                  <span className="hidden sm:inline">
                     <span className="px-1.5 text-text-faint">·</span>
                     {CATEGORY_LABELS[current.category]}
-                  </>
+                  </span>
                 )}
               </p>
             </div>
-            <div className="flex shrink-0 items-center gap-3">
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
               {!preferences.focusMode && (
                 <p className="mr-1 hidden items-center gap-2 font-sans text-2xs text-text-muted sm:flex">
                   <span>{LEVEL_LABELS[current.level]}</span>
@@ -250,14 +312,15 @@ function ReaderShellInner({
                 articleId={current.articleId}
                 containerRef={bodyRef}
                 measure={measure}
+                captureAnchor={captureAnchor}
               />
               <ArticleMarks
                 articleId={current.articleId}
                 containerRef={bodyRef}
-                onJumpToPlace={jumpToPosition}
+                onJumpToPlace={jumpToPlace}
                 onJumpToTarget={navigateToElement}
               />
-              <ReadingSettings />
+              <ReadingSettings isPagedAvailable={isPagedAvailable} />
               <SyncStatus />
             </div>
           </div>
@@ -267,8 +330,12 @@ function ReaderShellInner({
         <ResumeNotice
           articleId={current.articleId}
           show={showNotice}
+          preview={restoredPreview}
           onDismiss={() => setShowNotice(false)}
-          onStartOver={() => navigateTo({ headingId: null, ratio: 0 }, "auto")}
+          onStartOver={() => {
+            forgetAnchor();
+            navigateTo({ headingId: null, ratio: 0 }, "auto");
+          }}
         />
 
         <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">

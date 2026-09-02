@@ -24,6 +24,7 @@ import {
   type HighlightRecord,
   type ProgressRecord,
   type ReaderData,
+  type ReadingAnchor,
   type SavedPlaceRecord,
   type TextAnchor,
 } from "./schema";
@@ -48,10 +49,17 @@ export type ReaderDataContextValue = {
   progress: ReaderProgress;
   syncStatus: SyncStatus;
   entryOf: (articleId: string) => ArticleProgress;
+  /** The stored record, including the resolvable reading anchor the shell restores. */
+  progressOf: (articleId: string) => ProgressRecord | null;
   statusOf: (articleId: string) => ReadingStatus;
   completedCount: (articleIds: string[]) => number;
   setCurrentArticle: (articleId: string) => void;
-  recordPosition: (articleId: string, headingId: string | null, ratio: number) => void;
+  recordPosition: (
+    articleId: string,
+    headingId: string | null,
+    ratio: number,
+    anchor: ReadingAnchor | null,
+  ) => void;
   setCompleted: (articleId: string, completed: boolean) => void;
   toggleCompleted: (articleId: string) => void;
   resetPosition: (articleId: string) => void;
@@ -61,6 +69,7 @@ export type ReaderDataContextValue = {
     headingId: string | null,
     ratio: number,
     previewText: string,
+    anchor: ReadingAnchor | null,
   ) => void;
   removeSavedPlace: (articleId: string) => void;
   highlightsFor: (articleId: string) => HighlightRecord[];
@@ -266,6 +275,7 @@ export function ReaderDataProvider({
         articleId,
         headingId: previous?.headingId ?? null,
         scrollRatio: previous?.scrollRatio ?? 0,
+        anchor: previous?.anchor ?? null,
         completed: previous?.completed ?? false,
         lastReadAt: now,
         clientUpdatedAt: now,
@@ -278,7 +288,12 @@ export function ReaderDataProvider({
   );
 
   const recordPosition = useCallback(
-    (articleId: string, headingId: string | null, ratio: number) => {
+    (
+      articleId: string,
+      headingId: string | null,
+      ratio: number,
+      anchor: ReadingAnchor | null,
+    ) => {
       const current = dataRef.current;
       const previous = current.progress[articleId];
       const scrollRatio = clamp(ratio, 0, 1);
@@ -286,7 +301,8 @@ export function ReaderDataProvider({
       if (
         previous?.headingId === headingId &&
         Math.abs((previous?.scrollRatio ?? 0) - scrollRatio) < 0.001 &&
-        previous?.completed === completed
+        previous?.completed === completed &&
+        (previous?.anchor?.blockIndex ?? -1) === (anchor?.blockIndex ?? -1)
       ) {
         return;
       }
@@ -295,6 +311,9 @@ export function ReaderDataProvider({
         articleId,
         headingId,
         scrollRatio,
+        // A position that could not be anchored keeps the previous anchor rather
+        // than dropping to a coarser record; the ratio still moves with the reader.
+        anchor: anchor ?? previous?.anchor ?? null,
         completed,
         lastReadAt: previous?.lastReadAt ?? now,
         clientUpdatedAt: now,
@@ -315,6 +334,7 @@ export function ReaderDataProvider({
           articleId,
           headingId: previous?.headingId ?? null,
           scrollRatio: previous?.scrollRatio ?? 0,
+          anchor: previous?.anchor ?? null,
           completed,
           lastReadAt: now,
           clientUpdatedAt: now,
@@ -336,6 +356,7 @@ export function ReaderDataProvider({
           ...previous,
           headingId: null,
           scrollRatio: 0,
+          anchor: null,
           clientUpdatedAt: new Date().toISOString(),
           deviceId: dataRef.current.deviceId,
         },
@@ -346,7 +367,13 @@ export function ReaderDataProvider({
   );
 
   const savePlace = useCallback(
-    (articleId: string, headingId: string | null, ratio: number, previewText: string) => {
+    (
+      articleId: string,
+      headingId: string | null,
+      ratio: number,
+      previewText: string,
+      anchor: ReadingAnchor | null,
+    ) => {
       const current = dataRef.current;
       const now = new Date().toISOString();
       const previous = current.savedPlaces[articleId];
@@ -354,6 +381,7 @@ export function ReaderDataProvider({
         articleId,
         headingId,
         scrollRatio: clamp(ratio, 0, 1),
+        anchor,
         previewText: previewText.trim().slice(0, 280),
         clientUpdatedAt: now,
         deviceId: current.deviceId,
@@ -513,6 +541,7 @@ export function ReaderDataProvider({
       progress,
       syncStatus,
       entryOf,
+      progressOf: (articleId) => data.progress[articleId] ?? null,
       statusOf,
       completedCount: (articleIds) =>
         articleIds.reduce(

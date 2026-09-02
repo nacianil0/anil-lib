@@ -245,7 +245,8 @@ test.describe("desktop reader", () => {
 
     await dialog
       .getByRole("group", { name: "Okuma alanı" })
-      .getByRole("button", { name: "Geniş" })
+      // "Geniş" is a substring of "Ekstra Geniş": the role name match must be exact.
+      .getByRole("button", { name: "Geniş", exact: true })
       .click();
     await expect
       .poll(() => article.evaluate((element) => element.getBoundingClientRect().width))
@@ -256,9 +257,24 @@ test.describe("desktop reader", () => {
       .getByRole("group", { name: "Okuma alanı" })
       .getByRole("button", { name: "Tam" })
       .click();
+    // At this viewport the sidebar leaves ~960px, which the `ch`-based steps already
+    // saturate, so "Tam" cannot be pixel-wider than "Geniş" here. Assert the setting
+    // itself took effect and that the column really fills the space it is given.
     await expect
-      .poll(() => article.evaluate((element) => element.getBoundingClientRect().width))
-      .toBeGreaterThan(wideWidth);
+      .poll(() =>
+        page.evaluate(() =>
+          document.documentElement.style.getPropertyValue("--reader-flow-width"),
+        ),
+      )
+      .toBe("100%");
+    const filled = await page.evaluate(() => ({
+      article: Math.round(
+        document.querySelector("article.reader-area")!.getBoundingClientRect().width,
+      ),
+      available: Math.round(document.querySelector("main")!.getBoundingClientRect().width),
+    }));
+    expect(filled.article).toBe(filled.available);
+    expect(filled.article).toBeGreaterThanOrEqual(wideWidth);
 
     await dialog
       .getByRole("group", { name: "Okuma düzeni" })

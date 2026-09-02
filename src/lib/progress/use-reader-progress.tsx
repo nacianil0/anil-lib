@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import type { ReadingStatus } from "@/lib/content/types";
 import type { ArticleProgress, ReaderProgress } from "./schema";
+import type { ReadingAnchor } from "@/lib/reader-data/schema";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
 
 export type ProgressContextValue = {
@@ -13,7 +14,12 @@ export type ProgressContextValue = {
   statusOf: (articleId: string) => ReadingStatus;
   completedCount: (articleIds: string[]) => number;
   setCurrentArticle: (articleId: string) => void;
-  recordPosition: (articleId: string, headingId: string | null, ratio: number) => void;
+  recordPosition: (
+    articleId: string,
+    headingId: string | null,
+    ratio: number,
+    anchor: ReadingAnchor | null,
+  ) => void;
   setCompleted: (articleId: string, completed: boolean) => void;
   toggleCompleted: (articleId: string) => void;
   resetPosition: (articleId: string) => void;

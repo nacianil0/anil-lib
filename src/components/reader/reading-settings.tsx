@@ -1,7 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { BookOpenText, Minus, Monitor, Moon, Plus, SlidersHorizontal, Sun } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  BookOpenText,
+  Minus,
+  Monitor,
+  Moon,
+  Plus,
+  SlidersHorizontal,
+  Sun,
+  X,
+} from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import { TEXT_SIZES } from "@/lib/preferences/schema";
 import { useReaderPreferences } from "@/lib/preferences/use-reader-preferences";
@@ -61,20 +70,35 @@ function SettingsSection({ title, children }: { title: string; children: React.R
   );
 }
 
-export function ReadingSettings() {
+export function ReadingSettings({
+  /** False on narrow viewports, where the paged layout falls back to a single column. */
+  isPagedAvailable = true,
+}: {
+  isPagedAvailable?: boolean;
+} = {}) {
   const { preferences, updatePreference, resetPreferences } = useReaderPreferences();
   const [open, setOpen] = useState(false);
   const [resetConfirm, setResetConfirm] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
+  const closePanel = useCallback(() => {
+    setOpen(false);
+    setResetConfirm(false);
+    triggerRef.current?.focus();
+  }, []);
+
+  // Keyboard users land inside the panel rather than having to tab past the page.
+  useEffect(() => {
+    if (open) panelRef.current?.focus();
+  }, [open]);
+
   useEffect(() => {
     if (!open) return;
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") {
         e.preventDefault();
-        setOpen(false);
-        triggerRef.current?.focus();
+        closePanel();
       }
     }
     function onClick(e: MouseEvent) {
@@ -85,6 +109,7 @@ export function ReadingSettings() {
         !triggerRef.current.contains(e.target as Node)
       ) {
         setOpen(false);
+        setResetConfirm(false);
       }
     }
     document.addEventListener("keydown", onKeyDown);
@@ -93,7 +118,7 @@ export function ReadingSettings() {
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("mousedown", onClick);
     };
-  }, [open]);
+  }, [open, closePanel]);
 
   const currentSizeIndex = TEXT_SIZES.indexOf(preferences.fontScale);
   const sizePercentages = [80, 90, 100, 110, 120, 135];
@@ -143,15 +168,23 @@ export function ReadingSettings() {
           ref={panelRef}
           role="dialog"
           aria-label={UI.readingSettings}
-          className="border-border/60 bg-surface/95 absolute right-0 top-full z-50 mt-2 max-h-[calc(100vh-5rem)] w-[46rem] max-w-[calc(100vw-2rem)] overflow-y-auto overscroll-contain rounded-xl border p-4 font-sans text-text shadow-2xl ring-1 ring-black/5 backdrop-blur-xl dark:ring-white/10 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:max-h-[85dvh] max-sm:w-full max-sm:max-w-none max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0"
+          tabIndex={-1}
+          className="border-border/60 bg-surface/95 fixed inset-x-0 bottom-0 z-[55] max-h-[85dvh] w-full overflow-y-auto overscroll-contain rounded-xl rounded-b-none border border-x-0 border-b-0 p-4 font-sans text-text shadow-2xl ring-1 ring-black/5 backdrop-blur-xl focus:outline-none dark:ring-white/10 sm:inset-x-auto sm:bottom-auto sm:right-4 sm:top-[66px] sm:max-h-[calc(100vh-5rem)] sm:w-[46rem] sm:max-w-[calc(100vw-2rem)] sm:rounded-b-xl sm:border-x sm:border-b"
         >
-          <div className="border-border/50 mb-4 border-b pb-3">
-            <div>
+          <div className="border-border/50 mb-4 flex items-start justify-between gap-3 border-b pb-3">
+            <div className="min-w-0">
               <p className="text-sm font-semibold">{UI.readingSettings}</p>
-              <p className="mt-0.5 text-[11px] text-text-faint">
-                Okuma deneyimini anında özelleştir
-              </p>
+              <p className="mt-0.5 text-[11px] text-text-faint">{UI.settingsSubtitle}</p>
             </div>
+            <button
+              type="button"
+              onClick={closePanel}
+              aria-label={UI.closeSettings}
+              title={UI.dismiss}
+              className="-mr-1 -mt-1 shrink-0 rounded-md p-1.5 text-text-muted transition-colors hover:bg-surface-muted hover:text-text"
+            >
+              <X className="h-4 w-4" aria-hidden="true" />
+            </button>
           </div>
 
           <div className="space-y-4">
@@ -167,7 +200,11 @@ export function ReadingSettings() {
                     ]}
                     onChange={(value) => updatePreference("readingMode", value)}
                   />
-                  <p className="mt-1 text-[10px] text-text-faint">{UI.readingModeHint}</p>
+                  <p className="mt-1 text-[10px] text-text-faint">
+                    {preferences.readingMode === "paged" && !isPagedAvailable
+                      ? UI.readingModeFlowActive
+                      : UI.readingModeHint}
+                  </p>
                 </div>
                 <PreferenceSegments
                   label={UI.columnWidth}
@@ -316,7 +353,7 @@ export function ReadingSettings() {
                     aria-label={UI.theme}
                     className="flex h-[31px] rounded-md border border-border bg-surface-muted p-0.5"
                   >
-                    {(["light", "sepia", "system", "dark"] as const).map((value) => {
+                    {(["light", "sepia", "dark", "system"] as const).map((value) => {
                       const Icon =
                         value === "light"
                           ? Sun
@@ -389,8 +426,12 @@ export function ReadingSettings() {
             </SettingsSection>
           </div>
 
-          <div className="mt-3 flex items-center justify-between border-t border-border pt-2.5">
-            <span className="text-sm font-medium text-text-muted">{UI.resetPreferences}</span>
+          <div className="mt-3 flex items-center justify-between gap-3 border-t border-border pt-2.5">
+            <span
+              className={`min-w-0 text-[11px] ${resetConfirm ? "text-accent" : "text-text-faint"}`}
+            >
+              {resetConfirm ? UI.resetPreferencesArmed : UI.resetPreferencesHint}
+            </span>
             <button
               type="button"
               onClick={handleReset}

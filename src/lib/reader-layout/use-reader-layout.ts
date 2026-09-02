@@ -4,6 +4,15 @@ import { useCallback, useEffect, useRef, useState, type RefObject } from "react"
 import { clamp } from "@/lib/utils";
 import { TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import type { ReaderPreferences } from "@/lib/preferences/schema";
+import type { ReadingAnchor } from "@/lib/reader-data/schema";
+import {
+  flowBlockIndexAt,
+  flowBlockOffset,
+  pagedBlockIndexAt,
+  readingAnchorBlocks,
+  serializeReadingAnchor,
+  type ResolvedReadingAnchor,
+} from "./reading-anchor";
 import {
   pageForLogicalOffset,
   pageForRatio,
@@ -15,6 +24,11 @@ import {
 
 export type ReadingPosition = { ratio: number; headingId: string | null };
 type NavigableTarget = { getBoundingClientRect(): DOMRect };
+
+/** The y coordinate the reader actually reads from: just below the sticky toolbar. */
+const READING_LINE_PX = TOOLBAR_OFFSET_PX + 4;
+/** Breathing room left above a restored position so it does not hug the toolbar. */
+const RESTORE_GAP_PX = 12;
 
 function columnGapOf(element: HTMLElement): number {
   const value = Number.parseFloat(window.getComputedStyle(element).columnGap);
@@ -56,10 +70,16 @@ function flowHeadingId(element: HTMLElement): string | null {
   let headingId: string | null = null;
   const headings = element.querySelectorAll<HTMLElement>("h1[id], h2[id], h3[id], h4[id]");
   for (const heading of headings) {
-    if (heading.getBoundingClientRect().top <= TOOLBAR_OFFSET_PX + 4) headingId = heading.id;
+    if (heading.getBoundingClientRect().top <= READING_LINE_PX) headingId = heading.id;
     else break;
   }
   return headingId;
+}
+
+function scrollWindowTo(top: number, behavior: ScrollBehavior) {
+  const target = Math.max(0, top);
+  if (behavior === "auto") window.scrollTo(0, target);
+  else window.scrollTo({ top: target, behavior });
 }
 
 export function useReaderLayout({
@@ -75,6 +95,20 @@ export function useReaderLayout({
   const [pageState, setPageState] = useState({ pageIndex: 0, pageCount: 1 });
   const [layoutVersion, setLayoutVersion] = useState(0);
   const lastPositionRef = useRef<ReadingPosition>({ ratio: 0, headingId: null });
+  /**
+   * The block the reader was on, kept as a live DOM reference. A preference change
+   * reflows the text but leaves the nodes in place, so this restores the exact
+   * paragraph afterwards without re-resolving any text.
+   */
+  const lastAnchorRef = useRef<ResolvedReadingAnchor | null>(null);
+  /** Mode + preference signature of the last layout that settled; see the reflow effect. */
+  const settledKeyRef = useRef<string | null>(null);
+  /**
+   * True from the moment a preference reflows the article until the reading position
+   * has been put back. While it is set the text under the reading line is not where
+   * the reader left it, so nothing may be captured or persisted from it.
+   */
+  const settlingRef = useRef(false);
   const effectiveMode = preferredMode === "paged" && wideViewport ? "paged" : "flow";
 
   useEffect(() => {
@@ -110,6 +144,34 @@ export function useReaderLayout({
     return position;
   }, [containerRef, effectiveMode]);
 
+  /**
+   * Describes the paragraph at the reading line. Deliberately separate from
+   * `measure`: it reads layout for a handful of blocks, so the shell only calls it
+   * on the throttled persistence path, never on every scroll frame.
+   */
+  const captureAnchor = useCallback((): ReadingAnchor | null => {
+    const element = containerRef.current;
+    if (!element) return null;
+    const blocks = readingAnchorBlocks(element);
+    if (blocks.length === 0) return null;
+
+    let blockIndex: number;
+    let blockOffset = 0;
+    if (effectiveMode === "paged") {
+      const metrics = metricsOf(element);
+      blockIndex = pagedBlockIndexAt(blocks, metrics.pageIndex, (block) =>
+        pageForLogicalOffset(logicalLeftOf(element, block), metrics),
+      );
+    } else {
+      blockIndex = flowBlockIndexAt(blocks, READING_LINE_PX);
+      if (blockIndex >= 0) blockOffset = flowBlockOffset(blocks[blockIndex], READING_LINE_PX);
+    }
+    if (blockIndex < 0) return null;
+
+    lastAnchorRef.current = { block: blocks[blockIndex], blockOffset };
+    return serializeReadingAnchor(element, blocks, blockIndex, blockOffset);
+  }, [containerRef, effectiveMode]);
+
   const updatePageState = useCallback(() => {
     const element = containerRef.current;
     if (!element || effectiveMode !== "paged") {
@@ -143,11 +205,40 @@ export function useReaderLayout({
         return;
       }
       const rect = target.getBoundingClientRect();
-      const top = Math.max(0, rect.top + window.scrollY - TOOLBAR_OFFSET_PX - 12);
-      if (resolvedBehavior === "auto") window.scrollTo(0, top);
-      else window.scrollTo({ top, behavior: resolvedBehavior });
+      scrollWindowTo(
+        rect.top + window.scrollY - TOOLBAR_OFFSET_PX - RESTORE_GAP_PX,
+        resolvedBehavior,
+      );
     },
     [containerRef, effectiveMode],
+  );
+
+  /**
+   * Puts a resolved paragraph back under the reading line, keeping the fraction of it
+   * the reader had already got through. Because that fraction is relative to the
+   * block, it stays meaningful after the text has grown or shrunk.
+   */
+  const navigateToAnchor = useCallback(
+    (resolved: ResolvedReadingAnchor, behavior: ScrollBehavior = "smooth") => {
+      const element = containerRef.current;
+      if (!element || !element.contains(resolved.block)) return false;
+      const resolvedBehavior = motionSafeBehavior(behavior);
+      lastAnchorRef.current = resolved;
+
+      if (effectiveMode === "paged") {
+        navigateToElement(resolved.block, resolvedBehavior);
+        return true;
+      }
+      const rect = resolved.block.getBoundingClientRect();
+      scrollWindowTo(
+        rect.top + window.scrollY + resolved.blockOffset * rect.height -
+          TOOLBAR_OFFSET_PX -
+          RESTORE_GAP_PX,
+        resolvedBehavior,
+      );
+      return true;
+    },
+    [containerRef, effectiveMode, navigateToElement],
   );
 
   const navigateTo = useCallback(
@@ -168,11 +259,6 @@ export function useReaderLayout({
         lastPositionRef.current = position;
         return;
       }
-      if (heading) {
-        navigateToElement(heading, resolvedBehavior);
-        lastPositionRef.current = position;
-        return;
-      }
 
       if (effectiveMode === "paged") {
         const metrics = metricsOf(element);
@@ -181,17 +267,35 @@ export function useReaderLayout({
         if (resolvedBehavior === "auto") element.scrollLeft = left;
         else element.scrollTo({ left, behavior: resolvedBehavior });
         setPageState({ pageIndex: page, pageCount: metrics.pageCount });
-      } else {
-        const elementTop = element.getBoundingClientRect().top + window.scrollY;
-        const target =
-          elementTop + clamp(position.ratio, 0, 1) * element.offsetHeight - window.innerHeight;
-        const top = Math.max(0, target);
-        if (resolvedBehavior === "auto") window.scrollTo(0, top);
-        else window.scrollTo({ top, behavior: resolvedBehavior });
+        lastPositionRef.current = position;
+        return;
       }
+
+      const elementTop = element.getBoundingClientRect().top + window.scrollY;
+      const ratioTop =
+        elementTop + clamp(position.ratio, 0, 1) * element.offsetHeight - window.innerHeight;
+
+      if (heading) {
+        // The ratio is the finer of the two: the heading is only the last one the
+        // reader had passed, so on its own it always lands at the top of a section.
+        // Both estimates are lower bounds on the real position, so take the later.
+        const headingTop =
+          heading.getBoundingClientRect().top +
+          window.scrollY -
+          TOOLBAR_OFFSET_PX -
+          RESTORE_GAP_PX;
+        scrollWindowTo(
+          position.ratio > 0 ? Math.max(headingTop, ratioTop) : headingTop,
+          resolvedBehavior,
+        );
+        lastPositionRef.current = position;
+        return;
+      }
+
+      scrollWindowTo(ratioTop, resolvedBehavior);
       lastPositionRef.current = position;
     },
-    [containerRef, effectiveMode, navigateToElement],
+    [containerRef, effectiveMode],
   );
 
   const goToPage = useCallback(
@@ -238,14 +342,33 @@ export function useReaderLayout({
     };
   }, [containerRef, effectiveMode, updatePageState]);
 
+  // A typography or layout preference change reflows the article under the reader.
+  // Hold the paragraph they were on rather than the pixel offset, which now points
+  // at different words.
   useEffect(() => {
     let cancelled = false;
+    // The first layout after mount is not a reflow: the shell owns the opening
+    // position there, and moving it here would fight the restore and yank back a
+    // reader who started scrolling while the web fonts were still loading. The
+    // marker is written synchronously so a settle cancelled by a rapid second
+    // change cannot lose it and make the next change look like the first.
+    const layoutKey = `${effectiveMode}:${reflowKey}`;
+    const previousKey = settledKeyRef.current;
+    settledKeyRef.current = layoutKey;
+    const isReflow = previousKey !== null && previousKey !== layoutKey;
+    if (isReflow) settlingRef.current = true;
+
     const settle = () => {
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => {
           if (cancelled) return;
           updatePageState();
-          if (effectiveMode === "paged") navigateTo(lastPositionRef.current, "auto");
+          if (isReflow) {
+            const anchor = lastAnchorRef.current;
+            if (anchor) navigateToAnchor(anchor, "auto");
+            else if (effectiveMode === "paged") navigateTo(lastPositionRef.current, "auto");
+            settlingRef.current = false;
+          }
           setLayoutVersion((value) => value + 1);
         });
       });
@@ -259,7 +382,7 @@ export function useReaderLayout({
     return () => {
       cancelled = true;
     };
-  }, [effectiveMode, navigateTo, reflowKey, updatePageState]);
+  }, [effectiveMode, navigateTo, navigateToAnchor, reflowKey, updatePageState]);
 
   const previousPage = useCallback(
     () => goToPage(pageState.pageIndex - 1),
@@ -270,11 +393,23 @@ export function useReaderLayout({
     [goToPage, pageState.pageIndex],
   );
 
+  /** Drops the remembered paragraph, e.g. when the reader deliberately starts over. */
+  const forgetAnchor = useCallback(() => {
+    lastAnchorRef.current = null;
+  }, []);
+
+  /** True while a preference change is still being absorbed by the layout. */
+  const isLayoutSettling = useCallback(() => settlingRef.current, []);
+
   return {
     effectiveMode,
     isPagedAvailable: wideViewport,
     measure,
+    captureAnchor,
+    forgetAnchor,
+    isLayoutSettling,
     navigateTo,
+    navigateToAnchor,
     navigateToElement,
     pageIndex: pageState.pageIndex,
     pageCount: pageState.pageCount,

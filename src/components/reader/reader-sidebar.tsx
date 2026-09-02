@@ -30,8 +30,20 @@ export function ReaderSidebar({
   const articleIds = articles.map((article) => article.articleId);
 
   useEffect(() => {
-    const active = scrollRef.current?.querySelector('[aria-current="page"]');
-    active?.scrollIntoView({ block: "nearest" });
+    const container = scrollRef.current;
+    const active = container?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (!container || !active) return;
+    // Bring the current chapter into view inside the list only. `scrollIntoView` walks
+    // up every scrollable ancestor, so it also drags the article down by a couple of
+    // hundred pixels on load — undoing the reading position that is about to be
+    // restored. This is the same "nearest" behaviour, scoped to the list.
+    const listRect = container.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    if (activeRect.top < listRect.top) {
+      container.scrollTop += activeRect.top - listRect.top;
+    } else if (activeRect.bottom > listRect.bottom) {
+      container.scrollTop += activeRect.bottom - listRect.bottom;
+    }
   }, [currentArticleId]);
 
   return (

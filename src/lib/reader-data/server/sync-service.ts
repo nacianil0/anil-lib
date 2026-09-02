@@ -4,11 +4,13 @@ import type { NeonQueryFunction } from "@neondatabase/serverless";
 import { loadCatalog } from "@/lib/content/catalog";
 import { loadSeriesCatalog } from "@/lib/content/series";
 import { loadBounCatalog } from "@/lib/content/series-boun";
-import type {
-  HighlightRecord,
-  ProgressRecord,
-  SavedPlaceRecord,
-  SyncMutation,
+import {
+  readingAnchorSchema,
+  type HighlightRecord,
+  type ProgressRecord,
+  type ReadingAnchor,
+  type SavedPlaceRecord,
+  type SyncMutation,
 } from "@/lib/reader-data/schema";
 import type { SyncOperationError, SyncResponse } from "@/lib/reader-data/server/types";
 
@@ -37,6 +39,21 @@ function timestampIsValid(value: string, now: number): boolean {
   return Number.isFinite(parsed) && parsed <= now + MAX_FUTURE_SKEW_MS;
 }
 
+/** Anchors travel as jsonb; `null` when the position could not be anchored. */
+function anchorParameter(anchor: ReadingAnchor | null | undefined): string | null {
+  return anchor ? JSON.stringify(anchor) : null;
+}
+
+/**
+ * A stored anchor is re-validated on the way out: a row written by an older or
+ * hand-edited client must never reach the reader as a half-shaped object.
+ */
+function anchorFromRow(value: unknown): ReadingAnchor | null {
+  if (!value) return null;
+  const parsed = readingAnchorSchema.safeParse(value);
+  return parsed.success ? parsed.data : null;
+}
+
 function progressQuery(sql: SqlClient, workspaceId: string, mutation: SyncMutation) {
   if (mutation.entityType !== "progress") throw new Error("Unexpected mutation type");
   const value = mutation.payload;
@@ -49,13 +66,14 @@ function progressQuery(sql: SqlClient, workspaceId: string, mutation: SyncMutati
        RETURNING 1
      )
      INSERT INTO reading_progress
-       (workspace_id, article_id, heading_id, scroll_ratio, completed, last_read_at,
-        client_updated_at, device_id)
-     SELECT $1, $4, $5, $6, $7, $8::timestamptz, $9::timestamptz, $3::uuid
+       (workspace_id, article_id, heading_id, scroll_ratio, reading_anchor, completed,
+        last_read_at, client_updated_at, device_id)
+     SELECT $1, $4, $5, $6, $10::jsonb, $7, $8::timestamptz, $9::timestamptz, $3::uuid
      WHERE EXISTS (SELECT 1 FROM accepted)
      ON CONFLICT (workspace_id, article_id) DO UPDATE SET
        heading_id = EXCLUDED.heading_id,
        scroll_ratio = EXCLUDED.scroll_ratio,
+       reading_anchor = EXCLUDED.reading_anchor,
        completed = EXCLUDED.completed,
        last_read_at = EXCLUDED.last_read_at,
        client_updated_at = EXCLUDED.client_updated_at,
@@ -74,6 +92,7 @@ function progressQuery(sql: SqlClient, workspaceId: string, mutation: SyncMutati
       value.completed,
       value.lastReadAt,
       value.clientUpdatedAt,
+      anchorParameter(value.anchor),
     ],
   );
 }
@@ -90,13 +109,14 @@ function savedPlaceQuery(sql: SqlClient, workspaceId: string, mutation: SyncMuta
        RETURNING 1
      )
      INSERT INTO saved_places
-       (workspace_id, article_id, heading_id, scroll_ratio, preview_text,
+       (workspace_id, article_id, heading_id, scroll_ratio, reading_anchor, preview_text,
         client_updated_at, device_id, deleted_at)
-     SELECT $1, $4, $6, $7, $8, $9::timestamptz, $3::uuid, $10::timestamptz
+     SELECT $1, $4, $6, $7, $11::jsonb, $8, $9::timestamptz, $3::uuid, $10::timestamptz
      WHERE EXISTS (SELECT 1 FROM accepted)
      ON CONFLICT (workspace_id, article_id) DO UPDATE SET
        heading_id = EXCLUDED.heading_id,
        scroll_ratio = EXCLUDED.scroll_ratio,
+       reading_anchor = EXCLUDED.reading_anchor,
        preview_text = EXCLUDED.preview_text,
        client_updated_at = EXCLUDED.client_updated_at,
        server_updated_at = now(),
@@ -116,6 +136,7 @@ function savedPlaceQuery(sql: SqlClient, workspaceId: string, mutation: SyncMuta
       value.previewText,
       value.clientUpdatedAt,
       value.deletedAt,
+      anchorParameter(value.anchor),
     ],
   );
 }
@@ -179,6 +200,7 @@ function mapProgress(row: Record<string, unknown>): ProgressRecord {
     articleId: String(row.article_id),
     headingId: row.heading_id ? String(row.heading_id) : null,
     scrollRatio: Number(row.scroll_ratio),
+    anchor: anchorFromRow(row.reading_anchor),
     completed: Boolean(row.completed),
     lastReadAt: new Date(String(row.last_read_at)).toISOString(),
     clientUpdatedAt: new Date(String(row.client_updated_at)).toISOString(),
@@ -192,6 +214,7 @@ function mapSavedPlace(row: Record<string, unknown>): SavedPlaceRecord {
     articleId: String(row.article_id),
     headingId: row.heading_id ? String(row.heading_id) : null,
     scrollRatio: Number(row.scroll_ratio),
+    anchor: anchorFromRow(row.reading_anchor),
     previewText: String(row.preview_text ?? ""),
     clientUpdatedAt: new Date(String(row.client_updated_at)).toISOString(),
     deviceId: String(row.device_id),

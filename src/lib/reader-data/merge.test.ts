@@ -11,6 +11,7 @@ function progress(overrides: Partial<ProgressRecord> = {}): ProgressRecord {
     articleId: "article-1",
     headingId: null,
     scrollRatio: 0.2,
+    anchor: null,
     completed: false,
     lastReadAt: "2026-06-29T10:00:00.000Z",
     clientUpdatedAt: "2026-06-29T10:00:00.000Z",

@@ -1,6 +1,8 @@
 import type { TextAnchor } from "@/lib/reader-data/schema";
 
-const BLOCK_SELECTOR = "p, li, blockquote";
+/** Blocks an anchor may point at. `blockIndex` is an index into this selector's order. */
+export const ANCHOR_BLOCK_SELECTOR = "p, li, blockquote";
+const BLOCK_SELECTOR = ANCHOR_BLOCK_SELECTOR;
 const FORBIDDEN_SELECTOR = "pre, code, table";
 const CONTEXT_LENGTH = 80;
 
@@ -15,7 +17,11 @@ function textNodes(root: HTMLElement): Text[] {
   return nodes;
 }
 
-function globalOffset(root: HTMLElement, container: Node, offset: number): number {
+/**
+ * Number of text characters inside `root` that come before (`container`, `offset`).
+ * Shared with the reading anchor so both use one definition of "position in the text".
+ */
+export function globalOffset(root: HTMLElement, container: Node, offset: number): number {
   const before = document.createRange();
   before.selectNodeContents(root);
   before.setEnd(container, offset);

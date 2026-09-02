@@ -93,10 +93,10 @@ export function MobileReadingList({
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={UI.openReadingList}
-        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:border-border-strong hover:text-text lg:hidden"
+        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:border-border-strong hover:text-text max-sm:gap-0 lg:hidden"
       >
         <ListTree className="h-4 w-4" aria-hidden="true" />
-        <span>{UI.readingList}</span>
+        <span className="max-sm:sr-only">{UI.readingList}</span>
       </button>
 
       {open && (

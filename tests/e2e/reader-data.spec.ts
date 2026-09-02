@@ -44,10 +44,21 @@ test.describe("synced reader data", () => {
     await authenticate(page);
     const paragraph = page.locator(".prose-reader p").first();
     await paragraph.evaluate((element, quote) => {
-      const text = element.firstChild;
-      if (!text) throw new Error("Paragraph has no text node");
-      const source = text.textContent ?? "";
-      const start = source.indexOf(quote);
+      // Sentences are wrapped in spans for the coloured-lines setting, so the quote
+      // lives in a descendant text node rather than the paragraph's first child.
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      let text: Text | null = null;
+      let start = -1;
+      while (walker.nextNode()) {
+        const candidate = walker.currentNode as Text;
+        const index = candidate.data.indexOf(quote);
+        if (index >= 0) {
+          text = candidate;
+          start = index;
+          break;
+        }
+      }
+      if (!text) throw new Error("Quote not found in the paragraph");
       const range = document.createRange();
       range.setStart(text, start);
       range.setEnd(text, start + quote.length);

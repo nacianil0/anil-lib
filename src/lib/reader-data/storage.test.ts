@@ -22,6 +22,7 @@ function blob(workspaceId: string, articleId = "article-1") {
     articleId,
     headingId: null,
     scrollRatio: 0.5,
+    anchor: null,
     completed: false,
     lastReadAt: "2026-06-29T10:00:00.000Z",
     clientUpdatedAt: "2026-06-29T10:00:00.000Z",

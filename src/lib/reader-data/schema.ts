@@ -4,10 +4,39 @@ import { clampRatio } from "@/lib/progress/schema";
 const isoDate = z.string().datetime({ offset: true });
 const nullableIsoDate = isoDate.nullable().default(null);
 
+/**
+ * A resolvable reading position inside an article.
+ *
+ * `headingId` + `scrollRatio` alone only ever restore a reader to the top of the
+ * last heading they passed. This anchor pins the paragraph that was at the top of
+ * the reading viewport, plus how far into that paragraph the reader had got, so the
+ * position survives a font-size, line-height, measure, viewport or theme change —
+ * anything that reflows the text but leaves the words in place.
+ *
+ * The shape is deliberately the same context-anchor the highlights already use, so
+ * `resolveTextAnchor` resolves both.
+ */
+export const readingAnchorSchema = z.object({
+  /** Text of the anchored block, from its start, capped so a blob stays small. */
+  exactText: z.string().min(1).max(400),
+  prefixText: z.string().max(120).default(""),
+  suffixText: z.string().max(120).default(""),
+  /** Index of the block among the article's `p, li, blockquote` elements. */
+  blockIndex: z.number().int().nonnegative().default(0),
+  /** How much of that block was already read, 0..1. Survives reflow; pixels do not. */
+  blockOffset: z.preprocess(clampRatio, z.number().min(0).max(1)).default(0),
+});
+
+export type ReadingAnchor = z.infer<typeof readingAnchorSchema>;
+
+/** An absent or unparsable anchor degrades to `null` rather than rejecting the record. */
+const optionalAnchor = readingAnchorSchema.nullable().catch(null).default(null);
+
 export const progressRecordSchema = z.object({
   articleId: z.string().min(1).max(100),
   headingId: z.string().max(200).nullable().default(null),
   scrollRatio: z.preprocess(clampRatio, z.number().min(0).max(1)).default(0),
+  anchor: optionalAnchor,
   completed: z.boolean().default(false),
   lastReadAt: isoDate,
   clientUpdatedAt: isoDate,
@@ -19,6 +48,7 @@ export const savedPlaceRecordSchema = z.object({
   articleId: z.string().min(1).max(100),
   headingId: z.string().max(200).nullable().default(null),
   scrollRatio: z.preprocess(clampRatio, z.number().min(0).max(1)).default(0),
+  anchor: optionalAnchor,
   previewText: z.string().max(280).default(""),
   clientUpdatedAt: isoDate,
   deviceId: z.string().uuid(),

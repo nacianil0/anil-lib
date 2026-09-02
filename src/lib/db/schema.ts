@@ -5,6 +5,7 @@ import {
   check,
   doublePrecision,
   index,
+  jsonb,
   pgSequence,
   pgTable,
   primaryKey,
@@ -59,6 +60,11 @@ export const readingProgress = pgTable(
     articleId: text("article_id").notNull(),
     headingId: text("heading_id"),
     scrollRatio: doublePrecision("scroll_ratio").notNull().default(0),
+    /**
+     * Resolvable reading anchor (see `readingAnchorSchema`). Nullable: rows written
+     * before anchoring, and positions in text too short to anchor, simply have none.
+     */
+    readingAnchor: jsonb("reading_anchor"),
     completed: boolean("completed").notNull().default(false),
     lastReadAt: timestamp("last_read_at", { withTimezone: true }).notNull(),
     clientUpdatedAt: timestamp("client_updated_at", { withTimezone: true }).notNull(),
@@ -83,6 +89,11 @@ export const savedPlaces = pgTable(
     articleId: text("article_id").notNull(),
     headingId: text("heading_id"),
     scrollRatio: doublePrecision("scroll_ratio").notNull().default(0),
+    /**
+     * Resolvable reading anchor (see `readingAnchorSchema`). Nullable: rows written
+     * before anchoring, and positions in text too short to anchor, simply have none.
+     */
+    readingAnchor: jsonb("reading_anchor"),
     previewText: text("preview_text").notNull().default(""),
     clientUpdatedAt: timestamp("client_updated_at", { withTimezone: true }).notNull(),
     serverUpdatedAt: timestamp("server_updated_at", { withTimezone: true }).notNull().defaultNow(),

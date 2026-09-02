@@ -21,6 +21,7 @@ export function migrateLegacyProgress(
       articleId,
       headingId: entry.headingId,
       scrollRatio: entry.scrollRatio,
+      anchor: null,
       completed: entry.completed,
       lastReadAt: timestamp,
       clientUpdatedAt: timestamp,
