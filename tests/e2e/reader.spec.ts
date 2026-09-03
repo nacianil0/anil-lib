@@ -176,10 +176,8 @@ test.describe("desktop reader", () => {
     expect(dialogBox!.width).toBeGreaterThan(560);
     expect(dialogBox!.height).toBeLessThan(650);
 
-    await dialog
-      .getByRole("group", { name: "Metin hizası" })
-      .getByRole("button", { name: "İki yana" })
-      .click();
+    // Alignment is fixed to justified for everyone; the control is gone.
+    await expect(dialog.getByRole("group", { name: "Metin hizası" })).toHaveCount(0);
     await dialog
       .getByRole("group", { name: "Paragraf aralığı" })
       .getByRole("button", { name: "Ferah" })
@@ -219,11 +217,11 @@ test.describe("desktop reader", () => {
     await expect
       .poll(() =>
         page.evaluate(
-          (key) => JSON.parse(window.localStorage.getItem(key) ?? "{}")?.textAlign,
+          (key) => JSON.parse(window.localStorage.getItem(key) ?? "{}")?.hyphenation,
           PREFERENCES_KEY,
         ),
       )
-      .toBe("justify");
+      .toBe("auto");
 
     await page.reload();
     await expect(page.locator("main h1")).toBeVisible();
@@ -262,9 +260,7 @@ test.describe("desktop reader", () => {
     // itself took effect and that the column really fills the space it is given.
     await expect
       .poll(() =>
-        page.evaluate(() =>
-          document.documentElement.style.getPropertyValue("--reader-flow-width"),
-        ),
+        page.evaluate(() => document.documentElement.style.getPropertyValue("--reader-flow-width")),
       )
       .toBe("100%");
     const filled = await page.evaluate(() => ({

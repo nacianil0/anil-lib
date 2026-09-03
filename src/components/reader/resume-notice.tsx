@@ -32,7 +32,9 @@ export function ResumeNotice({ articleId, show, preview, onDismiss, onStartOver 
   return (
     <div
       role="status"
-      className="fixed left-1/2 top-[5.5rem] z-50 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-sm shadow-md sm:max-w-[calc(100vw-2rem)] sm:gap-4 sm:px-4"
+      // Below the sticky header's stacking context (z-40): the settings panel and
+      // the popovers that live in the header must cover this pill, not sit under it.
+      className="fixed left-1/2 top-[5.5rem] z-30 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-sm shadow-md sm:max-w-[calc(100vw-2rem)] sm:gap-4 sm:px-4"
     >
       <span className="min-w-0 truncate font-sans text-text">
         <span className="font-medium">{UI.restoredNotice}</span>

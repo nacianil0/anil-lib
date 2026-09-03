@@ -47,7 +47,6 @@ export function applyCssVariables(prefs: ReaderPreferences) {
   root.style.setProperty("--reader-flow-width", CSS_MAPPINGS.measure[prefs.measure]);
   root.style.setProperty("--reader-paged-width", CSS_MAPPINGS.pagedMeasure[prefs.measure]);
   root.style.setProperty("--reader-font-family", CSS_MAPPINGS.fontFamily[prefs.fontFamily]);
-  root.style.setProperty("--reader-text-align", CSS_MAPPINGS.textAlign[prefs.textAlign]);
   root.style.setProperty(
     "--reader-paragraph-spacing",
     CSS_MAPPINGS.paragraphSpacing[prefs.paragraphSpacing],

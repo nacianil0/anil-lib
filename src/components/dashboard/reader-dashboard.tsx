@@ -1,18 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowRight,
-  Bookmark,
-  CheckCircle2,
-  Highlighter,
-  Library,
-  RotateCcw,
-  Sparkles,
-  Users,
-} from "lucide-react";
-import type { ArticleDescriptor } from "@/lib/content/types";
-import { UI } from "@/lib/content/labels";
+import { Users } from "lucide-react";
+import { cn } from "@/lib/utils";
+import type { ArticleDescriptor, ReadingStatus } from "@/lib/content/types";
+import { pad, UI } from "@/lib/content/labels";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
 import { LockButton } from "@/components/reader/lock-button";
@@ -28,7 +20,7 @@ function formatDate(value: string): string {
   }
 }
 
-/** Ana sayfada kendi kartıyla görünen bir öğrenme serisi. */
+/** Ana sayfada kendi satırıyla görünen bir öğrenme serisi. */
 export type DashboardSeries = {
   key: string;
   title: string;
@@ -50,6 +42,49 @@ type DashboardProps = {
   username: string;
 };
 
+/* Tek bir bölüm başlığı dili: serif başlık, sağda sessiz bir sayı. */
+function SectionHeading({ id, title, count }: { id: string; title: string; count?: number }) {
+  return (
+    <div className="mb-4 flex items-baseline justify-between gap-3 border-b border-border pb-2">
+      <h2 id={id} className="font-serif text-xl font-semibold leading-snug">
+        {title}
+      </h2>
+      {typeof count === "number" && (
+        <span className="font-sans text-2xs tabular-nums text-text-faint">{count}</span>
+      )}
+    </div>
+  );
+}
+
+function EmptyNote({ children }: { children: React.ReactNode }) {
+  return <p className="font-sans text-sm leading-relaxed text-text-muted">{children}</p>;
+}
+
+/**
+ * Serinin okuma sırası, makale başına bir hücre: tamamlananlar mürekkep, devam eden
+ * çelik mavisi, kalanlar boş. Yüzde yerine "nerede olduğunu" gösterir; sayılar altta
+ * metin olarak verildiği için şerit dekoratiftir.
+ */
+function SeriesStrip({ statuses }: { statuses: ReadingStatus[] }) {
+  return (
+    <div className="flex h-[3px] gap-[2px]" aria-hidden="true">
+      {statuses.map((status, index) => (
+        <span
+          key={index}
+          className={cn(
+            "flex-1 rounded-[1px]",
+            status === "completed"
+              ? "bg-accent"
+              : status === "in-progress"
+                ? "bg-cool"
+                : "bg-border",
+          )}
+        />
+      ))}
+    </div>
+  );
+}
+
 function DashboardContent({ series, archive, isOwner, username }: DashboardProps) {
   const { ready, data, statusOf } = useReaderData();
 
@@ -57,13 +92,13 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
   // Görünür küme kullanıcıya göre değişir: seri dışı yazılar yalnızca owner'da var.
   const visible = [...seriesArticles, ...archive];
   const byId = new Map(visible.map((article) => [article.articleId, article]));
-  const basePathById = new Map(
-    series.flatMap((entry) =>
-      entry.articles.map((article) => [article.articleId, entry.basePath] as const),
-    ),
+  const seriesById = new Map(
+    series.flatMap((entry) => entry.articles.map((article) => [article.articleId, entry] as const)),
   );
   const hrefFor = (article: ArticleDescriptor) =>
-    `${basePathById.get(article.articleId) ?? "/read"}/${article.slug}`;
+    `${seriesById.get(article.articleId)?.basePath ?? "/read"}/${article.slug}`;
+  const seriesTitleFor = (article: ArticleDescriptor) =>
+    seriesById.get(article.articleId)?.title ?? "Arşiv";
 
   const progressEntries = Object.values(data.progress)
     .filter((entry) => byId.has(entry.articleId))
@@ -72,9 +107,12 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
     (data.currentArticleId && byId.has(data.currentArticleId) ? data.currentArticleId : null) ??
     progressEntries[0]?.articleId;
   const current = (currentId ? byId.get(currentId) : undefined) ?? seriesArticles[0];
-  const currentProgress = current ? data.progress[current.articleId] : null;
-  const currentBase = current ? basePathById.get(current.articleId) : undefined;
-  const currentSeries = series.find((entry) => entry.basePath === currentBase);
+  const currentProgress = current ? (data.progress[current.articleId] ?? null) : null;
+  const currentSeries = current ? seriesById.get(current.articleId) : undefined;
+  // Kayıt hazır olana kadar dönen okuyucuyu varsay; ilk açılışta tek karelik bir
+  // "Kaldığın yer → Başlangıç" geçişi, tersinden daha az rahatsız eder.
+  const started = !ready || Boolean(currentProgress);
+  const currentPercent = currentProgress ? Math.round(currentProgress.scrollRatio * 100) : 0;
 
   const places = Object.values(data.savedPlaces)
     .filter((place) => !place.deletedAt && byId.has(place.articleId))
@@ -86,12 +124,12 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
   return (
     <div className="min-h-screen bg-bg text-text">
       <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <div>
-            <p className="font-serif text-xl font-semibold">{UI.libraryTitle}</p>
-            <p className="mt-0.5 font-sans text-2xs text-text-muted">{username} · okuma alanın</p>
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
+          <div className="min-w-0">
+            <p className="font-serif text-xl font-semibold leading-tight">{UI.libraryTitle}</p>
+            <p className="mt-0.5 truncate font-sans text-2xs text-text-muted">{username}</p>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex shrink-0 items-center gap-1">
             {isOwner && (
               <Link
                 href="/yonetim"
@@ -107,226 +145,232 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
-        <section className="mb-10 border-b border-border pb-10">
-          <p className="mb-3 font-mono text-2xs uppercase tracking-[0.22em] text-accent">
-            Okumaya devam et
+      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
+        <section aria-labelledby="continue-title" className="border-b border-border pb-10">
+          <p className="font-sans text-2xs font-medium uppercase tracking-[0.14em] text-text-faint">
+            {started ? "Kaldığın yer" : "Başlangıç"}
           </p>
           {current ? (
             <>
-              <h1 className="max-w-3xl font-serif text-3xl font-semibold leading-tight sm:text-5xl">
+              <h1
+                id="continue-title"
+                className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight sm:text-4xl"
+              >
                 {current.title}
               </h1>
               <p className="mt-3 font-sans text-sm text-text-muted">
-                {currentSeries ? currentSeries.title : "Arşiv"}
-                {currentProgress && ` · %${Math.round(currentProgress.scrollRatio * 100)}`}
+                {seriesTitleFor(current)}
+                {currentSeries && (
+                  <>
+                    <span className="px-1.5 text-text-faint">·</span>
+                    {UI.chapter(current.readingOrder, currentSeries.articles.length)}
+                  </>
+                )}
+                {ready && currentProgress && currentPercent > 0 && !currentProgress.completed && (
+                  <>
+                    <span className="px-1.5 text-text-faint">·</span>%{currentPercent} okundu
+                  </>
+                )}
+                {ready && currentProgress?.completed && (
+                  <>
+                    <span className="px-1.5 text-text-faint">·</span>
+                    {UI.markedComplete}
+                  </>
+                )}
               </p>
               <Link
                 href={hrefFor(current)}
-                className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
+                className="mt-6 inline-flex items-center rounded-md bg-accent-fill px-4 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
-                Okumaya dön
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                {started ? "Okumaya dön" : "Okumaya başla"}
               </Link>
             </>
           ) : (
-            <p className="font-sans text-sm text-text-muted">Okuma listesi boş.</p>
+            <h1 id="continue-title" className="mt-3 font-sans text-sm text-text-muted">
+              Okuma listesi boş.
+            </h1>
           )}
         </section>
 
-        {/* Her seri kendi ilerlemesini gösterir; tek bir birleşik yüzde iki seriyi
-            birbirine karıştırırdı. */}
-        <div className="mb-10 flex flex-col gap-4">
-          {series.map((entry) => {
-            const entryCompleted = entry.articles.filter(
-              (article) => statusOf(article.articleId) === "completed",
-            ).length;
-            const percent = entry.articles.length
-              ? Math.round((entryCompleted / entry.articles.length) * 100)
-              : 0;
-            const titleId = `series-entry-title-${entry.key}`;
-            return (
-              <section
-                key={entry.key}
-                aria-labelledby={titleId}
-                className="rounded-md border border-border bg-surface p-5 sm:p-6"
-              >
-                <div className="flex flex-wrap items-end justify-between gap-4">
-                  <div className="min-w-0">
-                    <p className="mb-2 flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.22em] text-cool">
-                      <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-                      Öğrenme serisi · Yaşayan yol haritası
-                    </p>
-                    <h2 id={titleId} className="font-serif text-2xl font-semibold sm:text-3xl">
+        <section aria-labelledby="series-title" className="border-b border-border py-10">
+          <SectionHeading id="series-title" title="Seriler" />
+          <ol className="flex flex-col gap-9">
+            {series.map((entry) => {
+              const statuses = entry.articles.map((article) => statusOf(article.articleId));
+              const completed = statuses.filter((status) => status === "completed").length;
+              const inProgress = statuses.filter((status) => status === "in-progress").length;
+              return (
+                <li key={entry.key}>
+                  <h3 className="font-serif text-2xl font-semibold leading-snug">
+                    <Link href={entry.basePath} className="transition-colors hover:text-accent">
                       {entry.title}
-                    </h2>
-                    <p className="mt-1.5 max-w-xl font-sans text-sm leading-relaxed text-text-muted">
-                      {entry.subtitle}
-                    </p>
+                    </Link>
+                  </h3>
+                  <p className="mt-1.5 max-w-2xl font-sans text-sm leading-relaxed text-text-muted">
+                    {entry.subtitle}
+                  </p>
+                  <div className="mt-4">
+                    <SeriesStrip statuses={statuses} />
+                    <div className="mt-2 flex items-baseline justify-between gap-4 font-sans text-2xs">
+                      <p className="tabular-nums text-text-faint">
+                        {ready
+                          ? `${completed} / ${entry.articles.length} tamamlandı`
+                          : UI.articleCount(entry.articles.length)}
+                        {ready && inProgress > 0 && ` · ${inProgress} devam ediyor`}
+                      </p>
+                      <Link
+                        href={entry.basePath}
+                        className="shrink-0 text-accent underline-offset-4 hover:underline"
+                      >
+                        Yol haritası
+                      </Link>
+                    </div>
                   </div>
-                  <Link
-                    href={entry.basePath}
-                    className="inline-flex items-center gap-2 rounded-md border border-cool px-4 py-2.5 font-sans text-sm font-semibold text-cool transition-colors hover:bg-cool-soft"
-                  >
-                    Seriye git
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </div>
-
-                <div className="mt-5 flex items-center gap-4">
-                  <span className="font-serif text-2xl font-semibold tabular-nums">
-                    %{ready ? percent : 0}
-                  </span>
-                  <span className="h-1 flex-1 overflow-hidden rounded-full bg-border">
-                    <span
-                      className="block h-full bg-accent transition-[width]"
-                      style={{ width: `${ready ? percent : 0}%` }}
-                    />
-                  </span>
-                  <span className="whitespace-nowrap font-sans text-2xs text-text-faint">
-                    {entryCompleted}/{entry.articles.length} tamamlandı
-                  </span>
-                </div>
-              </section>
-            );
-          })}
+                </li>
+              );
+            })}
+          </ol>
 
           {isOwner && archive.length > 0 && (
             <Link
               href="/read"
-              className="flex items-center justify-between rounded-md border border-dashed border-border px-5 py-3.5 transition-colors hover:bg-surface-muted"
+              className="mt-8 inline-block font-sans text-sm text-text-muted transition-colors hover:text-text"
             >
-              <span className="flex items-center gap-2 font-sans text-sm text-text-muted">
-                <Library className="h-4 w-4 text-text-faint" aria-hidden="true" />
-                Arşiv · {archive.length} seri öncesi yazı
-              </span>
-              <ArrowRight className="h-4 w-4 text-text-faint" aria-hidden="true" />
+              Arşiv
+              <span className="text-text-faint"> · {archive.length} seri öncesi yazı</span>
             </Link>
           )}
-        </div>
+        </section>
 
         {!ready ? (
           <p role="status" className="py-12 text-center font-sans text-sm text-text-muted">
             Okuma kayıtların hazırlanıyor…
           </p>
         ) : (
-          <div className="grid gap-10 lg:grid-cols-2">
+          <div className="grid gap-x-12 gap-y-10 pt-10 lg:grid-cols-2">
             <section aria-labelledby="saved-places-title">
-              <div className="mb-4 flex items-center justify-between">
-                <h2
-                  id="saved-places-title"
-                  className="flex items-center gap-2 font-serif text-2xl font-semibold"
-                >
-                  <Bookmark className="h-5 w-5 text-accent" aria-hidden="true" />
-                  Kaldığım yerler
-                </h2>
-                <span className="font-mono text-2xs text-text-faint">{places.length}</span>
-              </div>
+              <SectionHeading
+                id="saved-places-title"
+                title="Kaldığım yerler"
+                count={places.length}
+              />
               {places.length === 0 ? (
-                <div className="border-l-2 border-border py-4 pl-4">
-                  <p className="font-sans text-sm leading-relaxed text-text-muted">
-                    Makalede yer imi düğmesine basarak kaldığın noktayı buraya ekleyebilirsin.
-                  </p>
-                </div>
+                <EmptyNote>
+                  Makalede yer imi düğmesine basarak kaldığın noktayı buraya ekleyebilirsin.
+                </EmptyNote>
               ) : (
-                <div className="divide-y divide-border border-y border-border">
+                <ol className="divide-y divide-border">
                   {places.slice(0, 8).map((place) => {
                     const article = byId.get(place.articleId)!;
                     return (
-                      <Link
-                        key={place.articleId}
-                        href={`${hrefFor(article)}?place=1`}
-                        className="group flex items-start gap-4 py-4"
-                      >
-                        <span className="font-mono text-2xs text-accent">
-                          {String(article.readingOrder).padStart(2, "0")}
-                        </span>
-                        <span className="min-w-0 flex-1">
-                          <span className="block font-serif text-lg font-semibold leading-snug group-hover:text-accent">
-                            {article.title}
+                      <li key={place.articleId}>
+                        <Link
+                          href={`${hrefFor(article)}?place=1`}
+                          className="group flex items-baseline gap-4 py-3.5"
+                        >
+                          <span className="font-sans text-2xs tabular-nums text-text-faint">
+                            {pad(article.readingOrder)}
                           </span>
-                          <span className="mt-1 line-clamp-2 block font-serif text-sm leading-relaxed text-text-muted">
-                            {place.previewText}
+                          <span className="min-w-0 flex-1">
+                            <span className="block font-serif text-lg font-semibold leading-snug transition-colors group-hover:text-accent">
+                              {article.title}
+                            </span>
+                            <span className="mt-1 line-clamp-2 block font-serif text-sm leading-relaxed text-text-muted">
+                              {place.previewText}
+                            </span>
                           </span>
-                        </span>
-                        <span className="font-sans text-2xs text-text-faint">
-                          {formatDate(place.clientUpdatedAt)}
-                        </span>
-                      </Link>
+                          <span className="shrink-0 font-sans text-2xs text-text-faint">
+                            {formatDate(place.clientUpdatedAt)}
+                          </span>
+                        </Link>
+                      </li>
                     );
                   })}
-                </div>
+                </ol>
               )}
             </section>
 
             <section aria-labelledby="highlights-title">
-              <div className="mb-4 flex items-center justify-between">
-                <h2
-                  id="highlights-title"
-                  className="flex items-center gap-2 font-serif text-2xl font-semibold"
-                >
-                  <Highlighter className="h-5 w-5 text-accent" aria-hidden="true" />
-                  İşaretlediklerim
-                </h2>
-                <span className="font-mono text-2xs text-text-faint">{highlights.length}</span>
-              </div>
+              <SectionHeading
+                id="highlights-title"
+                title="İşaretlediklerim"
+                count={highlights.length}
+              />
               {highlights.length === 0 ? (
-                <div className="border-l-2 border-border py-4 pl-4">
-                  <p className="font-sans text-sm leading-relaxed text-text-muted">
-                    Bir cümleyi seçip “İşaretle” dediğinde alıntın burada görünecek.
-                  </p>
-                </div>
+                <EmptyNote>
+                  Bir cümleyi seçip “İşaretle” dediğinde alıntın burada görünecek.
+                </EmptyNote>
               ) : (
-                <div className="space-y-3">
+                <ol className="flex flex-col gap-4">
                   {highlights.slice(0, 10).map((highlight) => {
                     const article = byId.get(highlight.articleId)!;
                     return (
-                      <Link
-                        key={highlight.id}
-                        href={`${hrefFor(article)}?highlight=${highlight.id}`}
-                        className="border-accent/40 block border-l-2 py-1 pl-4 hover:border-accent"
-                      >
-                        <blockquote className="line-clamp-3 font-serif text-base leading-relaxed text-text">
-                          “{highlight.exactText.trim()}”
-                        </blockquote>
-                        <span className="mt-1.5 block font-sans text-2xs text-text-muted">
-                          {article.title} · {formatDate(highlight.createdAt)}
-                        </span>
-                      </Link>
+                      <li key={highlight.id}>
+                        <Link
+                          href={`${hrefFor(article)}?highlight=${highlight.id}`}
+                          className="block border-l-2 border-border py-1 pl-4 transition-colors hover:border-accent"
+                        >
+                          <blockquote className="line-clamp-3 font-serif text-base leading-relaxed text-text">
+                            “{highlight.exactText.trim()}”
+                          </blockquote>
+                          <span className="mt-1.5 block font-sans text-2xs text-text-muted">
+                            {article.title} · {formatDate(highlight.createdAt)}
+                          </span>
+                        </Link>
+                      </li>
                     );
                   })}
-                </div>
+                </ol>
               )}
             </section>
 
             <section className="lg:col-span-2" aria-labelledby="recent-title">
-              <div className="mb-4 flex items-center gap-2">
-                <RotateCcw className="h-4 w-4 text-accent" aria-hidden="true" />
-                <h2 id="recent-title" className="font-serif text-xl font-semibold">
-                  Son okunanlar
-                </h2>
-              </div>
-              <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-                {progressEntries.slice(0, 6).map((entry) => {
-                  const article = byId.get(entry.articleId);
-                  if (!article) return null;
-                  return (
-                    <Link
-                      key={entry.articleId}
-                      href={hrefFor(article)}
-                      className="bg-surface p-4 transition-colors hover:bg-surface-muted"
-                    >
-                      <span className="flex items-center justify-between font-mono text-2xs text-text-faint">
-                        {String(article.readingOrder).padStart(2, "0")}
-                        {entry.completed && <CheckCircle2 className="h-3.5 w-3.5 text-accent" />}
-                      </span>
-                      <span className="mt-2 line-clamp-2 block font-serif text-base font-semibold leading-snug">
-                        {article.title}
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
+              <SectionHeading
+                id="recent-title"
+                title="Son okunanlar"
+                count={progressEntries.length}
+              />
+              {progressEntries.length === 0 ? (
+                <EmptyNote>
+                  Açtığın makaleler burada, en son okuduğun başta olacak şekilde sıralanır.
+                </EmptyNote>
+              ) : (
+                <ol className="grid border-b border-border sm:grid-cols-2 sm:gap-x-12">
+                  {progressEntries.slice(0, 6).map((entry) => {
+                    const article = byId.get(entry.articleId);
+                    if (!article) return null;
+                    const percent = Math.round(entry.scrollRatio * 100);
+                    return (
+                      <li key={entry.articleId} className="border-t border-border">
+                        <Link
+                          href={hrefFor(article)}
+                          className="group flex items-baseline gap-4 py-3.5"
+                        >
+                          <span className="font-sans text-2xs tabular-nums text-text-faint">
+                            {pad(article.readingOrder)}
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="line-clamp-2 block font-serif text-base font-semibold leading-snug transition-colors group-hover:text-accent">
+                              {article.title}
+                            </span>
+                            <span className="mt-0.5 block font-sans text-2xs text-text-muted">
+                              {seriesTitleFor(article)}
+                              {entry.completed
+                                ? ` · ${UI.markedComplete}`
+                                : percent > 0
+                                  ? ` · %${percent}`
+                                  : ""}
+                            </span>
+                          </span>
+                          <span className="shrink-0 font-sans text-2xs text-text-faint">
+                            {formatDate(entry.lastReadAt)}
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
             </section>
           </div>
         )}

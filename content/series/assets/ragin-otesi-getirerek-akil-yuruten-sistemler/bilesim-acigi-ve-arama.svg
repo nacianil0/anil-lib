@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 402" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Ara adımlar ve arama: her biri ayrı bir kazanç</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">üç çok adımlı soru kümesinde doğruluk; aynı model, dört düzen</text>
+
+  <line x1="200" y1="70" x2="200" y2="326" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="190" y="108" font-size="13" text-anchor="end" fill="var(--text-muted)">Bamboogle</text>
+  <rect x="200" y="80" width="62" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="515" y="90" font-size="13" text-anchor="start" fill="var(--text-muted)">17,6</text>
+  <rect x="200" y="95" width="162" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="515" y="105" font-size="13" text-anchor="start" fill="var(--text-muted)">46,4</text>
+  <rect x="200" y="110" width="202" height="11" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="120" font-size="13" text-anchor="start" fill="var(--text-muted)">57,6</text>
+  <rect x="200" y="125" width="210" height="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="135" font-size="13" text-anchor="start" fill="var(--text)">60,0</text>
+
+  <text x="190" y="190" font-size="13" text-anchor="end" fill="var(--text-muted)">2WikiMultiHopQA</text>
+  <rect x="200" y="162" width="89" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="515" y="172" font-size="13" text-anchor="start" fill="var(--text-muted)">25,4</text>
+  <rect x="200" y="177" width="104" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="515" y="187" font-size="13" text-anchor="start" fill="var(--text-muted)">29,8</text>
+  <rect x="200" y="192" width="105" height="11" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="202" font-size="13" text-anchor="start" fill="var(--text-muted)">30,0</text>
+  <rect x="200" y="207" width="140" height="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="217" font-size="13" text-anchor="start" fill="var(--text)">40,1</text>
+
+  <text x="190" y="272" font-size="13" text-anchor="end" fill="var(--text-muted)">MuSiQue</text>
+  <rect x="200" y="244" width="20" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="515" y="254" font-size="13" text-anchor="start" fill="var(--text-muted)">5,6</text>
+  <rect x="200" y="259" width="44" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="515" y="269" font-size="13" text-anchor="start" fill="var(--text-muted)">12,6</text>
+  <rect x="200" y="274" width="48" height="11" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="284" font-size="13" text-anchor="start" fill="var(--text-muted)">13,8</text>
+  <rect x="200" y="289" width="53" height="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="299" font-size="13" text-anchor="start" fill="var(--text)">15,2</text>
+
+  <rect x="560" y="84" width="22" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="590" y="94" font-size="13" text-anchor="start" fill="var(--text)">doğrudan cevap</text>
+  <rect x="560" y="110" width="22" height="11" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="590" y="120" font-size="13" text-anchor="start" fill="var(--text)">düşünce zinciri</text>
+  <rect x="560" y="136" width="22" height="11" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="590" y="146" font-size="13" text-anchor="start" fill="var(--text)">kendine sorma</text>
+  <rect x="560" y="162" width="22" height="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="590" y="172" font-size="13" text-anchor="start" fill="var(--text)">kendine sorma</text>
+  <text x="590" y="190" font-size="13" text-anchor="start" fill="var(--text)">+ arama</text>
+  <text x="560" y="222" font-size="13" text-anchor="start" fill="var(--text-faint)">yalnızca arama motoru:</text>
+  <text x="560" y="240" font-size="13" text-anchor="start" fill="var(--text-faint)">0,0 · 2,2 · 1,5</text>
+
+  <line x1="16" y1="344" x2="704" y2="344" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="368" font-size="13" text-anchor="start" fill="var(--text-muted)">ara adımlar tek başına kazandırıyor; arama onun üstüne ekleniyor</text>
+  <text x="16" y="390" font-size="13" text-anchor="start" fill="var(--text-faint)">arama motoru tek başına neredeyse sıfır: bileşik sorunun ikinci yarısı sorulmadan aranamıyor</text>
+</svg>

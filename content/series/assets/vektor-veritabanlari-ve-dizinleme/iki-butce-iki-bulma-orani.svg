@@ -1,0 +1,41 @@
+<svg viewBox="0 0 720 348" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı milyar vektör, iki bütçe, iki bulma oranı</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">ilk on sonuçtaki dizin bulma oranı; her satır bir milyar vektörlük bir veri kümesi</text>
+
+  <line x1="200" y1="70" x2="200" y2="262" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="190" y="99" font-size="13" text-anchor="end" fill="var(--text-muted)">BIGANN</text>
+  <rect x="200" y="80" width="191" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="92" font-size="13" text-anchor="start" fill="var(--text)">0,635</text>
+  <rect x="200" y="98" width="285" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="110" font-size="13" text-anchor="start" fill="var(--text)">0,949</text>
+
+  <text x="190" y="145" font-size="13" text-anchor="end" fill="var(--text-muted)">DEEP</text>
+  <rect x="200" y="126" width="195" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="138" font-size="13" text-anchor="start" fill="var(--text)">0,650</text>
+  <rect x="200" y="144" width="281" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="156" font-size="13" text-anchor="start" fill="var(--text)">0,937</text>
+
+  <text x="190" y="191" font-size="13" text-anchor="end" fill="var(--text-muted)">MS SPACEV</text>
+  <rect x="200" y="172" width="219" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="184" font-size="13" text-anchor="start" fill="var(--text)">0,729</text>
+  <rect x="200" y="190" width="270" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="202" font-size="13" text-anchor="start" fill="var(--text)">0,901</text>
+
+  <text x="190" y="237" font-size="13" text-anchor="end" fill="var(--text-muted)">MS Turing</text>
+  <rect x="200" y="218" width="211" height="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="515" y="230" font-size="13" text-anchor="start" fill="var(--text)">0,704</text>
+  <rect x="200" y="236" width="281" height="14" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="515" y="248" font-size="13" text-anchor="start" fill="var(--text)">0,936</text>
+
+  <rect x="562" y="84" width="26" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="596" y="95" font-size="13" text-anchor="start" fill="var(--text)">64 GB bellek</text>
+  <text x="596" y="113" font-size="13" text-anchor="start" fill="var(--text-muted)">10.000 sorgu/sn</text>
+  <rect x="562" y="140" width="26" height="12" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="596" y="151" font-size="13" text-anchor="start" fill="var(--text)">bellek + disk</text>
+  <text x="596" y="169" font-size="13" text-anchor="start" fill="var(--text-muted)">1.500 sorgu/sn</text>
+
+  <line x1="16" y1="284" x2="704" y2="284" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-muted)">iki bütçe, aynı veri, aynı taban çizgisi ailesi: fark algoritmadan değil harcanan bütçeden geliyor</text>
+  <text x="16" y="330" font-size="13" text-anchor="start" fill="var(--text-faint)">belleğe sığmak için sıkıştırılan dizin, gerçek komşuların yaklaşık üçte birini kaçırıyor</text>
+</svg>

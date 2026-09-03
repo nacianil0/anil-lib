@@ -116,6 +116,13 @@ metin içi çapraz göndermelerinin tamamı yayımlanmış makalelere (≤42) ya
 koordinatı — 39 ve 41 — kapattı; defterde açık kalan en yakın koordinat 61–70 bandıdır ve
 tekil olarak **64**'tür.
 
+**Numarasız ileri işaretler — Batch 10'da verildi.** Kaynağın güvenilirliği ve bilginin tazeliği
+(45 → 50, "ileride ayrı bir makalenin konusu"); eylemin kendisi, işlev çağrısının biçimi ve dönen
+sonucun isteme girişi (46 → 47, "bir sonraki makale"); tarih/kaynak etiketiyle filtreli arama
+(43 → 50, numarasız). Batch 10 **yeni bir numaralı koordinat açmadı ve kapatmadı**; dört
+makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤46) yapıldı ve bu,
+`grep` ile makale başına doğrulandı. Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -174,10 +181,10 @@ tekil olarak **64**'tür.
 
 41. **Modelin Bilgisi Neden Yetmez? RAG'e Giriş** — parametrik bilginin sınırı (17–18'in geri çağrımı); dizin değiştirerek bilgiyi güncellemek. `[yayında]`
 42. **Getirme: Aramanın Modern Hali** — ters dizin ve BM25'in mekaniği; seyrek getirmeyi geçmenin üç yolu. `[yayında]`
-43. **Vektör Veritabanları ve İndeksleme** — embedding tabanlı altyapı.
-44. **Chunking, Rerank ve RAG Hattının İncelikleri** — uçtan uca RAG mühendisliği.
-45. **RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati** — groundedness ölçümü.
-46. **RAG'in Ötesi: Retrieval-Reasoning Sistemleri** — araştıran sistemler.
+43. **Vektör Veritabanları ve Dizinleme** — embedding tabanlı altyapı. `[yayında]`
+44. **Parçalama, Yeniden Sıralama ve RAG Hattının İncelikleri** — uçtan uca RAG mühendisliği. `[yayında]`
+45. **RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati** — groundedness ölçümü. `[yayında]`
+46. **RAG'in Ötesi: Getirerek Akıl Yürüten Sistemler** — araştıran sistemler. `[yayında]`
 47. **Araç Kullanımı: Function Calling** — modelin eyleme geçmesi.
 48. **Web, Kod ve Dosyalarla Çalışan Modeller** — gerçek araç zincirleri.
 49. **MCP ve Araç Ekosistemleri** — standartlaşma.
@@ -911,6 +918,82 @@ Batch 0 ve Batch 1 kavramlarının 11–14'te fiilen nerede geri çağrıldığ�
 | nDCG ve ortalama karşılıklı sıra | 42 | — | 45 (RAG değerlendirmesi), 71, 101 |
 | Değerlendirme kümesinin etiket yanlılığı | 42 | — | 45, 71–73, 101 |
 
+### Batch 10'da gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 43–46'da fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 10'da gerçekleşen |
+|---|---|
+| Boyutluluk laneti (5) | 43 (ağaç dizinlerinin taramaya dönüşmesinin geometrik yüzü) ✓ **otuz sekiz makale aralıklı geri çağırma** |
+| Logit (7) | 44 (dizi-diziye yeniden sıralayıcıda "doğru" token'ının olasılığı ilgililik puanı olur) ✓ |
+| Ölçüm disiplini: cetvel bir tasarım ürünüdür (16) | 44 (tek belgelik parça deneyinin sınırı), 45 (tam eşleşme ↔ insan kararı; eksi puanlı güvenilirlik), 46 (kısayolu kapatılmış küme) ✓ |
+| Kalibrasyon (16) | 46 (modelin kendi güveni ne zaman getirileceğini söylüyor) ✓ |
+| İçsel ↔ dışsal uydurma ve atomik olgu (17) | 44 (önerme = atomik olgunun getirme birimi), 45 (sadakat ifade ifade sayılır; getirme dışsal uydurmayı denetlenebilir kılar) ✓ |
+| Ortadaki bilginin kaybı (21, 25) | 44 (U eğrisi; doğru belge sorgunun yanına) ✓ |
+| Bellek bant genişliği (26) | 43 (tam taramanın faturası hesapta değil bellekte) ✓ |
+| Kuantizasyon: ızgara, sabit, blok (27) | 43 (ürün kuantizasyonunda kod defteri = öğrenilmiş ızgara) ✓ |
+| İki gecikme ölçüsü ve bütçe muhasebesi (28, 33) | 44 (yeniden sıralama saniye cinsinden), 46 (döngü başına çağrı ve paragraf sayısı) ✓ |
+| Anlamsal arama, 21 milyon vektör, 65 GB, 995 sorgu/sn (29) | 43 (sayıların dizin karşılığı; o dizin bir HNSW'ydi) ✓ |
+| Tek vektörün boyut sınırı ve ikili kodlayıcının sorguyu bilmemesi (29) | 44 (parça büyüdükçe taşıması gereken soru sayısı artar) ✓ |
+| Kaçırılan sonuç sessizdir (29) | 43 (kaçırılanların çoğu ilgisiz komşu; ölçmeden bilinmez) ✓ |
+| İki aşamalı sıralama ve melez arama (29, 42) | 44 (dil modeliyle yeniden sıralama; melez hat 1,45 sn), 46 (döngü + öz-tutarlılık birleşimi) ✓ |
+| Özel token'lar ve biçim garantisi (30) | 46 (yansıma token'ları sıradan dağılımdan üretilir) ✓ |
+| Sadakat (31) | 45 (aynı sözcük, nesne artık cevabın önündeki belge) ✓ |
+| Doğrusallaştırılmış alt grafik eşlemesi / kısayol (31) | 46 (bileşim açığı; bağlantısız akıl yürütme puanı) ✓ |
+| Düşünce zinciri (32) | 46 (zincirin her cümlesi bir sonraki aramanın sorgusu) ✓ |
+| Damıtma ve ödülle eğitim (34) | 44 (sıralama davranışının damıtılması; yeniden yazıcının ödülle eğitimi) ✓ |
+| Doğrulayıcı, yanlış pozitif/negatif, dış geri bildirim (35) | 45 (hakem model bir doğrulayıcıdır), 46 (dış dünyanın bedeli: arama hatası ve döngü) ✓ |
+| Öz-tutarlılık (36) | 46 (döngüyle birleşim; yinelemeli getirmenin doyması) ✓ |
+| Eylem (37) | 46 (bir sonraki token'dan dünyaya dokunan çağrıya) ✓ |
+| Adım etiketleri ve süreç denetimi (38) | 46 (eleştirmen modelin bölüm başına yansıma etiketleri) ✓ |
+| Anahtar ↔ değer ayrımı (39) | 43 (etiket + vektör = ikiye ayrılan anahtar), 44 (parça hem anahtar hem değer; küçükle ara, büyüğü döndür) ✓ |
+| Özetleyerek taşıma ve seçili kayıp (39) | 44 (getirileni sıkıştırmak; boş dönebilen sıkıştırıcı) ✓ |
+| Çekimserlik (39) | 45 (eksi puanlı cetvelde bilmiyorum demenin değeri) ✓ |
+| Çarpımsal düşüş ve hatayı oluştuğu yerde yakalamak (40) | 46 (halka başına getirme hatası; ileriye bakan getirme) ✓ |
+| Dizin değiştirme (41) | 43 (bilgiyi güncellemek = vektör veritabanına yazmak) ✓ |
+| Dikkat dağıtıcı belge (41) | 44 (konum tablosu; sıkıştırmada atılanlar), 45 (bağlam ilgililiği) ✓ |
+| Ezber oranı (41) | 45 (okuma katmanının hatası; karşıolgusal dayanıklılık aynadaki görüntüsü) ✓ |
+| Uyarlanabilir getirme (41) | 44 (hat başındaki sınıflandırıcı; seçici güçlendirme), 46 (belirsizlik tetikli getirme) ✓ |
+| Getirme zarar verebilir (41) | 44 (yeniden yazma tablosunun ilk satırı), 45 (doğruluk artarken güvenilirlik düşer) ✓ |
+| Ters dizin (42) | 43 (ters dosyanın adaşı; vektörlerde terim yok) ✓ |
+| Alan dışı ters dönüş (42) | 43 (metin–görüntü kümesinde sıkıştırmanın çökmesi), 44 (eğitim dağılımına uyan birim) ✓ |
+| Çapraz kodlayıcıyla yeniden sıralama, +%11 (42) | 44 (dil modeli yeniden sıralayıcılar aynı düzenin devamı) ✓ |
+| nDCG ve ortalama karşılıklı sıra (42) | 44 (MRR@10 tabloları), 45 (ilgililik etiketinin kaynağı) ✓ |
+| Değerlendirme kümesinin etiket yanlılığı (42) | 43 (dizinin kaçırdığı belge etiketlenmemişse görünmez), 45 (etiket kimin için verildiyse onun lehinedir) ✓ |
+| Geç etkileşimli (29, 42) | 43 (merkeze ata, farkı sıkıştır, kaba puanla ele) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): geri çağırma puanı tazelik + önem + ilgi (39 → 44 yeniden sıralama ölçütleri; devir: 50, 56), uzun kuyruk (41 → 45; devir: 50, 72), terim sıklığı doyumu → parçalama uzunluğu (42 → 44; devir: 48), öğrenilmiş seyrek getirme (42 → 43/44/46; devir: 48, 91), sırayla birleştirme adıyla (42 → 44; 44 melez hattı 42'ye gönderdi ama karşılıklı sırayı yeniden kurmadı; devir: 73).
+
+### Batch 10'da ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 10'da gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Tam tarama ve yaklaşık en yakın komşu araması | 43 | 44 (dizin hazır kabul edildi), 45 (dizin bulma oranı ↔ hat sonucu) | 48, 91 (vektör matematiği), 107 |
+| Ters dosya, ürün kuantizasyonu, yakınlık çizgesi (üç aile, üç düğme) | 43 | — | 56 (ajan belleğinin deposu), 91, 109 |
+| Dizin bulma oranı ≠ getirme bulma oranı | 43 | 45 (her katmanın ölçüsü bir üst katmanı zayıf tahmin eder) | 57 (ajan değerlendirmesi), 71, 101 |
+| Bulma oranı ↔ hız eğrisinin dik sağ ucu | 43 | 44 (yeniden sıralamanın son puanları en pahalı saniyeler) | 60 (ajan ekonomisi), 86 |
+| Filtreli arama ve seçicilik | 43 | — | 50 (tarih/kaynak filtresi), 58 (erişim yetkisi), 112 |
+| Vektör veritabanı = dizin + sistem | 43 | — | 48, 56, 106 |
+| Parçalama: parça hem anahtar hem değer; önerme | 44 | 45 (bağlam ilgililiği), 46 (destekleyici olgular = altın paragraf etiketi) | 48 (dosyalarla çalışan modeller), 56, 100 |
+| Küçükle ara, büyüğü döndür | 44 | — | 56, 112 |
+| Sorgu yeniden yazma ve varsayımsal belge | 44 | 46 (kendine sorma = takip sorusunu yazmak) | 48, 51 |
+| Dil modeliyle yeniden sıralama (liste hâlinde, damıtma) | 44 | — | 57, 73, 87 |
+| Ortada kaybolma ve yerleştirme kuralı | 44 | — | 51 (ajan bağlamı), 60, 86 |
+| Seçici güçlendirme ve sıkıştırma | 44 | — | 56, 60 |
+| Uzun pencere getirmeyi gereksiz kılmaz | 44 | — | 60, 86, 117 |
+| Üç katman, üç ölçü (bağlam ilgililiği, kaynak sadakati, cevap ilgililiği) | 45 | 46 (yansıma token'ları = üç ölçünün üretim anındaki karşılığı) | 57, 71, 101 |
+| Eksi puanlı güvenilirlik cetveli (getirme çekimserliği yanlışa çevirir) | 45 | — | 50, 57, 65 |
+| Belgenin tek başına üreticiye verdiği sonuç (ilgililik etiketi olarak) | 45 | — | 57, 71 |
+| Atıf: bulma oranı ve kesinlik; atfedilebilirlik testi | 45 | 46 (yansımalı modelin atıf kesinliği) | 50 (atıf ve kaynak güveni), 65, 71 |
+| Hakem model ve üç yanlılığı; tahmin destekli çıkarım | 45 | — | 57, 73 (değerlendiren modellerin güvenilirliği), 101 |
+| Karşıolgusal dayanıklılık (yanlış belgeye teslim olma) | 45 | — | 50, 58, 65 |
+| Çok adımlı soru ve bileşim açığı | 46 | — | 51, 52, 57 |
+| Kendine sorma ve getirmeyi zincire örmek | 46 | — | 51, 55 |
+| Düşün–eyle–gözle döngüsü | 46 | — | 47 (eylem = araç çağrısı), 51, 52 |
+| Etkin (belirsizlik tetikli) getirme | 46 | — | 51, 65 |
+| Yansıma token'ları ve eleştirmen model | 46 | — | 52, 59, 73 |
+| Halka başına getirme hatası; kısayol / bağlantısız akıl yürütme | 46 | — | 51, 57, 72 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -1193,6 +1276,55 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | sırayla birleştirme | (reciprocal rank fusion) | 42 | farklı sistemlerin sonuçlarını ham puanlara bakmadan, sıraların tersini toplayarak birleştirmek |
 | nDCG | — | 42 | Türkçeleştirilmez; ilk k sonucun ilgililiğini üst sıralara ağırlık vererek toplayan ve kusursuz sıralamaya bölen ölçü |
 | ortalama karşılıklı sıra | (mean reciprocal rank, MRR) | 42 | ilk doğru sonucun sırasının tersinin sorgular üzerinden ortalaması. 29'daki **bulma oranından** farkı, sırayı da hesaba katması |
+| vektör dizini | (vector index) | 43 | sorgu geldiğinde vektörlerin yalnızca küçük bir kısmına dokunmayı sağlayan yapı; 42'deki **ters dizinin** vektör karşılığı |
+| dizinleme | — | 43 | vektör dizinini kurma işi. 39'daki **yazma (indexing)** ile aynı İngilizce sözcüğün farklı kullanımıdır; ayrım 43'te açıkça yapıldı, parantez verilmedi |
+| tam tarama | (brute-force search) | 43 | sorguyu bütün belge vektörleriyle karşılaştırmak |
+| yaklaşık en yakın komşu araması | (approximate nearest neighbor search) | 43 | gerçek en yakın komşuları kaçırma ihtimalini kabul eden yöntemlerin toplu adı; gövdede "yaklaşık arama" |
+| küme merkezi | (centroid) | 43 | |
+| k-ortalamalar | (k-means) | 43 | merkez ata, ortalamaya taşı, tekrarla |
+| ters dosya | (inverted file, IVF) | 43 | küme başına vektör listesi; 42'deki **ters dizinle karıştırılmaz**, ayrım 43'te yapıldı |
+| ürün kuantizasyonu | (product quantization) | 43 | alt vektörleri kod defterine yuvarlamak; 19/27'deki **kuantizasyon** ailesi, "niceleme" kullanılmaz |
+| kod defteri | (codebook) | 43 | alt vektör başına 256 merkez |
+| asimetrik uzaklık hesabı | (asymmetric distance computation) | 43 | sorgu sıkıştırılmaz, belge sıkıştırılmıştır; tablo oku, topla |
+| hiyerarşik gezilebilir küçük dünya çizgesi | (Hierarchical Navigable Small World, HNSW) | 43 | kısaltma "HNSW" serbest |
+| yakınlık çizgesi | (proximity graph) | 43 | her vektör en yakın `M` komşusuna bağlı |
+| atlamalı liste | (skip list) | 43 | HNSW'nin akrabası olduğu 1D yapı |
+| dizin bulma oranı | — | 43 | serinin terimi: dizinin döndürdüğü `k` sonucun tam taramanın `k` gerçek komşusuyla örtüşme oranı; 29/42'deki **bulma oranıyla (doğru belge) karıştırılmaz** |
+| vektör veritabanı yönetim sistemi | (vector database management system) | 43 | gövdede "vektör veritabanı"; dizin + orta katman |
+| melez sorgu | (hybrid query) | 43 | öznitelik/etiket + vektör; 42'deki **melez arama** (seyrek + yoğun) ile aynı sözcüğün farklı kullanımı |
+| seçicilik | (specificity) | 43 | etiketi taşıyan vektörlerin oranı |
+| parçalama | (chunking) | 44 | belgenin dizin birimlerine kesilmesi; birimi **parça** (chunk). 29/41'de "parça" glosssuz kullanılmıştı |
+| önerme | (proposition) | 44 | kendine yeten, tek olgulu atomik ifade; 17'deki **atomik olgunun** getirme birimi |
+| küçükle ara, büyüğü döndür | (small-to-big) | 44 | |
+| kayan pencere parçalama | (sliding window) | 44 | 25'teki **pencere dikkatiyle karıştırılmaz** |
+| anlamsal parçalama / sabit boyutlu parçalama | (semantic / fixed-size chunking) | 44 | |
+| varsayımsal belge | (hypothetical document) | 44 | soruyu cevaplayan uydurma belge yazdırıp onunla aramak |
+| sorgu yeniden yazma | (query rewriting) | 44 | |
+| ortada kaybolma | (lost in the middle) | 44 | 21/25'te "ortadaki bilginin kaybı" olarak anılmıştı; alan adı 44'te kondu |
+| yeniden paketleme | (repacking) | 44 | getirilen parçaların istemdeki sırası; en ilgili en sona |
+| seçici güçlendirme | (selective augmentation) | 44 | sıkıştırıcının boş dönebilmesi |
+| kaynak sadakati | (groundedness) | 45 | cevabın önündeki kaynağa bağlılığı; 31'deki **sadakat (faithfulness)** ile aynı sözcük, nesne farklı; alanda faithfulness de denir |
+| cevap ilgililiği | (answer relevance) | 45 | |
+| bağlam ilgililiği | (context relevance) | 45 | |
+| ilgililik etiketi | (relevance label) | 45 | |
+| güven aralığı | (confidence interval) | 45 | |
+| atıf | (citation) | 45 | |
+| atfedilebilir | (attributable to identified sources) | 45 | "kaynağa göre, [cümle]" testi |
+| atıf bulma oranı / atıf kesinliği | (citation recall / precision) | 45 | **kesinlik (precision)** ilk kez burada gloss'landı; 42'de "ortalama kesinlik" glosssuz geçmişti |
+| hakem model | (LLM-as-a-judge) | 45 | 35'teki **doğrulayıcının** değerlendirme kılığı |
+| konum yanlılığı / uzunluk yanlılığı / kendini kayırma | (position / verbosity / self-enhancement bias) | 45 | |
+| tahmin destekli çıkarım | (prediction-powered inference) | 45 | |
+| gürültüye dayanıklılık / reddetme / bilgi bütünleştirme / karşıolgusal dayanıklılık | (noise robustness / negative rejection / information integration / counterfactual robustness) | 45 | RAG'in dört yeteneği |
+| çok adımlı soru | (multi-hop question) | 46 | |
+| bileşim açığı | (compositionality gap) | 46 | |
+| kendine sorma | (self-ask) | 46 | |
+| getirmeyi düşünce zinciriyle iç içe örmek | (interleaving retrieval with chain-of-thought) | 46 | SOZLESME §3'teki pedagojik **interleaving** ile karıştırılmaz |
+| düşünce / eylem / gözlem | (thought / action / observation) | 46 | eylem 37'de kurulmuştu; gözlem yeni |
+| etkin getirme | (active retrieval) | 46 | belirsizlik tetikli, ileriye bakan |
+| yansıma token'ı | (reflection token) | 46 | getir mi, ilgili mi, destekli mi, yararlı mı |
+| eleştirmen model | (critic model) | 46 | |
+| köprü varlık / destekleyici olgular | (bridge entity / supporting facts) | 46 | |
+| bağlantısız akıl yürütme | (disconnected reasoning) | 46 | kısayol ölçüsü |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -1894,6 +2026,191 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Conversation" (Laban ve ark.), monoBERT (Nogueira & Cho), doc2query ve "The Illusion of
     Diminishing Returns" (Sinha ve ark.) yalnızca CoRR'de indeksleniyor. Belge genişletmenin
     sayıları bu yüzden hakemli ColBERT ve BEIR tablolarından alındı.
+
+
+115. **Başlık düzeltmeleri (Batch 10'da verildi).** Yayımlanmamış üç başlık terim defterine
+    uyarlandı: "Vektör Veritabanları ve İndeksleme" → **"Vektör Veritabanları ve Dizinleme"**
+    ("dizin" 41/42'de kurulmuş karşılıktır; "indeksleme" gövdede hiç geçmeyecekti); "Chunking,
+    Rerank ve RAG Hattının İncelikleri" → **"Parçalama, Yeniden Sıralama ve RAG Hattının
+    İncelikleri"** (yeniden sıralayıcı 29'da kurulu; parçalama 44'te kuruldu); "RAG'in Ötesi:
+    Retrieval-Reasoning Sistemleri" → **"RAG'in Ötesi: Getirerek Akıl Yürüten Sistemler"** (getirme
+    29'da, akıl yürütme 31'de kurulu). 45'in başlığı değiştirilmedi. "RAG" kısaltması karar #108
+    gereği korundu. Üç değişiklik `roadmap.json`'da entegrasyondan **önce** yapıldı. Faz başlıkları
+    katmanına yine dokunulmadı (karar #52'deki açık soru sürüyor).
+116. **Vektör dizini sayıları (Batch 10).** Weber, Schek & Blott (VLDB 1998): bölmeleme/kümeleme
+    yapıları boyut ~10'un üstünde sıralı taramanın gerisinde; kendi maliyet modellerinde eşik 610
+    ve "pratikte çok daha aşağıda"; çıkış yolu yaklaşık vektörlerle tarama (VA-file). Johnson,
+    Douze & Jégou (IEEE Trans. Big Data 7(3), 2021): `|C1| ≈ √ℓ`; ürün kuantizasyonu `b` alt vektör
+    × 256 merkez = `b` bayt; asimetrik uzaklık; SIFT1B'de 8 baytla R@10 = 0,376, sorgu başına
+    17,7 µs, önceki GPU çalışmasından 8,5 kat hızlı; YFCC100M (95 milyon) k-NN çizgesi 35 dakika;
+    1 milyar vektör dört kartta 12 saatin altında. Ürün kuantizasyonunun kaynağı Jégou, Douze &
+    Schmid (IEEE TPAMI 33(1), 2011, s. 117–128; Crossref ve DBLP ile doğrulandı) — **metni
+    alınamadı** (HAL/IEEE bot engeli), sayı kullanılmadı, mekanizma Johnson ve ark.'nın anlatımına
+    dayanır. Malkov & Yashunin (IEEE TPAMI 42(4), 2020): atlamalı liste akrabalığı; `mL = 1/ln(M)`;
+    bellek `M` ile orantılı; kurulum genişliği için 0,95 bulma oranı yeterli; 200M SIFT'te kurulum
+    5,6 saat (efC=500) / 42 dakika (efC=40), 64 GB; Faiss sıkıştırılmış 12/11 saat, 30/23,5 GB;
+    10M SIFT 40 çekirdekte efC=100 ile 3 dakika. DPR'ın dizini HNSW: düğüm başına 512 komşu,
+    kurulum 200, sorgu 128 (Karpukhin ve ark. dipnot 10). Aumüller ve ark. (Inf. Syst. 87, 2020):
+    bulma oranı tanımı tam taramanın `k` komşusuna göre; Annoy örneği 1.249 sorgu/sn @ 0,52;
+    GloVe'da HNSW her bulma oranında en hızlı; Rand-Euclidean'da HNSW 0,86'yı geçemiyor,
+    NYTimes'ta FAISS-IVF 0,7'yi geçemiyor. Simhadri ve ark. (PMLR 176, 2022): T1 (64 GB, 10.000
+    sorgu/sn) taban çizgisi 0,6345 / 0,6503 / 0,7289 / 0,7036; T2 (SSD, 1.500 sorgu/sn) 0,9491 /
+    0,9371 / 0,9010 / 0,9356 (BIGANN / DEEP / SPACEV / Turing); "kuantizasyon kaybının doyduğu
+    bölge"; metin→görüntü kümesinde çöküş. Subramanya ve ark. (NeurIPS 2019): 1 milyar nokta,
+    64 GB + SSD, >5.000 sorgu/sn, <3 ms, 1-recall@1 ≥ %95, 16 çekirdek; sıkıştırılmış dizinler
+    ~%50. Macdonald & Tonellotto (CIKM 2021): aday 200'e inince ilgili belge bulma oranı
+    0,77 → 0,59 (−%18), MRR/nDCG@10/MAP'ta anlamlı fark yok, 406 → 202 ms. Kuffo ve ark. (SIGIR
+    2026): MSMARCO'da geleneksel bulma oranı 0,863 ↔ anlamsal 0,932; <20 ilgili komşulu
+    sorgularda 0,762 ↔ 0,903; anlamsal hedefle aynı kalite %14 daha az maliyet; %95 hoşgörülü
+    hedef BigANN'de ~%25, MSMARCO'da ~%35 tasarruf. Pan, Wang & Li (VLDB J. 33(5), 2024): 20'den
+    fazla ticari sistem beş yılda; beş engel. Gollapudi ve ark. (WWW 2023): seçicilik
+    `|P_f|/|P|`; 10⁻¹–10⁻⁶ seçicilikte %90+ bulma oranı, öteki yaklaşımlar ~1000 kat daha az
+    sorgu/sn. Santhanam ve ark. (NAACL 2022): artık sıkıştırmayla depolama 6–10 kat düşük;
+    (CIKM 2022): gecikme kartta 7 kat, işlemcide 45 kat, 140M parçada onlarca ms. **Seri
+    türetimleri:** 21.015.324 × 768 ≈ 16,1 milyar çarpma-toplama; 4.096 küme, 32 yoklama →
+    ~168 bin mesafe = tam taramanın %0,8'i; 64 alt vektör → 3.072 bayttan 64 bayta (48 kat, 65 GB
+    → 1,3 GB); 4 boyutlu PQ örneği: kod (1, 1), tahmin 0,10, gerçek 0,1225; filtre örneği:
+    binde bir seçicilikte 10 sonuç için ~10.000 aday.
+117. **Getirme hattı sayıları (Batch 10).** Chen ve ark. (EMNLP 2024): Wikipedia 41,4M parça
+    (58,5 kelime) / 114,2M cümle (21,0) / 256,9M önerme (11,2); ilk beşte bulma oranı
+    (parça/cümle/önerme, 5 küme ortalaması): Contriever 43,0/47,3/52,7; SimCSE 34,3/40,9/46,3;
+    DPR 57,3/59,2/59,9; GTR 65,2/66,7/68,0; denetimsizlerde +12,0 ve +9,3 (%35,0 ve %22,5);
+    EntityQuestions'ta DPR %25 göreli; Contriever + FiD ilk beş tam eşleşme 24,9/27,6/31,1. Wang
+    ve ark. (EMNLP 2024): parça boyu (lyft_2021, ~170 soru, LlamaIndex + gpt-3.5 hakem)
+    sadakat/ilgililik 2048: 80,37/91,11 · 1024: 94,26/95,56 · 512: 97,59/97,41 · 256: 97,22/97,78
+    · 128: 95,74/97,22; parça tekniği düz 95,74/95,37, küçükle-ara 96,67/95,37, kayan pencere
+    97,41/96,85; yeniden sıralama (BM25 ilk 1000, MRR@10 / sn): monoT5 31,78 / 4,5; monoBERT
+    31,69 / 15,8; RankLLaMA 32,35 / 82,4; TILDEv2 27,83 / 0,02; Tablo 1 ortalama puan/gecikme:
+    getirmesiz 0,351 / 1,27 sn; retrieval modülü ablasyonunda (öteki modüller en iyi ayarda)
+    Original 0,383 / 1,44; Hybrid 0,429 / 1,45; HyDE 0,398 / 11,58; Hybrid+HyDE 0,443 / 11,71;
+    yeniden sıralama yok 0,430; monoT5 0,443; paketleme sides 0,443, forward 0,437, reverse
+    0,446; özetleme yok 0,441, Recomp 0,446, LongLLMLingua 0,426. **Dikkat:** "Hybrid 0,429 /
+    1,45 sn" satırı yalnız-melez değil, HyDE'siz tam hattır; gecikmenin ~10 saniyesi HyDE'nin
+    dil modeli çağrısıdır. Qu ve ark. (Findings NAACL 2025): belge bulma F1@5 sabit/kırılma/
+    kümeleme NQ* 43,79/63,93/41,01, HotpotQA 90,59/87,37/84,79; kanıt cümlesi ExpertQA
+    47,11/47,08/46,87; sonuç: sabit boyutlu daha verimli ve güvenilir. Gao ve ark. (ACL 2023):
+    DL19/DL20 nDCG@10 BM25 50,6/48,0, Contriever 44,5/42,1, HyDE 61,3/57,9, Contriever-ft
+    62,1/63,2. Ma ve ark. (EMNLP 2023): EM HotpotQA 32,36 → 30,47 → 32,80 → 34,38; AmbigNQ 42,10 →
+    45,80 → 46,40 → 47,80; PopQA 41,94 → 43,20 → 46,00 → 45,72 (getirmesiz / getir-oku / LLM
+    yeniden yazar / eğitilmiş). Nogueira ve ark. (Findings EMNLP 2020): MS MARCO MRR@10 BM25
+    0,184; +BERT-large 0,372; +T5-base 0,381; +T5-large 0,393; +T5-3B 0,398. Sun ve ark. (EMNLP
+    2023): pencere 20, adım 10; BEIR ortalama nDCG@10 BM25 43,42, monoT5-3B 51,36, GPT-4 53,68;
+    DL19 75,59; damıtılmış 440M öğrenci BEIR'de monoT5-3B'yi +1,67 geçiyor; GPT-4'ü ChatGPT'nin
+    ilk 30'unda çalıştırmak maliyeti 1/5'e indiriyor. Izacard & Grave (EACL 2021): 10 → 100 parça
+    TriviaQA +%6, NQ +%3,5; çıkarımcı modeller 10–20'de tepe. Liu ve ark. (TACL 12, 2024):
+    GPT-3.5-Turbo kapalı kitap %56,1, tek altın belge %88,3; 20–30 belgede ortadaki belgeyle
+    >%20 düşüş ve kapalı kitabın altı; 4K/16K eğrileri üst üste. Cuconasu ve ark. (SIGIR 2024)
+    Tablo 1 Llama2: altın tek 0,5642; 4 dikkat dağıtıcıyla uzak/orta/yakın 0,2745/0,2857/0,3795;
+    8 ile 0,2643/0,2268/0,3748; kapalı kitap 0,1123. Jiang ve ark. (ACL 2024): NQ çok belgede
+    ~4 kat az token'la %21,4'e varan kazanç; gecikme 1,4–2,6 kat. Xu, Shi & Choi (ICLR 2024):
+    NQ token/EM getirmesiz 0/21,99; ilk 1 132/33,07; ilk 5 660/39,39; çıkarımcı 37/36,57;
+    özetleyici 36/37,04; TriviaQA 0/49,33; 136/57,84; 677/62,37; 38/58,99; 32/58,68; dil
+    modellemede ilk 1 belge ilk 5'ten iyi. Xu ve ark. (ICLR 2024, NVIDIA) Tablo 2 Llama2-70B
+    ortalama: 4k 31,61; 4k+ret 36,02; 16k 36,78; 16k+ret 37,23; 32k 37,36; 32k+ret 39,60; GPT-43B
+    4k+ret 29,32 ↔ 16k 29,45.
+118. **RAG değerlendirme sayıları (Batch 10).** Es ve ark. (EACL 2024 demo): sadakat = desteklenen
+    ifade / bütün ifadeler; insanla uzlaşma RAGAS 0,95/0,78/0,70 (sadakat/cevap/bağlam), GPT
+    puanı 0,72/0,52/0,63, GPT sıralaması 0,54/0,40/0,52. Adlakha ve ark. (TACL 12, 2024): 1.800
+    cevap; doğrulukta Kendall τ EM 27,3, F1 40,2, Recall 55,6, GPT-4 67,5; sadakatte K-Precision
+    43,4, LLMCritic GPT-4 55,0, K-F1 −8,4. Yang ve ark. (NeurIPS 2024 D&B): puanlama 1 / 0,5 / 0
+    / −1; GPT-4 Turbo yalnız model doğru/uydurma/eksik/güvenilirlik 33,5/13,5/53,0/20,0; Task 3
+    43,6/30,1/26,3/13,4; LLM'ler ≤%34, düz RAG ≤%44, endüstri %63 uydurmasız; dinamizm payları
+    gerçek zamanlı %10, hızlı değişen %13, yavaş değişen %23, statik %54. Salemi & Zamani (SIGIR
+    2024) Tablo 1 (BM25, Kendall τ, NQ / HotpotQA): cevabı içerme 0,349/0,359; KILT kanıt
+    0,181/0,007; LLM ilgililik 0,045/0,034; eRAG 0,492/0,610. Niu ve ark. (ACL 2024): 2.965 örnek
+    × 6 model = 17.790 cevap; %43,1'i uydurmalı; QA'da %29,1; model başına uydurmalı cevap (2.965
+    içinden) GPT-3.5 401, GPT-4 406, Llama-2-7B 1.832, 13B 1.677, 70B 1.395, Mistral-7B 1.953;
+    QA'da GPT-4 48/989, Mistral 378/989; yoğunluk (yüz kelime başına parça) QA GPT-4 0,06,
+    veriden metne 0,27; etiketleyici uyuşması %91,8. Chen ve ark. (AAAI 2024) ChatGPT İngilizce:
+    gürültü 0/0,2/0,4/0,6/0,8 → 96,33/94,67/94,00/90,00/76,00; reddetme 24,67 (tam) / 45,00
+    (ChatGPT ölçümü); bütünleştirme 55/51/34 (gürültü 0/0,2/0,4); karşıolgusal Acc 89, belgeli 9,
+    hata tespiti 8 (tam) / 7, düzeltme 57,14. Rashkin ve ark. (CL 49(4), 2023): "According to P,
+    s" testi. Gao ve ark. (EMNLP 2023) ASQA ChatGPT: vanilla 5 parça akıcılık/doğruluk/atıf
+    bulma/kesinlik 66,6/40,4/73,6/72,5; yeniden sıralamalı 77,0/40,2/84,8/81,6; kapalı kitap +
+    sonradan atıf 52,7/38,3/26,7/26,7; ELI5 vanilla 57,2/12,0/51,1/50,0. Liu, Zhang & Liang
+    (Findings EMNLP 2023): cümlelerin %51,5'i tam destekli, atıfların %74,5'i destekliyor, atıf
+    kesinliği ↔ algılanan fayda r = −0,96. Yue ve ark. (Findings EMNLP 2023): üç sınıf; GPT-4
+    GenSearch genel F1 84,3, çelişki en zor. Zheng ve ark. (NeurIPS 2023 D&B): GPT-4 ↔ insan %85
+    (beraberliksiz), insan ↔ insan %81; konum yanlılığı tutarlılık/ilk kayırma Claude-v1
+    23,8/75,0, GPT-3.5 46,2/50,0, GPT-4 65,0/30,0. Wang ve ark. (ACL 2024): Vicuna-13B 80 sorunun
+    66'sında ChatGPT'yi geçiyor (ChatGPT hakem); MEC/BPC uzlaşmayı +9,8 / +14,3. Saad-Falcon ve
+    ark. (NAACL 2024): ~150 insan etiketi; Kendall τ 0,91 (bağlam) ve 0,97 (cevap); RAGAS'tan
+    bağlam ilgililiğinde 0,16 yüksek.
+119. **Getirerek akıl yürütme sayıları (Batch 10).** Press ve ark. (Findings EMNLP 2023):
+    davinci-002 CC 2 adımlı %45,4; en zor kategoride alt sorular %80, bileşik %1,2; açık ~%40 ve
+    ölçekle sabit; Tablo 1 (Bamboogle / 2Wiki / MuSiQue): doğrudan 17,6/25,4/5,6; CoT
+    46,4/29,8/12,6; yalnız arama 0,0/2,2/1,5; self-ask 57,6/30,0/13,8; self-ask + arama
+    60,0/40,1/15,2. Trivedi ve ark. (ACL 2023): GPT3 bulma oranı +11,3/22,6/12,5/21,2
+    (HotpotQA/2Wiki/MuSiQue/IIRC), Flan-T5-XXL +7,9/14,3/3,5/10,2; QA F1 GPT3 +7,1/13,2/7,1 (IIRC
+    değişmedi); Flan-T5-XL 3B, 58 kat büyük GPT3'ün tek adımlısını geçiyor. Shao ve ark. (Findings
+    EMNLP 2023) HotpotQA EM: getirmeli doğrudan 31,6, ReAct 24,9, Self-Ask 36,8, Iter-RetGen
+    1/2/3/7: 39,2/44,1/45,2/45,1; maliyet (HotpotQA) ReAct 2,9 çağrı / 14,3 paragraf, Self-Ask
+    3,2 / 16,0. Yao ve ark. (ICLR 2023) PaLM-540B HotpotQA EM / Fever: Standard 28,7/57,1; CoT
+    29,4/56,3; CoT-SC 33,4/60,4; Act 25,7/58,9; ReAct 27,4/60,9; CoT-SC→ReAct 34,2/64,6;
+    ReAct→CoT-SC 35,1/62,0; insan incelemesi: doğru cevaplarda uydurma ReAct %6 ↔ CoT %14;
+    yanlışlarda uydurma %0 ↔ %56, akıl yürütme hatası %47, arama sonucu hatası %23; ALFWorld
+    +%34, WebShop +%10. Jiang ve ark. (EMNLP 2023) 2WikiMultihopQA EM: getirmesiz 28,2; tek 39,4;
+    önceki pencere 43,2; önceki cümle 39,0; soru ayrıştırma 47,8; FLARE 51,0. Asai ve ark. (ICLR
+    2024): dört yansıma token'ı; 150 bin çift; PopQA / ASQA atıf kesinliği / bulma oranı:
+    Llama2-7B getirmeli 38,2 / 2,9 / 4,0; Ret-ChatGPT 50,8 / 65,1 / 76,6; Self-RAG 7B 54,9 / 66,9
+    / 67,8; 13B 55,8 / 70,3 / 71,3; ChatGPT getirmesiz PopQA 29,3. Xiong ve ark. (ICLR 2021):
+    HotpotQA R@2 65,9 (TF-IDF 10,3), R@10 77,5, R@20 80,2. Yang ve ark. (EMNLP 2018): 113 bin
+    soru; 1.000 örnekte insan EM 83,60, temel model dikkat dağıtıcılı 60,88. Trivedi ve ark.
+    (TACL 10, 2022): bağlantısız akıl yürütme (DiRe) cevap puanı HotpotQA 68,8, 2Wiki 63,4,
+    MuSiQue-Ans 37,8 (**dikkat:** tablodaki 93,0 ve 98,5 destekleyici olgu sütunlarıdır). Schick
+    ve ark. (NeurIPS 2023): GPT-J 6,7B + araçlar T-REx 53,5 ↔ GPT-3 39,8; ASDiv 40,4 ↔ 14,0.
+    **Seri türetimi:** 0,9 × 0,8 = 0,72; üç halkada 0,58.
+120. **Batch 10'un kaynaklarının tamamı hakemlidir; hakemsiz listeye kalem eklenmedi.** 43'te on
+    beş, 44'te on üç, 45'te on üç, 46'da on kaynak (toplam 51; DPR ve Cuconasu iki makalede
+    ortak). Yerler: VLDB, IEEE Trans. Big Data, IEEE TPAMI (×2), NeurIPS (×5), PMLR (×2), Inf.
+    Syst., CIKM (×2), SIGIR (×3), VLDB J., WWW, NAACL (×3), EMNLP (×9), ACL (×5), EACL (×2),
+    Findings EMNLP (×5), Findings NAACL, TACL (×3), CL, AAAI, ICLR (×5). Karar #113 uygulandı:
+    ICLR/NeurIPS venue'leri DBLP ile, dergi künyeleri Crossref API'siyle
+    (`https://api.crossref.org/works/<doi>`) ve ACL Anthology sayfa başlıklarıyla doğrulandı.
+    Aday olup **kullanılmayanlar:** Search-R1 (Jin ve ark.) — PDF "COLM 2025" diyor ama DBLP
+    yalnızca CoRR gösteriyor ve OpenReview/COLM birincil sayfası bulunamadı, karar #113'ün ölçütü
+    karşılanamadı; "ANN Search: Recall What Matters" (Dimitropoulos & Mamoulis, arXiv 2606.04522)
+    ve "The Faiss library" (Douze ve ark., arXiv 2024) hakemsiz; Beam Retrieval (NAACL 2024) ve
+    ScaNN (ICML 2020) hakemli ama kapsam dışı bırakıldı; Andoni & Indyk (CACM 2008) kelime
+    bütçesi için çıkarıldı.
+
+## Batch 10 öğrenme notları (yazım tamamlandı)
+
+- **Faz 5'in gövdesi: dizin (43) → hat (44) → ölçüm (45) → döngü (46).** Batch tek yay olarak
+  okunuyor: 42'nin bıraktığı "en yakın k vektörü bul" borcu 43'te ödendi; 29'un "metnin nereden
+  kesileceği" borcu 44'te; 44'ün "puan nedir" sorusu 45'te; 45'in "hakem dışarıda" sınırı 46'da.
+  47'ye köprü, 46'nın kapanışındaki Toolformer paragrafıdır: arama yalnızca bir araçtır.
+- **Araştırma workflow'u bu run'da da kullanılamadı.** Başlatılan 12 agent'lık workflow oturum
+  kesilince JSON çıktı üretmeden durdu, ama agent'ların indirip metne çevirdiği ~55 PDF
+  (`artifacts/b10-research/pdf/*.txt`) diskte kaldı ve bütün araştırma bunların üzerinden ana
+  oturumda `grep`/`sed` ile yapıldı. Kural (Do-Not-Repeat 2026-08-25'in doğrulanması): agent
+  çıktısı dosyaya yazdırılır; kesinti sonrası önce disk envanteri çıkarılır.
+- **Künye doğrulamanın ucuz yolu Crossref API'sidir.** Dergi ve ACM künyeleri için
+  `https://api.crossref.org/works/<doi>` cilt/sayı/sayfa/yıl döndürüyor ve bot engeli yok;
+  ACL Anthology sayfa başlığı `curl` ile alınıyor; IEEE Xplore, Springer, ACM DL ve HAL WebFetch'e
+  403/challenge dönüyor. DBLP ICLR/NeurIPS/COLM için gerekli kalıyor (11 sn aralık kuralı geçerli).
+- **Tablo satırının ne ölçtüğü, sayıdan önce doğrulanır.** Üç yanlış okuma yazım sırasında
+  yakalandı: Wang ve ark. Tablo 1'deki "Hybrid 0,429 / 1,45 sn" satırı yalnız-melez değil,
+  HyDE'siz tam hattır (öteki modüller en iyi ayarda); MuSiQue DiRe satırındaki 93,0 cevap değil
+  destekleyici olgu puanıdır (2Wiki cevap 63,4); ReAct'te "döngü, sonra öz-tutarlılık" 35,1/62,0,
+  tersi 34,2/64,6'dır. Kural: tablo başlığını ve ablasyon çerçevesini satırla birlikte oku.
+- **Ürün kuantizasyonunun kaynak metni alınamadı.** HAL ve IEEE bot engeli; HAL API dosya adını
+  verdi ama indirme de engellendi. Mekanizma aynı yazarların hakemli Johnson ve ark. (2021)
+  anlatımından kuruldu; Jégou ve ark. (2011) yalnızca köken atfı için listelendi, sayı alınmadı.
+- **SVG gösterge sütunu 13 birimde en fazla ~20 karakter alır.** `check-series-svg.cjs`'in
+  tahmini karakter × 7,15; x=560'tan başlayan bir gösterge satırı 20 karakteri, x=590'dan
+  başlayan 18'i geçemez. Değer sütunu x=515'te durduğu için gösterge 560'tan önce başlayamaz;
+  çözüm değerleri çubukların hemen sağına (x≈424) çekip göstergeyi 500'e almak (44-Şekil 1).
+- **`font(-size` gibi tek karakterlik XML hatası denetleyiciden geçiyor.** `check-series-svg.cjs`
+  XML ayrıştırmıyor; 45-Şekil 1'deki hata yalnızca `ET.parse` ile yakalandı. Her batch'te XML
+  ayrıştırması rutin adım olmalı (Do-Not-Repeat 2026-08-30'un teyidi).
+- **Yerel dev sunucusu parola kapısı test parolasını kullanıyor.** `.env.local`'daki hash,
+  `playwright.config.ts`'teki `TEST_PASSWORD_HASH` ile aynı; render doğrulaması için kapıyı
+  aşmak yerine env değişkenlerini boş dizeyle ezerek (`SITE_PASSWORD_SHA256= AUTH_COOKIE_SECRET=`)
+  kapıyı kapatmak tercih edildi — `isGateIntended()` boş dizede false döner, middleware geçirir.
+- **Vaat defteri iki koordinat açmadı, hiç koordinat kapatmadı.** Dört makalenin numaralı
+  göndermelerinin tamamı ≤46'ya; ileri işaretlerin hepsi numarasız (50 için "ileride", 47 için
+  "bir sonraki makale").
 
 ## Batch 9 öğrenme notları (yazım tamamlandı)
 

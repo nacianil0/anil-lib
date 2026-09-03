@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 396" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı getirici, üç birim</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">ilk beş sonuçta bulma oranı; beş soru-cevap kümesinin ortalaması</text>
+
+  <line x1="200" y1="70" x2="200" y2="316" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="190" y="102" font-size="13" text-anchor="end" fill="var(--text-muted)">Contriever</text>
+  <rect x="200" y="80" width="129" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="90" font-size="13" text-anchor="start" fill="var(--text-muted)">43,0</text>
+  <rect x="200" y="96" width="142" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="106" font-size="13" text-anchor="start" fill="var(--text-muted)">47,3</text>
+  <rect x="200" y="112" width="158" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="424" y="122" font-size="13" text-anchor="start" fill="var(--text)">52,7</text>
+
+  <text x="190" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">SimCSE</text>
+  <rect x="200" y="142" width="103" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="152" font-size="13" text-anchor="start" fill="var(--text-muted)">34,3</text>
+  <rect x="200" y="158" width="123" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="168" font-size="13" text-anchor="start" fill="var(--text-muted)">40,9</text>
+  <rect x="200" y="174" width="139" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="424" y="184" font-size="13" text-anchor="start" fill="var(--text)">46,3</text>
+
+  <text x="190" y="226" font-size="13" text-anchor="end" fill="var(--text-muted)">DPR</text>
+  <rect x="200" y="204" width="172" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="214" font-size="13" text-anchor="start" fill="var(--text-muted)">57,3</text>
+  <rect x="200" y="220" width="178" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="230" font-size="13" text-anchor="start" fill="var(--text-muted)">59,2</text>
+  <rect x="200" y="236" width="180" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="424" y="246" font-size="13" text-anchor="start" fill="var(--text)">59,9</text>
+
+  <text x="190" y="288" font-size="13" text-anchor="end" fill="var(--text-muted)">GTR</text>
+  <rect x="200" y="266" width="196" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="276" font-size="13" text-anchor="start" fill="var(--text-muted)">65,2</text>
+  <rect x="200" y="282" width="200" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="424" y="292" font-size="13" text-anchor="start" fill="var(--text-muted)">66,7</text>
+  <rect x="200" y="298" width="204" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="424" y="308" font-size="13" text-anchor="start" fill="var(--text)">68,0</text>
+
+  <rect x="500" y="84" width="22" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="530" y="95" font-size="13" text-anchor="start" fill="var(--text)">parça · 58,5 kelime</text>
+  <rect x="500" y="112" width="22" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="530" y="123" font-size="13" text-anchor="start" fill="var(--text)">cümle · 21,0 kelime</text>
+  <rect x="500" y="140" width="22" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="530" y="151" font-size="13" text-anchor="start" fill="var(--text)">önerme · 11,2 kelime</text>
+  <text x="500" y="182" font-size="13" text-anchor="start" fill="var(--text-faint)">üstteki ikisi denetimsiz,</text>
+  <text x="500" y="200" font-size="13" text-anchor="start" fill="var(--text-faint)">alttaki ikisi parça</text>
+  <text x="500" y="218" font-size="13" text-anchor="start" fill="var(--text-faint)">çiftleriyle eğitilmiş</text>
+
+  <line x1="16" y1="336" x2="704" y2="336" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="360" font-size="13" text-anchor="start" fill="var(--text-muted)">birim küçüldükçe bulma oranı artıyor; fark parça çiftleriyle eğitilmiş getiricilerde daralıyor</text>
+  <text x="16" y="382" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı Wikipedia: 41 milyon parça, 114 milyon cümle, 257 milyon önerme</text>
+</svg>

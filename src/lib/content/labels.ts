@@ -32,7 +32,7 @@ export const STATUS_LABELS: Record<ReadingStatus, string> = {
 
 /** Centralized interface copy, written from the reader's side of the screen. */
 export const UI = {
-  libraryTitle: "Yapay Zekâyı Okumak",
+  libraryTitle: "Okuma Odası",
   librarySubtitle: "Temellerden sınıra, sıralı bir okuma rehberi.",
   skipToContent: "İçeriğe geç",
   openReadingList: "Okuma listesini aç",
@@ -83,9 +83,6 @@ export const UI = {
   textSize: "Metin boyutu",
   lineSpacing: "Satır aralığı",
   paragraphSpacing: "Paragraf aralığı",
-  textAlignment: "Metin hizası",
-  alignLeft: "Sola",
-  alignJustify: "İki yana",
   firstLineIndent: "İlk satır girintisi",
   indentNone: "Yok",
   indentSubtle: "Hafif",
@@ -118,8 +115,11 @@ export const UI = {
   letterSpacingNormal: "Normal",
   letterSpacingRelaxed: "Ferah",
   focusMode: "Odak modu",
+  focusModeHint: "Kenar çubuğunu gizler",
   focusModeEnter: "Odak modunu aç",
   focusModeExit: "Odak modundan çık",
+  lineGuide: "Satır kılavuzu",
+  lineGuideHint: "Satırları dönüşümlü tonlar",
   decreaseTextSize: "Metni küçült",
   increaseTextSize: "Metni büyüt",
   resetPreferences: "Tercihleri sıfırla",
@@ -139,9 +139,6 @@ export const UI = {
   restoredNotice: "Kaldığın yere dönüldü",
   startOver: "Baştan başla",
   dismiss: "Kapat",
-  coloredLines: "Renkli satırlar",
-  coloredLinesOn: "Açık",
-  coloredLinesOff: "Kapalı",
 } as const;
 
 export function pad(order: number): string {

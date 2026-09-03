@@ -37,7 +37,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
             Özel kütüphane
           </p>
           <h1 className="mt-3 font-serif text-[1.75rem] font-semibold leading-tight text-text">
-            Yapay Zekâyı Okumak
+            Okuma Odası
           </h1>
           <p className="mt-3 font-sans text-sm leading-relaxed text-text-muted">
             Okuma listesine erişmek için kullanıcı adını ve şifreni gir.

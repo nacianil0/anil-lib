@@ -2,7 +2,7 @@
 
 > OpenWolf's learning memory. Updated automatically as the AI learns from interactions.
 > Do not edit manually unless correcting an error.
-> Last updated: 2026-09-02
+> Last updated: 2026-09-03
 
 ## User Preferences
 
@@ -14,6 +14,8 @@
 - When the user explicitly says to finish an already-scoped feature, proceed through implementation and verification without reopening settled design questions.
 - For prompt-architecture audits, preserve the full academic/product intent and complete audit → edit → fresh verification without intermediate approval unless a genuinely external decision remains.
 - For the Fable series workflow, the production default is `5+1`; only the exact current-run assignment `BATCH=N+1` overrides it. Do not infer an override from unrelated numbers or plain article-count prose.
+
+- [2026-09-03] Seri üretiminde (Batch 10) kullanıcı workflow/subagent/background agent ve toplu orkestrasyon betiklerinin (shot-batchN.mjs, figs-bN.mjs dahil) görevi devretmek için kullanılmasını açıkça yasakladı: araştırma, karar, üretim ve doğrulama ana oturumda adım adım, komutlar doğrudan çalıştırılarak yapılır; render doğrulaması tarayıcı panosundan elle. Gerçek belirsizlikte tahmin yerine soru sorulur.
 
 ## Key Learnings
 
@@ -199,6 +201,22 @@ ode_modules`, sonra kopyayi sil.
 - Aynı anda birden fazla `next dev` sunucusu (`pnpm dev` + Playwright webServer) tek bir `.next` dizinini paylaşır ve birbirinin derlemesini bozar. Tarayıcı doğrulaması ile e2e'yi aynı anda çalıştırma; şüphede `rm -rf .next`.
 - E2E'de localStorage fixture'ı `page.evaluate` ile yüklemek yarış yaratır: provider'ın 250ms throttle'lı yazması fixture'ı ezer. `page.addInitScript` + `page.goto` kullan.
 
+- [2026-09-03] Künye doğrulama kanalları (Batch 10): dergi/ACM için `https://api.crossref.org/works/<doi>` (bot engeli yok; cilt/sayı/sayfa/yıl); ACL Anthology için sayfa `<title>` `curl` ile; ICLR/NeurIPS/COLM için DBLP (11 sn aralık). IEEE Xplore, Springer, ACM DL ve HAL WebFetch'e 403/challenge döner; PDF'ler arXiv/Anthology'den `curl` + `pypdf`.
+- [2026-09-03] Yerel dev sunucusunun parola kapısı: `.env.local`, `playwright.config.ts`'teki test hash'iyle aynı. Kapıyı kapatmanın temiz yolu env'i BOŞ dizeyle ezmek (`SITE_PASSWORD_SHA256= AUTH_COOKIE_SECRET= corepack pnpm dev -p 3210`): `@next/env` boş dizeyle gelen değişkeni `.env.local`'dan yeniden yüklemez, `isGateIntended()` false döner ve middleware geçirir. Geçersiz (dolu) bir değer vermek ise `/login?error=config`'e yönlendirir.
+- [2026-09-03] `.claude/launch.json` ile Git Bash başlatırken `bash` çıplak adı bulunamıyor; tam yol `C:\Users\<user>\AppData\Local\Programs\Git\usr\bin\bash.exe` ve komut başında `export PATH="/usr/bin:$PATH"` gerekir, yoksa `corepack` kabuk şimi `sed`/`dirname` bulamaz.
+- [2026-09-03] Tarayıcı panosunda seri render matrisi (3 genişlik × 3 tema) `browser_batch` ile alınır (en fazla 25 eylem/batch): ölçüm fonksiyonunu `localStorage`'a yazıp `eval(localStorage.getItem('b10m'))()` ile çağırmak batch boyutunu küçültür. Dev sunucusu başka bir süreçle (ör. rota sweep) meşgulken `navigate` sonrası ölçüm boş sayfa (figs 0, mainText 0) dönebilir; `navigate`'ten sonra `wait 3` koy ve `figs`/`mainText` değerlerini kontrol et.
+- [2026-09-03] Bash aracında `while read r; do curl ... $r; done < dosya` döngüsü Windows'ta iki tuzak taşıyor: Python'un yazdığı dosya CRLF'li olur ve `$r` sonundaki `\r` curl'ü 000'e düşürür; ayrıca döngü sessizce asılı kalabiliyor (10 dk timeout). Rota sweep'i Python `urllib` ile yap (47 rota 28 sn).
+- [2026-09-03] Seri araştırma workflow'u kesintiyle durduğunda agent'ların indirdiği PDF/txt dosyaları `artifacts/b10-research/pdf/` altında kalır; yeniden başlatmadan önce dizini envanterle (bu run'da ~55 kaynağın metni hazırdı).
+- Reader'daki "Renkli satırlar" 2026-09-03'te "Satır kılavuzu"na dönüştü: cümle span'leri ve dört ton kalktı; `p`/`li` bloklarına yalnızca CSS ile `2lh` periyotlu dönüşümlü bant (`--reader-line-band`, temaya göre ~%5-6 mürekkep) çiziliyor. Tercih anahtarı `lineGuide`; `storage.ts` eski `coloredLines` değerini taşır.
+- Metin hizası artık tercih değil: `.prose-reader :is(p, li, blockquote)` sabit `text-align: justify`. `textAlign` anahtarı şemadan kalktı (zod strip eder); `textAlign` içeren eski kayıt "iki yana yaslı öncesi" sayılır ve `hyphenation: off` ise `auto`ya taşınır. Varsayılan heceleme `auto`.
+- CSS çok sütunlu (paged) düzende bloğun arka planı varsayılan `box-decoration-break: slice` ile ilk sütunun altındaki boş payı da fazına katar; satır bantları ikinci sütunda kayar. `clone` her parçada fazı sıfırlar (Chromium 130+ blok parçalanmasında destekliyor; ölçüm: parçalar arası faz farkı 0).
+- `lh` birimi Chromium'da satır kutusuyla birebir (14 blok, 3 tema, 5 tipografi kombinasyonunda sapma ≤ 0.005 lh); `calc(var(--reader-line-height) * 2em)` yedeği aynı değeri verir.
+- Reader'da sticky `header` `z-40` ile kendi stacking context'ini açar; içindeki ayar paneli (`z-[55]`) header dışındaki `fixed z-50` bir öğenin ALTINDA kalır. Header dışı yüzer öğeler (resume-notice) `z-30`'da tutulmalı.
+- Headless Chromium'da (Playwright) Türkçe heceleme sözlüğü yok: `hyphens: auto` görsel olarak `none` ile aynı çıkar. Heceleme kanıtı ancak gerçek Chrome/Safari'de alınabilir; raporda belirt.
+- Bu makinede birden fazla Claude oturumu aynı worktree'de çalışabiliyor (`ListAgents`). `.next` paylaşıldığı için `rm -rf .next`/`pnpm build` yapmadan önce `SendMessage` ile koordine et; diğer oturum kendi kopyasında (`D:\dev\anil-lib-b10-render`, port 3210) çalışıyorsa çakışma yok.
+- Repo dosyaları CRLF, prettier varsayılanı LF: `prettier --check` dokunulmamış dosyalarda bile uyarır. Gerçek biçim farkını `prettier <dosya> | diff --strip-trailing-cr - <dosya>` ile ayır; `--write` sonrası git diff satır sonlarını göstermez (autocrlf).
+- Tarayıcı panosunda (in-app Browser) `computer` tıklaması Next server-action formunu göndermeyebiliyor ve `browser_batch` içindeki screenshot zaman aşımına düşebiliyor; giriş için `form.requestSubmit()` (javascript_tool), kanıt için Playwright betiği (`artifacts/ux-render/shot.mjs`) daha güvenilir.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -337,6 +355,19 @@ ode_modules`, sonra kopyayi sil.
 - Reader'da konum geri yükleme hatasını tahminle kovalamaya çalıştım (üç tur yanlış hipotez). Doğru yol: `window.scrollTo` ve `Element.prototype.scrollIntoView`'i geçici olarak sarmalayıp çağıran yığınıyla loglayan bir Playwright probe'u yazmaktı — 206px'lik gizemli kaydırmanın kaynağı (sidebar) tek çalıştırmada ortaya çıktı.
 - Görsel doğrulamayı "makul görünüyor" ile geçme: 375px'te bölüm göstergesinin 4px'e düştüğü ve panelin 768px'te 41px taştığı ancak `getBoundingClientRect` ölçümüyle görüldü.
 
+- [2026-09-03] Bir ablasyon tablosundaki satırı okurken tablonun çerçevesini de oku. Wang ve ark. (EMNLP 2024) Tablo 1'de "+ Hybrid 0,429 / 1,45 sn" satırı yalnız-melez getirme değil, öteki modüller en iyi ayardayken HyDE'siz tam hattır; ilk taslak bunu "yalnızca melez arama" diye yazmıştı. Aynı run'da MuSiQue DiRe satırındaki 93,0 cevap değil destekleyici olgu sütunuydu ve ReAct'in iki birleşim satırı (35,1/62,0 ↔ 34,2/64,6) yer değiştirmişti. Sayıyı yazmadan önce sütun başlığını ve satırın koşulunu satırla birlikte yeniden oku.
+- [2026-09-03] SVG'yi `check-series-svg.cjs`'den geçirip XML ayrıştırmadan bırakma: `font(-size` gibi tek karakterlik yazım hatası denetleyiciden geçiyor, `rehype-inline-svg` sayfada patlıyor. Her yeni SVG için `python -c "import xml.etree.ElementTree as ET; ET.parse(f)"` çalıştır (2026-08-30 kuralının teyidi).
+- [2026-09-03] SVG gösterge sütununu x=560'tan başlatıp 20 karakterden uzun etiket koyma; denetleyicinin taşma tahmini (karakter × 7,15) 720'yi aşar. Etiket uzunsa değer sütununu çubukların hemen sağına (x≈424) çek ve göstergeyi x≈500'e al (44-Şekil 1 böyle düzeltildi).
+- [2026-09-03] Bash aracında `cd <göreli>` ile başlayan komutlar bir önceki çağrının cwd'sinde kalır (cwd çağrılar arasında korunur); `cd artifacts/...` bir kez başarılı olunca sonraki `cd artifacts/...` "No such file" der ve fonksiyon tanımı `&&` zinciriyle atlanır. Çok adımlı işlerde her zaman mutlak yol kullan (2026-08-29 kuralının yeni yüzü).
+- [2026-09-03] HAL/IEEE'den PDF almak için sırayla mirror denemeye zaman harcama (inria.hal.science, hal.science, lear.inrialpes.fr, irisa.fr — hepsi bot engeli/404). Aynı yazarların hakemli bir devam çalışması varsa (Johnson ve ark. 2021, PQ için) mekanizmayı oradan kur ve köken atfını Crossref'le doğrulanmış künyeyle ver; HANDOFF'a "metni alınamadı" notu düş.
+
+- [2026-09-03] Depoda `next dev` başlatmadan ya da `.next`'i silmeden ÖNCE `netstat -ano | grep LISTENING | grep ':3[0-9][0-9][0-9]'` ve `Get-CimInstance Win32_Process -Filter "name='node.exe'"` ile paralel oturumu kontrol et — run başında değil, o an. Batch 10'da run başında port yoktu; 13:48'de başka bir Claude oturumu 3000'de `pnpm dev` açtı ve benim iki `rm -rf .next`'im onun sunucusunu 500'e düşürdü, onun sunucusu da benimkinin `.next`'ini bozdu (vendor-chunks/manifest ENOENT, `/seri/[slug]` 404). Paralel sunucu varsa doğrudan HANDOFF'un izole kopya yoluna geç (tar kopya + junction + kapısız dev, 3210).
+- [2026-09-03] `next dev` çalışırken 47 rotayı arka arkaya vuran bir sweep'i tarayıcı gezintileriyle eşzamanlı çalıştırma; aynı sunucuda önce ısıtma (sıralı curl), sonra tarayıcı ölçümü. Tema değişimi için sayfayı yeniden yüklemek yerine `documentElement.classList` üzerinde `dark`/`sepia` sınıfını değiştirip ölç — CSS değişkenleri sınıfa bağlı, sonuç aynı, `[Error: aborted]` yarışları kalkıyor.
+- [2026-09-03] Satır bantlarını çok sütunlu düzende `box-decoration-break` vermeden bırakma: ilk sütun parçası sütun sonuna kadar uzar, ikinci sütunda bant satırdan 3-10 px kayar. Bant kuralına `-webkit-box-decoration-break: clone; box-decoration-break: clone;` ekle ve parçalar arası fazı ölç.
+- [2026-09-03] İki yana yaslı metni hecelemesiz mobilde "tamam" sayma: 375 px'te belirgin nehirler oluşuyor (ekran görüntüsüyle doğrulandı). Yaslama politikası değişince heceleme varsayılanını da birlikte değiştir ve eski kayıtları taşı.
+- [2026-09-03] Header içindeki bir panelin z-index'ini yükselterek header dışı bir öğenin üstüne çıkarmaya çalışma; header'ın stacking context'i (z-40) tavandır. Dıştaki öğeyi düşür (resume-notice z-50 → z-30).
+- [2026-09-03] Paralel oturum varken dev sunucusunu açıp `.next`'in silinmeyeceğini varsayma; 13:50'de diğer oturum `.next`'i sildi ve sayfa 500 verdi (`routes-manifest.json` yok). Önce `ListAgents` + `SendMessage` ile koordine et.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -438,3 +469,8 @@ Tetikleyiciye göre `absolute right-0` konumlanma, 640–800px arasında panelin
 viewport dışına taşırıyordu. Genişliği kısıtlamak yerine panel `sm:` üstünde viewport'a
 sabitlendi; mobilde zaten alt sayfa. Böylece hiçbir genişlikte taşma matematiksel olarak
 mümkün değil.
+
+### Batch 10 başlıkları neden Türkçeleştirildi (2026-09-03)
+- 43 "İndeksleme" → "Dizinleme": terim defteri "dizin"i 41/42'de kurmuştu ve gövdede "indeksleme" hiç geçmeyecekti (başlıktaki terimin gövdede kurulması kuralı). 44 "Chunking, Rerank" → "Parçalama, Yeniden Sıralama": yeniden sıralayıcı 29'da kurulu, parçalama 44'te kuruldu. 46 "Retrieval-Reasoning Sistemleri" → "Getirerek Akıl Yürüten Sistemler": iki terim de defterde. "RAG" kısaltması karar #108 gereği korundu; 47'nin "Function Calling"i o run'a bırakıldı. Bağlayıcı karar #115.
+- [2026-09-03] "Renkli satırlar" cümle boyaması yerine tonsuz dönüşümlü satır bandı ("Satır kılavuzu"). Gerekçe: özellik satırı değil cümleyi boyuyor, dört ton dekoratif/oyuncak görünüyordu ve naif bölücü kısaltmalarda yanlış bölüyordu; dönüşümlü bant satır sonundan dönüşte (return-sweep) komşu satırı ayırt ettirir, renksizdir, DOM'a dokunmaz, sayfalı düzende ve üç temada çalışır. Pointer izleyen okuma cetveli etkileşim gerektirdiği, BeeLine gradyanı JS satır tespiti istediği için elendi.
+- [2026-09-03] Ürün adı "Yapay Zekâyı Okumak" → "Okuma Odası": iki seriyi (YZ + Boğaziçi CmpE) kapsayan, sloganvari olmayan bir ad. Ana sayfada Sparkles/ikonlu başlıklar, `%0` + bar ve "Yaşayan yol haritası" kalktı; seri ilerlemesi makale başına hücreli 3 px şerit + "3 / 46 tamamlandı" metniyle veriliyor.

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-02T05:50:12.064Z
-> Files: 2 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-03T11:15:45.078Z
+> Files: 54 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -11,6 +11,7 @@
 
 ## .claude/
 
+- `launch.json` (~56 tok)
 
 ## .claude/rules/
 
@@ -23,6 +24,10 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/47dcc4fc-d5cd-487c-895e-0d8b267108b0/scratchpad/
+
+- `wolf_update.py` — read, write, insert_into_section, l_startswith (~3275 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/
 
@@ -51,6 +56,19 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/
+
+- `gloss_scan.py` (~219 tok)
+- `retitle.py` — edit (~502 tok)
+- `wolf_update.py` — read, write, insert_before, 2 (~3191 tok)
+- `wolf_update2.py` — read, write (~813 tok)
+- `yh_decisions.md` (~3338 tok)
+- `yh_insert.py` — read, insert_before, insert_after_line (~803 tok)
+- `yh_notes.md` — Batch 10 öğrenme notları (yazım tamamlandı) (~805 tok)
+- `yh_promises.md` (~144 tok)
+- `yh_repeats.md` — ## Batch 10'da gerçekleşen tekrarlar (planlananların tahsili) (~1836 tok)
+- `yh_terms.md` (~1240 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9c68700c-4168-4b93-8b88-e7b6f013eca8/scratchpad/
 
 
@@ -61,6 +79,12 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/
 
 
+## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
+
+- `MEMORY.md` — Memory index (~94 tok)
+- `reader-line-guide-redesign.md` (~471 tok)
+- `workflow-policy-bounded-opus.md` (~373 tok)
+
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/
 
 
@@ -70,6 +94,15 @@
 ## Yeni içerik/yardımcılar (2026-09-02)
 
 
+## artifacts/b10-render/
+
+- `figs-b10.mjs` — Declares BASE (~502 tok)
+- `shot-batch10.mjs` — Declares BASE (~1818 tok)
+
+## artifacts/b10-research/
+
+- `titles-b10.txt` (~874 tok)
+
 ## artifacts/b7-render/
 
 
@@ -78,6 +111,10 @@
 
 ## artifacts/boun-render/
 
+
+## artifacts/ux-render/
+
+- `shot.mjs` — Render evidence for the line guide / justified text / home page work. (~2731 tok)
 
 ## boun/
 
@@ -213,6 +250,10 @@
 
 ## content/series/articles/agents-and-retrieval/
 
+- `parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md` — Görünmez kararlar (~6388 tok)
+- `rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md` — Tek sayı üç hatayı saklıyor (~6152 tok)
+- `ragin-otesi-getirerek-akil-yuruten-sistemler.md` — Tek getirmenin yetmediği soru (~5805 tok)
+- `vektor-veritabanlari-ve-dizinleme.md` — Sormadığımız soru (~8068 tok)
 
 ## content/series/articles/foundations/
 
@@ -298,8 +339,26 @@
 ## content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/
 
 
+## content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/
+
+- `dogru-belge-nerede.svg` (~1112 tok)
+- `getirme-hatti.svg` (~1508 tok)
+- `uc-birim-uc-bulma-orani.svg` (~1273 tok)
+
 ## content/series/assets/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci/
 
+
+## content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/
+
+- `getirme-ne-degistirdi.svg` (~820 tok)
+- `hakem-konum-yanliligi.svg` (~669 tok)
+- `uc-katman-uc-hata.svg` (~1052 tok)
+
+## content/series/assets/ragin-otesi-getirerek-akil-yuruten-sistemler/
+
+- `bilesim-acigi-ve-arama.svg` (~1295 tok)
+- `tek-getirme-ve-dongu.svg` (~1472 tok)
+- `yansima-tokenlari.svg` (~1119 tok)
 
 ## content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/
 
@@ -316,6 +375,12 @@
 ## content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/
 
 
+## content/series/assets/vektor-veritabanlari-ve-dizinleme/
+
+- `dizinden-veritabanina.svg` (~1284 tok)
+- `iki-butce-iki-bulma-orani.svg` (~954 tok)
+- `urun-kuantizasyonu.svg` (~1600 tok)
+
 ## content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/
 
 
@@ -324,6 +389,7 @@
 
 ## docs/seri/
 
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5083 tok)
 
 ## docs/superpowers/plans/
 
@@ -345,6 +411,8 @@
 
 ## src/app/
 
+- `globals.css` — Styles: 7 rules, 43 vars (~3972 tok)
+- `layout.tsx` — newsreader (~527 tok)
 
 ## src/app/api/reader-sync/
 
@@ -357,6 +425,7 @@
 
 ## src/app/login/
 
+- `page.tsx` — metadata — renders form (~1326 tok)
 
 ## src/app/read/
 
@@ -381,9 +450,15 @@
 
 ## src/components/dashboard/
 
+- `reader-dashboard.tsx` — Ana sayfada kendi satırıyla görünen bir öğrenme serisi. (~4713 tok)
 
 ## src/components/reader/
 
+- `markdown-components.tsx` — Wrap tables so wide content scrolls horizontally instead of stretching the page. (~374 tok)
+- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~4162 tok)
+- `reading-settings.test.tsx` — dialog (~2662 tok)
+- `reading-settings.tsx` — A boolean preference laid out like the segmented controls: label above, a (~5150 tok)
+- `resume-notice.tsx` — First words of the paragraph the reader was returned to, when one was anchored. (~628 tok)
 
 ## src/components/series/
 
@@ -399,12 +474,17 @@
 
 ## src/lib/content/
 
+- `labels.ts` — Turkish display labels for the controlled categories of every series. (~1525 tok)
 
 ## src/lib/db/
 
 
 ## src/lib/preferences/
 
+- `preferences.test.ts` — Declares result (~2266 tok)
+- `schema.ts` — Line guide: alternate line boxes carry a faint band so the eye can tell (~1024 tok)
+- `storage.ts` — Brings a payload written by an earlier reader up to the current preference set. (~866 tok)
+- `use-reader-preferences.tsx` — PreferencesContext (~1395 tok)
 
 ## src/lib/progress/
 
@@ -439,6 +519,8 @@
 
 ## tests/e2e/
 
+- `auth.spec.ts` — API routes: GET (1 endpoints) (~2321 tok)
+- `reader.spec.ts` — Page: authenticate, gotoFirst (~4402 tok)
 
 ## tools/
 

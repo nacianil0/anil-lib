@@ -4530,6 +4530,653 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-02T09:10:00.000Z"
+    },
+    {
+      "id": "bug-271",
+      "timestamp": "2026-09-03T07:44:57.293Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/vektor-veritabanlari-ve-dizinleme/dizinden-veritabanina.svg",
+      "root_cause": "Had \"89\"",
+      "fix": "Changed to \"80\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T07:44:57.293Z"
+    },
+    {
+      "id": "bug-272",
+      "timestamp": "2026-09-03T07:51:29.825Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md",
+      "root_cause": "Had 'ün alt satırları bu makalenin ekonomisi. Getirmes",
+      "fix": "Changed to 'ün alt satırları bu makalenin ekonomisi. Getirmes",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T07:51:29.825Z"
+    },
+    {
+      "id": "bug-273",
+      "timestamp": "2026-09-03T08:01:43.791Z",
+      "error_message": "Wrong reference: Kendall should be insan",
+      "file": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
+      "root_cause": "Used \"Kendall\" instead of \"insan\"",
+      "fix": "Changed Kendall → insan",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T08:01:43.791Z"
+    },
+    {
+      "id": "bug-274",
+      "timestamp": "2026-09-03T08:01:53.791Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
+      "root_cause": "Had 'ken 76,0. **Reddetme:** hiçbir belge cevabı içerm",
+      "fix": "Changed to 'ken 76,0. **Reddetme** (negative rejection): hiçb",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T08:01:53.791Z"
+    },
+    {
+      "id": "bug-275",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "check-series-content.cjs: düzyazı kelime sayısı 3505 (hedef 2.000–3.500) — makale 43 ilk taslak üst sınırı aştı",
+      "file": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "root_cause": "Üç dizin ailesi + ölçüm + veritabanı katmanı tek makaleye sığdırılırken LSH tarihçe paragrafı fazladan eklenmişti",
+      "fix": "LSH paragrafı ve Andoni & Indyk kaynağı çıkarıldı; 3.410 düzyazı kelimeye indi",
+      "tags": [
+        "seri",
+        "batch10",
+        "check-series-content",
+        "kelime-sayisi"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-276",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "xml.etree.ElementTree.ParseError: not well-formed (invalid token): line 25 — uc-katman-uc-hata.svg",
+      "file": "content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/uc-katman-uc-hata.svg",
+      "root_cause": "Elle yazılan SVG'de `font(-size=` yazım hatası; check-series-svg.cjs XML ayrıştırmadığı için görmedi",
+      "fix": "`font-size` düzeltildi; her yeni SVG ET.parse ile ayrıştırıldı",
+      "tags": [
+        "seri",
+        "svg",
+        "xml",
+        "batch10"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-277",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "check-series-svg.cjs: metin viewBox dışına taşıyor olabilir (44-Şekil 1 gösterge, 45-Şekil 2 alt yazı, 46-Şekil 1 gösterge, 43-Şekil 3 alt yazı)",
+      "file": "content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/uc-birim-uc-bulma-orani.svg",
+      "root_cause": "Gösterge sütunu x=560–598'den başlatılıp 18–25 karakterlik etiket konmuş; alt yazılar 95+ karakter",
+      "fix": "Değer sütunu x=424'e çekildi, gösterge x=500'e alındı; uzun alt yazılar iki satıra bölündü",
+      "tags": [
+        "seri",
+        "svg",
+        "tasma",
+        "batch10"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-278",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "Makale 44 taslağı Wang ve ark. Tablo 1'deki 'Hybrid 0,429 / 1,45 sn' satırını 'yalnızca melez arama' diye aktardı; small2big için 'hem sadakat hem ilgililik artıyor' yazıldı (ilgililik 95,37 = 95,37)",
+      "file": "content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md",
+      "root_cause": "Ablasyon tablosunun çerçevesi (öteki modüller en iyi ayarda) ve satır başlığı okunmadan sayı taşındı",
+      "fix": "Paragraf ve Şekil 3 alt metni 'HyDE'siz tam hat' olarak yeniden yazıldı; small2big cümlesi yalnızca sadakat artışıyla sınırlandı",
+      "tags": [
+        "seri",
+        "batch10",
+        "kaynak-okuma",
+        "tablo"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-279",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "Makale 46 taslağında ReAct birleşim satırı (34,2/64,6) yanlış düzene atfedildi ve MuSiQue DiRe puanı 93,0 (destekleyici olgu sütunu) cevap puanı diye yazıldı",
+      "file": "content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md",
+      "root_cause": "Çok sütunlu tablo satırlarında sütun eşlemesi doğrulanmadan sayı alındı",
+      "fix": "ReAct→CoT-SC 35,1/62,0 olarak düzeltildi, ters sıra ayrıca yazıldı; DiRe 2Wiki 63,4 olarak düzeltildi",
+      "tags": [
+        "seri",
+        "batch10",
+        "kaynak-okuma",
+        "tablo"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-280",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "preview_start: Command not found: `bash`; sonra `/c/Program Files/nodejs/corepack: sed: command not found` ile dev sunucusu düştü",
+      "file": ".claude/launch.json",
+      "root_cause": "Preview başlatıcısının PATH'inde Git Bash yok; bash tam yoluyla başlayınca da /usr/bin PATH'te olmadığı için corepack kabuk şimi çalışmadı",
+      "fix": "runtimeExecutable Git Bash tam yolu, komut başına `export PATH=\"/usr/bin:$PATH\"`; run sonunda launch.json özgün hâline döndürüldü",
+      "tags": [
+        "dev-server",
+        "launch.json",
+        "git-bash",
+        "batch10"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-281",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "Rota sweep: 46 rota 000 döndü (curl), ikinci deneme 10 dk timeout",
+      "file": "artifacts/b10-render/routes.txt",
+      "root_cause": "Python'un yazdığı rota listesi CRLF'liydi ve `$r` sonundaki CR URL'ye girdi; `while read` + curl döngüsü ayrıca asılı kaldı",
+      "fix": "Sweep Python urllib ile yeniden yazıldı (47 rota, 0 sorun, 28 sn)",
+      "tags": [
+        "seri",
+        "render",
+        "curl",
+        "crlf",
+        "batch10"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-282",
+      "timestamp": "2026-09-03T11:30:00",
+      "error_message": "Tarayıcı ölçümü 1440 genişlikte figs 0 / mainText 0 döndü (sayfa yüklenmeden ölçüldü)",
+      "file": "artifacts/b10-render/",
+      "root_cause": "Dev sunucusu eşzamanlı rota sweep'iyle meşgulken navigate hemen döndü, ölçüm boş DOM üzerinde çalıştı",
+      "fix": "navigate sonrasına `wait 3` eklendi ve ölçümler tekrarlandı; figs=3 doğrulandı",
+      "tags": [
+        "seri",
+        "render",
+        "browser",
+        "batch10"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:30:00"
+    },
+    {
+      "id": "bug-283",
+      "timestamp": "2026-09-03T10:54:37.911Z",
+      "error_message": "Wrong reference: TEXT_ALIGNMENTS should be PARAGRAPH_SPACINGS",
+      "file": "src/lib/preferences/schema.ts",
+      "root_cause": "Used \"TEXT_ALIGNMENTS\" instead of \"PARAGRAPH_SPACINGS\"",
+      "fix": "Changed TEXT_ALIGNMENTS → PARAGRAPH_SPACINGS",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:54:37.911Z"
+    },
+    {
+      "id": "bug-284",
+      "timestamp": "2026-09-03T10:54:54.113Z",
+      "error_message": "Wrong condition in logic",
+      "file": "src/lib/preferences/storage.ts",
+      "root_cause": "Condition was: if (!raw)",
+      "fix": "Changed to: if (!parsed || typeof parsed !== \"object\" || Array.isA)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:54:54.113Z"
+    },
+    {
+      "id": "bug-285",
+      "timestamp": "2026-09-03T10:55:00.862Z",
+      "error_message": "Wrong reference: textAlign should be paragraphSpacing",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Used \"textAlign\" instead of \"paragraphSpacing\"",
+      "fix": "Changed textAlign → paragraphSpacing",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:55:00.862Z"
+    },
+    {
+      "id": "bug-286",
+      "timestamp": "2026-09-03T14:05:00",
+      "error_message": "next dev (3210): Cannot find module './vendor-chunks/esprima@4.0.1.js'; ENOENT .next/server/pages/_document.js; sonra 'Failed to generate static paths for /seri/[slug]' ve app-paths-manifest.json ENOENT → rotalar 500/404",
+      "file": ".next/",
+      "root_cause": "Aynı proje dizininde iki `next dev` süreci (benim 3210 + başka bir oturumun 13:48'de açtığı 3000) `.next`'i paylaştı; ayrıca benim `rm -rf .next` komutum öteki sunucunun build çıktısını sildi",
+      "fix": "HANDOFF'un izole kopya yolu: `D:\\dev\\anil-lib-b10-render` (tar kopya, node_modules junction, .env.local yok) üzerinde 3210'da dev; ana worktree'de bir daha .next/build/dev işlemi yapılmadı; öteki oturuma mesajla bilgi verildi",
+      "tags": [
+        "dev-server",
+        "next",
+        "paralel-oturum",
+        ".next",
+        "batch10"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T14:05:00"
+    },
+    {
+      "id": "bug-287",
+      "timestamp": "2026-09-03T10:55:21.369Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/app/globals.css",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 9→6 lines (4 removed) | Also: --line-color-1: rgba(139, 63, 47, 0.1);; --line-color-2: rgba(70, 102, 117, 0.1);",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-03T10:55:23.604Z"
+    },
+    {
+      "id": "bug-288",
+      "timestamp": "2026-09-03T10:55:35.608Z",
+      "error_message": "CSS fix: text-align",
+      "file": "src/app/globals.css",
+      "root_cause": "text-align: var(--reader-text-align, left) → justify",
+      "fix": "Changed text-align: var(--reader-text-align, left) → justify",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:55:35.608Z"
+    },
+    {
+      "id": "bug-289",
+      "timestamp": "2026-09-03T10:55:37.133Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/content/labels.ts",
+      "root_cause": "Had \"Yapay Zekâyı Okumak\"",
+      "fix": "Changed to \"Okuma Odası\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:55:37.133Z"
+    },
+    {
+      "id": "bug-290",
+      "timestamp": "2026-09-03T10:55:38.146Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "17 lines replaced/restructured",
+      "fix": "Rewrote 17→29 lines (17 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:55:38.146Z"
+    },
+    {
+      "id": "bug-291",
+      "timestamp": "2026-09-03T10:55:47.584Z",
+      "error_message": "CSS fix: default, template, description",
+      "file": "src/app/layout.tsx",
+      "root_cause": "default: \"Yapay Zekâyı Okumak\", → \"Okuma Odası\",; template: \"%s — Yapay Zekâyı Okumak\", → \"%s — Okuma Odası\",; description: \"Yapay zekâ ve büyük dil modelleri üzerine, temellerden sınıra sıralı bir okuma rehberi.\", → \"Kişisel okuma odası: yapay zekâ ve bilgisayar mühendisliği üzerine sıralı öğrenme serileri.\",",
+      "fix": "Changed default: \"Yapay Zekâyı Okumak\", → \"Okuma Odası\",; template: \"%s — Yapay Zekâyı Okumak\", → \"%s — Okuma Odası\",; description: \"Yapay zekâ ve büyük dil modelleri üzerine, temellerden sınıra sıralı bir okuma rehberi.\", → \"Kişisel okuma odası: yapay zekâ ve bilgisayar mühendisliği üzerine sıralı öğrenme serileri.\",",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:55:47.584Z"
+    },
+    {
+      "id": "bug-292",
+      "timestamp": "2026-09-03T10:55:50.909Z",
+      "error_message": "Incorrect value in code",
+      "file": "tests/e2e/auth.spec.ts",
+      "root_cause": "Had \"Yapay Zekâyı Okumak\"",
+      "fix": "Changed to \"Okuma Odası\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:55:50.909Z"
+    },
+    {
+      "id": "bug-293",
+      "timestamp": "2026-09-03T10:58:16.898Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/reading-settings.test.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 10→5 lines (2 removed) | Also: fireEvent.click(controls.getByRole(\"switch\"));; expect(document.documentElement.style.getPropertyV",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-03T10:58:19.911Z"
+    },
+    {
+      "id": "bug-294",
+      "timestamp": "2026-09-03T10:58:21.409Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/reading-settings.test.tsx",
+      "root_cause": "Had \"justify\"",
+      "fix": "Changed to \"relaxed\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:58:21.409Z"
+    },
+    {
+      "id": "bug-295",
+      "timestamp": "2026-09-03T10:58:27.405Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/components/reader/reading-settings.test.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:58:27.405Z"
+    },
+    {
+      "id": "bug-296",
+      "timestamp": "2026-09-03T10:58:40.208Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/preferences/preferences.test.ts",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 18→43 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:58:40.208Z"
+    },
+    {
+      "id": "bug-297",
+      "timestamp": "2026-09-03T10:58:44.671Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/preferences/preferences.test.ts",
+      "root_cause": "Had \"--reader-paragraph-spacing\"",
+      "fix": "Changed to \");\n    expect(style.getPropertyValue(\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T10:58:44.671Z"
+    },
+    {
+      "id": "bug-298",
+      "timestamp": "2026-09-03T11:06:47.114Z",
+      "error_message": "CSS fix: hyphens",
+      "file": "src/app/globals.css",
+      "root_cause": "hyphens: var(--reader-hyphens, none) → var(--reader-hyphens, auto)",
+      "fix": "Changed hyphens: var(--reader-hyphens, none) → var(--reader-hyphens, auto)",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:06:47.114Z"
+    },
+    {
+      "id": "bug-299",
+      "timestamp": "2026-09-03T11:06:57.583Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/preferences/schema.ts",
+      "root_cause": "Had \"off\"",
+      "fix": "Changed to \"auto\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-03T11:06:59.089Z"
+    },
+    {
+      "id": "bug-300",
+      "timestamp": "2026-09-03T11:07:07.397Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/preferences/storage.ts",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 14→23 lines (7 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:07:07.397Z"
+    },
+    {
+      "id": "bug-301",
+      "timestamp": "2026-09-03T11:07:17.837Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/content/labels.ts",
+      "root_cause": "Had \"Kenar çubuğunu ve üst bilgiyi gizler\"",
+      "fix": "Changed to \"Kenar çubuğunu gizler\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:07:17.837Z"
+    },
+    {
+      "id": "bug-302",
+      "timestamp": "2026-09-03T11:07:20.094Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/reading-settings.test.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:07:20.094Z"
+    },
+    {
+      "id": "bug-303",
+      "timestamp": "2026-09-03T11:07:23.157Z",
+      "error_message": "CSS fix: hover",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "hover: bg-accent-fill\" → opacity-90\"",
+      "fix": "Changed hover: bg-accent-fill\" → opacity-90\"",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:07:23.157Z"
+    },
+    {
+      "id": "bug-304",
+      "timestamp": "2026-09-03T11:07:54.475Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:07:54.475Z"
+    },
+    {
+      "id": "bug-305",
+      "timestamp": "2026-09-03T11:08:02.637Z",
+      "error_message": "Null/undefined access in ",
+      "file": "artifacts/ux-render/shot.mjs",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:08:02.637Z"
+    },
+    {
+      "id": "bug-306",
+      "timestamp": "2026-09-03T11:12:38.921Z",
+      "error_message": "Dev sunucusu 500: ENOENT .next/routes-manifest.json; POST /login 404; 'Internal Server Error'",
+      "file": ".next (paylasilan dev cikti dizini)",
+      "root_cause": "Paralel Claude oturumu (anil-lib-c7) ayni worktree'de 13:4x-13:5x'te iki kez `rm -rf .next` calistirdi; 3000'de calisan `next dev` manifest dosyalarini kaybetti.",
+      "fix": "Port bosaltildi (netstat/taskkill), `.next` silinip dev sunucusu yeniden baslatildi; SendMessage ile diger oturuma `.next`/build/dev yapmamasi bildirildi, o da kendi kopyasinda (3210) calistigini dogruladi.",
+      "tags": [
+        "next-dev",
+        "parallel-session",
+        ".next",
+        "500",
+        "coordination"
+      ],
+      "related_bugs": [
+        "bug-128"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:12:38.921Z"
+    },
+    {
+      "id": "bug-307",
+      "timestamp": "2026-09-03T11:12:38.921Z",
+      "error_message": "Sayfali (iki sutun) duzende satir kilavuzu bantlari ikinci sutunda satirlardan 3-10 px kayiyor (fragHeightMod 0.105 / 0.311 lh)",
+      "file": "src/app/globals.css",
+      "root_cause": "Blok arka plani varsayilan `box-decoration-break: slice` ile parcalanir; ilk sutun parcasi sutun sonuna kadar uzadigi icin altindaki bos pay ikinci parcanin bant fazina eklenir.",
+      "fix": "Bant kuralina `-webkit-box-decoration-break: clone; box-decoration-break: clone;` eklendi; Playwright olcumunde parcalar arasi faz farki 0.0.",
+      "tags": [
+        "css",
+        "multicol",
+        "paged",
+        "line-guide",
+        "box-decoration-break"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:12:38.921Z"
+    },
+    {
+      "id": "bug-308",
+      "timestamp": "2026-09-03T11:12:38.921Z",
+      "error_message": "Okuma ayarlari paneli acikken 'Kaldigin yere donuldu' bildirimi panelin basligini ortuyor",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "Bildirim `fixed z-50`; panel sticky header'in (`z-40`) stacking context'i icinde `z-[55]` oldugu icin header disindaki z-50'nin altinda kaliyor.",
+      "fix": "Bildirim `z-30`'a alindi; header icindeki panel ve popover'lar artik ustte (Playwright ekran goruntusuyle dogrulandi).",
+      "tags": [
+        "z-index",
+        "stacking-context",
+        "reading-settings",
+        "resume-notice"
+      ],
+      "related_bugs": [
+        "bug-020",
+        "bug-267"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:12:38.921Z"
+    },
+    {
+      "id": "bug-309",
+      "timestamp": "2026-09-03T11:12:38.921Z",
+      "error_message": "Iki yana yasli metin 375 px'te hecelemesiz belirgin nehirler uretiyor ('Buradaki    basarisizlik    senin')",
+      "file": "src/lib/preferences/schema.ts, src/lib/preferences/storage.ts, src/app/globals.css",
+      "root_cause": "Hizalama herkes icin justify'a sabitlendi ama heceleme varsayilani sola hizali donemden kalan `off` idi; dar kolonda justify hecelemesiz kelime araliklarini asiri buyutur.",
+      "fix": "Varsayilan `hyphenation: auto`; `textAlign` anahtari tasiyan (politika oncesi) kayitlarda `off` → `auto` migrasyonu; `hyphenate-limit-chars: 8 4 3`. Not: headless Chromium'da Turkce sozluk olmadigi icin gorsel kanit gercek tarayici gerektirir.",
+      "tags": [
+        "typography",
+        "justify",
+        "hyphenation",
+        "mobile",
+        "preferences-migration"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T11:12:38.921Z"
     }
   ]
 }

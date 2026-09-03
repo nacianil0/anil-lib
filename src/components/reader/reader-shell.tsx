@@ -65,7 +65,6 @@ function ReaderShellInner({
     preferences.lineSpacing,
     preferences.measure,
     preferences.fontFamily,
-    preferences.textAlign,
     preferences.paragraphSpacing,
     preferences.firstLineIndent,
     preferences.hyphenation,
@@ -249,7 +248,7 @@ function ReaderShellInner({
     <div
       className="reader-shell flex min-h-screen bg-bg"
       data-reading-mode={effectiveMode}
-      data-colored-lines={preferences.coloredLines}
+      data-line-guide={preferences.lineGuide}
     >
       <a
         href="#main"

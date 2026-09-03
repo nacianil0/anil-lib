@@ -2216,3 +2216,202 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 08:41 | Edited src/lib/reader-layout/use-reader-layout.ts | 3→6 lines | ~54 |
 | 08:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/commitmsg.txt | — | ~694 |
 | 08:51 | Session end: 7 writes across 7 files (dec.py, notes.py, HANDOFF.md, cere.py, wolf_update.py) | 0 reads | ~14473 tok |
+
+## Session: 2026-09-02 22:19
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 22:20
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:27 | Batch 10 trigger: state zinciri yuklendi (HANDOFF/SOZLESME/YOL-HARITASI/cerebrum), BATCH=4+1 -> makale 43-46, kohort 10; arastirma workflow'u baslatiliyor | docs/seri/*, .wolf/* | ok | ~120k |
+| 22:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/retitle.py | — | ~502 |
+| 22:31 | Created artifacts/b10-render/shot-batch10.mjs | — | ~1818 |
+| 22:31 | Created artifacts/b10-render/figs-b10.mjs | — | ~502 |
+
+## Session: 2026-09-02 22:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-02 22:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:42 | Created artifacts/b10-research/titles-b10.txt | — | ~932 |
+
+## Session: 2026-09-03 10:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:31 | Batch 10 arastirma: ~55 birincil PDF metne cevrildi (artifacts/b10-research/pdf), Crossref+PDF basliklari+DBLP ile kunye dogrulamasi; PQ (Jegou 2011) metni alinamadi (HAL/IEEE bot engeli) | artifacts/b10-research | ok | ~250k |
+| 10:39 | Created content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | — | ~8823 |
+| 10:41 | Created content/series/assets/vektor-veritabanlari-ve-dizinleme/urun-kuantizasyonu.svg | — | ~1600 |
+| 10:41 | Created content/series/assets/vektor-veritabanlari-ve-dizinleme/iki-butce-iki-bulma-orani.svg | — | ~954 |
+| 10:41 | Created content/series/assets/vektor-veritabanlari-ve-dizinleme/dizinden-veritabanina.svg | — | ~1268 |
+| 10:42 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | removed 3 lines | ~11 |
+| 10:42 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | — | ~0 |
+| 10:42 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~28 |
+| 10:42 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~22 |
+| 10:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/gloss_scan.py | — | ~223 |
+| 10:44 | Edited content/series/assets/vektor-veritabanlari-ve-dizinleme/dizinden-veritabanina.svg | 1→2 lines | ~57 |
+| 10:44 | Edited content/series/assets/vektor-veritabanlari-ve-dizinleme/dizinden-veritabanina.svg | inline fix | ~22 |
+| 10:50 | Created content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | — | ~6782 |
+| 10:51 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~85 |
+| 10:51 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | "ün alt satırları bu makal" → "ün alt satırları bu makal" | ~208 |
+| 10:51 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~101 |
+| 10:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/gloss_scan.py | — | ~219 |
+| 10:52 | Created content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/uc-birim-uc-bulma-orani.svg | — | ~1301 |
+| 10:52 | Created content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/dogru-belge-nerede.svg | — | ~1104 |
+| 10:52 | Created content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/getirme-hatti.svg | — | ~1508 |
+| 10:54 | Edited content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/uc-birim-uc-bulma-orani.svg | 10→10 lines | ~292 |
+| 10:54 | Edited content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/dogru-belge-nerede.svg | 7→8 lines | ~225 |
+| 10:54 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~32 |
+
+## Session: 2026-09-03 10:58
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-03 10:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:59 | Created content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | — | ~6473 |
+| 11:00 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~67 |
+| 11:00 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~43 |
+| 11:00 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~32 |
+
+## Session: 2026-09-03 11:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:00 | Created content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/uc-katman-uc-hata.svg | — | ~1053 |
+| 11:00 | Created content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/getirme-ne-degistirdi.svg | — | ~822 |
+| 11:00 | Created content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/hakem-konum-yanliligi.svg | — | ~669 |
+| 11:01 | Edited content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/uc-katman-uc-hata.svg | inline fix | ~25 |
+| 11:01 | Edited content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/getirme-ne-degistirdi.svg | 2→2 lines | ~94 |
+| 11:01 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~21 |
+| 11:01 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~27 |
+| 11:01 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | 2→2 lines | ~17 |
+| 11:01 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~31 |
+| 11:01 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | "ken 76,0. **Reddetme:** h" → "ken 76,0. **Reddetme** (n" | ~157 |
+| 11:01 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~31 |
+| 11:03 | Edited content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/getirme-ne-degistirdi.svg | 2→2 lines | ~96 |
+| 11:06 | Created content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | — | ~5882 |
+| 11:07 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | 3→3 lines | ~30 |
+| 11:07 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~100 |
+| 11:07 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~60 |
+| 11:07 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~56 |
+| 11:07 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | 3→7 lines | ~307 |
+| 11:07 | Created content/series/assets/ragin-otesi-getirerek-akil-yuruten-sistemler/bilesim-acigi-ve-arama.svg | — | ~1295 |
+| 11:08 | Created content/series/assets/ragin-otesi-getirerek-akil-yuruten-sistemler/tek-getirme-ve-dongu.svg | — | ~1472 |
+| 11:08 | Created content/series/assets/ragin-otesi-getirerek-akil-yuruten-sistemler/yansima-tokenlari.svg | — | ~1119 |
+| 11:09 | Edited content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/uc-birim-uc-bulma-orani.svg | 10→9 lines | ~268 |
+| 11:09 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~66 |
+| 11:09 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~30 |
+| 11:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/yh_repeats.md | — | ~1958 |
+| 11:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/yh_terms.md | — | ~1323 |
+| 11:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/yh_decisions.md | — | ~3561 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/yh_notes.md | — | ~858 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/yh_promises.md | — | ~154 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/yh_insert.py | — | ~803 |
+| 11:20 | Created .claude/launch.json | — | ~121 |
+| 11:20 | Created .claude/launch.json | — | ~140 |
+| 11:20 | Created .claude/launch.json | — | ~150 |
+
+## Session: 2026-09-03 13:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-03 13:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:44 | Created docs/seri/HANDOFF.md | — | ~5097 |
+| 13:46 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/wolf_update.py | — | ~3191 |
+| 13:46 | Batch 10: 4 makale + 12 SVG yazildi, entegre edildi (katalog/roadmap/hash), typecheck+431 test+build (95 sayfa) yesil, 47 rota 200; YOL-HARITASI ve HANDOFF +1 fazi guncellendi; render dogrulamasi tarayici panosundan elle suruyor | content/series/**, docs/seri/* | ok | ~900k |
+| 13:50 | Created .claude/launch.json | — | ~141 |
+| 13:54 | Edited src/lib/preferences/schema.ts | 3→2 lines | ~29 |
+| 13:54 | Edited src/lib/preferences/schema.ts | 3→4 lines | ~72 |
+| 13:54 | Edited src/lib/preferences/schema.ts | 3→8 lines | ~94 |
+| 13:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/964ae327-139d-46c2-bd32-7dcaea27accd/scratchpad/wolf_update2.py | — | ~813 |
+| 13:54 | Edited src/lib/preferences/schema.ts | 10→9 lines | ~57 |
+| 13:54 | Edited src/lib/preferences/schema.ts | 5→1 lines | ~6 |
+| 13:54 | Edited src/lib/preferences/use-reader-preferences.tsx | 2→1 lines | ~8 |
+| 13:54 | Edited src/lib/preferences/storage.ts | added 2 condition(s) | ~261 |
+| 13:54 | Created src/components/reader/markdown-components.tsx | — | ~374 |
+| 13:55 | Edited src/components/reader/reader-shell.tsx | 3→2 lines | ~18 |
+| 13:55 | Edited src/components/reader/reader-shell.tsx | 3→3 lines | ~26 |
+| 13:55 | Edited src/app/globals.css | CSS: band, --reader-line-band | ~59 |
+| 13:55 | Edited src/app/globals.css | CSS: --reader-line-band | ~33 |
+| 13:55 | Edited src/app/globals.css | CSS: --reader-line-band | ~33 |
+| 13:55 | Edited src/app/globals.css | modified is() | ~420 |
+| 13:55 | Edited src/lib/content/labels.ts | "Yapay Zekâyı Okumak" → "Okuma Odası" | ~9 |
+| 13:55 | Edited docs/seri/HANDOFF.md | added 1 condition(s) | ~687 |
+| 13:55 | Edited src/lib/content/labels.ts | 5→2 lines | ~24 |
+| 13:55 | Edited docs/seri/HANDOFF.md | 2→4 lines | ~89 |
+| 13:55 | Edited src/lib/content/labels.ts | 3→6 lines | ~67 |
+| 13:55 | Edited src/lib/content/labels.ts | 5→2 lines | ~9 |
+| 13:55 | Edited src/app/layout.tsx | 6→6 lines | ~55 |
+| 13:55 | Edited src/app/login/page.tsx | 3→3 lines | ~39 |
+| 13:55 | Edited tests/e2e/auth.spec.ts | inline fix | ~19 |
+| 13:56 | Created .claude/launch.json | — | ~56 |
+| 13:56 | Batch 10 +1 fazi tamam: render matrisi 4x3x3 temiz, 12 sekil light/dark gozle dogrulandi, 47 rota 200; paralel oturum (3000) nedeniyle izole kopya kullanildi ve temizlendi; launch.json geri alindi; HANDOFF cursor 46 -> siradaki 47, kohort 11 | docs/seri/HANDOFF.md, .wolf/* | ok | ~1.1M |
+| 13:57 | Session end: 28 writes across 14 files (HANDOFF.md, wolf_update.py, launch.json, schema.ts, wolf_update2.py) | 0 reads | ~12205 tok |
+| 13:58 | Created src/components/reader/reading-settings.tsx | — | ~5150 |
+| 13:58 | Edited src/components/reader/reading-settings.test.tsx | 10→5 lines | ~44 |
+| 13:58 | Edited src/components/reader/reading-settings.test.tsx | CSS: name | ~57 |
+| 13:58 | Edited src/components/reader/reading-settings.test.tsx | 3→2 lines | ~20 |
+| 13:58 | Edited src/components/reader/reading-settings.test.tsx | added nullish coalescing | ~322 |
+| 13:58 | Edited src/lib/preferences/preferences.test.ts | 11→10 lines | ~85 |
+| 13:58 | Edited src/lib/preferences/preferences.test.ts | expanded (+25 lines) | ~477 |
+| 13:58 | Edited src/lib/preferences/preferences.test.ts | 4→3 lines | ~29 |
+| 13:58 | Edited src/lib/preferences/preferences.test.ts | 3→3 lines | ~54 |
+| 13:58 | Edited tests/e2e/reader.spec.ts | 6→4 lines | ~67 |
+| 13:58 | Edited tests/e2e/reader.spec.ts | 5→5 lines | ~44 |
+| 13:59 | Created src/components/dashboard/reader-dashboard.tsx | — | ~4716 |
+| 14:03 | Created artifacts/ux-render/shot.mjs | — | ~2593 |
+| 14:06 | Edited src/app/globals.css | CSS: hyphenate-limit-chars | ~146 |
+| 14:06 | Edited src/app/globals.css | CSS: sliced, -webkit-box-decoration-break, box-decoration-break | ~312 |
+| 14:06 | Edited src/lib/preferences/schema.ts | 2→3 lines | ~56 |
+| 14:06 | Edited src/lib/preferences/schema.ts | 3→3 lines | ~21 |
+| 14:07 | Edited src/lib/preferences/storage.ts | added 1 condition(s) | ~322 |
+| 14:07 | Edited src/lib/preferences/preferences.test.ts | 6→6 lines | ~62 |
+| 14:07 | Edited src/lib/preferences/preferences.test.ts | expanded (+10 lines) | ~274 |
+| 14:07 | Edited src/lib/content/labels.ts | "Kenar çubuğunu ve üst bil" → "Kenar çubuğunu gizler" | ~12 |
+| 14:07 | Edited src/components/reader/reading-settings.test.tsx | CSS: name | ~62 |
+| 14:07 | Edited src/components/dashboard/reader-dashboard.tsx | 4→4 lines | ~72 |
+| 14:07 | Edited src/components/dashboard/reader-dashboard.tsx | 27→27 lines | ~388 |
+| 14:07 | Edited src/components/reader/resume-notice.tsx | modified context() | ~72 |
+| 14:07 | Edited artifacts/ux-render/shot.mjs | modified max() | ~157 |
+| 14:08 | Edited artifacts/ux-render/shot.mjs | added nullish coalescing | ~92 |
+| 14:12 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/47dcc4fc-d5cd-487c-895e-0d8b267108b0/scratchpad/wolf_update.py | — | ~3275 |
+
+## Session: 2026-09-03 13:30 (reader line guide + justify + ana sayfa)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:35 | 'Renkli satırlar' analiz: cümle span'leri + 4 ton, naif bölücü; highlight/resume anchor'ları metin offset'i kullanıyor (span'siz güvenli) | markdown-components, globals.css, text-anchor | tasarım kararı: tonsuz dönüşümlü satır bandı | ~6k |
+| 13:50 | Paralel oturum `.next`'i sildi → 500; port/`.next` temizlenip sunucu yeniden başlatıldı, SendMessage ile koordinasyon | .next | çözüldü | ~2k |
+| 14:00 | lineGuide tercihi (+coloredLines migrasyonu), textAlign kaldırıldı (sabit justify), sentence-split kaldırıldı, band CSS, ayar paneli switch'leri | schema/storage/labels/globals/reading-settings/reader-shell/markdown-components | typecheck + 434 test yeşil | ~12k |
+| 14:02 | Ana sayfa editoryal yenileme: 'Okuma Odası', ikonsuz başlıklar, hücreli seri şeridi, Kaldığın yer bloğu; layout/login başlığı | reader-dashboard, layout, login/page | render temiz | ~8k |
+| 14:06 | Playwright kanıt betiği: 19 senaryo (3 tema, 4 viewport, paged, 5 tipografi kombinasyonu), DOM ölçümü | artifacts/ux-render/shot.mjs | bant sapması ≤0.005 lh; paged faz kayması bulundu | ~5k |
+| 14:08 | Düzeltmeler: box-decoration-break clone (paged), heceleme varsayılanı auto + migrasyon, resume-notice z-30, odak modu açıklaması, Yol haritası bağlantısı alt satıra, CTA accent-fill | globals.css, schema, storage, resume-notice, dashboard | yeniden ölçüm: faz farkı 0, 435 test yeşil | ~4k |
+| 14:15 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/workflow-policy-bounded-opus.md | — | ~367 |
+| 14:15 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/reader-line-guide-redesign.md | — | ~471 |
+| 14:15 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | — | ~100 |
+| 14:16 | Session end: 59 writes across 24 files (HANDOFF.md, wolf_update.py, launch.json, schema.ts, wolf_update2.py) | 16 reads | ~32394 tok |
+
+## Session: 2026-09-03 14:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-03 14:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

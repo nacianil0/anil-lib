@@ -24,14 +24,13 @@ describe("preferencesSchema", () => {
       measure: "wide",
       fontFamily: "sans",
       focusMode: true,
-      textAlign: "justify",
       paragraphSpacing: "relaxed",
       firstLineIndent: "classic",
       hyphenation: "auto",
       readingMode: "paged",
       letterSpacing: "relaxed",
       fontWeight: "regular",
-      coloredLines: false,
+      lineGuide: true,
     };
     expect(preferencesSchema.parse(prefs)).toEqual(prefs);
   });
@@ -69,20 +68,55 @@ describe("parsePreferences", () => {
 
     expect(parsePreferences(JSON.stringify(legacyPayload))).toEqual({
       ...legacyPayload,
-      textAlign: "left",
       paragraphSpacing: "balanced",
       firstLineIndent: "none",
-      hyphenation: "off",
+      hyphenation: "auto",
       readingMode: "flow",
       letterSpacing: "normal",
       fontWeight: "regular",
-      coloredLines: false,
+      lineGuide: false,
     });
   });
 
   it("falls back to all defaults when a typography value is invalid", () => {
-    const payload = JSON.stringify({ ...DEFAULT_PREFERENCES, textAlign: "center" });
+    const payload = JSON.stringify({ ...DEFAULT_PREFERENCES, paragraphSpacing: "huge" });
     expect(parsePreferences(payload)).toEqual(DEFAULT_PREFERENCES);
+  });
+
+  it("drops the retired textAlign key and keeps every other preference", () => {
+    const payload = JSON.stringify({ ...DEFAULT_PREFERENCES, textAlign: "left", theme: "sepia" });
+    const parsed = parsePreferences(payload);
+    expect(parsed.theme).toBe("sepia");
+    expect(parsed).not.toHaveProperty("textAlign");
+    expect(parsed).toEqual({ ...DEFAULT_PREFERENCES, theme: "sepia" });
+  });
+
+  it("moves a pre-justified payload from the old hyphenation default to auto", () => {
+    // Written while text was ragged-right: hyphenation defaulted to off back then.
+    const preJustify = { ...DEFAULT_PREFERENCES, textAlign: "left", hyphenation: "off" };
+    expect(parsePreferences(JSON.stringify(preJustify)).hyphenation).toBe("auto");
+
+    // A payload from the current reader keeps an explicit off.
+    const current = { ...DEFAULT_PREFERENCES, hyphenation: "off" };
+    expect(parsePreferences(JSON.stringify(current)).hyphenation).toBe("off");
+  });
+
+  it("carries a legacy coloredLines opt-in over to the line guide", () => {
+    const legacy: Record<string, unknown> = { ...DEFAULT_PREFERENCES };
+    delete legacy.lineGuide;
+
+    expect(parsePreferences(JSON.stringify({ ...legacy, coloredLines: true })).lineGuide).toBe(
+      true,
+    );
+    expect(parsePreferences(JSON.stringify({ ...legacy, coloredLines: false })).lineGuide).toBe(
+      false,
+    );
+    // An explicit lineGuide always wins over the retired key.
+    expect(
+      parsePreferences(JSON.stringify({ ...legacy, coloredLines: true, lineGuide: false }))
+        .lineGuide,
+    ).toBe(false);
+    expect(parsePreferences(JSON.stringify(legacy))).not.toHaveProperty("coloredLines");
   });
 });
 
@@ -90,7 +124,6 @@ describe("applyCssVariables", () => {
   it("maps typography preferences to reader CSS variables", () => {
     const preferences = {
       ...DEFAULT_PREFERENCES,
-      textAlign: "justify" as const,
       paragraphSpacing: "relaxed" as const,
       firstLineIndent: "classic" as const,
       hyphenation: "auto" as const,
@@ -101,7 +134,7 @@ describe("applyCssVariables", () => {
     applyCssVariables(preferences);
 
     const style = document.documentElement.style;
-    expect(style.getPropertyValue("--reader-text-align")).toBe(CSS_MAPPINGS.textAlign.justify);
+    expect(style.getPropertyValue("--reader-text-align")).toBe("");
     expect(style.getPropertyValue("--reader-paragraph-spacing")).toBe(
       CSS_MAPPINGS.paragraphSpacing.relaxed,
     );

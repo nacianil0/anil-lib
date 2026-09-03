@@ -12,7 +12,6 @@ export const LINE_SPACINGS = ["compact", "balanced", "relaxed"] as const;
 export const MEASURES = ["standard", "wide", "extra-wide", "full"] as const;
 export const FONT_FAMILIES = ["editorial", "sans"] as const;
 export const THEMES = ["system", "light", "sepia", "dark"] as const;
-export const TEXT_ALIGNMENTS = ["left", "justify"] as const;
 export const PARAGRAPH_SPACINGS = ["compact", "balanced", "relaxed"] as const;
 export const FIRST_LINE_INDENTS = ["none", "subtle", "classic"] as const;
 export const HYPHENATIONS = ["off", "auto"] as const;
@@ -28,14 +27,21 @@ export const preferencesSchema = z.object({
   measure: z.enum(MEASURES),
   fontFamily: z.enum(FONT_FAMILIES),
   focusMode: z.boolean(),
-  textAlign: z.enum(TEXT_ALIGNMENTS).default("left"),
+  // Text alignment is no longer a preference: every article is justified. A
+  // legacy `textAlign` key in stored payloads is simply dropped by the parser.
   paragraphSpacing: z.enum(PARAGRAPH_SPACINGS).default("balanced"),
   firstLineIndent: z.enum(FIRST_LINE_INDENTS).default("none"),
-  hyphenation: z.enum(HYPHENATIONS).default("off"),
+  // Justified text on a phone-width column needs hyphenation to avoid rivers.
+  hyphenation: z.enum(HYPHENATIONS).default("auto"),
   readingMode: z.enum(READING_MODES).default("flow"),
   letterSpacing: z.enum(LETTER_SPACINGS).default("normal"),
   fontWeight: z.enum(FONT_WEIGHTS).default("regular"),
-  coloredLines: z.boolean().default(false),
+  /**
+   * Line guide: alternate line boxes carry a faint band so the eye can tell
+   * neighbouring lines apart when it sweeps back to the left margin.
+   * Stored under `coloredLines` before the redesign; see storage.ts.
+   */
+  lineGuide: z.boolean().default(false),
 });
 
 export type ReaderPreferences = z.infer<typeof preferencesSchema>;
@@ -48,14 +54,13 @@ export const DEFAULT_PREFERENCES: ReaderPreferences = {
   measure: "standard",
   fontFamily: "editorial",
   focusMode: false,
-  textAlign: "left",
   paragraphSpacing: "balanced",
   firstLineIndent: "none",
-  hyphenation: "off",
+  hyphenation: "auto",
   readingMode: "flow",
   letterSpacing: "normal",
   fontWeight: "regular",
-  coloredLines: false,
+  lineGuide: false,
 };
 
 // CSS variables mapping
@@ -88,10 +93,6 @@ export const CSS_MAPPINGS = {
   fontFamily: {
     editorial: "var(--font-newsreader)",
     sans: "var(--font-inter)",
-  },
-  textAlign: {
-    left: "left",
-    justify: "justify",
   },
   paragraphSpacing: {
     compact: "0.85rem",

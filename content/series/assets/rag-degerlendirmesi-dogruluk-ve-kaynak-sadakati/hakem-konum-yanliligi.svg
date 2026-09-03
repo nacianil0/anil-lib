@@ -1,0 +1,28 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Hakem model cevapların sırasına göre fikir değiştiriyor</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">iki cevabın sırası değiştirildiğinde verilen kararlar; yüzde</text>
+
+  <line x1="160" y1="70" x2="160" y2="212" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="150" y="96" font-size="13" text-anchor="end" fill="var(--text-muted)">Claude-v1</text>
+  <rect x="160" y="80" width="71" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="480" y="90" font-size="13" text-anchor="start" fill="var(--text-muted)">tutarlı %23,8</text>
+  <rect x="160" y="96" width="225" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="480" y="106" font-size="13" text-anchor="start" fill="var(--text)">ilk sıradakini kayırma %75,0</text>
+
+  <text x="150" y="144" font-size="13" text-anchor="end" fill="var(--text-muted)">GPT-3.5</text>
+  <rect x="160" y="128" width="139" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="480" y="138" font-size="13" text-anchor="start" fill="var(--text-muted)">tutarlı %46,2</text>
+  <rect x="160" y="144" width="150" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="480" y="154" font-size="13" text-anchor="start" fill="var(--text)">ilk sıradakini kayırma %50,0</text>
+
+  <text x="150" y="192" font-size="13" text-anchor="end" fill="var(--text-muted)">GPT-4</text>
+  <rect x="160" y="176" width="195" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="480" y="186" font-size="13" text-anchor="start" fill="var(--text-muted)">tutarlı %65,0</text>
+  <rect x="160" y="192" width="90" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="480" y="202" font-size="13" text-anchor="start" fill="var(--text)">ilk sıradakini kayırma %30,0</text>
+
+  <line x1="16" y1="232" x2="704" y2="232" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="256" font-size="13" text-anchor="start" fill="var(--text-muted)">en iyi hakem bile üç karardan birinde sıraya göre fikir değiştiriyor; yanlılık tek yönlü</text>
+  <text x="16" y="278" font-size="13" text-anchor="start" fill="var(--text-faint)">kalan yüzde, ikinci sıradakini kayırma ve biçim hatalarıdır</text>
+</svg>

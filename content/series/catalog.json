@@ -842,6 +842,86 @@
       "path": "content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md",
       "relatedArticleIds": [],
       "classificationBatch": 9
+    },
+    {
+      "articleId": "article_609bf004-a126-4a8c-8658-beea8f2a33f5",
+      "title": "Vektör Veritabanları ve Dizinleme",
+      "slug": "vektor-veritabanlari-ve-dizinleme",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 43,
+      "summary": "42. makalenin borç bıraktığı işi açar: yirmi bir milyon vektör arasından en yakın k taneyi tek tek taramadan nasıl bulduğumuzu, ağaç dizinlerinin yüksek boyutta neden çöktüğünü, üç dizin ailesinin — kümeleme, ürün kuantizasyonu ve yakınlık çizgesi — mekanizmasını ve parametrelerini, bulma oranı ile hız arasındaki takas eğrisini, dizinin kaçırdığı komşunun ne zaman önemli olduğunu ve bir vektör veritabanının dizinin üstüne neyi eklediğini ölçümlerle gösterir.",
+      "tags": [
+        "vektor-dizini",
+        "yaklasik-arama",
+        "hnsw",
+        "urun-kuantizasyonu",
+        "vektor-veritabani"
+      ],
+      "contentHash": "sha256:eaea0de3cbebd622f08ee8d36f8fbc5a368137366b61571e4e68b36d97d4992c",
+      "path": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
+    },
+    {
+      "articleId": "article_494762df-8293-487d-863a-ba2be95c1913",
+      "title": "Parçalama, Yeniden Sıralama ve RAG Hattının İncelikleri",
+      "slug": "parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 44,
+      "summary": "Getirme hattının görünmez kararlarını tek tek ölçüme vurur: dizine ne konacağı — parça, cümle ya da önerme — sorgunun dizine gitmeden önce nasıl yeniden yazıldığı, adayların bir dil modeliyle nasıl yeniden sıralandığı, kaç parçanın istemin neresine konacağı, getirilen metnin nasıl sıkıştırıldığı ve uzun pencerenin getirmeyi neden gereksiz kılmadığı; her kararın ölçülen kazancını ve bedelini gösterir.",
+      "tags": [
+        "parcalama",
+        "sorgu-yeniden-yazma",
+        "yeniden-siralama",
+        "baglam-yerlesimi",
+        "rag-hatti"
+      ],
+      "contentHash": "sha256:1331988bd31eddfd36483d64f146c4ac9e8b66c1e92f7bfa2c8fe78824a23182",
+      "path": "content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
+    },
+    {
+      "articleId": "article_8a7a07df-541b-4526-a51c-180047ba1dd3",
+      "title": "RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati",
+      "slug": "rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 45,
+      "summary": "Bir getirme hattının üç ayrı yerde yanlış yapabileceğini kurar ve her katmanı ayrı ölçmenin yolunu gösterir: cevabın kaynağa sadakatinin ifade ifade nasıl sayıldığını, doğruluk cetvelinin kendisinin nasıl yanılttığını, getirmenin doğruluğu artırırken güvenilirliği neden düşürebildiğini, ilgililik etiketinin hattın sonucuyla neden zayıf ilişkilendiğini, atıfların ne kadarının gerçekten tuttuğunu ve ölçümü yapan modelin hangi yanlılıklarla nasıl düzeltildiğini ölçümlerle anlatır.",
+      "tags": [
+        "rag-degerlendirmesi",
+        "kaynak-sadakati",
+        "atif",
+        "hakem-model",
+        "olcum-disiplini"
+      ],
+      "contentHash": "sha256:66e664c1e5a0e35ceb60fb1ad03b4bde27ac052d8486f7a63294e26d861e3369",
+      "path": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
+    },
+    {
+      "articleId": "article_301158b1-5b41-4304-a4f7-182c1171eb37",
+      "title": "RAG'in Ötesi: Getirerek Akıl Yürüten Sistemler",
+      "slug": "ragin-otesi-getirerek-akil-yuruten-sistemler",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 46,
+      "summary": "Tek getirmenin cevaplayamadığı çok adımlı soruları kurar: modelin iki olguyu tek tek bilip birleştiremediği bileşim açığını, getirmeyi düşünce zincirine örmenin ölçülen kazancını, düşün-eyle-gözle döngüsünün uydurmayı nasıl sıfırlayıp yeni hata türleri açtığını, ne zaman getirileceğine modelin kendi belirsizliğiyle karar vermeyi, hakemi döngünün içine alan yansıma token'larını ve adım sayısı arttıkça getirme hatasının nasıl biriktiğini ölçümlerle anlatır.",
+      "tags": [
+        "cok-adimli-soru",
+        "yinelemeli-getirme",
+        "dusun-eyle-gozle",
+        "etkin-getirme",
+        "yansima-tokenlari"
+      ],
+      "contentHash": "sha256:5d587253ce1ea09bf6bb51ea57823d0fb87a7aed3fc19e1c32587fe5c67d0c3f",
+      "path": "content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
     }
   ]
 }

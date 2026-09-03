@@ -48,11 +48,6 @@ describe("ReadingSettings", () => {
     );
 
     fireEvent.click(
-      within(controls.getByRole("group", { name: "Metin hizası" })).getByRole("button", {
-        name: "İki yana",
-      }),
-    );
-    fireEvent.click(
       within(controls.getByRole("group", { name: "Paragraf aralığı" })).getByRole("button", {
         name: "Ferah",
       }),
@@ -82,12 +77,9 @@ describe("ReadingSettings", () => {
         name: "Sepya",
       }),
     );
-    fireEvent.click(controls.getByRole("switch"));
+    fireEvent.click(controls.getByRole("switch", { name: "Odak modu" }));
 
     await waitFor(() => {
-      expect(document.documentElement.style.getPropertyValue("--reader-text-align")).toBe(
-        "justify",
-      );
       expect(document.documentElement.style.getPropertyValue("--reader-paragraph-spacing")).toBe(
         "1.75rem",
       );
@@ -104,7 +96,6 @@ describe("ReadingSettings", () => {
 
     const stored = JSON.parse(window.localStorage.getItem(PREFERENCES_STORAGE_KEY) ?? "{}");
     expect(stored).toMatchObject({
-      textAlign: "justify",
       paragraphSpacing: "relaxed",
       firstLineIndent: "classic",
       hyphenation: "auto",
@@ -117,6 +108,33 @@ describe("ReadingSettings", () => {
       theme: "sepia",
       focusMode: true,
     });
+  });
+
+  it("offers the line guide as a switch and no longer offers text alignment", async () => {
+    render(
+      <ReaderPreferencesProvider>
+        <ReadingSettings />
+      </ReaderPreferencesProvider>,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Okuma ayarları" }));
+    const dialog = screen.getByRole("dialog", { name: "Okuma ayarları" });
+    expect(within(dialog).queryByRole("group", { name: "Metin hizası" })).toBeNull();
+
+    const lineGuide = within(dialog).getByRole("switch", { name: "Satır kılavuzu" });
+    expect(lineGuide).toHaveAttribute("aria-checked", "false");
+    expect(lineGuide).toHaveAccessibleDescription("Satırları dönüşümlü tonlar");
+    expect(within(dialog).getByRole("switch", { name: "Odak modu" })).toHaveAccessibleDescription(
+      "Kenar çubuğunu gizler",
+    );
+
+    fireEvent.click(lineGuide);
+    await waitFor(() => expect(lineGuide).toHaveAttribute("aria-checked", "true"));
+
+    const stored = JSON.parse(window.localStorage.getItem(PREFERENCES_STORAGE_KEY) ?? "{}");
+    expect(stored.lineGuide).toBe(true);
+    expect(stored).not.toHaveProperty("textAlign");
+    expect(stored).not.toHaveProperty("coloredLines");
   });
 
   it("closes from the panel and hands focus back to the trigger", async () => {

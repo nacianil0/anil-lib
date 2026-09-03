@@ -12,10 +12,34 @@ export function isPreferencesStorageAvailable(): boolean {
   }
 }
 
+/**
+ * Brings a payload written by an earlier reader up to the current preference set.
+ *
+ * - `coloredLines` held the line-aid opt-in before it became the line guide. The
+ *   behaviour changed (sentence hues became line bands) but the reader's choice to
+ *   have a line aid carries over.
+ * - `textAlign` is retired: every article is justified now. Its presence marks a
+ *   payload from before that policy, when hyphenation defaulted to off because
+ *   ragged-right text does not need it. Justified text on a phone does, so such a
+ *   payload adopts the new default unless the reader had switched hyphenation on
+ *   already. The key itself is dropped by the schema.
+ */
+function migrateLegacyFields(parsed: unknown): unknown {
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return parsed;
+  const record = { ...(parsed as Record<string, unknown>) };
+  if (!("lineGuide" in record) && typeof record.coloredLines === "boolean") {
+    record.lineGuide = record.coloredLines;
+  }
+  if ("textAlign" in record && record.hyphenation === "off") {
+    record.hyphenation = "auto";
+  }
+  return record;
+}
+
 export function parsePreferences(raw: string | null): ReaderPreferences {
   if (!raw) return { ...DEFAULT_PREFERENCES };
   try {
-    const parsed = JSON.parse(raw);
+    const parsed = migrateLegacyFields(JSON.parse(raw));
     const result = preferencesSchema.safeParse(parsed);
     if (result.success) {
       return result.data;

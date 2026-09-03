@@ -1,0 +1,63 @@
+<svg viewBox="0 0 720 384" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Sıkıştırılmış belgeyle uzaklık: tablo oku, topla</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">dört boyutlu vektör, ikişer boyutlu iki alt vektör, her yarı için dört merkezlik kod defteri</text>
+
+  <text x="16" y="99" font-size="13" text-anchor="start" fill="var(--text-muted)">belge</text>
+  <rect x="70" y="80" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="93" y="99" font-size="13" text-anchor="middle" fill="var(--text)">0,20</text>
+  <rect x="116" y="80" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="139" y="99" font-size="13" text-anchor="middle" fill="var(--text)">0,95</text>
+  <rect x="170" y="80" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="193" y="99" font-size="13" text-anchor="middle" fill="var(--text)">0,80</text>
+  <rect x="216" y="80" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="239" y="99" font-size="13" text-anchor="middle" fill="var(--text)">0,10</text>
+  <line x1="262" y1="95" x2="290" y2="95" stroke="var(--text-muted)" stroke-width="1"/>
+  <rect x="290" y="78" width="144" height="34" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
+  <text x="362" y="99" font-size="13" text-anchor="middle" fill="var(--text)">kod: (1, 1) · 4 bit</text>
+  <text x="510" y="86" font-size="13" text-anchor="start" fill="var(--text-muted)">her yarı en yakın merkeze</text>
+  <text x="510" y="104" font-size="13" text-anchor="start" fill="var(--text-muted)">yuvarlanır; yalnızca merkez</text>
+  <text x="510" y="122" font-size="13" text-anchor="start" fill="var(--text-muted)">numarası saklanır</text>
+
+  <text x="16" y="199" font-size="13" text-anchor="start" fill="var(--text-muted)">sorgu</text>
+  <rect x="70" y="180" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="93" y="199" font-size="13" text-anchor="middle" fill="var(--text)">0,30</text>
+  <rect x="116" y="180" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="139" y="199" font-size="13" text-anchor="middle" fill="var(--text)">0,70</text>
+  <rect x="170" y="180" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="193" y="199" font-size="13" text-anchor="middle" fill="var(--text)">0,70</text>
+  <rect x="216" y="180" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
+  <text x="239" y="199" font-size="13" text-anchor="middle" fill="var(--text)">0,30</text>
+
+  <rect x="290" y="156" width="36" height="28" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="308" y="174" font-size="13" text-anchor="middle" fill="var(--text)">0,02</text>
+  <rect x="326" y="156" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="344" y="174" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,50</text>
+  <rect x="362" y="156" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="380" y="174" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,08</text>
+  <rect x="398" y="156" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="416" y="174" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,40</text>
+  <text x="442" y="174" font-size="13" text-anchor="start" fill="var(--text-muted)">tablo 1</text>
+
+  <rect x="290" y="206" width="36" height="28" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="308" y="224" font-size="13" text-anchor="middle" fill="var(--text)">0,08</text>
+  <rect x="326" y="206" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="344" y="224" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,72</text>
+  <rect x="362" y="206" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="380" y="224" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,08</text>
+  <rect x="398" y="206" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+  <text x="416" y="224" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,26</text>
+  <text x="442" y="224" font-size="13" text-anchor="start" fill="var(--text-muted)">tablo 2</text>
+
+  <text x="510" y="176" font-size="13" text-anchor="start" fill="var(--text-muted)">sorgunun her yarısı için</text>
+  <text x="510" y="194" font-size="13" text-anchor="start" fill="var(--text-muted)">dört merkeze uzaklık</text>
+  <text x="510" y="212" font-size="13" text-anchor="start" fill="var(--text-muted)">bir kez hesaplanır</text>
+
+  <rect x="70" y="256" width="222" height="34" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="181" y="277" font-size="14" text-anchor="middle" fill="var(--text)">tahmin: 0,02 + 0,08 = 0,10</text>
+  <text x="308" y="270" font-size="13" text-anchor="start" fill="var(--text)">gerçek karesel uzaklık: 0,1225</text>
+  <text x="308" y="290" font-size="13" text-anchor="start" fill="var(--text-muted)">fark, ilk yarının yuvarlama hatasından gelir</text>
+
+  <line x1="16" y1="316" x2="704" y2="316" stroke="var(--border)" stroke-width="1"/>
+  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-muted)">tablolar sorgu başına bir kez kurulur; belge başına yalnızca iki okuma ve bir toplama yapılır</text>
+  <text x="16" y="362" font-size="13" text-anchor="start" fill="var(--text-faint)">gerçek ölçekte 768 boyut, 64 alt vektör ve 256 merkez: 3.072 bayt yerine 64 bayt</text>
+</svg>

@@ -22,10 +22,8 @@
   --cool: #2f5d74;
   --cool-soft: #e4edf1;
 
-  --line-color-1: rgba(59, 130, 246, 0.12);
-  --line-color-2: rgba(239, 68, 68, 0.08);
-  --line-color-3: rgba(34, 197, 94, 0.12);
-  --line-color-4: rgba(245, 158, 11, 0.12);
+  /* Line guide band: the page's own ink at a few percent, never a hue of its own. */
+  --reader-line-band: rgba(27, 29, 31, 0.05);
 
   --toolbar-offset: 4.75rem;
   color-scheme: light;
@@ -46,10 +44,7 @@
   --cool: #5b9dbf;
   --cool-soft: #233440;
 
-  --line-color-1: rgba(59, 130, 246, 0.18);
-  --line-color-2: rgba(239, 68, 68, 0.12);
-  --line-color-3: rgba(34, 197, 94, 0.18);
-  --line-color-4: rgba(245, 158, 11, 0.18);
+  --reader-line-band: rgba(233, 232, 228, 0.06);
 
   color-scheme: dark;
 }
@@ -69,10 +64,7 @@
   --cool: #466675;
   --cool-soft: #dbe4e3;
 
-  --line-color-1: rgba(139, 63, 47, 0.1);
-  --line-color-2: rgba(70, 102, 117, 0.1);
-  --line-color-3: rgba(180, 83, 9, 0.1);
-  --line-color-4: rgba(21, 128, 61, 0.1);
+  --reader-line-band: rgba(44, 38, 30, 0.055);
 
   color-scheme: light;
 }
@@ -261,48 +253,45 @@
     text-indent: var(--reader-first-line-indent, 0);
   }
 
+  /* Every article is set justified; alignment is not a reader preference.
+     Justified Turkish needs hyphenation on narrow columns, so the reader's
+     hyphenation choice defaults to auto; the limits keep breaks off short
+     words and away from two-letter stubs where the browser honours them. */
   .prose-reader :is(p, li, blockquote) {
-    text-align: var(--reader-text-align, left);
+    text-align: justify;
     text-justify: inter-word;
-    hyphens: var(--reader-hyphens, none);
+    hyphens: var(--reader-hyphens, auto);
+    hyphenate-limit-chars: 8 4 3;
     overflow-wrap: break-word;
   }
 
-  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="0"] {
+  /* --------------------------------------------------------------------------
+     Line guide — a reading aid, not a decoration.
+     Every second line box carries a faint band of the page's own ink, so when
+     the eye sweeps back from the end of a line it lands on a line that looks
+     different from the one it just left. Painted on the block, one period per
+     two line boxes (2lh); the first line of every block stays plain, so a
+     one-line paragraph shows nothing. The fallback size covers browsers
+     without the `lh` unit. Loose list items (li > p) and items holding a
+     nested list are skipped: their paragraphs or children paint their own.
+     In the paged (multi-column) layout a paragraph that continues in the
+     next column is cloned, not sliced: a sliced background would carry the
+     unused space at the bottom of the first column into the phase of the
+     second, and the bands would drift off the lines there.
+  -------------------------------------------------------------------------- */
+  .reader-shell[data-line-guide="true"] .prose-reader :is(p, li:not(:has(> p, > ul, > ol))) {
     background-image: linear-gradient(
       to bottom,
-      transparent 55%,
-      var(--line-color-1) 55%,
-      var(--line-color-1) 95%,
-      transparent 95%
+      transparent 0 50%,
+      var(--reader-line-band) 50% 100%
     );
-  }
-  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="1"] {
-    background-image: linear-gradient(
-      to bottom,
-      transparent 55%,
-      var(--line-color-2) 55%,
-      var(--line-color-2) 95%,
-      transparent 95%
-    );
-  }
-  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="2"] {
-    background-image: linear-gradient(
-      to bottom,
-      transparent 55%,
-      var(--line-color-3) 55%,
-      var(--line-color-3) 95%,
-      transparent 95%
-    );
-  }
-  .reader-shell[data-colored-lines="true"] .colored-sentence[data-color-idx="3"] {
-    background-image: linear-gradient(
-      to bottom,
-      transparent 55%,
-      var(--line-color-4) 55%,
-      var(--line-color-4) 95%,
-      transparent 95%
-    );
+    background-size: 100% calc(var(--reader-line-height, 1.72) * 2em);
+    background-size: 100% 2lh;
+    background-repeat: repeat-y;
+    background-origin: content-box;
+    background-clip: content-box;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .prose-reader :is(li, blockquote) p {

@@ -1,16 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  BookOpenText,
-  Minus,
-  Monitor,
-  Moon,
-  Plus,
-  SlidersHorizontal,
-  Sun,
-  X,
-} from "lucide-react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { BookOpenText, Minus, Monitor, Moon, Plus, SlidersHorizontal, Sun, X } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import { TEXT_SIZES } from "@/lib/preferences/schema";
 import { useReaderPreferences } from "@/lib/preferences/use-reader-preferences";
@@ -55,6 +46,58 @@ function PreferenceSegments<T extends string>({
           </button>
         ))}
       </div>
+    </div>
+  );
+}
+
+/**
+ * A boolean preference laid out like the segmented controls: label above, a
+ * 31px row below. The whole row is the switch, so the tap target is the row and
+ * not the 32px knob; the short description doubles as the row's text.
+ */
+function PreferenceSwitch({
+  label,
+  description,
+  checked,
+  onChange,
+}: {
+  label: string;
+  description: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+}) {
+  const labelId = useId();
+  const descriptionId = useId();
+  return (
+    <div className="min-w-0">
+      <span id={labelId} className="mb-1.5 block text-xs font-medium text-text-muted">
+        {label}
+      </span>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={checked}
+        aria-labelledby={labelId}
+        aria-describedby={descriptionId}
+        onClick={() => onChange(!checked)}
+        className="flex h-[31px] w-full items-center justify-between gap-3 rounded-md border border-border bg-surface-muted pl-2.5 pr-2 text-left transition-colors hover:bg-surface"
+      >
+        <span id={descriptionId} className="min-w-0 truncate text-[11px] text-text-faint">
+          {description}
+        </span>
+        <span
+          aria-hidden="true"
+          className={`relative inline-flex h-4 w-8 shrink-0 items-center rounded-full transition-colors ${
+            checked ? "bg-accent" : "bg-border-strong"
+          }`}
+        >
+          <span
+            className={`inline-block h-3 w-3 rounded-full bg-surface shadow-sm transition-transform ${
+              checked ? "translate-x-[18px]" : "translate-x-[2px]"
+            }`}
+          />
+        </span>
+      </button>
     </div>
   );
 }
@@ -297,16 +340,6 @@ export function ReadingSettings({
                 />
 
                 <PreferenceSegments
-                  label={UI.textAlignment}
-                  value={preferences.textAlign}
-                  options={[
-                    { value: "left", label: UI.alignLeft },
-                    { value: "justify", label: UI.alignJustify },
-                  ]}
-                  onChange={(value) => updatePreference("textAlign", value)}
-                />
-
-                <PreferenceSegments
                   label={UI.firstLineIndent}
                   value={preferences.firstLineIndent}
                   options={[
@@ -343,8 +376,8 @@ export function ReadingSettings({
             <div className="border-t border-border" />
 
             <SettingsSection title={UI.settingsAppearance}>
-              <div className="grid items-end gap-3 sm:grid-cols-3">
-                <div>
+              <div className="grid gap-x-4 gap-y-3.5 sm:grid-cols-3">
+                <div className="min-w-0">
                   <span className="mb-1.5 block text-xs font-medium text-text-muted">
                     {UI.theme}
                   </span>
@@ -391,37 +424,19 @@ export function ReadingSettings({
                   </div>
                 </div>
 
-                <PreferenceSegments
-                  label={UI.coloredLines}
-                  value={preferences.coloredLines ? "on" : "off"}
-                  options={[
-                    { value: "off", label: UI.coloredLinesOff },
-                    { value: "on", label: UI.coloredLinesOn },
-                  ]}
-                  onChange={(value) => updatePreference("coloredLines", value === "on")}
+                <PreferenceSwitch
+                  label={UI.lineGuide}
+                  description={UI.lineGuideHint}
+                  checked={preferences.lineGuide}
+                  onChange={(value) => updatePreference("lineGuide", value)}
                 />
 
-                <div className="flex h-[31px] items-center justify-between rounded-md border border-border bg-surface-muted px-2.5 transition-colors hover:bg-surface">
-                  <span className="text-[11px] font-medium text-text-muted">{UI.focusMode}</span>
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked={preferences.focusMode}
-                    onClick={() => updatePreference("focusMode", !preferences.focusMode)}
-                    className={`relative inline-flex h-4 w-8 items-center rounded-full transition-colors ${
-                      preferences.focusMode ? "bg-accent" : "bg-border-strong"
-                    }`}
-                  >
-                    <span className="sr-only">
-                      {preferences.focusMode ? UI.focusModeExit : UI.focusModeEnter}
-                    </span>
-                    <span
-                      className={`inline-block h-3 w-3 transform rounded-full bg-surface shadow-sm transition-transform ${
-                        preferences.focusMode ? "translate-x-[18px]" : "translate-x-[2px]"
-                      }`}
-                    />
-                  </button>
-                </div>
+                <PreferenceSwitch
+                  label={UI.focusMode}
+                  description={UI.focusModeHint}
+                  checked={preferences.focusMode}
+                  onChange={(value) => updatePreference("focusMode", value)}
+                />
               </div>
             </SettingsSection>
           </div>

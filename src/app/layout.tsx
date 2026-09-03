@@ -23,11 +23,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Yapay Zekâyı Okumak",
-    template: "%s — Yapay Zekâyı Okumak",
+    default: "Okuma Odası",
+    template: "%s — Okuma Odası",
   },
   description:
-    "Yapay zekâ ve büyük dil modelleri üzerine, temellerden sınıra sıralı bir okuma rehberi.",
+    "Kişisel okuma odası: yapay zekâ ve bilgisayar mühendisliği üzerine sıralı öğrenme serileri.",
   robots: { index: false, follow: false },
 };
 
