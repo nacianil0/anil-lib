@@ -12,7 +12,7 @@ tags:
   - egitim-sonrasi-kuantizasyon
   - bit-genisligi
   - olcum-disiplini
-content_hash: sha256:00f2ffc17dec6b28fb7abe7ab26222464683ad40f4b5b88e71cf37579e2541f4
+content_hash: sha256:513d804f22775385c8fb99013edbfa577582b104031165f97e76881dd87dd210
 classification_version: 1
 classification_batch: 6
 ---
@@ -71,7 +71,7 @@ En basit yöntem, her ağırlığı bağımsız olarak en yakın ızgara noktas�
 
 GPTQ'nun yaptığı şey, yuvarlamayı bağımsız kararlar dizisi olarak görmemek. Bir ağırlığı yuvarlarken oluşan hatayı aynı katmandaki **henüz yuvarlanmamış** ağırlıklara dağıtıyor; onlar da bu telafiyi üstlenerek yuvarlanıyor. Böylece hedef tek tek ağırlıkları korumak değil, katmanın çıktısını korumak oluyor. Hangi ağırlığın ne kadar telafi alacağını belirlemek için küçük bir kalibrasyon kümesi kullanılıyor: C4 derleminden rastgele seçilmiş 128 tane 2.048 token'lık parça. Bütün işlem 175 milyar parametreli bir model için tek bir kartta yaklaşık dört saat sürüyor — modeli yeniden eğitmek yok, tek geçişte yuvarlama var. Alanın adlandırması bu yüzden **eğitim sonrası kuantizasyon** (post-training quantization).
 
-Pratik karşılığı da var. 3 bite indirilmiş 175 milyarlık model, gömme ve çıkış katmanları 16 bitte bırakılsa bile yaklaşık 63 gigabayt tutuyor ve önbelleğiyle birlikte tek bir 80 gigabaytlık karta sığıyor; 16 bitlik hâli beş kart istiyordu. Token başına gecikme aynı kartta 230 milisaniyeden 71 milisaniyeye iniyor.
+Pratik karşılığı da var. 3 bite indirilmiş 175 milyarlık model, embedding ve çıkış katmanları 16 bitte bırakılsa bile yaklaşık 63 gigabayt tutuyor ve önbelleğiyle birlikte tek bir 80 gigabaytlık karta sığıyor; 16 bitlik hâli beş kart istiyordu. Token başına gecikme aynı kartta 230 milisaniyeden 71 milisaniyeye iniyor.
 
 Ji Lin ve arkadaşlarının MLSys 2024'te en iyi bildiri ödülünü alan çalışması aynı problemi başka bir yerden yakalıyor: bütün ağırlıklar eşit derecede önemli değil ve hangilerinin önemli olduğuna **ağırlığa değil aktivasyona** bakarak karar vermek gerekiyor. Ağırlıkların yüzde birini korumak kuantizasyon hatasını belirgin biçimde düşürüyor; korumanın yolu da o kanalları önceden ölçeklemek. Yöntem geriye yayılım ya da yeniden kurulum kullanmadığı için, yazarların iddiasına göre kalibrasyon kümesine aşırı uyum sağlamıyor. Buradaki risk 2\. makaledeki aşırı öğrenmenin bu alandaki karşılığıdır: yuvarlamayı 128 metin parçasına göre ayarlarsan, o parçalara benzemeyen girdilerde kaybın büyüyebilir.
 

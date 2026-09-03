@@ -12,7 +12,7 @@ tags:
   - dogruluk-tablosu
   - niceleyici
   - cikarim-kurallari
-content_hash: sha256:5c8b5dec791056748c082c3e5aecd09b1369de60d552ed70ca1121e113faa8c1
+content_hash: sha256:d1bbccc0807125affbf3c1adcc6cb89b2f8442f23d944c70425306ea1201c77c
 classification_version: 1
 classification_batch: 0
 ---
@@ -92,7 +92,7 @@ Bu, bir sonraki makalenin de temelidir: karşıt tersi ispatlamak, orijinali isp
 
 ## Denklik, totoloji ve iki yararlı kural
 
-Bir bileşik önerme, bileşenlerinin bütün doğruluk değerleri için doğruysa **totoloji (tautology)**, hepsi için yanlışsa **çelişki (contradiction)**, ikisi de değilse **koşullu doğruluktaki önerme (contingency)** adını alır. p ∨ ¬p bir totolojidir; p ∧ ¬p bir çelişkidir.
+Bir bileşik önerme, bileşenlerinin bütün doğruluk değerleri için doğruysa **totoloji (tautology)**, hepsi için yanlışsa **çelişki (contradiction)**, ikisi de değilse **olumsal önerme (contingency)** adını alır. p ∨ ¬p bir totolojidir; p ∧ ¬p bir çelişkidir.
 
 İki önerme bütün satırlarda aynı değeri alıyorsa **mantıksal olarak denktir (logically equivalent)** deriz ve p ≡ q yazarız. Denklik, karmaşık bir ifadeyi sadeleştirmenin aracıdır. Mülakat için ezberlenmeye değer üç tanesi:
 

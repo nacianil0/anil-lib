@@ -12,7 +12,7 @@ tags:
   - hesap-optimal-egitim
   - chinchilla
   - beliren-yetenekler
-content_hash: sha256:23849b7dcfb3ebeba6d91ef79e717efdbddf9f50ce2d2fd9e9d387e05320df69
+content_hash: sha256:8aaccb1bd45c7046b3d8ab23906bf5c0db333560843eaaee099de63f5c01dd2e
 classification_version: 1
 classification_batch: 1
 ---
@@ -42,7 +42,7 @@ Sağdaki iki sütuna dikkat et. log₁₀ C her satırda 1 artarken log₁₀ L 
 
 Şekil 1'de aynı beş nokta iki ayrı eksende duruyor. Soldaki doğrusal eksende eğri hızla düşüp yatay bir kuyruğa dönüşüyor ve "iş burada bitti" izlenimi veriyor; sağdaki log-log eksende aynı noktalar tam bir doğru üzerine oturuyor. Bitmemiş. Bedava öğle yemeği de yok: kaybı yarıya indirmek istersen 0,5 = k^(−0,050) denklemini çözmen gerekir ve k = 2^20 = 1.048.576 çıkar. Bir milyon kat hesap.
 
-Aynı düzenlilik diğer iki eksende de ölçüldü — ama her biri kendi kaydıyla. Gömme tablosu dışındaki parametre sayısını on katına çıkarmak, veri darboğaz olmadığı sürece, kaybı yaklaşık yüzde 16 düşürüyor; veriyi on katına çıkarmak, model yeterince büyük olduğu sürece, yüzde 19,6 düşürüyor. Sayılar mütevazı. Ölçek yasasının acımasız yüzü tam olarak bu: getiri gerçek ama azalan.
+Aynı düzenlilik diğer iki eksende de ölçüldü — ama her biri kendi kaydıyla. Embedding tablosu dışındaki parametre sayısını on katına çıkarmak, veri darboğaz olmadığı sürece, kaybı yaklaşık yüzde 16 düşürüyor; veriyi on katına çıkarmak, model yeterince büyük olduğu sürece, yüzde 19,6 düşürüyor. Sayılar mütevazı. Ölçek yasasının acımasız yüzü tam olarak bu: getiri gerçek ama azalan.
 
 ## Paranın büyük kısmını modele
 
@@ -99,7 +99,7 @@ Fark: 0,114 nat/token. Büyüklüğünü görmek için aynı formülü iki gerç
 
 ## Yasa mı, en iyi uyan çizgi mi?
 
-Adı "yasa" ama elimizde birkaç yüz noktalı bir saçılım grafiği ve içinden geçirilmiş bir çizgi var. Bu, çizgiyi değersizleştirmez — fizik yasaları da veriye uydurulur. Benzetmenin bozulduğu yer şurası: yerçekimi yasasının altında türetilmiş bir teori vardır ve ölçülmemiş bölgelerde ne yapacağı kestirilebilir; ölçek yasasının altında böyle bir teori yoktur. Benzetmenin biçimsel karşılığı şudur: ölçek yasası, belirli bir mimari, tokenizer, veri karışımı ve öğrenme oranı çizelgesi kümesi üzerinde tahmin gücü kanıtlanmış ampirik bir regresyondur.
+Adı "yasa" ama elimizde birkaç yüz noktalı bir saçılım grafiği ve içinden geçirilmiş bir çizgi var. Bu, çizgiyi değersizleştirmez — fizik yasaları da veriye uydurulur. Ama fizikle koşutluk burada biter: yerçekimi yasasının altında türetilmiş bir teori vardır ve ölçülmemiş bölgelerde ne yapacağı kestirilebilir; ölçek yasasının altında böyle bir teori yoktur. Ölçek yasasının biçimsel statüsü şudur: belirli bir mimari, tokenizer, veri karışımı ve öğrenme oranı çizelgesi kümesi üzerinde tahmin gücü kanıtlanmış ampirik bir regresyondur.
 
 Kanıtı Chinchilla çalışmasının kendi içinden geliyor. Tamay Besiroglu, Ege Erdil, Matthew Barnett ve Josh You 2024'te o çalışmanın üçüncü kestirim yöntemini —grafiklerden yeniden oluşturulan veriye kayıp fonksiyonu uydurma— yeniden üretmeye (replication) çalıştı. Raporlanan katsayıların makalenin kendi ilk iki yöntemiyle tutarsız olduğunu, çıkarılan veriye uymadığını ve inanılmayacak kadar dar güven aralıkları —kestirimin ne kadar oynayabileceğini gösteren bantlar— taşıdığını buldular; kök nedeni DeepMind'a teyit ettirdiler. Uydurmada kullanılan Huber kaybı —büyük sapmaları kareli kayıptan daha az cezalandıran bir uyum ölçüsü— veri noktaları üzerinde toplanmak yerine ortalanmış, optimizasyon da erken sonlanmıştı.
 

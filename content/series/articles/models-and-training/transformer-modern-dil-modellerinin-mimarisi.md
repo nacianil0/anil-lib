@@ -12,7 +12,7 @@ tags:
   - cok-basli-dikkat
   - pozisyon-kodlama
   - paralellik
-content_hash: sha256:55070e571f68ae03272806b44f5336b73fb6ee6f5019d1ff17fb80c472c0e83b
+content_hash: sha256:eaea1fcd8a98205af9e67c330c211648118d7f32c638ec3fff9ec01d872afd67
 classification_version: 1
 classification_batch: 1
 ---
@@ -110,7 +110,7 @@ Bugünün standardı ise üçüncü bir yol: Jianlin Su ve arkadaşlarının 202
 
 Şimdi mimarinin asıl kazancına geldik ve o kazanç hız değil.
 
-Yinelemeli bir katman telefon zinciri gibi çalışır: mesaj sırayla aktarılır ve herkes kendinden önceki kişiyi beklemek zorundadır. Öz-dikkat ise bir toplantı masasıdır, herkes aynı anda odadadır ve herkes herkesi tek seferde duyar. Benzetmenin bozulduğu yer şurası: gerçek toplantıda insanlar yine sırayla konuşur ve herkesin herkesi duyması bedavaymış gibi görünür, oysa n kişilik masada n çarpı n konuşma çifti hesaplanır ve masa büyüdükçe maliyet karesiyle artar. Benzetmenin biçimsel karşılığı ise şudur: dizinin bütün konumları için dikkat skorları tek bir işlemde, birbirini beklemeden hesaplanır.
+Yinelemeli bir katman telefon zinciri gibi çalışır: mesaj sırayla aktarılır ve herkes kendinden önceki kişiyi beklemek zorundadır. Öz-dikkat ise bir toplantı masasıdır, herkes aynı anda odadadır ve herkes herkesi tek seferde duyar. Masa benzetmesi bir yerde aksar: gerçek toplantıda insanlar yine sırayla konuşur ve herkesin herkesi duyması bedavaymış gibi görünür, oysa n kişilik masada n çarpı n konuşma çifti hesaplanır ve masa büyüdükçe maliyet karesiyle artar. Mekanizmanın kendisi ise şu: dizinin bütün konumları için dikkat skorları tek bir işlemde, birbirini beklemeden hesaplanır.
 
 Sayı koyalım. Yüz token'lık bir cümlede yinelemeli katman yüz sıralı adım gerektirir, öz-dikkat ise bir adım; buna karşılık öz-dikkat 100 × 100 = 10.000 skor hesaplar, yinelemeli katman yüz. Dizi on katına çıkarsa yinelemeli tarafta bin sıralı adım olur, öz-dikkat tarafında hâlâ tek adım ama bir milyon skor. On kat uzunluk, yüz kat skor.
 

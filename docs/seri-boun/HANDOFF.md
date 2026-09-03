@@ -6,7 +6,7 @@
 > (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili bölümleri. Üretim trigger'ı:
 > `docs/seri-boun/TRIGGER.md`.
 
-Son güncelleme: 2026-09-02 · Durum: **1–27 yayında (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18, Batch 6: 19–21, Batch 7: 22–24, Batch 8: 25–27) · Sıradaki: 28**
+Son güncelleme: 2026-09-03 · Durum: **1–27 yayında (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18, Batch 6: 19–21, Batch 7: 22–24, Batch 8: 25–27) · Sıradaki: 28**
 
 ## Cursor ve güvenli başlangıç
 
@@ -60,10 +60,16 @@ Son güncelleme: 2026-09-02 · Durum: **1–27 yayında (Batch 0: 1–3, Batch 1
 
 ## Açık borçlar
 
-- **SOZLESME §5 güncellenmeli (kullanıcı onayı gerekir).** §5 hâlâ "Şu an platformda BOUN içerik
-  sözleşmesi yoktur (0 makale)" diyor; bu artık yayımlanmış gerçekle çelişiyor (27 makale).
-  Sözleşme yalnızca kullanıcının açık talebiyle değiştirilebildiği için bu run'da da dokunulmadı.
-  Nihai kategori sözlüğü yukarıdaki tabloda ve YOL-HARITASI'ndadır.
+- **SOZLESME §5 borcu kapandı (2026-09-03, v1.1).** Kullanıcının sözleşme güncelleme talebini
+  taşıyan bağımsız editoryal/akademik denetimde (Fable 5.1, tek oturum) "0 makale" metni
+  yayımlanmış gerçekle değiştirildi; kategori sözlüğü ve kurulu denetleyiciler artık §5'te.
+  Aynı denetimde 1–27 baştan sona okundu, 54 SVG'nin etiketleri metinle karşılaştırıldı, sayısal
+  örnekler yeniden hesaplandı; tek içerik düzeltmesi 2'de "koşullu doğruluktaki önerme
+  (contingency)" → "olumsal önerme (contingency)" (aynı makaledeki "koşullu önerme (conditional)"
+  ile terim çakışması); terim defterine eklendi, `content_hash` yeniden senkronlandı. BOUN'da
+  numaralı ileri gönderme yok (konu adıyla gönderme kuralı §2'ye yazıldı). Yeni kalıcı ilkeler:
+  SOZLESME §2 (gönderme biçimi, İngilizce karşılıklar bloğu, terim çakışması, kalıp yasağı),
+  §3 (koşullu omurga, ikinci soruyu önceden karşılama, cevap sıraları, model bilinci) ve §8.
 - **CLRS 4. baskının 1. ve 18. bölümlerinin adları doğrulanamadı** ve alt bölüm **başlıkları**
   hiçbir bölüm için doğrulanamadı (yalnızca alt bölüm numaralarının varlığı doğrulandı; tam liste
   ARASTIRMA §12'de). Pratik sonucu: CLRS'e **bölüm düzeyinde** atıf yapılır. Faz D makalelerinin

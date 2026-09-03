@@ -5177,6 +5177,55 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-03T11:12:38.921Z"
+    },
+    {
+      "id": "bug-310",
+      "timestamp": "2026-09-03T19:23:48.596Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/SOZLESME.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 4→6 lines (4 removed) | Also: kuralları — `docs/seri/SOZLESME.md` §6). İçerik de; `tools/series/` desenine uygun biçimde BOUN için e",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-03T19:26:00.130Z"
+    },
+    {
+      "id": "bug-311",
+      "timestamp": "2026-09-03T19:26:45.165Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 4→10 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T19:26:45.165Z"
+    },
+    {
+      "id": "bug-312",
+      "timestamp": "2026-09-03T21:40:00.000Z",
+      "error_message": "Editoryal denetim (AI 1-46, BOUN 1-27): 1. makalede \"yüz makale / doksan dokuz makale\" sayım dili SOZLESME §1 ile çelişiyor; 9 ve 27 terim defterine aykırı \"gömme\"; 7 ve 9 on satır içinde tekrarlanan benzetme kalıbı; BOUN 2 \"koşullu doğruluktaki önerme\" aynı makaledeki \"koşullu önerme\" ile terim çakışması",
+      "file": "content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md; models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md; models-and-training/transformer-modern-dil-modellerinin-mimarisi.md; reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md; content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md",
+      "root_cause": "SOZLESME v2.0 marka adının sayım olmadığını söylüyordu ama editoryal kural olarak yazılmamıştı; terim defteri yasaklı biçimleri mekanik tarama kapısı yoktu; analoji kuralı örnek cümleleri sabit kalıp gibi okunmuştu; BOUN terim çakışması kuralı yoktu",
+      "fix": "Beş minimal gövde düzeltmesi + sync-series-hashes --write (her iki seri); kalıcı kurallar SOZLESME v2.1 (§2 seri sayısı dili ve kalıp yasağı, §3 terim taraması, §5 gönderme taraması, §6 şekil ilkeleri, §11) ve BOUN v1.1 (§2, §3, §5 güncel gerçek, §8); check-series-content/svg, typecheck, test (435), build yeşil",
+      "tags": [
+        "series-content",
+        "editorial-audit",
+        "term-register",
+        "sozlesme"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-03T21:40:00.000Z"
     }
   ]
 }

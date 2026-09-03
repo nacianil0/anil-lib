@@ -18,7 +18,7 @@
         "tahmin",
         "temeller"
       ],
-      "contentHash": "sha256:e8ee32f82479afb89f9d6b47f220dc11c17be4122799495db8c8d742ccb0ec01",
+      "contentHash": "sha256:4165b7683844b30495456686fdbe92da027b36329e9757bb214459f42cc13b09",
       "path": "content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -138,7 +138,7 @@
         "pozisyon-kodlama",
         "paralellik"
       ],
-      "contentHash": "sha256:55070e571f68ae03272806b44f5336b73fb6ee6f5019d1ff17fb80c472c0e83b",
+      "contentHash": "sha256:eaea1fcd8a98205af9e67c330c211648118d7f32c638ec3fff9ec01d872afd67",
       "path": "content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -178,7 +178,7 @@
         "chinchilla",
         "beliren-yetenekler"
       ],
-      "contentHash": "sha256:23849b7dcfb3ebeba6d91ef79e717efdbddf9f50ce2d2fd9e9d387e05320df69",
+      "contentHash": "sha256:8aaccb1bd45c7046b3d8ab23906bf5c0db333560843eaaee099de63f5c01dd2e",
       "path": "content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -538,7 +538,7 @@
         "bit-genisligi",
         "olcum-disiplini"
       ],
-      "contentHash": "sha256:00f2ffc17dec6b28fb7abe7ab26222464683ad40f4b5b88e71cf37579e2541f4",
+      "contentHash": "sha256:513d804f22775385c8fb99013edbfa577582b104031165f97e76881dd87dd210",
       "path": "content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md",
       "relatedArticleIds": [],
       "classificationBatch": 6

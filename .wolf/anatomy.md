@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-03T11:15:45.078Z
-> Files: 54 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-03T21:24:34.788Z
+> Files: 60 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -72,6 +72,10 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9c68700c-4168-4b93-8b88-e7b6f013eca8/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b3287c97-e0f7-480d-9e39-6d39ce7d1b0f/scratchpad/
+
+- `fwdrefs.py` (~350 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/
 
 - `commitmsg.txt` (~650 tok)
@@ -81,8 +85,9 @@
 
 ## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
 
-- `MEMORY.md` — Memory index (~94 tok)
+- `MEMORY.md` — Memory index (~148 tok)
 - `reader-line-guide-redesign.md` (~471 tok)
+- `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/
@@ -386,10 +391,14 @@
 
 ## docs/seri-boun/
 
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~8387 tok)
+- `SOZLESME.md` — "Mülakat Aynası: Boğaziçi CmpE" — Seri Sözleşmesi (~3816 tok)
+- `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~16926 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5083 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5388 tok)
+- `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
 
 ## docs/superpowers/plans/
 

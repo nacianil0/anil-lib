@@ -6,7 +6,7 @@
 > **zorundadır**. Sözleşme ancak kullanıcının açık talebiyle değiştirilebilir; değişiklik
 > yapılırsa sonuna tarihli bir değişiklik notu eklenir ve mevcut makalelerle çelişki oluşturulmaz.
 
-Sürüm: 2.0 · Oluşturma: 2026-08-25 · Son revizyon: 2026-08-28 · Kapsam: serinin bütün yaşam döngüsü
+Sürüm: 2.1 · Oluşturma: 2026-08-25 · Son revizyon: 2026-09-03 · Kapsam: serinin bütün yaşam döngüsü
 
 ---
 
@@ -57,6 +57,15 @@ Sürüm: 2.0 · Oluşturma: 2026-08-25 · Son revizyon: 2026-08-28 · Kapsam: se
   2–4 cümle), "## Kaynakça" (bkz. §4).
 - Yasaklar: doldurma cümleler, tekrar eden özet paragrafları, kaynaksız sayısal iddia, TODO/placeholder,
   İngilizce cümle araya sıkıştırma, emoji.
+- **Seri sayısı dili:** Yayımlanmış metin serinin toplam makale sayısını söylemez ve ima etmez
+  ("yüz makale boyunca", "sonraki doksan dokuz makale" gibi ifadeler yasak); "seri boyunca",
+  "ilerideki makalelerde", "serinin geri kalanında" kullanılır. Gerekçe §1'dedir: uzunluk bilgi
+  grafından doğar, marka adı sayım değildir.
+- **Kalıp yasağı:** Aynı geçiş cümlesi, aynı etiket ("Bir dürüstlük notu") ya da aynı benzetme
+  kapanışı ("Benzetmenin bozulduğu yer şurası… biçimsel karşılığı ise şudur") bir makalede en
+  fazla bir kez geçer; seri boyunca da bir kalıp olarak değil, içeriğin gerektirdiği yerde ve o
+  cümlenin doğal ifadesiyle yazılır. Dürüstlük ilan edilmez, gösterilir: kaynağın sınırı, ölçümün
+  koşulu ve kendi hesabın olduğu yer metinde söylenir; bunun için ayrı bir başlığa gerek yoktur.
 
 ## 3. Pedagojik kurallar (kanıta dayalı, mekanik şablona dönüştürmeden)
 
@@ -100,17 +109,21 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
   acemiye yardım eden destek, uzmanlaşan okuyucuya yük olur). Giriş fazlarında tam iskele, orta
   fazlarda seçici iskele, ileri fazlarda (matematiksel omurga ve sonrası) yalnızca yeni
   kavramlarda iskele.
-- **Analoji disiplini (concreteness fading):** Her analoji sınırıyla birlikte verilir ("bu benzetme
-  şurada bozulur: …") ve **mutlaka biçimsel karşılığına bağlanır** ("bu benzetmenin gerçek nesnesi
-  şudur: …") — somutta başlayıp soyuta açıkça köprülenmeyen analoji yarım bırakılmış sayılır
-  (Fyfe ve ark. 2014). Yanlış sezgi yerleştiren analoji, hiç analoji olmamasından kötüdür.
+- **Analoji disiplini (concreteness fading):** Her analoji sınırıyla birlikte verilir ve **mutlaka
+  biçimsel karşılığına bağlanır** — somutta başlayıp soyuta açıkça köprülenmeyen analoji yarım
+  bırakılmış sayılır (Fyfe ve ark. 2014). Sınır ve karşılık **içerik gereğidir, cümle kalıbı
+  değil**: "bu benzetme şurada bozulur / gerçek nesnesi şudur" iki örnek ifadedir, sabit formül
+  değildir; aynı makalede aynı kalıbın tekrarı §2 kalıp yasağına girer. Yanlış sezgi yerleştiren
+  analoji, hiç analoji olmamasından kötüdür.
 - **Süsleyici ayrıntı yasağı (seductive details):** İlginç ama açıklama yükü taşımayan anekdot,
   ekran görüntüsü veya yan hikâye öğrenmeyi ölçülebilir biçimde düşürür (Sundararajan & Adesope
   2020). Kural "sıkıcı ol" değil: ilginç olan şey açıklamanın kendisini taşımalı; taşımıyorsa
   metinden çıkar.
 - **Uzman kör noktasına karşı mekanik denetim:** "Acemiye göre yaz" niyeti yeterli değildir
   (Nathan ve ark. 2001). Mekanik kurallar: hiçbir terim/sembol ilk tanımından önce kullanılmaz;
-  her formül önce sözle söylenir; her makale yayına girmeden "tanımsız terim taraması" yapılır.
+  her formül önce sözle söylenir; her makale yayına girmeden "tanımsız terim taraması" ve terim
+  defterindeki yasaklı biçimler için mekanik tarama (`grep`; ör. "gömme", "korpus", "geliştirme
+  kümesi", "niceleme", "az/sıfır atışlı") yapılır — niyet yetmez, tarama kanıttır.
 
 ## 4. Kaynak ve atıf kuralları
 
@@ -126,6 +139,13 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
 - Sayısal iddialar (yıllar, oranlar, benchmark sonuçları) yayına girmeden bağımsız doğrulanır;
   doğrulanamayan iddia ya çıkarılır ya da belirsizliğiyle birlikte verilir.
 - Uydurma/teyitsiz URL yasak. Her bağlantı yayın öncesi kontrol edilir.
+- **Kendi hesabını işaretle:** Kaynağın vermediği bir sayı (oran, çevrim, yüzde, kat) metinde
+  türetiliyorsa bunun kendi hesabın olduğu söylenir ve girdileri metinde durur ("6 × 280×10⁹ ×
+  300×10⁹ = 5,04×10²³"); kaynaktan alınan sayı ile türetilen sayı aynı cümlede birbirine karışmaz.
+- **Tartışmalı alanda iki taraf:** Alan bir sonucu tartışıyorsa (beliren yetenekler, öz-düzeltme,
+  pekiştirmeli öğrenmenin yetenek sınırı, anlamsal parçalama gibi) iki tarafın ölçümü kanıt
+  gücüyle birlikte verilir; makale bir tarafı seçiyorsa gerekçe ölçümdür, otoritenin adı değil.
+  "Şu an dürüstçe söylenebilecekler" türü kapanışlar bu ayrımı korur.
 
 ## 5. Zincirleme köprü kuralları
 
@@ -140,6 +160,12 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
   karşılanmak zorundadır (vaat defteri: YOL-HARITASI §Yayımlanmış vaatler). Yeni makalelerde
   numaralı vaat yalnızca gerçekten gerekliyse ve yol haritasının sağlam bölgesine verilir;
   konu yeterince yakınsa numarasız ("ileride") işaret tercih edilir.
+- **Geri göndermeler bellek aracıdır:** "N. makalede görmüştük" biçimindeki numaralı geri
+  göndermeler korunur ve 1–3 cümlelik yeniden kurulumla gelir (§3); numaralı ileri gönderme
+  yalnızca vaat defteriyle, konu adıyla gönderme ("getirme makalesinde") ise serbesttir. Yayına
+  girmeden her makalenin ileri göndermeleri vaat defteriyle mekanik olarak (grep) karşılaştırılır;
+  bir makalenin kendi numarasına göndermesi yalnızca vaat kapanışını kaydederken ("… buraya, 41.
+  makaleye bırakılmıştı") kabul edilir.
 - Makaleler arası bağlantı verilecekse rota `/seri/<slug>` biçimindedir (mutlak, site içi).
   Mevcut kütüphane makalelerine bağlantı verilmez (seri kendi başına anlaşılır olmalı).
 
@@ -160,6 +186,25 @@ bir makalede hangisinin kullanılacağına içerik karar verir:
   dev server'da doğrulanır. Marker/defs id'leri sayfa genelinde benzersizdir (pipeline id'leri
   yeniden yazmaz).
 - Diyagram etiketleri Türkçedir ve metindeki terimlerle birebir aynıdır.
+- **Şeklin varlık gerekçesi:** Bir şekil, metnin tek boyutlu anlatamadığı bir ilişkiyi taşır —
+  koşullar arası karşılaştırma, geri beslemeli akış, konum/geometri, aynı verinin iki okunuşu.
+  Metnin zaten söylediğini yeniden çizen şekil dekoratiftir ve çıkarılır; iki şekil zorunluluğu
+  bir taban çizgisidir, doldurulacak kota değildir.
+- **Sayı bütünlüğü:** Şekildeki her sayı metinde geçen sayıyla aynıdır ve aynı kaynağa ya da
+  hesaba dayanır. Ölçülmemiş bir eğri çizilecekse şeklin içine "eğrilerin biçimi şematiktir;
+  ölçülmüş olan yönleridir" gibi bir kayıt düşülür; uydurulmuş çubuk/nokta verisi yasaktır.
+- **Alt metin doğrulanabilir olmalı:** `alt`, şekli görmeyen birinin metinle karşılaştırabileceği
+  kadar somuttur (kaç panel, hangi etiketler, hangi değerler, hangi ok hangi yöne); `title`
+  şeklin çıkarımını tek cümlede söyler ("Aynı FLOP, iki farklı yer"). Alt metin gövde hash'ine
+  girer; şekil değişince alt metin de değişir.
+- **Ölçek ve yön dürüstlüğü:** Logaritmik eksen, kesik eksen, ters yönlü ölçü ("düşük olanı
+  iyidir") ve tabandan gelen sapma (ör. 6ND kestiriminin bir noktayı doğrunun altında bırakması)
+  şeklin içinde yazılıdır. Yanlış zihinsel model kuracak ok yönü, sıralama ya da renk vurgusu
+  bulunamaz; vurgu yalnızca metnin işaret ettiği yoldadır.
+- Serideki referans örnekler (yeni şekil çizerken ölçü): `ayni-egri-iki-cetvel.svg` (aynı
+  verinin iki okunuşu), `toparlanma-tavani.svg` (formülün iki hâli yan yana, sayısal örnekle),
+  `hesap-takasi.svg` (tek bütçenin iki yolu), `dogru-belge-nerede.svg` (koşul × konum tablosu),
+  `sohbet-sablonunun-anatomisi.svg` (özel token'ların gerçek yazımı şeklin içinde).
 - Çoklu ortam ilkeleri (Mayer & Fiorella 2014): **tutarlılık** — dekoratif öğe yok (d=0.86);
   **işaretleme** — yalnızca önemli olan yol vurgulanır, her şeyi vurgulamak hiçbir şeyi
   vurgulamamaktır (d=0.41); **uzamsal yakınlık** — etiketler şeklin üzerinde/içinde durur,
@@ -256,6 +301,52 @@ paket: Batch 0 araştırma kayıtları, `06-pedagoji`):
 - Somuttan soyuta köprü: Fyfe ve ark. 2014. Uzman kör noktası: Nathan, Koedinger & Alibali 2001.
 - Öğrenme stilleri miti reddi: Pashler ve ark. 2008 (seri asla "görsel öğrenen" vaadi vermez).
 
+## 11. Editoryal muhakeme ilkeleri (amaç önce, kural sonra)
+
+Bu bölüm, 1–46 arası yayımlanmış makalelerin bağımsız editoryal/akademik denetiminden
+(2026-09-03) çıkarılan ve güçlü makalelerin arkasındaki muhakemeyi kalıcılaştıran ilkelerdir.
+§2–§6'daki kurallar bu ilkelerin ölçülebilir tabanıdır; çelişki hâlinde amaç kuralı yorumlar,
+kural amacı daraltamaz.
+
+- **Ölçüt sırası:** Bir makale önce "okurun zihinsel modelini bir adım ilerletiyor mu" sorusuyla,
+  sonra iddiaların doğruluğu, sonra şekillerin öğretme aracı olarak işlevi, sonra seri içi
+  süreklilik, en son biçim kurallarına uyumla değerlendirilir. Kontrol listesi (şekil sayısı,
+  kutu sayısı, kelime bandı) tabandır, hedef değildir; hepsini karşılayıp hiçbir şey öğretmeyen
+  bölüm çıkarılır ya da yeniden yazılır.
+- **Makalenin işi tek cümledir:** Her makale okurun modelinde tek bir değişikliği hedefler ve o
+  değişiklik özetten okunur. Giriş, önceki makalenin **açık bıraktığı soruyu** adlandırarak
+  açar ("31. makalede bir soruyu bilerek açık bıraktık: …"); kapanış listesi ("… disiplini")
+  o değişikliğin kullanılabilir hâlidir ve tekniğin **nerede çalışmadığını** içerir. "Neyi
+  çözmüyor" bölümü içeriktir, hafifletici not değildir.
+- **Sezgi → mekanizma → biçim → bağlam sırası bozulmaz.** Formül önce sözle, sonra sembolle,
+  sonra gerçek sayılarla; her mekanizma **okurun yeniden hesaplayabileceği** bir örnekle gelir
+  (girdiler metinde durur, ara sonuçlar yazılır, sonuç kaynakla karşılaştırılır). Bir sayının
+  açıklama amaçlı mı ölçülmüş mü olduğu söylenir.
+- **Ölçüm dürüstlüğü:** Tek bir puan yerine koşulları verilir — hangi küme, hangi protokol, hangi
+  model boyu, hangi dağılım varsayımı. Ortalama durum / beklenen zaman / amortize maliyet,
+  kapsama / doğruluk, dizin bulma oranı / getirme bulma oranı gibi birbirine karışan ölçüler
+  adlarıyla ayrılır; "iyi" olan yönün hangisi olduğu ("düşük perplexity iyidir") açıkça yazılır.
+- **"Kendini yokla" bir ilişkiyi, bir "neden"i sorar.** İyi soru metinde verilmiş bir cevabı
+  hatırlatmadan ister; iyi cevap yeniden ifade değil, sınır örneği ya da mekanizmadır ("Çünkü
+  karşılaştırma 'özet ile tam geçmiş' arasında değil, 'özet ile kesilmiş geçmiş' arasında").
+- **Kaynak–iddia bağı görünür olmalıdır:** Hangi çalışma, hangi mecra (hakemli mi, hangi konferans/
+  dergi, hangi yıl), hangi ölçüm. Hakemsiz kaynak yalnızca yerine başkası konamıyorsa ve
+  işaretlenerek kullanılır; tartışmalı alanda iki taraf ölçümüyle durur (§4).
+- **Süreklilik bir sözleşmedir:** Numaralı geri göndermeler yeniden kurulumla, ileri göndermeler
+  vaat defteriyle, terimler terim defteriyle bağlıdır (§3, §5). Bir kavram ikinci kez ve daha
+  derin kurulacaksa bu bilinçli formalizasyondur ve öyle söylenir; aynı sözcüğün iki kavramı
+  taşıdığı yerde ("değer": dikkat üçlüsü / beklenen getiri; "bellek": donanım / ürün) çakışma
+  makalenin içinde açıkça adlandırılır.
+- **Kalıp değil, muhakeme:** Aynı geçiş, aynı etiket, aynı kapanış cümlesi kalıplaştıkça okur
+  onu atlar (§2). Sınır, karşılık ve dürüstlük içerik olarak yazılır; ilan edilmez.
+- **İki serinin farkı korunur:** Bu seri akademik okuryazarlık, matematiksel derinlik, araştırma
+  pratiği ve sistem mühendisliği hedefler; "Kendini yokla" kutusu, "disiplin" kapanışı ve
+  numaralı gönderme onun araçlarıdır. BOUN serisinin "Sesli anlat" kutusu, takip sorusu
+  zinciri ve konu adıyla gönderme biçimi buraya taşınmaz; iki serinin kutu adları karışmaz.
+- **İnceleyen için:** Bir makaleyi "kurallara uyuyor" diye kabul etmek yetmez. Her bölüm için
+  "okur bu bölümden sonra neyi yeni biliyor" sorusuna tek cümlelik cevap verilebilmelidir;
+  verilemiyorsa bulgu MINOR değil, yapısaldır.
+
 ---
 
 ## Değişiklik notları
@@ -269,3 +360,15 @@ paket: Batch 0 araştırma kayıtları, `06-pedagoji`):
   zorunluluğu kaldırıldı; kalite kapıları korundu. (e) §3'e bilinçli formalizasyon ilkesi, §5'e
   numaralı ileri vaat disiplini eklendi. (f) Level ve iskele bantları sabit numara aralıklarından
   faz-göreli tanımlara çevrildi. Yayımlanmış 1–10 makale bu revizyondan etkilenmez.
+- **2026-09-03 (v2.1, kullanıcının açık talebiyle — iki serinin bağımsız editoryal/akademik
+  denetimi, Fable 5.1 tek oturum):** (a) §2'ye "seri sayısı dili" ve "kalıp yasağı" eklendi;
+  1. makaledeki "yüz makale / doksan dokuz makale" ifadeleri §1 ile çelişiyordu ve düzeltildi.
+  (b) §3 analoji disiplini normalize edildi: sınır ve biçimsel karşılık içerik gereğidir, sabit
+  cümle kalıbı değildir; "tanımsız terim taraması"na terim defteri yasaklı-biçim taraması eklendi
+  (9 ve 27'de "gömme" → "embedding" düzeltildi). (c) §4'e "kendi hesabını işaretle" ve
+  "tartışmalı alanda iki taraf" eklendi. (d) §5'e geri/ileri gönderme doğrulaması eklendi.
+  (e) §6'ya şeklin varlık gerekçesi, sayı bütünlüğü, alt metin doğrulanabilirliği, ölçek/yön
+  dürüstlüğü ve referans örnekler eklendi. (f) Yeni §11 "Editoryal muhakeme ilkeleri" eklendi.
+  Yayımlanmış makalelerin id/slug/sıra/URL'si değişmedi; gövdesi değişen 1, 7, 9, 27 için
+  `content_hash` yeniden senkronlandı. Kalıp yasağı ileriye dönüktür: geriye dönük üslup
+  düzeltmesi yapılmadı.

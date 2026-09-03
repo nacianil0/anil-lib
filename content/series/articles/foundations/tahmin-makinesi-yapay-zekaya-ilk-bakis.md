@@ -12,7 +12,7 @@ tags:
   - model
   - tahmin
   - temeller
-content_hash: sha256:e8ee32f82479afb89f9d6b47f220dc11c17be4122799495db8c8d742ccb0ec01
+content_hash: sha256:4165b7683844b30495456686fdbe92da027b36329e9757bb214459f42cc13b09
 classification_version: 1
 classification_batch: 0
 ---
@@ -24,7 +24,7 @@ Senden bir program yazman isteniyor: gelen her e-postayı "spam" ya da "spam de�
 
 Buradaki başarısızlık senin beceriksizliğin değil. Sorun şu: "spam" diye bir şeyin ne olduğunu biliyorsun ama tarifini yazamıyorsun. Kural sayısı çok, kurallar bulanık ve kurallar zamanla değişiyor. Google'ın makine öğrenmesi (machine learning) başlangıç dersi aynı çıkmazı hava tahminiyle anlatır: yağmuru klasik yolla tahmin etmek için atmosferi modelleyip akışkanlar dinamiği denklemlerini çözmen gerekir; makine öğrenmesi yolunda ise sisteme onlarca yıllık geçmiş hava verisini verir ve örüntülerle sonuçlar arasındaki ilişkiyi kendisinin yakalamasını beklersin. İki yol arasındaki takas dürüstçe söylenmeli: fizik modeli *neden* yağdığını bilir, makine öğrenmesi modeli yalnızca genelde neyin neyi izlediğini bilir.
 
-Bu seri tam buradan başlıyor. Yüz makale boyunca, bu ikinci yolun nereye kadar gittiğini adım adım kuracağız: ilk hesaplardan büyük dil modellerine (large language model), oradan ajanlara ve güvenlik tartışmalarına. Elinde tek bir zihinsel model olsun istiyorum ve bu makalenin bütün işi onu kurmak: **öğrenen sistem, örneklerden ayarlanan bir fonksiyondur.**
+Bu seri tam buradan başlıyor. Seri boyunca, bu ikinci yolun nereye kadar gittiğini adım adım kuracağız: ilk hesaplardan büyük dil modellerine (large language model), oradan ajanlara ve güvenlik tartışmalarına. Elinde tek bir zihinsel model olsun istiyorum ve bu makalenin bütün işi onu kurmak: **öğrenen sistem, örneklerden ayarlanan bir fonksiyondur.**
 
 ## İki ok, iki yön
 
@@ -34,7 +34,7 @@ Keras kütüphanesinin yaratıcısı François Chollet, *Deep Learning with Pyth
 
 Bu ters çevirmenin ilk ciddi gösterimi 1959'da geldi. IBM'de çalışan Arthur Samuel, dama oynayan bir program yazdı; ama programın marifeti dama oynaması değil, oynadıkça iyileşmesiydi. Program kendi kendine oynayarak konum değerlendirmesini ayarlıyordu ve makalesinin bildirdiğine göre sekiz-on saatlik makine oyun süresi sonunda, kendisini yazan kişiden daha iyi oynar hâle geliyordu. Alana adını veren de Samuel'in bu çalışmasıdır. Onun kendi çerçevesi şuydu — makine öğrenmesi, bir bilgisayarı, aynı davranış insanlarda ya da hayvanlarda görülseydi "öğrenme" diyeceğimiz biçimde davranacak şekilde programlamaktır.
 
-Burada bir uyarı borcum var. Türkçe kaynakların neredeyse tamamında Samuel'e atfedilen ve tırnak içinde verilen bir cümle dolaşır: bilgisayarlara açıkça programlanmadan öğrenme yeteneği kazandıran çalışma alanı. Bu cümlenin peşine düşenler, onu Samuel'in ne 1959 tarihli makalesinde ne de 1967'deki devamında bulabildiklerini bildiriyor; atıflar hep var olmayan bir sayfaya işaret ediyor. Bu tespiti yapan inceleme hakemli bir yayın değil, ama birincil kaynak taramasını yapmış olması ve hiçbir akademik kaynağın bu alıntıya sayfa numarası verememesi yeterince güçlü bir işaret. Dolayısıyla: fikir Samuel'indir, o cümle muhtemelen değildir. Serinin ilk sayfasında bunu söylememin sebebi, sonraki doksan dokuz makale boyunca aynı titizliği beklemen.
+Burada bir uyarı borcum var. Türkçe kaynakların neredeyse tamamında Samuel'e atfedilen ve tırnak içinde verilen bir cümle dolaşır: bilgisayarlara açıkça programlanmadan öğrenme yeteneği kazandıran çalışma alanı. Bu cümlenin peşine düşenler, onu Samuel'in ne 1959 tarihli makalesinde ne de 1967'deki devamında bulabildiklerini bildiriyor; atıflar hep var olmayan bir sayfaya işaret ediyor. Bu tespiti yapan inceleme hakemli bir yayın değil, ama birincil kaynak taramasını yapmış olması ve hiçbir akademik kaynağın bu alıntıya sayfa numarası verememesi yeterince güçlü bir işaret. Dolayısıyla: fikir Samuel'indir, o cümle muhtemelen değildir. Serinin ilk sayfasında bunu söylememin sebebi, serinin geri kalanı boyunca aynı titizliği beklemen.
 
 Samuel'in gösterdiği şeyin tanımı, Tom Mitchell'in 1997 tarihli ders kitabında keskinleşti — bu kitap makine öğrenmesini bir hileler koleksiyonu olmaktan çıkarıp kendi biçimselliği olan bir disipline dönüştürdü. Mitchell'in tanımı üç harfe dayanır: bir program, T görev sınıfında, P performans ölçüsüne göre ölçülen başarısını E deneyimiyle artırıyorsa öğreniyordur. Sözle söylersek: neyi yapacağını (T), ne kadar iyi yaptığını nasıl ölçtüğünü (P) ve neye bakarak iyileştiğini (E) söyleyemiyorsan, ortada "öğrenme" yoktur. Spam filtresine uygulayalım — T: gelen iletiyi spam/spam değil diye sınıflandırmak; P: doğru sınıflandırılan ileti oranı; E: geçmişte insanlar tarafından etiketlenmiş e-postalar. Samuel'in programı için ise T: dama oynamak; P: kazanılan oyunların oranı; E: kendi kendine oynanan oyunlar.
 

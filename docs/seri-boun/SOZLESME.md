@@ -5,7 +5,7 @@
 > **zorundadır**. Sözleşme ancak kullanıcının açık talebiyle değiştirilebilir; değişiklik yapılırsa
 > sonuna tarihli bir değişiklik notu eklenir.
 
-Sürüm: 1.0 · Oluşturma: 2026-08-28 · Kapsam: serinin bütün yaşam döngüsü
+Sürüm: 1.1 · Oluşturma: 2026-08-28 · Son revizyon: 2026-09-03 · Kapsam: serinin bütün yaşam döngüsü
 
 ---
 
@@ -41,7 +41,22 @@ Sürüm: 1.0 · Oluşturma: 2026-08-28 · Kapsam: serinin bütün yaşam döngü
 - İçerik türleri (içerik uygunsa, mekanik şablon olmadan): worked example, kısa ispat, küçük
   algoritmik problem, pseudocode/kod parçası, karşılaştırma tablosu, diyagram ve **sözlü
   checkpoint**. Pseudocode dil bağımsız tutulur; kod gerekirse C veya dil-nötr sözde kod.
-- Zorunlu bölümler: giriş köprüsü, gövde, "### Sırada ne var", "## Kaynakça".
+- Zorunlu bölümler: giriş köprüsü, gövde, "## Mülakatta nasıl görünür" (takip zinciri, sık
+  hatalar ve İngilizce karşılıklar listesi), "### Sırada ne var", "## Kaynakça".
+- **Gönderme biçimi:** Önceki makalelere **konu adıyla** gönderme yapılır ("hash makalesinde",
+  "tümevarım makalesinde"), numarayla değil; seri numaraları yalnızca yol haritasında ve 1.
+  makalenin faz haritasında geçer. Böylece yayımlanmış metin, ileride araya makale girse bile
+  bozulmaz ve numaralı ileri vaat açılmaz.
+- **İngilizce karşılıklar bloğu:** "Mülakatta nasıl görünür" bölümü, makalenin çekirdek
+  terimlerinin İngilizcelerini tek satırlık bir listeyle kapatır; liste yalnızca o makalede
+  kurulan terimleri içerir.
+- **Terim çakışması yasağı:** Aynı makalede iki farklı kavram aynı Türkçe sözcüğü ya da aynı
+  kökten türemiş sıfatı paylaşamaz ("koşullu önerme" varken "contingency" için "koşullu
+  doğruluktaki önerme" değil "olumsal önerme"; *stack* için "yığın" varken *heap* İngilizce
+  kalır). Çakışma kaçınılmazsa ayrım metinde açıkça adlandırılır.
+- **Kalıp yasağı:** AI sözleşmesi §2'deki kalıp yasağı burada da geçerlidir; "Sesli anlat"
+  kutusu ve "Mülakatta nasıl görünür" bölümü bilinçli araçlardır, onların dışında tekrar eden
+  etiket ya da geçiş cümlesi kurulmaz.
 - Yasaklar: doldurma, kaynaksız iddia, TODO/placeholder, emoji, uydurulmuş "çıkmış soru".
 
 ## 3. Pedagojik kurallar (sözlü mülakat odaklı)
@@ -62,6 +77,33 @@ worked examples, cognitive load, scaffolding/fading, analoji disiplini — bkz.
   çözüm önce strateji, sonra adımlar, sonra karmaşıklık/doğruluk savunması sırasıyla yazılır.
 - **Unutmuş okuyucu varsayımı:** lisans bilgisi paslanmış kabul edilir; hiçbir makale "zaten
   biliyorsun" demez, kritik önkoşulu 1–3 cümleyle yeniden kurar.
+- **Omurga koşullarıyla söylenir:** "İyi bir cevabın omurgası" 60–90 saniyede söylenebilir
+  olmalı ve iddiayı **koşuluyla** kurmalıdır: hangi durum (ortalama / en kötü / beklenen /
+  amortize), hangi model (karşılaştırma modeli, RAM, dış bellek), hangi varsayım (düzgün dağılım,
+  negatif olmayan ağırlık, sıralı girdi) ve **nerede bozulduğu**. Koşulsuz iddia ("hash tablosu
+  O(1)") omurga değildir; mülakatçının ikinci sorusunu davet eder.
+- **İkinci soruyu önceden karşıla:** Takip zinciri (tanım → sınır durumu → takas) makalenin
+  içinde okura gösterilir ve iyi cevap, sınır durumunu **sorulmadan** söyler. Bir bölümün
+  "mülakatçı burada şunu sorar" cümlesi yoksa o bölümün sınır durumu eksiktir.
+- **Maliyet cevabının sabit sırası:** Girdi boyutunu tanımla ("n nedir?") → maliyeti nereden
+  saydığını söyle (hangi döngü, kaç kez) → sınıfı ve durumu ver (Θ mu O mu, en kötü mü ortalama
+  mı) → bellek maliyetini ekle (özyineleme derinliği dahil). Doğruluk cevabının sabit sırası:
+  değişmezi tek cümlede ve tam söyle → başlatma/koruma/sonuçlanma → sonlanmayı ayrıca ölçüyle
+  ispatla.
+- **Model bilinci:** Her alt sınır ve her "daha hızlısı yok" iddiası modeliyle birlikte söylenir;
+  "sıralama n log n'in altına inemez" eksiktir, "karşılaştırma modelinde" tamdır. Model
+  değiştiğinde (dış bellek, doğrudan erişim, rastgelelik, paralellik) cevabın neden değiştiği
+  bir cümleyle gösterilir.
+- **Sık hatalar listesi içerikten gelir:** "Mülakatta nasıl görünür" bölümündeki 3–6 hata,
+  gerçekten görülen kavram yanılgılarıdır (DFS ağacını en kısa yol sanmak, amortize ile ortalama
+  durumu karıştırmak); kelime doldurmak için genel uyarı yazılmaz.
+- **Kendi doğrulamanı işaretle:** Kaynağın vermediği bir sayı ya da örnek çıktı (izleme tablosu,
+  karşı örnek, kaba kuvvet karşılaştırması) yazar tarafından hesaplandıysa bu açıkça söylenir
+  ("bunu kendi kodumla doğruladım", "bu yüzdeler kendi hesabımdır") ve kaynaktan alınan sayıyla
+  karıştırılmaz. Bu not bir üslup süsü değil, kaynak–iddia bağının parçasıdır.
+- **Ne öğretti sorusu:** Her makale beş yeteneğin (anlat / çöz / ispatla / savun / dayan) en az
+  birinde okuru ilerletir ve hangisinde ilerlettiği metinden okunur. Bunu sağlamayan bölüm,
+  kelime bandını tutturmak için kalmaz.
 
 ## 4. Kaynak ve doğruluk kuralları
 
@@ -78,22 +120,26 @@ worked examples, cognitive load, scaffolding/fading, analoji disiplini — bkz.
 
 - Kalıcı living state: `docs/seri-boun/SOZLESME.md` (bu dosya), `docs/seri-boun/YOL-HARITASI.md`,
   `docs/seri-boun/HANDOFF.md`, `docs/seri-boun/ARASTIRMA.md`, `docs/seri-boun/TRIGGER.md`.
-- **Şu an platformda BOUN içerik sözleşmesi yoktur** (0 makale; sahte katalog kaydı yasak).
-  İlk üretim run'ı, AI serisinde doğrulanmış deseni izleyerek entegrasyonu kurar:
-  ayrı içerik sözleşmesi `content/series-boun/{catalog.json, articles/**, assets/**}` + ayrı
-  rota (`/boun`, `/boun/[slug]`) + ReaderShell'in mevcut `basePath/listTitle/listSubtitle/homeHref`
-  prop'ları. BOUN kendi kategori sözlüğünü tanımlar (öneri: `discrete-math`, `data-structures`,
-  `algorithms`, `operating-systems`, `supporting-fundamentals`); ana kütüphanenin ve AI serisinin
-  şema/kategori sözlüğü **değiştirilmez**, gerekirse şema additive biçimde seri-başına kategori
-  sözlüğüne genişletilir.
+- **Platform entegrasyonu kuruludur** (Batch 0'dan beri; yayımlanmış gerçek §7'ye göre en yüksek
+  otoritedir): içerik sözleşmesi `content/series-boun/{catalog.json, roadmap.json,
+  articles/<kategori>/<slug>.md, assets/<slug>/*.svg}`; rotalar `/boun` (giriş + yol haritası) ve
+  `/boun/[slug]` (okuyucu); kod `src/lib/content/series-boun.ts` (seri örneği),
+  `series-content.ts` (ortak fabrika), `schema.ts` (seri başına kategori sözlüğü), `labels.ts`.
+  Kategori sözlüğü: `interview-method`, `discrete-math`, `data-structures`, `algorithms`,
+  `operating-systems`, `supporting-fundamentals`; klasör adı `category` alanıyla birebir aynıdır.
+  Ana kütüphanenin ve AI serisinin şema/kategori sözlüğü **değiştirilmez**; sahte katalog kaydı
+  yasaktır; yeni bir makale kod değişikliği gerektirmez.
 - Entegrasyon değişmezleri: mevcut `/read` (18 makale) ve `/seri` (AI) rotaları ile kullanıcı
   progress/bookmark/highlight state'i korunur; `sync-service.validArticleIds` birleşime BOUN
   kataloğu eklenir; bilinmeyen id reddi sürer; global article-id benzersizliği ana ∪ AI ∪ BOUN
   üzerinde doğrulanır; sıfır/az makaleli durumda UI null/empty/partial-data hatası üretmez.
 - Diyagramlar AI serisinin SVG sözleşmesini aynen izler (CSS değişkenli renk, viewBox, sanitize
-  kuralları — `docs/seri/SOZLESME.md` §6). İçerik denetleyicisi ilk entegrasyon run'ında
-  `tools/series/` desenine uygun biçimde BOUN için eklenir (sözlü checkpoint ve bölüm kuralları
-  §2–§3'e göre).
+  kuralları ve şekil ilkeleri — `docs/seri/SOZLESME.md` §6). İçerik denetleyicileri kuruludur:
+  `node tools/series/check-series-content.cjs --series=boun` (H2 başlangıcı, "### Sırada ne var"
+  → "## Kaynakça" sırası, 1.800–3.200 kelime, ≥2 şekil ve şekil göndermesi, 1–3 "Sesli anlat"
+  kutusu, ham HTML yok), `check-series-svg.cjs content/series-boun/assets`,
+  `sync-series-hashes.cjs --series=boun [--write]` (gövde değişince zorunlu),
+  `entegre-batch.cjs --series=boun [--write]`.
 - Frontmatter/katalog şeması ana kütüphaneyle aynı alan yapısını kullanır (article_id, slug,
   reading_order, content_hash, classification_batch …); `classification_batch` = ardışık üretim
   kohortu (ilk run Batch 0).
@@ -128,3 +174,40 @@ worked examples, cognitive load, scaffolding/fading, analoji disiplini — bkz.
 Tarihsel kayıtlar açıkça non-normative history olarak işaretlenir. Kritik kararlar, sentez ve son
 kabul her zaman run'ı çalıştıran ana oturumdadır; bu sözleşme belirli bir model, paralel reviewer
 düzeni veya harness zorunlu kılmaz ve repo dışı geçici alanlara bağımlılık kuramaz.
+
+## 8. Editoryal muhakeme ilkeleri (amaç önce, kural sonra)
+
+AI sözleşmesinin §11'i (ölçüt sırası, makalenin tek cümlelik işi, sezgi → mekanizma → biçim
+sırası, ölçüm dürüstlüğü, kaynak–iddia bağı, kalıp yasağı, inceleyen için "ne öğretti" sorusu)
+burada da geçerlidir. BOUN'un amacı farklı olduğu için ölçüt de farklı okunur:
+
+- **Başarı ölçütü sözlü savunmadır.** Bir bölüm, okurun tahtada altmış saniyede söyleyebileceği
+  ve itiraz gelince genişletebileceği bir cevap üretmiyorsa amacına ulaşmamıştır; kelime bandı,
+  şekil ve kutu sayısı tabandır.
+- **Her iddia koşulu ve modeliyle birlikte doğar** (§3): durum, model, varsayım, bozulma noktası.
+  Serinin en güçlü bölümleri bu dördünü aynı paragrafta verir ("ortalama durumda, düzgün dağılım
+  varsayımıyla; en kötü durumda bütün anahtarlar aynı hücreye düşer").
+- **Ders kitabı seçimi ölçüm gerektirir:** Standart kaynaklar (CLRS, Sedgewick–Wayne, MIT 6.006 /
+  6.042 / 6.046, OSTEP, xv6, Silberschatz) arasında bir sayı ya da tanım farklı veriliyorsa
+  makale hangisini neden seçtiğini söyler; bölüm adı doğrulanamayan kaynağa alt bölüm düzeyinde
+  atıf yapılmaz (HANDOFF açık borçları).
+- **Kendi hesap ve kendi kod açıkça işaretlenir** (§3); somut izleme tabloları, karşı örnekler ve
+  kaba kuvvet karşılaştırmaları serinin kanıt aracıdır ve şekillerdeki sayılarla birebir aynıdır.
+- **AI serisinden ayrım korunur:** "Sesli anlat" kutusu, takip sorusu zinciri, "Mülakatta nasıl
+  görünür" bölümü ve konu adıyla gönderme BOUN'un araçlarıdır; AI serisinin "Kendini yokla"
+  kutusu ve numaralı gönderme biçimi buraya taşınmaz.
+
+---
+
+## Değişiklik notları
+
+- **2026-09-03 (v1.1, kullanıcının açık talebiyle — iki serinin bağımsız editoryal/akademik
+  denetimi, Fable 5.1 tek oturum):** (a) §5'teki "0 makale" metni yayımlanmış gerçekle (27 makale,
+  kurulu rota/kod/denetleyiciler, nihai kategori sözlüğü) değiştirildi; HANDOFF'taki açık borç
+  kapandı. (b) §2'ye "Mülakatta nasıl görünür" zorunlu bölümü, konu adıyla gönderme, İngilizce
+  karşılıklar bloğu, terim çakışması yasağı ve kalıp yasağı eklendi (2. makalede "koşullu
+  doğruluktaki önerme" → "olumsal önerme (contingency)" düzeltildi, terim defterine işlendi).
+  (c) §3'e koşullu omurga, ikinci soruyu önceden karşılama, maliyet/doğruluk cevap sırası,
+  model bilinci, sık hatalar, kendi doğrulamanı işaretle ve "ne öğretti" ilkeleri eklendi.
+  (d) Yeni §8 "Editoryal muhakeme ilkeleri" eklendi. Yayımlanmış makalelerin id/slug/sıra/URL'si
+  değişmedi; gövdesi değişen 2 için `content_hash` yeniden senkronlandı.

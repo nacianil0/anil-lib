@@ -24,6 +24,19 @@ Son güncelleme: 2026-09-03 · Durum: **1–46 yayında (kohort Batch 0 → Batc
 
 ## Açık borçlar
 
+- **2026-09-03 editoryal/akademik denetim (Fable 5.1, tek oturum, SOZLESME v2.1).** 1–46 ve BOUN
+  1–27 baştan sona okundu; 186 SVG'nin etiketleri metinle karşılaştırıldı; sayısal örnekler
+  yeniden hesaplandı (uyumsuzluk bulunmadı). Uygulanan düzeltmeler: 1'de "yüz makale / sonraki
+  doksan dokuz makale" sayım dili kaldırıldı (SOZLESME §1 ile çelişiyordu); 9 ve 27'de terim
+  defterine aykırı "gömme" → "embedding"; 7 ve 9'da on satır içinde iki kez tekrarlanan benzetme
+  kalıbı birer kez doğal ifadeye çevrildi. Dört makalenin `content_hash`'i yeniden senkronlandı;
+  id/slug/sıra/URL değişmedi. **Bilinçli olarak dokunulmayanlar:** "Benzetmenin bozulduğu yer
+  şurası" kalıbı 1–6, 8, 10, 13 ve 25'te (17 yer) ve "Bir dürüstlük notu" etiketi 13 yerde
+  duruyor — okuru yanıltmıyor, yalnızca kalıp; §2 kalıp yasağı ileriye dönüktür, geriye dönük
+  üslup düzeltmesi yapılmadı. 41'in "buraya, 41. makaleye" öz-göndermesi vaat kapanışıdır ve
+  doğrudur. İleri göndermelerin tamamı vaat defteriyle eşleşti (5→78; 6/18→74–77; 7/15→86;
+  8/16/18/31→72; 9→78; 13→64; 16/22→101; 20→61–70, 69, 85). Sıradaki run için yeni kapı: §3
+  terim defteri yasaklı-biçim taraması ve §5 ileri gönderme taraması yayın öncesi zorunludur.
 - **Faz başlıklarının dili — açık, karar verilmedi.** `roadmap.json`'daki faz başlıkları İngilizce
   alan terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning
   ve Test-Time Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları ise terim

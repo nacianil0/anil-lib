@@ -197,6 +197,7 @@ boyunca aynı kalır.
 | koşullu önerme | conditional (implication) | 2 |
 | çift koşullu | biconditional | 2 |
 | doğruluk tablosu | truth table | 2 |
+| totoloji / çelişki / olumsal önerme | tautology / contradiction / contingency | 2 |
 | boş doğruluk | vacuous truth | 2 |
 | karşıt | converse | 2 |
 | ters | inverse | 2 |
