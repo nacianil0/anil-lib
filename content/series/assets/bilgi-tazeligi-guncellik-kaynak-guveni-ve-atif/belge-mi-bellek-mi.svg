@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Getirilen belge ile modelin kendi cevabı çelişince iki modelin hangisini seçtiği: belge yanlışken bir model belgeye teslim oluyor, öbürü direniyor; belge doğruyken ikisi de yüzde 90'ın üstünde belgeye uyuyor.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">belge yanlış, modelin cevabı doğru</text>
+  <text x="372" y="24" font-size="13" font-weight="bold" fill="var(--text)">belge doğru, modelin cevabı yanlış</text>
+
+  <text x="20" y="58" font-size="13" fill="var(--text)">GPT-4o · kendi cevabı</text>
+  <rect x="210" y="45" width="32.7" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="318" y="58" font-size="13" fill="var(--text-muted)">0,327</text>
+  <text x="20" y="82" font-size="13" fill="var(--text)">GPT-4o · belge</text>
+  <rect x="210" y="69" width="60.8" height="16" fill="var(--accent)" />
+  <text x="318" y="82" font-size="13" font-weight="bold" fill="var(--text)">0,608</text>
+  <text x="20" y="106" font-size="13" fill="var(--text)">GPT-4o · hiçbiri</text>
+  <rect x="210" y="93" width="6.5" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="318" y="106" font-size="13" fill="var(--text-muted)">0,065</text>
+
+  <text x="20" y="146" font-size="13" fill="var(--text)">Claude Opus · kendi cevabı</text>
+  <rect x="210" y="133" width="58.5" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="318" y="146" font-size="13" fill="var(--text-muted)">0,585</text>
+  <text x="20" y="170" font-size="13" fill="var(--text)">Claude Opus · belge</text>
+  <rect x="210" y="157" width="31.3" height="16" fill="var(--accent)" />
+  <text x="318" y="170" font-size="13" font-weight="bold" fill="var(--text)">0,313</text>
+  <text x="20" y="194" font-size="13" fill="var(--text)">Claude Opus · hiçbiri</text>
+  <rect x="210" y="181" width="10.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="318" y="194" font-size="13" fill="var(--text-muted)">0,102</text>
+
+  <text x="372" y="58" font-size="13" fill="var(--text)">GPT-4o · kendi cevabı</text>
+  <rect x="562" y="45" width="4.1" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="670" y="58" font-size="13" fill="var(--text-muted)">0,041</text>
+  <text x="372" y="82" font-size="13" fill="var(--text)">GPT-4o · belge</text>
+  <rect x="562" y="69" width="90.3" height="16" fill="var(--accent)" />
+  <text x="670" y="82" font-size="13" font-weight="bold" fill="var(--text)">0,903</text>
+  <text x="372" y="106" font-size="13" fill="var(--text)">GPT-4o · hiçbiri</text>
+  <rect x="562" y="93" width="5.6" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="670" y="106" font-size="13" fill="var(--text-muted)">0,056</text>
+
+  <text x="372" y="146" font-size="13" fill="var(--text)">Claude Opus · kendi cevabı</text>
+  <rect x="562" y="133" width="4.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="670" y="146" font-size="13" fill="var(--text-muted)">0,042</text>
+  <text x="372" y="170" font-size="13" fill="var(--text)">Claude Opus · belge</text>
+  <rect x="562" y="157" width="90.1" height="16" fill="var(--accent)" />
+  <text x="670" y="170" font-size="13" font-weight="bold" fill="var(--text)">0,901</text>
+  <text x="372" y="194" font-size="13" fill="var(--text)">Claude Opus · hiçbiri</text>
+  <rect x="562" y="181" width="5.7" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="670" y="194" font-size="13" fill="var(--text-muted)">0,057</text>
+
+  <line x1="360" y1="12" x2="360" y2="210" stroke="var(--border)" />
+
+  <text x="20" y="246" font-size="13" fill="var(--text-muted)">Seçilme oranı, 1.200'ü aşkın soru, altı alan; çubuklar aynı ölçekte (100 birim = 1,0).</text>
+  <text x="20" y="266" font-size="13" fill="var(--text-muted)">Belge doğruyken ikisi de uyuyor; belge yanlışken biri teslim oluyor, öbürü direniyor.</text>
+</svg>

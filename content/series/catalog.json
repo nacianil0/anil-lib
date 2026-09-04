@@ -922,6 +922,86 @@
       "path": "content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
+    },
+    {
+      "articleId": "article_57dd0a42-134a-46dd-a9dc-edc8095eee4a",
+      "title": "Araç Kullanımı: İşlev Çağrısı",
+      "slug": "arac-kullanimi-islev-cagrisi",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 47,
+      "summary": "Modelin dünyaya dokunan çağrısını token düzeyinde kurar: araç tanımının isteme girişini, çağrının JSON biçimini ve ikinci durma token'ını, sonucun ayrı bir konuşmacı rolüyle dönüşünü; biçim garantisinin türü zorlayıp değeri zorlayamadığını üç denetçinin sayılarıyla, ne zaman çağrılacağının öz-denetimli ölçüsünü, yüzlerce araçta seçimin bir getirme sorununa dönüşmesini, bağımsız çağrıları aynı anda çalıştırmanın kazancını ve güvenilirliğin kapsamayla değil pass^k ile ölçülmesini anlatır.",
+      "tags": [
+        "arac-kullanimi",
+        "islev-cagrisi",
+        "arac-tanimi",
+        "uydurulmus-cagri",
+        "paralel-cagri"
+      ],
+      "contentHash": "sha256:5dbbdaebae38d222e099806196c159e0517d58126f4ca788d630404370e257e7",
+      "path": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
+    },
+    {
+      "articleId": "article_904dc391-074d-4c2c-b903-acd81ae7cbd6",
+      "title": "Web, Kod ve Dosyalarla Çalışan Modeller",
+      "slug": "web-kod-ve-dosyalarla-calisan-modeller",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 48,
+      "summary": "En çok kullanılan üç aracı arayüz olarak kurar: arama motorunun cevap değil liste döndürmesini ve sayfanın isteme girmeden önce süzülmesini, yorumlayıcının hesabı devralıp hata mesajını gözleme çevirmesini, dosya sisteminin bir depo dizinine dönüşmesini; aynı modelde yalnızca arayüz düğmelerini değiştirerek çözülen görev oranının nasıl değiştiğini ölçümlerle gösterir.",
+      "tags": [
+        "arac-arayuzu",
+        "web-arama",
+        "kod-yorumlayicisi",
+        "dosya-sistemi",
+        "depo-duzeyi-getirme"
+      ],
+      "contentHash": "sha256:0bdd0421bcf5c7841b71956d555825cfaf40bf9f69cf81485ff5f2078257379b",
+      "path": "content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
+    },
+    {
+      "articleId": "article_9d673b78-5932-404e-b51d-33cbb200b6fe",
+      "title": "MCP ve Araç Ekosistemleri",
+      "slug": "mcp-ve-arac-ekosistemleri",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 49,
+      "summary": "Araç tanımının uygulamadan protokole taşınmasını kurar: MCP'nin ana bilgisayar, istemci ve sunucu üçlüsünü, araçların listelenip çağrıldığı iki isteği ve sunucunun sohbeti görmeme ilkesini; binlerce sunucuya ulaşan ekosistemin sayılarını ve bir yıl içinde yarısı bozulan araçların ölçümünü; bin araç arasından seçimin getirmeye dönüşmesini; protokolün biçimi çözüp planlamayı çözmediğini ve araç açıklamasının neden bir saldırı yüzeyi olduğunu ölçümlerle anlatır.",
+      "tags": [
+        "mcp",
+        "arac-protokolu",
+        "arac-ekosistemi",
+        "arac-getirme",
+        "arac-zehirleme"
+      ],
+      "contentHash": "sha256:738e3d199d7fc6d5fc32a694d4e25ec261d78c31527f0aaca6d510d767b1de16",
+      "path": "content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
+    },
+    {
+      "articleId": "article_d60eb4f3-2f3a-4962-b53a-485ee29c1599",
+      "title": "Bilgi Tazeliği: Güncellik, Kaynak Güveni ve Atıf",
+      "slug": "bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 50,
+      "summary": "Faz 5'i bilgiye güven zinciriyle kapatır: modelin bilgisinin ilan edilen kesim tarihinden önce bayatladığını ve kaynaklara göre farklı tarihlerde kesildiğini, bayatlamanın perplexity'de ve soru cevaplamada nasıl ölçüldüğünü, modelin iç saatinin kesim tarihinden geride kaldığını ve hizalanabildiğini; getirilen kaynak modelin bildiğiyle çelişince hangisinin kazandığını ve bunun neye bağlı olduğunu; dizine sızan yanlış bilginin bedelini; atfın kaynağa güvenmeyi ne kadar hak ettiğini ölçümlerle anlatır.",
+      "tags": [
+        "bilgi-kesim-tarihi",
+        "zamansal-hizalama",
+        "bilgi-catismasi",
+        "kaynak-guvenilirligi",
+        "atif-ve-uydurma"
+      ],
+      "contentHash": "sha256:502e1efc9bf79e6d29df6fe1a8d9f4e3320cbc45ef86b7a9b7cb498423b20d58",
+      "path": "content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
     }
   ]
 }

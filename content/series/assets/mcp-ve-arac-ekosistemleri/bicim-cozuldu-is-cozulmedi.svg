@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="MCP sunucularıyla çalışan iki modelde dört ölçü: araç adı geçerliliği, şema uyumu ve çalıştırma başarısı yüzde 90'ın üstünde; görev tamamlama puanı çok daha düşük.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">8 milyar parametreli açık model</text>
+  <text x="372" y="24" font-size="13" font-weight="bold" fill="var(--text)">en yüksek puanlı ticari model</text>
+
+  <text x="20" y="60" font-size="13" fill="var(--text)">araç adı geçerli</text>
+  <rect x="160" y="45" width="124.9" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="298" y="60" font-size="13" fill="var(--text-muted)">%96,1</text>
+
+  <text x="20" y="96" font-size="13" fill="var(--text)">şemaya uyum</text>
+  <rect x="160" y="81" width="116.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="298" y="96" font-size="13" fill="var(--text-muted)">%89,4</text>
+
+  <text x="20" y="132" font-size="13" fill="var(--text)">çalıştırma başarısı</text>
+  <rect x="160" y="117" width="118.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="298" y="132" font-size="13" fill="var(--text-muted)">%90,9</text>
+
+  <text x="20" y="168" font-size="13" fill="var(--text)">görev tamamlama</text>
+  <rect x="160" y="153" width="33.9" height="16" fill="var(--accent)" />
+  <text x="298" y="168" font-size="13" font-weight="bold" fill="var(--text)">0,261</text>
+
+  <text x="372" y="60" font-size="13" fill="var(--text)">araç adı geçerli</text>
+  <rect x="512" y="45" width="130" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="650" y="60" font-size="13" fill="var(--text-muted)">%100,0</text>
+
+  <text x="372" y="96" font-size="13" fill="var(--text)">şemaya uyum</text>
+  <rect x="512" y="81" width="129.1" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="650" y="96" font-size="13" fill="var(--text-muted)">%99,3</text>
+
+  <text x="372" y="132" font-size="13" fill="var(--text)">çalıştırma başarısı</text>
+  <rect x="512" y="117" width="128.8" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="650" y="132" font-size="13" fill="var(--text-muted)">%99,1</text>
+
+  <text x="372" y="168" font-size="13" fill="var(--text)">görev tamamlama</text>
+  <rect x="512" y="153" width="88" height="16" fill="var(--accent)" />
+  <text x="650" y="168" font-size="13" font-weight="bold" fill="var(--text)">0,677</text>
+
+  <line x1="360" y1="12" x2="360" y2="184" stroke="var(--border)" />
+
+  <text x="20" y="216" font-size="13" fill="var(--text-muted)">İlk üç ölçü kural tabanlı, yüzde; dördüncüsü hakem puanı, 0 ile 1 arasında (130 birim = tam puan).</text>
+  <text x="20" y="236" font-size="13" fill="var(--text-muted)">Aynı 28 sunucu, 250 araç ve her görevde on ilgisiz sunucu (Wang ve ark., ICLR 2026).</text>
+</svg>

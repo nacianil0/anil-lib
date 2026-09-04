@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-03T21:24:34.788Z
-> Files: 60 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-03T22:50:53.978Z
+> Files: 80 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -11,7 +11,7 @@
 
 ## .claude/
 
-- `launch.json` (~56 tok)
+- `launch.json` (~141 tok)
 
 ## .claude/rules/
 
@@ -83,10 +83,16 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/edd1cce2-097e-4338-ad72-8698dcf742a0/scratchpad/
+
+- `wolf-b11.py` — Batch 11 — OpenWolf state updates: cerebrum.md, buglog.json, memory.md. (~2690 tok)
+- `yh-b11.py` — Batch 11 (+1 fazı) — docs/seri/YOL-HARITASI.md anchored insertions. (~8806 tok)
+
 ## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
 
 - `MEMORY.md` — Memory index (~148 tok)
 - `reader-line-guide-redesign.md` (~471 tok)
+- `series-batch11-faz5-kapanis.md` (~615 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -107,6 +113,11 @@
 ## artifacts/b10-research/
 
 - `titles-b10.txt` (~874 tok)
+
+## artifacts/b11-research/
+
+- `fetch-b11.py` — fetch, main (~1450 tok)
+- `titles-b11.txt` (~891 tok)
 
 ## artifacts/b7-render/
 
@@ -255,10 +266,14 @@
 
 ## content/series/articles/agents-and-retrieval/
 
+- `arac-kullanimi-islev-cagrisi.md` — Eylem satırı aramaya özel değildi (~7251 tok)
+- `bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md` — Üç ip, tek düğüm (~6256 tok)
+- `mcp-ve-arac-ekosistemleri.md` — Çarpım problemi (~5002 tok)
 - `parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md` — Görünmez kararlar (~6388 tok)
 - `rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md` — Tek sayı üç hatayı saklıyor (~6152 tok)
 - `ragin-otesi-getirerek-akil-yuruten-sistemler.md` — Tek getirmenin yetmediği soru (~5805 tok)
 - `vektor-veritabanlari-ve-dizinleme.md` — Sormadığımız soru (~8068 tok)
+- `web-kod-ve-dosyalarla-calisan-modeller.md` — Araç bir sözcük değil, bir arayüzdür (~5130 tok)
 
 ## content/series/articles/foundations/
 
@@ -281,6 +296,12 @@
 ## content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/
 
 
+## content/series/assets/arac-kullanimi-islev-cagrisi/
+
+- `islev-cagrisinin-yasam-dongusu.svg` (~1268 tok)
+- `sirayla-ve-ayni-anda.svg` (~1545 tok)
+- `uc-denetci-iki-model.svg` (~836 tok)
+
 ## content/series/assets/arama-ve-planlama-oz-tutarlilik-ve-agaclar/
 
 
@@ -292,6 +313,12 @@
 
 ## content/series/assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/
 
+
+## content/series/assets/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif/
+
+- `atif-varken-uydurma.svg` (~824 tok)
+- `ayni-test-iki-egitim-donemi.svg` (~655 tok)
+- `belge-mi-bellek-mi.svg` (~1114 tok)
 
 ## content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/
 
@@ -341,6 +368,12 @@
 ## content/series/assets/kv-cache-ve-cikarim-ekonomisi/
 
 
+## content/series/assets/mcp-ve-arac-ekosistemleri/
+
+- `apilerin-bir-yil-sonrasi.svg` (~663 tok)
+- `bicim-cozuldu-is-cozulmedi.svg` (~805 tok)
+- `mcp-uc-rol.svg` (~879 tok)
+
 ## content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/
 
 
@@ -386,6 +419,11 @@
 - `iki-butce-iki-bulma-orani.svg` (~954 tok)
 - `urun-kuantizasyonu.svg` (~1600 tok)
 
+## content/series/assets/web-kod-ve-dosyalarla-calisan-modeller/
+
+- `arayuzun-dugmeleri.svg` (~982 tok)
+- `hesabi-yorumlayiciya-devretmek.svg` (~786 tok)
+
 ## content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/
 
 
@@ -397,7 +435,7 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5388 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5351 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
 
 ## docs/superpowers/plans/

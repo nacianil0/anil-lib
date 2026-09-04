@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Aynı test kümesinde, test dönemiyle çakışan eğitimle bayat eğitimin perplexity değerleri: özel haber derleminde yüzde 16, bilimsel özetlerde yüzde 8, büyük haber taramasında yüzde 6 fark.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">veri kümesi · eğitim dönemi</text>
+  <text x="560" y="24" font-size="13" font-weight="bold" fill="var(--text)">perplexity ↓</text>
+
+  <text x="20" y="56" font-size="13" fill="var(--text)">haber taraması (WMT) · çakışan</text>
+  <rect x="250" y="43" width="219.5" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="560" y="56" font-size="13" fill="var(--text-muted)">21,11</text>
+  <text x="20" y="80" font-size="13" fill="var(--text)">haber taraması (WMT) · bayat</text>
+  <rect x="250" y="67" width="233.5" height="16" fill="var(--accent)" />
+  <text x="560" y="80" font-size="13" font-weight="bold" fill="var(--text)">22,45  (+%6,34)</text>
+
+  <text x="20" y="120" font-size="13" fill="var(--text)">özel haber derlemi · çakışan</text>
+  <rect x="250" y="107" width="191.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="560" y="120" font-size="13" fill="var(--text-muted)">18,38</text>
+  <text x="20" y="144" font-size="13" fill="var(--text)">özel haber derlemi · bayat</text>
+  <rect x="250" y="131" width="221.8" height="16" fill="var(--accent)" />
+  <text x="560" y="144" font-size="13" font-weight="bold" fill="var(--text)">21,33  (+%16,04)</text>
+
+  <text x="20" y="184" font-size="13" fill="var(--text)">bilimsel özetler · çakışan</text>
+  <rect x="250" y="171" width="222.4" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="560" y="184" font-size="13" fill="var(--text-muted)">21,38</text>
+  <text x="20" y="208" font-size="13" fill="var(--text)">bilimsel özetler · bayat</text>
+  <rect x="250" y="195" width="240" height="16" fill="var(--accent)" />
+  <text x="560" y="208" font-size="13" font-weight="bold" fill="var(--text)">23,07  (+%7,90)</text>
+
+  <text x="20" y="248" font-size="13" fill="var(--text-muted)">Düşük perplexity iyidir; test kümesi her satırda aynı (2018–2019), çubuklar aynı ölçekte.</text>
+  <text x="20" y="268" font-size="13" fill="var(--text-muted)">Çakışan: eğitim test dönemini kapsıyor; bayat: eğitim 2017'de bitiyor. Kümeler aynı büyüklükte.</text>
+</svg>

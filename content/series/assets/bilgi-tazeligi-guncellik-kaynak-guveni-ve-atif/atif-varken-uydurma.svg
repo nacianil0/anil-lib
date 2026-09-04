@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Getirmeyle çalışan üç ticari hukuk araştırma ürününde cevapların doğru ve dayanaklı, eksik ve uydurmalı payları: uydurma hiçbirinde sıfır değil.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">birinci ürün (Lexis+ AI)</text>
+  <text x="20" y="48" font-size="13" fill="var(--text)">doğru ve dayanaklı</text>
+  <rect x="250" y="35" width="234" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="640" y="48" font-size="13" fill="var(--text-muted)">%65</text>
+  <text x="20" y="72" font-size="13" fill="var(--text)">eksik</text>
+  <rect x="250" y="59" width="64.8" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="640" y="72" font-size="13" fill="var(--text-muted)">%18</text>
+  <text x="20" y="96" font-size="13" fill="var(--text)">uydurmalı</text>
+  <rect x="250" y="83" width="61.2" height="16" fill="var(--accent)" />
+  <text x="640" y="96" font-size="13" font-weight="bold" fill="var(--text)">%17</text>
+
+  <text x="20" y="132" font-size="13" font-weight="bold" fill="var(--text)">ikinci ürün (Westlaw AI-AR)</text>
+  <text x="20" y="156" font-size="13" fill="var(--text)">doğru ve dayanaklı</text>
+  <rect x="250" y="143" width="147.6" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="640" y="156" font-size="13" fill="var(--text-muted)">%41</text>
+  <text x="20" y="180" font-size="13" fill="var(--text)">eksik</text>
+  <rect x="250" y="167" width="90" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="640" y="180" font-size="13" fill="var(--text-muted)">%25</text>
+  <text x="20" y="204" font-size="13" fill="var(--text)">uydurmalı</text>
+  <rect x="250" y="191" width="118.8" height="16" fill="var(--accent)" />
+  <text x="640" y="204" font-size="13" font-weight="bold" fill="var(--text)">%33</text>
+
+  <text x="20" y="240" font-size="13" font-weight="bold" fill="var(--text)">üçüncü ürün (Ask Practical Law AI)</text>
+  <text x="20" y="264" font-size="13" fill="var(--text)">doğru ve dayanaklı</text>
+  <rect x="250" y="251" width="68.4" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="640" y="264" font-size="13" fill="var(--text-muted)">%19</text>
+  <text x="20" y="288" font-size="13" fill="var(--text)">eksik</text>
+  <rect x="250" y="275" width="223.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="640" y="288" font-size="13" fill="var(--text-muted)">%62</text>
+  <text x="20" y="312" font-size="13" fill="var(--text)">uydurmalı</text>
+  <rect x="250" y="299" width="61.2" height="16" fill="var(--accent)" />
+  <text x="640" y="312" font-size="13" font-weight="bold" fill="var(--text)">%17</text>
+
+  <text x="20" y="346" font-size="13" fill="var(--text-muted)">200'ü aşkın gerçek hukuk sorusu; yuvarlanmış yüzdeler; üçü de getirmeyle çalışıyor.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Aynı matematik sorularında üç düzenin çözme oranı: doğrudan cevap, düşünce zinciri ve programı yorumlayıcıya çalıştırtmak; sıradan sayılarda ve büyük sayılarda.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">GSM8K — sıradan sayılar</text>
+  <text x="372" y="24" font-size="13" font-weight="bold" fill="var(--text)">GSM-Hard — aynı sorular, büyük sayılar</text>
+
+  <text x="20" y="60" font-size="13" fill="var(--text)">doğrudan cevap</text>
+  <rect x="170" y="45" width="25.6" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="312" y="60" font-size="13" fill="var(--text-muted)">19,7</text>
+
+  <text x="20" y="96" font-size="13" fill="var(--text)">düşünce zinciri</text>
+  <rect x="170" y="81" width="85.3" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="312" y="96" font-size="13" fill="var(--text-muted)">65,6</text>
+
+  <text x="20" y="132" font-size="13" fill="var(--text)">program + yorumlayıcı</text>
+  <rect x="170" y="117" width="93.6" height="16" fill="var(--accent)" />
+  <text x="312" y="132" font-size="13" font-weight="bold" fill="var(--text)">72,0</text>
+
+  <text x="20" y="168" font-size="13" fill="var(--text-muted)">program, yorumlayıcısız</text>
+  <rect x="170" y="153" width="30.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" stroke-dasharray="3 2" />
+  <text x="312" y="168" font-size="13" fill="var(--text-muted)">23,2</text>
+
+  <text x="372" y="60" font-size="13" fill="var(--text)">doğrudan cevap</text>
+  <rect x="522" y="45" width="6.5" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="664" y="60" font-size="13" fill="var(--text-muted)">5,0</text>
+
+  <text x="372" y="96" font-size="13" fill="var(--text)">düşünce zinciri</text>
+  <rect x="522" y="81" width="26.1" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="664" y="96" font-size="13" fill="var(--text-muted)">20,1</text>
+
+  <text x="372" y="132" font-size="13" fill="var(--text)">program + yorumlayıcı</text>
+  <rect x="522" y="117" width="80" height="16" fill="var(--accent)" />
+  <text x="664" y="132" font-size="13" font-weight="bold" fill="var(--text)">61,5</text>
+
+  <line x1="360" y1="12" x2="360" y2="180" stroke="var(--border)" />
+
+  <text x="20" y="216" font-size="13" fill="var(--text-muted)">Çözme oranı, yüzde; çubuklar aynı ölçekte (130 birim = yüzde 100). Aynı model, aynı gösterimler.</text>
+  <text x="20" y="236" font-size="13" fill="var(--text-muted)">Büyük sayılarda düşünce zinciri 45 puan kaybediyor, program + yorumlayıcı 10 puan.</text>
+  <text x="20" y="256" font-size="13" fill="var(--text-muted)">Kesikli çubuk: program yazılır ama yorumlayıcı yerine modelin kendisi çalıştırır.</text>
+</svg>

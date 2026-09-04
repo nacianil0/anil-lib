@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="MCP'nin üç rolü: ana bilgisayarın içindeki dil modeli ve iki istemci, her istemcinin tek bir sunucuya bağlanması, listeleme ve çağırma istekleri; sohbet geçmişi ana bilgisayarda kalır, sunucu onu görmez.">
+  <defs>
+    <marker id="ok-49-cift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <rect x="20" y="30" width="300" height="240" rx="8" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="52" font-size="13" font-weight="bold" fill="var(--text)">ana bilgisayar (host)</text>
+  <text x="34" y="70" font-size="13" fill="var(--text-muted)">sohbet arayüzü, kod düzenleyici…</text>
+
+  <rect x="34" y="86" width="272" height="56" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="48" y="106" font-size="13" font-weight="bold" fill="var(--text)">dil modeli</text>
+  <text x="48" y="126" font-size="13" fill="var(--text-muted)">sohbet geçmişi yalnızca burada durur</text>
+
+  <rect x="34" y="158" width="272" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="48" y="184" font-size="13" fill="var(--text)">istemci 1 — sunucu A ile konuşur</text>
+
+  <rect x="34" y="214" width="272" height="42" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="48" y="240" font-size="13" fill="var(--text)">istemci 2 — sunucu B ile konuşur</text>
+
+  <rect x="480" y="150" width="220" height="56" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="494" y="172" font-size="13" font-weight="bold" fill="var(--text)">sunucu A (yerel süreç)</text>
+  <text x="494" y="192" font-size="13" fill="var(--text-muted)">dosya sistemi, git</text>
+
+  <rect x="480" y="222" width="220" height="56" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="494" y="244" font-size="13" font-weight="bold" fill="var(--text)">sunucu B (uzak servis)</text>
+  <text x="494" y="264" font-size="13" fill="var(--text-muted)">takvim, veritabanı, arama</text>
+
+  <line x1="310" y1="179" x2="476" y2="179" stroke="var(--text-muted)" stroke-width="1.5" marker-start="url(#ok-49-cift)" marker-end="url(#ok-49-cift)" />
+  <line x1="310" y1="235" x2="476" y2="250" stroke="var(--text-muted)" stroke-width="1.5" marker-start="url(#ok-49-cift)" marker-end="url(#ok-49-cift)" />
+
+  <text x="316" y="166" font-size="13" fill="var(--accent)">tools/list → tanımlar</text>
+  <text x="316" y="224" font-size="13" fill="var(--cool)">tools/call → sonuç</text>
+
+  <text x="480" y="300" font-size="13" fill="var(--text-muted)">sunucu sohbetin tamamını göremez;</text>
+  <text x="480" y="318" font-size="13" fill="var(--text-muted)">yalnızca argümanları alır.</text>
+
+  <text x="20" y="300" font-size="13" fill="var(--text-muted)">Mesaj biçimi JSON-RPC 2.0; her sunucu için ayrı bir istemci (bire bir).</text>
+  <text x="20" y="318" font-size="13" fill="var(--text-muted)">Taşıma: yerel süreç için standart giriş-çıkış, uzak sunucu için HTTP.</text>
+  <text x="20" y="344" font-size="13" fill="var(--text-faint)">Belirtim: Model Context Protocol, 2026-07-28 sürümü.</text>
+</svg>

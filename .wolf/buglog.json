@@ -5226,6 +5226,77 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-03T21:40:00.000Z"
+    },
+    {
+      "id": "bug-313",
+      "timestamp": "2026-09-04T02:10:00.000Z",
+      "error_message": "Seri Batch 11: on bir yeni SVG'nin altısında alt not viewBox dışına taşıyor (check-series-svg.cjs 'metin viewBox dışına taşıyor olabilir', tahmini 723–799 > 720)",
+      "file": "content/series/assets/{arac-kullanimi-islev-cagrisi,web-kod-ve-dosyalarla-calisan-modeller,mcp-ve-arac-ekosistemleri,bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif}/*.svg",
+      "root_cause": "13 birimlik yazıda x=20'den başlayan tek satırlık not en çok ~97 karakter alır (denetleyici karakter × 7,15); notlar 100–110 karakter yazıldı",
+      "fix": "Notlar kısaltıldı ya da iki satıra bölündü; denetleyici ve ET.parse yeniden geçti",
+      "tags": [
+        "series",
+        "svg",
+        "overflow",
+        "check-series-svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 6,
+      "last_seen": "2026-09-04T02:10:00.000Z"
+    },
+    {
+      "id": "bug-314",
+      "timestamp": "2026-09-04T02:10:00.000Z",
+      "error_message": "Seri 49-Şekil 1: ok etiketleri 'tools/list → ad, açıklama, şema' ve 'tools/call → içerik, hata bayrağı' sunucu kutularının üstüne biniyor; 50-Şekil 2: 'Claude Opus · kendi cevabı' etiketi çubuğa biniyor; 50-Şekil 3: alt not son çubuğa 6 birim yakın (yalnızca ekran görüntüsünde görüldü)",
+      "file": "content/series/assets/mcp-ve-arac-ekosistemleri/mcp-uc-rol.svg; content/series/assets/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif/belge-mi-bellek-mi.svg; .../atif-varken-uydurma.svg",
+      "root_cause": "check-series-svg.cjs yalnızca viewBox taşmasını görür; etiket uzunluğu ile komşu kutu/çubuk başlangıcı karşılaştırılmadı",
+      "fix": "Ok etiketleri kısaltılıp x=316'ya alındı ve alt metin güncellendi (hash yeniden senkronlandı); 50-Şekil 2 çubukları x=210/562'ye kaydırılıp ölçek 100 birim = 1,0 yapıldı; 50-Şekil 3 viewBox 360'a çıkarılıp not y=346'ya alındı; üçü light/dark yeniden görüntülendi",
+      "tags": [
+        "series",
+        "svg",
+        "overlap",
+        "render-verification"
+      ],
+      "related_bugs": [
+        "bug-313"
+      ],
+      "occurrences": 3,
+      "last_seen": "2026-09-04T02:10:00.000Z"
+    },
+    {
+      "id": "bug-315",
+      "timestamp": "2026-09-04T02:10:00.000Z",
+      "error_message": "Bash heredoc ile yazılan .claude/launch.json'da Windows yolu tek ters bölüye indi (\"C:\\Users\\...\" → geçersiz JSON kaçışı)",
+      "file": ".claude/launch.json",
+      "root_cause": "Bash tool'un heredoc'unda çift ters bölü çiftleri tek karaktere iniyor",
+      "fix": "Dosya Write aracıyla yeniden yazıldı; json.load ile doğrulandı; run sonunda özgün hâline döndürüldü",
+      "tags": [
+        "launch.json",
+        "heredoc",
+        "bash-tool",
+        "windows-path"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-04T02:10:00.000Z"
+    },
+    {
+      "id": "bug-316",
+      "timestamp": "2026-09-04T02:10:00.000Z",
+      "error_message": "BFCL makalesi için tahmin edilen arXiv kimliği (2506.14224) başka bir çalışmanın PDF'ini indirdi (Theory of Mind); PMLR'nin PDF yolu ise HTML döndürdü",
+      "file": "artifacts/b11-research/fetch-b11.py",
+      "root_cause": "Kimlik doğrulanmadan tahmin edildi; proceedings.mlr.press PDF yolu bot'a HTML sayfası döndürüyor",
+      "fix": "Metin raw.githubusercontent.com/mlresearch/v267/main/assets/patil25a/patil25a.pdf aynasından alındı; indirilen metnin ilk satırı başlıkla karşılaştırıldı",
+      "tags": [
+        "series",
+        "research",
+        "arxiv",
+        "pmlr",
+        "citation"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-04T02:10:00.000Z"
     }
   ]
 }

@@ -2479,3 +2479,47 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 00:23 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-editorial-audit-2026-09-03.md | — | ~435 |
 | 00:24 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~106 |
 | 00:30 | Session end: 2 writes across 2 files (series-editorial-audit-2026-09-03.md, MEMORY.md) | 1 reads | ~674 tok |
+
+## Session: 2026-09-03 00:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-03 00:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:39 | Created artifacts/b11-research/fetch-b11.py | — | ~1450 |
+| 00:40 | Created artifacts/b11-research/titles-b11.txt | — | ~950 |
+| 00:55 | Created content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | — | ~7734 |
+| 00:57 | Created content/series/assets/arac-kullanimi-islev-cagrisi/islev-cagrisinin-yasam-dongusu.svg | — | ~1268 |
+| 00:57 | Created content/series/assets/arac-kullanimi-islev-cagrisi/uc-denetci-iki-model.svg | — | ~836 |
+| 00:57 | Created content/series/assets/arac-kullanimi-islev-cagrisi/sirayla-ve-ayni-anda.svg | — | ~1545 |
+| 01:05 | Created content/series/assets/web-kod-ve-dosyalarla-calisan-modeller/hesabi-yorumlayiciya-devretmek.svg | — | ~786 |
+| 01:05 | Created content/series/assets/web-kod-ve-dosyalarla-calisan-modeller/arayuzun-dugmeleri.svg | — | ~982 |
+| 01:09 | Created content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md | — | ~5472 |
+| 01:16 | Created content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md | — | ~5335 |
+| 01:16 | Created content/series/assets/mcp-ve-arac-ekosistemleri/mcp-uc-rol.svg | — | ~879 |
+| 01:17 | Created content/series/assets/mcp-ve-arac-ekosistemleri/apilerin-bir-yil-sonrasi.svg | — | ~663 |
+| 01:17 | Created content/series/assets/mcp-ve-arac-ekosistemleri/bicim-cozuldu-is-cozulmedi.svg | — | ~805 |
+| 01:24 | Created content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | — | ~6673 |
+| 01:24 | Created content/series/assets/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif/ayni-test-iki-egitim-donemi.svg | — | ~655 |
+| 01:24 | Created content/series/assets/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif/belge-mi-bellek-mi.svg | — | ~1114 |
+| 01:24 | Created content/series/assets/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif/atif-varken-uydurma.svg | — | ~824 |
+| 01:29 | Created .claude/launch.json | — | ~141 |
+| 01:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/edd1cce2-097e-4338-ad72-8698dcf742a0/scratchpad/yh-b11.py | — | ~8806 |
+| 01:44 | Created docs/seri/HANDOFF.md | — | ~5708 |
+| 01:49 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch11-faz5-kapanis.md | — | ~626 |
+| 01:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/edd1cce2-097e-4338-ad72-8698dcf742a0/scratchpad/wolf-b11.py | — | ~2690 |
+
+## Session: 2026-09-04 02:15
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 02:15 | Session summary — Seri Batch 11 (BATCH=4+1): makale 47–50 araştırıldı, yazıldı, entegre edildi ve doğrulandı; Faz 5 kapandı; +1 fazı (HANDOFF/YOL-HARITASI/roadmap) tamamlandı | content/series/articles/agents-and-retrieval (4 yeni .md), content/series/assets (4 klasör, 11 SVG), content/series/catalog.json, content/series/roadmap.json, docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md, artifacts/b11-research | check-series-content 50 ok · check-series-svg 143 ok · sync-series-hashes ok · typecheck ok · test 446 ok · build 99 sayfa (izole kopya) · 51 rota 200 · 4×3×3 DOM ölçümü temiz · 11 şekil light/dark gözle (3 düzeltme); buglog bug-313..316; cerebrum güncellendi | ~2.9M |
+| 01:54 | Session end: 22 writes across 22 files (fetch-b11.py, titles-b11.txt, arac-kullanimi-islev-cagrisi.md, islev-cagrisinin-yasam-dongusu.svg, uc-denetci-iki-model.svg) | 3 reads | ~58999 tok |
+
+## Session: 2026-09-04 06:11
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

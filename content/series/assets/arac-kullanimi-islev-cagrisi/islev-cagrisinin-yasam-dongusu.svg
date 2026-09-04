@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Bir işlev çağrısının dört durağı tek bir token dizisinde: sistem istemindeki araç tanımı, asistanın JSON çağrısı ve mesaj sonu token'ı, dışarıdaki çalıştırıcının çalıştırdığı işlev, sonucun ipython rolüyle diziye dönüşü ve açık bırakılan asistan başlığı.">
+  <defs>
+    <marker id="ok-47-cagri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="ok-47-sonuc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <rect x="20" y="14" width="112" height="22" rx="11" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="76" y="29" font-size="13" text-anchor="middle" fill="var(--text-muted)">begin_of_text</text>
+
+  <rect x="20" y="48" width="450" height="84" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="32" y="66" font-size="13" fill="var(--text-muted)">start_header_id  sistem  end_header_id</text>
+  <text x="460" y="66" font-size="13" text-anchor="end" fill="var(--accent)">durak 1 · tanım</text>
+  <text x="32" y="88" font-size="13" fill="var(--text)">Environment: ipython</text>
+  <text x="32" y="106" font-size="13" fill="var(--text)">araç tanımı: get_weather — ad, açıklama, şema</text>
+  <text x="460" y="124" font-size="13" text-anchor="end" fill="var(--text-muted)">eot_id</text>
+
+  <rect x="20" y="142" width="450" height="48" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="32" y="160" font-size="13" fill="var(--text-muted)">start_header_id  kullanıcı  end_header_id</text>
+  <text x="32" y="180" font-size="13" fill="var(--text)">Ankara'da hava nasıl?</text>
+  <text x="460" y="180" font-size="13" text-anchor="end" fill="var(--text-muted)">eot_id</text>
+
+  <rect x="20" y="200" width="450" height="76" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="32" y="218" font-size="13" fill="var(--text-muted)">start_header_id  asistan  end_header_id</text>
+  <text x="460" y="218" font-size="13" text-anchor="end" fill="var(--accent)">durak 2 · çağrı</text>
+  <text x="32" y="240" font-size="13" fill="var(--text)">{"name": "get_weather",</text>
+  <text x="32" y="258" font-size="13" fill="var(--text)">"parameters": {"location": "Ankara"}}</text>
+  <text x="460" y="268" font-size="13" font-weight="bold" text-anchor="end" fill="var(--accent)">eom_id</text>
+
+  <rect x="20" y="286" width="450" height="64" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="32" y="304" font-size="13" fill="var(--text-muted)">start_header_id  ipython  end_header_id</text>
+  <text x="460" y="304" font-size="13" text-anchor="end" fill="var(--cool)">durak 4 · sonuç</text>
+  <text x="32" y="326" font-size="13" fill="var(--text)">{"temp": 24, "conditions": "açık"}</text>
+  <text x="460" y="342" font-size="13" text-anchor="end" fill="var(--cool)">eot_id</text>
+
+  <rect x="20" y="360" width="450" height="44" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-dasharray="5 4" />
+  <text x="32" y="378" font-size="13" fill="var(--text-muted)">start_header_id  asistan  end_header_id</text>
+  <text x="32" y="396" font-size="13" fill="var(--text-faint)">Ankara'da hava 24 derece ve açık.  → üretim buradan sürer</text>
+
+  <rect x="495" y="200" width="205" height="150" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="505" y="222" font-size="13" font-weight="bold" fill="var(--text)">çalıştırıcı — model dışı</text>
+  <text x="505" y="246" font-size="13" fill="var(--text)">durak 3 · çalıştırma:</text>
+  <text x="505" y="266" font-size="13" fill="var(--text-muted)">JSON'u ayrıştırır,</text>
+  <text x="505" y="286" font-size="13" fill="var(--text-muted)">get_weather("Ankara")</text>
+  <text x="505" y="306" font-size="13" fill="var(--text-muted)">çalıştırır, sonucu ipython</text>
+  <text x="505" y="326" font-size="13" fill="var(--text-muted)">rolüyle diziye ekler.</text>
+
+  <line x1="472" y1="238" x2="493" y2="238" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-47-cagri)" />
+  <line x1="493" y1="318" x2="472" y2="318" stroke="var(--cool)" stroke-width="1.5" marker-end="url(#ok-47-sonuc)" />
+
+  <text x="20" y="430" font-size="13" fill="var(--text-muted)">Dört durak tek dizide; yalnızca çalıştırıcı (durak 3) modelin dışında.</text>
+  <text x="20" y="450" font-size="13" fill="var(--text-muted)">eom_id (mesaj sonu): araç sonucu bekleniyor · eot_id (tur sonu): mesaj bitti.</text>
+</svg>

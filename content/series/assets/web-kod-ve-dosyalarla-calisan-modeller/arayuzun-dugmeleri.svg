@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="Aynı model ve aynı görev kümesinde, araç arayüzünün dört düğmesinin tek tek değiştirilmesiyle çözülen görev oranı: düzenleyici, arama, dosya görüntüleyici ve bağlam yönetimi.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">düzenleyici</text>
+  <text x="20" y="48" font-size="13" fill="var(--text)">satır aralığı + lint</text>
+  <rect x="250" y="35" width="360" height="16" fill="var(--accent)" />
+  <text x="620" y="48" font-size="13" font-weight="bold" fill="var(--text)">18,0</text>
+  <text x="20" y="72" font-size="13" fill="var(--text)">satır aralığı, lint yok</text>
+  <rect x="250" y="59" width="300" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="72" font-size="13" fill="var(--text-muted)">15,0</text>
+  <text x="20" y="96" font-size="13" fill="var(--text)">düzenleme komutu yok</text>
+  <rect x="250" y="83" width="206" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="96" font-size="13" fill="var(--text-muted)">10,3</text>
+
+  <text x="20" y="132" font-size="13" font-weight="bold" fill="var(--text)">arama</text>
+  <text x="20" y="156" font-size="13" fill="var(--text)">özetlenmiş sonuç</text>
+  <rect x="250" y="143" width="360" height="16" fill="var(--accent)" />
+  <text x="620" y="156" font-size="13" font-weight="bold" fill="var(--text)">18,0</text>
+  <text x="20" y="180" font-size="13" fill="var(--text)">yinelemeli sonuç</text>
+  <rect x="250" y="167" width="240" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="180" font-size="13" fill="var(--text-muted)">12,0</text>
+  <text x="20" y="204" font-size="13" fill="var(--text)">arama komutu yok</text>
+  <rect x="250" y="191" width="314" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="204" font-size="13" fill="var(--text-muted)">15,7</text>
+
+  <text x="20" y="240" font-size="13" font-weight="bold" fill="var(--text)">dosya görüntüleyici</text>
+  <text x="20" y="264" font-size="13" fill="var(--text)">pencere 30 satır</text>
+  <rect x="250" y="251" width="286" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="264" font-size="13" fill="var(--text-muted)">14,3</text>
+  <text x="20" y="288" font-size="13" fill="var(--text)">pencere 100 satır</text>
+  <rect x="250" y="275" width="360" height="16" fill="var(--accent)" />
+  <text x="620" y="288" font-size="13" font-weight="bold" fill="var(--text)">18,0</text>
+  <text x="20" y="312" font-size="13" fill="var(--text)">tam dosya</text>
+  <rect x="250" y="299" width="254" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="312" font-size="13" fill="var(--text-muted)">12,7</text>
+
+  <text x="20" y="348" font-size="13" font-weight="bold" fill="var(--text)">bağlam</text>
+  <text x="20" y="372" font-size="13" fill="var(--text)">son 5 gözlem</text>
+  <rect x="250" y="359" width="360" height="16" fill="var(--accent)" />
+  <text x="620" y="372" font-size="13" font-weight="bold" fill="var(--text)">18,0</text>
+  <text x="20" y="396" font-size="13" fill="var(--text)">tam geçmiş</text>
+  <rect x="250" y="383" width="300" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="620" y="396" font-size="13" fill="var(--text-muted)">15,0</text>
+
+  <text x="20" y="426" font-size="13" fill="var(--text-muted)">Çözülen görev yüzdesi (300 görev, aynı model); vurgulu satır tam düzendir, her grupta tekrarlanır.</text>
+</svg>

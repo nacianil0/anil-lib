@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 284" role="img" aria-label="Aynı üç denetçiden geçirilen 40 bin çağrının iki üretici modelde nasıl elendiği: biçim her ikisinde en küçük eleme, çalıştırma en büyüğü.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">236 milyar parametreli sohbet modeli</text>
+  <text x="372" y="24" font-size="13" font-weight="bold" fill="var(--text)">33 milyar parametreli kod modeli</text>
+
+  <text x="20" y="60" font-size="13" fill="var(--text)">biçimde düşen</text>
+  <rect x="160" y="45" width="3.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="298" y="60" font-size="13" fill="var(--text-muted)">817</text>
+
+  <text x="20" y="96" font-size="13" fill="var(--text)">çalıştırmada düşen</text>
+  <rect x="160" y="81" width="13" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="298" y="96" font-size="13" fill="var(--text-muted)">3.359</text>
+
+  <text x="20" y="132" font-size="13" fill="var(--text)">anlamda düşen</text>
+  <rect x="160" y="117" width="8.4" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="298" y="132" font-size="13" fill="var(--text-muted)">2.165</text>
+
+  <text x="20" y="168" font-size="13" fill="var(--text)">geçen</text>
+  <rect x="160" y="153" width="130" height="16" fill="var(--accent)" />
+  <text x="298" y="168" font-size="13" font-weight="bold" fill="var(--text)">33.659</text>
+
+  <text x="20" y="204" font-size="13" font-weight="bold" fill="var(--accent)">geçme oranı %84,15</text>
+
+  <text x="372" y="60" font-size="13" fill="var(--text)">biçimde düşen</text>
+  <rect x="512" y="45" width="16.7" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="650" y="60" font-size="13" fill="var(--text-muted)">4.311</text>
+
+  <text x="372" y="96" font-size="13" fill="var(--text)">çalıştırmada düşen</text>
+  <rect x="512" y="81" width="59.8" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="650" y="96" font-size="13" fill="var(--text-muted)">15.496</text>
+
+  <text x="372" y="132" font-size="13" fill="var(--text)">anlamda düşen</text>
+  <rect x="512" y="117" width="24.8" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="650" y="132" font-size="13" fill="var(--text-muted)">6.424</text>
+
+  <text x="372" y="168" font-size="13" fill="var(--text)">geçen</text>
+  <rect x="512" y="153" width="53.2" height="16" fill="var(--accent)" />
+  <text x="650" y="168" font-size="13" font-weight="bold" fill="var(--text)">13.769</text>
+
+  <text x="372" y="204" font-size="13" font-weight="bold" fill="var(--accent)">geçme oranı %34,42</text>
+
+  <line x1="360" y1="12" x2="360" y2="212" stroke="var(--border)" />
+
+  <text x="20" y="244" font-size="13" fill="var(--text-muted)">Her iki modelden 40.000 çağrı istendi; çubuklar aynı ölçekte (en uzun = 33.659 çağrı).</text>
+  <text x="20" y="264" font-size="13" fill="var(--text-muted)">Biçim her iki modelde en küçük eleme; çalıştırma en büyüğü.</text>
+</svg>

@@ -82,10 +82,10 @@
         { "order": 44, "title": "Parçalama, Yeniden Sıralama ve RAG Hattının İncelikleri", "status": "yayinda", "slug": "parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri" },
         { "order": 45, "title": "RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati", "status": "yayinda", "slug": "rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati" },
         { "order": 46, "title": "RAG'in Ötesi: Getirerek Akıl Yürüten Sistemler", "status": "yayinda", "slug": "ragin-otesi-getirerek-akil-yuruten-sistemler" },
-        { "order": 47, "title": "Araç Kullanımı: Function Calling", "status": "planlandi" },
-        { "order": 48, "title": "Web, Kod ve Dosyalarla Çalışan Modeller", "status": "planlandi" },
-        { "order": 49, "title": "MCP ve Araç Ekosistemleri", "status": "planlandi" },
-        { "order": 50, "title": "Bilgi Tazeliği: Güncellik, Kaynak Güveni ve Atıf", "status": "planlandi" }
+        { "order": 47, "title": "Araç Kullanımı: İşlev Çağrısı", "status": "yayinda", "slug": "arac-kullanimi-islev-cagrisi" },
+        { "order": 48, "title": "Web, Kod ve Dosyalarla Çalışan Modeller", "status": "yayinda", "slug": "web-kod-ve-dosyalarla-calisan-modeller" },
+        { "order": 49, "title": "MCP ve Araç Ekosistemleri", "status": "yayinda", "slug": "mcp-ve-arac-ekosistemleri" },
+        { "order": 50, "title": "Bilgi Tazeliği: Güncellik, Kaynak Güveni ve Atıf", "status": "yayinda", "slug": "bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif" }
       ]
     },
     {

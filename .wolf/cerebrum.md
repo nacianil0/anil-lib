@@ -2,7 +2,7 @@
 
 > OpenWolf's learning memory. Updated automatically as the AI learns from interactions.
 > Do not edit manually unless correcting an error.
-> Last updated: 2026-09-03
+> Last updated: 2026-09-04
 
 ## User Preferences
 
@@ -217,6 +217,11 @@ ode_modules`, sonra kopyayi sil.
 - Repo dosyaları CRLF, prettier varsayılanı LF: `prettier --check` dokunulmamış dosyalarda bile uyarır. Gerçek biçim farkını `prettier <dosya> | diff --strip-trailing-cr - <dosya>` ile ayır; `--write` sonrası git diff satır sonlarını göstermez (autocrlf).
 - Tarayıcı panosunda (in-app Browser) `computer` tıklaması Next server-action formunu göndermeyebiliyor ve `browser_batch` içindeki screenshot zaman aşımına düşebiliyor; giriş için `form.requestSubmit()` (javascript_tool), kanıt için Playwright betiği (`artifacts/ux-render/shot.mjs`) daha güvenilir.
 
+- [2026-09-04] Seri Batch 11 künye kanalları: PMLR PDF'leri `proceedings.mlr.press` yerine `raw.githubusercontent.com/mlresearch/v<cilt>/main/assets/<key>/<key>.pdf` aynasından iniyor (site PDF yolu HTML döndürdü); COLM kabul listesi `2024.colmweb.org/AcceptedPapers.html` sertifikası GitHub'a ait olduğu için `curl -k` gerektiriyor; ACM dergileri (CSUR, TOSEM) Crossref'te tam künyeyle var ama `doi.org` bot'a 403 döner; ICLR 2026 bildirileri `proceedings.iclr.cc/paper_files/paper/2026/hash/<hash>-Abstract-Conference.html` altında ve DBLP henüz indekslememiş olabilir (karar #113: birincil sayfa yeter); ACL Anthology `<id>.bib` uç noktası `pages = "a--b"` verir.
+- [2026-09-04] Tarayıcı panosunda şekil ekran görüntüsü: 1440 emülasyonu 800×505'e ölçeklenir ve 13 birimlik metin okunmaz; çalışan düzen `resize_window` 800×560 + şekli `position:fixed` kaplayıcıya klonlayıp SVG genişliğini 600 px'e sabitlemek + `browser_batch` içinde `zoom` eylemi (region kırpması desteklenmiyor, tam kare döner ama zaman aşımına düşmüyor). Batch içindeki düz `screenshot` "did not finish rendering" zaman aşımı veriyor; tek çağrı genelde ikinci denemede çalışıyor.
+- [2026-09-04] MCP belirtiminin güncel sürümü 2026-07-28: durumsuz istekler, `server/discover`, `tools/list` belirlenimci sıra (önek önbelleği gerekçesi), tasks/roots/sampling/logging kullanımdan kaldırıldı. Seri 49 bu sürümü esas alıyor; belirtim `modelcontextprotocol.io/llms.txt` üzerinden sürüm listesi veriyor.
+- [2026-09-04] Seri terim kararı: "function calling" = **işlev çağrısı** (30'daki "işlev" = programın çağrılabilir parçası; matematiksel "fonksiyon"dan ayrı). "Ajan" terimi 51'e bırakıldı; 47–50 gövdelerinde tanımsız kullanılmadı.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -368,6 +373,11 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-03] Header içindeki bir panelin z-index'ini yükselterek header dışı bir öğenin üstüne çıkarmaya çalışma; header'ın stacking context'i (z-40) tavandır. Dıştaki öğeyi düşür (resume-notice z-50 → z-30).
 - [2026-09-03] Paralel oturum varken dev sunucusunu açıp `.next`'in silinmeyeceğini varsayma; 13:50'de diğer oturum `.next`'i sildi ve sayfa 500 verdi (`routes-manifest.json` yok). Önce `ListAgents` + `SendMessage` ile koordine et.
 
+- [2026-09-04] arXiv kimliğini tahmin edip indirme. BFCL için tahmin edilen `2506.14224` başka bir çalışmaya (Theory of Mind) aitti; metin PMLR aynasından alındı. Kimlik önce arama/DBLP ile doğrulanmalı, indirilen metnin ilk satırı başlıkla karşılaştırılmalı.
+- [2026-09-04] SVG gösterge notunu 13 birimde x=20'den ~97 karakterin üstünde yazma; on bir şeklin altısında alt not ilk çizimde taştı. Notu iki satıra böl ya da kısalt; iki panelli şekilde sağ panelin değer sütunu x≈650'de bitmeli.
+- [2026-09-04] Uzun satır etiketi (26+ karakter) ile çubuğu aynı satıra x=180'den başlatma: 50-Şekil 2'de "Claude Opus · kendi cevabı" çubuğa bindi, denetleyici görmedi; etiket uzunluğunu (karakter × 7,15) çubuk başlangıcıyla karşılaştır. Ok üzerine yazılan etiketin bitişini hedef kutunun başlangıcıyla karşılaştır (49-Şekil 1'de "tools/list → ad, açıklama, şema" sunucu kutusuna bindi).
+- [2026-09-04] Bash tool heredoc ile JSON'a Windows yolu yazma: `\\` çiftleri tek `\`'a indi ve `.claude/launch.json` geçersiz oldu; JSON dosyalarını Write ile yaz.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -483,3 +493,5 @@ mümkün değil.
 - **Öğrenilen (ortam):** Bash heredoc/`python -c` içinde `\\` çiftleri tek `\`'a iniyor (regex `(?:\\)?` → `(?:\)?` "unterminated subpattern"); regex içeren betikleri Write ile dosyaya yazıp çalıştır. `grep -P` bu ortamda "unibyte/UTF-8 locale" hatası veriyor; Python `re` kullan. Bash çıktıları ~30 KB üstünde dosyaya kaydediliyor; uzun makaleleri `sed -n` ile ≤ ~90 satırlık parçalarda oku.
 - **Öğrenilen (OpenWolf):** `.wolf/memory.md` ve `.wolf/buglog.json` bir hook tarafından otomatik dolduruluyor (Edit sonrası "auto-detected refactor" kayıtları); elle yalnızca özet satırı ve gerçek bulgu kaydı eklenmeli, satır satır günlük tutmaya gerek yok.
 - **Öğrenilen (Edit aracı):** Bash ile `cat`/`sed` ile okunan dosya Edit için "okunmuş" sayılmıyor; Edit öncesi Read aracıyla (offset/limit ile küçük aralık yeter) okumak gerekiyor.
+
+- [2026-09-04] Seri Batch 11: 47'nin başlığı "Araç Kullanımı: Function Calling" → "Araç Kullanımı: İşlev Çağrısı" (karar #121); 48–50 başlıkları korundu; faz başlıkları katmanına yine dokunulmadı. Kaynak politikası: hakemli olmayan altı kalem (Meta/Anthropic belgelendirmesi, MCP belirtimi, WebGPT, Wallace devri) işaretlenerek kullanıldı; MCP-Universe/LiveMCPBench/MCP Safety Audit yalnızca arXiv olduğu için kullanılmadı (karar #127). Build ve dev sunucusu, paralel oturum görünmese de izole kopyada çalıştırıldı.

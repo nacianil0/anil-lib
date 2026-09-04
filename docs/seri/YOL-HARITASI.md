@@ -123,6 +123,15 @@ sonucun isteme girişi (46 → 47, "bir sonraki makale"); tarih/kaynak etiketiyl
 makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤46) yapıldı ve bu,
 `grep` ile makale başına doğrulandı. Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
 
+**Numarasız ileri işaretler — Batch 11'de verildi.** Ajanın tanımı ve kontrol döngüsü (47, 50 →
+51, "serinin bir sonraki fazı" / "sonraki makale"); tarayıcıyı baştan sona yöneten ve kod yazan
+sistemler (48 → 54, 55, "serinin bir sonraki fazının konusu"); sunucu adı çakışması, kurulumdan
+sonra davranış değiştiren sunucu ve yalıtımdan kaçış (49 → güvenlik fazı, 58); güvenilirlik
+etiketi ile kalibrasyonun tam kurulumu (50 → 65, numarasız). Batch 11 **yeni bir numaralı
+koordinat açmadı ve kapatmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı
+yayımlanmış makalelere (≤50) yapıldı ve `grep` ile makale başına doğrulandı. Defterde açık kalan
+en yakın tekil koordinat hâlâ **64**'tür.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -185,10 +194,10 @@ makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makaleler
 44. **Parçalama, Yeniden Sıralama ve RAG Hattının İncelikleri** — uçtan uca RAG mühendisliği. `[yayında]`
 45. **RAG Değerlendirmesi: Doğruluk ve Kaynak Sadakati** — groundedness ölçümü. `[yayında]`
 46. **RAG'in Ötesi: Getirerek Akıl Yürüten Sistemler** — araştıran sistemler. `[yayında]`
-47. **Araç Kullanımı: Function Calling** — modelin eyleme geçmesi.
-48. **Web, Kod ve Dosyalarla Çalışan Modeller** — gerçek araç zincirleri.
-49. **MCP ve Araç Ekosistemleri** — standartlaşma.
-50. **Bilgi Tazeliği: Güncellik, Kaynak Güveni ve Atıf** — bilgiye güven zinciri.
+47. **Araç Kullanımı: İşlev Çağrısı** — modelin eyleme geçmesi. `[yayında]`
+48. **Web, Kod ve Dosyalarla Çalışan Modeller** — gerçek araç zincirleri. `[yayında]`
+49. **MCP ve Araç Ekosistemleri** — standartlaşma. `[yayında]`
+50. **Bilgi Tazeliği: Güncellik, Kaynak Güveni ve Atıf** — bilgiye güven zinciri. `[yayında]`
 
 ### Faz 6 — Ajanlar: Araç Kullanan Modeller (51–60)
 
@@ -994,6 +1003,84 @@ Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): geri çağırm
 | Yansıma token'ları ve eleştirmen model | 46 | — | 52, 59, 73 |
 | Halka başına getirme hatası; kısayol / bağlantısız akıl yürütme | 46 | — | 51, 57, 72 |
 
+### Batch 11'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 47–50'de fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 11'de gerçekleşen |
+|---|---|
+| Sonraki token kaybı (5) | 47 (Toolformer ölçütü: çağrı ve sonucu, metnin geri kalanının kaybını düşürüyorsa tutulur) ✓ **kırk iki makale aralıklı geri çağırma** |
+| Embedding ve çıktı katmanı (4, 7) | 47 (araç token'ı: sözlüğe eklenen bir embedding satırı) ✓ |
+| Öz-denetimli öğrenme (8) | 47 (çağrı etiketi verinin kendisinden kesilir) ✓ |
+| Ölçek yasaları (9) | 50 (ölçek zamanı görmez; bayat büyük model, taze küçük modelin gerisinde kalabilir) ✓ |
+| Otoregresif döngü ve durma token'ı (10, 24) | 47 (ikinci durma token'ı: mesaj sonu) ✓ |
+| Denetimli ince ayar (12) | 47 (çağrı biçimi öğrenilir), 50 (zamansal hizalama ince ayarı yeni bilgi eklemez, var olanı öne çeker) ✓ |
+| Tekilleştirme ve veri temizliği (14) | 47 (üç denetçi = temizlik zinciri), 50 (tekilleştirme etkin kesim tarihini geriye çeker) ✓ |
+| Cetvel bir tasarım ürünüdür (16) | 47 (pass^k ↔ kapsama), 49 (sanal API sunucusu: ölçüt için dünyayı dondurmak), 50 ("hiçbiri" seçeneği) ✓ |
+| Kalibrasyon (16) | 50 (yanlış belgeye direnç modelin güveniyle ölçeklenir) ✓ |
+| Uydurma (17) | 47 (uydurulmuş çağrı ayrı bir hata sınıfı), 50 (gerçek kaynağa yanlış iddia yüklemek) ✓ |
+| Bilgi ağırlıklarda durur (18) | 50 (hangi yılın bilgisinin öne çıkacağı ayrı bir düğme) ✓ |
+| Unutma ve eğitim kesim tarihi (19) | 50 (yeniden eğitim unutur, dizin unutmaz; kesim tarihi ölçülür) ✓ |
+| Bağlam penceresi ve durumsuzluk (21) | 47 (araç tanımları pencerenin bir kısmını alır), 48 (dosya penceresi), 49 (durumsuz protokol) ✓ |
+| İstem kararı ölçülmeden verilmez (22) | 47 ("gerekirse ara" bir ölçüt değildir) ✓ |
+| Örnekle öğrenme ve gösterim (23) | 47 (Toolformer gösterimleri; on üç aracın gösterimi isteme sığmaz) ✓ |
+| Sohbet şablonu, konuşmacı rolü, talimat hiyerarşisi (24) | 47 (ipython rolü, mesaj sonu token'ı, araç çıktısı en düşük güven düzeyi), 49 (sunucu sohbeti görmez; açıklama, en üste yazılan üçüncü taraf metni) ✓ |
+| Anahtar-değer önbelleği ve önek paylaşımı (26, 28) | 47 (tanım bloğu her turda yeniden hesaplanmaz), 49 (belirlenimci araç listesi sırası) ✓ |
+| Gecikme ve bütçe muhasebesi (28, 33) | 47 (paralel çağrı: 1,80 ve 3,74 kat), 48 (arayüz görev başına on üç kat pahalı) ✓ |
+| Kısıtlı üretim, şema, dilbilgisi (30) | 47 (katı kip; şema türü zorlar, değeri değil), 48 (yorumlayıcı sözdizimini sınar, anlamı değil) ✓ |
+| İçerik etkisi (31) | 48 (içeriği değiştirmeden zorluğu değiştirmek: büyük sayılar) ✓ |
+| Düşünce zinciri ve ara adımlar (32) | 48 (program olarak ara adımlar), 50 (plan önce, atıf sonra) ✓ |
+| Kapsama, pass@k (33) | 47 (pass^k: hepsinde başarı) ✓ |
+| Reddetmeli örnekleme ve damıtma (34) | 48 (çıktı uzayı şekillendirme: geçerli izler + öğretmenin düzelttiği izler) ✓ |
+| Sağlam doğrulayıcı ve dış geri bildirim (35) | 47 (veritabanı durumu doğrulayıcı), 48 (yorumlayıcı yarım doğrulayıcı; birim test tam) ✓ |
+| Ağaç araması (36) | 47 (geri almalı karar ağacı: 35,3 → 63,8) ✓ |
+| Eylem (37) | 47 (eylem = işlev çağrısı) ✓ |
+| Adım etiketleri ve süreç denetimi (38) | 50 (planın her sorusu denetlenebilir) ✓ |
+| Bellek, tazelik, çekimserlik (39) | 50 (tazelik anlamı genişler; çekimserlik bir eğitim farkı) ✓ |
+| Çarpımsal düşüş (40) | 47 (bağımlı çağrılarda hata birikir), 48 (adım yüzde 52, görev yüzde 5,2) ✓ |
+| Dizin değiştirme, dikkat dağıtıcı belge, ezber oranı, getirme zarar verebilir (41) | 47 (kötü getirici hiç getirmemekten kötü), 48 (tam dosya = dikkat dağıtıcı), 49 (yanlış araç yanlış eylemdir), 50 (bağlam–bellek çatışması; dizin unutmaz) ✓ |
+| Ters dizin ve BM25 (42) | 48 (depo araması), 49 (BM25 araç araması) ✓ |
+| Vektör dizini ve bulma oranı (43) | 47 (araç açıklamaları üzerinde getirici), 48 (depo dizini; kaçırılan komşu sessizdir), 49 (tamlık) ✓ |
+| Parçalama, kayan pencere, ortada kaybolma, belge genişletme, sorgu yeniden yazma (44) | 48 (sayfa parçalama; depo kayan penceresi; yüz satırlık pencere), 49 (araç belgesi genişletme ve niyet çıkarma) ✓ |
+| Atıf, atfedilebilirlik testi, eksi puanlı cetvel, karşıolgusal dayanıklılık, dinamizm sınıfları (45) | 48 (alıntılı cevap), 50 (atıf varken uydurma; derlem ölçeğinde karşıolgusal dayanıklılık; değişme hızı sınıfları) ✓ |
+| Düşün–eyle–gözle, etkin getirme, yinelemeli getirme (46) | 47 (eylem satırının genelleşmesi; Toolformer ölçütü etkin getirmenin eğitim zamanı akrabası), 48 (depo tamamlamada yineleme), 49 (döngü ve paralellik protokolün dışında) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): geri çağırma puanı tazelik + önem +
+ilgi (39 → 50; 50 yalnızca tazelik sözcüğünün anlamını genişletti, puan formülünü yeniden kurmadı;
+devir: 56), uzun kuyruk (41 → 50; devir: 72), terim sıklığı doyumu → parçalama uzunluğu (42 → 48;
+devir: 91), öğrenilmiş seyrek getirme (42 → 48; devir: 91), filtreli arama ve seçicilik (43 → 50
+tarih/kaynak filtresi; 50 filtre yerine güvenilirlik notunu kurdu; devir: 58, 112), sırayla
+birleştirme (42 → 73).
+
+### Batch 11'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 11'de gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Araç kullanımı ve işlev çağrısı (ad + argüman, yapılandırılmış üretim) | 47 | 48 (üç arayüz), 49 (tanım protokolden gelir), 50 (dünyaya bağlanmanın varsayımı) | 51, 52, 55, 60 |
+| Araç tanımı: ad, açıklama, şema; tanımın istemdeki yeri ve token bedeli | 47 | 49 (listeleme cevabı; açıklama saldırı yüzeyi; belirlenimci sıra) | 51, 56, 58 |
+| Çalıştırıcı; mesaj sonu token'ı; araç sonucu için ayrı konuşmacı rolü | 47 | 49 (çalıştırıcı protokolün arkasına taşınır) | 51, 54 |
+| Katı kip ve "tür ≠ değer"; üç denetçi (biçim, çalıştırma, anlam) | 47 | 48 (yorumlayıcı = çalıştırma denetçisi) | 55, 57 |
+| Uydurulmuş çağrı ve soyut sözdizimi ağacıyla ölçümü | 47 | 49 (araç adı geçerliliği yüzde 96–100) | 57, 58 |
+| Araç token'ı; öz-denetimli çağrı ölçütü (kaybı düşüren çağrı tutulur) | 47 | — | 87, 103 |
+| Çağırmama kararı (ilgisizlik) ve eksik işlevi fark etme | 47 | — | 57, 59 |
+| Araç seçimi bir getirme sorunudur; kötü getirici zarar verir | 47 | 49 (hiyerarşik daraltma, belge genişletme, niyet çıkarma, tamlık) | 51, 56 |
+| Paralel çağrı ve bağımlılık çizgesi; sıralı döngünün iki hatası | 47 | 49 (paralellik puanı en çok 0,36) | 52, 60 |
+| pass^k: tutarlılık ölçüsü; politika ablasyonu | 47 | — | 57, 101 |
+| Araç arayüzü (ajan–bilgisayar arayüzü); insan arayüzü modele uymaz | 48 | 49 (protokol arayüzü standartlaştırır) | 51, 54, 55 |
+| Liste önce, içerik sonra (arama + getirme aracı); HTML süzme ve aday sıralama | 48 | — | 54 |
+| Yorumlayıcı = hesabı devralan yarım doğrulayıcı; hata mesajı gözlemdir | 48 | 49 (hata bayrağı protokole yazılmış) | 55 |
+| Kod olarak eylem (döngü ve koşul) | 48 | — | 52, 55 |
+| Dosya görüntüleyici penceresi, özetlenmiş arama, bağlam kısaltma | 48 | — | 55, 56 |
+| Depo düzeyi getirme ve yinelemeli tamamlama | 48 | — | 55 |
+| MCP: ana bilgisayar / istemci / sunucu; listeleme ve çağırma; sunucu sohbeti görmez | 49 | — | 51, 53, 58 |
+| Ekosistem sayıları ve API kararsızlığı; sanal API sunucusu | 49 | — | 57, 60 |
+| Araç zehirleme | 49 | — | 58 |
+| Bilgi kesim tarihi, etkin kesim tarihi, iç saat, zamansal hizalama | 50 | — | 56, 72, 106 |
+| Bağlam–bellek çatışması; karşı-bellek; tek kanıt ↔ çelişen kanıtlar | 50 | — | 58, 65 |
+| Derleme sızan yanlış bilgi ve güvenilirlik notu | 50 | — | 58, 65 |
+| Kaynağa göre isteme ve alıntı payı | 50 | — | 65, 71 |
+| Atıf varken uydurma: gerçek kaynağa yanlış iddia | 50 | — | 65, 71 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -1325,6 +1412,35 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | eleştirmen model | (critic model) | 46 | |
 | köprü varlık / destekleyici olgular | (bridge entity / supporting facts) | 46 | |
 | bağlantısız akıl yürütme | (disconnected reasoning) | 46 | kısayol ölçüsü |
+| araç kullanımı | (tool use) | 47 | genel ad; işlev çağrısı onun standart biçimi |
+| işlev çağrısı | (function calling) | 47 | "işlev" = programın çağrılabilir parçası (30'daki kullanım); 1–2'deki matematiksel **fonksiyon**la karıştırılmaz, ayrım 47'de açıkça yapıldı. Başlıkta da bu karşılık (karar #121) |
+| araç tanımı | (tool definition) | 47 | ad + açıklama + şema |
+| çalıştırıcı | (executor) | 47 | modeli çağıran uygulamanın kendi kodu; 49'da protokolün arkasına taşınır |
+| mesaj sonu token'ı | — | 47 | Llama 3.1 belgelendirmesinin eom_id'si; 24'teki **tur sonu token'ıyla** (eot_id) karıştırılmaz |
+| katı kip | (strict) | 47 | kısıtlı üretimin araç çağrısına uygulanmış hâli |
+| uydurulmuş çağrı | — | 47 | var olmayan aracı çağırmak; yanlış argümanlı çağrıdan ayrı hata sınıfı |
+| soyut sözdizimi ağacı | (abstract syntax tree) | 47 | çağrının ağaç gösterimi; alt ağaç eşlemesiyle doğruluk ve uydurma ölçülür |
+| araç token'ı | — | 47 | sözlüğe eklenen, araç başına bir embedding satırı |
+| paralel çağrı | (parallel function calling) | 47 | bağımsız çağrıların aynı turda yapılması |
+| planlayıcı | — | 47 | çağrıların bağımlılık çizgesini üreten model |
+| pass^k | — | 47 | Türkçeleştirilmez; k denemenin hepsinde başarı olasılığı; 33'teki **kapsamanın (pass@k)** tersi |
+| ajan–bilgisayar arayüzü | (agent-computer interface) | 48 | gövdede "araç arayüzü"; "ajan"ın tanımı 51'e bırakıldı |
+| araç arayüzü | — | 48 | aracın modele nasıl göründüğü: komutlar ve dönen metnin biçimi |
+| yorumlayıcı | — | 48 | kod yorumlayıcısı; 30'daki **ayrıştırıcıyla** karıştırılmaz |
+| depo | — | 48 | yazılım deposu; 4'teki **derlemle** karıştırılmaz |
+| Model Bağlam Protokolü | (Model Context Protocol, MCP) | 49 | kısaltma "MCP" serbest ve Türkçeleştirilmez |
+| ana bilgisayar / istemci / sunucu | (host / client / server) | 49 | her sunucu için ayrı istemci |
+| listeleme / çağırma isteği | — | 49 | tools/list ve tools/call; gövdede Türkçe adlarıyla |
+| sanal API sunucusu | — | 49 | önbellek + taklit eden model; ölçüt kararlılığı için |
+| araç zehirleme | (tool poisoning) | 49 | açıklamaya gömülü talimat; tam kurulumu güvenlik fazında (58) |
+| tamlık | — | 49 | çok araçlı görevde gereken araçların tamamını getirme; 29/43'teki **bulma oranından** ayrı |
+| bilgi kesim tarihi | (knowledge cutoff) | 50 | 19'da "eğitim kesim tarihi" olarak glosssuz geçmişti |
+| etkin kesim tarihi | (effective cutoff) | 50 | kaynak başına; ilan edilenden farklı olabilir |
+| iç saat | — | 50 | modelin varsayılan cevap yılı; zamansal hizalamayla ayarlanır |
+| bağlam–bellek çatışması | (context-memory conflict) | 50 | derlemenin üç çatışma türünün ilki |
+| karşı-bellek | (counter-memory) | 50 | modelin bildiğiyle çelişen, kendi içinde tutarlı belge |
+| güvenilirlik | (credibility) | 50 | getirilen belgeye ilgililik + tazelik + kaynak notu; 45'teki **kaynak sadakatiyle** karıştırılmaz |
+| kaynağa göre isteme | — | 50 | "ansiklopediye göre" ibaresi; ölçüsü kaynakta birebir geçen kelime payı |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -2173,6 +2289,181 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     ve "The Faiss library" (Douze ve ark., arXiv 2024) hakemsiz; Beam Retrieval (NAACL 2024) ve
     ScaNN (ICML 2020) hakemli ama kapsam dışı bırakıldı; Andoni & Indyk (CACM 2008) kelime
     bütçesi için çıkarıldı.
+
+121. **Başlık düzeltmesi (Batch 11'de verildi).** "Araç Kullanımı: Function Calling" → **"Araç
+    Kullanımı: İşlev Çağrısı"**. Gerekçe: "function calling" kısaltma değil, iki sözcüklük İngilizce
+    ifade; Türkçe karşılığı 47'nin gövdesinde "işlev çağrısı (function calling)" olarak kuruldu ve
+    "işlev" sözcüğü 30'daki anlamıyla (programın çağrılabilir parçası) 1–2'deki matematiksel
+    "fonksiyon"dan ayrıldı. Değişiklik `roadmap.json`'da entegrasyondan **önce** yapıldı. 48, 49 ve
+    50 başlıkları değişmedi ("MCP" kısaltması karar #108 gereği korundu). Faz başlıkları katmanına
+    yine dokunulmadı (karar #52'deki açık soru sürüyor).
+122. **Kategori ve level (Batch 11).** 47–50 `agents-and-retrieval` ve `intermediate`; Faz 5'in
+    tamamı (41–50) tek kategoride kapandı (karar #107'nin devamı). Faz 6'nın (51–60) kategorisi
+    51'in run'ında kararlaştırılır; kontrollü sözlükte "agents" yalnızca `agents-and-retrieval`
+    içinde geçtiği için varsayılan devamlılıktır, ayrı kategori açılmaz.
+123. **İşlev çağrısı sayıları (Batch 11).** Anthropic belgelendirmesi: araç kullanımını açan
+    sistem istemi modele ve ayara göre 264–804 token; araç tanımları sistem istemine girer ("In
+    this environment you have access to a set of tools…"). Meta Llama 3.1 belgelendirmesi: araç
+    sonucu `ipython` rolüyle döner; `eom_id` mesaj sonu (araç sonucu bekleniyor), `eot_id` tur
+    sonu; `Environment: ipython` satırı kipi açar; JSON çağrı `{"name": …, "parameters": …}`.
+    Patil ve ark. (ICML 2025, PMLR 267:48371–48392): serbest metin kipi 4.251 örnekte ortalama
+    412,93 ↔ yapılandırılmış kip 182,5 ayrıştırma hatası; ayrıştırılabilenlerde çoklu kategoride
+    yanlış çağrı 77,5 ↔ 21; kategoriler tek/çoklu/paralel/paralel çoklu/ilgisiz; 64.517 gerçek
+    sorgu; sorgu başına ortalama 3 araç seçeneği (en çok 37), araç başına ortalama 4 parametre
+    (en çok 28); gpt-4o FC tek turlu AST 77,2/93,5/93,0/86,0, ilgisiz 83,1, çok turlu temel 62,5,
+    eksik işlev 6,0 (istem kipinde 41,0). Liu ve ark. (NeurIPS 2024 D&B): 40.000 çağrı; 236B
+    sohbet modeli biçim/çalıştırma/anlam elemesi 817/3.359/2.165, geçen 33.659 (%84,15); 33B kod
+    modeli 4.311/15.496/6.424, geçen 13.769 (%34,42); elenen veriyle eğitim BFCL puanını düşürür.
+    Patil ve ark. (NeurIPS 2024): 1.645 API (94 TorchHub, 626 TF Hub, 925 HF); halüsinasyon = AST
+    alt ağacı hiçbir API'ye uymayan çağrı; GPT-4 0-shot halüsinasyon TorchHub 36,55 / HF 37,16 /
+    TF Hub 78,65; Gorilla 0-shot 6,98 / 10,95 / 5,40; oracle belgeyle TorchHub 0; getirici-farkında
+    eğitim +12,37 (TorchHub) ve +23,46 (HF); sınavda GPT-Index −29,20, BM25 −52,27 (oracle'a
+    göre). Wang ve ark. (ICML 2024, PMLR 235:50208–50232) API-Bank atomik çağrı: Llama-2-70b kod
+    35,6 / JSON 14,3 / metin 37,6; gpt-4-0613 75,4 / 82,0 / 74,4. Schick ve ark. (NeurIPS 2023):
+    τf 0,5/1,0/2,0'de hesap makinesi 3.680/994/138, Wikipedia arama 207.241/60.974/13.944; LAMA'da
+    %98,1 soru-cevap aracı, matematikte %97,9 hesap makinesi. Hao ve ark. (NeurIPS 2023):
+    GSM8K-XL (4 araç) ReAct 0,32 ↔ ToolkenGPT 0,33; FuncQA (13 araç) tek adım 0,57 ↔ 0,73, çok
+    adım 0,06 ↔ 0,15; istemde 4 örnek 5 aracı kapsıyor. Li ve ark. (EMNLP 2023, s. 3102–3116):
+    73 API, 314 diyalog, 753 çağrı; test 214/50/50; doğruluk Alpaca-7B 24,06/5,19/0,00, GPT-3.5
+    59,40/38,52/22,00, GPT-4 63,66/37,04/70,00; GPT-4 hatalarının %67,86'sı API getirememe. Qin ve
+    ark. (ICLR 2024): 16.464 API, 49 kategori; nDCG@5 BM25 17,0, Ada 45,4, eğitilmiş getirici
+    84,9; geçme oranı ReACT 35,3, ReACT@N 44,5, DFSDT 63,8 (ChatGPT); ToolLLaMA DFSDT 66,7 ↔
+    getiriciyle 67,3 (win 60,0 ↔ 63,1). Kim ve ark. (ICML 2024, PMLR 235:24370–24391) GPT:
+    HotpotQA ReAct† 62,47 / 7,12 sn ↔ LLMCompiler 62,00 / 3,95 sn (1,80×), token 2.900/120 ↔
+    1.300/80, maliyet 3,37×; Movie Rec. 72,47 / 20,47 sn ↔ 77,13 / 5,47 sn (3,74×), token
+    20.000/230 ↔ 2.800/115, 6,73×. Yao ve ark. (ICLR 2025): pass^1 gpt-4o perakende 61,2, havayolu
+    35,2; pass^8 < %25; başarısızlıkların ~%55'i yanlış argüman/bilgi, %25'i yanlış karar; politika
+    çıkarılınca 61,2 → 56,8 ve 33,2 → 10,8; maliyetin %95,9'u girdi; uydurma kimlik gpt-4o 0,46 ↔
+    gpt-3.5 FC/Act 2,08/6,34. **Seri türetimi:** 20 araç × 150 token = 3.000, çerçeveyle 3.300;
+    100 turda 330 bin token (açıklama amaçlı).
+124. **Web, kod ve dosya sayıları (Batch 11).** Liu ve ark. (KDD 2023): arama → paralel indirme →
+    HTML'den metin → iki ≤300M parametreli kodlayıcıyla parça seçimi; insan puanı [0, 3]: WebGLM-10B
+    doğruluk 2,810 / atıf 2,757; WebGPT-175B 2,889 / 2,837; WebGPT-13B doğruluk 2,102. Nakano ve
+    ark. (2021, **hakemsiz**): on komutluk metin tarayıcı; insan gösterimcilerine karşı %56, ELI5
+    en çok oylanan cevaba karşı %69 tercih. Deng ve ark. (NeurIPS 2023 D&B): 137 site, 2.000+
+    görev; HTML ortalama 1.135 öğe → süzülünce 580, hedef bulma %94,7; MindAct Flan-T5-XL çapraz
+    görev öğe 55,1 / adım 52,0 / görev 5,2. Gao ve ark. (ICML 2023, PMLR 202:10764–10799):
+    GSM8K doğrudan 19,7 / CoT 65,6 / PAL 72,0; GSM-Hard 5,0 / 20,1 / 61,5; yorumlayıcısız program
+    23,2. Chen ve ark. (TMLR 2023): FinQA CoT 40,4 ↔ PoT 64,5; GSM8K PoT 71,6. Gou ve ark. (ICLR
+    2024): MATH ToRA-Code-7B 44,6 (WizardMath-70B 22,7), ToRA-Code-34B 50,8 (GPT-4 CoT 42,5, GPT-4
+    PAL 51,8); en çok üç çalıştırma; 64 örnekleme + öğretmen düzeltmesi. Wang ve ark. (ICML 2024)
+    M3ToolEval (82 görev, ≤10 tur, gösterimsiz): gpt-4-1106 kod 74,4 / JSON 52,4 / metin 53,7; tur
+    5,5 / 7,6 / 7,7; 17 modelin 12'sinde kod en iyi. Chen ve ark. (ICLR 2024): TransCoder Codex
+    80,4 → 91,6 (birim test) → 92,5 (+açıklama); MBPP 61,4 → 69,4 → 69,8; Spider 81,3 → 84,1.
+    Yang ve ark. (NeurIPS 2024): SWE-bench %12,47 (286/2.294), Lite %18,00; RAG 1,31/2,67;
+    kabuk-yalnız Lite 11,00; maliyet Lite 1,67 $ ↔ RAG 0,13 $; ablasyon (Lite): düzenleme+lint
+    18,0 / lint yok 15,0 / düzenleme yok 10,3; arama özet 18,0 / yinelemeli 12,0 / yok 15,7;
+    pencere 30 satır 14,3 / 100 satır 18,0 / tam dosya 12,7; son 5 gözlem 18,0 / tam geçmiş 15,0;
+    arama komutları ≤50 sonuç, görüntüleyici 100 satır. Zhang ve ark. (EMNLP 2023, s. 2471–2484)
+    satır tamamlama EM GPT-3.5: In-File 40,56, iter1 55,31, iter2 56,81, oracle 57,75;
+    CodeGen-350M iter3 43,94 ↔ CodeGen-6B In-File 34,56. Liu, Xu & McAuley (ICLR 2024) Python
+    acc@1: kolay rastgele 15,68 / Jaccard 20,82 / UniXcoder 25,94; zor 6,44 / 10,01 / 17,70.
+125. **MCP ve ekosistem sayıları (Batch 11).** Belirtim sürümleri 2024-11-05, 2025-03-26,
+    2025-06-18, 2025-11-25, 2026-07-28; 2026-07-28: durumsuz istekler (`_meta` içinde protokol
+    sürümü ve istemci yetenekleri), `server/discover`, `tools/list` belirlenimci sıra (önbellek
+    gerekçesi), `ttlMs`/`cacheScope`, tasks/roots/sampling/logging'in kullanımdan kaldırılması,
+    ≥12 aylık kaldırma penceresi; roller host/client/server, istemci–sunucu bire bir; JSON-RPC 2.0;
+    `tools/list` (name, title, description, inputSchema, outputSchema, annotations) ve
+    `tools/call` (arguments → content[], isError); açıklamalar güvenilen sunucudan gelmedikçe
+    güvenilmez sayılır. Resmî kayıt: üst veri (server.json), ters alan adı ad alanı, DNS/GitHub
+    doğrulaması, güvenlik taraması paket depolarına bırakılmış, "preview". Hou ve ark. (ACM TOSEM
+    2026, DOI 10.1145/3796519): 26 derleme; MCPWorld 26.404, MCP.so 16.592, resmî derleme 1.204
+    (Eylül 2025); MCP.so'dan 300 örnek: 30'u MCP değil, 18'i erişilemez; yaşam döngüsü 4 evre /
+    16 etkinlik; 4 saldırgan türü / 16 tehdit; araç zehirleme örneği (toplama aracının
+    açıklamasında SSH anahtarını gönderme talimatı). Guo ve ark. (Findings ACL 2024, s.
+    11143–11156): ToolBench API'lerinin %55,6'sı kararsız; durum: başarı 44,4, ayrıştırma hatası
+    25,9, bağlanılamıyor 14,8, yetki 6,4, parametre değişikliği 3,6, bulunamıyor 3,5, diğer 1,4;
+    üç koşuda geçme 33,0/31,5/37,5; önbellek 164.980 kayıt + gpt-4-turbo taklidi. Shen ve ark.
+    (NeurIPS 2023): dört aşama (görev planlama, model seçimi, çalıştırma, cevap). Cai ve ark.
+    (ICLR 2024): araç yapıcı GPT-4, kullanıcı GPT-3.5 (C > 15c); GPT-3.5 CoT ↔ LATM 66,4→79,7,
+    61,6→99,6, 20,4→92,2, 59,2→98,3, 0,0→100,0, 18,9→100,0. Du, Wei & Zhang (ICML 2024, PMLR
+    235:11812–11829): 16K+ API 128K pencereye sığmaz; 33 grup × 500; AnyToolBench geçme: ToolLLM
+    getirici + ToolLLaMA 18,9, + GPT-4 36,6, düz ajan 14,0, AnyTool 73,8; 4–6 yansıma turunda
+    +%20'ye varan artış. Chen ve ark. (Findings EMNLP 2024, s. 4705–4726) nDCG@5 ToolE çok araçlı:
+    Vertex 0,5296 → 0,7231, BM25 0,2635 → 0,5637; ToolBench I2 0,3880 → 0,5379. Anthropic
+    belgelendirmesi (**hakemsiz**): 5 sunuculu kurulum ~55K token; araç arama ile >%85 azalma,
+    3–5 araç yüklenir; 30–50 araçtan sonra seçim doğruluğu düşer; 10.000 ertelenmiş araç sınırı.
+    Wang ve ark. (ICLR 2026): 28 sunucu, 250 araç, 11 alan; görev başına 10 ilgisiz sunucu
+    (>100 araç); 104 görev; gpt-5 geçerli ad %100 / şema %99,3 / çalıştırma %99,1 / görev
+    tamamlama 0,677 / paralellik 0,339 / genel 0,749; llama-3.1-8B %96,1 / %89,4 / %90,9 / 0,261
+    / 0,141 / 0,428; paralellik en çok 0,359 (o3).
+126. **Tazelik ve güven sayıları (Batch 11).** Lazaridou ve ark. (NeurIPS 2021) Transformer-XL,
+    2018–2019 testi: WMT 21,11 → 22,45 (+%6,34), özel haber 18,38 → 21,33 (+%16,04), arXiv 21,38 →
+    23,07 (+%7,90); büyük modeller aynı bozulmayı yaşar. Cheng ve ark. (COLM 2024; kabul listesi
+    2024.colmweb.org ile doğrulandı): etkin kesim tarihi = en düşük perplexity veren sürüm;
+    tekilleştirme ve Common Crawl'daki eski Wikipedia kopyaları. Zhao ve ark. (Findings ACL 2024,
+    s. 15015–15040): TAQA 20.148 soru; LLaMA2-70B (Eyl. 2022) F2022 17,2, tepe 2019; 2022'ye
+    istemle 27,4, ince ayarla 27,9 (+%62); doğru bilinen sorularla seçim en iyi (20,5 ↔ 19,8).
+    Dhingra ve ark. (TACL 10:257–273, 2022): TempLAMA F1 Uniform 26,6 ↔ Temporal 28,2; 2019–20
+    19,8 ↔ 22,2; Yearly 27,3. Vu ve ark. (Findings ACL 2024, s. 13697–13720): FreshQA 600 soru,
+    dört sınıf; katı puanlama GPT-4 (2021+) hızlı 12,0 → FreshPrompt 59,2; hiç değişmeyen 64,3 →
+    94,4; yanlış öncül 33,9 → 71,0; genel 28,6 → 75,6; hızlı sorularda reddetme GPT-4 %60,
+    ChatGPT %16. Kasai ve ark. (NeurIPS 2023 D&B): haftada ~30 soru; EM kapalı kitap 15,3, DPR
+    (2018 dump) 13,3, Google arama 34,6; NOTA 66,5 → 58,4; hataların çoğu getirmeden. Liška ve
+    ark. (ICML 2022, PMLR 162:13604–13622): dizin güncellemesi hızlı uyum, neredeyse unutmasız.
+    Xu ve ark. (EMNLP 2024, s. 8541–8565): bağlam–bellek, bağlamlar arası, bellek içi çatışma.
+    Xie ve ark. (ICLR 2024): yalnız karşı-bellekle ezber oranı ChatGPT 3,7 / GPT-4 8,9 (PopQA);
+    1/2 destekleyiciyle 43,0 / 65,4; Llama2-7B sıra etkisi 33,3 ↔ 82,8. Wu, Wu & Zou (NeurIPS
+    2024 D&B): 1.200+ soru, 6 alan; belge yanlış/model doğru: GPT-4o belge 0,608 / kendi 0,327 /
+    hiçbiri 0,065, Claude Opus 0,313 / 0,585 / 0,102; belge doğru/model yanlış: belge 0,903 ve
+    0,901; direnç güven ve sapmayla artar. Shi ve ark. (NAACL 2024 kısa, s. 783–791): LLaMA-13B
+    NQ-Swap 11,7 → 36,7. Pan ve ark. (Findings EMNLP 2023, s. 1389–1403): REIT'te EM düşüşü DPR
+    %14–54, BM25 %20–87; GENREAD %5–15. Pan ve ark. (EMNLP 2024, s. 19844–19863): ChatGPT
+    güvenilirlik notuna az duyarlı; CAG-7B 2WikiMHQA'da LLaMA-2-7B'ye göre +26,6 EM. Weller ve
+    ark. (EACL 2024, s. 2288–2301): QUIP Wikipedia %99,9 ↔ Pile %17,0; ibare +%5–105. Magesh ve
+    ark. (JELS 22(2):216–242, 2025): 200+ soru; doğru 65/41/19, eksik 18/25/62, uydurma ~17/33/17
+    (özet: %17–33); en uzun cevap en çok uyduruyor (Westlaw ort. 350 kelime). Fierro ve ark. (ACL
+    2024, s. 11397–11417): AutoAIS 72,64 → 74,35; plan sorularının %97,97'si cevaplanabilir.
+127. **Kaynak politikası (Batch 11).** 47'de 13, 48'de 11, 49'da 10, 50'de 16 kaynak (Wang ve
+    ark. CodeAct 47 ve 48'de ortak). Hakemsiz olup işaretlenerek kullanılanlar: Meta Llama 3.1
+    belgelendirmesi, Anthropic belgelendirmesi (×2), MCP belirtimi ve kayıt belgesi, Wallace ve
+    ark. (24'ten devir) ve Nakano ve ark. (WebGPT, arXiv 2112.09332). Karar #113 uygulandı:
+    MCP-Bench DBLP'de yalnızca CoRR ama ICLR 2026 birincil bildiri sayfası doğrulandı; Dated Data
+    için COLM 2024 kabul listesi `curl -k` ile alındı (sertifika adı uyuşmuyor); Hou ve ark. ve
+    Magesh ve ark. Crossref ile dergi künyesine bağlandı. Aday olup **kullanılmayanlar:**
+    MCP-Universe (Salesforce), LiveMCPBench, MCP Safety Audit (üçü yalnızca arXiv); Source-Aware
+    Training (COLM 2024, doğrulandı, kapsam dışı); COLT (CIKM 2024), KaLMA (Findings ACL 2024),
+    TimeQA (NeurIPS 2021 D&B) hakemli ama kelime bütçesi için çıkarıldı; BFCL için tahmin edilen
+    arXiv kimliği (2506.14224) başka bir çalışmaya aitti, metin PMLR'nin GitHub aynasından alındı.
+
+
+## Batch 11 öğrenme notları (yazım tamamlandı)
+
+- **Faz 5 kapandı: çağrı (47) → arayüz (48) → protokol ve ekosistem (49) → güven (50).** 46'nın
+  "eylem satırı aramaya özel değil" kapısı 47'de token düzeyinde açıldı; 47'nin "araç bir
+  soyutlamaydı" cümlesi 48'i, 48'in "hepsi uygulamaya özel" cümlesi 49'u, 49'un "araç bile bir
+  yılda bozuluyor" bulgusu 50'yi çağırdı. 50, Faz 6'ya "ajan" sözcüğünü tanımsız bırakarak
+  devretti; 48'de "ajan–bilgisayar arayüzü" gloss'landı ama "ajan"ın tanımı açıkça 51'e bırakıldı.
+- **Araştırma bu run'da da tamamen ana oturumda yapıldı.** 50 kaynağın PDF'i tek bir Python
+  betiğiyle (`artifacts/b11-research/fetch-b11.py`, 3 sn aralık) indirilip `pypdf` ile metne
+  çevrildi; DBLP doğrulaması 50 başlık için `dblp.py` ile (11 sn aralık, ~10 dk) arka planda
+  koştu. Toplam ~2,5 saatlik araştırma; makale başına altı–on altı kaynak.
+- **Yeni künye kanalları.** PMLR PDF'leri `proceedings.mlr.press` yerine
+  `raw.githubusercontent.com/mlresearch/v<cilt>/main/assets/<key>/<key>.pdf` aynasından iniyor
+  (site HTML döndürdü). COLM kabul listesi `2024.colmweb.org/AcceptedPapers.html` — sertifika
+  GitHub'a ait olduğu için `curl -k` gerekiyor. ACM dergileri (CSUR, TOSEM) Crossref'te tam
+  künyeyle var; `doi.org` bağlantıları bot'a 403 döner ama okuyucuda açılır. ICLR 2026 bildirileri
+  `proceedings.iclr.cc` altında PDF ve özet sayfasıyla var; DBLP henüz indekslememiş olabilir.
+  ACL Anthology `.bib` uç noktası sayfa aralığını doğrudan veriyor.
+- **Tablo sütunu tuzakları bu run'da da çıktı.** BFCL Tablo 1'in 23 sütunu (AST/Execute/Crowd ×
+  4 kategori + ilgisiz/ilgili + çok turlu 4 + ajan 3) başlıktan sayılarak eşlendi; FreshQA Tablo
+  1'in ilk iki sütunu "tümü" ve "geçerli öncül tümü"dür (fast 3. sütun); ClashEval Tablo 2'de
+  satırlar "seçilen", sütunlar "hangisi doğru"dur — "prior 0,585" belge yanlışken kendi cevabında
+  kalma oranıdır. ToolLLM Tablo 4'te DFSDT-Retriever satırı oracle değil getirici kümesidir.
+- **Terim kararı: "işlev çağrısı".** "Function calling" için Türkçede yerleşik karşılık yoktu;
+  30'daki "işlev" kullanımı ve 46'nın kapanış cümlesi ("model bir işlevi nasıl çağırır") karşılığı
+  belirledi; matematiksel "fonksiyon"dan ayrım 47'de ve terim defterinde açıkça yazıldı.
+- **SVG gösterge notları 13 birimde x=20'den en çok ~97 karakter alıyor.** On bir yeni şekilden
+  altısında alt notlar ilk çizimde taştı ve denetleyici yakaladı; hepsi kısaltıldı. Üç sütunlu
+  yatay çubuk deseni (ad, çubuk, değer) bu run'da yedi şekilde kullanıldı; iki panelli şekillerde
+  sağ panelin değer sütunu x≈650'de bitmeli (x=664'te 5 karakter sığıyor). Denetleyicinin görmediği üç binme (ok etiketi ↔ kutu, 26 karakterlik etiket ↔ x=180'den başlayan çubuk, alt nota 6 birimlik pay) yalnızca light/dark ekran görüntüsünde çıktı; etiket bitişi (karakter × 7,15) komşu öğenin başlangıcıyla karşılaştırılmalı.
+- **Kelime sayısı.** İlk taslaklar 47'de düzyazı ~3.000, 48'de ~2.200, 50'de ~2.500 çıktı; 49
+  1.942 ile eşiğin altında kaldı ve resmî kayıt sistemi ile sürüm çizelgesi paragraflarıyla
+  (dolgu değil, iki yeni olgu) 2.090'a çıkarıldı.
+- **Render doğrulaması yine izole kopyada.** Run boyunca paralel oturum görünmedi (peer listesi
+  başlangıçta bir oturum gösterdi, mesaj ulaşmadı); yine de build ve dev sunucusu
+  `D:\dev\anil-lib-b11-render` kopyasında (junction + kapısız dev, 3210) çalıştırıldı ve ana
+  worktree'nin `.next` dizinine dokunulmadı. Build 99 sayfa, 51 seri rotası 200.
 
 ## Batch 10 öğrenme notları (yazım tamamlandı)
 
