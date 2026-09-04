@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-03T22:50:53.978Z
-> Files: 80 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-04T22:26:51.209Z
+> Files: 101 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -11,7 +11,7 @@
 
 ## .claude/
 
-- `launch.json` (~141 tok)
+- `launch.json` (~140 tok)
 
 ## .claude/rules/
 
@@ -76,6 +76,11 @@
 
 - `fwdrefs.py` (~350 tok)
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2bfc8ef-93ea-4a8a-85d8-43073b9287ca/scratchpad/
+
+- `wolf-b12.py` — Batch 12 — OpenWolf state updates: buglog.json, cerebrum.md, memory.md. (~2692 tok)
+- `yh-b12.py` — Batch 12 (+1 fazı) — docs/seri/YOL-HARITASI.md anchored insertions. (~9624 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/
 
 - `commitmsg.txt` (~650 tok)
@@ -93,6 +98,7 @@
 - `MEMORY.md` — Memory index (~148 tok)
 - `reader-line-guide-redesign.md` (~471 tok)
 - `series-batch11-faz5-kapanis.md` (~615 tok)
+- `series-batch12-faz6-acilis.md` (~668 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -118,6 +124,11 @@
 
 - `fetch-b11.py` — fetch, main (~1450 tok)
 - `titles-b11.txt` (~891 tok)
+
+## artifacts/b12-research/
+
+- `dblp-b12.py` (~365 tok)
+- `fetch-b12.py` — fetch, norm, title_match, arxiv_search (~3326 tok)
 
 ## artifacts/b7-render/
 
@@ -266,8 +277,12 @@
 
 ## content/series/articles/agents-and-retrieval/
 
+- `ajan-mimarileri.md` — Karar kutusunun içi (~5720 tok)
+- `ajan-nedir-kontrol-dongusu-olarak-llm.md` — Adı konmamış şey (~7464 tok)
 - `arac-kullanimi-islev-cagrisi.md` — Eylem satırı aramaya özel değildi (~7251 tok)
 - `bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md` — Üç ip, tek düğüm (~6256 tok)
+- `bilgisayar-kullanan-ajanlar.md` — İnsan için çizilmiş arayüz (~5470 tok)
+- `coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md` — Bir ajan yetmediğinde (~6296 tok)
 - `mcp-ve-arac-ekosistemleri.md` — Çarpım problemi (~5002 tok)
 - `parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md` — Görünmez kararlar (~6388 tok)
 - `rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md` — Tek sayı üç hatayı saklıyor (~6152 tok)
@@ -289,6 +304,18 @@
 
 ## content/series/assets/acik-agirliklar-ve-model-ekosistemi/
 
+
+## content/series/assets/ajan-mimarileri/
+
+- `gerektiginde-ayristirma.svg` (~1370 tok)
+- `hata-dongusunun-cikislari.svg` (~1134 tok)
+- `uc-dongu-bicimi.svg` (~2079 tok)
+
+## content/series/assets/ajan-nedir-kontrol-dongusu-olarak-llm/
+
+- `ajan-kontrol-dongusu.svg` (~1275 tok)
+- `bolum-nasil-bitiyor.svg` (~1526 tok)
+- `iki-kat-karar-cercevesi.svg` (~785 tok)
 
 ## content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/
 
@@ -320,8 +347,20 @@
 - `ayni-test-iki-egitim-donemi.svg` (~655 tok)
 - `belge-mi-bellek-mi.svg` (~1114 tok)
 
+## content/series/assets/bilgisayar-kullanan-ajanlar/
+
+- `ekranin-uc-gosterimi.svg` (~1080 tok)
+- `insan-ve-ajan-bes-ortam.svg` (~884 tok)
+- `plan-ayni-konumlandirma-farkli.svg` (~711 tok)
+
 ## content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/
 
+
+## content/series/assets/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon/
+
+- `coklu-ajan-basarisizliklari.svg` (~560 tok)
+- `dort-ajan-duzeni.svg` (~2114 tok)
+- `tartisma-oylama-yansima.svg` (~826 tok)
 
 ## content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/
 
@@ -435,7 +474,7 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5351 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5969 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
 
 ## docs/superpowers/plans/

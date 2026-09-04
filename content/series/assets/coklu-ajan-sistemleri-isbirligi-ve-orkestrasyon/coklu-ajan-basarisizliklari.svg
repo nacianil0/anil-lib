@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Çoklu ajan başarısızlıklarının üç sınıfı ve payları: sistem tasarımı sorunları yüzde 41,8, ajanlar arası uyumsuzluk 36,9, görev doğrulaması 21,3; her sınıfın altında örnek türler.">
+  <text x="20" y="40" font-size="13" font-weight="bold" fill="var(--text)">sistem tasarımı sorunları</text>
+  <rect x="230" y="28" width="209" height="16" fill="var(--accent)" />
+  <text x="490" y="40" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">41,8</text>
+  <text x="20" y="62" font-size="13" fill="var(--text-muted)">görev ya da rol tanımına uymama · adım tekrarı · geçmişi kaybetme · bitiş koşulundan habersizlik</text>
+
+  <text x="20" y="118" font-size="13" font-weight="bold" fill="var(--text)">ajanlar arası uyumsuzluk</text>
+  <rect x="230" y="106" width="184.5" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="490" y="118" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">36,9</text>
+  <text x="20" y="140" font-size="13" fill="var(--text-muted)">konuşmanın sıfırlanması · öbür ajanın girdisini yok sayma · bilgi saklama · görevden sapma</text>
+
+  <text x="20" y="196" font-size="13" font-weight="bold" fill="var(--text)">görev doğrulaması</text>
+  <rect x="230" y="184" width="106.5" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="490" y="196" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">21,3</text>
+  <text x="20" y="218" font-size="13" fill="var(--text-muted)">erken bitirme · eksik ya da hiç doğrulama · yanlış doğrulama</text>
+
+  <line x1="20" y1="252" x2="700" y2="252" stroke="var(--border)" />
+  <text x="20" y="276" font-size="13" fill="var(--text-muted)">Yüzde payları; 1.642 iz, 7 çerçeve, 14 tür üç sınıfta; çubuklar aynı ölçekte (100 = 500 birim).</text>
+  <text x="20" y="296" font-size="13" fill="var(--text-muted)">İlk iki sınıf sistemin özelliği; iki ucuz tasarım müdahalesi 9,4 ve 15,6 puan kazandırıyor.</text>
+</svg>

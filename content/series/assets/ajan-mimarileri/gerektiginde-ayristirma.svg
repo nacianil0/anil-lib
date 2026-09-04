@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Üç ortamda beş düzenin başarı yüzdesi: her adımda karar, önce plan, yeniden deneme, yansımalı yeniden deneme ve gerektiğinde ayrıştırma; ayrıştırma üç ortamda da en yüksek.">
+  <text x="20" y="44" font-size="13" font-weight="bold" fill="var(--text)">ev işleri</text>
+  <text x="20" y="70" font-size="13" fill="var(--text)">her adımda karar</text>
+  <rect x="210" y="58" width="173.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="660" y="70" font-size="13" text-anchor="end" fill="var(--text-muted)">43,3</text>
+  <text x="20" y="92" font-size="13" fill="var(--text)">önce plan, sonra yürütme</text>
+  <rect x="210" y="80" width="173.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="660" y="92" font-size="13" text-anchor="end" fill="var(--text-muted)">43,3</text>
+  <text x="20" y="114" font-size="13" fill="var(--text)">yeniden deneme</text>
+  <rect x="210" y="102" width="191.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="660" y="114" font-size="13" text-anchor="end" fill="var(--text-muted)">47,8</text>
+  <text x="20" y="136" font-size="13" fill="var(--text)">yansımalı yeniden deneme</text>
+  <rect x="210" y="124" width="230" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="660" y="136" font-size="13" text-anchor="end" fill="var(--text-muted)">57,5</text>
+  <text x="20" y="158" font-size="13" fill="var(--text)">gerektiğinde ayrıştırma</text>
+  <rect x="210" y="146" width="286.4" height="16" fill="var(--accent)" />
+  <text x="660" y="158" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">71,6</text>
+
+  <text x="20" y="196" font-size="13" font-weight="bold" fill="var(--text)">alışveriş</text>
+  <text x="20" y="222" font-size="13" fill="var(--text)">her adımda karar</text>
+  <rect x="210" y="210" width="128" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="660" y="222" font-size="13" text-anchor="end" fill="var(--text-muted)">32</text>
+  <text x="20" y="244" font-size="13" fill="var(--text)">önce plan, sonra yürütme</text>
+  <rect x="210" y="232" width="68" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="660" y="244" font-size="13" text-anchor="end" fill="var(--text-muted)">17</text>
+  <text x="20" y="266" font-size="13" fill="var(--text)">yeniden deneme</text>
+  <rect x="210" y="254" width="120" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="660" y="266" font-size="13" text-anchor="end" fill="var(--text-muted)">30</text>
+  <text x="20" y="288" font-size="13" fill="var(--text)">yansımalı yeniden deneme</text>
+  <rect x="210" y="276" width="140" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="660" y="288" font-size="13" text-anchor="end" fill="var(--text-muted)">35</text>
+  <text x="20" y="310" font-size="13" fill="var(--text)">gerektiğinde ayrıştırma</text>
+  <rect x="210" y="298" width="176" height="16" fill="var(--accent)" />
+  <text x="660" y="310" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">44</text>
+
+  <text x="20" y="348" font-size="13" font-weight="bold" fill="var(--text)">tarif ortamı</text>
+  <text x="20" y="374" font-size="13" fill="var(--text)">her adımda karar</text>
+  <rect x="210" y="362" width="76" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="660" y="374" font-size="13" text-anchor="end" fill="var(--text-muted)">19</text>
+  <text x="20" y="396" font-size="13" fill="var(--text)">önce plan, sonra yürütme</text>
+  <rect x="210" y="384" width="108" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="660" y="396" font-size="13" text-anchor="end" fill="var(--text-muted)">27</text>
+  <text x="20" y="418" font-size="13" fill="var(--text)">yeniden deneme</text>
+  <rect x="210" y="406" width="60" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="660" y="418" font-size="13" text-anchor="end" fill="var(--text-muted)">15</text>
+  <text x="20" y="440" font-size="13" fill="var(--text)">yansımalı yeniden deneme</text>
+  <rect x="210" y="428" width="128" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="660" y="440" font-size="13" text-anchor="end" fill="var(--text-muted)">32</text>
+  <text x="20" y="462" font-size="13" fill="var(--text)">gerektiğinde ayrıştırma</text>
+  <rect x="210" y="450" width="208" height="16" fill="var(--accent)" />
+  <text x="660" y="462" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">52</text>
+
+  <line x1="20" y1="480" x2="700" y2="480" stroke="var(--border)" />
+  <text x="20" y="502" font-size="13" fill="var(--text-muted)">Başarı yüzdesi; beş düzen de aynı modelle; çubuklar aynı ölçekte (100 = 400 birim).</text>
+</svg>

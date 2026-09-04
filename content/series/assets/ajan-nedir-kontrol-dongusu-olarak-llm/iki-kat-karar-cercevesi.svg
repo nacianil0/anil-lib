@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Karar çerçevesinin altı terimi, 37. makaledeki token üretimi ve bu makaledeki ajan döngüsü için yan yana: durum, eylem, geçiş, ödül, bölüm ve politika satırlarında iki katın karşılıkları.">
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">çerçeve</text>
+  <text x="170" y="30" font-size="13" font-weight="bold" fill="var(--text)">37 · token üretimi</text>
+  <text x="440" y="30" font-size="13" font-weight="bold" fill="var(--accent)">51 · ajan döngüsü</text>
+  <line x1="20" y1="40" x2="700" y2="40" stroke="var(--border)" />
+
+  <text x="20" y="66" font-size="13" fill="var(--text)">durum</text>
+  <text x="170" y="66" font-size="13" fill="var(--text-muted)">o ana kadarki dizi</text>
+  <text x="440" y="66" font-size="13" fill="var(--text)">pencere + dünyanın görünmeyen hâli</text>
+  <text x="440" y="84" font-size="13" fill="var(--accent)">gözlem, durumun bir izdüşümüdür</text>
+  <line x1="20" y1="94" x2="700" y2="94" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="118" font-size="13" fill="var(--text)">eylem</text>
+  <text x="170" y="118" font-size="13" fill="var(--text-muted)">sözlükten bir sonraki token</text>
+  <text x="440" y="118" font-size="13" fill="var(--text)">çağrı, mesaj ya da dur</text>
+  <text x="440" y="136" font-size="13" fill="var(--accent)">kümesi çevre tanımlar</text>
+  <line x1="20" y1="146" x2="700" y2="146" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="170" font-size="13" fill="var(--text)">geçiş</text>
+  <text x="170" y="170" font-size="13" fill="var(--text-muted)">token diziye eklenir; belirlenimci</text>
+  <text x="440" y="170" font-size="13" fill="var(--text)">dünya değişir, gözlem döner</text>
+  <text x="440" y="188" font-size="13" fill="var(--accent)">çevre zar atar</text>
+  <line x1="20" y1="198" x2="700" y2="198" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="222" font-size="13" fill="var(--text)">ödül</text>
+  <text x="170" y="222" font-size="13" fill="var(--text-muted)">sonda: cevap doğru mu</text>
+  <text x="440" y="222" font-size="13" fill="var(--text)">görev sonunda: iş bitti mi</text>
+  <line x1="20" y1="232" x2="700" y2="232" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="256" font-size="13" fill="var(--text)">bölüm</text>
+  <text x="170" y="256" font-size="13" fill="var(--text-muted)">tur sonu token'ıyla biter</text>
+  <text x="440" y="256" font-size="13" fill="var(--text)">dur kararıyla ya da tur sınırıyla biter</text>
+  <line x1="20" y1="266" x2="700" y2="266" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="290" font-size="13" fill="var(--text)">politika</text>
+  <text x="170" y="290" font-size="13" fill="var(--text-muted)">modelin kendisi</text>
+  <text x="440" y="290" font-size="13" fill="var(--text)">model + döngüyü çalıştıran kod</text>
+</svg>

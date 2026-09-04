@@ -2523,3 +2523,64 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-09-04 07:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-04 00:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-04 00:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:19 | Created artifacts/b12-research/fetch-b12.py | — | ~3326 |
+| 00:19 | Created artifacts/b12-research/dblp-b12.py | — | ~365 |
+
+## Session: 2026-09-05 (Seri Batch 12, BATCH=4+1 → 51–54)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 00:00 | State zinciri yüklendi (SOZLESME v2.1, HANDOFF, YOL-HARITASI vaat/terim/karar #108–#127, 37/40/46–50, araçlar) | docs/seri/*, content/series/** | BATCH=4+1 → 51–54, kohort 12; workflow/subagent yok (cerebrum DNR 2026-09-03) | ~250k |
+| 00:20 | Araştırma betikleri yazıldı ve arka planda başlatıldı (63 aday PDF + DBLP) | artifacts/b12-research/fetch-b12.py, dblp-b12.py | çalışıyor | ~15k |
+| 00:28 | Created content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md | — | ~7909 |
+| 00:31 | Edited content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md | inline fix | ~24 |
+| 00:31 | Edited content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md | inline fix | ~54 |
+| 00:32 | Created content/series/assets/ajan-nedir-kontrol-dongusu-olarak-llm/ajan-kontrol-dongusu.svg | — | ~1275 |
+| 00:32 | Created content/series/assets/ajan-nedir-kontrol-dongusu-olarak-llm/iki-kat-karar-cercevesi.svg | — | ~785 |
+| 00:32 | Created content/series/assets/ajan-nedir-kontrol-dongusu-olarak-llm/bolum-nasil-bitiyor.svg | — | ~1526 |
+| 00:36 | Edited content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md | inline fix | ~62 |
+| 00:41 | Created content/series/articles/agents-and-retrieval/ajan-mimarileri.md | — | ~6101 |
+| 00:45 | Created content/series/assets/ajan-mimarileri/uc-dongu-bicimi.svg | — | ~2079 |
+| 00:45 | Created content/series/assets/ajan-mimarileri/gerektiginde-ayristirma.svg | — | ~1370 |
+| 00:45 | Created content/series/assets/ajan-mimarileri/hata-dongusunun-cikislari.svg | — | ~1134 |
+| 00:52 | Created content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md | — | ~6716 |
+| 00:54 | Created content/series/assets/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon/dort-ajan-duzeni.svg | — | ~2114 |
+| 00:55 | Created content/series/assets/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon/tartisma-oylama-yansima.svg | — | ~826 |
+| 00:55 | Created content/series/assets/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon/coklu-ajan-basarisizliklari.svg | — | ~560 |
+| 01:01 | Created content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | — | ~5835 |
+| 01:02 | Created content/series/assets/bilgisayar-kullanan-ajanlar/ekranin-uc-gosterimi.svg | — | ~1080 |
+| 01:02 | Created content/series/assets/bilgisayar-kullanan-ajanlar/plan-ayni-konumlandirma-farkli.svg | — | ~711 |
+| 01:03 | Created content/series/assets/bilgisayar-kullanan-ajanlar/insan-ve-ajan-bes-ortam.svg | — | ~884 |
+| 01:10 | 51–54 gövdeleri ve 12 SVG yazıldı; check-series-content/svg ve ET.parse geçti; künyeler DBLP `ee`/Crossref/PMLR/Anthology ile doğrulandı | content/series/articles/agents-and-retrieval/{ajan-nedir…,ajan-mimarileri,coklu-ajan…,bilgisayar-kullanan-ajanlar}.md, content/series/assets/<4 klasör> | entegrasyon öncesi denetim temiz | ~900k |
+| 01:06 | Created .claude/launch.json | — | ~140 |
+| 01:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2bfc8ef-93ea-4a8a-85d8-43073b9287ca/scratchpad/yh-b12.py | — | ~9624 |
+| 01:24 | Created docs/seri/HANDOFF.md | — | ~6367 |
+| 01:25 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch12-faz6-acilis.md | — | ~682 |
+| 01:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2bfc8ef-93ea-4a8a-85d8-43073b9287ca/scratchpad/wolf-b12.py | — | ~2692 |
+| 01:45 | Entegrasyon + doğrulama: entegre-batch --write, sync-series-hashes --write, typecheck, 458 test, izole kopyada build (103 sayfa), 55 rota 200, 4×3×3 DOM ölçümü temiz, 12 şekil light+dark overlay ile görüldü (51-Şekil 1 etiket, 54-Şekil 1 var( parantezi düzeltildi); +1 fazı: YOL-HARITASI (graf, tekrar, terim, kararlar #128–#134, notlar), HANDOFF (cursor 55), .wolf, kullanıcı hafızası | content/series/catalog.json, roadmap.json, docs/seri/YOL-HARITASI.md, docs/seri/HANDOFF.md, .wolf/* | Batch 12 kapandı | ~1.3M |
+| 01:27 | Session end: 26 writes across 23 files (fetch-b12.py, dblp-b12.py, ajan-nedir-kontrol-dongusu-olarak-llm.md, ajan-kontrol-dongusu.svg, iki-kat-karar-cercevesi.svg) | 0 reads | ~67677 tok |
+
+## Session: 2026-09-04 01:27
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-04 01:27
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

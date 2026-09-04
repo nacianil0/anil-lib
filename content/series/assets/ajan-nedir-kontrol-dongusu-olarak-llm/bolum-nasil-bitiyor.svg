@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Sekiz ortamda bölümlerin nasıl bittiği: tamamlandı, tur sınırı aşıldı, biçim geçersiz ve eylem geçersiz paylarının yığılmış çubukları; bilgi çizgesi ve bulmaca ortamlarında tur sınırı, ev işlerinde geçersiz eylem, veritabanında geçersiz biçim baskın.">
+  <rect x="200" y="19" width="12" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="218" y="29" font-size="13" fill="var(--text-muted)">tamamlandı</text>
+  <rect x="312" y="19" width="12" height="12" fill="var(--accent)" />
+  <text x="330" y="29" font-size="13" fill="var(--text-muted)">tur sınırı</text>
+  <rect x="412" y="19" width="12" height="12" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="430" y="29" font-size="13" fill="var(--text-muted)">biçim geçersiz</text>
+  <rect x="540" y="19" width="12" height="12" fill="var(--cool)" />
+  <text x="558" y="29" font-size="13" fill="var(--text-muted)">eylem geçersiz</text>
+
+  <text x="20" y="54" font-size="13" fill="var(--text)">işletim sistemi</text>
+  <rect x="200" y="42" width="270" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="470" y="42" width="86" height="16" fill="var(--accent)" />
+  <rect x="556" y="42" width="3.2" height="16" fill="var(--cool)" />
+  <text x="610" y="54" font-size="13" text-anchor="end" fill="var(--text-muted)">75,0</text>
+  <text x="670" y="54" font-size="13" text-anchor="end" fill="var(--text)">23,9</text>
+
+  <text x="20" y="88" font-size="13" fill="var(--text)">veritabanı</text>
+  <rect x="200" y="76" width="136.4" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="336.4" y="76" width="28.8" height="16" fill="var(--accent)" />
+  <rect x="365.2" y="76" width="191.9" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="610" y="88" font-size="13" text-anchor="end" fill="var(--text-muted)">37,9</text>
+  <text x="670" y="88" font-size="13" text-anchor="end" fill="var(--text)">8,0</text>
+
+  <text x="20" y="122" font-size="13" fill="var(--text)">bilgi çizgesi</text>
+  <rect x="200" y="110" width="108.4" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="308.4" y="110" width="244.4" height="16" fill="var(--accent)" />
+  <text x="610" y="122" font-size="13" text-anchor="end" fill="var(--text-muted)">30,1</text>
+  <text x="670" y="122" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">67,9</text>
+
+  <text x="20" y="156" font-size="13" fill="var(--text)">kart oyunu</text>
+  <rect x="200" y="144" width="184.3" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="384.3" y="144" width="138.6" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <rect x="522.9" y="144" width="36.7" height="16" fill="var(--cool)" />
+  <text x="610" y="156" font-size="13" text-anchor="end" fill="var(--text-muted)">51,2</text>
+  <text x="670" y="156" font-size="13" text-anchor="end" fill="var(--text)">0,0</text>
+
+  <text x="20" y="190" font-size="13" fill="var(--text)">yanal düşünme bulmacası</text>
+  <rect x="200" y="178" width="50.4" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="250.4" y="178" width="297" height="16" fill="var(--accent)" />
+  <text x="610" y="190" font-size="13" text-anchor="end" fill="var(--text-muted)">14,0</text>
+  <text x="670" y="190" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">82,5</text>
+
+  <text x="20" y="224" font-size="13" fill="var(--text)">ev işleri</text>
+  <rect x="200" y="212" width="47.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="247.2" y="212" width="79.6" height="16" fill="var(--accent)" />
+  <rect x="326.8" y="212" width="230.8" height="16" fill="var(--cool)" />
+  <text x="610" y="224" font-size="13" text-anchor="end" fill="var(--text-muted)">13,1</text>
+  <text x="670" y="224" font-size="13" text-anchor="end" fill="var(--text)">22,1</text>
+
+  <text x="20" y="258" font-size="13" fill="var(--text)">web alışverişi</text>
+  <rect x="200" y="246" width="197.6" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="397.6" y="246" width="100.1" height="16" fill="var(--accent)" />
+  <rect x="497.7" y="246" width="61.9" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="610" y="258" font-size="13" text-anchor="end" fill="var(--text-muted)">54,9</text>
+  <text x="670" y="258" font-size="13" text-anchor="end" fill="var(--text)">27,8</text>
+
+  <text x="20" y="292" font-size="13" fill="var(--text)">web gezinme</text>
+  <rect x="200" y="280" width="203.8" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="403.8" y="280" width="126" height="16" fill="var(--accent)" />
+  <rect x="529.8" y="280" width="30.2" height="16" fill="var(--cool)" />
+  <text x="610" y="292" font-size="13" text-anchor="end" fill="var(--text-muted)">56,6</text>
+  <text x="670" y="292" font-size="13" text-anchor="end" fill="var(--text)">35,0</text>
+
+  <line x1="20" y1="308" x2="700" y2="308" stroke="var(--border)" />
+  <text x="20" y="330" font-size="13" fill="var(--text-muted)">29 modelin ortalaması, yüzde; pencere dolması payı her ortamda %4'ün altında, çizilmedi.</text>
+  <text x="20" y="348" font-size="13" fill="var(--text-muted)">Tur sınırına takılan bölümlerin %90'ından fazlasında son on turda tekrar var.</text>
+</svg>

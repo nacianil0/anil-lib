@@ -6,133 +6,143 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-04 · Durum: **1–50 yayında (kohort Batch 0 → Batch 11) · Faz 5 kapandı · Sıradaki: 51**
+Son güncelleme: 2026-09-05 · Durum: **1–54 yayında (kohort Batch 0 → Batch 12) · Faz 6 açıldı (51–54) · Sıradaki: 55**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 50 — `bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif` |
-| Sıradaki güvenli başlangıç | Makale 51 ("Ajan Nedir? Kontrol Döngüsü Olarak LLM"), Faz 6'nın ilk makalesi; run kapsamı SOZLESME §7'ye göre çözülür |
-| Sıradaki kohort | `classification_batch: 12` |
+| Yayımlanan son makale | 54 — `bilgisayar-kullanan-ajanlar` |
+| Sıradaki güvenli başlangıç | Makale 55 ("Kod Yazan Ajanlar: Yazılım Mühendisliğinde LLM"), Faz 6'nın beşinci makalesi; run kapsamı SOZLESME §7'ye göre çözülür |
+| Sıradaki kohort | `classification_batch: 13` |
 | Rotalar | `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu) |
 | İçerik sözleşmesi | `content/series/catalog.json` + `content/series/articles/**` + `content/series/assets/<slug>/*.svg` |
 | Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer, elle güncelleme gerekmez |
 | Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs` |
 | Level bandı | 1–10 `beginner` (değişmez); 11'den itibaren `intermediate` (bağlayıcı karar #19) |
-| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–50 `agents-and-retrieval` (bağlayıcı kararlar #50, #65, #85, #98, #107 ve #122). Faz 6 (51–60) için kategori 51'in run'ında kararlaştırılır; kontrollü sözlükte "ajan" yalnızca `agents-and-retrieval` içinde geçtiği için varsayılan devamlılıktır (karar #122) |
+| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–54 `agents-and-retrieval` (bağlayıcı kararlar #50, #65, #85, #98, #107, #122 ve #128). Faz 6'nın kalanı (55–60) için varsayılan devamlılık `agents-and-retrieval`; kontrollü sözlükte "agents" yalnızca bu kategoride geçer |
 
 ## Açık borçlar
 
 - **Faz başlıklarının dili — açık, karar verilmedi.** `roadmap.json`'daki faz başlıkları İngilizce
   alan terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning
-  ve Test-Time Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları ise terim
-  defterine göre Türkçeleştiriliyor (kararlar #51, #52, #66, #86, #99, #108, #115, #121). Faz 5
-  artık tamamen yayında ve on başlığının hiçbirinde "Retrieval" geçmiyor; faz adı hâlâ "Retrieval
-  ve Araçlar". Katmanın tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır.
+  ve Test-Time Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları terim
+  defterine göre Türkçeleştiriliyor (kararlar #51, #52, #66, #86, #99, #108, #115, #121). Katmanın
+  tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır.
 - **Yayımlanmamış başlıklardaki İngilizce sözcükler (Faz 6).** 55 "Kod Yazan Ajanlar: Yazılım
-  Mühendisliğinde LLM" ("LLM" kısaltma, çevrilmez); 58 "Ajan Güvenliği: Prompt Injection ve
-  Sandbox" — "istem enjeksiyonu" 24'te kurulmuş terim, "sandbox" için serideki karşılık henüz yok
-  ("yalıtım" 49'da geçti); 59 "İnsan-Ajan İşbirliği: Denetim ve Devir" Türkçe. Değişiklikler o
-  run'da kararlaştırılıp **roadmap.json entegrasyondan önce** güncellenmelidir (karar #108'in ölçütü).
-- **"Ajan" teriminin kurulumu 51'e bırakıldı.** 48'de "ajan–bilgisayar arayüzü" gloss'landı ama
-  gövde "araç kullanan model" dedi; 50'nin kapanışı "bu döngüye alanda ajan deniyor; sonraki makale
-  bu sözcüğü tanımlıyor" diye söz verdi. 51 terimi kurmak ve 46–50'nin döngüsünü baştan kurmakla
-  yükümlüdür; tanım verilmeden "ajan" sözcüğünün gövdede kullanılması SOZLESME §3'ü ihlal eder.
+  Mühendisliğinde LLM" ("LLM" kısaltma, çevrilmez; 51'in başlığında da korundu, karar #128). 58 "Ajan
+  Güvenliği: Prompt Injection ve Sandbox" — "istem enjeksiyonu" 24'te kurulmuş terim; "sandbox" için
+  52'de **"kum havuzu"** kullanıldı (eylem ağacı aramasının geri alınabilirlik koşulu bağlamında,
+  gloss'suz) ve 49'da "yalıtım" geçti — 58'in run'ında başlık "İstem Enjeksiyonu ve Kum Havuzu" ya da
+  "… ve Yalıtım" olarak kararlaştırılıp **roadmap.json entegrasyondan önce** güncellenmelidir (karar
+  #108'in ölçütü). 59 "İnsan-Ajan İşbirliği: Denetim ve Devir" Türkçe.
+- **"Ajan" borcu kapandı.** 48'de gloss'lanan terim 51'de tanımlandı (Wooldridge–Jennings, Russell–
+  Norvig; karar #129); "grounding" için iki karşılık bilinçli olarak ayrı: 45 kaynak sadakati, 54 öğe
+  konumlandırma. 55 "kod olarak eylem", "yorumlayıcı", "depo" (48) ve "kum havuzu" (52) terimlerini
+  devralır.
 - **Yayımlanmış numaralı vaatler:** bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış
-  vaatler"dedir. Batch 11 **hiç koordinat açmadı ve kapatmadı**; dört makalenin metin içi
-  numaralı göndermelerinin tamamı yayımlanmış makalelere (≤50) yapıldı ve makale başına `grep`
-  ile doğrulandı. Sıradaki run'ın doğrudan ödeyeceği bir vaat **yoktur**; defterde açık kalan en
-  yakın tekil koordinat **64**'tür (13'ten gelen "ilkelere dayalı tercih etiketleri"), ondan sonra
-  61–70 bandı ve 72. Numarasız işaretler: 47/50 → 51 (ajan tanımı ve kontrol döngüsü), 48 → 54/55
-  (tarayıcı ve kod ajanları), 49 → 58 (sunucu adı çakışması, davranış değiştiren sunucu,
-  yalıtımdan kaçış), 50 → 65 (güvenilirlik ve kalibrasyon).
+  vaatler"dedir. Batch 12 **hiç koordinat açmadı ve kapatmadı**; dört makalenin metin içi numaralı
+  göndermelerinin tamamı yayımlanmış makalelere (≤54) yapıldı ve Python ile makale başına doğrulandı.
+  Sıradaki run'ın doğrudan ödeyeceği bir vaat **yoktur**; defterde açık kalan en yakın tekil koordinat
+  **64**'tür (13'ten gelen "ilkelere dayalı tercih etiketleri"), ondan sonra 61–70 bandı ve 72.
+  Numarasız işaretler: 54 → 55 (kod ajanının döngüsü: depo, hata yeniden üretimi, test doğrulayıcı,
+  insan kodundan fark), 51 → 56 (kalıcı belleğin ajan kurulumu), 51 → 60 (maliyet ölçüsü; puan çağrı
+  sayısıyla okunur), 53 → 64 (denetim için tartışma), 54 → 81 (görüntü modelinin mekanizması),
+  48 → 55 (dört düğme, depo düzeyi getirme), 49 → 58, 50 → 65.
 - **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR (terim hijyeni,
   alt metin/şekil uyumu, ifade inceliği) yayın doğruluğunu engellemediği için hâlâ uygulanmadı.
   Tam listeler repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
-- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1) Gerstgrasser ve ark. (2024) COLM 2024 —
-  iki ikincil kaynak, birincil sayfa yok (karar #21). (2) Batch 7'de Brown ve ark. "Large Language
-  Monkeys" kullanılmadı (karar #97). (3) Batch 8'de Chen ve ark. ile Swamy ve ark. yalnızca CoRR
-  (karar #106). (4) Bellman 1957 sayı numarası (karar #104). (5) Batch 9'da beş aday (karar #114).
-  (6) Batch 10'da Jégou ve ark. (IEEE TPAMI 2011) metni alınamadı; Search-R1 venue'sü
-  doğrulanamadı (karar #120). (7) **Batch 11:** Hou ve ark. (ACM TOSEM) Crossref'te cilt/sayı
-  henüz atanmamış, yalnızca makale numarası 3796519 var; Cheng ve ark. (COLM 2024) kabul listesi
-  `2024.colmweb.org` üzerinden doğrulandı ama sayfa sertifikası GitHub'a ait (`curl -k`); Wang ve
-  ark. (MCP-Bench) DBLP'de yalnızca CoRR, ICLR 2026 birincil bildiri sayfası doğrulandı (karar
-  #113 uygulandı). ACM ve Wiley `doi.org` bağlantıları bot'a 403 döner; okuyucuda açılır.
-- **Hakemsiz kaynak listesi Batch 11'de büyüdü — işaretlenerek.** Meta Llama 3.1 belgelendirmesi,
-  Anthropic belgelendirmesi (araç kullanımı ve araç arama), MCP belirtimi ve kayıt belgesi resmî
-  belgelendirme olarak; Nakano ve ark. (WebGPT, arXiv 2112.09332) hakemli olmayan ön çalışma
-  olarak kullanıldı; Wallace ve ark. 24'ten devir. Karar #127'de gerekçeleriyle kayıtlı; karar
-  #6'daki liste bu kalemlerle güncellenmelidir (o liste bu run'da değiştirilmedi, kayıt #127'dedir).
+- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(7) önceki batch'lerden (kararlar #21, #97,
+  #104, #106, #114, #120, #127). (8) **Batch 12:** Russell & Norvig (AIMA 4. baskı) için
+  `aima.cs.berkeley.edu` bu ağdan açılmadı (curl 000), bağlantı Pearson katalog sayfasına verildi;
+  AutoGen için DBLP yalnızca CoRR gösteriyor, COLM 2024 kabul listesi `colmweb.org` üzerinden `curl -k`
+  ile doğrulandı; Song ve ark. (ETO) DBLP'de yalnızca CoRR, ACL Anthology sayfası (2024.acl-long.409)
+  doğrulandı; Cemri ve ark. (MAST) NeurIPS 2025 D&B sayfası DBLP `ee` ile alındı; OpenReview API bot
+  doğrulaması istediği için OpenReview kimlikleri DBLP `ee` alanından ve PDF üst bilgilerinden alındı
+  (karar #134). ACM `doi.org` bağlantıları bot'a 403 döner; okuyucuda açılır.
+- **Hakemsiz kaynak listesi Batch 12'de bir kalem büyüdü — işaretlenerek.** Anthropic bilgisayar
+  kullanımı belgelendirmesi (54; çözünürlük ve koordinat ölçekleme önerileri). Karar #134'te kayıtlı;
+  karar #6'daki liste bu kalemle güncellenmelidir (o liste bu run'da değiştirilmedi).
 
-## Next batch preparation — 51'den devam (Faz 6 açılıyor)
+## Next batch preparation — 55'ten devam (Faz 6'nın ikinci yarısı)
 
-**Pedagojik hedefler.** Batch 11'in sonunda okuyucu şunu biliyor: çağrı, dizinin içinde sıradan
-metindir; tanım istemde, çağrı asistan rolünde, sonuç ayrı bir rolde durur ve ikinci bir durma
-token'ı vardır (47); araç döndürdüğü şeyle tanımlanır, arayüzün bir düğmesi başarıyı üçte bir
-oynatır (48); protokol tanımı ve çağrıyı taşır, kararı değil; açıklama bir saldırı yüzeyidir (49);
-kesim tarihi bir dağılımdır, model tek çelişen belgeye uyar ama çelişen belgeler arasında belleğine
-yaslanır, atıf kaynağın varlığını kanıtlar iddiayı değil (50). Faz 5'in bütünü, 46'nın
-düşün–eyle–gözle döngüsünü parça parça açtı; bir tek şey tanımsız kaldı: döngüyü baştan sona
-yöneten şeyin adı. 50'nin kapanışı bunu 51'e devretti: "model hangi aracı ne zaman çağıracağına, ne
-zaman duracağına ve işin bitip bitmediğine kendi başına karar verdiğinde ne olur?"
+**Pedagojik hedefler.** Batch 12'nin sonunda okuyucu şunu biliyor: ajan bir model değil bir ilişkidir;
+özerklik, döngüyü kapatan şeyin modelin ürettiği metin olmasıdır ve durmak bir eylemdir; model
+dünyayı değil pencereyi görür, çevre zar atar, eylem kümesini çevre tanımlar; ajanlar hızlı başarır,
+yavaş başarısız olur ve tur sınırında tekrar eder (51). Karar kutusunun dört biçimi vardır — her adımda
+karar, önce plan, gerektiğinde ayrıştırma, bölüm sonu dersi, eylem ağacı — ve hata döngüsü içeriden
+kırılmaz: sayaç, dış gözlem, ders, ilerleme ölçüsü dışarıdadır; ders hakem kadar iyidir; ağaç geri
+alınabilir dünyada çalışır; döngü ağırlıklara yazılabilir (52). Çoklu ajanın üç gerekçesi ölçülür;
+tartışma oylamanın yaptığını yapmaz ve güvenilir biçimde onu geçmez; başarısızlıkların beşte dördü
+sistemden gelir; fatura tur çarpı pencereyle büyür (53). Ekranın üç gösterimi bir bütçe ve eksiklik
+kararıdır; darboğaz plan değil öğe konumlandırmadır; insanla ajan arasındaki uçurum beş ortamda
+ölçülüdür ve gösterim platforma bağlıdır (54). 54'ün kapanışı 55'e devretti: kod yazan ajanın dünyası
+bir ekran değil bir depo, gözlemi bir test çıktısı, eylemi bir düzenleme; depo nasıl gezilir, hata nasıl
+yeniden üretilir, test ne zaman doğrulayıcıdır, ajanın kodu insanınkinden ölçülebilir biçimde farklı mı?
 
-**Sıradaki makaleler ve prerequisite'ler.** 51 ← 46 (düşün–eyle–gözle döngüsü; eylem = dünyaya
-dokunan çağrı), 47 (işlev çağrısı; çalıştırıcı; pass^k güvenilirliği; ilgisizlik kararı), 48
-(araç arayüzü; hata mesajı bir gözlemdir), 49 (araç kümesinin nereden geldiği; MCP), 37 (Markov
-karar süreci: durum, eylem, geçiş, bölüm — ajan döngüsünün biçimsel iskeleti; **bilinçli
-formalizasyon adayı**), 40 (görev ufku; çarpımsal düşüş; toparlanma), 36 (arama ve planlama; ağaç),
-35 (dış geri bildirim ve sağlam doğrulayıcı), 39 (sohbet içi bellek; ajan belleği 56'da). 52'ye
-geçilirse: 52 ← 51, 46 (yansıma token'ları / eleştirmen), 47 (paralel çağrı ve geri alma), 36
-(ağaç), 38 (süreç denetimi). 53 ← 51, 52, 28 (yığınlama/servis: çoklu ajanın maliyeti). Kaç makale
-üretileceği bu run'ın `BATCH` assignment'ıyla belirlenir.
+**Sıradaki makaleler ve prerequisite'ler.** 55 ← 48 (kod onarım ajanının dört düğmesi ve 4 dolarlık
+bütçesi; depo düzeyi getirme ve yinelemeli tamamlama; yorumlayıcı = yarım doğrulayıcı, birim test tam;
+kod olarak eylem), 51 (durma kararı; "hızlı başarır, yavaş başarısız olur"; 90,5 → 57,2 düzenleme
+spirali), 52 (hata döngüsü ve dört çıkış; test = dış gözlem; başarısız izlerle öğrenme), 54 (depo bir
+dünyadır; gözlem ekran değil test çıktısı), 35 (sağlam doğrulayıcı), 36 (ağaç: aday yamalar), 40
+(görev ufku; Kwa ve ark.'nın görevleri yazılım görevleriydi), 33 (kapsama ↔ pass^k), 30 (yapılandırılmış
+çıktı: yama biçimi), 12 (izlerle ince ayar), 16 (cetvel: çözülen görev yüzdesi neyi ölçer, kirlilik).
+56'ya geçilirse: 56 ← 51 (çalışma belleği ve üç kalıcı bellek), 52 (ders, beceri kütüphanesi), 39
+(bellek: yazma/okuma/yansıma; geri çağırma puanı — tahsil edilmemiş borç), 43 (vektör dizini deposu),
+44 (küçükle ara büyüğü döndür), 50 (tazelik). 57 ← 51 (bölümün beş bitiş sınıfı; AgentBench), 52
+(ilerleme oranı), 47 (pass^k), 45 (hakem model), 16 (cetvel), 40 (ufuk). 58 ← 24 (talimat
+hiyerarşisi, istem enjeksiyonu), 41/49 (getirilen belge ve araç açıklaması saldırı yüzeyi), 52 (kum
+havuzu), 54 (tarayıcı gürültüsü). Kaç makale üretileceği bu run'ın `BATCH` assignment'ıyla belirlenir.
 
 **Yeniden çağrılacak eski kavramlar (planlı hatırlatmalar):**
-- Markov karar süreci (37) → 51'de ajan döngüsünün biçimsel kurulumu (durum = pencere + dünya,
-  eylem = çağrı ya da mesaj, ödül = görev sonucu); eylem sözcüğünün üçüncü kurulumu (37 token, 46
-  çağrı, 51 karar).
-- Düşün–eyle–gözle (46) → 51'de döngünün tam hâli; 48'in hata mesajı gözlemi.
-- pass^k ve politika ablasyonu (47) → 51 ve 57'de ajan güvenilirliği.
-- Araç arayüzü (48) → 51 (ajanın gördüğü dünya), 54 (ekran), 55 (depo).
-- Görev ufku ve toparlanma (40) → 51'de "ne zaman duracağı" kararı; 60'ta ekonomi.
-- Çarpımsal düşüş (40, 46, 47) → 52'de hata döngüleri ve geri alma.
-- Bellek (39), yazma/okuma → 56 (ajan belleği); 50'nin tazelik ve çatışma bulguları → 56, 58.
-- Talimat hiyerarşisi (24), istem enjeksiyonu (24, 41, 49) → 58.
+- Kod olarak eylem, yorumlayıcı, depo dizini ve dört düğme (48) → 55'te döngünün kod hâli.
+- Durma kararı ve bütçe (51), hata döngüsü ve test = dış gözlem (52) → 55'te "hızlı başarır, yavaş
+  başarısız olur"un onarım hâli; 57'de bitiş sınıfları.
+- Ağaç araması ve geri alınabilirlik (52) → 55 (aday yamalar, `git` ile geri alma = kum havuzu).
+- Çoklu ajan yazılım şirketi düzenleri ve başarısızlık sınıfları (53) → 55 (tek ajan ↔ çoklu ajan kod
+  üretimi karşılaştırması), 57.
+- Çalışma belleği ve üç kalıcı bellek (51), ders ve beceri kütüphanesi (52) → 56.
 - Kalibrasyon (16, 50) → 59 (insana ne zaman devredileceği), 65.
+- Talimat hiyerarşisi (24), araç zehirleme (49), çevre gürültüsü (54) → 58.
+- Kapoor ve ark. "puan çağrı sayısıyla okunur" (51) → 57, 60.
 
-**Araştırılacak güncel akademik alanlar (51 için öncelikli):** ajan tanımının kaynakları (Russell &
-Norvig'in ajan tanımı; Wooldridge'in çoklu ajan kitabı; alan derlemeleri: Wang ve ark. 2024
-Frontiers of Computer Science "A Survey on LLM-based Autonomous Agents" — hakemli dergi, doğrulanmalı;
-Sumers ve ark. CoALA, TMLR 2024 — bilişsel mimari çerçevesi), döngü tasarımı (ReAct 46'da kullanıldı;
-Reflexion — Shinn ve ark., NeurIPS 2023; "Tree of Thoughts" 36'da kullanıldı mı kontrol edilmeli),
-ajan ölçütleri (AgentBench — Liu ve ark., ICLR 2024; WebArena — Zhou ve ark., ICLR 2024; τ-bench
-47'de kullanıldı; SWE-bench — Jimenez ve ark., ICLR 2024, 48'de yalnızca SWE-agent'ın ölçütü olarak
-anıldı, 55'e saklandı), durma ve bitirme kararı ("when to stop" ölçümleri; τ-bench'in "en çok 30
-eylem" sınırı), kontrol döngüsü ile MDP'nin bağlantısı (37'nin kaynakları). Sayısal iddialar ve URL
-doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları SOZLESME §9'dadır.
+**Araştırılacak güncel akademik alanlar (55 için öncelikli):** kod onarım ölçütleri (SWE-bench —
+Jimenez ve ark., ICLR 2024, 48'de yalnızca anıldı; SWE-bench Verified hakemsiz belgelendirme; SWE-bench
+Multimodal, ICLR 2025 — doğrulanmalı), ajan düzenleri (SWE-agent 48'den; OpenHands — ICLR 2025,
+doğrulanmalı; AutoCodeRover — ISSTA 2024; Agentless — venue doğrulanmalı, ajansız üç aşamalı hat
+"tarama–onarım–doğrulama" karşı tez olarak; RepairAgent — ICSE 2025, doğrulanmalı), eğitim (SWE-Gym —
+ICML 2025?, SWE-smith — NeurIPS 2025?, ikisi de DBLP `ee` ile doğrulanmalı; 52'deki ETO'nun kod
+karşılığı), değerlendirme tuzakları (test kümesi kirliliği ve "çözüm sızıntısı"; 16/72'ye köprü),
+insanla karşılaştırma (Kwa ve ark. 40'tan; hakemsiz üretkenlik RCT'leri yalnızca işaretlenerek), ürün
+belgelendirmesi (Claude Code / kod ajanı belgeleri, hakemsiz). Sayısal iddialar ve URL doğrulaması
+yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları SOZLESME §9'dadır.
 
-**Venue doğrulaması.** Batch 10'un üç kanalı (Crossref API, ACL Anthology, DBLP 11 sn) sürüyor;
-Batch 11 dört kanal ekledi: (4) PMLR PDF'leri `raw.githubusercontent.com/mlresearch/v<cilt>/main/assets/<key>/<key>.pdf`
-aynasından (site PDF yerine HTML döndürdü); (5) COLM kabul listeleri `20xx.colmweb.org/AcceptedPapers.html`
-— sertifika GitHub'a ait, `curl -k` gerekir; (6) ICLR 2026 bildirileri `proceedings.iclr.cc/paper_files/paper/2026/hash/<hash>-Abstract-Conference.html`
-altında, DBLP henüz indekslememiş olabilir; (7) ACL Anthology `.bib` uç noktası (`<id>.bib`) sayfa
-aralığını doğrudan verir. Toplu indirme betiği `artifacts/b11-research/fetch-b11.py` (arXiv + Anthology,
-3 sn aralık, `pypdf`), DBLP listesi `titles-b11.txt` + `dblp-b11.json`. Batch 11'in ~50 kaynak metni
-`artifacts/b11-research/pdf/*.txt` altında duruyor; PDF'ler build şişmesin diye silindi. **Karar #113**
-geçerli: DBLP yalnızca CoRR gösteriyorsa birincil bildiri sayfası aranır (MCP-Bench örneği).
+**Venue doğrulaması.** Batch 10–11'in yedi kanalı sürüyor (Crossref API, ACL Anthology + `.bib`, DBLP
+11 sn, PMLR GitHub aynası, COLM kabul listesi `curl -k`, ICLR 2026 proceedings). Batch 12 iki kanal
+ekledi: (8) **DBLP `ee` alanı** — `dblp.org/search/publ/api?q=<başlık>&format=json` cevabındaki `ee`,
+OpenReview kimliğini ve NeurIPS/PMLR/Anthology birincil sayfasını doğrudan verir; OpenReview kimliği
+**tahmin edilmez** (Batch 12'de bir tahmin yanlış çıktı ve düzeltildi); DBLP 503 döndüğünde 30 sn
+bekleyip yeniden dene (`artifacts/b12-research/dblp-b12-retry.py`). (9) **arXiv API başlık araması**
+— `export.arxiv.org/api/query?search_query=ti:"<başlık>"`; indirme betiği (`fetch-b12.py`) her PDF'in ilk
+sayfasını beklenen başlıkla eşleştirip uyuşmazsa bu aramaya düşer (Batch 11'in yanlış kimlik tuzağına
+karşı). Semantic Scholar API çoğu sorguda boş döndü; OpenReview API bot doğrulaması istiyor. Batch 12'nin
+62 kaynak metni `artifacts/b12-research/pdf/*.txt` altında duruyor; PDF'ler build şişmesin diye silindi.
+**Karar #113** geçerli: DBLP yalnızca CoRR gösteriyorsa birincil bildiri sayfası aranır (AutoGen, ETO
+örnekleri).
 
 **Görselleştirme ihtiyaçları (öngörü):**
-- 51: ajan kontrol döngüsünün tam hâli — gözlem, karar (çağrı ya da mesaj ya da dur), çalıştırıcı,
-  dünya; 46-Şekil 2 ve 47-Şekil 1'in birleşimi; durma kararının yeri işaretli.
-- 51: MDP ile döngünün eşlemesi (37'nin şekil diliyle: durum/eylem/geçiş/ödül kutuları).
-- 51 ya da 52: adım sayısı ↔ başarı (40'ın eğrisi ajan verisiyle; kaynak bulunursa sayısal).
+- 55: kod ajanının döngüsü — bul, yeniden üret, düzenle, sına, gönder; 48-Şekil 2'nin dört düğmesiyle
+  51-Şekil 1'in birleşimi; durma kararı = gönder.
+- 55: çözülen görev yüzdesi ↔ maliyet (dolar/görev) — 51'deki Kapoor ilkesinin ölçümü; ajanlı ↔ ajansız
+  hatlar aynı grafikte.
+- 56: çalışma belleği ↔ üç kalıcı bellek — 51'deki CoALA ayrımının ürün hâli (39-Şekil'in geri
+  çağrımı).
 
-**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 12` ve `readingOrder` 51'den
+**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 13` ve `readingOrder` 55'ten
 kesintisiz devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir;
 YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri ve gerekiyorsa bağlayıcı olgu
 kararları güncellenir; doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni cursor ve sonraki
-run hazırlığıyla güncellenir. Faz 6'nın kategori kararı (karar #122) ilk makaleyle birlikte verilir.
+run hazırlığıyla güncellenir.
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -148,48 +158,56 @@ korunur. **Sıra önemlidir:** `sync-series-hashes.cjs` katalog varsa yalnızca 
 gezer, dolayısıyla yeni makalelerin hash'i ancak `entegre-batch --write`'tan **sonra** düzelir;
 frontmatter'a önce yer tutucu hash yazmak sorun değildir. Roadmap başlığı frontmatter başlığıyla
 birebir eşleşmek zorundadır — başlık değiştiriliyorsa roadmap.json entegrasyondan **önce**
-güncellenmelidir (Batch 11'de 47 için yapıldı). **Entegrasyondan sonra makale gövdesine her
-dokunuşta `sync-series-hashes.cjs --write` yeniden çalıştırılmalıdır** (Batch 11'de 50'nin bir
-sözcüğü entegrasyondan sonra değişti ve hash yeniden senkronlandı). Araçların üçü de varsayılan
-olarak **yalnızca AI serisini** işler (`--series=boun` ayrı seri içindir). `check-series-svg.cjs`
-XML ayrıştırmaz: her yeni SVG ayrıca `python -c "import xml.etree.ElementTree as ET; ET.parse(f)"`
-ile ayrıştırılır. Denetleyicinin taşma tahmini (karakter × 7,15) 13 birimde x=20'den ~97 karakter
-alır; Batch 11'in on bir şeklinden altısının alt notu ilk çizimde taştı ve kısaltıldı.
+güncellenmelidir. **Entegrasyondan sonra makale gövdesine her dokunuşta `sync-series-hashes.cjs
+--write` yeniden çalıştırılmalıdır** (Batch 12'de 53'ün bir cümlesi entegrasyondan sonra değişti ve
+hash yeniden senkronlandı). Araçların üçü de varsayılan olarak **yalnızca AI serisini** işler
+(`--series=boun` ayrı seri içindir). `check-series-svg.cjs` XML ayrıştırmaz ve `var(` parantezinin
+kapanmadığı dolguyu görmez: her yeni SVG ayrıca `python -c "import xml.etree.ElementTree as ET;
+ET.parse(f)"` ile ayrıştırılır **ve** `grep -c 'var(--[a-z-]*"' content/series/assets/*/*.svg` ile
+taranır (Batch 12'de 54-Şekil 1'de `fill="var(--text-faint"` böyle yakalandı). Denetleyicinin taşma
+tahmini (karakter × 7,15) 13 birimde x=20'den ~97 karakter alır; Batch 12'nin on iki şeklinden üçünün
+alt notu ilk çizimde taştı ve kısaltıldı. Denetleyici "Şekil N metinde referanslanmamış" ve "şekil
+numarası N, beklenen M" uyarılarını verir: gövdede "Şekil 2'de" yazıp görsel satırını eklememek ikinci
+uyarıyı üretir (52'de yaşandı).
 
 **Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch
-11'de run başında 3000–3999 arası dinleyen port yoktu; peer listesinde bir oturum görünüyordu ama
-mesaj ulaşmadı (oturum bitmişti). Yine de Batch 7/9/10'un izole kopya yolu kullanıldı ve ana
-worktree'nin `.next` dizinine hiç dokunulmadı: `tar -c --exclude=./node_modules --exclude=./.next
---exclude=./.git --exclude=./artifacts --exclude=./.env.local --exclude=./test-results
---exclude=./playwright-report . | tar -x -C /d/dev/anil-lib-b11-render` (7,5 MB), PowerShell
-`New-Item -ItemType Junction -Path ...\node_modules -Target D:\dev\anil-lib\node_modules`, kopyada
-`corepack pnpm build` (99 sayfa, exit 0), `.claude/launch.json`'a geçici yapılandırma
-(`anil-lib-seri-b11`: Git Bash **tam yolu** + `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b11-render
-&& exec corepack pnpm dev -p 3210`), kopyada `.env.local` olmadığı için kapı kendiliğinden kapalı.
+12'de run başında 3000–3999 arası dinleyen port yoktu; yine de Batch 7/9/10/11'in izole kopya yolu
+kullanıldı ve ana worktree'nin `.next` dizinine hiç dokunulmadı: `tar -c --exclude=./node_modules
+--exclude=./.next --exclude=./.git --exclude=./artifacts --exclude=./.env.local --exclude=./test-results
+--exclude=./playwright-report . | tar -x -C /d/dev/anil-lib-b12-render` (7,8 MB), junction `cmd //c
+"mklink /J D:\dev\anil-lib-b12-render\node_modules D:\dev\anil-lib\node_modules"` (Git Bash'ten),
+kopyada `corepack pnpm build` (103 sayfa, exit 0), `.claude/launch.json`'a geçici yapılandırma
+(`anil-lib-seri-b12`: Git Bash **tam yolu** `C:\Users\<user>\AppData\Local\Programs\Git\bin\bash.exe`,
+`-lc`, `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b12-render && exec corepack pnpm dev -p 3210`;
+Write aracıyla yazıldı, bug-315), kopyada `.env.local` olmadığı için kapı kendiliğinden kapalı.
 `typecheck` ve `test` ana worktree'de çalıştırıldı (`.next`'e dokunmazlar). Temizlik: **önce**
-junction'ı `cmd /c rmdir` (ya da PowerShell `Remove-Item` junction'ı) ile kaldır, sonra kopyayı sil;
-launch.json özgün hâline döndürüldü (`artifacts/b11-research/launch.json.orig` yedeği). Kural
-değişmedi: **ana worktree'de `.next` silme, `pnpm build` ya da `next dev` başlatmadan önce
-`netstat` ve `tasklist` ile o an paralel süreç var mı bak; varsa karşı oturuma haber ver ve izole
-kopyayı kullan.**
+`preview_stop`, sonra junction'ı `cmd //c rmdir` ile kaldır, sonra kopyayı sil; launch.json özgün
+hâline döndürüldü (`artifacts/b12-research/launch.json.orig` yedeği). Kural değişmedi: **ana
+worktree'de `.next` silme, `pnpm build` ya da `next dev` başlatmadan önce `netstat` ve `tasklist` ile
+o an paralel süreç var mı bak; varsa karşı oturuma haber ver ve izole kopyayı kullan.** İki tuzak:
+Bash aracında bir komuttaki `cd` **sonraki çağrılara taşınır** (Batch 12'de göreli yollar kırıldı;
+her komutu `cd /d/dev/anil-lib;` ile başlat ya da mutlak yol kullan) ve Python Windows'ta
+`/d/dev/...` yolunu tanımaz (kopyaya dosya `cp` ile taşınır).
 
-**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 11 sonunda
-`artifacts/b11-research/pdf/*.pdf` silindi, `.txt` metinleri ve `dblp-b11.*` kaldı; render için
-ham ekran görüntüsü klasörü açılmadı (tarayıcı panosu kullanıldı).
+**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 12 sonunda
+`artifacts/b12-research/pdf/*.pdf` silindi, `.txt` metinleri ve `dblp-b12.*`/`fetch-b12-report.json`
+kaldı.
 
-**Render doğrulama seti (Batch 11'de kullanılan).** Tarayıcı panosundan **elle**: `resize_window`
-ile 1440/768/375, tema `documentElement.classList` üzerinde `dark`/`sepia` değiştirilerek (sayfa
-yeniden yüklenmeden), ölçüm fonksiyonu `localStorage`'a yazılıp `eval(localStorage.getItem('b11m'))()`
-ile çağrıldı: `body` renkleri, `figure svg text` fill'lerinin `rgb(...)` çözülmesi, `getBBox` ile
-viewBox içi kalma, `scrollWidth > clientWidth`, figure/svg/figcaption sayıları, `main.innerText`
-içinde `undefined`/`NaN`, h2/tablo/kutu sayıları. Dört makale × üç genişlik × üç tema: taşma yok,
-badFills ve outOfBox boş, sızıntı yok; mobilde şekiller kendi kabında kayıyor (yerleşik davranış).
-Şekil ekran görüntüleri için çalışan düzen: `resize_window` **800×560** (pano ölçekleme yapmaz),
-şekli `position:fixed` bir kaplayıcıya klonlayıp SVG genişliğini 600 px'e sabitlemek, temayı
-sınıfla değiştirmek ve ekran görüntüsünü **`browser_batch` dışında tek çağrıyla** almak — batch
-içindeki ekran görüntüleri "did not finish rendering" zaman aşımı ve "image omitted" hatası verdi;
-tek çağrı ikinci denemede çalıştı. 1440 emülasyonunda pano 800×505'e ölçeklendiği için 13 birimlik
-metin okunmuyor. Rota sweep'i Python `urllib` ile (51 rota, 23 sn), tarayıcı gezintisinden **önce**.
+**Render doğrulama seti (Batch 12'de kullanılan).** Rota sweep'i Python `urllib` ile (55 rota, 22 sn),
+tarayıcı gezintisinden **önce**. Tarayıcı panosundan **elle**: `resize_window` ile 1440/768/375, tema
+`documentElement.classList` üzerinde `dark`/`sepia` değiştirilerek, ölçüm fonksiyonu `localStorage`'a
+yazılıp `eval(localStorage.getItem('b12m'))()` ile çağrıldı; geçerli dolgu kümesi token'ları bir
+prob `span`'a `color: var(--x)` verip çözerek kuruldu (`badFills` = bu kümede olmayan `svg text`
+dolgusu), `getBBox` ile viewBox içi kalma, `scrollWidth > clientWidth`, figure/svg/figcaption sayıları,
+`main.innerText` içinde `undefined`/`NaN`, h2/tablo/kutu sayıları. Dört makale × üç genişlik × üç
+tema: taşma yok, badFills ve outOfBox boş, sızıntı yok; `figScroll` bu run'da 375'te de false (şekil
+kabı ölçekleniyor). Şekil ekran görüntüleri için çalışan düzen: `resize_window` **800×640**, şekli
+`position:fixed` bir kaplayıcıya **iki kez** klonlayıp ikinci kopyaya koyu tema token'larını inline
+`style.setProperty('--text', …)` ile vermek (`b12fig(i, mode)` yardımcısı `localStorage`'da; `mode`
+`'both'|'light'|'dark'`, uzun şekillerde tek tema) ve görüntüyü **`browser_batch` dışında** tek çağrıyla
+almak; `screenshot` zaman aşımına düşerse `zoom` eylemi (bölge kırpmayı desteklemiyor) tam ekran
+görüntüsünü döndürüyor. 12 şeklin tamamı light/dark görüldü; denetleyicinin görmediği bir kusur
+(51-Şekil 1'de "cevap" etiketinin çevre kutusuna binmesi) yalnızca görüntüde çıktı ve düzeltildi.
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
 
@@ -197,18 +215,19 @@ metin okunmuyor. Rota sweep'i Python `urllib` ile (51 rota, 23 sn), tarayıcı g
   betikleri de lint kapsamındadır; bilinen durum.
 - Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama çevrimdışı
   moduna düşer — beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur.
-- Mobil genişlikte diyagramlar kendi kaplarında yatay kayar (SVG ~720 birim, kap ~335 birim);
-  sayfa gövdesi taşmaz. Yayımlanmış makalelerde de aynı olan yerleşik davranıştır, regresyon değil
-  (Batch 11'de dört makalede yeniden ölçüldü: `figScroll` 375'te true, 768'de false).
+- Mobil genişlikte diyagramlar kendi kaplarında ölçekleniyor; sayfa gövdesi taşmıyor. Batch 12
+  ölçümünde `figScroll` 375'te false; önceki batch'lerde true ölçülmüştü (ölçüm, figure yerine kabın
+  iç öğesine bakıyor olabilir) — regresyon değil.
 - `check-series-svg.cjs` yalnızca `y > viewBox yüksekliği` durumunu yakalar; alt kenara çok yakın
-  bir metin tabanı denetimden geçer. Batch 7–11'in yeni şekillerinde alt pay ≥ 16 birim;
-  yayımlanmış eski şekillerin bir kısmında bu pay hâlâ küçüktür.
+  bir metin tabanı denetimden geçer. Batch 7–12'nin yeni şekillerinde alt pay ≥ 16 birim;
+  yayımlanmış eski şekillerin bir kısmında bu pay hâlâ küçüktür. Kutu içine binen etiketleri ve
+  kapanmamış `var(` parantezini de görmez (yukarıdaki iki ek tarama bunun için).
 - Okuma listesinde `reasoning-and-memory` ve `agents-and-retrieval` birden çok öbek hâlinde
-  görünür (27–28, 29, 30–40, 41–50). Kasıtlıdır (kararlar #65, #107); `reading-list-groups.test.ts`
+  görünür (27–28, 29, 30–40, 41–54). Kasıtlıdır (kararlar #65, #107); `reading-list-groups.test.ts`
   tam olarak bu durumu sınar.
 - Repoda ikinci bir seri (`content/series-boun/**`) bulunuyor ve ayrı bir üretim hattıyla
   ilerliyor; AI serisinin araçları bu dizine dokunmaz. Build iki seriyi birden derler; sayfa sayısı
-  ikisinin toplamıdır (Batch 11 sonunda 99).
+  ikisinin toplamıdır (Batch 12 sonunda 103).
 - Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor. Dördü git'te **izleniyor**
   (`Karar`, `her`, `Yaşayan`, `yapılırsa`); biri izlenmiyor (`**zorundadır**.` — `*` görünümlü
   karakter U+F02A). Build'i etkilemiyor. Temizlik AI serisinin kapsamı dışıdır; sahibinin kararı.
@@ -243,16 +262,25 @@ metin okunmuyor. Rota sweep'i Python `urllib` ile (51 rota, 23 sn), tarayıcı g
 - **Batch 11 (2026-09-03/04):** Makale 47–50, Faz 5'in kapanışı: işlev çağrısı → web/kod/dosya
   arayüzleri → MCP ve ekosistem → tazelik, çatışma ve atıf. `BATCH=4+1`. Araştırma (50 PDF tek
   betikle, DBLP 50 başlık), yazım, entegrasyon ve doğrulama ana oturumda, workflow/subagent
-  kullanılmadan yapıldı. 47'nin başlığı Türkçeleştirildi (karar #121) ve roadmap entegrasyondan
-  önce güncellendi. 50 kaynak kaleminin 44'ü hakemli; altı resmî belgelendirme/ön çalışma
-  işaretlenerek kullanıldı (karar #127). Yeni künye kanalları: PMLR GitHub aynası, COLM kabul
-  listesi, ICLR 2026 proceedings, ACL `.bib`. Kapılar: `pnpm typecheck`, 446 test, `pnpm build`
-  (99 sayfa, exit 0, izole kopyada), 51 rotanın tamamı 200 (23 sn), dört makale × üç genişlik ×
-  üç temada tarayıcı panosundan DOM ölçümü (badFills ve outOfBox boş, yatay taşma yok, sızıntı
-  yok), 11 yeni diyagramın tamamı light/dark ekran görüntüsüyle gözle doğrulandı; denetleyicinin görmediği üç kusur (49-Şekil 1'de ok etiketlerinin sunucu kutusuna binmesi, 50-Şekil 2'de uzun etiketin çubuğa binmesi, 50-Şekil 3'te alt payın darlığı) yalnızca ekran görüntüsünde görülüp düzeltildi ve yeniden görüntülendi. Paralel oturum
-  görünmedi; yine de build ve dev sunucusu izole kopyada (`D:\dev\anil-lib-b11-render`, 3210)
-  çalıştırıldı, `.claude/launch.json` geçici yapılandırması run sonunda geri alındı, kopya ve
-  junction silindi.
+  kullanılmadan yapıldı. 47'nin başlığı Türkçeleştirildi (karar #121). 50 kaynak kaleminin 44'ü
+  hakemli; altı resmî belgelendirme/ön çalışma işaretlenerek kullanıldı (karar #127). Kapılar:
+  `pnpm typecheck`, 446 test, `pnpm build` (99 sayfa, izole kopyada), 51 rotanın tamamı 200, dört
+  makale × üç genişlik × üç temada DOM ölçümü, 11 yeni diyagram light/dark ekran görüntüsüyle
+  doğrulandı (üç şekil düzeltildi).
+- **Batch 12 (2026-09-04/05):** Makale 51–54, Faz 6'nın açılışı: ajan tanımı ve kontrol döngüsü →
+  tek ajan mimarileri ve hata döngüleri → çoklu ajan sistemleri → bilgisayar kullanan ajanlar.
+  `BATCH=4+1`. Araştırma (63 aday PDF tek betikle, başlık eşleştirmeli; DBLP `ee` ile iki koşu),
+  yazım, entegrasyon ve doğrulama ana oturumda, ultracode açık olmasına rağmen workflow/subagent
+  kullanılmadan yapıldı (kullanıcının Batch 10 talimatı). Başlıklar değişmedi; Faz 6 kategorisi
+  `agents-and-retrieval` (karar #128). 47 kaynak kaleminin 46'sı hakemli ya da klasik temel eser;
+  bir resmî belgelendirme işaretlenerek kullanıldı (karar #134). Kapılar: `pnpm typecheck`, 458 test,
+  `pnpm build` (103 sayfa, exit 0, izole kopyada), 55 rotanın tamamı 200 (22 sn), dört makale × üç
+  genişlik × üç temada tarayıcı panosundan DOM ölçümü (badFills ve outOfBox boş, taşma yok, sızıntı
+  yok), 12 yeni diyagramın tamamı tek ekran görüntüsünde light+dark olarak gözle doğrulandı;
+  denetleyicinin görmediği iki kusur (51-Şekil 1'de etiket–kutu binmesi; 54-Şekil 1'de kapanmamış
+  `var(` parantezi) yakalanıp düzeltildi. Paralel oturum görünmedi; build ve dev sunucusu izole
+  kopyada (`D:\dev\anil-lib-b12-render`, 3210) çalıştırıldı, `.claude/launch.json` geçici
+  yapılandırması run sonunda geri alındı, kopya ve junction silindi.
 - Batch 0/1'in ham üretim kayıtları `D:\dev\anil-lib-seri-batch1-state\` altında **arşiv** olarak
   durur. Hiçbir aktif süreç bu dizine bağımlı değildir.
 - 2026-08-28 öncesi SOZLESME/HANDOFF sürümlerindeki "1–100 kapsam", "değişmez 5'li batch",

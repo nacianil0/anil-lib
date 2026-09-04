@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-02 · Yayında: 1–42 (Batch 0 + Batch 1 + Batch 2 + Batch 3 + Batch 4 + Batch 5 + Batch 6 + Batch 7 + Batch 8 + Batch 9) · Sıradaki güvenli başlangıç: 43
+Son güncelleme: 2026-09-05 · Yayında: 1–54 (Batch 0 … Batch 12) · Sıradaki güvenli başlangıç: 55
 
 ## Serinin tezi
 
@@ -132,6 +132,16 @@ koordinat açmadı ve kapatmadı**; dört makalenin metin içi numaralı gönder
 yayımlanmış makalelere (≤50) yapıldı ve `grep` ile makale başına doğrulandı. Defterde açık kalan
 en yakın tekil koordinat hâlâ **64**'tür.
 
+**Numarasız ileri işaretler — Batch 12'de verildi.** Kalıcı belleğin ajan bağlamındaki kurulumu
+(51 → 56, "serinin ileride bir makalesinin işi"); ajan maliyetinin ölçüsü ve çağrı sayısıyla okunan puan
+(51 → 60, "serinin ilerideki bir makalesinin konusu"); tartışmanın doğruluk için değil denetim için
+kullanımı (53 → güvenlik fazı, 64, "serinin güvenlik fazının sorusu"); görüntüyü token'a çeviren
+modellerin mekanizması (54 → çoklu modalite fazı, 81, "serinin çoklu modalite fazının konusu"); kod
+yazan ajanın döngüsü (54 → 55, "bir sonraki makale"). Batch 12 **yeni bir numaralı koordinat açmadı
+ve kapatmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤54)
+yapıldı ve Python ile makale başına doğrulandı (metinde 54'ten büyük tek sayılar yüzde ve puan
+değerleridir). Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -201,10 +211,10 @@ en yakın tekil koordinat hâlâ **64**'tür.
 
 ### Faz 6 — Ajanlar: Araç Kullanan Modeller (51–60)
 
-51. **Ajan Nedir? Kontrol Döngüsü Olarak LLM** — plan-eylem-gözlem döngüsü.
-52. **Ajan Mimarileri** — tek ajan desenleri, hata döngüleri.
-53. **Çoklu Ajan Sistemleri: İşbirliği ve Orkestrasyon** — dağıtık iş.
-54. **Bilgisayar Kullanan Ajanlar** — ekran, tarayıcı, GUI.
+51. **Ajan Nedir? Kontrol Döngüsü Olarak LLM** — plan-eylem-gözlem döngüsü. `[yayında]`
+52. **Ajan Mimarileri** — tek ajan desenleri, hata döngüleri. `[yayında]`
+53. **Çoklu Ajan Sistemleri: İşbirliği ve Orkestrasyon** — dağıtık iş. `[yayında]`
+54. **Bilgisayar Kullanan Ajanlar** — ekran, tarayıcı, GUI. `[yayında]`
 55. **Kod Yazan Ajanlar: Yazılım Mühendisliğinde LLM** — coding agent'lar.
 56. **Ajan Belleği ve Durum Yönetimi** — 39'un ajan bağlamında geri çağrımı.
 57. **Ajan Değerlendirmesi: Başarıyı Ölçmek** — ajan benchmark'ları.
@@ -392,6 +402,19 @@ run'da ilk kez yazıldı.
 - 40 ← 39 (bilgiyi zaman içinde taşımak; hattın kurulumu), 33 (kapsama eğrisinin aynadaki görüntüsü; doğrulayıcının faturası), 31 (hesap grafiği; doğrusallaştırılmış alt grafik eşlemesi), 35 (dış geri bildirim olmadan öz-düzeltmenin sınırı = c'nin içeriden büyütülemezliği), 36 (ağaç aramasında hatalı daldan dönmek), 37 (getiri, iskonto, kredi atamanın zaman eksenine yayılması), 38 (adım ödülü hatayı oluştuğu yerde görünür kılar), 28 (n adımın iki gecikme ölçüsünü birden büyütmesi), 16 (ölçümün hangi belirsizlikle geldiği; kirlilik direnci), 17 ve 18 (ileri bağ: sonraki fazın varsayımı) `[yayında]`
 - 41 ← 18 ("parametre başına iki bit" kapasitesi; ezber ↔ genelleme), 17 ("girdiye müdahalenin tam kurulumu 41'de" borcu; içsel/dışsal uydurma; tam bir kez görülmüş olgular), 29 (ikili kodlayıcı getirici olarak; SQuAD satırının görev bağımlılığı; getirilen belge güvenilmez içeriktir), 21 (pencereye giren her şey aynı diziye karışır; "yok say" kanalı yoktur), 40 (Faz 4'ün kapanışı ve varsayımın kaldırılması) `[yayında]`
 - 42 ← 29 (anlamsal arama, ikili/çapraz kodlayıcı, bulma oranı, ters dizinin kurulum maliyeti, iki aşamalı sıralama, BM25'in adı), 41 (dikkat dağıtıcı belgenin zararı = getiriciye bakma gerekçesi), 16 (alan içi başarı alan dışı genellemenin göstergesi değil; değerlendirme kümesinin kendi yanlılığı), 33 ve 28 (ikinci aşamanın bütçesi), 5 (doyum işlevinin okunması) `[yayında]`
+
+**Batch 10 (43–46) ve Batch 11 (47–50):** makale-düzeyi satırlar bu bölüme yazılmadı; gerçekleşen
+bağlar kavram-tekrar defterinin "Batch 10/11'de gerçekleşen tekrarlar" tablolarında ve HANDOFF'un
+tarihsel kaydında durur.
+
+**Batch 12 (51–54) — gerçekleşen graf.** Yazılan metinde fiilen kullanılan bağlar; HANDOFF'taki taslak
+51 için dokuz, 52 için beş, 53 için üç satırlıktı, gerçekleşen graf yine daha yoğun çıktı. 54'ün satırı bu
+run'da ilk kez yazıldı.
+
+- 51 ← 50 (kapanış sorusu: hangi aracı, ne zaman durmalı, iş bitti mi), 46 (düşün–eyle–gözle; eylem = dünyaya dokunan çağrı; yüzde 23 arama hatası = zar atan çevre), 47 (çalıştırıcı, mesaj sonu ve tur sonu token'ı; pass^k; 30 eylem sınırı; başarısızlık dökümü), 48 (ajan–bilgisayar arayüzü gloss'unun ödenmesi; yüz satırlık pencere = izdüşüm kararı; kod onarım ajanının 4 dolarlık bütçesi ve "hızlı başarır, yavaş başarısız olur"), 49 (araç bir yılda bozulur → çevre zar atar), 37 (durum/eylem/geçiş/ödül/bölüm/politika — **bilinçli formalizasyon**; eylem-değeri Q(s, dur) ↔ Q(s, devam); yakınsal politika optimizasyonuyla dil modelini politika olarak eğitmek), 40 (çarpımsal düşüş; toparlanma dışarıdan; %50/%80 ufku), 39 (bellek; belleğe yazma = öğrenme eylemi; yansıma), 36 (ağaç araması = öneri ve değerlendirme aşamaları), 35 (öz-düzeltme sınırı), 32 (ara adımlar = iç eylem), 21 (durumsuzluk; geçmiş yalnızca pencerede), 44 (parçalama = izdüşüm kararı), 30 (biçim sorunu → geçersiz biçimle biten bölümler), 29 (anlamsal aramayla planı geçerli eyleme çevirmek), 18 (ağırlıklardaki bilgi bir ön dağılım: GLAM), 16 (cetvel disiplini; puan çağrı sayısıyla okunur) `[yayında]`
+- 52 ← 51 (karar kutusu; kısmi gözlenebilirlik; hata döngüsü mekanizması ve tur sınırında yüzde 90 tekrar; "doğru plan, geçersiz eylem"), 46 (her adımda karar veren düzen; yansıma token'ı ≠ öz-yansıma), 47 (geri almalı ağaç 35,3 → 63,8, yalnızca okuma çağrıları), 48 (düzenleme spirali 90,5 → 57,2; kod olarak eylem; yorumlayıcı = dış gözlem), 36 (ağaç araması; değer kestirimi), 37 (değer işlevi; PPO; ödül bir sayı değil bir cümle), 35 (öz-düzeltme dış geri bildirimsiz çalışmaz → yansımadan önce hakemi ölç), 39 (yansıma akrabalığı), 40 (toparlanma dışarıdan gelir → dört sensör), 28 (muhasebe: büyük modeli gerektiğinde çağır), 29 (beceri kütüphanesinde anlamsal arama), 12 (denetimli ince ayar: hızlı modül), 13 (doğrudan tercih optimizasyonu: başarısız iz ↔ uzman izi) `[yayında]`
+- 53 ← 52 (sabit iş bölümü; hata döngüsü; hakem kuralı katlanır), 51 (toplumsallık özelliği; tur sınırı), 21 (pencere sonludur), 44 (ortada kaybolma; parçalama ↔ ajan zinciri), 24 (sistem istemi = rol; örgüt şeması), 33 (kapsama; deneme sayısı), 36 (öz-tutarlılık = oylama; tartışmanın karşılaştırma tabanı), 49 (orkestra şefi: açıklamadan model seçen sistem), 47 (maliyetin yüzde 95,9'u girdi), 48 (üç arayüz), 41 (getirme ↔ ajan zinciri), 30 (şemanın belge hâli), 16 (cetvel bir tasarım ürünüdür: iki sistem birbirinin kümesinde yeniliyor), 7 (karesel dikkat maliyeti ↔ uzunluk çarpı pencere) `[yayında]`
+- 54 ← 48 (arayüz tezi; 1.135 → 580 öğe; üç arayüz; kod ajanına köprü), 51 (model pencereyi görür; doğru plan geçersiz eylem; durma kararı; tekrar), 52 (ders ve beceri kütüphanesi → deneyim belleği), 53 (ajanlar metinle konuşuyordu), 47 (işlev çağrısı yok; araç seçimi = getirme ↔ kimlikle seçim), 37 (eylem kümesi), 40 (web ortamının ilk ölçümü), 45 (kaynak sadakati ile aynı İngilizce kök, başka kavram; hakem model), 50 (dizine sızan yanlış belge ↔ çevre gürültüsü), 21 (pencere bütçesi), 12 (sentetik veri: sayfa kaynağından etiket), 8 (ön eğitim: piksel okumayı bedava almak) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1081,6 +1104,73 @@ birleştirme (42 → 73).
 | Kaynağa göre isteme ve alıntı payı | 50 | — | 65, 71 |
 | Atıf varken uydurma: gerçek kaynağa yanlış iddia | 50 | — | 65, 71 |
 
+### Batch 12'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 51–54'te fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 12'de gerçekleşen |
+|---|---|
+| Kural yazmak vs veriden öğrenmek (1) | 51 (ajan tanımı dil modelinden eski; termostat da ajandır; çevreyi modellemeden politikayı iyileştirmek) ✓ **elli makale aralıklı geri çağırma** |
+| Karesel dikkat maliyeti (7) | 53 (ajan zinciri: uzunluk çarpı pencere) ✓ |
+| Ön eğitim (8) | 54 (piksel okumayı önceden öğrenmiş model: 66,5 ↔ 17,1) ✓ |
+| Denetimli ince ayar ve sentetik veri (12) | 52 (hızlı modül kâhin izleriyle eğitilir), 54 (sayfa kaynağından on milyon öğe) ✓ |
+| Doğrudan tercih optimizasyonu (13) | 52 (başarısız iz ↔ uzman izi tercih çifti) ✓ |
+| Cetvel bir tasarım ürünüdür (16) | 51 (puan çağrı sayısıyla okunur), 53 (iki sistem birbirinin kümesinde yeniliyor), 54 (insanı da ölçen beş ortam) ✓ |
+| Bilgi ağırlıklarda durur (18) | 51 (ön eğitimli politika 250 bin adımda yüzde 80: ağırlıktaki bilgi ön dağılım) ✓ |
+| Bağlam penceresi ve durumsuzluk (21) | 51 (geçmiş yalnızca pencerede), 53 (pencere ayrımı gerekçesi), 54 (gösterim bir bütçe kararı: 128.827 ↔ 4.240 token) ✓ |
+| Sistem istemi ve konuşmacı rolü (24) | 53 (rol = sistem istemi; örgüt şemasındaki boşluk) ✓ |
+| Gecikme ve bütçe muhasebesi (28) | 52 (büyük modeli gerektiğinde çağır: 757 ↔ 1.971 token/eylem) ✓ |
+| Anlamsal arama (29) | 51 (plan → geçerli eylem çevirisi), 52 (beceri kütüphanesi) ✓ |
+| Kısıtlı üretim ve şema (30) | 51 (geçersiz biçimle biten bölümler), 53 (yapılandırılmış belge = şemanın belge hâli) ✓ |
+| Düşünce zinciri ve ara adımlar (32) | 51 (iç eylem) ✓ |
+| Kapsama, pass@k (33) | 52 (elli yol), 53 (kırk cevap; kazancın haritası) ✓ |
+| Öz-düzeltme sınırı ve sağlam doğrulayıcı (35) | 51 (döngü modeli değiştirmez), 52 (araçsız düzeltme kazandırmaz; yansımadan önce hakemi ölç) ✓ |
+| Ağaç araması ve öz-tutarlılık (36) | 51 (öneri/değerlendirme aşamaları), 52 (eylem ağacı), 53 (oylama ↔ tartışma) ✓ |
+| Markov karar süreci; durum/eylem/geçiş/ödül/bölüm/politika; PPO (37) | 51 (**bilinçli formalizasyon**: iki kat eşleme; Q(s, dur)), 52 (değer kestirimi; ödül = cümle; PPO ↔ DPO), 54 (eylem kümesini çevre tanımlar) ✓ |
+| Bellek: yazma, okuma, yansıma (39) | 51 (belleğe yazma iç eylem), 52 (öz-yansıma akrabalığı) ✓ |
+| Çarpımsal düşüş, toparlanma c, görev ufku (40) | 51 (adım = tur; %80 ufku beşte bir; toparlanma dışarıdan), 52 (dört sensör dışarıda) ✓ |
+| Getirme ve dikkat dağıtıcı belge (41) | 53 (getirme ↔ ajan zinciri: 51,91 ↔ 53,62) ✓ |
+| Parçalama ve ortada kaybolma (44) | 51 (izdüşüm kararı), 53 (pencere ayrımı gerekçesi) ✓ |
+| Kaynak sadakati ve hakem model (45) | 54 (aynı İngilizce kök, başka kavram; canlı site puanı hakem modelle) ✓ |
+| Düşün–eyle–gözle (46) | 51 (döngünün tam hâli; yüzde 23 arama hatası), 52 (her adımda karar veren düzen) ✓ |
+| İşlev çağrısı, çalıştırıcı, pass^k, 30 eylem, başarısızlık dökümü (47) | 51 (döngüyü kim kapatır; pass^8 < %25), 52 (geri almalı ağaç yalnızca okuma çağrıları), 53 (maliyetin %95,9'u girdi), 54 (kimlikle seçim = getirme) ✓ |
+| Ajan–bilgisayar arayüzü, dört düğme, 4 dolarlık bütçe (48) | 51 (gloss ödendi; hızlı başarır yavaş başarısız olur; 90,5 → 57,2), 52 (düzenleme spirali), 54 (arayüz tezi; 1.135 → 580) ✓ |
+| Orkestra şefi: açıklamadan model seçmek (49) | 53 (şef ve işçiler düzeni) ✓ |
+| Dizine sızan yanlış belge (50) | 54 (çevre gürültüsü: yanlış tıklamanın açtığı pencere) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): araç tanımının token bedeli (47 → 51;
+devir: 56, 58), araç seçimi bir getirme sorunudur (47 → 51; 54'te kimlikle seçim olarak kısmen ödendi;
+devir: 56), MCP üçlüsü (49 → 51, 53; devir: 58), kod olarak eylem (48 → 52; 52'de yalnızca beceri
+kütüphanesi olarak geçti; devir: 55), dosya görüntüleyici penceresi ve bağlam kısaltma (48 → 55),
+etkin getirme (46 → 51; devir: 65), sorgu yeniden yazma (44 → 51; devir: 56).
+
+### Batch 12'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 12'de gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Ajan (Wooldridge–Jennings: özerklik, tepkisellik, girişkenlik, toplumsallık; Russell–Norvig) | 51 | 53 (toplumsallık açıldı) | 59, 61, 111, 115 |
+| Dil modeli ajanı = model kullanan sistem; ajan bir ilişkidir | 51 | 52, 53, 54 | 57, 60, 115 |
+| Özerklik: döngüyü kapatan modelin ürettiği metindir; durmak bir eylemdir | 51 | 54 (yapılamaz ilanı %54,9) | 59, 60, 70 |
+| İç eylem (akıl yürütme, getirme, öğrenme) ↔ dış eylem; çalışma belleği ve üç kalıcı bellek | 51 | 52 (ders = öğrenme eylemi) | 56, 112 |
+| Karar döngüsü: öner, değerlendir, seç, çalıştır, gözle | 51 | 52 (dört biçim bu eksende) | 57, 110 |
+| Kısmi gözlenebilirlik: gözlem durumun izdüşümüdür | 51 | 52 (plan gözlenebilirliğe bağlı), 54 (gösterim = izdüşüm kararı) | 56, 58, 110 |
+| Eylem kümesini çevre tanımlar; yürütülebilirlik ↔ doğruluk takası | 51 | 54 (kimlik ↔ koordinat) | 55, 111 |
+| Ajanlar hızlı başarır, yavaş başarısız olur; tur sınırında tekrar; hata döngüsü | 51 | 52 (anatomi ve dört çıkış), 53 (çoklu ajanda adım tekrarı) | 57, 60 |
+| Bölümün beş bitiş sınıfı (tamamlandı / pencere doldu / biçim / eylem / tur sınırı) | 51 | — | 57 |
+| Önce plan ↔ her adımda karar; gerektiğinde ayrıştırma | 52 | 54 (Agent S'in hiyerarşik planı) | 55, 57 |
+| Öz-yansıma: eyleyen, değerlendirici, ders; ders hakem kadar iyidir | 52 | 53 (yansıma olgusal soruda düşer; düşüncenin yozlaşması) | 56, 65, 73 |
+| Eylem ağacı araması; geri alınabilirlik koşulu | 52 | — | 55, 58 |
+| İlerleme oranı | 52 | — | 57 |
+| Beceri kütüphanesi (yordamsal bellek olarak kod); hızlı/yavaş modül; başarısız izlerle öğrenme | 52 | 54 (deneyim belleği) | 55, 56, 60 |
+| Çoklu ajanın üç gerekçesi: pencere ayrımı, uzmanlaşma, bağımsız örnek | 53 | — | 60, 115 |
+| Rol oyunu; standart işlem yordamı; mesaj havuzu; orkestra şefi | 53 | — | 55, 59, 115 |
+| Tartışma ↔ oylama; düşüncenin yozlaşması; çeşitlilik sayıdan değerli; toplayıcı ↔ öneren | 53 | — | 64, 65, 73 |
+| Çoklu ajan başarısızlık sınıfları (sistem tasarımı / ajanlar arası uyumsuzluk / doğrulama) | 53 | — | 57, 58 |
+| Ajan sayısı ↔ lojistik eğri; fatura tur çarpı pencere | 53 | — | 60 |
+| Grafik kullanıcı arayüzü; üç gösterim (kaynak, erişilebilirlik ağacı, ekran görüntüsü) | 54 | — | 58, 81, 88 |
+| Öğe konumlandırma; kimlik ↔ koordinat; işaretleme her yerde işe yaramaz | 54 | — | 81, 88 |
+| İnsan–ajan uçurumu ve üç nedeni; gösterim platforma bağlıdır | 54 | — | 57, 59 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -1441,6 +1531,34 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | karşı-bellek | (counter-memory) | 50 | modelin bildiğiyle çelişen, kendi içinde tutarlı belge |
 | güvenilirlik | (credibility) | 50 | getirilen belgeye ilgililik + tazelik + kaynak notu; 45'teki **kaynak sadakatiyle** karıştırılmaz |
 | kaynağa göre isteme | — | 50 | "ansiklopediye göre" ibaresi; ölçüsü kaynakta birebir geçen kelime payı |
+
+| ajan | (agent) | 51 | 48'de gloss'lanmış "ajan–bilgisayar arayüzü"nün borcu; Latince *agere*, eyleyen; gündelik "casus" anlamı 51'de açıkça ayrıldı |
+| özerklik | (autonomy) | 51 | döngünün kontrolünün modele verilmesi; Wooldridge–Jennings'in dört özelliğinin ilki |
+| dil modeli ajanı | (language agent) | 51 | model *kullanan* sistem; model ajanın karar veren parçasıdır |
+| dış eylem / iç eylem | (external / internal action) | 51 | çağrı ve mesaj dış; akıl yürütme, getirme, öğrenme iç (CoALA) |
+| çalışma belleği | (working memory) | 51 | o turda modelin önünde duran şey: pencere; 39'daki **bellek** ailesi |
+| karar döngüsü | (decision cycle) | 51 | öner, değerlendir, seç, çalıştır, gözle |
+| kısmi gözlenebilirlik | (partial observability) | 51 | gözlem durumun izdüşümüdür; 37'deki **durum** ajanda pencere + görünmeyen dünya |
+| yürütülebilirlik | (executability) | 51 | planın her adımının çevrede çalışması; doğrulukla takas |
+| tur sınırı | — | 51 | bölümün izin verilen en çok tur sayısı; 24'teki **tur sonu token'ıyla** karıştırılmaz |
+| hata döngüsü | (error loop) | 52 | yeni bilgi üretmeden dönen döngü; dört çıkış dışarıdan |
+| önce plan, sonra yürütme | (plan-and-execute) | 52 | |
+| gerektiğinde ayrıştırma | (as-needed decomposition) | 52 | bölme bir başarısızlık cevabıdır; en çok 3–4 kat |
+| eyleyen / değerlendirici / öz-yansıma | (actor / evaluator / self-reflection) | 52 | 39'daki **yansıma** ile aynı aile; girdisi başarısız bölüm, çıktısı sonraki istemin uyarısı |
+| eylem ağacı araması | — | 52 | 36'daki **ağaç aramasının** eylemlere uygulanmış hâli; düğüm = çevre durumu |
+| ilerleme oranı | (progress rate) | 52 | karşılanan alt hedef payı; başarı oranından ayrı |
+| beceri kütüphanesi | (skill library) | 52 | çalışan programların biriktiği yordamsal bellek |
+| çoklu ajan sistemi | (multi-agent system) | 53 | |
+| orkestrasyon / orkestra şefi | (orchestration / orchestrator) | 53 | işi bölen, dağıtan, toplayan ajan; işçiler birbirini görmez |
+| rol oyunu | (role-playing) | 53 | kullanıcı ve asistan rolünde iki ajan |
+| standart işlem yordamı | (standardized operating procedure) | 53 | roller belgeyle konuşur; mesaj havuzu ve abonelik |
+| tartışma | (debate) | 53 | ajanlar birbirinin cevabını görüp yeniden yazar; 36'daki **oylamadan** farkı budur |
+| düşüncenin yozlaşması | (degeneration of thought) | 53 | güvenden sonra yansımayla yeni düşünce üretememe |
+| grafik kullanıcı arayüzü | (graphical user interface, GUI) | 54 | kısaltma "GUI" serbest |
+| erişilebilirlik ağacı | (accessibility tree) | 54 | kaynağın görünen ve anlamlı alt kümesi; kimlik numaralı |
+| ekran görüntüsü | (screenshot) | 54 | görüntü modeli gerektirir; mekanizması çoklu modalite fazında |
+| öğe konumlandırma | (grounding) | 54 | niyetin ekrana bağlanması; 45'teki **kaynak sadakati (groundedness)** ile aynı kök, başka kavram |
+| işaretleme / numaralı kutular | (set-of-mark) | 54 | seyrek sayfada kazandırır, yoğun masaüstünde gürültü |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -2425,7 +2543,180 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Training (COLM 2024, doğrulandı, kapsam dışı); COLT (CIKM 2024), KaLMA (Findings ACL 2024),
     TimeQA (NeurIPS 2021 D&B) hakemli ama kelime bütçesi için çıkarıldı; BFCL için tahmin edilen
     arXiv kimliği (2506.14224) başka bir çalışmaya aitti, metin PMLR'nin GitHub aynasından alındı.
+128. **Faz 6 kategori ve level kararı (Batch 12'de verildi).** 51, 52, 53 ve 54 `agents-and-retrieval` ve
+    `intermediate`. Karar #122'nin varsayılanı uygulandı: kontrollü sözlükte "agents" yalnızca bu
+    kategoride geçer, ayrı kategori açılmadı; okuma listesinde 41–54 tek kesintisiz öbek olarak görünür.
+    Başlıklar `roadmap.json`'daki taslakla birebir aynı bırakıldı (51'deki "LLM" kısaltması karar #108'in
+    ölçütüyle korunur); 55–60 başlıkları için HANDOFF'taki açık borç sürüyor.
+129. **"Ajan" terimi ve çevirisi (Batch 12).** 48'de gloss'lanıp tanımı ertelenen "ajan", 51'de Wooldridge
+    ve Jennings (1995) ile Russell ve Norvig'in tanımlarıyla kuruldu; Türkçedeki "casus" anlamı bir
+    sözcük notuyla açıkça ayrıldı, karşılık *agere*/eyleyen olarak gerekçelendirildi. "Grounding" için
+    iki karşılık bilinçli olarak ayrı tutuldu: 45'te kaynak sadakati (groundedness), 54'te öğe
+    konumlandırma (GUI grounding); 54 bu ayrımı gövdede açıkça yapar. 37'nin durum/eylem/geçiş/ödül
+    çerçevesi 51'de ajan katında bilinçli formalizasyonla yeniden kuruldu (Şekil 2'nin üç sütunlu eşlemesi).
+130. **Ajan tanımı ve döngü sayıları (Batch 12).** Wooldridge & Jennings (KER 10(2):115–152, 1995):
+    özerklik, toplumsallık, tepkisellik, girişkenlik. Sumers ve ark. (TMLR 2024): çalışma belleği +
+    olaysal/anlamsal/yordamsal bellek; iç eylem = akıl yürütme/getirme/öğrenme, dış eylem = temellendirme;
+    karar döngüsü öneri/değerlendirme/seçim → yürütme. Wang ve ark. (FCS 18(6):186345, 2024, Crossref):
+    profil/bellek/planlama/eylem; geri bildirimsiz ↔ çevre/insan/model geri bildirimli planlama. Carta
+    ve ark. (ICML 2023, PMLR 202:3676–3713): Flan-T5 780M + PPO, BabyAI-Text; 250 bin adımda 0,8, ~600
+    binde 0,9; DRRN ve ön eğitimsiz kopya 1,5 milyonda < 0,2; sembolik PPO ≈ 0,4; dikkat dağıtıcı
+    4→16'da sembolik −%38, GFlan −%14. Huang ve ark. (ICML 2022, PMLR 162:9118–9147), Tablo 1: GPT-3
+    175B doğruluk 77,86 / yürütülebilirlik 7,79; insan 70,05 / 100; çevrilmiş GPT-3 175B 66,13 / 73,05;
+    Codex 12B çevrilmiş 54,88 / 78,57. Shridhar ve ark. (ICLR 2021): dokuz komut şablonu; altı görev
+    türü. Yao ve ark. (NeurIPS 2022) WebShop: 1.181.436 ürün, 12.087 talimat, 500 test; IL+RL 62,4 /
+    28,7; insan uzman 82,1 / 59,6; kural 45,6 / 9,6; seçim kâhini 9,6 → 85,4 ve 59,6 → 87,8; gezilen
+    sayfa 4,5 ↔ 11,3. ReAct (ICLR 2023) Tablo 3–4: ALFWorld en iyi 71 (Act 45, BUTLER 37); WebShop
+    40,0 (IL+RL 28,7). Liu ve ark. (ICLR 2024) AgentBench: 8 ortam, 29 model; gpt-4 OA 4,01 (OS 42,4 /
+    DB 32,0 / KG 58,8 / DCG 74,5 / LTP 16,6 / HH 78,0 / WS 61,1 / WB 29,0); ticari ort. 2,32 ↔ açık 0,51;
+    Tablo 4 (bütün modellerin ortalaması) tamamlandı/TLE/IF/IA: OS 75,0/23,9/0,0/0,9; DB 37,9/8,0/53,3/0,0;
+    KG 30,1/67,9/0/0; DCG 51,2/0,0/38,5/10,2; LTP 14,0/82,5/0/0; HH 13,1/22,1/0,0/64,1; WS
+    54,9/27,8/17,2/0,0; WB 56,6/35,0/0,0/8,4; CLE her ortamda ≤ 3,5; TLE izleri ort. 25,5 tur, > %90'ında
+    son 10 turda Rouge-L ≥ 0,8 tekrar; ticari ↔ açık: tamamlandı 61,5/39,1, IF 6,0/10,4, IA 4,6/13,6,
+    TLE 24,9/36,9; "#Avg. Round" çözüm için beklenen tur sayısıdır (5–35), tur sınırı ayrıdır (OS
+    varsayılan 8); geçmiş 3.500 token'a kırpılır. τ-bench (47'den): ≤ 30 eylem, pass^1 61,2 / 35,2,
+    pass^8 < %25. SWE-agent (48'den): 4 $ bütçe; başarılı ortanca 1,21 $ / 12 adım, başarısız ort. 2,52 $
+    / 21 adım; %93,0 ↔ %69,0 bütçe bitmeden gönderim; exit_cost 30–40. tur; düzenleme başarısı 90,5 →
+    57,2. Kapoor ve ark. (TMLR 2025): ajan değerlendirmeleri maliyet raporlamıyor; basit tabanlar
+    karmaşık düzenlerle eşleşiyor. **Seri türetimi (açıklama amaçlı):** durma örneği 0,7 ↔ 0,7 + 0,3 ×
+    0,5 − 0,05 = 0,80 ve 0,7 + 0,03 − 0,05 = 0,68.
+131. **Ajan mimarisi sayıları (Batch 12).** Prasad ve ark. (Findings NAACL 2024) Tablo 1–2 (GPT-3.5):
+    ALFWorld ReAct 43,3 / Plan-and-Execute 43,3 / Try Again 47,8 / Reflexion 57,5 / ADaPT 71,6 (Pick2
+    11,8 → 52,9); WebShop 32 / 17 / 30 / 35 / (LATS 38) / 44; TextCraft 19 / 27 / 15 / 32 / 52; dmax 3
+    (ALFWorld, WebShop) ve 4 (TextCraft); yalnızca temel becerili zayıf yürütücü 3,3 → 41,7. Shinn ve
+    ark. (NeurIPS 2023): 134 ALFWorld görevinin 130'u 12 denemede; ReAct-only 6–7. denemede durur,
+    %22 uydurma; sezgisel kural: aynı eylem+gözlem > 3 tekrar ya da > 30 eylem; bellek son 3 ders;
+    HumanEval 80,1 → 91,0; MBPP 80,1 → 77,1 (yanlış pozitif test %16,3 ↔ %1,4); Rust 50 soru:
+    taban 60, testsiz 52, yansımasız 60, tam 68. Zhou ve ark. (ICML 2024, PMLR 235) LATS: HotpotQA EM
+    ReAct 0,32 / best-of-k 0,38 / Reflexion 0,51 / LATS 0,63 (CoT+ReAct 0,71); HumanEval GPT-4 92,7
+    (Reflexion 91,0, taban 80,1); WebShop 75,9 / 38,0 (Reflexion 64,2 / 35,0; IL+RL 62,4 / 28,7; k = 30;
+    50 talimat); n = 5, k = 50; yansımalar "genel", yerel çukur. Gou ve ark. (ICLR 2024) CRITIC:
+    HotpotQA EM CoT 33,7 → CRITIC 38,7, araçsız 34,9; GSM8K LLaMA-2-70B PoT 59,3 → 62,3; text-davinci-003
+    araçsız 70,1 → 68,3 (−1,8). Ma ve ark. (NeurIPS 2024 D&B) AgentBoard: 9 ortam; GPT-4 ilerleme 70,0 /
+    başarı 47,9; WebArena 39,4 / 15,1; insanla korelasyon > 0,95; kolay/zor somutlaşmış: başarı 85,0 →
+    24,9; açık modeller ~6 adımda durur. Wang ve ark. (TMLR 2024) Voyager: 160 turda 63 eşya, 3,3×;
+    tahta 6 ± 2 tur (AutoGPT 92 ± 72), taş 11 ± 2, demir 21 ± 7, elmas 102 (1/3); ReAct/Reflexion hiçbir
+    düzeye çıkamıyor; rastgele müfredat −%93; kütüphanesiz duraklama. Lin ve ark. (NeurIPS 2023)
+    SwiftSage: ScienceWorld 30 görev; 84,7 ↔ SayCan 33,8 / ReAct 36,4 / Reflexion 45,3; token/eylem 757
+    ↔ 1.856 / 1.971 / 2.983. Song ve ark. (ACL 2024) ETO, Llama-2-7B: SFT 63,1 / 67,4 / 53,0 / 60,0 /
+    67,2 → ETO 67,4 / 73,8 / 65,0 / 68,6 / 72,4 (WebShop, SW seen/unseen, ALF seen/unseen); PPO 64,2 /
+    59,4 / 51,7 / 22,1 / 29,1; GPT-4 WebShop 63,2.
+132. **Çoklu ajan sayıları (Batch 12).** Li ve ark. (NeurIPS 2023) CAMEL: rol değişimi, talimat tekrarı,
+    boş cevap, sonsuz döngü; bitiş sözcüğü, ≤ 40 mesaj; insan tercihi 76,3 ↔ 13,3 (berabere 10,4); GPT-4
+    hakem 73,0 ↔ 4,0. Hong ve ark. (ICLR 2024) MetaGPT: HumanEval 85,9, MBPP 87,7; SoftwareDev (70 görev):
+    çalıştırılabilirlik ChatDev 2,25 / MetaGPT 3,75; süre 762 / 541 s; token 19.292 / 31.255; satır başına
+    248,9 / 124,3; insan düzeltme 2,5 / 0,83. Qian ve ark. (ACL 2024) ChatDev (GPT-3.5): tamlık 0,5022 /
+    0,4834 / 0,5600, çalıştırılabilirlik 0,3583 / 0,4145 / 0,8800, tutarlılık 0,7887 / 0,7601 / 0,8021,
+    kalite 0,1419 / 0,1523 / 0,3953 (GPT-Engineer / MetaGPT / ChatDev); token 7.182,5 / 29.278,7 /
+    22.949,4. Zhang ve ark. (NeurIPS 2024) CoA, text-bison 8k: HotpotQA 45,57 / 51,91 / 53,62;
+    NarrativeQA 11,96 / 14,20 / 25,26 (tam bağlam / RAG / CoA); O(n²) ↔ O(nk). Du ve ark. (ICML 2024,
+    PMLR 235) Tablo 1–2 (3 ajan, 2 tur): aritmetik 67,0 / 72,1 / 69,0 / 81,8; GSM8K 77,0 / 75,0 / 81,0 /
+    85,0; satranç 91,4 / 102,1 / 102,2 / 122,9; biyografi 66,0 / 68,3 / – / 73,8; MMLU 63,9 / 57,7 / – /
+    71,1; hamle geçerliliği 29,3 / 38,8 / – / 45,2 (tek / yansıma / oylama / tartışma); 4 turdan sonra
+    kazanç yok; çok ajanda özetleme. Liang ve ark. (EMNLP 2024) MAD: Counter-Intuitive AR GPT-3.5 26,0;
+    +CoT 28,0; +SC 29,5; +Self-Reflect 27,5; +MAD 37,0; GPT-4 51,0; yanlılık 29,0 ↔ 24,8, çeşitlilik 19,3
+    ↔ 49,7. Smit ve ark. (ICML 2024, PMLR 235): 7 küme; hiçbir protokol her kümede önde değil; MMLU SC
+    0,78 ↔ SoM 0,73; Medprompt en iyi ve en ucuz. Li ve ark. (TMLR 2024) Agent Forest (40 cevap):
+    Llama2-13B GSM8K 0,35 → 0,59 (70B tek 0,54; 15 cevapta eşit), MATH 0,03 → 0,09; GPT-3.5 0,73 →
+    0,85, 0,29 → 0,39. Wang ve ark. (ICLR 2025) MoA: AlpacaEval 2.0 LC 65,1 ↔ GPT-4o 57,5; MoA-Lite
+    59,3; çoklu öneren n = 6 61,3 ↔ tek öneren 56,7 ↔ n = 1 47,8; Qwen1.5-110B toplayıcı 61,3 /
+    öneren 56,7, WizardLM 52,9 / 63,8. Cemri ve ark. (NeurIPS 2025 D&B) MAST: 1.642 iz, 7 çerçeve;
+    başarısızlık %41–86,7; 150 iz altı işaretleyici, κ = 0,88; 14 tür, 3 sınıf: sistem tasarımı 41,8 /
+    ajanlar arası uyumsuzluk 36,9 / görev doğrulaması 21,3; rol tanımı +9,4, amaç doğrulaması +15,6
+    (ChatDev, GPT-4o); MetaGPT ↔ ChatDev: FC1/FC2 %60–68 az, FC3 1,56×; yıldız düzeni → erken bitirme.
+    Chen ve ark. (ICLR 2024) AgentVerse: GPT-3.5'te grup 3 görevin 2'sinde solo altında; HumanEval GPT-4
+    CoT 83,5 / solo 87,2 / grup 89,0. Qian ve ark. (ICLR 2025) MacNet: > 1.000 ajan; lojistik büyüme;
+    düzensiz > düzenli; rastgele −%51,92 süre. Khan ve ark. (ICML 2024, PMLR 235): hakem model 48 → 76,
+    insan 60 → 88.
+133. **Bilgisayar kullanımı sayıları (Batch 12).** Shi ve ark. (ICML 2017, PMLR 70:3135–3144) MiniWoB:
+    100 görev, 210 × 160 px, 20 × 20 × 3 = 1.200 eylem, 10 dk gösterim/görev; ort. başarı rastgele 20,8 /
+    SL 24,8 / SL+RL 34,8; çözülmüş (≥ %50 insan) %12 / 17 / 26. Liu ve ark. (ICLR 2018): DOMNET, görev
+    başına 3–10 gösterim (önceki ~200). Shaw ve ark. (NeurIPS 2023) Pix2Act: yalnızca piksel + genel
+    fare/klavye; MiniWoB++'ta insan çalışanları geçer, DOM'lu CC-Net ile eşleşir; ön eğitimsiz 17,1 ↔
+    66,5. Zhou ve ark. (ICLR 2024) WebArena: 812 görev; gözlem = URL + sekmeler + (HTML | ekran görüntüsü
+    | erişilebilirlik ağacı); `click [1582]`; GPT-4 CoT + UA-ipucu 11,70, ipucusuz 14,41, insan 78,24;
+    yapılabilir görevlerin %54,9'u "yapılamaz" ilan edildi; ipucusuz yapılamazların %44,44'ü tanındı.
+    Zheng ve ark. (ICML 2024, PMLR 235) SeeAct: Multimodal-Mind2Web train ort. 4.240 görsel token ↔
+    128.827 HTML token, 602 öğe; adım başarısı (Cross-Task / Website / Domain): özellik 16,1 / 12,1 /
+    19,0; işaretli görüntü 20,3 / 13,9 / 23,7; metin listesi 39,1 / 32,7 / 42,0; kâhin 61,9 / 65,0 / 62,1;
+    canlı site bütün görev Choice 37,8 ↔ Oracle 51,1. Gou ve ark. (ICLR 2025) UGround: WebAIM 2024 —
+    en çok ziyaret edilen 1M ana sayfanın %95,9'unda erişilebilirlik hatası, sayfa başına 56,8; 10M öğe
+    / 1,3M ekran görüntüsü; ScreenSpot GPT-4 16,2 / GPT-4o 18,3 / CogAgent 47,4 / SeeClick 53,4 / UGround
+    73,3 / V1-7B 86,3 / V1-72B 89,4; Multimodal-Mind2Web öğe doğruluğu Choice 42,3 / SoM 25,6 / UGround
+    44,8 (GPT-4), 46,8 (GPT-4o). Cheng ve ark. (ACL 2024) SeeClick: ScreenSpot 600+ görüntü, 1.200+
+    talimat; 9,6B; konumlandırma ↔ görev başarısı korelasyonu. Xie ve ark. (NeurIPS 2024 D&B) OSWorld:
+    369 görev; insan 72,36 (ortanca 111,94 s ↔ WebArena 35,38 s; web 88); GPT-4 a11y 12,24; GPT-4V
+    ekran görüntüsü 5,26, + a11y 12,17; SoM GPT-4V'de düşüş; 1920 × 1080; SoM'da 768 × 432 daha iyi;
+    en çok 15 adım; tek uygulama 13,74 ↔ iş akışı 6,57; hata: koordinat, tekrar, çevre gürültüsü. Koh ve
+    ark. (ACL 2024) VisualWebArena: 910 görev; insan 88,70 (230 örnek); GPT-4V SoM 16,37. Rawles ve ark.
+    (ICLR 2025) AndroidWorld: 116 görev, 20 uygulama; insan 80,0; M3A a11y GPT-4 Turbo 30,6; SoM
+    (görüntü + a11y) 25,4; SeeAct 15,5. He ve ark. (ACL 2024) WebVoyager: 643 görev, 15 site; 59,1 ↔
+    yalnızca a11y 40,1 ↔ GPT-4 All Tools 30,8; otomatik hakem uyumu %85,3 (κ 0,70). Agashe ve ark.
+    (ICLR 2025) Agent S: OSWorld GPT-4o 11,21 → 20,58 (+%83,6); WindowsAgentArena 13,3 → 18,2. Anthropic
+    belgelendirmesi (**hakemsiz**): 1024 × 768 / 1280 × 720 önerisi, > 1920 × 1080'den kaçınma,
+    küçültüp koordinatları geri ölçekleme, yakınlaştırma eylemi.
+134. **Kaynak politikası (Batch 12).** 51'de 13, 52'de 8, 53'te 13, 54'te 13 kaynak (ReAct, SWE-agent,
+    τ-bench, WebArena, Mind2Web önceki makalelerden devir). Hakemsiz olup işaretlenerek kullanılanlar:
+    Anthropic bilgisayar kullanımı belgelendirmesi (54, resmî belgelendirme). Klasik temel eser: Russell
+    & Norvig (AIMA 4. baskı; Pearson katalog sayfası, aima.cs.berkeley.edu bu ağdan erişilemedi).
+    Karar #113 uygulandı: AutoGen için COLM 2024 kabul listesi (`colmweb.org`, `curl -k`) doğrulandı,
+    DBLP yalnızca CoRR; ETO (ACL 2024) ve DEPS (NeurIPS 2023 sayfası bulunamadığı için kullanılmadı)
+    DBLP'de yalnızca CoRR, ETO'nun Anthology sayfası (2024.acl-long.409) doğrulandı; Kapoor ve ark. TMLR
+    2025 (OpenReview `Zy4uFzMviZ`); OpenReview kimlikleri DBLP `ee` alanından alındı (API bot doğrulaması
+    istiyor). Aday olup **kullanılmayanlar:** SayCan (CoRL 2022), zero-shot planners dışındaki gömülü
+    ajan çalışmaları (Inner Monologue, DEPS) → 111'e; AgentTuning, Retroformer, ExpeL, Agent Workflow
+    Memory (ICML 2025), RCI, WebGUM, WebAgent, WebLINX, SteP, CogAgent hakemli ama kelime bütçesi için
+    çıkarıldı; Set-of-Mark (arXiv) ve GPTSwarm kapsam dışı; "Rise and Potential" derlemesi (Sci. China
+    Inf. Sci. 2025) FCS derlemesiyle örtüştüğü için kullanılmadı.
 
+
+## Batch 12 öğrenme notları (yazım tamamlandı)
+
+- **Faz 6 açıldı: tanım (51) → tek ajanın karar kutusu (52) → çoklu ajan (53) → ekran (54).** 50'nin
+  "bu döngüye alanda ajan deniyor" devri 51'de Wooldridge–Jennings ve Russell–Norvig'le ödendi; 51'in
+  boş bıraktığı karar kutusu 52'yi, 52'nin sabit iş bölümü 53'ü, 53'ün "ekran, fare, klavye" kapanışı
+  54'ü çağırdı. 54, 48'in "kod" borcunu 55'e devretti. 37'nin çerçevesi 51'de ajan katında bilinçli
+  formalizasyonla yeniden kuruldu (Şekil 2'nin üç sütunu); bu, serinin planladığı "bilinçli
+  formalizasyon" ilkesinin ilk tam örneği.
+- **Araştırma yine tamamen ana oturumda; ultracode açık olmasına rağmen workflow/subagent
+  kullanılmadı** (cerebrum 2026-09-03 kaydı: Batch 10'da kullanıcı yasakladı). 63 aday PDF tek betikle
+  (`artifacts/b12-research/fetch-b12.py`) indirildi; betik her PDF'in ilk sayfasını beklenen başlıkla
+  eşleştirip uyuşmazsa arXiv API'sinde başlık araması yapıyor (Batch 11'in yanlış kimlik tuzağına karşı).
+  DBLP doğrulaması iki kez koştu (`dblp-b12.py`, sonra 503'lere karşı yeniden deneyen
+  `dblp-b12-retry.py`); ikinci koşu `ee` alanını da kaydediyor ve OpenReview/NeurIPS/PMLR/Anthology
+  birincil bağlantılarının kaynağı oldu. Semantic Scholar API çoğu sorguda boş döndü; OpenReview API
+  bot doğrulaması istiyor.
+- **Yeni künye kanalı:** DBLP `ee` alanı OpenReview kimliklerini doğrudan veriyor; tahminle yazılan
+  bir kimlik (Kapoor ve ark.) bu alanla yanlış çıktı ve düzeltildi. Kural: OpenReview kimliği
+  **tahmin edilmez**, DBLP `ee` ya da PDF üst bilgisinden alınır.
+- **Tablo sütunu tuzakları:** AgentBench Tablo 2'deki "#Avg. Round" tur sınırı değil çözüm için beklenen
+  tur sayısı (5–35); tur sınırı ayrı (OS varsayılan 8). MiniWoB (2017) Tablo 1'deki 24,8/34,8 ortalama
+  başarı, 17/26 "çözülmüş" yüzdesi — ilk taslakta karıştırıldı, düzeltildi. Huang ve ark.'nın "7
+  household scenes"ı yedi oda değil yedi ev sahnesi. CRITIC'in −1,8 puanı LLaMA-2-70B'nin değil
+  text-davinci-003'ün. MoA'da toplayıcı ↔ öneren sütunları model başına ters okunabiliyor.
+- **Terim kararları:** "ajan" (casus anlamı ayrıldı), "öğe konumlandırma" (grounding; 45'teki kaynak
+  sadakatinden ayrı tutuldu), "hata döngüsü", "gerektiğinde ayrıştırma", "öz-yansıma" (39'daki yansıma
+  ailesi), "düşüncenin yozlaşması", "erişilebilirlik ağacı". 53'teki bir cümle sözleşmenin 4. bölümüne
+  gönderme yapıyordu ("4\. bölümdeki kural") — okur için anlamsız; düz yazıya çevrildi. Kural: gövde
+  metni SOZLESME bölümlerine gönderme yapmaz.
+- **SVG:** 12 yeni şekil; light+dark ekran görüntüsü için şekil bir `position:fixed` kaplayıcıya iki kez
+  klonlanıp ikinci kopyaya koyu tema token'ları inline `style.setProperty` ile verildi — tek ekran
+  görüntüsünde iki tema (`b12fig` yardımcısı `localStorage`'da). `zoom` eylemi bölge kırpmayı
+  desteklemiyor ama zaman aşımına düşen `screenshot`'ın yerine tam ekran görüntüsü döndürüyor. Denetleyici
+  iki kusuru görmedi: 51-Şekil 1'de "cevap" etiketi çevre kutusunun içine biniyordu (y=126, kutu
+  100–144; 164'e taşındı) ve 54-Şekil 1'de bir `fill="var(--text-faint"` kapanış parantezi eksikti
+  (ET.parse geçer, tarayıcıda dolgu geçersiz olurdu; `grep -c 'var(--[a-z-]*"'` ile yakalandı — bu
+  tarama kalıcı kapı olmalı). 520 birim yüksekliğindeki şekil 800×640 pencereye iki temayla sığmadı;
+  yardımcı `mode` parametresiyle tek tema gösterir.
+- **Kelime sayısı:** 51 3.149, 52 2.566, 53 2.515, 54 2.109 (denetleyici sayımı). 51 üst banda yakın;
+  ileride ajan tanımı/döngü/formalizasyon/durma dörtlüsünden biri kısaltılabilir.
+- **Bash `cd` kalıcılığı:** bir komuttaki `cd artifacts/...` sonraki bütün çağrılara taşındı ve göreli
+  yollar kırıldı; kural: geçici dizin değişikliği yapılmaz, mutlak yol ya da `cd /d/dev/anil-lib;` öneki
+  kullanılır. Python Windows'ta `/d/dev/...` yolunu tanımaz; kopyaya dosya `cp` ile taşınır.
+- **Render doğrulaması yine izole kopyada** (`D:\dev\anil-lib-b12-render`, junction + kapısız dev,
+  3210): build 103 sayfa (exit 0), 55 seri rotası 200 (22 sn), dört makale × üç genişlik × üç temada DOM
+  ölçümü temiz (badFills ve outOfBox boş, taşma ve sızıntı yok; `figScroll` bu run'da 375'te de false),
+  12 şeklin tamamı light/dark ekran görüntüsüyle gözle doğrulandı.
 
 ## Batch 11 öğrenme notları (yazım tamamlandı)
 

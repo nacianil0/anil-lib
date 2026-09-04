@@ -5297,6 +5297,129 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-04T02:10:00.000Z"
+    },
+    {
+      "id": "bug-317",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "Seri Batch 12: Bash aracında bir komuttaki `cd artifacts/b12-research/pdf` sonraki çağrılara taşındı; göreli yollar 'No such file or directory' verdi",
+      "file": "(Bash oturumu)",
+      "root_cause": "Bash tool çalışma dizini çağrılar arasında kalıcı; komut içindeki cd sonraki komutları da etkiliyor",
+      "fix": "Her komut `cd /d/dev/anil-lib;` ile başlatıldı; kopyaya dosya taşıma için Python yerine `cp` (Python Windows'ta /d/dev yolunu tanımıyor)",
+      "tags": [
+        "series",
+        "bash",
+        "cwd",
+        "windows"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-318",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "54-Şekil 1 (ekranin-uc-gosterimi.svg): fill=\"var(--text-faint\" kapanış parantezi eksik; ET.parse ve check-series-svg geçti, tarayıcıda dolgu geçersiz olurdu",
+      "file": "content/series/assets/bilgisayar-kullanan-ajanlar/ekranin-uc-gosterimi.svg",
+      "root_cause": "Elle yazılan SVG'de yazım hatası; denetleyici var( sözdizimini doğrulamıyor",
+      "fix": "Parantez tamamlandı; grep -c 'var(--[a-z-]*\"' content/series/assets/*/*.svg taraması kapıya eklendi (HANDOFF)",
+      "tags": [
+        "series",
+        "svg",
+        "theme",
+        "checker-gap"
+      ],
+      "related_bugs": [
+        "bug-314"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-319",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "51-Şekil 1 (ajan-kontrol-dongusu.svg): 'cevap' etiketi (y=126) çevre kutusunun (y=100–144) içine biniyor; yalnızca ekran görüntüsünde görüldü",
+      "file": "content/series/assets/ajan-nedir-kontrol-dongusu-olarak-llm/ajan-kontrol-dongusu.svg",
+      "root_cause": "Kutular y=100'e taşınırken etiket eski yerleşimden kaldı",
+      "fix": "Etiket y=164'e alındı (kutu altı, dönüş çizgisi üstü); light+dark overlay görüntüsüyle yeniden doğrulandı",
+      "tags": [
+        "series",
+        "svg",
+        "overlap",
+        "render"
+      ],
+      "related_bugs": [
+        "bug-314"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-320",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "check-series-content: 52'de 'şekil numarası 3, beklenen 2' ve 54'te 'Şekil 2 metinde referanslanmamış'",
+      "file": "content/series/articles/agents-and-retrieval/ajan-mimarileri.md",
+      "root_cause": "52'de 'Şekil 2'de' yazılıp görsel satırı eklenmemişti; 54'te görsel eklenip gövdede 'Şekil 2' anılmamıştı",
+      "fix": "52'ye Şekil 2 görseli ve okuma cümlesi eklendi; 54'e 'Şekil 2 … yan yana koyuyor' cümlesi eklendi",
+      "tags": [
+        "series",
+        "content-check",
+        "figures"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-321",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "Kapoor ve ark. (AI Agents That Matter) için tahmin edilen OpenReview kimliği (Zw3BHJl1Hj) yanlıştı; doğrusu DBLP ee: Zy4uFzMviZ",
+      "file": "content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md",
+      "root_cause": "OpenReview API bot doğrulaması istediği için kimlik doğrulanmadan yazıldı",
+      "fix": "DBLP arama API'sinin ee alanından alınıp düzeltildi; kural: OpenReview kimliği tahmin edilmez (cerebrum DNR)",
+      "tags": [
+        "series",
+        "citations",
+        "openreview",
+        "dblp"
+      ],
+      "related_bugs": [
+        "bug-316"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-322",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "Tarayıcı panosunda screenshot iki kez 'Screenshot timed out after 5s' verdi",
+      "file": "(Browser pane)",
+      "root_cause": "Pano gizli/minimize iken sayfa çizimi tamamlanmıyor",
+      "fix": "zoom eylemi (bölge kırpmayı desteklemese de) tam ekran görüntüsünü döndürdü; şekil overlay'i 800×640'a sığacak biçimde mode parametresiyle tek temaya indirildi",
+      "tags": [
+        "browser",
+        "screenshot",
+        "timeout"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-323",
+      "timestamp": "2026-09-05T01:40:00.000Z",
+      "error_message": "Bash aracında çok satırlı Python heredoc'u 'unexpected EOF while looking for matching `'\\'' ile parse edilemedi (OpenWolf güncelleme betiği)",
+      "file": "(Bash oturumu)",
+      "root_cause": "Heredoc gövdesindeki tek tırnak/ters bölü kombinasyonları Bash aracının ön işleyicisinde sorun çıkarıyor (cerebrum 2026-09-03 notuyla uyumlu)",
+      "fix": "Betik Write aracıyla scratchpad'e yazılıp `PYTHONIOENCODING=utf-8 python <dosya>` ile çalıştırıldı",
+      "tags": [
+        "bash",
+        "heredoc",
+        "python",
+        "windows"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T01:40:00.000Z"
     }
   ]
 }

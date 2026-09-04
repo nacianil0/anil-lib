@@ -1002,6 +1002,86 @@
       "path": "content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
+    },
+    {
+      "articleId": "article_eca4e665-65f9-4be6-9eb3-2952acc0acb1",
+      "title": "Ajan Nedir? Kontrol Döngüsü Olarak LLM",
+      "slug": "ajan-nedir-kontrol-dongusu-olarak-llm",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 51,
+      "summary": "Faz 5'in parça parça kurduğu döngüye adını verir: ajanın alandaki tanımını ve ayırt edici özelliğinin özerklik olduğunu, dil modeli ajanının bir model değil bir sistem olduğunu; kontrol döngüsünün tam hâlini ve modelin kendi başına verdiği üç kararı; 37'nin karar çerçevesiyle döngünün bilinçli eşlemesini; doğru planın neden geçersiz eylem üretebildiğini; durmanın bir eylem olduğunu ve ajanların neden hızlı başarıp yavaş başarısız olduğunu ölçümlerle anlatır.",
+      "tags": [
+        "ajan",
+        "kontrol-dongusu",
+        "ozerklik",
+        "gecerli-eylem",
+        "durma-karari"
+      ],
+      "contentHash": "sha256:26a239d05721089f89d19151da9149205795305139d7b87e586cb21aea76e626",
+      "path": "content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
+    },
+    {
+      "articleId": "article_b16b4d33-25fb-4f40-a5b9-8f86caa89da5",
+      "title": "Ajan Mimarileri",
+      "slug": "ajan-mimarileri",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 52,
+      "summary": "Kontrol döngüsünün karar kutusunun içini kurar: her adımda karar veren düzenle önce plan yazan düzenin aynı görevde neden aynı, başka görevde neden ters sonuç verdiğini; ayrıştırmanın gerektiğinde yapılmasını; başarısız bir bölümü okuyup sonrakine ders taşımanın kazancını ve hakem yanılınca nasıl zarar verdiğini; eylem ağacında aramanın kazancını ve dünyanın geri alınamazlığını; hata döngüsünün anatomisini, onu kıran dört dış sinyali ve döngünün ağırlıklara yazılmasını ölçümlerle anlatır.",
+      "tags": [
+        "ajan-mimarisi",
+        "plan-ve-yurutme",
+        "oz-yansima",
+        "eylem-agaci",
+        "hata-dongusu"
+      ],
+      "contentHash": "sha256:69446813eb8052ff8422f13caadf6145583773e99d2edb9d28d3ce9bfc614b50",
+      "path": "content/series/articles/agents-and-retrieval/ajan-mimarileri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
+    },
+    {
+      "articleId": "article_46b72919-9dfb-4783-b17d-da0468febeb1",
+      "title": "Çoklu Ajan Sistemleri: İşbirliği ve Orkestrasyon",
+      "slug": "coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 53,
+      "summary": "Birden çok ajanın tek döngüden ne satın aldığını ölçer: rol vermenin ve konuşturmanın üç gerekçesini — pencere ayrımı, uzmanlaşma, bağımsız örnek —; ikili rol oyununu, standart işlem hattını ve orkestra şefi düzenini; tartışmanın 36'daki oylamadan ne zaman farklı olduğunu ve ne zaman olmadığını; iki sistemin birbirinin ölçütünde neden yenildiğini; bin altı yüz izde çoklu ajan başarısızlıklarının üç sınıfını ve iki ucuz müdahalenin kazancını; ve faturanın neden ajan sayısıyla değil tur sayısıyla çarpıldığını anlatır.",
+      "tags": [
+        "coklu-ajan",
+        "rol-oyunu",
+        "tartisma",
+        "orkestrasyon",
+        "ajan-basarisizligi"
+      ],
+      "contentHash": "sha256:d75d818d6ec553f0893a7e57b550bf41522a65515b515929ad6ce9494e4b1b2a",
+      "path": "content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
+    },
+    {
+      "articleId": "article_25d8925e-4196-465b-a945-6cec9f36f61c",
+      "title": "Bilgisayar Kullanan Ajanlar",
+      "slug": "bilgisayar-kullanan-ajanlar",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 54,
+      "summary": "Ajanı insan için çizilmiş arayüze koyar: ekranın üç gösterimini — sayfa kaynağı, erişilebilirlik ağacı, ekran görüntüsü — ve her birinin token bedelini ve eksikliğini; eylemin kimlikle mi koordinatla mı verildiğini; planın doğru, tıklamanın yanlış olduğu yerin adını, öğe konumlandırmayı, ve bunun için ayrıca eğitilmiş modellerin kazancını; işaretlemenin nerede işe yaradığını nerede zarar verdiğini; beş ortamda ajanla insan arasındaki uçurumu ve uçurumun üç nedenini; aynı ekran görüntüsünün webde neden kazandırıp telefonda neden kaybettirdiğini ölçümlerle anlatır.",
+      "tags": [
+        "bilgisayar-kullanimi",
+        "ekran-gosterimi",
+        "erisilebilirlik-agaci",
+        "oge-konumlandirma",
+        "web-ajani"
+      ],
+      "contentHash": "sha256:6a5ef710be92b504193064a528e4c798a3b4b50dd50a5701abf52dac926274b4",
+      "path": "content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
     }
   ]
 }

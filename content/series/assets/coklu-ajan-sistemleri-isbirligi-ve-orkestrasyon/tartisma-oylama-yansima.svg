@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="İki panelde tek ajan, yansıma, oylama ve tartışma doğrulukları: aritmetikte 67,0, 72,1, 69,0, 81,8; genel bilgi sınavında 63,9, 57,7, ölçülmedi, 71,1.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">aritmetik</text>
+  <text x="372" y="24" font-size="13" font-weight="bold" fill="var(--text)">genel bilgi sınavı</text>
+
+  <text x="20" y="58" font-size="13" fill="var(--text)">tek ajan</text>
+  <rect x="120" y="45" width="134" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="318" y="58" font-size="13" text-anchor="end" fill="var(--text-muted)">67,0</text>
+  <text x="20" y="82" font-size="13" fill="var(--text)">yansıma</text>
+  <rect x="120" y="69" width="144.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="318" y="82" font-size="13" text-anchor="end" fill="var(--text-muted)">72,1</text>
+  <text x="20" y="106" font-size="13" fill="var(--text)">oylama</text>
+  <rect x="120" y="93" width="138" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="318" y="106" font-size="13" text-anchor="end" fill="var(--text-muted)">69,0</text>
+  <text x="20" y="130" font-size="13" fill="var(--text)">tartışma</text>
+  <rect x="120" y="117" width="163.6" height="16" fill="var(--accent)" />
+  <text x="318" y="130" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">81,8</text>
+
+  <line x1="352" y1="12" x2="352" y2="150" stroke="var(--border)" />
+
+  <text x="372" y="58" font-size="13" fill="var(--text)">tek ajan</text>
+  <rect x="472" y="45" width="127.8" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="670" y="58" font-size="13" text-anchor="end" fill="var(--text-muted)">63,9</text>
+  <text x="372" y="82" font-size="13" fill="var(--text)">yansıma</text>
+  <rect x="472" y="69" width="115.4" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="670" y="82" font-size="13" text-anchor="end" fill="var(--text-muted)">57,7</text>
+  <text x="372" y="106" font-size="13" fill="var(--text)">oylama</text>
+  <text x="472" y="106" font-size="13" fill="var(--text-faint)">ölçülmedi</text>
+  <text x="372" y="130" font-size="13" fill="var(--text)">tartışma</text>
+  <rect x="472" y="117" width="142.2" height="16" fill="var(--accent)" />
+  <text x="670" y="130" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">71,1</text>
+
+  <line x1="20" y1="176" x2="700" y2="176" stroke="var(--border)" />
+  <text x="20" y="200" font-size="13" fill="var(--text-muted)">Doğruluk yüzdesi; üç ajan, iki tur; oylama üç bağımsız cevabın çoğunluğudur (öz-tutarlılık).</text>
+  <text x="20" y="220" font-size="13" fill="var(--text-muted)">Genel bilgi sınavında yansıma tek ajanın altına düşüyor; tartışma ikisinin de üstünde.</text>
+  <text x="20" y="240" font-size="13" fill="var(--text-muted)">Çubuklar aynı ölçekte (100 = 200 birim).</text>
+</svg>

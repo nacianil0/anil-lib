@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Hata döngüsü: aynı pencere, aynı düşünce, aynı eylem ve aynı gözlem arasında dönen halka; halkadan dışarı çıkan dört ok tekrar sayacı, dış gözlem, bölüm sonu dersi ve ilerleme ölçüsü kutularına varır.">
+  <defs>
+    <marker id="ok-52-halka" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="ok-52-cikis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <rect x="305" y="48" width="110" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="360" y="67" font-size="13" text-anchor="middle" fill="var(--text)">aynı pencere</text>
+  <rect x="480" y="135" width="110" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="535" y="154" font-size="13" text-anchor="middle" fill="var(--text)">aynı düşünce</text>
+  <rect x="305" y="222" width="110" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="360" y="241" font-size="13" text-anchor="middle" fill="var(--text)">aynı eylem</text>
+  <rect x="130" y="135" width="110" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="185" y="154" font-size="13" text-anchor="middle" fill="var(--text)">aynı gözlem</text>
+
+  <line x1="400" y1="78" x2="500" y2="133" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-52-halka)" />
+  <line x1="500" y1="165" x2="402" y2="220" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-52-halka)" />
+  <line x1="320" y1="222" x2="222" y2="167" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-52-halka)" />
+  <line x1="222" y1="135" x2="318" y2="80" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-52-halka)" />
+  <text x="360" y="155" font-size="13" text-anchor="middle" fill="var(--text-muted)">yeni bilgi yok</text>
+
+  <rect x="16" y="16" width="200" height="52" rx="6" fill="var(--surface)" stroke="var(--cool)" />
+  <text x="116" y="36" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">tekrar sayacı / tur sınırı</text>
+  <text x="116" y="56" font-size="13" text-anchor="middle" fill="var(--text-muted)">3+ tekrar ya da 30 eylem</text>
+  <rect x="504" y="16" width="200" height="52" rx="6" fill="var(--surface)" stroke="var(--cool)" />
+  <text x="604" y="36" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">dış gözlem</text>
+  <text x="604" y="56" font-size="13" text-anchor="middle" fill="var(--text-muted)">test · yorumlayıcı · arama</text>
+  <rect x="16" y="292" width="200" height="52" rx="6" fill="var(--surface)" stroke="var(--cool)" />
+  <text x="116" y="312" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">bölüm sonu dersi</text>
+  <text x="116" y="332" font-size="13" text-anchor="middle" fill="var(--text-muted)">başarısız izden bir cümle</text>
+  <rect x="504" y="292" width="200" height="52" rx="6" fill="var(--surface)" stroke="var(--cool)" />
+  <text x="604" y="312" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">ilerleme ölçüsü</text>
+  <text x="604" y="332" font-size="13" text-anchor="middle" fill="var(--text-muted)">karşılanan alt hedef payı</text>
+
+  <line x1="305" y1="63" x2="218" y2="48" stroke="var(--cool)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ok-52-cikis)" />
+  <line x1="415" y1="63" x2="502" y2="48" stroke="var(--cool)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ok-52-cikis)" />
+  <line x1="305" y1="237" x2="218" y2="312" stroke="var(--cool)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ok-52-cikis)" />
+  <line x1="415" y1="237" x2="502" y2="312" stroke="var(--cool)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ok-52-cikis)" />
+
+  <text x="360" y="366" font-size="13" text-anchor="middle" fill="var(--text-muted)">Dört çıkış da modelin dışında; döngü kendi içinden çıkamaz.</text>
+</svg>

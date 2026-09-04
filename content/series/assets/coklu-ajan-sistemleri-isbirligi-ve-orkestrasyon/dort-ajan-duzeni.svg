@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Dört çoklu ajan düzeni: ikili rol oyunu, standart işlem hattı ve mesaj havuzu, orkestra şefi ile işçiler, tartışma halkası; altında her düzenin yaslandığı gerekçe.">
+  <defs>
+    <marker id="ok-53-akis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="ok-53-cift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="30" font-size="13" font-weight="bold" fill="var(--text)">ikili rol oyunu</text>
+  <rect x="24" y="60" width="76" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="62" y="79" font-size="13" text-anchor="middle" fill="var(--text)">kullanıcı</text>
+  <rect x="24" y="150" width="76" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="62" y="169" font-size="13" text-anchor="middle" fill="var(--text)">asistan</text>
+  <line x1="50" y1="92" x2="50" y2="148" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" />
+  <line x1="74" y1="148" x2="74" y2="92" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" />
+  <text x="112" y="112" font-size="13" fill="var(--text-muted)">talimat</text>
+  <text x="112" y="132" font-size="13" fill="var(--text-muted)">çözüm</text>
+  <text x="16" y="216" font-size="13" fill="var(--text-muted)">bitiş sözcüğü;</text>
+  <text x="16" y="234" font-size="13" fill="var(--text-muted)">en çok 40 mesaj</text>
+  <text x="16" y="268" font-size="13" fill="var(--accent)">pencere ayrımı</text>
+
+  <line x1="176" y1="16" x2="176" y2="290" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="188" y="30" font-size="13" font-weight="bold" fill="var(--text)">standart işlem hattı</text>
+  <rect x="190" y="60" width="64" height="26" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="222" y="77" font-size="13" text-anchor="middle" fill="var(--text)">ürün</text>
+  <rect x="190" y="104" width="64" height="26" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="222" y="121" font-size="13" text-anchor="middle" fill="var(--text)">mimar</text>
+  <rect x="190" y="148" width="64" height="26" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="222" y="165" font-size="13" text-anchor="middle" fill="var(--text)">mühendis</text>
+  <rect x="190" y="192" width="64" height="26" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="222" y="209" font-size="13" text-anchor="middle" fill="var(--text)">test</text>
+  <line x1="222" y1="86" x2="222" y2="102" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <line x1="222" y1="130" x2="222" y2="146" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <line x1="222" y1="174" x2="222" y2="190" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <rect x="272" y="60" width="66" height="158" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="305" y="132" font-size="13" text-anchor="middle" fill="var(--text)">mesaj</text>
+  <text x="305" y="150" font-size="13" text-anchor="middle" fill="var(--text)">havuzu</text>
+  <line x1="254" y1="73" x2="270" y2="73" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <line x1="254" y1="117" x2="270" y2="117" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <line x1="254" y1="161" x2="270" y2="161" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <line x1="254" y1="205" x2="270" y2="205" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-53-akis)" />
+  <text x="188" y="244" font-size="13" fill="var(--text-muted)">belge yazar,</text>
+  <text x="188" y="262" font-size="13" fill="var(--text-muted)">abone olduğunu okur</text>
+  <text x="188" y="286" font-size="13" fill="var(--accent)">uzmanlaşma + ayrım</text>
+
+  <line x1="352" y1="16" x2="352" y2="290" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="364" y="30" font-size="13" font-weight="bold" fill="var(--text)">orkestra şefi ve işçiler</text>
+  <rect x="408" y="60" width="64" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="440" y="79" font-size="13" text-anchor="middle" fill="var(--text)">şef</text>
+  <rect x="366" y="150" width="50" height="28" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="391" y="168" font-size="13" text-anchor="middle" fill="var(--text)">işçi</text>
+  <rect x="426" y="150" width="50" height="28" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="451" y="168" font-size="13" text-anchor="middle" fill="var(--text)">işçi</text>
+  <rect x="486" y="150" width="50" height="28" rx="5" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="511" y="168" font-size="13" text-anchor="middle" fill="var(--text)">işçi</text>
+  <line x1="426" y1="92" x2="396" y2="148" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" marker-start="url(#ok-53-cift)" />
+  <line x1="440" y1="92" x2="447" y2="148" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" marker-start="url(#ok-53-cift)" />
+  <line x1="454" y1="92" x2="504" y2="148" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" marker-start="url(#ok-53-cift)" />
+  <text x="364" y="216" font-size="13" fill="var(--text-muted)">şef böler, dağıtır,</text>
+  <text x="364" y="234" font-size="13" fill="var(--text-muted)">toplar; işçiler</text>
+  <text x="364" y="252" font-size="13" fill="var(--text-muted)">birbirini görmez</text>
+  <text x="364" y="286" font-size="13" fill="var(--accent)">pencere ayrımı</text>
+
+  <line x1="548" y1="16" x2="548" y2="290" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="560" y="30" font-size="13" font-weight="bold" fill="var(--text)">tartışma halkası</text>
+  <rect x="606" y="56" width="54" height="28" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="633" y="74" font-size="13" text-anchor="middle" fill="var(--text)">ajan</text>
+  <rect x="562" y="150" width="54" height="28" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="589" y="168" font-size="13" text-anchor="middle" fill="var(--text)">ajan</text>
+  <rect x="650" y="150" width="54" height="28" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="677" y="168" font-size="13" text-anchor="middle" fill="var(--text)">ajan</text>
+  <line x1="620" y1="86" x2="598" y2="148" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" marker-start="url(#ok-53-cift)" />
+  <line x1="646" y1="86" x2="668" y2="148" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" marker-start="url(#ok-53-cift)" />
+  <line x1="618" y1="164" x2="648" y2="164" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-53-cift)" marker-start="url(#ok-53-cift)" />
+  <text x="560" y="216" font-size="13" fill="var(--text-muted)">herkes herkesin</text>
+  <text x="560" y="234" font-size="13" fill="var(--text-muted)">cevabını görür;</text>
+  <text x="560" y="252" font-size="13" fill="var(--text-muted)">tur sayısı: 2–4</text>
+  <text x="560" y="286" font-size="13" fill="var(--accent)">bağımsız örnek (?)</text>
+
+  <line x1="16" y1="306" x2="704" y2="306" stroke="var(--border)" />
+  <text x="16" y="330" font-size="13" fill="var(--text-muted)">Her düzenin altında yaslandığı gerekçe; soru işareti: oylamaya karşı ölçülmeden okunamaz.</text>
+</svg>

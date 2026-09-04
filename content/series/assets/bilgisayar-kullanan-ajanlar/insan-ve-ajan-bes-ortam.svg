@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Beş ortamda insan ve en iyi ajanın görev başarısı: web 78,2 ve 14,4; görsel web 88,7 ve 16,4; masaüstü 72,4 ve 12,2; telefon 80,0 ve 30,6; canlı siteler ajan 59,1, insan ölçülmedi.">
+  <rect x="230" y="17" width="12" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="248" y="27" font-size="13" fill="var(--text-muted)">insan</text>
+  <rect x="300" y="17" width="12" height="12" fill="var(--accent)" />
+  <text x="318" y="27" font-size="13" fill="var(--text-muted)">en iyi ajan</text>
+
+  <text x="20" y="56" font-size="13" fill="var(--text)">web · 812 görev</text>
+  <rect x="230" y="44" width="234.6" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="230" y="58" width="43.2" height="12" fill="var(--accent)" />
+  <text x="600" y="55" font-size="13" text-anchor="end" fill="var(--text-muted)">78,2</text>
+  <text x="600" y="69" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">14,4</text>
+
+  <text x="20" y="112" font-size="13" fill="var(--text)">görsel web · 910 görev</text>
+  <rect x="230" y="100" width="266.1" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="230" y="114" width="49.2" height="12" fill="var(--accent)" />
+  <text x="600" y="111" font-size="13" text-anchor="end" fill="var(--text-muted)">88,7</text>
+  <text x="600" y="125" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">16,4</text>
+
+  <text x="20" y="168" font-size="13" fill="var(--text)">masaüstü · 369 görev</text>
+  <rect x="230" y="156" width="217.2" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="230" y="170" width="36.6" height="12" fill="var(--accent)" />
+  <text x="600" y="167" font-size="13" text-anchor="end" fill="var(--text-muted)">72,4</text>
+  <text x="600" y="181" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">12,2</text>
+
+  <text x="20" y="224" font-size="13" fill="var(--text)">telefon · 116 görev</text>
+  <rect x="230" y="212" width="240" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <rect x="230" y="226" width="91.8" height="12" fill="var(--accent)" />
+  <text x="600" y="223" font-size="13" text-anchor="end" fill="var(--text-muted)">80,0</text>
+  <text x="600" y="237" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">30,6</text>
+
+  <text x="20" y="280" font-size="13" fill="var(--text)">canlı siteler · 643 görev</text>
+  <text x="230" y="279" font-size="13" fill="var(--text-faint)">insan ölçülmedi</text>
+  <rect x="230" y="282" width="177.3" height="12" fill="var(--accent)" />
+  <text x="600" y="293" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">59,1</text>
+
+  <line x1="20" y1="316" x2="700" y2="316" stroke="var(--border)" />
+  <text x="20" y="340" font-size="13" fill="var(--text-muted)">Görev başarısı, yüzde; her satır kendi çalışmasının en iyi ajanı; model ve yıl farklı; 100 = 300.</text>
+  <text x="20" y="360" font-size="13" fill="var(--text-muted)">Canlı sitelerde puan bir hakem modelle verildi; insan hakemle uyum yüzde 85,3.</text>
+</svg>

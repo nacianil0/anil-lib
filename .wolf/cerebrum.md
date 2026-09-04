@@ -222,6 +222,11 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-04] MCP belirtiminin güncel sürümü 2026-07-28: durumsuz istekler, `server/discover`, `tools/list` belirlenimci sıra (önek önbelleği gerekçesi), tasks/roots/sampling/logging kullanımdan kaldırıldı. Seri 49 bu sürümü esas alıyor; belirtim `modelcontextprotocol.io/llms.txt` üzerinden sürüm listesi veriyor.
 - [2026-09-04] Seri terim kararı: "function calling" = **işlev çağrısı** (30'daki "işlev" = programın çağrılabilir parçası; matematiksel "fonksiyon"dan ayrı). "Ajan" terimi 51'e bırakıldı; 47–50 gövdelerinde tanımsız kullanılmadı.
 
+- [2026-09-05] Seri Batch 12 künye kanalı: DBLP arama API'sinin `ee` alanı OpenReview kimliğini ve NeurIPS/PMLR/Anthology birincil sayfasını doğrudan verir (`dblp.org/search/publ/api?q=<başlık>&format=json`); DBLP 503'lere karşı 30 sn bekleyip yeniden dene. OpenReview API (`api2.openreview.net/notes?id=`) bot doğrulaması istiyor; Semantic Scholar API çoğu sorguda boş dönüyor. arXiv API başlık araması (`export.arxiv.org/api/query?search_query=ti:"..."`) yanlış kimlik tuzağına karşı indirme betiğinin yedeği.
+- [2026-09-05] Tarayıcı panosunda şekil doğrulaması: şekli `position:fixed` kaplayıcıya iki kez klonlayıp ikinci kopyaya koyu tema token'larını `style.setProperty('--text', …)` ile inline vermek tek ekran görüntüsünde light+dark verir (`b12fig(i, mode)`); `screenshot` zaman aşımına düşerse `zoom` eylemi tam ekran görüntüsü döndürüyor (bölge kırpma desteklenmiyor); 800×640 pencere iki temayla ~600 px yüksekliğe kadar şekil alır, daha uzun şekilde tek tema.
+- [2026-09-05] Bash aracında çalışma dizini çağrılar arasında kalıcı: bir komuttaki `cd` sonrakileri de taşır; Python Windows'ta `/d/dev/...` yolunu tanımaz (kopyaya `cp` ile taşı). `check-series-svg.cjs` kapanmamış `var(--x"` parantezini görmez; `grep -c 'var(--[a-z-]*"' content/series/assets/*/*.svg` ek kapı.
+- [2026-09-05] AgentBench Tablo 2'deki "#Avg. Round" tur sınırı değil çözüm için beklenen tur sayısıdır (tur sınırı ayrı, OS varsayılan 8); MiniWoB 2017 Tablo 1'de 24,8/34,8 ortalama başarı, 17/26 "çözülmüş" yüzdesidir; Huang ve ark. (2022) "7 household scenes" yedi ev sahnesi (oda değil); CRITIC'in −1,8 puanı text-davinci-003'e ait.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -378,6 +383,13 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-04] Uzun satır etiketi (26+ karakter) ile çubuğu aynı satıra x=180'den başlatma: 50-Şekil 2'de "Claude Opus · kendi cevabı" çubuğa bindi, denetleyici görmedi; etiket uzunluğunu (karakter × 7,15) çubuk başlangıcıyla karşılaştır. Ok üzerine yazılan etiketin bitişini hedef kutunun başlangıcıyla karşılaştır (49-Şekil 1'de "tools/list → ad, açıklama, şema" sunucu kutusuna bindi).
 - [2026-09-04] Bash tool heredoc ile JSON'a Windows yolu yazma: `\\` çiftleri tek `\`'a indi ve `.claude/launch.json` geçersiz oldu; JSON dosyalarını Write ile yaz.
 
+- [2026-09-05] OpenReview kimligini TAHMIN ETME; DBLP `ee` alanindan ya da PDF ust bilgisinden al (Kapoor ve ark. icin tahmin yanlis cikti).
+- [2026-09-05] Bash aracinda komut icinde `cd` ile dizin degistirme; kalici oluyor ve sonraki cagrilarin goreli yollarini kiriyor. Mutlak yol ya da `cd /d/dev/anil-lib;` oneki kullan.
+- [2026-09-05] Seri govde metninde SOZLESME bolumune gonderme yapma ("4. bolumdeki kural"): okur icin anlamsiz; kurali duz yaziya cevir.
+- [2026-09-05] Govdede "Sekil N'de" yazip gorsel satirini eklememe (52) ya da gorseli ekleyip metinde "Sekil N" dememe (54): check-series-content bunu yakalar ama yazim sirasinda goz onunde tut.
+- [2026-09-05] SVG'de `fill="var(--x"` gibi kapanmamis parantez: ET.parse ve denetleyici gecer, tarayicida dolgu gecersiz olur; grep kapisini calistir.
+- [2026-09-05] Bash aracina uzun/tirnakli Python heredoc'u verme; betigi Write ile dosyaya yazip calistir.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -495,3 +507,5 @@ mümkün değil.
 - **Öğrenilen (Edit aracı):** Bash ile `cat`/`sed` ile okunan dosya Edit için "okunmuş" sayılmıyor; Edit öncesi Read aracıyla (offset/limit ile küçük aralık yeter) okumak gerekiyor.
 
 - [2026-09-04] Seri Batch 11: 47'nin başlığı "Araç Kullanımı: Function Calling" → "Araç Kullanımı: İşlev Çağrısı" (karar #121); 48–50 başlıkları korundu; faz başlıkları katmanına yine dokunulmadı. Kaynak politikası: hakemli olmayan altı kalem (Meta/Anthropic belgelendirmesi, MCP belirtimi, WebGPT, Wallace devri) işaretlenerek kullanıldı; MCP-Universe/LiveMCPBench/MCP Safety Audit yalnızca arXiv olduğu için kullanılmadı (karar #127). Build ve dev sunucusu, paralel oturum görünmese de izole kopyada çalıştırıldı.
+
+- [2026-09-05] Seri Batch 12 (`BATCH=4+1`, 51–54): Faz 6 `agents-and-retrieval` ile açıldı (karar #128); başlıklar değişmedi; "ajan" 51'de tanımlandı (karar #129), "grounding" için 45 kaynak sadakati ↔ 54 öğe konumlandırma ayrımı bilinçli; ultracode açık olmasına rağmen Batch 10 talimatı gereği workflow/subagent kullanılmadı, araştırma+yazım+doğrulama ana oturumda; 58'in başlığındaki "sandbox" için 52'de "kum havuzu" kullanıldı, karar 58'in run'ında.

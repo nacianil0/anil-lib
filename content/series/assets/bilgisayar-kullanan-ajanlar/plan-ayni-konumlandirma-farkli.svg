@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Aynı model ve aynı planla dört konumlandırma yönteminin adım başarısı: öğe özellikleri 16,1, işaretli görüntü 20,3, metin listesi 39,1, insan 61,9; canlı sitede görev başarısı: metin listesi 37,8, insan 51,1.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">adım başarısı (yüzde)</text>
+  <text x="372" y="24" font-size="13" font-weight="bold" fill="var(--text)">canlı sitede görev başarısı</text>
+
+  <text x="20" y="58" font-size="13" fill="var(--text)">öğe özellikleriyle</text>
+  <rect x="160" y="45" width="32.2" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="318" y="58" font-size="13" text-anchor="end" fill="var(--text-muted)">16,1</text>
+  <text x="20" y="82" font-size="13" fill="var(--text)">işaretli görüntüyle</text>
+  <rect x="160" y="69" width="40.6" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="318" y="82" font-size="13" text-anchor="end" fill="var(--text-muted)">20,3</text>
+  <text x="20" y="106" font-size="13" fill="var(--text)">metin listesinden</text>
+  <rect x="160" y="93" width="78.2" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="318" y="106" font-size="13" text-anchor="end" fill="var(--text-muted)">39,1</text>
+  <text x="20" y="130" font-size="13" fill="var(--text)">insan konumlandırır</text>
+  <rect x="160" y="117" width="123.8" height="16" fill="var(--accent)" />
+  <text x="318" y="130" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">61,9</text>
+
+  <line x1="352" y1="12" x2="352" y2="150" stroke="var(--border)" />
+
+  <text x="372" y="82" font-size="13" fill="var(--text)">metin listesinden</text>
+  <rect x="512" y="69" width="75.6" height="16" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="0.8" />
+  <text x="670" y="82" font-size="13" text-anchor="end" fill="var(--text-muted)">37,8</text>
+  <text x="372" y="106" font-size="13" fill="var(--text)">insan konumlandırır</text>
+  <rect x="512" y="93" width="102.2" height="16" fill="var(--accent)" />
+  <text x="670" y="106" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">51,1</text>
+
+  <line x1="20" y1="170" x2="700" y2="170" stroke="var(--border)" />
+  <text x="20" y="194" font-size="13" fill="var(--text-muted)">Her satırda planı aynı model yazıyor; değişen, niyetin ekrana bağlanma biçimi.</text>
+  <text x="20" y="214" font-size="13" fill="var(--text-muted)">Sol panel görevler arası bölünme; çubuklar aynı ölçekte (100 = 200 birim).</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Aynı web sayfasının üç gösterimi: sayfa kaynağı, erişilebilirlik ağacı ve ekran görüntüsü; her birinin altında token bedeli ve eylemin biçimi.">
+  <text x="16" y="30" font-size="13" font-weight="bold" fill="var(--text)">sayfa kaynağı</text>
+  <rect x="16" y="44" width="216" height="150" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="26" y="66" font-size="13" fill="var(--text-muted)">&lt;div class="cart"&gt;</text>
+  <text x="38" y="86" font-size="13" fill="var(--text-muted)">&lt;form action="/add"&gt;</text>
+  <text x="50" y="106" font-size="13" fill="var(--text)">&lt;button id="b7"&gt;</text>
+  <text x="62" y="126" font-size="13" fill="var(--text)">Sepete ekle</text>
+  <text x="50" y="146" font-size="13" fill="var(--text)">&lt;/button&gt;</text>
+  <text x="38" y="166" font-size="13" fill="var(--text-faint)">… 1.135 öğe daha</text>
+  <text x="26" y="186" font-size="13" fill="var(--text-muted)">&lt;/div&gt;</text>
+  <text x="16" y="220" font-size="13" fill="var(--text-muted)">~129 bin token / sayfa</text>
+  <text x="16" y="240" font-size="13" fill="var(--text-muted)">eksiksiz, görünmeyeni de taşır</text>
+  <text x="16" y="270" font-size="13" fill="var(--accent)">eylem: seçici ya da yol</text>
+
+  <line x1="244" y1="20" x2="244" y2="290" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="256" y="30" font-size="13" font-weight="bold" fill="var(--text)">erişilebilirlik ağacı</text>
+  <rect x="256" y="44" width="216" height="150" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="266" y="66" font-size="13" fill="var(--text-muted)">[1571] bağlantı "Anasayfa"</text>
+  <text x="266" y="86" font-size="13" fill="var(--text-muted)">[1577] metin kutusu "Ara"</text>
+  <text x="266" y="106" font-size="13" fill="var(--text)">[1582] düğme "Sepete ekle"</text>
+  <text x="266" y="126" font-size="13" fill="var(--text-muted)">[1590] bağlantı "Sepet (2)"</text>
+  <text x="266" y="146" font-size="13" fill="var(--text-faint)">… görünen ve anlamlı</text>
+  <text x="266" y="166" font-size="13" fill="var(--text-faint)">öğeler; ~580</text>
+  <text x="256" y="220" font-size="13" fill="var(--text-muted)">kaynağın alt kümesi, ucuz</text>
+  <text x="256" y="240" font-size="13" fill="var(--text-muted)">yapanın özenine bağlı</text>
+  <text x="256" y="270" font-size="13" fill="var(--accent)">eylem: click [1582]</text>
+
+  <line x1="484" y1="20" x2="484" y2="290" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="496" y="30" font-size="13" font-weight="bold" fill="var(--text)">ekran görüntüsü</text>
+  <rect x="496" y="44" width="208" height="150" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="508" y="56" width="184" height="18" rx="3" fill="var(--surface)" stroke="var(--border)" />
+  <text x="516" y="69" font-size="13" fill="var(--text-faint)">Ara…</text>
+  <rect x="508" y="86" width="90" height="60" rx="3" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="610" y="120" width="82" height="26" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="651" y="137" font-size="13" text-anchor="middle" fill="var(--text)">Sepete ekle</text>
+  <line x1="651" y1="150" x2="651" y2="176" stroke="var(--cool)" stroke-width="1.2" />
+  <line x1="640" y1="176" x2="662" y2="176" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="600" y="184" font-size="13" text-anchor="end" fill="var(--cool)">(651, 133)</text>
+  <text x="496" y="220" font-size="13" fill="var(--text-muted)">~4 bin görsel token / sayfa</text>
+  <text x="496" y="240" font-size="13" fill="var(--text-muted)">eksiksiz; görüntü modeli ister</text>
+  <text x="496" y="270" font-size="13" fill="var(--accent)">eylem: click(651, 133)</text>
+
+  <line x1="16" y1="306" x2="704" y2="306" stroke="var(--border)" />
+  <text x="16" y="330" font-size="13" fill="var(--text-muted)">Aynı ekran: eksiksiz ama pahalı · ucuz ama eksik · eksiksiz ama görüntü modeli ister.</text>
+</svg>
