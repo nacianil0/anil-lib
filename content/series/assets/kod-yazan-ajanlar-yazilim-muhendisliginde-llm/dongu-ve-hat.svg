@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-label="Aynı kod onarım görevi için iki düzen: solda her adımda modelin karar verdiği ajan döngüsü (bul, yeniden üret, düzenle, sına, gönder; test çıktısı gözlem olarak geri döner), sağda sırası sabit üç aşamalı hat (yer bul, onar, doğrula, seç, gönder).">
+  <defs>
+    <marker id="ok-55-dongu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="ok-55-hat" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <text x="140" y="32" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">ajan: her adımda model karar verir</text>
+
+  <rect x="70" y="52" width="140" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="140" y="71" font-size="13" text-anchor="middle" fill="var(--text)">bul: ara, aç</text>
+  <line x1="140" y1="82" x2="140" y2="102" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-55-dongu)" />
+
+  <rect x="70" y="104" width="140" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="140" y="123" font-size="13" text-anchor="middle" fill="var(--text)">yeniden üret</text>
+  <line x1="140" y1="134" x2="140" y2="154" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-55-dongu)" />
+
+  <rect x="70" y="156" width="140" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="140" y="175" font-size="13" text-anchor="middle" fill="var(--text)">düzenle</text>
+  <line x1="140" y1="186" x2="140" y2="206" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-55-dongu)" />
+
+  <rect x="70" y="208" width="140" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="140" y="227" font-size="13" text-anchor="middle" fill="var(--text)">sına</text>
+  <line x1="140" y1="238" x2="140" y2="258" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#ok-55-dongu)" />
+
+  <rect x="70" y="260" width="140" height="30" rx="5" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="140" y="279" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">gönder</text>
+
+  <path d="M 210 223 C 262 223 262 67 212 67" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ok-55-dongu)" />
+  <text x="256" y="128" font-size="13" fill="var(--text-muted)">test çıktısı</text>
+  <text x="256" y="144" font-size="13" fill="var(--text-muted)">= gözlem;</text>
+  <text x="256" y="160" font-size="13" fill="var(--text-muted)">başarısızsa</text>
+  <text x="256" y="176" font-size="13" fill="var(--text-muted)">geri dön</text>
+
+  <text x="140" y="314" font-size="13" text-anchor="middle" fill="var(--text-muted)">dur = gönder</text>
+  <text x="140" y="330" font-size="13" text-anchor="middle" fill="var(--text-muted)">ya da bütçe biter</text>
+
+  <line x1="360" y1="22" x2="360" y2="338" stroke="var(--border)" />
+
+  <text x="540" y="32" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">hat: sıra sabittir, model yalnızca üretir</text>
+
+  <rect x="410" y="52" width="260" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="540" y="70" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">yer bul</text>
+  <text x="540" y="87" font-size="13" text-anchor="middle" fill="var(--text-muted)">dosya → sınıf, işlev → satır</text>
+  <line x1="540" y1="96" x2="540" y2="106" stroke="var(--cool)" stroke-width="1.4" marker-end="url(#ok-55-hat)" />
+
+  <rect x="410" y="108" width="260" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="540" y="126" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">onar</text>
+  <text x="540" y="143" font-size="13" text-anchor="middle" fill="var(--text-muted)">N aday yama, tek geçişte</text>
+  <line x1="540" y1="152" x2="540" y2="162" stroke="var(--cool)" stroke-width="1.4" marker-end="url(#ok-55-hat)" />
+
+  <rect x="410" y="164" width="260" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="540" y="182" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">doğrula</text>
+  <text x="540" y="199" font-size="13" text-anchor="middle" fill="var(--text-muted)">yeniden üretim + gerileme testleri</text>
+  <line x1="540" y1="208" x2="540" y2="218" stroke="var(--cool)" stroke-width="1.4" marker-end="url(#ok-55-hat)" />
+
+  <rect x="410" y="220" width="260" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="540" y="238" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">seç</text>
+  <text x="540" y="255" font-size="13" text-anchor="middle" fill="var(--text-muted)">geçenler arasında çoğunluk oyu</text>
+  <line x1="540" y1="264" x2="540" y2="274" stroke="var(--cool)" stroke-width="1.4" marker-end="url(#ok-55-hat)" />
+
+  <rect x="470" y="276" width="140" height="30" rx="5" fill="var(--surface)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="540" y="295" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">gönder</text>
+  <text x="540" y="330" font-size="13" text-anchor="middle" fill="var(--text-muted)">geri dönüş yok; yanlışsa yanlış gider</text>
+
+  <text x="20" y="360" font-size="13" fill="var(--text-muted)">Sol: 48'in dört düğmesi, 51'in döngüsü; sağ: ajansız üç aşamalı hat.</text>
+  <text x="20" y="378" font-size="13" fill="var(--text-muted)">İkisi de aynı depoda ve aynı gizli testlerle ölçülür.</text>
+</svg>

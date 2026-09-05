@@ -227,6 +227,10 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-05] Bash aracında çalışma dizini çağrılar arasında kalıcı: bir komuttaki `cd` sonrakileri de taşır; Python Windows'ta `/d/dev/...` yolunu tanımaz (kopyaya `cp` ile taşı). `check-series-svg.cjs` kapanmamış `var(--x"` parantezini görmez; `grep -c 'var(--[a-z-]*"' content/series/assets/*/*.svg` ek kapı.
 - [2026-09-05] AgentBench Tablo 2'deki "#Avg. Round" tur sınırı değil çözüm için beklenen tur sayısıdır (tur sınırı ayrı, OS varsayılan 8); MiniWoB 2017 Tablo 1'de 24,8/34,8 ortalama başarı, 17/26 "çözülmüş" yüzdesidir; Huang ve ark. (2022) "7 household scenes" yedi ev sahnesi (oda değil); CRITIC'in −1,8 puanı text-davinci-003'e ait.
 
+- [2026-09-05] Künye kanalları (Batch 13): COLM'un kökü `colm.cc`'ye taşındı ama `colmweb.org/2025/AcceptedPapers.html` hâlâ çalışıyor (R2E-Gym orada); ICLR 2026 bildirileri DBLP'de yokken `proceedings.iclr.cc/paper_files/paper/2026` sayfasında var (MemoryAgentBench, MEM1, HAL, ImpossibleBench); Crossref `query.title` yayın sürümünün başlığını verir (Agentless → "Demystifying LLM-Based Software Engineering Agents", PACMSE/FSE 2025; SWE-Bench+ → AIware 2026); Mem0 DBLP'de ECAI 2025; Spotlighting CEUR-WS (CAMLIS 2024). ACM `doi.org` 403 (bot) bilinen durum.
+- [2026-09-05] Şekil ekran görüntüsü yardımcısı `b13fig`: koyu ve açık token değerlerini okurken `documentElement` üzerindeki `dark`/`sepia` sınıflarını geçici değiştirip sonra geri koy (ilk sürüm sayfa zaten koyuyken açık değerleri koyu okudu). Kaplayıcı iki kopya, 800×640, `max-height:305px`.
+- [2026-09-05] `check-series-content.cjs` ve `entegre-batch.cjs` Batch 13'te sorunsuz: 4 makale tek geçişte entegre; hash senkronu entegrasyondan sonra; 470 test, build 107 sayfa (izole kopya `D:\dev\anil-lib-b13-render`, junction PowerShell `New-Item -ItemType Junction`).
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -390,6 +394,13 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-05] SVG'de `fill="var(--x"` gibi kapanmamis parantez: ET.parse ve denetleyici gecer, tarayicida dolgu gecersiz olur; grep kapisini calistir.
 - [2026-09-05] Bash aracina uzun/tirnakli Python heredoc'u verme; betigi Write ile dosyaya yazip calistir.
 
+- [2026-09-05] PMLR dizin sayfasından bildiri kimliği alırken "başlığa en yakın önceki href" sezgisini kullanma ve kimliği tahmin etme (pan25c yanlıştı, sezgi pan25f verdi, doğrusu pan25g). `<p class="title">` bloğunu regex ile ayrıştırıp başlıktan sonraki ilk `abs` bağlantısını al; DBLP `ee` varsa onu esas al.
+- [2026-09-05] Bir çalışmanın özetindeki sayıyı tablo sayısıyla karşılaştırmadan yazma: AgentDojo özeti "< %66" derken Tablo 3'te Claude 3.5 Sonnet 78,22. Özet çoğu zaman ilk sürümden kalır; tabloyu esas al.
+- [2026-09-05] SVG'de `text-anchor="middle"` metnin genişliğini denetleyici x ± (karakter × 7,15)/2 tahmin eder: 210 birimlik kutuya ortalanmış 38 karakterlik alt satır sığmaz, gösterge etiketi x=558'den 24 karakterle 720'yi aşar. Kutu içi alt satırları ≤ 28 karakter tut, göstergeyi soldan başlat.
+- [2026-09-05] SVG metnini kısalttıktan sonra Markdown alt metnini yeniden eşle (58 Şekil 1'de "açıklama en üste girer" alt metinde kalmıştı); Batch 4/5/6 kuralının yeni yüzü.
+- [2026-09-05] Taslakta "63'te göreceğimiz" gibi numaralı ileri gönderme refleksle kaçıyor; yayın öncesi her makalede ≥ N+1 sayılarını Python ile tara ve konu adıyla ("güvenlik fazında") yaz. SOZLESME §5 numaralı vaadi bağlayıcı sayar.
+- [2026-09-05] Tarayıcı panosunda `browser_batch` içindeki `zoom` da zaman aşımına düşebiliyor (Batch 12'de çalışmıştı). Şekil kaplayıcısını kuran JS'i ve görüntüyü ayrı çağrılarda yap; `screenshot` düşerse standalone `zoom` tam ekran görüntüyü döndürüyor.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -509,3 +520,5 @@ mümkün değil.
 - [2026-09-04] Seri Batch 11: 47'nin başlığı "Araç Kullanımı: Function Calling" → "Araç Kullanımı: İşlev Çağrısı" (karar #121); 48–50 başlıkları korundu; faz başlıkları katmanına yine dokunulmadı. Kaynak politikası: hakemli olmayan altı kalem (Meta/Anthropic belgelendirmesi, MCP belirtimi, WebGPT, Wallace devri) işaretlenerek kullanıldı; MCP-Universe/LiveMCPBench/MCP Safety Audit yalnızca arXiv olduğu için kullanılmadı (karar #127). Build ve dev sunucusu, paralel oturum görünmese de izole kopyada çalıştırıldı.
 
 - [2026-09-05] Seri Batch 12 (`BATCH=4+1`, 51–54): Faz 6 `agents-and-retrieval` ile açıldı (karar #128); başlıklar değişmedi; "ajan" 51'de tanımlandı (karar #129), "grounding" için 45 kaynak sadakati ↔ 54 öğe konumlandırma ayrımı bilinçli; ultracode açık olmasına rağmen Batch 10 talimatı gereği workflow/subagent kullanılmadı, araştırma+yazım+doğrulama ana oturumda; 58'in başlığındaki "sandbox" için 52'de "kum havuzu" kullanıldı, karar 58'in run'ında.
+
+- [2026-09-05] Batch 13 (55–58): 58'in başlığı "Ajan Güvenliği: İstem Enjeksiyonu ve Kum Havuzu" yapıldı (52'nin "kum havuzu" emsali; karar #135); "hata yerini bulma" (fault localization) 54'ün "konumlandırma"sıyla çakışmamak için seçildi; "ara hedef" (checkpoint) 8'in "kontrol noktası"ndan ayrıldı; MemGPT'nin recall storage'ı "mesaj deposu" (pedagojik "geri çağırma" terimi korundu). Kararlar #135–#141 YOL-HARITASI'nda.

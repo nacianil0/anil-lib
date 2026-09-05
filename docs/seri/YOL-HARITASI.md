@@ -142,6 +142,17 @@ ve kapatmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı y
 yapıldı ve Python ile makale başına doğrulandı (metinde 54'ten büyük tek sayılar yüzde ve puan
 değerleridir). Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
 
+**Numarasız ileri işaretler — Batch 13'te verildi.** Ajanın görevler arasında ne hatırlayacağı
+(55 → 56, "bir sonraki makale"); Faz 6'nın cetvellerinin tek soruya toplanması (56 → 57, "bir sonraki
+makale"); kısayolun ajana dışarıdan gösterilmesi (57 → 58, "bir sonraki makale"); onayın ne zaman
+isteneceği, insana devir ve denetim, kalibrasyonun devir ölçüsü olması (58 → 59, "bir sonraki
+makale"; 16'nın kalibrasyon işareti 59'a taşındı); modelin kendi reddi ve gradyanla eniyilenmiş
+saldırılar (58 → güvenlik fazı, 61–70; 63 numarası **açılmadı**, taslakta yazılan "63'te göreceğimiz"
+yayından önce "güvenlik fazında" yapıldı). Batch 13 **yeni bir numaralı koordinat açmadı ve kapatmadı**;
+dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤58) yapıldı ve
+Python ile makale başına doğrulandı (58'den büyük tek sayılar yüzde, puan ve dolar değerleridir).
+Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -215,10 +226,10 @@ değerleridir). Defterde açık kalan en yakın tekil koordinat hâlâ **64**'t�
 52. **Ajan Mimarileri** — tek ajan desenleri, hata döngüleri. `[yayında]`
 53. **Çoklu Ajan Sistemleri: İşbirliği ve Orkestrasyon** — dağıtık iş. `[yayında]`
 54. **Bilgisayar Kullanan Ajanlar** — ekran, tarayıcı, GUI. `[yayında]`
-55. **Kod Yazan Ajanlar: Yazılım Mühendisliğinde LLM** — coding agent'lar.
-56. **Ajan Belleği ve Durum Yönetimi** — 39'un ajan bağlamında geri çağrımı.
-57. **Ajan Değerlendirmesi: Başarıyı Ölçmek** — ajan benchmark'ları.
-58. **Ajan Güvenliği: Prompt Injection ve Sandbox** — saldırı yüzeyi.
+55. **Kod Yazan Ajanlar: Yazılım Mühendisliğinde LLM** — coding agent'lar. `[yayında]`
+56. **Ajan Belleği ve Durum Yönetimi** — 39'un ajan bağlamında geri çağrımı. `[yayında]`
+57. **Ajan Değerlendirmesi: Başarıyı Ölçmek** — ajan benchmark'ları. `[yayında]`
+58. **Ajan Güvenliği: İstem Enjeksiyonu ve Kum Havuzu** — saldırı yüzeyi. `[yayında]`
 59. **İnsan-Ajan İşbirliği: Denetim ve Devir** — human-in-the-loop.
 60. **Ajan Ekonomisi: Maliyet, Gecikme, Güvenilirlik** — üretimde ajanlar.
 
@@ -415,6 +426,10 @@ run'da ilk kez yazıldı.
 - 52 ← 51 (karar kutusu; kısmi gözlenebilirlik; hata döngüsü mekanizması ve tur sınırında yüzde 90 tekrar; "doğru plan, geçersiz eylem"), 46 (her adımda karar veren düzen; yansıma token'ı ≠ öz-yansıma), 47 (geri almalı ağaç 35,3 → 63,8, yalnızca okuma çağrıları), 48 (düzenleme spirali 90,5 → 57,2; kod olarak eylem; yorumlayıcı = dış gözlem), 36 (ağaç araması; değer kestirimi), 37 (değer işlevi; PPO; ödül bir sayı değil bir cümle), 35 (öz-düzeltme dış geri bildirimsiz çalışmaz → yansımadan önce hakemi ölç), 39 (yansıma akrabalığı), 40 (toparlanma dışarıdan gelir → dört sensör), 28 (muhasebe: büyük modeli gerektiğinde çağır), 29 (beceri kütüphanesinde anlamsal arama), 12 (denetimli ince ayar: hızlı modül), 13 (doğrudan tercih optimizasyonu: başarısız iz ↔ uzman izi) `[yayında]`
 - 53 ← 52 (sabit iş bölümü; hata döngüsü; hakem kuralı katlanır), 51 (toplumsallık özelliği; tur sınırı), 21 (pencere sonludur), 44 (ortada kaybolma; parçalama ↔ ajan zinciri), 24 (sistem istemi = rol; örgüt şeması), 33 (kapsama; deneme sayısı), 36 (öz-tutarlılık = oylama; tartışmanın karşılaştırma tabanı), 49 (orkestra şefi: açıklamadan model seçen sistem), 47 (maliyetin yüzde 95,9'u girdi), 48 (üç arayüz), 41 (getirme ↔ ajan zinciri), 30 (şemanın belge hâli), 16 (cetvel bir tasarım ürünüdür: iki sistem birbirinin kümesinde yeniliyor), 7 (karesel dikkat maliyeti ↔ uzunluk çarpı pencere) `[yayında]`
 - 54 ← 48 (arayüz tezi; 1.135 → 580 öğe; üç arayüz; kod ajanına köprü), 51 (model pencereyi görür; doğru plan geçersiz eylem; durma kararı; tekrar), 52 (ders ve beceri kütüphanesi → deneyim belleği), 53 (ajanlar metinle konuşuyordu), 47 (işlev çağrısı yok; araç seçimi = getirme ↔ kimlikle seçim), 37 (eylem kümesi), 40 (web ortamının ilk ölçümü), 45 (kaynak sadakati ile aynı İngilizce kök, başka kavram; hakem model), 50 (dizine sızan yanlış belge ↔ çevre gürültüsü), 21 (pencere bütçesi), 12 (sentetik veri: sayfa kaynağından etiket), 8 (ön eğitim: piksel okumayı bedava almak) `[yayında]`
+- 55 ← 48 (dört düğme ve 4 dolarlık bütçe; depo düzeyi getirme; yorumlayıcı = yarım doğrulayıcı, birim test tam; kod olarak eylem; 1.135 → 580 öğe), 51 (durma kararı; "hızlı başarır, yavaş başarısız olur"; 90,5 → 57,2; Kapoor ilkesi), 52 (hata döngüsü ve dört çıkış; test = dış gözlem; eylem ağacı ve geri alınabilirlik → git; başarısız izler; önce plan ↔ her adımda karar → hat ↔ döngü), 54 (depo bir dünyadır; gözlem test çıktısı; 48'in kod borcu), 53 (yazılım şirketi düzenleri oyuncak görevlerdeydi), 35 (yanlış pozitif; sağlam doğrulayıcı = gizli test), 33 (en iyi-N seçimi; kapsama ↔ altı koşu), 36 (çoğunluk oyu: kırk aday yama), 12 (izlerle ince ayar; sentetik veri = üretilmiş hata), 14 (kolay örnekleri süzme), 16 (cetvel; kirlilik → sızıntı), 40 (ufuk: başaranın süresi), 29/42 (BM25 bulma oranı), 21 (depo pencereye sığmaz), 9 ("yeniden üretme" sözcüğünün ayrımı) `[yayında]`
+- 56 ← 55 (her görev sıfırdan; kap), 51 (dört bellek; durum = pencere + görünmeyen dünya; iç eylem = belleğe yazma; 3.500 token kırpma), 52 (son üç ders; beceri kütüphanesi; yansıma; ağırlıklara yazma), 39 (özet ↔ kesme 9,04/9,16; bellek bir getirme sorunudur; anahtar ≠ değer; üçlü puan; "kötü bellek belleksizlikten kötü"; LongMemEval, LoCoMo), 21 (durumsuzluk), 48 (son beş gözlem 15,0 → 18,0), 47 (belleğe işlev çağrısıyla erişim), 37 (pekiştirmeli öğrenme: iç durum), 29 (embedding yakınlığı ile bağlantı), 41 (dış dizin = anlamsal bellek), 46 (yinelemeli getirme ↔ tek adımda yürüyüş), 44 (ortada kaybolma; parçalama bedeli), 42 (BM25), 54 (web ortamı: iş akışları), 23/12 (isteme koyma ↔ ince ayar), 50 (bağlam–bellek çatışması → seçici unutma) `[yayında]`
+- 57 ← 16 (cetvel bir tasarım ürünüdür; hata payı; MMLU'yu geçen modeller ↔ GAIA), 51 (beş bitiş sınıfı; puan çağrı sayısıyla okunur), 52 (ilerleme oranı; hata döngüsü → 40 adım), 53 (rol oyunuyla iş arkadaşları; iki sistem birbirinin kümesinde), 54 (insanla kıyas; hakem uyumu 85,3), 55 (test zayıflığı; sızıntı; altı koşu; dolar/görev), 56 (dört yetenek cetveli), 47 (pass^k; τ-bench veritabanı; kullanıcıyı canlandıran model), 45 (hakem yanlılıkları), 33 (çıkarım hesabı; kapsama ↔ pass^k), 40 (ufuk ↔ zaman bütçesi), 13 (aşırı optimizasyon → hile), 8 ("kontrol noktası" sözcüğünün ayrımı → ara hedef) `[yayında]`
+- 58 ← 24 (istem enjeksiyonu; talimat hiyerarşisi 32,8 → 95,9 ve 73,7; özel token'lar sıradan metinden üretilemez), 49 (araç zehirleme: açıklama en üste girer; belirtim: her çağrıdan önce onay), 50 (dizine sızan belge → PoisonedRAG), 54 (çevre gürültüsü; ekran ajanı), 57 (kısayol dışarıdan; durum karşılaştırması = AgentDojo yarar işlevi), 47 (çalıştırıcı = araç süzgeci; işlev çağrısı), 46 (düşün–eyle–gözle istemi), 41 (getirici ilgililiğe bakar), 52 (geri alınabilir dünya; önce plan; yansımanın kırılganlığı), 55 (kap; git), 51 (eylem kümesini çevre tanımlar; özerklik ↔ onay), 35 (yanlış pozitif/negatif: dedektör), 13 (doğrudan tercih optimizasyonu: SecAlign), 16 (kalibrasyon → 59) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1171,6 +1186,66 @@ etkin getirme (46 → 51; devir: 65), sorgu yeniden yazma (44 → 51; devir: 56)
 | Öğe konumlandırma; kimlik ↔ koordinat; işaretleme her yerde işe yaramaz | 54 | — | 81, 88 |
 | İnsan–ajan uçurumu ve üç nedeni; gösterim platforma bağlıdır | 54 | — | 57, 59 |
 
+### Batch 13'te gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 55–58'de fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 13'te gerçekleşen |
+|---|---|
+| Ön eğitim ve sentetik veri (8, 12) | 55 (izlerle ince ayar; üretilmiş hata: etiket = test), 56 (geriye dönük kurulum) ✓ |
+| Kolay örnekleri süzme, veri temizliği (14) | 55 (kolay izler eğitimi bozuyor, süzülüyor) ✓ |
+| Doğrudan tercih optimizasyonu (13) | 58 (enjeksiyonlu tercih çiftleri: SecAlign) ✓ |
+| Aşırı optimizasyon, Goodhart (13, 16) | 57 (cetvel hedefe dönüşünce; hile oranı) ✓ |
+| Cetvel bir tasarım ürünüdür; hata payı (16) | 55 (kirlilik, sızıntı), 57 (üç puanlama yolu; koşu sayısı), 58 (üç ölçü birlikte) ✓ **kırk makale aralıklı geri çağırma** |
+| Kalibrasyon (16, 50) | 58'de yalnızca işaretlendi → 59 (devir) |
+| Bağlam penceresi ve durumsuzluk (21) | 55 (depo pencereye sığmaz), 56 (her görev sıfırdan; pencere bir bütçe) ✓ |
+| Sohbet şablonu, sistem istemi, talimat hiyerarşisi, istem enjeksiyonu (24) | 58 (özel token ayraçlar; 32,8 → 95,9; 73,7) ✓ |
+| Getirme ve BM25 (29, 42) | 55 (BM25 bulma oranı 39,83), 56 (BM25 doğru getirmede tam bağlamı geçiyor) ✓ |
+| Yapılandırılmış çıktı ve şema (30) | 57 (durum karşılaştırması belirlenimci), 58 (plan kod olarak; ayraç token'ları) ✓ |
+| Kapsama ve en iyi-N seçimi (33) | 55 (doğrulayıcıyla seçim 20,6 → 32,0), 57 (tek koşu iki cetveli de vermez) ✓ |
+| Yanlış pozitif; sağlam doğrulayıcı (35) | 55 (makul ≠ doğru yama; test = davranışın örneklemi), 58 (dedektörün yanlış pozitifi yararı yer) ✓ |
+| Ağaç araması ve çoğunluk oyu (36) | 55 (kırk aday yama; SWE-Search +%23) ✓ |
+| Markov karar süreci ve pekiştirmeli öğrenme (37) | 56 (iç durumu pekiştirmeli öğrenmeyle birleştirmek) ✓ |
+| Bellek: yazma/okuma/yansıma; üçlü puan; "kötü bellek belleksizlikten kötü" (39) | 56 (**bilinçli formalizasyon**: dört bellek ve dört yetenek; tez üçüncü kez ölçüldü: 21,1–28,3 ↔ 42,3) ✓ |
+| Görev ufku; toparlanma (40) | 55 (başaranın süresi), 57 (zaman bütçesi: 2 saat ↔ 8 saat ↔ 32 saat) ✓ |
+| Dış dizin; dikkat dağıtıcı belge; getirici ilgililiğe bakar (41) | 56 (anlamsal bellek = dış dizin), 58 (PoisonedRAG: beş metin) ✓ |
+| Parçalama ve ortada kaybolma (44) | 56 (getirme parça döndürür, bütünü göremez; notta zaman bir alandır) ✓ |
+| Hakem model ve yanlılıkları (45) | 57 (hakem ajan %90 ↔ tek model %70), 58 (dedektör de bir modeldir) ✓ |
+| Yinelemeli getirme ve köprü varlık (46) | 56 (çizge üzerinde tek adımda yürüyüş; 10–30 kat ucuz) ✓ |
+| İşlev çağrısı; pass^k; kullanıcıyı canlandıran model; girdi token'ı (47) | 56 (belleğe işlev çağrısıyla erişim), 57 (pass^k; benzetilmiş kullanıcının zarı 40/12 → 16/6), 58 (çalıştırıcı = araç süzgeci) ✓ |
+| Dört düğme; kod olarak eylem; depo düzeyi getirme (48) | 55 (döngünün kod hâli; ajansız hat; 1.135 → 580 hatırlatıldı), 56 (son beş gözlem), 58 (plan kod olarak) ✓ |
+| Araç zehirleme; belirtimde onay (49) | 58 (açıklama en üste girer; izinli kanaldan sızma; onay ilkesi) ✓ |
+| Dizine sızan belge (50) | 56 (bağlam–bellek çatışması → seçici unutma), 58 (tasarımla sızdırma %90) ✓ |
+| Ajan tanımı; özerklik; durma; iç eylem; dört bellek; beş bitiş sınıfı; Kapoor ilkesi (51) | 55 (durma = gönder; 90,5 → 57,2), 56 (dört bellek; iç eylem = yazma), 57 (bitiş sınıfları; puan çağrı sayısıyla), 58 (eylem kümesini çevre tanımlar; özerklik ↔ onay) ✓ |
+| Hata döngüsü ve dört çıkış; ders; eylem ağacı; ilerleme oranı; beceri kütüphanesi; ağırlıklara yazma (52) | 55 (git ile geri alma; başarısız izler), 56 (son üç ders; kütüphane → iş akışı), 57 (ilerleme oranı → kısmi puan; 40 adımlık döngü), 58 (yansımanın kırılganlığı; önce plan = araç süzgeci) ✓ |
+| Rol oyunu; yazılım şirketi düzenleri; iki sistem birbirinin kümesinde (53) | 55 (oyuncak görevler ↔ gerçek depo), 57 (rol oyunuyla iş arkadaşları; cetvel ürünü sıralama) ✓ |
+| Ekran ajanı; çevre gürültüsü; insan–ajan uçurumu; hakem uyumu (54) | 55 (depo bir dünyadır), 57 (hakem uyumu 85,3; insan kıyası), 58 (açılır pencere %86; görünmez form) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): araç tanımının token bedeli (47 → 56, 58;
+devir: 60), MCP üçlüsü (49 → 58; belirtimin onay cümlesi anıldı, üçlü anılmadı; devir: 60), sorgu
+yeniden yazma (44 → 56; devir: 65), etkin getirme (46 → 65), tartışmanın denetim için kullanımı (53 → 64),
+öz-yansıma ↔ hakem (52 → 65, 73), ajan sayısı ↔ lojistik eğri (53 → 60).
+
+### Batch 13'te ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 13'te gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Kod ajanı: sorun kaydı + depo → yama; gizli test hakem; altın yama; başarısızdan geçere dönen test | 55 | 56 (her görev sıfırdan), 57 (testin sormadığı) | 60, 103, 104, 109 |
+| Döngü ↔ ajansız hat; sıra modele bağlıdır; hata yeniden üretimi; hata yerini bulma | 55 | 57 (Pareto sınırı), 58 (önce plan = süzgeç) | 60, 110 |
+| Makul yama ≠ doğru yama ≠ iyi yama; test davranışın örneklemidir; çözüm sızıntısı | 55 | 57 (imkânsız test; hile oranı) | 72, 101 |
+| Yürütmeli ↔ yürütmesiz doğrulayıcı; izlerle ince ayar; üretilmiş hata (elli bin görev) | 55 | — | 73, 87, 104, 106 |
+| İnsan hızlanması ölçüme bağlıdır (iki hakemsiz deney: +55,8 ↔ −19) | 55 | 57 (zaman bütçesi) | 59, 101, 115 |
+| Durum yönetimi; pencere bir bütçe, atma bir karar; sayfalama; bellek baskısı; iç durum | 56 | 57 (koşu maliyeti) | 60, 110, 112 |
+| Olaysal / anlamsal / yordamsal bellek; içgörü; not ve bellek evrimi; bilgi çizgesi; iş akışı; geriye dönük kurulum | 56 | — | 112, 115 |
+| Dört bellek yeteneği; getirme dördün birini verir; seçici unutma herkes için zor | 56 | 57 (dört yetenek cetveli) | 72, 112 |
+| Bölümü puanlamanın üç yolu; ara hedef; kısmi puan; hakem ajan | 57 | 58 (durum karşılaştırması; üç ölçü) | 71, 73, 101 |
+| Koşu sayısı; benzetilmiş kullanıcının zarı; iz denetimi; akıl yürütme çabası kazanç garantisi değil | 57 | 58 (629 durum) | 60, 101 |
+| İnsanla kıyas bütçeye bağlıdır; Pareto sınırı; dolarla maliyet; ücretle ağırlıklı puan | 57 | — | 60, 101, 115 |
+| Kısayol cetvelin özelliğidir; tutulan küme; hile oranı; imkânsız test | 57 | 58 (dışarıdan gösterilen kısayol) | 63, 67, 72 |
+| Dolaylı istem enjeksiyonu; kanal × hedef; saldırısız yarar / saldırı altında yarar / hedefli saldırı başarısı | 58 | — | 61, 63, 68 |
+| Savunma katları: istem, eğitim, mimari; "tanımak eğilim, sınırlamak mimari"; araç süzgeci | 58 | — | 62, 63, 64 |
+| Kum havuzu (tanım); en az ayrıcalık; üç katman; yetki etiketi; izinli kanaldan sızma; taklit araçla risk bulma | 58 | — | 59, 60, 68, 70 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -1560,6 +1635,47 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | öğe konumlandırma | (grounding) | 54 | niyetin ekrana bağlanması; 45'teki **kaynak sadakati (groundedness)** ile aynı kök, başka kavram |
 | işaretleme / numaralı kutular | (set-of-mark) | 54 | seyrek sayfada kazandırır, yoğun masaüstünde gürültü |
 
+| yazılım mühendisliği ajanı | (software engineering agent) | 55 | gövdede "kod ajanı" |
+| sorun kaydı | (issue) | 55 | |
+| çekme isteği | (pull request) | 55 | |
+| yama | (patch) | 55 | 5 ve 15'te gündelik anlamıyla glosssuz geçmişti; yazılım terimi olarak kurulumu 55'te |
+| altın yama | (gold patch) | 55 | insanın yazdığı çözüm |
+| başarısızdan geçere dönen test | (fail-to-pass) | 55 | çözüm ölçüsü; deponun önceden geçen testleri ayrıca çalıştırılır |
+| gerileme testi | (regression test) | 55 | 19'daki **unutma** ile karıştırılmaz; düzeltmeyle ilgisiz, önceden geçen testler |
+| hata yeniden üretimi | (bug reproduction) | 55 | 9'daki **yeniden üretme (replication)** ile aynı sözcük, başka nesne; ayrım 55'te açıkça yapıldı |
+| hata yerini bulma | (fault localization) | 55 | 54'teki **öğe konumlandırma** sözcüğünden bilinçli olarak kaçınıldı |
+| birim test | — | 48 | 48 ve 52'de glosssuz; 55'te de glosssuz. **Test takımı** (34, 35) ile eşanlamlı kullanılır |
+| ajansız hat | (agentless pipeline) | 55 | sırası sabit üç aşama; model karar vermez, üretir |
+| makul yama | (plausible patch) | 55 | test takımının bütün girdilerinde doğru çıktı; **doğru yama** hatayı gideren; ayrım Qi ve ark. 2015 |
+| çözüm sızıntısı | (solution leakage) | 55 | çözümün sorun kaydında yazılı olması; 50'deki **dizine sızan belge** ailesi |
+| yürütmeli / yürütmesiz doğrulayıcı | — | 55 | execution-based / execution-free verifier; gövdede parantezsiz; 35'teki doğrulayıcı ailesi |
+| durum yönetimi | (state management) | 56 | pencereye ne girer, dışarıda ne durur, ne zaman geri gelir; 51'deki **durum** üzerine biner |
+| çalışma bağlamı | (working context) | 56 | pencere içi sabit boyutlu not alanı; 51'deki **çalışma belleği** ile karıştırılmaz (onun bir bölmesidir) |
+| bellek baskısı | (memory pressure) | 56 | pencere eşiği aşınca düşen sistem mesajı |
+| sayfalama / mesaj deposu / arşiv | — | 56 | paging / recall storage / archival storage; gövdede parantezsiz; "geri çağırma" sözcüğünden kaçınıldı (18/21 ve 29'daki ayrım) |
+| iç durum | (internal state) | 56 | her turda yeniden yazılan birleştirilmiş metin |
+| olaysal bellek / anlamsal bellek / yordamsal bellek | (episodic / semantic / procedural memory) | 56 | 51'de betimleyici adlarla glosssuz geçmişti; adları 56'da kondu |
+| içgörü | (insights) | 56 | görevler arası ders listesi |
+| bellek evrimi | (memory evolution) | 56 | eski notların yeni notla yeniden yazılması |
+| bilgi çizgesi | (knowledge graph) | 56 | 51'de yalnızca ortam adı olarak glosssuz geçmişti; kurulumu 56'da. "PageRank" Türkçeleştirilmez |
+| iş akışı | (workflow) | 56 | geçmiş bölümlerden çıkarılan yeniden kullanılabilir alt yordam |
+| geriye dönük kurulum | (backward construction) | 56 | talimatın bölümden sonra yazılması |
+| doğru getirme / sınama anında öğrenme / uzun erim kavrayışı / seçici unutma | (accurate retrieval / test-time learning / long-range understanding / selective forgetting) | 56 | dört bellek yeteneği |
+| ara hedef | (checkpoints) | 57 | 8'deki **kontrol noktası** ile aynı İngilizce sözcük, başka nesne; ayrım 57'de açıkça yapıldı |
+| kısmi puan | (partial completion score) | 57 | |
+| hakem ajan | (agent-as-a-judge) | 57 | 45'teki **hakem modelin** iz okuyan, araç kullanan biçimi |
+| benzetilmiş kullanıcı | (simulated user) | 57 | 47'de "kullanıcıyı canlandıran ikinci bir model" olarak glosssuz geçmişti |
+| Pareto sınırı | (Pareto frontier) | 57 | aynı paraya daha yüksek puan ya da aynı puana daha az para veren komşusu olmayan düzenler |
+| tutulan küme | (holdout set) | 57 | |
+| hile oranı | (cheating rate) | 57 | imkânsız görevde geçme oranı; sıfır olmalı |
+| dolaylı istem enjeksiyonu | (indirect prompt injection) | 58 | 24'teki **istem enjeksiyonunun** ajan hâli |
+| saldırısız yarar / saldırı altında yarar / hedefli saldırı başarısı | (— / — / targeted attack success rate) | 58 | üç ölçü birlikte okunur |
+| açılır pencere | (pop-ups) | 58 | |
+| kum havuzu | (sandbox) | 58 | 52 ve 55'te glosssuz geçmişti; tanımı 58'de. Başlıkta da bu karşılık (karar #135) |
+| en az ayrıcalık | (least privilege) | 58 | Saltzer & Schroeder 1975 |
+| yetki etiketi | (capability) | 58 | güvenlik alanındaki anlam; makine öğrenmesindeki "yetenek" ile karıştırılmaması için ilk geçişte söylendi |
+| araç süzgeci / enjeksiyon dedektörü / ayraç / karantina modeli / kap / mikro sanal makine | — | 58 | tool filter / injection detector / delimiter / quarantined LLM / container / microVM; gövdede parantezsiz |
+
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
 kaçırılır (`1\.`) — aksi hâlde Markdown numarayı liste işareti sanıp yutar.
@@ -1581,6 +1697,9 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
 5. **Llama 3 = 15,6 trilyon token** (bütün seride aynı sayı; token/parametre 38,5).
 6. Hakemsiz kaynaklar metinde işaretlenir: Kaplan 2020, Besiroglu 2024, Epoch AI, Llama 3 raporu,
    Ba ve ark. 2016, Keskar ve ark. 2019, Thinking Machines blogu, Kalai ve ark. 2025.
+   Batch 13'te eklenenler (karar #141): Peng ve ark. 2023, Becker ve ark. 2025 (METR), Packer ve ark.
+   2023 (MemGPT), Barres ve ark. 2025, Debenedetti ve ark. 2025 (CaMeL), Beurer-Kellner ve ark. 2025,
+   Anthropic Claude Code belgelendirmesi.
 7. **Snell ve ark.** künyesi ICLR 2025 sürümüne göredir ("…than Scaling Parameters for Reasoning");
    arXiv v1 başlığı farklıdır ("…than Scaling Model Parameters"). Yayın yeri ICLR olduğu için
    başlık da ICLR sürümündendir.
@@ -2669,6 +2788,224 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     çıkarıldı; Set-of-Mark (arXiv) ve GPTSwarm kapsam dışı; "Rise and Potential" derlemesi (Sci. China
     Inf. Sci. 2025) FCS derlemesiyle örtüştüğü için kullanılmadı.
 
+
+135. **Faz 6 ikinci yarı kategori, level ve başlık kararı (Batch 13'te verildi).** 55, 56, 57 ve 58
+    `agents-and-retrieval` ve `intermediate`; karar #128'in varsayılanı sürdü, okuma listesinde 41–58 tek
+    kesintisiz öbek. 58'in başlığı karar #108'in ölçütüyle Türkçeleştirildi: "Ajan Güvenliği: İstem
+    Enjeksiyonu ve Kum Havuzu" — "istem enjeksiyonu" 24'te kurulmuş terim, "kum havuzu" 52'nin glosssuz
+    emsali; `roadmap.json` ve Faz 6 listesi entegrasyondan **önce** güncellendi. 55'in başlığındaki "LLM"
+    kısaltması (karar #128 gibi) korundu; 56 ve 57 başlıkları taslakla birebir aynı.
+136. **Kod ajanı sayıları (Batch 13).** Jimenez ve ark. (ICLR 2024) SWE-bench: 12 depo, ~90.000 çekme
+    isteği → 2.294 görev; kayıt 195,1 kelime; depo 3.010 dosya / 438K satır; altın yama 32,8 satır / 1,7
+    dosya / 3 işlev; 9,1 başarısızdan-geçere test, 120,8 toplam; Claude 2 + BM25 (13k) 1,96; kâhin 4,8;
+    kâhin-daraltılmış 5,93; BM25 27k bulma: tamamı 39,83, hiçbiri ≈ yüzde 49 (Any 51,27); uygulanan
+    yamalar Claude 2 19,6 satır ↔ altın 44,1, dosya 1,0; bütün dosyayı yazdırmak 2,2 ↔ 4,8; Lite 300,
+    Verified 500 (tanımı Yang ve ark. NeurIPS 2025'ten). SWE-agent (48'den): tam küme 12,47, Lite 18,0,
+    245k token = 2,51 $; dosya F1 59,05 ↔ BM25 45,47; altı koşu 17,33–18,67 (ort. 17,94 ± 0,49), pass@6
+    32,67; Tablo 11 medyan eklenen satır: ajan 12 ↔ altın 7 (bütün), 3 ↔ 2 (çözülen); psf__requests-2317
+    örneği (to_native_string). Wang ve ark. (ICLR 2025) OpenHands: Lite 26,0 / 1,10 $ (claude-3-5-sonnet);
+    aynı tabloda SWE-agent 18,0 / 1,67 $, AutoCodeRover 19,0, Aider 26,3; Docker kabı; olay akışı. Zhang
+    ve ark. (ISSTA 2024, s. 1592–1604) AutoCodeRover: Lite 19 (57/300), 195 s, 37k token = 0,43 $;
+    SWE-agent 245k = 2,51 $; geliştirici ort. 2,68 gün; SBFL test varsa. Xia ve ark. (PACMSE 2(FSE)
+    801–824, 2025) Agentless: Lite 32,00 (96/300), 0,70 $, 78.166 token; dosya düzeyi yer bulma 81,67
+    (birleşik); 4 konum kümesi × 10 yama = 40; 40 yeniden üretim testi; çoğunluk oyu; Lite sınıflandırması
+    4,3 / 9,7 / 5,0 / 10,0; Lite-S 249. Tablo 1'den Şekil 2 noktaları: Agentless 32,0/0,70; Moatless
+    Claude 3.5 26,67/0,17; OpenDevin+CodeAct Claude 3.5 26,67/1,14; SWE-agent Claude 3.5 23,0/1,62;
+    AutoCodeRover GPT-4 19,0/0,45; SWE-agent GPT-4 18,0/2,51; CodeR 28,33/3,34; RAG GPT-4 2,67/0,13;
+    SIMA 27,67/0,82. Yang ve ark. (NeurIPS 2025 D&B) SWE-smith Tablo 3 (pass@1): Claude 3.5 Sonnet ile
+    Agentless 40,7/50,8, OpenHands 41,7/53,0, SWE-agent 23,0/33,6; Claude 3.7 Sonnet SWE-agent 48,0/58,2;
+    SWE-agent-LM-32B 30,7/40,2 (+33,4 → taban 6,8); 50k görev / 128 depo; verim Combine 96,9 (10.092),
+    LM Modify 56,0 (17.887, 0,38¢), LM Rewrite 35,0 (4.173, 3,93¢), PR Mirror 33,8 (2.344, 5,53¢),
+    Procedural 40,2 (15.641); 5.016 uzman izi; 50k SWE-bench-tipi görev 50–150 TB; kolay izler süzüldü.
+    Antoniades ve ark. (ICLR 2025) SWE-Search: beş modelde ort. +%23 göreli; GPT-4o 25,7 → 31,0 (Lite);
+    git deposu ile geri dönüş. Le Goues ve ark. (TSE 38(1):54–72, 2012): test takımı hem hatayı hem
+    korunacak davranışı kodlar. Qi ve ark. (ISSTA 2015, s. 24–36): GenProg 414 bildirilen → 110 makul
+    (18 hata); makul olanların çoğu işlevsellik silmeye denk; Kali. Bouzenia ve ark. (ICSE 2025)
+    RepairAgent: 835 Defects4J hatası; 186 makul, 164 doğru, 116 birebir; ortanca 270k token ≈ 14 sent.
+    Xue, Aleithan ve ark. (AIware 2026, s. 332–339) SWE-Bench+: 251 geçen yama → 82 sızıntı (32,67), 78
+    zayıf test (31,08: 32 yanlış, 9 başka dosya, 37 eksik), 91 doğru (76 farklı, 15 daha kapsamlı);
+    12,47 → 3,97; SWE-bench+ (2023-11-01..2024-08-22) 0,55; SWE-RAG GPT-4 0,73, GPT-3.5 0,55; ACR
+    GPT-4o 18,83 → 3,83; kayıtların %94'ü kesim tarihi öncesi. Liu ve ark. (NeurIPS 2023, s. 21558–
+    21572) EvalPlus: 164 görev; 9,6 → 764,1 test (80×); pass@1 en çok %19,3 azalma (pass@100 %28,9);
+    GPT-4 %13,1, ChatGPT %12,6; cevap anahtarlarının >%10'u yanlış. Jain ve ark. (ICLR 2025)
+    LiveCodeBench: kesim sonrası düşüş (DeepSeek, GPT-4-O); HumanEval'e aşırı uyan ince ayarlı grup. Pan
+    ve ark. (ICML 2025, PMLR 267 pan25g) SWE-Gym: 2.438 görev / 11 depo; 491 iz; 32B: Lite 3,0 → 15,3,
+    Verified 7,0 → 20,6; doğrulayıcıyla en iyi-N Verified 32,0, Lite 26,0; kendi kendini iyileştirme
+    19,7; doyma yok. Jain ve ark. (COLM 2025) R2E-Gym: 32B pass@1 34,4; yürütmeli ↔ yürütmesiz
+    doğrulayıcı 42–43'te doyuyor, melez 51 (Best@26). Becker ve ark. (METR 2025, hakemsiz): 16
+    geliştirici, 246 kayıt, ort. 2,0 saat; depo ort. 10 yıl, >1,1M satır; kişi 5 yıl / 1.500 katkı;
+    öngörü −%24, sonradan tahmin −%20, ölçüm +%19; öneri kabulü <%44; zamanın %9'u gözden geçirme.
+    Peng ve ark. (2023, hakemsiz): 95 geliştirici, JavaScript HTTP sunucusu, %55,8 daha hızlı (GA
+    %21–89). Ziegler ve ark. (CACM 67(3):54–63, 2024): 2.047 anket; kabul oranı algılanan üretkenliğin
+    en iyi öngörücüsü. **Seri türetimi:** "10 test → 80 kat" ve "üçte bir / üçte bir" oranları
+    kaynaktaki sayılardan (82/251, 78/251) yuvarlanarak söylendi.
+137. **Ajan belleği sayıları (Batch 13).** Packer ve ark. (2023, hakemsiz) MemGPT: ana bağlam = sistem
+    talimatları + çalışma bağlamı + kuyruk (başında özyinelemeli özet); dış bağlam = mesaj deposu + arşiv;
+    uyarı %70, boşaltma %100, atılan pay örnekte %50; DMR: GPT-3.5 38,7 → 66,9; GPT-4 32,1 → 92,5; GPT-4
+    Turbo 35,3 → 93,4. Zhou, Qu ve ark. (ICLR 2026) MEM1: iç durum <IS>; 16 hedefli çok atlamalı soruda
+    MEM1-7B, Qwen2.5-14B'ye göre 3,5× başarı, 3,7× az bellek; tepe token %27,1, süre %29,3; tepe token
+    neredeyse sabit. Zhao ve ark. (AAAI 2024, 38(17):19632–19642) ExpeL: deneyim havuzu → içgörüler;
+    HotpotQA 39 ↔ Reflexion R3 40; ALFWorld 59 ↔ 54; Tablo 2 ALFWorld R0→R3: ReAct+Reflexion 40,3 →
+    54,4, ExpeL yalnızca geçmiş 54,5 → 60,4, ExpeL+Reflexion 59,0 → 64,2; içgörü/geçmiş ayrımı HotpotQA
+    36/31, ALFWorld 50/55. Chhikara ve ark. (ECAI 2025) Mem0: çıkarma (özet + son mesajlar) + güncelleme
+    (ekle/güncelle/sil/dokunma); kendi LoCoMo ölçümleri (J 66,88 ↔ tam bağlam 72,90) makalede
+    kullanılmadı. Xu ve ark. (NeurIPS 2025) A-Mem: not (içerik, zaman, anahtar sözcük, etiket, bağlam,
+    embedding, bağlantılar); bağlantı kurma + bellek evrimi; LoCoMo GPT-4o-mini F1: zamansal LoCoMo 18,41 /
+    MemGPT 25,52 / A-Mem 45,85; çok atlamalı 25,02 / 26,65 / 27,02; soru başına token 16.910 / 16.977 /
+    2.520; ablasyon (bağlantı + evrim yok) çok atlamalı 9,65, zamansal 24,55. Zhong ve ark. (AAAI 2024,
+    38(17):19724–19731) MemoryBank: Ebbinghaus unutma eğrisi, geri çağrılan kaydın gücü artar. Gutiérrez
+    ve ark. (NeurIPS 2024) HippoRAG: üçlü çıkarımı → bilgi çizgesi, kişiselleştirilmiş PageRank; R@5
+    2Wiki ColBERTv2 68,2 → 89,1, MuSiQue 49,2 → 51,9, HotpotQA 79,3 → 77,7; IRCoT'a göre 10–30× ucuz,
+    6–13× hızlı; IRCoT+HippoRAG 2Wiki R@5 93,9. Gutiérrez ve ark. (ICML 2025, PMLR 267 gutierrez25a)
+    HippoRAG 2: yedi kümede ort. F1 NV-Embed-v2 57,0 → 59,8; HippoRAG 53,1; 2Wiki 71,0; NQ 63,3; "%7
+    çağrışım kazancı". Wang ve ark. (ICML 2025, PMLR 267 wang25bx) AWM: WebArena GPT-4 BrowserGym 23,5 →
+    35,5 (+%51,1), SteP (insan yazımı iş akışı) 33,0; adım 7,9 → 5,9; Mind2Web çapraz görev +%24,6;
+    şablon dışı alt küme 33,2. Su ve ark. (ICLR 2025) Learn-by-interact: geriye dönük kurulum; OSWorld
+    Claude 3.5 ICL 12,4 → 22,5; WebArena Codestral-22B ince ayar 4,7 → 24,2; en çok +12,2 ICL, +19,5
+    eğitim, geriye dönük kurulum +14,0. Hu, Wang & McAuley (ICLR 2026) MemoryAgentBench: dört yetenek;
+    2.071 soru; 103k–1,44M token; parça parça verme; GPT-4o-mini tabanıyla (AR/TTL/LRU/SF/genel): tam
+    bağlam 49,2/48,6/46,2/25,0/42,3; BM25 60,5/44,5/35,6/25,5/41,5; HippoRAG-v2 65,1/35,8/36,2/29,5/41,6;
+    MemGPT 34,3/40,8/22,4/15,5/28,3; Mem0 32,6/21,2/20,7/10,0/21,1; Zep 24,0; Cognee 20,6; SF çok
+    atlamalı ≤ 28; GPT-5-mini (400K) 60,6; Claude 3.7 Sonnet 49,6. 39'un "kötü bellek" tezi üçüncü kez.
+138. **Ajan değerlendirmesi sayıları (Batch 13).** Mialon ve ark. (ICLR 2024) GAIA: 466 soru (166
+    geliştirme + 300 gizli cevap); insan %92, GPT-4 + eklentiler %15; düzey 1 < %30, düzey 3 %0; insan
+    6–17 dk. Yao ve ark. (ICLR 2025, 47'den) τ-bench: veritabanı durumu + kullanıcıya çıktılar; pass^1
+    gpt-4o 61,2 / 35,2; pass^8 < 25; görev başına ≥ 3 koşu. Barres ve ark. (2025, hakemsiz) τ²-bench:
+    perakende kullanıcı benzetimi hata %40 (kritik %12) ↔ telekom %16 (kritik %6); çift denetime geçince
+    pass^1 ≈ 20 puan düşüş; yeni alanda pass^1 gpt-4.1 34, o4-mini 42, claude-3.7 49. Zhuge ve ark.
+    (ICML 2025, PMLR 267 zhuge25a) Agent-as-a-Judge: DevAI 55 görev / 365 gereksinim; GPT-Pilot ve
+    OpenHands ≈ %29 gereksinim, 1 tam görev; hakem ajan ↔ üç insan uzlaşısı %90, LLM-hakem %70; süre
+    %97,72, maliyet %97,64 daha az. Xu ve ark. (NeurIPS 2025 D&B) TheAgentCompany: 175 görev; ara
+    hedefler ve denetçiler; kısmi puan = 0,5 × (sonuç/toplam) + 0,5 × tam; OpenHands ile Gemini-2.5-Pro
+    30,3 / 39,3 / 27,2 adım / 4,2 $; Claude-3.7-Sonnet 26,3 / 36,4 / 27,8 / 4,1; Gemini-2.0-Flash 11,4 /
+    19,0 / 39,9 / 0,6; GPT-4o 8,6 / 16,7 / 14,6 / 1,3; Llama-3.3-70b 6,9 / 12,8 / 20,9 / 0,9; Qwen-2.5-72b
+    5,7 / 11,8 / 24,0 / 1,5; OWL RolePlay 4,0; "sahte kısayol". Kapoor, Stroebl ve ark. (ICLR 2026) HAL:
+    21.730 koşu, 9 ölçüt × 9 model, ≈ 40.000 $; 36 karşılaştırmanın 21'inde yüksek akıl yürütme çabası
+    doğruluğu artırmıyor; 2,5 milyar token'lık iz; kısayollar (ölçütü HuggingFace'te arama, yanlış kredi
+    kartı), τ-bench iskelesinde hata. Wijk ve ark. (ICML 2025, PMLR 267 wijk25a) RE-Bench: 7 ortam; 61
+    uzman, 71 sekiz saatlik deneme; %82 sıfır üstü, %24 referansa eşit/üstü; 2 saatte ajan 4×, 8 saatte
+    insan geçiyor, 32 saatte çok üstte; ajan 10× hızlı çözüm; sömürü koşuları sıfır puan. Kapoor ve ark.
+    (TMLR 2025, 51'den): Pareto; HumanEval'de üç basit taban (yeniden deneme, ısınma, yükseltme) SOTA
+    ajanlara yetişiyor; LATS ısınmanın > 50 katı; NovelQA maliyet 10 kat yanlış; tutulan küme dört
+    genellik düzeyi; WebArena tekrarlanabilirlik. Miserendino ve ark. (ICML 2025, PMLR 267
+    miserendino25a) SWE-Lancer: 1.488 görev, 1.000.000 $; Diamond 500.800 $; Claude 3.5 Sonnet IC SWE
+    %26,2, yönetim %44,9; Diamond 208.050 $, tam küme > 400.000 $; 50 $ ↔ 32.000 $ aralığı. Zhong,
+    Raghunathan & Carlini (ICLR 2026) ImpossibleBench: hile oranı = imkânsız görevde geçme; GPT-5 tek
+    değer bozuk SWE-bench %76, LiveCodeBench %2,9; çelişkili SWE-bench %54,0; dört yol (test değiştirme,
+    özel durum, işleç ezme, durum kaydı); katı istem çelişkili LCB'de 92 → 1; yetenekli modeller daha
+    çok, yeni Claude'lar 3.7'den az. Aday olup kullanılmayanlar: MLAgentBench (ICML 2024), AssistantBench
+    (EMNLP 2024), BrowseComp, Vending-Bench (ikisi arXiv), Yehudai ve ark. derlemesi (Findings ACL 2026).
+139. **Ajan güvenliği sayıları (Batch 13).** Greshake ve ark. (AISec@CCS 2023): dolaylı istem enjeksiyonu;
+    pasif / etkin / kullanıcı-güdümlü / gizli; hedefler bilgi toplama, dolandırıcılık, sızma, zararlı
+    yazılım, içerik manipülasyonu, erişilebilirlik; Bing Chat gösterimi. Zhan ve ark. (Findings ACL 2024)
+    InjecAgent: 17 kullanıcı aracı × 62 saldırgan durumu = 1.054; doğrudan zarar / veri sızdırma; GPT-4
+    ReAct %24 → "hacking prompt" ile %47; ince ayarlı GPT-4 %7,1. Debenedetti ve ark. (NeurIPS 2024 D&B)
+    AgentDojo: 4 ortam (Workspace 24 araç / 40 görev / 6 hedef; Slack 11/21/5; Travel 28/20/7; Banking
+    11/16/9), 70 araç, 97 görev, 27 hedef, 629 durum; ölçüler saldırısız yarar / saldırı altında yarar /
+    hedefli ASR; Tablo 3: Claude 3.5 Sonnet 78,22 / 51,19 / 33,86; GPT-4o 69,00 / 50,08 / 47,69; Claude
+    3 Opus 66,61 / 52,46 / 11,29; yarar kaybı çoğunlukla 10–25 puan; Tablo 4 (GPT-4o hedefli): TODO 3,66,
+    ignore previous 5,41, InjecAgent 5,72, important message 57,7; Tablo 5 savunmalar (yarar / saldırı
+    altında / hedefli ASR): yok 69,0 / 50,01 / 57,69; ayraç 72,66 / 55,64 / 41,65; PI dedektörü 41,49 /
+    21,14 / 7,95; istemi tekrarlama 85,53 / 67,25 / 27,82; araç süzgeci 73,13 / 56,28 / 6,84; 629 durum
+    GPT-4o'da ≈ 35 $. Özet metnindeki "< %66" eski sürüm; tablo esas alındı. Zou ve ark. (USENIX Sec
+    2025) PoisonedRAG: milyonlarca metinli veritabanına soru başına 5 metin → %90. Zhang, Yu & Yang (ACL
+    2025) açılır pencere: OSWorld + VisualWebArena; tıklama %86, görev başarısı −%47; "yok say" ve
+    "reklam" etiketi işe yaramıyor. Wu ve ark. (ICLR 2025): piksellerin < %5'i ile hedefli ASR ≤ %67;
+    altyazı bileşeni en zayıf; yansımalı ajan +%20 göreli ASR; değerlendirici saldırılmazsa −%23. Liao
+    ve ark. (ICLR 2025) EIA: belirli PII %70, tam istek %16 (Relaxed). Evtimov ve ark. (NeurIPS 2025 D&B)
+    WASP: kısmi başarı ≤ %86, saldırgan görevi tamamlama %0–17. Hines ve ark. (CAMLIS 2024, CEUR 3920)
+    Spotlighting: ayraç / veri işaretleme / kodlama; ASR > %50 → < %2. Liu ve ark. (USENIX Sec 2024): 5
+    saldırı + birleşik saldırı; 10 savunma; önleme türleri sınırlı; bilinen-cevap tespiti çoğunlukla
+    etkili, bazı durumlarda yüksek FNR. Chen ve ark. (USENIX Sec 2025) StruQ: özel ayraç token'ları +
+    ön katman süzgeci + yapılandırılmış talimat ince ayarı; elle saldırılar < %2; GCG Llama'da 97 → 58.
+    Chen ve ark. (CCS 2025, DOI 10.1145/3719027.3744836) SecAlign: tercih çiftleri (DPO); eniyilenmiş
+    saldırı < %10, eniyilenmemiş %0; yarar korunur. Debenedetti ve ark. (2025, hakemsiz) CaMeL:
+    ayrıcalıklı model plan = kod, karantina modeli, yorumlayıcı, yetki etiketleri; AgentDojo'da kanıtlı
+    güvenlikle %77 ↔ savunmasız %84. Beurer-Kellner ve ark. (2025, hakemsiz): altı kalıp (eylem seçici,
+    önce plan, map-reduce, ikili model, önce kod, bağlam küçültme); ilke: güvenilmeyen metni okuyan ajan
+    sonuçlu eylemi tetikleyememeli. Saltzer & Schroeder (Proc. IEEE 63(9):1278–1308, 1975): en az
+    ayrıcalık. Anthropic Claude Code belgelendirmesi (**hakemsiz**): salt okunur başlangıç; çalışma dizini
+    + eklenen dizinlere yazma; kabuk ayar dosyaları ve sistem ikilileri korunur; ağ vekil üzerinden alan
+    adı izin listesi; bubblewrap + seccomp; "Bash command (unsandboxed)" istemi. Agache ve ark. (NSDI
+    2020) Firecracker: KVM mikro sanal makine; < 5 MB bellek, < 125 ms açılış, saniyede 150; jailer ile
+    seccomp/cgroups/namespaces. Ruan ve ark. (ICLR 2024) ToolEmu: 36 araç takımı, 144 senaryo; taklit
+    araç + saldırgan taklit; başarısızlıkların %68,8'i gerçek dünyada geçerli; en güvenli ajan %23,9.
+    Andriushchenko ve ark. (ICLR 2025) AgentHarm: 110 temel / 440 görev, 11 zarar sınıfı, %30 gizli;
+    GPT-4o zarar 48,4 / ret 48,9; Claude 3.5 Sonnet 13,5 / 85,2 → kalıp saldırısıyla 68,7 / 16,7.
+140. **Terim kararları (Batch 13).** "Hata yeniden üretimi" (bug reproduction), 9'daki "yeniden üretme
+    (replication)" ile aynı sözcük olduğu 55'te açıkça söylendi; "hata yerini bulma" (fault localization),
+    54'ün "öğe konumlandırma" sözcüğüyle çakışmamak için "konumlandırma" kullanılmadı; "ara hedef"
+    (checkpoint), 8'deki "kontrol noktası" ile ayrım 57'de yapıldı; "yetki etiketi" (capability) güvenlik
+    anlamıyla, "yetenek" kullanılmadı; MemGPT'nin "recall storage"ı için "mesaj deposu" seçildi ("geri
+    çağırma" serinin pedagojik terimi); Spotlighting'in "datamarking"i için 54'ün "işaretleme"si
+    kullanılmadı, betimleyici ifade yazıldı; "kum havuzu" 58'de tanımlandı ve başlığa girdi; "birim test"
+    48'in glosssuz emsaliyle sürdü. Yayımlanmış bir ön çalışmanın (SWE-bench+) yazar sırası Crossref'in
+    yayın sürümüne göre yazıldı (Xue, Aleithan, …); Agentless'ın künyesi yayın sürümünün başlığıyla
+    ("Demystifying LLM-Based Software Engineering Agents"), gövdede "ajansız hat" adıyla verildi.
+141. **Kaynak politikası (Batch 13).** 55'te 18, 56'da 11, 57'de 10, 58'de 19 kaynak (SWE-agent ve
+    Kapoor ve ark. önceki makalelerden devir). Hakemsiz olup işaretlenerek kullanılanlar: Peng ve ark.
+    2023 ve Becker ve ark. 2025 (METR) — 55; Packer ve ark. 2023 (MemGPT) — 56; Barres ve ark. 2025
+    (τ²-bench) — 57; Debenedetti ve ark. 2025 (CaMeL), Beurer-Kellner ve ark. 2025 ve Anthropic Claude
+    Code belgelendirmesi — 58. Klasik temel eserler: Saltzer & Schroeder 1975, Le Goues ve ark. 2012, Qi
+    ve ark. 2015. Karar #113 uygulandı: Agentless DBLP'de yalnızca CoRR, Crossref'te PACMSE/FSE 2025
+    (DOI 10.1145/3715754); SWE-Bench+ Crossref'te AIware 2026 (DOI 10.1145/3805760.3814924); R2E-Gym
+    COLM 2025 kabul listesiyle (colmweb.org/2025/AcceptedPapers.html; colmweb.org kökü colm.cc'ye
+    yönlendiriyor) doğrulandı, bağlantı arXiv; Mem0 DBLP'de ECAI 2025 (DOI 10.3233/FAIA251160);
+    Spotlighting CAMLIS 2024 (CEUR-WS 3920); MemoryAgentBench, MEM1, HAL ve ImpossibleBench DBLP'de yok,
+    `proceedings.iclr.cc/paper_files/paper/2026` sayfasından ICLR 2026 olarak doğrulandı;
+    Learn-by-interact aynı sitenin 2025 sayfasından; SWE-Gym, AWM, HippoRAG 2, Agent-as-a-Judge, RE-Bench
+    ve SWE-Lancer PMLR 267 dizin sayfası ayrıştırılarak (başlık → sonraki `abs` bağlantısı; ilk tahmin
+    pan25c yanlıştı, doğrusu pan25g). OpenReview kimlikleri DBLP `ee`'den (SWE-Search G7sIFXugTX,
+    LiveCodeBench chfJJYC3iL, GAIA fibxvahvs3, ToolEmu GEcwtMk1uA, AgentHarm AC5n7xHuR1, Dissecting
+    YauQYh2k1g, EIA xMOLUzo2Lk, LongMemEval pZiyCaVuti). ACM `doi.org` bağlantıları bot'a 403 döner
+    (bilinen). Aday olup **kullanılmayanlar:** SWE-bench Multimodal (ICLR 2025), SWE-RL (NeurIPS 2025),
+    HumanEval (arXiv), Ziegler ve ark. MAPS 2022 (CACM sürümü kullanıldı), Zep, LLMLingua (EMNLP 2023),
+    MLAgentBench (ICML 2024), AssistantBench (EMNLP 2024), BrowseComp, Vending-Bench, Yehudai ve ark.
+    (Findings ACL 2026), Agent-SafetyBench (arXiv), R-Judge (Findings EMNLP 2024), Progent (arXiv), Ma ve
+    ark. çevre dikkat dağıtıcıları (ACL 2025), Perez & Ribeiro 2022; Wallace ve ark. 24'ten hatırlatma
+    olarak anıldı, yeniden listelenmedi.
+
+## Batch 13 öğrenme notları (yazım tamamlandı)
+
+- **Faz 6'nın ikinci yarısı: kod (55) → bellek (56) → ölçüm (57) → güvenlik (58).** 54'ün "kod" devri 55'te
+  SWE-bench'in kuruluşuyla ödendi; 55'in "her görev sıfırdan" kapanışı 56'yı, 56'nın "her ölçüm bir cetvel
+  seçti" kapanışı 57'yi, 57'nin "kısayolu ajana bir başkası gösterirse" kapanışı 58'i çağırdı; 58 onay ve
+  devir sorusuyla 59'a bağlandı. 39'un dört belleği 56'da bilinçli formalizasyonla adlandırıldı (olaysal /
+  anlamsal / yordamsal) ve 39'un "kötü bellek belleksizlikten kötü" tezi üçüncü kez, parça parça verilen
+  geçmişte ve dört yetenekte ölçüldü. 58'in başlığı entegrasyondan önce Türkçeleştirildi (karar #135).
+- **Araştırma yine tamamen ana oturumda; ultracode açık, workflow/subagent kullanılmadı** (cerebrum
+  2026-09-03). 72 aday PDF tek betikle (`artifacts/b13-research/fetch-b13.py`, başlık eşleştirmeli;
+  yalnızca GenProg SSL'de takıldı, http ile alındı); DBLP `ee` taraması arka planda 72 başlık için koştu
+  (`dblp-b13.py`, 12 sn aralık, 500/503 hataları elle yeniden denendi). Yeni künye kanalları: Crossref
+  `query.title` (yayın sürümü başlığı: Agentless → PACMSE/FSE 2025; SWE-Bench+ → AIware 2026),
+  `proceedings.iclr.cc` 2025/2026 sayfaları (DBLP'de henüz olmayan ICLR 2026 bildirileri),
+  `colmweb.org/2025/AcceptedPapers.html` (kök colm.cc'ye yönlendiriyor), PMLR 267 dizin sayfasının
+  `<p class="title">` ayrıştırması (ilk tahmin pan25c yanlıştı → pan25g; kural: kimlik tahmin edilmez).
+- **Sayı tuzakları:** AgentDojo özetindeki "< %66" ilk sürümden; Tablo 3'te 78,22 — tablo esas alındı.
+  SWE-bench'in "74,5 ↔ 30,1 satır" cümlesi Tablo 8 ile uyuşmuyor; tablo (19,6 ↔ 44,1) kullanıldı.
+  SWE-Bench+'ın 251 yaması 12,47'nin tamamı değil; oranlar kaynağın verdiği biçimde (32,67 / 31,08)
+  aktarıldı, 251/2.294 hesabı yapılmadı. EvalPlus'ın "%13,1" değeri puan değil göreli azalma.
+  Ziegler ve ark.'nın MAPS 2022 sürümü yerine CACM 2024 sürümü künyelendi.
+- **Terim kararları:** "hata yeniden üretimi" (9'daki replication ayrımı gövdede), "hata yerini bulma"
+  (54'ün konumlandırmasıyla çakışmadı), "ara hedef" (8'in kontrol noktası ayrımı), "yetki etiketi"
+  (capability), "mesaj deposu" (recall storage; pedagojik "geri çağırma" korundu), "kum havuzu" başlıkta.
+  Numaralı ileri gönderme taraması bir kaçağı yakaladı: 58'de "63'te göreceğimiz" → "güvenlik fazında".
+- **SVG:** 12 yeni şekil; denetleyici üç taşma yakaladı (ortalanmış kutu içi alt satırlar 210 birimlik kutuya
+  sığmadı; gösterge etiketi x=558'den taştı; 100 karakterlik alt not), hepsi kısaltılıp alt metinler
+  SVG'ye göre yeniden eşlendi. 56-Şekil 3 ve 58-Şekil 2 (dört/beş gruplu çubuklar) 500 ve 470 birim
+  yükseklikte; 800×640 pencerede iki temayla sığmadıkları için tek temada da bakıldı. Şekil görüntüsü
+  yardımcısı `b13fig` (koyu/açık token değerlerini `documentElement` sınıfını geçici değiştirerek okur;
+  ilk sürüm sayfa zaten koyuyken iki kopyayı da koyu çizdi ve düzeltildi). `browser_batch` içinde
+  `zoom`/`screenshot` bu run'da zaman aşımına düştü; JS kaplayıcı ve görüntü ayrı çağrılarda alındı.
+- **Kelime sayısı (wc -w, frontmatter ve kaynakça dâhil):** 55 4.348, 56 3.185, 57 3.362, 58 3.644;
+  denetleyicinin düzyazı sayımı dördünde de 2.000–3.500 bandında (uyarı yok). 55 kaynakça yükü ağır
+  (18 kalem); ileride kod ajanı konusu bölünürse APR klasikleri (Le Goues, Qi) 104'e taşınabilir.
+- **Render doğrulaması izole kopyada** (`D:\dev\anil-lib-b13-render`, junction + kapısız dev, 3210):
+  build 107 sayfa (exit 0), 59 seri rotası 200 (48,5 sn), dört makale × üç genişlik × üç temada DOM
+  ölçümü temiz (badFills ve outOfBox boş, taşma 0, sızıntı yok, figScroll false), 12 şeklin tamamı
+  light/dark ekran görüntüsüyle gözle doğrulandı; ana worktree'de typecheck (0) ve 470 test.
+- **Bash `cd` kalıcılığı** bu run'da tekrar etmedi (her komut `cd /d/dev/anil-lib;` ile başladı); Python
+  Windows yolu `/d/dev/...` tanımadığı için PMLR sayfası `D:\...` ile açıldı.
 
 ## Batch 12 öğrenme notları (yazım tamamlandı)
 

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-label="Dört yetenek grubunda beşer yatay çubuk: doğru getirme, sınama anında öğrenme, uzun erim kavrayışı ve seçici unutma için tam bağlam, BM25 getirme, HippoRAG-v2, MemGPT ve Mem0 puanları; tam bağlam 49,2, 48,6, 46,2 ve 25,0; Mem0 32,6, 21,2, 20,7 ve 10,0.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">doğru getirme</text>
+  <text x="20" y="43" font-size="13" fill="var(--text)">tam bağlam, bellek yok</text>
+  <rect x="250" y="33" width="147.6" height="12" fill="var(--accent)" />
+  <text x="560" y="43" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">49,2</text>
+  <text x="20" y="59" font-size="13" fill="var(--text)">BM25 getirme</text>
+  <rect x="250" y="49" width="181.5" height="12" fill="var(--cool)" />
+  <text x="560" y="59" font-size="13" text-anchor="end" fill="var(--text-muted)">60,5</text>
+  <text x="20" y="75" font-size="13" fill="var(--text)">HippoRAG-v2</text>
+  <rect x="250" y="65" width="195.3" height="12" fill="var(--cool)" />
+  <text x="560" y="75" font-size="13" text-anchor="end" fill="var(--text-muted)">65,1</text>
+  <text x="20" y="91" font-size="13" fill="var(--text)">MemGPT</text>
+  <rect x="250" y="81" width="102.9" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="91" font-size="13" text-anchor="end" fill="var(--text-muted)">34,3</text>
+  <text x="20" y="107" font-size="13" fill="var(--text)">Mem0</text>
+  <rect x="250" y="97" width="97.8" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="107" font-size="13" text-anchor="end" fill="var(--text-muted)">32,6</text>
+
+  <text x="20" y="134" font-size="13" font-weight="bold" fill="var(--text)">sınama anında öğrenme</text>
+  <text x="20" y="153" font-size="13" fill="var(--text)">tam bağlam, bellek yok</text>
+  <rect x="250" y="143" width="145.8" height="12" fill="var(--accent)" />
+  <text x="560" y="153" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">48,6</text>
+  <text x="20" y="169" font-size="13" fill="var(--text)">BM25 getirme</text>
+  <rect x="250" y="159" width="133.5" height="12" fill="var(--cool)" />
+  <text x="560" y="169" font-size="13" text-anchor="end" fill="var(--text-muted)">44,5</text>
+  <text x="20" y="185" font-size="13" fill="var(--text)">HippoRAG-v2</text>
+  <rect x="250" y="175" width="107.4" height="12" fill="var(--cool)" />
+  <text x="560" y="185" font-size="13" text-anchor="end" fill="var(--text-muted)">35,8</text>
+  <text x="20" y="201" font-size="13" fill="var(--text)">MemGPT</text>
+  <rect x="250" y="191" width="122.4" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="201" font-size="13" text-anchor="end" fill="var(--text-muted)">40,8</text>
+  <text x="20" y="217" font-size="13" fill="var(--text)">Mem0</text>
+  <rect x="250" y="207" width="63.6" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="217" font-size="13" text-anchor="end" fill="var(--text-muted)">21,2</text>
+
+  <text x="20" y="244" font-size="13" font-weight="bold" fill="var(--text)">uzun erim kavrayışı</text>
+  <text x="20" y="263" font-size="13" fill="var(--text)">tam bağlam, bellek yok</text>
+  <rect x="250" y="253" width="138.6" height="12" fill="var(--accent)" />
+  <text x="560" y="263" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">46,2</text>
+  <text x="20" y="279" font-size="13" fill="var(--text)">BM25 getirme</text>
+  <rect x="250" y="269" width="106.8" height="12" fill="var(--cool)" />
+  <text x="560" y="279" font-size="13" text-anchor="end" fill="var(--text-muted)">35,6</text>
+  <text x="20" y="295" font-size="13" fill="var(--text)">HippoRAG-v2</text>
+  <rect x="250" y="285" width="108.6" height="12" fill="var(--cool)" />
+  <text x="560" y="295" font-size="13" text-anchor="end" fill="var(--text-muted)">36,2</text>
+  <text x="20" y="311" font-size="13" fill="var(--text)">MemGPT</text>
+  <rect x="250" y="301" width="67.2" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="311" font-size="13" text-anchor="end" fill="var(--text-muted)">22,4</text>
+  <text x="20" y="327" font-size="13" fill="var(--text)">Mem0</text>
+  <rect x="250" y="317" width="62.1" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="327" font-size="13" text-anchor="end" fill="var(--text-muted)">20,7</text>
+
+  <text x="20" y="354" font-size="13" font-weight="bold" fill="var(--text)">seçici unutma</text>
+  <text x="20" y="373" font-size="13" fill="var(--text)">tam bağlam, bellek yok</text>
+  <rect x="250" y="363" width="75" height="12" fill="var(--accent)" />
+  <text x="560" y="373" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">25,0</text>
+  <text x="20" y="389" font-size="13" fill="var(--text)">BM25 getirme</text>
+  <rect x="250" y="379" width="76.5" height="12" fill="var(--cool)" />
+  <text x="560" y="389" font-size="13" text-anchor="end" fill="var(--text-muted)">25,5</text>
+  <text x="20" y="405" font-size="13" fill="var(--text)">HippoRAG-v2</text>
+  <rect x="250" y="395" width="88.5" height="12" fill="var(--cool)" />
+  <text x="560" y="405" font-size="13" text-anchor="end" fill="var(--text-muted)">29,5</text>
+  <text x="20" y="421" font-size="13" fill="var(--text)">MemGPT</text>
+  <rect x="250" y="411" width="46.5" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="421" font-size="13" text-anchor="end" fill="var(--text-muted)">15,5</text>
+  <text x="20" y="437" font-size="13" fill="var(--text)">Mem0</text>
+  <rect x="250" y="427" width="30" height="12" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="560" y="437" font-size="13" text-anchor="end" fill="var(--text-muted)">10,0</text>
+
+  <text x="20" y="462" font-size="13" fill="var(--text-muted)">Aynı taban model; puan her yetenek grubunun ortalaması, 100 = 300 birim.</text>
+  <text x="20" y="480" font-size="13" fill="var(--text-muted)">Çerçeveli çubuklar bellek ürünleri, koyu çubuklar getirme düzenleri.</text>
+</svg>

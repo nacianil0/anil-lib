@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 372" role="img" aria-label="Yan yana üç kutu: durum karşılaştırması, çıktı eşleşmesi ve hakem model; her kutuda nasıl puanlandığı, hangi ölçütlerde kullanıldığı, neyi gördüğü ve neyi kaçırdığı yazılıdır.">
+  <rect x="16" y="20" width="236" height="300" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="134" y="46" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">durum karşılaştırması</text>
+  <text x="30" y="74" font-size="13" fill="var(--text-muted)">nasıl</text>
+  <text x="30" y="92" font-size="13" fill="var(--text)">bölüm sonunda çevrenin durumu</text>
+  <text x="30" y="108" font-size="13" fill="var(--text)">beklenen durumla karşılaştırılır</text>
+  <text x="30" y="136" font-size="13" fill="var(--text-muted)">nerede</text>
+  <text x="30" y="154" font-size="13" fill="var(--text)">veritabanı satırları (τ-bench)</text>
+  <text x="30" y="170" font-size="13" fill="var(--text)">ara hedef denetçileri</text>
+  <text x="30" y="198" font-size="13" fill="var(--text-muted)">görür</text>
+  <text x="30" y="216" font-size="13" fill="var(--text)">dünyaya gerçekten ne yapıldığı;</text>
+  <text x="30" y="232" font-size="13" fill="var(--text)">belirlenimci, ucuz, tekrarlanır</text>
+  <text x="30" y="260" font-size="13" fill="var(--text-muted)">kaçırır</text>
+  <text x="30" y="278" font-size="13" fill="var(--text)">kullanıcıya söylenen şey,</text>
+  <text x="30" y="294" font-size="13" fill="var(--text)">izlenen yol, kısmi ilerleme</text>
+
+  <rect x="262" y="20" width="236" height="300" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="380" y="46" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">çıktı eşleşmesi</text>
+  <text x="276" y="74" font-size="13" fill="var(--text-muted)">nasıl</text>
+  <text x="276" y="92" font-size="13" fill="var(--text)">kısa cevap anahtarla,</text>
+  <text x="276" y="108" font-size="13" fill="var(--text)">yama gizli testle sınanır</text>
+  <text x="276" y="136" font-size="13" fill="var(--text-muted)">nerede</text>
+  <text x="276" y="154" font-size="13" fill="var(--text)">olgusal cevap (GAIA)</text>
+  <text x="276" y="170" font-size="13" fill="var(--text)">test takımı (SWE-bench)</text>
+  <text x="276" y="198" font-size="13" fill="var(--text-muted)">görür</text>
+  <text x="276" y="216" font-size="13" fill="var(--text)">sonuç; oynanması zor,</text>
+  <text x="276" y="232" font-size="13" fill="var(--text)">insan puanı yok</text>
+  <text x="276" y="260" font-size="13" fill="var(--text-muted)">kaçırır</text>
+  <text x="276" y="278" font-size="13" fill="var(--text)">yolun kendisi; testin</text>
+  <text x="276" y="294" font-size="13" fill="var(--text)">sormadığı davranış</text>
+
+  <rect x="508" y="20" width="236" height="300" rx="8" fill="var(--surface)" stroke="var(--text-faint)" stroke-width="1.2" />
+  <text x="626" y="46" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">hakem model</text>
+  <text x="522" y="74" font-size="13" fill="var(--text-muted)">nasıl</text>
+  <text x="522" y="92" font-size="13" fill="var(--text)">bir model izi ya da çıktıyı</text>
+  <text x="522" y="108" font-size="13" fill="var(--text)">gereksinimlere göre puanlar</text>
+  <text x="522" y="136" font-size="13" fill="var(--text-muted)">nerede</text>
+  <text x="522" y="154" font-size="13" fill="var(--text)">canlı siteler (54)</text>
+  <text x="522" y="170" font-size="13" fill="var(--text)">hakem ajan: 365 gereksinim</text>
+  <text x="522" y="198" font-size="13" fill="var(--text-muted)">görür</text>
+  <text x="522" y="216" font-size="13" fill="var(--text)">yolu ve kısmi ilerlemeyi;</text>
+  <text x="522" y="232" font-size="13" fill="var(--text)">insanla uyum %85–90</text>
+  <text x="522" y="260" font-size="13" fill="var(--text-muted)">kaçırır</text>
+  <text x="522" y="278" font-size="13" fill="var(--text)">kendi yanlılıkları (45);</text>
+  <text x="522" y="294" font-size="13" fill="var(--text)">hakem de bir modeldir</text>
+
+  <text x="20" y="346" font-size="13" fill="var(--text-muted)">Üç yol birbirinin yerine geçmez: durum dünyayı, çıktı sonucu, hakem yolu puanlar.</text>
+  <text x="20" y="364" font-size="13" fill="var(--text-muted)">Ölçütlerin çoğu ikisini birlikte kullanır; insanla uyum oranları 54 ve hakem ajan çalışmasından.</text>
+</svg>

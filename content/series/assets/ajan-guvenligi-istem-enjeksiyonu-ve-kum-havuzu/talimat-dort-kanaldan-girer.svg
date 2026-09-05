@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-label="Solda dört kanal kutusu: kullanıcı mesajı, getirilen belge ya da web sayfası, araç çıktısı ve araç açıklaması, ekran; hepsinden ortadaki pencere kutusuna oklar gider; pencere kutusunda tek dizi, sıradan metin ve talimat mı veri mi ayrımının konumdan yapıldığı yazar. Pencereden sağdaki üç hedef kutusuna oklar gider: veri sızdırma, zararlı eylem, görevden saptırma.">
+  <defs>
+    <marker id="ok-58-kanal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+    <marker id="ok-58-hedef" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="125" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">talimat nereden girer</text>
+
+  <rect x="20" y="50" width="210" height="44" rx="5" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="125" y="68" font-size="13" text-anchor="middle" fill="var(--text)">kullanıcı mesajı</text>
+  <text x="125" y="85" font-size="13" text-anchor="middle" fill="var(--text-muted)">doğrudan; 24'teki hiyerarşi</text>
+
+  <rect x="20" y="110" width="210" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="125" y="128" font-size="13" text-anchor="middle" fill="var(--text)">getirilen belge, web sayfası</text>
+  <text x="125" y="145" font-size="13" text-anchor="middle" fill="var(--text-muted)">pasif: sayfaya bırakılır</text>
+
+  <rect x="20" y="170" width="210" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="125" y="188" font-size="13" text-anchor="middle" fill="var(--text)">araç çıktısı, araç açıklaması</text>
+  <text x="125" y="205" font-size="13" text-anchor="middle" fill="var(--text-muted)">etkin: e-posta ile gönderilir</text>
+
+  <rect x="20" y="230" width="210" height="44" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="125" y="248" font-size="13" text-anchor="middle" fill="var(--text)">ekran: açılır pencere, form</text>
+  <text x="125" y="265" font-size="13" text-anchor="middle" fill="var(--text-muted)">gizli: görünmez metin</text>
+
+  <line x1="230" y1="72" x2="268" y2="120" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-58-kanal)" />
+  <line x1="230" y1="132" x2="268" y2="150" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-58-kanal)" />
+  <line x1="230" y1="192" x2="268" y2="180" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-58-kanal)" />
+  <line x1="230" y1="252" x2="268" y2="210" stroke="var(--cool)" stroke-width="1.2" marker-end="url(#ok-58-kanal)" />
+
+  <rect x="270" y="90" width="180" height="150" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="360" y="118" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">pencere</text>
+  <text x="360" y="140" font-size="13" text-anchor="middle" fill="var(--text)">tek dizi,</text>
+  <text x="360" y="157" font-size="13" text-anchor="middle" fill="var(--text)">sıradan metin</text>
+  <text x="360" y="182" font-size="13" text-anchor="middle" fill="var(--text-muted)">talimat mı, veri mi?</text>
+  <text x="360" y="199" font-size="13" text-anchor="middle" fill="var(--text-muted)">içerikten değil,</text>
+  <text x="360" y="216" font-size="13" text-anchor="middle" fill="var(--text-muted)">konumdan okunur (24)</text>
+
+  <line x1="450" y1="130" x2="488" y2="100" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-58-hedef)" />
+  <line x1="450" y1="165" x2="488" y2="165" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-58-hedef)" />
+  <line x1="450" y1="200" x2="488" y2="230" stroke="var(--accent)" stroke-width="1.2" marker-end="url(#ok-58-hedef)" />
+
+  <text x="595" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">talimat neye dönüşür</text>
+
+  <rect x="490" y="78" width="210" height="44" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="595" y="96" font-size="13" text-anchor="middle" fill="var(--text)">veri sızdırma</text>
+  <text x="595" y="113" font-size="13" text-anchor="middle" fill="var(--text-muted)">e-posta, form, bağlantı</text>
+
+  <rect x="490" y="143" width="210" height="44" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="595" y="161" font-size="13" text-anchor="middle" fill="var(--text)">zararlı eylem</text>
+  <text x="595" y="178" font-size="13" text-anchor="middle" fill="var(--text-muted)">ödeme, silme, rezervasyon</text>
+
+  <rect x="490" y="208" width="210" height="44" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="595" y="226" font-size="13" text-anchor="middle" fill="var(--text)">görevden saptırma</text>
+  <text x="595" y="243" font-size="13" text-anchor="middle" fill="var(--text-muted)">durma, yanlış tıklama</text>
+
+  <text x="20" y="316" font-size="13" fill="var(--text-muted)">Üç üçüncü taraf kanalı pencereye kullanıcı mesajıyla aynı biçimde girer.</text>
+  <text x="20" y="334" font-size="13" fill="var(--text-muted)">Kanal türleri Greshake ve arkadaşlarının sınıflandırmasından: pasif, etkin, gizli.</text>
+  <text x="20" y="352" font-size="13" fill="var(--text-muted)">Hedefler bu makaledeki ölçütlerin saldırı görevlerinden örneklerdir.</text>
+</svg>

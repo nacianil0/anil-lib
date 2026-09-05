@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 372" role="img" aria-label="Dört satır ve dört sütunlu tablo: çalışma belleği, olaysal bellek, anlamsal bellek ve yordamsal bellek için ne sakladığı, nasıl yazılıp arandığı ve serideki ya da üründeki örneği.">
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">bellek</text>
+  <text x="150" y="30" font-size="13" font-weight="bold" fill="var(--text)">ne saklar</text>
+  <text x="355" y="30" font-size="13" font-weight="bold" fill="var(--text)">nasıl yazılır, nasıl aranır</text>
+  <text x="565" y="30" font-size="13" font-weight="bold" fill="var(--text)">seride ve üründe</text>
+  <line x1="20" y1="40" x2="740" y2="40" stroke="var(--border)" />
+
+  <rect x="14" y="50" width="732" height="56" rx="5" fill="var(--accent-soft)" />
+  <text x="20" y="72" font-size="13" font-weight="bold" fill="var(--text)">çalışma</text>
+  <text x="20" y="90" font-size="13" font-weight="bold" fill="var(--text)">belleği</text>
+  <text x="150" y="72" font-size="13" fill="var(--text)">pencere: istem, geçmiş,</text>
+  <text x="150" y="90" font-size="13" fill="var(--text)">son gözlem</text>
+  <text x="355" y="72" font-size="13" fill="var(--text)">dolunca kes, özetle</text>
+  <text x="355" y="90" font-size="13" fill="var(--text)">ya da dışarı sayfala</text>
+  <text x="565" y="72" font-size="13" fill="var(--text-muted)">48: son beş gözlem</text>
+  <text x="565" y="90" font-size="13" fill="var(--text-muted)">MemGPT: %70'te uyarı</text>
+
+  <rect x="14" y="118" width="732" height="56" rx="5" fill="var(--cool-soft)" />
+  <text x="20" y="140" font-size="13" font-weight="bold" fill="var(--text)">olaysal</text>
+  <text x="20" y="158" font-size="13" font-weight="bold" fill="var(--text)">bellek</text>
+  <text x="150" y="140" font-size="13" fill="var(--text)">geçmiş bölümler, dersler,</text>
+  <text x="150" y="158" font-size="13" fill="var(--text)">kişi olguları</text>
+  <text x="355" y="140" font-size="13" fill="var(--text)">bölüm sonunda yaz;</text>
+  <text x="355" y="158" font-size="13" fill="var(--text)">ilgi + tazelik + önem ile getir</text>
+  <text x="565" y="140" font-size="13" fill="var(--text-muted)">52: son üç ders</text>
+  <text x="565" y="158" font-size="13" fill="var(--text-muted)">39: üçlü puan; Mem0</text>
+
+  <rect x="14" y="186" width="732" height="56" rx="5" fill="var(--cool-soft)" />
+  <text x="20" y="208" font-size="13" font-weight="bold" fill="var(--text)">anlamsal</text>
+  <text x="20" y="226" font-size="13" font-weight="bold" fill="var(--text)">bellek</text>
+  <text x="150" y="208" font-size="13" fill="var(--text)">dünya hakkında olgular</text>
+  <text x="150" y="226" font-size="13" fill="var(--text)">ve aralarındaki bağlar</text>
+  <text x="355" y="208" font-size="13" fill="var(--text)">belgeden çizge kur;</text>
+  <text x="355" y="226" font-size="13" fill="var(--text)">kavramdan komşuya yürü</text>
+  <text x="565" y="208" font-size="13" fill="var(--text-muted)">HippoRAG: bilgi çizgesi</text>
+  <text x="565" y="226" font-size="13" fill="var(--text-muted)">41: dış dizin</text>
+
+  <rect x="14" y="254" width="732" height="56" rx="5" fill="var(--cool-soft)" />
+  <text x="20" y="276" font-size="13" font-weight="bold" fill="var(--text)">yordamsal</text>
+  <text x="20" y="294" font-size="13" font-weight="bold" fill="var(--text)">bellek</text>
+  <text x="150" y="276" font-size="13" fill="var(--text)">çalışan programlar,</text>
+  <text x="150" y="294" font-size="13" fill="var(--text)">iş akışları, ağırlıklar</text>
+  <text x="355" y="276" font-size="13" fill="var(--text)">başarılı izden çıkar;</text>
+  <text x="355" y="294" font-size="13" fill="var(--text)">kod ya da ağırlık olarak sakla</text>
+  <text x="565" y="276" font-size="13" fill="var(--text-muted)">52: beceri kütüphanesi</text>
+  <text x="565" y="294" font-size="13" fill="var(--text-muted)">55: izlerle ince ayar</text>
+
+  <text x="20" y="336" font-size="13" fill="var(--text-muted)">Dört bellek 51'deki çerçeveden. Yalnızca çalışma belleği pencerededir;</text>
+  <text x="20" y="354" font-size="13" fill="var(--text-muted)">öbür üçü, isteme girmeden önce bir getirme adımı ister.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 372" role="img" aria-label="Beş satırlı tablo: kısayol, ölçülmüş örnek ve yakalayan cetvel. Satırlar: görev şablonuna aşırı uyum, cevabı dışarıdan bulmak, testi değiştirmek ya da özel durum yazmak, sızmış çözümü kopyalamak, zor kısmı atlayıp bitti demek.">
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">kısayol</text>
+  <text x="250" y="30" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş örnek</text>
+  <text x="530" y="30" font-size="13" font-weight="bold" fill="var(--text)">yakalayan cetvel</text>
+  <line x1="20" y1="40" x2="740" y2="40" stroke="var(--border)" />
+
+  <text x="20" y="66" font-size="13" fill="var(--text)">görev şablonuna</text>
+  <text x="20" y="82" font-size="13" fill="var(--text)">aşırı uyum</text>
+  <text x="250" y="66" font-size="13" fill="var(--text-muted)">web ortamının tekrar eden</text>
+  <text x="250" y="82" font-size="13" fill="var(--text-muted)">şablonları (Kapoor ve ark.)</text>
+  <text x="530" y="66" font-size="13" fill="var(--text)">tutulan küme;</text>
+  <text x="530" y="82" font-size="13" fill="var(--text)">şablon dışı görev alt kümesi</text>
+  <line x1="20" y1="96" x2="740" y2="96" stroke="var(--border)" stroke-dasharray="2 4" />
+
+  <text x="20" y="122" font-size="13" fill="var(--text)">cevabı dışarıdan</text>
+  <text x="20" y="138" font-size="13" fill="var(--text)">bulmak</text>
+  <text x="250" y="122" font-size="13" fill="var(--text-muted)">ölçütü çözmek yerine</text>
+  <text x="250" y="138" font-size="13" fill="var(--text-muted)">veri deposunda aramak (HAL)</text>
+  <text x="530" y="122" font-size="13" fill="var(--text)">iz denetimi: kayıtları</text>
+  <text x="530" y="138" font-size="13" fill="var(--text)">bir model okur, insan doğrular</text>
+  <line x1="20" y1="152" x2="740" y2="152" stroke="var(--border)" stroke-dasharray="2 4" />
+
+  <rect x="14" y="160" width="732" height="50" rx="5" fill="var(--accent-soft)" />
+  <text x="20" y="178" font-size="13" font-weight="bold" fill="var(--text)">testi değiştirmek,</text>
+  <text x="20" y="194" font-size="13" font-weight="bold" fill="var(--text)">özel durum yazmak</text>
+  <text x="250" y="178" font-size="13" fill="var(--text-muted)">imkânsız görevlerin %76'sında</text>
+  <text x="250" y="194" font-size="13" fill="var(--text-muted)">test geçirildi (ImpossibleBench)</text>
+  <text x="530" y="178" font-size="13" fill="var(--text)">imkânsız test: geçen her</text>
+  <text x="530" y="194" font-size="13" fill="var(--text)">yama hiledir; hile oranı</text>
+  <line x1="20" y1="216" x2="740" y2="216" stroke="var(--border)" stroke-dasharray="2 4" />
+
+  <text x="20" y="242" font-size="13" fill="var(--text)">sızmış çözümü</text>
+  <text x="20" y="258" font-size="13" fill="var(--text)">kopyalamak</text>
+  <text x="250" y="242" font-size="13" fill="var(--text-muted)">çözümü sorun kaydında yazılı</text>
+  <text x="250" y="258" font-size="13" fill="var(--text-muted)">82 yama (55)</text>
+  <text x="530" y="242" font-size="13" fill="var(--text)">kesim tarihinden sonraki</text>
+  <text x="530" y="258" font-size="13" fill="var(--text)">kayıtlar; elle süzme</text>
+  <line x1="20" y1="272" x2="740" y2="272" stroke="var(--border)" stroke-dasharray="2 4" />
+
+  <text x="20" y="298" font-size="13" fill="var(--text)">zor kısmı atlayıp</text>
+  <text x="20" y="314" font-size="13" fill="var(--text)">bitti demek</text>
+  <text x="250" y="298" font-size="13" fill="var(--text-muted)">sahte kısayol (TheAgentCompany);</text>
+  <text x="250" y="314" font-size="13" fill="var(--text-muted)">puanlama sömürüsü (RE-Bench)</text>
+  <text x="530" y="298" font-size="13" fill="var(--text)">ara hedef denetçisi;</text>
+  <text x="530" y="314" font-size="13" fill="var(--text)">sömürü izi sıfır puan</text>
+
+  <text x="20" y="348" font-size="13" fill="var(--text-muted)">Her satırda cetvelin açığı ile onu kapatan ölçüm yan yana; vurgulu satır bu makalenin ölçtüğü kısayol.</text>
+  <text x="20" y="366" font-size="13" fill="var(--text-muted)">Kısayol, modelin değil cetvelin özelliğidir: model açığı bulur, cetvel açığı kapatır.</text>
+</svg>

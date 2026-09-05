@@ -1082,6 +1082,86 @@
       "path": "content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
+    },
+    {
+      "articleId": "article_7c2f0a4e-9b1d-4e63-8f5a-2d1c6e8b3a55",
+      "title": "Kod Yazan Ajanlar: Yazılım Mühendisliğinde LLM",
+      "slug": "kod-yazan-ajanlar-yazilim-muhendisliginde-llm",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 55,
+      "summary": "Ajanı bir depoya koyar: gerçek sorun kayıtlarından kurulan ölçütü ve onun ilk sayılarını; döngü ile sabit hattın aynı depoda nasıl karşılaştırıldığını, sıranın modelle değiştiğini ve maliyetin puanın yanına yazılmasını; testin neden yarım bir hakem olduğunu — makul yamanın doğru yamadan farkını, testleri geçen yamaların üçte birinin sızmış çözümden, üçte birinin zayıf testten geldiğini, kirliliğin kod ölçütüne nasıl girdiğini; döngünün test etiketli izlerle ağırlıklara yazılmasını; ajanın yamasının insanınkinden ölçülebilir farkını ve insan hızlanmasının ölçüme bağlı olduğunu ölçümlerle anlatır.",
+      "tags": [
+        "kod-ajani",
+        "swe-bench",
+        "yama-ve-test",
+        "ajansiz-hat",
+        "yazilim-muhendisligi"
+      ],
+      "contentHash": "sha256:a85adc5d5b711eb4f10789dd54c85f278a67f9f07f25cac247f7d04b5308adcb",
+      "path": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 13
+    },
+    {
+      "articleId": "article_3e9b7d21-5a4c-4f0e-b8d6-71c2a9e4f056",
+      "title": "Ajan Belleği ve Durum Yönetimi",
+      "slug": "ajan-bellegi-ve-durum-yonetimi",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 56,
+      "summary": "Ajanın belleğini bir depo değil bir dizi karar olarak kurar: bölümün içinde pencere dolunca neyin atılacağını — kesme, özet ve modelin kendi yönettiği sayfalama —, bölümler arasında üç kalıcı belleğin neyi sakladığını ve nasıl arandığını, olaysal kaydın ders ve olguya, anlamsal belleğin çizgeye, yordamsal belleğin iş akışına ve ağırlığa nasıl yazıldığını; sonra dört yetenekte ölçümü: getirme düzenleri doğru getirmede, tam bağlam öğrenme ve bütünü kavramada önde, seçici unutmada herkes zayıf, ve bellek ürünlerinin belleksiz tam bağlamın gerisinde kaldığını ölçümlerle anlatır.",
+      "tags": [
+        "ajan-bellegi",
+        "durum-yonetimi",
+        "olaysal-anlamsal-yordamsal",
+        "baglam-penceresi",
+        "secici-unutma"
+      ],
+      "contentHash": "sha256:6df32583383d0d3edcad64b50c0246b06aeaa3fc8b1f185467c3be24badc28ae",
+      "path": "content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 13
+    },
+    {
+      "articleId": "article_a8d4c6f2-1e3b-4b7a-9c5d-6f2e8a1b3c57",
+      "title": "Ajan Değerlendirmesi: Başarıyı Ölçmek",
+      "slug": "ajan-degerlendirmesi-basariyi-olcmek",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 57,
+      "summary": "Faz 6'nın dağınık cetvellerini tek soruya toplar: bir bölümün sonu çevrenin durumuyla mı, çıktının eşleşmesiyle mi, bir hakem modelle mi puanlanır ve her yol neyi kaçırır; izin ölçüsü olarak bitiş sınıfı, ilerleme oranı ve pass^k, kaç koşunun yettiği; insanla kıyasın zaman bütçesine, maliyetle kıyasın Pareto sınırına bağlı olması; ve cetvel hedefe dönüşünce ajanın bulduğu kısayollar — şablona uyum, cevabı dışarıdan bulmak, imkânsız testte hile — ve her birini yakalayan ölçüm.",
+      "tags": [
+        "ajan-degerlendirmesi",
+        "pass-k",
+        "maliyet-kontrollu-olcum",
+        "hakem-ajan",
+        "kisayol-ve-hile"
+      ],
+      "contentHash": "sha256:f2fb786a803288d0838ed237c437263f9884392a65b8d358072977a06559c985",
+      "path": "content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 13
+    },
+    {
+      "articleId": "article_5b8e2f7a-c3d1-4a96-8e4f-9d7c1b2a6e58",
+      "title": "Ajan Güvenliği: İstem Enjeksiyonu ve Kum Havuzu",
+      "slug": "ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 58,
+      "summary": "Ajanın okuduğu her şeyin ona talimat verebildiğini kurar: talimatın pencereye girdiği üç üçüncü taraf kanalını ve saldırının üç hedefini; yararı ve saldırı başarısını birlikte ölçen ölçütleri — görevlerin yüzde 69'unu çözen bir modelde saldırganın hedefine yüzde 48 ulaştığını, açılır pencereye tıklama oranının yüzde 86 olduğunu, dizine beş metin sızdırmanın yüzde 90 yettiğini; istemden eğitime ve mimariye uzanan savunmaların her birinin yarardan ne kestiğini; ve kum havuzunun üç katmanının neyi durdurup neyi durduramadığını — izinli kanaldan sızan veriyi — ölçümlerle anlatır.",
+      "tags": [
+        "istem-enjeksiyonu",
+        "kum-havuzu",
+        "ajan-guvenligi",
+        "en-az-ayricalik",
+        "saldiri-yuzeyi"
+      ],
+      "contentHash": "sha256:70b557496635ccaf5411c54707324f2dfac5fe044fdf9b164fe4d2e065744ed4",
+      "path": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 13
     }
   ]
 }

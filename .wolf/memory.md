@@ -2584,3 +2584,103 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-09-04 01:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-04 01:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 04:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 04:34 | Created artifacts/b13-research/fetch-b13.py | — | ~3638 |
+| 04:34 | Created artifacts/b13-research/dblp-b13.py | — | ~472 |
+| 04:34 | Batch 13 başlangıcı: HANDOFF/SOZLESME/YOL-HARITASI/cerebrum okundu; BATCH=4+1 → 55–58, kohort 13; ana oturum, workflow yok | docs/seri/*, .wolf/cerebrum.md | ok | ~120k |
+| 04:34 | Araştırma betikleri kuruldu ve arka planda başlatıldı (72 aday PDF, DBLP ee) | artifacts/b13-research/fetch-b13.py, dblp-b13.py | çalışıyor | ~6k |
+| 04:42 | Created content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/dongu-ve-hat.svg | — | ~1576 |
+| 04:42 | Created content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/cozulen-gorev-ve-maliyet.svg | — | ~1297 |
+| 04:43 | Created content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/testi-gecen-yama-nereye-gidiyor.svg | — | ~759 |
+| 04:50 | Created content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | — | ~8416 |
+| 04:53 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~38 |
+| 04:53 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~34 |
+| 04:53 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~25 |
+| 04:53 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~25 |
+| 04:53 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~28 |
+| 04:58 | Created content/series/assets/ajan-bellegi-ve-durum-yonetimi/pencere-bir-isletim-sistemi-gibi.svg | — | ~1308 |
+| 04:58 | Created content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-bellek-nerede-durur.svg | — | ~1088 |
+| 04:59 | Created content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-yetenek-bes-duzen.svg | — | ~1666 |
+| 05:01 | Edited content/series/assets/ajan-bellegi-ve-durum-yonetimi/pencere-bir-isletim-sistemi-gibi.svg | 3→3 lines | ~118 |
+| 05:01 | Edited content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-yetenek-bes-duzen.svg | 2→3 lines | ~77 |
+| 05:01 | Edited content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-yetenek-bes-duzen.svg | "0 0 720 480" → "0 0 720 500" | ~6 |
+| 05:01 | Edited content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-bellek-nerede-durur.svg | 2→3 lines | ~73 |
+| 05:01 | Edited content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-bellek-nerede-durur.svg | "0 0 760 360" → "0 0 760 372" | ~6 |
+| 05:03 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~63 |
+| 05:06 | Created content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | — | ~6256 |
+| 05:07 | 55 yazıldı ve denetlendi (3 şekil); 56 yazıldı (3 şekil), denetim sürüyor; DBLP arka planda | content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-*.md, ajan-bellegi-*.md, assets/* | ok | ~90k |
+| 05:10 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~13 |
+| 05:11 | Created content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/bolumu-puanlamanin-uc-yolu.svg | — | ~1175 |
+| 05:11 | Created content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/tam-basari-kismi-puan-adim-maliyet.svg | — | ~1365 |
+| 05:11 | Created content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/kisayol-ve-yakalayan-cetvel.svg | — | ~1105 |
+| 05:16 | Created content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | — | ~6492 |
+| 05:20 | Created content/series/assets/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu/talimat-dort-kanaldan-girer.svg | — | ~1508 |
+| 05:20 | Created content/series/assets/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu/bes-savunma-uc-olcu.svg | — | ~1327 |
+| 05:21 | Created content/series/assets/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu/kum-havuzunun-uc-katmani.svg | — | ~862 |
+| 05:25 | Created content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | — | ~7366 |
+| 05:26 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | "sından azını çözüyor — 51" → "sini çözüyor — 51 ve 57" | ~95 |
+| 05:26 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~72 |
+| 05:26 | 57 ve 58 yazıldı (üçer şekil); 58 başlığı roadmap.json ve YOL-HARITASI faz listesinde "İstem Enjeksiyonu ve Kum Havuzu" yapıldı; DBLP tarandı | content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-*.md, ajan-guvenligi-*.md, roadmap.json | ok | ~80k |
+| 05:27 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~36 |
+| 05:27 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~56 |
+| 05:27 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~22 |
+| 05:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/b13-promises-prereq.md | — | ~254 |
+| 05:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/b13-prereq-rows.md | — | ~793 |
+| 05:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/b13-recall.md | — | ~1744 |
+| 05:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/b13-terms.md | — | ~1192 |
+| 05:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/b13-decisions.md | — | ~4740 |
+| 05:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/insert-b13.py | — | ~807 |
+| 05:36 | Created .claude/launch.json | — | ~140 |
+| 05:36 | Created artifacts/b13-research/sweep-b13.py | — | ~304 |
+| 05:36 | Kapılar: typecheck 0, 470 test, build 107 sayfa (izole kopya); YOL-HARITASI defterleri eklendi (#135–141, tekrar tabloları, terim satırları, önkoşullar); launch.json geçici yapılandırma | docs/seri/YOL-HARITASI.md, .claude/launch.json | ok | ~40k |
+| 05:36 | Created artifacts/b13-research/measure-b13.js | — | ~619 |
+| 05:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/wolf-b13.py | — | ~2233 |
+| 05:44 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/b13-notes.md | — | ~1055 |
+| 05:48 | Created docs/seri/HANDOFF.md | — | ~7480 |
+| 05:48 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch13-faz6-ikinci-yari.md | — | ~705 |
+| 05:48 | HANDOFF yeniden yazıldı (cursor 58→59, kohort 14), Batch 13 öğrenme notları YOL-HARITASI'na eklendi, cerebrum/buglog güncellendi, hafıza dosyası yazıldı; şekil görüntüleri sürüyor | docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md, .wolf/* | ok | ~30k |
+
+## Session: 2026-09-05 05:52
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 05:53 | Batch 13 kapanış: 12 şeklin light/dark görsel doğrulaması bitti; dev sunucu (3210) durduruldu, node_modules junction ve izole kopya D:\dev\anil-lib-b13-render silindi, .claude/launch.json HEAD ile aynı; HANDOFF imleç 58→59, kohort 14; Batch 12+13 commit edilmemiş (tasarım gereği) | .wolf/memory.md, .claude/launch.json | temizlik tamam, kapanış raporu | ~2k |
+
+## Session: 2026-09-05 06:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 06:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 08:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 11:29
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 11:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

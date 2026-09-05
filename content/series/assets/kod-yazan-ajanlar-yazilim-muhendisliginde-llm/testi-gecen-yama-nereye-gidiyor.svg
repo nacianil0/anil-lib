@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Üstte SWE-agent ve GPT-4'ün testleri geçen 251 yamasının üç parçaya bölünmüş çubuğu: doğru 91, çözüm sızıntısı 82, zayıf test 78. Altta aynı ajanın çözme oranı üç koşulda: liderlik tablosu 12,47; süzülmüş 3,97; yeni kayıtlar 0,55.">
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">SWE-agent + GPT-4'ün testleri geçen 251 yaması</text>
+
+  <rect x="20" y="52" width="246.5" height="32" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="143" y="72" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">doğru · 91</text>
+  <rect x="266.5" y="52" width="222.1" height="32" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="1" />
+  <text x="377" y="72" font-size="13" text-anchor="middle" fill="var(--text)">çözüm sızıntısı · 82</text>
+  <rect x="488.6" y="52" width="211.4" height="32" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="594" y="72" font-size="13" text-anchor="middle" fill="var(--text)">zayıf test · 78</text>
+
+  <text x="143" y="104" font-size="13" text-anchor="middle" fill="var(--text-muted)">76 farklı, 15 daha kapsamlı</text>
+  <text x="377" y="104" font-size="13" text-anchor="middle" fill="var(--text-muted)">çözüm sorun kaydında yazılı</text>
+  <text x="594" y="104" font-size="13" text-anchor="middle" fill="var(--text-muted)">32 yanlış · 37 eksik</text>
+  <text x="594" y="120" font-size="13" text-anchor="middle" fill="var(--text-muted)">9 başka dosya</text>
+
+  <line x1="20" y1="140" x2="700" y2="140" stroke="var(--border)" />
+  <text x="20" y="164" font-size="13" font-weight="bold" fill="var(--text)">Aynı ajanın çözme oranı, yüzde</text>
+
+  <text x="20" y="194" font-size="13" fill="var(--text)">liderlik tablosu</text>
+  <rect x="230" y="182" width="299.3" height="16" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="540" y="194" font-size="13" fill="var(--text-muted)">12,47</text>
+
+  <text x="20" y="234" font-size="13" fill="var(--text)">süzülmüş küme</text>
+  <rect x="230" y="222" width="95.3" height="16" fill="var(--accent)" />
+  <text x="336" y="234" font-size="13" font-weight="bold" fill="var(--text)">3,97</text>
+
+  <text x="20" y="274" font-size="13" fill="var(--text)">yeni kayıtlar</text>
+  <rect x="230" y="262" width="13.2" height="16" fill="var(--accent)" />
+  <text x="254" y="274" font-size="13" font-weight="bold" fill="var(--text)">0,55</text>
+
+  <text x="20" y="318" font-size="13" fill="var(--text-muted)">Süzme: çözümü sızmış ve testi zayıf kayıtlar çıkarıldı.</text>
+  <text x="20" y="336" font-size="13" fill="var(--text-muted)">Yeni kayıtlar modelin bilgi kesim tarihinden sonra açılmış sorunlardır (2023-11'den 2024-08'e).</text>
+</svg>

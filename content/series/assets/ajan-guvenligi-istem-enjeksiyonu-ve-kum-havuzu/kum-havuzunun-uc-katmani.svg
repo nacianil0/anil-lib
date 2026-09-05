@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="İç içe üç kutu: dıştaki sanal makine ya da kap katmanı, ortadaki süreç yalıtımı katmanı, içteki izin katmanı; her katmanın sağında ne durdurduğu yazılı; en altta hiçbir katmanın durdurmadığı şey: izinli kanaldan veri sızması.">
+  <rect x="20" y="40" width="440" height="290" rx="10" fill="var(--surface)" stroke="var(--text-faint)" stroke-width="1.2" />
+  <text x="36" y="62" font-size="13" font-weight="bold" fill="var(--text)">sanal makine ya da kap</text>
+  <text x="36" y="80" font-size="13" fill="var(--text-muted)">ayrı çekirdek: mikro sanal makine, 5 MB'tan az, 125 ms'den kısa</text>
+
+  <rect x="40" y="96" width="400" height="220" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="56" y="118" font-size="13" font-weight="bold" fill="var(--text)">süreç yalıtımı</text>
+  <text x="56" y="136" font-size="13" fill="var(--text-muted)">dosya: yalnızca çalışma dizinine yazma</text>
+  <text x="56" y="152" font-size="13" fill="var(--text-muted)">ağ: yalnızca izin listesindeki alan adları, vekil üzerinden</text>
+
+  <rect x="60" y="166" width="360" height="136" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="76" y="188" font-size="13" font-weight="bold" fill="var(--text)">izin katmanı</text>
+  <text x="76" y="206" font-size="13" fill="var(--text-muted)">her araç çağrısı bir politikaya karşı sınanır</text>
+  <text x="76" y="222" font-size="13" fill="var(--text-muted)">en az ayrıcalık: görevin gerektirdiği kadar</text>
+  <text x="76" y="238" font-size="13" fill="var(--text-muted)">geri alınamaz eylem: kullanıcı onayı</text>
+
+  <rect x="80" y="252" width="320" height="36" rx="5" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" />
+  <text x="240" y="274" font-size="13" text-anchor="middle" fill="var(--text)">ajanın eylemleri: kabuk, dosya, ağ, araç</text>
+
+  <text x="490" y="62" font-size="13" font-weight="bold" fill="var(--text)">durdurur</text>
+  <text x="490" y="80" font-size="13" fill="var(--text)">makineden kaçış, öbür</text>
+  <text x="490" y="96" font-size="13" fill="var(--text)">kiracıya sızma</text>
+
+  <text x="490" y="136" font-size="13" fill="var(--text)">çalışma dizini dışına yazma,</text>
+  <text x="490" y="152" font-size="13" fill="var(--text)">izinsiz sunucuya bağlanma,</text>
+  <text x="490" y="168" font-size="13" fill="var(--text)">kabuk ayarını değiştirme</text>
+
+  <text x="490" y="206" font-size="13" fill="var(--text)">politika dışı çağrı, onaysız</text>
+  <text x="490" y="222" font-size="13" fill="var(--text)">ödeme ya da silme; kaçış</text>
+  <text x="490" y="238" font-size="13" fill="var(--text)">istemi ayrı adla sorulur</text>
+
+  <line x1="20" y1="344" x2="700" y2="344" stroke="var(--border)" />
+  <text x="20" y="366" font-size="13" font-weight="bold" fill="var(--text)">durdurmaz:</text>
+  <text x="110" y="366" font-size="13" fill="var(--text)">izinli bir kanaldan — e-posta aracı, form alanı — özel verinin dışarı çıkması.</text>
+  <text x="20" y="386" font-size="13" fill="var(--text-muted)">Katmanlar Firecracker, Claude Code belgelendirmesi (hakemsiz) ve en az ayrıcalık ilkesinden.</text>
+</svg>

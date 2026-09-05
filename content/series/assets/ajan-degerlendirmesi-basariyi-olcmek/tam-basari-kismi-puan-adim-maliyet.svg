@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 372" role="img" aria-label="Altı model için dört sütun: tam başarı ve kısmi puan çubukları, görev başına ortalama adım ve dolar maliyeti. Gemini 2.5 Pro 30,3 ve 39,3, 27,2 adım, 4,2 dolar; Claude 3.7 Sonnet 26,3 ve 36,4, 27,8 adım, 4,1 dolar; Gemini 2.0 Flash 11,4 ve 19,0, 39,9 adım, 0,6 dolar; GPT-4o 8,6 ve 16,7, 14,6 adım, 1,3 dolar; Llama 3.3 70B 6,9 ve 12,8, 20,9 adım, 0,9 dolar; Qwen 2.5 72B 5,7 ve 11,8, 24,0 adım, 1,5 dolar.">
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">model</text>
+  <text x="200" y="30" font-size="13" font-weight="bold" fill="var(--text)">tam başarı · kısmi puan (yüzde)</text>
+  <text x="560" y="30" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">adım</text>
+  <text x="640" y="30" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">dolar</text>
+  <line x1="20" y1="40" x2="700" y2="40" stroke="var(--border)" />
+
+  <text x="20" y="66" font-size="13" fill="var(--text)">Gemini 2.5 Pro</text>
+  <rect x="200" y="54" width="151.5" height="10" fill="var(--accent)" />
+  <rect x="200" y="66" width="196.5" height="10" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="410" y="64" font-size="13" font-weight="bold" fill="var(--text)">30,3</text>
+  <text x="410" y="78" font-size="13" fill="var(--text-muted)">39,3</text>
+  <text x="560" y="70" font-size="13" text-anchor="end" fill="var(--text)">27,2</text>
+  <text x="640" y="70" font-size="13" text-anchor="end" fill="var(--text)">4,2</text>
+
+  <text x="20" y="112" font-size="13" fill="var(--text)">Claude 3.7 Sonnet</text>
+  <rect x="200" y="100" width="131.5" height="10" fill="var(--accent)" />
+  <rect x="200" y="112" width="182" height="10" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="410" y="110" font-size="13" font-weight="bold" fill="var(--text)">26,3</text>
+  <text x="410" y="124" font-size="13" fill="var(--text-muted)">36,4</text>
+  <text x="560" y="116" font-size="13" text-anchor="end" fill="var(--text)">27,8</text>
+  <text x="640" y="116" font-size="13" text-anchor="end" fill="var(--text)">4,1</text>
+
+  <text x="20" y="158" font-size="13" fill="var(--text)">Gemini 2.0 Flash</text>
+  <rect x="200" y="146" width="57" height="10" fill="var(--accent)" />
+  <rect x="200" y="158" width="95" height="10" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="410" y="156" font-size="13" font-weight="bold" fill="var(--text)">11,4</text>
+  <text x="410" y="170" font-size="13" fill="var(--text-muted)">19,0</text>
+  <text x="560" y="162" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">39,9</text>
+  <text x="640" y="162" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0,6</text>
+
+  <text x="20" y="204" font-size="13" fill="var(--text)">GPT-4o</text>
+  <rect x="200" y="192" width="43" height="10" fill="var(--accent)" />
+  <rect x="200" y="204" width="83.5" height="10" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="410" y="202" font-size="13" font-weight="bold" fill="var(--text)">8,6</text>
+  <text x="410" y="216" font-size="13" fill="var(--text-muted)">16,7</text>
+  <text x="560" y="208" font-size="13" text-anchor="end" fill="var(--text)">14,6</text>
+  <text x="640" y="208" font-size="13" text-anchor="end" fill="var(--text)">1,3</text>
+
+  <text x="20" y="250" font-size="13" fill="var(--text)">Llama 3.3 70B</text>
+  <rect x="200" y="238" width="34.5" height="10" fill="var(--accent)" />
+  <rect x="200" y="250" width="64" height="10" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="410" y="248" font-size="13" font-weight="bold" fill="var(--text)">6,9</text>
+  <text x="410" y="262" font-size="13" fill="var(--text-muted)">12,8</text>
+  <text x="560" y="254" font-size="13" text-anchor="end" fill="var(--text)">20,9</text>
+  <text x="640" y="254" font-size="13" text-anchor="end" fill="var(--text)">0,9</text>
+
+  <text x="20" y="296" font-size="13" fill="var(--text)">Qwen 2.5 72B</text>
+  <rect x="200" y="284" width="28.5" height="10" fill="var(--accent)" />
+  <rect x="200" y="296" width="59" height="10" fill="var(--surface-muted)" stroke="var(--text-faint)" stroke-width="0.8" />
+  <text x="410" y="294" font-size="13" font-weight="bold" fill="var(--text)">5,7</text>
+  <text x="410" y="308" font-size="13" fill="var(--text-muted)">11,8</text>
+  <text x="560" y="300" font-size="13" text-anchor="end" fill="var(--text)">24,0</text>
+  <text x="640" y="300" font-size="13" text-anchor="end" fill="var(--text)">1,5</text>
+
+  <line x1="20" y1="324" x2="700" y2="324" stroke="var(--border)" />
+  <text x="20" y="346" font-size="13" fill="var(--text-muted)">175 görev, aynı iskelet; koyu çubuk bütün ara hedefleri geçen görevler, açık çubuk kısmi puan.</text>
+  <text x="20" y="364" font-size="13" fill="var(--text-muted)">Adım ve dolar görev başına ortalama; 40 = 200 birim. Vurgulu satır: en çok adım, en az para.</text>
+</svg>

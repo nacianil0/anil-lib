@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-label="Dokuz kod onarım sisteminin SWE-bench Lite'ta çözdüğü görev yüzdesi ile görev başına dolar maliyetini gösteren dağılım şeması; Agentless 32,0 yüzde ile 0,70 dolar, SWE-agent GPT-4 ile 18,0 yüzde ile 2,51 dolar, CodeR 28,3 yüzde ile 3,34 dolar.">
+  <text x="70" y="28" font-size="13" font-weight="bold" fill="var(--text)">çözülen görev yüzdesi</text>
+
+  <line x1="70" y1="320" x2="470" y2="320" stroke="var(--border)" />
+  <line x1="70" y1="320" x2="70" y2="40" stroke="var(--border)" />
+  <line x1="70" y1="240" x2="470" y2="240" stroke="var(--border)" stroke-dasharray="2 4" />
+  <line x1="70" y1="160" x2="470" y2="160" stroke="var(--border)" stroke-dasharray="2 4" />
+  <line x1="70" y1="80" x2="470" y2="80" stroke="var(--border)" stroke-dasharray="2 4" />
+  <text x="60" y="324" font-size="13" text-anchor="end" fill="var(--text-muted)">0</text>
+  <text x="60" y="244" font-size="13" text-anchor="end" fill="var(--text-muted)">10</text>
+  <text x="60" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">20</text>
+  <text x="60" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">30</text>
+  <text x="70" y="338" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
+  <text x="184" y="338" font-size="13" text-anchor="middle" fill="var(--text-muted)">1 $</text>
+  <text x="299" y="338" font-size="13" text-anchor="middle" fill="var(--text-muted)">2 $</text>
+  <text x="413" y="338" font-size="13" text-anchor="middle" fill="var(--text-muted)">3 $</text>
+  <text x="270" y="358" font-size="13" text-anchor="middle" fill="var(--text-muted)">görev başına ortalama maliyet (dolar)</text>
+
+  <circle cx="150" cy="64" r="6" fill="var(--accent)" />
+  <text x="158" y="58" font-size="13" font-weight="bold" fill="var(--text)">A</text>
+  <circle cx="89.4" cy="106.6" r="5" fill="var(--cool)" />
+  <text x="97" y="101" font-size="13" fill="var(--text)">B</text>
+  <circle cx="200.3" cy="106.6" r="5" fill="var(--cool)" />
+  <text x="208" y="101" font-size="13" fill="var(--text)">C</text>
+  <circle cx="255.1" cy="136" r="5" fill="var(--cool)" />
+  <text x="263" y="130" font-size="13" fill="var(--text)">D</text>
+  <circle cx="121.4" cy="168" r="5" fill="var(--cool)" />
+  <text x="129" y="163" font-size="13" fill="var(--text)">E</text>
+  <circle cx="356.9" cy="176" r="5" fill="var(--cool)" />
+  <text x="365" y="171" font-size="13" fill="var(--text)">F</text>
+  <circle cx="451.7" cy="93.4" r="5" fill="var(--cool)" />
+  <text x="460" y="88" font-size="13" fill="var(--text)">G</text>
+  <circle cx="84.9" cy="298.6" r="5" fill="var(--text-faint)" />
+  <text x="93" y="293" font-size="13" fill="var(--text)">H</text>
+  <circle cx="163.7" cy="98.6" r="5" fill="var(--cool)" />
+  <text x="172" y="93" font-size="13" fill="var(--text)">I</text>
+
+  <text x="500" y="50" font-size="13" font-weight="bold" fill="var(--text)">SWE-bench Lite, 300 görev</text>
+  <text x="500" y="74" font-size="13" font-weight="bold" fill="var(--text)">A Agentless · GPT-4o</text>
+  <text x="500" y="90" font-size="13" fill="var(--text-muted)">32,0 · 0,70 $ · hat</text>
+  <text x="500" y="104" font-size="13" fill="var(--text)">B Moatless · Claude 3.5 Sonnet</text>
+  <text x="500" y="120" font-size="13" fill="var(--text-muted)">26,7 · 0,17 $</text>
+  <text x="500" y="134" font-size="13" fill="var(--text)">C OpenHands · Claude 3.5 Sonnet</text>
+  <text x="500" y="150" font-size="13" fill="var(--text-muted)">26,7 · 1,14 $</text>
+  <text x="500" y="164" font-size="13" fill="var(--text)">D SWE-agent · Claude 3.5 Sonnet</text>
+  <text x="500" y="180" font-size="13" fill="var(--text-muted)">23,0 · 1,62 $</text>
+  <text x="500" y="194" font-size="13" fill="var(--text)">E AutoCodeRover · GPT-4</text>
+  <text x="500" y="210" font-size="13" fill="var(--text-muted)">19,0 · 0,45 $</text>
+  <text x="500" y="224" font-size="13" fill="var(--text)">F SWE-agent · GPT-4</text>
+  <text x="500" y="240" font-size="13" fill="var(--text-muted)">18,0 · 2,51 $</text>
+  <text x="500" y="254" font-size="13" fill="var(--text)">G CodeR · GPT-4</text>
+  <text x="500" y="270" font-size="13" fill="var(--text-muted)">28,3 · 3,34 $</text>
+  <text x="500" y="284" font-size="13" fill="var(--text)">H tek getirme · GPT-4</text>
+  <text x="500" y="300" font-size="13" fill="var(--text-muted)">2,7 · 0,13 $ · ajansız taban</text>
+  <text x="500" y="314" font-size="13" fill="var(--text)">I SIMA · GPT-4o</text>
+  <text x="500" y="330" font-size="13" fill="var(--text-muted)">27,7 · 0,82 $</text>
+
+  <text x="20" y="384" font-size="13" fill="var(--text-muted)">Değerler Xia ve arkadaşlarının tablosundan; modeller farklı, maliyet o günkü fiyatlarla.</text>
+  <text x="20" y="402" font-size="13" fill="var(--text-muted)">Sol üst köşe iyidir: az parayla çok görev.</text>
+</svg>

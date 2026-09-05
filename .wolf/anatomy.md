@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-04T22:26:51.209Z
-> Files: 101 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T02:48:38.247Z
+> Files: 130 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -76,6 +76,17 @@
 
 - `fwdrefs.py` (~350 tok)
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/
+
+- `b13-decisions.md` (~4443 tok)
+- `b13-notes.md` — Batch 13 öğrenme notları (yazım tamamlandı) (~989 tok)
+- `b13-prereq-rows.md` (~743 tok)
+- `b13-promises-prereq.md` (~238 tok)
+- `b13-recall.md` — ## Batch 13'te gerçekleşen tekrarlar (planlananların tahsili) (~1635 tok)
+- `b13-terms.md` (~1118 tok)
+- `insert-b13.py` — block, insert_before (~807 tok)
+- `wolf-b13.py` — insert_after_heading (~2233 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/d2bfc8ef-93ea-4a8a-85d8-43073b9287ca/scratchpad/
 
 - `wolf-b12.py` — Batch 12 — OpenWolf state updates: buglog.json, cerebrum.md, memory.md. (~2692 tok)
@@ -99,6 +110,7 @@
 - `reader-line-guide-redesign.md` (~471 tok)
 - `series-batch11-faz5-kapanis.md` (~615 tok)
 - `series-batch12-faz6-acilis.md` (~668 tok)
+- `series-batch13-faz6-ikinci-yari.md` (~689 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -129,6 +141,13 @@
 
 - `dblp-b12.py` (~365 tok)
 - `fetch-b12.py` — fetch, norm, title_match, arxiv_search (~3326 tok)
+
+## artifacts/b13-research/
+
+- `dblp-b13.py` (~472 tok)
+- `fetch-b13.py` — fetch, norm, title_match, arxiv_search (~3638 tok)
+- `measure-b13.js` — Tarayıcı panosunda çalıştırılan ölçüm yardımcısı (Batch 13). localStorage'a yazılıp (~619 tok)
+- `sweep-b13.py` (~304 tok)
 
 ## artifacts/b7-render/
 
@@ -277,12 +296,16 @@
 
 ## content/series/articles/agents-and-retrieval/
 
+- `ajan-bellegi-ve-durum-yonetimi.md` — Her görevi sıfırdan başlatmak (~5865 tok)
+- `ajan-degerlendirmesi-basariyi-olcmek.md` — Cetvel bir tasarım ürünüdür, ajan için de (~6086 tok)
+- `ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md` — Okunan her şey bir talimat olabilir (~6952 tok)
 - `ajan-mimarileri.md` — Karar kutusunun içi (~5720 tok)
 - `ajan-nedir-kontrol-dongusu-olarak-llm.md` — Adı konmamış şey (~7464 tok)
 - `arac-kullanimi-islev-cagrisi.md` — Eylem satırı aramaya özel değildi (~7251 tok)
 - `bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md` — Üç ip, tek düğüm (~6256 tok)
 - `bilgisayar-kullanan-ajanlar.md` — İnsan için çizilmiş arayüz (~5470 tok)
 - `coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md` — Bir ajan yetmediğinde (~6296 tok)
+- `kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md` — Depo bir dünyadır (~7909 tok)
 - `mcp-ve-arac-ekosistemleri.md` — Çarpım problemi (~5002 tok)
 - `parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md` — Görünmez kararlar (~6388 tok)
 - `rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md` — Tek sayı üç hatayı saklıyor (~6152 tok)
@@ -304,6 +327,24 @@
 
 ## content/series/assets/acik-agirliklar-ve-model-ekosistemi/
 
+
+## content/series/assets/ajan-bellegi-ve-durum-yonetimi/
+
+- `dort-bellek-nerede-durur.svg` (~1113 tok)
+- `dort-yetenek-bes-duzen.svg` (~1693 tok)
+- `pencere-bir-isletim-sistemi-gibi.svg` (~1296 tok)
+
+## content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/
+
+- `bolumu-puanlamanin-uc-yolu.svg` (~1175 tok)
+- `kisayol-ve-yakalayan-cetvel.svg` (~1105 tok)
+- `tam-basari-kismi-puan-adim-maliyet.svg` (~1365 tok)
+
+## content/series/assets/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu/
+
+- `bes-savunma-uc-olcu.svg` (~1327 tok)
+- `kum-havuzunun-uc-katmani.svg` (~862 tok)
+- `talimat-dort-kanaldan-girer.svg` (~1508 tok)
 
 ## content/series/assets/ajan-mimarileri/
 
@@ -401,6 +442,12 @@
 ## content/series/assets/istem-muhendisligi-kanita-dayali-bir-bakis/
 
 
+## content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/
+
+- `cozulen-gorev-ve-maliyet.svg` (~1297 tok)
+- `dongu-ve-hat.svg` (~1576 tok)
+- `testi-gecen-yama-nereye-gidiyor.svg` (~759 tok)
+
 ## content/series/assets/kuantizasyon-modeli-kucultme-sanati/
 
 
@@ -474,7 +521,7 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~5969 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7013 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
 
 ## docs/superpowers/plans/

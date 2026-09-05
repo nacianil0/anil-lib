@@ -5420,6 +5420,184 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-05T01:40:00.000Z"
+    },
+    {
+      "id": "bug-324",
+      "timestamp": "2026-09-05T02:01:13.693Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/ajan-bellegi-ve-durum-yonetimi/pencere-bir-isletim-sistemi-gibi.svg",
+      "root_cause": "Had \"356\"",
+      "fix": "Changed to \"354\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T02:01:13.693Z"
+    },
+    {
+      "id": "bug-325",
+      "timestamp": "2026-09-05T02:01:18.117Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-yetenek-bes-duzen.svg",
+      "root_cause": "Had \"0 0 720 480\"",
+      "fix": "Changed to \"0 0 720 500\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T02:01:18.117Z"
+    },
+    {
+      "id": "bug-326",
+      "timestamp": "2026-09-05T02:01:23.492Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/ajan-bellegi-ve-durum-yonetimi/dort-bellek-nerede-durur.svg",
+      "root_cause": "Had \"0 0 760 360\"",
+      "fix": "Changed to \"0 0 760 372\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T02:01:23.492Z"
+    },
+    {
+      "id": "bug-327",
+      "timestamp": "2026-09-05T02:10:50.383Z",
+      "error_message": "Wrong reference: pan25c should be pan25g",
+      "file": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
+      "root_cause": "Used \"pan25c\" instead of \"pan25g\"",
+      "fix": "Changed pan25c → pan25g",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T02:10:50.383Z"
+    },
+    {
+      "id": "bug-328",
+      "timestamp": "2026-09-05T02:26:00.368Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
+      "root_cause": "Had 'sından azını çözüyor — 51 ve 57'",
+      "fix": "Changed to 'sini çözüyor — 51 ve 57'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T02:26:00.368Z"
+    },
+    {
+      "id": "bug-329",
+      "timestamp": "2026-09-05T05:30:00.000Z",
+      "error_message": "PMLR v267 kimliği tahminle yazıldı (pan25c); dizin sayfasında SWE-Gym pan25g çıktı",
+      "file": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
+      "root_cause": "Kaynakça bağlantısı, PMLR dizin sayfası ayrıştırılmadan ve DBLP ee alınmadan yazıldı; 'başlığa en yakın önceki href' sezgisi de yanlış (pan25f) verdi",
+      "fix": "PMLR sayfasında <p class=\"title\"> bloğunu ayrıştırıp sonraki abs bağlantısı alındı; pan25g ile düzeltildi; AWM/HippoRAG 2/AaaJ/RE-Bench/SWE-Lancer aynı yöntemle doğrulandı",
+      "tags": [
+        "series",
+        "citation",
+        "pmlr",
+        "verification"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T05:30:00.000Z"
+    },
+    {
+      "id": "bug-330",
+      "timestamp": "2026-09-05T05:30:00.000Z",
+      "error_message": "AgentDojo özetindeki '<%66' ile Tablo 3'teki 78,22 çelişiyordu; ilk taslak özeti kullandı",
+      "file": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
+      "root_cause": "Özet metni makalenin ilk sürümünden; tablo sonradan eklenen modeli (Claude 3.5 Sonnet) içeriyor",
+      "fix": "Cümle tablo sayılarıyla yeniden yazıldı (78,2 / 51,2; GPT-4o 69,0 / 47,7); karar #139'a not düşüldü",
+      "tags": [
+        "series",
+        "numbers",
+        "table-vs-abstract"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T05:30:00.000Z"
+    },
+    {
+      "id": "bug-331",
+      "timestamp": "2026-09-05T05:30:00.000Z",
+      "error_message": "check-series-svg: talimat-dort-kanaldan-girer.svg ve bes-savunma-uc-olcu.svg metin viewBox dışına taşıyor (ortalanmış metin, gösterge etiketi)",
+      "file": "content/series/assets/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu/talimat-dort-kanaldan-girer.svg",
+      "root_cause": "text-anchor=middle metinde denetleyici genişliği x ± w/2 tahmin eder; 210 birimlik kutuya 38 karakterlik alt satır sığmadı; gösterge x=558'den 24 karakter 720'yi aştı",
+      "fix": "Alt satırlar kısaltıldı (pasif: sayfaya bırakılır …), gösterge 220/340/490'a çekildi; alt metin SVG'ye göre yeniden eşlendi",
+      "tags": [
+        "series",
+        "svg",
+        "overflow",
+        "checker"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T05:30:00.000Z"
+    },
+    {
+      "id": "bug-332",
+      "timestamp": "2026-09-05T05:30:00.000Z",
+      "error_message": "Taslak 58'de numaralı ileri gönderme kaçtı: '63'te göreceğimiz türden' (vaat defterinde açık koordinat olurdu)",
+      "file": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
+      "root_cause": "Yazım sırasında güvenlik fazı makale numarası refleksle yazıldı; SOZLESME §5 numaralı vaadi bağlayıcı sayar",
+      "fix": "Python ileri-gönderme taraması yakaladı; 'serinin güvenlik fazında göreceğimiz türden' yapıldı; Batch 13 hiç koordinat açmadı",
+      "tags": [
+        "series",
+        "promise-ledger",
+        "forward-reference"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T05:30:00.000Z"
+    },
+    {
+      "id": "bug-333",
+      "timestamp": "2026-09-05T05:30:00.000Z",
+      "error_message": "fetch-b13: web.eecs.umich.edu GenProg PDF'i SSL CERTIFICATE_VERIFY_FAILED ile inmedi",
+      "file": "artifacts/b13-research/fetch-b13.py",
+      "root_cause": "Sunucunun sertifika zinciri bu makinede doğrulanamıyor; urllib doğrulamayı kapatmıyor",
+      "fix": "Aynı adres http:// ile curl -k üzerinden alındı, pypdf ile metne çevrildi; künye Crossref (TSE 38(1)) ile doğrulandı",
+      "tags": [
+        "research",
+        "ssl",
+        "fetch"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T05:30:00.000Z"
+    },
+    {
+      "id": "bug-334",
+      "timestamp": "2026-09-05T05:30:00.000Z",
+      "error_message": "browser_batch içinde zoom/screenshot 5 sn'de zaman aşımına düştü (şekil kaplayıcısı sonrası)",
+      "file": "artifacts/b13-research/measure-b13.js",
+      "root_cause": "Pano gizliyken batch içindeki çizim tamamlanmıyor; Batch 12'de zoom batch içinde çalışmıştı, bu run'da çalışmadı",
+      "fix": "JS kaplayıcı çağrısı ve screenshot/zoom ayrı tool çağrılarında yapıldı; standalone screenshot zaman aşımına düşünce standalone zoom tam ekran görüntüyü döndürdü",
+      "tags": [
+        "render",
+        "browser-pane",
+        "screenshot"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T05:30:00.000Z"
     }
   ]
 }
