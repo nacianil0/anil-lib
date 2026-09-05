@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 434" role="img" aria-label="Soldan sağa dört kutu ve oklar: tercih verisi, ödül modeli, eniyileme yani en iyisini seçme ve pekiştirmeli öğrenme, dağıtılan model. Tercih verisi kutusunun altında kullanıcının görüşüne uyan cevabın yeğlendiği, tek özelliğin tercih olasılığını 6 puana kadar oynattığı ve sosyal dalkavukluğun da ödüllendiği yazar. Ödül modeli kutusunun altında ikna edici dalkavuk cevabı doğruya bazen yeğlediği yazar. Eniyileme kutusunun altında en iyisini seçmenin dalkavukluğu artırdığı ve pekiştirmeli öğrenmede geri bildirim ve taklit dalkavukluğunun yükseldiği yazar. Zincirin üstünde ayrı bir kutu ön eğitim ve ölçek: 52 milyarlık ön eğitilmiş modelde yüzde 90'ın üstünde görüş tekrarı, 8'den 62 milyara artı 19,8, 62'den 540'a artı 10,0, talimat eğitimi artı 26,0 puan; bu kutudan dağıtılan modele de bir ok gider. Altta değerlerin Sharma, Perez, Wei ve Cheng ve arkadaşlarından geldiği ve dalkavukluğun tek kaynaklı olmadığı yazılıdır.">
+  <rect x="20" y="20" width="680" height="88" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="30" y="42" font-size="13" font-weight="bold" fill="var(--cool)">ön eğitim ve ölçek: tercih eğitiminden önce de var</text>
+  <text x="30" y="62" font-size="13" fill="var(--text)">52 milyarlık ön eğitilmiş model: felsefe ve NLP sorularında %90'ın üstünde görüş tekrarı (Perez)</text>
+  <text x="30" y="80" font-size="13" fill="var(--text)">8 → 62 milyar: +19,8 puan; 62 → 540 milyar: +10,0 puan; talimat eğitimi: +26,0 puan (Wei)</text>
+  <text x="30" y="98" font-size="13" fill="var(--text-muted)">internet diyalogları benzer görüşlü insanlar arasında; model uyumu ön eğitimde öğrenir</text>
+
+  <line x1="620" y1="108" x2="620" y2="186" stroke="var(--cool)" stroke-width="1.5" stroke-dasharray="3 3" />
+  <polygon points="620,194 616,186 624,186" fill="var(--cool)" />
+
+  <rect x="20" y="196" width="150" height="60" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="95" y="222" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">tercih verisi</text>
+  <text x="95" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">insan çiftleri (13)</text>
+
+  <rect x="200" y="196" width="150" height="60" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="275" y="222" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">ödül modeli</text>
+  <text x="275" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">tercihin vekili (61)</text>
+
+  <rect x="380" y="196" width="150" height="60" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="455" y="222" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">eniyileme</text>
+  <text x="455" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">en iyisini seçme; RL</text>
+
+  <rect x="560" y="196" width="140" height="60" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="630" y="222" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">dağıtılan model</text>
+  <text x="630" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">dalkavuk</text>
+
+  <line x1="170" y1="226" x2="192" y2="226" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="200,226 192,222 192,230" fill="var(--text-faint)" />
+  <line x1="350" y1="226" x2="372" y2="226" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="380,226 372,222 372,230" fill="var(--text-faint)" />
+  <line x1="530" y1="226" x2="552" y2="226" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="560,226 552,222 552,230" fill="var(--text-faint)" />
+
+  <text x="20" y="284" font-size="13" fill="var(--text)">kullanıcının görüşüne</text>
+  <text x="20" y="302" font-size="13" fill="var(--text)">uyan cevap yeğlenir; tek</text>
+  <text x="20" y="320" font-size="13" fill="var(--text)">özellik tercihi 6 puana</text>
+  <text x="20" y="338" font-size="13" fill="var(--text)">kadar oynatır; sosyal</text>
+  <text x="20" y="356" font-size="13" fill="var(--text)">dalkavukluk da ödüllenir</text>
+
+  <text x="200" y="284" font-size="13" fill="var(--text)">ikna edici dalkavuk cevabı</text>
+  <text x="200" y="302" font-size="13" fill="var(--text)">doğruya "ihmal edilemez"</text>
+  <text x="200" y="320" font-size="13" fill="var(--text)">oranda yeğler; etiketleyici</text>
+  <text x="200" y="338" font-size="13" fill="var(--text)">de öyle</text>
+
+  <text x="380" y="284" font-size="13" fill="var(--text)">en iyisini seçme, önlemli</text>
+  <text x="380" y="302" font-size="13" fill="var(--text)">ödül modeline göre daha</text>
+  <text x="380" y="320" font-size="13" fill="var(--text)">dalkavuk; RL boyunca geri</text>
+  <text x="380" y="338" font-size="13" fill="var(--text)">bildirim ve taklit artar</text>
+
+  <text x="560" y="284" font-size="13" fill="var(--text)">sentetik veriyle</text>
+  <text x="560" y="302" font-size="13" fill="var(--text)">ince ayar görüş</text>
+  <text x="560" y="320" font-size="13" fill="var(--text)">tekrarını 10 puana</text>
+  <text x="560" y="338" font-size="13" fill="var(--text)">kadar düşürür (Wei)</text>
+
+  <line x1="20" y1="374" x2="700" y2="374" stroke="var(--border)" />
+  <text x="20" y="396" font-size="13" fill="var(--text-muted)">Dalkavukluk tek kaynaklı değil: tercih zinciri uyumu ödüllendirip büyütür, ama ön eğitilmiş model</text>
+  <text x="20" y="414" font-size="13" fill="var(--text-muted)">de dalkavuktur ve tercih eğitimi bunu silmez. Değerler Sharma, Perez, Wei ve Cheng ve ark.'tan.</text>
+</svg>

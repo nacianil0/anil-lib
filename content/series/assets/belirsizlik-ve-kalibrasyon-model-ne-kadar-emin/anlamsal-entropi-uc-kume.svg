@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 410" role="img" aria-label="Sol panelde aynı soruya beş cevap: Paris, Paris'tir, Fransa'nın başkenti Paris, Lyon, Marsilya; düz sayımda beş ayrı dize, anlam kümelemesinde üç küme yazar ve ilk üç cevap tek kümeye toplanır. Sağ panelde iki satırlı tablo: doğru cevaplanan sorularda ortalama küme sayısı CoQA'da 1,27 ve TriviaQA'da 1,89; yanlış cevaplananlarda 1,77 ve 3,89; hatayı öngörme eğri altı alanı anlamsal entropiyle 0,77 ve 0,83, yalnızca küme sayısıyla 0,66 ve 0,79. Altta örneğin bizim olduğu, sayıların Kuhn ve arkadaşlarının 30 milyarlık açık modelle on örneklik ölçümünden geldiği ve yanlış cevabın anlamca daha çok dağıldığı yazılıdır.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru: "Fransa'nın başkenti?"</text>
+
+  <rect x="20" y="40" width="200" height="94" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="30" y="60" font-size="13" fill="var(--text)">"Paris"</text>
+  <text x="30" y="82" font-size="13" fill="var(--text)">"Paris'tir"</text>
+  <text x="30" y="104" font-size="13" fill="var(--text)">"Fransa'nın başkenti Paris"</text>
+  <text x="30" y="126" font-size="13" font-weight="bold" fill="var(--accent)">1. küme: aynı anlam</text>
+
+  <rect x="20" y="146" width="200" height="34" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="30" y="167" font-size="13" fill="var(--text)">"Lyon"</text>
+  <text x="160" y="167" font-size="13" fill="var(--text-muted)">2. küme</text>
+
+  <rect x="20" y="192" width="200" height="34" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="30" y="213" font-size="13" fill="var(--text)">"Marsilya"</text>
+  <text x="160" y="213" font-size="13" fill="var(--text-muted)">3. küme</text>
+
+  <text x="20" y="256" font-size="13" fill="var(--text)">düz sayım: 5 ayrı dize,</text>
+  <text x="20" y="274" font-size="13" fill="var(--text)">5 ayrı olasılık kütlesi</text>
+  <text x="20" y="292" font-size="13" fill="var(--text)">anlam kümeleri: 3 küme,</text>
+  <text x="20" y="310" font-size="13" fill="var(--text)">ilki kütlenin 3/5'i</text>
+  <text x="20" y="334" font-size="13" fill="var(--text-muted)">Kümeleme: iki cevap birbirini</text>
+  <text x="20" y="352" font-size="13" fill="var(--text-muted)">karşılıklı gerektiriyorsa</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-muted)">aynı küme (çıkarım modeli).</text>
+  <text x="20" y="394" font-size="13" fill="var(--text-muted)">Örnek bizim, açıklama için.</text>
+
+  <line x1="250" y1="16" x2="250" y2="400" stroke="var(--border)" />
+
+  <text x="270" y="24" font-size="13" font-weight="bold" fill="var(--text)">ölçüm (Kuhn ve ark., 30B açık model, 10 örnek)</text>
+  <text x="270" y="52" font-size="13" font-weight="bold" fill="var(--text)">ortalama küme sayısı</text>
+  <text x="600" y="52" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">CoQA</text>
+  <text x="700" y="52" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">TriviaQA</text>
+  <line x1="270" y1="62" x2="700" y2="62" stroke="var(--border)" />
+  <text x="270" y="86" font-size="13" fill="var(--text)">doğru cevaplanan sorular</text>
+  <text x="600" y="86" font-size="13" text-anchor="end" fill="var(--text)">1,27</text>
+  <text x="700" y="86" font-size="13" text-anchor="end" fill="var(--text)">1,89</text>
+  <rect x="262" y="98" width="446" height="24" fill="var(--accent-soft)" />
+  <text x="270" y="114" font-size="13" font-weight="bold" fill="var(--text)">yanlış cevaplanan sorular</text>
+  <text x="600" y="114" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">1,77</text>
+  <text x="700" y="114" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">3,89</text>
+
+  <text x="270" y="156" font-size="13" font-weight="bold" fill="var(--text)">hatayı öngörme (eğri altı alan)</text>
+  <line x1="270" y1="166" x2="700" y2="166" stroke="var(--border)" />
+  <text x="270" y="190" font-size="13" fill="var(--text)">anlamsal entropi</text>
+  <text x="600" y="190" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0,77</text>
+  <text x="700" y="190" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0,83</text>
+  <text x="270" y="216" font-size="13" fill="var(--text)">yalnızca küme sayısı</text>
+  <text x="600" y="216" font-size="13" text-anchor="end" fill="var(--text-muted)">0,66</text>
+  <text x="700" y="216" font-size="13" text-anchor="end" fill="var(--text-muted)">0,79</text>
+
+  <line x1="270" y1="240" x2="700" y2="240" stroke="var(--border)" />
+  <text x="270" y="264" font-size="13" fill="var(--text-muted)">Yanlış cevap anlamca daha çok dağılıyor: model</text>
+  <text x="270" y="282" font-size="13" fill="var(--text-muted)">bilmediğinde on örneği de başka başka anlamlara</text>
+  <text x="270" y="300" font-size="13" fill="var(--text-muted)">düşüyor. Eğri altı alan: rastgele bir doğru cevabın</text>
+  <text x="270" y="318" font-size="13" fill="var(--text-muted)">güveninin rastgele bir yanlışınkinden yüksek olma</text>
+  <text x="270" y="336" font-size="13" fill="var(--text-muted)">olasılığı; 0,5 yazı tura. Model doğruluğu CoQA'da</text>
+  <text x="270" y="354" font-size="13" fill="var(--text-muted)">%82,3, TriviaQA'da %50,6. Değerler Kuhn ve</text>
+  <text x="270" y="372" font-size="13" fill="var(--text-muted)">arkadaşlarının tablolarından.</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Dört satırlı tablo; sütunlar katman, kim ve ne zaman yazar, ölçülen ya da olay. Sistem istemi: dağıtan, her istekte; rol olgusal doğruluğu değiştirmiyor, ayrıcalık eğitilmiş, aşırı temkinin kaynağı olabiliyor. Eğitim: sağlayıcı, post-training'de; karakter eğitimi anayasanın çeşitlemesi, insan etiketi yok, özellikler elle izlenir; itiraz verisiyle ince ayar cevap değiştirmeyi yüzde 60 azaltır. Belirtim: sağlayıcı, belgede; dalkavuk olma maddesi, nesnel soruda olgu görüşe göre değişmez, komuta zinciri. Ağırlıkların içi: eğitim verisi ve ince ayar; karakter vektörü, ince ayar kayması 0,76 ile 0,97 ilişkili; altı bin güvensiz kod örneği yüzde 20 hizalanmamış cevap. Altta 2025 Nisan olayı kutusu: bir ticari modelin güncellemesine beğeni sinyali ve bellek eklendi, çevrimdışı değerlendirmeler ve A/B testi iyi, uzman testçiler uyardı, dört gün sonra geri alındı, dalkavukluk değerlendirmesi artık dağıtımı engelleyen ölçüt. En altta değerlerin metindeki kaynaklardan geldiği yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">katman</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">kim, ne zaman</text>
+  <text x="330" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">sistem istemi</text>
+  <text x="150" y="62" font-size="13" fill="var(--text-muted)">dağıtan; her istekte</text>
+  <text x="330" y="62" font-size="13" fill="var(--text)">rol olgusal doğruluğu değiştirmiyor (22); ayrıcalık</text>
+  <text x="330" y="80" font-size="13" fill="var(--text)">eğitilmiş (24); aşırı temkinin kaynağı olabiliyor (62)</text>
+
+  <line x1="20" y1="94" x2="700" y2="94" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="118" font-size="13" font-weight="bold" fill="var(--text)">eğitim</text>
+  <text x="150" y="118" font-size="13" fill="var(--text-muted)">sağlayıcı; post-training</text>
+  <text x="330" y="118" font-size="13" fill="var(--text)">karakter eğitimi: anayasanın çeşitlemesi, insan</text>
+  <text x="330" y="136" font-size="13" fill="var(--text)">etiketi yok, özellikler elle izlenir; itiraz verisiyle</text>
+  <text x="330" y="154" font-size="13" fill="var(--text)">ince ayar cevap değiştirmeyi %60 azaltır</text>
+
+  <line x1="20" y1="168" x2="700" y2="168" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="192" font-size="13" font-weight="bold" fill="var(--text)">belirtim</text>
+  <text x="150" y="192" font-size="13" fill="var(--text-muted)">sağlayıcı; belgede</text>
+  <text x="330" y="192" font-size="13" fill="var(--text)">"dalkavuk olma" maddesi: nesnel soruda olgu görüşe</text>
+  <text x="330" y="210" font-size="13" fill="var(--text)">göre değişmez; komuta zinciri (24'ün hiyerarşisi)</text>
+
+  <line x1="20" y1="224" x2="700" y2="224" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="248" font-size="13" font-weight="bold" fill="var(--text)">ağırlıkların içi</text>
+  <text x="150" y="248" font-size="13" fill="var(--text-muted)">eğitim verisi; ince ayar</text>
+  <text x="330" y="248" font-size="13" fill="var(--text)">karakter vektörü: ince ayar kayması yönle 0,76–0,97</text>
+  <text x="330" y="266" font-size="13" fill="var(--text)">ilişkili; 6.000 güvensiz kod örneği → kodla ilgisiz</text>
+  <text x="330" y="284" font-size="13" fill="var(--text)">sorularda %20 hizalanmamış cevap (tabanda 0)</text>
+
+  <line x1="20" y1="300" x2="700" y2="300" stroke="var(--border)" />
+
+  <rect x="20" y="312" width="680" height="112" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="30" y="334" font-size="13" font-weight="bold" fill="var(--accent)">Nisan 2025: bir ticari sohbet modelinin güncellemesi</text>
+  <text x="30" y="354" font-size="13" fill="var(--text)">güncellemeye beğeni–beğenmeme sinyali ve kullanıcı belleği eklendi → dalkavukluğu dizginleyen</text>
+  <text x="30" y="372" font-size="13" fill="var(--text)">asıl ödül sinyali zayıfladı; çevrimdışı değerlendirmeler ve küçük A/B testi iyi görünüyordu;</text>
+  <text x="30" y="390" font-size="13" fill="var(--text)">uzman testçiler "bir şeyler yanlış" dedi; sayısal sinyale güvenilip dağıtıldı, dört gün sonra</text>
+  <text x="30" y="408" font-size="13" fill="var(--text)">geri alındı. Dalkavukluk değerlendirmesi artık dağıtımı engelleyen bir ölçüt.</text>
+
+  <text x="20" y="448" font-size="13" fill="var(--text-muted)">Değerler metindeki kaynaklardan; olay sağlayıcının kendi (hakemli olmayan) açıklamalarından.</text>
+</svg>

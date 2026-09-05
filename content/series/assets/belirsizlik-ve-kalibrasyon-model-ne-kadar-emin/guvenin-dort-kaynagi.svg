@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="Dört satırlı tablo; sütunlar güven kaynağı, neye bakar, neyi ister ve metinden bir ölçüm. Token olasılığı: cevabın ya da doğru token'ının olasılığı; olasılıklara erişim; ön eğitilmiş model çoktan seçmelide kalibreli, tercih eğitimi bozar, sıcaklık düzeltir. Sözle söylenen güven: modelin yazdığı yüzde 80 eminim; yalnızca metin; tercih eğitimli modelde token olasılığından iyi, hata göreli yüzde 50 düşer, ama aşırı güvenli, yüzde 80 ile 100 arasına yığılır. Örnekleme tutarlılığı: aynı soruya on cevabın uyuşması; on çağrı; tekrar sayısıyla güven, seksen doğrulukta kapsama 44,2'den 45,4'e, hata 0,141'den 0,103'e. Anlamsal entropi: cevapların anlam kümelerine dağılımı; on çağrı artı bir çıkarım modeli; otuz görev–model çiftinde eğri altı alan 0,790, düz entropi 0,691. Altta kaynakların Kadavath, Tian, Xiong, Cole, Kuhn ve Farquhar ve arkadaşları olduğu ve hiçbirinin modelin bilgisine değil davranışına baktığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">kaynak</text>
+  <text x="170" y="28" font-size="13" font-weight="bold" fill="var(--text)">neye bakar</text>
+  <text x="360" y="28" font-size="13" font-weight="bold" fill="var(--text)">neyi ister</text>
+  <text x="500" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçüm</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">token olasılığı</text>
+  <text x="170" y="62" font-size="13" fill="var(--text)">"(B)" ya da "doğru"</text>
+  <text x="170" y="80" font-size="13" fill="var(--text)">token'ının olasılığı</text>
+  <text x="360" y="62" font-size="13" fill="var(--text-muted)">olasılıklara erişim</text>
+  <text x="500" y="62" font-size="13" fill="var(--text)">ön eğitimde kalibreli;</text>
+  <text x="500" y="80" font-size="13" fill="var(--text)">tercih eğitimi bozar,</text>
+  <text x="500" y="98" font-size="13" fill="var(--text)">sıcaklık düzeltir</text>
+
+  <line x1="20" y1="112" x2="700" y2="112" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="136" font-size="13" font-weight="bold" fill="var(--text)">sözle söylenen güven</text>
+  <text x="170" y="136" font-size="13" fill="var(--text)">modelin yazdığı</text>
+  <text x="170" y="154" font-size="13" fill="var(--text)">"yüzde 80 eminim"</text>
+  <text x="360" y="136" font-size="13" fill="var(--text-muted)">yalnızca metin</text>
+  <text x="500" y="136" font-size="13" fill="var(--text)">tercih eğitimli modelde</text>
+  <text x="500" y="154" font-size="13" fill="var(--text)">olasılıktan iyi, hata −%50;</text>
+  <text x="500" y="172" font-size="13" fill="var(--text)">ama %80–100'e yığılır</text>
+
+  <line x1="20" y1="186" x2="700" y2="186" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="210" font-size="13" font-weight="bold" fill="var(--text)">örnekleme tutarlılığı</text>
+  <text x="170" y="210" font-size="13" fill="var(--text)">aynı soruya on cevabın</text>
+  <text x="170" y="228" font-size="13" fill="var(--text)">birbiriyle uyuşması</text>
+  <text x="360" y="210" font-size="13" fill="var(--text-muted)">on çağrı</text>
+  <text x="500" y="210" font-size="13" fill="var(--text)">%80 doğrulukta cevaplama</text>
+  <text x="500" y="228" font-size="13" fill="var(--text)">44,2 → 45,4; hata</text>
+  <text x="500" y="246" font-size="13" fill="var(--text)">0,141 → 0,103</text>
+
+  <line x1="20" y1="260" x2="700" y2="260" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="270" width="680" height="66" fill="var(--accent-soft)" />
+  <text x="20" y="292" font-size="13" font-weight="bold" fill="var(--text)">anlamsal entropi</text>
+  <text x="170" y="292" font-size="13" fill="var(--text)">cevapların anlam</text>
+  <text x="170" y="310" font-size="13" fill="var(--text)">kümelerine dağılımı</text>
+  <text x="360" y="292" font-size="13" fill="var(--text-muted)">on çağrı +</text>
+  <text x="360" y="310" font-size="13" fill="var(--text-muted)">çıkarım modeli</text>
+  <text x="500" y="292" font-size="13" fill="var(--text)">30 görev–model çiftinde</text>
+  <text x="500" y="310" font-size="13" fill="var(--text)">eğri altı alan 0,790;</text>
+  <text x="500" y="328" font-size="13" fill="var(--text)">düz entropi 0,691</text>
+
+  <line x1="20" y1="350" x2="700" y2="350" stroke="var(--border)" />
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">Dördü de modelin bilgisine değil davranışına bakar; içeriye bakan beşinci kaynak metinde.</text>
+  <text x="20" y="392" font-size="13" fill="var(--text-muted)">Ölçümler sırasıyla Kadavath, Tian ve Xiong, Cole, Kuhn ve Farquhar ve arkadaşlarından;</text>
+  <text x="20" y="410" font-size="13" fill="var(--text-muted)">"hata" beklenen kalibrasyon hatası, "cevaplama" seçici tahminde cevaplanan soru payı.</text>
+</svg>

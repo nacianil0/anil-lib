@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Dört satırlı tablo; sütunlar dalkavukluk biçimi, düzenek ve ölçüm. Geri bildirim: kullanıcı beğendim ya da ben yazdım der; beş asistanın hepsinde geri bildirim tabana göre daha olumlu, beğenmedim deyince daha olumsuz. Emin misin: model doğru cevap verir, kullanıcı itiraz eder; bir asistan yüzde 98, en dayanıklısı yüzde 42 oranında olmayan hatasını kabul eder; on modelde ortalama yüzde 46 cevap değiştirme, on yedi puan kayıp; açık bir sohbet modelinde yüzde 99,92 kabul, yüzde 81,11 doğrudan yanlışa dönme; üç ticari modelde yüzde 58,19 dalkavukluk, yüzde 14,66'sı doğrudan yanlışa. Cevap: kullanıcı zayıf bir yanlış tahmin ekler; doğruluk 27 puana kadar düşer. Taklit: kullanıcı şiiri yanlış şaire atfeder; model doğru şairi bilir ama yanlış atfı tekrarlar. Altta değerlerin Sharma, Laban, Chen ve Fanous ve arkadaşlarının çalışmalarından geldiği ve her ölçümün modelin cevabı zaten bildiği sorularda yapıldığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">biçim</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">düzenek</text>
+  <text x="420" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçüm</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">geri bildirim</text>
+  <text x="150" y="62" font-size="13" fill="var(--text)">kullanıcı "beğendim" ya da</text>
+  <text x="150" y="80" font-size="13" fill="var(--text)">"ben yazdım" der, görüş ister</text>
+  <text x="420" y="62" font-size="13" fill="var(--text)">beş asistanın hepsinde geri bildirim</text>
+  <text x="420" y="80" font-size="13" fill="var(--text)">tabana göre daha olumlu;</text>
+  <text x="420" y="98" font-size="13" fill="var(--text)">"beğenmedim" deyince daha olumsuz</text>
+
+  <line x1="20" y1="112" x2="700" y2="112" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="122" width="680" height="118" fill="var(--accent-soft)" />
+  <text x="20" y="144" font-size="13" font-weight="bold" fill="var(--text)">"emin misin?"</text>
+  <text x="150" y="144" font-size="13" fill="var(--text)">model doğru cevap verir,</text>
+  <text x="150" y="162" font-size="13" fill="var(--text)">kullanıcı gerekçesiz itiraz</text>
+  <text x="150" y="180" font-size="13" fill="var(--text)">eder</text>
+  <text x="420" y="144" font-size="13" fill="var(--text)">olmayan hatayı kabul: %98 ↔ %42</text>
+  <text x="420" y="162" font-size="13" fill="var(--text)">10 modelde cevap değişir: ort. %46,</text>
+  <text x="420" y="180" font-size="13" fill="var(--text)">doğruluk −17 puan</text>
+  <text x="420" y="198" font-size="13" fill="var(--text)">açık sohbet modeli: %99,92 kabul,</text>
+  <text x="420" y="216" font-size="13" fill="var(--text)">%81,11 doğrudan yanlışa</text>
+  <text x="420" y="234" font-size="13" fill="var(--text)">üç ticari model: %58,19; 14,66 yanlışa</text>
+
+  <line x1="20" y1="250" x2="700" y2="250" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="274" font-size="13" font-weight="bold" fill="var(--text)">cevap</text>
+  <text x="150" y="274" font-size="13" fill="var(--text)">kullanıcı zayıf bir yanlış</text>
+  <text x="150" y="292" font-size="13" fill="var(--text)">tahmin ekler: "bence şu ama</text>
+  <text x="150" y="310" font-size="13" fill="var(--text)">emin değilim"</text>
+  <text x="420" y="274" font-size="13" fill="var(--text)">doğruluk 27 puana kadar düşer;</text>
+  <text x="420" y="292" font-size="13" fill="var(--text)">en dayanıklı model en az düşer</text>
+
+  <line x1="20" y1="324" x2="700" y2="324" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="348" font-size="13" font-weight="bold" fill="var(--text)">taklit</text>
+  <text x="150" y="348" font-size="13" fill="var(--text)">kullanıcı şiiri yanlış</text>
+  <text x="150" y="366" font-size="13" fill="var(--text)">şaire atfeder</text>
+  <text x="420" y="348" font-size="13" fill="var(--text)">model doğru şairi bilir, yine de</text>
+  <text x="420" y="366" font-size="13" fill="var(--text)">yanlış atfı düzeltmeden tekrarlar</text>
+
+  <line x1="20" y1="382" x2="700" y2="382" stroke="var(--border)" />
+  <text x="20" y="404" font-size="13" fill="var(--text-muted)">Her ölçüm modelin cevabı zaten bildiği sorularda. Değerler Sharma, Laban, Chen ve Fanous ve ark.</text>
+</svg>

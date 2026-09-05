@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Altı satırlı tablo; sütunlar saldırı ailesi, saldırganın gerektirdiği erişim, örnek yöntemler ve metinden bir ölçüm. Elle yazılmış kalıp: yalnızca sohbet; rol oyunu istemi; bir modelde 0,75 öbüründe 0,00. İkna ve dil: yalnızca sohbet; ikna edici yeniden yazım, düşük kaynaklı dil; on denemede yüzde 92, düşük kaynaklı dilde üç kat. Many-shot: uzun pencere; yüzlerce sahte diyalog; 128 gösterim beş modelde yeter. Modelle bulunan istem: kara kutu artı ikinci model; PAIR ve TAP; GPT-4'te yüzde 48, sorgu başına 24. Gradyanla eniyilenen sonek: beyaz kutu, sonra aktarım; GCG; Vicuna'da yüzde 99, GPT-3.5'e yüzde 86,6 aktarım. Üretim kuralı ve ağırlık: açık ağırlık; sıcaklık ve sistem istemi, tek yönü silmek, ince ayar; sohbet modeli 0'dan 81'e. Altta erişim arttıkça saldırının bedelinin düştüğü ve savunmanın seçeneklerinin azaldığı, değerlerin metindeki kaynaklardan olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">saldırı ailesi</text>
+  <text x="200" y="28" font-size="13" font-weight="bold" fill="var(--text)">erişim</text>
+  <text x="340" y="28" font-size="13" font-weight="bold" fill="var(--text)">yöntem</text>
+  <text x="540" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçüm</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">elle yazılmış kalıp</text>
+  <text x="200" y="62" font-size="13" fill="var(--text-muted)">yalnızca sohbet</text>
+  <text x="340" y="62" font-size="13" fill="var(--text)">rol oyunu istemi</text>
+  <text x="340" y="80" font-size="13" fill="var(--text-muted)">("her şeyi yapan" kimlik)</text>
+  <text x="540" y="62" font-size="13" fill="var(--text)">bir modelde 0,75,</text>
+  <text x="540" y="80" font-size="13" fill="var(--text)">öbüründe 0,00</text>
+
+  <text x="20" y="108" font-size="13" font-weight="bold" fill="var(--text)">ikna ve dil</text>
+  <text x="200" y="108" font-size="13" fill="var(--text-muted)">yalnızca sohbet</text>
+  <text x="340" y="108" font-size="13" fill="var(--text)">ikna edici yeniden yazım;</text>
+  <text x="340" y="126" font-size="13" fill="var(--text)">düşük kaynaklı dil</text>
+  <text x="540" y="108" font-size="13" fill="var(--text)">on denemede %92;</text>
+  <text x="540" y="126" font-size="13" fill="var(--text)">düşük kaynaklı dilde 3×</text>
+
+  <text x="20" y="154" font-size="13" font-weight="bold" fill="var(--text)">many-shot</text>
+  <text x="200" y="154" font-size="13" fill="var(--text-muted)">uzun pencere</text>
+  <text x="340" y="154" font-size="13" fill="var(--text)">yüzlerce sahte diyalog</text>
+  <text x="540" y="154" font-size="13" fill="var(--text)">128 gösterim beş</text>
+  <text x="540" y="172" font-size="13" fill="var(--text)">modelde yeter</text>
+
+  <line x1="20" y1="186" x2="700" y2="186" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="210" font-size="13" font-weight="bold" fill="var(--text)">modelle bulunan istem</text>
+  <text x="200" y="210" font-size="13" fill="var(--text-muted)">kara kutu +</text>
+  <text x="200" y="228" font-size="13" fill="var(--text-muted)">ikinci model</text>
+  <text x="340" y="210" font-size="13" fill="var(--text)">PAIR, TAP</text>
+  <text x="340" y="228" font-size="13" fill="var(--text-muted)">(saldırgan + hakem döngüsü)</text>
+  <text x="540" y="210" font-size="13" fill="var(--text)">GPT-4'te %48,</text>
+  <text x="540" y="228" font-size="13" fill="var(--text)">sorgu başına 24</text>
+
+  <text x="20" y="256" font-size="13" font-weight="bold" fill="var(--text)">gradyanla eniyilenen</text>
+  <text x="20" y="274" font-size="13" font-weight="bold" fill="var(--text)">sonek</text>
+  <text x="200" y="256" font-size="13" fill="var(--text-muted)">beyaz kutu,</text>
+  <text x="200" y="274" font-size="13" fill="var(--text-muted)">sonra aktarım</text>
+  <text x="340" y="256" font-size="13" fill="var(--text)">GCG: açgözlü</text>
+  <text x="340" y="274" font-size="13" fill="var(--text)">koordinat gradyanı</text>
+  <text x="540" y="256" font-size="13" fill="var(--text)">Vicuna'da %99;</text>
+  <text x="540" y="274" font-size="13" fill="var(--text)">GPT-3.5'e %86,6 aktarım</text>
+
+  <line x1="20" y1="288" x2="700" y2="288" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="298" width="680" height="48" fill="var(--accent-soft)" />
+  <text x="20" y="318" font-size="13" font-weight="bold" fill="var(--text)">üretim kuralı ve ağırlık</text>
+  <text x="200" y="318" font-size="13" fill="var(--text-muted)">açık ağırlık</text>
+  <text x="340" y="318" font-size="13" fill="var(--text)">sıcaklık ve sistem istemi;</text>
+  <text x="340" y="336" font-size="13" fill="var(--text)">tek yönü silmek; ince ayar</text>
+  <text x="540" y="318" font-size="13" fill="var(--text)">sohbet modeli</text>
+  <text x="540" y="336" font-size="13" fill="var(--text)">0 → 81</text>
+
+  <line x1="20" y1="358" x2="700" y2="358" stroke="var(--border)" />
+  <text x="20" y="382" font-size="13" fill="var(--text-muted)">Erişim sohbetten olasılığa, olasılıktan ağırlığa çıktıkça saldırının bedeli düşüyor,</text>
+  <text x="20" y="400" font-size="13" fill="var(--text-muted)">savunmanın seçenekleri azalıyor. Kesikli çizgiler üç erişim düzeyini ayırır;</text>
+  <text x="20" y="418" font-size="13" fill="var(--text-muted)">değerler metindeki kaynaklardan.</text>
+</svg>

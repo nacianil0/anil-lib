@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Yedi satır altı sütunlu tablo; satırlar model, sütunlar saldırı yöntemi için yüzde saldırı başarısı: aktarılan GCG soneği, PAIR, aktarılan TAP, AutoDAN, elle yazılmış kalıp ve saldırısız doğrudan istek. Llama 2 7B sohbet: 19,7, 9,3, 7,8, 0,5, 0,8, 0,8. Mistral 7B: 64,5, 52,5, 66,1, 71,5, 58,0, 46,3. Zephyr 7B: 61,1, 58,8, 69,3, 75,0, 66,0, 65,8. Zephyr artı R2D2 düşmanca eğitimi, vurgulu: 0,0, 48,0, 54,3, 17,0, 13,6, 14,2. GPT-4: 22,0, 39,3, 54,8, tire, 11,3, 21,0. Claude 2.1: 2,6, 2,8, 0,8, tire, 0,3, 2,0. Gemini Pro: 18,0, 35,1, 31,2, tire, 12,1, 18,0. Altta değerlerin bütün davranışlar üzerinden olduğu, puanlayıcının insanla yüzde 93,2 uzlaşan ince ayarlı sınıflandırıcı olduğu, kapalı modellerde yalnızca aktarım ve kara kutu saldırılarının çalıştırılabildiği ve değerlerin Mazeika ve arkadaşlarının tablosundan geldiği yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">model</text>
+  <text x="290" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">GCG (akt.)</text>
+  <text x="360" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">PAIR</text>
+  <text x="440" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">TAP (akt.)</text>
+  <text x="525" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">AutoDAN</text>
+  <text x="605" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">kalıp</text>
+  <text x="700" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">doğrudan</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" fill="var(--text)">Llama 2 7B sohbet</text>
+  <text x="290" y="62" font-size="13" text-anchor="end" fill="var(--text)">19,7</text>
+  <text x="360" y="62" font-size="13" text-anchor="end" fill="var(--text)">9,3</text>
+  <text x="440" y="62" font-size="13" text-anchor="end" fill="var(--text)">7,8</text>
+  <text x="525" y="62" font-size="13" text-anchor="end" fill="var(--text)">0,5</text>
+  <text x="605" y="62" font-size="13" text-anchor="end" fill="var(--text)">0,8</text>
+  <text x="700" y="62" font-size="13" text-anchor="end" fill="var(--text-muted)">0,8</text>
+
+  <text x="20" y="90" font-size="13" fill="var(--text)">Mistral 7B</text>
+  <text x="290" y="90" font-size="13" text-anchor="end" fill="var(--text)">64,5</text>
+  <text x="360" y="90" font-size="13" text-anchor="end" fill="var(--text)">52,5</text>
+  <text x="440" y="90" font-size="13" text-anchor="end" fill="var(--text)">66,1</text>
+  <text x="525" y="90" font-size="13" text-anchor="end" fill="var(--text)">71,5</text>
+  <text x="605" y="90" font-size="13" text-anchor="end" fill="var(--text)">58,0</text>
+  <text x="700" y="90" font-size="13" text-anchor="end" fill="var(--text-muted)">46,3</text>
+
+  <text x="20" y="118" font-size="13" fill="var(--text)">Zephyr 7B</text>
+  <text x="290" y="118" font-size="13" text-anchor="end" fill="var(--text)">61,1</text>
+  <text x="360" y="118" font-size="13" text-anchor="end" fill="var(--text)">58,8</text>
+  <text x="440" y="118" font-size="13" text-anchor="end" fill="var(--text)">69,3</text>
+  <text x="525" y="118" font-size="13" text-anchor="end" fill="var(--text)">75,0</text>
+  <text x="605" y="118" font-size="13" text-anchor="end" fill="var(--text)">66,0</text>
+  <text x="700" y="118" font-size="13" text-anchor="end" fill="var(--text-muted)">65,8</text>
+
+  <rect x="20" y="130" width="680" height="24" fill="var(--accent-soft)" />
+  <text x="20" y="146" font-size="13" font-weight="bold" fill="var(--text)">Zephyr 7B + R2D2</text>
+  <text x="290" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0,0</text>
+  <text x="360" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">48,0</text>
+  <text x="440" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">54,3</text>
+  <text x="525" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">17,0</text>
+  <text x="605" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">13,6</text>
+  <text x="700" y="146" font-size="13" text-anchor="end" fill="var(--text-muted)">14,2</text>
+
+  <line x1="20" y1="164" x2="700" y2="164" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="188" font-size="13" fill="var(--text)">GPT-4</text>
+  <text x="290" y="188" font-size="13" text-anchor="end" fill="var(--text)">22,0</text>
+  <text x="360" y="188" font-size="13" text-anchor="end" fill="var(--text)">39,3</text>
+  <text x="440" y="188" font-size="13" text-anchor="end" fill="var(--text)">54,8</text>
+  <text x="525" y="188" font-size="13" text-anchor="end" fill="var(--text-faint)">—</text>
+  <text x="605" y="188" font-size="13" text-anchor="end" fill="var(--text)">11,3</text>
+  <text x="700" y="188" font-size="13" text-anchor="end" fill="var(--text-muted)">21,0</text>
+
+  <text x="20" y="216" font-size="13" fill="var(--text)">Claude 2.1</text>
+  <text x="290" y="216" font-size="13" text-anchor="end" fill="var(--text)">2,6</text>
+  <text x="360" y="216" font-size="13" text-anchor="end" fill="var(--text)">2,8</text>
+  <text x="440" y="216" font-size="13" text-anchor="end" fill="var(--text)">0,8</text>
+  <text x="525" y="216" font-size="13" text-anchor="end" fill="var(--text-faint)">—</text>
+  <text x="605" y="216" font-size="13" text-anchor="end" fill="var(--text)">0,3</text>
+  <text x="700" y="216" font-size="13" text-anchor="end" fill="var(--text-muted)">2,0</text>
+
+  <text x="20" y="244" font-size="13" fill="var(--text)">Gemini Pro</text>
+  <text x="290" y="244" font-size="13" text-anchor="end" fill="var(--text)">18,0</text>
+  <text x="360" y="244" font-size="13" text-anchor="end" fill="var(--text)">35,1</text>
+  <text x="440" y="244" font-size="13" text-anchor="end" fill="var(--text)">31,2</text>
+  <text x="525" y="244" font-size="13" text-anchor="end" fill="var(--text-faint)">—</text>
+  <text x="605" y="244" font-size="13" text-anchor="end" fill="var(--text)">12,1</text>
+  <text x="700" y="244" font-size="13" text-anchor="end" fill="var(--text-muted)">18,0</text>
+
+  <line x1="20" y1="260" x2="700" y2="260" stroke="var(--border)" />
+  <text x="20" y="284" font-size="13" fill="var(--text-muted)">Yüzde saldırı başarısı, 510 davranışın tamamı; puanlayıcı insanla %93,2 uzlaşan ince ayarlı</text>
+  <text x="20" y="302" font-size="13" fill="var(--text-muted)">sınıflandırıcı. "akt." açık bir modelde bulunup aktarılan saldırı; kapalı modellerde yalnızca</text>
+  <text x="20" y="320" font-size="13" fill="var(--text-muted)">aktarım ve kara kutu saldırıları çalıştı (—). Değerler Mazeika ve arkadaşlarının tablosundan.</text>
+</svg>

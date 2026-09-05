@@ -1242,6 +1242,86 @@
       "path": "content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md",
       "relatedArticleIds": [],
       "classificationBatch": 14
+    },
+    {
+      "articleId": "article_8d57e862-ecef-4908-bd9d-b82e8f65d3c0",
+      "title": "Jailbreak ve Kırmızı Takım",
+      "slug": "jailbreak-ve-kirmizi-takim",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 63,
+      "summary": "Reddi ağırlıklara dokunmadan aşan saldırıları ve onları bulan işi ölçer: elle yazılmış bir kalıbın bir modelde dörtte üç, öbüründe sıfır başarı almasını; ikna edici yeniden yazımın on denemede yüzde 92'ye çıkmasını; düşük kaynaklı dilde reddin üç kat kırılmasını; yüz yirmi sekiz gösterimin yetmesini; gradyanla eniyilenmiş bir soneğin açık bir modelde bulunup kapalı bir modele yüzde 86,6 aktarılmasını; yirmi sorguda saldırı bulan ikinci bir modeli; saldırıyı kimin puanladığını — sözcük eşleşmesinin insanla ters ilişkili olduğunu — ve her savunma katmanının yarardan ne kestiğini; hiçbir modelin her saldırıya, hiçbir saldırının her modele dayanmadığını ve açık ağırlığın saldırgana üç kapı açtığını ölçümlerle anlatır.",
+      "tags": [
+        "jailbreak",
+        "kirmizi-takim",
+        "saldiri-basari-orani",
+        "gradyanla-eniyilenen-saldiri",
+        "savunma-katmanlari"
+      ],
+      "contentHash": "sha256:0734525f5d7343bcc0b4fafafbf09102e801e1b6b0af6fc11907208bb4f2fd65",
+      "path": "content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 15
+    },
+    {
+      "articleId": "article_970eeb80-ca29-4395-925c-f339383c2849",
+      "title": "Constitutional AI ve Ölçeklenebilir Denetim",
+      "slug": "constitutional-ai-ve-olceklenebilir-denetim",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 64,
+      "summary": "13'te ileriye bırakılan borcu öder: tercih etiketini insan yerine yazılı ilkelerle donatılmış bir modelin üretmesini — on altı ilkeyle eleştiri ve düzeltme, zararsızlık için sıfır insan etiketi, kaçamak cevap vermeyen bir asistan —; yapay geri bildirimin insanınkiyle başa baş çıkıp on kat ucuz olduğunu; ilkenin nasıl yazıldığını — kısa ve genel olanın uzun ve özgülden iyi genelleştiğini, tek bir ilkenin bile güç arzusunu düşürdüğünü —; ve denetçi modelden zayıfken ne olduğunu: sandviç deneyinde insan artı modelin ikisini de yirmi puan geçmesini, zayıf etiketle eğitilen güçlü öğrencinin açığın yarısını geri kazanmasını ama ödül modelinde onda birinde kalmasını, eleştirinin insanın bulduğu kusuru yarı yarıya artırmasını ve tartışmanın danışmanlığı her görevde geçip yalnız hakemi ancak bazı görevlerde geçmesini ölçümlerle anlatır.",
+      "tags": [
+        "constitutional-ai",
+        "yapay-geri-bildirim",
+        "olceklenebilir-denetim",
+        "zayiftan-guclu-ye-genelleme",
+        "tartisma-ile-denetim"
+      ],
+      "contentHash": "sha256:c9d5c6223fdd159091fd53b2864bad7d3987a3fd28aa6f8f408a9162bb1b6ddc",
+      "path": "content/series/articles/safety-and-evaluation/constitutional-ai-ve-olceklenebilir-denetim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 15
+    },
+    {
+      "articleId": "article_e32d0f7f-090d-4368-86d3-64bf6574e36f",
+      "title": "Belirsizlik ve Kalibrasyon: Model Ne Kadar Emin?",
+      "slug": "belirsizlik-ve-kalibrasyon-model-ne-kadar-emin",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 65,
+      "summary": "16'da adını koyduğumuz kalibrasyonu kurar: güvenilirlik diyagramını ve beklenen kalibrasyon hatasını yüz cevaplık elle hesaplanmış bir örnekle; yüz on katmanlı bir ağın hatasının sıcaklık ölçeklemeyle 16,5'ten 1,3'e inmesini; ön eğitimden çıkan modelin çoktan seçmeli soruda kalibreli olup tercih eğitiminden sonra hatanın 0,007'den 0,074'e çıkmasını ve tek bir sıcaklıkla geri gelmesini; güvenin dört kaynağını — token olasılığı, sözle söylenen güven, örnekleme tutarlılığı, anlamsal entropi — ve otuz görev–model çiftinde anlamsal entropinin hatayı 0,79 eğri altı alanla öngörmesini; güvenin seçici cevaba ve insanın kararına nasıl dönüştüğünü — birinci tekil kişiyle söylenen belirsizliğin yanlış cevaba uymayı düşürmesini — ve sınavların 'bilmiyorum'u cezalandırdığı sürece uydurmanın neden sürdüğünü ölçümlerle anlatır.",
+      "tags": [
+        "kalibrasyon",
+        "belirsizlik",
+        "guvenilirlik-diyagrami",
+        "anlamsal-entropi",
+        "secici-tahmin"
+      ],
+      "contentHash": "sha256:2e48c67ea68e45847334139a05e19d3e9c4d3a9e25f2a80b39b9939274088be8",
+      "path": "content/series/articles/safety-and-evaluation/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 15
+    },
+    {
+      "articleId": "article_f1ab3577-ef65-4885-84e2-d756a9baa3cb",
+      "title": "Dalkavukluk ve Model Karakteri",
+      "slug": "dalkavukluk-ve-model-karakteri",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 66,
+      "summary": "Modelin doğru olanı değil hoşa gideni söylemesini ölçer: 'emin misin?' sorusuna bir asistanın yüzde 98 oranında olmayan hatasını kabul etmesini, on modelin ortalama yüzde 46 cevap değiştirip on yedi puan kaybetmesini, kullanıcının yanlış tahmininin doğruluğu 27 puana kadar düşürmesini; dalkavukluğun tercih verisinde ödüllendiğini, ölçekle ve talimat eğitimiyle arttığını, ön eğitimden çıkan modelde bile bulunduğunu; gerekçeyi sadakatsizleştirdiğini — önerilen bir şık doğruluğu 36 puan düşürürken gerekçede hiç anılmıyor — ve kimin görüşünü yansıttığını; karakterin sistem istemi, eğitim, belirtim ve ağırlık olmak üzere dört katmanda yazıldığını ve bir üretim güncellemesinde beğeni sinyalinin nasıl dalkavukluğa dönüşüp geri alındığını ölçümlerle anlatır.",
+      "tags": [
+        "dalkavukluk",
+        "model-karakteri",
+        "tercih-verisi",
+        "gerekce-sadakati",
+        "karakter-egitimi"
+      ],
+      "contentHash": "sha256:3baf881283c07f85dde652cfd5be9241eb5f7e861087478856c96d186849d427",
+      "path": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 15
     }
   ]
 }

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T10:05:12.124Z
-> Files: 159 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T18:27:26.753Z
+> Files: 192 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -39,6 +39,19 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/47dcc4fc-d5cd-487c-895e-0d8b267108b0/scratchpad/
 
 - `wolf_update.py` — read, write, insert_into_section, l_startswith (~3275 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/
+
+- `fix-svg-b15.py` — apply (~2318 tok)
+- `fix-svg-b15b.py` — apply (~1162 tok)
+- `inventory-b15.py` (~548 tok)
+- `scan-b15.py` — body (~645 tok)
+- `state-b15-handoff.py` — rep, rng (~7895 tok)
+- `state-b15-wolf.py` — , artifacts/b15-research/** | başarılı | ~90000 | (~2972 tok)
+- `state-b15-yol.py` — rep, dizisi, c (~7768 tok)
+- `trim63.py` (~3122 tok)
+- `trim63b.py` (~937 tok)
+- `trim63c.py` (~171 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/
 
@@ -123,6 +136,7 @@
 - `series-batch12-faz6-acilis.md` (~668 tok)
 - `series-batch13-faz6-ikinci-yari.md` (~689 tok)
 - `series-batch14-faz7-acilis.md` (~707 tok)
+- `series-batch15-faz7-govde.md` (~843 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -169,6 +183,17 @@
 - `fetch-html-b14.py` — strip (~542 tok)
 - `measure-b14.js` — Tarayıcı panosunda çalıştırılan ölçüm yardımcısı (Batch 14); localStorage 'b14m' (~620 tok)
 - `sweep-b14.py` — 63 seri rotasını urllib ile 200 denetimi (Batch 14) (~304 tok)
+
+## artifacts/b15-research/
+
+- `dblp-b15.py` — Batch 15 DBLP `ee` araması, dblp-b14.json'dan tohumlu (~568 tok)
+- `fetch-b15.py` — fetch, norm, title_match, arxiv_search; ~140 aday PDF (~5847 tok)
+- `fetch-html-b15.py` — strip; sağlayıcı belgeleri → html/*.txt (~650 tok)
+- `measure-b15.js` — Tarayıcı panosunda çalıştırılan ölçüm yardımcısı (Batch 13–15); localStorage 'b15m' (~620 tok)
+- `shots-b15.cjs` — Playwright (@playwright/test Chromium) ile figure svg'lerini 1200 px light/dark PNG'ye yazar → shots/ (~700 tok)
+- `sweep-b15.py` — 67 seri rotasını urllib ile 200 denetimi (Batch 15) (~304 tok)
+- `launch.json.orig` — özgün .claude/launch.json yedeği (~60 tok)
+- `pdf/*.txt`, `html/*.txt` — kaynak metinleri (PDF'ler silindi); `shots/*.png` — 26 şekil görüntüsü
 
 ## artifacts/b7-render/
 
@@ -347,8 +372,12 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md` — "Eminim" ne demek (~7378 tok)
+- `constitutional-ai-ve-olceklenebilir-denetim.md` — Etiketi kim yazar, ilkeyi kim (~8517 tok)
+- `dalkavukluk-ve-model-karakteri.md` — Hoşa giden ile doğru olan (~7672 tok)
 - `guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md` — Üç sıfat, bir gerilim (~6368 tok)
 - `hizalama-sorunu-ne-istedigimizi-soylemek-zor.md` — Söylediğimiz şey, istediğimiz şey değil (~7660 tok)
+- `jailbreak-ve-kirmizi-takim.md` — Ret ilk token'lardaysa, ilk token'lar kimin (~10251 tok)
 
 ## content/series/assets/
 
@@ -410,6 +439,12 @@
 ## content/series/assets/baglam-penceresi-istemin-anatomisi/
 
 
+## content/series/assets/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin/
+
+- `anlamsal-entropi-uc-kume.svg` (~1395 tok)
+- `guvenilirlik-diyagrami-ve-ece.svg` (~1821 tok)
+- `guvenin-dort-kaynagi.svg` (~1306 tok)
+
 ## content/series/assets/bellek-sohbet-icinde-ve-sohbetler-arasinda/
 
 
@@ -436,6 +471,18 @@
 - `coklu-ajan-basarisizliklari.svg` (~560 tok)
 - `dort-ajan-duzeni.svg` (~2114 tok)
 - `tartisma-oylama-yansima.svg` (~826 tok)
+
+## content/series/assets/constitutional-ai-ve-olceklenebilir-denetim/
+
+- `anayasadan-etikete-iki-asama.svg` (~1935 tok)
+- `kim-denetliyor-hangi-duzenle.svg` (~1555 tok)
+- `zayiftan-guclu-ye-geri-kazanilan-pay.svg` (~1440 tok)
+
+## content/series/assets/dalkavukluk-ve-model-karakteri/
+
+- `dalkavuklugun-iki-kaynagi.svg` (~1482 tok)
+- `dort-dalkavukluk.svg` (~1187 tok)
+- `karakterin-dort-katmani.svg` (~1255 tok)
 
 ## content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/
 
@@ -493,6 +540,13 @@
 
 ## content/series/assets/istem-muhendisligi-kanita-dayali-bir-bakis/
 
+
+## content/series/assets/jailbreak-ve-kirmizi-takim/
+
+- `alti-saldiri-ailesi-uc-erisim.svg` (~1458 tok)
+- `gcg-aktarim-tablosu.svg` (~1637 tok)
+- `hicbir-model-her-saldiriya.svg` (~1830 tok)
+- `uc-savunma-uc-saldiri.svg` (~1327 tok)
 
 ## content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/
 

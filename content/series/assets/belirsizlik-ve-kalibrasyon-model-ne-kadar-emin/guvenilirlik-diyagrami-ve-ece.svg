@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Sol panelde güvenilirlik diyagramı: yatay eksen güven, düşey eksen doğruluk, köşegen kesikli; beş çubuk 0,55, 0,65, 0,75, 0,85 ve 0,95 güven kutularında 0,50, 0,55, 0,70, 0,75 ve 0,80 doğruluk gösterir ve hepsi köşegenin altındadır. Sağ panelde beş satırlı tablo: kutu, cevap sayısı, ortalama güven, doğruluk, fark; her kutuda yirmi cevap; farklar 0,05, 0,10, 0,05, 0,10, 0,15; alt satırda beklenen kalibrasyon hatası eşittir yirmi bölü yüz çarpı farkların toplamı eşittir 0,09 yazar. Altta sayıların açıklama için seçildiği, kendi hesabımız olduğu ve modelin her kutuda aşırı güvenli olduğu yazılıdır.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">güvenilirlik diyagramı</text>
+
+  <line x1="60" y1="290" x2="320" y2="290" stroke="var(--text-muted)" />
+  <line x1="60" y1="290" x2="60" y2="50" stroke="var(--text-muted)" />
+  <line x1="60" y1="290" x2="320" y2="30" stroke="var(--text-faint)" stroke-dasharray="4 3" />
+  <text x="96" y="150" font-size="13" fill="var(--text-faint)">köşegen</text>
+
+  <text x="60" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
+  <text x="190" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,5</text>
+  <text x="320" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <text x="190" y="326" font-size="13" text-anchor="middle" fill="var(--text)">güven</text>
+  <text x="50" y="294" font-size="13" text-anchor="end" fill="var(--text-muted)">0</text>
+  <text x="50" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">0,5</text>
+  <text x="50" y="40" font-size="13" text-anchor="end" fill="var(--text-muted)">1</text>
+
+  <rect x="191" y="160" width="22" height="130" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="217" y="147" width="22" height="143" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="243" y="108" width="22" height="182" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="269" y="95" width="22" height="195" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="295" y="82" width="22" height="208" fill="var(--accent-soft)" stroke="var(--accent)" />
+
+  <text x="202" y="152" font-size="13" text-anchor="middle" fill="var(--text)">0,50</text>
+  <text x="228" y="139" font-size="13" text-anchor="middle" fill="var(--text)">0,55</text>
+  <text x="254" y="100" font-size="13" text-anchor="middle" fill="var(--text)">0,70</text>
+  <text x="280" y="87" font-size="13" text-anchor="middle" fill="var(--text)">0,75</text>
+  <text x="306" y="74" font-size="13" text-anchor="middle" fill="var(--text)">0,80</text>
+
+  <text x="20" y="352" font-size="13" fill="var(--text-muted)">Çubuklar köşegenin altında: her kutuda güven</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-muted)">doğruluktan büyük, model aşırı güvenli.</text>
+
+  <line x1="360" y1="16" x2="360" y2="384" stroke="var(--border)" />
+
+  <text x="380" y="24" font-size="13" font-weight="bold" fill="var(--text)">beklenen kalibrasyon hatası, 100 cevap</text>
+  <text x="380" y="50" font-size="13" font-weight="bold" fill="var(--text)">kutu</text>
+  <text x="500" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">cevap</text>
+  <text x="565" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">güven</text>
+  <text x="635" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">doğruluk</text>
+  <text x="700" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">fark</text>
+  <line x1="380" y1="60" x2="700" y2="60" stroke="var(--border)" />
+
+  <text x="380" y="84" font-size="13" fill="var(--text)">0,5–0,6</text>
+  <text x="500" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">20</text>
+  <text x="565" y="84" font-size="13" text-anchor="end" fill="var(--text)">0,55</text>
+  <text x="635" y="84" font-size="13" text-anchor="end" fill="var(--text)">0,50</text>
+  <text x="700" y="84" font-size="13" text-anchor="end" fill="var(--text)">0,05</text>
+
+  <text x="380" y="110" font-size="13" fill="var(--text)">0,6–0,7</text>
+  <text x="500" y="110" font-size="13" text-anchor="end" fill="var(--text-muted)">20</text>
+  <text x="565" y="110" font-size="13" text-anchor="end" fill="var(--text)">0,65</text>
+  <text x="635" y="110" font-size="13" text-anchor="end" fill="var(--text)">0,55</text>
+  <text x="700" y="110" font-size="13" text-anchor="end" fill="var(--text)">0,10</text>
+
+  <text x="380" y="136" font-size="13" fill="var(--text)">0,7–0,8</text>
+  <text x="500" y="136" font-size="13" text-anchor="end" fill="var(--text-muted)">20</text>
+  <text x="565" y="136" font-size="13" text-anchor="end" fill="var(--text)">0,75</text>
+  <text x="635" y="136" font-size="13" text-anchor="end" fill="var(--text)">0,70</text>
+  <text x="700" y="136" font-size="13" text-anchor="end" fill="var(--text)">0,05</text>
+
+  <text x="380" y="162" font-size="13" fill="var(--text)">0,8–0,9</text>
+  <text x="500" y="162" font-size="13" text-anchor="end" fill="var(--text-muted)">20</text>
+  <text x="565" y="162" font-size="13" text-anchor="end" fill="var(--text)">0,85</text>
+  <text x="635" y="162" font-size="13" text-anchor="end" fill="var(--text)">0,75</text>
+  <text x="700" y="162" font-size="13" text-anchor="end" fill="var(--text)">0,10</text>
+
+  <text x="380" y="188" font-size="13" fill="var(--text)">0,9–1,0</text>
+  <text x="500" y="188" font-size="13" text-anchor="end" fill="var(--text-muted)">20</text>
+  <text x="565" y="188" font-size="13" text-anchor="end" fill="var(--text)">0,95</text>
+  <text x="635" y="188" font-size="13" text-anchor="end" fill="var(--text)">0,80</text>
+  <text x="700" y="188" font-size="13" text-anchor="end" fill="var(--text)">0,15</text>
+
+  <line x1="380" y1="204" x2="700" y2="204" stroke="var(--border)" />
+  <rect x="372" y="214" width="336" height="46" fill="var(--accent-soft)" />
+  <text x="380" y="234" font-size="13" font-weight="bold" fill="var(--text)">ECE = (20 ÷ 100) × (0,05 + 0,10 + 0,05</text>
+  <text x="380" y="252" font-size="13" font-weight="bold" fill="var(--text)">+ 0,10 + 0,15) = 0,2 × 0,45 = 0,09</text>
+
+  <text x="380" y="292" font-size="13" fill="var(--text-muted)">Her kutunun ağırlığı cevap sayısı bölü toplam;</text>
+  <text x="380" y="310" font-size="13" fill="var(--text-muted)">fark, güvenle doğruluğun mutlak farkı.</text>
+  <text x="380" y="336" font-size="13" fill="var(--text-muted)">Sayılar açıklama için seçildi, kendi</text>
+  <text x="380" y="354" font-size="13" fill="var(--text-muted)">hesabımız; herhangi bir çalışmadan değil.</text>
+  <text x="380" y="372" font-size="13" fill="var(--text-muted)">Tanım Guo ve ark. 2017, Naeini ve ark. 2015.</text>
+</svg>

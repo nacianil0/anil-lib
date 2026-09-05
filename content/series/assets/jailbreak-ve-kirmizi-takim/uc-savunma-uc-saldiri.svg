@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" role="img" aria-label="Dört satır altı sütunlu tablo; satırlar savunma, sütunlar iki model için üç saldırının yüzde başarısı: Vicuna'da PAIR, GCG ve rastgele arama; GPT-4'te PAIR, GCG ve rastgele arama. Savunma yok: 69, 80, 89; 34, 4, 78. SmoothLLM: 55, 4, 68; 19, 4, 56. Perplexity süzgeci: 69, 3, 88; 30, 0, 70. Sil ve denetle: 0, 17, 24; 1, 2, 10. Altta puanlayıcının 70 milyarlık açık model olduğu, GCG'nin GPT-4'te Vicuna'dan aktarıldığı, her savunmanın bir saldırıyı kapatıp öbürünü kaçırdığı ve değerlerin Chao ve arkadaşlarının tablosundan geldiği yazılıdır.">
+  <text x="370" y="22" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">Vicuna 13B</text>
+  <text x="630" y="22" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">GPT-4</text>
+  <line x1="270" y1="30" x2="450" y2="30" stroke="var(--border)" />
+  <line x1="540" y1="30" x2="710" y2="30" stroke="var(--border)" />
+
+  <text x="20" y="50" font-size="13" font-weight="bold" fill="var(--text)">savunma</text>
+  <text x="310" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">PAIR</text>
+  <text x="380" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">GCG</text>
+  <text x="450" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">rastgele</text>
+  <text x="570" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">PAIR</text>
+  <text x="640" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">GCG</text>
+  <text x="710" y="50" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">rastgele</text>
+  <line x1="20" y1="60" x2="710" y2="60" stroke="var(--border)" />
+
+  <text x="20" y="84" font-size="13" fill="var(--text)">savunma yok</text>
+  <text x="310" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">69</text>
+  <text x="380" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">80</text>
+  <text x="450" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">89</text>
+  <text x="570" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">34</text>
+  <text x="640" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">4</text>
+  <text x="710" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">78</text>
+
+  <text x="20" y="114" font-size="13" fill="var(--text)">SmoothLLM (on bozuk kopya)</text>
+  <text x="310" y="114" font-size="13" text-anchor="end" fill="var(--text)">55</text>
+  <text x="380" y="114" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">4</text>
+  <text x="450" y="114" font-size="13" text-anchor="end" fill="var(--text)">68</text>
+  <text x="570" y="114" font-size="13" text-anchor="end" fill="var(--text)">19</text>
+  <text x="640" y="114" font-size="13" text-anchor="end" fill="var(--text)">4</text>
+  <text x="710" y="114" font-size="13" text-anchor="end" fill="var(--text)">56</text>
+
+  <text x="20" y="144" font-size="13" fill="var(--text)">perplexity süzgeci</text>
+  <text x="310" y="144" font-size="13" text-anchor="end" fill="var(--text)">69</text>
+  <text x="380" y="144" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">3</text>
+  <text x="450" y="144" font-size="13" text-anchor="end" fill="var(--text)">88</text>
+  <text x="570" y="144" font-size="13" text-anchor="end" fill="var(--text)">30</text>
+  <text x="640" y="144" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0</text>
+  <text x="710" y="144" font-size="13" text-anchor="end" fill="var(--text)">70</text>
+
+  <rect x="20" y="158" width="690" height="24" fill="var(--accent-soft)" />
+  <text x="20" y="174" font-size="13" font-weight="bold" fill="var(--text)">sil ve denetle (parça parça)</text>
+  <text x="310" y="174" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0</text>
+  <text x="380" y="174" font-size="13" text-anchor="end" fill="var(--text)">17</text>
+  <text x="450" y="174" font-size="13" text-anchor="end" fill="var(--text)">24</text>
+  <text x="570" y="174" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">1</text>
+  <text x="640" y="174" font-size="13" text-anchor="end" fill="var(--text)">2</text>
+  <text x="710" y="174" font-size="13" text-anchor="end" fill="var(--text)">10</text>
+
+  <line x1="20" y1="192" x2="710" y2="192" stroke="var(--border)" />
+  <text x="20" y="216" font-size="13" fill="var(--text-muted)">Yüzde saldırı başarısı, yüz davranış; puanlayıcı 70 milyarlık açık model. "rastgele": token</text>
+  <text x="20" y="234" font-size="13" fill="var(--text-muted)">olasılığıyla rastgele arama. GCG GPT-4'e Vicuna'dan aktarıldı. Her savunma bir saldırıyı</text>
+  <text x="20" y="252" font-size="13" fill="var(--text-muted)">kapatıp öbürünü kaçırıyor; düşük olan iyidir. Değerler Chao ve arkadaşlarının tablolarından.</text>
+</svg>

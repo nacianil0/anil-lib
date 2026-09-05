@@ -2757,3 +2757,74 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 16:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 16:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 16:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:33 | Created artifacts/b15-research/fetch-b15.py | — | ~5847 |
+| 16:33 | Created artifacts/b15-research/dblp-b15.py | — | ~568 |
+| 16:33 | Created artifacts/b15-research/fetch-html-b15.py | — | ~650 |
+| 16:48 | Created content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | — | ~11614 |
+| 16:54 | Created content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | — | ~11128 |
+| 17:00 | Created content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | — | ~10935 |
+| 17:00 | Created content/series/assets/jailbreak-ve-kirmizi-takim/alti-saldiri-ailesi-uc-erisim.svg | — | ~1458 |
+| 17:01 | Created content/series/assets/jailbreak-ve-kirmizi-takim/gcg-aktarim-tablosu.svg | — | ~1637 |
+| 17:01 | Created content/series/assets/jailbreak-ve-kirmizi-takim/hicbir-model-her-saldiriya.svg | — | ~1830 |
+| 17:02 | Created content/series/assets/jailbreak-ve-kirmizi-takim/uc-savunma-uc-saldiri.svg | — | ~1327 |
+| 17:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/trim63.py | — | ~3122 |
+| 17:08 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/trim63b.py | — | ~937 |
+| 17:09 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/trim63c.py | — | ~171 |
+| 17:16 | Created content/series/articles/safety-and-evaluation/constitutional-ai-ve-olceklenebilir-denetim.md | — | ~9085 |
+| 17:16 | Created content/series/assets/constitutional-ai-ve-olceklenebilir-denetim/anayasadan-etikete-iki-asama.svg | — | ~1935 |
+| 17:17 | Created content/series/assets/constitutional-ai-ve-olceklenebilir-denetim/kim-denetliyor-hangi-duzenle.svg | — | ~1555 |
+| 17:17 | Created content/series/assets/constitutional-ai-ve-olceklenebilir-denetim/zayiftan-guclu-ye-geri-kazanilan-pay.svg | — | ~1440 |
+| 17:24 | Created content/series/articles/safety-and-evaluation/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md | — | ~7870 |
+| 17:25 | Created content/series/assets/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin/guvenilirlik-diyagrami-ve-ece.svg | — | ~1821 |
+| 17:26 | Created content/series/assets/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin/guvenin-dort-kaynagi.svg | — | ~1306 |
+| 17:26 | Created content/series/assets/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin/anlamsal-entropi-uc-kume.svg | — | ~1395 |
+| 17:33 | Created content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md | — | ~8183 |
+| 17:34 | Created content/series/assets/dalkavukluk-ve-model-karakteri/dort-dalkavukluk.svg | — | ~1187 |
+| 17:34 | Created content/series/assets/dalkavukluk-ve-model-karakteri/dalkavuklugun-iki-kaynagi.svg | — | ~1482 |
+| 17:35 | Created content/series/assets/dalkavukluk-ve-model-karakteri/karakterin-dort-katmani.svg | — | ~1255 |
+| 17:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/scan-b15.py | — | ~645 |
+
+## Session: 2026-09-05 17:40
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 17:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/fix-svg-b15.py | — | ~2318 |
+| 17:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/fix-svg-b15b.py | — | ~1162 |
+| 17:56 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/inventory-b15.py | — | ~548 |
+| 18:04 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/state-b15-yol.py | — | ~7768 |
+
+## Session: 2026-09-05 21:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/state-b15-handoff.py | — | ~7895 |
+| 21:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/state-b15-wolf.py | — | ~2972 |
+| 21:27 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch15-faz7-govde.md | — | ~869 |
+| 18:40 | Batch 15 (63–66) tamamlandı: entegrasyon (catalog 66, roadmap 63–66 yayinda), sync-hashes, content/SVG kapıları, typecheck 0, 495 test, izole kopyada build (exit 0) + dev 3210, 67 rota 200, 4×3×3 DOM ölçümü temiz, 13 şekil Playwright ile light/dark PNG; 5 SVG binmesi düzeltildi; kopya/junction silindi, launch.json geri alındı | content/series/**, artifacts/b15-research/** | başarılı | ~90000 |
+| 18:55 | +1 fazı: YOL-HARITASI (vaat defteri 64 ödendi, Batch 15 tekrar/terim defteri, kararlar #148–#153, öğrenme notları), HANDOFF (cursor 66→67, kohort 16, 67–70 hazırlığı, 69 koordinatı, Playwright render tarifi), cerebrum/buglog/anatomy, bellek dosyası; 65'e "kendi hesabımız" ibaresi gövdeye eklendi | docs/seri/*.md, .wolf/*, memory | başarılı | ~25000 |
+| 21:28 | Session end: 3 writes across 3 files (state-b15-handoff.py, state-b15-wolf.py, series-batch15-faz7-govde.md) | 0 reads | ~11798 tok |
+
+## Session: 2026-09-05 00:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-05 00:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

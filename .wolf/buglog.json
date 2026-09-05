@@ -5781,6 +5781,98 @@
       "related_bugs": [],
       "occurrences": 12,
       "last_seen": "2026-09-05T09:55:00Z"
+    },
+    {
+      "id": "bug-346",
+      "timestamp": "2026-09-05T15:05:00Z",
+      "error_message": "Browser pane screenshot: batch içinde '[Image omitted due to error]', tek çağrıda 'Screenshot timed out after 5s', başarılı olduğunda 1500×600 emülasyonun 800×323'lük kırpık köşesi",
+      "file": "tooling: mcp__Claude_Browser__computer (screenshot) → artifacts/b15-research/shots-b15.cjs",
+      "root_cause": "Pano arka planda ya da gizliyken boyama bitmiyor; emülasyon ölçeklemesi ekran görüntüsüne yansımıyor. Batch 14'ün 'iki kez çağır' tarifi bu run'da hiç tutmadı.",
+      "fix": "Şekil görüntüleri Playwright ile alındı: @playwright/test Chromium, page.goto waitUntil 'load' + waitForSelector('main figure svg'), sabit kaplayıcıda 1200 px klon, classList ile light/dark, element.screenshot → 26 PNG; Read aracıyla incelendi. Sonraki run'larda varsayılan.",
+      "tags": [
+        "browser",
+        "screenshot",
+        "playwright",
+        "series",
+        "batch-15"
+      ],
+      "related_bugs": [
+        "bug-345"
+      ],
+      "occurrences": 4,
+      "last_seen": "2026-09-05T15:20:00Z"
+    },
+    {
+      "id": "bug-347",
+      "timestamp": "2026-09-05T15:25:00Z",
+      "error_message": "page.goto: Timeout 30000ms exceeded (waitUntil 'networkidle') — dev sunucusunda /api/reader-sync 503 döngüsü",
+      "file": "artifacts/b15-research/shots-b15.cjs",
+      "root_cause": "Next dev + reader-sync polling ağı hiç boşaltmıyor; networkidle yerleşmiyor (2026-09-02 kuralının yeni yüzü). Ayrıca require('playwright') MODULE_NOT_FOUND: yalnızca @playwright/test yüklü.",
+      "fix": "waitUntil: 'load' + waitForSelector('main figure svg') + 800 ms; require('@playwright/test').chromium.",
+      "tags": [
+        "playwright",
+        "networkidle",
+        "series",
+        "batch-15"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T15:25:00Z"
+    },
+    {
+      "id": "bug-348",
+      "timestamp": "2026-09-05T15:40:00Z",
+      "error_message": "SVG metin binmeleri denetleyiciden geçti, yalnızca PNG'de görüldü: 65-Şekil 3 sol panel ayırıcıyı aşıyor; 66-Şekil 2 1. sütun komşu sütuna taşıyor; 64-Şekil 1 'geri bildirim modeli' kutuya sığmıyor; 64-Şekil 2 'model' ↔ 'katılımcı + model' yapışık; 65-Şekil 1 köşegen etiketi ayırıcıyı kesiyor",
+      "file": "content/series/assets/{belirsizlik-ve-kalibrasyon-model-ne-kadar-emin,dalkavukluk-ve-model-karakteri,constitutional-ai-ve-olceklenebilir-denetim}/*.svg",
+      "root_cause": "check-series-svg.cjs metin genişliğini yalnızca 720'ye karşı ölçer; sütun sınırı, panel ayırıcısı, kutu genişliği ve komşu başlık aralığına bakmaz. Gerçek Inter genişliği ≈ 6,8 birim/karakter (13 px).",
+      "fix": "Satırlar sütun genişliğine sarıldı (≤ 25 karakter / 180 birim), panel metni ≤ 29 karakter, kutu 118 → 150 ve komşu 118 → 86, sütun x 420 → 402, köşegen etiketi (96,150)'ye; viewBox yükseklikleri 410/434; kopyaya cp + diff -rq; yeniden çekildi.",
+      "tags": [
+        "svg",
+        "overlap",
+        "checker-gap",
+        "series",
+        "batch-15"
+      ],
+      "related_bugs": [
+        "bug-345"
+      ],
+      "occurrences": 5,
+      "last_seen": "2026-09-05T16:05:00Z"
+    },
+    {
+      "id": "bug-349",
+      "timestamp": "2026-09-05T15:55:00Z",
+      "error_message": "Düzeltme betiği AssertionError (çok satırlı old string 0 eşleşme) → && zinciri kırıldı, cp kopyaya gitmedi, yeniden çekim eski şekilleri gösterdi",
+      "file": "scratchpad/fix-svg-b15.py; D:/dev/anil-lib-b15-render/content/series/assets",
+      "root_cause": "Çok satırlı eşleşme boş satırdaki görünmez farktan tutmadı; betik + cp + çekim aynı && zincirindeydi, çekim ; ile bağlıydı.",
+      "fix": "Eşleşmeler tek satırlık parçalara bölündü (fix-svg-b15b.py); cp ayrı komutta, diff -rq ile doğrulandı; yeniden çekildi.",
+      "tags": [
+        "script",
+        "bash-chain",
+        "render-copy",
+        "series",
+        "batch-15"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T16:00:00Z"
+    },
+    {
+      "id": "bug-350",
+      "timestamp": "2026-09-05T14:50:00Z",
+      "error_message": "json.decoder.JSONDecodeError: Invalid \\\\escape — .claude/launch.json Bash heredoc ile yazılınca \\\\\\\\ tek \\\\'a indi",
+      "file": ".claude/launch.json",
+      "root_cause": "Bash aracının heredoc'u ters bölü çiftlerini indiriyor (2026-09-04 kuralının tekrarı).",
+      "fix": "Python json.dumps ile yazıldı; run sonunda artifacts/b15-research/launch.json.orig'den geri alındı.",
+      "tags": [
+        "launch.json",
+        "heredoc",
+        "windows-path",
+        "batch-15"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-05T14:50:00Z"
     }
   ]
 }

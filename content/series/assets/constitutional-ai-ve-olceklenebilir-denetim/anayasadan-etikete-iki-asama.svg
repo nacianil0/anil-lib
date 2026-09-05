@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="İki satırlı akış şeması. Üst satır, birinci aşama: kırmızı takım istemi kutusundan yardımsever modelin cevabı kutusuna, oradan rastgele bir ilkeyle eleştiri kutusuna, oradan düzeltme kutusuna ok gider; düzeltme kutusundan eleştiriye geri dönen bir ok dört kez yazar; son ok denetimli ince ayar kutusuna varır. Altında 182.831 istem, 42.496 insan yazımı artı 140.335 model üretimi, on altı ilke ve zararsızlık için insan etiketi yok yazar. Alt satır, ikinci aşama: istem kutusundan iki cevap kutusuna, oradan ilkeyle geri bildirim modeli kutusuna, A mı B mi olasılıkla yazar, oradan ödül modeli kutusuna, oradan pekiştirmeli öğrenme kutusuna ok gider; ödül modeline yandan insan yardımseverlik çiftleri 135.296 kutusundan da bir ok girer. En altta on üçüncü makaledeki hatta ikinci etiketleyicinin eklendiği, zararsızlık çiftlerini modelin, yardımseverlik çiftlerini insanın etiketlediği ve değerlerin Bai ve arkadaşlarının hakemli olmayan çalışmasından geldiği yazılıdır.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--accent)">1. aşama: eleştiri → düzeltme → denetimli ince ayar</text>
+
+  <rect x="20" y="40" width="118" height="54" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="79" y="62" font-size="13" text-anchor="middle" fill="var(--text)">kırmızı takım</text>
+  <text x="79" y="80" font-size="13" text-anchor="middle" fill="var(--text)">istemi</text>
+
+  <rect x="150" y="40" width="118" height="54" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="209" y="62" font-size="13" text-anchor="middle" fill="var(--text)">yardımsever</text>
+  <text x="209" y="80" font-size="13" text-anchor="middle" fill="var(--text)">modelin cevabı</text>
+
+  <rect x="280" y="40" width="118" height="54" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="339" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">eleştiri</text>
+  <text x="339" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">rastgele bir ilke</text>
+
+  <rect x="410" y="40" width="118" height="54" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="469" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">düzeltme</text>
+  <text x="469" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">yeniden yazım</text>
+
+  <rect x="540" y="40" width="160" height="54" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="620" y="62" font-size="13" text-anchor="middle" fill="var(--text)">denetimli ince ayar</text>
+  <text x="620" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">düzeltmelerle</text>
+
+  <line x1="138" y1="67" x2="146" y2="67" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="150,67 143,63 143,71" fill="var(--text-faint)" />
+  <line x1="268" y1="67" x2="276" y2="67" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="280,67 273,63 273,71" fill="var(--text-faint)" />
+  <line x1="398" y1="67" x2="406" y2="67" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="410,67 403,63 403,71" fill="var(--text-faint)" />
+  <line x1="528" y1="67" x2="536" y2="67" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="540,67 533,63 533,71" fill="var(--text-faint)" />
+
+  <path d="M 469 94 L 469 112 L 339 112 L 339 100" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3" />
+  <polygon points="339,94 335,102 343,102" fill="var(--accent)" />
+  <text x="404" y="126" font-size="13" text-anchor="middle" fill="var(--accent)">4 kez, her seferinde başka ilke</text>
+
+  <text x="20" y="152" font-size="13" fill="var(--text-muted)">182.831 istem (42.496 insan + 140.335 model üretimi); 16 ilke; zararsızlıkta insan etiketi yok.</text>
+
+  <line x1="20" y1="168" x2="700" y2="168" stroke="var(--border)" />
+
+  <text x="20" y="192" font-size="13" font-weight="bold" fill="var(--cool)">2. aşama: yapay geri bildirim → ödül modeli → pekiştirmeli öğrenme</text>
+
+  <rect x="20" y="208" width="118" height="54" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="79" y="239" font-size="13" text-anchor="middle" fill="var(--text)">istem</text>
+
+  <rect x="150" y="208" width="118" height="54" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="209" y="230" font-size="13" text-anchor="middle" fill="var(--text)">1. aşama modeli:</text>
+  <text x="209" y="248" font-size="13" text-anchor="middle" fill="var(--text)">iki cevap, A ve B</text>
+
+  <rect x="280" y="208" width="150" height="54" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="355" y="226" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">geri bildirim modeli</text>
+  <text x="355" y="242" font-size="13" text-anchor="middle" fill="var(--text-muted)">ilke + "A mı B mi?"</text>
+  <text x="355" y="257" font-size="13" text-anchor="middle" fill="var(--text-muted)">olasılık = etiket</text>
+
+  <rect x="442" y="208" width="86" height="54" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="485" y="239" font-size="13" text-anchor="middle" fill="var(--text)">ödül modeli</text>
+
+  <rect x="540" y="208" width="160" height="54" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="620" y="230" font-size="13" text-anchor="middle" fill="var(--text)">pekiştirmeli</text>
+  <text x="620" y="248" font-size="13" text-anchor="middle" fill="var(--text)">öğrenme (13'teki gibi)</text>
+
+  <line x1="138" y1="235" x2="146" y2="235" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="150,235 143,231 143,239" fill="var(--text-faint)" />
+  <line x1="268" y1="235" x2="276" y2="235" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="280,235 273,231 273,239" fill="var(--text-faint)" />
+  <line x1="430" y1="235" x2="438" y2="235" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="442,235 435,231 435,239" fill="var(--text-faint)" />
+  <line x1="528" y1="235" x2="536" y2="235" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="540,235 533,231 533,239" fill="var(--text-faint)" />
+
+  <rect x="426" y="290" width="118" height="54" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="485" y="312" font-size="13" text-anchor="middle" fill="var(--text)">insan yardımseverlik</text>
+  <text x="485" y="330" font-size="13" text-anchor="middle" fill="var(--text)">çiftleri: 135.296</text>
+  <line x1="485" y1="290" x2="485" y2="270" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="485,262 481,270 489,270" fill="var(--text-faint)" />
+
+  <line x1="20" y1="364" x2="700" y2="364" stroke="var(--border)" />
+  <text x="20" y="388" font-size="13" fill="var(--text-muted)">13'teki hatta ikinci etiketleyici: zararsızlık çiftlerini ilkeyle model, yardımseverlik çiftlerini</text>
+  <text x="20" y="406" font-size="13" fill="var(--text-muted)">insan etiketler; ödül modeli ikisinden birlikte eğitilir. Değerler Bai ve arkadaşlarının</text>
+  <text x="20" y="424" font-size="13" fill="var(--text-muted)">hakemli olmayan çalışmasından.</text>
+</svg>
