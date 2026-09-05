@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T02:48:38.247Z
-> Files: 130 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T10:05:12.124Z
+> Files: 159 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -24,6 +24,17 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/
+
+- `b14-decisions.md` (~2681 tok)
+- `b14-notes.md` — Batch 14 öğrenme notları (yazım tamamlandı) (~1249 tok)
+- `b14-prereq.md` (~993 tok)
+- `b14-promises.md` (~333 tok)
+- `b14-recall.md` — ## Batch 14'te gerçekleşen tekrarlar (planlananların tahsili) (~1826 tok)
+- `b14-terms.md` (~1044 tok)
+- `finalize-b14.py` — rd, wr, once (~1962 tok)
+- `insert-b14.py` — rd, norm, once (~1024 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/47dcc4fc-d5cd-487c-895e-0d8b267108b0/scratchpad/
 
@@ -111,6 +122,7 @@
 - `series-batch11-faz5-kapanis.md` (~615 tok)
 - `series-batch12-faz6-acilis.md` (~668 tok)
 - `series-batch13-faz6-ikinci-yari.md` (~689 tok)
+- `series-batch14-faz7-acilis.md` (~707 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -148,6 +160,15 @@
 - `fetch-b13.py` — fetch, norm, title_match, arxiv_search (~3638 tok)
 - `measure-b13.js` — Tarayıcı panosunda çalıştırılan ölçüm yardımcısı (Batch 13). localStorage'a yazılıp (~619 tok)
 - `sweep-b13.py` (~304 tok)
+
+## artifacts/b14-research/
+
+- `crossref-b14.py` (~1275 tok)
+- `dblp-b14.py` (~472 tok)
+- `fetch-b14.py` — fetch, norm, title_match, arxiv_search (~3796 tok)
+- `fetch-html-b14.py` — strip (~542 tok)
+- `measure-b14.js` — Tarayıcı panosunda çalıştırılan ölçüm yardımcısı (Batch 14); localStorage 'b14m' (~620 tok)
+- `sweep-b14.py` — 63 seri rotasını urllib ile 200 denetimi (Batch 14) (~304 tok)
 
 ## artifacts/b7-render/
 
@@ -298,6 +319,7 @@
 
 - `ajan-bellegi-ve-durum-yonetimi.md` — Her görevi sıfırdan başlatmak (~5865 tok)
 - `ajan-degerlendirmesi-basariyi-olcmek.md` — Cetvel bir tasarım ürünüdür, ajan için de (~6086 tok)
+- `ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md` — Fatura tek sayıya indirilmedi (~7553 tok)
 - `ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md` — Okunan her şey bir talimat olabilir (~6952 tok)
 - `ajan-mimarileri.md` — Karar kutusunun içi (~5720 tok)
 - `ajan-nedir-kontrol-dongusu-olarak-llm.md` — Adı konmamış şey (~7464 tok)
@@ -305,6 +327,7 @@
 - `bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md` — Üç ip, tek düğüm (~6256 tok)
 - `bilgisayar-kullanan-ajanlar.md` — İnsan için çizilmiş arayüz (~5470 tok)
 - `coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md` — Bir ajan yetmediğinde (~6296 tok)
+- `insan-ajan-isbirligi-denetim-ve-devir.md` — Onay ne zaman istenmeli (~8218 tok)
 - `kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md` — Depo bir dünyadır (~7909 tok)
 - `mcp-ve-arac-ekosistemleri.md` — Çarpım problemi (~5002 tok)
 - `parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md` — Görünmez kararlar (~6388 tok)
@@ -321,6 +344,11 @@
 
 ## content/series/articles/reasoning-and-memory/
 
+
+## content/series/articles/safety-and-evaluation/
+
+- `guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md` — Üç sıfat, bir gerilim (~6368 tok)
+- `hizalama-sorunu-ne-istedigimizi-soylemek-zor.md` — Söylediğimiz şey, istediğimiz şey değil (~7660 tok)
 
 ## content/series/assets/
 
@@ -339,6 +367,12 @@
 - `bolumu-puanlamanin-uc-yolu.svg` (~1175 tok)
 - `kisayol-ve-yakalayan-cetvel.svg` (~1105 tok)
 - `tam-basari-kismi-puan-adim-maliyet.svg` (~1365 tok)
+
+## content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/
+
+- `gecis-basina-bedel.svg` (~1583 tok)
+- `pass-k-uc-alan.svg` (~996 tok)
+- `tur-carpi-pencere-faturasi.svg` (~1190 tok)
 
 ## content/series/assets/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu/
 
@@ -424,6 +458,12 @@
 ## content/series/assets/getirme-aramanin-modern-hali/
 
 
+## content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/
+
+- `asiri-guvenlik-bes-model.svg` (~999 tok)
+- `ince-ayar-reddi-siler.svg` (~1211 tok)
+- `sig-hizalama-ret-oneki.svg` (~1181 tok)
+
 ## content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/
 
 
@@ -433,8 +473,20 @@
 ## content/series/assets/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim/
 
 
+## content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/
+
+- `dokuz-vekil-bes-kirilma.svg` (~1712 tok)
+- `iki-bosluk.svg` (~1415 tok)
+- `uzunluk-tek-basina-odul.svg` (~1162 tok)
+
 ## content/series/assets/in-context-learning-ornekle-ogrenme/
 
+
+## content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/
+
+- `butun-parcalarini-gecmiyor.svg` (~998 tok)
+- `devir-karari-dort-politika.svg` (~1146 tok)
+- `ozerklik-ekseni-bes-rol.svg` (~1506 tok)
 
 ## content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/
 
@@ -521,7 +573,7 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7013 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~8339 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
 
 ## docs/superpowers/plans/

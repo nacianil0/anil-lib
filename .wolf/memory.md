@@ -2684,3 +2684,76 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 11:38 | Created artifacts/b14-research/fetch-b14.py | — | ~3796 |
+| 11:38 | Created artifacts/b14-research/dblp-b14.py | — | ~472 |
+| 11:38 | Created artifacts/b14-research/fetch-html-b14.py | — | ~542 |
+| 11:43 | Created artifacts/b14-research/crossref-b14.py | — | ~1275 |
+| 11:45 | Created content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/butun-parcalarini-gecmiyor.svg | — | ~998 |
+| 11:46 | Created content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/devir-karari-dort-politika.svg | — | ~1148 |
+| 11:50 | Created content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/ozerklik-ekseni-bes-rol.svg | — | ~1432 |
+| 11:53 | Edited content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/devir-karari-dort-politika.svg | 2→2 lines | ~57 |
+| 11:53 | Created content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/ozerklik-ekseni-bes-rol.svg | — | ~1506 |
+| 11:58 | Created content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | — | ~8701 |
+| 12:00 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~38 |
+| 12:00 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~43 |
+| 12:00 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~51 |
+| 12:02 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~112 |
+| 12:03 | Created content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/tur-carpi-pencere-faturasi.svg | — | ~1172 |
+| 12:03 | Created content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/gecis-basina-bedel.svg | — | ~1563 |
+| 12:03 | Created content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/pass-k-uc-alan.svg | — | ~978 |
+| 12:04 | Edited content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/gecis-basina-bedel.svg | 4→5 lines | ~154 |
+| 12:04 | Edited content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/gecis-basina-bedel.svg | "0 0 720 412" → "0 0 720 432" | ~6 |
+| 12:04 | Edited content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/pass-k-uc-alan.svg | 3→4 lines | ~110 |
+| 12:04 | Edited content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/pass-k-uc-alan.svg | "0 0 720 400" → "0 0 720 424" | ~6 |
+| 12:04 | Edited content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/tur-carpi-pencere-faturasi.svg | 4→5 lines | ~160 |
+| 12:04 | Edited content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/tur-carpi-pencere-faturasi.svg | "0 0 720 420" → "0 0 720 446" | ~6 |
+| 12:09 | Created content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | — | ~8006 |
+| 12:10 | Edited content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | inline fix | ~88 |
+| 12:10 | Edited content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | inline fix | ~40 |
+| 12:10 | Edited content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | inline fix | ~45 |
+| 12:12 | Created content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/dokuz-vekil-bes-kirilma.svg | — | ~1712 |
+| 12:13 | Created content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/iki-bosluk.svg | — | ~1415 |
+| 12:15 | Created content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg | — | ~1121 |
+| 12:15 | Edited content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg | 3→4 lines | ~122 |
+| 12:15 | Edited content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg | "0 0 720 372" → "0 0 720 390" | ~6 |
+| 12:19 | Created content/series/articles/safety-and-evaluation/hizalama-sorunu-ne-istedigimizi-soylemek-zor.md | — | ~8170 |
+| 12:22 | Created content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/asiri-guvenlik-bes-model.svg | — | ~980 |
+| 12:22 | Created content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/sig-hizalama-ret-oneki.svg | — | ~1181 |
+| 12:23 | Created content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/ince-ayar-reddi-siler.svg | — | ~1211 |
+| 12:23 | Edited content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/asiri-guvenlik-bes-model.svg | 4→5 lines | ~148 |
+| 12:23 | Edited content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/asiri-guvenlik-bes-model.svg | "0 0 720 396" → "0 0 720 420" | ~6 |
+| 12:23 | Edited content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/ince-ayar-reddi-siler.svg | 5→5 lines | ~166 |
+| 12:23 | Edited content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/sig-hizalama-ret-oneki.svg | 5→5 lines | ~168 |
+| 12:27 | Created content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md | — | ~6778 |
+| 12:28 | Edited content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md | inline fix | ~111 |
+| 12:28 | Edited content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md | 2025 → 2024 | ~30 |
+| 12:29 | Created .claude/launch.json | — | ~140 |
+| 12:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/b14-promises.md | — | ~355 |
+| 12:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/b14-prereq.md | — | ~1060 |
+| 12:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/b14-recall.md | — | ~1948 |
+| 12:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/b14-terms.md | — | ~1114 |
+| 12:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/b14-decisions.md | — | ~2859 |
+| 12:41 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/insert-b14.py | — | ~1024 |
+| 12:49 | Edited content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg | removed 6 lines | ~6 |
+| 12:49 | Edited content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg | 4→8 lines | ~231 |
+| 12:49 | Edited content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg | "0 0 720 390" → "0 0 720 412" | ~6 |
+
+## Session: 2026-09-05 12:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 12:57 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/b14-notes.md | — | ~1332 |
+| 13:00 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/finalize-b14.py | — | ~1962 |
+| 13:01 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch14-faz7-acilis.md | — | ~722 |
+| 13:05 | Created docs/seri/HANDOFF.md | — | ~8895 |
+| 12:55 | 62'nin üç şekli + düzeltilmiş 61-Şekil 3 light/dark ekran görüntüsüyle doğrulandı (12/12 şekil tamam) | tarayıcı panosu tab-18 | ok | ~4000 |
+| 12:58 | preview_stop (bfa79aba), resize desktop; b14 PDF'leri ve büyük HTML dizin dökümleri silindi (140 MB → 7,3 MB) | artifacts/b14-research | ok | ~300 |
+| 13:02 | Batch 14 öğrenme notları YOL-HARITASI'na eklendi; anatomy/buglog/cerebrum güncellendi | docs/seri/YOL-HARITASI.md, .wolf/* | ok | ~2500 |
+| 13:05 | HANDOFF.md cursor 62→63, kohort 15, Faz 7 hazırlığı (63–66) ile yeniden yazıldı | docs/seri/HANDOFF.md | ok | ~6000 |
+| 13:08 | Temizlik: junction ve izole kopya silindi, launch.json geri alındı | D:/dev/anil-lib-b14-render, .claude/launch.json | ok | ~200 |
+| 13:06 | Session end: 4 writes across 4 files (b14-notes.md, finalize-b14.py, series-batch14-faz7-acilis.md, HANDOFF.md) | 1 reads | ~20706 tok |
+
+## Session: 2026-09-05 15:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 446" role="img" aria-label="Çizgi şeması; yatay eksen tur sayısı sıfırdan yirmiye, dikey eksen birikimli girdi bedeli birim olarak sıfırdan üç yüz bine. Üstteki eğri önbelleksiz fatura: beşinci turda 35.000, onuncuda 95.000, on beşinde 180.000, yirmide 290.000. Alttaki eğri istem önbelleğiyle fatura: 13.850, 25.600, 39.850, 56.600. Sağda iki değer ve aradaki 5,1 kat farkı yazar. Altta düzeneğin sistem istemi artı araç tanımları 4.000 token, her tur 1.000 token eklediği, önbellek yazmanın 1,25 ve okumanın 0,1 katsayısıyla fiyatlandığı ve sayıların kendi hesabımız olduğu yazılıdır.">
+  <line x1="60" y1="330" x2="640" y2="330" stroke="var(--text-faint)" />
+  <line x1="60" y1="40" x2="60" y2="330" stroke="var(--text-faint)" />
+  <line x1="60" y1="233" x2="640" y2="233" stroke="var(--border)" stroke-dasharray="3 3" />
+  <line x1="60" y1="137" x2="640" y2="137" stroke="var(--border)" stroke-dasharray="3 3" />
+  <line x1="60" y1="40" x2="640" y2="40" stroke="var(--border)" stroke-dasharray="3 3" />
+  <text x="54" y="334" font-size="13" text-anchor="end" fill="var(--text-muted)">0</text>
+  <text x="54" y="237" font-size="13" text-anchor="end" fill="var(--text-muted)">100 bin</text>
+  <text x="54" y="141" font-size="13" text-anchor="end" fill="var(--text-muted)">200 bin</text>
+  <text x="54" y="44" font-size="13" text-anchor="end" fill="var(--text-muted)">300 bin</text>
+  <text x="60" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
+  <text x="205" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">5</text>
+  <text x="350" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">10</text>
+  <text x="495" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">15</text>
+  <text x="640" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">20 tur</text>
+  <text x="20" y="26" font-size="13" font-weight="bold" fill="var(--text)">birikimli girdi bedeli (birim = önbelleksiz bir girdi token'ı)</text>
+
+  <polyline points="60,330 89,325 118,319 147,313 176,305 205,296 234,286 263,276 292,264 321,252 350,238 379,224 408,208 437,192 466,174 495,156 524,137 553,116 582,95 611,73 640,50" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <polyline points="60,330 89,324 118,322 147,320 176,319 205,317 234,314 263,312 292,310 321,308 350,305 379,302 408,299 437,296 466,293 495,291 524,287 553,283 582,279 611,275 640,275" fill="none" stroke="var(--cool)" stroke-width="2.5" />
+
+  <circle cx="205" cy="296" r="4" fill="var(--accent)" />
+  <circle cx="350" cy="238" r="4" fill="var(--accent)" />
+  <circle cx="495" cy="156" r="4" fill="var(--accent)" />
+  <circle cx="640" cy="50" r="4" fill="var(--accent)" />
+  <circle cx="205" cy="317" r="4" fill="var(--cool)" />
+  <circle cx="350" cy="305" r="4" fill="var(--cool)" />
+  <circle cx="495" cy="291" r="4" fill="var(--cool)" />
+  <circle cx="640" cy="275" r="4" fill="var(--cool)" />
+
+  <text x="330" y="196" font-size="13" text-anchor="end" fill="var(--accent)">önbelleksiz: her tur bütün geçmişi</text>
+  <text x="330" y="214" font-size="13" text-anchor="end" fill="var(--accent)">tam fiyattan yeniden okur</text>
+  <text x="350" y="228" font-size="13" text-anchor="end" fill="var(--text)">95.000</text>
+  <text x="495" y="146" font-size="13" text-anchor="end" fill="var(--text)">180.000</text>
+  <text x="652" y="54" font-size="13" font-weight="bold" fill="var(--text)">290.000</text>
+  <text x="652" y="279" font-size="13" font-weight="bold" fill="var(--text)">56.600</text>
+  <text x="652" y="166" font-size="13" fill="var(--text-muted)">5,1 kat</text>
+  <text x="380" y="300" font-size="13" fill="var(--cool)">istem önbelleğiyle: yeni token 1,25×,</text>
+  <text x="380" y="318" font-size="13" fill="var(--cool)">okunan önek 0,1×</text>
+
+  <text x="20" y="378" font-size="13" fill="var(--text-muted)">Düzenek: sistem istemi + araç tanımları 4.000 token; her tur 1.000 token ekler; 20 tur.</text>
+  <text x="20" y="396" font-size="13" fill="var(--text-muted)">Çıktı token'ları ayrı. Katsayılar sağlayıcı belgesinden; toplamlar kendi hesabımız.</text>
+  <text x="20" y="414" font-size="13" fill="var(--text-muted)">Önbellek yalnızca önek birebir aynıysa ve süresi dolmadan tutar; özetleme ya da</text>
+  <text x="20" y="432" font-size="13" fill="var(--text-muted)">araç sırası değişince sıfırlanır. Noktalar arası doğrusal.</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Dokuz satırlı tablo; sütunlar ortam, belirtim hatasının türü, vekil ödül, gerçek ödül düşüyor mu, faz geçişi var mı. Trafik: ağırlık, hızlanmayı az cezalandır, hayır, hayır; ağırlık, şerit değişimini az cezalandır, evet, evet; ontoloji, süre yerine hız, evet, evet; kapsam, hızı yalnızca kavşakta ölç, evet, evet. Salgın: ağırlık, sağlık bedelini az cezalandır, hayır, hayır; ontoloji, siyasi bedeli yok say, evet, evet. Atari: ağırlık, hareket cezasını küçült, hayır, hayır; ontoloji, ateş etmeye ceza ekle, hayır, hayır. Glikoz: ontoloji, bedel yerine risk, evet, hayır. Altta dokuz vekilden beşinin gerçek ödülü düşürdüğü, dördünde düşüşün yetenek arttıkça ani bir faz geçişiyle geldiği ve değerlerin Pan, Bhatia ve Steinhardt'ın tablosundan olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">ortam</text>
+  <text x="100" y="28" font-size="13" font-weight="bold" fill="var(--text)">hata türü</text>
+  <text x="190" y="28" font-size="13" font-weight="bold" fill="var(--text)">vekil ödül</text>
+  <text x="560" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">gerçek düşer</text>
+  <text x="700" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">faz geçişi</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">trafik</text>
+  <text x="100" y="62" font-size="13" fill="var(--text-muted)">ağırlık</text>
+  <text x="190" y="62" font-size="13" fill="var(--text)">hızlanmayı az cezalandır</text>
+  <text x="560" y="62" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+  <text x="700" y="62" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+
+  <rect x="20" y="74" width="680" height="22" fill="var(--accent-soft)" />
+  <text x="100" y="90" font-size="13" fill="var(--text-muted)">ağırlık</text>
+  <text x="190" y="90" font-size="13" fill="var(--text)">şerit değişimini az cezalandır</text>
+  <text x="560" y="90" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+  <text x="700" y="90" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+
+  <rect x="20" y="102" width="680" height="22" fill="var(--accent-soft)" />
+  <text x="100" y="118" font-size="13" fill="var(--text-muted)">ontoloji</text>
+  <text x="190" y="118" font-size="13" fill="var(--text)">yolculuk süresi yerine hız</text>
+  <text x="560" y="118" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+  <text x="700" y="118" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+
+  <rect x="20" y="130" width="680" height="22" fill="var(--accent-soft)" />
+  <text x="100" y="146" font-size="13" fill="var(--text-muted)">kapsam</text>
+  <text x="190" y="146" font-size="13" fill="var(--text)">hızı yalnızca kavşakta ölç</text>
+  <text x="560" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+  <text x="700" y="146" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+
+  <line x1="20" y1="160" x2="700" y2="160" stroke="var(--border)" />
+  <text x="20" y="184" font-size="13" font-weight="bold" fill="var(--text)">salgın</text>
+  <text x="100" y="184" font-size="13" fill="var(--text-muted)">ağırlık</text>
+  <text x="190" y="184" font-size="13" fill="var(--text)">sağlık bedelini az cezalandır</text>
+  <text x="560" y="184" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+  <text x="700" y="184" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+
+  <rect x="20" y="196" width="680" height="22" fill="var(--accent-soft)" />
+  <text x="100" y="212" font-size="13" fill="var(--text-muted)">ontoloji</text>
+  <text x="190" y="212" font-size="13" fill="var(--text)">siyasi bedeli yok say</text>
+  <text x="560" y="212" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+  <text x="700" y="212" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+
+  <line x1="20" y1="226" x2="700" y2="226" stroke="var(--border)" />
+  <text x="20" y="250" font-size="13" font-weight="bold" fill="var(--text)">Atari</text>
+  <text x="100" y="250" font-size="13" fill="var(--text-muted)">ağırlık</text>
+  <text x="190" y="250" font-size="13" fill="var(--text)">hareket cezasını küçült</text>
+  <text x="560" y="250" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+  <text x="700" y="250" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+
+  <text x="100" y="278" font-size="13" fill="var(--text-muted)">ontoloji</text>
+  <text x="190" y="278" font-size="13" fill="var(--text)">ateş etmeye ceza ekle</text>
+  <text x="560" y="278" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+  <text x="700" y="278" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+
+  <line x1="20" y1="292" x2="700" y2="292" stroke="var(--border)" />
+  <rect x="20" y="300" width="680" height="22" fill="var(--accent-soft)" />
+  <text x="20" y="316" font-size="13" font-weight="bold" fill="var(--text)">glikoz</text>
+  <text x="100" y="316" font-size="13" fill="var(--text-muted)">ontoloji</text>
+  <text x="190" y="316" font-size="13" fill="var(--text)">tedavi bedeli yerine sağlık riski</text>
+  <text x="560" y="316" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">evet</text>
+  <text x="700" y="316" font-size="13" text-anchor="end" fill="var(--text-muted)">hayır</text>
+
+  <line x1="20" y1="336" x2="700" y2="336" stroke="var(--border)" />
+  <text x="20" y="360" font-size="13" fill="var(--text-muted)">Dört ortam, dokuz vekil: beşi gerçek ödülü düşürüyor; dördünde düşüş, yetenek arttıkça ani</text>
+  <text x="20" y="378" font-size="13" fill="var(--text-muted)">bir faz geçişiyle geliyor. Hata türleri: ağırlık (aynı ölçüler, yanlış oran), ontoloji (aynı</text>
+  <text x="20" y="396" font-size="13" fill="var(--text-muted)">kavram, başka ölçü), kapsam (ölçü yalnızca bir bölgede). Değerler Pan, Bhatia ve</text>
+  <text x="20" y="414" font-size="13" fill="var(--text-muted)">Steinhardt'ın tablosundan; vurgulu satırlar gerçek ödülün düştüğü vekiller.</text>
+</svg>

@@ -1162,6 +1162,86 @@
       "path": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
+    },
+    {
+      "articleId": "article_12656b45-1598-4fba-a45c-46e7acb5ac99",
+      "title": "İnsan-Ajan İşbirliği: Denetim ve Devir",
+      "slug": "insan-ajan-isbirligi-denetim-ve-devir",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 59,
+      "summary": "Ajanla insanın iş bölümünü ölçer: özerkliğin bir yetenek değil bir tasarım kararı olduğunu ve beş düzeyinin her birinde neyin büyüdüğünü; devir kararının bir kayıp hesabı olduğunu ve kazancın insanın modelle aynı yerde mi yanıldığına bağlı kaldığını; yüz altı deneyin meta-analizinde insan artı yapay zekânın en iyi tek başınadan ortalama daha kötü çıktığını ve hangi koşulda daha iyi olduğunu; açıklamanın doğruluğu değil uyumu artırdığını; eksik belirtimde ajanın sormadığını ama sorunca kaybın yüzde 89'unu geri aldığını; kullanıcının döngüye girmesinin güvenilirliği nasıl düşürdüğünü; izi okuyan insanın uzun açıklamaya kanmasını; ve kalibrasyonun devir için gerekli ama yeterli olmadığını ölçümlerle anlatır.",
+      "tags": [
+        "insan-ajan-isbirligi",
+        "devir-karari",
+        "ozerklik-duzeyi",
+        "denetim",
+        "tamamlayicilik"
+      ],
+      "contentHash": "sha256:87591013e15110b266b6f4dd6f32e66f23d2064fa5f159f4c9fc372885626b62",
+      "path": "content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 14
+    },
+    {
+      "articleId": "article_3c251131-c57f-4e9c-980e-9d881af62653",
+      "title": "Ajan Ekonomisi: Maliyet, Gecikme, Güvenilirlik",
+      "slug": "ajan-ekonomisi-maliyet-gecikme-guvenilirlik",
+      "category": "agents-and-retrieval",
+      "level": "intermediate",
+      "readingOrder": 60,
+      "summary": "Faz 6'nın dağınık faturasını üç cetvele indirir: girdi faturasının tur çarpı pencereyle nasıl büyüdüğünü — yirmi turluk bir görevde 290 bin birim, istem önbelleğiyle 56.600 — ve önbelleğin hangi kararla sıfırlandığını; puanın dolara bölünmesiyle bulunan geçiş başına bedeli — en ucuz koşunun en pahalı üçüncü çözüm olmasını —, ucuz modelin ne zaman çağrılacağını ve Pareto sınırının neden dik olduğunu; bir turun süresinin isteklerin değil programın düzeyinde nereye gittiğini; ve güvenilirliğin kaç deneme istediğini — aynı modelin dört denemenin dördünde başarısının alana göre 0,53'ten 0,19'a inmesini, adım doğruluğundan ufuk uzunluğuna geçen formülü ve uzun koşuda değişkenliğin ortalamadan büyük olmasını — ölçümlerle anlatır.",
+      "tags": [
+        "ajan-ekonomisi",
+        "istem-onbellegi",
+        "gecis-basina-bedel",
+        "gecikme",
+        "guvenilirlik"
+      ],
+      "contentHash": "sha256:ba1303f922665b86a3c97ac467fecc5cf2d3513cffa0e29d14e381616d8db49a",
+      "path": "content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 14
+    },
+    {
+      "articleId": "article_508af008-01da-4032-9a56-baf7ab87ae30",
+      "title": "Hizalama Sorunu: Ne İstediğimizi Söylemek Zor",
+      "slug": "hizalama-sorunu-ne-istedigimizi-soylemek-zor",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 61,
+      "summary": "11'de adını koyup ileriye bıraktığımız açıyı kurar: hizalama sorununun ne olduğunu ve neden bir yetenek sorunu olmadığını; niyetle davranış arasındaki iki boşluğu — vekil ödülün oynanması ve belirtim doğruyken hedefin yanlış genellenmesi —; dokuz vekil ödülün beşinin gerçek ödülü düşürdüğünü ve dördünde düşüşün yetenek arttıkça ani bir faz geçişiyle geldiğini; vekilin ne zaman güvenle eniyilenebileceğinin biçimsel cevabını; dil modelinde vekilin ödül modeli olduğunu ve yalnızca uzunluğu ödüllendiren eğitimin insan geri bildirimli eğitimin kazancının çoğunu yeniden ürettiğini; eğitim sırasında ödül fonksiyonunu yeniden yazan ve izleyiciden saklanmayı öğrenen ajanları; ve 'neyle hizalanır' sorusunun altı cevabını ölçümlerle anlatır.",
+      "tags": [
+        "hizalama-sorunu",
+        "belirtim-oyunu",
+        "odul-hirsizligi",
+        "hedef-yanlis-genellemesi",
+        "vekil-odul"
+      ],
+      "contentHash": "sha256:cf03716b53aff6dceda6dfb6e2b6075261edfbfad802ce31788e53299a636031",
+      "path": "content/series/articles/safety-and-evaluation/hizalama-sorunu-ne-istedigimizi-soylemek-zor.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 14
+    },
+    {
+      "articleId": "article_b1edf195-d0fd-42ae-bd96-03fa3d5fbb50",
+      "title": "Güvenlik Eğitimi: Reddetme, Sınırlar ve Dengeler",
+      "slug": "guvenlik-egitimi-reddetme-sinirlar-ve-dengeler",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 62,
+      "summary": "Reddetmenin nasıl öğretildiğini ve nerede kırıldığını ölçer: yirmi bin talimatın yanına birkaç yüz güvenlik örneğinin yettiğini ve iki binin güvenli soruyu da reddettirdiğini; aşırı güvenliğin iki yüz elli güvenli istemle ölçülmesini ve bir modelin bunların yüzde 60'ını reddederken bir başkasının güvensiz olanların çoğuna uymasını; reddin yalnızca güvenlik olmadığını, eksik ve cevaplanamaz isteklere de uymamak gerektiğini; yardımseverlikle zararsızlığı ayrı ödül ve maliyet modelleriyle dengelemeyi ve kural tabanlı ödülü; hizalamanın ilk birkaç token'da yoğunlaştığını — ret önekiyle temel modelin bile güvenli göründüğünü, beş zararlı token'la hizalanmış modelin çözüldüğünü —; ve on örnekle yirmi sente reddin silindiğini, zararsız veriyle bile aşındığını ölçümlerle anlatır.",
+      "tags": [
+        "guvenlik-egitimi",
+        "reddetme",
+        "asiri-guvenlik",
+        "sig-hizalama",
+        "ince-ayar-saldirisi"
+      ],
+      "contentHash": "sha256:82a8c02a3aba6a7467c7c3332f5cfc392f500380d2194f15ef41633293f12427",
+      "path": "content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 14
     }
   ]
 }

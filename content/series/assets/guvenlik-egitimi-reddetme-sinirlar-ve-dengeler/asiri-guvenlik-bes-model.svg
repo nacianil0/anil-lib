@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Beş model için yığılmış yatay çubuklar; 250 güvenli istemde tam ret ve kısmi ret yüzdeleri. Llama 2 sohbet, sistem istemli: tam 38, kısmi 21,6; Llama 2 sohbet, sistem istemsiz: 14 ve 15,6; Mistral talimat: 0,8 ve 0,8; Mistral koruma istemli: 9,6 ve 9,2; GPT-4: 6,4 ve 2. Altta güvenli istemlerde düşük olanın iyi olduğu, 200 güvensiz istemde iki Llama 2 modelinin hepsini reddettiği, Mistral talimat modelinin çoğuna uyduğu ve GPT-4'ün ikisinde de iyi olduğu, değerlerin Röttger ve arkadaşlarının tablosundan geldiği yazılıdır.">
+  <rect x="260" y="16" width="12" height="12" fill="var(--accent)" />
+  <text x="278" y="26" font-size="13" fill="var(--text-muted)">tam ret</text>
+  <rect x="360" y="16" width="12" height="12" fill="var(--cool)" />
+  <text x="378" y="26" font-size="13" fill="var(--text-muted)">kısmi ret</text>
+  <text x="700" y="26" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">tam + kısmi</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="66" font-size="13" font-weight="bold" fill="var(--text)">Llama 2 sohbet</text>
+  <text x="20" y="84" font-size="13" fill="var(--text-muted)">sistem istemli</text>
+  <rect x="260" y="62" width="152" height="14" fill="var(--accent)" />
+  <rect x="412" y="62" width="86.4" height="14" fill="var(--cool)" />
+  <text x="700" y="74" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">38 + 21,6</text>
+
+  <text x="20" y="126" font-size="13" font-weight="bold" fill="var(--text)">Llama 2 sohbet</text>
+  <text x="20" y="144" font-size="13" fill="var(--text-muted)">sistem istemsiz</text>
+  <rect x="260" y="122" width="56" height="14" fill="var(--accent)" />
+  <rect x="316" y="122" width="62.4" height="14" fill="var(--cool)" />
+  <text x="700" y="134" font-size="13" text-anchor="end" fill="var(--text)">14 + 15,6</text>
+
+  <text x="20" y="186" font-size="13" font-weight="bold" fill="var(--text)">Mistral talimat</text>
+  <text x="20" y="204" font-size="13" fill="var(--text-muted)">koruma istemi yok</text>
+  <rect x="260" y="182" width="3.2" height="14" fill="var(--accent)" />
+  <rect x="263.2" y="182" width="3.2" height="14" fill="var(--cool)" />
+  <text x="700" y="194" font-size="13" text-anchor="end" fill="var(--text)">0,8 + 0,8</text>
+
+  <text x="20" y="246" font-size="13" font-weight="bold" fill="var(--text)">Mistral talimat</text>
+  <text x="20" y="264" font-size="13" fill="var(--text-muted)">koruma istemli</text>
+  <rect x="260" y="242" width="38.4" height="14" fill="var(--accent)" />
+  <rect x="298.4" y="242" width="36.8" height="14" fill="var(--cool)" />
+  <text x="700" y="254" font-size="13" text-anchor="end" fill="var(--text)">9,6 + 9,2</text>
+
+  <text x="20" y="306" font-size="13" font-weight="bold" fill="var(--text)">GPT-4</text>
+  <rect x="260" y="302" width="25.6" height="14" fill="var(--accent)" />
+  <rect x="285.6" y="302" width="8" height="14" fill="var(--cool)" />
+  <text x="700" y="314" font-size="13" text-anchor="end" fill="var(--text)">6,4 + 2</text>
+
+  <line x1="20" y1="330" x2="700" y2="330" stroke="var(--border)" />
+  <text x="20" y="352" font-size="13" fill="var(--text-muted)">250 güvenli istem, on tür; yüzde, düşük iyidir (100 = 400 birim).</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-muted)">200 güvensiz istemin karşı kümesinde iki Llama 2 modeli hepsini reddediyor,</text>
+  <text x="20" y="388" font-size="13" fill="var(--text-muted)">koruma istemsiz Mistral çoğuna uyuyor, GPT-4 ikisinde de iyi. Değerler Röttger ve</text>
+  <text x="20" y="406" font-size="13" fill="var(--text-muted)">arkadaşlarının tablosundan; elle etiketleme.</text>
+</svg>

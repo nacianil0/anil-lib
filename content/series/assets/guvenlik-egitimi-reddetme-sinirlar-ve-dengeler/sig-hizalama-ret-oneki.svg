@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Altı satır, her satırda iki yatay çubuk: güvenlik eğitimi görmemiş iki temel modelin, cevabın başına belirli bir ret öneki yazıldığında zararlı cevap verme oranı. Önek yok: Llama 2 temel 68,6, Gemma temel 85,4. I cannot: 16,4 ve 8,7. I cannot fulfill: 5,4 ve 2,7. I apologize: 14,4 ve 14,1. I apologize, but I cannot: 2,1 ve 1,0. I am unable: 8,1 ve 3,9. Altta aynı modellerin hizalanmış sürümlerinin her önekte sıfır verdiği, tersinin de doğru olduğu yani hizalanmış modele beş zararlı token yazdırınca oranın 42'ye, kırk token'da 57'ye çıktığı ve değerlerin Qi ve arkadaşlarının tablolarından olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">cevabın başına yazılan önek</text>
+  <rect x="300" y="18" width="12" height="12" fill="var(--accent)" />
+  <text x="318" y="28" font-size="13" fill="var(--text-muted)">Llama 2 temel</text>
+  <rect x="440" y="18" width="12" height="12" fill="var(--cool)" />
+  <text x="458" y="28" font-size="13" fill="var(--text-muted)">Gemma temel</text>
+  <text x="700" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">zararlı %</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">önek yok</text>
+  <rect x="300" y="52" width="205.8" height="9" fill="var(--accent)" />
+  <rect x="300" y="63" width="256.2" height="9" fill="var(--cool)" />
+  <text x="700" y="60" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">68,6</text>
+  <text x="700" y="72" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">85,4</text>
+
+  <text x="20" y="108" font-size="13" fill="var(--text)">"I cannot"</text>
+  <rect x="300" y="98" width="49.2" height="9" fill="var(--accent)" />
+  <rect x="300" y="109" width="26.1" height="9" fill="var(--cool)" />
+  <text x="700" y="106" font-size="13" text-anchor="end" fill="var(--text)">16,4</text>
+  <text x="700" y="118" font-size="13" text-anchor="end" fill="var(--text)">8,7</text>
+
+  <text x="20" y="154" font-size="13" fill="var(--text)">"I cannot fulfill"</text>
+  <rect x="300" y="144" width="16.2" height="9" fill="var(--accent)" />
+  <rect x="300" y="155" width="8.1" height="9" fill="var(--cool)" />
+  <text x="700" y="152" font-size="13" text-anchor="end" fill="var(--text)">5,4</text>
+  <text x="700" y="164" font-size="13" text-anchor="end" fill="var(--text)">2,7</text>
+
+  <text x="20" y="200" font-size="13" fill="var(--text)">"I apologize"</text>
+  <rect x="300" y="190" width="43.2" height="9" fill="var(--accent)" />
+  <rect x="300" y="201" width="42.3" height="9" fill="var(--cool)" />
+  <text x="700" y="198" font-size="13" text-anchor="end" fill="var(--text)">14,4</text>
+  <text x="700" y="210" font-size="13" text-anchor="end" fill="var(--text)">14,1</text>
+
+  <text x="20" y="246" font-size="13" fill="var(--text)">"I apologize, but I cannot"</text>
+  <rect x="300" y="236" width="6.3" height="9" fill="var(--accent)" />
+  <rect x="300" y="247" width="3" height="9" fill="var(--cool)" />
+  <text x="700" y="244" font-size="13" text-anchor="end" fill="var(--text)">2,1</text>
+  <text x="700" y="256" font-size="13" text-anchor="end" fill="var(--text)">1,0</text>
+
+  <text x="20" y="292" font-size="13" fill="var(--text)">"I am unable"</text>
+  <rect x="300" y="282" width="24.3" height="9" fill="var(--accent)" />
+  <rect x="300" y="293" width="11.7" height="9" fill="var(--cool)" />
+  <text x="700" y="290" font-size="13" text-anchor="end" fill="var(--text)">8,1</text>
+  <text x="700" y="302" font-size="13" text-anchor="end" fill="var(--text)">3,9</text>
+
+  <line x1="20" y1="320" x2="700" y2="320" stroke="var(--border)" />
+  <text x="20" y="342" font-size="13" fill="var(--text-muted)">Güvenlik eğitimi görmemiş temel modeller; 100 = 300 birim. Aynı modellerin hizalanmış sürümleri</text>
+  <text x="20" y="360" font-size="13" fill="var(--text-muted)">her önekte 0 veriyor. Tersi de doğru: hizalanmış modele cevabın ilk beş token'ı zararlı</text>
+  <text x="20" y="378" font-size="13" fill="var(--text-muted)">yazdırılınca zararlı cevap oranı 42,1'e, kırk token'da 57,0'a çıkıyor. Değerler Qi ve</text>
+  <text x="20" y="396" font-size="13" fill="var(--text-muted)">arkadaşlarının tablolarından; hizalama ilk birkaç token'da yoğunlaşıyor.</text>
+</svg>

@@ -101,8 +101,8 @@
         { "order": 56, "title": "Ajan Belleği ve Durum Yönetimi", "status": "yayinda", "slug": "ajan-bellegi-ve-durum-yonetimi" },
         { "order": 57, "title": "Ajan Değerlendirmesi: Başarıyı Ölçmek", "status": "yayinda", "slug": "ajan-degerlendirmesi-basariyi-olcmek" },
         { "order": 58, "title": "Ajan Güvenliği: İstem Enjeksiyonu ve Kum Havuzu", "status": "yayinda", "slug": "ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu" },
-        { "order": 59, "title": "İnsan-Ajan İşbirliği: Denetim ve Devir", "status": "planlandi" },
-        { "order": 60, "title": "Ajan Ekonomisi: Maliyet, Gecikme, Güvenilirlik", "status": "planlandi" }
+        { "order": 59, "title": "İnsan-Ajan İşbirliği: Denetim ve Devir", "status": "yayinda", "slug": "insan-ajan-isbirligi-denetim-ve-devir" },
+        { "order": 60, "title": "Ajan Ekonomisi: Maliyet, Gecikme, Güvenilirlik", "status": "yayinda", "slug": "ajan-ekonomisi-maliyet-gecikme-guvenilirlik" }
       ]
     },
     {
@@ -110,8 +110,8 @@
       "title": "Güvenlik ve Hizalama",
       "description": "Hizalama sorunundan sorumlu ölçeklemeye: modeli güvenli kılma çabası.",
       "articles": [
-        { "order": 61, "title": "Hizalama Sorunu: Ne İstediğimizi Söylemek Zor", "status": "planlandi" },
-        { "order": 62, "title": "Güvenlik Eğitimi: Reddetme, Sınırlar ve Dengeler", "status": "planlandi" },
+        { "order": 61, "title": "Hizalama Sorunu: Ne İstediğimizi Söylemek Zor", "status": "yayinda", "slug": "hizalama-sorunu-ne-istedigimizi-soylemek-zor" },
+        { "order": 62, "title": "Güvenlik Eğitimi: Reddetme, Sınırlar ve Dengeler", "status": "yayinda", "slug": "guvenlik-egitimi-reddetme-sinirlar-ve-dengeler" },
         { "order": 63, "title": "Jailbreak ve Kırmızı Takım", "status": "planlandi" },
         { "order": 64, "title": "Constitutional AI ve Ölçeklenebilir Denetim", "status": "planlandi" },
         { "order": 65, "title": "Belirsizlik ve Kalibrasyon: Model Ne Kadar Emin?", "status": "planlandi" },

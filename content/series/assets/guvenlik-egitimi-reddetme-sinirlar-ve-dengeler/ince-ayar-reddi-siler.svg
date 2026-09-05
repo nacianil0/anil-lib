@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Beş satır, her satırda iki model için ince ayar öncesi ve sonrası zararlı cevap oranı. 10 zararlı örnek, 5 epok: GPT-3.5 Turbo 1,8'den 88,8'e, Llama 2 sohbet 0,3'ten 50,0'a. 100 zararlı örnek: 1,8'den 91,8'e, 0,3'ten 80,0'a. 10 kimlik kaydırma örneği: GPT-3.5 0'dan 87,3'e on epokta, Llama 2 0'dan 72,1'e beş epokta. Zararsız Alpaca verisi, 1 epok: 5,5'ten 31,8'e, 0,3'ten 16,1'e. Zararsız Dolly verisi, 1 epok: 4,5'ten 23,9'a, 0,6'dan 12,1'e. Altta on zararlı örneğin API üzerinden 20 sentten aza mal olduğu ve değerlerin Qi ve arkadaşlarının tablolarından olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">ince ayar verisi</text>
+  <rect x="300" y="18" width="12" height="12" fill="var(--accent)" />
+  <text x="318" y="28" font-size="13" fill="var(--text-muted)">GPT-3.5 Turbo</text>
+  <rect x="440" y="18" width="12" height="12" fill="var(--cool)" />
+  <text x="458" y="28" font-size="13" fill="var(--text-muted)">Llama 2 sohbet</text>
+  <text x="700" y="28" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">önce → sonra</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">10 zararlı örnek</text>
+  <text x="20" y="80" font-size="13" fill="var(--text-muted)">5 epok</text>
+  <rect x="300" y="52" width="266.4" height="9" fill="var(--accent)" />
+  <rect x="300" y="63" width="150" height="9" fill="var(--cool)" />
+  <text x="700" y="60" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">1,8 → 88,8</text>
+  <text x="700" y="72" font-size="13" text-anchor="end" fill="var(--text)">0,3 → 50,0</text>
+
+  <text x="20" y="116" font-size="13" font-weight="bold" fill="var(--text)">100 zararlı örnek</text>
+  <text x="20" y="134" font-size="13" fill="var(--text-muted)">5 epok</text>
+  <rect x="300" y="106" width="275.4" height="9" fill="var(--accent)" />
+  <rect x="300" y="117" width="240" height="9" fill="var(--cool)" />
+  <text x="700" y="114" font-size="13" text-anchor="end" fill="var(--text)">1,8 → 91,8</text>
+  <text x="700" y="126" font-size="13" text-anchor="end" fill="var(--text)">0,3 → 80,0</text>
+
+  <text x="20" y="170" font-size="13" font-weight="bold" fill="var(--text)">10 kimlik kaydırma örneği</text>
+  <text x="20" y="188" font-size="13" fill="var(--text-muted)">zararlı içerik yok; 10 / 5 epok</text>
+  <rect x="300" y="160" width="261.9" height="9" fill="var(--accent)" />
+  <rect x="300" y="171" width="216.3" height="9" fill="var(--cool)" />
+  <text x="700" y="168" font-size="13" text-anchor="end" fill="var(--text)">0 → 87,3</text>
+  <text x="700" y="180" font-size="13" text-anchor="end" fill="var(--text)">0 → 72,1</text>
+
+  <text x="20" y="224" font-size="13" font-weight="bold" fill="var(--text)">zararsız Alpaca verisi</text>
+  <text x="20" y="242" font-size="13" fill="var(--text-muted)">1 epok</text>
+  <rect x="300" y="214" width="95.4" height="9" fill="var(--accent)" />
+  <rect x="300" y="225" width="48.3" height="9" fill="var(--cool)" />
+  <text x="700" y="222" font-size="13" text-anchor="end" fill="var(--text)">5,5 → 31,8</text>
+  <text x="700" y="234" font-size="13" text-anchor="end" fill="var(--text)">0,3 → 16,1</text>
+
+  <text x="20" y="278" font-size="13" font-weight="bold" fill="var(--text)">zararsız Dolly verisi</text>
+  <text x="20" y="296" font-size="13" fill="var(--text-muted)">1 epok</text>
+  <rect x="300" y="268" width="71.7" height="9" fill="var(--accent)" />
+  <rect x="300" y="279" width="36.3" height="9" fill="var(--cool)" />
+  <text x="700" y="276" font-size="13" text-anchor="end" fill="var(--text)">4,5 → 23,9</text>
+  <text x="700" y="288" font-size="13" text-anchor="end" fill="var(--text)">0,6 → 12,1</text>
+
+  <line x1="20" y1="316" x2="700" y2="316" stroke="var(--border)" />
+  <text x="20" y="338" font-size="13" fill="var(--text-muted)">Çubuk, ince ayar sonrası zararlı cevap oranı (100 = 300 birim); önce değeri metinde.</text>
+  <text x="20" y="356" font-size="13" fill="var(--text-muted)">On zararlı örnekle ince ayar API üzerinden 20 sentten aza mal oluyor; kimlik kaydırma</text>
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">örneklerinde zararlı içerik yok, yalnızca "her talimata uy" kimliği. Zararsız kümelerde</text>
+  <text x="20" y="392" font-size="13" fill="var(--text-muted)">niyet yok, ret yine aşınıyor. Değerler Qi ve arkadaşlarının üç tablosundan.</text>
+</svg>

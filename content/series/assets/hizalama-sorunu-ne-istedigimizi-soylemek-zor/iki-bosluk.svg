@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Soldan sağa dört kutu ve oklar: niyet, belirtim yani ödül ya da ölçüt, öğrenilen hedef, davranış. Niyet ile belirtim arasındaki ilk boşluğun adı belirtim boşluğu, dış hizalama; örnekleri yarış oyununda hedefi tarayıp dönerek puanı yüzde 20 artırmak, trafikte şerit değişimini az cezalandırmak, imkânsız testi geçirmek, ödül modelini fazla kovalamak. Belirtim ile öğrenilen hedef arasındaki ikinci boşluğun adı genelleme boşluğu, iç hizalama; örnekleri para yerine sağa gitmeyi öğrenen ajan ve canavar yokken de kalkan toplayan ajan; altında belirtim doğru olsa da açılır yazar. Şeklin altında iki boşluğun ayrı ayrı ölçüldüğü ve ikisinin de eğitimde görünmeyip dağıtımda göründüğü yazılıdır.">
+  <rect x="20" y="60" width="130" height="70" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="85" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">niyet</text>
+  <text x="85" y="110" font-size="13" text-anchor="middle" fill="var(--text-muted)">ne istiyoruz</text>
+
+  <rect x="205" y="60" width="130" height="70" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="270" y="84" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">belirtim</text>
+  <text x="270" y="102" font-size="13" text-anchor="middle" fill="var(--text-muted)">ödül, ölçüt,</text>
+  <text x="270" y="120" font-size="13" text-anchor="middle" fill="var(--text-muted)">test, ödül modeli</text>
+
+  <rect x="390" y="60" width="130" height="70" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <text x="455" y="84" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">öğrenilen hedef</text>
+  <text x="455" y="102" font-size="13" text-anchor="middle" fill="var(--text-muted)">politikanın</text>
+  <text x="455" y="120" font-size="13" text-anchor="middle" fill="var(--text-muted)">gerçekten kovaladığı</text>
+
+  <rect x="575" y="60" width="125" height="70" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="637" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">davranış</text>
+  <text x="637" y="110" font-size="13" text-anchor="middle" fill="var(--text-muted)">dağıtımda</text>
+
+  <line x1="150" y1="95" x2="197" y2="95" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="205,95 196,90 196,100" fill="var(--text-faint)" />
+  <line x1="335" y1="95" x2="382" y2="95" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="390,95 381,90 381,100" fill="var(--text-faint)" />
+  <line x1="520" y1="95" x2="567" y2="95" stroke="var(--text-faint)" stroke-width="1.5" />
+  <polygon points="575,95 566,90 566,100" fill="var(--text-faint)" />
+
+  <line x1="178" y1="130" x2="178" y2="160" stroke="var(--accent)" stroke-dasharray="3 3" />
+  <rect x="20" y="160" width="316" height="150" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="30" y="182" font-size="13" font-weight="bold" fill="var(--accent)">1. boşluk: belirtim oyunu (dış hizalama)</text>
+  <text x="30" y="202" font-size="13" fill="var(--text)">vekil ödül yükselir, niyet karşılanmaz:</text>
+  <text x="30" y="222" font-size="13" fill="var(--text-muted)">· yarış oyununda dönüp hedef taramak: +%20 puan</text>
+  <text x="30" y="242" font-size="13" fill="var(--text-muted)">· trafikte şerit değişimini az cezalandırmak</text>
+  <text x="30" y="262" font-size="13" fill="var(--text-muted)">· imkânsız testi geçirmek (57)</text>
+  <text x="30" y="282" font-size="13" fill="var(--text-muted)">· ödül modelini fazla kovalamak (13)</text>
+  <text x="30" y="302" font-size="13" fill="var(--text-muted)">ölçüsü: vekil ↑ iken gerçek ödül ↓</text>
+
+  <line x1="362" y1="130" x2="362" y2="160" stroke="var(--cool)" stroke-dasharray="3 3" />
+  <rect x="356" y="160" width="344" height="150" rx="6" fill="var(--surface)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="366" y="182" font-size="13" font-weight="bold" fill="var(--cool)">2. boşluk: hedef yanlış genellemesi (iç hizalama)</text>
+  <text x="366" y="202" font-size="13" fill="var(--text)">belirtim doğru olsa da açılır:</text>
+  <text x="366" y="222" font-size="13" fill="var(--text-muted)">· para yerine "sağa git"i öğrenen ajan (CoinRun)</text>
+  <text x="366" y="242" font-size="13" fill="var(--text-muted)">· canavar yokken de kalkan toplayan ajan</text>
+  <text x="366" y="262" font-size="13" fill="var(--text-muted)">· eğitimde iki hedef aynı davranışı ödüllendirir</text>
+  <text x="366" y="282" font-size="13" fill="var(--text-muted)">· dağıtımda ayrışınca yetenek kalır, hedef sapar</text>
+  <text x="366" y="302" font-size="13" fill="var(--text-muted)">ölçüsü: yeni dağılımda yetkin ama yanlış hedefe</text>
+
+  <text x="20" y="340" font-size="13" fill="var(--text-muted)">İki boşluk ayrı ayrı ölçülür: birincisi vekil ve gerçek ödülün birlikte izlenmesiyle, ikincisi</text>
+  <text x="20" y="358" font-size="13" fill="var(--text-muted)">eğitim dağılımının dışında sınamayla. İkisi de eğitim puanında görünmez; dağıtımda görünür.</text>
+  <text x="20" y="376" font-size="13" fill="var(--text-muted)">Adlar Hubinger ve arkadaşlarının hakemli olmayan çalışmasından; örnekler metindeki kaynaklardan.</text>
+</svg>

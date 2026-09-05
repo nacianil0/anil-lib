@@ -51,7 +51,7 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Sohbetler arası kalıcı bellek | 21 | 39 | ödendi (Batch 9) |
 | Modelin bilgisinin yetmediği yer ve dış kaynağa bağlanma | 17, 19, 21, 25, 29 | 41 | ödendi (Batch 9) |
 | İlkelere dayalı tercih etiketleri ve ölçeklenebilir denetim | 13 | 64 | açık |
-| Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | açık |
+| Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | kısmen ödendi (62: ince ayar saldırısı); 63, 68, 70 açık |
 | Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | açık |
 | Kirliliğin değerlendirmeye etkisi ve ezberin benchmark'lara yansıması | 8, 16, 18, 31 | 72 | açık |
 | Doğrulayıcıların eğitimi ve modelin kendi cevabını kontrol etmesi | 33, 34 | 35 | ödendi (Batch 8) |
@@ -153,6 +153,20 @@ dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış mak
 Python ile makale başına doğrulandı (58'den büyük tek sayılar yüzde, puan ve dolar değerleridir).
 Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
 
+**Numarasız ileri işaretler — Batch 14'te verildi.** Ajanın maliyet, gecikme ve güvenilirlik hesabı
+(59 → 60, "bir sonraki makale"); hizalama sorununun kendisi (60 → 61, "serinin bir sonraki fazı");
+kalibrasyonun tam kurulumu (59 → "ilerideki kalibrasyon makalesi", numarasız); reddetmenin öğretilmesi
+(61 → 62, "bir sonraki makale"); aldatma ve durum farkındalığının ölçümü (61 → "serinin ilerideki bir
+makalesi", numarasız); modelin içine bakmanın araçları (62 → "serinin ilerideki bir fazı", numarasız);
+ilkelerin yazılması ve ölçeklenebilir denetim (62 → "serinin ilerideki bir makalesi", numarasız); jailbreak
+ve kırmızı takım (62 → 63, "bir sonraki makale"). 61, 13'ün açtığı **64** koordinatını ("13'te 64'e
+bıraktığımız ilkelere dayalı etiketler ve ölçeklenebilir denetim") yeniden andı, yeni koordinat açmadı. 62,
+20'nin 61–70 bandına bıraktığı "açık ağırlık yayımlamanın güvenlik tarafı" vaadinin ilk taksidini ödedi
+(ince ayar saldırısı; devamı 63, 68, 70). Batch 14 **yeni bir numaralı koordinat açmadı ve kapatmadı**;
+dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤62) ya da defterdeki 64
+koordinatına yapıldı ve Python ile makale başına doğrulandı (62'den büyük tek sayılar yüzde, puan, dolar ve
+token değerleridir). Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -230,13 +244,13 @@ Defterde açık kalan en yakın tekil koordinat hâlâ **64**'tür.
 56. **Ajan Belleği ve Durum Yönetimi** — 39'un ajan bağlamında geri çağrımı. `[yayında]`
 57. **Ajan Değerlendirmesi: Başarıyı Ölçmek** — ajan benchmark'ları. `[yayında]`
 58. **Ajan Güvenliği: İstem Enjeksiyonu ve Kum Havuzu** — saldırı yüzeyi. `[yayında]`
-59. **İnsan-Ajan İşbirliği: Denetim ve Devir** — human-in-the-loop.
-60. **Ajan Ekonomisi: Maliyet, Gecikme, Güvenilirlik** — üretimde ajanlar.
+59. **İnsan-Ajan İşbirliği: Denetim ve Devir** — human-in-the-loop. `[yayında]`
+60. **Ajan Ekonomisi: Maliyet, Gecikme, Güvenilirlik** — üretimde ajanlar. `[yayında]`
 
 ### Faz 7 — Güvenlik ve Hizalama (61–70)
 
-61. **Hizalama Sorunu: Ne İstediğimizi Söylemek Zor** — alignment kavramı (12–13'ün geri çağrımı).
-62. **Güvenlik Eğitimi: Reddetme, Sınırlar ve Dengeler** — yardımseverlik/zararsızlık gerilimi.
+61. **Hizalama Sorunu: Ne İstediğimizi Söylemek Zor** — alignment kavramı (12–13'ün geri çağrımı). `[yayında]`
+62. **Güvenlik Eğitimi: Reddetme, Sınırlar ve Dengeler** — yardımseverlik/zararsızlık gerilimi. `[yayında]`
 63. **Jailbreak ve Kırmızı Takım** — saldırılar ve savunmalar.
 64. **Constitutional AI ve Ölçeklenebilir Denetim** — ilkelere dayalı eğitim, scalable oversight.
 65. **Belirsizlik ve Kalibrasyon: Model Ne Kadar Emin?** — güven ile doğruluk ilişkisi.
@@ -430,6 +444,14 @@ run'da ilk kez yazıldı.
 - 56 ← 55 (her görev sıfırdan; kap), 51 (dört bellek; durum = pencere + görünmeyen dünya; iç eylem = belleğe yazma; 3.500 token kırpma), 52 (son üç ders; beceri kütüphanesi; yansıma; ağırlıklara yazma), 39 (özet ↔ kesme 9,04/9,16; bellek bir getirme sorunudur; anahtar ≠ değer; üçlü puan; "kötü bellek belleksizlikten kötü"; LongMemEval, LoCoMo), 21 (durumsuzluk), 48 (son beş gözlem 15,0 → 18,0), 47 (belleğe işlev çağrısıyla erişim), 37 (pekiştirmeli öğrenme: iç durum), 29 (embedding yakınlığı ile bağlantı), 41 (dış dizin = anlamsal bellek), 46 (yinelemeli getirme ↔ tek adımda yürüyüş), 44 (ortada kaybolma; parçalama bedeli), 42 (BM25), 54 (web ortamı: iş akışları), 23/12 (isteme koyma ↔ ince ayar), 50 (bağlam–bellek çatışması → seçici unutma) `[yayında]`
 - 57 ← 16 (cetvel bir tasarım ürünüdür; hata payı; MMLU'yu geçen modeller ↔ GAIA), 51 (beş bitiş sınıfı; puan çağrı sayısıyla okunur), 52 (ilerleme oranı; hata döngüsü → 40 adım), 53 (rol oyunuyla iş arkadaşları; iki sistem birbirinin kümesinde), 54 (insanla kıyas; hakem uyumu 85,3), 55 (test zayıflığı; sızıntı; altı koşu; dolar/görev), 56 (dört yetenek cetveli), 47 (pass^k; τ-bench veritabanı; kullanıcıyı canlandıran model), 45 (hakem yanlılıkları), 33 (çıkarım hesabı; kapsama ↔ pass^k), 40 (ufuk ↔ zaman bütçesi), 13 (aşırı optimizasyon → hile), 8 ("kontrol noktası" sözcüğünün ayrımı → ara hedef) `[yayında]`
 - 58 ← 24 (istem enjeksiyonu; talimat hiyerarşisi 32,8 → 95,9 ve 73,7; özel token'lar sıradan metinden üretilemez), 49 (araç zehirleme: açıklama en üste girer; belirtim: her çağrıdan önce onay), 50 (dizine sızan belge → PoisonedRAG), 54 (çevre gürültüsü; ekran ajanı), 57 (kısayol dışarıdan; durum karşılaştırması = AgentDojo yarar işlevi), 47 (çalıştırıcı = araç süzgeci; işlev çağrısı), 46 (düşün–eyle–gözle istemi), 41 (getirici ilgililiğe bakar), 52 (geri alınabilir dünya; önce plan; yansımanın kırılganlığı), 55 (kap; git), 51 (eylem kümesini çevre tanımlar; özerklik ↔ onay), 35 (yanlış pozitif/negatif: dedektör), 13 (doğrudan tercih optimizasyonu: SecAlign), 16 (kalibrasyon → 59) `[yayında]`
+
+**Batch 14 (59–62) — gerçekleşen graf.** Yazılan metinde fiilen kullanılan bağlar; HANDOFF'un taslağı 59 için
+on bir, 60 için on iki, 61 için altı, 62 için beş satırlıktı; 61 ve 62'nin satırları bu run'da ilk kez tam yazıldı.
+
+- 59 ← 58 (onay / kum havuzu dışı komut / alan adı izni; saldırı yüzeyi ↔ onay; her onaysız eylem enjeksiyonun dönüşebileceği eylemdir), 51 (özerklik = döngüyü kapatma kararı; Q(s, dur) ↔ Q(s, devam) → Q(s, devret); politika pencerenin fonksiyonu), 55 (METR RCT: <%44 kabul, %9 gözden geçirme, +%19; öngörü −%24), 54 ("yapılamazsa dur" %54,9 ↔ %44,4), 57 (erken bırakma; hakem uyumu 85–90; iz puanın denetim kaydı; τ²-bench devir), 16 (kalibrasyon = güvenin doğrulukla örtüşmesi), 50 (token olasılığıyla ölçülen güven yanlış belgeye direnir), 35 (yanlış pozitif dersi → reddedici), 47 (yanlış argümanlı çağrı ayrı hata sınıfı; pass^k iki zarı sayar), 13 (tercih eğitimi token kalibrasyonunu bozar: Tian), 39 (çekimserlik — dolaylı), 24 (sistem istemi = ayrıcalık — dolaylı) `[yayında]`
+- 60 ← 59 (her devir bir bedel: onay, gözden geçirme, netleştirme, yeniden deneme), 51 (puan çağrı sayısıyla; 4 $ bütçe, 1,21 ↔ 2,52; "hızlı başarır, yavaş başarısız olur"; politika pencerenin fonksiyonu → kendi hatasına koşullanma), 53 (fatura tur × pencere → kare terimi), 55 (Şekil 2 tablosu → geçiş başına bedel; altı koşu 17,33–18,67, pass@6 32,67), 57 (Pareto sınırı; HAL 21/36; TheAgentCompany 4,2 ↔ 0,6 $; Kapoor elli kat; koşu sayısı), 47 (264–804 token; maliyetin %95,9'u girdi; paralel çağrı 7,12 → 3,95 sn; pass^k), 26 (önek paylaşımı: yeniden gönderilir, yeniden hesaplanmaz; program–motor yerelliği), 28 (ilk token süresi / token başına süre; sürekli yığınlama iş hacmini artırır gecikmeye dokunmaz; yığın ↔ gecikme takası), 49 (belirlenimci araç sırası = önbellek), 56 (kesme / özet / sayfalama / iç durum → önek kararı; MEM1 tepe token 3,7×), 21 (durumsuzluk: pencerenin tamamı her tur yeniden gönderilir), 52 (büyük modeli gerektiğinde çağır: 757 ↔ 1.971 token/eylem), 13 (yönlendirici tercih çiftleriyle eğitilir), 33 (çoğunluk oyu ve öz-düzeltme bedeli), 40 (%80 ufku ↔ formül 0,32 katı), 32 (ara adımlar koşullanmayı kırıyor) `[yayında]`
+- 61 ← 60 (her ölçüm bir hedef varsaydı), 11 (hizalanmamış; hizalama vergisi; "davranış post-training'den"), 6 (Bahdanau'nun çeviri hizalaması — ayrım açıkça), 13 (ödül modeli = etiketleyicinin seçtiği; aşırı optimizasyon tepesi; KL tasması; uyum %72,6; 64 koordinatı), 16 (Goodhart yasası), 57 (imkânsız test %76; cetvel hedefe dönüşünce), 58 (kum havuzu ajanın kendisine karşı), 37 (getiri, ziyaret sayılarının doğrusal fonksiyonu; durum/eylem/politika), 2 (genelleme; aşırı öğrenme), 9 (ölçek yasaları yeteneğin nasıl büyüdüğünü söyler), 51 (politika pencerenin fonksiyonu → hedef, pencereye düşen durumlara bağlı), 55 (test davranışın örneklemi ↔ hedef), 59 (devir = hedef belirsizken durmak; iz denetimi; izleyici), 49 ("belirtim" sözcüğünün protokol anlamı — ayrım), 24 (talimat hiyerarşisi = Gabriel'in ilk hedefi), 32 (izleyicinin gördüğü ara adımlar) `[yayında]`
+- 62 ← 61 (yardımsever/dürüst/zararsız; iki boşluk; uyumsuz genelleme = hedef yanlış genellemesinin güvenlik hâli), 11 (hizalama vergisi; parametreler ortak; yardımseverlik ↔ zararsızlık işareti), 13 (44 bin / 42 bin ayrı kümeler; ödül modeli tek sayı; KL ıraksaması; model üretimi tercih etiketleri işareti), 24 (hiyerarşi eğitimi 83,1 → 60,4; sistem istemi ayrıcalık ve aşırı temkin; özel token'lar), 58 (AgentHarm 85,2 → 16,7; StruQ GCG 97 → 58; dedektör süzgeci), 12 (denetimli ince ayar; talimat izleyen model zararlı talimatı da izler), 19 (ince ayar; unutma; düşük ranklı uyarlama), 20 (açık ağırlık yayımlamanın güvenlik tarafı — vaat taksidi), 16 (iki kümeli cetvel), 2 (aşırı öğrenme: sözcük düzeyinde ezber), 8 (ön eğitimden gelen dil kalıbı: ret öneki), 30 (üretimin ilk token'larını kısıtlamak), 39 (çekimserlik), 59 (netleştirme sorusu), 45 (hakem model: GPT-4 ↔ insan tutarlı; kural puanlayıcı hakem) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1246,6 +1268,77 @@ yeniden yazma (44 → 56; devir: 65), etkin getirme (46 → 65), tartışmanın 
 | Savunma katları: istem, eğitim, mimari; "tanımak eğilim, sınırlamak mimari"; araç süzgeci | 58 | — | 62, 63, 64 |
 | Kum havuzu (tanım); en az ayrıcalık; üç katman; yetki etiketi; izinli kanaldan sızma; taklit araçla risk bulma | 58 | — | 59, 60, 68, 70 |
 
+### Batch 14'te gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 59–62'de fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 14'te gerçekleşen |
+|---|---|
+| Genelleme ve aşırı öğrenme (2) | 61 (hedef yanlış genellemesi: genellemenin iki parçası), 62 (sözcük düzeyinde ezber → aşırı güvenlik) ✓ **altmış makale aralıklı geri çağırma** |
+| Hizalama sözcüğünün iki anlamı (6 ↔ 11) | 61 (ayrım açıkça; bu makaleden itibaren ikinci anlam) ✓ |
+| Ön eğitimden gelen dil kalıpları (8) | 62 (ret önekini sürdürmek ön eğitimde öğrenilmiş) ✓ |
+| Ölçek yasaları (9) | 61 (yetenek büyüdükçe vekilin açığı) ✓ |
+| Hizalanmamış; hizalama vergisi; yardımseverlik ↔ zararsızlık (11) | 61 (borç ödendi; tanım), 62 (vergi; parametreler ortak; gerilim ölçüldü) ✓ |
+| Denetimli ince ayar (12) | 62 (talimat izleyen model zararlı talimatı da izler; güvenlik örnekleri) ✓ |
+| Ödül modeli; aşırı optimizasyon; KL tasması; tercih çiftleri; "kimin tercihi" (13) | 61 (vekil = ödül modeli; tepe; uzunluk; Goodhart'ın dördü), 62 (44 bin / 42 bin; tek sayı ↔ kısıt; Lagrange çarpanı; model üretimi etiket işareti), 60 (yönlendirici tercih çiftleriyle) ✓ |
+| Cetvel bir tasarım ürünüdür; Goodhart; kalibrasyon (16) | 59 (kalibrasyon devir ölçüsü mü), 61 (Goodhart), 62 (iki kümeli cetvel) ✓ |
+| İnce ayar; unutma; LoRA (19) | 62 (ince ayar saldırısı; ret hedef alan dışı davranış; düşük ranklı uyarlama dengeyi korur) ✓ |
+| Açık ağırlık (20) | 62 (vaat taksidi: yirmi sentlik ince ayar) ✓ |
+| Durumsuzluk (21) | 60 (her tur pencerenin tamamı yeniden gönderilir) ✓ |
+| Sistem istemi; talimat hiyerarşisi; özel token'lar (24) | 61 (Gabriel'in ilk hedefi), 62 (83,1 → 60,4; sistem istemi aşırı temkinin kaynağı; ilk token'lar) ✓ |
+| Anahtar-değer önbelleği ve önek paylaşımı (26) | 60 (istem önbelleği: yeniden gönderilir, yeniden hesaplanmaz; program–motor yerelliği) ✓ |
+| İlk token süresi, token başına süre, sürekli yığınlama (28) | 60 (istek ↔ program düzeyi; yığın ↔ gecikme takası 8,2× / %95) ✓ |
+| Kısıtlı üretim (30) | 62 (ilk token'ları elinde tutan ret üzerinde söz sahibidir) ✓ |
+| Düşünce zinciri (32) | 60 (düşünmek koşullanmayı kırıyor), 61 (izleyicinin gördüğü ara adımlar) ✓ |
+| Çıkarım anı yöntemleri; kapsama (33) | 60 (çoğunluk oyu ve öz-düzeltme bedelini nadiren çıkarır; kapsama ↔ pass^k) ✓ |
+| Yanlış pozitif; sağlam doğrulayıcı (35) | 59 (reddedici: güven kimin iyi olduğunu söylemez) ✓ |
+| Markov karar süreci; getirinin doğrusallığı; politika (37) | 61 (Skalse: ziyaret sayılarının doğrusal fonksiyonu) ✓ |
+| Çekimserlik (39) | 62 (belirlenemez istekte belirsizliği söylemek) ✓ |
+| Görev ufku; %50 ↔ %80 (40) | 60 (ln s / ln p; 0,32 katı; adım doğruluğu sabit kalmıyor) ✓ |
+| Hakem model (45) | 62 (GPT-4 ↔ insan tutarlı; kural puanlayıcı hakem) ✓ |
+| İşlev çağrısı; yanlış argüman; pass^k; girdi payı; paralel çağrı; araç tanımı bedeli (47) | 59 (yanlış argüman; pass^k iki zar), 60 (264–804 token **tahsil edildi**; %95,9; 7,12 → 3,95; pass^k) ✓ |
+| Belirlenimci araç sırası = önbellek; belirtim (49) | 60 (önek başındaki tanımlar), 61 (belirtim sözcüğünün ayrımı) ✓ |
+| Güvenilirlik etiketi; token olasılığıyla güven (50) | 59 (kalibre güven yanlış belgeye direnir) ✓ |
+| Özerklik; durma; Q(s, dur); Kapoor ilkesi; "hızlı başarır, yavaş başarısız olur"; politika pencerenin fonksiyonu (51) | 59 (Q(s, devret); özerklik ↔ onay), 60 (1,21 ↔ 2,52; puan çağrıyla; kendi hatasına koşullanma), 61 (hedef pencereye düşen durumlara bağlı) ✓ |
+| Büyük modeli gerektiğinde çağır (52) | 60 (basamak ve yönlendirici) ✓ |
+| Fatura tur × pencere (53) | 60 (kare terimi; **tahsil edildi**) ✓; lojistik eğri anılmadı (devir: 115) |
+| "Yapılamaz" ilanı %54,9; hakem uyumu (54) | 59 ✓ |
+| METR RCT; Şekil 2 tablosu; altı koşu; test davranışın örneklemi (55) | 59 (<%44, %9, +%19; öngörü −%24), 60 (geçiş başına bedel; 17,33–18,67), 61 (örneklem ↔ hedef) ✓ |
+| Kesme / özet / sayfalama / iç durum; MEM1 3,7× (56) | 60 (önek kararı) ✓ |
+| Üç puanlama yolu; koşu sayısı; iz denetimi; Pareto; HAL; TheAgentCompany; hile oranı (57) | 59 (erken bırakma; iz; τ²), 60 (Pareto dik; 21/36; elli kat; 4,2 ↔ 0,6), 61 (imkânsız test %76; cetvel hedefe dönüşünce) ✓ |
+| Onay / kum havuzu; AgentDojo; StruQ; AgentHarm; dedektör (58) | 59 (saldırı yüzeyi ↔ onay), 61 (kum havuzu ajana karşı), 62 (85,2 → 16,7; 97 → 58; süzgeç %17) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): MCP üçlüsü (49 → 60; belirlenimci sıra anıldı,
+üçlü anılmadı; devir: 115), ajan sayısı ↔ lojistik eğri (53 → 60; devir: 115), Wooldridge–Jennings'in dört
+özelliği (51 → 59; yalnızca özerklik anıldı; devir: 111), tartışmanın denetim için kullanımı (53 → 64),
+öz-yansıma ↔ hakem (52 → 65, 73), sorgu yeniden yazma (44 → 65), etkin getirme (46 → 65).
+
+### Batch 14'te ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 14'te gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Otomasyon düzeyi; on basamak; dört aşama; beş rol; özerklik bir tasarım kararıdır | 59 | 61 (hedef belirsizken durmak hizalanmış davranış) | 70, 111, 115 |
+| Devretmeyi öğrenme; sınıflandırıcı + reddedici; Q(s, devret); devir bir kayıp hesabıdır | 59 | 61 (işbirlikçi ters pekiştirmeli öğrenme: sormak, insana bırakmak) | 65, 73, 101 |
+| Tamamlayıcılık; bütün parçalarını ortalamada geçmez (g = −0,23); açıklama ikna eder, ayırt ettirmez | 59 | — | 65, 73, 77, 115 |
+| Aşırı güvenme; bilişsel zorlama; uygun güven | 59 | — | 65, 73 |
+| Eksik belirtim; netleştirme sorusu; ajan istenmedikçe sormaz | 59 | 62 (eksik istekte sormak) | 66, 111 |
+| Kalibrasyon açığı; ayırt etme açığı; ajan kimliği; eylem koruması | 59 | — | 65, 69, 70, 77 |
+| Fatura tur × pencere = kare terimi; istem önbelleği (1,25× / 0,1×; ömür; en kısa önek); önek kararı | 60 | — | 106, 107, 109, 115 |
+| Geçiş başına bedel; sınır bedeli; en ucuz koşu ≠ en ucuz çözüm; 1 bölü R alt sınırdır | 60 | — | 71, 101, 115 |
+| Basamaklama; yönlendirici | 60 | — | 87, 115 |
+| Gecikme program düzeyinde; anlamsal değişken; hat başı tıkanması; program–motor yerelliği | 60 | — | 107, 109 |
+| Ufuk = ln s / ln p; kendi hatasına koşullanma; uzun koşuda değişkenlik ortalamayı geçer | 60 | — | 67, 101, 110 |
+| Hizalama sorunu (tanım; 6 ↔ 11 ayrımı); belirtim; vekil ödül; belirtim oyunu; ödül hırsızlığı | 61 | 62 (uyumsuz genelleme) | 64, 67, 70, 94 |
+| Goodhart'ın dört türü; oynanabilir çift; sadeleştirme oynanabilir | 61 | — | 71, 72, 101 |
+| Yetenek vekilin açığını bulma yeteneğidir; faz geçişi; ağırlık / ontoloji / kapsam | 61 | — | 67, 70, 78 |
+| Hedef yanlış genellemesi; yetenek ↔ hedef genellemesi; dış / iç hizalama; içsel eniyileyici | 61 | 62 (uyumsuz genelleme = güvenlik hâli) | 67, 79 |
+| Ödül modeli = uzunluk vekili; ödül kurcalama; izleyici vekilin parçası olur | 61 | — | 64, 67, 73 |
+| Altı hizalama hedefi; ödül niyetin kanıtıdır; işbirlikçi ters pekiştirmeli öğrenme; yardımsever/dürüst/zararsız | 61 | 62 (üç sıfat) | 64, 66, 69 |
+| Reddetme; güvenlik eğitimi; aşırı güvenlik; iki kümeli cetvel; birkaç yüz örnek yeter | 62 | — | 63, 66, 71 |
+| Bağlamsal uyumsuzluk (beş kategori) | 62 | — | 65, 66, 73 |
+| Maliyet modeli; Lagrange çarpanı; kural tabanlı ödül | 62 | — | 64, 94 |
+| Sığ hizalama; ret öneki; ret tek yönde; ince ayar reddi siler; yarışan hedefler; uyumsuz genelleme | 62 | — | 63, 68, 74, 76 |
+
 ## Terim defteri (seri boyunca sabit karşılıklar)
 
 Kural (SOZLESME §2): terim **ilk geçtiği makalede** Türkçe karşılığı + parantez içinde İngilizcesiyle
@@ -1676,6 +1769,53 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | yetki etiketi | (capability) | 58 | güvenlik alanındaki anlam; makine öğrenmesindeki "yetenek" ile karıştırılmaması için ilk geçişte söylendi |
 | araç süzgeci / enjeksiyon dedektörü / ayraç / karantina modeli / kap / mikro sanal makine | — | 58 | tool filter / injection detector / delimiter / quarantined LLM / container / microVM; gövdede parantezsiz |
 
+| devir / devretme | (deferral / defer) | 59 | ajanın kararı insana bırakması; 51'deki durma eyleminin üçüncü kolu Q(s, devret). Başlıkta da bu karşılık |
+| otomasyon düzeyi | (level of automation) | 59 | Sheridan ölçeği, on basamak; Parasuraman ve ark. 2000 |
+| operatör / işbirlikçi / danışman / onaylayıcı / gözlemci | — | 59 | Feng ve ark.'nın beş rolü; Türkçe adlar, parantezsiz |
+| reddederek öğrenme | (rejection learning) | 59 | modelin "geçiyorum" diyebilmesi; 62'deki **reddetme (refusal)** ile karıştırılmaz |
+| devretmeyi öğrenme | (learning to defer) | 59 | Madras ve ark. 2018 |
+| sınıflandırıcı ve reddedici | (classifier and rejector) | 59 | Mozannar & Sontag 2020 |
+| tamamlayıcılık | (complementary performance) | 59 | takımın iki tarafın en iyisinden de iyi olması |
+| aşırı güvenme | (overreliance) | 59 | model yanlışken bile öneriyi kabul etmek |
+| bilişsel zorlama | (cognitive forcing) | 59 | |
+| uygun güven | — | 59 | Lee & See'nin "appropriate reliance"ı; Schemmer'in iki ölçüsü betimleyici verildi, kısaltma kullanılmadı |
+| eksik belirtimli | (underspecified) | 59 | |
+| netleştirme sorusu | (clarifying question) | 59 | |
+| kalibrasyon açığı / ayırt etme açığı | (calibration gap / discrimination gap) | 59 | insanın modele güveni ↔ modelin güveni; Steyvers ve ark. 2025 |
+| ajan kimliği | — | 59 | Chan ve ark.'nın "agent identifiers"ı; parantez verilmedi |
+| eylem koruması | (action guard) | 59 | |
+| istem önbelleği | (prompt caching) | 60 | 26'daki önek paylaşımının ürün hâli; yazma 1,25×, okuma 0,1× |
+| geçiş başına bedel | (cost-of-pass) | 60 | deneme maliyeti ÷ başarı olasılığı; Erol ve ark. 2026 |
+| sınır bedeli | (frontier cost-of-pass) | 60 | eldeki modeller arasında en düşük geçiş başına bedel |
+| basamaklama | (cascade) | 60 | ucuzdan pahalıya sıra; FrugalGPT |
+| yönlendirici | (router) | 60 | sorguyu güçlü ya da zayıf modele ayıran model |
+| anlamsal değişken | (semantic variable) | 60 | Parrot |
+| hat başı tıkanması | (head-of-line blocking) | 60 | |
+| kendi hatasına koşullanma | (self-conditioning) | 60 | Sinha ve ark. 2026 |
+| hizalama sorunu | (alignment problem) | 61 | 6'daki çeviri hizalamasından ayrım 61'de açıkça yapıldı; 61'den itibaren "hizalama" aksi söylenmedikçe 11'deki anlamda (karar #143) |
+| belirtim | (specification) | 61 | amacın ödül / ölçüt / test / tercih olarak yazılışı; 49'daki protokol belirtimiyle aynı sözcük, başka nesne |
+| vekil ödül | (proxy reward) | 61 | |
+| belirtim oyunu | (specification gaming) | 61 | |
+| ödül hırsızlığı | (reward hacking) | 61 | belirtim oyununun pekiştirmeli öğrenmedeki adı |
+| oynanabilir çift | — | 61 | Skalse ve ark.'nın "hackable" çifti; gövdede parantezsiz |
+| ağırlık / ontoloji / kapsam | — | 61 | Pan ve ark.'nın üç yanlış belirtim türü |
+| faz geçişi | (phase transition) | 61 | yetenek eşiğinde ani davranış değişimi |
+| yetenek genellemesi / hedef genellemesi | — | 61 | Langosco ve ark.; gövdede parantezsiz |
+| hedef yanlış genellemesi | (goal misgeneralization) | 61 | |
+| içsel eniyileyici | (mesa-optimizer) | 61 | Hubinger ve ark. 2019 (hakemsiz) |
+| dış hizalama / iç hizalama | (outer / inner alignment) | 61 | |
+| ödül kurcalama | (reward tampering) | 61 | Everitt ve ark. 2021 |
+| yardımsever, dürüst, zararsız | (helpful, honest, harmless) | 61 | Askell ve ark. 2021; "HHH" kısaltması gövdede kullanılmadı |
+| reddetme / ret | (refusal) | 62 | öğrenilmiş davranış; 59'daki **reddederek öğrenme** ile karıştırılmaz |
+| güvenlik eğitimi | (safety training) | 62 | |
+| aşırı güvenlik | (exaggerated safety) | 62 | güvenli istemi reddetmek; "aşırı ret" de kullanıldı |
+| bağlamsal uyumsuzluk | (contextual noncompliance) | 62 | eksik / desteklenmeyen / belirlenemez / insanlaştıran / güvensiz |
+| maliyet modeli | (cost model) | 62 | zararsızlık çiftlerinden eğitilen ikinci model |
+| Lagrange çarpanı | (Lagrange multiplier) | 62 | kısıt ihlal edildikçe büyüyen ağırlık; biçimsel kurulumu matematik fazında |
+| sığ hizalama | (shallow safety alignment) | 62 | |
+| ret öneki | — | 62 | "I cannot" gibi ilk token'lar |
+| yarışan hedefler / uyumsuz genelleme | (competing objectives / mismatched generalization) | 62 | Wei ve ark. 2023 |
+
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
 kaçırılır (`1\.`) — aksi hâlde Markdown numarayı liste işareti sanıp yutar.
@@ -1700,6 +1840,11 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
    Batch 13'te eklenenler (karar #141): Peng ve ark. 2023, Becker ve ark. 2025 (METR), Packer ve ark.
    2023 (MemGPT), Barres ve ark. 2025, Debenedetti ve ark. 2025 (CaMeL), Beurer-Kellner ve ark. 2025,
    Anthropic Claude Code belgelendirmesi.
+   Batch 14'te eklenenler (karar #147): Feng ve ark. 2025, Barres ve ark. 2025, Becker ve ark. 2025, Mozannar
+   ve ark. 2025 (Magentic-UI), Anthropic/OpenAI istem önbelleği belgeleri, OPPO AI Agent Team 2025, Luo ve
+   ark. 2025, Backlund & Petersson 2025, Amodei ve ark. 2016, Clark & Amodei 2016, Krakovna ve ark. 2020,
+   Manheim & Garrabrant 2018, Shah ve ark. 2022, Hubinger ve ark. 2019, Denison ve ark. 2024, Baker ve ark.
+   2025, Askell ve ark. 2021, Leike ve ark. 2018, Touvron ve ark. 2023 (Llama 2).
 7. **Snell ve ark.** künyesi ICLR 2025 sürümüne göredir ("…than Scaling Parameters for Reasoning");
    arXiv v1 başlığı farklıdır ("…than Scaling Model Parameters"). Yayın yeri ICLR olduğu için
    başlık da ICLR sürümündendir.
@@ -2964,6 +3109,165 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     (Findings ACL 2026), Agent-SafetyBench (arXiv), R-Judge (Findings EMNLP 2024), Progent (arXiv), Ma ve
     ark. çevre dikkat dağıtıcıları (ACL 2025), Perez & Ribeiro 2022; Wallace ve ark. 24'ten hatırlatma
     olarak anıldı, yeniden listelenmedi.
+
+142. **Faz 7'nin kategorisi `safety-and-evaluation`** (61'den itibaren; kontrollü sözlüğün beşinci
+    kategorisi; makaleler `content/series/articles/safety-and-evaluation/` altında). Batch 14 kohortu iki
+    kategoriye yayılır (59–60 `agents-and-retrieval`, 61–62 `safety-and-evaluation`);
+    `groupByBatchAndCategory` bitişik kategori koşularını ayrı öbek yaptığı için
+    `reading-list-groups.test.ts` değişmedi (482 test yeşil). Okuma listesinde 14. kohort iki öbek gösterir;
+    kasıtlıdır.
+143. **Hizalama sözcüğü:** 61'den itibaren "hizalama" aksi söylenmedikçe 11'deki anlamdadır (davranış ↔
+    niyet); 6'daki çeviri hizalaması ancak açıkça anılarak kullanılır. Terim defterinin 6 ve 11 satırları
+    bu karara işaret eder.
+144. **Kalibrasyon devir ölçüsü değildir — tek başına.** 59: devir için gerekli (reddedici modelin
+    güvenine dayanır) ama yeterli değil (kazanç insanın devredilen bölgedeki doğruluğuna, sonuç insanın
+    okuduğu güvenin kalibrasyonuna bağlı). Kalibrasyonun tam kurulumu numarasız "ilerideki kalibrasyon
+    makalesi" olarak işaretlendi; koordinat açılmadı.
+145. **Kendi hesabımız olarak işaretlenen sayılar (Batch 14):** 59-Şekil 2 (yüz görevlik devir düzeneği:
+    18,5 / 15 / 9,5 / 17 hata; 0 / 100 / 30 / 30 devir); 60-Şekil 1 (4.000 token önek + 1.000 token/tur,
+    20 tur: önbelleksiz 290.000 ↔ önbellekli 56.600 birim, 5,1 kat; kırk tur 980.000; turdaki hesap 5.000 ×
+    0,1 + 1.000 × 1,25 = 1.750); 60-Şekil 2 (55'in tablosundan geçiş başına bedel: 0,64 / 2,19 / 2,37 /
+    2,96 / 4,27 / 4,81 / 7,04 / 11,80 / 13,94 $; bağımsız deneme varsayımı, alt sınır); 60'ta ufuk
+    formülünün değerleri (p = 0,9 / 0,99 / 0,999 → yüzde 50 için 6,6 / 69 / 693, yüzde 80 için 2,1 / 22 /
+    223 adım; ln 0,8 / ln 0,5 = 0,32) ve 0,74⁴ = 0,30 ↔ ölçülen 0,53. Girdiler ve çarpanlar metinde durur.
+146. **Sayı kararları (Batch 14).** 59: Parasuraman, Sheridan & Wickens (IEEE TSMC-A 30(3):286–297,
+    2000): on basamak (2, 4, 6, 10 anıldı), dört aşama; Feng, McDonald & Zhang (2025, hakemsiz): beş rol;
+    Anthropic Claude Code izin belgesi (hakemsiz): varsayılan / plan / düzenlemeleri kabul / oto
+    (sınıflandırıcı) / izin atlama; Madras, Pitassi & Zemel (NeurIPS 2018); Mozannar & Sontag (ICML 2020,
+    PMLR 119): CIFAR-100'de L_CE ↔ Confidence +1,60 puan (30 ≤ k ≤ 90), uçlarda başa baş; Bansal ve ark.
+    (CHI 2021): Tablo 1 (51,1 / 87,0 / 74,6; 65 / 75 / 73), Beer insan 0,82 ± 0,09, AI 0,84, takım(güven)
+    0,89, Amzbook +%2,2, LSAT +%20,1; Vaccaro, Almaatouq & Malone (Nat. Hum. Behav. 8(12):2293–2303,
+    2024): 106 deney, 370 etki; g = −0,23 (−0,39, −0,07); karar −0,27 (−0,44, −0,10); üretim +0,19 (−0,09,
+    0,48); insan>AI +0,46 (0,28, 0,66); AI>insan −0,54 (−0,71, −0,37); güçlendirme +0,64 (0,53, 0,74);
+    Zhang, Liao & Bellamy (FAT* 2020): insan %65, AI %75; Buçinca, Malaya & Gajos (PACM HCI 5(CSCW1):188,
+    2021): N = 199; Schemmer ve ark. (IUI 2023): 200 katılımcı, H1b desteklendi; Parasuraman & Riley (Hum.
+    Factors 39(2):230–253, 1997); Lee & See (Hum. Factors 46(1):50–80, 2004); Vijayvargiya ve ark. (ICLR
+    2026, yayın başlığı "Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software
+    Engineering"): göreli 89 / 80 / 80 / 59 / 54, +%74'e kadar, Sonnet 3.5 37,94 → 59,52, adım 65 → 75;
+    Wang ve ark. (EMNLP 2025): IMKI 56,0 / IMR 11,3 / IwE 17,3 / IBTC 15,3; gpt-4o DFSDT IMKI A1 0,58 →
+    0,88, A3 0,18 → 0,46; Zhang ve ark. (Findings EMNLP 2024): netleştirme / yürütme / planlama ajanları;
+    Barres ve ark. (hakemsiz): gpt-4.1 pass^1..4 perakende 0,74 / 0,64 / 0,58 / 0,53, havayolu 0,56 / 0,46
+    / 0,42 / 0,40, telekom 0,34 / 0,26 / 0,22 / 0,19; Becker ve ark. (METR, hakemsiz): öngörü −%24 (gelişt.)
+    / −%39 (iktisat) / −%38 (ML), sonradan −%20, ölçülen +%19, <%44 kabul, %9 gözden geçirme; Steyvers ve
+    ark. (Nat. Mach. Intell. 7(2):221–231, 2025): model AUC 0,751 / 0,746 / 0,781 ↔ insan 0,589 / 0,602 /
+    0,592; uzun ↔ yalnızca belirsizlik AUC 0,54 / 0,57; Chan ve ark. (FAccT 2024): kimlik / izleme / kayıt;
+    Mozannar ve ark. (Magentic-UI, hakemsiz): yeniden plan %9,6 / 20,6 / 22,1 / 52,9; Tian ve ark. (EMNLP
+    2023): göreli ECE −%50'ye varan; Xiong ve ark. (ICLR 2024): AUROC 0,522 → 0,605. 60: Anthropic ve
+    OpenAI önbellek belgeleri (hakemsiz): yazma 1,25× / okuma 0,1×; 5 dk (1 sa 2×) / 30 dk; en kısa önek
+    512–4.096 / 1.024 token; özetleme/sıkıştırma/kesme öneki sıfırlar; Erol ve ark. (ICLR 2026): v = C/R;
+    sınır bedeli; uzman tabanı; zor sayısalda birkaç ayda yarı; çoğunluk oyu/öz-düzeltme nadiren bedelini
+    çıkarır; Xia ve ark. tablosu (55); Kapoor ve ark. HAL (ICLR 2026): 1/9, ortalama <1/3 sınırda, Gemini
+    2.0 Flash 7/9, 15/75 ↔ 1,25/10 $, 171 ↔ 1.577 $, 13 ↔ 450 $, 20 bin $, 21/36; Kapoor ve ark. (TMLR
+    2025): Reflexion/LDB >%50, LATS >50×; OPPO AI Agent Team (hakemsiz): 0,398 → 0,228 $, %96,7, +%28,4,
+    1,69 → 9,04; Chen, Zaharia & Zou (TMLR 2024): 12 model, iki kerte, %98, +%4; Ong ve ark. (ICLR 2025,
+    yayın başlığı "…from Preference Data"): >2×; Lin ve ark. (OSDI 2024): >2× yavaşlama, 8,2× / %95, 2,4×,
+    11,7×; Luo ve ark. (hakemsiz): 0,2 program/sn, 4–15×, 1,5×; Zheng ve ark. (NeurIPS 2024): 6,4×, ilk
+    token 1,7×; Gim ve ark. (MLSys 2024): 8× / 60×; Sinha ve ark. (ICLR 2026): H_s = ln s / ln p;
+    DeepSeek-V3 <4 ↔ R1 >100 adım; 2.100 ↔ 432; Backlund & Petersson (hakemsiz): 2.217,93 ↔ 476 $; insan
+    844,05; ~120 gün; >20M token; 5 koşu. 61: Wiener (Science 131(3410):1355–1358, 1960; metin alınamadı,
+    alıntı CIRL'in girişinden); Amodei ve ark. 2016 (hakemsiz): beş sorun; Clark & Amodei 2016 (blog):
+    +%20; Krakovna ve ark. 2020 (blog): ~60 örnek, Lego; Manheim & Garrabrant 2018 (hakemsiz): dört tür;
+    Skalse ve ark. (NeurIPS 2022, yayın başlığı "Defining and Characterizing Reward Gaming"): doğrusallık →
+    yalnızca sabit; Pan, Bhatia & Steinhardt (ICLR 2022): 4 ortam / 9 vekil / 3 tür; 5 düşüş, 4 faz geçişi;
+    dört yetenek ekseni; Langosco ve ark. (ICML 2022, PMLR 162): CoinRun, %2; Shah ve ark. 2022 (hakemsiz):
+    canavar/kalkan (train25 ↔ train200), karşı uzman; Hubinger ve ark. 2019 (hakemsiz); Singhal, Goyal, Xu &
+    Durrett (COLM 2024; kabul listesiyle doğrulandı, bağlantı arXiv): SFT'ye karşı 58/56, 58/59, 63/64;
+    uzunluk 230/118, 257/252, 94/98; NRG %2 (WebGPT STD); Casper ve ark. (TMLR 2023): üç yer, çözülebilir ↔
+    temel; Denison ve ark. 2024 (hakemsiz): 45 kurcalama ve 7 test değiştirme / 32.768; yardımsever-only
+    100.000'de 0; Everitt ve ark. (Synthese 198(S27):6435–6467, 2021); Baker ve ark. 2025 (hakemsiz): CoT
+    izleyici %95 ↔ eylem izleyici %60 bulma; kesinlik 77 / 81; gizlenmiş hile; Ngo, Chan & Mindermann (ICLR
+    2024): üç hipotez; Gabriel (Minds & Machines 30(3):411–437, 2020): altı hedef; Askell ve ark. 2021
+    (hakemsiz); Hadfield-Menell ve ark. (NeurIPS 2017; NeurIPS 2016); Leike ve ark. 2018 (hakemsiz). 62:
+    Bianchi ve ark. (ICLR 2024): 20.000 + {100, 300, 500, 1.000, 1.500, 2.000}; %3; 500–1.000 yeter; soru ↔
+    talimat biçimi; Röttger ve ark. (NAACL 2024): 250 güvenli / 200 güvensiz; toplam ret 38 + 21,6 / 14 +
+    15,6 / 0,8 + 0,8 / 9,6 + 9,2 / 6,4 + 2; T4 24/25; GPT-4 T10 %52; Llama 2 200/200; Mistral talimat çoğuna
+    uyar; Cui ve ark. (ICML 2025, PMLR 267 cui25a): 80.000 / 10 kategori / ~1.000 zor / 600 zararlı / 32
+    model / 8 aile; Touvron ve ark. 2023 (hakemsiz): yanlış ret ~%0,05, sınır kümesi 210; Brahman ve ark.
+    (NeurIPS 2024 D&B): 1.000 istem; Tablo 2 (GPT-4 29,8 / 11,5 / 14,1 / 11,4 / 6,1 / 97,4; Claude 3 Sonnet
+    10,2 / 16,8 / 1,4 / 6,3 / 9,9 / 80,16; Llama 3 70B 17,5 / 29,9 / 4,9 / 17,5 / 22,0 / 86,5; Tulu 2 70B
+    dpo 12,0 / 7,6 / 1,4 / 8,1 / 6,1 / 84,2); Ji ve ark. (NeurIPS 2023 D&B): 333.963 / 361.903; Dai ve ark.
+    (ICLR 2024): 53,08 → 2,45; Elo +244,91 / +363,86 ve +268,31 / +237,98; Mu ve ark. (NeurIPS 2024): F1
+    97,1 ↔ 91,7; aşırı ret −%16; Qi ve ark. (ICLR 2025): %96,1; Tablo 1 (68,6 / 16,4 / 5,4 / 14,4 / 2,1 /
+    8,1; 85,4 / 8,7 / 2,7 / 14,1 / 1,0 / 3,9); 42,1 / 51,5 / 56,1 / 57,0 → 2,8 / 2,9 / 3,4 / 4,5; GCG 36,5 →
+    18,4; 84,3 → 1,0; Arditi ve ark. (NeurIPS 2024): 13 model, tek yön; Qi ve ark. (ICLR 2024): 1,8 → 88,8
+    / 87,0 / 91,8; 0,3 → 50,0 / 80,3 / 80,0; kimlik 0 → 7,3 / 49,1 / 87,3 ve 0 → 54,2 / 72,1 / 68,2; Alpaca
+    5,5 → 31,8, 0,3 → 16,1; Dolly 4,5 → 23,9, 0,6 → 12,1; <0,20 $; 5 gradyan adımı; %17 işaretleme; Wei,
+    Haghtalab & Steinhardt (NeurIPS 2023): combination_3 0,94 / 0,81; base64 0,34 / 0,38; büyük küme 0,93 /
+    0,87; uyarlanan 0,96 / 0,99.
+147. **Kaynak politikası (Batch 14).** 59'da 22, 60'ta 16, 61'de 21, 62'de 12 kaynak. Hakemsiz olup
+    işaretlenerek kullanılanlar: Feng ve ark. 2025, Anthropic Claude Code izin belgesi, Barres ve ark. 2025,
+    Becker ve ark. 2025 (METR), Mozannar ve ark. 2025 (Magentic-UI) — 59; Anthropic ve OpenAI istem
+    önbelleği belgeleri, OPPO AI Agent Team 2025, Luo ve ark. 2025 (Autellix), Barres ve ark. 2025, Backlund
+    & Petersson 2025 — 60; Amodei ve ark. 2016, Clark & Amodei 2016 (blog), Krakovna ve ark. 2020 (blog),
+    Manheim & Garrabrant 2018, Shah ve ark. 2022, Hubinger ve ark. 2019, Denison ve ark. 2024, Baker ve ark.
+    2025, Askell ve ark. 2021, Leike ve ark. 2018 — 61; Touvron ve ark. 2023 (Llama 2) — 62. Klasik temel
+    eserler: Wiener 1960, Parasuraman ve ark. 2000, Parasuraman & Riley 1997, Lee & See 2004. Doğrulama
+    kanalları: DBLP `ee` (72 başlık, 12 sn aralık, ~70 dk), Crossref `query.title` (Nature HB / NMI / IEEE /
+    Human Factors / Synthese / Minds & Machines künyeleri, cilt ve sayfa), `proceedings.iclr.cc` 2025 ve
+    2026 dizinleri (Ambig-SWE ve RouteLLM'in yayın başlıkları, Cost-of-Pass, Illusion, SORRY-Bench, Qi
+    2025), `papers.nips.cc` yıl dizinleri (Skalse'nin yayın başlığı "Reward Gaming", IRD 2017, CIRL 2016,
+    CoCoNot, Arditi, RBR, Jailbroken, BeaverTails), PMLR 267 dizini (`<p class="title">` → `abs`: OR-Bench
+    cui25a), COLM 2024 kabul listesi (Singhal; `curl -k`), Semantic Scholar `openAccessPdf` (Parasuraman
+    2000'in açık kopyası; ilk üç ayna 404 / 403 / SSL). Vaccaro'nun Nature PDF'i 403 döndü, metin arXiv
+    sürümünden (2405.06087), künye Crossref'ten; Wiener 1960'ın metni alınamadı (Science paywall), alıntı
+    CIRL makalesinin girişindeki aktarımdan; DTIC'in Sheridan–Verplank 1978 raporu 403 döndü, ölçek
+    Parasuraman ve ark. 2000'in metninden anıldı. Aday olup **kullanılmayanlar:** Mitchell ve ark. 2025,
+    Mozannar ve ark. AISTATS 2023, Wilder ve ark. IJCAI 2020, Nguyen ve ark. ICML 2022, Kadavath ve ark.
+    2022, Lai ve ark. FAccT 2023, Qian ve ark. ACL 2024, Skitka ve ark. 1999; HarmBench (ICML 2024), WildGuard
+    (NeurIPS 2024 D&B), Do-Not-Answer (Findings EACL 2024), Llama Guard, Ganguli ve ark. 2022 (63'e devir).
+
+## Batch 14 öğrenme notları (yazım tamamlandı)
+
+- **Faz 6 kapandı, Faz 7 açıldı: devir (59) → fatura (60) → hizalama sorunu (61) → güvenlik eğitimi (62).**
+  58'in "onay ne zaman, devir ne zaman" sorusu 59'da Sheridan'ın on basamağı, Feng'in beş rolü ve devretmeyi
+  öğrenme (Q(s, devret)) ile ödendi; 59 her onayın bir bedeli olduğunu 60'a, 60 "ölçü hedefe dönüşünce" izini
+  61'e, 61 yardımseverlik ↔ zararsızlık sınırını 62'ye devretti; 62 ince ayar saldırısı ve ret önekiyle 63'e
+  bağlandı. Faz 7'nin kategorisi `safety-and-evaluation` (karar #142); 14. kohort iki kategoriye yayıldı ve
+  `reading-list-groups.test.ts` değişmeden 482 test geçti. 20'nin "açık ağırlık" vaadi 62'de kısmen ödendi
+  (yirmi sentlik ince ayar); 63, 68 ve 70 taksitleri açık.
+- **Araştırma yine tamamen ana oturumda; ultracode açık, workflow/subagent kullanılmadı** (cerebrum
+  2026-09-03). 72 aday PDF tek betikle (`artifacts/b14-research/fetch-b14.py`; URL listesi ve arXiv API geri
+  düşüşü), DBLP `ee` 72 başlık (`dblp-b14.py`, 12 sn aralık; yavaş ama takılmadı), dergiler için Crossref
+  `query.title` (`crossref-b14.py`: Vaccaro Nature HB 8(12), Steyvers NMI 7(2), Parasuraman IEEE TSMC-A
+  30(3)), sağlayıcı belgeleri ve bloglar `fetch-html-b14.py` ile. Yeni kanal: **Semantic Scholar
+  `openAccessPdf`** eski dergi makalesinin açık kopyasını verdi (Parasuraman 2000, cs.uml.edu aynası,
+  `curl -k`). Yayın sürümünün başlığı arXiv'den farklı olan kaynaklar DBLP aramasında yanlış hit verdi
+  (RouteLLM "…from Preference Data"; Skalse "Defining and Characterizing Reward Gaming"; IRD ve CIRL) —
+  `papers.nips.cc` yıl dizinleri ve ICLR proceedings hash'leriyle doğrulandı. DTIC (Sheridan 1978) 403 —
+  kullanılmadı; Wiener 1960 duvar arkası — CIRL girişinden alıntılandı; Vaccaro'nun Nature PDF'i 403 — arXiv
+  kopyası okundu, künye Nature.
+- **Sayı tuzakları:** Mozannar & Sontag'ın CIFAR-100 kazancı +1,60 puan ve yalnızca 30 ≤ k ≤ 90 aralığında
+  (ilk taslak genelleştirmişti). Xiong'un beyaz kutu açığı AUROC 0,52 → 0,61. 40'ın "beşte biri" ile 60'ın
+  ln s / ln p formülünün verdiği 0,32 çelişiyordu; formül esas alındı. Illusion'ın "2.100 ↔ 432" çifti ilk
+  taslakta bulanıktı, kesinleştirildi. CoCoNot 2024 (2025 değil). 62'de güvensiz sütun ↔ karşıt küme
+  ilişkisini kuran cümle tabloyu yanlış okuyordu, yeniden yazıldı. Kendi hesabımızla verilen sayılar (istem
+  önbelleği 290.000 ↔ 56.600; geçiş başına bedel 0,64 … 13,94; devir örneği 18,5 / 15 / 9,5 / 17 hata)
+  karar #145 gereği gövdede "kendi hesabımız" diye işaretlendi; her makalenin sayı envanteri karar #146'da.
+- **Terim kararları:** "devir / devretme" (deferral; başlıkta), "reddederek öğrenme" (rejection learning) ↔
+  "reddetme / ret" (refusal) ayrımı iki makale arasında açıkça yazıldı; "hizalama" 61'den itibaren 11'in
+  anlamında (karar #143); "belirtim" 49'un protokol belirtimiyle aynı sözcük, başka nesne; kalibrasyon devir
+  ölçüsü olarak tek başına yetmez (karar #144); "yardımsever, dürüst, zararsız" açık yazıldı, "HHH" gövdeye
+  girmedi. 62'de "62'nin dersi" kendi-numarası taramasıyla yakalandı → "Bu makalenin dersi". Numaralı ileri
+  gönderme taraması kaçak bulmadı; 61, 64 koordinatını yeniden andı (yeni koordinat açılmadı).
+- **SVG:** 12 yeni şekil; denetleyici döndürülmüş etiketleri (59-Şekil 1) ve 97 karakteri aşan alt notları
+  taşma diye yakaladı — döndürme kaldırılıp kısa sözcükler üst üste dizildi, notlar bölündü, viewBox
+  yükseklikleri büyütüldü. Denetleyicinin görmediği bir kusur ekran görüntüsünde çıktı: 61-Şekil 3'te
+  gösterge (y=18–28, x=200) sütun başlığıyla (y=28, x=200) aynı hizadaydı ve üst üste bindi; gösterge alt
+  not bloğunun üstüne taşındı (viewBox 390 → 412). Kural: gösterge ile sütun başlığı aynı y bandını
+  paylaşmaz; gösterge ya sağ üstte (x ≥ 500) ya alt not bloğunda. Şekil görüntüsü yardımcısı
+  `b14g(i, tema, ölçek)` tek temalı sabit kaplayıcı (1080 px genişlik); iki temayı yan yana koyan `b14f`
+  yerine her şekil iki ayrı görüntüyle alındı.
+- **Kelime sayısı (wc -w, frontmatter ve kaynakça dâhil):** 59 4.383, 60 4.127, 61 3.964, 62 3.399;
+  denetleyici uyarısı yok. 59 üst banda yakın (22 kaynak); devir/otomasyon konusu 111 ya da 115'te yeniden
+  açılırsa Sheridan–Parasuraman bloğu oraya taşınabilir.
+- **Render doğrulaması izole kopyada** (`D:\dev\anil-lib-b14-render`, junction + kapısız dev, 3210): build
+  111 sayfa (exit 0), 63 seri rotası 200 (28,7 sn), dört makale × üç genişlik × üç temada DOM ölçümü temiz
+  (badFills ve outOfBox boş, taşma 0, sızıntı yok, figScroll false), 12 şeklin tamamı light/dark ekran
+  görüntüsüyle gözle doğrulandı; ana worktree'de typecheck (0) ve 482 test. Ekran görüntüsü tarifi: JS
+  kaplayıcı + 2 sn bekleme bir `browser_batch`'te, ardından `screenshot` **iki kez** ayrı çağrılır — ilki
+  neredeyse her seferinde 5 sn zaman aşımına düşüyor, ikincisi geliyor; `zoom` bölge kırpmıyor. Yerel SVG
+  dosyasına açılmış sekme `navigate` ile başka adrese gitmiyor (yeni sekme açıldı); sekme sınırı dolunca
+  dosya sekmeleri kapatıldı.
 
 ## Batch 13 öğrenme notları (yazım tamamlandı)
 

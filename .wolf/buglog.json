@@ -5598,6 +5598,189 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-05T05:30:00.000Z"
+    },
+    {
+      "id": "bug-335",
+      "timestamp": "2026-09-05T09:04:19.241Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/gecis-basina-bedel.svg",
+      "root_cause": "Had \"0 0 720 412\"",
+      "fix": "Changed to \"0 0 720 432\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:04:19.241Z"
+    },
+    {
+      "id": "bug-336",
+      "timestamp": "2026-09-05T09:04:24.450Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/pass-k-uc-alan.svg",
+      "root_cause": "Had \"0 0 720 400\"",
+      "fix": "Changed to \"0 0 720 424\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:04:24.450Z"
+    },
+    {
+      "id": "bug-337",
+      "timestamp": "2026-09-05T09:04:31.962Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/ajan-ekonomisi-maliyet-gecikme-guvenilirlik/tur-carpi-pencere-faturasi.svg",
+      "root_cause": "Had \"0 0 720 420\"",
+      "fix": "Changed to \"0 0 720 446\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:04:31.962Z"
+    },
+    {
+      "id": "bug-338",
+      "timestamp": "2026-09-05T09:10:31.259Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md",
+      "root_cause": "Had \"yüzde 80 ufku yüzde 50 ufkunun beşte biri\"",
+      "fix": "Changed to \"yüzde 80 ufku yüzde 50 ufkunun kabaca beşte biri\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:10:31.259Z"
+    },
+    {
+      "id": "bug-339",
+      "timestamp": "2026-09-05T09:15:18.096Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg",
+      "root_cause": "Had \"0 0 720 372\"",
+      "fix": "Changed to \"0 0 720 390\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:15:18.096Z"
+    },
+    {
+      "id": "bug-340",
+      "timestamp": "2026-09-05T09:23:36.190Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/asiri-guvenlik-bes-model.svg",
+      "root_cause": "Had \"0 0 720 396\"",
+      "fix": "Changed to \"0 0 720 420\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:23:36.190Z"
+    },
+    {
+      "id": "bug-341",
+      "timestamp": "2026-09-05T09:28:31.958Z",
+      "error_message": "Wrong reference: 2025 should be 2024",
+      "file": "content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md",
+      "root_cause": "Used \"2025\" instead of \"2024\"",
+      "fix": "Changed 2025 → 2024",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:28:31.958Z"
+    },
+    {
+      "id": "bug-342",
+      "timestamp": "2026-09-05T09:49:16.189Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 4→8 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:49:16.189Z"
+    },
+    {
+      "id": "bug-343",
+      "timestamp": "2026-09-05T09:49:17.696Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg",
+      "root_cause": "Had \"0 0 720 390\"",
+      "fix": "Changed to \"0 0 720 412\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:49:17.696Z"
+    },
+    {
+      "id": "bug-344",
+      "timestamp": "2026-09-05T09:49:00Z",
+      "error_message": "61-Şekil 3 (uzunluk-tek-basina-odul.svg): gösterge metni sütun başlığıyla üst üste bindi; ekran görüntüsünde görüldü, check-series-svg.cjs yakalamadı",
+      "file": "content/series/assets/hizalama-sorunu-ne-istedigimizi-soylemek-zor/uzunluk-tek-basina-odul.svg",
+      "root_cause": "Gösterge rect/text y=18–28, x=200'den başlıyordu; sütun başlığı 'SFT'ye karşı kazanma oranı' da y=28, x=200 — aynı konum. Denetleyici yalnızca viewBox taşmasını ölçer, elemanlar arası çakışmayı görmez.",
+      "fix": "Gösterge alt not bloğunun üstüne (y=330–342) taşındı, viewBox 390 → 412, alt notlar 362/380/398'e kaydırıldı; checker + ET.parse + var( kapısı yeniden geçti, light/dark ekran görüntüsüyle doğrulandı. Kural: gösterge ile sütun başlığı aynı y bandını paylaşmaz.",
+      "tags": [
+        "svg",
+        "series",
+        "overlap",
+        "render-verification",
+        "batch-14"
+      ],
+      "related_bugs": [
+        "bug-342",
+        "bug-343"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-05T09:49:00Z"
+    },
+    {
+      "id": "bug-345",
+      "timestamp": "2026-09-05T09:30:00Z",
+      "error_message": "Browser pane: screenshot failed: Screenshot timed out after 5s (JS kaplayıcı eklendikten sonraki ilk çağrı)",
+      "file": "tooling: mcp__Claude_Browser__computer (screenshot)",
+      "root_cause": "1500×600 emülasyon + 1080 px şekil klonu eklendikten sonra ilk boyama 5 sn içinde bitmiyor; pane arka planda. Deterministik değil ama ilk çağrı neredeyse her seferinde düşüyor.",
+      "fix": "Tarif (çözüm değil): JS kaplayıcı + wait 2 sn bir browser_batch'te, ardından screenshot iki kez ayrı çağrı — ikincisi geliyor. zoom bölge kırpmıyor. Yerel dosyaya açılmış sekme navigate etmiyor: yeni sekme aç; sekme sınırı dolunca dosya sekmelerini kapat.",
+      "tags": [
+        "browser",
+        "screenshot",
+        "timeout",
+        "series",
+        "batch-14"
+      ],
+      "related_bugs": [],
+      "occurrences": 12,
+      "last_seen": "2026-09-05T09:55:00Z"
     }
   ]
 }

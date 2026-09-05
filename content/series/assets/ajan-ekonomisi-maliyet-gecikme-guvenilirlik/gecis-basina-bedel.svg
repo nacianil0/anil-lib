@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 432" role="img" aria-label="Dokuz satırlı tablo ve yatay çubuklar; sütunlar sistem ve model, görev başına dolar, çözülen görev yüzdesi, geçiş başına dolar. Satırlar geçiş başına bedele göre artan sırada: Moatless Claude 3.5 Sonnet 0,17 dolar, yüzde 26,7, 0,64 dolar; Agentless GPT-4o 0,70, 32,0, 2,19; AutoCodeRover GPT-4 0,45, 19,0, 2,37; SIMA GPT-4o 0,82, 27,7, 2,96; OpenHands Claude 3.5 Sonnet 1,14, 26,7, 4,27; tek getirmeli taban GPT-4 0,13, 2,7, 4,81; SWE-agent Claude 3.5 Sonnet 1,62, 23,0, 7,04; CodeR GPT-4 3,34, 28,3, 11,80; SWE-agent GPT-4 2,51, 18,0, 13,94. Altta geçiş başına bedelin görev başına dolar bölü çözüm oranı olduğu, denemelerin bağımsız varsayıldığı, girdilerin 55. makalenin ikinci şeklindeki tablodan geldiği ve bölmenin kendi hesabımız olduğu yazılıdır.">
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">sistem (model)</text>
+  <text x="300" y="30" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">$/görev</text>
+  <text x="362" y="30" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">çözüm %</text>
+  <text x="380" y="30" font-size="13" font-weight="bold" fill="var(--text)">geçiş başına dolar</text>
+  <line x1="20" y1="40" x2="700" y2="40" stroke="var(--border)" />
+
+  <text x="20" y="66" font-size="13" font-weight="bold" fill="var(--text)">Moatless (Claude 3.5 Sonnet)</text>
+  <text x="300" y="66" font-size="13" text-anchor="end" fill="var(--text-muted)">0,17</text>
+  <text x="362" y="66" font-size="13" text-anchor="end" fill="var(--text-muted)">26,7</text>
+  <rect x="380" y="56" width="12.8" height="12" fill="var(--cool)" />
+  <text x="700" y="66" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">0,64</text>
+
+  <text x="20" y="98" font-size="13" fill="var(--text)">Agentless (GPT-4o)</text>
+  <text x="300" y="98" font-size="13" text-anchor="end" fill="var(--text-muted)">0,70</text>
+  <text x="362" y="98" font-size="13" text-anchor="end" fill="var(--text-muted)">32,0</text>
+  <rect x="380" y="88" width="43.8" height="12" fill="var(--cool)" />
+  <text x="700" y="98" font-size="13" text-anchor="end" fill="var(--text)">2,19</text>
+
+  <text x="20" y="130" font-size="13" fill="var(--text)">AutoCodeRover (GPT-4)</text>
+  <text x="300" y="130" font-size="13" text-anchor="end" fill="var(--text-muted)">0,45</text>
+  <text x="362" y="130" font-size="13" text-anchor="end" fill="var(--text-muted)">19,0</text>
+  <rect x="380" y="120" width="47.4" height="12" fill="var(--cool)" />
+  <text x="700" y="130" font-size="13" text-anchor="end" fill="var(--text)">2,37</text>
+
+  <text x="20" y="162" font-size="13" fill="var(--text)">SIMA (GPT-4o)</text>
+  <text x="300" y="162" font-size="13" text-anchor="end" fill="var(--text-muted)">0,82</text>
+  <text x="362" y="162" font-size="13" text-anchor="end" fill="var(--text-muted)">27,7</text>
+  <rect x="380" y="152" width="59.2" height="12" fill="var(--cool)" />
+  <text x="700" y="162" font-size="13" text-anchor="end" fill="var(--text)">2,96</text>
+
+  <text x="20" y="194" font-size="13" fill="var(--text)">OpenHands (Claude 3.5 Sonnet)</text>
+  <text x="300" y="194" font-size="13" text-anchor="end" fill="var(--text-muted)">1,14</text>
+  <text x="362" y="194" font-size="13" text-anchor="end" fill="var(--text-muted)">26,7</text>
+  <rect x="380" y="184" width="85.4" height="12" fill="var(--cool)" />
+  <text x="700" y="194" font-size="13" text-anchor="end" fill="var(--text)">4,27</text>
+
+  <text x="20" y="226" font-size="13" fill="var(--text)">tek getirmeli taban (GPT-4)</text>
+  <text x="300" y="226" font-size="13" text-anchor="end" fill="var(--text-muted)">0,13</text>
+  <text x="362" y="226" font-size="13" text-anchor="end" fill="var(--text-muted)">2,7</text>
+  <rect x="380" y="216" width="96.2" height="12" fill="var(--accent)" />
+  <text x="700" y="226" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">4,81</text>
+
+  <text x="20" y="258" font-size="13" fill="var(--text)">SWE-agent (Claude 3.5 Sonnet)</text>
+  <text x="300" y="258" font-size="13" text-anchor="end" fill="var(--text-muted)">1,62</text>
+  <text x="362" y="258" font-size="13" text-anchor="end" fill="var(--text-muted)">23,0</text>
+  <rect x="380" y="248" width="140.8" height="12" fill="var(--cool)" />
+  <text x="700" y="258" font-size="13" text-anchor="end" fill="var(--text)">7,04</text>
+
+  <text x="20" y="290" font-size="13" fill="var(--text)">CodeR (GPT-4)</text>
+  <text x="300" y="290" font-size="13" text-anchor="end" fill="var(--text-muted)">3,34</text>
+  <text x="362" y="290" font-size="13" text-anchor="end" fill="var(--text-muted)">28,3</text>
+  <rect x="380" y="280" width="236" height="12" fill="var(--cool)" />
+  <text x="700" y="290" font-size="13" text-anchor="end" fill="var(--text)">11,80</text>
+
+  <text x="20" y="322" font-size="13" fill="var(--text)">SWE-agent (GPT-4)</text>
+  <text x="300" y="322" font-size="13" text-anchor="end" fill="var(--text-muted)">2,51</text>
+  <text x="362" y="322" font-size="13" text-anchor="end" fill="var(--text-muted)">18,0</text>
+  <rect x="380" y="312" width="278.8" height="12" fill="var(--cool)" />
+  <text x="700" y="322" font-size="13" text-anchor="end" fill="var(--text)">13,94</text>
+
+  <line x1="20" y1="340" x2="700" y2="340" stroke="var(--border)" />
+  <text x="20" y="364" font-size="13" fill="var(--text-muted)">Geçiş başına bedel = görev başına dolar ÷ çözüm oranı; denemeler bağımsız varsayılır.</text>
+  <text x="20" y="382" font-size="13" fill="var(--text-muted)">Girdiler Xia ve arkadaşlarının tablosundan (55'teki dağılım şeması); bölme kendi hesabımız.</text>
+  <text x="20" y="400" font-size="13" fill="var(--text-muted)">Çubuk: 1 $ = 20 birim. Vurgulu satır: en ucuz koşu, en pahalı üçüncü çözüm;</text>
+  <text x="20" y="418" font-size="13" fill="var(--text-muted)">düşük çözüm oranı ucuzluğu yutuyor.</text>
+</svg>

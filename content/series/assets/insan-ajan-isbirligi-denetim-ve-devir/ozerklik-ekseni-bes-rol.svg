@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" role="img" aria-label="Beş satırlı tablo, yukarıdan aşağıya özerklik artar. Sütunlar: insanın rolü, kim karar verir, onay ne zaman, kod ajanı belgesindeki karşılığı. Satırlar: operatör, insan her adımı seçer ajan uygular, her eylemde, salt okuma dışı her araç sorar; işbirlikçi, plan birlikte yazılır, plan ve riskli adımda, plan kipi; danışman, ajan yürütür tercih ve uzmanlık için sorar, belirsizlikte, düzenlemeler otomatik kabuk sorar; onaylayıcı, ajan yürütür yalnızca riskli ya da önceden belirlenmiş eylemde sorar, geri alınamaz eylemde, izin kuralları ve sınıflandırıcı denetimi; gözlemci, ajan tam özerk insan izler, hiç, izin atlama kipi. Sağda iki ok: aşağı inildikçe saldırı yüzeyi büyür, yukarı çıkıldıkça insan yükü büyür. Altta Sheridan ölçeğinin 2, 4, 6 ve 10. düzeylerinin nereye düştüğü yazılıdır.">
+  <text x="20" y="26" font-size="13" font-weight="bold" fill="var(--text)">insanın rolü</text>
+  <text x="130" y="26" font-size="13" font-weight="bold" fill="var(--text)">kim karar verir</text>
+  <text x="330" y="26" font-size="13" font-weight="bold" fill="var(--text)">onay ne zaman</text>
+  <text x="480" y="26" font-size="13" font-weight="bold" fill="var(--text)">kod ajanı belgesinde</text>
+  <line x1="20" y1="36" x2="640" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="48" width="620" height="56" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="30" y="70" font-size="13" font-weight="bold" fill="var(--text)">operatör</text>
+  <text x="130" y="70" font-size="13" fill="var(--text)">insan her adımı seçer,</text>
+  <text x="130" y="88" font-size="13" fill="var(--text)">ajan uygular</text>
+  <text x="330" y="70" font-size="13" fill="var(--text)">her eylemde</text>
+  <text x="480" y="70" font-size="13" fill="var(--text)">salt okuma dışı</text>
+  <text x="480" y="88" font-size="13" fill="var(--text)">her araç sorar (varsayılan)</text>
+
+  <rect x="20" y="112" width="620" height="56" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <text x="30" y="134" font-size="13" font-weight="bold" fill="var(--text)">işbirlikçi</text>
+  <text x="130" y="134" font-size="13" fill="var(--text)">plan birlikte yazılır,</text>
+  <text x="130" y="152" font-size="13" fill="var(--text)">iş paylaşılır</text>
+  <text x="330" y="134" font-size="13" fill="var(--text)">plan ve riskli adımda</text>
+  <text x="480" y="134" font-size="13" fill="var(--text)">plan kipi: okur,</text>
+  <text x="480" y="152" font-size="13" fill="var(--text)">kaynağa dokunmaz</text>
+
+  <rect x="20" y="176" width="620" height="56" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="30" y="198" font-size="13" font-weight="bold" fill="var(--text)">danışman</text>
+  <text x="130" y="198" font-size="13" fill="var(--text)">ajan yürütür; tercih ve</text>
+  <text x="130" y="216" font-size="13" fill="var(--text)">uzmanlık için sorar</text>
+  <text x="330" y="198" font-size="13" fill="var(--text)">belirsizlikte</text>
+  <text x="480" y="198" font-size="13" fill="var(--text)">düzenlemeler otomatik,</text>
+  <text x="480" y="216" font-size="13" fill="var(--text)">kabuk komutu sorar</text>
+
+  <rect x="20" y="240" width="620" height="56" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="30" y="262" font-size="13" font-weight="bold" fill="var(--text)">onaylayıcı</text>
+  <text x="130" y="262" font-size="13" fill="var(--text)">ajan yürütür; yalnızca riskli ya da</text>
+  <text x="130" y="280" font-size="13" fill="var(--text)">önceden belirlenmiş eylemde sorar</text>
+  <text x="330" y="262" font-size="13" fill="var(--text)">geri alınamaz</text>
+  <text x="330" y="280" font-size="13" fill="var(--text)">eylemde</text>
+  <text x="480" y="262" font-size="13" fill="var(--text)">izin kuralları; oto kip:</text>
+  <text x="480" y="280" font-size="13" fill="var(--text)">sınıflandırıcı denetler</text>
+
+  <rect x="20" y="304" width="620" height="56" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="30" y="326" font-size="13" font-weight="bold" fill="var(--text)">gözlemci</text>
+  <text x="130" y="326" font-size="13" fill="var(--text)">ajan tam özerk,</text>
+  <text x="130" y="344" font-size="13" fill="var(--text)">insan izler</text>
+  <text x="330" y="326" font-size="13" fill="var(--text)">hiç</text>
+  <text x="480" y="326" font-size="13" fill="var(--text)">izin atlama kipi</text>
+  <text x="480" y="344" font-size="13" fill="var(--text)">(yalıtılmış kapta)</text>
+
+  <line x1="660" y1="118" x2="660" y2="290" stroke="var(--text-faint)" />
+  <polygon points="660,110 655,120 665,120" fill="var(--cool)" />
+  <polygon points="660,298 655,288 665,288" fill="var(--accent)" />
+  <text x="672" y="66" font-size="13" fill="var(--cool)">insan</text>
+  <text x="672" y="84" font-size="13" fill="var(--cool)">yükü</text>
+  <text x="672" y="102" font-size="13" fill="var(--cool)">büyür</text>
+  <text x="672" y="322" font-size="13" fill="var(--accent)">saldırı</text>
+  <text x="672" y="340" font-size="13" fill="var(--accent)">yüzeyi</text>
+  <text x="672" y="358" font-size="13" fill="var(--accent)">büyür</text>
+
+  <text x="20" y="388" font-size="13" fill="var(--text-muted)">Roller Feng ve arkadaşlarının beş düzeyinden. Sheridan ölçeğinde 2 (seçenek sunar) operatöre,</text>
+  <text x="20" y="406" font-size="13" fill="var(--text-muted)">4 (tek öneri, insan onaylar) danışmana, 6 (veto süresi) onaylayıcıya,</text>
+  <text x="20" y="424" font-size="13" fill="var(--text-muted)">10 (insanı hiç sormaz) gözlemciye düşer. Kod ajanı sütunu bir sağlayıcının belgesinden.</text>
+</svg>

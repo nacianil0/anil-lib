@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 424" role="img" aria-label="Çizgi şeması; yatay eksende k eşittir bir, iki, üç, dört; dikey eksende pass üs k sıfırdan bire. Üç çizgi, aynı model: perakende 0,74, 0,64, 0,58, 0,53; havayolu 0,56, 0,46, 0,42, 0,40; kullanıcının da araç kullandığı telekom 0,34, 0,26, 0,22, 0,19. Altta değerlerin Barres ve arkadaşlarının hakemli olmayan çalışmasından, modelin gpt-4.1 olduğu ve pass üs k'nin k denemenin hepsinde başarı olasılığı olduğu yazılıdır.">
+  <line x1="80" y1="330" x2="640" y2="330" stroke="var(--text-faint)" />
+  <line x1="80" y1="50" x2="80" y2="330" stroke="var(--text-faint)" />
+  <line x1="80" y1="190" x2="640" y2="190" stroke="var(--border)" stroke-dasharray="3 3" />
+  <line x1="80" y1="50" x2="640" y2="50" stroke="var(--border)" stroke-dasharray="3 3" />
+  <text x="74" y="334" font-size="13" text-anchor="end" fill="var(--text-muted)">0</text>
+  <text x="74" y="194" font-size="13" text-anchor="end" fill="var(--text-muted)">0,5</text>
+  <text x="74" y="54" font-size="13" text-anchor="end" fill="var(--text-muted)">1,0</text>
+  <text x="120" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">k = 1</text>
+  <text x="280" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">k = 2</text>
+  <text x="440" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">k = 3</text>
+  <text x="600" y="350" font-size="13" text-anchor="middle" fill="var(--text-muted)">k = 4</text>
+  <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--text)">pass^k: k denemenin hepsinde başarı (aynı model, üç alan)</text>
+
+  <polyline points="120,123 280,151 440,168 600,182" fill="none" stroke="var(--cool)" stroke-width="2.5" />
+  <polyline points="120,173 280,201 440,212 600,218" fill="none" stroke="var(--text-muted)" stroke-width="2.5" />
+  <polyline points="120,235 280,257 440,268 600,277" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+
+  <circle cx="120" cy="123" r="4" fill="var(--cool)" /><circle cx="280" cy="151" r="4" fill="var(--cool)" /><circle cx="440" cy="168" r="4" fill="var(--cool)" /><circle cx="600" cy="182" r="4" fill="var(--cool)" />
+  <circle cx="120" cy="173" r="4" fill="var(--text-muted)" /><circle cx="280" cy="201" r="4" fill="var(--text-muted)" /><circle cx="440" cy="212" r="4" fill="var(--text-muted)" /><circle cx="600" cy="218" r="4" fill="var(--text-muted)" />
+  <circle cx="120" cy="235" r="4" fill="var(--accent)" /><circle cx="280" cy="257" r="4" fill="var(--accent)" /><circle cx="440" cy="268" r="4" fill="var(--accent)" /><circle cx="600" cy="277" r="4" fill="var(--accent)" />
+
+  <text x="112" y="113" font-size="13" text-anchor="end" fill="var(--text)">0,74</text>
+  <text x="112" y="177" font-size="13" text-anchor="end" fill="var(--text)">0,56</text>
+  <text x="112" y="239" font-size="13" text-anchor="end" fill="var(--text)">0,34</text>
+  <text x="612" y="178" font-size="13" fill="var(--cool)">0,53 perakende</text>
+  <text x="612" y="222" font-size="13" fill="var(--text-muted)">0,40 havayolu</text>
+  <text x="612" y="281" font-size="13" fill="var(--accent)">0,19 telekom</text>
+  <text x="612" y="299" font-size="13" fill="var(--accent)">(kullanıcı da</text>
+  <text x="612" y="317" font-size="13" fill="var(--accent)">araç kullanır)</text>
+
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">gpt-4.1; değerler Barres ve arkadaşlarının hakemli olmayan çalışmasından.</text>
+  <text x="20" y="392" font-size="13" fill="var(--text-muted)">Perakende ve havayolu 47'nin ortamları; telekomda kullanıcı, ajanın yönlendirdiği işlemi</text>
+  <text x="20" y="410" font-size="13" fill="var(--text-muted)">kendi telefonunda kendisi yapar.</text>
+</svg>
