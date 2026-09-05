@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 344" role="img" aria-label="Üç aşamalı tablo; satırlar açık bir yedi milyarlık sohbet modelinin biyogüvenlik, siber güvenlik ve genel bilgi puanları. Unutturma öncesi: biyogüvenlik 63,7, siber 44,0, genel bilgi 58,1. Unutturma sonrası: 31,2, 28,2, 57,1; rastgele 25. Geri kazanım saldırıları sonrası: on ilgisiz örnekle ince ayar ya da aktivasyon uzayında belirli yönlerin çıkarılması tehlikeli yeteneklerin çoğunu geri getiriyor; bağımsız bir değerlendirmede ön eğitimde öğrenilmiş bilginin unutturma öncesi doğruluğunun en az yüzde 88'i geri alınıyor; kurcalamaya dirençli olduğu bildirilen bir korumada biyogüvenlik doğruluğu yüzde 60'ın üstüne çıkarılıyor. Altta unutturmanın genel yeteneği korurken tehlikeli bilgiyi rastgeleye yaklaştırdığı ama bunun bilginin silindiği anlamına gelmediği yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">aşama</text>
+  <text x="260" y="28" font-size="13" font-weight="bold" fill="var(--text)">biyogüvenlik</text>
+  <text x="400" y="28" font-size="13" font-weight="bold" fill="var(--text)">siber</text>
+  <text x="500" y="28" font-size="13" font-weight="bold" fill="var(--text)">genel bilgi</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">unutturma öncesi</text>
+  <text x="20" y="80" font-size="13" fill="var(--text-muted)">açık 7 milyarlık sohbet modeli</text>
+  <text x="260" y="62" font-size="13" fill="var(--text)">63,7</text>
+  <text x="400" y="62" font-size="13" fill="var(--text)">44,0</text>
+  <text x="500" y="62" font-size="13" fill="var(--text)">58,1</text>
+
+  <line x1="20" y1="94" x2="700" y2="94" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="102" width="680" height="52" fill="var(--accent-soft)" />
+  <text x="20" y="122" font-size="13" font-weight="bold" fill="var(--text)">unutturma sonrası</text>
+  <text x="20" y="140" font-size="13" fill="var(--text-muted)">temsil kontrolüne dayanan yöntem</text>
+  <text x="260" y="122" font-size="13" fill="var(--text)">31,2</text>
+  <text x="400" y="122" font-size="13" fill="var(--text)">28,2</text>
+  <text x="500" y="122" font-size="13" fill="var(--text)">57,1</text>
+  <text x="560" y="140" font-size="13" fill="var(--text-muted)">rastgele: 25</text>
+
+  <line x1="20" y1="164" x2="700" y2="164" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="188" font-size="13" font-weight="bold" fill="var(--text)">geri kazanım saldırıları</text>
+  <text x="20" y="212" font-size="13" fill="var(--text)">· on ilgisiz örnekle ince ayar ya da aktivasyon uzayında yön çıkarma:</text>
+  <text x="20" y="230" font-size="13" fill="var(--text)">  tehlikeli yeteneklerin çoğu geri geliyor</text>
+  <text x="20" y="252" font-size="13" fill="var(--text)">· ön eğitimde öğrenilmiş bilgide unutturma öncesi doğruluğun ≥ %88'i</text>
+  <text x="20" y="270" font-size="13" fill="var(--text)">· kurcalamaya dirençli bildirilen korumada biyogüvenlik %60'ın üstüne</text>
+
+  <line x1="20" y1="290" x2="700" y2="290" stroke="var(--border)" />
+  <text x="20" y="310" font-size="13" fill="var(--text-muted)">Unutturma genel yeteneği koruyup tehlikeli bilgiyi rastgeleye yaklaştırıyor.</text>
+  <text x="20" y="328" font-size="13" fill="var(--text-muted)">Bu, bilginin ağırlıklardan silindiği anlamına gelmiyor: erişim zorlaşıyor, kayboluyor değil.</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 432" role="img" aria-label="Yukarıdan aşağıya dört kutuluk akış. Birinci kutu sınıflandırma: genel amaçlı model; sistemik risk sınıfı için ya yüksek etkili yetenek ya Komisyon kararı gerekir; eğitimde kullanılan toplam hesabın 10 üzeri 25 kayan noktalı işlemi aşması yüksek etkili yetenek varsayımı doğurur ve sağlayıcı iki hafta içinde bildirir. İkinci kutu temel yükümlülükler: teknik belgelendirme, entegre edecek sağlayıcılara bilgi, telif hakkı politikası, eğitim içeriğinin kamuya açık özeti. Üçüncü kutu sistemik riskli modelin ek yükümlülükleri: standart protokollerle model değerlendirmesi ve belgelenmiş düşmanca test, risklerin değerlendirilip azaltılması, ciddi olayların gecikmeksizin bildirilmesi, model ve altyapı için siber güvenlik. Dördüncü kutu muafiyet: serbest ve açık kaynak lisansla yayımlanan, ağırlıkları, mimari bilgisi ve kullanım bilgisi kamuya açık modeller yalnızca ilk iki yükümlülükten muaf; telif politikası ve eğitim içeriği özeti muafiyetin dışında; muafiyet sistemik riskli modellere hiç uygulanmaz. Altta uygulama kurallarına ve uyumlaştırılmış standartlara uyumun uygunluk karinesi sağladığı yazılıdır.">
+  <rect x="20" y="14" width="680" height="86" fill="var(--surface-muted)" />
+  <text x="32" y="36" font-size="13" font-weight="bold" fill="var(--text)">1. Sınıflandırma</text>
+  <text x="32" y="56" font-size="13" fill="var(--text)">Sistemik risk için iki kapı: yüksek etkili yetenek ya da Komisyon kararı.</text>
+  <text x="32" y="76" font-size="13" fill="var(--text)">Eğitim hesabı 10²⁵ kayan noktalı işlemi aşarsa yüksek etkili yetenek varsayılır;</text>
+  <text x="32" y="94" font-size="13" fill="var(--text)">varsayım çürütülebilir, sağlayıcı iki hafta içinde Komisyona bildirir.</text>
+
+  <line x1="360" y1="100" x2="360" y2="118" stroke="var(--text-muted)" />
+
+  <rect x="20" y="118" width="680" height="86" fill="var(--surface-muted)" />
+  <text x="32" y="140" font-size="13" font-weight="bold" fill="var(--text)">2. Bütün genel amaçlı modeller için yükümlülük</text>
+  <text x="32" y="160" font-size="13" fill="var(--text)">· teknik belgelendirme · entegre edecek sağlayıcılara bilgi</text>
+  <text x="32" y="180" font-size="13" fill="var(--text)">· telif hakkı politikası · eğitim içeriğinin yeterince ayrıntılı</text>
+  <text x="32" y="198" font-size="13" fill="var(--text)">  kamuya açık özeti</text>
+
+  <line x1="360" y1="204" x2="360" y2="222" stroke="var(--text-muted)" />
+
+  <rect x="20" y="222" width="680" height="86" fill="var(--accent-soft)" />
+  <text x="32" y="244" font-size="13" font-weight="bold" fill="var(--text)">3. Yalnızca sistemik riskli modeller için ek yükümlülük</text>
+  <text x="32" y="264" font-size="13" fill="var(--text)">· standart protokollerle model değerlendirmesi ve belgelenmiş düşmanca test</text>
+  <text x="32" y="284" font-size="13" fill="var(--text)">· sistemik risklerin değerlendirilmesi ve azaltılması</text>
+  <text x="32" y="302" font-size="13" fill="var(--text)">· ciddi olayların gecikmeksizin bildirimi · siber güvenlik</text>
+
+  <line x1="360" y1="308" x2="360" y2="326" stroke="var(--text-muted)" />
+
+  <rect x="20" y="326" width="680" height="66" fill="var(--surface-muted)" />
+  <text x="32" y="348" font-size="13" font-weight="bold" fill="var(--text)">4. Açık kaynak muafiyeti</text>
+  <text x="32" y="368" font-size="13" fill="var(--text)">Yalnızca ilk iki yükümlülük için; telif politikası ve içerik özeti dışarıda.</text>
+  <text x="32" y="386" font-size="13" fill="var(--text)">Sistemik riskli modellere hiç uygulanmaz.</text>
+
+  <line x1="20" y1="400" x2="700" y2="400" stroke="var(--border)" />
+  <text x="20" y="418" font-size="13" fill="var(--text-muted)">Uygulama kurallarına ve uyumlaştırılmış standartlara uyum, uygunluk karinesi sağlar.</text>
+</svg>

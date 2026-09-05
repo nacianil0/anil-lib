@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-label="Soldan sağa dört kutu ve oklar, altta iki geri dönüş oku. Birinci kutu eşik öncesi: eğitim ve dağıtım sürerken belirlenmiş tehlikeli yetenek değerlendirmeleri düzenli çalıştırılır; yenileme tetikleyicileri risk alanlarında dört kat etkin hesap ya da altı aylık yetenek çıkarma birikimi. İkinci kutu ölçüm: sonuçlar eşikle karşılaştırılır, eşiğe yaklaşma izlenir, erken uyarı çizgisi turlar arasındaki boşluğu kapatır. Üçüncü kutu karar: eşik aşıldıysa önceden yazılmış koruma paketi devreye girer; aşılmadığı kesin gösterilemiyorsa ihtiyatlı karar aynı paketi geçici uygular. Dördüncü kutu önlem: dağıtım tarafında sınıflandırıcılar ve erişim sınırları, güvenlik tarafında ağırlık koruması; kritik düzeyde geliştirme sırasında da. Alttaki geri dönüş okları önlemlerin yeterliliğinin ayrıca değerlendirilmesi ve yeni sürümle eşiklerin güncellenmesi. Altta üç açık halka yazılıdır: eşiği geliştirici koyar, ölçüm sınavı tanıyan modele karşı yapılır, doğrulama büyük ölçüde kurum içidir.">
+  <rect x="20" y="20" width="150" height="118" fill="var(--surface-muted)" />
+  <text x="30" y="42" font-size="13" font-weight="bold" fill="var(--text)">1. değerlendirme</text>
+  <text x="30" y="62" font-size="13" fill="var(--text)">tehlikeli yetenek</text>
+  <text x="30" y="80" font-size="13" fill="var(--text)">testleri düzenli</text>
+  <text x="30" y="98" font-size="13" fill="var(--text)">çalışır; 4× etkin</text>
+  <text x="30" y="116" font-size="13" fill="var(--text)">hesap ya da altı ay</text>
+  <text x="30" y="134" font-size="13" fill="var(--text)">yenilemeyi tetikler</text>
+
+  <text x="178" y="80" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="196" y="20" width="150" height="118" fill="var(--surface-muted)" />
+  <text x="206" y="42" font-size="13" font-weight="bold" fill="var(--text)">2. karşılaştırma</text>
+  <text x="206" y="62" font-size="13" fill="var(--text)">sonuç eşikle</text>
+  <text x="206" y="80" font-size="13" fill="var(--text)">karşılaştırılır;</text>
+  <text x="206" y="98" font-size="13" fill="var(--text)">erken uyarı çizgisi</text>
+  <text x="206" y="116" font-size="13" fill="var(--text)">turlar arasını</text>
+  <text x="206" y="134" font-size="13" fill="var(--text)">kapatır</text>
+
+  <text x="354" y="80" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="372" y="20" width="150" height="118" fill="var(--accent-soft)" />
+  <text x="382" y="42" font-size="13" font-weight="bold" fill="var(--text)">3. karar</text>
+  <text x="382" y="62" font-size="13" fill="var(--text)">aşıldıysa paket</text>
+  <text x="382" y="80" font-size="13" fill="var(--text)">devreye girer;</text>
+  <text x="382" y="98" font-size="13" fill="var(--text)">aşılmadığı kesin</text>
+  <text x="382" y="116" font-size="13" fill="var(--text)">elenemiyorsa ihtiyatlı</text>
+  <text x="382" y="134" font-size="13" fill="var(--text)">ve geçici uygulama</text>
+
+  <text x="530" y="80" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="548" y="20" width="152" height="118" fill="var(--surface-muted)" />
+  <text x="558" y="42" font-size="13" font-weight="bold" fill="var(--text)">4. önlem</text>
+  <text x="558" y="62" font-size="13" fill="var(--text)">dağıtımda</text>
+  <text x="558" y="80" font-size="13" fill="var(--text)">sınıflandırıcı ve</text>
+  <text x="558" y="98" font-size="13" fill="var(--text)">erişim sınırı;</text>
+  <text x="558" y="116" font-size="13" fill="var(--text)">güvenlikte ağırlık</text>
+  <text x="558" y="134" font-size="13" fill="var(--text)">koruması</text>
+
+  <line x1="624" y1="138" x2="624" y2="166" stroke="var(--text-muted)" />
+  <line x1="624" y1="166" x2="95" y2="166" stroke="var(--text-muted)" />
+  <line x1="95" y1="166" x2="95" y2="140" stroke="var(--text-muted)" />
+  <text x="150" y="184" font-size="13" fill="var(--text-muted)">önlemlerin yeterliliği ayrıca değerlendirilir;</text>
+  <text x="470" y="184" font-size="13" fill="var(--text-muted)">yeni sürümde eşikler güncellenir</text>
+
+  <line x1="20" y1="200" x2="700" y2="200" stroke="var(--border)" />
+  <text x="20" y="222" font-size="13" font-weight="bold" fill="var(--text)">Üç açık halka</text>
+  <text x="20" y="246" font-size="13" fill="var(--text)">· eşiği geliştirici koyar: yasa protokolü yazmıyor, taahhütler eşiği geliştiriciye bırakıyor</text>
+  <text x="20" y="270" font-size="13" fill="var(--text)">· ölçüm, sınavı tanıyabilen bir modele karşı yapılır: yetenek saklama ölçülmüş bir olgudur</text>
+  <text x="20" y="294" font-size="13" fill="var(--text)">· doğrulama büyük ölçüde kurum içidir; dış denetim ihtiyacını çerçevelerden biri kendi yazıyor</text>
+
+  <line x1="20" y1="314" x2="700" y2="314" stroke="var(--border)" />
+  <text x="20" y="334" font-size="13" fill="var(--text-muted)">Akış, üç sağlayıcı çerçevesinin ortak biçimidir; sayı ve tetikleyiciler künyedeki sürümlerden.</text>
+</svg>

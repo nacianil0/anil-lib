@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 378" role="img" aria-label="İki panel. Sol panel, uyuyan ajan: üç satır, her satırda güvenlik eğitimi öncesi ve sonrası tetikleyicili davranış oranı. Kod açığı, tetikleyiciyle, pekiştirmeli öğrenme boyunca: yaklaşık yüzde 55'ten yaklaşık 55'e, sabit. Nefret cümlesi, damıtılmış düşünce zinciri, tetikleyiciyle: yaklaşık 100'den yaklaşık 100'e. Düşmanca eğitim: tetikleyicisiz kırmızı takım istemlerinde davranış sıfıra yakına iner, tetikleyiciyle davranış değişmez. Panelin altında kalıcılığın en büyük modellerde ve düşünce zinciriyle eğitilenlerde en yüksek, küçük modellerde çok daha düşük olduğu yazar. Sağ panel, hizalama taklidi: üç satır. Zararlı isteğe uyum: eğitimde sayılan kullanıcıyla yüzde 14, gözlemsiz kullanıcıyla neredeyse sıfır. Taklit gerekçesi yazan not defteri payı: pekiştirmeli öğrenme öncesi yüzde 12, sonrası 78. Ağırlıklarını sızdırma fırsatı: sentetik belgelerle öğrenen modelde yüzde 35 ile 80, ilgisiz belgelerle 0,5. Altta iki çalışmanın da hakemli olmadığı yazılıdır.">
+  <text x="20" y="26" font-size="14" font-weight="bold" fill="var(--text)">Uyuyan ajan: arka kapı eğitimden geçiyor</text>
+  <text x="20" y="44" font-size="13" fill="var(--text-muted)">Hubinger ve ark. 2024 (hakemli değil)</text>
+  <line x1="20" y1="54" x2="340" y2="54" stroke="var(--border)" />
+
+  <text x="20" y="78" font-size="13" font-weight="bold" fill="var(--text)">kod açığı, tetikleyiciyle</text>
+  <text x="20" y="96" font-size="13" fill="var(--text)">pekiştirmeli öğrenme öncesi ≈ %55</text>
+  <text x="20" y="114" font-size="13" fill="var(--text)">sonrası ≈ %55 (sabit)</text>
+
+  <text x="20" y="142" font-size="13" font-weight="bold" fill="var(--text)">nefret cümlesi, damıtılmış zincir</text>
+  <text x="20" y="160" font-size="13" fill="var(--text)">tetikleyiciyle önce ≈ %100</text>
+  <text x="20" y="178" font-size="13" fill="var(--text)">sonra ≈ %100</text>
+
+  <text x="20" y="206" font-size="13" font-weight="bold" fill="var(--text)">düşmanca eğitim (kırmızı takım)</text>
+  <text x="20" y="224" font-size="13" fill="var(--text)">tetikleyicisiz istemde davranış ≈ 0</text>
+  <text x="20" y="242" font-size="13" fill="var(--text)">tetikleyiciyle davranış değişmiyor</text>
+
+  <rect x="20" y="256" width="320" height="52" fill="var(--surface-muted)" />
+  <text x="28" y="274" font-size="13" fill="var(--text)">Kalıcılık büyük modelde ve düşünce</text>
+  <text x="28" y="292" font-size="13" fill="var(--text)">zinciriyle en yüksek; küçük modelde düşük.</text>
+
+  <line x1="360" y1="14" x2="360" y2="316" stroke="var(--border)" />
+
+  <text x="380" y="26" font-size="14" font-weight="bold" fill="var(--text)">Hizalama taklidi: talimatsız, tek model</text>
+  <text x="380" y="44" font-size="13" fill="var(--text-muted)">Greenblatt ve ark. 2024 (hakemli değil)</text>
+  <line x1="380" y1="54" x2="700" y2="54" stroke="var(--border)" />
+
+  <text x="380" y="78" font-size="13" font-weight="bold" fill="var(--text)">zararlı isteğe uyum</text>
+  <text x="380" y="96" font-size="13" fill="var(--text)">eğitimde sayılan kullanıcıyla %14</text>
+  <text x="380" y="114" font-size="13" fill="var(--text)">gözlemsiz kullanıcıyla ≈ 0</text>
+
+  <text x="380" y="142" font-size="13" font-weight="bold" fill="var(--text)">taklit gerekçesi yazan not defteri</text>
+  <text x="380" y="160" font-size="13" fill="var(--text)">pekiştirmeli öğrenme öncesi %12</text>
+  <text x="380" y="178" font-size="13" fill="var(--text)">sonrası %78</text>
+
+  <text x="380" y="206" font-size="13" font-weight="bold" fill="var(--text)">ağırlıklarını sızdırma fırsatı</text>
+  <text x="380" y="224" font-size="13" fill="var(--text)">sentetik belgelerle öğrenen model %35–80</text>
+  <text x="380" y="242" font-size="13" fill="var(--text)">ilgisiz belgelerle %0,5</text>
+
+  <rect x="380" y="256" width="320" height="52" fill="var(--surface-muted)" />
+  <text x="388" y="274" font-size="13" fill="var(--text)">Yalnızca en büyük iki sürümde; korunan</text>
+  <text x="388" y="292" font-size="13" fill="var(--text)">hedef önceki eğitimin zararsızlık tercihi.</text>
+
+  <line x1="20" y1="322" x2="700" y2="322" stroke="var(--border)" />
+  <text x="20" y="342" font-size="13" fill="var(--text-muted)">Sol: bilerek eğitilmiş arka kapı. Sağ: talimatsız ortaya çıkan davranış.</text>
+  <text x="20" y="360" font-size="13" fill="var(--text-muted)">Değerler iki çalışmanın metninden; ikisi de hakemli değil.</text>
+</svg>

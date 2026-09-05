@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-label="Altı satırlı karşılaştırma tablosu; sütunlar model bileşeni, Açık Kaynak Yapay Zekâ Tanımı 1.0 ve Avrupa Birliği muafiyetinin metni. Ağırlıklar: tanım ister, muafiyet ister. Mimari bilgisi: tanım ister, muafiyet ister. Kullanım bilgisi: tanım ister, muafiyet ister. Eğitim kodu: tanım ister, muafiyet istemez. Veri bilgisi, yani yetkin bir kişinin esasen eşdeğer bir sistem kurabileceği ayrıntıda kaynak, kapsam ve işleme bilgisi: tanım ister, muafiyet istemez. Kullanıcıya ya da kullanım alanına göre ayrım yapmayan lisans: tanım ister, muafiyet metni yalnızca erişim, kullanım, değiştirme ve dağıtıma izin veren lisans der. Altta iki listenin çakışmadığı, bir modelin muafiyet metnini karşılayıp tanımı karşılamayabileceği ve muafiyetin sistemik riskli modellere zaten uygulanmadığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">model bileşeni</text>
+  <text x="330" y="28" font-size="13" font-weight="bold" fill="var(--text)">açık kaynak tanımı 1.0</text>
+  <text x="530" y="28" font-size="13" font-weight="bold" fill="var(--text)">yasal muafiyet</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" fill="var(--text)">ağırlıklar</text>
+  <text x="330" y="62" font-size="13" fill="var(--text)">ister</text>
+  <text x="530" y="62" font-size="13" fill="var(--text)">ister</text>
+
+  <text x="20" y="86" font-size="13" fill="var(--text)">mimari bilgisi</text>
+  <text x="330" y="86" font-size="13" fill="var(--text)">ister</text>
+  <text x="530" y="86" font-size="13" fill="var(--text)">ister</text>
+
+  <text x="20" y="110" font-size="13" fill="var(--text)">kullanım bilgisi ve belgelendirme</text>
+  <text x="330" y="110" font-size="13" fill="var(--text)">ister</text>
+  <text x="530" y="110" font-size="13" fill="var(--text)">ister</text>
+
+  <line x1="20" y1="124" x2="700" y2="124" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="132" width="680" height="112" fill="var(--accent-soft)" />
+  <text x="20" y="154" font-size="13" fill="var(--text)">eğitim kodu</text>
+  <text x="330" y="154" font-size="13" font-weight="bold" fill="var(--text)">ister</text>
+  <text x="530" y="154" font-size="13" font-weight="bold" fill="var(--text)">istemez</text>
+
+  <text x="20" y="184" font-size="13" fill="var(--text)">veri bilgisi: yetkin bir kişinin</text>
+  <text x="20" y="202" font-size="13" fill="var(--text)">esasen eşdeğer bir sistem</text>
+  <text x="20" y="220" font-size="13" fill="var(--text)">kurabileceği ayrıntı</text>
+  <text x="330" y="184" font-size="13" font-weight="bold" fill="var(--text)">ister</text>
+  <text x="530" y="184" font-size="13" font-weight="bold" fill="var(--text)">istemez</text>
+
+  <line x1="20" y1="252" x2="700" y2="252" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="276" font-size="13" fill="var(--text)">kullanıcıya ya da alana göre</text>
+  <text x="20" y="294" font-size="13" fill="var(--text)">ayrım yapmayan lisans</text>
+  <text x="330" y="276" font-size="13" fill="var(--text)">ister</text>
+  <text x="530" y="276" font-size="13" fill="var(--text)">erişim, kullanım,</text>
+  <text x="530" y="294" font-size="13" fill="var(--text)">değiştirme, dağıtım</text>
+
+  <line x1="20" y1="308" x2="700" y2="308" stroke="var(--border)" />
+  <text x="20" y="326" font-size="13" fill="var(--text-muted)">İki liste çakışmıyor: bir model muafiyeti karşılayıp tanımı karşılamayabilir.</text>
+  <text x="20" y="344" font-size="13" fill="var(--text-muted)">Muafiyet sistemik riskli modellere zaten uygulanmıyor.</text>
+</svg>

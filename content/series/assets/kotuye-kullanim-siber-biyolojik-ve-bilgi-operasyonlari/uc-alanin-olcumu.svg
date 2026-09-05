@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 444" role="img" aria-label="Üç satırlı tablo; sütunlar alan, ölçümün düzeneği ve tabanı, bulgu, kaynağın türü. Siber: on beş gerçek bir günlük açık, açık tarifi verilen ve verilmeyen koşullar; tarif verilince yüzde 87, verilmeyince yüzde 7; kırk yarışma görevinde en iyi model yüzde 17,5 ve yalnızca insanın on bir dakikada çözdüğü görevler; hakemsiz ön çalışma ve hakemli ölçüt. Biyolojik: kırmızı takım hücreleri, internet ve internet artı model; yaşayabilirlikte istatistiksel olarak anlamlı fark yok; yüz katılımcılı denemede hafif ve anlamsız artış; sağlayıcının kendi denemesinde kontrol yüzde 25 artı eksi 13, güvenlik önlemleri kaldırılmış modelle 63 artı eksi 13 ve 42 artı eksi 11, kaldıraç 2,53 ve 1,70 kat; kurum ve sağlayıcı raporları, hakemsiz. Bilgi operasyonları: yedi yüze yakın katılımcıya sentetik ve organik tweetler; katılımcılar üreticiyi ayırt edemiyor; sekiz binden çok katılımcıda üretilen propaganda tabanı yüzde 24,4'ten 43,5'e çıkarıyor, gerçek propaganda 47,4; hakemli. Altta üç alanın da tabanla birlikte okunması gerektiği yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">alan</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">düzenek ve taban</text>
+  <text x="390" y="28" font-size="13" font-weight="bold" fill="var(--text)">bulgu</text>
+  <text x="620" y="28" font-size="13" font-weight="bold" fill="var(--text)">kaynak</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">siber</text>
+  <text x="150" y="62" font-size="13" fill="var(--text)">15 gerçek bir günlük açık;</text>
+  <text x="150" y="80" font-size="13" fill="var(--text)">açık tarifi var ↔ yok</text>
+  <text x="150" y="98" font-size="13" fill="var(--text)">40 yarışma görevi; insanın</text>
+  <text x="150" y="116" font-size="13" fill="var(--text)">ilk çözüm süresi</text>
+  <text x="390" y="62" font-size="13" fill="var(--text)">tarifle %87, tarifsiz %7;</text>
+  <text x="390" y="80" font-size="13" fill="var(--text)">öbür modeller ve tarayıcılar 0</text>
+  <text x="390" y="98" font-size="13" fill="var(--text)">en iyi model %17,5 ve yalnızca</text>
+  <text x="390" y="116" font-size="13" fill="var(--text)">11 dakikalık görevlere kadar</text>
+  <text x="620" y="62" font-size="13" fill="var(--text-muted)">hakemsiz</text>
+  <text x="620" y="98" font-size="13" fill="var(--text)">hakemli</text>
+
+  <line x1="20" y1="132" x2="700" y2="132" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="140" width="680" height="106" fill="var(--accent-soft)" />
+  <text x="20" y="162" font-size="13" font-weight="bold" fill="var(--text)">biyolojik</text>
+  <text x="150" y="162" font-size="13" fill="var(--text)">kırmızı takım hücreleri:</text>
+  <text x="150" y="180" font-size="13" fill="var(--text)">internet ↔ internet + model</text>
+  <text x="150" y="198" font-size="13" fill="var(--text)">100 katılımcılı deneme</text>
+  <text x="150" y="216" font-size="13" fill="var(--text)">sağlayıcının kendi denemesi</text>
+  <text x="390" y="162" font-size="13" fill="var(--text)">yaşayabilirlikte anlamlı fark</text>
+  <text x="390" y="180" font-size="13" fill="var(--text)">yok</text>
+  <text x="390" y="198" font-size="13" fill="var(--text)">hafif, anlamsız artış</text>
+  <text x="390" y="216" font-size="13" fill="var(--text)">kontrol %25 ± 13 → %63 ± 13</text>
+  <text x="390" y="234" font-size="13" fill="var(--text)">ve %42 ± 11; 2,53× ve 1,70×</text>
+  <text x="620" y="162" font-size="13" fill="var(--text-muted)">hakemsiz</text>
+
+  <line x1="20" y1="256" x2="700" y2="256" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="280" font-size="13" font-weight="bold" fill="var(--text)">bilgi</text>
+  <text x="20" y="298" font-size="13" font-weight="bold" fill="var(--text)">operasyonları</text>
+  <text x="150" y="280" font-size="13" fill="var(--text)">697 katılımcı: sentetik ↔</text>
+  <text x="150" y="298" font-size="13" fill="var(--text)">organik tweet</text>
+  <text x="150" y="316" font-size="13" fill="var(--text)">8.221 katılımcı: yazı yok ↔</text>
+  <text x="150" y="334" font-size="13" fill="var(--text)">gerçek ↔ üretilmiş propaganda</text>
+  <text x="390" y="280" font-size="13" fill="var(--text)">üreticiyi ayırt edemiyorlar;</text>
+  <text x="390" y="298" font-size="13" fill="var(--text)">sentetik yanlış bilgi daha az</text>
+  <text x="390" y="316" font-size="13" fill="var(--text)">yakalanıyor (0,89 ↔ 0,92)</text>
+  <text x="390" y="334" font-size="13" fill="var(--text)">%24,4 → 43,5; gerçek 47,4</text>
+  <text x="620" y="280" font-size="13" fill="var(--text)">hakemli</text>
+
+  <line x1="20" y1="352" x2="700" y2="352" stroke="var(--border)" />
+  <text x="20" y="372" font-size="13" fill="var(--text-muted)">Her satır tabanıyla okunur: model olmasaydı sayı ne olurdu.</text>
+  <text x="20" y="390" font-size="13" fill="var(--text-muted)">Biyolojik satırın iki sonucu düzenekte ayrışıyor:</text>
+  <text x="20" y="408" font-size="13" fill="var(--text-muted)">güvenlik önlemleri kaldırılmış model ↔ kaldırılmamış.</text>
+  <text x="20" y="426" font-size="13" fill="var(--text-muted)">"hakemsiz" = hakemli olmayan ön çalışma, kurum ya da sağlayıcı raporu.</text>
+</svg>

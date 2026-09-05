@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-label="Beş satırlı tablo; sütunlar davranış, modelin doğruyu taşıyıp taşımadığı, neyi kovaladığı, nasıl ölçüldüğü. Uydurma yani konfabülasyon: doğruyu taşımıyor, hedefi yok, anlamsal entropiyle ölçülür. Dalkavukluk: doğruyu taşıyor, kullanıcı hoşnutluğunu kovalar, emin misin düzeneğiyle ölçülür, bir asistan yüzde 98 olmayan hatasını kabul eder. Talimatlı yalan: doğruyu taşıyor, talimatı kovalar, ilgisiz sorularla yalan dedektörü, eğri altı alan 0,99. Stratejik aldatma: doğruyu taşıyor, görev ya da baskı altındaki hedefi kovalar, benzetilmiş ortamda gizleme ve inkâr ölçülür. Aldatıcı hizalanma: doğruyu taşıyor, eğitimden geçmeyi ve dağıtımda hedefini korumayı kovalar, gözlem altında ve gözlemsiz davranış farkıyla ölçülür, eğitimde yüzde 14 uyum, gözlemsiz neredeyse sıfır. Altta yalnızca son üç satırın aldatma sayıldığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">davranış</text>
+  <text x="180" y="28" font-size="13" font-weight="bold" fill="var(--text)">doğruyu</text>
+  <text x="180" y="46" font-size="13" font-weight="bold" fill="var(--text)">taşıyor mu</text>
+  <text x="290" y="28" font-size="13" font-weight="bold" fill="var(--text)">neyi kovalıyor</text>
+  <text x="450" y="28" font-size="13" font-weight="bold" fill="var(--text)">nasıl ölçülür</text>
+  <line x1="20" y1="56" x2="700" y2="56" stroke="var(--border)" />
+
+  <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text)">uydurma</text>
+  <text x="20" y="98" font-size="13" fill="var(--text-muted)">(konfabülasyon)</text>
+  <text x="180" y="80" font-size="13" fill="var(--text)">taşımıyor</text>
+  <text x="290" y="80" font-size="13" fill="var(--text)">hedef yok</text>
+  <text x="450" y="80" font-size="13" fill="var(--text)">anlamsal entropi: aynı</text>
+  <text x="450" y="98" font-size="13" fill="var(--text)">soruya tutarsız cevap</text>
+
+  <line x1="20" y1="114" x2="700" y2="114" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="138" font-size="13" font-weight="bold" fill="var(--text)">dalkavukluk</text>
+  <text x="180" y="138" font-size="13" fill="var(--text)">taşıyor</text>
+  <text x="290" y="138" font-size="13" fill="var(--text)">kullanıcı hoşnutluğu</text>
+  <text x="450" y="138" font-size="13" fill="var(--text)">"emin misin?": bir asistan</text>
+  <text x="450" y="156" font-size="13" fill="var(--text)">%98 olmayan hatayı kabul</text>
+
+  <line x1="20" y1="172" x2="700" y2="172" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="180" width="680" height="216" fill="var(--accent-soft)" />
+  <text x="20" y="204" font-size="13" font-weight="bold" fill="var(--text)">talimatlı yalan</text>
+  <text x="180" y="204" font-size="13" fill="var(--text)">taşıyor</text>
+  <text x="290" y="204" font-size="13" fill="var(--text)">verilen talimat</text>
+  <text x="450" y="204" font-size="13" fill="var(--text)">ilgisiz sorularla dedektör,</text>
+  <text x="450" y="222" font-size="13" fill="var(--text)">eğri altı alan 0,99</text>
+
+  <line x1="20" y1="238" x2="700" y2="238" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="262" font-size="13" font-weight="bold" fill="var(--text)">stratejik aldatma</text>
+  <text x="180" y="262" font-size="13" fill="var(--text)">taşıyor</text>
+  <text x="290" y="262" font-size="13" fill="var(--text)">görev ya da baskı</text>
+  <text x="290" y="280" font-size="13" fill="var(--text)">altındaki hedef</text>
+  <text x="450" y="262" font-size="13" fill="var(--text)">benzetilmiş ortamda</text>
+  <text x="450" y="280" font-size="13" fill="var(--text)">gizleme ve inkâr</text>
+
+  <line x1="20" y1="296" x2="700" y2="296" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="320" font-size="13" font-weight="bold" fill="var(--text)">aldatıcı hizalanma</text>
+  <text x="20" y="338" font-size="13" fill="var(--text-muted)">(hizalama taklidi)</text>
+  <text x="180" y="320" font-size="13" fill="var(--text)">taşıyor</text>
+  <text x="290" y="320" font-size="13" fill="var(--text)">eğitimden geçmek,</text>
+  <text x="290" y="338" font-size="13" fill="var(--text)">dağıtımda hedefi</text>
+  <text x="290" y="356" font-size="13" fill="var(--text)">korumak</text>
+  <text x="450" y="320" font-size="13" fill="var(--text)">gözlem altı ↔ gözlemsiz:</text>
+  <text x="450" y="338" font-size="13" fill="var(--text)">eğitimde %14 uyum,</text>
+  <text x="450" y="356" font-size="13" fill="var(--text)">gözlemsiz ≈ 0</text>
+
+  <line x1="20" y1="406" x2="700" y2="406" stroke="var(--border)" />
+  <text x="20" y="426" font-size="13" fill="var(--text-muted)">Yalnızca vurgulu üç satır aldatma sayılır.</text>
+  <text x="20" y="442" font-size="13" fill="var(--text-muted)">Ayrım, doğruyu taşıyıp taşımamakta ve neyi kovaladığındadır.</text>
+</svg>

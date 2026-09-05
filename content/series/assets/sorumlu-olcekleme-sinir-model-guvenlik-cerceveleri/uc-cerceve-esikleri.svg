@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 464" role="img" aria-label="Üç satırlı tablo; sütunlar çerçeve, yetenek eşiği ve kademesi, eşik aşılınca ne olur. Sorumlu ölçekleme politikası: eşikler yetenek eşiği ve gerekli korumalar olarak çiftlenir; kimyasal, biyolojik, radyolojik ve nükleer silahlarda üçüncü düzey temel teknik altyapılı kişilere anlamlı yardım, dördüncü düzey orta kaynaklı devlet programlarını ilerletme; özerk araştırma geliştirmede dördüncü düzey giriş düzeyi uzaktan çalışan bir araştırmacının işini tümüyle otomatikleştirme; ara kontrol noktası alan uzmanının iki ile sekiz saatte yaptığı yazılım görevleri. Eşik aşılınca üçüncü düzey dağıtım ve güvenlik standartları uygulanır, güvenlik standardı ağırlıkları devlet dışı saldırganlara karşı korur. Hazırlıklılık çerçevesi: izlenen üç kategori biyolojik ve kimyasal, siber güvenlik, kendini geliştirme; iki eşik, yüksek yetenek mevcut zarar yollarını büyütür, kritik yetenek emsalsiz yeni bir zarar yolu açar. Yüksek eşikte önlem kurulmadan dağıtım yok, kritik eşikte geliştirme sırasında da önlem. Sınır güvenliği çerçevesi: kritik yetenek düzeyleri; risk alanları kimyasal biyolojik radyolojik nükleer, siber, zararlı manipülasyon, makine öğrenmesi araştırma geliştirmesi; hizalanmama için temel araçsal akıl yürütme yeteneğinin tespiti. Kritik düzeyde dağıtımdan önce incelenen güvenlik savunması. Altta üç çerçevenin de gönüllü olduğu ve eşikleri geliştiricinin yazdığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">çerçeve</text>
+  <text x="200" y="28" font-size="13" font-weight="bold" fill="var(--text)">yetenek eşiği ve kademesi</text>
+  <text x="500" y="28" font-size="13" font-weight="bold" fill="var(--text)">eşik aşılınca</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="124" fill="var(--accent-soft)" />
+  <text x="20" y="68" font-size="13" font-weight="bold" fill="var(--text)">sorumlu ölçekleme</text>
+  <text x="20" y="86" font-size="13" font-weight="bold" fill="var(--text)">politikası</text>
+  <text x="20" y="104" font-size="13" fill="var(--text-muted)">sürüm 2.2, 2025</text>
+  <text x="200" y="68" font-size="13" fill="var(--text)">KBRN-3: temel teknik altyapılı</text>
+  <text x="200" y="86" font-size="13" fill="var(--text)">kişiye anlamlı yardım</text>
+  <text x="200" y="104" font-size="13" fill="var(--text)">KBRN-4: orta kaynaklı devlet</text>
+  <text x="200" y="122" font-size="13" fill="var(--text)">programını ilerletme</text>
+  <text x="200" y="140" font-size="13" fill="var(--text)">Ar-Ge-4: giriş düzeyi bir</text>
+  <text x="200" y="158" font-size="13" fill="var(--text)">araştırmacının işini otomatikleştirme</text>
+  <text x="500" y="68" font-size="13" fill="var(--text)">3. düzey dağıtım ve</text>
+  <text x="500" y="86" font-size="13" fill="var(--text)">güvenlik standartları;</text>
+  <text x="500" y="104" font-size="13" fill="var(--text)">ağırlıklar devlet dışı</text>
+  <text x="500" y="122" font-size="13" fill="var(--text)">saldırgana karşı korunur</text>
+
+  <line x1="20" y1="180" x2="700" y2="180" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="204" font-size="13" font-weight="bold" fill="var(--text)">hazırlıklılık</text>
+  <text x="20" y="222" font-size="13" font-weight="bold" fill="var(--text)">çerçevesi</text>
+  <text x="20" y="240" font-size="13" fill="var(--text-muted)">sürüm 2, 2025</text>
+  <text x="200" y="204" font-size="13" fill="var(--text)">izlenen üç kategori: biyolojik ve</text>
+  <text x="200" y="222" font-size="13" fill="var(--text)">kimyasal, siber, kendini geliştirme</text>
+  <text x="200" y="240" font-size="13" fill="var(--text)">yüksek: mevcut zarar yolunu büyütür</text>
+  <text x="200" y="258" font-size="13" fill="var(--text)">kritik: emsalsiz yeni zarar yolu</text>
+  <text x="500" y="204" font-size="13" fill="var(--text)">yüksekte önlemsiz</text>
+  <text x="500" y="222" font-size="13" fill="var(--text)">dağıtım yok; kritikte</text>
+  <text x="500" y="240" font-size="13" fill="var(--text)">geliştirme sırasında da</text>
+  <text x="500" y="258" font-size="13" fill="var(--text)">önlem</text>
+
+  <line x1="20" y1="276" x2="700" y2="276" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="300" font-size="13" font-weight="bold" fill="var(--text)">sınır güvenliği</text>
+  <text x="20" y="318" font-size="13" font-weight="bold" fill="var(--text)">çerçevesi</text>
+  <text x="20" y="336" font-size="13" fill="var(--text-muted)">sürüm 3.0, 2025</text>
+  <text x="200" y="300" font-size="13" fill="var(--text)">kritik yetenek düzeyleri; alanlar:</text>
+  <text x="200" y="318" font-size="13" fill="var(--text)">KBRN, siber, zararlı manipülasyon,</text>
+  <text x="200" y="336" font-size="13" fill="var(--text)">makine öğrenmesi araştırması</text>
+  <text x="200" y="354" font-size="13" fill="var(--text)">hizalanmama: temel araçsal akıl</text>
+  <text x="200" y="372" font-size="13" fill="var(--text)">yürütme yeteneğinin tespiti</text>
+  <text x="500" y="300" font-size="13" fill="var(--text)">dağıtımdan önce</text>
+  <text x="500" y="318" font-size="13" fill="var(--text)">incelenen bir güvenlik</text>
+  <text x="500" y="336" font-size="13" fill="var(--text)">savunması</text>
+
+  <line x1="20" y1="392" x2="700" y2="392" stroke="var(--border)" />
+  <text x="20" y="412" font-size="13" fill="var(--text-muted)">Üçü de gönüllü; eşikleri geliştirici yazar ve sürümler değişir.</text>
+  <text x="20" y="430" font-size="13" fill="var(--text-muted)">KBRN: kimyasal, biyolojik, radyolojik ve nükleer.</text>
+  <text x="20" y="448" font-size="13" fill="var(--text-muted)">Değerler çerçevelerin künyede yazılı sürümlerinden.</text>
+</svg>

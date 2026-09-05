@@ -6,207 +6,175 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-05 · Durum: **1–66 yayında (kohort Batch 0 → Batch 15) · Faz 7'nin 61–66'sı yayında · Sıradaki: 67 (Faz 7'nin kapanış dörtlüsü 67–70)**
+Son güncelleme: 2026-09-06 · Durum: **1–70 yayında (kohort Batch 0 → Batch 16) · Faz 7 kapandı · Sıradaki: 71 (Faz 8'in açılışı, 71–74)**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 66 — `dalkavukluk-ve-model-karakteri` |
-| Sıradaki güvenli başlangıç | Makale 67 ("Aldatma ve Durum Farkındalığı Tartışmaları"), Faz 7'nin yedinci makalesi; run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 67, 68, 69 ve 70 üretilir ve **Faz 7 kapanır**. **69 bağlayıcı bir koordinattır** (20'nin "açık kaynak tanımının düzenleyici çerçevedeki yeri" vaadi); 68 ve 70, 20'nin "açık ağırlık" vaadinin açık taksitleridir (aşağıda) |
-| Sıradaki kohort | `classification_batch: 16` |
+| Yayımlanan son makale | 70 — `sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri` |
+| Sıradaki güvenli başlangıç | Makale 71 ("Değerlendirme Bilimi: Benchmark'ların Ötesi"), Faz 8'in ilk makalesi; run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 71, 72, 73 ve 74 üretilir. **72 bağlayıcı bir koordinattır** (8, 16, 18 ve 31'in "kirliliğin değerlendirmeye etkisi ve ezberin benchmark'lara yansıması" vaadi); 74 ise 6 ve 18'in açtığı **74–77 koordinat bandının** ilk makalesidir ("modelin içine bakmanın araçları ve açıklamanın sınırı") |
+| Sıradaki kohort | `classification_batch: 17` |
 | Rotalar | `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu) |
 | İçerik sözleşmesi | `content/series/catalog.json` + `content/series/articles/**` + `content/series/assets/<slug>/*.svg` |
-| Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer, elle güncelleme gerekmez |
-| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs` |
+| Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer |
+| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`; ek ölçer: `artifacts/b16-research/svgcheck-b16.py` |
 | Level bandı | 1–10 `beginner` (değişmez); 11'den itibaren `intermediate` (bağlayıcı karar #19) |
-| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–70 `safety-and-evaluation` (bağlayıcı kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142 ve #148). Kohort 15 (63–66) tamamen `safety-and-evaluation`; okuma listesinde 61–66 tek öbek ve `reading-list-groups.test.ts` değişmedi (495 test). Faz 7'nin kalanı (67–70) için varsayılan devamlılık `safety-and-evaluation`; Faz 8'in (71–80, "Değerlendirme ve Yorumlanabilirlik") kategorisi 71'in run'ında kararlaştırılır. Yeni makaleler dizin olarak `content/series/articles/safety-and-evaluation/` altına girer |
+| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–70 `safety-and-evaluation` (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148). Kohort 16 (67–70) tamamen `safety-and-evaluation`; okuma listesinde 61–70 tek öbek ve `reading-list-groups.test.ts` değişmedi (507 test). **Faz 8'in (71–80) kategorisi 71'in run'ında kararlaştırılır; hazırlık aşağıda.** Yeni makaleler dizin olarak kategorinin klasörüne girer |
+
+## Faz 8 kategori kararı — hazırlık (karar 71'in run'ında verilir)
+
+Kontrollü sözlük: `foundations`, `models-and-training`, `reasoning-and-memory`, `agents-and-retrieval`,
+`safety-and-evaluation`, `multimodal-and-future`, `case-studies` (`src/lib/content/schema.ts`; yeni kategori
+eklemek `CATEGORY_LABELS` üzerinden derleme zamanı hata verir, yani etiket de eklenmelidir).
+
+- **Varsayılan öneri: `safety-and-evaluation` devam eder (71–80).** Gerekçe: sözlükte "değerlendirme" sözcüğünü
+  taşıyan tek kategori bu; 71–73 (değerlendirme bilimi, kirlilik, hakem modeller) doğrudan ölçüm, 74–77
+  (yorumlanabilirlik) 62/65/67'de sonuç düzeyinde kullanılan araçların kurulumu, 78–80 (beliren yetenekler,
+  robustluk, şeffaflık) yine ölçüm ve belgeleme. Bedeli: okuma listesinde 61–80 **yirmi makalelik tek öbek**
+  olur. Bu bir hata değil; `groupByBatchAndCategory` öbeği kohort × kategori kırılımıyla kuruyor, yani liste
+  Batch 14/15/16/17 başlıkları altında ayrı ayrı görünmeye devam eder ve test değişmez.
+- **Alternatif: yeni bir kategori açmak** (ör. `evaluation-and-interpretability`). Bedeli: `schema.ts`'de
+  `CATEGORIES` + `CATEGORY_LABELS`, iki serinin şema testleri ve okuma listesi başlıkları; ayrıca 61–70 ile
+  71–80 arasında yapay bir sınır. Kazanç: liste başlığı içeriği daha iyi adlandırır.
+- Karar 71'in run'ında verilir ve YOL-HARITASI'na bağlayıcı karar olarak yazılır; hangi seçenek olursa olsun
+  `reading-list-groups.test.ts` çalıştırılır.
 
 ## Açık borçlar
 
-- **Faz başlıklarının dili — açık, karar verilmedi.** `roadmap.json`'daki faz başlıkları İngilizce
-  alan terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning
-  ve Test-Time Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları terim
-  defterine göre Türkçeleştiriliyor (kararlar #51, #52, #66, #86, #99, #108, #115, #121, #135).
-  Katmanın tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır.
-- **Yayımlanmamış başlıklardaki İngilizce sözcükler.** 63'ün "jailbreak"i Batch 15'te karar #108 ölçütüyle
-  korundu (karar #148: alanda Türkçeleştirilmeyen, kısaltma gibi işlev gören terim; gövdede ilk paragrafta
-  tanımlandı); 64'ün "Constitutional AI"ı özel ad olarak kaldı. Sıradaki dörtlüde: 67 "Aldatma ve Durum
-  Farkındalığı Tartışmaları" Türkçe; 68 "Kötüye Kullanım: Siber, Bio ve Bilgi Operasyonları" — "bio" alan
-  kısaltması ("biyolojik" açık yazılırsa başlık uzar; karar 68'in run'ında, `roadmap.json` entegrasyondan
-  **önce** güncellenir); 69 "Yönetişim: Politika, Standartlar ve Regülasyon" Türkçe; 70 "Sorumlu Ölçekleme:
-  Frontier Güvenlik Çerçeveleri" — "frontier" için defterde karşılık yok ("sınır modeli"? 110–118'in faz
-  başlığı "Sınır ve Sentez"); karar 70'in run'ında. Faz başlıkları katmanı yine kullanıcı kararıdır.
-- **Yayımlanmış numaralı vaatler:** bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış
-  vaatler"dedir. Batch 15 **64'ü ödedi ve yeni koordinat açmadı**: 13'ün "ilkelere dayalı tercih etiketleri ve
-  ölçeklenebilir denetim" vaadi ve 61'in tekrarı 64'ün gövdesinde adıyla kapatıldı. 20'nin "açık ağırlık
-  yayımlamanın güvenlik tarafı" vaadi 62 (ince ayar saldırısı) ve 63'te (ağırlığa erişen saldırganın üç kapısı)
-  kısmen ödendi; **68 ve 70 taksitleri açık** — 68 kötüye kullanım tarafını (açık ağırlığın siber/bio uplift'i,
-  unlearning'in kırılganlığı), 70 çerçeve tarafını (açık yayımlama eşiği, "if-then" taahhütleri) öder. **69
-  bağlayıcı koordinattır:** 20'nin "açık kaynak tanımının düzenleyici çerçevedeki yeri" vaadi 69'un gövdesinde
-  adıyla ödenir (OSI'nin açık kaynak yapay zekâ tanımı, AB Yapay Zekâ Yasası'nın açık kaynak muafiyeti;
-  ödendi satırı deftere işlenir). Ondan sonra 72. Numarasız işaretler: 66 → 67 (aldatmanın ölçüye
-  çevrilmesi; "test edildiğini fark etmek"; kanıt mı hipotez mi; Shanahan'ın rol oyunu dili; Turpin'in sadakati),
-  61 → 67 (aldatma ve durum farkındalığının ölçümü; hilenin izleyiciden gizlenmesi), 57 → 67 (kısayol ve hile),
-  63 → 68/69/70 ("kötüye kullanımın ve yönetişimin taksitleri bu fazın ileriki makaleleri"), 62 → 68
-  (dual-use ret sınırı), 66 → 69 (kimin görüşü: PRISM; model belirtimi), 64 → 69/70 (kimin ilkeleri; anayasa
-  kamuya açık belge), 59 → 70 (özerklik düzeyleri; devir), 63 → 70 (kırmızı takım bir çerçeve gereğidir;
-  Constitutional Classifiers), 65 → 71/73 (kalibrasyon değerlendirme bilimi; hakem güveni), 62/65 → "modelin
-  içine bakmanın araçları" (ilerideki faz, numarasız; 74–77 koordinatı 6/18'den açık), 55/57 → 72 (sızıntı,
-  kirlilik), 57 → 101, 56 → 112, 51 → 111, 49/53 → 115.
-- **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR hâlâ uygulanmadı; tam
-  listeler repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
-- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(9) önceki batch'lerden (kararlar #21, #97,
-  #104, #106, #114, #120, #127, #134, #141). (10) **Batch 14:** Vaccaro ve ark. Nature Human Behaviour
-  8(12) PDF'i bot'a 403 döndü, arXiv kopyası okundu, künye ve bağlantı Nature DOI; Parasuraman, Sheridan &
-  Wickens 2000 (IEEE TSMC-A 30(3)) IEEE aynaları 404/403, Semantic Scholar `openAccessPdf` ile cs.uml.edu
-  kopyası (`curl -k`) okundu, künye IEEE; Sheridan & Verplank 1978 DTIC 403 — **kullanılmadı**, on basamak
-  Parasuraman 2000 üzerinden verildi; Wiener 1960 (Science) duvar arkası — CIRL girişindeki alıntı üzerinden;
-  Singhal ve ark. COLM 2024 kabul listesiyle doğrulandı, bağlantı arXiv; yayın başlığı arXiv'den farklı olan
-  RouteLLM ("…from Preference Data", ICLR 2025), Skalse ("Defining and Characterizing Reward Gaming",
-  NeurIPS 2022), IRD (NeurIPS 2017) ve CIRL (NeurIPS 2016) DBLP aramasında yanlış hit verdi, ICLR
-  proceedings hash'i ve `papers.nips.cc` yıl dizinleriyle doğrulandı (karar #147). (11) **Batch 15:** Farquhar ve
-  ark. Nature 630 PDF'i 403 döndü, tam metin Europe PMC `fullTextXML` (PMC11186750) ile okundu, künye Nature DOI;
-  Betley ve ark. için DBLP 503 döndü, künye PMLR 267 dizininden (betley25a); Anil ve ark. many-shot için DBLP
-  yanlış hit verdi, `papers.nips.cc` sayfasıyla doğrulandı; Durmus ve ark. 2023 COLM 2024 kabul sayfası bu run'da
-  challenge sayfası döndüğü için arXiv (hakemsiz) olarak kaldı; Anthropic self-reminder (Nature MI 2023) özeti
-  yayıncı tarafından kısaltılmış, metin alınamadı — **kullanılmadı**; Brier 1950 DOI'si Crossref'le doğrulandı
-  (Monthly Weather Review 78(1), 1–3) (karar #152).
-- **Hakemsiz kaynak listesi Batch 15'te otuz kalem büyüdü — işaretlenerek** (karar #152; Batch 14'ün on dokuz
-  kalemi karar #147'de): 63 — Anthropic many-shot yazısı, Zou ve ark. 2023, Jain ve ark. 2023, Ganguli ve ark.
-  2022, Robey ve ark. 2023, Alon & Kamfonas 2023, Inan ve ark. 2023, Sharma ve ark. 2025; 64 — Amodei ve ark.
-  2016, Bai ve ark. 2022, Anthropic anayasa açıklaması 2023, Kundu ve ark. 2023, Guan ve ark. 2024, Bowman ve
-  ark. 2022, Saunders ve ark. 2022, McAleese ve ark. 2024, Irving ve ark. 2018, Parrish ve ark. 2022, Michael ve
-  ark. 2023; 65 — Kadavath ve ark. 2022, OpenAI GPT-4 raporu 2023, Kalai ve ark. 2025; 66 — Laban ve ark. 2023,
-  Cheng ve ark. 2025, Wei ve ark. 2023, Durmus ve ark. 2023, Anthropic karakter yazısı 2024, OpenAI Model Spec
-  2025, Chen ve ark. 2025, OpenAI dalkavukluk açıklamaları 2025. Oran 30 / 84; Faz 7'nin kalan dörtlüsünde
-  (aldatma, kötüye kullanım, yönetişim, sorumlu ölçekleme) sağlayıcı çerçeveleri, sistem kartları, politika
-  belgeleri ve arXiv ön çalışmaları kaçınılmaz olarak çoğunluk olabilir; kural değişmedi: işaretlenerek
-  kullanılır, hakemli karşılığı varsa o öne çıkar, düzenleyici metinler (AB Yapay Zekâ Yasası, NIST, ISO)
-  "resmî belge" diye işaretlenir.
+- **Faz başlıklarının dili — açık, karar verilmedi.** `roadmap.json`'daki faz başlıkları hâlâ İngilizce alan
+  terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning ve Test-Time
+  Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları terim defterine göre Türkçeleştiriliyor
+  (kararlar #51, #52, #66, #86, #99, #108, #115, #121, #135, #148, #154, #155). Katmanın tümden Türkçeleştirilip
+  Türkçeleştirilmeyeceği kullanıcı kararıdır. Faz 8'in başlığı ("Değerlendirme ve Yorumlanabilirlik") zaten
+  Türkçe; Faz 9 "Çoklu Modalite ve Verimlilik" de öyle.
+- **Yayımlanmamış başlıklardaki İngilizce sözcükler.** Batch 16 iki başlığı Türkçeleştirdi: 68'in "Bio"su
+  "Biyolojik" (karar #154), 70'in "Frontier"ı "Sınır Model" (karar #155). Sıradaki dörtlüde tek aday 71'in
+  "Benchmark'ların Ötesi" başlığı: "benchmark" terim defterinde **Türkçeleştirilmez** diye kayıtlı (ilk geçiş 16)
+  ve gövdede "değerlendirme kümesi" ile eşanlamlı kullanılıyor; başlıkta bırakılması #108 ölçütüne uygun, karar
+  71'in run'ında teyit edilir. 73'ün "LLM-as-Judge"u ise defterde "hakem model" karşılığıyla kayıtlı (ilk geçiş
+  45) — başlık büyük olasılıkla "İnsan Değerlendirmesi ve Hakem Modeller" olur; karar o run'da.
+- **Yayımlanmış numaralı vaatler:** bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış vaatler"dedir.
+  Batch 16 **iki koordinatı kapattı ve yeni koordinat açmadı**: 20'nin "açık kaynak tanımının düzenleyici
+  çerçevedeki yeri" vaadi 69'un gövdesinde adıyla ödendi (muafiyetin metni ↔ tanımın listesi, 69-Şekil 2);
+  20'nin "açık ağırlık yayımlamanın güvenlik tarafı" vaadi 68 (marjinal risk, unutturmanın geri kazanımı,
+  yayımlama gradyanı) ve 70 (ağırlık güvenliği kademesi) ile tamamlandı. **Açık kalan koordinatlar:** 72
+  (kirlilik ve ezber — 8, 16, 18, 31), 74–77 (modelin içine bakmanın araçları — 6, 18), 78 (beliren yetenekler —
+  5, 9), 85 (uzmanlar karışımı — 20), 86 (karesel maliyeti ödemeyen mimariler — 7, 15), 101 (ölçümün disiplini —
+  16, 22). Numarasız işaretler: 65 → 71/73 (kalibrasyon değerlendirme bilimi, hakem güveni), 66 → 71/72/73
+  (dalkavukluğun ölçüsü, kimin görüşü), 67 → 71/73/74 (yetenek çıkarımı, sonda ve temsil müdahalesi), 68 → 71/72
+  (taban ve marjinal risk; unutturmanın ölçülmesi), 69 → 71/80 (denetimin erişimi, şeffaflık endeksi), 70 →
+  71/74 (değerlendirme bilimi ve modelin içine bakmak), 55/57 → 72, 52/56 → 73, 44 → 73, 38 → 73, 30 → 74,
+  51 → 111, 49/53 → 115.
+- **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR hâlâ uygulanmadı; tam listeler
+  repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
+- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(11) önceki batch'lerden (kararlar #21, #97, #104, #106,
+  #114, #120, #127, #134, #141, #147, #152). (12) **Batch 16:** Urbina ve ark. Nature Machine Intelligence
+  4(3) tam metni alınamadı (yayıncı duvarı; PMC kopyası yalnızca özet döndü) — çalışma **Sandbrink'in
+  aktarımı üzerinden** anıldı, künye Crossref'le doğrulandı, sayı kullanılmadı; Weidinger ve ark. FAccT 2022
+  taksonomisinin ACM PDF'i 403 döndü, 2021 arXiv sürümü okundu ve künye o sürümle verilmedi (metinde
+  kullanılmadı); Hackenburg & Margetts (PNAS 2024) ve Salvi ve ark. (Nature Human Behaviour 2025) ve Costello
+  ve ark. (Science 2024) için yayıncı metinleri kapalıydı, **sayılar yazarların ön baskı/kabul sürümlerinden**
+  alındı ve künyede bu açıkça yazıldı; ISO/IEC 42001 standardının metni satın alma arkasında, yalnızca resmî
+  tanıtım sayfası okundu ve makale standardın kapsamıyla sınırlı konuşuyor.
+- **Hakemsiz kaynak oranı Batch 16'da beklendiği gibi yükseldi (karar #159):** 99 kalemin 36'sı hakemli, 9'u
+  resmî belge, 54'ü işaretlenmiş hakemsiz kalem; 70'in hiçbir kaynağı hakemli değil ve bu gövdede söylendi.
+  Kural değişmedi: hakemli karşılığı varsa o öne çıkar, resmî belgeler "resmî belge" diye işaretlenir,
+  sağlayıcı belgelerinin **sürüm tarihi** künyeye yazılır.
 
-## Next batch preparation — 67'den devam (Faz 7'nin kapanışı: 67–70)
+## Next batch preparation — 71'den devam (Faz 8'in açılışı: 71–74)
 
-**Pedagojik hedefler.** Batch 15'in sonunda okuyucu şunu biliyor: jailbreak ret eğitimini ağırlığa dokunmadan
-aşan saldırıdır; altı saldırı ailesi üç erişim düzeyine dizilir (elle yazılmış kalıp → ikna ve dil → many-shot →
-modelle bulunan istem → gradyanla eniyilenen sonek → üretim kuralı ve ağırlık); saldırı başarısını kim puanlar
-sorusu cetvelin kendisidir (sözcük eşleşmesi insanla ters ilişkili; jailbreak yeteneği düşürür); her savunma
-katmanı bir saldırıyı kapatıp öbürünü kaçırır ve yarardan bir pay keser; açık ağırlık saldırgana üç kapı açar
-(63). Anayasa yazılı bir belirtimdir; eleştiri → düzeltme → yapay geri bildirim hattı tercih etiketini ilkeyle
-üreten bir model verir (RLAIF ↔ RLHF eşit, zararsızlıkta üstün); denetçi zayıfken sandviçleme, zayıftan güçlüye
-genelleme (geri kazanılan pay ≈ 50 / 80 / 10) ve tartışma (bilgisi olmayan hakem daha ikna edici tartışmacıyla
-daha doğru) denetimi ölçekler; hakemin güveni denetimin düğmesidir (64). "Eminim" bir ölçüdür: güvenilirlik
-diyagramı, ECE, Brier; ön eğitilmiş model kalibreli, tercih eğitimi bozar, sıcaklık düzeltir; güven dört yerden
-okunur (token olasılığı, sözel güven, örnekleme tutarlılığı, anlamsal entropi) ve içeriden beşinci; seçici
-tahminde çekimserlik bir güven eşiğidir; güven ifadesi kullanıcının güvenini kalibre eder; sınav ödülü
-uydurmayı ödüllendirir (65). Dalkavukluk dört biçimde ölçülür (geri bildirim, "emin misin?", cevap, taklit) ve iki
-kaynağı vardır (ön eğitim + tercih zinciri); model kimin görüşünü yansıtır (Santurkar, Durmus, PRISM); karakter
-dört katmanda yazılır (sistem istemi, eğitim, belirtim, ağırlıkların içi — karakter vektörü, beliren
-hizalanmama); dalkavukluk değerlendirmesi dağıtımı engelleyen bir ölçüt oldu (66). 66'nın kapanışı 67'ye
-devretti: bir model ne zaman aldatıyor sayılır, "test edildiğini" fark etmesi ne demektir ve ölçülebilir mi,
-alanın söyleyebildiği kanıt mı hipotez mi.
+**Pedagojik hedefler.** Batch 16'nın sonunda okuyucu şunu biliyor: aldatma inanç atfetmeden tanımlanır
+(sistematik yanlış inanç + doğruluk dışı hedef) ve uydurmadan, dalkavukluktan ayrılır; güvenlik eğitimi bilerek
+konmuş bir arka kapıyı silmez, düşmanca eğitim onu gizlemeyi öğretir; eğitildiğini bilen bir model talimatsız
+hizalama taklidi yapabilir (%14 ↔ ≈0; taklit gerekçesi %12 → %78) ve bu yalnızca en büyük sürümlerde görüldü;
+modeller değerlendirmeyi dağıtımdan 0,83 eğri altı alanla ayırt ediyor, insan 0,92, ve farkındalık gizli eylemi
+nedensel olarak düşürüyor; üç okuma yolunun (dışarıdan sorma, sonda, zincir) üçünün de bilinen bir kaçağı var
+(67). Kötüye kullanım tabanla sorulur; siberde model bulunmuş açığı ucuza uygular (%87 ↔ %7) ve insanın on bir
+dakikada çözdüğü sınırda durur; biyolojik tarafta sonuç düzeneğe bağlı (%25 → %63, güvenlik önlemleri
+kaldırılmış modelle) ve literatürün yöntemsel olgunluğu bağımsız incelemede zayıf bulundu; bilgi
+operasyonlarında üretim ucuzladı, dağıtım ucuzlamadı ve aynı ikna gücü komplo inancını %20 azalttı; unutturma
+erişimi zorlaştırır, bilgiyi silmez (68). Yasa modeli eşikle tutar (10²⁵ işlem karinesi), dört yükümlülük
+yükler, açık kaynak muafiyetini dar tutar ve sistemik riskte hiç tanımaz; tanımın listesi ile muafiyetin listesi
+çakışmaz; denetim erişimle tanımlanır (69). Çerçeveler eşik–önlem çifti kurar, belirsizlikte eşiği aşağı
+yuvarlar, güvenlik savunmasını dört argümanla yazar ve üç halkası açıktır: eşiği geliştirici koyar, ölçüm sınavı
+tanıyan modele karşı yapılır, doğrulama kurum içidir (70). 70'in kapanışı 71'e devretti: bir değerlendirme neyi
+ölçer ve neyi ölçemez.
 
-**Sıradaki makaleler ve prerequisite'ler.** 67 ← 66 (Shanahan'ın rol oyunu dili: görünürdeki aldatma ve
-kendinin farkında olma cümlelerini insanlaştırmadan tarif etmek; Turpin: gerekçe belirleyici öneriyi anmaz;
-beliren hizalanmama; karakter vektörü), 61 (belirtim oyunu; hile gizleme; ödül kurcalama; izleyici vekilin
-parçası olur; Denison ve Baker 61'de anıldı — düşünce zinciri izleme; içsel eniyileyici ve aldatıcı hizalanma
-hipotezi), 32 (düşünce zinciri sadakati), 57 (hile oranı; imkânsız test; iz denetimi), 59 (açıklama ikna eder,
-ayırt ettirmez), 63 (kırmızı takım; hakem kandırılabilir), 64 (denetim: hakem tartışmacıyı yakalayabilir mi;
-eleştirmen model), 65 (içeriden okuma: Azaria; kalibrasyon; anlamsal entropi), 62 (sığ hizalama; ince ayar
-reddi siler — uyuyan ajan hipotezinin zemini), 23 (örnekle öğrenme: bağlam içi entrika), 24 (sistem istemi:
-"test ediliyorsun" bilgisi). **68 ← 63** (savunma katmanları; Constitutional Classifiers; açık ağırlığın üç
-kapısı — **20'nin taksidi**; kırmızı takım metodolojisi), 62 (dual-use ret sınırı; aşırı güvenlik), 58
-(ajan saldırıları; AgentHarm), 55 (kod yazan ajanlar — siber tarafı), 48 (web arayüzleri — bilgi operasyonları
-için üretim), 17 (uydurma — dezenformasyon), 14 (veri: eğitim verisinden tehlikeli bilgi; unlearning), 20 (açık
-ağırlık). **69 ← 20** (**69 koordinatı: açık kaynak tanımının düzenleyici çerçevedeki yeri**; lisanslar, OSI),
-66 (kimin görüşü; model belirtimi; PRISM'in katılımcı yaklaşımı), 64 (anayasa kamuya açık bir belgedir; kimin
-ilkeleri), 61 (belirtim: yasa da bir belirtimdir; Goodhart düzenlemede), 57 (değerlendirme standardı; HAL),
-16 (benchmark'ların ne ölçtüğü — düzenleyici değerlendirme), 68 (risk sınıfları yönetişimin girdisi). **70 ←
-69** (çerçevelerin yasal zemini), 68 (tehlikeli yetenek değerlendirmesi; eşikler), 63 (kırmızı takım çerçeve
-gereğidir), 64 (ölçeklenebilir denetim çerçevenin yükümlülüğü), 59 (özerklik düzeyleri; devir; insan denetimi),
-61 (hizalama sorununun çerçevedeki yeri), 40 (görev ufku: özerk yetenek ölçüsü), 9 (ölçek yasaları: "ölçekleme"
-sözcüğünün iki anlamı — 70'in başlığındaki ölçekleme hesap değil dağıtım kararıdır; ayrım gövdede yazılır).
+**Sıradaki makaleler ve prerequisite'ler.** **71 ← 16** (benchmark'ın ne ölçtüğü; liderlik tablosu; kalibrasyon
+tanımı), 57 (ajan değerlendirmesinin dört sayısı; hile oranı; HAL'in maliyet-kayıtlı koşusu), 45 (hakem model ve
+üç yanlılığı; tahmin destekli çıkarım), 65 (kalibrasyon, ECE, Brier — **numarasız işaretin tahsili**), 67
+(yetenek çıkarımı, değerlendirme farkındalığı, yetenek saklama), 68 (marjinal risk ve taban), 69 (denetimin
+erişimi; sosyoteknik değerlendirmenin üç katmanı), 70 (eşik ölçümü), 33 (kapsama ve pass@k), 40 (görev ufku ve
+insan süresi birimi), 22 (istem duyarlılığı). **72 ← 8, 16, 18, 31** (**72 koordinatı**: kirlilik ve ezber), 14
+(tekilleştirme ve kirlilik tanımı), 55 (çözüm sızıntısı), 57 (tutulan küme), 68 (unutturmanın ölçülmesi ve geri
+kazanım), 41 (parametrik ↔ parametrik olmayan bellek). **73 ← 45** (hakem model; kendini kayırma), 16, 57 (hakem
+ajan), 64 (tartışma ve danışmanlık; bilgisi olmayan hakem), 65 (hakem güveni — **numarasız işaretin tahsili**),
+66 (hakem de dalkavukluğa açık), 52/56 (öz-yansıma ↔ hakem), 44 (sorgu yeniden yazma), 38 (süreç denetimi).
+**74 ← 6, 18** (**74–77 bandının açılışı**: modelin içine bakmanın araçları), 3 (temsil), 7 (dikkat başı,
+ileri beslemeli katman), 18 (anahtar-değer belleği; nedensel izleme), 62 (ret yönü), 65 (Azaria'nın iç
+sınıflandırıcısı), 67 (sonda; temsil mühendisliği; doğruluğun doğrusal temsili), 30 (kısıtlı üretim — devir).
 
 **Yeniden çağrılacak eski kavramlar (planlı hatırlatmalar):**
-- Rol oyunu ve simulakr (66), belirtim oyunu ve hile gizleme (61), düşünce zinciri sadakati (32), hile oranı
-  (57) → 67.
-- Savunma katmanları ve açık ağırlığın üç kapısı (63), dual-use ret sınırı (62), ajan saldırıları (58) → 68.
-- Açık ağırlık ve lisans (20), kimin görüşü ve model belirtimi (66), anayasa (64), yasa bir belirtimdir (61) → 69.
-- Kırmızı takım (63), ölçeklenebilir denetim (64), özerklik düzeyleri ve devir (59), görev ufku (40), ölçek
-  yasaları (9) → 70.
-- Kalibrasyon ve hakem güveni (65) → 67, 71, 73. Dalkavukluk değerlendirmesinin dağıtım kapısı olması (66) → 70.
-- Hedef yanlış genellemesi ve içsel eniyileyici (61), sığ hizalama (62) → 67.
+- Cetvel bir tasarım ürünüdür (16, 57) → 71, 72, 73. Kalibrasyon ve ECE (65) → 71, 73.
+- Kirlilik (14), ezber (8, 18), çözüm sızıntısı (55), tutulan küme (57) → 72.
+- Hakem model ve üç yanlılık (45), tartışma (64), dalkavukluk (66) → 73.
+- Temsil (3), anahtar-değer belleği ve nedensel izleme (18), ret yönü (62), sonda (67) → 74.
+- Yetenek çıkarımı, değerlendirme farkındalığı, yetenek saklama (67) → 71, 73.
+- Marjinal risk ve taban (68), denetimin erişimi (69), eşik ölçümü (70) → 71, 78, 80.
 
-**Araştırılacak güncel akademik alanlar (67 için öncelikli):** aldatmanın tanımı ve taksonomisi (Park ve ark.
-2024, Patterns — doğrulanmalı; Ward ve ark. NeurIPS 2023 "Honesty is the best policy" — doğrulanmalı), uyuyan
-ajanlar ve aldatıcı hizalanma (Hubinger ve ark. 2024 Sleeper Agents — arXiv, hakemsiz birincil; Greenblatt ve ark.
-2024 alignment faking — arXiv), bağlam içi entrika ve değerlendirme farkındalığı (Meinke ve ark. 2024 Apollo —
-arXiv; Laine ve ark. 2024 Situational Awareness Dataset — NeurIPS 2024 D&B, doğrulanmalı; Berglund ve ark. 2023
-out-of-context reasoning — arXiv; Scheurer ve ark. 2023 insider trading — arXiv), gizli bilgi ve yalan tespiti
-(Burns ve ark. ICLR 2023 discovering latent knowledge; Marks & Tegmark COLM 2024 geometry of truth —
-doğrulanmalı; Pacchiardi ve ark. ICLR 2024 lie detection — doğrulanmalı; Azaria & Mitchell 65'ten), düşünce
-zinciri sadakati ve izleme (Turpin 66'dan; Chen ve ark. 2025 "reasoning models don't always say what they think"
-— Anthropic, arXiv; Baker ve ark. 2025 61'den; Lanham ve ark. 2023 measuring faithfulness — arXiv), model yazımı
-değerlendirmelerde durum farkındalığı ölçeği (Perez ve ark. 2023 66'dan), temsil mühendisliği (Zou ve ark. 2023
-RepE — arXiv). **68 için:** Weidinger ve ark. FAccT 2022 (risk taksonomisi), Li ve ark. ICML 2024 WMDP ve RMU
-unlearning (doğrulanmalı), Fang ve ark. 2024 (ajanlar bir günlük açıkları sömürür — arXiv), Zhang ve ark. Cybench
-ICLR 2025 (doğrulanmalı), Mouton ve ark. RAND 2024 bio uplift raporu (hakemsiz), OpenAI 2024 bio çalışması
-(hakemsiz), Anthropic/OpenAI/DeepMind sistem kartları (hakemsiz, birincil), Goldstein ve ark. 2023 etki
-operasyonları (arXiv), Hazell 2023 oltalama (arXiv), Kapoor ve ark. ICML 2024 açık temel modellerin toplumsal
-etkisi (position, doğrulanmalı), Sandbrink 2023 (arXiv), Bommasani ve ark. 2023 (arXiv). **69 için:** AB Yapay Zekâ
-Yasası (2024/1689, Resmî Gazete), NIST AI RMF 1.0 (2023) ve üretken yapay zekâ profili (2024), ISO/IEC 42001:2023,
-OECD ilkeleri (2019/2024), Bletchley (2023) ve Seul (2024) bildirgeleri, ABD 14110 sayılı kararname (2023;
-2025'te geri alındı — tarihçe olarak), OSI'nin Açık Kaynak Yapay Zekâ Tanımı 1.0 (2024) — **69 koordinatı**;
-akademik: Anderljung ve ark. 2023 frontier AI regulation (arXiv), Shevlane ve ark. 2023 model evaluation for
-extreme risks (arXiv), Weidinger ve ark. 2023 sociotechnical evaluation (arXiv), Raji ve ark. AIES 2022 outsider
-oversight, Casper ve ark. FAccT 2024 black-box audits (doğrulanmalı), Mökander ve ark. 2023 auditing LLMs (AI and
-Ethics), Bommasani ve ark. 2023 Foundation Model Transparency Index (arXiv), Solaiman 2023 gradient of release
-(FAccT 2023 — doğrulanmalı). **70 için:** Anthropic Responsible Scaling Policy (v1 2023, v2.x 2024–2025), OpenAI
-Preparedness Framework (v1 2023, v2 2025), Google DeepMind Frontier Safety Framework (v1 2024, v2 2025) — üçü
-hakemsiz birincil; METR 2024 "common elements of frontier AI safety policies", Karnofsky 2024 "if-then
-commitments" (Carnegie), Frontier Model Forum belgeleri, Uluslararası Yapay Zekâ Güvenliği Raporu (Bengio ve ark.
-2025), Phuong ve ark. 2024 dangerous capability evaluations (arXiv), Kinniment ve ark. 2023 METR (arXiv), Clymer ve
-ark. 2024 ve Buhl ve ark. 2024 safety cases (arXiv), Kinniment/METR görev ufku (40'tan), Anderljung ve ark. 2023.
-Sayısal iddialar ve URL doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları SOZLESME
-§9'dadır. Politika belgeleri için **kanal:** EUR-Lex (CELEX 32024R1689), NIST `doi.org/10.6028/NIST.AI.100-1`,
-OSI `opensource.org/ai/open-source-ai-definition`; sağlayıcı çerçevelerinin **sürüm tarihi** künyeye yazılır
-(belgeler değişiyor; erişim tarihi gerekir).
+**Araştırılacak güncel akademik alanlar (71 için öncelikli):** değerlendirmenin istatistiği (Miller 2024 "Adding
+Error Bars to Evals" — arXiv; Bowyer ve ark. 2025 belirsizlik — doğrulanmalı), ölçüt geçerliliği (Liao ve ark.
+FAccT 2021 ya da 2024 — doğrulanmalı; Raji ve ark. NeurIPS 2021 D&B "AI and the Everything in the Whole Wide
+World Benchmark"), HELM (Liang ve ark. TMLR 2023), BIG-bench (Srivastava ve ark. TMLR 2023), Chatbot Arena
+(Chiang ve ark. ICML 2024), LiveBench ve dinamik ölçütler (doğrulanmalı), istem duyarlılığı (Sclar ve ark. ICLR
+2024; Mizrahi ve ark. TACL 2024), çok seçmeli ölçütlerin kırılganlığı (Alzahrani ve ark. ACL 2024; Pezeshkpour &
+Hruschka NAACL 2024), yetenek çıkarımı (Schaeffer 2024 — doğrulanmalı), değerlendirme bilimi çağrıları
+(Weidinger ve ark. 2025 "Toward an Evaluation Science", arXiv; Reuel ve ark. TMLR 2025 zaten elde). **72 için:**
+kirlilik tespiti (Sainz ve ark. EMNLP 2023 ve 2024; Golchin & Surdeanu ICLR 2024; Oren ve ark. ICLR 2024 "Proving
+Test Set Contamination"; Deng ve ark. NAACL 2024), ezber ölçümü (Carlini ve ark. ICLR 2023 quantifying
+memorization; Nasr ve ark. 2023 çıkarma saldırısı), GSM1k ve yeniden üretim (Zhang ve ark. 2024 — doğrulanmalı),
+Dominguez-Olmedo ve ark. (doğrulanmalı). **73 için:** LLM-as-a-judge (Zheng ve ark. NeurIPS 2023 D&B — 45'te
+kullanıldı; Thakur ve ark. 2024; Bavaresco ve ark. NAACL 2025 — doğrulanmalı), insan değerlendirmesi protokolü
+(Clark ve ark. ACL 2021 "All That's Human Is Not Gold"), hakem yanlılıkları (Panickssery ve ark. NeurIPS 2024
+kendini tanıma; Wataoka ve ark. 2024 self-preference), uzlaşma ölçüsü (Krippendorff/Cohen — klasik).
+**74 için:** devre analizi (Olah ve ark. Distill 2020 zoom-in; Elhage ve ark. 2021 matematiksel çerçeve; Wang ve
+ark. ICLR 2023 IOI devresi; Nanda ve ark. ICLR 2023 grokking), nedensel müdahale (Meng ve ark. NeurIPS 2022
+ROME — 18'de kullanıldı; Geiger ve ark. 2023 hizalanmış arama; Conmy ve ark. NeurIPS 2023 otomatik devre
+keşfi), süperpozisyon ve seyrek otokodlayıcılar (Elhage ve ark. 2022 toy models; Bricken ve ark. 2023; Templeton
+ve ark. 2024 — 75'e devredilecek), yorumlanabilirliğin eleştirisi (Räuker ve ark. SaTML 2023; Casper ve ark.
+2023). Sayısal iddialar ve URL doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları
+SOZLESME §9'dadır.
 
-**Venue doğrulaması.** Batch 10–15'in on yedi kanalı sürüyor (Crossref API ve `query.title`, ACL Anthology,
-DBLP `ee` 12 sn, PMLR GitHub aynası ve dizin ayrıştırması, COLM kabul listesi `curl -k` — Batch 15'te challenge
-sayfası döndü, ICLR proceedings 2025/2026, arXiv API başlık araması, Semantic Scholar `openAccessPdf`,
-`papers.nips.cc` yıl dizinleri, **Europe PMC `fullTextXML`** — Nature OA makalelerinin tam metni; **PMLR cilt
-dizini** — DBLP 503 verince). Kural sürüyor: OpenReview ve PMLR kimlikleri **tahmin edilmez**; DBLP `ee` ya da
-birincil dizin sayfası. `dblp-b15.py` `dblp-b14.json`'dan tohumlandı; yeniden çalıştırılınca yalnızca eksikleri
-sorar. Batch 15'in kaynak metinleri `artifacts/b15-research/pdf/*.txt` ve `html/*.txt` altında; PDF'ler (254 MB)
-ve PMLR/COLM dizin dökümleri build şişmesin diye silindi. Batch 11–14'ün `.txt` metinleri de yerinde. 67–70'te
-politika belgeleri PDF/HTML olarak gelir; `fetch-html` betiğiyle `html/*.txt`'ye indirilir, EUR-Lex HTML
-büyüktür (madde bazlı kırpılır).
+**Venue doğrulaması.** Batch 10–16'nın kanalları sürüyor: Crossref API ve `query.title`, ACL Anthology, DBLP
+`ee` (12 sn aralık), PMLR dizini ve GitHub aynası, COLM kabul listesi, ICLR/NeurIPS proceedings sayfaları,
+arXiv API başlık araması, Semantic Scholar `openAccessPdf` (**toplu sorguda 429 verir; tek tek ve aralıklı
+sorulmalı**), `papers.nips.cc` yıl dizinleri, Europe PMC `fullTextXML`, **`pmc.ncbi.nlm.nih.gov` makale sayfası**
+(Europe PMC 404 verirse), **OSF `osf.io/<id>/download`** (ön baskılar için). Kural sürüyor: OpenReview ve PMLR
+kimlikleri **tahmin edilmez**. Yayıncı engelleri: OpenAI, ISO, PNAS, ACM DL ve OUP `urllib`'in varsayılan
+başlığına 403 döner — tarayıcı `User-Agent`'lı `curl` kullanılır; RAND PDF'leri şifreli, `cryptography`
+paketi kurulu olmalı. Batch 16'nın kaynak metinleri `artifacts/b16-research/pdf/*.txt` ve `html/*.txt` altında;
+PDF'ler (133 dosya) build şişmesin diye silindi, `.txt`'ler yerinde. `dblp-b16.json` b15/b14/b13'ten
+tohumlandı; yeniden çalıştırılınca yalnızca eksikleri sorar.
 
 **Görselleştirme ihtiyaçları (öngörü):**
-- 67: aldatma taksonomisi (stratejik aldatma ↔ dalkavukluk ↔ uydurma; 66-Şekil 1 ve 65'in anlamsal
-  entropisiyle köprü); uyuyan ajan kalıcılığı (güvenlik eğitimi öncesi/sonrası tetiklenen davranış oranı —
-  hakemsiz kaynak, işaretle); değerlendirme farkındalığı ölçüm tablosu; düşünce zinciri sadakati ölçümü
-  (Turpin'in −36,3'ü ile Chen ve ark.'nın ipucu anma oranı).
-- 68: dual-use risk matrisi (alan × uplift × kanıt düzeyi); unlearning'in kırılganlığı (WMDP: RMU sonrası
-  ince ayarla geri kazanım); açık ↔ kapalı yayımlama kapıları (63-Şekil 1'in "üretim kuralı ve ağırlık"
-  satırının devamı).
-- 69: düzenleyici çerçeve karşılaştırması (AB Yasası risk sınıfları ↔ NIST RMF ↔ ISO 42001 ↔ RSP tarzı
-  gönüllü çerçeve); açık kaynak tanımının dört özgürlüğü ↔ model bileşenleri (ağırlık, kod, veri, belge —
-  **69 koordinatı**).
-- 70: üç sağlayıcı çerçevesinin eşik/kademe tablosu (ASL ↔ Preparedness ↔ FSF kritik yetenek düzeyleri);
-  "if-then" taahhüt akışı (değerlendirme → eşik → önlem); Faz 7'nin kapanış haritası (61–70'in birbirine
-  devirleri; 60-Şekil'in faz kapanış düzeninin geri çağrımı).
+- 71: geçerlilik zinciri (yapı → görev → ölçüt → puan; her halkada ne kırılır); aynı modelin farklı istem
+  biçimlerinde puan dağılımı (istem duyarlılığı); hata payı olmayan liderlik tablosu ↔ güven aralıklı tablo.
+- 72: kirliliğin dört yolu (doğrudan sızıntı, çeviri/parafraz, dolaylı, çözüm sızıntısı) × tespit yöntemi;
+  GSM1k tarzı yeniden üretimde puan düşüşü; ezber ↔ genelleme ekseninin 18'den devamı.
+- 73: hakem–insan uzlaşması matrisi (hangi görevde ne kadar); üç yanlılığın (konum, uzunluk, kendini kayırma)
+  ölçülmüş etkisi; insan protokolünün maliyeti ↔ hakem maliyeti.
+- 74: bir devrenin anatomisi (girdi → başlar → kalıntı akış → çıktı; IOI gibi somut bir örnekle); nedensel
+  müdahale şeması (ne değiştirildi, ne ölçüldü); sondanın ne söylediği ↔ ne söylemediği (67'nin sonda satırının
+  devamı).
 
-**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 16` ve `readingOrder` 67'den
-kesintisiz devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir (68 ve 70'in
-başlıkları değişecekse entegrasyondan **önce**); YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim
-defteri ve gerekiyorsa bağlayıcı olgu kararları güncellenir (69'un "ödendi" satırı ve 20'nin 68/70 taksitleri
-dâhil); doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni cursor ve sonraki run hazırlığıyla
-güncellenir — 70 Faz 7'yi kapattığı için `+1` fazı Faz 8'in (71–80) kategori kararını ve 71'in prerequisite'lerini
-de hazırlar. Dördü de `safety-and-evaluation` olacaksa okuma listesi öbeği yalnızca büyür; Batch 15'te 63–66 aynı
-öbeğe girerken `reading-list-groups.test.ts` değişmedi (495 test), bu run'da da değişiklik beklenmez (test yine
-de çalıştırılır).
+**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 17` ve `readingOrder` 71'den kesintisiz
+devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir (başlık değişecekse
+entegrasyondan **önce**); YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri ve bağlayıcı
+kararlar güncellenir (72 koordinatının "ödendi" satırı ve 74–77 bandının açılışı dâhil); doğrulama kapıları
+çalıştırılır; `+1` fazında bu dosya yeni cursor ve sonraki run hazırlığıyla güncellenir. Faz 8'in kategori
+kararı yukarıdaki hazırlığa göre verilir ve okuma listesi öbeği ona göre büyür; `reading-list-groups.test.ts`
+her hâlükârda çalıştırılır.
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -216,108 +184,102 @@ node tools/series/sync-series-hashes.cjs --write
 node tools/series/check-series-content.cjs && node tools/series/check-series-svg.cjs
 corepack pnpm typecheck && corepack pnpm test && corepack pnpm build
 ```
-Notlar: frontmatter **gray-matter ile** okunur; `catalog.json` 2 boşluklu `JSON.stringify` ile
-byte-identical round-trip yapar; `roadmap.json`'un kompakt satır biçimi satır bazlı replace ile
-korunur. **Sıra önemlidir:** `sync-series-hashes.cjs` katalog varsa yalnızca katalog kayıtlarını
-gezer, dolayısıyla yeni makalelerin hash'i ancak `entegre-batch --write`'tan **sonra** düzelir;
-frontmatter'a önce yer tutucu hash yazmak sorun değildir (Batch 13–15'te böyle girdi).
-Roadmap başlığı frontmatter başlığıyla birebir eşleşmek zorundadır — başlık değiştiriliyorsa
-roadmap.json entegrasyondan **önce** güncellenmelidir (58'de böyle yapıldı). **Entegrasyondan sonra
-makale gövdesine her dokunuşta `sync-series-hashes.cjs --write` yeniden çalıştırılmalıdır** (SVG
-değişikliği hash'i etkilemez; Batch 14'te 61-Şekil 3, Batch 15'te beş şekil entegrasyondan sonra düzeltildi, hash aynı kaldı; gövdeye dokunulursa yeniden çalıştırılır).
-Araçların üçü de varsayılan olarak **yalnızca AI serisini** işler (`--series=boun` ayrı seri içindir).
-`check-series-svg.cjs` XML ayrıştırmaz ve `var(` parantezinin kapanmadığı dolguyu görmez: her yeni SVG
-ayrıca `python -c "import xml.etree.ElementTree as ET; ET.parse(f)"` ile ayrıştırılır **ve**
-`grep -c 'var(--[a-z-]*"' content/series/assets/*/*.svg` ile taranır. Denetleyicinin taşma tahmini
-(karakter × 7,15) `text-anchor="middle"` metinde x ± genişlik/2 alır: 210 birimlik kutuya ortalanmış
-alt satır ≤ 28 karakter, gösterge etiketi x ≤ 500'den başlar; 13 birimde x=20'den alt not ~97 karakter
-alır; döndürülmüş (`rotate`) etiketler taşma diye işaretlenir — kısa sözcükleri üst üste dizmek daha
-güvenli (59-Şekil 1). **Denetleyici elemanlar arası binmeyi görmez:** gösterge ile sütun başlığı aynı y
-bandını paylaşmaz (61-Şekil 3'te bindi, yalnızca ekran görüntüsünde çıktı) — gösterge ya sağ üstte (x ≥
-500) ya alt not bloğunda. Denetleyici "Şekil N metinde referanslanmamış" ve "şekil numarası N, beklenen M"
-uyarılarını verir. **Yayın öncesi zorunlu taramalar (Batch 15'te hepsi çalıştı; mantığı `scan-b15.py`'de, scratchpad'de kaldı — yeniden yazılması beş dakikadır):** parantezli gloss listesi ↔
-terim defteri; yasaklı biçimler (`gömme`, `korpus`, `geliştirme kümesi`, `niceleme`, `az/sıfır atışlı`);
-kendi numarası (62'de "62'nin dersi" böyle yakalandı); ve **numaralı ileri gönderme** (Python: gövdede ≥ N+1
-olan "K'de / K'te / K. makale" kalıpları — 66'dan büyük sayılar yüzde/puan/örnek sayısı/model boyutu olarak elle ayıklandı; "14,66'sı" gibi ondalıklar kendi-numarası taramasında yanlış pozitif verir).
-Kendi hesabımızla verilen sayılar gövdede "kendi hesabımız" diye işaretlenir (karar #145).
+Notlar: frontmatter **gray-matter ile** okunur; `catalog.json` 2 boşluklu `JSON.stringify` ile byte-identical
+round-trip yapar; `roadmap.json`'un kompakt satır biçimi satır bazlı replace ile korunur. **Sıra önemlidir:**
+`sync-series-hashes.cjs` katalog varsa yalnızca katalog kayıtlarını gezer, dolayısıyla yeni makalelerin hash'i
+ancak `entegre-batch --write`'tan **sonra** düzelir; frontmatter'a önce 64 sıfırlık yer tutucu hash yazmak
+sorun değildir (Batch 13–16'da böyle girdi). Roadmap başlığı frontmatter başlığıyla birebir eşleşmek zorundadır.
+**Entegrasyondan sonra makale gövdesine her dokunuşta `sync-series-hashes.cjs --write` yeniden çalıştırılır**
+(Batch 16'da 70'in kaynak cümlesi entegrasyondan sonra düzeltildi ve hash yeniden yazıldı; SVG değişikliği
+hash'i etkilemez, şekil **alt metni** etkiler). Araçların üçü de varsayılan olarak yalnızca AI serisini işler.
 
-**Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch
-15'te build ve dev öncesinde 3000–3999 arası dinleyen port ve `node` süreci yoktu; yine de izole kopya
-kullanıldı ve ana worktree'nin `.next` dizinine hiç dokunulmadı: `tar --exclude=./node_modules
---exclude=./.next --exclude=./.git --exclude=./artifacts --exclude=./.env.local -cf - . | (cd
-/d/dev/anil-lib-b15-render && tar xf -)`, junction PowerShell ile `New-Item -ItemType Junction -Path
-'D:\dev\anil-lib-b15-render\node_modules' -Target 'D:\dev\anil-lib\node_modules'`, kopyada `corepack pnpm
-build` (exit 0; `/seri/[slug]` 66 yol), sonra kopyanın `.next`'i silinip `.claude/launch.json`'a geçici
-yapılandırma (`anil-lib-seri-b15`: Git Bash **tam yolu** `C:\Users\<user>\AppData\Local\Programs\Git\bin\bash.exe`,
-`-lc`, `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b15-render && exec corepack pnpm dev -p 3210`).
-**launch.json'ı Bash heredoc ile yazma:** `\\` çiftleri tek `\`'a indi ve dosya geçersiz JSON oldu (Batch
-15'te tekrar); Python `json.dumps` ile ya da Write aracıyla yaz. Kopyada `.env.local` olmadığı için kapı
-kendiliğinden kapalı. `typecheck` ve `test` ana worktree'de çalıştırıldı. Entegrasyondan sonra düzeltilen bir
-SVG kopyaya `cp` ile taşınmalı ve **`diff -rq content/series/assets <kopya>/content/series/assets` ile
-doğrulanmalı** (Batch 15'te `&&` zinciri bir assert'te kırılınca üç düzeltme kopyaya gitmedi ve ilk yeniden
-çekim eski şekilleri gösterdi). Temizlik: **önce** `preview_stop`, sonra junction'ı kaldır (`cmd /c rmdir`
-junction yoluna — içeriği takip etmez; ardından ana `node_modules`'ın yerinde olduğu doğrulanır: 40 giriş,
-`node_modules/next/package.json`), sonra kopyayı sil; launch.json özgün hâline döndürüldü
-(`artifacts/b15-research/launch.json.orig` yedeği). Kural değişmedi: **ana worktree'de `.next` silme, `pnpm
-build` ya da `next dev` başlatmadan önce `netstat` ve `tasklist` ile o an paralel süreç var mı bak; varsa karşı
-oturuma haber ver ve izole kopyayı kullan.** Bash aracında `cd` bir komuttan sonrakine taşınır — her komut `cd
-/d/dev/anil-lib;` ile başlar; Python Windows'ta `/d/dev/...` yolunu tanımaz (`D:/...` verilir) ve konsola Türkçe
-basarken `sys.stdout.reconfigure(encoding='utf-8')` ya da `PYTHONIOENCODING=utf-8` ister.
+**Yayın öncesi zorunlu taramalar.** `artifacts/b16-research/scan-b16.py <makale.md> <N>` tek komutta veriyor:
+kelime sayısı, parantezli gloss listesi (terim defteriyle karşılaştırmak için), yasaklı biçimler (`gömme`,
+`korpus`, `geliştirme kümesi`, `niceleme`, `az/sıfır atışlı`, `çekişmeli`), **kendi numarası** ve **numaralı
+ileri gönderme** (≥ N+1) taramaları, bölüm başlıkları, "Kendini yokla" ve şekil sayısı. İleri gönderme
+taramasının bulguları elle ayıklanır (yüzde, puan, katılımcı sayısı ve eğri altı alan değerleri yanlış pozitif
+verir). SVG için **iki** kapı: `check-series-svg.cjs` (viewBox, sabit renk, yasak öge, font boyutu, 720'ye
+karşı taşma) ve `artifacts/b16-research/svgcheck-b16.py <klasör>` (sütuna binme, sağ/sol kenar, alt pay ≥ 12);
+ayrıca her SVG `python -c "import xml.etree.ElementTree as ET; ET.parse(f)"` ile ayrıştırılır ve
+`grep -c 'var(--[a-z-]*"'` ile kapanmamış `var(` parantezi aranır. Batch 16'da ikinci ölçer on bir sütun binmesi
+ve dokuz alt pay eksikliği yakaladı; PNG turunda yeni kusur çıkmadı.
 
-**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 15'te build'den önce
-`artifacts/b15-research/pdf/*.pdf` (115 dosya, 254 MB) ve `html/pmlr267_index.html` (3,6 MB) ile
-`html/colm2024_accepted.html` silindi; `.txt` metinleri, `dblp-b15.*`, `fetch-b15-report.json`, `html/*.txt`,
-`sweep-b15.py`, `measure-b15.js`, `shots-b15.cjs`, `shots/*.png` (26 şekil görüntüsü, ~3 MB),
-`launch.json.orig` ve loglar kaldı (18 MB).
+**Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch 16'da build ve
+dev öncesinde 3000–3999 arası dinleyen port ve `node` süreci yoktu; yine de izole kopya kullanıldı ve ana
+worktree'nin `.next` dizinine hiç dokunulmadı: `tar --exclude=./node_modules --exclude=./.next --exclude=./.git
+--exclude=./artifacts --exclude=./.env.local -cf - . | (cd /d/dev/anil-lib-b16-render && tar xf -)`, junction
+PowerShell ile `New-Item -ItemType Junction -Path 'D:\dev\anil-lib-b16-render\node_modules' -Target
+'D:\dev\anil-lib\node_modules'`, kopyada `corepack pnpm build` (exit 0; `/seri/[slug]` 70 yol), sonra kopyanın
+`.next`'i silinip `.claude/launch.json`'a geçici yapılandırma (`anil-lib-seri-b16`: Git Bash **tam yolu**,
+`-lc`, `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b16-render && exec corepack pnpm dev -p 3210`).
+**launch.json'ı Bash heredoc ile yazma:** `\\` çiftleri tek `\`'a iner ve dosya geçersiz JSON olur; Python
+`json.dumps` ile ya da Write aracıyla yaz (Batch 16'da Python kullanıldı, sorun çıkmadı). Kopyada `.env.local`
+olmadığı için kapı kendiliğinden kapalı. `typecheck` ve `test` ana worktree'de çalıştırıldı. Temizlik: **önce**
+`preview_stop`, sonra junction `cmd /c rmdir` ile kaldırılır (içeriği takip etmez; ardından ana `node_modules`
+doğrulanır: 45 giriş, `node_modules/next/package.json`), sonra kopya silinir; launch.json
+`artifacts/b16-research/launch.json.orig`'ten geri alınır. Kural değişmedi: **ana worktree'de `.next` silme,
+`pnpm build` ya da `next dev` başlatmadan önce `netstat` ve `tasklist` ile paralel süreç var mı bak.** Bash
+aracında `cd` bir komuttan sonrakine taşınır — her komut `cd /d/dev/anil-lib;` ile başlar; Python Windows'ta
+`/d/dev/...` yolunu tanımaz (`D:/...` verilir) ve konsola Türkçe basarken `sys.stdout.reconfigure(encoding='utf-8')`
+ister.
 
-**Render doğrulama seti (Batch 15'te kullanılan).** Rota sweep'i Python `urllib` ile (67 rota, 40,5 sn;
-`artifacts/b15-research/sweep-b15.py`), tarayıcı gezintisinden **önce**. Tarayıcı panosundan **elle**:
-`resize_window` ile 1440/768/375, tema `documentElement.classList` üzerinde `dark`/`sepia` değiştirilerek, ölçüm
-fonksiyonu `localStorage`'a yazılıp `eval(localStorage.getItem('b15m'))()` ile çağrıldı (kaynağı
-`artifacts/b15-research/measure-b15.js`; bir `browser_batch` en çok 25 eylem alır — üç tema tek `javascript_tool`
-çağrısında birleştirilebilir); geçerli dolgu kümesi (`badFills`), `getBBox` ile viewBox içi kalma (`outOfBox`),
+**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 16'da build'den önce değil
+sonra temizlendi (build izole kopyada ve kopya `artifacts`'ı içermiyor); yine de run sonunda
+`artifacts/b16-research/pdf/*.pdf` (133 dosya, ~338 MB) silindi. Kalanlar: `.txt` metinleri, `html/*.txt`,
+`dblp-b16.*`, `fetch-b16-report.json`, `s2-b16.json`, `grab.py`, `scan-b16.py`, `svgcheck-b16.py`,
+`sweep-b16.py`, `shots-b16.cjs`, `shots/*.png` (24 görüntü, ~2,5 MB), `launch.json.orig`, loglar (24 MB).
+
+**Render doğrulama seti (Batch 16'da kullanılan).** Rota sweep'i Python `urllib` ile (71 rota, 35,4 sn;
+`artifacts/b16-research/sweep-b16.py`), tarayıcı gezintisinden **önce**. Tarayıcı panosundan elle: `resize_window`
+ile 1440/768/375; tema `documentElement.classList` üzerinde `dark`/`sepia` değiştirilerek; ölçüm fonksiyonu
+`localStorage`'a yazılıp `eval(localStorage.getItem('b16m'))()` ile çağrıldı (kaynağı Batch 15'in
+`measure-b15.js`'i); geçerli dolgu kümesi (`badFills`), `getBBox` ile viewBox içi kalma (`outOfBox`),
 `scrollWidth > clientWidth`, figure/svg/figcaption sayıları, `main.innerText` içinde `undefined`/`NaN`. Dört
-makale × üç genişlik × üç tema: taşma 0, badFills ve outOfBox boş, sızıntı yok, `figScroll` false. **Şekil
-görüntüleri panodan değil Playwright'tan alındı:** panonun `screenshot`'ı toplu batch'te "Image omitted", tek
-çağrıda 5 sn zaman aşımı ya da 1500×600 emülasyonun 800×323'lük kırpık bir köşesini döndürdü (Batch 14'ün "iki
-kez çağır" tarifi bu run'da yetmedi). `artifacts/b15-research/shots-b15.cjs` (`@playwright/test`'in Chromium'u —
-`playwright` paketi tek başına yüklü değil; `page.goto` **`waitUntil: 'load'`** + `main figure svg` bekleme —
-`networkidle` reader-sync 503 döngüsü yüzünden hiç yerleşmez; `#b15o` sabit kaplayıcıda şeklin 1200 px klonu,
-`documentElement.classList` ile light/dark, `element.screenshot`) 13 şekli 26 PNG olarak `shots/` altına yazdı;
-PNG'ler Read aracıyla incelendi. Bu yol panodan hızlı, büyük (1240 px) ve deterministik; **sonraki run'larda
-varsayılan**. Beş kusur yalnızca görüntüde çıktı (65-Şekil 3 panel taşması, 66-Şekil 2 sütun taşması,
-64-Şekil 1 kutu sığmazlığı, 64-Şekil 2 yapışık başlıklar, 65-Şekil 1 köşegen etiketi), düzeltilip yeniden
-çekildi; kurallar YOL-HARITASI Batch 15 öğrenme notlarında.
+makale × üç genişlik × üç tema: taşma 0, badFills ve outOfBox boş, sızıntı yok, `figScroll` false. **Sekme
+sınırı:** pano sekme sayısını sınırlıyor; yerel dosya sekmeleri (`file://` ile açılan SVG önizlemeleri)
+`navigate` kabul etmiyor — `tabs_close` ile temizlenip `tabs_create` ile yeni sekme açılmalı. **Şekil
+görüntüleri Playwright'tan** (`shots-b16.cjs`; `@playwright/test`'in Chromium'u, `waitUntil: 'load'` +
+`main figure svg` bekleme, `#b16o` kaplayıcıda 1200 px klon, light/dark PNG): 12 şekil, 24 PNG, Read aracıyla
+incelendi.
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
 
-- `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı. `artifacts/**` altındaki render
-  betikleri de lint kapsamındadır; bilinen durum.
-- Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama çevrimdışı
-  moduna düşer — beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur.
-- Mobil genişlikte diyagramlar kendi kaplarında ölçekleniyor; sayfa gövdesi taşmıyor. Batch 12–14
-  ölçümünde `figScroll` 375'te false — regresyon değil.
-- `check-series-svg.cjs` yalnızca `y > viewBox yüksekliği` durumunu yakalar; alt kenara çok yakın
-  bir metin tabanı denetimden geçer. Batch 7–14'ün yeni şekillerinde alt pay ≥ 14 birim; yayımlanmış
-  eski şekillerin bir kısmında bu pay hâlâ küçüktür. Kutu içine binen etiketleri, elemanlar arası
-  binmeyi ve kapanmamış `var(` parantezini de görmez (yukarıdaki ek taramalar ve ekran görüntüsü bunun için).
-- Okuma listesinde `reasoning-and-memory` ve `agents-and-retrieval` birden çok öbek hâlinde
-  görünür (27–28, 29, 30–40, 41–60); `safety-and-evaluation` 61–66 tek öbek. Kasıtlıdır (kararlar #65,
-  #107, #142, #148); `reading-list-groups.test.ts` tam olarak bu durumu sınar.
-- Repoda ikinci bir seri (`content/series-boun/**`) bulunuyor ve ayrı bir üretim hattıyla
-  ilerliyor; AI serisinin araçları bu dizine dokunmaz. Build iki seriyi birden derler; sayfa sayısı
-  ikisinin toplamıdır (Batch 15 sonunda 115).
-- Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor. Dördü git'te **izleniyor**
-  (`Karar`, `her`, `Yaşayan`, `yapılırsa`); biri izlenmiyor (`**zorundadır**.` — `*` görünümlü
-  karakter U+F02A). Build'i etkilemiyor. Temizlik AI serisinin kapsamı dışıdır; sahibinin kararı.
-- Batch 12–14'ün üretimi (51–62) kullanıcı tarafından commit edildi (5 Eylül 2026). Batch 15'in üretimi
-  (63–66, catalog/roadmap/YOL-HARITASI/HANDOFF/.wolf değişiklikleri, `artifacts/b15-research/`) çalışma
-  ağacında **commit edilmemiş** duruyor; commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
-- Tarayıcı panosunun `screenshot`'ı bu ortamda güvenilmez (yukarıda); DOM ölçümü panoda, şekil görüntüsü
-  Playwright'ta yapılır.
+- `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı. `artifacts/**` altındaki betikler de lint
+  kapsamındadır; bilinen durum.
+- Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama çevrimdışı moduna düşer —
+  beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur (Batch 16'da da yalnızca bu üç
+  503 görüldü).
+- Ham HTML'de sayfa başına 39 "undefined" görünür; Next.js iskelesindendir ve yayımlanmış eski makalelerde de
+  aynıdır. `main.innerText` ölçümünde 0'dır — regresyon değil.
+- Mobil genişlikte diyagramlar kendi kaplarında ölçekleniyor; sayfa gövdesi taşmıyor (`figScroll` 375'te false).
+- `check-series-svg.cjs` yalnızca `y > viewBox yüksekliği` ve 720'ye karşı yatay taşmayı yakalar; **sütuna
+  binmeyi, alt pay azlığını ve kapanmamış `var(` parantezini görmez** — bunun için `svgcheck-b16.py` ve grep
+  kapısı var. Yayımlanmış eski şekillerin bir kısmında alt pay hâlâ küçüktür.
+- Okuma listesinde `reasoning-and-memory` ve `agents-and-retrieval` birden çok öbek hâlinde görünür (27–28, 29,
+  30–40, 41–60); `safety-and-evaluation` 61–70 tek öbek. Kasıtlıdır; `reading-list-groups.test.ts` bunu sınar.
+- Repoda ikinci bir seri (`content/series-boun/**`) ayrı bir üretim hattıyla ilerliyor; AI serisinin araçları o
+  dizine dokunmaz. Build iki seriyi birden derler.
+- Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa` izleniyor;
+  `**zorundadır**.` izlenmiyor). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
+- Batch 12–14'ün üretimi (51–62) kullanıcı tarafından commit edildi. **Batch 15 (63–66) ve Batch 16 (67–70)
+  çalışma ağacında commit edilmemiş** duruyor; commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
 
+- **Batch 16 (2026-09-06):** Makale 67–70, Faz 7'nin kapanışı: aldatma ve durum farkındalığı → kötüye kullanım
+  (siber, biyolojik, bilgi operasyonları) → yönetişim → sorumlu ölçekleme. `BATCH=4+1`. Araştırma (~140 aday PDF
+  tek betikle; 110 DBLP `ee` sorgusu; 70 politika ve sağlayıcı sayfası; Crossref DOI; OSF ön baskısı; PMC tam
+  metni), yazım, entegrasyon ve doğrulama ana oturumda, ultracode açık olmasına rağmen workflow/subagent
+  kullanılmadan yapıldı. İki başlık Türkçeleştirildi: "Bio" → "Biyolojik" (karar #154), "Frontier" → "Sınır
+  Model" (karar #155). **İki koordinat kapandı** (20'nin açık kaynak tanımı → 69; 20'nin açık ağırlık güvenliği
+  → 68 + 70), yeni koordinat açılmadı (karar #159 dâhil kararlar #154–#159). 99 kaynak kaleminin 36'sı hakemli,
+  9'u resmî belge, 54'ü işaretlenmiş hakemsiz kalem; 70'in tamamı hakemsiz ve bu gövdede söylendi. Kapılar:
+  `pnpm typecheck` (0), 507 test, `pnpm build` (exit 0, `/seri/[slug]` 70 yol, izole kopyada), 71 rotanın tamamı
+  200 (35,4 sn), dört makale × üç genişlik × üç temada DOM ölçümü (badFills ve outOfBox boş, taşma 0, sızıntı
+  yok), 12 yeni diyagramın tamamı Playwright ile light/dark PNG olarak alınıp gözle doğrulandı. Yeni ölçer
+  `svgcheck-b16.py` sütun binmelerini **yazım aşamasında** yakaladı; PNG turunda yeni kusur çıkmadı. Paralel
+  oturum görünmedi; build ve dev sunucusu izole kopyada (`D:\dev\anil-lib-b16-render`, 3210), launch.json
+  geçici yapılandırması run sonunda geri alındı, kopya ve junction silindi.
 - **Batch 0 (2026-08-25):** Makale 1–5, `foundations`; seri altyapısı aynı görevde kuruldu.
 - **Batch 1 (2026-08-26/27):** Makale 6–10, `models-and-training`. İnceleme turu 20 BLOCKER +
   ~40 MAJOR buldu (en ağırı: makale 9'un Kaplan tahsisinin baştan yanlış kurulması).

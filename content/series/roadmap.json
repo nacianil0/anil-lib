@@ -116,10 +116,10 @@
         { "order": 64, "title": "Constitutional AI ve Ölçeklenebilir Denetim", "status": "yayinda", "slug": "constitutional-ai-ve-olceklenebilir-denetim" },
         { "order": 65, "title": "Belirsizlik ve Kalibrasyon: Model Ne Kadar Emin?", "status": "yayinda", "slug": "belirsizlik-ve-kalibrasyon-model-ne-kadar-emin" },
         { "order": 66, "title": "Dalkavukluk ve Model Karakteri", "status": "yayinda", "slug": "dalkavukluk-ve-model-karakteri" },
-        { "order": 67, "title": "Aldatma ve Durum Farkındalığı Tartışmaları", "status": "planlandi" },
-        { "order": 68, "title": "Kötüye Kullanım: Siber, Bio ve Bilgi Operasyonları", "status": "planlandi" },
-        { "order": 69, "title": "Yönetişim: Politika, Standartlar ve Regülasyon", "status": "planlandi" },
-        { "order": 70, "title": "Sorumlu Ölçekleme: Frontier Güvenlik Çerçeveleri", "status": "planlandi" }
+        { "order": 67, "title": "Aldatma ve Durum Farkındalığı Tartışmaları", "status": "yayinda", "slug": "aldatma-ve-durum-farkindaligi-tartismalari" },
+        { "order": 68, "title": "Kötüye Kullanım: Siber, Biyolojik ve Bilgi Operasyonları", "status": "yayinda", "slug": "kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari" },
+        { "order": 69, "title": "Yönetişim: Politika, Standartlar ve Regülasyon", "status": "yayinda", "slug": "yonetisim-politika-standartlar-ve-regulasyon" },
+        { "order": 70, "title": "Sorumlu Ölçekleme: Sınır Model Güvenlik Çerçeveleri", "status": "yayinda", "slug": "sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri" }
       ]
     },
     {

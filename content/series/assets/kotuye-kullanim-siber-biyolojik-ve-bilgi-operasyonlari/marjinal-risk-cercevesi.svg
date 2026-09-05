@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 392" role="img" aria-label="Altı satırlı tablo; sütunlar adım, adımın sorduğu soru ve hedefli oltalama örneğinde durumu. Tehdidin tanımı: saldırgan kim, kaynağı ne, hedefi ne; oltalama çalışmasında tanımlı. Mevcut risk: açık model olmasaydı bu zarar bugün ne kadar oluyor; oltalamada kısmen. Mevcut savunmalar: bugün hangi savunmalar var ve ne kadar tutuyor; oltalamada yok. Marjinal riskin kanıtı: açık model riski taban üstüne ne kadar çıkarıyor; oltalamada yok. Savunmanın kolaylığı: yeni savunma kurmak ne kadar zor; oltalamada kısmen. Belirsizlik ve varsayımlar: hangi varsayımlar altında geçerli; oltalamada yok. Altta çerçevenin bir denetim listesi olduğu ve incelenen çalışmaların çoğunun ilk adımı doldurup sonrakileri boş bıraktığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">adım</text>
+  <text x="210" y="28" font-size="13" font-weight="bold" fill="var(--text)">sorduğu soru</text>
+  <text x="560" y="28" font-size="13" font-weight="bold" fill="var(--text)">oltalama örneği</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">tehdidin tanımı</text>
+  <text x="210" y="62" font-size="13" fill="var(--text)">saldırgan kim, kaynağı ne,</text>
+  <text x="210" y="80" font-size="13" fill="var(--text)">hedefi ne</text>
+  <text x="560" y="62" font-size="13" fill="var(--text)">tanımlı</text>
+
+  <line x1="20" y1="94" x2="700" y2="94" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="118" font-size="13" font-weight="bold" fill="var(--text)">mevcut risk</text>
+  <text x="210" y="118" font-size="13" fill="var(--text)">açık model olmasaydı bu zarar</text>
+  <text x="210" y="136" font-size="13" fill="var(--text)">bugün ne kadar oluyor</text>
+  <text x="560" y="118" font-size="13" fill="var(--text)">kısmen</text>
+
+  <line x1="20" y1="150" x2="700" y2="150" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="174" font-size="13" font-weight="bold" fill="var(--text)">mevcut savunmalar</text>
+  <text x="210" y="174" font-size="13" fill="var(--text)">bugün hangi savunmalar var,</text>
+  <text x="210" y="192" font-size="13" fill="var(--text)">ne kadar tutuyor</text>
+  <text x="560" y="174" font-size="13" fill="var(--text)">yok</text>
+
+  <line x1="20" y1="206" x2="700" y2="206" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="212" width="680" height="52" fill="var(--accent-soft)" />
+  <text x="20" y="232" font-size="13" font-weight="bold" fill="var(--text)">marjinal riskin kanıtı</text>
+  <text x="210" y="232" font-size="13" fill="var(--text)">açık model riski tabanın üstüne</text>
+  <text x="210" y="250" font-size="13" fill="var(--text)">ne kadar çıkarıyor</text>
+  <text x="560" y="232" font-size="13" fill="var(--text)">yok</text>
+
+  <line x1="20" y1="272" x2="700" y2="272" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="292" font-size="13" font-weight="bold" fill="var(--text)">savunmanın kolaylığı</text>
+  <text x="210" y="292" font-size="13" fill="var(--text)">yeni savunma kurmak ne kadar zor</text>
+  <text x="560" y="292" font-size="13" fill="var(--text)">kısmen</text>
+
+  <line x1="20" y1="306" x2="700" y2="306" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="326" font-size="13" font-weight="bold" fill="var(--text)">belirsizlik</text>
+  <text x="210" y="326" font-size="13" fill="var(--text)">hangi varsayımlar altında geçerli</text>
+  <text x="560" y="326" font-size="13" fill="var(--text)">yok</text>
+
+  <line x1="20" y1="338" x2="700" y2="338" stroke="var(--border)" />
+  <text x="20" y="358" font-size="13" fill="var(--text-muted)">Çerçeve bir sonuç değil, denetim listesi.</text>
+  <text x="20" y="376" font-size="13" fill="var(--text-muted)">İncelenen çalışmalar ilk adımı doldurup sonrakileri boş bırakıyor.</text>
+</svg>

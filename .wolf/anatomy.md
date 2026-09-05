@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T18:27:26.753Z
-> Files: 192 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T22:55:01.866Z
+> Files: 223 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -21,6 +21,13 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/32dd4f14-333e-4d01-961e-edfc8de89f77/scratchpad/
+
+- `b16-handoff.py` — ` + `content/series/assets/<slug>/*.svg` | (~7376 tok)
+- `b16-learning-notes.py` (~1370 tok)
+- `b16-terms-decisions.py` — istemle, arayan (~3094 tok)
+- `b16-yolharitasi-blocks.py` (~2159 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/
 
@@ -137,6 +144,7 @@
 - `series-batch13-faz6-ikinci-yari.md` (~689 tok)
 - `series-batch14-faz7-acilis.md` (~707 tok)
 - `series-batch15-faz7-govde.md` (~843 tok)
+- `series-batch16-faz7-kapanis.md` (~975 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -189,11 +197,19 @@
 - `dblp-b15.py` — Batch 15 DBLP `ee` araması, dblp-b14.json'dan tohumlu (~568 tok)
 - `fetch-b15.py` — fetch, norm, title_match, arxiv_search; ~140 aday PDF (~5847 tok)
 - `fetch-html-b15.py` — strip; sağlayıcı belgeleri → html/*.txt (~650 tok)
+- `launch.json.orig` — özgün .claude/launch.json yedeği (~60 tok)
 - `measure-b15.js` — Tarayıcı panosunda çalıştırılan ölçüm yardımcısı (Batch 13–15); localStorage 'b15m' (~620 tok)
 - `shots-b15.cjs` — Playwright (@playwright/test Chromium) ile figure svg'lerini 1200 px light/dark PNG'ye yazar → shots/ (~700 tok)
 - `sweep-b15.py` — 67 seri rotasını urllib ile 200 denetimi (Batch 15) (~304 tok)
-- `launch.json.orig` — özgün .claude/launch.json yedeği (~60 tok)
-- `pdf/*.txt`, `html/*.txt` — kaynak metinleri (PDF'ler silindi); `shots/*.png` — 26 şekil görüntüsü
+
+## artifacts/b16-research/
+
+- `dblp-b16.py` (~672 tok)
+- `fetch-b16.py` (~7379 tok)
+- `fetch-html-b16.py` — strip (~2509 tok)
+- `grab.py` — Kaynak metinden anahtar sözcük geçen cümleleri çıkarır. (~404 tok)
+- `scan-b16.py` — Yayın öncesi taramalar (Batch 16): parantezli gloss listesi, yasaklı biçimler, (~567 tok)
+- `svgcheck-b16.py` — Sütun taşması ve sağ kenar tahmini (Batch 16): 13 birimlik metin ~6,8 birim/karakter, (~649 tok)
 
 ## artifacts/b7-render/
 
@@ -372,12 +388,16 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `aldatma-ve-durum-farkindaligi-tartismalari.md` — Söylediğinden başka bir şey yapan model (~10528 tok)
 - `belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md` — "Eminim" ne demek (~7378 tok)
 - `constitutional-ai-ve-olceklenebilir-denetim.md` — Etiketi kim yazar, ilkeyi kim (~8517 tok)
 - `dalkavukluk-ve-model-karakteri.md` — Hoşa giden ile doğru olan (~7672 tok)
 - `guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md` — Üç sıfat, bir gerilim (~6368 tok)
 - `hizalama-sorunu-ne-istedigimizi-soylemek-zor.md` — Söylediğimiz şey, istediğimiz şey değil (~7660 tok)
 - `jailbreak-ve-kirmizi-takim.md` — Ret ilk token'lardaysa, ilk token'lar kimin (~10251 tok)
+- `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8142 tok)
+- `sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md` — Eşiği kim yazıyor (~6259 tok)
+- `yonetisim-politika-standartlar-ve-regulasyon.md` — Kararı kim veriyor (~6847 tok)
 
 ## content/series/assets/
 
@@ -426,6 +446,12 @@
 
 ## content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/
 
+
+## content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/
+
+- `aldatma-taksonomisi.svg` (~1296 tok)
+- `insa-edilen-aldatma.svg` (~1186 tok)
+- `test-edildigini-bilmek.svg` (~1806 tok)
 
 ## content/series/assets/arac-kullanimi-islev-cagrisi/
 
@@ -554,6 +580,12 @@
 - `dongu-ve-hat.svg` (~1576 tok)
 - `testi-gecen-yama-nereye-gidiyor.svg` (~759 tok)
 
+## content/series/assets/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari/
+
+- `marjinal-risk-cercevesi.svg` (~1036 tok)
+- `uc-alanin-olcumu.svg` (~1406 tok)
+- `unutturma-ve-geri-kazanim.svg` (~926 tok)
+
 ## content/series/assets/kuantizasyon-modeli-kucultme-sanati/
 
 
@@ -593,6 +625,12 @@
 ## content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/
 
 
+## content/series/assets/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri/
+
+- `faz-yedi-haritasi.svg` (~1595 tok)
+- `kosullu-taahhut-akisi.svg` (~1294 tok)
+- `uc-cerceve-esikleri.svg` (~1533 tok)
+
 ## content/series/assets/surec-denetimi-adim-adim-odullendirme/
 
 
@@ -618,6 +656,12 @@
 
 ## content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/
 
+
+## content/series/assets/yonetisim-politika-standartlar-ve-regulasyon/
+
+- `dort-cerceve.svg` (~1380 tok)
+- `tanim-ve-muafiyet.svg` (~980 tok)
+- `yasanin-yolu.svg` (~1020 tok)
 
 ## docs/seri-boun/
 

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 522" role="img" aria-label="Yedi satırlı tablo; sütunlar ölçüm, düzenek, bulgu, kaynağın türü. Bağlam dışı akıl yürütme, Berglund 2023: sınavın tarifiyle ince ayar, örnek yok; yalnızca veri çoğaltmayla başarıyor, boyla artıyor, taban yüzde 2; hakemli değil. Durum farkındalığı kümesi, Laine 2024: yedi kategori, on üç bin soru, on altı model; hepsi rastgelenin üstünde, aşama ayırt etmede hepsi insanın yüzde 70,3'ünün altında; hakemli. Değerlendirme farkındalığı, Needham 2025: altmış bir kümeden bin kayıt; en iyi model eğri altı alan 0,83, insan 0,92; hakemli değil. Değerlendirme notu, Apollo 2025: bir model test edildiğini yüzde 33'e kadar yazıyor, ötekiler yüzde 1 ve altı; hakemli değil. Bağlam içi entrika, Meinke 2024: altı düzenek; altı modelin beşi, yalanda ısrar takip sorularının yüzde 85'inden çoğunda; hakemli değil. Yetenek saklama, van der Weij 2025: tehlikeli kümede eksi 39,8 ve eksi 32,1 puan, genel kümede eksi 9,7 ve eksi 14,0; hakemli. Entrika karşıtı eğitim, Schoen 2025: gizli eylem 13'ten 0,4'e ve 8,7'den 0,3'e, farkındalık gizli eylemi nedensel olarak azaltıyor; hakemli değil. Altta farkındalığın ayırt edebilme, davranış değişikliğinin ayrı bir ölçüm olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçüm</text>
+  <text x="200" y="28" font-size="13" font-weight="bold" fill="var(--text)">düzenek</text>
+  <text x="380" y="28" font-size="13" font-weight="bold" fill="var(--text)">bulgu</text>
+  <text x="600" y="28" font-size="13" font-weight="bold" fill="var(--text)">kaynak</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">bağlam dışı</text>
+  <text x="20" y="80" font-size="13" font-weight="bold" fill="var(--text)">akıl yürütme</text>
+  <text x="20" y="98" font-size="13" fill="var(--text-muted)">Berglund 2023</text>
+  <text x="200" y="62" font-size="13" fill="var(--text)">sınavın tarifiyle</text>
+  <text x="200" y="80" font-size="13" fill="var(--text)">ince ayar, örnek yok</text>
+  <text x="380" y="62" font-size="13" fill="var(--text)">yalnızca veri çoğaltmayla</text>
+  <text x="380" y="80" font-size="13" fill="var(--text)">başarıyor; taban %2</text>
+  <text x="600" y="62" font-size="13" fill="var(--text-muted)">hakemsiz</text>
+
+  <line x1="20" y1="112" x2="700" y2="112" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="120" width="680" height="70" fill="var(--accent-soft)" />
+  <text x="20" y="142" font-size="13" font-weight="bold" fill="var(--text)">durum farkındalığı</text>
+  <text x="20" y="160" font-size="13" font-weight="bold" fill="var(--text)">kümesi</text>
+  <text x="20" y="178" font-size="13" fill="var(--text-muted)">Laine 2024</text>
+  <text x="200" y="142" font-size="13" fill="var(--text)">7 kategori, 13 bin</text>
+  <text x="200" y="160" font-size="13" fill="var(--text)">soru, 16 model</text>
+  <text x="380" y="142" font-size="13" fill="var(--text)">hepsi rastgelenin üstünde;</text>
+  <text x="380" y="160" font-size="13" fill="var(--text)">aşama ayırt etmede insan</text>
+  <text x="380" y="178" font-size="13" fill="var(--text)">%70,3'ünün altında</text>
+  <text x="600" y="142" font-size="13" fill="var(--text)">hakemli</text>
+
+  <line x1="20" y1="198" x2="700" y2="198" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="222" font-size="13" font-weight="bold" fill="var(--text)">değerlendirme</text>
+  <text x="20" y="240" font-size="13" font-weight="bold" fill="var(--text)">farkındalığı</text>
+  <text x="20" y="258" font-size="13" fill="var(--text-muted)">Needham 2025</text>
+  <text x="200" y="222" font-size="13" fill="var(--text)">61 kümeden bin kayıt:</text>
+  <text x="200" y="240" font-size="13" fill="var(--text)">test mi, dağıtım mı?</text>
+  <text x="380" y="222" font-size="13" fill="var(--text)">en iyi model eğri altı alan</text>
+  <text x="380" y="240" font-size="13" fill="var(--text)">0,83, insan 0,92; ajan</text>
+  <text x="380" y="258" font-size="13" fill="var(--text)">ortamı daha kolay</text>
+  <text x="600" y="222" font-size="13" fill="var(--text-muted)">hakemsiz</text>
+
+  <line x1="20" y1="272" x2="700" y2="272" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="296" font-size="13" font-weight="bold" fill="var(--text)">değerlendirme notu</text>
+  <text x="20" y="314" font-size="13" fill="var(--text-muted)">Apollo 2025</text>
+  <text x="200" y="296" font-size="13" fill="var(--text)">entrika düzeneğinde</text>
+  <text x="200" y="314" font-size="13" fill="var(--text)">düşünce zinciri taranır</text>
+  <text x="380" y="296" font-size="13" fill="var(--text)">bir model "test" diye %33'e</text>
+  <text x="380" y="314" font-size="13" fill="var(--text)">kadar yazıyor; ötekiler ≤ %1</text>
+  <text x="600" y="296" font-size="13" fill="var(--text-muted)">hakemsiz</text>
+
+  <line x1="20" y1="328" x2="700" y2="328" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="352" font-size="13" font-weight="bold" fill="var(--text)">bağlam içi entrika</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-muted)">Meinke 2024</text>
+  <text x="200" y="352" font-size="13" fill="var(--text)">altı düzenek, güçlü</text>
+  <text x="200" y="370" font-size="13" fill="var(--text)">hedef, çelişen karar</text>
+  <text x="380" y="352" font-size="13" fill="var(--text)">6 modelin 5'i en az birinde;</text>
+  <text x="380" y="370" font-size="13" fill="var(--text)">yalanda ısrar: takip</text>
+  <text x="380" y="388" font-size="13" fill="var(--text)">sorularının %85'inden çoğu</text>
+  <text x="600" y="352" font-size="13" fill="var(--text-muted)">hakemsiz</text>
+
+  <line x1="20" y1="402" x2="700" y2="402" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="410" width="680" height="52" fill="var(--accent-soft)" />
+  <text x="20" y="430" font-size="13" font-weight="bold" fill="var(--text)">yetenek saklama</text>
+  <text x="20" y="448" font-size="13" fill="var(--text-muted)">van der Weij 2025</text>
+  <text x="200" y="430" font-size="13" fill="var(--text)">istemle seçici düşük</text>
+  <text x="200" y="448" font-size="13" fill="var(--text)">başarı, iki küme</text>
+  <text x="380" y="430" font-size="13" fill="var(--text)">tehlikeli küme −39,8 / −32,1</text>
+  <text x="380" y="448" font-size="13" fill="var(--text)">puan; genel küme −9,7 / −14,0</text>
+  <text x="600" y="430" font-size="13" fill="var(--text)">hakemli</text>
+
+  <line x1="20" y1="470" x2="700" y2="470" stroke="var(--border)" />
+  <text x="20" y="490" font-size="13" fill="var(--text-muted)">Farkındalık ayırt edebilmedir; davranış değişikliği ayrı ölçülür.</text>
+  <text x="20" y="508" font-size="13" fill="var(--text-muted)">"hakemsiz" = hakemli olmayan ön çalışma.</text>
+</svg>

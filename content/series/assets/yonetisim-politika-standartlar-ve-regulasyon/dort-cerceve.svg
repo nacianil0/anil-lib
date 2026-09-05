@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Dört satırlı tablo; sütunlar çerçeve, bağlayıcılık, tetikleyici ve ne istediği. Avrupa Birliği Yapay Zekâ Yasası 2024: bağlayıcı; tetikleyici modelin sınıfı ve hesap eşiği; belgelendirme, değerlendirme, olay bildirimi ve siber güvenlik ister. NIST Yapay Zekâ Risk Yönetimi Çerçevesi 2023 ve üretken yapay zekâ profili 2024: gönüllü; tetikleyici yok, kuruluş kapsamını kendi seçer; yönet, haritala, ölç ve idare et işlevleriyle risk yönetimi ister, üretken profil kimyasal ve biyolojik bilgiye erişimi ayrı bir risk sayar. ISO ve IEC 42001 2023: gönüllü ama belgelendirilebilir; tetikleyici kuruluşun kendi kararı; yapay zekâ yönetim sistemi kurmayı ve sürdürmeyi ister. Seul Sınır Yapay Zekâ Güvenliği Taahhütleri 2024: gönüllü siyasi taahhüt; tetikleyici sınır model geliştiriciliği; katlanılamaz risk eşiklerinin belirlenmesini, eşiğe yaklaşmanın izlenmesini ve bir güvenlik çerçevesinin yayımlanmasını ister. Altta gönüllü katmanın yaptırımının itibar ve sözleşme, yasanınkinin idari olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">çerçeve</text>
+  <text x="200" y="28" font-size="13" font-weight="bold" fill="var(--text)">bağlayıcı mı</text>
+  <text x="330" y="28" font-size="13" font-weight="bold" fill="var(--text)">tetikleyici</text>
+  <text x="490" y="28" font-size="13" font-weight="bold" fill="var(--text)">ne ister</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="70" fill="var(--accent-soft)" />
+  <text x="20" y="68" font-size="13" font-weight="bold" fill="var(--text)">AB Yapay Zekâ</text>
+  <text x="20" y="86" font-size="13" font-weight="bold" fill="var(--text)">Yasası</text>
+  <text x="20" y="104" font-size="13" fill="var(--text-muted)">2024</text>
+  <text x="200" y="68" font-size="13" fill="var(--text)">evet</text>
+  <text x="330" y="68" font-size="13" fill="var(--text)">modelin sınıfı ve</text>
+  <text x="330" y="86" font-size="13" fill="var(--text)">hesap eşiği</text>
+  <text x="490" y="68" font-size="13" fill="var(--text)">belgelendirme, değerlendirme,</text>
+  <text x="490" y="86" font-size="13" fill="var(--text)">olay bildirimi, siber güvenlik</text>
+
+  <line x1="20" y1="124" x2="700" y2="124" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="148" font-size="13" font-weight="bold" fill="var(--text)">NIST risk yönetimi</text>
+  <text x="20" y="166" font-size="13" font-weight="bold" fill="var(--text)">çerçevesi</text>
+  <text x="20" y="184" font-size="13" fill="var(--text-muted)">2023, profil 2024</text>
+  <text x="200" y="148" font-size="13" fill="var(--text)">hayır</text>
+  <text x="330" y="148" font-size="13" fill="var(--text)">yok; kapsamı</text>
+  <text x="330" y="166" font-size="13" fill="var(--text)">kuruluş seçer</text>
+  <text x="490" y="148" font-size="13" fill="var(--text)">yönet, haritala, ölç, idare et;</text>
+  <text x="490" y="166" font-size="13" fill="var(--text)">üretken profil kimyasal ve</text>
+  <text x="490" y="184" font-size="13" fill="var(--text)">biyolojik erişimi risk sayar</text>
+
+  <line x1="20" y1="200" x2="700" y2="200" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="224" font-size="13" font-weight="bold" fill="var(--text)">ISO/IEC 42001</text>
+  <text x="20" y="242" font-size="13" fill="var(--text-muted)">2023</text>
+  <text x="200" y="224" font-size="13" fill="var(--text)">hayır, ama</text>
+  <text x="200" y="242" font-size="13" fill="var(--text)">belgelendirilir</text>
+  <text x="330" y="224" font-size="13" fill="var(--text)">kuruluşun kendi</text>
+  <text x="330" y="242" font-size="13" fill="var(--text)">kararı</text>
+  <text x="490" y="224" font-size="13" fill="var(--text)">yapay zekâ yönetim sistemi</text>
+  <text x="490" y="242" font-size="13" fill="var(--text)">kurmak, sürdürmek, iyileştirmek</text>
+
+  <line x1="20" y1="258" x2="700" y2="258" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <text x="20" y="282" font-size="13" font-weight="bold" fill="var(--text)">Seul taahhütleri</text>
+  <text x="20" y="300" font-size="13" fill="var(--text-muted)">2024</text>
+  <text x="200" y="282" font-size="13" fill="var(--text)">hayır, siyasi</text>
+  <text x="200" y="300" font-size="13" fill="var(--text)">taahhüt</text>
+  <text x="330" y="282" font-size="13" fill="var(--text)">sınır model</text>
+  <text x="330" y="300" font-size="13" fill="var(--text)">geliştiriciliği</text>
+  <text x="490" y="282" font-size="13" fill="var(--text)">katlanılamaz risk eşiklerini</text>
+  <text x="490" y="300" font-size="13" fill="var(--text)">belirlemek, yaklaşmayı izlemek,</text>
+  <text x="490" y="318" font-size="13" fill="var(--text)">güvenlik çerçevesi yayımlamak</text>
+
+  <line x1="20" y1="336" x2="700" y2="336" stroke="var(--border)" />
+  <text x="20" y="356" font-size="13" fill="var(--text-muted)">Gönüllü katmanın yaptırımı itibar ve sözleşme; yasanınki idari.</text>
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">Sürüm tarihleri künyede durur: bu belgeler değişiyor.</text>
+</svg>

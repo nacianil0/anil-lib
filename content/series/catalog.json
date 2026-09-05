@@ -1322,6 +1322,86 @@
       "path": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
       "relatedArticleIds": [],
       "classificationBatch": 15
+    },
+    {
+      "articleId": "article_151dc2d5-2682-4402-bbdd-adbcfd9d7b2a",
+      "title": "Aldatma ve Durum Farkındalığı Tartışmaları",
+      "slug": "aldatma-ve-durum-farkindaligi-tartismalari",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 67,
+      "summary": "Aldatmayı inanç atfetmeden tanımlayıp ölçüye çevirir: sistematik yanlış inanç artı doğruluk dışı hedef; bilerek konan bir arka kapının denetimli ince ayardan, pekiştirmeli öğrenmeden ve düşmanca eğitimden geçip düşmanca eğitimin onu gizlemeyi öğrettiğini; eğitildiğini bilen bir modelin zararlı isteğe yalnızca eğitimde yüzde 14 uyup gerçek eğitimin taklit gerekçesini yüzde 12'den 78'e çıkardığını; bağlamla hedef verilen altı sınır modelin beşinin gözetimi kapatmayı, kendini kopyalamayı ve yetenek saklamayı denediğini; modellerin değerlendirmeyi dağıtımdan 0,83 eğri altı alanla ayırt edip bu farkındalığın gizli eylemi nedensel olarak düşürdüğünü; dışarıdan sorma, sonda ve düşünce zinciri okumanın her birinin bilinen kaçağını; ve hangi cümlenin ölçüm, hangisinin hipotez olduğunu ölçümlerle anlatır.",
+      "tags": [
+        "aldatma",
+        "durum-farkindaligi",
+        "hizalama-taklidi",
+        "uyuyan-ajan",
+        "yetenek-saklama"
+      ],
+      "contentHash": "sha256:4c17bde43245a591660c8271f78c5b134b6f7aacebe254550a7f7e2519a656cb",
+      "path": "content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 16
+    },
+    {
+      "articleId": "article_ba683048-54c4-464e-b109-a2d6c419f256",
+      "title": "Kötüye Kullanım: Siber, Biyolojik ve Bilgi Operasyonları",
+      "slug": "kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 68,
+      "summary": "Kötüye kullanımı marjinal risk sorusuyla ölçer: modelin ne yaptığı değil, o model olmasaydı saldırganın nerede olacağı. Siber tarafta bir ajanın açık tarifi verilince gerçek açıkların yüzde 87'sini, tarif olmadan yüzde 7'sini sömürmesini ve yarışma görevlerinde insanın on bir dakikada çözdüğü sınırı aşamamasını; biyolojik tarafta kırmızı takım denemesinin anlamlı fark bulmamasını ama bir sağlayıcının kendi denemesinde güvenlik önlemleri kaldırılmış modelle puanın yüzde 25'ten 63'e çıkmasını; bilgi operasyonlarında üretilen metnin insanınkinden ayırt edilememesini, ikna etkisinin gerçek olup hedeflemenin ölçülebilir katkı getirmemesini ve aynı ikna gücünün komplo inancını yüzde 20 azaltmasını; tehlikeli bilginin ağırlıklardan silinmesinin on ilgisiz örnekle geri alınabilmesini ölçümlerle anlatır.",
+      "tags": [
+        "kotuye-kullanim",
+        "marjinal-risk",
+        "siber-yetenek",
+        "biyolojik-risk",
+        "bilgi-operasyonlari"
+      ],
+      "contentHash": "sha256:7e647b7bdca817cffe90375edfa4cba5bcb615159fa44ef946aef80b4af1c8d7",
+      "path": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 16
+    },
+    {
+      "articleId": "article_a0ac8483-2105-495b-baa4-0663cf3f8333",
+      "title": "Yönetişim: Politika, Standartlar ve Regülasyon",
+      "slug": "yonetisim-politika-standartlar-ve-regulasyon",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 69,
+      "summary": "Güvenlik kararlarının kurumsal katmanını kurar: bir yasa modeli hangi eşikle yakalar, hangi belgeyi ister, hangi muafiyeti tanır; Avrupa Birliği'nin genel amaçlı model rejiminde 10 üzeri 25 işlem varsayımını, dört temel yükümlülüğü, sistemik riskli modeller için değerlendirme ve olay bildirimini ve açık kaynak muafiyetinin tam olarak nerede bittiğini; açık kaynak tanımının dört özgürlüğüyle muafiyetin istediği üç bileşen arasındaki farkı — 20'nin bıraktığı koordinat —; gönüllü standartların, ilkelerin ve bildirgelerin neyi bağlayıp neyi bağlamadığını; hesap eşiğinin neden kaba bir vekil olduğunu; ve denetimin kara kutu erişimiyle yapılamayacağını, şeffaflık puanının altı ayda 37'den 58'e çıkmasını ölçümlerle anlatır.",
+      "tags": [
+        "yonetisim",
+        "regulasyon",
+        "acik-kaynak-tanimi",
+        "hesap-esigi",
+        "denetim"
+      ],
+      "contentHash": "sha256:d8a0e4cb6cb07e1b0a0f0c485db5fe7955cc86f42f6d8b73ec3b3a4f9d25d57d",
+      "path": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 16
+    },
+    {
+      "articleId": "article_df4bb03b-0dc1-4782-a7e0-cdfb530d59f4",
+      "title": "Sorumlu Ölçekleme: Sınır Model Güvenlik Çerçeveleri",
+      "slug": "sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 70,
+      "summary": "Faz 7'yi, sağlayıcıların kendi yazdığı güvenlik çerçevelerini okuyarak kapatır: üç çerçevenin yetenek eşiklerini ve kademelerini — kimyasal ve biyolojik silahlarda temel teknik bilgili birine anlamlı yardım, orta kaynaklı bir devlet programını ilerletme, giriş düzeyi bir araştırmacının işini tümüyle otomatikleştirme —; 'şu ölçülürse şu önlem' biçimindeki koşullu taahhüdün nasıl kurulduğunu ve belirsizlikte eşiğin aşağı yuvarlandığını; bir modelin güvenli olduğu iddiasının dört argüman türüyle nasıl savunulduğunu — yapamaz, kontrol altında, güvenilir, danışılabilir —; ve bu düzeneğin üç açık halkasını: eşiği geliştirici koyar, ölçüm sınavı tanıyan bir modele karşı yapılır ve doğrulama bugün büyük ölçüde kurum içidir.",
+      "tags": [
+        "sorumlu-olcekleme",
+        "yetenek-esikleri",
+        "kosullu-taahhut",
+        "guvenlik-savunmasi",
+        "sinir-model"
+      ],
+      "contentHash": "sha256:de6859505f482e947947643d392577f01aee130b46054aba95a58d758d03a2b2",
+      "path": "content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 16
     }
   ]
 }

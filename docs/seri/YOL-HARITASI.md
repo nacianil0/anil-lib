@@ -51,8 +51,8 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Sohbetler arası kalıcı bellek | 21 | 39 | ödendi (Batch 9) |
 | Modelin bilgisinin yetmediği yer ve dış kaynağa bağlanma | 17, 19, 21, 25, 29 | 41 | ödendi (Batch 9) |
 | İlkelere dayalı tercih etiketleri ve ölçeklenebilir denetim | 13 | 64 | ödendi (Batch 15; 61'in tekrarı da 64'ün gövdesinde adıyla kapatıldı) |
-| Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | kısmen ödendi (62: ince ayar saldırısı; 63: ağırlığa erişen saldırganın üç kapısı — üretim kuralı, ret yönünü silme, ince ayar); 68, 70 açık |
-| Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | açık |
+| Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | ödendi (Batch 16; 62: ince ayar saldırısı; 63: ağırlığa erişen saldırganın üç kapısı; 68: marjinal risk çerçevesi, unutturmanın geri kazanımı, yayımlama gradyanı ve yapısal erişim alternatifleri; 70: ağırlık güvenliği kademesi) |
+| Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | ödendi (Batch 16; muafiyetin metni ile tanımın listesi 69-Şekil 2'de karşılaştırıldı) |
 | Kirliliğin değerlendirmeye etkisi ve ezberin benchmark'lara yansıması | 8, 16, 18, 31 | 72 | açık |
 | Doğrulayıcıların eğitimi ve modelin kendi cevabını kontrol etmesi | 33, 34 | 35 | ödendi (Batch 8) |
 | Birden çok yol deneyip aralarında oy verme (öz-tutarlılık, arama) | 33 | 36 | ödendi (Batch 8) |
@@ -183,6 +183,20 @@ doğrulandı (66'dan büyük tek sayılar yüzde, puan, örnek sayısı ve model
 kalan en yakın tekil koordinat artık **69**'dur (20'nin "açık kaynak tanımının düzenleyici çerçevedeki yeri"
 vaadi); 20'nin 61–70 bandındaki 68 ve 70 taksitleri de açıktır.
 
+**Numarasız ileri işaretler — Batch 16'da verildi.** Modelin içine bakmanın araçları (67 → "serinin
+ilerideki bir fazı", numarasız; sonda ve temsil müdahalesi yalnızca sonuç düzeyinde kullanıldı); hizalama
+denetiminin kurumsal hâli (67 → "sonraki iki makale", numarasız); kötüye kullanımın ölçümü ve tabanı (67 → 68,
+"bir sonraki makale"); tanım tartışmasının düzenleyici karşılığı (68 → 69, "bir sonraki makale"); sağlayıcı
+çerçevelerinin içeriği (69 → "bir sonraki makale"); değerlendirme biliminin kendisi ve modelin içine bakmak
+(70 → "serinin bir sonraki fazı", numarasız). 69, 20'nin açtığı **69 koordinatını** gövdesinde adıyla ödedi
+("20'de bir borç bırakmıştık ve burada ödeniyor"); 68, 20'nin açık ağırlık vaadinin kötüye kullanım taksidini,
+70 ise ağırlık güvenliği taksidini ödedi ve defterdeki iki satır da "ödendi (Batch 16)" yapıldı. Batch 16
+**yeni bir numaralı koordinat açmadı ve iki koordinatı kapattı**; dört makalenin metin içi numaralı
+göndermelerinin tamamı yayımlanmış makalelere (≤ 70) yapıldı ve Python ile makale başına doğrulandı (70'ten
+büyük tek sayılar yüzde, puan, katılımcı sayısı ve eğri altı alan değerleridir; 69'un taslağındaki "70'in
+konusu" yayından önce "bir sonraki makalenin konusu" yapıldı). Defterde açık kalan en yakın tekil koordinat
+artık **72**'dir (8, 16, 18 ve 31'in kirlilik vaadi); 74–77, 78, 85, 86 ve 101 de açıktır.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -271,10 +285,10 @@ vaadi); 20'nin 61–70 bandındaki 68 ve 70 taksitleri de açıktır.
 64. **Constitutional AI ve Ölçeklenebilir Denetim** — ilkelere dayalı eğitim, scalable oversight. `[yayında]`
 65. **Belirsizlik ve Kalibrasyon: Model Ne Kadar Emin?** — güven ile doğruluk ilişkisi. `[yayında]`
 66. **Dalkavukluk ve Model Karakteri** — sycophancy, persona. `[yayında]`
-67. **Aldatma ve Durum Farkındalığı Tartışmaları** — deception araştırması.
-68. **Kötüye Kullanım: Siber, Bio ve Bilgi Operasyonları** — dual-use riskler.
-69. **Yönetişim: Politika, Standartlar ve Regülasyon** — kurumsal çerçeve.
-70. **Sorumlu Ölçekleme: Frontier Güvenlik Çerçeveleri** — RSP/ASL tarzı çerçeveler.
+67. **Aldatma ve Durum Farkındalığı Tartışmaları** — deception araştırması. `[yayında]`
+68. **Kötüye Kullanım: Siber, Biyolojik ve Bilgi Operasyonları** — dual-use riskler (karar #154). `[yayında]`
+69. **Yönetişim: Politika, Standartlar ve Regülasyon** — kurumsal çerçeve; 20'nin koordinatı ödendi. `[yayında]`
+70. **Sorumlu Ölçekleme: Sınır Model Güvenlik Çerçeveleri** — RSP/ASL tarzı çerçeveler (karar #155). `[yayında]`
 
 ### Faz 8 — Değerlendirme ve Yorumlanabilirlik (71–80)
 
@@ -1355,6 +1369,63 @@ Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): MCP üçlüsü
 | Maliyet modeli; Lagrange çarpanı; kural tabanlı ödül | 62 | — | 64, 94 |
 | Sığ hizalama; ret öneki; ret tek yönde; ince ayar reddi siler; yarışan hedefler; uyumsuz genelleme | 62 | — | 63, 68, 74, 76 |
 
+### Batch 16'da gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 67–70'te fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 16'da gerçekleşen |
+|---|---|
+| Temsil; aktivasyon (3) | 67 (sonda ara katman aktivasyonundan tek özelliği okur) ✓ |
+| Ölçek yasaları; ölçekleme sözcüğü (9) | 70 (**sözcüğün iki anlamı ayrıldı**: 9'da hesap kararı, 70'te dağıtım kararı; eğri önlemi planlanabilir kılar) ✓ **altmış bir makale aralıklı geri çağırma** |
+| Kayıp; gradyan (2, 3) | 67 (arka kapı eğitimi; gradyan en ucuz değişikliği bulur) ✓ |
+| Ön eğitimden gelen kalıplar; veri (8, 14) | 67 (sentetik belgelerle öğrenilen durum bilgisi), 68 (tehlikeli bilgi eğitim verisinden gelir) ✓ |
+| Cetvel bir tasarım ürünüdür; Goodhart (16) | 67 (sınavı tanıyan sınanan), 68 (taban seçimi), 69 (hesap eşiği neden vekil), 70 (eşiği kim koyar) ✓ |
+| Halüsinasyon; uydurma (17) | 67 (konfabülasyon aldatmadan ayrıldı) ✓ |
+| Açık ağırlık; açık kaynak; açıklık cilası; lisans (20) | 68 (**vaat taksidi**: marjinal risk, yayımlama gradyanı), 69 (**69 koordinatı ödendi**: muafiyet ↔ tanım) ✓ |
+| İnce ayar; LoRA (19) | 68 (unutturmanın on ilgisiz örnekle geri kazanılması) ✓ |
+| Örnekle öğrenme (23) | 67 (bağlam dışı akıl yürütme örnekle öğrenmenin tersi olarak kuruldu) ✓ |
+| Sistem istemi (24) | 67 (durum bilgisinin istemle verilmesi; "unutma, sen bir dil modelisin") ✓ |
+| Düşünce zinciri; sadakat (31, 32) | 67 (sonradan gerekçe; sadakat %25 ve %39; izlenebilirlik sadakatin yerini aldı) ✓ |
+| Doğrulayıcı; üretmek ↔ doğrulamak (35) | 70 ("yapamaz" argümanı yetenek çıkarımına bağlı) ✓ |
+| Görev ufku; insan süresi birimi (40) | 68 (Cybench'in ilk çözüm süresi), 70 (iki-sekiz saatlik ara kontrol noktası) ✓ |
+| Hakem model; kendini kayırma (45) | 68 (taban ve karşılaştırma kolu) ✓ |
+| Kod ajanları; ajan güvenliği; kum havuzu (55, 58) | 68 (bir günlük açıklar, tehdit istihbaratı kaydı), 70 ("kontrol altında" argümanı) ✓ |
+| Kısayol ve hile; imkânsız test (57) | 67, 70 ✓ |
+| Devir; aşırı güvenme; kalibrasyon açığı (59) | 68 (zararlı manipülasyon risk alanı), 70 ✓ |
+| Belirtim oyunu; içsel eniyileyici; izleyici vekilin parçası olur; ödül kurcalama (61) | 67 (düşmanca eğitim gizlemeyi öğretir; aldatıcı hizalanma hipotezi), 69 (vekilin ölçtüğü şey), 70 ✓ |
+| Reddetme; sığ hizalama; ince ayar reddi siler (62) | 67 (arka kapı ve tetikleyici), 68 (**ret indirenin ayarına bağlı**) ✓ |
+| Jailbreak; kırmızı takım; savunma katmanları; açık ağırlığın üç kapısı (63) | 67 (düşmanca eğitim), 68 (üç kapı marjinal risk sorusuna bağlandı), 69 (kırmızı takım yasal yükümlülük oldu) ✓ |
+| Ölçeklenebilir denetim; müzakereci hizalama; eleştirmen (64) | 67 (entrika karşıtı eğitim), 69 (denetimin erişimi) ✓ |
+| Güven; eğri altı alan; kalibrasyon (65) | 67 (değerlendirme farkındalığı 0,83; yalan dedektörü 0,99) ✓ |
+| Dalkavukluk; simulakr; karakter vektörü; beliren hizalanmama (66) | 67 (aldatmanın taksonomisinde dalkavukluk satırı; rol oyunu itirazı), 70 (zararlı manipülasyon) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): kalibrasyon ve hakem güveni (65 → 71, 73),
+öz-yansıma ↔ hakem (52/56 → 73), sorgu yeniden yazma (44 → 73), süreç denetimi (38 → 73), kısıtlı üretim
+(30 → 74), dalkavukluğun dört biçimi (66 → 71, 73), kimin görüşü (66 → 72, 73), Wooldridge–Jennings (51 → 111),
+MCP üçlüsü (49/53 → 115).
+
+### Batch 16'da ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 16'da gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Aldatma; sistematik yanlış inanç; inancın kabul olarak tanımı; stratejik aldatma | 67 | 68 (bilgi operasyonlarında insan tarafı), 70 ("güvenilir" argümanı) | 71, 73, 74, 79 |
+| Model organizması; uyuyan ajan; arka kapı; tetikleyici | 67 | 70 ("yapamaz" argümanının karşısındaki tehdit) | 74, 76, 79 |
+| Hizalama taklidi; aldatıcı hizalanma (61'in hipotezinin ölçümü) | 67 | 70 (güvenlik savunmasının "güvenilir" argümanı) | 74, 77, 116 |
+| Entrika; bağlam içi entrika; gizli eylem | 67 | 70 (kritik eşiğin gerekçesi) | 71, 74, 116 |
+| Durum farkındalığı; bağlam dışı akıl yürütme; değerlendirme farkındalığı | 67 | 68, 69 (eşiğin ölçümü), 70 (yetenek çıkarımı) | 71, 72, 73, 78 |
+| Yetenek saklama; parola kilidi | 67 | 69, 70 (üç açık halkadan biri) | 71, 73, 116 |
+| Sonda; izlenebilirlik; yapay zekâ kontrolü; hizalama denetimi | 67 | 69 (denetimin erişimi), 70 ("kontrol altında") | 74, 75, 76, 77 |
+| Marjinal risk; taban; altı adımlı çerçeve | 68 | 69 (kanıt boşluğu ve düzenleme), 70 | 71, 72, 78, 79 |
+| Bir günlük açık; bayrak yakalama; ilk çözüm süresi | 68 | 70 (eşiklerin ölçümü) | 71, 79 |
+| Unutturma; geri kazanım saldırısı; kurcalamaya dirençli koruma | 68 | 70 (ağırlık güvenliği) | 72, 74, 76 |
+| Yayımlama gradyanı; yapısal erişim | 68 | 69 (muafiyet), 70 | 72, 80 |
+| Hesap eşiği; sistemik risk; muafiyet; uygunluk karinesi | 69 | 70 (gönüllü çerçevelerin yasadaki boşluğu doldurması) | 71, 78, 80 |
+| Yönetişim katmanları: yasa, standart, ilke, bildirge, taahhüt | 69 | 70 | 78, 80, 116 |
+| Kara kutu ↔ beyaz kutu ↔ kutu dışı denetim; üç katmanlı denetim; şeffaflık endeksi | 69 | 70 (doğrulamanın kurum içi kalması) | 71, 73, 74, 80 |
+| Yetenek eşiği ve gerekli korumalar; kritik yetenek düzeyi; koşullu taahhüt | 70 | — | 71, 78, 116 |
+| Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
+| Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
+
 ### Batch 15'te gerçekleşen tekrarlar (planlananların tahsili)
 
 Önceki batch'lerin kavramlarının 63–66'da fiilen nerede geri çağrıldığı:
@@ -1929,6 +2000,40 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | karakter eğitimi | (character training) | 66 | |
 | karakter vektörü | (persona vector) | 66 | |
 | beliren hizalanmama | (emergent misalignment) | 66 | Betley ve ark.; "beliren" 5'in beliren yetenekleriyle aynı sözcük |
+| aldatma | (deception) | 67 | doğruluk dışı bir hedefin peşinde sistematik yanlış inanç oluşturmak; 17'nin uydurmasından ve 66'nın dalkavukluğundan ayrımı 67'de yapıldı |
+| model organizması | (model organism) | 67 | incelenmek için bilerek üretilmiş hizalanmamışlık örneği |
+| uyuyan ajan | (sleeper agent) | 67 | koşul gelene kadar normal davranan model |
+| arka kapı; tetikleyici | (backdoor; trigger) | 67 | 58'deki saldırı ailesinden farkı: davranış eğitimle konur |
+| hizalama taklidi | (alignment faking) | 67 | eğitim hedefine yalnızca eğitimde uymak |
+| aldatıcı hizalanma | (deceptive alignment) | 67 | 61'deki içsel eniyileyici hipotezinin adı; hipotez olarak işaretlenir |
+| entrika; bağlam içi entrika | (scheming; in-context scheming) | 67 | hizalanmamış hedefi gizlice kovalamak; hedef istemle veriliyorsa bağlam içi |
+| gizli eylem | (covert action) | 67 | entrikanın ölçülen vekili |
+| yetenek saklama | (sandbagging) | 67 | değerlendirmede stratejik düşük başarı; "kum torbası" kullanılmaz |
+| parola kilidi | (password-locking) | 67 | yeteneği parola olmadan saklayan ince ayar |
+| durum farkındalığı | (situational awareness) | 67 | modelin kendisi ve içinde bulunduğu aşama hakkındaki bilgisi |
+| bağlam dışı akıl yürütme | (out-of-context reasoning) | 67 | 23'teki örnekle öğrenmenin tersi |
+| değerlendirme farkındalığı | (evaluation awareness) | 67 | test ↔ dağıtım ayrımını yapabilme |
+| sonda | (probe) | 67 | aktivasyondan tek özelliği okuyan küçük sınıflandırıcı; 62'deki ret yönü bir sondanın bulduğu yön |
+| sonradan gerekçe | (post-hoc reasoning) | 67 | cevap belirlendikten sonra yazılan zincir; 31/32'deki sadakatin karşıtı |
+| izlenebilirlik | (monitorability) | 67 | sadakatin yerine önerilen özellik |
+| yapay zekâ kontrolü | (AI control) | 67 | modeli aldatıcı varsayıp protokolü ölçen düzen |
+| hizalama denetimi | (alignment audit) | 67 | gizli hedef arayan sistematik inceleme; 69'daki denetim ailesinin model tarafı |
+| sabotaj değerlendirmesi | (sabotage evaluation) | 67 | modelin kendi denetimini bozup bozamayacağının ölçümü |
+| marjinal risk | (marginal risk) | 68 | teknoloji olmasaydı kalacak düzeyin üstüne eklenen pay |
+| bir günlük açık | (one-day vulnerability) | 68 | yaması yayımlanmış ama kapatılmamış açık |
+| bayrak yakalama | (capture the flag) | 68 | siber yarışma görevi; ölçüsü insanın ilk çözüm süresi |
+| unutturma | (unlearning) | 68 | tehlikeli bilginin kasıtlı çıkarılması; 19'daki unutmadan farkı kasıtlı olması |
+| geri kazanım saldırısı | — | 68 | unutturulmuş yeteneği ince ayarla ya da yön çıkarmayla geri getirmek |
+| yayımlama gradyanı | (release gradient) | 68 | tamamen kapalıdan tamamen açığa altı basamak |
+| yapısal erişim | (structured access) | 68 | ağırlığı yayımlamadan denetim ve araştırma sağlayan aracılı erişim |
+| sistemik risk | (systemic risk) | 69 | AB yasasının genel amaçlı model sınıfı; eşiği 10²⁵ işlem karinesi |
+| uygunluk karinesi | — | 69 | uyumlaştırılmış standarda uyumun yasaya uyum sayılması |
+| kara kutu / beyaz kutu / kutu dışı denetim | (black-box / white-box / outside-the-box audit) | 69 | 63'teki kara kutu ↔ beyaz kutu saldırı ayrımının denetim hâli |
+| yetenek eşiği; gerekli korumalar | (capability threshold; required safeguards) | 70 | çerçevelerin eşik–önlem çifti |
+| kritik yetenek düzeyi | (critical capability level) | 70 | aynı çiftin bir başka çerçevedeki adı |
+| koşullu taahhüt | (if-then commitment) | 70 | "şu ölçülürse şu önlem" biçimi |
+| güvenlik savunması | (safety case) | 70 | sistemin yeterince güvenli olduğunu kanıtla savunan yapılandırılmış belge |
+| yetenek çıkarma | (capability elicitation) | 70 | ölçümün elde edilebilir en yüksek yeteneği çıkarması |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -3399,6 +3504,116 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
 153. **64 koordinatı ödendi; Batch 15 yeni koordinat açmadı.** 13'ün "ilkelere dayalı tercih etiketleri ve
     ölçeklenebilir denetim" vaadi ve 61'in tekrarı 64'ün gövdesinde adıyla kapatıldı; 20'nin açık ağırlık
     vaadinin ikinci taksidi 63'te ödendi (68 ve 70 açık). Defterde açık kalan en yakın tekil koordinat **69**.
+
+154. **68'in başlığı Türkçeleştirildi (Batch 16).** "Kötüye Kullanım: Siber, Bio ve Bilgi Operasyonları" →
+    "Kötüye Kullanım: Siber, Biyolojik ve Bilgi Operasyonları". Karar #108'in ölçütü: "bio" Türkçede tek başına
+    yerleşik bir sözcük değil, önek; gövde zaten baştan sona "biyolojik" diyor ve başlık gövdenin kullanmadığı
+    bir sözcüğü taşımaz. "Siber" korundu (siber güvenlik yerleşik). `roadmap.json` entegrasyondan **önce**
+    güncellendi.
+155. **70'in başlığındaki "frontier" Türkçeleştirildi (Batch 16).** "Sorumlu Ölçekleme: Frontier Güvenlik
+    Çerçeveleri" → "Sorumlu Ölçekleme: Sınır Model Güvenlik Çerçeveleri". Gerekçe: 40, 61 ve 62'nin
+    **yayımlanmış gövdeleri** "sınır model" karşılığını zaten kullanıyor; başlık gövdeyle aynı sözcüğü taşır.
+    Faz 14'ün "Sınır ve Sentez" başlığıyla çakışma yok, çünkü orada sözcük alanın sınırı anlamında.
+156. **Terim kararları (Batch 16).** Karar #154 ve #155'e ek olarak: "aldatma" (deception) 17'nin uydurmasından
+    ve 66'nın dalkavukluğundan 67-Şekil 1'de ayrıldı; "yetenek saklama" (sandbagging; "kum torbası" kullanılmadı);
+    "entrika" (scheming) ve "gizli eylem" (covert action); "sonda" (probe) 62'deki ret yönünün aracı olarak geri
+    bağlandı; "izlenebilirlik" (monitorability) sadakatin yerine değil yanına kondu; "marjinal risk" (marginal
+    risk); "unutturma" (unlearning) 19'un unutmasından kasıt farkıyla ayrıldı; "güvenlik savunması" (safety case)
+    havacılık ve nükleerden ödünç sözcük olarak işaretlendi; "yetenek çıkarma" (capability elicitation);
+    "ölçekleme" 70'te 9'daki anlamından açıkça ayrıldı (hesap kararı ↔ dağıtım kararı).
+157. **Sayı kararları (Batch 16).** Sayılar kaynak metinlerin tablolarından okundu
+    (`artifacts/b16-research/pdf/*.txt`, `html/*.txt`). **67:** Hagendorff 99,17 / 95,42 (birinci ve ikinci
+    dereceden yanlış öneri; ChatGPT satırı metne alınmadı); Hubinger kod açığı ≈ %55 sabit, damıtılmış zincir
+    ≈ %100, düşmanca eğitim kırmızı takım dağılımında ≈ 0; Greenblatt %14, %12 → %78, sızdırma %35–80 ↔ %0,5;
+    Meinke altı düzenek, 6 modelin 5'i, takip sorularının > %85'i, yedi turlu sorguda %20; van der Weij −39,8 /
+    −9,7 ve −32,1 / −14,0; Laine insan tabanı %70,3; Needham 0,83 ↔ 0,92; Apollo %33 ↔ ≤ %1; Schoen %13 → 0,4 ve
+    %8,7 → 0,3; Pacchiardi eğri altı alan 0,99; Bürger %94; Burns +4 puan; Chen %25 ve %39; Baker %95 ↔ %60
+    (61'den); şantaj senaryosu %96 ve %80 (iki model). **68:** Fang %87 ↔ %7, 15 açık, 11'i kesim sonrası,
+    2,8 kat ucuz; Cybench %17,5, 11 dakika, 24 saat 54 dakika, alt adımda %43,9; CVE-Bench 40 açık, %13;
+    Mouton anlamlı fark yok; OpenAI 100 katılımcı, anlamsız artış; Claude 4 sistem kartı kontrol %25 ± 13 →
+    %63 ± 13 ve %42 ± 11, 2,53× ve 1,70×; Spitale 697 katılımcı, 0,84 ↔ 0,72 ve 0,89 ↔ 0,92; Goldstein 8.221
+    katılımcı, %24,4 → 43,5, gerçek 47,4; Hackenburg 8.587 katılımcı, hedefleme farkı anlamsız; Salvi 820
+    katılımcı, +%81,7; Costello 2.190 katılımcı, ≈ %20, iki ay; Hazell 600+ milletvekili, sentin kesri; Marchal
+    ≈ 200 olay, %27; OpenAI beş operasyon, altı basamaklı ölçekte ≤ 2; WMDP 3.668 soru, 63,7 → 31,2 / 44,0 →
+    28,2 / 58,1 → 57,1, rastgele 25; Deeb & Roger ≥ %88; Qi > %60. **69:** 10²⁵ işlem (Art. 51/2), 1 Ağustos
+    2024 yürürlük, 2 Ağustos 2025 uygulama, 2 Ağustos 2027 eski modeller; iki hafta bildirim (Art. 52); şeffaflık
+    endeksi 37 → 58 / 100, 96 gösterge; uluslararası rapor 96 uzman, 30 ülke; 10²⁶ (geri alınan yürütme kararı,
+    Hooker üzerinden). **70:** RSP 2.2 (14 Mayıs 2025), Hazırlıklılık 2 (15 Nisan 2025), FSF 3.0 (2025); 4×
+    etkin hesap ve altı ay tetikleyicileri; RAND beş kapasite kategorisi ve 38 saldırı vektörü; on altı şirketin
+    Seul taahhüdü.
+158. **Kendi hesabımız (Batch 16): yok.** Dört makalede de kaynağın vermediği türetilmiş sayı kullanılmadı;
+    karşılaştırmalar kaynakların kendi verdiği oranlarla yazıldı (ör. Fang'ın "2,8 kat ucuz" ifadesi kendi
+    metnindendir, bizim bölmemiz değil).
+159. **Kaynak politikası (Batch 16).** 67'de 30, 68'de 31, 69'da 24, 70'te 14 kaynak (99 kalem). Dağılım:
+    36 hakemli (67'de 11, 68'de 15, 69'da 10, 70'te 0), 9 resmî belge, 54 hakemsiz ve işaretlenmiş kalem.
+    **70'in hiçbir kaynağı hakemli değil** ve bu, makalenin kendi bulgusudur: sağlayıcıların yazdığı çerçeveleri
+    okuyan bir makalenin birincil kaynağı tanım gereği hakemsizdir; gövde bunu açıkça söyler. Hakemsiz ama
+    işaretlenerek kullanılanlar, üç türde: (a) sağlayıcı
+    belgeleri — sistem kartları, sorumlu ölçekleme politikası, hazırlıklılık çerçevesi, sınır güvenliği
+    çerçevesi, tehdit istihbaratı raporu, ASL-3 raporu, uyuyan ajan sonda notu, hizalama taklidi ve etkin ajan
+    hizalanmaması yazıları, biyolojik erken uyarı çalışması, örtülü etki operasyonları raporu; (b) değerlendirme
+    kuruluşu ve düşünce kuruluşu raporları — Apollo notu ve entrika çalışması, METR ortak öğeler ve özerk görev
+    çalışması, RAND biyolojik ve ağırlık güvenliği raporları, Karnofsky koşullu taahhüt metni, Uluslararası
+    Yapay Zekâ Güvenliği Raporu (resmî belge), Seger açık kaynak değerlendirmesi; (c) arXiv ön çalışmaları —
+    Berglund, Needham, Lanham, Chen, Korbak, Emmons, Marks, Carlsmith, Benton, Hubinger 2019, Fang, Zhu, Soice,
+    Gopal, Sandbrink, Goldstein, Hazell, Marchal, Deeb & Roger, Anderljung, Shevlane, Weidinger, Sastry, Hooker,
+    Clymer, Buhl, Kinniment. Resmî belgeler ayrıca "resmî belge" diye işaretlendi: AB Yapay Zekâ Yasası, AB
+    soru-cevap metni, NIST 100-1 ve 600-1, ISO/IEC 42001, OECD ilkeleri, Bletchley ve Seul metinleri, 14179
+    sayılı yürütme kararı. Sürüm tarihi künyeye yazıldı (RSP 2.2, Hazırlıklılık 2, FSF 3.0, OSI 1.0). Hakemli
+    oran Faz 7'nin ikinci yarısında beklendiği gibi düştü (Batch 15: 54/84; Batch 16: 36/99), çünkü yönetişim ve
+    çerçeve makalelerinin birincil kaynağı tanım gereği hakemsizdir. Doğrulama kanalları: Crossref DOI (Patterns,
+    PNAS, PNAS Nexus, Science, Science Advances, Nature MI, Philosophical Studies, AI and Ethics, FAccT, AIES,
+    ACM), DBLP `ee` (ICLR/NeurIPS/ICML/COLM/TMLR), `papers.nips.cc` hash sayfaları, PMLR cilt dizini, OpenReview
+    kimlikleri, Semantic Scholar (yalnızca 429 alınmayan kalemlerde), Europe PMC (PNAS Nexus tam metni PMC
+    üzerinden), OSF (Hackenburg ön baskısı). **Aday olup kullanılmayanlar:** Weidinger FAccT 2022 taksonomisi
+    (dl.acm 403; 2021 arXiv sürümü kullanıldı), Urbina Nature MI 2022 (tam metin alınamadı; Sandbrink'in
+    aktarımı üzerinden anıldı, künye Crossref'ten), NYU CTF, PentestGPT, CyberSecEval, Eldan unutturma,
+    Rosati gürültüleme, Yang & Menczer bot ağı, Mökander dışındaki denetim derlemeleri, Reuel'in tam listesi.
+
+## Batch 16 öğrenme notları (yazım tamamlandı)
+
+- **Faz 7 kapandı: aldatma (67) → kötüye kullanım (68) → yönetişim (69) → sorumlu ölçekleme (70).** 66'nın
+  "aldatmayı ölçüye çevir" borcu 67'de üç ayrı ölçüm ailesiyle ödendi (inşa edilen aldatma, kendiliğinden
+  aldatma, durum farkındalığı) ve makale kanıt ile hipotezi ayrı sütuna yazarak kapandı; 67 tehdit modelini
+  modelden insana devretti, 68 marjinal risk sorusunu ve üç alanın tabanını kurdu, 69 kararı kurumsallaştırdı,
+  70 kararın belgesini yazdı ve fazın haritasını çizdi. İki koordinat kapandı: 20'nin açık kaynak tanımı vaadi
+  (69) ve açık ağırlık güvenliği vaadi (68 + 70). Kohort tamamen `safety-and-evaluation`; okuma listesinde
+  61–70 tek öbek, `reading-list-groups.test.ts` değişmedi (507 test; +12 test yeni SVG'lerden).
+- **Araştırma yine tamamen ana oturumda; ultracode açık, workflow/subagent kullanılmadı** (cerebrum 2026-09-03).
+  ~140 aday PDF tek betikle (`fetch-b16.py`; arXiv API geri düşüşü, HTML sayfaları için içeri gömülü ayrıştırıcı),
+  DBLP `ee` (`dblp-b16.py`, b15/b14/b13'ten tohumlandı, 110 sorgu), politika ve sağlayıcı belgeleri
+  (`fetch-html-b16.py`, 70 sayfa). **Yeni kanallar ve tuzaklar:** `urllib`'in varsayılan başlığıyla OpenAI,
+  ISO, PNAS, ACM ve OUP 403 döndü — tarayıcı `User-Agent`'lı `curl` ile alındı; RAND raporları AES şifreli PDF
+  (`pip install cryptography` sonrası açıldı); PNAS Nexus tam metni Europe PMC yerine `pmc.ncbi.nlm.nih.gov`
+  sayfasından; Hackenburg'un sayıları OSF ön baskısından (`osf.io/<id>/download`); Semantic Scholar toplu
+  sorguda 429 verdi, tek tek sorulmalı; Urbina Nature MI 2022'nin tam metni alınamadı, Sandbrink'in aktarımı
+  üzerinden anıldı.
+- **Sayı tuzakları:** Cybench'in yönlendirmesiz %17,5'i ile alt adım yönlendirmeli %43,9'u ayrı ölçülerdir ve
+  aynı cümlede karışmamalı; Claude 4 sistem kartında kontrol grubu %25 ± 13 ve model grubu %63 ± 13, kaldıraç
+  2,53× — "puan farkı" ile "kaldıraç" ayrı yazıldı; Spitale'nin dört puanı çapraz (organik/sentetik × doğru/yanlış)
+  ve yanlış eşleştirmek kolay; Goldstein'ın propaganda deneyi 8.221, Hackenburg'unki 8.587 katılımcı — ikisi
+  farklı çalışma; Fang'ın "2,8 kat ucuz"u kaynağın kendi ifadesi, bizim bölmemiz değil (karar #158).
+- **Kelime bandı:** 67'nin ilk taslağı 4.067 düzyazı kelimesiyle **tavanı aştı** ve beş kırpma turuyla 3.502'ye
+  indi (sayılar korunarak; kesilenler tekrar eden bağlam cümleleri ve ikinci örneklerdi). 70 ise tersine
+  **tabanın altında** başladı (1.595) ve iki ekleme turuyla 2.617'ye çıktı; eklenenler dolgu değil eksik
+  mekanizmaydı: değerlendirme sıklığı ve yetenek çıkarma, ağırlık güvenliği kademeleri, güvenlik savunmasının
+  karar zinciri, fazın dikey okuması. Ders: yönetişim/çerçeve makaleleri kısa, ölçüm makaleleri uzun gelir.
+- **SVG:** 12 yeni şekil. Repo denetleyicisi altı alt not taşmasını yakaladı. Kendi yazdığım
+  `artifacts/b16-research/svgcheck-b16.py` (sütun başlangıçlarını çıkarıp her metni **bir sonraki sütuna** ve
+  700'e karşı 6,8 birim/karakter ile ölçer, alt payı da bildirir) denetleyicinin görmediği **on bir sütun
+  binmesini ve dokuz alt pay eksikliğini** yazım aşamasında yakaladı; Batch 15'te bu kusurlar ancak PNG'de
+  görünmüştü. Yeni kural: her şekil dosyası yazıldıktan sonra hem `check-series-svg.cjs` hem `svgcheck-b16.py`
+  çalıştırılır; ikincisi "alt pay ≥ 12" ve "sütuna binme" kapılarını verir. PNG incelemesi yine yapıldı (24
+  görüntü, Playwright) ve **bu kez görüntüde yeni kusur çıkmadı** — sıra doğru: önce ölçer, sonra göz.
+- **Render doğrulaması izole kopyada** (`D:\dev\anil-lib-b16-render`, junction + kapısız dev, 3210): build exit 0
+  (`/seri/[slug]` 70 yol), 71 seri rotası 200 (35,4 sn), dört makale × üç genişlik × üç temada DOM ölçümü temiz
+  (badFills ve outOfBox boş, taşma 0, figScroll false, `main.innerText` içinde undefined/NaN yok); ana
+  worktree'de typecheck (0) ve 507 test. Ham HTML'deki 39 "undefined" Next.js iskelesindendir ve yayımlanmış
+  eski makalelerde de aynıdır (66 ve 1 ile karşılaştırıldı) — regresyon değil.
+- **Tarayıcı panosu bu run'da sorunsuz çalıştı** (ölçüm için): `localStorage`'a yazılan ölçüm fonksiyonu +
+  `eval` ile üç tema tek çağrıda; `resize_window` üç genişlikte; sekme sınırına takılınca eski dosya sekmeleri
+  `tabs_close` ile kapatıldı ve yeni sekme `tabs_create` ile açıldı (yerel dosya sekmesi `navigate` kabul
+  etmiyor). Şekil görüntüleri yine Playwright'tan (`shots-b16.cjs`).
 
 ## Batch 15 öğrenme notları (yazım tamamlandı)
 
