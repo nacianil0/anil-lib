@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T20:27:57.846Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T20:34:45.461Z
 > Files: 265 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
@@ -52,6 +52,7 @@
 - `cerebrum_update.py` — Appends this session's learnings to .wolf/cerebrum.md, section by section. (~1568 tok)
 - `wolf_update.py` — Session bookkeeping for OpenWolf: anatomy cleanup, buglog entry, memory line. (~986 tok)
 - `wolf_update2.py` — Line-guide session bookkeeping for OpenWolf. (~2084 tok)
+- `wolf_update3.py` — Responsive-figure session bookkeeping, plus a correction to an earlier claim. (~2549 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/
 
@@ -152,6 +153,7 @@
 - `line-guide-text-geometry.md` (~400 tok)
 - `MEMORY.md` — Memory index (~148 tok)
 - `paged-reader-scroll-pagination.md` (~448 tok)
+- `reader-figures-fit-container.md` (~463 tok)
 - `reader-line-guide-redesign.md` (~471 tok)
 - `series-batch11-faz5-kapanis.md` (~615 tok)
 - `series-batch12-faz6-acilis.md` (~668 tok)
@@ -862,11 +864,9 @@
 
 ## tests/e2e/
 
-- `_probe.spec.ts` — Page: authenticate (~770 tok)
-- `_shots.spec.ts` — Page: authenticate, shot (~868 tok)
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~2321 tok)
 - `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~8711 tok)
-- `series-reader.spec.ts` — Chapters carrying the widest figures and the widest tables in the series. (~1659 tok)
+- `series-reader.spec.ts` — Seri okuyucusu: bölüm açılışı ve çizim/tabloların sütuna sığması. (~1659 tok)
 
 ## tools/
 

@@ -6615,6 +6615,43 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T20:27:57.863Z"
+    },
+    {
+      "id": "bug-396",
+      "timestamp": "2026-09-06T21:40:00.000Z",
+      "error_message": "İçerikteki çizim/şema/tablo bloklarının büyük bölümünde yatay kaydırma çubuğu çıkıyor; şeklin tamamı bir bakışta görünmüyor",
+      "file": "src/app/globals.css",
+      "root_cause": "Diyagram SVG'sinde okunabilirlik için konmuş `min-width: 34rem` tabanı vardı; kap bunun altına düşünce (sayfalı düzenin 405 px'lik sütunu, telefonun 313 px'i) şekil kendi kabında yatayda kayıyordu. Tablolarda ise `th { white-space: nowrap }` ve 0.85rem yatay dolgu min-content genişliğini büyütüyordu (6 sütunlu tablo 740 px istiyordu).",
+      "fix": "SVG artık `width: 100%; max-width: 100%` ile kabına ölçekleniyor (viewBox oranı koruduğu için kırpma yok); telefonda şekil okuma sütununun girintisini de kullanıyor. Tablolar `.table-scroll` üzerinde container query ile kademeli daralıyor (≤48rem dolgu + başlık sarması, ≤34rem yazı boyutu, ≤30rem dolgu); kelime bölme kullanılmıyor, sığmayan geniş sayı tabloları kendi kaydırmasında kalıyor.",
+      "tags": [
+        "reader",
+        "svg",
+        "table",
+        "responsive",
+        "container-query",
+        "overflow"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T21:40:00.000Z"
+    },
+    {
+      "id": "bug-397",
+      "timestamp": "2026-09-06T21:40:00.000Z",
+      "error_message": "Sayfalı okuyucu son sayfaya oturmuyor: ardışık 'Sonraki sayfa' tıklamalarından sonra sayaç 'Sayfa 8 / 9'a geri düşüyor (e2e testi kararsız)",
+      "file": "src/lib/reader-layout/pagination.ts",
+      "root_cause": "`pageMetrics` kaydırma sınırını sayfa ızgarasından hesaplıyordu (`(pageCount - 1) * pageStep` = 7897), oysa kabın gerçek sınırı `scrollWidth - clientWidth` = 7404. Son sayfa komutu tarayıcı tarafından 7404'e kırpılıyor, geri okunan indeks `round(7404/987) = 7` çıkıyor ve sayaç bir sayfa geri düşüyordu.",
+      "fix": "`maxScrollLeft` artık kabın gerçek sınırı; sayfa indeksi sona gelindiğinde (`scrollLeft >= maxScrollLeft - 1`) doğrudan son sayfa veriliyor. Ayrıca `updatePageState` komutun 'indi' kararını yuvarlanmış sayfa yerine tam offset farkıyla veriyor, böylece animasyon ortasında gelen ikinci komut yutulmuyor.",
+      "tags": [
+        "reader",
+        "paged",
+        "pagination",
+        "scroll",
+        "flaky-test"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T21:40:00.000Z"
     }
   ]
 }

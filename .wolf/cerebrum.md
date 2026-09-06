@@ -254,6 +254,14 @@ ode_modules`, sonra kopyayi sil.
 - Kılavuzun yeniden ölçülmesi gereken üç an var: `layoutVersion` (tipografi/mod değişimi), makale değişimi (client navigasyonda `layoutVersion` artmaz), ve pencere yeniden boyutlandırma (150 ms debounce). İlk ikisi `HighlightLayer` deseninin aynısı.
 
 
+### Çizim ve tabloların okuma sütununa sığması (2026-09-06)
+- Seri diyagramları 720 birimlik tuvale çizilir ve etiketlerin baskın boyutu 13 birimdir (4340 kullanım). Render edilen etiket boyutu = 13 × kap/720: masaüstü akışta (771 px) 13,9 px, tablette (676 px) 12,2 px, sayfalı sütunda (405 px) 7,3 px, telefonda (366 px) 6,6 px. Eski `min-width: 34rem` tabanı tam olarak "etiketler 10 px'in altına inmesin" demekti; bedeli sayfalı düzende ve telefonda **her** şeklin yatay kaydırma çubuğuyla açılmasıydı.
+- Kullanıcı kararı: şeklin tamamı bir bakışta görünsün, varsayılan yatay scroll kalksın. Bu yüzden SVG artık `width: 100%; max-width: 100%` ile kabına sığıyor; viewBox oranı koruduğu için hiçbir metin/ok/kutu kırpılmıyor. Telefonda şekil, okuma sütununun 1,25rem girintisini de kullanıyor (`margin-inline: -1.25rem`, yalnızca `max-width: 40rem` medya sorgusunda; sayfalı düzen 1024 px altında zaten açılmaz, negatif marj sütun boşluğuna taşardı).
+- Tablo ölçeklenemez (metin küçültmek okunabilirliği bitirir), bu yüzden kademeli container query: `.table-scroll` bir `container: reader-table / inline-size`; ≤48rem'de dolgu 0.5/0.6rem ve `th { white-space: normal }`, ≤34rem'de yazı 0.86rem ve dolgu 0.45/0.5rem, ≤30rem'de dolgu 0.4rem. Ölçüm: 6 sütunlu tablo 768 px'te 29 px taşmadan 0'a, sayfalı sütunda 300 px'ten 0'a indi. **`overflow-wrap: anywhere` denendi ve geri alındı**: min-content'i düşürüyor ama sayıları ortadan bölüyor ("33.659" → "33 .6 59"). Telefonda 5–6 sütunlu sayı tabloları kendi yatay kaydırmasında kalıyor — bilinçli, kontrollü fallback.
+- Sayfalı düzende şekli iki sütuna yaymak için `column-span: all` denendi: yatay kaydırmalı `column-fill: auto` çok sütunlu kapta düzeni patlatıyor (14 sayfa → 99 sayfa, şekiller 755 px'lik çerçevenin altına düşüyor). Bu yolu kapalı say.
+- Kapsayıcı sorgusu sütun genişliğini göremez: çok sütunlu düzende sütun kutusu bir element değildir, `.prose-reader` container yapılırsa 936 px döner. Şeklin/tablonun kendi genişliğine göre stil vermek için elementin **kendisini** container yapıp iç öğelere kural yazmak gerekir (`.table-scroll` deseni).
+
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -443,11 +451,15 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-06] Tarayıcı panosu (Claude Browser preview) **gizliyken sekmede `requestAnimationFrame` çalışmıyor**: rAF'a bağlı her şey donuyor — `updatePageState` (pager "Sayfa 1 / 1"de kalır), reflow settle ve `scrollTo({behavior:'smooth'})` animasyonları (`scrollLeft` ataması hiç uygulanmaz). Panoda ölçülen "bozuk" davranışı koda yazmadan önce Playwright'ta tekrarla; panoda yalnızca statik yerleşim (yükseklik, taşma, genişlik, computed style) güvenilir. Bu oturumda üç ölçüm boşuna yorumlandı.
 - [2026-09-06] Sayfalı okuyucuda ardışık sayfa komutları smooth animasyonu yeniden hedefleyince sütun tam hizaya oturmayabiliyor (ölçülen sapma 7 px). Sınırda `turnPage` "yapacak bir şey yok" deyip dönerse sapma kalıcı oluyor; kapağa dayanan hareket mevcut sayfayı yeniden oturtmalı. E2E'de `scrollLeft`'i `toBe(0)` ile anında değil `expect.poll` ile ölç.
 - [2026-09-06] `bash` heredoc ile yazılan Playwright betiğinde Windows yolu `"C:\\Users\\..."` tek ters bölüye iniyor ve dosya derlenmiyor; scratchpad yollarını `Write` ile yaz ve ileri bölü kullan (aynı ders daha önce Python betikleri için de çıkmıştı).
-- [2026-09-06] `/seri/<slug>` bu oturumda dev sunucusunda hiç render etmedi (gövde yalnızca boş Suspense sınırı, 2 dk beklendi); `/read` rotası aynı `ReaderShell` ile sorunsuz. Değişiklikten bağımsız (flow modunda da aynı) ve `next build` /seri'yi üretiyor — seri sayfasını dev'de doğrulaman gerekirse önce bu davranışı ayrıca teşhis et, okuyucu değişikliğine bağlama.
+- [2026-09-06] `/seri/<slug>` sayfasını `main h1` / `.prose-reader h1` bekleyerek doğrulamaya çalışma: **seri makaleleri gövdede h1 içermez**, başlık frontmatter'da durur ve gövde `h2` ile başlar. Aynı gün bu yüzden "/seri render etmiyor" diye yanlış teşhis kondu (sayfa aslında sorunsuz açılıyordu; `innerText`'in ilk satırları da kenar çubuğunu gösterdiği için yanılttı). Seri sayfalarında `.prose-reader p` ya da `.prose-reader h2` bekle.
 
 
 - [2026-09-06] Satır bandı gibi "yalnızca metnin kapladığı alan" isteyen bir efekti blok arka planıyla (gradient) çözmeye çalışma: blok arka planı satırın nerede bittiğini bilemez, `box-decoration-break` sadece fragman kutusunu değiştirir, sütun sonundaki boş payı da boyar. Doğru araç metin geometrisi (Range + Custom Highlight API).
 - [2026-09-06] Satır sayarken `Range.getClientRects()` çıktısını sıraya güvenerek gruplama; öğe kutuları metin kutularından önce gelir ve sıra geri sarar. Ayrıca sıfır genişlikli rect'ler (Range satır sınırına değdiğinde) satır sanılmamalı.
+
+
+- [2026-09-06] Sayfalı okuyucuda son sayfanın kaydırma konumunu sayfa ızgarasından hesaplama: `maxScrollLeft = (pageCount - 1) * pageStep` kabın gerçek `scrollWidth - clientWidth` sınırını aşıyordu (7897 vs 7404). Tarayıcı komutu sessizce kırpıyor, geri okunan sayfa indeksi bir eksik çıkıyor ve okuyucu son sayfaya hiç "oturmuyordu" (sayaç 8/9'da kalıyordu). Metrikler kabın gerçek sınırını kullanmalı; son sayfa kısa olduğunda indeks `scrollLeft >= maxScrollLeft - 1` ile verilmelidir.
+- [2026-09-06] Tabloyu kaba sığdırmak için `overflow-wrap: anywhere` kullanma: sayıları ve kısaltmaları ortadan böler. Dolgu, başlık sarması ve yazı boyutu tükendiyse yatay kaydırma dürüst çözümdür.
 
 
 ## Decision Log
@@ -589,3 +601,8 @@ mümkün değil.
 - **Karar:** Bantlar için ne blok arka planı (eski çözüm) ne de mutlak konumlu overlay `div`'leri kullanıldı; her bantlı satır için bir Range üretilip Custom Highlight API'ye verildi. Gerekçe: highlight satırın gerçek mürekkep alanını tarayıcının kendi satır kutusu hesabıyla boyar (justify, heceleme, satır içi öğeler, sütun kırılması dahil), DOM'a hiçbir düğüm eklenmez, z-index/stacking context kurcalanmaz ve metin seçimi, linkler, okuma çıpası, işaret highlight'ları etkilenmez. Overlay yaklaşımı uzun makalede yüzlerce ek düğüm ve sayfalı düzende ayrı koordinat matematiği demekti.
 - **Bedeli:** `CSS.highlights` yoksa kılavuz hiç çizilmiyor (yanlış çizmek yerine). Uygulama zaten işaretler için aynı API'ye bağlı; eski hatalı gradient yedek olarak bırakılmadı.
 - **Doğrulama biçimi:** Bantlar (okuyucunun Range'leri) ile satırlar (bloğun kendi rect'leri) iki ayrı uçtan hesaplanıp karşılaştırılıyor; e2e testi bant sayısı = beklenen, çok satırlı bant = 0, satır dışına taşma = 0, yanlış satır = 0 ve en dar bandın sütunun yarısından küçük olduğunu doğruluyor.
+
+### Çizimler neden kaba sığdırıldı, tablolar neden kademeli daraltıldı (2026-09-06)
+- **Karar:** Diyagramlarda okunabilirlik tabanı (34rem) kaldırıldı ve şekil her zaman kabına sığıyor. Gerekçe: taban, sayfalı düzendeki her şekli ve telefondaki her şekli varsayılan olarak yatay kaydırmaya mahkûm ediyordu; kullanıcı için "şeklin tamamının bir bakışta görünmesi" kaydırmasız okunabilirlikten önce geliyor. Bedel açıkça kayıtlı: sayfalı sütunda etiketler ~7 px, telefonda ~6,6 px; ayrıntı için tarayıcı yakınlaştırması açık (uygulama `user-scalable` kısıtlamıyor).
+- **Karar:** Tablolarda ölçekleme yok; sırasıyla dolgu, başlık satırı ve yazı boyutu feda ediliyor, kelime bütünlüğü hiç feda edilmiyor. Kalan 5–6 sütunlu sayı tabloları telefonda kendi kaydırmasında kalıyor (istisnai içerik).
+- **Doğrulama:** İki serinin (`/seri` ve `/boun`) üç makalesi × dört yapılandırma (masaüstü akış, sayfalı, tablet, telefon) e2e testinde ölçülüyor: hiçbir şekil kabından taşmıyor, etiket boyutu 5 px'in altına düşmüyor, telefonda ≤4 sütunlu hiçbir tablo taşmıyor, diğer genişliklerde hiçbir tablo taşmıyor ve belge hiç yatay kaymıyor.
