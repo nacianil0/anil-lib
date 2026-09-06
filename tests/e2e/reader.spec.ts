@@ -42,6 +42,73 @@ async function gotoFirst(page: Page) {
   await expect(page.locator("main h1")).toBeVisible();
 }
 
+/** The chapter links, wherever this viewport puts them. */
+function chapterNavigation(page: Page) {
+  return page.getByRole("navigation", { name: "Bölümler arası gezinme" });
+}
+
+const PAGED_PREFERENCES = {
+  version: 1,
+  theme: "system",
+  fontScale: "standard",
+  lineSpacing: "balanced",
+  measure: "standard",
+  fontFamily: "editorial",
+  focusMode: false,
+  paragraphSpacing: "balanced",
+  firstLineIndent: "none",
+  hyphenation: "auto",
+  readingMode: "paged",
+  letterSpacing: "normal",
+  fontWeight: "regular",
+  lineGuide: false,
+};
+
+/**
+ * Seeds the paged layout before the first paint. Writing preferences after load
+ * races the provider's throttled save, which would put the reader back in flow.
+ */
+async function usePagedMode(page: Page) {
+  await page.addInitScript(
+    ([key, value]) => {
+      try {
+        window.localStorage.setItem(key as string, value as string);
+      } catch {
+        /* ignore */
+      }
+    },
+    [PREFERENCES_KEY, JSON.stringify(PAGED_PREFERENCES)],
+  );
+}
+
+function pagerPosition(page: Page) {
+  return page
+    .getByRole("navigation", { name: "Sayfa gezintisi" })
+    .locator("span[aria-live]")
+    .innerText();
+}
+
+/** A trackpad flick: one push, then a long tail of decaying momentum events. */
+async function flick(page: Page, deltaY: number, events = 24) {
+  await page.evaluate(
+    ([total, count]) => {
+      const target = document.querySelector(".prose-reader");
+      if (!target) throw new Error("no reading area");
+      for (let index = 0; index < (count as number); index += 1) {
+        const decay = 1 - index / (count as number);
+        target.dispatchEvent(
+          new WheelEvent("wheel", {
+            deltaY: ((total as number) / (count as number)) * 2 * decay,
+            bubbles: true,
+            cancelable: true,
+          }),
+        );
+      }
+    },
+    [deltaY, events],
+  );
+}
+
 test.describe("desktop reader", () => {
   test.beforeEach(async ({ page }) => {
     await authenticate(page);
@@ -75,16 +142,16 @@ test.describe("desktop reader", () => {
   test("previous/next controls follow the catalog order", async ({ page }) => {
     await gotoFirst(page);
 
-    const footerNav = page.getByRole("navigation", { name: "Bölümler arası gezinme" });
-    await expect(footerNav.locator('[aria-disabled="true"]')).toBeVisible();
+    // From `md` up the chapter controls live in the toolbar; the article footer
+    // carries them only on the narrow screens where the toolbar has no room.
+    await expect(page.locator("main footer")).toBeHidden();
+    const chapterNav = chapterNavigation(page);
+    await expect(chapterNav.locator('[aria-disabled="true"]')).toBeVisible();
 
-    await footerNav.locator('a[rel="next"]').click();
+    await chapterNav.locator('a[rel="next"]').click();
     await page.waitForURL(`**/read/${second.slug}`);
 
-    await page
-      .getByRole("navigation", { name: "Bölümler arası gezinme" })
-      .locator('a[rel="prev"]')
-      .click();
+    await chapterNavigation(page).locator('a[rel="prev"]').click();
     await page.waitForURL(`**/read/${first.slug}`);
   });
 
@@ -95,10 +162,7 @@ test.describe("desktop reader", () => {
 
     await page.goto(`/read/${beforeBoundary.slug}`);
     await expect(page.locator("main h1")).toBeVisible();
-    await page
-      .getByRole("navigation", { name: "Bölümler arası gezinme" })
-      .locator('a[rel="next"]')
-      .click();
+    await chapterNavigation(page).locator('a[rel="next"]').click();
     await page.waitForURL(`**/read/${afterBoundary.slug}`);
   });
 
@@ -128,7 +192,7 @@ test.describe("desktop reader", () => {
     await gotoFirst(page);
 
     const completeButton = page.getByRole("button", { name: /Tamamlandı olarak işaretle/ });
-    const pressed = page.locator('main button[aria-pressed="true"]');
+    const pressed = page.locator('header button[aria-pressed="true"]');
     // Retry the toggle until React has hydrated the handler; click only while
     // it is still unpressed so a retry never flips completion back off.
     await expect(async () => {
@@ -139,7 +203,7 @@ test.describe("desktop reader", () => {
     }).toPass({ timeout: 10_000 });
 
     await page.reload();
-    await expect(page.locator('main button[aria-pressed="true"]')).toBeVisible();
+    await expect(page.locator('header button[aria-pressed="true"]')).toBeVisible();
     await expect(page.locator(`aside a[href="/read/${first.slug}"]`)).toContainText("Tamamlandı");
   });
 
@@ -321,6 +385,142 @@ test.describe("desktop reader", () => {
       .toBeGreaterThan(0);
   });
 
+  test("holds the paged reader inside one viewport, with the chapter controls at hand", async ({
+    page,
+  }) => {
+    await usePagedMode(page);
+    await gotoFirst(page);
+    await expect(page.locator(".reader-shell")).toHaveAttribute("data-reading-mode", "paged");
+    const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
+    await expect(pager).toBeVisible();
+
+    const frame = await page.evaluate(() => {
+      const prose = document.querySelector(".prose-reader") as HTMLElement;
+      return {
+        documentOverflow: document.documentElement.scrollHeight - window.innerHeight,
+        proseOverflowY: window.getComputedStyle(prose).overflowY,
+        proseVerticalOverflow: prose.scrollHeight - prose.clientHeight,
+        pagerBottom: Math.round(
+          document.querySelector(".reader-pager")!.getBoundingClientRect().bottom,
+        ),
+        viewport: window.innerHeight,
+      };
+    });
+    expect(frame.documentOverflow).toBeLessThanOrEqual(1);
+    expect(frame.proseOverflowY).toBe("hidden");
+    expect(frame.proseVerticalOverflow).toBeLessThanOrEqual(1);
+    // The pager is the last thing in the frame: if it fits, everything above it does.
+    expect(frame.pagerBottom).toBeLessThanOrEqual(frame.viewport);
+
+    // Both controls that used to sit under the article are reachable without scrolling.
+    await expect(page.locator("main footer")).toBeHidden();
+    await expect(chapterNavigation(page).locator('a[rel="next"]')).toBeVisible();
+    const completion = page.locator('header button[aria-label="Tamamlandı olarak işaretle"]');
+    await expect(completion).toBeVisible();
+    await completion.click();
+    await expect(page.locator('header button[aria-label="Tamamlandı"]')).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+  });
+
+  test("turns exactly one page per scroll gesture and stops at the covers", async ({ page }) => {
+    await usePagedMode(page);
+    await gotoFirst(page);
+    const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
+    await expect(pager).toBeVisible();
+    const total = Number((await pagerPosition(page)).split("/")[1].trim());
+    expect(total).toBeGreaterThan(2);
+
+    // A trackpad flick and its momentum: one page, not a handful.
+    await flick(page, 300);
+    await expect(pager).toContainText("Sayfa 2 /");
+    await page.waitForTimeout(500);
+    await flick(page, 300);
+    await expect(pager).toContainText("Sayfa 3 /");
+
+    // A classic mouse wheel over the text, through the real input pipeline.
+    const box = (await page.locator(".prose-reader").boundingBox())!;
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.waitForTimeout(400);
+    await page.mouse.wheel(0, 120);
+    await expect(pager).toContainText("Sayfa 4 /");
+
+    await page.waitForTimeout(500);
+    await flick(page, -300);
+    await expect(pager).toContainText("Sayfa 3 /");
+
+    // The first page is a wall, and scrolling into it may not scroll the window either.
+    await page.getByRole("button", { name: "Önceki sayfa" }).click();
+    await page.getByRole("button", { name: "Önceki sayfa" }).click();
+    await expect(pager).toContainText("Sayfa 1 /");
+    await page.waitForTimeout(500);
+    await flick(page, -300);
+    await page.waitForTimeout(300);
+    await expect(pager).toContainText("Sayfa 1 /");
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
+    await expect
+      .poll(() => page.locator(".prose-reader").evaluate((element) => element.scrollLeft))
+      .toBe(0);
+
+    // Keyboard: the keys that would scroll a flowing article turn pages instead.
+    await page.locator("main").click({ position: { x: 5, y: 5 } });
+    await page.keyboard.press("ArrowDown");
+    await expect(pager).toContainText("Sayfa 2 /");
+    await page.keyboard.press("ArrowUp");
+    await expect(pager).toContainText("Sayfa 1 /");
+
+    // The last page is the other wall.
+    const nextPage = page.getByRole("button", { name: "Sonraki sayfa" });
+    for (let index = 0; index < total + 2 && (await nextPage.isEnabled()); index += 1) {
+      await nextPage.click();
+    }
+    await expect(pager).toContainText(`Sayfa ${total} / ${total}`);
+    await page.waitForTimeout(500);
+    await flick(page, 300);
+    await page.waitForTimeout(300);
+    await expect(pager).toContainText(`Sayfa ${total} / ${total}`);
+  });
+
+  test("leaves the reading list's own scrolling alone", async ({ page }) => {
+    await usePagedMode(page);
+    await gotoFirst(page);
+    const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
+    await expect(pager).toBeVisible();
+    const list = page.locator("aside div.overflow-y-auto");
+    await list.evaluate((element) => {
+      element.scrollTop = 0;
+    });
+
+    const box = (await list.boundingBox())!;
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.mouse.wheel(0, 240);
+    await page.waitForTimeout(300);
+
+    expect(await list.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
+    await expect(pager).toContainText("Sayfa 1 /");
+
+    // A wide element inside the article — a table, a diagram — keeps the sideways
+    // gesture it can absorb, and gives up the one it cannot.
+    await page.evaluate(() => {
+      const host = document.createElement("div");
+      host.id = "probe-scroller";
+      host.style.cssText = "overflow-x:auto;width:200px;height:48px";
+      host.innerHTML = '<div style="width:2000px;height:40px"></div>';
+      document.querySelector(".prose-reader")!.prepend(host);
+    });
+    const scroller = page.locator("#probe-scroller");
+    const scrollerBox = (await scroller.boundingBox())!;
+    await page.mouse.move(scrollerBox.x + scrollerBox.width / 2, scrollerBox.y + 8);
+    await page.mouse.wheel(150, 0);
+    await expect.poll(() => scroller.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+    await expect(pager).toContainText("Sayfa 1 /");
+
+    await page.waitForTimeout(400);
+    await page.mouse.wheel(0, 150);
+    await expect(pager).toContainText("Sayfa 2 /");
+  });
+
   test("returns a real 404 for an unknown slug", async ({ page }) => {
     const response = await page.goto("/read/bilinmeyen-bir-slug");
     expect(response?.status()).toBe(404);
@@ -371,6 +571,31 @@ test.describe("mobile reader", () => {
       () => document.activeElement?.getAttribute("aria-label") === "Okuma listesini aç",
     );
     expect(triggerFocused).toBe(true);
+  });
+
+  test("keeps the chapter controls under the article, where the toolbar has no room", async ({
+    page,
+  }) => {
+    await gotoFirst(page);
+
+    const footer = page.locator("main footer");
+    await expect(footer).toBeVisible();
+    await expect(footer.getByRole("button", { name: "Tamamlandı olarak işaretle" })).toBeVisible();
+    await expect(chapterNavigation(page).locator('a[rel="next"]')).toBeVisible();
+
+    const fit = await page.evaluate(() => {
+      const header = document.querySelector("header .reader-area") as HTMLElement;
+      const chapter = header.querySelector("p") as HTMLElement;
+      return {
+        headerOverflow: header.scrollWidth - header.clientWidth,
+        documentOverflow:
+          document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        chapterClipped: chapter.scrollWidth - chapter.clientWidth,
+      };
+    });
+    expect(fit.headerOverflow).toBe(0);
+    expect(fit.documentOverflow).toBe(0);
+    expect(fit.chapterClipped).toBe(0);
   });
 
   test("preserves paged preference while using the mobile flow fallback", async ({ page }) => {

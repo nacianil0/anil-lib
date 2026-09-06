@@ -14,6 +14,7 @@ import {
   type ResolvedReadingAnchor,
 } from "./reading-anchor";
 import {
+  clampPage,
   pageForLogicalOffset,
   pageForRatio,
   pageMetrics,
@@ -21,6 +22,7 @@ import {
   scrollLeftForPage,
   type PageMetrics,
 } from "./pagination";
+import type { PageTurn } from "./wheel-paging";
 
 export type ReadingPosition = { ratio: number; headingId: string | null };
 type NavigableTarget = { getBoundingClientRect(): DOMRect };
@@ -29,6 +31,12 @@ type NavigableTarget = { getBoundingClientRect(): DOMRect };
 const READING_LINE_PX = TOOLBAR_OFFSET_PX + 4;
 /** Breathing room left above a restored position so it does not hug the toolbar. */
 const RESTORE_GAP_PX = 12;
+/**
+ * How long a commanded page stays the authoritative one. A smooth scroll reports
+ * offsets between two pages while it runs; taking those at face value would flicker
+ * the page counter and let the next gesture turn from a page nobody is on.
+ */
+const PAGE_SETTLE_MS = 600;
 
 function columnGapOf(element: HTMLElement): number {
   const value = Number.parseFloat(window.getComputedStyle(element).columnGap);
@@ -101,6 +109,8 @@ export function useReaderLayout({
    * paragraph afterwards without re-resolving any text.
    */
   const lastAnchorRef = useRef<ResolvedReadingAnchor | null>(null);
+  /** The page a scroll was commanded to, and the moment that command goes stale. */
+  const pageTargetRef = useRef<{ index: number; until: number } | null>(null);
   /** Mode + preference signature of the last layout that settled; see the reflow effect. */
   const settledKeyRef = useRef<string | null>(null);
   /**
@@ -172,9 +182,24 @@ export function useReaderLayout({
     return serializeReadingAnchor(element, blocks, blockIndex, blockOffset);
   }, [containerRef, effectiveMode]);
 
+  /** Scrolls the article to a page and makes that page the one everything reports. */
+  const commitPage = useCallback(
+    (element: HTMLElement, pageIndex: number, metrics: PageMetrics, behavior: ScrollBehavior) => {
+      const left = scrollLeftForPage(pageIndex, metrics);
+      if (behavior === "auto") element.scrollLeft = left;
+      else element.scrollTo({ left, behavior });
+      const index = clampPage(pageIndex, metrics.pageCount);
+      pageTargetRef.current = { index, until: Date.now() + PAGE_SETTLE_MS };
+      setPageState({ pageIndex: index, pageCount: metrics.pageCount });
+      return index;
+    },
+    [],
+  );
+
   const updatePageState = useCallback(() => {
     const element = containerRef.current;
     if (!element || effectiveMode !== "paged") {
+      pageTargetRef.current = null;
       setPageState((current) =>
         current.pageIndex === 0 && current.pageCount === 1
           ? current
@@ -183,6 +208,13 @@ export function useReaderLayout({
       return;
     }
     const metrics = metricsOf(element);
+    const target = pageTargetRef.current;
+    if (target) {
+      // Ignore the intermediate offsets of a scroll that is still on its way to the
+      // page it was sent to; drop the command once it lands or times out.
+      if (metrics.pageIndex !== target.index && Date.now() < target.until) return;
+      pageTargetRef.current = null;
+    }
     setPageState((current) =>
       current.pageIndex === metrics.pageIndex && current.pageCount === metrics.pageCount
         ? current
@@ -198,10 +230,7 @@ export function useReaderLayout({
       if (effectiveMode === "paged") {
         const metrics = metricsOf(element);
         const page = pageForLogicalOffset(logicalLeftOf(element, target), metrics);
-        const left = scrollLeftForPage(page, metrics);
-        if (resolvedBehavior === "auto") element.scrollLeft = left;
-        else element.scrollTo({ left, behavior: resolvedBehavior });
-        setPageState({ pageIndex: page, pageCount: metrics.pageCount });
+        commitPage(element, page, metrics, resolvedBehavior);
         return;
       }
       const rect = target.getBoundingClientRect();
@@ -210,7 +239,7 @@ export function useReaderLayout({
         resolvedBehavior,
       );
     },
-    [containerRef, effectiveMode],
+    [commitPage, containerRef, effectiveMode],
   );
 
   /**
@@ -251,22 +280,19 @@ export function useReaderLayout({
         const metrics = metricsOf(element);
         const headingPage = pageForLogicalOffset(logicalLeftOf(element, heading), metrics);
         const ratioPage = pageForRatio(position.ratio, metrics.pageCount);
-        const page = Math.max(headingPage, ratioPage);
-        const left = scrollLeftForPage(page, metrics);
-        if (resolvedBehavior === "auto") element.scrollLeft = left;
-        else element.scrollTo({ left, behavior: resolvedBehavior });
-        setPageState({ pageIndex: page, pageCount: metrics.pageCount });
+        commitPage(element, Math.max(headingPage, ratioPage), metrics, resolvedBehavior);
         lastPositionRef.current = position;
         return;
       }
 
       if (effectiveMode === "paged") {
         const metrics = metricsOf(element);
-        const page = pageForRatio(position.ratio, metrics.pageCount);
-        const left = scrollLeftForPage(page, metrics);
-        if (resolvedBehavior === "auto") element.scrollLeft = left;
-        else element.scrollTo({ left, behavior: resolvedBehavior });
-        setPageState({ pageIndex: page, pageCount: metrics.pageCount });
+        commitPage(
+          element,
+          pageForRatio(position.ratio, metrics.pageCount),
+          metrics,
+          resolvedBehavior,
+        );
         lastPositionRef.current = position;
         return;
       }
@@ -295,31 +321,41 @@ export function useReaderLayout({
       scrollWindowTo(ratioTop, resolvedBehavior);
       lastPositionRef.current = position;
     },
-    [containerRef, effectiveMode],
+    [commitPage, containerRef, effectiveMode],
   );
 
   const goToPage = useCallback(
     (pageIndex: number, behavior: ScrollBehavior = "smooth") => {
       const element = containerRef.current;
       if (!element || effectiveMode !== "paged") return;
-      const resolvedBehavior = motionSafeBehavior(behavior);
       const metrics = metricsOf(element);
-      const left = scrollLeftForPage(pageIndex, metrics);
-      if (resolvedBehavior === "auto") element.scrollLeft = left;
-      else element.scrollTo({ left, behavior: resolvedBehavior });
-      const nextMetrics = pageMetrics(
-        element.scrollWidth,
-        element.clientWidth,
-        left,
-        columnGapOf(element),
-      );
-      setPageState({ pageIndex: nextMetrics.pageIndex, pageCount: nextMetrics.pageCount });
+      const index = commitPage(element, pageIndex, metrics, motionSafeBehavior(behavior));
       lastPositionRef.current = {
-        ratio: ratioForPage(nextMetrics.pageIndex, nextMetrics.pageCount),
-        headingId: pagedHeadingId(element, nextMetrics),
+        ratio: ratioForPage(index, metrics.pageCount),
+        headingId: pagedHeadingId(element, { ...metrics, pageIndex: index }),
       };
     },
-    [containerRef, effectiveMode],
+    [commitPage, containerRef, effectiveMode],
+  );
+
+  /**
+   * Moves one page in either direction. The base is the page that was last
+   * commanded rather than the live scroll offset, so a second gesture arriving
+   * mid-animation still turns to the page after the one already on its way.
+   */
+  const turnPage = useCallback(
+    (direction: PageTurn) => {
+      const element = containerRef.current;
+      if (!element || effectiveMode !== "paged" || direction === 0) return;
+      const metrics = metricsOf(element);
+      const target = pageTargetRef.current;
+      const base = target && Date.now() < target.until ? target.index : metrics.pageIndex;
+      // At a cover this re-seats the page it is already on rather than doing nothing:
+      // a smooth scroll the reader cut short can leave the column a few pixels off,
+      // and pushing against the edge is exactly when that should be put right.
+      goToPage(clampPage(base + direction, metrics.pageCount));
+    },
+    [containerRef, effectiveMode, goToPage],
   );
 
   useEffect(() => {
@@ -333,11 +369,17 @@ export function useReaderLayout({
         updatePageState();
       });
     };
+    const onResize = () => {
+      // A resize reflows the columns, so the page a scroll was sent to no longer
+      // means anything: read the new layout instead of waiting for that command.
+      pageTargetRef.current = null;
+      update();
+    };
     element.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+    window.addEventListener("resize", onResize);
     return () => {
       element.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      window.removeEventListener("resize", onResize);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, [containerRef, effectiveMode, updatePageState]);
@@ -384,14 +426,8 @@ export function useReaderLayout({
     };
   }, [effectiveMode, navigateTo, navigateToAnchor, reflowKey, updatePageState]);
 
-  const previousPage = useCallback(
-    () => goToPage(pageState.pageIndex - 1),
-    [goToPage, pageState.pageIndex],
-  );
-  const nextPage = useCallback(
-    () => goToPage(pageState.pageIndex + 1),
-    [goToPage, pageState.pageIndex],
-  );
+  const previousPage = useCallback(() => turnPage(-1), [turnPage]);
+  const nextPage = useCallback(() => turnPage(1), [turnPage]);
 
   /** Drops the remembered paragraph, e.g. when the reader deliberately starts over. */
   const forgetAnchor = useCallback(() => {
@@ -415,6 +451,7 @@ export function useReaderLayout({
     pageCount: pageState.pageCount,
     previousPage,
     nextPage,
+    turnPage,
     layoutVersion,
   };
 }

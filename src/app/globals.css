@@ -119,6 +119,32 @@
   }
 
   /* --------------------------------------------------------------------------
+     The paged frame. Turning pages is the only way through the text, so the
+     window itself must not scroll: the shell is exactly one viewport tall and
+     every part of it — toolbar, resume notice, pager — takes its height first,
+     leaving the rest to the columns.
+  -------------------------------------------------------------------------- */
+  .reader-shell[data-reading-mode="paged"] {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .reader-shell[data-reading-mode="paged"] main {
+    display: flex;
+    min-height: 0;
+  }
+
+  .reader-shell[data-reading-mode="paged"] main > article.reader-area {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: 1.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* --------------------------------------------------------------------------
      The reading spine — the page's signature element.
      A continuous hairline threads every numbered chapter; it fills with the
      burgundy accent up to the reader's current position in the curriculum.
@@ -185,7 +211,13 @@
   .reader-shell[data-reading-mode="paged"] .prose-reader {
     width: 100%;
     max-width: none;
-    height: clamp(30rem, calc(100dvh - 11.5rem), 52rem);
+    /* Whatever the frame has left over, capped so the measure stays readable on a
+       tall screen. Flex resolves it to a definite height, which `column-fill: auto`
+       needs to know where each column ends. */
+    flex: 1 1 0%;
+    height: auto;
+    min-height: 0;
+    max-height: 52rem;
     columns: 2;
     column-fill: auto;
     column-gap: clamp(2rem, 4vw, 4.5rem);
@@ -486,8 +518,21 @@
     max-width: none;
   }
 
-  .reader-shell[data-reading-mode="paged"] .prose-reader {
+  /* Paper has its own pages: unwrap the one-viewport frame and let the text flow. */
+  .reader-shell[data-reading-mode="paged"] {
     height: auto;
+    overflow: visible;
+  }
+
+  .reader-shell[data-reading-mode="paged"] main,
+  .reader-shell[data-reading-mode="paged"] main > article.reader-area {
+    display: block;
+  }
+
+  .reader-shell[data-reading-mode="paged"] .prose-reader {
+    flex: none;
+    height: auto;
+    max-height: none;
     columns: auto;
     overflow: visible;
   }

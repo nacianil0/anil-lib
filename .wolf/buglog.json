@@ -6158,6 +6158,203 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T01:00:59.647Z"
+    },
+    {
+      "id": "bug-368",
+      "timestamp": "2026-09-06T18:07:44.817Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:07:44.817Z"
+    },
+    {
+      "id": "bug-369",
+      "timestamp": "2026-09-06T18:07:56.249Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 10→7 lines (4 removed) | Also: const page = Math.max(headingPage, ratioPage);; const left = scrollLeftForPage(page, metrics); | Also: [containerRef, effectiveMode],; const resolvedBehavior = motionSafeBehavior(behavi | Also: window.addEventListener(\"resize\", update);; window.removeEventListener(\"resize\", update);",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-09-06T18:08:34.345Z"
+    },
+    {
+      "id": "bug-370",
+      "timestamp": "2026-09-06T18:09:56.745Z",
+      "error_message": "CSS fix: height",
+      "file": "src/app/globals.css",
+      "root_cause": "height: clamp(30rem, calc(100dvh - 11.5rem), 52rem) → auto",
+      "fix": "Changed height: clamp(30rem, calc(100dvh - 11.5rem), 52rem) → auto",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-06T18:10:15.245Z"
+    },
+    {
+      "id": "bug-371",
+      "timestamp": "2026-09-06T18:18:07.602Z",
+      "error_message": "Missing error handling in function",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:18:07.602Z"
+    },
+    {
+      "id": "bug-372",
+      "timestamp": "2026-09-06T18:18:13.678Z",
+      "error_message": "Incorrect value in code",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Had 'main button[aria-pressed=\"",
+      "fix": "Changed to 'header button[aria-pressed=\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-06T18:18:15.484Z"
+    },
+    {
+      "id": "bug-373",
+      "timestamp": "2026-09-06T18:18:38.280Z",
+      "error_message": "Missing await",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call | Also: test(\"keeps the chapter controls under the article, where th; page,",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-06T18:22:26.200Z"
+    },
+    {
+      "id": "bug-374",
+      "timestamp": "2026-09-06T18:21:45.011Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 4→5 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:21:45.011Z"
+    },
+    {
+      "id": "bug-375",
+      "timestamp": "2026-09-06T18:24:31.979Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/completion-control.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:24:31.979Z"
+    },
+    {
+      "id": "bug-376",
+      "timestamp": "2026-09-06T18:25:21.962Z",
+      "error_message": "Type error",
+      "file": "tests/e2e/_shots.spec.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:25:21.962Z"
+    },
+    {
+      "id": "bug-377",
+      "timestamp": "2026-09-06T18:55:00.000Z",
+      "error_message": "Sayfalı okumada birinci sayfaya dönünce .prose-reader scrollLeft 0 yerine 7 kaldı (e2e: expected 0, received 7)",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Ardışık sayfa komutları smooth animasyonu ortasında yeniden hedefliyor; kesilen animasyon sütunu tam sayfa hizasına oturtmadan bitebiliyor. Sınırda (ilk/son sayfa) turnPage hiçbir şey yapmadığı için sapma da düzelmiyordu.",
+      "fix": "turnPage sınırda da goToPage(clampPage(...)) çağırıyor: kapağa dayanan hareket mevcut sayfayı tam hizasına yeniden oturtuyor. E2E'de ölçüm expect.poll ile alınıyor.",
+      "tags": [
+        "reader",
+        "paged",
+        "scroll",
+        "smooth-scroll",
+        "wheel",
+        "e2e"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:55:00.000Z"
+    },
+    {
+      "id": "bug-378",
+      "timestamp": "2026-09-06T18:55:00.000Z",
+      "error_message": "Tarayıcı panosunda sayfalı okuyucu 'Sayfa 1 / 1' gösterdi ve scrollLeft ataması hiç uygulanmadı",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Pano gizliyken sekmede requestAnimationFrame çalışmıyor. updatePageState, reflow settle ve smooth scroll animasyonlarının tamamı rAF'a bağlı olduğu için sayfa durumu ilk değerinde (0/1) kalıyor. Kod hatası değil, doğrulama ortamı sınırı.",
+      "fix": "Sayfalı okuyucunun etkileşim doğrulaması Playwright ile yapıldı (gerçek render, rAF çalışıyor); panoda yalnızca statik yerleşim ölçümü (yükseklik, taşma, başlık genişlikleri) güvenilir.",
+      "tags": [
+        "browser-pane",
+        "raf",
+        "verification",
+        "reader",
+        "paged"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:55:00.000Z"
+    },
+    {
+      "id": "bug-379",
+      "timestamp": "2026-09-06T18:42:20.710Z",
+      "error_message": "CSS fix: form",
+      "file": "src/components/reader/completion-control.tsx",
+      "root_cause": "form: the same checkbox without its caption, so the → an icon on its own, so the completion state stays",
+      "fix": "Changed form: the same checkbox without its caption, so the → an icon on its own, so the completion state stays",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:42:20.710Z"
     }
   ]
 }

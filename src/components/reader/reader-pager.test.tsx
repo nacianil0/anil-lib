@@ -47,4 +47,21 @@ describe("ReaderPager", () => {
     expect(onNext).toHaveBeenCalledOnce();
     selection.mockRestore();
   });
+
+  it("turns pages with the keys that would otherwise scroll the article", () => {
+    const onPrevious = vi.fn();
+    const onNext = vi.fn();
+    render(<ReaderPager pageIndex={2} pageCount={6} onPrevious={onPrevious} onNext={onNext} />);
+    document.body.focus();
+
+    for (const key of ["ArrowDown", "PageDown", " "]) {
+      fireEvent.keyDown(window, { key });
+    }
+    for (const key of ["ArrowUp", "PageUp"]) {
+      fireEvent.keyDown(window, { key });
+    }
+
+    expect(onNext).toHaveBeenCalledTimes(3);
+    expect(onPrevious).toHaveBeenCalledTimes(2);
+  });
 });

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 
-function ownsArrowKeys(target: EventTarget | null): boolean {
+function ownsNavigationKeys(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false;
   return Boolean(
     target.closest(
@@ -12,6 +12,13 @@ function ownsArrowKeys(target: EventTarget | null): boolean {
     ),
   );
 }
+
+/**
+ * The paged frame never scrolls, so the keys that would normally move down the
+ * article have to turn pages instead — otherwise they would silently do nothing.
+ */
+const PREVIOUS_KEYS = new Set(["ArrowLeft", "ArrowUp", "PageUp"]);
+const NEXT_KEYS = new Set(["ArrowRight", "ArrowDown", "PageDown", " "]);
 
 export function ReaderPager({
   pageIndex,
@@ -38,12 +45,12 @@ export function ReaderPager({
       ) {
         return;
       }
-      if (ownsArrowKeys(event.target) || window.getSelection()?.toString()) return;
-      if (event.key === "ArrowLeft" && !atStart) {
+      if (ownsNavigationKeys(event.target) || window.getSelection()?.toString()) return;
+      if (PREVIOUS_KEYS.has(event.key) && !atStart) {
         event.preventDefault();
         onPrevious();
       }
-      if (event.key === "ArrowRight" && !atEnd) {
+      if (NEXT_KEYS.has(event.key) && !atEnd) {
         event.preventDefault();
         onNext();
       }

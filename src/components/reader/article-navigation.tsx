@@ -67,9 +67,73 @@ export function ArticleNavigation({
   basePath?: string;
 }) {
   return (
-    <nav className="grid grid-cols-2 gap-3" aria-label="Bölümler arası gezinme">
+    <nav className="grid grid-cols-2 gap-3" aria-label={UI.chapterNavigation}>
       <NavItem article={prev} direction="prev" basePath={basePath} />
       <NavItem article={next} direction="next" basePath={basePath} />
+    </nav>
+  );
+}
+
+const COMPACT_CELL =
+  "flex h-[30px] w-8 items-center justify-center transition-colors first:rounded-l-[5px] last:rounded-r-[5px]";
+
+function CompactNavItem({
+  article,
+  direction,
+  basePath,
+}: {
+  article: AdjacentArticle;
+  direction: Direction;
+  basePath: string;
+}) {
+  const isPrev = direction === "prev";
+  const Icon = isPrev ? ChevronLeft : ChevronRight;
+  const eyebrow = isPrev ? UI.previousChapter : UI.nextChapter;
+
+  // The chapter titles are far too long for the toolbar, so the destination is
+  // carried by the label and the tooltip instead of by visible text.
+  if (!article) {
+    return (
+      <span
+        aria-disabled="true"
+        title={eyebrow}
+        className={cn(COMPACT_CELL, "cursor-not-allowed text-text-faint opacity-40")}
+      >
+        <Icon className="h-4 w-4" aria-hidden="true" />
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={`${basePath}/${article.slug}`}
+      rel={isPrev ? "prev" : "next"}
+      aria-label={`${eyebrow}: ${article.title}`}
+      title={`${eyebrow}: ${article.title}`}
+      className={cn(COMPACT_CELL, "text-text-muted hover:bg-surface-muted hover:text-text")}
+    >
+      <Icon className="h-4 w-4" aria-hidden="true" />
+    </Link>
+  );
+}
+
+/** Toolbar form of the same navigation: two icons that stay within reach of the text. */
+export function CompactArticleNavigation({
+  prev,
+  next,
+  basePath = "/read",
+}: {
+  prev: AdjacentArticle;
+  next: AdjacentArticle;
+  basePath?: string;
+}) {
+  return (
+    <nav
+      aria-label={UI.chapterNavigation}
+      className="flex items-center divide-x divide-border rounded-md border border-border"
+    >
+      <CompactNavItem article={prev} direction="prev" basePath={basePath} />
+      <CompactNavItem article={next} direction="next" basePath={basePath} />
     </nav>
   );
 }

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T01:00:59.634Z
-> Files: 245 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T18:42:20.695Z
+> Files: 255 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -46,6 +46,11 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/47dcc4fc-d5cd-487c-895e-0d8b267108b0/scratchpad/
 
 - `wolf_update.py` — read, write, insert_into_section, l_startswith (~3275 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/522e37d9-4ffd-482b-8b8c-534fe85ea064/scratchpad/
+
+- `cerebrum_update.py` — Appends this session's learnings to .wolf/cerebrum.md, section by section. (~1568 tok)
+- `wolf_update.py` — Session bookkeeping for OpenWolf: anatomy cleanup, buglog entry, memory line. (~986 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/
 
@@ -144,6 +149,7 @@
 ## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
 
 - `MEMORY.md` — Memory index (~148 tok)
+- `paged-reader-scroll-pagination.md` (~448 tok)
 - `reader-line-guide-redesign.md` (~471 tok)
 - `series-batch11-faz5-kapanis.md` (~615 tok)
 - `series-batch12-faz6-acilis.md` (~668 tok)
@@ -734,7 +740,7 @@
 
 ## src/app/
 
-- `globals.css` — Styles: 7 rules, 43 vars (~3972 tok)
+- `globals.css` — Styles: 7 rules, 43 vars (~4237 tok)
 - `layout.tsx` — newsreader (~527 tok)
 
 ## src/app/api/reader-sync/
@@ -777,8 +783,12 @@
 
 ## src/components/reader/
 
+- `article-navigation.tsx` — Toolbar form of the same navigation: two icons that stay within reach of the text. (~1228 tok)
+- `completion-control.tsx` — `compact` is the toolbar form: an icon on its own, so the completion state stays (~548 tok)
 - `markdown-components.tsx` — Wrap tables so wide content scrolls horizontally instead of stretching the page. (~374 tok)
-- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~4162 tok)
+- `reader-pager.test.tsx` — onPrevious (~724 tok)
+- `reader-pager.tsx` — The paged frame never scrolls, so the keys that would normally move down the (~860 tok)
+- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~4397 tok)
 - `reading-settings.test.tsx` — dialog (~2662 tok)
 - `reading-settings.tsx` — A boolean preference laid out like the segmented controls: label above, a (~5150 tok)
 - `resume-notice.tsx` — First words of the paragraph the reader was returned to, when one was anchored. (~628 tok)
@@ -797,7 +807,7 @@
 
 ## src/lib/content/
 
-- `labels.ts` — Turkish display labels for the controlled categories of every series. (~1525 tok)
+- `labels.ts` — Turkish display labels for the controlled categories of every series. (~1558 tok)
 
 ## src/lib/db/
 
@@ -820,7 +830,10 @@
 
 ## src/lib/reader-layout/
 
-- `use-reader-layout.ts` — The y coordinate the reader actually reads from: just below the sticky toolbar. (~4624 tok)
+- `use-reader-layout.ts` — The y coordinate the reader actually reads from: just below the sticky toolbar. (~5115 tok)
+- `use-wheel-paging.ts` — True when something under the pointer — a wide table, a diagram in its own (~807 tok)
+- `wheel-paging.test.ts` — Declares pager (~734 tok)
+- `wheel-paging.ts` — Turning pages with a wheel or a trackpad. (~837 tok)
 
 ## src/lib/reader/
 
@@ -843,7 +856,7 @@
 ## tests/e2e/
 
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~2321 tok)
-- `reader.spec.ts` — Page: authenticate, gotoFirst (~4402 tok)
+- `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~6853 tok)
 
 ## tools/
 

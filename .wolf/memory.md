@@ -3014,3 +3014,71 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 04:00 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch17-faz8-acilis.md | — | ~1057 |
 | 04:00 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/db92c409-5e48-4a44-a062-40622d4ed8bd/scratchpad/handoff_b17.py | 2→2 lines | ~32 |
 | 04:01 | Session end: 7 writes across 6 files (dolayli-nesne-devresi.svg, launch.json, yol_b17.py, wolf_b17.py, handoff_b17.py) | 21 reads | ~17350 tok |
+
+## Session: 2026-09-06 16:17
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-06 20:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-06 20:55
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:06 | Created src/lib/reader-layout/wheel-paging.ts | — | ~838 |
+| 21:06 | Created src/lib/reader-layout/wheel-paging.test.ts | — | ~734 |
+| 21:07 | Created src/lib/reader-layout/use-wheel-paging.ts | — | ~805 |
+| 21:07 | Edited src/lib/reader-layout/use-reader-layout.ts | added 1 import(s) | ~59 |
+| 21:07 | Edited src/lib/reader-layout/use-reader-layout.ts | expanded (+6 lines) | ~112 |
+| 21:07 | Edited src/lib/reader-layout/use-reader-layout.ts | 1→3 lines | ~66 |
+| 21:07 | Edited src/lib/reader-layout/use-reader-layout.ts | added 3 condition(s) | ~402 |
+| 21:07 | Edited src/lib/reader-layout/use-reader-layout.ts | modified if() | ~90 |
+| 21:08 | Edited src/lib/reader-layout/use-reader-layout.ts | modified if() | ~208 |
+| 21:08 | Edited src/lib/reader-layout/use-reader-layout.ts | added 1 condition(s) | ~402 |
+| 21:08 | Edited src/lib/reader-layout/use-reader-layout.ts | 8→8 lines | ~68 |
+| 21:08 | Edited src/lib/reader-layout/use-reader-layout.ts | expanded (+6 lines) | ~174 |
+| 21:08 | Edited src/lib/reader-layout/use-reader-layout.ts | goToPage() → turnPage() | ~38 |
+| 21:08 | Edited src/lib/reader-layout/use-reader-layout.ts | 5→6 lines | ~39 |
+| 21:08 | Edited src/lib/content/labels.ts | 4→7 lines | ~67 |
+| 21:09 | Edited src/components/reader/article-navigation.tsx | added 1 condition(s) | ~632 |
+| 21:09 | Created src/components/reader/completion-control.tsx | — | ~462 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | CSS: md, md | ~342 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | 2→2 lines | ~42 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | CSS: md | ~169 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | inline fix | ~24 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | added 1 import(s) | ~41 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | 1→2 lines | ~29 |
+| 21:09 | Edited src/components/reader/reader-shell.tsx | expanded (+10 lines) | ~145 |
+| 21:09 | Edited src/app/globals.css | expanded (+26 lines) | ~274 |
+| 21:09 | Edited src/app/globals.css | expanded (+6 lines) | ~117 |
+| 21:10 | Edited src/app/globals.css | 4→4 lines | ~22 |
+| 21:10 | Edited src/app/globals.css | expanded (+13 lines) | ~159 |
+| 21:10 | Edited src/components/reader/reader-pager.tsx | modified ownsNavigationKeys() | ~166 |
+| 21:10 | Edited src/components/reader/reader-pager.tsx | 9→9 lines | ~89 |
+| 21:11 | Edited src/components/reader/reader-pager.test.tsx | modified for() | ~240 |
+| 21:17 | Edited tests/e2e/reader.spec.ts | 29→26 lines | ~350 |
+| 21:18 | Edited tests/e2e/reader.spec.ts | added error handling | ~573 |
+| 21:18 | Edited tests/e2e/reader.spec.ts | 2→2 lines | ~47 |
+| 21:18 | Edited tests/e2e/reader.spec.ts | 3→3 lines | ~60 |
+| 21:18 | Edited tests/e2e/reader.spec.ts | expanded (+114 lines) | ~1464 |
+| 21:21 | Edited src/lib/reader-layout/use-reader-layout.ts | 4→5 lines | ~116 |
+| 21:21 | Edited tests/e2e/reader.spec.ts | 3→5 lines | ~68 |
+| 21:22 | Edited tests/e2e/reader.spec.ts | expanded (+24 lines) | ~314 |
+| 21:22 | Created tests/e2e/_shots.spec.ts | — | ~653 |
+| 21:24 | Edited src/components/reader/completion-control.tsx | CSS: 3 | ~296 |
+| 21:25 | Edited tests/e2e/_shots.spec.ts | modified for() | ~198 |
+| 21:31 | Created tests/e2e/_probe.spec.ts | — | ~1042 |
+| 21:36 | Edited tests/e2e/reader.spec.ts | expanded (+20 lines) | ~321 |
+| 21:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/522e37d9-4ffd-482b-8b8c-534fe85ea064/scratchpad/wolf_update.py | — | ~986 |
+| 21:55 | Sayfalı okuma: tek hareket = tek sayfa (wheel/trackpad), okuma çerçevesi tek viewport, bölüm kontrolleri header'a taşındı | use-reader-layout.ts, use-wheel-paging.ts, wheel-paging.ts, reader-shell.tsx, article-navigation.tsx, completion-control.tsx, reader-pager.tsx, globals.css, reader.spec.ts | 528 birim + 16 reader e2e testi geçti, build temiz | ~95k |
+| 21:39 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/522e37d9-4ffd-482b-8b8c-534fe85ea064/scratchpad/cerebrum_update.py | — | ~1568 |
+| 21:40 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/paged-reader-scroll-pagination.md | — | ~448 |
+| 21:41 | Edited src/lib/reader-layout/wheel-paging.ts | 2→1 lines | ~28 |
+| 21:41 | Edited src/lib/reader-layout/use-wheel-paging.ts | 1→6 lines | ~32 |
+| 21:41 | Edited tests/e2e/reader.spec.ts | 1→2 lines | ~32 |
+| 21:42 | Edited src/components/reader/completion-control.tsx | 4→4 lines | ~43 |
+| 21:44 | Session end: 51 writes across 17 files (wheel-paging.ts, wheel-paging.test.ts, use-wheel-paging.ts, use-reader-layout.ts, labels.ts) | 13 reads | ~34991 tok |

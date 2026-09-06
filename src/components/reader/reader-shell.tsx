@@ -12,7 +12,7 @@ import {
 import { ReaderSidebar } from "./reader-sidebar";
 import { MobileReadingList } from "./mobile-reading-list";
 import { ArticleProgress } from "./article-progress";
-import { ArticleNavigation } from "./article-navigation";
+import { ArticleNavigation, CompactArticleNavigation } from "./article-navigation";
 import { CompletionControl } from "./completion-control";
 import { ReadingSettings } from "./reading-settings";
 import { ArticleToc } from "./article-toc";
@@ -24,6 +24,7 @@ import { HighlightSelectionAction } from "./highlight-selection-action";
 import { SyncStatus } from "./sync-status";
 import { ReaderPager } from "./reader-pager";
 import { useReaderLayout } from "@/lib/reader-layout/use-reader-layout";
+import { useWheelPaging } from "@/lib/reader-layout/use-wheel-paging";
 import { resolveReadingAnchor } from "@/lib/reader-layout/reading-anchor";
 import { STARTED_RATIO } from "@/lib/reader/version";
 import type { SavedPlaceRecord } from "@/lib/reader-data/schema";
@@ -56,6 +57,7 @@ function ReaderShellInner({
   const { progressOf, savedPlaceOf } = useReaderData();
   const { preferences } = useReaderPreferences();
   const bodyRef = useRef<HTMLDivElement>(null);
+  const readingAreaRef = useRef<HTMLElement>(null);
   const [liveRatio, setLiveRatio] = useState(0);
   const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
   const [showNotice, setShowNotice] = useState(false);
@@ -84,11 +86,21 @@ function ReaderShellInner({
     pageCount,
     previousPage,
     nextPage,
+    turnPage,
     layoutVersion,
   } = useReaderLayout({
     containerRef: bodyRef,
     preferredMode: preferences.readingMode,
     reflowKey,
+  });
+
+  // In the paged layout the frame does not scroll, so a scroll over the article is
+  // a page turn — one per gesture, however long its momentum runs on.
+  useWheelPaging({
+    areaRef: readingAreaRef,
+    contentRef: bodyRef,
+    enabled: effectiveMode === "paged",
+    onTurn: turnPage,
   });
 
   const readyRef = useRef(ready);
@@ -293,6 +305,12 @@ function ReaderShellInner({
                   </span>
                 )}
               </p>
+              {/* Chapter navigation sits with the chapter number. Below `lg` the toolbar
+                  still carries the reading-list button and has no room for it, so the
+                  article footer keeps these controls there. */}
+              <div className="hidden shrink-0 lg:block">
+                <CompactArticleNavigation prev={prev} next={next} basePath={basePath} />
+              </div>
             </div>
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
               {!preferences.focusMode && (
@@ -302,6 +320,9 @@ function ReaderShellInner({
                   <span>{UI.readingTime(current.readingMinutes)}</span>
                 </p>
               )}
+              <div className="hidden lg:block">
+                <CompletionControl articleId={current.articleId} compact />
+              </div>
               <ArticleToc
                 containerRef={bodyRef}
                 activeHeadingId={effectiveMode === "paged" ? activeHeadingId : undefined}
@@ -337,7 +358,7 @@ function ReaderShellInner({
           }}
         />
 
-        <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
+        <main ref={readingAreaRef} id="main" tabIndex={-1} className="flex-1 focus:outline-none">
           <article className="reader-area py-10">
             <div ref={bodyRef} className="prose-reader">
               {children}
@@ -357,7 +378,10 @@ function ReaderShellInner({
               onNavigateToTarget={navigateToElement}
             />
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
-            <footer className="mt-14 flex flex-col gap-6 border-t border-border pt-6">
+            {/* From `lg` up both of these live in the toolbar, where they are reachable
+                without leaving the text — and where the paged layout, which never
+                scrolls the page, can reach them at all. */}
+            <footer className="mt-14 flex flex-col gap-6 border-t border-border pt-6 lg:hidden">
               <CompletionControl articleId={current.articleId} />
               <ArticleNavigation prev={prev} next={next} basePath={basePath} />
             </footer>
