@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Beş satırlı tablo; sütunlar yanlılık, ölçülmüş etki ve düzeltme. Konum: on beş hakem, yirmi iki görev, 150 binden fazla karar; tutarlılık kalite farkına bağlı; uygun sırayla 13 milyarlık model 80 sorunun 66'sında hakem olan ticari modeli geçiyor; düzeltme iki sırayla sormak, uzlaşma artışı 9,8 ve 14,3 puan. Uzunluk: hakem uzun cevabı insandan çok yeğliyor; uzunluk kontrolü arenayla ilişkiyi 0,94'ten 0,98'e çıkarıyor; biçimlendirme kontrolü arena sıralamasını değiştiriyor; düzeltme uzunluğu istatistiksel olarak sabitlemek. Kendini kayırma: üç model kendi çıktısını yüzde 50'nin üstünde tanıyor, en büyüğü 73,5; beş yüz örnekle ince ayar tanımayı yüzde 90'ın üstüne çıkarıyor, kayırma doğrusal izliyor; hakem düşük perplexity'li tanıdık metni yeğliyor; düzeltme farklı ailelerden kurul, tek büyük hakemden iyi ve yedi kat ucuz. Sürü ve otorite: on beş hakemin on biri sahte yüzde 85 çoğunluğa kararların yüzde 70'inden fazlasında uyuyor; karşılaştırmaların yaklaşık yüzde 40'ında yanlılık izi; sahte otorite ve süslü üslup saldırısı en büyük hakemde yüzde 50'ye varan başarı; düzeltme istemden ilgisiz bilgiyi kaldırmak ve saldırıyı ölçmek. Evrensel ifade: kısa bir ifade puanı şişiriyor ve bilinmeyen hakeme aktarılıyor; düzeltme mutlak puan yerine karşılaştırma ve insan denetimi. Altta düzeltmelerin yanlılığı azalttığı, sıfırlamadığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">yanlılık</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş etki</text>
+  <text x="510" y="28" font-size="13" font-weight="bold" fill="var(--text)">düzeltme</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">konum</text>
+  <text x="150" y="68" font-size="13" fill="var(--text)">15 hakem, 22 görev, &gt; 150 bin karar: tutarlılık</text>
+  <text x="150" y="86" font-size="13" fill="var(--text)">kalite farkına bağlı; uygun sırayla 13 milyarlık</text>
+  <text x="150" y="104" font-size="13" fill="var(--text)">model 80 sorunun 66'sında hakemi geçiyor</text>
+  <text x="510" y="68" font-size="13" fill="var(--text)">iki sırayla sor, tutarlı</text>
+  <text x="510" y="86" font-size="13" fill="var(--text)">kararı say: uzlaşma</text>
+  <text x="510" y="104" font-size="13" fill="var(--text)">+9,8 ve +14,3 puan</text>
+
+  <rect x="20" y="130" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="152" font-size="13" font-weight="bold" fill="var(--text)">uzunluk</text>
+  <text x="150" y="152" font-size="13" fill="var(--text)">hakem uzun cevabı insandan çok yeğliyor;</text>
+  <text x="150" y="170" font-size="13" fill="var(--text)">uzunluk kontrolü arenayla ilişkiyi 0,94 → 0,98;</text>
+  <text x="150" y="188" font-size="13" fill="var(--text)">biçimlendirme kontrolü arena sırasını değiştiriyor</text>
+  <text x="510" y="152" font-size="13" fill="var(--text)">tercihi uzunluğa göre</text>
+  <text x="510" y="170" font-size="13" fill="var(--text)">modelleyip "aynı</text>
+  <text x="510" y="188" font-size="13" fill="var(--text)">uzunlukta olsa" sormak</text>
+
+  <rect x="20" y="214" width="680" height="94" fill="var(--accent-soft)" />
+  <text x="30" y="236" font-size="13" font-weight="bold" fill="var(--text)">kendini</text>
+  <text x="30" y="254" font-size="13" font-weight="bold" fill="var(--text)">kayırma</text>
+  <text x="150" y="236" font-size="13" fill="var(--text)">üç model kendi çıktısını &gt; %50 tanıyor, en</text>
+  <text x="150" y="254" font-size="13" fill="var(--text)">büyüğü %73,5; 500 örnekle ince ayar &gt; %90 ve</text>
+  <text x="150" y="272" font-size="13" fill="var(--text)">kayırma tanımayı doğrusal izliyor; hakem düşük</text>
+  <text x="150" y="290" font-size="13" fill="var(--text)">perplexity'li, tanıdık metni yeğliyor</text>
+  <text x="510" y="236" font-size="13" fill="var(--text)">farklı ailelerden kurul:</text>
+  <text x="510" y="254" font-size="13" fill="var(--text)">tek büyük hakemden</text>
+  <text x="510" y="272" font-size="13" fill="var(--text)">iyi uzlaşma, yedi</text>
+  <text x="510" y="290" font-size="13" fill="var(--text)">kattan fazla ucuz</text>
+
+  <rect x="20" y="316" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="338" font-size="13" font-weight="bold" fill="var(--text)">sürü ve otorite</text>
+  <text x="150" y="338" font-size="13" fill="var(--text)">15 hakemin 11'i sahte "%85 yeğledi" cümlesine</text>
+  <text x="150" y="356" font-size="13" fill="var(--text)">kararların &gt; %70'inde uyuyor; ≈ %40 yanlılık izi;</text>
+  <text x="150" y="374" font-size="13" fill="var(--text)">sahte otorite ve süslü üslup: %50'ye varan başarı</text>
+  <text x="510" y="338" font-size="13" fill="var(--text)">istemden ilgisiz bilgiyi</text>
+  <text x="510" y="356" font-size="13" fill="var(--text)">kaldırmak; saldırıyı</text>
+  <text x="510" y="374" font-size="13" fill="var(--text)">önceden ölçmek</text>
+
+  <rect x="20" y="400" width="680" height="58" fill="var(--surface-muted)" />
+  <text x="30" y="422" font-size="13" font-weight="bold" fill="var(--text)">evrensel ifade</text>
+  <text x="150" y="422" font-size="13" fill="var(--text)">vekil hakemde öğrenilen kısa ifade puanı</text>
+  <text x="150" y="440" font-size="13" fill="var(--text)">şişiriyor ve görülmemiş hakeme aktarılıyor</text>
+  <text x="510" y="422" font-size="13" fill="var(--text)">mutlak puan yerine</text>
+  <text x="510" y="440" font-size="13" fill="var(--text)">karşılaştırma; insan</text>
+
+  <text x="20" y="486" font-size="13" fill="var(--text-muted)">Her düzeltme yanlılığı azaltır, sıfırlamaz. Sayılar metindeki çalışmalardan.</text>
+  <text x="20" y="504" font-size="13" fill="var(--text-muted)">Konum satırının ilk yarısı Shi ve ark., ikinci yarısı Wang ve ark.</text>
+</svg>

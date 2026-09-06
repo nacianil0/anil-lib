@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-05T22:55:01.866Z
-> Files: 223 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T01:00:59.634Z
+> Files: 245 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -11,7 +11,7 @@
 
 ## .claude/
 
-- `launch.json` (~140 tok)
+- `launch.json` (~141 tok)
 
 ## .claude/rules/
 
@@ -123,6 +123,12 @@
 - `wolf-b12.py` — Batch 12 — OpenWolf state updates: buglog.json, cerebrum.md, memory.md. (~2692 tok)
 - `yh-b12.py` — Batch 12 (+1 fazı) — docs/seri/YOL-HARITASI.md anchored insertions. (~9624 tok)
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/db92c409-5e48-4a44-a062-40622d4ed8bd/scratchpad/
+
+- `handoff_b17.py` — ` + `content/series/assets/<slug>/*.svg` | (~7237 tok)
+- `wolf_b17.py` — , docs/seri/YOL-HARITASI.md, docs/seri/HANDOFF.md | tamam | ~900k |", (~2017 tok)
+- `yol_b17.py` — rep (~6767 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/
 
 - `commitmsg.txt` (~650 tok)
@@ -145,6 +151,7 @@
 - `series-batch14-faz7-acilis.md` (~707 tok)
 - `series-batch15-faz7-govde.md` (~843 tok)
 - `series-batch16-faz7-kapanis.md` (~975 tok)
+- `series-batch17-faz8-acilis.md` (~1020 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -210,6 +217,11 @@
 - `grab.py` — Kaynak metinden anahtar sözcük geçen cümleleri çıkarır. (~404 tok)
 - `scan-b16.py` — Yayın öncesi taramalar (Batch 16): parantezli gloss listesi, yasaklı biçimler, (~567 tok)
 - `svgcheck-b16.py` — Sütun taşması ve sağ kenar tahmini (Batch 16): 13 birimlik metin ~6,8 birim/karakter, (~649 tok)
+
+## artifacts/b17-research/
+
+- `dblp-b17.py` (~669 tok)
+- `fetch-b17.py` (~11778 tok)
 
 ## artifacts/b7-render/
 
@@ -392,10 +404,14 @@
 - `belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md` — "Eminim" ne demek (~7378 tok)
 - `constitutional-ai-ve-olceklenebilir-denetim.md` — Etiketi kim yazar, ilkeyi kim (~8517 tok)
 - `dalkavukluk-ve-model-karakteri.md` — Hoşa giden ile doğru olan (~7672 tok)
+- `degerlendirme-bilimi-benchmarklarin-otesi.md` — Bir puan bir ölçümdür (~10085 tok)
 - `guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md` — Üç sıfat, bir gerilim (~6368 tok)
 - `hizalama-sorunu-ne-istedigimizi-soylemek-zor.md` — Söylediğimiz şey, istediğimiz şey değil (~7660 tok)
+- `insan-degerlendirmesi-ve-hakem-modeller.md` — Anahtar yokken (~8850 tok)
 - `jailbreak-ve-kirmizi-takim.md` — Ret ilk token'lardaysa, ilk token'lar kimin (~10251 tok)
+- `kirlilik-ve-ezber-benchmarklara-guven-krizi.md` — Sorunun eğitim verisinde olması (~10262 tok)
 - `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8142 tok)
+- `mekanistik-yorumlanabilirlik-devreleri-okumak.md` — Davranışın yetmediği yer (~9352 tok)
 - `sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md` — Eşiği kim yazıyor (~6259 tok)
 - `yonetisim-politika-standartlar-ve-regulasyon.md` — Kararı kim veriyor (~6847 tok)
 
@@ -513,6 +529,12 @@
 ## content/series/assets/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez/
 
 
+## content/series/assets/degerlendirme-bilimi-benchmarklarin-otesi/
+
+- `dogru-cevabi-tasimak.svg` (~1297 tok)
+- `gecerlilik-zinciri.svg` (~1594 tok)
+- `hata-payi-ve-kume-boyu.svg` (~1069 tok)
+
 ## content/series/assets/dogrulama-modelin-cevabini-kontrol-etmek/
 
 
@@ -561,6 +583,12 @@
 - `devir-karari-dort-politika.svg` (~1146 tok)
 - `ozerklik-ekseni-bes-rol.svg` (~1506 tok)
 
+## content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/
+
+- `hakem-insan-uzlasmasi-goreve-gore.svg` (~1410 tok)
+- `hakem-yanliliklari-ve-duzeltmeleri.svg` (~1594 tok)
+- `insan-degerlendirmesinin-anatomisi.svg` (~1356 tok)
+
 ## content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/
 
 
@@ -573,6 +601,12 @@
 - `gcg-aktarim-tablosu.svg` (~1637 tok)
 - `hicbir-model-her-saldiriya.svg` (~1830 tok)
 - `uc-savunma-uc-saldiri.svg` (~1327 tok)
+
+## content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/
+
+- `ayni-sinav-yeniden-yazilinca.svg` (~1630 tok)
+- `ezberin-uc-etkeni.svg` (~1186 tok)
+- `sizintinin-dort-yolu.svg` (~1419 tok)
 
 ## content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/
 
@@ -597,6 +631,12 @@
 - `apilerin-bir-yil-sonrasi.svg` (~663 tok)
 - `bicim-cozuldu-is-cozulmedi.svg` (~805 tok)
 - `mcp-uc-rol.svg` (~879 tok)
+
+## content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/
+
+- `aktivasyon-yamasi-iki-yon.svg` (~1190 tok)
+- `dolayli-nesne-devresi.svg` (~1384 tok)
+- `okuma-araci-ne-soyler-ne-soylemez.svg` (~1439 tok)
 
 ## content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/
 

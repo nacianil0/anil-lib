@@ -1402,6 +1402,86 @@
       "path": "content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 16
+    },
+    {
+      "articleId": "article_49b1d889-6668-4fe8-adc6-a230cd947384",
+      "title": "Değerlendirme Bilimi: Benchmark'ların Ötesi",
+      "slug": "degerlendirme-bilimi-benchmarklarin-otesi",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 71,
+      "summary": "Faz 8'i, bir benchmark puanını bir ölçüm iddiası olarak okumayı öğreterek açar: ölçülmek istenen soyut yapıdan görevleştirmeye, ölçütten puana ve puandan çıkarıma uzanan geçerlilik zincirinin her halkasında neyin kırıldığını — tanımı tartışmalı yapılar, yalnızca hipotezle çözülen sınavlar, etiket hataları —; puanın bir örneklem olduğunu ve hata payının küme boyuyla nasıl değiştiğini — beş yüz soruda 0,4 puan iki sorudur, on dört bin soruda elli altı —; istemin, şık harfinin ve puanlama protokolünün puanın içinde durduğunu — doğru cevabı A şıkkına taşımak bir modeli on beş puan yükseltiyor —; ve ölçütlerin neden yaşlandığını, alanın buna dinamik kümeler, uzman yazımı sorular ve bir değerlendirme bilimi çağrısıyla nasıl cevap verdiğini kurar.",
+      "tags": [
+        "degerlendirme-bilimi",
+        "yapi-gecerliligi",
+        "hata-payi",
+        "istem-duyarliligi",
+        "olcut-omru"
+      ],
+      "contentHash": "sha256:9e8d14743279aff290a56e2967fc0e1b6a6f84764fecb07218ff6e2be5c6b176",
+      "path": "content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 17
+    },
+    {
+      "articleId": "article_20a41c7c-eab6-469f-aace-89ab44fc0d6e",
+      "title": "Kirlilik ve Ezber: Benchmark'lara Güven Krizi",
+      "slug": "kirlilik-ve-ezber-benchmarklara-guven-krizi",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 72,
+      "summary": "8, 16, 18 ve 31'in bu numaraya bıraktığı borcu öder: sınav sorularının eğitim verisine dört yoldan sızdığını — birebir kopya, yeniden yazım ve çeviri, arayüz üzerinden dolaylı sızıntı ve görev kirliliği, çözüm sızıntısı — ve topluluğun 566 kayıtlık kirlilik veritabanını; kirliliğin verinin içine bakmadan nasıl bulunduğunu — yönlendirmeli tamamlama, sıra değiştirilebilirlik testi, eksik şık tahmini — ve üyelik çıkarımının neden çoğu zaman rastgeleden iyi olmadığını; ezberin kapasite, tekrar ve bağlamla log-doğrusal büyüdüğünü, on kez tekrarlanan dizinin bin kat daha sık üretildiğini ve uzun kuyruk kuramına göre ezberin genelleme için neden gerekli olduğunu; ve kirliliğin puanı ne kadar şişirdiğini — yeniden yazılmış ilkokul matematiğinde sekiz puana varan düşüş, işlevsel sürümde yüzde 58 ile 80 arası açık ve test görevine eğitimin yeni ile eski modellerin farkını silmesi.",
+      "tags": [
+        "kirlilik",
+        "ezber",
+        "uyelik-cikarimi",
+        "yeniden-uretim",
+        "test-gorevine-egitim"
+      ],
+      "contentHash": "sha256:e1e092054380c2441f159168a8f21de12becfd2f2d3143da4cd9cf2e76b21ee0",
+      "path": "content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 17
+    },
+    {
+      "articleId": "article_f72eac04-184d-4ffa-a1c5-3f935ca61b47",
+      "title": "İnsan Değerlendirmesi ve Hakem Modeller",
+      "slug": "insan-degerlendirmesi-ve-hakem-modeller",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 73,
+      "summary": "Cevap anahtarının olmadığı yerde ölçümün bir insana ya da bir modele devredildiğini kurar: insan değerlendirmesinin kendisinin bir ölçüm olduğunu — kimin puanladığı, hangi ölçekle, kaç kişiyle ve şansa göre düzeltilmiş uzlaşmayla —; kitle işçilerinin model metnini insanınkinden ayıramadığını, uzman çevirmenlerin sıralamayı baştan yazdığını ve kendinden emin üslubun olgusallık algısını çarpıttığını; hakem modelin insanla uzlaşmasının hakemin değil görev, özellik ve etiketleyici üçlüsünün özelliği olduğunu — yirmi kümede akıl yürütme adımlarında 0,82, güvenlik ve toksisitede sıfır ya da eksi —; hakemin ölçülmüş yanlılıklarını ve düzeltmelerini — konum, uzunluk, kendini tanıyıp kayırma, sürüye uyma, evrensel saldırı ifadesi; iki sırayla sorma, uzunluk kontrolü, ayrı ailelerden kurul —; ve hakemin ancak insan çapasıyla kullanılabileceğini: doğru referans olmadan uzlaşma düşüyor, hakem ne kadar iyi olursa olsun insan verisinin iki katından fazlasının yerine geçemiyor.",
+      "tags": [
+        "insan-degerlendirmesi",
+        "hakem-model",
+        "uzlasma",
+        "hakem-yanliligi",
+        "insan-capasi"
+      ],
+      "contentHash": "sha256:8f79cb02be1e5aab1f6e7d153c59af87709f8a070ec7b636c957eee918443b99",
+      "path": "content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 17
+    },
+    {
+      "articleId": "article_12592572-a4cf-41d1-af7c-23aa380652c6",
+      "title": "Mekanistik Yorumlanabilirlik: Devreleri Okumak",
+      "slug": "mekanistik-yorumlanabilirlik-devreleri-okumak",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 74,
+      "summary": "6 ve 18'in bu numaraya bıraktığı koordinat bandını açar, modelin içine bakmanın araçları ve açıklamanın sınırı: artık akışı bir iletişim kanalı, dikkat başlarını ona yazıp ondan okuyan bağımsız işlemler ve devreyi bir davranışı taşıyan alt çizge olarak kurar; bir devrenin aktivasyon yamasıyla nasıl bulunup sadakat, tamlık ve enazlıkla nasıl kanıtlandığını — küçük bir modelde dolaylı nesneyi bulan 26 başlık devre, modelin puanının yüzde 87'sini taşıyor —; bulunan devreleri — indüksiyon başlarının eğitimin dar bir penceresinde belirmesi, modüler toplamanın Fourier dönüşümüyle çözülmesi ve geç genellemenin üç evresi, olgu geri çağırmanın üç adımı, görevi taşıyan işlev vektörleri, 70 milyarlık modelde çoktan seçmeli devresi —; ve açıklamanın sınırını: sondanın okuduğu bilgi kullanılmayabilir, dikkat ağırlığı tek başına açıklama değildir, nöron ve alt uzay yanılsamaları vardır, sadakat ölçüsü yöntem seçimine duyarlıdır ve aynı görev iki farklı algoritmayla çözülebilir.",
+      "tags": [
+        "mekanistik-yorumlanabilirlik",
+        "devre",
+        "aktivasyon-yamasi",
+        "induksiyon-basi",
+        "sonda"
+      ],
+      "contentHash": "sha256:c8152b40b72a9e2038fc5ce5255c59222d234a6847b6b3667ce175e2257a9a58",
+      "path": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 17
     }
   ]
 }

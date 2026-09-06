@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 372" role="img" aria-label="Üç sütunlu şema; her sütun ezberi büyüten bir etken ve ölçülmüş sayıları. Kapasite: aynı ailede büyük model küçüğünden iki ile beş kat fazla ezberler, 6 milyarlık model derlemin en az yüzde 1'ini birebir üretir. Tekrar: on kez geçen dizi bir kez geçenden yaklaşık bin kat sık üretilir, üstü doğrusal; tekilleştirme ezberlenmiş metin üretimini on kat düşürür; tekrarlanmayan dizide tespit rastgele düzeyinde. Bağlam: 6 milyarlık modelde 50 token önekle dizilerin yüzde 33'ü, 450 token önekle yüzde 65'i çıkarılabilir. Altta ezber taksonomisi üç kutu: beşten çok tekrarlanan dizinin ezberden okunması, şablon gibi öngörülebilir dizinin yeniden kurulması, ikisi de olmayan nadir dizinin anımsanması; en hızlı büyüyen üçüncüsüdür. En altta ilişkilerin log-doğrusal olduğu, eğri çizilmediği ve sayıların metindeki çalışmalardan alındığı yazılıdır.">
+  <text x="20" y="26" font-size="13" font-weight="bold" fill="var(--text)">Ezberi büyüten üç etken (çıkarılabilir ezber)</text>
+
+  <rect x="20" y="40" width="216" height="140" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" font-weight="bold" fill="var(--text)">1. kapasite</text>
+  <text x="30" y="84" font-size="13" fill="var(--text)">aynı ailede büyük model</text>
+  <text x="30" y="102" font-size="13" fill="var(--text)">küçüğünden 2–5 kat fazla</text>
+  <text x="30" y="120" font-size="13" fill="var(--text)">ezberler; 6 milyarlık model</text>
+  <text x="30" y="138" font-size="13" fill="var(--text)">derlemin ≥ %1'ini birebir</text>
+  <text x="30" y="156" font-size="13" fill="var(--text)">üretir</text>
+
+  <rect x="252" y="40" width="216" height="140" fill="var(--accent-soft)" />
+  <text x="262" y="62" font-size="13" font-weight="bold" fill="var(--text)">2. tekrar (üstü doğrusal)</text>
+  <text x="262" y="84" font-size="13" fill="var(--text)">10 kez geçen dizi, 1 kez</text>
+  <text x="262" y="102" font-size="13" fill="var(--text)">geçenden ≈ 1.000 kat sık</text>
+  <text x="262" y="120" font-size="13" fill="var(--text)">üretilir; tekilleştirme</text>
+  <text x="262" y="138" font-size="13" fill="var(--text)">üretimi 10 kat düşürür;</text>
+  <text x="262" y="156" font-size="13" fill="var(--text)">tekrarsızda tespit rastgele</text>
+
+  <rect x="484" y="40" width="216" height="140" fill="var(--surface-muted)" />
+  <text x="494" y="62" font-size="13" font-weight="bold" fill="var(--text)">3. bağlam</text>
+  <text x="494" y="84" font-size="13" fill="var(--text)">6 milyarlık modelde</text>
+  <text x="494" y="102" font-size="13" fill="var(--text)">50 token önek → %33</text>
+  <text x="494" y="120" font-size="13" fill="var(--text)">450 token önek → %65</text>
+  <text x="494" y="138" font-size="13" fill="var(--text)">çıkarılabilir; uzun ipucu,</text>
+  <text x="494" y="156" font-size="13" fill="var(--text)">kolay geri çağırma</text>
+
+  <text x="20" y="208" font-size="13" font-weight="bold" fill="var(--text)">Ezberin üç türü</text>
+
+  <rect x="20" y="222" width="216" height="94" fill="var(--surface-muted)" />
+  <text x="30" y="244" font-size="13" font-weight="bold" fill="var(--text)">ezberden okuma</text>
+  <text x="30" y="264" font-size="13" fill="var(--text)">dizi veride > 5 kez</text>
+  <text x="30" y="282" font-size="13" fill="var(--text)">tekrarlanmış; alıntı gibi</text>
+
+  <rect x="252" y="222" width="216" height="94" fill="var(--surface-muted)" />
+  <text x="262" y="244" font-size="13" font-weight="bold" fill="var(--text)">yeniden kurma</text>
+  <text x="262" y="264" font-size="13" fill="var(--text)">artan sayı, tekrarlanan alt</text>
+  <text x="262" y="282" font-size="13" fill="var(--text)">dizi; öngörülebilir şablon</text>
+
+  <rect x="484" y="222" width="216" height="94" fill="var(--accent-soft)" />
+  <text x="494" y="244" font-size="13" font-weight="bold" fill="var(--text)">anımsama</text>
+  <text x="494" y="264" font-size="13" fill="var(--text)">ikisi de değil, nadir dizi;</text>
+  <text x="494" y="282" font-size="13" fill="var(--text)">ölçekle en hızlı büyüyen</text>
+  <text x="494" y="300" font-size="13" fill="var(--text)">tür</text>
+
+  <text x="20" y="340" font-size="13" fill="var(--text-muted)">Üç ilişki log-doğrusaldır; eğri çizilmedi, yalnızca ölçülmüş yönler ve sayılar.</text>
+  <text x="20" y="358" font-size="13" fill="var(--text-muted)">Sayılar Carlini ve ark., Kandpal ve ark., Lee ve ark. ve Prashanth ve ark.'tan.</text>
+</svg>

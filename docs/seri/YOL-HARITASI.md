@@ -40,7 +40,7 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Tokenizer farkının yeteneklere yansıması | 8, 14 | 15 | ödendi (Batch 3) |
 | Değerlendirme kümeleri neyi ölçer/ölçemez; perplexity karşılaştırma tuzakları | 5, 9 | 16 | ödendi (Batch 3) |
 | Halüsinasyonun ciddiyetle ele alınması | 10 | 17 | ödendi (Batch 3) |
-| Ezber ↔ genelleme gerilimi | 8 | 18 ve 72 | 18 ödendi (Batch 3); 72 açık |
+| Ezber ↔ genelleme gerilimi | 8 | 18 ve 72 | 18 ödendi (Batch 3); 72 ödendi (Batch 17) |
 | Örnekle öğrenme (in-context learning) | 5, 22 | 23 | ödendi (Batch 5) |
 | Sistem istemi, roller ve sohbet biçiminin kurulumu | 21 | 24 | ödendi (Batch 5) |
 | Pencereyi eğitim uzunluğunun ötesine esnetme yolları | 21 | 25 | ödendi (Batch 5) |
@@ -53,11 +53,11 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | İlkelere dayalı tercih etiketleri ve ölçeklenebilir denetim | 13 | 64 | ödendi (Batch 15; 61'in tekrarı da 64'ün gövdesinde adıyla kapatıldı) |
 | Açık ağırlık yayımlamanın güvenlik tarafı | 20 | 61–70 | ödendi (Batch 16; 62: ince ayar saldırısı; 63: ağırlığa erişen saldırganın üç kapısı; 68: marjinal risk çerçevesi, unutturmanın geri kazanımı, yayımlama gradyanı ve yapısal erişim alternatifleri; 70: ağırlık güvenliği kademesi) |
 | Açık kaynak tanımının düzenleyici çerçevedeki yeri | 20 | 69 | ödendi (Batch 16; muafiyetin metni ile tanımın listesi 69-Şekil 2'de karşılaştırıldı) |
-| Kirliliğin değerlendirmeye etkisi ve ezberin benchmark'lara yansıması | 8, 16, 18, 31 | 72 | açık |
+| Kirliliğin değerlendirmeye etkisi ve ezberin benchmark'lara yansıması | 8, 16, 18, 31 | 72 | ödendi (Batch 17; 72'nin açılışı dört kaynak makaleyi adıyla anar: sızıntının dört yolu, kara kutuda tespit, ezberin üç etkeni ve üç türü, yeniden yazılan sınavda puan düşüşü, ölçütü koruma) |
 | Doğrulayıcıların eğitimi ve modelin kendi cevabını kontrol etmesi | 33, 34 | 35 | ödendi (Batch 8) |
 | Birden çok yol deneyip aralarında oy verme (öz-tutarlılık, arama) | 33 | 36 | ödendi (Batch 8) |
 | Adımların tek tek ödüllendirilmesi (süreç denetimi) | 34 | 38 | ödendi (Batch 8) |
-| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6, 18 | 74–77 | açık |
+| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6, 18 | 74–77 | ilk taksit ödendi (Batch 17; 74: artık akış, devre, aktivasyon yamasının iki yönü, sadakat/tamlık/enazlık, sonda–dikkat–nöron–alt uzay yanılsamaları); 75–77 açık |
 | Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | açık |
 | Uzmanlar karışımı mimarisinin kurulumu | 20 | 85 | açık |
 | Karesel maliyeti ödemeyen alternatif mimariler | 7, 15 | 86 | açık |
@@ -197,6 +197,20 @@ büyük tek sayılar yüzde, puan, katılımcı sayısı ve eğri altı alan de�
 konusu" yayından önce "bir sonraki makalenin konusu" yapıldı). Defterde açık kalan en yakın tekil koordinat
 artık **72**'dir (8, 16, 18 ve 31'in kirlilik vaadi); 74–77, 78, 85, 86 ve 101 de açıktır.
 
+**Numarasız ileri işaretler — Batch 17'de verildi.** Ölçümün istatistiği ve anlamlı fark (71 → 101, defterde
+zaten numaralı; 71 yalnızca "ölçümün disiplini" düzeyinde bıraktı); beliren yeteneklerin cetvelle ilişkisi
+(71, 74 → 78, defterde numaralı; 74 "78'e bıraktığımız tartışmanın içeriden görünüşü" dedi); süperpozisyon ve
+seyrek sözlük (74 → 75, "bir sonraki makale", numarasız); temsile müdahale ve yönlendirme (73, 74 → 76,
+numarasız); modelin gerekçesinin atfı (74 → 77, numarasız); şeffaflık ve belgeleme (71 → 80, numarasız);
+hakemin kurumsal denetimi (73 → 80, numarasız); dinamik ölçüt ve canlı değerlendirme (72 → 79, numarasız).
+**72 koordinatı ödendi** (72'nin açılışı 8, 16, 18 ve 31'i adıyla andı); **74–77 bandının ilk taksidi ödendi**
+(74'ün açılışı 6 ve 18'i adıyla andı: "araçlar ve devreler burada, özellikler, müdahale ve atıf sonraki üç
+makalede"). Batch 17 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin
+tamamı yayımlanmış makalelere (≤ 74) ya da defterde kayıtlı koordinatlara (78, 101) yapıldı ve Python ile makale
+başına doğrulandı (74'ten büyük öteki sayılar yüzde ve puan değerleridir). Defterde açık kalan en yakın tekil
+koordinat artık **78**'dir (5 ve 9'un beliren yetenekler vaadi); 75–77 (bandın kalan taksitleri), 85, 86 ve 101
+de açıktır.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -292,10 +306,10 @@ artık **72**'dir (8, 16, 18 ve 31'in kirlilik vaadi); 74–77, 78, 85, 86 ve 10
 
 ### Faz 8 — Değerlendirme ve Yorumlanabilirlik (71–80)
 
-71. **Değerlendirme Bilimi: Benchmark'ların Ötesi** — 16'nın ileri düzey geri çağrımı.
-72. **Kirlilik ve Ezber: Benchmark'lara Güven Krizi** — contamination; 8'in vaadi (18 ile birlikte).
-73. **İnsan Değerlendirmesi ve LLM-as-Judge** — değerlendiren modeller.
-74. **Mechanistic Interpretability: Devreleri Okumak** — modelin içine bakmak.
+71. **Değerlendirme Bilimi: Benchmark'ların Ötesi** — 16'nın ileri düzey geri çağrımı; "benchmark" başlıkta kaldı (karar #161). `[yayında]`
+72. **Kirlilik ve Ezber: Benchmark'lara Güven Krizi** — contamination; 8'in vaadi (18 ile birlikte); 72 koordinatı ödendi. `[yayında]`
+73. **İnsan Değerlendirmesi ve Hakem Modeller** — değerlendiren modeller (karar #162). `[yayında]`
+74. **Mekanistik Yorumlanabilirlik: Devreleri Okumak** — modelin içine bakmak; 74–77 bandının açılışı (karar #163). `[yayında]`
 75. **Özellikler ve Süperpozisyon: Modelin İç Dili** — features, SAE'ler.
 76. **Aktivasyonlara Müdahale: Steering ve Problar** — nedensel müdahale.
 77. **Attribution: Model Neden Böyle Dedi?** — açıklanabilirlik.
@@ -482,6 +496,15 @@ on bir, 60 için on iki, 61 için altı, 62 için beş satırlıktı; 61 ve 62'n
 - 60 ← 59 (her devir bir bedel: onay, gözden geçirme, netleştirme, yeniden deneme), 51 (puan çağrı sayısıyla; 4 $ bütçe, 1,21 ↔ 2,52; "hızlı başarır, yavaş başarısız olur"; politika pencerenin fonksiyonu → kendi hatasına koşullanma), 53 (fatura tur × pencere → kare terimi), 55 (Şekil 2 tablosu → geçiş başına bedel; altı koşu 17,33–18,67, pass@6 32,67), 57 (Pareto sınırı; HAL 21/36; TheAgentCompany 4,2 ↔ 0,6 $; Kapoor elli kat; koşu sayısı), 47 (264–804 token; maliyetin %95,9'u girdi; paralel çağrı 7,12 → 3,95 sn; pass^k), 26 (önek paylaşımı: yeniden gönderilir, yeniden hesaplanmaz; program–motor yerelliği), 28 (ilk token süresi / token başına süre; sürekli yığınlama iş hacmini artırır gecikmeye dokunmaz; yığın ↔ gecikme takası), 49 (belirlenimci araç sırası = önbellek), 56 (kesme / özet / sayfalama / iç durum → önek kararı; MEM1 tepe token 3,7×), 21 (durumsuzluk: pencerenin tamamı her tur yeniden gönderilir), 52 (büyük modeli gerektiğinde çağır: 757 ↔ 1.971 token/eylem), 13 (yönlendirici tercih çiftleriyle eğitilir), 33 (çoğunluk oyu ve öz-düzeltme bedeli), 40 (%80 ufku ↔ formül 0,32 katı), 32 (ara adımlar koşullanmayı kırıyor) `[yayında]`
 - 61 ← 60 (her ölçüm bir hedef varsaydı), 11 (hizalanmamış; hizalama vergisi; "davranış post-training'den"), 6 (Bahdanau'nun çeviri hizalaması — ayrım açıkça), 13 (ödül modeli = etiketleyicinin seçtiği; aşırı optimizasyon tepesi; KL tasması; uyum %72,6; 64 koordinatı), 16 (Goodhart yasası), 57 (imkânsız test %76; cetvel hedefe dönüşünce), 58 (kum havuzu ajanın kendisine karşı), 37 (getiri, ziyaret sayılarının doğrusal fonksiyonu; durum/eylem/politika), 2 (genelleme; aşırı öğrenme), 9 (ölçek yasaları yeteneğin nasıl büyüdüğünü söyler), 51 (politika pencerenin fonksiyonu → hedef, pencereye düşen durumlara bağlı), 55 (test davranışın örneklemi ↔ hedef), 59 (devir = hedef belirsizken durmak; iz denetimi; izleyici), 49 ("belirtim" sözcüğünün protokol anlamı — ayrım), 24 (talimat hiyerarşisi = Gabriel'in ilk hedefi), 32 (izleyicinin gördüğü ara adımlar) `[yayında]`
 - 62 ← 61 (yardımsever/dürüst/zararsız; iki boşluk; uyumsuz genelleme = hedef yanlış genellemesinin güvenlik hâli), 11 (hizalama vergisi; parametreler ortak; yardımseverlik ↔ zararsızlık işareti), 13 (44 bin / 42 bin ayrı kümeler; ödül modeli tek sayı; KL ıraksaması; model üretimi tercih etiketleri işareti), 24 (hiyerarşi eğitimi 83,1 → 60,4; sistem istemi ayrıcalık ve aşırı temkin; özel token'lar), 58 (AgentHarm 85,2 → 16,7; StruQ GCG 97 → 58; dedektör süzgeci), 12 (denetimli ince ayar; talimat izleyen model zararlı talimatı da izler), 19 (ince ayar; unutma; düşük ranklı uyarlama), 20 (açık ağırlık yayımlamanın güvenlik tarafı — vaat taksidi), 16 (iki kümeli cetvel), 2 (aşırı öğrenme: sözcük düzeyinde ezber), 8 (ön eğitimden gelen dil kalıbı: ret öneki), 30 (üretimin ilk token'larını kısıtlamak), 39 (çekimserlik), 59 (netleştirme sorusu), 45 (hakem model: GPT-4 ↔ insan tutarlı; kural puanlayıcı hakem) `[yayında]`
+
+**Batch 17 (71–74) — gerçekleşen graf.** Yazılan metinde fiilen kullanılan bağlar; HANDOFF'un taslağı 71 için
+on bir, 72 için on, 73 için on, 74 için sekiz satırlıktı. (63–70'in satırları graf yerine Batch 15 ve 16'nın
+kavram-tekrar tablolarına yazıldı.)
+
+- 71 ← 16 (cetvel bir tasarım ürünüdür; liderlik tablosu; kalibrasyon tanımı; 16'nın ileri düzey geri çağrımı), 70 (70'in kapanışı: bir değerlendirme neyi ölçer; eşik ölçümü ve yetenek çıkarımı), 65 (kalibrasyonun kök ortalama kare hatası — **numarasız işaretin tahsili**), 57 (ajan değerlendirmesinin dört sayısı; hile oranı; maliyet kayıtlı koşu), 45 (hakem model ve üç yanlılık; yüzde 17 hakem, yüzde 13 insan sayımı), 67 (değerlendirme farkındalığı; sınavı tanıyan sınanan; yetenek saklama), 68 (marjinal risk ve taban), 69 (denetimin erişimi), 33 (kapsama ve pass@k), 40 (görev ufku), 22 (istem duyarlılığı; biçim 76 puan), 9 (beliren yeteneklerin cetvelle ilişkisi → 78), 14 (kirlilik → 72, "bir sonraki makale") `[yayında]`
+- 72 ← 8 (ezber ↔ genelleme; **72 koordinatı**), 16 (tutulan küme; cetvel), 18 (ezberin yeri; nedensel izleme), 31 (kirlilik göndermesi), 14 (tekilleştirme; n-gram tarama; kirlilik tanımı), 71 (geçerlilik zinciri; protokol puanın içinde; hata payı), 55 (çözüm sızıntısı; kod ölçütleri), 57 (tutulan küme; canlı ölçüt), 68 (unutturmanın ölçülmesi; geri kazanım), 41 (parametrik ↔ parametrik olmayan bellek), 2 (aşırı öğrenme; ezberin kayıpla ilişkisi), 9 (ölçekle büyüyen ezber), 20 (açık ağırlık; kılavuz kirliliği), 66 (kimin görüşü — dolaylı) `[yayında]`
+- 73 ← 45 (hakem model; yüzde 85 ↔ 81; üç yanlılık; iki sırayla sorma; küçük insan kümesiyle hata kestirimi), 72 (anahtarlı cetvelin sınırı; 71'in sayımı), 71 (insan değerlendirmesi de bir ölçüm; protokol), 57 (izi okuyan hakem ajan; yüzde 90 uzlaşma), 64 (tartışmayı okuyan hakem; yüzde 75 güven süzgeci; bilgisi olmayan hakem), 65 (hakem güveni; kalibrasyon — **numarasız işaretin tahsili**), 66 (hakem de dalkavukluğa açık; kimin görüşü; PRISM), 16 ve 13 (Bradley–Terry; tercih çifti), 38 (süreç denetimi), 52/56 (öz-yansıma ↔ hakem), 44 (sorgu yeniden yazma — dolaylı), 67 (kendini tanıma → durum farkındalığı), 74 (kendini tanımanın içerideki karşılığı, "bir sonraki makale") `[yayında]`
+- 74 ← 6 (dikkat ağırlığı "neye baktığı" değildir; **74–77 bandının açılışı**), 18 (nedensel izleme = gürültü giderme; anahtar-değer belleği; Hase: yerelleştirme ≠ düzenleme), 3 (temsil; çok anlamlı nöron; Olah'ın devre incelemesi), 7 (artık bağlantı → artık akış; 12 × 12 = 144 baş; sekiz ayrı bakış), 23 (örnekle öğrenme ↔ indüksiyon başları; işlev vektörü), 9 ve 5 (beliren yetenek ↔ geç genelleme; cetvel → 78), 30 (kısıtlı üretim; logit'ler — devir), 31 (sadakat sözcüğü), 43 (seçicilik ↔ özgüllük ayrımı — dolaylı), 49 (tamlık — dolaylı), 62 (ret yönü), 65 (Azaria'nın iç sınıflandırıcısı), 67 (sonda; model organizması; temsil mühendisliği), 71 (şık harfi yanlılığının makinesi; protokol sonucun içinde), 72 (ezber ile genelleme mekanizma düzeyinde), 73 (hakemin kendini tanıması → içerideki karşılığı) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1426,6 +1449,62 @@ MCP üçlüsü (49/53 → 115).
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
 
+### Batch 17'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 71–74'te fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 17'de gerçekleşen |
+|---|---|
+| Temsil; aktivasyon; çok anlamlı nöron (3) | 74 (artık akış; Bolukbasi'nin nöron yanılsaması; sonda; çok anlamlı nöron 75'e devredildi) ✓ **yetmiş bir makale aralıklı geri çağırma** |
+| Dikkat ağırlığı "modelin neye baktığı" değildir (6) | 74 (**6'nın vaadi ödendi**: Jain & Wallace ↔ Wiegreffe & Pinter; ağırlık nereden okunduğunu söyler, nedeni değil) ✓ |
+| Artık bağlantı; dikkat başı; ileri beslemeli katman; 12 × 12 = 144 baş (7) | 74 (artık akış; 26/144 baş; Voita'nın 48 başın 38'ini budaması) ✓ |
+| Ezber ↔ genelleme; tekilleştirme; kirlilik tanımı (8, 14, 18) | 72 (**72 koordinatı ödendi**: sızıntının dört yolu, n-gram tarama, ezberin üç etkeni ve üç türü), 74 (geç genellemede ezber ve devre yan yana) ✓ |
+| Cetvel bir tasarım ürünüdür; liderlik tablosu; kalibrasyon tanımı (16) | 71 (geçerlilik zinciri; kısayol; hata payı; protokol puanın içinde), 72 (tutulan küme), 73 (insan değerlendirmesi de bir ölçüm) ✓ |
+| Anahtar-değer belleği; nedensel izleme; Hase (18) | 74 (gürültü giderme = nedensel izleme; Geva'nın üç adımı; yerelleştirme ≠ düzenleme ailenin ilk üyesi), 72 (ezberin yeri) ✓ |
+| Ölçek yasaları; beliren yetenek; cetvel (5, 9) | 71 (ölçüt piyangosu; ikili cetvel → 78), 72 (ezber ölçekle büyür), 74 (geç genelleme: davranışta ani, mekanizmada sürekli → 78) ✓ |
+| İstem duyarlılığı (22) | 71 (biçim 76 puan; çok istemli değerlendirme) ✓ |
+| Örnekle öğrenme (23) | 74 (indüksiyon başlarının faz geçişi 2,5–5 milyar token; işlev vektörü) ✓ |
+| Logit'lerin dışarıdan kısıtlanması (30) | 72 (kanonik sıra tercihi), 74 (ölçü olarak logit farkı) ✓ |
+| Sadakat; düşünce zinciri (31) | 74 (sadakat sözcüğü aynı anlamda, nesne devre), 72 (31'in kirlilik göndermesi) ✓ |
+| Süreç denetimi (38) | 73 (adımları puanlayan hakem), 74 (dolaylı) ✓ |
+| Hakem model; yüzde 85 ↔ 81; üç yanlılık; iki sırayla sorma (45) | 73 (**yanlılık listesi on ikiye çıktı**; uzlaşma göreve göre 0,82 → −0,24; insan çapası), 71 (ölçütlerin yüzde 17'si hakeme dayanır) ✓ |
+| Öz-yansıma ↔ hakem (52/56) | 73 (hakemin kendi çıktısını tanıması), 74 (aynı sorunun içerideki karşılığı) ✓ |
+| Çözüm sızıntısı; kod ölçütleri (55) | 72 (82 yama; çözümü görülen alt kümede daha yüksek puan) ✓ |
+| Ajan değerlendirmesi; hile; tutulan küme; canlı ölçüt (57) | 71, 72 (canlı ölçüt ve kesim tarihi süzgeci), 73 (izi okuyan hakem) ✓ |
+| Tartışma; bilgisi olmayan hakem; yüzde 75 güven süzgeci (64) | 73 ✓ |
+| Kalibrasyon; ECE; kök ortalama kare hatası; hakem güveni (65) | 71 (**numarasız işaretin tahsili**: kalibrasyon değerlendirme biliminin ölçüsü), 73 (**hakem güveni tahsil edildi**: Dorner'ın iki kat sınırı, PairS belirsizliği) ✓ |
+| Dalkavukluk; kimin görüşü; PRISM (66) | 73 (hakem de dalkavukluğa açık; 75 ülke 1.500 katılımcı), 72 (kimin görüşü — dolaylı) ✓ |
+| Değerlendirme farkındalığı; sınavı tanıyan sınanan; sonda; model organizması (67) | 71 (sınavı tanıyan sınanan; yetenek çıkarımı), 73 (kendini tanıma), 74 (**numarasız işaretin tahsili**: sonda ve müdahale araçları; model organizması) ✓ |
+| Marjinal risk; taban; unutturma (68) | 71 (taban), 72 (unutturmanın ölçülmesi ve geri kazanım) ✓ |
+| Denetimin erişimi (69) | 71 (denetimin erişimi; şeffaflık → 80) ✓ |
+| Eşik ölçümü; yetenek çıkarımı (70) | 71 (70'in kapanış sorusu 71'in açılışı) ✓ |
+
+Planlanıp **tahsil edilmeyenler** (sonraki batch'lere devrolur): sorgu yeniden yazma (44 → 73, kullanılmadı;
+düşer), kapsama ve pass@k (33 → 71, kullanılmadı; 78'e devrolur), görev ufku (40 → 71, kullanılmadı; 78'e),
+Azaria'nın iç sınıflandırıcısı (65 → 74, kullanılmadı; 76'ya), kısıtlı üretim (30 → 74, yalnızca logit ölçüsü
+düzeyinde; 76'ya), Wooldridge–Jennings (51 → 111), MCP üçlüsü (49/53 → 115).
+
+### Batch 17'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 17'de gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Yapı; görevleştirme; yapı geçerliliği; güvenilirlik (reliability) | 71 | 72 (görev kirliliği), 73 (insan değerlendirmesi bir protokol) | 78, 79, 80, 101 |
+| Kısayol öğrenme; etiketleme artefaktı; kolaycı örnekleme | 71 | 72 (sömürü ↔ ezber) | 79, 101 |
+| Standart hata; kümelenmiş standart hata; istatistiksel güç; madde tepki kuramı | 71 | 73 (üç etiketleyici × yüz örnek farkı göremez; güç hesabı) | 78, 101 |
+| Çok istemli değerlendirme; seçim yanlılığı; şık konumu | 71 | 74 (şık harfi devresi: içerik toplayıcı ve doğru harf başları) | 76, 79 |
+| Dinamik ölçüt; ölçüt piyangosu; değerlendirme bilimi | 71 | 72 (canlı ölçüt; işlevsel ölçüt) | 78, 80, 101 |
+| Sızıntının dört yolu; dolaylı sızıntı; görev kirliliği; test görevine eğitim | 72 | — | 78, 79 |
+| Üyelik çıkarımı; veri damgası; değiştirilebilirlik; kanonik sıra tercihi | 72 | — | 79, 80 |
+| Çıkarılabilir ezber; ezberden okuma / yeniden kurma / anımsama; ezberin üç etkeni | 72 | 74 (geç genellemede ezber ↔ devre) | 75, 79 |
+| İşlevsel ölçüt; sömürü; yeniden yazılan sınav (GSM1k) | 72 | — | 78, 79 |
+| Kitle kaynak; şansa göre düzeltilmiş uzlaşma; hoşgörü | 73 | — | 80, 101 |
+| Kendini tanıma; uzunluk kontrolü; kurul; insan çapası | 73 | 74 (kendini tanımanın içerideki karşılığı) | 76, 80 |
+| Mekanistik yorumlanabilirlik; devre; artık akış; QK / OV devresi; indüksiyon başı | 74 | — | 75, 76, 77, 85, 86 |
+| Aktivasyon yaması; gürültüleme / gürültü giderme; nedensel aracılık; nedensel soyutlama; atıf yaması | 74 | — | 76, 77 |
+| Devre ölçütleri: sadakat, tamlık, enazlık; yedek baş | 74 | — | 76, 77 |
+| Grokking; ilerleme ölçüsü; evrensellik; işlev vektörü | 74 | — | 75, 78 |
+| Kontrol görevi; seçicilik; yorumlanabilirlik yanılsaması; uyuyan yol | 74 | — | 75, 76, 77 |
+
 ### Batch 15'te gerçekleşen tekrarlar (planlananların tahsili)
 
 Önceki batch'lerin kavramlarının 63–66'da fiilen nerede geri çağrıldığı:
@@ -2034,6 +2113,55 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | koşullu taahhüt | (if-then commitment) | 70 | "şu ölçülürse şu önlem" biçimi |
 | güvenlik savunması | (safety case) | 70 | sistemin yeterince güvenli olduğunu kanıtla savunan yapılandırılmış belge |
 | yetenek çıkarma | (capability elicitation) | 70 | ölçümün elde edilebilir en yüksek yeteneği çıkarması |
+
+| yapı | (construct) | 71 | ölçülmek istenen soyut şey; 16'daki cetvelin ölçtüğü iddia edilen şey |
+| görevleştirme | (operationalization) | 71 | yapıyı görev + örneklem + puanlama kuralına çevirme |
+| yapı geçerliliği | (construct validity) | 71 | görevin yapıyı ne kadar temsil ettiği |
+| güvenilirlik | (reliability) | 71 | ölçümün tekrarında tutarlılık; 50/57'deki "güvenilir" (dependable) sözcüğünden ayrı |
+| kolaycı örnekleme | (convenience sampling) | 71 | elde olanın örneklem sayılması |
+| kısayol öğrenme | (shortcut learning) | 71 | görevi çözmeden puanı alan ipucunu öğrenmek; 57'deki kısayol/hilenin öğrenme hâli |
+| etiketleme artefaktı | (annotation artifact) | 71 | etiketleyicinin bıraktığı, cevabı ele veren iz |
+| standart hata; kümelenmiş standart hata | (standard error; clustered standard error) | 71 | puanın örneklem hatası; sorular öbeklendiğinde düzeltilmiş hâli |
+| istatistiksel güç | (statistical power) | 71 | gerçek bir farkı görebilme olasılığı |
+| madde tepki kuramı | (item response theory) | 71 | soruların zorluğunu ve ayırt ediciliğini modelleyen psikometri |
+| çok istemli değerlendirme | (multi-prompt evaluation) | 71 | aynı soruyu birden çok istem biçimiyle sormak |
+| seçim yanlılığı | (selection bias) | 71 | çoktan seçmelide şık konumuna ya da harfine bağlı tercih |
+| dinamik ölçüt | (dynamic benchmark) | 71 | kesim tarihinden sonraki sorularla sürekli yenilenen ölçüt |
+| ölçüt piyangosu | (benchmark lottery) | 71 | hangi ölçütün seçildiğinin sıralamayı belirlemesi |
+| değerlendirme bilimi | (evaluation science) | 71 | ölçümü kendi disiplini olarak kurma çağrısı |
+| çıkarılabilir | (extractable) | 72 | dizinin bir önekle modelden geri alınabilmesi |
+| dolaylı sızıntı | (indirect leakage) | 72 | test verisinin arayüzden ya da görevden eğitim verisine sızması |
+| görev kirliliği | (task contamination) | 72 | test kümesinin kendisi değil görev türünün eğitime girmesi |
+| değiştirilebilirlik | (exchangeability) | 72 | kanonik sıra tercihi testinin dayandığı istatistiksel varsayım |
+| üyelik çıkarımı | (membership inference) | 72 | bir örneğin eğitim kümesinde olup olmadığını modelden çıkarma |
+| veri damgası | (data watermark) | 72 | kümeye kasıtlı gömülen ve sızıntıyı ele veren işaret |
+| çıkarılabilir ezber; ezberden okuma / yeniden kurma / anımsama | (extractable memorization; recitation / reconstruction / recollection) | 72 | ezberin ölçülebilir tanımı ve üç türü |
+| işlevsel ölçüt | (functional benchmark) | 72 | aynı şablonun yeni sayılarla üretildiği ölçüt |
+| sömürü | (exploitation) | 72 | ezberden farklı: kirli olmayan ama şablonu öğrenilmiş görevden puan almak |
+| test görevine eğitim | (training on the test task) | 72 | ölçütün görev türüne özel eğitim verisiyle çalışmak |
+| kitle kaynak | (crowdsourcing) | 73 | platform işçileriyle etiketleme |
+| hoşgörü | (leniency) | 73 | hakemin eksik ya da yanlış cevaba geçer not vermesi |
+| kendini tanıma | (self-recognition) | 73 | hakemin bir metni kendisinin yazdığını ayırt etmesi; 45'teki kendini kayırmadan ayrı |
+| uzunluk kontrolü | (length control) | 73 | tercihi uzunluğa göre modelleyip düzeltmek |
+| kurul | (panel) | 73 | ayrı ailelerden birkaç küçük hakem |
+| insan çapası | (human grounding) | 73 | hakemin sayısını küçük bir insan kümesiyle bağlamak |
+| mekanistik yorumlanabilirlik | (mechanistic interpretability) | 74 | ağın hesabını okunabilir bileşenlere ve nedensel bağlara ayırmak |
+| devre | (circuit) | 74 | bir davranışı taşıyan bileşen alt çizgesi |
+| artık akış | (residual stream) | 74 | 7'deki artık bağlantının katmanlar boyu hâli; başların okuyup yazdığı kanal |
+| sorgu-anahtar devresi; çıktı-değer devresi | (QK circuit; OV circuit) | 74 | başın nereye bakacağı ve ne yazacağı; 6'nın üçlüsünün ikiye ayrılmış hâli |
+| indüksiyon başı | (induction head) | 74 | "A B … A → B" kopyalayan baş; en az iki katman ister |
+| aktivasyon yaması | (activation patching) | 74 | ara hesabı başka çalıştırmadan alınan değerle değiştirmek; 18'deki nedensel izlemenin genel hâli |
+| gürültü giderme; gürültüleme | (denoising; noising) | 74 | yamanın iki yönü: "yeter mi" ↔ "gerekli mi" |
+| nedensel aracılık çözümlemesi | (causal mediation analysis) | 74 | doğrudan ↔ dolaylı etki ayrımı |
+| nedensel soyutlama | (causal abstraction) | 74 | ağın yüksek düzeyli nedensel modelin uygulaması olup olmadığı |
+| sadakat; tamlık; enazlık (devre ölçütleri) | (faithfulness; completeness; minimality) | 74 | 31'deki sadakat aynı anlamda, nesne devre; 49'daki tamlık sözcüğünden ayrı |
+| atıf yaması | (attribution patching) | 74 | yamanın gradyanla doğrusal yaklaşıklığı |
+| işlev vektörü | (function vector) | 74 | az sayıda başın taşıdığı görev temsili |
+| grokking | — | 74 | geç genelleme; Türkçeleştirilmedi |
+| ilerleme ölçüsü | (progress measure) | 74 | sıçramanın altındaki sürekli süreci ölçen büyüklük |
+| evrensellik | (universality) | 74 | aynı özellik ve devrelerin farklı ağlarda yeniden belirmesi; 63'teki "evrensel saldırı"dan ayrı |
+| kontrol görevi; seçicilik | (control task; selectivity) | 74 | rastgele etiketli sondayla karşılaştırma; 43'teki özgüllükten (specificity) ayrı |
+| yorumlanabilirlik yanılsaması; uyuyan yol | (interpretability illusion; dormant pathway) | 74 | okumanın veri kümesinden ya da yamanın uyandırdığı yoldan gelmesi |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -3569,6 +3697,116 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     (dl.acm 403; 2021 arXiv sürümü kullanıldı), Urbina Nature MI 2022 (tam metin alınamadı; Sandbrink'in
     aktarımı üzerinden anıldı, künye Crossref'ten), NYU CTF, PentestGPT, CyberSecEval, Eldan unutturma,
     Rosati gürültüleme, Yang & Menczer bot ağı, Mökander dışındaki denetim derlemeleri, Reuel'in tam listesi.
+
+160. **Faz 8'in kategorisi: `safety-and-evaluation` devam eder (71–80).** HANDOFF'un varsayılan önerisi
+    seçildi: sözlükte "değerlendirme" sözcüğünü taşıyan tek kategori bu; 71–73 doğrudan ölçüm, 74–77 62/65/67'de
+    sonuç düzeyinde kullanılan araçların kurulumu, 78–80 yine ölçüm ve belgeleme. Bedeli okuma listesinde 61–80'in
+    tek öbek olması; `groupByBatchAndCategory` kohort × kategori kırdığı için liste Batch 14–17 başlıkları
+    altında ayrı görünmeye devam ediyor ve `reading-list-groups.test.ts` değişmedi (519 test: 507 + 12 yeni SVG
+    testi). Yeni kategori (`evaluation-and-interpretability`) açılmadı: `schema.ts`, iki serinin şema testleri ve
+    61–70 ↔ 71–80 arasında yapay sınır bedeli, liste başlığındaki adlandırma kazancını aşıyor.
+161. **71'in başlığı "Benchmark'ların Ötesi" olarak kaldı.** "benchmark" terim defterinde Türkçeleştirilmez
+    diye kayıtlı (ilk geçiş 16) ve gövdede "ölçüt" ile eşanlamlı kullanılıyor; #108 ölçütüne göre başlıkta
+    kalması doğru.
+162. **73'ün başlığı "İnsan Değerlendirmesi ve LLM-as-Judge" → "İnsan Değerlendirmesi ve Hakem Modeller".**
+    Defterde "hakem model" karşılığı 45'ten beri kayıtlı; roadmap satırı entegrasyondan önce değiştirildi.
+163. **74'ün başlığı "Mechanistic Interpretability: Devreleri Okumak" → "Mekanistik Yorumlanabilirlik: Devreleri
+    Okumak".** Gövde terimi "mekanistik yorumlanabilirlik" (mechanistic interpretability) olarak ilk kez 74'te
+    gloss'landı; 6, 18 ve 67 "yorumlanabilirlik" sözcüğünü zaten kullanıyordu.
+164. **Terim ayrımları (Batch 17).** "güvenilirlik" (reliability, 71) ölçümün tekrar tutarlılığıdır ve
+    50/57'deki "güvenilir" (dependable) sözcüğünden ayrıldı; "seçicilik" (selectivity, 74) 43'teki
+    "özgüllük"ten (specificity) ayrı; "sadakat" 74'te 31 ile aynı anlamda ama nesne devre; "tamlık" 74'te devre
+    ölçütü, 49'daki tamlıktan ayrı; "artık akış" 7'nin artık bağlantısının katmanlar boyu adı; "evrensellik"
+    (74) 63'teki "evrensel saldırı ifadesi"nden ayrı; "kendini tanıma" (73) 45'teki "kendini kayırma"dan ayrı;
+    "grokking" Türkçeleştirilmedi ("geç genelleme" açıklama olarak yanında); "zero-shot" 71'in şekil alt
+    metninde yasaklı "sıfır atışlı" yerine İngilizce bırakıldı.
+165. **Sayılar (Batch 17).** **71:** Wallach ve ark. tartışmalı yapı %47,8, hipotezle çözüm %67; kolaycı
+    örnekleme %12; tam eşleşme %81,3; etiket hatası %6,49, on kümede ≥ %3,3 (Northcutt); Zheng Tablo 1 doğru
+    cevap A'ya taşınınca llama-30B 53,1 → 68,2, gpt-3.5-turbo 67,2 → 65,3; seçim yanlılığı ölçüsü 5,5 → 1,0;
+    Sclar biçim 76 puan; 45'in sayımı ölçütlerin %17'si hakem, %13'ü insan; MMLU 14.042 soru. **72:** 317 test
+    kümesi olayı; hedef metinlerin %1,87–24,88'i birebir; yeniden yazılmış test kümesiyle 13 milyarlık model 85,9;
+    255 makalenin %42'si 4,7 milyon örnek gönderdi; 82 yama; yönlendirmeli tamamlama %92–100; silinen yanlış
+    şık %57; en düşük olasılıklı token testi 0,72; ezber büyük modelde 2–5 kat; 10 kez geçen dizi ≈ 1.000 kat;
+    50 token önek %33, 450 token %65; GSM8k → GSM1k düşüşleri Yi-6B-Chat 8,0, math-shepherd 7,2, phi-2 6,3,
+    Llama-3-8B 6,2 … gemini-1.5-pro 0,6; düşüş ↔ üretme olasılığı 0,36 sıra ilişkisi. **73:** işçilerin %42'si
+    < 40 sn; ayırt etme %50 → %55; sohbet modeli kitle işçisini ≈ 25 puan geçiyor, etiket başına < 0,003 dolar;
+    ham %80 uzlaşma 10–20 puan sapma gizler; ikili tercihte insan–insan %63–66; Bavaresco Tablo 1: akıl yürütme
+    adımları 0,82/0,83, diyalog güvenliği −0,24/−0,17 (insan 0,27); ortalama kappa 0,28, sıra ilişkisi 0,50; Shi
+    15 hakem 22 görev > 150 bin karar; Wang 80 sorunun 66'sı; iki sırayla sorma +9,8 ve +14,3; uzunluk kontrolü
+    0,94 → 0,98; kendini tanıma > %50, en büyüğü %73,5, 500 örnekle > %90; 15 hakemin 11'i sahte "%85" cümlesine
+    > %70 uyuyor; Dorner: insan verisinin iki katından fazlasının yerine geçemez. **74:** 12 × 12 = 144 baştan
+    26 baş, 7 sınıf; logit farkı 3,56, devre %87'sini taşır, %99,3; faz geçişi 2,5–5 milyar token, 0,15 → ≈ 0,4
+    nat; ACDC 32 bin kenardan 68, 5/5 bileşen; EAP-IG kenarların %1–2'siyle ≥ %85; Shi kenarların %20'si;
+    P = 113; Voita 48 başın 38'i, −0,15 BLEU; Hewitt & Liang 97,3 ↔ 92,8, seçicilik 4,5; Elazar > %80; Nanda
+    Othello %98,9; Bolukbasi > %80; Lieberum 70 milyar.
+166. **Kendi hesabımız (Batch 17): 71-Şekil 2.** Standart hata tablosu bizim hesabımızdır: p = 0,70 için
+    SE = √(p(1−p)/n) × 100, aralık ±1,96 × SE; n = 100/500/1.000/5.000/14.042 → SE 4,58/2,05/1,45/0,65/0,39, aralık
+    ±9,0/±4,0/±2,8/±1,3/±0,8 puan; 0,4 puan = 0,4/2/4/20/56 soru. Şekil alt metni "kendi hesabımız" diye
+    işaretli. Öteki bütün sayılar kaynakların kendi verdiği değerlerdir (72'nin "≈ 1.000 kat" ifadesi Kandpal'ın,
+    74'ün "144 baş" sayısı 7'nin).
+167. **Kaynak politikası (Batch 17).** 71'de 39, 72'de 45, 73'te 36, 74'te 39 kaynak (159 kalem). Dağılım: 126
+    hakemli (71'de 32, 72'de 37, 73'te 27, 74'te 30), 33 hakemsiz ve işaretlenmiş kalem. Hakemsizler, üç türde:
+    (a) sağlayıcı raporları — GPT-4 teknik raporu, Llama 3 raporu; (b) editörlü ya da kurum içi yayın —
+    Olah'ın Distill incelemesi ("editörlü web dergisi"), Elhage ve Olsson'un Transformer Circuits yazıları;
+    (c) arXiv ön çalışmaları — Miller (hata payı), Madaan, Biderman (sızıntı), Owen, Phan (HLE), Dehghani (ölçüt
+    piyangosu), Weidinger (değerlendirme bilimi), Yang (yeniden yazım), Das, Singh, Cooper, Srivastava, Zhou,
+    Gudibande, Thakur, Saito, Dubois (uzunluk kontrolü), Li (arena istatistiği), Wataoka, Stureborg, Verga
+    (kurul), Saphra & Wiegreffe, Heimersheim & Nanda, Syed, Power (grokking), Lieberum, Bolukbasi. Krumdick
+    "COLM 2026'ya kabul edilmiş bildiri" diye işaretlendi (PDF başlığı), hakemli sayılmadı. Çalıştay bildirileri
+    (Alain & Bengio ICLR 2017; Nanda, Lee & Wattenberg BlackboxNLP 2023) hakemli sayıldı. **DBLP bu run'da bir
+    kaynağın hakemli olduğunu sonradan gösterdi ve künye düzeltildi:** Makelov ve ark. (ICLR 2024), Sharkey ve
+    ark. (TMLR 2025), Vu ve ark. FLAMe (EMNLP 2024), Ye ve ark. (ICLR 2025), Dorner ve ark. (ICLR 2025);
+    tersine Gudibande ve ark. DBLP'de yalnızca CoRR olduğu için hakemsiz yapıldı. Doğrulama kanalları: DBLP `ee`
+    (12 sn aralık, 600+ sorgu, b13–b16'dan tohumlandı), Crossref `query.title`, `papers.nips.cc` hash sayfaları,
+    OpenReview kimlikleri (DBLP `ee` üzerinden, tahmin edilmedi), PMLR cilt sayfaları (curl ile başlık teyidi),
+    ACL Anthology, PDF başlık satırları ("Published as a conference paper at COLM 2024"). **Doğrulanamayan:**
+    Rein ve ark. GPQA — COLM 2024 kabul listesi challenge sayfası döndü, DBLP yalnızca CoRR; künye "COLM 2024
+    bildirisi olarak duyuruldu; kabul listesi erişilemedi" diye yazıldı. **Aday olup kullanılmayanlar:**
+    Rodriguez ve ark. ACL 2021 (PDF metni çıkarılamadı; Vania kullanıldı), Ravaut (başlık uyuşmazlığı),
+    van der Lee ve Krippendorff (metin alınamadı; uzlaşma katsayıları adıyla anıldı), nostalgebraist logit
+    merceği (429; Belrose tuned lens de kullanılmadı), Bereska & Gavves derlemesi, Hendel görev vektörleri,
+    Goldowsky-Dill yol yaması, Casper eleştirisi.
+
+## Batch 17 öğrenme notları (yazım tamamlandı)
+
+- **Faz 8 açıldı: değerlendirme bilimi (71) → kirlilik ve ezber (72) → insan değerlendirmesi ve hakem modeller
+  (73) → mekanistik yorumlanabilirlik (74).** 70'in kapanış sorusu ("bir değerlendirme neyi ölçer") 71'in
+  açılışı oldu; 71 puanı bir ölçüm olarak kurdu (geçerlilik zinciri, kısayol, hata payı, protokol), 72 8/16/18/31'in
+  kirlilik koordinatını ödedi, 73 anahtarsız ölçümü insan ve hakem üzerinden kurdu ve 65'in hakem güveni işaretini
+  tahsil etti, 74 6 ve 18'in 74–77 bandını açtı ve 3'ün çok anlamlı nöronunu 75'e devretti. Kategori kararı
+  verildi (#160); iki başlık Türkçeleştirildi (#162, #163), 71'in "benchmark"ı kaldı (#161). Kohort tamamen
+  `safety-and-evaluation`; okuma listesinde 61–74 tek öbek, test değişmedi (519 test).
+- **Araştırma yine tamamen ana oturumda, workflow/subagent yok** (cerebrum 2026-09-03). 274 kalemlik tek liste
+  **iki kopya betikle** (`fetch-b17.py` ileri, `fetch-b17b.py` ters sırada; aynı `DONE` listesini paylaşıp
+  çakışmadan 272 metin) ve DBLP `ee` arka planda (`dblp-b17.py`, 12 sn aralık, 600+ anahtar; b13–b16'dan
+  tohumlandı). **Yeni kanallar ve tuzaklar:** OpenReview PDF'leri 403 (arXiv sürümü okundu, kimlikler DBLP
+  `ee`'den alındı); COLM kabul listesi sayfası bir challenge sayfası döndürüyor (Rein doğrulanamadı); lesswrong
+  429; Semantic Scholar toplu sorguda yine 429; METR'in yetenek çıkarma kılavuzunun adresi iki kez taşınmış;
+  Burnell'in Science yazısı `eprints.whiterose.ac.uk` ön baskısından; Rodriguez'in ACL PDF'inden metin
+  çıkmadı; Crossref `query.title` sonuçları `crossref-b17.json`'da. DBLP yazım bittikten sonra da sonuç
+  vermeye devam etti ve beş künyeyi hakemliye çevirdi (#167) — **künyeler DBLP bitmeden kesinleşmemeli.**
+- **Sayı ve ad tuzakları:** Zheng'in Tablo 1'i sütun sütun okunmalı (özgün sıra ↔ A/B/C/D); GSM1k tablosunda
+  özgün ↔ yeni ↔ fark üç ayrı sütun; Bavaresco'nun Tablo 1'inde insan sınırı bazı satırlarda "—"; Wang'ın
+  %87'si 3,56'lık farkın payıdır, doğruluk değil; Olsson'un skoru nat cinsinden; Hewitt & Liang'ın seçiciliği
+  fark (97,3 − 92,8 = 4,5), oran değil; DyVal'ın ilk yazarı "Kaijie Zhu" (taslakta "Kaipeng" yazılmıştı,
+  yayından önce düzeltildi); yazar listeleri PDF'ten (Wallach, Raji, Bean, White, Biderman).
+- **Kelime bandı:** 71 ilk taslakta 3.734 düzyazı kelimesiyle tavanı aştı ve altı kırpma turuyla indi (kesilenler
+  ikinci örnekler ve tekrar eden bağlam); 74 3.571 wc ile tavanın hemen altında; 73 3.305. Ölçüm makaleleri
+  yine uzun geldi (Batch 16'nın dersi doğrulandı).
+- **SVG:** 12 yeni şekil. `svgcheck-b17.py` yazım aşamasında üç sütun binmesi, dört sağ kenar taşması ve bir
+  alt not taşması yakaladı. **PNG turu bu kez iki kusur daha buldu:** aynı satırdaki iki etiketin ("dolaylı
+  nesne" ↔ "özne S1") biri kayıtlı sütun olmadığı için ölçer görmedi; ve bir metin kendi `rect`'inin dışına
+  taştı (ölçer metni bir sonraki sütuna karşı ölçer, kutu genişliğine karşı değil). Ders: ölçer kutu içi
+  metinleri kutunun `x + width`'ine karşı da ölçmeli (sonraki run'da `svgcheck`'e eklenecek); PNG turu
+  vazgeçilmez.
+- **Render doğrulaması izole kopyada** (`D:\dev\anil-lib-b17-render`, junction + kapısız dev, 3210): build exit 0
+  (`/seri/[slug]` 74 yol), 75 seri rotası 200 (36,3 sn), dört makale × üç genişlik × üç temada DOM ölçümü temiz
+  (taşma 0, `main.innerText` içinde undefined/NaN yok, ham i18n anahtarı yok; 375'te SVG kendi kaydırma kabında,
+  `.series-figure-scroll` tasarımı), konsolda yalnızca `/api/reader-sync` 503; ana worktree'de typecheck (0) ve 519
+  test; 26 PNG (12 şekil × 2 tema + iki yeniden çekim). **launch.json tuzağı tekrarlandı:** Bash heredoc içindeki
+  Python'da bile `\\` çiftleri tek `\`'a indi ve `\b` backspace oldu — Write aracıyla yazıldı; Git Bash'in yolu
+  bu makinede `%LOCALAPPDATA%\Programs\Git\usr\bin\bash.exe`. Kullanıcı Batch 15–16'yı run sırasında commit etti
+  (`C0MM`); yalnızca Batch 17 çalışma ağacında.
 
 ## Batch 16 öğrenme notları (yazım tamamlandı)
 

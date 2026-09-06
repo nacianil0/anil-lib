@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Üstte bir cümle token token: When Mary and John went to the store, John gave a drink to; Mary dolaylı nesne, John özne, ikinci John S2 ve sondaki konum END işaretli. Ortada üç ana baş sınıfı ve oklar: tekrarlanan token başları S2 konumunda etkin, birinci John'a bakıp tekrarın konumunu yazar; özne bastırma başları END konumunda etkin, S2'ye bakıp ad taşıyıcıların sorgusuna John'u bastıran sinyal yazar; ad taşıyıcı başlar END konumunda etkin, kalan adı Mary'yi çıktıya kopyalar. Yanda yardımcı sınıflar: önceki token ve indüksiyon başları tekrarı tanımaya yardım eder, olumsuz ad taşıyıcılar ters yönde yazar, yedek ad taşıyıcılar asıl taşıyıcılar silinince devreye girer. Altta sayılar: 12 katman ve 144 baştan 26 baş, 7 sınıf; doğru ad ile yanlış ad arasındaki ortalama logit farkı 3,56 ve devre bunun yüzde 87'sini taşır; üç ölçüt sadakat, tamlık, enazlık.">
+  <text x="20" y="26" font-size="13" fill="var(--text-muted)">girdi (token'lar):</text>
+  <text x="20" y="48" font-size="13" fill="var(--text)">When</text>
+  <rect x="62" y="34" width="44" height="20" fill="var(--accent-soft)" />
+  <text x="66" y="48" font-size="13" font-weight="bold" fill="var(--text)">Mary</text>
+  <text x="112" y="48" font-size="13" fill="var(--text)">and</text>
+  <rect x="142" y="34" width="42" height="20" fill="var(--surface-muted)" />
+  <text x="146" y="48" font-size="13" font-weight="bold" fill="var(--text)">John</text>
+  <text x="190" y="48" font-size="13" fill="var(--text)">went to the store,</text>
+  <rect x="316" y="34" width="42" height="20" fill="var(--surface-muted)" />
+  <text x="320" y="48" font-size="13" font-weight="bold" fill="var(--text)">John</text>
+  <text x="364" y="48" font-size="13" fill="var(--text)">gave a drink</text>
+  <rect x="452" y="34" width="26" height="20" fill="var(--cool-soft)" />
+  <text x="456" y="48" font-size="13" font-weight="bold" fill="var(--text)">to</text>
+  <text x="490" y="48" font-size="13" fill="var(--text-muted)">→ ?</text>
+  <text x="44" y="68" font-size="13" fill="var(--text-muted)">dolaylı nesne</text>
+  <text x="150" y="68" font-size="13" fill="var(--text-muted)">özne S1</text>
+  <text x="316" y="68" font-size="13" fill="var(--text-muted)">özne tekrar S2</text>
+  <text x="452" y="68" font-size="13" fill="var(--text-muted)">END</text>
+
+  <rect x="20" y="92" width="200" height="96" fill="var(--surface-muted)" />
+  <text x="30" y="112" font-size="13" font-weight="bold" fill="var(--text)">1. tekrarlanan token</text>
+  <text x="30" y="130" font-size="13" font-weight="bold" fill="var(--text)">başları</text>
+  <text x="30" y="150" font-size="13" fill="var(--text)">S2'de etkin; S1'e bakar;</text>
+  <text x="30" y="168" font-size="13" fill="var(--text)">"John tekrarlandı" yazar</text>
+
+  <text x="232" y="144" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="252" y="92" width="200" height="96" fill="var(--surface-muted)" />
+  <text x="262" y="112" font-size="13" font-weight="bold" fill="var(--text)">2. özne bastırma</text>
+  <text x="262" y="130" font-size="13" font-weight="bold" fill="var(--text)">başları</text>
+  <text x="262" y="150" font-size="13" fill="var(--text)">END'de etkin; S2'ye bakar;</text>
+  <text x="262" y="168" font-size="13" fill="var(--text)">taşıyıcıların sorgusuna</text>
+  <text x="262" y="186" font-size="13" fill="var(--text)">"John'a bakma" yazar</text>
+
+  <text x="464" y="144" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="484" y="92" width="216" height="96" fill="var(--accent-soft)" />
+  <text x="494" y="112" font-size="13" font-weight="bold" fill="var(--text)">3. ad taşıyıcı başlar</text>
+  <text x="494" y="130" font-size="13" fill="var(--text)">END'de etkin; kalan ada,</text>
+  <text x="494" y="150" font-size="13" fill="var(--text)">Mary'ye, bakar ve onu</text>
+  <text x="494" y="168" font-size="13" fill="var(--text)">çıktıya kopyalar</text>
+
+  <text x="20" y="216" font-size="13" font-weight="bold" fill="var(--text)">yardımcı sınıflar</text>
+  <text x="20" y="236" font-size="13" fill="var(--text)">önceki token + indüksiyon başları: tekrarı tanımaya yardım eder</text>
+  <text x="20" y="254" font-size="13" fill="var(--text)">olumsuz ad taşıyıcılar: ters yönde yazar (logit farkını düşürür)</text>
+  <text x="20" y="272" font-size="13" fill="var(--text)">yedek ad taşıyıcılar: asıl taşıyıcılar silinince devreye girer</text>
+
+  <line x1="20" y1="290" x2="700" y2="290" stroke="var(--border)" />
+  <text x="20" y="312" font-size="13" font-weight="bold" fill="var(--text)">sayılar</text>
+  <text x="20" y="332" font-size="13" fill="var(--text)">12 katman × 12 baş = 144 baştan 26 baş, 7 sınıf</text>
+  <text x="20" y="350" font-size="13" fill="var(--text)">doğru ad ↔ yanlış ad ortalama logit farkı 3,56; devre tek başına bunun %87'sini taşır</text>
+  <text x="20" y="368" font-size="13" fill="var(--text)">üç ölçüt: sadakat (puanın payı), tamlık (aynı biçimde bozulma), enazlık (her baş gerekli)</text>
+  <text x="20" y="398" font-size="13" fill="var(--text-muted)">Wang ve ark. (ICLR 2023), GPT-2 small. Oklar bilgi akışının yönü; sınıf adları makaleden.</text>
+</svg>

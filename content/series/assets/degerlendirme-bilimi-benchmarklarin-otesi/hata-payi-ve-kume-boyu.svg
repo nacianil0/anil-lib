@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 312" role="img" aria-label="Beş satırlı tablo; sütunlar soru sayısı, standart hata, yüzde 95 aralığı, aralığın ölçekli çizimi ve 0,4 puanlık farkın kaç soru ettiği. Yüz soru: 4,58; artı eksi 9,0; 0,4 soru. Beş yüz: 2,05; artı eksi 4,0; 2 soru. Bin: 1,45; artı eksi 2,8; 4 soru. Beş bin: 0,65; artı eksi 1,3; 20 soru. On dört bin kırk iki: 0,39; artı eksi 0,8; 56 soru. Her satırda aralık, ortak bir merkez çizgisinin iki yanına genişliğiyle orantılı bir çubuk olarak çizilir; yüz soruluk satırın çubuğu vurguludur ve yanında merkezî limit aralığının birkaç yüz sorunun altında güvenilmez olduğu yazılıdır. Altta hesabın kendi hesabımız olduğu, doğruluğun 0,70 alındığı, standart hatanın 0,70 çarpı 0,30 bölü soru sayısının karekökü olduğu ve aralığın 1,96 standart hata olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">soru sayısı</text>
+  <text x="130" y="28" font-size="13" font-weight="bold" fill="var(--text)">standart hata</text>
+  <text x="240" y="28" font-size="13" font-weight="bold" fill="var(--text)">%95 aralığı</text>
+  <text x="340" y="28" font-size="13" font-weight="bold" fill="var(--text)">aralık, ölçekli</text>
+  <text x="560" y="28" font-size="13" font-weight="bold" fill="var(--text)">0,4 puan = kaç soru</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <line x1="445" y1="46" x2="445" y2="186" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="48" width="680" height="26" fill="var(--accent-soft)" />
+  <text x="20" y="66" font-size="13" fill="var(--text)">100</text>
+  <text x="130" y="66" font-size="13" fill="var(--text)">4,58 puan</text>
+  <text x="240" y="66" font-size="13" fill="var(--text)">±9,0 puan</text>
+  <rect x="373" y="55" width="144" height="12" fill="var(--accent)" />
+  <text x="560" y="66" font-size="13" fill="var(--text)">0,4 soru</text>
+
+  <text x="20" y="94" font-size="13" fill="var(--text)">500</text>
+  <text x="130" y="94" font-size="13" fill="var(--text)">2,05 puan</text>
+  <text x="240" y="94" font-size="13" fill="var(--text)">±4,0 puan</text>
+  <rect x="413" y="83" width="64" height="12" fill="var(--cool)" />
+  <text x="560" y="94" font-size="13" fill="var(--text)">2 soru</text>
+
+  <text x="20" y="122" font-size="13" fill="var(--text)">1.000</text>
+  <text x="130" y="122" font-size="13" fill="var(--text)">1,45 puan</text>
+  <text x="240" y="122" font-size="13" fill="var(--text)">±2,8 puan</text>
+  <rect x="423" y="111" width="45" height="12" fill="var(--cool)" />
+  <text x="560" y="122" font-size="13" fill="var(--text)">4 soru</text>
+
+  <text x="20" y="150" font-size="13" fill="var(--text)">5.000</text>
+  <text x="130" y="150" font-size="13" fill="var(--text)">0,65 puan</text>
+  <text x="240" y="150" font-size="13" fill="var(--text)">±1,3 puan</text>
+  <rect x="435" y="139" width="21" height="12" fill="var(--cool)" />
+  <text x="560" y="150" font-size="13" fill="var(--text)">20 soru</text>
+
+  <text x="20" y="178" font-size="13" fill="var(--text)">14.042</text>
+  <text x="130" y="178" font-size="13" fill="var(--text)">0,39 puan</text>
+  <text x="240" y="178" font-size="13" fill="var(--text)">±0,8 puan</text>
+  <rect x="439" y="167" width="13" height="12" fill="var(--cool)" />
+  <text x="560" y="178" font-size="13" fill="var(--text)">56 soru</text>
+
+  <line x1="20" y1="196" x2="700" y2="196" stroke="var(--border)" />
+
+  <text x="20" y="220" font-size="13" fill="var(--text)">Vurgulu satır: 100 soruda merkezî limit aralığı güvenilmez;</text>
+  <text x="20" y="238" font-size="13" fill="var(--text)">birkaç yüz sorunun altında Wilson ya da Bayesçi aralık (Bowyer ve ark.).</text>
+  <text x="20" y="266" font-size="13" fill="var(--text-muted)">Kendi hesabımız; doğruluk p = 0,70; standart hata = √(p(1−p)/n) × 100;</text>
+  <text x="20" y="284" font-size="13" fill="var(--text-muted)">aralık = ±1,96 × standart hata; çubuk genişliği aralıkla orantılı (8 birim/puan).</text>
+</svg>

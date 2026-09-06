@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 318" role="img" aria-label="Altı satır ve beş sayı sütunluk tablo; sütunlar özgün sıra ve doğru cevabın A, B, C ya da D şıkkına taşınmış hâli, hücrelerde zero-shot MMLU doğruluğu. llama-30B: 53,1; 68,2; 54,1; 50,1; 41,2. vicuna-33B: 57,0; 59,5; 58,6; 65,8; 44,8. falcon-40B: 51,8; 46,3; 45,2; 64,8; 47,9. falcon-instruct-40B: 51,5; 38,3; 38,9; 55,7; 69,1. llama-2-70B: 64,0; 61,5; 68,6; 64,1; 62,0. gpt-3.5-turbo: 67,2; 65,3; 68,5; 74,2; 60,9. llama-30B'nin A hücresi ve gpt-3.5-turbo'nun A hücresi vurguludur; altta A'ya taşınınca llama-30B'nin 68,2 ile gpt-3.5-turbo'nun 65,3'ünü geçtiği, özgün sırada ise 53,1'e karşı 67,2 olduğu yazılıdır. En altta değerlerin Zheng ve arkadaşlarının tablosundan alındığı ve şık harflerini kaldırmanın seçim yanlılığı ölçüsünü 5,5'ten 1,0'a indirdiği yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">model</text>
+  <text x="250" y="28" font-size="13" font-weight="bold" fill="var(--text)">özgün sıra</text>
+  <text x="360" y="28" font-size="13" font-weight="bold" fill="var(--text)">→ A</text>
+  <text x="440" y="28" font-size="13" font-weight="bold" fill="var(--text)">→ B</text>
+  <text x="520" y="28" font-size="13" font-weight="bold" fill="var(--text)">→ C</text>
+  <text x="600" y="28" font-size="13" font-weight="bold" fill="var(--text)">→ D</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="352" y="48" width="60" height="22" fill="var(--accent-soft)" />
+  <text x="20" y="64" font-size="13" fill="var(--text)">llama-30B</text>
+  <text x="250" y="64" font-size="13" fill="var(--text)">53,1</text>
+  <text x="360" y="64" font-size="13" font-weight="bold" fill="var(--text)">68,2</text>
+  <text x="440" y="64" font-size="13" fill="var(--text)">54,1</text>
+  <text x="520" y="64" font-size="13" fill="var(--text)">50,1</text>
+  <text x="600" y="64" font-size="13" fill="var(--text)">41,2</text>
+
+  <text x="20" y="90" font-size="13" fill="var(--text)">vicuna-33B</text>
+  <text x="250" y="90" font-size="13" fill="var(--text)">57,0</text>
+  <text x="360" y="90" font-size="13" fill="var(--text)">59,5</text>
+  <text x="440" y="90" font-size="13" fill="var(--text)">58,6</text>
+  <text x="520" y="90" font-size="13" fill="var(--text)">65,8</text>
+  <text x="600" y="90" font-size="13" fill="var(--text)">44,8</text>
+
+  <text x="20" y="116" font-size="13" fill="var(--text)">falcon-40B</text>
+  <text x="250" y="116" font-size="13" fill="var(--text)">51,8</text>
+  <text x="360" y="116" font-size="13" fill="var(--text)">46,3</text>
+  <text x="440" y="116" font-size="13" fill="var(--text)">45,2</text>
+  <text x="520" y="116" font-size="13" fill="var(--text)">64,8</text>
+  <text x="600" y="116" font-size="13" fill="var(--text)">47,9</text>
+
+  <text x="20" y="142" font-size="13" fill="var(--text)">falcon-instruct-40B</text>
+  <text x="250" y="142" font-size="13" fill="var(--text)">51,5</text>
+  <text x="360" y="142" font-size="13" fill="var(--text)">38,3</text>
+  <text x="440" y="142" font-size="13" fill="var(--text)">38,9</text>
+  <text x="520" y="142" font-size="13" fill="var(--text)">55,7</text>
+  <text x="600" y="142" font-size="13" fill="var(--text)">69,1</text>
+
+  <text x="20" y="168" font-size="13" fill="var(--text)">llama-2-70B</text>
+  <text x="250" y="168" font-size="13" fill="var(--text)">64,0</text>
+  <text x="360" y="168" font-size="13" fill="var(--text)">61,5</text>
+  <text x="440" y="168" font-size="13" fill="var(--text)">68,6</text>
+  <text x="520" y="168" font-size="13" fill="var(--text)">64,1</text>
+  <text x="600" y="168" font-size="13" fill="var(--text)">62,0</text>
+
+  <rect x="352" y="178" width="60" height="22" fill="var(--accent-soft)" />
+  <text x="20" y="194" font-size="13" fill="var(--text)">gpt-3.5-turbo</text>
+  <text x="250" y="194" font-size="13" fill="var(--text)">67,2</text>
+  <text x="360" y="194" font-size="13" font-weight="bold" fill="var(--text)">65,3</text>
+  <text x="440" y="194" font-size="13" fill="var(--text)">68,5</text>
+  <text x="520" y="194" font-size="13" fill="var(--text)">74,2</text>
+  <text x="600" y="194" font-size="13" fill="var(--text)">60,9</text>
+
+  <line x1="20" y1="210" x2="700" y2="210" stroke="var(--border)" />
+
+  <text x="20" y="234" font-size="13" fill="var(--text)">Doğru cevap A'ya taşınınca llama-30B (68,2) gpt-3.5-turbo'yu (65,3) geçer;</text>
+  <text x="20" y="252" font-size="13" fill="var(--text)">özgün sırada 53,1'e karşı 67,2. Aynı sorular, aynı modeller, yalnızca şık konumu.</text>
+  <text x="20" y="278" font-size="13" fill="var(--text-muted)">Değerler Zheng ve ark. (ICLR 2024) Tablo 1; zero-shot MMLU doğruluğu, yüzde.</text>
+  <text x="20" y="296" font-size="13" fill="var(--text-muted)">Şık harfleri kaldırılınca seçim yanlılığı ölçüsü 5,5 → 1,0; doğruluk 67,2 → 66,7.</text>
+</svg>

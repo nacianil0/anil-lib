@@ -2927,3 +2927,90 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 02:10 | Created artifacts/b17-research/fetch-b17.py | — | ~11778 |
+| 02:10 | Created artifacts/b17-research/dblp-b17.py | — | ~669 |
+| 02:41 | Created content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | — | ~11309 |
+| 02:43 | Created content/series/assets/degerlendirme-bilimi-benchmarklarin-otesi/gecerlilik-zinciri.svg | — | ~1594 |
+| 02:43 | Created content/series/assets/degerlendirme-bilimi-benchmarklarin-otesi/hata-payi-ve-kume-boyu.svg | — | ~1069 |
+| 02:44 | Created content/series/assets/degerlendirme-bilimi-benchmarklarin-otesi/dogru-cevabi-tasimak.svg | — | ~1297 |
+| 02:44 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~10 |
+| 02:44 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "in ölçüsüyle kalibrasyon " → "te kurduğumuz kalibrasyon" | ~79 |
+| 02:44 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "te sunduğu durum yazısı z" → "te sunduğu durum yazısı z" | ~119 |
+| 02:45 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 3→3 lines | ~445 |
+| 02:45 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 3→3 lines | ~495 |
+| 02:45 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 3→3 lines | ~460 |
+| 02:46 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~75 |
+| 02:46 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~20 |
+| 02:46 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~26 |
+| 02:46 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~63 |
+| 02:46 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~101 |
+| 02:47 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "da öğrenmiştik ve oradaki" → "da öğrenmiştik: alan sabi" | ~170 |
+| 02:47 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 3→3 lines | ~567 |
+| 02:47 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~287 |
+| 02:48 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 3→3 lines | ~525 |
+| 02:48 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | modified sabit() | ~587 |
+| 02:48 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~136 |
+| 02:49 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~292 |
+| 02:50 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~251 |
+| 02:50 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~227 |
+| 02:51 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~327 |
+| 02:51 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 15→15 lines | ~425 |
+| 02:52 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~299 |
+| 02:52 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~280 |
+| 02:54 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~116 |
+| 02:54 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~58 |
+| 02:54 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~108 |
+| 02:56 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "te yayımladığı, hakemli o" → "te yayımladığı, hakemli o" | ~166 |
+| 02:57 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~129 |
+| 03:02 | Created content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | — | ~10946 |
+| 03:03 | Created content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/sizintinin-dort-yolu.svg | — | ~1421 |
+| 03:03 | Created content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/ezberin-uc-etkeni.svg | — | ~1186 |
+| 03:04 | Created content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/ayni-sinav-yeniden-yazilinca.svg | — | ~1634 |
+| 03:04 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~17 |
+| 03:06 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~55 |
+| 03:06 | Edited content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/ayni-sinav-yeniden-yazilinca.svg | 2→2 lines | ~86 |
+| 03:06 | Edited content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/sizintinin-dort-yolu.svg | inline fix | ~20 |
+| 03:06 | Edited content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/sizintinin-dort-yolu.svg | inline fix | ~25 |
+| 03:15 | Created content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | — | ~9391 |
+| 03:15 | Created content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/insan-degerlendirmesinin-anatomisi.svg | — | ~1360 |
+| 03:16 | Created content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/hakem-insan-uzlasmasi-goreve-gore.svg | — | ~1415 |
+| 03:16 | Created content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/hakem-yanliliklari-ve-duzeltmeleri.svg | — | ~1596 |
+| 03:19 | Edited content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/hakem-insan-uzlasmasi-goreve-gore.svg | inline fix | ~26 |
+| 03:19 | Edited content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/hakem-insan-uzlasmasi-goreve-gore.svg | inline fix | ~44 |
+| 03:19 | Edited content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/hakem-yanliliklari-ve-duzeltmeleri.svg | inline fix | ~23 |
+| 03:19 | Edited content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/insan-degerlendirmesinin-anatomisi.svg | inline fix | ~43 |
+| 03:20 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~71 |
+| 03:20 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~32 |
+| 03:20 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~62 |
+| 03:20 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~27 |
+| 03:20 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~60 |
+| 03:20 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~27 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~21 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~24 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | "ın 2025" → "ın ICLR 2025" | ~29 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~28 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~66 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~48 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~69 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~72 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~64 |
+| 03:21 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~55 |
+| 03:26 | Created content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md | — | ~9976 |
+| 03:27 | Created content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/dolayli-nesne-devresi.svg | — | ~1387 |
+| 03:27 | Created content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/aktivasyon-yamasi-iki-yon.svg | — | ~1190 |
+| 03:28 | Created content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/okuma-araci-ne-soyler-ne-soylemez.svg | — | ~1439 |
+
+## Session: 2026-09-06 03:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 03:31 | Edited content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/dolayli-nesne-devresi.svg | inline fix | ~24 |
+| 03:34 | Created .claude/launch.json | — | ~141 |
+| 03:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/db92c409-5e48-4a44-a062-40622d4ed8bd/scratchpad/yol_b17.py | — | ~6767 |
+| 03:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/db92c409-5e48-4a44-a062-40622d4ed8bd/scratchpad/wolf_b17.py | — | ~2017 |
+| 03:59 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/db92c409-5e48-4a44-a062-40622d4ed8bd/scratchpad/handoff_b17.py | — | ~7234 |
+| 03:59 | Batch 17 tamamlandı: 71–74 yazıldı, 12 SVG, entegrasyon (catalog/roadmap/hash), typecheck 0, 519 test, izole build (74 yol), 75 rota 200, DOM 4×3×3, 26 PNG | content/series/**, docs/seri/YOL-HARITASI.md, docs/seri/HANDOFF.md | tamam | ~900k |
+| 03:59 | +1 fazı: YOL-HARITASI (vaat defteri 72 ödendi, 74–77 ilk taksit; Faz 8 listesi; Batch 17 grafı, tekrar tabloları, 49 terim, kararlar #160–#167, öğrenme notları), HANDOFF cursor 74→75, cerebrum/buglog | docs/seri/*, .wolf/* | tamam | ~60k |
+| 04:00 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch17-faz8-acilis.md | — | ~1057 |
+| 04:00 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/db92c409-5e48-4a44-a062-40622d4ed8bd/scratchpad/handoff_b17.py | 2→2 lines | ~32 |
+| 04:01 | Session end: 7 writes across 6 files (dolayli-nesne-devresi.svg, launch.json, yol_b17.py, wolf_b17.py, handoff_b17.py) | 21 reads | ~17350 tok |

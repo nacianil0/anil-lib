@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="Beş satırlı tablo; sütunlar araç, ne söyler, ne söylemez. Sonda: aktivasyondan bir özelliği yüksek doğrulukla okur, konuşma parçası yüzde 97,3; söylemediği modelin o bilgiyi kullandığı; rastgele etiketli kontrol görevinde aynı sonda yüzde 92,8, seçicilik 4,5; bilgi silinince davranış değişmeyebilir; modeller gerekmeyen özelliği de kodlar. Dikkat ağırlığı: başın hangi konumdan okuduğunu söyler; söylemediği cevabın nedeni; ağırlıklar gradyan tabanlı önemle ilişkisiz, aynı tahmini veren farklı dağılımlar bulunabiliyor, düşmanca dağılımlar eğitimde tutmuyor. Nöron: en çok etkinleştiği cümlelerde bir örüntü gösterir, yüzde 80'inden fazlasında; söylemediği nöronun o kavramı kodladığı; örüntü veri kümesinin yanılsaması olabilir. Alt uzay yaması: bir alt uzayı değiştirmek davranışı değiştirir; söylemediği o alt uzayın modelin kullandığı özellik olduğu; çıktıya nedensel bağlı olmayan uyuyan yolu uyandırabilir. Devre sadakat puanı: devrenin puanın ne kadarını taşıdığını söyler, dolaylı nesnede yüzde 87; söylemediği tek açıklamanın bu olduğu; puan silme yöntemine göre değişir, kenarların yüzde 20'si silinince değişmeyen devreler var, aynı görev iki algoritmayla çözülebilir. Altta okumanın nedensel müdahaleyle doğrulanmadıkça ilişki olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">araç</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">ne söyler</text>
+  <text x="400" y="28" font-size="13" font-weight="bold" fill="var(--text)">ne söylemez</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="94" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">sonda</text>
+  <text x="150" y="68" font-size="13" fill="var(--text)">aktivasyondan bir özelliği</text>
+  <text x="150" y="86" font-size="13" fill="var(--text)">yüksek doğrulukla okur:</text>
+  <text x="150" y="104" font-size="13" fill="var(--text)">konuşma parçası %97,3</text>
+  <text x="400" y="68" font-size="13" fill="var(--text)">modelin o bilgiyi kullandığını:</text>
+  <text x="400" y="86" font-size="13" fill="var(--text)">rastgele etiketli kontrol görevinde</text>
+  <text x="400" y="104" font-size="13" fill="var(--text)">%92,8, seçicilik 4,5; silince davranış</text>
+  <text x="400" y="122" font-size="13" fill="var(--text)">değişmeyebilir; gerekmeyen de kodlanır</text>
+
+  <rect x="20" y="148" width="680" height="94" fill="var(--surface-muted)" />
+  <text x="30" y="170" font-size="13" font-weight="bold" fill="var(--text)">dikkat ağırlığı</text>
+  <text x="150" y="170" font-size="13" fill="var(--text)">başın hangi konumdan</text>
+  <text x="150" y="188" font-size="13" fill="var(--text)">okuduğunu</text>
+  <text x="400" y="170" font-size="13" fill="var(--text)">cevabın nedenini: ağırlıklar gradyan</text>
+  <text x="400" y="188" font-size="13" fill="var(--text)">önemiyle ilişkisiz; aynı tahmini veren</text>
+  <text x="400" y="206" font-size="13" fill="var(--text)">farklı dağılımlar var; düşmanca dağılım</text>
+  <text x="400" y="224" font-size="13" fill="var(--text)">baştan eğitilince tutmuyor</text>
+
+  <rect x="20" y="250" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="272" font-size="13" font-weight="bold" fill="var(--text)">nöron</text>
+  <text x="150" y="272" font-size="13" fill="var(--text)">en çok etkinleştiği cümlelerde</text>
+  <text x="150" y="290" font-size="13" fill="var(--text)">bir örüntü: > %80'inde</text>
+  <text x="400" y="272" font-size="13" fill="var(--text)">nöronun o kavramı kodladığını:</text>
+  <text x="400" y="290" font-size="13" fill="var(--text)">başka kümede başka örüntü;</text>
+  <text x="400" y="308" font-size="13" fill="var(--text)">örüntü kümenin yanılsaması olabilir</text>
+
+  <rect x="20" y="334" width="680" height="76" fill="var(--accent-soft)" />
+  <text x="30" y="356" font-size="13" font-weight="bold" fill="var(--text)">alt uzay yaması</text>
+  <text x="150" y="356" font-size="13" fill="var(--text)">bir alt uzayı değiştirmek</text>
+  <text x="150" y="374" font-size="13" fill="var(--text)">davranışı değiştirir</text>
+  <text x="400" y="356" font-size="13" fill="var(--text)">o alt uzayın kullanılan özellik</text>
+  <text x="400" y="374" font-size="13" fill="var(--text)">olduğunu: çıktıya bağlı olmayan</text>
+  <text x="400" y="392" font-size="13" fill="var(--text)">uyuyan bir yolu uyandırabilir</text>
+
+  <rect x="20" y="418" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="440" font-size="13" font-weight="bold" fill="var(--text)">devre sadakati</text>
+  <text x="150" y="440" font-size="13" fill="var(--text)">devrenin puanın ne kadarını</text>
+  <text x="150" y="458" font-size="13" fill="var(--text)">taşıdığını: dolaylı nesne %87</text>
+  <text x="400" y="440" font-size="13" fill="var(--text)">tek açıklamanın bu olduğunu: puan</text>
+  <text x="400" y="458" font-size="13" fill="var(--text)">silme yöntemine göre değişir; %20 kenar</text>
+  <text x="400" y="476" font-size="13" fill="var(--text)">silinince değişmeyen devreler; iki algoritma</text>
+
+  <text x="20" y="522" font-size="13" fill="var(--text-muted)">Okuma, nedensel müdahaleyle doğrulanmadıkça ilişkidir. Sayılar metindeki çalışmalardan.</text>
+</svg>

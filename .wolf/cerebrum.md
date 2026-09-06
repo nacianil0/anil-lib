@@ -2,7 +2,7 @@
 
 > OpenWolf's learning memory. Updated automatically as the AI learns from interactions.
 > Do not edit manually unless correcting an error.
-> Last updated: 2026-09-04
+> Last updated: 2026-09-06
 
 ## User Preferences
 
@@ -236,6 +236,10 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-06] Seri makalelerinin uzunluğu konu türüne göre sistematik sapıyor: ölçüm yoğun makaleler (aldatma, kötüye kullanım) 3.500 tavanını aşıyor, yönetişim/çerçeve makaleleri (yasa, sağlayıcı çerçevesi) 2.000 tabanının altında başlıyor. İlkinde kırpma tekrar eden bağlam cümlelerinden ve ikinci örneklerden yapılır (sayılar korunur), ikincisinde ekleme eksik mekanizmadan yapılır (dolgu değil).
 - [2026-09-06] Write aracı SVG yazınca dosyayı tarayıcı panosunda `file://` sekmesi olarak açıyor; bu sekmeler `navigate` kabul etmiyor ve sekme sınırını dolduruyor. Render ölçümünden önce `tabs_context` → `tabs_close` (file:// sekmeleri) → `tabs_create` sırası izlenmeli.
 
+- [2026-09-06] Seri Batch 17 araştırma kanalları: OpenReview PDF'leri `urllib`'e 403 döner, arXiv sürümü okunur ve OpenReview kimliği DBLP `ee`'den alınır (tahmin edilmez); COLM kabul listesi sayfası challenge sayfası döndürür (Rein GPQA doğrulanamadı); lesswrong 429; Semantic Scholar toplu sorguda 429; METR blog adresleri taşınıyor (`metr.org/blog/2024-03-15-guidelines-for-capability-elicitation/`); Science yazıları `eprints.whiterose.ac.uk` ön baskısından; bazı ACL PDF'lerinden metin çıkmaz (Rodriguez 2021). Aynı `DONE` listesini paylaşan iki fetch kopyası (ileri + ters sıra) çakışmadan 272/274 metni indirdi. DBLP arka planda (12 sn aralık) yazım bittikten sonra da sonuç verir ve künyeleri hakemliye çevirebilir — künyeler DBLP bitmeden kesinleşmez.
+- [2026-09-06] Okuyucudaki seri şekilleri `.series-figure-scroll` kabında `min-width: 34rem` ile durur (globals.css); 375 px'te SVG'nin bounding rect'i viewport'u aşar ama sayfa gövdesi taşmaz (`documentElement.scrollWidth` = 375). DOM ölçümünde `svgOver > 0` mobilde tasarım gereğidir, kusur değil; kusur ölçüsü `scrollWidth > innerWidth`'tir.
+- [2026-09-06] Git Bash bu makinede `%LOCALAPPDATA%\Programs\Git\usr\bin\bash.exe` (`C:\Program Files\Git` yok); `.claude/launch.json` izole dev yapılandırması bu yolla yazılır (Write aracıyla).
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -418,6 +422,10 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-06] Bir başlıktaki İngilizce sözcüğü Türkçeleştirirken önce **yayımlanmış gövdelerin** hangi karşılığı kullandığına bak: 70'in "frontier"ı için 40, 61 ve 62 zaten "sınır model" diyordu, dolayısıyla başlık da o oldu. Terim defterinde karşılığı olmayan sözcük için gövdelerde grep yapmadan yeni karşılık icat etme.
 - [2026-09-06] Entegrasyondan sonra gövdeye dokunursan (Batch 16'da 70'in kaynak cümlesi düzeltildi) `sync-series-hashes.cjs --write` yeniden çalıştır; aksi hâlde katalog ile frontmatter hash'i ayrışır ve sayfa 500 verir.
 
+- [2026-09-06] Bash heredoc içindeki Python kaynağında bile `\\` çiftleri tek `\`'a iner ve `\b` backspace olur (launch.json üçüncü kez bozuldu). Windows yolu içeren dosyaları Write aracıyla yaz; uzun Python betiklerini scratchpad'e Write ile koyup `python dosya.py` çalıştır (heredoc "unexpected EOF" ile de kırıldı).
+- [2026-09-06] SVG ölçer (`svgcheck-b17.py`) metni yalnızca **bir sonraki sütuna** ve 700'e karşı ölçer: aynı satırdaki iki etiketin biri kayıtlı sütun değilse binmeyi görmez ("dolaylı nesne" ↔ "özne S1") ve kendi `rect`'inden taşan metni görmez. Kutu içi metinleri kutunun `x + width`'ine karşı elle kontrol et; PNG turu atlanmaz.
+- [2026-09-06] Bash aracında grep desenine ters tırnak (`) koyma; komut yerine koyma açar ve "unexpected EOF while looking for matching" ile bütün komut düşer.
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -546,3 +554,4 @@ mümkün değil.
 
 - [2026-09-06] Seri Batch 16: 68'in başlığındaki "Bio" → "Biyolojik", 70'in "Frontier"ı → "Sınır Model" (YOL-HARITASI kararları #154, #155). Gerekçe: "bio" Türkçede tek başına yerleşik değil ve gövde baştan sona "biyolojik" diyor; "frontier" için 40/61/62'nin yayımlanmış gövdeleri zaten "sınır model" karşılığını kullanıyor. "Siber" ve "benchmark" korundu (yerleşik / defterde Türkçeleştirilmez). Faz başlıkları katmanına yine dokunulmadı; kullanıcı kararı olarak açık borçta duruyor.
 - [2026-09-06] Faz 8'in (71–80) kategorisi için hazırlık HANDOFF'a yazıldı: varsayılan öneri `safety-and-evaluation`'ın devamı (61–80 tek öbek olur ama okuma listesi kohort × kategori kırılımıyla ayrı başlıklar gösterdiği için `reading-list-groups.test.ts` değişmez); alternatif yeni bir kategori açmak (`schema.ts` içindeki `CATEGORIES` + `CATEGORY_LABELS` ve iki serinin şema testleri değişir). Karar 71'in run'ında verilecek.
+- [2026-09-06] Seri Batch 17 (71–74): Faz 8 `safety-and-evaluation` ile devam (karar #160; 61–74 tek öbek, `reading-list-groups.test.ts` değişmeden 519 test); 73 "LLM-as-Judge" → "Hakem Modeller" (#162), 74 "Mechanistic Interpretability" → "Mekanistik Yorumlanabilirlik" (#163), 71'in "benchmark"ı kaldı (#161). 72 koordinatı ödendi, 74–77 bandının ilk taksidi ödendi, yeni koordinat açılmadı; sıradaki bağlayıcı koordinat 78 (5, 9). 159 kaynak kaleminin 126'sı hakemli (#167); kendi hesabımız yalnızca 71-Şekil 2 (#166). Ultracode açıkken de workflow/subagent kullanılmadı (kullanıcı talimatı). Kararlar #160–#167 YOL-HARITASI'nda.

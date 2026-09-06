@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="On satır ve üç sayı sütunluk tablo; sütunlar küme ve ölçülen özellik, en iyi ticari hakemin insanla uzlaşması, en iyi açık hakemin uzlaşması, insanların kendi üst sınırı. Akıl yürütme adımları, ilkokul matematiği, dereceli: 0,82; 0,83; verilmemiş. Tarif üretimi, altı özellik: 0,78; 0,66; 0,65. Özet olgusallığı, kategorik: 0,72; 0,70; 0,74. Günlük diyalog, dereceli: 0,69; 0,60; 0,79. Çeviri 2020 İngilizce-Almanca: 0,63; 0,37; 0,81. Özet kalitesi, dört özellik: 0,35; 0,44; verilmemiş. Cümle kabul edilebilirliği, kategorik: 0,34; 0,46; verilmemiş. Konu sohbeti, dereceli: 0,26; 0,28; 0,56. Tıbbi güvenlik, kategorik: 0,01; eksi 0,03; verilmemiş. Diyalog güvenliği, kategorik: eksi 0,24; eksi 0,17; 0,27. Altta değerlerin Bavaresco ve arkadaşlarının tablosundan alındığı, ticari hakemin ortalama kappasının 0,28 ve ortalama sıra ilişkisinin 0,50 olduğu, hiçbir modelin bütün özelliklerde üstün olmadığı yazılıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">küme ve özellik</text>
+  <text x="380" y="28" font-size="13" font-weight="bold" fill="var(--text)">ticari hakem</text>
+  <text x="490" y="28" font-size="13" font-weight="bold" fill="var(--text)">açık hakem</text>
+  <text x="600" y="28" font-size="13" font-weight="bold" fill="var(--text)">insan sınırı</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="24" fill="var(--accent-soft)" />
+  <text x="20" y="63" font-size="13" fill="var(--text)">akıl yürütme adımları (ilkokul matematiği), dereceli</text>
+  <text x="380" y="63" font-size="13" font-weight="bold" fill="var(--text)">0,82</text>
+  <text x="490" y="63" font-size="13" font-weight="bold" fill="var(--text)">0,83</text>
+  <text x="600" y="63" font-size="13" fill="var(--text-muted)">—</text>
+
+  <text x="20" y="91" font-size="13" fill="var(--text)">tarif üretimi, altı özellik</text>
+  <text x="380" y="91" font-size="13" fill="var(--text)">0,78</text>
+  <text x="490" y="91" font-size="13" fill="var(--text)">0,66</text>
+  <text x="600" y="91" font-size="13" fill="var(--text)">0,65</text>
+
+  <text x="20" y="119" font-size="13" fill="var(--text)">özet olgusallığı, kategorik</text>
+  <text x="380" y="119" font-size="13" fill="var(--text)">0,72</text>
+  <text x="490" y="119" font-size="13" fill="var(--text)">0,70</text>
+  <text x="600" y="119" font-size="13" fill="var(--text)">0,74</text>
+
+  <text x="20" y="147" font-size="13" fill="var(--text)">günlük diyalog, dereceli</text>
+  <text x="380" y="147" font-size="13" fill="var(--text)">0,69</text>
+  <text x="490" y="147" font-size="13" fill="var(--text)">0,60</text>
+  <text x="600" y="147" font-size="13" fill="var(--text)">0,79</text>
+
+  <text x="20" y="175" font-size="13" fill="var(--text)">çeviri 2020, İngilizce–Almanca</text>
+  <text x="380" y="175" font-size="13" fill="var(--text)">0,63</text>
+  <text x="490" y="175" font-size="13" fill="var(--text)">0,37</text>
+  <text x="600" y="175" font-size="13" fill="var(--text)">0,81</text>
+
+  <text x="20" y="203" font-size="13" fill="var(--text)">özet kalitesi, dört özellik</text>
+  <text x="380" y="203" font-size="13" fill="var(--text)">0,35</text>
+  <text x="490" y="203" font-size="13" fill="var(--text)">0,44</text>
+  <text x="600" y="203" font-size="13" fill="var(--text-muted)">—</text>
+
+  <text x="20" y="231" font-size="13" fill="var(--text)">cümle kabul edilebilirliği, kategorik</text>
+  <text x="380" y="231" font-size="13" fill="var(--text)">0,34</text>
+  <text x="490" y="231" font-size="13" fill="var(--text)">0,46</text>
+  <text x="600" y="231" font-size="13" fill="var(--text-muted)">—</text>
+
+  <text x="20" y="259" font-size="13" fill="var(--text)">konu sohbeti, dereceli</text>
+  <text x="380" y="259" font-size="13" fill="var(--text)">0,26</text>
+  <text x="490" y="259" font-size="13" fill="var(--text)">0,28</text>
+  <text x="600" y="259" font-size="13" fill="var(--text)">0,56</text>
+
+  <text x="20" y="287" font-size="13" fill="var(--text)">tıbbi güvenlik, kategorik</text>
+  <text x="380" y="287" font-size="13" fill="var(--text)">0,01</text>
+  <text x="490" y="287" font-size="13" fill="var(--text)">−0,03</text>
+  <text x="600" y="287" font-size="13" fill="var(--text-muted)">—</text>
+
+  <rect x="20" y="298" width="680" height="24" fill="var(--accent-soft)" />
+  <text x="20" y="315" font-size="13" fill="var(--text)">diyalog güvenliği, kategorik</text>
+  <text x="380" y="315" font-size="13" font-weight="bold" fill="var(--text)">−0,24</text>
+  <text x="490" y="315" font-size="13" font-weight="bold" fill="var(--text)">−0,17</text>
+  <text x="600" y="315" font-size="13" fill="var(--text)">0,27</text>
+
+  <line x1="20" y1="334" x2="700" y2="334" stroke="var(--border)" />
+  <text x="20" y="356" font-size="13" fill="var(--text)">Kategorik: Cohen'in kappası; dereceli: Spearman sıra ilişkisi. Ticari hakemin ortalaması</text>
+  <text x="20" y="374" font-size="13" fill="var(--text)">kappa 0,28 ve sıra ilişkisi 0,50; hiçbir model bütün özelliklerde üstün değil.</text>
+  <text x="20" y="400" font-size="13" fill="var(--text-muted)">Bavaresco ve ark. (ACL 2025) Tablo 1; insan sınırı: tek etiketleyici ↔ toplu etiket uzlaşması.</text>
+</svg>

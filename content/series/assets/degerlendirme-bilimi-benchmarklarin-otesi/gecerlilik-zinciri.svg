@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" role="img" aria-label="Soldan sağa beş kutu ve dört ok: yapı, görevleştirme, ölçüt, puan, çıkarım; altlarında seriden bir örnek: akıl yürütme, ilkokul matematik sorusu, tam eşleşme, tek sayı yüzde, model akıl yürütüyor iddiası. İkinci sırada dört halka kutusu ve her birinde o halkada kırılan şeyin ölçümü: birinci halka içerik, tartışmalı yapı yüzde 47,8, hipotezle çözüm yüzde 67, kolaycı örnekleme yüzde 12; ikinci halka puanlama, tam eşleşme yüzde 81,3, etiket hatası yüzde 6,49, on kümede en az yüzde 3,3; üçüncü halka protokol, doğru cevap A'da 53,1'den 68,2'ye, biçim 76 puan; dördüncü halka örneklem ve kirlilik, beş yüz soruda artı eksi dört puan, on dört bin kırk ikide artı eksi 0,8, kirlilik bir sonraki makalede. Altta zincirin en zayıf halkası kadar güçlü olduğu ve istatistiksel anlamlılığın yalnızca dördüncü halkayı sınadığı yazılıdır.">
+  <rect x="20" y="20" width="120" height="52" fill="var(--accent-soft)" />
+  <text x="80" y="42" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">yapı</text>
+  <text x="80" y="60" font-size="13" fill="var(--text-muted)" text-anchor="middle">gözlenemez</text>
+
+  <text x="150" y="50" font-size="13" fill="var(--text-muted)" text-anchor="middle">→</text>
+
+  <rect x="160" y="20" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="220" y="42" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">görevleştirme</text>
+  <text x="220" y="60" font-size="13" fill="var(--text-muted)" text-anchor="middle">görev + örneklem</text>
+
+  <text x="290" y="50" font-size="13" fill="var(--text-muted)" text-anchor="middle">→</text>
+
+  <rect x="300" y="20" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="360" y="42" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">ölçüt</text>
+  <text x="360" y="60" font-size="13" fill="var(--text-muted)" text-anchor="middle">puanlama kuralı</text>
+
+  <text x="430" y="50" font-size="13" fill="var(--text-muted)" text-anchor="middle">→</text>
+
+  <rect x="440" y="20" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="500" y="42" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">puan</text>
+  <text x="500" y="60" font-size="13" fill="var(--text-muted)" text-anchor="middle">tek sayı</text>
+
+  <text x="570" y="50" font-size="13" fill="var(--text-muted)" text-anchor="middle">→</text>
+
+  <rect x="580" y="20" width="120" height="52" fill="var(--accent-soft)" />
+  <text x="640" y="42" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">çıkarım</text>
+  <text x="640" y="60" font-size="13" fill="var(--text-muted)" text-anchor="middle">iddia</text>
+
+  <text x="80" y="92" font-size="13" fill="var(--text)" text-anchor="middle">"akıl yürütme"</text>
+  <text x="220" y="92" font-size="13" fill="var(--text)" text-anchor="middle">ilkokul matematik</text>
+  <text x="220" y="108" font-size="13" fill="var(--text)" text-anchor="middle">sorusu</text>
+  <text x="360" y="92" font-size="13" fill="var(--text)" text-anchor="middle">tam eşleşme</text>
+  <text x="500" y="92" font-size="13" fill="var(--text)" text-anchor="middle">yüzde olarak</text>
+  <text x="500" y="108" font-size="13" fill="var(--text)" text-anchor="middle">tek sayı</text>
+  <text x="640" y="92" font-size="13" fill="var(--text)" text-anchor="middle">"model akıl</text>
+  <text x="640" y="108" font-size="13" fill="var(--text)" text-anchor="middle">yürütüyor"</text>
+
+  <line x1="20" y1="124" x2="700" y2="124" stroke="var(--border)" stroke-dasharray="3 3" />
+
+  <rect x="20" y="136" width="160" height="106" fill="var(--surface-muted)" />
+  <text x="30" y="156" font-size="13" font-weight="bold" fill="var(--text)">1. halka: içerik</text>
+  <text x="30" y="178" font-size="13" fill="var(--text)">tartışmalı yapı: %47,8</text>
+  <text x="30" y="196" font-size="13" fill="var(--text)">hipotezle çözüm: %67</text>
+  <text x="30" y="214" font-size="13" fill="var(--text)">kolaycı örnekleme: %12</text>
+  <text x="30" y="232" font-size="13" fill="var(--text-muted)">yapı ↔ görev</text>
+
+  <rect x="190" y="136" width="160" height="106" fill="var(--surface-muted)" />
+  <text x="200" y="156" font-size="13" font-weight="bold" fill="var(--text)">2. halka: puanlama</text>
+  <text x="200" y="178" font-size="13" fill="var(--text)">tam eşleşme: %81,3</text>
+  <text x="200" y="196" font-size="13" fill="var(--text)">etiket hatası: %6,49</text>
+  <text x="200" y="214" font-size="13" fill="var(--text)">on kümede ≥ %3,3</text>
+  <text x="200" y="232" font-size="13" fill="var(--text-muted)">görev ↔ ölçüt</text>
+
+  <rect x="360" y="136" width="160" height="106" fill="var(--surface-muted)" />
+  <text x="370" y="156" font-size="13" font-weight="bold" fill="var(--text)">3. halka: protokol</text>
+  <text x="370" y="178" font-size="13" fill="var(--text)">doğru cevap A'da:</text>
+  <text x="370" y="196" font-size="13" fill="var(--text)">53,1 → 68,2</text>
+  <text x="370" y="214" font-size="13" fill="var(--text)">biçim: 76 puan</text>
+  <text x="370" y="232" font-size="13" fill="var(--text-muted)">ölçüt ↔ puan</text>
+
+  <rect x="530" y="136" width="170" height="106" fill="var(--accent-soft)" />
+  <text x="540" y="156" font-size="13" font-weight="bold" fill="var(--text)">4. halka: örneklem</text>
+  <text x="540" y="178" font-size="13" fill="var(--text)">500 soruda ±4 puan</text>
+  <text x="540" y="196" font-size="13" fill="var(--text)">14.042'de ±0,8</text>
+  <text x="540" y="214" font-size="13" fill="var(--text)">kirlilik: bir sonraki</text>
+  <text x="540" y="232" font-size="13" fill="var(--text-muted)">puan ↔ çıkarım</text>
+
+  <text x="20" y="270" font-size="13" fill="var(--text-muted)">Zincir en zayıf halkası kadar güçlüdür; istatistiksel anlamlılık</text>
+  <text x="20" y="288" font-size="13" fill="var(--text-muted)">yalnızca dördüncü halkayı sınar. Sayılar metindeki çalışmalardan.</text>
+</svg>
