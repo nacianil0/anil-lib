@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T19:19:34.964Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T20:02:02.624Z
 > Files: 262 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
@@ -742,7 +742,7 @@
 
 ## src/app/
 
-- `globals.css` — Styles: 9 rules, 43 vars (~4043 tok)
+- `globals.css` — Styles: 7 rules, 43 vars (~4650 tok)
 - `layout.tsx` — newsreader (~527 tok)
 
 ## src/app/api/reader-sync/
@@ -860,8 +860,8 @@
 
 ## tests/e2e/
 
-- `_probe.spec.ts` — API routes: GET (1 endpoints) (~726 tok)
-- `_shots.spec.ts` — API routes: GET (1 endpoints) (~786 tok)
+- `_probe.spec.ts` — Page: authenticate (~1435 tok)
+- `_shots.spec.ts` — Page: authenticate, shot (~868 tok)
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~2321 tok)
 - `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~8711 tok)
 

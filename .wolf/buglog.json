@@ -6503,6 +6503,38 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T20:20:00.000Z"
+    },
+    {
+      "id": "bug-389",
+      "timestamp": "2026-09-06T19:50:55.629Z",
+      "error_message": "CSS fix: font-size, padding, white-space",
+      "file": "src/app/globals.css",
+      "root_cause": "font-size: 0.92rem → 0.86rem; padding: 0.55rem 0.85rem → 0.45rem 0.5rem; white-space: nowrap → normal",
+      "fix": "Changed font-size: 0.92rem → 0.86rem; padding: 0.55rem 0.85rem → 0.45rem 0.5rem; white-space: nowrap → normal",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-06T19:52:21.798Z"
+    },
+    {
+      "id": "bug-390",
+      "timestamp": "2026-09-06T19:51:10.396Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/app/globals.css",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 19→22 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T19:51:10.396Z"
     }
   ]
 }

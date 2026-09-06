@@ -3113,3 +3113,17 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 22:20 | Satır kılavuzu: blok gradyanı yerine metin geometrisinden Range + Custom Highlight API; bant yalnızca satırın gerçek metnini kaplıyor | line-guide.ts, line-guide.test.ts, line-guide-layer.tsx, reader-shell.tsx, globals.css, reader.spec.ts | 538 birim + 18 reader e2e testi geçti, 10 yapılandırmada geometri denetimi kusursuz, build temiz | ~60k |
 | 22:19 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/line-guide-text-geometry.md | — | ~396 |
 | 22:20 | Session end: 80 writes across 22 files (wheel-paging.ts, wheel-paging.test.ts, use-wheel-paging.ts, use-reader-layout.ts, labels.ts) | 23 reads | ~55995 tok |
+
+## Session: 2026-09-06 22:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:50 | Edited src/app/globals.css | CSS: container, max-width, hyphens | ~401 |
+| 22:51 | Edited src/app/globals.css | CSS: r, durur, max-width | ~259 |
+| 22:52 | Edited src/app/globals.css | CSS: overflow-wrap | ~200 |
+| 22:53 | Edited src/app/globals.css | modified table() | ~126 |
+| 22:54 | Edited src/app/globals.css | modified media() | ~177 |
+| 22:55 | Created tests/e2e/_probe.spec.ts | — | ~1365 |
+| 22:58 | Created tests/e2e/_probe.spec.ts | — | ~641 |
+| 23:00 | Created tests/e2e/_probe.spec.ts | — | ~1435 |
+| 23:02 | Created tests/e2e/_shots.spec.ts | — | ~868 |

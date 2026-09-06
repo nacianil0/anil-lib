@@ -398,7 +398,16 @@
     color: var(--text);
   }
 
+  /*
+     A table is measured against the width it actually gets — the reading column
+     in flow, one of two columns in the paged layout — not against the window.
+     Below the width where its natural layout fits, the table gives up the space
+     it can spare (padding, header lines, a little type) before it gives up and
+     scrolls. Scrolling stays as the last resort for tables that genuinely cannot
+     be narrowed further.
+  */
   .prose-reader .table-scroll {
+    container: reader-table / inline-size;
     margin: 0 0 1.5rem;
     overflow-x: auto;
     border: 1px solid var(--border);
@@ -426,6 +435,39 @@
     white-space: nowrap;
   }
 
+  /* The first thing to go is the roomy gutter, and the header's one-line rule. */
+  @container reader-table (max-width: 48rem) {
+    .prose-reader :is(th, td) {
+      padding: 0.5rem 0.6rem;
+    }
+
+    .prose-reader th {
+      white-space: normal;
+    }
+  }
+
+  @container reader-table (max-width: 34rem) {
+    .prose-reader table {
+      font-size: 0.86rem;
+    }
+
+    .prose-reader :is(th, td) {
+      padding: 0.45rem 0.5rem;
+    }
+  }
+
+  /*
+     A column of the paged layout, or a phone. The last thing a table can give up
+     is the promise that a word stays whole; the browser only takes it where a
+     column would otherwise push the table out of its box.
+  */
+  @container reader-table (max-width: 30rem) {
+    .prose-reader :is(th, td) {
+      padding: 0.4rem 0.45rem;
+      overflow-wrap: anywhere;
+    }
+  }
+
   .prose-reader tbody tr:last-child :is(th, td) {
     border-bottom: 0;
   }
@@ -447,11 +489,14 @@
   }
 
   /*
-     Diyagramlar 720 birimlik bir tuval için çizilir. Dar ekranlarda tuvali
-     kabın genişliğine sıkıştırmak etiketleri okunamaz hâle getirdiği için
-     (375px'te 14 birim ≈ 5,8 px), SVG okunaklı bir taban genişliğin altına
-     inmez ve bunun yerine kendi kabı içinde yatayda kaydırılır — tablolarda
-     kullanılan .table-scroll deseninin aynısı.
+     Diyagramlar 720 birimlik bir tuval için çizilir ve oranlarını viewBox'tan
+     alır: kaba sığdırmak yalnızca ölçekler, hiçbir metni, oku ya da kutuyu
+     kırpmaz. Eskiden 34rem'lik bir taban genişlik vardı; kap bunun altına
+     düştüğünde (sayfalı düzenin sütunu, telefon) her şekil kendi kabında yatayda
+     kayıyordu ve şeklin tamamı bir bakışta görünmüyordu. Artık şekil kabına
+     sığıyor; kap gerçekten darsa etiketler küçülür ama şekil bütün kalır ve
+     ayrıntı için tarayıcı yakınlaştırması açıktır. Kap yine de kaydırılabilir
+     durur: sığdırılamayan istisnai bir içerik için son çare.
   */
   .prose-reader figure.series-figure .series-figure-scroll {
     overflow-x: auto;
@@ -461,9 +506,25 @@
   .prose-reader figure.series-figure svg {
     display: block;
     width: 100%;
-    min-width: 34rem;
+    max-width: 100%;
     height: auto;
     font-family: theme("fontFamily.sans");
+  }
+
+  /*
+     On a phone the diagram takes the reading column's own indent as well: on a
+     720-unit canvas every 40px it wins makes the labels ~12% larger, which is
+     the difference between a legible figure and a decorative one. Flow only —
+     the paged layout never opens below 1024px, and a negative margin inside a
+     column would spill into the gutter.
+  */
+  @media (max-width: 40rem) {
+    .prose-reader figure.series-figure {
+      margin-inline: -1.25rem;
+      padding: 0.85rem 0.75rem 0.7rem;
+      border-inline: 0;
+      border-radius: 0;
+    }
   }
 
   .prose-reader figure.series-figure figcaption {
