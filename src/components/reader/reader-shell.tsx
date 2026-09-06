@@ -20,6 +20,7 @@ import { ResumeNotice } from "./resume-notice";
 import { SavedPlaceControl } from "./saved-place-control";
 import { ArticleMarks } from "./article-marks";
 import { HighlightLayer } from "./highlight-layer";
+import { LineGuideLayer } from "./line-guide-layer";
 import { HighlightSelectionAction } from "./highlight-selection-action";
 import { SyncStatus } from "./sync-status";
 import { ReaderPager } from "./reader-pager";
@@ -376,6 +377,12 @@ function ReaderShellInner({
               containerRef={bodyRef}
               layoutVersion={layoutVersion}
               onNavigateToTarget={navigateToElement}
+            />
+            <LineGuideLayer
+              enabled={preferences.lineGuide}
+              containerRef={bodyRef}
+              layoutVersion={layoutVersion}
+              articleId={current.articleId}
             />
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
             {/* From `lg` up both of these live in the toolbar, where they are reachable

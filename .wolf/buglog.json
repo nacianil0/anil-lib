@@ -6355,6 +6355,118 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T18:42:20.710Z"
+    },
+    {
+      "id": "bug-380",
+      "timestamp": "2026-09-06T18:54:14.146Z",
+      "error_message": "Wrong operator: <= should be >=",
+      "file": "src/lib/reader-layout/line-guide.ts",
+      "root_cause": "Used \"<=\" instead of \">=\"",
+      "fix": "Changed operator <= → >=",
+      "tags": [
+        "auto-detected",
+        "operator-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:54:14.146Z"
+    },
+    {
+      "id": "bug-381",
+      "timestamp": "2026-09-06T18:55:00.373Z",
+      "error_message": "CSS fix: background-color",
+      "file": "src/app/globals.css",
+      "root_cause": "background-color: color-mix(in srgb, var(--accent) 28%, transparent) → var(--reader-line-band)",
+      "fix": "Changed background-color: color-mix(in srgb, var(--accent) 28%, transparent) → var(--reader-line-band)",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T18:55:00.373Z"
+    },
+    {
+      "id": "bug-382",
+      "timestamp": "2026-09-06T19:00:25.534Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-layout/line-guide.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T19:00:25.534Z"
+    },
+    {
+      "id": "bug-383",
+      "timestamp": "2026-09-06T19:03:23.789Z",
+      "error_message": "Wrong condition in logic",
+      "file": "src/lib/reader-layout/line-guide.ts",
+      "root_cause": "Condition was: if (rect.width <= 0 && rect.height <= 0)",
+      "fix": "Changed to: if (rect.width <= 0 || rect.height <= 0)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T19:03:23.789Z"
+    },
+    {
+      "id": "bug-384",
+      "timestamp": "2026-09-06T19:05:52.383Z",
+      "error_message": "Null/undefined access in ",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T19:05:52.383Z"
+    },
+    {
+      "id": "bug-385",
+      "timestamp": "2026-09-06T19:06:21.598Z",
+      "error_message": "Missing await",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T19:06:21.598Z"
+    },
+    {
+      "id": "bug-386",
+      "timestamp": "2026-09-06T19:10:22.229Z",
+      "error_message": "Type error",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T19:10:22.229Z"
     }
   ]
 }

@@ -297,35 +297,6 @@
     overflow-wrap: break-word;
   }
 
-  /* --------------------------------------------------------------------------
-     Line guide — a reading aid, not a decoration.
-     Every second line box carries a faint band of the page's own ink, so when
-     the eye sweeps back from the end of a line it lands on a line that looks
-     different from the one it just left. Painted on the block, one period per
-     two line boxes (2lh); the first line of every block stays plain, so a
-     one-line paragraph shows nothing. The fallback size covers browsers
-     without the `lh` unit. Loose list items (li > p) and items holding a
-     nested list are skipped: their paragraphs or children paint their own.
-     In the paged (multi-column) layout a paragraph that continues in the
-     next column is cloned, not sliced: a sliced background would carry the
-     unused space at the bottom of the first column into the phase of the
-     second, and the bands would drift off the lines there.
-  -------------------------------------------------------------------------- */
-  .reader-shell[data-line-guide="true"] .prose-reader :is(p, li:not(:has(> p, > ul, > ol))) {
-    background-image: linear-gradient(
-      to bottom,
-      transparent 0 50%,
-      var(--reader-line-band) 50% 100%
-    );
-    background-size: 100% calc(var(--reader-line-height, 1.72) * 2em);
-    background-size: 100% 2lh;
-    background-repeat: repeat-y;
-    background-origin: content-box;
-    background-clip: content-box;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-
   .prose-reader :is(li, blockquote) p {
     text-indent: 0;
   }
@@ -560,4 +531,19 @@
   text-decoration-color: color-mix(in srgb, var(--accent) 70%, transparent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.14em;
+}
+
+/* --------------------------------------------------------------------------
+   Line guide — a reading aid, not a decoration.
+   Every second line carries a faint band of the page's own ink, so when the eye
+   sweeps back from the end of a line it lands on one that looks different from
+   the line it just left. The bands are ranges over the text itself (see
+   `lib/reader-layout/line-guide.ts`), so each one stops where its line's words
+   stop: a short last line is banded only as far as it is written, and the empty
+   tail of a column stays empty. The first line of a block is left plain, so a
+   one-line paragraph shows nothing.
+-------------------------------------------------------------------------- */
+.reader-shell[data-line-guide="true"] ::highlight(reader-line-guide) {
+  color: inherit;
+  background-color: var(--reader-line-band);
 }

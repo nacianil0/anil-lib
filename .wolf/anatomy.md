@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T18:42:20.695Z
-> Files: 255 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T19:12:24.409Z
+> Files: 260 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -740,7 +740,7 @@
 
 ## src/app/
 
-- `globals.css` — Styles: 7 rules, 43 vars (~4237 tok)
+- `globals.css` — Styles: 9 rules, 43 vars (~4043 tok)
 - `layout.tsx` — newsreader (~527 tok)
 
 ## src/app/api/reader-sync/
@@ -785,10 +785,11 @@
 
 - `article-navigation.tsx` — Toolbar form of the same navigation: two icons that stay within reach of the text. (~1228 tok)
 - `completion-control.tsx` — `compact` is the toolbar form: an icon on its own, so the completion state stays (~548 tok)
+- `line-guide-layer.tsx` — Time a drag-resize is given to come to rest before every line is measured again. (~402 tok)
 - `markdown-components.tsx` — Wrap tables so wide content scrolls horizontally instead of stretching the page. (~374 tok)
 - `reader-pager.test.tsx` — onPrevious (~724 tok)
 - `reader-pager.tsx` — The paged frame never scrolls, so the keys that would normally move down the (~860 tok)
-- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~4397 tok)
+- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~4495 tok)
 - `reading-settings.test.tsx` — dialog (~2662 tok)
 - `reading-settings.tsx` — A boolean preference laid out like the segmented controls: label above, a (~5150 tok)
 - `resume-notice.tsx` — First words of the paragraph the reader was returned to, when one was anchored. (~628 tok)
@@ -830,6 +831,8 @@
 
 ## src/lib/reader-layout/
 
+- `line-guide.test.ts` — MeasuredRect: rect (~1028 tok)
+- `line-guide.ts` — Line guide — bands that follow the text instead of the column. (~2786 tok)
 - `use-reader-layout.ts` — The y coordinate the reader actually reads from: just below the sticky toolbar. (~5115 tok)
 - `use-wheel-paging.ts` — True when something under the pointer — a wide table, a diagram in its own (~807 tok)
 - `wheel-paging.test.ts` — Declares pager (~734 tok)
@@ -855,8 +858,10 @@
 
 ## tests/e2e/
 
+- `_probe.spec.ts` — API routes: GET (1 endpoints) (~726 tok)
+- `_shots.spec.ts` — API routes: GET (1 endpoints) (~786 tok)
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~2321 tok)
-- `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~6853 tok)
+- `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~8711 tok)
 
 ## tools/
 

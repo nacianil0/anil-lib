@@ -3082,3 +3082,30 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 21:41 | Edited tests/e2e/reader.spec.ts | 1→2 lines | ~32 |
 | 21:42 | Edited src/components/reader/completion-control.tsx | 4→4 lines | ~43 |
 | 21:44 | Session end: 51 writes across 17 files (wheel-paging.ts, wheel-paging.test.ts, use-wheel-paging.ts, use-reader-layout.ts, labels.ts) | 13 reads | ~34991 tok |
+| 21:49 | Created tests/e2e/_shots.spec.ts | — | ~708 |
+| 21:53 | Created src/lib/reader-layout/line-guide.ts | — | ~2348 |
+| 21:54 | Edited src/lib/reader-layout/line-guide.ts | modified while() | ~312 |
+| 21:54 | Created src/components/reader/line-guide-layer.tsx | — | ~402 |
+| 21:54 | Edited src/components/reader/reader-shell.tsx | added 1 import(s) | ~30 |
+| 21:54 | Edited src/components/reader/reader-shell.tsx | expanded (+6 lines) | ~124 |
+| 21:54 | Edited src/app/globals.css | removed 30 lines | ~12 |
+| 21:55 | Edited src/app/globals.css | CSS: stop | ~317 |
+| 21:56 | Created tests/e2e/_probe.spec.ts | — | ~1592 |
+| 21:58 | Created tests/e2e/_probe.spec.ts | — | ~1099 |
+| 22:00 | Edited src/lib/reader-layout/line-guide.ts | added 2 condition(s) | ~636 |
+| 22:00 | Edited src/lib/reader-layout/line-guide.ts | 2→2 lines | ~39 |
+| 22:00 | Edited src/lib/reader-layout/line-guide.ts | modified lineBoxesOf() | ~82 |
+| 22:00 | Edited src/lib/reader-layout/line-guide.ts | 2→3 lines | ~35 |
+| 22:01 | Created tests/e2e/_probe.spec.ts | — | ~1914 |
+| 22:03 | Edited src/lib/reader-layout/line-guide.ts | modified for() | ~81 |
+| 22:03 | Edited tests/e2e/_probe.spec.ts | modified for() | ~194 |
+| 22:05 | Created src/lib/reader-layout/line-guide.test.ts | — | ~1028 |
+| 22:05 | Edited tests/e2e/reader.spec.ts | added optional chaining | ~1005 |
+| 22:06 | Edited tests/e2e/reader.spec.ts | usePagedMode() → usePreferences() | ~275 |
+| 22:06 | Edited tests/e2e/reader.spec.ts | expanded (+75 lines) | ~932 |
+| 22:07 | Edited tests/e2e/reader.spec.ts | 5→4 lines | ~40 |
+| 22:07 | Created tests/e2e/_shots.spec.ts | — | ~849 |
+| 22:09 | Created tests/e2e/_probe.spec.ts | — | ~726 |
+| 22:10 | Edited tests/e2e/reader.spec.ts | added 2 condition(s) | ~440 |
+| 22:11 | Created tests/e2e/_shots.spec.ts | — | ~786 |
+| 22:12 | Edited src/app/globals.css | modified highlight() | ~39 |

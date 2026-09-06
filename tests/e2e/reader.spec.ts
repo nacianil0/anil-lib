@@ -47,7 +47,7 @@ function chapterNavigation(page: Page) {
   return page.getByRole("navigation", { name: "Bölümler arası gezinme" });
 }
 
-const PAGED_PREFERENCES = {
+const READER_PREFERENCES = {
   version: 1,
   theme: "system",
   fontScale: "standard",
@@ -58,17 +58,17 @@ const PAGED_PREFERENCES = {
   paragraphSpacing: "balanced",
   firstLineIndent: "none",
   hyphenation: "auto",
-  readingMode: "paged",
+  readingMode: "flow",
   letterSpacing: "normal",
   fontWeight: "regular",
   lineGuide: false,
 };
 
 /**
- * Seeds the paged layout before the first paint. Writing preferences after load
- * races the provider's throttled save, which would put the reader back in flow.
+ * Seeds reading preferences before the first paint. Writing them after load races
+ * the provider's throttled save, which would put the defaults back.
  */
-async function usePagedMode(page: Page) {
+async function seedPreferences(page: Page, overrides: Record<string, unknown>) {
   await page.addInitScript(
     ([key, value]) => {
       try {
@@ -77,9 +77,11 @@ async function usePagedMode(page: Page) {
         /* ignore */
       }
     },
-    [PREFERENCES_KEY, JSON.stringify(PAGED_PREFERENCES)],
+    [PREFERENCES_KEY, JSON.stringify({ ...READER_PREFERENCES, ...overrides })],
   );
 }
+
+const seedPagedMode = (page: Page) => seedPreferences(page, { readingMode: "paged" });
 
 function pagerPosition(page: Page) {
   return page
@@ -107,6 +109,95 @@ async function flick(page: Page, deltaY: number, events = 24) {
     },
     [deltaY, events],
   );
+}
+
+/**
+ * Measures the line guide against the lines themselves: the bands come from the
+ * reader's own ranges, the lines from the browser's rects for each block. The two
+ * are computed from opposite ends, so agreement means the bands really do sit on
+ * the text — and only on the text.
+ */
+async function auditLineGuide(page: Page) {
+  return page.evaluate(() => {
+    type Box = { top: number; bottom: number; left: number; right: number };
+    const joins = (a: Box, b: Box) => {
+      const overlap = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+      if (overlap <= Math.min(a.bottom - a.top, b.bottom - b.top) / 2) return false;
+      return b.left <= a.right + 8 && b.right >= a.left - 8;
+    };
+    const groupLines = (rects: Iterable<DOMRect>): Box[] => {
+      const lines: Box[] = [];
+      for (const rect of rects) {
+        if (rect.width <= 0 || rect.height <= 0) continue;
+        const box = { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right };
+        const line = lines.find((candidate) => joins(candidate, box));
+        if (!line) {
+          lines.push(box);
+          continue;
+        }
+        line.top = Math.min(line.top, box.top);
+        line.bottom = Math.max(line.bottom, box.bottom);
+        line.left = Math.min(line.left, box.left);
+        line.right = Math.max(line.right, box.right);
+      }
+      return lines;
+    };
+
+    const root = document.querySelector(".prose-reader") as HTMLElement;
+    const blocks = [...root.querySelectorAll("p, li:not(:has(> p, > ul, > ol))")];
+    const probe = document.createRange();
+    const truth = new Map<Element, Box[]>();
+    for (const block of blocks) {
+      probe.selectNodeContents(block);
+      truth.set(block, groupLines(probe.getClientRects()));
+    }
+
+    const registry = (CSS as unknown as { highlights: Map<string, Iterable<Range>> }).highlights;
+    const bands = [...(registry.get("reader-line-guide") ?? [])];
+    const report = {
+      lines: [...truth.values()].reduce((sum, lines) => sum + lines.length, 0),
+      bands: bands.length,
+      expectedBands: [...truth.values()].reduce(
+        (sum, lines) => sum + Math.floor(lines.length / 2),
+        0,
+      ),
+      multiLineBands: 0,
+      pastEndOfLine: 0,
+      onAnUnbandedLine: 0,
+      onNoLineAtAll: 0,
+      narrowestShare: 1,
+    };
+
+    for (const range of bands) {
+      const block = range.startContainer.parentElement?.closest("p, li");
+      const lines = block ? truth.get(block) : undefined;
+      if (!lines || !block) {
+        report.onNoLineAtAll += 1;
+        continue;
+      }
+      const boxes = groupLines(range.getClientRects());
+      if (boxes.length !== 1) {
+        report.multiLineBands += 1;
+        continue;
+      }
+      const band = boxes[0];
+      const index = lines.findIndex((line) => joins(line, band));
+      if (index < 0) {
+        report.onNoLineAtAll += 1;
+        continue;
+      }
+      // The first line of a block stays plain, so every band is on an odd line.
+      if (index % 2 === 0) {
+        report.onAnUnbandedLine += 1;
+        continue;
+      }
+      const line = lines[index];
+      if (band.left < line.left - 1 || band.right > line.right + 1) report.pastEndOfLine += 1;
+      const share = (band.right - band.left) / block.getBoundingClientRect().width;
+      report.narrowestShare = Math.min(report.narrowestShare, share);
+    }
+    return report;
+  });
 }
 
 test.describe("desktop reader", () => {
@@ -388,7 +479,7 @@ test.describe("desktop reader", () => {
   test("holds the paged reader inside one viewport, with the chapter controls at hand", async ({
     page,
   }) => {
-    await usePagedMode(page);
+    await seedPagedMode(page);
     await gotoFirst(page);
     await expect(page.locator(".reader-shell")).toHaveAttribute("data-reading-mode", "paged");
     const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
@@ -425,7 +516,7 @@ test.describe("desktop reader", () => {
   });
 
   test("turns exactly one page per scroll gesture and stops at the covers", async ({ page }) => {
-    await usePagedMode(page);
+    await seedPagedMode(page);
     await gotoFirst(page);
     const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
     await expect(pager).toBeVisible();
@@ -482,8 +573,77 @@ test.describe("desktop reader", () => {
     await expect(pager).toContainText(`Sayfa ${total} / ${total}`);
   });
 
+  test("bands the lines the text fills and nothing past them", async ({ page }) => {
+    // Two chapters that between them cover the shapes the guide has to follow:
+    // lists, bold lead-ins, inline code and links.
+    const cases = [
+      { slug: "llm-reasoning-teknik-inceleme", mode: "flow", least: 100 },
+      { slug: "claudeu-nasil-okumaliyiz", mode: "flow", least: 40 },
+      { slug: "llm-reasoning-teknik-inceleme", mode: "paged", least: 200 },
+    ] as const;
+
+    let flowLines = 0;
+    for (const { slug, mode, least } of cases) {
+      await seedPreferences(page, { lineGuide: true, readingMode: mode });
+      await page.goto(`/read/${slug}`);
+      await expect(page.locator(".reader-shell")).toHaveAttribute("data-reading-mode", mode);
+      await expect
+        .poll(() => auditLineGuide(page).then((report) => report.bands))
+        .toBeGreaterThan(least);
+
+      const report = await auditLineGuide(page);
+      expect(report, `${slug} in ${mode}`).toMatchObject({
+        bands: report.expectedBands,
+        multiLineBands: 0,
+        pastEndOfLine: 0,
+        onAnUnbandedLine: 0,
+        onNoLineAtAll: 0,
+      });
+      // The defect this replaced: a band running the full width of the column
+      // under a last line only a few words long.
+      expect(report.narrowestShare, `${slug} in ${mode}`).toBeLessThan(0.5);
+      if (slug === "llm-reasoning-teknik-inceleme") {
+        if (mode === "flow") flowLines = report.lines;
+        else expect(report.lines).toBeGreaterThan(flowLines);
+      }
+    }
+  });
+
+  test("re-measures the line guide when the text reflows, and drops it when off", async ({
+    page,
+  }) => {
+    await seedPreferences(page, { lineGuide: true });
+    await gotoFirst(page);
+    await expect.poll(() => auditLineGuide(page).then((r) => r.bands)).toBeGreaterThan(10);
+
+    // A typography change re-breaks every line; the bands have to follow.
+    await page.getByRole("button", { name: "Okuma ayarları" }).click();
+    await page
+      .getByRole("dialog", { name: "Okuma ayarları" })
+      .getByRole("button", { name: "Metni büyüt" })
+      .click();
+    await page.keyboard.press("Escape");
+    await expect
+      .poll(() => auditLineGuide(page).then((r) => r.pastEndOfLine + r.multiLineBands))
+      .toBe(0);
+    const reflowed = await auditLineGuide(page);
+    expect(reflowed.bands).toBe(reflowed.expectedBands);
+
+    // A narrower window re-breaks them again.
+    await page.setViewportSize({ width: 900, height: 900 });
+    await expect.poll(() => auditLineGuide(page).then((r) => r.bands - r.expectedBands)).toBe(0);
+
+    // And turning the guide off leaves nothing painted behind.
+    await page.getByRole("button", { name: "Okuma ayarları" }).click();
+    await page
+      .getByRole("dialog", { name: "Okuma ayarları" })
+      .getByRole("switch", { name: "Satır kılavuzu" })
+      .click();
+    await expect.poll(() => auditLineGuide(page).then((r) => r.bands)).toBe(0);
+  });
+
   test("leaves the reading list's own scrolling alone", async ({ page }) => {
-    await usePagedMode(page);
+    await seedPagedMode(page);
     await gotoFirst(page);
     const pager = page.getByRole("navigation", { name: "Sayfa gezintisi" });
     await expect(pager).toBeVisible();
