@@ -6535,6 +6535,86 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T19:51:10.396Z"
+    },
+    {
+      "id": "bug-391",
+      "timestamp": "2026-09-06T20:05:50.633Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/app/globals.css",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 11→6 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:05:50.633Z"
+    },
+    {
+      "id": "bug-392",
+      "timestamp": "2026-09-06T20:06:59.378Z",
+      "error_message": "CSS fix: padding",
+      "file": "src/app/globals.css",
+      "root_cause": "padding: 0.4rem 0.45rem → 0.4rem",
+      "fix": "Changed padding: 0.4rem 0.45rem → 0.4rem",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:06:59.378Z"
+    },
+    {
+      "id": "bug-393",
+      "timestamp": "2026-09-06T20:21:12.845Z",
+      "error_message": "Wrong operator: !== should be <=",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Used \"!==\" instead of \"<=\"",
+      "fix": "Changed operator !== → <=",
+      "tags": [
+        "auto-detected",
+        "operator-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:21:12.845Z"
+    },
+    {
+      "id": "bug-394",
+      "timestamp": "2026-09-06T20:25:26.886Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-layout/pagination.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→16 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:25:26.886Z"
+    },
+    {
+      "id": "bug-395",
+      "timestamp": "2026-09-06T20:27:57.863Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-layout/pagination.test.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:27:57.863Z"
     }
   ]
 }

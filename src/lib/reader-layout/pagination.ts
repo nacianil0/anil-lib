@@ -24,9 +24,20 @@ export function pageMetrics(
     safeWidth <= 0 || pageStep <= 0
       ? 1
       : Math.max(1, Math.ceil((Math.max(safeWidth, scrollWidth) + safeGap) / pageStep));
-  const maxScrollLeft = Math.max(0, (pageCount - 1) * pageStep);
+  /*
+   * The last page is usually a short one: the columns end where the text ends and
+   * the container cannot be scrolled past that. Deriving the end from the page
+   * grid instead would ask for an offset the browser quietly clamps, and the page
+   * the reader lands on would stop being the page that was asked for.
+   */
+  const maxScrollLeft = Math.max(0, Math.max(safeWidth, scrollWidth) - safeWidth);
+  const position = Math.max(0, scrollLeft);
   const pageIndex =
-    pageStep <= 0 ? 0 : clampPage(Math.round(Math.max(0, scrollLeft) / pageStep), pageCount);
+    pageStep <= 0
+      ? 0
+      : position >= maxScrollLeft - 1
+        ? Math.max(0, pageCount - 1)
+        : clampPage(Math.round(position / pageStep), pageCount);
 
   return { pageCount, pageIndex, pageStep, maxScrollLeft };
 }

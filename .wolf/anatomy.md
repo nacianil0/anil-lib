@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T20:02:02.624Z
-> Files: 262 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T20:27:57.846Z
+> Files: 265 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -742,7 +742,7 @@
 
 ## src/app/
 
-- `globals.css` — Styles: 7 rules, 43 vars (~4650 tok)
+- `globals.css` — Styles: 7 rules, 43 vars (~4674 tok)
 - `layout.tsx` — newsreader (~527 tok)
 
 ## src/app/api/reader-sync/
@@ -835,7 +835,9 @@
 
 - `line-guide.test.ts` — MeasuredRect: rect (~1028 tok)
 - `line-guide.ts` — Line guide — bands that follow the text instead of the column. (~2786 tok)
-- `use-reader-layout.ts` — The y coordinate the reader actually reads from: just below the sticky toolbar. (~5115 tok)
+- `pagination.test.ts` — Declares metrics (~575 tok)
+- `pagination.ts` — Exports PageMetrics, clampPage, pageMetrics, ratioForPage + 3 more (~672 tok)
+- `use-reader-layout.ts` — The y coordinate the reader actually reads from: just below the sticky toolbar. (~5209 tok)
 - `use-wheel-paging.ts` — True when something under the pointer — a wide table, a diagram in its own (~807 tok)
 - `wheel-paging.test.ts` — Declares pager (~734 tok)
 - `wheel-paging.ts` — Turning pages with a wheel or a trackpad. (~837 tok)
@@ -860,10 +862,11 @@
 
 ## tests/e2e/
 
-- `_probe.spec.ts` — Page: authenticate (~1435 tok)
+- `_probe.spec.ts` — Page: authenticate (~770 tok)
 - `_shots.spec.ts` — Page: authenticate, shot (~868 tok)
 - `auth.spec.ts` — API routes: GET (1 endpoints) (~2321 tok)
 - `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~8711 tok)
+- `series-reader.spec.ts` — Chapters carrying the widest figures and the widest tables in the series. (~1659 tok)
 
 ## tools/
 

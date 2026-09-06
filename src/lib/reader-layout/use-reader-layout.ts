@@ -211,8 +211,12 @@ export function useReaderLayout({
     const target = pageTargetRef.current;
     if (target) {
       // Ignore the intermediate offsets of a scroll that is still on its way to the
-      // page it was sent to; drop the command once it lands or times out.
-      if (metrics.pageIndex !== target.index && Date.now() < target.until) return;
+      // page it was sent to; drop the command once it lands there or times out.
+      // Landing is measured against the exact offset, not the rounded page: a
+      // smooth scroll rounds to its destination halfway through, and treating that
+      // as arrival would hand the next gesture a page the reader is still leaving.
+      const landed = Math.abs(element.scrollLeft - scrollLeftForPage(target.index, metrics)) <= 1;
+      if (!landed && Date.now() < target.until) return;
       pageTargetRef.current = null;
     }
     setPageState((current) =>

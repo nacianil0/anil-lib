@@ -457,14 +457,15 @@
   }
 
   /*
-     A column of the paged layout, or a phone. The last thing a table can give up
-     is the promise that a word stays whole; the browser only takes it where a
-     column would otherwise push the table out of its box.
+     A column of the paged layout, or a phone. Words are never broken to make a
+     table fit: a split number reads as a different number. A table that is still
+     too wide here — a five or six column table of figures — keeps its own
+     horizontal scroll, which is the honest fallback for content that cannot be
+     narrowed any further.
   */
   @container reader-table (max-width: 30rem) {
     .prose-reader :is(th, td) {
-      padding: 0.4rem 0.45rem;
-      overflow-wrap: anywhere;
+      padding: 0.4rem;
     }
   }
 

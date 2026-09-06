@@ -3127,3 +3127,10 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 22:58 | Created tests/e2e/_probe.spec.ts | — | ~641 |
 | 23:00 | Created tests/e2e/_probe.spec.ts | — | ~1435 |
 | 23:02 | Created tests/e2e/_shots.spec.ts | — | ~868 |
+| 23:05 | Edited src/app/globals.css | modified table() | ~49 |
+| 23:06 | Edited src/app/globals.css | CSS: fit | ~133 |
+| 23:10 | Created tests/e2e/series-reader.spec.ts | — | ~1659 |
+| 23:21 | Edited src/lib/reader-layout/use-reader-layout.ts | modified if() | ~203 |
+| 23:24 | Created tests/e2e/_probe.spec.ts | — | ~770 |
+| 23:25 | Edited src/lib/reader-layout/pagination.ts | modified max() | ~201 |
+| 23:27 | Edited src/lib/reader-layout/pagination.test.ts | expanded (+15 lines) | ~220 |
