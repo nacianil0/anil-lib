@@ -247,6 +247,13 @@ ode_modules`, sonra kopyayi sil.
 - Bölüm kontrolleri (Tamamlandı + önceki/sonraki bölüm) `lg` üstünde header'da, altında makale altındaki footer'da. Ölçüm: 390 px'te sağ araç öbeği 202 px + sol 115 px, boşluk ~33 px — üç kontrol daha sığmıyor; 768 px'te header'a eklendiklerinde "Okuma listesi" düğmesi iki satıra kırılıyor ve kategori kırpılıyor. 1024 px'te (okuma listesi düğmesi `lg:hidden` ile kaybolduğu anda) sol 207 + sağ 377 = 584 / 705 px, hiç kırpma yok. Bu yüzden kırılım `md` değil `lg`.
 
 
+### Satır kılavuzu artık metin geometrisinden çiziliyor (2026-09-06)
+- Bant CSS arka planı değil, Custom Highlight API kaydı: `line-guide.ts` her bloğun (`p, li:not(:has(> p, > ul, > ol))`) satır başlangıç offset'lerini ölçüp tek satırlık Range'ler üretiyor, `CSS.highlights.set("reader-line-guide", …)` ile veriyor; stil `.reader-shell[data-line-guide="true"] ::highlight(reader-line-guide)`. Highlight satır kutusunu metnin bittiği yere kadar boyadığı için kısa son satır, sütun sonundaki boş pay ve ilk satır girintisi kendiliğinden dışarıda kalıyor. Marks highlight'ı üstte kalsın diye `highlight.priority = -1`.
+- Satır sınırı ölçümü: geçerli satırın başından ilerleyen bir Range ikinci satır kutusuna taştığı ilk offset aranıyor (pencere büyüterek + ikili arama). Taşan offset'in **bir öncesi** yeni satırın ilk karakteridir; doğrudan taşan offset alınırsa bant bir sonraki satırın ilk harfini de kapsar. Her ölçüm en çok iki satır kutusu okuduğu için 36 bin karakterlik makalede tam yeniden çizim 50 ms'lik long-task eşiğinin altında kalıyor.
+- `Range.getClientRects()` satır içi bir öğeyi hem öğe kutusu hem metin kutusu olarak, üstelik okuma sırasını geri sararak döndürür; ardışık karşılaştırmayla satır saymak bu yüzden yanlıştır (bkz. bug-380). Kümeleme dikey örtüşme **ve** yatay temas ister; yatay temas şartı sayfalı düzende aynı `top`'u paylaşan iki sütunu ayırır.
+- Kılavuzun yeniden ölçülmesi gereken üç an var: `layoutVersion` (tipografi/mod değişimi), makale değişimi (client navigasyonda `layoutVersion` artmaz), ve pencere yeniden boyutlandırma (150 ms debounce). İlk ikisi `HighlightLayer` deseninin aynısı.
+
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -439,6 +446,10 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-06] `/seri/<slug>` bu oturumda dev sunucusunda hiç render etmedi (gövde yalnızca boş Suspense sınırı, 2 dk beklendi); `/read` rotası aynı `ReaderShell` ile sorunsuz. Değişiklikten bağımsız (flow modunda da aynı) ve `next build` /seri'yi üretiyor — seri sayfasını dev'de doğrulaman gerekirse önce bu davranışı ayrıca teşhis et, okuyucu değişikliğine bağlama.
 
 
+- [2026-09-06] Satır bandı gibi "yalnızca metnin kapladığı alan" isteyen bir efekti blok arka planıyla (gradient) çözmeye çalışma: blok arka planı satırın nerede bittiğini bilemez, `box-decoration-break` sadece fragman kutusunu değiştirir, sütun sonundaki boş payı da boyar. Doğru araç metin geometrisi (Range + Custom Highlight API).
+- [2026-09-06] Satır sayarken `Range.getClientRects()` çıktısını sıraya güvenerek gruplama; öğe kutuları metin kutularından önce gelir ve sıra geri sarar. Ayrıca sıfır genişlikli rect'ler (Range satır sınırına değdiğinde) satır sanılmamalı.
+
+
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
@@ -573,3 +584,8 @@ mümkün değil.
 - **Karar:** Sayfalı modda pencere hiç kaydırılmıyor; okuma çerçevesi tam bir viewport ve sayfa çevirme tek yol. Bunun bedeli, makale altındaki "Tamamlandı" + önceki/sonraki bölüm bloğunun sayfalı düzende erişilemez hâle gelmesiydi; bu yüzden bu kontroller `lg` üstünde header'a taşındı ve footer yalnızca `lg` altında kalıyor. Alternatif (footer'ı iki yerde birden göstermek) aynı landmark'ı iki kez üretiyordu; header'a mobilde de koymak ise ölçülen 33 px boşluğa sığmıyordu.
 - **Karar:** Tek fiziksel hareket = tek sayfa kuralı, "olay sayma" yerine "hareket sonu" modeliyle kuruldu: eşik aşılınca sayfa çevrilir, sonra olay akışı 180 ms sessizleşene kadar hiçbir şey çevirmez. Momentum kuyruğunu ayıklamak için delta büyüklüğü/ivme sezgisi denenmedi; sürtünmeli kuyruk ile ikinci bilinçli itişi ayırt etmenin güvenilir eşiği yok, sessizlik eşiği ise okurun "durup yeniden it" davranışıyla birebir örtüşüyor. Bedeli: tekerleği aralıksız çeviren fare kullanıcısı tek hamlede tek sayfa alır; pager düğmeleri ve ok/PageDown/Space tuşları bu durumda çıkış yolu.
 - **Karar:** Sayfalı modda dikey kaydırma kalmadığı için ArrowDown/ArrowUp/PageDown/PageUp/Space da sayfa çeviriyor (yalnızca ok tuşları değil). Aksi hâlde bu tuşlar sessizce hiçbir şey yapmayacaktı.
+
+### Satır kılavuzu neden Highlight API ile çizildi (2026-09-06)
+- **Karar:** Bantlar için ne blok arka planı (eski çözüm) ne de mutlak konumlu overlay `div`'leri kullanıldı; her bantlı satır için bir Range üretilip Custom Highlight API'ye verildi. Gerekçe: highlight satırın gerçek mürekkep alanını tarayıcının kendi satır kutusu hesabıyla boyar (justify, heceleme, satır içi öğeler, sütun kırılması dahil), DOM'a hiçbir düğüm eklenmez, z-index/stacking context kurcalanmaz ve metin seçimi, linkler, okuma çıpası, işaret highlight'ları etkilenmez. Overlay yaklaşımı uzun makalede yüzlerce ek düğüm ve sayfalı düzende ayrı koordinat matematiği demekti.
+- **Bedeli:** `CSS.highlights` yoksa kılavuz hiç çizilmiyor (yanlış çizmek yerine). Uygulama zaten işaretler için aynı API'ye bağlı; eski hatalı gradient yedek olarak bırakılmadı.
+- **Doğrulama biçimi:** Bantlar (okuyucunun Range'leri) ile satırlar (bloğun kendi rect'leri) iki ayrı uçtan hesaplanıp karşılaştırılıyor; e2e testi bant sayısı = beklenen, çok satırlı bant = 0, satır dışına taşma = 0, yanlış satır = 0 ve en dar bandın sütunun yarısından küçük olduğunu doğruluyor.

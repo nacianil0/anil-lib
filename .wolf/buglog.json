@@ -6467,6 +6467,42 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T19:10:22.229Z"
+    },
+    {
+      "id": "bug-387",
+      "timestamp": "2026-09-06T20:20:00.000Z",
+      "error_message": "Satır kılavuzu bandı, paragrafın kısa son satırından sonra sütun sonuna kadar devam ediyor; sayfalı düzende sütunun boş alt payını da boyuyor",
+      "file": "src/app/globals.css",
+      "root_cause": "Bant, blok arka planı olarak çiziliyordu (`linear-gradient` + `background-size: 100% 2lh`). Blok arka planı satırın nerede bittiğini bilemez: her bandı sütun genişliğince, `box-decoration-break: clone` ile de fragmanın sütun sonuna kadar uzayan kutusunca boyar.",
+      "fix": "Bantlar artık metnin kendi geometrisinden üretiliyor: `lib/reader-layout/line-guide.ts` her bloğun render edilmiş satırlarını ölçüp bantlanacak satırlar için Range üretiyor ve Custom Highlight API'ye (`::highlight(reader-line-guide)`) veriyor. DOM'a hiçbir şey eklenmiyor; seçim, linkler ve mevcut işaretler etkilenmiyor. `LineGuideLayer` reflow (layoutVersion), makale değişimi ve resize'da yeniden ölçüyor.",
+      "tags": [
+        "reader",
+        "line-guide",
+        "css",
+        "highlight-api",
+        "layout"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:20:00.000Z"
+    },
+    {
+      "id": "bug-388",
+      "timestamp": "2026-09-06T20:20:00.000Z",
+      "error_message": "Satır sayımı şişiyor: 2 satırlık paragraf 4 satır sayılıyor, bantlar kayıyor (bands 188 != expected 193)",
+      "file": "src/lib/reader-layout/line-guide.ts",
+      "root_cause": "`Range.getClientRects()` bir satır içi öğeyi (ör. paragraf başındaki `<strong>`) hem kendi kutusu hem de metin kutusu olarak döndürüyor ve bu kutular okuma sırasını geri sarıyor (satır1, satır2, satır1, satır2...). Ardışık rect'leri karşılaştıran sayım her geri dönüşte yeni satır sanıyordu.",
+      "fix": "`lineBoxesOf` sıradan bağımsız kümeleme yapıyor: her rect dikey örtüşme + yatay temas ölçütüyle mevcut satır kutularından biriyle birleştiriliyor, aradaki boşluğu dolduran bir kutu iki kümeyi birleştirebiliyor. Yatay temas şartı sayfalı düzende aynı `top`'u paylaşan iki sütunu da ayırıyor. Sıfır genişlikli rect'ler (satır sınırına değen Range) eleniyor.",
+      "tags": [
+        "reader",
+        "line-guide",
+        "getClientRects",
+        "multicol",
+        "measurement"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-06T20:20:00.000Z"
     }
   ]
 }

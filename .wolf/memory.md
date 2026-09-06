@@ -3109,3 +3109,7 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 22:10 | Edited tests/e2e/reader.spec.ts | added 2 condition(s) | ~440 |
 | 22:11 | Created tests/e2e/_shots.spec.ts | — | ~786 |
 | 22:12 | Edited src/app/globals.css | modified highlight() | ~39 |
+| 22:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/522e37d9-4ffd-482b-8b8c-534fe85ea064/scratchpad/wolf_update2.py | — | ~2084 |
+| 22:20 | Satır kılavuzu: blok gradyanı yerine metin geometrisinden Range + Custom Highlight API; bant yalnızca satırın gerçek metnini kaplıyor | line-guide.ts, line-guide.test.ts, line-guide-layer.tsx, reader-shell.tsx, globals.css, reader.spec.ts | 538 birim + 18 reader e2e testi geçti, 10 yapılandırmada geometri denetimi kusursuz, build temiz | ~60k |
+| 22:19 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/line-guide-text-geometry.md | — | ~396 |
+| 22:20 | Session end: 80 writes across 22 files (wheel-paging.ts, wheel-paging.test.ts, use-wheel-paging.ts, use-reader-layout.ts, labels.ts) | 23 reads | ~55995 tok |

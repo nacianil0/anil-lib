@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T19:12:24.409Z
-> Files: 260 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T19:19:34.964Z
+> Files: 262 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -51,6 +51,7 @@
 
 - `cerebrum_update.py` — Appends this session's learnings to .wolf/cerebrum.md, section by section. (~1568 tok)
 - `wolf_update.py` — Session bookkeeping for OpenWolf: anatomy cleanup, buglog entry, memory line. (~986 tok)
+- `wolf_update2.py` — Line-guide session bookkeeping for OpenWolf. (~2084 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/
 
@@ -148,6 +149,7 @@
 
 ## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
 
+- `line-guide-text-geometry.md` (~400 tok)
 - `MEMORY.md` — Memory index (~148 tok)
 - `paged-reader-scroll-pagination.md` (~448 tok)
 - `reader-line-guide-redesign.md` (~471 tok)
