@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-label="Üç panel ve altında bir sonuç kutusu. Birinci panel eğitilmiş model: ağırlıklar öğrenilmiş, ısı haritası nesnenin kenarlarını vurguluyor, referans olarak kullanılıyor. İkinci panel ağırlıkları rastgeleleştirilmiş model: katman katman bozulmuş, model artık hiçbir şey bilmiyor, ama bazı yöntemlerde ısı haritası neredeyse aynı kalıyor. Üçüncü panel etiketleri karıştırılmış veriyle eğitilmiş model: öğrenilen ilişki anlamsız, harita yine benzer çıkıyor, yani yöntem veriden de bağımsız. Alt kutuda iki çıkarım: makul görünen bir harita ne modelden ne veriden haber taşıyor olabilir çünkü bu yöntemler eğitim gerektirmeyen bir kenar bulucu gibi davranıyor; ve sil-ve-yeniden-eğit ölçütünde çoğu yöntem rastgele silmeyi geçemiyor, yalnızca varyans temelli iki topluluk yöntemi geçiyor.">
+  <rect x="20" y="30" width="215" height="190" fill="var(--surface-muted)" />
+  <text x="30" y="52" font-size="13" font-weight="bold" fill="var(--text)">1 · eğitilmiş model</text>
+  <text x="30" y="72" font-size="13" fill="var(--text-muted)">ağırlıklar öğrenilmiş</text>
+  <rect x="30" y="84" width="180" height="46" fill="var(--accent-soft)" />
+  <text x="40" y="106" font-size="13" fill="var(--text)">ısı haritası:</text>
+  <text x="40" y="124" font-size="13" fill="var(--text)">nesnenin kenarları</text>
+  <text x="30" y="158" font-size="13" fill="var(--text)">beklenen: modele özgü</text>
+  <text x="30" y="178" font-size="13" fill="var(--text-muted)">referans harita</text>
+
+  <rect x="245" y="30" width="215" height="190" fill="var(--bg)" stroke="var(--border)" />
+  <text x="255" y="52" font-size="13" font-weight="bold" fill="var(--text)">2 · ağırlıklar rastgele</text>
+  <text x="255" y="72" font-size="13" fill="var(--text-muted)">katman katman bozuldu</text>
+  <rect x="255" y="84" width="180" height="46" fill="var(--accent-soft)" />
+  <text x="265" y="106" font-size="13" fill="var(--text)">ısı haritası:</text>
+  <text x="265" y="124" font-size="13" fill="var(--text)">neredeyse aynı</text>
+  <text x="255" y="158" font-size="13" fill="var(--text)">model hiçbir şey bilmiyor</text>
+  <text x="255" y="178" font-size="13" fill="var(--text-muted)">yöntem modelden bağımsız</text>
+
+  <rect x="470" y="30" width="230" height="190" fill="var(--bg)" stroke="var(--border)" />
+  <text x="480" y="52" font-size="13" font-weight="bold" fill="var(--text)">3 · etiketler karıştırıldı</text>
+  <text x="480" y="72" font-size="13" fill="var(--text-muted)">öğrenilen ilişki anlamsız</text>
+  <rect x="480" y="84" width="190" height="46" fill="var(--accent-soft)" />
+  <text x="490" y="106" font-size="13" fill="var(--text)">ısı haritası:</text>
+  <text x="490" y="124" font-size="13" fill="var(--text)">yine benzer</text>
+  <text x="480" y="158" font-size="13" fill="var(--text)">veri de anlamsızdı</text>
+  <text x="480" y="178" font-size="13" fill="var(--text-muted)">yöntem veriden bağımsız</text>
+
+  <rect x="20" y="240" width="680" height="124" fill="var(--surface-muted)" />
+  <text x="30" y="262" font-size="13" font-weight="bold" fill="var(--text)">iki çıkarım</text>
+  <text x="30" y="286" font-size="13" fill="var(--text)">1 · Makul görünen bir harita ne modelden ne veriden haber taşıyor olabilir; böyle bir</text>
+  <text x="30" y="306" font-size="13" fill="var(--text)">yöntem, eğitim gerektirmeyen bir kenar bulucu gibi davranıyor demektir.</text>
+  <text x="30" y="330" font-size="13" fill="var(--text)">2 · Sil-ve-yeniden-eğit ölçütünde çoğu yöntem rastgele silmeyi geçemiyor; yalnızca</text>
+  <text x="30" y="350" font-size="13" fill="var(--text)">varyans temelli iki topluluk yöntemi rastgeleyi geçiyor.</text>
+</svg>

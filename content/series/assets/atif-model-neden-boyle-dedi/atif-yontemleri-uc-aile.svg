@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 490" role="img" aria-label="Dört satırlı tablo; sütunlar aile, nasıl çalışır ve ne verir, sadakat sınavı ile maliyet. Gradyan ailesi: çıktının girdiye göre türevi; tümlenmiş gradyan bunu tabandan girdiye giden yol boyunca toplar; parça başına bir önem sayısı verir; ağırlıklar rastgeleleştirilince bazı yöntemlerin haritası değişmiyor; maliyeti birkaç gradyan çağrısı. Pertürbasyon ailesi: girdiyi bozup çevresine yerel bir vekil model uydurmak; yerel doğrusal bir açıklama verir; iskele saldırısıyla istenen açıklama uydurulabiliyor; maliyeti yüzlerce model çağrısı. Oyun kuramı ailesi: her parçanın payını Shapley değeriyle paylaştırmak; toplamı çıktı farkına eşit paylar verir; tam ve doğrusal her yöntemin zengin model sınıflarında rastgele tahmini geçmeyebileceği kanıtlanmış; maliyeti üstel, hep yaklaşıklık kullanılır. Dördüncü satır ortak sınav: en önemli denen parçaları silip modeli sıfırdan eğitmek; çoğu yöntem rastgele silmeyi geçemiyor, yalnızca iki topluluk yöntemi geçiyor; maliyeti her ölçüm için yeniden eğitim. Altta not: aksiyom sağlamak bir sınavdan geçmek değildir.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">aile</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">nasıl çalışır · ne verir</text>
+  <text x="410" y="28" font-size="13" font-weight="bold" fill="var(--text)">sadakat sınavı · maliyet</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="100" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">gradyan</text>
+  <text x="150" y="68" font-size="13" fill="var(--text)">çıktının girdiye göre türevi;</text>
+  <text x="150" y="86" font-size="13" fill="var(--text)">tümlenmiş gradyan bunu taban →</text>
+  <text x="150" y="104" font-size="13" fill="var(--text)">girdi yolu boyunca toplar</text>
+  <text x="150" y="122" font-size="13" fill="var(--text-muted)">verir: parça başına önem sayısı</text>
+  <text x="410" y="68" font-size="13" fill="var(--text)">ağırlıklar rastgeleleştirilince bazı</text>
+  <text x="410" y="86" font-size="13" fill="var(--text)">yöntemlerin haritası değişmiyor</text>
+  <text x="410" y="104" font-size="13" fill="var(--text-muted)">maliyet: birkaç gradyan çağrısı</text>
+
+  <rect x="20" y="154" width="680" height="82" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="176" font-size="13" font-weight="bold" fill="var(--text)">pertürbasyon</text>
+  <text x="150" y="176" font-size="13" fill="var(--text)">girdiyi bozup çevresine yerel</text>
+  <text x="150" y="194" font-size="13" fill="var(--text)">bir vekil model uydurmak</text>
+  <text x="150" y="212" font-size="13" fill="var(--text-muted)">verir: yerel doğrusal açıklama</text>
+  <text x="410" y="176" font-size="13" fill="var(--text)">iskele saldırısıyla istenen açıklama</text>
+  <text x="410" y="194" font-size="13" fill="var(--text)">uydurulabiliyor</text>
+  <text x="410" y="212" font-size="13" fill="var(--text-muted)">maliyet: yüzlerce model çağrısı</text>
+
+  <rect x="20" y="244" width="680" height="100" fill="var(--surface-muted)" />
+  <text x="30" y="266" font-size="13" font-weight="bold" fill="var(--text)">oyun kuramı</text>
+  <text x="150" y="266" font-size="13" fill="var(--text)">her parçanın payını Shapley</text>
+  <text x="150" y="284" font-size="13" fill="var(--text)">değeriyle paylaştırmak</text>
+  <text x="150" y="302" font-size="13" fill="var(--text-muted)">verir: toplamı çıktı farkına</text>
+  <text x="150" y="320" font-size="13" fill="var(--text-muted)">eşit paylar</text>
+  <text x="410" y="266" font-size="13" fill="var(--text)">tam ve doğrusal her yöntem, zengin</text>
+  <text x="410" y="284" font-size="13" fill="var(--text)">model sınıflarında rastgele tahmini</text>
+  <text x="410" y="302" font-size="13" fill="var(--text)">geçmeyebilir (kanıtlanmış)</text>
+  <text x="410" y="320" font-size="13" fill="var(--text-muted)">maliyet: üstel; hep yaklaşıklık</text>
+
+  <rect x="20" y="352" width="680" height="82" fill="var(--accent-soft)" />
+  <text x="30" y="374" font-size="13" font-weight="bold" fill="var(--text)">ortak sınav</text>
+  <text x="30" y="392" font-size="13" font-weight="bold" fill="var(--text)">sil ve yeniden</text>
+  <text x="30" y="410" font-size="13" font-weight="bold" fill="var(--text)">eğit</text>
+  <text x="150" y="374" font-size="13" fill="var(--text)">en önemli denen parçaları silip</text>
+  <text x="150" y="392" font-size="13" fill="var(--text)">modeli sıfırdan eğitmek</text>
+  <text x="410" y="374" font-size="13" fill="var(--text)">çoğu yöntem rastgele silmeyi geçemiyor</text>
+  <text x="410" y="392" font-size="13" fill="var(--text)">yalnızca iki topluluk yöntemi geçiyor</text>
+  <text x="410" y="410" font-size="13" fill="var(--text-muted)">maliyet: her ölçüm için yeniden eğitim</text>
+
+  <line x1="20" y1="446" x2="700" y2="446" stroke="var(--border)" />
+  <text x="20" y="468" font-size="13" fill="var(--text-muted)">Aksiyom sağlamak bir sınavdan geçmek değildir; önce uçtan uca görev tanımlanır.</text>
+</svg>

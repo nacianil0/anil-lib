@@ -57,8 +57,8 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Doğrulayıcıların eğitimi ve modelin kendi cevabını kontrol etmesi | 33, 34 | 35 | ödendi (Batch 8) |
 | Birden çok yol deneyip aralarında oy verme (öz-tutarlılık, arama) | 33 | 36 | ödendi (Batch 8) |
 | Adımların tek tek ödüllendirilmesi (süreç denetimi) | 34 | 38 | ödendi (Batch 8) |
-| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6, 18 | 74–77 | ilk taksit ödendi (Batch 17; 74: artık akış, devre, aktivasyon yamasının iki yönü, sadakat/tamlık/enazlık, sonda–dikkat–nöron–alt uzay yanılsamaları); 75–77 açık |
-| Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | açık |
+| Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6, 18 | 74–77 | **ödendi (Batch 18)**; 74: artık akış, devre, yamanın iki yönü, sadakat/tamlık/enazlık; 75: süperpozisyon ve seyrek sözlük, sözlüğün dört sınavı; 76: yön bulmanın dört yolu, müdahalenin dört biçimi, üç kapı; 77: girdi/bileşen/eğitim verisi atfı, taban sınavları, gerekçe sadakati |
+| Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | ödendi (Batch 18; 78'in açılışı 5'in "78. makalede derinlemesine ele alacağız" ve 9'un "nereye kadar açık olduğunu 78. makalede" cümlelerini adıyla anar) |
 | Uzmanlar karışımı mimarisinin kurulumu | 20 | 85 | açık |
 | Karesel maliyeti ödemeyen alternatif mimariler | 7, 15 | 86 | açık |
 | Ölçümün disiplini: anlamlı fark, örneklem büyüklüğü, güven aralığı | 16, 22 | 101 | açık |
@@ -211,6 +211,8 @@ başına doğrulandı (74'ten büyük öteki sayılar yüzde ve puan değerlerid
 koordinat artık **78**'dir (5 ve 9'un beliren yetenekler vaadi); 75–77 (bandın kalan taksitleri), 85, 86 ve 101
 de açıktır.
 
+**Numarasız ileri işaretler — Batch 18'de verildi.** Sözlüğün seyreklik varsayımı ve parça kimliği (75 → "bir sonraki makale", numarasız); atfın üç sorusu ve gerekçe sadakati (76 → "bir sonraki makale", numarasız); dağılım kayması ve sağlamlık (78 → "bir sonraki makale", numarasız; 79 numarası **açılmadı**). **74–77 bandı kapandı** (77'nin kapanışı "74'te açılan bandın borcu kapanıyor" diyerek 6 ve 18'in vaadini adıyla kapatır) ve **78 koordinatı ödendi** (78'in açılışı 5 ile 9'un cümlelerini alıntılar). Batch 18 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 78) yapıldı ve Python ile makale başına doğrulandı (78'den büyük öteki sayılar yüzde, puan, eğri altı alanı ve düzenleme sayısı değerleridir; 78'in kendi numarasına tek göndermesi 5'in vaadinin alıntısıdır ve SOZLESME §5'in izin verdiği biçimdir). Defterde açık kalan en yakın tekil koordinat artık **85**'tir (20'nin uzmanlar karışımı vaadi); 86 ve 101 de açıktır.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -310,10 +312,10 @@ de açıktır.
 72. **Kirlilik ve Ezber: Benchmark'lara Güven Krizi** — contamination; 8'in vaadi (18 ile birlikte); 72 koordinatı ödendi. `[yayında]`
 73. **İnsan Değerlendirmesi ve Hakem Modeller** — değerlendiren modeller (karar #162). `[yayında]`
 74. **Mekanistik Yorumlanabilirlik: Devreleri Okumak** — modelin içine bakmak; 74–77 bandının açılışı (karar #163). `[yayında]`
-75. **Özellikler ve Süperpozisyon: Modelin İç Dili** — features, SAE'ler.
-76. **Aktivasyonlara Müdahale: Steering ve Problar** — nedensel müdahale.
-77. **Attribution: Model Neden Böyle Dedi?** — açıklanabilirlik.
-78. **Emergence Tartışması: Yetenekler Aniden mi Gelir?** — 9'un eleştirel geri çağrımı.
+75. **Özellikler ve Süperpozisyon: Modelin İç Dili** — özellik, süperpozisyon, seyrek sözlük; 74'ün devri. `[yayında]`
+76. **Aktivasyonlara Müdahale: Yönlendirme ve Sondalar** — nedensel müdahale (karar #169). `[yayında]`
+77. **Atıf: Model Neden Böyle Dedi?** — açıklanabilirlik; 74–77 bandı kapandı (karar #170). `[yayında]`
+78. **Beliren Yetenekler Tartışması: Aniden mi Geliyor?** — 5 ve 9'un koordinatı ödendi (karar #171). `[yayında]`
 79. **Robustluk: Dağılım Kayması ve Adversarial Girdiler** — kırılganlık.
 80. **Şeffaflık: Model Kartları ve Sistem Kartları** — belgeleme pratiği.
 
@@ -505,6 +507,11 @@ kavram-tekrar tablolarına yazıldı.)
 - 72 ← 8 (ezber ↔ genelleme; **72 koordinatı**), 16 (tutulan küme; cetvel), 18 (ezberin yeri; nedensel izleme), 31 (kirlilik göndermesi), 14 (tekilleştirme; n-gram tarama; kirlilik tanımı), 71 (geçerlilik zinciri; protokol puanın içinde; hata payı), 55 (çözüm sızıntısı; kod ölçütleri), 57 (tutulan küme; canlı ölçüt), 68 (unutturmanın ölçülmesi; geri kazanım), 41 (parametrik ↔ parametrik olmayan bellek), 2 (aşırı öğrenme; ezberin kayıpla ilişkisi), 9 (ölçekle büyüyen ezber), 20 (açık ağırlık; kılavuz kirliliği), 66 (kimin görüşü — dolaylı) `[yayında]`
 - 73 ← 45 (hakem model; yüzde 85 ↔ 81; üç yanlılık; iki sırayla sorma; küçük insan kümesiyle hata kestirimi), 72 (anahtarlı cetvelin sınırı; 71'in sayımı), 71 (insan değerlendirmesi de bir ölçüm; protokol), 57 (izi okuyan hakem ajan; yüzde 90 uzlaşma), 64 (tartışmayı okuyan hakem; yüzde 75 güven süzgeci; bilgisi olmayan hakem), 65 (hakem güveni; kalibrasyon — **numarasız işaretin tahsili**), 66 (hakem de dalkavukluğa açık; kimin görüşü; PRISM), 16 ve 13 (Bradley–Terry; tercih çifti), 38 (süreç denetimi), 52/56 (öz-yansıma ↔ hakem), 44 (sorgu yeniden yazma — dolaylı), 67 (kendini tanıma → durum farkındalığı), 74 (kendini tanımanın içerideki karşılığı, "bir sonraki makale") `[yayında]`
 - 74 ← 6 (dikkat ağırlığı "neye baktığı" değildir; **74–77 bandının açılışı**), 18 (nedensel izleme = gürültü giderme; anahtar-değer belleği; Hase: yerelleştirme ≠ düzenleme), 3 (temsil; çok anlamlı nöron; Olah'ın devre incelemesi), 7 (artık bağlantı → artık akış; 12 × 12 = 144 baş; sekiz ayrı bakış), 23 (örnekle öğrenme ↔ indüksiyon başları; işlev vektörü), 9 ve 5 (beliren yetenek ↔ geç genelleme; cetvel → 78), 30 (kısıtlı üretim; logit'ler — devir), 31 (sadakat sözcüğü), 43 (seçicilik ↔ özgüllük ayrımı — dolaylı), 49 (tamlık — dolaylı), 62 (ret yönü), 65 (Azaria'nın iç sınıflandırıcısı), 67 (sonda; model organizması; temsil mühendisliği), 71 (şık harfi yanlılığının makinesi; protokol sonucun içinde), 72 (ezber ile genelleme mekanizma düzeyinde), 73 (hakemin kendini tanıması → içerideki karşılığı) `[yayında]`
+
+- 75 ← 74 (devrenin düğümü sorusu; artık akış; Bolukbasi'nin nöron yanılsaması; Geiger'in döndürülmüş alt uzayı; "bir sonraki makale" devri), 3 (temsil; çok anlamlı nöron — **yetmiş iki makale aralıklı geri çağırma**), 4 ("sözlük" sözcüğünün token dağarcığı anlamı — çakışma adlandırıldı), 2 (kayıp; seyreklik cezası), 7 (artık akışın boyutu; ileri beslemeli katmanın genişliği), 62 (ret yönü), 65 (doğruluk yönü), 67 (sonda; temsil mühendisliği), 74 (sadakat ölçütleri; yama) `[yayında]`
+- 76 ← 75 (kelepçeleme; sözlük parçasının çözücü yönü; yönlendirme teriminin gloss'u), 62 (**ret yönü**: tek yön silinince ret kalkıyor), 65 (Azaria'nın iç sınıflandırıcısı — **devrolan planlı tekrarın tahsili**), 66 (karakter vektörü; ince ayar kayması 0,76–0,97), 67 (temsil mühendisliği; sonda; uyuyan ajan sondası; Burns'ün etiketsiz ölçütü), 18 (ROME: ağırlık düzenleme ↔ aktivasyon müdahalesi; Hase), 24 (sistem istemi ↔ aktivasyon: aynı davranışın iki kapısı), 10 (üretim adımına müdahale — PPLM'in yeri), 63 (ağırlığa erişen saldırgan), 69 (denetimin iç erişimi), 72 ("yönlendirmeli tamamlama" çakışması), 74 (yeter ↔ gerekli; uyuyan yol yanılsaması) `[yayında]`
+- 77 ← 76 (değiştirmek ↔ açıklamak ayrımı), 45 ("atıf" sözcüğünün kaynak gösterme anlamı — çakışma adlandırıldı), 31 (sadakat tanımı; Turpin'in düzeneği), 66 (Turpin'in sayıları: 36,3 puan), 67 (Lanham; sonradan gerekçe), 74 (atıf yaması; dikkat açıklama değil; yorumlanabilirlik yanılsamaları), 75 (parçalardan kurulan çizge), 22 (istem duyarlılığı ↔ aksiyom adı olarak duyarlılık), 61 (izleyiciye göre yazılan ara adımlar — dolaylı) `[yayında]`
+- 78 ← 5 ve 9 (**78 koordinatı**: beliren yetenekler; ölçek yasaları; ikili cetvel), 71 (cetvel bir tasarım ürünüdür; ölçüte çalışmak; öngörülemezlik), 72 (test görevine eğitim; ezber ölçekle büyür), 74 (geç genelleme; ilerleme ölçüsü; indüksiyon başlarının faz geçişi), 16 (cetvel), 23 (örnekle öğrenme ölçekle belirir), 68 ve 70 (eşik ölçümü; yönetişimin dayandığı varsayım), 2 (kayıp ↔ yetenek) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1449,6 +1456,35 @@ MCP üçlüsü (49/53 → 115).
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
 
+### Batch 18'de gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 75–78'te fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 18'de gerçekleşen |
+|---|---|
+| Temsil; çok anlamlı nöron (3) | 75 (**74'ün devrettiği borç ödendi**: kedi yüzü–araba önü–kedi bacağı nöronu çok anlamlılığın tanımına bağlandı; özellik bir yön olarak kuruldu) ✓ **yetmiş iki makale aralıklı geri çağırma** |
+| Sözlük (vocabulary, 4) | 75 (sözlük öğrenmenin sözlüğüyle çakışma açıkça adlandırıldı) ✓ |
+| Kayıp fonksiyonu; seyreklik cezası (2) | 75 (otokodlayıcının iki terimli kaybı) ✓ |
+| Artık akış; ileri beslemeli katman genişliği (7) | 75 (birkaç bin boyut ↔ dil kadar geniş kavram sayısı) ✓ |
+| Üretim adımına müdahale (10) | 76 (PPLM: gradyanla yönlendirmenin atası; bugünkü fark sabit yön) ✓ |
+| ROME; nedensel izleme; Hase (18) | 76 (ağırlık kapısı; yerelleştirme ≠ düzenleme; MEMIT; ima edilen olgular; ardışık düzenlemede unutma) ✓ |
+| İstem duyarlılığı (22) | 77 (aksiyom adı olarak "duyarlılık" ile çakışma adlandırıldı) ✓ |
+| Örnekle öğrenme (23) | 78 (beliren sayılan başarının bir kısmı örnekle öğrenmedir — Lu ve ark.) ✓ |
+| Sistem istemi bir ayrıcalıktır (24) | 76 (üç kapıdan birincisi; ölçüldüğünde açık uçlu yönlendirmede en yüksek puan) ✓ |
+| Sadakat; düşünce zinciri (31, 32) | 77 (gerekçe sadakati ölçümünün genel biçimi; sadakat ↔ kalite ayrımı) ✓ |
+| Atıf; atıf bulma oranı ve kesinliği (45) | 77 (**kaynak atfı ↔ neden atfı** ayrımı adlandırıldı) ✓ |
+| Ret yönü (62) | 75 (sözlükte nerede durduğu sorusu), 76 (13 model; yeter ↔ gerekli; ağırlıktan dikleştirme; düşmanca son ekin bastırması) ✓ |
+| Ağırlığa erişen saldırgan (63) | 76 (ret yönünün ağırlıktan silinmesi aynı kapıdır) ✓ |
+| Azaria'nın iç sınıflandırıcısı; kalibrasyon (65) | 76 (**devrolan planlı tekrar tahsil edildi**: sonda ailesinin ilk üyesi) ✓ |
+| Karakter vektörü; ince ayar kayması (66) | 76 (aynı ailenin üyesi; 0,76–0,97 ilişki yeniden anıldı), 77 (Turpin'in sayıları 66'dan devralındı) ✓ |
+| Sonda; temsil mühendisliği; uyuyan ajan sondası; Burns'ün ölçütü (67) | 75 (özelliğin okunması), 76 (yön bulmanın dört yolundan ikisi; sondanın izleme aracı olarak kullanımı) ✓ |
+| Denetimin erişimi (69) | 76 ("iç erişim"in somut hâli) ✓ |
+| Eşik ölçümü; sorumlu ölçekleme (68, 70) | 78 (öngörülemezlik yönetişimin dayandığı varsayımdır; öngörü bilinen görev içindir) ✓ |
+| Cetvel; ölçüte çalışmak; öngörülemezlik (16, 71) | 78 (ikili puanlama ↔ sürekli ölçü; Skill-Mix'in liderlik tablosu uyarısı) ✓ |
+| Test görevine eğitim; kirlilik (72) | 78 (dördüncü karıştırıcı; denetlenince belirme görüntüsü zayıflıyor) ✓ |
+| Atıf yaması; yeter ↔ gerekli; yorumlanabilirlik yanılsaması (74) | 75 (parça çizgesi), 76 (uyuyan yol uyarısı yönlendirmeye taşındı), 77 (yaklaşıklığın nerede yanıldığı) ✓ |
+| Geç genelleme; ilerleme ölçüsü; indüksiyon başı faz geçişi (74) | 78 (sıçramanın altındaki sürekli süreçlerin ikisi) ✓ |
+
 ### Batch 17'de gerçekleşen tekrarlar (planlananların tahsili)
 
 Önceki batch'lerin kavramlarının 71–74'te fiilen nerede geri çağrıldığı:
@@ -2162,6 +2198,32 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | evrensellik | (universality) | 74 | aynı özellik ve devrelerin farklı ağlarda yeniden belirmesi; 63'teki "evrensel saldırı"dan ayrı |
 | kontrol görevi; seçicilik | (control task; selectivity) | 74 | rastgele etiketli sondayla karşılaştırma; 43'teki özgüllükten (specificity) ayrı |
 | yorumlanabilirlik yanılsaması; uyuyan yol | (interpretability illusion; dormant pathway) | 74 | okumanın veri kümesinden ya da yamanın uyandırdığı yoldan gelmesi |
+
+| özellik | (feature) | 75 | 74'te bold ama glosssuz geçmişti; girdinin model tarafından hesaplanan ve bir yöne karşılık gelen niteliği |
+| doğrusal temsil varsayımı | (linear representation hypothesis) | 75 | özellik = yön; Engels'in çember örneği istisnayı gösterir |
+| çok anlamlılık | (polysemanticity) | 75 | 3'teki gözlemin adı |
+| süperpozisyon | (superposition) | 75 | boyut sayısından fazla özelliğin tam dik olmayan yönlere yerleşmesi |
+| girişim | (interference) | 75 | süperpozisyonun bedeli; ReLU eşiği küçüğünü kırpar |
+| sözlük öğrenme | (dictionary learning) | 75 | 4'teki "sözlük" (vocabulary) ile aynı sözcük, ayrı iş — 75'te adlandırıldı |
+| seyrek otokodlayıcı | (sparse autoencoder) | 75 | aktivasyonu seyrek parçalara ayıran iki katmanlı düzenek |
+| genişleme çarpanı | (expansion factor) | 75 | sözlük boyu ÷ aktivasyon boyutu |
+| ölü özellik | (dead feature) | 75 | eğitim sonunda hiçbir örnekte etkinleşmeyen parça |
+| emilim | (absorption) | 75 | hiyerarşide ana parçanın çocuk parçanın üstünde susması |
+| kelepçeleme | (clamping) | 75 | bir parçanın etkinliğini zorla bir değere sabitlemek |
+| yönlendirme | (steering) | 75 | ara aktivasyona müdahaleyle davranışı çekmek; 72'deki "yönlendirmeli tamamlama"dan ayrı (76'da adlandırıldı) |
+| ortalama fark yönü | (difference-in-means direction) | 76 | karşıt istem çiftlerinin aktivasyon ortalamalarının farkı |
+| yön silme | (directional ablation / concept erasure) | 76 | aktivasyonun o yöndeki bileşeninin çıkarılması |
+| koşullu müdahale | (conditional steering) | 76 | sonda koşulu tutarsa uygulanan yönlendirme |
+| devre kesici | (circuit breaker) | 76 | zararlı çıktı üretilirken temsilin yeniden yönlendirilmesi |
+| temsil ince ayarı | (representation finetuning) | 76 | ağırlıklar donduruluyken temsil üstünde öğrenilmiş müdahale |
+| atıf | (attribution) | 77 | 45'teki "atıf" (citation) ile aynı sözcük; 77'de "kaynak atfı" ↔ "neden atfı" diye ayrıldı |
+| duyarlılık | (sensitivity) | 77 | atıf aksiyomu; 22'deki istem duyarlılığından ayrı |
+| gerçekleme değişmezliği | (implementation invariance) | 77 | aynı fonksiyonu hesaplayan iki ağ aynı payları vermeli |
+| tümlenmiş gradyan | (integrated gradients) | 77 | tabandan girdiye giden yol boyunca gradyan toplamı |
+| etki fonksiyonu | (influence function) | 77 | bir eğitim örneğinin ağırlığı artsaydı parametrelerin ne kadar kayacağı |
+| örtük sonradan gerekçelendirme | (implicit post-hoc rationalization) | 77 | 67'deki "sonradan gerekçe"nin yapay ipucusuz hâli |
+| beliren yetenek | (emergent ability) | 78 | 5'te parantezli geçmişti; 78'de tanımı iki parçalı olarak kuruldu |
+| ilerleme ölçüsü | — | 74 | 78'de sıçramanın altındaki sürekli süreç için kullanıldı |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -3766,6 +3828,119 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     van der Lee ve Krippendorff (metin alınamadı; uzlaşma katsayıları adıyla anıldı), nostalgebraist logit
     merceği (429; Belrose tuned lens de kullanılmadı), Bereska & Gavves derlemesi, Hendel görev vektörleri,
     Goldowsky-Dill yol yaması, Casper eleştirisi.
+
+168. **Batch 18'in kategorisi ve kohortu.** 75–78 `safety-and-evaluation` (karar #160 gereği; bu run'da kategori
+    sorusu yoktu), `classification_batch: 18`. Okuma listesinde 61–78 tek öbek; `groupByBatchAndCategory` kohort ×
+    kategori kırdığı için liste Batch 14–18 başlıkları altında ayrı görünmeye devam ediyor ve
+    `reading-list-groups.test.ts` değişmedi. Test sayısı 519 → 551; artışın tamamı `series-assets.test.ts`'in
+    varlık başına türeyen testlerinden (12 yeni SVG).
+169. **76'nın başlığı Türkçeleştirildi.** "Aktivasyonlara Müdahale: Steering ve Problar" → "Aktivasyonlara Müdahale:
+    Yönlendirme ve Sondalar". "sonda" (probe) defterde 67'den beri kayıtlı; "steering" için "yönlendirme" seçildi.
+    Gövdelerde grep yapıldı: sözcük 72'de **"yönlendirmeli tamamlama"** (kirliliğin kara kutuda tespiti) anlamında
+    geçiyor; çakışma 76'nın girişinde açıkça adlandırıldı (SOZLESME §11). Terim ilk kez **75'te** gloss'landı, çünkü
+    AxBench'in ikinci görevi orada anıldı.
+170. **77'nin başlığı Türkçeleştirildi.** "Attribution: Model Neden Böyle Dedi?" → "Atıf: Model Neden Böyle Dedi?".
+    "atıf" 45'te (citation) anlamında gloss'lanmıştı; 74'ün "atıf yaması" ikinci anlamı taşıyordu. Çakışma 77'nin
+    girişinde **kaynak atfı ↔ neden atfı** ayrımıyla adlandırıldı.
+171. **78'in başlığı Türkçeleştirildi ve koordinat ödendi.** "Emergence Tartışması: Yetenekler Aniden mi Gelir?" →
+    "Beliren Yetenekler Tartışması: Aniden mi Geliyor?"; "beliren yetenek" 5'ten beri defterde. 78 kendi numarasına
+    yalnızca 5'in vaadini alıntılarken gönderme yapıyor — SOZLESME §5'in izin verdiği tek biçim (vaat kapanışının
+    kaydı).
+172. **Terim ayrımları (Batch 18).** "özellik" 74'te bold ama glosssuz geçmişti, 75'te gloss'landı; "sözlük" 4'te
+    (vocabulary) idi, 75'te sözlük öğrenmenin sözlüğü olarak ayrıldı; "yönlendirme" (steering) ↔ 72'nin "yönlendirmeli
+    tamamlama"sı; "atıf" (attribution) ↔ 45'in atfı (citation); "duyarlılık" (sensitivity, 77 aksiyomu) ↔ 22'nin istem
+    duyarlılığı; "girişim", "emilim", "kelepçeleme", "ölü özellik", "gerçekleme değişmezliği", "örtük sonradan
+    gerekçelendirme" ilk kez kuruldu. "grokking" 74'teki gibi Türkçeleştirilmedi; 78'de "geç genelleme" adıyla anıldı.
+173. **Sayılar (Batch 18).** **75:** oyuncak modelde 5 özellik / 2 boyut, boyut başına özellik basamakları 1, 3/4, 2/3,
+    1/2, 2/5, 3/8, 0; tek katmanlı modelin 512 nöronlu katmanı, 8 milyar örnek, genişleme 1×–256×, incelenen koşuda
+    4.096 parça, 168 ölü ve 292'si milyonda birden az; üretim modelinde 1.048.576 / 4.194.304 / 33.554.432 parça, ölü
+    oranı ≈ %2 / %35 / %65, token başına < 300 etkin parça, varyansın ≥ %65'i, parçaların %82'sinde en ilişkili nöronun
+    korelasyonu ≤ 0,3, köprü parçası 10 kata, ulaşım altyapısı 5 kata kelepçelendi; GPT-4 üzerinde 16 milyon parça ve
+    40 milyar token, önlemsiz ölü oranı %90'a kadar ve 34 milyonluk sözlükte ≈ 12 milyon canlı; SHIFT'te küçük modelin
+    devresi 67 parça, 55'i ilgisiz, meslek 61,9 / cinsiyet 87,4 / en kötü grup 24,4 → 88,5 / 54,0 / 76,0 → yeniden
+    eğitimle 93,1 / 52,0 / 89,0, nöronlarla en iyi 41,5, rastgele silmede 24,4; aynı veriyle farklı tohumda 131 bin
+    parçalı iki sözlükte ortak parça %30; kavram tespitinde 0,942 / 0,940 / 0,917 / 0,695, yönlendirmede 0,894 / 0,741 /
+    0,239 / 0,165 / 0,098. **76:** 13 açık sohbet modeli ve 72 milyar parametreye kadar; doğruluk yönüyle 32,5 → 65,1 ve
+    birkaç yüz örnek; kırk davranış kümesinde bazılarında girdilerin yaklaşık yarısı ters yönde; beş bin düzenlemelik
+    ölçüt; temsil ince ayarı 15–65 kat parametre verimliliği. **77:** sil-ve-yeniden-eğit ölçütünde yalnızca iki
+    topluluk yöntemi rastgeleyi geçiyor; 52 milyar parametreye ölçeklenen etki fonksiyonları ve güç yasası kuyruğu;
+    öneri eklenince 36,3 puan düşüş (66'dan devralındı); ipucunun anılma oranı çoğu ayarda %20'nin altında ve en az
+    %1; doğal sorularda örtük sonradan gerekçelendirme %13'e kadar. **78:** iki yüzden fazla görevlik ölçüt takımı;
+    beliren yetenek iddialarının > %92'si iki kesikli ölçüde; 2,4 milyarlık modelin kod üretme başarısı %0,05 sapmayla;
+    dört kat hesaba kadar belirme yasası; ≈ 100 açık modelden gözlemsel yasa; binden fazla deneyle üç etkene ayrıştırma;
+    Skill-Mix'te k = 5.
+174. **Kendi hesabımız (Batch 18): yok.** Dört makalede de kaynağın vermediği türetilmiş sayı kullanılmadı; bütün
+    sayılar kaynakların kendi verdiği değerlerdir. 78-Şekil 1'in eğrileri şematiktir ve bu kayıt şeklin içine yazıldı
+    (SOZLESME §6).
+175. **Kaynak politikası (Batch 18) ve DBLP kesintisi.** 75'te 21, 76'da 18, 77'de 27, 78'de 18 kaynak (84 kalem).
+    Dağılım: **72 hakemli**, 12 işaretlenmiş hakemsiz kalem — serinin son batch'lerindeki en yüksek hakemli oranı.
+    Hakemsizler: Elhage, Bricken ve Templeton'ın Transformer Circuits yazıları; Rajamanoharan'ın iki kapı çalışması;
+    Turner'ın aktivasyon eklemesi; Kramár'ın AtP* çalışması; Grosse'nin etki fonksiyonları; Li'nin "etki fonksiyonları
+    büyük modellerde işe yarıyor mu"su; Chen'in akıl yürütme modelleri sadakati; Doshi-Velez & Kim'in konum yazısı;
+    ve Snell'in belirme yasası — bildiri COLM şablonuyla dağıtılıyor fakat kabul listesine erişilemediği için hakemli
+    sayılmadı (b17'deki Krumdick kararının aynısı). **DBLP bu run'da bot doğrulama sayfası döndürdü** (`dblp.org`,
+    `dblp.dagstuhl.de`, `dblp.uni-trier.de` üçü de); OpenReview arama ucu birkaç sorgudan sonra boş liste vermeye
+    başladı; Semantic Scholar 429. Yerine kurulan kanallar: **konferans dizin sayfaları**
+    (`proceedings.iclr.cc/paper_files/paper/2024–2026`, `papers.nips.cc/paper_files/paper/2017–2025`,
+    `proceedings.mlr.press` cilt sayfaları, `jmlr.org/tmlr/papers`), **arXiv API'nin `comment` ve `journal_ref`
+    alanları**, **PDF ilk sayfa yayın satırı** ve **Crossref `query.bibliographic`** (ACL/EMNLP/NAACL/Findings/TACL/
+    ACM/PNAS/Science için). Bu düzen DBLP'nin yerini tuttu ve altı künyeyi düzeltti: Kantamneni ve Wu (AxBench) ICML
+    2025, Paulo & Belrose ve Heap ICLR 2026, Ruan NeurIPS 2024 (ICLR değil), Hernandez COLM 2024 (ICLR değil).
+    Ayrıca iki ad/başlık tuzağı: Rimsky'nin CAA bildirisi ACL 2024'te **Panickssery** adıyla yayımlanmış; Heap'in
+    başlığı v2'de "Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers" olarak
+    değişmiş. **Doğrulanamayan:** Snell (yukarıda); Arora & Goyal'ın belirme kuramı hiçbir dizinde bulunamadı ve
+    kullanılmadı (yerine Skill-Mix, ICLR 2024). **Aday olup kullanılmayanlar:** Olshausen & Field'in 1996/1997 seyrek
+    kodlama yazıları (üç adresten de metin alınamadı), Bills'in nöron açıklamaları (JS ile üretilen sayfadan yalnızca
+    6 KB metin çıktı; yerine Huang'ın BlackboxNLP 2023 değerlendirmesi), Zhou'nun Nature 2024 güvenilirlik yazısı
+    (yayıncı duvarı), Bereska & Gavves derlemesi, Bussmann'ın BatchTopK'sı, Dunefsky'nin transcoder'ı, Lindsey'in
+    çapraz kodlayıcıları ve Ameisen'in atıf grafları (77'nin kapsamı dışında kaldı).
+
+## Batch 18 öğrenme notları (yazım tamamlandı)
+
+- **Faz 8'in ikinci yarısı: özellikler ve süperpozisyon (75) → aktivasyonlara müdahale (76) → atıf (77) → beliren
+  yetenekler (78).** 74'ün kapanış sorusu ("devrenin düğümleri nöron olamaz") 75'in açılışı oldu; 75 süperpozisyonu
+  oyuncak modelde kurup seyrek sözlüğü ve sözlüğün dört sınavını verdi; 76, 62/65/66/67/18'de dağınık duran tek işlemi
+  (yön bul, ekle ya da sil) çerçeveye oturttu; 77 "neden"i üç ayrı soruya böldü ve **74–77 bandını kapattı**; 78, 5 ve
+  9'un **78 koordinatını ödedi**. Üç başlık Türkçeleştirildi (#169, #170, #171); kategori sorusu yoktu (#160).
+- **Araştırma yine tamamen ana oturumda, workflow/subagent yok** (cerebrum 2026-09-03). 198 kalemlik tek liste iki
+  kopya betikle (`fetch-b18.py` ileri, `fetch-b18b.py` `reversed(ITEMS)` ile ters sırada; aynı `.txt` varlığını
+  paylaşıp çakışmadan 191 metin), sonra 15 kalemlik `retry-b18.py` turu (klasikler için alternatif adresler).
+- **DBLP bu run'da yok: bot doğrulama sayfası.** `dblp.org`, `dblp.dagstuhl.de` ve `dblp.uni-trier.de` üçü de Anubis
+  tarzı "Making sure you're not a bot!" sayfası döndürdü; JS iş kanıtı istediği için `urllib`/`curl` ile aşılamaz.
+  OpenReview arama ucu ilk birkaç sorguda çalışıp sonra sessizce boş liste döndürmeye başladı (50 sn aralık da
+  yetmedi); `api2.openreview.net/notes?content.title=` kimliksiz 403; Semantic Scholar tekil sorguda bile 429.
+  **Kurulan yerine geçen düzen** (`idx-b18.py`): konferans dizin sayfalarını bir kez indirip yerelde başlık aramak.
+  `proceedings.iclr.cc/paper_files/paper/<yıl>` 2024–2026 için çalışıyor (2023 ve öncesi 404),
+  `papers.nips.cc/paper_files/paper/<yıl>` 2017–2024 dolu (2025 henüz eksik), `proceedings.mlr.press/v<cilt>` ICML
+  yıllarını veriyor (v306 = ICML 2026 henüz 404), `jmlr.org/tmlr/papers` TMLR'ın tamamını tek sayfada veriyor.
+  Buna arXiv API'nin `comment`/`journal_ref` alanları (`venue-b18.py`), PDF ilk sayfa yayın satırı (`hdr-b18.py`,
+  190 dosyanın 57'sinde bulundu) ve Crossref `query.bibliographic` eklenince kapsama DBLP'ninkine yakın çıktı.
+- **Dizin taraması altı künyeyi düzeltti:** Kantamneni ve AxBench ICML 2025, Paulo & Belrose ve Heap **ICLR 2026**,
+  Ruan NeurIPS 2024 (elde ICLR 2025 yazıyordu), Hernandez COLM 2024 (ICLR değil). NeurIPS dizininde başlıklar hatalı
+  yazılmış olabiliyor (Ruan'ınki "Langauge"), bu yüzden tam başlık aranınca bulunamıyor — kısa parça aramak gerekiyor.
+- **Ad ve başlık tuzakları:** CAA bildirisinin ACL 2024 sürümünde ilk yazar **Panickssery** (arXiv'de Rimsky);
+  Heap'in başlığı v2'de tamamen değişti; "Sparse Feature Circuits" adı ICML 2025'te başka bir bildiride de geçiyor
+  (Marks'ınki ICLR 2025).
+- **Kelime bandı iki kez düştü.** `scan-b18.py` şekil alt metinlerini de sayıyor; repo kapısı saymıyor. 77 (1.968) ve
+  78 (1.870) ilk turda tabanın altında kaldı ve **içerik eklenerek** çıkarıldı (77'ye "açıklama kimin için" bölümü,
+  78'e Skill-Mix ve bileşik yetenek paragrafı) — dolgu değil, planda olup kesilmiş malzeme geri kondu.
+- **SVG: iki ölçer, iki farklı sabit.** `svgcheck-b18.py`'ye Batch 17'nin dersleri eklendi (her metin çiftini aynı
+  satırda karşılaştır; kutu içi metni kutunun `x + width`'ine karşı ölç) ve **repo kapısının 0,55 × font-size
+  tahminini taklit eden üçüncü bir kontrol** kondu — çünkü yerel ölçer 6,8 birim/karakter kullanırken
+  `check-series-svg.cjs` 7,15 kullanıyor ve üç satır yalnızca repo kapısında taştı. **PNG turu yine iki kusur buldu:**
+  75-Şekil 2'de "yeniden kurma" kendi kutusunun sağ kenarına dayanmıştı (akış kutuları yeniden yerleştirildi) ve
+  78-Şekil 1'de "uçurum" etiketi eğrinin üstünden geçiyordu (etiket sağ alta alındı).
+- **Render kopyası dosya kopyalayınca yetmiyor.** Kopyaya sonradan senkronlanan `catalog.json` dev sunucusunun
+  belleğindeki eski hash'i değiştirmedi ve `/seri/<slug>` "Katalog ile frontmatter uyuşmuyor" hatası verdi;
+  **dev sunucusunu yeniden başlatmak gerekti**. Ders: kopya oluşturulduktan sonra içerik değişirse önce dosyaları
+  senkronla, sonra `preview_stop` + `preview_start`.
+- **Kapılar:** `pnpm typecheck` (0), **551 test**, `pnpm build` (exit 0, `/seri/[slug]` 78 yol, izole kopyada),
+  79 seri rotasının tamamı 200 (39,6 sn), dört makale × üç genişlik × üç temada DOM ölçümü (taşma 0,
+  `main.innerText` içinde undefined/NaN yok, ham i18n anahtarı yok; 375'te SVG'ler 351 px'e ölçekleniyor ve kendi
+  kaplarında yatay kaydırma bile gerekmiyor), konsolda yalnızca `/api/reader-sync` 503, 12 yeni diyagram × iki tema =
+  24 PNG (iki düzeltme sonrası dördü yeniden çekildi). Paralel oturum görünmedi (3000–3999 arası dinleyen port yok);
+  build ve dev izole kopyada (`D:\dev\anil-lib-b18-render`, 3210), junction ve kopya run sonunda silindi,
+  `launch.json` `artifacts/b18-research/launch.json.orig`'ten geri alındı.
 
 ## Batch 17 öğrenme notları (yazım tamamlandı)
 

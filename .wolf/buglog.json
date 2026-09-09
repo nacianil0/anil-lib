@@ -6652,6 +6652,75 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-06T21:40:00.000Z"
+    },
+    {
+      "id": "bug-398",
+      "timestamp": "2026-09-09T09:05:54.110Z",
+      "error_message": "Significant refactor of ",
+      "file": "artifacts/b18-research/venue-b18.py",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 6→10 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-09T09:05:54.110Z"
+    },
+    {
+      "id": "bug-399",
+      "timestamp": "2026-09-09T13:30:00Z",
+      "error_message": "dblp.org ve aynaları: '<title>Making sure you're not a bot!</title>' — format=json sorgusu HTML döndürüyor",
+      "file": "artifacts/b18-research/dblp-b18.py",
+      "root_cause": "DBLP, JS iş kanıtı isteyen bir bot doğrulama katmanının (Anubis) arkasına geçti; urllib/curl aşamıyor.",
+      "fix": "Venue doğrulaması idx-b18.py (konferans dizin sayfalarını indirip yerelde başlık arama) + venue-b18.py (arXiv comment/journal_ref, Crossref) + hdr-b18.py (PDF ilk sayfa yayın satırı) üçlüsüne taşındı.",
+      "tags": [
+        "dblp",
+        "venue",
+        "bot-challenge",
+        "seri",
+        "batch18"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-09T13:30:00Z"
+    },
+    {
+      "id": "bug-400",
+      "timestamp": "2026-09-09T13:30:00Z",
+      "error_message": "Playwright: page.waitForSelector('main figure svg') Timeout 30000ms; dev log: '[content] Katalog ile frontmatter uyuşmuyor'",
+      "file": "artifacts/b18-research/shots-b18.cjs",
+      "root_cause": "İzole render kopyasına dosyalar sonradan kopyalandı ama dev sunucusu catalog.json'u bellekte tuttuğu için eski hash'le karşılaştırdı.",
+      "fix": "Dosyalar senkronlandıktan sonra preview_stop + preview_start ile dev sunucusu yeniden başlatıldı.",
+      "tags": [
+        "render",
+        "dev-server",
+        "cache",
+        "seri",
+        "batch18"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-09T13:30:00Z"
+    },
+    {
+      "id": "bug-401",
+      "timestamp": "2026-09-09T13:30:00Z",
+      "error_message": "check-series-svg.cjs: 'metin viewBox dışına taşıyor olabilir' (üç satır) — yerel svgcheck temiz demişti",
+      "file": "artifacts/b18-research/svgcheck-b18.py",
+      "root_cause": "Yerel ölçer 6,8 birim/karakter, repo kapısı font-size × 0,55 = 7,15 birim/karakter kullanıyor.",
+      "fix": "svgcheck-b18.py'ye repo kapısının 0,55 tahminini taklit eden üçüncü bir kontrol eklendi; üç satır kısaltıldı.",
+      "tags": [
+        "svg",
+        "gate",
+        "seri",
+        "batch18"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-09T13:30:00Z"
     }
   ]
 }

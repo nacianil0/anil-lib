@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Soldan sağa akan bir şema ve altında iki bölüm. Akış: aktivasyon x, birkaç bin boyut; kodlayıcı ve ReLU eşiği; seyrek kod f, yüz binlerce parça ama token başına yalnızca birkaç yüzü etkin; çözücü, sütunları özellik yönleri; yeniden kurulan x şapka ve ölçülen yeniden kurma hatası. Kod kutusunun altında genişleme çarpanının 1 kattan 256 kata çıktığı yazılı. Ortadaki kutuda kayıp: yeniden kurma hatası artı lambda çarpı kodun L1 normu; lambda büyüdükçe daha az parça etkinleşir ve yeniden kurma bozulur; L1 yerine en büyük k bileşeni tutmak seyrekliği doğrudan ayarlanan bir sayı yapar. Altta ölçülmüş üç koşu: tek katmanlı modelin 512 nöronlu katmanından 4.096 parça, 168 ölü ve 292 parça milyonda birden az etkin; üretim modelinin orta katmanında 1, 4 ve 34 milyon parçalı sözlükler, ölü oranı yüzde 2, 35 ve 65, token başına 300'den az etkin parça; GPT-4 aktivasyonlarında 16 milyon parça, 40 milyar token, en büyük k biçimi.">
+  <rect x="20" y="70" width="130" height="50" fill="var(--surface-muted)" />
+  <text x="28" y="92" font-size="13" font-weight="bold" fill="var(--text)">aktivasyon x</text>
+  <text x="28" y="110" font-size="13" fill="var(--text-muted)">birkaç bin boyut</text>
+  <text x="155" y="99" font-size="13" fill="var(--text-muted)">→</text>
+  <rect x="170" y="70" width="120" height="50" fill="var(--bg)" stroke="var(--border)" />
+  <text x="178" y="92" font-size="13" fill="var(--text)">kodlayıcı</text>
+  <text x="178" y="110" font-size="13" fill="var(--text-muted)">+ ReLU eşiği</text>
+  <text x="294" y="99" font-size="13" fill="var(--text-muted)">→</text>
+  <rect x="305" y="58" width="145" height="74" fill="var(--accent-soft)" />
+  <text x="313" y="80" font-size="13" font-weight="bold" fill="var(--text)">seyrek kod f</text>
+  <text x="313" y="98" font-size="13" fill="var(--text)">yüz binlerce parça</text>
+  <text x="313" y="116" font-size="13" fill="var(--text)">birkaç yüzü etkin</text>
+  <text x="455" y="99" font-size="13" fill="var(--text-muted)">→</text>
+  <rect x="468" y="70" width="118" height="50" fill="var(--bg)" stroke="var(--border)" />
+  <text x="476" y="92" font-size="13" fill="var(--text)">çözücü</text>
+  <text x="476" y="110" font-size="13" fill="var(--text-muted)">sütunlar = yön</text>
+  <text x="590" y="99" font-size="13" fill="var(--text-muted)">→</text>
+  <rect x="602" y="70" width="98" height="50" fill="var(--surface-muted)" />
+  <text x="610" y="92" font-size="13" font-weight="bold" fill="var(--text)">kurulan x̂</text>
+  <text x="610" y="110" font-size="13" fill="var(--text-muted)">hata ölçülür</text>
+  <text x="305" y="152" font-size="13" fill="var(--text-muted)">genişleme çarpanı: 1× → 256×</text>
+
+  <rect x="20" y="175" width="680" height="80" fill="var(--surface-muted)" />
+  <text x="30" y="198" font-size="13" font-weight="bold" fill="var(--text)">kayıp = yeniden kurma hatası + seyreklik cezası</text>
+  <text x="30" y="220" font-size="13" fill="var(--text)">‖x − x̂‖² + λ · ‖f‖₁ — λ büyüdükçe daha az parça etkinleşir, yeniden kurma bozulur</text>
+  <text x="30" y="242" font-size="13" fill="var(--text)">L1 yerine “en büyük k bileşeni tut”: seyreklik doğrudan ayarlanan bir sayı olur</text>
+
+  <text x="20" y="292" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş üç koşu</text>
+  <text x="20" y="314" font-size="13" fill="var(--text)">tek katmanlı model, 512 nöronlu katman → 4.096 parça; 168 ölü, 292'si milyonda birden az</text>
+  <text x="20" y="334" font-size="13" fill="var(--text)">üretim modeli, orta katman → 1M / 4M / 34M parça; ölü %2 / %35 / %65; token başına &lt; 300 etkin</text>
+  <text x="20" y="354" font-size="13" fill="var(--text)">GPT-4 aktivasyonları → 16M parça, 40 milyar token; “en büyük k” biçimi</text>
+</svg>

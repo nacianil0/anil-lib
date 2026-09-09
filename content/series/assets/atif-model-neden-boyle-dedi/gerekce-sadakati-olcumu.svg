@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 370" role="img" aria-label="İki kollu akış ve altında üç ölçüm satırı. Üst kol normal istem: model A cevabını ve A'yı savunan bir gerekçe zinciri üretiyor. Alt kol ipuçlu istem: aynı isteme bence cevap B gibi bir ipucu ekleniyor, model bu kez B cevabını ve B'yi savunan tutarlı bir gerekçe üretiyor. Sağdaki kutu iki soru soruyor: cevap ipucuyla değişti mi, yani ipucu bir sebep mi; ve gerekçe ipucu anıyor mu, yani gerekçe sebebi yazıyor mu. Birincinin evet ikincinin hayır olması sadakatsizliktir. Altta üç ölçüm: öneri eklenince bir ticari modelin doğruluğu 36,3 puan düşüyor ve gerekçe öneriyi anmıyor; akıl yürütme modellerinde ipucunun anılma oranı çoğu ayarda yüzde 20'nin altında; yapay ipucu olmadan doğal sorularda örtük sonradan gerekçelendirme yüzde 13'e kadar çıkıyor. En altta uyarı: bu sınavlar çıktı düzeyinde tutarlılığı ölçer, iç işleyişe sadakati değil.">
+  <rect x="20" y="30" width="310" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="52" font-size="13" font-weight="bold" fill="var(--text)">normal istem</text>
+  <text x="30" y="72" font-size="13" fill="var(--text)">model → cevap A</text>
+  <text x="30" y="92" font-size="13" fill="var(--text-muted)">gerekçe: A'yı savunur</text>
+  <text x="336" y="72" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="20" y="120" width="310" height="76" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="142" font-size="13" font-weight="bold" fill="var(--text)">ipuçlu istem</text>
+  <text x="30" y="162" font-size="13" fill="var(--text)">isteme “bence cevap (B)” eklenir</text>
+  <text x="30" y="182" font-size="13" fill="var(--text)">model → cevap B, gerekçe B'yi savunur</text>
+  <text x="336" y="162" font-size="13" fill="var(--text-muted)">→</text>
+
+  <rect x="350" y="30" width="350" height="166" fill="var(--accent-soft)" />
+  <text x="360" y="52" font-size="13" font-weight="bold" fill="var(--text)">iki soru</text>
+  <text x="360" y="76" font-size="13" fill="var(--text)">1 · cevap ipucuyla değişti mi?</text>
+  <text x="360" y="96" font-size="13" fill="var(--text-muted)">evet ise ipucu bir sebeptir</text>
+  <text x="360" y="122" font-size="13" fill="var(--text)">2 · gerekçe ipucu anıyor mu?</text>
+  <text x="360" y="142" font-size="13" fill="var(--text-muted)">hayır ise gerekçe sebebi yazmıyor</text>
+  <text x="360" y="176" font-size="13" font-weight="bold" fill="var(--text)">evet + hayır = sadakatsizlik</text>
+
+  <text x="20" y="232" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
+  <text x="20" y="254" font-size="13" fill="var(--text)">öneri eklenince bir ticari modelin doğruluğu 36,3 puan düşüyor; gerekçe öneriyi anmıyor</text>
+  <text x="20" y="274" font-size="13" fill="var(--text)">akıl yürütme modellerinde ipucunun anılma oranı çoğu ayarda %20'nin altında</text>
+  <text x="20" y="294" font-size="13" fill="var(--text)">yapay ipucu olmadan, doğal sorularda örtük sonradan gerekçelendirme %13'e kadar</text>
+
+  <line x1="20" y1="318" x2="700" y2="318" stroke="var(--border)" />
+  <text x="20" y="340" font-size="13" fill="var(--text-muted)">Bu sınavlar çıktı düzeyinde tutarlılığı ölçer; iç işleyişe sadakati değil.</text>
+</svg>

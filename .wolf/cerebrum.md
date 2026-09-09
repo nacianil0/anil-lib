@@ -262,10 +262,17 @@ ode_modules`, sonra kopyayi sil.
 - Kapsayıcı sorgusu sütun genişliğini göremez: çok sütunlu düzende sütun kutusu bir element değildir, `.prose-reader` container yapılırsa 936 px döner. Şeklin/tablonun kendi genişliğine göre stil vermek için elementin **kendisini** container yapıp iç öğelere kural yazmak gerekir (`.table-scroll` deseni).
 
 
+- **DBLP artık bot doğrulama sayfası döndürüyor (2026-09-09).** `dblp.org`, `dblp.dagstuhl.de` ve `dblp.uni-trier.de` üçü de Anubis tarzı JS iş kanıtı isteyen bir sayfa veriyor; `format=json` de dâhil hiçbir uç betikle çalışmıyor. Yerine kurulan düzen `artifacts/b18-research/idx-b18.py`: konferans dizin sayfalarını bir kez indirip yerelde başlık aramak — `proceedings.iclr.cc/paper_files/paper/<yıl>` (2024+), `papers.nips.cc/paper_files/paper/<yıl>` (2017–2024), `proceedings.mlr.press/v<cilt>` (ICML), `jmlr.org/tmlr/papers` (TMLR'ın tamamı tek sayfada). Yanına arXiv API'nin `comment`/`journal_ref` alanları, PDF ilk sayfa yayın satırı ve Crossref `query.bibliographic` konunca kapsama DBLP'ninkine yakın çıkıyor. OpenReview arama ucu birkaç sorgudan sonra sessizce boş liste döndürüyor (50 sn aralık yetmiyor); `notes?content.title=` kimliksiz 403; Semantic Scholar 429.
+- **Seri kelime bandı iki ayrı sayıyla ölçülüyor.** `artifacts/b*-research/scan-b*.py` şekil alt metinlerini de sayar; `tools/series/check-series-content.cjs` saymaz ve kapı odur. Aradaki fark 400–500 kelime olabiliyor, yani scan 2.400 derken kapı 1.970 diyebiliyor.
+- **İki SVG ölçerinin karakter genişliği sabiti farklı.** Repo kapısı `check-series-svg.cjs` `len × font-size × 0,55` (13 px'te 7,15) kullanır; yerel `svgcheck-b*.py` 6,8 kullanıyordu. Bu fark yüzden üç satır yalnızca repo kapısında taştı. `svgcheck-b18.py` artık repo kapısının tahminini de taklit ediyor.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
+- [2026-09-09] Render doğrulaması için izole kopya oluşturulduktan sonra ana worktree'de içerik değişirse **dosyaları kopyaya senkronlamak yetmez**: dev sunucusu `catalog.json`'u bellekte tuttuğu için `/seri/<slug>` "Katalog ile frontmatter uyuşmuyor" hatası verir ve Playwright `main figure svg` selector'ında zaman aşımına düşer. Doğrusu: dosyaları senkronla, sonra `preview_stop` + `preview_start`.
+- [2026-09-09] SVG'de bir kutu içindeki metnin kutuya sığdığını yerel ölçere bakarak varsayma. `svgcheck-b18.py` 6,8 birim/karakter kullanıyor, gerçek yazı tipi ~7,0 ve repo kapısı 7,15 varsayıyor; "yeniden kurma" 13 karakterle 100 birimlik kutuya sığıyor göründü, PNG'de kutunun kenarına dayandı. Kutu genişliğini metnin karakter sayısı × 7,2'ye göre seç.
+- [2026-09-09] SVG'de bir etiketi eğrinin yanına koyarken yalnızca metin çakışmasına bakma: `svgcheck` `<path>` görmez. "uçurum" etiketi eğrinin yükselen kısmının üstünden geçti ve yalnızca PNG turunda görüldü. Eğri üstü etiketleri koyduktan sonra mutlaka PNG'ye bak.
 
 - [2026-08-25] Seri makalelerinde satir basinda "1. makalede ..." yazma; Markdown numarali liste yapar ve numarayi yutar. `1\.` diye kacir ya da cumleyi yeniden kur.
 - [2026-08-25] lucide-react'ten global bir isimle cakisan ikon (Map, Set, Image, Text, Menu) import ederken takma ad ver (`Map as MapIcon`); aksi halde ayni dosyadaki `new Map(...)` React bilesenini constructor sanir.
@@ -606,3 +613,8 @@ mümkün değil.
 - **Karar:** Diyagramlarda okunabilirlik tabanı (34rem) kaldırıldı ve şekil her zaman kabına sığıyor. Gerekçe: taban, sayfalı düzendeki her şekli ve telefondaki her şekli varsayılan olarak yatay kaydırmaya mahkûm ediyordu; kullanıcı için "şeklin tamamının bir bakışta görünmesi" kaydırmasız okunabilirlikten önce geliyor. Bedel açıkça kayıtlı: sayfalı sütunda etiketler ~7 px, telefonda ~6,6 px; ayrıntı için tarayıcı yakınlaştırması açık (uygulama `user-scalable` kısıtlamıyor).
 - **Karar:** Tablolarda ölçekleme yok; sırasıyla dolgu, başlık satırı ve yazı boyutu feda ediliyor, kelime bütünlüğü hiç feda edilmiyor. Kalan 5–6 sütunlu sayı tabloları telefonda kendi kaydırmasında kalıyor (istisnai içerik).
 - **Doğrulama:** İki serinin (`/seri` ve `/boun`) üç makalesi × dört yapılandırma (masaüstü akış, sayfalı, tablet, telefon) e2e testinde ölçülüyor: hiçbir şekil kabından taşmıyor, etiket boyutu 5 px'in altına düşmüyor, telefonda ≤4 sütunlu hiçbir tablo taşmıyor, diğer genişliklerde hiçbir tablo taşmıyor ve belge hiç yatay kaymıyor.
+
+### Batch 18: venue doğrulaması DBLP'siz yeniden kuruldu (2026-09-09)
+- **Karar:** Seri künyelerinin hakemlilik doğrulaması artık tek bir servise (DBLP) bağlı değil; üç bağımsız kanalın kesişimine dayanıyor (konferans dizin sayfaları, arXiv `comment`/`journal_ref`, PDF yayın satırı) ve dördüncü kanal olarak Crossref DOI'li mecralar için kullanılıyor. Gerekçe: DBLP bir bot doğrulama katmanının arkasına geçti ve bu run'da hiç kullanılamadı.
+- **Ölçülen kazanç:** Düzen altı künyeyi düzeltti (Kantamneni ve AxBench ICML 2025, Paulo & Belrose ve Heap ICLR 2026, Ruan NeurIPS 2024, Hernandez COLM 2024) ve 84 kaynağın 72'sini hakemli olarak doğruladı — serinin en yüksek oranı.
+- **Bilinen boşluk:** COLM'un kabul listesi hiçbir kanaldan doğrulanamıyor; COLM şablonuyla dağıtılan bildiriler hakemsiz sayılıyor (Batch 17'deki Krumdick kararının aynısı, Batch 18'de Snell'e uygulandı).

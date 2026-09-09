@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 434" role="img" aria-label="Dört satırlı tablo; sütunlar açıklama, altında sürekli olan, davranışta sıçrayan ve nerede gösterildi. Beceri parçaları: kullanım sıklığına göre sırayla öğrenilen ayrık parçalar, sıklıkların güç yasası ve toplam kaybın düzgün düşüşü sürekli, tek bir parçanın öğrenildiği an sıçrıyor, dil modeli gradyanlarıyla ayrıştırma üzerinde gösterildi. Gizli ilerleme: ağırlıklarda büyüyen ayıklayıcı yapı sürekli, doğruluk sıçrıyor, seyrek eşlik probleminde küçük ağlarda gösterildi. Geç genelleme: Fourier devresinin kilit frekanslarını ölçen ilerleme ölçüsü sürekli, doğrulama doğruluğu sıçrıyor, modüler toplamada tek katmanlı modelde gösterildi. Faz geçişi: kayıp eğrisi ve başların ağırlıkları sürekli, örnekle öğrenme skoru sıçrıyor, iki katmandan büyük her boyda gösterildi. Altta ortak ders: davranışta ani olan mekanizmada çoğu zaman süreklidir ve doğru büyüklük ölçüldüğünde sıçramadan önce görülür.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">açıklama</text>
+  <text x="170" y="28" font-size="13" font-weight="bold" fill="var(--text)">altında sürekli olan</text>
+  <text x="470" y="28" font-size="13" font-weight="bold" fill="var(--text)">davranışta sıçrayan</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">beceri parçaları</text>
+  <text x="170" y="68" font-size="13" fill="var(--text)">kullanım sıklığına göre sırayla</text>
+  <text x="170" y="86" font-size="13" fill="var(--text)">öğrenilen ayrık parçalar; sıklıkların</text>
+  <text x="170" y="104" font-size="13" fill="var(--text)">güç yasası, toplam kaybın düşüşü</text>
+  <text x="470" y="68" font-size="13" fill="var(--text)">tek bir parçanın</text>
+  <text x="470" y="86" font-size="13" fill="var(--text)">öğrenildiği an</text>
+  <text x="470" y="104" font-size="13" fill="var(--text-muted)">dil modeli gradyanlarıyla</text>
+
+  <rect x="20" y="136" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="158" font-size="13" font-weight="bold" fill="var(--text)">gizli ilerleme</text>
+  <text x="170" y="158" font-size="13" fill="var(--text)">ağırlıklarda büyüyen ayıklayıcı yapı</text>
+  <text x="170" y="176" font-size="13" fill="var(--text-muted)">doğruluk hâlâ rastgele düzeyinde</text>
+  <text x="470" y="158" font-size="13" fill="var(--text)">doğruluk</text>
+  <text x="470" y="176" font-size="13" fill="var(--text-muted)">seyrek eşlik, küçük ağlar</text>
+
+  <rect x="20" y="210" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="232" font-size="13" font-weight="bold" fill="var(--text)">geç genelleme</text>
+  <text x="170" y="232" font-size="13" fill="var(--text)">Fourier devresinin kilit</text>
+  <text x="170" y="250" font-size="13" fill="var(--text)">frekanslarını ölçen ilerleme</text>
+  <text x="170" y="268" font-size="13" fill="var(--text)">ölçüsü</text>
+  <text x="470" y="232" font-size="13" fill="var(--text)">doğrulama doğruluğu</text>
+  <text x="470" y="250" font-size="13" fill="var(--text-muted)">modüler toplama,</text>
+  <text x="470" y="268" font-size="13" fill="var(--text-muted)">tek katmanlı model</text>
+
+  <rect x="20" y="302" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="324" font-size="13" font-weight="bold" fill="var(--text)">faz geçişi</text>
+  <text x="170" y="324" font-size="13" fill="var(--text)">kayıp eğrisi ve başların ağırlıkları</text>
+  <text x="170" y="342" font-size="13" fill="var(--text-muted)">indüksiyon başları belirirken</text>
+  <text x="470" y="324" font-size="13" fill="var(--text)">örnekle öğrenme skoru</text>
+  <text x="470" y="342" font-size="13" fill="var(--text-muted)">iki katmandan büyük her boy</text>
+
+  <line x1="20" y1="386" x2="700" y2="386" stroke="var(--border)" />
+  <text x="20" y="408" font-size="13" fill="var(--text-muted)">Davranışta ani olan mekanizmada çoğu zaman süreklidir; doğru büyüklük sıçramadan önce büyür.</text>
+</svg>

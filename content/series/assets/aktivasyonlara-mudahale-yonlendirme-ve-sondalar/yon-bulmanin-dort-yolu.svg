@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Dört satırlı tablo; sütunlar yöntem, nasıl bulunur, ne gerektirir ve ölçülen. Karşıt örneklerin ortalama farkı: davranışı gösteren ve göstermeyen istem çiftlerinin aktivasyon ortalamalarının farkı; birkaç yüz etiketli çift gerektirir; kavram tespitinde ortalama eğri altı alanı 0,942 ile birinci. Eğitilmiş sonda: aktivasyondan etiketi kestiren doğrusal sınıflandırıcının ağırlık vektörü; aynı etiketli veriyi gerektirir; tespitte 0,940, yönlendirmede 0,098. Etiketsiz tutarlılık: bir cümle ile olumsuzunun olasılıklarının tutarlı olmasını arayan ölçüt; etiket gerektirmez ama karşıt çift kurgusu gerektirir; 67'de yalan dedektörünün temeliydi. Seyrek sözlük parçası: 75'in otokodlayıcısındaki bir parçanın çözücü yönü; etiket gerektirmez, eğitilmiş sözlük gerektirir; sözlüğün kendi seçimiyle 0,695, etiketle seçilirse 0,917. Altta not: dört yön de aynı uzayda yaşar, ölçülen fark büyük ölçüde seçimin etiketle yapılıp yapılmadığından gelir.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">yöntem</text>
+  <text x="160" y="28" font-size="13" font-weight="bold" fill="var(--text)">nasıl bulunur</text>
+  <text x="430" y="28" font-size="13" font-weight="bold" fill="var(--text)">ne gerektirir · ölçülen</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">ortalama fark</text>
+  <text x="160" y="68" font-size="13" fill="var(--text)">davranışı gösteren ve göstermeyen</text>
+  <text x="160" y="86" font-size="13" fill="var(--text)">istem çiftlerinin aktivasyon</text>
+  <text x="160" y="104" font-size="13" fill="var(--text)">ortalamalarının farkı</text>
+  <text x="430" y="68" font-size="13" fill="var(--text)">birkaç yüz etiketli çift</text>
+  <text x="430" y="86" font-size="13" fill="var(--text)">kavram tespitinde 0,942</text>
+  <text x="430" y="104" font-size="13" fill="var(--text-muted)">ölçülen dörtlünün birincisi</text>
+
+  <rect x="20" y="136" width="680" height="82" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="158" font-size="13" font-weight="bold" fill="var(--text)">eğitilmiş sonda</text>
+  <text x="160" y="158" font-size="13" fill="var(--text)">aktivasyondan etiketi kestiren</text>
+  <text x="160" y="176" font-size="13" fill="var(--text)">doğrusal sınıflandırıcının</text>
+  <text x="160" y="194" font-size="13" fill="var(--text)">ağırlık vektörü</text>
+  <text x="430" y="158" font-size="13" fill="var(--text)">aynı etiketli veri</text>
+  <text x="430" y="176" font-size="13" fill="var(--text)">tespitte 0,940</text>
+  <text x="430" y="194" font-size="13" fill="var(--text-muted)">yönlendirmede 0,098</text>
+
+  <rect x="20" y="226" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="248" font-size="13" font-weight="bold" fill="var(--text)">etiketsiz</text>
+  <text x="30" y="266" font-size="13" font-weight="bold" fill="var(--text)">tutarlılık</text>
+  <text x="160" y="248" font-size="13" fill="var(--text)">bir cümle ile olumsuzunun</text>
+  <text x="160" y="266" font-size="13" fill="var(--text)">olasılıkları tutarlı olsun</text>
+  <text x="160" y="284" font-size="13" fill="var(--text)">ölçütü</text>
+  <text x="430" y="248" font-size="13" fill="var(--text)">etiket yok; karşıt çift</text>
+  <text x="430" y="266" font-size="13" fill="var(--text)">kurgusu gerekir</text>
+  <text x="430" y="284" font-size="13" fill="var(--text-muted)">67'de yalan dedektörünün temeli</text>
+
+  <rect x="20" y="316" width="680" height="82" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="338" font-size="13" font-weight="bold" fill="var(--text)">sözlük parçası</text>
+  <text x="160" y="338" font-size="13" fill="var(--text)">75'in otokodlayıcısında bir</text>
+  <text x="160" y="356" font-size="13" fill="var(--text)">parçanın çözücü yönü</text>
+  <text x="160" y="374" font-size="13" fill="var(--text-muted)">etiketsiz eğitilir</text>
+  <text x="430" y="338" font-size="13" fill="var(--text)">eğitilmiş sözlük gerekir</text>
+  <text x="430" y="356" font-size="13" fill="var(--text)">kendi seçimiyle 0,695</text>
+  <text x="430" y="374" font-size="13" fill="var(--text-muted)">etiketle seçilirse 0,917</text>
+
+  <line x1="20" y1="418" x2="700" y2="418" stroke="var(--border)" />
+  <text x="20" y="440" font-size="13" fill="var(--text-muted)">Dört yön de aynı uzayda yaşar; ölçülen fark seçimin etiketle yapılıp yapılmadığından gelir.</text>
+</svg>

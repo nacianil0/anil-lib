@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 475" role="img" aria-label="Dört satırlı tablo; sütunlar yaklaşım, nasıl çalışır ve ne kadar önceden, ölçülen. Çözünürlük: üretimde çok sayıda örnekleme yaparak sıfır görünen başarıyı ölçülebilir yapmak, eğitim başlamadan öngörü; 2,4 milyarlık modelin kod üretme başarısı yüzde 0,05 sapmayla öngörüldü, bazı görevlerde eğri standart yasaya oturmuyor. İnce ayarla erkene çekme: göreve ince ayar belirmeyi küçük modellere kaydırır, kaymaya bir eğri uydurulur, dört kat hesaba kadar öngörü; dört ölçütte doğrulandı, bazı durumlarda. Gözlemsel yasa: yüz kadar açık modelin puanlarından düşük boyutlu bir yetenek uzayı çıkarmak, mevcut modellerden ileriye öngörü; beliren olgular düzgün bir S eğrisi izliyor, ajan başarısı ajan olmayan ölçütlerden öngörülebiliyor. Kayıp ekseni: yatay eksene model boyu yerine ön eğitim kaybı koymak, eşiği bilinen görevlerde; aynı kayıptaki farklı boydaki modeller aynı puanı veriyor ve eşik ölçünün sürekliliğinden bağımsız duruyor. Altta iki sınır: yöntemler görev başına kalibrasyon ister ve hiçbiri hangi yeni yeteneğin geleceğini söylemez, yalnızca adı konmuş bir görevin ne zaman geleceğini kestirir.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">yaklaşım</text>
+  <text x="175" y="28" font-size="13" font-weight="bold" fill="var(--text)">nasıl çalışır · ne kadar önceden</text>
+  <text x="430" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">çözünürlük</text>
+  <text x="175" y="68" font-size="13" fill="var(--text)">üretimde çok sayıda örnekleme;</text>
+  <text x="175" y="86" font-size="13" fill="var(--text)">sıfırı ölçülebilir hâle getirir</text>
+  <text x="175" y="104" font-size="13" fill="var(--text-muted)">önceden: eğitim başlamadan</text>
+  <text x="430" y="68" font-size="13" fill="var(--text)">2,4 milyarlık modelin kod üretimi</text>
+  <text x="430" y="86" font-size="13" fill="var(--text)">%0,05 sapmayla öngörüldü</text>
+  <text x="430" y="104" font-size="13" fill="var(--text-muted)">bazı eğriler standart yasaya oturmaz</text>
+
+  <rect x="20" y="136" width="680" height="82" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="158" font-size="13" font-weight="bold" fill="var(--text)">ince ayarla</text>
+  <text x="30" y="176" font-size="13" font-weight="bold" fill="var(--text)">erkene çekme</text>
+  <text x="175" y="158" font-size="13" fill="var(--text)">göreve ince ayar belirmeyi küçük</text>
+  <text x="175" y="176" font-size="13" fill="var(--text)">modellere kaydırır; eğri uydurulur</text>
+  <text x="175" y="194" font-size="13" fill="var(--text-muted)">önceden: 4 kat hesaba kadar</text>
+  <text x="430" y="158" font-size="13" fill="var(--text)">dört ölçütte doğrulandı</text>
+  <text x="430" y="176" font-size="13" fill="var(--text-muted)">“bazı durumlarda” kaydıyla</text>
+
+  <rect x="20" y="226" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="248" font-size="13" font-weight="bold" fill="var(--text)">gözlemsel yasa</text>
+  <text x="175" y="248" font-size="13" fill="var(--text)">yüz kadar açık modelin puanından</text>
+  <text x="175" y="266" font-size="13" fill="var(--text)">düşük boyutlu yetenek uzayı</text>
+  <text x="175" y="284" font-size="13" fill="var(--text-muted)">önceden: mevcut modellerden</text>
+  <text x="430" y="248" font-size="13" fill="var(--text)">beliren olgular S eğrisi izliyor</text>
+  <text x="430" y="266" font-size="13" fill="var(--text)">ajan başarısı, ajan olmayan</text>
+  <text x="430" y="284" font-size="13" fill="var(--text-muted)">ölçütlerden öngörülebiliyor</text>
+
+  <rect x="20" y="316" width="680" height="82" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="338" font-size="13" font-weight="bold" fill="var(--text)">kayıp ekseni</text>
+  <text x="175" y="338" font-size="13" fill="var(--text)">yatay eksen model boyu değil</text>
+  <text x="175" y="356" font-size="13" fill="var(--text)">ön eğitim kaybı</text>
+  <text x="175" y="374" font-size="13" fill="var(--text-muted)">önceden: eşiği bilinen görevlerde</text>
+  <text x="430" y="338" font-size="13" fill="var(--text)">aynı kayıp → aynı puan</text>
+  <text x="430" y="356" font-size="13" fill="var(--text)">eşik, ölçünün sürekliliğinden</text>
+  <text x="430" y="374" font-size="13" fill="var(--text-muted)">bağımsız duruyor</text>
+
+  <line x1="20" y1="408" x2="700" y2="408" stroke="var(--border)" />
+  <text x="20" y="430" font-size="13" fill="var(--text)">Dördü de görev başına kalibrasyon ister.</text>
+  <text x="20" y="450" font-size="13" fill="var(--text-muted)">Hiçbiri hangi yeni yeteneğin geleceğini söylemez; adı konmuş görevin zamanını kestirir.</text>
+</svg>

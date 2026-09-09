@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-label="Dört satırlı tablo; sütunlar sınav, sorusu, bulunan. Kararlılık satırı: aynı model, aynı veri, yalnızca tohum farklı; 8 milyar parametreli modelin ileri beslemeli katmanında 131 bin parçalı iki sözlükte ortak parça oranı yüzde 30; en büyük k biçimi L1'den daha tohuma bağımlı. Emilim satırı: hiyerarşik özelliklerde ana parça beklenen yerde etkinleşiyor mu; hayır, short parçası S ile başlar yönünü içine alıyor ve genel parça susuyor; kaynağı seyreklik ödülü, boyut ya da seyreklik ayarı çözmüyor. Atomluk ve tamlık satırı: büyük sözlükten eklenen parçalar performansı artırıyor, yani küçük sözlük eksik; çözücü üstüne eğitilen ikinci sözlük parçaları daha küçük parçalara ayrıştırıyor, yani atom değil. Taban çizgisi satırı: rastgele başlatılmış ağda da benzer yorumlanabilirlik puanı; kavram tespitinde ortalama farkı 0,942, sonda 0,940, sözlüğün kendi seçimi 0,695; yönlendirmede istem 0,894, sözlük 0,165. Altta not: bu bulgular sözlüğü işe yaramaz yapmıyor, modelin gerçek parça listesi iddiasını çürütüyor.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">sınav</text>
+  <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">sorusu</text>
+  <text x="400" y="28" font-size="13" font-weight="bold" fill="var(--text)">bulunan</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="118" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">kararlılık</text>
+  <text x="150" y="68" font-size="13" fill="var(--text)">aynı model, aynı veri,</text>
+  <text x="150" y="86" font-size="13" fill="var(--text)">yalnızca rastgele tohum</text>
+  <text x="150" y="104" font-size="13" fill="var(--text)">farklı: aynı parçalar mı?</text>
+  <text x="400" y="68" font-size="13" fill="var(--text)">8 milyar parametreli modelin ileri</text>
+  <text x="400" y="86" font-size="13" fill="var(--text)">beslemeli katmanında 131 bin parçalı</text>
+  <text x="400" y="104" font-size="13" fill="var(--text)">iki sözlükte ortak parça: %30</text>
+  <text x="400" y="122" font-size="13" fill="var(--text-muted)">“en büyük k” biçimi L1'den daha</text>
+  <text x="400" y="140" font-size="13" fill="var(--text-muted)">tohuma bağımlı</text>
+
+  <rect x="20" y="170" width="680" height="100" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="192" font-size="13" font-weight="bold" fill="var(--text)">emilim</text>
+  <text x="150" y="192" font-size="13" fill="var(--text)">hiyerarşik özelliklerde ana</text>
+  <text x="150" y="210" font-size="13" fill="var(--text)">parça beklenen yerde</text>
+  <text x="150" y="228" font-size="13" fill="var(--text)">etkinleşiyor mu?</text>
+  <text x="400" y="192" font-size="13" fill="var(--text)">hayır: “short” parçası “S ile başlar”</text>
+  <text x="400" y="210" font-size="13" fill="var(--text)">yönünü içine alıyor, genel parça</text>
+  <text x="400" y="228" font-size="13" fill="var(--text)">susuyor; kaynağı seyreklik ödülü</text>
+  <text x="400" y="246" font-size="13" fill="var(--text-muted)">boyut ve seyreklik ayarı çözmüyor</text>
+
+  <rect x="20" y="276" width="680" height="100" fill="var(--surface-muted)" />
+  <text x="30" y="298" font-size="13" font-weight="bold" fill="var(--text)">atomluk</text>
+  <text x="30" y="316" font-size="13" font-weight="bold" fill="var(--text)">ve tamlık</text>
+  <text x="150" y="298" font-size="13" fill="var(--text)">sözlük eksiksiz mi,</text>
+  <text x="150" y="316" font-size="13" fill="var(--text)">parçalar bölünemez mi?</text>
+  <text x="400" y="298" font-size="13" fill="var(--text)">ikisi de değil: büyük sözlükten</text>
+  <text x="400" y="316" font-size="13" fill="var(--text)">eklenen parçalar başarıyı artırıyor</text>
+  <text x="400" y="334" font-size="13" fill="var(--text)">(eksik); çözücü üstüne eğitilen ikinci</text>
+  <text x="400" y="352" font-size="13" fill="var(--text)">sözlük parçaları ayrıştırıyor (atom yok)</text>
+
+  <rect x="20" y="382" width="680" height="118" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="404" font-size="13" font-weight="bold" fill="var(--text)">taban</text>
+  <text x="30" y="422" font-size="13" font-weight="bold" fill="var(--text)">çizgisi</text>
+  <text x="150" y="404" font-size="13" fill="var(--text)">ölçüler sözlüğü basit</text>
+  <text x="150" y="422" font-size="13" fill="var(--text)">rakiplerinden ve boş</text>
+  <text x="150" y="440" font-size="13" fill="var(--text)">modelden ayırıyor mu?</text>
+  <text x="400" y="404" font-size="13" fill="var(--text)">rastgele başlatılmış ağda da benzer</text>
+  <text x="400" y="422" font-size="13" fill="var(--text)">yorumlanabilirlik puanı; kavram</text>
+  <text x="400" y="440" font-size="13" fill="var(--text)">tespitinde ortalama farkı 0,942, sonda</text>
+  <text x="400" y="458" font-size="13" fill="var(--text)">0,940, sözlüğün kendi seçimi 0,695;</text>
+  <text x="400" y="476" font-size="13" fill="var(--text)">yönlendirmede istem 0,894, sözlük 0,165</text>
+
+  <line x1="20" y1="514" x2="700" y2="514" stroke="var(--border)" />
+  <text x="20" y="536" font-size="13" fill="var(--text-muted)">Bu bulgular sözlüğü işe yaramaz yapmıyor; “modelin gerçek parça listesi” iddiasını çürütüyor.</text>
+</svg>

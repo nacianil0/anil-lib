@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-06T20:34:45.461Z
-> Files: 265 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-09T10:28:20.538Z
+> Files: 293 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -110,6 +110,12 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9c68700c-4168-4b93-8b88-e7b6f013eca8/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a66dbd48-5c70-496b-96ea-65ab9809399c/scratchpad/
+
+- `update-yol.py` — Batch 18 +1 fazi: YOL-HARITASI.md guncellemesi. (~2576 tok)
+- `update-yol2.py` — Batch 18 +1 fazi: terim defteri, kararlar ve ogrenme notlari. (~2979 tok)
+- `update-yol3.py` — Batch 18 +1 fazi: ogrenme notlari. (~1505 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b3287c97-e0f7-480d-9e39-6d39ce7d1b0f/scratchpad/
 
 - `fwdrefs.py` (~350 tok)
@@ -162,6 +168,7 @@
 - `series-batch15-faz7-govde.md` (~843 tok)
 - `series-batch16-faz7-kapanis.md` (~975 tok)
 - `series-batch17-faz8-acilis.md` (~1020 tok)
+- `series-batch18-faz8-kapanis.md` (~1018 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -232,6 +239,17 @@
 
 - `dblp-b17.py` (~669 tok)
 - `fetch-b17.py` (~11778 tok)
+
+## artifacts/b18-research/
+
+- `abs.py` — Kaynak metinlerin baş kısmını (özet) toplu yazdırır. (~173 tok)
+- `hdr-b18.py` — Indirilmis her kaynak metnin ilk sayfasindaki yayin satirini tarar (Batch 18). (~727 tok)
+- `idx-b18.py` — Konferans dizin sayfalarini indirir ve baslik arar (Batch 18). (~745 tok)
+- `items-b18.py` — (key, expected title, arxiv-id | url | [urls] | "search") (~6928 tok)
+- `orv-b18.py` — OpenReview yavas yoklayici (Batch 18). DBLP bot challenge donduruyor; OpenReview arama (~930 tok)
+- `retry-b18.py` — Batch 18: ilk turda alinamayan klasikler icin alternatif adresler. (~1209 tok)
+- `svgcheck-b18.py` — SVG geometri denetleyicisi (Batch 18). Batch 17'nin dersleri eklendi: (~1119 tok)
+- `venue-b18.py` — Venue dogrulamasi (Batch 18) — DBLP bu run'da bot challenge dondurdugu icin (~2056 tok)
 
 ## artifacts/b7-render/
 
@@ -410,7 +428,10 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md` — Okumaktan müdahaleye (~6204 tok)
 - `aldatma-ve-durum-farkindaligi-tartismalari.md` — Söylediğinden başka bir şey yapan model (~10528 tok)
+- `atif-model-neden-boyle-dedi.md` — Üç ayrı "neden" (~6281 tok)
+- `beliren-yetenekler-tartismasi-aniden-mi-geliyor.md` — Beş makale önce açık bırakılan soru (~6094 tok)
 - `belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md` — "Eminim" ne demek (~7378 tok)
 - `constitutional-ai-ve-olceklenebilir-denetim.md` — Etiketi kim yazar, ilkeyi kim (~8517 tok)
 - `dalkavukluk-ve-model-karakteri.md` — Hoşa giden ile doğru olan (~7672 tok)
@@ -422,6 +443,7 @@
 - `kirlilik-ve-ezber-benchmarklara-guven-krizi.md` — Sorunun eğitim verisinde olması (~10262 tok)
 - `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8142 tok)
 - `mekanistik-yorumlanabilirlik-devreleri-okumak.md` — Davranışın yetmediği yer (~9352 tok)
+- `ozellikler-ve-superpozisyon-modelin-ic-dili.md` — Nöronun yetmediği yer (~7737 tok)
 - `sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md` — Eşiği kim yazıyor (~6259 tok)
 - `yonetisim-politika-standartlar-ve-regulasyon.md` — Kararı kim veriyor (~6847 tok)
 
@@ -473,6 +495,12 @@
 ## content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/
 
 
+## content/series/assets/aktivasyonlara-mudahale-yonlendirme-ve-sondalar/
+
+- `ayni-davranisin-uc-kapisi.svg` (~1116 tok)
+- `mudahalenin-dort-bicimi.svg` (~984 tok)
+- `yon-bulmanin-dort-yolu.svg` (~1226 tok)
+
 ## content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/
 
 - `aldatma-taksonomisi.svg` (~1296 tok)
@@ -488,8 +516,20 @@
 ## content/series/assets/arama-ve-planlama-oz-tutarlilik-ve-agaclar/
 
 
+## content/series/assets/atif-model-neden-boyle-dedi/
+
+- `atif-yontemleri-uc-aile.svg` (~1374 tok)
+- `gerekce-sadakati-olcumu.svg` (~862 tok)
+- `sanity-check-semasi.svg` (~989 tok)
+
 ## content/series/assets/baglam-penceresi-istemin-anatomisi/
 
+
+## content/series/assets/beliren-yetenekler-tartismasi-aniden-mi-geliyor/
+
+- `ayni-cikti-iki-puanlama.svg` (~843 tok)
+- `belirme-ongorulebilir-mi.svg` (~1315 tok)
+- `sicramanin-altindaki-surekli-surec.svg` (~1109 tok)
 
 ## content/series/assets/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin/
 
@@ -651,6 +691,12 @@
 ## content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/
 
 
+## content/series/assets/ozellikler-ve-superpozisyon-modelin-ic-dili/
+
+- `seyrek-otokodlayici-mimari-ve-kayip.svg` (~1009 tok)
+- `sozlugun-dort-sinavi.svg` (~1422 tok)
+- `superpozisyon-bes-ozellik-iki-boyut.svg` (~1296 tok)
+
 ## content/series/assets/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri/
 
 - `dogru-belge-nerede.svg` (~1112 tok)
@@ -721,7 +767,7 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~8339 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7005 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
 
 ## docs/superpowers/plans/

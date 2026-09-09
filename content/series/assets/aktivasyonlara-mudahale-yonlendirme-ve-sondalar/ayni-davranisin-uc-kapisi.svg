@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-label="Üç satırlı tablo; sütunlar kapı, nasıl yapılır ve maliyet, ölçülen. İstem satırı: sistem istemi ya da kullanıcı isteminde talimat; maliyet sıfır, her istekte yeniden verilir, dağıtan yazar; açık uçlu yönlendirmede ölçülen en yüksek puan 0,894, ama bağlam bütçesinden yer alır ve istem enjeksiyonuna açıktır. Aktivasyon satırı: seçilen katmanda yön ekleme, silme ya da kelepçeleme; çıkarım anında uygulanır ve geri alınır, kalıcı değildir; doğruluk yönüyle 32,5'ten 65,1'e, devre kesiciyle görülmemiş saldırılarda başarı düşerken yetenek korunuyor, ama kırk kümede yönlendirilebilirlik örnekten örneğe değişiyor ve bazı kümelerde girdilerin yarısı ters yöne gidiyor. Ağırlık satırı: olguyu ileri beslemeli katmana yazma ya da düşük ranklı ince ayar; kalıcı, modelin kopyasını değiştirir; tek olgu düzeliyor ama beş bin düzenlemelik ölçütte ima edilen olgular tutarlı güncellenmiyor ve arka arkaya düzenlemede model önceki düzenlemeleri unutuyor. Altta not: üçü birbirinin yerine geçmez; kalıcılık, geri alınabilirlik ve yan etkinin ölçülme biçimi farklıdır.">
+  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">kapı</text>
+  <text x="140" y="28" font-size="13" font-weight="bold" fill="var(--text)">nasıl yapılır · maliyet</text>
+  <text x="420" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">istem</text>
+  <text x="140" y="68" font-size="13" fill="var(--text)">sistem isteminde ya da kullanıcı</text>
+  <text x="140" y="86" font-size="13" fill="var(--text)">isteminde talimat; maliyet sıfır,</text>
+  <text x="140" y="104" font-size="13" fill="var(--text)">her istekte yeniden verilir</text>
+  <text x="420" y="68" font-size="13" fill="var(--text)">açık uçlu yönlendirmede en yüksek</text>
+  <text x="420" y="86" font-size="13" fill="var(--text)">puan: 0,894</text>
+  <text x="420" y="104" font-size="13" fill="var(--text-muted)">bağlamdan yer alır; enjeksiyona açık</text>
+
+  <rect x="20" y="136" width="680" height="100" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="158" font-size="13" font-weight="bold" fill="var(--text)">aktivasyon</text>
+  <text x="140" y="158" font-size="13" fill="var(--text)">seçilen katmanda yön ekleme,</text>
+  <text x="140" y="176" font-size="13" fill="var(--text)">silme ya da kelepçeleme; çıkarım</text>
+  <text x="140" y="194" font-size="13" fill="var(--text)">anında uygulanır, geri alınır</text>
+  <text x="140" y="212" font-size="13" fill="var(--text-muted)">kalıcı değil</text>
+  <text x="420" y="158" font-size="13" fill="var(--text)">doğruluk yönüyle 32,5 → 65,1;</text>
+  <text x="420" y="176" font-size="13" fill="var(--text)">devre kesiciyle görülmemiş</text>
+  <text x="420" y="194" font-size="13" fill="var(--text)">saldırılarda başarı düşer, yetenek</text>
+  <text x="420" y="212" font-size="13" fill="var(--text-muted)">korunur; ama 40 kümede değişken</text>
+
+  <rect x="20" y="244" width="680" height="82" fill="var(--surface-muted)" />
+  <text x="30" y="266" font-size="13" font-weight="bold" fill="var(--text)">ağırlık</text>
+  <text x="140" y="266" font-size="13" fill="var(--text)">olguyu ileri beslemeli katmana</text>
+  <text x="140" y="284" font-size="13" fill="var(--text)">yazma ya da ince ayar; kalıcı,</text>
+  <text x="140" y="302" font-size="13" fill="var(--text)">modelin kopyasını değiştirir</text>
+  <text x="420" y="266" font-size="13" fill="var(--text)">tek olgu düzelir; 5.000 düzenlemelik</text>
+  <text x="420" y="284" font-size="13" fill="var(--text)">ölçütte ima edilenler tutarsız;</text>
+  <text x="420" y="302" font-size="13" fill="var(--text-muted)">arka arkaya düzenleme unutturur</text>
+
+  <line x1="20" y1="342" x2="700" y2="342" stroke="var(--border)" />
+  <text x="20" y="364" font-size="13" fill="var(--text-muted)">Üçü birbirinin yerine geçmez: kalıcılık, geri alınabilirlik ve yan etki farklı ölçülür.</text>
+</svg>

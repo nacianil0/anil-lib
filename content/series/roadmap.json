@@ -131,10 +131,10 @@
         { "order": 72, "title": "Kirlilik ve Ezber: Benchmark'lara Güven Krizi", "status": "yayinda", "slug": "kirlilik-ve-ezber-benchmarklara-guven-krizi" },
         { "order": 73, "title": "İnsan Değerlendirmesi ve Hakem Modeller", "status": "yayinda", "slug": "insan-degerlendirmesi-ve-hakem-modeller" },
         { "order": 74, "title": "Mekanistik Yorumlanabilirlik: Devreleri Okumak", "status": "yayinda", "slug": "mekanistik-yorumlanabilirlik-devreleri-okumak" },
-        { "order": 75, "title": "Özellikler ve Süperpozisyon: Modelin İç Dili", "status": "planlandi" },
-        { "order": 76, "title": "Aktivasyonlara Müdahale: Steering ve Problar", "status": "planlandi" },
-        { "order": 77, "title": "Attribution: Model Neden Böyle Dedi?", "status": "planlandi" },
-        { "order": 78, "title": "Emergence Tartışması: Yetenekler Aniden mi Gelir?", "status": "planlandi" },
+        { "order": 75, "title": "Özellikler ve Süperpozisyon: Modelin İç Dili", "status": "yayinda", "slug": "ozellikler-ve-superpozisyon-modelin-ic-dili" },
+        { "order": 76, "title": "Aktivasyonlara Müdahale: Yönlendirme ve Sondalar", "status": "yayinda", "slug": "aktivasyonlara-mudahale-yonlendirme-ve-sondalar" },
+        { "order": 77, "title": "Atıf: Model Neden Böyle Dedi?", "status": "yayinda", "slug": "atif-model-neden-boyle-dedi" },
+        { "order": 78, "title": "Beliren Yetenekler Tartışması: Aniden mi Geliyor?", "status": "yayinda", "slug": "beliren-yetenekler-tartismasi-aniden-mi-geliyor" },
         { "order": 79, "title": "Robustluk: Dağılım Kayması ve Adversarial Girdiler", "status": "planlandi" },
         { "order": 80, "title": "Şeffaflık: Model Kartları ve Sistem Kartları", "status": "planlandi" }
       ]

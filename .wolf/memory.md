@@ -3138,3 +3138,71 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 23:40 | Çizimler kaba ölçekleniyor, tablolar container query ile kademeli daralıyor; sayfalı son sayfa hatası düzeltildi | globals.css, pagination.ts, use-reader-layout.ts, series-reader.spec.ts | 4 yapılandırmada 20 şekil + 9 tablo taşmasız; 538 birim + 50 e2e testi, build temiz | ~55k |
 | 23:34 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/reader-figures-fit-container.md | — | ~464 |
 | 23:36 | Session end: 18 writes across 9 files (globals.css, _probe.spec.ts, _shots.spec.ts, series-reader.spec.ts, use-reader-layout.ts) | 7 reads | ~20911 tok |
+
+## Session: 2026-09-07 08:20
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-07 10:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 11:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 11:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:55 | Created artifacts/b18-research/items-b18.py | — | ~6928 |
+| 11:56 | Created artifacts/b18-research/svgcheck-b18.py | — | ~1119 |
+| 11:59 | Created artifacts/b18-research/abs.py | — | ~173 |
+| 12:01 | Created artifacts/b18-research/venue-b18.py | — | ~1597 |
+| 12:02 | Edited artifacts/b18-research/venue-b18.py | modified norm() | ~338 |
+| 12:02 | Edited artifacts/b18-research/venue-b18.py | 9→14 lines | ~213 |
+| 12:04 | Edited artifacts/b18-research/venue-b18.py | 2→3 lines | ~54 |
+| 12:05 | Edited artifacts/b18-research/venue-b18.py | 6→10 lines | ~140 |
+| 12:09 | Edited artifacts/b18-research/venue-b18.py | 3→2 lines | ~21 |
+| 12:10 | Created artifacts/b18-research/retry-b18.py | — | ~1209 |
+| 12:13 | Created artifacts/b18-research/hdr-b18.py | — | ~727 |
+| 12:22 | Created content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | — | ~8233 |
+| 12:22 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~33 |
+| 12:22 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~19 |
+| 12:24 | Created content/series/assets/ozellikler-ve-superpozisyon-modelin-ic-dili/superpozisyon-bes-ozellik-iki-boyut.svg | — | ~1296 |
+| 12:25 | Created content/series/assets/ozellikler-ve-superpozisyon-modelin-ic-dili/seyrek-otokodlayici-mimari-ve-kayip.svg | — | ~1009 |
+| 12:26 | Created content/series/assets/ozellikler-ve-superpozisyon-modelin-ic-dili/sozlugun-dort-sinavi.svg | — | ~1422 |
+| 12:26 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~48 |
+| 12:27 | Created artifacts/b18-research/orv-b18.py | — | ~930 |
+| 12:33 | Created content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | — | ~6280 |
+| 12:36 | Created artifacts/b18-research/idx-b18.py | — | ~745 |
+| 12:38 | Created content/series/assets/aktivasyonlara-mudahale-yonlendirme-ve-sondalar/yon-bulmanin-dort-yolu.svg | — | ~1230 |
+| 12:39 | Created content/series/assets/aktivasyonlara-mudahale-yonlendirme-ve-sondalar/mudahalenin-dort-bicimi.svg | — | ~984 |
+| 12:39 | Created content/series/assets/aktivasyonlara-mudahale-yonlendirme-ve-sondalar/ayni-davranisin-uc-kapisi.svg | — | ~1116 |
+| 12:39 | Edited content/series/assets/aktivasyonlara-mudahale-yonlendirme-ve-sondalar/yon-bulmanin-dort-yolu.svg | inline fix | ~25 |
+| 12:41 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | 1→3 lines | ~213 |
+| 12:41 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | 1→3 lines | ~63 |
+| 12:41 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | 1→2 lines | ~92 |
+| 12:47 | Created content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md | — | ~6699 |
+| 12:48 | Created content/series/assets/atif-model-neden-boyle-dedi/atif-yontemleri-uc-aile.svg | — | ~1374 |
+| 12:48 | Created content/series/assets/atif-model-neden-boyle-dedi/sanity-check-semasi.svg | — | ~989 |
+| 12:49 | Created content/series/assets/atif-model-neden-boyle-dedi/gerekce-sadakati-olcumu.svg | — | ~862 |
+| 12:55 | Created content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | — | ~6500 |
+| 12:56 | Created content/series/assets/beliren-yetenekler-tartismasi-aniden-mi-geliyor/ayni-cikti-iki-puanlama.svg | — | ~843 |
+| 12:57 | Created content/series/assets/beliren-yetenekler-tartismasi-aniden-mi-geliyor/sicramanin-altindaki-surekli-surec.svg | — | ~1109 |
+| 12:57 | Created content/series/assets/beliren-yetenekler-tartismasi-aniden-mi-geliyor/belirme-ongorulebilir-mi.svg | — | ~1315 |
+| 13:03 | Created .claude/launch.json | — | ~141 |
+| 13:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a66dbd48-5c70-496b-96ea-65ab9809399c/scratchpad/update-yol.py | — | ~2576 |
+| 13:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a66dbd48-5c70-496b-96ea-65ab9809399c/scratchpad/update-yol2.py | — | ~2979 |
+| 13:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a66dbd48-5c70-496b-96ea-65ab9809399c/scratchpad/update-yol3.py | — | ~1505 |
+| 13:25 | Created docs/seri/HANDOFF.md | — | ~7472 |
+
+## Oturum özeti — 2026-09-09 (Seri Batch 18, BATCH=4+1)
+
+75–78 yazıldı, entegre edildi ve doğrulandı (Faz 8'in ikinci yarısı; 74–77 bandı kapandı, 78 koordinatı ödendi). 84 kaynağın 72'si hakemli. DBLP bot doğrulaması yüzden venue doğrulaması konferans dizinlerine taşındı (idx-b18.py). Kapılar: typecheck 0, 551 test, build exit 0 (78 yol), 79 rota 200, 12 diyagram × 2 tema PNG. Durum: HANDOFF cursor 78 → 79; sıradaki run Faz 8'i kapatıp Faz 9'u açar ve Faz 9'un kategori kararını verir.
+
+| 13:28 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch18-faz8-kapanis.md | — | ~1060 |
+| 13:29 | Session end: 42 writes across 30 files (items-b18.py, svgcheck-b18.py, abs.py, venue-b18.py, retry-b18.py) | 17 reads | ~100038 tok |

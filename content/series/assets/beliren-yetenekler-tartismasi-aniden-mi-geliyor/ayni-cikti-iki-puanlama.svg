@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="İki panelli şema. Sol panelde ikili puanlama: cevabın tamamı doğruysa 1 kuralıyla çizilen eğri uzun süre sıfıra yakın kalıyor, sonra dik biçimde yükseliyor; eğri bir uçurum gibi görünüyor. Sağ panelde aynı modeller ve aynı çıktılar sürekli bir ölçüyle, token başına doğrulukla puanlanıyor; eğri düzgün bir rampa. İki panelin ortasında not: aynı modeller, aynı çıktılar, değişen tek şey puanlama kuralı. Altta üç ölçüm: beliren yetenek iddialarının yüzde 92'den fazlası iki kesikli ölçüde toplanıyor, çoktan seçmeli not ve birebir eşleşme; aynı numarayla görüntü modellerinde de daha önce görülmemiş sıçramalar üretilebiliyor; karşı ölçüm olarak yatay eksene ön eğitim kaybı konduğunda eşik, ölçü sürekli olsa da duruyor. En altta kayıt: eğrilerin biçimi şematiktir, ölçülmüş olan yönleri ve eşiğin varlığıdır.">
+  <rect x="20" y="30" width="330" height="200" fill="var(--surface-muted)" />
+  <text x="30" y="52" font-size="13" font-weight="bold" fill="var(--text)">ikili puanlama</text>
+  <text x="30" y="70" font-size="13" fill="var(--text-muted)">cevabın tamamı doğruysa 1</text>
+  <line x1="60" y1="88" x2="60" y2="200" stroke="var(--border)" />
+  <line x1="60" y1="200" x2="330" y2="200" stroke="var(--border)" />
+  <path d="M 60 198 L 175 196 L 210 192 C 235 186 250 130 275 105 L 328 96" fill="none" stroke="var(--accent)" stroke-width="2" />
+  <text x="285" y="150" font-size="13" fill="var(--text)">uçurum</text>
+  <text x="200" y="222" font-size="13" text-anchor="middle" fill="var(--text-muted)">ölçek →</text>
+
+  <rect x="370" y="30" width="330" height="200" fill="var(--bg)" stroke="var(--border)" />
+  <text x="380" y="52" font-size="13" font-weight="bold" fill="var(--text)">sürekli ölçü</text>
+  <text x="380" y="70" font-size="13" fill="var(--text-muted)">token başına doğruluk</text>
+  <line x1="410" y1="88" x2="410" y2="200" stroke="var(--border)" />
+  <line x1="410" y1="200" x2="680" y2="200" stroke="var(--border)" />
+  <path d="M 410 196 C 480 180 545 140 610 115 L 678 100" fill="none" stroke="var(--cool)" stroke-width="2" />
+  <text x="470" y="140" font-size="13" fill="var(--text)">rampa</text>
+  <text x="550" y="222" font-size="13" text-anchor="middle" fill="var(--text-muted)">ölçek →</text>
+
+  <text x="20" y="256" font-size="13" font-weight="bold" fill="var(--text)">aynı modeller, aynı çıktılar; değişen tek şey puanlama kuralı</text>
+  <text x="20" y="284" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
+  <text x="20" y="306" font-size="13" fill="var(--text)">beliren yetenek iddialarının %92'den fazlası iki kesikli ölçüde toplanıyor</text>
+  <text x="20" y="326" font-size="13" fill="var(--text)">aynı numarayla görüntü modellerinde de daha önce görülmemiş sıçramalar üretilebiliyor</text>
+  <text x="20" y="346" font-size="13" fill="var(--text)">karşı ölçüm: yatay eksene ön eğitim kaybı konduğunda eşik, ölçü sürekli olsa da duruyor</text>
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">Eğrilerin biçimi şematiktir; ölçülmüş olan yönleri ve eşiğin varlığıdır.</text>
+</svg>

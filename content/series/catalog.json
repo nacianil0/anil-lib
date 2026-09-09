@@ -1482,6 +1482,86 @@
       "path": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
       "relatedArticleIds": [],
       "classificationBatch": 17
+    },
+    {
+      "articleId": "article_6c7e9e39-57a6-4e0a-8cad-89945c237fcf",
+      "title": "Özellikler ve Süperpozisyon: Modelin İç Dili",
+      "slug": "ozellikler-ve-superpozisyon-modelin-ic-dili",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 75,
+      "summary": "74'ün açık bıraktığı soruyu yanıtlar: devrenin düğümleri nöron değilse nedir? Modelin nöron sayısından çok özelliği aynı yöne sıkıştırmasını — süperpozisyonu — oyuncak bir modelde kurar: seyreklik arttıkça beş özellik iki boyuta beşgen olarak yerleşir, bedeli girişimdir ve boyut başına özellik sayısı 1, 1/2, 2/5 gibi basamaklara oturur. Sonra sıkıştırmayı çözme girişimini anlatır: bir aktivasyonu seyrek parçalara ayıran otokodlayıcı sözlüğü, yeniden kurma ile seyreklik arasındaki takas, 512 nöronluk bir katmandan 4.096 parça, üretim ölçeğinde 34 milyon parça ve GPT-4 üzerinde 16 milyon. Bulunanın özellik olduğunu iddia etmenin iki sınavını verir — kavram gerçekten orada mı, müdahale davranışı değiştiriyor mu — ve sözlüğün kendi sınavlarını: ölü ve emilmiş parçalar, aynı veriyle farklı tohumda yüzde 30 örtüşme, eksiklik ve bölünebilirlik, rastgele başlatılmış ağda da yüksek yorumlanabilirlik puanı, ve ölçüldüğünde istem ile ortalama farkının sözlüğü geçmesi.",
+      "tags": [
+        "ozellik",
+        "superpozisyon",
+        "seyrek-otokodlayici",
+        "sozluk-ogrenme",
+        "ozellik-emilimi"
+      ],
+      "contentHash": "sha256:8caf022fea6b2f00fad85cf4b0e81d416f14d11f54b26c7507d6352f2905496e",
+      "path": "content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 18
+    },
+    {
+      "articleId": "article_752ba5d1-db6e-45a8-be33-f856be42dfc6",
+      "title": "Aktivasyonlara Müdahale: Yönlendirme ve Sondalar",
+      "slug": "aktivasyonlara-mudahale-yonlendirme-ve-sondalar",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 76,
+      "summary": "62, 65, 66, 67 ve 75'te ayrı ayrı kullanılan tek bir işlemi çerçeveye oturtur: modelin ara aktivasyonuna bir yön ekleyip davranışını değiştirmek. Yönün dört bulunma yolunu — karşıt örneklerin ortalama farkı, eğitilmiş sonda, etiketsiz tutarlılık, seyrek sözlük parçası — ve aralarındaki ölçülmüş sıralamayı verir. Müdahalenin ayarlarını kurar: hangi katman, hangi konumlar, hangi katsayı, ekleme mi yön silme mi kelepçeleme mi koşullu mu. Ölçülen sonuçları iki taraflı koyar: on üç modelde tek yön silinince ret kalkıyor, doğruluk yönüyle 32,5'ten 65,1'e çıkılıyor, temsil yeniden yönlendirmeyle görülmemiş saldırıların başarısı düşerken yetenek korunuyor; ama kırk kümede yönlendirilebilirlik örnekten örneğe değişiyor, bazılarında girdilerin yarısı ters yöne gidiyor, ve ölçülen ortalamada düz istem bütün temsil yöntemlerini geçiyor. Kapanışta aynı davranışın üç kapısını — istem, aktivasyon, ağırlık — maliyet, kalıcılık, yan etki ve ölçülme biçimiyle karşılaştırır.",
+      "tags": [
+        "aktivasyon-mudahalesi",
+        "yonlendirme-vektoru",
+        "sonda",
+        "kavram-silme",
+        "model-duzenleme"
+      ],
+      "contentHash": "sha256:4e73d0163107dc32bc615a736012b6aedd8fbacca887cb8a30a36bc6ec482382",
+      "path": "content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 18
+    },
+    {
+      "articleId": "article_59ad4e2b-9b86-4303-90b2-1b3d3724312d",
+      "title": "Atıf: Model Neden Böyle Dedi?",
+      "slug": "atif-model-neden-boyle-dedi",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 77,
+      "summary": "'Model neden böyle dedi' sorusunun tek soru olmadığını gösterir: girdinin hangi parçasına, ağın hangi bileşenine ve eğitim verisinin hangi örneğine atfedileceği üç ayrı sorudur, üç ayrı yöntem ailesi ve üç ayrı sadakat sınavı ister. Girdiye atıfta gradyan, pertürbasyon ve oyun kuramı ailelerini kurar ve sınavlarını verir: ağırlıkları rastgeleleştirilmiş modelde bazı ısı haritaları değişmiyor, sil-ve-yeniden-eğit ölçütünde çoğu yöntem rastgele seçimi geçemiyor, iskele saldırısıyla istenen açıklama uydurulabiliyor, ve tam ile doğrusal olan her yöntemin zengin model sınıflarında rastgele tahmini geçememesi kanıtlanmış durumda. Bileşene atıfta 74'ün yamasının ucuz yaklaşıklıkları ile 75'in parçalarından kurulan çizgeleri birleştirir. Eğitim verisine atıfta etki fonksiyonlarını, izleri ve veri modellerini kurar; etkinin tek bir örnekte toplanmadığını ve büyük modellerde yöntemin zayıfladığını yazar. Kapanışta modelin kendi gerekçesini bu üçünün yanına koyar: ipucu eklenince cevap değişiyor ama gerekçe ipucu anmıyor, anma oranı çoğu ayarda yüzde 20'nin altında, ve bu sınavların ölçtüğü şey iç işleyiş değil çıktı düzeyinde tutarlılık.",
+      "tags": [
+        "atif",
+        "sadakat",
+        "oznitelik-atfi",
+        "etki-fonksiyonu",
+        "gerekce-sadakati"
+      ],
+      "contentHash": "sha256:ed6aa2152ec279ae7b95e2685ac25e3ea0cf8fc2597c3aef53a27f7342c61640",
+      "path": "content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 18
+    },
+    {
+      "articleId": "article_52181264-3d26-49d0-9ec1-389114608a81",
+      "title": "Beliren Yetenekler Tartışması: Aniden mi Geliyor?",
+      "slug": "beliren-yetenekler-tartismasi-aniden-mi-geliyor",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 78,
+      "summary": "5 ve 9'un bu numaraya bıraktığı borcu öder: ölçek büyürken bazı yeteneklerin birdenbire ortaya çıktığı iddiası bugün nerede duruyor? İddiayı kuran çalışmayı, cetvel itirazını — beliren yetenek iddialarının yüzde 92'sinden fazlası iki kesikli ölçüde toplanıyor ve aynı numarayla görüntü modellerinde de sıçrama üretilebiliyor — ve itiraza gelen iki karşı ölçümü verir: yatay eksene model boyu yerine ön eğitim kaybı konduğunda eşik ölçünün sürekliliğinden bağımsız olarak duruyor, ve çözünürlüğü artıran bir ölçme yöntemi hem küçük modellerde sürekli ilerlemeyi hem standart eğriye oturmayan bir hızlanmayı gösteriyor. Sıçramanın altındaki sürekli süreçleri mekanizma düzeyinde sıralar: kullanım sıklığına göre sırayla öğrenilen ayrık beceri parçaları, gizli ilerleme, geç genelleme, indüksiyon başlarının faz geçişi. Karıştıran etkenleri ayırır: örnekle öğrenme, bellek ve dil bilgisi; test görevine eğitim. Kapanışta belirmenin ne kadar öngörülebilir olduğunu ölçümleriyle tablolaştırır: eğitimden önce yüzde 0,05 sapma, dört kat hesaba kadar belirme yasası, yüz modelden kurulan gözlemsel ölçek yasaları — ve ters ölçeklemenin bu tabloya koyduğu sınırı.",
+      "tags": [
+        "beliren-yetenekler",
+        "olcek-yasalari",
+        "metrik-secimi",
+        "faz-gecisi",
+        "ongorulebilirlik"
+      ],
+      "contentHash": "sha256:fe6c936e5f348ef27db99876aad5897cf49285c4233a07a236d80b1bcf5aa7e3",
+      "path": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 18
     }
   ]
 }

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Dört bloklu şema ve altında bir ayar kutusu. Birinci blok ekleme: aktivasyona alfa çarpı yön eklenir, seçilen katmanda ve seçilen konumlarda; alfa büyüdükçe davranış artar, akıcılık düşer. İkinci blok yön silme: aktivasyonun o yöne izdüşümü çıkarılır, davranışın taşıyıcısı kanaldan kaldırılır; kapalı biçimli sürüm silmenin eksiksizliğini kanıtlar. Üçüncü blok kelepçeleme: bir sözlük parçasının etkinliği en yüksek değerinin katına sabitlenir, yalnızca sözlük parçalarına uygulanır, 75'in köprü örneğinde 10 kat. Dördüncü blok koşullu müdahale: bir sonda girdiyi sınıflandırır, koşul tutarsa müdahale uygulanır, tutmazsa model dokunulmadan geçer. Altta üç ayar: hangi katman, hangi token konumları, hangi katsayı; aynı yön farklı ayarla farklı sonuç verir ve katsayı büyüdükçe yardımseverlik düşer.">
+  <rect x="20" y="30" width="330" height="118" fill="var(--surface-muted)" />
+  <text x="30" y="52" font-size="13" font-weight="bold" fill="var(--text)">1 · ekleme</text>
+  <text x="30" y="74" font-size="13" fill="var(--text)">a ← a + α · v</text>
+  <text x="30" y="94" font-size="13" fill="var(--text)">seçilen katmanda, seçilen konumlarda</text>
+  <text x="30" y="114" font-size="13" fill="var(--text-muted)">α büyüdükçe davranış artar, akıcılık düşer</text>
+  <text x="30" y="136" font-size="13" fill="var(--text-faint)">soru: bu yön davranışı üretmeye yeter mi?</text>
+
+  <rect x="370" y="30" width="330" height="118" fill="var(--bg)" stroke="var(--border)" />
+  <text x="380" y="52" font-size="13" font-weight="bold" fill="var(--text)">2 · yön silme</text>
+  <text x="380" y="74" font-size="13" fill="var(--text)">a ← a − (a · v̂) v̂</text>
+  <text x="380" y="94" font-size="13" fill="var(--text)">taşıyıcı kanaldan kaldırılır</text>
+  <text x="380" y="114" font-size="13" fill="var(--text-muted)">kapalı biçimli sürüm silmeyi kanıtlar</text>
+  <text x="380" y="136" font-size="13" fill="var(--text-faint)">soru: bu yön davranış için gerekli mi?</text>
+
+  <rect x="20" y="160" width="330" height="118" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="182" font-size="13" font-weight="bold" fill="var(--text)">3 · kelepçeleme</text>
+  <text x="30" y="204" font-size="13" fill="var(--text)">parça etkinliği ← c × en yüksek değer</text>
+  <text x="30" y="224" font-size="13" fill="var(--text)">yalnızca sözlük parçalarına uygulanır</text>
+  <text x="30" y="244" font-size="13" fill="var(--text-muted)">75'in köprü örneğinde c = 10</text>
+  <text x="30" y="266" font-size="13" fill="var(--text-faint)">parça ölü ya da emilmişse etkisiz</text>
+
+  <rect x="370" y="160" width="330" height="118" fill="var(--surface-muted)" />
+  <text x="380" y="182" font-size="13" font-weight="bold" fill="var(--text)">4 · koşullu müdahale</text>
+  <text x="380" y="204" font-size="13" fill="var(--text)">sonda(a) koşulu tutarsa uygula</text>
+  <text x="380" y="224" font-size="13" fill="var(--text)">tutmazsa model dokunulmadan geçer</text>
+  <text x="380" y="244" font-size="13" fill="var(--text-muted)">“girdi nefret söylemiyse reddet”</text>
+  <text x="380" y="266" font-size="13" fill="var(--text-faint)">sonda + yön; iki aracın birleşimi</text>
+
+  <rect x="20" y="296" width="680" height="86" fill="var(--accent-soft)" />
+  <text x="30" y="318" font-size="13" font-weight="bold" fill="var(--text)">üç ayar sonucun içindedir</text>
+  <text x="30" y="340" font-size="13" fill="var(--text)">hangi katman · hangi token konumları · hangi katsayı</text>
+  <text x="30" y="362" font-size="13" fill="var(--text)">aynı yön farklı ayarla farklı sonuç verir; katsayı büyüdükçe yardımseverlik düşer</text>
+</svg>
