@@ -3206,3 +3206,69 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | 13:28 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch18-faz8-kapanis.md | — | ~1060 |
 | 13:29 | Session end: 42 writes across 30 files (items-b18.py, svgcheck-b18.py, abs.py, venue-b18.py, retry-b18.py) | 17 reads | ~100038 tok |
+
+## Session: 2026-09-09 14:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 14:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 14:50
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:53 | Edited artifacts/b19-research/idx-b19.py | modified in() | ~240 |
+| 15:00 | Created artifacts/b19-research/fetch-b19.py | — | ~7941 |
+| 15:03 | Created artifacts/b19-research/q.py | — | ~534 |
+| 15:13 | Created content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | — | ~8077 |
+| 15:15 | Created content/series/assets/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler/kaymanin-turleri.svg | — | ~1061 |
+| 15:16 | Created content/series/assets/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler/dogruluk-saglamlik-takasi.svg | — | ~876 |
+| 15:16 | Created content/series/assets/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler/ortalama-durum-en-kotu-durum.svg | — | ~1000 |
+| 15:16 | Edited content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | "tan örnek, ve dağılım içi" → "den 70,3" | ~261 |
+| 15:17 | Edited content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | inline fix | ~228 |
+| 15:17 | Edited content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | inline fix | ~223 |
+| 15:17 | Edited content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | inline fix | ~82 |
+| 15:21 | Created artifacts/b19-research/url-b19.py | — | ~726 |
+| 15:29 | Created content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | — | ~5932 |
+| 15:32 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | 1→3 lines | ~322 |
+| 15:32 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | 1→3 lines | ~253 |
+| 15:32 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | 3→5 lines | ~132 |
+| 15:33 | Created content/series/assets/seffaflik-model-kartlari-ve-sistem-kartlari/model-karti-sistem-karti.svg | — | ~1092 |
+| 15:34 | Created content/series/assets/seffaflik-model-kartlari-ve-sistem-kartlari/ne-yaziliyor-ne-yazilmiyor.svg | — | ~936 |
+| 15:34 | Created content/series/assets/seffaflik-model-kartlari-ve-sistem-kartlari/belgeleme-zaman-cizgisi.svg | — | ~1158 |
+| 15:41 | Created content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | — | ~6684 |
+| 15:43 | Created content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/goruntuyu-baglamanin-uc-yolu.svg | — | ~1050 |
+| 15:44 | Created content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/tasarim-uzayi-ablasyonu.svg | — | ~1138 |
+| 15:44 | Created content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/gorsel-olcutlerde-ne-olculuyor.svg | — | ~1013 |
+| 15:45 | Edited content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | 1→5 lines | ~436 |
+| 15:46 | Edited content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | 1→3 lines | ~268 |
+| 15:50 | Created content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md | — | ~5942 |
+| 15:52 | Created content/series/assets/ses-konusma-ve-gercek-zamanli-modeller/sesin-iki-token-ailesi.svg | — | ~857 |
+| 15:53 | Created content/series/assets/ses-konusma-ve-gercek-zamanli-modeller/gecikme-butcesi.svg | — | ~855 |
+| 15:53 | Created content/series/assets/ses-konusma-ve-gercek-zamanli-modeller/ses-olcutlerinde-ne-olculuyor.svg | — | ~871 |
+| 15:59 | Created .claude/launch.json | — | ~148 |
+| 16:06 | Edited docs/seri/YOL-HARITASI.md | 7→7 lines | ~158 |
+| 16:06 | Edited docs/seri/YOL-HARITASI.md | expanded (+12 lines) | ~355 |
+| 16:07 | Edited docs/seri/YOL-HARITASI.md | expanded (+63 lines) | ~1823 |
+| 16:07 | Edited docs/seri/YOL-HARITASI.md | expanded (+38 lines) | ~1081 |
+| 16:09 | Edited docs/seri/YOL-HARITASI.md | modified z() | ~2305 |
+| 16:09 | Edited docs/seri/YOL-HARITASI.md | 2→2 lines | ~66 |
+| 16:10 | Edited docs/seri/YOL-HARITASI.md | expanded (+44 lines) | ~1174 |
+| 16:15 | Created docs/seri/HANDOFF.md | — | ~7632 |
+| 16:22 | Batch 19 (79–82) tamamlandı: Faz 8 kapandı, Faz 9 açıldı | content/series/**, docs/seri/** | 563 test, build 82 yol, 83 rota 200, 24 PNG | ~— |
+| 16:16 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch19-faz9-acilis.md | — | ~993 |
+| 16:17 | Session end: 39 writes across 24 files (idx-b19.py, fetch-b19.py, q.py, saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md, kaymanin-turleri.svg) | 19 reads | ~209255 tok |
+
+## Session: 2026-09-09 16:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 16:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

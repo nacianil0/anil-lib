@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" role="img" aria-label="Üç satırlı tablo; sütunlar ölçüm katmanı, neyi ölçer, bulunulan yer. Tanıma: kelime hata oranı; aynı referans kümede eşit puana sahip iki modelden zero-shot olanı on iki başka kümede yüzde 55,2 daha az hata yapıyor ve en iyi modeller insanın sağlamlık aralığına giriyor. Temsil kalitesi: dondurulmuş temsilin üstüne küçük başlıklar takılarak on ayrı görevde ölçme; öz-denetimli modelleri aynı yordamla sıralayan ortak bir tahta, ama görev seçimi ölçülen şeyi tanımlıyor. Anlama ve akıl yürütme: konuşma, çevresel ses ve müzikte 27 beceriye yayılan 10 bin klip; insan 82,23, en iyi model 54,90, rastgele tahmin yaklaşık 26. Altta iki kayıt: kelime hata oranı doğru yazılmış ama yanlış anlaşılmış bir cevabı cezalandırmaz; ve yazıya geçmeyen duygu ile vurgu, kusursuz bir transkriptte bile kaybolur.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">ölçüm katmanı</text>
+  <text x="200" y="26" font-size="13" font-weight="bold" fill="var(--text)">neyi ölçer</text>
+  <text x="460" y="26" font-size="13" font-weight="bold" fill="var(--text)">bulunulan yer</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="64" fill="var(--surface-muted)" />
+  <text x="30" y="70" font-size="13" font-weight="bold" fill="var(--text)">tanıma</text>
+  <text x="200" y="70" font-size="13" fill="var(--text)">kelime hata oranı</text>
+  <text x="200" y="88" font-size="13" fill="var(--text-muted)">eşit referans puanıyla</text>
+  <text x="460" y="70" font-size="13" font-weight="bold" fill="var(--accent)">yüzde 55,2 daha az hata</text>
+  <text x="460" y="88" font-size="13" fill="var(--text-muted)">insanın sağlamlık aralığında</text>
+
+  <rect x="20" y="116" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="140" font-size="13" font-weight="bold" fill="var(--text)">temsil kalitesi</text>
+  <text x="200" y="140" font-size="13" fill="var(--text)">dondurulmuş temsil, küçük</text>
+  <text x="200" y="158" font-size="13" fill="var(--text)">başlık, on ayrı görev</text>
+  <text x="460" y="140" font-size="13" fill="var(--text)">ortak tahta, aynı yordam</text>
+  <text x="460" y="158" font-size="13" fill="var(--text-muted)">görev seçimi ölçüyü tanımlar</text>
+
+  <rect x="20" y="186" width="680" height="64" fill="var(--surface-muted)" />
+  <text x="30" y="210" font-size="13" font-weight="bold" fill="var(--text)">anlama</text>
+  <text x="200" y="210" font-size="13" fill="var(--text)">konuşma, ses ve müzikte</text>
+  <text x="200" y="228" font-size="13" fill="var(--text)">27 beceri, 10 bin klip</text>
+  <text x="460" y="210" font-size="13" font-weight="bold" fill="var(--accent)">insan 82,23 ↔ model 54,90</text>
+  <text x="460" y="228" font-size="13" fill="var(--text-muted)">rastgele tahmin ≈ 26</text>
+
+  <line x1="20" y1="260" x2="700" y2="260" stroke="var(--border)" />
+  <text x="20" y="282" font-size="13" fill="var(--text-muted)">Kelime hata oranı, doğru yazılmış ama yanlış anlaşılmış cevabı cezalandırmaz.</text>
+  <text x="20" y="300" font-size="13" fill="var(--text-muted)">Yazıya geçmeyen duygu ve vurgu, kusursuz bir transkriptte bile kaybolur.</text>
+</svg>

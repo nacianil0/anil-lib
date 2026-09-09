@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 352" role="img" aria-label="Üç satırlı karşılaştırma tablosu; sütunlar bağlama yolu, nasıl çalışır, dil modeline giren ve bedeli. Doğrudan izdüşüm: yama vektörleri küçük bir ağdan geçip metin token'larının yanına konur; dil modeline yama sayısı kadar görsel token girer, 336 piksellik karede 576, bedeli pencereden yer kaplaması. Yeniden örnekleme: sabit sayıda öğrenilebilir sorgu görüntü vektörlerine çapraz dikkatle bakar; dil modeline sabit sayıda token girer, bir çalışmada 64 bir başkasında 32, bedeli 188 milyon parametrelik ayrı bir birleştirici. Kapılı çapraz dikkat: dil modelinin katmanları arasına görüntüye bakan bloklar eklenir ve kapı sıfırdan açılır; dil modeline hiç görsel token girmez, bedeli gövdeye dokunmak ve daha çok eğitilebilir parametre. Altta iki kayıt: üç yol da aynı işi yapar ve farkları token bütçesinin nereye konduğudur; metin dizisi uzamıyorsa görüntü katmanların içinden okunuyordur.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">bağlama yolu</text>
+  <text x="210" y="26" font-size="13" font-weight="bold" fill="var(--text)">nasıl çalışır</text>
+  <text x="460" y="26" font-size="13" font-weight="bold" fill="var(--text)">dil modeline giren ve bedeli</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="44" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">doğrudan izdüşüm</text>
+  <text x="210" y="68" font-size="13" fill="var(--text)">yama vektörleri küçük bir</text>
+  <text x="210" y="86" font-size="13" fill="var(--text)">ağdan geçip metin</text>
+  <text x="210" y="104" font-size="13" fill="var(--text)">token'larının yanına konur</text>
+  <text x="460" y="68" font-size="13" fill="var(--text)">yama sayısı kadar token</text>
+  <text x="460" y="86" font-size="13" font-weight="bold" fill="var(--accent)">336 pikselde 576</text>
+  <text x="460" y="104" font-size="13" fill="var(--text-muted)">bedeli: pencereden yer</text>
+
+  <rect x="20" y="128" width="680" height="76" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="152" font-size="13" font-weight="bold" fill="var(--text)">yeniden örnekleme</text>
+  <text x="210" y="152" font-size="13" fill="var(--text)">sabit sayıda öğrenilebilir</text>
+  <text x="210" y="170" font-size="13" fill="var(--text)">sorgu, görüntü vektörlerine</text>
+  <text x="210" y="188" font-size="13" fill="var(--text)">çapraz dikkatle bakar</text>
+  <text x="460" y="152" font-size="13" fill="var(--text)">sabit sayıda token</text>
+  <text x="460" y="170" font-size="13" font-weight="bold" fill="var(--accent)">64 ya da 32</text>
+  <text x="460" y="188" font-size="13" fill="var(--text-muted)">bedeli: 188 milyon parametre</text>
+
+  <rect x="20" y="212" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="236" font-size="13" font-weight="bold" fill="var(--text)">kapılı çapraz dikkat</text>
+  <text x="210" y="236" font-size="13" fill="var(--text)">dil modelinin katmanları</text>
+  <text x="210" y="254" font-size="13" fill="var(--text)">arasına görüntüye bakan</text>
+  <text x="210" y="272" font-size="13" fill="var(--text)">bloklar eklenir, kapı açılır</text>
+  <text x="460" y="236" font-size="13" font-weight="bold" fill="var(--accent)">hiç görsel token girmez</text>
+  <text x="460" y="254" font-size="13" fill="var(--text-muted)">bedeli: gövdeye dokunmak,</text>
+  <text x="460" y="272" font-size="13" fill="var(--text-muted)">daha çok eğitilebilir parametre</text>
+
+  <line x1="20" y1="296" x2="700" y2="296" stroke="var(--border)" />
+  <text x="20" y="318" font-size="13" fill="var(--text-muted)">Üç yol da aynı işi yapar; fark, token bütçesinin nereye konduğudur.</text>
+  <text x="20" y="336" font-size="13" fill="var(--text-muted)">Metin dizisi uzamıyorsa görüntü katmanların içinden okunuyordur.</text>
+</svg>

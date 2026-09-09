@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 354" role="img" aria-label="İki satırlı karşılaştırma tablosu; sütunlar token ailesi, nasıl üretilir ve ne taşır, sınırı. Anlamsal token: maskelenmiş temsilleri ayırt etmeyi öğrenen öz-denetimli bir modelden gelir, ne söylendiğini ve uzun erimli yapıyı taşır; sınırı, ondan sesin kendisi geri üretilemez. Akustik token: evrişimli bir kodlayıcı ve artık vektör kuantizasyonuyla üretilir, bir çözücü sesi geri verir, ses rengini, konuşmacı kimliğini ve vurguyu taşır; sınırı, uzun erimli tutarlılığının zayıf olması. Altta melez düzen: önce anlamsal token'larla uzun erimli yapı üretilir, sonra o dizi akustik token'lara koşullanarak ses sentezlenir. En altta iki sayı: bir kodek saniyede 3 kilobitte 12 kilobitlik klasik bir kodeği geçiyor; gerçek zamanlı bir sistemde çerçeve hızı saniyede 12,5.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">token ailesi</text>
+  <text x="200" y="26" font-size="13" font-weight="bold" fill="var(--text)">nasıl üretilir ve ne taşır</text>
+  <text x="490" y="26" font-size="13" font-weight="bold" fill="var(--text)">sınırı</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="44" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">anlamsal token</text>
+  <text x="200" y="68" font-size="13" fill="var(--text)">maskelenmiş temsilleri ayırt</text>
+  <text x="200" y="86" font-size="13" fill="var(--text)">etmeyi öğrenen öz-denetim;</text>
+  <text x="200" y="104" font-size="13" fill="var(--text)">ne söylendiği, uzun erimli yapı</text>
+  <text x="490" y="68" font-size="13" fill="var(--accent)">sesin kendisi geri</text>
+  <text x="490" y="86" font-size="13" fill="var(--accent)">üretilemez</text>
+
+  <rect x="20" y="128" width="680" height="76" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="152" font-size="13" font-weight="bold" fill="var(--text)">akustik token</text>
+  <text x="200" y="152" font-size="13" fill="var(--text)">evrişimli kodlayıcı, artık vektör</text>
+  <text x="200" y="170" font-size="13" fill="var(--text)">kuantizasyonu, çözücü;</text>
+  <text x="200" y="188" font-size="13" fill="var(--text)">ses rengi, kimlik, vurgu</text>
+  <text x="490" y="152" font-size="13" fill="var(--accent)">uzun erimli tutarlılık</text>
+  <text x="490" y="170" font-size="13" fill="var(--accent)">zayıf</text>
+
+  <line x1="20" y1="212" x2="700" y2="212" stroke="var(--border)" />
+  <text x="30" y="236" font-size="13" font-weight="bold" fill="var(--text)">melez düzen</text>
+  <text x="30" y="260" font-size="13" fill="var(--text)">önce anlamsal token'larla uzun erimli yapı üretilir;</text>
+  <text x="30" y="280" font-size="13" fill="var(--text)">sonra o dizi akustik token'lara koşullanarak ses sentezlenir.</text>
+
+  <line x1="20" y1="298" x2="700" y2="298" stroke="var(--border)" />
+  <text x="20" y="320" font-size="13" fill="var(--text-muted)">Bir kodek saniyede 3 kilobitte, 12 kilobitlik klasik kodeği geçiyor.</text>
+  <text x="20" y="338" font-size="13" fill="var(--text-muted)">Gerçek zamanlı bir sistemde çerçeve hızı saniyede 12,5.</text>
+</svg>

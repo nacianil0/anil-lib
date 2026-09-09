@@ -19,6 +19,9 @@
 
 ## Key Learnings
 
+- [2026-09-09] Seri kaynakçasında **hash içeren konferans URL'si elle yazılmaz**. `papers.nips.cc/.../hash/<32 hex>` ve `proceedings.iclr.cc/.../hash/<32 hex>` biçimleri bellekten yazılınca doğru görünüp yanlış oluyor; Batch 19'da böyle üç bağlantı yakalandı. Yordam: `artifacts/b19-research/url-b19.py "başlık"` ile indirilmiş dizin sayfasından çöz, sonra `links-b19.py <makale.md>` ile bütün bağlantıları çekip `<title>` karşılaştır. ACM/IEEE/Springer 403/202 döndürüyorsa künye `doi-b19.py` (Crossref) ile doğrulanır.
+- [2026-09-09] Bir kaynağı "hakemsiz" saymadan önce **başlıkla Crossref `query.bibliographic` taraması** yapılmalı: arXiv'in `comment` alanı boş olsa da dergi kaydı olabiliyor. Batch 19'da iki kaynak (32 bin model kartı çözümlemesi ve veri kökeni denetimi) bu yolla arXiv ön baskısından Nature Machine Intelligence 2024'e taşındı.
+
 - Seri makalelerinde `check-series-content.cjs` düzyazı sayısı ≈ `wc -w` × 0,79. 2.000 eşiğini rahat geçmek için taslağı `wc -w` ≥ 2.550 hedefleyerek yaz; Batch 5'in dördü 2.471–2.752 aralığında geldi ve düzyazı sayıları 1.954–2.180 çıktı.
 - Seri dev sunucusu yerelde parola kapısı olmadan çalışır: `SITE_PASSWORD_SHA256` tanımsızken `getGateConfig()` null döner ve middleware dev modda isteği geçirir. Render doğrulaması için gate env değişkeni gerekmez (Playwright için gerekir — o ayrı).
 - SVG dosyaları makale gövdesinin `content_hash`'ine girmez (hash yalnızca frontmatter sonrası gövdenin SHA-256'sı). Şekil düzeltmesinden sonra `sync-series-hashes.cjs` çalıştırmak gerekmez; makale metni değişmediyse katalog da değişmez.

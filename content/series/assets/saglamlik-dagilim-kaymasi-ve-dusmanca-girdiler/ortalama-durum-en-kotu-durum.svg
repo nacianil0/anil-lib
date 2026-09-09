@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 352" role="img" aria-label="Beş satırlı tablo; sütunlar girdiyi kim seçiyor, ölçünün adı, seriden bir ölçüm. Birinci satır, aynı kaynak: dağılım içi puan; sınav kümesinin ortalaması. İkinci satır, aynı yordam yeniden toplar: yeniden toplanmış sınav; on bir ile on dört puanlık düşüş ve sıralamanın korunması. Üçüncü satır, dünya: dağılım dışı puan; hastaneler arası 93,2'den 70,3'e. Dördüncü satır, tanımlı bir bozulma: sentetik bozulma altında puan; on beş bozulma türü, beş şiddet düzeyi. Beşinci satır, saldırgan arar: en kötü durum puanı; yirmi adımlı saldırıda 95,2'den 3,5'e, dil modelinde gradyanla aranan sonek. Altta iki kayıt: aşağı inildikçe ölçüm ortalama durumdan en kötü duruma yaklaşır ve sayı değişir; en alttaki satır saldırganın bütçesine bağlıdır, kaç deneme yapabildiği ve neyi görebildiği söylenmeden okunamaz.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">girdiyi kim seçiyor</text>
+  <text x="250" y="26" font-size="13" font-weight="bold" fill="var(--text)">ölçünün adı</text>
+  <text x="450" y="26" font-size="13" font-weight="bold" fill="var(--text)">seriden bir ölçüm</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="44" width="680" height="36" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">aynı kaynak</text>
+  <text x="250" y="68" font-size="13" fill="var(--text)">dağılım içi puan</text>
+  <text x="450" y="68" font-size="13" fill="var(--text)">sınav kümesinin ortalaması</text>
+
+  <rect x="20" y="84" width="680" height="54" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="108" font-size="13" font-weight="bold" fill="var(--text)">aynı yordam, yeniden</text>
+  <text x="30" y="126" font-size="13" font-weight="bold" fill="var(--text)">toplama</text>
+  <text x="250" y="108" font-size="13" fill="var(--text)">yeniden toplanmış sınav</text>
+  <text x="450" y="108" font-size="13" fill="var(--text)">on bir–on dört puan düşüş</text>
+  <text x="450" y="126" font-size="13" fill="var(--text-muted)">sıralama korunuyor</text>
+
+  <rect x="20" y="142" width="680" height="36" fill="var(--surface-muted)" />
+  <text x="30" y="166" font-size="13" font-weight="bold" fill="var(--text)">dünya</text>
+  <text x="250" y="166" font-size="13" fill="var(--text)">dağılım dışı puan</text>
+  <text x="450" y="166" font-size="13" font-weight="bold" fill="var(--accent)">hastaneler arası 93,2 → 70,3</text>
+
+  <rect x="20" y="182" width="680" height="36" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="206" font-size="13" font-weight="bold" fill="var(--text)">tanımlı bir bozulma</text>
+  <text x="250" y="206" font-size="13" fill="var(--text)">sentetik bozulma altında</text>
+  <text x="450" y="206" font-size="13" fill="var(--text)">on beş tür, beş şiddet düzeyi</text>
+
+  <rect x="20" y="222" width="680" height="54" fill="var(--surface-muted)" />
+  <text x="30" y="246" font-size="13" font-weight="bold" fill="var(--text)">saldırgan arar</text>
+  <text x="250" y="246" font-size="13" fill="var(--text)">en kötü durum puanı</text>
+  <text x="450" y="246" font-size="13" font-weight="bold" fill="var(--accent)">yirmi adımda 95,2 → 3,5</text>
+  <text x="450" y="264" font-size="13" fill="var(--text-muted)">metinde gradyanla aranan sonek</text>
+
+  <line x1="20" y1="290" x2="700" y2="290" stroke="var(--border)" />
+  <text x="20" y="312" font-size="13" fill="var(--text-muted)">Aşağı inildikçe ölçüm ortalama durumdan en kötü duruma yaklaşır; sayı da değişir.</text>
+  <text x="20" y="332" font-size="13" fill="var(--text-muted)">En alttaki satır saldırganın bütçesine bağlıdır: kaç deneme, neyi görüyor.</text>
+</svg>

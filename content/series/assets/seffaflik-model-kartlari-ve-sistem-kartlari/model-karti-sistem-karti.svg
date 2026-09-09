@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 378" role="img" aria-label="Üç sütunlu karşılaştırma tablosu; sütunlar bölüm, model kartında ne var, sistem kartında ne var. Kimlik ve amaç: model kartında model ayrıntıları ile amaçlanan ve amaçlanmayan kullanım; sistem kartında kullanım politikası ve dağıtım kararı. Veri: model kartında eğitim ve değerlendirme verisi bölümü; sistem kartında veri kategorileri ve ortaklıklar, küme listesi yok. Performans: model kartında ayrıştırılmış değerlendirme, gruplar ve kesişimler; sistem kartında güvenlik değerlendirmeleri, ret ve aşırı ret oranları. Risk: model kartında etik değerlendirmeler ve uyarılar; sistem kartında kırmızı takım, ajan güvenliği, hizalama ve güvenlik düzeyi. Denetim: model kartında bölüm yok; sistem kartında üçüncü taraf değerlendirmeleri var ama erişim koşulu yazılı değil. Altta kayıt: model kartı bir modeli, sistem kartı bir dağıtımı belgeler ve ikisi de geliştiricinin beyanıdır.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">bölüm</text>
+  <text x="210" y="26" font-size="13" font-weight="bold" fill="var(--text)">model kartı</text>
+  <text x="460" y="26" font-size="13" font-weight="bold" fill="var(--text)">sistem kartı</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="44" width="680" height="54" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">kimlik ve amaç</text>
+  <text x="210" y="68" font-size="13" fill="var(--text)">model ayrıntıları; amaçlanan</text>
+  <text x="210" y="86" font-size="13" fill="var(--text)">ve amaçlanmayan kullanım</text>
+  <text x="460" y="68" font-size="13" fill="var(--text)">kullanım politikası;</text>
+  <text x="460" y="86" font-size="13" fill="var(--text)">dağıtım kararı</text>
+
+  <rect x="20" y="102" width="680" height="54" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="126" font-size="13" font-weight="bold" fill="var(--text)">veri</text>
+  <text x="210" y="126" font-size="13" fill="var(--text)">eğitim ve değerlendirme</text>
+  <text x="210" y="144" font-size="13" fill="var(--text)">verisi bölümü</text>
+  <text x="460" y="126" font-size="13" fill="var(--text)">kategoriler ve ortaklıklar;</text>
+  <text x="460" y="144" font-size="13" fill="var(--accent)">küme listesi yok</text>
+
+  <rect x="20" y="160" width="680" height="54" fill="var(--surface-muted)" />
+  <text x="30" y="184" font-size="13" font-weight="bold" fill="var(--text)">performans</text>
+  <text x="210" y="184" font-size="13" fill="var(--text)">ayrıştırılmış değerlendirme;</text>
+  <text x="210" y="202" font-size="13" fill="var(--text)">gruplar ve kesişimler</text>
+  <text x="460" y="184" font-size="13" fill="var(--text)">güvenlik değerlendirmeleri;</text>
+  <text x="460" y="202" font-size="13" fill="var(--text)">ret ve aşırı ret oranları</text>
+
+  <rect x="20" y="218" width="680" height="54" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="242" font-size="13" font-weight="bold" fill="var(--text)">risk</text>
+  <text x="210" y="242" font-size="13" fill="var(--text)">etik değerlendirmeler ve</text>
+  <text x="210" y="260" font-size="13" fill="var(--text)">uyarılar</text>
+  <text x="460" y="242" font-size="13" fill="var(--text)">kırmızı takım, ajan güvenliği,</text>
+  <text x="460" y="260" font-size="13" fill="var(--text)">hizalama, güvenlik düzeyi</text>
+
+  <rect x="20" y="276" width="680" height="54" fill="var(--surface-muted)" />
+  <text x="30" y="300" font-size="13" font-weight="bold" fill="var(--text)">denetim</text>
+  <text x="210" y="300" font-size="13" fill="var(--text-muted)">bölüm yok</text>
+  <text x="460" y="300" font-size="13" fill="var(--text)">üçüncü taraf değerlendirmeleri;</text>
+  <text x="460" y="318" font-size="13" fill="var(--accent)">erişim koşulu yazılı değil</text>
+
+  <line x1="20" y1="340" x2="700" y2="340" stroke="var(--border)" />
+  <text x="20" y="362" font-size="13" fill="var(--text-muted)">Model kartı bir modeli, sistem kartı bir dağıtımı belgeler; ikisi de beyandır.</text>
+</svg>

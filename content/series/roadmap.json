@@ -135,8 +135,8 @@
         { "order": 76, "title": "Aktivasyonlara Müdahale: Yönlendirme ve Sondalar", "status": "yayinda", "slug": "aktivasyonlara-mudahale-yonlendirme-ve-sondalar" },
         { "order": 77, "title": "Atıf: Model Neden Böyle Dedi?", "status": "yayinda", "slug": "atif-model-neden-boyle-dedi" },
         { "order": 78, "title": "Beliren Yetenekler Tartışması: Aniden mi Geliyor?", "status": "yayinda", "slug": "beliren-yetenekler-tartismasi-aniden-mi-geliyor" },
-        { "order": 79, "title": "Robustluk: Dağılım Kayması ve Adversarial Girdiler", "status": "planlandi" },
-        { "order": 80, "title": "Şeffaflık: Model Kartları ve Sistem Kartları", "status": "planlandi" }
+        { "order": 79, "title": "Sağlamlık: Dağılım Kayması ve Düşmanca Girdiler", "status": "yayinda", "slug": "saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler" },
+        { "order": 80, "title": "Şeffaflık: Model Kartları ve Sistem Kartları", "status": "yayinda", "slug": "seffaflik-model-kartlari-ve-sistem-kartlari" }
       ]
     },
     {
@@ -144,8 +144,8 @@
       "title": "Çoklu Modalite ve Verimlilik",
       "description": "Görüntüden sese, MoE'den alternatif mimarilere: modelin sınırlarını genişletmek.",
       "articles": [
-        { "order": 81, "title": "Görüntüyü Anlamak: Vision-Language Modelleri", "status": "planlandi" },
-        { "order": 82, "title": "Ses, Konuşma ve Gerçek Zamanlı Modeller", "status": "planlandi" },
+        { "order": 81, "title": "Görüntüyü Anlamak: Görüntü-Dil Modelleri", "status": "yayinda", "slug": "goruntuyu-anlamak-goruntu-dil-modelleri" },
+        { "order": 82, "title": "Ses, Konuşma ve Gerçek Zamanlı Modeller", "status": "yayinda", "slug": "ses-konusma-ve-gercek-zamanli-modeller" },
         { "order": 83, "title": "Görüntü ve Video Üretimi: Diffusion'a Giriş", "status": "planlandi" },
         { "order": 84, "title": "Birleşik Modeller: Her Şey Token mı?", "status": "planlandi" },
         { "order": 85, "title": "Verimli Mimariler: Uzman Karışımları (MoE)", "status": "planlandi" },

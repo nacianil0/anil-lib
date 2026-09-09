@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 394" role="img" aria-label="Sekiz satırlı zaman çizgisi; sütunlar yıl, belge, belgenin statüsü. 2018: veri açıklaması ve veri künyesi önerileri, akademik öneri. 2019: model kartı, tedarikçi uygunluk beyanı ve denetimin etkisinin ölçülmesi, raporlama biçimi. 2020: iç algoritmik denetim çerçevesi, denetimin girdisi. 2021: bir web derleminin sonradan belgelenmesi, eksikliğin ölçülmesi. 2022: veri kartı önerisi ve sağlayıcı sistem kartları, ürün belgesi. 2023: şeffaflık endeksinin ilk turu, ölçülen bir şey. 2024: Avrupa Birliği yasasının teknik dokümantasyon eki ve otuz iki bin kartın çözümlemesi, yasal yükümlülük. 2025: yüz sayfayı aşan sistem kartları, güvenlik düzeyi kararı. Altta kayıt: zincir boyunca belgenin biçimi korunmuş, onu doğrulayan bağımsız düzenek hâlâ eksik.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">yıl</text>
+  <text x="110" y="26" font-size="13" font-weight="bold" fill="var(--text)">belge</text>
+  <text x="470" y="26" font-size="13" font-weight="bold" fill="var(--text)">belgenin statüsü</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="44" width="680" height="38" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" font-weight="bold" fill="var(--text)">2018</text>
+  <text x="110" y="68" font-size="13" fill="var(--text)">veri açıklaması ve veri künyesi önerileri</text>
+  <text x="470" y="68" font-size="13" fill="var(--text-muted)">akademik öneri</text>
+
+  <rect x="20" y="82" width="680" height="38" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="106" font-size="13" font-weight="bold" fill="var(--text)">2019</text>
+  <text x="110" y="106" font-size="13" fill="var(--text)">model kartı; tedarikçi beyanı; denetimin etkisi</text>
+  <text x="470" y="106" font-size="13" fill="var(--text-muted)">raporlama biçimi</text>
+
+  <rect x="20" y="120" width="680" height="38" fill="var(--surface-muted)" />
+  <text x="30" y="144" font-size="13" font-weight="bold" fill="var(--text)">2020</text>
+  <text x="110" y="144" font-size="13" fill="var(--text)">iç algoritmik denetim çerçevesi</text>
+  <text x="470" y="144" font-size="13" fill="var(--text-muted)">denetimin girdisi</text>
+
+  <rect x="20" y="158" width="680" height="38" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="182" font-size="13" font-weight="bold" fill="var(--text)">2021</text>
+  <text x="110" y="182" font-size="13" fill="var(--text)">bir web derleminin sonradan belgelenmesi</text>
+  <text x="470" y="182" font-size="13" fill="var(--text-muted)">eksikliğin ölçülmesi</text>
+
+  <rect x="20" y="196" width="680" height="38" fill="var(--surface-muted)" />
+  <text x="30" y="220" font-size="13" font-weight="bold" fill="var(--text)">2022</text>
+  <text x="110" y="220" font-size="13" fill="var(--text)">veri kartı; sağlayıcıların sistem kartları</text>
+  <text x="470" y="220" font-size="13" fill="var(--text-muted)">ürün belgesi</text>
+
+  <rect x="20" y="234" width="680" height="38" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="258" font-size="13" font-weight="bold" fill="var(--text)">2023</text>
+  <text x="110" y="258" font-size="13" fill="var(--text)">şeffaflık endeksinin ilk turu</text>
+  <text x="470" y="258" font-size="13" fill="var(--text-muted)">ölçülen bir şey</text>
+
+  <rect x="20" y="272" width="680" height="38" fill="var(--surface-muted)" />
+  <text x="30" y="296" font-size="13" font-weight="bold" fill="var(--text)">2024</text>
+  <text x="110" y="296" font-size="13" fill="var(--text)">yasanın teknik dokümantasyon eki; 32 bin kart</text>
+  <text x="470" y="296" font-size="13" font-weight="bold" fill="var(--accent)">yasal yükümlülük</text>
+
+  <rect x="20" y="310" width="680" height="38" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="334" font-size="13" font-weight="bold" fill="var(--text)">2025</text>
+  <text x="110" y="334" font-size="13" fill="var(--text)">yüz sayfayı aşan sistem kartları</text>
+  <text x="470" y="334" font-size="13" fill="var(--text-muted)">güvenlik düzeyi kararı</text>
+
+  <line x1="20" y1="356" x2="700" y2="356" stroke="var(--border)" />
+  <text x="20" y="378" font-size="13" fill="var(--text-muted)">Zincir boyunca belgenin biçimi korundu; onu doğrulayan düzenek hâlâ eksik.</text>
+</svg>

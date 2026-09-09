@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="İki bölmeli şekil. Üstte model kartı bölümlerinin doldurulma oranları yatay çubuklarla: eğitim yüzde 74,3, sınırlar yüzde 17,4, değerlendirme yüzde 15,4, atıf yüzde 14,4, çevresel etki yüzde 2,0. Çubukların altında kayıt: kartların kendisi depoların yüzde 44,2'sinde var, toplam 32.111 kart incelendi. Altta ikinci bölme, dışarıdan okuyanın en çok ihtiyaç duyduğu üç bölüm ve karşılıkları: nerede çalışmıyor sorusu sınırlar bölümüne karşılık gelir ve yüzde 17,4 doldurulmuştur; hangi koşulda ölçüldü sorusu değerlendirme bölümüne karşılık gelir ve yüzde 15,4 doldurulmuştur; kaça mal oldu sorusu çevresel etki bölümüne karşılık gelir ve yüzde 2,0 doldurulmuştur. En altta kayıt: en kolay yazılan bölüm en çok, en gerekli üç bölüm en az dolduruluyor.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">model kartı bölümü</text>
+  <text x="250" y="26" font-size="13" font-weight="bold" fill="var(--text)">doldurulma oranı</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <text x="30" y="62" font-size="13" fill="var(--text)">eğitim</text>
+  <rect x="250" y="51" width="334" height="14" fill="var(--cool)" />
+  <text x="592" y="62" font-size="13" fill="var(--text)">yüzde 74,3</text>
+
+  <text x="30" y="92" font-size="13" fill="var(--text)">sınırlar</text>
+  <rect x="250" y="81" width="78" height="14" fill="var(--accent)" />
+  <text x="336" y="92" font-size="13" fill="var(--text)">yüzde 17,4</text>
+
+  <text x="30" y="122" font-size="13" fill="var(--text)">değerlendirme</text>
+  <rect x="250" y="111" width="69" height="14" fill="var(--accent)" />
+  <text x="327" y="122" font-size="13" fill="var(--text)">yüzde 15,4</text>
+
+  <text x="30" y="152" font-size="13" fill="var(--text)">atıf</text>
+  <rect x="250" y="141" width="65" height="14" fill="var(--accent)" />
+  <text x="323" y="152" font-size="13" fill="var(--text)">yüzde 14,4</text>
+
+  <text x="30" y="182" font-size="13" fill="var(--text)">çevresel etki</text>
+  <rect x="250" y="171" width="9" height="14" fill="var(--accent)" />
+  <text x="267" y="182" font-size="13" fill="var(--text)">yüzde 2,0</text>
+
+  <text x="30" y="212" font-size="13" fill="var(--text-muted)">Kart, incelenen depoların yüzde 44,2'sinde var; toplam 32.111 kart.</text>
+  <line x1="20" y1="228" x2="700" y2="228" stroke="var(--border)" />
+
+  <text x="30" y="252" font-size="13" font-weight="bold" fill="var(--text)">dışarıdan okuyanın sorduğu üç soru</text>
+  <text x="30" y="280" font-size="13" fill="var(--text)">nerede çalışmıyor</text>
+  <text x="280" y="280" font-size="13" fill="var(--text-muted)">sınırlar bölümü</text>
+  <text x="500" y="280" font-size="13" fill="var(--text)">yüzde 17,4 dolu</text>
+  <text x="30" y="304" font-size="13" fill="var(--text)">hangi koşulda ölçüldü</text>
+  <text x="280" y="304" font-size="13" fill="var(--text-muted)">değerlendirme bölümü</text>
+  <text x="500" y="304" font-size="13" fill="var(--text)">yüzde 15,4 dolu</text>
+  <text x="30" y="328" font-size="13" fill="var(--text)">kaça mal oldu</text>
+  <text x="280" y="328" font-size="13" fill="var(--text-muted)">çevresel etki bölümü</text>
+  <text x="500" y="328" font-size="13" fill="var(--text)">yüzde 2,0 dolu</text>
+
+  <line x1="20" y1="346" x2="700" y2="346" stroke="var(--border)" />
+  <text x="20" y="368" font-size="13" fill="var(--text-muted)">En kolay yazılan bölüm en çok, en gerekli üç bölüm en az dolduruluyor.</text>
+</svg>

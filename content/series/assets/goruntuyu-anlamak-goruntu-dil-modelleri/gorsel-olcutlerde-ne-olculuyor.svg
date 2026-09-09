@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 386" role="img" aria-label="Dört satırlı tablo; sütunlar ölçüt, neyi ölçer, sonuç. Üniversite düzeyinde sınav: altı alan, otuz konu ve 183 alt alandan 11,5 bin soru, otuz farklı görsel türü; en güçlü iki modelin puanı yüzde 56 ve 59. Görsel bağlamda matematik: 6.141 örnek; en iyi model yüzde 49,9 ve insanın 10,4 puan gerisinde. Temel görsel örüntüler: dokuz örüntüde 150 çift ve 300 soru, bir çift ancak iki sorusu da doğruysa sayılıyor; insan 95,7, en iyi iki model 40,7 ve 38,7, rastgele tahmin 25,0. Basit çizim görevleri: iki çember kesişiyor mu, iki çizgi kaç kez kesişiyor gibi yedi görev; dört modelin ortalaması 58,07, en iyisi 77,84, insanın beklenen doğruluğu 100. Altta iki kayıt: doğrusal sonda, bilginin görüntü kodlayıcısında bulunduğunu ve dil modeline geçmediğini gösteriyor; şekiller birbirinden uzaklaştırılınca aynı modeller yüzde yüze yakın doğruluk veriyor.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">ölçüt</text>
+  <text x="220" y="26" font-size="13" font-weight="bold" fill="var(--text)">neyi ölçer</text>
+  <text x="460" y="26" font-size="13" font-weight="bold" fill="var(--text)">sonuç</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="64" fill="var(--surface-muted)" />
+  <text x="30" y="70" font-size="13" font-weight="bold" fill="var(--text)">üniversite sınavı</text>
+  <text x="220" y="70" font-size="13" fill="var(--text)">altı alan, otuz konu,</text>
+  <text x="220" y="88" font-size="13" fill="var(--text)">11,5 bin soru</text>
+  <text x="460" y="70" font-size="13" fill="var(--text)">iki güçlü model:</text>
+  <text x="460" y="88" font-size="13" font-weight="bold" fill="var(--accent)">yüzde 56 ve 59</text>
+
+  <rect x="20" y="116" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="140" font-size="13" font-weight="bold" fill="var(--text)">görsel matematik</text>
+  <text x="220" y="140" font-size="13" fill="var(--text)">6.141 örnek, diyagram</text>
+  <text x="220" y="158" font-size="13" fill="var(--text)">ve grafik üstünde</text>
+  <text x="460" y="140" font-size="13" fill="var(--text)">en iyi model 49,9</text>
+  <text x="460" y="158" font-size="13" fill="var(--text-muted)">insanın 10,4 puan gerisi</text>
+
+  <rect x="20" y="186" width="680" height="64" fill="var(--surface-muted)" />
+  <text x="30" y="210" font-size="13" font-weight="bold" fill="var(--text)">temel görsel örüntüler</text>
+  <text x="220" y="210" font-size="13" fill="var(--text)">150 çift, 300 soru; çift</text>
+  <text x="220" y="228" font-size="13" fill="var(--text)">ancak ikisi de doğruysa</text>
+  <text x="460" y="210" font-size="13" font-weight="bold" fill="var(--accent)">insan 95,7 ↔ model 40,7</text>
+  <text x="460" y="228" font-size="13" fill="var(--text-muted)">rastgele tahmin 25,0</text>
+
+  <rect x="20" y="256" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="280" font-size="13" font-weight="bold" fill="var(--text)">basit çizimler</text>
+  <text x="220" y="280" font-size="13" fill="var(--text)">yedi görev: kesişme,</text>
+  <text x="220" y="298" font-size="13" fill="var(--text)">sayma, daire içine alma</text>
+  <text x="460" y="280" font-size="13" fill="var(--text)">ortalama 58,07</text>
+  <text x="460" y="298" font-size="13" fill="var(--text-muted)">en iyisi 77,84; insan 100</text>
+
+  <line x1="20" y1="330" x2="700" y2="330" stroke="var(--border)" />
+  <text x="20" y="352" font-size="13" fill="var(--text-muted)">Doğrusal sonda: bilgi kodlayıcıda var, dil modeline geçmiyor.</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-muted)">Şekiller birbirinden uzaklaştırılınca doğruluk yüzde yüze yaklaşıyor.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 310" role="img" aria-label="İki bölmeli şema. Üstte ardışık hat: soldan sağa dört kutu ve aralarında oklar — ses etkinliği algılama, konuşma tanıma, dil modeli, sesi sentezleme. Altında üç kayıt: her kutu kendi gecikmesini ekler ve bir öncekini beklemek zorundadır; ara temsil yazı olduğu için duygu, vurgu ve konuşma dışı sesler burada silinir; sıralara bölme, üst üste binen konuşmayı ve araya girmeyi temsil edemez. Altta uçtan uca düzen tek bir geniş kutuda: giren ve çıkan ses akışı aynı anda tek modelde işlenir, saniyede 12,5 çerçeve üretilir, kuramsal gecikme 160 milisaniyedir ve sıra kavramı ortadan kalkar. En altta insan ölçüsü referansı: on dilde sıra geçiş boşluğunun tepesi 0 ile 200 milisaniye arasında, ortak ortalaması 208 milisaniye.">
+  <text x="20" y="26" font-size="13" font-weight="bold" fill="var(--text)">ardışık hat</text>
+  <rect x="20" y="40" width="150" height="54" fill="var(--surface-muted)" />
+  <text x="34" y="64" font-size="13" fill="var(--text)">ses etkinliği</text>
+  <text x="34" y="82" font-size="13" fill="var(--text)">algılama</text>
+  <rect x="190" y="40" width="150" height="54" fill="var(--surface-muted)" />
+  <text x="204" y="64" font-size="13" fill="var(--text)">konuşma</text>
+  <text x="204" y="82" font-size="13" fill="var(--text)">tanıma</text>
+  <rect x="360" y="40" width="150" height="54" fill="var(--surface-muted)" />
+  <text x="374" y="64" font-size="13" fill="var(--text)">dil modeli</text>
+  <rect x="530" y="40" width="150" height="54" fill="var(--surface-muted)" />
+  <text x="544" y="64" font-size="13" fill="var(--text)">sesi</text>
+  <text x="544" y="82" font-size="13" fill="var(--text)">sentezleme</text>
+  <line x1="170" y1="67" x2="186" y2="67" stroke="var(--accent)" />
+  <path d="M188 67 L180 63 L180 71 Z" fill="var(--accent)" />
+  <line x1="340" y1="67" x2="356" y2="67" stroke="var(--accent)" />
+  <path d="M358 67 L350 63 L350 71 Z" fill="var(--accent)" />
+  <line x1="510" y1="67" x2="526" y2="67" stroke="var(--accent)" />
+  <path d="M528 67 L520 63 L520 71 Z" fill="var(--accent)" />
+
+  <text x="20" y="120" font-size="13" fill="var(--text-muted)">Her kutu kendi gecikmesini ekler ve bir öncekini beklemek zorundadır.</text>
+  <text x="20" y="140" font-size="13" fill="var(--text-muted)">Ara temsil yazı: duygu, vurgu ve konuşma dışı sesler burada silinir.</text>
+  <text x="20" y="160" font-size="13" fill="var(--text-muted)">Sıralara bölme, üst üste binen konuşmayı ve araya girmeyi temsil edemez.</text>
+  <line x1="20" y1="176" x2="700" y2="176" stroke="var(--border)" />
+
+  <text x="20" y="200" font-size="13" font-weight="bold" fill="var(--text)">uçtan uca</text>
+  <rect x="20" y="212" width="680" height="52" fill="var(--bg)" stroke="var(--border)" />
+  <text x="36" y="234" font-size="13" fill="var(--text)">giren ve çıkan ses akışı aynı anda, tek modelde; sıra kavramı yok</text>
+  <text x="36" y="254" font-size="13" font-weight="bold" fill="var(--accent)">saniyede 12,5 çerçeve; kuramsal gecikme 160 ms</text>
+
+  <text x="20" y="290" font-size="13" fill="var(--text-muted)">İnsan ölçüsü: sıra geçiş boşluğunun tepesi 0–200 ms, ortalaması 208 ms.</text>
+</svg>

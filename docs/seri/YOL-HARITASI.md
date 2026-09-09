@@ -213,6 +213,18 @@ de açıktır.
 
 **Numarasız ileri işaretler — Batch 18'de verildi.** Sözlüğün seyreklik varsayımı ve parça kimliği (75 → "bir sonraki makale", numarasız); atfın üç sorusu ve gerekçe sadakati (76 → "bir sonraki makale", numarasız); dağılım kayması ve sağlamlık (78 → "bir sonraki makale", numarasız; 79 numarası **açılmadı**). **74–77 bandı kapandı** (77'nin kapanışı "74'te açılan bandın borcu kapanıyor" diyerek 6 ve 18'in vaadini adıyla kapatır) ve **78 koordinatı ödendi** (78'in açılışı 5 ile 9'un cümlelerini alıntılar). Batch 18 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 78) yapıldı ve Python ile makale başına doğrulandı (78'den büyük öteki sayılar yüzde, puan, eğri altı alanı ve düzenleme sayısı değerleridir; 78'in kendi numarasına tek göndermesi 5'in vaadinin alıntısıdır ve SOZLESME §5'in izin verdiği biçimdir). Defterde açık kalan en yakın tekil koordinat artık **85**'tir (20'nin uzmanlar karışımı vaadi); 86 ve 101 de açıktır.
 
+**Numarasız ileri işaretler — Batch 19'da verildi.** Koşulların nereye yazıldığı (79 → 80, "bir sonraki makale"); pikselleri
+okuyan modellerin mekanizması (80 → 81, "serinin bir sonraki fazı" / "bir sonraki makale"); modalitenin sese taşınması
+(81 → 82, "bir sonraki makale"); gürültüden geri temizleyen üretim modelleri (82 → 83, "bir sonraki makale"; 83 numarası
+**açılmadı**). **Batch 19 dört numarasız işareti ödedi:** 78'in "bir sonraki makale" devri (dağılım kayması ve sağlamlık)
+79'da; 72'nin dinamik ölçüt ve işlevsel ölçüt işareti 79'da (GSM-Symbolic'in şablonlu üretimi 72'nin işlevsel ölçütüne
+adıyla bağlandı); 71'in şeffaflık ve belgeleme ile 73'ün hakemin kurumsal denetimi işaretleri 80'de; ve **54'ün "görüntüyü
+token'a çeviren modeller, serinin çoklu modalite fazının konusu" işareti 81'de** — 81'in açılışı 54'ün cümlesini alıntılar.
+Batch 19 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış
+makalelere (≤ 82; 80–82 kendi kohortundaki önceki makalelere) yapıldı ve Python ile makale başına doğrulandı (kendi
+numarasına gönderme yok; 82'den büyük öteki sayılar yüzde, piksel, kilobit ve milisaniye değerleridir). Defterde açık kalan
+en yakın tekil koordinat hâlâ **85**'tir (20'nin uzmanlar karışımı vaadi); 86 ve 101 de açıktır.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -316,13 +328,13 @@ de açıktır.
 76. **Aktivasyonlara Müdahale: Yönlendirme ve Sondalar** — nedensel müdahale (karar #169). `[yayında]`
 77. **Atıf: Model Neden Böyle Dedi?** — açıklanabilirlik; 74–77 bandı kapandı (karar #170). `[yayında]`
 78. **Beliren Yetenekler Tartışması: Aniden mi Geliyor?** — 5 ve 9'un koordinatı ödendi (karar #171). `[yayında]`
-79. **Robustluk: Dağılım Kayması ve Adversarial Girdiler** — kırılganlık.
-80. **Şeffaflık: Model Kartları ve Sistem Kartları** — belgeleme pratiği.
+79. **Sağlamlık: Dağılım Kayması ve Düşmanca Girdiler** — kırılganlık; Faz 8'in kapanışının ilk yarısı (karar #177). `[yayında]`
+80. **Şeffaflık: Model Kartları ve Sistem Kartları** — belgeleme pratiği; Faz 8 kapandı. `[yayında]`
 
 ### Faz 9 — Çoklu Modalite ve Verimlilik (81–90)
 
-81. **Görüntüyü Anlamak: Vision-Language Modelleri** — çok modlu girdi.
-82. **Ses, Konuşma ve Gerçek Zamanlı Modeller** — sesli etkileşim.
+81. **Görüntüyü Anlamak: Görüntü-Dil Modelleri** — çok modlu girdi; Faz 9'un açılışı, kategori `multimodal-and-future` (kararlar #176, #178); 54'ün numarasız işareti ödendi. `[yayında]`
+82. **Ses, Konuşma ve Gerçek Zamanlı Modeller** — sesli etkileşim; modalitenin token'a çevrilmesi sese taşındı. `[yayında]`
 83. **Görüntü ve Video Üretimi: Diffusion'a Giriş** — üretken görsel modeller.
 84. **Birleşik Modeller: Her Şey Token mı?** — modaliteleri birleştirme.
 85. **Verimli Mimariler: Uzman Karışımları (MoE)** — koşullu hesaplama.
@@ -1456,6 +1468,69 @@ MCP üçlüsü (49/53 → 115).
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
 
+### Batch 19'da gerçekleşen tekrarlar (planlananların tahsili)
+
+Önceki batch'lerin kavramlarının 79–82'de fiilen nerede geri çağrıldığı:
+
+| Kavram | Batch 19'da gerçekleşen |
+|---|---|
+| Genelleme; aşırı öğrenme (2) | 79 (dağılım kaymasının tanımı doğrudan 2'nin genelleme cümlesinin gizli varsayımından türetildi) ✓ **yetmiş yedi makale aralıklı geri çağırma** |
+| Temsil merdiveni; nöron ve aktivasyon (3) | 81 (görüntü kodlayıcısının ürettiği yama vektörleri; doğrusal sonda kodlayıcının taşıdığını gösteriyor) ✓ |
+| Tokenizasyon; embedding; sözlük (4) | 81 (**görüntünün token'ı sözlükten gelmez** ayrımı 4'ün diliyle kuruldu) ✓ **yetmiş yedi makale aralıklı geri çağırma** |
+| Dikkat; nokta çarpım; sorgu–anahtar–değer (6) | 81 (karşıtsal benzerlik ölçüsü; öğrenilebilir sorgular girdiden gelmiyor), 82 (hizalamayı modele bırakan dikkat) ✓ |
+| Transformer bloğu; konum kodlaması (7) | 81 (görüntü yamaları dizisi olduğu gibi Transformer'a veriliyor) ✓ |
+| Öz-denetimli öğrenme; yığın; derlem (8) | 82 (maskelenmiş ses temsilleri; sıra alma kestiriminin öz-denetimli hedefi), 81 (yamaların tek diziye paketlenmesi) ✓ |
+| Otoregresif üretim; örnekleme (10) | 82 (ses token'larıyla otoregresif üretim; "sözlüğü değişmiş") ✓ |
+| Zero-shot (11) | 81 (sınıf adını cümleye gömüp sınıflandırma) ✓ |
+| Sentetik veri (12) | 81 (görsel talimat verisinin metin modeline yazdırılması) ✓ |
+| Veri temizlik hattı; engel listesi; veri karışımı (8, 14) | 80 (**engel listesi bir kapsam kararıdır**; derlemin sonradan belgelenmesi), 82 (dinî metin okumalarının kapsam–alan takası) ✓ |
+| Tokenizer ve dil (15) | 82 (yüz dilden 1.107 dile; kapsamın kendisi bir eksen) ✓ |
+| Değerlendirme kümesi; cetvel (16) | 82 (dondurulmuş temsil tahtasının 16'daki mantığı) ✓ |
+| İçsel ↔ dışsal uydurma (17) | 81 (nesne uydurması, önünde kaynak varken uydurma; içsel uydurma) ✓ |
+| Düşük ranklı uyarlama (19) | 81 (donuk gövde ↔ LoRA ablasyonunda sıralamanın dönmesi) ✓ |
+| Model kartı; veri künyesi; açık ağırlık (20) | 80 (**20'de açıklık boyutu olarak sayılan belgelerin içine bakıldı**) ✓ |
+| Bağlam penceresi; sistem istemi (21) | 81 (görsel token'ın pencereden yer kaplaması) ✓ |
+| Örnekle öğrenme; gösterim (23) | 82 (üç saniyelik kayıtla ses taklidi, örnekle öğrenmenin ses hâli) ✓ |
+| Ön dolum ↔ adım adım üretim; bellek bant genişliği (26) | 82 (**gerçek zamanlı ses baştan sona adım adım üretimdir**; çerçeve hızı adım sayısını azaltır) ✓ |
+| Ürün kuantizasyonu; kod defteri (43) | 82 (artık vektör kuantizasyonu aynı aileden, amacı geri sentez) ✓ |
+| Yama (yazılım, 55) ve aktivasyon yaması (74) | 81 (üçüncü kullanım açıkça adlandırıldı) ✓ |
+| Ekran görüntüsü; görsel token; öğe konumlandırma (54) | 81 (**numarasız işaret ödendi**: 4.240 ↔ 128.827 token sayısı yama aritmetiğinin ürünü olarak açıklandı) ✓ |
+| İstem enjeksiyonu; kum havuzu (58) | 79 (eksenin üçüncü ayrımı: girdiyi seçen üçüncü taraf belge), 80 (sistem kartının ajan güvenliği bölümü) ✓ |
+| İnsan–ajan devri; kalibrasyon açığı (59) | 80 (üç katmanlı denetimin uygulama katmanı) ✓ |
+| Gecikme ve maliyet hesabı; istem önbelleği (60) | 82 (çerçeve hızının gecikme bütçesindeki yeri) ✓ |
+| Belirtim oyunu; vekil ödül (61) | 80 (ayrıştırılmış ölçümün hedefe dönüşmesi — tersine çalışan hâli) ✓ |
+| Jailbreak; evrensel saldırı; kırmızı takım; aktarım (63) | 79 (**eksenin en sağ ucu**: girdiyi arayan saldırgan; uyarlanır saldırının yüzde 100'ü), 80 (kırmızı takımın kurumsal hâli: 100 kişi, 45 dil, 29 ülke) ✓ |
+| Kalibrasyonun dağılım kaymasıyla bozulması (65) | 79 (adsız geçen "dağılım kayması"nın resmî kurulumu) ✓ |
+| Aldatma; hizalama denetimi (67) | 80 (sistem kartının hizalama değerlendirmesi bölümü) ✓ |
+| Kötüye kullanım; marjinal risk (68) | 82 (üç saniyelik kayıt tabloya yeni bir satır) ✓ |
+| Denetimin erişimi; şeffaflık endeksi; AB yasası (69) | 80 (**kara kutu erişimi yetmez** üçüncü taraf değerlendirmesine uygulandı; Ek IV'ün veri künyesi maddesi) ✓ |
+| Eşik–önlem çifti; sorumlu ölçekleme (70) | 80 (sistem kartının güvenlik düzeyi belirleme bölümü; yönetişim katmanı) ✓ |
+| Geçerlilik zinciri; protokol sonucun içindedir; çok istemli değerlendirme (71) | 79 (**girdi dağılımı da sonucun içindedir**), 80 (belge, protokolün taşıyıcısı), 82 (görev seçimi ölçüyü tanımlar) ✓ |
+| Kirlilik; işlevsel ölçüt; test görevine eğitim (72) | 79 (şablonla yeniden üretilen sınav), 80 (derlemde bulunan sınav örnekleri) ✓ |
+| Hakem model; insan değerlendirmesi (73) | 80 (hakemin kurumsal denetimi işareti ödendi) ✓ |
+| Sonda; kontrol görevi (67, 74) | 81 (**doğrusal sonda kusurun yerini gösteriyor**: bilgi kodlayıcıda, dil modeline geçmiyor) ✓ |
+| Yönlendirmenin dağılım dışına genelleşmemesi (76) | 79 (adsız geçen sağlamlığın resmî kurulumu) ✓ |
+| Beliren yetenek; ölçünün süreksizliği (78) | 79 (**"bir sonraki makale" devri ödendi**: koşullar değişince aynı model başka şey yapar) ✓ |
+
+### Batch 19'da ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | İlk | Batch 19'da gerçekleşen | Planlanan (uzun aralıklı) |
+|---|---|---|---|
+| Dağılım kayması; sağlamlık; kovaryat / etiket / kavram / alt topluluk kayması; en kötü grup doğruluğu | 79 | 80 (ayrıştırılmış değerlendirmenin gerekçesi), 81 (karşıtsal modellerin etkin sağlamlığı), 82 (tanımada eşit referanslı karşılaştırma) | 96, 101, 102 |
+| Etkin sağlamlık; doğruluk doğru üstünde | 79 | 81 (Fang'in beş nedeni), 82 (Whisper'ın yüzde 55,2'si) | 96, 101 |
+| Düşmanca örnek; düşmanca eğitim; doğruluk–sağlamlık takası | 79 | 81 (görüntü tarafındaki saldırı yüzeyi anıldı) | 91, 95, 96 |
+| Sertifikalı savunma; rastgeleleştirilmiş yumuşatma; karartılmış gradyan | 79 | — | 95, 96, 116 |
+| Ortalama durum ↔ en kötü durum ekseni; girdiyi kim seçiyor | 79 | 81 (çift bazlı puanlama makro doğruluğun görüntü hâli), 82 (kelime hata oranının katmanı) | 101, 102 |
+| Ayrıştırılmış değerlendirme; amaçlanan kullanım | 80 | 81, 82 (ölçütlerin katman ayrımı) | 101, 102, 116 |
+| Sistem kartı; veri açıklaması; veri kartı; teknik dokümantasyon | 80 | 81 (verinin tasarım yüzeyi olması) | 98, 102, 116 |
+| Üç katmanlı denetim: yönetişim, model, uygulama | 80 | — | 101, 102, 116 |
+| Görüntü yaması; görsel token; görüntü kodlayıcı | 81 | 82 (aynı hamlenin sese taşınması) | 83, 84, 91 |
+| Karşıtsal ön eğitim; izdüşüm; yeniden örnekleyici; kapılı çapraz dikkat | 81 | 82 (ardışık hat ↔ uçtan uca ayrımının atası) | 83, 84, 86 |
+| Görsel talimat ayarı; nesne uydurması; dinamik çözünürlük | 81 | — | 83, 84, 88 |
+| Anlamsal token ↔ akustik token; sinir ses kodlayıcısı; artık vektör kuantizasyonu | 82 | — | 83, 84, 87 |
+| Kelime hata oranı; zayıf denetim; vokoder | 82 | — | 84, 97, 102 |
+| Gecikme bütçesi; sıra alma; çerçeve hızı; tam çift yönlü | 82 | — | 84, 88, 89 |
+
 ### Batch 18'de gerçekleşen tekrarlar (planlananların tahsili)
 
 Önceki batch'lerin kavramlarının 75–78'te fiilen nerede geri çağrıldığı:
@@ -2224,6 +2299,44 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | örtük sonradan gerekçelendirme | (implicit post-hoc rationalization) | 77 | 67'deki "sonradan gerekçe"nin yapay ipucusuz hâli |
 | beliren yetenek | (emergent ability) | 78 | 5'te parantezli geçmişti; 78'de tanımı iki parçalı olarak kuruldu |
 | ilerleme ölçüsü | — | 74 | 78'de sıçramanın altındaki sürekli süreç için kullanıldı |
+
+| dağılım kayması | (distribution shift) | 79 | 13, 65, 72, 75 ve 78'de glosssuz geçmişti; resmî kurulum 79'da |
+| sağlamlık | (robustness) | 79 | 45'te "gürültüye dayanıklılık" glossunun içinde geçmişti; resmî kurulum 79'da |
+| kovaryat kayması | (covariate shift) | 79 | girdi dağılımı değişir, girdiden etikete kural aynı kalır |
+| etiket kayması | (label shift) | 79 | sınıfların oranları değişir, kural aynı kalır |
+| kavram kayması | (concept shift) | 79 | aynı girdiye karşılık gelen doğru cevabın kendisi değişir |
+| alt topluluk kayması | (subpopulation shift) | 79 | dağılım aynı, az temsil edilen kesimde başarı düşük |
+| en kötü grup doğruluğu | (worst-group accuracy) | 79 | ortalamanın gizlediği alt küme puanı |
+| dağılım içi / dağılım dışı | — | 79 | gövdede parantezsiz; 13'te "dağılım dışı" glosssuz geçmişti |
+| etkin sağlamlık | (effective robustness) | 79 | aynı dağılım içi puandaki modellerin eğrisinin ne kadar üstünde durulduğu |
+| düşmanca örnek | (adversarial example) | 79 | 63'teki **düşmanca sonek**in görüntü tarafındaki atası |
+| düşmanca eğitim | (adversarial training) | 79 | 63'te glosssuz geçmişti; eyer noktası kurulumu 79'da |
+| sertifikalı savunma | — | 79 | belirli bir yarıçap içinde kanıt veren savunma; gövdede parantezsiz |
+| rastgeleleştirilmiş yumuşatma | (randomized smoothing) | 79 | gürültü ekleyip oy çokluğuna bakan sınıflandırıcı |
+| karartılmış gradyan | — | 79 | savunmanın gradyanı kullanılamaz hâle getirmesi; obfuscated gradients |
+| model kartı | (model card) | 20 | 20'de gloss'landı; bölümleri ve gerekçesi 80'de kuruldu |
+| amaçlanan kullanım | (intended use) | 80 | model kartının kimlik bölümü |
+| ayrıştırılmış değerlendirme | (disaggregated evaluation) | 80 | puanın gruplara ve kesişimlere bölünerek raporlanması |
+| veri açıklaması | (data statement) | 80 | dil verisinde konuşucu demografisi ve bağlam |
+| veri kartı | (data card) | 80 | 20'deki **veri künyesinin** okunabilirlik tarafındaki akrabası |
+| sistem kartı | (system card) | 80 | modelin çevresindeki sistemi ve dağıtım kararını belgeleyen kart; hakemsiz |
+| teknik dokümantasyon | — | 80 | AB yasasının Ek IV'ünün istediği belge; gövdede parantezsiz |
+| yönetişim / model / uygulama denetimi | — | 80 | üç katmanlı denetim; 69'daki denetim ailesinin ayrıştırılmış hâli |
+| görüntü yaması | (patch) | 81 | 55'teki **yama** (yazılım) ve 74'teki **aktivasyon yaması** ile aynı sözcük, başka nesne; ayrım 81'de yapıldı |
+| görsel token | (visual token) | 81 | 54'te glosssuz geçmişti; sayısı çözünürlükle karesel büyür |
+| görüntü-dil modeli | (vision-language model) | 81 | başlıkta da bu karşılık (karar #178); 54'ün "görüntü modeli"yle aynı aile |
+| karşıtsal ön eğitim | (contrastive pre-training) | 81 | eşleşen çiftin nokta çarpımını büyütmek |
+| görsel talimat ayarı | (visual instruction tuning) | 81 | 12'deki sentetik verinin görüntü hâli |
+| çapraz dikkat | (cross-attention) | 81 | 29'daki **çapraz kodlayıcıyla** karıştırılmaz; kapılı biçimi 81'de |
+| nesne uydurması | (object hallucination) | 81 | 17'nin içsel uydurmasının görüntü hâli |
+| dalga biçimi | (waveform) | 82 | saniyede on binlerce kez ölçülmüş basınç değerleri |
+| anlamsal token / akustik token | (semantic / acoustic token) | 82 | ne söylendiği ↔ nasıl duyulduğu |
+| sinir ses kodlayıcısı | (neural audio codec) | 82 | kodlayıcı, kuantizasyon, çözücü |
+| artık vektör kuantizasyonu | (residual vector quantization) | 82 | 43'teki **ürün kuantizasyonu** ailesinden; amacı arama değil geri sentez |
+| kelime hata oranı | — | 82 | tanıma katmanının cetveli; gövdede parantezsiz |
+| zayıf denetim | — | 82 | temiz olmayan ama çok sayıda eşleşmeyle eğitim; gövdede parantezsiz |
+| vokoder | (vocoder) | 82 | ara temsili dalga biçimine çeviren model |
+| çerçeve hızı | — | 82 | saniyede kaç ses çerçevesi; adım adım üretimin adım sayısını belirler |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -3894,6 +4007,126 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     6 KB metin çıktı; yerine Huang'ın BlackboxNLP 2023 değerlendirmesi), Zhou'nun Nature 2024 güvenilirlik yazısı
     (yayıncı duvarı), Bereska & Gavves derlemesi, Bussmann'ın BatchTopK'sı, Dunefsky'nin transcoder'ı, Lindsey'in
     çapraz kodlayıcıları ve Ameisen'in atıf grafları (77'nin kapsamı dışında kaldı).
+
+176. **Faz 9'un kategorisi ve Batch 19'un kohortu.** 79 ve 80 karar #160 gereği `safety-and-evaluation`; **81'den itibaren
+    `multimodal-and-future`** — kontrollü sözlükte (`content/series/schema.ts`) hazır bekleyen ad, Faz 9'un başlığıyla
+    ("Çoklu Modalite ve Verimlilik") birebir örtüşüyor. Dördü de `classification_batch: 19`. Kohort iki kategoriye yayıldı;
+    Batch 14'te aynısı yapılmıştı (#142) ve `groupByBatchAndCategory` kohort × kategori kırdığı için okuma listesi tutarlı
+    kalıyor: 61–80 tek öbek, 81–82 yeni öbek; `reading-list-groups.test.ts` **değişmedi**. Test sayısı 551 → 563; artışın
+    tamamı `series-assets.test.ts`'in varlık başına türeyen testlerinden (12 yeni SVG). `content/series/articles/`
+    altında yeni bir dizin açıldı: `multimodal-and-future/`.
+177. **79'un başlığı Türkçeleştirildi.** "Robustluk: Dağılım Kayması ve Adversarial Girdiler" → **"Sağlamlık: Dağılım
+    Kayması ve Düşmanca Girdiler"**. "düşmanca" karar #149'da (Batch 15) kayıtlı ve gövdelerde 23 kez geçiyor; "sağlamlık"
+    58 ve 77'de zaten kullanılmış. Gövdelerde grep yapıldı: "robustness" yalnızca 45'in dört yetenek glossunda parantez içi
+    geçiyor, çakışma yok.
+178. **81'in başlığı Türkçeleştirildi.** "Görüntüyü Anlamak: Vision-Language Modelleri" → **"Görüntüyü Anlamak: Görüntü-Dil
+    Modelleri"**. Ölçüt #108: alanda Türkçeleştirilmeyen kısaltma sınıfı (RAG, MCP, jailbreak) değil, karşılığı kurulabilen
+    bir terim. "Görü" kökü yerine **"görüntü"** seçildi, çünkü 54 zaten "görüntü modeli" ve "görüntü alabilen model"
+    diyor; seri içi tutarlılık (SOZLESME §2) yeni bir kök açmaya tercih edildi. 80 ve 82'nin başlıkları zaten Türkçeydi.
+179. **Terim ayrımları (Batch 19).** "dağılım kayması" ve "sağlamlık" önceki makalelerde glosssuz geçmişti, 79'da resmî
+    olarak kuruldu; "düşmanca örnek" 63'ün düşmanca soneğinin atası olarak adlandırıldı; "görüntü yaması" 55'in yazılım
+    yaması ve 74'ün aktivasyon yamasıyla çakışıyor ve ayrım 81'in gövdesinde açıkça yapıldı; "görsel token" 54'te glosssuz
+    geçmişti, 81'de gloss'landı; "çapraz dikkat" 29'un çapraz kodlayıcısından ayrı; "nesne uydurması" 17'nin içsel
+    uydurmasının görüntü hâli; "artık vektör kuantizasyonu" 43'ün ürün kuantizasyonu ailesinden ama amacı geri sentez;
+    "model kartı" 20'de gloss'lanmıştı, bölümleri 80'de kuruldu. **"Veri künyesi" (datasheet) 20'nin karşılığıyla korundu**
+    ve AB yasasının Ek IV metninde geçen "datasheets" da bu karşılıkla çevrildi.
+180. **Sayılar (Batch 19). 79:** WILDS on veri kümesi — Camelyon17 93,2 → 70,3; iWildCam makro F1 47,0 → 31,0;
+    CivilComments en kötü grup 92,2 (ortalama) → 56,0; FMoW en kötü bölge 48,6 → 32,3; Amazon onuncu yüzdelik 71,9 → 53,8;
+    Py150 75,4 → 67,9; ImageNet-C on beş bozulma × beş şiddet = yetmiş beş koşul; ImageNet-V2 düşüşü on bir–on dört puan
+    (CIFAR-10'da üç–on beş), "yaklaşık beş yıllık ilerleme"; ImageNet-A'da yaygın bir ağ ≈ yüzde 2 (≈ doksan puan düşüş);
+    Taori 204 model × 213 koşul; AdvGLUE on dört saldırı yöntemi, üretilenlerin ≈ yüzde 90'ı geçersiz, ELECTRA-Large
+    93,16 → 41,69; PromptRobust 4.788 istem, sözcük düzeyinde ortalama yüzde 39 düşüş; GSM-IC mikro 72,4 ↔ makro 6,0,
+    öz-tutarlılıkla makro 30,0; GSM-NoOp yüzde 65'e varan düşüş; Madry CIFAR-10 geniş ağ 95,2 → 3,5 (sıradan) ve
+    87,3 → 45,8 (düşmanca eğitilmiş); Cohen 0,5 yarıçapında kanıtlanabilir doğruluk yüzde 49; Athalye dokuz savunmanın
+    yedisi, altısı tamamen bir kısmen kırıldı; RobustBench 120'yi aşkın model. **80:** denetimden yedi ay sonra üç
+    hedefin üçü de yeni sürüm; en karanlık tenli kadın altkümesinde hata düşüşü yüzde 17,7–30,4, genel hatada 5,72–8,3;
+    denetlenmeyen ikisi genel 8,66 ve 6,60, aynı altkümede 31,37 ve 22,50; köken denetimi 1.800+ küme, lisansların
+    yüzde 70'inden fazlası belirtilmemiş, kayıtlı olanlarda hata yüzde 50'nin üzerinde, elle izlemeyle yüzde 72 → 30;
+    izin denetimi 14.000 alan adı, C4'ün token'larının yüzde 5'i ve en canlı kaynaklarının yüzde 28'i kapalı, kullanım
+    koşullarıyla yüzde 45; 32.111 kart / 74.970 depo = yüzde 44,2, eğitim 74,3, sınırlar 17,4, değerlendirme 15,4,
+    atıf 14,4, çevresel etki 2,0 (639 kart); sistem kartları 33 ve 123 sayfa, yüzden fazla dış kırmızı takım üyesi,
+    45 dil, 29 ülke; denetim araç taraması 35 uygulayıcı, 435 araç. **81:** 16×16 yama; 14 piksellik yamada 224 → 256,
+    336 → 576 token; CLIP 400 milyon çift, 1,28 milyon örnek kullanmadan eşit doğruluk, 30+ küme; yeniden örnekleyici
+    64 çıktı, Q-Former 32 sorgu ve 188 milyon parametre, elli dört kat az eğitilebilir parametreyle yüzde 8,7 fark;
+    LLaVA-1.5 1,2 milyon örnek, sekiz hızlandırıcıda ≈ bir gün, 11 ölçüt; Idefics2 ablasyonu 51,8 / 60,3 / 66,7 / 67,3 /
+    69,5, çapraz dikkat 1,3 milyar fazla parametre ve yüzde 10 fazla işlem, açılınca 12,9 ↔ 0,6 puan; Prismatic çok
+    aşamalı eğitim yüzde 20–25 hesap; DataComp 12,8 milyar çift, 38 görev, 6,1 puan; MMMU 11,5 bin soru / 6 alan /
+    30 konu / 183 alt alan, yüzde 56 ve 59; MathVista 6.141 örnek, 49,9, insanın 10,4 puan gerisi; MMVP 150 çift /
+    300 soru, insan 95,7, 40,7 ve 38,7, rastgele 25,0; BlindTest yedi görev, ortalama 58,07, en iyi 77,84, insan 100.
+    **82:** sıra geçiş boşluğu on dilde mod 0 (0–200 ms aralığı), ortak ortanca 100 ms, ortalamalar 7–469 ms, ortak
+    ortalama 208 ms; wav2vec 2.0 1,8/3,3 ve on dakikayla 4,8/8,2 (53 bin saat ön eğitim); SoundStream 3 kbit ↔ klasik
+    12 kbit; Whisper 680 bin saat, on iki kümede yüzde 55,2 daha az hata (referansta yüzde 0,1 fark), denetimli modeller
+    insanın ≈ iki katı hata; VALL-E 60 bin saat ve üç saniyelik kayıt; Moshi 12,5 Hz ve 160 ms; LLaMA-Omni 236 ms;
+    MMS 7.000+ dil, 1.406 / 1.107 / 4.017, elli dört dilde hata oranı yarıdan fazla düşüyor; MMAU 10 bin klip, 27 beceri,
+    insan 82,23, en iyi model 54,90, rastgele ≈ 26.
+181. **Kendi hesabımız (Batch 19): yok.** Dört makalede de kaynağın vermediği türetilmiş sayı kullanılmadı. 79'un ilk
+    taslağındaki "yaklaşık sekiz puan / kırk iki puan" çıkarmaları — 95,2 − 87,3 ve 45,8 − 3,5 — yayından **önce**
+    kaldırıldı ve yerlerine kaynağın kendi dört sayısı kondu (SOZLESME §4). 81'in yama aritmetiği (224/14 = 16, 336/14 = 24)
+    hesap değil tanım gereğidir ve gövdede adım adım gösterilir.
+182. **Şekil kararları (Batch 19).** On iki şeklin hepsi tablo ya da kutu-ok şeması; ölçülmemiş eğri çizilmedi, dolayısıyla
+    "eğriler şematiktir" kaydına gerek olmadı. Tek nicel grafik 80-Şekil 2'nin yatay çubukları ve çubuk uzunlukları
+    kaynağın verdiği beş orana orantılıdır (74,3 / 17,4 / 15,4 / 14,4 / 2,0). 79-Şekil 3 ve 82-Şekil 3, 79'un "girdiyi kim
+    seçiyor" eksenini iki modaliteye taşıyan aynı düzendedir; bu bilinçli bir paralellik.
+183. **Kaynak politikası (Batch 19).** 79'da 23, 80'de 17, 81'de 18, 82'de 17 kaynak (**75 kalem**). Dağılım: **68 hakemli**,
+    7 işaretlenmiş hakemsiz kalem. Hakemsizler: PromptRobust (yazarlarının kendi ifadesiyle "teknik rapor"), Qwen2-VL,
+    VALL-E, Moshi, GPT-4o sistem kartı, Claude 4 sistem kartı, ve künyesi dizinlerden doğrulanamayan Szegedy ve ark.
+    (ICLR 2014'ün bildirileri ayrı bir kitapta toplanmadı). **DBLP hâlâ kapalı** olduğu için Batch 18'in düzeni
+    (`idx-b19.py` + `venue-b19.py` + `hdr-b19.py`) kullanıldı ve CVF ile ISCA dizinleriyle genişletildi:
+    `openaccess.thecvf.com/{CVPR,ICCV,ACCV}<yıl>`, `isca-archive.org/interspeech_<yıl>`,
+    `datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021`. Düzen **iki künyeyi düzeltti** ve **iki kaynağı
+    hakemsizden hakemliye taşıdı:** Liang ve ark.'nın 32 bin model kartı çalışması Nature Machine Intelligence 2024
+    (10.1038/s42256-024-00857-z), Longpre ve ark.'nın köken denetimi yine Nature Machine Intelligence 2024
+    (10.1038/s42256-024-00878-8); Ojewale ve ark. CHI **2025** (2024 değil), SoundStream TASLP **2022** (arXiv 2021).
+    **Aday olup kullanılmayanlar:** Liesenfeld & Dingemanse'nin açıklık cilası çalışması (20'de zaten kullanılmıştı; PDF
+    üç adresten alınamadı), Skantze'nin sıra alma derlemesi (DiVA sunucusu zaman aşımı; yerine Ekstedt & Skantze ve
+    Stivers), Bommasani'nin şeffaflık endeksi (69'da kullanıldı, 80'de yalnızca anıldı), Arnold'un FactSheets'i,
+    Derczynski'nin risk kartları, Mökander dışındaki denetim derlemeleri, HuBERT, WavLM, EnCodec dışındaki kodekler,
+    SALMONN, Qwen-Audio, AudioPaLM, SpeechGPT, Mini-Omni, MusicGen, AudioLDM, SeamlessM4T, VoiceBench, InternVL,
+    Qwen2-VL dışındaki VLM'ler, LAION-5B, MMBench, MMStar, POPE dışındaki uydurma ölçütleri (kapsam dışı kaldı).
+
+## Batch 19 öğrenme notları (yazım tamamlandı)
+
+- **Faz 8 kapandı, Faz 9 açıldı: sağlamlık (79) → şeffaflık (80) → görüntü-dil modelleri (81) → ses ve gerçek zamanlı
+  modeller (82).** Yayın 78'in kapanış sorusuyla açıldı ("koşullar değişince aynı model başka şey yapar") ve zincir
+  kendiliğinden kuruldu: 79 bir puanın hangi dağılımda ölçüldüğünü sordu, 80 o koşulların nereye yazıldığını, 81 bir
+  modaliteyi token'a çevirmenin mekanizmasını, 82 aynı hamlenin sese uygulanmasını ve konuşmanın gecikme bütçesini.
+  **54'ün numarasız işareti 81'de ödendi.** Faz 9'un kategorisi `multimodal-and-future` olarak karara bağlandı (#176);
+  iki başlık Türkçeleştirildi (#177, #178).
+- **Araştırma yine tamamen ana oturumda, workflow/subagent yok** (cerebrum 2026-09-03). 172 kalemlik tek liste iki kopya
+  betikle çekildi (`fetch-b19.py` ileri, `fetch-b19b.py` `reversed(ITEMS)` ile ters); 169 metin, beş kalemlik retry turu
+  ikisi hariç hepsini kurtardı.
+- **Zincirin kendisi bir bulgu oldu: aynı ölçü üç makalede yeniden çıktı.** 79'un **etkin sağlamlık** tanımı 81'de
+  karşıtsal görüntü modellerinin sağlamlığını (Fang'in beş nedeni) ve 82'de Whisper'ın "eşit referans puanında yüzde 55,2
+  daha az hata" iddiasını okumanın anahtarı oldu; üçünde de kazandıran şey mimari değil eğitim dağılımının kapsamı.
+  Aynı biçimde 79'un **makro doğruluğu** (bir sorunun bütün çeşitlemelerinde doğru) 81'de MMVP'nin çift bazlı puanlamasında
+  yeniden belirdi. Bu paralellikler planlanmamıştı; kaynaklardan çıktı ve şekillere taşındı (#182).
+- **İki kaynak hakemsizden hakemliye taşındı.** Crossref `query.bibliographic` taraması, arXiv'de duran iki çalışmanın
+  Nature Machine Intelligence 2024'te yayımlandığını gösterdi (32 bin model kartı çözümlemesi; veri kökeni denetimi).
+  Ders: bir kaynağı hakemsiz saymadan önce **başlıkla Crossref taraması** yapılmalı — arXiv `comment` alanı boş olabiliyor
+  ama dergi kaydı duruyor.
+- **URL uydurma riski bu run'da somut olarak yakalandı.** İlk taslaklarda NeurIPS/ICLR hash URL'leri elle yazıldı; kurulan
+  `url-b19.py` bunları dizin sayfalarından çözdü ve **üç tanesinin yanlış olduğunu** ortaya çıkardı (Idefics2, LLaMA-Omni,
+  MMAU; ayrıca Consent in Crisis). Yeni kural: hash içeren hiçbir bağlantı dizinden çözülmeden yazılmaz. Son kapı olarak
+  `links-b19.py` dört makalenin 75 bağlantısını tek tek çekip `<title>` karşılaştırdı; ACM/IEEE/Springer'in 403 ve 202
+  dönmesi bot duvarıdır, künyeler Crossref API'yle ayrıca doğrulandı.
+- **CVF ve ISCA dizinleri eklendi.** `idx-b19.py`'ye CVPR 2019–2025, ICCV 2019–2025, ACCV 2024, ECVA (ECCV 2018–2024) ve
+  Interspeech 2019–2025 kondu; CVPR/ICCV'nin 2019 ve 2020 sayfaları `?day=all` desteklemiyor, gün bağlantıları
+  (`CVPR2019.py?day=...`) tek tek indirilip birleştirildi. NeurIPS'in 2021 veri kümeleri ve ölçütler programı ayrı bir
+  alan adında (`datasets-benchmarks-proceedings.neurips.cc`) ve ayrıca indirildi.
+- **Kelime bandı bu kez üç makalede sıkıştı.** 80 ilk turda 1.700 dolayındaydı; 81 ve 82 2.030–2.100 bandındaydı. Üçüne de
+  **planda olup kesilmiş malzeme** geri kondu: 80'e derlemin sonradan belgelenmesi ve üç katmanlı denetim, 81'e verinin
+  sağlamlığı belirlemesi ve veri seçiminin ölçütleştirilmesi, 82'ye çok dillilik ve sıra alma kestirimi. Dolgu cümle
+  eklenmedi.
+- **SVG'lerde tek kusur alt paydı.** `svgcheck-b19.py` iki dosyada 12 birimin altında alt pay yakaladı ve `viewBox`
+  yüksekliği artırılarak düzeltildi; çakışma, kutudan taşma ve repo kapısının 0,55 tahmini uyarısı hiç çıkmadı. **PNG turu
+  bu kez kusur bulmadı** (Batch 17 ve 18'de bulmuştu) — tabloya ağırlık verilip serbest yerleşimli eğri kullanılmaması
+  bunun sebebi görünüyor.
+- **Kapılar:** `pnpm typecheck` (0), **563 test**, `pnpm build` (exit 0, `/seri/[slug]` **82 yol**, izole kopyada),
+  83 seri rotasının tamamı 200 (56,2 sn), dört makale × üç genişlik × üç temada DOM ölçümü (taşma 0,
+  `main.innerText` içinde undefined/NaN yok, ham i18n anahtarı yok; 1440'ta SVG 771 px, 768'de 676, 375'te 351 ve yatay
+  kaydırma yok), konsolda yalnızca `/api/reader-sync` 503, 12 yeni diyagram × iki tema = 24 PNG gözle incelendi. Paralel
+  oturum görünmedi (3000–3999 arası dinleyen port yok); build ve dev izole kopyada (`D:\dev\anil-lib-b19-render`, 3210),
+  junction ve kopya run sonunda silindi, `launch.json` `artifacts/b19-research/launch.json.orig`'ten geri alındı.
 
 ## Batch 18 öğrenme notları (yazım tamamlandı)
 

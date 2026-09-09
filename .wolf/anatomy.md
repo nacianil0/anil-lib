@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-09T10:28:20.538Z
-> Files: 293 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-09T13:16:55.074Z
+> Files: 315 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -11,7 +11,7 @@
 
 ## .claude/
 
-- `launch.json` (~141 tok)
+- `launch.json` (~148 tok)
 
 ## .claude/rules/
 
@@ -169,6 +169,7 @@
 - `series-batch16-faz7-kapanis.md` (~975 tok)
 - `series-batch17-faz8-acilis.md` (~1020 tok)
 - `series-batch18-faz8-kapanis.md` (~1018 tok)
+- `series-batch19-faz9-acilis.md` (~954 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -250,6 +251,13 @@
 - `retry-b18.py` — Batch 18: ilk turda alinamayan klasikler icin alternatif adresler. (~1209 tok)
 - `svgcheck-b18.py` — SVG geometri denetleyicisi (Batch 18). Batch 17'nin dersleri eklendi: (~1119 tok)
 - `venue-b18.py` — Venue dogrulamasi (Batch 18) — DBLP bu run'da bot challenge dondurdugu icin (~2056 tok)
+
+## artifacts/b19-research/
+
+- `fetch-b19.py` (~7941 tok)
+- `idx-b19.py` — Konferans dizin sayfalarini indirir ve baslik arar (Batch 19). (~970 tok)
+- `q.py` — Kaynak metinlerinde hizli sorgu (Batch 19). (~534 tok)
+- `url-b19.py` — Indirilen dizin sayfalarindan baslik -> mutlak URL (Batch 19). (~726 tok)
 
 ## artifacts/b7-render/
 
@@ -423,6 +431,11 @@
 ## content/series/articles/models-and-training/
 
 
+## content/series/articles/multimodal-and-future/
+
+- `goruntuyu-anlamak-goruntu-dil-modelleri.md` — Ekrandaki pikseller nasıl token olur (~6764 tok)
+- `ses-konusma-ve-gercek-zamanli-modeller.md` — Konuşmanın bir bütçesi var (~5570 tok)
+
 ## content/series/articles/reasoning-and-memory/
 
 
@@ -444,6 +457,8 @@
 - `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8142 tok)
 - `mekanistik-yorumlanabilirlik-devreleri-okumak.md` — Davranışın yetmediği yer (~9352 tok)
 - `ozellikler-ve-superpozisyon-modelin-ic-dili.md` — Nöronun yetmediği yer (~7737 tok)
+- `saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md` — Aynı sınav, başka dünya (~7409 tok)
+- `seffaflik-model-kartlari-ve-sistem-kartlari.md` — Sayının yanındaki belge (~6212 tok)
 - `sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md` — Eşiği kim yazıyor (~6259 tok)
 - `yonetisim-politika-standartlar-ve-regulasyon.md` — Kararı kim veriyor (~6847 tok)
 
@@ -603,6 +618,12 @@
 ## content/series/assets/getirme-aramanin-modern-hali/
 
 
+## content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/
+
+- `gorsel-olcutlerde-ne-olculuyor.svg` (~1013 tok)
+- `goruntuyu-baglamanin-uc-yolu.svg` (~1050 tok)
+- `tasarim-uzayi-ablasyonu.svg` (~1138 tok)
+
 ## content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/
 
 - `asiri-guvenlik-bes-model.svg` (~999 tok)
@@ -718,6 +739,24 @@
 - `tek-getirme-ve-dongu.svg` (~1472 tok)
 - `yansima-tokenlari.svg` (~1119 tok)
 
+## content/series/assets/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler/
+
+- `dogruluk-saglamlik-takasi.svg` (~876 tok)
+- `kaymanin-turleri.svg` (~1061 tok)
+- `ortalama-durum-en-kotu-durum.svg` (~1000 tok)
+
+## content/series/assets/seffaflik-model-kartlari-ve-sistem-kartlari/
+
+- `belgeleme-zaman-cizgisi.svg` (~1158 tok)
+- `model-karti-sistem-karti.svg` (~1092 tok)
+- `ne-yaziliyor-ne-yazilmiyor.svg` (~936 tok)
+
+## content/series/assets/ses-konusma-ve-gercek-zamanli-modeller/
+
+- `gecikme-butcesi.svg` (~855 tok)
+- `ses-olcutlerinde-ne-olculuyor.svg` (~871 tok)
+- `sesin-iki-token-ailesi.svg` (~857 tok)
+
 ## content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/
 
 
@@ -767,8 +806,9 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7005 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7155 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~122384 tok)
 
 ## docs/superpowers/plans/
 

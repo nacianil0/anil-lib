@@ -1562,6 +1562,86 @@
       "path": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
+    },
+    {
+      "articleId": "article_1a0643e4-7cdd-4352-a874-472e2945efa4",
+      "title": "Sağlamlık: Dağılım Kayması ve Düşmanca Girdiler",
+      "slug": "saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 79,
+      "summary": "Bir puanın hangi dünyada ölçüldüğünü sorar: dağılım kaymasının dört türünü ve on veri kümesinde ölçülen düşüşleri — hastaneler arasında 93,2'den 70,3'e, en kötü grupta 92,2'den 56,0'a —; sentetik bozulmaya dayanmanın gerçek kaymaya dayanmak anlamına gelmediğini, 204 model ve 213 koşulluk bir düzenekte aktarımın çıkmamasını ve dağılım dışı puanın dağılım içi puanla neredeyse doğrusal ilişkisini; dil modelinde aynı sorunun biçimini — bir sınavın ortalama puanı 72,4 iken her çeşitlemesinde doğru cevaplananların oranının 6,0 olmasını, ilgisiz tek cümlenin yüzde 65'e varan düşüşünü, ölçüt puanının 93,16'dan 41,69'a inmesini —; ve en kötü durum ucunu: düşmanca örneği, düşmanca eğitimin 95,2'den 87,3'e mal olan takasını, sertifikalı savunmanın 0,5 yarıçapında yüzde 49'luk tavanını ve dokuz savunmanın yedisinin aynı hatadan kırılmasını. Kapanışta kasıtlı saldırıyla gündelik kaymanın tek eksenin iki ucu olduğunu gösterir.",
+      "tags": [
+        "dagilim-kaymasi",
+        "saglamlik",
+        "dusmanca-ornek",
+        "degerlendirme",
+        "sertifikali-savunma"
+      ],
+      "contentHash": "sha256:48c6f274d1640f530738b77f53d94b681cfba9629c6c46f7c519982ccb06f83a",
+      "path": "content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 19
+    },
+    {
+      "articleId": "article_fa0b9232-7ac9-48db-b9c7-96670c5500cf",
+      "title": "Şeffaflık: Model Kartları ve Sistem Kartları",
+      "slug": "seffaflik-model-kartlari-ve-sistem-kartlari",
+      "category": "safety-and-evaluation",
+      "level": "intermediate",
+      "readingOrder": 80,
+      "summary": "Bir puanın koşullarının nereye yazıldığını izler: model kartının bölümlerini ve ayrıştırılmış değerlendirmenin neden merkezde durduğunu — kamuya açık bir denetimden yedi ay sonra üç şirketin de yeni sürüm yayımlaması, en karanlık tenli kadın altkümesinde hatanın yüzde 17,7 ile 30,4 arasında düşmesi, denetlenmeyen iki şirketin aynı altkümede yüzde 31,37 ve 22,50'de kalması —; verinin belgesini ve belgesizliğini — popüler kümelerin lisanslarının yüzde 70'inden fazlasının belirtilmemiş olması, bir yılda C4'ün token'larının yüzde 5'inden fazlasının ve en canlı kaynaklarının yüzde 28'inden fazlasının kullanıma kapanması —; sistem kartının model kartına ne eklediğini — 123 sayfalık bir kartın güvenlik düzeyi kararı, ajan güvenliği ve hizalama değerlendirmesi bölümleri, yüzden fazla dış kırmızı takım üyesi —; pratikte ne yazılıp ne yazılmadığını — 32.111 kartta çevresel etki yüzde 2,0, değerlendirme 15,4, sınırlar 17,4 —; ve önerinin yükümlülüğe dönüşmesini: veri künyesi kavramının Avrupa Birliği yasasının teknik dokümantasyon ekinde geçmesi. Kapanışta belgenin bir iddia olduğunu ve denetimin bugünkü hâlini verir.",
+      "tags": [
+        "seffaflik",
+        "model-karti",
+        "sistem-karti",
+        "belgeleme",
+        "denetim"
+      ],
+      "contentHash": "sha256:af6772dc662e3a2643d3b6f3af52d302e87d5dfaa41ec5de59a4a791b3e64972",
+      "path": "content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 19
+    },
+    {
+      "articleId": "article_a7d9918e-5c85-4e61-ba69-50def19b8e95",
+      "title": "Görüntüyü Anlamak: Görüntü-Dil Modelleri",
+      "slug": "goruntuyu-anlamak-goruntu-dil-modelleri",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 81,
+      "summary": "54'te bir kara kutu olarak kullandığımız görüntü modelinin içini açar: bir görüntünün sabit boyutlu yamalara bölünüp her yamanın bir vektöre çevrilmesini ve token sayısının çözünürlükle nasıl büyüdüğünü — 336 piksellik bir karede 576 görsel token —; metinle görüntüyü aynı uzaya koyan karşıtsal ön eğitimi ve 400 milyon çiftle eğitilmiş bir modelin, bir sınıflandırma kümesinin 1,28 milyon örneğinin hiçbirini görmeden aynı doğruluğa ulaşmasını; görüntüyü dil modeline bağlamanın üç yolunu — doğrudan izdüşüm, öğrenilebilir sorgularla yeniden örnekleme (64 ve 32 token), kapılı çapraz dikkat — ve denetimli bir ablasyonda sıralamanın donuk gövdelerde çapraz dikkat lehine, düşük ranklı uyarlamayla tam otoregresif mimari lehine dönmesini; çözünürlüğün bir bütçe kararı olmasını; ve ölçütlerin nerede kırıldığını — üniversite düzeyinde 11,5 bin soruda yüzde 56 ile 59, dokuz temel görsel örüntüde insanın 95,7'sine karşı en iyi modelin 40,7'si, yedi basit çizim görevinde ortalama 58,07 ve doğrusal sondanın gösterdiği şey: bilgi kodlayıcıda var, dil modeline geçmiyor.",
+      "tags": [
+        "coklu-modalite",
+        "goruntu-dil-modeli",
+        "gorsel-token",
+        "karsitsal-on-egitim",
+        "gorsel-olcutler"
+      ],
+      "contentHash": "sha256:c48ec1f0e22bce72e483134e600d05cbf1bfa1ab981e866836f0e6174c35edc4",
+      "path": "content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 19
+    },
+    {
+      "articleId": "article_26aa2b32-fed6-4268-b761-7bdb70a2349e",
+      "title": "Ses, Konuşma ve Gerçek Zamanlı Modeller",
+      "slug": "ses-konusma-ve-gercek-zamanli-modeller",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 82,
+      "summary": "Bir önceki makalenin hamlesini sese taşır ve üstüne zamanı ekler: sesin iki ayrı token ailesine — öz-denetimli eğitilmiş anlamsal token'lar ve sinir ses kodlayıcısının artık vektör kuantizasyonuyla ürettiği akustik token'lar — bölünmesini ve ikisini birleştiren melez düzeni; tanımanın öz-denetimden zayıf denetime geçişini ve 680 bin saatlik bir modelin, aynı referans kümede eşit puana sahip denetimli bir modele karşı öteki kümelerde yüzde 55,2 daha az hata yapmasını — 79'un etkin sağlamlık ölçüsünün ses hâli —; üretimin ardışık hattını ve üç saniyelik bir kayıttan ses taklit eden kodek dil modellerini; ve konuşmanın gecikme bütçesini: on dilde ölçülen sıra geçiş boşluğunun modu 0, ortalaması 208 milisaniye iken dört bileşenli bir hattın saniyelere çıkması, buna karşılık uçtan uca bir modelin 12,5 Hz çerçeve hızıyla 160 milisaniyelik kuramsal gecikmeye inmesi. Kapanışta ölçümün nerede durduğunu verir: 27 beceride insan 82,23 iken en iyi model 54,90.",
+      "tags": [
+        "ses",
+        "konusma-tanima",
+        "ses-tokenlari",
+        "gercek-zamanli",
+        "gecikme-butcesi"
+      ],
+      "contentHash": "sha256:dc44dc03b89fdfb60e20c235d781a6967b831bd067ae4d93d9b0a43834012ce6",
+      "path": "content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 19
     }
   ]
 }

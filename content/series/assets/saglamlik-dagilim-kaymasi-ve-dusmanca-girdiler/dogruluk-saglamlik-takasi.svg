@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 404" role="img" aria-label="Üstte yan yana iki kutu: solda sıradan eğitim, bozulmasız sınavda 95,2 ve yirmi adımlı saldırı altında 3,5; sağda düşmanca eğitim, bozulmasız sınavda 87,3 ve aynı saldırı altında 45,8. İkisinin altında tek satır: aynı ağ ve aynı sınav kümesi, değişen tek şey eğitim yordamı; standart doğruluk düşer, saldırı altındaki doğruluk yükselir. Altta üç kayıt satırı. Takasın nedeni: basit bir modelde takasın kaçınılmaz olabildiği kanıtlandı, ampirik nedeni ise küçük bozulmayla yön değiştiren özelliklerin veride gerçekten öngörücü olması. Sertifikalı savunma: 0,5 yarıçapında kanıtlanabilir doğruluk yüzde 49, yarıçap dışında garanti yok. Değerlendirme: dokuz sertifikasız savunmanın yedisi gradyanı gizlemeye dayanıyordu, altısı tamamen biri kısmen kırıldı. En altta kayıt: bir sağlamlık iddiası, savunmayı bilen ve ona uyarlanmış bir saldırıya karşı sınanmadıkça iddia olarak kalır.">
+  <rect x="30" y="26" width="300" height="106" fill="var(--surface-muted)" />
+  <text x="45" y="50" font-size="13" font-weight="bold" fill="var(--text)">sıradan eğitim</text>
+  <text x="45" y="78" font-size="13" fill="var(--text)">bozulmasız sınav: 95,2</text>
+  <text x="45" y="106" font-size="13" fill="var(--text)">yirmi adımlı saldırı: 3,5</text>
+
+  <rect x="390" y="26" width="300" height="106" fill="var(--bg)" stroke="var(--border)" />
+  <text x="405" y="50" font-size="13" font-weight="bold" fill="var(--text)">düşmanca eğitim</text>
+  <text x="405" y="78" font-size="13" fill="var(--text)">bozulmasız sınav: 87,3</text>
+  <text x="405" y="106" font-size="13" fill="var(--text)">yirmi adımlı saldırı: 45,8</text>
+
+  <line x1="330" y1="79" x2="386" y2="79" stroke="var(--accent)" />
+  <path d="M386 79 L378 75 L378 83 Z" fill="var(--accent)" />
+
+  <text x="360" y="160" font-size="13" text-anchor="middle" fill="var(--text)">standart doğruluk düşer, saldırı altındaki doğruluk yükselir</text>
+  <line x1="20" y1="178" x2="700" y2="178" stroke="var(--border)" />
+
+  <text x="30" y="204" font-size="13" font-weight="bold" fill="var(--text)">takasın nedeni</text>
+  <text x="210" y="204" font-size="13" fill="var(--text)">basit bir modelde takasın kaçınılmaz olabildiği</text>
+  <text x="210" y="222" font-size="13" fill="var(--text)">kanıtlandı; kırılgan özellikler veride</text>
+  <text x="210" y="240" font-size="13" fill="var(--text)">gerçekten öngörücü</text>
+
+  <text x="30" y="272" font-size="13" font-weight="bold" fill="var(--text)">sertifikalı savunma</text>
+  <text x="210" y="272" font-size="13" fill="var(--text)">0,5 yarıçapında kanıtlanabilir doğruluk</text>
+  <text x="210" y="290" font-size="13" fill="var(--text)">yüzde 49; yarıçap dışında garanti yok</text>
+
+  <text x="30" y="322" font-size="13" font-weight="bold" fill="var(--text)">değerlendirme</text>
+  <text x="210" y="322" font-size="13" fill="var(--text)">dokuz sertifikasız savunmanın yedisi gradyanı</text>
+  <text x="210" y="340" font-size="13" fill="var(--text)">gizliyordu; altısı tamamen kırıldı</text>
+
+  <line x1="20" y1="362" x2="700" y2="362" stroke="var(--border)" />
+  <text x="20" y="384" font-size="13" fill="var(--text-muted)">Savunma iddiası, savunmayı bilen bir saldırıya karşı sınanmadıkça iddia kalır.</text>
+</svg>

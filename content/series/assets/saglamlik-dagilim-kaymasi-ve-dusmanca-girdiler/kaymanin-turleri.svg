@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 392" role="img" aria-label="Dört satırlı tablo; sütunlar kayma türü, ne değişir, örnek ve ölçüm. Kovaryat kayması: girdi dağılımı değişir, girdiden etikete kural aynı kalır; örnek hastaneler arası doku boyama, ortalama doğruluk 93,2'den 70,3'e. Etiket kayması: sınıfların oranları değişir, kural aynı kalır; örnek mevsime göre nadirleşen bir hastalık, ölçüm sınıf oranlarının karşılaştırması. Kavram kayması: aynı girdiye karşılık gelen doğru cevap değişir; örnek zararlı içerik tanımının zamanla değişmesi, ölçüm zaman dilimleri arası puan. Alt topluluk kayması: dağılım aynı kalır ama bir kesim az temsil edilir; örnek demografik kimlik geçen yorumların sınıflandırılması, ortalama doğruluk 92,2 iken en kötü grup doğruluğu 56,0. Altta iki kayıt: aynı düzende kamera tuzağı 47,0'dan 31,0'a, en kötü bölge 48,6'dan 32,3'e, kod tamamlama 75,4'ten 67,9'a; ve sayılar sıradan eğitimledir, kaymaya karşı geliştirilmiş üç yöntem bu tabloda sıradan eğitimi geçmemiştir.">
+  <text x="30" y="28" font-size="13" font-weight="bold" fill="var(--text)">kayma türü</text>
+  <text x="190" y="28" font-size="13" font-weight="bold" fill="var(--text)">ne değişir</text>
+  <text x="440" y="28" font-size="13" font-weight="bold" fill="var(--text)">örnek ve ölçüm</text>
+  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="64" fill="var(--surface-muted)" />
+  <text x="30" y="70" font-size="13" font-weight="bold" fill="var(--text)">kovaryat kayması</text>
+  <text x="190" y="70" font-size="13" fill="var(--text)">girdi dağılımı değişir,</text>
+  <text x="190" y="88" font-size="13" fill="var(--text)">etikete giden kural aynı kalır</text>
+  <text x="440" y="70" font-size="13" fill="var(--text)">hastaneler arası doku boyama</text>
+  <text x="440" y="88" font-size="13" font-weight="bold" fill="var(--accent)">93,2 → 70,3</text>
+
+  <rect x="20" y="118" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="142" font-size="13" font-weight="bold" fill="var(--text)">etiket kayması</text>
+  <text x="190" y="142" font-size="13" fill="var(--text)">sınıfların oranları değişir,</text>
+  <text x="190" y="160" font-size="13" fill="var(--text)">kural aynı kalır</text>
+  <text x="440" y="142" font-size="13" fill="var(--text)">mevsimle nadirleşen hastalık</text>
+  <text x="440" y="160" font-size="13" fill="var(--text-muted)">sınıf oranları karşılaştırılır</text>
+
+  <rect x="20" y="190" width="680" height="64" fill="var(--surface-muted)" />
+  <text x="30" y="214" font-size="13" font-weight="bold" fill="var(--text)">kavram kayması</text>
+  <text x="190" y="214" font-size="13" fill="var(--text)">aynı girdinin doğru cevabı</text>
+  <text x="190" y="232" font-size="13" fill="var(--text)">değişir</text>
+  <text x="440" y="214" font-size="13" fill="var(--text)">zararlı içerik tanımının kayması</text>
+  <text x="440" y="232" font-size="13" fill="var(--text-muted)">zaman dilimleri arası puan</text>
+
+  <rect x="20" y="262" width="680" height="64" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="286" font-size="13" font-weight="bold" fill="var(--text)">alt topluluk kayması</text>
+  <text x="190" y="286" font-size="13" fill="var(--text)">dağılım aynı, bir kesim az</text>
+  <text x="190" y="304" font-size="13" fill="var(--text)">temsil edilir</text>
+  <text x="440" y="286" font-size="13" fill="var(--text)">demografik kimlik geçen yorum</text>
+  <text x="440" y="304" font-size="13" font-weight="bold" fill="var(--accent)">92,2 ortalama → 56,0 en kötü</text>
+
+  <line x1="20" y1="336" x2="700" y2="336" stroke="var(--border)" />
+  <text x="20" y="358" font-size="13" fill="var(--text-muted)">Aynı düzende: kamera tuzağı 47,0 → 31,0; en kötü bölge 48,6 → 32,3; kod 75,4 → 67,9.</text>
+  <text x="20" y="376" font-size="13" fill="var(--text-muted)">Sayılar sıradan eğitimledir; kaymaya karşı üç yöntem burada onu geçmedi.</text>
+</svg>

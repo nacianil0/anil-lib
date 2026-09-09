@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 388" role="img" aria-label="İki bölmeli şekil. Üstte beş satırlık ablasyon tablosu; sütunlar mimari, gövdelerin eğitimi, ortalama puan. Tam otoregresif ve yeniden örnekleyicisiz, gövdeler donuk: 51,8. Tam otoregresif, gövdeler donuk: 60,3. Çapraz dikkat, gövdeler donuk: 66,7. Çapraz dikkat, düşük ranklı uyarlama: 67,3. Tam otoregresif, düşük ranklı uyarlama: 69,5. Tablonun altında iki not: donuk gövdelerde çapraz dikkat yaklaşık yedi puan önde ama 1,3 milyar fazla eğitilebilir parametre taşıyor ve çıkarımda yüzde 10 daha çok işlem yapıyor; gövdeler açıldığında tam otoregresif mimari 12,9 puan, çapraz dikkat 0,6 puan kazanıyor ve sıralama dönüyor. Altta ikinci bölme, başka bir denetimli çalışmadan üç bulgu: çok aşamalı eğitim performans kaybı olmadan kaldırılabiliyor ve hesabın yüzde 20 ile 25'i geri kazanılıyor; iki farklı görüntü kodlayıcısının özelliklerini birleştirmek her ölçütte daha iyi model veriyor; kırpmak açıkça kötü, en iyi seçenek en-boy oranını bozarak yeniden boyutlandırmak. En altta kayıt: sayılar sabit veri ve sabit bütçeli ablasyonlardan gelir, başka bütçelerde sıralama değişebilir.">
+  <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">mimari</text>
+  <text x="280" y="26" font-size="13" font-weight="bold" fill="var(--text)">gövdelerin eğitimi</text>
+  <text x="520" y="26" font-size="13" font-weight="bold" fill="var(--text)">ortalama puan</text>
+  <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
+
+  <rect x="20" y="46" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="68" font-size="13" fill="var(--text)">tam otoregresif, örnekleyicisiz</text>
+  <text x="280" y="68" font-size="13" fill="var(--text)">donuk</text>
+  <text x="520" y="68" font-size="13" fill="var(--text)">51,8</text>
+
+  <rect x="20" y="76" width="680" height="30" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="98" font-size="13" fill="var(--text)">tam otoregresif</text>
+  <text x="280" y="98" font-size="13" fill="var(--text)">donuk</text>
+  <text x="520" y="98" font-size="13" fill="var(--text)">60,3</text>
+
+  <rect x="20" y="106" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="128" font-size="13" fill="var(--text)">çapraz dikkat</text>
+  <text x="280" y="128" font-size="13" fill="var(--text)">donuk</text>
+  <text x="520" y="128" font-size="13" font-weight="bold" fill="var(--accent)">66,7</text>
+
+  <rect x="20" y="136" width="680" height="30" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="158" font-size="13" fill="var(--text)">çapraz dikkat</text>
+  <text x="280" y="158" font-size="13" fill="var(--text)">düşük ranklı uyarlama</text>
+  <text x="520" y="158" font-size="13" fill="var(--text)">67,3</text>
+
+  <rect x="20" y="166" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="188" font-size="13" fill="var(--text)">tam otoregresif</text>
+  <text x="280" y="188" font-size="13" fill="var(--text)">düşük ranklı uyarlama</text>
+  <text x="520" y="188" font-size="13" font-weight="bold" fill="var(--accent)">69,5</text>
+
+  <text x="20" y="216" font-size="13" fill="var(--text-muted)">Donukken çapraz dikkat önde; ama 1,3 milyar fazla parametre, yüzde 10 fazla işlem.</text>
+  <text x="20" y="234" font-size="13" fill="var(--text-muted)">Gövdeler açılınca: tam otoregresif 12,9 puan, çapraz dikkat 0,6 puan kazanıyor.</text>
+  <line x1="20" y1="250" x2="700" y2="250" stroke="var(--border)" />
+
+  <text x="30" y="274" font-size="13" font-weight="bold" fill="var(--text)">başka bir denetimli çalışmadan üç bulgu</text>
+  <text x="30" y="298" font-size="13" fill="var(--text)">çok aşamalı eğitim kaldırılabiliyor; hesabın yüzde 20–25'i geri geliyor</text>
+  <text x="30" y="318" font-size="13" fill="var(--text)">iki farklı görüntü kodlayıcısını birleştirmek her ölçütte kazandırıyor</text>
+  <text x="30" y="338" font-size="13" fill="var(--text)">kırpmak kötü; en iyisi en–boy oranını bozarak yeniden boyutlandırmak</text>
+
+  <line x1="20" y1="354" x2="700" y2="354" stroke="var(--border)" />
+  <text x="20" y="376" font-size="13" fill="var(--text-muted)">Sayılar sabit veri ve sabit bütçeli ablasyonlardandır; başka bütçede sıra değişir.</text>
+</svg>
