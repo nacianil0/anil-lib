@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" role="img" aria-label="Üç sütunlu tablo; sütunlar damıtmanın üç aktarım biçimi: yumuşak etiket, ara temsil ve üretilen veri. Satırlar aktarılan şeyi, gereken erişimi, bedeli ve ölçülen etkiyi veriyor. Yumuşak etikette aktarılan şey bütün sınıflara dağıtılan olasılıktır, erişim öğretmenin çıkış dağılımıdır, bedel öğretmenin her örnek için çalıştırılmasıdır ve ölçülen etki hiç görülmemiş bir sınıfta yüzde 98,6 doğruluktur. Ara temsilde aktarılan şey ara katmanların aktivasyonlarıdır, erişim modelin içidir, bedel katmanları eşleyen ek bir izdüşümdür ve etki daha derin ve daha ince bir öğrencidir. Üretilen veride aktarılan şey öğretmenin ürettiği metnin kendisidir, erişim yalnızca çıktıdır yani bir arayüz yeter, bedel üretim maliyeti ve verinin kalitesidir ve etki 800 bin örnekle davranışın devralınmasıdır. En altta bir kayıt: üçü de aynı şeyi yapar, öğretmenin fonksiyonunu örnekler; fark, örneklemenin nereden alındığıdır.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru</text>
+  <text x="185" y="24" font-size="13" font-weight="bold" fill="var(--text)">yumuşak etiket</text>
+  <text x="360" y="24" font-size="13" font-weight="bold" fill="var(--text)">ara temsil</text>
+  <text x="535" y="24" font-size="13" font-weight="bold" fill="var(--text)">üretilen veri</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">aktarılan şey</text>
+  <text x="185" y="62" font-size="13" fill="var(--text)">bütün sınıflara</text>
+  <text x="185" y="80" font-size="13" fill="var(--text)">dağıtılan olasılık</text>
+  <text x="360" y="62" font-size="13" fill="var(--text)">ara katmanların</text>
+  <text x="360" y="80" font-size="13" fill="var(--text)">aktivasyonları</text>
+  <text x="535" y="62" font-size="13" fill="var(--text)">öğretmenin ürettiği</text>
+  <text x="535" y="80" font-size="13" fill="var(--text)">metnin kendisi</text>
+
+  <text x="30" y="112" font-size="13" fill="var(--text)">gereken erişim</text>
+  <text x="185" y="112" font-size="13" fill="var(--accent)">çıkış dağılımı</text>
+  <text x="360" y="112" font-size="13" fill="var(--accent)">modelin içi</text>
+  <text x="535" y="112" font-size="13" fill="var(--cool)">yalnızca çıktı;</text>
+  <text x="535" y="130" font-size="13" fill="var(--cool)">bir arayüz yeter</text>
+
+  <rect x="20" y="142" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="162" font-size="13" fill="var(--text)">bedeli</text>
+  <text x="185" y="162" font-size="13" fill="var(--text)">öğretmen her örnek</text>
+  <text x="185" y="180" font-size="13" fill="var(--text)">için çalıştırılır</text>
+  <text x="360" y="162" font-size="13" fill="var(--text)">katmanları eşleyen</text>
+  <text x="360" y="180" font-size="13" fill="var(--text)">ek izdüşüm</text>
+  <text x="535" y="162" font-size="13" fill="var(--text)">üretim maliyeti ve</text>
+  <text x="535" y="180" font-size="13" fill="var(--text)">verinin kalitesi</text>
+
+  <text x="30" y="212" font-size="13" fill="var(--text)">ölçülen etki</text>
+  <text x="185" y="212" font-size="13" fill="var(--text)">hiç görülmemiş</text>
+  <text x="185" y="230" font-size="13" fill="var(--text)">sınıfta yüzde 98,6</text>
+  <text x="360" y="212" font-size="13" fill="var(--text)">daha derin, daha</text>
+  <text x="360" y="230" font-size="13" fill="var(--text)">ince öğrenci</text>
+  <text x="535" y="212" font-size="13" fill="var(--text)">800 bin örnekle</text>
+  <text x="535" y="230" font-size="13" fill="var(--text)">davranış devri</text>
+
+  <line x1="20" y1="248" x2="700" y2="248" stroke="var(--border)" />
+  <text x="20" y="272" font-size="13" fill="var(--text-muted)">Üçü de aynı şeyi yapar: öğretmenin fonksiyonunu örnekler.</text>
+  <text x="20" y="294" font-size="13" fill="var(--text-muted)">Farkları, örneklemenin nereden alındığı.</text>
+</svg>

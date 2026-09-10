@@ -3319,3 +3319,69 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 | 23:20 | Batch 20 (83-86) uretimi: arastirma 139 kaynak, 4 makale + 12 SVG, entegrasyon, kapilar, +1 fazi | content/series/**, docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md, artifacts/b20-research/** | 575 test yesil, build exit 0 (86 yol), 87 rota 200 | ~1.9M |
 | 23:25 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch20-faz9-govde.md | — | ~976 |
 | 23:27 | Session end: 34 writes across 22 files (fetch-b20.py, goruntu-ve-video-uretimi-difuzyona-giris.md, bozmak-ve-geri-getirmek.svg, adim-sayisi-ve-orneklendirici.svg, kilavuzlugun-takasi.svg) | 18 reads | ~200668 tok |
+
+## Session: 2026-09-10 08:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 08:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 08:35
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:39 | Created artifacts/b21-research/items-b21.py | — | ~3734 |
+| 08:41 | Edited artifacts/b21-research/idx-b21.py | modified in() | ~224 |
+| 09:06 | Created content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md | — | ~6994 |
+| 09:09 | Created content/series/assets/kucuk-ama-guclu-damitma-ve-kucuk-modeller/damitmanin-uc-aktarim-bicimi.svg | — | ~1069 |
+| 09:09 | Created content/series/assets/kucuk-ama-guclu-damitma-ve-kucuk-modeller/ayni-butcenin-iki-yolu.svg | — | ~1005 |
+| 09:09 | Created content/series/assets/kucuk-ama-guclu-damitma-ve-kucuk-modeller/taklidin-iki-bicimi.svg | — | ~867 |
+| 09:10 | Created content/series/assets/kucuk-ama-guclu-damitma-ve-kucuk-modeller/ayni-butcenin-iki-yolu.svg | — | ~1021 |
+| 09:15 | Created content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md | — | ~4683 |
+| 09:18 | Created content/series/assets/ucta-yapay-zeka-telefonda-ve-cihazda-llm/bulutta-ve-cihazda-ayni-hesap.svg | — | ~891 |
+| 09:19 | Created content/series/assets/ucta-yapay-zeka-telefonda-ve-cihazda-llm/cihaz-butcesi.svg | — | ~1096 |
+| 09:19 | Created content/series/assets/ucta-yapay-zeka-telefonda-ve-cihazda-llm/cihaz-modelinin-anatomisi.svg | — | ~1197 |
+| 09:24 | Created content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | — | ~4663 |
+| 09:26 | Created artifacts/b21-research/refcheck-b21.py | — | ~150 |
+| 09:27 | Created content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/cati-cizgisi-ve-iki-asama.svg | — | ~708 |
+| 09:27 | Created content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/uc-iraksayan-ustel.svg | — | ~855 |
+| 09:28 | Created content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/genel-amacli-ve-alana-ozel.svg | — | ~1169 |
+| 09:31 | Created content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | — | ~4944 |
+| 09:35 | Created content/series/assets/enerji-maliyet-ve-cevresel-ayak-izi/bir-enerji-sayisinin-zinciri.svg | — | ~973 |
+| 09:35 | Created content/series/assets/enerji-maliyet-ve-cevresel-ayak-izi/cikarimin-payi.svg | — | ~872 |
+| 09:35 | Created content/series/assets/enerji-maliyet-ve-cevresel-ayak-izi/ayni-istem-iki-sinir.svg | — | ~997 |
+| 09:39 | Created .claude/launch.json | — | ~141 |
+| 09:49 | Created content/series/assets/enerji-maliyet-ve-cevresel-ayak-izi/cikarimin-payi.svg | — | ~929 |
+| 10:03 | Created artifacts/b21-research/kararlar-b21.py | — | ~2904 |
+| 10:04 | Created artifacts/b21-research/tekrar-b21.py | — | ~2377 |
+| 10:09 | Created docs/seri/HANDOFF.md | — | ~7951 |
+| 10:09 | Created artifacts/b21-research/wc-b21.cjs | — | ~197 |
+| 10:11 | Created artifacts/b21-research/wolf-b21.py | — | ~1645 |
+
+## Oturum özeti — Batch 21 (2026-09-10)
+
+`BATCH=4+1`. Seri makale 87–90 üretildi ve **Faz 9 kapandı**: damıtma ve küçük modeller → uçta yapay zekâ →
+donanım ekosistemi → enerji, maliyet ve çevresel ayak izi. Kohort 21, kategori `multimodal-and-future`,
+12 yeni SVG. 34'ün numarasız işareti 87'de ödendi; yeni numaralı koordinat açılmadı; başlık değişmedi.
+Araştırma (100 kalemlik liste, 94 yeni metin), yazım, entegrasyon ve doğrulama ana oturumda yapıldı;
+workflow/subagent kullanılmadı.
+
+Kapılar: `pnpm typecheck` 0, **587 test**, `pnpm build` exit 0 (`/seri/[slug]` 90 yol, izole kopyada),
+91 rota 200 (65,6 sn), dört makale × üç genişlik × üç tema DOM ölçümü temiz, 24 PNG gözle incelendi
+(iki şekil kusuru bulundu ve düzeltildi). İki künye düzeltildi (ICLR 2024 başlığı, MELT'in MobiCom
+mecrası); bir kaynak içi tutarsızlık metne alınmadı; bir şekil ortalama/ortanca karışıklığı yüzünden
+yeniden çizildi. State: `docs/seri/HANDOFF.md` (cursor 91), `docs/seri/YOL-HARITASI.md` (kararlar
+#192–#199, prerequisite 87–90, terim defteri, kavram-tekrar defteri, Batch 21 öğrenme notları).
+Sıradaki run: 91–94, Faz 10'un açılışı; **kategori kararı 91'in run'ında verilecek**.
+
+| 10:11 | Created artifacts/b21-research/wolf-fix-b21.py | — | ~374 |
+| 10:12 | Created artifacts/b21-research/anatomy-b21.py | — | ~672 |
+| 10:12 | Created artifacts/b21-research/buglog-b21.py | — | ~1689 |
+| 10:13 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch21-faz9-kapanis.md | — | ~1084 |
+| 10:14 | Created artifacts/b21-research/anatomy2-b21.py | — | ~1227 |
+| 10:15 | Created artifacts/b21-research/buglog2-b21.py | — | ~426 |
+| 10:16 | Session end: 33 writes across 31 files (items-b21.py, idx-b21.py, kucuk-ama-guclu-damitma-ve-kucuk-modeller.md, damitmanin-uc-aktarim-bicimi.svg, ayni-butcenin-iki-yolu.svg) | 30 reads | ~219751 tok |

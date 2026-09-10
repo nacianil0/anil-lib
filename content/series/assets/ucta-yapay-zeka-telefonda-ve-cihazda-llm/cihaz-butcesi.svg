@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 336" role="img" aria-label="Dört satırlı tablo; satırlar cihazdaki dört kısıt, sütunlar ölçülmüş değer ile gevşeten teknik ve bedeli. Bellek kısıtında ölçülmüş değer çalışma belleğinin 6 ile 12 gigabayt arası olması ve bir uygulamanın bunun yaklaşık yüzde 10'unu geçmemesinin beklenmesidir; gevşeten teknikler kuantizasyon ve ağırlıkları flash bellekten akıtmaktır, bedeli doğruluk kaybı ve okuma gecikmesidir. Bellek bant genişliği kısıtında ölçülmüş değer yığın büyüklüğünün bir olması ve okunan bayt başına yalnızca bir işlem yapılmasıdır; gevşeten teknikler daha az bit ve önbellek paylaşımıdır, bedeli çözme işleminin kendi maliyetidir. Enerji kısıtında ölçülmüş değer milyar parametre başına token başına 0,1 joule, yani 7 milyarlık modelde 0,7 jouledür; gevşeten teknik daha küçük modeldir, bedeli kalite tavanıdır. Isı ve güç kısıtında ölçülmüş değer sürekli 13,8 vata varan çekim ve yüzey sıcaklığının 47,9 dereceye çıkmasıdır; gevşeten teknikler süre sınırı koymak ve işi sinir ağı işlemcisine vermektir, bedeli sürekli çalıştırmanın mümkün olmamasıdır. En altta bir kayıt: tam dolu bir pil yaklaşık 50 kilojoule taşır; bu iki sayı bölündüğünde saniyede 10 token hızında 7 milyarlık bir modelin iki saatin biraz altında pili bitireceği çıkar.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">kısıt</text>
+  <text x="175" y="24" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş değer</text>
+  <text x="455" y="24" font-size="13" font-weight="bold" fill="var(--text)">gevşeten teknik ve bedeli</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">bellek</text>
+  <text x="175" y="62" font-size="13" fill="var(--text)">çalışma belleği 6–12 GB;</text>
+  <text x="175" y="80" font-size="13" fill="var(--text)">uygulama payı yüzde 10</text>
+  <text x="455" y="62" font-size="13" fill="var(--cool)">kuantizasyon, flash'tan akıtma</text>
+  <text x="455" y="80" font-size="13" fill="var(--text-muted)">bedeli: doğruluk, okuma gecikmesi</text>
+
+  <text x="30" y="112" font-size="13" fill="var(--text)">bant genişliği</text>
+  <text x="175" y="112" font-size="13" fill="var(--text)">yığın 1; okunan bayt başına</text>
+  <text x="175" y="130" font-size="13" fill="var(--text)">yalnızca 1 işlem</text>
+  <text x="455" y="112" font-size="13" fill="var(--cool)">daha az bit, önbellek paylaşımı</text>
+  <text x="455" y="130" font-size="13" fill="var(--text-muted)">bedeli: çözme işleminin maliyeti</text>
+
+  <rect x="20" y="142" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="162" font-size="13" fill="var(--text)">enerji</text>
+  <text x="175" y="162" font-size="13" fill="var(--text)">milyar parametre başına</text>
+  <text x="175" y="180" font-size="13" fill="var(--text)">0,1 J/token; 7 milyarda 0,7 J</text>
+  <text x="455" y="162" font-size="13" fill="var(--cool)">daha küçük model</text>
+  <text x="455" y="180" font-size="13" fill="var(--text-muted)">bedeli: kalite tavanı</text>
+
+  <text x="30" y="212" font-size="13" fill="var(--text)">ısı ve güç</text>
+  <text x="175" y="212" font-size="13" fill="var(--text)">sürekli 13,8 W'a varan çekim;</text>
+  <text x="175" y="230" font-size="13" fill="var(--text)">yüzey sıcaklığı 47,9 °C</text>
+  <text x="455" y="212" font-size="13" fill="var(--cool)">süre sınırı; sinir ağı işlemcisi</text>
+  <text x="455" y="230" font-size="13" fill="var(--text-muted)">bedeli: sürekli çalıştırma yok</text>
+
+  <line x1="20" y1="248" x2="700" y2="248" stroke="var(--border)" />
+  <text x="20" y="272" font-size="13" fill="var(--text-muted)">Tam dolu bir pil yaklaşık 50 kilojoule taşır. 50.000 bölü 0,7 yaklaşık 71.400 token;</text>
+  <text x="20" y="290" font-size="13" fill="var(--text-muted)">saniyede 10 token hızında iki saatin biraz altı.</text>
+  <text x="20" y="314" font-size="13" fill="var(--text-faint)">Bu son satır kendi hesabımız; girdileri üçüncü satırda duruyor.</text>
+</svg>

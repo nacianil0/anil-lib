@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 326" role="img" aria-label="Üç sütunlu tablo; sütunlar cihazda çalışan bir üretim modelinin üç tasarım kararı. Birinci sütun hassasiyet: karar, ağırlıkların kuantizasyona duyarlı eğitimle ağırlık başına iki bite indirilmesi, sözlük tablosunun dört bitte ve anahtar-değer önbelleğinin sekiz bitte tutulmasıdır; gevşettiği kısıt bellek ve bant genişliğidir; kaybın telafisi dondurulmuş gövdenin üzerine eğitilen düşük ranklı adaptörlerdir. İkinci sütun önbellek paylaşımı: karar, katmanların yüzde 62,5'inin birinci blokta, yüzde 37,5'inin anahtar ve değer izdüşümleri kaldırılmış ikinci blokta olması ve ikinci bloğun birinci bloğun önbelleğini paylaşmasıdır; gevşettiği kısıt önbellek belleği ve ilk token süresidir; ölçülen kazanç ikisinde de yaklaşık yüzde 37,5'tir. Üçüncü sütun sunucu tarafındaki karşılığıdır: karar, sunucu modelinin ağırlık başına 3,56 bite, grafik donanımının doku sıkıştırma biçimiyle indirilmesidir; gevşettiği kısıt bellektir; kazancı çözmenin donanımdaki sabit işlevli birimle neredeyse bedelsiz yapılabilmesidir. En altta bir kayıt: üç karar da aynı kaleme yazılıyor, her adımda bellekten okunan bayt.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru</text>
+  <text x="185" y="24" font-size="13" font-weight="bold" fill="var(--text)">hassasiyet</text>
+  <text x="360" y="24" font-size="13" font-weight="bold" fill="var(--text)">önbellek paylaşımı</text>
+  <text x="535" y="24" font-size="13" font-weight="bold" fill="var(--text)">sunucudaki eşi</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="66" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">karar</text>
+  <text x="185" y="62" font-size="13" fill="var(--text)">ağırlık 2 bit (duyarlı</text>
+  <text x="185" y="80" font-size="13" fill="var(--text)">eğitimle), sözlük 4 bit,</text>
+  <text x="185" y="98" font-size="13" fill="var(--text)">önbellek 8 bit</text>
+  <text x="360" y="62" font-size="13" fill="var(--text)">katmanların %62,5'i</text>
+  <text x="360" y="80" font-size="13" fill="var(--text)">birinci blokta; ikinci</text>
+  <text x="360" y="98" font-size="13" fill="var(--text)">blok onunkini paylaşır</text>
+  <text x="535" y="62" font-size="13" fill="var(--text)">ağırlık başına 3,56</text>
+  <text x="535" y="80" font-size="13" fill="var(--text)">bit; grafik donanımının</text>
+  <text x="535" y="98" font-size="13" fill="var(--text)">doku sıkıştırması</text>
+
+  <text x="30" y="130" font-size="13" fill="var(--text)">gevşettiği kısıt</text>
+  <text x="185" y="130" font-size="13" fill="var(--accent)">bellek ve bant</text>
+  <text x="185" y="148" font-size="13" fill="var(--accent)">genişliği</text>
+  <text x="360" y="130" font-size="13" fill="var(--accent)">önbellek belleği ve</text>
+  <text x="360" y="148" font-size="13" fill="var(--accent)">ilk token süresi</text>
+  <text x="535" y="130" font-size="13" fill="var(--accent)">bellek</text>
+
+  <rect x="20" y="160" width="680" height="66" fill="var(--surface-muted)" />
+  <text x="30" y="180" font-size="13" fill="var(--text)">kazanç ya da</text>
+  <text x="30" y="198" font-size="13" fill="var(--text)">telafi</text>
+  <text x="185" y="180" font-size="13" fill="var(--cool)">kaybı dondurulmuş</text>
+  <text x="185" y="198" font-size="13" fill="var(--cool)">gövdenin üzerindeki</text>
+  <text x="185" y="216" font-size="13" fill="var(--cool)">düşük ranklı adaptör</text>
+  <text x="360" y="180" font-size="13" fill="var(--cool)">önbellek belleğinde</text>
+  <text x="360" y="198" font-size="13" fill="var(--cool)">ve ilk token süresinde</text>
+  <text x="360" y="216" font-size="13" fill="var(--cool)">yaklaşık %37,5</text>
+  <text x="535" y="180" font-size="13" fill="var(--cool)">çözme, donanımdaki</text>
+  <text x="535" y="198" font-size="13" fill="var(--cool)">sabit işlevli birimle</text>
+  <text x="535" y="216" font-size="13" fill="var(--cool)">neredeyse bedelsiz</text>
+
+  <line x1="20" y1="244" x2="700" y2="244" stroke="var(--border)" />
+  <text x="20" y="268" font-size="13" fill="var(--text-muted)">Üç karar da aynı kaleme yazılıyor: her adımda bellekten okunan bayt.</text>
+  <text x="20" y="292" font-size="13" fill="var(--text-muted)">Üçüncüsü bir algoritmadan değil, oyun dokuları için yıllar önce konmuş bir</text>
+  <text x="20" y="310" font-size="13" fill="var(--text-muted)">donanım parçasından geliyor.</text>
+</svg>

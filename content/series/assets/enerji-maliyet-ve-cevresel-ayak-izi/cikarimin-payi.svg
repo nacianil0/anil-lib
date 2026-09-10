@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 414" role="img" aria-label="İki bölmeli şekil. Üst bölmede bin çıkarım için harcanan ortalama enerji, kilovat-saat cinsinden, dört görev için: metin sınıflandırma 0,002, görüntü sınıflandırma 0,007, metin üretimi 0,047, görüntü üretimi 2,907. Ölçek için bir telefonu tam şarj etmek 0,022 kilovat-saattir ve incelenen on görevin en düşüğü ile en yükseği arasındaki oran 1.450'yi aşar. Alt bölmede aynı model ailesindeki dört boyut için maliyet eşitliği, yani çıkarım enerjisinin eğitim ve ince ayar enerjisine ulaşması için gereken çıkarım sayısı verilir: 560 milyonluk modelde 205 milyon, 1 milyarlıkta 292 milyon, 3 milyarlıkta 396 milyon, 7 milyarlıkta 593 milyon çıkarım. En altta bir kayıt: sayılar tek bir çalışmanın ölçtüğü modellere aittir ve donanıma, yığınlamaya ve bölgeye göre değişir.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">Bin çıkarım için ortalama enerji (kilovat-saat)</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">metin sınıflandırma</text>
+  <text x="420" y="62" font-size="13" fill="var(--cool)">0,002</text>
+
+  <text x="30" y="92" font-size="13" fill="var(--text)">görüntü sınıflandırma</text>
+  <text x="420" y="92" font-size="13" fill="var(--cool)">0,007</text>
+
+  <rect x="20" y="102" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="122" font-size="13" fill="var(--text)">metin üretimi</text>
+  <text x="420" y="122" font-size="13" fill="var(--text)">0,047</text>
+
+  <text x="30" y="152" font-size="13" fill="var(--text)">görüntü üretimi</text>
+  <text x="420" y="152" font-size="13" fill="var(--accent)">2,907</text>
+
+  <text x="30" y="178" font-size="13" fill="var(--text-faint)">ölçek: bir telefonu tam şarj etmek</text>
+  <text x="420" y="178" font-size="13" fill="var(--text-faint)">0,022</text>
+  <text x="30" y="200" font-size="13" fill="var(--text-faint)">incelenen on görevin en düşüğü ile en yükseği arasındaki oran 1.450'yi aşıyor</text>
+
+  <line x1="20" y1="214" x2="700" y2="214" stroke="var(--border)" />
+  <text x="20" y="238" font-size="13" font-weight="bold" fill="var(--text)">Maliyet eşitliği: eğitim + ince ayar enerjisine kaç çıkarımda ulaşılır</text>
+
+  <rect x="20" y="248" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="268" font-size="13" fill="var(--text)">560 milyon parametreli model</text>
+  <text x="420" y="268" font-size="13" fill="var(--text)">205 milyon çıkarım</text>
+
+  <text x="30" y="298" font-size="13" fill="var(--text)">1 milyar parametreli model</text>
+  <text x="420" y="298" font-size="13" fill="var(--text)">292 milyon çıkarım</text>
+
+  <rect x="20" y="308" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="328" font-size="13" fill="var(--text)">3 milyar parametreli model</text>
+  <text x="420" y="328" font-size="13" fill="var(--text)">396 milyon çıkarım</text>
+
+  <text x="30" y="358" font-size="13" fill="var(--text)">7 milyar parametreli model</text>
+  <text x="420" y="358" font-size="13" fill="var(--text)">593 milyon çıkarım</text>
+
+  <line x1="20" y1="374" x2="700" y2="374" stroke="var(--border)" />
+  <text x="20" y="398" font-size="13" fill="var(--text-muted)">Sayılar tek bir çalışmanın ölçtüğü modellere ait; donanıma, yığınlamaya ve bölgeye göre değişir.</text>
+</svg>

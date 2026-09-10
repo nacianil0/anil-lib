@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-09 · Yayında: 1–86 (Batch 0 … Batch 20) · Sıradaki güvenli başlangıç: 87
+Son güncelleme: 2026-09-10 · Yayında: 1–90 (Batch 0 … Batch 21) · Sıradaki güvenli başlangıç: 91
 
 ## Serinin tezi
 
@@ -239,6 +239,19 @@ değerleridir). Defterde açık kalan **tek** koordinat artık **101**'dir (16 v
 numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruyor. Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku
 **hâlâ tahsil edilmedi** ve 101 önerilmeye devam ediyor.
 
+**Numarasız ileri işaretler — Batch 21'de verildi.** Küçük modelin nereye konduğu (87 → 88, "bir sonraki makale");
+bir yongayı hızlandırıcı yapan şey (88 → 89, "bir sonraki makale"); bir çipin yaptığı işin elektrik karşılığı
+(89 → 90, "bir sonraki makale"); ve erken makalelerde sezgiyle kurulan kavramların biçimsel yeniden kurulumu
+(90 → Faz 10, "serinin bir sonraki fazı"; 91 numarası **açılmadı**). **Batch 21 bir numarasız işareti ödedi:**
+34'ün Batch 7'de verdiği "damıtmanın temel modelin sınırını aşması" işareti 87'de — 87'nin "34'ün sorusu"
+bölümü 34'ün kapsama ölçümünü adıyla anar ve karşı örneğin kendi ölçümünü verir. Ayrıca 86'nın "bir sonraki
+makale" devri 87'de karşılandı. Batch 21 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi
+numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 89) yapıldı ve Python ile makale başına doğrulandı
+(kendi numarasına gönderme yok; 90'dan büyük öteki sayılar yüzde, puan, watt ve token değerleridir). Defterde
+açık kalan **tek** koordinat hâlâ **101**'dir (16 ve 22'nin ölçüm disiplini vaadi); numarasız işaretler
+51 → 111 ve 49/53 → 115 olarak duruyor. Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku **hâlâ tahsil
+edilmedi**; 101 önerilmeye devam ediyor.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -353,10 +366,10 @@ numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruyor. Devrolan planl
 84. **Birleşik Modeller: Her Şey Token mı?** — modaliteleri birleştirme; 30'un kısıtlı üretimi burada tahsil edildi. `[yayında]`
 85. **Verimli Mimariler: Uzman Karışımları (MoE)** — koşullu hesaplama; 20'nin koordinatı ödendi. `[yayında]`
 86. **Dikkatin Ötesi: SSM ve Alternatif Mimariler** — 6–7'nin eleştirel geri çağrımı; 7 ve 15'in koordinatı ödendi, başlık Türkçeleştirildi (karar #185). `[yayında]`
-87. **Küçük ama Güçlü: Damıtma ve Küçük Modeller** — distillation.
-88. **Uçta Yapay Zekâ: Telefonda ve Cihazda LLM** — on-device.
-89. **Donanım Ekosistemi: GPU'dan Özel Çiplere** — çip ve altyapı manzarası (mühendislik derinliği Faz 13'te).
-90. **Enerji, Maliyet ve Çevresel Ayak İzi** — ölçeğin bedeli.
+87. **Küçük ama Güçlü: Damıtma ve Küçük Modeller** — damıtma; 34'ün numarasız işareti ödendi (sınırın aşılması). `[yayında]`
+88. **Uçta Yapay Zekâ: Telefonda ve Cihazda LLM** — cihaz bütçesi; 26/28'in yığın varsayımı kalkıyor. `[yayında]`
+89. **Donanım Ekosistemi: GPU'dan Özel Çiplere** — çatı çizgisi, üç ıraksayan üstel, alana özel mimari; mühendislik derinliği Faz 13'te. `[yayında]`
+90. **Enerji, Maliyet ve Çevresel Ayak İzi** — ölçeğin bedeli ve bir enerji sayısının okunması; **Faz 9 kapandı**. `[yayında]`
 
 ### Faz 10 — Matematiksel Omurga: Sezgiden İspata (91–97)
 
@@ -546,6 +559,11 @@ kavram-tekrar tablolarına yazıldı.)
 - 84 ← 83 (iki üretim düzeninin ayrımı; "bir sonraki makale" devri), 4 (tokenizasyon bir tasarım kararıdır; alt-kelime mantığı büyük sözlüğün ayrıştırılmasında yeniden çıktı), **30 (kısıtlı üretim — devrolan planlı tekrarın tahsil yeri; biçim garantisi burada mimari zorunluluk)**, 26 (ardışık adımın maliyeti; sıranın bedeli), 7 (nedensel maske sıra varsayımını taşır), 9 (VAR'ın güç yasası), 82 (akustik token'lar zaten ayrıktı — bedelin modaliteye göre değişmesi), 81 (bağlantı yollarının çıktı tarafında asimetrik kalması), 21 ve 25 (pencere bütçesi: görüntü başına 1024 token), 14 (karışım tartışmasının çok modlu hâli), 19/27 (**kuantizasyon** sözcüğünün çakışması adlandırıldı) `[yayında]`
 - 85 ← **20 (bağlayıcı koordinat: 671 milyar toplam ↔ 37 milyar çalışan parametre)**, 9 (6ND ve ölçek yasası; **Kaplan–Chinchilla ayrımının biçimi iki taraflı tartışmada yeniden çıktı — altmış makale aralıklı geri çağırma**), 7 (blok içinde ileri beslemeli katmanın payı: çoğaltılacak yer), 27 (bellek duvarı: bedelin taşındığı yer), 28 (yığınlama seyrekliği yiyor), 60 (maliyet ve gecikme hesabı), 19 (uyarlama mantığının mimari karşılığı: seyrek yükseltme), 8 (eğitim döngüsü ve kararlılık) `[yayında]`
 - 86 ← **7 (bağlayıcı koordinat: "aynı işi karesel maliyet ödemeden yapan mimariler")** ve **15 (bağlayıcı koordinat: sabit sözlüğü atan mimariler)**, 6 (dikkatin hesabı: ikili sayısı), 26 (anahtar-değer önbelleğinin doğrusal büyümesi — iki ayrı maliyetin ayrılması), 5 (**yinelemeli** ağlar geri döndü ve perplexity'nin ortalama olması — seksen bir makale aralıklı geri çağırma), 79 (ortalama başarı ↔ tutarlı başarı ayrımının mimari hâli), 21 (etkin bağlam), 25 (pencere dikkati), 74 (kopyalama ve indüksiyon tartışmasının zemini), 85 (iki verimlilik ekseni melez modelde birleşiyor) `[yayında]`
+
+- 87 ← 86 ("bir sonraki makale" devri: aynı kaliteyi daha az kaynakla vermenin üçüncü yolu), **34 (numarasız işaretin tahsil yeri: damıtmanın temel modelin sınırını aşması; kapsama eğrisi adıyla anıldı)**, 10 (**sıcaklık** — yumuşak etiketin mekanizması; yetmiş yedi makale aralıklı geri çağırma), 9 (hesap-optimal nokta; ölçek yasasının damıtma hâli), 27 (kuantizasyon: küçültmenin öbür yolu; budama ondan ayrıldı), 16 ve 73 (değerlendiricinin ölçtüğü ile modelin öğrendiği ayrımı; taklidin biçim/olgu farkı), 31 (**sadakat** sözcüğünün çakışması adlandırıldı), 28 (çıkarım maliyeti: küçük modelin gerekçesi) `[yayında]`
+- 88 ← 87 ("bir sonraki makale" devri: küçük model nereye gidiyor), **26 (bayt başına yığın büyüklüğü hesabı — cihazda payda 1'e iniyor)**, 28 (sürekli yığınlama ve parçalı ön dolumun cihazda karşılığı yok), 27 (kuantizasyona duyarlı eğitim; "kazanılan taşımadır" kaydı 3 bit ↔ 4 bit ölçümünde çıktı), 19 (düşük ranklı adaptör: hem kalite telafisi hem çoklu görev biçimi), 21 (anahtar-değer önbelleğinin belleği), 86 (bellek hiyerarşisi dersi bir kat aşağı taşındı), 60 (yönlendirici ve maliyet-gecikme ölçütü; cihazda üçüncü ölçüt sınır), 80 (gizlilik iddiasının belgelenmesi) `[yayında]`
+- 89 ← 88 ("bir sonraki makale" devri: dört kısıtın üçü donanımdan), **26 (bayt başına 229 işlem — çatı çizgisinin sırt noktası olarak yeniden okundu)**, 28 (gecikme ↔ iş hacmi ayrımının donanım hâli: 7 ms sınırı), 27 (bellek duvarı; hassasiyetin donanım sözleşmesi olması), 85 (hepsi-hepsiye iletişimin kesim bandını zorlaması), 86 (işlem azaltmak duvar saatini azaltmaz; tam dikkat algoritması çatı modelinin varsayımını bozar), 9 (hesap bütçesi ve tepe ↔ ulaşılan hız) `[yayında]`
+- 90 ← 89 ("bir sonraki makale" devri: işin elektrik karşılığı), **8 (GPT-3'ün 1.287 MWh / 552,1 ton sayısı — bu kez zincirin kendisi kuruldu, seksen iki makale aralıklı geri çağırma)**, 9 (6ND ve hesap bütçesi), 20 (bildirilen eğitim maliyeti; para ile enerjinin ayrı eğriler olması), 85 (seyrek modelin enerji üçlüsü 4M'in birinci satırı olarak yeniden okundu), 89 (özel çip 4M'in ikinci satırı), 26 ve 28 (boşta yanan enerji: yığınlamanın ikinci gerekçesi), 16 ve 71 (ölçüm koşullarının bildirilmesi) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1490,6 +1508,44 @@ MCP üçlüsü (49/53 → 115).
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
 
+### Batch 21'de gerçekleşen tekrarlar (planlananların tahsili)
+
+- **Sıcaklık (10 → 87), yetmiş yedi makale aralıklı.** 10'da örneklemenin ayarı olarak kurulmuştu; 87'de
+  yumuşak etiketin **mekanizması** olarak geri döndü: logit'leri `T`'ye bölmek küçük olasılıkları okunur
+  kılıyor ve aktarılan bilgi tam olarak orada duruyor. Aynı düğme, iki ayrı iş.
+- **Kapsama ve pass@k (33/34 → 87).** 34'ün kapsama eğrisi adıyla anıldı ve numarasız işaret orada ödendi;
+  fakat **33/40'ın planlı pass@k + görev ufku tekrarı bu run'da da tahsil edilmedi** ve devrolur (101 uygun).
+- **Kuantizasyon (19/27 → 87, 88, 89), üç ayrı yüzüyle.** 87'de küçültmenin öbür ailesi olarak budamadan
+  ayrıldı; 88'de kuantizasyona duyarlı eğitimin üretimdeki 2 bitlik hâliyle; 89'da bir **donanım sözleşmesi**
+  olarak ("bir sayı biçimi ancak çip onu doğrudan çarpabiliyorsa hız verir") yeniden kuruldu.
+- **Düşük ranklı adaptör (19 → 88), altmış dokuz makale aralıklı.** Hem kuantizasyon kaybının telafisi hem de
+  tek gövdeyle çok görev yapmanın yolu olarak; 19'un mekanizması cihaz bütçesinin içinde yeniden okundu.
+- **Bayt başına işlem hesabı (26 → 88 → 89), iki adımda.** 88'de paydanın 1'e inmesiyle, 89'da adının
+  konmasıyla: 26'da hesaplanan 229 sayısı **sırt noktası** olarak yeniden tanımlandı.
+- **Gecikme ↔ iş hacmi (28 → 89), altmış bir makale aralıklı.** 28'de servis düzeyinde ayrılmıştı; 89'da 7
+  milisaniyelik yüzde 99'luk sınırın yığın büyüklüğünü 200'den 16'ya düşürmesiyle donanım düzeyinde geri döndü.
+- **GPT-3'ün enerji ve karbon sayısı (8 → 90), seksen iki makale aralıklı.** 8'de tek bir ölçek göstergesiydi;
+  90'da o sayıyı üreten dört halkalı zincirin kendisi kuruldu ve sayı adım adım yeniden türetildi.
+- **Bildirilen eğitim maliyeti (20 → 90).** 20'nin 5,576 milyon dolarlık rakamı, enerjinin toplam maliyetin
+  yüzde 2–6'sı olduğu bulgusuyla birlikte yeniden okundu: para ile enerji ayrı eğriler.
+- **GLaM'ın enerji üçlüsü (85 → 90).** 85'te mimari bir kazanç olarak verilmişti; 90'da 4M çerçevesinin
+  birinci satırının ("Model") örneği olarak yerine oturdu.
+- **Ölçüm koşullarının bildirilmesi (16, 71 → 90).** Cetvelin bir tasarım ürünü olduğu tezi, enerji sayılarının
+  sınırına taşındı: aynı istem iki sınırla 0,10 ve 0,24 vat-saat.
+
+### Batch 21'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+- **Yumuşak etiket ve fonksiyon eşleştirme (87)** → 105'te küçük ölçekte kendi asistanını kurarken; 114'te
+  bir sınır modelinin üretim hattında.
+- **Kapasite boşluğu (87)** → 96'da genelleme kuramının içinde (öğrenci-öğretmen uzaklığı ile hipotez sınıfı).
+- **Budama ve piyango bileti (87)** → 92'de düşük ranklılığın matematiğiyle birlikte.
+- **Cihaz bütçesi: dört kısıt (88)** → 112'de sürekli öğrenme ve kişiselleştirmenin ürün düzeyinde.
+- **Çatı çizgisi ve sırt noktası (89)** → **106**'nın çekirdeği; 108'de çekirdek füzyonunun gerekçesi olarak.
+- **Alana özel mimari ve donanım piyangosu (89)** → 116'da açık sorular, 117'de AGI tartışmasının donanım yüzü.
+- **Enerji zincirinin dört halkası (90)** → 101'de ölçüm disiplininin bir örneği; 109'da üretim koşusunun
+  operasyon gerçeği.
+- **Maliyet eşitliği (90)** → 115'te bir ürünün ömür boyu hesabı.
+
 ### Batch 19'da gerçekleşen tekrarlar (planlananların tahsili)
 
 Önceki batch'lerin kavramlarının 79–82'de fiilen nerede geri çağrıldığı:
@@ -2386,6 +2442,26 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | seçicilik | (selectivity) | 86 | sistem parametrelerinin girdiye bağlı hâle gelmesi; evrişim görünüşünü bozar |
 | çağrışımsal geri çağırma | (associative recall) | 86 | bağlamda geçmiş bir eşleşmeyi geri çağırmak; 18/21'deki **geri çağırmayla** aynı anlamda, 29'daki bulma oranından ayrı |
 | melez mimari | — | 86 | katmanların küçük bir bölümünde tam dikkat; gövdede parantezsiz |
+
+| yumuşak etiket | (soft target) | 87 | öğretmenin yüksek sıcaklıkta ürettiği, bütün sınıflara yayılmış dağılım; 10'daki **sıcaklık** burada yeniden kullanılır |
+| öğretmen / öğrenci | (teacher / student) | 87 | damıtmanın iki tarafı; 34'te adı geçmişti, rolleri 87'de kuruldu |
+| fonksiyon eşleştirme | (function matching) | 87 | öğretmen ile öğrencinin **aynı** girdiyi görmesi ve uzun eğitim; damıtmanın etiket aktarımı olmadığının adı |
+| kapasite boşluğu | (capacity gap) | 87 | öğretmen fazla güçlenince öğrencinin kötüleşmesi; boyut farkı değil, öğrenme kapasitesi farkı |
+| budama | (pruning) | 87 | ağırlıkları, başları ya da katmanları tümüyle silmek; 19/27'deki **kuantizasyondan** ayrı bir küçültme ailesi |
+| sadakat (damıtmada) | (fidelity) | 87 | öğrencinin öğretmenin tahminlerine uyma derecesi; 31'deki **sadakat (faithfulness)** ile aynı sözcük, nesne farklı, çakışma gövdede adlandırıldı |
+| uç | (edge) | 88 | hesabın verinin üretildiği yerde yapılması; telefon örnek alındı, kısıt listesi bütün uç donanımları için aynı |
+| kuantizasyona duyarlı eğitim | — | 88 | 27'de gloss'lanmıştı; 88'de üretimdeki 2 bitlik hâliyle geri çağrıldı |
+| sinir ağı işlemcisi | (NPU) | 88 | cihazdaki matris hızlandırıcısı; yoğun öbekler ona, seyrek olanlar merkezi işlemciye |
+| işlem yoğunluğu | (operational intensity) | 89 | ana bellekten okunan bayt başına yapılan işlem; 26'daki "bayt başına 229 işlem" bunun ölçüsüydü |
+| çatı çizgisi | (roofline) | 89 | işlem yoğunluğu ↔ ulaşılabilir hız düzlemi; eğik parça bant genişliği, yatay parça işlem gücü |
+| sırt noktası | (ridge point) | 89 | tepe hıza ulaşmak için gereken en küçük işlem yoğunluğu |
+| alana özel mimari | (domain-specific architecture) | 89 | tek iş sınıfı için tasarlanan çip; genel amaçlı düzeneğin çıkarılmasıyla tanımlanır |
+| donanım piyangosu | (hardware lottery) | 89 | bir fikrin üstün olduğu için değil, mevcut donanım ve yazılıma uyduğu için kazanması |
+| vat | (watt) | 90 | güç birimi; "megavat-saat" 8'de gloss'suz geçmişti, birim zinciri 90'da kuruldu |
+| veri merkezi çarpanı | (PUE, power usage effectiveness) | 90 | soğutma ve dağıtımın payı; modern merkezlerde 1,08–1,2 |
+| karbon yoğunluğu | (carbon intensity) | 90 | kilovat-saat başına gram karbondioksit eşdeğeri; bölgeye ve saate göre kat kat değişir |
+| bulunduğu yere göre / satın alınan enerjiye göre sayım | (location-based / market-based) | 90 | aynı elektriğin iki ayrı karbon muhasebesi |
+| maliyet eşitliği | (cost parity) | 90 | çıkarım enerjisinin eğitim + ince ayar enerjisine ulaştığı çıkarım sayısı |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -4212,6 +4288,160 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     derlemesi, OpenMoE, milyon uzman, yardımcı kayıpsız yük dengeleme, DeepSeek-V3, verimli çıkarım (85); HiPPO, LSSL,
     S5, H3, Hyena, Linformer, Reformer, seyrek Transformer, RetNet, kapılı doğrusal dikkat, xLSTM, Eagle/Finch, LRU,
     Based, Mamba-in-context, verimli Transformer derlemesi, akış hâlinde dil modelleri (86).
+
+192. **Batch 21'in kohortu ve kategorisi.** 87–90'ın dördü de `multimodal-and-future` (karar #176'nın bandı
+    81–90) ve `classification_batch: 21`. Okuma listesinde 81–90 tek öbek; `reading-list-groups.test.ts`
+    **değişmedi**. Test sayısı 575 → **587**; artışın tamamı `series-assets.test.ts`'in varlık başına türeyen
+    testlerinden (12 yeni SVG). **Faz 9 kapandı.** Faz 10'un (91–97) kategorisi 91'in run'ında karara bağlanacak.
+
+193. **Başlık kararı yok (Batch 21).** 87 ve 90'ın başlıkları zaten Türkçeydi; 88'deki "LLM" ile 89'daki "GPU"
+    karar #108'in kısaltma sınıfında kaldı ve dokunulmadı. `roadmap.json`'da yalnızca durum satırları değişti.
+    **Bandın dışında bekleyen aday hâlâ 108** ("Performans Mühendisliği: Attention'ı Hızlandırmak"); 86'nın
+    "Dikkatin Ötesi" kararından (#185) sonra aynı sözcük orada da Türkçeleştirilmeli görünüyor, karar 108'in
+    kendi run'ında verilir.
+
+194. **Terim kararları (Batch 21).** "yumuşak etiket" (soft target); "fonksiyon eşleştirme"; "kapasite boşluğu";
+    "budama" (pruning — 19/27'deki kuantizasyondan ayrı bir aile olarak kuruldu); "uç" (edge); "işlem yoğunluğu",
+    "çatı çizgisi", "sırt noktası", "alana özel mimari", "donanım piyangosu"; "veri merkezi çarpanı" (PUE),
+    "karbon yoğunluğu", "maliyet eşitliği". **İki çakışma yayından önce adlandırıldı:** (a) 87'de "sadakat"
+    öğrencinin öğretmene uyması anlamında kullanıldı ve 31'deki *faithfulness* anlamıyla aynı sözcük olduğu
+    gövdede yazıldı; (b) 88 ve 89'da "hassasiyet" 27'deki sayı biçimi anlamında kullanıldı, 77'deki
+    **duyarlılık** (sensitivity) ile karışmaması için o sözcük hiç kullanılmadı. Batch 20'nin dersi uygulandı:
+    yeni ölçü çifti kurulmadan önce defter arandı, bu yüzden bu run'da geri dönüş gerekmedi.
+
+195. **Sayılar (Batch 21). 87:** MNIST 67 / 146 / 74 hata ve T = 20; 3'süz aktarım kümesinde 206 hata (133'ü
+    3'lerde) ve sapma +3,5 ile 109 hata (14'ü 3'lerde), yüzde 98,6; Buciluă'da bin kat küçük ve hızlı;
+    Ba–Caruana'da sığ ağın aynı parametre sayısıyla derin fonksiyonu öğrenmesi; Beyer 9.600 dönem ve ImageNet
+    ResNet-50 yüzde 82,8 (+4,4 puan); Furlanello CIFAR-10 6,69→6,64 / 5,06→4,86 / 4,13→4,03 ve 36 milyonda
+    3,77→3,86; Gemma 2 hesap-optimalin 50 katı, 500 milyar token'da 60,3 ↔ 67,7 ve perplexity 23/19/17 ↔
+    21/17/15; Busbridge 143 milyon–12,6 milyar ve 512 milyar token'a kadar, öğrenciler 143 ve 198 milyon,
+    öğretmenler 300 milyon–14 milyar; Kim–Rush'ta on kat hızlı öğrenci; Sheared LLaMA 7 → 1,3 ve 2,7 milyar,
+    yüzde 3 hesap; Minitron 15 → 8 ve 4 milyar, 40 kata kadar az token, aile maliyeti 1,8 kat, MMLU yüzde 16'ya
+    varan; Gudibande 1,5–13 milyar temel, 0,3–150 milyon taklit token'ı, NQ 17/10/22 ve 20/15/27, öğretmen 31,
+    insan değerlendirmesi yaklaşık yüzde 70; DeepSeek-R1 800 bin örnek, 32 milyarlık temelde damıtma
+    72,6 / 94,3 / 57,2 ↔ pekiştirmeli öğrenme 47,0 / 91,6 / 40,2 ↔ üçüncü model 50,0 / 90,6 / 41,9, 1,5
+    milyarlık damıtılmış model AIME 28,9 ↔ 9,3 ve 16,0; Sardana 13 → 7 milyar, 2 trilyon token talebinde
+    1,7×10²² işlem (yüzde 17). **88:** DRAM 6–12 GB ve uygulama payı yüzde 10; 0,1 J/token/milyar ile 7 milyarda
+    0,7 J, 350 milyon 8 bitte 0,035 J; pil yaklaşık 50 kJ; MELT 13,8 W sürekli, 47,9 °C, 0,16–0,21 mWh/token,
+    yaklaşık 500 istem, M2 Max'ta 7 milyar 4 bit 46,8 token/s, telefonda 1,1 milyar yaklaşık 13,6 token/s,
+    4 bit 3 bitten yüzde 24,77 hızlı, çerçeveler arası 3,53 kata varan fark; MobileLLM 125/350 milyonda +2,7 ve
+    +4,3 puan; Apple 2 bit kuantizasyona duyarlı eğitim, sözlük 4 bit, önbellek 8 bit, blok oranı yüzde
+    62,5 / 37,5 ve iki kalemde yüzde 37,5 kazanç, sunucu 3,56 bit, rank 16 adaptör onlarca megabayt;
+    LLM in a flash DRAM'in iki katı ve 4 ile 20 kat; PowerInfer-2 telefonda 47 milyar ve 11,68 token/s.
+    **89:** çatı çizgisi sırt noktaları 4,4 ve 6,7 (sekiz baytlık operand için 35–55 işlem), çekirdek
+    yoğunlukları 0,25–1,64 ortanca 0,60, on altı bileşim; 20 yılda hesap 60.000 kat (3,0 kat/2 yıl), DRAM bandı
+    100 kat (1,6), kartlar arası 30 kat (1,4), model 410 kat/2 yıl, kart belleği 2 kat/2 yıl; TPU 65.536
+    çarpma-toplama, 92 TOPS, 15–30 kat hız, 30–80 kat vat başına işlem, sırt noktası 1350, altı uygulamanın
+    dördü bellek sınırlı, 7 ms'de yığın 200 yerine 16 ve yüzde 42/37 ↔ 80, evrişimli ağlar iş yükünün yüzde 5'i;
+    ZeRO 100 milyar / 400 kart / 15 PFLOP/s; Megatron 1 trilyon / 3.072 kart / 502 PFLOP/s ve tepe hızın yüzde
+    52'si; TPU v4 4.096 çip, optik anahtarlar maliyetin yüzde 5'inden ve gücün yüzde 3'ünden azı, dil modeli
+    tepe hızın yaklaşık yüzde 60'ı, embedding birimi alanın ve gücün yüzde 5'iyle 5–7 kat; 2012'de 16.000
+    işlemci çekirdeği ↔ 2013'te iki çekirdek ve dört grafik kartı. **90:** GPT-3 zinciri 10.000 kart × 330 W ×
+    355,2 saat = 1.172 MWh, × 1,10 ile yaklaşık 1.290 (bildirilen 1.287), 10.000 × 24,6×10¹² × 14,8 gün
+    yaklaşık 3,14×10²³ işlem, 429 g/kWh ile yaklaşık 552 ton; BLOOM 433 MWh / 25 ton (57 g/kWh) ↔ OPT 324 MWh /
+    70 ton (231 g/kWh), GPT-3 1.287 / 502 (429), Gopher 1.066 / 352 (330); BLOOM yaşam döngüsü 24,7 → 50,5 ton;
+    Strubell 192 ↔ 626.155 pound ve otomobil ömrü 126.000 pound; Patterson düzeltmesi 18,7 ve 88 kat, Evolved
+    Transformer yüzde 37 az parametre, yüzde 25 az enerji, 48,5 ton tasarruf yaklaşık aramanın on beş katı;
+    4M çarpanları 5–10 / 2–5 / 1,4–2 / 5–10 ve 83 ↔ 747 kat, tahmin sapması 100–100.000 kat; bin çıkarımda
+    0,002 / 0,007 / 0,047 / 2,907 kWh, telefon şarjı 0,022, oran 1.450'yi aşıyor, en verimli metin üretimi
+    yüzde 9, en verimsiz görüntü üretimi 522 şarj; maliyet eşitliği 205 / 292 / 396 / 593 milyon çıkarım;
+    boşta on dakikada 0,28 kWh ve enerjinin yaklaşık dörtte üçü; Google 0,10 ↔ 0,24 Wh (kalemler 0,10/0,14,
+    0,04/0,06, 0,02/0,02, 0,01/0,02), 0,02 ↔ 0,03 gCO2e, 0,12 ↔ 0,26 mL, bir yılda 33 ve 44 kat, kamuya açık
+    tahminler yaklaşık 0,3–7 Wh; Masanet hesap yüzde 550 ↔ enerji yüzde 6 ve 205 TWh, küresel elektriğin
+    yaklaşık yüzde 1'i; Cottier 2,4 kat/yıl, 40 ve 30 milyon dolar, donanım yüzde 47–64, personel yüzde 29–49,
+    enerji yüzde 2–6.
+
+196. **Kendi hesabımız (Batch 21): iki yer.** (a) 88'de pil dayanımı — 50.000 J bölü 0,7 J/token yaklaşık
+    71.400 token, saniyede 10 token'da yaklaşık 7.100 saniye — kaynağın "iki saatten az" cümlesiyle örtüşür,
+    girdileri gövdede durur ve şeklin alt satırında "kendi hesabımız" olarak işaretlendi. (b) 90'da GPT-3
+    zincirinin dört adımı (1.172 MWh, ×1,10, 3,14×10²³ işlem, 552 ton); girdilerin hepsi kaynağın tablosundan,
+    aritmetik bize ait ve gövdede adım adım yazılı. **Kaynağın "64 token = pilin binde ikisi" cümlesi
+    kullanılmadı:** aynı çalışmanın 0,7 J/token değeriyle tutarlı değil (0,7 × 64 = 44,8 J, 50 kJ'ün yaklaşık
+    binde 0,9'u); o cümle metne alınmadı ve yerine tutarlı olan iki saatlik hesap kondu.
+
+197. **Şekil kararları (Batch 21).** On iki şeklin onu tablo, biri zincir şeması (90-Şekil 1), biri de eksenli
+    çizim (89-Şekil 1, çatı çizgisi). Çizim şematik olduğu için şeklin içine "çizimin biçimi şematiktir;
+    ölçülmüş olan sırt noktasının değeridir" kaydı kondu (SOZLESME §6). 89-Şekil 2'de renk yönü bilinçli:
+    hızlı büyüyen satırlar `cool`, yavaş büyüyen — yani kısıt olan — satırlar `accent`; okuma yönü şeklin alt
+    satırında yazılı. **PNG turu bu kez de iki kusur buldu:** 88-Şekil 3'te bir hücrenin cümlesi üçüncü satırda
+    yarım kalıyordu ("blok onun önbelleğini") ve 89-Şekil 1'de kılavuz çizgisi etiketin ilk harfine değiyordu;
+    ikisi de geometri kapılarından geçmişti. Ders yineledi: kapılar hizalamayı ölçer, anlamı ölçmez.
+
+198. **Kaynak politikası (Batch 21).** 87'de 22, 88'de 9, 89'da 9, 90'da 8 kaynak (**48 kalem**). Dağılım:
+    **40 hakemli**, 8 işaretlenmiş hakemsiz kalem (Hinton'ın çalıştay bildirisi, Gemma 2, Apple'ın 2024 ve 2025
+    raporları, PowerInfer-2, Patterson ve ark. 2021, Google'ın 2025 ölçüm raporu, Cottier ve ark.). Batch 20'nin 68 kaleminden az;
+    sebebi konu değil, yoğunluk: bu dörtlü daha az ve daha derin okunan kaynakla yazıldı. **Doğrulama
+    kanalları:** `idx-b21.py` dizin düzeni (bu run'da ACL Anthology etkinlik sayfaları, PMLR v48 ve v54 ile
+    `iclr.cc/virtual/<yıl>` eklendi), `url-b21.py`, **`acl-b21.py`** (yeni: ACL Anthology'de başlıktan URL;
+    href'ler tırnaksız yazıldığı için ayrı bir regex gerekti), OpenReview arama ucu, Crossref (`doi-b21.py` ve
+    doğrudan sorgu), `venue-b21.py` ve `links-b21.py`. Düzen **iki künyeyi düzeltti:** (1) ICLR 2024'te
+    yayımlanan başlık "The False Promise of Imitating Proprietary **Language Models**"tır, okunan ön baskı
+    "…Proprietary LLMs" — Batch 20'nin Jamba dersinin aynısı ve bu kez OpenReview arama ucu yakaladı; (2) MELT
+    çalışmasının mecrası **MobiCom 2024**'tür (Crossref: 10.1145/3636534.3690668), ilk varsayım MobiSys
+    yönündeydi. Ayrıca elle yazılmış bir NeurIPS 2014 hash URL'si yanlıştı ve `url-b21.py` düzeltti.
+    **Doğrulanamayan: yok.** 403 dönen fakat künyesi Crossref'ten doğrulanan bağlantılar: ACM DOI'leri
+    (Buciluă, Williams, Jouppi 2017 ve 2023, Narayanan, Hooker, Hennessy, Luccioni FAccT), IEEE SC 2020 ve
+    Science DOI'si; Nature bot duvarı döndürüyor fakat içeriği tarayıcı panosundan okundu.
+
+199. **Doğrulama sınırları (Batch 21).** Çatı çizgisi makalesinin kamuya açık PDF'i bozuk bir gömülü yazı tipi
+    kodlamasıyla çıkıyor (harfler kaydırılmış); sayılar tutarlı bir yer değiştirme tablosuyla çözüldü ve
+    yalnızca birbirini doğrulayan değerler kullanıldı (4,4 ↔ 35, 6,7 ↔ 55, on altı bileşim = dört çekirdek ×
+    dört makine). De Vries'in Joule makalesi, CSET'in tedarik zinciri raporu, Leiserson'ın Science makalesi, Eyeriss,
+    Groq'un ISCA bildirisi ve Kaack'ın Nature Climate Change makalesi indirilemedi; altısı da
+    kullanılmadı, dolayısıyla 90'da veri merkezi büyüme projeksiyonu ve 89'da tedarik zinciri **hiç iddia
+    edilmedi** — manzara, okunabilen kaynakların söylediğiyle sınırlı tutuldu.
+
+## Batch 21 öğrenme notları (yazım tamamlandı)
+
+- **Faz 9 kapandı ve zincir tek bir soruyu dört ölçekte sordu:** aynı kaliteyi daha az kaynakla vermenin
+  eğitimden geçen yolu (87) → o modelin konduğu yer ve oradaki dört kısıt (88) → kısıtları üreten donanımın
+  kendisi (89) → donanımın harcadığı elektriğin nasıl sayıldığı (90). Her makale bir öncekinin son cümlesini
+  açtı ve hiçbirinde numaralı ileri vaat verilmedi.
+- **Araştırma, yazım, entegrasyon ve doğrulama yine tamamen ana oturumda; workflow/subagent kullanılmadı**
+  (cerebrum 2026-09-03). 100 kalemlik liste iki kopya betikle çekildi (ileri ve `REVERSE=1` ile ters);
+  94'ü indi, altısı (Eyeriss, Groq'un ISCA bildirisi, Leiserson'ın Science makalesi, CSET tedarik zinciri
+  raporu, de Vries'in Joule makalesi, Kaack'ın Nature Climate Change makalesi) bot duvarı ya da ödeme
+  duvarı yüzünden indirilemedi ve **hiçbiri kullanılmadı**. Batch 20'den taşınan sekiz metinle birlikte
+  çalışma kümesi 109 metin oldu.
+- **Bu batch'in kendi bulgusu: dört makalenin dördü de aynı biçime oturdu — "sayı, koşullarıyla birlikte
+  okunur".** 87'de damıtmanın kazancı bir eşiğin altında geçerli; 88'de token/saniye ancak yonga, çerçeve ve
+  bit genişliğiyle anlamlı; 89'da tepe hız ile ulaşılan hız ayrı sayılar; 90'da aynı istem iki sınırla 2,4 kat
+  fark ediyor. Faz 9'un kapanışı bu yüzden Faz 11'in (ölçüm bilimi) hazırlığı gibi okunuyor.
+- **Bir çalışmanın kendi içinde tutarsız iki sayısı çıktı ve büyütülmedi.** MobileLLM'in "her 64 token pilin
+  binde ikisi" cümlesi, aynı paragraftaki 0,7 J/token değeriyle uyuşmuyor (0,7 × 64 = 44,8 J, 50 kJ'ün binde
+  0,9'u). Cümle alınmadı; yerine kaynağın kendi "iki saatten az" sonucuyla örtüşen ve girdileri metinde duran
+  kendi hesabımız kondu (karar #196). Ders: kaynak içi tutarsızlıkta, kaynağın **kendi vardığı sonuçla**
+  örtüşen kolu seçilir ve hesap açıkça gösterilir.
+- **Ön baskı ↔ yayımlanmış başlık farkı ikinci kez vurdu.** Batch 20'de Jamba'ydı, burada "The False Promise
+  of Imitating Proprietary **LLMs**" → ICLR 2024'te "…Proprietary **Language Models**". Bu kez arama önce
+  `idx-b21.py`'de boş döndü ve OpenReview arama ucu düzeltti. Kural pekişti: dizinde bulunamayan bir künye
+  "yok" değil, "başlığı farklı" olabilir.
+- **Venue tahmini kaynak dosya adına yazılmamalı.** MELT'in anahtarı `..._mobisys2024` diye açılmıştı; Crossref
+  mecranın **MobiCom 2024** olduğunu gösterdi. Dosya adları çalışma notudur, künye değildir; künye her zaman
+  ayrı bir kanaldan doğrulanır.
+- **ACL Anthology dizin sayfalarında `href` tırnaksız yazılıyor** (`href=/D16-1139/`); Batch 20'nin URL çözücüsü
+  bu yüzden hiçbir şey bulamıyordu. `acl-b21.py` bunun için yazıldı ve altı ACL/EMNLP künyesini çözdü.
+- **Kelime bandı yine sıkıştı ama başka bir sebeple.** Dördü de ilk turda 1.833–2.321 aralığındaydı (repo kapısının ölçüsüyle; hedef bandın altı); üçüne
+  planda olup kesilmiş malzeme geri kondu (88'e uç tanımı, melez düzenin karar kuralı ve adaptör mekanizması;
+  89'a çatı modelinin sınırları, özelleşmenin bedeli ve kesim bandı; 90'a su ve GPT-3 zincirinin uçtan uca
+  hesabı). Dolgu cümle eklenmedi; eklenen malzemenin hepsi kaynaklı. Son değerler: 2.389 / 2.019 / 2.004 / 2.075.
+- **Şekiller bu run'da iki kez düzeltildi ve ikisini de yalnızca PNG turu buldu** (karar #197). Ayrıca bir
+  ölçüm hatası düzeltildi: 90-Şekil 2'nin ilk sürümü metin üretimi için "0,042–0,047" aralığı veriyordu; oysa
+  0,047 ortalama, 0,042 ortancadır ve kaynağın "en verimli metin üretimi = telefon şarjının yüzde 9'u"
+  cümlesi bambaşka bir sayıya (0,002) karşılık gelir. Şekil, kaynağın kendi tablosundaki ortalamalarla
+  yeniden çizildi. Ders: bir kaynaktan aralık türetmeden önce, o aralığın kaynağın hangi istatistiğinden
+  geldiğine bakılır.
+- **Tarayıcı panosundaki ölçüm, sayfa yerleşimi oturmadan yapılırsa yanlış sayı verir.** İlk turda üç makalede
+  SVG genişliği 609 px okundu; `navigate` sonrası 1,8 saniye beklenince dördünde de 771 px çıktı (Batch 20 ile
+  aynı). Ölçüm betiğine bekleme konmadan sayı alınmamalı.
+- **Kapılar:** `pnpm typecheck` (0), **587 test**, `pnpm build` (exit 0, `/seri/[slug]` **90 yol**, 139 statik
+  sayfa, izole kopyada), 91 seri rotasının tamamı 200 (65,6 sn), dört makale × üç genişlik × üç temada DOM
+  ölçümü (taşma 0, `main.innerText` içinde undefined/NaN yok, ham i18n anahtarı yok; 1440'ta SVG 771 px,
+  768'de 676, 375'te 351), konsolda yalnızca `/api/reader-sync` 503, 12 yeni diyagram × iki tema = 24 PNG gözle
+  incelendi, 48 kaynak bağlantısının tamamı çekildi (ACM/IEEE/Science DOI'leri ve Nature bot duvarı döndürdü;
+  künyeleri Crossref ve tarayıcı panosuyla doğrulandı). Paralel oturum görünmedi (3000–3999 arası dinleyen
+  port yok); build ve dev izole kopyada (`D:\dev\anil-lib-b21-render`, 3210), junction ve kopya run sonunda
+  silindi, `launch.json` geri alındı.
 
 ## Batch 20 öğrenme notları (yazım tamamlandı)
 

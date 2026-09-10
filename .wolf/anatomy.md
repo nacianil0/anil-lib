@@ -445,9 +445,13 @@
 
 - `birlesik-modeller-her-sey-token-mu.md` — İki üretim düzeni, tek gövde olabilir mi (~5543 tok)
 - `dikkatin-otesi-ssm-ve-alternatif-mimariler.md` — 7'de açık bırakılan kapı (~6075 tok)
+- `donanim-ekosistemi-gpudan-ozel-ciplere.md` — Bayt başına 229 işlem neydi (~4371 tok)
+- `enerji-maliyet-ve-cevresel-ayak-izi.md` — Vat, seride ilk kez (~4635 tok)
 - `goruntu-ve-video-uretimi-difuzyona-giris.md` — Ters yöndeki soru (~6503 tok)
 - `goruntuyu-anlamak-goruntu-dil-modelleri.md` — Ekrandaki pikseller nasıl token olur (~6764 tok)
+- `kucuk-ama-guclu-damitma-ve-kucuk-modeller.md` — 86'nın bıraktığı üçüncü yol (~5121 tok)
 - `ses-konusma-ve-gercek-zamanli-modeller.md` — Konuşmanın bir bütçesi var (~5570 tok)
+- `ucta-yapay-zeka-telefonda-ve-cihazda-llm.md` — Aynı model, başka bir yer (~4560 tok)
 - `verimli-mimariler-uzman-karisimlari-moe.md` — 20'de bırakılan borç (~5296 tok)
 
 ## content/series/articles/reasoning-and-memory/
@@ -620,6 +624,18 @@
 - `gecerlilik-zinciri.svg` (~1594 tok)
 - `hata-payi-ve-kume-boyu.svg` (~1069 tok)
 
+## content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/
+
+- `cati-cizgisi-ve-iki-asama.svg` — Çatı çizgisi şeması; sırt noktası ve üç konum (89-Şekil 1)
+- `genel-amacli-ve-alana-ozel.svg` — Genel amaçlı işlemci ↔ alana özel hızlandırıcı (89-Şekil 3)
+- `uc-iraksayan-ustel.svg` — Hesap, bellek bandı, iletişim bandı ve model boyu büyüme oranları (89-Şekil 2)
+
+## content/series/assets/enerji-maliyet-ve-cevresel-ayak-izi/
+
+- `ayni-istem-iki-sinir.svg` — Aynı istemin dar ve geniş ölçüm sınırıyla değerleri (90-Şekil 3)
+- `bir-enerji-sayisinin-zinciri.svg` — İşlemden karbona giden dört halka ve varsayımları (90-Şekil 1)
+- `cikarimin-payi.svg` — Görev başına çıkarım enerjisi ve maliyet eşitliği (90-Şekil 2)
+
 ## content/series/assets/dikkatin-otesi-ssm-ve-alternatif-mimariler/
 
 - `buyuyen-onbellek-ile-sabit-durum.svg` (~1002 tok)
@@ -726,6 +742,12 @@
 ## content/series/assets/kuantizasyon-modeli-kucultme-sanati/
 
 
+## content/series/assets/kucuk-ama-guclu-damitma-ve-kucuk-modeller/
+
+- `ayni-butcenin-iki-yolu.svg` — Doğrudan uzun eğitim ↔ damıtma, ölçülmüş sayılarla (87-Şekil 2)
+- `damitmanin-uc-aktarim-bicimi.svg` — Yumuşak etiket / ara temsil / üretilen veri (87-Şekil 1)
+- `taklidin-iki-bicimi.svg` — Geniş kapsamlı ↔ hedefli taklit, aynı temel modelde (87-Şekil 3)
+
 ## content/series/assets/kv-cache-ve-cikarim-ekonomisi/
 
 
@@ -803,6 +825,12 @@
 
 ## content/series/assets/talimatla-egitim-supervised-fine-tuning/
 
+
+## content/series/assets/ucta-yapay-zeka-telefonda-ve-cihazda-llm/
+
+- `bulutta-ve-cihazda-ayni-hesap.svg` — Veri merkezi ↔ cihaz; yığın düşünce ne kalıyor (88-Şekil 1)
+- `cihaz-butcesi.svg` — Dört kısıt, ölçülmüş değerler ve gevşeten teknikler (88-Şekil 2)
+- `cihaz-modelinin-anatomisi.svg` — Üretimdeki bir cihaz modelinin üç tasarım kararı (88-Şekil 3)
 
 ## content/series/assets/uzun-baglam-pencereyi-buyutmenin-bedeli/
 

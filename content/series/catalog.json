@@ -1722,6 +1722,86 @@
       "path": "content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md",
       "relatedArticleIds": [],
       "classificationBatch": 20
+    },
+    {
+      "articleId": "article_40e6f7d4-4c6d-4ca2-bf54-77d31c5f2c09",
+      "title": "Küçük ama Güçlü: Damıtma ve Küçük Modeller",
+      "slug": "kucuk-ama-guclu-damitma-ve-kucuk-modeller",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 87,
+      "summary": "Aynı kaliteyi daha az kaynakla vermenin üçüncü yolu mimaride değil eğitimde. Önce mekanizma: öğretmenin sert etiketi değil, bütün sınıflara dağıttığı olasılıklar aktarılır; sıcaklık o dağılımı okunur kılar ve öğrenci hiç görmediği bir sınıfı bile öğrenebilir. Sonra daha derin bir okuma: aktarılan şey etiket değil fonksiyondur, bu yüzden aynı boyuttaki öğrenci öğretmenini geçebiliyor. Aynı hesap bütçesinin iki yolu ölçülmüş sayılarla karşılaştırılıyor ve damıtmanın ölçek yasası iki koşul veriyor; öğretmen fazla güçlenince öğrenci kötüleşiyor. Budama üçüncü aile olarak giriyor. Kapanışta sınır: geniş kapsamlı taklit biçimi aktarıyor, içeriği değil — ve 34'te bırakılan işaret ödeniyor.",
+      "tags": [
+        "damitma",
+        "kucuk-modeller",
+        "budama",
+        "ogretmen-ogrenci",
+        "hesap-butcesi"
+      ],
+      "contentHash": "sha256:628fb20a8cdc5d1ef8e8e92fb8f59af7a582f2771eda43573f0fcbf91a8634a9",
+      "path": "content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 21
+    },
+    {
+      "articleId": "article_dd953c36-6ef2-45d1-993e-0b9c1022a17d",
+      "title": "Uçta Yapay Zekâ: Telefonda ve Cihazda LLM",
+      "slug": "ucta-yapay-zeka-telefonda-ve-cihazda-llm",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 88,
+      "summary": "Küçük model artık var; peki nereye gidiyor? Cihazda 26 ve 28'in servis hesabının dayandığı tek varsayım — aynı anda çok sayıda isteğe hizmet vermek — ortadan kalkıyor: yığın birdir ve model kalıcı olarak bellek bant genişliğine çakılır. Ardından dört kısıt aynı anda bağlayıcı hâle geliyor ve dördü de ölçülmüş: bellek, bant genişliği, güç ve ısı. Üretimdeki bir cihaz modelinin anatomisi parça parça açılıyor — ağırlıkta iki bit, sözlük tablosunda dört, önbellekte sekiz, kaybı telafi eden düşük ranklı adaptörler ve önbelleği paylaşan iki bloklu bir gövde. Kapanışta iki dürüst kayıt: daha az bit her zaman daha hızlı değil, ve sürekli çalıştırmayı bitiren şey pil değil ısı.",
+      "tags": [
+        "cihazda-cikarim",
+        "bellek-bant-genisligi",
+        "kuantizasyon",
+        "enerji-butcesi",
+        "melez-calistirma"
+      ],
+      "contentHash": "sha256:b5eff7c31ad50715e5e28d3061c2bdacdf7bdc70e554b9fec40708266bffded7",
+      "path": "content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 21
+    },
+    {
+      "articleId": "article_74090ee6-e644-4abf-87cb-cf7434e9b8ef",
+      "title": "Donanım Ekosistemi: GPU'dan Özel Çiplere",
+      "slug": "donanim-ekosistemi-gpudan-ozel-ciplere",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 89,
+      "summary": "26'da hesapladığımız 'bayt başına 229 işlem' oranının adı var: işlem yoğunluğu, ve onunla kurulan çatı çizgisi modeli 2009'dan beri donanım okumanın standart aracı. Önce o araç kuruluyor ve bir dil modelinin iki aşaması ile cihaz durumu aynı düzleme yerleştiriliyor. Ardından bugünkü bütün darboğazların tek kaynağı: yirmi yılda hesap altmış bin kat, bellek bandı yüz kat, kartlar arası bant otuz kat büyüdü. Sonra hızlandırıcının tanımı — bir çipi hızlı yapan şey eklenen değil, çıkarılan: önbellek, dal öngörüsü, sıra dışı yürütme. Hassasiyetin bir donanım sözleşmesi olduğu, ölçeğin üçüncü ekseninin kartlar arası bağ olduğu ve en iyi mühendisliğin bile tepe hızın yarısında çalıştığı ölçümlerle veriliyor. Kapanışta donanım piyangosu: hangi araştırma fikrinin kazandığını kısmen çipler belirliyor.",
+      "tags": [
+        "donanim",
+        "cati-cizgisi",
+        "bellek-duvari",
+        "alana-ozel-mimari",
+        "hassasiyet"
+      ],
+      "contentHash": "sha256:f895bdb9c9c45cad173e7f6d546ca591ff6671824291b41939fbce058034f5d4",
+      "path": "content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 21
+    },
+    {
+      "articleId": "article_e00dee46-e208-4e02-b000-44af93c64f76",
+      "title": "Enerji, Maliyet ve Çevresel Ayak İzi",
+      "slug": "enerji-maliyet-ve-cevresel-ayak-izi",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 90,
+      "summary": "8'de GPT-3'ün eğitimi için bir enerji ve karbon sayısı vermiştik; bu makale o sayının nasıl kurulduğunu ve neden tek bir sayı olmadığını gösteriyor. İşlem sayısından karbona giden zincirin her halkasında bir varsayım var: ölçülen güç mü anma gücü mü, veri merkezi çarpanı, şebekenin karbon yoğunluğu, satın alınan enerjiye göre mi bulunduğu yere göre mi sayıldığı, imalatın sayılıp sayılmadığı. Aynı büyüklükte iki modelin biri daha çok enerji harcayıp daha az karbon salıyor. Mimari arama tahmininin 88 kat düzeltilmesi ölçüm dürüstlüğünün en iyi vakası; karşı tarafta aynı aramanın kendi bedelinin on beş katını geri kazandırdığı ölçümü duruyor. Çıkarımın payı, maliyet eşitliği ve aynı istemin iki ayrı sınırla 0,10 ile 0,24 vat-saat çıkması kapanışa taşınıyor.",
+      "tags": [
+        "enerji",
+        "karbon",
+        "olcum-kosullari",
+        "cikarim-maliyeti",
+        "veri-merkezi"
+      ],
+      "contentHash": "sha256:6e88d8d28758e9051423782088de9db251e75200dfdb51a8537141fd02518267",
+      "path": "content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 21
     }
   ]
 }

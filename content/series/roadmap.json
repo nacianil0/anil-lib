@@ -150,10 +150,10 @@
         { "order": 84, "title": "Birleşik Modeller: Her Şey Token mı?", "status": "yayinda", "slug": "birlesik-modeller-her-sey-token-mu" },
         { "order": 85, "title": "Verimli Mimariler: Uzman Karışımları (MoE)", "status": "yayinda", "slug": "verimli-mimariler-uzman-karisimlari-moe" },
         { "order": 86, "title": "Dikkatin Ötesi: SSM ve Alternatif Mimariler", "status": "yayinda", "slug": "dikkatin-otesi-ssm-ve-alternatif-mimariler" },
-        { "order": 87, "title": "Küçük ama Güçlü: Damıtma ve Küçük Modeller", "status": "planlandi" },
-        { "order": 88, "title": "Uçta Yapay Zekâ: Telefonda ve Cihazda LLM", "status": "planlandi" },
-        { "order": 89, "title": "Donanım Ekosistemi: GPU'dan Özel Çiplere", "status": "planlandi" },
-        { "order": 90, "title": "Enerji, Maliyet ve Çevresel Ayak İzi", "status": "planlandi" }
+        { "order": 87, "title": "Küçük ama Güçlü: Damıtma ve Küçük Modeller", "status": "yayinda", "slug": "kucuk-ama-guclu-damitma-ve-kucuk-modeller" },
+        { "order": 88, "title": "Uçta Yapay Zekâ: Telefonda ve Cihazda LLM", "status": "yayinda", "slug": "ucta-yapay-zeka-telefonda-ve-cihazda-llm" },
+        { "order": 89, "title": "Donanım Ekosistemi: GPU'dan Özel Çiplere", "status": "yayinda", "slug": "donanim-ekosistemi-gpudan-ozel-ciplere" },
+        { "order": 90, "title": "Enerji, Maliyet ve Çevresel Ayak İzi", "status": "yayinda", "slug": "enerji-maliyet-ve-cevresel-ayak-izi" }
       ]
     },
     {

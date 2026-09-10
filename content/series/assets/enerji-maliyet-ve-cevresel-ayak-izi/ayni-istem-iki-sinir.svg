@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 364" role="img" aria-label="İki sütunlu tablo; sütunlar aynı istemin dar ve geniş ölçüm sınırıyla verilmiş değerleri, birim vat-saat. Hızlandırıcının etkin gücü satırında dar sınırda 0,10, geniş sınırda 0,14. Ana işlemci ve bellek satırında 0,04 ve 0,06. Boşta bekletilen makineler satırında 0,02 ve 0,02. Veri merkezi gideri satırında 0,01 ve 0,02. Dar sınırda yıldızla işaretli üç kalem ölçülüyor fakat toplama katılmıyor. Toplam satırında dar sınır yalnızca hızlandırıcıyı saydığı için 0,10, geniş sınır hepsini saydığı için 0,24 vat-saat. Altta aynı iki sınırla karbon 0,02 ve 0,03 gram karbondioksit eşdeğeri, su 0,12 ve 0,26 mililitre. En altta bir kayıt: aradaki 2,4 katlık fark modelden değil, sınırın nereye çizildiğinden geliyor; kamuya açık öbür tahminler istem başına yaklaşık 0,3 vat-saatten 7 vat-saate kadar uzanıyor ve bir kısmı hangi sınırla ölçüldüğünü hiç söylemiyor.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">kalem (istem başına)</text>
+  <text x="400" y="24" font-size="13" font-weight="bold" fill="var(--text)">dar sınır</text>
+  <text x="550" y="24" font-size="13" font-weight="bold" fill="var(--text)">geniş sınır</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">hızlandırıcının etkin gücü</text>
+  <text x="400" y="62" font-size="13" fill="var(--text)">0,10</text>
+  <text x="550" y="62" font-size="13" fill="var(--text)">0,14</text>
+
+  <text x="30" y="92" font-size="13" fill="var(--text)">ana işlemci ve bellek</text>
+  <text x="400" y="92" font-size="13" fill="var(--text-faint)">0,04 *</text>
+  <text x="550" y="92" font-size="13" fill="var(--text)">0,06</text>
+
+  <rect x="20" y="102" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="122" font-size="13" fill="var(--text)">boşta bekletilen makineler</text>
+  <text x="400" y="122" font-size="13" fill="var(--text-faint)">0,02 *</text>
+  <text x="550" y="122" font-size="13" fill="var(--text)">0,02</text>
+
+  <text x="30" y="152" font-size="13" fill="var(--text)">veri merkezi gideri</text>
+  <text x="400" y="152" font-size="13" fill="var(--text-faint)">0,01 *</text>
+  <text x="550" y="152" font-size="13" fill="var(--text)">0,02</text>
+
+  <rect x="20" y="162" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="182" font-size="13" font-weight="bold" fill="var(--text)">toplam (vat-saat)</text>
+  <text x="400" y="182" font-size="13" font-weight="bold" fill="var(--accent)">0,10</text>
+  <text x="550" y="182" font-size="13" font-weight="bold" fill="var(--cool)">0,24</text>
+
+  <text x="30" y="212" font-size="13" fill="var(--text)">karbon (gram CO₂ eşdeğeri)</text>
+  <text x="400" y="212" font-size="13" fill="var(--accent)">0,02</text>
+  <text x="550" y="212" font-size="13" fill="var(--cool)">0,03</text>
+
+  <rect x="20" y="222" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="242" font-size="13" fill="var(--text)">su (mililitre)</text>
+  <text x="400" y="242" font-size="13" fill="var(--accent)">0,12</text>
+  <text x="550" y="242" font-size="13" fill="var(--cool)">0,26</text>
+
+  <line x1="20" y1="260" x2="700" y2="260" stroke="var(--border)" />
+  <text x="20" y="284" font-size="13" fill="var(--text-faint)">* Dar sınırda bu üç kalem ölçülüyor fakat toplama katılmıyor.</text>
+  <text x="20" y="306" font-size="13" fill="var(--text-muted)">Aradaki 2,4 katlık fark modelden değil, sınırın nereye çizildiğinden geliyor.</text>
+  <text x="20" y="330" font-size="13" fill="var(--text-muted)">Kamuya açık öbür tahminler istem başına yaklaşık 0,3 vat-saatten 7 vat-saate</text>
+  <text x="20" y="348" font-size="13" fill="var(--text-muted)">kadar uzanıyor; bir kısmı hangi sınırla ölçüldüğünü hiç söylemiyor.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 398" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar aynı hesap bütçesinin iki kullanımı: küçük modeli doğrudan uzun eğitmek ve aynı modeli bir öğretmenden damıtmak. Birinci satır: 2 milyar parametreli model 500 milyar token üzerinde eğitildiğinde üç ölçütün ortalaması doğrudan eğitimde 60,3, damıtmada 67,7; burada yüksek olan iyidir. Sonraki üç satır doğrulama perplexity'sini veriyor ve orada düşük olan iyidir: 200 milyonluk öğrencide 23'e karşı 21, 400 milyonlukta 19'a karşı 17, 1 milyarlıkta 17'ye karşı 15. Altta ölçek yasasının üç kaydı: yeterli veri ya da hesap verildiğinde damıtma denetimli öğrenmenin altına inemez; damıtma yalnızca öğrenciye ayrılan hesap bir eşiğin altındaysa ve öğretmen zaten varsa ya da başka işlere de yarayacaksa daha verimlidir; öğretmen büyüdükçe öğrencinin kaybı önce düşer sonra yükselir, buna kapasite boşluğu denir. En altta bir kayıt: tablo bir üretim raporunun ablasyonundan, üç kayıt 143 milyon ile 12,6 milyar arasında kurulan ayrı bir ölçek yasasından gelir.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
+  <text x="330" y="24" font-size="13" font-weight="bold" fill="var(--text)">doğrudan eğitim</text>
+  <text x="530" y="24" font-size="13" font-weight="bold" fill="var(--text)">damıtma</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">2 milyar model, 500 milyar token</text>
+  <text x="330" y="62" font-size="13" fill="var(--accent)">60,3</text>
+  <text x="530" y="62" font-size="13" fill="var(--cool)">67,7</text>
+
+  <text x="30" y="92" font-size="13" fill="var(--text)">200 milyon öğrenci</text>
+  <text x="330" y="92" font-size="13" fill="var(--accent)">23</text>
+  <text x="530" y="92" font-size="13" fill="var(--cool)">21</text>
+
+  <rect x="20" y="102" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="122" font-size="13" fill="var(--text)">400 milyon öğrenci</text>
+  <text x="330" y="122" font-size="13" fill="var(--accent)">19</text>
+  <text x="530" y="122" font-size="13" fill="var(--cool)">17</text>
+
+  <text x="30" y="152" font-size="13" fill="var(--text)">1 milyar öğrenci</text>
+  <text x="330" y="152" font-size="13" fill="var(--accent)">17</text>
+  <text x="530" y="152" font-size="13" fill="var(--cool)">15</text>
+
+  <text x="30" y="178" font-size="13" fill="var(--text-faint)">ilk satır üç ölçütün ortalaması, yüksek olan iyidir;</text>
+  <text x="30" y="196" font-size="13" fill="var(--text-faint)">öbür üç satır doğrulama perplexity'si, düşük olan iyidir</text>
+  <line x1="20" y1="210" x2="700" y2="210" stroke="var(--border)" />
+
+  <text x="20" y="234" font-size="13" font-weight="bold" fill="var(--text)">Ölçek yasasının üç kaydı</text>
+  <text x="20" y="258" font-size="13" fill="var(--text)">1. Yeterli veri ya da hesap verildiğinde damıtma, denetimli öğrenmenin altına inemez.</text>
+  <text x="20" y="282" font-size="13" fill="var(--text)">2. Kazandığı yer: öğrenciye ayrılan hesap eşiğin altındaysa ve öğretmen zaten varsa</text>
+  <text x="20" y="300" font-size="13" fill="var(--text)">    ya da tek bir damıtmanın ötesinde işe yarayacaksa.</text>
+  <text x="20" y="324" font-size="13" fill="var(--text)">3. Öğretmen büyüdükçe öğrencinin kaybı önce düşer, sonra yükselir: kapasite boşluğu.</text>
+
+  <line x1="20" y1="340" x2="700" y2="340" stroke="var(--border)" />
+  <text x="20" y="364" font-size="13" fill="var(--text-muted)">Tablo bir üretim raporunun ablasyonundan; üç kayıt 143 milyon ile 12,6 milyar</text>
+  <text x="20" y="382" font-size="13" fill="var(--text-muted)">arasında kurulan ayrı bir ölçek yasasından gelir.</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar aynı modelin iki çalışma yeri: veri merkezi ve cihaz. Aynı anda hizmet verilen istek sayısı veri merkezinde onlarca ya da yüzlerce, cihazda birdir. Okunan bayt başına yapılan işlem veri merkezinde yığın büyüklüğü kadar, cihazda birdir. Ağırlıkları okumanın bedelini veri merkezinde bütün yığın paylaşır, cihazda tek kullanıcı öder. Neyin sınırladığı veri merkezinde ön dolumda hesap gücü ve üretimde bellek bant genişliğidir, cihazda her iki aşamada da bellek bant genişliğidir. Boşta duran kapasiteyi doldurmanın yolu veri merkezinde sürekli yığınlama ve parçalı ön dolumdur, cihazda böyle bir yol yoktur. En altta bir kayıt: ölçüm aynı yöne bakıyor, cihazda üretim verimi ön dolum veriminin çok altında kalıyor.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru</text>
+  <text x="280" y="24" font-size="13" font-weight="bold" fill="var(--text)">veri merkezi</text>
+  <text x="510" y="24" font-size="13" font-weight="bold" fill="var(--text)">cihaz</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">aynı anda kaç istek</text>
+  <text x="280" y="62" font-size="13" fill="var(--text)">onlarca, yüzlerce</text>
+  <text x="510" y="62" font-size="13" fill="var(--accent)">bir</text>
+
+  <text x="30" y="92" font-size="13" fill="var(--text)">okunan bayt başına işlem</text>
+  <text x="280" y="92" font-size="13" fill="var(--text)">yığın büyüklüğü kadar</text>
+  <text x="510" y="92" font-size="13" fill="var(--accent)">bir</text>
+
+  <rect x="20" y="102" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="122" font-size="13" fill="var(--text)">okuma bedelini kim öder</text>
+  <text x="280" y="122" font-size="13" fill="var(--text)">bütün yığın</text>
+  <text x="510" y="122" font-size="13" fill="var(--accent)">tek kullanıcı</text>
+
+  <text x="30" y="152" font-size="13" fill="var(--text)">neyi sınırlıyor</text>
+  <text x="280" y="152" font-size="13" fill="var(--text)">ön dolumda hesap gücü,</text>
+  <text x="280" y="170" font-size="13" fill="var(--text)">üretimde bant genişliği</text>
+  <text x="510" y="152" font-size="13" fill="var(--accent)">iki aşamada da</text>
+  <text x="510" y="170" font-size="13" fill="var(--accent)">bant genişliği</text>
+
+  <rect x="20" y="182" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="202" font-size="13" fill="var(--text)">boşluğu doldurma yolu</text>
+  <text x="280" y="202" font-size="13" fill="var(--text)">sürekli yığınlama,</text>
+  <text x="280" y="220" font-size="13" fill="var(--text)">parçalı ön dolum</text>
+  <text x="510" y="202" font-size="13" fill="var(--accent)">yok</text>
+
+  <line x1="20" y1="248" x2="700" y2="248" stroke="var(--border)" />
+  <text x="20" y="272" font-size="13" fill="var(--text-muted)">Ölçüm aynı yöne bakıyor: cihazda üretim verimi, ön dolum veriminin çok altında</text>
+  <text x="20" y="290" font-size="13" fill="var(--text-muted)">kalıyor.</text>
+  <text x="20" y="314" font-size="13" fill="var(--text-muted)">Bulutun bütün servis mühendisliği o paydayı büyütmek üzerine kuruluydu.</text>
+</svg>

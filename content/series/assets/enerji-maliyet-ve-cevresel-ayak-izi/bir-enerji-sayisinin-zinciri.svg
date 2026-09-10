@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 264" role="img" aria-label="Dört halkalı bir zincir şeması; kutular soldan sağa işlem sayısı, kart-saati, kilovat-saat ve karbon. Her kutunun altında o halkanın taşıdığı varsayım yazılıdır. İşlem sayısı halkasında varsayım kartın gerçekte ulaştığı verimdir ve tepe hızın yarısı mertebesinde olabilir. Kart-saati halkasında varsayım gücün ölçülmüş mü yoksa anma değeri mi alındığıdır; bir ölçümde 400 vatlık anma gücüne karşılık gerçek çekim 78 ile 171 vat arasında kalmıştır. Kilovat-saat halkasında varsayımlar veri merkezi çarpanının 1,08 ile 1,2 arasında olması ve boşta geçen sürenin sayılıp sayılmadığıdır. Karbon halkasında varsayımlar şebekenin karbon yoğunluğu, bulunduğu yere göre mi satın alınan enerjiye göre mi sayıldığı ve imalatın sınıra dâhil olup olmadığıdır. En altta bir kayıt: aynı eğitim koşusu için bildirilen sayı bu dört seçime göre kat kat değişebilir, bu yüzden bir enerji sayısı hangi seçimlerle üretildiği söylenmeden karşılaştırılamaz.">
+  <rect x="20" y="40" width="155" height="34" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="195" y="40" width="155" height="34" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="370" y="40" width="155" height="34" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="545" y="40" width="155" height="34" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="97" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">işlem sayısı</text>
+  <text x="272" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">kart-saati</text>
+  <text x="447" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">kilovat-saat</text>
+  <text x="622" y="62" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">karbon</text>
+
+  <polygon points="177,52 193,57 177,62" fill="var(--text-muted)" />
+  <polygon points="352,52 368,57 352,62" fill="var(--text-muted)" />
+  <polygon points="527,52 543,57 527,62" fill="var(--text-muted)" />
+
+  <text x="20" y="98" font-size="13" fill="var(--text-faint)">taşıdığı varsayım</text>
+
+  <text x="26" y="122" font-size="13" fill="var(--text)">kartın gerçekte</text>
+  <text x="26" y="140" font-size="13" fill="var(--text)">ulaştığı verim;</text>
+  <text x="26" y="158" font-size="13" fill="var(--accent)">tepenin yarısı olabilir</text>
+
+  <text x="201" y="122" font-size="13" fill="var(--text)">ölçülen güç mü,</text>
+  <text x="201" y="140" font-size="13" fill="var(--text)">anma gücü mü;</text>
+  <text x="201" y="158" font-size="13" fill="var(--accent)">400 W'a karşı 78–171</text>
+
+  <text x="376" y="122" font-size="13" fill="var(--text)">veri merkezi çarpanı</text>
+  <text x="376" y="140" font-size="13" fill="var(--accent)">1,08 ile 1,2 arası;</text>
+  <text x="376" y="158" font-size="13" fill="var(--text)">boşta geçen süre</text>
+
+  <text x="551" y="122" font-size="13" fill="var(--text)">şebekenin karbon</text>
+  <text x="551" y="140" font-size="13" fill="var(--text)">yoğunluğu; yerel mi</text>
+  <text x="551" y="158" font-size="13" fill="var(--text)">satın alınan mı;</text>
+  <text x="551" y="176" font-size="13" fill="var(--text)">imalat sayılıyor mu</text>
+
+  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
+  <text x="20" y="218" font-size="13" fill="var(--text-muted)">Aynı eğitim koşusu için bildirilen sayı bu dört seçime göre kat kat değişebilir.</text>
+  <text x="20" y="242" font-size="13" fill="var(--text-muted)">Bir enerji sayısı, hangi seçimlerle üretildiği söylenmeden karşılaştırılamaz.</text>
+</svg>

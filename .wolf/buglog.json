@@ -6855,6 +6855,173 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-09T21:00:00Z"
+    },
+    {
+      "error_message": "entegre-batch.cjs: \"frontmatter 'reading_order' eksik\" ve \"reading_order undefined, beklenen 87\" — dört makale için toplam 16 hata",
+      "file": "content/series/articles/multimodal-and-future/*.md",
+      "root_cause": "Dört yeni makalenin frontmatter'ı elle yazılırken `reading_order` alanı atlandı; alan zorunlu ve katalog/roadmap eşlemesinin anahtarı.",
+      "fix": "`level: intermediate` satırından hemen sonra `reading_order: <N>` eklendi (87/88/89/90) ve entegrasyon yeniden çalıştırıldı.",
+      "tags": [
+        "seri",
+        "frontmatter",
+        "entegre-batch",
+        "reading_order"
+      ],
+      "id": "bug-410",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "88-Şekil 3'te bir hücrenin cümlesi yarım kalıyor: \"blok onun önbelleğini\" (yüklem yok)",
+      "file": "content/series/assets/ucta-yapay-zeka-telefonda-ve-cihazda-llm/cihaz-modelinin-anatomisi.svg",
+      "root_cause": "Üç satırlık hücreye dört satırlık metin sığdırılmaya çalışıldı; geometri kapıları (check-series-svg.cjs ve svgcheck-b21.py) yalnızca taşmayı ölçer, yarım kalan cümleyi görmez.",
+      "fix": "Metin üç satıra sığacak biçimde yeniden yazıldı: \"blok onunkini paylaşır\". PNG turunda doğrulandı.",
+      "tags": [
+        "seri",
+        "svg",
+        "png-turu",
+        "sekil"
+      ],
+      "id": "bug-411",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "89-Şekil 1'de kılavuz çizgisi \"cihazda üretim\" etiketinin ilk harfine değiyor",
+      "file": "content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/cati-cizgisi-ve-iki-asama.svg",
+      "root_cause": "Leader line'ın bitiş noktası ile metnin başlangıç x'i arasında pay bırakılmadı; svgcheck `<line>` ile `<text>` arasındaki mesafeyi ölçmüyor.",
+      "fix": "Çizgi (136,230)'da bitirildi, metin x=144'e kaydırıldı; PNG turunda doğrulandı.",
+      "tags": [
+        "seri",
+        "svg",
+        "png-turu",
+        "sekil"
+      ],
+      "id": "bug-412",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "90-Şekil 2 metin üretimi için \"0,042–0,047 kWh aralığı\" veriyordu; kaynakta 0,047 ortalama, 0,042 ortanca",
+      "file": "content/series/assets/enerji-maliyet-ve-cevresel-ayak-izi/cikarimin-payi.svg",
+      "root_cause": "Kaynağın (Luccioni ve ark. FAccT 2024) iki ayrı istatistiği aralık sanıldı; aynı çalışmanın \"en verimli metin üretim modeli = telefon şarjının %9'u\" cümlesi ise bambaşka bir sayıya (~0,002 kWh) karşılık geliyor, yani aralık hem yanlış hem tutarsızdı.",
+      "fix": "Şekil, kaynağın Tablo 2'sindeki ortalamalarla yeniden çizildi (0,002 / 0,007 / 0,047 / 2,907) ve gövdedeki paragraf da bu yapıya göre yeniden yazıldı; \"1.450 kat\" ve \"522 şarj\" karşılaştırmaları eklendi.",
+      "tags": [
+        "seri",
+        "kaynak-dogrulama",
+        "sayilar",
+        "sekil"
+      ],
+      "id": "bug-413",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "Kaynakçada ICLR 2024 künyesi \"The False Promise of Imitating Proprietary LLMs\" yazılmıştı; idx-b21.py dizinde bulamadı",
+      "file": "content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md",
+      "root_cause": "Ön baskı başlığı ile yayımlanmış başlık farklı: ICLR 2024'te \"…Proprietary Language Models\". Batch 20'deki Jamba vakasının aynısı.",
+      "fix": "OpenReview arama ucu (api2.openreview.net/notes/search) yayımlanmış başlığı verdi; künye ve URL düzeltildi, ön baskı farkı kaynakçada not edildi.",
+      "tags": [
+        "seri",
+        "kaynak-dogrulama",
+        "venue",
+        "openreview"
+      ],
+      "id": "bug-414",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "MELT çalışmasının mecrası MobiSys sanıldı (dosya adı `..._mobisys2024`)",
+      "file": "content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md",
+      "root_cause": "Kaynak listesi yazılırken venue tahmini dosya anahtarına gömüldü ve sonra künye gibi okundu.",
+      "fix": "Crossref sorgusu mecranın MobiCom 2024 olduğunu gösterdi (10.1145/3636534.3690668); kaynakça düzeltildi. Kural cerebrum'a yazıldı: dosya adı çalışma notudur, künye değildir.",
+      "tags": [
+        "seri",
+        "kaynak-dogrulama",
+        "venue",
+        "crossref"
+      ],
+      "id": "bug-415",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "Elle yazılmış NeurIPS 2014 hash URL'si yanlış (Ba & Caruana)",
+      "file": "content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md",
+      "root_cause": "papers.nips.cc hash'i akıldan yazıldı; hash URL'leri tahmin edilemez.",
+      "fix": "`url-b21.py` dizinden doğru hash'i çözdü (b0c355a9…); bağlantı düzeltildi ve links-b21.py ile 200 doğrulandı.",
+      "tags": [
+        "seri",
+        "url",
+        "hash-url"
+      ],
+      "id": "bug-416",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "Tarayıcı panosunda SVG genişliği 609 px okundu; doğrusu 771 px",
+      "file": "artifacts/b21-research/ (render ölçüm betikleri)",
+      "root_cause": "`navigate` sonrası ölçüm, okuyucunun sayfalı yerleşimi oturmadan çalıştırıldı.",
+      "fix": "Ölçümden önce `await new Promise(r=>setTimeout(r,1800))` konuldu; dört makalede de 771/676/351 px çıktı.",
+      "tags": [
+        "render",
+        "browser",
+        "olcum"
+      ],
+      "id": "bug-417",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "error_message": "Bash aracı: \"unexpected EOF while looking for matching\" — uzun Python heredoc'u ayrıştırılamadı",
+      "file": "artifacts/b21-research/kararlar-b21.py",
+      "root_cause": "Bash aracının sarmalayıcısı, uzun ve Türkçe karakterli tırnaklı heredoc'ları bazen bozuk ayrıştırıyor.",
+      "fix": "Uzun betikler Write aracıyla dosyaya yazılıp `python <dosya>` ile çalıştırıldı.",
+      "tags": [
+        "harness",
+        "bash",
+        "heredoc"
+      ],
+      "id": "bug-418",
+      "timestamp": "2026-09-10T10:15:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T10:15:00Z"
+    },
+    {
+      "id": "bug-419",
+      "timestamp": "2026-09-10T10:25:00Z",
+      "error_message": ".wolf/anatomy.md kendiliğinden boşaldı: başlık \"Files: 335 tracked\" iken \"Files: 2 tracked\", sonra \"Files: 1 tracked\" oldu ve bütün dosya listeleri (337 satır) silindi",
+      "file": ".wolf/anatomy.md",
+      "root_cause": "OpenWolf'un otomatik tarayıcısı oturum sırasında iki kez yeniden tarayıp dosyayı baştan yazdı; taramada yalnızca 1–2 dosya bulduğu için bütün bölümler boş kaldı. Tarama kapsamının neden daraldığı belirsiz; dosya `Auto-maintained by OpenWolf` başlığı taşıyor, yani yazan taraf hook.",
+      "fix": "`git checkout -- .wolf/anatomy.md` ile commit edilmiş sürüm geri alındı ve Batch 21'in dört makalesi ile dört varlık klasörü dosyanın kendi madde biçiminde (+28 satır, silme yok) eklendi. Restore ikinci denemede kalıcı oldu. Uyarı: bu dosya değiştirildikten sonra `git diff --stat .wolf/anatomy.md` ile kontrol et; büyük bir silme görünüyorsa hook yeniden yazmıştır.",
+      "tags": [
+        "openwolf",
+        "anatomy",
+        "hook",
+        "veri-kaybi"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-10T10:25:00Z"
     }
   ]
 }

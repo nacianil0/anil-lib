@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 356" role="img" aria-label="Çatı çizgisi şeması. Yatay eksen işlem yoğunluğu, yani ana bellekten okunan bayt başına yapılan işlem; dikey eksen ulaşılabilir hız; iki eksen de logaritmiktir. Sol alttan yükselen eğik bir doğru bellek bant genişliğinin koyduğu sınırı, onun bittiği yerden sağa uzanan yatay bir çizgi işlem gücünün koyduğu tavanı gösterir. İkisinin kesiştiği yer sırt noktasıdır ve değeri okunan bayt başına 229 işlemdir. Eğik doğrunun üzerinde iki konum işaretlidir: en solda cihazda üretim, yığın bir olduğu için işlem yoğunluğu birdir; ortada bulutta üretim, yığın büyüdükçe yoğunluk da büyür ve nokta sağa kayar. Yatay çizginin üzerinde üçüncü konum vardır: ön dolum, bütün dizi bir kerede işlendiği için yoğunluğu yüksektir ve tavana yakın durur. En altta bir kayıt: çizimin biçimi şematiktir, ölçülmüş olan sırt noktasının değeridir.">
+  <line x1="80" y1="60" x2="80" y2="270" stroke="var(--border)" />
+  <line x1="80" y1="270" x2="680" y2="270" stroke="var(--border)" />
+  <line x1="80" y1="270" x2="340" y2="95" stroke="var(--accent)" stroke-width="2" />
+  <line x1="340" y1="95" x2="680" y2="95" stroke="var(--cool)" stroke-width="2" />
+
+  <text x="20" y="50" font-size="13" font-weight="bold" fill="var(--text)">ulaşılabilir hız</text>
+  <text x="560" y="78" font-size="13" fill="var(--cool)">işlem gücü tavanı</text>
+  <text x="95" y="115" font-size="13" fill="var(--accent)">bellek bant genişliği sınırı</text>
+
+  <circle cx="340" cy="95" r="5" fill="var(--text)" />
+  <text x="350" y="120" font-size="13" font-weight="bold" fill="var(--text)">sırt noktası: bayt başına 229 işlem</text>
+
+  <circle cx="450" cy="95" r="4" fill="var(--text-muted)" />
+  <text x="400" y="78" font-size="13" fill="var(--text-muted)">ön dolum</text>
+
+  <circle cx="250" cy="156" r="4" fill="var(--text-muted)" />
+  <line x1="252" y1="160" x2="266" y2="180" stroke="var(--text-faint)" />
+  <text x="268" y="192" font-size="13" fill="var(--text)">bulutta üretim: yığın büyüdükçe sağa kayar</text>
+
+  <circle cx="115" cy="246" r="4" fill="var(--text-muted)" />
+  <line x1="118" y1="243" x2="136" y2="230" stroke="var(--text-faint)" />
+  <text x="144" y="234" font-size="13" fill="var(--text)">cihazda üretim: yığın 1</text>
+
+  <text x="80" y="296" font-size="13" fill="var(--text-muted)">işlem yoğunluğu: ana bellekten okunan bayt başına işlem</text>
+  <text x="20" y="322" font-size="13" fill="var(--text-faint)">İki eksen de logaritmiktir ve çizimin biçimi şematiktir; ölçülmüş olan, sırt</text>
+  <text x="20" y="340" font-size="13" fill="var(--text-faint)">noktasının değeridir.</text>
+</svg>

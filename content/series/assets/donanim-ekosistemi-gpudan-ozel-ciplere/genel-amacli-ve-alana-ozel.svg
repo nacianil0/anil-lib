@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar genel amaçlı işlemci ile alana özel hızlandırıcı. Çipte ne var satırında: genel amaçlı işlemcide önbellek hiyerarşisi, dal öngörüsü, sıra dışı yürütme, çok iş parçacığı ve bağlam değiştirme bulunur; alana özel hızlandırıcıda bunların hiçbiri yoktur, yerine büyük bir matris çarpma birimi ve yazılımla yönetilen çip içi bellek vardır. Neye eniyilendiği satırında: genel amaçlı işlemci ortalama durumu, hızlandırıcı yüzde 99'luk gecikme dilimini eniyiler. Sırt noktası satırında: 2009'da ölçülen iki yaygın işlemcide 4,4 ve 6,7, ilk özel çipte ağırlık belleğinden okunan bayt başına 1350. Yedi milisaniyelik yüzde 99'luk gecikme sınırı altında ne olduğu satırında: işlemci ve grafik kartı yığın büyüklüğünü 200 yerine 16 kullanmak zorunda kalıyor ve ulaşabilecekleri en yüksek iş hacminin yüzde 42 ile yüzde 37'sinde çalışıyorlar, özel çip aynı sınır altında yüzde 80'inde çalışıyor. En altta bir kayıt: hızlandırıcıyı hızlı yapan şey eklenen değil, çıkarılan.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru</text>
+  <text x="240" y="24" font-size="13" font-weight="bold" fill="var(--text)">genel amaçlı işlemci</text>
+  <text x="470" y="24" font-size="13" font-weight="bold" fill="var(--text)">alana özel hızlandırıcı</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="84" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">çipte ne var</text>
+  <text x="240" y="62" font-size="13" fill="var(--text)">önbellek hiyerarşisi,</text>
+  <text x="240" y="80" font-size="13" fill="var(--text)">dal öngörüsü, sıra dışı</text>
+  <text x="240" y="98" font-size="13" fill="var(--text)">yürütme, çok iş parçacığı,</text>
+  <text x="240" y="116" font-size="13" fill="var(--text)">bağlam değiştirme</text>
+  <text x="470" y="62" font-size="13" fill="var(--text)">bunların hiçbiri;</text>
+  <text x="470" y="80" font-size="13" fill="var(--text)">yerine büyük bir matris</text>
+  <text x="470" y="98" font-size="13" fill="var(--text)">çarpma birimi ve yazılımla</text>
+  <text x="470" y="116" font-size="13" fill="var(--text)">yönetilen çip içi bellek</text>
+
+  <text x="30" y="148" font-size="13" fill="var(--text)">neye eniyilenir</text>
+  <text x="240" y="148" font-size="13" fill="var(--accent)">ortalama durum</text>
+  <text x="470" y="148" font-size="13" fill="var(--cool)">yüzde 99'luk gecikme dilimi</text>
+
+  <rect x="20" y="158" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="178" font-size="13" fill="var(--text)">sırt noktası</text>
+  <text x="240" y="178" font-size="13" fill="var(--accent)">4,4 ve 6,7</text>
+  <text x="240" y="196" font-size="13" fill="var(--text-faint)">(2009, iki yaygın işlemci)</text>
+  <text x="470" y="178" font-size="13" fill="var(--cool)">1350</text>
+  <text x="470" y="196" font-size="13" fill="var(--text-faint)">(ağırlık belleğinden bayt başına)</text>
+
+  <text x="30" y="228" font-size="13" fill="var(--text)">7 ms'lik yüzde 99'luk</text>
+  <text x="30" y="246" font-size="13" fill="var(--text)">gecikme sınırı altında</text>
+  <text x="240" y="228" font-size="13" fill="var(--accent)">yığın 200 yerine 16;</text>
+  <text x="240" y="246" font-size="13" fill="var(--accent)">en yüksek iş hacminin</text>
+  <text x="240" y="264" font-size="13" fill="var(--accent)">yüzde 42 ve 37'sinde</text>
+  <text x="470" y="228" font-size="13" fill="var(--cool)">aynı sınır altında en</text>
+  <text x="470" y="246" font-size="13" fill="var(--cool)">yüksek iş hacminin</text>
+  <text x="470" y="264" font-size="13" fill="var(--cool)">yüzde 80'inde</text>
+
+  <line x1="20" y1="284" x2="700" y2="284" stroke="var(--border)" />
+  <text x="20" y="308" font-size="13" fill="var(--text-muted)">Hızlandırıcıyı hızlı yapan şey eklenen değil, çıkarılan: bunların hepsi ortalama</text>
+  <text x="20" y="326" font-size="13" fill="var(--text-muted)">durumu iyileştirir ve transistör ile enerji harcar.</text>
+  <text x="20" y="350" font-size="13" fill="var(--text-faint)">Bedeli esneklik: aynı çalışma, mimarların hızlandırmaya çalıştığı iş sınıfının</text>
+  <text x="20" y="368" font-size="13" fill="var(--text-faint)">gerçek yükün yalnızca yüzde 5'i olduğunu bildiriyor.</text>
+</svg>
