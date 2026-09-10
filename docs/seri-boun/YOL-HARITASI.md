@@ -71,9 +71,9 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 28. **CPU Zamanlama: Ölçütler, Kurallar ve Geri Besleme** — *yayında* · ilke ile düzenek ayrımının ilk tam uygulaması ve çizelgeleyicinin adı, beş iş yükü varsayımı ve tek tek gevşetilmeleri, dönüş süresi ile tepki süresinin tanımları ve "ölçütü söylemeden daha iyi denemez" disiplini, FCFS'i tek girdiyle kıran konvoy etkisi (110'a karşı 50), SJF'nin önkesmesizliği yüzünden geç gelenlerde FCFS ile aynı çizelgeyi üretmesi (103,33) ve STCF'nin önkesmeyle 50'ye inmesi, tepki süresinin round-robin'i seçtirmesi (1'e karşı 5) ama dönüş süresini bozması (14'e karşı 10), zaman dilimi ile bağlam anahtarı ek yükü arasındaki takasın sayısal hâli (6 µs anahtar: 10 ms dilimde %0,06, 100 µs dilimde %5,7) ve amortize etme kalıbının geri dönüşü, RR'nin (N − 1)·q tepki tavanı, giriş/çıkışın her işlemci parçasını ayrı iş sayarak hesaba katılması, MLFQ'nun beş kuralı ve son iki kuralın karşı örnekle doğması (açlık ve çizelgeleyiciyi oynatma), Solaris varsayılanları, CFS'in vruntime ile oranlı paylaşımı (sched_latency 48 ms, min_granularity 6 ms, on süreçte turun 60 ms'ye çıkması, nice → ağırlık ve %75,3 pay) ve çalışabilir süreçleri kırmızı-siyah ağaçta tutması, çok işlemcide tek kuyruk ile çok kuyruk takası, önbellek yakınlığı, yük dengesizliği ve iş çalma, bir çizelgeleyicinin "yeterince iyi" olduğunu optimalden uzaklığını sınırlayarak ispatlama kalıbı.
 29. **Senkronizasyon: Kilit, Semafor ve Monitör** — *yayında* · kötü niyetli çizelgeleyici duruşu ve kilidin korunan değişmez diliyle yazılan sözü, Dijkstra'nın 1965'te koyduğu üç koşul (karşılıklı dışlama, kritik kesiminin dışındaki sürecin ötekileri engellememesi, kararın sonsuza ertelenememesi) ile OSTEP'in üç değerlendirme ekseni, kilidin arayüz/temsil ayrımı ve kaba/ince taneli kilitleme, kesmeleri kapatmanın üç zaafı ve çekirdek içindeki tek meşru kullanımı (xv6'nın push_off/pop_off'u ve tickslock kilitlenmesi), yükle/sakla ile kurulan bayrağın kaba kuvvetle bulunan karşı örneği (57 durumda ihlal), test-and-set ile üç satırlık dönen kilit (5 durumda ihlal yok) ve dönen kilidin önkesmeli çizelgeleyiciye bağımlılığı, compare-and-swap ile fetch-and-add, sıra kilidiyle gelen sınırlı bekleme, dönmek/yield/kuyrukta uyumak üçlüsü ve iki fazlı kilit, uyandırma-bekleme yarışı, öncelik tersine dönmesi ve öncelik kalıtımı, semaforun P/V tanımları ve başlangıç değerine göre üç işi (kilit, sıralama, kaynak havuzu), koşul değişkeninde bekleme çağrısının kilidi neden parametre aldığının kayıp uyandırmadan türetilmesi, Mesa semantiği ve while kuralı, monitör.
 30. **Klasik Eşzamanlılık Problemleri: Çözümü Savunmak** — *yayında* · güvenlik ile canlılık özelliklerinin Lamport'un tanımlarıyla adlandırılması ve kısmi doğruluk/sonlanma ikilisinin doğrudan genellemesi olması, sınırlı tamponun dört adımda kurulması (kilit tek başına yetmez → if yerine while → tek koşul değişkeni üçünü birden uyutur → iki koşul değişkeni) ve aynı problemin semaforlu kurulumunda kilidin en dışa alınmasıyla doğan kilitlenme (10'a karşı 14 durum, kaba kuvvetle), Dijkstra'nın "üreticideki V'lerin sırası önemsiz, tüketicideki P'lerin sırası esastır" alıştırması, kapsayıcı koşullar ve broadcast'in ne zaman doğru araç olduğu, okuyucu-yazar kilidinin ilk-okuyucu numarası ve yazarı aç bırakan adalet açığı, yemek yiyen filozofların beklenenler döngüsü (82 durumda kilitlenme) ve tek bir oku çevirerek kırılması (70 durumda kilitlenme yok), OSTEP'in asimetrik çözümü Dijkstra'ya bağlamasının kaynakla uyuşmaması, üç problemin güvenlik/canlılık tablosu.
-31. **Kilitlenme: Koşullar ve Stratejiler** — dört koşul; önleme/kaçınma (Banker), tespit ve kurtarma.
-32. **Bellek Yönetimi: Adres Çevirisi ve Sayfalama** — mantıksal/fiziksel adres, sayfalama/bölütleme, sayfa tablosu, TLB.
-33. **Sanal Bellek: Talep Sayfalama ve Değiştirme** — sayfa hatası, LRU/clock, thrashing, çalışma kümesi.
+31. **Kilitlenme: Koşullar ve Stratejiler** — *yayında* · kilitlenmenin eşzamanlılık hatalarının en ünlüsü ama en sık görüleni olmadığı (105 hatanın 74'ü kilitlenme dışı; %97'si atomiklik ya da sıra ihlali), iki kilitli en küçük kilitlenmenin kaba kuvvetle taranması (ters sırada 19 durumun yalnızca 1'i kilitlenme, aynı sırada 16 durumun hiçbiri değil) ve buradan çıkan "kilitlenme kodun değil belirli bir izin özelliğidir" saptaması, Coffman'ın dört koşulu ve "biri sağlanmazsa kilitlenme olamaz" yönü, dört önleme tekniğinin her birinin bir koşulu hedeflemesi (kilit adresine göre sıralama, hazırlık kilidiyle hepsini birden alma, deneme kilidi ve livelock, kilitsiz veri yapıları), xv6'nın küresel kilit sırası ve dosya yaratmanın beş kilitlik zinciri ile ince taneli kilitlemenin sınırının kilitlenme olması, Dijkstra'nın bankacı algoritması (sermaye 100, borçlar 40 ve 20 güvenli; 41 ve 21 ile kasa 38'e düşünce güvensiz) ve güvenlik denetiminin azalan ölçüyle sonlanması, güvensiz durum ile kilitlenmiş durumun ayrımı, çizelgelemeyle kaçınmanın eşzamanlılık bedeli, kaynak atama grafında döngü tespitinin tek örnekli kaynaklarda kesin, çok örnekli kaynaklarda yalnızca gerekli koşul olması (kendi kurduğum örnekle doğrulandı), kilitlenme / açlık / livelock / öncelik tersine dönmesi tablosu.
+32. **Bellek Yönetimi: Adres Çevirisi ve Sayfalama** — *yayında* · adres uzayının bir yanılsama olması ve sanallaştırmanın üç hedefi (saydamlık, verimlilik, koruma), taban ve sınır yazmaçlarıyla devingen yeniden yerleştirme (128 → 32896; 3000 → 19384; 4400 → sınır dışı) ve MMU, iç parçalanmanın adres uzayının kullanılmayan ortasından doğması, bölütlemenin parçaları ayrı yerleştirmesi ve heap'te ofsete indirgeme inceliği (4200 − 4096 = 104 → 34920), segmentation fault teriminin kökeni, dış parçalanma ve seyrek heap sorunu, sayfalamanın sabit boyutla yerleştirme problemini yok etmesi, sanal adresin VPN ve ofsete bölünmesi (21 = 010101 → çerçeve 7 → 117) ve sayfa tablosunun bir doğrudan erişim dizisi olması, girdideki geçerlilik ve koruma bitleri, iki bedelin sayısallaşması (4MB tablo, 100 süreçte 400MB; her erişimde iki bellek erişimi), çok düzeyli tablonun lineer tabloyu ağaca çevirmesi (1024 bayt yerine 192 bayt) ve RISC-V Sv39'un üç düzeyi, TLB'nin yerelliğe dayanması (%70'ten %99,9'a) ve etkin maliyetin %3'e inmesi, bağlam anahtarında TLB'nin boşaltılması ile ASID, iş parçacığı geçişinin sayfa tablosunu değiştirmemesi.
+33. **Sanal Bellek: Talep Sayfalama ve Değiştirme** — *yayında* · adres uzayının belleğe sığdığı varsayımının kaldırılması ve takas alanı, bulunma bitiyle sayfa hatasının doğması ve bunun bir tuzak olması, "aslında adı ıska olmalıydı" saptaması, sayfa hatası işleyicisinin dört adımı ve disk beklerken sürecin engellenmiş durumda olması, sayfa hatasının neden donanımda değil yazılımda işlendiği, ölçütün önce tanımlanması (AMAT: %90 isabette 1 ms, %99,9'da 10,1 µs — yüz kat) ve küçük ıska oranının bile maliyeti ele geçirmesi, optimal ilkenin yalnızca karşılaştırma noktası olması, aynı erişim dizisinde optimal 6 / FIFO 4 / LRU 6 isabet, Belady anomalisi (FIFO 3 çerçevede 9, 4 çerçevede 10 ıska) ve LRU'nun kapsama özelliği, üç iş yükünün üç dersi (yerellik yoksa ilke fark etmez; seksen-yirmide LRU kazanır; döngüsel iş yükünde 49 çerçeveyle %0 isabet), kusursuz LRU'nun maliyeti ve kullanım bitiyle saat algoritması, kirli bit, talep sayfalama ile ön getirme, çırpınma, çalışma kümesi, kabul denetimi ve bellek yetersizliği katili.
 34. **Dosya Sistemleri ve Giriş/Çıkış** — dosya/dizin yapıları, ayırma yöntemleri, tamponlama; B-ağacı geri çağrımı (12).
 35. **Koruma, Güvenlik ve Linux Somutlaması** — erişim matrisi, yetenekler; kavramların Linux'taki karşılıkları; faz sentezi.
 
@@ -144,10 +144,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 29 ← 27 (yarış koşulu, kritik kesim, karşılıklı dışlama, atomiklik — problem orada kuruldu), 28 (önkesme kesmenin üç komutun ortasında gelebileceğini garanti eder; dönen kilit önkesmeli çizelgeleyici ister), 19 (korunan değişmez dili: bir kilidin ne söz verdiği değişmezle yazılır), 26 (kesmelerin kapatılması ayrıcalıklı bir işlemdir ve çekirdek içi eşzamanlılık orada anılmıştı), 10 (kilidin arayüzü ile temsili ayrımı; bekleyenler kuyruğu)
 - 30 ← 29 (kilit, semafor, koşul değişkeni ve monitör; Mesa semantiği), 10 (tampon bir kuyruktur: dairesel tampon, koyma ve alma indisleri), 19 (kısmi doğruluk ile sonlanma ayrımı burada güvenlik ile canlılık olarak genelleşir), 16 (beklenenler grafındaki döngü, döngü tespitinin eşzamanlılık karşılığıdır)
 
-**Batch 10 taslak satırları (Faz D'nin eşzamanlılık kapanışı ve sanallaştırmanın açılışı; batch büyüklüğü run'da çözülür):**
+**Batch 10 (yayımlanmış, artık bağlayıcı):**
 - 31 ← 30 (filozofların beklenenler döngüsü; kilitlenmenin dört koşulu orada sezgisel olarak açıldı), 29 (kilit sırası ve ince taneli kilitlemenin bedeli), 19 (azalan ölçü ve sonlanma → güvenli durum kavramı), 16 (kaynak atama grafında döngü tespiti), 23 (kaynak vektörleri üzerinde gevşetme benzeri kademeli karar)
 - 32 ← 26 (adres uzayı bir sanallaştırmadır; tuzak ile kesme ayrımı, sayfa hatası bir tuzaktır), 27 (sürecin adres uzayı envanteri ve iş parçacığında sayfa tablosunun değişmemesi), 12 (ağaç yapılı çok düzeyli tablo ve blok/sayfa muhasebesi), 14 (doğrudan erişim dizisi: sayfa tablosu bir indis eşlemesidir)
-- 33 ← 32 (sayfa tablosu, TLB ve adres çevirisi), 22 (bellekleme ile tablolama takası: sakla ya da yeniden hesapla), 9 (ortalama durum ile en kötü durum; erişim maliyeti dağılımı), 13 (değiştirme ilkelerinin veri yapısı: öncelik kuyruğu ve yaklaşık LRU)
+- 33 ← 32 (sayfa tablosu, TLB ve adres çevirisi), 22 (bellekleme ile tablolama takası: sakla ya da yeniden hesapla — kusursuz LRU saklar, saat algoritması yeniden üretir), 9 (ortalama durum ile en kötü durum; iş yükü varsayımı), 28 (geçmişe bakıp geleceği kestirme kalıbı ve ölçüt tanımlamadan karşılaştırma yapılamaması), 26 (sayfa hatası bir tuzaktır)
+
+**Batch 11 taslak satırları (Faz D'nin kalıcılık ve koruma kapanışı; batch büyüklüğü run'da çözülür):**
+- 34 ← 33 (bellek bir önbellektir; dosya sistemi önbelleği aynı takasın disk hâlidir), 12 (disk tabanlı arama yapıları ve B-ağacı; blok muhasebesi), 10 (dizinin bitişik yerleşimi ile bağlı listenin işaretçi maliyeti → bitişik, bağlı ve indeksli ayırma), 30 (kapsayıcı koşul ve broadcast; tampon havuzu tahsisi), 21 (önek-serbest kod ve bit muhasebesi — dizin kayıtları)
+- 35 ← 26 (kullanıcı kipi / çekirdek kipi ve ayrıcalık düzeyi), 31 (güvenlik ile canlılığın ayrımı; "güvenlik" sözcüğünün iki anlamı 30'da uyarılmıştı), 5 (erişim matrisi bir bağıntıdır), 8 (Boolean sadeleştirme ve kafes yapısı — izin kümeleri), 34 (dosya izinleri somut örnektir)
+- 36 ← 6 (sayma: örneklem uzayı ve kombinatoryal olasılık), 9 (ortalama durumun dağılım varsayımı — burada ödenir), 24 (rastgeleleştirilmiş seçim ve paranoyak hızlı sıralamanın beklenti analizi; devredilen borç), 4 (özyinelemeli beklenti bağıntıları)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -588,6 +593,65 @@ boyunca aynı kalır.
 | kilitlenme | deadlock | 30 |
 | beklenenler döngüsü | wait-for cycle | 30 |
 | kilit sırası | lock ordering | 30 |
+| atomiklik ihlali | atomicity violation | 31 |
+| sıra ihlali | order violation | 31 |
+| elde tutup bekleme | hold-and-wait | 31 |
+| önkesmesizlik | no preemption | 31 |
+| döngüsel bekleme | circular wait | 31 |
+| önleme | deadlock prevention | 31 |
+| deneme kilidi | trylock | 31 |
+| livelock (Türkçesi bilinçli olarak kullanılmadı; "canlılık" 30'da başka bir sınıfı adlandırıyor) | livelock | 31 |
+| kilitsiz veri yapısı | lock-free data structure | 31 |
+| kaçınma | deadlock avoidance | 31 |
+| bankacı algoritması | banker's algorithm | 31 |
+| güvenli durum / güvensiz durum | safe state / unsafe state | 31 |
+| tespit ve kurtarma | detection and recovery | 31 |
+| kaynak atama grafı | resource-allocation graph | 31 |
+| sanal adres | virtual address | 32 |
+| fiziksel adres | physical address | 32 |
+| adres çevirisi | address translation | 32 |
+| taban ve sınır | base and bounds | 32 |
+| devingen yeniden yerleştirme | dynamic relocation | 32 |
+| bellek yönetim birimi | memory management unit (MMU) | 32 |
+| iç parçalanma | internal fragmentation | 32 |
+| dış parçalanma | external fragmentation | 32 |
+| bölüt / bölütleme | segment / segmentation | 32 |
+| bölütleme hatası | segmentation fault | 32 |
+| seyrek adres uzayı | sparse address space | 32 |
+| sayfalama | paging | 32 |
+| sayfa | page | 32 |
+| sayfa çerçevesi | page frame | 32 |
+| sayfa tablosu | page table | 32 |
+| sanal sayfa numarası | virtual page number (VPN) | 32 |
+| fiziksel çerçeve numarası | physical frame number (PFN) | 32 |
+| ofset | offset | 32 |
+| sayfa tablosu girdisi | page-table entry (PTE) | 32 |
+| geçerlilik biti | valid bit | 32 |
+| koruma bitleri | protection bits | 32 |
+| lineer sayfa tablosu | linear page table | 32 |
+| çok düzeyli sayfa tablosu | multi-level page table | 32 |
+| sayfa dizini | page directory | 32 |
+| adres çevirisi önbelleği | translation-lookaside buffer (TLB) | 32 |
+| uzamsal / zamansal yerellik | spatial / temporal locality | 32 |
+| adres uzayı tanımlayıcısı | address space identifier (ASID) | 32 |
+| takas alanı | swap space | 33 |
+| bulunma biti | present bit | 33 |
+| sayfa hatası | page fault | 33 |
+| sayfa hatası işleyicisi | page-fault handler | 33 |
+| değiştirme ilkesi | replacement policy | 33 |
+| ortalama bellek erişim süresi | average memory access time (AMAT) | 33 |
+| zorunlu ıska | compulsory (cold-start) miss | 33 |
+| optimal ilke | optimal replacement | 33 |
+| Belady anomalisi | Belady's anomaly | 33 |
+| kapsama özelliği (adı İngilizcede *stack property*'dir; veri yapısı olarak yığınla ilgisi yoktur) | stack property | 33 |
+| kullanım biti | use (reference) bit | 33 |
+| saat algoritması | clock algorithm | 33 |
+| kirli bit | dirty bit | 33 |
+| talep sayfalama | demand paging | 33 |
+| ön getirme | prefetching | 33 |
+| çırpınma | thrashing | 33 |
+| çalışma kümesi | working set | 33 |
+| kabul denetimi | admission control | 33 |
 
 ## Kavram-tekrar defteri
 
@@ -930,14 +994,52 @@ Batch 9 ile açılan yeni pinler ve ödenen borçlar:
   problem 27'de kurulmuştu, çözüm ilkelleri 29'da, klasik uygulamaları 30'da verildi.
 - **Tampon bir kuyruktur (10)** → **30'da ödendi**: dairesel tampon, koyma/alma indisleri ve
   modülo aritmetiği; iki bekleme koşulu buradan doğar.
-- **Kilit sırası (29, 30)** → 31'in dört koşulundan döngüsel beklemenin önlenmesi tam olarak
-  budur; filozofların tek oku çevirmesi de aynı tekniktir.
-- **Öncelik tersine dönmesi ve öncelik kalıtımı (29)** → 31'de ve 35'te gerçek zamanlı sistem
-  tartışmasında geri gelebilir.
+- **Kilit sırası (29, 30)** → **31'de ödendi**: döngüsel beklemeyi önlemenin kanonik tekniğidir;
+  tam sıra, kısmi sıra (Linux'un on grubu), kilit adresine göre sıralama ve xv6'nın küresel sırası.
+  Filozofların tek oku çevirmesi bunun en küçük örneğiydi.
+- **Öncelik tersine dönmesi ve öncelik kalıtımı (29)** → **31'de kısmen ödendi**: kilitlenme,
+  açlık, livelock ve öncelik tersine dönmesi aynı tabloda "sistem ilerler mi / bu iş parçacığı
+  ilerler mi" sorusuyla ayrıldı. Gerçek zamanlı sistem tartışması 35'e kaldı.
 - **Kayıp uyandırma ve "bırak ve uyu"nun atomikliği (29)** → 34'te giriş/çıkış tamamlanma
   bildirimlerinde aynı desen görünür.
 - **Kapsayıcı koşul ve broadcast (30)** → bekleme koşulu parametreliyse tek çözüm hepsini
   uyandırmaktır; 34'te tampon havuzu tahsisinde geri çağrılabilir.
-- **Geçmişe bakıp geleceği kestirmek (28)** → MLFQ'nun tezi; **33'te sayfa değiştirme ilkeleri**
-  (LRU, clock) aynı fikrin bellek karşılığıdır ve orada da yaklaşıklama kullanılır.
+- **Geçmişe bakıp geleceği kestirmek (28)** → **33'te ödendi**: LRU tam olarak bu tezin bellek
+  karşılığıdır, saat algoritması ise onun donanım bitiyle yapılmış yaklaştırmasıdır. Aynı
+  makalede "ölçütü söylemeden daha iyi denemez" disiplini de AMAT olarak geri döndü.
 - **d-yollu heap (13)** → hâlâ ödenmedi; dallanma çarpanı takasının kalan tek örneğidir.
+- **Azalan ölçü ve sonlanma (19)** → **31'de ödendi**: bankacı algoritmasının güvenlik yordamı
+  her turda en az bir süreci "kuşkulu" olmaktan çıkarır; kuşkulu sayısı negatif olmayan bir tam
+  sayı olarak azaldığı için yordam sonlanır.
+- **Döngü tespiti (16)** → **31'de ödendi**: kaynak atama grafında döngü aramak tespit
+  stratejisinin kendisidir; ama **tek örnekli kaynaklarda kesin, çok örnekli kaynaklarda yalnızca
+  gerekli** koşuldur ve bu ayrım kendi kurduğum örnekle programla doğrulandı.
+- **Gevşetme kalıbı (23)** → **31'de biçim düzeyinde ödendi**: bankacının güvenlik denetimi de
+  elde tutulan bir tahmini (serbest para) tekrar tekrar iyileştirip artık iyileşmediğinde durur.
+- **Doğrudan erişim dizisi (14)** → **32'de ödendi**: sayfa tablosu, sanal sayfa numarasıyla
+  indekslenen bir dizidir; "anahtar zaten bir indise benziyorsa hash'e gerek yok" kuralının
+  donanım ölçeğindeki örneğidir.
+- **Ağaç yapılı muhasebe (12)** → **32'de ödendi**: çok düzeyli sayfa tablosu lineer diziyi bir
+  ağaca çevirir ve tamamı geçersiz olan alt ağaçlara hiç yer ayırmaz; bedeli TLB ıskasında
+  düzey sayısı kadar bellek erişimidir.
+- **Adres uzayı envanteri ve iş parçacığında sayfa tablosunun değişmemesi (27)** → **32'de
+  ödendi**: iki süreç arasındaki geçiş TLB'yi boşaltmayı ya da ASID'yi gerektirir, aynı sürecin
+  iki iş parçacığı arasındaki geçiş gerektirmez.
+- **Tuzak ile kesme ayrımı (26)** → **32 ve 33'te ödendi**: geçersiz adres bir tuzak doğurur
+  (bölütleme hatası), bulunma biti sıfır olan meşru bir erişim de bir tuzak doğurur (sayfa
+  hatası); ikisinin aynı adı taşımasının nedeni donanımın ikisinde de aynı şeyi yapmasıdır.
+- **Bellekleme ile tablolama takası (22)** → **33'te ödendi**: "sakla ya da yeniden hesapla"
+  kusursuz LRU (tam sırayı sakla) ile saat algoritması (tek bit sakla, sırayı çıkarma anında
+  kabaca üret) arasındaki seçimdir.
+- **Değiştirme ilkelerinin veri yapısı (13)** → **33'te kısmen ödendi**: kusursuz LRU'nun
+  muhasebesi pahalıdır ve gerçek sistemler onu dairesel bir listeyle (saat) yaklaştırır;
+  öncelik kuyruğu burada kullanılmadı ve kullanılmamalıydı.
+- **Ölçüt tanımlamadan karşılaştırma yapılamaz (28)** → **33'te ödendi**: AMAT tanımlanmadan
+  hiçbir değiştirme ilkesi "daha iyi" denemez; 100 ns bellek ve 10 ms diskle %90 ve %99,9
+  isabetin farkı yüz kattır.
+- **Disk tabanlı arama yapıları ve ayırma yöntemleri (12)** → 34'ün açılış borcudur; 33 diski
+  yalnızca bir kurtarma alanı olarak kullandı ve bunu açıkça söyledi.
+- **Bellek bir önbellektir (33)** → 34'te dosya sistemi önbelleği olarak geri gelir; aynı
+  "sakla ya da yeniden hesapla" takası orada da geçerlidir.
+- **Güvenlik sözcüğünün iki anlamı (30)** → 35'te koruma ve güvenlik makalesi geldiğinde ayrım
+  yeniden anılmalıdır: 30 ve 31'deki "güvenlik" *safety*'dir, 35'teki *security*'dir.

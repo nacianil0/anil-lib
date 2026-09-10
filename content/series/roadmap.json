@@ -165,17 +165,17 @@
         { "order": 92, "title": "Matrisin İçini Okumak: Rank, Özdeğer ve SVD", "status": "yayinda", "slug": "matrisin-icini-okumak-rank-ozdeger-ve-svd" },
         { "order": 93, "title": "Olasılığın Dili: Dağılımlar, Beklenti ve En Büyük Olabilirlik", "status": "yayinda", "slug": "olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik" },
         { "order": 94, "title": "Bilgi Kuramı: Entropi, Çapraz Entropi ve KL", "status": "yayinda", "slug": "bilgi-kurami-entropi-capraz-entropi-ve-kl" },
-        { "order": 95, "title": "Optimizasyonun Kuramı: Gradyanın Matematiği", "status": "planlandi" },
-        { "order": 96, "title": "Genelleme Kuramı: Ezber ile Öğrenme Arasında", "status": "planlandi" },
-        { "order": 97, "title": "Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında", "status": "planlandi" }
+        { "order": 95, "title": "Optimizasyonun Kuramı: Gradyanın Matematiği", "status": "yayinda", "slug": "optimizasyonun-kurami-gradyanin-matematigi" },
+        { "order": 96, "title": "Genelleme Kuramı: Ezber ile Öğrenme Arasında", "status": "yayinda", "slug": "genelleme-kurami-ezber-ile-ogrenme-arasinda" },
+        { "order": 97, "title": "Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında", "status": "yayinda", "slug": "klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda" }
       ]
     },
     {
       "id": "faz-11",
       "title": "Araştırma Pratiği: Kanıtla Düşünmek",
-      "description": "Paper okumaktan deney tasarımına ve ölçüm disiplinine: araştırmacı formasyonu.",
+      "description": "Çalışma okumaktan deney tasarımına ve ölçüm disiplinine: araştırmacı formasyonu.",
       "articles": [
-        { "order": 98, "title": "Paper Nasıl Okunur: İddia, Kanıt ve Hakemlik", "status": "planlandi" },
+        { "order": 98, "title": "Bir Çalışmayı Okumak: İddia, Kanıt ve Hakemlik", "status": "yayinda", "slug": "bir-calismayi-okumak-iddia-kanit-ve-hakemlik" },
         { "order": 99, "title": "Araştırma Sorusu ve Deney Tasarımı: Hipotez, Baseline, Ablation", "status": "planlandi" },
         { "order": 100, "title": "Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi", "status": "planlandi" },
         { "order": 101, "title": "Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi", "status": "planlandi" },

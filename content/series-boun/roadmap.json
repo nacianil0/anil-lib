@@ -59,9 +59,9 @@
         { "order": 28, "title": "CPU Zamanlama: Ölçütler, Kurallar ve Geri Besleme", "status": "yayinda", "slug": "cpu-zamanlama-olcutler-kurallar-ve-geri-besleme" },
         { "order": 29, "title": "Senkronizasyon: Kilit, Semafor ve Monitör", "status": "yayinda", "slug": "senkronizasyon-kilit-semafor-ve-monitor" },
         { "order": 30, "title": "Klasik Eşzamanlılık Problemleri: Çözümü Savunmak", "status": "yayinda", "slug": "klasik-eszamanlilik-problemleri-cozumu-savunmak" },
-        { "order": 31, "title": "Kilitlenme: Koşullar ve Stratejiler", "status": "planlandi" },
-        { "order": 32, "title": "Bellek Yönetimi: Adres Çevirisi ve Sayfalama", "status": "planlandi" },
-        { "order": 33, "title": "Sanal Bellek: Talep Sayfalama ve Değiştirme", "status": "planlandi" },
+        { "order": 31, "title": "Kilitlenme: Koşullar ve Stratejiler", "status": "yayinda", "slug": "kilitlenme-kosullar-ve-stratejiler" },
+        { "order": 32, "title": "Bellek Yönetimi: Adres Çevirisi ve Sayfalama", "status": "yayinda", "slug": "bellek-yonetimi-adres-cevirisi-ve-sayfalama" },
+        { "order": 33, "title": "Sanal Bellek: Talep Sayfalama ve Değiştirme", "status": "yayinda", "slug": "sanal-bellek-talep-sayfalama-ve-degistirme" },
         { "order": 34, "title": "Dosya Sistemleri ve Giriş/Çıkış", "status": "planlandi" },
         { "order": 35, "title": "Koruma, Güvenlik ve Linux Somutlaması", "status": "planlandi" }
       ]

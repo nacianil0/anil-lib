@@ -3510,3 +3510,140 @@ sildi; kalan betikler scratchpad'e yeniden yazıldı.
 | 19:13 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/cerebrum-b22.py | — | ~1078 |
 | 19:14 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch22-faz10-acilis.md | — | ~1232 |
 | 19:15 | Session end: 7 writes across 7 files (launch.json, kararlar-b22.py, notlar-b22.py, HANDOFF.md, wolf-b22.py) | 2 reads | ~17284 tok |
+
+## Session: 2026-09-10 20:23
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 20:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 20:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 20:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/wc-b23.cjs | — | ~236 |
+| 20:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/fetch-b23.py | — | ~752 |
+| 20:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/src95.json | — | ~709 |
+| 20:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/orsearch.py | — | ~345 |
+| 20:29 | Created artifacts/b10-research/kilitlenme.py | — | ~1385 |
+| 20:30 | Created artifacts/b10-research/degistirme.py | — | ~1172 |
+| 20:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/src96.json | — | ~563 |
+| 20:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/src97.json | — | ~629 |
+| 20:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/src98.json | — | ~732 |
+| 20:34 | Created content/series-boun/assets/kilitlenme-kosullar-ve-stratejiler/dort-kosul.svg | — | ~1017 |
+| 20:34 | Created content/series-boun/assets/kilitlenme-kosullar-ve-stratejiler/bankaci-guvenli-durum.svg | — | ~1012 |
+| 20:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/src-w2.json | — | ~416 |
+| 20:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/pdftxt.py | — | ~251 |
+| 20:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/q.py | — | ~254 |
+| 20:38 | Created content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | — | ~7178 |
+| 20:39 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~22 |
+| 20:39 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~25 |
+| 20:41 | Created content/series-boun/assets/bellek-yonetimi-adres-cevirisi-ve-sayfalama/adres-cevirisi.svg | — | ~1700 |
+| 20:43 | Created content/series-boun/assets/bellek-yonetimi-adres-cevirisi-ve-sayfalama/adres-cevirisi.svg | — | ~1501 |
+| 20:43 | Created content/series-boun/assets/bellek-yonetimi-adres-cevirisi-ve-sayfalama/cok-duzeyli-tablo.svg | — | ~1495 |
+| 20:46 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/calc95.py | — | ~753 |
+| 20:47 | Created content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | — | ~7322 |
+| 20:48 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | 3→7 lines | ~375 |
+| 20:50 | Created content/series-boun/assets/sanal-bellek-talep-sayfalama-ve-degistirme/degistirme-karsilastirmasi.svg | — | ~1693 |
+| 20:50 | Created content/series-boun/assets/sanal-bellek-talep-sayfalama-ve-degistirme/sayfa-hatasi-akisi.svg | — | ~1001 |
+| 20:50 | Edited content/series-boun/assets/sanal-bellek-talep-sayfalama-ve-degistirme/degistirme-karsilastirmasi.svg | inline fix | ~25 |
+| 20:50 | Created content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | — | ~6492 |
+| 20:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/svgcheck.py | — | ~1059 |
+| 20:53 | Created content/series/assets/optimizasyonun-kurami-gradyanin-matematigi/gradyan-bir-yondur.svg | — | ~981 |
+| 20:54 | Created content/series/assets/optimizasyonun-kurami-gradyanin-matematigi/esik-nereden-cikiyor.svg | — | ~1055 |
+| 20:54 | Created content/series/assets/optimizasyonun-kurami-gradyanin-matematigi/kosul-sayisi-vergisi.svg | — | ~994 |
+| 20:54 | Created content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | — | ~5954 |
+| 20:54 | Created content/series/assets/optimizasyonun-kurami-gradyanin-matematigi/adamin-iki-duzeltmesi.svg | — | ~1119 |
+| 20:55 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | 1→5 lines | ~433 |
+| 20:55 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~297 |
+| 20:55 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | "ın ilk adımı başlığını ta" → "ın ilk adımı başlığını ta" | ~374 |
+| 20:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/scan.py | — | ~722 |
+| 20:56 | Created artifacts/b10-research/login-b10.mjs | — | ~288 |
+| 20:58 | Created artifacts/b10-research/shot-batch10.mjs | — | ~1642 |
+| 20:59 | Created content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | — | ~4922 |
+| 21:00 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | 3→7 lines | ~433 |
+| 21:00 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | expanded (+10 lines) | ~382 |
+| 21:00 | Created artifacts/b10-research/figs-b10.mjs | — | ~777 |
+| 21:00 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | 1→3 lines | ~182 |
+| 21:01 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | expanded (+6 lines) | ~183 |
+| 21:01 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | 1→5 lines | ~277 |
+| 21:01 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | 1→5 lines | ~281 |
+| 21:02 | Created artifacts/b10-research/ortusme.py | — | ~622 |
+| 21:03 | Created content/series/assets/genelleme-kurami-ezber-ile-ogrenme-arasinda/yanlilik-oynaklik-takasi.svg | — | ~1214 |
+| 21:03 | Created content/series/assets/genelleme-kurami-ezber-ile-ogrenme-arasinda/ayni-ag-iki-dunya.svg | — | ~1342 |
+| 21:03 | Created content/series/assets/genelleme-kurami-ezber-ile-ogrenme-arasinda/cift-inisin-uc-ekseni.svg | — | ~870 |
+| 21:04 | Created artifacts/b10-research/pre-b10.mjs | — | ~917 |
+| 21:09 | Created content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | — | ~5318 |
+| 21:09 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→3 lines | ~203 |
+| 21:10 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | "de karar tek bir örneğe b" → "de karar tek bir örneğe b" | ~134 |
+| 21:10 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→3 lines | ~222 |
+| 21:10 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→3 lines | ~344 |
+| 21:10 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→3 lines | ~256 |
+| 21:11 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→3 lines | ~176 |
+| 21:11 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→2 lines | ~142 |
+| 21:11 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | 1→3 lines | ~185 |
+| 21:12 | Created content/series/assets/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda/en-yakin-komsunun-tavani.svg | — | ~1057 |
+| 21:13 | Created content/series/assets/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda/dort-aile-dort-varsayim.svg | — | ~1055 |
+| 21:13 | Created content/series/assets/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda/uc-bulgu-ve-donme.svg | — | ~932 |
+| 21:14 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/219dba1e-e9ce-4e11-a1cc-2c97c171f067/scratchpad/arastirma-15.md | — | ~4535 |
+| 21:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/219dba1e-e9ce-4e11-a1cc-2c97c171f067/scratchpad/yol-edit.py | — | ~3022 |
+| 21:16 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/219dba1e-e9ce-4e11-a1cc-2c97c171f067/scratchpad/yol-edit2.py | — | ~1535 |
+| 21:17 | Created content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | — | ~4433 |
+| 21:18 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | expanded (+8 lines) | ~342 |
+| 21:18 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | 1→3 lines | ~183 |
+| 21:19 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | expanded (+16 lines) | ~562 |
+| 21:19 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | 1→3 lines | ~187 |
+| 21:20 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | 1→3 lines | ~299 |
+| 21:20 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | 1→3 lines | ~221 |
+| 21:20 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | 1→3 lines | ~108 |
+| 21:21 | Created content/series/assets/bir-calismayi-okumak-iddia-kanit-ve-hakemlik/iddia-kanit-haritasi.svg | — | ~1069 |
+| 21:21 | Created docs/seri-boun/HANDOFF.md | — | ~9255 |
+| 21:22 | Created content/series/assets/bir-calismayi-okumak-iddia-kanit-ve-hakemlik/hakemligin-tutarliligi.svg | — | ~932 |
+| 21:22 | Created content/series/assets/bir-calismayi-okumak-iddia-kanit-ve-hakemlik/ayar-butcesi-asimetrisi.svg | — | ~866 |
+| 21:22 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-batch10-faz-d-sanallastirma.md | — | ~970 |
+| 21:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/219dba1e-e9ce-4e11-a1cc-2c97c171f067/scratchpad/buglog-add.py | — | ~933 |
+| 21:35 | Batch 10 kapanışı: HANDOFF/YOL-HARITASI/ARASTIRMA §15 güncellendi, cerebrum + buglog yazıldı | docs/seri-boun/*, .wolf/* | 31-33 yayında, sıradaki 34 | ~14000 |
+| 21:24 | Created .claude/launch.json | — | ~146 |
+| 21:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/sweep.py | — | ~332 |
+| 21:25 | Session end: 83 writes across 54 files (wc-b23.cjs, fetch-b23.py, src95.json, orsearch.py, kilitlenme.py) | 19 reads | ~125812 tok |
+| 21:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/shots.mjs | — | ~639 |
+| 21:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/links.py | — | ~469 |
+| 21:44 | Created .claude/launch.json | — | ~56 |
+| 21:46 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~98 |
+| 21:48 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/yol-b23.py | — | ~4004 |
+| 21:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/yol-b23b.py | — | ~4398 |
+
+## Session: 2026-09-10 21:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 21:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:55 | Created docs/seri/HANDOFF.md | — | ~8123 |
+| 21:57 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/wolf-b23.py | — | ~2329 |
+
+## Session: 2026-09-10 (AI serisi Batch 23)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 20:30 | TRIGGER BATCH=4+1 cozuldu; SOZLESME/HANDOFF/YOL-HARITASI okundu | docs/seri/* | 95-98 hedeflendi | ~40k |
+| 20:45 | Arastirma: dort dalga, 100+ adres, pypdf ile PDF -> metin | scratchpad/b23-research | 54 kaynak dogrulandi | ~120k |
+| 21:00 | 95 yazildi (Optimizasyonun Kurami) + 4 SVG | foundations/optimizasyonun-... | 2.105 kelime | ~25k |
+| 21:10 | 96 yazildi (Genelleme Kurami) + 3 SVG | foundations/genelleme-... | 2.053 kelime | ~25k |
+| 21:20 | 97 yazildi (Klasik ML Turu) + 3 SVG | foundations/klasik-... | 2.076 kelime | ~25k |
+| 21:30 | 98 yazildi (Bir Calismayi Okumak) + 3 SVG; Faz 11 acildi | foundations/bir-calismayi-... | 2.031 kelime | ~25k |
+| 21:35 | roadmap 98 basligi Turkcelestirildi, entegre-batch --write, hash sync | catalog.json, roadmap.json | 98 makale | ~5k |
+| 21:40 | Izole kopyada build (exit 0, 98 yol), 99 rota sweep (4 dilim, ~76 sn) | anil-lib-b23-render | hepsi 200 | ~8k |
+| 21:45 | DOM olcumu 3 genislik x 3 tema; 13 sekil x 2 tema = 26 PNG goz turu | tarayici + playwright | kusur yok | ~30k |
+| 21:50 | Baglanti kapisi: 54 adres cekildi; Crossref ile 15 klasik kunye | scratchpad/links.py | dogrulanamayan kunye yok | ~6k |
+| 21:55 | +1 fazi: YOL-HARITASI (graf, tekrar defteri, terim defteri, #209-#216), HANDOFF | docs/seri/* | cursor 99 | ~20k |
+| 22:00 | Kapilar: typecheck 0, 624 test, build exit 0 | repo | yesil | ~3k |
+| 21:58 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch23-faz10-kapanis.md | — | ~1046 |
+| 22:01 | Session end: 3 writes across 3 files (HANDOFF.md, wolf-b23.py, series-batch23-faz10-kapanis.md) | 0 reads | ~12153 tok |

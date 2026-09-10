@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Üç bölmeli bir şekil. Üst bölmede kurulum verilir: kayıp f(w) eşittir yarım çarpı w1 karesi artı yirmi w2 karesi; nokta (2; 1); gradyan (2; 20); gradyanın uzunluğu 20,0998. Orta bölmede beş satırlık bir tablo vardır; sütunlar birim yön, nokta çarpım ve okuma. Birinci satır (1; 0) yönü, değer artı 2,0000, okuması yalnızca birinci eksende ilerlemek. İkinci satır (0; 1) yönü, değer artı 20,0000, okuması yalnızca ikinci eksende ilerlemek. Üçüncü satır (0,7071; 0,7071) yönü, değer artı 15,5563, okuması iki eksende birden ilerlemek. Dördüncü satır gradyanın kendi yönü (0,0995; 0,9950), değer artı 20,0998, okuması ulaşılabilecek en büyük değer ve gradyanın uzunluğuna eşit; bu satır vurguludur. Beşinci satır ters yön (eksi 0,0995; eksi 0,9950), değer eksi 20,0998, okuması ulaşılabilecek en küçük değer, yani en dik iniş; bu satır da vurguludur. Alt bölmede bir kutu içinde sonuç durur: hiçbir birim yön gradyanın uzunluğundan büyük bir değişim veremez, çünkü nokta çarpım iki uzunluğun çarpımını aşamaz; eşitlik yalnızca yönler çakıştığında olur. En altta bir kayıt: beş değerin tamamı verilen gradyandan elle hesaplanmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">f(w) = ½(w₁² + 20w₂²) · nokta (2; 1) · gradyan (2; 20) · uzunluk 20,0998</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="20" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">birim yön</text>
+  <text x="280" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">nokta çarpım</text>
+  <text x="410" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">okuma</text>
+
+  <text x="20" y="96" font-size="13" fill="var(--text)">(1; 0)</text>
+  <text x="280" y="96" font-size="13" fill="var(--text)">+2,0000</text>
+  <text x="410" y="96" font-size="13" fill="var(--text-muted)">yalnızca birinci eksende ilerlemek</text>
+
+  <text x="20" y="120" font-size="13" fill="var(--text)">(0; 1)</text>
+  <text x="280" y="120" font-size="13" fill="var(--text)">+20,0000</text>
+  <text x="410" y="120" font-size="13" fill="var(--text-muted)">yalnızca ikinci eksende ilerlemek</text>
+
+  <text x="20" y="144" font-size="13" fill="var(--text)">(0,7071; 0,7071)</text>
+  <text x="280" y="144" font-size="13" fill="var(--text)">+15,5563</text>
+  <text x="410" y="144" font-size="13" fill="var(--text-muted)">iki eksende birden ilerlemek</text>
+
+  <text x="20" y="170" font-size="13" font-weight="bold" fill="var(--accent)">gradyanın yönü (0,0995; 0,9950)</text>
+  <text x="280" y="170" font-size="13" font-weight="bold" fill="var(--accent)">+20,0998</text>
+  <text x="410" y="170" font-size="13" fill="var(--accent)">en büyük değer — gradyanın uzunluğu</text>
+
+  <text x="20" y="194" font-size="13" font-weight="bold" fill="var(--cool)">ters yön (−0,0995; −0,9950)</text>
+  <text x="280" y="194" font-size="13" font-weight="bold" fill="var(--cool)">−20,0998</text>
+  <text x="410" y="194" font-size="13" fill="var(--cool)">en küçük değer — en dik iniş</text>
+
+  <line x1="20" y1="212" x2="700" y2="212" stroke="var(--border)" />
+  <rect x="20" y="224" width="680" height="58" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="248" font-size="13" fill="var(--text)">Hiçbir birim yön gradyanın uzunluğundan büyük bir değişim veremez: nokta çarpım</text>
+  <text x="34" y="268" font-size="13" fill="var(--text)">iki uzunluğun çarpımını aşamaz ve eşitlik yalnızca yönler çakışınca gerçekleşir.</text>
+
+  <text x="20" y="308" font-size="13" fill="var(--text-faint)">Beş değerin tamamı verilen gradyandan elle hesaplandı.</text>
+</svg>

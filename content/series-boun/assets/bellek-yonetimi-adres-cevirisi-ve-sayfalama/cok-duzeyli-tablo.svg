@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a32b-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Lineer tablo: 256 girdi, 16 sayfa</text>
+
+  <rect x="30" y="40" width="110" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <rect x="30" y="52" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="64" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="76" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="88" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="100" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="112" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="124" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="136" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="148" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="160" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="172" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="184" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="196" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="208" width="110" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="30" y="220" width="110" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+
+  <text x="150" y="51" font-size="13" fill="var(--text)">tablo sayfası 0 — geçerli</text>
+  <text x="150" y="140" font-size="13" fill="var(--text-muted)">aradaki 14 sayfa geçersiz</text>
+  <text x="150" y="231" font-size="13" fill="var(--text)">tablo sayfası 15 — geçerli</text>
+  <text x="30" y="256" font-size="13" fill="var(--text-muted)">Hepsi ayrılır: 16 sayfa = 1024 bayt</text>
+
+  <line x1="362" y1="32" x2="362" y2="264" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">İki düzeyli tablo: dizin + iki parça</text>
+
+  <rect x="390" y="40" width="70" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <rect x="390" y="52" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="64" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="76" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="88" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="100" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="112" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="124" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="136" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="148" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="160" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="172" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="184" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="196" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="208" width="70" height="12" fill="none" stroke="var(--border)" stroke-width="1" />
+  <rect x="390" y="220" width="70" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="378" y="252" font-size="13" fill="var(--text-muted)">sayfa dizini</text>
+
+  <line x1="463" y1="46" x2="513" y2="57" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a32b-ok)" />
+  <rect x="520" y="40" width="160" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="600" y="62" font-size="13" text-anchor="middle" fill="var(--text)">tablo sayfası 0</text>
+
+  <line x1="463" y1="226" x2="513" y2="215" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a32b-ok)" />
+  <rect x="520" y="198" width="160" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="600" y="220" font-size="13" text-anchor="middle" fill="var(--text)">tablo sayfası 15</text>
+
+  <text x="520" y="140" font-size="13" text-anchor="middle" fill="var(--text-muted)">geçersiz dizin girdisi için</text>
+  <text x="520" y="158" font-size="13" text-anchor="middle" fill="var(--text-muted)">hiç sayfa ayrılmaz</text>
+
+  <text x="15" y="286" font-size="13" fill="var(--text)">Lineer yapı 1024 bayt tutar, iki düzeyli yapı 192 bayt: beş kattan fazla tasarruf.</text>
+  <text x="15" y="304" font-size="13" fill="var(--text-muted)">Bedeli: TLB ıskasında bir yerine iki bellek erişimi. RISC-V Sv39'da üç düzey, üç erişim.</text>
+</svg>

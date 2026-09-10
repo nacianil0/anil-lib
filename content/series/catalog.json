@@ -1882,6 +1882,86 @@
       "path": "content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md",
       "relatedArticleIds": [],
       "classificationBatch": 22
+    },
+    {
+      "articleId": "article_1f6a3c94-7d2e-4b18-9c05-6a4e2d8b31f7",
+      "title": "Optimizasyonun Kuramı: Gradyanın Matematiği",
+      "slug": "optimizasyonun-kurami-gradyanin-matematigi",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 95,
+      "summary": "2. makalede gradyan inişinin tarifini verdik, 8. makalede gerçek koşuların çizelgelerini okuduk; bu makale neden işe yaradığını kuruyor. Gradyan bir sayı değil bir yöndür ve tersinin en dik iniş olması 91. makalenin nokta çarpımından çıkar: (2; 20) gradyanında en hızlı azalma 20,0998, köşegen yönde 15,5563. Adımın tavanı eğrilikten gelir — 2. makalenin deneyle bulduğu 3/14 eşiği, ikinci türevin 28/3 olmasının doğrudan sonucudur. Aynı eğrilik ikinci faturayı da keser: koşul sayısı 20 iken uzaklığı yüzde bire indirmek 47 adım sürer, momentumla 11. Adam'ın ilk adımı her parametreyi tam öğrenme oranı kadar oynatır — gradyanı 0,001 olanı da 10 olanı da; AdamW ise kayba yazılan cezanın uyarlamalı paydadan geçince 100 kat çarpıldığını düzeltir.",
+      "tags": [
+        "optimizasyon",
+        "gradyan",
+        "adam",
+        "momentum",
+        "ogrenme-orani"
+      ],
+      "contentHash": "sha256:da5cb7e1a6878809d03f949c95945d19e3e272a80b84236b5c978918facca750",
+      "path": "content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 23
+    },
+    {
+      "articleId": "article_8b41d7e0-32c6-4f95-a1d3-5e7c9082ab64",
+      "title": "Genelleme Kuramı: Ezber ile Öğrenme Arasında",
+      "slug": "genelleme-kurami-ezber-ile-ogrenme-arasinda",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 96,
+      "summary": "95. makalede kaybı azaltmayı öğrendik; ama azalttığımız sayı umursadığımız sayı değil. Bu makale aradaki farkın klasik ayrışımını kuruyor ve o ayrışımın büyük ölçekte neden yetmediğini gösteriyor. Yanlılığı sıfır olan tahminci en iyi tahminci değildir: tek gözlemli bir örnekte yansız seçim 1,5000, bilerek yanlı olan 1,0909 hata veriyor — düzenlileştirmenin bütün gerekçesi bu. Zhang ve arkadaşlarının deneyi klasik çerçeveyi kırdı: aynı ağ, aynı sıfır eğitim hatası, bir yanda yüzde 85,75 test doğruluğu, öbür yanda 9,78. Nakkiran ve arkadaşları çift inişi üç eksende birden ölçtü ve dördün katı veri eklemenin başarıyı düşürdüğü bir bölge gösterdi. Ve genellemeyi öngörmek için türetilmiş kuramsal sınırlardan biri, on bin model üzerinde ölçüldüğünde modelleri ters sıralıyor.",
+      "tags": [
+        "genelleme",
+        "yanlilik-oynaklik",
+        "cift-inis",
+        "ezber",
+        "duzenlilestirme"
+      ],
+      "contentHash": "sha256:39d96c9b6073d50048d7dfd739652554708e0628af63c53eb0f3f5e94c2dfdf4",
+      "path": "content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 23
+    },
+    {
+      "articleId": "article_5d9c2ab7-64f1-4e83-8b70-2c1fa9d6e05a",
+      "title": "Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında",
+      "slug": "klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 97,
+      "summary": "96. makalede kurduğumuz muhasebe sinir ağlarına özgü değil; her tahmin yordamının kalemleri. Bu makale dört klasik aileyi varsayımlarıyla geziyor. Hiç eğitilmeyen en yakın komşu kuralı, sonsuz örnekte en iyi olası hatanın iki katını asla aşmıyor: en iyi hata yüzde 5 ise en yakın komşunun tavanı yüzde 9,5. Ağaç toplulukları hâlâ tablo verisinde önde ve nedeni ölçüldü: 45 kümede yapılan karşılaştırma üç etken buluyor ve rastgele döndürme sıralamayı tersine çeviriyor. Ama tek cümlelik cevap yok: 176 kümelik daha büyük bir çalışma, farkın çoğu kümede önemsiz olduğunu ve ağacın hiperparametresini biraz ayarlamanın aile seçiminden daha çok fark ettirdiğini buluyor. 121 kümelik klasik tarama da aynı dersi veriyor: 179 sınıflandırıcı arasında en iyisi en büyük doğruluğun yüzde 94,1'ini alıyor.",
+      "tags": [
+        "klasik-ml",
+        "karar-agaclari",
+        "destek-vektor-makineleri",
+        "kumeleme",
+        "taban-cizgisi"
+      ],
+      "contentHash": "sha256:37ccfbf56903acb206dfbce90de10f5be96f0cca4945aeead39d02c50372791a",
+      "path": "content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 23
+    },
+    {
+      "articleId": "article_c3e7f280-95ab-4d61-8f34-71b0a5e9d4c2",
+      "title": "Bir Çalışmayı Okumak: İddia, Kanıt ve Hakemlik",
+      "slug": "bir-calismayi-okumak-iddia-kanit-ve-hakemlik",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 98,
+      "summary": "Seri boyunca onlarca çalışmanın sonucunu kullandık; bu makale o sonuçların nasıl okunduğunu konu ediniyor. Bir çalışmanın iddiası özetinde, kanıtı tablolarındadır ve ikisi arasındaki eşleşme her zaman tam değildir. Hakemliğin kendisi de ölçüldü: NeurIPS'in iki bağımsız komiteyle yaptığı deneyde 2014'te kabul edilen bildirilerin yüzde 49,5'i, 2021'de yüzde 50,6'sı öbür komite tarafından reddedilirdi — ve süreç daha seçici hâle getirildikçe rastgeleliğe yaklaşıyor: yalnızca sözlü sunumlar kabul edilseydi oran yüzde 88,8 olurdu. Ayar bütçesi eşitlendiğinde birçok üstünlük iddiası eriyor: doğru düzenlileştirilmiş bir LSTM kendisinden sonraki mimarileri geçiyor, metrik öğrenmede on yılda iki katına çıktığı söylenen kazanç adil karşılaştırmada en iyi ihtimalle küçük kalıyor.",
+      "tags": [
+        "arastirma-pratigi",
+        "hakemlik",
+        "iddia-kanit",
+        "taban-cizgisi",
+        "on-baski"
+      ],
+      "contentHash": "sha256:69641c78c732e7a4af4e5074700dd9f1aeb2df59a3daba1ffb3365eef9eb971b",
+      "path": "content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 23
     }
   ]
 }

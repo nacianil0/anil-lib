@@ -604,6 +604,66 @@
       "path": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
       "relatedArticleIds": [],
       "classificationBatch": 9
+    },
+    {
+      "articleId": "article_80837c80-ea35-42cd-a1e0-a350f0c7aad9",
+      "title": "Kilitlenme: Koşullar ve Stratejiler",
+      "slug": "kilitlenme-kosullar-ve-stratejiler",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 31,
+      "summary": "Filozoflar makalesinde döngüyü tek bir oku çevirerek kırmıştık ama neden yeterli olduğunu söylememiştik. Bu makale kilitlenmeyi kuram düzeyine taşıyor: dört koşul aynı anda sağlanmadıkça kilitlenme olamaz, dolayısıyla her önleme tekniği bir koşulu hedefler. Ardından kaçınma geliyor — Dijkstra'nın 1965'te kendi kalemiyle yazdığı bankacı algoritması, güvenli ve güvensiz durum ayrımı ve doğruluk makalesindeki azalan ölçünün buradaki karşılığı. Sonra tespit ve kurtarma: kaynak atama grafında döngü aramak tek örnekli kaynaklarda kesin cevap verir, çok örnekli kaynaklarda vermez. Bütün sayılar kaba kuvvetle ya da kendi programımla doğrulandı.",
+      "tags": [
+        "kilitlenme",
+        "dort-kosul",
+        "bankaci-algoritmasi",
+        "kilit-sirasi",
+        "livelock"
+      ],
+      "contentHash": "sha256:6f67350fb670e973b35babae15ca2873116e2da93f1c8d8d8fdd1f83c301657c",
+      "path": "content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
+    },
+    {
+      "articleId": "article_370107f0-5edb-4333-a0b2-9eca323aba8a",
+      "title": "Bellek Yönetimi: Adres Çevirisi ve Sayfalama",
+      "slug": "bellek-yonetimi-adres-cevirisi-ve-sayfalama",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 32,
+      "summary": "Her program kendi belleğinin sıfırdan başladığını sanır; gerçekte bambaşka bir yerdedir. Bu yanılsamayı kuran düzenek üç adımda büyür: taban ve sınır yazmaçları tek toplama işlemiyle çalışır ama adres uzayının kullanılmayan ortasını da bellekte tutar; bölütleme parçaları ayrı yerleştirir ve dış parçalanmayı doğurur; sayfalama her şeyi eşit boya bölerek yerleştirme problemini yok eder. Bedeli iki kalemdir — tablo büyür, erişim yavaşlar — ve iki çareyi ayrı ayrı kuruyoruz: çok düzeyli tablo ile TLB. Sayfa tablosunun aslında bir doğrudan erişim dizisi, çok düzeyli tablonun ise bir ağaç olduğunu göreceksin.",
+      "tags": [
+        "adres-uzayi",
+        "adres-cevirisi",
+        "sayfalama",
+        "sayfa-tablosu",
+        "tlb"
+      ],
+      "contentHash": "sha256:f6e7db6b1054d30cdd314796b71c3e7e00508f16bb582227ebd8741d1035a376",
+      "path": "content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
+    },
+    {
+      "articleId": "article_9eddc8ae-eab4-485e-b9d9-e4b2e73635f4",
+      "title": "Sanal Bellek: Talep Sayfalama ve Değiştirme",
+      "slug": "sanal-bellek-talep-sayfalama-ve-degistirme",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 33,
+      "summary": "Önceki makale adres uzayının fiziksel belleğe sığdığını varsayıyordu. Bu makale o varsayımı kaldırıyor: sayfa tablosu girdisindeki bulunma biti sıfırsa erişim bir sayfa hatasına dönüşür, işletim sistemi sayfayı diskten getirir ve komut yeniden denenir. Ardından asıl soru geliyor — bellek doluysa hangi sayfa çıkarılmalı? Önce ölçüt tanımlanıyor (ortalama bellek erişim süresi), sonra optimal, FIFO ve LRU aynı erişim dizisi üzerinde yarıştırılıyor, Belady anomalisi gösteriliyor ve kusursuz LRU'nun neden uygulanamadığı ile saat algoritmasının onu nasıl yaklaştırdığı anlatılıyor. Bütün isabet oranları kendi programımla üretildi.",
+      "tags": [
+        "sanal-bellek",
+        "sayfa-hatasi",
+        "talep-sayfalama",
+        "degistirme-ilkeleri",
+        "thrashing"
+      ],
+      "contentHash": "sha256:b9e1150362f9ed9731b1601e7f994023f727fe33f7ff7cbfd5ac7a60ddd07ff3",
+      "path": "content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 10
     }
   ]
 }

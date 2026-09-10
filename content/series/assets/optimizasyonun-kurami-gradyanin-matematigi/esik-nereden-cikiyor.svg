@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="İki panelli bir şekil. Sol panel 2. makalenin ölçümü başlığını taşır ve beş satırlık bir tablo içerir; sütunlar öğrenme oranı alfa, uzaklık çarpanı ve sonuç. Satırlar sırasıyla: 0,0500 için çarpan artı 0,5333, düzgün yakınsar; 0,1000 için çarpan artı 0,0667, çok hızlı yakınsar; 0,2000 için çarpan eksi 0,8667, salınarak yakınsar; 0,2143 için çarpan eksi 1,0000, kıl payı ıraksar; 0,2500 için çarpan eksi 1,3333, patlar. Panelin altında bu tablonun deneyerek bulunduğu yazılıdır. Sağ panel genel kural başlığını taşır ve üç satırlık bir türetme içerir: kaybın ikinci türevi lambda eşittir üçte iki çarpı ondört eşittir 28 bölü 3 eşittir 9,333; uzaklık çarpanı bir eksi alfa çarpı lambda; yakınsama koşulu alfa küçüktür iki bölü lambda eşittir 6 bölü 28 eşittir 3 bölü 14 eşittir 0,2143. Sağ panelin altında bu sayının hiçbir deney yapılmadan çıktığı yazılıdır. İki panelin arasında bir bağ oku ve üstünde aynı sayı, iki yoldan yazısı vardır. En altta bir kayıt: buradaki lambda Hessian'ın tek özdeğeridir, çünkü modelin tek bir parametresi vardır.">
+  <line x1="365" y1="16" x2="365" y2="212" stroke="var(--border)" />
+
+  <text x="20" y="32" font-size="13" font-weight="bold" fill="var(--text)">2. makalenin ölçümü</text>
+  <text x="28" y="58" font-size="13" font-weight="bold" fill="var(--text-muted)">α</text>
+  <text x="104" y="58" font-size="13" font-weight="bold" fill="var(--text-muted)">çarpan</text>
+  <text x="210" y="58" font-size="13" font-weight="bold" fill="var(--text-muted)">sonuç</text>
+
+  <text x="28" y="82" font-size="13" fill="var(--text)">0,0500</text>
+  <text x="104" y="82" font-size="13" fill="var(--text)">+0,5333</text>
+  <text x="210" y="82" font-size="13" fill="var(--text-muted)">düzgün yakınsar</text>
+
+  <text x="28" y="104" font-size="13" fill="var(--text)">0,1000</text>
+  <text x="104" y="104" font-size="13" fill="var(--text)">+0,0667</text>
+  <text x="210" y="104" font-size="13" fill="var(--text-muted)">çok hızlı yakınsar</text>
+
+  <text x="28" y="126" font-size="13" fill="var(--text)">0,2000</text>
+  <text x="104" y="126" font-size="13" fill="var(--text)">−0,8667</text>
+  <text x="210" y="126" font-size="13" fill="var(--text-muted)">salınarak yakınsar</text>
+
+  <text x="28" y="150" font-size="13" font-weight="bold" fill="var(--accent)">0,2143</text>
+  <text x="104" y="150" font-size="13" font-weight="bold" fill="var(--accent)">−1,0000</text>
+  <text x="210" y="150" font-size="13" fill="var(--accent)">kıl payı ıraksar</text>
+
+  <text x="28" y="172" font-size="13" fill="var(--text)">0,2500</text>
+  <text x="104" y="172" font-size="13" fill="var(--text)">−1,3333</text>
+  <text x="210" y="172" font-size="13" fill="var(--text-muted)">patlar</text>
+
+  <text x="28" y="200" font-size="13" fill="var(--text-faint)">deneyerek bulundu</text>
+
+  <text x="382" y="32" font-size="13" font-weight="bold" fill="var(--text)">genel kural</text>
+  <text x="382" y="64" font-size="13" fill="var(--text)">λ = (2/3) × (1 + 4 + 9) = 28/3 = 9,333</text>
+  <text x="382" y="92" font-size="13" fill="var(--text)">uzaklık çarpanı = 1 − α × λ</text>
+  <text x="382" y="120" font-size="13" fill="var(--text)">yakınsama koşulu: |1 − α λ| &lt; 1</text>
+  <text x="382" y="152" font-size="13" font-weight="bold" fill="var(--accent)">α &lt; 2/λ = 6/28 = 3/14 = 0,2143</text>
+  <text x="382" y="200" font-size="13" fill="var(--text-faint)">hiçbir deney yapılmadan çıkar</text>
+
+  <line x1="20" y1="228" x2="700" y2="228" stroke="var(--border)" />
+  <text x="20" y="256" font-size="13" font-weight="bold" fill="var(--accent)">Aynı sayı, iki yoldan.</text>
+  <text x="20" y="282" font-size="13" fill="var(--text-muted)">Buradaki λ Hessian'ın tek özdeğeridir; modelin tek bir parametresi var.</text>
+  <text x="20" y="308" font-size="13" fill="var(--text-faint)">Sol tablo 2. makaleden alındı; sağ sütun oradaki kayıptan elle türetildi.</text>
+</svg>

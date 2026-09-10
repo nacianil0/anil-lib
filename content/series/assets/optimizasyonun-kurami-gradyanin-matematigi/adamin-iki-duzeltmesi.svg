@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 310" role="img" aria-label="İki panelli bir şekil. Sol panel Adam'ın ilk adımı başlığını taşır. Kurulum satırında öğrenme oranı 0,001 ve katsayılar 0,9 ile 0,999 yazılıdır. İki satırlık bir tablo vardır; sütunlar gradyan, gradyan inişinin adımı ve Adam'ın ilk adımı. Birinci satır gradyan 0,001 için gradyan inişi 0,00000100, Adam 0,00099999. İkinci satır gradyan 10 için gradyan inişi 0,01000000, Adam 0,00100000. Panelin altında gradyan inişinde iki adım arasında on bin kat fark olduğu, Adam'da fark olmadığı yazılıdır. Sağ panel aynı sanılan iki şey başlığını taşır. İki ağırlık karşılaştırılır; ikisinin de değeri 1,0 ve sönüm katsayısı 0,01. Sütunlar uyarlamalı payda, kayba ceza yolundaki etkin sönüm ve ayrık sönüm. Birinci satırda payda 10 için kayba ceza 1,0 çarpı on üzeri eksi altı, ayrık sönüm 1,0 çarpı on üzeri eksi beş. İkinci satırda payda 0,1 için kayba ceza 1,0 çarpı on üzeri eksi dört, ayrık sönüm yine 1,0 çarpı on üzeri eksi beş. Panelin altında ceza yolunda yüz kat fark olduğu, ayrık yolda fark olmadığı yazılıdır. Altta bir kutuda iki cümle durur: Adam'ın ilk adımı gradyanın büyüklüğünü değil yalnızca işaretini kullanır; ve kayba yazılan ceza da uyarlamalı paydadan geçer, ayrık sönüm onu paydanın dışına çıkarır. En altta bir kayıt: bütün değerler kaynakların verdiği güncelleme kurallarından elle hesaplanmıştır.">
+  <line x1="365" y1="16" x2="365" y2="182" stroke="var(--border)" />
+
+  <text x="20" y="32" font-size="13" font-weight="bold" fill="var(--text)">Adam'ın ilk adımı</text>
+  <text x="20" y="56" font-size="13" fill="var(--text-muted)">α = 0,001 · β₁ = 0,9 · β₂ = 0,999</text>
+
+  <text x="28" y="86" font-size="13" font-weight="bold" fill="var(--text-muted)">gradyan</text>
+  <text x="120" y="86" font-size="13" font-weight="bold" fill="var(--text-muted)">gradyan inişi</text>
+  <text x="250" y="86" font-size="13" font-weight="bold" fill="var(--text-muted)">Adam</text>
+
+  <text x="28" y="112" font-size="13" fill="var(--text)">0,001</text>
+  <text x="120" y="112" font-size="13" fill="var(--text)">0,00000100</text>
+  <text x="250" y="112" font-size="13" fill="var(--accent)">0,00099999</text>
+
+  <text x="28" y="136" font-size="13" fill="var(--text)">10</text>
+  <text x="120" y="136" font-size="13" fill="var(--text)">0,01000000</text>
+  <text x="250" y="136" font-size="13" fill="var(--accent)">0,00100000</text>
+
+  <text x="28" y="168" font-size="13" fill="var(--accent)">10.000 kat fark; Adam'da fark yok.</text>
+
+  <text x="382" y="32" font-size="13" font-weight="bold" fill="var(--text)">Aynı sanılan iki şey</text>
+  <text x="382" y="56" font-size="13" fill="var(--text-muted)">iki ağırlık da 1,0 · sönüm katsayısı 0,01</text>
+
+  <text x="382" y="86" font-size="13" font-weight="bold" fill="var(--text-muted)">payda</text>
+  <text x="462" y="86" font-size="13" font-weight="bold" fill="var(--text-muted)">kayba ceza</text>
+  <text x="592" y="86" font-size="13" font-weight="bold" fill="var(--text-muted)">ayrık sönüm</text>
+
+  <text x="382" y="112" font-size="13" fill="var(--text)">10</text>
+  <text x="462" y="112" font-size="13" fill="var(--text)">1,0 × 10⁻⁶</text>
+  <text x="592" y="112" font-size="13" fill="var(--accent)">1,0 × 10⁻⁵</text>
+
+  <text x="382" y="136" font-size="13" fill="var(--text)">0,1</text>
+  <text x="462" y="136" font-size="13" fill="var(--text)">1,0 × 10⁻⁴</text>
+  <text x="592" y="136" font-size="13" fill="var(--accent)">1,0 × 10⁻⁵</text>
+
+  <text x="382" y="168" font-size="13" fill="var(--accent)">Ceza yolunda 100 kat fark; ayrıkta yok.</text>
+
+  <line x1="20" y1="196" x2="700" y2="196" stroke="var(--border)" />
+  <rect x="20" y="208" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="232" font-size="13" fill="var(--text)">Adam'ın ilk adımı gradyanın büyüklüğünü değil yalnızca işaretini kullanır.</text>
+  <text x="34" y="252" font-size="13" fill="var(--text)">Kayba yazılan ceza da paydadan geçer; ayrık sönüm onu paydanın dışına çıkarır.</text>
+
+  <text x="20" y="290" font-size="13" fill="var(--text-faint)">Bütün değerler kaynakların verdiği güncelleme kurallarından elle hesaplandı.</text>
+</svg>

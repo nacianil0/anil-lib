@@ -1705,3 +1705,216 @@ doğrulandı. Betikler run'ın çalışma alanındadır (`artifacts/b9-research/
    P işleminin sırası esastır" alıştırmasının programla doğrulanmış hâlidir.
 9. **Kırmızı-siyah ağaç ile sıralı liste karşılaştırması:** n = 1000 için 1000 adım karşı ≈ 10
    adım, n = 4000 için 4000 karşı ≈ 12 adım.
+
+## 15. Batch 10 üretim run'ında doğrulanan kaynaklar (2026-09-10)
+
+Makale 31 (Kilitlenme), 32 (Bellek Yönetimi) ve 33 (Sanal Bellek) bu kaynaklara dayanır. Bütün
+URL'ler bu run'da HTTP 200 ile çekildi; OSTEP bölümleri PDF olarak indirilip metne çevrildi,
+Dijkstra'nın EWD 123'ü ise §14'te kayda geçen nedenle (taranmış PDF) arşivin HTML
+transkripsiyonundan okundu.
+
+### Resmî sayfa
+
+- **CMPE322** (<https://cmpe.bogazici.edu.tr/courses/cmpe322/>), yeniden doğrulama **2026-09-10**:
+  sayfa bu run'da yeniden çekildi ve Batch 9'da çekilen kopyayla **bayt bayt aynı** (etiketlerden
+  arındırılmış metin 2.761 karakter, iki kopya birebir eşit). *Course Learning Outcomes* bölümü
+  yine yok. Bu batch'in üç makalesi *Catalog Description*'daki şu ifadelere karşılık gelir:
+  "Deadlock prevention, avoidance, detection and recovery" (31); "Memory management, swapping,
+  multiple partitions. Paging, segmentation" (32); "virtual memory, page replacement algorithms"
+  (33).
+
+### Makale 31 için akademik kaynaklar
+
+- **Dijkstra, EWD 123, bölüm 6 "The Problem of the Deadly Embrace" ve 6.1 "The Banker's
+  Algorithm"** (<https://www.cs.utexas.edu/~EWD/transcriptions/EWD01xx/EWD123-2.html>).
+  Doğrulanan birebir içerik: problemin **bellek sayfaları** üzerinden kuruluşu (önceden bilinen
+  azami talep + işin sonlanacağı varsayımı); "sum of maximum demands ≤ capacity" kuralının güvenli
+  ama gereksiz kısıtlayıcı olduğu saptaması; **iki süreçlik sayısal örnek** — toplam 100 sayfa,
+  P1 için azami ihtiyaç 80 / borç 40 / kalan istek 40, P2 için 60 / 20 / 40, kasa 40; ikisine de
+  birer sayfa verilince borçlar 41 ve 21, kalan istekler 39 ve 39, kasa 38 ve durumun güvensiz
+  olması, birebir gerekçesiyle: "This is an unsafe situation, for both processes might want to
+  realize their full further claim before returning a single page to available store. So each of
+  them may first need a further 39 pages, while there are only 38 available."; **ölümcül
+  kucaklaşma** tanımı ("when one process can only continue provided the other one is killed
+  first"); bankacının beş koşulu ve müşterinin azami ihtiyacını **önceden bildirme** zorunluluğu;
+  `need[i] ≤ capital`, `0 ≤ loan[i] ≤ need[i]`, `claim[i] = need[i] − loan[i]`,
+  `cash = capital − sum of the loans` tanımları; yeni müşteri kabul koşulu ("he can accept any
+  customer, whose stated need does not exceed the banker's capital"); güvenlik denetiminin özgün
+  yordamı (`free money`, `finish doubtful[1:N]`, `claim[i] ≤ free money` bulununca
+  `free money := free money + loan[i]` ve başa dönme, sonunda `free money = capital` ise güvenli)
+  ve "Safety of the situation means, that all transactions can be finished, i.e. that the banker
+  sees a way of getting all his money back" saptaması; L. Zwanenburg'un kısayol iyileştirmesi.
+  **Erişim notu:** transkripsiyon sayfalıdır — birinci sayfa 5. bölümün başlığında biter, 5.
+  bölümden sonrası `EWD123-2.html` adresindedir. Batch 9'da indirilen `ewd123.html` yalnızca ilk
+  sayfaydı ve bölüm 6'yı içermiyordu.
+- **OSTEP Chapter 32, Common Concurrency Problems** (`threads-bugs.pdf`; `threads-deadlock.pdf`
+  aynı dosyadır). Doğrulanan birebir içerik: Lu ve arkadaşlarının dört uygulama üzerindeki
+  çalışması ve tablo (MySQL 14/9, Apache 13/4, Mozilla 41/16, OpenOffice 6/2; **toplam 105 hata,
+  74 kilitlenme dışı, 31 kilitlenme**); kilitlenme dışı hataların **%97'sinin** atomiklik ya da
+  sıra ihlali olması; MySQL'den atomiklik ihlali örneği (`thd->proc_info` NULL denetimi ile
+  `fputs` arasına girilmesi) ve kilitle düzeltmesi; Mozilla'dan sıra ihlali örneği ve koşul
+  değişkeniyle düzeltmesi; iki kilitli kilitlenme kod parçası ve bağımlılık grafında **döngü**;
+  kilitlenmenin gerçek kod tabanlarında neden çıktığı (sanal bellek ↔ dosya sistemi döngüsel
+  bağımlılığı; `Vector.AddAll` üzerinden kapsüllemenin gizlediği kilit sırası); **dört koşul**,
+  birebir ve [C+71]'e atıfla ("Mutual exclusion… Hold-and-wait… No preemption… Circular wait") ve
+  "If any of these four conditions are not met, deadlock cannot occur." cümlesi; önleme
+  teknikleri — tam ve kısmi kilit sırası (Linux bellek eşleme kodundaki **on grup** ve
+  "i_mmap_rwsem before private_lock before swap_lock before i_pages lock" örneği), **kilit
+  adresine göre sıralama** kod parçası, hazırlık kilidiyle hepsini birden alma ve iki bedeli,
+  `pthread_mutex_trylock` ile geri çekilme + `goto top` deseni, **livelock** ve rastgele gecikme
+  çaresi, trylock'un gerçek önkesme olmadığı notu, karşılaştır-ve-değiştir ile `AtomicIncrement`
+  ve kilitsiz liste başına ekleme; **çizelgelemeyle kaçınma**, iki kilit ve dört iş parçacığıyla
+  iki tablo ve ikinci örnekte eşzamanlılık kaybı; Dijkstra'nın bankacı algoritmasına [D64]
+  atfıyla "only useful in very limited environments" saptaması; **tespit ve kurtarma**,
+  veritabanlarındaki periyodik dedektör ve Tom West kutusu.
+- **xv6 kitabı, Chapter 6: Locking, 6.4 "Deadlock and lock ordering"**
+  (<https://pdos.csail.mit.edu/6.828/2024/xv6/book-riscv-rev4.pdf>). Doğrulanan birebir içerik:
+  A–B ile B–A sırasının iki kod yolunda kilitlenmesi; **küresel kilit alma sırası** zorunluluğu ve
+  "locks are effectively part of each function's specification"; `consoleintr`'ın `cons.lock`
+  tutarken `wakeup` üzerinden süreç kilidini alması ve buradan doğan "cons.lock her süreç
+  kilidinden önce" kuralı; çekirdeğin en uzun zinciri olarak dosya yaratma yolunun **beş kilidi**
+  (dizin, yeni dosyanın düğümü, disk bloğu tamponu, `vdisk_lock`, çağıranın `p->lock`); küresel
+  sıranın program yapısıyla çelişebilmesi ve kilit kimliğinin önceden bilinemediği durumlar
+  (yol adı çözümleme, `wait`/`exit`); birebir saptama: "the danger of deadlock is often a
+  constraint on how fine-grained one can make a locking scheme, since more locks often means more
+  opportunity for deadlock."
+- **Silberschatz, Chapter 8 Deadlocks** — alt bölüm adları §13'teki resmî içindekiler PDF'inden
+  doğrulanmıştır: 8.1 System Model, 8.2 Deadlock in Multithreaded Applications, 8.3 Deadlock
+  Characterization, 8.4 Methods for Handling Deadlocks, 8.5 Deadlock Prevention, 8.6 Deadlock
+  Avoidance, 8.7 Deadlock Detection, 8.8 Recovery from Deadlock.
+- **Erişilemeyen kaynak:** Coffman, Elphick & Shoshani, *System Deadlocks*, ACM Computing Surveys
+  3:2 (1971). ACM Digital Library'deki PDF **HTTP 403** döndü; iki üniversite aynası 403 ve 404
+  verdi. Dört koşul bu yüzden **OSTEP'in aktardığı biçimde** verildi ve makale 31'in kaynakçası
+  bunu açıkça söylüyor. Bu, kapanmamış bir borçtur.
+
+### Makale 32 için akademik kaynaklar
+
+- **OSTEP Chapter 13, The Abstraction: Address Spaces** (`vm-intro.pdf`): çoklu programlama ve
+  zaman paylaşımının belleği bellekte bırakma zorunluluğunu doğurması; **adres uzayı** tanımı ve
+  16KB'lik örnek düzen (kod üstte, heap aşağı, yığın yukarı büyür; yerleşimin bir uzlaşım olduğu
+  notu); sanal adres kavramı; üç hedef — **saydamlık**, **verimlilik**, **koruma**.
+- **OSTEP Chapter 15, Mechanism: Address Translation** (`vm-mechanism.pdf`): `fiziksel adres =
+  sanal adres + taban`; 16KB adres uzayının 32KB'ye yerleştirildiği izleme (program sayacı 128 →
+  **32896**; sanal 15KB → **47KB**); 4KB adres uzayı 16KB'ye yerleştirildiğinde sanal 0 → 16KB,
+  1KB → 17KB, **3000 → 19384**, **4400 → sınır dışı**; sınır yazmacının iki tanımı; **MMU**;
+  taban ve sınır yazmaçlarını değiştiren komutların ayrıcalıklı olması; araya girme
+  (interposition) kutusu; boş liste kutusu.
+- **OSTEP Chapter 16, Segmentation** (`vm-segmentation.pdf`): bölüt başına taban–sınır çifti;
+  kod 32K/2KB, heap 34K/3KB, yığın 28K/2KB yerleşimi; sanal 100 → **32868**; heap'teki sanal
+  **4200**'ün doğrudan eklenirse 39016 vererek yanlış sonuç vermesi, doğrusunun **4200 − 4096 =
+  104** ve **34K + 104 = 34920** olması; bölütün üst bitlerle seçilmesi (VAX/VMS); sınır dışı
+  erişimin tuzak doğurması ve **segmentation fault** teriminin kökeni; **dış parçalanma** ve
+  seyrek heap'in tek bölütte bütünüyle bellekte durma zorunluluğu.
+- **OSTEP Chapter 18, Paging: Introduction** (`vm-paging.pdf`): değişken boyut ile sabit boyut
+  ikilemi ve Atlas; **sayfa** / **sayfa çerçevesi**; 64 baytlık adres uzayı ve 16 baytlık
+  sayfalarla çeviri örneği — sanal 21 = 010101, VPN = 1, ofset = 5, tablo (0→3, 1→7, 2→5, 3→2),
+  fiziksel 1110101 = **117**; sayfa tablosunun süreç başına olması ve **lineer sayfa tablosunun**
+  VPN ile indekslenen bir dizi olması; girdideki **geçerlilik biti**, koruma bitleri, bulunma
+  biti, kirli bit, kullanım biti ve x86 girdi düzeni; 32 bit adres uzayı + 4KB sayfa +
+  4 baytlık girdiyle **2²⁰ girdi = 4MB** ve 100 süreçte **400MB**; her erişimin fazladan bir
+  bellek erişimi gerektirmesi ve "iki kat ya da daha fazla" yavaşlatması.
+- **OSTEP Chapter 19, Paging: Faster Translations (TLBs)** (`vm-tlbs.pdf`): TLB'nin MMU içindeki
+  çeviri önbelleği olması ve isabet/ıska akışının sözde kodu; on elemanlık dizi taramasında
+  ıska–isabet–isabet–ıska… deseni ve **%70 isabet oranı**, uzamsal ve zamansal yerellik; tipik
+  TLB'nin **32, 64 ya da 128 girdi** ve tam çağrışımlı olması; bağlam anahtarı sorunu (P1'in 10.
+  sayfası çerçeve 100, P2'ninki 170) ve iki çözüm — TLB'yi boşaltmak ile **ASID** (8 bit).
+- **OSTEP Chapter 20, Paging: Smaller Tables** (`vm-smalltables.pdf`): lineer tablodaki geçersiz
+  bölgelerin israfı; **çok düzeyli sayfa tablosu** ve **sayfa dizini**; 16KB adres uzayı ve 64
+  baytlık sayfalarla ayrıntılı örnek — 256 girdi, 4 baytlık girdiyle **1KB = 16 sayfa**, dizinin
+  16 girdisi, kullanılan altı sanal sayfa için **on altı yerine yalnızca üç sayfa** (bir dizin,
+  iki tablo parçası); zaman–yer takası ve TLB ıskasında iki bellek yüklemesi.
+- **xv6 kitabı, Chapter 3: Page tables**: **Sv39** kipinde 64 bitlik adresin alt 39 bitinin
+  kullanılması, 27 bitlik indeksin **9 + 9 + 9** olarak bölünmesi, her tablo sayfasının 4096 bayt
+  ve **512 girdi** olması; adres uzayının başında birkaç sayfa kullanan bir uygulamada üst düzey
+  dizinin 1–511 girdileri geçersiz olduğu için **511 ara dizin ve 511 × 512 alt dizinin**
+  ayrılmaması; buna karşılık işlemcinin her çeviride **üç girdi** okuması; kök tablonun fiziksel
+  adresinin `satp` yazmacında durması ve her işlemcinin kendi `satp`'si olması.
+- **Silberschatz, Chapter 9 Main Memory** — alt bölüm adları §13'teki resmî içindekiler PDF'inden
+  doğrulanmıştır: 9.1 Background, 9.2 Contiguous Memory Allocation, 9.3 Paging, 9.4 Structure of
+  the Page Table, 9.5 Swapping, 9.6 Example: Intel 32- and 64-bit Architectures, 9.7 Example:
+  ARMv8 Architecture.
+
+### Makale 33 için akademik kaynaklar
+
+- **OSTEP Chapter 21, Beyond Physical Memory: Mechanisms** (`vm-beyondphys.pdf`): **takas alanı**
+  ve sayfa boyutunda okuma/yazma; **bulunma biti** ("If the present bit is set to one… if it is
+  set to zero, the page is not in memory but rather on disk somewhere"); **sayfa hatası** terimi
+  ve adlandırma eleştirisi ("really, it should be called a page miss"); **sayfa hatası
+  işleyicisinin** disk adresini sayfa tablosu girdisinde bulması, okuma bitince girdiyi
+  güncelleyip komutu yeniden denemesi; disk giriş/çıkışı sürerken sürecin **engellenmiş** durumda
+  olması; sayfa hatalarının neden yazılımda işlendiği (disk zaten yavaştır; donanımın takas
+  alanını bilmesi gerekirdi); **alt ve üst eşik** ile arka plandaki takas iş parçacığı ve
+  yazmaların gruplanması.
+- **OSTEP Chapter 22, Beyond Physical Memory: Policies** (`vm-beyondphys-policy.pdf`): fiziksel
+  belleğin sayfalar için bir **önbellek** olması; **AMAT = T_M + P_ıska × T_D** ve sayısal örnek
+  (100 ns / 10 ms; %90 isabette ≈ **1 ms**, %99,9 isabette **10,1 µs**, "roughly 100 times
+  faster"); **optimal ilkenin** Belady'ye [B66] ait olması ve yalnızca karşılaştırma noktası
+  olarak kullanılabilmesi; erişim dizisi **0, 1, 2, 0, 1, 3, 0, 3, 1, 2, 1** ve üç çerçeveyle
+  optimal **6 isabet / %54,5**, FIFO **4 isabet / %36,4**, LRU'nun optimalle eşitlenmesi;
+  **zorunlu ıska** ve üç C kutusu; **Belady anomalisi** ve **1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5**
+  dizisi, LRU'nun **stack property** [M+70] sayesinde bağışık olması; üç iş yükü — yerelliği
+  olmayan iş yükünde gerçekçi ilkelerin eşitlenmesi, seksen-yirmi iş yükünde LRU'nun öne geçmesi,
+  döngüsel iş yükünde **50 sayfa / 49 çerçeveyle %0 isabet** ve rastgele ilkenin daha iyi durması;
+  kusursuz LRU'nun her erişimde muhasebe gerektirmesi ve **4 GB / 4 KB = bir milyon sayfa**
+  taraması; **kullanım biti** ve **saat algoritması** [C69]; **kirli bit** ile temiz sayfaların
+  önce çıkarılması; **talep sayfalama**, **ön getirme**, yazmaların gruplanması; **çırpınma**,
+  çalışma kümesi, **kabul denetimi** ve Linux'un bellek yetersizliği katili.
+- **Silberschatz, Chapter 10 Virtual Memory** — alt bölüm adları §13'teki resmî içindekiler
+  PDF'inden doğrulanmıştır: 10.1 Background, 10.2 Demand Paging, 10.3 Copy-on-Write, 10.4 Page
+  Replacement, 10.5 Allocation of Frames, 10.6 Thrashing, 10.7 Memory Compression; takas alanı
+  yönetimi ayrıca 11.6 Swap-Space Management'tadır.
+
+### Bu run'da bağımsız hesaplanan ya da programla doğrulanan sayılar
+
+Bütün sayılar `artifacts/b10-research/kilitlenme.py` ve `degistirme.py` ile üretildi (gitignore
+altındadır); makalelerde "kendi programımdan" diye işaretlendi.
+
+1. **İki kilitli kilitlenmenin durum uzayı:** T1 = (L1, L2), T2 = (L2, L1) kurulumunda
+   **19 erişilebilir durum ve tam olarak 1 kilitlenme durumu** (pc1 = pc2 = 1, L1'in sahibi T1,
+   L2'nin sahibi T2). İkisi de aynı sırayla aldığında **16 durum, kilitlenme yok**.
+2. **Bankacı algoritması, Dijkstra'nın örneği:** başlangıç (borçlar 40 ve 20, kasa 40) **güvenli**;
+   yalnızca P1'e verilirse (41, 20; kasa 39) **güvenli**; yalnızca P2'ye verilirse (40, 21;
+   kasa 39) **güvenli**; ikisine birden verilirse (41, 21; kasa 38, kalan istekler 39 ve 39)
+   **güvensiz**. Güvenlik yordamı EWD 123'teki hâliyle kodlandı.
+3. **Kaynak atama grafında döngü ≠ kilitlenme:** iki kaynak türü, her birinden ikişer örnek;
+   P1 bir B tutup A ister, P3 bir A tutup B ister (döngü kapanır), P2 ve P4 ikinci örnekleri tutar
+   ve başka bir şey istemez → tespit yordamı **dördünün de bitebildiğini** bulur. Aynı döngü tek
+   örnekli kaynaklarla kurulduğunda **hiçbiri bitemez**. Makale 31'deki ayrım budur.
+4. **Adres çevirisi aritmetiği:** sanal 21 → VPN 1, ofset 5 → çerçeve 7 → fiziksel **117**.
+5. **Sayfa tablosu boyutu:** 32 bit adres, 4KB sayfa, 4 baytlık girdi → 1.048.576 girdi = **4 MB**;
+   100 süreçte **400 MB**.
+6. **Çok düzeyli tablonun tasarrufu:** 16KB uzay, 64 baytlık sayfa → lineer tablo 1024 bayt
+   (16 sayfa), iki düzeyli yapı 3 sayfa = **192 bayt**; oran **5,33 kat**.
+7. **TLB isabet oranı, gerçekçi sayfa boyutunda:** 4KB sayfaya 4 baytlık **1024** tamsayı sığar →
+   sıralı taramada isabet oranı **%99,9023**.
+8. **Etkin bellek erişimi:** TLB isabetinde 1, ıskada 1 + düzey sayısı erişim varsayımıyla;
+   %99 isabette lineer tabloda 1,01 / iki düzeylide 1,02 / üç düzeylide **1,03** erişim
+   (yavaşlama %1, %2, %3); %99,9 isabette sırasıyla 1,001 / 1,002 / **1,003**.
+9. **AMAT:** 100 ns bellek ve 10 ms disk ile %90 isabette **1,0001 ms**, %99,9 isabette
+   **10,1 µs** — kaynağın verdiği değerlerle birebir aynı.
+10. **Değiştirme ilkeleri, 0 1 2 0 1 3 0 3 1 2 1 dizisi ve üç çerçeve:** optimal **6 isabet /
+    5 ıska (%54,5)**, FIFO **4 isabet / 7 ıska (%36,4)**, LRU **6 isabet / 5 ıska**. Erişim erişim
+    isabet/ıska desenleri de kaynağın şekilleriyle birebir uyuşuyor ve Şekil 2'nin kareleri bu
+    desenden çizildi.
+11. **Belady anomalisi:** 1 2 3 4 1 2 5 1 2 3 4 5 dizisinde FIFO 3 çerçevede **9 ıska**,
+    4 çerçevede **10 ıska**; aynı dizide LRU 3 çerçevede **10**, 4 çerçevede **8 ıska** — yani
+    LRU'da anomali yok.
+12. **Döngüsel iş yükünün en kötü durumu:** 50 sayfalık döngü ve 49 çerçeveyle hem FIFO hem LRU
+    10.000 erişimin **10.000'inde ıska** yaptı, yani isabet oranı tam **%0**.
+13. **Saat algoritması, aynı oyuncak dizide:** 3 çerçeveyle **4 isabet (%36,4)** — yani FIFO ile
+    aynı. Makale 33 bunu dürüstçe söylüyor: on bir erişimlik bir dizide yaklaştırmanın kazancı
+    görünmez; yaklaşık LRU'nun değeri kaynağın gerçekçi iş yükü ölçümlerindedir.
+
+### Erişim ve araç notları
+
+- **EWD 123 transkripsiyonu sayfalıdır.** Birinci sayfa (`EWD123.html`) 5. bölümün başlığında
+  biter; 5. bölümden itibaren metin `EWD123-2.html` adresindedir ve bankacı algoritması oradadır.
+- **Coffman ve arkadaşlarının 1971 çalışması erişilemedi** (yukarıda ayrıntılı).
+- **SVG denetleyicisi metin–metin çakışmasına bakmaz.** Bu run'da yazılan
+  `artifacts/b10-research/ortusme.py`, aynı yatay bantta duran iki `text` öğesinin tahmini
+  kutularını karşılaştırır. Batch 10'un altı diyagramında bir gerçek çakışma yakaladı (makale
+  32'nin birinci şeklinde sol panel başlığı sağ panel başlığının üzerine biniyordu; düzeltildi).
+  Betiğin sınırı da ölçüldü: makale 24'ün birinci şeklinde iki uyarı verdi, şekil tek tek
+  render edilip incelendiğinde ikisinin de **yanlış pozitif** olduğu görüldü (karakter genişliği
+  tahmini gerçek metin genişliğinden büyük çıkıyor). Uyarılar bu yüzden render ile teyit
+  edilmelidir.

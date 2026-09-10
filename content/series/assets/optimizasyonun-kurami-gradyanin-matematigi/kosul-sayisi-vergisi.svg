@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" role="img" aria-label="Altı sütunlu bir karşılaştırma tablosu ve altında iki kayıt. Sütunlar: koşul sayısı kappa, gradyan inişinin adım başına uzaklık çarpanı, uzaklığı yüzde bire indirmek için gereken adım sayısı, momentumun adım başına çarpanı, momentumun adım sayısı ve kazanç. Birinci satır kappa eşittir 20 için gradyan inişinde 0,9048 ve 47 adım, momentumda 0,6345 ve 11 adım, kazanç 4,5 kat. İkinci satır kappa eşittir 100 için gradyan inişinde 0,9802 ve 231 adım, momentumda 0,8182 ve 23 adım, kazanç 10,0 kat. Tablonun altındaki kutuda formüller ve geometrik okuma durur: gradyan inişi çarpanı kappa eksi bir bölü kappa artı bir, momentum çarpanı karekök kappa eksi bir bölü karekök kappa artı bir; tavanı en büyük eğrilik belirler, ilerleme hızını en küçük eğrilik; koşul sayısı ikisinin oranıdır, yani çanağın ne kadar uzun ve dar olduğu. En altta iki kayıt: çarpanlar kaynağın verdiği formülden ve adım sayıları o çarpanlardan elle hesaplanmıştır; ölçülmüş bir eğitim koşusu değil, koşul sayısı kappa olan bir çanağın kapalı çözümüdür.">
+  <text x="130" y="40" font-size="13" font-weight="bold" fill="var(--text)">gradyan inişi</text>
+  <text x="390" y="40" font-size="13" font-weight="bold" fill="var(--accent)">momentum</text>
+  <line x1="20" y1="50" x2="700" y2="50" stroke="var(--border)" />
+
+  <text x="24" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">κ</text>
+  <text x="130" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">çarpan</text>
+  <text x="270" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">%1'e adım</text>
+  <text x="390" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">çarpan</text>
+  <text x="530" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">%1'e adım</text>
+  <text x="632" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">kazanç</text>
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">20</text>
+  <text x="130" y="100" font-size="13" fill="var(--text)">0,9048</text>
+  <text x="270" y="100" font-size="13" fill="var(--text)">47</text>
+  <text x="390" y="100" font-size="13" fill="var(--accent)">0,6345</text>
+  <text x="530" y="100" font-size="13" fill="var(--accent)">11</text>
+  <text x="632" y="100" font-size="13" font-weight="bold" fill="var(--accent)">4,5 kat</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">100</text>
+  <text x="130" y="126" font-size="13" fill="var(--text)">0,9802</text>
+  <text x="270" y="126" font-size="13" fill="var(--text)">231</text>
+  <text x="390" y="126" font-size="13" fill="var(--accent)">0,8182</text>
+  <text x="530" y="126" font-size="13" fill="var(--accent)">23</text>
+  <text x="632" y="126" font-size="13" font-weight="bold" fill="var(--accent)">10,0 kat</text>
+
+  <rect x="20" y="144" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="168" font-size="13" fill="var(--text)">gradyan inişi: (κ − 1) / (κ + 1)</text>
+  <text x="380" y="168" font-size="13" fill="var(--accent)">momentum: (√κ − 1) / (√κ + 1)</text>
+  <text x="34" y="190" font-size="13" fill="var(--text)">Tavanı en büyük eğrilik belirler, ilerleme hızını en küçük eğrilik.</text>
+  <text x="34" y="210" font-size="13" fill="var(--text-muted)">Koşul sayısı ikisinin oranıdır: çanağın ne kadar uzun ve dar olduğu.</text>
+
+  <text x="20" y="246" font-size="13" fill="var(--text-faint)">Çarpanlar kaynağın verdiği formülden, adım sayıları da o çarpanlardan elle hesaplandı.</text>
+  <text x="20" y="268" font-size="13" fill="var(--text-faint)">Ölçülmüş bir eğitim koşusu değil; koşul sayısı κ olan bir çanağın kapalı çözümü.</text>
+</svg>

@@ -7177,6 +7177,160 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "id": "bug-429",
+      "timestamp": "2026-09-10T17:55:31.179Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md",
+      "root_cause": "Had 'ın ilk adımı başlığını taşır. Kurulum satırında ö",
+      "fix": "Changed to 'ın ilk adımı başlığını taşır. Kurulum satırında ö",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T17:55:31.179Z"
+    },
+    {
+      "id": "bug-430",
+      "timestamp": "2026-09-10T18:00:26.874Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→7 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:26.874Z"
+    },
+    {
+      "id": "bug-431",
+      "timestamp": "2026-09-10T18:10:02.080Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md",
+      "root_cause": "Had 'de karar tek bir örneğe bağlıdır: yanlılık düşük,",
+      "fix": "Changed to 'de karar tek bir örneğe bağlıdır: yanlılık düşük,",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-10T18:10:33.413Z"
+    },
+    {
+      "id": "bug-432",
+      "timestamp": "2026-09-10T21:30:00Z",
+      "error_message": "Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'playwright' imported from artifacts/b10-research/login-b10.mjs",
+      "file": "artifacts/b10-research/login-b10.mjs",
+      "root_cause": "pnpm sıkı yerleşim kullanıyor; depoda yalnızca @playwright/test doğrudan bağımlılık olduğu için üst düzey node_modules altında 'playwright' paketi yok, yalnızca .pnpm store'da duruyor.",
+      "fix": "Render betiklerinde import { chromium } from \"@playwright/test\" kullanıldı; @playwright/test chromium'u yeniden dışa aktarıyor.",
+      "tags": [
+        "playwright",
+        "pnpm",
+        "render",
+        "boun",
+        "esm"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T21:30:00Z"
+    },
+    {
+      "id": "bug-433",
+      "timestamp": "2026-09-10T21:30:00Z",
+      "error_message": "Makale 32'nin birinci şeklinde sol panel başlığı sağ panel başlığının üzerine bindi; check-series-svg.cjs 'Sorun yok' dedi.",
+      "file": "content/series-boun/assets/bellek-yonetimi-adres-cevirisi-ve-sayfalama/adres-cevirisi.svg",
+      "root_cause": "Repo SVG denetleyicisi yalnızca viewBox taşmasına bakıyor, metin-metin çakışmasına bakmıyor. Sol panel başlığı 70 karakterdi ve tahmini genişliği (~500px) sağ panelin x=356'daki başlığına giriyordu.",
+      "fix": "Başlık 'Sanal adres 21 -> fiziksel adres 117' olarak kısaltıldı, sayfa/uzay parametreleri panelin altına ayrı bir satıra taşındı, viewBox 290'dan 300'e büyütüldü ve makaledeki alt metin buna göre güncellendi. Ayrıca artifacts/b10-research/ortusme.py yazıldı: aynı yatay banttaki text öğelerinin tahmini kutularını karşılaştırıp çakışma uyarısı veriyor (yanlış pozitif verebiliyor, render ile teyit gerekiyor).",
+      "tags": [
+        "svg",
+        "diyagram",
+        "boun",
+        "denetleyici-boslugu",
+        "render"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T21:30:00Z"
+    },
+    {
+      "id": "bug-434",
+      "timestamp": "2026-09-10T21:30:00Z",
+      "error_message": "Render betiği sepia temasını 'light' diye raporladı (tema=light zemin=...)",
+      "file": "artifacts/b10-research/shot-batch10.mjs",
+      "root_cause": "Temanın data-theme özniteliğiyle uygulandığı varsayıldı. app/layout.tsx içindeki tema betiği documentElement'e 'dark' ya da 'sepia' SINIFINI ekliyor; data-theme diye bir öznitelik yok, o yüzden okuma colorScheme'e düşüyordu.",
+      "fix": "Sonda classList.contains('dark') / contains('sepia') ile okundu ve ayrıca body background-color ölçülerek üç temanın gerçekten ayrı zemin verdiği doğrulandı (light rgb(250,249,247), dark rgb(18,20,23), sepia rgb(244,239,228)).",
+      "tags": [
+        "tema",
+        "render",
+        "boun",
+        "olcum-hatasi",
+        "playwright"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T21:30:00Z"
+    },
+    {
+      "id": "bug-435",
+      "timestamp": "2026-09-10T22:00:00Z",
+      "error_message": "ERR_UNSUPPORTED_ESM_URL_SCHEME — Playwright'i .mjs betiginden import etmek",
+      "file": "scratchpad/shots.mjs (Batch 23 sekil PNG turu)",
+      "root_cause": "ESM `import ... from \"D:/dev/anil-lib/node_modules/@playwright/test/index.js\"` Windows surucu harfli mutlak yolu URL semasi saniyor; ESM yalnizca file:// ya da bare specifier kabul ediyor.",
+      "fix": "createRequire(\"file:///D:/dev/anil-lib/\") ile CommonJS require kuruldu ve require(\"@playwright/test\") kullanildi.",
+      "tags": [
+        "playwright",
+        "esm",
+        "windows",
+        "seri-ai",
+        "batch-23"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T22:00:00Z"
+    },
+    {
+      "id": "bug-436",
+      "timestamp": "2026-09-10T22:00:00Z",
+      "error_message": "98. makalenin iki SVG'sinde sag kenar tasmasi ve bir sutun cakismasi",
+      "file": "content/series/assets/bir-calismayi-okumak-iddia-kanit-ve-hakemlik/{ayar-butcesi-asimetrisi,iddia-kanit-haritasi}.svg",
+      "root_cause": "Metin uzunluklari elle tahmin edildi; 0,58 karakter genisligi carpaniyla iki satir viewBox'in 8 px payini asiyordu ve bir satirda birinci sutun ikinci sutunun x'ine giriyordu. Repo kapisi check-series-svg.cjs bu iki sinifi gormuyor.",
+      "fix": "Yeniden yazilan svgcheck olceri (ayni satirdaki her metin cifti, sag/sol kenar, kutu ici tasma, alt pay >= 12) kusurlari yakaladi; uc satir kisaltilarak duzeltildi ve olcer temiz dondu.",
+      "tags": [
+        "svg",
+        "seri-ai",
+        "batch-23",
+        "gorsel-kapi"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T22:00:00Z"
+    },
+    {
+      "id": "bug-437",
+      "timestamp": "2026-09-10T22:00:00Z",
+      "error_message": "Dort makalenin ucu ilk taslakta 2.000 kelime kapisinin altinda kaldi (1.409 / 1.586 / 1.260)",
+      "file": "content/series/articles/foundations/{genelleme-kurami-...,klasik-makine-...,bir-calismayi-...}.md",
+      "root_cause": "Sekil alt metinleri bu batch'te uzundu (her biri 150-250 sozcuk) ve taslagi dolu gosteriyordu; oysa check-series-content.cjs'in countProseWords islevi gorsel sozdizimini tumden atiyor.",
+      "fix": "Taslak biterken kelime sayisi kapinin kendi islevini birebir kopyalayan wc betigiyle olculdu; eksik kalan boluml er arastirma listesinde olup atlanmis malzemeyle dolduruldu (dolgu cumle eklenmedi). Son degerler 2.105 / 2.053 / 2.076 / 2.031.",
+      "tags": [
+        "seri-ai",
+        "batch-23",
+        "kelime-sayisi",
+        "kapi"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T22:00:00Z"
     }
   ]
 }

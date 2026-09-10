@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 376" role="img" aria-label="Üç bloklu bir liste ve altında bir kutu. Üstte deney kurulumu yazılıdır: ResNet18, CIFAR-10, etiketlerin yüzde 15'i bozulmuş, Adam ile 4.000 dönem. Birinci blok modelin genişliği: test hatası önce düşer, eşiğin civarında yükselir, sonra yeniden düşer; yani daha büyük model bir aralıkta daha kötüdür. İkinci blok eğitim süresi: aynı desen dönem sayısında da vardır, tepe model sıfır eğitim hatasına ulaştığı sırada oluşur, yani uzun eğitmek aşırı öğrenmeyi düzeltebiliyor. Üçüncü blok örnek sayısı ve vurguludur: kritik bölgede dördün katı veri iyileştirmiyor, bir çeviri düzeneğinde daha çok veri hatayı yükseltiyor. Alttaki kutuda birleştirici değişken tanıtılır: etkin model karmaşıklığı, yani yordamın sıfır eğitim hatasıyla uydurabildiği en büyük örnek sayısı; üç eksen de bu sayının eşiği geçmesiyle açıklanıyor ve desen en güçlü biçimde etiket gürültüsü varken görülüyor. En altta bir kayıt: sayılar ve koşullar kaynağın düzeneğinden alınmıştır ve ölçülmemiş bir eğri çizilmemiştir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">ResNet18 · CIFAR-10 · etiketlerin yüzde 15'i bozulmuş · Adam · 4.000 dönem</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">değişen</text>
+  <text x="240" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">gözlenen davranış</text>
+
+  <text x="24" y="98" font-size="13" font-weight="bold" fill="var(--text)">modelin genişliği</text>
+  <text x="240" y="98" font-size="13" fill="var(--text)">test hatası önce düşer, eşiğin civarında yükselir, sonra</text>
+  <text x="240" y="118" font-size="13" fill="var(--text-muted)">yeniden düşer — daha büyük model bir aralıkta daha kötü</text>
+
+  <text x="24" y="150" font-size="13" font-weight="bold" fill="var(--text)">eğitim süresi</text>
+  <text x="240" y="150" font-size="13" fill="var(--text)">aynı desen dönem sayısında da var; tepe, model sıfır eğitim</text>
+  <text x="240" y="170" font-size="13" fill="var(--text-muted)">hatasına ulaştığı sırada — uzun eğitmek düzeltebiliyor</text>
+
+  <text x="24" y="202" font-size="13" font-weight="bold" fill="var(--accent)">örnek sayısı</text>
+  <text x="240" y="202" font-size="13" fill="var(--accent)">kritik bölgede dördün katı veri iyileştirmiyor; bir çeviri</text>
+  <text x="240" y="222" font-size="13" fill="var(--accent)">düzeneğinde daha çok veri hatayı yükseltiyor</text>
+
+  <line x1="20" y1="242" x2="700" y2="242" stroke="var(--border)" />
+  <rect x="20" y="254" width="680" height="78" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="278" font-size="13" fill="var(--text)">Birleştirici değişken: etkin model karmaşıklığı — yordamın sıfır eğitim</text>
+  <text x="34" y="298" font-size="13" fill="var(--text)">hatasıyla uydurabildiği en büyük örnek sayısı. Üç eksen de bu sayının</text>
+  <text x="34" y="320" font-size="13" fill="var(--text-muted)">eşiği geçmesiyle açıklanıyor; desen en güçlü etiket gürültüsü varken.</text>
+
+  <text x="20" y="358" font-size="13" fill="var(--text-faint)">Sayılar ve koşullar kaynağın düzeneğinden alındı; ölçülmemiş bir eğri çizilmedi.</text>
+</svg>

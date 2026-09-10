@@ -267,6 +267,19 @@ disiplini vaadi); numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruy
 görev ufku **hâlâ tahsil edilmedi**; pass@k'nın **olasılıksal kimliği** 93'te bilinçli formalizasyon olarak kuruldu
 (SOZLESME §3: tekrar sayılmaz), fakat 40'ın görev ufkuyla eşleştirilmiş planlı tekrarı 101'e devrediyor.
 
+**Numarasız ileri işaretler — Batch 23'te verildi.** Eğitim kaybının umursanan sayı olmaması (95 → 96, "bir sonraki
+makale"); yanlılık, oynaklık ve varsayımın sinir ağlarına özgü olmaması (96 → 97, "bir sonraki makale"); koşulu
+okumanın literatürün kendisine uygulanması (97 → "serinin bir sonraki fazı", 98 numarası **açılmadı**); ve deneyin
+tasarlandığı taraf (98 → 99, "bir sonraki makale"). İstatistiksel anlamlılık, güven aralığı ve örneklem büyüklüğü
+98'de **bilerek yapılmadı** ve "serinin ilerideki bir makalesinin işi" denerek numarasız bırakıldı; defterdeki 101
+koordinatı bunu zaten karşılıyor. Batch 23 **yeni bir numaralı koordinat açmadı ve kapatmadı**; dört makalenin metin
+içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 97; 96–98 kendi kohortundaki önceki makalelere) yapıldı
+ve Python ile makale başına doğrulandı (kendi numarasına gönderme yok; 97'den büyük öteki sayılar koşul sayısı,
+doğruluk yüzdesi ve veri kümesi sayısı değerleridir). Defterde açık kalan **tek** koordinat hâlâ **101**'dir (16 ve
+22'nin ölçüm disiplini vaadi); numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruyor. Devrolan planlı tekrar:
+33/40'ın pass@k ile görev ufku **hâlâ tahsil edilmedi**; 95'te gradyanın, 96'da genellemenin biçimsel kurulumu
+yapıldı ama pass@k ile görev ufkunun eşleştirilmiş tekrarı 101'e devrediyor.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -395,13 +408,13 @@ araştırmacı formasyonunun giriş kapısı.
 92. **Matrisin İçini Okumak: Rank, Özdeğer ve SVD** — düşük ranklılık; 19'un (LoRA) ve 74–77'nin matematiksel zemini. `[yayında]`
 93. **Olasılığın Dili: Dağılımlar, Beklenti ve En Büyük Olabilirlik** — 5/10'daki dağılım sezgisinin formal hâli; başlık Türkçeleştirildi (karar #202). `[yayında]`
 94. **Bilgi Kuramı: Entropi, Çapraz Entropi ve KL** — kayıp ve perplexity'nin formal kimliği (2/5/9'un geri çağrımı); **13'ün KL işareti ödendi**. `[yayında]`
-95. **Optimizasyonun Kuramı: Gradyanın Matematiği** — SGD/Adam; yakınsama sezgisi; 2/8'in formal yeniden kurulumu.
-96. **Genelleme Kuramı: Ezber ile Öğrenme Arasında** — bias-variance, çift iniş; 18/72'nin teorik zemini.
-97. **Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında** — ağaçlar, SVM, kNN, kümeleme; baseline kültürünün temeli.
+95. **Optimizasyonun Kuramı: Gradyanın Matematiği** — gradyanın yön olması, eğriliğin tavanı, koşul sayısı, momentum, Adam ve AdamW; 2/8'in formal yeniden kurulumu. `[yayında]`
+96. **Genelleme Kuramı: Ezber ile Öğrenme Arasında** — yanlılık-oynaklık, düzgün yakınsamanın sınırı, çift inişin üç ekseni, örtük düzenlileştirme, ezberin marjinal faydası; 18/72'nin teorik zemini. `[yayında]`
+97. **Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında** — dört aile dört varsayım: kNN, marj, ağaç toplulukları, k-ortalamalar; tablo verisinde döndürme deneyi; taban çizgisi kültürü. `[yayında]`
 
 ### Faz 11 — Araştırma Pratiği: Kanıtla Düşünmek (98–102)
 
-98. **Paper Nasıl Okunur: İddia, Kanıt ve Hakemlik** — yapı, iddia-kanıt eşleşmesi, hakem sürecinin anlamı.
+98. **Bir Çalışmayı Okumak: İddia, Kanıt ve Hakemlik** — bildirinin iskeleti, iddia-kanıt haritası, hakemliğin tutarlılık deneyleri, ayar bütçesi asimetrisi, ön baskı ↔ yayımlanmış sürüm. Faz 11'in açılışı, kategori `foundations` (karar #209); başlık Türkçeleştirildi (karar #210). `[yayında]`
 99. **Araştırma Sorusu ve Deney Tasarımı: Hipotez, Baseline, Ablation** — deneyin anatomisi.
 100. **Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi** — ilk 99 adımın planlı büyük geri çağrımı; okuyucunun kendi haritası.
 101. **Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi** — 16/71–73'ün formal geri çağrımı; belirsizlik aralıkları.
@@ -583,6 +596,10 @@ kavram-tekrar tablolarına yazıldı.)
 - 92 ← 91 ("bir sonraki makale" devri: sıkıştırmak ne demek), **19 (rank ve içsel boyut — burada tekil değer diliyle yeniden okundu; yetmiş üç makale aralıklı geri çağırma)**, 76 ("tekil değer ayrışımı" glosssuz geçmişti, resmî kurulum burada), 42 (sözcük eşleşmesinin yapısal kusuruna verilen ilk cevap: gizli anlamsal indeksleme), 18 (anahtar-değer belleği okuması rank-1 düzenlemenin varsayımı), 7 (artık bağlantının **ikinci** işi: rank çöküşünü durdurmak; #2'nin bozulma çerçevesiyle karıştırılmaz), 6 (çok başlı dikkatte baş boyutu ↔ dizi uzunluğu darboğazı), 87 (budama ve seyrek alt ağın rank okuması) `[yayında]`
 - 93 ← 92 ("bir sonraki makale" devri: modelin ürettiği şey vektör değil dağılım), **10 (örnekleme ve sıcaklık — burada üstel ailenin parametresi olarak yeniden kuruldu; seksen üç makale aralıklı geri çağırma)**, 5 (dil modelleme hedefi ve olasılık dağılımı), 2 (kayıp fonksiyonunun olasılıksal kimliği ve aşırı öğrenmenin en büyük olabilirlik hâli), 33 (kapsamanın biçimsel kimliği: yerine koyma hesabı ↔ yansız tahminci), 16 ve 65 (kalibrasyonun beklenti tanımı), 36 (çoğunluk oyunun ortalamaya yaklaşma okuması), 6 (softmax'ın neden üstel olduğu), 37/45/60 ("beklenen" sözcüğünün tek tanımı) `[yayında]`
 - 94 ← 93 ("bir sonraki makale" devri: kaybın birimi neyi sayar), **13 (numarasız işaretin tahsil yeri: KL ıraksamasının biçimsel kurulumu; referans modelden uzaklaşmanın nat cinsinden bütçe olduğu gösterildi)**, 9 (nat/token birimi ve Chinchilla formülünün 1,69'luk tabanı = dilin kendi entropisi), 2 (indirgenemez hatanın bilgi kuramındaki karşılığı), 5 (perplexity'nin biçimsel tanımı), 15 (token'lama farkı perplexity'yi karşılaştırılamaz kılıyor; bayt başına bit çözümü), 87 (damıtma kaybının KL biçimi ve ters KL'nin gerekçesi), 33 ve 36 (n adaydan en iyisini seçmenin KL bedeli) `[yayında]`
+- 95 ← 94 ("bir sonraki makale" devri: kaybı gerçekten azaltan mekanizma), **2 (bağlayıcı olmayan ama en somut geri çağırma: 3/14 eşiği burada 2/λ teoreminin özel hâli olarak türetildi; doksan üç makale aralıklı)**, 91 (gradyan bir vektördür ve yönlü türev nokta çarpımdır — en dik iniş teoremi 91'in eşitsizliğinden çıkar), 92 (Hessian simetriktir; özdeğerler eğriliği, oranları koşul sayısını verir), 8 (ısınma, kosinüs sönümü ve AdamW'nin gerekçeleri burada mekanizmaya bağlandı), 3 (geriye yayılım gradyanı hesaplar, gradyan inişi kullanır — ayrım korundu), 9 (kayıp eğrisinin okunması ve NaN satırının anlamı), 19 (eniyileyici durumunun bellek payı) `[yayında]`
+- 96 ← 95 ("bir sonraki makale" devri: azalttığımız sayı umursadığımız sayı değil), **2 (aşırı öğrenme, indirgenemez hata, düzenlileştirme ve Geman ayrışımı — dördü de burada biçimsel olarak yeniden kuruldu; doksan dört makale aralıklı)**, 94 (eğitim kaybının ampirik dağılıma göre ölçülmesi; sıkıştırma ↔ genelleme bağı), 9 (çift inişin randevusu 9'da kapanmıştı, burada üç eksene açıldı), 72 (Zhang'ın rastgele etiket deneyi orada kanıt, burada **neyi çürüttüğü**), 18 (kapasite ↔ ezber gerilimi), 92 (kovaryansın özdeğer profili iyi huylu aşırı uydurmanın koşulu), 93 (en büyük olabilirliğin kusuru), 79 (bütün muhasebenin altındaki aynı-dağılım varsayımı) `[yayında]`
+- 97 ← 96 ("bir sonraki makale" devri: muhasebe sinir ağlarına özgü değil), **43 (k-ortalamalar orada bir dizin aracıydı, burada kendi işinde; ve "yakın"ın tanımının yöntemin varsayımı olması — elli dört makale aralıklı)**, 91 (üç cetvelin zıt sıralaması en yakın komşunun varsayımına bağlandı), 92 (temel bileşen çözümlemesi ile k-ortalamaların işi ayrıldı; çekirdek numarası nokta çarpım üzerinden kuruldu), 5 (boyutluluk lanetinin olasılık yüzü), 94 (Quinlan'ın bölme ölçütü entropi kazancıdır), 95 (gradyan artırma kaybın negatif gradyanına uydurulan adımdır; dışbükeylik ve tek dip), 16 (taban çizgisi kültürü ve puanın protokolüyle okunması), 23 (TabPFN'in isteme koyarak öğrenmesi), 1 ve 2 (model tanımı ve kaybın seçimi yöntem ailesine bakmaz) `[yayında]`
+- 98 ← 97 ("serinin bir sonraki fazı" devri: koşulu okuma alışkanlığını literatüre uygulamak), **4 ve 91 (Levy–Goldberg–Dagan'ın "sihir algoritmada değil" sonucu; orada embedding bilgisiydi, burada bir okuma dersi — doksan dört ve yedi makale aralıklı çift geri çağırma)**, 96 (rastgele etiket deneyinin özetindeki iki cümlenin farklı kanıt türleri taşıması; düzgün yakınsama sonucu zinciri sıkılaştıran ayrı çalışma olarak), 95 (Adam'ın kanıt hatası bir kanıt dersi olarak geri geldi), 16 (protokolsüz puanın okunamaması), 71–73 (değerlendirme biliminin okuyucu tarafı), 9 (ölçülen nokta ile uydurulan eğrinin ayrımı), 20 (kanıt yayımlanmamışsa iddia-kanıt bağı ilkece kurulamaz) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1526,6 +1543,57 @@ MCP üçlüsü (49/53 → 115).
 | Yetenek eşiği ve gerekli korumalar; kritik yetenek düzeyi; koşullu taahhüt | 70 | — | 71, 78, 116 |
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
+
+### Batch 23'te gerçekleşen tekrarlar (planlananların tahsili)
+
+- **Öğrenme oranı eşiği (2 → 95), doksan üç makale aralıklı — bu batch'in en temiz formalizasyonu.** 2'de
+  α < 3/14 ≈ 0,214 eşiği üç evlik oyuncak problemde **deneyerek** bulunmuştu ve tablo hâlinde kaydedilmişti.
+  95, aynı sayıyı hiç deney yapmadan türetiyor: kaybın ikinci türevi (2/3) × 14 = 28/3 ve genel kural
+  α < 2/λ. Ölçüm ile teoremin aynı ondalık basamağa kadar örtüşmesi, bilinçli formalizasyonun ne olduğunu
+  tek şekilde gösteriyor (Şekil 2).
+- **Gradyan inişi ve en dik iniş (2/3 → 95).** 2'de "eğimin ters yönüne git" bir tarifti; 95'te 91'in nokta
+  çarpımı ve Cauchy–Schwarz eşitsizliği üzerinden **kanıtlanmış bir seçim** oldu. 3'ün geriye yayılım ↔
+  gradyan inişi ayrımı korundu ve tekrarlanmadı.
+- **Vektör uzayı ve özdeğer (91/92 → 95).** 91'in yön dili gradyanın tanımında, 92'nin simetrik matris
+  sonucu Hessian'ın özdeğerlerinde doğrudan kullanıldı; iki makale de yeniden anlatılmadı, kullanıldı.
+- **Çizelgeler (8 → 95).** 8'de ısınma ve kosinüs sönümü olgu olarak okunmuştu; 95 ikisinin de gerekçesini
+  veriyor (uyarlamalı paydanın ilk adımlardaki güvenilmezliği; sabit adımlı SGD'nin nokta değil bulut
+  bulması). AdamW'nin bir cümlelik açıklaması da burada yüz kat farkla hesaplandı.
+- **Aşırı öğrenme, indirgenemez hata ve düzenlileştirme (2 → 96), doksan dört makale aralıklı.** 2'de üçü de
+  ölçümle gösterilmişti; 96 üçünü tek ayrışımda birleştiriyor ve düzenlileştirmenin gerekçesini sayıyla
+  veriyor (yansız 1,5000 ↔ bilerek yanlı 1,0909). Geman ve ark.'nın 2'de adı konan ayrışımı burada tanımlandı.
+- **Çift iniş (2/9 → 96).** 2'de ileri okuma notu, 9'da randevunun kapanışıydı; 96 deseni model genişliği,
+  eğitim süresi ve örnek sayısı olmak üzere **üç eksende** kuruyor ve etkin model karmaşıklığını tanıtıyor.
+  Curth ve ark.'nın itirazı üçüncü kez anıldı ama tekrarlanmadı: bu kez "eksen seçimi" örüntüsünün örneği.
+- **Rastgele etiket deneyi (72 → 96).** 72'de ezberin kanıtıydı; 96'da **neyi çürüttüğü** kuruldu (kapasiteye
+  bakan sınırlar iki durumu ayırt edemez) ve Nagarajan–Kolter'ın düzgün yakınsama sonucuyla sıkılaştırıldı.
+  Bilinçli formalizasyon; tekrar sayılmaz.
+- **Ezberin gerekliliği (72 → 96).** 72'de Feldman'ın kuramsal sonucu anılmıştı; 96 aynı iddianın **ölçümünü**
+  ekliyor (ImageNet'te yüzde 32'lik küme, marjinal fayda yüzde 3,4 ↔ rastgele kümede 2,6).
+- **k-ortalamalar (43 → 97), elli dört makale aralıklı.** 43'te bir dizin aracıydı (ters dosya); 97'de kendi
+  işinde, varsayımıyla ve NP-zorluk ↔ logaritma k güvencesi ayrımıyla kuruldu.
+- **Üç cetvel ve boyutluluk laneti (91/5/43 → 97).** En yakın komşunun varsayımı "yakın"ın tanımına bağlı
+  olduğu için, 91'in zıt sıralama bulgusu ve 5/43'ün lanet okuması yöntemin kırılma noktası olarak geri geldi.
+- **Taban çizgisi kültürü (16 → 97 ve 98).** 16'nın "cetvel arayışı" disiplini 97'de yöntem seçiminin,
+  98'de okuma denetiminin ölçütü oldu; Wolpert ve Delgado 97'de, Melis ve Musgrave 98'de sayı verdi.
+- **Levy–Goldberg–Dagan (4/91 → 98).** 91'de embedding'lerin matematiği hakkında bir bulguydu (0,491 ↔
+  0,452 ↔ 0,530); 98'de aynı bulgu bir hakemlik dersi olarak okundu. Aynı çalışma, iki farklı soru.
+
+### Batch 23'te ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+- **Gradyan (vektör olarak), yönlü türev, Hessian, koşul sayısı, momentum, uyarlamalı yöntemler (95).**
+  Planlanan tekrar: 103–105 (elle kurulan eğitim döngüsünde adım boyu ve eniyileyici seçimi), 106–109
+  (dağıtık eğitimde yığın büyüklüğü ↔ öğrenme oranı ilişkisi ve kırpmanın operasyon gerekçesi).
+- **Yanlılık ↔ oynaklık ayrışımı, etkin model karmaşıklığı, örtük düzenlileştirme (96).** Planlanan tekrar:
+  **101** (yanlılık ↔ oynaklık ayrımının ölçüm istatistiğindeki karşılığı — 93'ün numarasız işareti oraya
+  gidiyor), 102 (tekrarlanabilirlik ile oynaklığın ilişkisi), 114 (bir sınır modelin genelleme kararları).
+- **Dört klasik aile ve varsayımları (97).** Planlanan tekrar: 99 (taban çizgisi seçimi bir deney tasarımı
+  kararıdır), 113 (bilimde yapay zekâ: tablo verisi ve klasik yöntemler), 115 (ürün kurarken hangi ailenin
+  seçileceği).
+- **İddia-kanıt haritası, hakemliğin tutarlılığı, ayar bütçesi asimetrisi, ön baskı ↔ yayımlanmış sürüm (98).**
+  Planlanan tekrar: 99 (ablasyonun kanıt yükünü ödemesi), 100 (haritanın sentezinde okuma disiplininin
+  kullanılması), 101 (anlamlı farkın istatistiği), 102 (tekrarlanabilirlik ve açık bilim), 116 (açık soruların
+  dürüst envanteri).
 
 ### Batch 22'de gerçekleşen tekrarlar (planlananların tahsili)
 
@@ -2553,6 +2621,25 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | çapraz entropi | (cross-entropy) | 94 | 84 ve 87'de glosssuz geçmişti; resmî kurulum 94'te. Entropi artı KL'ye eşittir |
 | nat | — | 94 | doğal logaritmayla ölçülen bilgi birimi; 9'da "nat/token" olarak geçmişti |
 | bayt başına bit | — | 94 | token'lamadan bağımsız karşılaştırma ölçüsü; sıkıştırma oranının başka yazılışı |
+| eniyileyici | (optimizer) | 95 | 8 ve 19'da "optimizatör" denmişti; **yerleşik biçim "eniyileyici"dir** ve seri boyunca o kullanılır |
+| gradyan | (gradient) | 95 | 2'de "gradyan inişi" olarak geçmişti; burada nesnenin kendisi kuruldu: kısmi türevlerin vektörü |
+| yönlü türev | (directional derivative) | 95 | gradyan ile birim yönün nokta çarpımı; en dik iniş teoreminin dayanağı |
+| Hessian | — | 95 | Türkçeleştirilmez ve **parantez içi gloss verilmez** (İngilizcesi aynı); ikinci türevlerin simetrik matrisi, özdeğerleri eğriliği verir |
+| koşul sayısı | (condition number) | 95 | en büyük eğriliğin en küçüğe oranı; yakınsama hızını belirler |
+| momentum | — | 95 | Türkçeleştirilmez; adımın bir öncekinin yönünü de taşıması. Polyak'ın ağır top yöntemi |
+| ağırlık sönümü | (weight decay) | 95 | 8'de glosssuz geçmişti; resmî kurulum 95'te. Kayba yazılan L2 cezasıyla **eşdeğer değildir** (AdamW) |
+| gradyan kırpma | (gradient clipping) | 95 | 8'de adı geçmişti; gerekçesi 95'te: eğrilik gradyanla birlikte büyüdüğü için tavan alçalıyor |
+| yanlılık ↔ oynaklık | (bias ↔ variance) | 96 | 93'te tahmincideki yanlılık kurulmuştu; oynaklık ve üçlü ayrışım 96'da. 3'teki **sapma** ile karıştırılmaz |
+| düzgün yakınsama | (uniform convergence) | 96 | sınırın ailedeki bütün modeller için aynı anda geçerli olması; klasik genelleme kuramının yöntemi |
+| etkin model karmaşıklığı | (effective model complexity) | 96 | yordamın sıfır eğitim hatasıyla uydurabildiği en büyük örnek sayısı; çift inişin üç eksenini birleştirir |
+| örtük düzenlileştirme | (implicit regularization) | 96 | kayba yazılmayan ama eniyileyicinin izlediği yoldan gelen tercih |
+| Bayes hatası | — | 97 | dağılımı tam bilen bir kuralın hata oranı; ulaşılabilecek en iyi değer |
+| torbalama | (bagging) | 97 | yerine koyarak çekilen örneklemlerde ayrı ağaçlar; oynaklığa saldırır |
+| gradyan artırma | (gradient boosting) | 97 | ardışık ağaçlar, her biri kalan hataya; yanlılığa saldırır. Torbalamayla **karıştırılmaz**, ayrım 97'de yapıldı |
+| çekirdek | (kernel) | 97 | nokta çarpımı başka bir uzaya gitmeden hesaplayan fonksiyon |
+| k-ortalamalar | (k-means) | 97 | 43'te dizin aracı olarak glosssuz geçmişti; resmî kurulum 97'de |
+| ablasyon | (ablation) | 98 | bir bileşeni çıkarıp aynı ölçümü tekrarlamak; kazancın kaynağını gösteren deney |
+| ön baskı | (preprint) | 98 | hakem sürecinden geçmemiş sürüm; yayımlanmış sürümden başlığı ve kapsamı farklı olabilir |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -4584,7 +4671,156 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     bağlantı taraması **bitmişti**; kalan kapılar (rota sweep'i, DOM ölçümü, PNG turu) betikler oturum
     scratchpad'ine yeniden yazılarak tamamlandı. Kaynak metinleri kurtarılmadı.
 
-## Batch 22 öğrenme notları (yazım tamamlandı)
+209. **Faz 11'in kategorisi ve Batch 23'ün kohortu.** 95–98'in dördü de `foundations`; kohort
+    `classification_batch: 23`. 95–97 Faz 10'un devamı olduğu için karar #200'ün doğrudan uzantısı. **98 yeni bir
+    faz açıyor ve kategori kararı onun için verildi:** Faz 11 (Araştırma Pratiği, 98–102) da `foundations`.
+    Gerekçe: Faz 10 "araştırmacı formasyonunun giriş kapısı" olarak tanımlanmıştı; Faz 11 aynı formasyonun
+    yöntem tarafıdır — nasıl okunur, nasıl tasarlanır, nasıl ölçülür, nasıl tekrarlanır. Kategori konuyu değil
+    **katmanı** adlandırır (karar #200) ve bu katman temeldir. Kontrollü sözlükteki iki alternatif de daha kötü
+    oturuyordu: `safety-and-evaluation` (61–80) modelin güvenliğini ve değerlendirilmesini adlandırıyor, oysa
+    98–102 literatürün kendisini konu ediniyor; kullanılmamış tek kalem olan `case-studies` ise 114–115 için
+    doğal yerinde duruyor. Sonuç: okuma listesinde `foundations` yine **iki öbek** (1–5 ve 91–98) ve kohort
+    ayrımı sayesinde Batch 22 ile Batch 23 ayrı gruplar olarak görünüyor; `reading-list-groups.test.ts`
+    değiştirilmedi, yalnızca çalıştırıldı (624 test).
+210. **98'in başlığı Türkçeleştirildi.** "Paper Nasıl Okunur: İddia, Kanıt ve Hakemlik" → **"Bir Çalışmayı
+    Okumak: İddia, Kanıt ve Hakemlik"**. Ölçüt #99'unkiyle aynı: "paper" Türkçede yerleşik karşılıklara sahip.
+    Ama doğrudan "makale" **kullanılamazdı**, çünkü seri kendi birimlerine "makale" diyor ve "Makale Nasıl
+    Okunur" başlığı okuyucuda serinin kendisini kastettiği izlenimi bırakırdı. Seçilen sözcük **"çalışma"**:
+    seri boyunca yüzlerce kez "Shannon'ın 1948 tarihli çalışması" biçiminde zaten bu anlamda kullanılıyor,
+    dolayısıyla yeni bir terim kurulmadı, var olan kullanım başlığa taşındı. Aynı gerekçeyle `roadmap.json`'daki
+    Faz 11 açıklaması da güncellendi ("Paper okumaktan…" → "Çalışma okumaktan…"). Başlık değişikliği
+    entegrasyondan **önce** yazıldı. **95, 96 ve 97'nin başlıkları değiştirilmedi:** "optimizasyon" Türkçede
+    yerleşiktir, "LLM" karar #108'in kısaltma sınıfındadır.
+211. **Terim kararları (Batch 23).** Yeni kurulanlar: "eniyileyici", "gradyan" (nesne olarak), "yönlü türev",
+    "Hessian", "koşul sayısı", "momentum", "ağırlık sönümü", "gradyan kırpma" (95); "yanlılık ↔ oynaklık",
+    "düzgün yakınsama", "etkin model karmaşıklığı", "örtük düzenlileştirme" (96); "Bayes hatası", "torbalama",
+    "gradyan artırma", "çekirdek", "k-ortalamalar" (97); "ablasyon", "ön baskı" (98). **Eşanlamlı çatışması
+    çözüldü:** 8 ve 19 "optimizatör", 89 ve 94 "eniyileyici" diyordu; SOZLESME §2 yerleşik biçimin seri boyunca
+    sabit kalmasını istediği için **"eniyileyici" seçildi** ve 95'te bir cümleyle ikisinin aynı şey olduğu
+    söylendi. Geriye dönük düzeltme yapılmadı (yayımlanmış gövdeye dokunulmaz). **Çakışma uyarıları:** 96'daki
+    "yanlılık" 3'teki **sapma** (nöronun sabit terimi) ve 45/73'teki **hakem yanlılığı** ile karıştırılmaz —
+    ayrım 93'te yapılmıştı ve korundu; 97'deki "torbalama ↔ gradyan artırma" çifti SOZLESME §3'ün
+    karıştırılabilir kavram kuralına göre aynı bölümde ve bir "Kendini yokla" kutusuyla ayrıştırıldı.
+212. **Sayılar (Batch 23). 95:** f(w) = ½(w₁² + 20w₂²), (2; 1) noktasında gradyan (2; 20), uzunluk 20,0998;
+    yönlü türevler (1; 0) → +2,0000, (0; 1) → +20,0000, (0,7071; 0,7071) → +15,5563, gradyanın yönü → +20,0998,
+    ters yön → −20,0998. 2. makalenin kaybının ikinci türevi λ = (2/3) × 14 = 28/3 = 9,333 ve 2/λ = 6/28 = 3/14
+    = 0,2143; uzaklık çarpanları α = 0,05 → +0,5333, 0,10 → +0,0667, 0,20 → −0,8667, 0,2143 → −1,0000,
+    0,25 → −1,3333. Koşul sayısı 20: sabit adım 2/21 = 0,09524, çarpan 0,9048, yüzde bire 47 adım; momentum
+    0,6345 ve 11 adım (4,5 kat). Koşul sayısı 100: 0,9802 ve 231 adım; momentum 0,8182 ve 23 adım (10,0 kat).
+    Adam varsayılanları α = 0,001, β₁ = 0,9, β₂ = 0,999, ε = 10⁻⁸; ilk adım gradyan 0,001 için 0,00099999,
+    gradyan 10 için 0,00100000 (gradyan inişinde 0,00000100 ↔ 0,01000000, on bin kat). AdamW: sönüm katsayısı
+    0,01, ağırlık 1,0; uyarlamalı payda 10 → kayba ceza 1,0 × 10⁻⁶, payda 0,1 → 1,0 × 10⁻⁴ (yüz kat), ayrık
+    sönüm iki durumda da 1,0 × 10⁻⁵. Keskar'ın genelleme farkı yüzde 5'e varıyor; Schmidt ve ark. **on beş**
+    eniyileyici ve **50.000'den fazla** koşu; Goyal ve ark. 8.192'lik yığın. **96:** gerçek değer 2,0, gürültü
+    varyansı 1,5; c = 0 → 4,0000, c = 0,5 → 1,3750, c = 8/11 ≈ 0,7273 → 1,0909 (en iyi), c = 0,9 → 1,2550,
+    c = 1 → 1,5000; yansız seçime göre yüzde 27,3 kazanç. Zhang ve ark. CIFAR-10: Inception 1.649.402 parametre,
+    gerçek + düzenlileştirme 100,0/89,05, düzenlileştirmesiz 100,0/85,75, rastgele etiket 100,0/9,78; MLP 1×512
+    1.209.866 parametre, 100,0/50,51 ve 99,34/10,61; ImageNet rastgele etiket eğitim doğruluğu 95,20. Nakkiran
+    ve ark.: ResNet18, CIFAR-10, etiketlerin yüzde 15'i bozulmuş, Adam, 4.000 dönem; dördün katı veri kritik
+    bölgede iyileştirmiyor. Feldman–Zhang: ImageNet'te örneklerin ≈ yüzde 32'sinin ezber değeri ≥ 0,3, marjinal
+    fayda ≈ yüzde 3,4 (aynı büyüklükte rastgele küme ≈ 2,6). Jiang ve ark.: **40'tan fazla** ölçü,
+    **10.000'den fazla** ağ; spektral norm çarpımı sınırı genellemeyle **güçlü negatif** ilişkili. **97:**
+    Cover–Hart sınırı R ≤ R*(2 − M R*/(M−1)); M = 2 için R* yüzde 1 → yüzde 1,98 (1,980 kat), yüzde 5 → yüzde
+    9,50 (1,900), yüzde 10 → yüzde 18,00 (1,800); M = 10, R* yüzde 5 → yüzde 9,72 (1,944). k-ortalamalar++
+    logaritma k güvenceli, k-ortalamalar güvencesiz, problem iki kümede bile NP-zor. Grinsztajn ve ark.:
+    45 küme, orta ölçek ≈ 10.000 satır, ≈ 20.000 hesap saati; rastgele döndürme sıralamayı **tersine
+    çeviriyor**. McElfresh ve ark.: 19 algoritma, 176 küme; TabPFN ≈ 3.000 satır sınırında ortalamada önde.
+    TabPFN (ICLR 2023): OpenML-CC18'den 18 küme, ≤ 1.000 eğitim noktası, ≤ 100 sayısal öznitelik, ≤ 10 sınıf.
+    Delgado ve ark.: 179 sınıflandırıcı, 17 aile, 121 küme; en iyi rastgele orman en büyük doğruluğun yüzde
+    94,1'ini alıyor ve kümelerin yüzde 84,3'ünde yüzde 90'ı aşıyor, ikinci sıradaki Gauss çekirdekli destek
+    vektör makinesi yüzde 92,3 ve fark anlamlı değil. **98:** NeurIPS 2014'te 116 çift değerlendirilen bildiri,
+    kabul edilenlerin yüzde 49,5'i öbür komitede reddedilirdi; NeurIPS 2021'de 9.122 gönderiden 882'si çift
+    değerlendirildi, kararlarda yüzde 23 anlaşmazlık, kabul edilenlerin yüzde 50,6'sı (komite başına 51,9 ve
+    49,2) öbür komitede reddedilirdi, rastgeleye göre iyileşme yüzde 35. Eşik çözümlemesi: yalnızca sözlü ve
+    öne çıkan sunumlar → yüzde 88,8 ve iyileşme yüzde 8; poster eşiği bir kademe aşağı → yüzde 63,2 ve yüzde 25.
+    Cortes–Lawrence: puan değişkenliğinin yaklaşık **yarısı** öznel. Tomkins ve ark.: kabul oranı yüzde 15,6
+    olan konferans, gönderi başına iki tek-kör ve iki çift-kör hakem.
+213. **Kendi hesabımız (Batch 23): dört yer.** (a) 95'teki yönlü türev tablosunun beş değeri, verilen
+    gradyandan elle hesaplandı; (b) 95'teki koşul sayısı tablosunun adım sayıları (47, 11, 231, 23) ve kazanç
+    oranları (4,5 ve 10,0 kat), Bottou ve ark.'nın verdiği çarpan formüllerinden logaritma alınarak türetildi —
+    **ölçülmüş bir eğitim koşusu değildir** ve şeklin içinde öyle yazıyor; (c) 95'teki Adam ilk adımı ile AdamW
+    sönüm karşılaştırmasının bütün değerleri, kaynakların verdiği güncelleme kurallarından elle hesaplandı;
+    (d) 96'daki yanlılık-oynaklık tablosunun tamamı verilen iki sayıdan (2,0 ve 1,5) elle hesaplandı ve
+    **ölçülmüş bir deney değildir**. Ayrıca 95'teki 2/λ türetmesi 2. makalenin **yayımlanmış** sayılarını girdi
+    olarak kullanıyor; bu bir yeniden ölçüm değil, aynı sayının ikinci yoldan gösterimidir.
+214. **Şekil kararları (Batch 23).** On üç şeklin hepsi tablo, blok listesi ya da iki panel; **hiçbirinde eğri
+    yok**. Gerekçe SOZLESME §6'nın sayı bütünlüğü kuralı: bu batch'in malzemesi ya kapalı formüllerden türeyen
+    değerler ya da kaynakların tablo hâlinde verdiği ölçümler; çift inişin, kayıp yüzeyinin ve öğrenme
+    eğrisinin şekli elimizde ölçülmüş nokta olmadan çizilemezdi. 96-Şekil 3 bunun en bilinçli örneği: çift iniş
+    üç eksende **tablo olarak** verildi, U eğrisi çizilmedi ve şeklin altına "ölçülmemiş bir eğri çizilmedi"
+    kaydı düşüldü. Dört şekilde ikinci bir kutu yalnızca **sınırı** taşıyor (95-Şekil 3, 96-Şekil 3, 97-Şekil 1,
+    98-Şekil 1) — fazın tonu bunu gerektirdi.
+215. **Kaynak politikası (Batch 23).** 95'te 15, 96'da 12, 97'de 16, 98'de 11 kaynak: **54 kalem, 52 ayrı
+    çalışma** (Grinsztajn ve ark. 97 ile 98'de, Reddi ve ark. 95 ile 98'de iki kez anıldı). Dağılım: **48
+    hakemli**, 1 ders kitabı (Boyd–Vandenberghe, §9.3, s. 466–475), 1 çalıştay bildirisi (Sculley ve ark.,
+    ICLR 2018 çalıştayı), 1 editoryal dergi (Lipton–Steinhardt, ACM Queue — metinde açıkça işaretlendi) ve
+    **3 hakemsiz ön çalışma**: Goyal ve ark. 2017, Cortes–Lawrence 2021, Beygelzimer ve ark. 2023. Üçü de
+    metinde işaretlendi. Son ikisi için ek bir kayıt düşüldü ve **98'in gövdesinde bir ironi olarak kullanıldı**:
+    hakemliğin ölçümünü yapan iki belge de hakemlikten geçmemiştir. Ders kitabı kuralı (sayfa/bölüm numarası +
+    doğrulanabilir bağlantı) Boyd–Vandenberghe için uygulandı.
+216. **Doğrulama sınırları ve künye notları (Batch 23).** (a) **Doğrulanamayan künye yok.** ACM, Springer,
+    PNAS, MIT Press ve IEEE DOI'leri tarayıcıya 403/202/"Client Challenge" döndürdü — beklenen bot duvarı;
+    on beş klasik künyenin tamamı `api.crossref.org/works/<doi>` ile başlık, dergi, cilt, sayı, sayfa, yıl ve
+    yazar düzeyinde doğrulandı. (b) **OpenReview kimlikleri yine API ile doğrulandı**, `forum` sayfası bot
+    doğrulaması gösterdiği için 200 tek başına kanıt sayılmadı: `ryQu7f-RZ`, `Bkg6RiCqY7`, `a65YK0cqH8g`,
+    `BJgnXpVYwS`, `H1oyRlYgg`, `Sy8gdB9xx`, `B1g5sA4twr`, `SJgIPJBFvH`, `ByJHuTgA-`, `Fp7__phQszn`,
+    `rJWF0Fywf`. Arama ucu 429 verdiği için sorgular arasında 7 sn beklendi. (c) **Elsevier DOI'sindeki
+    parantez markdown'ı kırıyor:** Polyak 1964'ün DOI'si `10.1016/0041-5553(64)90137-5`; parantezler yüzde
+    kodlamasıyla (`%2864%29`) yazıldı — Batch 22'deki Wiley dersinin ikinci uygulaması. (d) **NeurIPS hash
+    URL'leri bu kez tahmin edilmedi**, `papers.nips.cc` dizin sayfalarından çekilerek doğrulandı; McElfresh
+    ve ark. dâhil hepsi başlık düzeyinde eşleşti. (e) **ICLR 2015 ve öncesi için arXiv bağlantısı kullanıldı**
+    (Adam), çünkü o yılların bildirileri OpenReview'da forum kimliğiyle durmuyor; seride 4, 63 ve 87'de
+    kurulmuş biçim korundu. (f) Kunstner ve ark.'nın ön baskı sürüm numarası 404 verdi, sürümsüz arXiv
+    adresinden indirildi; Bartlett ve ark.'nın PNAS sayfası 403 döndü, özeti Crossref'ten alındı.
+
+## Batch 23 öğrenme notları (yazım tamamlandı)
+
+- **Faz 10 kapandı, Faz 11 açıldı ve zincir tek bir soruyu dört kez sordu:** kaybı azaltan mekanizma nedir (95)
+  → azalttığımız sayı umursadığımız sayı mı (96) → bu muhasebe yalnızca sinir ağları için mi (97) → aynı
+  soruyu literatürün kendisine nasıl sorarız (98). Dört makale de aynı refleksle bitiyor: **cevap, hangi
+  cetveli seçtiğine bağlı.**
+- **Araştırma, yazım, entegrasyon ve doğrulama yine tamamen ana oturumda; workflow/subagent kullanılmadı**
+  (cerebrum 2026-09-03). Dört dalga hâlinde 100'den fazla kaynak adresi çekildi; PDF'ler `pypdf` ile metne
+  çevrildi (`shots`, `sweep`, `links`, `svgcheck`, `scan`, `wc` betikleri oturum scratchpad'ine yeniden yazıldı,
+  `artifacts/` altına hiçbir şey yazılmadı).
+- **Bu batch'in kendi bulgusu: 2. makalenin deneyle bulduğu sayı bir teoremin özel hâliymiş.** α < 3/14 eşiği
+  doksan üç makale önce üç evlik bir oyuncak problemde ölçülmüştü; 95'te kaybın ikinci türevi 28/3 hesaplanıp
+  genel kural α < 2/λ uygulanınca **aynı ondalık basamağa kadar** aynı sayı çıkıyor. Bilinçli formalizasyonun
+  bundan daha temiz bir örneği bu seride yok ve fazın tonu buradan çıktı: erken makalelerin ölçümleri, ileri
+  makalelerin teoremlerinin girdisidir.
+- **Kelime bandı bu batch'te de sıkı bağladı — ama ters yönde.** Dördü de ilk turda 1.260–2.105 aralığındaydı;
+  95 dışındaki üçü bandın **altında** kaldı (1.409 / 1.586 / 1.260). Eklenen malzemenin hepsi araştırma
+  listesinde olup taslakta atlanmıştı: 96'ya düzgün yakınsama ve Nagarajan–Kolter, iyi huylu aşırı uydurma,
+  dağılım kayması uyarısı; 97'ye k'nın yanlılık-oynaklık okuması, temel bileşen ↔ kümeleme ayrımı,
+  Shwartz-Ziv, ağaçların dışarı uzatamaması, seçimin üç pratik ölçütü; 98'e bildirinin iskeleti, Lipton–
+  Steinhardt'ın dört deseni, Ioannidis'in yapısal argümanı, Tomkins'in kör hakemlik ölçümü. Dolgu cümle
+  eklenmedi. Son değerler: 2.105 / 2.053 / 2.076 / 2.031.
+- **Şekil alt metni kelime sayısına girmiyor ama gövde hissini değiştiriyor.** Bu batch'in alt metinleri uzun
+  (her biri 150–250 sözcük) ve ilk turda "makale doluymuş gibi" hissettirdi; oysa `countProseWords` onları
+  atıyor. Ders: taslak biterken kelime sayısı **kapının kendi işleviyle** ölçülmeli, göz kararıyla değil.
+- **Alt metin ile `aria-label` betikle senkronlandı.** Şekiller çizildikten sonra SVG'nin `aria-label`'ı
+  markdown'daki `alt`'a kopyalandı (küçük bir Python betiğiyle); elle yazıldığında ikisi kaçınılmaz olarak
+  ayrışıyor. Bu run'da üç alt metin bu yolla düzeldi.
+- **`svgcheck` iki kusur yakaladı, PNG turu sıfır.** Yeniden yazılan ölçer (0,58 karakter genişliği, 6 px
+  pay) 98'in iki şeklinde sağ kenar taşması ve birinde sütun çakışması buldu; düzeltildikten sonra 26 PNG'nin
+  hiçbirinde göz kusuru çıkmadı. Batch 22'de tersi olmuştu (geometri kapıları geçmiş, PNG turu kusur bulmuştu);
+  **iki kapı birbirinin yerine geçmiyor, ikisi de gerekli.**
+- **Dev sunucusu bu kez 99 rotayı dört dilimde sorunsuz derledi** (32 + 32 + 18 + 17, toplam ~76 sn, hiç
+  yönlendirme yok). Batch 22'deki yığın tükenmesi tekrarlanmadı; dilimleme kuralı korunmalı.
+- **Playwright'ı ESM betiğinden `import "D:/..."` ile çağırmak çalışmıyor** (`ERR_UNSUPPORTED_ESM_URL_SCHEME`);
+  `createRequire("file:///D:/dev/anil-lib/")` ile `require("@playwright/test")` çalışıyor.
+- **Paralel BOUN oturumu bu run boyunca da aynı worktree'deydi** ve aynı dakikalarda dosya yazıyordu. Bu kez
+  çakışma yaşanmadı, çünkü (a) `artifacts/` hiç kullanılmadı, (b) build ve dev sunucusu izole kopyada
+  (`/d/dev/anil-lib-b23-render`) çalıştırıldı, (c) `.claude/launch.json` okunup **kendi girdisi eklenerek**
+  yazıldı ve temizlikte yalnızca o girdi çıkarıldı.
+- **Kapılar:** `pnpm typecheck` (0), **624 test** (`reading-list-groups.test.ts` dâhil — kategori kararı bunu
+  gerektiriyordu), `pnpm build` (exit 0, `/seri/[slug]` **98 yol**, 153 statik sayfa, izole kopyada), 99 seri
+  rotasının tamamı 200 (dört dilim, ~76 sn, yönlendirme yok), dört makale × üç genişlik × üç temada DOM
+  ölçümü (taşma 0, `main.innerText` içinde undefined/NaN yok — 95'teki tek "NaN" gövdenin kendi cümlesidir,
+  ham i18n anahtarı yok; 1440'ta SVG 771 px, 768'de 676, 375'te 351), konsolda yalnızca `/api/reader-sync`
+  503, 13 yeni diyagram × iki tema = 26 PNG gözle incelendi (kusur bulunmadı), 54 kaynak bağlantısının
+  tamamı çekildi.
+
 
 - **Faz 10 açıldı ve zincir tek bir nesneyi dört kez yeniden kurdu:** sayı listesi aslında bir vektör uzayının
   öğesi (91) → o uzayı değiştiren matrisin içinde ikinci bir sayı var (92) → modelin ürettiği şey vektör değil

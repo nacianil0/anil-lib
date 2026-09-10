@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Beş satırlık bir tablo ve altında bir kutu. Kurulum satırında gerçek değer 2,0, ölçüm gürültüsünün varyansı 1,5 ve tahmincinin ölçümü c katsayısıyla çarptığı yazılıdır. Tablonun sütunları: katsayı c, yanlılık, yanlılığın karesi, oynaklık, toplam ve işaret. Satırlar sırasıyla: c eşittir 0 için yanlılık eksi 2,0000, karesi 4,0000, oynaklık 0,0000, toplam 4,0000. c eşittir 0,5 için yanlılık eksi 1,0000, karesi 1,0000, oynaklık 0,3750, toplam 1,3750. c eşittir 0,7273 için yanlılık eksi 0,5455, karesi 0,2975, oynaklık 0,7934, toplam 1,0909 ve işaret sütununda en iyi yazar; bu satır vurguludur. c eşittir 0,9 için yanlılık eksi 0,2000, karesi 0,0400, oynaklık 1,2150, toplam 1,2550. c eşittir 1 için yanlılık 0,0000, karesi 0,0000, oynaklık 1,5000, toplam 1,5000 ve işaret sütununda yansız yazar. Alttaki kutuda iki cümle durur: yansız seçim 1,5000 verirken bilerek yanlı olan 1,0909 veriyor, yani yüzde 27,3 daha az; ve toplama indirgenemez hata 1,5000 olarak eklenir, hiçbir seçim onun altına inemez. En altta bir kayıt: bütün değerler verilen iki sayıdan elle hesaplanmıştır ve ölçülmüş bir deney değildir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">gerçek değer 2,0 · ölçüm gürültüsünün varyansı 1,5 · tahminci = c × ölçüm</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">c</text>
+  <text x="100" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">yanlılık</text>
+  <text x="225" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">yanlılık²</text>
+  <text x="350" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">oynaklık</text>
+  <text x="475" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">toplam</text>
+
+  <text x="24" y="96" font-size="13" fill="var(--text)">0</text>
+  <text x="100" y="96" font-size="13" fill="var(--text)">−2,0000</text>
+  <text x="225" y="96" font-size="13" fill="var(--text)">4,0000</text>
+  <text x="350" y="96" font-size="13" fill="var(--text)">0,0000</text>
+  <text x="475" y="96" font-size="13" fill="var(--text)">4,0000</text>
+
+  <text x="24" y="120" font-size="13" fill="var(--text)">0,5</text>
+  <text x="100" y="120" font-size="13" fill="var(--text)">−1,0000</text>
+  <text x="225" y="120" font-size="13" fill="var(--text)">1,0000</text>
+  <text x="350" y="120" font-size="13" fill="var(--text)">0,3750</text>
+  <text x="475" y="120" font-size="13" fill="var(--text)">1,3750</text>
+
+  <text x="24" y="148" font-size="13" font-weight="bold" fill="var(--accent)">0,7273</text>
+  <text x="100" y="148" font-size="13" font-weight="bold" fill="var(--accent)">−0,5455</text>
+  <text x="225" y="148" font-size="13" font-weight="bold" fill="var(--accent)">0,2975</text>
+  <text x="350" y="148" font-size="13" font-weight="bold" fill="var(--accent)">0,7934</text>
+  <text x="475" y="148" font-size="13" font-weight="bold" fill="var(--accent)">1,0909</text>
+  <text x="600" y="148" font-size="13" font-weight="bold" fill="var(--accent)">en iyi</text>
+
+  <text x="24" y="172" font-size="13" fill="var(--text)">0,9</text>
+  <text x="100" y="172" font-size="13" fill="var(--text)">−0,2000</text>
+  <text x="225" y="172" font-size="13" fill="var(--text)">0,0400</text>
+  <text x="350" y="172" font-size="13" fill="var(--text)">1,2150</text>
+  <text x="475" y="172" font-size="13" fill="var(--text)">1,2550</text>
+
+  <text x="24" y="196" font-size="13" fill="var(--text)">1</text>
+  <text x="100" y="196" font-size="13" fill="var(--text)">0,0000</text>
+  <text x="225" y="196" font-size="13" fill="var(--text)">0,0000</text>
+  <text x="350" y="196" font-size="13" fill="var(--text)">1,5000</text>
+  <text x="475" y="196" font-size="13" fill="var(--text)">1,5000</text>
+  <text x="600" y="196" font-size="13" fill="var(--cool)">yansız</text>
+
+  <line x1="20" y1="214" x2="700" y2="214" stroke="var(--border)" />
+  <rect x="20" y="226" width="680" height="58" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="250" font-size="13" fill="var(--accent)">Yansız seçim 1,5000 veriyor; bilerek yanlı olan 1,0909 — yüzde 27,3 daha az.</text>
+  <text x="34" y="270" font-size="13" fill="var(--text)">Toplama indirgenemez hata 1,5000 olarak eklenir; hiçbir seçim altına inemez.</text>
+
+  <text x="20" y="310" font-size="13" fill="var(--text-faint)">Bütün değerler verilen iki sayıdan elle hesaplandı; ölçülmüş bir deney değildir.</text>
+</svg>

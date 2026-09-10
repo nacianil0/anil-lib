@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 376" role="img" aria-label="Beş satırlık bir eşleme tablosu ve altında iki kutu. Üstte incelenen çalışmanın Grinsztajn ve arkadaşlarının tablo verisi karşılaştırması olduğu yazılıdır. Sütunlar özetteki iddia, kanıtı taşıyan bölüm ve kanıtın türüdür. Birinci satır: ağaç toplulukları orta ölçekte önde; kanıtı 45 küme üzerinde eşit arama bütçesiyle yapılan karşılaştırma; türü doğrudan ölçüm. İkinci satır: sinir ağları fazla düzgün çözümlere eğilimli; kanıtı hedefi yumuşatma deneyi; türü kontrollü bozma. Üçüncü satır: bilgi taşımayan öznitelikler ağları daha çok vuruyor; kanıtı öznitelik atma ve ekleme deneyi; türü kontrollü bozma. Dördüncü satır: veri döndürmeye göre değişmez değil; kanıtı rastgele döndürme deneyi; türü kontrollü bozma. Beşinci satır vurguludur: bu üç eğilim farkı açıklıyor; doğrudan kanıtı yoktur ve çalışma kısmen diyerek sınırını yazar; türü çıkarım. Birinci kutuda çalışmanın kendi kapsam cümlesi durur: yalnızca sayısal değişkenler ve orta ölçekli sınıflandırma kümeleri. İkinci kutuda okuma kuralı durur: eşleşmeyen cümle yanlış demek değil, kanıt yükü henüz ödenmemiş demek. En altta bir kayıt: satırlar çalışmanın özetiyle bölümleri karşılaştırılarak çıkarılmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">İncelenen çalışma: Grinsztajn ve arkadaşları — tablo verisi karşılaştırması</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">özetteki iddia</text>
+  <text x="330" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">kanıtı taşıyan bölüm</text>
+  <text x="580" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">türü</text>
+
+  <text x="24" y="96" font-size="13" fill="var(--text)">ağaç toplulukları orta ölçekte önde</text>
+  <text x="330" y="96" font-size="13" fill="var(--text-muted)">45 küme, eşit arama bütçesi</text>
+  <text x="580" y="96" font-size="13" fill="var(--text)">doğrudan ölçüm</text>
+
+  <text x="24" y="120" font-size="13" fill="var(--text)">sinir ağları fazla düzgüne eğilimli</text>
+  <text x="330" y="120" font-size="13" fill="var(--text-muted)">hedefi yumuşatma deneyi</text>
+  <text x="580" y="120" font-size="13" fill="var(--text)">kontrollü bozma</text>
+
+  <text x="24" y="144" font-size="13" fill="var(--text)">boş öznitelikler ağları daha çok vurur</text>
+  <text x="330" y="144" font-size="13" fill="var(--text-muted)">öznitelik atma/ekleme deneyi</text>
+  <text x="580" y="144" font-size="13" fill="var(--text)">kontrollü bozma</text>
+
+  <text x="24" y="168" font-size="13" fill="var(--text)">veri döndürmeye göre değişmez değil</text>
+  <text x="330" y="168" font-size="13" fill="var(--text-muted)">rastgele döndürme deneyi</text>
+  <text x="580" y="168" font-size="13" fill="var(--text)">kontrollü bozma</text>
+
+  <text x="24" y="196" font-size="13" font-weight="bold" fill="var(--accent)">bu üç eğilim farkı açıklıyor</text>
+  <text x="330" y="196" font-size="13" font-weight="bold" fill="var(--accent)">doğrudan kanıt yok — "kısmen"</text>
+  <text x="580" y="196" font-size="13" font-weight="bold" fill="var(--accent)">çıkarım</text>
+
+  <line x1="20" y1="214" x2="700" y2="214" stroke="var(--border)" />
+  <rect x="20" y="226" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="250" font-size="13" fill="var(--text-muted)">Çalışmanın kendi kapsam cümlesi: yalnızca sayısal değişkenler ve orta ölçekli</text>
+  <text x="34" y="270" font-size="13" fill="var(--text-muted)">sınıflandırma kümeleri.</text>
+
+  <rect x="20" y="292" width="680" height="38" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="316" font-size="13" fill="var(--text)">Eşleşmeyen cümle yanlış demek değil; kanıt yükü henüz ödenmemiş demek.</text>
+
+  <text x="20" y="356" font-size="13" fill="var(--text-faint)">Satırlar çalışmanın özetiyle bölümleri karşılaştırılarak çıkarıldı.</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 368" role="img" aria-label="Üç bloklu bir liste ve altında bir kutu. Üstte başlık: aynı karşılaştırma, ayar bütçesi eşitlendiğinde. Birinci blok dil modelleme: yerleşik iddia, yeni yinelemeli mimarilerin LSTM'i geçtiği; eşit ve büyük ölçekli otomatik ayar altında doğru düzenlileştirilmiş standart LSTM daha yeni modelleri geçiyor. İkinci blok metrik öğrenme: yerleşik iddia, son dört yılın yöntemlerinin doğruluğu ikiye katladığı; aynı mimari, aynı embedding boyu, çapraz doğrulamalı ayar ve test kümesinden geri bildirim yasağı altında iyileşme en iyi ihtimalle küçük kalıyor. Üçüncü blok vurguludur, kelime vektörleri: yerleşik iddia, sinir ağı tabanlı vektörlerin sayım tabanlıları geçtiği; aynı tasarım ve ayar seçimleri sayım tabanlıya da taşındığında farklar çoğunlukla yerel ya da anlamsız kalıyor ve hiçbir yöntemin genel üstünlüğü görülmüyor. Alttaki kutuda ortak mekanizma yazılıdır: puan farkı, yöntem farkı ile arama bütçesi farkının toplamıdır ve tablo bu ikisini ayırmaz. En altta bir kayıt: üç satır da metinde anılan çalışmaların kendi sonuçlarından alınmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı karşılaştırma, ayar bütçesi eşitlendiğinde</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text)">dil modelleme</text>
+  <text x="190" y="70" font-size="13" fill="var(--text-muted)">yerleşik iddia: yeni yinelemeli mimariler LSTM'i geçiyor</text>
+  <text x="190" y="90" font-size="13" fill="var(--text)">eşit ve büyük ölçekli otomatik ayar altında: doğru düzenlileştirilmiş</text>
+  <text x="190" y="110" font-size="13" fill="var(--text)">standart LSTM daha yeni modelleri geçiyor</text>
+
+  <text x="24" y="142" font-size="13" font-weight="bold" fill="var(--text)">metrik öğrenme</text>
+  <text x="190" y="142" font-size="13" fill="var(--text-muted)">yerleşik iddia: dört yılın yöntemleri doğruluğu ikiye katladı</text>
+  <text x="190" y="162" font-size="13" fill="var(--text)">aynı mimari, aynı embedding boyu, çapraz doğrulamalı ayar ve test</text>
+  <text x="190" y="182" font-size="13" fill="var(--text)">kümesinden geri bildirim yasağıyla: iyileşme en iyi ihtimalle küçük</text>
+
+  <text x="24" y="214" font-size="13" font-weight="bold" fill="var(--accent)">kelime vektörleri</text>
+  <text x="190" y="214" font-size="13" fill="var(--text-muted)">yerleşik iddia: sinir ağı vektörleri sayım tabanlıları geçiyor</text>
+  <text x="190" y="234" font-size="13" fill="var(--accent)">aynı tasarım ve ayar seçimleri sayım tabanlıya taşındığında: farklar</text>
+  <text x="190" y="254" font-size="13" fill="var(--accent)">çoğunlukla yerel ya da anlamsız, hiçbirinin genel üstünlüğü yok</text>
+
+  <line x1="20" y1="274" x2="700" y2="274" stroke="var(--border)" />
+  <rect x="20" y="286" width="680" height="38" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="310" font-size="13" fill="var(--text)">Puan farkı = yöntem farkı + arama bütçesi farkı; tablo bu ikisini ayırmaz.</text>
+
+  <text x="20" y="348" font-size="13" fill="var(--text-faint)">Üç satır da metinde anılan çalışmaların kendi sonuçlarından alındı.</text>
+</svg>

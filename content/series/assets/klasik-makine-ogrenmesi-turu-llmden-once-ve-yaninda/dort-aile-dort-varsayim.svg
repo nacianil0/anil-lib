@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 442" role="img" aria-label="Dört bloklu bir liste. Üstte şu cümle yazılıdır: bir yöntemi seçmek, verinin biçimi hakkında bir iddiada bulunmaktır. Her blok bir yöntem ailesini üç satırla anlatır: varsayım, maliyetin nerede olduğu ve varsayımın nerede kırıldığı. Birinci blok en yakın komşu: varsayım yakındaki noktaların aynı etikete sahip olması; maliyet eğitimde değil sorguda; kırıldığı yer yüksek boyutta uzaklık farklarının silinmesi. İkinci blok marj tabanlı ayırıcı: varsayım seçilen çekirdeğin uzayında sınıfların geniş marjla ayrılması; maliyet eğitimde dışbükey eniyileme, çıkarımda yalnızca destek vektörleri; kırıldığı yer çekirdek yanlış seçildiğinde hiçbir eniyilemenin kurtarmaması. Üçüncü blok ağaç toplulukları ve vurguludur: varsayım hedefin eksene paralel dilimlerde parçalı sabit olması; maliyet eğitimde ardışık bölmeler, çıkarımda çok ucuz; kırıldığı yer düzgün ve döndürülmüş yapılar ile dışarı doğru uzatma. Dördüncü blok k-ortalamalar: varsayım kümelerin yaklaşık küresel ve benzer yayılımda olması; maliyet yinelemeli atama ve taşıma, etiket gerekmemesi; kırıldığı yer uzun, ince ya da iç içe kümeleri bulamaması. Altta bir kutuda şu cümle durur: iddia yanlışsa yöntemin modernliği işe yaramaz, her satırın kırılma noktası kimliğidir. En altta bir kayıt: satırlar metinde anılan kaynakların kendi kurulumlarından derlenmiştir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Bir yöntemi seçmek, verinin biçimi hakkında bir iddiada bulunmaktır.</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text)">en yakın komşu</text>
+  <text x="200" y="70" font-size="13" fill="var(--text)">varsayım: yakındaki noktalar aynı etikete sahiptir</text>
+  <text x="200" y="90" font-size="13" fill="var(--text-muted)">maliyet: eğitim yok, bütün maliyet sorguda</text>
+  <text x="200" y="110" font-size="13" fill="var(--text-muted)">kırılır: yüksek boyutta uzaklık farkları silinir</text>
+
+  <text x="24" y="142" font-size="13" font-weight="bold" fill="var(--text)">marj tabanlı ayırıcı</text>
+  <text x="200" y="142" font-size="13" fill="var(--text)">varsayım: çekirdeğin uzayında sınıflar geniş marjla ayrılır</text>
+  <text x="200" y="162" font-size="13" fill="var(--text-muted)">maliyet: eğitimde dışbükey eniyileme, çıkarımda destek vektörleri</text>
+  <text x="200" y="182" font-size="13" fill="var(--text-muted)">kırılır: çekirdek yanlışsa hiçbir eniyileme kurtarmaz</text>
+
+  <text x="24" y="214" font-size="13" font-weight="bold" fill="var(--accent)">ağaç toplulukları</text>
+  <text x="200" y="214" font-size="13" fill="var(--accent)">varsayım: hedef eksene paralel dilimlerde parçalı sabittir</text>
+  <text x="200" y="234" font-size="13" fill="var(--text-muted)">maliyet: eğitim ardışık bölmelerde, çıkarım çok ucuz</text>
+  <text x="200" y="254" font-size="13" fill="var(--text-muted)">kırılır: düzgün ve döndürülmüş yapılarda, dışarı uzatmada</text>
+
+  <text x="24" y="286" font-size="13" font-weight="bold" fill="var(--text)">k-ortalamalar</text>
+  <text x="200" y="286" font-size="13" fill="var(--text)">varsayım: kümeler yaklaşık küresel ve benzer yayılımdadır</text>
+  <text x="200" y="306" font-size="13" fill="var(--text-muted)">maliyet: yinelemeli atama ve taşıma, etiket gerekmez</text>
+  <text x="200" y="326" font-size="13" fill="var(--text-muted)">kırılır: uzun, ince ya da iç içe kümeleri bulamaz</text>
+
+  <line x1="20" y1="346" x2="700" y2="346" stroke="var(--border)" />
+  <rect x="20" y="358" width="680" height="38" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="382" font-size="13" fill="var(--text)">İddia yanlışsa yöntemin modernliği işe yaramaz; kırılma noktası kimliğidir.</text>
+
+  <text x="20" y="422" font-size="13" fill="var(--text-faint)">Satırlar metinde anılan kaynakların kendi kurulumlarından derlendi.</text>
+</svg>

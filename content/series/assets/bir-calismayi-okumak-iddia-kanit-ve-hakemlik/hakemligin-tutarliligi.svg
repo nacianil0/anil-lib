@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 348" role="img" aria-label="İki sütunlu bir karşılaştırma ve altında bir kutu. Üstte aynı bildirilerin iki bağımsız komiteye verildiği ve bunun NeurIPS'in kendi deneyi olduğu yazılıdır. Sütunlar NeurIPS 2014 ve NeurIPS 2021 deneyleridir. Birinci satır çift değerlendirilen bildiri sayısı: 2014'te 116, 2021'de 882. İkinci satır kabul veya ret kararında anlaşmazlık oranı: 2014 için bildirilmemiş, 2021 için yüzde 23. Üçüncü satır vurguludur: bir komitenin kabul ettiği bildirilerden öbür komitenin reddettiklerinin oranı 2014'te yüzde 49,5, 2021'de yüzde 50,6. Dördüncü satır rastgele bir komiteye göre görece iyileşme: 2014 için bildirilmemiş, 2021 için yüzde 35. Alttaki kutuda 2021 deneyinin eşik çözümlemesi durur: eşik seçicileştikçe süreç rastgeleye yaklaşıyor. Yalnızca sözlü ve öne çıkan sunumlar kabul edilseydi kabul edilenlerin yüzde 88,8'i reddedilirdi ve iyileşme yalnızca yüzde 8 olurdu; poster eşiği bir kademe aşağı çekilseydi oran yüzde 63,2 ve iyileşme yüzde 25 olurdu; gerçek eşikte oran yüzde 50,6 ve iyileşme yüzde 35. En altta bir kayıt: sayılar 2021 deneyinin raporundan alınmıştır ve o rapor hakemlikten geçmemiştir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı bildiriler iki bağımsız komiteye verildi — NeurIPS'in kendi deneyi</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="380" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">NeurIPS 2014</text>
+  <text x="560" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">NeurIPS 2021</text>
+
+  <text x="24" y="96" font-size="13" fill="var(--text)">çift değerlendirilen bildiri</text>
+  <text x="380" y="96" font-size="13" fill="var(--text)">116</text>
+  <text x="560" y="96" font-size="13" fill="var(--text)">882</text>
+
+  <text x="24" y="120" font-size="13" fill="var(--text)">kabul/ret kararında anlaşmazlık</text>
+  <text x="380" y="120" font-size="13" fill="var(--text-faint)">—</text>
+  <text x="560" y="120" font-size="13" fill="var(--text)">%23</text>
+
+  <text x="24" y="148" font-size="13" font-weight="bold" fill="var(--accent)">kabul edilenlerden öbürünün reddettiği</text>
+  <text x="380" y="148" font-size="13" font-weight="bold" fill="var(--accent)">%49,5</text>
+  <text x="560" y="148" font-size="13" font-weight="bold" fill="var(--accent)">%50,6</text>
+
+  <text x="24" y="172" font-size="13" fill="var(--text)">rastgele komiteye göre iyileşme</text>
+  <text x="380" y="172" font-size="13" fill="var(--text-faint)">—</text>
+  <text x="560" y="172" font-size="13" fill="var(--text)">%35</text>
+
+  <line x1="20" y1="190" x2="700" y2="190" stroke="var(--border)" />
+  <rect x="20" y="202" width="680" height="100" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="226" font-size="13" fill="var(--text)">2021 eşik çözümlemesi: eşik seçicileştikçe süreç rastgeleye yaklaşıyor.</text>
+  <text x="34" y="250" font-size="13" fill="var(--text-muted)">yalnızca sözlü ve öne çıkan sunumlar → %88,8 reddedilirdi (iyileşme %8)</text>
+  <text x="34" y="272" font-size="13" fill="var(--text-muted)">poster eşiği bir kademe aşağı → %63,2 reddedilirdi (iyileşme %25)</text>
+  <text x="34" y="294" font-size="13" fill="var(--text-muted)">gerçek NeurIPS 2021 eşiği → %50,6 reddedilirdi (iyileşme %35)</text>
+
+  <text x="20" y="330" font-size="13" fill="var(--text-faint)">Sayılar 2021 deneyinin raporundan alındı; o rapor hakemlikten geçmemiştir.</text>
+</svg>

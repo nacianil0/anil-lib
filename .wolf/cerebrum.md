@@ -19,6 +19,23 @@
 
 ## Key Learnings
 
+- [2026-09-10] BOUN Batch 10: **repo SVG denetleyicisi metin–metin çakışmasına bakmıyor**, yalnızca
+  viewBox taşmasına. İki panelli şemalarda sol panel başlığı sağ panelin üzerine binebiliyor ve bunu
+  yalnızca diyagramı tek tek render edip **görsel olarak incelemek** yakalıyor. Ek denetleyici:
+  `artifacts/b10-research/ortusme.py` (aynı yatay banttaki `text` kutularını karşılaştırır; karakter
+  genişliği tahmini yüzünden yanlış pozitif verebilir, render ile teyit gerekir).
+- [2026-09-10] Bu depoda **Playwright üst düzey `node_modules`'te yok** (pnpm sıkı yerleşim). Render
+  betikleri `@playwright/test`'ten `chromium` içe aktarmalı; `"playwright"` ERR_MODULE_NOT_FOUND verir.
+- [2026-09-10] Okuyucu teması **`data-theme` özniteliğiyle değil**, kök elemana eklenen `dark` / `sepia`
+  **sınıfıyla** uygulanıyor (`system` seçiliyken hiçbiri eklenmiyor). Tercihler `localStorage`'da
+  `anil-lib:reader-preferences:v1` anahtarında JSON olarak durur ve Playwright'ta `ctx.addInitScript`
+  ile yazılır. Temanın gerçekten uygulandığını `body` background-color ölçerek doğrula:
+  light `rgb(250,249,247)`, dark `rgb(18,20,23)`, sepia `rgb(244,239,228)`.
+- [2026-09-10] Dev sunucusuna gezinme ara sıra `net::ERR_NETWORK_CHANGED` veriyor; render betiklerinde
+  `page.goto` üç denemeli bir döngüde çağrılmalı.
+- [2026-09-10] E.W. Dijkstra arşivinin HTML transkripsiyonları **sayfalıdır**: EWD 123'ün ilk sayfası
+  5. bölümün başlığında biter, 6. bölüm (bankacı algoritması) `EWD123-2.html` adresindedir.
+
 - [2026-09-10] Seri Batch 22: aynı worktree'de **ikinci bir üretim oturumu** (BOUN serisi) eşzamanlı
   çalışabiliyor ve `artifacts/` altını temizleyebiliyor. Geçici ölçüm/araştırma betikleri artık oturum
   scratchpad'inde tutulmalı; `artifacts/` yalnızca run sonunda kalması istenen çıktılar için. Paralel oturum
@@ -302,6 +319,28 @@ ode_modules`, sonra kopyayi sil.
 - **Seri makalelerinde `reading_order` frontmatter'da zorunludur.** Unutulursa `tools/series/entegre-batch.cjs` dört makale için on altı hata birden verir ve hepsi aynı kökten gelir.
 
 
+- **AI serisi Batch 23 (95-98): erken makalenin olctugu sayi, ileri makalenin teoreminin girdisidir.**
+  2. makalede deneyle bulunan ogrenme orani esigi (3/14) 95'te 2/lambda teoreminin ozel hali olarak turetildi
+  ve ayni ondalik basamaga kadar tuttu. Bilincli formalizasyon (SOZLESME §3) icin en temiz kalip bu: yeni
+  kavrami anlatmadan once, okurun zaten sahip oldugu **olculmus** bir sayiyi teoremin cikti tarafina koy.
+- **Sekil alt metinleri kelime sayisina girmiyor.** `check-series-content.cjs`'in `countProseWords` islevi
+  gorsel sozdizimini tumden atar; uzun alt metinler taslagi dolu gosterir. Taslak biterken kelime sayisi
+  daima kapinin kendi islevini kopyalayan bir betikle olculmeli (`node -e` ile degil, dosyayla).
+- **Sekil alt metni ile SVG'nin `aria-label`'i betikle senkronlanmali.** Elle yazildiginda ikisi kacinilmaz
+  olarak ayrisiyor; kucuk bir Python betigi SVG'yi ayristirip `aria-label`'i markdown'daki `alt`'a kopyaliyor.
+- **`check-series-svg.cjs` sutun cakismasini ve kutu tasmasini gormuyor.** Ikinci bir olcer (ayni satirdaki
+  her metin cifti, sag/sol kenar, kutu ici `x + width`, alt pay >= 12, kapanmamis `var(`) zorunlu. Batch 22'de
+  PNG turu kusur bulmustu, Batch 23'te olcer buldu ve PNG turu temiz cikti — **iki kapi birbirinin yerine
+  gecmiyor.**
+- **Crossref klasik kunyeler icin en guvenilir kanal.** `api.crossref.org/works/<doi>` tek cagrida baslik,
+  dergi, cilt, sayi, sayfa, yil ve yazar veriyor. ACM/Springer/PNAS/MIT Press/IEEE/Elsevier DOI'lerinin
+  tarayiciya 403/202/"Client Challenge" donmesi **beklenen bot duvaridir** ve kunyeyi gecersiz kilmaz.
+- **Playwright ESM betiginden Windows mutlak yoluyla import edilemez;** `createRequire("file:///D:/...")` +
+  `require("@playwright/test")` kullanilmali.
+- **Ayni worktree'de paralel oturum varken `artifacts/` kullanilmamali.** Batch 23 butun calisma dosyalarini
+  oturum scratchpad'inde tuttu, build ve dev sunucusunu izole kopyada calistirdi, `.claude/launch.json`'i
+  okuyup kendi girdisini ekleyerek yazdi — cakisma yasanmadi.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
@@ -510,6 +549,19 @@ ode_modules`, sonra kopyayi sil.
 
 ## Decision Log
 
+- [2026-09-10] BOUN Batch 10, terim kararları: *livelock* Türkçeleştirilmedi, çünkü "canlı
+  kilitlenme" 30'da kurulan **canlılık özelliği** (*liveness*) terimiyle çakışıyor; *stack property*
+  için "kapsama özelliği" seçildi, çünkü "yığın" 10. makaleden beri *stack* demek. İkisinde de
+  ayrım metinde açıkça söylendi (SOZLESME §2 terim çakışması yasağı).
+- [2026-09-10] BOUN Batch 10: Coffman ve arkadaşlarının 1971 *System Deadlocks* çalışmasına
+  erişilemedi (ACM DL 403, iki ayna 403/404). Kilitlenmenin dört koşulu **OSTEP'in aktardığı biçimde**
+  verildi ve bu makalenin kaynakçasında açıkça yazıldı; uydurma atıf yapmak yerine aktarımın
+  ikinci elden olduğunu söylemek tercih edildi ve HANDOFF'a açık borç olarak geçirildi.
+- [2026-09-10] BOUN Batch 10, ilk kez **hiçbir taslak başlık değiştirilmedi**: 31, 32 ve 33'ün yol
+  haritasındaki adları makalelerin yaptığı işi zaten tam anlatıyordu, bu yüzden `roadmap.json` elle
+  düzenlenmeden `entegre-batch` doğrudan çalıştırıldı. Başlık genişletmesi bir ritüel değil, gerekçe
+  varsa yapılır.
+
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
 
 - [2026-08-30] Seri Batch 5: yayımlanmamış 24 ve 26 başlıklarındaki İngilizce sözcükler terim defterine uyarlandı ("Sohbet Formatı" → "Sohbet Biçimi", "Inference Ekonomisi" → "Çıkarım Ekonomisi"). Gerekçe: her ikisinin Türkçe karşılığı 1\. ve 12\. makalelerde kurulmuştu; başlık gövdenin kullanmadığı bir sözcüğü taşımamalı. `roadmap.json`'daki **faz** başlıklarına bilinçli olarak dokunulmadı: o katman İngilizce alan terimlerini (Inference, Reasoning, Retrieval, Test-Time Compute) tutarlı biçimde kullanıyor ve yalnızca birini çevirmek katmanı bozardı. Katmanın tümü kullanıcı kararına bırakıldı ve HANDOFF'a açık borç olarak yazıldı.
@@ -664,3 +716,13 @@ mümkün değil.
 - **Do-Not-Repeat — Server Action girişi:** `Promise.all([page.waitForNavigation(), click()])` deseni bu uygulamanın giriş formunda **çalışmaz** (POST bir belge gezinmesi değildir); `ctx.cookies()` boş döner. Doğrusu tıklayıp `page.waitForURL(...)` ile hedefi beklemektir. İkinci tuzak: `waitForURL(/\/boun$/)` giriş sayfasının kendi URL'sine (`/login?next=/boun`) de uyar — predicate kullan.
 - **Do-Not-Repeat — kırmızı `pnpm test` her zaman test hatası değildir:** Bu makinede paralel oturum varken worker havuzu `Zone Allocation failed - process out of memory` verebiliyor. Aynı ağaçta tek fork ile (`--pool=forks --poolOptions.forks.singleFork`) 599/599 geçti. Kırmızı görünce önce tek forkla tekrarla, sonra hata ara.
 - **Yöntem kazancı:** İddiaları kaba kuvvet **durum uzayı taramasıyla** doğrulamak bu konu ailesinde çok verimli: bayrak kilidi (57 durum, ihlal var) / test-and-set (5 durum, yok), filozoflar naif (82, kilitlenme var) / asimetrik (70, yok), üretici-tüketici kilit içte (10, yok) / dışta (14, var). Sayılar hem makalenin kanıtı hem de okurun yeniden üretebileceği bir alıştırma oldu.
+
+- **2026-09-10 — AI serisi Faz 11'in kategorisi `foundations` (karar #209).** Alternatifler
+  `safety-and-evaluation` (61-80: modelin guvenligi ve degerlendirilmesi) ve `case-studies` (114-115 icin
+  ayrilmis) idi. Faz 11 (98-102) literaturun kendisini konu ediniyor: nasil okunur, nasil tasarlanir, nasil
+  olculur, nasil tekrarlanir. Kategori konuyu degil **katmani** adlandirdigi icin (karar #200) ve bu katman
+  temel oldugu icin `foundations` secildi. Sonuc: okuma listesinde `foundations` yine iki obek (1-5, 91-98).
+- **2026-09-10 — 98'in basligi "Paper Nasil Okunur" yerine "Bir Calismayi Okumak" (karar #210).**
+  "Makale" kullanilamazdi cunku seri kendi birimlerine makale diyor; "calisma" sozcugu seri boyunca zaten
+  bu anlamda kullaniliyordu, dolayisiyla yeni terim kurulmadi. Faz 11'in roadmap aciklamasi da guncellendi.
+

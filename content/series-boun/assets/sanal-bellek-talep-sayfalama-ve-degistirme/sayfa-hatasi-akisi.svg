@@ -1,0 +1,46 @@
+<svg viewBox="0 0 720 315" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a33a-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Bir bellek erişiminin yolu: TLB, tablo, disk</text>
+
+  <rect x="15" y="45" width="110" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="70" y="67" font-size="13" text-anchor="middle" fill="var(--text)">sanal adres</text>
+  <line x1="125" y1="62" x2="161" y2="62" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+  <rect x="165" y="45" width="90" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="210" y="67" font-size="13" text-anchor="middle" fill="var(--text)">TLB</text>
+  <line x1="255" y1="62" x2="306" y2="62" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+  <text x="280" y="52" font-size="13" text-anchor="middle" fill="var(--text-muted)">isabet</text>
+  <rect x="310" y="45" width="150" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="385" y="67" font-size="13" text-anchor="middle" fill="var(--text)">fiziksel erişim</text>
+
+  <line x1="210" y1="79" x2="210" y2="106" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+  <text x="218" y="97" font-size="13" fill="var(--text-muted)">ıska</text>
+
+  <rect x="160" y="110" width="140" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="230" y="132" font-size="13" text-anchor="middle" fill="var(--text)">sayfa tablosu</text>
+  <line x1="300" y1="127" x2="346" y2="127" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+  <text x="323" y="104" font-size="13" text-anchor="middle" fill="var(--text-muted)">bulunma biti 1</text>
+  <rect x="350" y="110" width="230" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="465" y="132" font-size="13" text-anchor="middle" fill="var(--text)">TLB'ye yaz, komutu yenile</text>
+
+  <line x1="215" y1="144" x2="215" y2="171" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+  <text x="223" y="162" font-size="13" fill="var(--text-muted)">bulunma biti 0</text>
+
+  <rect x="160" y="175" width="150" height="34" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="235" y="197" font-size="13" text-anchor="middle" fill="var(--text)">SAYFA HATASI</text>
+  <line x1="310" y1="192" x2="346" y2="192" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+  <rect x="350" y="175" width="250" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="475" y="197" font-size="13" text-anchor="middle" fill="var(--text)">işletim sistemi diskten okur</text>
+
+  <line x1="475" y1="209" x2="475" y2="226" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a33a-ok)" />
+
+  <rect x="350" y="230" width="250" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="475" y="252" font-size="13" text-anchor="middle" fill="var(--text)">PTE'yi güncelle, yeniden dene</text>
+
+  <text x="15" y="286" font-size="13" fill="var(--text)">Disk erişimi sürerken süreç engellenmiş durumdadır; işlemci başka bir sürece verilir.</text>
+  <text x="15" y="304" font-size="13" fill="var(--text-muted)">Sayfa hatası bir tuzaktır: donanım çözemediği durumda denetimi işletim sistemine verir.</text>
+</svg>
