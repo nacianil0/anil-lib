@@ -161,10 +161,10 @@
       "title": "Matematiksel Omurga: Sezgiden İspata",
       "description": "Erken makalelerde sezgiyle kurulan kavramların bilinçli formalizasyonu.",
       "articles": [
-        { "order": 91, "title": "Vektörler ve Matrisler: Embedding'in Matematiği", "status": "planlandi" },
-        { "order": 92, "title": "Matrisin İçini Okumak: Rank, Özdeğer ve SVD", "status": "planlandi" },
-        { "order": 93, "title": "Olasılığın Dili: Dağılımlar, Beklenti ve MLE", "status": "planlandi" },
-        { "order": 94, "title": "Bilgi Kuramı: Entropi, Çapraz Entropi ve KL", "status": "planlandi" },
+        { "order": 91, "title": "Vektörler ve Matrisler: Embedding'in Matematiği", "status": "yayinda", "slug": "vektorler-ve-matrisler-embeddingin-matematigi" },
+        { "order": 92, "title": "Matrisin İçini Okumak: Rank, Özdeğer ve SVD", "status": "yayinda", "slug": "matrisin-icini-okumak-rank-ozdeger-ve-svd" },
+        { "order": 93, "title": "Olasılığın Dili: Dağılımlar, Beklenti ve En Büyük Olabilirlik", "status": "yayinda", "slug": "olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik" },
+        { "order": 94, "title": "Bilgi Kuramı: Entropi, Çapraz Entropi ve KL", "status": "yayinda", "slug": "bilgi-kurami-entropi-capraz-entropi-ve-kl" },
         { "order": 95, "title": "Optimizasyonun Kuramı: Gradyanın Matematiği", "status": "planlandi" },
         { "order": 96, "title": "Genelleme Kuramı: Ezber ile Öğrenme Arasında", "status": "planlandi" },
         { "order": 97, "title": "Klasik Makine Öğrenmesi Turu: LLM'den Önce ve Yanında", "status": "planlandi" }

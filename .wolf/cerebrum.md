@@ -19,6 +19,28 @@
 
 ## Key Learnings
 
+- [2026-09-10] Seri Batch 22: aynı worktree'de **ikinci bir üretim oturumu** (BOUN serisi) eşzamanlı
+  çalışabiliyor ve `artifacts/` altını temizleyebiliyor. Geçici ölçüm/araştırma betikleri artık oturum
+  scratchpad'inde tutulmalı; `artifacts/` yalnızca run sonunda kalması istenen çıktılar için. Paralel oturum
+  kontrolü `netstat` ile sınırlı değil: `git status` (başka serinin dosyaları değişmiş mi) ve
+  `.wolf/memory.md`'nin son satırları da bakılmalı. `.claude/launch.json` ve `.wolf/*` paylaşılan durumdur —
+  temizlikte `git checkout` yerine dosyayı okuyup yalnızca kendi girdini çıkar.
+- [2026-09-10] Repo kapılarının sayısını **kabuk içi tek satırlık taklitle** doğrulama; kapının kendi işlevini
+  ayrı bir dosyaya birebir kopyala. `check-series-content.cjs`'in `countProseWords`'ü `node -e` içinde yazılınca
+  100-150 kelime fazla saydı ve dört makale de banttayım sanılırken kapıda kaldı.
+- [2026-09-10] `openreview.net/forum?id=…` bot doğrulama sayfası **200** döndürüyor, dolayısıyla bağlantı
+  kapısı yanlış bir kimliği doğru sanıyor. Kimlikler `api.openreview.net/notes/search` (2018-2020 gibi eski
+  mecralar) ve aynı yolun `api2` sürümü (yeni mecralar) ile doğrulanmalı; sorgular arasında 6-8 sn (429).
+- [2026-09-10] Uzun aralıklı geri çağırma yazarken **kaynak makalenin gövdesi okunmalı**, terim defteri yetmez.
+  91'in ilk taslağı, 4. makalenin zaten ölçümle yaptığı analoji tartışmasını tekrarlıyordu; makale
+  "aritmetik doğru mu" sorusundan "soru neden sorulabilir" sorusuna çevrilerek kurtarıldı.
+- [2026-09-10] `next start` (üretim) ile rota sweep'i yapılamaz: middleware devreye girip bütün rotaları
+  `/login`e yönlendiriyor ve `urllib` yönlendirmeyi izlediği için sweep sahte "hepsi 200" raporu üretiyor.
+  Sweep betiği durum kodunun yanında `resp.geturl()`i de karşılaştırmalı. Dev sunucusu ise 90+ rotayı tek
+  oturumda derlerken JavaScript yığınını tüketiyor; sweep dilimlenmeli.
+- [2026-09-10] Playwright ile okuyucu sayfası açarken `waitUntil: "networkidle"` kullanma: `/api/reader-sync`
+  sürekli yoklandığı için ağ hiç boşalmıyor ve zaman aşımı veriyor. `domcontentloaded` + sabit bekleme kullan.
+
 - [2026-09-09] Seri kaynakçasında **hash içeren konferans URL'si elle yazılmaz**. `papers.nips.cc/.../hash/<32 hex>` ve `proceedings.iclr.cc/.../hash/<32 hex>` biçimleri bellekten yazılınca doğru görünüp yanlış oluyor; Batch 19'da böyle üç bağlantı yakalandı. Yordam: `artifacts/b19-research/url-b19.py "başlık"` ile indirilmiş dizin sayfasından çöz, sonra `links-b19.py <makale.md>` ile bütün bağlantıları çekip `<title>` karşılaştır. ACM/IEEE/Springer 403/202 döndürüyorsa künye `doi-b19.py` (Crossref) ile doğrulanır.
 - [2026-09-09] **Venue doğrulamasında iki yeni kanal (Batch 20):** OpenReview arama ucu `https://api2.openreview.net/notes/search?term=A+B&source=forum&limit=6` `content.venue` alanında "COLM", "ICLR 2025 Poster", "CoRR 2024" gibi değerler döndürüyor ve hakemli/hakemsiz ayrımını tek başına verebiliyor (terimleri `+` ile ayır, 3-4 sn bekle; `content.venueid` filtresi 403). `https://iclr.cc/virtual/<yıl>/papers.html` ve `.../Conferences/<yıl>/AcceptedPapersInitial` ise proceedings.iclr.cc'nin vermediği 2023 ve öncesini kapatıyor. DBLP hâlâ kapalı, Semantic Scholar 429.
 - [2026-09-09] **Ön baskı başlığı ile yayımlanmış başlık farklı olabiliyor ve arama bu yüzden ıskalıyor.** Jamba'nın hakemsiz ön baskısı "…Language Model" (tekil), hakemli ICLR 2025 sürümü "…Language Models" (çoğul). Aynı biçimde PMLR slug'ı **yayımlanmış sürümdeki ilk yazardan** türer: eş-birinci yazarların sırası değişince `krajewski24a` yerine `ludziejewski24a` oluyor. `links-b20.py`'nin verdiği 404 yalnızca URL değil künye hatasına da işaret edebilir.
@@ -635,3 +657,10 @@ mümkün değil.
 - **Karar:** Seri künyelerinin hakemlilik doğrulaması artık tek bir servise (DBLP) bağlı değil; üç bağımsız kanalın kesişimine dayanıyor (konferans dizin sayfaları, arXiv `comment`/`journal_ref`, PDF yayın satırı) ve dördüncü kanal olarak Crossref DOI'li mecralar için kullanılıyor. Gerekçe: DBLP bir bot doğrulama katmanının arkasına geçti ve bu run'da hiç kullanılamadı.
 - **Ölçülen kazanç:** Düzen altı künyeyi düzeltti (Kantamneni ve AxBench ICML 2025, Paulo & Belrose ve Heap ICLR 2026, Ruan NeurIPS 2024, Hernandez COLM 2024) ve 84 kaynağın 72'sini hakemli olarak doğruladı — serinin en yüksek oranı.
 - **Bilinen boşluk:** COLM'un kabul listesi hiçbir kanaldan doğrulanamıyor; COLM şablonuyla dağıtılan bildiriler hakemsiz sayılıyor (Batch 17'deki Krumdick kararının aynısı, Batch 18'de Snell'e uygulandı).
+
+### Batch 9 (BOUN 28-30): birincil kaynak, alt metin ve render tuzakları (2026-09-10)
+- **Karar:** BOUN serisinde ilk kez ders kitabı yerine **problemi ortaya atan özgün metinler** birincil kaynak yapıldı (Dijkstra EWD 123 ve EWD 310, Lamport 1977). Kazanç somut: kritik kesimin üç koşulu, P/V tanımları ve "bekleyen uyuyabilir" argümanı ikinci elden değil kaynağından alındı; ayrıca OSTEP'in filozofları Dijkstra'ya bağlayan atfının kaynakla uyuşmadığı görüldü ve makale bu farkı açıkça yazdı. **Bedeli:** EWD PDF'leri taranmış görüntüdür (metin katmanı yok), arşivin HTML transkripsiyonları kullanılmalıdır.
+- **Do-Not-Repeat — alt metin şekli anlatmak zorundadır:** Diyagram ekran görüntüleri tek tek incelenmeden alt metne güvenilemez. Bu run'da üç alt metin, şekilde **olmayan** bir etiketi anlatıyordu ya da altta duran bir sayıyı "sağında" diyordu. İçerik ve SVG denetleyicileri bu sınıfı yakalamaz; yalnızca görsel inceleme yakalar. Gövde düzeltilince `sync-series-hashes --write` tekrar çalıştırılmalı ve dev sunucusu yeniden başlatılmalıdır.
+- **Do-Not-Repeat — Server Action girişi:** `Promise.all([page.waitForNavigation(), click()])` deseni bu uygulamanın giriş formunda **çalışmaz** (POST bir belge gezinmesi değildir); `ctx.cookies()` boş döner. Doğrusu tıklayıp `page.waitForURL(...)` ile hedefi beklemektir. İkinci tuzak: `waitForURL(/\/boun$/)` giriş sayfasının kendi URL'sine (`/login?next=/boun`) de uyar — predicate kullan.
+- **Do-Not-Repeat — kırmızı `pnpm test` her zaman test hatası değildir:** Bu makinede paralel oturum varken worker havuzu `Zone Allocation failed - process out of memory` verebiliyor. Aynı ağaçta tek fork ile (`--pool=forks --poolOptions.forks.singleFork`) 599/599 geçti. Kırmızı görünce önce tek forkla tekrarla, sonra hata ara.
+- **Yöntem kazancı:** İddiaları kaba kuvvet **durum uzayı taramasıyla** doğrulamak bu konu ailesinde çok verimli: bayrak kilidi (57 durum, ihlal var) / test-and-set (5 durum, yok), filozoflar naif (82, kilitlenme var) / asimetrik (70, yok), üretici-tüketici kilit içte (10, yok) / dışta (14, var). Sayılar hem makalenin kanıtı hem de okurun yeniden üretebileceği bir alıştırma oldu.

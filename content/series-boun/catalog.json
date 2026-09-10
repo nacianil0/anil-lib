@@ -544,6 +544,66 @@
       "path": "content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
+    },
+    {
+      "articleId": "article_fe3deee8-df80-4e54-be55-cc8ad74ac9b2",
+      "title": "CPU Zamanlama: Ölçütler, Kurallar ve Geri Besleme",
+      "slug": "cpu-zamanlama-olcutler-kurallar-ve-geri-besleme",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 28,
+      "summary": "Hazır kümesinde birden çok süreç varken çekirdek hangisini seçer? Önce ölçüt tanımlanır — dönüş süresi ve tepki süresi —, sonra kurallar önerilip karşı örnekle kırılır: FCFS ve konvoy etkisi, en kısa iş önce ve önkesmeli hâli, round-robin'in tepki süresini iyileştirip dönüş süresini bozması. Zaman dilimi ile bağlam anahtarı ek yükü arasındaki takas sayıyla; geleceği bilmeyen bir çizelgeleyicinin geçmişten öğrenmesi (çok seviyeli geri besleme kuyruğu), Linux'un vruntime ve kırmızı-siyah ağaç ile oranlı paylaşımı, çok işlemcide önbellek yakınlığı ve bir çizelgeleyicinin 'yeterince iyi' olduğunu ispatlamanın kalıbı.",
+      "tags": [
+        "cpu-zamanlama",
+        "donus-suresi",
+        "tepki-suresi",
+        "round-robin",
+        "geri-besleme-kuyrugu"
+      ],
+      "contentHash": "sha256:a0e280caf390c466cd7d5c0b6770b0abd8addf51df023cc1369dba8615db5024",
+      "path": "content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
+    },
+    {
+      "articleId": "article_1bc01092-4bf4-45a1-b988-21c19516d4d1",
+      "title": "Senkronizasyon: Kilit, Semafor ve Monitör",
+      "slug": "senkronizasyon-kilit-semafor-ve-monitor",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 29,
+      "summary": "Kritik kesim problemi kurulmuştu; burada çözülüyor. Dijkstra'nın 1965'te koyduğu üç koşul — karşılıklı dışlama, kritik kesimin dışındaki sürecin ötekileri engellememesi, kararın sonsuza ertelenememesi — ve bir kilidin korunan değişmez diliyle yazılan sözü. Kesmeleri kapatmanın çekirdek içindeki yeri ve dışarıdaki çaresizliği, yükle/sakla ile kurulan bayrağın kaba kuvvetle bulunan karşı örneği, test-and-set ile kurulan dönen kilit, sıra kilidiyle gelen sınırlı bekleme; dönmek ile uyumak arasındaki seçim, öncelik tersine dönmesi; semaforun tek sayaçla üç işi görmesi ve koşul değişkeninin neden kilidi parametre olarak alması gerektiği.",
+      "tags": [
+        "kritik-kesim",
+        "kilit",
+        "semafor",
+        "kosul-degiskeni",
+        "test-and-set"
+      ],
+      "contentHash": "sha256:019e1817b3751d335176dd21caa83428574f86a2804a4046fb8de8dd18b50c4f",
+      "path": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
+    },
+    {
+      "articleId": "article_52ac6ec5-db5f-4042-831a-5cbad0b4901e",
+      "title": "Klasik Eşzamanlılık Problemleri: Çözümü Savunmak",
+      "slug": "klasik-eszamanlilik-problemleri-cozumu-savunmak",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 30,
+      "summary": "Üç klasik problem birer bulmaca değil, birer sınavdır. Önce ispatın iki yarısı adlandırılıyor: güvenlik özelliği 'kötü bir şey olmaz', canlılık özelliği 'iyi bir şey olur' der ve bu ikisi kısmi doğruluk ile sonlanmanın eşzamanlılık karşılığıdır. Sınırlı tamponlu üretici-tüketici dört adımda kuruluyor ve her adımda bir hata kırılıyor: kilit tek başına yetmez, koşul if ile değil while ile denetlenir, tek koşul değişkeni herkesi uyutur, semaforlarda kilidin sırası kilitlenme üretir. Ardından okuyucu-yazar kilidinin adalet açığı ve yemek yiyen filozofların beklenenler döngüsü — kaba kuvvetle taranmış durum uzaylarıyla.",
+      "tags": [
+        "uretici-tuketici",
+        "okuyucu-yazar",
+        "yemek-yiyen-filozoflar",
+        "guvenlik-ve-canlilik",
+        "kilitlenme"
+      ],
+      "contentHash": "sha256:7d340a62897b07dca909df276948b5c7ee7710f98f3886b8b096cf0dcd6e9b8d",
+      "path": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 9
     }
   ]
 }

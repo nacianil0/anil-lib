@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 296" role="img" aria-label="İki panel yan yana. Sol panel başlığı koordinat listesi: üç sayılık dikey bir liste, sırasıyla 0,2 ve 0,9 ve 0,9. Yanında bu okumanın doğal kıldığı sorular yazılıdır: kaç bayt tutuyor, bellekten nasıl okunur, karta nasıl iletilir. Sağ panel başlığı uzayda yön: başlangıç noktasından çıkan bir ok çizilidir ve yanında bu okumanın doğal kıldığı sorular yazılıdır: uzunluğu ne kadar, iki ok arasındaki açı ne, iki oku topla ve farkı al. Ortada iki panelin aynı üç sayıyı gösterdiği yazılıdır. Altta bir kayıt: uzayı uzay yapan şey sayıların kendisi değil, üzerlerinde tanımlı toplama ve sayıyla çarpma işlemleridir.">
+  <rect x="20" y="34" width="320" height="186" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="380" y="34" width="320" height="186" fill="var(--surface-muted)" stroke="var(--border)" />
+
+  <text x="34" y="56" font-size="13" font-weight="bold" fill="var(--text)">koordinat listesi</text>
+  <text x="394" y="56" font-size="13" font-weight="bold" fill="var(--text)">uzayda yön</text>
+
+  <rect x="34" y="70" width="66" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="67" y="92" font-size="13" text-anchor="middle" fill="var(--text)">0,2</text>
+  <text x="67" y="115" font-size="13" text-anchor="middle" fill="var(--text)">0,9</text>
+  <text x="67" y="138" font-size="13" text-anchor="middle" fill="var(--text)">0,9</text>
+
+  <text x="116" y="90" font-size="13" fill="var(--text-muted)">doğal sorular</text>
+  <text x="116" y="112" font-size="13" fill="var(--text)">kaç bayt tutuyor</text>
+  <text x="116" y="132" font-size="13" fill="var(--text)">bellekten nasıl okunur</text>
+  <text x="116" y="152" font-size="13" fill="var(--text)">karta nasıl iletilir</text>
+
+  <line x1="394" y1="146" x2="470" y2="146" stroke="var(--border)" />
+  <line x1="394" y1="146" x2="394" y2="76" stroke="var(--border)" />
+  <line x1="394" y1="146" x2="458" y2="86" stroke="var(--accent)" stroke-width="2" />
+  <polygon points="458,86 444,88 452,97" fill="var(--accent)" />
+
+  <text x="486" y="90" font-size="13" fill="var(--text-muted)">doğal sorular</text>
+  <text x="486" y="112" font-size="13" fill="var(--text)">uzunluğu ne kadar</text>
+  <text x="486" y="132" font-size="13" fill="var(--text)">iki ok arasındaki açı</text>
+  <text x="486" y="152" font-size="13" fill="var(--text)">iki oku topla, farkı al</text>
+
+  <text x="34" y="180" font-size="13" fill="var(--text-faint)">aynı üç sayı</text>
+  <text x="34" y="202" font-size="13" fill="var(--text)">saklama ve iletme işi</text>
+  <text x="394" y="180" font-size="13" fill="var(--text-faint)">aynı üç sayı</text>
+  <text x="394" y="202" font-size="13" fill="var(--text)">öğrenmenin kurduğu yapı</text>
+
+  <line x1="20" y1="240" x2="700" y2="240" stroke="var(--border)" />
+  <text x="20" y="264" font-size="13" fill="var(--text-muted)">Uzayı uzay yapan şey sayıların kendisi değil, üzerlerinde tanımlı iki işlemdir:</text>
+  <text x="20" y="284" font-size="13" fill="var(--text-muted)">toplama ve sayıyla çarpma. Fark, yani yön, bu iki işlemden doğar.</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Tek bir hesabın üç satırda gösterimi. Üstte iki dağılım verilir: gerçek dağılım p'nin olasılıkları 0,5 ve 0,25 ve 0,25; modelin dağılımı q'nun olasılıkları 0,8 ve 0,19 ve 0,01. Birinci satır entropi H(p) eşittir 1,500 bit ve yanında bu terimin veriden geldiği, hiçbir modelin onu azaltamayacağı yazılıdır. İkinci satır çapraz entropi H(p,q) eşittir 2,421 bit ve yanında ağırlıkların p'den, şaşkınlıkların q'dan geldiği yazılıdır. Üçüncü satır KL ıraksaması eşittir 0,921 bit ve yanında bu terimin modelden geldiği, eğitimin düşürebildiği tek parça olduğu yazılıdır. Altta bir kutu içinde toplamın kendisi durur: kayıp eşittir verinin belirsizliği artı modelin fazladan ödediği ceza, sayılarla 1,500 artı 0,921 eşittir 2,421 bit. En altta iki kayıt: KL hiçbir zaman negatif olamaz ve yalnızca iki dağılım tıpatıp aynıysa sıfırdır; ve sayılar bu iki dağılımdan elle hesaplanmıştır.">
+  <text x="20" y="32" font-size="13" fill="var(--text)">gerçek dağılım p = (0,5 · 0,25 · 0,25)</text>
+  <text x="380" y="32" font-size="13" fill="var(--text)">modelin dağılımı q = (0,8 · 0,19 · 0,01)</text>
+  <line x1="20" y1="46" x2="700" y2="46" stroke="var(--border)" />
+
+  <text x="20" y="72" font-size="13" font-weight="bold" fill="var(--text)">entropi H(p)</text>
+  <text x="220" y="72" font-size="13" fill="var(--text)">1,500 bit</text>
+  <text x="330" y="72" font-size="13" fill="var(--text-muted)">veriden gelir — hiçbir model azaltamaz</text>
+
+  <text x="20" y="100" font-size="13" font-weight="bold" fill="var(--text)">çapraz entropi H(p,q)</text>
+  <text x="220" y="100" font-size="13" fill="var(--text)">2,421 bit</text>
+  <text x="330" y="100" font-size="13" fill="var(--text-muted)">ağırlıklar p'den, şaşkınlıklar q'dan</text>
+
+  <text x="20" y="128" font-size="13" font-weight="bold" fill="var(--accent)">KL ıraksaması</text>
+  <text x="220" y="128" font-size="13" fill="var(--accent)">0,921 bit</text>
+  <text x="330" y="128" font-size="13" fill="var(--text-muted)">modelden gelir — düşürülebilen tek parça</text>
+
+  <line x1="20" y1="148" x2="700" y2="148" stroke="var(--border)" />
+  <rect x="20" y="162" width="680" height="52" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="184" font-size="13" fill="var(--text)">kayıp = verinin belirsizliği + modelin fazladan ödediği ceza</text>
+  <text x="34" y="204" font-size="13" fill="var(--accent)">1,500 + 0,921 = 2,421 bit</text>
+
+  <text x="20" y="238" font-size="13" fill="var(--text-muted)">KL negatif olamaz; yalnızca iki dağılım tıpatıp aynıysa sıfırdır.</text>
+  <text x="20" y="264" font-size="13" fill="var(--text-faint)">Sayılar bu iki dağılımdan elle hesaplandı.</text>
+</svg>

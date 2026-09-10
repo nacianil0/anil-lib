@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 268" role="img" aria-label="Üç satırlı ve üç sütunlu bir matris gösterilir: birinci satır 1, 0, 1; ikinci satır 0, 1, 1; üçüncü satır 1, 1, 2. Sağında iki bağımlılık yazılıdır: üçüncü satır birinci ile ikincinin toplamıdır, üçüncü sütun da birinci ile ikincinin toplamıdır. Altta iki kutu vardır. Sol kutu boyut: üç çarpı üç, dokuz sayı saklanır. Sağ kutu rank: iki, yani iki bağımsız yön. En altta bir kayıt: dokuz sayının hepsini saklamak gerekmez, iki bağımsız yön ile onların karışım katsayıları matrisi eksiksiz belirler.">
+  <rect x="20" y="30" width="180" height="92" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="56" y="56" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="110" y="56" font-size="13" text-anchor="middle" fill="var(--text)">0</text>
+  <text x="164" y="56" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="56" y="82" font-size="13" text-anchor="middle" fill="var(--text)">0</text>
+  <text x="110" y="82" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="164" y="82" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="56" y="108" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="110" y="108" font-size="13" text-anchor="middle" fill="var(--accent)">1</text>
+  <text x="164" y="108" font-size="13" text-anchor="middle" fill="var(--accent)">2</text>
+
+  <text x="228" y="56" font-size="13" fill="var(--text-muted)">bağımlılıklar</text>
+  <text x="228" y="82" font-size="13" fill="var(--text)">3. satır = 1. satır + 2. satır</text>
+  <text x="228" y="108" font-size="13" fill="var(--text)">3. sütun = 1. sütun + 2. sütun</text>
+
+  <line x1="20" y1="142" x2="700" y2="142" stroke="var(--border)" />
+
+  <rect x="20" y="158" width="320" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="380" y="158" width="320" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="180" font-size="13" font-weight="bold" fill="var(--text)">boyut: 3 × 3</text>
+  <text x="34" y="202" font-size="13" fill="var(--text)">dokuz sayı saklanır</text>
+  <text x="394" y="180" font-size="13" font-weight="bold" fill="var(--accent)">rank: 2</text>
+  <text x="394" y="202" font-size="13" fill="var(--text)">iki bağımsız yön</text>
+
+  <text x="20" y="248" font-size="13" fill="var(--text-muted)">Dokuz sayının hepsini saklamak gerekmez: iki bağımsız yön ve karışım katsayıları yeter.</text>
+</svg>

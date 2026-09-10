@@ -1802,6 +1802,86 @@
       "path": "content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md",
       "relatedArticleIds": [],
       "classificationBatch": 21
+    },
+    {
+      "articleId": "article_db2ab73f-494b-438c-abe1-a116931e1cf8",
+      "title": "Vektörler ve Matrisler: Embedding'in Matematiği",
+      "slug": "vektorler-ve-matrisler-embeddingin-matematigi",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 91,
+      "summary": "4'te bir kelimeyi sayı listesine çevirmiştik; bu makale o listenin hangi matematiksel nesne olduğunu kuruyor. Bir vektör uzayını uzay yapan şey iki işlemdir ve 'kral eksi erkek artı kadın' sorusu ancak o iki işlem tanımlıysa sorulabilir. Matris, bir doğrusal dönüşümün bir tabanda yazılmış hâlidir ve sütunları taban vektörlerinin nereye gittiğini söyler; embedding tablosundan satır okumak, biçimsel olarak tek-sıcak bir vektörle matris çarpmaktır. Benzerliğin üç cetveli — nokta çarpım, kosinüs, Öklit uzaklığı — aynı üçlü üzerinde birbirine zıt sıralamalar verebiliyor ve bu bir kusur değil, ölçünün tanımı. Uzayın gerçek biçimi resimlerdeki gibi değil: GPT-2'nin son katmanında rastgele iki kelime neredeyse tam kosinüs benzerliği veriyor, XLNet'te tek bir boyut beklenen benzerliğin yüzde 99'undan fazlasını taşıyor. Kapanışta aynı uzayın ikinci okunuşu var: skip-gram'ın öğrendiği şeyin bir matris ayrıştırması olduğu.",
+      "tags": [
+        "vektor-uzayi",
+        "dogrusal-donusum",
+        "kosinus-benzerligi",
+        "esyonsuzluk",
+        "matris-ayristirmasi"
+      ],
+      "contentHash": "sha256:d9e9e929c18b4abbc833ae1a7b053efbee565a7b49c3ac59ebb7eafbbc60638f",
+      "path": "content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 22
+    },
+    {
+      "articleId": "article_213d3970-cd5e-4300-9c48-576d86ef732b",
+      "title": "Matrisin İçini Okumak: Rank, Özdeğer ve SVD",
+      "slug": "matrisin-icini-okumak-rank-ozdeger-ve-svd",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 92,
+      "summary": "91'de matrisi bir dönüşüm olarak kurduk; bu makale o dönüşümün içindeki ikinci sayıyı — gerçekte kaç bağımsız yönde iş yaptığını — kuruyor. Dokuz sayı taşıyan bir matrisin iki bağımsız yönü olabiliyor; özdeğerlerin hepsi sıfır olan bir matris hiç de etkisiz olmayabiliyor. Tekil değer ayrışımı her matrisi dönme, gerdirme ve dönmeye ayırır; en iyi düşük ranklı yaklaşıklığı vermenin bedeli tam olarak kesilen ilk tekil değerdir. Ölçümler hem iddiayı destekliyor hem sınırlıyor: bir ağın ağırlıklarının yüzde 95'inden fazlası tahmin edilebiliyor, ama ham tekil değer kesmesi LLaMA 2-7B'nin perplexity'sini 5,47'den 18.192'ye çıkarıyor. Katman seçerek yüksek dereceli bileşenleri atmak ise doğruluğu 13,1'den 24,0'a taşıyor — çünkü Eckart–Young matrisi eniyiler, modeli değil.",
+      "tags": [
+        "rank",
+        "tekil-deger",
+        "ozdeger",
+        "dusuk-rank",
+        "matris-sikistirma"
+      ],
+      "contentHash": "sha256:b9d8a947f6b4a76e9542370ecc9a389844836e84a2b54516074a8e8a4b5b4cc6",
+      "path": "content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 22
+    },
+    {
+      "articleId": "article_5ccf1449-97fe-45dd-a94e-22955b50f637",
+      "title": "Olasılığın Dili: Dağılımlar, Beklenti ve En Büyük Olabilirlik",
+      "slug": "olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 93,
+      "summary": "5'ten beri modelin çıktısına 'olasılık dağılımı' diyoruz ve 10'dan beri ondan token çekiyoruz; bu makale o nesneyi biçimsel olarak kuruyor. Beklenti, seride onlarca kez 'beklenen şu' diye geçen kelimenin tek tanımıdır ve ortalama kayıptan kalibrasyon hatasına kadar hepsi odur. Kaybın neden başka bir şey değil de tam olarak o olduğunun cevabı en büyük olabilirlik ilkesinde: on atışta yedi tura gören bir modelin 0,7'yi seçmesi bir tercih değil, bir türev sonucudur. Softmax'ın üstel biçimi de keyfî değil — kısıtları sağlayan en az varsayımlı dağılım ailesinin biçimi. Kapanışta iki kestirim yan yana duruyor: 33'ün 1 eksi (1 eksi p) üzeri k hesabı ile Codex'in yansız tahmincisi aynı örneklemde 0,6513 ile 0,6602 veriyor ve fark tanımın kendisinden geliyor.",
+      "tags": [
+        "olasilik-dagilimi",
+        "beklenti",
+        "en-buyuk-olabilirlik",
+        "softmax",
+        "yansiz-tahminci"
+      ],
+      "contentHash": "sha256:6f30a14c1b18c01febdbe412192a3320f3b2a768e0212a5bfcb0c3a4b07a993a",
+      "path": "content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 22
+    },
+    {
+      "articleId": "article_6c52dde2-0990-4801-b79f-3f4bdf66cdb8",
+      "title": "Bilgi Kuramı: Entropi, Çapraz Entropi ve KL",
+      "slug": "bilgi-kurami-entropi-capraz-entropi-ve-kl",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 94,
+      "summary": "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 43,4'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli log n eksi (n eksi 1) bölü n nat.",
+      "tags": [
+        "entropi",
+        "capraz-entropi",
+        "kl-iraksamasi",
+        "perplexity",
+        "sikistirma"
+      ],
+      "contentHash": "sha256:a61743a26f09af80c0c3019a0116f4f8f0ab9ab8c64a3c5d8708e43d331c39b3",
+      "path": "content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 22
     }
   ]
 }

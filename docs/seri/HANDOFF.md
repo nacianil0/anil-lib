@@ -6,156 +6,157 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-10 · Durum: **1–90 yayında (kohort Batch 0 → Batch 21) · Faz 9 kapandı · Sıradaki: 91 (Faz 10'un açılışı 91–94)**
+Son güncelleme: 2026-09-10 · Durum: **1–94 yayında (kohort Batch 0 → Batch 22) · Faz 10 açıldı · Sıradaki: 95 (Faz 10'un kapanışı 95–97 + Faz 11'in açılışı 98)**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 90 — `enerji-maliyet-ve-cevresel-ayak-izi` |
-| Sıradaki güvenli başlangıç | Makale 91 ("Vektörler ve Matrisler: Embedding'in Matematiği"); run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 91, 92, 93 ve 94 üretilir; bu dörtlü **Faz 10'un açılışıdır** ve Faz 10 yedi makaledir (91–97), yani dörtlü fazı kapatmaz. **Bu dörtlüde bağlayıcı numaralı koordinat YOKTUR** — defterde açık kalan tek koordinat 101'dir ve bu banda düşmüyor. Devralınan numarasız işaret: 90 → Faz 10 ("serinin bir sonraki fazı": sezgiyle kurulan kavramların biçimsel yeniden kurulumu) ve 90 → 91 ("bir sonraki makale": bir kelimenin sayı dizisine çevrilmesi hangi matematiksel nesneyi kuruyordu). Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku **hâlâ tahsil edilmedi**; 101 uygun görünüyor, bu dörtlüde yeri yok |
-| Sıradaki kohort | `classification_batch: 22` |
+| Yayımlanan son makale | 94 — `bilgi-kurami-entropi-capraz-entropi-ve-kl` |
+| Sıradaki güvenli başlangıç | Makale 95 ("Optimizasyonun Kuramı: Gradyanın Matematiği"); run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 95, 96, 97 ve 98 üretilir; bu dörtlü **Faz 10'u kapatır (95–97) ve Faz 11'i açar (98)**. **Bu dörtlüde bağlayıcı numaralı koordinat YOKTUR** — defterde açık kalan tek koordinat 101'dir ve bu banda düşmüyor. Devralınan numarasız işaret: 94 → 95 ("bir sonraki makale": kaybı gerçekten azaltan mekanizma; 2'nin gradyan inişi ve 8'in çizelgeleri kuruldu ama neden işe yaradığı kurulmadı) ve 93 → "bir sonraki faz" (yanlılık ↔ oynaklık ayrımı; defterdeki 101'e gidiyor). Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku **hâlâ tahsil edilmedi**; pass@k'nın olasılıksal kimliği 93'te bilinçli formalizasyon olarak kuruldu, fakat 40'la eşleştirilmiş planlı tekrar 101'e devrediyor |
+| Sıradaki kohort | `classification_batch: 23` |
 | Rotalar | `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu) |
 | İçerik sözleşmesi | `content/series/catalog.json` + `content/series/articles/**` + `content/series/assets/<slug>/*.svg` |
 | Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer |
-| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`; ek ölçerler `artifacts/b21-research/` altında: `scan-b21.py`, `svgcheck-b21.py`, `sweep-b21.py`, `shots-b21.cjs`, `refcheck-b21.py` (gövdedeki `N\. makale` kaçışlarını denetler), `idx-b21.py` (konferans dizinlerini indirir ve başlık arar), **`url-b21.py`** (dizinden mutlak URL çözme — hash URL'leri için zorunlu), **`acl-b21.py`** (ACL Anthology'de başlıktan URL; href'ler tırnaksız), **`links-b21.py`** (yayın öncesi bağlantı taraması), **`doi-b21.py`** (Crossref künye doğrulama), `venue-b21.py`, `hdr-b21.py`, `q.py` (kaynak metinlerde hızlı sorgu), `fetch-b21.py` (`REVERSE=1` ile ters kopya; kaynak listesi `items_b21.py`'de) |
-| Level bandı | 1–10 `beginner` (değişmez); 11'den itibaren `intermediate` (bağlayıcı karar #19) |
-| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–80 `safety-and-evaluation`; **81–90 `multimodal-and-future`** (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148, #160, #168, #176, **#192**). Okuma listesinde 61–80 tek öbek, 81–90 tek öbek; `reading-list-groups.test.ts` değişmedi. **Sıradaki run'da kategori sorusu VARDIR: Faz 10 (91–97) için kategori kararı 91'in run'ında verilecek.** Kontrollü sözlükte kullanılmamış tek kategori `case-studies`; Faz 10 matematiksel omurga olduğu için ona uymuyor, dolayısıyla mevcut kategorilerden biri seçilecek (`foundations` ile `models-and-training` en yakın adaylar; karar gerekçesiyle birlikte YOL-HARITASI'na yazılır) |
+| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`. **Batch 22'nin ek ölçerleri kayboldu** (bkz. Açık borçlar); Batch 21'in `artifacts/b21-research/` dizini de silindi. Yeniden yazılması gerekenler ve ne yaptıkları: `scan` (kelime sayısı + yasaklı biçim + ileri gönderme taraması), `svgcheck` (aynı satırdaki metin çiftleri, kutu içi taşma, alt pay ≥ 12), `links` (her `[Bağlantı]` adresini çekip `<title>` yazar), `doi` (Crossref künye doğrulama), `idx` (konferans dizinlerini indirir ve başlık arar), `url` (dizinden mutlak/hash URL çözme), `refcheck` (`N\. makale` kaçışları), `sweep` (rota taraması — **dilimli** olmalı), `shots` (Playwright ile şekil PNG'leri), `wc` (repo kapısının kelime sayısının birebir kopyası) |
+| Level bandı | 1–10 `beginner`; 11–90 `intermediate`; **91'den itibaren `advanced`** (bağlayıcı kararlar #19 ve **#201**) |
+| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–80 `safety-and-evaluation`; 81–90 `multimodal-and-future`; **91–94 yine `foundations`** (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148, #160, #168, #176, #192, **#200**). Okuma listesinde `foundations` artık **iki öbek** (1–5 ve 91–94); `reading-list-groups.test.ts` bunu zaten sınıyordu ve değiştirilmedi. **Sıradaki run'da kategori sorusu VARDIR:** 95–97 Faz 10'un devamı olarak `foundations` kalır, fakat **98 Faz 11'i (Araştırma Pratiği: Kanıtla Düşünmek) açıyor** ve onun kategorisi 98'in run'ında karara bağlanacak. Kontrollü sözlükte kullanılmamış tek kalem hâlâ `case-studies`; Faz 11 araştırma pratiği olduğu için `foundations`'ın üçüncü öbeği ya da `safety-and-evaluation` (ölçüm bilimi tarafı) en yakın adaylar |
 
 ## Açık borçlar
 
+- **Araştırma çalışma dizinleri silindi — kaynak metinleri yok.** Batch 22'nin doğrulama turu sırasında
+  paralel bir oturum `artifacts/` altını temizledi (karar #208g); geriye yalnızca o oturumun kendi
+  `b9-research` dizini kaldı. Kaybolanlar: **b10–b21'in bütün araştırma dizinleri** (yüzlerce kaynak `.txt`,
+  konferans dizini HTML'leri, bütün ölçüm betikleri) ve b22'nin 86 kaynak metni. Yayımlanmış makaleler,
+  katalog, roadmap ve YOL-HARITASI etkilenmedi; kaybolan şey **çalışma malzemesi**. Sonraki run kendi
+  betiklerini sıfırdan yazmak ve gerekli kaynakları yeniden indirmek zorunda. Betiklerin ne yaptığı yukarıdaki
+  "Araçlar" satırında ve Batch 21–22 öğrenme notlarında kayıtlı.
 - **Faz başlıklarının dili — açık, karar verilmedi.** `roadmap.json`'daki faz başlıkları hâlâ İngilizce alan
   terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning ve Test-Time
   Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları terim defterine göre Türkçeleştiriliyor
   (kararlar #51, #52, #66, #86, #99, #108, #115, #121, #135, #148, #154, #155, #162, #163, #169, #170, #171,
-  #177, #178, #184, #185). Katmanın tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır.
-  Faz 8 ve Faz 9'un başlıkları zaten Türkçe.
-- **Yayımlanmamış başlıklardaki İngilizce sözcükler — sıradaki dörtlüde bir aday VAR.** 91'in taslak başlığı
-  "Vektörler ve Matrisler: **Embedding'in** Matematiği"; "embedding" terim defterinde Türkçeleştirilmeyen
-  kalemdir (4. makale, "gömme kullanılmaz"), dolayısıyla başlıkta kalması #108'in kısaltma/ödünç sözcük
-  sınıfına uyar — yine de karar 91'in run'ında açıkça verilmeli. 92 ("Rank, Özdeğer ve SVD"), 93 ve 94'ün
-  başlıkları sorunsuz. **Bandın dışında bekleyen aday hâlâ 108** ("Performans Mühendisliği: Attention'ı
-  Hızlandırmak") — 86'nın başlığı "Dikkatin Ötesi" yapıldığı için (#185) aynı sözcük 108'de de
-  Türkçeleştirilmeli görünüyor; karar 108'in kendi run'ında verilir. Başlık değişikliği entegrasyondan
-  **önce** `roadmap.json`'a yazılır.
+  #177, #178, #184, #185, **#202**). Katmanın tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır.
+  Faz 8, 9 ve 10'un başlıkları zaten Türkçe.
+- **Yayımlanmamış başlıklardaki İngilizce sözcükler — sıradaki dörtlüde aday YOK.** 95 ("Optimizasyonun Kuramı:
+  Gradyanın Matematiği"), 96 ("Genelleme Kuramı: Ezber ile Öğrenme Arasında"), 97 ("Klasik Makine Öğrenmesi
+  Turu: LLM'den Önce ve Yanında" — "LLM" #108'in kısaltma sınıfında) ve 98 ("Paper Nasıl Okunur: İddia, Kanıt
+  ve Hakemlik") başlıkları sorunsuz görünüyor. **Uyarı:** 98'deki "Paper" sözcüğü Türkçede yerleşik bir
+  karşılığa sahip ("makale") ve #99'un ölçütüne göre **Türkçeleştirilmeli görünüyor**; ama serinin kendisi
+  "makale" sözcüğünü kendi birimleri için kullanıyor, dolayısıyla başlıkta çakışma riski var — karar 98'in
+  kendi run'ında verilmeli. **Bandın dışında bekleyen aday hâlâ 108** ("Performans Mühendisliği: Attention'ı
+  Hızlandırmak"). Başlık değişikliği entegrasyondan **önce** `roadmap.json`'a yazılır.
 - **Yayımlanmış numaralı vaatler:** bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış vaatler"dedir.
-  Batch 21 **bir numarasız işaret ödedi** (34 → 87: damıtmanın temel modelin sınırını aşması) ve 86'nın
-  "bir sonraki makale" devrini karşıladı; yeni koordinat açmadı. **Defterde açık kalan TEK koordinat: 101**
-  (ölçümün disiplini — 16 ve 22). Numarasız işaretler: 51 → 111, 49/53 → 115, 90 → Faz 10. Devrolan planlı
-  tekrar: 33/40'ın pass@k ile görev ufku **tahsil edilmedi ve devrolur** (101 daha uygun görünüyor).
-- **Prerequisite grafında 79–82 boşluğu.** YOL-HARITASI'ndaki graf satırları 78'de kesiliyor; Batch 19 kendi
-  dörtlüsünün satırlarını eklemedi. Batch 20 (83–86) ve Batch 21 (87–90) kendi satırlarını ekledi. Devrolan
-  eksik; ileride toplu kapatılabilir, hiçbir kapı buna bağlı değil.
+  Batch 22 **bir numarasız işaret ödedi** (13 → 94: KL ıraksamasının biçimsel kurulumu) ve 90'ın "serinin bir
+  sonraki fazı" devrini karşıladı; yeni koordinat açmadı. **Defterde açık kalan TEK koordinat: 101**
+  (ölçümün disiplini — 16 ve 22). Numarasız işaretler: 51 → 111, 49/53 → 115, 93 → "bir sonraki faz" (101).
+  Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku **tahsil edilmedi ve devrolur**.
+- **Prerequisite grafında 79–82 boşluğu.** YOL-HARITASI'ndaki graf satırları 78'de kesilip 83'ten devam
+  ediyor; Batch 19 kendi dörtlüsünün satırlarını eklememişti. Batch 20, 21 ve 22 kendi satırlarını ekledi.
+  Devrolan eksik; ileride toplu kapatılabilir, hiçbir kapı buna bağlı değil.
 - **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR hâlâ uygulanmadı; tam listeler
   repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
 - **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(15) önceki batch'lerden (kararlar #21, #97, #104, #106,
-  #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20 ve Batch 21'de doğrulanamayan
-  künye yok** (kararlar #191, #198). Batch 21'in tek kısıtı okunabilirlik tarafında: çatı çizgisi makalesinin
-  kamuya açık PDF'i bozuk yazı tipi kodlamasıyla çıkıyor ve sayıları bir yer değiştirme tablosuyla çözüldü;
-  yalnızca birbirini doğrulayan değerler kullanıldı (karar #199).
-- **Hakemsiz kaynak oranı Batch 21'de 48 kalemin 8'i (karar #198).** Yani 40 hakemli. Batch 20: 58/68,
-  Batch 19: 68/75. Kural değişmedi: hakemli karşılığı varsa o öne çıkar. **Bu run'ın dersi Batch 20'nin
-  dersinin tekrarı:** ön baskı başlığı ile yayımlanmış başlık farklı olabiliyor ve dizin araması bu yüzden
-  boş dönüyor — ICLR 2024'teki başlık "…Proprietary **Language Models**", ön baskı "…Proprietary LLMs".
-  İkinci ders yeni: **venue tahminini dosya adına yazma**; MELT çalışmasının anahtarı `mobisys` diye açılmıştı,
-  mecra MobiCom 2024 çıktı.
-- **DBLP kapalı (Batch 18'den beri), Semantic Scholar 429.** Venue doğrulaması `idx-b21.py` dizin düzeni +
-  OpenReview arama ucu + `iclr.cc` kabul listeleri + Crossref ile yapılır (aşağıda).
+  #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20, 21 ve 22'de doğrulanamayan
+  künye yok** (kararlar #191, #198, #207). Batch 22'nin kısıtları okunabilirlik tarafında: Kullback–Leibler 1951
+  ve Jaynes 1957'nin kamuya açık kopyaları taranmış görüntü olduğu için sayı alınmadı (Jaynes hiç
+  kullanılmadı); Harris 1954, Deerwester 1990 ve Fisher 1922 yalnızca künye düzeyinde anıldı (karar #208).
+- **Hakemsiz kaynak oranı Batch 22'de 50 kalemin 1'i (karar #207).** Yani 44 hakemli + 5 ders kitabı.
+  Batch 21: 40/48, Batch 20: 58/68. Kural değişmedi. **Faz 10'un kaynak profili beklendiği gibi değişti:**
+  klasik künyeler (1936–1992) ve ders kitapları payı yükseldi; ders kitabı kuralı (sayfa/bölüm numarası +
+  doğrulanabilir bağlantı) Axler, Bishop ve Jurafsky–Martin için uygulandı.
+- **DBLP kapalı (Batch 18'den beri), Semantic Scholar 429.** Venue doğrulaması konferans dizin sayfaları +
+  OpenReview API + Crossref ile yapılır (aşağıda).
 
-## Next batch preparation — 91'den devam (Faz 10'un açılışı: 91–94)
+## Next batch preparation — 95'ten devam (Faz 10'un kapanışı 95–97 + Faz 11'in açılışı 98)
 
-**Pedagojik hedefler.** Batch 21'in sonunda okuyucu şunu biliyor: aynı kaliteyi daha az kaynakla vermenin
-üçüncü yolu eğitimden geçiyor ve aktarılan şey etiket değil fonksiyondur — sıcaklık o fonksiyonu okunur kılar
-(67/146/74; hiç görülmemiş sınıfta yüzde 98,6), aynı boyuttaki öğrenci öğretmenini geçebiliyor
-(6,69 → 6,64 … ama 3,77 → 3,86), aynı bütçenin iki yolu ölçülmüş (60,3 ↔ 67,7) ve damıtmanın bir tavanı ile
-bir kapasite boşluğu var; geniş kapsamlı taklit biçimi aktarıyor içeriği değil (17 → 10 ↔ 22) ve sınırı aşmak
-öğretmenin nerede olduğuna bağlı (72,6 ↔ 47,0) — 87. Cihazda yığın birdir, dolayısıyla bulutun bütün servis
-mühendisliğinin paydası kayboluyor; dört kısıt aynı anda bağlıyor ve sınırı çoğu zaman ısı koyuyor (47,9 °C);
-bir üretim modelinin anatomisi kalem kalem okunabiliyor (2 bit, 4 bit, 8 bit, yüzde 37,5) ve daha az bit her
-zaman daha hızlı değil (yüzde 24,77) — 88. "Bayt başına 229 işlem" aslında sırt noktasıdır; hesap, bellek bandı
-ve iletişim bandı yirmi yılda 60.000 / 100 / 30 kat büyüdü; hızlandırıcıyı hızlı yapan şey çıkarılanlardır ve
-tepe hız ile ulaşılan hız ayrı sayılardır (yüzde 52); donanım hangi fikrin kazanacağını da etkiliyor — 89.
-Bir enerji sayısı dört halkalı bir zincirin çıktısıdır ve her halkada bir varsayım vardır; enerji ile karbon
-ayrı ölçülerdir (433 MWh / 25 ton ↔ 324 MWh / 70 ton); aynı istem iki sınırla 0,10 ve 0,24 vat-saat; birim
-düşerken toplam yükselebilir ve para ile enerji ayrı eğrilerdir — 90.
+**Pedagojik hedefler.** Batch 22'nin sonunda okuyucu şunu biliyor: bir embedding bir vektör uzayının öğesidir
+ve "kral eksi erkek artı kadın" sorusu ancak toplama ile sayıyla çarpma tanımlıysa sorulabilir; matris bir
+doğrusal dönüşümün bir tabanda yazılmış hâlidir ve sütunları taban vektörlerinin gittiği yerdir; benzerliğin üç
+cetveli aynı üçlüde zıt sıralama verebilir (30 ↔ 14, 0,600 ↔ 0,990, 8,06 ↔ 2,24) ve uzayın gerçek biçimi
+resimlerdeki gibi değildir (XLNet'te tek boyut beklenen benzerliğin yüzde 99'undan fazlası) — 91. Bir matrisin
+rankı boyutundan başkadır; özdeğer ile tekil değer ayrı sorular sorar; en iyi düşük ranklı yaklaşıklığın bedeli
+tam olarak kesilen tekil değerdir (16 + 4 = 20, yüzde 80) ve **teoremin "en iyi"si modelin "en iyi"si değildir**
+(5,47 → 18.192 ↔ 7,73; 13,1 → 29,2) — 92. Modelin çıktısı toplamı 1 olan bir dağılımdır; beklenti seride
+onlarca kez kullanılan sözcüğün tek tanımıdır; kayıp bir tercih değil en büyük olabilirliğin sonucudur
+(0,7 → 0,002224); softmax üstel çünkü en az varsayımlı ailenin biçimi; ve yerine koyma hesabı ile yansız
+tahminci aynı örneklemde 0,6513 ↔ 0,6602 verir — 93. Kaybın birimi bir şey sayar: çapraz entropi, verinin
+entropisi artı KL'dir (1,500 + 0,921 = 2,421); perplexity kaybın üstelidir (0,114 nat/token ↔ yüzde 12); kayıp
+aynı zamanda sıkıştırma oranıdır (yüzde 43,4 ↔ PNG 58,5); ve KL simetrik olmadığı için bir bütçedir
+(n = 1.000 → 5,909 nat) — 94.
 
-**Sıradaki makaleler ve prerequisite'ler.** Faz 10 bir **bilinçli formalizasyon** fazıdır (SOZLESME §3): erken
-makalelerde sezgiyle kurulan kavramlar burada biçimsel düzeyde yeniden kurulur ve bu tekrar sayılmaz.
-**91 ← 4** (embedding ve dağılımsal hipotez; vektör uzayının kendisi), 3 (katman = doğrusal dönüşüm + aktivasyon),
-6 (dikkatin nokta çarpımı: benzerliğin geometrisi), 7 (matris çarpımının mimarideki yeri), 42 (kosinüs benzerliği
-ve yoğun getirme), 89 (matris çarpımının donanımdaki ayrıcalığı — neden bu işlem). **92 ← 91**, 19 (LoRA'nın
-düşük ranklılığı: burada matematiği kuruluyor), 74–77 (yorumlanabilirliğin alt uzay dili), 87 (budama ve seyrek
-alt ağın rank okuması), 43 (ürün kuantizasyonu ve alt uzaylar). **93 ← 5** (dil modelleme hedefi; olasılık
-dağılımı), 2 (kayıp fonksiyonunun olasılıksal kimliği), 10 (örnekleme, sıcaklık ve çekirdek örnekleme),
-33 (kapsama = en az bir denemede başarı olasılığı), 65 (kalibrasyon). **94 ← 93**, 2 ve 5 (çapraz entropi ve
-perplexity'nin biçimsel kimliği), 9 (kayıp eğrilerinin birimi: nat/token), 13 (KL ıraksamasının tercih
-optimizasyonundaki yeri — 13'ün numarasız işareti burada tahsil edilebilir), 87 (damıtma kaybının KL biçimi).
+**Sıradaki makaleler ve prerequisite'ler.** 95–97 Faz 10'un kapanışı, 98 Faz 11'in açılışı.
+**95 ← 94** (kaybın ne olduğunu bildik, şimdi onu azaltan mekanizma), 2 (gradyan inişi ve öğrenme oranı),
+3 (geriye yayılım — zincir kuralının biçimsel kurulumu burada yapılabilir), 8 (gerçek koşuların çizelgeleri:
+ısınma, kosinüs sönümü, gradyan kırpma), 91 (gradyan bir **yön**dür — 91'in vektör uzayı dili doğrudan
+kullanılır), 92 (Hessian ve eğrilik: özdeğerlerin eniyilemedeki anlamı), 9 (kayıp eğrisinin okunması).
+**96 ← 2** (aşırı öğrenme ve çift iniş — 2'de ileri okuma notuydu, 9'da randevusu kapandı), 18 (ezber ↔
+genelleme gerilimi), 72 (kirliliğin ölçüme etkisi), 93 (en büyük olabilirliğin kusuru: sonlu veriyi en iyi
+açıklayan parametre), 94 (sıkıştırma ↔ genelleme bağı), 79 (dağılım kayması). **97 ← 96**, 1 ve 2 (modelin
+tanımı ve kayıp), 42/43 (kNN ve uzaklık ölçüleri — 91'in üç cetveli burada geri döner), 92 (temel bileşen
+çözümlemesi ve kümeleme), 16 (taban çizgisi kültürü). **98 ← 94 ve 96** (bir çalışmanın iddiasını okumak için
+kayıp/ölçüt dilinin kurulmuş olması), 16 (benchmark okuma), 71–73 (değerlendirme bilimi ve hakem modeller),
+45 (kaynak sadakati), 4 ve 91 (aynı bulgunun iki farklı okunuşu: Levy–Goldberg'in "sihir sinir ağında değil"
+sonucu bir hakemlik dersi olarak kullanılabilir).
 
 **Yeniden çağrılacak eski kavramlar (planlı hatırlatmalar):**
-- Embedding ve dağılımsal hipotez (4), nokta çarpım (6), kosinüs benzerliği (42) → 91.
-- Düşük ranklı uyarlama (19), alt uzay ve yön (74–77) → 92.
-- Örnekleme ve sıcaklık (10), kalibrasyon (65), kapsama (33) → 93.
-- Perplexity (5), çapraz entropi kaybı (2), KL cezası (13) → 94. **13'ün "KL ıraksamasının biçimsel kurulumu"
-  numarasız işareti 94'te tahsil edilmelidir** (YOL-HARITASI, Batch 2 numarasız işaretleri).
-- Devrolan planlı tekrarlar: pass@k (33) ve görev ufku (40) → 101 önerilir.
+- Gradyan inişi (2), geriye yayılım (3), çizelgeler ve kırpma (8) → 95.
+- Vektör uzayı ve yön (91), özdeğer ve eğrilik (92) → 95.
+- Çift iniş (2/9), ezber ↔ genelleme (18), kirlilik (72) → 96.
+- Sıkıştırma ↔ kayıp özdeşliği (94) → 96.
+- Uzaklık ölçüleri (42/43, 91), temel bileşen çözümlemesi (92) → 97.
+- Değerlendirme bilimi (16, 71–73) → 98.
+- Devrolan planlı tekrarlar: pass@k (33) ve görev ufku (40) → 101; yanlılık ↔ oynaklık (93) → 101.
 
-**Araştırılacak güncel akademik alanlar (91 için öncelikli):** bu faz klasik matematik üzerine kurulu olduğu
-için kaynak profili değişiyor — birincil kaynakların çoğu ders kitabı ve klasik makale olacak. 91 için: vektör
-uzayı ve doğrusal dönüşüm (Strang'ın ders kitabı; Axler), dağılımsal anlambilimin matematiği (Mikolov ve ark.
-word2vec; Pennington ve ark. GloVe EMNLP 2014; Levy & Goldberg NeurIPS 2014 — matris ayrıştırması bağlantısı),
-benzerlik ölçüleri ve norm seçimi, yüksek boyutta uzaklığın davranışı (Aggarwal ve ark. ICDT 2001),
-izotropi tartışması (Ethayarajh EMNLP 2019; Mu & Viswanath ICLR 2018). **92 için:** SVD ve düşük ranklı
-yaklaşım (Eckart–Young teoremi; Golub & Van Loan), LoRA'nın rank varsayımı (Hu ve ark. ICLR 2022 — 19'da
-kullanıldı), içsel boyut (Aghajanyan ve ark. ACL 2021), rastgele izdüşüm (Johnson–Lindenstrauss),
-seyrek otokodlayıcının doğrusal cebri (75'te kullanıldı). **93 için:** olasılık uzayı ve beklenti, en büyük
-olabilirlik (Fisher), üstel aile, örnekleme yöntemleri, kalibrasyonun olasılıksal tanımı (Guo ve ark. ICML 2017
-— 65'te kullanıldı). **94 için:** Shannon 1948, çapraz entropi ve KL'nin tanımı (Kullback & Leibler 1951),
-bilgi kuramının dil modellemedeki kullanımı (Brown ve ark. 1992 — "An Estimate of an Upper Bound for the
-Entropy of English"), perplexity'nin tanımı, ve KL'nin tercih optimizasyonundaki rolü (13'te kullanılan
-kaynaklar). Sayısal iddialar ve URL doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları
-SOZLESME §9'dadır. **Uyarı:** ders kitabı kaynakları için sayfa/bölüm numarası verilmeli ve doğrulanabilir bir
-bağlantı bulunmalı; bulunamıyorsa iddia kitaba değil, hakemli bir makaleye dayandırılmalı.
+**Araştırılacak güncel akademik alanlar (95 için öncelikli):** bu faz da klasik matematik üzerine kurulu.
+95 için: gradyanın tanımı ve yönlü türev (Axler'ın kitabı yetmez; Boyd–Vandenberghe'nin açık erişimli
+*Convex Optimization*'ı ve Nocedal–Wright uygun), SGD'nin yakınsama koşulları (Robbins–Monro 1951),
+momentum (Polyak 1964; Nesterov), Adam (Kingma & Ba ICLR 2015) ve Adam'ın yakınsama tartışması (Reddi ve ark.
+ICLR 2018), AdamW (Loshchilov & Hutter ICLR 2019), öğrenme oranı çizelgeleri (Smith 2017; Loshchilov & Hutter
+ICLR 2017), kayıp yüzeyinin biçimi (Li ve ark. NeurIPS 2018 — görselleştirme; Keskar ve ark. ICLR 2017 — geniş
+minimum tartışması, **hakemsiz değil, ICLR bildirisi**), gradyan gürültüsü ölçeği (McCandlish ve ark. 2018,
+hakemsiz), Muon/Shampoo gibi güncel ikinci mertebe yaklaşımlar (2024–2025 bildirileri; hakemli karşılığı
+aranmalı). **96 için:** bias-variance ayrışımı (Geman ve ark. 1992), çift iniş (Belkin ve ark. PNAS 2019;
+Nakkiran ve ark. ICLR 2020), rastgele etiket deneyi (Zhang ve ark. ICLR 2017 / CACM 2021), örtük
+düzenlileştirme, ölçek yasalarının genelleme okuması, ezberin ölçümü (Carlini ve ark.; 41 ve 72'de kullanıldı).
+**97 için:** karar ağaçları ve rastgele orman (Breiman 2001), gradyan artırma (Friedman 2001; Chen & Guestrin
+KDD 2016), destek vektör makineleri (Cortes & Vapnik 1995), kNN (Cover & Hart 1967 — Cover 94'te de geçti),
+k-ortalamalar (Lloyd 1982; Arthur & Vassilvitskii SODA 2007), tablo verisinde ağaçların üstünlüğü (Grinsztajn
+ve ark. NeurIPS 2022). **98 için:** hakemlik süreci ölçümleri (NeurIPS 2014 ve 2021 tutarlılık deneyleri),
+Ioannidis 2005, tekrarlanabilirlik anketleri, ön kayıt tartışması. Sayısal iddialar ve URL doğrulaması yazımdan
+bağımsız bir gözle çapraz denetlenir; süreç kuralları SOZLESME §9'dadır. **Uyarı:** ders kitabı kaynakları için
+sayfa/bölüm numarası verilmeli ve doğrulanabilir bir bağlantı bulunmalı (Batch 22'de Axler, Bishop ve
+Jurafsky–Martin için uygulandı).
 
 **Görselleştirme ihtiyaçları (öngörü):**
-- 91: aynı vektörün iki okunuşu — koordinat listesi ↔ uzaydaki yön; ve bir doğrusal dönüşümün ne yaptığı
-  (küçük, gerçekten hesaplanabilir bir matrisle).
-- 92: bir matrisin tekil değerlerinin düşüşü ve düşük ranklı yaklaşımın hangi bilgiyi attığı; LoRA'nın
-  parametre sayısının rankla nasıl değiştiği (ölçülmüş sayılarla).
-- 93: aynı dağılımın üç okunuşu (yoğunluk, beklenti, örnekleme) ve sıcaklığın dağılımı nasıl değiştirdiği.
-- 94: çapraz entropi ile KL'nin farkı tek şekilde — hangi terim modelden, hangi terim veriden geliyor;
-  ve perplexity'nin nat/token ile ilişkisi.
+- 95: aynı kaybın iki eniyileyiciyle izlediği yol (ölçülmüş sayılarla; ölçülmemiş eğri çizilmez) ve öğrenme
+  oranının tek bir adımda ne yaptığı (gerçekten hesaplanabilir küçük bir örnekle).
+- 96: aynı verinin iki okunuşu — model büyüdükçe eğitim hatası ve test hatası (çift inişin ölçülmüş hâli);
+  ve "ezber" ile "genelleme"nin aynı ölçüte iki farklı katkısı.
+- 97: aynı problemin dört yöntemle çözümü ve her birinin varsayımı (tablo); ağaçların tablo verisindeki
+  üstünlüğünün ölçülmüş hâli.
+- 98: bir bildirinin iddiası ile kanıtı arasındaki eşleşme haritası (hangi bölüm hangi iddiayı taşıyor).
 
-**Venue doğrulaması — düzen Batch 21'de iki kanal daha kazandı.** `artifacts/b21-research/idx-b21.py`:
-`python idx-b21.py fetch` konferans dizinlerini `idx/` altına indirir (bir kez), `python idx-b21.py "başlık" ...`
-hepsinde birden arar. **Çalışan kaynaklar:** `proceedings.iclr.cc/paper_files/paper/2024|2025|2026` (2023 ve
-öncesi 404), `papers.nips.cc/paper_files/paper/2014…2025`, `proceedings.mlr.press/v37…v267` (ICML 2015–2025;
-**v48 = ICML 2016 ve v54 = AISTATS 2017 bu run'da eklendi**; v306 = ICML 2026 hâlâ 404), `jmlr.org/tmlr/papers`,
-`openaccess.thecvf.com/CVPR2019…CVPR2025` ve `ICCV2019|2021|2023|2025`, `ecva.net/papers.php` (ECCV 2018–2024),
-`proceedings.mlsys.org/paper_files/paper/2020…2025`,
-`datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021`,
-**`aclanthology.org/events/acl-<yıl>` ve `events/emnlp-<yıl>`** (bu run'da eklendi; sayfalar 3–12 MB),
-**`iclr.cc/virtual/<yıl>/papers.html`** (2018, 2019, 2021, 2022, 2023 indi; 2015–2017 404).
-**Batch 21'de eklenen araç:** `acl-b21.py` — ACL Anthology sayfalarında `href` **tırnaksız** yazıldığı için
-(`href=/D16-1139/`) Batch 20'nin URL çözücüsü hiçbir şey bulamıyordu; ayrı bir regex gerekti.
-İkinci kanal `venue-b21.py`: arXiv API'nin `comment` ve `journal_ref` alanları + Crossref `query.bibliographic`
-+ OpenAlex (**not:** kaynak listesini artık `items_b21.py`'den okur). Üçüncü kanal `hdr-b21.py`: PDF ilk sayfa
-yayın satırı. `doi-b21.py` tek tek DOI doğrular. **OpenReview arama ucu** —
-`https://api2.openreview.net/notes/search?term=Kelime+Kelime&source=forum&limit=6` — bu run'da yine belirleyici
-oldu ve yayımlanmış başlığın ön baskıdan farklı olduğunu gösterdi; terimleri `+` ile ayır, ardışık sorgular
-arasında 3–4 sn bekle. **Tuzaklar:** PMLR slug'ı yayımlanmış sürümdeki ilk yazardan türer; ön baskı başlığı
-farklı olabilir; NeurIPS hash URL'si elle yazılmaz (`url-b21.py`); **venue tahmini dosya adına yazılmaz**
-(MELT `mobisys` diye açılmıştı, MobiCom çıktı). Batch 21'in kaynak metinleri `artifacts/b21-research/pdf/*.txt`
-altında (109 metin; sekizi Batch 20'den taşındı); PDF'ler build şişmesin diye silinir, `.txt`'ler yerinde
-kalır (`q.py` ile sorgulanır).
+**Venue doğrulaması — Batch 22'nin kanalları.** Konferans dizin sayfaları (`proceedings.iclr.cc/paper_files/
+paper/2024|2025|2026`, `papers.nips.cc/paper_files/paper/2013…2025`, `proceedings.mlr.press/v37…v267`,
+`aclanthology.org/events/{acl,emnlp,naacl}-<yıl>`, `iclr.cc/virtual/<yıl>/papers.html` (2018–2023),
+`openaccess.thecvf.com`, `proceedings.mlsys.org`, `jmlr.org/tmlr/papers`) indirilip metin içinde aranır.
+**Batch 22'nin dersi:** `openreview.net/forum?id=…` sayfası bot doğrulaması gösterip **200** döndürüyor,
+dolayısıyla yanlış bir kimlik de 200 verir; kimlikler `https://api.openreview.net/notes/search?term=…&source=
+forum&limit=8` (2018–2020 gibi eski mecralar) ve aynı yolun `api2` sürümü (yeni mecralar) ile tek tek
+doğrulanmalı, sorgular arasında 6–8 sn beklenmeli (429 veriyor). Doğrulanamayan kimlik `proceedings.iclr.cc`
+hash biçimine çevrilir ve hash **elle yazılmaz**, dizinden çözülür. Crossref (`api.crossref.org/works/<doi>`)
+klasik künyeler için birincil kanal; ACM, SIAM, AIP, Royal Society, Wiley ve MIT Press DOI'leri tarayıcıya
+403 döner ve bu beklenen bot duvarıdır. **Wiley DOI'lerindeki parantez markdown bağlantısını kırar**;
+yüzde kodlamasıyla yazılır. **Ön baskı ↔ yayımlanmış başlık farkı bu run'da iki kez daha çıktı** (Chinchilla
+ve Stiennon); dizinde bulunan başlık esastır.
 
-**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 22` ve `readingOrder` 91'den kesintisiz
+**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 23` ve `readingOrder` 95'ten kesintisiz
 devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir (başlık değişecekse
 entegrasyondan **önce**); YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri ve bağlayıcı
 kararlar güncellenir; doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni cursor ve sonraki run
-hazırlığıyla güncellenir. **Kategori sorusu VARDIR** (Faz 10) ve karar gerekçesiyle YOL-HARITASI'na yazılır;
-yeni bir kategori dizini açılacaksa `content/series/articles/<kategori>/` oluşturulur ve
-`reading-list-groups.test.ts` **mutlaka** çalıştırılır — Faz 9'un kapanmasıyla 81–90 tek öbek olarak
-tamamlandı, yeni bir kategori yeni bir öbek demektir.
+hazırlığıyla güncellenir. **Kategori sorusu VARDIR** (98 → Faz 11) ve karar gerekçesiyle YOL-HARITASI'na
+yazılır; yeni bir kategori dizini açılacaksa `content/series/articles/<kategori>/` oluşturulur ve
+`reading-list-groups.test.ts` **mutlaka** çalıştırılır. **Level `advanced` kalır** (karar #201).
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -169,124 +170,123 @@ Notlar: frontmatter **gray-matter ile** okunur; `catalog.json` 2 boşluklu `JSON
 round-trip yapar; `roadmap.json`'un kompakt satır biçimi satır bazlı replace ile korunur. **Sıra önemlidir:**
 `sync-series-hashes.cjs` katalog varsa yalnızca katalog kayıtlarını gezer, dolayısıyla yeni makalelerin hash'i
 ancak `entegre-batch --write`'tan **sonra** düzelir; frontmatter'a önce 64 sıfırlık yer tutucu hash yazmak
-sorun değildir. **`reading_order` frontmatter'da zorunludur ve unutulursa `entegre-batch` dört makale için
-on altı hata birden verir** (bu run'da oldu). Roadmap başlığı frontmatter başlığıyla birebir eşleşmek
-zorundadır. **Entegrasyondan sonra makale gövdesine her dokunuşta `sync-series-hashes.cjs --write` yeniden
-çalıştırılır.** SVG'nin **kendisi** hash'i etkilemez, şekil **alt metni** etkiler. Araçların üçü de varsayılan
-olarak yalnızca AI serisini işler.
+sorun değildir. `reading_order` frontmatter'da zorunludur. Roadmap başlığı frontmatter başlığıyla birebir
+eşleşmek zorundadır. **Entegrasyondan sonra makale gövdesine her dokunuşta `sync-series-hashes.cjs --write`
+yeniden çalıştırılır.** SVG'nin **kendisi** hash'i etkilemez, şekil **alt metni** etkiler. Araçların üçü de
+varsayılan olarak yalnızca AI serisini işler.
 
-**Yayın öncesi zorunlu taramalar.** `artifacts/b21-research/scan-b21.py <makale.md> <N>` tek komutta veriyor:
-kelime sayısı, parantezli gloss listesi, yasaklı biçimler (`gömme`, `korpus`, `geliştirme kümesi`, `niceleme`,
-`az/sıfır atışlı`, `çekişmeli`), **kendi numarası** ve **numaralı ileri gönderme** (≥ N+1) taramaları, bölüm
-başlıkları, "Kendini yokla" ve şekil sayısı. **Uyarı:** `scan-b21.py`'nin kelime sayısı şekil alt metinlerini de
-sayar, repo kapısı saymaz; bant kararı için `check-series-content.cjs`'in sayısına bakılır — pratik kestirim,
-düzyazının şekil sözdizimi ve bağlantı hedefleri çıkarılmış `wc -w`'sidir (Batch 21'de 2.004–2.389). İleri
-gönderme taramasının bulguları elle ayıklanır (yüzde, MATH-500 gibi ölçüt adları ve hata sayıları yanlış pozitif
-verir). **Ayrıca `refcheck-b21.py <makale.md> ...`** gövdedeki `N\. makale` göndermelerinin markdown kaçışını
-denetler (kaçışsız olan Markdown'da numaralı liste olur). SVG için **iki** kapı: `check-series-svg.cjs`
-(viewBox, sabit renk, yasak öge, font boyutu; genişlik tahmini **0,55 × font-size**) ve
-`artifacts/b21-research/svgcheck-b21.py <klasör>` (aynı satırdaki her metin çifti, kutu içi metnin `x + width`'i,
-sağ/sol kenar, alt pay ≥ 12 ve repo kapısının 0,55 tahmininin taklidi); ayrıca her SVG
-`python -c "import xml.etree.ElementTree as ET; ET.parse(f)"` ile ayrıştırılır ve `grep -c 'var(--[a-z-]*"'` ile
-kapanmamış `var(` parantezi aranır. **Bağlantı kapısı:** `links-b21.py <makale.md> ...` her `[Bağlantı](...)`
-adresini çeker ve `<title>`'ı yazar; ACM/IEEE/Science DOI'leri ve Nature 403 döndürür — bu beklenen bot
-duvarıdır ve künye Crossref'ten doğrulanır. **PNG turu Batch 21'de de kusur buldu** (yarım kalan bir hücre
-cümlesi ve etikete değen bir kılavuz çizgisi); geometri kapıları geçse de göz turu şart. **Ayrıca:** yeni bir
-ölçü çifti ya da yeni bir terim kurulacaksa YOL-HARITASI terim defterinin ilgili satırları **yazımdan önce**
-aranmalı; bu run'da uygulandı ve geri dönüş gerekmedi.
+**Yayın öncesi zorunlu taramalar.** Ölçer betikleri kaybolduğu için yeniden yazılmalı (yukarıdaki "Araçlar").
+Kapsam değişmedi: kelime sayısı, parantezli gloss listesi, yasaklı biçimler (`gömme`, `korpus`,
+`geliştirme kümesi`, `niceleme`, `az/sıfır atışlı`, `çekişmeli`), **kendi numarası** ve **numaralı ileri
+gönderme** (≥ N+1) taramaları, `N\. makale` kaçış denetimi, bölüm başlıkları, "Kendini yokla" ve şekil sayısı.
+**Kelime sayısı için kapının kendi işlevi kopyalanmalı:** `check-series-content.cjs`'in `countProseWords`'ü
+kaynakçayı, şekil sözdizimini, bağlantı hedeflerini ve liste/alıntı işaretlerini atar; kabuk içinde yazılan
+tek satırlık taklit Batch 22'de 100–150 kelime fazla saydı ve üç makale banttayım sanılırken kapıda kaldı.
+SVG için **iki** kapı: `check-series-svg.cjs` (viewBox, sabit renk, yasak öge, font boyutu; genişlik tahmini
+**0,55 × font-size**) ve yeniden yazılacak `svgcheck` (aynı satırdaki her metin çifti, kutu içi metnin
+`x + width`'i, sağ/sol kenar, alt pay ≥ 12); ayrıca her SVG `python -c "import xml.etree.ElementTree as ET;
+ET.parse(f)"` ile ayrıştırılır ve `grep -c 'var(--[a-z-]*"'` ile kapanmamış `var(` parantezi aranır.
+**Bağlantı kapısı:** her `[Bağlantı](...)` adresi çekilir ve `<title>`'ı yazılır. **PNG turu Batch 22'de de
+kusur buldu** (94-Şekil 1'in hizası); geometri kapıları geçse de göz turu şart. **Ayrıca:** yeni bir ölçü
+çifti ya da yeni bir terim kurulacaksa YOL-HARITASI terim defterinin ilgili satırları **yazımdan önce**
+aranmalı; ve uzun aralıklı geri çağırmada **kaynak makalenin gövdesi okunmalı** — Batch 22'de 91'in ilk
+taslağı 4. makalenin zaten yaptığı analoji tartışmasını tekrarlıyordu ve makale bu yüzden yeniden çerçevelendi.
 
-**Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch 21'de de
-3000–3999 arası dinleyen port yoktu; yine de izole kopya kullanıldı ve ana worktree'nin `.next` dizinine hiç
-dokunulmadı: `tar --exclude=./node_modules --exclude=./.next --exclude=./.git --exclude=./artifacts
---exclude=./.env.local -cf - . | (cd /d/dev/anil-lib-b21-render && tar xf -)`, junction PowerShell ile
-`New-Item -ItemType Junction -Path 'D:\dev\anil-lib-b21-render\node_modules' -Target 'D:\dev\anil-lib\node_modules'`,
-kopyada `corepack pnpm build` (exit 0; `/seri/[slug]` 90 yol, 139 statik sayfa), sonra kopyanın `.next`'i
-silinip `.claude/launch.json`'a geçici yapılandırma (`anil-lib-seri-b21`: Git Bash **tam yolu**, `-lc`,
-`export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b21-render && exec corepack pnpm dev -p 3210`).
-**launch.json'ı Bash heredoc ya da Python heredoc ile yazma:** `\\` çiftleri tek `\`'a iner; Write aracıyla yaz
-(Git Bash'in yolu bu makinede `%LOCALAPPDATA%\Programs\Git\usr\bin\bash.exe`). Kopyada `.env.local` olmadığı için
-kapı kendiliğinden kapalı. `typecheck` ve `test` ana worktree'de çalıştırıldı. **Kopya oluşturulduktan sonra ana
-worktree'de içerik değişirse dosyayı kopyaya senkronlamak yetmiyor:** dev sunucusu derlenmiş sayfayı önbelleğe
-aldığı için `preview_stop` + `preview_start` gerekiyor. Temizlik: **önce** `preview_stop`, sonra junction
-`cmd //c rmdir` ile kaldırılır, ardından ana `node_modules` doğrulanır (`node_modules/next/package.json`
-yerinde ve `pnpm test` yeşil), sonra kopya silinir; launch.json `git checkout -- .claude/launch.json` ile geri
-alınır. Kural değişmedi: **ana worktree'de `.next` silme, `pnpm build` ya da `next dev` başlatmadan önce
-`netstat` ve `tasklist` ile paralel süreç var mı bak.** Bash aracında `cd` bir komuttan sonrakine taşınır —
-her komut `cd /d/dev/anil-lib;` ile başlar; Python Windows'ta `/d/dev/...` yolunu tanımaz (`D:/...` verilir) ve
-konsola Türkçe basarken `sys.stdout.reconfigure(encoding="utf-8")` ister. **Bash aracında uzun Python
-heredoc'ları bazen ayrıştırma hatası veriyor** ("unexpected EOF while looking for matching"); uzun betikler
-Write aracıyla `artifacts/b21-research/` altına yazılıp `python <dosya>` ile çalıştırılmalı.
+**Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch 22'de
+`netstat` boş döndü ama **aynı worktree'de ikinci bir üretim oturumu vardı** (BOUN serisi) ve `artifacts/`
+altını sildi. Kontrol yalnızca porta bakmak değil: `git status` ile başka bir serinin dosyalarının değişip
+değişmediğine ve `.wolf/memory.md`'nin son satırlarına da bakılmalı. İzole kopya düzeni değişmedi:
+`tar --exclude=./node_modules --exclude=./.next --exclude=./.git --exclude=./artifacts --exclude=./.env.local
+-cf - . | (cd /d/dev/anil-lib-bNN-render && tar xf -)`, junction PowerShell ile
+`New-Item -ItemType Junction -Path 'D:\dev\anil-lib-bNN-render\node_modules' -Target 'D:\dev\anil-lib\node_modules'`,
+kopyada `corepack pnpm build`, sonra kopyanın `.next`'i silinip `.claude/launch.json`'a geçici yapılandırma
+(Git Bash **tam yolu**, `-lc`, `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-bNN-render && exec corepack
+pnpm dev -p 3210`). **launch.json'ı Bash ya da Python heredoc ile yazma:** `\\` çiftleri tek `\`'a iner;
+Write aracıyla yaz (Git Bash'in yolu bu makinede `%LOCALAPPDATA%\Programs\Git\usr\bin\bash.exe`).
+**Paralel oturum da launch.json'a yazıyor olabilir:** temizlikte `git checkout` yerine dosyayı okuyup yalnızca
+kendi girdini çıkar. Kopyada `.env.local` olmadığı için okuyucu kapısı kendiliğinden kapalı — **ama yalnızca
+`next dev`'de**; `next start` middleware'i devreye sokar ve bütün rotalar `/login`e yönlenir, dolayısıyla
+üretim sunucusuyla rota sweep'i yapılamaz. `typecheck` ve `test` ana worktree'de çalıştırıldı. **Kopya
+oluşturulduktan sonra ana worktree'de içerik değişirse dosyayı kopyaya senkronlamak yetmiyor:** dev sunucusu
+derlenmiş sayfayı önbelleğe aldığı için `preview_stop` + `preview_start` gerekiyor. Temizlik: **önce**
+`preview_stop`, sonra junction `cmd //c rmdir` ile kaldırılır, ardından ana `node_modules` doğrulanır
+(`node_modules/next/package.json` yerinde), sonra kopya silinir; launch.json kendi girdisinden arındırılır.
+Bash aracında `cd` bir komuttan sonrakine taşınır — her komut `cd /d/dev/anil-lib;` ile başlar; Python
+Windows'ta `/d/dev/...` yolunu tanımaz (`D:/...` verilir) ve konsola Türkçe basarken
+`sys.stdout.reconfigure(encoding="utf-8")` ister. **Bash aracında uzun Python heredoc'ları ayrıştırma hatası
+veriyor** ("unexpected EOF while looking for matching"); uzun betikler Write aracıyla **oturum
+scratchpad'ine** yazılıp `python <dosya>` ile çalıştırılmalı — `artifacts/` altına değil (bkz. Açık borçlar).
 
-**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 21'de PDF'ler build'den
-**önce** silindi (`artifacts/b21-research/pdf/*.pdf`); build zaten izole kopyada ve kopya `artifacts`'ı
-içermiyor. Kalanlar: `pdf/*.txt` (109), `idx/*.html` (ACL/EMNLP dâhil 65), `fetch-b21-report.json`, betikler,
-`shots/*.png` (24), `launch.json.orig`, loglar.
-
-**Render doğrulama seti (Batch 21'de kullanılan).** Rota sweep'i Python `urllib` ile (91 rota, 65,6 sn;
-`artifacts/b21-research/sweep-b21.py`), tarayıcı gezintisinden **önce**. Tarayıcı panosundan: `preview_start`
-(`anil-lib-seri-b21`) → `resize_window` ile **açık genişlik/yükseklik** (1440×900, 768×1024, 375×812; `preset:
-"desktop"` emülasyonu **temizler**, ölçüm için kullanılmaz) → `javascript_tool` ile tema döngüsü
-(`documentElement.classList` üzerinde `dark`/`sepia`) ve ölçüm (`scrollWidth > innerWidth`,
-figure/svg/figcaption/h2/blockquote sayıları, `main.innerText` içinde `undefined`/`NaN` ve ham i18n anahtarı
-deseni). **Ölçümden önce `await new Promise(r=>setTimeout(r,1800))` koy:** sayfa yerleşimi oturmadan okunan SVG
-genişliği yanlış çıkıyor (bu run'da 609 px okundu, oturunca 771 oldu). **`browser_batch` içindeki JSON'da regex
-kaçışlarına dikkat** — `\\.` gibi diziler "Unexpected end of input" veriyor; regex'i
-`new RegExp('[a-z]+[.][a-z]+[.][a-z]+','g')` gibi köşeli parantezle kur; Türkçe karakterleri JS dizesine
-`\u...` kaçışıyla koy. Ölçülen genişlikler: 1440'ta SVG 771 px, 768'de 676 px, 375'te 351 px — üçünde de yatay
-kaydırma yok. **Şekil görüntüleri Playwright'tan** (`shots-b21.cjs`; `#b21o` kaplayıcıda 1200 px klon,
-light/dark PNG): 12 şekil, 24 PNG, Read aracıyla incelendi.
+**Render doğrulama seti (Batch 22'de kullanılan).** Rota sweep'i Python `urllib` ile, **dilimli**: dev
+sunucusu 94 rotayı tek oturumda derlerken JavaScript yığınını tüketiyor (`Committing semi space failed`,
+85. rota civarı) ve `NODE_OPTIONS=--max-old-space-size` yardımcı olmuyor. 32 + 32 + 16 + 15 dilim, sunucu
+ayakta, toplam ~75 sn. Sweep betiği durum kodunun yanında `resp.geturl()`i de karşılaştırmalı; aksi hâlde
+`/login` yönlendirmesi sahte bir "hepsi 200" raporu üretir. Tarayıcı panosundan: `preview_start` →
+`resize_window` ile **açık genişlik/yükseklik** (1440×900, 768×1024, 375×812; `preset: "desktop"` emülasyonu
+**temizler**, ölçüm için kullanılmaz) → `javascript_tool` ile tema döngüsü (`documentElement.classList`
+üzerinde `dark`/`sepia`) ve ölçüm (`scrollWidth > innerWidth`, figure/svg/figcaption/blockquote sayıları,
+`main.innerText` içinde `undefined`/`NaN` ve ham i18n anahtarı deseni). **Ölçümden önce
+`await new Promise(r=>setTimeout(r,2000))` koy.** `browser_batch` içindeki JSON'da regex kaçışlarına dikkat —
+regex'i `new RegExp('[a-z]+[.][a-z]+[.][a-z]+','g')` gibi köşeli parantezle kur. Ölçülen genişlikler: 1440'ta
+SVG 771 px, 768'de 676 px, 375'te 351 px — üçünde de yatay kaydırma yok. **Şekil görüntüleri Playwright'tan**
+(kaplayıcıda 1200 px klon, light/dark PNG): 12 şekil, 24 PNG, Read aracıyla incelendi. Playwright ana
+worktree'de `node_modules/@playwright/test` altındadır (`require("D:/dev/anil-lib/node_modules/@playwright/test")`);
+`waitUntil: "networkidle"` **kullanılmaz** — okuyucu `/api/reader-sync`'i sürekli yokladığı için ağ hiç
+boşalmıyor ve zaman aşımı veriyor; `domcontentloaded` + sabit bekleme kullan.
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
 
 - `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı. `artifacts/**` altındaki betikler de lint
   kapsamındadır; bilinen durum.
 - Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama çevrimdışı moduna düşer —
-  beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur (Batch 21'de de yalnızca bu 503).
-- Ham HTML'de sayfa başına 39 "undefined" görünür; Next.js iskelesindendir ve yayımlanmış eski makalelerde de
+  beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur (Batch 22'de de yalnızca bu 503).
+- Ham HTML'de sayfa başına "undefined" görünür; Next.js iskelesindendir ve yayımlanmış eski makalelerde de
   aynıdır. `main.innerText` ölçümünde 0'dır — regresyon değil.
 - Mobil genişlikte diyagramlar kendi kaplarında ölçekleniyor; sayfa gövdesi taşmıyor.
 - `check-series-svg.cjs` yalnızca `y > viewBox yüksekliği` ve genişliğe karşı yatay taşmayı yakalar; **sütuna
-  binmeyi, kutudan taşmayı ve kapanmamış `var(` parantezini görmez** — bunun için `svgcheck-b21.py` ve grep
-  kapısı var. İki ölçerin karakter genişliği tahmini farklıdır (6,8 ↔ 7,15); repo kapısı daha muhafazakârdır.
-  **Hiçbiri yarım kalmış cümleyi ya da etikete değen çizgiyi görmez** — PNG turu bu yüzden zorunlu.
+  binmeyi, kutudan taşmayı ve kapanmamış `var(` parantezini görmez** — bunun için ayrı bir ölçer ve grep
+  kapısı gerekir (Batch 22'de kayboldu, yeniden yazılmalı). İki ölçerin karakter genişliği tahmini farklıdır
+  (6,8 ↔ 7,15); repo kapısı daha muhafazakârdır. **Hiçbiri hizası bozuk bir satırı ya da yarım kalmış bir
+  cümleyi görmez** — PNG turu bu yüzden zorunlu.
 - Okuma listesinde `reasoning-and-memory` ve `agents-and-retrieval` birden çok öbek hâlinde görünür (27–28, 29,
-  30–40, 41–60); `safety-and-evaluation` 61–80 tek öbek, `multimodal-and-future` 81–90 tek öbek. Kasıtlıdır;
-  `reading-list-groups.test.ts` bunu sınar.
+  30–40, 41–60); `safety-and-evaluation` 61–80 tek öbek, `multimodal-and-future` 81–90 tek öbek ve
+  **`foundations` iki öbek** (1–5, 91–94). Kasıtlıdır; `reading-list-groups.test.ts` bunu sınar.
 - Repoda ikinci bir seri (`content/series-boun/**`) ayrı bir üretim hattıyla ilerliyor; AI serisinin araçları o
-  dizine dokunmaz. Build iki seriyi birden derler.
-- Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa` izleniyor;
-  `**zorundadır**.` izlenmiyor). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
-- Batch 12–20'nin üretimi (51–86) kullanıcı tarafından commit edildi (20: `comma`/`3fd98b8`). **Batch 21
-  (87–90) çalışma ağacında commit edilmemiş** duruyor: dört makale ve dört varlık klasörü izlenmiyor;
-  `catalog.json`, `roadmap.json`, `HANDOFF.md`, `YOL-HARITASI.md` ve `.wolf/*` değişmiş durumda;
-  `artifacts/b21-research/` de izlenmiyor. Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
+  dizine dokunmaz. Build iki seriyi birden derler. **Batch 22 sırasında o hat aynı worktree'de eşzamanlı
+  çalışıyordu**; `artifacts/`, `.claude/launch.json` ve `.wolf/*` paylaşılan durumdur ve çakışabilir.
+- Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa`,
+  `**Bu`, `**zorundadır**.`). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
+- Batch 12–21'in üretimi (51–90) kullanıcı tarafından commit edildi. **Batch 22 (91–94) çalışma ağacında
+  commit edilmemiş** duruyor: dört makale ve dört varlık klasörü izlenmiyor; `catalog.json`, `roadmap.json`,
+  `HANDOFF.md`, `YOL-HARITASI.md` ve `.wolf/*` değişmiş durumda. Commit/push kullanıcı kararıdır
+  (SOZLESME kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
+- **Batch 22 (2026-09-10):** Makale 91–94, **Faz 10'un açılışı**: vektörler ve matrisler → rank, özdeğer ve SVD
+  → olasılık, beklenti ve en büyük olabilirlik → entropi, çapraz entropi ve KL. `BATCH=4+1`. Araştırma
+  (95 kalemlik liste iki fetch kopyasıyla, 86 metin), yazım, entegrasyon ve doğrulama ana oturumda,
+  workflow/subagent kullanılmadan yapıldı. **Faz 10'un kategorisi `foundations` (#200) ve level bandı
+  `advanced`'e geçti (#201)** — serinin ilk `advanced` kohortu. **13'ün numarasız işareti 94'te ödendi**
+  (KL ıraksamasının biçimsel kurulumu) ve 90'ın "serinin bir sonraki fazı" devri karşılandı; yeni koordinat
+  açılmadı. 93'ün başlığı Türkçeleştirildi (#202). Kararlar #200–#208. 50 kaynak kaleminin 44'ü hakemli,
+  5'i ders kitabı, 1'i hakemsiz. **İki künye düzeltildi:** Chinchilla'nın ve Stiennon'un NeurIPS'teki
+  yayımlanmış başlıkları ön baskılarından farklı; ayrıca elle tahmin edilmiş bir NeurIPS 2014 hash URL'si
+  dizinden düzeltildi ve iki OpenReview kimliği doğrulanamadığı için proceedings biçimine çevrildi.
+  Kapılar: `pnpm typecheck` (0), **605 test**, `pnpm build` (exit 0, `/seri/[slug]` 94 yol, 146 statik sayfa,
+  izole kopyada), 95 rotanın tamamı 200 (dört dilim, ~75 sn), dört makale × üç genişlik × üç temada DOM
+  ölçümü, 12 yeni diyagram Playwright ile light/dark PNG olarak alınıp gözle doğrulandı (PNG turu bir kusur
+  buldu ve düzeltildi). **Aynı worktree'de paralel bir BOUN oturumu çalışıyordu ve `artifacts/` altını
+  sildi** (karar #208g); kalan kapılar scratchpad'e yeniden yazılan betiklerle tamamlandı.
 - **Batch 21 (2026-09-10):** Makale 87–90, **Faz 9'un kapanışı**: damıtma ve küçük modeller → uçta yapay zekâ →
-  donanım ekosistemi → enerji, maliyet ve çevresel ayak izi. `BATCH=4+1`. Araştırma (100 kalemlik liste iki
-  fetch kopyasıyla, 94 yeni metin + Batch 20'den taşınan 8), yazım, entegrasyon ve doğrulama ana oturumda,
-  workflow/subagent kullanılmadan yapıldı. **34'ün numarasız işareti 87'de ödendi** (damıtmanın temel modelin
-  sınırını aşması) ve 86'nın "bir sonraki makale" devri karşılandı; yeni koordinat açılmadı, başlık
-  değiştirilmedi. Kararlar #192–#199. 48 kaynak kaleminin 40'ı hakemli. **İki künye düzeltildi:** ICLR 2024'teki
-  yayımlanmış başlık ön baskıdan farklı ("…Proprietary Language Models") ve MELT'in mecrası MobiCom 2024 (dosya
-  adındaki `mobisys` tahmini yanlıştı); ayrıca elle yazılmış bir NeurIPS 2014 hash URL'si `url-b21.py` ile
-  düzeltildi. Yeni araç: `acl-b21.py` (ACL Anthology'de tırnaksız `href`). Bir kaynak içi tutarsızlık
-  büyütülmeden atlandı (karar #196) ve bir şekil, ortalama ile ortancayı karıştırdığı için yeniden çizildi.
-  Kapılar: `pnpm typecheck` (0), **587 test**, `pnpm build` (exit 0, `/seri/[slug]` 90 yol, izole kopyada),
-  91 rotanın tamamı 200 (65,6 sn), dört makale × üç genişlik × üç temada DOM ölçümü (taşma 0, sızıntı yok),
-  12 yeni diyagram Playwright ile light/dark PNG olarak alınıp gözle doğrulandı (PNG turu iki kusur buldu ve
-  ikisi de düzeltildi). Paralel oturum görünmedi; build ve dev sunucusu izole kopyada
-  (`D:\dev\anil-lib-b21-render`, 3210), launch.json geri alındı, kopya ve junction silindi.
-- **Batch 20 (2026-09-09):** Makale 83–86, **Faz 9'un gövdesi**: difüzyonla görüntü ve video üretimi → birleşik
-  modeller ve "her şey token" iddiası → uzmanlar karışımı → dikkatin ötesindeki mimariler. `BATCH=4+1`.
-  **İki bağlayıcı koordinat birden kapandı** (20 → 85; 7 ve 15 → 86). İki başlık Türkçeleştirildi (#184, #185).
-  Kararlar #184–#191. 68 kaynak kaleminin 58'i hakemli. Beş künye düzeltildi; iki yeni doğrulama kanalı
-  kuruldu (OpenReview arama ucu ve `iclr.cc` kabul listeleri). 575 test, `pnpm build` (exit 0, 86 yol).
+  donanım ekosistemi → enerji, maliyet ve çevresel ayak izi. `BATCH=4+1`. **34'ün numarasız işareti 87'de
+  ödendi**; yeni koordinat açılmadı. Kararlar #192–#199. 48 kaynak kaleminin 40'ı hakemli. İki künye
+  düzeltildi. 587 test, `pnpm build` (exit 0, 90 yol).
+- **Batch 20 (2026-09-09):** Makale 83–86, **Faz 9'un gövdesi**. **İki bağlayıcı koordinat birden kapandı**
+  (20 → 85; 7 ve 15 → 86). Kararlar #184–#191. 68 kaynak kaleminin 58'i hakemli. 575 test.
 - **Batch 19 (2026-09-09):** Makale 79–82; **Faz 8 kapandı, Faz 9 açıldı**. Faz 9'un kategorisi
-  `multimodal-and-future` (#176); dört numarasız işaret ödendi (78 → 79, 72 → 79, 71/73 → 80, 54 → 81).
-  URL doğrulama kapısı eklendi. 563 test.
-- **Batch 18 (2026-09-09):** Makale 75–78, Faz 8'in ikinci yarısı. DBLP kapandığı için venue doğrulaması
-  konferans dizinlerine taşındı (#175). **74–77 bandı kapandı ve 78 koordinatı ödendi.** 551 test.
+  `multimodal-and-future` (#176); dört numarasız işaret ödendi. 563 test.
+- **Batch 18 (2026-09-09):** Makale 75–78, Faz 8'in ikinci yarısı. DBLP kapandı (#175). **74–77 bandı kapandı
+  ve 78 koordinatı ödendi.** 551 test.
 - **Batch 17 (2026-09-06):** Makale 71–74, Faz 8'in açılışı. Kategori `safety-and-evaluation` (#160).
   **72 koordinatı kapandı, 74–77 bandının ilk taksidi ödendi.** 519 test.
 - **Batch 16 (2026-09-06):** Makale 67–70, Faz 7'nin kapanışı. 20'nin iki koordinatı kapandı. 507 test.

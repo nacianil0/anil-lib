@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-09-01 · Yayında: 24 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5, 19–21 Batch 6, 22–24 Batch 7) · Sıradaki: 25
+Son güncelleme: 2026-09-10 · Yayında: 30 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5, 19–21 Batch 6, 22–24 Batch 7, 25–27 Batch 8, 28–30 Batch 9) · Sıradaki: 31
 
 ## Serinin tezi
 
@@ -68,9 +68,9 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 
 26. **İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim** — *yayında* · Faz D'nin açılışı ve sorunun "ne kadar hızlı"dan "bu makine kime ait"e dönmesi, sanallaştırma tanımı ve sanallaştırma/eşzamanlılık/kalıcılık üçlüsü, kaynak yöneticisi rolü, ilke ile düzenek ayrımının arayüz–temsil ayrımıyla aynı fikir olması, kütüphane tasarımının açığı ve güçlü yalıtım gerekçesi, kullanıcı kipi ile çekirdek kipinin donanım desteği ve çekirdeğin bir ayrıcalık düzeyi olarak tanımı, sistem çağrısının on adımlık yaşam döngüsü (tuzak, tuzak tablosu, sistem çağrısı numarası, argüman denetimi, tuzaktan dönüş) ve neden fonksiyon çağrısı olmadığı, işbirliğine dayalı yaklaşımın sonsuz döngüde çökmesi ve zamanlayıcı kesmesinin garantisi (10 ms'de bir kesme ≈ %0,01 ek yük), toplu iş → koruma/Atlas → çoklu programlama → zaman paylaşımı evrimi ve Corbató'nun "zaman paylaşımı çoklu programlamanın belirli bir biçimidir" saptaması, monolitik çekirdek ile mikroçekirdek takası.
 27. **Süreçler ve İş Parçacıkları** — *yayında* · sürecin makine durumu envanteri (adres uzayı, yazmaçlar, program sayacı ve yığın işaretçisi, açık dosyalar) ve programdan sürece geçiş adımları, çalışan/hazır/engellenmiş durum makinesi ile korunan değişmezi ve iki süreç izinin çoklu programlamayı sayısallaştırması, başlangıç ve zombi uç durumları, süreç listesi ile süreç denetim bloğunun alanları, bağlam anahtarındaki iki ayrı kaydetme (donanımın örtük kullanıcı yazmaçları, çekirdeğin açık kaydı) ve ölçülmüş maliyet (1996'da 6 µs = 1.200 çevrim, bugün mikrosaniye altı ama 1.500 çevrim), iş parçacığının aynı adres uzayını paylaşıp ayrı yığın tutması ve sayfa tablosunun değişmemesi, iki kullanım gerekçesi (paralellik ve giriş/çıkış örtüşmesi) ile süreç tercihinin ne zaman daha sağlam olduğu, paylaşılan sayaç örneğiyle yarış koşulu (beklenen 20.000.000, gözlenen 19.345.221 ve 19.221.041), kritik kesim, karşılıklı dışlama ve atomiklik tanımları — çözümler bilinçli olarak 29–30'a bırakıldı.
-28. **CPU Zamanlama** — FCFS/SJF/RR/öncelik/çok seviyeli; ölçütler ve karşılaştırma; küçük hesap örnekleri.
-29. **Senkronizasyon: Kritik Kesim, Kilit, Semafor** — yarış koşulu, kritik kesim gereksinimleri, mutex/semafor/monitör.
-30. **Klasik Eşzamanlılık Problemleri** — üretici-tüketici, okuyucu-yazar, yemek yiyen filozoflar; çözüm savunmaları.
+28. **CPU Zamanlama: Ölçütler, Kurallar ve Geri Besleme** — *yayında* · ilke ile düzenek ayrımının ilk tam uygulaması ve çizelgeleyicinin adı, beş iş yükü varsayımı ve tek tek gevşetilmeleri, dönüş süresi ile tepki süresinin tanımları ve "ölçütü söylemeden daha iyi denemez" disiplini, FCFS'i tek girdiyle kıran konvoy etkisi (110'a karşı 50), SJF'nin önkesmesizliği yüzünden geç gelenlerde FCFS ile aynı çizelgeyi üretmesi (103,33) ve STCF'nin önkesmeyle 50'ye inmesi, tepki süresinin round-robin'i seçtirmesi (1'e karşı 5) ama dönüş süresini bozması (14'e karşı 10), zaman dilimi ile bağlam anahtarı ek yükü arasındaki takasın sayısal hâli (6 µs anahtar: 10 ms dilimde %0,06, 100 µs dilimde %5,7) ve amortize etme kalıbının geri dönüşü, RR'nin (N − 1)·q tepki tavanı, giriş/çıkışın her işlemci parçasını ayrı iş sayarak hesaba katılması, MLFQ'nun beş kuralı ve son iki kuralın karşı örnekle doğması (açlık ve çizelgeleyiciyi oynatma), Solaris varsayılanları, CFS'in vruntime ile oranlı paylaşımı (sched_latency 48 ms, min_granularity 6 ms, on süreçte turun 60 ms'ye çıkması, nice → ağırlık ve %75,3 pay) ve çalışabilir süreçleri kırmızı-siyah ağaçta tutması, çok işlemcide tek kuyruk ile çok kuyruk takası, önbellek yakınlığı, yük dengesizliği ve iş çalma, bir çizelgeleyicinin "yeterince iyi" olduğunu optimalden uzaklığını sınırlayarak ispatlama kalıbı.
+29. **Senkronizasyon: Kilit, Semafor ve Monitör** — *yayında* · kötü niyetli çizelgeleyici duruşu ve kilidin korunan değişmez diliyle yazılan sözü, Dijkstra'nın 1965'te koyduğu üç koşul (karşılıklı dışlama, kritik kesiminin dışındaki sürecin ötekileri engellememesi, kararın sonsuza ertelenememesi) ile OSTEP'in üç değerlendirme ekseni, kilidin arayüz/temsil ayrımı ve kaba/ince taneli kilitleme, kesmeleri kapatmanın üç zaafı ve çekirdek içindeki tek meşru kullanımı (xv6'nın push_off/pop_off'u ve tickslock kilitlenmesi), yükle/sakla ile kurulan bayrağın kaba kuvvetle bulunan karşı örneği (57 durumda ihlal), test-and-set ile üç satırlık dönen kilit (5 durumda ihlal yok) ve dönen kilidin önkesmeli çizelgeleyiciye bağımlılığı, compare-and-swap ile fetch-and-add, sıra kilidiyle gelen sınırlı bekleme, dönmek/yield/kuyrukta uyumak üçlüsü ve iki fazlı kilit, uyandırma-bekleme yarışı, öncelik tersine dönmesi ve öncelik kalıtımı, semaforun P/V tanımları ve başlangıç değerine göre üç işi (kilit, sıralama, kaynak havuzu), koşul değişkeninde bekleme çağrısının kilidi neden parametre aldığının kayıp uyandırmadan türetilmesi, Mesa semantiği ve while kuralı, monitör.
+30. **Klasik Eşzamanlılık Problemleri: Çözümü Savunmak** — *yayında* · güvenlik ile canlılık özelliklerinin Lamport'un tanımlarıyla adlandırılması ve kısmi doğruluk/sonlanma ikilisinin doğrudan genellemesi olması, sınırlı tamponun dört adımda kurulması (kilit tek başına yetmez → if yerine while → tek koşul değişkeni üçünü birden uyutur → iki koşul değişkeni) ve aynı problemin semaforlu kurulumunda kilidin en dışa alınmasıyla doğan kilitlenme (10'a karşı 14 durum, kaba kuvvetle), Dijkstra'nın "üreticideki V'lerin sırası önemsiz, tüketicideki P'lerin sırası esastır" alıştırması, kapsayıcı koşullar ve broadcast'in ne zaman doğru araç olduğu, okuyucu-yazar kilidinin ilk-okuyucu numarası ve yazarı aç bırakan adalet açığı, yemek yiyen filozofların beklenenler döngüsü (82 durumda kilitlenme) ve tek bir oku çevirerek kırılması (70 durumda kilitlenme yok), OSTEP'in asimetrik çözümü Dijkstra'ya bağlamasının kaynakla uyuşmaması, üç problemin güvenlik/canlılık tablosu.
 31. **Kilitlenme: Koşullar ve Stratejiler** — dört koşul; önleme/kaçınma (Banker), tespit ve kurtarma.
 32. **Bellek Yönetimi: Adres Çevirisi ve Sayfalama** — mantıksal/fiziksel adres, sayfalama/bölütleme, sayfa tablosu, TLB.
 33. **Sanal Bellek: Talep Sayfalama ve Değiştirme** — sayfa hatası, LRU/clock, thrashing, çalışma kümesi.
@@ -139,10 +139,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 26 ← (Faz D'nin giriş noktası; C'den bağımsız okunabilir), 19 (durum makinesi modeli: süreç bir durum makinesidir), 2 (kullanıcı/çekirdek modu ayrımının mantıksal ifadesi)
 - 27 ← 26 (çekirdek, sistem çağrısı, kesme; tuzağın kaydettiği yazmaçlar), 10 (çağrı yığını ve kuyruk arayüzleri; yığın burada adres uzayında gerçek bir bölge olur), 19 (süreç durum makinesi ve korunan değişmez), 9 (bağlam anahtarının maliyeti ve özyineleme derinliğinin bellek maliyeti), 24 (iş ile açıklık ayrımı iş parçacığı gerekçesinde)
 
-**Batch 9 taslak satırları (Faz D'nin gövdesi; batch büyüklüğü run'da çözülür):**
+**Batch 9 (yayımlanmış, artık bağlayıcı):**
 - 28 ← 27 (süreç durum makinesi, hazır kümesi, bağlam anahtarının maliyeti), 13 (öncelik kuyruğu: öncelikli ve çok seviyeli zamanlamanın veri yapısı), 21 (açgözlü seçim kuralı ve karşı örnekle kırma refleksi), 24 (açgözlü çizelgeleyici teoremi ve "optimalin en fazla iki katı" kalıbı), 9 (ortalama durum ile en kötü durum ayrımı; ölçüt seçimi)
-- 29 ← 27 (yarış koşulu, kritik kesim, karşılıklı dışlama, atomiklik — problem orada kuruldu), 19 (korunan değişmez dili: bir kilidin ne söz verdiği değişmezle yazılır), 26 (kesmelerin kapatılması ayrıcalıklı bir işlemdir), 2 (kritik kesim koşullarının niceleyicili ifadesi)
-- 30 ← 29 (kilit, semafor ve monitör), 10 (tampon bir kuyruktur; üretici-tüketici), 19 (değişmez ve sonlanma ayrımı: canlılık ile güvenlik)
+- 29 ← 27 (yarış koşulu, kritik kesim, karşılıklı dışlama, atomiklik — problem orada kuruldu), 28 (önkesme kesmenin üç komutun ortasında gelebileceğini garanti eder; dönen kilit önkesmeli çizelgeleyici ister), 19 (korunan değişmez dili: bir kilidin ne söz verdiği değişmezle yazılır), 26 (kesmelerin kapatılması ayrıcalıklı bir işlemdir ve çekirdek içi eşzamanlılık orada anılmıştı), 10 (kilidin arayüzü ile temsili ayrımı; bekleyenler kuyruğu)
+- 30 ← 29 (kilit, semafor, koşul değişkeni ve monitör; Mesa semantiği), 10 (tampon bir kuyruktur: dairesel tampon, koyma ve alma indisleri), 19 (kısmi doğruluk ile sonlanma ayrımı burada güvenlik ile canlılık olarak genelleşir), 16 (beklenenler grafındaki döngü, döngü tespitinin eşzamanlılık karşılığıdır)
+
+**Batch 10 taslak satırları (Faz D'nin eşzamanlılık kapanışı ve sanallaştırmanın açılışı; batch büyüklüğü run'da çözülür):**
+- 31 ← 30 (filozofların beklenenler döngüsü; kilitlenmenin dört koşulu orada sezgisel olarak açıldı), 29 (kilit sırası ve ince taneli kilitlemenin bedeli), 19 (azalan ölçü ve sonlanma → güvenli durum kavramı), 16 (kaynak atama grafında döngü tespiti), 23 (kaynak vektörleri üzerinde gevşetme benzeri kademeli karar)
+- 32 ← 26 (adres uzayı bir sanallaştırmadır; tuzak ile kesme ayrımı, sayfa hatası bir tuzaktır), 27 (sürecin adres uzayı envanteri ve iş parçacığında sayfa tablosunun değişmemesi), 12 (ağaç yapılı çok düzeyli tablo ve blok/sayfa muhasebesi), 14 (doğrudan erişim dizisi: sayfa tablosu bir indis eşlemesidir)
+- 33 ← 32 (sayfa tablosu, TLB ve adres çevirisi), 22 (bellekleme ile tablolama takası: sakla ya da yeniden hesapla), 9 (ortalama durum ile en kötü durum; erişim maliyeti dağılımı), 13 (değiştirme ilkelerinin veri yapısı: öncelik kuyruğu ve yaklaşık LRU)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -522,6 +527,67 @@ boyunca aynı kalır.
 | kritik kesim | critical section | 27 |
 | karşılıklı dışlama | mutual exclusion | 27 |
 | atomik | atomic | 27 |
+| çizelgeleyici | scheduler | 28 |
+| çizelgeleme ilkesi | scheduling policy | 28 |
+| iş | job | 28 |
+| iş yükü | workload | 28 |
+| dönüş süresi | turnaround time | 28 |
+| tepki süresi | response time | 28 |
+| adalet | fairness | 28 |
+| konvoy etkisi | convoy effect | 28 |
+| en kısa iş önce | shortest job first (SJF) | 28 |
+| en kısa kalan süre önce | shortest time-to-completion first (STCF) | 28 |
+| önkesmeli / önkesmesiz | preemptive / non-preemptive | 28 |
+| round-robin | round-robin | 28 |
+| zaman dilimi | time slice | 28 |
+| zamanlama kuantumu | scheduling quantum | 28 |
+| çok seviyeli geri besleme kuyruğu | multi-level feedback queue (MLFQ) | 28 |
+| tahsis | allotment | 28 |
+| öncelik yükseltmesi | priority boost | 28 |
+| açlık | starvation | 28 |
+| çizelgeleyiciyi oynatmak | gaming the scheduler | 28 |
+| büyücü sabiti | voo-doo constant | 28 |
+| oranlı paylaşım | proportional share | 28 |
+| sanal çalışma zamanı | virtual runtime (vruntime) | 28 |
+| önbellek yakınlığı | cache affinity | 28 |
+| yük dengesizliği | load imbalance | 28 |
+| göçürme | migration | 28 |
+| iş çalma | work stealing | 28 |
+| kilit | lock | 29 |
+| mutex | mutex | 29 |
+| ilerleme | progress | 29 |
+| sınırlı bekleme | bounded waiting | 29 |
+| kaba taneli / ince taneli kilitleme | coarse-grained / fine-grained locking | 29 |
+| dönen kilit | spin lock | 29 |
+| meşgul bekleme | busy waiting (spin-waiting) | 29 |
+| test-and-set | test-and-set | 29 |
+| karşılaştır-ve-değiştir | compare-and-swap | 29 |
+| getir-ve-ekle | fetch-and-add | 29 |
+| sıra kilidi | ticket lock | 29 |
+| işlemciyi bırakmak | yield | 29 |
+| uyandırma/bekleme yarışı | wakeup/waiting race | 29 |
+| iki fazlı kilit | two-phase lock | 29 |
+| öncelik tersine dönmesi | priority inversion | 29 |
+| öncelik kalıtımı | priority inheritance | 29 |
+| semafor | semaphore | 29 |
+| ikili semafor | binary semaphore | 29 |
+| kısma | throttling | 29 |
+| koşul değişkeni | condition variable | 29 |
+| kayıp uyandırma | lost wakeup | 29 |
+| Mesa semantiği / Hoare semantiği | Mesa / Hoare semantics | 29 |
+| monitör | monitor | 29 |
+| güvenlik özelliği | safety property | 30 |
+| canlılık özelliği | liveness property | 30 |
+| üretici-tüketici | producer-consumer | 30 |
+| sınırlı tampon | bounded buffer | 30 |
+| kapsayıcı koşul | covering condition | 30 |
+| sahte uyanma | spurious wakeup | 30 |
+| okuyucu-yazar kilidi | reader-writer lock | 30 |
+| yemek yiyen filozoflar | dining philosophers | 30 |
+| ölümcül kucaklaşma | deadly embrace | 30 |
+| kilitlenme | deadlock | 30 |
+| beklenenler döngüsü | wait-for cycle | 30 |
+| kilit sırası | lock ordering | 30 |
 
 ## Kavram-tekrar defteri
 
@@ -818,3 +884,60 @@ Batch 8 ile açılan yeni pinler:
   bilinçli olarak 29'a (kilit, semafor, monitör) ve 30'a (klasik problemler) bırakıldı.
 - **Süreç ile iş parçacığı bellek düzeni (27)** → 32'de adres uzayı çevirisi ve 38'de C'nin
   yığın/heap ayrımı aynı şekli farklı amaçla kullanır.
+
+Batch 9 ile açılan yeni pinler ve ödenen borçlar:
+
+- **Zaman dilimi ile ek yük takası (27)** → **28'de ödendi ve sayısallaştı**: 6 µs'lik anahtar
+  10 ms'lik dilimde %0,06, 1 ms'lik dilimde %0,60, 100 µs'lik dilimde %5,66 ek yük eder; kalıbın
+  adı amortize etmedir ve 10'un dinamik dizi muhasebesiyle aynıdır. 33'te sayfa hatası maliyeti,
+  37'de bellek hiyerarşisi aynı takasın başka yüzleridir.
+- **Öncelik kuyruğu (13)** → **28'de üçüncü kez ödendi**: MLFQ'nun kuyruk başına round-robin
+  listesi arayüzün en ucuz gerçekleştirimidir, CFS ise aynı arayüzü **kırmızı-siyah ağaçla**
+  kurar; 12'nin dengeli ağacı böylece çekirdeğin sıcak yolunda somutlaştı (n = 4000 için 4000
+  adım karşı ≈ 12 adım). **Uyarı:** `azalt_anahtar` (23) 28'de kullanılmadı; taslak satırındaki
+  "öncelikli CPU zamanlaması indeksli öncelik kuyruğu ister" beklentisi bu yönde düzeltilmiştir —
+  gerçek çizelgeleyiciler önceliği anahtarı azaltarak değil, kuyruk değiştirerek yönetir.
+- **Yığın ve kuyruk (10)** → **zamanlayıcı kuyruğu 28'de ödendi**: hazır kümesi bir kuyruktur ve
+  ilkenin tamamı "bu kuyruktan hangisini çek" sorusudur.
+- **Açgözlü çizelgeleyici teoremi ve 2 kat sınırı (24)** → **28'de kalıp olarak kullanıldı**,
+  teorem olarak değil: iş çalan çok işlemcili bir çizelgeleyici aynı anlamda açgözlüdür, ama o
+  teorem bağımlılık DAG'ı olan tek bir hesaba aittir; burada işler bağımsızdır. Taşınan şey
+  savunma biçimidir — optimalliği ispatlayamıyorsan optimalden uzaklığı sınırla (RR için
+  (N − 1)·q). 35 ve 41'de aynı kalıp tekrar sorulabilir.
+- **Aynı maliyet formülünün iki farklı algoritmayı yönetmesi (23)** → **28'de ödendi**: SJF, STCF,
+  round-robin ve vruntime aynı iskeleti paylaşır ve yalnızca kuyruktan çekme anahtarında ayrışır;
+  Prim ile Dijkstra'nın farkı neyse budur.
+- **İlke ile düzenek ayrımı (26)** → **28'de ödendi ve makalenin açılış cümlesi oldu**: bağlam
+  anahtarı düzenek, hangi sürecin ne kadar çalışacağı ilkedir. 33 ve 35'te sürer.
+- **Karşı örnek disiplini (3, 21)** → **28'de üçüncü kez kullanıldı**: FCFS'i bir satırlık girdi,
+  MLFQ'nun ilk üç kuralını açlık ve çizelgeleyiciyi oynatma senaryoları kırar; iki kural bu yüzden
+  vardır.
+- **Kısmi sıra ve topolojik sıralama (5, 16)** → **28'de kullanılmadı**. Kavram-tekrar defterinde
+  "28'de bağımlılıklı çizelgeleme olarak geri döner" yazıyordu; CPU zamanlama makalesi bağımsız
+  işlerle ilgilenir ve bağımlılıklı çizelgeleme 24'ün iş/açıklık modelinde kalır. Beklenti bu
+  yönde düzeltilmiştir. **Ebeveyn işaretçisiyle geri yürütme (22)** de 28'de kullanılmadı.
+- **Kesme sırasında kesme (26)** → **29'da ödendi**: bir kilit hem çekirdek kodu hem kesme
+  işleyicisi tarafından kullanılıyorsa kesmeler açıkken tutulamaz; xv6 herhangi bir kilit
+  alınırken o işlemcide kesmeleri kapatır, iç içe kritik kesimleri sayar ve `push_off`u bayrak
+  kurulmadan önce çağırır.
+- **Değişmez İlkesi ve durum makinesi (19)** → **29'da ödendi**: bir kilit korunan bir değişmez
+  sözü verir ("her an kritik kesimde en fazla bir iş parçacığı vardır") ve kilidi kırmak, o
+  değişmezi bozan tek bir yürütme izi bulmaktır.
+- **Kısmi doğruluk ile sonlanma ayrımı (19)** → **30'da genelleşti**: güvenlik özelliği ile
+  canlılık özelliği; kaynağın kendisi de kısmi doğruluğu güvenlik, sonlanmayı canlılık örneği
+  olarak verir. 31'de kilitlenme ile açlığın ayrılmasında sürer.
+- **Yarış koşulu, kritik kesim, karşılıklı dışlama, atomiklik (27)** → **29 ve 30'da ödendi**:
+  problem 27'de kurulmuştu, çözüm ilkelleri 29'da, klasik uygulamaları 30'da verildi.
+- **Tampon bir kuyruktur (10)** → **30'da ödendi**: dairesel tampon, koyma/alma indisleri ve
+  modülo aritmetiği; iki bekleme koşulu buradan doğar.
+- **Kilit sırası (29, 30)** → 31'in dört koşulundan döngüsel beklemenin önlenmesi tam olarak
+  budur; filozofların tek oku çevirmesi de aynı tekniktir.
+- **Öncelik tersine dönmesi ve öncelik kalıtımı (29)** → 31'de ve 35'te gerçek zamanlı sistem
+  tartışmasında geri gelebilir.
+- **Kayıp uyandırma ve "bırak ve uyu"nun atomikliği (29)** → 34'te giriş/çıkış tamamlanma
+  bildirimlerinde aynı desen görünür.
+- **Kapsayıcı koşul ve broadcast (30)** → bekleme koşulu parametreliyse tek çözüm hepsini
+  uyandırmaktır; 34'te tampon havuzu tahsisinde geri çağrılabilir.
+- **Geçmişe bakıp geleceği kestirmek (28)** → MLFQ'nun tezi; **33'te sayfa değiştirme ilkeleri**
+  (LRU, clock) aynı fikrin bellek karşılığıdır ve orada da yaklaşıklama kullanılır.
+- **d-yollu heap (13)** → hâlâ ödenmedi; dallanma çarpanı takasının kalan tek örneğidir.

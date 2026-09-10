@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 268" role="img" aria-label="Kayıptan perplexity'ye çeviriyi gösteren bir tablo. Sütunlar: kayıp nat bölü token, perplexity ve okuma. Birinci satır 1,609 nat için perplexity 5,00 ve okuması doğru token'a 0,2 olasılık verilmiştir. İkinci satır 2,051 nat için perplexity 7,78 ve okuması Kaplan tahsisiyle eğitilen modelin kaybıdır. Üçüncü satır 1,937 nat için perplexity 6,94 ve okuması aynı bütçenin Chinchilla tahsisiyle ulaştığı kayıptır. Altta bir kayıt: iki kayıp arasındaki 0,114 nat bölü token farkı perplexity'de yaklaşık yüzde 12'lik bir farka karşılık gelir ve bu oran iki üstelin bölünmesiyle elle hesaplanmıştır. İkinci kayıt: kayıp toplanır, perplexity çarpılır; bu yüzden küçük kayıp farkları perplexity'de büyük görünür.">
+  <text x="20" y="32" font-size="13" fill="var(--text-faint)">kayıp (nat/token)</text>
+  <text x="200" y="32" font-size="13" fill="var(--text-faint)">perplexity</text>
+  <text x="330" y="32" font-size="13" fill="var(--text-faint)">okuma</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="20" y="68" font-size="13" fill="var(--text)">1,609</text>
+  <text x="200" y="68" font-size="13" fill="var(--accent)">5,00</text>
+  <text x="330" y="68" font-size="13" fill="var(--text)">doğru token'a 0,2 olasılık verilmiş</text>
+
+  <text x="20" y="94" font-size="13" fill="var(--text)">2,051</text>
+  <text x="200" y="94" font-size="13" fill="var(--text)">7,78</text>
+  <text x="330" y="94" font-size="13" fill="var(--text)">Kaplan tahsisiyle ulaşılan kayıp</text>
+
+  <text x="20" y="120" font-size="13" fill="var(--text)">1,937</text>
+  <text x="200" y="120" font-size="13" fill="var(--text)">6,94</text>
+  <text x="330" y="120" font-size="13" fill="var(--text)">Chinchilla tahsisiyle ulaşılan kayıp</text>
+  <line x1="20" y1="134" x2="700" y2="134" stroke="var(--border)" />
+
+  <text x="20" y="158" font-size="13" fill="var(--text)">fark: 0,114 nat/token</text>
+  <text x="200" y="158" font-size="13" fill="var(--accent)">yüzde 12</text>
+  <text x="330" y="158" font-size="13" fill="var(--text-muted)">iki üstelin bölümü; elle hesaplandı</text>
+
+  <line x1="20" y1="180" x2="700" y2="180" stroke="var(--border)" />
+  <text x="20" y="204" font-size="13" fill="var(--text-muted)">Kayıp toplanır, perplexity çarpılır: küçük kayıp farkları perplexity'de büyük görünür.</text>
+  <text x="20" y="226" font-size="13" fill="var(--text-muted)">Perplexity = e üzeri kayıp; kayıp 0 ise perplexity 1, yani hiç belirsizlik yok.</text>
+  <text x="20" y="252" font-size="13" fill="var(--text-faint)">Perplexity token başına tanımlıdır; farklı token'lamalar doğrudan karşılaştırılamaz.</text>
+</svg>

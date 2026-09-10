@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Üstte iki satır ve üç sütunlu M matrisi yazılıdır: birinci satır 1, 0, eksi 1; ikinci satır 0, 2, 1. Sütunları sırasıyla 1 ve 0, 0 ve 2, eksi 1 ve 1'dir. Girdi vektörü x eşittir 3, 1, 2. Altta iki okuma yan yana durur. Solda satır okuması: birinci satırın x ile nokta çarpımı 3 eksi 2 eşittir 1; ikinci satırın x ile nokta çarpımı 2 artı 2 eşittir 4; sonuç 1 ve 4. Sağda sütun okuması: 3 kere birinci sütun artı 1 kere ikinci sütun artı 2 kere üçüncü sütun eşittir 3 ve 0 artı 0 ve 2 artı eksi 2 ve 2, yani 1 ve 4. Altta bir kayıt: iki okuma aynı sonucu verir, ama sütun okuması matrisin ne yaptığını söyler; sütunlar taban vektörlerinin gittiği yerdir, girdinin bileşenleri de onların karışım ağırlıklarıdır.">
+  <text x="20" y="34" font-size="13" font-weight="bold" fill="var(--text)">M matrisi (2 satır, 3 sütun)</text>
+
+  <rect x="20" y="46" width="200" height="60" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="52" y="70" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="120" y="70" font-size="13" text-anchor="middle" fill="var(--text)">0</text>
+  <text x="188" y="70" font-size="13" text-anchor="middle" fill="var(--text)">−1</text>
+  <text x="52" y="94" font-size="13" text-anchor="middle" fill="var(--text)">0</text>
+  <text x="120" y="94" font-size="13" text-anchor="middle" fill="var(--text)">2</text>
+  <text x="188" y="94" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+
+  <text x="52" y="126" font-size="13" text-anchor="middle" fill="var(--accent)">sütun 1</text>
+  <text x="120" y="126" font-size="13" text-anchor="middle" fill="var(--accent)">sütun 2</text>
+  <text x="188" y="126" font-size="13" text-anchor="middle" fill="var(--accent)">sütun 3</text>
+
+  <text x="248" y="70" font-size="13" fill="var(--text)">girdi: x = (3; 1; 2)</text>
+  <text x="248" y="94" font-size="13" fill="var(--text-muted)">üç boyuttan iki boyuta</text>
+
+  <line x1="20" y1="148" x2="700" y2="148" stroke="var(--border)" />
+
+  <text x="20" y="174" font-size="13" font-weight="bold" fill="var(--text)">satır okuması</text>
+  <text x="20" y="198" font-size="13" fill="var(--text)">(1; 0; −1) · x = 3 − 2 = 1</text>
+  <text x="20" y="220" font-size="13" fill="var(--text)">(0; 2; 1) · x = 2 + 2 = 4</text>
+  <text x="20" y="244" font-size="13" fill="var(--accent)">sonuç = (1; 4)</text>
+
+  <line x1="356" y1="160" x2="356" y2="256" stroke="var(--border)" />
+
+  <text x="380" y="174" font-size="13" font-weight="bold" fill="var(--text)">sütun okuması</text>
+  <text x="380" y="198" font-size="13" fill="var(--text)">3·(1; 0) + 1·(0; 2) + 2·(−1; 1)</text>
+  <text x="380" y="220" font-size="13" fill="var(--text)">= (3; 0) + (0; 2) + (−2; 2)</text>
+  <text x="380" y="244" font-size="13" fill="var(--accent)">sonuç = (1; 4)</text>
+
+  <line x1="20" y1="272" x2="700" y2="272" stroke="var(--border)" />
+  <text x="20" y="296" font-size="13" fill="var(--text-muted)">İki okuma aynı sayıyı verir; ikincisi matrisin ne yaptığını söyler.</text>
+  <text x="20" y="316" font-size="13" fill="var(--text-muted)">Sütunlar taban vektörlerinin gittiği yer, girdinin bileşenleri karışım ağırlıklarıdır.</text>
+</svg>

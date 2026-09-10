@@ -1,0 +1,59 @@
+<svg viewBox="0 0 720 285" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a30b-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="boun-a30b-ok-soluk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-faint)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Naif çözüm: herkes önce solundakini alır</text>
+
+  <line x1="199.4" y1="60.1" x2="231" y2="83" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a30b-ok)" />
+  <line x1="243" y1="120" x2="230.9" y2="157" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a30b-ok)" />
+  <line x1="199.5" y1="179.9" x2="160.5" y2="179.9" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a30b-ok)" />
+  <line x1="129.1" y1="157" x2="117" y2="120" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a30b-ok)" />
+  <line x1="129" y1="83" x2="160.6" y2="60.1" stroke="var(--accent)" stroke-width="2" marker-end="url(#boun-a30b-ok)" />
+
+  <circle cx="180" cy="46" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="180" y="51" font-size="13" text-anchor="middle" fill="var(--text)">P0</text>
+  <circle cx="250.4" cy="97.1" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="250" y="102" font-size="13" text-anchor="middle" fill="var(--text)">P1</text>
+  <circle cx="223.5" cy="179.9" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="224" y="185" font-size="13" text-anchor="middle" fill="var(--text)">P2</text>
+  <circle cx="136.5" cy="179.9" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="136" y="185" font-size="13" text-anchor="middle" fill="var(--text)">P3</text>
+  <circle cx="109.6" cy="97.1" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="110" y="102" font-size="13" text-anchor="middle" fill="var(--text)">P4</text>
+
+  <text x="15" y="214" font-size="13" fill="var(--text)">her filozof solunu tutar, sağını bekler</text>
+  <text x="15" y="232" font-size="13" fill="var(--text-muted)">beklenenler döngüsü kapanır: kilitlenme</text>
+
+  <line x1="362" y1="32" x2="362" y2="240" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">Asimetrik sıra: P4 önce sağındakini alır</text>
+
+  <line x1="559.4" y1="60.1" x2="591" y2="83" stroke="var(--text-faint)" stroke-width="1.8" marker-end="url(#boun-a30b-ok-soluk)" />
+  <line x1="603" y1="120" x2="590.9" y2="157" stroke="var(--text-faint)" stroke-width="1.8" marker-end="url(#boun-a30b-ok-soluk)" />
+  <line x1="559.5" y1="179.9" x2="520.5" y2="179.9" stroke="var(--text-faint)" stroke-width="1.8" marker-end="url(#boun-a30b-ok-soluk)" />
+  <line x1="489.1" y1="157" x2="477" y2="120" stroke="var(--text-faint)" stroke-width="1.8" marker-end="url(#boun-a30b-ok-soluk)" />
+  <line x1="520.6" y1="60.1" x2="489" y2="83" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#boun-a30b-ok)" />
+
+  <circle cx="540" cy="46" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="540" y="51" font-size="13" text-anchor="middle" fill="var(--text)">P0</text>
+  <circle cx="610.4" cy="97.1" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="610" y="102" font-size="13" text-anchor="middle" fill="var(--text)">P1</text>
+  <circle cx="583.5" cy="179.9" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="584" y="185" font-size="13" text-anchor="middle" fill="var(--text)">P2</text>
+  <circle cx="496.5" cy="179.9" r="18" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="496" y="185" font-size="13" text-anchor="middle" fill="var(--text)">P3</text>
+  <circle cx="469.6" cy="97.1" r="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.8" />
+  <text x="470" y="102" font-size="13" text-anchor="middle" fill="var(--text)">P4</text>
+
+  <text x="378" y="214" font-size="13" fill="var(--text)">0 numaralı çatalı P4 önce alır</text>
+  <text x="378" y="232" font-size="13" fill="var(--text-muted)">o kenarın yönü değişir, döngü kapanamaz</text>
+
+  <text x="15" y="260" font-size="13" fill="var(--text)">Kaba kuvvet taraması: naif kurulumda 82 erişilebilir durumun içinde kilitlenme var,</text>
+  <text x="15" y="278" font-size="13" fill="var(--text-muted)">asimetrik kurulumda 70 durumun hiçbirinde yok; ikisinde de en çok iki filozof yiyebilir.</text>
+</svg>

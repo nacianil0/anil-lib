@@ -56,9 +56,9 @@
       "articles": [
         { "order": 26, "title": "İşletim Sistemi Nedir? Çekirdek, Sistem Çağrısı, Evrim", "status": "yayinda", "slug": "isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim" },
         { "order": 27, "title": "Süreçler ve İş Parçacıkları", "status": "yayinda", "slug": "surecler-ve-is-parcaciklari" },
-        { "order": 28, "title": "CPU Zamanlama", "status": "planlandi" },
-        { "order": 29, "title": "Senkronizasyon: Kritik Kesim, Kilit, Semafor", "status": "planlandi" },
-        { "order": 30, "title": "Klasik Eşzamanlılık Problemleri", "status": "planlandi" },
+        { "order": 28, "title": "CPU Zamanlama: Ölçütler, Kurallar ve Geri Besleme", "status": "yayinda", "slug": "cpu-zamanlama-olcutler-kurallar-ve-geri-besleme" },
+        { "order": 29, "title": "Senkronizasyon: Kilit, Semafor ve Monitör", "status": "yayinda", "slug": "senkronizasyon-kilit-semafor-ve-monitor" },
+        { "order": 30, "title": "Klasik Eşzamanlılık Problemleri: Çözümü Savunmak", "status": "yayinda", "slug": "klasik-eszamanlilik-problemleri-cozumu-savunmak" },
         { "order": 31, "title": "Kilitlenme: Koşullar ve Stratejiler", "status": "planlandi" },
         { "order": 32, "title": "Bellek Yönetimi: Adres Çevirisi ve Sayfalama", "status": "planlandi" },
         { "order": 33, "title": "Sanal Bellek: Talep Sayfalama ve Değiştirme", "status": "planlandi" },

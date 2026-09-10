@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 262" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Kilidi bekleyen ne yapmalı?</text>
+
+  <rect x="20" y="32" width="330" height="56" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="30" y="50" font-size="13" fill="var(--text)">Dön</text>
+  <text x="30" y="68" font-size="13" fill="var(--text-muted)">sistem çağrısı yok, çekirdek gerekmez</text>
+  <text x="30" y="84" font-size="13" fill="var(--text-faint)">tek işlemcide N−1 dilim boşa gider</text>
+
+  <rect x="20" y="94" width="330" height="56" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="30" y="112" font-size="13" fill="var(--text)">İşlemciyi bırak (yield)</text>
+  <text x="30" y="130" font-size="13" fill="var(--text-muted)">dönmek yerine kendini çizelgeden çıkar</text>
+  <text x="30" y="146" font-size="13" fill="var(--text-faint)">yüz iş parçacığı, doksan dokuz anahtar</text>
+
+  <rect x="20" y="156" width="330" height="72" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="30" y="174" font-size="13" fill="var(--text)">Kuyrukta uyu</text>
+  <text x="30" y="192" font-size="13" fill="var(--text-muted)">kilit kendi bekleyen kuyruğunu tutar</text>
+  <text x="30" y="208" font-size="13" fill="var(--text-muted)">bırakan doğrudan sıradakini uyandırır</text>
+  <text x="30" y="224" font-size="13" fill="var(--text-faint)">israf da açlık da biter, OS desteği ister</text>
+
+  <text x="15" y="252" font-size="13" fill="var(--text)">Gerçek kilitler ikisini birleştirir: önce kısa süre döner, sonra uyur.</text>
+
+  <line x1="362" y1="32" x2="362" y2="228" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">Semafor: tek sayaç, iki işlem</text>
+
+  <rect x="378" y="32" width="327" height="42" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="386" y="50" font-size="13" fill="var(--text)">V: sayacı bölünmez biçimde 1 artırır</text>
+  <text x="386" y="68" font-size="13" fill="var(--text-muted)">bekleyen varsa birini uyandırır</text>
+
+  <rect x="378" y="80" width="327" height="42" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="386" y="98" font-size="13" fill="var(--text)">P: sonuç negatif olmayacaksa 1 azaltır</text>
+  <text x="386" y="116" font-size="13" fill="var(--text-muted)">olacaksa çağıran bekler</text>
+
+  <text x="378" y="146" font-size="13" fill="var(--text)">başlangıç 1 · kilit: aynı anda tek giriş</text>
+  <text x="378" y="168" font-size="13" fill="var(--text)">başlangıç 0 · sıralama: biri bitmeden geçilmez</text>
+  <text x="378" y="190" font-size="13" fill="var(--text)">başlangıç N · havuz: en fazla N giriş</text>
+  <text x="378" y="216" font-size="13" fill="var(--text-faint)">negatif değer: mutlak değeri bekleyen sayısı</text>
+</svg>

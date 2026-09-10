@@ -3385,3 +3385,128 @@ Sıradaki run: 91–94, Faz 10'un açılışı; **kategori kararı 91'in run'ın
 | 10:14 | Created artifacts/b21-research/anatomy2-b21.py | — | ~1227 |
 | 10:15 | Created artifacts/b21-research/buglog2-b21.py | — | ~426 |
 | 10:16 | Session end: 33 writes across 31 files (items-b21.py, idx-b21.py, kucuk-ama-guclu-damitma-ve-kucuk-modeller.md, damitmanin-uc-aktarim-bicimi.svg, ayni-butcenin-iki-yolu.svg) | 30 reads | ~219751 tok |
+
+## Session: 2026-09-10 15:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 15:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 15:44
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 15:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-10 15:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:52 | Created artifacts/b22-research/items_b22.py | — | ~4075 |
+| 15:53 | Created artifacts/b9-research/hesap.py | — | ~1513 |
+| 15:57 | Created artifacts/b9-research/model.py | — | ~1719 |
+| 16:02 | Created content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | — | ~8428 |
+| 16:04 | Created content/series-boun/assets/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme/zamanlama-gantt.svg | — | ~2377 |
+| 16:05 | Created content/series-boun/assets/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme/mlfq-kurallar.svg | — | ~1462 |
+| 16:05 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~219 |
+| 16:11 | Created content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | — | ~8130 |
+| 16:12 | Created content/series-boun/assets/senkronizasyon-kilit-semafor-ve-monitor/kilit-merdiveni.svg | — | ~1172 |
+| 16:12 | Created content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | — | ~5258 |
+| 16:12 | Created content/series-boun/assets/senkronizasyon-kilit-semafor-ve-monitor/bekleme-ve-semafor.svg | — | ~787 |
+| 16:12 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~39 |
+| 16:12 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~42 |
+| 16:13 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | 3→5 lines | ~431 |
+| 16:14 | Created content/series/assets/vektorler-ve-matrisler-embeddingin-matematigi/ayni-vektorun-iki-okunusu.svg | — | ~838 |
+| 16:14 | Created content/series/assets/vektorler-ve-matrisler-embeddingin-matematigi/matrisin-sutunlari.svg | — | ~865 |
+| 16:14 | Created content/series/assets/vektorler-ve-matrisler-embeddingin-matematigi/uc-cetvel-iki-siralama.svg | — | ~837 |
+| 16:18 | Created content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | — | ~4400 |
+| 16:18 | Created content/series/assets/matrisin-icini-okumak-rank-ozdeger-ve-svd/dokuz-sayi-iki-yon.svg | — | ~680 |
+| 16:18 | Created content/series/assets/matrisin-icini-okumak-rank-ozdeger-ve-svd/ozdeger-tekil-deger.svg | — | ~766 |
+| 16:19 | Created content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | — | ~6774 |
+| 16:19 | Created content/series/assets/matrisin-icini-okumak-rank-ozdeger-ve-svd/kesmenin-bedeli.svg | — | ~770 |
+| 16:19 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | 1→5 lines | ~409 |
+| 16:20 | Created content/series-boun/assets/klasik-eszamanlilik-problemleri-cozumu-savunmak/sinirli-tampon.svg | — | ~1147 |
+| 16:20 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | 1→3 lines | ~204 |
+| 16:20 | Created content/series-boun/assets/klasik-eszamanlilik-problemleri-cozumu-savunmak/filozoflar-dongusu.svg | — | ~1278 |
+| 16:20 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | "sayaç == MAX" → "in sol paneli bu yapıyı v" | ~105 |
+| 16:21 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | expanded (+10 lines) | ~439 |
+| 16:21 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~95 |
+| 16:21 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~158 |
+| 16:21 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~97 |
+| 16:22 | Edited content/series-boun/roadmap.json | 3→3 lines | ~92 |
+| 16:22 | Created artifacts/b9-research/denetim.py | — | ~1458 |
+
+## Session: 2026-09-10 16:23
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:23 | Created content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | — | ~3861 |
+| 16:23 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~184 |
+| 16:24 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | expanded (+8 lines) | ~504 |
+| 16:25 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | 1→5 lines | ~262 |
+| 16:25 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | 1→3 lines | ~207 |
+| 16:25 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | 1→3 lines | ~194 |
+| 16:26 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | 3→5 lines | ~212 |
+| 16:26 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | 1→3 lines | ~250 |
+| 16:26 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | 3→5 lines | ~307 |
+| 16:27 | Created content/series/assets/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik/dagilimin-uc-okunusu.svg | — | ~846 |
+| 16:28 | Created content/series/assets/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik/softmaxin-uc-adimi.svg | — | ~922 |
+| 16:28 | Created content/series/assets/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik/iki-tahminci.svg | — | ~683 |
+| 16:28 | Created artifacts/boun-render/pre-b9.mjs | — | ~897 |
+| 16:29 | Created artifacts/boun-render/login-debug.mjs | — | ~244 |
+| 16:30 | Created artifacts/boun-render/login-b9.mjs | — | ~418 |
+| 16:31 | Created content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | — | ~4520 |
+| 16:33 | Created content/series/assets/bilgi-kurami-entropi-capraz-entropi-ve-kl/kaybin-iki-parcasi.svg | — | ~675 |
+| 16:34 | Created content/series/assets/bilgi-kurami-entropi-capraz-entropi-ve-kl/kayiptan-perplexitye.svg | — | ~721 |
+| 16:34 | Created content/series/assets/bilgi-kurami-entropi-capraz-entropi-ve-kl/kl-iki-yon.svg | — | ~1024 |
+| 16:36 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~394 |
+| 16:36 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~52 |
+| 16:44 | Created artifacts/b22-research/wc-b22.cjs | — | ~222 |
+| 16:47 | Created artifacts/b9-research/arastirma-14.md | — | ~5073 |
+| 16:47 | Created .claude/launch.json | — | ~148 |
+| 16:48 | Created artifacts/b9-research/roadmap-edit.py | — | ~2082 |
+| 16:50 | Created .claude/launch.json | — | ~161 |
+| 16:50 | Created artifacts/b9-research/roadmap-edit2.py | — | ~2189 |
+| 16:52 | Created .claude/launch.json | — | ~148 |
+| 16:53 | Created artifacts/b22-research/sweep2-b22.py | — | ~389 |
+| 16:53 | Created .claude/launch.json | — | ~148 |
+| 16:56 | Created docs/seri-boun/HANDOFF.md | — | ~9132 |
+| 16:56 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/sweep-b22.py | — | ~356 |
+| 16:57 | Batch 9 (BOUN 28-30) yayımlandı: 3 makale, 6 SVG, doğrulama kapıları temiz | content/series-boun + docs/seri-boun | başarılı | ~185k |
+| 16:58 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-batch9-faz-d-govde.md | — | ~1023 |
+| 16:59 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/shots-b22.cjs | — | ~643 |
+| 17:00 | Session end: 34 writes across 24 files (olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md, vektorler-ve-matrisler-embeddingin-matematigi.md, matrisin-icini-okumak-rank-ozdeger-ve-svd.md, dagilimin-uc-okunusu.svg, softmaxin-uc-adimi.svg) | 14 reads | ~41475 tok |
+| 18:56 | Created content/series/assets/bilgi-kurami-entropi-capraz-entropi-ve-kl/kaybin-iki-parcasi.svg | — | ~732 |
+| 18:57 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | inline fix | ~262 |
+
+## Session: 2026-09-10 18:57
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 18:59 | Created .claude/launch.json | — | ~56 |
+| 19:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/kararlar-b22.py | — | ~3078 |
+| 19:07 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/notlar-b22.py | — | ~1464 |
+| 19:11 | Created docs/seri/HANDOFF.md | — | ~8013 |
+| 19:12 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/wolf-b22.py | — | ~1703 |
+
+## Oturum özeti — Seri Batch 22 (2026-09-10)
+
+`BATCH=4+1`. AI serisi 91-94 üretildi ve yayına alındı: "Vektörler ve Matrisler: Embedding'in Matematiği",
+"Matrisin İçini Okumak: Rank, Özdeğer ve SVD", "Olasılığın Dili: Dağılımlar, Beklenti ve En Büyük Olabilirlik",
+"Bilgi Kuramı: Entropi, Çapraz Entropi ve KL". Faz 10 açıldı; kategori `foundations` (#200), level `advanced`
+(#201, serinin ilk advanced kohortu), 93'ün başlığı Türkçeleştirildi (#202). 13'ün KL işareti 94'te ödendi.
+Kararlar #200-#208. 50 kaynak (44 hakemli, 5 ders kitabı, 1 hakemsiz). Kapılar: typecheck 0, 605 test,
+build exit 0 (94 seri yolu, izole kopya), 95 rota 200 (dilimli sweep), 4 makale x 3 genişlik x 3 tema DOM
+ölçümü, 24 PNG göz turu (bir şekil düzeltildi). Aynı worktree'de paralel bir BOUN oturumu `artifacts/` altını
+sildi; kalan betikler scratchpad'e yeniden yazıldı.
+| 19:13 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/cerebrum-b22.py | — | ~1078 |
+| 19:14 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch22-faz10-acilis.md | — | ~1232 |
+| 19:15 | Session end: 7 writes across 7 files (launch.json, kararlar-b22.py, notlar-b22.py, HANDOFF.md, wolf-b22.py) | 2 reads | ~17284 tok |

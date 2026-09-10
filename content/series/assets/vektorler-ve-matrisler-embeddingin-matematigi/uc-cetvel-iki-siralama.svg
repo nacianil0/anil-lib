@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Sabit a vektörü 3 ve 4 için iki adayın üç ölçüsünü veren bir tablo. Sütunlar: aday, normu, nokta çarpım, kosinüs benzerliği, Öklit uzaklığı. Birinci satır aday b eşittir 10 ve 0: normu 10, nokta çarpım 30, kosinüs 0,600, Öklit uzaklığı 8,06. İkinci satır aday c eşittir 2 ve 2: normu 2,83, nokta çarpım 14, kosinüs 0,990, Öklit uzaklığı 2,24. Altta sıralama satırı: nokta çarpıma göre önde olan b, kosinüse göre önde olan c, Öklit uzaklığına göre yakın olan c. En altta bir kayıt: nokta çarpım uzunluğu da hesaba katar, kosinüs yalnızca açıyı ölçer, Öklit uzaklığı ikisini birden görür; hangisinin doğru olduğu ölçmek istediğine bağlıdır ve buradaki sayılar bu üç vektörden elle hesaplanmıştır.">
+  <text x="20" y="32" font-size="13" font-weight="bold" fill="var(--text)">Sabit vektör a = (3; 4), normu 5</text>
+
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+  <text x="20" y="66" font-size="13" fill="var(--text-faint)">aday</text>
+  <text x="180" y="66" font-size="13" fill="var(--text-faint)">normu</text>
+  <text x="290" y="66" font-size="13" fill="var(--text-faint)">nokta çarpım</text>
+  <text x="440" y="66" font-size="13" fill="var(--text-faint)">kosinüs</text>
+  <text x="570" y="66" font-size="13" fill="var(--text-faint)">Öklit uzaklığı</text>
+  <line x1="20" y1="78" x2="700" y2="78" stroke="var(--border)" />
+
+  <text x="20" y="102" font-size="13" fill="var(--text)">b = (10; 0)</text>
+  <text x="180" y="102" font-size="13" fill="var(--text)">10</text>
+  <text x="290" y="102" font-size="13" fill="var(--accent)">30</text>
+  <text x="440" y="102" font-size="13" fill="var(--text)">0,600</text>
+  <text x="570" y="102" font-size="13" fill="var(--text)">8,06</text>
+
+  <text x="20" y="128" font-size="13" fill="var(--text)">c = (2; 2)</text>
+  <text x="180" y="128" font-size="13" fill="var(--text)">2,83</text>
+  <text x="290" y="128" font-size="13" fill="var(--text)">14</text>
+  <text x="440" y="128" font-size="13" fill="var(--accent)">0,990</text>
+  <text x="570" y="128" font-size="13" fill="var(--accent)">2,24</text>
+  <line x1="20" y1="142" x2="700" y2="142" stroke="var(--border)" />
+
+  <text x="20" y="166" font-size="13" fill="var(--text-muted)">öne çıkan</text>
+  <text x="290" y="166" font-size="13" font-weight="bold" fill="var(--text)">b</text>
+  <text x="440" y="166" font-size="13" font-weight="bold" fill="var(--text)">c</text>
+  <text x="570" y="166" font-size="13" font-weight="bold" fill="var(--text)">c</text>
+
+  <line x1="20" y1="190" x2="700" y2="190" stroke="var(--border)" />
+  <text x="20" y="214" font-size="13" fill="var(--text)">nokta çarpım: uzunluk ile açıyı tek sayıda birleştirir</text>
+  <text x="20" y="234" font-size="13" fill="var(--text)">kosinüs: uzunluğu atar, yalnızca açıyı ölçer</text>
+  <text x="20" y="254" font-size="13" fill="var(--text)">Öklit uzaklığı: iki ucun arasındaki mesafeyi ölçer</text>
+  <text x="20" y="282" font-size="13" fill="var(--text-muted)">Sayılar bu üç vektörden elle hesaplandı; hangi cetvelin doğru olduğu ölçmek istediğine bağlıdır.</text>
+</svg>

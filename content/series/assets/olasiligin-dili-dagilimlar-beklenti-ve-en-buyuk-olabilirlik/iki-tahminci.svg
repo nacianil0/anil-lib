@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 288" role="img" aria-label="İki tahmincinin aynı örneklemde verdiği sayıları karşılaştıran bir tablo. Üstte kurulum yazılıdır: toplam deneme 200, doğru sayısı 20, gözlenen oran 0,1. Sütunlar deneme sayısı k, yerine koyma hesabı ve yansız tahminci. Satırlar: k eşittir 1 için 0,1000 ve 0,1000; k eşittir 5 için 0,4095 ve 0,4128; k eşittir 10 için 0,6513 ve 0,6602; k eşittir 50 için 0,9948 ve 0,9977. Altta iki kayıt: iki sütun k eşittir 1'de çakışır ve arada ayrışır; fark yuvarlama değil tanım farkıdır, çünkü yerine koyma hesabı gözlenen oranı gerçek olasılık sayar. En altta sayıların kaynağın tahminci tanımından elle hesaplandığı yazılıdır.">
+  <text x="20" y="32" font-size="13" font-weight="bold" fill="var(--text)">Kurulum: 200 deneme, 20 doğru, gözlenen oran 0,1</text>
+
+  <line x1="20" y1="46" x2="700" y2="46" stroke="var(--border)" />
+  <text x="20" y="70" font-size="13" fill="var(--text-faint)">deneme sayısı k</text>
+  <text x="260" y="70" font-size="13" fill="var(--text-faint)">yerine koyma hesabı</text>
+  <text x="500" y="70" font-size="13" fill="var(--text-faint)">yansız tahminci</text>
+  <line x1="20" y1="82" x2="700" y2="82" stroke="var(--border)" />
+
+  <text x="20" y="106" font-size="13" fill="var(--text)">1</text>
+  <text x="260" y="106" font-size="13" fill="var(--text)">0,1000</text>
+  <text x="500" y="106" font-size="13" fill="var(--text)">0,1000</text>
+
+  <text x="20" y="130" font-size="13" fill="var(--text)">5</text>
+  <text x="260" y="130" font-size="13" fill="var(--text)">0,4095</text>
+  <text x="500" y="130" font-size="13" fill="var(--accent)">0,4128</text>
+
+  <text x="20" y="154" font-size="13" fill="var(--text)">10</text>
+  <text x="260" y="154" font-size="13" fill="var(--text)">0,6513</text>
+  <text x="500" y="154" font-size="13" fill="var(--accent)">0,6602</text>
+
+  <text x="20" y="178" font-size="13" fill="var(--text)">50</text>
+  <text x="260" y="178" font-size="13" fill="var(--text)">0,9948</text>
+  <text x="500" y="178" font-size="13" fill="var(--accent)">0,9977</text>
+  <line x1="20" y1="192" x2="700" y2="192" stroke="var(--border)" />
+
+  <text x="20" y="216" font-size="13" fill="var(--text-muted)">İki sütun k = 1'de çakışır, arada ayrışır.</text>
+  <text x="20" y="238" font-size="13" fill="var(--text-muted)">Fark yuvarlama değil, tanım farkı: yerine koyma hesabı gözlenen oranı gerçek olasılık sayar.</text>
+  <text x="20" y="272" font-size="13" fill="var(--text-faint)">Sayılar kaynağın tahminci tanımından elle hesaplandı.</text>
+</svg>

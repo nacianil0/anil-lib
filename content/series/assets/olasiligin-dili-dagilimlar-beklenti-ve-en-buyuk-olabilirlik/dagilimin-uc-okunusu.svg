@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 296" role="img" aria-label="Aynı üç sonuçlu dağılımın üç okunuşu, üç panel hâlinde. Sol panel dağılımın kendisi: üç aday ve olasılıkları 0,659 ve 0,242 ve 0,099; altında toplamın 1 olduğu yazılıdır. Orta panel beklenti: her sonucun değeri olasılığıyla çarpılıp toplanır; birinci adayın değeri 1, diğerlerininki 0 alınırsa beklenti 0,659 çıkar; altında beklentinin gerçekleşen bir sayı değil ağırlıklı ortalama olduğu yazılıdır. Sağ panel tek çekiliş: dağılımdan bir örnek alınır ve sonuç üç adaydan biridir; altında tek çekilişin dağılım hakkında neredeyse hiçbir şey söylemediği, ancak çok sayıda çekilişin ortalamasının beklentiye yaklaştığı yazılıdır. En altta bir kayıt: aynı nesne üç ayrı soruya cevap verir ve bu üç soru birbirinin yerine kullanılamaz.">
+  <rect x="20" y="30" width="216" height="164" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="252" y="30" width="216" height="164" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="484" y="30" width="216" height="164" fill="var(--surface-muted)" stroke="var(--border)" />
+
+  <text x="34" y="52" font-size="13" font-weight="bold" fill="var(--text)">dağılımın kendisi</text>
+  <text x="266" y="52" font-size="13" font-weight="bold" fill="var(--text)">beklenti</text>
+  <text x="498" y="52" font-size="13" font-weight="bold" fill="var(--text)">tek çekiliş</text>
+
+  <text x="34" y="78" font-size="13" fill="var(--text)">1. aday: 0,659</text>
+  <text x="34" y="98" font-size="13" fill="var(--text)">2. aday: 0,242</text>
+  <text x="34" y="118" font-size="13" fill="var(--text)">3. aday: 0,099</text>
+  <text x="34" y="142" font-size="13" fill="var(--accent)">toplam = 1</text>
+
+  <text x="266" y="78" font-size="13" fill="var(--text)">1·0,659 + 0·0,242</text>
+  <text x="266" y="98" font-size="13" fill="var(--text)">+ 0·0,099</text>
+  <text x="266" y="118" font-size="13" fill="var(--accent)">= 0,659</text>
+  <text x="266" y="142" font-size="13" fill="var(--text-muted)">ağırlıklı ortalama</text>
+
+  <text x="498" y="78" font-size="13" fill="var(--text)">çekiliş → 2. aday</text>
+  <text x="498" y="98" font-size="13" fill="var(--text-muted)">bir sonraki çekiliş</text>
+  <text x="498" y="118" font-size="13" fill="var(--text-muted)">başka çıkabilir</text>
+  <text x="498" y="142" font-size="13" fill="var(--accent)">tek çekiliş kanıt değil</text>
+
+  <text x="34" y="172" font-size="13" fill="var(--text-muted)">soru: ne kadar olası</text>
+  <text x="266" y="172" font-size="13" fill="var(--text-muted)">soru: ortalamada ne</text>
+  <text x="498" y="172" font-size="13" fill="var(--text-muted)">soru: bu sefer ne</text>
+
+  <line x1="20" y1="216" x2="700" y2="216" stroke="var(--border)" />
+  <text x="20" y="240" font-size="13" fill="var(--text-muted)">Aynı nesne üç ayrı soruya cevap verir; üç soru birbirinin yerine kullanılamaz.</text>
+  <text x="20" y="262" font-size="13" fill="var(--text-muted)">Çok sayıda çekilişin ortalaması beklentiye yaklaşır; tek çekiliş yaklaşmaz.</text>
+  <text x="20" y="284" font-size="13" fill="var(--text-faint)">Olasılıklar 2,0 · 1,0 · 0,1 logit'lerinden elle hesaplandı.</text>
+</svg>

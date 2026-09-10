@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 324" role="img" aria-label="İki sütunlu karşılaştırma. Sol sütun özdeğer: sorusu hangi yön korunur ve ne kadar uzar; yalnızca kare matrislerde tanımlıdır; negatif olabilir; A matrisi birinci satır 3 ve 1, ikinci satır 1 ve 3 için özdeğerler 4 ile 2, özvektörler 1 1 ile 1 eksi 1. Sağ sütun tekil değer: sorusu birim vektörler en çok ne kadar gerilir; her matriste tanımlıdır, kare olması gerekmez; her zaman sıfır ya da pozitiftir; aynı A matrisi için tekil değerler 4 ile 2, yani simetrik ve gerdirmesi pozitif olan bir matriste ikisi çakışır. Altta karşı örnek: B matrisi birinci satır 0 ve 2, ikinci satır 0 ve 0; iki özdeğeri de sıfırdır ama tekil değerleri 2 ile 0'dır ve B, 0 1 vektörünü 2 0 vektörüne taşır. En altta bir kayıt: özdeğerlerin sıfır olması matrisin hiçbir şey yapmadığı anlamına gelmez.">
+  <rect x="20" y="30" width="330" height="150" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="370" y="30" width="330" height="150" fill="var(--surface-muted)" stroke="var(--border)" />
+
+  <text x="34" y="52" font-size="13" font-weight="bold" fill="var(--text)">özdeğer</text>
+  <text x="384" y="52" font-size="13" font-weight="bold" fill="var(--text)">tekil değer</text>
+
+  <text x="34" y="76" font-size="13" fill="var(--text)">hangi yön korunur,</text>
+  <text x="34" y="94" font-size="13" fill="var(--text)">ne kadar uzar</text>
+  <text x="384" y="76" font-size="13" fill="var(--text)">birim vektörler en çok</text>
+  <text x="384" y="94" font-size="13" fill="var(--text)">ne kadar gerilir</text>
+
+  <text x="34" y="120" font-size="13" fill="var(--text-muted)">yalnızca kare matriste</text>
+  <text x="34" y="138" font-size="13" fill="var(--text-muted)">negatif olabilir</text>
+  <text x="384" y="120" font-size="13" fill="var(--text-muted)">her matriste tanımlı</text>
+  <text x="384" y="138" font-size="13" fill="var(--text-muted)">her zaman ≥ 0</text>
+
+  <text x="34" y="166" font-size="13" fill="var(--accent)">A için 4 ve 2; yönler (1;1), (1;−1)</text>
+  <text x="384" y="166" font-size="13" fill="var(--accent)">A için yine 4 ve 2 — çakışırlar</text>
+
+  <line x1="20" y1="200" x2="700" y2="200" stroke="var(--border)" />
+  <text x="20" y="224" font-size="13" font-weight="bold" fill="var(--text)">karşı örnek: B = satırları (0; 2) ve (0; 0)</text>
+  <text x="20" y="248" font-size="13" fill="var(--text)">özdeğerleri: 0 ve 0</text>
+  <text x="300" y="248" font-size="13" fill="var(--accent)">tekil değerleri: 2 ve 0</text>
+  <text x="20" y="270" font-size="13" fill="var(--text)">B, (0; 1) vektörünü (2; 0) vektörüne taşır — yani etkisiz değildir.</text>
+
+  <line x1="20" y1="288" x2="700" y2="288" stroke="var(--border)" />
+  <text x="20" y="310" font-size="13" fill="var(--text-muted)">Özdeğerlerin sıfır olması, matrisin hiçbir şey yapmadığı anlamına gelmez.</text>
+</svg>

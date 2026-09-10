@@ -7022,6 +7022,161 @@
       "related_bugs": [],
       "occurrences": 2,
       "last_seen": "2026-09-10T10:25:00Z"
+    },
+    {
+      "id": "bug-420",
+      "timestamp": "2026-09-10T13:20:41.570Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
+      "root_cause": "Had `sayaç == MAX`",
+      "fix": "Changed to 'in sol paneli bu yapıyı ve üzerinde doğan iki bek",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T13:20:41.570Z"
+    },
+    {
+      "id": "bug-421",
+      "timestamp": "2026-09-10T13:22:02.529Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/roadmap.json",
+      "root_cause": "Had \"CPU Zamanlama\"",
+      "fix": "Changed to \"CPU Zamanlama: Ölçütler, Kurallar ve Geri Besleme",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T13:22:02.529Z"
+    },
+    {
+      "error_message": "FATAL ERROR: Committing semi space failed. Allocation failed - JavaScript heap out of memory (next dev, seri rota sweep'i 85. rotada)",
+      "file": "artifacts/b22-research/sweep-b22.py (silindi; scratchpad'e yeniden yazıldı)",
+      "root_cause": "Dev sunucusu her rotayı istek anında derliyor ve derlenmiş modülleri bellekte tutuyor; 94 seri rotası tek oturumda yığını tüketiyor. NODE_OPTIONS=--max-old-space-size=8192 sorunu çözmedi.",
+      "fix": "Sweep dilimlere bölündü (32 + 32 + 16 + 15 rota, sunucu ayakta): 95 rotanın tamamı 200, toplam ~75 sn.",
+      "tags": [
+        "next-dev",
+        "oom",
+        "sweep",
+        "seri",
+        "batch22"
+      ],
+      "id": "bug-422",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "error_message": "Rota sweep'i 'hepsi 200' dedi ama makale sayfaları yerine /login dönüyordu",
+      "file": "artifacts/b22-research/sweep-b22.py",
+      "root_cause": "İzole kopyada `next start` (üretim) çalıştırıldığında middleware devreye giriyor ve .env.local olmadığı için bütün rotalar /login?error=config'e yönleniyor; urllib yönlendirmeyi izlediği için durum kodu 200 çıkıyor.",
+      "fix": "Sweep dev sunucusuna alındı ve betiğe resp.geturl() karşılaştırması eklendi; yönlendirme artık hata sayılıyor.",
+      "tags": [
+        "next-start",
+        "middleware",
+        "login",
+        "sweep",
+        "false-positive",
+        "batch22"
+      ],
+      "id": "bug-423",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "error_message": "openreview.net/forum?id=<yanlis-id> adresi 200 döndürüyor",
+      "file": "content/series/articles/foundations/*.md (kaynakçalar)",
+      "root_cause": "OpenReview bot doğrulama sayfası ('Verifying your browser') 200 ile dönüyor; bağlantı kapısı yanlış kimliği doğru sanıyor.",
+      "fix": "Kimlikler api.openreview.net/notes/search (eski mecralar) ve api2 (yeni mecralar) ile tek tek doğrulandı; doğrulanamayan ikisi proceedings.iclr.cc hash biçimine çevrildi (hash dizinden çözüldü).",
+      "tags": [
+        "openreview",
+        "url-dogrulama",
+        "kaynakca",
+        "batch22"
+      ],
+      "id": "bug-424",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "error_message": "[Bağlantı](https://doi.org/10.1002/(SICI)...) markdown'da 404 veriyor",
+      "file": "content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md",
+      "root_cause": "Wiley DOI'sindeki '(SICI)' parantezi markdown bağlantısını erken kapatıyor; URL kırpılıyor.",
+      "fix": "DOI yüzde kodlamasıyla yazıldı (%28SICI%29 ...); Crossref'te künye ayrıca doğrulandı.",
+      "tags": [
+        "markdown",
+        "doi",
+        "wiley",
+        "kaynakca",
+        "batch22"
+      ],
+      "id": "bug-425",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "error_message": "check-series-content.cjs: düzyazı kelime sayısı 1877 (hedef 2.000-3.500) — dört makalede birden",
+      "file": "content/series/articles/foundations/*.md",
+      "root_cause": "Kabuk içinde `node -e` ile yazılan countProseWords taklidi 100-150 kelime fazla sayıyordu; makaleler banttayım sanılırken kapıda kaldı.",
+      "fix": "Kapının kendi işlevi ayrı bir dosyaya (wc-b22.cjs) birebir kopyalandı ve gerçek sayıyla çalışıldı; dört makaleye planda olup kesilmiş kaynaklı malzeme geri kondu (2.069 / 2.014 / 2.029 / 2.040).",
+      "tags": [
+        "kelime-sayisi",
+        "kapi",
+        "shell-escaping",
+        "batch22"
+      ],
+      "id": "bug-426",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "error_message": "artifacts/b22-research ve b10-b21 araştırma dizinleri kayboldu (No such file or directory)",
+      "file": "artifacts/",
+      "root_cause": "Aynı worktree'de eşzamanlı çalışan ikinci bir üretim oturumu (BOUN serisi) build şişmesini önlemek için artifacts/ altını temizledi.",
+      "fix": "Kalan doğrulama betikleri oturum scratchpad'ine yeniden yazıldı ve kapılar tamamlandı. Kural: geçici betikler artifacts/ altına değil scratchpad'e; paralel oturum kontrolü yalnızca netstat değil, git status + .wolf/memory.md son satırları.",
+      "tags": [
+        "paralel-oturum",
+        "artifacts",
+        "veri-kaybi",
+        "batch22"
+      ],
+      "id": "bug-427",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
+    },
+    {
+      "error_message": "playwright: TimeoutError (waitUntil: 'networkidle')",
+      "file": "scratchpad/shots-b22.cjs",
+      "root_cause": "Okuyucu /api/reader-sync'i sürekli yokluyor (503 dönüyor) ve ağ hiç boşalmıyor, dolayısıyla networkidle koşulu hiç sağlanmıyor.",
+      "fix": "waitUntil 'domcontentloaded' yapıldı ve sabit bekleme eklendi.",
+      "tags": [
+        "playwright",
+        "networkidle",
+        "reader-sync",
+        "batch22"
+      ],
+      "id": "bug-428",
+      "timestamp": "2026-09-10T18:00:00Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-10T18:00:00Z"
     }
   ]
 }

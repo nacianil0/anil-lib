@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" role="img" aria-label="Üç panelli bir şekil. Sol panel aynı iki dağılımın iki yöndeki KL değerini verir: p'den q'ya 0,921 bit, q'dan p'ye 0,421 bit; altında aynı çiftin iki ayrı sayı verdiği yazılıdır. Orta panel iki yönün davranışını karşılaştırır: ileri yön modeli gerçek dağılımın kütle koyduğu her yeri örtmeye zorlar, ters yön ise modeli tepelere yerleşmeye zorlar ve bazı tepeleri ihmal edebilir. Sağ panel KL'yi bütçe olarak gösterir: n aday üretip en iyisini seçmenin bedeli logaritma n eksi (n eksi 1) bölü n nattır; n 4 için 0,636, n 10 için 1,403, n 1.000 için 5,909, n 60.000 için 10,002. En altta bir kayıt: KL bir uzaklık değildir çünkü iki yön aynı sayıyı vermez, ve bütçe satırındaki değerler kaynağın verdiği kapalı biçimden elle hesaplanmıştır.">
+  <rect x="20" y="30" width="200" height="180" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="240" y="30" width="220" height="180" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="480" y="30" width="220" height="180" fill="var(--surface-muted)" stroke="var(--border)" />
+
+  <text x="34" y="52" font-size="13" font-weight="bold" fill="var(--text)">aynı çift, iki sayı</text>
+  <text x="254" y="52" font-size="13" font-weight="bold" fill="var(--text)">iki yönün davranışı</text>
+  <text x="494" y="52" font-size="13" font-weight="bold" fill="var(--text)">KL bir bütçedir</text>
+
+  <text x="34" y="80" font-size="13" fill="var(--text)">p'den q'ya</text>
+  <text x="150" y="80" font-size="13" fill="var(--accent)">0,921</text>
+  <text x="34" y="104" font-size="13" fill="var(--text)">q'dan p'ye</text>
+  <text x="150" y="104" font-size="13" fill="var(--accent)">0,421</text>
+  <text x="34" y="132" font-size="13" fill="var(--text-muted)">birim: bit</text>
+  <text x="34" y="160" font-size="13" fill="var(--text)">İki sayı aynı</text>
+  <text x="34" y="180" font-size="13" fill="var(--text)">olmadığı için KL</text>
+  <text x="34" y="200" font-size="13" fill="var(--text)">bir uzaklık değil.</text>
+
+  <text x="254" y="80" font-size="13" fill="var(--text-muted)">ileri yön</text>
+  <text x="254" y="102" font-size="13" fill="var(--text)">p'nin kütle koyduğu</text>
+  <text x="254" y="122" font-size="13" fill="var(--text)">her yeri örtmek</text>
+  <text x="254" y="152" font-size="13" fill="var(--text-muted)">ters yön</text>
+  <text x="254" y="174" font-size="13" fill="var(--text)">tepelere yerleşmek,</text>
+  <text x="254" y="194" font-size="13" fill="var(--text)">bazılarını ihmal etmek</text>
+
+  <text x="494" y="80" font-size="13" fill="var(--text)">n adaydan en iyisi:</text>
+  <text x="494" y="100" font-size="13" fill="var(--text-muted)">log n − (n−1)/n nat</text>
+  <text x="494" y="126" font-size="13" fill="var(--text)">n = 4</text>
+  <text x="620" y="126" font-size="13" fill="var(--text)">0,636</text>
+  <text x="494" y="146" font-size="13" fill="var(--text)">n = 10</text>
+  <text x="620" y="146" font-size="13" fill="var(--text)">1,403</text>
+  <text x="494" y="166" font-size="13" fill="var(--text)">n = 1.000</text>
+  <text x="620" y="166" font-size="13" fill="var(--text)">5,909</text>
+  <text x="494" y="186" font-size="13" fill="var(--text)">n = 60.000</text>
+  <text x="620" y="186" font-size="13" fill="var(--accent)">10,002</text>
+
+  <line x1="20" y1="236" x2="700" y2="236" stroke="var(--border)" />
+  <text x="20" y="260" font-size="13" fill="var(--text-muted)">"6 nat uzaklaştı" tek başına eksik: hangi yön ve hangi dağılıma göre ortalama alındı?</text>
+  <text x="20" y="282" font-size="13" fill="var(--text-muted)">Karşılaştırma için ölçek: bin adaydan en iyisini seçmek zaten yaklaşık 5,9 nat harcar.</text>
+  <text x="20" y="304" font-size="13" fill="var(--text-faint)">Bütçe değerleri kaynağın verdiği kapalı biçimden elle hesaplandı.</text>
+</svg>

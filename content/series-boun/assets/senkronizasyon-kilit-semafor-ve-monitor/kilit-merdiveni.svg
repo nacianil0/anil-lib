@@ -1,0 +1,59 @@
+<svg viewBox="0 0 720 295" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Yükle/sakla ile kurulan bayrağın çöküşü</text>
+
+  <rect x="20" y="32" width="40" height="24" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="28" y="49" font-size="13" fill="var(--text-muted)">adım</text>
+  <rect x="60" y="32" width="145" height="24" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="68" y="49" font-size="13" fill="var(--text-muted)">İş parçacığı 1</text>
+  <rect x="205" y="32" width="145" height="24" rx="3" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="213" y="49" font-size="13" fill="var(--text-muted)">İş parçacığı 2</text>
+
+  <rect x="20" y="56" width="330" height="26" fill="none" stroke="var(--border)" stroke-width="1" />
+  <text x="28" y="74" font-size="13" fill="var(--text-faint)">1</text>
+  <text x="68" y="74" font-size="13" fill="var(--text)">bayrağı oku: 0</text>
+
+  <rect x="20" y="82" width="330" height="26" fill="none" stroke="var(--border)" stroke-width="1" />
+  <text x="28" y="100" font-size="13" fill="var(--text-faint)">2</text>
+  <text x="213" y="100" font-size="13" fill="var(--text)">bayrağı oku: 0</text>
+
+  <rect x="20" y="108" width="330" height="26" fill="none" stroke="var(--border)" stroke-width="1" />
+  <text x="28" y="126" font-size="13" fill="var(--text-faint)">3</text>
+  <text x="68" y="126" font-size="13" fill="var(--text)">bayrak = 1</text>
+
+  <rect x="20" y="134" width="330" height="26" fill="none" stroke="var(--border)" stroke-width="1" />
+  <text x="28" y="152" font-size="13" fill="var(--text-faint)">4</text>
+  <text x="68" y="152" font-size="13" fill="var(--text)">KRİTİK KESİM</text>
+  <text x="213" y="152" font-size="13" fill="var(--text)">bayrak = 1</text>
+
+  <rect x="60" y="160" width="145" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <rect x="205" y="160" width="145" height="26" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="28" y="178" font-size="13" fill="var(--text-faint)">5</text>
+  <text x="68" y="178" font-size="13" fill="var(--text)">KRİTİK KESİM</text>
+  <text x="213" y="178" font-size="13" fill="var(--text)">KRİTİK KESİM</text>
+
+  <text x="20" y="208" font-size="13" fill="var(--text)">ikisi de içeride: karşılıklı dışlama yok</text>
+
+  <line x1="362" y1="32" x2="362" y2="230" stroke="var(--border)" stroke-width="1" />
+
+  <text x="378" y="22" font-size="13" fill="var(--text-muted)">Merdiven: her basamak ne ekliyor</text>
+
+  <rect x="378" y="32" width="327" height="44" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="386" y="50" font-size="13" fill="var(--text)">kesmeleri kapatmak</text>
+  <text x="386" y="68" font-size="13" fill="var(--text-muted)">tek işlemcide olur, çok işlemcide olmaz</text>
+
+  <rect x="378" y="82" width="327" height="44" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="386" y="100" font-size="13" fill="var(--text)">bayrak (sıradan okuma/yazma)</text>
+  <text x="386" y="118" font-size="13" fill="var(--text-muted)">karşılıklı dışlamayı bile veremez</text>
+
+  <rect x="378" y="132" width="327" height="44" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="386" y="150" font-size="13" fill="var(--text)">test_and_set: oku ve yaz tek adımda</text>
+  <text x="386" y="168" font-size="13" fill="var(--text-muted)">karşılıklı dışlama var, adalet yok</text>
+
+  <rect x="378" y="182" width="327" height="44" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="386" y="200" font-size="13" fill="var(--text)">sıra kilidi (getir-ve-ekle)</text>
+  <text x="386" y="218" font-size="13" fill="var(--text-muted)">numara verir: sınırlı bekleme de var</text>
+
+  <text x="15" y="248" font-size="13" fill="var(--text)">Üç koşul: karşılıklı dışlama, ilerleme, sınırlı bekleme.</text>
+  <text x="15" y="266" font-size="13" fill="var(--text-muted)">Kritik kesiminin dışında duran bir süreç, ötekilerin özgürlüğünü kısıtlamamalıdır.</text>
+  <text x="15" y="284" font-size="13" fill="var(--text-faint)">Kaba kuvvetle tarandı: bayrakta 57 durumun içinde ihlal var, test-and-set'te 5 durumda yok.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Üç kutulu bir hesap şeması. Birinci kutu A matrisi: birinci satır 3 ve 1, ikinci satır 1 ve 3; tekil değerleri 4 ve 2; Frobenius normu karekök 20, yani 4,47. İkinci kutu en iyi rank-1 yaklaşıklık: bütün girdileri 2 olan matris; Frobenius normu 4, yani en büyük tekil değerin kendisi. Üçüncü kutu hata matrisi: birinci satır 1 ve eksi 1, ikinci satır eksi 1 ve 1; Frobenius normu 2, yani kesilen ikinci tekil değerin kendisi. Altta iki kayıt: 16 artı 4 eşittir 20, bu A'nın Frobenius normunun karesidir; ve tutulan payın oranı 16 bölü 20, yani yüzde 80. En altta teoremin cümlesi: en iyi düşük ranklı yaklaşıklık baştan kesmekle elde edilir ve yapılan hata, kesilen ilk tekil değere eşittir.">
+  <rect x="20" y="34" width="200" height="106" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="260" y="34" width="200" height="106" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="500" y="34" width="200" height="106" fill="var(--surface-muted)" stroke="var(--border)" />
+
+  <text x="34" y="56" font-size="13" font-weight="bold" fill="var(--text)">A</text>
+  <text x="274" y="56" font-size="13" font-weight="bold" fill="var(--text)">en iyi rank-1 hâli</text>
+  <text x="514" y="56" font-size="13" font-weight="bold" fill="var(--text)">hata: A − yaklaşıklık</text>
+
+  <text x="34" y="80" font-size="13" fill="var(--text)">(3; 1)</text>
+  <text x="34" y="98" font-size="13" fill="var(--text)">(1; 3)</text>
+  <text x="274" y="80" font-size="13" fill="var(--text)">(2; 2)</text>
+  <text x="274" y="98" font-size="13" fill="var(--text)">(2; 2)</text>
+  <text x="514" y="80" font-size="13" fill="var(--text)">(1; −1)</text>
+  <text x="514" y="98" font-size="13" fill="var(--text)">(−1; 1)</text>
+
+  <text x="34" y="126" font-size="13" fill="var(--accent)">tekil değerler 4 ve 2</text>
+  <text x="274" y="126" font-size="13" fill="var(--accent)">Frobenius normu 4 = σ₁</text>
+  <text x="514" y="126" font-size="13" fill="var(--accent)">Frobenius normu 2 = σ₂</text>
+
+  <polygon points="228,82 252,88 228,94" fill="var(--text-muted)" />
+  <polygon points="468,82 492,88 468,94" fill="var(--text-muted)" />
+
+  <line x1="20" y1="164" x2="700" y2="164" stroke="var(--border)" />
+  <text x="20" y="188" font-size="13" fill="var(--text)">A'nın Frobenius normunun karesi: 16 + 4 = 20  (tekil değerlerin kareleri toplamı)</text>
+  <text x="20" y="210" font-size="13" fill="var(--text)">tutulan payın oranı: 16 ÷ 20 = yüzde 80</text>
+
+  <line x1="20" y1="234" x2="700" y2="234" stroke="var(--border)" />
+  <text x="20" y="258" font-size="13" fill="var(--text-muted)">En iyi düşük ranklı yaklaşıklık, tekil değer ayrışımını baştan keserek elde edilir;</text>
+  <text x="20" y="280" font-size="13" fill="var(--text-muted)">yapılan hata da kesilen ilk tekil değerin kendisidir.</text>
+</svg>

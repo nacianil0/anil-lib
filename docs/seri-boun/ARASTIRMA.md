@@ -1478,3 +1478,230 @@ run'ın çalışma alanındadır.
 12. **Yarış koşulu kayıp oranları (makale 27):** OSTEP'in gözlediği 19.345.221 ve 19.221.041
     değerleri için kayıp sırasıyla 654.779 (**%3,27**) ve 778.959 (**%3,89**); iki çalıştırma
     arasındaki fark 124.180. İki iş parçacığı × 10⁷ artırma × 3 komut = **60 milyon komut**.
+
+## 14. Batch 9 üretim run'ında doğrulanan kaynaklar (2026-09-10)
+
+Makale 28 (CPU Zamanlama), 29 (Senkronizasyon) ve 30 (Klasik Eşzamanlılık Problemleri) bu
+kaynaklara dayanır. Bütün URL'ler bu run'da HTTP 200 ile çekildi; PDF'ler indirilip metne
+çevrildi, iki Dijkstra metni ise aşağıdaki erişim notundaki nedenle HTML transkripsiyondan okundu.
+
+### Resmî sayfa
+
+- **CMPE322** (<https://cmpe.bogazici.edu.tr/courses/cmpe322/>), yeniden doğrulama **2026-09-10**:
+  sayfa yeniden çekildi, *Catalog Description* §13'te kayda geçen metinle **birebir aynı**;
+  ders bilgileri de aynı (Güz, önkoşul CMPE250, 4 kredi / 6 ECTS, "Lecture: 3, PS:0, Labs: 2",
+  İngilizce). **Course Learning Outcomes bölümü yine yok**; Faz D'nin bütün resmî içerik
+  iddiaları yalnızca *Catalog Description*'a dayanır. Batch 9'un üç makalesi katalog tanımındaki
+  şu ifadelere karşılık gelir: "CPU scheduling" (28), "process synchronization, critical section
+  problem" (29 ve 30).
+
+### Makale 28 için akademik kaynaklar
+
+- **OSTEP Chapter 7, Scheduling: Introduction** (`cpu-sched.pdf`). Doğrulanan birebir içerik: beş
+  iş yükü varsayımı; **dönüş süresi** tanımı (7.1 numaralı denklem, T_turnaround = T_completion −
+  T_arrival) ve adaletin (Jain adalet indeksi anılır) başarımla çatışması; FIFO/FCFS ve üç eşit
+  işte ortalama 20; 100 + 10 + 10 iş yükünde ortalama **110** ve **konvoy etkisi** [B+79]; SJF ile
+  ortalamanın **50**'ye düşmesi ve "SJF ilkesi" kutusu; geç gelen B ve C ile ortalamanın
+  **103,33** olması; önkesmeli çizelgeleyiciler kutusu; **STCF/PSJF** [CK68] ile ortalamanın
+  yeniden **50** olması ve iki optimallik iddiasının varsayımlara bağlanması; **tepki süresi**
+  tanımı (7.2 numaralı denklem); **round-robin** [K64], zaman diliminin zamanlayıcı kesmesi
+  periyodunun katı olma zorunluluğu, üç eşit işte tepki sürelerinin **1'e karşı 5** ve dönüş
+  sürelerinin **14'e karşı 10** olması; "adil olan her kural dönüş süresinde kötüdür" saptaması;
+  **amortize etme** kutusu (1 ms anahtar / 10 ms dilim ≈ %10; 100 ms dilim < %1) ve bağlam
+  anahtarının önbellek, TLB ve dal öngörücüsü maliyeti [MB91]; giriş/çıkışın her işlemci
+  parçasını ayrı iş sayarak hesaba katılması ve örtüşme.
+- **OSTEP Chapter 8, The Multi-Level Feedback Queue** (`cpu-sched-mlfq.pdf`). Doğrulanan birebir
+  içerik: MLFQ'nun Corbató ve arkadaşlarınca **1962'de CTSS'te** tanımlanması [C+62]; **beş
+  kuralın** son hâli; **tahsis (allotment)** tanımı; ilk üç kuralın üç açığı — **açlık**,
+  **çizelgeleyiciyi oynatma** ("before the allotment is used, issue an I/O operation … a job
+  could nearly monopolize the CPU") ve davranış değiştiren işin cezalandırılması; düzeltilmiş
+  4. kuralın muhasebeyi düzeyde biriktirmesi; S'nin bir **büyücü sabiti** olması ve Ousterhout
+  yasası kutusu; kuyruk düzeyine göre değişen dilim uzunlukları (üstte 10 ms ve altı, altta yüzlerce
+  ms); **Solaris TS sınıfının** varsayılanları (60 kuyruk, 20 ms'den birkaç yüz ms'ye, yaklaşık
+  saniyede bir yükseltme) [AD00]; MLFQ'nun BSD, Solaris ve Windows NT türevlerinde taban
+  çizelgeleyici olması.
+- **OSTEP Chapter 9, Scheduling: Proportional Share** (`cpu-sched-lottery.pdf`). Doğrulanan birebir
+  içerik: piyango çizelgelemesinde biletlerin payı temsil etmesi [WW94]; **Linux CFS** [J09]:
+  **vruntime** sayımı ve en küçük vruntime'ın seçilmesi, `sched_latency` (tipik **48 ms**) değerinin
+  süreç sayısına bölünmesi ve n = 4 için 12 ms, `min_granularity` (tipik **6 ms**) alt sınırı ve on
+  süreçte 4,8 ms yerine 6 ms kullanılması; `nice` aralığı (−20…+19, varsayılan 0) ve
+  `prio_to_weight` tablosu (nice −5 → **3121**, nice 0 → **1024**), dilimin ağırlık oranından
+  hesaplanması ve örnekte payların yaklaşık 3/4 ile 1/4 (**36 ms** ve **12 ms**) çıkması,
+  vruntime'ın ağırlıkla ters ölçeklenmesi (9.2 numaralı denklem), nice farkı sabitken oranın
+  korunması; çalışabilir süreçlerin **kırmızı-siyah ağaçta** vruntime'a göre tutulması, sıralı
+  listenin O(n) olması ve ağaç işlemlerinin **O(log n)** olması, uyuyan süreçlerin ağaçtan
+  çıkarılması; Google veri merkezi ölçümünde çizelgelemenin toplam işlemci zamanının yaklaşık
+  **%5**'ini alması [K+15].
+- **OSTEP Chapter 10, Multiprocessor Scheduling** (`cpu-sched-multi.pdf`). Doğrulanan birebir
+  içerik: **önbellek yakınlığı** tanımı [TTG95]; **SQMS**'in iki zaafı (kilit çekişmesi nedeniyle
+  ölçeklenmeme ve işlerin işlemciler arasında zıplaması) ve beş iş / dört işlemci örneği;
+  **MQMS**'in ölçeklenmesi ve yakınlığı koruması, buna karşılık **yük dengesizliği** doğurması
+  (bir işlemcinin tamamen boş kalması dahil); **göçürme** ve **iş çalma (work stealing)** [FLR98]
+  ile bakma sıklığının takası; Linux'ta O(1), CFS ve BFS çizelgeleyicilerinin bir arada var olması.
+- **xv6 kitabı, Chapter 7 (Scheduling), §7.1 Multiplexing.** Doğrulanan birebir içerik: gönüllü ve
+  **gönülsüz** geçiş ayrımı, "Xv6 uses the standard technique in which a hardware timer's
+  interrupts drive context switches", çoklamanın her sürece kendi işlemcisi varmış yanılsamasını
+  vermesi ve gerçekleştirmenin altı somut zorluğu (yazmaçların kaydedilmesi, saydamlık, çok
+  işlemcide gereken kilit planı, çıkan sürecin kaynaklarının serbest bırakılması, her işlemcinin
+  hangi süreci çalıştırdığını bilmesi, uyandırma bildirimlerinin kaybolmaması).
+- **Silberschatz, onuncu baskı, Chapter 5 CPU Scheduling.** Resmî içindekiler PDF'i bu run'da
+  yeniden çekildi (<https://www.os-book.com/OS10/toc-dir/toc.pdf>); alt bölüm adları doğrulandı:
+  5.1 Basic Concepts, 5.2 Scheduling Criteria, 5.3 Scheduling Algorithms, 5.4 Thread Scheduling,
+  5.5 Multi-Processor Scheduling, 5.6 Real-Time CPU Scheduling, 5.7 Operating-System Examples,
+  5.8 Algorithm Evaluation, 5.9 Summary.
+
+### Makale 29 ve 30 için akademik kaynaklar
+
+- **Dijkstra, E. W., *Cooperating Sequential Processes* (EWD 123), 1965.** Doğrulanan birebir
+  içerik — §2.2: genelleştirilmiş karşılıklı dışlama probleminin kuruluşu ve **üç koşul**
+  ("at any moment at most one of them is engaged in its critical section"; "stopping one process
+  well outside its critical section may in no way restrict the freedom of the others"; "if more
+  than one process is about to enter its critical section, it must be impossible to devise for
+  them such finite speeds, that the decision which one of them is the first one to enter its
+  critical section, can be postponed until eternity"); §2.1: ortak değişkene erişimin bölünmez
+  sayılması varsayımı; §3.1: **meşgul beklemenin maliyeti** ("they have to wait anyhow, and as far
+  as we are concerned 'they could go to sleep'") ve tek işlemcili sistemde bekleyenin işlemciyi
+  yemesinin neden kabul edilemez olduğu; §3.2: **semafor** tanımı ve **P ile V işlemlerinin**
+  birebir tanımları, sıradan bir artırmanın neden yetmediğinin adım adım gösterimi, ikili ile genel
+  semafor ayrımı; §3.3: tek ikili semaforla N sürecin kritik kesim probleminin çözülmesi; §4.1 ve
+  §4.3: **sınırlı tamponun** genel semafor + ikili semaforla çözümü ve okura bırakılan iki
+  alıştırma ("a) the order of the two V-operations in the producer is immaterial b) the order of
+  the two P-operations in the consumer is essential"), çözümün çok üretici/çok tüketiciye doğrudan
+  genişlemesi; §6: "deadly embrace" adlandırması.
+  Kaynak: <https://www.cs.utexas.edu/~EWD/transcriptions/EWD01xx/EWD123.html>
+- **Dijkstra, E. W., *Hierarchical Ordering of Sequential Processes* (EWD 310; Acta Informatica 1,
+  1971).** Doğrulanan birebir içerik: **yemek yiyen filozoflar** probleminin kuruluşu (beş filozof,
+  iki çatalla yenen spagetti, "no two neighbours may be eating simultaneously"); her çatala bir
+  ikili semafor koyup önce solu sonra sağı alan **naif çözümün reddi** ("it contains the danger of
+  the deadly embrace. When all five philosophers get hungry simultaneously, each will grab his left
+  hand fork and from that moment onwards the group is stuck"); iki çatalı tek işlemde alan
+  **paralel P işlemi** seçeneği ve daha sonra "başka gerekçelerle" reddedilmesi; Dijkstra'nın kendi
+  çözümü — C[i] durum değişkeni (0 düşünüyor, 1 **aç**, 2 yiyor), ortak `mutex`, filozof başına
+  `prisem` özel semaforu ve komşuları uygunsa aç filozofu masaya gönderen `test` yordamı; çözümün
+  kilitlenmeden bağışık olduğu ama **açlığa açık** kaldığı saptaması ("it contains possibility of a
+  particular philosopher being starved to death by a conspiration of his two neighbours") ve bunun
+  "çok aç" gibi bir ara durumla düzeltilebileceği notu.
+  Kaynak: <https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD310.html>
+  **Kaynak farkı (kayda geçirildi):** OSTEP Chapter 31, asimetrik çatal sırasını "indeed, this is
+  how Dijkstra himself solved the problem" diyerek [D71]'e bağlar; ama [D71] tam olarak yukarıdaki
+  metindir ve orada asimetrik sıra **yoktur**. Makale 30 bu yüzden asimetrik sırayı "kilitlenmeyi
+  kıran en basit yol" olarak sunar, "Dijkstra'nın çözümü" olarak değil, ve farkı metinde açıkça
+  söyler.
+- **Lamport, L., *Proving the Correctness of Multiprocess Programs*, IEEE TSE SE-3(2), Mart 1977,
+  s. 125–143.** Doğrulanan birebir içerik: **güvenlik ve canlılık** tanımları ("A safety property
+  is one which states that something will not happen… A liveness property is one which states that
+  something must happen"), **kısmi doğruluğun bir güvenlik özelliği**, **sonlanmanın bir canlılık
+  özelliği** olması, iki türün ispat tekniklerinin farklı olması ve makalede ayrı bölümlerde ele
+  alınması; üretici-tüketici programı üzerinde kilitlenmesizliğin bir canlılık özelliği olarak
+  ispatlanması. PDF: <https://lamport.azurewebsites.net/pubs/proving.pdf>
+- **OSTEP Chapter 28, Locks** (`threads-locks.pdf`). Doğrulanan birebir içerik: kilidin bir değişken
+  olarak tanımı, boş/tutulmuş durumları ve **sahiplik**; POSIX'te adının **mutex** olması; kaba
+  taneli ile ince taneli kilitleme; **üç değerlendirme ekseni** (karşılıklı dışlama, adalet/açlık,
+  başarım — çekişmesiz, tek işlemcide çekişmeli, çok işlemcili); **kesmeleri kapatmanın** üç zaafı
+  ve yalnızca çekirdek içinde kullanılabilirliği; **bayrak denemesinin** karşılıklı dışlamayı bozan
+  yürütme izi (Figure 28.2) ve meşgul bekleme sorunu; "kötü niyetli çizelgeleyici gibi düşün"
+  kutusu; **test-and-set** komutunun C karşılığı, üstüne kurulan üç satırlık dönen kilit, doğruluk
+  gerekçesi ve dönen kilidin tek işlemcide **önkesmeli çizelgeleyici** gerektirmesi; dönen kilidin
+  adalet sağlamaması; **compare-and-swap** ve **fetch-and-add**; fetch-and-add ile kurulan **sıra
+  kilidinin** bütün iş parçacıkları için ilerleme garantisi [MS91]; dönmenin maliyeti (N − 1 iş
+  parçacığının birer zaman dilimi harcaması), **yield** yaklaşımının 99 bağlam anahtarı örneği ve
+  açlığı çözmemesi; **kuyruk + park/unpark** ile uyuyan kilit, **uyandırma/bekleme yarışı** ve
+  Solaris'in `setpark()` çözümü; Linux'un `futex` desteği ve **iki fazlı kilit**; **öncelik tersine
+  dönmesi** kutusu (Mars [R97] ve Dünya [M15] örnekleri) ile **öncelik kalıtımı**; Dekker ve
+  Peterson algoritmalarının yalnızca yükleme/saklama kullanan çözümler olarak anılması.
+- **OSTEP Chapter 30, Condition Variables** (`threads-cv.pdf`). Doğrulanan birebir içerik: **koşul
+  değişkeni** tanımı ve fikrin Dijkstra'nın özel semaforlarına dayanıp adının Hoare'ın monitör
+  çalışmasından gelmesi [H74]; `wait()`/`signal()` ve POSIX imzalarında **bekleme çağrısının kilidi
+  de parametre alması**; **üretici-tüketici** probleminin Dijkstra'ya dayanması ve genel semaforun
+  bu problem için icat edilmiş olması [D72, D01]; gerçek karşılıkları (web sunucusunun iş kuyruğu;
+  `grep foo file.txt | wc -l` boru hattında çekirdek içi sınırlı tampon); bozuk çözümün üç aşamalı
+  düzeltilişi — `if` ile beklemenin iki tüketici ve bir üreticiyle kırılması (Figure 30.9),
+  **Mesa semantiği** ile Hoare semantiği ayrımı ("Signaling a thread only wakes them up; it is thus
+  a hint that the state of the world has changed"), `while` düzeltmesi, tek koşul değişkeninin üç
+  iş parçacığını birden uyutması (Figure 30.11) ve **iki koşul değişkenine** (`empty`, `fill`)
+  geçiş; çok hücreli tampon için `fill_ptr`, `use_ptr`, `count` ile modülo aritmetiği; **kapsayıcı
+  koşullar** [LR80]: bellek ayırıcı örneğinde 100 ve 10 bayt bekleyen iki iş parçacığıyla 50
+  baytlık serbest bırakmanın yanlış iş parçacığını uyandırması, çözümün `broadcast` olması, bedelinin
+  gereksiz uyandırmalar olması ve "programın yalnızca broadcast ile çalıştığını fark ediyorsan
+  büyük ihtimalle bir hatan vardır" uyarısı; sahte uyanmalar.
+- **OSTEP Chapter 31, Semaphores** (`threads-sema.pdf`). Doğrulanan birebir içerik: semafor tanımı,
+  `sem_init` ile başlangıç değerinin davranışı belirlemesi, `sem_wait`/`sem_post` davranışları ve
+  P/V adlarının Dijkstra'daki kökeni; **negatif değerin bekleyen iş parçacığı sayısına eşit olması**
+  değişmezi [D68b]; **ikili semaforun kilit olarak** kullanımı; semaforun **sıralama** için sıfırla
+  başlatılması; sınırlı tamponun `empty`/`full` + `mutex` çözümü, kilidin **en dışa** konduğu
+  sürümdeki kilitlenmenin adım adım izi ("The consumer holds the mutex and is waiting for the
+  someone to signal full. The producer could signal full but is waiting for the mutex") ve
+  düzeltmenin kilidin kapsamını daraltmak olması; **okuyucu-yazar kilidi** [CHP71]: `writelock`,
+  `lock` ve `readers` sayacıyla kurulumu, ilk okuyucunun yazma kilidini alması ve son okuyucunun
+  bırakması, **okuyucuların yazarı aç bırakabilmesi** ve düzeltme yönü, ek yük yüzünden basit
+  kilitten yavaş kalabileceği uyarısı (Hill yasası kutusu); **yemek yiyen filozoflar**: sol/sağ
+  çatal yardımcıları, naif çözümün kilitlenmesi ve tek bir filozofun sırasını ters çevirmesi;
+  **kısma (throttling)** kullanımı.
+- **xv6 kitabı, Chapter 6 (Locking) ve §7.5 (Sleep and wakeup).** Doğrulanan birebir içerik:
+  çekirdek içi eşzamanlılığın üç kaynağı (çok işlemcili paralellik, iş parçacığı değişimi,
+  **kesme işleyicileri**); kilidin veriyi koruması ve kilitlerin başarımı sınırlaması; §6.4 kilit
+  sırası ve kilitlenme (A-B / B-A senaryosu, xv6'nın küresel kilit sırası ve dosya sistemindeki en
+  uzun zincir); §6.6 **kesme işleyicileriyle paylaşılan kilitler**: `tickslock` üzerinden tek
+  işlemcilik kilitlenme senaryosu, xv6'nın herhangi bir kilit alınırken o işlemcide kesmeleri
+  kapatması, `push_off`/`pop_off` ile iç içe kritik kesimlerin sayılması ve `push_off`un bayrak
+  kurulmadan **önce** çağrılmasının zorunluluğu; §7.5 **kayıp uyandırma** probleminin adım adım
+  türetilmesi (kilitsiz sürüm uyandırmayı kaçırır; kilidi tutarak uyumak kilitlenme üretir; doğru
+  arayüz, koşul kilidini `sleep`e vermek ve uyuyan işaretlendikten sonra kilidi bırakmaktır).
+- **Silberschatz, onuncu baskı, Chapter 6 Synchronization Tools ve Chapter 7 Synchronization
+  Examples.** Resmî içindekiler PDF'inden doğrulanan alt bölüm adları: 6.1 Background, 6.2 The
+  Critical-Section Problem, 6.3 Peterson's Solution, 6.4 Hardware Support for Synchronization,
+  6.5 Mutex Locks, 6.6 Semaphores, 6.7 Monitors, **6.8 Liveness**, 6.9 Evaluation, 6.10 Summary;
+  7.1 Classic Problems of Synchronization, 7.2 Synchronization within the Kernel, 7.3 POSIX
+  Synchronization, 7.4 Synchronization in Java, 7.5 Alternative Approaches, 7.6 Summary. Ayrıca
+  Chapter 8 Deadlocks alt bölümleri (8.1 System Model, 8.2 Deadlock in Multithreaded Applications,
+  8.6 Deadlock Avoidance, 8.7 Deadlock Detection, 8.8 Recovery from Deadlock) 31 için hazır
+  durumdadır.
+
+### Erişim notları
+
+- **EWD PDF'leri taranmış görüntüdür**: `EWD123.PDF` ve `EWD310.PDF` HTTP 200 ile indi ama metin
+  katmanları yok (`pdftotext` sıfır satır verir). Bu run, yazarın arşivindeki **HTML
+  transkripsiyonlarını** kullandı; alıntılar oradan alınmıştır ve makalelerde bu kaynak gösterilir.
+- OSTEP bölümleri ve xv6 kitabı doğrudan indirildi; `pdftotext -layout` yeterliydi, `pypdf`
+  gerekmedi.
+- Silberschatz içindekiler PDF'i bu run'da yeniden çekildi ve §13'te kayıtlı adlar doğrulandı.
+
+### Bu run'da bağımsız hesaplanan ve programla doğrulanan iddialar
+
+Aşağıdakilerin hiçbiri kaynaktan aktarılmadı; hepsi hesaplandı ya da yazılan küçük programlarla
+doğrulandı. Betikler run'ın çalışma alanındadır (`artifacts/b9-research/`).
+
+1. **Çizelgeleme benzetimi:** FCFS, SJF, STCF ve RR için ayrı bir benzetim yazıldı ve makaledeki
+   bütün ortalamalar onunla doğrulandı: W1 = {A:100, B:10, C:10 @ t=0} → FCFS dönüş 110 (tepki 70),
+   SJF dönüş 50 (tepki 10); W3 = {A:100 @ 0, B:10 @ 10, C:10 @ 10} → FCFS ve SJF **birebir aynı
+   çizelge**, dönüş 103,33; STCF dönüş 50, tepki 3,33; W2 = {A, B, C = 5 @ 0} → SJF dönüş 10 tepki
+   5, RR (q = 1) dönüş 14 tepki 1 ve izleme dizisi `ABCABCABCABCABC`.
+2. **Bağlam anahtarı ek yükü:** 6 µs'lik anahtar için dilim 100 ms → %0,006; 10 ms → **%0,06**;
+   1 ms → **%0,60**; 100 µs → **%5,66** (oran anahtar / (dilim + anahtar) olarak hesaplandı).
+   OSTEP'in "1 ms anahtar, 10 ms dilim ≈ %10" ifadesi anahtarı doğrudan dilime oranlar; aynı hesap
+   kesin biçimde %9,09 verir. Makale kendi konvansiyonunu kullanır ve sayıları kendi hesabı olarak
+   işaretler.
+3. **RR en kötü tepki süresi:** (N − 1)·q; N = 100 ve q = 10 ms için **990 ms**.
+4. **CFS dilim aritmetiği:** `sched_latency` = 48 ms, `min_granularity` = 6 ms ile n = 1, 2, 4, 8
+   için dilim 48 / 24 / 12 / 6 ms ve tur 48 ms; **n = 10 için dilim 6 ms ve tur 60 ms**
+   (48 değil); n = 20 için tur 120 ms. Turun 48'i aşması bu run'ın çıkarımıdır.
+5. **CFS ağırlık payları:** nice −5 (3121) ile nice 0 (1024) için paylar **%75,30** ve **%24,70**,
+   yani 48 ms'nin **36,14 ms** ve **11,86 ms**'si — kaynağın "yaklaşık 3/4 ve 1/4, 36 ve 12 ms"
+   ifadesiyle uyumlu. Aynı hesap nice 5 (335) ile nice 10 (110) için **%75,28** verir: kaynağın
+   "nice farkı sabitken oran korunur" iddiası **yaklaşık** doğrudur, tam değil.
+6. **Kilit doğruluğunun kaba kuvvetle denetimi:** iki iş parçacığının bütün yürütme sıraları
+   tarandı. **Naif bayrak kilidi: 57 erişilebilir durum ve içlerinde ikisinin de kritik kesimde
+   olduğu bir durum var** (örnek: her iki program sayacı da kritik kesimde, bayrak 1).
+   **Test-and-set kilidi: 5 erişilebilir durum, ihlal yok.**
+7. **Yemek yiyen filozoflar:** beş filozofun bütün erişilebilir durumları tarandı. Naif kurulum
+   (herkes önce sol): **82 durum, kilitlenme var** — bulunan durum, her filozofun kendi solundaki
+   çatalı tuttuğu durumdur. Asimetrik kurulum (filozof 4 önce sağ): **70 durum, kilitlenme yok**.
+   İki çatalı atomik alan sürüm: **11 durum, kilitlenme yok**. Üç kurulumda da aynı anda en fazla
+   **2** filozof yiyebiliyor.
+8. **Üretici-tüketici semafor sırası:** bir üretici ve bir tüketici, MAX = 1 ile bütün
+   interleaving'ler tarandı. Kilit **en içteyken 10 erişilebilir durum, kilitlenme yok**; kilit
+   **en dıştayken 14 durum ve bir kilitlenme durumu var** (tüketici `mutex`i tutarken `dolu`yu
+   bekliyor, üretici `mutex`i bekliyor). Bu, Dijkstra'nın EWD 123'teki "tüketicideki iki
+   P işleminin sırası esastır" alıştırmasının programla doğrulanmış hâlidir.
+9. **Kırmızı-siyah ağaç ile sıralı liste karşılaştırması:** n = 1000 için 1000 adım karşı ≈ 10
+   adım, n = 4000 için 4000 karşı ≈ 12 adım.

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-label="Softmax'ın üç adımını sayılarla gösteren bir tablo. Birinci satır logit'ler: 2,0 ve 1,0 ve 0,1. İkinci satır üstelleri: 7,389 ve 2,718 ve 1,105; sağda toplamları 11,213 yazılıdır. Üçüncü satır toplama bölünmüş paylar: 0,659 ve 0,242 ve 0,099; sağda toplamın 1 olduğu yazılıdır. Altta iki karşılaştırma satırı vardır: sıcaklık 0,5 iken paylar 0,864 ve 0,117 ve 0,019; sıcaklık 2 iken 0,502 ve 0,304 ve 0,194. En altta bir kayıt: sıcaklık logit'leri kendisine böler, yani aynı ailenin doğal parametrelerini topluca ölçekler; üstel biçim kısıtları sağlayan en az varsayımlı ailenin biçimidir ve buradaki sayılar üç logit'ten elle hesaplanmıştır.">
+  <text x="20" y="32" font-size="13" fill="var(--text-faint)">adım</text>
+  <text x="230" y="32" font-size="13" fill="var(--text-faint)">1. aday</text>
+  <text x="350" y="32" font-size="13" fill="var(--text-faint)">2. aday</text>
+  <text x="470" y="32" font-size="13" fill="var(--text-faint)">3. aday</text>
+  <text x="590" y="32" font-size="13" fill="var(--text-faint)">toplam</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="20" y="68" font-size="13" fill="var(--text)">logit</text>
+  <text x="230" y="68" font-size="13" fill="var(--text)">2,0</text>
+  <text x="350" y="68" font-size="13" fill="var(--text)">1,0</text>
+  <text x="470" y="68" font-size="13" fill="var(--text)">0,1</text>
+
+  <text x="20" y="94" font-size="13" fill="var(--text)">üstelini al</text>
+  <text x="230" y="94" font-size="13" fill="var(--text)">7,389</text>
+  <text x="350" y="94" font-size="13" fill="var(--text)">2,718</text>
+  <text x="470" y="94" font-size="13" fill="var(--text)">1,105</text>
+  <text x="590" y="94" font-size="13" fill="var(--accent)">11,213</text>
+
+  <text x="20" y="120" font-size="13" fill="var(--text)">toplama böl</text>
+  <text x="230" y="120" font-size="13" fill="var(--accent)">0,659</text>
+  <text x="350" y="120" font-size="13" fill="var(--accent)">0,242</text>
+  <text x="470" y="120" font-size="13" fill="var(--accent)">0,099</text>
+  <text x="590" y="120" font-size="13" fill="var(--accent)">1</text>
+  <line x1="20" y1="134" x2="700" y2="134" stroke="var(--border)" />
+
+  <text x="20" y="160" font-size="13" fill="var(--text)">sıcaklık 0,5</text>
+  <text x="230" y="160" font-size="13" fill="var(--text)">0,864</text>
+  <text x="350" y="160" font-size="13" fill="var(--text)">0,117</text>
+  <text x="470" y="160" font-size="13" fill="var(--text)">0,019</text>
+  <text x="590" y="160" font-size="13" fill="var(--text)">1</text>
+
+  <text x="20" y="186" font-size="13" fill="var(--text)">sıcaklık 2</text>
+  <text x="230" y="186" font-size="13" fill="var(--text)">0,502</text>
+  <text x="350" y="186" font-size="13" fill="var(--text)">0,304</text>
+  <text x="470" y="186" font-size="13" fill="var(--text)">0,194</text>
+  <text x="590" y="186" font-size="13" fill="var(--text)">1</text>
+
+  <line x1="20" y1="210" x2="700" y2="210" stroke="var(--border)" />
+  <text x="20" y="234" font-size="13" fill="var(--text-muted)">Sıcaklık logit'leri kendisine böler: aynı ailenin doğal parametrelerini topluca ölçekler.</text>
+  <text x="20" y="256" font-size="13" fill="var(--text-muted)">Üstel biçim, kısıtları sağlayan en az varsayımlı dağılım ailesinin biçimidir.</text>
+  <text x="20" y="278" font-size="13" fill="var(--text-faint)">Sayılar üç logit'ten elle hesaplandı.</text>
+</svg>
