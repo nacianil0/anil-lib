@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 348" role="img" aria-label="İki satırlı akış şeması. Üst satır ileri yön: soldan sağa temiz görüntü, azıcık gürültülü, çok gürültülü ve saf gürültü kutuları; üzerinde iki kayıt — çizelge tasarımdır, öğrenilmez; ve kapalı biçim, yani sıfırıncı adımdan herhangi bir adıma tek hamlede gidilir. Alt satır geri yön sağdan sola aynı kutuları izler; üzerinde üç kayıt — her adımda ağ eklenmiş gürültüyü tahmin eder, kayıp gerçek gürültü ile tahmin arasındaki ortalama karesel hatadır, ve tek bir ağ bütün gürültü düzeylerini öğrenir çünkü adım numarası ağa girdi olarak verilir. Sağ altta bir kutu: sinyal payı 0,25 olan adımda görüntünün katsayısı 0,5, gürültünün katsayısı yaklaşık 0,87.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">ileri yön: bozmak — öğrenilmez, tasarlanır</text>
+
+  <rect x="25" y="36" width="145" height="46" fill="var(--surface-muted)" />
+  <text x="37" y="64" font-size="13" fill="var(--text)">temiz görüntü</text>
+  <rect x="200" y="36" width="145" height="46" fill="var(--surface-muted)" />
+  <text x="212" y="64" font-size="13" fill="var(--text)">azıcık gürültülü</text>
+  <rect x="375" y="36" width="145" height="46" fill="var(--surface-muted)" />
+  <text x="387" y="64" font-size="13" fill="var(--text)">çok gürültülü</text>
+  <rect x="550" y="36" width="145" height="46" fill="var(--surface-muted)" />
+  <text x="562" y="64" font-size="13" fill="var(--text)">saf gürültü</text>
+
+  <line x1="172" y1="59" x2="190" y2="59" stroke="var(--accent)" />
+  <path d="M196 59 L188 55 L188 63 Z" fill="var(--accent)" />
+  <line x1="347" y1="59" x2="365" y2="59" stroke="var(--accent)" />
+  <path d="M371 59 L363 55 L363 63 Z" fill="var(--accent)" />
+  <line x1="522" y1="59" x2="540" y2="59" stroke="var(--accent)" />
+  <path d="M546 59 L538 55 L538 63 Z" fill="var(--accent)" />
+
+  <text x="20" y="102" font-size="13" fill="var(--text-muted)">Gürültü çizelgesini biz seçeriz; burada bilinmeyen yoktur.</text>
+  <text x="20" y="120" font-size="13" fill="var(--text-muted)">Kapalı biçim: sıfırıncı adımdan herhangi bir adıma tek hamlede gidilir.</text>
+
+  <line x1="20" y1="136" x2="700" y2="136" stroke="var(--border)" />
+
+  <text x="20" y="162" font-size="13" font-weight="bold" fill="var(--text)">geri yön: getirmek — öğrenilen taraf</text>
+
+  <rect x="25" y="174" width="145" height="46" fill="var(--bg)" stroke="var(--border)" />
+  <text x="37" y="202" font-size="13" fill="var(--text)">temiz görüntü</text>
+  <rect x="200" y="174" width="145" height="46" fill="var(--bg)" stroke="var(--border)" />
+  <text x="212" y="202" font-size="13" fill="var(--text)">azıcık gürültülü</text>
+  <rect x="375" y="174" width="145" height="46" fill="var(--bg)" stroke="var(--border)" />
+  <text x="387" y="202" font-size="13" fill="var(--text)">çok gürültülü</text>
+  <rect x="550" y="174" width="145" height="46" fill="var(--bg)" stroke="var(--border)" />
+  <text x="562" y="202" font-size="13" fill="var(--text)">saf gürültü</text>
+
+  <line x1="190" y1="197" x2="172" y2="197" stroke="var(--cool)" />
+  <path d="M166 197 L174 193 L174 201 Z" fill="var(--cool)" />
+  <line x1="365" y1="197" x2="347" y2="197" stroke="var(--cool)" />
+  <path d="M341 197 L349 193 L349 201 Z" fill="var(--cool)" />
+  <line x1="540" y1="197" x2="522" y2="197" stroke="var(--cool)" />
+  <path d="M516 197 L524 193 L524 201 Z" fill="var(--cool)" />
+
+  <text x="20" y="240" font-size="13" fill="var(--text-muted)">Her adımda ağ, eklenmiş olan gürültüyü tahmin eder.</text>
+  <text x="20" y="258" font-size="13" fill="var(--text-muted)">Kayıp: gerçek gürültü ile tahmin arasındaki ortalama karesel hata.</text>
+  <text x="20" y="276" font-size="13" fill="var(--text-muted)">Adım numarası ağa girdi olur; tek ağ bütün gürültü düzeylerini öğrenir.</text>
+
+  <line x1="20" y1="292" x2="700" y2="292" stroke="var(--border)" />
+
+  <text x="20" y="316" font-size="13" fill="var(--accent)">Sayısal örnek: sinyal payı 0,25 olan adımda görüntünün katsayısı 0,5,</text>
+  <text x="20" y="334" font-size="13" fill="var(--accent)">gürültünün katsayısı yaklaşık 0,87 — kareleri toplamı 1.</text>
+</svg>

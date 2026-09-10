@@ -6,21 +6,21 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-09 · Durum: **1–82 yayında (kohort Batch 0 → Batch 19) · Faz 8 kapandı, Faz 9 açıldı · Sıradaki: 83 (Faz 9'un gövdesi 83–86)**
+Son güncelleme: 2026-09-09 · Durum: **1–86 yayında (kohort Batch 0 → Batch 20) · Faz 9'un gövdesi tamamlandı, 20/7/15'in koordinatları ödendi · Sıradaki: 87 (Faz 9'un kapanışı 87–90)**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 82 — `ses-konusma-ve-gercek-zamanli-modeller` |
-| Sıradaki güvenli başlangıç | Makale 83 ("Görüntü ve Video Üretimi: Diffusion'a Giriş"); run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 83, 84, 85 ve 86 üretilir; bu dörtlü **Faz 9'un gövdesidir**. **Bu dörtlüde iki bağlayıcı koordinat vardır ve ikisi de ödenmelidir: 85** (uzmanlar karışımı mimarisinin kurulumu — 20'nin vaadi) **ve 86** (karesel maliyeti ödemeyen alternatif mimariler — 7 ve 15'in vaadi). 82 → 83 numarasız işaretle çağrılmış durumda ("bir sonraki makale": gürültüden başlayıp geri temizleyen üretim modelleri). Devrolan planlı tekrar: 30'un kısıtlı üretimi **84'te** tahsil edilmeli |
-| Sıradaki kohort | `classification_batch: 20` |
+| Yayımlanan son makale | 86 — `dikkatin-otesi-ssm-ve-alternatif-mimariler` |
+| Sıradaki güvenli başlangıç | Makale 87 ("Küçük ama Güçlü: Damıtma ve Küçük Modeller"); run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 87, 88, 89 ve 90 üretilir; bu dörtlü **Faz 9'un kapanışıdır**. **Bu dörtlüde bağlayıcı numaralı koordinat YOKTUR** — defterde açık kalan tek koordinat 101'dir ve bu banda düşmüyor. Devralınan iki numarasız işaret: 86 → 87 ("bir sonraki makale": büyük modelin bildiklerini küçüğe aktarmak) ve **34 → 87** (Batch 7'de verilen "damıtmanın temel modelin sınırını aşması" işareti). Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku **hâlâ tahsil edilmedi**; 101 uygun görünüyor, bu dörtlüde yeri yok |
+| Sıradaki kohort | `classification_batch: 21` |
 | Rotalar | `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu) |
 | İçerik sözleşmesi | `content/series/catalog.json` + `content/series/articles/**` + `content/series/assets/<slug>/*.svg` |
 | Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer |
-| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`; ek ölçerler `artifacts/b19-research/` altında: `scan-b19.py`, `svgcheck-b19.py`, `sweep-b19.py`, `shots-b19.cjs`, `idx-b19.py` (konferans dizinlerinde başlık arama), **`url-b19.py`** (dizinden mutlak URL çözme), **`links-b19.py`** (yayın öncesi bağlantı taraması), **`doi-b19.py`** (Crossref künye doğrulama), `venue-b19.py`, `hdr-b19.py`, `q.py` (kaynak metinlerde hızlı sorgu) |
+| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`; ek ölçerler `artifacts/b20-research/` altında: `scan-b20.py`, `svgcheck-b20.py`, `sweep-b20.py`, `shots-b20.cjs`, `idx-b20.py` (konferans dizinlerini indirir ve başlık arar), **`url-b20.py`** (dizinden mutlak URL çözme — hash URL'leri için zorunlu), **`links-b20.py`** (yayın öncesi bağlantı taraması), **`doi-b20.py`** (Crossref künye doğrulama), `venue-b20.py`, `hdr-b20.py`, `q.py` (kaynak metinlerde hızlı sorgu), `fetch-b20.py` (`REVERSE=1` ile ters kopya) |
 | Level bandı | 1–10 `beginner` (değişmez); 11'den itibaren `intermediate` (bağlayıcı karar #19) |
-| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–80 `safety-and-evaluation`; **81–90 `multimodal-and-future`** (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148, #160, #168, **#176**). Kohort 19 iki kategoriye yayıldı (79–80 safety, 81–82 multimodal); okuma listesinde 61–80 tek öbek, 81–82 yeni öbek; `reading-list-groups.test.ts` değişmedi. **Faz 9'un kategorisi karara bağlandı; sıradaki run'da kategori sorusu yoktur** (83–86'nın dördü de `multimodal-and-future`) |
+| Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–80 `safety-and-evaluation`; **81–90 `multimodal-and-future`** (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148, #160, #168, **#176**). Kohort 19 iki kategoriye yayıldı (79–80 safety, 81–82 multimodal), kohort 20 tek kategoride kaldı; okuma listesinde 61–80 tek öbek, 81–86 tek öbek; `reading-list-groups.test.ts` değişmedi. **Sıradaki run'da da kategori sorusu yoktur** (87–90'ın dördü de `multimodal-and-future`, #176'nın 81–90 bandı). **Faz 10 (91–97) için kategori kararı 91'in run'ında verilecek** |
 
 ## Açık borçlar
 
@@ -28,132 +28,134 @@ Son güncelleme: 2026-09-09 · Durum: **1–82 yayında (kohort Batch 0 → Batc
   terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning ve Test-Time
   Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları terim defterine göre Türkçeleştiriliyor
   (kararlar #51, #52, #66, #86, #99, #108, #115, #121, #135, #148, #154, #155, #162, #163, #169, #170, #171,
-  **#177, #178**). Katmanın tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır. Faz 8 ve Faz 9'un
-  başlıkları zaten Türkçe.
-- **Yayımlanmamış başlıklardaki İngilizce sözcükler.** Batch 19 iki başlığı Türkçeleştirdi (#177 "Sağlamlık… Düşmanca
-  Girdiler", #178 "Görüntü-Dil Modelleri"). Sıradaki dörtlüde iki aday var: **83 "Görüntü ve Video Üretimi:
-  Diffusion'a Giriş"** — "diffusion" için Türkçede yerleşik bir karşılık yok, alanda "difüzyon" da kullanılıyor;
-  #108 ölçütüne göre (kısaltma gibi işlev gören, Türkçeleştirilmeyen kalem) İngilizce bırakmak da savunulabilir,
-  karar 83'ün run'ında gövdede grep ile verilir. **86 "Attention'ın Ötesi: SSM ve Alternatif Mimariler"** — "dikkat"
-  6'dan beri defterde kayıtlı, olası başlık "Dikkatin Ötesi: SSM ve Alternatif Mimariler"; "SSM" kısaltma sınıfında
-  kalabilir. 84 ve 85'in başlıkları zaten Türkçe ("uzmanlar karışımı" defterde 20'den kayıtlı; "MoE" kısaltması).
-  Başlık değişikliği entegrasyondan **önce** `roadmap.json`'a yazılır.
+  #177, #178, **#184, #185**). Katmanın tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır.
+  Faz 8 ve Faz 9'un başlıkları zaten Türkçe.
+- **Yayımlanmamış başlıklardaki İngilizce sözcükler — sıradaki dörtlüde aday YOK.** 87 ("Küçük ama Güçlü: Damıtma
+  ve Küçük Modeller") ve 90 ("Enerji, Maliyet ve Çevresel Ayak İzi") zaten Türkçe; 88'deki "LLM" ve 89'daki "GPU"
+  #108'in kısaltma sınıfında kalır. **Bandın dışında bekleyen tek aday: 108** ("Performans Mühendisliği:
+  Attention'ı Hızlandırmak") — 86'nın başlığı "Dikkatin Ötesi" yapıldığı için (#185) aynı sözcük 108'de de
+  Türkçeleştirilmeli görünüyor; karar 108'in kendi run'ında verilir. Başlık değişikliği entegrasyondan **önce**
+  `roadmap.json`'a yazılır.
 - **Yayımlanmış numaralı vaatler:** bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış vaatler"dedir.
-  Batch 19 **dört numarasız işareti ödedi** (78 → 79, 72 → 79, 71 ve 73 → 80, **54 → 81**) ve yeni koordinat açmadı.
-  **Açık kalan koordinatlar:** 85 (uzmanlar karışımı — 20), 86 (karesel maliyeti ödemeyen mimariler — 7, 15),
-  101 (ölçümün disiplini — 16, 22). **85 ve 86 sıradaki dörtlünün içindedir ve o run'da kapanmalıdır.**
-  Numarasız işaretler: 82 → 83 (gürültüden geri temizleyen üretim), 51 → 111, 49/53 → 115.
-  Devrolan planlı tekrarlar: 30'un kısıtlı üretimi **84'e** (birleşik modellerde biçim garantisi doğal yer);
-  33/40'ın pass@k ile görev ufku **tahsil edilmedi ve devrolur** (101 daha uygun görünüyor).
+  Batch 20 **iki bağlayıcı koordinatı birden kapattı** (20 → 85; 7 ve 15 → 86) ve 82'nin numarasız işaretini 83'te
+  ödedi; yeni koordinat açmadı. **Defterde açık kalan TEK koordinat: 101** (ölçümün disiplini — 16 ve 22).
+  Numarasız işaretler: **34 → 87** (damıtmanın temel modelin sınırını aşması, Batch 7'de verildi), 86 → 87
+  ("bir sonraki makale"), 51 → 111, 49/53 → 115. Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku
+  **tahsil edilmedi ve devrolur** (101 daha uygun görünüyor).
+- **Prerequisite grafında 79–82 boşluğu.** YOL-HARITASI'ndaki graf satırları 78'de kesiliyor; Batch 19 kendi
+  dörtlüsünün satırlarını eklemedi. Batch 20 kendi satırlarını (83–86) ekledi ve boşluğa grafın içinde bir not
+  düştü. Devrolan eksik; ileride toplu kapatılabilir, hiçbir kapı buna bağlı değil.
 - **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR hâlâ uygulanmadı; tam listeler
   repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
-- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(14) önceki batch'lerden (kararlar #21, #97, #104, #106,
-  #114, #120, #127, #134, #141, #147, #152, #159, #167, #175). (15) **Batch 19:** Szegedy ve ark. "Intriguing
-  properties of neural networks" — ICLR 2014'ün bildirileri ayrı bir kitapta toplanmadığı için hiçbir dizinde
-  künye bulunamadı; kaynakçada bu durum yazılı. Zhu ve ark.'nın PromptRobust'u yazarlarının arXiv notunda
-  "teknik rapor" diyor, hakemsiz sayıldı. Liesenfeld & Dingemanse'nin FAccT 2024 çalışmasının PDF'i üç adresten
-  alınamadı (20'de zaten kullanılmıştı, bu run'da yalnızca dolaylı anıldı); Skantze'nin sıra alma derlemesi
-  DiVA sunucusundan zaman aşımıyla dönmedi (yerine Ekstedt & Skantze ve Stivers kullanıldı).
-- **Hakemsiz kaynak oranı Batch 19'da serinin en iyisi (karar #183):** 75 kalemin **68'i hakemli**, 7'si
-  işaretlenmiş hakemsiz kalem (Batch 18: 72/84, Batch 17: 126/159). Kural değişmedi: hakemli karşılığı varsa o öne
-  çıkar. **Yeni ders:** arXiv `comment` alanı boş olsa da dergi kaydı olabiliyor — Crossref `query.bibliographic`
-  taraması bu run'da iki kaynağı hakemsizden hakemliye taşıdı.
-- **DBLP kapalı (Batch 18'den beri).** `dblp.org` ve iki aynası bot doğrulama sayfası döndürüyor. Venue doğrulaması
-  `idx-b19.py` düzeniyle yapılır (aşağıda).
+- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(15) önceki batch'lerden (kararlar #21, #97, #104, #106,
+  #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20'de doğrulanamayan künye yok** —
+  bütün venue iddiaları en az bir kanalda doğrulandı (karar #191). Tek kısıt: Jacobs ve ark. 1991'in kamuya açık
+  PDF'i **taranmış görüntü** olduğu için metni okunamadı; künyesi Crossref'ten doğrulandı ve içeriğine dair tek
+  cümle Shazeer ve ark.'nın kendi ilişkili çalışmalar bölümüne dayandırıldı.
+- **Hakemsiz kaynak oranı Batch 20'de 68 kalemin 58'i (karar #191).** Batch 19: 68/75, Batch 18: 72/84. Kural
+  değişmedi: hakemli karşılığı varsa o öne çıkar. **Bu run'ın dersi:** bir çalışmanın ön baskı başlığı ile
+  yayımlanmış başlığı farklı olabiliyor ve arama bu yüzden ıskalıyor — Jamba'nın hakemli sürümü "Language
+  **Models**" (çoğul) başlığıyla ICLR 2025'te; ön baskı "Language Model" (tekil) ve hakemsiz.
+- **DBLP kapalı (Batch 18'den beri), Semantic Scholar 429.** Venue doğrulaması `idx-b20.py` dizin düzeni +
+  OpenReview arama ucu + `iclr.cc` kabul listeleri ile yapılır (aşağıda).
 
-## Next batch preparation — 83'ten devam (Faz 9'un gövdesi: 83–86)
+## Next batch preparation — 87'den devam (Faz 9'un kapanışı: 87–90)
 
-**Pedagojik hedefler.** Batch 19'un sonunda okuyucu şunu biliyor: bir puan ölçüldüğü dağılımın puanıdır ve kayma dört
-türlüdür — kovaryat, etiket, kavram, alt topluluk —; sentetik bozulmaya dayanmak gerçek kaymaya dayanmayı getirmez
-(204 model × 213 koşul) ve bir sağlamlık iddiası ancak eşit dağılım içi puandaki modellere karşı, **etkin sağlamlık**
-olarak kurulur; ortalama başarı ile tutarlı başarı ayrı şeylerdir (72,4 ↔ 6,0); gündelik kayma ile kasıtlı saldırı
-tek eksenin iki ucudur ve fark girdiyi kimin seçtiğidir; düşmanca eğitimin bedeli ölçülmüştür ve sertifikanın kapsamı
-yazılır (79). Koşullar bir belgede taşınır: model kartının çekirdeği ayrıştırılmış değerlendirmedir ve kamuya açık
-ayrıştırılmış ölçümün etkisi ölçülmüştür; veri belgesi model belgesinden daha çok ihmal ediliyor; sistem kartı
-dağıtımı belgeler, eğitim verisinin kökenini belgelemez; pratikte en gerekli üç bölüm en az doldurulur; ve belge bir
-beyandır, onu sınayan düzenek belgeden geridedir (80). Bir modalite token'a şöyle çevrilir: görüntü sabit boyutlu
-yamalara bölünür, token sayısı çözünürlükle karesel büyür, metinle görüntü karşıtsal bir hedefle aynı uzaya konur,
-ve dil modeline bağlama üç yoldan yapılır — izdüşüm, yeniden örnekleyici, kapılı çapraz dikkat —; hangisinin daha
-iyi olduğu neyin eğitildiğine bağlıdır; yüksek düzey sınavdaki puan temel görmeyi garanti etmez ve doğrusal sonda
-kusurun kodlayıcıda değil bağlantıda olduğunu gösterir (81). Aynı hamle seste iki token ailesine ayrılır — anlamsal
-ve akustik —; etiketli veri artık darboğaz değildir; ara temsili yazı yapan her hat duyguyu ve vurguyu siler; sıra
-kavramı bir modelleme kararıdır; ve gecikme bir mimari kısıttır, çünkü insan sohbetinde sıra geçiş boşluğunun ortak
-ortalaması 208 milisaniyedir (82).
+**Pedagojik hedefler.** Batch 20'nin sonunda okuyucu şunu biliyor: üretimin ikinci bir ailesi var ve mantığı
+otoregresif üretimden farklıdır — bozma yönü tasarlanır, geri getirme yönü öğrenilir, hedef eklenen gürültüyü
+tahmin etmektir, adım sayısı modelin değil örnekleyicinin özelliğidir (aynı modelde elli adımda 32,72 ↔ 4,67),
+maliyet gizil uzaya taşınır, ve kılavuzluk 10'daki sıcaklığın buradaki hâlidir; sadakat yükselirken kapsama düşer
+(0,67 → 0,83 ↔ 0,67 → 0,57) ve FID ikisini birden içerdiği için ortada bir en küçüğü vardır. Cetvelin kendisi de
+denetlenir: FID örnek sayısına bağlı biçimde yanlıdır (83). "Her şey token" bir zorunluluk değil bir seçimdir:
+kuantizasyon geri döndürülemez, sözlüğün kalitesi tavanı belirler (2,65 → 1,15 ve sıralamanın tersine dönmesi),
+görüntüde sıra icat edilmiştir ve icat edilen sıranın bedeli vardır, tek softmax altında modaliteler norm yarışına
+girip eğitimi ıraksatabilir, ve kuantizasyonu bırakan düzen metin tarafında bile yüzde 50–60 işlemde eşitlenir (84).
+Parametre sayısı ile token başına hesap ayrılabilir; ayrıldığında bedel bellekte ve iletişimde ödenir, seyreklik
+token başınadır yığın başına değil, "kaç parametre" sorusunun üç ayrı cevabı vardır, ve ölçek iddiası neyin sabit
+tutulduğuna bağlıdır — 9'daki Kaplan–Chinchilla ayrımının aynı biçimi (85). "Karesel" iki ayrı maliyetin adıdır;
+sabit durum bir seçimdir ve geri çağırmayla ödenir (410 milyon ↔ 2,8 milyar), yineleme durum takibi kazandırmaz,
+ve pratik cevap melezdir (86).
 
-**Sıradaki makaleler ve prerequisite'ler.** **83 ← 82** ("bir sonraki makale" devri: üretim tarafı ve gürültüden geri
-temizleme), 81 (görüntü yaması, görüntü kodlayıcı, görsel token), 10 (otoregresif üretim, örnekleme, sıcaklık —
-**karşıtlık kurulacak yer**), 2 (kayıp, gradyan inişi), 3 (temsil), 17 (uydurma; görsel üretimde karşılığı),
-26 (adım adım üretimin maliyeti; difüzyon adım sayısı), 79 (üretilen içeriğin değerlendirilmesindeki dağılım sorunu).
-**84 ← 81, 82** (iki modalitenin token'a çevrilmesi), 4 (tokenizasyon ve sözlük — birleşik sözlüğün zemini), 83
-(difüzyon ↔ otoregresif ayrımı), **30 (kısıtlı üretim — devrolan planlı tekrarın tahsil yeri)**, 8 (ön eğitim),
-26 (anahtar-değer önbelleği). **85 ← 20 (bağlayıcı koordinat: uzmanlar karışımı vaadi)**, 7 (ileri beslemeli katman
-ve blok yapısı), 9 (ölçek yasaları; parametre ↔ hesap ayrımı), 8 (eğitim döngüsü), 26 ve 28 (çıkarım maliyeti,
-yığınlama), 60 (maliyet ve gecikme hesabı), 27 (bellek duvarı). **86 ← 7 ve 15 (bağlayıcı koordinat: karesel maliyeti
-ödemeyen mimariler)**, 6 (dikkatin kendisi), 25 (uzun bağlam ve pencere dikkati), 26 (anahtar-değer önbelleğinin
-büyümesi), 21 (etkin bağlam uzunluğu), 74 (indüksiyon başı — alternatif mimarilerde kopyalama tartışması).
+**Sıradaki makaleler ve prerequisite'ler.** **87 ← 86** ("bir sonraki makale" devri: aynı kaliteyi daha az kaynakla
+vermenin üçüncü yolu), **34 (numarasız işaretin tahsil yeri: damıtmanın temel modelin sınırını aşması)**, 18
+(parametre başına bilgi kapasitesi), 9 (ölçek yasaları; küçük modelin fazla eğitilmesi), 27 (kuantizasyon — küçültmenin
+öbür yolu), 19 (uyarlama), 12–13 (öğretmenin ürettiği veriyle eğitim), 85 (seyreklik de bir küçültme değil, maliyet
+kaydırma yoluydu), 16 ve 72 (küçük modelin ölçütte iyi görünmesi ↔ kirlilik). **88 ← 87**, 27 (kuantizasyon ve
+hassasiyet), 26 ve 28 (anahtar-değer önbelleği ve servis; cihazda yığın yok), 85 (bellek duvarı cihazda çok daha
+dar), 60 (maliyet ve gecikme hesabı), 21 (pencere), 82 (gerçek zamanlı ses cihazda çalışan ilk uygulamalardan).
+**89 ← 27 ve 28** (aritmetik ↔ bellek bant genişliği), 86 (FlashAttention'ın dersi: darboğaz bellek erişimi),
+85 (cihazlar arası iletişim), 9 (hesap bütçesi), 8 (dağıtık eğitim adı konmuştu). **90 ← 9** (6ND ve hesap bütçesi),
+8 (ön eğitim ölçeği), 85 (GLaM'ın enerji üçlüsü: eğitimde üçte bir, çıkarımda yarı işlem), 20 (bildirilen eğitim
+maliyeti), 89 (donanımın kendisi), 28 ve 60 (çıkarımın toplam payı).
 
 **Yeniden çağrılacak eski kavramlar (planlı hatırlatmalar):**
-- Otoregresif üretim, örnekleme ve sıcaklık (10), uydurma (17) → 83.
-- Kısıtlı üretim (30), tokenizasyon ve sözlük (4) → 84 (**30 devrolan tekrardır, burada tahsil edilmeli**).
-- Ölçek yasaları ve hesap-optimal eğitim (9), ileri beslemeli katman (7), çıkarım maliyeti (26, 28, 60) → 85.
-- Dikkatin karesel maliyeti (6, 7), pencere dikkati ve dikkat çukuru (25), etkin bağlam uzunluğu (21) → 86.
+- Parametre başına bilgi kapasitesi (18), ölçek yasaları (9), öğretmen-öğrenci verisi (12–13) → 87.
+- Kuantizasyon (27), çıkarım ekonomisi (26, 28), maliyet-gecikme hesabı (60) → 88.
+- Bellek duvarı (27), işlem/bayt oranı (26, 28), bellek erişimi darboğazı (86) → 89.
+- 6ND ve hesap bütçesi (9), bildirilen eğitim maliyeti (20), enerji üçlüsü (85) → 90.
 - Devrolan planlı tekrarlar: pass@k (33) ve görev ufku (40) → 101 önerilir.
 
-**Araştırılacak güncel akademik alanlar (83 için öncelikli):** difüzyonun kurulumu (Sohl-Dickstein ve ark. ICML 2015;
-Ho ve ark. NeurIPS 2020 DDPM; Song & Ermon NeurIPS 2019 skor eşleştirme; Song ve ark. ICLR 2021 skor tabanlı SDE;
-Song ve ark. ICLR 2021 DDIM), kılavuzluk (Dhariwal & Nichol NeurIPS 2021; Ho & Salimans sınıflandırıcısız kılavuzluk),
-gizil uzayda difüzyon (Rombach ve ark. CVPR 2022; Podell SDXL), Transformer omurgası (Peebles & Xie ICCV 2023 DiT;
-Esser ve ark. ICML 2024 doğrultulmuş akış), akış eşleştirme (Lipman ve ark. ICLR 2023), video (Ho ve ark. video
-difüzyonu; Blattmann ve ark. CVPR 2023; Bar-Tal Lumiere), değerlendirme (Heusel ve ark. NeurIPS 2017 FID ve
-eleştirisi; Hessel ve ark. EMNLP 2021 CLIPScore; Lee ve ark. NeurIPS 2023 HEIM) — hepsi doğrulanmalı.
-**84 için:** van den Oord ve ark. NeurIPS 2017 VQ-VAE; Esser ve ark. CVPR 2021 VQGAN; Ramesh ve ark. ICML 2021;
-Yu ve ark. ICLR 2024 MAGVIT-v2; Chameleon ve Transfusion (hakemsiz olabilir, işaretlenerek); birleşik ölçütler.
-**85 için:** Shazeer ve ark. ICLR 2017 seyrek kapılı katman; Lepikhin ve ark. ICLR 2021 GShard; Fedus ve ark.
-JMLR 2022 Switch Transformer; Zoph ve ark. ST-MoE; Clark ve ark. ICML 2022 yönlendirmeli modellerde ölçek yasaları;
-Zhou ve ark. NeurIPS 2022 uzman seçimi; Jiang ve ark. Mixtral ve DeepSeekMoE (hakemsiz olabilir); Muennighoff OLMoE.
-**86 için:** Gu ve ark. ICLR 2022 S4; Gu & Dao Mamba (COLM 2024 — doğrulanmalı); Dao & Gu ICML 2024 Mamba-2;
-Katharopoulos ve ark. ICML 2020 doğrusal dikkat; Choromanski ve ark. ICLR 2021 Performer; Zaheer ve ark. NeurIPS 2020
-BigBird; Beltagy ve ark. Longformer; Peng ve ark. EMNLP Findings 2023 RWKV; Poli ve ark. ICML 2023 Hyena;
-Jelassi ve ark. ICML 2024 (durum uzayı modellerinin kopyalama sınırı — **karşı ölçüm olarak önemli**); Waleffe ve
-ark. melez mimariler. Sayısal iddialar ve URL doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir;
-süreç kuralları SOZLESME §9'dadır.
+**Araştırılacak güncel akademik alanlar (87 için öncelikli):** damıtmanın kurulumu (Hinton ve ark. 2015 — hakemsiz
+olabilir, işaretlenerek; Buciluă ve ark. KDD 2006 model sıkıştırma; Sanh DistilBERT; Jiao TinyBERT; Beyer ve ark.
+CVPR 2022 "tutarlı öğretmen"), ardışık damıtma ve öğretmen-asistan (Mirzadeh AAAI 2020), veri damıtma
+(Wang ve ark. Alpaca/self-instruct ACL 2023; Gunasekar "Textbooks Are All You Need" — hakemsiz olabilir),
+küçük model ailelerinin ölçek okuması (Phi, Gemma, Llama 3.2, SmolLM — çoğu hakemsiz, işaretlenerek), aşırı eğitim
+ve çıkarım-optimal ölçekleme (Sardana ve ark. ICML 2024 "Beyond Chinchilla-Optimal"), budama (Frankle & Carbin
+ICLR 2019 piyango bileti; Sun ve ark. ICLR 2024 Wanda; Ma ve ark. NeurIPS 2023 LLM-Pruner), damıtmanın sınırı
+(Xu ve ark. derlemesi; "damıtma öğretmeni geçemez" iddiasının ölçümü) — hepsi doğrulanmalı.
+**88 için:** cihaz üstü çıkarım (llama.cpp/GGUF hakemsiz; MLC-LLM; Alizadeh ve ark. ACL 2024 "LLM in a flash"),
+cihaz için mimari (MobileLLM ICML 2024; MobileBERT ACL 2020), donanım-farkında kuantizasyon (Lin ve ark. MLSys 2024
+AWQ; Frantar ve ark. ICLR 2023 GPTQ), gizlilik ve gecikme argümanı, federated/on-device kişiselleştirme.
+**89 için:** GPU mimarisi ve roofline (Williams ve ark. CACM 2009), TPU (Jouppi ve ark. ISCA 2017 ve devamı),
+bellek duvarı (Gholami ve ark. IEEE Micro 2024), FlashAttention ve çekirdek füzyonu (86'da kullanıldı), ölçekli
+eğitim altyapısı (Megatron-LM SC 2021; ZeRO SC 2020), tedarik ve ekosistem (hakemsiz kaynaklar işaretlenerek).
+**90 için:** eğitim enerjisi ve karbon (Strubell ACL 2019; Patterson ve ark. IEEE Computer 2022; Luccioni ve ark.
+JMLR 2023 BLOOM; Luccioni ve ark. FAccT 2024 çıkarım enerjisi), veri merkezi su ve enerji (Li ve ark.), IEA ve
+benzeri kurumsal raporlar (hakemsiz, işaretlenerek), çıkarımın toplam payı tartışması. Sayısal iddialar ve URL
+doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir; süreç kuralları SOZLESME §9'dadır.
 
 **Görselleştirme ihtiyaçları (öngörü):**
-- 83: ileri gürültüleme ile geri temizlemenin adım adım karşılaştırması; piksel uzayı ↔ gizil uzay maliyet tablosu;
-  kılavuzluk katsayısının kalite–çeşitlilik takası (ölçülmüş sayılarla; eğri çizilecekse "şematiktir" kaydı).
-- 84: aynı içeriğin iki üretim düzeni (token token otoregresif ↔ adım adım difüzyon) yan yana; modaliteleri tek
-  sözlüğe indiren düzenin bölümleri ve her bölümün bedeli.
-- 85: yoğun katman ↔ uzmanlar karışımı: toplam parametre, etkin parametre, çıkarım hesabı, bellek; uzman kullanım
-  dengesizliği ve yük dengeleme kaybı.
-- 86: dikkatin karesel maliyeti ile alternatiflerin maliyet yapısının karşılaştırması (eğitim ↔ çıkarım ayrı);
-  "ne kazanılıyor / ne kaybediliyor" tablosu (kopyalama, geri çağırma, bağlam içi öğrenme).
+- 87: öğretmen-öğrenci hattının üç biçimi (yumuşak etiket, ara temsil, üretilen veri) ve her birinin neyi aktardığı;
+  aynı hesap bütçesinin iki yolu (küçük modeli fazla eğitmek ↔ büyük modeli damıtmak) ölçülmüş sayılarla.
+- 88: cihaz bütçesi tablosu — bellek, bant genişliği, güç, ısı; ve hangi tekniğin hangi kısıtı gevşettiği.
+- 89: aritmetik ↔ bellek bant genişliği düzlemi (roofline sezgisi) ve bir dil modelinin iki aşamasının o düzlemde
+  nereye düştüğü (ön dolum ↔ adım adım üretim; 26 ve 28'in geri çağrımı).
+- 90: eğitim ↔ çıkarım enerjisinin ömür boyu payı; ve bir sayının hangi sınırla verildiği (hangi donanım, hangi
+  bölge karbon yoğunluğu, hangi kapsam) — ölçüm koşulu şeklin içinde yazılı olmalı.
 
-**Venue doğrulaması — DBLP kapalı, düzen Batch 19'da genişletildi.** `artifacts/b19-research/idx-b19.py`:
-`python idx-b19.py fetch` konferans dizinlerini `idx/` altına indirir (bir kez), `python idx-b19.py "başlık" ...`
+**Venue doğrulaması — DBLP kapalı, düzen Batch 20'de iki kanal daha kazandı.** `artifacts/b20-research/idx-b20.py`:
+`python idx-b20.py fetch` konferans dizinlerini `idx/` altına indirir (bir kez), `python idx-b20.py "başlık" ...`
 hepsinde birden arar. **Çalışan kaynaklar:** `proceedings.iclr.cc/paper_files/paper/2024|2025|2026` (2023 ve öncesi
-404), `papers.nips.cc/paper_files/paper/2017…2024` (2025 sayfası boş), `proceedings.mlr.press/v70…v267`
-(ICML 2017–2025; v306 = ICML 2026 hâlâ 404), `jmlr.org/tmlr/papers`, **`openaccess.thecvf.com/CVPR2019…CVPR2025`,
-`ICCV2019|2021|2023|2025`, `ACCV2024`** (2019 ve 2020 sayfaları `?day=all` desteklemez; gün bağlantıları tek tek
-indirilip birleştirilir), **`ecva.net/papers.php`** (ECCV 2018–2024 tek sayfada),
-**`isca-archive.org/interspeech_2019…2025`**, **`datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021`**
-(NeurIPS 2021 veri kümeleri ve ölçütler programı ayrı alan adındadır; 2022 için 404).
-**`url-b19.py` başlıktan mutlak URL çözer** ve bu run'da elle yazılmış üç hash URL'sinin yanlış olduğunu buldu —
-**hash içeren hiçbir bağlantı dizinden çözülmeden yazılmamalı.** İkinci kanal `venue-b19.py`: arXiv API'nin `comment`
-ve `journal_ref` alanları + Crossref `query.bibliographic` + OpenAlex. Üçüncü kanal `hdr-b19.py`: PDF ilk sayfa
-yayın satırı (169 dosyanın 43'ünde bulundu). `doi-b19.py` tek tek DOI doğrular (ACM/IEEE/Springer bot duvarı 403/202
-döndürse de Crossref API künyeyi verir). **Kapalı olanlar:** DBLP, OpenReview arama ucu, Semantic Scholar (429),
-`dl.acm.org` PDF. **Tuzaklar:** NeurIPS dizininde başlıklar hatalı yazılabiliyor (kısa parça ara); PMLR sayfalarında
-başlık `<p class="title">` içindedir, `<a>` metni değil; ACCV/CVF'de yayımlanmış başlık arXiv başlığından kısa olabilir
-(alt başlık düşüyor). Batch 19'un kaynak metinleri `artifacts/b19-research/pdf/*.txt` altında; PDF'ler build
-şişmesin diye silinir, `.txt`'ler yerinde kalır (`q.py` ile sorgulanır).
+404), `papers.nips.cc/paper_files/paper/2014…2025`, `proceedings.mlr.press/v37…v267` (ICML 2015–2025; v306 = ICML
+2026 hâlâ 404), `jmlr.org/tmlr/papers`, `openaccess.thecvf.com/CVPR2019…CVPR2025` ve `ICCV2019|2021|2023|2025`
+(2019 ve 2020 `?day=all` desteklemez; gün bağlantıları tek tek indirilip birleştirilir), `ecva.net/papers.php`
+(ECCV 2018–2024), **`proceedings.mlsys.org/paper_files/paper/2020…2025`**,
+`datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021` (2023 için 404 — NeurIPS 2023 D&B künyeleri
+`papers.nips.cc`'nin 2023 sayfasında `-Abstract-Datasets_and_Benchmarks.html` ekiyle bulunur).
+**Batch 20'de eklenen iki kanal:** (a) **OpenReview arama ucu** —
+`https://api2.openreview.net/notes/search?term=Kelime+Kelime&source=forum&limit=6`; `content.venue` alanı "COLM",
+"ICLR 2025 Poster", "ICLR (Poster) 2017", "CoRR 2024" gibi değerler döndürüyor ve **hakemsiz ↔ hakemli ayrımını
+tek başına verebiliyor**. Sorgu terimlerini `+` ile ayır, `%20` ile değil; ardışık sorgular arasında 3–4 sn bekle;
+`content.venueid` filtresi 403 döndürüyor, yalnızca arama ucu açık. (b) **ICLR kabul listeleri** —
+`https://iclr.cc/virtual/<yıl>/papers.html` ve `https://iclr.cc/Conferences/<yıl>/AcceptedPapersInitial`;
+proceedings.iclr.cc'nin vermediği 2023 ve öncesi için tek doğrulama kanalı (Long Range Arena bu yolla ICLR 2021
+olarak doğrulandı). **`url-b20.py` başlıktan mutlak URL çözer** ve bu run'da elle yazılmış üç hash URL'sinin
+yanlış olduğunu buldu — **hash içeren hiçbir bağlantı dizinden çözülmeden yazılmamalı.** İkinci kanal
+`venue-b20.py`: arXiv API'nin `comment` ve `journal_ref` alanları + Crossref `query.bibliographic` + OpenAlex.
+Üçüncü kanal `hdr-b20.py`: PDF ilk sayfa yayın satırı. `doi-b20.py` tek tek DOI doğrular (MIT Press/ACM/IEEE/Springer
+bot duvarı 403 döndürse de Crossref API künyeyi verir). **Tuzaklar:** PMLR sayfalarında başlık `<p class="title">`
+içindedir ve **slug ilk yazarın yayımlanmış sürümdeki adından türer** (ön baskıdaki eş-birinci yazar sırası
+değişmiş olabilir — `krajewski24a` yok, `ludziejewski24a` var); ön baskı başlığı ile yayımlanmış başlık farklı
+olabilir (Jamba'nın tekil ↔ çoğul "Model/Models" farkı); NeurIPS dizininde başlıklar hatalı yazılabiliyor (kısa
+parça ara). Batch 20'nin kaynak metinleri `artifacts/b20-research/pdf/*.txt` altında; PDF'ler build şişmesin diye
+silinir, `.txt`'ler yerinde kalır (`q.py` ile sorgulanır).
 
-**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 20` ve `readingOrder` 83'ten kesintisiz devam
+**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 21` ve `readingOrder` 87'den kesintisiz devam
 ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir (başlık değişecekse entegrasyondan
-**önce**); YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri ve bağlayıcı kararlar güncellenir
-(**85 ve 86 koordinatlarının kapanmış hâli dâhil**); doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni
-cursor ve sonraki run hazırlığıyla güncellenir. **Kategori sorusu yoktur** (83–86 `multimodal-and-future`);
-`reading-list-groups.test.ts` her hâlükârda çalıştırılır. Makale dosyaları `content/series/articles/multimodal-and-future/`
-altına yazılır (dizin Batch 19'da açıldı).
+**önce**); YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri ve bağlayıcı kararlar güncellenir;
+doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni cursor ve sonraki run hazırlığıyla güncellenir.
+**Kategori sorusu yoktur** (87–90 `multimodal-and-future`); `reading-list-groups.test.ts` her hâlükârda çalıştırılır.
+Makale dosyaları `content/series/articles/multimodal-and-future/` altına yazılır.
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -172,57 +174,61 @@ sorun değildir. Roadmap başlığı frontmatter başlığıyla birebir eşleşm
 SVG'nin **kendisi** hash'i etkilemez, şekil **alt metni** etkiler. Araçların üçü de varsayılan olarak
 yalnızca AI serisini işler.
 
-**Yayın öncesi zorunlu taramalar.** `artifacts/b19-research/scan-b19.py <makale.md> <N>` tek komutta veriyor:
+**Yayın öncesi zorunlu taramalar.** `artifacts/b20-research/scan-b20.py <makale.md> <N>` tek komutta veriyor:
 kelime sayısı, parantezli gloss listesi, yasaklı biçimler (`gömme`, `korpus`, `geliştirme kümesi`, `niceleme`,
 `az/sıfır atışlı`, `çekişmeli`), **kendi numarası** ve **numaralı ileri gönderme** (≥ N+1) taramaları, bölüm
-başlıkları, "Kendini yokla" ve şekil sayısı. **Uyarı:** `scan-b19.py`'nin kelime sayısı şekil alt metinlerini de
+başlıkları, "Kendini yokla" ve şekil sayısı. **Uyarı:** `scan-b20.py`'nin kelime sayısı şekil alt metinlerini de
 sayar, repo kapısı saymaz; bant kararı için `check-series-content.cjs`'in sayısına bakılır — pratik kestirim,
-düzyazının şekil alt metinleri hariç `wc -w`'sinin yaklaşık kendisidir (Batch 19'da 2.028–2.735). İleri gönderme
-taramasının bulguları elle ayıklanır (yüzde, piksel, kilobit, milisaniye yanlış pozitif verir). SVG için **iki** kapı:
-`check-series-svg.cjs` (viewBox, sabit renk, yasak öge, font boyutu; genişlik tahmini **0,55 × font-size**) ve
-`artifacts/b19-research/svgcheck-b19.py <klasör>` (aynı satırdaki her metin çifti, kutu içi metnin `x + width`'i,
-sağ/sol kenar, alt pay ≥ 12 **ve repo kapısının 0,55 tahmininin taklidi**); ayrıca her SVG
+düzyazının şekil sözdizimi ve bağlantı hedefleri çıkarılmış `wc -w`'sidir (Batch 20'de 2.072–2.331). İleri gönderme
+taramasının bulguları elle ayıklanır (yüzde, çözünürlük, doğruluk ve FID değerleri yanlış pozitif verir). SVG için
+**iki** kapı: `check-series-svg.cjs` (viewBox, sabit renk, yasak öge, font boyutu; genişlik tahmini **0,55 ×
+font-size**) ve `artifacts/b20-research/svgcheck-b20.py <klasör>` (aynı satırdaki her metin çifti, kutu içi metnin
+`x + width`'i, sağ/sol kenar, alt pay ≥ 12 **ve repo kapısının 0,55 tahmininin taklidi**); ayrıca her SVG
 `python -c "import xml.etree.ElementTree as ET; ET.parse(f)"` ile ayrıştırılır ve `grep -c 'var(--[a-z-]*"'` ile
-kapanmamış `var(` parantezi aranır. **Bağlantı kapısı Batch 19'da eklendi:** `links-b19.py <makale.md> ...`
-her `[Bağlantı](...)` adresini çeker ve `<title>`'ı yazar; ACM/IEEE/Springer 403/202 döndürüyorsa künye
-`doi-b19.py` ile Crossref üzerinden doğrulanır. **PNG turu Batch 19'da kusur bulmadı** (17 ve 18'de bulmuştu);
-şekillerin tablo ağırlıklı olması bunun sebebi görünüyor — serbest yerleşimli eğri kullanılırsa tur yine şart.
+kapanmamış `var(` parantezi aranır. **Bağlantı kapısı:** `links-b20.py <makale.md> ...` her `[Bağlantı](...)`
+adresini çeker ve `<title>`'ı yazar; 404 alan bir bağlantı yalnızca URL değil **künye** hatasına da işaret
+edebilir (bu run'da öyle oldu). **PNG turu Batch 20'de kusur buldu** (dört sütunlu bir tabloda dar sütun payı);
+geometri kapıları geçse de göz turu şart. **Ayrıca:** yeni bir ölçü çifti ya da yeni bir terim kurulacaksa
+YOL-HARITASI terim defterinin ilgili satırları **yazımdan önce** aranmalı — bu run'da "recall" için "geri çağırma"
+yazıldı, sonra 29 ve 45'in satırları görülüp "kapsama" ile değiştirildi (karar #187) ve gövde + şekil + alt metin +
+hash turu tekrarlandı.
 
-**Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch 19'da da 3000–3999
+**Dev server ve build yalıtımı — paralel oturum kontrolü run başında değil, her adımda.** Batch 20'de de 3000–3999
 arası dinleyen port yoktu; yine de izole kopya kullanıldı ve ana worktree'nin `.next` dizinine hiç dokunulmadı:
 `tar --exclude=./node_modules --exclude=./.next --exclude=./.git --exclude=./artifacts --exclude=./.env.local -cf - .
-| (cd /d/dev/anil-lib-b19-render && tar xf -)`, junction PowerShell ile `New-Item -ItemType Junction -Path
-'D:\dev\anil-lib-b19-render\node_modules' -Target 'D:\dev\anil-lib\node_modules'`, kopyada `corepack pnpm build`
-(exit 0; `/seri/[slug]` 82 yol), sonra kopyanın `.next`'i silinip `.claude/launch.json`'a geçici yapılandırma
-(`anil-lib-seri-b19`: Git Bash **tam yolu**, `-lc`, `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b19-render &&
-exec corepack pnpm dev -p 3210`). **launch.json'ı Bash heredoc ile yazma:** `\\` çiftleri tek `\`'a iner; Write
-aracıyla yaz (Git Bash'in yolu bu makinede `%LOCALAPPDATA%\Programs\Git\usr\bin\bash.exe`). Kopyada `.env.local`
-olmadığı için kapı kendiliğinden kapalı. `typecheck` ve `test` ana worktree'de çalıştırıldı. Kopya oluşturulduktan
-sonra ana worktree'de içerik değişirse dosyaları senkronlamak yetmiyor — dev sunucusu `catalog.json`'u bellekte
-tuttuğu için "Katalog ile frontmatter uyuşmuyor" hatası veriyor; `preview_stop` + `preview_start` gerekiyor.
-Temizlik: **önce** `preview_stop`, sonra junction `cmd //c rmdir` ile kaldırılır, ardından ana `node_modules`
-doğrulanır (`node_modules/next/package.json` yerinde ve `pnpm test` yeşil), sonra kopya silinir; launch.json
-`artifacts/b19-research/launch.json.orig`'ten geri alınır. Kural değişmedi: **ana worktree'de `.next` silme,
+| (cd /d/dev/anil-lib-b20-render && tar xf -)`, junction PowerShell ile `New-Item -ItemType Junction -Path
+'D:\dev\anil-lib-b20-render\node_modules' -Target 'D:\dev\anil-lib\node_modules'`, kopyada `corepack pnpm build`
+(exit 0; `/seri/[slug]` 86 yol), sonra kopyanın `.next`'i silinip `.claude/launch.json`'a geçici yapılandırma
+(`anil-lib-seri-b20`: Git Bash **tam yolu**, `-lc`, `export PATH="/usr/bin:$PATH"; cd /d/dev/anil-lib-b20-render &&
+exec corepack pnpm dev -p 3210`). **launch.json'ı Bash heredoc ya da Python heredoc ile yazma:** `\\` çiftleri tek
+`\`'a iner ve Python'da `unicodeescape` hatası verir; Write aracıyla yaz (Git Bash'in yolu bu makinede
+`%LOCALAPPDATA%\Programs\Git\usr\bin\bash.exe`). Kopyada `.env.local` olmadığı için kapı kendiliğinden kapalı.
+`typecheck` ve `test` ana worktree'de çalıştırıldı. **Kopya oluşturulduktan sonra ana worktree'de içerik değişirse
+dosyayı kopyaya senkronlamak yetmiyor:** dev sunucusu derlenmiş sayfayı önbelleğe aldığı için `preview_stop` +
+`preview_start` gerekiyor (Batch 20'de bir SVG düzeltmesi bu yüzden ilk turda render'a yansımadı). Temizlik:
+**önce** `preview_stop`, sonra junction `cmd //c rmdir` ile kaldırılır, ardından ana `node_modules` doğrulanır
+(`node_modules/next/package.json` yerinde ve `pnpm test` yeşil), sonra kopya silinir; launch.json
+`artifacts/b20-research/launch.json.orig`'ten geri alınır. Kural değişmedi: **ana worktree'de `.next` silme,
 `pnpm build` ya da `next dev` başlatmadan önce `netstat` ve `tasklist` ile paralel süreç var mı bak.** Bash
 aracında `cd` bir komuttan sonrakine taşınır — her komut `cd /d/dev/anil-lib;` ile başlar; Python Windows'ta
-`/d/dev/...` yolunu tanımaz (`D:/...` verilir) ve konsola Türkçe basarken `sys.stdout.reconfigure(encoding='utf-8')`
+`/d/dev/...` yolunu tanımaz (`D:/...` verilir) ve konsola Türkçe basarken `sys.stdout.reconfigure(encoding="utf-8")`
 ister.
 
-**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 19'da PDF'ler build'den **önce**
-silindi (`artifacts/b19-research/pdf/*.pdf`; 809 MB → 118 MB); build zaten izole kopyada ve kopya `artifacts`'ı
-içermiyor. Kalanlar: `pdf/*.txt` (169), `idx/*.html` (CVF ve ISCA dâhil), `venue-b19.json`, `hdr-b19.txt`,
-`fetch-b19*-report.json`, betikler, `shots/*.png` (24), `launch.json.orig`, loglar.
+**`artifacts/` şişerse `pnpm build` kırılıyor — Batch 9'un bulgusu sürüyor.** Batch 20'de PDF'ler build'den **önce**
+silindi (`artifacts/b20-research/pdf/*.pdf`; 1,3 GB → 106 MB); build zaten izole kopyada ve kopya `artifacts`'ı
+içermiyor. Kalanlar: `pdf/*.txt` (139), `idx/*.html` (NeurIPS 2014 ve MLSys dâhil), `fetch-b20-report.json`,
+betikler, `shots/*.png` (26), `launch.json.orig`, loglar.
 
-**Render doğrulama seti (Batch 19'da kullanılan).** Rota sweep'i Python `urllib` ile (83 rota, 56,2 sn;
-`artifacts/b19-research/sweep-b19.py`), tarayıcı gezintisinden **önce**. Tarayıcı panosundan: `preview_start`
-(`anil-lib-seri-b19`) → `resize_window` ile **açık genişlik/yükseklik** (1440×900, 768×1024, 375×812; `preset:
+**Render doğrulama seti (Batch 20'de kullanılan).** Rota sweep'i Python `urllib` ile (87 rota, 52,8 sn;
+`artifacts/b20-research/sweep-b20.py`), tarayıcı gezintisinden **önce**. Tarayıcı panosundan: `preview_start`
+(`anil-lib-seri-b20`) → `resize_window` ile **açık genişlik/yükseklik** (1440×900, 768×1024, 375×812; `preset:
 "desktop"` emülasyonu **temizler**, ölçüm için kullanılmaz — pano gizliyken `innerWidth` 0 gelir) →
 `javascript_tool` ile tema döngüsü (`documentElement.classList` üzerinde `dark`/`sepia`) ve ölçüm
 (`scrollWidth > innerWidth`, figure/svg/figcaption/h2/blockquote sayıları, `main.innerText` içinde `undefined`/`NaN`
 ve ham i18n anahtarı deseni). **`browser_batch` içindeki JSON'da regex kaçışlarına dikkat** — `\\.` gibi diziler
 "Unexpected end of input" veriyor; regex'i `new RegExp('[a-z]+[.][a-z]+[.][a-z]+','g')` gibi köşeli parantezle kur;
 Türkçe karakterleri JS dizesine `\u...` kaçışıyla koy. Ölçülen genişlikler: 1440'ta SVG 771 px, 768'de 676 px,
-375'te 351 px — üçünde de yatay kaydırma yok. **Şekil görüntüleri Playwright'tan** (`shots-b19.cjs`; `#b19o`
+375'te 351 px — üçünde de yatay kaydırma yok. **Şekil görüntüleri Playwright'tan** (`shots-b20.cjs`; `#b20o`
 kaplayıcıda 1200 px klon, light/dark PNG): 12 şekil, 24 PNG, Read aracıyla incelendi.
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
@@ -230,26 +236,40 @@ kaplayıcıda 1200 px klon, light/dark PNG): 12 şekil, 24 PNG, Read aracıyla i
 - `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı. `artifacts/**` altındaki betikler de lint
   kapsamındadır; bilinen durum.
 - Local'de `DATABASE_URL` olmadığı için `/api/reader-sync` 503 döner ve uygulama çevrimdışı moduna düşer —
-  beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur (Batch 19'da da yalnızca bu 503 görüldü).
+  beklenen davranış; temiz bir sekmede konsolda görülen tek hata sınıfı budur (Batch 20'de de yalnızca bu 503 görüldü).
 - Ham HTML'de sayfa başına 39 "undefined" görünür; Next.js iskelesindendir ve yayımlanmış eski makalelerde de
   aynıdır. `main.innerText` ölçümünde 0'dır — regresyon değil.
 - Mobil genişlikte diyagramlar kendi kaplarında ölçekleniyor; sayfa gövdesi taşmıyor.
 - `check-series-svg.cjs` yalnızca `y > viewBox yüksekliği` ve genişliğe karşı yatay taşmayı yakalar; **sütuna
-  binmeyi, kutudan taşmayı ve kapanmamış `var(` parantezini görmez** — bunun için `svgcheck-b19.py` ve grep kapısı
+  binmeyi, kutudan taşmayı ve kapanmamış `var(` parantezini görmez** — bunun için `svgcheck-b20.py` ve grep kapısı
   var. İki ölçerin karakter genişliği tahmini farklıdır (6,8 ↔ 7,15); repo kapısı daha muhafazakârdır.
 - Okuma listesinde `reasoning-and-memory` ve `agents-and-retrieval` birden çok öbek hâlinde görünür (27–28, 29,
-  30–40, 41–60); `safety-and-evaluation` 61–80 tek öbek, `multimodal-and-future` 81–82 yeni öbek. Kasıtlıdır;
+  30–40, 41–60); `safety-and-evaluation` 61–80 tek öbek, `multimodal-and-future` 81–86 tek öbek. Kasıtlıdır;
   `reading-list-groups.test.ts` bunu sınar.
 - Repoda ikinci bir seri (`content/series-boun/**`) ayrı bir üretim hattıyla ilerliyor; AI serisinin araçları o
   dizine dokunmaz. Build iki seriyi birden derler.
 - Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa` izleniyor;
   `**zorundadır**.` izlenmiyor). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
-- Batch 12–18'in üretimi (51–78) kullanıcı tarafından commit edildi (18: `commi`/`e72a24b`). **Batch 19 (79–82)
-  çalışma ağacında commit edilmemiş** duruyor: dört makale, dört varlık klasörü ve yeni
-  `content/series/articles/multimodal-and-future/` dizini izlenmiyor; `catalog.json`, `roadmap.json`, `HANDOFF.md`,
-  `YOL-HARITASI.md` ve `.wolf/*` değişmiş durumda. Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
+- Batch 12–19'un üretimi (51–82) kullanıcı tarafından commit edildi (19: `commi`/`fb43518`). **Batch 20 (83–86)
+  çalışma ağacında commit edilmemiş** duruyor: dört makale ve dört varlık klasörü izlenmiyor; `catalog.json`,
+  `roadmap.json`, `HANDOFF.md`, `YOL-HARITASI.md` ve `.wolf/*` değişmiş durumda; `artifacts/b20-research/`
+  de izlenmiyor. Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
+- **Batch 20 (2026-09-09):** Makale 83–86, **Faz 9'un gövdesi**: difüzyonla görüntü ve video üretimi → birleşik
+  modeller ve "her şey token" iddiası → uzmanlar karışımı → dikkatin ötesindeki mimariler. `BATCH=4+1`. Araştırma
+  (144 kalemlik liste iki fetch kopyasıyla, 139 metin), yazım, entegrasyon ve doğrulama ana oturumda,
+  workflow/subagent kullanılmadan yapıldı. **İki bağlayıcı koordinat birden kapandı** (20 → 85; 7 ve 15 → 86) ve
+  82'nin numarasız işareti 83'te ödendi; 30'un kısıtlı üretimi 84'te tahsil edildi; yeni koordinat açılmadı.
+  İki başlık Türkçeleştirildi (#184 "Difüzyona Giriş", #185 "Dikkatin Ötesi"). Kararlar #184–#191. 68 kaynak
+  kaleminin 58'i hakemli. **Beş künye düzeltildi:** üç yanlış hash URL'si, bir PMLR slug'ı + yazar sırası
+  (`ludziejewski24a`), ve Jamba'nın venue'sü (COLM 2024 değil, ICLR 2025 ve başlığı farklı). İki yeni doğrulama
+  kanalı kuruldu: OpenReview arama ucu ve `iclr.cc` kabul listeleri. Bir terim çakışması yayından önce düzeltildi
+  ("recall" → "kapsama", #187). Kapılar: `pnpm typecheck` (0), **575 test**, `pnpm build` (exit 0,
+  `/seri/[slug]` 86 yol, izole kopyada), 87 rotanın tamamı 200 (52,8 sn), dört makale × üç genişlik × üç temada
+  DOM ölçümü (taşma 0, sızıntı yok), 12 yeni diyagram Playwright ile light/dark PNG olarak alınıp gözle
+  doğrulandı (PNG turu bir dar sütun payı buldu ve düzeltildi). Paralel oturum görünmedi; build ve dev sunucusu
+  izole kopyada (`D:\dev\anil-lib-b20-render`, 3210), launch.json geri alındı, kopya ve junction silindi.
 - **Batch 19 (2026-09-09):** Makale 79–82; **Faz 8 kapandı, Faz 9 açıldı**: sağlamlık ve dağılım kayması →
   şeffaflık ve model/sistem kartları → görüntü-dil modelleri → ses ve gerçek zamanlı modeller. `BATCH=4+1`.
   Araştırma (172 kalemlik liste iki fetch kopyasıyla, 169 metin; beş kalemlik retry turu), yazım, entegrasyon ve

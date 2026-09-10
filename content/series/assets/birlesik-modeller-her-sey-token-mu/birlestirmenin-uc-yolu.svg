@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 342" role="img" aria-label="Üç satırlı karşılaştırma tablosu; sütunlar düzen, ne paylaşılır ve ne ayrı kalır, ölçülen sonuç. Birinci satır tek ortak sözlük: sözlük, kayıp ve softmax paylaşılır, yalnızca kodlayıcı ile çözücü ayrıdır; ölçülen sonuç, iç içe geçmiş belgelerin dikişsiz modellenmesi fakat tek softmax altında modalitelerin norm yarışına girip eğitimin ıraksaması, ve görüntü üretimi olmayan ablasyonun ıraksamaması. İkinci satır tek gövde iki kayıp: gövde, bağlam ve dikkat paylaşılır, kayıp ayrıdır ve görüntü sürekli değerli kalır; ölçülen sonuç, eşit işlemde yaklaşık iki kat daha iyi FID, görüntüden metne yüzde 21,8 işlemde eşitlenme, metinden metne yüzde 50 ila 60 işlemde eşitlenme. Üçüncü satır büyük sözlüklü maskeli dil modeli: sözlük ve kayıp paylaşılır, soldan sağa sıra bırakılmıştır; ölçülen sonuç, sözlük 262 bine çıkarıldığında dil modelinin difüzyonu geçmesi ve 256 adım yerine sekiz yineleme.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">düzen</text>
+  <text x="200" y="24" font-size="13" font-weight="bold" fill="var(--text)">ne paylaşılır / ne ayrı</text>
+  <text x="430" y="24" font-size="13" font-weight="bold" fill="var(--text)">ölçülen sonuç</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="86" fill="var(--surface-muted)" />
+  <text x="30" y="66" font-size="13" font-weight="bold" fill="var(--text)">tek ortak</text>
+  <text x="30" y="84" font-size="13" font-weight="bold" fill="var(--text)">sözlük</text>
+  <text x="200" y="66" font-size="13" fill="var(--text)">sözlük, kayıp ve softmax</text>
+  <text x="200" y="84" font-size="13" fill="var(--text)">paylaşılır; yalnızca kodlayıcı</text>
+  <text x="200" y="102" font-size="13" fill="var(--text)">ile çözücü ayrıdır</text>
+  <text x="430" y="66" font-size="13" fill="var(--text)">iç içe belgeler dikişsiz;</text>
+  <text x="430" y="84" font-size="13" fill="var(--accent)">tek softmax altında norm</text>
+  <text x="430" y="102" font-size="13" fill="var(--accent)">yarışı, eğitim ıraksıyor</text>
+  <text x="430" y="120" font-size="13" fill="var(--text-muted)">(ablasyonda ıraksamıyor)</text>
+
+  <rect x="20" y="136" width="680" height="86" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="160" font-size="13" font-weight="bold" fill="var(--text)">tek gövde,</text>
+  <text x="30" y="178" font-size="13" font-weight="bold" fill="var(--text)">iki kayıp</text>
+  <text x="200" y="160" font-size="13" fill="var(--text)">gövde, bağlam ve dikkat</text>
+  <text x="200" y="178" font-size="13" fill="var(--text)">paylaşılır; kayıp ayrıdır,</text>
+  <text x="200" y="196" font-size="13" fill="var(--text)">görüntü sürekli kalır</text>
+  <text x="430" y="160" font-size="13" fill="var(--cool)">eşit işlemde ≈ 2 kat daha</text>
+  <text x="430" y="178" font-size="13" fill="var(--cool)">iyi FID; görüntüden metne</text>
+  <text x="430" y="196" font-size="13" fill="var(--cool)">%21,8 işlemde eşitlenme;</text>
+  <text x="430" y="214" font-size="13" fill="var(--cool)">metinden metne %50–60</text>
+
+  <rect x="20" y="230" width="680" height="68" fill="var(--surface-muted)" />
+  <text x="30" y="254" font-size="13" font-weight="bold" fill="var(--text)">büyük sözlük,</text>
+  <text x="30" y="272" font-size="13" font-weight="bold" fill="var(--text)">maskeli model</text>
+  <text x="200" y="254" font-size="13" fill="var(--text)">sözlük ve kayıp paylaşılır;</text>
+  <text x="200" y="272" font-size="13" fill="var(--text)">soldan sağa sıra bırakılır</text>
+  <text x="430" y="254" font-size="13" fill="var(--text)">sözlük 262 bine çıkınca</text>
+  <text x="430" y="272" font-size="13" fill="var(--text)">dil modeli difüzyonu geçiyor;</text>
+  <text x="430" y="290" font-size="13" fill="var(--text)">256 adım yerine 8 yineleme</text>
+
+  <line x1="20" y1="306" x2="700" y2="306" stroke="var(--border)" />
+  <text x="20" y="328" font-size="13" fill="var(--text-muted)">Üç düzen de aynı soruyu ayrı yerde kesiyor: dikiş sözlükte mi, kayıpta mı, sırada mı.</text>
+</svg>

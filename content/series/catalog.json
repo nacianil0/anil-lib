@@ -1642,6 +1642,86 @@
       "path": "content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
+    },
+    {
+      "articleId": "article_82d5dc14-e5af-46cf-8d49-08c01632e40e",
+      "title": "Görüntü ve Video Üretimi: Difüzyona Giriş",
+      "slug": "goruntu-ve-video-uretimi-difuzyona-giris",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 83,
+      "summary": "Üretimin ters yönünü kuruyor: token token değil, bütün tuvali defalarca düzelterek. Bozma yönünün tasarım, geri getirme yönünün öğrenilen taraf olduğunu; gürültüyü tahmin etmenin neden yeterli bir hedef olduğunu; adım sayısının modelin değil örnekleyicinin özelliği olduğunu aynı modelin iki örnekleyicisinde ölçülmüş sayılarla gösteriyor (on adımda 367,43 ile 13,36). Maliyetin pikselden gizil uzaya taşınmasını, omurganın U-Net'ten Transformer'a geçişini (118,6 Gflop'ta 2,27), ve kılavuzluğun 10'daki sıcaklık düğmesinin buradaki hâli olduğunu tek modelde üç ayarla veriyor: sadakat 0,67'den 0,83'e çıkarken çeşitlilik 0,67'den 0,57'ye iniyor. Zaman ekseni eklenince neyin değiştiğini, ve cetvelin kendisinin — FID'in — neden yanlı olduğunu kapanışta ölçüyle bırakıyor.",
+      "tags": [
+        "difuzyon",
+        "goruntu-uretimi",
+        "video-uretimi",
+        "kilavuzluk",
+        "ornekleyici"
+      ],
+      "contentHash": "sha256:7117c574b3a3957c1927f70460671191ca08d3e035482e0edcb56301e7781520",
+      "path": "content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 20
+    },
+    {
+      "articleId": "article_04339cdc-e5a8-423a-b152-fe02b31222cc",
+      "title": "Birleşik Modeller: Her Şey Token mı?",
+      "slug": "birlesik-modeller-her-sey-token-mu",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 84,
+      "summary": "\"Her şey token\" iddiasını sınıyor. Görüntüyü sözlüğe sokan kuantizasyon adımını kuruyor (128×128 görüntü 32×32 ızgaraya, 512 kodlu bir defterle, bitte 42,6 kat indirgeme) ve sözlüğün kalitesinin tavanı belirlediğini ölçüyle gösteriyor: aynı ölçütte dil modeli 3,41 iken difüzyon 1,79'du; sözlük büyütülünce sıralama tersine döndü. Görüntüde sıranın icat edilmiş olduğunu ve bunun bedelini veriyor — 256 adım yerine 8 adım, ölçek ölçek üretimde 18,65'ten 1,73'e. Tek sözlüğün ölçülmüş bedelini — tek softmax altında modalitelerin norm yarışına girip eğitimi ıraksatmasını — ve 30'un biçim garantisinin burada mimari bir zorunluluk hâline gelmesini anlatıyor. Kapanışta karşı ölçüm: kuantizasyonu bırakıp tek gövdede iki kayıp kullanan düzen, eşit işlemde yaklaşık iki kat daha iyi FID veriyor ve metin tarafında bile yüzde 50–60 işlemde eşitleniyor.",
+      "tags": [
+        "birlesik-modeller",
+        "gorsel-tokenlestirme",
+        "kuantizasyon",
+        "erken-kaynasma",
+        "kisitli-uretim"
+      ],
+      "contentHash": "sha256:4b84044faee170ffac4f72d6becb4fc5e87c2d22c764ce9661aafc2c000d2a4c",
+      "path": "content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 20
+    },
+    {
+      "articleId": "article_a22c61d9-5173-4fba-9d99-5cb178d0129e",
+      "title": "Verimli Mimariler: Uzman Karışımları (MoE)",
+      "slug": "verimli-mimariler-uzman-karisimlari-moe",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 85,
+      "summary": "20'de bırakılan borcu ödüyor: 671 milyar parametre taşıyıp her token için yalnızca 37 milyarını çalıştıran mimari nasıl kuruluyor. Parametre sayısı ile token başına hesabın nasıl ayrıldığını, seyrek kapılı katmanın ileri beslemeli katmanın yerine nasıl geçtiğini ve yönlendirmenin neden bir eğitim problemi olduğunu kuruyor — yük dengesizliği, kapasite, düşen token'lar, ve atamayı tersine çeviren çözüm. Ölçek yasasının değişip değişmediğini iki tarafın ölçümüyle bırakıyor: bir çalışma yönlendirmenin faydasının azaldığını ve 937 milyar parametrede kesildiğini söylüyor, bir başkası neyin sabit tutulduğunu değiştirip 10²⁰ işlemde yirmi kat tasarruf ölçüyor — 9'daki Kaplan-Chinchilla ayrımının aynı biçimi. Bedelin bellekte ve iletişimde ödendiğini, ve uzmanların gerçekten uzmanlaşıp uzmanlaşmadığının iki ayrı ölçümde iki ayrı cevap verdiğini gösteriyor.",
+      "tags": [
+        "uzmanlar-karisimi",
+        "kosullu-hesaplama",
+        "yonlendirme",
+        "yuk-dengeleme",
+        "olcek-yasalari"
+      ],
+      "contentHash": "sha256:5a76c6cd5105975b3f809e5a27987cc6a35c586270b535d07af5396a85a1b99b",
+      "path": "content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 20
+    },
+    {
+      "articleId": "article_369f2a20-9858-4b6f-8478-ca0972833d43",
+      "title": "Dikkatin Ötesi: SSM ve Alternatif Mimariler",
+      "slug": "dikkatin-otesi-ssm-ve-alternatif-mimariler",
+      "category": "multimodal-and-future",
+      "level": "intermediate",
+      "readingOrder": 86,
+      "summary": "7 ve 15'te açık bırakılan kapıyı kapatıyor. Önce \"karesel\" sözcüğünü ikiye ayırıyor: eğitimde ikili sayısıyla büyüyen hesap ile çıkarımda uzunlukla büyüyen anahtar-değer önbelleği ayrı maliyetlerdir ve alternatifler farklı olanı hedefler. Üç aileyi kuruyor — seyreklik, doğrusal dikkat ve durum uzayı modelleri — ve durum uzayı modellerinin iki görünüşünü (eğitimde evrişim, çıkarımda yineleme) veriyor. Asıl mesele takas: dikkat her şeyi saklar, sabit durum bir özet tutar. Bedeli ölçülmüş — 410 milyon parametreli bir Transformer, rehber yeterince uzadığında 2,8 milyarlık bir durum uzayı modelini geçiyor, üstelik ikincisi Pile'da daha düşük perplexity verirken; ve boşluğun yüzde 82'si çağrışımsal geri çağırmadan geliyor. Kanıtlanan sınır ise beklentiyi bozuyor: yinelemeye rağmen bu modellerin ifade gücü Transformer'ınkiyle aynı sınıfta. Kapanışta melez mimariler ve baytları dinamik yamalara toplayan düzen.",
+      "tags": [
+        "durum-uzayi-modelleri",
+        "dogrusal-dikkat",
+        "seyrek-dikkat",
+        "melez-mimariler",
+        "karesel-maliyet"
+      ],
+      "contentHash": "sha256:da474a2065a9f20fd6c9691170c6869d9cdf6417c951068dcd7347368ba23623",
+      "path": "content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 20
     }
   ]
 }

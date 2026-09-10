@@ -3272,3 +3272,50 @@ Görsel doğrulama: 375, 768, 1280 genişlik, açık + koyu tema, gerçek taray�
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 21:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-09 21:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:59 | Created artifacts/b20-research/fetch-b20.py | — | ~6232 |
+| 22:00 | Edited artifacts/b20-research/fetch-b20.py | 2→6 lines | ~170 |
+| 22:14 | Created content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | — | ~6514 |
+| 22:15 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | 1→3 lines | ~224 |
+| 22:15 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~29 |
+| 22:15 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | 3→5 lines | ~249 |
+| 22:15 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~210 |
+| 22:16 | Created content/series/assets/goruntu-ve-video-uretimi-difuzyona-giris/bozmak-ve-geri-getirmek.svg | — | ~1109 |
+| 22:17 | Created content/series/assets/goruntu-ve-video-uretimi-difuzyona-giris/adim-sayisi-ve-orneklendirici.svg | — | ~802 |
+| 22:17 | Created content/series/assets/goruntu-ve-video-uretimi-difuzyona-giris/kilavuzlugun-takasi.svg | — | ~986 |
+| 22:21 | Created content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | — | ~5111 |
+| 22:22 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | 1→5 lines | ~450 |
+| 22:22 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | 1→5 lines | ~495 |
+| 22:23 | Created content/series/assets/birlesik-modeller-her-sey-token-mu/goruntuyu-sozluge-sokmak.svg | — | ~957 |
+| 22:24 | Created content/series/assets/birlesik-modeller-her-sey-token-mu/birlestirmenin-uc-yolu.svg | — | ~1096 |
+| 22:24 | Created content/series/assets/birlesik-modeller-her-sey-token-mu/tek-sozlugun-defteri.svg | — | ~786 |
+| 22:29 | Created content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md | — | ~5649 |
+| 22:30 | Created content/series/assets/verimli-mimariler-uzman-karisimlari-moe/yogun-katman-ile-uzman-karisimi.svg | — | ~991 |
+| 22:31 | Created content/series/assets/verimli-mimariler-uzman-karisimlari-moe/yonlendirme-ve-yuk-dengesi.svg | — | ~1013 |
+| 22:31 | Created content/series/assets/verimli-mimariler-uzman-karisimlari-moe/olcek-iddiasinin-iki-tarafi.svg | — | ~999 |
+| 22:36 | Created content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | — | ~6480 |
+| 22:36 | Created content/series/assets/dikkatin-otesi-ssm-ve-alternatif-mimariler/iki-ayri-karesel-maliyet.svg | — | ~784 |
+| 22:37 | Created content/series/assets/dikkatin-otesi-ssm-ve-alternatif-mimariler/buyuyen-onbellek-ile-sabit-durum.svg | — | ~1002 |
+| 22:37 | Created content/series/assets/dikkatin-otesi-ssm-ve-alternatif-mimariler/uc-ailenin-takasi.svg | — | ~1170 |
+| 23:04 | Created .claude/launch.json | — | ~148 |
+| 23:12 | Created .claude/launch.json | — | ~148 |
+| 23:14 | Created .claude/launch.json | — | ~56 |
+| 23:15 | Edited docs/seri/YOL-HARITASI.md | expanded (+14 lines) | ~382 |
+| 23:16 | Edited docs/seri/YOL-HARITASI.md | expanded (+27 lines) | ~891 |
+| 23:17 | Edited docs/seri/YOL-HARITASI.md | modified z() | ~2400 |
+| 23:18 | Edited docs/seri/YOL-HARITASI.md | expanded (+45 lines) | ~1194 |
+| 23:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9cbe8f91-842f-4dfc-a7b1-98ad23791177/scratchpad/handoff-b20.py | — | ~200 |
+| 23:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9cbe8f91-842f-4dfc-a7b1-98ad23791177/scratchpad/handoff-b20-body.md | — | ~5146 |
+
+| 23:20 | Batch 20 (83-86) uretimi: arastirma 139 kaynak, 4 makale + 12 SVG, entegrasyon, kapilar, +1 fazi | content/series/**, docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md, artifacts/b20-research/** | 575 test yesil, build exit 0 (86 yol), 87 rota 200 | ~1.9M |
+| 23:25 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch20-faz9-govde.md | — | ~976 |
+| 23:27 | Session end: 34 writes across 22 files (fetch-b20.py, goruntu-ve-video-uretimi-difuzyona-giris.md, bozmak-ve-geri-getirmek.svg, adim-sayisi-ve-orneklendirici.svg, kilavuzlugun-takasi.svg) | 18 reads | ~200668 tok |

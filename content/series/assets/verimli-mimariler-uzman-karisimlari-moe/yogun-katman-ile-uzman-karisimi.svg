@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 352" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar yoğun katman ve uzmanlar karışımı katmanı. Satırlar: token başına çalışan parametre, toplam parametre, token başına hesap, bellekte tutulan parametre ve cihazlar arası iletişim. Yoğun katmanda çalışan parametre toplam parametreye eşittir, toplam parametre katmanın kendi boyudur, hesap parametreyle doğru orantılıdır, bellek çalışan parametreyle aynıdır ve ek iletişim yoktur. Uzmanlar karışımında çalışan parametre yalnızca seçilen uzman sayısına bağlıdır, toplam parametre uzman sayısıyla çarpılır, hesap yalnızca seçilenlere göre artar, bellek toplam parametreye göre ödenir ve uzmanlar cihazlara dağıtılmışsa her katmanda hepsi-hepsiye iletişim gerekir. Altta iki gerçek model: biri 47 milyar toplam ve 13 milyar etkin parametreyle sekiz uzmandan ikisini seçiyor, öteki 671 milyar toplam ve 37 milyar etkin parametre taşıyor. En altta bir kayıt: sekiz uzmandan ikisini seçmek katmanın parametresini sekiz kat büyütürken token başına hesabı yalnızca iki kat artırır.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">ne ölçülüyor</text>
+  <text x="270" y="24" font-size="13" font-weight="bold" fill="var(--text)">yoğun katman</text>
+  <text x="470" y="24" font-size="13" font-weight="bold" fill="var(--text)">uzmanlar karışımı</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">token başına çalışan parametre</text>
+  <text x="270" y="62" font-size="13" fill="var(--text)">toplamın tamamı</text>
+  <text x="470" y="62" font-size="13" fill="var(--cool)">yalnızca seçilen k uzman</text>
+
+  <text x="30" y="94" font-size="13" fill="var(--text)">toplam parametre</text>
+  <text x="270" y="94" font-size="13" fill="var(--text)">katmanın kendi boyu</text>
+  <text x="470" y="94" font-size="13" fill="var(--accent)">uzman sayısıyla çarpılır</text>
+
+  <rect x="20" y="106" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="126" font-size="13" fill="var(--text)">token başına hesap</text>
+  <text x="270" y="126" font-size="13" fill="var(--text)">parametreyle orantılı</text>
+  <text x="470" y="126" font-size="13" fill="var(--cool)">yalnızca seçilenlere göre</text>
+
+  <text x="30" y="158" font-size="13" fill="var(--text)">bellekte tutulan parametre</text>
+  <text x="270" y="158" font-size="13" fill="var(--text)">çalışanla aynı</text>
+  <text x="470" y="158" font-size="13" fill="var(--accent)">toplamın tamamı</text>
+
+  <rect x="20" y="170" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="190" font-size="13" fill="var(--text)">cihazlar arası iletişim</text>
+  <text x="270" y="190" font-size="13" fill="var(--text)">ek yok</text>
+  <text x="470" y="190" font-size="13" fill="var(--accent)">her katmanda hepsi-hepsiye</text>
+
+  <line x1="20" y1="210" x2="700" y2="210" stroke="var(--border)" />
+  <text x="20" y="234" font-size="13" font-weight="bold" fill="var(--text)">iki gerçek model</text>
+  <text x="20" y="258" font-size="13" fill="var(--text-muted)">sekiz uzmandan iki seçim: 47 milyar toplam, 13 milyar etkin.</text>
+  <text x="20" y="278" font-size="13" fill="var(--text-muted)">671 milyar toplam, 37 milyar etkin.</text>
+
+  <line x1="20" y1="294" x2="700" y2="294" stroke="var(--border)" />
+  <text x="20" y="318" font-size="13" fill="var(--accent)">Sekiz uzmandan ikisini seçmek: katmanın parametresi sekiz kat büyür,</text>
+  <text x="20" y="338" font-size="13" fill="var(--accent)">token başına hesap yalnızca iki kat artar.</text>
+</svg>

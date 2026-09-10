@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-label="İki bölmeli tablo ve altında aile eşleştirmesi. Üst bölme eğitim ve ön dolum: bütün dizi bir kerede işlenir, hesap uzunluğun karesiyle büyür, bellek ise tabloyu hiç yazmadan çalışan tam dikkat algoritmasıyla doğrusallaştırılmıştır ve o algoritma yaklaşık değil tam sonuç verir. Alt bölme üretim: her yeni token için önbellekteki bütün anahtar ve değerler okunur, token başına maliyet uzunlukla doğrusal büyür ve önbelleğin belleği de uzunlukla doğrusal büyür. Altta üç aile ve hedefleri: seyrek dikkat ikili sayısını azaltır ve eğitim tarafını hedefler; doğrusal dikkat toplamı biriktirilebilir hâle getirip modeli matris durumlu bir yinelemeye çevirir ve iki tarafı birden hedefler; durum uzayı modelleri sabit boyutlu bir durum tutar ve üretim tarafını hedefler. En altta bir uyarı: işlem sayısını azaltmak duvar saatini azaltmaya yetmez, çünkü darboğaz çoğu zaman bellek erişimidir.">
+  <rect x="20" y="20" width="680" height="76" fill="var(--surface-muted)" />
+  <text x="30" y="42" font-size="13" font-weight="bold" fill="var(--text)">eğitim ve ön dolum</text>
+  <text x="30" y="64" font-size="13" fill="var(--text)">bütün dizi bir kerede işlenir → hesap uzunluğun karesiyle büyür.</text>
+  <text x="30" y="84" font-size="13" fill="var(--text)">Bellek doğrusallaştırıldı: tabloyu yazmayan, yaklaşık değil tam algoritma.</text>
+
+  <rect x="20" y="106" width="680" height="76" fill="var(--bg)" stroke="var(--border)" />
+  <text x="30" y="128" font-size="13" font-weight="bold" fill="var(--text)">üretim</text>
+  <text x="30" y="150" font-size="13" fill="var(--text)">her yeni token önbellekteki bütün anahtar ve değerleri okur.</text>
+  <text x="30" y="170" font-size="13" fill="var(--text)">Token başına maliyet ve önbelleğin belleği uzunlukla doğrusal büyür.</text>
+
+  <line x1="20" y1="196" x2="700" y2="196" stroke="var(--border)" />
+  <text x="30" y="220" font-size="13" font-weight="bold" fill="var(--text)">hangi aile neyi hedefliyor</text>
+
+  <text x="30" y="244" font-size="13" fill="var(--text)">seyrek dikkat</text>
+  <text x="250" y="244" font-size="13" fill="var(--text-muted)">ikili sayısını azaltır → eğitim tarafı</text>
+  <text x="30" y="268" font-size="13" fill="var(--text)">doğrusal dikkat</text>
+  <text x="250" y="268" font-size="13" fill="var(--text-muted)">toplamı biriktirir, matris durumlu</text>
+  <text x="250" y="286" font-size="13" fill="var(--text-muted)">yinelemeye çevirir → iki taraf birden</text>
+  <text x="30" y="310" font-size="13" fill="var(--text)">durum uzayı modelleri</text>
+  <text x="250" y="310" font-size="13" fill="var(--text-muted)">sabit boyutlu durum → üretim tarafı</text>
+
+  <line x1="20" y1="326" x2="700" y2="326" stroke="var(--border)" />
+  <text x="20" y="344" font-size="13" fill="var(--accent)">Uyarı: işlem sayısını azaltmak duvar saatini azaltmaz; darboğaz bellek erişimidir.</text>
+</svg>

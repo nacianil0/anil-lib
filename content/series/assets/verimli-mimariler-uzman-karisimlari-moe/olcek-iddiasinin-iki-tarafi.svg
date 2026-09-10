@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 346" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar iki ayrı ölçek çalışması. Satırlar: neyin sabit tutulduğu, neyin değiştirildiği, kurulan ölçü ve varılan sonuç. Birinci çalışmada eğitim süresi ile uzman boyu sabit tutulmuş, model boyu ile uzman sayısı değiştirilmiş; kurulan ölçü, yönlendirilmiş modeli aynı başarıdaki yoğun modele eşleyen etkin parametre sayısı; sonuç, yönlendirmenin bütün boyutlarda iyileştirme sağladığı fakat iyileşmenin ölçekle azaldığı ve üç teknik için 937 milyar, 85 milyar ve 83 milyar parametrede kesildiği. İkinci çalışmada yalnızca hesap bütçesi sabit tutulmuş; model boyu, eğitim token sayısı ve uzman taneciği birlikte değiştirilmiş; kurulan ölçü, üç değişkenli hesap-optimal yapılandırma; sonuç, uzmanlar karışımının her bütçede yoğun modelden verimli olduğu, 10 üzeri 20 işlemde yirmi kat, 10 üzeri 25 işlemin ötesinde kırk katı aşan tasarruf. En altta bir kayıt: çelişki veride değil, ailenin tanımında.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru</text>
+  <text x="230" y="24" font-size="13" font-weight="bold" fill="var(--text)">birinci çalışma</text>
+  <text x="470" y="24" font-size="13" font-weight="bold" fill="var(--text)">ikinci çalışma</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+
+  <rect x="20" y="42" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="62" font-size="13" fill="var(--text)">ne sabit tutuldu</text>
+  <text x="230" y="62" font-size="13" fill="var(--text)">eğitim süresi ve</text>
+  <text x="230" y="80" font-size="13" fill="var(--text)">uzman boyu</text>
+  <text x="470" y="62" font-size="13" fill="var(--text)">yalnızca hesap</text>
+  <text x="470" y="80" font-size="13" fill="var(--text)">bütçesi</text>
+
+  <text x="30" y="112" font-size="13" fill="var(--text)">ne değiştirildi</text>
+  <text x="230" y="112" font-size="13" fill="var(--text)">model boyu,</text>
+  <text x="230" y="130" font-size="13" fill="var(--text)">uzman sayısı</text>
+  <text x="470" y="112" font-size="13" fill="var(--text)">model boyu, eğitim</text>
+  <text x="470" y="130" font-size="13" fill="var(--text)">token'ı, tanecik</text>
+
+  <rect x="20" y="142" width="680" height="48" fill="var(--surface-muted)" />
+  <text x="30" y="162" font-size="13" fill="var(--text)">kurulan ölçü</text>
+  <text x="230" y="162" font-size="13" fill="var(--text)">etkin parametre</text>
+  <text x="230" y="180" font-size="13" fill="var(--text)">sayısı</text>
+  <text x="470" y="162" font-size="13" fill="var(--text)">üç değişkenli hesap-</text>
+  <text x="470" y="180" font-size="13" fill="var(--text)">optimal yapılandırma</text>
+
+  <text x="30" y="212" font-size="13" fill="var(--text)">sonuç</text>
+  <text x="230" y="212" font-size="13" fill="var(--accent)">fayda ölçekle azalıyor;</text>
+  <text x="230" y="230" font-size="13" fill="var(--accent)">937 / 85 / 83 milyar</text>
+  <text x="230" y="248" font-size="13" fill="var(--accent)">parametrede kesiliyor</text>
+  <text x="470" y="212" font-size="13" fill="var(--cool)">her bütçede yoğunu</text>
+  <text x="470" y="230" font-size="13" fill="var(--cool)">geçiyor; 10²⁰ işlemde</text>
+  <text x="470" y="248" font-size="13" fill="var(--cool)">20 kat, 10²⁵ üstünde 40+</text>
+
+  <line x1="20" y1="266" x2="700" y2="266" stroke="var(--border)" />
+  <text x="20" y="290" font-size="13" fill="var(--text-muted)">Çelişki veride değil, ailenin tanımında: bir ölçek yasası, neyin sabit</text>
+  <text x="20" y="310" font-size="13" fill="var(--text-muted)">tutulduğuyla birlikte okunur.</text>
+  <text x="20" y="332" font-size="13" fill="var(--text-muted)">Aynı ayrımı 9. makalede de görmüştük.</text>
+</svg>

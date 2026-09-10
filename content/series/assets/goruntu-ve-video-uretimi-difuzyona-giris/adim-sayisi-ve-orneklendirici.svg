@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="İki sütunlu tablo; satırlar örnekleme adım sayısı 10, 20, 50, 100 ve 1000. Sütunlar CIFAR-10 üzerinde FID değeri; birinci sütun rastgeleliği açık olan özgün örnekleyici, ikinci sütun rastgeleliği kapatan belirlenimci örnekleyici. Değerler sırasıyla 367,43 ve 13,36; 133,37 ve 6,84; 32,72 ve 4,67; 9,99 ve 4,16; 3,17 ve 4,04. Tablonun altında üç kayıt: iki sütun aynı eğitilmiş modeli kullanır, fark yalnızca örnekleyicidir; düşük FID iyidir; ve bin adımda özgün örnekleyici öne geçerken elli adımda arada yedi kattan fazla fark vardır.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">örnekleme adımı</text>
+  <text x="250" y="24" font-size="13" font-weight="bold" fill="var(--text)">özgün örnekleyici</text>
+  <text x="480" y="24" font-size="13" font-weight="bold" fill="var(--text)">belirlenimci örnekleyici</text>
+  <text x="250" y="42" font-size="13" fill="var(--text-muted)">CIFAR-10 FID</text>
+  <text x="480" y="42" font-size="13" fill="var(--text-muted)">CIFAR-10 FID</text>
+  <line x1="20" y1="52" x2="700" y2="52" stroke="var(--border)" />
+
+  <rect x="20" y="60" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="80" font-size="13" fill="var(--text)">10 adım</text>
+  <text x="250" y="80" font-size="13" fill="var(--accent)">367,43</text>
+  <text x="480" y="80" font-size="13" fill="var(--cool)">13,36</text>
+
+  <text x="30" y="112" font-size="13" fill="var(--text)">20 adım</text>
+  <text x="250" y="112" font-size="13" fill="var(--accent)">133,37</text>
+  <text x="480" y="112" font-size="13" fill="var(--cool)">6,84</text>
+
+  <rect x="20" y="124" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="144" font-size="13" fill="var(--text)">50 adım</text>
+  <text x="250" y="144" font-size="13" fill="var(--accent)">32,72</text>
+  <text x="480" y="144" font-size="13" fill="var(--cool)">4,67</text>
+
+  <text x="30" y="176" font-size="13" fill="var(--text)">100 adım</text>
+  <text x="250" y="176" font-size="13" fill="var(--accent)">9,99</text>
+  <text x="480" y="176" font-size="13" fill="var(--cool)">4,16</text>
+
+  <rect x="20" y="188" width="680" height="30" fill="var(--surface-muted)" />
+  <text x="30" y="208" font-size="13" fill="var(--text)">1000 adım</text>
+  <text x="250" y="208" font-size="13" fill="var(--accent)">3,17</text>
+  <text x="480" y="208" font-size="13" fill="var(--cool)">4,04</text>
+
+  <line x1="20" y1="228" x2="700" y2="228" stroke="var(--border)" />
+  <text x="20" y="252" font-size="13" fill="var(--text-muted)">İki sütun aynı eğitilmiş modeldir; değişen tek şey örnekleyicidir.</text>
+  <text x="20" y="270" font-size="13" fill="var(--text-muted)">Düşük FID iyidir.</text>
+  <text x="20" y="288" font-size="13" fill="var(--text-muted)">Bin adımda özgün örnekleyici öne geçiyor; elli adımda arada</text>
+  <text x="20" y="306" font-size="13" fill="var(--text-muted)">yedi kattan fazla fark var.</text>
+</svg>

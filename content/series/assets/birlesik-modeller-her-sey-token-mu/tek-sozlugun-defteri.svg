@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="İki sütunlu defter tablosu; sol sütun tek sözlüğün kazandırdıkları, sağ sütun ödettikleri. Sol sütunda dört kalem: tek kayıp ve tek eğitim döngüsü; dil modelleri için kurulmuş servis ve önbellek altyapısının devralınması; metin ile görüntünün iç içe geçtiği belgelerin dikişsiz modellenmesi; ve seste bedelin zaten ödenmiş olması, çünkü akustik token'lar kendi alanında da ayrıktır. Sağ sütunda dört kalem: kuantizasyon kaybı geri alınamaz; sözlüğün kalitesi tavanı belirler; tek softmax altında modaliteler norm yarışına girer ve eğitim ıraksayabilir; ve pencere bedeli, görüntü başına 1024 token, on görüntü için 10.240 token. En altta bir kayıt: kuantizasyonu bırakan düzen eşit işlemde yaklaşık iki kat daha iyi FID veriyor ve metinden metne eşitlenmeyi işlemin yüzde 50 ila 60'ında yakalıyor.">
+  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">kazandırdıkları</text>
+  <text x="380" y="24" font-size="13" font-weight="bold" fill="var(--text)">ödettikleri</text>
+  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+  <line x1="360" y1="34" x2="360" y2="270" stroke="var(--border)" />
+
+  <text x="30" y="58" font-size="13" fill="var(--text)">tek kayıp, tek eğitim döngüsü</text>
+  <text x="380" y="58" font-size="13" fill="var(--text)">kuantizasyon kaybı geri</text>
+  <text x="380" y="76" font-size="13" fill="var(--text)">alınamaz</text>
+
+  <text x="30" y="102" font-size="13" fill="var(--text)">dil modelleri için kurulmuş</text>
+  <text x="30" y="120" font-size="13" fill="var(--text)">servis ve önbellek altyapısı</text>
+  <text x="380" y="102" font-size="13" fill="var(--text)">sözlüğün kalitesi tavanı</text>
+  <text x="380" y="120" font-size="13" fill="var(--text)">belirler</text>
+
+  <text x="30" y="146" font-size="13" fill="var(--text)">iç içe geçmiş belgeler</text>
+  <text x="30" y="164" font-size="13" fill="var(--text)">dikişsiz modellenir</text>
+  <text x="380" y="146" font-size="13" fill="var(--accent)">tek softmax altında norm</text>
+  <text x="380" y="164" font-size="13" fill="var(--accent)">yarışı; eğitim ıraksayabilir</text>
+
+  <text x="30" y="190" font-size="13" fill="var(--text)">seste bedel zaten ödenmiş:</text>
+  <text x="30" y="208" font-size="13" fill="var(--text)">akustik token'lar zaten ayrık</text>
+  <text x="380" y="190" font-size="13" fill="var(--accent)">pencere bedeli: görüntü</text>
+  <text x="380" y="208" font-size="13" fill="var(--accent)">başına 1024 token</text>
+  <text x="380" y="226" font-size="13" fill="var(--accent)">(on görüntü = 10.240)</text>
+
+  <line x1="20" y1="270" x2="700" y2="270" stroke="var(--border)" />
+  <text x="20" y="294" font-size="13" fill="var(--cool)">Kuantizasyonu bırakan düzen: eşit işlemde ≈ 2 kat daha iyi FID; metinden</text>
+  <text x="20" y="314" font-size="13" fill="var(--cool)">metne eşitlenme işlemin %50–60'ında.</text>
+</svg>

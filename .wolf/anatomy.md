@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-09T13:16:55.074Z
-> Files: 315 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-09T20:25:25.103Z
+> Files: 335 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -11,7 +11,7 @@
 
 ## .claude/
 
-- `launch.json` (~148 tok)
+- `launch.json` (~56 tok)
 
 ## .claude/rules/
 
@@ -110,6 +110,11 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9c68700c-4168-4b93-8b88-e7b6f013eca8/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/9cbe8f91-842f-4dfc-a7b1-98ad23791177/scratchpad/
+
+- `handoff-b20-body.md` — Açık borçlar (~4824 tok)
+- `handoff-b20.py` (~200 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/a66dbd48-5c70-496b-96ea-65ab9809399c/scratchpad/
 
 - `update-yol.py` — Batch 18 +1 fazi: YOL-HARITASI.md guncellemesi. (~2576 tok)
@@ -170,6 +175,7 @@
 - `series-batch17-faz8-acilis.md` (~1020 tok)
 - `series-batch18-faz8-kapanis.md` (~1018 tok)
 - `series-batch19-faz9-acilis.md` (~954 tok)
+- `series-batch20-faz9-govde.md` (~938 tok)
 - `series-editorial-audit-2026-09-03.md` (~437 tok)
 - `workflow-policy-bounded-opus.md` (~373 tok)
 
@@ -258,6 +264,10 @@
 - `idx-b19.py` — Konferans dizin sayfalarini indirir ve baslik arar (Batch 19). (~970 tok)
 - `q.py` — Kaynak metinlerinde hizli sorgu (Batch 19). (~534 tok)
 - `url-b19.py` — Indirilen dizin sayfalarindan baslik -> mutlak URL (Batch 19). (~726 tok)
+
+## artifacts/b20-research/
+
+- `fetch-b20.py` (~6370 tok)
 
 ## artifacts/b7-render/
 
@@ -433,8 +443,12 @@
 
 ## content/series/articles/multimodal-and-future/
 
+- `birlesik-modeller-her-sey-token-mu.md` — İki üretim düzeni, tek gövde olabilir mi (~5543 tok)
+- `dikkatin-otesi-ssm-ve-alternatif-mimariler.md` — 7'de açık bırakılan kapı (~6075 tok)
+- `goruntu-ve-video-uretimi-difuzyona-giris.md` — Ters yöndeki soru (~6503 tok)
 - `goruntuyu-anlamak-goruntu-dil-modelleri.md` — Ekrandaki pikseller nasıl token olur (~6764 tok)
 - `ses-konusma-ve-gercek-zamanli-modeller.md` — Konuşmanın bir bütçesi var (~5570 tok)
+- `verimli-mimariler-uzman-karisimlari-moe.md` — 20'de bırakılan borç (~5296 tok)
 
 ## content/series/articles/reasoning-and-memory/
 
@@ -570,6 +584,12 @@
 - `insan-ve-ajan-bes-ortam.svg` (~884 tok)
 - `plan-ayni-konumlandirma-farkli.svg` (~711 tok)
 
+## content/series/assets/birlesik-modeller-her-sey-token-mu/
+
+- `birlestirmenin-uc-yolu.svg` (~1096 tok)
+- `goruntuyu-sozluge-sokmak.svg` (~957 tok)
+- `tek-sozlugun-defteri.svg` (~786 tok)
+
 ## content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/
 
 
@@ -600,6 +620,12 @@
 - `gecerlilik-zinciri.svg` (~1594 tok)
 - `hata-payi-ve-kume-boyu.svg` (~1069 tok)
 
+## content/series/assets/dikkatin-otesi-ssm-ve-alternatif-mimariler/
+
+- `buyuyen-onbellek-ile-sabit-durum.svg` (~1002 tok)
+- `iki-ayri-karesel-maliyet.svg` (~784 tok)
+- `uc-ailenin-takasi.svg` (~1170 tok)
+
 ## content/series/assets/dogrulama-modelin-cevabini-kontrol-etmek/
 
 
@@ -617,6 +643,12 @@
 
 ## content/series/assets/getirme-aramanin-modern-hali/
 
+
+## content/series/assets/goruntu-ve-video-uretimi-difuzyona-giris/
+
+- `adim-sayisi-ve-orneklendirici.svg` (~802 tok)
+- `bozmak-ve-geri-getirmek.svg` (~1109 tok)
+- `kilavuzlugun-takasi.svg` (~986 tok)
 
 ## content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/
 
@@ -784,6 +816,12 @@
 - `iki-butce-iki-bulma-orani.svg` (~954 tok)
 - `urun-kuantizasyonu.svg` (~1600 tok)
 
+## content/series/assets/verimli-mimariler-uzman-karisimlari-moe/
+
+- `olcek-iddiasinin-iki-tarafi.svg` (~999 tok)
+- `yogun-katman-ile-uzman-karisimi.svg` (~991 tok)
+- `yonlendirme-ve-yuk-dengesi.svg` (~1013 tok)
+
 ## content/series/assets/web-kod-ve-dosyalarla-calisan-modeller/
 
 - `arayuzun-dugmeleri.svg` (~982 tok)
@@ -808,7 +846,7 @@
 
 - `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7155 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~7076 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~122384 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~127058 tok)
 
 ## docs/superpowers/plans/
 

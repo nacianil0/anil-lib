@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 318" role="img" aria-label="Beş kutuluk tek satırlık akış şeması ve altında bedel kayıtları. Soldan sağa kutular: piksel ızgarası, kodlayıcı, kuantize edici, ortak sözlükte dizi modeli, çözücü; aralarında sağa bakan oklar var. Altta dört bedel kaydı: kodlayıcı ızgarayı küçültür ve ayrıntıyı atar; kuantize edici en yakın koda yuvarlar ve bu kayıp geri alınamaz; ortak sözlükte metin ile görüntü aynı softmax'ı paylaşır; dizi modeli token'ların bir sırası olduğunu varsaymak zorundadır ve görüntüde o sıra icat edilmiştir. En altta iki ölçüm: 512 kodlu bir defterle 128 çarpı 128 görüntü 32 çarpı 32 ızgaraya iniyor, bitte 42,6 kat indirgeme oluyor; ve tokenizasyon kalitesi arama gerektirmeyen kuantizasyonla 2,65'ten 2,48'e, sözlük 262 bine çıkarılınca 1,34'e iniyor.">
+  <rect x="20" y="34" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="30" y="58" font-size="13" fill="var(--text)">piksel</text>
+  <text x="30" y="76" font-size="13" fill="var(--text)">ızgarası</text>
+
+  <rect x="160" y="34" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="170" y="64" font-size="13" fill="var(--text)">kodlayıcı</text>
+
+  <rect x="300" y="34" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="310" y="58" font-size="13" fill="var(--text)">kuantize</text>
+  <text x="310" y="76" font-size="13" fill="var(--text)">edici</text>
+
+  <rect x="440" y="34" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="450" y="58" font-size="13" fill="var(--text)">dizi modeli</text>
+  <text x="450" y="76" font-size="13" fill="var(--text)">(tek sözlük)</text>
+
+  <rect x="580" y="34" width="120" height="52" fill="var(--surface-muted)" />
+  <text x="590" y="64" font-size="13" fill="var(--text)">çözücü</text>
+
+  <line x1="142" y1="60" x2="152" y2="60" stroke="var(--accent)" />
+  <path d="M158 60 L150 56 L150 64 Z" fill="var(--accent)" />
+  <line x1="282" y1="60" x2="292" y2="60" stroke="var(--accent)" />
+  <path d="M298 60 L290 56 L290 64 Z" fill="var(--accent)" />
+  <line x1="422" y1="60" x2="432" y2="60" stroke="var(--accent)" />
+  <path d="M438 60 L430 56 L430 64 Z" fill="var(--accent)" />
+  <line x1="562" y1="60" x2="572" y2="60" stroke="var(--accent)" />
+  <path d="M578 60 L570 56 L570 64 Z" fill="var(--accent)" />
+
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">pikselden ortak sözlüğe</text>
+
+  <line x1="20" y1="102" x2="700" y2="102" stroke="var(--border)" />
+  <text x="20" y="126" font-size="13" font-weight="bold" fill="var(--text)">her aşamanın bedeli</text>
+  <text x="20" y="150" font-size="13" fill="var(--text-muted)">kodlayıcı: ızgarayı küçültür, ayrıntıyı atar.</text>
+  <text x="20" y="170" font-size="13" fill="var(--text-muted)">kuantize edici: en yakın koda yuvarlar; bu kayıp geri alınamaz.</text>
+  <text x="20" y="190" font-size="13" fill="var(--text-muted)">ortak sözlük: metin ile görüntü aynı softmax'ı paylaşır.</text>
+  <text x="20" y="210" font-size="13" fill="var(--text-muted)">dizi modeli: bir sıra varsayar; görüntüde o sıra icat edilmiştir.</text>
+
+  <line x1="20" y1="228" x2="700" y2="228" stroke="var(--border)" />
+  <text x="20" y="252" font-size="13" fill="var(--accent)">512 kodlu defter: 128×128 görüntü → 32×32 ızgara, bitte 42,6 kat indirgeme.</text>
+  <text x="20" y="276" font-size="13" fill="var(--accent)">Tokenizasyon kalitesi: 2,65 → 2,48 (arama gerektirmeyen kuantizasyon)</text>
+  <text x="20" y="296" font-size="13" fill="var(--accent)">→ 1,34 (sözlük 262 bine çıkınca). Düşük iyidir.</text>
+</svg>

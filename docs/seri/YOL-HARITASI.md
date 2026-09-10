@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-05 · Yayında: 1–54 (Batch 0 … Batch 12) · Sıradaki güvenli başlangıç: 55
+Son güncelleme: 2026-09-09 · Yayında: 1–86 (Batch 0 … Batch 20) · Sıradaki güvenli başlangıç: 87
 
 ## Serinin tezi
 
@@ -59,8 +59,8 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Adımların tek tek ödüllendirilmesi (süreç denetimi) | 34 | 38 | ödendi (Batch 8) |
 | Modelin içine bakmanın araçları ve "açıklama"nın sınırı | 6, 18 | 74–77 | **ödendi (Batch 18)**; 74: artık akış, devre, yamanın iki yönü, sadakat/tamlık/enazlık; 75: süperpozisyon ve seyrek sözlük, sözlüğün dört sınavı; 76: yön bulmanın dört yolu, müdahalenin dört biçimi, üç kapı; 77: girdi/bileşen/eğitim verisi atfı, taban sınavları, gerekçe sadakati |
 | Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | ödendi (Batch 18; 78'in açılışı 5'in "78. makalede derinlemesine ele alacağız" ve 9'un "nereye kadar açık olduğunu 78. makalede" cümlelerini adıyla anar) |
-| Uzmanlar karışımı mimarisinin kurulumu | 20 | 85 | açık |
-| Karesel maliyeti ödemeyen alternatif mimariler | 7, 15 | 86 | açık |
+| Uzmanlar karışımı mimarisinin kurulumu | 20 | 85 | **ödendi (Batch 20)**; 85'in açılışı 20'nin cümlesini (671 milyar toplam ↔ 37 milyar çalışan parametre) adıyla anar |
+| Karesel maliyeti ödemeyen alternatif mimariler | 7, 15 | 86 | **ödendi (Batch 20)**; 86'nın açılışı 7'nin "açık kapı" cümlesini ve 15'in bayt düzeyi mimari borcunu birlikte anar, ikisi de gövdede kapanır |
 | Ölçümün disiplini: anlamlı fark, örneklem büyüklüğü, güven aralığı | 16, 22 | 101 | açık |
 | İnce ayarın LoRA biçimi (numarasız işaretin karşılanması) | 11, 18 | 19 | ödendi (Batch 4) |
 | Bağlam penceresinin sınırı ve anatomisi | 19 | 21 | ödendi (Batch 4) |
@@ -225,6 +225,20 @@ makalelere (≤ 82; 80–82 kendi kohortundaki önceki makalelere) yapıldı ve 
 numarasına gönderme yok; 82'den büyük öteki sayılar yüzde, piksel, kilobit ve milisaniye değerleridir). Defterde açık kalan
 en yakın tekil koordinat hâlâ **85**'tir (20'nin uzmanlar karışımı vaadi); 86 ve 101 de açıktır.
 
+**Numarasız ileri işaretler — Batch 20'de verildi.** Görüntüyü de sesi de tek bir sözlüğe indirip her şeyi tek dizi
+modeline yaptırma sorusu (83 → 84, "bir sonraki makale"); parametre sayısı ile token başına hesabı ayırma sorusu
+(84 → 85, "bir sonraki makale"; 20'nin koordinatı adıyla anılarak); dikkatin karesel maliyetinin nerede ödendiği
+(85 → 86, "bir sonraki makale"; 7'nin açık kapısı adıyla anılarak); ve büyük bir modelin bildiklerini küçük bir
+modele aktarma (86 → 87, "bir sonraki makale"). **Batch 20 üç borcu birden kapattı:** 82'nin numarasız işareti
+("gürültüden başlayıp geri temizleyen üretim modelleri") 83'te; **20'nin uzmanlar karışımı koordinatı 85'te**;
+**7 ve 15'in karesel maliyet koordinatı 86'da**. Ayrıca devrolan planlı tekrar — 30'un kısıtlı üretimi — 84'te
+tahsil edildi ve orada mimari bir zorunluluk olarak yeniden kuruldu. Batch 20 yeni bir numaralı koordinat **açmadı**;
+dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 86) yapıldı ve Python ile makale
+başına doğrulandı (kendi numarasına gönderme yok; 86'dan büyük öteki sayılar çözünürlük, doğruluk ve FID
+değerleridir). Defterde açık kalan **tek** koordinat artık **101**'dir (16 ve 22'nin ölçüm disiplini vaadi);
+numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruyor. Devrolan planlı tekrar: 33/40'ın pass@k ile görev ufku
+**hâlâ tahsil edilmedi** ve 101 önerilmeye devam ediyor.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -335,10 +349,10 @@ en yakın tekil koordinat hâlâ **85**'tir (20'nin uzmanlar karışımı vaadi)
 
 81. **Görüntüyü Anlamak: Görüntü-Dil Modelleri** — çok modlu girdi; Faz 9'un açılışı, kategori `multimodal-and-future` (kararlar #176, #178); 54'ün numarasız işareti ödendi. `[yayında]`
 82. **Ses, Konuşma ve Gerçek Zamanlı Modeller** — sesli etkileşim; modalitenin token'a çevrilmesi sese taşındı. `[yayında]`
-83. **Görüntü ve Video Üretimi: Diffusion'a Giriş** — üretken görsel modeller.
-84. **Birleşik Modeller: Her Şey Token mı?** — modaliteleri birleştirme.
-85. **Verimli Mimariler: Uzman Karışımları (MoE)** — koşullu hesaplama.
-86. **Attention'ın Ötesi: SSM ve Alternatif Mimariler** — 6–7'nin eleştirel geri çağrımı.
+83. **Görüntü ve Video Üretimi: Difüzyona Giriş** — üretken görsel modeller; 82'nin numarasız işareti ödendi, başlık Türkçeleştirildi (karar #184). `[yayında]`
+84. **Birleşik Modeller: Her Şey Token mı?** — modaliteleri birleştirme; 30'un kısıtlı üretimi burada tahsil edildi. `[yayında]`
+85. **Verimli Mimariler: Uzman Karışımları (MoE)** — koşullu hesaplama; 20'nin koordinatı ödendi. `[yayında]`
+86. **Dikkatin Ötesi: SSM ve Alternatif Mimariler** — 6–7'nin eleştirel geri çağrımı; 7 ve 15'in koordinatı ödendi, başlık Türkçeleştirildi (karar #185). `[yayında]`
 87. **Küçük ama Güçlü: Damıtma ve Küçük Modeller** — distillation.
 88. **Uçta Yapay Zekâ: Telefonda ve Cihazda LLM** — on-device.
 89. **Donanım Ekosistemi: GPU'dan Özel Çiplere** — çip ve altyapı manzarası (mühendislik derinliği Faz 13'te).
@@ -524,6 +538,14 @@ kavram-tekrar tablolarına yazıldı.)
 - 76 ← 75 (kelepçeleme; sözlük parçasının çözücü yönü; yönlendirme teriminin gloss'u), 62 (**ret yönü**: tek yön silinince ret kalkıyor), 65 (Azaria'nın iç sınıflandırıcısı — **devrolan planlı tekrarın tahsili**), 66 (karakter vektörü; ince ayar kayması 0,76–0,97), 67 (temsil mühendisliği; sonda; uyuyan ajan sondası; Burns'ün etiketsiz ölçütü), 18 (ROME: ağırlık düzenleme ↔ aktivasyon müdahalesi; Hase), 24 (sistem istemi ↔ aktivasyon: aynı davranışın iki kapısı), 10 (üretim adımına müdahale — PPLM'in yeri), 63 (ağırlığa erişen saldırgan), 69 (denetimin iç erişimi), 72 ("yönlendirmeli tamamlama" çakışması), 74 (yeter ↔ gerekli; uyuyan yol yanılsaması) `[yayında]`
 - 77 ← 76 (değiştirmek ↔ açıklamak ayrımı), 45 ("atıf" sözcüğünün kaynak gösterme anlamı — çakışma adlandırıldı), 31 (sadakat tanımı; Turpin'in düzeneği), 66 (Turpin'in sayıları: 36,3 puan), 67 (Lanham; sonradan gerekçe), 74 (atıf yaması; dikkat açıklama değil; yorumlanabilirlik yanılsamaları), 75 (parçalardan kurulan çizge), 22 (istem duyarlılığı ↔ aksiyom adı olarak duyarlılık), 61 (izleyiciye göre yazılan ara adımlar — dolaylı) `[yayında]`
 - 78 ← 5 ve 9 (**78 koordinatı**: beliren yetenekler; ölçek yasaları; ikili cetvel), 71 (cetvel bir tasarım ürünüdür; ölçüte çalışmak; öngörülemezlik), 72 (test görevine eğitim; ezber ölçekle büyür), 74 (geç genelleme; ilerleme ölçüsü; indüksiyon başlarının faz geçişi), 16 (cetvel), 23 (örnekle öğrenme ölçekle belirir), 68 ve 70 (eşik ölçümü; yönetişimin dayandığı varsayım), 2 (kayıp ↔ yetenek) `[yayında]`
+> **Not:** 79–82'nin graf satırları Batch 19'da eklenmedi; o dörtlünün prerequisite'leri HANDOFF'un ilgili
+> "Next batch preparation" bölümünde ve Batch 19 öğrenme notlarında duruyor. Boşluk bilinçli değil, devrolan bir
+> eksiktir ve ileride toplu olarak kapatılabilir.
+
+- 83 ← 82 ("bir sonraki makale" devri: gürültüden geri temizleyen üretim), 10 (otoregresif üretim, örnekleme ve **sıcaklık** — kılavuzluğun karşılığı burada kuruldu), 2 (kayıp: ortalama karesel hata yeni bir soruya bağlandı), 26 (ön dolum ↔ adım adım üretim; adım sayısının bedeli), 81 (görüntü yaması; çapraz dikkat ters yönde kullanıldı), 4 (sıkıştırma ↔ sadakat takasının biçimi), 7 (U-Net yerine Transformer omurgası), 16 ve 71 (cetvelin denetimi: FID'in yanlılığı), 72 (çıkarılabilir ezber üretken modelde), 45 (**kesinlik** sözcüğünün çakışması adlandırıldı), 33 (**kapsama** sözcüğünün çakışması adlandırıldı), 6 (**skor** sözcüğünün çakışması adlandırıldı) `[yayında]`
+- 84 ← 83 (iki üretim düzeninin ayrımı; "bir sonraki makale" devri), 4 (tokenizasyon bir tasarım kararıdır; alt-kelime mantığı büyük sözlüğün ayrıştırılmasında yeniden çıktı), **30 (kısıtlı üretim — devrolan planlı tekrarın tahsil yeri; biçim garantisi burada mimari zorunluluk)**, 26 (ardışık adımın maliyeti; sıranın bedeli), 7 (nedensel maske sıra varsayımını taşır), 9 (VAR'ın güç yasası), 82 (akustik token'lar zaten ayrıktı — bedelin modaliteye göre değişmesi), 81 (bağlantı yollarının çıktı tarafında asimetrik kalması), 21 ve 25 (pencere bütçesi: görüntü başına 1024 token), 14 (karışım tartışmasının çok modlu hâli), 19/27 (**kuantizasyon** sözcüğünün çakışması adlandırıldı) `[yayında]`
+- 85 ← **20 (bağlayıcı koordinat: 671 milyar toplam ↔ 37 milyar çalışan parametre)**, 9 (6ND ve ölçek yasası; **Kaplan–Chinchilla ayrımının biçimi iki taraflı tartışmada yeniden çıktı — altmış makale aralıklı geri çağırma**), 7 (blok içinde ileri beslemeli katmanın payı: çoğaltılacak yer), 27 (bellek duvarı: bedelin taşındığı yer), 28 (yığınlama seyrekliği yiyor), 60 (maliyet ve gecikme hesabı), 19 (uyarlama mantığının mimari karşılığı: seyrek yükseltme), 8 (eğitim döngüsü ve kararlılık) `[yayında]`
+- 86 ← **7 (bağlayıcı koordinat: "aynı işi karesel maliyet ödemeden yapan mimariler")** ve **15 (bağlayıcı koordinat: sabit sözlüğü atan mimariler)**, 6 (dikkatin hesabı: ikili sayısı), 26 (anahtar-değer önbelleğinin doğrusal büyümesi — iki ayrı maliyetin ayrılması), 5 (**yinelemeli** ağlar geri döndü ve perplexity'nin ortalama olması — seksen bir makale aralıklı geri çağırma), 79 (ortalama başarı ↔ tutarlı başarı ayrımının mimari hâli), 21 (etkin bağlam), 25 (pencere dikkati), 74 (kopyalama ve indüksiyon tartışmasının zemini), 85 (iki verimlilik ekseni melez modelde birleşiyor) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -2338,6 +2360,33 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | vokoder | (vocoder) | 82 | ara temsili dalga biçimine çeviren model |
 | çerçeve hızı | — | 82 | saniyede kaç ses çerçevesi; adım adım üretimin adım sayısını belirler |
 
+| difüzyon | — | 83 | başlıkta da bu karşılık (karar #184); gövdede parantezsiz, bilim dilindeki yerleşik yazımı |
+| düşmanca üretken ağ | (generative adversarial network) | 83 | "çekişmeli" **kullanılmaz** (karar #149); difüzyondan önceki baskın üretken aile |
+| ileri yön / geri yön | — | 83 | bozma tasarımdır, geri getirme öğrenilir; gövdede parantezsiz |
+| skor | — | 83 | veri yoğunluğunun logaritmasının gradyanı; 6'daki **dikkat skoruyla** aynı sözcük, başka nesne — ayrım 83'te yapıldı |
+| örnekleyici | (sampler) | 83 | adım sayısı modelin değil örnekleyicinin özelliğidir; 10'daki **örnekleme** ile aynı kökten |
+| gizil uzay | (latent space) | 83 | difüzyonun pikselden taşındığı yer; indirgeme çarpanı bir tasarım değişkenidir |
+| kılavuzluk; sınıflandırıcısız kılavuzluk | (guidance; classifier-free guidance) | 83 | 10'daki **sıcaklığın** buradaki hâli; yazarların kendi çerçevelemesi |
+| kesinlik | (precision) | 45 | 45'te atıf kesinliği olarak gloss'landı; 83'te üretim sadakati için kullanıldı, çakışma gövdede adlandırıldı |
+| kapsama | (coverage) | 33 | 33'te pass@k, 65'te cevaplama oranı; **83'te üretimin çeşitlilik ölçüsü** (kaynağın "recall" dediği ölçü) — "geri çağırma" **kullanılmadı**, çünkü 18/21 ve 29'daki ayrım korunuyor |
+| kuantizasyon (görsel) | — | 84 | 19/27'deki kuantizasyonla aynı sözcük, nesne farklı: sürekli vektörü kod defterine yuvarlamak |
+| kod defteri | (codebook) | 84 | 43'teki **ürün kuantizasyonu** ve 82'deki artık kuantizasyonla aynı aile |
+| erken kaynaşma | (early fusion) | 84 | modaliteler modelin girişinde tek diziye karışır; 81'deki bağlantı yollarının karşıtı |
+| sonraki ölçek tahmini | — | 84 | sonraki token yerine kabadan inceye üretim; gövdede parantezsiz |
+| koşullu hesaplama | (conditional computation) | 85 | parametre sayısı ile token başına hesabın bağını kırar |
+| uzman; kapı ağı | (expert; gating network) | 85 | ileri beslemeli katmanın çoğaltılmış hâli ve onu seçen ağ |
+| yük dengeleme kaybı | (load balancing loss) | 85 | dengesizliği cezalandıran ek terim; asıl hedefle yarışır |
+| kapasite; düşen token | — | 85 | uzman başına en fazla token; aşan token katmanı atlar. Gövdede parantezsiz |
+| etkin parametre sayısı | (effective parameter count) | 85 | yönlendirilmiş modeli aynı başarıdaki yoğun modele eşleyen boy |
+| tanecik | (granularity) | 85 | aynı toplam uzman parametresinin kaç uzmana bölündüğü |
+| hepsi-hepsiye iletişim | (all-to-all communication) | 85 | uzmanlar cihazlara dağıldığında her katmanda ödenen bedel |
+| seyrek dikkat | (sparse attention) | 86 | bütün ikililer yerine seçilmiş alt küme |
+| doğrusal dikkat | (linear attention) | 86 | softmax yerine çekirdek biçiminde benzerlik; model matris durumlu yinelemeye döner |
+| durum uzayı modeli | (state space model, SSM) | 86 | başlıkta kısaltma kalır (#108); eğitimde evrişim, çıkarımda yineleme |
+| seçicilik | (selectivity) | 86 | sistem parametrelerinin girdiye bağlı hâle gelmesi; evrişim görünüşünü bozar |
+| çağrışımsal geri çağırma | (associative recall) | 86 | bağlamda geçmiş bir eşleşmeyi geri çağırmak; 18/21'deki **geri çağırmayla** aynı anlamda, 29'daki bulma oranından ayrı |
+| melez mimari | — | 86 | katmanların küçük bir bölümünde tam dikkat; gövdede parantezsiz |
+
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
 kaçırılır (`1\.`) — aksi hâlde Markdown numarayı liste işareti sanıp yutar.
@@ -4083,6 +4132,131 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Derczynski'nin risk kartları, Mökander dışındaki denetim derlemeleri, HuBERT, WavLM, EnCodec dışındaki kodekler,
     SALMONN, Qwen-Audio, AudioPaLM, SpeechGPT, Mini-Omni, MusicGen, AudioLDM, SeamlessM4T, VoiceBench, InternVL,
     Qwen2-VL dışındaki VLM'ler, LAION-5B, MMBench, MMStar, POPE dışındaki uydurma ölçütleri (kapsam dışı kaldı).
+
+184. **83'ün başlığı Türkçeleştirildi.** "Görüntü ve Video Üretimi: Diffusion'a Giriş" → **"Görüntü ve Video Üretimi:
+    Difüzyona Giriş"**. Ölçüt #108: "diffusion", RAG/MCP/jailbreak gibi kısaltma sınıfında bir kalem değil; bilim
+    dilinde yerleşik bir yazımı var. Yayımlanmış gövdelerde grep yapıldı: ne "diffusion" ne "difüzyon" hiçbir gövdede
+    geçiyor (yalnızca 78'in kaynakçasında bir çalışma başlığında), dolayısıyla çakışma yok. Elenen alternatif:
+    "yayınım" — alanda kullanılmayan bir türetme olurdu.
+185. **86'nın başlığı Türkçeleştirildi.** "Attention'ın Ötesi: SSM ve Alternatif Mimariler" → **"Dikkatin Ötesi: SSM ve
+    Alternatif Mimariler"**. "dikkat" 6'dan beri defterde ve seride parantezsiz kullanılıyor; "SSM" #108'in kısaltma
+    sınıfında kaldı. Roadmap'teki **108** taslak başlığı ("Performans Mühendisliği: Attention'ı Hızlandırmak") aynı
+    sorunu taşıyor ve kendi run'ında karara bağlanacak; bu run'da dokunulmadı.
+186. **Batch 20'nin kohortu ve kategorisi.** 83–86'nın dördü de `multimodal-and-future` (karar #176'nın bandı 81–90)
+    ve `classification_batch: 20`. Okuma listesinde 81–86 tek öbek; `reading-list-groups.test.ts` **değişmedi**.
+    Test sayısı 563 → **575**; artışın tamamı `series-assets.test.ts`'in varlık başına türeyen testlerinden (12 yeni SVG).
+187. **Terim kararları (Batch 20).** "difüzyon" (#184); "düşmanca üretken ağ" — #149'un "çekişmeli kullanılmaz"
+    kuralına uyularak; "skor" 6'daki dikkat skoruyla çakışıyor ve ayrım 83'ün gövdesinde açıkça yapıldı; **"recall"
+    için "geri çağırma" KULLANILMADI** — 18/21'deki geri çağırma ve 29'daki bulma oranı ayrımı korunsun diye, 83'te
+    üretimin çeşitlilik ölçüsüne **"kapsama"** dendi ve 33'teki kapsamayla aynı sözcüğü paylaştığı gövdede yazıldı;
+    "kesinlik" 45'te gloss'lanmıştı, 83'te yeni nesneyle kullanıldı ve çakışma adlandırıldı; 86'daki **çağrışımsal
+    geri çağırma** ise 18/21'in anlamıyla aynı olduğu için "geri çağırma" olarak bırakıldı. "erken kaynaşma",
+    "koşullu hesaplama", "kapı ağı", "tanecik", "seçicilik", "hepsi-hepsiye iletişim" ilk kez burada kuruldu.
+188. **Sayılar (Batch 20). 83:** DDPM T = 1000, β 0,0001 → 0,02, CIFAR-10 FID 3,17 ve Inception 9,46; DDIM tablosu
+    (CIFAR-10 FID) 10/20/50/100/1000 adımda özgün örnekleyici 367,43 / 133,37 / 32,72 / 9,99 / 3,17 ve belirlenimci
+    örnekleyici 13,36 / 6,84 / 4,67 / 4,16 / 4,04; ilerlemeli damıtma dört adımda 3,0; tutarlılık modelleri tek adımda
+    3,55 (ImageNet 64×64'te 6,20); piksel uzayı eğitimi 150–1000 V100 günü ve 50 bin örnek ≈ 5 A100 günü; indirgeme
+    çarpanı 4–8 en iyi denge; DiT-XL/2 118,6 Gflop ve kılavuzluksuz 9,62 / 121,50 / 0,67 / 0,67, cfg 1,25'te
+    3,22 / 201,77 / 0,76 / 0,62, cfg 1,50'de 2,27 / 278,24 / 0,83 / 0,57; ikinci çalışmada katsayı 10'da kesinlik 0,88,
+    kapsama 0,32 ve FID 4,59 → 9,11; SD3 8 milyar; video 512×1024 ve 1280×2048; S4 dışı — Path-X 86'da; HEIM 12 boyut /
+    62 senaryo / 26 model; difüzyon modellerinden binden fazla eğitim örneği çıkarıldı ve sızıntı düşmanca üretken
+    ağların iki katından fazla. **84:** VQ-VAE 128×128×3 → 32×32, K = 512, bitte 42,6 kat; MAGVIT-v2 öncesi en iyi dil
+    modeli 3,41 ↔ difüzyon 1,79 (yüzde 48 fark), LFQ ve 2¹⁸ ≈ 262 bin sözlükle ablasyon 2,65 → 2,48 → 1,34 → 1,15,
+    tahmin iki adet 2⁹ deftere ayrıştırıldı; MaskGIT 256 adım yerine 8 yineleme, 64 kata varan hızlanma; VAR
+    FID 18,65 → 1,73, IS 80,4 → 350,2, 20 kat hızlanma; Chameleon 512×512 → 1024 token, defter 8192, ortak sözlük
+    65.536 (metne 57.344), ≈ 10 trilyon token (2,9 trilyonu yalnız metin); Transfusion 7 milyar / 2 trilyon token,
+    eşit işlemde ≈ 2 kat daha iyi FID, görüntüden metne yüzde 21,8, metinden metne yüzde 50–60. **85:** 20'nin
+    671 / 37 milyarı; sekiz uzmandan iki seçim = 8 kat parametre, 2 kat hesap; Shazeer 137 milyar ve bin katı aşan
+    kapasite; GShard 600 milyar, 2048 hızlandırıcı × 4 gün = 22 hızlandırıcı-yılı ↔ yoğun karşılığı 235,5; Switch
+    7 kata varan hızlanma ve bir trilyonun üstü; GLaM 1,2 trilyon, enerjinin üçte biri, çıkarımda yarı işlem, 29 görev;
+    uzman seçimi 8 milyar / 64 uzmanda iki kattan fazla hızlı yakınsama; Clark kesim noktaları 937 / 85 / 83 milyar;
+    Ludziejewski 10²⁰ işlemde 20 kat, 10²⁵ üstünde 40 kattan fazla; DeepSpeed-MoE 4,5 kat hızlı ve 9 kat ucuz çıkarım;
+    Mixtral 47 / 13 milyar, ardışık token'ın aynı uzmana gitme oranı orta katmanlarda yüzde 22,7–28,4 ↔ rastgele 12,5;
+    OLMoE 64 uzman / top-8, ön eğitimin yüzde 40'ında doyma yüzde 80'e varıyor; DeepSeekMoE 16 milyar ≈ 7 milyarlık
+    yoğun modelin yüzde 40 hesabıyla. **86:** BigBird 8 kata kadar uzun dizi; doğrusal dikkat 4000 kata varan hızlanma;
+    S4 16.384 uzunluklu görevde yüzde 88; Mamba 5 kat üretim verimi ve iki katı boyutla eşitlenme; Jelassi 410 milyon ↔
+    2,8 milyar, rehber ≥ 70 kayıt; Zoology 17 model, 2,1 perplexity puanı, yüzde 82 ve 97,4, 70 milyon ↔ 1,4 milyar;
+    Waleffe 8 milyar / 3,5 trilyon token, melez yüzde 43 + 7 + 50, 12 görevde +2,65 puan, 8 kata varan hızlanma;
+    Jamba 52 / 12 milyar ve 256 bin token; Griffin 7 ve 14 milyar, ≈ 7 kat az token; RWKV 14 milyar; BLT 8 milyar /
+    4 trilyon bayt, çıkarımda yüzde 50'ye varan tasarruf; GQA ön eğitim hesabının yüzde 5'i kadar ek eğitim.
+189. **Kendi hesabımız (Batch 20): yok.** Dört makalede de kaynağın vermediği türetilmiş sayı kullanılmadı. 83'teki
+    "sinyal payı 0,25 → katsayılar 0,5 ve ≈ 0,87", 84'teki "512 seçenek dokuz bitle numaralanır" ve "65.536 − 8.192 =
+    57.344", 85'teki "sekiz uzmandan iki seçim = 8 kat parametre, 2 kat hesap" tanım gereği aritmetiktir ve girdileri
+    gövdede durur (SOZLESME §4; 81'in yama aritmetiğiyle aynı sınıf).
+190. **Şekil kararları (Batch 20).** On iki şeklin hepsi tablo ya da kutu-ok şeması; ölçülmemiş eğri çizilmedi,
+    dolayısıyla "eğriler şematiktir" kaydına gerek olmadı. 83-Şekil 2 ile 83-Şekil 3, aynı eğitilmiş modelin farklı
+    ayarlarını karşılaştıran iki tablo — "değişen tek şey" satırı ikisinde de şeklin içinde yazılı. 85-Şekil 3 ile
+    86-Şekil 2, iki tarafın ölçümünü yan yana koyan aynı düzendedir; bu bilinçli bir paralellik ve 79/82'deki
+    "girdiyi kim seçiyor" düzeninin devamıdır. **PNG turu bu kez bir kusur buldu:** 86-Şekil 3'te üçüncü ve dördüncü
+    sütun arasındaki pay iki ölçerin de eşiğini geçtiği hâlde gözle dar görünüyordu; hücre üç satıra bölünerek
+    genişletildi. Ders: geometri kapıları geçse de dört sütunlu tablolarda göz turu şart.
+191. **Kaynak politikası (Batch 20).** 83'te 23, 84'te 11, 85'te 15, 86'da 19 kaynak (**68 kalem**). Dağılım:
+    **58 hakemli**, 10 işaretlenmiş hakemsiz kalem. Hakemsizler: sınıflandırıcısız kılavuzluk (NeurIPS 2021 çalıştayı,
+    hakemli konferans bildirisi değil), Lumiere, Chameleon, Emu3, ST-MoE, Mixtral, Longformer, çok sorgulu kod çözme,
+    Waleffe'in Mamba çalışması ve Griffin. **Doğrulama kanalları:** `url-b20.py` (indirilmiş dizin sayfaları),
+    `venue-b20.py` (arXiv `comment`/`journal_ref` + Crossref + OpenAlex), `hdr-b20.py` (PDF ilk sayfa yayın satırı),
+    `doi-b20.py` (Crossref) ve **iki yeni kanal**: OpenReview'un `api2.openreview.net/notes/search` ucu (COLM ve eski
+    ICLR künyeleri için çalıştı) ve **`iclr.cc/virtual/<yıl>/papers.html` ile `iclr.cc/Conferences/<yıl>/AcceptedPapersInitial`**
+    (proceedings.iclr.cc'nin 2023 ve öncesini vermediği yerde kabul listesi). Düzen **beş künyeyi düzeltti:** (1) elle
+    yazılmış üç hash URL'si yanlıştı (Goodfellow 2014, VAR, MAR); (2) ince taneli MoE ölçek yasasının PMLR kaydı
+    `ludziejewski24a`, `krajewski24a` değil — ve yayımlanmış sürümde **ilk yazar Ludziejewski**; (3) **Jamba COLM 2024
+    değil**: okunan ön baskı (arXiv:2403.19887, "A Hybrid … Model") hakemsiz, hakemli sürüm **ICLR 2025**'te ve başlığı
+    "Jamba: Hybrid Transformer-Mamba Language Models"; (4) uzman seçimi çalışmasının ilk yazarı **Yanqi** Zhou;
+    (5) Griffin'in ilk yazarı **Soham** De. Ayrıca Mixtral künyesi kurumsal imzadan yazar listesine çevrildi.
+    **Doğrulanamayan:** yok — bu run'da bütün venue iddiaları en az bir kanalda doğrulandı; Jacobs ve ark. 1991'in
+    PDF'i taranmış olduğu için metni okunamadı, bu yüzden künyesi Crossref'ten doğrulandı ve içeriğine dair tek cümle
+    Shazeer'in kendi ilişkili çalışmalar bölümüne dayandırıldı. **Aday olup kullanılmayanlar:** Imagen, GLIDE,
+    DALL·E 2, SDXL, EDM, akış eşleştirme, doğrultulmuş akış, ControlNet, SDEdit, LAION-5B, Kararlı Video Difüzyonu
+    (83); VQ-VAE-2, Parti, Muse, Show-o, Janus, LlamaGen, Unified-IO, OFA, Perceiver IO, Gato, CM3, FSQ, UniDiffuser,
+    T2I-CompBench, Outlines, dilbilgisi kısıtlı kod çözme (84); BASE katmanları, hash katmanları, seyrek uzman
+    derlemesi, OpenMoE, milyon uzman, yardımcı kayıpsız yük dengeleme, DeepSeek-V3, verimli çıkarım (85); HiPPO, LSSL,
+    S5, H3, Hyena, Linformer, Reformer, seyrek Transformer, RetNet, kapılı doğrusal dikkat, xLSTM, Eagle/Finch, LRU,
+    Based, Mamba-in-context, verimli Transformer derlemesi, akış hâlinde dil modelleri (86).
+
+## Batch 20 öğrenme notları (yazım tamamlandı)
+
+- **Faz 9'un gövdesi tamamlandı ve iki bağlayıcı koordinat birden kapandı:** üretimin ters yönü (83) → her şeyi tek
+  sözlüğe indirme iddiası (84) → parametreyi hesaptan ayırma (85) → geçmişi nasıl tuttuğun sorusu (86). Zincir
+  kendiliğinden kuruldu: 83 iki üretim düzenini ayırdı, 84 ikisini tek gövdede birleştirmeyi sınadı, 85 ve 86 aynı
+  soruyu ("aynı kaliteyi daha az kaynakla") bloğun iki yarısında — işleyen yarı ve bakan yarı — sordu.
+- **Araştırma yine tamamen ana oturumda, workflow/subagent yok** (cerebrum 2026-09-03). 144 kalemlik tek liste iki
+  kopya betikle çekildi (ileri ve `REVERSE=1` ile ters); 139 metin, tek kalem kurtarılamadı (bir NeurIPS 2022
+  kuramsal MoE çalışması) ve kullanılmadı.
+- **Bu batch'in kendi bulgusu: "iki taraf" deseni üç makalede birden çıktı ve hepsinde ayrım aynıydı — neyin sabit
+  tutulduğu.** 85'te iki ICML çalışması uzmanlar karışımı için zıt ölçek sonucu bildiriyor (fayda azalıyor ve
+  937 milyarda kesiliyor ↔ her bütçede kazandırıyor); fark veride değil, birinin eğitim süresini ve uzman boyunu
+  sabitlemesinde. Bu, 9\. makaledeki Kaplan–Chinchilla ayrımının aynı biçimi ve gövdede adıyla bağlandı. 84'te aynı
+  desen sözlük tarafında çıktı (iyi bir tokenizer dil modelini öne geçiriyor ↔ kuantizasyonu bırakmak daha verimli),
+  86'da ise ölçü tarafında (daha düşük perplexity ↔ rehber görevinde belirgin kayıp).
+- **Terim çakışması gövde yazılırken değil, defter okunurken yakalandı.** 83'ün kesinlik/geri çağırma ikilisi
+  yazıldıktan sonra defterdeki 29 ("bulma oranı; 18 ve 21'deki geri çağırmayla karıştırılmaz") ve 45 ("kesinlik")
+  satırları okundu ve "geri çağırma" **kapsama** ile değiştirildi (karar #187). Ders: yeni bir ölçü çifti kurarken
+  terim defterinin ilgili satırları **yazımdan önce** aranmalı; sonradan düzeltmek gövde + şekil + alt metin +
+  hash turu demek.
+- **URL uydurma riski bu run'da yine gerçekleşti.** Elle yazılmış NeurIPS hash URL'lerinin üçü yanlıştı ve
+  `url-b20.py` yakaladı. Ayrıca `links-b20.py` bir PMLR 404'ü buldu ve o iz, yayımlanmış sürümde **yazar sırasının
+  değiştiğini** ortaya çıkardı (Krajewski → Ludziejewski). Kural pekişti: hash içeren hiçbir bağlantı dizinden
+  çözülmeden yazılmaz, ve 404 alan her bağlantı yalnızca URL değil **künye** hatası olabilir.
+- **İki yeni venue kanalı kuruldu.** `api2.openreview.net/notes/search?term=...&source=forum` uçtu ve COLM ile eski
+  ICLR künyelerini verdi (DBLP hâlâ kapalı, Semantic Scholar hâlâ 429); `iclr.cc/virtual/<yıl>/papers.html` ve
+  `iclr.cc/Conferences/<yıl>/AcceptedPapersInitial` ise proceedings.iclr.cc'nin vermediği 2023 ve öncesini kapatıyor.
+  Bu iki kanal olmasa Jamba'nın COLM iddiası düzeltilemezdi.
+- **Kelime bandı yine sıkıştı.** Dördü de ilk turda 1.977–2.331 aralığındaydı; üçüne planda olup kesilmiş malzeme
+  geri kondu (84'e token'ın kodek olarak ikinci işlevi ve pencere bütçesi, 85'e GLaM'ın enerji üçlüsü ve seyrek
+  yükseltme, 86'ya yinelemenin tarihsel dönüşü ve RWKV). Dolgu cümle eklenmedi. Ölçüm yordamı: düzyazının şekil
+  sözdizimi ve bağlantı hedefleri çıkarılmış `wc -w`'si, repo kapısının sayısına yakın çıkıyor (2.072–2.331).
+- **SVG'lerde iki tur gerekti.** `svgcheck-b20.py` beş dosyada alt payı 12'nin altında buldu ve `viewBox`
+  yükseklikleri artırıldı; çakışma ve kutudan taşma hiç çıkmadı. **PNG turu bir kusur buldu** (86-Şekil 3'ün dar
+  sütun payı) — Batch 19'da bulmamıştı. Ayrıca bir tuzak: izole kopyada çalışan dev sunucusu SVG'yi değil, **derlenmiş
+  sayfayı** önbelleğe alıyor; ana ağaçta düzeltilen şekli görmek için dosyayı kopyaya senkronlamak **ve**
+  `preview_stop` + `preview_start` yapmak gerekti.
+- **Kapılar:** `pnpm typecheck` (0), **575 test**, `pnpm build` (exit 0, `/seri/[slug]` **86 yol**, 135 statik sayfa,
+  izole kopyada), 87 seri rotasının tamamı 200 (52,8 sn), dört makale × üç genişlik × üç temada DOM ölçümü (taşma 0,
+  `main.innerText` içinde undefined/NaN yok, ham i18n anahtarı yok; 1440'ta SVG 771 px, 768'de 676, 375'te 351),
+  konsolda yalnızca `/api/reader-sync` 503, 12 yeni diyagram × iki tema = 24 PNG gözle incelendi, 68 kaynak
+  bağlantısının tamamı çekildi (yalnız MIT Press DOI'si 403 bot duvarı döndürdü, künye Crossref'ten doğrulandı).
+  Paralel oturum görünmedi (3000–3999 arası dinleyen port yok); build ve dev izole kopyada
+  (`D:\dev\anil-lib-b20-render`, 3210), junction ve kopya run sonunda silindi, `launch.json` geri alındı.
 
 ## Batch 19 öğrenme notları (yazım tamamlandı)
 
