@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Erişim matrisi ve aynı matrisin iki saklama biçimi</text>
+
+  <rect x="90" y="62" width="97" height="84" fill="var(--accent-soft)" />
+  <rect x="13" y="90" width="364" height="28" fill="var(--cool-soft)" />
+
+  <rect x="13" y="38" width="364" height="108" fill="none" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="90" y1="38" x2="90" y2="146" stroke="var(--border)" stroke-width="1.1" />
+  <line x1="187" y1="38" x2="187" y2="146" stroke="var(--border)" stroke-width="1.1" />
+  <line x1="282" y1="38" x2="282" y2="146" stroke="var(--border)" stroke-width="1.1" />
+  <line x1="13" y1="62" x2="377" y2="62" stroke="var(--border)" stroke-width="1.1" />
+
+  <text x="138" y="55" font-size="13" text-anchor="middle" fill="var(--text-muted)">rapor</text>
+  <text x="234" y="55" font-size="13" text-anchor="middle" fill="var(--text-muted)">günlük</text>
+  <text x="330" y="55" font-size="13" text-anchor="middle" fill="var(--text-muted)">yazıcı</text>
+
+  <text x="22" y="81" font-size="13" fill="var(--text)">Ayşe</text>
+  <text x="138" y="81" font-size="13" text-anchor="middle" fill="var(--text)">oku, yaz</text>
+  <text x="234" y="81" font-size="13" text-anchor="middle" fill="var(--text)">oku</text>
+  <text x="330" y="81" font-size="13" text-anchor="middle" fill="var(--text)">yaz</text>
+
+  <text x="22" y="109" font-size="13" fill="var(--text)">Barış</text>
+  <text x="138" y="109" font-size="13" text-anchor="middle" fill="var(--text)">oku</text>
+  <text x="234" y="109" font-size="13" text-anchor="middle" fill="var(--text-faint)">—</text>
+  <text x="330" y="109" font-size="13" text-anchor="middle" fill="var(--text)">yaz</text>
+
+  <text x="22" y="137" font-size="13" fill="var(--text)">yedek</text>
+  <text x="138" y="137" font-size="13" text-anchor="middle" fill="var(--text)">oku</text>
+  <text x="234" y="137" font-size="13" text-anchor="middle" fill="var(--text)">oku</text>
+  <text x="330" y="137" font-size="13" text-anchor="middle" fill="var(--text-faint)">—</text>
+
+  <rect x="400" y="42" width="305" height="66" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="412" y="64" font-size="13" fill="var(--text)">erişim denetim listesi — rapor</text>
+  <text x="412" y="88" font-size="13" fill="var(--text-muted)">Ayşe: oku+yaz, Barış: oku, yedek: oku</text>
+  <text x="400" y="128" font-size="13" fill="var(--text-faint)">bir sütun: nesnenin yanındaki liste</text>
+
+  <rect x="400" y="146" width="305" height="66" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.4" />
+  <text x="412" y="168" font-size="13" fill="var(--text)">yetenek listesi — Barış</text>
+  <text x="412" y="192" font-size="13" fill="var(--text-muted)">rapor: oku, yazıcı: yaz</text>
+  <text x="400" y="232" font-size="13" fill="var(--text-faint)">bir satır: öznenin taşıdığı anahtarlık</text>
+
+  <text x="15" y="266" font-size="13" fill="var(--text-muted)">Bu nesneye kim erişebilir? sorusunu liste ucuza, anahtarlık pahalıya cevaplar.</text>
+  <text x="15" y="286" font-size="13" fill="var(--text-muted)">Bu özne neye erişebilir? sorusunda sıra tam tersine döner.</text>
+</svg>

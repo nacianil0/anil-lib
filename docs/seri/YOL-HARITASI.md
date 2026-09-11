@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-10 · Yayında: 1–94 (Batch 0 … Batch 22) · Sıradaki güvenli başlangıç: 95
+Son güncelleme: 2026-09-11 · Yayında: 1–102 (Batch 0 … Batch 24) · Sıradaki güvenli başlangıç: 103
 
 ## Serinin tezi
 
@@ -61,7 +61,7 @@ yol haritası hangi revizyondan geçerse geçsin bu numaralardaki konular korunu
 | Beliren yetenekler tartışmasının açıklığı | 5, 9 | 78 | ödendi (Batch 18; 78'in açılışı 5'in "78. makalede derinlemesine ele alacağız" ve 9'un "nereye kadar açık olduğunu 78. makalede" cümlelerini adıyla anar) |
 | Uzmanlar karışımı mimarisinin kurulumu | 20 | 85 | **ödendi (Batch 20)**; 85'in açılışı 20'nin cümlesini (671 milyar toplam ↔ 37 milyar çalışan parametre) adıyla anar |
 | Karesel maliyeti ödemeyen alternatif mimariler | 7, 15 | 86 | **ödendi (Batch 20)**; 86'nın açılışı 7'nin "açık kapı" cümlesini ve 15'in bayt düzeyi mimari borcunu birlikte anar, ikisi de gövdede kapanır |
-| Ölçümün disiplini: anlamlı fark, örneklem büyüklüğü, güven aralığı | 16, 22 | 101 | açık |
+| Ölçümün disiplini: anlamlı fark, örneklem büyüklüğü, güven aralığı | 16, 22 | 101 | **ödendi (Batch 24)**; 101'in açılışı 16 ve 22'nin cümlelerini birebir alıntılar, gövdesi sıfır hipotezi ve p değerini kurar, eşleştirmenin ayırt edilebilir farkı 2,05 kat daralttığını kendi hesabıyla verir, oynaklık kaynaklarını sıralar ve çoklu karşılaştırma düzeltmesini ekler. **Bu kapanışla defterde açık numaralı koordinat kalmadı.** |
 | İnce ayarın LoRA biçimi (numarasız işaretin karşılanması) | 11, 18 | 19 | ödendi (Batch 4) |
 | Bağlam penceresinin sınırı ve anatomisi | 19 | 21 | ödendi (Batch 4) |
 
@@ -280,6 +280,23 @@ doğruluk yüzdesi ve veri kümesi sayısı değerleridir). Defterde açık kala
 33/40'ın pass@k ile görev ufku **hâlâ tahsil edilmedi**; 95'te gradyanın, 96'da genellemenin biçimsel kurulumu
 yapıldı ama pass@k ile görev ufkunun eşleştirilmiş tekrarı 101'e devrediyor.
 
+**Numarasız ileri işaretler — Batch 24'te verildi.** Haritanın çizilmesi (99 → 100, "bir sonraki makale");
+anlamlı farkın biçimsel kurulumu (100 → 101, "bir sonraki makale"; defterde zaten kayıtlı koordinat adıyla anıldı);
+aynı sonucu başka bir elde elde etmek (101 → 102, "bir sonraki makale"); ve 6 ile 7'nin mimarisini bütün
+parçalarıyla elle kurmak (102 → "serinin bir sonraki fazı"; 100 aynı boşluğu "haritanın ilerisinde duran kasıtlı
+bir boşluk" olarak adlandırdı — **103 numarası açılmadı**). **Batch 24 üç borcu birden kapattı:** (a) **101
+koordinatı ödendi** — 16 ve 22'nin ölçüm disiplini vaadi, defterdeki son açık koordinat; (b) **33/40'ın pass@k
+ile görev ufku planlı tekrarı dört batch'lik devirden sonra 101'de tahsil edildi** — pass@k'nın yerine koyma ile
+hesaplandığında yanlı bir tahminci olduğu gösterildi (0,67232 ↔ 0,59359) ve 40'ın 166–240 günlük güven aralığının
+nereden geldiği açıklandı; (c) **93'ün "bir sonraki faz" işareti (yanlılık ↔ oynaklık ayrımı) 101'de ödendi** —
+ayrımın ölçüm istatistiğindeki karşılığı, yanlılığın tekrarla sönmemesi üzerinden kuruldu. Ayrıca 98'in 99'a
+bıraktığı numarasız devir (deneyin tasarlandığı taraf) 99'da karşılandı. Batch 24 yeni bir numaralı koordinat
+**açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 99; 100–102 kendi
+kohortundaki önceki makalelere) ya da defterdeki 101 koordinatına yapıldı ve Python ile makale başına doğrulandı
+(101'in kendi numarasına iki göndermesi 16 ve 22'nin vaatlerinin alıntısıdır ve SOZLESME §5'in izin verdiği
+biçimdir; 102'den büyük öteki sayılar yüzde, bildiri sayısı ve yıl değerleridir). **Defterde açık numaralı
+koordinat kalmadı;** numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruyor ve devrolan planlı tekrar yok.
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -415,10 +432,10 @@ araştırmacı formasyonunun giriş kapısı.
 ### Faz 11 — Araştırma Pratiği: Kanıtla Düşünmek (98–102)
 
 98. **Bir Çalışmayı Okumak: İddia, Kanıt ve Hakemlik** — bildirinin iskeleti, iddia-kanıt haritası, hakemliğin tutarlılık deneyleri, ayar bütçesi asimetrisi, ön baskı ↔ yayımlanmış sürüm. Faz 11'in açılışı, kategori `foundations` (karar #209); başlık Türkçeleştirildi (karar #210). `[yayında]`
-99. **Araştırma Sorusu ve Deney Tasarımı: Hipotez, Baseline, Ablation** — deneyin anatomisi.
-100. **Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi** — ilk 99 adımın planlı büyük geri çağrımı; okuyucunun kendi haritası.
-101. **Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi** — 16/71–73'ün formal geri çağrımı; belirsizlik aralıkları.
-102. **Tekrarlanabilirlik: Reproducibility, Negatif Sonuç ve Açık Bilim** — 9'daki replikasyon temasının pratiğe dökülmesi.
+99. **Araştırma Sorusu ve Deney Tasarımı: Hipotez, Taban Çizgisi, Ablasyon** — sınanabilir hipotezin ne yasakladığı, ön kayıt, taban çizgisi seçimi bir tasarım kararıdır, arama bütçesi deneyin parçasıdır, ablasyonun kanıt yükü ve kontrollü bozma; başlık Türkçeleştirildi (karar #217). `[yayında]`
+100. **Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi** — 1–99'un planlı büyük geri çağrımı; fazlar zinciri, tekrarlanan tek refleks, terim çakışmaları ve okuyucunun kendi haritası. Yeni kavram ve yeni ölçüm yok (karar #220). `[yayında]`
+101. **Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi** — sıfır hipotezi ve p değeri, test seçimi, eşleştirmenin getirisi, oynaklık kaynakları, yirmi rastgele bölme, çoklu karşılaştırma ve pass@k'nın tahminci yanlılığı; **16 ve 22'nin koordinatı ödendi**. `[yayında]`
+102. **Tekrarlanabilirlik: Negatif Sonuç ve Açık Bilim** — üç derece (aynı kod / aynı veri / aynı sonuç), kodsuz yeniden kurma, kurumsal cevap, veri sızıntısı ve yayımlanmayanın ağırlığı; **Faz 11 kapandı**; başlıktaki gereksiz İngilizce kaldırıldı (karar #218). `[yayında]`
 
 ### Faz 12 — Temelden Kurmak: Modeli Elle İnşa Etmek (103–105)
 
@@ -600,6 +617,10 @@ kavram-tekrar tablolarına yazıldı.)
 - 96 ← 95 ("bir sonraki makale" devri: azalttığımız sayı umursadığımız sayı değil), **2 (aşırı öğrenme, indirgenemez hata, düzenlileştirme ve Geman ayrışımı — dördü de burada biçimsel olarak yeniden kuruldu; doksan dört makale aralıklı)**, 94 (eğitim kaybının ampirik dağılıma göre ölçülmesi; sıkıştırma ↔ genelleme bağı), 9 (çift inişin randevusu 9'da kapanmıştı, burada üç eksene açıldı), 72 (Zhang'ın rastgele etiket deneyi orada kanıt, burada **neyi çürüttüğü**), 18 (kapasite ↔ ezber gerilimi), 92 (kovaryansın özdeğer profili iyi huylu aşırı uydurmanın koşulu), 93 (en büyük olabilirliğin kusuru), 79 (bütün muhasebenin altındaki aynı-dağılım varsayımı) `[yayında]`
 - 97 ← 96 ("bir sonraki makale" devri: muhasebe sinir ağlarına özgü değil), **43 (k-ortalamalar orada bir dizin aracıydı, burada kendi işinde; ve "yakın"ın tanımının yöntemin varsayımı olması — elli dört makale aralıklı)**, 91 (üç cetvelin zıt sıralaması en yakın komşunun varsayımına bağlandı), 92 (temel bileşen çözümlemesi ile k-ortalamaların işi ayrıldı; çekirdek numarası nokta çarpım üzerinden kuruldu), 5 (boyutluluk lanetinin olasılık yüzü), 94 (Quinlan'ın bölme ölçütü entropi kazancıdır), 95 (gradyan artırma kaybın negatif gradyanına uydurulan adımdır; dışbükeylik ve tek dip), 16 (taban çizgisi kültürü ve puanın protokolüyle okunması), 23 (TabPFN'in isteme koyarak öğrenmesi), 1 ve 2 (model tanımı ve kaybın seçimi yöntem ailesine bakmaz) `[yayında]`
 - 98 ← 97 ("serinin bir sonraki fazı" devri: koşulu okuma alışkanlığını literatüre uygulamak), **4 ve 91 (Levy–Goldberg–Dagan'ın "sihir algoritmada değil" sonucu; orada embedding bilgisiydi, burada bir okuma dersi — doksan dört ve yedi makale aralıklı çift geri çağırma)**, 96 (rastgele etiket deneyinin özetindeki iki cümlenin farklı kanıt türleri taşıması; düzgün yakınsama sonucu zinciri sıkılaştıran ayrı çalışma olarak), 95 (Adam'ın kanıt hatası bir kanıt dersi olarak geri geldi), 16 (protokolsüz puanın okunamaması), 71–73 (değerlendirme biliminin okuyucu tarafı), 9 (ölçülen nokta ile uydurulan eğrinin ayrımı), 20 (kanıt yayımlanmamışsa iddia-kanıt bağı ilkece kurulamaz) `[yayında]`
+- 99 ← 98 ("bir sonraki makale" devri: deneyin tasarlandığı taraf; ablasyon terimi 98'de kurulmuştu ve burada tasarım kararı oldu), **97 (taban çizgisi kültürü yöntem seçiminden deney tasarımına taşındı — planlanan tekrar tahsil edildi)**, 96 (rastgele etiket deneyi bir "kontrollü bozma" örneği olarak yeniden okundu; 85,75 ↔ 9,78 karşılaştırmasının deneyi deney yapan şey olduğu gösterildi), 16 (değerlendirme kümesi seçimi bir tasarım kararıdır), 95 (hiperparametre araması bir bütçedir), 63 (aynı adı taşıyan "rastgele arama"nın başka nesnesi; çakışma açıkça adlandırıldı) `[yayında]`
+- 100 ← **1–99'un tamamı** (serinin planlı büyük geri çağrımı; 41 ayrı makaleye numaralı gönderme). Omurga olarak 1 ve 2 (tahmin çerçevesi ve 3/14 eşiği), 8/9 (ölçek ve tahsis), 11–13 (amacın yazılışı), 16/71 (cetvel sorusu), 21–33 (pencere ve fatura), 41–60 (dışarıya bağlanmak), 61–80 (hizalama ve değerlendirme), 85–90 (mimari ve enerji faturası), 91–97 (biçimsel omurga), 98–99 (okuma ve tasarım). **Yeni kavram, yeni kaynak ve yeni ölçüm yok** `[yayında]`
+- 101 ← **16 ve 22 (BAĞLAYICI KOORDİNAT: ölçümün disiplini; ikisinin de cümlesi açılışta alıntılandı)**, 71 (puanın örneklem olması ve standart hata; 101 onun üstüne karar katmanını koydu, tekrarlamadı), **33 ve 40 (pass@k ile görev ufkunun planlı tekrarı — dört batch'lik devirden sonra burada tahsil edildi)**, **93 ve 96 (yanlılık ↔ oynaklık ayrımının ölçüm istatistiğindeki karşılığı; 93'ün "bir sonraki faz" işareti burada ödendi)**, 99 (Şekil 3'te bilerek açık bırakılan karar sorusu), 97 (179 sınıflandırıcının "fark anlamlı değil" cümlesinin yeri), 72 (sabit bölmenin yaşlanması), 6 (BLEU bir ortalama değildir), 43/93/97 (daha önce tanımsız kullanılan "istatistiksel olarak anlamlı" ifadesi burada kuruldu) `[yayında]`
+- 102 ← 101 ("bir sonraki makale" devri: anlamlı fark ile tekrarlanabilirliğin ayrımı), **9 (yeniden üretme terimi orada tanımlanmıştı, burada üç dereceye ayrıldı — doksan üç makale aralıklı)**, 98 (kanıt yayımlanmamışsa bağ kurulamaz; Haibe-Kains itirazı bunun kurumsal hâli), 20 (açıklık eksenleri; hesap ekseninin eklenmesi), 80 (şeffaflık ve belgeleme; zorunluluğun davranışı değiştirmesi), **72 (kirlilik ile veri sızıntısı ayrımı bir "Kendini yokla" kutusuyla yapıldı)**, 97 (klasik yöntemin üstünlüğünün sızıntıdan doğması), 99 (ön kayıt ile bilgi çizelgesinin akrabalığı; yirmi beş yapılandırmadan ikisi) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1543,6 +1564,52 @@ MCP üçlüsü (49/53 → 115).
 | Yetenek eşiği ve gerekli korumalar; kritik yetenek düzeyi; koşullu taahhüt | 70 | — | 71, 78, 116 |
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
+
+### Batch 24'te gerçekleşen tekrarlar (planlananların tahsili)
+
+- **Ölçümün disiplini (16 ve 22 → 101), seksen beş ve yetmiş dokuz makale aralıklı — bağlayıcı koordinatın
+  kapanışı.** 16'da "bir farkın anlamlı sayılabilmesi için kümenin büyüklüğüne göre değerlendirilmesi gerekir"
+  bir kural olarak verilmişti; 22'de aynı ders 50 örneklik kümede 4 puanın iki örnek ettiği hesabıyla
+  somutlaşmıştı. 101 ikisinin de cümlesini alıntılayarak açıyor ve aygıtı kuruyor: sıfır hipotezi, p değeri,
+  eşleştirme, güç ve çoklu karşılaştırma. **Defterdeki son açık koordinat böylece kapandı.**
+- **pass@k ve görev ufku (33/40 → 101), dört batch'tir devreden planlı tekrar — burada tahsil edildi.** 33'te
+  kapsama 1 − (1 − p)ᵏ ile kurulmuştu ve p **gerçek olasılıktı**; 101 aynı formülün tahminle yazıldığında yanlı
+  bir tahminciye dönüştüğünü gösteriyor (gerçek 0,67232, yerine koyma tahmincisinin ortalaması 0,59359).
+  40'ın 207 günlük ikiye katlanma süresinin yanındaki 166–240 günlük güven aralığı da burada açıklandı:
+  eğim, tek tek noktalardan daha dar bir aralıkla kestirilebiliyor.
+- **Yanlılık ↔ oynaklık (93/96 → 101).** 93'te tahmincideki yanlılık, 96'da üçlü ayrışım kurulmuştu; 101 ayrımı
+  ölçüm pratiğine çeviriyor: oynaklıktan gelen hata tekrarla söner, yanlılıktan gelen sönmez. 93'ün "bir sonraki
+  faz" işareti bu bölümde ödendi.
+- **Taban çizgisi kültürü (16/97 → 99).** 97'de yöntem seçiminin ölçütüydü; 99'da bir tasarım kararına dönüştü
+  ve budama literatüründeki 81 bildirinin karşılaştırma seyrekliğiyle ölçüldü. 98'in okuyucu tarafındaki
+  "ayar bütçesi" dersi burada yazar tarafına geçti.
+- **Kontrollü bozma (96/97 → 99).** Rastgele etiket ve rastgele döndürme deneyleri 99'da bir **deney biçimi**
+  olarak yeniden okundu; eklenen şey bozulmamış koşunun aynı kurulumda çalıştırılması zorunluluğu
+  (85,75 ↔ 9,78 karşılaştırması olmadan bozma tek başına bir gözlemdir).
+- **Ablasyon (98 → 99).** 98'de tanımlanmıştı; 99 kanıt yükünü ekliyor: fark koşular arası sapmadan büyük
+  olmalı (0,003 ↔ 0,005) ve tek tek ablasyonlar etkileşimi ölçmez.
+- **Yeniden üretme (9 → 102), doksan üç makale aralıklı.** 9'da "bir çalışmanın bağımsız tekrarı" diye
+  tanımlanmıştı; 102 terimin alanda iki ters yönde kullanıldığını gösterip soruyu üç dereceye ayırıyor.
+- **Kirlilik (72 → 102).** 72'de sınav sorularının eğitim derlemine sızması; 102'de test kümesinin bilgisinin
+  veri hattına sızması. Aynı yöndeki iki hata, iki ayrı yerde; ayrım bir "Kendini yokla" kutusuyla yapıldı.
+- **Açıklık eksenleri ve belgeleme (20/80 → 102).** 20'nin eksenlerine bir **hesap ekseni** eklendi (küme
+  düzeyinde hesap gerektiren hiçbir bildiri yeniden üretilemedi); 80'in belgeleme tartışmasına zorunluluğun
+  davranışı hızla değiştirdiği ama doğrulama yerine geçmediği eklendi.
+- **Serinin bütün omurgası (1–99 → 100).** Planlı büyük geri çağrım gerçekleşti: 41 ayrı makaleye numaralı
+  gönderme, hiçbir sayı yeniden ölçülmeden.
+
+### Batch 24'te ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+- **Sınanabilir hipotez, öngörü ↔ sonradan açıklama, ön kayıt, arama bütçesinin raporlanması (99).**
+  Planlanan tekrar: 104–105 (kendi eğitim koşunda bütçenin yazılması), 113 (bilimde yapay zekâ: ön kayıtın
+  alan dışındaki karşılığı), 116 (açık soruların dürüst envanteri).
+- **Sıfır hipotezi, p değeri, eşleştirilmiş karşılaştırma, çoklu karşılaştırma düzeltmesi, tahminci yanlılığı (101).**
+  Planlanan tekrar: 109 (eğitim koşusunun gözlemi ve ölçüm gürültüsü), 114 (bir sınır modelin karşılaştırma
+  kararları), 116 (hangi iddianın hangi güvenle taşındığı).
+- **Tekrarlanabilirliğin üç derecesi, veri sızıntısı, açık bilim (102).** Planlanan tekrar: 103–105 (elle
+  kurmanın kendisi ikinci derecenin sınavıdır), 107–109 (dağıtık eğitimde belgelenmesi gereken değişkenler),
+  115 (ürün kurarken veri hattının denetimi).
+- **Haritanın kendisi (100).** Planlanan tekrar: 118 (serinin sentezi; harita orada yeniden çizilir).
 
 ### Batch 23'te gerçekleşen tekrarlar (planlananların tahsili)
 
@@ -2640,6 +2707,18 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | k-ortalamalar | (k-means) | 97 | 43'te dizin aracı olarak glosssuz geçmişti; resmî kurulum 97'de |
 | ablasyon | (ablation) | 98 | bir bileşeni çıkarıp aynı ölçümü tekrarlamak; kazancın kaynağını gösteren deney |
 | ön baskı | (preprint) | 98 | hakem sürecinden geçmemiş sürüm; yayımlanmış sürümden başlığı ve kapsamı farklı olabilir |
+| taban çizgisi | (baseline) | 16 | karşılaştırmanın ölçütü olan yerleşik yöntem; 16'da "cetvel arayışı", 97'de yöntem seçimi, 99'da tasarım kararı. Defter satırı Batch 24'te açıldı, kullanım 16'dan beri sabit |
+| öngörü ↔ sonradan açıklama | (prediction ↔ postdiction) | 99 | çözümlemenin sonuçlardan önce mi sonra mı seçildiği; ikisi de meşru, kanıt gücü farklı |
+| ön kayıt | (preregistration) | 99 | çözümleme planını sonuçlar bilinmeden bağımsız bir kayda yazmak |
+| rastgele arama | (random search) | 99 | **aynı sözcük, başka nesne:** 63'te istem uzayında uyarlanır saldırı, 99'da hiperparametre uzayından bağımsız örnekleme. Çakışma 99'un gövdesinde adlandırıldı |
+| sıfır hipotezi | (null hypothesis) | 101 | "aradaki gerçek fark sıfırdır"; sınanan cümle iddianın kendisi değil karşıtıdır |
+| p değeri | (p-value) | 101 | sıfır hipotezi doğruyken gözlenen kadar büyük bir farkı görme olasılığı. İddianın doğru olma olasılığı **değildir** ve farkın büyüklüğünü söylemez |
+| eşleştirilmiş karşılaştırma | (paired comparison) | 101 | iki sistemin aynı örnekler üzerinde soru başına farkının alınması; ortak gürültüyü düşürür |
+| çoklu karşılaştırma düzeltmesi | (multiple comparison correction) | 101 | çok sayıda test yapılınca eşiğin daraltılması; en sade biçimi Bonferroni |
+| yansız tahminci | (unbiased estimator) | 101 | ortalaması gerçek değere eşit olan tahminci; 93'teki **yanlılık (tahmincide)** satırının pratik karşılığı |
+| bootstrap | — | 101 | Türkçeleştirilmez; veriden **yerine koyarak yeniden örnekleme**. 97'deki torbalamanın dayandığı işlemin aynısı, orada ağaçları çeşitlendirmek için, burada belirsizliği ölçmek için. 89'daki **tahmini önyükleme** ile karıştırılmaz — "önyükleme" bu anlamda **kullanılmaz** |
+| tekrarlanabilirlik | (reproducibility) | 102 | 9'daki **yeniden üretme (replication)** ile aynı aileden, ama alan iki terimi ters yönlerde kullanıyor; 102 tartışmayı sözcükten kurtarıp üç dereceye ayırır (aynı kod / aynı veri / aynı sonuç) |
+| veri sızıntısı | (data leakage) | 102 | test kümesinin bilgisinin veri hazırlığı yoluyla eğitime karışması. 72'deki **kirlilikle** karıştırılmaz: orada nesne eğitim derlemi, burada hazırlık adımları |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -4772,6 +4851,140 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     (Adam), çünkü o yılların bildirileri OpenReview'da forum kimliğiyle durmuyor; seride 4, 63 ve 87'de
     kurulmuş biçim korundu. (f) Kunstner ve ark.'nın ön baskı sürüm numarası 404 verdi, sürümsüz arXiv
     adresinden indirildi; Bartlett ve ark.'nın PNAS sayfası 403 döndü, özeti Crossref'ten alındı.
+217. **99'un başlığı Türkçeleştirildi.** "Araştırma Sorusu ve Deney Tasarımı: Hipotez, **Baseline, Ablation**" →
+    "… Hipotez, **Taban Çizgisi, Ablasyon**". Ölçüt #99 ve #210'unkiyle aynı: iki sözcüğün de Türkçe karşılığı
+    seride **zaten kurulmuş** durumdaydı — "ablasyon" 98'de terim defterine girdi, "taban çizgisi" 16'dan beri
+    kullanılıyor ve 97'de bir bölümün omurgasıydı. Yani başlık yeni bir terim kurmuyor, var olan kullanımı
+    başlığa taşıyor. Başlık değişikliği entegrasyondan **önce** `roadmap.json`'a yazıldı.
+218. **102'nin başlığındaki gereksiz İngilizce kaldırıldı.** "Tekrarlanabilirlik: **Reproducibility**, Negatif
+    Sonuç ve Açık Bilim" → "Tekrarlanabilirlik: Negatif Sonuç ve Açık Bilim". Gerekçe #217'den farklı: burada
+    sözcük Türkçeleştirilmedi, **çıkarıldı** — çünkü karşılığı başlığın kendisinde zaten duruyordu ve tekrar
+    ediyordu. 100 ve 101'in başlıkları değiştirilmedi ("benchmark" #108'in Türkçeleştirilmeyen sınıfındadır;
+    "Yüzüncü Adım" makalenin kendi sıra numarasıdır ve SOZLESME §2'nin yasakladığı **toplam** sayı beyanı
+    değildir — 100'ün gövdesi bunu açıkça bir ara durak olarak adlandırır).
+219. **Faz 11 kapandı, yeni faz açılmadı; kohort `classification_batch: 24`.** 99–102'nin dördü de `foundations`
+    ve karar #209'un doğrudan uzantısı; bu run **kategori sorusu içermiyordu**. Level `advanced` kaldı (karar
+    #201). Okuma listesinde `foundations` yine iki öbek (1–5 ve 91–102) ve kohort ayrımı sayesinde Batch 23 ile
+    Batch 24 ayrı gruplar olarak görünüyor; `reading-list-groups.test.ts` değiştirilmedi, yalnızca çalıştırıldı.
+220. **100 bir sentez makalesidir ve kuralları ayrıdır.** Yeni kavram tanıtmıyor, yeni ölçüm yapmıyor ve hiçbir
+    sayıyı yeniden hesaplamıyor; kullandığı bütün değerler yayımlanmış makalelerdeki hâlleriyle alınmış durumda.
+    Kaynakçası, gövdede sayısı anılan çalışmaların künyelerini taşıyor (yedi kalem) ve hepsi önceki batch'lerde
+    doğrulanmış bağlantılardır. **Ölçüt:** bir sentez makalesi kaynak açmaz, kaynak **gösterir**. Ayrıca 100,
+    Faz 12'ye kasıtlı bir boşluk bırakıyor ("bir Transformer'ı baştan sona elle kurmak") ve bunu numarasız
+    söylüyor.
+221. **Sayılar (Batch 24). 99:** Kaplan–Irvin 55 deneme, 2000 öncesi 30 denemenin 17'si (yüzde 57), 2000 sonrası
+    25 denemenin 2'si (yüzde 8); Nosek'te aktarılan Franco bulgusu yüzde 40 / yüzde 70 / yüzde 96 / yüzde 65;
+    Blalock 81 bildiri (79 + 2 klasik), dörtte birden fazlası hiçbir yöntemle karşılaştırmamış, yarısı en fazla
+    bir, neredeyse hepsi üç ya da daha az, hiçbir veri kümesi–ağ çifti bildirilerin üçte birinde yok; Dodge
+    SST'de 50 deneme ve on denemenin altında lojistik bağlanım önde, temsil seçiminde 2 saat / 6 saat–1 gün /
+    10 gün, SciTail'de 2 ↔ 20 deneme, SQuAD'da 55 deneme ≈ 18 gün, elli EMNLP 2018 bildirisinin hiçbiri tam
+    raporlama yapmıyor; Bergstra dokuz ızgara noktası kritik ekseni üç değerde yokluyor, 32 boyutlu uzayda
+    yedi kümenin dördünde istatistiksel olarak eşit ve birinde daha iyi; Narang 65.536 adımda vanilla 2,182 ±
+    0,005, GeLU 2,179 ± 0,003, GLU 2,174 ± 0,003, ELU 2,270 ± 0,007, uzmanlar karışımı 2,135 ± 0,007 (223 milyon
+    ↔ 1,1 milyar parametre), evrensel Transformer 2,40 → 2,265 (25 yapılandırmadan 2'si), on iki tekniğin
+    yazarlarından altısı kurulumu doğruladı. **101:** Dror 180 bildiri / 63 test / 21 adsız / 6 yanlış, 110
+    bildiriden 3'ü düzeltme yapmış; Koehn 300 cümlelik kümede bile karar verilebiliyor; Bouthillier beş örnek
+    olay, kaynak başına 200 rastgeleleştirme, ~8 GPU yılı, ağırlık başlangıcı bootstrap oynaklığının yarısından
+    az, hiperparametre araması ortalamada ağırlık başlangıcı kadar, 51 kat hesap tasarrufu, tek koşu yüzde 10 /
+    75, ortalama karşılaştırma yüzde 5 altı / 90, geçme olasılığı yüzde 5 / 30; Gorman 20 rastgele bölmede
+    20-20 / 20-7 / 1-0 / 19-20 / 20-20 ve Stanford iki ile on dört bölmede daha kötü, yirmi yılda yüzde 1,28
+    mutlak azalma, kâhin topluluğun yüzde 1,16 gerisi. **102:** Gundersen 400 bildiri, hiçbiri tam değil, yüzde
+    20–30; Raff 255 bildiri, 162'si (yüzde 63,5) yeniden üretildi, 93'ü üretilemedi; Pineau kod paylaşımı yüzde
+    50 altından ~75'e, gönderi yüzde 40 artış, 173 bildiri sahiplenildi, 73 kurum, 84 rapor; Kapoor 17 alan,
+    329 bildiri, 8 sızıntı türü; Açık Bilim İşbirliği 100 çalışma, yüzde 97 → 36, etki 0,403 → 0,197, yüzde 47
+    aralık içinde, yüzde 39 öznel, birleştirilince yüzde 68, ana etkiler yüzde 47 ↔ etkileşimler yüzde 22.
+    **100:** bütün sayılar yayımlanmış makalelerden alındı (0,114 nat; 53,1 → 68,2; 0,651 ve 0,095; 2 saniye →
+    110 dakika ve 207 gün; 85,75 ↔ 9,78; 290 bin ↔ 56.600; 229 işlem; yüzde 1,6; 671 ↔ 37 milyar).
+222. **Kendi hesabımız (Batch 24): üç yer, üçü de 101'de.** (a) **Şekil 1'in tamamı** — eşleştirilmiş ve
+    eşleştirilmemiş karşılaştırmada aynı güçle ayırt edilebilen en küçük fark; girdiler şeklin içinde yazılı
+    (doğruluk 0,70; uyuşmazlık oranı 0,10; eşik 0,05 iki yönlü; güç 0,80) ve şeklin altında "ölçülmüş bir deney
+    değildir" kaydı duruyor. Eşleştirilmemiş için iki orantının standart hatası, eşleştirilmiş için uyuşmazlık
+    oranına dayanan standart yaklaşıklık kullanıldı. (b) **Şekil 4'ün ortalamaları** — yansız ve yerine koyma
+    tahmincilerinin beklenen değerleri, iki terimli dağılımın on bir sonucunun tamamı üzerinden alındı
+    (0,67232 ↔ 0,59359); tahmincinin **kendisi** Chen ve ark.'nındır ve şekilde öyle yazıyor. (c) **Yirmi
+    bağımsız testte en az bir yanlış pozitif olasılığı yüzde 64,2** — 1 − 0,95²⁰; gövdede "bu bizim hesabımız"
+    denerek verildi.
+223. **Şekil kararları (Batch 24).** On iki şeklin hepsi tablo ya da blok listesi; **hiçbirinde eğri yok**
+    (karar #214'ün devamı). Gerekçe aynı: bu batch'in malzemesi ya kaynakların tablo hâlinde verdiği ölçümler ya
+    da kapalı formüllerden türeyen değerler. **100'ün Şekil 1'i bu makalenin omurgasıdır** ve yayımlanmış makale
+    numaralarıyla etiketlenmiştir; sağ sütunu her fazın bir sonrakine devrettiği ölçüm sorusunu taşır. 101'in
+    Şekil 2'si sayı yerine **sözle sıralama** veriyor, çünkü kaynağın kendisi göreli büyüklükleri çubuk olarak
+    veriyor ve sayı olarak okunamıyor — bu sınır şeklin altına yazıldı.
+224. **Kaynak politikası ve doğrulama sınırları (Batch 24).** 99'da 8, 100'de 7, 101'de 7, 102'de 7 kaynak:
+    **29 kalem, 29 ayrı çalışma** (dört makalenin kaynakçaları kesişmiyor; Bouthillier iki ayrı çalışmayla iki
+    makalede geçiyor). Dağılım: **25 hakemli**, 1 konferans kuralları belgesi (NeurIPS bildiri kontrol listesi,
+    metinde işaretlendi) ve **3 hakemsiz ön çalışma** (Kaplan ve ark. 2020, Beygelzimer ve ark. 2023, Chen ve
+    ark. 2021 — üçü de metinde işaretlendi, üçü de önceki makalelerde aynı biçimde kullanılmıştı). **Faz 11'in
+    kaynak profili öngörüldüğü gibi çıktı:** 99 ve 102 alan dışı hakemli metodoloji çalışmalarına dayanıyor
+    (PLOS ONE, PNAS, Science, Patterns, Nature). **(a) Doğrulanamayan künye yok;** PNAS, Science, Sage, Taylor &
+    Francis, Cell ve Wiley DOI'leri tarayıcıya 403 döndürdü — beklenen bot duvarı — ve bu künyelerin tamamı
+    `api.crossref.org/works/<doi>` ile başlık, dergi, cilt, sayı, sayfa ve yıl düzeyinde doğrulandı.
+    **(b) OpenReview API'si de kapandı:** `api.openreview.net` ve `api2.openreview.net` bu run'da 403 verdi
+    (Batch 23'te 429 veriyordu ama çalışıyordu). 100'ün kullandığı iki forum kimliği (`shr9PXz7T0`, `Sy8gdB9xx`)
+    **yayımlanmış makalelerden devralındı** — 71 ve 96'nın kaynakçalarında duruyorlar ve Batch 17 ile 23'te API
+    ile doğrulanmışlardı; bu run'da birincisi ayrıca `proceedings.iclr.cc/paper_files/paper/2024` dizininde
+    başlık ve yazar düzeyinde bulundu. **Yeni bir OpenReview kimliği yazılmadı.** (c) NeurIPS, MLSys, PMLR ve
+    JMLR hash/cilt adresleri dizin sayfalarından çekilerek doğrulandı (`papers.nips.cc` 2018 ve 2019,
+    `proceedings.mlsys.org` 2020 ve 2021, `proceedings.mlr.press/v97`, `jmlr.org`). (d) Gundersen–Kjensmo'nun
+    bitiş sayfası hiçbir kanaldan doğrulanamadı; künyeye yalnızca PDF'de görünen başlangıç sayfası yazıldı.
+
+## Batch 24 öğrenme notları (yazım tamamlandı)
+
+- **Faz 11 kapandı ve zincir dört adımda tek bir soruya indi:** birinin deneyini nasıl okuruz (98) → kendi
+  deneyimizi nasıl kurarız (99) → buraya kadarki her şey nasıl duruyor (100) → iki sayı arasındaki fark gerçek
+  mi (101) → o fark başka bir elde de çıkar mı (102). Fazın tonu 98'de kurulmuştu ve değişmedi: **cevap, hangi
+  cetveli seçtiğine bağlı.**
+- **Araştırma, yazım, entegrasyon ve doğrulama yine tamamen ana oturumda; workflow/subagent kullanılmadı**
+  (cerebrum 2026-09-03). Dört dalga hâlinde 80'den fazla kaynak adresi çekildi, PDF'ler `pypdf` ile metne
+  çevrildi; `wc`, `scan`, `svgcheck`, `syncalt`, `links`, `sweep`, `shots`, `fetch`, `pdftxt`, `q` ve `calc`
+  betikleri oturum scratchpad'ine yeniden yazıldı ve `artifacts/` altına hiçbir şey yazılmadı.
+- **Bu batch'in kendi bulgusu: 33. makalenin formülü, aynı biçimde yazıldığı hâlde tahminci olarak yanlı.**
+  Kapsama 1 − (1 − p)ᵏ, `p` gerçek olasılıkken bir **tanım**; `p` yerine `c/n` konduğunda ortalamada gerçek
+  değerin altında kalan bir **tahminci**. Seride daha önce kurulmuş bir formülün, hiç değişmeden, ikinci bir
+  bağlamda kusurlu hâle gelmesi 101'in omurgasını verdi ve 93/96'nın yanlılık ↔ oynaklık ayrımını ölçüm
+  pratiğine bağladı. Sayı da temiz: 0,67232 ↔ 0,59359.
+- **Bir sentez makalesi yazmanın asıl zorluğu kelime bandı değil, liste tuzağı.** 100'ün ilk taslağı 1.169
+  kelimede kaldı ve eklenen şey özet cümleleri değil, **zincirin kendisiydi**: fatura, amacın yazılışı ve
+  dışarıya bağlanma omurgaları ile terim çakışmaları bölümü. Ders: sentez makalesinde eksik olan şey içerik
+  değil, içeriği birbirine bağlayan tez olur; tezi yazınca kelime kendiliğinden geliyor.
+- **Bir makale yazmadan önce terim defterinin ilgili satırları arandı ve iki çakışma yakalandı.** "Rastgele
+  arama" 63'te bambaşka bir nesne için kullanılmıştı (istem uzayında uyarlanır saldırı) ve 99'da açıkça
+  ayrıldı; "önyükleme" 89'da "tahmini önyükleme" olarak geçtiği için 101'de bootstrap karşılığı olarak
+  **kullanılmadı**, yerine "yerine koyarak yeniden örnekleme" ve 97'nin torbalamasına bağ kuruldu. Batch 22'nin
+  dersi ("gövde okunmalı") burada defter taramasıyla birleşince iki hata yazımdan önce önlendi.
+- **71'in kapsamı 101'in en büyük riskiydi.** 71 zaten standart hatayı, istatistiksel gücü, tohum gürültüsünü
+  ve merkezî limit uyarısını kurmuştu. 101 bunları **tekrarlamak yerine üzerine karar katmanını** koydu:
+  hipotez kurulumu, test seçimi, eşleştirme, oynaklık kaynaklarının sıralaması, çoklu karşılaştırma ve tahminci
+  yanlılığı. Ders: bir koordinatı öderken önce o konuya en yakın yayımlanmış makalenin **tamamı** okunmalı;
+  yoksa ödeme tekrar olur.
+- **Kelime bandı bu batch'te de sıkı bağladı.** Dördü de ilk turda banda altında kaldı (2.060 / 1.169 / 2.112 /
+  1.489); eklenen malzemenin hepsi araştırma listesinde olup taslakta atlanmıştı (99'a NeurIPS kontrol listesi,
+  Bergstra'nın veri kümesine göre değişen önemli hiperparametreler bulgusu ve Narang'ın yazar doğrulaması;
+  101'e Koehn'ün yeniden örneklemesi ve Demšar'ın sıra tabanlı testleri; 102'ye Raff'ın okunabilirlik ve tablo
+  bulguları, Haibe-Kains itirazı, Kapoor'un bilgi çizelgesi ve yarışmanın tasarım ayrıntıları). Dolgu cümle
+  eklenmedi. Son değerler: 2.084 / 2.018 / 2.112 / 2.060.
+- **`svgcheck` bu kez bir kusur buldu, PNG turu bir tane daha.** Ölçer 102-Şekil 3'te alt payın 12'nin altına
+  düştüğünü yakaladı; PNG turunda aynı şeklin alt kaydının kutuya çok yakın durduğu görüldü ve viewBox 444'ten
+  460'a çıkarıldı. Öteki on bir şekilde iki kapı da kusur bulmadı. **İki kapı yine birbirinin yerine geçmedi.**
+- **OpenReview API'si kapandı.** Batch 23'te 429 verip 7 saniyelik beklemeyle çalışıyordu; bu run'da
+  `api.openreview.net` ve `api2.openreview.net` doğrudan 403 veriyor. Yeni kimlik yazılmadı; yayımlanmış
+  makalelerden devralınan iki kimlikten biri `proceedings.iclr.cc` dizininde doğrulandı. **Sonraki run
+  OpenReview kimliği yazacaksa kaynağı konferans dizin sayfası olmalı.**
+- **Dev sunucusu 103 rotayı dört dilimde sorunsuz derledi** (32 + 32 + 20 + 19, toplam ~88 sn, hiç yönlendirme
+  yok). Dilimleme kuralı korundu.
+- **Playwright kaplayıcı düzeni Batch 23'ten olduğu gibi çalıştı** (`createRequire("file:///D:/dev/anil-lib/")`
+  + `require("@playwright/test")`, `domcontentloaded` + sabit bekleme, `deviceScaleFactor: 2`). Kaplayıcıya
+  sayfanın kendi arka plan rengi verilince koyu temadaki şekiller doğru zeminde göründü.
+- **Paralel BOUN oturumu bu run boyunca da aynı worktree'deydi** ve bu kez `artifacts/b11-research/` altına
+  yazıyordu. Çakışma olmadı çünkü (a) bu run `artifacts/` altını hiç kullanmadı, (b) build ve dev sunucusu izole
+  kopyada (`/d/dev/anil-lib-b24-render`) çalıştırıldı, (c) `.claude/launch.json` okunup kendi girdisi eklenerek
+  yazıldı ve temizlikte yalnızca o girdi çıkarıldı.
+- **Kapılar:** `pnpm typecheck` (0), **642 test** (`reading-list-groups.test.ts` dâhil), `pnpm build` (exit 0,
+  `/seri/[slug]` **102 yol**, 160 statik sayfa, izole kopyada), 103 seri rotasının tamamı 200 (dört dilim,
+  ~88 sn, yönlendirme yok), dört makale × üç genişlik × üç temada DOM ölçümü (taşma 0, `main.innerText` içinde
+  undefined/NaN yok, ham i18n anahtarı yok, hiçbir SVG kabından taşmıyor; 1440'ta SVG 771 px, 768'de 676,
+  375'te 351), konsolda yalnızca `/api/reader-sync` 503, 12 yeni diyagram × iki tema = 24 PNG gözle incelendi,
+  29 kaynak bağlantısının tamamı çekildi.
 
 ## Batch 23 öğrenme notları (yazım tamamlandı)
 

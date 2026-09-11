@@ -176,10 +176,10 @@
       "description": "Çalışma okumaktan deney tasarımına ve ölçüm disiplinine: araştırmacı formasyonu.",
       "articles": [
         { "order": 98, "title": "Bir Çalışmayı Okumak: İddia, Kanıt ve Hakemlik", "status": "yayinda", "slug": "bir-calismayi-okumak-iddia-kanit-ve-hakemlik" },
-        { "order": 99, "title": "Araştırma Sorusu ve Deney Tasarımı: Hipotez, Baseline, Ablation", "status": "planlandi" },
-        { "order": 100, "title": "Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi", "status": "planlandi" },
-        { "order": 101, "title": "Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi", "status": "planlandi" },
-        { "order": 102, "title": "Tekrarlanabilirlik: Reproducibility, Negatif Sonuç ve Açık Bilim", "status": "planlandi" }
+        { "order": 99, "title": "Araştırma Sorusu ve Deney Tasarımı: Hipotez, Taban Çizgisi, Ablasyon", "status": "yayinda", "slug": "arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon" },
+        { "order": 100, "title": "Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi", "status": "yayinda", "slug": "yuzuncu-adim-sezgiden-bilime-haritanin-sentezi" },
+        { "order": 101, "title": "Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi", "status": "yayinda", "slug": "olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi" },
+        { "order": 102, "title": "Tekrarlanabilirlik: Negatif Sonuç ve Açık Bilim", "status": "yayinda", "slug": "tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim" }
       ]
     },
     {

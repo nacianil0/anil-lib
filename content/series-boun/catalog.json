@@ -664,6 +664,66 @@
       "path": "content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
+    },
+    {
+      "articleId": "article_933ab15e-ae4b-455d-b3fb-fc44aef9a46d",
+      "title": "Dosya Sistemleri ve Giriş/Çıkış",
+      "slug": "dosya-sistemleri-ve-giris-cikis",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 34,
+      "summary": "Önceki makalede disk yalnızca sayfaların sığınacağı bir kurtarma alanıydı. Burada asıl işini yapıyor: kalıcılık. Makale iki soyutlamayla başlıyor — dosya bir bayt dizisi, dizin ise (ad, i-numarası) çiftlerinden oluşan bir liste — ve sabit bağlantının neden silmeyi 'bağlantıyı kopar' diye adlandırdığını gösteriyor. Sonra diskin fiziği geliyor: rastgele bir 4 KB okuma 6 milisaniye, sıralı okuma ise iki yüz kat hızlı; bu tek oran dosya sistemi tasarımının tamamını yönetiyor. Üç ayırma yöntemi aynı dosya üzerinde karşılaştırılıyor, inode'un dolaylı blok aritmetiği elle hesaplanıyor, dizin ve boş alan yapıları kuruluyor ve bir dosya yaratmanın gerçekten kaç disk erişimi ettiği sayılıyor. Bütün sayılar kendi programımla üretildi.",
+      "tags": [
+        "dosya-sistemi",
+        "inode",
+        "ayirma-yontemleri",
+        "disk",
+        "giris-cikis"
+      ],
+      "contentHash": "sha256:b6cdd51bc22f9cf09b6513a1d339660ac41fdf8466bd83c438eb102f2cd86c06",
+      "path": "content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
+    },
+    {
+      "articleId": "article_bddae659-cf24-4e95-8ee4-bb58bd68f65c",
+      "title": "Koruma, Güvenlik ve Linux Somutlaması",
+      "slug": "koruma-guvenlik-ve-linux-somutlamasi",
+      "category": "operating-systems",
+      "level": "advanced",
+      "readingOrder": 35,
+      "summary": "Bu seride 'güvenlik' şimdiye kadar safety demekti — kötü bir şey olmaz. Bu makalede ilk kez security anlamına geliyor: birileri kasten kötü bir şey yapmaya çalışıyor. İşletim sistemi makalesindeki kullanıcı kipi/çekirdek kipi ikilisi koruma alanına genelleşiyor, erişim matrisi kuruluyor ve aynı matrisin iki uygulaması karşılaştırılıyor: sütun sütun saklarsan erişim denetim listesi, satır satır saklarsan yetenek listesi elde ediyorsun. UNIX'in dokuz izin biti bu matrisin bilinçli bir sıkıştırmasıdır ve neyi kaybettiği hesaplanıyor. Linux'ta open() çağrısının ikisini birden kullandığı gösteriliyor ve Faz D üç iş — sanallaştırma, eşzamanlılık, kalıcılık — üzerinden kapatılıyor.",
+      "tags": [
+        "koruma",
+        "guvenlik",
+        "erisim-matrisi",
+        "yetenekler",
+        "linux"
+      ],
+      "contentHash": "sha256:f92e2638235f65cef0f1db1c3081e3291daab7472a386a22fec2e6e2f41291fc",
+      "path": "content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
+    },
+    {
+      "articleId": "article_325cc537-6231-4bb1-9cc0-8bae9daabe8c",
+      "title": "Olasılık ve İstatistik: Mülakat İçin Çekirdek",
+      "slug": "olasilik-ve-istatistik-mulakat-icin-cekirdek",
+      "category": "supporting-fundamentals",
+      "level": "advanced",
+      "readingOrder": 36,
+      "summary": "Bu seri boyunca her maliyet iddiasını koşuluyla söylemeye çalıştık, ama bir koşulu hep erteledik: 'ortalama durum' dediğimizde hangi dağılımı varsaydığımızı hiç adlandırmadık. Bu makale o borcu ödüyor. Olasılık uzayı ve dört adımlı yöntemle başlıyor, koşullu olasılıkla devam ediyor ve nadir bir hastalık testinde pozitif çıkan birinin hasta olma olasılığının neden yüzde dokuz olduğunu hesaplıyor. Sonra beklenen değer geliyor ve asıl araç kuruluyor: beklentinin doğrusallığı bağımsızlık istemez. Üç eski borç bu araçla ödeniyor — doğum günü çakışması, hash tablosunun beklenen zincir uzunluğu ve rastgeleleştirilmiş seçimin doğrusal beklenen maliyeti. Son bölüm beklentinin neden yetmediğini gösteriyor: Markov ve Chebyshev eşitsizlikleri aynı soruya üç ayrı cevap veriyor. Bütün sayılar kendi programımla üretildi.",
+      "tags": [
+        "olasilik",
+        "beklenen-deger",
+        "bayes",
+        "chebyshev",
+        "istatistik"
+      ],
+      "contentHash": "sha256:f8bfcb1aa09a9e3c9c6ccc362683f76dc85eb90416850f6511f51af27d33e389",
+      "path": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 11
     }
   ]
 }

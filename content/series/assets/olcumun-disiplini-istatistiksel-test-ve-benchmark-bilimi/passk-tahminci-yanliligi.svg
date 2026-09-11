@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Üç satırlık bir tablo ve altında iki kutu. Üstte başlık: aynı kapsama, iki tahminci; her deneme 0,20 olasılıkla tutuyor, on deneme yapılıyor ve pass@5 tahmin ediliyor. Birinci satır gerçek değer: 1 eksi 0,8 üzeri 5, yani 0,67232. İkinci satır yansız tahmincinin ortalaması: 0,67232, gerçek değerle birebir aynı. Üçüncü satır vurguludur, yerine koyma tahmincisinin ortalaması: 0,59359, yani gerçek değerin 7,87 puan altında. Birinci kutuda iki formül durur: yerine koyma tahmincisi 1 eksi 1 eksi c bölü n, üssü k; yansız tahminci 1 eksi n eksi c'nin k'li kombinasyonu bölü n'in k'li kombinasyonu. On denemenin ikisinin tuttuğu tek bir çekilişte ikincisi 56 bölü 252 üzerinden 0,77778, birincisi 0,67232 veriyor. İkinci kutuda kural durur: aynı formül, gerçek olasılıkla yazıldığında doğru bir tanım, tahminle yazıldığında yanlı bir tahmincidir. En altta bir kayıt: tablodaki ortalamalar kendi hesabımızdır ve iki terimli dağılımın bütün sonuçları üzerinden alınmıştır; tahmincinin kendisi Chen ve arkadaşlarının çalışmasındandır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı kapsama, iki tahminci (p = 0,20; n = 10 deneme; pass@5 kestiriliyor)</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" fill="var(--text)">gerçek değer: 1 − 0,8⁵</text>
+  <text x="500" y="70" font-size="13" fill="var(--text)">0,67232</text>
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">yansız tahmincinin ortalaması</text>
+  <text x="500" y="98" font-size="13" fill="var(--text)">0,67232</text>
+
+  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--accent)">yerine koyma tahmincisinin ortalaması</text>
+  <text x="500" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,59359</text>
+  <text x="600" y="126" font-size="13" font-weight="bold" fill="var(--accent)">−7,87 puan</text>
+
+  <line x1="20" y1="144" x2="700" y2="144" stroke="var(--border)" />
+
+  <rect x="20" y="154" width="680" height="98" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="178" font-size="13" fill="var(--text)">yerine koyma: 1 − (1 − c/n)ᵏ</text>
+  <text x="34" y="200" font-size="13" fill="var(--text)">yansız: 1 − C(n − c, k) / C(n, k)</text>
+  <text x="34" y="230" font-size="13" fill="var(--text-muted)">On denemenin ikisi tuttuğunda: yansız 1 − 56/252 = 0,77778; yerine koyma 0,67232.</text>
+
+  <rect x="20" y="264" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="288" font-size="13" fill="var(--text)">Aynı formül: gerçek olasılıkla yazıldığında bir tanım,</text>
+  <text x="34" y="308" font-size="13" fill="var(--text)">tahminle yazıldığında yanlı bir tahminci.</text>
+
+  <text x="20" y="352" font-size="13" fill="var(--text-faint)">Ortalamalar kendi hesabımızdır; iki terimli dağılımın bütün sonuçları üzerinden alındı.</text>
+  <text x="20" y="376" font-size="13" fill="var(--text-faint)">Tahmincinin kendisi Chen ve arkadaşlarının çalışmasındandır.</text>
+</svg>

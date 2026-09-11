@@ -1,0 +1,74 @@
+<svg viewBox="0 0 720 318" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Aynı dosyanın dört bloğu, üç ayırma yöntemi (disk: on blokluk bir şerit)</text>
+
+  <!-- Panel 1: bitisik ayirma -->
+  <text x="15" y="50" font-size="13" fill="var(--text)">bitişik ayırma</text>
+  <text x="15" y="68" font-size="13" fill="var(--text-muted)">inode: baş 3, boy 4</text>
+  <rect x="195" y="42" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="228" y="42" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="261" y="42" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="276" y="62" font-size="13" text-anchor="middle" fill="var(--text)">D1</text>
+  <rect x="294" y="42" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="309" y="62" font-size="13" text-anchor="middle" fill="var(--text)">D2</text>
+  <rect x="327" y="42" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="342" y="62" font-size="13" text-anchor="middle" fill="var(--text)">D3</text>
+  <rect x="360" y="42" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="375" y="62" font-size="13" text-anchor="middle" fill="var(--text)">D4</text>
+  <rect x="393" y="42" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="426" y="42" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="459" y="42" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="492" y="42" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="535" y="62" font-size="13" fill="var(--cool)">rastgele: 1 okuma</text>
+  <text x="15" y="92" font-size="13" fill="var(--text-muted)">ardışık okuma tepe hızda; ama dosya büyüyemez ve disk dış parçalanmaya uğrar</text>
+
+  <!-- Panel 2: bagli ayirma -->
+  <text x="15" y="122" font-size="13" fill="var(--text)">bağlı ayırma</text>
+  <text x="15" y="140" font-size="13" fill="var(--text-muted)">inode: ilk blok 1</text>
+  <rect x="195" y="114" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="210" y="134" font-size="13" text-anchor="middle" fill="var(--text)">D1</text>
+  <text x="210" y="160" font-size="13" text-anchor="middle" fill="var(--text-faint)">→4</text>
+  <rect x="228" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="261" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="294" y="114" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="309" y="134" font-size="13" text-anchor="middle" fill="var(--text)">D2</text>
+  <text x="309" y="160" font-size="13" text-anchor="middle" fill="var(--text-faint)">→7</text>
+  <rect x="327" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="360" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="393" y="114" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="408" y="134" font-size="13" text-anchor="middle" fill="var(--text)">D3</text>
+  <text x="408" y="160" font-size="13" text-anchor="middle" fill="var(--text-faint)">→9</text>
+  <rect x="426" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="459" y="114" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="474" y="134" font-size="13" text-anchor="middle" fill="var(--text)">D4</text>
+  <text x="474" y="160" font-size="13" text-anchor="middle" fill="var(--text-faint)">son</text>
+  <rect x="492" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="535" y="134" font-size="13" fill="var(--cool)">rastgele: ~128 okuma</text>
+  <text x="15" y="182" font-size="13" fill="var(--text-muted)">işaretçiler blokların içinde; FAT onları belleğe taşır ve rastgele erişimi 1 okumaya indirir</text>
+
+  <!-- Panel 3: indeksli ayirma -->
+  <text x="15" y="212" font-size="13" fill="var(--text-muted)">inode'daki dört işaretçi</text>
+  <line x1="243" y1="208" x2="507" y2="208" stroke="var(--cool)" stroke-width="1.4" />
+  <line x1="243" y1="208" x2="243" y2="222" stroke="var(--cool)" stroke-width="1.4" />
+  <line x1="342" y1="208" x2="342" y2="222" stroke="var(--cool)" stroke-width="1.4" />
+  <line x1="375" y1="208" x2="375" y2="222" stroke="var(--cool)" stroke-width="1.4" />
+  <line x1="507" y1="208" x2="507" y2="222" stroke="var(--cool)" stroke-width="1.4" />
+  <text x="15" y="242" font-size="13" fill="var(--text)">indeksli ayırma</text>
+  <rect x="195" y="222" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="228" y="222" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="243" y="242" font-size="13" text-anchor="middle" fill="var(--text)">D1</text>
+  <rect x="261" y="222" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="294" y="222" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="327" y="222" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="342" y="242" font-size="13" text-anchor="middle" fill="var(--text)">D2</text>
+  <rect x="360" y="222" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="375" y="242" font-size="13" text-anchor="middle" fill="var(--text)">D3</text>
+  <rect x="393" y="222" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="426" y="222" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="459" y="222" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="492" y="222" width="30" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="507" y="242" font-size="13" text-anchor="middle" fill="var(--text)">D4</text>
+  <text x="535" y="242" font-size="13" fill="var(--cool)">rastgele: ≤ 2 okuma</text>
+  <text x="15" y="274" font-size="13" fill="var(--text-muted)">adresler tek yerde; büyük dosya dolaylı blok ister, bedeli dosya başına meta veridir</text>
+
+  <text x="15" y="304" font-size="13" fill="var(--text-faint)">Üçü de dizi ile bağlı liste arasındaki eski takasın disk ölçeğindeki hâlidir.</text>
+</svg>

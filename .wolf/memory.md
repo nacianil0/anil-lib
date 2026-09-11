@@ -3647,3 +3647,173 @@ sildi; kalan betikler scratchpad'e yeniden yazıldı.
 | 22:00 | Kapilar: typecheck 0, 624 test, build exit 0 | repo | yesil | ~3k |
 | 21:58 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch23-faz10-kapanis.md | — | ~1046 |
 | 22:01 | Session end: 3 writes across 3 files (HANDOFF.md, wolf-b23.py, series-batch23-faz10-kapanis.md) | 0 reads | ~12153 tok |
+
+## Session: 2026-09-10 00:15
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 09:23
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 09:26
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:02 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/wc.cjs | — | ~302 |
+| 21:04 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/fetch.py | — | ~716 |
+| 21:04 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/pdftxt.py | — | ~176 |
+| 21:04 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/q.py | — | ~284 |
+| 21:05 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/w1.txt | — | ~467 |
+| 21:06 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/w2.txt | — | ~299 |
+| 21:09 | Created artifacts/b11-research/dosya.py | — | ~1646 |
+| 21:10 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/w3.txt | — | ~295 |
+| 21:10 | Created artifacts/b11-research/olasilik.py | — | ~1784 |
+| 21:12 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/calc.py | — | ~726 |
+| 21:15 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/w4.txt | — | ~367 |
+| 21:16 | Edited content/series/roadmap.json | inline fix | ~37 |
+| 21:16 | Edited content/series/roadmap.json | inline fix | ~31 |
+| 21:17 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/svgcheck.py | — | ~1281 |
+| 21:17 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/scan.py | — | ~963 |
+| 21:18 | Created content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | — | ~7842 |
+| 21:20 | Created content/series-boun/assets/dosya-sistemleri-ve-giris-cikis/ayirma-yontemleri.svg | — | ~1960 |
+| 21:21 | Created content/series-boun/assets/dosya-sistemleri-ve-giris-cikis/inode-dolayli-blok.svg | — | ~1062 |
+| 21:21 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | "Şekil 1 — Aynı dosya, üç " → "in onları belleğe taşıyar" | ~466 |
+| 21:22 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | "i kadardır](assets/inode-" → "Şekil 2 — inode bilerek d" | ~375 |
+| 21:22 | Created content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | — | ~5323 |
+| 21:22 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | 3→5 lines | ~285 |
+| 21:23 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | 1→3 lines | ~239 |
+| 21:23 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | 1→3 lines | ~204 |
+| 21:23 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | 1→3 lines | ~187 |
+| 21:23 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | 1→2 lines | ~142 |
+| 21:24 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | inline fix | ~34 |
+| 21:24 | Created content/series/assets/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon/taban-cizgisi-secimi.svg | — | ~598 |
+| 21:25 | Created content/series/assets/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon/arama-butcesi-deneyin-parcasi.svg | — | ~695 |
+| 21:26 | Created content/series/assets/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon/ablasyonun-kanit-yuku.svg | — | ~965 |
+| 21:26 | Created content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | — | ~6572 |
+| 21:26 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | inline fix | ~260 |
+| 21:27 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | inline fix | ~304 |
+| 21:27 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | "lük fark, taban çizgisini" → "lük fark, taban çizgisini" | ~340 |
+| 21:27 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | 3→3 lines | ~279 |
+| 21:27 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/syncalt.py | — | ~391 |
+| 21:28 | Created content/series-boun/assets/koruma-guvenlik-ve-linux-somutlamasi/erisim-matrisi.svg | — | ~867 |
+| 21:28 | Created content/series-boun/assets/koruma-guvenlik-ve-linux-somutlamasi/open-cagrisinda-koruma.svg | — | ~1588 |
+| 21:28 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | "Şekil 1 — Aynı matris, ik" → "ın rapor hücresinde kesiş" | ~334 |
+| 21:29 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | 1→3 lines | ~436 |
+| 21:29 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | 1→3 lines | ~191 |
+| 21:29 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | 1→5 lines | ~367 |
+| 21:30 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~202 |
+| 21:30 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~91 |
+| 21:30 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~155 |
+| 21:32 | Created content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | — | ~5859 |
+| 21:32 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | 1→3 lines | ~246 |
+| 21:33 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | 1→3 lines | ~272 |
+| 21:33 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | "fark anlamlı değil" → "en iyi iki aile arasındak" | ~87 |
+| 21:33 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | removed 2 lines | ~6 |
+| 21:33 | Created content/series/assets/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi/eslestirmenin-getirisi.svg | — | ~722 |
+| 21:34 | Created content/series/assets/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi/gurultu-kaynaklari.svg | — | ~731 |
+| 21:34 | Created content/series/assets/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi/yirmi-rastgele-bolme.svg | — | ~742 |
+| 21:34 | Created content/series/assets/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi/passk-tahminci-yanliligi.svg | — | ~552 |
+| 21:35 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~244 |
+| 21:35 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | "ta iki bölmede, OntoNotes" → "ta iki, OntoNotes" | ~182 |
+| 21:36 | Created content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | — | ~6867 |
+| 21:37 | Created content/series-boun/assets/olasilik-ve-istatistik-mulakat-icin-cekirdek/bayes-nadir-hastalik.svg | — | ~852 |
+| 21:37 | Created content/series-boun/assets/olasilik-ve-istatistik-mulakat-icin-cekirdek/markov-chebyshev.svg | — | ~764 |
+| 21:37 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~333 |
+| 21:37 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | "in yetmiş beşten büyük ya" → "in yetmiş beşten büyük ya" | ~399 |
+| 21:38 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | "Şekil 1 — Aynı test, iki " → "Şekil 1 — Aynı test, iki " | ~40 |
+| 21:39 | Created content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | — | ~4618 |
+| 21:39 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | 1→3 lines | ~241 |
+| 21:39 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | 1→3 lines | ~148 |
+| 21:39 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | 1→3 lines | ~141 |
+| 21:39 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | modified vermesi() | ~314 |
+| 21:40 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | 1→3 lines | ~302 |
+| 21:40 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | expanded (+6 lines) | ~366 |
+| 21:40 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | 1→2 lines | ~153 |
+| 21:40 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~57 |
+| 21:41 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | 1→3 lines | ~290 |
+| 21:41 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | 1→3 lines | ~214 |
+| 21:41 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~151 |
+| 21:42 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | 1→3 lines | ~245 |
+| 21:42 | Created content/series/assets/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim/tekrarlanabilirligin-uc-derecesi.svg | — | ~723 |
+| 21:42 | Created content/series/assets/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim/neyi-yeniden-uretebiliyoruz.svg | — | ~734 |
+| 21:43 | Created content/series/assets/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim/sizinti-ve-tersine-donen-sonuc.svg | — | ~598 |
+| 21:43 | Edited content/series/assets/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim/sizinti-ve-tersine-donen-sonuc.svg | "0 0 720 434" → "0 0 720 444" | ~6 |
+| 21:43 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | "dan taranan 400 bildirini" → "nun çalışmasından alınmış" | ~309 |
+| 21:44 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~287 |
+| 21:48 | Created content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | — | ~3846 |
+| 21:48 | Created content/series-boun/assets/dosya-sistemleri-ve-giris-cikis/inode-dolayli-blok.svg | — | ~1069 |
+| 21:49 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | modified yaz() | ~1039 |
+| 21:49 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | expanded (+18 lines) | ~358 |
+| 21:50 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | 1→5 lines | ~242 |
+| 21:50 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | 1→3 lines | ~174 |
+| 21:51 | Created content/series/assets/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi/serinin-haritasi.svg | — | ~868 |
+| 21:51 | Created content/series/assets/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi/ayni-refleks-alti-yerde.svg | — | ~656 |
+| 21:51 | Edited content/series/assets/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi/ayni-refleks-alti-yerde.svg | inline fix | ~19 |
+| 21:51 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | "den itibaren: literatürün" → "den beri: literatürün ken" | ~322 |
+| 21:52 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | inline fix | ~321 |
+| 21:52 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/links.py | — | ~470 |
+| 21:58 | Created artifacts/b11-research/yolharita.py | — | ~1885 |
+| 21:58 | Edited artifacts/b11-research/yolharita.py | 2→4 lines | ~39 |
+| 21:58 | Edited artifacts/b11-research/yolharita.py | 2→4 lines | ~42 |
+| 21:58 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~66 |
+| 22:01 | Created artifacts/b11-research/defterler.py | — | ~3615 |
+| 22:01 | Created .claude/launch.json | — | ~140 |
+| 22:02 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/sweep.py | — | ~352 |
+| 22:04 | Created artifacts/b11-research/arastirma.py | — | ~6599 |
+| 22:07 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/shots.mjs | — | ~605 |
+| 22:09 | Created docs/seri-boun/HANDOFF.md | — | ~8460 |
+| 22:10 | Created .claude/launch.json | — | ~56 |
+| 22:11 | Edited docs/seri/YOL-HARITASI.md | inline fix | ~27 |
+| 22:11 | Edited docs/seri/YOL-HARITASI.md | inline fix | ~114 |
+| 22:11 | Edited docs/seri/YOL-HARITASI.md | expanded (+17 lines) | ~479 |
+| 22:11 | Edited docs/seri/YOL-HARITASI.md | 4→4 lines | ~291 |
+| 22:12 | Edited docs/seri/YOL-HARITASI.md | modified klar() | ~689 |
+| 22:12 | Created artifacts/b11-research/cerebrum.py | — | ~1115 |
+| 22:13 | Edited docs/seri/YOL-HARITASI.md | expanded (+46 lines) | ~1066 |
+| 22:13 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-batch11-faz-d-kapanis.md | — | ~1112 |
+| 22:13 | Edited docs/seri/YOL-HARITASI.md | expanded (+12 lines) | ~621 |
+| 22:14 | Created artifacts/b11-research/buglog.py | — | ~1147 |
+| 22:20 | BOUN Batch 11 tamamlandi: makale 34-36 yayimlandi, Faz D kapandi, Faz E acildi | content/series-boun/*, docs/seri-boun/* | 36 makale + 72 diyagram temiz; test 642/642; build 160 sayfa; Playwright 50/1/2 (2 basarisiz BOUN disi) | ~420k |
+| 22:15 | Edited docs/seri/YOL-HARITASI.md | modified z() | ~2186 |
+| 22:15 | Session end: 115 writes across 52 files (wc.cjs, fetch.py, pdftxt.py, q.py, w1.txt) | 35 reads | ~293076 tok |
+| 22:16 | Edited docs/seri/YOL-HARITASI.md | expanded (+58 lines) | ~1467 |
+| 22:20 | Created docs/seri/HANDOFF.md | — | ~8572 |
+| 22:40 | AI serisi Batch 24 tamamlandi: 99-102 yazildi, entegre edildi, dogrulandi; Faz 11 kapandi, 101 koordinati odendi | content/series/**, docs/seri/** | typecheck 0, 642 test, build 160 sayfa, 103 rota 200, 24 PNG incelendi | ~- |
+| 22:22 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/buglog_add.py | — | ~906 |
+| 22:23 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch24-faz11-kapanis.md | — | ~727 |
+| 22:23 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/refcheck.py | — | ~402 |
+| 22:24 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | inline fix | ~63 |
+| 22:25 | Session end: 121 writes across 55 files (wc.cjs, fetch.py, pdftxt.py, q.py, w1.txt) | 36 reads | ~311061 tok |
+
+## Session: 2026-09-11 23:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 23:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-11 23:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

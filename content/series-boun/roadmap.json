@@ -62,8 +62,8 @@
         { "order": 31, "title": "Kilitlenme: Koşullar ve Stratejiler", "status": "yayinda", "slug": "kilitlenme-kosullar-ve-stratejiler" },
         { "order": 32, "title": "Bellek Yönetimi: Adres Çevirisi ve Sayfalama", "status": "yayinda", "slug": "bellek-yonetimi-adres-cevirisi-ve-sayfalama" },
         { "order": 33, "title": "Sanal Bellek: Talep Sayfalama ve Değiştirme", "status": "yayinda", "slug": "sanal-bellek-talep-sayfalama-ve-degistirme" },
-        { "order": 34, "title": "Dosya Sistemleri ve Giriş/Çıkış", "status": "planlandi" },
-        { "order": 35, "title": "Koruma, Güvenlik ve Linux Somutlaması", "status": "planlandi" }
+        { "order": 34, "title": "Dosya Sistemleri ve Giriş/Çıkış", "status": "yayinda", "slug": "dosya-sistemleri-ve-giris-cikis" },
+        { "order": 35, "title": "Koruma, Güvenlik ve Linux Somutlaması", "status": "yayinda", "slug": "koruma-guvenlik-ve-linux-somutlamasi" }
       ]
     },
     {
@@ -71,7 +71,7 @@
       "title": "Destekleyici Temeller ve Mülakat Provası",
       "description": "Olasılık, donanım, C, veritabanı ve sözlü anlatım provasıyla mülakat gününe hazırlık.",
       "articles": [
-        { "order": 36, "title": "Olasılık ve İstatistik: Mülakat İçin Çekirdek", "status": "planlandi" },
+        { "order": 36, "title": "Olasılık ve İstatistik: Mülakat İçin Çekirdek", "status": "yayinda", "slug": "olasilik-ve-istatistik-mulakat-icin-cekirdek" },
         { "order": 37, "title": "Bilgisayar Organizasyonu: OS'nin Altındaki Makine", "status": "planlandi" },
         { "order": 38, "title": "C ve Bellek: Sistem Programlama Penceresi", "status": "planlandi" },
         { "order": 39, "title": "Veritabanları: İlişkisel Model, İndeks ve İşlem", "status": "planlandi" },

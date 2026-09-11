@@ -6,8 +6,9 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-09-01** (Batch 7 run'ında kapsam kararını taşıyan **CMPE250 ve CMPE300**
-sayfaları yeniden çekildi ve ikisinin de metninin değişmediği doğrulandı — §12). Kapsamı etkilemeyen
+Erişim tarihi: **2026-09-11** (Batch 11 run'ında Faz D'nin dayanağı **CMPE322** yeniden çekilip
+önceki kopyayla birebir aynı bulundu ve Faz E'ye geçilirken **CMPE343, CMPE240 ve CMPE230**
+sayfaları Batch 0'dan bu yana ilk kez yeniden okundu — §16). Kapsamı etkilemeyen
 resmî sayfaların son tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını
 etkileyen sayfaları yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum
 görevi).
@@ -1918,3 +1919,258 @@ altındadır); makalelerde "kendi programımdan" diye işaretlendi.
   render edilip incelendiğinde ikisinin de **yanlış pozitif** olduğu görüldü (karakter genişliği
   tahmini gerçek metin genişliğinden büyük çıkıyor). Uyarılar bu yüzden render ile teyit
   edilmelidir.
+
+## 16. Batch 11 üretim run'ında doğrulanan kaynaklar (2026-09-11)
+
+Makale 34 (Dosya Sistemleri ve Giriş/Çıkış), 35 (Koruma, Güvenlik ve Linux Somutlaması) ve 36 (Olasılık ve
+İstatistik) bu kaynaklara dayanır. Bütün URL'ler bu run'da HTTP 200 ile çekildi; OSTEP bölümleri ve MIT 6.042J
+ders kitabı PDF olarak indirilip metne çevrildi.
+
+### Resmî sayfalar
+
+- **CMPE322** (<https://cmpe.bogazici.edu.tr/courses/cmpe322/>), yeniden doğrulama **2026-09-11**: sayfa
+  yeniden çekildi ve Batch 10'da çekilen kopyayla **etiketlerden arındırılmış metin düzeyinde birebir aynı**
+  çıktı (aynı stripper ile 1.238 karakter, iki kopyanın SHA-256'sı eşit). Bu batch'in iki makalesi *Catalog
+  Description*'daki şu ifadelere karşılık gelir: "File system structures, allocation methods, directory
+  implementation. I/O interfaces, secondary storage structure" (34); "Protection and Security: Access matrix
+  and rights, capabilities, security issues. LINUX case studies" (35).
+- **CMPE343** (<https://cmpe.bogazici.edu.tr/courses/cmpe343/>), **Batch 0'dan beri ilk kez** bu run'da
+  yeniden okundu. Ders adı *Introduction to Probability and Statistics for Computer Engineers*, güz dönemi,
+  3 kredi / 5 ECTS, önkoşul **MATH101**. *Catalog Description* birebir: "Introduction to probability theory.
+  Random variables, expectation, variance and moment generating functions. Distributions: Bernoulli, binomial,
+  uniform, Gaussian, exponential, Poisson, gamma. Introduction to statistical concepts. Sampling and sample
+  statistics. Point and interval estimation. Hypothesis testing. Regression. Numerical and computational
+  aspects of random variable generation, sampling, and estimation." Sayfada ayrıca bir *Course Learning
+  Outcomes* bölümü **vardır** ve şunları sayar: olasılık kuramının yasaları ve uygulamaları, **Bayes teoreminin
+  kullanımı**, rastgele değişken kavramı, olasılık dağılımları ve özellikleri, örnekleme kavramı, hipotez testi
+  kavramı, regresyon kavramı, kavramların pratikte gerçeklenmesi. Makale 36'nın kapsamı bu iki listenin
+  kesişimidir; **moment üreten fonksiyonlar, gama dağılımı ve regresyon bilinçli olarak kapsam dışı
+  bırakılmıştır** (mülakatın sözlü savunma ölçütü için gerekli değiller).
+- **CMPE240** (<https://cmpe.bogazici.edu.tr/courses/cmpe240/>), Batch 0'dan beri ilk kez okundu.
+  **Ders adı *Digital Systems*'tir** — yol haritası "Bilgisayar Organizasyonu (CMPE240/244 sinyali)" derken
+  bu adı varsaymıyordu, düzeltilmesi gereken bir beklentidir. Önkoşulu **yoktur**. *Catalog Description*
+  birebir: "Number systems. Boolean algebra, logic networks and their simplification. Logic design with gates.
+  MSI and LSI technologies. Combinatorial circuits and sequential circuits. Counters, shift registers,
+  **computer organization, arithmetic logic, memory and control units**, mini and microcomputer systems.
+  Laboratory experiments and applications of digital logic design." Makale 37'nin resmî dayanağı bu cümlenin
+  koyu kısmıdır; sayfada *Course Learning Outcomes* bölümü yoktur.
+- **CMPE230** (<https://cmpe.bogazici.edu.tr/courses/cmpe230/>), Batch 0'dan beri ilk kez okundu. Ders adı
+  *Systems Programming*, önkoşul CMPE160. *Catalog Description* birebir: "Overview of compilers, interpreters,
+  assemblers, linkers and loaders. **Unix environment and system calls.** Shell programming. Signals and
+  exceptions. Localization and Unicode. PERL and CGI programming. Assembly language programming. Introduction
+  to multithreading. Introductory Graphical User Interface (GUI) programming." **Önemli saptama:** katalog
+  tanımı C dilini, işaretçileri ya da bellek düzenini **adlandırmıyor**; makale 38'in "C ve Bellek" başlığının
+  resmî dayanağı "Unix environment and system calls" ile "assembly language programming" ifadeleridir ve
+  `fork()`/`exec()`/`wait()` borcunun ödeneceği yer tam olarak burasıdır. Sayfada *Course Learning Outcomes*
+  bölümü yoktur.
+- **CMPE244** (<https://cmpe.bogazici.edu.tr/courses/cmpe244/>), Batch 0'dan beri ilk kez okundu ve
+  **makale 37'nin asıl resmî dayanağının bu ders olduğu ortaya çıktı**: ders adı doğrudan
+  ***Computer Organization***'dır (CMPE240 ise *Digital Systems*). Bahar dönemi, 4 kredi / 5 ECTS, önkoşul
+  "CMPE142 or EE240 or EE 243". *Catalog Description* birebir: "Register transfer level design. Basic computer
+  layout. Instruction sets and their implementation. Addressing techniques. ALU, hardwired and microprogrammed
+  controllers. **Memory unit.** I/0 structures and interrupt handling. Improvements on von Neumann machine.
+  Bus structures. Assembly programming." (metindeki "I/0" yazımı sayfadaki hâliyle aktarılmıştır).
+  Sayfada bir *Course Learning Outcomes* bölümü **vardır** ve şunları sayar: bilgisayar tasarımının tarihi ve
+  güncel gelişmeler, **RISC-V assembly** ile makine komutlarının yürütülmesi, modern işlemcilerin tasarım
+  ilkeleri, **hiyerarşik bellek sistemlerinin** tasarım ilkeleri, başarım / güç verimliliği / maliyet /
+  güvenlik ölçütleri. Makale 37'nin bellek hiyerarşisi ekseni doğrudan bu çıktıya karşılık gelir.
+
+### Makale 34 için akademik kaynaklar
+
+- **OSTEP Chapter 39, Interlude: Files and Directories** (`file-intro.pdf`). Doğrulanan birebir içerik:
+  **dosyanın** "a linear array of bytes" tanımı ve düşük düzey adının **inode numarası** olması; işletim
+  sisteminin dosyanın yapısını bilmemesi; **dizinin** "(user-readable name, low-level name)" çiftleri
+  tutması ve dizin ağacı ile mutlak yol adı; `link()`'in yeni bir adı aynı i-numarasına bağlaması, `ls -i`
+  çıktısında iki adın aynı i-numarasını (67158084) göstermesi; `unlink()`'in **bağlantı sayacını** azaltması
+  ve yalnızca sıfırda inode ile blokların serbest kalması, `stat` çıktısıyla sayacın 1 → 2 → 3 → 2 → 1
+  izlenmesi; dokuz **izin bitinin** `-rw-r--r--` biçiminde okunması, `chmod 600`, dizinlerde çalıştırma
+  bitinin geçme anlamı; AFS'in dizin başına **erişim denetim listesi**; **süper kullanıcı** kutusu.
+- **OSTEP Chapter 40, File System Implementation** (`file-implementation.pdf`). Doğrulanan birebir içerik:
+  bir dosya sistemini anlamanın "data structures" ile "access methods"u anlamak olması; vsfs'in 64 bloklu
+  disk üzerindeki düzeni (süper blok, inode bit eşlemi, veri bit eşlemi, 5 blokluk inode tablosu, 56 blokluk
+  veri bölgesi) ve 4 KB blok seçimi; 256 baytlık inode ile blok başına 16 inode ve toplam **80 inode**;
+  **bit eşleminin** 4 KB'da 32K nesne izleyebilmesi; inode adının *index node* kısaltması olması ve i-numarasından
+  disk konumu hesabı (`blk`, `sector` formülleri); ext2 inode alan tablosu ve 60 baytlık blok alanında
+  **15 işaretçi**; **dolaylı işaretçi**, 4 KB blok + 4 baytlık adresle 1024 işaretçi ve `(12 + 1024) × 4K =
+  4144KB`; **çok düzeyli indeksin** `(12 + 1024 + 1024²) × 4 KB` ile "just over 4 GB" tavanı ve üçlü dolaylı
+  sorusu; ağacın bilerek dengesiz olması ve **Figure 40.2 ölçüm özeti** ("Most files are small — ~2K is the
+  most common size"; ortalama ≈ 200K; baytların çoğu büyük dosyalarda; dosya sistemi başına ≈ 100K dosya;
+  dosya sistemleri ≈ %50 dolu; "Directories are typically small — most have 20 or fewer" girdi); 12 doğrudan
+  işaretçinin **48 KB**'a yetmesi; **uzam** kutusu ve işaretçi/uzam karşılaştırması; bağlı yaklaşımın kutusu
+  ve **FAT**'in bellekteki tabloyla rastgele erişimi kurtarması, FAT'te inode olmadığı için sabit bağlantının
+  imkânsız olması; dizin girdilerinin `inum | reclen | strlen | name` düzeni, `.` ve `..`, silmenin bıraktığı
+  boşluk ve kayıt uzunluğunun nedeni; dizinin tür alanı "directory" olan bir dosya olması; **XFS'in dizinleri
+  B-ağacında tutması**; boş alan için bit eşlemi ile boş liste karşılaştırması ve XFS'in B-ağacı; ext2/ext3'ün
+  **ardışık sekiz blok** arayan önden ayırma sezgiseli; okuma yolunun kök inode → kök veri → foo inode → foo
+  veri → bar inode sırası (kök i-numarası **2**), "reads don't access allocation structures" kutusu ve açma
+  maliyetinin yol uzunluğuyla orantılı olması; **her ayıran yazmanın beş G/Ç** (bit eşlemi oku+yaz, inode
+  oku+yaz, veri yaz) ve dosya yaratmanın **on G/Ç** etmesi (Figure 40.4); önbelleksiz uzun yol adının
+  "hundreds of reads" istemesi; sabit boyutlu önbellekten (belleğin ~%10'u) **birleşik sayfa önbelleğine**
+  geçiş ve statik/devingen bölüşüm kutusu; **yazma tamponlamanın** üç kazancı (birleştirme, zamanlama,
+  tümüyle kaçınma) ve **beş–otuz saniyelik** pencere; **dayanıklılık/başarım takası** kutusu ve `fsync()` ile
+  doğrudan G/Ç.
+- **OSTEP Chapter 37, Hard Disk Drives** (`file-disks.pdf`). Doğrulanan birebir içerik:
+  `T_I/O = T_seek + T_rotation + T_transfer` ve `R_I/O = Size / T_I/O`; Figure 37.5 künyeleri (Cheetah 15K.5:
+  300 GB, **15.000 RPM**, **4 ms** ortalama arama, **125 MB/s** tepe; Barracuda: 1 TB, **7.200 RPM**, **9 ms**,
+  **105 MB/s**); rastgele 4 KB iş yükünde Cheetah için 4 ms + 2 ms + 30 µs ≈ **6 ms** ve **0,66 MB/s**,
+  Barracuda için ≈ **13,2 ms** ve **0,31 MB/s**; ardışık 100 MB iş yükünde ≈ 800 ms / 950 ms ve tepe hıza
+  yakın oranlar; farkın "almost a factor of 200 or so for the Cheetah and more than a factor 300 difference
+  for the Barracuda" olması ve "use disks sequentially" ipucu; **disk zamanlamasının** SJF ilkesini izlemesi,
+  **SSTF/NBF** ve **açlık**, **SCAN / F-SCAN / C-SCAN** ve asansör benzetmesi, dönmeyi de hesaba katan
+  **SPTF/SATF** ve "it depends" tartışması.
+- **OSTEP Chapter 36, I/O Devices** (`file-devices.pdf`). Doğrulanan birebir içerik: soyut aygıtın **durum /
+  komut / veri** yazmaçlarından oluşan arayüzü ve dört adımlı protokol; **yoklamanın** işlemciyi harcaması ve
+  **programlanmış G/Ç** terimi; **kesmenin** hesaplama ile G/Ç'yi örtüştürmesi ve iki zaman çizelgesi; "TIP:
+  INTERRUPTS NOT ALWAYS BETTER THAN POLLING" kutusu, hızlı aygıtta yoklamanın ucuzluğu ve kesme selinin
+  sistemi **livelock**'a sokması [MR96]; kesme birleştirme; **DMA** motorunun kopyayı devralması ve bitince
+  kesme doğurması; **aygıt sürücüsü** ve Linux dosya sistemi yığını (POSIX API → dosya sistemi → genel blok
+  arayüzü → genel blok katmanı → sürücü) ile ham arayüz; genel arayüzün SCSI'nin zengin hata bilgisini
+  kaybedip EIO'ya indirmesi; Linux çekirdek kodunun **%70'inden fazlasının** sürücü olması [C01] ve
+  sürücülerin çekirdek çökmelerinin başlıca kaynağı olması [S03].
+- **OSTEP Chapter 41, Locality and The Fast File System** (`file-ffs.pdf`). Doğrulanan birebir içerik: eski
+  UNIX dosya sisteminin diski rastgele erişimli bellek gibi kullanması ve disk bant genişliğinin yalnızca
+  **%2'sini** verebilmesi; veri bloklarının inode'dan uzağa düşmesi; boş listenin zamanla parçalanması ve
+  A/B/C/D → E örneğiyle mantıksal olarak ardışık bir dosyanın diske dağılması; 512 baytlık bloğun küçüklüğü;
+  FFS'in arayüzü değiştirmeden iç gerçekleştirimi değiştirmesi ve diski **silindir gruplarına** bölmesi.
+
+### Makale 35 için akademik kaynaklar
+
+- **OSTEP Chapter 55, Access Control** (Peter Reiher; `security-access.pdf`). Doğrulanan birebir içerik:
+  **özne / nesne / erişim kipi** üçlüsü ve kararın adının **yetkilendirme** olması; **referans monitörü** ve
+  **tam aracılık** ilkesiyle maliyet çatışması; sanallaştırmanın denetimi ucuzlatması ("A process is allowed
+  to access its virtual memory freely, with no special operating system access control check at the moment
+  the process tries to use it") ve dipnotta bunun sayfa tablosu bitleriyle **donanımda** yapıldığının
+  söylenmesi; kulüp kapısındaki fedai (ACL) ile anahtar (yetenek) benzetmesi; ACL'lerin nesne başına tutulması
+  ve inode'un içine ya da yakınına konması gerektiği; **Bell Labs'in dosya başına ancak dokuz bit
+  ayırabilmesi** ve üç erişim kipi + üç özne grubu (sahip, grup, diğerleri — üçüncüsü tümleyen olduğu için bit
+  istemez) sıkıştırmasının bu kısıttan doğması, kazancın hem yer hem de "no extra seeks and reads" olması;
+  ACL'lerin ve yeteneklerin karşılaştırılması (nesneye kimin erişebileceği ACL'de kolay; bir öznenin neye
+  erişebileceği yetenekte kolay; **iptal** ACL'de kolay yetenekte zor; sınırlı ayrıcalıklı çocuk süreç
+  yetenekte kolay ACL'de zor; dağıtık sistemde ortak kimlik uzayı gereksinimi); yeteneğin yalnızca bir bit
+  dizisi olması, **taklit edilemez** olma zorunluluğu ve iki çözüm (çekirdeğin korumalı belleği, kriptografik
+  koruma); **isteğe bağlı ile zorunlu erişim denetimi** ayrımının ACL/yetenek seçiminden bağımsız olması;
+  Android kutusu (her uygulamaya ayrı kullanıcı kimliği, **izin etiketleri** yetenek benzeridir ve zorunlu
+  erişim denetimi biçimindedir); rol tabanlı erişim denetimi ve **ayrıcalık yükseltme** (`setuid`, `sudo`),
+  ayrıcalığın program bitince geri alınması; "Such attempts to escalate privilege are usually an attacker's
+  first order of business upon successful compromise of a system" ve **süper kullanıcı** olmanın saldırganın
+  nihai hedefi olması; Linux'ta `open()`'ın ACL'ye bakması, başarılıysa süreç denetim bloğuna bağlanan
+  **yetenek benzeri bir yapı** kurulması, sonraki `read`/`write`'ların ACL'ye dönmemesi ve dosya kapanınca
+  yapının silinmesi.
+- **OSTEP Chapter 53, Introduction to Operating System Security** (`security-intro.pdf`). Doğrulanan birebir
+  içerik: **gizlilik / bütünlük / kullanılabilirlik** hedefleri ve denetimli paylaşım vurgusu; Saltzer ve
+  Schroeder'in [SS75] **sekiz ilkesi** sırasıyla — düzenek ekonomisi, güvenli varsayılan, tam aracılık, açık
+  tasarım, ayrıcalık ayrımı, en az ayrıcalık, en az ortak düzenek ("each process gets its own page table in a
+  virtual memory system") ve kabul edilebilirlik; tam aracılığın başarım uğruna sık sık gevşetildiği dipnotu.
+- **OSTEP Chapter 54, Authentication** (`security-authentication.pdf`). Doğrulanan birebir içerik:
+  parolaların kriptografik hash olarak saklanması; çalınmış parola dosyasına karşı sözlüğün bir kez
+  hash'lenip dizge karşılaştırmasıyla kırılabilmesi; çarenin **tuz** olması (32 ya da 64 bitlik rastgele sayı
+  parolaya eklenir, birlikte hash'lenir ve tuz dosyada hash'in yanında saklanır), 32 bitlik tuzda her sözcük
+  için **2³²** ayrı çeviri gerekmesi ve ön hesaplamanın anlamsızlaşması, kavramın Morris ve Thompson'a [MT79]
+  atfedilmesi; UNIX giriş sürecinin beş adımı (ayrıcalıklı kimlik, parolanın yankılanmaması, parola
+  dosyasından kullanıcı kimliği / grup / kabuk / ev dizini ile tuz ve hash, karşılaştırma, sonra çatallayıp
+  kimliği ayarlayarak kabuğu çalıştırma) ve başarısız girişte kullanıcı adının mı parolanın mı yanlış
+  olduğunun söylenmemesi.
+- **Silberschatz, Chapter 16 Security ve Chapter 17 Protection** — alt bölüm adları §13'teki resmî içindekiler
+  PDF'inden doğrulanmıştır (HANDOFF'taki tam liste). Makale 35 bu bölümlere yalnızca **kapsam eşlemesi**
+  düzeyinde atıf yapar; içerik OSTEP'ten alınmıştır. **Koruma halkaları** yalnızca 17.3'ün doğrulanmış alt
+  bölüm **adı** olarak anılmıştır, içeriği okunmamıştır ve makale de böyle söyler.
+
+### Makale 36 için akademik kaynaklar
+
+- **MIT 6.042J *Mathematics for Computer Science* (Lehman, Leighton, Meyer; Bahar 2015 baskısı)**, bu run'da
+  yeniden indirildi (OCW doğrudan bağlantısı §7'de kayıtlı). İçindekiler tablosundan **birebir** okunan
+  bölüm ve alt bölüm adları: **16 Events and Probability Spaces** (16.1 Let's Make a Deal, 16.2 The Four Step
+  Method, 16.3 Strange Dice, 16.4 The Birthday Principle, 16.5 Set Theory and Probability),
+  **17 Conditional Probability** (17.1 Monty Hall Confusion, 17.2 Definition and Notation, 17.3 The Four-Step
+  Method for Conditional Probability, 17.4 Why Tree Diagrams Work, 17.5 The Law of Total Probability,
+  17.6 Simpson's Paradox, 17.7 Independence, 17.8 Mutual Independence), **18 Random Variables**
+  (18.1 Random Variable Examples, 18.2 Independence, 18.3 Distribution Functions, 18.4 Great Expectations,
+  18.5 Linearity of Expectation), **19 Deviation from the Mean** (19.1 Markov's Theorem, 19.2 Chebyshev's
+  Theorem, 19.3 Properties of Variance, 19.4 Estimation by Random Sampling, 19.5 Confidence versus
+  Probability, 19.6 Sums of Random Variables, 19.7 Really Great Expectations), **20 Random Walks**.
+  Doğrulanan birebir içerik: §16.4'ün doğum günü formülü `d(d−1)…(d−(n−1))/dⁿ`, `1 + x < eˣ` ile elde edilen
+  `e^(−n(n−1)/2d)` **üst sınırı**, 95 kişi / 365 gün için bu sınırın 1/200.000'den küçük çıkması ve
+  "more than 0.99999" saptaması, **Doğum Günü İlkesi** (`√(2d)` kişide olasılık ≈ `1 − 1/e ≈ 0,632`;
+  `d = 365` için `√730 ≈ 27` ve gerçek değerin ≈ 0,626 olması) ile hash tablosu bağlantısı ("birthday matching
+  is a good model for collisions between items randomly inserted into a hash table"; `n²`, `d`'nin küçük bir
+  kesrini aşınca çok sayıda çakışma beklenir); §17.3'ün üç maçlık seri problemi (ilk maç 1/2; önceki maç
+  kazanıldıysa 2/3, kaybedildiyse 1/3) ve dört adımın bu problem üzerinde işletilmesi; §18.4'ün beklenti
+  tanımı (Definition 18.4.1) ve **gösterge değişkeninin beklentisinin olayın olasılığına eşit olması**
+  (Lemma 18.4.2); §18.5'in doğrusallık teoremleri (18.5.1, 18.5.2, Corollary 18.5.3) ve birebir cümle:
+  **"The great thing about linearity of expectation is that no independence is required."**; §18.5.1'de iki
+  zarın toplamının beklentisinin 7 olması; §18.5.2'nin **şapka denetimi** problemi ve göstergeler bağımlı
+  olduğu hâlde beklenen sayının her `n` için **tam olarak 1** çıkması.
+- **CLRS, dördüncü baskı** — makale 36 bu kaynağa **bölüm düzeyinde** atıf yapar. Kullanılan bölüm adları
+  §12'de MIT Press'in resmî *Selected Solutions* belgesinden doğrulanmıştır: **5 Probabilistic Analysis and
+  Randomized Algorithms** ve **9 Medians and Order Statistics**. Alt bölüm başlıkları hâlâ doğrulanamadığı
+  için alt bölüm düzeyinde atıf yapılmamıştır.
+- **MIT 6.046J Bahar 2015, Lecture 6 (Randomization)** — §12'de doğrulanan lemma bu makalede yeniden
+  kullanıldı: iyi eksen tanımı (iki parça da `3n/4`'ten küçük), iyi eksen olasılığının 1/2'den büyük olması ve
+  **beklenen deneme sayısının en fazla 2** olması. **Seçim algoritmasının analizi bu lemmadan kendi
+  türetmemdir** (sıralamadan farklı olarak her turda tek parçaya inilir, bu yüzden `E[T(n)] ≤ E[T(3n/4)] +
+  2cn` ve geometrik seri açılımıyla `8cn`); makale bunu açıkça söyler. Ayrıca bu run'da **6.046J Lecture 2**
+  (Divide & Conquer: Convex Hull, Median Finding) indirilip tarandı ve **rastgeleleştirilmiş seçimi
+  içermediği** doğrulandı — ders yalnızca belirlenimci medyan bulmayı veriyor.
+
+### Bu run'da bağımsız hesaplanan ya da programla doğrulanan sayılar
+
+Bütün sayılar `artifacts/b11-research/dosya.py` ve `olasilik.py` ile üretildi (gitignore altındadır);
+makalelerde "kendi hesabım / kendi programım" diye işaretlendi.
+
+1. **inode azami dosya boyutu:** 4 KB blok + 4 baytlık adres → blok başına **1024** işaretçi; 12 doğrudan =
+   **48 KB**; + tekli dolaylı = **4.144 KB** (kaynakla birebir); + çiftli dolaylı = **4,003952 GB**
+   (kaynağın "just over 4 GB"ı); + üçlü dolaylı ≈ **4,0039 TB**.
+2. **1 GB'lık dosyanın meta veri maliyeti:** 262.144 veri bloğu için 256 tekli dolaylı + 1 çiftli dolaylı =
+   **257 blok = 1.028 KB**, veri blokları sayısının **%0,098**'i.
+3. **Disk G/Ç zamanı (MB = 2²⁰ kabulüyle):** Cheetah rastgele 4 KB → 4 + 2 + 0,03 = **6,03 ms**, **0,648 MB/s**;
+   ardışık 100 MB → **806 ms**, **124,07 MB/s**; oran **191,6 kat**. Barracuda rastgele → **13,20 ms**,
+   **0,296 MB/s**; ardışık → **965,55 ms**, **103,57 MB/s**; oran **350,1 kat**. Kaynağın 0,66 / 125 ve
+   0,31 / 105 değerleriyle ve "neredeyse 200" / "300'den fazla" ifadeleriyle uyumlu.
+4. **Erişim yolu muhasebesi:** `/foo/bar` açma **5 okuma**; her blok okuması 3 erişim → 12 KB okuma
+   **14 erişim**; her ayıran yazma 5 erişim ve yaratma 10 erişim → 12 KB'lık dosyayı yaratıp yazmak
+   **25 erişim**; 100 düzeyli bir yolda önbelleksiz açma **≥ 200 okuma**.
+5. **Bit eşlemi:** 4 KB'lık bir bit eşlemi **32.768** nesne izler; 1 TB disk / 4 KB blok → 268.435.456 blok →
+   **32 MB** bit eşlemi = diskin **%0,003**'ü (kapasiteden bağımsız sabit oran).
+6. **Bağlı ayırmada rastgele erişim:** 256 bloklu dosyada ortalama **128,5** okuma.
+7. **Erişim matrisi ile dokuz bitin yer karşılaştırması:** 1.000 kullanıcı × 1.000.000 dosya = **10⁹ hücre**;
+   hücre başına 3 bit → **357,6 MB**; dosya başına 9 bit → **1,0729 MB**; oran **333,3 kat**. Dokuz bitin
+   ifade edebildiği ayrı izin durumu **2⁹ = 512**.
+8. **Tuz:** 32 bitlik tuzla sözlükteki her sözcük için **4.294.967.296** ayrı hash; bir milyon sözcüklük
+   sözlük için **4,29 × 10¹⁵** işlem.
+9. **İzin bitlerinin sekizlik gösterimi (programla doğrulandı):** `600` → `rw-------`, `644` → `rw-r--r--`,
+   `755` → `rwxr-xr-x`.
+10. **Doğum günü (kesirli aritmetikle, yaklaştırmasız):** `n` = 10 → 0,116948; 22 → 0,475695; **23 → 0,507297**
+    (yarıyı geçen en küçük `n`); 27 → **0,626859** (ilkenin verdiği 0,6321'e karşı); 50 → 0,970374;
+    95 → çakışmama olasılığı **1,44 × 10⁻⁶ = 1/694.527**, kaynağın üst sınırı ise `e^(−95·94/730)` =
+    4,87 × 10⁻⁶ = 1/205.433 — yani kaynağın "1/200.000'den küçük" ifadesi bir **sınır**, hesapladığım ise
+    **tam değerdir**.
+11. **Bayes, nadir hastalık:** yaygınlık 1/1000, duyarlılık %99, özgüllük %99 → `P(hasta | pozitif)` =
+    **0,090164 = %9,02** (yüz binde 99 gerçek pozitif, **999** yanlış pozitif). Yaygınlık %1 → **%50,00**;
+    yaygınlık 1/1000 ve özgüllük %99,9 → **%49,77**.
+12. **Şapka problemi:** `n` = 3, 5 ve 10 için iki yüz biner koşuda ortalama sırasıyla 0,9990 / 0,9990 / 0,9981
+    (kuramsal **tam 1**).
+13. **Hash tablosunda beklenen zincir uzunluğu:** `α` = 1 → ölçülen 1,0135; `α` = 2 → **1,9715**;
+    `α` = 0,5 → 0,4965 (kuramsal `α`).
+14. **Rastgeleleştirilmiş seçim:** geometrik seri `Σ (3/4)ⁱ = 4` (kapalı biçim doğrulandı) → gevşek sınır
+    **8cn**. Benzetimde toplam incelenen öğe sayısı `n` = 100 → 2,76n; 1.000 → 2,99n; 10.000 → 2,98n;
+    100.000 → **3,25n**; ortalama tur sayısı sırasıyla 7,1 / 11,7 / 16,0 / 21,4.
+15. **Markov ile Chebyshev:** `n` = 100, `p` = 1/2 → `E[X]` = 50, `Var[X]` = 25, `σ` = 5.
+    `P(X ≥ 75)`: Markov **0,6667**, Chebyshev **0,0400**, binom toplamıyla gerçek değer **2,818 × 10⁻⁷**.
+16. **Üç maçlık seri:** `P(seri | 1. maç kazanıldı)` = **7/9 ≈ 0,7778**, `P(seri)` = **tam 1/2**;
+    dört yüz bin koşuluk benzetimde 0,7772 ve 0,4987.
+17. **Kupon toplayıcı (metinde kullanılmadı, kontrol amaçlı):** `n·H_n` = 29,29 / 518,74 / 2.364,65
+    (`n` = 10 / 100 / 365).
+18. **Dağılım kontrolleri:** Bernoulli(0,3) benzetim 0,2993; Geometrik(0,3) kuramsal 3,3333 / benzetim
+    3,3327; Binom(20; 0,3) kuramsal 6 / benzetim 6,0062.
+
+### Erişim ve araç notları
+
+- **OSTEP'in güvenlik bölümlerinin telif satırı ayrıdır:** `security-*.pdf` dosyalarının altbilgisi
+  "© 2008–23, ARPACI-DUSSEAU (OSTEP) / © 2019–23, REIHER (SECURITY)" der. Makale 35'in kaynakçası bu yüzden
+  bu bölümleri **Peter Reiher** adıyla anar.
+- **Coffman, Elphick & Shoshani (1971) bu run'da yeniden denenmedi**; Batch 10'un açık borcu olarak duruyor.
+- `ortusme.py` (metin–metin çakışma tarayıcısı) bu run'ın altı SVG'sinde **0 uyarı** verdi; buna karşılık
+  **gerçek render iki düzen hatası buldu** — makale 34'ün birinci şeklinde üçüncü panelin bağlantı etiketi
+  ikinci panelin notuna yapışıyordu ve ikinci şeklinde "1024 işaretçi" notu yanlış kutuya bitişik duruyordu.
+  İkisi de düzeltildi. **Ders: ikinci denetleyici çakışmayı arar, yakınlık ve yanlış gruplama hatalarını
+  yalnızca göz yakalar.**

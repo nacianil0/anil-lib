@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 362" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Yüz bin kişilik topluluk: yaygınlık binde bir, duyarlılık %99, özgüllük %99</text>
+
+  <rect x="15" y="86" width="140" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="85" y="108" font-size="13" text-anchor="middle" fill="var(--text)">100.000 kişi</text>
+
+  <line x1="155" y1="103" x2="191" y2="63" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="155" y1="103" x2="191" y2="143" stroke="var(--border)" stroke-width="1.4" />
+
+  <rect x="195" y="48" width="140" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="265" y="68" font-size="13" text-anchor="middle" fill="var(--text)">hasta: 100</text>
+  <rect x="195" y="128" width="140" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="265" y="148" font-size="13" text-anchor="middle" fill="var(--text)">sağlıklı: 99.900</text>
+
+  <line x1="335" y1="63" x2="371" y2="43" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="335" y1="63" x2="371" y2="87" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="335" y1="143" x2="371" y2="127" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="335" y1="143" x2="371" y2="171" stroke="var(--border)" stroke-width="1.4" />
+
+  <rect x="375" y="28" width="150" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="450" y="48" font-size="13" text-anchor="middle" fill="var(--text)">pozitif: 99</text>
+  <rect x="375" y="72" width="150" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="450" y="92" font-size="13" text-anchor="middle" fill="var(--text-faint)">negatif: 1</text>
+
+  <rect x="375" y="112" width="150" height="30" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="450" y="132" font-size="13" text-anchor="middle" fill="var(--text)">pozitif: 999</text>
+  <text x="535" y="132" font-size="13" fill="var(--cool)">yanlış pozitif</text>
+  <rect x="375" y="156" width="150" height="30" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="450" y="176" font-size="13" text-anchor="middle" fill="var(--text-faint)">negatif: 98.901</text>
+
+  <rect x="15" y="206" width="690" height="100" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="30" y="232" font-size="13" fill="var(--text)">pozitif çıkanlar: 99 + 999 = 1.098</text>
+  <text x="30" y="258" font-size="13" fill="var(--text)">P(hasta | pozitif) = 99 / 1.098 = %9,02</text>
+  <text x="30" y="284" font-size="13" fill="var(--text-muted)">aynı test, yaygınlık %1 olsaydı %50; özgüllük %99,9 olsaydı %49,8 verirdi</text>
+
+  <text x="15" y="330" font-size="13" fill="var(--text-muted)">Yanlış pozitifler gerçek pozitiflerden çok olduğu sürece pozitif bir test hasta</text>
+  <text x="15" y="350" font-size="13" fill="var(--text-muted)">olmak anlamına gelmez; belirleyici olan testin iyiliği değil, taban oranıdır.</text>
+</svg>

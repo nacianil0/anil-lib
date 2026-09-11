@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 356" role="img" aria-label="Dört satırlık bir tablo ve altında iki kutu. Üstte başlık: budama literatüründe 81 bildiri, kaç yönteme karşı karşılaştırılmış. Sütunlar karşılaştırma ve bildirilerin payıdır. Birinci satır: hiçbir başka budama yöntemine karşı, dörtte birinden fazlası. İkinci satır: en fazla bir yönteme karşı, yaklaşık yarısı. Üçüncü satır: üç ya da daha az yönteme karşı, neredeyse hepsi. Dördüncü satır vurguludur: sonraki hiçbir çalışmanın karşılaştırmadığı yöntemler, onlarca. Birinci kutuda ikinci bir ölçüm durur: hiçbir veri kümesi ve ağ çifti bildirilerin üçte birinde bile görünmüyor, dolayısıyla iki çalışmanın sayıları çoğu zaman yan yana bile konamıyor. İkinci kutuda tasarım kuralı durur: taban çizgisi seçmek, sonucun ne kadarının kazanç sayılacağına önceden karar vermektir. En altta bir kayıt: sayılar Blalock ve arkadaşlarının meta-çözümlemesinden alınmıştır ve budama literatürüne aittir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Budama literatüründe 81 bildiri: kaç yönteme karşı karşılaştırılmış?</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">karşılaştırma</text>
+  <text x="460" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">bildirilerin payı</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">hiçbir başka budama yöntemine karşı</text>
+  <text x="460" y="100" font-size="13" fill="var(--text)">dörtte birinden fazlası</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">en fazla bir yönteme karşı</text>
+  <text x="460" y="126" font-size="13" fill="var(--text)">yaklaşık yarısı</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">üç ya da daha az yönteme karşı</text>
+  <text x="460" y="152" font-size="13" fill="var(--text)">neredeyse hepsi</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">sonraki hiçbir çalışma karşılaştırmamış</text>
+  <text x="460" y="178" font-size="13" font-weight="bold" fill="var(--accent)">onlarca yöntem</text>
+
+  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
+
+  <rect x="20" y="204" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="228" font-size="13" fill="var(--text)">Hiçbir veri kümesi ve ağ çifti bildirilerin üçte birinde bile görünmüyor;</text>
+  <text x="34" y="248" font-size="13" fill="var(--text)">iki çalışmanın sayıları çoğu zaman yan yana bile konamıyor.</text>
+
+  <rect x="20" y="270" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="294" font-size="13" fill="var(--text)">Taban çizgisi seçmek, sonucun ne kadarının kazanç sayılacağına</text>
+  <text x="34" y="314" font-size="13" fill="var(--text)">önceden karar vermektir.</text>
+
+  <text x="20" y="344" font-size="13" fill="var(--text-faint)">Sayılar Blalock ve arkadaşlarının meta-çözümlemesinden; budama literatürüne aittir.</text>
+</svg>

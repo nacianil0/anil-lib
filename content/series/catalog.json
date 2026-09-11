@@ -1962,6 +1962,86 @@
       "path": "content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md",
       "relatedArticleIds": [],
       "classificationBatch": 23
+    },
+    {
+      "articleId": "article_5e078b0d-9ce4-4b43-a3bb-64d740c34c74",
+      "title": "Araştırma Sorusu ve Deney Tasarımı: Hipotez, Taban Çizgisi, Ablasyon",
+      "slug": "arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 99,
+      "summary": "98. makale bir çalışmayı okumayı kurmuştu; bu makale masanın öbür tarafına geçiyor ve okurken aradığımız kusurların doğduğu yeri konu ediniyor: deneyin tasarlandığı an. Sınanabilir bir hipotezin ne yasakladığını, taban çizgisi seçiminin bir sonuç değil bir tasarım kararı olduğunu — budama literatüründe 81 bildirinin dörtte biri hiçbir yönteme karşı karşılaştırılmamış —, arama bütçesinin deneyin bir parçası olduğunu — aynı iki modelden hangisinin kazandığı on denemenin altında ve üstünde değişiyor — ve ablasyonun neyi gösterip neyi göstermediğini kurar. Bir ölçüt de buradan çıkıyor: bir ablasyon farkı, aynı kurulumun koşular arası sapmasından büyük değilse hiçbir şey söylemez.",
+      "tags": [
+        "deney-tasarimi",
+        "hipotez",
+        "taban-cizgisi",
+        "ablasyon",
+        "arama-butcesi"
+      ],
+      "contentHash": "sha256:4bbf424014b4211818eba6a00e60b3d7602e8e28bd39549eefb1093217e5cdd0",
+      "path": "content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 24
+    },
+    {
+      "articleId": "article_16f62c83-18b8-47c7-8ea4-8dd458511c53",
+      "title": "Yüzüncü Adım: Sezgiden Bilime — Haritanın Sentezi",
+      "slug": "yuzuncu-adim-sezgiden-bilime-haritanin-sentezi",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 100,
+      "summary": "Bir ara durak: yeni kavram tanıtmadan, yalnızca yayımlanmış sayıları kullanarak buraya kadarki yolun haritasını çiziyor. Fazların bir konu listesi değil bir zincir olduğunu gösteriyor — her faz, bir öncekinin cevapsız bıraktığı ölçüm sorusunu devralıyor. Ve serinin baştan beri tek bir refleksi tekrarladığını, aynı sayıların altı ayrı yerde aynı soruyu doğurduğunu ortaya koyuyor: aynı hesap bütçesinin iki tahsisi 0,114 nat'lık kayıp farkı yaratıyor, doğru cevabı A şıkkına taşımak bir modeli 53,1'den 68,2'ye çıkarıyor, aynı ağ aynı sıfır eğitim hatasına yüzde 85,75 ve yüzde 9,78 test doğruluğuyla ulaşıyor. Cevap, hangi cetveli seçtiğine bağlı.",
+      "tags": [
+        "sentez",
+        "harita",
+        "geri-cagirma",
+        "olcut-secimi",
+        "arastirma-pratigi"
+      ],
+      "contentHash": "sha256:f920b7dfd4f7c33cd6abc1b68d4069c4f90888625262f8574a2097af8a4cedc9",
+      "path": "content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 24
+    },
+    {
+      "articleId": "article_59baffe4-3bdb-4336-857d-525fc54a65d5",
+      "title": "Ölçümün Disiplini: İstatistiksel Test ve Benchmark Bilimi",
+      "slug": "olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 101,
+      "summary": "16. ve 22. makalenin açıkça buraya bıraktığı borcu ödüyor: bir fark ne zaman anlamlı sayılır, kaç örnek gerekir, güven aralığı nasıl kurulur. Sıfır hipotezini ve p değerini kurup neyi söylemediğini gösteriyor; eşleştirmenin ayırt edilebilir farkı iki katına yakın daralttığını kendi hesabımızla veriyor; gürültünün asıl kaynağının tohum değil veri örneklemi olduğunu ve bütün kaynakları rastgeleleştirmenin 51 kat hesap tasarrufu sağladığını aktarıyor; yirmi rastgele bölmede aynı iki etiketleyicinin yalnızca birinde anlamlı ayrılabildiğini gösteriyor; ve 33. makalenin pass@k'sının yerine koyma ile hesaplandığında yanlı bir tahminci olduğunu — yüzde 67,23 yerine 59,36 — ölçüyor.",
+      "tags": [
+        "istatistiksel-anlamlilik",
+        "guven-araligi",
+        "oynaklik-kaynaklari",
+        "coklu-karsilastirma",
+        "tahminci-yanliligi"
+      ],
+      "contentHash": "sha256:7a998839ed8ce318ff2e90dd94a4f4cf2c5631bd0012d436065c4de2227f52bf",
+      "path": "content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 24
+    },
+    {
+      "articleId": "article_43559e94-6bf5-42d4-b725-ef03b1996111",
+      "title": "Tekrarlanabilirlik: Negatif Sonuç ve Açık Bilim",
+      "slug": "tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim",
+      "category": "foundations",
+      "level": "advanced",
+      "readingOrder": 102,
+      "summary": "Faz 11'i kapatıyor: bir sonucu yeniden elde etmek tek bir iş değil, üç ayrı iştir — aynı kodu çalıştırmak, yöntemi yeniden kurmak ve bulguyu başka bir düzenekte doğrulamak. Alanın iki terimi ters yönlerde kullandığını gösterip soruyu sözcükten kurtarıyor; 400 bildirinin hiçbirinin gerekli değişkenlerin tamamını belgelemediğini, 255 bildirinin 162'sinin kodsuz olarak yeniden üretilebildiğini ve bunu öngören şeyin mecra ya da yıl değil okunabilirlik, sözde kod, yazılmış hiperparametreler ve yazarın e-postaya cevap vermesi olduğunu aktarıyor. Ve en sert örnek: 17 alanda 329 bildiriyi etkileyen veri sızıntısı, düzeltildiğinde karmaşık modellerin onlarca yıllık lojistik bağlanıma üstünlüğünü tümden siliyor.",
+      "tags": [
+        "tekrarlanabilirlik",
+        "acik-bilim",
+        "veri-sizintisi",
+        "negatif-sonuc",
+        "belgeleme"
+      ],
+      "contentHash": "sha256:c982f4178e26ac1513a944486fd26f5f65c419c298af77e06b61ead7d7ccd6b3",
+      "path": "content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 24
     }
   ]
 }

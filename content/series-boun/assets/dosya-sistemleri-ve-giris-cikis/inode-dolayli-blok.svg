@@ -1,0 +1,48 @@
+<svg viewBox="0 0 720 390" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="boun-a34b-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">inode'un işaretçi alanları ve dolaylı blok zinciri</text>
+
+  <rect x="15" y="50" width="140" height="168" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="85" y="70" font-size="13" text-anchor="middle" fill="var(--text-muted)">inode</text>
+  <text x="27" y="91" font-size="13" fill="var(--text)">12 doğrudan</text>
+  <text x="27" y="139" font-size="13" fill="var(--text)">tekli dolaylı</text>
+  <text x="27" y="187" font-size="13" fill="var(--text)">çiftli dolaylı</text>
+  <text x="27" y="208" font-size="13" fill="var(--text-faint)">üçlü dolaylı</text>
+
+  <line x1="155" y1="86" x2="196" y2="86" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a34b-ok)" />
+  <rect x="200" y="72" width="96" height="28" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="248" y="90" font-size="13" text-anchor="middle" fill="var(--text)">veri bloğu</text>
+
+  <text x="262" y="114" font-size="13" text-anchor="middle" fill="var(--text-faint)">her biri 1024 işaretçi taşır</text>
+
+  <line x1="155" y1="134" x2="196" y2="134" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a34b-ok)" />
+  <rect x="200" y="120" width="124" height="28" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.4" />
+  <text x="262" y="138" font-size="13" text-anchor="middle" fill="var(--text)">dolaylı blok</text>
+  <line x1="324" y1="134" x2="355" y2="134" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a34b-ok)" />
+  <rect x="359" y="120" width="96" height="28" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="407" y="138" font-size="13" text-anchor="middle" fill="var(--text)">veri bloğu</text>
+
+  <line x1="155" y1="182" x2="196" y2="182" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a34b-ok)" />
+  <rect x="200" y="168" width="124" height="28" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.4" />
+  <text x="262" y="186" font-size="13" text-anchor="middle" fill="var(--text)">dolaylı blok</text>
+  <line x1="324" y1="182" x2="355" y2="182" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a34b-ok)" />
+  <rect x="359" y="168" width="124" height="28" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.4" />
+  <text x="421" y="186" font-size="13" text-anchor="middle" fill="var(--text)">dolaylı blok</text>
+  <line x1="483" y1="182" x2="514" y2="182" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a34b-ok)" />
+  <rect x="518" y="168" width="96" height="28" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="566" y="186" font-size="13" text-anchor="middle" fill="var(--text)">veri bloğu</text>
+
+  <rect x="15" y="240" width="690" height="94" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="30" y="262" font-size="13" fill="var(--text)">12 doğrudan × 4 KB = 48 KB</text>
+  <text x="30" y="284" font-size="13" fill="var(--text)">+ tekli dolaylı: 1024 blok daha → toplam 4.144 KB</text>
+  <text x="30" y="306" font-size="13" fill="var(--text)">+ çiftli dolaylı: 1024 × 1024 blok daha → toplam 4,004 GB</text>
+  <text x="30" y="328" font-size="13" fill="var(--text)">+ üçlü dolaylı: 1024 × 1024 × 1024 blok daha → toplam ≈ 4 TB</text>
+
+  <text x="15" y="358" font-size="13" fill="var(--text-muted)">Ağaç bilerek dengesizdir: ölçümlerde en yaygın dosya boyutu yaklaşık 2 KB'dır.</text>
+  <text x="15" y="378" font-size="13" fill="var(--text-muted)">1 GB'lık bir dosyada dolaylı blokların maliyeti 257 blok — veri hacminin yaklaşık %0,1'i.</text>
+</svg>

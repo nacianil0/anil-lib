@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Beş satırlık bir tablo ve altında iki kutu. Üstte başlık: standart bölmenin verdiği karar ile yirmi rastgele bölmenin verdiği karar. Sütunlar karşılaştırılan iki etiketleyici, Penn Treebank üzerinde yirmi bölmenin kaçında ikincinin anlamlı biçimde önde olduğu ve OntoNotes üzerinde aynı sayıdır. Birinci satır TnT ile Collins: 20 ve 20. İkinci satır Collins ile LAPOS: 20 ve 7. Üçüncü satır vurguludur, LAPOS ile Stanford: 1 ve 0. Dördüncü satır Stanford ile NLP4J: 19 ve 20. Beşinci satır NLP4J ile Flair: 20 ve 20. Birinci kutu vurguludur ve üçüncü satırın anlamını taşır: bu fark standart bölmede anlamlı çıkıyordu, rastgele bölmelerde ise yön bile dönüyor — Penn Treebank'ta iki, OntoNotes'ta on dört bölmede Stanford daha kötü. İkinci kutuda yazarların kendi kestirimi durur: bu alanda yirmi yılın tamamı, işaret hatasında yüzde 1,28'lik bir mutlak azalma üretmiş ve en iyi etiketleyici, altısının birleşimiyle kurulan kâhin topluluğun yüzde 1,16 gerisinde. En altta bir kayıt: sayılar Gorman ve Bedrick'in üçüncü tablosundan alınmıştır ve çoklu karşılaştırma için Bonferroni düzeltmesi uygulanmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Yirmi rastgele bölmenin kaçında ikinci sistem anlamlı biçimde önde?</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">karşılaştırma</text>
+  <text x="420" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">Penn Treebank</text>
+  <text x="580" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">OntoNotes</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">TnT ile Collins</text>
+  <text x="420" y="100" font-size="13" fill="var(--text)">20</text>
+  <text x="580" y="100" font-size="13" fill="var(--text)">20</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">Collins ile LAPOS</text>
+  <text x="420" y="126" font-size="13" fill="var(--text)">20</text>
+  <text x="580" y="126" font-size="13" fill="var(--text)">7</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">LAPOS ile Stanford</text>
+  <text x="420" y="152" font-size="13" font-weight="bold" fill="var(--accent)">1</text>
+  <text x="580" y="152" font-size="13" font-weight="bold" fill="var(--accent)">0</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">Stanford ile NLP4J</text>
+  <text x="420" y="178" font-size="13" fill="var(--text)">19</text>
+  <text x="580" y="178" font-size="13" fill="var(--text)">20</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">NLP4J ile Flair</text>
+  <text x="420" y="204" font-size="13" fill="var(--text)">20</text>
+  <text x="580" y="204" font-size="13" fill="var(--text)">20</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="230" width="680" height="56" fill="var(--surface)" stroke="var(--accent-soft)" />
+  <text x="34" y="254" font-size="13" fill="var(--accent)">Üçüncü satır standart bölmede anlamlı çıkıyordu. Rastgele bölmelerde</text>
+  <text x="34" y="274" font-size="13" fill="var(--accent)">yön bile dönüyor: ikisinde ve on dördünde Stanford daha kötü.</text>
+
+  <rect x="20" y="296" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="320" font-size="13" fill="var(--text)">Yazarların kestirimi: yirmi yılın tamamı işaret hatasında yüzde 1,28'lik</text>
+  <text x="34" y="340" font-size="13" fill="var(--text)">mutlak azalma üretmiş; en iyisi kâhin topluluğun yüzde 1,16 gerisinde.</text>
+
+  <text x="20" y="384" font-size="13" fill="var(--text-faint)">Sayılar Gorman ve Bedrick'in üçüncü tablosundan; Bonferroni düzeltmesi uygulandı.</text>
+</svg>

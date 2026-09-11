@@ -340,6 +340,18 @@ ode_modules`, sonra kopyayi sil.
 - **Ayni worktree'de paralel oturum varken `artifacts/` kullanilmamali.** Batch 23 butun calisma dosyalarini
   oturum scratchpad'inde tuttu, build ve dev sunucusunu izole kopyada calistirdi, `.claude/launch.json`'i
   okuyup kendi girdisini ekleyerek yazdi — cakisma yasanmadi.
+- **BOUN icerik denetleyicisinin sekil basliginda PARANTEZ OLAMAZ.** "Diyagram kendi paragrafinda tek basina
+  durmali" kuralinin regex'i `^!\[[^\]]*\]\(assets\/[^)]*\)$` kullanir; baslikta gecen bir `)` eslesmeyi
+  erken bitirir ve alakasiz bir hata mesaji verir. `![alt](assets/x.svg "Sekil 1 — ... P(a|b) ...")` reddedilir.
+- **BOUN/AI seri dokumanlari (`docs/seri*/`) CRLF'tir.** `head -c 2000 | grep $'\r'` yaniltici olabilir —
+  dosyanin basi LF gorunup govdesi CRLF olabiliyor. Python ile duzenlerken `io.open(..., newline='')` ile oku,
+  `\r\n` -> `\n` cevir, esle, yazarken geri cevir.
+- **`ortusme.py` tek basina yetmez.** Ikinci SVG denetleyicisi yalnizca ayni yatay banttaki metin-metin
+  cakismasini arar; "etiket yanlis kutuya bitisik duruyor" ve "baslik ile ilk satir cok yakin" gibi yakinlik /
+  yanlis gruplama hatalarini yakalamaz. Batch 11'de ortusme 0 uyari verdi, gercek render iki hata buldu.
+- **`schema.ts` `article_id` icin `article_<uuid>` kalibini zorunlu kilar.** Yer tutucu olarak sifirdan olusan
+  bir UUID sema acisindan gecerlidir ama kotu bir aliskanliktir; `crypto.randomUUID()` ile gercek id uret ve
+  mevcut katalogla cakismadigini dogrula.
 
 ## Do-Not-Repeat
 
@@ -546,6 +558,14 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-06] Sayfalı okuyucuda son sayfanın kaydırma konumunu sayfa ızgarasından hesaplama: `maxScrollLeft = (pageCount - 1) * pageStep` kabın gerçek `scrollWidth - clientWidth` sınırını aşıyordu (7897 vs 7404). Tarayıcı komutu sessizce kırpıyor, geri okunan sayfa indeksi bir eksik çıkıyor ve okuyucu son sayfaya hiç "oturmuyordu" (sayaç 8/9'da kalıyordu). Metrikler kabın gerçek sınırını kullanmalı; son sayfa kısa olduğunda indeks `scrollLeft >= maxScrollLeft - 1` ile verilmelidir.
 - [2026-09-06] Tabloyu kaba sığdırmak için `overflow-wrap: anywhere` kullanma: sayıları ve kısaltmaları ortadan böler. Dolgu, başlık sarması ve yazı boyutu tükendiyse yatay kaydırma dürüst çözümdür.
 
+- [2026-09-11] Turkce icerikli Python/Markdown bloklarini Bash heredoc'u (`<<'EOF'`) ile yazma: `s`, `c`, `I`
+  gibi karakterler mojibake oluyor ve `assert s.count(old) == 1` sessizce patliyor. Turkce iceren her betigi
+  `Write` araciyla dosyaya yaz; yalnizca kisa tek satirlik duzenlemelerde `python -c "..."` guvenli.
+- [2026-09-11] SVG'yi yalnizca denetleyicilerle onaylama. Batch 11'de repo denetleyicisi ve `ortusme.py`
+  temiz dedi; render'da makale 34'un ikinci seklinde "1024 isaretci" notu **yanlis kutuya** bitisikti ve
+  "inode" basligi ilk satira yapisikti. Her diyagram light + dark tek tek goz ile incelenmeli.
+- [2026-09-11] `netstat -ano | grep ":<port>"` ciktisindan PID okurken TIME_WAIT satirlarina aldanma; onlarin
+  PID'i 0'dir. LISTENING satirini filtrele: `grep ":<port> .*LISTENING"`.
 
 ## Decision Log
 
@@ -726,3 +746,39 @@ mümkün değil.
   "Makale" kullanilamazdi cunku seri kendi birimlerine makale diyor; "calisma" sozcugu seri boyunca zaten
   bu anlamda kullaniliyordu, dolayisiyla yeni terim kurulmadi. Faz 11'in roadmap aciklamasi da guncellendi.
 
+- [2026-09-11] BOUN Batch 11, kategori karari: makale 36 `supporting-fundamentals` klasorune girdi. Sozluk
+  `schema.ts`'te, etiket `labels.ts`'te zaten tanimliydi; klasor acmak disinda **kod degismedi** ve `/boun`
+  girisinde "Destekleyici Temeller" grubu kendiliginden gorundu. Kalan makalelerin kategorisi belli oldugu
+  icin seride baska kategori karari kalmadi (37–39 `supporting-fundamentals`, 40–41 `interview-method`).
+- [2026-09-11] BOUN Batch 11, terim kararlari: *seek time* icin "arama" 11. makaleden beri *search* demek
+  oldugu icin **"iz degistirme suresi"**; *availability* icin "erisilebilirlik" 16'dan beri *reachability*
+  demek oldugu icin **"kullanilabilirlik"** secildi. Ikisi de metinde gerekcesiyle soylendi (SOZLESME §2).
+- [2026-09-11] BOUN Batch 11, kapsam duzeltmesi: makale 37'nin resmi dayanagi **CMPE244 *Computer
+  Organization***'dir; CMPE240'in adi *Digital Systems*'tir. Yol haritasi bunu "CMPE240/244 sinyali" diye
+  belirsiz birakiyordu; ARASTIRMA §16'da ikisinin de katalog tanimi birebir kayitli.
+
+- [2026-09-11] AI serisi Batch 24 (99-102, `BATCH=4+1`): **Faz 11 kapandi**, kategori sorusu yoktu (99-102
+  `foundations`, karar #219), level `advanced` kaldi. **101 bagalayici koordinati odendi ve vaat defterinde
+  acik numarali koordinat kalmadi**; 33/40'in dort batch'tir devreden pass@k + gorev ufku tekrari ile 93'un
+  numarasiz yanlilik/oynaklik isareti de 101'de tahsil edildi. Basliklar: #217 (99 "Baseline, Ablation" ->
+  "Taban Cizgisi, Ablasyon"), #218 (102'den gereksiz "Reproducibility" cikarildi). Kararlar #217-#224.
+  Ultracode acik olmasina ragmen workflow/subagent kullanilmadi (kullanici talimati).
+- **Ogrenilen (Batch 24) - bir koordinat odenirken en yakin yayimlanmis makalenin TAMAMI okunmali.** 71 zaten
+  standart hatayi, istatistiksel gucu, tohum gurultusunu ve merkezi limit uyarisini kurmustu; 101 bunlari
+  tekrarlamak yerine uzerine karar katmanini koydu (hipotez kurulumu, test secimi, eslestirme, oynaklik
+  kaynaklari, coklu karsilastirma, tahminci yanliligi). Ayni risk 106 <-> 89'da (cati cizgisi) ve 103 <-> 6/7'de.
+- **Ogrenilen (Batch 24) - terim defteri yazimdan ONCE taraninca iki cakisma onlendi.** "rastgele arama" 63'te
+  bambaska bir nesne icin kullanilmisti (istem uzayinda uyarlanir saldiri) -> 99'da acikca ayrildi; "onyukleme"
+  89'da "tahmini onyukleme" olarak geciyor -> bootstrap icin **kullanilmadi**, yerine "yerine koyarak yeniden
+  ornekleme" + 97'nin torbalamasina bag kuruldu.
+- **Ogrenilen (Batch 24) - sentez makalesinde eksik olan sey icerik degil tez.** 100'un ilk taslagi 1.169
+  kelimede kaldi; eklenen sey ozet cumleleri degil zincirin kendisi oldu (fatura / amacin yazilisi / disariya
+  baglanma omurgalari + terim cakismalari). Tez yazilinca kelime kendiliginden geldi (2.018).
+- **Do-Not-Repeat (2026-09-11) - OpenReview API artik 403.** Batch 23'te 429 verip 7 sn beklemeyle calisiyordu;
+  Batch 24'te hem `api.openreview.net` hem `api2.openreview.net` dogrudan 403. **Yeni OpenReview kimligi yazma;**
+  ICLR icin `proceedings.iclr.cc/paper_files/paper/<yil>` dizinini kullan. Calisan dizinler: papers.nips.cc,
+  proceedings.mlsys.org, proceedings.mlr.press, aclanthology.org, jmlr.org, ojs.aaai.org. PLOS tam metni
+  `journals.plos.org/plosone/article/file?id=<doi>&type=printable` ile iniyor.
+- **Ogrenilen (Batch 24) - Playwright kaplayicisina sayfanin kendi arka plan rengi verilmeli.** `#shotbox`
+  div'ine `getComputedStyle(document.body).backgroundColor` atanmazsa koyu temadaki sekiller beyaz zeminde
+  cikiyor ve inceleme yaniltiyor.

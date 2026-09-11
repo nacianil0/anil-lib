@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 452" role="img" aria-label="Dört bloklu bir liste ve altında iki kutu. Üstte başlık: aynı karşılaştırma, değişen tek şey arama bütçesi. Birinci blok duygu sınıflandırması: ondan az hiperparametre denemesinde lojistik bağlanım önde, bütçe büyüdükçe evrişimli ağ öne geçiyor. İkinci blok temsil seçimi: iki saatin altında yalnızca sabit vektörler, altı saat ile bir gün arasında dondurulmuş bağlamsal temsil, on gün dolayında ince ayarlı bağlamsal temsil. Üçüncü blok çıkarım kümesi: bildirilen puana ulaşmak için beklenen deneme sayısı n-gram taban çizgisinde 2, grafik tabanlı modelde 20. Dördüncü blok vurguludur, okuduğunu anlama: bildirilen eşleşme puanına ulaşmak için beklenen bütçe 55 deneme, yaklaşık 18 gün eğitim. Birinci kutuda çıkarım durur: hangi modelin daha iyi olduğu bütçenin fonksiyonudur, bütçe yazılmadan karşılaştırma tekrarlanamaz. İkinci kutuda bir sayım durur: rastgele seçilmiş elli EMNLP 2018 bildirisinin hiçbiri önerilen raporlama kalemlerinin tamamını vermiyor. En altta bir kayıt: bütün değerler Dodge ve arkadaşlarının kendi deneylerinden alınmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı karşılaştırma, değişen tek şey: arama bütçesi</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text)">duygu sınıflandırması</text>
+  <text x="210" y="70" font-size="13" fill="var(--text)">ondan az hiperparametre denemesinde lojistik bağlanım önde;</text>
+  <text x="210" y="90" font-size="13" fill="var(--text)">bütçe büyüdükçe evrişimli ağ öne geçiyor</text>
+
+  <text x="24" y="122" font-size="13" font-weight="bold" fill="var(--text)">temsil seçimi</text>
+  <text x="210" y="122" font-size="13" fill="var(--text)">iki saatin altında: yalnızca sabit vektörler;</text>
+  <text x="210" y="142" font-size="13" fill="var(--text)">altı saat ile bir gün arasında: dondurulmuş bağlamsal temsil;</text>
+  <text x="210" y="162" font-size="13" fill="var(--text)">on gün dolayında: ince ayarlı bağlamsal temsil</text>
+
+  <text x="24" y="194" font-size="13" font-weight="bold" fill="var(--text)">çıkarım kümesi</text>
+  <text x="210" y="194" font-size="13" fill="var(--text-muted)">bildirilen puana ulaşmak için beklenen deneme sayısı:</text>
+  <text x="210" y="214" font-size="13" fill="var(--text)">n-gram taban çizgisinde 2, grafik tabanlı modelde 20</text>
+
+  <text x="24" y="246" font-size="13" font-weight="bold" fill="var(--accent)">okuduğunu anlama</text>
+  <text x="210" y="246" font-size="13" fill="var(--text-muted)">bildirilen eşleşme puanına ulaşmak için beklenen bütçe:</text>
+  <text x="210" y="266" font-size="13" fill="var(--accent)">55 deneme, yaklaşık 18 gün eğitim</text>
+
+  <line x1="20" y1="286" x2="700" y2="286" stroke="var(--border)" />
+
+  <rect x="20" y="296" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="320" font-size="13" fill="var(--text)">Hangi modelin daha iyi olduğu bütçenin fonksiyonudur;</text>
+  <text x="34" y="340" font-size="13" fill="var(--text)">bütçe yazılmadan karşılaştırma tekrarlanamaz.</text>
+
+  <rect x="20" y="362" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="386" font-size="13" fill="var(--text)">Rastgele seçilmiş elli EMNLP 2018 bildirisinin hiçbiri,</text>
+  <text x="34" y="406" font-size="13" fill="var(--text)">önerilen raporlama kalemlerinin tamamını vermiyor.</text>
+
+  <text x="20" y="440" font-size="13" fill="var(--text-faint)">Bütün değerler Dodge ve arkadaşlarının kendi deneylerinden alındı.</text>
+</svg>

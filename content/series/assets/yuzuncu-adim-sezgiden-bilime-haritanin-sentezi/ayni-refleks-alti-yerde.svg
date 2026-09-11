@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-label="Altı bloklu bir liste; her blokta bir makale numarası, bir ölçüm satırı ve altında o ölçümün doğurduğu soru var. Birinci blok 9. makale: aynı bütçe, iki tahsis; kayıp farkı token başına 0,114 nat; soru, hangi eğrinin ölçülüp hangisinin uydurulduğu. İkinci blok 71. makale: doğru cevabı A şıkkına taşımak 53,1'den 68,2'ye çıkarıyor; soru, puanın hangi kısmının düzeneğe ait olduğu. Üçüncü blok 33. makale: tek deneme olasılığı 0,1 iken on denemede kapsama 0,651, olasılık 0,001 iken yüz denemede 0,095; soru, aynı bütçenin hangi zorlukta ne kazandırdığı. Dördüncü blok 40. makale: yüzde 50 görev ufku 2 saniyeden 110 dakikaya, ikiye katlanma 207 gün; soru, hangi güvenilirlik çıtasının seçildiği. Beşinci blok 96. makale: aynı ağ, sıfır eğitim hatası, test doğruluğu bir yanda yüzde 85,75 öbür yanda yüzde 9,78; soru, sıfır eğitim hatasının neyin kanıtı olduğu. Altıncı blok vurguludur, 98. makale: aynı bildiriler iki komitede, kabul edilenlerin yarısı reddedilirdi; soru, seçicilik arttıkça ne olduğu. En altta bir kayıt: bütün sayılar ilgili makalelerde yayımlanmış hâlleriyle alınmıştır ve burada yeniden ölçülmemiştir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı refleks, altı ayrı yerde</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text)">9. makale</text>
+  <text x="150" y="70" font-size="13" fill="var(--text)">aynı bütçe, iki tahsis: kayıp farkı token başına 0,114 nat</text>
+  <text x="150" y="90" font-size="13" fill="var(--text-muted)">hangi eğri ölçüldü, hangisi uyduruldu?</text>
+
+  <text x="24" y="118" font-size="13" font-weight="bold" fill="var(--text)">71. makale</text>
+  <text x="150" y="118" font-size="13" fill="var(--text)">doğru cevabı A şıkkına taşımak: 53,1 → 68,2</text>
+  <text x="150" y="138" font-size="13" fill="var(--text-muted)">puanın hangi kısmı düzeneğe ait?</text>
+
+  <text x="24" y="166" font-size="13" font-weight="bold" fill="var(--text)">33. makale</text>
+  <text x="150" y="166" font-size="13" fill="var(--text)">tek deneme 0,1 → on denemede kapsama 0,651; 0,001 → yüz denemede 0,095</text>
+  <text x="150" y="186" font-size="13" fill="var(--text-muted)">aynı bütçe hangi zorlukta ne kazandırıyor?</text>
+
+  <text x="24" y="214" font-size="13" font-weight="bold" fill="var(--text)">40. makale</text>
+  <text x="150" y="214" font-size="13" fill="var(--text)">yüzde 50 görev ufku 2 saniyeden 110 dakikaya; katlanma 207 gün</text>
+  <text x="150" y="234" font-size="13" fill="var(--text-muted)">hangi güvenilirlik çıtası seçildi?</text>
+
+  <text x="24" y="262" font-size="13" font-weight="bold" fill="var(--text)">96. makale</text>
+  <text x="150" y="262" font-size="13" fill="var(--text)">aynı ağ, sıfır eğitim hatası: test yüzde 85,75 ↔ yüzde 9,78</text>
+  <text x="150" y="282" font-size="13" fill="var(--text-muted)">sıfır eğitim hatası neyin kanıtı?</text>
+
+  <text x="24" y="310" font-size="13" font-weight="bold" fill="var(--accent)">98. makale</text>
+  <text x="150" y="310" font-size="13" font-weight="bold" fill="var(--accent)">aynı bildiriler iki komitede: kabul edilenlerin yarısı reddedilirdi</text>
+  <text x="150" y="330" font-size="13" fill="var(--accent)">seçicilik arttıkça ne oluyor?</text>
+
+  <line x1="20" y1="346" x2="700" y2="346" stroke="var(--border)" />
+  <text x="20" y="374" font-size="13" fill="var(--text-faint)">Bütün sayılar ilgili makalelerde yayımlanmış hâlleriyle alındı; yeniden ölçülmedi.</text>
+</svg>

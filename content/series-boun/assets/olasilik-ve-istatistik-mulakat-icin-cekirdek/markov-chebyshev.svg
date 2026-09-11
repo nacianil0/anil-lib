@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text-muted)">Aynı olasılık için üç cevap, logaritmik ölçekte</text>
+  <text x="15" y="46" font-size="13" fill="var(--text)">X = 100 adil para atışında tura sayısı; E[X] = 50, σ = 5; sorulan: P(X ≥ 75)</text>
+
+  <text x="73" y="90" font-size="13" text-anchor="middle" fill="var(--text)">Markov ≤ 0,667</text>
+  <line x1="73" y1="96" x2="73" y2="120" stroke="var(--accent)" stroke-width="1.6" />
+  <circle cx="73" cy="120" r="4.5" fill="var(--accent)" />
+
+  <text x="165" y="66" font-size="13" text-anchor="middle" fill="var(--text)">Chebyshev ≤ 0,04</text>
+  <line x1="165" y1="72" x2="165" y2="120" stroke="var(--accent)" stroke-width="1.6" />
+  <circle cx="165" cy="120" r="4.5" fill="var(--accent)" />
+
+  <text x="552" y="90" font-size="13" text-anchor="middle" fill="var(--text)">gerçek: 2,8 × 10⁻⁷</text>
+  <line x1="552" y1="96" x2="552" y2="120" stroke="var(--cool)" stroke-width="1.6" />
+  <circle cx="552" cy="120" r="4.5" fill="var(--cool)" />
+
+  <line x1="60" y1="120" x2="660" y2="120" stroke="var(--border)" stroke-width="1.6" />
+  <line x1="60" y1="120" x2="60" y2="130" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="210" y1="120" x2="210" y2="130" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="360" y1="120" x2="360" y2="130" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="510" y1="120" x2="510" y2="130" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="660" y1="120" x2="660" y2="130" stroke="var(--border)" stroke-width="1.3" />
+  <text x="60" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">1</text>
+  <text x="210" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">10⁻²</text>
+  <text x="360" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">10⁻⁴</text>
+  <text x="510" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">10⁻⁶</text>
+  <text x="660" y="146" font-size="13" text-anchor="middle" fill="var(--text-faint)">10⁻⁸</text>
+  <text x="60" y="166" font-size="13" fill="var(--text-faint)">sola doğru büyük olasılık, sağa doğru küçük olasılık; her aralık yüz kat</text>
+
+  <rect x="15" y="180" width="690" height="90" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="30" y="204" font-size="13" fill="var(--text)">Markov: yalnızca X ≥ 0 olduğunu ve E[X] değerini varsayar</text>
+  <text x="30" y="228" font-size="13" fill="var(--text)">Chebyshev: ayrıca Var[X] değerini de bilir</text>
+  <text x="30" y="252" font-size="13" fill="var(--text)">gerçek değer: dağılımın tamamını bilir (binom)</text>
+
+  <text x="15" y="296" font-size="13" fill="var(--text-muted)">Ne kadar çok varsayarsan sınır o kadar sıkı olur — ama varsayımın yanlışsa sınır da yanlıştır.</text>
+</svg>

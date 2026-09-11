@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 456" role="img" aria-label="Beş satırlık bir tablo ve altında üç kutu. Üstte başlık: aynı bütçe, aynı görev, değişen tek bileşen; 65.536 adımda kayıp ve düşük olanın iyi olduğu yazılıdır. Sütunlar model, kayıp, sapma ve nottur. Birinci satır taban çizgisi olan özgün Transformer: kayıp 2,182, sapma artı eksi 0,005, 223 milyon parametre. İkinci satır vurguludur, GeLU aktivasyonu: 2,179, artı eksi 0,003, 223 milyon. Üçüncü satır geçitli doğrusal birim: 2,174, artı eksi 0,003, 223 milyon. Dördüncü satır ELU aktivasyonu: 2,270, artı eksi 0,007, 223 milyon. Beşinci satır uzmanlar karışımı mimarisi: 2,135, artı eksi 0,007, 1,1 milyar parametre. Birinci kutu vurguludur: evrensel Transformer standart ayarlarla 2,40, yirmi beş yapılandırma denendikten sonra en iyi hâli 2,265 ve taban çizgisine hâlâ yetişemiyor. İkinci kutuda okuma kuralı durur: GeLU ile taban çizgisi arasındaki 0,003'lük fark, taban çizgisinin kendi koşular arası sapması olan 0,005'ten küçüktür, dolayısıyla tek başına bir kazanç kanıtı değildir. Üçüncü kutuda ablasyonun görmediği şey durur: iki bileşeni ayrı ayrı çıkarmak, ikisini birden çıkarmanın etkisini vermez. En altta bir kayıt: değerler Narang ve arkadaşlarının tablosundan alınmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı bütçe, aynı görev, değişen tek bileşen (65.536 adımda kayıp; düşük olan iyidir)</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">model</text>
+  <text x="380" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kayıp</text>
+  <text x="470" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sapma</text>
+  <text x="560" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">not</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">özgün Transformer (taban çizgisi)</text>
+  <text x="380" y="100" font-size="13" fill="var(--text)">2,182</text>
+  <text x="470" y="100" font-size="13" fill="var(--text)">± 0,005</text>
+  <text x="560" y="100" font-size="13" fill="var(--text-muted)">223 milyon</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--accent)">GeLU aktivasyonu</text>
+  <text x="380" y="126" font-size="13" fill="var(--accent)">2,179</text>
+  <text x="470" y="126" font-size="13" fill="var(--accent)">± 0,003</text>
+  <text x="560" y="126" font-size="13" fill="var(--text-muted)">223 milyon</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">geçitli doğrusal birim</text>
+  <text x="380" y="152" font-size="13" fill="var(--text)">2,174</text>
+  <text x="470" y="152" font-size="13" fill="var(--text)">± 0,003</text>
+  <text x="560" y="152" font-size="13" fill="var(--text-muted)">223 milyon</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">ELU aktivasyonu</text>
+  <text x="380" y="178" font-size="13" fill="var(--text)">2,270</text>
+  <text x="470" y="178" font-size="13" fill="var(--text)">± 0,007</text>
+  <text x="560" y="178" font-size="13" fill="var(--text-muted)">223 milyon</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">uzmanlar karışımı mimarisi</text>
+  <text x="380" y="204" font-size="13" fill="var(--text)">2,135</text>
+  <text x="470" y="204" font-size="13" fill="var(--text)">± 0,007</text>
+  <text x="560" y="204" font-size="13" fill="var(--text-muted)">1,1 milyar</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="230" width="680" height="56" fill="var(--surface)" stroke="var(--accent-soft)" />
+  <text x="34" y="254" font-size="13" fill="var(--accent)">Evrensel Transformer standart ayarlarla 2,40; yirmi beş yapılandırma</text>
+  <text x="34" y="274" font-size="13" fill="var(--accent)">denendikten sonra en iyi hâli 2,265 — taban çizgisine hâlâ yetişemiyor.</text>
+
+  <rect x="20" y="296" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="320" font-size="13" fill="var(--text)">GeLU ile taban çizgisi arasındaki 0,003'lük fark, taban çizgisinin kendi</text>
+  <text x="34" y="340" font-size="13" fill="var(--text)">koşular arası sapmasından (0,005) küçüktür: tek başına kazanç kanıtı değil.</text>
+
+  <rect x="20" y="362" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="386" font-size="13" fill="var(--text)">Ablasyon etkileşimi görmez: iki bileşeni ayrı ayrı çıkarmak, ikisini</text>
+  <text x="34" y="406" font-size="13" fill="var(--text)">birden çıkarmanın etkisini vermez.</text>
+
+  <text x="20" y="440" font-size="13" fill="var(--text-faint)">Değerler Narang ve arkadaşlarının tablosundan alındı.</text>
+</svg>

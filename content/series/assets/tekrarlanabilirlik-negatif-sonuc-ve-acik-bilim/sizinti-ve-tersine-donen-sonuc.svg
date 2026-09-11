@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-label="Dört bloklu bir liste ve altında iki kutu. Üstte başlık: iç savaş öngörüsü literatüründe dört çalışma ve sızıntının biçimi. Birinci blok, eksik değer tamamlama: eğitim ve test verisindeki eksikler birlikte tamamlanıyor ve test verisinin bilgisi eğitime karışıyor. İkinci blok, hazır kümenin yeniden kullanımı: aynı biçimde hazırlanmış hazır veri kümesi olduğu gibi yeniden kullanılıyor. Üçüncü blok, üçüncü kullanım: aynı hatalı veri kümesi bir kez daha devralınıyor. Dördüncü blok vurguludur, hedefin vekili: hedef değişkenin yerine geçen değişkenler öngörücü sayılıyor ve sonuç neredeyse kusursuz doğruluk oluyor. Birinci kutuda genel sayım durur: 17 alanda toplam 329 bildiriyi etkileyen sızıntı vakası ve sekiz ayrı sızıntı türü. İkinci kutuda bu literatürün sonucu durur: karmaşık modellerin lojistik bağlanımı geçtiğini iddia eden çalışmaların hepsi yeniden üretilemiyor ve düzeltilince üstünlük kalmıyor. En altta bir kayıt: vakalar Kapoor ile Narayanan'ın çalışmasından alınmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">İç savaş öngörüsü literatüründe dört çalışma ve sızıntının biçimi</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text)">eksik değer tamamlama</text>
+  <text x="40" y="90" font-size="13" fill="var(--text-muted)">eğitim ve test verisindeki eksikler birlikte tamamlanıyor; test verisinin bilgisi</text>
+  <text x="40" y="110" font-size="13" fill="var(--text-muted)">eğitime karışıyor</text>
+
+  <text x="24" y="142" font-size="13" font-weight="bold" fill="var(--text)">hazır kümenin yeniden kullanımı</text>
+  <text x="40" y="162" font-size="13" fill="var(--text-muted)">aynı biçimde hazırlanmış hazır veri kümesi olduğu gibi yeniden kullanılıyor</text>
+
+  <text x="24" y="194" font-size="13" font-weight="bold" fill="var(--text)">üçüncü kullanım</text>
+  <text x="40" y="214" font-size="13" fill="var(--text-muted)">aynı hatalı veri kümesi bir kez daha devralınıyor</text>
+
+  <text x="24" y="246" font-size="13" font-weight="bold" fill="var(--accent)">hedefin vekili</text>
+  <text x="40" y="266" font-size="13" fill="var(--accent)">hedef değişkenin yerine geçen değişkenler öngörücü sayılıyor; sonuç</text>
+  <text x="40" y="286" font-size="13" fill="var(--accent)">neredeyse kusursuz doğruluk</text>
+
+  <line x1="20" y1="302" x2="700" y2="302" stroke="var(--border)" />
+
+  <rect x="20" y="312" width="680" height="36" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="336" font-size="13" fill="var(--text)">17 alanda 329 bildiriyi etkileyen sızıntı vakası; sekiz ayrı sızıntı türü.</text>
+
+  <rect x="20" y="358" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="382" font-size="13" fill="var(--text)">Karmaşık modellerin lojistik bağlanımı geçtiğini iddia eden çalışmaların</text>
+  <text x="34" y="402" font-size="13" fill="var(--text)">hepsi yeniden üretilemiyor; düzeltilince üstünlük kalmıyor.</text>
+
+  <text x="20" y="444" font-size="13" fill="var(--text-faint)">Vakalar Kapoor ile Narayanan'ın çalışmasından alındı.</text>
+</svg>

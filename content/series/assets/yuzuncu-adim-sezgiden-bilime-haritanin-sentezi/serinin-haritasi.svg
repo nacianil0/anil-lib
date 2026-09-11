@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 368" role="img" aria-label="Dokuz satırlık üç sütunlu bir tablo. Üstte başlık: her faz, bir öncekinin cevapsız bıraktığı ölçüm sorusunu devralıyor. Sütunlar aralık, kurduğu ve bıraktığı sorudur. Birinci satır 1–10: modelin ne yaptığı; bıraktığı soru, ne kadar iyi yaptığının nasıl ölçüleceği. İkinci satır 11–20: ne istediğimizi söylemek; bıraktığı soru, söylediğimizin ölçüsünün ne olduğu. Üçüncü satır 21–30: pencereye ne koyduğumuz; bıraktığı soru, koyduğumuzun faturası. Dördüncü satır 31–40: hesabı çıkarıma kaydırmak; bıraktığı soru, hangi hesabın neye değdiği. Beşinci satır 41–60: dışarıya bağlanmak ve eylem; bıraktığı soru, güvenilirliğin nasıl ölçüleceği. Altıncı satır 61–80: amacın ve zararın yazılışı; bıraktığı soru, değerlendirmenin geçerli olup olmadığı. Yedinci satır 81–90: modaliteler ve verimlilik; bıraktığı soru, aynı faturanın enerji karşılığı. Sekizinci satır 91–97: sezginin biçimsel hâli; bıraktığı soru, hangi ölçüt üzerinden en iyi olduğu. Dokuzuncu satır vurguludur, 98'den beri: literatürün kendisi; okumak, tasarlamak, ölçmek. En altta bir kayıt: satırlar yayımlanmış makalelerin kendi bölümlerinden çıkarılmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Her faz, bir öncekinin cevapsız bıraktığı ölçüm sorusunu devralıyor</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">aralık</text>
+  <text x="160" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kurduğu</text>
+  <text x="430" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">bıraktığı soru</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">1–10</text>
+  <text x="160" y="100" font-size="13" fill="var(--text)">modelin ne yaptığı</text>
+  <text x="430" y="100" font-size="13" fill="var(--text-muted)">ne kadar iyi yaptığı nasıl ölçülür</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">11–20</text>
+  <text x="160" y="126" font-size="13" fill="var(--text)">ne istediğimizi söylemek</text>
+  <text x="430" y="126" font-size="13" fill="var(--text-muted)">söylediğimizin ölçüsü ne</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">21–30</text>
+  <text x="160" y="152" font-size="13" fill="var(--text)">pencereye ne koyduğumuz</text>
+  <text x="430" y="152" font-size="13" fill="var(--text-muted)">koyduğumuzun faturası ne</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">31–40</text>
+  <text x="160" y="178" font-size="13" fill="var(--text)">hesabı çıkarıma kaydırmak</text>
+  <text x="430" y="178" font-size="13" fill="var(--text-muted)">hangi hesap neye değer</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">41–60</text>
+  <text x="160" y="204" font-size="13" fill="var(--text)">dışarıya bağlanmak ve eylem</text>
+  <text x="430" y="204" font-size="13" fill="var(--text-muted)">güvenilirlik nasıl ölçülür</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">61–80</text>
+  <text x="160" y="230" font-size="13" fill="var(--text)">amacın ve zararın yazılışı</text>
+  <text x="430" y="230" font-size="13" fill="var(--text-muted)">değerlendirme geçerli mi</text>
+
+  <text x="24" y="256" font-size="13" fill="var(--text)">81–90</text>
+  <text x="160" y="256" font-size="13" fill="var(--text)">modaliteler ve verimlilik</text>
+  <text x="430" y="256" font-size="13" fill="var(--text-muted)">aynı faturanın enerji karşılığı</text>
+
+  <text x="24" y="282" font-size="13" fill="var(--text)">91–97</text>
+  <text x="160" y="282" font-size="13" fill="var(--text)">sezginin biçimsel hâli</text>
+  <text x="430" y="282" font-size="13" fill="var(--text-muted)">hangi ölçüt üzerinden en iyi</text>
+
+  <text x="24" y="308" font-size="13" font-weight="bold" fill="var(--accent)">98'den beri</text>
+  <text x="160" y="308" font-size="13" font-weight="bold" fill="var(--accent)">literatürün kendisi</text>
+  <text x="430" y="308" font-size="13" font-weight="bold" fill="var(--accent)">okumak, tasarlamak, ölçmek</text>
+
+  <line x1="20" y1="324" x2="700" y2="324" stroke="var(--border)" />
+  <text x="20" y="352" font-size="13" fill="var(--text-faint)">Satırlar yayımlanmış makalelerin kendi bölümlerinden çıkarıldı.</text>
+</svg>

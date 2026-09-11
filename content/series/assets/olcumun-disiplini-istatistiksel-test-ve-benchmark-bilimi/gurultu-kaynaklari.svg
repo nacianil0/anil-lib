@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 444" role="img" aria-label="Yedi satırlık bir tablo ve altında iki kutu. Üstte başlık: gürültü kaynakları, veri yeniden örneklemesinin oynaklığına göre. Sütunlar kaynak ve göreli büyüklüktür. Birinci satır vurguludur, veriyi yerine koyarak yeniden örneklemek: en büyük kaynak, ölçünün tabanı. İkinci satır hiperparametre araması: ortalamada ağırlık başlangıcı kadar. Üçüncü satır ağırlık başlangıcı: tabanın yarısından az. Dördüncü satır verinin görülme sırası: ağırlık başlangıcı kadar. Beşinci satır veri artırma: daha küçük. Altıncı satır seyreltme: daha küçük. Yedinci satır sayısal gürültü: en küçük. Birinci kutuda alanın alışkanlığı durur: yaygın pratik yalnızca ağırlık başlangıcını rastgeleleştirmektir, yani tablodaki en büyük kaynak sabit tutulur ve ölçülen oynaklık gerçeğin altında kalır. İkinci kutuda çalışmanın sezgiye aykırı bulgusu durur: bütün kaynakları rastgeleleştirmek, yanlı ve ucuz tahminciyi ideal tahminciye yaklaştırıyor ve bunu 51 kat daha az hesapla yapıyor. En altta bir kayıt: sıralama Bouthillier ve arkadaşlarının beş örnek olayındaki ölçümlerinden alınmıştır; göreli büyüklükler sözle verilmiştir, sayı olarak değil.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Gürültü kaynakları, veri yeniden örneklemesinin oynaklığına göre</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kaynak</text>
+  <text x="360" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">göreli büyüklük</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" font-weight="bold" fill="var(--accent)">veriyi yerine koyarak yeniden örneklemek</text>
+  <text x="360" y="100" font-size="13" font-weight="bold" fill="var(--accent)">en büyük kaynak; ölçünün tabanı</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">hiperparametre araması</text>
+  <text x="360" y="126" font-size="13" fill="var(--text)">ortalamada ağırlık başlangıcı kadar</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">ağırlık başlangıcı</text>
+  <text x="360" y="152" font-size="13" fill="var(--text)">tabanın yarısından az</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">verinin görülme sırası</text>
+  <text x="360" y="178" font-size="13" fill="var(--text)">ağırlık başlangıcı kadar</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">veri artırma</text>
+  <text x="360" y="204" font-size="13" fill="var(--text)">daha küçük</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">seyreltme</text>
+  <text x="360" y="230" font-size="13" fill="var(--text)">daha küçük</text>
+
+  <text x="24" y="256" font-size="13" fill="var(--text)">sayısal gürültü</text>
+  <text x="360" y="256" font-size="13" fill="var(--text)">en küçük</text>
+
+  <line x1="20" y1="272" x2="700" y2="272" stroke="var(--border)" />
+
+  <rect x="20" y="282" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="306" font-size="13" fill="var(--text)">Yaygın pratik yalnızca ağırlık başlangıcını rastgeleleştirir: en büyük</text>
+  <text x="34" y="326" font-size="13" fill="var(--text)">kaynak sabit kalır ve ölçülen oynaklık gerçeğin altında görünür.</text>
+
+  <rect x="20" y="348" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="372" font-size="13" fill="var(--text)">Bütün kaynakları rastgeleleştirmek, yanlı ve ucuz tahminciyi ideale</text>
+  <text x="34" y="392" font-size="13" fill="var(--text)">yaklaştırıyor — üstelik 51 kat daha az hesapla.</text>
+
+  <text x="20" y="428" font-size="13" fill="var(--text-faint)">Sıralama Bouthillier ve arkadaşlarının beş örnek olayından; büyüklükler sözle verildi.</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 432" role="img" aria-label="İki sütunlu bir liste ve altında iki kutu. Üstte başlık: yeniden üretimi ne öngörüyor, ne öngörmüyor. Sol sütunda öngören özellikler sıralıdır: metnin okunabilirliği, sözde kodun varlığı, hiperparametrelerin yazılmış olması, algoritmanın zorluğu, bildirinin kuram ile deney arasındaki ağırlığı, gereken hesap düzeyi ve yazarların e-postaya cevap vermesi. Sağ sütunda öngörmeyen özellikler sıralıdır: yayın yılı, ilk deneme yılı, mecra türü, ek bölümün varlığı, bildirinin göz korkutucu görünmesi, oyuncak örnek problem kullanılması ve kullanılan hesabın bildirilmiş olması. Birinci kutuda genel sonuç durur: 255 bildirinin 162'si, yani yüzde 63,5'i bağımsız olarak yeniden üretilebildi, 93'ü üretilemedi. İkinci kutu vurguludur ve bir sınırı taşır: küme düzeyinde hesap gerektiren hiçbir bildiri yeniden üretilemedi, oysa yalnızca bir grafik işlemcisi gerektirenlerin oranı ortalamanın üstünde. En altta bir kayıt: liste Raff'ın anlamlılık testi tablosundan alınmıştır ve yazarın kendi yeniden kurma denemelerine dayanır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Yeniden üretimi ne öngörüyor, ne öngörmüyor</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--accent)">öngörüyor</text>
+  <text x="380" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">öngörmüyor</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">metnin okunabilirliği</text>
+  <text x="380" y="100" font-size="13" fill="var(--text-muted)">yayın yılı</text>
+
+  <text x="24" y="124" font-size="13" fill="var(--text)">sözde kodun varlığı</text>
+  <text x="380" y="124" font-size="13" fill="var(--text-muted)">ilk deneme yılı</text>
+
+  <text x="24" y="148" font-size="13" fill="var(--text)">hiperparametrelerin yazılması</text>
+  <text x="380" y="148" font-size="13" fill="var(--text-muted)">mecra türü</text>
+
+  <text x="24" y="172" font-size="13" fill="var(--text)">algoritmanın zorluğu</text>
+  <text x="380" y="172" font-size="13" fill="var(--text-muted)">ek bölümün varlığı</text>
+
+  <text x="24" y="196" font-size="13" fill="var(--text)">kuram ile deney ağırlığı</text>
+  <text x="380" y="196" font-size="13" fill="var(--text-muted)">göz korkutucu görünmek</text>
+
+  <text x="24" y="220" font-size="13" fill="var(--text)">gereken hesap düzeyi</text>
+  <text x="380" y="220" font-size="13" fill="var(--text-muted)">oyuncak örnek problem</text>
+
+  <text x="24" y="244" font-size="13" fill="var(--text)">yazarların e-postaya cevap vermesi</text>
+  <text x="380" y="244" font-size="13" fill="var(--text-muted)">hesabın bildirilmiş olması</text>
+
+  <line x1="20" y1="260" x2="700" y2="260" stroke="var(--border)" />
+
+  <rect x="20" y="270" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="294" font-size="13" fill="var(--text)">255 bildirinin 162'si — yüzde 63,5'i — yazarın kodu okunmadan,</text>
+  <text x="34" y="314" font-size="13" fill="var(--text)">yalnızca metne bakılarak yeniden üretilebildi; 93'ü üretilemedi.</text>
+
+  <rect x="20" y="336" width="680" height="56" fill="var(--surface)" stroke="var(--accent-soft)" />
+  <text x="34" y="360" font-size="13" fill="var(--accent)">Küme düzeyinde hesap gerektiren hiçbir bildiri yeniden üretilemedi;</text>
+  <text x="34" y="380" font-size="13" fill="var(--accent)">yalnızca bir grafik işlemcisi isteyenlerin oranı ise ortalamanın üstünde.</text>
+
+  <text x="20" y="416" font-size="13" fill="var(--text-faint)">Liste Raff'ın anlamlılık tablosundan; yazarın kendi yeniden kurma denemelerine dayanır.</text>
+</svg>

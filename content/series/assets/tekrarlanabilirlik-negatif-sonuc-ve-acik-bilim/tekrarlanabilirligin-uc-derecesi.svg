@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 412" role="img" aria-label="Üç bloklu bir tablo ve altında iki kutu. Üstte başlık: bir sonucu yeniden elde etmenin üç derecesi. Sütun başlıkları derece, uygulama ve veridir; her derecenin altında ne gösterdiği ayrı bir satırda yazılıdır. Birinci blok deney tekrarlanabilir: uygulama aynı, veri aynı; altında kodun çalıştığını ve sayıların yazıldığı gibi çıktığını gösterdiği yazılıdır. İkinci blok veri tekrarlanabilir: uygulama başka, veri aynı; altında yöntemin yeniden kurulacak kadar iyi tarif edildiğini gösterdiği yazılıdır. Üçüncü blok vurguludur, yöntem tekrarlanabilir: uygulama başka, veri başka; altında bulgunun tek bir uygulamaya ya da tek bir kümeye bağlı olmadığını gösterdiği yazılıdır. Birinci kutuda ölçüm durur: taranan 400 bildirinin hiçbiri gerekli değişkenlerin tamamını belgelemiyor ve üç etkenin her biri için oran yüzde 20 ile 30 arasında. İkinci kutuda bir eğilim durur: derece yükseldikçe puan düşüyor, yani en çok belgeleme isteyen derece en az karşılanan derece. En altta bir kayıt: dereceler ve sayılar Gundersen ile Kjensmo'nun çalışmasından alınmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Bir sonucu yeniden elde etmenin üç derecesi</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">derece</text>
+  <text x="290" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">uygulama</text>
+  <text x="420" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">veri</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" font-weight="bold" fill="var(--text)">deney tekrarlanabilir</text>
+  <text x="290" y="100" font-size="13" fill="var(--text)">aynı</text>
+  <text x="420" y="100" font-size="13" fill="var(--text)">aynı</text>
+  <text x="40" y="120" font-size="13" fill="var(--text-muted)">kodun çalıştığını ve sayıların yazıldığı gibi çıktığını gösterir</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--text)">veri tekrarlanabilir</text>
+  <text x="290" y="152" font-size="13" fill="var(--text)">başka</text>
+  <text x="420" y="152" font-size="13" fill="var(--text)">aynı</text>
+  <text x="40" y="172" font-size="13" fill="var(--text-muted)">yöntemin yeniden kurulacak kadar iyi tarif edildiğini gösterir</text>
+
+  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--accent)">yöntem tekrarlanabilir</text>
+  <text x="290" y="204" font-size="13" font-weight="bold" fill="var(--accent)">başka</text>
+  <text x="420" y="204" font-size="13" font-weight="bold" fill="var(--accent)">başka</text>
+  <text x="40" y="224" font-size="13" fill="var(--accent)">bulgunun tek bir uygulamaya ya da tek bir kümeye bağlı olmadığını gösterir</text>
+
+  <line x1="20" y1="240" x2="700" y2="240" stroke="var(--border)" />
+
+  <rect x="20" y="250" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="274" font-size="13" fill="var(--text)">Taranan 400 bildirinin hiçbiri gerekli değişkenlerin tamamını belgelemiyor;</text>
+  <text x="34" y="294" font-size="13" fill="var(--text)">üç etkenin her biri için oran yüzde 20 ile 30 arasında.</text>
+
+  <rect x="20" y="316" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="340" font-size="13" fill="var(--text)">Derece yükseldikçe puan düşüyor: en çok belgeleme isteyen derece,</text>
+  <text x="34" y="360" font-size="13" fill="var(--text)">en az karşılanan derece.</text>
+
+  <text x="20" y="396" font-size="13" fill="var(--text-faint)">Dereceler ve sayılar Gundersen ile Kjensmo'nun çalışmasından alındı.</text>
+</svg>

@@ -74,13 +74,13 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 31. **Kilitlenme: Koşullar ve Stratejiler** — *yayında* · kilitlenmenin eşzamanlılık hatalarının en ünlüsü ama en sık görüleni olmadığı (105 hatanın 74'ü kilitlenme dışı; %97'si atomiklik ya da sıra ihlali), iki kilitli en küçük kilitlenmenin kaba kuvvetle taranması (ters sırada 19 durumun yalnızca 1'i kilitlenme, aynı sırada 16 durumun hiçbiri değil) ve buradan çıkan "kilitlenme kodun değil belirli bir izin özelliğidir" saptaması, Coffman'ın dört koşulu ve "biri sağlanmazsa kilitlenme olamaz" yönü, dört önleme tekniğinin her birinin bir koşulu hedeflemesi (kilit adresine göre sıralama, hazırlık kilidiyle hepsini birden alma, deneme kilidi ve livelock, kilitsiz veri yapıları), xv6'nın küresel kilit sırası ve dosya yaratmanın beş kilitlik zinciri ile ince taneli kilitlemenin sınırının kilitlenme olması, Dijkstra'nın bankacı algoritması (sermaye 100, borçlar 40 ve 20 güvenli; 41 ve 21 ile kasa 38'e düşünce güvensiz) ve güvenlik denetiminin azalan ölçüyle sonlanması, güvensiz durum ile kilitlenmiş durumun ayrımı, çizelgelemeyle kaçınmanın eşzamanlılık bedeli, kaynak atama grafında döngü tespitinin tek örnekli kaynaklarda kesin, çok örnekli kaynaklarda yalnızca gerekli koşul olması (kendi kurduğum örnekle doğrulandı), kilitlenme / açlık / livelock / öncelik tersine dönmesi tablosu.
 32. **Bellek Yönetimi: Adres Çevirisi ve Sayfalama** — *yayında* · adres uzayının bir yanılsama olması ve sanallaştırmanın üç hedefi (saydamlık, verimlilik, koruma), taban ve sınır yazmaçlarıyla devingen yeniden yerleştirme (128 → 32896; 3000 → 19384; 4400 → sınır dışı) ve MMU, iç parçalanmanın adres uzayının kullanılmayan ortasından doğması, bölütlemenin parçaları ayrı yerleştirmesi ve heap'te ofsete indirgeme inceliği (4200 − 4096 = 104 → 34920), segmentation fault teriminin kökeni, dış parçalanma ve seyrek heap sorunu, sayfalamanın sabit boyutla yerleştirme problemini yok etmesi, sanal adresin VPN ve ofsete bölünmesi (21 = 010101 → çerçeve 7 → 117) ve sayfa tablosunun bir doğrudan erişim dizisi olması, girdideki geçerlilik ve koruma bitleri, iki bedelin sayısallaşması (4MB tablo, 100 süreçte 400MB; her erişimde iki bellek erişimi), çok düzeyli tablonun lineer tabloyu ağaca çevirmesi (1024 bayt yerine 192 bayt) ve RISC-V Sv39'un üç düzeyi, TLB'nin yerelliğe dayanması (%70'ten %99,9'a) ve etkin maliyetin %3'e inmesi, bağlam anahtarında TLB'nin boşaltılması ile ASID, iş parçacığı geçişinin sayfa tablosunu değiştirmemesi.
 33. **Sanal Bellek: Talep Sayfalama ve Değiştirme** — *yayında* · adres uzayının belleğe sığdığı varsayımının kaldırılması ve takas alanı, bulunma bitiyle sayfa hatasının doğması ve bunun bir tuzak olması, "aslında adı ıska olmalıydı" saptaması, sayfa hatası işleyicisinin dört adımı ve disk beklerken sürecin engellenmiş durumda olması, sayfa hatasının neden donanımda değil yazılımda işlendiği, ölçütün önce tanımlanması (AMAT: %90 isabette 1 ms, %99,9'da 10,1 µs — yüz kat) ve küçük ıska oranının bile maliyeti ele geçirmesi, optimal ilkenin yalnızca karşılaştırma noktası olması, aynı erişim dizisinde optimal 6 / FIFO 4 / LRU 6 isabet, Belady anomalisi (FIFO 3 çerçevede 9, 4 çerçevede 10 ıska) ve LRU'nun kapsama özelliği, üç iş yükünün üç dersi (yerellik yoksa ilke fark etmez; seksen-yirmide LRU kazanır; döngüsel iş yükünde 49 çerçeveyle %0 isabet), kusursuz LRU'nun maliyeti ve kullanım bitiyle saat algoritması, kirli bit, talep sayfalama ile ön getirme, çırpınma, çalışma kümesi, kabul denetimi ve bellek yetersizliği katili.
-34. **Dosya Sistemleri ve Giriş/Çıkış** — dosya/dizin yapıları, ayırma yöntemleri, tamponlama; B-ağacı geri çağrımı (12).
-35. **Koruma, Güvenlik ve Linux Somutlaması** — erişim matrisi, yetenekler; kavramların Linux'taki karşılıkları; faz sentezi.
+34. **Dosya Sistemleri ve Giriş/Çıkış** — *yayında* · kalıcılığın üçlünün üçüncü ayağı olarak açılması ve diskin hareketli parçaları olması, dosyanın bayt dizisi + i-numarası ikilisi ve dizinin (ad, i-numarası) çiftlerinden oluşan özel bir dosya olması, dizinin bir fonksiyon olarak okunması ve sabit bağlantının bu fonksiyonun birebir olmaması demeye gelmesi (bağlantı sayacı, unlink adının kaynağı), T_G/Ç = iz değiştirme + dönme + aktarım ayrıştırması ve rastgele 4 KB okumanın 6,03 ms / 0,65 MB/s'ye karşı ardışık 100 MB okumanın 806 ms / 124 MB/s vermesi (192 kat; ikinci sürücüde 350 kat), buradan disk zamanlamasının en kısa iş önce kuralının disk hâli olması, SSTF'nin açlığı ile asansör (SCAN) ve SPTF, üç ayırma yönteminin aynı dosya üzerinde karşılaştırılması (bitişik: 1 okuma ama dış parçalanma; bağlı: 256 blokta ortalama 128,5 okuma ve FAT'in tabloyu belleğe taşıması; indeksli: en fazla 2 okuma), inode'un dengesiz ağacı ve dolaylı blok aritmetiği (48 KB → 4.144 KB → 4,004 GB → yaklaşık 4 TB) ile 1 GB'lık dosyada meta veri maliyetinin yüzde 0,1 olması, dengesizliğin gerekçesi olarak çoğu dosyanın küçük olması ölçümü, uzam tabanlı alternatif, dizin girdilerinin kayıt uzunluğu taşıması ile önek-serbest kodun aynı soruyu bedava çözmesi, XFS'in B-ağacı dizinleri (12'nin borcu), bit eşlemi ile boş liste ve 1 TB diskte bit eşleminin diskin yüzde 0,003'ü olması, ext2/ext3'ün önden ayırma sezgiseli ve FFS'in silindir grupları (eski UNIX dosya sistemi disk bant genişliğinin yüzde 2'sini veriyordu), erişim yolu muhasebesi (açma 5 okuma, 12 KB okuma 14 erişim, ayıran yazma 5 erişim, yaratma 10 erişim, yaratıp 12 KB yazma 25 erişim), birleşik sayfa önbelleği ve devingen bölüşüm, yazma tamponlamanın üç kazancı ile 5–30 saniyelik pencere ve dayanıklılık/başarım takası, tampon havuzunda kapsayıcı koşul ve tamamlanma kesmesinde atomik bırak-ve-uyu, giriş/çıkış tarafında durum/komut/veri yazmaçları, yoklama → kesme → DMA ve kesmenin her zaman iyi olmaması (livelock), aygıt sürücüsü ile genel blok katmanının arayüz/temsil ayrımı ve Linux çekirdek kodunun yüzde 70'inden fazlasının sürücü olması.
+35. **Koruma, Güvenlik ve Linux Somutlaması** — *yayında* · güvenlik sözcüğünün *safety*'den *security*'ye geçmesi ve koruma (iç düzenek) ile güvenliğin (dış tehdit modeli) ayrılması, gizlilik/bütünlük/kullanılabilirlik üçlüsü ve kilitlenme ile açlığın kasten üretildiğinde kullanılabilirlik ihlaline dönüşmesi, kullanıcı/çekirdek kipinin koruma alanına genelleşmesi, Saltzer-Schroeder'in sekiz ilkesi (en az ortak düzeneğin örneği süreç başına sayfa tablosudur) ve setuid ile ayrıcalık yükseltmenin hem zorunlu hem saldırganın ilk hedefi olması, tam aracılık ile maliyet çatışmasının sanallaştırmayla çözülmesi ve referans monitörü, erişim matrisinin bir bağıntı olması ve hak kümelerinin kafes kurması, matrisin 1000 kullanıcı × 1.000.000 dosyada bir milyar hücre / 357,6 MB etmesi ve bu yüzden hiç saklanmaması, sütun saklanırsa erişim denetim listesi satır saklanırsa yetenek listesi elde edilmesi ve dört eksende (kim erişebilir / neye erişebilir / iptal / kısıtlı ayrıcalıklı çocuk süreç) tam ters davranmaları, yeteneğin taklit edilemez olma zorunluluğu, UNIX'in dokuz bitinin depolama kıtlığından doğan bilinçli bir sıkıştırma olması (333 kat yer kazancı, 512 duruma düşen ifade gücü), chmod 600/644/755 okuması ve dizinlerde çalıştırma bitinin farklı anlamı, süper kullanıcının tek noktadan çöküş üretmesi, isteğe bağlı/zorunlu erişim denetimi ekseni ve Android'in izin etiketleri, Linux'ta open çağrısının erişim denetim listesine bakıp sonra yetenek benzeri bir yapı kurması ve read/write'ın listeye dönmemesi, tuzlanmış parola hash'i ve 32 bitlik tuzun ön hesaplamayı bitirmesi, monolitik çekirdekte bütün sürücülerin çekirdek ayrıcalığıyla çalışmasının düzenek ekonomisi ilkesini zorlaması, Faz D sentezi (sanallaştırma bir koruma düzeneğidir, eşzamanlılık bir güvenlik sözü üretir, kalıcılık koruma kararlarını diske yazar).
 
 ### Faz E — Destekleyici Temeller ve Mülakat Provası (36–41)
 
-36. **Olasılık ve İstatistik: Mülakat İçin Çekirdek** — koşullu olasılık, beklenen değer, temel dağılımlar; 24'ün beklenti analizinin zemini (CMPE343 sinyali).
-37. **Bilgisayar Organizasyonu: OS'nin Altındaki Makine** — bellek hiyerarşisi, önbellek, komut yürütme; OS kavramlarının donanım gerekçesi (CMPE240/244 sinyali).
+36. **Olasılık ve İstatistik: Mülakat İçin Çekirdek** — *yayında* · ortalama durumun bir dağılım varsayımı taşıdığı borcunun ödenmesi, dört adımlı yöntem (örneklem uzayı → olay → sonuç olasılıkları → olay olasılığı) ve eşit olasılıklı uzayda sayma problemine indirgenmesi, üç maçlık seri örneği (seriyi kazanma olasılığı 1/2, ilk maç kazanılmışsa 7/9), koşullu olasılığın tanımı ve paydanın sıfır olduğu yerde tanımsızlığı, toplam olasılık yasası, bağımsızlığın bir gözlem değil varsayım olması, nadir hastalık testinde pozitif çıkanın hasta olma olasılığının yüzde 9,02 çıkması ve taban oranının belirleyiciliği (yaygınlık yüzde 1 → yüzde 50; özgüllük yüzde 99,9 → yüzde 49,8), rastgele değişkenin bir fonksiyon olması, beklenen değer ve gösterge değişkeni, **beklentinin doğrusallığının bağımsızlık istememesi** ve şapka probleminde beklentinin her n için tam 1 çıkması, hash tablosunda beklenen zincir uzunluğunun yük faktörüne eşit olması (14'ün borcu), doğum günü ilkesi (n = 23'te 0,5073; kök(2d) yaklaşık 27 kişide 0,6269 ile 1 − 1/e karşılaştırması; 95 kişide tam değer 1/694.527), rastgeleleştirilmiş seçimin beklenti analizi (iyi eksen olasılığı en az 1/2 → beklenen deneme en fazla 2 → E[T(n)] ≤ 8cn = Θ(n); benzetimde yaklaşık 3n) — 24'ün devredilen borcu, Markov ile Chebyshev'in aynı soruya verdiği üç cevap (0,667 / 0,04 / 2,8 × 10⁻⁷) ve sınırın sıkılığının varsayımın fiyatı olması, dağılım tablosu (Bernoulli, binom, geometrik, düzgün, Poisson, üstel, normal), istatistik tarafında örneklem istatistiği, nokta ve aralık kestirimi ile **güvenin olasılık olmaması**.
+37. **Bilgisayar Organizasyonu: OS'nin Altındaki Makine** — bellek hiyerarşisi, önbellek, komut yürütme; OS kavramlarının donanım gerekçesi. **Resmî dayanak düzeltmesi (Batch 11):** asıl ders **CMPE244 *Computer Organization***'dır ve ders çıktıları arasında 'hiyerarşik bellek sistemleri' ile RISC-V assembly açıkça geçer; CMPE240'ın adı *Digital Systems*'tir ve yalnızca katalog tanımındaki 'computer organization, arithmetic logic, memory and control units' ifadesiyle ikincil sinyaldir (ARASTIRMA §16).
 38. **C ve Bellek: Sistem Programlama Penceresi** — pointer, yığın/heap, süreç bellek düzeni; OS kavramlarının koda inmesi (CMPE230 sinyali).
 39. **Veritabanları: İlişkisel Model, İndeks ve İşlem** — savunma düzeyinde: ilişkisel model, anahtarlar, indeks=B-ağacı (12'nin geri çağrımı), ACID.
 40. **Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü** — 60–90 saniyelik anlatım kalıpları; takip zinciri provası; "past academic record + research direction" konuşmasına hazırlık.
@@ -149,10 +149,15 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 32 ← 26 (adres uzayı bir sanallaştırmadır; tuzak ile kesme ayrımı, sayfa hatası bir tuzaktır), 27 (sürecin adres uzayı envanteri ve iş parçacığında sayfa tablosunun değişmemesi), 12 (ağaç yapılı çok düzeyli tablo ve blok/sayfa muhasebesi), 14 (doğrudan erişim dizisi: sayfa tablosu bir indis eşlemesidir)
 - 33 ← 32 (sayfa tablosu, TLB ve adres çevirisi), 22 (bellekleme ile tablolama takası: sakla ya da yeniden hesapla — kusursuz LRU saklar, saat algoritması yeniden üretir), 9 (ortalama durum ile en kötü durum; iş yükü varsayımı), 28 (geçmişe bakıp geleceği kestirme kalıbı ve ölçüt tanımlamadan karşılaştırma yapılamaması), 26 (sayfa hatası bir tuzaktır)
 
-**Batch 11 taslak satırları (Faz D'nin kalıcılık ve koruma kapanışı; batch büyüklüğü run'da çözülür):**
+**Batch 11 (yayımlanmış, artık bağlayıcı):**
 - 34 ← 33 (bellek bir önbellektir; dosya sistemi önbelleği aynı takasın disk hâlidir), 12 (disk tabanlı arama yapıları ve B-ağacı; blok muhasebesi), 10 (dizinin bitişik yerleşimi ile bağlı listenin işaretçi maliyeti → bitişik, bağlı ve indeksli ayırma), 30 (kapsayıcı koşul ve broadcast; tampon havuzu tahsisi), 21 (önek-serbest kod ve bit muhasebesi — dizin kayıtları)
 - 35 ← 26 (kullanıcı kipi / çekirdek kipi ve ayrıcalık düzeyi), 31 (güvenlik ile canlılığın ayrımı; "güvenlik" sözcüğünün iki anlamı 30'da uyarılmıştı), 5 (erişim matrisi bir bağıntıdır), 8 (Boolean sadeleştirme ve kafes yapısı — izin kümeleri), 34 (dosya izinleri somut örnektir)
 - 36 ← 6 (sayma: örneklem uzayı ve kombinatoryal olasılık), 9 (ortalama durumun dağılım varsayımı — burada ödenir), 24 (rastgeleleştirilmiş seçim ve paranoyak hızlı sıralamanın beklenti analizi; devredilen borç), 4 (özyinelemeli beklenti bağıntıları)
+
+**Batch 12 taslak satırları (Faz E'nin donanım ve sistem programlama bölümü; batch büyüklüğü run'da çözülür):**
+- 37 ← 9 (RAM modelinin "her erişim aynı fiyat" varsayımı burada bilinçli olarak terk edilir), 33 (bellek bir önbellektir ve AMAT formülü aynen geçerlidir), 32 (TLB bir önbellektir; adres çevirisi donanımdadır ve sayfa boyutu iki yönlü bir takastır), 34 (dış bellek modeli ve blok muhasebesi; disk hiyerarşinin en alt katıdır), 8 (Boolean sadeleştirme ve mantık devreleri), 27 (bağlam anahtarının çevrim cinsinden ucuzlamaması — Ousterhout gözlemi)
+- 38 ← 27 (süreç API'si: `fork()`, `exec()`, `wait()` somutlaması; devredilen borç), 32 (adres uzayı düzeni: kod, heap, yığın), 10 (dizi ile bağlı listenin işaretçi maliyeti C'de elle görünür olur), 33 (kopyalarken yazma; devredilen borç), 26 (sistem çağrısı ve kullanıcı kipi / çekirdek kipi geçişi)
+- 39 ← 12 (indeks bir B-ağacıdır; devredilen borç), 34 (dosya sistemi önbelleği, tampon havuzu ve dış sıralama), 31 (kilitlenme ve işlem yönetimi; güvensiz durum ile kilitlenmiş durum ayrımı), 30 (güvenlik ile canlılık özellikleri; yalıtım düzeyleri), 15 (kararlılık ve dış sıralama), 36 (seçicilik kestirimi ve maliyet tabanlı iyileştirme bir olasılık iddiasıdır)
 
 ## Kapsam kararları ve elenenler (gerekçeli)
 
@@ -186,6 +191,12 @@ sözlüğü değişmez (SOZLESME §5). Klasör adı `category` alanıyla birebir
 
 SOZLESME §5'teki öneri listesine `interview-method` eklendi: 1, 40 ve 41 diğer beş kategorinin
 hiçbirine düşmüyor ve sahte bir kategori ataması yapmak yerine sözlük genişletildi.
+
+**Kategori kullanım durumu (Batch 11 sonu).** Altı kategorinin **hepsi** artık kullanımdadır:
+`supporting-fundamentals` makale 36 ile devreye girdi ve klasör açmak dışında **kod değişikliği
+gerektirmedi** (sözlük `schema.ts`'te, etiket `labels.ts`'te zaten tanımlıydı). Kalan makalelerin kategorisi
+bu tablodan doğrudan okunur: 37–39 `supporting-fundamentals`, 40–41 `interview-method`. **Seride başka
+kategori kararı kalmamıştır.**
 
 ## Terim defteri
 
@@ -652,6 +663,97 @@ boyunca aynı kalır.
 | çırpınma | thrashing | 33 |
 | çalışma kümesi | working set | 33 |
 | kabul denetimi | admission control | 33 |
+| dosya | file | 34 |
+| dizin | directory | 34 |
+| inode numarası | inode number (i-number) | 34 |
+| meta veri | metadata | 34 |
+| sabit bağlantı | hard link | 34 |
+| bağlantı sayacı | link count | 34 |
+| süper blok | superblock | 34 |
+| bit eşlemi | bitmap | 34 |
+| boş liste | free list | 34 |
+| ayırma yöntemi | allocation method | 34 |
+| bitişik ayırma | contiguous allocation | 34 |
+| bağlı ayırma | linked allocation | 34 |
+| indeksli ayırma | indexed allocation | 34 |
+| dosya ayırma tablosu | file allocation table (FAT) | 34 |
+| dolaylı işaretçi / dolaylı blok | indirect pointer / indirect block | 34 |
+| çok düzeyli indeks | multi-level index | 34 |
+| uzam | extent | 34 |
+| iz değiştirme süresi (İngilizcesi *seek time*; "arama" bu seride 11'den beri *search* demektir) | seek time | 34 |
+| dönme gecikmesi | rotational delay | 34 |
+| aktarım süresi | transfer time | 34 |
+| disk zamanlaması | disk scheduling | 34 |
+| en kısa arama süresi önce | shortest-seek-time-first (SSTF) | 34 |
+| asansör algoritması | elevator algorithm (SCAN, C-SCAN) | 34 |
+| en kısa konumlanma süresi önce | shortest positioning time first (SPTF) | 34 |
+| silindir grubu | cylinder group | 34 |
+| hızlı dosya sistemi | Fast File System (FFS) | 34 |
+| birleşik sayfa önbelleği | unified page cache | 34 |
+| yazma tamponlama | write buffering | 34 |
+| dayanıklılık | durability | 34 |
+| yoklama | polling | 34 |
+| doğrudan bellek erişimi | direct memory access (DMA) | 34 |
+| kesme işleyicisi | interrupt handler | 34 |
+| aygıt sürücüsü | device driver | 34 |
+| genel blok katmanı | generic block layer | 34 |
+| koruma | protection | 35 |
+| güvenlik (bu makalede *security*; 30'daki "güvenlik özelliği" *safety*'dir) | security | 35 |
+| gizlilik | confidentiality | 35 |
+| bütünlük | integrity | 35 |
+| kullanılabilirlik ("erişilebilirlik" 16'dan beri *reachability* demektir) | availability | 35 |
+| tehdit modeli | threat model | 35 |
+| koruma alanı | protection domain | 35 |
+| düzenek ekonomisi | economy of mechanism | 35 |
+| güvenli varsayılan | fail-safe defaults | 35 |
+| tam aracılık | complete mediation | 35 |
+| en az ayrıcalık ilkesi | principle of least privilege | 35 |
+| referans monitörü | reference monitor | 35 |
+| özne / nesne | subject / object | 35 |
+| erişim matrisi | access matrix | 35 |
+| erişim denetim listesi | access control list (ACL) | 35 |
+| yetenek / yetenek listesi | capability / capability list | 35 |
+| iptal | revocation | 35 |
+| izin bitleri | permission bits | 35 |
+| setuid | setuid | 35 |
+| ayrıcalık yükseltme | privilege escalation | 35 |
+| süper kullanıcı | superuser (root) | 35 |
+| isteğe bağlı erişim denetimi | discretionary access control | 35 |
+| zorunlu erişim denetimi | mandatory access control | 35 |
+| kimlik doğrulama | authentication | 35 |
+| yetkilendirme | authorization | 35 |
+| tuz | salt | 35 |
+| dosya tanıtıcısı | file descriptor | 35 |
+| örneklem uzayı | sample space | 36 |
+| sonuç | outcome | 36 |
+| olay | event | 36 |
+| olasılık uzayı | probability space | 36 |
+| koşullu olasılık | conditional probability | 36 |
+| toplam olasılık yasası | law of total probability | 36 |
+| bağımsızlık | independence | 36 |
+| taban oranı | base rate | 36 |
+| rastgele değişken | random variable | 36 |
+| dağılım | distribution | 36 |
+| beklenen değer | expected value (expectation) | 36 |
+| gösterge rastgele değişkeni | indicator random variable | 36 |
+| beklentinin doğrusallığı | linearity of expectation | 36 |
+| varyans | variance | 36 |
+| standart sapma | standard deviation | 36 |
+| Markov eşitsizliği | Markov's inequality | 36 |
+| Chebyshev eşitsizliği | Chebyshev's inequality | 36 |
+| yoğunlaşma | concentration | 36 |
+| Bernoulli dağılımı | Bernoulli distribution | 36 |
+| binom dağılımı | binomial distribution | 36 |
+| geometrik dağılım | geometric distribution | 36 |
+| düzgün dağılım | uniform distribution | 36 |
+| Poisson dağılımı | Poisson distribution | 36 |
+| üstel dağılım | exponential distribution | 36 |
+| normal (Gauss) dağılım | normal (Gaussian) distribution | 36 |
+| örneklem | sample | 36 |
+| örneklem istatistiği | sample statistic | 36 |
+| nokta kestirimi / aralık kestirimi | point / interval estimation | 36 |
+| güven aralığı | confidence interval | 36 |
+| hipotez testi | hypothesis testing | 36 |
 
 ## Kavram-tekrar defteri
 
@@ -1043,3 +1145,56 @@ Batch 9 ile açılan yeni pinler ve ödenen borçlar:
   "sakla ya da yeniden hesapla" takası orada da geçerlidir.
 - **Güvenlik sözcüğünün iki anlamı (30)** → 35'te koruma ve güvenlik makalesi geldiğinde ayrım
   yeniden anılmalıdır: 30 ve 31'deki "güvenlik" *safety*'dir, 35'teki *security*'dir.
+
+Batch 11 ile açılan yeni pinler ve ödenen borçlar:
+
+- **Disk tabanlı arama yapıları ve ayırma yöntemleri (12)** → **34'te ödendi**: üç ayırma yöntemi aynı dosya
+  üzerinde karşılaştırıldı ve XFS'in dizinleri **B-ağacında** tutması, 12'nin "B-ağacı disk için tasarlanmıştır"
+  iddiasının gerçek kullanım yeri olarak gösterildi. Dış bellek modeli bir adım ileri götürüldü: bloklar
+  arasında da fark vardır, komşu bloklar ucuzdur.
+- **Dizi ile bağlı listenin takası (10)** → **34'te ödendi**: bitişik ayırma dizinin, bağlı ayırma bağlı
+  listenin disk ölçeğindeki hâlidir; FAT, işaretçileri veriden ayırıp belleğe taşıyarak rastgele erişimi geri
+  kazanır. **Doğrudan erişim dizisi (14)** aynı figürde indeksli ayırmanın inode'u olarak görünür.
+- **Bellek bir önbellektir (33)** → **34'te ödendi**: birleşik sayfa önbelleği aynı belleği hem sayfalar hem
+  disk blokları için kullanır; LRU tartışması olduğu gibi geçerlidir. Yazma tarafı simetrik değildir ve
+  **dayanıklılık/başarım takasını** doğurur.
+- **Kapsayıcı koşul ve broadcast (30)** → **34'te anıldı**: tampon havuzundan "herhangi bir boş tampon"
+  beklemek parametreli bir koşuldur. **Kayıp uyandırma (29)** de aynı paragrafta geri döndü: disk tamamlanma
+  kesmesi, kilidi bırakmakla uyumak atomik değilse uyandırmayı kaybeder.
+- **Önek-serbest kod ve bit muhasebesi (21)** → **34'te ödendi ama beklenenden farklı bir biçimde**: dizin
+  kaydı "nerede bitiyorum" sorusunu ayrı bir uzunluk alanı taşıyarak, Huffman kodu ise hiç alan taşımadan
+  çözer. Taslak satırındaki "dizin kayıtlarının bit muhasebesi" beklentisi bu yönde düzeltilmiştir.
+- **En kısa iş önce ve ölçüt disiplini (28)** → **34'te ödendi**: disk zamanlaması SJF'nin disk hâlidir, SSTF
+  açlık üretir, asansör onu kırar ve SPTF dönmeyi de hesaba katar; hangisinin kazandığı iz değiştirme ile
+  dönmenin göreli maliyetine bağlıdır. **İndeksli öncelik kuyruğu (23) 34'te kullanılmadı**; kesikli olay
+  benzetimi de girmedi — taslak satırındaki beklenti bu yönde düzeltilmiştir.
+- **Arayüz ↔ temsil ayrımı (10)** → **34'te en büyük ölçekte ödendi**: genel blok katmanı bütün aygıtlara aynı
+  "şu bloğu oku/yaz" arayüzünü verir ve bedeli SCSI'nin zengin hata bilgisinin kaybolmasıdır.
+- **İlke ile düzenek ayrımı (26)** → **35'te güvenlik hâliyle ödendi**: ilke "her erişimde denetle" (tam
+  aracılık), düzenek ise onu ucuza koşturan MMU'dur. Aynı makalede **monolitik çekirdek ile mikroçekirdek
+  takası (26)** güvenlik maliyetiyle geri döndü: çekirdek kodunun yüzde 70'i sürücüyse güvenilmesi gereken
+  kod çok büyüktür.
+- **Bağıntı ve kafes dili (5, 8)** → **35'te ödendi**: erişim matrisi bir matris değil özne-nesne-hak
+  üçlülerinden oluşan bir bağıntıdır ve hak kümeleri kapsama bağıntısıyla bir kafes kurar.
+- **Güvenlik sözcüğünün iki anlamı (30)** → **35'te ödendi**: *safety* ile *security* ayrımı açıkça yapıldı ve
+  kilitlenme/açlığın kasten üretildiğinde **kullanılabilirlik** ihlaline dönüştüğü söylendi. "Erişilebilirlik"
+  16'dan beri *reachability* olduğu için availability'ye **kullanılabilirlik** dendi.
+- **Öncelik tersine dönmesinin gerçek zamanlı hâli (29)** → **35'te açılmadı**. Gerçek zamanlı çizelgeleme bu
+  makalenin kapsamına girmedi; bunun yerine aynı pin güvenlik diline çevrildi (canlılık ihlali kasten
+  tetiklenirse kullanılabilirlik saldırısıdır). Kalan borç 41'in provasında sorulabilir.
+- **Ortalama durumun dağılım varsayımı (9)** → **36'da ödendi ve makalenin açılış cümlesi oldu**: hash
+  tablosunun beklenen zincir uzunluğu yük faktörüne eşittir ve tek varsayım düzgün, bağımsız dağılımdır.
+- **Doğum günü ilkesinin olasılık hâli (6)** → **36'da ödendi**: n = 23'te 0,5073, kök(2d) kişide yaklaşık
+  1 − 1/e; güvercin yuvası "kaçınılmaz" diyordu, olasılık "çok daha erken" diyor ve kaynak bu bağı hash
+  tablosuna kendisi kuruyor.
+- **Rastgeleleştirilmiş seçimin beklenti analizi (20, 24)** → **36'da ödendi**: iyi eksen olasılığı en az 1/2,
+  geometrik dağılımla beklenen deneme en fazla 2, E[T(n)] ≤ 8cn = Θ(n); benzetimde yaklaşık 3n ölçüldü.
+  Böylece **dallanma çarpanı takası dışındaki bütün 24 borçları kapandı**; kalan tek borç d-yollu heap'tir.
+- **Monte Carlo ile Las Vegas ayrımı (24)** → **36'da formalleşti**: Las Vegas'ta süre, Monte Carlo'da cevap
+  bir rastgele değişkendir; birincide beklenti ve yoğunlaşma, ikincide hata olasılığı sorulur.
+- **Beklenti yetmez: yoğunlaşma (36'da açılan yeni pin)** → Markov yalnızca beklentiyi, Chebyshev ayrıca
+  varyansı ister; aynı soruya 0,667 / 0,04 / 2,8 × 10⁻⁷ cevapları çıkar. 37'de bellek hiyerarşisinin ortalama
+  maliyet hesabında, 39'da seçicilik kestiriminde ve 41'in provasında geri çağrılabilir.
+- **Güven olasılık değildir (36'da açılan yeni pin)** → rastgele olan aralıktır, parametre değil; 40 ve 41'de
+  ölçüm dürüstlüğü tartışmasında kullanılabilir.
+- **Alt problem kısıtlama/genişletme tekniği (22)** → **36'da açılmadı**; borç 41'e devredildi.

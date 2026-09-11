@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Beş satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı güçle ayırt edilebilen en küçük fark, puan cinsinden. Sütunlar soru sayısı, eşleştirilmemiş ve eşleştirilmiştir. Birinci satır 100 soru: eşleştirilmemişte 18,16, eşleştirilmişte 8,76. İkinci satır 500 soru: 8,12 ve 3,95. Üçüncü satır 1.000 soru: 5,74 ve 2,80. Dördüncü satır 5.000 soru: 2,57 ve 1,25. Beşinci satır vurguludur, 14.042 soru: 1,53 ve 0,75. Birinci kutuda oran durur: eşleştirme, ayırt edilebilir farkı her küme boyunda yaklaşık 2,05 kat daraltıyor ve aynı kazanç için kümeyi dört katına çıkarmak gerekirdi. İkinci kutuda hesabın koşulları durur: doğruluk 0,70, iki modelin farklı cevap verdiği örneklerin oranı 0,10, anlamlılık eşiği 0,05 iki yönlü ve güç 0,80. En altta bir kayıt: bu tablo kendi hesabımızdır, ölçülmüş bir deney değildir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı güçle ayırt edilebilen en küçük fark (puan)</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">soru sayısı</text>
+  <text x="300" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">eşleştirilmemiş</text>
+  <text x="500" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">eşleştirilmiş</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">100</text>
+  <text x="300" y="100" font-size="13" fill="var(--text)">18,16</text>
+  <text x="500" y="100" font-size="13" fill="var(--text)">8,76</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">500</text>
+  <text x="300" y="126" font-size="13" fill="var(--text)">8,12</text>
+  <text x="500" y="126" font-size="13" fill="var(--text)">3,95</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">1.000</text>
+  <text x="300" y="152" font-size="13" fill="var(--text)">5,74</text>
+  <text x="500" y="152" font-size="13" fill="var(--text)">2,80</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">5.000</text>
+  <text x="300" y="178" font-size="13" fill="var(--text)">2,57</text>
+  <text x="500" y="178" font-size="13" fill="var(--text)">1,25</text>
+
+  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--accent)">14.042</text>
+  <text x="300" y="204" font-size="13" font-weight="bold" fill="var(--accent)">1,53</text>
+  <text x="500" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,75</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="230" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="254" font-size="13" fill="var(--text)">Eşleştirme, ayırt edilebilir farkı her küme boyunda yaklaşık 2,05 kat</text>
+  <text x="34" y="274" font-size="13" fill="var(--text)">daraltıyor; aynı kazanç için kümeyi dört katına çıkarmak gerekirdi.</text>
+
+  <rect x="20" y="296" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="320" font-size="13" fill="var(--text-muted)">Hesabın koşulları: doğruluk 0,70; iki modelin farklı cevap verdiği</text>
+  <text x="34" y="340" font-size="13" fill="var(--text-muted)">örneklerin oranı 0,10; anlamlılık eşiği 0,05 (iki yönlü); güç 0,80.</text>
+
+  <text x="20" y="384" font-size="13" fill="var(--text-faint)">Bu tablo kendi hesabımızdır; ölçülmüş bir deney değildir.</text>
+</svg>
