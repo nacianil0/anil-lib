@@ -2042,6 +2042,86 @@
       "path": "content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md",
       "relatedArticleIds": [],
       "classificationBatch": 24
+    },
+    {
+      "articleId": "article_5778a2e7-d37a-4668-ac74-5c47d9c9c944",
+      "title": "Mikro-GPT: Bir Transformer'ı Elle Kurmak",
+      "slug": "mikro-gpt-bir-transformeri-elle-kurmak",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 103,
+      "summary": "100. makalenin kasıtlı bıraktığı boşluğu doldurur: 364 parametreli bir Transformer'ın tam parametre defteri, tek bir token'ın embedding'den logit'e kadarki bütün boyutları, maskelenmiş dikkat matrisinin sayısal hâli ve rastgele ağırlıklı bir modelin düz tahminden neden daha kötü olduğu.",
+      "tags": [
+        "transformer",
+        "parametre-defteri",
+        "dikkat-matrisi",
+        "baglanmis-embedding",
+        "ileri-gecis"
+      ],
+      "contentHash": "sha256:bf8f4406f11d2ed2d6cf79b2b332bc49a14687ef7b1f8c5399f6c891b3c0c923",
+      "path": "content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 25
+    },
+    {
+      "articleId": "article_fe85b2e3-b957-4b0f-9e9e-86e6d71a6fe1",
+      "title": "Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü",
+      "slug": "kendi-egitim-kosun-tokenizer-veri-ve-dongu",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 104,
+      "summary": "103. makalenin 364 parametresini gerçekten eğitir: bu serinin kendi metni üzerinde sıfırdan kurulmuş bir BPE tokenizer'ı, sözlük boyunun ölçülmüş marjinal getirisi, kaybın durduğu entropi tabanı ve beş tohumun ikisinin kuralı hiç öğrenememesi.",
+      "tags": [
+        "egitim-dongusu",
+        "bpe",
+        "sozluk-boyu",
+        "entropi-tabani",
+        "kosular-arasi-sapma"
+      ],
+      "contentHash": "sha256:3d38a6995b925016e79358915cba8b1292811315dc4b656ae8628c3abb07b25d",
+      "path": "content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 25
+    },
+    {
+      "articleId": "article_9bfbad22-d1b8-4943-aadd-2b5dd4dd40b6",
+      "title": "Kendi Asistanın: Küçük Ölçekte SFT ve DPO",
+      "slug": "kendi-asistanin-kucuk-olcekte-sft-ve-dpo",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 105,
+      "summary": "104'ün eğittiği modeli asistanlaştırır: kayıp maskesinin koruduğu ve korumadığı şeyler, hizalama vergisinin ölçülmüş hâli, DPO kaybının aritmetiği ve tasmanın tam olarak 1,5 bölü beta kadar uzunluk verdiği ölçüm — ve tercihi karşılayan bir güncellemenin yeğlenen cevabı daha az olası yapabildiği yer.",
+      "tags": [
+        "denetimli-ince-ayar",
+        "dpo",
+        "kayip-maskesi",
+        "hizalama-vergisi",
+        "ortuk-odul"
+      ],
+      "contentHash": "sha256:45a8609d4860d36de2b2c2842d92d414eabf76ce12741fe596f7a1fdb548fdd8",
+      "path": "content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 25
+    },
+    {
+      "articleId": "article_e6f42bd9-3589-452b-bf23-1344d9c9500e",
+      "title": "GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği",
+      "slug": "gpu-zihinsel-modeli-hesap-bellek-bant-genisligi",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 106,
+      "summary": "Bir eğitim adımının üç defterini kurar: parametre başına 16 baytlık eğitim durumu, katman başına sbh(34+5as/h) baytlık aktivasyonlar ve bellek merdiveninin bant genişliği. 89. makalenin çatı çizgisini eğitim tarafına taşır ve aynı çipin neden çıkarımda beklediğini, eğitimde hesap yaptığını gösterir.",
+      "tags": [
+        "egitim-sistemleri",
+        "bellek-hiyerarsisi",
+        "aktivasyon-bellegi",
+        "yeniden-hesaplama",
+        "kullanim-orani"
+      ],
+      "contentHash": "sha256:86ee01a7b99314d1c9ca3434bdaed3be7f4f16bd45f4e348301442fe3fcac2e6",
+      "path": "content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 25
     }
   ]
 }

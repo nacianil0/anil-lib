@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 456" role="img" aria-label="Dört satırlı dört sütunlu bir matris ve altında iki kutu. Üstte başlık: birinci başın dikkat ağırlıkları, satır sorgu ve sütun anahtar konumudur. Sütun başlıkları başla, kedi, bugün, uyudu. Birinci satır başla: 1,000 ve üç boş hücre. İkinci satır kedi: 0,356, 0,644 ve iki boş hücre. Üçüncü satır vurguludur, bugün: 0,441, 0,243, 0,316 ve bir boş hücre. Dördüncü satır uyudu: 0,070, 0,375, 0,459, 0,095. Boş hücreler tire ile gösterilmiştir. Birinci kutunun başlığı üçüncü satır nasıl doğdu: ham skorlar 0,1307, eksi 0,7146 ve eksi 0,3395; karekök ikiye bölününce 0,0925, eksi 0,5053 ve eksi 0,2401; üstelleri 1,0969, 0,6033 ve 0,7865, toplamı 2,4867 ve bölme sonucu 0,441, 0,243, 0,316. İkinci kutunun başlığı boş hücreler sıfır değildir: yasak konumun skoru softmax'a girmeden eksi sonsuza gider, bu yüzden üç sayılık satır da dört sayılık satır da kendi içinde bir eder. En altta iki kayıt: bu ağırlıklar rastgele çekilmiş parametrelerden geliyor ve hiçbir örüntü taşımıyorlar; değerler eğitilmemiş mikro modelin ileri geçişinden alındı.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Birinci başın dikkat ağırlıkları: satır sorgu, sütun anahtar konumu</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sorgu \ anahtar</text>
+  <text x="260" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">başla</text>
+  <text x="370" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kedi</text>
+  <text x="480" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">bugün</text>
+  <text x="590" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">uyudu</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">başla</text>
+  <text x="260" y="100" font-size="13" fill="var(--text)">1,000</text>
+  <text x="370" y="100" font-size="13" fill="var(--text-faint)">—</text>
+  <text x="480" y="100" font-size="13" fill="var(--text-faint)">—</text>
+  <text x="590" y="100" font-size="13" fill="var(--text-faint)">—</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">kedi</text>
+  <text x="260" y="126" font-size="13" fill="var(--text)">0,356</text>
+  <text x="370" y="126" font-size="13" fill="var(--text)">0,644</text>
+  <text x="480" y="126" font-size="13" fill="var(--text-faint)">—</text>
+  <text x="590" y="126" font-size="13" fill="var(--text-faint)">—</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">bugün</text>
+  <text x="260" y="152" font-size="13" font-weight="bold" fill="var(--accent)">0,441</text>
+  <text x="370" y="152" font-size="13" font-weight="bold" fill="var(--accent)">0,243</text>
+  <text x="480" y="152" font-size="13" font-weight="bold" fill="var(--accent)">0,316</text>
+  <text x="590" y="152" font-size="13" fill="var(--text-faint)">—</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">uyudu</text>
+  <text x="260" y="178" font-size="13" fill="var(--text)">0,070</text>
+  <text x="370" y="178" font-size="13" fill="var(--text)">0,375</text>
+  <text x="480" y="178" font-size="13" fill="var(--text)">0,459</text>
+  <text x="590" y="178" font-size="13" fill="var(--text)">0,095</text>
+
+  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
+
+  <rect x="20" y="206" width="680" height="96" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="230" font-size="13" font-weight="bold" fill="var(--text)">Üçüncü satır nasıl doğdu</text>
+  <text x="34" y="252" font-size="13" fill="var(--text)">ham skorlar: 0,1307 · −0,7146 · −0,3395</text>
+  <text x="34" y="272" font-size="13" fill="var(--text)">karekök 2'ye bölününce: 0,0925 · −0,5053 · −0,2401</text>
+  <text x="34" y="292" font-size="13" fill="var(--text)">üsteller 1,0969 · 0,6033 · 0,7865, toplamı 2,4867 → 0,441 · 0,243 · 0,316</text>
+
+  <rect x="20" y="312" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="336" font-size="13" font-weight="bold" fill="var(--text-muted)">Boş hücreler sıfır değildir</text>
+  <text x="34" y="358" font-size="13" fill="var(--text-muted)">Yasak konumun skoru softmax'a girmeden eksi sonsuza gider; bu yüzden</text>
+  <text x="34" y="378" font-size="13" fill="var(--text-muted)">üç sayılık satır da dört sayılık satır da kendi içinde 1 eder.</text>
+
+  <text x="20" y="418" font-size="13" fill="var(--text-faint)">Bu ağırlıklar rastgele çekilmiş parametrelerden geliyor; hiçbir örüntü taşımıyorlar.</text>
+  <text x="20" y="440" font-size="13" fill="var(--text-faint)">Değerler eğitilmemiş mikro modelin ileri geçişinden alındı.</text>
+</svg>

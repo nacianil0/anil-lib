@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 368" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text)">Her katmanın erişim maliyeti ve tipik kapasitesi</text>
+  <text x="15" y="44" font-size="13" fill="var(--text-muted)">Çevrim sayıları bir Pentium M için üreticinin verdiği değerlerdir; mertebe olarak okunur</text>
+
+  <text x="40" y="74" font-size="13" fill="var(--text-faint)">Katman</text>
+  <text x="330" y="74" font-size="13" fill="var(--text-faint)">Erişim maliyeti</text>
+  <text x="480" y="74" font-size="13" fill="var(--text-faint)">Tipik kapasite</text>
+  <text x="608" y="74" font-size="13" fill="var(--text-faint)">Oran</text>
+  <line x1="25" y1="82" x2="695" y2="82" stroke="var(--border)" stroke-width="1.2" />
+
+  <rect x="25" y="92" width="130" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="40" y="114" font-size="13" fill="var(--text)">Yazmaç</text>
+  <text x="330" y="114" font-size="13" fill="var(--text)">1 çevrim</text>
+  <text x="480" y="114" font-size="13" fill="var(--text-muted)">1 KB'ın altı</text>
+  <text x="608" y="114" font-size="13" fill="var(--text-faint)">—</text>
+
+  <rect x="25" y="136" width="170" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="40" y="158" font-size="13" fill="var(--text)">L1 veri önbelleği</text>
+  <text x="330" y="158" font-size="13" fill="var(--text)">3 çevrim</text>
+  <text x="480" y="158" font-size="13" fill="var(--text-muted)">onlarca KB</text>
+  <text x="608" y="158" font-size="13" fill="var(--text-faint)">3 kat</text>
+
+  <rect x="25" y="180" width="210" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="40" y="202" font-size="13" fill="var(--text)">L2 önbelleği</text>
+  <text x="330" y="202" font-size="13" fill="var(--text)">14 çevrim</text>
+  <text x="480" y="202" font-size="13" fill="var(--text-muted)">birkaç MB</text>
+  <text x="608" y="202" font-size="13" fill="var(--text-faint)">5 kat</text>
+
+  <rect x="25" y="224" width="250" height="34" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="40" y="246" font-size="13" fill="var(--text)">Ana bellek</text>
+  <text x="330" y="246" font-size="13" fill="var(--text)">240 çevrim</text>
+  <text x="480" y="246" font-size="13" fill="var(--text-muted)">GB mertebesi</text>
+  <text x="608" y="246" font-size="13" fill="var(--accent)">17 kat</text>
+
+  <rect x="25" y="268" width="290" height="34" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="40" y="290" font-size="13" fill="var(--text)">Disk</text>
+  <text x="330" y="290" font-size="13" fill="var(--text)">3 × 10⁷ çevrim</text>
+  <text x="480" y="290" font-size="13" fill="var(--text-muted)">TB mertebesi</text>
+  <text x="608" y="290" font-size="13" fill="var(--cool)">10⁵ kat</text>
+
+  <line x1="25" y1="318" x2="695" y2="318" stroke="var(--border)" stroke-width="1.2" />
+  <text x="25" y="338" font-size="13" fill="var(--text-muted)">Yukarı: daha hızlı, daha pahalı, daha küçük — aşağı: daha yavaş, daha ucuz, daha büyük</text>
+  <text x="25" y="358" font-size="13" fill="var(--text-faint)">Disk satırı kendi hesabımdır: 10 ms erişim, 3 GHz saat. Oran sütunu bir üstteki katmana göredir</text>
+</svg>

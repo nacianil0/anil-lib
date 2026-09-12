@@ -724,6 +724,66 @@
       "path": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
+    },
+    {
+      "articleId": "article_10e5a169-82f9-49ef-8b2d-296c2f49149e",
+      "title": "Bilgisayar Organizasyonu: OS'nin Altındaki Makine",
+      "slug": "bilgisayar-organizasyonu-osnin-altindaki-makine",
+      "category": "supporting-fundamentals",
+      "level": "advanced",
+      "readingOrder": 37,
+      "summary": "Karmaşıklık makalesinin RAM modeli her bellek erişimini aynı fiyatta sayıyordu; bu makale o varsayımın donanımda nerede ve neden çöktüğünü gösteriyor. Önce hiyerarşinin nedeni kuruluyor — statik ile dinamik belleğin hücre düzeyindeki farkı ve yerellik. Sonra sayılar geliyor: kaynağın çevrim tablosuyla yaptığım kendi hesabımda aynı komut sayısı, yalnızca isabet oranları değiştiği için ortalamada altı kat farklı maliyet veriyor. Önbelleğin adresi nasıl böldüğü, doğrudan eşlemeli ile kümeli çağrışımlının neyi takas ettiği ve çakışma ıskasının nereden çıktığı bir sonraki bölümde. Kapanışta üç eski borç ödeniyor: TLB'nin neden bir önbellek olduğu, sayfa boyutunun iki yönlü takası ve bağlam anahtarının neden çevrim cinsinden ucuzlamadığı. Bütün çevrim hesapları kendi aritmetiğimdir.",
+      "tags": [
+        "bilgisayar-organizasyonu",
+        "bellek-hiyerarsisi",
+        "onbellek",
+        "boru-hatti",
+        "ram-modeli"
+      ],
+      "contentHash": "sha256:c1a9bf29e21cc6c25a25d1c06f24dbf82115871a97b386065a3d2feab0b7b1a0",
+      "path": "content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
+    },
+    {
+      "articleId": "article_0a3ffcc2-e270-476a-bcb0-d9af6912c388",
+      "title": "C ve Bellek: Sistem Programlama Penceresi",
+      "slug": "c-ve-bellek-sistem-programlama-penceresi",
+      "category": "supporting-fundamentals",
+      "level": "advanced",
+      "readingOrder": 38,
+      "summary": "Önceki makale donanımı dışarıdan gösterdi; bu makale aynı kavramları programcının elinde görünür kılıyor. Bir sürecin adres uzayı düzeni izin bitleriyle birlikte açılıyor: kod neden yazılamaz, koruma sayfası ne işe yarar, heap bölgesi hangi yönde büyür. Ardından işaretçinin gerçek maliyeti hesaplanıyor — aynı bir milyon tam sayı için dizi ile bağlı liste arasında, kendi aritmetiğimle, on üç kattan fazla fark çıkıyor. free çağrısının boyutu nereden bildiği ve beş klasik bellek hatası bir arada veriliyor. Son üçte bir, süreçler makalesinden devreden borcu ödüyor: fork iki kez dönüyor, exec hiç dönmüyor, kabuğun ikisini neden ayırdığı gösteriliyor ve sanal bellek makalesinde adı anılıp mekanizması açılmayan kopyalarken yazma sayfa hatasıyla birlikte kuruluyor.",
+      "tags": [
+        "c-dili",
+        "adres-uzayi",
+        "isaretci",
+        "malloc",
+        "fork"
+      ],
+      "contentHash": "sha256:5306d6cbb8759a460ee8da7a59542a7e83bb3d50557348f0f1e1445223fab088",
+      "path": "content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
+    },
+    {
+      "articleId": "article_c7710554-6339-4421-93a4-575e15abc1bb",
+      "title": "Veritabanları: İlişkisel Model, İndeks ve Transaction",
+      "slug": "veritabanlari-iliskisel-model-indeks-ve-transaction",
+      "category": "supporting-fundamentals",
+      "level": "advanced",
+      "readingOrder": 39,
+      "summary": "Bu makale dengeli arama makalesinden devreden indeks borcunu ödüyor ve işletim sistemleri fazının bütün mekanizmalarını tek bir sistemde birleştiriyor. Önce ilişkisel modelin kendisi: bir tablo, kümeler makalesinde tanımladığımız bağıntının ta kendisidir ve modelin asıl vaadi veri bağımsızlığıdır. Sonra indeks — B-ağacının yapraklarının neden birbirine bağlandığı ve bunun aralık sorgusuna ne kazandırdığı. Ardından asıl mülakat sorusu: indeks her zaman hızlandırır mı? Kendi blok hesabımda kırılma noktası yüzde 2,5 çıkıyor ve kümelenmiş indeksle yüzde 100'e taşınıyor; seçicilik kestiriminin düzgün dağılım varsayımı bozulduğunda iyileştirici tam taramadan on iki kat kötü bir plan seçiyor. Kapanışta transaction kavramı, ACID'in dört harfi ve ANSI yalıtım düzeylerinin neden sıralanabilirlik vermediği var.",
+      "tags": [
+        "veritabani",
+        "iliskisel-model",
+        "b-agaci-indeks",
+        "transaction",
+        "yalitim-duzeyi"
+      ],
+      "contentHash": "sha256:2b2883994b2cf41efae69d8a4c57a4dcd1fd4a96c4342010969b834753466bc1",
+      "path": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 12
     }
   ]
 }

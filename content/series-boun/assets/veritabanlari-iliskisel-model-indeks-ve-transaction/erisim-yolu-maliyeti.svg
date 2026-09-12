@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 404" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text)">Aynı sorgu, üç erişim yolu: maliyet blok okuma cinsinden, eşleşen satır sayısına göre</text>
+
+  <text x="90" y="48" font-size="13" fill="var(--text-faint)">blok okuma</text>
+
+  <line x1="90" y1="60" x2="90" y2="300" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="90" y1="300" x2="470" y2="300" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="86" y1="180" x2="90" y2="180" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="86" y1="60" x2="90" y2="60" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="280" y1="300" x2="280" y2="304" stroke="var(--border)" stroke-width="1.3" />
+  <line x1="470" y1="300" x2="470" y2="304" stroke="var(--border)" stroke-width="1.3" />
+
+  <text x="84" y="305" font-size="13" text-anchor="end" fill="var(--text-faint)">0</text>
+  <text x="84" y="185" font-size="13" text-anchor="end" fill="var(--text-faint)">25.000</text>
+  <text x="84" y="65" font-size="13" text-anchor="end" fill="var(--text-faint)">50.000</text>
+  <text x="90" y="322" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="280" y="322" font-size="13" text-anchor="middle" fill="var(--accent)">25.000</text>
+  <text x="470" y="322" font-size="13" text-anchor="middle" fill="var(--text-faint)">50.000</text>
+  <text x="90" y="346" font-size="13" fill="var(--text-faint)">eşleşen satır sayısı k</text>
+
+  <line x1="90" y1="180" x2="470" y2="180" stroke="var(--cool)" stroke-width="2" />
+  <line x1="90" y1="300" x2="470" y2="60" stroke="var(--accent)" stroke-width="2" />
+  <line x1="90" y1="300" x2="470" y2="294" stroke="var(--text-muted)" stroke-width="2" />
+
+  <line x1="280" y1="300" x2="280" y2="180" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3" />
+  <circle cx="280" cy="180" r="5" fill="var(--accent)" />
+
+  <line x1="478" y1="76" x2="496" y2="76" stroke="var(--cool)" stroke-width="2.4" />
+  <text x="502" y="81" font-size="13" fill="var(--text)">Tam tarama: 25.000 blok</text>
+  <text x="502" y="103" font-size="13" fill="var(--text-muted)">koşuldan bağımsız, sabit</text>
+
+  <line x1="478" y1="141" x2="496" y2="141" stroke="var(--accent)" stroke-width="2.4" />
+  <text x="502" y="146" font-size="13" fill="var(--text)">Kümelenmemiş indeks: 3 + k</text>
+  <text x="502" y="168" font-size="13" fill="var(--accent)">kırılma noktası k ≈ 25.000</text>
+  <text x="502" y="190" font-size="13" fill="var(--text-muted)">yani tablonun %2,5'i</text>
+
+  <line x1="478" y1="228" x2="496" y2="228" stroke="var(--text-muted)" stroke-width="2.4" />
+  <text x="502" y="233" font-size="13" fill="var(--text)">Kümelenmiş indeks: 3 + k/40</text>
+  <text x="502" y="255" font-size="13" fill="var(--text-muted)">kırılma noktası k ≈ 999.880</text>
+  <text x="502" y="277" font-size="13" fill="var(--text-muted)">yani pratikte %100</text>
+
+  <line x1="15" y1="364" x2="705" y2="364" stroke="var(--border)" stroke-width="1.2" />
+  <text x="15" y="384" font-size="13" fill="var(--text-muted)">Tablo 25.000 blok: bir milyon satır, satır 100 bayt, blok 4 KB, bloğa 40 satır</text>
+  <text x="15" y="402" font-size="13" fill="var(--text-faint)">İndeks üç seviye; grafikteki bütün sayılar kendi hesabımdır</text>
+</svg>

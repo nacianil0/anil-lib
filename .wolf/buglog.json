@@ -7614,6 +7614,275 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-11T20:05:00.000Z"
+    },
+    {
+      "id": "bug-455",
+      "timestamp": "2026-09-11T20:36:16.238Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md",
+      "root_cause": "Had \"Transformer eşittir dikkat\"",
+      "fix": "Changed to 'nin 65 milyon parametreli taban modeli bu modelin",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-09-11T20:39:06.418Z"
+    },
+    {
+      "id": "bug-456",
+      "timestamp": "2026-09-11T20:50:09.810Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/kopyalarken-yazma.svg",
+      "root_cause": "Had \"424\"",
+      "fix": "Changed to \"454\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T20:50:09.810Z"
+    },
+    {
+      "id": "bug-457",
+      "timestamp": "2026-09-11T20:50:24.783Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md",
+      "root_cause": "Had 'dan fazla, karta sığmayan her şey. Birinci kutuda",
+      "fix": "Changed to 'dan büyük, karta sığmayanlar. Birinci kutunun baş",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T20:50:24.783Z"
+    },
+    {
+      "id": "bug-458",
+      "timestamp": "2026-09-11T21:02:43.382Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→12 lines (2 removed) | Also: | Tohum | Son kayıp |; |---|---|",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-11T21:04:15.620Z"
+    },
+    {
+      "id": "bug-459",
+      "timestamp": "2026-09-11T21:03:10.715Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md",
+      "root_cause": "Had \" cümlesinin kanıtı değil. Kendi modelimizde bunun",
+      "fix": "Changed to \" cümlesinin kanıtı değil. Kendi modelimizde bunun",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T21:03:10.715Z"
+    },
+    {
+      "id": "bug-460",
+      "timestamp": "2026-09-11T21:06:21.140Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md",
+      "root_cause": "Had 'yı beşe bölmek, aynı tercihi karşılamak için poli",
+      "fix": "Changed to 'de δ 0,766 ile 0,843 arasında, β = 1,0'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-11T21:06:45.246Z"
+    },
+    {
+      "id": "bug-461",
+      "timestamp": "2026-09-11T22:40:00.000Z",
+      "error_message": "Sekil 2'de kopya baglantisi P2 kutusunun alt kenarina cok yakin geciyor; sema 'cizgi kutuya degiyor' gibi okunuyor",
+      "file": "content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/kopyalarken-yazma.svg",
+      "root_cause": "Cocuk s1 girdisinden yeni fiziksel sayfaya duz kosegen cizildi; kosegen, araya giren P2 kutusunun alt kenarindan yalnizca 7 birim asagidan geciyordu. Repo SVG denetleyicisi yalnizca viewBox tasmasina ve metin boyutuna bakiyor, cizgi-kutu yakinligina bakmiyor.",
+      "fix": "Duz kosegen ucuncu bir yola cevrildi: s1'in altindan asagi, saga dogru yatay, sonra P3'un altina yukari. viewBox yuksekligi 500'den 516'ya cikarildi ve alt not 486'dan 502'ye kaydirildi. Markdown alt metni de dirsekli yolu anlatacak bicimde yeniden yazildi.",
+      "tags": [
+        "svg",
+        "diyagram",
+        "layout",
+        "series-boun",
+        "render-verification"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T22:40:00.000Z"
+    },
+    {
+      "id": "bug-462",
+      "timestamp": "2026-09-11T22:45:00.000Z",
+      "error_message": "B+-agaci semasinda ic dugumlerden inen baglanti cizgileri yaprak kutularina degmiyor, bosluta bitiyor",
+      "file": "content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/b-arti-agaci-indeks.svg",
+      "root_cause": "Kok + 3 ic dugum + 4 yaprak yerlesimi kuruldu; 3 dugum 4 yapraga esit bolunmedigi icin cizgi bitis noktalari yaprak kutularinin merkezlerine degil, aralarindaki bosluklara denk geldi.",
+      "fix": "Agac yeniden kuruldu: kok '55', iki ic dugum '28' ve '80', her ic dugum iki yaprak. Cizgi bitis koordinatlari yaprak merkezlerine (183, 325, 467, 609) ve kutu ust kenarina (y=186) oturtuldu. Sagdaki aciklama kutusu ic dugumle cakistigi icin tek satirlik nota cevrildi ve viewBox 406'dan 456'ya buyudu.",
+      "tags": [
+        "svg",
+        "diyagram",
+        "layout",
+        "series-boun",
+        "render-verification"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T22:45:00.000Z"
+    },
+    {
+      "id": "bug-463",
+      "timestamp": "2026-09-11T21:30:00.000Z",
+      "error_message": "roadmap.json'da tek bir baslik degistirildi ama git diff 282 satir gosterdi",
+      "file": "content/series-boun/roadmap.json",
+      "root_cause": "Dosya tek satirlik kompakt makale kayitlariyla bicimlendirilmis; json.load + json.dumps(indent=2) butun kayitlari coklu satira actigi icin sahte fark uretti.",
+      "fix": "git checkout ile geri alindi ve baslik degisikligi duz metin replace ile yapildi; fark 1 satira indi. Ayni kural catalog.json icin de gecerlidir.",
+      "tags": [
+        "json",
+        "formatting",
+        "git-diff",
+        "series-boun"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-11T21:30:00.000Z"
+    },
+    {
+      "error_message": "Tek tohumlu ablasyon tablosu yaniltici sonuc verdi: 104'un sekiz ablasyonu anlamli farklar gosteriyordu",
+      "file": "content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md",
+      "root_cause": "Kosular arasi sapma olculmeden farklar okundu. Bes tohumla calistirilinca sapmanin 0,12669 oldugu, kosularin ikisinin kurali hic ogrenemedigi ve hicbir ablasyon farkinin iki sapmayi asmadigi goruldu.",
+      "fix": "Her ablasyon bes tohumla tekrar calistirildi; tablo ortalama artı eksi sapma bicimine cevrildi ve makaleye 'hicbir fark sapmayi asmadi' sonucu yazildi. 99. makalenin kendi olcutu kendi deneyimize uygulandi.",
+      "tags": [
+        "metodoloji",
+        "ablasyon",
+        "tohum",
+        "seri-ai",
+        "batch-25"
+      ],
+      "id": "bug-464",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "105'in DPO tablosu tek tohumla 'mikro modelde fiil kurali cokuyor, kapasite duzeltiyor' sonucunu veriyordu",
+      "file": "content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md",
+      "root_cause": "Ayni tek-tohum hatasi. Uc tohumla bakildiginda cokusun uc kosunun yalnizca birinde oldugu, asil kararli bulgunun ise 'tercih karsilandigi halde yeglenen cevabin olasiligi dusebiliyor' oldugu goruldu.",
+      "fix": "Uc tohumlu tur calistirildi, tablo ve Sekil 3 yeniden yazildi; kapasite karsilastirmasi da uc tohuma cikarildi (0,8287 +- 0,2847 ile 0,9995 +- 0,0002).",
+      "tags": [
+        "metodoloji",
+        "dpo",
+        "tohum",
+        "seri-ai",
+        "batch-25"
+      ],
+      "id": "bug-465",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Kaynakcadaki bes kunye govdede hic anilmiyordu (Gage, Kudo, Loshchilov, Ouyang, Ba, Radford, Vaswani, Williams, Narayanan)",
+      "file": "content/series/articles/models-and-training/*.md",
+      "root_cause": "SOZLESME §4 yalnizca gercekten kullanilan kaynaklarin listelenmesini ve atifin yazar adiyla yapilmasini istiyor; gozle kolayca kaciriliyor.",
+      "fix": "Kaynakca-govde eslesmesini mekanik olarak tarayan bir kontrol eklendi. Dort kunye kaynakcadan cikarildi, kalanlar govdede yazar adiyla anildi. Bu tarama sonraki run'larin zorunlu tarama listesine yazildi.",
+      "tags": [
+        "kaynak",
+        "sozlesme",
+        "seri-ai",
+        "batch-25"
+      ],
+      "id": "bug-466",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Rota sweep'i '/seri-boun' icin HTTP 404 verdi",
+      "file": "scratchpad/sweep.py",
+      "root_cause": "BOUN serisinin rotasi /boun; /seri-boun diye varsayilmisti.",
+      "fix": "Sweep betigindeki rota oneki /boun olarak duzeltildi ve bu bilgi HANDOFF'un Rotalar satirina yazildi.",
+      "tags": [
+        "rota",
+        "sweep",
+        "seri-boun",
+        "batch-25"
+      ],
+      "id": "bug-467",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "javascript_tool: 'Inspected target navigated or closed' — olcum betigi sayfa degistirince oldu",
+      "file": "tarayici olcum betigi",
+      "root_cause": "Olcum betigi icinde location.href atamasiyla sayfa degistiriliyordu; degerlendirme baglami yok oluyor.",
+      "fix": "Navigasyon navigate araciyla yapildi ve her sayfa icin ayri javascript_tool cagrisi verildi; browser_batch ile zincirlendi.",
+      "tags": [
+        "tarayici",
+        "olcum",
+        "batch-25"
+      ],
+      "id": "bug-468",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Python heredoc ile yazilan dosya uc ayri denemede diske yansimadi (dump105.py'nin bozuk f-string satiri)",
+      "file": "scratchpad/dump105.py",
+      "root_cause": "Bash araci icindeki heredoc'tan yapilan yazma sessizce etkisiz kaldi; sebep tam olarak tespit edilemedi.",
+      "fix": "Dosya silinip Write araciyla bastan yazildi. Kural: uzun betikler ve kritik duzeltmeler Write araciyla yapilmali.",
+      "tags": [
+        "arac",
+        "bash",
+        "heredoc",
+        "batch-25"
+      ],
+      "id": "bug-469",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "svgcheck: alt pay yetersiz (iki dosya) ve sag kenar tasmasi (bir dosya)",
+      "file": "content/series/assets/**",
+      "root_cause": "viewBox yuksekligi son metin satirina gore 10 px'ti (en az 12 gerekiyor); bir dipnot satiri 720 birimlik genisligi asiyordu.",
+      "fix": "viewBox yukseklikleri buyutuldu, uzun dipnot iki satira bolundu ve bir sutun x konumu kaydirildi. Repo kapisi bu kusurlarin ucunu de gormuyor.",
+      "tags": [
+        "svg",
+        "olcer",
+        "seri-ai",
+        "batch-25"
+      ],
+      "id": "bug-470",
+      "timestamp": "2026-09-12T00:40:00Z",
+      "last_seen": "2026-09-12T00:40:00Z",
+      "occurrences": 1,
+      "related_bugs": []
     }
   ]
 }

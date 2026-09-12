@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Beş satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı çip, sırt noktasının iki yanı; A100 kartının sırt noktası 208 işlem bölü bayt. Sütunlar rejim, işlem yoğunluğu ve sırt noktasına göre konum. Birinci satır adım adım üretim yığın bir: yoğunluk 1, 208 kat solunda. İkinci satır adım adım üretim yığın 32: yoğunluk 32, 6,5 kat solunda. Üçüncü satır adım adım üretim yığın 256: yoğunluk 256, 1,2 kat sağında. Dördüncü satır eğitim adımı mikro yığın bir çarpı dizi 2.048: yoğunluk 2.048, 9,8 kat sağında. Beşinci satır vurguludur, eğitim adımı mikro yığın dört çarpı dizi 8.192: yoğunluk 32.768, 157,5 kat sağında. Birinci kutuda oran durur: iki uç arasındaki fark 32.768 bölü 32, yani 1.024 kat; aynı çip ve aynı ağırlıklar, iki bambaşka rejim. İkinci kutuda sınır durur: bu hesap yalnızca ağırlıkla yapılan çarpımlar için geçerlidir, dikkat işleminin kendisinde ağırlık yoktur ve ara matris dizi uzunluğunun karesiyle büyüdüğü için o parça ayrı davranır. En altta bir kayıt: sırt noktası 312 bölü 1,5 ile bizim hesabımızdır, yoğunluklar da öyle.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı çip, sırt noktasının iki yanı — A100'ün sırt noktası 208 işlem/bayt</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">rejim</text>
+  <text x="400" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">yoğunluk</text>
+  <text x="510" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sırt noktasına göre</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">adım adım üretim, yığın 1</text>
+  <text x="400" y="100" font-size="13" fill="var(--text)">1</text>
+  <text x="510" y="100" font-size="13" fill="var(--text)">208 kat solunda</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">adım adım üretim, yığın 32</text>
+  <text x="400" y="126" font-size="13" fill="var(--text)">32</text>
+  <text x="510" y="126" font-size="13" fill="var(--text)">6,5 kat solunda</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">adım adım üretim, yığın 256</text>
+  <text x="400" y="152" font-size="13" fill="var(--text)">256</text>
+  <text x="510" y="152" font-size="13" fill="var(--text)">1,2 kat sağında</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">eğitim adımı, 1 × 2.048</text>
+  <text x="400" y="178" font-size="13" fill="var(--text)">2.048</text>
+  <text x="510" y="178" font-size="13" fill="var(--text)">9,8 kat sağında</text>
+
+  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--accent)">eğitim adımı, 4 × 8.192</text>
+  <text x="400" y="204" font-size="13" font-weight="bold" fill="var(--accent)">32.768</text>
+  <text x="510" y="204" font-size="13" font-weight="bold" fill="var(--accent)">157,5 kat sağında</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="232" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="256" font-size="13" font-weight="bold" fill="var(--text)">İki uç arasındaki oran 1.024 kat</text>
+  <text x="34" y="278" font-size="13" fill="var(--text)">Aynı çip ve aynı ağırlıklar: biri sırt noktasının solunda bellek beklerken</text>
+  <text x="34" y="298" font-size="13" fill="var(--text)">öbürü sağında hesap yapıyor. 32.768 ÷ 32 = 1.024.</text>
+
+  <rect x="20" y="318" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="342" font-size="13" fill="var(--text-muted)">Sınır: bu hesap yalnızca ağırlıkla yapılan çarpımlar içindir. Dikkat işleminin</text>
+  <text x="34" y="362" font-size="13" fill="var(--text-muted)">kendisinde ağırlık yoktur ve ara matris dizinin karesiyle büyür.</text>
+
+  <text x="20" y="398" font-size="13" fill="var(--text-faint)">Sırt noktası 312 ÷ 1,5 ile bizim hesabımızdır; yoğunluklar da öyle.</text>
+</svg>

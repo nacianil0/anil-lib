@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="On bir satırlık üç sütunlu bir tablo ve altında bir kutu. Üstte başlık: üçüncü konumun dokuz basamağı, bugün token'ı logit'e nasıl gidiyor. Sütunlar basamak, boyut ve çıkan sayılar. Birinci satır token embedding satırı, 4 boyut, eksi 0,58; 0,30; 0,18; 0,17. İkinci satır konum embedding eklenir, 4 boyut, eksi 0,74; eksi 0,03; 0,00; 0,60. Üçüncü satır katman normalleştirme, 4 boyut, ortalama sıfır ve yayılım bir. Dördüncü satır sorgu üretimi, 2 artı 2 boyut, 0,601; eksi 0,482 ile 1,122; eksi 0,418. Beşinci satır anahtar üretimi, 2 artı 2 boyut, eksi 1,271; eksi 0,880 ile 0,469; 0,294. Altıncı satır değer üretimi, 2 artı 2 boyut, 1,038; eksi 0,221 ile eksi 1,541; eksi 0,340. Yedinci satır vurguludur, maskelenmiş dikkat, 4 boyut, 0,107; eksi 0,375; eksi 0,030; 0,008. Sekizinci satır artık bağlantı, 4 boyut, eksi 0,633; eksi 0,405; eksi 0,030; 0,608. Dokuzuncu satır ileri besleme ve artık, 4'ten 8'e ve 4'e, eksi 0,436; eksi 0,195; eksi 0,033; eksi 0,058. Onuncu satır ikinci blok ve son katman normalleştirme, 4 boyut, eksi 1,468; eksi 0,140; 0,290; 1,319. On birinci satır bağlanmış çıktı izdüşümü, 4'ten 7'ye, uyudu logit'i eksi 0,397 ve olasılık 0,061. Alttaki kutuda şu durur: dokuz basamağın yalnızca beşincisi öteki konumlara bakar, kalan sekizi bu konumun kendi dört sayısı üzerinde çalışır. En altta bir kayıt: ağırlıklar rastgele çekilip iki ondalığa yuvarlandı ve zincir bu değerlerden çıkar.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Üçüncü konumun dokuz basamağı: bugün token'ı logit'e nasıl gidiyor</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">basamak</text>
+  <text x="270" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">boyut</text>
+  <text x="360" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">çıkan sayılar</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">1. token embedding satırı</text>
+  <text x="270" y="100" font-size="13" fill="var(--text-muted)">4</text>
+  <text x="360" y="100" font-size="13" fill="var(--text)">−0,58 ; 0,30 ; 0,18 ; 0,17</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">2. konum embedding eklenir</text>
+  <text x="270" y="126" font-size="13" fill="var(--text-muted)">4</text>
+  <text x="360" y="126" font-size="13" fill="var(--text)">−0,74 ; −0,03 ; 0,00 ; 0,60</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">3. katman normalleştirme</text>
+  <text x="270" y="152" font-size="13" fill="var(--text-muted)">4</text>
+  <text x="360" y="152" font-size="13" fill="var(--text-muted)">ortalama 0, yayılım 1</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">4. sorgu üretimi</text>
+  <text x="270" y="178" font-size="13" fill="var(--text-muted)">2 + 2</text>
+  <text x="360" y="178" font-size="13" fill="var(--text)">0,601 ; −0,482 | 1,122 ; −0,418</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">   anahtar üretimi</text>
+  <text x="270" y="204" font-size="13" fill="var(--text-muted)">2 + 2</text>
+  <text x="360" y="204" font-size="13" fill="var(--text)">−1,271 ; −0,880 | 0,469 ; 0,294</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">   değer üretimi</text>
+  <text x="270" y="230" font-size="13" fill="var(--text-muted)">2 + 2</text>
+  <text x="360" y="230" font-size="13" fill="var(--text)">1,038 ; −0,221 | −1,541 ; −0,340</text>
+
+  <text x="24" y="256" font-size="13" font-weight="bold" fill="var(--accent)">5. maskelenmiş dikkat</text>
+  <text x="270" y="256" font-size="13" font-weight="bold" fill="var(--accent)">4</text>
+  <text x="360" y="256" font-size="13" font-weight="bold" fill="var(--accent)">0,107 ; −0,375 ; −0,030 ; 0,008</text>
+
+  <text x="24" y="282" font-size="13" fill="var(--text)">6. artık bağlantı</text>
+  <text x="270" y="282" font-size="13" fill="var(--text-muted)">4</text>
+  <text x="360" y="282" font-size="13" fill="var(--text)">−0,633 ; −0,405 ; −0,030 ; 0,608</text>
+
+  <text x="24" y="308" font-size="13" fill="var(--text)">7. ileri besleme ve artık</text>
+  <text x="270" y="308" font-size="13" fill="var(--text-muted)">4 → 8 → 4</text>
+  <text x="360" y="308" font-size="13" fill="var(--text)">−0,436 ; −0,195 ; −0,033 ; −0,058</text>
+
+  <text x="24" y="334" font-size="13" fill="var(--text)">8. ikinci blok ve son LN</text>
+  <text x="270" y="334" font-size="13" fill="var(--text-muted)">4</text>
+  <text x="360" y="334" font-size="13" fill="var(--text)">−1,468 ; −0,140 ; 0,290 ; 1,319</text>
+
+  <text x="24" y="360" font-size="13" fill="var(--text)">9. bağlanmış çıktı izdüşümü</text>
+  <text x="270" y="360" font-size="13" fill="var(--text-muted)">4 → 7</text>
+  <text x="360" y="360" font-size="13" fill="var(--text)">uyudu logit'i −0,397, olasılık 0,061</text>
+
+  <line x1="20" y1="376" x2="700" y2="376" stroke="var(--border)" />
+
+  <rect x="20" y="388" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="412" font-size="13" fill="var(--text)">Dokuz basamağın yalnızca beşincisi öteki konumlara bakar; kalan sekizi</text>
+  <text x="34" y="432" font-size="13" fill="var(--text)">bu konumun kendi dört sayısı üzerinde çalışır.</text>
+
+  <text x="20" y="466" font-size="13" fill="var(--text-faint)">Ağırlıklar rastgele çekilip iki ondalığa yuvarlandı; zincir bu değerlerden çıkar.</text>
+</svg>

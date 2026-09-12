@@ -187,9 +187,9 @@
       "title": "Temelden Kurmak: Modeli Elle İnşa Etmek",
       "description": "Mikro ölçekte Transformer, eğitim döngüsü ve asistan: kurarak anlamak.",
       "articles": [
-        { "order": 103, "title": "Mikro-GPT: Bir Transformer'ı Elle Kurmak", "status": "planlandi" },
-        { "order": 104, "title": "Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü", "status": "planlandi" },
-        { "order": 105, "title": "Kendi Asistanın: Küçük Ölçekte SFT ve DPO", "status": "planlandi" }
+        { "order": 103, "title": "Mikro-GPT: Bir Transformer'ı Elle Kurmak", "status": "yayinda", "slug": "mikro-gpt-bir-transformeri-elle-kurmak" },
+        { "order": 104, "title": "Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü", "status": "yayinda", "slug": "kendi-egitim-kosun-tokenizer-veri-ve-dongu" },
+        { "order": 105, "title": "Kendi Asistanın: Küçük Ölçekte SFT ve DPO", "status": "yayinda", "slug": "kendi-asistanin-kucuk-olcekte-sft-ve-dpo" }
       ]
     },
     {
@@ -197,9 +197,9 @@
       "title": "Eğitim Sistemleri Mühendisliği",
       "description": "GPU zihinsel modelinden dağıtık eğitime: büyük koşuların gerçek maliyet yapısı.",
       "articles": [
-        { "order": 106, "title": "GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği", "status": "planlandi" },
+        { "order": 106, "title": "GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği", "status": "yayinda", "slug": "gpu-zihinsel-modeli-hesap-bellek-bant-genisligi" },
         { "order": 107, "title": "Dağıtık Eğitim: Paralellik Stratejileri", "status": "planlandi" },
-        { "order": 108, "title": "Performans Mühendisliği: Attention'ı Hızlandırmak", "status": "planlandi" },
+        { "order": 108, "title": "Performans Mühendisliği: Dikkati Hızlandırmak", "status": "planlandi" },
         { "order": 109, "title": "Koşunun Güvenilirliği: Checkpoint, Spike ve Gözlem", "status": "planlandi" }
       ]
     },

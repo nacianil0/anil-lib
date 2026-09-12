@@ -1,0 +1,55 @@
+<svg viewBox="0 0 720 452" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text)">Bir sürecin kullanıcı adres uzayı; izin etiketleri bir eğitim işletim sisteminden alınmıştır</text>
+
+  <text x="26" y="52" font-size="13" fill="var(--text-faint)">en büyük sanal adres</text>
+  <rect x="26" y="60" width="270" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="40" y="80" font-size="13" fill="var(--text-muted)">trambolin — kullanıcıya kapalı</text>
+
+  <rect x="26" y="98" width="270" height="52" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="40" y="118" font-size="13" fill="var(--text)">yığın — tek sayfa</text>
+  <text x="40" y="140" font-size="13" fill="var(--text-muted)">en üstte argüman metinleri ve dizisi</text>
+  <text x="306" y="118" font-size="13" fill="var(--text-faint)">oku, yaz</text>
+  <text x="306" y="140" font-size="13" fill="var(--text-faint)">aşağı büyür</text>
+
+  <rect x="26" y="158" width="270" height="28" rx="4" fill="var(--surface)" stroke="var(--cool)" stroke-width="1.6" stroke-dasharray="5 3" />
+  <text x="40" y="177" font-size="13" fill="var(--cool)">koruma sayfası — erişilemez</text>
+
+  <rect x="26" y="194" width="270" height="44" rx="4" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="3 4" />
+  <text x="40" y="221" font-size="13" fill="var(--text-faint)">eşlenmemiş boşluk</text>
+
+  <rect x="26" y="246" width="270" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="40" y="268" font-size="13" fill="var(--text)">heap bölgesi</text>
+  <text x="306" y="262" font-size="13" fill="var(--text-faint)">oku, yaz</text>
+  <text x="306" y="280" font-size="13" fill="var(--text-faint)">yukarı büyür</text>
+
+  <rect x="26" y="288" width="270" height="34" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="40" y="310" font-size="13" fill="var(--text)">ilklenmiş veri</text>
+  <text x="306" y="310" font-size="13" fill="var(--text-faint)">oku, yaz</text>
+
+  <rect x="26" y="330" width="270" height="34" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="40" y="352" font-size="13" fill="var(--text)">kod</text>
+  <text x="306" y="352" font-size="13" fill="var(--cool)">oku, çalıştır</text>
+  <text x="26" y="384" font-size="13" fill="var(--text-faint)">sanal adres 0</text>
+
+  <line x1="420" y1="60" x2="420" y2="364" stroke="var(--border)" stroke-width="1.2" />
+  <text x="436" y="66" font-size="13" fill="var(--text-faint)">İzinlerin işi</text>
+
+  <rect x="436" y="80" width="262" height="72" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="450" y="102" font-size="13" fill="var(--text)">Kod yazılamaz</text>
+  <text x="450" y="122" font-size="13" fill="var(--text-muted)">Null işaretçiye yazma, sıfırdaki</text>
+  <text x="450" y="142" font-size="13" fill="var(--text-muted)">komutu bozmaz; sayfa hatası doğurur</text>
+
+  <rect x="436" y="166" width="262" height="72" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="450" y="188" font-size="13" fill="var(--text)">Veri çalıştırılamaz</text>
+  <text x="450" y="208" font-size="13" fill="var(--text-muted)">Program kendi verisinin ortasına</text>
+  <text x="450" y="228" font-size="13" fill="var(--text-muted)">atlayamaz</text>
+
+  <rect x="436" y="252" width="262" height="72" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="450" y="274" font-size="13" fill="var(--text)">Koruma sayfası geçersizdir</text>
+  <text x="450" y="294" font-size="13" fill="var(--text-muted)">Yığın taşması komşu veriyi sessizce</text>
+  <text x="450" y="314" font-size="13" fill="var(--text-muted)">bozmaz, temiz bir çökmeyle biter</text>
+
+  <line x1="26" y1="404" x2="698" y2="404" stroke="var(--border)" stroke-width="1.2" />
+  <text x="26" y="424" font-size="13" fill="var(--text-muted)">Heap ile yığın aynı boşluğun iki ucundan büyür; aradaki mesafe ikisinin toplam bütçesidir</text>
+  <text x="26" y="444" font-size="13" fill="var(--text-faint)">Buradaki heap bir bölgedir; öncelik kuyruğu makalesindeki heap bir veri yapısıdır</text>
+</svg>

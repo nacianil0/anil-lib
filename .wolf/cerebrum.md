@@ -353,10 +353,59 @@ ode_modules`, sonra kopyayi sil.
   bir UUID sema acisindan gecerlidir ama kotu bir aliskanliktir; `crypto.randomUUID()` ile gercek id uret ve
   mevcut katalogla cakismadigini dogrula.
 
+
+- [2026-09-11] BOUN Batch 12: **bir yol haritası kapsam iddiası doğrulanmadan taşınmamalı.** Yol
+  haritası makale 39 için "resmî bir ders yoktur" diyordu; bölümün ders dizini bu run'da ilk kez
+  okundu ve **CMPE321 Introduction to Database Systems** bulundu (önkoşulu CMPE250). Ders dizini
+  sayfası istemci tarafında sayfalanıyor — `?page=2`/`?page=3` aynı HTML'i döndürüyor — dolayısıyla
+  bir dersin varlığı ancak **kendi sayfası** çekilerek kanıtlanabilir.
+- [2026-09-11] `content/series-boun/catalog.json` alan adları **camelCase**'tir (`articleId`,
+  `readingOrder`, `contentHash`, `classificationBatch`) ama frontmatter **snake_case**'tir. Bağımsız
+  denetim betiği ikisini ayrı ayrı ele almalı; yoksa ilk satırda `KeyError` verir.
+- [2026-09-11] `roadmap.json` ve `catalog.json` tek satırlık kompakt kayıtlarla biçimlendirilmiştir.
+  `json.load` + `json.dumps(..., indent=2)` ile yeniden yazmak tek alanlık bir değişiklik için
+  **282 satırlık sahte fark** üretir. Bu dosyalarda tek alan değişikliği **düz metin replace** ile
+  yapılmalıdır.
+- [2026-09-11] Windows yolunu Python'da `r'D:\dev\anil-lib\'` gibi **ters bölü ile bitirme** —
+  raw string'de bile `unterminated string literal` verir. İleri bölü kullan.
+- [2026-09-11] Playwright tam takımında **üçüncü bir başarısızlık** var ve hangi test olduğu koşudan
+  koşuya değişiyor (`reader.spec.ts:518` ya da `reader-resume.spec.ts:92`). Aynı testler tek başına
+  ve dosya düzeyinde geçiyor. Atfetmek için **tek spec koşmak yetmez**: kontrol koşusu da tam takım
+  olmalıdır. Bu run'da içerik geri alınıp tam takım koşulduğunda aynı üç başarısızlık çıktı.
+- [2026-09-11] Yayıncı sayfaları ücretli kitaplar için **doğrulanabilir içindekiler** verir ve bu,
+  "bölüm adı doğrulanamayan kaynağa atıf yapılmaz" borcunu kapatmanın en ucuz yoludur:
+  Elsevier kitap sayfası (Patterson & Hennessy, yalnızca bölüm adları), `csapp.cs.cmu.edu/3e/pieces/preface3e.pdf`
+  ve `db-book.com/toc-dir/toc.pdf` (ikisi de **alt bölüm adlarına kadar**).
+
+### Batch 25 (2026-09-12) — AI serisi 103-106
+
+- **Serinin kendi olcutunu kendi deneyine uygula.** 104 ve 105'in tablolari tek tohumla yazildi ve
+  ikisi de yanlisti. 99. makalenin kurali (fark kosular arasi sapmadan buyuk olmali) kendi olcumumuze
+  uygulandiginda iki makalenin de asil bulgusu degisti. **Cok tohumlu turu erken baslat**; asil
+  darbogaz yazmak degil beklemek.
+- **Kaynakca-govde eslesmesini mekanik tara.** SOZLESME §4 yalnizca gercekten kullanilan kaynaklarin
+  listelenmesini istiyor; gozle kaciriliyor. Batch 25'te bes kunye yakalandi.
+- **Bash heredoc ile dosya yazmak guvenilir degil.** Uzun betikler ve kritik duzeltmeler Write araciyla
+  yapilmali; bir dosya uc denemede diske yansimadi.
+- **Tarayici olcum betigi sayfa degistirmemeli.** `location.href` atamasi javascript_tool cagrisini
+  olduruyor; navigasyon navigate araciyla, olcum ayri cagriyla yapilir.
+- **BOUN serisinin rotasi `/boun`**, `/seri-boun` degil.
+- **Playwright ESM'den `import "D:/..."` ile cagrilamaz;** `createRequire("file:///D:/dev/anil-lib/")`
+  kullanilir. `waitUntil: "networkidle"` okuyucuda hic tetiklenmiyor.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
+- [2026-09-11] Diyagramda bir bağlantıyı **düz köşegenle** komşu bir kutunun altından geçirme.
+  Makale 38'in kopyalarken yazma şeklinde çocuk girdisinden yeni fiziksel sayfaya inen köşegen, araya
+  giren kutunun alt kenarına **yedi birim** kala geçiyordu; repo SVG denetleyicisi de `ortusme` benzeri
+  metin taraması da bunu görmez, yalnızca PNG'de fark edilir. Çözüm: **dirsekli yol** (aşağı → yana →
+  yukarı) ve viewBox'ı buna göre büyütmek.
+- [2026-09-11] Ağaç şemasında iç düğümden yaprağa inen çizgilerin **bitiş koordinatını yaprak kutusunun
+  üst kenarına** oturt. Makale 39'un B+-ağacı şeklinde üç iç düğümün altına dört yaprak konmuştu;
+  çizgiler kutuların yanında boşlukta bitti ve şekil "bağlantısız" göründü. Düğüm sayısı yaprak
+  sayısına bölünmüyorsa ağacı yeniden kur (1 kök + 2 iç düğüm + 4 yaprak), çizgileri zorlama.
 - [2026-09-10] Bir kaynağın mecrasını dosya adına yazıp künye gibi kullanma. MELT çalışmasının anahtarı `..._mobisys2024` diye açılmıştı; Crossref mecranın **MobiCom 2024** olduğunu gösterdi (10.1145/3636534.3690668). Dosya adı çalışma notudur; künye her zaman ayrı bir kanaldan doğrulanır.
 - [2026-09-10] Bir kaynaktan "aralık" türetmeden önce o sayıların hangi istatistik olduğuna bak. Luccioni ve ark. FAccT 2024'te metin üretimi için 0,047 **ortalama**, 0,042 **ortanca**; "0,042–0,047 aralığı" diye yazmak yanlıştı ve aynı çalışmanın "en verimli metin üretim modeli = telefon şarjının yüzde 9'u" cümlesi bambaşka bir sayıya (≈0,002) karşılık geliyor. Tablodaki ortalamaları kullan, aralık uydurma.
 - [2026-09-10] Bir kaynağın içinde iki sayı çelişiyorsa çelişkiyi metne taşıma. MobileLLM "0,1 J/token/milyar" (7 milyarda 0,7 J) ve "her 64 token pilin binde ikisi" diyor; ikincisi birinciyle tutarsız (0,7 × 64 = 44,8 J, 50 kJ'ün binde 0,9'u). Kaynağın **kendi vardığı sonuçla** örtüşen kolu seç, hesabı açıkça göster, tutarsız cümleyi hiç alma.

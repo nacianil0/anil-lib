@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="Dört satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: SFT, aynı temel model ve değişen tek şey adım sayısı. Sütunlar adım, p bugün, referanstan KL, doğru fiil ve derlem kaybı. Birinci satır temel model: 0,4996, 0,0000, 0,9990, 0,46286. İkinci satır 10 adım: 0,8601, 0,2787, 0,9984, 0,58008. Üçüncü satır 30 adım: 0,9926, 0,6504, 0,9991, 1,05479. Dördüncü satır vurguludur, 120 adım: 0,9976, 0,6761, 0,9986, 1,23545. Birinci kutunun başlığı üç sütun üç ayrı şey söylüyor: biçim taşındı, 0,4996'dan 0,9976'ya; bilgi yerinde kaldı, 0,9990'dan 0,9986'ya; bedel derlem kaybında ödendi, 0,46286'dan 1,23545'e. İkinci kutuda şu durur: fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. En altta iki kayıt: dört ayrı koşu vardır ve hepsi aynı temel modelden başlar; KL yedi bağlam üzerinden ortalanmıştır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">SFT: aynı temel model, değişen tek şey adım sayısı</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">adım</text>
+  <text x="140" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">p(bugün)</text>
+  <text x="290" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">referanstan KL</text>
+  <text x="450" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">doğru fiil</text>
+  <text x="580" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">derlem kaybı</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text-muted)">temel</text>
+  <text x="140" y="100" font-size="13" fill="var(--text)">0,4996</text>
+  <text x="290" y="100" font-size="13" fill="var(--text)">0,0000</text>
+  <text x="450" y="100" font-size="13" fill="var(--text)">0,9990</text>
+  <text x="580" y="100" font-size="13" fill="var(--text)">0,46286</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">10</text>
+  <text x="140" y="126" font-size="13" fill="var(--text)">0,8601</text>
+  <text x="290" y="126" font-size="13" fill="var(--text)">0,2787</text>
+  <text x="450" y="126" font-size="13" fill="var(--text)">0,9984</text>
+  <text x="580" y="126" font-size="13" fill="var(--text)">0,58008</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">30</text>
+  <text x="140" y="152" font-size="13" fill="var(--text)">0,9926</text>
+  <text x="290" y="152" font-size="13" fill="var(--text)">0,6504</text>
+  <text x="450" y="152" font-size="13" fill="var(--text)">0,9991</text>
+  <text x="580" y="152" font-size="13" fill="var(--text)">1,05479</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">120</text>
+  <text x="140" y="178" font-size="13" font-weight="bold" fill="var(--accent)">0,9976</text>
+  <text x="290" y="178" font-size="13" font-weight="bold" fill="var(--accent)">0,6761</text>
+  <text x="450" y="178" font-size="13" font-weight="bold" fill="var(--accent)">0,9986</text>
+  <text x="580" y="178" font-size="13" font-weight="bold" fill="var(--accent)">1,23545</text>
+
+  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
+
+  <rect x="20" y="206" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="230" font-size="13" font-weight="bold" fill="var(--text)">Üç sütun üç ayrı şey söylüyor</text>
+  <text x="34" y="252" font-size="13" fill="var(--text)">Biçim taşındı: 0,4996 → 0,9976. Bilgi yerinde kaldı: 0,9990 → 0,9986.</text>
+  <text x="34" y="272" font-size="13" fill="var(--text)">Bedel derlem kaybında ödendi: 0,46286 → 1,23545.</text>
+
+  <rect x="20" y="292" width="680" height="36" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="316" font-size="13" fill="var(--text-muted)">Fiil maskenin içindeydi; her adımda yeniden pekiştirildi.</text>
+
+  <text x="20" y="352" font-size="13" fill="var(--text-faint)">Dört ayrı koşu; hepsi aynı temel modelden başlıyor.</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-faint)">KL yedi bağlam üzerinden ortalanmıştır.</text>
+</svg>

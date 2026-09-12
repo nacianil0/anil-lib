@@ -2174,3 +2174,309 @@ makalelerde "kendi hesabım / kendi programım" diye işaretlendi.
   ikinci panelin notuna yapışıyordu ve ikinci şeklinde "1024 işaretçi" notu yanlış kutuya bitişik duruyordu.
   İkisi de düzeltildi. **Ders: ikinci denetleyici çakışmayı arar, yakınlık ve yanlış gruplama hatalarını
   yalnızca göz yakalar.**
+
+## 17. Batch 12 üretim run'ında doğrulanan kaynaklar (2026-09-11)
+
+Makale 37 (Bilgisayar Organizasyonu), 38 (C ve Bellek) ve 39 (Veritabanları) bu kaynaklara dayanır.
+Bütün URL'ler bu run'da HTTP 200 ile çekildi; PDF'ler indirilip metne çevrildi ve **okundu**. Yalnızca
+içindekiler düzeyinde kullanılan kaynaklar aşağıda açıkça öyle işaretlenmiştir.
+
+### Resmî sayfalar
+
+- **CMPE244** (<https://cmpe.bogazici.edu.tr/courses/cmpe244/>), yeniden doğrulama **2026-09-11**:
+  Batch 11'de kaydedilen katalog tanımı ve ders çıktıları birebir aynı çıktı. Ders adı *Computer
+  Organization*, bahar dönemi, 4 kredi / 5 ECTS, önkoşul "CMPE142 or EE240 or EE 243". Makale 37'nin
+  dayanağı katalog tanımındaki "Memory unit" ile "Instruction sets and their implementation"
+  ifadeleri ve öğrenme çıktılarındaki **"Understand the design principles and issues related to
+  hierarchical memory systems"** ile **"Understand the execution of machine instructions via RISC-V
+  assembly programming"** maddeleridir.
+- **CMPE230** (<https://cmpe.bogazici.edu.tr/courses/cmpe230/>), yeniden doğrulama **2026-09-11**:
+  katalog tanımı Batch 11'dekiyle birebir aynı. Ders adı *Systems Programming*, bahar dönemi,
+  4 kredi / 6 ECTS, önkoşul CMPE160. Katalog tanımı C dilini, işaretçileri ya da bellek düzenini
+  **adlandırmaz**; makale 38'in resmî zemini "Unix environment and system calls" ve "assembly
+  language programming" ifadeleridir ve makale bunu gövdesinde açıkça söyler.
+- **CMPE321 — kapsam düzeltmesi.** Yol haritası makale 39'u "resmî bir dersi yoktur; transkript
+  savunması ve B-ağacı tahsili için" diye planlamıştı. Bu run'da bölümün ders dizini
+  (<https://cmpe.bogazici.edu.tr/courses/>) okundu ve listede **CMPE222 Introduction to Database
+  Systems** ile **CMPE321 Introduction to Database Systems** bulundu. CMPE321'in kendi sayfası
+  (<https://cmpe.bogazici.edu.tr/courses/cmpe321/>) çekildi: ders adı *Introduction to Database
+  Systems*, bahar dönemi, 4 kredi / 6 ECTS, **önkoşul CMPE250** — yani bilimsel hazırlık üçlüsünün
+  veri yapıları dersi. *Catalog Description* birebir: "Logical organization of data:
+  Entity-relationship modeling of data. Hierarchical, network and relational models. Data description
+  and query languages. Normal forms and database design. Physical design and access strategies.
+  Security, integrity and reliability. Design and implementation of a simple database management
+  system that includes file security and a simple query language." Sayfada *Course Learning Outcomes*
+  bölümü **yoktur**. Makale 39'un kapsamı bu tanımın ilişkisel model, normal biçimler, fiziksel tasarım
+  ve erişim stratejileri ile güvenilirlik başlıklarıyla sınırlıdır; **entity-relationship modelleme ve
+  SQL sözdizimi bilinçli olarak kapsam dışıdır** (sözlü savunma ölçütü için gerekli değiller).
+  **Not:** ders dizini sayfası istemci tarafında sayfalanıyor; statik HTML yalnızca ilk on altı dersi
+  içeriyor ve CMPE321 bu listede görünüyor. Diğer iki sayfa `?page=2` ve `?page=3` ile çekildiğinde
+  aynı HTML dönüyor, dolayısıyla dizinin tamamı bu yolla alınamaz; CMPE321 kendi sayfasından ayrıca
+  doğrulanmıştır.
+
+### Makale 37 için akademik kaynaklar
+
+- **Drepper, U., *What Every Programmer Should Know About Memory*, Sürüm 1.0, Red Hat, 21 Kasım 2007**
+  (<https://people.freebsd.org/~lstewart/articles/cpumemory.pdf>; 934 KB, metne çevrildi). Doğrulanan
+  birebir içerik: statik bellek hücresinin **altı transistörlü** yapısı, sözcük hattı kaldırılır
+  kaldırılmaz çıkışın hazır olması ve tazeleme gerektirmemesi; dinamik bellek hücresinin **bir
+  transistör ve bir kondansatörden** oluşması, kondansatörün boşalmasını beklemenin hızı "severely"
+  sınırlaması ve alan avantajı; "Why is not all RAM in a machine SRAM? The answer is, as one might
+  expect, cost"; önbellek boyutunun ana belleğin yaklaşık **binde biri** olması (yazarın deneyimi);
+  zamansal ve uzamsal yerelliğin "key to the concept of CPU caches" olması; **91,5'lik hesap** — ana
+  bellek 200 çevrim, önbellek 15 çevrim, 100 öge × 100 erişim → önbelleksiz 2.000.000, önbellekli
+  168.500 çevrim (aritmetik bu run'da bağımsız olarak yeniden yapıldı ve birebir aynı çıktı);
+  Intel'in **Pentium M** için verdiği erişim tablosu — **yazmaç 1, L1d 3, L2 14, ana bellek 240
+  çevrim**; Şekil 3.4'ün ölçülmüş üç platosu — **L1d'de 10 çevrimin altı, L2'de yaklaşık 28, ana
+  bellekte 480 ve üstü** — ve kirli satırların geri yazılmasının bu farka katkısı; önbellek satırının
+  erken sistemlerde 32, bugün **64 bayt** olması ve 64 bitlik veri yolunda 8 aktarım etmesi; adresin
+  **etiket / küme / konum** biçiminde üçe bölünmesi ve düşük O bitin satır içi konum olması; 4 MB'lık
+  ve 64 baytlık satırlı bir önbelleğin **65.536 satır** tutması, tam çağrışımlı düzende her satır için
+  bir karşılaştırıcı gerekmesi ve bunun uygulanamaz olması; tam çağrışımlılığın yalnızca **birkaç
+  düzine girdilik** yapılarda kullanılması ("the TLB caches on some Intel processors are fully
+  associative but those caches are small, really small"); doğrudan eşlemeli düzende adresin **6'dan
+  21'e kadarki 16 bitinin** satırı seçmesi, tek karşılaştırıcının yetmesi ve adresler düzgün
+  dağılmadığında bazı girdilerin sürekli atılması; **8 yollu** kümeli çağrışımlı düzenin **8.192 küme**
+  ve **13 bit** vermesi; L2'lerde 24'e varan, L1'de genellikle 8 olan çağrışımlılık; boru hattının
+  yükleme gecikmesini gizleyebilmesi ve çözülmüş komutları önbelleğe almanın boru hattı **yanlış
+  kestirim** yüzünden boşaldığında kazandırması. Makaledeki AMAT hesapları, kesişim noktası hesabı,
+  TLB kapsama hesabı ve dizi/bağlı liste trafik hesabı bu kaynaktan **değil**, kendi aritmetiğimdir.
+- **Ousterhout, J. K., *Why Aren't Operating Systems Getting Faster As Fast as Hardware?*, USENIX
+  Summer Conference, Anaheim, Haziran 1990** (<https://web.stanford.edu/~ouster/cgi-bin/papers/osfaster.pdf>;
+  47 KB). Doğrulanan birebir içerik: çalışmanın çekirdek giriş-çıkışını, süreç geçişini, `select`'i,
+  bellek kopyalamayı ve dosya sistemini zorlayan kıyas kümesi; sonuçların **MIPS'e göreli hız** olarak
+  normalize edilmesi; `getpid` kıyasında RISC makinelerin göreli hızlarının tipik olarak **0,5–0,8**
+  aralığında kalması ve "the cost of entering and exiting the kernel in the RISC machines has not
+  improved as much as their basic computation speed"; `cswitch` kıyasında (iki süreç arasında boru
+  üzerinden bir bayt gidip gelmesi, iki bağlam anahtarı) göreli hızların **0,3–0,5** aralığında olması;
+  sonuç bölümünün iki donanım başlığı — bellek bant genişliğinin işlemci hızına yetişememesi ve bağlam
+  anahtarının RISC makinelerde CISC'e göre **yaklaşık iki kat** pahalı olması. Bu kaynak, makale 27'nin
+  "bağlam anahtarı çevrim cinsinden ucuzlamıyor" gözlemini donanım tarafından gerekçelendirir.
+- **OSTEP Chapter 22, Beyond Physical Memory: Policies** (Batch 10'da indirilmişti;
+  `vm-beyondphys-policy.pdf`). Bu run'da yalnızca **ıska sınıflandırması** için yeniden okundu:
+  "architects sometimes find it useful to characterize misses by type, into one of three categories:
+  compulsory, capacity, and conflict misses, sometimes called the Three C's"; kapasite ıskasının
+  önbellekte yer kalmamasından, **çakışma ıskasının** kümeli çağrışımlılıktan doğması ve "it does not
+  arise in the OS page cache because such caches are always fully-associative" saptaması. Makale 33
+  yalnızca **zorunlu ıskayı** almıştı; kalan iki tür 37'de bu kaynaktan alındı.
+- **Bryant, R. E. & O'Hallaron, D. R., *Computer Systems: A Programmer's Perspective*, üçüncü baskı**
+  — yalnızca **içindekiler düzeyinde**. Yayıncının resmî önsöz/içindekiler PDF'i
+  (<https://csapp.cs.cmu.edu/3e/pieces/preface3e.pdf>) indirildi ve **bölüm ile alt bölüm adları
+  doğrulandı**: 3. bölüm Machine-Level Representation of Programs (3.10.1 Understanding Pointers,
+  3.10.3 Out-of-Bounds Memory References and Buffer Overflow), 4. bölüm Processor Architecture
+  (4.2 Logic Design and the Hardware Control Language HCL, 4.2.1 Logic Gates, 4.2.2 Combinational
+  Circuits and HCL Boolean Expressions, 4.4 General Principles of Pipelining, 4.5.5 Pipeline Hazards),
+  6. bölüm The Memory Hierarchy (6.1 Storage Technologies, 6.2 Locality, 6.3 The Memory Hierarchy,
+  6.4 Cache Memories, 6.4.2 Direct-Mapped Caches, 6.4.3 Set Associative Caches, 6.4.4 Fully Associative
+  Caches, 6.5 Writing Cache-Friendly Code), 7. bölüm Linking, 8. bölüm Exceptional Control Flow
+  (8.2.3 Private Address Space, 8.2.5 Context Switches, 8.4.2 Creating and Terminating Processes,
+  8.4.3 Reaping Child Processes, 8.4.5 Loading and Running Programs, 8.4.6 Using fork and execve to
+  Run Programs), 9. bölüm Virtual Memory (9.6.2 Speeding Up Address Translation with a TLB,
+  9.8.2 The fork Function Revisited, 9.9 Dynamic Memory Allocation, 9.11 Common Memory-Related Bugs in
+  C Programs). **Kitabın gövdesi okunmadı**; 37 ve 38 bu kaynağa dayanan hiçbir sayı ya da tanım
+  içermez. CLRS'te olduğu gibi atıf alt bölüm adlarıyla yapılabilir.
+- **Patterson, D. A. & Hennessy, J. L., *Computer Organization and Design: The Hardware/Software
+  Interface, RISC-V Edition*, ikinci baskı, Morgan Kaufmann, 11 Aralık 2020** — yalnızca **bölüm
+  düzeyinde**. HANDOFF'ta "bölüm düzeyinde bile atıf yapmadan önce bir içindekiler kaynağı bulunmalıdır"
+  diye kayıtlı olan borç bu run'da kapandı: yayıncının kitap sayfası
+  (<https://shop.elsevier.com/books/computer-organization-and-design-risc-v-edition/patterson/978-0-12-820331-6>)
+  çekildi ve içindekiler listesi doğrulandı — 1. Computer Abstractions and Technology, 2. Instructions:
+  Language of the Computer, 3. Arithmetic for Computers, **4. The RISC-V Processor**, **5. Large and
+  Fast: Exploiting Memory Hierarchy**, 6. Parallel Processors from Client to Cloud, Ek A. The Basics of
+  Logic Design. **Alt bölüm adları doğrulanmadı**; atıf bölüm düzeyinde kalmalıdır.
+- **MIT OpenCourseWare, *6.004 Computation Structures*, Bahar 2017** (eğitmen: Chris Terman;
+  <https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/>). Ders birimlerinin adları
+  doğrulandı: 1 Basics of Information, 2 The Digital Abstraction, 3 CMOS, **4 Combinational Logic**,
+  5 Sequential Logic, 6 Finite State Machines, **7 Performance Measures**, **8 Design Tradeoffs**,
+  9 Designing an Instruction Set, 10 Assembly Language, 11 Compilers, 12 Procedures and Stacks,
+  13 Building the Beta, **14 Caches and the Memory Hierarchy**, **15 Pipelining the Beta**,
+  16 Virtual Memory, 17 Virtualizing the Processor, 18 Devices and Interrupts, 19 Concurrency and
+  Synchronization, 20 System-level Communication, 21 Parallel Processing. **Ders materyallerinin
+  içeriği okunmadı** — OCW birim sayfaları istemci tarafında derleniyor ve slayt PDF adresleri statik
+  HTML'de yok; birim düzeyinde atıf yapılabilir, içerik atfı yapılamaz.
+
+### Makale 38 için akademik kaynaklar
+
+- **OSTEP Chapter 5, Interlude: Process API** (`cpu-api.pdf`, Batch 9'da indirilmişti; bu run'da
+  **ilk kez okundu**). Doğrulanan birebir içerik: `fork()`'un yarattığı sürecin "an (almost) exact copy
+  of the calling process" olması; çocuğun `main()`'den değil "as if it had called fork() itself"
+  biçiminde başlaması; ebeveynin çocuğun PID'ini, çocuğun sıfır alması ve bu farkın iki dalı ayırmaya
+  yaraması; çıktının **belirsiz** olması ve çizelgeleyicinin karar vermesi (iki ayrı çıktı izi
+  verilmiş); `wait()`'in sıralamayı belirli hâle getirmesi; `exec()`'in "loads code (and static data)
+  from that executable and overwrites its current code segment (and current static data) with it; the
+  heap and stack and other parts of the memory space of the program are re-initialized", yeni süreç
+  yaratmayıp mevcut programı dönüştürmesi ve **"a successful call to exec() never returns"**;
+  `fork`/`exec` ayrımının kabuğu mümkün kılması, **çıktı yönlendirmesinin** çocukta standart çıktının
+  kapatılıp hedef dosyanın açılmasıyla yapılması, "UNIX systems start looking for free file descriptors
+  at zero" ve açık tanıtıcıların `exec()` boyunca açık kalması; Lampson kutusu ("Get it right. Neither
+  abstraction nor simplicity is a substitute for getting it right.").
+- **OSTEP Chapter 14, Interlude: Memory API** (`vm-api.pdf`; bu run'da indirildi). Doğrulanan birebir
+  içerik: **yığın belleğinin** derleyici tarafından örtük yönetilmesi ve "automatic memory" adı;
+  `free(void *ptr)`'ın boyut parametresi almaması ve çoğu ayırıcının **başlık bloğunu** verilen bloğun
+  hemen öncesine koyması, başlıkta boyut ve bütünlük denetimi için **sihirli sayı** bulunması,
+  dolayısıyla kullanıcı N bayt istediğinde kütüphanenin **N artı başlık boyutu** kadar parça araması;
+  beş klasik hata — ayırmayı unutmak (bölütleme hatası), yetersiz ayırmak (**tampon taşması**, "the
+  source of many security vulnerabilities"), ilklemeyi unutmak (**ilklenmemiş okuma**), serbest
+  bırakmayı unutmak (**bellek sızıntısı**; çöp toplayan dillerde de başvuru duruyorsa sürer), erken
+  serbest bırakmak (**sarkan işaretçi**); "IT COMPILED OR IT RAN = IT IS CORRECT" kutusu; süreç
+  bittiğinde çekirdeğin kod, yığın ve heap dahil bütün sayfaları geri alması ve sistemde **iki ayrı
+  bellek yönetimi katmanı** bulunması; `malloc`/`free`'nin sistem çağrısı **değil kütüphane çağrısı**
+  olması ve altta `brk`, `sbrk` ya da `mmap` kullanması; `calloc` ve `realloc`.
+- **OSTEP Chapter 17, Free-Space Management** (`vm-freespace.pdf`, Batch 10'dan beri eldeydi; bu run'da
+  **ilk kez kullanıldı**) — başlık bloğunun içeriği (`typedef struct { int size; int magic; } header_t;`)
+  ve `free`'nin işaretçiden geri gidip sihirli sayıyı doğrulayıp boyutu okuması.
+- **Cox, R., Kaashoek, F. & Morris, R., *xv6: a simple, Unix-like teaching operating system*, RISC-V
+  sürümü, MIT 6.1810, 2024** (<https://pdos.csail.mit.edu/6.828/2024/xv6/book-riscv-rev4.pdf>; bu run'da
+  indirildi). Doğrulanan birebir içerik: **3.6 Process address space** — kullanıcı belleğinin sıfırdan
+  başlaması ve MAXVA'ya kadar uzanması, ilke olarak **256 gigabayt** adreslenebilmesi; kodun
+  `PTE_R | PTE_X | PTE_U`, veri/yığın/heap'in `PTE_R | PTE_W | PTE_U` ile eşlenmesi; kod yazılabilir
+  olsaydı null işaretçiyle sıfırıncı adresteki komutların bozulabileceği ve bunun yerine donanımın
+  sayfa hatası üretmesi, verinin çalıştırılamaz olmasının programın kendi verisine atlamasını
+  engellemesi; **yığının tek sayfa** olması, en üstünde komut satırı argümanlarının metinleri ve
+  onlara işaret eden işaretçi dizisinin, hemen altında `main(argc, argv)` çağrılmış gibi görünmesini
+  sağlayan değerlerin bulunması; yığının altındaki **koruma sayfasının** `PTE_U` temizlenerek
+  erişilemez kılınması ve taşmanın sayfa hatası doğurması; adres uzayının tepesindeki **trambolin
+  sayfası**. **4.6 Page faults and page-table tricks** — naif `fork`'un `uvmcopy` ile gerçekten
+  kopyalaması; **kopyalarken yazmanın** bütün fiziksel sayfaları paylaşıp `PTE_W` temizleyerek salt
+  okunur eşlemesi, yazmada RISC-V'in **store page fault** üretmesi, çekirdeğin yeni sayfa ayırıp
+  kopyalaması, girdiyi kopyaya yöneltip yazma iznini açması ve **hatayı doğuran komutun baştan
+  çalıştırılması**; her fiziksel sayfaya kaç tablodan başvurulduğunun sayılması ve tek başvuru varsa
+  kopyanın gereksiz olması; `fork` ardından `exec` kalıbında devralınan belleğin büyük kısmının hiç
+  kopyalanmaması ve mekanizmanın **saydam** olması. **3.7 Code: sbrk** — `growproc` → `uvmalloc` /
+  `uvmdealloc` zinciri.
+
+### Makale 39 için akademik kaynaklar
+
+- **Codd, E. F., *A Relational Model of Data for Large Shared Data Banks*, Communications of the ACM
+  13(6), Haziran 1970, s. 377–387** (<https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf>).
+  Doğrulanan birebir içerik: bağıntının tanımı ("Given sets S1, S2, …, Sn (not necessarily distinct),
+  R is a relation on these n sets if it is a set of n-tuples each of which has its first element from
+  S1, its second element from S2, and so on") ve dipnotta "R is a subset of the Cartesian product
+  S1 × S2 × … × Sn"; **değer alanı**, **derece** (unary/binary/ternary/n-ary) terimleri; **birincil
+  anahtarın** her n-liyi tek başına belirleyen değer alanı ya da birleşim olarak tanımı ve
+  indirgenemezlik koşulu; **yabancı anahtarın** tanımı ve `supply` örneğinde supplier/part/project
+  birleşiminin birincil, her birinin tek başına yabancı anahtar olması; kaldırılması hedeflenen **üç
+  bağımlılık** — ordering dependence, indexing dependence, access path dependence; **normalleştirme**
+  yordamı ("Starting with the relation at the top of the tree, take its primary key and expand each of
+  the immediately subordinate relations by inserting this primary key domain or domain combination")
+  ve Figure 3(a)/3(b)'deki `employee` / `jobhistory` / `salaryhistory` / `children` örneği; normal
+  biçimin üç pratik sonucu — gösterimin **işaretçi içermemesi**, **hash adreslemeye bağımlı olmaması**,
+  **indeks ya da sıra listesi barındırmaması**.
+- **Bayer, R. & McCreight, E., *Organization and Maintenance of Large Ordered Indices*, Mathematical
+  and Information Sciences Report No. 20, Boeing Scientific Research Laboratories, 1970**
+  (<https://infolab.usc.edu/csci585/Spring2010/den_ar/indexing.pdf>). Doğrulanan birebir içerik:
+  indeksin (anahtar, ilişkili bilgi) çiftlerinden oluşması ve ilişkili bilginin tipik olarak bir kayda
+  işaretçi olması; indeksin bütününün ana belleğe sığmaması; her sayfanın **k ile 2k arasında** anahtar
+  taşıması, kökün 1 ile 2k arasında olması, yaprak olmayan bir sayfada anahtar sayısı ℓ ise ℓ + 1 çocuk
+  bulunması ve sayfa içi anahtarların sıralı olması; alt ağaç anahtar kümeleri üzerindeki (3.1)–(3.3)
+  koşulları; aramanın en fazla h sayfa getirmesi; yükseklik sınırları
+  `log_{2k+1}(I+1) ≤ h ≤ 1 + log_{k+1}((I+1)/2)`; özette geçen **"Storage utilization is at least 50%"**.
+- **Comer, D., *The Ubiquitous B-Tree*, ACM Computing Surveys 11(2), Haziran 1979, s. 121–137**
+  (<https://carlosproal.com/ir/papers/p121-comer.pdf>). Doğrulanan birebir içerik: Knuth'un adsız
+  varyantına karışıklığı önlemek için **B+-tree** denmesi; "In a B+-tree, all keys reside in the
+  leaves. The upper levels … consist only of an index, a roadmap to enable rapid location of the index
+  and key parts"; yaprakların soldan sağa bağlanması ve bu listeye **sequence set** denmesi; aramanın
+  yolda karşılaşılan değerlere bakmadan doğru yaprağa inmesi; düz B-ağacının "next" işleminin
+  `log_d n` yardımcı depo erişimi isteyebilmesine karşılık **"the B+-tree implementation … gains the
+  advantage of requiring at most 1 access to satisfy a next operation"**; ardışık tarama sırasında
+  hiçbir düğüme iki kez uğranmaması ve bellekte tek düğümlük yer yetmesi; yaprak bölündüğünde ortadaki
+  anahtarın **kopyasının** yukarı taşınması.
+- **Selinger, P. G., Astrahan, M. M., Chamberlin, D. D., Lorie, R. A. & Price, T. G., *Access Path
+  Selection in a Relational Database Management System*, IBM Research Division, San Jose, 1979**
+  (<https://courses.cs.duke.edu/compsci516/cps216/spring03/papers/selinger-etal-1979.pdf>).
+  Doğrulanan birebir içerik: **`COST = PAGE FETCHES + W * (RSI CALLS)`** ve W'nin G/Ç ile CPU arasında
+  ayarlanabilir bir ağırlık olması; tutulan istatistikler — NCARD(T), TCARD(T), P(T), ICARD(I),
+  NINDX(I) — ve bunların her INSERT/DELETE/UPDATE'te değil `UPDATE STATISTICS` komutuyla güncellenmesi;
+  her boolean çarpana bir **seçicilik çarpanı F** atanması; Tablo 1'den `column = value` için indeks
+  varsa **F = 1/ICARD**, yoksa 1/10 ve bunun açıkça **"This assumes an even distribution of tuples
+  among the index key values"** varsayımına dayanması; `column1 = column2` ve açık uçlu karşılaştırma
+  formülleri; Tablo 2'deki maliyet formülleri — eşitlik koşuluna uyan benzersiz indeks için `1 + 1 + W`,
+  kümelenmiş indeks için `F(preds) × (NINDX(I) + TCARD) + W × RSICARD`, kümelenmemiş indeks için
+  `F(preds) × (NINDX(I) + NCARD) + …`, segment taraması için `TCARD/P + W × RSICARD`.
+- **Gray, J., *The Transaction Concept: Virtues and Limitations*, Tandem Technical Report TR 81.3,
+  1981** (<https://jimgray.azurewebsites.net/papers/thetransactionconcept.pdf>). Doğrulanan birebir
+  içerik: özette transaction'ın "a transformation of state which has the properties of atomicity
+  (all or nothing), durability (effects survive failures) and consistency (a correct transformation)"
+  olarak tanımlanması; kavramın **sözleşme hukukundan** türetilmesi ve üç özelliğin sözleşme dilinde
+  sayılması ("Consistency: the transaction must obey legal protocols. Atomicity: it either happens or
+  it does not… Durability: once a transaction is committed, it cannot be abrogated."); sistem
+  durumunun kayıtlardan ve değerlerinden oluşması ve bunlar üzerindeki iddiaların **system consistency
+  constraints** diye adlandırılması; her transaction'ın tam olarak iki sonucundan birinin olması
+  (**commit** / **abort**), kesinleşmiş transaction'ların protected ve real eylemlerinin arıza hâlinde
+  bile kalıcı olması, geri alınmış olanların etkilerinin başka transaction'lar tarafından **hiç
+  görülmemesi**; **telafi eden transaction** kavramı.
+- **Berenson, H., Bernstein, P., Gray, J., Melton, J., O'Neil, E. & O'Neil, P., *A Critique of ANSI SQL
+  Isolation Levels*, Proc. ACM SIGMOD 1995, s. 1–10 (MSR-TR-95-51)** (<https://arxiv.org/pdf/cs/0701157>).
+  Doğrulanan birebir içerik: ANSI SQL'in yalıtımı üç olguyla tanımlaması ve **P1 (Dirty Read)**,
+  **P2 (Non-repeatable or Fuzzy Read)**, **P3 (Phantom)** tanımlarının birebir metinleri; olguların
+  geniş ve dar yorumlarının (P1/A1 gibi) ayrılması; Tablo 1'deki dört düzey — ANSI READ UNCOMMITTED,
+  ANSI READ COMMITTED, ANSI REPEATABLE READ ve **ANOMALY SERIALIZABLE**; üç olguyu yasaklamanın
+  sıralanabilirliği vermediği ve standardın SERIALIZABLE düzeyi için ayrıca "commonly known as fully
+  serializable execution" şartı koyduğu, tablonun öne çıkmasının "a common misconception" doğurduğu;
+  REPEATABLE READ adının yanıltıcı olması ("it is clear from the definition of P3 that reads are NOT
+  repeatable"); sıralanabilirliğin bağımlılık grafı ve seri geçmişe eşdeğerlik üzerinden tanımı;
+  okuma/yazma kilitlerinin çakışma kuralı, yüklem kilidi, **iyi biçimli** ve **iki fazlı** transaction
+  tanımları, kilitlerin **uzun süreli** ve **kısa süreli** olması.
+- **Silberschatz, A., Korth, H. F. & Sudarshan, S., *Database System Concepts*, yedinci baskı,
+  McGraw-Hill, 2019** — yalnızca **içindekiler düzeyinde**. Yayıncı sitesinin resmî içindekiler PDF'i
+  (<https://www.db-book.com/toc-dir/toc.pdf>) indirildi ve **bölüm ile alt bölüm adları doğrulandı**;
+  makale 39'un kullandıkları: 2. bölüm Introduction to the Relational Model (2.1 Structure of
+  Relational Databases, 2.3 Keys, 2.6 The Relational Algebra), 7. bölüm Relational Database Design
+  (7.2 Decomposition Using Functional Dependencies, 7.3 Normal Forms, 7.4 Functional-Dependency
+  Theory), 14. bölüm Indexing (14.2 Ordered Indices, 14.3 B+-Tree Index Files, 14.5 Hash Indices),
+  15. bölüm Query Processing (15.2 Measures of Query Cost, 15.4 Sorting, 15.5 Join Operation),
+  16. bölüm Query Optimization (16.3 Estimating Statistics of Expression Results, 16.4 Choice of
+  Evaluation Plans), 17. bölüm Transactions (17.4 Transaction Atomicity and Durability,
+  17.5 Transaction Isolation, 17.6 Serializability, 17.8 Transaction Isolation Levels),
+  18. bölüm Concurrency Control (18.1 Lock-Based Protocols, 18.2 Deadlock Handling),
+  19. bölüm Recovery System (19.3 Recovery and Atomicity, 19.5 Buffer Management, 19.9 ARIES).
+  **Kitabın gövdesi okunmadı**; 39 bu kaynağa dayanan hiçbir sayı ya da tanım içermez. İşletim
+  sistemleri kitabında olduğu gibi alt bölüm düzeyinde atıf yapılabilir.
+- **Carnegie Mellon University, *15-445/645 Database Systems*, Güz 2024** (eğitmen: Andy Pavlo;
+  <https://15445.courses.cs.cmu.edu/fall2024/schedule.html>). Ders listesi doğrulandı: #01 Relational
+  Model & Algebra, #02 Modern SQL, #03–#04 Database Storage, #05 Storage Models & Compression,
+  #06 Memory Management, #07 Hash Tables, #08–#09 Indexes & Filters, #10 Index Concurrency Control,
+  #11 Sorting & Aggregations Algorithms, #12 Joins Algorithms, #13–#14 Query Execution, #15 Query
+  Planning & Optimization, #16 Concurrency Control Theory, #17 Two-Phase Locking, #18 Timestamp
+  Ordering, #19 Multi-Version Concurrency Control, #20 Database Logging, #21 Database Recovery,
+  #22–#24 Distributed Databases, #25 Final Review. Okuma atamaları Silberschatz bölümlerine işaret
+  ediyor. **Slayt ve not içerikleri okunmadı.**
+
+### Erişilemeyen kaynak
+
+- **Haerder, T. & Reuter, A., *Principles of Transaction-Oriented Database Recovery*, ACM Computing
+  Surveys 15(4), 1983, s. 287–317** — ACID kısaltmasının kaynağı olarak bilinen derleme. Bu run'da
+  **on yedi ayrı adres denendi** (Stanford CS245, Harvard CS265, Berkeley CS262 ve DSF CS286,
+  UW CSE551, UWaterloo CS448, CMU 15-823 ile 15-721'in üç dönemi, IIT CS525, UCSB, Rice COMP520,
+  UMass CS691LL, USC Infolab, UC Irvine CS223, Colostate CS530) ve hiçbiri erişilebilir bir
+  tam metin vermedi; ACM DL doğrudan indirmeye kapalı. Makale 39 bu kaynağa dayanan hiçbir iddia
+  içermez: ACID'in üç özelliği Gray 1981'den, yalıtım tarafı Berenson ve ark. 1995'ten alınmıştır ve
+  makale bunu gövdesinde açıkça söyler. Semantic Scholar arama ucu bu run'da **429** döndürdü.
+
+### Bu run'da bağımsız olarak hesaplanan sayılar
+
+Aşağıdaki sayıların hiçbiri kaynaktan alınmamıştır; hepsi bu run'da elle ya da hesap makinesiyle
+türetilmiş ve makalelerde açıkça "kendi hesabımdır" diye işaretlenmiştir.
+
+1. Drepper'ın 91,5'lik önbellek kazancı **yeniden türetildi**: 10.000 × 200 = 2.000.000; 100 × 200 +
+   9.900 × 15 = 20.000 + 148.500 = 168.500; (2.000.000 − 168.500) / 2.000.000 = %91,575.
+2. İki katmanlı AMAT, üç senaryo: 3 + 0,05 × (14 + 0,10 × 240) = **4,9**; 3 + 0,20 × 38 = **10,6**;
+   3 + 0,20 × (14 + 0,50 × 240) = **29,8** çevrim. Üç senaryoda komut sayısı aynıdır; oran 6,08.
+3. Diskin çevrim karşılığı: 10 ms × 3 × 10⁹ Hz = **3 × 10⁷ çevrim**; ana belleğe oranı 3 × 10⁷ / 240 =
+   125.000 ≈ **10⁵**. Katmanlar arası oranlar 3, 14/3 ≈ **5**, 240/14 ≈ **17**.
+4. Kesişim noktası kayması: RAM modelinde n² = 20n → **n = 20**; çevrim cinsinden 3n² = 20n × 240 =
+   4.800n → **n = 1.600**. Oran **80**.
+5. TLB kapsama: 64 girdi × 4 KB = **256 KB**; 64 girdi × 2 MB = **128 MB**; oran **500**.
+6. İşaretçi trafiği: 64 baytlık satıra 4 baytlık **16** tam sayı sığar. Bir milyon tam sayı için dizi
+   1.000.000 / 16 = **62.500** ıska ve 937.500 isabet → 62.500 × 240 + 937.500 × 3 = **17.812.500**
+   çevrim; dağınık bağlı liste 1.000.000 × 240 = **240.000.000** çevrim; oran **13,5**. Varsayımlar
+   metinde sayılmıştır (ön getirme yok, her düğüm ayrı satırda, her ıska ana belleğe iniyor).
+7. Erişim yolu maliyeti: 4096 / 100 = 40 satır/blok; 1.000.000 / 40 = **25.000 blok**. İndeks girdisi
+   16 bayt → 4096 / 16 = 256 girdi/blok; yapraklar 1.000.000 / 256 = **3.907 blok**, üstü 16 blok, kök
+   1 blok → **üç seviye**. Kümelenmemiş kırılma noktası 3 + k = 25.000 → k ≈ **24.997**, yani tablonun
+   **%2,5'i**. Kümelenmiş kırılma noktası 3 + k/40 = 25.000 → k ≈ **999.880**, yani pratikte **%100**.
+8. Çarpık dağılım örneği: ICARD = 100.000 için F = 1/100.000 → beklenen 10 satır → öngörülen 13 blok;
+   gerçek 300.000 satırda maliyet 3 + 300.000 = **300.003** blok, tam taramanın **12,0** katı.
+9. Dış sıralama: N = 25.000 blok, M = 256 blok → 25.000 / 256 = 97,7 → **98 parça**; 255 yollu
+   birleştirmede 98 ≤ 255 olduğu için **tek birleştirme geçişi**; toplam
+   2 × 25.000 × (1 + 1) = **100.000** blok G/Ç, yani tabloyu bir kez okumanın **dört katı**.

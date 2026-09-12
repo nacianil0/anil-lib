@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-11T19:24:14.515Z
-> Files: 160 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-11T21:36:56.486Z
+> Files: 236 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -98,6 +98,34 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b3287c97-e0f7-480d-9e39-6d39ce7d1b0f/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/
+
+- `bpe.py` — 104. makale: kendi tokenizer'imizi kurmak. (~1282 tok)
+- `bpe2.py` — 104: kendi tokenizer'imiz. Cift -> kelime dizini ile hizlandirilmis BPE. (~1196 tok)
+- `calc106.py` — 106. makale: butun kendi hesaplarimiz tek yerde. (~1319 tok)
+- `dump103.py` — 103. makale: baslangic agirliklariyla (2 ondaliga yuvarlanmis) tam ileri gecis dokumu. (~1673 tok)
+- `dump104.py` — 104. makale: egitim kosusunun butun sayilari + ablasyonlar. (~1900 tok)
+- `dump104b.py` — 104. makale, ikinci tur: kosular arasi sapma + dikkatin bilgiyi nasil tasidigi. (~1440 tok)
+- `dump105.py` — 105. makale: kucuk olcekte SFT ve DPO. Butun sayilar bu betikten cikar. (~2119 tok)
+- `dump105b.py` — 105, ikinci tur: beta'nin etkisini yalitmak icin AYNI kayip esigine kadar egit. (~1114 tok)
+- `dump105c.py` — 105, ucuncu tur: kapasite aciklamasinin sinanmasi. (~1858 tok)
+- `dump105d.py` — 105, dorduncu tur: merkezi iddianin uc tohumla sinanmasi. (~720 tok)
+- `dump105e.py` — 105: tohum 11'in DPO sonrasi tam dagilimi (kutlenin nereye gittigi). (~385 tok)
+- `measure.js` — Tek sayfa, uc tema olcumu. Sayfa degistirmez; navigate araciyla gidilir. (~491 tok)
+- `micro.py` — Mikro-GPT: 103-105. makalelerin butun sayilarinin kaynagi. (~2736 tok)
+- `net.py` — Kaynak indirme, PDF -> metin, baglanti kapisi ve korpus ici arama. (~1407 tok)
+- `scan.cjs` — Yayin oncesi zorunlu taramalar (HANDOFF "Yayin oncesi zorunlu taramalar"). (~1042 tok)
+- `shots.mjs` — Sekil PNG turu: her figure/svg'yi 1200 px'lik bir kaplayiciya klonlayip (~733 tok)
+- `svgcheck.cjs` — check-series-svg.cjs'in gormedigi kusurlari yakalar: (~1588 tok)
+- `sweep.py` — Rota sweep — dilimli. Dev sunucusu butun rotalari tek seferde derlerken (~575 tok)
+- `syncalt.cjs` — Markdown'daki sekil alt metnini SVG'nin aria-label'ina yazar (elle yazilinca ayrisiyor). (~367 tok)
+- `train.py` — Mikro-GPT egitimi (AdamW) + gradyan dogrulamasi + sonuclarin dokumu. (~1104 tok)
+- `wc.cjs` — Kapının kendi kelime sayacının birebir kopyası (tools/series/check-series-content.cjs). (~321 tok)
+- `wolf25.py` — Batch 25: .wolf/buglog.json, memory.md, cerebrum.md, anatomy.md guncellemesi. (~2498 tok)
+- `yol25.py` — YOL-HARITASI.md'yi Batch 25 icin gunceller. CRLF/LF korunur (dosya LF). (~4424 tok)
+- `yol25b.py` — YOL-HARITASI: Batch 25 tekrar defteri, prerequisite satirlari ve terim defteri. (~1713 tok)
+- `yol25c.py` — YOL-HARITASI: 103-106 prerequisite satirlari + terim defteri satirlari. (~1197 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/
 
 
@@ -109,6 +137,23 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e1f45040-c729-4235-a0ae-6df2a28aa30d/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/
+
+- `alt-fix.py` — -*- coding: utf-8 -*- (~820 tok)
+- `alt37.py` — -*- coding: utf-8 -*- (~845 tok)
+- `alt38.py` — -*- coding: utf-8 -*- (~1005 tok)
+- `alt39.py` — -*- coding: utf-8 -*- (~1068 tok)
+- `arastirma-17.md` — 17. Batch 12 üretim run'ında doğrulanan kaynaklar (2026-09-11) (~6852 tok)
+- `defter-b12.py` — Terim defteri ve kavram-tekrar defterine Batch 12 girdilerini ekler. CRLF korunur. (~2543 tok)
+- `handoff-nums.py` — -*- coding: utf-8 -*- (~258 tok)
+- `jargon39.py` — -*- coding: utf-8 -*- (~435 tok)
+- `memory-b12.py` — -*- coding: utf-8 -*- (~619 tok)
+- `sayi-duzelt.py` — Haerder & Reuter icin denenen ayna sayisini gercek sayiya (17) cevirir. (~438 tok)
+- `sayi2.py` — -*- coding: utf-8 -*- (~242 tok)
+- `title39.py` — -*- coding: utf-8 -*- (~340 tok)
+- `wolf-b12.py` — Cerebrum'a Batch 12 öğrenimlerini, buglog'a iki düzen hatasını ekler. Paylaşılan dosyalar: yalnızca (~2005 tok)
+- `yol-b12.py` — YOL-HARITASI.md'yi Batch 12 sonrası duruma getirir. CRLF korunur. (~1919 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/
 
@@ -142,10 +187,12 @@
 
 - `boun-batch10-faz-d-sanallastirma.md` (~938 tok)
 - `boun-batch11-faz-d-kapanis.md` (~1066 tok)
+- `boun-batch12-faz-e-konu-makaleleri.md` (~1209 tok)
 - `boun-batch9-faz-d-govde.md` (~988 tok)
 - `series-batch22-faz10-acilis.md` — Declares into (~1184 tok)
 - `series-batch23-faz10-kapanis.md` (~1009 tok)
 - `series-batch24-faz11-kapanis.md` (~710 tok)
+- `series-batch25-faz12-kapanis.md` (~844 tok)
 
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/
 
@@ -201,6 +248,15 @@
 
 ## artifacts/b12-research/
 
+- `denetim.py` — Repo araclarindan bagimsiz denetim. Dosyalar BINARY okunur (core.autocrlf=true). (~1305 tok)
+- `fetch.sh` — Her satir: hedef-dosya  URL (~453 tok)
+- `fetch2.sh` (~311 tok)
+- `fetch3.sh` (~510 tok)
+- `fetch4.sh` (~423 tok)
+- `fetch5.sh` (~357 tok)
+- `gloss.py` — Yeni makalelerdeki parantezli gloss'ları çıkarır ve terim defteriyle karşılaştırır. (~552 tok)
+- `login-b12.mjs` — Declares BASE (~289 tok)
+- `strip.py` — strip (~250 tok)
 
 ## artifacts/b13-research/
 
@@ -312,7 +368,10 @@
 
 ## content/series-boun/articles/supporting-fundamentals/
 
+- `bilgisayar-organizasyonu-osnin-altindaki-makine.md` — Soyutlamanın altına inmek (~6452 tok)
+- `c-ve-bellek-sistem-programlama-penceresi.md` — Kavramın programcıdaki karşılığı (~6298 tok)
 - `olasilik-ve-istatistik-mulakat-icin-cekirdek.md` — Ertelenen koşul (~6905 tok)
+- `veritabanlari-iliskisel-model-indeks-ve-transaction.md` — Bütün mekanizmaların buluştuğu yer (~7837 tok)
 
 ## content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/
 
@@ -331,11 +390,21 @@
 - `adres-cevirisi.svg` (~1501 tok)
 - `cok-duzeyli-tablo.svg` (~1495 tok)
 
+## content/series-boun/assets/bilgisayar-organizasyonu-osnin-altindaki-makine/
+
+- `bellek-hiyerarsisi-katmanlari.svg` (~890 tok)
+- `onbellek-eslemesi.svg` (~1853 tok)
+
 ## content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/
 
 
 ## content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/
 
+
+## content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/
+
+- `adres-uzayi-duzeni.svg` (~1152 tok)
+- `kopyalarken-yazma.svg` (~1943 tok)
 
 ## content/series-boun/assets/cebirsel-yapilar-ve-boolean-cebiri/
 
@@ -437,6 +506,11 @@
 ## content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/
 
 
+## content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/
+
+- `b-arti-agaci-indeks.svg` (~1414 tok)
+- `erisim-yolu-maliyeti.svg` (~1046 tok)
+
 ## content/series-boun/assets/yinelemeler-ve-master-teoremi/
 
 
@@ -467,6 +541,10 @@
 
 ## content/series/articles/models-and-training/
 
+- `gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md` — Dizüstü bilgisayardan veri merkezine (~5153 tok)
+- `kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md` — Doğru cevabı olmayan bir soru (~5344 tok)
+- `kendi-egitim-kosun-tokenizer-veri-ve-dongu.md` — Ağırlıkları kim yazacak (~5575 tok)
+- `mikro-gpt-bir-transformeri-elle-kurmak.md` — Kâğıda sığan bir model (~5504 tok)
 
 ## content/series/articles/multimodal-and-future/
 
@@ -621,6 +699,12 @@
 ## content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/
 
 
+## content/series/assets/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi/
+
+- `bellek-merdiveni.svg` (~809 tok)
+- `egitim-bellek-defteri.svg` (~838 tok)
+- `sirt-noktasinin-iki-yani.svg` (~803 tok)
+
 ## content/series/assets/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler/
 
 
@@ -653,6 +737,19 @@
 
 ## content/series/assets/jailbreak-ve-kirmizi-takim/
 
+
+## content/series/assets/kendi-asistanin-kucuk-olcekte-sft-ve-dpo/
+
+- `sft-neyi-tasiyor.svg` (~903 tok)
+- `tasmanin-tutmadigi-yer.svg` (~1461 tok)
+- `tasmanin-uzunlugu.svg` (~780 tok)
+
+## content/series/assets/kendi-egitim-kosun-tokenizer-veri-ve-dongu/
+
+- `bes-tohum-iki-sonuc.svg` (~765 tok)
+- `bpe-birlestirmeleri.svg` (~1570 tok)
+- `kaybin-durdugu-yer.svg` (~617 tok)
+- `sozluk-boyunun-getirisi.svg` (~1051 tok)
 
 ## content/series/assets/kirlilik-ve-ezber-benchmarklara-guven-krizi/
 
@@ -689,6 +786,12 @@
 
 ## content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/
 
+
+## content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/
+
+- `maskelenmis-dikkat-matrisi.svg` (~1008 tok)
+- `parametre-defteri.svg` (~1012 tok)
+- `token-yolculugu.svg` (~1106 tok)
 
 ## content/series/assets/modelin-bilgisi-neden-yetmez-rag-e-giris/
 
@@ -792,11 +895,11 @@
 
 ## docs/seri-boun/
 
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~7931 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~8618 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~8037 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7601 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~153490 tok)
 
 ## docs/superpowers/plans/

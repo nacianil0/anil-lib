@@ -1,0 +1,89 @@
+<svg viewBox="0 0 720 516" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text)">Kopyalarken yazma: çatallama kopyalamaz; kopya ilk yazmada ve yalnızca o sayfa için olur</text>
+
+  <text x="15" y="48" font-size="13" fill="var(--accent)">Aşama 1 — fork hemen sonrası</text>
+
+  <text x="20" y="80" font-size="13" fill="var(--text-muted)">ebeveyn</text>
+  <rect x="110" y="60" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="153" y="80" font-size="13" text-anchor="middle" fill="var(--text)">s0</text>
+  <rect x="210" y="60" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="253" y="80" font-size="13" text-anchor="middle" fill="var(--text)">s1</text>
+  <rect x="310" y="60" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="353" y="80" font-size="13" text-anchor="middle" fill="var(--text)">s2</text>
+
+  <line x1="153" y1="90" x2="153" y2="116" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="253" y1="90" x2="253" y2="116" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="353" y1="90" x2="353" y2="116" stroke="var(--border)" stroke-width="1.4" />
+
+  <text x="20" y="136" font-size="13" fill="var(--text-muted)">fiziksel</text>
+  <rect x="110" y="116" width="86" height="32" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="153" y="137" font-size="13" text-anchor="middle" fill="var(--text)">P0</text>
+  <rect x="210" y="116" width="86" height="32" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="253" y="137" font-size="13" text-anchor="middle" fill="var(--text)">P1</text>
+  <rect x="310" y="116" width="86" height="32" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="353" y="137" font-size="13" text-anchor="middle" fill="var(--text)">P2</text>
+
+  <line x1="153" y1="148" x2="153" y2="174" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="253" y1="148" x2="253" y2="174" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="353" y1="148" x2="353" y2="174" stroke="var(--border)" stroke-width="1.4" />
+
+  <text x="20" y="194" font-size="13" fill="var(--text-muted)">çocuk</text>
+  <rect x="110" y="174" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="153" y="194" font-size="13" text-anchor="middle" fill="var(--text)">s0</text>
+  <rect x="210" y="174" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="253" y="194" font-size="13" text-anchor="middle" fill="var(--text)">s1</text>
+  <rect x="310" y="174" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="353" y="194" font-size="13" text-anchor="middle" fill="var(--text)">s2</text>
+
+  <text x="430" y="86" font-size="13" fill="var(--text)">paylaşılan sayfa: 3</text>
+  <text x="430" y="110" font-size="13" fill="var(--text)">kopyalanan sayfa: 0</text>
+  <text x="430" y="134" font-size="13" fill="var(--cool)">her iki tabloda da salt okunur</text>
+
+  <line x1="15" y1="226" x2="705" y2="226" stroke="var(--border)" stroke-width="1.2" />
+  <text x="15" y="248" font-size="13" fill="var(--text-muted)">Çocuk s1'e yazmaya kalkışır → donanım sayfa hatası doğurur → çekirdek yeni bir sayfa ayırıp</text>
+  <text x="15" y="268" font-size="13" fill="var(--text-muted)">içeriği kopyalar, girdiyi kopyaya yöneltir ve yazma iznini açar → komut baştan çalıştırılır</text>
+
+  <text x="15" y="300" font-size="13" fill="var(--accent)">Aşama 2 — ilk yazmadan sonra</text>
+
+  <text x="20" y="330" font-size="13" fill="var(--text-muted)">ebeveyn</text>
+  <rect x="110" y="310" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="153" y="330" font-size="13" text-anchor="middle" fill="var(--text)">s0</text>
+  <rect x="210" y="310" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="253" y="330" font-size="13" text-anchor="middle" fill="var(--text)">s1</text>
+  <rect x="310" y="310" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="353" y="330" font-size="13" text-anchor="middle" fill="var(--text)">s2</text>
+
+  <line x1="153" y1="340" x2="153" y2="366" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="253" y1="340" x2="253" y2="366" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="353" y1="340" x2="353" y2="366" stroke="var(--border)" stroke-width="1.4" />
+
+  <text x="20" y="386" font-size="13" fill="var(--text-muted)">fiziksel</text>
+  <rect x="110" y="366" width="86" height="32" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="153" y="387" font-size="13" text-anchor="middle" fill="var(--text)">P0</text>
+  <rect x="210" y="366" width="86" height="32" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="253" y="387" font-size="13" text-anchor="middle" fill="var(--text)">P1</text>
+  <rect x="310" y="366" width="86" height="32" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="353" y="387" font-size="13" text-anchor="middle" fill="var(--text)">P2</text>
+  <rect x="410" y="366" width="86" height="32" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.8" />
+  <text x="453" y="387" font-size="13" text-anchor="middle" fill="var(--text)">P3</text>
+
+  <line x1="153" y1="424" x2="153" y2="398" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="353" y1="424" x2="353" y2="398" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="253" y1="454" x2="253" y2="472" stroke="var(--accent)" stroke-width="1.8" />
+  <line x1="253" y1="472" x2="453" y2="472" stroke="var(--accent)" stroke-width="1.8" />
+  <line x1="453" y1="472" x2="453" y2="398" stroke="var(--accent)" stroke-width="1.8" />
+
+  <text x="20" y="444" font-size="13" fill="var(--text-muted)">çocuk</text>
+  <rect x="110" y="424" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="153" y="444" font-size="13" text-anchor="middle" fill="var(--text)">s0</text>
+  <rect x="210" y="424" width="86" height="30" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.8" />
+  <text x="253" y="444" font-size="13" text-anchor="middle" fill="var(--text)">s1</text>
+  <rect x="310" y="424" width="86" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
+  <text x="353" y="444" font-size="13" text-anchor="middle" fill="var(--text)">s2</text>
+
+  <text x="530" y="336" font-size="13" fill="var(--text)">paylaşılan: 2</text>
+  <text x="530" y="360" font-size="13" fill="var(--text)">kopyalanan: 1</text>
+  <text x="530" y="384" font-size="13" fill="var(--accent)">çocuğun s1'i oku ve yaz</text>
+
+  <text x="15" y="502" font-size="13" fill="var(--text-faint)">fork ardından exec kalıbında devralınan sayfaların çoğu hiç yazılmaz; o sayfalar hiç kopyalanmaz</text>
+</svg>

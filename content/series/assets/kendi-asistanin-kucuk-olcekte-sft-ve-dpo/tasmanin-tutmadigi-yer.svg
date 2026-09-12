@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 468" role="img" aria-label="Altı satırlık yedi sütunlu bir tablo ve altında üç kutu. Üstte başlık: aynı kayıp eşiği, üç tohum, tercih dışındaki her şey. Sütunlar tohum, beta, delta, p bugün, doğru fiil önce, sonra ve derlem kaybı. Birinci satır tohum 7, beta 2,0: delta 0,766, p 0,6809, fiil 0,9990'dan 0,4999'a, derlem 1,67270. İkinci satır vurguludur, tohum 11, beta 2,0: delta 0,843, p 0,0011, fiil 0,9975'ten 0,9925'e, derlem 1,59842. Üçüncü satır tohum 42, beta 2,0: delta 0,775, p 0,6840, fiil 0,9980'den 0,9937'ye, derlem 0,49886. Dördüncü satır tohum 7, beta 1,0: delta 1,530, p 0,7003, fiil 0,9990'dan 0,4999'a, derlem 1,82731. Beşinci satır vurguludur, tohum 11, beta 1,0: delta 1,540, p 0,0006, fiil 0,9975'ten 0,9922'ye, derlem 2,49577. Altıncı satır tohum 42, beta 1,0: delta 1,505, p 0,8164, fiil 0,9980'den 0,9398'e, derlem 0,59280. Birinci kutuda şu durur: delta her tohumda aynı, yani kayıp hedefine her koşuda aynı biçimde ulaşıldı ve tercih tanımı gereği karşılandı. İkinci kutu vurguludur: modelin gerçekte yaptığı şey aynı değil, bugünün olasılığı üç koşuda 0,6809, 0,0011 ve 0,6840; ortadaki koşuda yeğlenen cevap binde bire indi çünkü delta iki cevabın oranını ölçüyor ve ikisini birden aşağı iterek o oran korunabiliyor. Üçüncü kutuda hasar durur: doğru fiil olasılığı bir tohumda 0,999'dan 0,500'e çöküyor, öteki ikisinde yerinde kalıyor; derlem kaybı üçünde de yükseliyor ama artış 0,04 ile 2,03 arasında. En altta bir kayıt: üç tohum bir yöntemi ölçmeye yetmez, yalnızca ayrışmanın üçünde de göründüğünü söyler.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı kayıp eşiği, üç tohum — tercih dışındaki her şey</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">tohum</text>
+  <text x="96" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">β</text>
+  <text x="156" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">δ</text>
+  <text x="240" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">p(bugün)</text>
+  <text x="360" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">fiil önce</text>
+  <text x="470" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sonra</text>
+  <text x="570" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">derlem</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">7</text>
+  <text x="96" y="100" font-size="13" fill="var(--text)">2,0</text>
+  <text x="156" y="100" font-size="13" fill="var(--text)">0,766</text>
+  <text x="240" y="100" font-size="13" fill="var(--text)">0,6809</text>
+  <text x="360" y="100" font-size="13" fill="var(--text)">0,9990</text>
+  <text x="470" y="100" font-size="13" fill="var(--text)">0,4999</text>
+  <text x="570" y="100" font-size="13" fill="var(--text)">1,67270</text>
+
+  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--accent)">11</text>
+  <text x="96" y="126" font-size="13" font-weight="bold" fill="var(--accent)">2,0</text>
+  <text x="156" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,843</text>
+  <text x="240" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,0011</text>
+  <text x="360" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,9975</text>
+  <text x="470" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,9925</text>
+  <text x="570" y="126" font-size="13" font-weight="bold" fill="var(--accent)">1,59842</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">42</text>
+  <text x="96" y="152" font-size="13" fill="var(--text)">2,0</text>
+  <text x="156" y="152" font-size="13" fill="var(--text)">0,775</text>
+  <text x="240" y="152" font-size="13" fill="var(--text)">0,6840</text>
+  <text x="360" y="152" font-size="13" fill="var(--text)">0,9980</text>
+  <text x="470" y="152" font-size="13" fill="var(--text)">0,9937</text>
+  <text x="570" y="152" font-size="13" fill="var(--text)">0,49886</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">7</text>
+  <text x="96" y="178" font-size="13" fill="var(--text)">1,0</text>
+  <text x="156" y="178" font-size="13" fill="var(--text)">1,530</text>
+  <text x="240" y="178" font-size="13" fill="var(--text)">0,7003</text>
+  <text x="360" y="178" font-size="13" fill="var(--text)">0,9990</text>
+  <text x="470" y="178" font-size="13" fill="var(--text)">0,4999</text>
+  <text x="570" y="178" font-size="13" fill="var(--text)">1,82731</text>
+
+  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--accent)">11</text>
+  <text x="96" y="204" font-size="13" font-weight="bold" fill="var(--accent)">1,0</text>
+  <text x="156" y="204" font-size="13" font-weight="bold" fill="var(--accent)">1,540</text>
+  <text x="240" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,0006</text>
+  <text x="360" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,9975</text>
+  <text x="470" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,9922</text>
+  <text x="570" y="204" font-size="13" font-weight="bold" fill="var(--accent)">2,49577</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">42</text>
+  <text x="96" y="230" font-size="13" fill="var(--text)">1,0</text>
+  <text x="156" y="230" font-size="13" fill="var(--text)">1,505</text>
+  <text x="240" y="230" font-size="13" fill="var(--text)">0,8164</text>
+  <text x="360" y="230" font-size="13" fill="var(--text)">0,9980</text>
+  <text x="470" y="230" font-size="13" fill="var(--text)">0,9398</text>
+  <text x="570" y="230" font-size="13" fill="var(--text)">0,59280</text>
+
+  <line x1="20" y1="246" x2="700" y2="246" stroke="var(--border)" />
+
+  <rect x="20" y="258" width="680" height="36" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="282" font-size="13" fill="var(--text)">δ her tohumda aynı: kayıp hedefine her koşuda aynı biçimde ulaşıldı.</text>
+
+  <rect x="20" y="304" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="328" font-size="13" font-weight="bold" fill="var(--accent)">Modelin gerçekte yaptığı şey aynı değil</text>
+  <text x="34" y="350" font-size="13" fill="var(--text)">p(bugün) üç koşuda 0,6809 · 0,0011 · 0,6840. Ortadaki koşuda yeğlenen</text>
+  <text x="34" y="370" font-size="13" fill="var(--text)">cevap binde bire indi — δ iki cevabın oranını ölçüyor, düzeyini değil.</text>
+
+  <rect x="20" y="390" width="680" height="36" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="414" font-size="13" fill="var(--text-muted)">Hasar da tohuma göre: fiil bir koşuda çöküyor, ikisinde yerinde kalıyor.</text>
+
+  <text x="20" y="452" font-size="13" fill="var(--text-faint)">Üç tohum bir yöntemi ölçmez; yalnızca ayrışmanın üçünde de göründüğünü söyler.</text>
+</svg>

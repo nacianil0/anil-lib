@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 392" role="img" aria-label="Beş satırlı iki sütunlu bir tablo ve altında iki kutu. Üstte başlık: taban çizgileri ve tavan, nat cinsinden kayıp; düşük olan iyidir. Sütunlar tahminci ve kayıptır. Birinci satır düz tahmin yedi token eşit: 1,9459. İkinci satır tekli sayım: 1,7918. Üçüncü satır ikili sayım: 0,6931. Dördüncü satır vurguludur, mikro-GPT: 0,4629. Beşinci satır dilin entropisi: 0,4621. Birinci kutuda konum başına kayıplar durur: birinci konum 0,6939, ikinci konum 0,6938, üçüncü konum 0,0010; ilk iki konumun alt sınırı ln 2'dir çünkü devamları eşit olasılıklıdır, üçüncü konumun alt sınırı sıfırdır çünkü fiil özne tarafından belirlenir. İkinci kutuda kazanç durur: mikro-GPT'nin ikili sayıma karşı kazancı 0,2302 nattır ve bu, tek bir konumdaki ln 2'nin üçte biridir; dikkat mekanizmasının bu dilde yaptığı işin tamamı budur. En altta bir kayıt: taban çizgileri ve entropi kapalı formüllerden, model kaybı kendi koşumuzdan gelir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Taban çizgileri ve tavan — nat cinsinden kayıp, düşük olan iyidir</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">tahminci</text>
+  <text x="460" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kayıp</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">düz tahmin, yedi token eşit</text>
+  <text x="460" y="100" font-size="13" fill="var(--text)">1,9459</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">tekli sayım</text>
+  <text x="460" y="126" font-size="13" fill="var(--text)">1,7918</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">ikili sayım</text>
+  <text x="460" y="152" font-size="13" fill="var(--text)">0,6931</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">mikro-GPT</text>
+  <text x="460" y="178" font-size="13" font-weight="bold" fill="var(--accent)">0,4629</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">dilin entropisi</text>
+  <text x="460" y="204" font-size="13" fill="var(--text)">0,4621</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="232" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="256" font-size="13" font-weight="bold" fill="var(--text)">Konum başına kayıp: 0,6939 · 0,6938 · 0,0010</text>
+  <text x="34" y="278" font-size="13" fill="var(--text)">İlk iki konumun alt sınırı ln 2, çünkü devamları eşit olasılıklı; üçüncü</text>
+  <text x="34" y="298" font-size="13" fill="var(--text)">konumun alt sınırı sıfır, çünkü fiili özne belirliyor.</text>
+
+  <rect x="20" y="318" width="680" height="36" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="342" font-size="13" fill="var(--text-muted)">Kazanç 0,6931 − 0,4629 = 0,2302 nat, yani bir konumdaki ln 2'nin üçte biri.</text>
+
+  <text x="20" y="380" font-size="13" fill="var(--text-faint)">Taban çizgileri ve entropi kapalı formüllerden, model kaybı kendi koşumuzdan.</text>
+</svg>

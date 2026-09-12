@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 412" role="img" aria-label="Üç satırlı dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: bellek merdiveni, A100 kartı. Sütunlar katman, bant genişliği, kapasite ve ne durur. Birinci satır vurguludur, çip içi SRAM: yaklaşık 19 TB bölü saniye, 20 MB, 108 çarpı 192 KB. İkinci satır kart belleği HBM: yaklaşık 1,5 TB bölü saniye, 40 GB, modelin durduğu yer. Üçüncü satır ana bellek DRAM: yaklaşık 12,8 GB bölü saniye, 1 TB'dan büyük, karta sığmayanlar. Birinci kutunun başlığı hız ile kapasite ters yönde değişir: SRAM HBM'den 12,7 kat hızlı ama 2.000 kat küçük, HBM de ana bellekten 117 kat hızlıdır ve iki eğri hiçbir basamakta kesişmez. İkinci kutunun başlığı kural: bir hesabın hızını verinin hangi basamakta durduğu belirler, ve 8 milyar parametrenin 16 gigabaytı hiçbir zaman 20 megabaytlık basamağa sığmaz. En altta bir kayıt: bant genişliği ve kapasite değerleri Dao ve arkadaşlarının çalışmasından, basamaklar arasındaki oranlar bizim hesabımızdır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Bellek merdiveni, A100 kartı</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">katman</text>
+  <text x="250" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">bant genişliği</text>
+  <text x="400" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kapasite</text>
+  <text x="530" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">ne durur</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" font-weight="bold" fill="var(--accent)">çip içi SRAM</text>
+  <text x="250" y="100" font-size="13" font-weight="bold" fill="var(--accent)">~19 TB/s</text>
+  <text x="400" y="100" font-size="13" font-weight="bold" fill="var(--accent)">20 MB</text>
+  <text x="530" y="100" font-size="13" font-weight="bold" fill="var(--accent)">108 × 192 KB</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">kart belleği (HBM)</text>
+  <text x="250" y="126" font-size="13" fill="var(--text)">~1,5 TB/s</text>
+  <text x="400" y="126" font-size="13" fill="var(--text)">40 GB</text>
+  <text x="530" y="126" font-size="13" fill="var(--text)">modelin durduğu yer</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">ana bellek (DRAM)</text>
+  <text x="250" y="152" font-size="13" fill="var(--text)">~12,8 GB/s</text>
+  <text x="400" y="152" font-size="13" fill="var(--text)">&gt; 1 TB</text>
+  <text x="530" y="152" font-size="13" fill="var(--text)">karta sığmayanlar</text>
+
+  <line x1="20" y1="168" x2="700" y2="168" stroke="var(--border)" />
+
+  <rect x="20" y="180" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="204" font-size="13" font-weight="bold" fill="var(--text)">Hız ile kapasite ters yönde değişir</text>
+  <text x="34" y="226" font-size="13" fill="var(--text)">SRAM, HBM'den 12,7 kat hızlı ama 2.000 kat küçük; HBM de ana bellekten</text>
+  <text x="34" y="246" font-size="13" fill="var(--text)">117 kat hızlı. İki eğri hiçbir basamakta kesişmiyor.</text>
+
+  <rect x="20" y="266" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="290" font-size="13" font-weight="bold" fill="var(--text-muted)">Kural</text>
+  <text x="34" y="312" font-size="13" fill="var(--text-muted)">Bir hesabın hızını verinin hangi basamakta durduğu belirler — ve 8 milyar</text>
+  <text x="34" y="332" font-size="13" fill="var(--text-muted)">parametrenin 16 gigabaytı hiçbir zaman 20 megabaytlık basamağa sığmaz.</text>
+
+  <text x="20" y="372" font-size="13" fill="var(--text-faint)">Bant genişliği ve kapasite değerleri Dao ve arkadaşlarının çalışmasından;</text>
+  <text x="20" y="390" font-size="13" fill="var(--text-faint)">basamaklar arasındaki oranlar bizim hesabımızdır.</text>
+</svg>

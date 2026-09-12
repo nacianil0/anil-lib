@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-09-10 · Yayında: 30 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5, 19–21 Batch 6, 22–24 Batch 7, 25–27 Batch 8, 28–30 Batch 9) · Sıradaki: 31
+Son güncelleme: 2026-09-11 · Yayında: 39 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5, 19–21 Batch 6, 22–24 Batch 7, 25–27 Batch 8, 28–30 Batch 9, 31–33 Batch 10, 34–36 Batch 11, 37–39 Batch 12) · Sıradaki: 40
 
 ## Serinin tezi
 
@@ -80,9 +80,9 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 ### Faz E — Destekleyici Temeller ve Mülakat Provası (36–41)
 
 36. **Olasılık ve İstatistik: Mülakat İçin Çekirdek** — *yayında* · ortalama durumun bir dağılım varsayımı taşıdığı borcunun ödenmesi, dört adımlı yöntem (örneklem uzayı → olay → sonuç olasılıkları → olay olasılığı) ve eşit olasılıklı uzayda sayma problemine indirgenmesi, üç maçlık seri örneği (seriyi kazanma olasılığı 1/2, ilk maç kazanılmışsa 7/9), koşullu olasılığın tanımı ve paydanın sıfır olduğu yerde tanımsızlığı, toplam olasılık yasası, bağımsızlığın bir gözlem değil varsayım olması, nadir hastalık testinde pozitif çıkanın hasta olma olasılığının yüzde 9,02 çıkması ve taban oranının belirleyiciliği (yaygınlık yüzde 1 → yüzde 50; özgüllük yüzde 99,9 → yüzde 49,8), rastgele değişkenin bir fonksiyon olması, beklenen değer ve gösterge değişkeni, **beklentinin doğrusallığının bağımsızlık istememesi** ve şapka probleminde beklentinin her n için tam 1 çıkması, hash tablosunda beklenen zincir uzunluğunun yük faktörüne eşit olması (14'ün borcu), doğum günü ilkesi (n = 23'te 0,5073; kök(2d) yaklaşık 27 kişide 0,6269 ile 1 − 1/e karşılaştırması; 95 kişide tam değer 1/694.527), rastgeleleştirilmiş seçimin beklenti analizi (iyi eksen olasılığı en az 1/2 → beklenen deneme en fazla 2 → E[T(n)] ≤ 8cn = Θ(n); benzetimde yaklaşık 3n) — 24'ün devredilen borcu, Markov ile Chebyshev'in aynı soruya verdiği üç cevap (0,667 / 0,04 / 2,8 × 10⁻⁷) ve sınırın sıkılığının varsayımın fiyatı olması, dağılım tablosu (Bernoulli, binom, geometrik, düzgün, Poisson, üstel, normal), istatistik tarafında örneklem istatistiği, nokta ve aralık kestirimi ile **güvenin olasılık olmaması**.
-37. **Bilgisayar Organizasyonu: OS'nin Altındaki Makine** — bellek hiyerarşisi, önbellek, komut yürütme; OS kavramlarının donanım gerekçesi. **Resmî dayanak düzeltmesi (Batch 11):** asıl ders **CMPE244 *Computer Organization***'dır ve ders çıktıları arasında 'hiyerarşik bellek sistemleri' ile RISC-V assembly açıkça geçer; CMPE240'ın adı *Digital Systems*'tir ve yalnızca katalog tanımındaki 'computer organization, arithmetic logic, memory and control units' ifadesiyle ikincil sinyaldir (ARASTIRMA §16).
-38. **C ve Bellek: Sistem Programlama Penceresi** — pointer, yığın/heap, süreç bellek düzeni; OS kavramlarının koda inmesi (CMPE230 sinyali).
-39. **Veritabanları: İlişkisel Model, İndeks ve İşlem** — savunma düzeyinde: ilişkisel model, anahtarlar, indeks=B-ağacı (12'nin geri çağrımı), ACID.
+37. **Bilgisayar Organizasyonu: OS'nin Altındaki Makine** — *yayında* · RAM modelinin "her erişim aynı fiyat" varsayımının donanımda nerede çöktüğü; statik ile dinamik bellek hücresinin farkı ve hiyerarşinin maliyet gerekçesi, yerelliğin bir teorem değil gözlenmiş bir huy olması, Drepper'ın Pentium M tablosu (yazmaç 1, L1d 3, L2 14, ana bellek 240 çevrim) ve ölçülmüş üç plato (10 altı / 28 / 480), AMAT formülünün bir kat yukarı taşınması ve aynı komut sayısıyla 4,9 → 10,6 → 29,8 çevrimlik üç senaryo, önbellek satırı ve adresin etiket/küme/konum bölünüşü, tam çağrışımlı–doğrudan eşlemeli–kümeli çağrışımlı karşılaştırması ve **çakışma ıskasının** işletim sisteminin sayfa önbelleğinde bulunmaması, CPU başarım denkleminin birim sadeleştirmesiyle türetilmesi ve boru hattının açıklığa saldırması, kesişim noktasının n = 20'den n = 1.600'e kayması, TLB'nin bir önbellek olması ve 64 girdi × 4 KB → 256 KB ile 64 girdi × 2 MB → 128 MB kapsama farkı, bağlam anahtarının çevrim cinsinden ucuzlamamasının Ousterhout 1990'daki ölçülmüş gerekçesi (göreli hız 0,3–0,5). Resmî dayanak **CMPE244 *Computer Organization***.
+38. **C ve Bellek: Sistem Programlama Penceresi** — *yayında* · xv6'nın gerçek adres uzayı düzeni ve izin bitlerinin yakaladığı hata sınıfları (kod yazılamaz, veri çalıştırılamaz, koruma sayfası), heap bölgesi ile öncelik kuyruğu makalesindeki heap veri yapısının açıkça ayrılması, işaretçi maliyetinin çevrim cinsinden hesabı (dizi 17,8 milyon, dağınık bağlı liste 240 milyon çevrim; oran 13,5), yığın belleği ile heap belleğinin kim yönetir ayrımı, `free`'nin boyutu başlık bloğundan okuması ve beş klasik bellek hatası, `fork()`'un iki kez dönmesi ve belirsizlik, `exec()`'in süreç yaratmayıp dönüştürmesi ve dönmemesi, kabuğun ikisini ayırmasının çıktı yönlendirmesini mümkün kılması, **kopyalarken yazmanın** sayfa hatasıyla kurulması ve `fork` ardından `exec` kalıbında kopyayı bütünüyle ortadan kaldırması. Resmî dayanak **CMPE230**'un "Unix environment and system calls" ifadesidir; katalog tanımı C dilini adlandırmaz ve makale bunu açıkça söyler.
+39. **Veritabanları: İlişkisel Model, İndeks ve Transaction** — *yayında* · **Resmî dayanak düzeltmesi (Batch 12):** bu makalenin resmî bir dersi **vardır** — **CMPE321 *Introduction to Database Systems***, önkoşulu bilimsel hazırlık üçlüsünün **CMPE250**'si; yol haritasının "resmî bir ders yoktur" beklentisi yanlıştı (ARASTIRMA §17). İçerik: Codd'un bağıntı tanımı ve tablonun kümeler makalesindeki bağıntı olması, değer alanı / derece / birincil ve yabancı anahtar, kaldırılan üç bağımlılık ve veri bağımsızlığının asıl vaat olması, normalleştirme yordamı ve Codd'un dört bağıntılı örneği, indeksin ayrı bir yapı olması, B+-ağacında bütün anahtarların yapraklarda durması ve **sıra kümesinin** "sıradaki" işlemini tek erişime indirmesi, kümelenmiş ile kümelenmemiş indeks, blok muhasebesiyle **kırılma noktası %2,5** ve kümelenmişte %100, Selinger'ın seçicilik çarpanının düzgün dağılım varsayımı ve çarpık dağılımda tam taramanın 12 katı maliyet, dış sıralamanın 100.000 blok G/Ç'si, Gray'in sözleşme hukukundan türettiği transaction kavramı ve ACID, Berenson ve ark.'nın üç olgusu ile **üç olguyu yasaklamanın sıralanabilirliği vermemesi**. **Terim kararı:** "işlem" bu seride *operation* karşılığı olduğu için transaction Türkçeleştirilmedi (SOZLESME §2 terim çakışması yasağı).
 40. **Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü** — 60–90 saniyelik anlatım kalıpları; takip zinciri provası; "past academic record + research direction" konuşmasına hazırlık.
 41. **Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı** — öz-değerlendirme matrisi (beş yetenek × beş faz), spaced tekrar planı, mülakat günü protokolü.
 
@@ -93,6 +93,7 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - Faz C ← B9 (Big-O sezgisi; 17 formal kurar), B15/B16 (analiz edilecek algoritmalar), A3/A4 (ispat teknikleri).
 - Faz D ← B (yapılar: kuyruk→zamanlama, ağaç→dosya sistemi), A2 (mantık); C'den bağımsız okunabilir, karmaşıklık savunması için C17 önerilir.
 - Faz E ← 36: A6; 37–38: D; 39: B12; 40–41: bütün fazların sentezi.
+- **Faz E'nin resmî dayanakları (Batch 11 ve 12'de doğrulandı):** 36 ← CMPE343, 37 ← CMPE244, 38 ← CMPE230, 39 ← **CMPE321** (önkoşulu CMPE250). 40 ve 41'in resmî dayanağı yoktur; mülakatın kendi tanımına ve serinin beş yetenek hedefine dayanırlar.
 
 **Batch 0 (yayımlanmış, artık bağlayıcı):**
 - 1 ← (yok; giriş noktası — resmî kaynak aktarımı + yöntem)
@@ -154,7 +155,7 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 35 ← 26 (kullanıcı kipi / çekirdek kipi ve ayrıcalık düzeyi), 31 (güvenlik ile canlılığın ayrımı; "güvenlik" sözcüğünün iki anlamı 30'da uyarılmıştı), 5 (erişim matrisi bir bağıntıdır), 8 (Boolean sadeleştirme ve kafes yapısı — izin kümeleri), 34 (dosya izinleri somut örnektir)
 - 36 ← 6 (sayma: örneklem uzayı ve kombinatoryal olasılık), 9 (ortalama durumun dağılım varsayımı — burada ödenir), 24 (rastgeleleştirilmiş seçim ve paranoyak hızlı sıralamanın beklenti analizi; devredilen borç), 4 (özyinelemeli beklenti bağıntıları)
 
-**Batch 12 taslak satırları (Faz E'nin donanım ve sistem programlama bölümü; batch büyüklüğü run'da çözülür):**
+**Batch 12 (yayımlanmış, artık bağlayıcı):**
 - 37 ← 9 (RAM modelinin "her erişim aynı fiyat" varsayımı burada bilinçli olarak terk edilir), 33 (bellek bir önbellektir ve AMAT formülü aynen geçerlidir), 32 (TLB bir önbellektir; adres çevirisi donanımdadır ve sayfa boyutu iki yönlü bir takastır), 34 (dış bellek modeli ve blok muhasebesi; disk hiyerarşinin en alt katıdır), 8 (Boolean sadeleştirme ve mantık devreleri), 27 (bağlam anahtarının çevrim cinsinden ucuzlamaması — Ousterhout gözlemi)
 - 38 ← 27 (süreç API'si: `fork()`, `exec()`, `wait()` somutlaması; devredilen borç), 32 (adres uzayı düzeni: kod, heap, yığın), 10 (dizi ile bağlı listenin işaretçi maliyeti C'de elle görünür olur), 33 (kopyalarken yazma; devredilen borç), 26 (sistem çağrısı ve kullanıcı kipi / çekirdek kipi geçişi)
 - 39 ← 12 (indeks bir B-ağacıdır; devredilen borç), 34 (dosya sistemi önbelleği, tampon havuzu ve dış sıralama), 31 (kilitlenme ve işlem yönetimi; güvensiz durum ile kilitlenmiş durum ayrımı), 30 (güvenlik ile canlılık özellikleri; yalıtım düzeyleri), 15 (kararlılık ve dış sıralama), 36 (seçicilik kestirimi ve maliyet tabanlı iyileştirme bir olasılık iddiasıdır)
@@ -165,7 +166,8 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
   250'nin müfredattaki devamı ve "complexity/lower bound" savunmasının kaynağı (35 makale).
 - **Destek (6 makale):** olasılık (343; randomized analiz zorunlu kılar), organizasyon (240/244;
   OS savunması donanım gerekçesi ister), C/bellek (230; OS kavramlarının somutlaşması),
-  veritabanı (transkript savunması + B-ağacı tahsili), sözlü prova ve sentez (mülakatın
+  veritabanı (**CMPE321**; Batch 12'de bulundu — önkoşulu CMPE250'dir, dolayısıyla transkript
+  savunmasının yanında resmî bir dayanağı da vardır), sözlü prova ve sentez (mülakatın
   "anlatabilme" doğası).
 - **Elenenler:** biçimsel diller/otomata ayrı makalesi (25 içinde kısa köprü; SP üçlüsünde yok,
   hazırlık getirisi düşük) · sinyal işleme, gömülü sistemler, yazılım mühendisliği süreçleri
@@ -754,6 +756,64 @@ boyunca aynı kalır.
 | nokta kestirimi / aralık kestirimi | point / interval estimation | 36 |
 | güven aralığı | confidence interval | 36 |
 | hipotez testi | hypothesis testing | 36 |
+| önbellek | cache | 28 · formal tanımı 37'de |
+| statik bellek | static RAM (SRAM) | 37 |
+| dinamik bellek | dynamic RAM (DRAM) | 37 |
+| tazeleme | refresh | 37 |
+| bellek hiyerarşisi | memory hierarchy | 37 |
+| önbellek satırı | cache line | 37 |
+| etiket | tag | 37 |
+| konum (adres içinde) | offset | 37 |
+| önbellek kümesi (İngilizcesi *cache set*'tir; 5'te tanımlanan matematiksel kümeyle ilgisi yoktur) | cache set | 37 |
+| doğrudan eşlemeli | direct-mapped | 37 |
+| kümeli çağrışımlı | set-associative | 37 |
+| tam çağrışımlı | fully associative | 37 |
+| kapasite ıskası | capacity miss | 37 |
+| çakışma ıskası | conflict miss | 37 |
+| ıska cezası | miss penalty | 37 |
+| komut başına çevrim | cycles per instruction (CPI) | 37 |
+| saat çevrimi | clock cycle | 37 |
+| boru hattı | pipeline | 37 |
+| dal yanlış kestirimi | branch misprediction | 37 |
+| birleşimsel devre | combinational circuit | 37 |
+| kod bölgesi | text segment | 38 |
+| heap bölgesi (adres uzayındaki bölge; 13'te tanımlanan **heap** veri yapısıyla karıştırılmaz) | heap | 38 |
+| koruma sayfası | guard page | 38 |
+| başlık bloğu | header block | 38 |
+| bellek sızıntısı | memory leak | 38 |
+| sarkan işaretçi | dangling pointer | 38 |
+| tampon taşması | buffer overflow | 38 |
+| ilklenmemiş okuma | uninitialized read | 38 |
+| bölütleme hatası | segmentation fault | 38 |
+| kütüphane çağrısı | library call | 38 |
+| kopyalarken yazma | copy-on-write | 38 |
+| ilişkisel model | relational model | 39 |
+| değer alanı (5'teki "tanım kümesi" bir fonksiyonun tanım kümesidir; aynı İngilizce sözcüğün farklı kullanımı) | domain | 39 |
+| birincil anahtar | primary key | 39 |
+| yabancı anahtar | foreign key | 39 |
+| veri bağımsızlığı | data independence | 39 |
+| normal biçim | normal form | 39 |
+| normalleştirme | normalization | 39 |
+| işlevsel bağımlılık | functional dependency | 39 |
+| indeks | index | 39 |
+| B+-ağacı | B+-tree | 39 |
+| sıra kümesi | sequence set | 39 |
+| kümelenmiş / kümelenmemiş indeks | clustered / non-clustered index | 39 |
+| erişim yolu | access path | 39 |
+| seçicilik çarpanı | selectivity factor | 39 |
+| sorgu iyileştirici | query optimizer | 39 |
+| dış sıralama | external sort | 39 |
+| transaction (Türkçeleştirilmez: "işlem" bu seride *operation* karşılığıdır — SOZLESME §2) | transaction | 39 |
+| kesinleştirme | commit | 39 |
+| geri alma | abort (rollback) | 39 |
+| tutarlılık | consistency | 39 |
+| yalıtım | isolation | 39 |
+| sıralanabilirlik | serializability | 39 |
+| yalıtım düzeyi | isolation level | 39 |
+| kirli okuma | dirty read | 39 |
+| yinelenemez okuma | non-repeatable read | 39 |
+| hayalet | phantom | 39 |
+| önden yazmalı günlük | write-ahead log | 39 |
 
 ## Kavram-tekrar defteri
 
@@ -1198,3 +1258,65 @@ Batch 11 ile açılan yeni pinler ve ödenen borçlar:
 - **Güven olasılık değildir (36'da açılan yeni pin)** → rastgele olan aralıktır, parametre değil; 40 ve 41'de
   ölçüm dürüstlüğü tartışmasında kullanılabilir.
 - **Alt problem kısıtlama/genişletme tekniği (22)** → **36'da açılmadı**; borç 41'e devredildi.
+- **Bellek hiyerarşisi (9, 12, 32, 33)** → **37'de ödendi**: statik/dinamik bellek hücresinin farkı
+  hiyerarşinin nedenidir, Drepper'ın Pentium M tablosu mertebeleri verir ve AMAT formülü bir kat
+  yukarıda aynen çalışır. RAM modelinin "her erişim aynı fiyat" varsayımı burada açıkça terk edildi.
+- **TLB bir önbellektir (32)** → **37'de ödendi**: sanal sayfa numarasını anahtar, sayfa tablosu
+  girdisini değer alan, birkaç düzine girdilik, genellikle tam çağrışımlı bir önbellek; ıska cezası bir
+  bellek erişimi değil sayfa tablosunun yürünmesidir.
+- **Sayfa boyutunun iki yönlü takası (32)** → **37'de ödendi**: 64 girdilik bir TLB 4 KB'lık sayfalarla
+  256 KB, 2 MB'lık sayfalarla 128 MB kapsar; bedeli iç parçalanma ve sayfa hatası başına 2 MB okumadır.
+- **Bağlam anahtarının çevrim cinsinden ucuzlamaması (27)** → **37'de ödendi**: Ousterhout'un 1990
+  ölçümünde çekirdek giriş-çıkışının göreli hızı 0,5–0,8, bağlam anahtarınınki 0,3–0,5; gerekçe bellek
+  bant genişliğinin işlemci hızına yetişememesidir.
+- **Eşik ve kesişim noktası (17)** → **37'de ödendi ve 39'da ikinci kez**: RAM modelinde n² ile 20n'in
+  kesişimi n = 20, çevrim cinsinden 3n² ile 4.800n'in kesişimi n = 1.600; veritabanı tarafında aynı
+  hesap tam tarama ile indeks arasındaki **%2,5'lik kırılma noktası** olarak geri döndü.
+- **Boolean sadeleştirme (8)** → **37'de yalnızca anıldı**: birleşimsel devrelerin Boole ifadeleri
+  olduğu ve sadeleştirmenin daha az kapı ile daha kısa gecikme demek olduğu söylendi, ama bir devre
+  örneği verilmedi. Kalan borç 41'in provasında sorulabilir.
+- **İş ile açıklık (24)** → **37'de kullanıldı**: boru hattının kazancı iş miktarında değil açıklıktadır.
+- **Süreç API'si: `fork()`, `exec()`, `wait()` (27)** → **38'de ödendi**: `fork` iki kez döner ve sıra
+  belirsizdir, `exec` süreç yaratmaz dönüştürür ve başarılıysa dönmez, ikisinin ayrı olması kabuğun
+  çıktı yönlendirmesini mümkün kılar.
+- **Kopyalarken yazma (33)** → **38'de ödendi**: sayfalar paylaşılır ve salt okunur işaretlenir, yazma
+  bir sayfa hatası doğurur, çekirdek kopyalar ve komutu baştan çalıştırır; `fork` ardından `exec`
+  kalıbında kopya bütünüyle ortadan kalkar.
+- **İşaretçi maliyeti (10)** → **38'de çevrim cinsinden ödendi**: bir milyon tam sayı için dizi
+  17.812.500, dağınık bağlı liste 240.000.000 çevrim; aynı Θ(n), 13,5 kat fark.
+- **Adres uzayı düzeni (27, 32)** → **38'de ödendi**: kod / veri / heap / yığın, izin bitleri ve koruma
+  sayfası; iş parçacıklarının yığını neden paylaşmadığı burada görünür oldu.
+- **Sistem çağrısı ile sıradan çağrı ayrımı (26)** → **38'de somutlaştı**: `malloc` ve `free` kütüphane
+  çağrısıdır, altta `brk`/`sbrk` ya da `mmap` vardır.
+- **İndeks = B-ağacı (12)** → **39'da ödendi**: indeksin ayrı bir yapı olduğu söylendi ve borcun
+  ödenmemiş yarısı olan **B+-ağacı** kuruldu — bütün anahtarlar yapraklarda, üst kısım yol haritası,
+  yapraklar bağlı; "sıradaki" işlemi log_d n yerine tek erişim.
+- **Kararlılık ve dış sıralama (15)** → **39'da ödendi**: 25.000 bloklu tablo 256 bloklu bellekle
+  100.000 blok G/Ç ile sıralanır; kararlılık eşit anahtarlı satırların sırasını korur.
+- **Dayanıklılık/başarım takası ve tampon havuzu (34)** → **39'da ödendi**: veritabanının `fsync()`
+  ile takası reddetme biçiminin adı **önden yazmalı günlüktür** ve ardışık yazmanın rastgele yazmadan
+  iki yüz kat hızlı olması bunu ucuzlatır.
+- **Seçicilik kestirimi bir olasılık iddiasıdır (36)** → **39'da ödendi**: F = 1/ICARD kuralı düzgün
+  dağılım varsayar; varsayım bozulunca iyileştirici tam taramanın on iki katı iş yapan bir plan seçer.
+- **Güvenlik ile canlılık (30)** → **39'da kullanıldı**: sıralanabilirlik bir güvenlik özelliğidir.
+- **İki fazlı kilit (29)** → **39'da kullanıldı**: uzun süreli ve kısa süreli kilit ayrımı yalıtım
+  düzeylerinin gerçekleştirme ekseni oldu.
+- **Kilitlenme (31)** → **39'da kullanıldı**: veritabanları kilitlenmeyi önlemez, bekleme grafında
+  tespit edip bir transaction'ı geri alır — bunu yapabilmelerinin nedeni geri almanın zaten atomiklik
+  için var olmasıdır.
+- **Güçlü bağlı bileşenler (25 → 34, 39)** → **39'da yine kullanılmadı**. Sorgu grafı makalenin
+  kapsamına girmedi; borç 41'e devredildi ve orada da kullanılmazsa kapatılmış sayılmalıdır.
+- **Beklenti yetmez: yoğunlaşma (36)** → **37'de kullanılmadı**, 39'da yalnızca seçicilik varsayımının
+  kırılganlığı biçiminde göründü; asıl geri çağrım 41'in provasına kaldı.
+- **Üç C: zorunlu, kapasite, çakışma (37'de açılan yeni pin)** → çakışma ıskasının donanıma özgü olması
+  ve işletim sisteminin tam çağrışımlı sayfa önbelleğinde bulunmaması; 41'in provasında sorulabilir.
+- **Erişim deseni bir tasarım kararıdır (37, 38'de açılan yeni pin)** → "bu kod neden yavaş?" sorusuna
+  ilk cevap komut saymak değil erişim desenini tarif etmektir; 40'ın anlatım provasında kullanılabilir.
+- **Kim ayırıyor, kim serbest bırakıyor (38'de açılan yeni pin)** → yığında derleyici, heap'te
+  programcı, sayfa düzeyinde çekirdek; bellekle ilgili her cevabın hangi katmanda verildiğini söyleme
+  refleksi 40'ta prova edilebilir.
+- **ANOMALY SERIALIZABLE uyarısı (39'da açılan yeni pin)** → üç olguyu yasaklamak sıralanabilirlik
+  vermez ve "REPEATABLE READ" adı yanıltıcıdır; 41'in zayıf nokta haritasında sorulabilir.
+- **d-yollu heap (13)** → **hâlâ ödenmedi**. Dallanma çarpanı takasının kalan tek örneğidir; 37'nin
+  önbellek satırı tartışması ve 39'un B+-ağacı dallanması aynı fikri iki kez kullandı ama d-yollu heap
+  adıyla anılmadı.

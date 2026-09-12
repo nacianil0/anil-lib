@@ -439,15 +439,15 @@ araştırmacı formasyonunun giriş kapısı.
 
 ### Faz 12 — Temelden Kurmak: Modeli Elle İnşa Etmek (103–105)
 
-103. **Mikro-GPT: Bir Transformer'ı Elle Kurmak** — 6/7'nin bütün parçalarının gerçek küçük sayılarla uçtan uca kurulumu.
-104. **Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü** — 8/14/15'in küçük ölçekte uygulaması.
-105. **Kendi Asistanın: Küçük Ölçekte SFT ve DPO** — 11–13'ün küçük ölçekte uygulaması.
+103. **Mikro-GPT: Bir Transformer'ı Elle Kurmak** — 364 parametrenin tam defteri, bir token'ın embedding'den logit'e bütün boyutları, maskelenmiş dikkat matrisinin sayısal hâli. Faz 12'nin açılışı, kategori `models-and-training` (karar #225), level `advanced`. **100'ün kasıtlı boşluğu ile 102'nin işareti ödendi.** `[yayında]`
+104. **Kendi Eğitim Koşun: Tokenizer, Veri ve Döngü** — serinin kendi metni üzerinde sıfırdan BPE, sözlük boyunun ölçülmüş marjinal getirisi, entropi tabanı, beş tohumun ikisinin kuralı öğrenememesi ve hiçbir ablasyonun sapmayı aşmaması. `[yayında]`
+105. **Kendi Asistanın: Küçük Ölçekte SFT ve DPO** — kayıp maskesinin koruduğu ve korumadığı şeyler, hizalama vergisi, δ = 1,5 ÷ β ölçümü ve tercih karşılanırken yeğlenen cevabın binde bire inmesi. **Faz 12 kapandı.** `[yayında]`
 
 ### Faz 13 — Eğitim Sistemleri Mühendisliği (106–109)
 
-106. **GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği** — roofline sezgisi; 26–28'in eğitim tarafındaki karşılığı.
-107. **Dağıtık Eğitim: Paralellik Stratejileri** — 8'de adı konan veri/model paralelliğinin tam kurulumu; TP/PP/ZeRO.
-108. **Performans Mühendisliği: Attention'ı Hızlandırmak** — bellek erişimi, kernel füzyonu, karışık duyarlık.
+106. **GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği** — parametre başına 16 bayt, aktivasyon formülü, yeniden hesaplamanın ölçülmüş bedeli, sırt noktasının iki yanı ve kullanım oranı. Faz 13'ün açılışı, kategori `models-and-training` (karar #225). `[yayında]`
+107. **Dağıtık Eğitim: Paralellik Stratejileri** — 8'de adı konan veri/model paralelliğinin tam kurulumu; TP/PP/ZeRO. 106'nın kapanışı bu makaleye dört ekseni adıyla sordu.
+108. **Performans Mühendisliği: Dikkati Hızlandırmak** — bellek erişimi, çekirdek birleştirme, karışık duyarlık; başlık Türkçeleştirildi (karar #227).
 109. **Koşunun Güvenilirliği: Checkpoint, Spike ve Gözlem** — üretim eğitiminin operasyon gerçeği (8'deki kontrol noktasının derinleşmesi).
 
 ### Faz 14 — Sınır ve Sentez (110–118)
@@ -621,6 +621,10 @@ kavram-tekrar tablolarına yazıldı.)
 - 100 ← **1–99'un tamamı** (serinin planlı büyük geri çağrımı; 41 ayrı makaleye numaralı gönderme). Omurga olarak 1 ve 2 (tahmin çerçevesi ve 3/14 eşiği), 8/9 (ölçek ve tahsis), 11–13 (amacın yazılışı), 16/71 (cetvel sorusu), 21–33 (pencere ve fatura), 41–60 (dışarıya bağlanmak), 61–80 (hizalama ve değerlendirme), 85–90 (mimari ve enerji faturası), 91–97 (biçimsel omurga), 98–99 (okuma ve tasarım). **Yeni kavram, yeni kaynak ve yeni ölçüm yok** `[yayında]`
 - 101 ← **16 ve 22 (BAĞLAYICI KOORDİNAT: ölçümün disiplini; ikisinin de cümlesi açılışta alıntılandı)**, 71 (puanın örneklem olması ve standart hata; 101 onun üstüne karar katmanını koydu, tekrarlamadı), **33 ve 40 (pass@k ile görev ufkunun planlı tekrarı — dört batch'lik devirden sonra burada tahsil edildi)**, **93 ve 96 (yanlılık ↔ oynaklık ayrımının ölçüm istatistiğindeki karşılığı; 93'ün "bir sonraki faz" işareti burada ödendi)**, 99 (Şekil 3'te bilerek açık bırakılan karar sorusu), 97 (179 sınıflandırıcının "fark anlamlı değil" cümlesinin yeri), 72 (sabit bölmenin yaşlanması), 6 (BLEU bir ortalama değildir), 43/93/97 (daha önce tanımsız kullanılan "istatistiksel olarak anlamlı" ifadesi burada kuruldu) `[yayında]`
 - 102 ← 101 ("bir sonraki makale" devri: anlamlı fark ile tekrarlanabilirliğin ayrımı), **9 (yeniden üretme terimi orada tanımlanmıştı, burada üç dereceye ayrıldı — doksan üç makale aralıklı)**, 98 (kanıt yayımlanmamışsa bağ kurulamaz; Haibe-Kains itirazı bunun kurumsal hâli), 20 (açıklık eksenleri; hesap ekseninin eklenmesi), 80 (şeffaflık ve belgeleme; zorunluluğun davranışı değiştirmesi), **72 (kirlilik ile veri sızıntısı ayrımı bir "Kendini yokla" kutusuyla yapıldı)**, 97 (klasik yöntemin üstünlüğünün sızıntıdan doğması), 99 (ön kayıt ile bilgi çizelgesinin akrabalığı; yirmi beş yapılandırmadan ikisi) `[yayında]`
+- 103 ← **6 ve 7 (mimarinin kendisi; 6'nın sorgu-anahtar-değer üçlüsü ile 7'nin blok anatomisi ilk kez tek bir çalışan modelde birleşti)**, **100 ve 102 (numarasız işaretlerin ödendiği yer: "kasıtlı boşluk" ve "serinin bir sonraki fazı")**, 4 (token ve embedding tablosu), 10 (logit'in dağılıma çevrilmesi), 91 (boyut muhasebesi), 93 (softmax'ın dağılım olarak okunması), 8 (6ND kuralının sınanması), 15 (embedding tablosunun model içindeki payı), 99 (GELU ↔ taban çizgisi farkının sapmanın altında kalması), 26 (mikro modelin anahtar-değer önbelleği) `[yayında]`
+- 104 ← 103 ("bir sonraki makale" devri: rastgele ağırlıkları döngüye yazdırmak), **4 (BPE algoritması orada anlatılmıştı, burada çalıştırıldı — yüz makale aralıklı)**, **15 (sözlük boyunun tahsis kararı kendi derleminde ölçüldü)**, 8 (eğitim döngüsü, ısınma ve kosinüs sönümü), 14 (veri hazırlığının bu ölçekteki karşılığı ve yokluğu), 95 (AdamW), **2 ve 94 (indirgenemez hata ile entropinin aynı sayıda buluşması)**, **99 ve 101 (koşular arası sapma kendi deneyimize uygulandı — zorunlu geri çağırma)**, 102 (ayrılmış sınama kümesinin olmadığının açıkça söylenmesi), **6 (dikkat ağırlığının açıklama olmaması kendi modelimizde ölçüldü)** `[yayında]`
+- 105 ← 104 ("bir sonraki makale" devri: eğitilen modelin asistanlaştırılması), **12 (kayıp maskesi; maskenin koruma alanı ölçüldü)**, **13 (DPO, Bradley–Terry ve tasma; 0,693 başlangıç değeri aynen çıktı)**, 11 (hizalama vergisi), **94 (KL'nin nat cinsinden ölçü olması)**, **101 (aynı farkı örnekleyerek ölçmenin 58 çekiliş etmesi — zorunlu geri çağırma)**, 10 (üretimin çekiliş olması), 16 (değerlendirmenin ne ölçtüğü) `[yayında]`
+- 106 ← **89 (çatı çizgisi ve işlem yoğunluğu ORADA kuruldu; burada tekrarlanmadı, eğitim adımına uygulandı)**, **26 (yoğunluk = ağırlık bir kez okunduğunda işlenen token sayısı; üretim tarafındaki hâli)**, 28 (gecikme ↔ iş hacmi ayrımı), 8 (eğitim koşusunun kaynak profili ve kontrol noktası), 95 (AdamW'nin parametre başına bedeli), 25 ve 86 (FlashAttention'ın bellek merdivenindeki yeri), 27 (karma hassasiyet), 39 (donanım belleği ↔ sohbet belleği ayrımı), 7 (karesel maliyetin bellek tarafındaki karşılığı), 105 ("bir sonraki makale" devri: dizüstü bilgisayardan veri merkezine) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1564,6 +1568,70 @@ MCP üçlüsü (49/53 → 115).
 | Yetenek eşiği ve gerekli korumalar; kritik yetenek düzeyi; koşullu taahhüt | 70 | — | 71, 78, 116 |
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
+
+### Batch 25'te gerçekleşen tekrarlar (planlananların tahsili)
+
+- **Dikkat üçlüsü ve katman yığını (6/7 → 103), doksan yedi makale aralıklı — 100 ve 102'nin numarasız
+  işaretlerinin kapanışı.** 6'da sorgu-anahtar-değer tek bir satır hâlinde elle hesaplanmıştı, 7'de blok
+  anatomisi ve parametre sayımı taban model üzerinden yapılmıştı. 103 ikisini birleştirip **çalışan** bir
+  model kuruyor: aynı üçlü artık dört boyutlu, aynı sayım artık 364 parametre ve maskenin sayısal karşılığı
+  ilk kez kare bir matris olarak görünüyor. 100'ün "kasıtlı boşluk" cümlesi ile 102'nin "serinin bir sonraki
+  fazı" cümlesi burada ödendi.
+- **Bağlanmış embedding (7 → 103).** 7'de taban modelin tablosunda "paylaşılan embedding tablosu" diye tek
+  satırda sayılmıştı; 103 bunu adlandırıyor, gerekçesini Press–Wolf'a bağlıyor ve tasarrufu ölçüyor (%7,1;
+  GPT-2 ölçeğinde neredeyse %30).
+- **Kaba fatura kuralı (8 → 103/104).** 8'de 6ND kurulmuştu; 103 aynı kuralı sayılabilir bir modelde sınıyor
+  ve token başına 648 ↔ 728 farkının nereden geldiğini gösteriyor (80 parametre hiç çarpma yapmıyor).
+  104 aynı kuralı tokenizer kararına bağlıyor: harf düzeyi sözlük 5,25 kat token demek, yani 5,25 kat hesap.
+- **Bayt çifti kodlaması (4 → 104), yüz makale aralıklı.** 4'te algoritmanın adımları anlatılmıştı; 104 onu
+  **çalıştırıyor** ve 4'ün örnek kelimesi "okullarda" bu kez ok | ul | larda diye bölünüyor. Aynı algoritma,
+  başka derlem, başka ızgara.
+- **Sözlük boyu bir tahsis kararıdır (15 → 104).** 15'te Tao ve ark.'nın ölçek yasasıyla kurulmuştu; 104 aynı
+  takası kendi derleminde ölçüyor ve marjinal getirinin 366 kat daraldığını gösteriyor.
+- **İndirgenemez hata ve entropi (2/94 → 104).** 2'nin "gürültü tabanı" ile 94'ün entropisi aynı sayıda
+  buluşuyor: 2·ln2/3 = 0,46210. Modelin durduğu yer 0,46286. Gerçek bir derlemde bu tabanın bilinmediği,
+  bu yüzden kaybın düşmeyi bırakmasının iki ayrı şey anlamına gelebileceği kaydı da burada düşüldü.
+- **Ölçüm disiplini (99/101 → 104), zorunlu geri çağırma.** 99'un "fark kendi gürültüsünden büyük olmalı"
+  kuralı kendi deneyimize uygulandı: beş tohumlu sapma 0,12669 ölçüldü ve sekiz ablasyonun hiçbiri iki
+  sapmayı aşmadı. 101'in "ortalama her zaman özet değildir" uyarısı da tahsil edildi — sonuçlar iki öbekte
+  toplandı ve ortalama hiçbir koşunun vermediği bir sayı çıktı.
+- **Dikkat ağırlığı açıklama değildir (6 → 104).** 6'da Jain–Wallace ile bir tartışma olarak verilmişti;
+  104 aynı şeyi kendi modelinde ölçüyor: ağırlık farkı 0,0215, değer farkı 0,6410. Bilgiyi taşıyan şey tartı
+  değil, tartılan şey.
+- **Kayıp maskesi (12 → 105).** 12'de talimat/cevap ayrımı olarak kurulmuştu; 105 maskenin **neyi koruduğunu**
+  ölçüyor: maskenin içindeki fiil kuralı yerinde kalıyor (0,9990 → 0,9986), dışındaki her şey bozuluyor
+  (derlem kaybı 0,46286 → 1,23545).
+- **Yüzeysel hizalama hipotezi ve hizalama vergisi (11/12 → 105).** LIMA'nın hipotezi en küçük ölçekte
+  doğrulandı ve vergisi bir sayıya çevrildi.
+- **Bradley–Terry ve KL tasması (13/94 → 105).** 13'ün tablosundaki 0,693, DPO kaybının başlangıç değeri
+  olarak aynen çıkıyor; 94'ün nat cinsinden KL'si tasmanın ölçüsü olarak kullanılıyor ve δ = 1,5 ÷ β
+  ilişkisi ölçülüyor.
+- **Aşırı optimizasyon (13 → 105).** 13'te Goodhart yasası olarak kurulmuştu; 105 bunun DPO'daki biçimini
+  gösteriyor — vekil ölçü (δ) yükselirken çıktının kendisi kötüleşebiliyor.
+- **Çatı çizgisi ve işlem yoğunluğu (89/26 → 106) — tekrar değil, devam.** 89'un aracı yeniden kurulmadı;
+  eğitim adımına uygulandı. 26'nın "işlem yoğunluğu yığın büyüklüğüne eşittir" hesabı, eğitimde "mikro yığın
+  çarpı dizi uzunluğu"na genişletildi ve iki rejim arasındaki 1.024 kat ölçüldü.
+- **AdamW'nin bedeli (95 → 106).** 95'te "her yöne kendi adımı" denmişti; 106 o adımın parametre başına sekiz
+  fazladan bayt ettiğini gösteriyor.
+- **Karma hassasiyet (27/89 → 106).** 89'da donanım sözleşmesi olarak verilmişti; 106'da eğitim durumunun
+  16 baytlık muhasebesinin içinde beliriyor.
+- **Kontrol noktası (8 → 106), çakışma uyarısı.** 8'in kontrol noktası ile alan yazınının "activation
+  checkpointing"i aynı şey değil; ayrım 106'da açıkça yapıldı.
+
+### Batch 25'te ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+- **Parametre defteri ve boyut muhasebesi, bağlanmış embedding, maskelenmiş dikkat matrisinin sayısal
+  hâli (103).** Planlanan tekrar: 107 (aynı defter kartlara bölündüğünde), 114 (bir sınır modelin defteri).
+- **Kendi tokenizer'ını kurmak; sözlük boyunun marjinal getirisi; entropi tabanı; koşular arası sapmanın
+  kendi deneyinde ölçülmesi (104).** Planlanan tekrar: 109 (koşunun gözleminde sapma), 114 (üretim ölçeğinde
+  veri ve tokenizer kararları), 116 (hangi iddianın kaç koşuya dayandığı).
+- **Kayıp maskesinin koruma alanı; δ = 1,5 ÷ β; tercihin karşılanması ile çıktının ayrışması (105).**
+  Planlanan tekrar: 112 (kişiselleştirme tercih verisiyle yapıldığında aynı ayrışma), 115 (ürün düzeyinde
+  hizalama kararları), 116 (hizalama yöntemlerinin açık soruları).
+- **Eğitim durumunun 16 baytı, aktivasyon belleği, aktivasyonları yeniden hesaplama, model FLOP kullanım
+  oranı, bellek merdiveni (106).** Planlanan tekrar: 107 (bölmenin bu defteri nasıl değiştirdiği),
+  108 (bant genişliğini azaltan çekirdek mühendisliği), 109 (kullanım oranının koşu boyunca izlenmesi),
+  114 (bütün defterin tek bir koşuda toplanması).
 
 ### Batch 24'te gerçekleşen tekrarlar (planlananların tahsili)
 
@@ -2717,6 +2785,13 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | çoklu karşılaştırma düzeltmesi | (multiple comparison correction) | 101 | çok sayıda test yapılınca eşiğin daraltılması; en sade biçimi Bonferroni |
 | yansız tahminci | (unbiased estimator) | 101 | ortalaması gerçek değere eşit olan tahminci; 93'teki **yanlılık (tahmincide)** satırının pratik karşılığı |
 | bootstrap | — | 101 | Türkçeleştirilmez; veriden **yerine koyarak yeniden örnekleme**. 97'deki torbalamanın dayandığı işlemin aynısı, orada ağaçları çeşitlendirmek için, burada belirsizliği ölçmek için. 89'daki **tahmini önyükleme** ile karıştırılmaz — "önyükleme" bu anlamda **kullanılmaz** |
+| bağlanmış embedding | (tied embedding) | 103 | giriş tablosunun çıktı izdüşümü olarak da kullanılması; 7'de "paylaşılan embedding tablosu" diye sayılmıştı |
+| parametre defteri | — | 103 | her parçanın boyut çarpımıyla sayılması; gövdede parantezsiz |
+| eniyileyici durumu | (optimizer state) | 106 | 89'da "eğitim durumu" içinde glosssuz geçmişti; fp32 ağırlık kopyası, momentum ve yayılım |
+| aktivasyon belleği | (activation memory) | 106 | geri geçiş için saklanan ara değerler; katman başına s·b·h·(34 + 5as/h) bayt |
+| aktivasyonları yeniden hesaplama | — | 106 | alan yazınının "activation checkpointing"i. 8'deki **kontrol noktasıyla aynı şey değildir**; ayrım 106'da açıkça yapıldı |
+| model FLOP kullanım oranı | (model FLOPs utilization, MFU) | 106 | gözlenen iş hacminin teorik tepeye oranı; yeniden hesaplamanın fazladan işlemlerini saymaz |
+| bellek merdiveni | — | 106 | SRAM ↔ HBM ↔ DRAM; hız ile kapasitenin ters yönde değişmesi. "Çekirdek" sözcüğü 97 ve 10'da başka nesneleri taşıdığı için 106'da GPU çekirdeklerinden hiç söz edilmedi, konu 108'e bırakıldı |
 | tekrarlanabilirlik | (reproducibility) | 102 | 9'daki **yeniden üretme (replication)** ile aynı aileden, ama alan iki terimi ters yönlerde kullanıyor; 102 tartışmayı sözcükten kurtarıp üç dereceye ayırır (aynı kod / aynı veri / aynı sonuç) |
 | veri sızıntısı | (data leakage) | 102 | test kümesinin bilgisinin veri hazırlığı yoluyla eğitime karışması. 72'deki **kirlilikle** karıştırılmaz: orada nesne eğitim derlemi, burada hazırlık adımları |
 
@@ -4928,7 +5003,127 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     `proceedings.mlsys.org` 2020 ve 2021, `proceedings.mlr.press/v97`, `jmlr.org`). (d) Gundersen–Kjensmo'nun
     bitiş sayfası hiçbir kanaldan doğrulanamadı; künyeye yalnızca PDF'de görünen başlangıç sayfası yazıldı.
 
-## Batch 24 öğrenme notları (yazım tamamlandı)
+225. **Faz 12 ve Faz 13'ün kategorisi `models-and-training`; kohort 25; level `advanced`.** Bu run iki kategori
+    kararı borçluydu ve ikisi de aynı yere çıktı. Ölçüt karar #200'ün ölçütüdür: **kategori konuyu değil katmanı
+    adlandırır.** 6–20 bandının katmanı "modeli kurmak ve eğitmek"tir; 103–105 aynı katmanın uygulama tarafı
+    (mimariyi elle kurmak, eğitmek, asistanlaştırmak), 106–109 ise aynı katmanın mühendislik tarafı (koşuyu
+    büyütmek). `foundations` reddedildi çünkü 91–102 **kuram ve yöntem** katmanını adlandırıyordu ve burada
+    katman değişiyor; `multimodal-and-future` reddedildi çünkü 88–90'daki donanım konuları o fazın verimlilik
+    başlığı altındaydı, oysa Faz 13 doğrudan eğitimin kendisi; `case-studies` reddedildi çünkü bunlar vaka
+    incelemesi değil inşa alıştırması (kontrollü sözlükte kullanılmamış tek kalem hâlâ o ve doğal yeri 114–115).
+    Sonuç: okuma listesinde `models-and-training` **iki öbek** oluyor (6–20 ve 103–106) ve kohort ayrımı
+    sayesinde Batch 2'nin grubuyla karışmıyor — `foundations` için zaten kabul edilmiş desen (kararlar #200,
+    #209, #219). `reading-list-groups.test.ts` değiştirilmedi, yalnızca çalıştırıldı ve geçti. Level `advanced`
+    kaldı (karar #201).
+226. **Mikro-GPT'nin şartnamesi bağlayıcıdır.** 103–105 tek bir modeli paylaşır ve ileride ona atıfta bulunacak
+    her makale bu sayıları kullanmak zorundadır: sözlük 7 token (`başla`, `kedi`, `köpek`, `bugün`, `dün`,
+    `uyudu`, `havladı`), bağlam 4, vektör boyu 4, 2 baş × 2 boyut, ileri besleme ara boyutu 8, 2 blok,
+    ön-katman normalleştirme, GELU, bağlanmış çıktı izdüşümü → **364 parametre**. Dil dört geçerli cümleden
+    oluşur ve tek kuralı fiilin özneyle uyuşmasıdır; zarf (`bugün`/`dün`) hiçbir bilgi taşımaz, bu yüzden bir
+    önceki token'a bakan model üçüncü konumda yazı tura atar. Karşılaştırma modeli "geniş mikro model"dir:
+    aynı mimari, vektör boyu 8 ve ileri besleme 16 ile **1.240 parametre**. Bu şartname 103'ün gövdesinde
+    yayımlandı ve değiştirilemez.
+227. **108'in başlığı Türkçeleştirildi.** "Performans Mühendisliği: **Attention**'ı Hızlandırmak" →
+    "Performans Mühendisliği: **Dikkati** Hızlandırmak". Ölçüt #217 ve #210'unkiyle aynı: "dikkat" 6\. makaleden
+    beri seri boyunca kullanılan yerleşik karşılıktır, dolayısıyla başlık yeni bir terim kurmuyor, var olan
+    kullanımı başlığa taşıyor. Değişiklik yayımlanmamış bir taslak başlıkta yapıldı ve `roadmap.json`'a yazıldı.
+    **Bu bandın başlıkları değiştirilmedi:** 103'teki "Mikro-GPT" uydurulmuş bir addır; 104'teki "Tokenizer"
+    15\. makalenin yayımlanmış başlığında yerleşiktir; 105'teki "SFT" ve "DPO" ile 106'daki "GPU" #108'in
+    kısaltma sınıfındadır ve 12, 13 ile 89'un yayımlanmış başlıklarında emsali vardır.
+228. **Terim kararları (Batch 25).** Yeni kurulanlar: "bağlanmış embedding (tied embedding)" (103),
+    "eniyileyici durumu (optimizer state)" (106), "aktivasyon belleği (activation memory)" (106),
+    "aktivasyonları yeniden hesaplama" (106), "model FLOP kullanım oranı (model FLOPs utilization, MFU)" (106),
+    "bellek merdiveni" (106). **İki çakışma açıkça adlandırıldı:** (a) alan yazınının "activation checkpointing"
+    dediği şey 8\. makaledeki **kontrol noktasıyla** aynı değildir — biri belleği, öbürü koşunun sürekliliğini
+    kurtarır; ayrım 106'nın gövdesinde yapıldı. (b) 106'daki "bellek" 39\. makalede ayrılan iki anlamdan
+    **donanım** olanıdır ve bu, makalenin girişinde söylendi. **"Çekirdek" sözcüğünden kaçınıldı:** 97'de
+    (kernel, SVM) ve 10'da (çekirdek örnekleme) zaten iki ayrı nesneyi taşıyor; 106 GPU çekirdeklerinden hiç
+    söz etmedi ve o konu 108'e bırakıldı. 104 ve 105 yeni terim kurmadı; ikisi de yerleşik terimleri kullandı.
+229. **Sayılar (Batch 25).** **103:** 364 parametre (28 + 16 + 2×156 + 8), bağlanmasa 392; paylar 152/128/44/40,
+    ileri beslemenin iki alt-katman içindeki payı %54,3 (7'de %57); GPT-3 / mikro = 480.769.231, taban model /
+    mikro = 178.571; GPT-2 küçük sürümünde embedding 50.257 × 768 ≈ 38,6 milyon; dikkat matrisi (baş 1)
+    1,000 / 0,356 0,644 / 0,441 0,243 0,316 / 0,070 0,375 0,459 0,095; ham skorlar 0,1307 −0,7146 −0,3395,
+    ölçekli 0,0925 −0,5053 −0,2401, üsteller 1,0969 0,6033 0,7865, toplam 2,4867; son vektör (−1,468; −0,140;
+    0,290; 1,319); `uyudu` logit'i −0,397 ve olasılık 0,061; dizi kaybı 2,4471, dört dizi 2,1257, ln 7 = 1,9459;
+    ileri geçiş 648 işlem/token, 2N kestirimi 728, fark %12, çarpma yapmayan 80 parametre; KV önbelleği 64 sayı.
+    **104:** derlem 102 makale / 255.071 kelime / 28.585 farklı kelime / 1.484.770 harf; harf düzeyi 1.739.841
+    token, sözlük 85, 6,821 kelime/token; birleştirme–sözlük–token dizisi 100/185/1.051.052, 400/483/726.244,
+    1.600/1.669/474.331, 3.200/3.242/389.428, 6.400/6.343/330.996; satır başına kazanç 6.888 → 19, oran 366;
+    ilk 12 birleştirme ve sıklıkları; 19. "bir", 27. "yor", 30. "ve"; "okullarda" → ok | ul | larda; eşik 80
+    token, 6.343'lük sözlük 25.372 parametre (makinenin 79 katı); kayıp eğrisi 2,1207 → 0,4629; konum başına
+    0,6939 / 0,6938 / 0,0010; taban çizgileri 1,9459 / 1,7918 / 0,6931 / 0,4629 / 0,4621; kazanç 0,2302;
+    beş tohum 0,46286 0,46425 0,69411 0,46333 0,69545, ortalama 0,55600 ± 0,12669; sekiz ablasyon satırı;
+    dikkat ağırlığı farkı 0,0215 ↔ değer farkı 0,6410 ↔ çıktı farkı 0,2244. **105:** temel model 0,4996/0,5004;
+    SFT 10/30/120 adım satırları; hizalama vergisi 0,46286 → 1,23545; sigmoid tablosu; δ = 1,5 ÷ β ölçümleri
+    (0,766/0,770, 1,530/1,522, 3,018/3,033, 7,565/7,569); üç tohumun DPO satırları; tohum 11'in tam dağılımı
+    (`uyudu` 0,99422, `bugün` + `dün` 0,00161); kapasite karşılaştırması 0,8287 ± 0,2847 ↔ 0,9995 ± 0,0002;
+    on iki koşunun üçünde yeğlenen cevap başlangıcının altına indi; 58 çekiliş. **106:** 16 bayt = 2+2+4+4+4;
+    GPT-2 1,5 milyar için 24 GB ↔ 3 GB; 8/70/405 milyar için 128/1.120/6.480 GB; 5 milyar sınırı ve 81 kart;
+    `s·b·h·(34 + 5as/h)`, GPT-3'te 5as/h = 80 ve katsayı 114, katman başına 2,87 GB, 96 katman 275 GB;
+    ZeRO'nun 60 GB ↔ 8 GB aktivasyon örneği; 19,6 → 27,2 ms (%39) ve 20,9 ms (%7), oranlar 1,55 ↔ 2,53;
+    SRAM 19 TB/s ve 20 MB, HBM 1,5 TB/s ve 40 GB, DRAM 12,8 GB/s, oranlar 12,7 / 117 / 2.000; sırt noktası
+    312 ÷ 1,5 = 208 (26'nın çipi 229); yoğunluk tablosu ve 1.024 kat; MFU 21,3 / 32,5 / 30,2 / 46,2 ve 57,8;
+    163 ÷ 312 = %52; 6 × 8×10⁹ × 32.768 = 1,57×10¹⁵ FLOP, 5,04 sn ↔ 12,6 sn ↔ 10,7 ms, oran 470.
+230. **Kendi hesabımız (Batch 25): bu batch'in çoğu.** Faz 12'nin üç makalesi büyük ölçüde kendi ölçümümüzdür ve
+    her biri metinde işaretlendi. (a) **Mikro-GPT'nin bütün sayıları** — saf Python'da yazılmış skaler ters-mod
+    otomatik türevli bir uygulama; gradyanlar merkezi farkla doğrulandı (beş parametrede bağıl fark 10⁻⁹
+    mertebesinde). 103'ün ağırlıkları rastgele çekilip **iki ondalığa yuvarlandı ve model o yuvarlanmış
+    değerlerle çalıştırıldı**, böylece yazılan her sayı baştan sona tutarlı. (b) **BPE ölçümleri** — Sennrich
+    ve ark.'nın algoritması bu serinin kendi derlemi üzerinde çalıştırıldı; satır başına kazanç sütunu bizim
+    türetmemiz. (c) **Taban çizgileri ve entropi** — düz tahmin, tekli ve ikili sayım kapalı formülden;
+    2·ln2/3 = 0,46210 dilin tanımından. (d) **Beş tohumlu sapma ve sekiz ablasyon** — 99\. makalenin ölçütü
+    kendi deneyimize uygulandı. (e) **δ = 1,5 ÷ β** — kaybın kapalı formülünden; ölçülen sekiz değer bunun
+    %3'ü içinde. (f) **58 çekiliş** — tek orantı sınaması, α = 0,05 iki yönlü, güç 0,80; koşulları metinde.
+    (g) **106'nın bütün çarpımları** — 16 bayt muhasebesi Rajbhandari ve ark.'dan, aktivasyon formülü
+    Korthikanti ve ark.'dan, sırt noktası ve yoğunluklar bizden. **Sınır her yerde yazıldı:** 105'in tablosu
+    tek koşuludur ve öyle söylendi; üç tohumlu karşılaştırma "bir yöntemi ölçmez" kaydıyla verildi.
+231. **Şekil kararları (Batch 25).** On üç şeklin hepsi tablo ya da blok listesi; **hiçbirinde eğri yok**
+    (kararlar #214 ve #223'ün devamı). Gerekçe aynı: bu batch'in malzemesi ya kendi ölçümümüz ya da kapalı
+    formüllerden türeyen değerler, ikisi de tablo olarak dürüst okunuyor. Üç şekil bu batch'in omurgasını
+    taşıyor: 104-Şekil 4 (beş tohum, ortalamanın hiçbir koşunun vermediği sayı olması), 105-Şekil 3 (δ aynı,
+    çıktı değil) ve 106-Şekil 3 (aynı çip, sırt noktasının iki yanı). **106-Şekil 3, 89-Şekil 1'in kopyası
+    değildir:** 89 çatı çizgisi düzlemini log-log eksenlerle çiziyordu, 106 aynı aracı beş rejimin yoğunluk
+    tablosuna uyguluyor ve nesnesi eğitim adımı.
+232. **Kaynak politikası ve doğrulama sınırları (Batch 25).** 103'te 6, 104'te 4, 105'te 6, 106'da 7 kaynak:
+    **23 kalem, 23 ayrı çalışma** (dört makalenin kaynakçaları hiç kesişmiyor). Dağılım: **21 hakemli**,
+    2 hakemsiz (Radford ve ark. 2018 OpenAI teknik raporu; Ba ve ark. 2016 arXiv ön baskısı — ikisi de metinde
+    işaretli ve ikisi de 7\. makalede aynı biçimde kullanılmıştı). **Faz 12'nin kaynak profili öngörüldüğü gibi
+    çıktı:** üç makalenin toplam kaynağı 16 kalem, çünkü gövdenin çoğu kendi hesabımız. **Yazım sırasında bir
+    denetim yapıldı ve beş künye kaynakçadan çıkarıldı** (Gage, Kudo–Richardson, Loshchilov–Hutter, Ouyang),
+    çünkü gövdede kullanılmıyorlardı; SOZLESME §4 yalnızca gerçekten kullanılan kaynakların listelenmesini
+    istiyor. Kalan her künye gövdede yazar adıyla anılıyor ve bu mekanik olarak denetlendi.
+    **(a) Doğrulanamayan künye yok.** ACM DOI'leri (Williams ve ark. 2009; Narayanan ve ark. 2021) ve
+    Biometrika (Bradley–Terry 1952) tarayıcıya 403 / bot doğrulaması döndürdü — beklenen duvar — ve ACM
+    künyeleri `api.crossref.org/works/<doi>` ile cilt, sayı, sayfa ve yıl düzeyinde doğrulandı (CACM 52(4),
+    s. 65–76; SC 2021, s. 1–15). (b) PMLR, NeurIPS, MLSys, ACL Anthology ve JMLR adreslerinin hepsi 200 döndü
+    ve başlıkları eşleşti; PaLM'ın künyesi JMLR'ın kendi bib kaydından alındı (24(240), 1–113).
+    (c) **OpenReview hiç kullanılmadı** (karar #224'ün devamı); bu bandın kaynaklarının hiçbiri oradan gelmiyor.
+
+## Batch 25 öğrenme notları (yazım tamamlandı)
+
+- **Faz 12 kurarak anlatmanın ne olduğunu gösterdi ve zincir üç adımda kapandı:** makineyi kur ve her sayısını
+  gör (103) → ağırlıkları döngüye yazdır ve kaybın nerede durduğunu öl (104) → tercihi yerleştir ve neyin
+  korunduğunu ölç (105). Üçünün ortak yanı, her iddianın **yeniden hesaplanabilir** olması: model 364
+  parametre olduğu için hiçbir sayı "kaynağa göre" değil, doğrudan görülebilir.
+- **Bu batch'in en pahalı dersi metodolojikti.** 104'ün ablasyon tablosu ilk turda tek tohumla çalıştırıldı ve
+  tablo anlamlı görünüyordu; 99\. makalenin kendi kuralı uygulanıp beş tohuma çıkarıldığında koşuların ikisinin
+  kuralı hiç öğrenemediği, ortalamanın hiçbir koşunun vermediği bir sayı olduğu ve hiçbir ablasyon farkının
+  sapmayı aşmadığı görüldü. **Serinin kendi ölçütünü kendi deneyine uygulamak, yazılmış olan bir tabloyu
+  tamamen değiştirdi.**
+- **105'te aynı şey ikinci kez oldu.** Tek tohumla "mikro modelde fiil kuralı çöküyor, kapasite düzeltiyor"
+  sonucu çıkmıştı; üç tohumla bakıldığında çöküşün üç koşunun yalnızca birinde olduğu, asıl kararlı bulgunun
+  ise başka bir şey olduğu görüldü: **tercih karşılandığı hâlde yeğlenen cevabın olasılığı düşebiliyor.**
+  Tohum 11'in tam dağılımı bunun mekanizmasını gösterdi — kütlenin yüzde 99,4'ü karşılaştırmaya hiç girmemiş
+  bir token'a gitmişti. Bu, Xu ve ark.'nın (ICML 2024) kuramsal uyarısının en küçük ölçekli örneği.
+- **Faz 13'ün açılışı 89'u tekrar etmemek üzere kuruldu.** Çatı çizgisi yeniden kurulmadı; **uygulandı.**
+  106'nın omurgası tek cümle: işlem yoğunluğu, ağırlık bir kez okunduğunda işlenen token sayısıdır — üretimde
+  yığın büyüklüğü, eğitimde mikro yığın çarpı dizi uzunluğu, aradaki fark 1.024 kat. 26'nın muhasebesi bu
+  cümleyle doğrudan eğitim tarafına taşındı.
+- **Ölçüm altyapısı:** mikro modelin tamamı saf Python'da (numpy ya da torch olmadan) yazıldı; skaler ters-mod
+  otomatik türev ~120 satır ve gradyanlar merkezi farkla doğrulandı. 364 parametre × 400 adım × 4 dizi bir
+  dizüstü bilgisayarda dakikalar sürüyor; beş tohumlu ablasyon turu ise saatler. Sonraki run benzer bir ölçüm
+  yapacaksa **tohum turlarını erken başlatmalı**, çünkü asıl darboğaz yazmak değil beklemek.
+
 
 - **Faz 11 kapandı ve zincir dört adımda tek bir soruya indi:** birinin deneyini nasıl okuruz (98) → kendi
   deneyimizi nasıl kurarız (99) → buraya kadarki her şey nasıl duruyor (100) → iki sayı arasındaki fark gerçek

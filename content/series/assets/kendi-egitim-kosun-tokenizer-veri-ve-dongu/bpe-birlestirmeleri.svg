@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 596" role="img" aria-label="İki bölmeli bir şekil. Üst bölmede on iki satırlık bir tablo durur; sütunlar sıra, birleştirilen ikili, sonuç ve sıklıktır. Birinci satır n artı kelime sonu, sonuç n nokta, 38.115 kez. İkinci satır r artı kelime sonu, 33.558. Üçüncü satır e artı kelime sonu, 32.573. Dördüncü satır i artı kelime sonu, 27.664. Beşinci satır a artı kelime sonu, 22.653. Altıncı satır a artı r, sonuç ar, 20.306. Yedinci satır ı artı kelime sonu, 18.929. Sekizinci satır b artı i, sonuç bi, 16.392. Dokuzuncu satır d artı e, sonuç de, 15.625. Onuncu satır l artı e, sonuç le, 15.034. On birinci satır k artı kelime sonu, 14.938. On ikinci satır a artı n, sonuç an, 13.456. Alt bölmede üç kutu vardır. Birinci kutuda ilk beşin ortak yanı durur: hepsi bir harf ile kelime sonu işaretinin birleşmesidir, çünkü Türkçede eklerin taşıyıcısı kelimenin sonudur. İkinci kutuda ileri örnekler durur: on dokuzuncu birleştirme bir, yirmi yedinci yor, otuzuncu ve. Üçüncü kutuda ayrışma durur: dördüncü makalenin örnek kelimesi okullarda bu tokenizer'da ok, ul, larda diye bölünüyor; ek doğru bulunmuş, kök ikiye kırılmıştır, çünkü bu derlemde okul geçmiyor. En altta bir kayıt: derlem bu serinin yayımlanmış 102 makalesinin Türkçe gövdesidir ve bütün sayımlar bizimdir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">İlk on iki birleştirme — 102 makalelik Türkçe derlem</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">#</text>
+  <text x="70" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">birleştirilen</text>
+  <text x="330" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sonuç</text>
+  <text x="450" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sıklık</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" font-weight="bold" fill="var(--accent)">1</text>
+  <text x="70" y="98" font-size="13" font-weight="bold" fill="var(--accent)">n + kelime sonu</text>
+  <text x="330" y="98" font-size="13" font-weight="bold" fill="var(--accent)">n·</text>
+  <text x="450" y="98" font-size="13" font-weight="bold" fill="var(--accent)">38.115</text>
+
+  <text x="24" y="120" font-size="13" font-weight="bold" fill="var(--accent)">2</text>
+  <text x="70" y="120" font-size="13" font-weight="bold" fill="var(--accent)">r + kelime sonu</text>
+  <text x="330" y="120" font-size="13" font-weight="bold" fill="var(--accent)">r·</text>
+  <text x="450" y="120" font-size="13" font-weight="bold" fill="var(--accent)">33.558</text>
+
+  <text x="24" y="142" font-size="13" font-weight="bold" fill="var(--accent)">3</text>
+  <text x="70" y="142" font-size="13" font-weight="bold" fill="var(--accent)">e + kelime sonu</text>
+  <text x="330" y="142" font-size="13" font-weight="bold" fill="var(--accent)">e·</text>
+  <text x="450" y="142" font-size="13" font-weight="bold" fill="var(--accent)">32.573</text>
+
+  <text x="24" y="164" font-size="13" font-weight="bold" fill="var(--accent)">4</text>
+  <text x="70" y="164" font-size="13" font-weight="bold" fill="var(--accent)">i + kelime sonu</text>
+  <text x="330" y="164" font-size="13" font-weight="bold" fill="var(--accent)">i·</text>
+  <text x="450" y="164" font-size="13" font-weight="bold" fill="var(--accent)">27.664</text>
+
+  <text x="24" y="186" font-size="13" font-weight="bold" fill="var(--accent)">5</text>
+  <text x="70" y="186" font-size="13" font-weight="bold" fill="var(--accent)">a + kelime sonu</text>
+  <text x="330" y="186" font-size="13" font-weight="bold" fill="var(--accent)">a·</text>
+  <text x="450" y="186" font-size="13" font-weight="bold" fill="var(--accent)">22.653</text>
+
+  <text x="24" y="208" font-size="13" fill="var(--text)">6</text>
+  <text x="70" y="208" font-size="13" fill="var(--text)">a + r</text>
+  <text x="330" y="208" font-size="13" fill="var(--text)">ar</text>
+  <text x="450" y="208" font-size="13" fill="var(--text)">20.306</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">7</text>
+  <text x="70" y="230" font-size="13" fill="var(--text)">ı + kelime sonu</text>
+  <text x="330" y="230" font-size="13" fill="var(--text)">ı·</text>
+  <text x="450" y="230" font-size="13" fill="var(--text)">18.929</text>
+
+  <text x="24" y="252" font-size="13" fill="var(--text)">8</text>
+  <text x="70" y="252" font-size="13" fill="var(--text)">b + i</text>
+  <text x="330" y="252" font-size="13" fill="var(--text)">bi</text>
+  <text x="450" y="252" font-size="13" fill="var(--text)">16.392</text>
+
+  <text x="24" y="274" font-size="13" fill="var(--text)">9</text>
+  <text x="70" y="274" font-size="13" fill="var(--text)">d + e</text>
+  <text x="330" y="274" font-size="13" fill="var(--text)">de</text>
+  <text x="450" y="274" font-size="13" fill="var(--text)">15.625</text>
+
+  <text x="24" y="296" font-size="13" fill="var(--text)">10</text>
+  <text x="70" y="296" font-size="13" fill="var(--text)">l + e</text>
+  <text x="330" y="296" font-size="13" fill="var(--text)">le</text>
+  <text x="450" y="296" font-size="13" fill="var(--text)">15.034</text>
+
+  <text x="24" y="318" font-size="13" fill="var(--text)">11</text>
+  <text x="70" y="318" font-size="13" fill="var(--text)">k + kelime sonu</text>
+  <text x="330" y="318" font-size="13" fill="var(--text)">k·</text>
+  <text x="450" y="318" font-size="13" fill="var(--text)">14.938</text>
+
+  <text x="24" y="340" font-size="13" fill="var(--text)">12</text>
+  <text x="70" y="340" font-size="13" fill="var(--text)">a + n</text>
+  <text x="330" y="340" font-size="13" fill="var(--text)">an</text>
+  <text x="450" y="340" font-size="13" fill="var(--text)">13.456</text>
+
+  <line x1="20" y1="356" x2="700" y2="356" stroke="var(--border)" />
+
+  <rect x="20" y="368" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="392" font-size="13" fill="var(--text)">İlk beşin ortak yanı: hepsi bir harf ile kelime sonu işaretinin birleşmesi.</text>
+  <text x="34" y="412" font-size="13" fill="var(--text)">Türkçede eklerin taşıyıcısı kelimenin sonudur; algoritma yalnızca sayıyor.</text>
+
+  <rect x="20" y="434" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="458" font-size="13" fill="var(--text)">Devamı aynı yöne gidiyor: 19. birleştirme "bir", 27. birleştirme "yor",</text>
+  <text x="34" y="478" font-size="13" fill="var(--text)">30. birleştirme "ve". Şimdiki zaman eki üçüncü onlukta bulunuyor.</text>
+
+  <rect x="20" y="500" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="524" font-size="13" fill="var(--text-muted)">Ayrışma: 4. makalenin örneği "okullarda" burada ok | ul | larda oluyor.</text>
+  <text x="34" y="544" font-size="13" fill="var(--text-muted)">Ek doğru bulunmuş, kök ikiye kırılmış — bu derlemde "okul" geçmiyor.</text>
+
+  <text x="20" y="584" font-size="13" fill="var(--text-faint)">Derlem bu serinin yayımlanmış 102 makalesidir; bütün sayımlar bizimdir.</text>
+</svg>

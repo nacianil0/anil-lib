@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 452" role="img" aria-label="Yedi satırlık dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: 364 parametre nerede duruyor. Sütunlar parça, hesap, parametre ve paydır. Birinci satır token embedding tablosu: 7 çarpı 4, 28 parametre, yüzde 7,7. İkinci satır konum embedding tablosu: 4 çarpı 4, 16 parametre, yüzde 4,4. Üçüncü satır iki bloğun dikkat matrisleri: 2 çarpı 4 çarpı 4 çarpı 4, 128 parametre, yüzde 35,2. Dördüncü satır vurguludur, iki bloğun ileri beslemeli katmanları: 2 çarpı 76, 152 parametre, yüzde 41,8. Beşinci satır katman normalleştirmeler: 2 çarpı 16 artı 8, 40 parametre, yüzde 11,0. Altıncı satır çıktı izdüşümü: paylaşılır, 0 parametre, yüzde 0. Yedinci satır toplam: 364 parametre, yüzde 100. Birinci kutuda oran durur: iki alt-katman türü kendi aralarında oranlanırsa ileri beslemenin payı yüzde 54,3 ve 7. makalede taban model için aynı hesap yüzde 57 vermişti. İkinci kutuda ölçek durur: 2017'nin taban modeli bu modelin 178.571 katı, GPT-3 ise 480 milyon katıdır; oran yerinde kaldı, boy değişti. En altta bir kayıt: sayım bizimdir ve modelin kendi şartnamesinden çıkar.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">364 parametre nerede duruyor</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">parça</text>
+  <text x="330" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">hesap</text>
+  <text x="500" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">parametre</text>
+  <text x="620" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">pay</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">token embedding tablosu</text>
+  <text x="330" y="100" font-size="13" fill="var(--text)">7 × 4</text>
+  <text x="500" y="100" font-size="13" fill="var(--text)">28</text>
+  <text x="620" y="100" font-size="13" fill="var(--text)">%7,7</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">konum embedding tablosu</text>
+  <text x="330" y="126" font-size="13" fill="var(--text)">4 × 4</text>
+  <text x="500" y="126" font-size="13" fill="var(--text)">16</text>
+  <text x="620" y="126" font-size="13" fill="var(--text)">%4,4</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">iki bloğun dikkat matrisleri</text>
+  <text x="330" y="152" font-size="13" fill="var(--text)">2 × 4 × 4 × 4</text>
+  <text x="500" y="152" font-size="13" fill="var(--text)">128</text>
+  <text x="620" y="152" font-size="13" fill="var(--text)">%35,2</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">iki bloğun ileri beslemeli katmanları</text>
+  <text x="330" y="178" font-size="13" font-weight="bold" fill="var(--accent)">2 × 76</text>
+  <text x="500" y="178" font-size="13" font-weight="bold" fill="var(--accent)">152</text>
+  <text x="620" y="178" font-size="13" font-weight="bold" fill="var(--accent)">%41,8</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">katman normalleştirmeler</text>
+  <text x="330" y="204" font-size="13" fill="var(--text)">2 × 16 + 8</text>
+  <text x="500" y="204" font-size="13" fill="var(--text)">40</text>
+  <text x="620" y="204" font-size="13" fill="var(--text)">%11,0</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">çıktı izdüşümü</text>
+  <text x="330" y="230" font-size="13" fill="var(--text-muted)">paylaşılır</text>
+  <text x="500" y="230" font-size="13" fill="var(--text)">0</text>
+  <text x="620" y="230" font-size="13" fill="var(--text)">%0</text>
+
+  <line x1="20" y1="244" x2="700" y2="244" stroke="var(--border)" />
+  <text x="24" y="268" font-size="13" font-weight="bold" fill="var(--text)">toplam</text>
+  <text x="500" y="268" font-size="13" font-weight="bold" fill="var(--text)">364</text>
+  <text x="620" y="268" font-size="13" font-weight="bold" fill="var(--text)">%100</text>
+
+  <rect x="20" y="286" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="310" font-size="13" fill="var(--text)">İki alt-katman türü kendi aralarında oranlanırsa ileri beslemenin payı</text>
+  <text x="34" y="330" font-size="13" fill="var(--text)">%54,3; 7. makalede taban model için aynı hesap %57 vermişti.</text>
+
+  <rect x="20" y="352" width="680" height="56" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="376" font-size="13" fill="var(--text-muted)">Ölçek: 2017'nin taban modeli bu modelin 178.571 katı, GPT-3 ise</text>
+  <text x="34" y="396" font-size="13" fill="var(--text-muted)">480 milyon katı. Oran yerinde kaldı, boy değişti.</text>
+
+  <text x="20" y="436" font-size="13" fill="var(--text-faint)">Sayım bizimdir; modelin kendi şartnamesinden çıkar.</text>
+</svg>

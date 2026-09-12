@@ -3817,3 +3817,160 @@ sildi; kalan betikler scratchpad'e yeniden yazıldı.
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 23:02 | Created artifacts/b12-research/strip.py | — | ~250 |
+| 23:03 | Created artifacts/b12-research/fetch.sh | — | ~453 |
+| 23:04 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/wc.cjs | — | ~321 |
+| 23:04 | Created artifacts/b12-research/fetch2.sh | — | ~311 |
+| 23:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/svgcheck.cjs | — | ~1588 |
+| 23:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/scan.cjs | — | ~1042 |
+| 23:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/syncalt.cjs | — | ~367 |
+| 23:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/net.py | — | ~1407 |
+| 23:06 | Created artifacts/b12-research/fetch3.sh | — | ~510 |
+| 23:07 | Created artifacts/b12-research/fetch4.sh | — | ~423 |
+| 23:11 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/micro.py | — | ~2736 |
+| 23:11 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/train.py | — | ~1104 |
+| 23:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump103.py | — | ~1673 |
+| 23:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump104.py | — | ~1900 |
+| 23:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/bpe.py | — | ~1282 |
+| 23:22 | Created content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | — | ~6882 |
+| 23:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump105.py | — | ~2219 |
+| 23:24 | Created content/series-boun/assets/bilgisayar-organizasyonu-osnin-altindaki-makine/bellek-hiyerarsisi-katmanlari.svg | — | ~890 |
+| 23:25 | Created content/series-boun/assets/bilgisayar-organizasyonu-osnin-altindaki-makine/onbellek-eslemesi.svg | — | ~1853 |
+| 23:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/calc106.py | — | ~1319 |
+| 23:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/alt37.py | — | ~845 |
+| 23:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump104b.py | — | ~1440 |
+| 23:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/bpe2.py | — | ~1196 |
+| 23:30 | Created content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md | — | ~6691 |
+| 23:30 | Edited content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md | 3→3 lines | ~49 |
+| 23:31 | Created content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/adres-uzayi-duzeni.svg | — | ~1156 |
+| 23:32 | Created content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/kopyalarken-yazma.svg | — | ~1899 |
+| 23:32 | Edited content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/adres-uzayi-duzeni.svg | inline fix | ~42 |
+| 23:32 | Edited content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/adres-uzayi-duzeni.svg | 2→2 lines | ~56 |
+| 23:32 | Edited content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/kopyalarken-yazma.svg | inline fix | ~24 |
+| 23:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/alt38.py | — | ~1005 |
+| 23:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/title39.py | — | ~340 |
+| 23:34 | Created artifacts/b12-research/fetch5.sh | — | ~357 |
+| 23:35 | Created content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | — | ~5241 |
+| 23:36 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | 3→5 lines | ~186 |
+| 23:36 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | "Transformer eşittir dikka" → "nin 65 milyon parametreli" | ~117 |
+| 23:36 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | expanded (+6 lines) | ~429 |
+| 23:37 | Created content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/parametre-defteri.svg | — | ~1012 |
+| 23:37 | Created content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/token-yolculugu.svg | — | ~1106 |
+| 23:37 | Created content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/maskelenmis-dikkat-matrisi.svg | — | ~1008 |
+| 23:38 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | 3→3 lines | ~445 |
+| 23:38 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | "ın girdisinden çıkarılmış" → "a girmeden eksi sonsuza g" | ~298 |
+| 23:39 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | "nin taban modeli 178 bin " → "nin taban modeli bu model" | ~306 |
+| 23:39 | Created content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | — | ~8359 |
+| 23:40 | Created content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/erisim-yolu-maliyeti.svg | — | ~880 |
+| 23:41 | Created content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/b-arti-agaci-indeks.svg | — | ~1577 |
+| 23:41 | Edited content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/b-arti-agaci-indeks.svg | inline fix | ~31 |
+| 23:41 | Edited content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/b-arti-agaci-indeks.svg | inline fix | ~29 |
+| 23:42 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/alt39.py | — | ~1068 |
+| 23:42 | Created artifacts/b12-research/gloss.py | — | ~552 |
+| 23:43 | Created content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | — | ~5244 |
+| 23:43 | Created artifacts/b12-research/denetim.py | — | ~1305 |
+| 23:46 | Created artifacts/b12-research/login-b12.mjs | — | ~289 |
+| 23:47 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump105.py | — | ~2119 |
+| 23:47 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | 1→3 lines | ~154 |
+| 23:47 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | 1→3 lines | ~202 |
+| 23:48 | Created content/series/assets/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi/bellek-merdiveni.svg | — | ~809 |
+| 23:48 | Created content/series/assets/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi/egitim-bellek-defteri.svg | — | ~838 |
+| 23:48 | Created content/series/assets/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi/sirt-noktasinin-iki-yani.svg | — | ~803 |
+| 23:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump105b.py | — | ~1114 |
+| 23:50 | Edited content/series-boun/assets/c-ve-bellek-sistem-programlama-penceresi/kopyalarken-yazma.svg | 1→3 lines | ~71 |
+| 23:50 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | "dan fazla, karta sığmayan" → "dan büyük, karta sığmayan" | ~269 |
+| 23:51 | Created content/series-boun/assets/veritabanlari-iliskisel-model-indeks-ve-transaction/b-arti-agaci-indeks.svg | — | ~1414 |
+| 23:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump105c.py | — | ~1858 |
+| 23:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/alt-fix.py | — | ~820 |
+| 23:55 | Created content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | — | ~5304 |
+| 23:57 | Created content/series/assets/kendi-egitim-kosun-tokenizer-veri-ve-dongu/bpe-birlestirmeleri.svg | — | ~1570 |
+| 23:57 | Created content/series/assets/kendi-egitim-kosun-tokenizer-veri-ve-dongu/sozluk-boyunun-getirisi.svg | — | ~1051 |
+| 23:57 | Created content/series/assets/kendi-egitim-kosun-tokenizer-veri-ve-dongu/kaybin-durdugu-yer.svg | — | ~617 |
+| 23:59 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump105d.py | — | ~720 |
+| 00:02 | Created content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | — | ~4652 |
+| 00:02 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | expanded (+9 lines) | ~164 |
+| 00:02 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | 1→3 lines | ~211 |
+| 00:03 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | 1→3 lines | ~230 |
+| 00:03 | Created content/series/assets/kendi-egitim-kosun-tokenizer-veri-ve-dongu/bes-tohum-iki-sonuc.svg | — | ~765 |
+| 00:04 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | 11→15 lines | ~512 |
+| 00:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/dump105e.py | — | ~385 |
+| 00:05 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | 22→22 lines | ~635 |
+| 00:06 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | 1→3 lines | ~147 |
+| 00:06 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | "dan 0,500" → "dan 0,4999" | ~426 |
+| 00:07 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | expanded (+16 lines) | ~307 |
+| 00:07 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | expanded (+12 lines) | ~477 |
+| 00:08 | Created content/series/assets/kendi-asistanin-kucuk-olcekte-sft-ve-dpo/sft-neyi-tasiyor.svg | — | ~903 |
+| 00:08 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | 1→5 lines | ~349 |
+| 00:09 | Created content/series/assets/kendi-asistanin-kucuk-olcekte-sft-ve-dpo/tasmanin-uzunlugu.svg | — | ~780 |
+| 00:09 | Created content/series/assets/kendi-asistanin-kucuk-olcekte-sft-ve-dpo/tasmanin-tutmadigi-yer.svg | — | ~1461 |
+| 00:13 | Created .claude/launch.json | — | ~147 |
+| 00:13 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/sweep.py | — | ~575 |
+| 00:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/arastirma-17.md | — | ~7308 |
+| 00:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/measure.js | — | ~491 |
+| 00:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/yol-b12.py | — | ~1919 |
+| 00:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/defter-b12.py | — | ~2543 |
+| 00:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/shots.mjs | — | ~733 |
+| 00:24 | Created .claude/launch.json | — | ~56 |
+| 00:26 | Created docs/seri-boun/HANDOFF.md | — | ~9193 |
+| 00:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/yol25.py | — | ~4424 |
+| 00:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/wolf-b12.py | — | ~2005 |
+| 00:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/yol25b.py | — | ~1713 |
+| 00:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/memory-b12.py | — | ~619 |
+
+## Oturum özeti — BOUN Batch 12 (`BATCH=3+1`, 2026-09-11)
+
+Makale 37 "Bilgisayar Organizasyonu: OS'nin Altındaki Makine", 38 "C ve Bellek: Sistem Programlama
+Penceresi" ve 39 "Veritabanları: İlişkisel Model, İndeks ve Transaction" yazıldı, altı SVG üretildi,
+katalog/roadmap entegre edildi ve doğrulama kapılarından geçirildi. Üçü de
+`content/series-boun/articles/supporting-fundamentals/` altında, kohort 12.
+
+- **Kapsam düzeltmesi:** makale 39'un resmî bir dersi var — CMPE321, önkoşulu CMPE250. Yol haritası
+  "resmî ders yok" diyordu; düzeltildi.
+- **Başlık değişikliği:** 39 "…İndeks ve İşlem" → "…İndeks ve Transaction" (terim çakışması:
+  "işlem" bu seride *operation*). `roadmap.json` entegrasyondan önce elle güncellendi.
+- **Ödenen borçlar:** `fork`/`exec`/`wait` (27), kopyalarken yazma (33), indeks = B-ağacı (12),
+  kesişim noktası (17), TLB bir önbellektir (32), sayfa boyutu takası (32), bağlam anahtarı çevrim
+  maliyeti (27), işaretçi maliyeti (10), dış sıralama (15), seçicilik varsayımı (36),
+  Patterson & Hennessy içindekiler borcu.
+- **Doğrulama:** içerik + SVG denetleyicileri temiz (39 makale / 78 diyagram), bağımsız Python
+  denetimi 39/39, gloss taraması tekrar-gloss sıfır, `pnpm typecheck` temiz, `pnpm test` 651/651,
+  `pnpm build` 163 statik sayfa (39'u `/boun`), global id/slug 163/163, Playwright 49/1/3 (üçü de
+  BOUN dışı, iki kontrol koşusuyla kanıtlandı), 30 render + 24 diyagram + 20 kod bloğu görüntüsü.
+- **Görsel incelemede iki düzen hatası bulunup düzeltildi** (bug-461, bug-462); üçüncü bir kayıt
+  `roadmap.json`'un yanlışlıkla yeniden biçimlendirilmesiydi (bug-463).
+- **Sıradaki run seriyi bitiriyor:** kalan makaleler 40 ve 41; `/boun` girişindeki `footerNote`
+  metni o run'da güncellenmelidir (öngörülen tek kod dokunuşu).
+
+| 00:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/yol25c.py | — | ~1197 |
+| 00:29 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-batch12-faz-e-konu-makaleleri.md | — | ~1264 |
+| 00:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/handoff-nums.py | — | ~258 |
+| 00:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/jargon39.py | — | ~435 |
+| 00:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/sayi-duzelt.py | — | ~438 |
+| 00:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/e5a4fc87-3a97-4eb4-afe8-9681d9da07ff/scratchpad/sayi2.py | — | ~242 |
+| 00:34 | Created docs/seri/HANDOFF.md | — | ~8108 |
+| 00:35 | Session end: 106 writes across 76 files (strip.py, fetch.sh, wc.cjs, fetch2.sh, svgcheck.cjs) | 28 reads | ~164213 tok |
+| 00:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b357d561-7929-47e4-928c-fb5b661508db/scratchpad/wolf25.py | — | ~2498 |
+
+## Oturum ozeti: Batch 25 (2026-09-11/12)
+
+AI serisi Batch 25 tamamlandi: **makale 103-106 yayimlandi**, Faz 12 (Temelden Kurmak) tamamen
+kapandi ve Faz 13 (Egitim Sistemleri Muhendisligi) acildi. `BATCH=4+1`, kohort 25, kategori
+`models-and-training` (iki faz icin tek karar, #225), level `advanced`.
+
+- **103 Mikro-GPT:** 364 parametreli bir Transformer'in tam parametre defteri, bir token'in
+  embedding'den logit'e butun boyutlari, maskelenmis dikkat matrisinin sayisal hali.
+- **104 Kendi Egitim Kosun:** serinin kendi 102 makalesi uzerinde sifirdan BPE; sozluk boyunun
+  marjinal getirisi 366 kat daraliyor; kayip dilin entropisinde duruyor; **bes tohumun ikisi
+  kurali hic ogrenemedi** ve hicbir ablasyon sapmayi asmadi.
+- **105 Kendi Asistanin:** kayip maskesinin koruma alani, hizalama vergisi, delta = 1,5 / beta
+  olcumu ve **tercih karsilanirken yeglenen cevabin binde bire inmesi**.
+- **106 GPU Zihinsel Modeli:** parametre basina 16 bayt, aktivasyon formulu, yeniden hesaplamanin
+  olculmus %39 bedeli, sirt noktasinin iki yani (1.024 kat) ve kullanim orani.
+
+Butun sayilar saf Python'da yazilmis, skaler ters-mod otomatik turevli bir mikro model uygulamasindan
+cikti; gradyanlar merkezi farkla dogrulandi. Kararlar #225-#232; sonraki numara #233.
+Kapilar: typecheck 0, **661 test**, build exit 0 (106 yol, 167 statik sayfa, izole kopyada),
+148 rota 200 (dort dilim), 4 makale x 3 genislik x 3 tema DOM olcumu, 13 sekil x 2 tema PNG.
+23 kaynak kaleminin 21'i hakemli. Paralel BOUN oturumu ayni worktree'de (port 3105) calisiyordu.
+| 00:36 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch25-faz12-kapanis.md | — | ~870 |
+| 00:38 | Session end: 108 writes across 78 files (strip.py, fetch.sh, wc.cjs, fetch2.sh, svgcheck.cjs) | 28 reads | ~167643 tok |
