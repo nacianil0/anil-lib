@@ -12,7 +12,7 @@ tags:
   - quicksort
   - kararlilik
   - radix-sort
-content_hash: sha256:f1f0849eb5e761356fe8c24c4f77a0f3cb282f139bff5c9389327724e2622f4b
+content_hash: sha256:74b875860e880f23fdf946d861a6c82b950ff0c0fd6af11246a0cda0f5d9da25
 classification_version: 1
 classification_batch: 4
 ---
@@ -65,7 +65,7 @@ Belleği de sayalım: ayırma yerinde yapılır, ek bellek yalnızca özyineleme
 
 ## Heapsort: garanti ve yerinde, ama kararsız
 
-Önceki makalede kurduğumuz heap, öncelik kuyruğu sıralaması desenine takıldığında **heapsort** verir: yığını kur, sonra n kez en uçtakini al. Maliyet her girdide O(n log n)'dir; karşılaştırma ve takas sayısı 2n log₂ n'nin altında kalır.
+Önceki makalede kurduğumuz heap, öncelik kuyruğu sıralaması desenine takıldığında **heapsort** verir: heap'i kur, sonra n kez en uçtakini al. Maliyet her girdide O(n log n)'dir; karşılaştırma ve takas sayısı 2n log₂ n'nin altında kalır.
 
 Heapsort'un konumu tabloda tektir: **hem en kötü durumda n log n garantisi verir hem de yerinde çalışır.** Birleştirmeli sıralama garantiyi verir ama belleği ister; hızlı sıralama belleği istemez ama garantiyi vermez. Heapsort ikisini birden sunar. Karşılığında kaybettiği iki şey vardır: kararlı değildir ve bellek erişim deseni dağınık olduğu için pratikte hızlı sıralamadan yavaş çalışır.
 

@@ -12,7 +12,7 @@ tags:
   - dijkstra
   - bellman-ford
   - azalt-anahtar
-content_hash: sha256:dbccdab19371a26517c0086ed49079f82cc584db01946aa0be16aa752693672e
+content_hash: sha256:abe35d5ed1f6bd113952abdf13ba99a596fed0244220d2a318f797329a8e74ee
 classification_version: 1
 classification_batch: 7
 ---
@@ -100,7 +100,7 @@ Doğruluğun ispatı tümevarımdır ve **negatif olmama varsayımının tam ola
 
 Negatif bir kenar bu zinciri kırar ve algoritma sessizce yanlış cevap verir. En küçük karşı örnek üç düğümlüdür: s → a ağırlık 1, s → b ağırlık 2, b → a ağırlık −2. Dijkstra a'yı 1 tahminiyle çıkarır ve kesinleştirir; oysa gerçek uzaklık s → b → a yolundan 2 − 2 = **0**'dır. Bu çöküşü kodla da çalıştırıp doğruladım.
 
-**Bellman-Ford.** Negatif kenarlar varsa sıraya güvenemeyiz, o hâlde sırayı **kenar sayısı** üzerinden kuralım. δ_k(s, v), en fazla k kenar kullanan yolların en küçük ağırlığı olsun. Negatif çevrim yoksa her sonlu en kısa yol **basittir** (bir çevrim içerseydi çevrimin ağırlığı negatif olmadığı için onu atmak yolu kısaltmaz ama daha az düğümlü bir yol verirdi), dolayısıyla en fazla |V| − 1 kenar taşır ve δ(s, v) = δ_{|V|−1}(s, v) olur.
+**Bellman-Ford.** Negatif kenarlar varsa sıraya güvenemeyiz, o hâlde sırayı **kenar sayısı** üzerinden kuralım. δ_k(s, v), en fazla k kenar kullanan yolların en küçük ağırlığı olsun. Negatif çevrim yoksa her sonlu en kısa yol **basittir** (bir çevrim içerseydi çevrimin ağırlığı negatif olmadığı için onu atmak yolu uzatmaz ama daha az düğümlü bir yol verirdi), dolayısıyla en fazla |V| − 1 kenar taşır ve δ(s, v) = δ_{|V|−1}(s, v) olur.
 
 Algoritma bu alt problemleri artan k sırasında doldurur: |V| − 1 tur boyunca bütün kenarları gevşet. Bu, kelimenin tam anlamıyla bir **dinamik programdır** — alt problem (v, k) çifti, topolojik sıra artan k. Maliyet |V| − 1 tur × |E| kenar = **O(|V| · |E|)**.
 

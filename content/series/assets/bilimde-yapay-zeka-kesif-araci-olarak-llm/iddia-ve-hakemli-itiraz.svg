@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 440" role="img" aria-label="İki bölmeli şekil. Üstte iki sütunlu dört satırlı bir tablo; sütunlar iddia ve hakemli itiraz. Birinci satır: dışbükey zarfın altında 2,2 milyon yapı ve 381 bin yeni kararlı kayıt; karşısında yenilik, inandırıcılık ve kullanışlılık üçlüsünü birden karşılayan bileşikler için kayda değer kanıt bulunamadığı yazar. İkinci satır: on yedi günde 57 hedeften 36'sının sentezlenmesi; karşısında 43 sentez ürününün tamamının incelendiği ve hiçbir yeni malzemenin keşfedilmediği sonucu yazar. Üçüncü satır vurguludur, neden: öngörülen bileşiklerde her element ayrı bir kristalografik konumda durur; karşısında gerçek katılarda elementlerin aynı konumu paylaştığı, bunun daha yüksek simetri verdiği ve başarılı sayılanların üçte ikisinin bilinen düzensiz karşılıklar olmasının muhtemel olduğu yazar. Dördüncü satır ölçüm: toz kırınımı verisinin otomatik çözümlenmesi; karşısında bu çözümlemenin henüz güvenilir olmadığı yazar. Altta bir kutu durur: modelin yanlış cevap vermediği, sorduğu sorunun dünyanın sorusu olmadığı; düzensiz bir katının arama uzayında temsil edilebilir bir nesne olmadığı ve bunun 110’un ölçütünün laboratuvardaki hâli olduğu yazılıdır. En altta bir kayıt: sol sütun Merchant ve Szymanski ve arkadaşlarının, sağ sütun Cheetham ile Seshadri'nin ve Leeman ve arkadaşlarının yayımlanmış değerlendirmeleridir.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı sonuç, iki taraftan okunuşu</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--accent)">iddia</text>
+  <text x="384" y="64" font-size="13" font-weight="bold" fill="var(--cool)">hakemli itiraz</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+  <line x1="374" y1="74" x2="374" y2="318" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">Dışbükey zarfın altında</text>
+  <text x="24" y="118" font-size="13" fill="var(--text)">2,2 milyon yapı; 381 bin</text>
+  <text x="24" y="138" font-size="13" fill="var(--text)">yeni kararlı kayıt.</text>
+  <text x="384" y="98" font-size="13" fill="var(--text)">Yenilik, inandırıcılık ve</text>
+  <text x="384" y="118" font-size="13" fill="var(--text)">kullanışlılık üçlüsünü birden</text>
+  <text x="384" y="138" font-size="13" fill="var(--text)">karşılayan kanıt bulunamadı.</text>
+
+  <text x="24" y="172" font-size="13" fill="var(--text)">On yedi günde 57 hedeften</text>
+  <text x="24" y="192" font-size="13" fill="var(--text)">36'sı sentezlendi.</text>
+  <text x="384" y="172" font-size="13" fill="var(--text)">43 ürünün tamamı incelendi;</text>
+  <text x="384" y="192" font-size="13" fill="var(--text)">hiçbir yeni malzeme yok.</text>
+
+  <text x="24" y="226" font-size="13" font-weight="bold" fill="var(--text)">Neden: öngörüde her element</text>
+  <text x="24" y="246" font-size="13" font-weight="bold" fill="var(--text)">ayrı bir konumda durur.</text>
+  <text x="384" y="226" font-size="13" font-weight="bold" fill="var(--cool)">Gerçekte konum paylaşılır;</text>
+  <text x="384" y="246" font-size="13" font-weight="bold" fill="var(--cool)">üçte ikisi bilinen düzensiz</text>
+  <text x="384" y="266" font-size="13" font-weight="bold" fill="var(--cool)">karşılık olabilir.</text>
+
+  <text x="24" y="298" font-size="13" fill="var(--text)">Ölçüm: toz kırınımının</text>
+  <text x="24" y="314" font-size="13" fill="var(--text)">otomatik çözümlenmesi.</text>
+  <text x="384" y="298" font-size="13" fill="var(--text)">Bu çözümleme henüz</text>
+  <text x="384" y="314" font-size="13" fill="var(--text)">güvenilir değil.</text>
+
+  <rect x="20" y="330" width="700" height="50" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="352" font-size="13" fill="var(--text)">Model yanlış cevap vermiyor; sorduğu soru dünyanın sorusu değil. Düzensiz bir katı,</text>
+  <text x="34" y="370" font-size="13" fill="var(--text)">arama uzayında temsil edilebilir bir nesne değil — 110'un ölçütünün laboratuvar hâli.</text>
+
+  <text x="20" y="400" font-size="13" fill="var(--text-faint)">Sol sütun Merchant ve Szymanski ve ark.'nın; sağ sütun</text>
+  <text x="20" y="418" font-size="13" fill="var(--text-faint)">Cheetham ile Seshadri'nin ve Leeman ve ark.'nın.</text>
+</svg>

@@ -12,7 +12,7 @@ tags:
   - yigin
   - kuyruk
   - amortize-maliyet
-content_hash: sha256:cd0e0b22b774b4d32c206ad53c4e13cd729a616dd3b8b2fb9bdf2b6720b475f7
+content_hash: sha256:4ba27defa1abcb55b2759c2193f4691af48fcb5fb26738d130e63693502bf572
 classification_version: 1
 classification_batch: 3
 ---
@@ -105,7 +105,7 @@ Aşağıdaki tabloda maliyetler **en kötü durum** için verilmiştir; dinamik 
 | elde tutulan düğümden sonra ekleme | n | 1 | n |
 | ek bellek | yok | düğüm başına işaretçi | en fazla n boş hücre |
 
-Yığın ve kuyruk bu tabloda ayrı bir satır değildir, çünkü ayrı bir temsil değildir: yığın dinamik dizi üstünde amortize sabit, kuyruk çift yönlü bağlı liste ya da dairesel tampon üstünde sabit zamanlı çalışır. Arayüzü daraltmanın karşılığı budur — daha az söz verirsin, verdiğin sözü daha ucuza tutarsın.
+Yığın ve kuyruk bu tabloda ayrı bir satır değildir, çünkü ayrı bir temsil değildir: yığın dinamik dizi üstünde amortize sabit, kuyruk baş ve son işaretçili bağlı liste ya da dairesel tampon üstünde sabit zamanlı çalışır. Arayüzü daraltmanın karşılığı budur — daha az söz verirsin, verdiğin sözü daha ucuza tutarsın.
 
 Tablodan çıkan tek cümlelik kural şudur: **dizi konumu, bağlı liste yapıyı ucuzlatır.** Aradığın şey "kaçıncı eleman" ise dizi, "şu düğümün yanına" ise bağlı liste kazanır. Hiçbiri sırasız aramayı ucuzlatmaz; onun için başka bir değişmez gerekir ve fazın geri kalanı tam olarak bunu kurar.
 

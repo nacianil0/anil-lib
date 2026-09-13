@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-11 · Yayında: 1–102 (Batch 0 … Batch 24) · Sıradaki güvenli başlangıç: 103
+Son güncelleme: 2026-09-13 · Yayında: 1–114 (Batch 0 … Batch 27) · Sıradaki güvenli başlangıç: 115
 
 ## Serinin tezi
 
@@ -297,6 +297,29 @@ kohortundaki önceki makalelere) ya da defterdeki 101 koordinatına yapıldı ve
 biçimdir; 102'den büyük öteki sayılar yüzde, bildiri sayısı ve yıl değerleridir). **Defterde açık numaralı
 koordinat kalmadı;** numarasız işaretler 51 → 111 ve 49/53 → 115 olarak duruyor ve devrolan planlı tekrar yok.
 
+**Numarasız ileri işaretler — Batch 25'te verildi** (defter kaydı bu run'da tamamlandı). 103'ün ağırlıkları
+döngüye yazdırma devri (→ 104, "bir sonraki makale"); 104'ün eğitilen modeli asistanlaştırma devri (→ 105,
+"bir sonraki makale"); 105'in dizüstü bilgisayardan veri merkezine devri (→ 106, "bir sonraki makale"); ve
+106'nın dört bölme eksenini adıyla sorması (→ 107, "bir sonraki makale"). **Batch 25 iki numarasız işareti
+ödedi:** 100'ün "kasıtlı boşluk" ve 102'nin "serinin bir sonraki fazı" cümleleri 103'te karşılandı. Batch 25
+yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış
+makalelere (≤ 106) yapıldı ve mekanik olarak tarandı.
+
+**Numarasız ileri işaretler — Batch 26'da verildi.** Kaybın kalan yarısının kartın içinde olması
+(107 → 108, "bir sonraki makale"); koşunun uzunluğu ve arızalar (108 → 109, "bir sonraki makale"); modelin
+neyi öğrenmiş olduğu sorusu (109 → 110, "bir sonraki makale"); ve modeli bir gövdeye bağlamak
+(110 → 111, "bir sonraki makale"). **Batch 26 iki borcu kapattı:** (a) **8'in veri/model paralelliği
+kurulum borcu 107'de ödendi** — doksan dokuz makale aralıklı, serinin en uzun ertelemelerinden biri;
+(b) **1'in numarasız işareti ("tarafların gerekçeleriyle karşılaşacaksın") 110'da kısmen ödendi** — tartışma
+sürdürülmedi, ölçülebilir hâline çevrildi ve kalanı 116–117'ye bırakıldı. Batch 26 yeni bir numaralı
+koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere
+(≤ 106; 108–110 kendi kohortundaki önceki makalelere değil, yalnızca yayımlanmışlara) yapıldı ve makale
+başına mekanik olarak tarandı — kendi numarasına gönderme yok, numaralı ileri gönderme yok.
+**Defterde açık numaralı koordinat yoktur.** Numarasız işaretler: 51 → 111 ve 49/53 → 115 olarak duruyor;
+110'un "gövdeye bağlamak" işareti de 111'e bakıyor. **Devrolan planlı tekrar yok.**
+
+**Numarasız ileri işaretler — Batch 27'de verildi.** Modeli bir ürün içinde güncel tutma sorusu (111 → 112, "bir sonraki makale"); bilginin henüz olmadığı yer (112 → 113, "bir sonraki makale"); ve zincirin üretim tarafından kullanım tarafına geçmesi (113 → 114 ve 114 → 115, "bir sonraki makale"). **Batch 27 üç işareti ödedi:** (a) **51'in eylem arayüzü işareti 111'de ödendi** — ALFWorld'ün dokuz şablonu tekrarlanmadan, gerçek bir kolda 256 kutu, sekiz tam sayı ve saniyede bir ile üç karar olarak; (b) **110'un "modeli bir gövdeye bağlamak" devri 111'de** karşılandı; (c) **39 ve 56'nın kalıcı bellek işareti 112'de ürün düzeyine taşındı** — üç aşama yeniden kurulmadı, "ağırlığa mı bağlama mı" kararına çevrildi ve kişiselleştirmede getirmenin ölçülmüş getirisiyle (%23,5 / %12,2) kapatıldı. Batch 27 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 113; 112–114 kendi kohortundaki önceki makalelere) yapıldı ve makale başına mekanik olarak tarandı — kendi numarasına gönderme yok, numaralı ileri gönderme yok. **Defterde açık numaralı koordinat yoktur.** Devrolan numarasız işaret: **49/53 → 115**. **Devrolan planlı tekrar yok.**
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -446,17 +469,23 @@ araştırmacı formasyonunun giriş kapısı.
 ### Faz 13 — Eğitim Sistemleri Mühendisliği (106–109)
 
 106. **GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği** — parametre başına 16 bayt, aktivasyon formülü, yeniden hesaplamanın ölçülmüş bedeli, sırt noktasının iki yanı ve kullanım oranı. Faz 13'ün açılışı, kategori `models-and-training` (karar #225). `[yayında]`
-107. **Dağıtık Eğitim: Paralellik Stratejileri** — 8'de adı konan veri/model paralelliğinin tam kurulumu; TP/PP/ZeRO. 106'nın kapanışı bu makaleye dört ekseni adıyla sordu.
-108. **Performans Mühendisliği: Dikkati Hızlandırmak** — bellek erişimi, çekirdek birleştirme, karışık duyarlık; başlık Türkçeleştirildi (karar #227).
-109. **Koşunun Güvenilirliği: Checkpoint, Spike ve Gözlem** — üretim eğitiminin operasyon gerçeği (8'deki kontrol noktasının derinleşmesi).
+107. **Dağıtık Eğitim: Paralellik Stratejileri** — dört bölme ekseninin tam kurulumu: veri (ZeRO'nun üç kademesi), tensör (katman başına dört hepsi-indirge), boru hattı (kabarcık `(p−1)/m`, açılmış hâliyle `(n/t − d)/(B/b)`) ve dizi (34'ün kalan 10'unu bedava bölmesi). 106'nın dört eksenli sorusu ödendi. `[yayında]`
+108. **Performans Mühendisliği: Dikkati Hızlandırmak** — bir FLOP bir zaman birimi değildir: işlemlerin %0,2'si sürenin %39'unu yiyor, birim işlem başına 319 kat. Çekirdek, birleştirme, bellek yerleşimi ve bellek kullanım verimi; aynı algoritmanın üç uygulamasında kullanım oranı %25–40 → %50–73 → yeni çipte %35 → %75. Başlık Türkçeleştirildi (karar #227). `[yayında]`
+109. **Koşunun Güvenilirliği: Kontrol Noktası, Sıçrama ve Gözlem** — `T* = √(2δM)` ve `√(2δ/M)`, gözlemin üç katmanı, geride kalan makine, ve kayıp sıçramasının veri ile parametre durumunun bileşiminden doğduğunu gösteren eleme. **Faz 13 kapandı.** Başlık Türkçeleştirildi (karar #234). `[yayında]`
 
 ### Faz 14 — Sınır ve Sentez (110–118)
 
-110. **Dünya Modelleri: Metnin Ötesinde Anlamak** — world models.
-111. **Robotik ve Somutlaşmış Yapay Zekâ** — embodiment.
-112. **Sürekli Öğrenme ve Kişiselleştirme** — model nasıl güncel kalır; 39/56'nın ürün düzeyinde geri çağrımı.
-113. **Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM** — AI for science.
-114. **Vaka İncelemesi: Bir Frontier Model Nasıl Yapılır?** — uçtan uca sentez (8–13 + 106–109'un geri çağrımı).
+**Kategori planı (karar #233, bölünmüş atama):** 110–113 ve 116–118 `multimodal-and-future`; **114–115 `case-studies`**.
+Gerekçe karar #200'ün ölçütüdür — kategori konuyu değil katmanı adlandırır — ve 114–115'in katmanı ötekilerden
+farklıdır: yeni konu değil, kurulmuş bilginin tek bir vaka üzerinde sentezi. Bu karar fazın tamamı için verilmiştir;
+114–115'in run'ı tartışmayı yeniden açmaz, yalnızca `case-studies` klasörünü açar ve
+`reading-list-groups.test.ts`'i çalıştırır.
+
+110. **Dünya Modelleri: Metnin Ötesinde Anlamak** — terimin iki soyu (açık geçiş modeli ↔ örtük hipotez), Myhill–Nerode türevi iki ölçüt, ve geçerli bir sonraki token ile okunabilir bir sondanın neyi kanıtlamadığı. Faz 14'ün açılışı, kategori `multimodal-and-future` (karar #233). `[yayında]`
+111. **Robotik ve Somutlaşmış Yapay Zekâ** — eylem arayüzünün üç hâli (dokuz şablon ↔ sekiz tam sayı × 256 kutu × 1–3 Hz ↔ sürekli öbek × 50 Hz), ön eğitimin anlamsal yarıyı taşıyıp motor yarıyı taşımaması (92 ↔ 91; 32 ↔ 62; 17 ↔ 60; sıfırdan %0/%1), ve gövde verisinin kıtlığının bir üretim biçimi sorunu olması. **51'in eylem arayüzü işareti ve 110'un gövde devri ödendi.** `[yayında]`
+112. **Sürekli Öğrenme ve Kişiselleştirme** — bir modeli güncel tutmanın dört yolu ve dört ayrı faturası; rank-bir güncellemenin kimliği (dik anahtarlara dokunmaz), sonuçların taşınmaması (99,8 ↔ 20,2), devre dışı bırakan düzenleme (3,339×10⁻⁴ ↔ 8,156×10⁻⁷) ve yerelleştirme–düzenleme bağıntısının sıfıra yakınlığı. **39/56'nın ürün düzeyi işareti ödendi.** `[yayında]`
+113. **Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM** — 35'in üretmek–doğrulamak asimetrisi laboratuvarda: doğrulama maliyetinin dört değeri (saklanmış deney, puanlama programı, matematikçinin kanıtı, kimyagerin ayları) ve hakemli iki itirazın mekanizma önerisi (düzensiz katı arama uzayında yok). `[yayında]`
+114. **Vaka İncelemesi: Bir Sınır Model Nasıl Yapılır?** — serinin ilk vaka incelemesi; tek bütçe, altı karar, iki ayrı sütun: maliyetin dağılımı ile geri alınamazlığın dağılımı ters. Post-training %1,78 tutup 1,3 ↔ 175 milyarı yeniyor. Kategori `case-studies` (karar #233), başlık Türkçeleştirildi (karar #240). `[yayında]`
 115. **Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?** — mühendislik sentezi (41–60'ın geri çağrımı).
 116. **Açık Sorular: Alanın Bilmedikleri** — dürüst envanter.
 117. **AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri** — kavramsal temizlik.
@@ -625,6 +654,15 @@ kavram-tekrar tablolarına yazıldı.)
 - 104 ← 103 ("bir sonraki makale" devri: rastgele ağırlıkları döngüye yazdırmak), **4 (BPE algoritması orada anlatılmıştı, burada çalıştırıldı — yüz makale aralıklı)**, **15 (sözlük boyunun tahsis kararı kendi derleminde ölçüldü)**, 8 (eğitim döngüsü, ısınma ve kosinüs sönümü), 14 (veri hazırlığının bu ölçekteki karşılığı ve yokluğu), 95 (AdamW), **2 ve 94 (indirgenemez hata ile entropinin aynı sayıda buluşması)**, **99 ve 101 (koşular arası sapma kendi deneyimize uygulandı — zorunlu geri çağırma)**, 102 (ayrılmış sınama kümesinin olmadığının açıkça söylenmesi), **6 (dikkat ağırlığının açıklama olmaması kendi modelimizde ölçüldü)** `[yayında]`
 - 105 ← 104 ("bir sonraki makale" devri: eğitilen modelin asistanlaştırılması), **12 (kayıp maskesi; maskenin koruma alanı ölçüldü)**, **13 (DPO, Bradley–Terry ve tasma; 0,693 başlangıç değeri aynen çıktı)**, 11 (hizalama vergisi), **94 (KL'nin nat cinsinden ölçü olması)**, **101 (aynı farkı örnekleyerek ölçmenin 58 çekiliş etmesi — zorunlu geri çağırma)**, 10 (üretimin çekiliş olması), 16 (değerlendirmenin ne ölçtüğü) `[yayında]`
 - 106 ← **89 (çatı çizgisi ve işlem yoğunluğu ORADA kuruldu; burada tekrarlanmadı, eğitim adımına uygulandı)**, **26 (yoğunluk = ağırlık bir kez okunduğunda işlenen token sayısı; üretim tarafındaki hâli)**, 28 (gecikme ↔ iş hacmi ayrımı), 8 (eğitim koşusunun kaynak profili ve kontrol noktası), 95 (AdamW'nin parametre başına bedeli), 25 ve 86 (FlashAttention'ın bellek merdivenindeki yeri), 27 (karma hassasiyet), 39 (donanım belleği ↔ sohbet belleği ayrımı), 7 (karesel maliyetin bellek tarafındaki karşılığı), 105 ("bir sonraki makale" devri: dizüstü bilgisayardan veri merkezine) `[yayında]`
+
+- 107 ← **106 (kapanmayan defter: 16 bayt, 275 GB ve %52; 106'nın kapanışı dört ekseni adıyla sordu)**, **8 (veri ve model paralelliğinin adı ORADA konmuştu, kurulumu buraya ertelenmişti — doksan dokuz makale aralıklı tahsil)**, **85 (hepsi-hepsiye iletişim ORADA kurulmuştu; burada tekrarlanmadı, dört eksenin yanına beşinci bir eksen olarak YERLEŞTİRİLDİ ve yoğun modelde hiç bulunmadığı söylendi)**, **89 (kesim bandı ve kartlar arası bağın en yavaş büyüyen eksen olması; 892 GB/s ↔ 12,9 TB/s ölçümü oraya bağlandı)**, 95 (eniyileyici durumunun parametre başına payı ZeRO kademelerinin formülünde göründü), 26–28 (çıkarım tarafındaki bölme kararlarıyla karşıtlık) `[yayında]`
+- 108 ← 107 ("bir sonraki makale" devri: kaybın kalan yarısı kartın içinde), **106 (sırt noktası ve bellek merdiveni; 1,5 TB/s bandı birleştirme hesabında kullanıldı)**, **86 ve 25 (FlashAttention'ın NE YAPTIĞI orada anlatıldı; burada tekrarlanmadı — mekanizma çekirdek mühendisliğinin genel biçimine taşındı ve softmax'ın bağımlılık sınırı olarak yeniden okundu)**, **89 (hızlandırıcıyı hızlı yapan şeyin çıkarılanlar olması; 16 katlık birim farkı onun öbür yüzü)**, 8 (6ND muhasebesinin gizli varsayımı: her işlemin aynı süreyi alması), 27 (kuantizasyonun eğitim tarafındaki karşılığı: duyarlık bir çekirdek kararı), 101 (hangi cetvelin geçerli olduğu sorusu; kullanım oranı ↔ bellek kullanım verimi), 10/97 ("çekirdek" sözcüğünün çakışması açıkça adlandırıldı) `[yayında]`
+- 109 ← **8 (466 kesinti, 419 beklenmedik, kontrol noktasının tanımı ORADA verildi; 109 onları tekrarlamadı, üzerine karar katmanını koydu ve 419'dan M = 185,6 dakikayı kendi türetti)**, 106 (kontrol noktasının hacmi 16 baytlık defterden çıkar: 6,48 TB), 107 (durumun kartlara bölünmüş olması iki aşamalı kaydı mümkün kılıyor; kabarcık formülü kullanım oranının ölçekle düşmesiyle aynı yöne işaret ediyor), **99 (bir düzeltmenin neyi düzelttiğini bilmek için ayrı bir deney gerekir — PaLM'ın eleme koşusu bunun alan içi örneği)**, 101 (ölçümün gürültüsü ve koşular arası sapma), 102 (veri sırasının yeniden üretilebilirliği bir operasyon aracına dönüştü), 74/78 ("sıçrama" sözcüğünün çakışması açıkça adlandırıldı) `[yayında]`
+- 110 ← **1 (BAĞLAYICI OLMAYAN İŞARET: "tarafların gerekçeleriyle karşılaşacaksın"; 110 tartışmayı sürdürmek yerine ölçülebilir hâlini kurdu)**, **37 (Markov karar sürecinin geçiş fonksiyonu; dünya modeli onun öğrenilmiş kopyası olarak tanımlandı)**, **77 (Othello sondası ve müdahale ORADA kuruldu; burada tekrarlanmadı, sınanan şeye dönüştürüldü)**, **13 (aşırı optimizasyon; hayalî çevrenin kusurlarının sömürülmesi aynı biçimin başka nesnesi)**, 69 (erişim kademeleri: davranış tabanlı sınav modelin içine erişmeden çalışır), 51–60 (sapma oranı ajan döngüsünün karşılığı), 81–90 (çoklu modalite fazının devri) `[yayında]`
+- 111 ← **110 ("bir sonraki makale" devri: modeli bir gövdeye bağlamak; sapma tablosu gövdede kendiliğinden uygulanan bir sınav olarak yeniden okundu)**, **51 (BAĞLAYICI OLMAYAN İŞARET: "modelin gördüğü eylem kümesi ona göre çizilmiş bir arayüzdür"; ALFWorld'ün dokuz şablonu TEKRARLANMADI, gerçek kolda 256 kutu × 8 sayı × 1–3 Hz olarak ÖDENDİ)**, **47 (biçim geçerliliği değeri zorlamaz; eylem vektöründe aynı ayrım fiziksel hâle geldi)**, **81 ("gövde" sözcüğünün çakışması açıkça adlandırıldı; görüntü-dil modeli görme-dil-eylem modeline dönüştü)**, 40 (görev ufku ve geri alınamayan hata; düzeltmenin dışarıdan gelmesi gövdede bir insana indi), 37 (sürekli eylem uzayı), 27 (kuantizasyon ↔ ayrıklaştırma ayrımı adlandırıldı), 23 ("gösterim" sözcüğünün çakışması adlandırıldı), 8 (15,6 trilyon token; veri kıtlığı karşılaştırmasının paydası), 9 (veri ekseninin fiyatı burada takvim), 13 (vekilin yeterince zorlanınca kırılması) `[yayında]`
+- 112 ← **111 ("dünya hareket ediyor" devrinin ürün katmanına taşınması)**, **39 ve 56 (BAĞLAYICI OLMAYAN İŞARET: kalıcı belleğin üç aşaması ve iç durum ORADA kuruldu; 112 tekrarlamadı, "ağırlığa mı bağlama mı" kararına çevirdi ve ölçüsünü verdi)**, **19 (unutma; sürekli ön eğitim ve düşük ranklı uyarlama)**, **68 (unutturma) ve 56 (seçici unutma) — üç sözcüğün ayrımı gövdede adlandırıldı**, **92 (rank-bir güncelleme; 112 iki satırlık sayısal örneğini kurdu)**, **74–77 (yerelleştirme araçları; "yer bilmek düzenleyebilmek değildir" oraya bağlandı)**, **110 (okunabilir temsil ↔ doğru model; kardeş cümle)**, 105 (hizalama vergisi 0,77 — ikinci yolun ölçülmüş faturası), 41–44 (getirme bir güncelleme alternatifi), 109 (kademeli sonra ani kopuşun biçimi), 71 (ölçütün bir vekil olması), 106–109 (baştan eğitmenin bedeli) `[yayında]`
+- 113 ← **112 ("bilgi eskiyor" ↔ "bilgi henüz yok" devri)**, **35 (üretmek–doğrulamak asimetrisi ORADA kuruldu; 113 onu laboratuvara taşıdı ve doğrulayıcıyı model olmaktan çıkardı)**, **99 ve 102 (ön kayıt ve bağımsız doğrulama; CASP ikisinin kurumsallaşmış hâli olarak okundu)**, **101 (güven aralığıyla verilen ölçüm)**, **110 (durum uzayı gerçek durumu içermiyorsa ölçüm ne söyler — düzensiz katı örneği)**, **17 (uydurma; değerlendiricinin varlık sebebi)**, 77 (gradyan tabanlı atıf bir sanıyı daraltmak için kullanıldı), 111 (yan ürün ↔ peşin ödenmiş altyapı ayrımının kardeşi), 16 ve 71 (ölçülemeyen iddianın ağırlığı), 98 (iddia, kanıt ve kanıtın menzili) `[yayında]`
+- 114 ← **8 (6ND ve 3,8×10²⁵; veri hattı)**, **9 (bütçenin bölünmesi; Chinchilla tahsisi)**, **15 (tokenizer: pay sıfır, bağlayıcılık en yüksek)**, **11–13 (post-training; %1,78 ve 1,3 ↔ 175 milyar)**, **106–109 (planın faturaya dönüştüğü halka; kullanım oranı ve `√(2δM)`)**, **72 (okunan geri okunmaz: değerlendirme kararı veri kararında alınır)**, **20 ve 61–70 (yayım: geri alınması kurumun elinde olmayan tek karar; yayım gradyanı ve yapısal erişim)**, **100 (AYRIM AÇIKÇA YAPILDI: 100 harita, 114 zincir — yer ↔ sıra)**, 26 ve 28 (çıkarım maliyetinin ömür boyu ödenmesi), 71 (geçerlilik zinciri), 102 ve 80 (hangi halkanın belgelendiği), 105 (0,77'lik vergi), 99 (geri alma maliyeti bir tasarım ölçütü), 64 (ilkeleri kimin yazdığı: FLOP'la tartılamayan halka) `[yayında]`
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1568,6 +1606,74 @@ MCP üçlüsü (49/53 → 115).
 | Yetenek eşiği ve gerekli korumalar; kritik yetenek düzeyi; koşullu taahhüt | 70 | — | 71, 78, 116 |
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
+
+### Batch 26'da gerçekleşen tekrarlar (planlananların tahsili)
+
+- **Veri ve model paralelliği (8 → 107), doksan dokuz makale aralıklı — serinin en uzun ertelemelerinden
+  biri kapandı.** 8'de Llama 3'ün dört eksende bölündüğü söylenmiş, veri ve model paralelliğinin tanımı
+  verilmiş, kurulumu ertelenmişti. 107 dördünü de kuruyor ve her birine bir fatura yazıyor: veri (2Ψ
+  hepsi-indirge, model küçülmez), tensör (katman başına dört hepsi-indirge, sunucu içi), boru hattı
+  (noktadan noktaya, `(p − 1)/m` kabarcık), dizi (bedava, çünkü hepsi-indirge zaten iki parçadır).
+- **Hepsi-hepsiye iletişim (85 → 107): tekrar değil YERLEŞTİRME.** 85 uzmanlar karışımının her katmanda bir
+  hepsi-hepsiye doğurduğunu kurmuştu. 107 mekanizmayı yeniden anlatmıyor; dört eksenin **yanına** koyup
+  ikisini ayırıyor — uzman paralelliği yalnızca o mimaride vardır, kesim bandını zorlar (89), ve yoğun bir
+  modelde bu kalem hiç bulunmaz.
+- **Çatı çizgisi ailesi (89/106 → 107/108).** 89 aracı kurmuştu, 106 eğitim adımına uygulamıştı; 107 kesim
+  bandı ölçümlerini (892 GB/s ↔ 12,9 TB/s) o eksene bağlıyor, 108 ise sırt noktasını çekirdek düzeyine
+  indiriyor ve "hızlandırıcıyı hızlı yapan şey çıkarılandır" cümlesinin öbür yüzünü veriyor: özel birime
+  uymayan iş 16 kat yavaş koşuyor.
+- **FlashAttention (25/86 → 108): tekrar değil GENELLEME.** 25 mekanizmayı (blok blok hesap, ara matris hiç
+  yazılmıyor), 86 sonucu (işlem sayısı duvar saati değildir) vermişti. 108 ikisini de tekrarlamıyor;
+  softmax'ın neden birleştirmeyi engellediğini adlandırıp aynı hamleyi **bağımlılık kırma** olarak yeniden
+  okuyor ve üç uygulamanın kullanım oranını karşılaştırıyor.
+- **Kontrol noktası ve arıza istatistikleri (8 → 109): tekrar değil DEVAM.** 8'in 466/419 sayıları
+  tekrarlanmıyor; 109 onlardan `M = 185,6 dakika`yı türetip Young'ın formülüne koyuyor ve kaydın maliyetinin
+  aralıktan daha belirleyici olduğunu gösteriyor.
+- **Ablasyon disiplini (99 → 109), on makale aralıklı.** 99'da "bir düzeltmenin neyi düzelttiğini bilmek için
+  ayrı bir deney gerekir" kuralı kurulmuştu. 109 bunun alan içindeki en temiz örneğini veriyor: aynı veri
+  yığınlarının daha eski bir kontrol noktasından geçirilmesi "kötü veri" açıklamasını eliyor.
+- **Yeniden üretilebilirlik (102 → 109), yedi makale aralıklı ve beklenmedik bir yönde.** 102 onu bilimsel
+  bir erdem olarak kurmuştu; 109'da veri sırasının yeniden üretilebilir olması bir **operasyon aracına**
+  dönüşüyor — sıra belirsizse ne atlayacağını bilemezsin, eleme deneyini de kuramazsın.
+- **Othello sondası (77 → 110), otuz üç makale aralıklı — ve sınanan şeye dönüştü.** 77 okuma artı
+  müdahalenin en güçlü kanıt biçimi olduğunu kurmuştu. 110 onu tekrar etmiyor; aynı kanıtın geçtiği
+  modellerin kurduğu haritanın yanlış olabildiğini gösteriyor ve sorunun "okunabilir mi" değil "hangi
+  derinlikte sınadın" olduğunu söylüyor.
+- **Aşırı optimizasyon (13 → 110), doksan yedi makale aralıklı.** 13'te ödül modeli gerçek tercihin kusurlu
+  bir vekiliydi; 110'da dünya modeli gerçek çevrenin kusurlu bir vekili ve hayalî çevrede eğitilen ajan onun
+  açıklarını sömürüyor. Aynı biçim, başka nesne.
+- **Markov karar süreci (37 → 110), yetmiş üç makale aralıklı.** Geçiş fonksiyonu orada çevrenin bir
+  özelliğiydi; 110 dünya modelini tam olarak onun öğrenilmiş kopyası diye tanımlıyor.
+
+### Batch 26'da ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | Kuruldu | Yakın tekrar | Planlanan uzun aralıklı tekrar |
+|---|---|---|---|
+| Dört bölme ekseni ve her birinin iletişim faturası | 107 | 108 (kartın içinde kalan kayıp), 109 (durumun bölünmüş olması iki aşamalı kaydı mümkün kılıyor) | 114 (uçtan uca sentez) |
+| ZeRO kademeleri: 4Ψ + 12Ψ/N, 2Ψ + 14Ψ/N, 16Ψ/N | 107 | 109 (kontrol noktasının kart başına payı) | 114 |
+| Kabarcık oranı `(p − 1)/m` ve `(n/t − d)/(B/b)` | 107 | 109 (ölçekle düşen kullanım oranı) | 114 |
+| Bir FLOP bir zaman birimi değildir; %0,2 ↔ %39 ve 319 kat | 108 | — | 114, 116 (alanın bilmedikleri: ölçüt seçimi) |
+| Çekirdek, birleştirme, bellek yerleşimi | 108 | 109 (geride kalanın kod tarafı) | 114 |
+| Bellek kullanım verimi; hangi cetvelin geçerli olduğu | 108 | — | 114, 118 |
+| `T* = √(2δM)` ve `√(2δ/M)` | 109 | — | 114 |
+| Gözlemin üç katmanı ve frekans ayrışması | 109 | — | 114, 115 (ürün tarafındaki karşılığı) |
+| Kayıp sıçraması ve veri ↔ durum bileşimi | 109 | — | 114, 116 |
+| Dünya modelinin iki soyu | 110 | 111 (somutlaşmış ajan), 112 (sürekli öğrenme) | 117 (AGI tartışması), 118 (sentez) |
+| Myhill–Nerode türevi iki ölçüt; sınavın derinliği | 110 | 111, 113 | 116, 117 |
+| Eğitim dağılımının kapsamı ölçekten belirleyici olabiliyor | 110 | 111, 112 | 114, 116 |
+| Eylem arayüzü iki sayıya iner: kaç kutu, saniyede kaç karar | 111 | 112 (arayüz ↔ güncelleme yolu benzerliği yok, ayrım korundu) | 115 (ürün arayüzü), 116, 118 |
+| Ön eğitim anlamsal yarıyı taşır, motor yarıyı taşımaz | 111 | 113 (aynı ayrımın bilimdeki hâli: üretim ↔ doğrulama) | 116, 117 |
+| Metin yan üründür, yörünge değildir; veri kıtlığı bir üretim biçimi sorunudur | 111 | 113 (peşin ödenmiş doğrulama altyapısı — kardeş gözlem) | 116, 118 |
+| Ucuz kaynak bedava değildir: benzetim ve başka gövdeler | 111 | — | 115, 116 |
+| Güncellemenin dört yolu ve dört ayrı faturası | 112 | 113 (bilgi eskimiyor, henüz yok) | 115 (ürün katmanında hangi yol), 118 |
+| Rank-bir güncelleme dik anahtarlara dokunmaz: koruma ile sonuç taşımama aynı kimlikten | 112 | — | 116, 117 |
+| Yerelleştirilebilir olmak düzenlenebilir olmak değildir | 112 | 113 (okunabilirlik ↔ doğruluk zincirinin devamı) | 116, 117 |
+| Değişikliğin sonuçları taşınmalı mı: ağırlık ↔ bağlam kararı | 112 | 114 (zincirde post-training'in tek geri alınabilir halka olması) | 115, 118 |
+| Üretmek ↔ doğrulamak oranı bir alanda yapay zekânın işe yaramasını belirler | 113 | 114 (geri alma maliyeti aynı biçimin başka nesnesi) | 116, 117, 118 |
+| Doğrulama üretimden önce hazırsa sonuç okunabilir kalır | 113 | 114 (belgelenen halka hangi soruyu cevaplatır) | 116, 118 |
+| Üretim ucuzlayınca çeşitlilik ucuzlamıyor | 113 | — | 116, 117 |
+| Maliyetin dağılımı ile geri alınamazlığın dağılımı ters | 114 | — | 115 (ürün zincirinde aynı soru), 118 |
+| Zincirde FLOP'la tartılamayan iki halka var: tercih etiketleri ve ilkeler | 114 | — | 115, 116, 118 |
 
 ### Batch 25'te gerçekleşen tekrarlar (planlananların tahsili)
 
@@ -2793,7 +2899,38 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | model FLOP kullanım oranı | (model FLOPs utilization, MFU) | 106 | gözlenen iş hacminin teorik tepeye oranı; yeniden hesaplamanın fazladan işlemlerini saymaz |
 | bellek merdiveni | — | 106 | SRAM ↔ HBM ↔ DRAM; hız ile kapasitenin ters yönde değişmesi. "Çekirdek" sözcüğü 97 ve 10'da başka nesneleri taşıdığı için 106'da GPU çekirdeklerinden hiç söz edilmedi, konu 108'e bırakıldı |
 | tekrarlanabilirlik | (reproducibility) | 102 | 9'daki **yeniden üretme (replication)** ile aynı aileden, ama alan iki terimi ters yönlerde kullanıyor; 102 tartışmayı sözcükten kurtarıp üç dereceye ayırır (aynı kod / aynı veri / aynı sonuç) |
+| hepsi-indirge | (all-reduce) | 107 | her düğüm vektörünü verir, hepsinin toplamını alır; bant açısından en iyi hâli bir indirge-dağıt artı bir hepsi-topladır ve adım başına 2Ψ taşır. 85'teki **hepsi-hepsiye** ile karıştırılmaz |
+| indirge-dağıt | (reduce-scatter) | 107 | her düğümün toplamın yalnızca bir dilimini biriktirmesi |
+| hepsi-topla | (all-gather) | 107 | dilimlerin bütün düğümlere yayılması |
+| tensör paralelliği | (tensor parallelism) | 107 | alan yazınının adı; bu mimaride bölünen nesne **ağırlık matrisleridir**. 8'deki **model paralelliğinin** iki biçiminden biri |
+| boru hattı paralelliği | (pipeline parallelism) | 107 | katman yığınının aşamalara bölünmesi. "Boru hattı" bileşik olarak kullanılır; seride tek başına "hat" 8'de veri temizliği, 41–50'de getirme için kullanılıyor |
+| dizi paralelliği | (sequence parallelism) | 107 | tensör paralelliğinin bölemediği bölgelerde dizilimin dizi ekseni boyunca bölünmesi; ek bant genişliği harcamaz |
+| kabarcık | (pipeline bubble) | 107 | boru hattının dolarken ve boşalırken kartların boş beklediği süre; oranı `(p − 1)/m`, açılmış hâliyle `(n/t − d)/(B/b)` |
+| çekirdek | (kernel) | 108 | karta gönderilen ve çipin işlem birimleri üzerinde aynı anda koşan tek bir program. **Seride dördüncü anlam:** 10'da çekirdek örnekleme, 97'de çekirdek fonksiyonu, 26 ve 89'da "hesap çekirdeği" işlem birimi. 85'te "blok-seyrek çekirdekler" zaten bu anlamdaydı; 108 kullanımı resmîleştirdi ve çakışmayı gövdede adlandırdı (karar #235) |
+| birleştirme | (fusion) | 108 | art arda gelen işlemleri tek bir çekirdeğe koymak; ara sonuç kart belleğine hiç inmez |
+| bellek yerleşimi | (memory layout) | 108 | boyutların bellekteki sırası; aritmetiğe dokunmadan %52'ye varan hızlanma verebiliyor |
+| bellek kullanım verimi | (memory usage efficiency) | 108 | en az taşınması gereken bayt ÷ taşınan bayt, çarpı ulaşılan ÷ tepe bant genişliği. 106'daki **kullanım oranının** bellek tarafındaki eşi; bellekle sınırlı çekirdekte geçerli cetvel budur |
+| geride kalan | (straggler) | 109 | çalışmaya devam eden ama ötekilerden yavaş olan makine; her adım eşitlemeyle bittiği için bütün işi yavaşlatır |
+| kayıp sıçraması | (loss spike) | 109 | tek bir koşunun kayıp eğrisinin sebepsiz yukarı fırlaması. 74 ve 78'deki **sıçrama** ölçekle birlikte gelen yetenek eğrisinin sıçramasıydı; ayrım 109'da açıkça yapıldı. Niteleyici "kayıp" düşürülmez |
+| etkin eğitim süresi oranı | — | 109 | yineleme sayısı çarpı yineleme süresi, bölü toplam süre; `1 − √(2δ/M)` bunun kuramsal üst sınırı |
+| dünya modeli | (world model) | 110 | **İki soy:** pekiştirmeli öğrenmede 37'deki geçiş fonksiyonunun öğrenilmiş kopyası — ayrı bir bileşen, doğrudan sınanır; dil modelinde ise örtük bir hipotez — ancak davranıştan çıkarsanır. Ayrım 110'un gövdesinde yapıldı |
 | veri sızıntısı | (data leakage) | 102 | test kümesinin bilgisinin veri hazırlığı yoluyla eğitime karışması. 72'deki **kirlilikle** karıştırılmaz: orada nesne eğitim derlemi, burada hazırlık adımları |
+| somutlaşmış yapay zekâ | (embodied AI) | 111 | kararlarını bir bedenin içinden, gerçek zamanda ve geri alınamayan eylemlerle veren sistemler |
+| gövde (fiziksel) | — | 111 | **Aynı sözcük, iki nesne:** 81'de "donuk gövde" önceden eğitilmiş ağdı; 111'den itibaren gövde fiziksel bedendir. Çakışma 111'in gövdesinde adlandırıldı ve ağ anlamı için **"önceden eğitilmiş ağ"** kullanılır (karar #242) |
+| görme-dil-eylem modeli | (vision-language-action model) | 111 | 81'deki görüntü-dil modelinin çıktı tarafına eylemi de ekleyen biçimi; gövdede parantezsiz |
+| ayrıklaştırma | (discretization) | 111 | sürekli bir büyüklüğü sonlu kutulara oturtmak. 19/27'deki **kuantizasyonun** akrabası, nesnesi farklı: orada ağırlığın hassasiyeti, burada dünyanın kendisi. Ayrım 111'de yapıldı |
+| uç işlevci | (end-effector) | 111 | kolun ucundaki tutucu; gövdede parantezsiz |
+| eylem öbeği | (action chunk) | 111 | tek tek adım yerine birkaç adımlık hareket parçasının bir kerede üretilmesi |
+| alan rastgeleleştirmesi | (domain randomization) | 111 | benzetimi gerçeğe benzetmek yerine o kadar çeşitlendirmek ki gerçek de o dağılımın içinde bir örnek olsun |
+| gösterim (robotikte) | (demonstration) | 111 | **Aynı sözcük, iki nesne:** 23'te isteme konan çözülmüş bir örnek, 111'de bir insanın robotu uzaktan sürerek kaydettiği görev. Çakışma 111'de adlandırıldı |
+| sürekli öğrenme | (continual learning) | 112 | eğitilmiş bir modelin yeni bilgiyi, eskisini kaybetmeden almaya devam etmesi |
+| felaket unutması | (catastrophic forgetting) | 112 | 19'daki **unutmanın** uç hâli; yeni görev eğitilirken eski görevdeki başarının hızla ve giderek bozulması. 68'deki **unutturma** (kasıtlı) ve 56'daki **seçici unutma** (yetenek) ile ayrımı 112'de yapıldı |
+| kararlılık–esneklik ikilemi | (stability-plasticity dilemma) | 112 | aynı parametrelerin hem yeni bilgiyi alması hem eskisini koruması gerekmesi |
+| model düzenleme | (model editing) | 112 | tek bir olguyu tek bir küçük ağırlık güncellemesiyle değiştirmek; gövdede "cerrahi düzenleme" ile eşanlamlı |
+| çağrışımsal bellek | (associative memory) | 112 | anahtar vektörünü ona eşlenmiş değer vektörüne götüren doğrusal eşleme; ileri beslemeli katmanın bu gözle okunuşu |
+| devre dışı bırakan düzenleme | (disabling edit) | 112 | modeli tek başına kullanılamaz hâle getiren tek bir güncelleme; ağırlıktaki izi sıradan düzenlemelerin üç mertebe üstünde |
+| dışbükey zarf | (convex hull) | 113 | malzeme keşfinde termodinamik kararlılık sınırı; gövdede ilk geçişten sonra "kararlılık sınırı" ile eşanlamlı |
+| sınır model | (frontier model) | 70 | alanın en yetenekli modelleri. 114'ün başlığı bu yerleşik karşılıkla Türkçeleştirildi (karar #240); gövdelerde on sekiz geçişte zaten kullanılıyordu |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -5098,6 +5235,274 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     s. 65–76; SC 2021, s. 1–15). (b) PMLR, NeurIPS, MLSys, ACL Anthology ve JMLR adreslerinin hepsi 200 döndü
     ve başlıkları eşleşti; PaLM'ın künyesi JMLR'ın kendi bib kaydından alındı (24(240), 1–113).
     (c) **OpenReview hiç kullanılmadı** (karar #224'ün devamı); bu bandın kaynaklarının hiçbiri oradan gelmiyor.
+
+233. **Faz 14'ün kategorisi: bölünmüş atama.** 110–113 ve 116–118 `multimodal-and-future`; **114–115
+    `case-studies`**. Alternatifler fazın tamamını `multimodal-and-future` yapmak (basit ama `case-studies`
+    kontrollü sözlükte hiç kullanılmadan kalırdı ve 114–115'in farklı katmanı gizlenirdi) ve yeni bir kategori
+    açmaktı (gereksiz ve pahalı: `schema.ts` ile iki serinin şema testleri değişirdi). Ölçüt karar #200'ünki:
+    kategori konuyu değil **katmanı** adlandırır; 114–115 yeni konu değil, kurulmuş bilginin tek bir vaka
+    üzerinde sentezidir. **Bu run'da yalnızca 110 atandı** (`multimodal-and-future`); fazın planı burada
+    yazıldı ki 114–115'in run'ı tartışmayı yeniden açmasın. Okuma listesinde `multimodal-and-future` artık
+    **iki öbek** (81–90 ve 110'dan itibaren); `case-studies` ilk kez 114'te görünecek ve o run `case-studies`
+    klasörünü açıp `reading-list-groups.test.ts`'i çalıştıracak.
+234. **109'un başlığı Türkçeleştirildi.** "Koşunun Güvenilirliği: **Checkpoint, Spike** ve Gözlem" →
+    "Koşunun Güvenilirliği: **Kontrol Noktası, Sıçrama** ve Gözlem". Ölçüt #227, #217 ve #210'unkiyle aynı.
+    "Kontrol noktası" 8\. makaleden beri yerleşik karşılıktır, dolayısıyla başlık yeni terim kurmuyor.
+    "Spike" için seride yerleşik karşılık yoktu; **"sıçrama"** seçildi ve 74/78'deki çakışma (ölçekle gelen
+    yetenek sıçraması) gövdede açıkça adlandırıldı. Gövdede niteleyici düşürülmez: **kayıp sıçraması**.
+    Değişiklik yayımlanmamış bir taslak başlıkta yapıldı ve entegrasyondan önce `roadmap.json`'a yazıldı.
+    **Bu bandın öteki başlıkları değiştirilmedi:** 107'deki "Paralellik" ve "Stratejileri" ile 108'deki
+    "Performans Mühendisliği" zaten Türkçedir; 110'un başlığı da öyle.
+235. **Terim kararları (Batch 26).** Yeni kurulanlar: toplu iletişim üçlüsü "hepsi-indirge / indirge-dağıt /
+    hepsi-topla" (107; 85'in "hepsi-hepsiye" biçimiyle aynı kalıpta), "tensör paralelliği", "boru hattı
+    paralelliği", "dizi paralelliği", "kabarcık" (107); "çekirdek", "birleştirme", "bellek yerleşimi",
+    "bellek kullanım verimi" (108); "geride kalan", "kayıp sıçraması", "etkin eğitim süresi oranı" (109);
+    "dünya modeli" (110). **Üç çakışma açıkça adlandırıldı.** (a) **"Çekirdek" dört anlamlıdır** — 10'da
+    çekirdek örnekleme, 97'de çekirdek fonksiyonu, 26/89'da "hesap çekirdeği" işlem birimi, 108'de karta
+    gönderilen program. Yeni sözcük uydurmak yerine alan yazınının adı benimsendi; gerekçe **yayımlanmış
+    gerçektir**: 85 "blok-seyrek çekirdekler" derken zaten bu anlamı kullanmıştı (SOZLESME §8). (b)
+    **"Sıçrama"** 74/78'de yetenek eğrisinin sıçramasıydı; 109'da kayıp eğrisinin. (c) **"Dünya modeli"**
+    iki soydan gelir ve 110'un gövdesi ikisini ayırır. **"Boru hattı" bileşik olarak kullanılır**, çünkü
+    tek başına "hat" 8 ve 41–50'de başka nesneleri taşıyor. **"Tensör" sözcüğü tanımlanmadı** — bölünen
+    nesnenin ağırlık matrisleri olduğu söylendi, böylece yeni bir çekirdek kavram yükü doğmadı.
+236. **Sayılar (Batch 26).** **107:** ZeRO kademeleri 16Ψ / 4Ψ + 12Ψ/N / 2Ψ + 14Ψ/N / 16Ψ/N ve 7,5 milyar için
+    120 / 31,4 / 16,6 / 1,88 GB, oranlar 3,8 ve 63,8; iletişim 2Ψ, 2Ψ, 3Ψ; tensör paralelliğinde katman başına
+    dört hepsi-indirge ve b·s·h = 1 × 2.048 × 12.288 = 25,2 milyon sayı, 96 katmanda 384 toplu işlem ile 63
+    noktadan noktaya; kabarcık (p − 1)/m = 63 ÷ 512 = %12,3 ve v = 3 ile %4,1; açılmış biçim
+    (n/t − d)/(B/b) ve 6.144 kartta %24,6; GPipe kuralı m ≥ 4p; parantez içi 114 → 23 → 14,25 → 4,25 → 2
+    ve 275 → 55,5 → 34,4 → 10,3 → 4,8 GB; 14,25 = 114 ÷ 8; %36 → %2, %29–32, %42,1 → %54,2; 8 × 64 × 6 = 3.072;
+    892 GB/s ile 12,9 TB/s, oran 14,5; zayıf ölçekleme tablosu 137/148/163/163 ve %44/47/52/52.
+    **108:** %99,80 ile %61,0, %0,17 ile %25,5, %0,03 ile %13,5; toplamı %0,20 ile %39,0 ve (39 ÷ 0,20) ÷
+    (61 ÷ 99,80) = 195 ÷ 0,611 = 319 kat; %10 işlem kesintisi en çok %6,1; matris çarpımı verimi 16 kat;
+    yinelemenin %37'si bellekle sınırlı; 25,2 milyon sayı = 50,3 MB, 6 tur 302 MB ile 2 tur 101 MB,
+    1,5 TB/s'de 201 ile 67 µs, 96 katmanda 12,9 ms; birleştirme 113 → 135 (%19) ve 133 → 148 (%11);
+    %22,91, 1,30 kat, 1,19 kat, 1,08 kat; yerleşim %52; kullanım oranları %25–40 → %50–73 → %35 → %75,
+    matris çarpımı %80–90, 225 ÷ 312 = %72, 740 TFLOP/s, 1,2 PFLOP/s, 2,6 kat hata; derleyici 2,27 ve
+    1,41 kat, 180'den fazla model, altı derleyici.
+    **109:** 54 gün = 77.760 dakika ÷ 419 = 185,6 dakika; T* = √(2δM) ve f(T*) = √(2δ/M); 10 sn → 7,9 dk /
+    %4,2 / 2,3 gün, 2 dk → 27,2 dk / %14,7 / 7,9 gün, 10 dk → 60,9 dk / %32,8 / 17,7 gün; %90 için
+    δ < 0,005M yaklaşık 1 dakika; 405 milyar × 16 bayt = 6,48 TB, 1.024 kartta 6,33 GB; tanı 10 dakikadan az,
+    toparlanma 15 dakika içinde, etkin süre %90'ın üstünde; geride kalan %10; kullanım oranı %59,1 → %55,2
+    ve taban %41,2, oran 1,34; yaklaşık 20 sıçrama, 100 adım geri, 200–500 yığın, en az 35 elle yeniden
+    başlatma; dikkat skorunun en büyüğü 10 → 10⁶, 9,4 milyon ile 4,8 milyar ve on kat öğrenme oranı farkı.
+    **110:** 906 ± 21, 838 ± 11, 343 ± 18; 150'den fazla görev; 4.580 kavşak ve 9.846 sokak; 89,3 milyon ve
+    1,5 milyar; geçerlilik yaklaşık %100 ve sonda %90'ın üstünde; ayırt eden dizi uzunlukları 1, 4 ve 30;
+    sapma tablosu 0,99/0,69/0,08 — 0,96/0,52/0,03 — 0,99/0,99/1,00 — 1,00/1,00/1,00; tek token'lık ayrımda
+    %100 ile tam kümede %50; bulmacalarda %40 ve 0,60.
+237. **Kendi hesabımız (Batch 26).** Bu batch'in gövdesi kaynak ölçümlerine dayanıyor, ama **türetmelerin
+    tamamı bizim** ve her biri metinde işaretlendi. (a) **107:** ZeRO oranları (3,8 ve 63,8 kat), 25,2 milyon
+    sayı, 384 ile 63 sayımı, kabarcığın (n/t − d)/(B/b) biçimine açılması ve 3.072 → 6.144 çevrimi,
+    114 → 23 → 14,25 çevrimi ile 275 GB tabanından gigabayt karşılıkları, 12,9 TB ÷ 892 GB = 14,5.
+    (b) **108:** %0,20 ile %39,0 toplamı ve 319 katlık birim oran, %6,1 sınırı, 50,3 MB → 302/101 MB →
+    201/67 µs → 12,9 ms zinciri, 225 ÷ 312 = %72 çapraz denetimi. (c) **109:** M = 185,6 dakika, T* ve f(T*)
+    türetmesinin kendisi (Young'ın sonucu yeniden türetildi), üç satırlık tablo ve 54 güne çevrimi,
+    %90 → δ bir dakikanın altında çıkarımı, 6,48 TB ve 6,33 GB. (d) **110:** yalnızca oran okumaları;
+    bütün ölçümler kaynaklardan. **Sınırlar yazıldı:** 107'de mikro yığının bir alındığı, 108'de tur
+    sayımının sadeleştirilmiş olduğu, 109'da iki kümenin arıza aralığının aynı olmak zorunda olmadığı ve
+    bunun bir mertebe tahmini olduğu açıkça söylendi.
+238. **Şekil kararları (Batch 26).** On iki şeklin **on biri** tablo ya da blok listesi; **hiçbirinde eğri
+    yok** (kararlar #214, #223 ve #231'in devamı). Tek istisna 110-Şekil 2'nin **doğrusal uzunluk ekseni**
+    ve o eksen üç ölçülmüş değeri (1, 4, 30) işaretliyor; şeklin içine "eksen dizi uzunluğudur ve doğrusaldır"
+    kaydı düşüldü. Üç şekil bu batch'in omurgasını taşıyor: 107-Şekil 2 (14,25 = 114 ÷ 8), 108-Şekil 1
+    (%0,20 ile %39,0) ve 110-Şekil 3 (aynı model, iki sınav, iki cevap). **108-Şekil 3, 106-Şekil 3'ün
+    kopyası değildir:** 106 aynı çipte iki rejimi karşılaştırıyordu, 108 aynı algoritmanın üç uygulamasını
+    iki çipte karşılaştırıyor ve nesnesi kod.
+239. **Kaynak politikası ve doğrulama sınırları (Batch 26).** 107'de 6, 108'de 6, 109'da 7, 110'da 5 kaynak:
+    **24 kalem, 21 ayrı çalışma** (Narayanan ve ark. 107 ile 108'de, Chowdhery ve ark. 106'dan sonra 109'da
+    kullanıldı; kesişim bilinçli ve her yerde farklı bir ölçüm için). Dağılım: **22 hakemli**, 2 hakemsiz
+    (Grattafiori ve ark.'nın Llama 3 raporu ile Zhang ve ark.'nın OPT raporu — ikisi de 8\. makalede aynı
+    biçimde işaretlenmişti ve 109'da da işaretlendi). **Oran HANDOFF'un öngördüğü gibi yükseldi** ama
+    beklenenin altında kaldı: sistem literatürünün hakemli mecraları (SC, MLSys, NSDI, ASPLOS, VLDB, STOC,
+    JPDC, CACM, FGCS) şirket raporlarının yerini tuttu. **(a) Doğrulanamayan künye yok.** ACM DOI'leri
+    (Narayanan ve ark. 2021; Jia-Wei ve Kung 1981; Young 1974; Ansel ve ark. 2024; Zhao ve ark. 2023)
+    tarayıcıya 403 döndü — beklenen duvar — ve hepsi `api.crossref.org/works/<doi>` ile cilt, sayı, sayfa ve
+    yıl düzeyinde doğrulandı. IEEE (ZeRO) 202, Elsevier 200 döndü ve ikisi de Crossref'le teyit edildi.
+    (b) NeurIPS, ICLR, MLSys, ACL Anthology, JMLR, USENIX ve Nature adreslerinin hepsi 200 döndü ve
+    başlıkları eşleşti. FlashAttention-2'nin ICLR 2024, FlashAttention-3'ün NeurIPS 2024, Wortsman ve ark.'nın
+    ICLR 2024, Ivanov ve ark.'nın MLSys 2021 kaydı **konferans dizin sayfalarından** doğrulandı.
+    (c) **OpenReview yalnızca bir kez geçiyor** ve o da 77\. makaleden devralınan yayımlanmış künyedir
+    (Li ve ark. 2023); yeni kimlik yazılmadı (karar #224'ün devamı). (d) PyTorch 2 bildirisinin metni
+    ACM'den alınamadı; sayılar yayıncının kendi açık kopyasından (`pytorch.org`) okundu ve künye Crossref'le
+    doğrulandı.
+
+240. **114'ün başlığı Türkçeleştirildi.** "Vaka İncelemesi: Bir **Frontier** Model Nasıl Yapılır?" →
+    "Vaka İncelemesi: Bir **Sınır** Model Nasıl Yapılır?". Karar #227 ve #234'ün ölçütü uygulandı, ama bu
+    kez yeni bir karşılık icat edilmedi: **"sınır model" seride zaten yerleşikti** — yayımlanmış gövdelerde
+    on sekiz geçiş ve 70\. makalenin yayımlanmış başlığı ("Sorumlu Ölçekleme: Sınır Model Güvenlik
+    Çerçeveleri"). Kalan "frontier" geçişleri yalnızca kaynakça künyelerinin İngilizce başlıklarındadır.
+    Başlık değişikliği entegrasyondan **önce** `roadmap.json`'a yazıldı.
+
+241. **`case-studies` klasörü ilk kez açıldı ve kod değişikliği gerekmedi.** Kategori kontrollü sözlükte
+    (`src/lib/content/schema.ts`) ve etiketi `src/lib/content/labels.ts`'te ("Vaka İncelemeleri") zaten
+    tanımlıydı; yapılan tek şey `content/series/articles/case-studies/` dizinini açmak oldu — BOUN
+    serisindeki aynı iş gibi. `reading-list-groups.test.ts` çalıştırıldı ve geçti; **render'da doğrulandı:**
+    Batch 27 kohortu okuma listesinde iki kategori öbeğine bölünüyor — "ÇOKLU-MODALİTE VE GELECEK" (111–113)
+    ve **"VAKA İNCELEMELERİ" (114)** —, ve künye satırı "Bölüm 114 / 114 · Vaka İncelemeleri" okunuyor.
+    **Kontrollü sözlükteki yedi kategorinin tamamı artık kullanımda.**
+
+242. **Terim kararları (Batch 27).** Yeni kurulanlar: "somutlaşmış yapay zekâ (embodied AI)",
+    "görme-dil-eylem modeli (vision-language-action model)", "ayrıklaştırma (discretization)",
+    "uç işlevci (end-effector)", "eylem öbeği (action chunk)", "alan rastgeleleştirmesi (domain
+    randomization)" (111); "sürekli öğrenme (continual learning)", "felaket unutması (catastrophic
+    forgetting)", "kararlılık–esneklik ikilemi (stability-plasticity dilemma)", "model düzenleme (model
+    editing)", "çağrışımsal bellek (associative memory)", "devre dışı bırakan düzenleme (disabling edit)"
+    (112); "dışbükey zarf (convex hull)" (113). **114 yeni terim tanıtmadı** — sentez makalesi olduğu için
+    bilinçli. **Dört çakışma gövdede adlandırıldı:** (a) **"gövde"** — 81'de önceden eğitilmiş ağ, 111'den
+    itibaren fiziksel beden; 111 ayrımı yaptı ve ağ anlamı için "önceden eğitilmiş ağ" dedi, 112 de aynı
+    kaydı sürdürdü. (b) **"gösterim"** — 23'te isteme konan çözülmüş örnek, 111'de uzaktan sürülen robot
+    kaydı. (c) **"ayrıklaştırma ↔ kuantizasyon"** — 27'nin nesnesi ağırlığın hassasiyeti, 111'inki dünyanın
+    kendisi. (d) **"unutma / unutturma / seçici unutma"** — 19 kaza, 68 niyet, 56 yetenek; üçü 112'de yan
+    yana konup ayrıldı.
+
+243. **Sayılar (Batch 27).** **111:** eylem uzayı 6 serbestlik derecesi + tutucu + bitirme = 8 tam sayı,
+    sürekli boyutlar 256 kutuya ayrık; 55 milyarlık sürüm 1–3 Hz, 5 milyarlık ~5 Hz, 35 milyonluk 3 Hz;
+    π₀ 50 Hz'e kadar; görülmüş görevlerde 92 ↔ 91 ve 93, görülmemişte 32 ↔ 62, anlamsal talimatlarda
+    17 ↔ 60; ablasyon 5 milyar/aynı veri/aynı geçmiş: ön eğitimli %44,4 ve %52, sıfırdan %0 ve %1;
+    RT-1 verisi 130 bin gösterim / 13 robot / 17 ay / 700+ görev; ortak havuz 1 milyon+ yörünge, 22 gövde,
+    60 küme, 34 laboratuvar, 527 beceri; π₀ karışımının **%9,1'i** açık kaynak; benzetim 3 yıl ↔ 100 yıl
+    (duvar saati 1,5 ↔ 50 saat) ve gerçek robotta ortanca 13 ↔ 0 ↔ 2 ↔ 2; gövde karışımı verisi azda
+    ortalama %50 artış, verisi bolda 92 → 73 ve 55 milyarda 91. **112:** ROME zsRE etkinlik 99,8 /
+    yeniden ifade 88,1; RIPPLEEDITS 5.000 düzenleme, öznenin başka adları 86,8, koruma 100, mantıksal
+    sonuç **20,2**, bütün model ve yöntemlerde ortalama 38–66; sıralı düzenlemede dönüş noktası 100–1.000
+    arası; devre dışı bırakan düzenlemenin normalleştirilmiş uzaklığı 3,339×10⁻⁴ ↔ 8,156×10⁻⁷;
+    yerelleştirme–düzenleme bağıntısı sıfıra yakın; kişiselleştirmede getirme %23,5 (ince ayarlı) ve
+    %12,2 (ince ayarsız); 105'in hizalama vergisi 0,77. **113:** CASP14'te 87 alan, ortanca 0,96 Å
+    (%95 aralık 0,85–1,16) ↔ 2,8 Å (2,7–4,0); sekiz boyutta 512 elemanlı yapı, arama uzayı 3¹⁶⁰⁰
+    mertebesinde, asimptotik alt sınırda yirmi yılın en büyük iyileştirmesi; 2,2 milyon yapı ve 381 bin
+    yeni kararlı kayıt (toplam 421 bin), 736'sı bağımsız deneysel; otonom laboratuvar 17 günde 57 hedeften
+    36'sı; itirazda 43 ürünün tamamı incelendi ve üçte ikisi bilinen düzensiz karşılık; 4.000 aday fikirden
+    geriye ~%5, yenilikte p < 0,05. **114:** 6 × 4,05×10¹¹ × 1,56×10¹³ = 3,79×10²⁵ (rapor 3,8×10²⁵);
+    Chinchilla tahsisi ~20 token/parametre ve 67,6 ↔ 60,0; SFT 4,9 ve PPO-ptx 60 petaflop/s-gün ↔ ön eğitim
+    3.640; kullanım oranı %25–40 → %50–73 → %35 → %75.
+
+244. **Kendi hesabımız (Batch 27).** Dört türetme metinde girdileriyle birlikte duruyor ve **hepsi
+    işaretlendi**: (a) **111 — üretim hızı:** 130.000 ÷ (13 × 17) ≈ robot başına ayda 588 gösterim.
+    (b) **111 — birim çevrimi:** 3 × 3.600 = 10.800 adım/saat, × 8 sayı = 86.400; 15,6×10¹² ÷ 86.400
+    ≈ 1,8×10⁸ robot-saati ≈ **20.600 robot-yılı**, ve metin birimlerin birebir aynı olmadığını açıkça
+    söylüyor. (c) **111 — karar aralığı:** 1 ÷ 3 ≈ 333 ms. (d) **113 — doğrulama makası:** 36 ÷ 17 ≈ 2,1
+    sentez/gün; 381.000 ÷ 2,1 ≈ 180 bin gün ≈ **500 yıl**, "büyüklük mertebesi olarak okunmalı" kaydıyla.
+    (e) **114 — oran:** 60 ÷ 3.640 = %1,65 ve (4,9 + 60) ÷ 3.640 = %1,78; ve geri alma maliyeti
+    101,78 ÷ 1,78 ≈ **57 kat**. Ayrıca **112'nin rank-bir örneği** (2×2 birim matris, `k* = (1;0)`,
+    `v* = (0;1)`) ve **112'nin esnek yay ceza örneği** (F = (10; 0,1) → 5 ↔ 0,05, yüz kat) açıklama amaçlı
+    kendi sayılarımızdır ve öyle işaretlendi; rank-bir örneğinde gerçek yöntemin eşdeğişirlik teriminin
+    bilerek bırakıldığı yazıldı.
+
+245. **Şekil kararları (Batch 27).** On bir şeklin **tamamı** tablo ya da blok listesi; **hiçbirinde eğri,
+    hiçbirinde eksen yok** (kararlar #214, #223, #231, #238'in devamı). Dağılım: 111'de üç, 112'de üç,
+    113'te üç, 114'te iki. **114'ün şekilleri 100'ün haritasının kopyası değil:** 100 kavramların yerini
+    çizmişti, 114 kararların sırasını ve iki ayrı sütunu (pay ↔ kilitlenme) çiziyor; ayrım makalenin
+    gövdesinde de açıkça yapıldı. Sayıların tamamı metinde geçen sayılarla birebir aynı; kendi hesabımız
+    olan her değer şeklin kendi kayıt satırında işaretlendi.
+
+246. **Kaynak politikası ve doğrulama sınırları (Batch 27).** 111'de 7, 112'de 7, 113'te 9, 114'te 6 kaynak:
+    **29 kalem, 28 ayrı çalışma** (Ouyang ve ark. 11'den sonra 114'te; Hoffmann ve ark. 9'dan sonra 114'te;
+    Grattafiori ve ark. 109'dan sonra 114'te; Young 109'dan sonra 114'te — kesişimler bilinçli ve her yerde
+    farklı bir ölçüm için). Dağılım: **28 hakemli, 1 hakemsiz** — yalnızca Llama 3 raporu, ve 8\. makaleden
+    devralınan biçimde işaretlendi. **Bu, serinin en yüksek hakemli oranı ve HANDOFF'un öngörüsünü
+    doğruladı:** robotik (RSS, CoRL/PMLR, ICRA, IROS, IJRR), sürekli öğrenme ve düzenleme (PNAS, Neural
+    Networks, NeurIPS, TACL, ACL Findings) ve bilim uygulamaları (Nature, Chemistry of Materials,
+    PRX Energy, ICLR) hakemli mecrayı bol bol karşıladı. **(a) Doğrulanamayan künye yok.**
+    **(b) π₀'ın hakemli olduğu bulundu:** hakemsiz bir ön baskı sanılıyordu, `roboticsproceedings.org/rss21`
+    dizininde **RSS 2025 bildirisi** olarak doğrulandı (p010) — HANDOFF'un "çoğu hakemsiz ön baskı"
+    öngörüsü bu kalemde yanlış çıktı. (c) **Nature artık tarayıcı doğrulamasına bot duvarı döndürüyor**
+    ("Client Challenge"); Batch 26'da 200 dönüyordu. Çözüm: **PubMed Central** (`pmc.ncbi.nlm.nih.gov`,
+    DOI → PMCID için `ncbi.nlm.nih.gov/pmc/utils/idconv`) tam metni veriyor ve künye Crossref'le
+    doğrulanıyor. (d) **ACS ve APS 403 döndü** — beklenen duvar; ikisinin de künyesi Crossref'le, özetleri
+    Semantic Scholar `graph/v1/paper/DOI:` ucundan alındı (bu uç sık sık 429 veriyor, çağrılar
+    aralıklandırılmalı). (e) `proceedings.iclr.cc` **2022 için 404** veriyor (2024 ve 2025 çalışıyor) ve
+    OpenReview bot duvarında; bu yüzden ölçek–unutma ilişkisine dair bir ICLR 2022 kalemi **doğrulanamadığı
+    için hiç kullanılmadı** ve 112'nin dengesi ROME'un kendi ölçüleri ile bağlam içi düzenleme taban
+    çizgisiyle kuruldu. (f) **Sayım tutarsızlığı dürüstçe yazıldı:** otonom laboratuvar çalışmasının özeti
+    57 hedeften 36, dergi özeti 58'den 41, itiraz ise 43 ürün diyor; 113 makalenin kendi özetindeki sayıyı
+    kullandı ve sayımın farklı yerlerde farklı verildiğini söyledi.
+
+## Batch 27 öğrenme notları (yazım tamamlandı)
+
+- **Faz 14'ün gövdesi tek bir soruyu üç ayrı yere taşıdı: bu sistem neyi kapatıyor?** Gövdede eylem arayüzü
+  (111), üründe güncelleme yolu (112), laboratuvarda doğrulama maliyeti (113); sonra 114 aynı soruyu modelin
+  kendi üretim zincirine uyguladı. Dört makale de "hangisi daha iyi" sorusunu reddedip "hangi seçenekler
+  kapanıyor" sorusuna çevirdi ve tezini o cümleden kurdu.
+- **Bir borcu ödemenin en iyi biçimi, borcun verildiği cümleyi başka bir nesnede yeniden kurmak.** 51'in
+  "eylem kümesi bir arayüzdür" cümlesi 111'de tekrarlanmadı; ALFWorld'ün dokuz şablonu bir kez anılıp geçildi
+  ve cümle gerçek bir kolda **iki sayıya** indirildi — 256 kutu ve saniyede üç karar. Aynı biçim 39/56'da da
+  işledi: üç aşamalı bellek yeniden anlatılmadı, "ağırlığa mı bağlama mı" kararına çevrildi.
+- **Bir mekanizmayı iki satırlık matris örneğiyle kurmak, üç paragraflık açıklamadan çok şey söylüyor.**
+  112'nin rank-bir örneği (`k*`'ye dik anahtarlar hiç değişmez) yöntemin hem "ilgisizi koruma" başarısını
+  hem "sonucu taşımama" kusurunu **aynı kimlikten** çıkarıyor. Ölçümler bunu doğruluyor ama açıklamıyor;
+  açıklama iki satırda duruyor.
+- **Hakemli itiraz arandığında bulundu ve makalenin tezini güçlendirdi.** 113'te malzeme keşfi iki *Nature*
+  çalışmasıyla kurulup iki hakemli değerlendirmeyle (Chemistry of Materials, PRX Energy) karşılandı; ikinci
+  taraf yalnızca "katılmıyoruz" demiyor, **sınanabilir bir mekanizma** öneriyor (düzensiz katılar arama
+  uzayında yok) ve o mekanizma 110'un ölçütüne bağlanıyor. SOZLESME §4'ün "iki taraf" kuralı burada
+  makalenin yükü değil omurgası oldu.
+- **Bir sentez makalesinin tezi, içeriğin kendisinden değil içeriğin iki ayrı sıralanışından çıkabiliyor.**
+  114 yeni hiçbir şey anlatmadı; yalnızca aynı altı kararı bir kez maliyete, bir kez geri alınamazlığa göre
+  sıraladı ve iki sıralamanın ters olduğunu gösterdi. Batch 24'ün dersi ("eksik olan içerik değil tezdir")
+  bu kez sıralama farkıyla karşılandı.
+- **Kelime bandı yine ilk turda üçünde dar kaldı** (112 ilk yazımda 2.031, 113 1.798, 114 1.764). Üçünde de
+  çözüm dolgu değil eksik olan şeydi: 112'ye mekanizmanın sayısal örneği, 113'e doğrulama makasının hesabı
+  ve peşin ödenmiş altyapı gözlemi, 114'e geri alma maliyetinin oranı ve FLOP'la tartılamayan iki halka.
+  **Bant altı kalmak çoğu zaman bir eksik bölümün işaretidir.**
+- **Doğrulama kanalları yine kaydı:** Nature bot duvarına geçti (PMC ile telafi edildi), `proceedings.iclr.cc`
+  2022 için 404 veriyor, Semantic Scholar 429'a düşüyor. Buna karşılık **bir kalem beklenenin tersine hakemli
+  çıktı** (π₀ → RSS 2025); HANDOFF'un öngörüsüne güvenip "hakemsiz" diye işaretlemek yanlış olurdu.
+  Ders: mecra tahmini yazımdan önce değil, doğrulamadan sonra yazılır.
+
+## Batch 26 öğrenme notları (yazım tamamlandı)
+
+- **Faz 13 kapandı ve zincir dört adımda tek bir nesneye indi: bir eğitim adımı.** Adımın kaynak defteri
+  (106) → adımın kartlara bölünmesi (107) → adımın kartın içinde hızlandırılması (108) → adımın yüz binlerce
+  kez tekrarlandığında ne olduğu (109). Her makale bir öncekinin kapanmayan satırını açtı ve hiçbiri geriye
+  dönüp aynı şeyi yeniden kurmadı.
+- **Bu batch'in en pahalı dersi: bir borcu öderken önce borcun verildiği makalenin tamamı okunmalı — ama
+  yetmez, komşularının da okunması gerekiyor.** 107 üç ayrı makaleyle çakışma riski taşıyordu (8, 85, 89) ve
+  üçünün de ilgili bölümleri tek tek okundu. Sonuç: 85'in hepsi-hepsiye iletişimi **tekrarlanmadı**, dört
+  eksenin yanına ayrı bir eksen olarak yerleştirildi; 89'un kesim bandı **tekrarlanmadı**, ölçülmüş iki
+  sayının yerleştiği eksen oldu. Batch 24'ün dersi (71 ↔ 101) burada üç kaynaklı hâliyle tekrarlandı.
+- **Bir makalenin başlığı bölümlerini yönetmezse makale dağılıyor.** 107'nin taslağı "dört eksen" başlığına
+  göre yazıldı ve her bölüm bir eksene karşılık geldi; sonuç, kelime bandına ilk turda giren tek makale oldu
+  (2.047). Öteki üçü banda altında kaldı ve eklenen malzemenin tamamı araştırma listesinde olup taslakta
+  atlanmıştı: 108'e birleştirmenin sayısal örneği, sınırı ve softmax'ın bağımlılık argümanı; 109'a gözlemin
+  frekans ayrışması, üç düzeyde cevap ve veri sırasının yeniden üretilebilirliği; 110'a Myhill–Nerode'un
+  somut örneği, iki soy arasındaki kanıt asimetrisi ve çerçevenin kendi sınırı. **Dolgu cümle eklenmedi.**
+  Son değerler: 2.269 / 2.199 / 2.108 / 2.017.
+- **Terim defteri yazımdan önce tarandı ve üç çakışma önlendi.** "Çekirdek" seride zaten üç nesne taşıyordu;
+  dördüncüsü uydurulmadı, alan yazınının adı benimsendi ve gerekçe **yayımlanmış gerçekte** bulundu (85'in
+  "blok-seyrek çekirdekler"i). "Sıçrama" 74/78'de yetenek eğrisinindi; 109 niteleyiciyi hiç düşürmedi.
+  "Hat" 8 ve 41–50'de pipeline anlamında kullanıldığı için 107 "boru hattı" bileşiğini seçti.
+- **En iyi kontrol noktası aralığını yeniden türetmek, kaynaktan almaktan iyiydi.** Young'ın 1974 sonucu üç
+  satırda türetiliyor ve türetme metinde durunca okuyucu δ'yı değiştirip tabloyu kendisi kurabiliyor.
+  Buradan çıkan sonuç da kaynağın söylemediği bir şey: kareköklü yapı yüzünden asıl kaldıraç aralık değil
+  kaydın maliyeti, ve %90 etkin süre hedefi kontrol noktasına bir dakikalık bir bütçe koyuyor.
+- **110 bir faz açılışı olduğu hâlde harita değil ölçüm makalesi oldu, ve doğru karar buydu.** 1\. makalenin
+  açık bıraktığı "anlama" sorusu felsefi olarak sürdürülseydi seri hiçbir yere varmazdı; sorunun ölçülebilir
+  hâlini kurmak hem 77'nin kanıt biçimini sınanan şeye çevirdi hem de 116–117'ye temiz bir devir bıraktı.
+- **Araştırma, yazım, entegrasyon ve doğrulama tamamen ana oturumda; workflow/subagent kullanılmadı**
+  (kullanıcı talimatı; ultracode açık olmasına rağmen). Kaynak metinleri `pypdf` ile metne çevrildi;
+  `wc`, `scan`, `svgcheck`, `syncalt`, `net`, `sweep`, `shots` ve `dec`/`notes` betikleri oturum
+  scratchpad'ine yeniden yazıldı ve `artifacts/` altına hiçbir şey yazılmadı.
+- **Uzun Python bloklarını Bash heredoc ile çalıştırmak yine kırıldı** (tek tırnak içeren metinlerde
+  ayrıştırma hatası). Batch 25'in kuralı doğrulandı: uzun betik Write aracıyla scratchpad'e yazılıp
+  `python <dosya>` ile çalıştırılmalı. **Ek tuzak:** o betiğin içinden `cd` yapılmadığı için `grep`
+  komutunun çalışma dizini scratchpad'de kalıyor; doğrulama ayrı bir komutta yapılmalı.
+- **Şekil numaraları gövde sırasına göre artmak zorunda.** 110'a sonradan bir şekil eklenirken "Şekil 3"
+  diye yazıldı ve mevcut "Şekil 2"nin önüne düştü; `check-series-content.cjs` bunu yakalar ama tarama
+  yazımdan önce yapılmadığı için iki referans cümlesi de elle düzeltilmek zorunda kaldı.
+- **`svgcheck` bu kez üç kusur buldu, PNG turu sıfır.** Ölçer bir satır içi çakışma (107-Şekil 2), bir sağ
+  kenar taşması (107-Şekil 3) ve iki yetersiz alt pay (108-Şekil 2, 110-Şekil 2) yakaladı; hepsi
+  yazımda düzeltildi. On iki şeklin PNG turunda ek kusur çıkmadı — **iki kapı yine birbirinin yerine
+  geçmedi**, ama bu kez repo kapısının hiç bulmadığı kusurların tamamını ikinci ölçer buldu.
+- **İzole kopya düzeni Batch 25'ten olduğu gibi çalıştı** (`/d/dev/anil-lib-b26-render`, port 3212).
+  Paralel BOUN oturumu bu run boyunca da aynı worktree'deydi ve `docs/seri-boun/**` ile `.wolf/*` altına
+  yazıyordu; çakışma olmadı çünkü bu run `artifacts/` altını hiç kullanmadı ve `.claude/launch.json`
+  okunup kendi girdisi eklenerek yazıldı, temizlikte yalnızca o girdi çıkarıldı.
+- **Kapılar:** `pnpm typecheck` (0), **677 test** (`reading-list-groups.test.ts` dâhil), `pnpm build`
+  (exit 0, `/seri/[slug]` **110 yol**, 173 statik sayfa, izole kopyada), 111 seri rotasının tamamı 200
+  (üç dilim, ~91 sn, yönlendirme yok), dört makale × üç genişlik × üç temada DOM ölçümü (taşma 0,
+  `main.innerText` içinde undefined/NaN yok, ham i18n anahtarı yok, hiçbir SVG kabından taşmıyor;
+  1440'ta SVG 771 px, 768'de 676, 375'te 351; hiçbir tablo kapsayıcısını aşmıyor), konsolda yalnızca
+  `/api/reader-sync` 503 (ağ isteğiyle kaynağı doğrulandı), 12 yeni diyagram Playwright ile light/dark
+  PNG olarak alınıp **on ikisi de** gözle incelendi, 24 kaynak bağlantısının tamamı çekildi.
 
 ## Batch 25 öğrenme notları (yazım tamamlandı)
 

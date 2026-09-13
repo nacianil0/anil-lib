@@ -12,7 +12,7 @@ tags:
   - cakisma
   - yuk-faktoru
   - evrensel-hash
-content_hash: sha256:74d1063d62d5f1aa0e5db78ffa668f896b8aaf8244844a1700930418b8ffdd1b
+content_hash: sha256:dd6157315263ed72b272d93092623a0b5821c17e64348973723a53b6b7c4afb7
 classification_version: 1
 classification_batch: 4
 ---
@@ -131,7 +131,7 @@ Sık yapılan üç hata: "hash tablosu O(1)" deyip durumu belirtmemek; yük fakt
 
 Bu makale karşılaştırma modelinin arama için koyduğu duvarı gösterdi ve modeli değiştirerek aştı. Sıradaki makale aynı duvarı **sıralama** için kuruyor ve aynı kaçış yolunu tekrar kullanıyor.
 
-Önce dört klasik algoritmayı tek bir çerçevede karşılaştıracağız: eklemeli, seçmeli, birleştirmeli ve hızlı sıralama, bir de önceki makalede kurduğumuz heap'ten çıkan heapsort. Karşılaştırma dört sütunlu olacak: en kötü durum maliyeti, ortalama durum maliyeti, ek bellek ve **kararlılık** — eşit anahtarlı kayıtların göreli sırasının korunup korunmadığı. Sonra karar ağacı argümanını sıralamaya uygulayacağız: n! olası çıktı olduğu için hiçbir karşılaştırmalı sıralama n log n'den hızlı olamaz. Sayma makalesinde n! sayısını hesaplarken bu argümanın malzemesini zaten hazırlamıştık. En sonda yine modeli terk edip anahtarları tam sayı olarak kullanan ve doğrusal zamanda çalışan sıralamalara bakacağız — çakışmaları zincirlerde toplama fikri orada bir kez daha karşımıza çıkacak.
+Önce dört klasik algoritmayı tek bir çerçevede karşılaştıracağız: eklemeli, seçmeli, birleştirmeli ve hızlı sıralama, bir de önceki makalede kurduğumuz heap'ten çıkan heapsort. Karşılaştırma beş sütunlu olacak: en kötü durum maliyeti, ortalama durum maliyeti, ek bellek, yerinde çalışma ve **kararlılık** — eşit anahtarlı kayıtların göreli sırasının korunup korunmadığı. Sonra karar ağacı argümanını sıralamaya uygulayacağız: n! olası çıktı olduğu için hiçbir karşılaştırmalı sıralama n log n'den hızlı olamaz. Sayma makalesinde n! sayısını hesaplarken bu argümanın malzemesini zaten hazırlamıştık. En sonda yine modeli terk edip anahtarları tam sayı olarak kullanan ve doğrusal zamanda çalışan sıralamalara bakacağız — çakışmaları zincirlerde toplama fikri orada bir kez daha karşımıza çıkacak.
 
 ## Kaynakça
 

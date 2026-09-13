@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 424" role="img" aria-label="Dört satırlı beş sütunlu bir tablo ve altında bir kutu. Üstte başlık: aynı soru, dört ayrı doğrulama maliyeti. Sütunlar vaka, modelin ürettiği, doğrulayan, doğrulamanın maliyeti ve geriye ne kaldı. Birinci satır protein yapısı: bir yapı tahmini üretir, doğrulayan önceden çözülmüş ama saklanmış deneysel yapıdır, maliyeti sıfırdır çünkü zaten yapılmıştır, geriye ortanca 0,96 ångströmlük omurga doğruluğu kalmıştır ve ikinci en iyi yöntem 2,8'dedir. İkinci satır matematikte program araması: çözümü üreten bir program üretir, doğrulayan sabit bir puanlama programıdır, maliyeti bir çalıştırmadır, geriye sekiz boyutta 512 elemanlı yeni bir yapı ve yirmi yılın en büyük asimptotik iyileştirmesi kalmıştır. Üçüncü satır sezgi kılavuzluğu: bir yön üretir, iddia üretmez; doğrulayan matematikçinin kanıtıdır; maliyeti aylardır; geriye kanıtlanmış bir teorem kalmıştır. Dördüncü satır vurguludur, malzeme keşfi: kararlı olduğu öngörülen kristal yapılar üretir, doğrulayan sentez ve kırınım analiziyle bir kimyagerdir, maliyeti hedef başına haftalar ve aylardır, geriye hakemli iki itiraz kalmıştır. Altta bir kutu durur: ölçüt modelin gücü değil, üretmenin maliyeti ile doğrulamanın maliyeti arasındaki orandır; ilk üç satırda doğrulama üretimden ucuz ya da kesindir, dördüncüde değildir. En altta bir kayıt: değerler sırasıyla Jumper, Romera-Paredes, Davies ve Merchant ile Szymanski ve arkadaşlarının çalışmalarından gelir.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı soru, dört ayrı doğrulama maliyeti</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">vaka</text>
+  <text x="200" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">modelin ürettiği</text>
+  <text x="400" y="64" font-size="13" font-weight="bold" fill="var(--accent)">doğrulayan</text>
+  <text x="590" y="64" font-size="13" font-weight="bold" fill="var(--cool)">maliyeti</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">protein yapısı</text>
+  <text x="200" y="98" font-size="13" fill="var(--text)">bir yapı tahmini</text>
+  <text x="400" y="98" font-size="13" fill="var(--text)">saklanmış deney</text>
+  <text x="590" y="98" font-size="13" fill="var(--text)">sıfır</text>
+
+  <text x="24" y="124" font-size="13" fill="var(--text)">program araması</text>
+  <text x="200" y="124" font-size="13" fill="var(--text)">üreten bir program</text>
+  <text x="400" y="124" font-size="13" fill="var(--text)">puanlama programı</text>
+  <text x="590" y="124" font-size="13" fill="var(--text)">bir çalıştırma</text>
+
+  <text x="24" y="150" font-size="13" fill="var(--text)">sezgi kılavuzluğu</text>
+  <text x="200" y="150" font-size="13" fill="var(--text)">bir yön, iddia değil</text>
+  <text x="400" y="150" font-size="13" fill="var(--text)">matematikçinin kanıtı</text>
+  <text x="590" y="150" font-size="13" fill="var(--text)">aylar</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--text)">malzeme keşfi</text>
+  <text x="200" y="178" font-size="13" font-weight="bold" fill="var(--text)">kararlı kristal yapı</text>
+  <text x="400" y="178" font-size="13" font-weight="bold" fill="var(--accent)">sentez ve kimyager</text>
+  <text x="590" y="178" font-size="13" font-weight="bold" fill="var(--cool)">hedef başına ay</text>
+
+  <line x1="20" y1="194" x2="720" y2="194" stroke="var(--border)" />
+
+  <text x="24" y="216" font-size="13" font-weight="bold" fill="var(--text-muted)">geriye ne kaldı</text>
+  <text x="24" y="240" font-size="13" fill="var(--text)">protein yapısı: ortanca 0,96 Å omurga doğruluğu; ikinci en iyi yöntem 2,8 Å</text>
+  <text x="24" y="260" font-size="13" fill="var(--text)">program araması: sekiz boyutta 512 elemanlı yapı; yirmi yılın en büyük iyileştirmesi</text>
+  <text x="24" y="280" font-size="13" fill="var(--text)">sezgi kılavuzluğu: kanıtlanmış bir teorem</text>
+  <text x="24" y="300" font-size="13" fill="var(--text)">malzeme keşfi: hakemli iki itiraz</text>
+
+  <rect x="20" y="316" width="700" height="50" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="338" font-size="13" fill="var(--text)">Ölçüt modelin gücü değil, üretmenin maliyeti ile doğrulamanın maliyeti arasındaki</text>
+  <text x="34" y="356" font-size="13" fill="var(--text)">orandır. İlk üç satırda doğrulama ucuz ya da kesindir; dördüncüde değildir.</text>
+
+  <text x="20" y="390" font-size="13" fill="var(--text-faint)">Değerler sırasıyla Jumper, Romera-Paredes, Davies ve</text>
+  <text x="20" y="408" font-size="13" fill="var(--text-faint)">Merchant ile Szymanski ve ark.'nın çalışmalarından gelir.</text>
+</svg>

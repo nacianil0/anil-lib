@@ -29,7 +29,7 @@ export default async function BounPage() {
       articles={getBounDescriptors()}
       basePath={BOUN_BASE_PATH}
       intro="Lisans bilgini unuttuğunu varsayar; her makale bir öncekinin üzerine biner ve kavramı yüksek sesle anlatabilecek düzeye taşır. Sıra önemlidir: en iyi sonucu baştan sona okuyarak alırsın."
-      footerNote="Seri gruplar halinde yayımlanır; planlanan başlıklar yeni gruplar hazırlanırken güncellenebilir. Resmî mülakat bilgisi değişebilir; karar vermeden önce bölümün güncel sayfasını kontrol et."
+      footerNote="Seri kırk bir makaleyle tamamlandı; bundan sonrası düzeltme ve güncellemedir. Resmî mülakat bilgisi değişebilir; karar vermeden önce bölümün güncel sayfasını kontrol et."
     />
   );
 }

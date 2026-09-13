@@ -12,7 +12,7 @@ tags:
   - ispat
   - sonlanma
   - eklemeli-siralama
-content_hash: sha256:a7d1397da99c24aa13ad1d08d51e7a1e960bf47ed9e10799dd71da87876be2f7
+content_hash: sha256:0f5c6d263950604c7ca293b304f4a707f0dca410223dfc877541fec42579f499
 classification_version: 1
 classification_batch: 6
 ---
@@ -70,7 +70,7 @@ Değişmez yazarken niceleyici disiplini de asimptotik makalesindeki gibi geçer
 
 ## Eklemeli sıralamanın doğruluğu
 
-Kanonik örnek eklemeli sıralamadır. Sıralama makalesinde algoritmayı tanımış ve maliyetini konuşmuştuk; şimdi doğruluğunu ispatlıyoruz. Bir tanesi 1 tabanlı olmak üzere satırları numaralayalım:
+Kanonik örnek eklemeli sıralamadır. Sıralama makalesinde algoritmayı tanımış ve maliyetini konuşmuştuk; şimdi doğruluğunu ispatlıyoruz. Dizi 1 tabanlı olmak üzere satırları numaralayalım:
 
 ```
 1  for i = 2 to n

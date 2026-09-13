@@ -5,7 +5,7 @@ slug: isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim
 category: operating-systems
 level: advanced
 reading_order: 26
-summary: "Faz D açılıyor ve soru değişiyor: bu program ne kadar hızlı değil, bu makine kime ait? İşletim sisteminin sanallaştırma tanımı ve kaynak yöneticisi rolü, ilke ile düzenek ayrımı; güçlü yalıtımın donanım desteği olan kullanıcı modu ile çekirdek modu, bir sistem çağrısının tuzak komutundan dönüşe kadar yaşam döngüsü ve neden sıradan bir fonksiyon çağrısı olmadığı; zamanlayıcı kesmesiyle denetimin geri alınması ve maliyeti; toplu işten çoklu programlamaya, oradan zaman paylaşımına evrim; monolitik çekirdek ile mikroçekirdek."
+summary: "Faz D açılıyor ve soru değişiyor: bu program ne kadar hızlı değil, bu makine kime ait? İşletim sisteminin sanallaştırma tanımı ve kaynak yöneticisi rolü, ilke ile düzenek ayrımı; güçlü yalıtımın donanım desteği olan kullanıcı kipi ile çekirdek kipi, bir sistem çağrısının tuzak komutundan dönüşe kadar yaşam döngüsü ve neden sıradan bir fonksiyon çağrısı olmadığı; zamanlayıcı kesmesiyle denetimin geri alınması ve maliyeti; toplu işten çoklu programlamaya, oradan zaman paylaşımına evrim; monolitik çekirdek ile mikroçekirdek."
 tags:
   - isletim-sistemi
   - cekirdek

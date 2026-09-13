@@ -13,7 +13,7 @@ tags:
   - baginti
   - denklik-baginti
   - kismi-sira
-content_hash: sha256:4878aebbe57072ef8f81665df25762a08424cd7be91be447f2838e120699c9ae
+content_hash: sha256:de100d264400dbd14b38d44654e1032800f782b7587314d63f4cb4d60cbc4d94
 classification_version: 1
 classification_batch: 1
 ---
@@ -31,21 +31,21 @@ Birinci tuzak **üyelik ile alt küme farkıdır**. x ∈ A ifadesi x'in A'nın 
 
 İkinci tuzak **güç kümesidir (power set)**: A'nın bütün alt kümelerinin kümesi. n elemanlı bir kümenin güç kümesinin 2ⁿ elemanı vardır, çünkü her eleman için bağımsız olarak "içeride" veya "dışarıda" kararı verilir. Bu, sıradaki makalede kuracağımız çarpma kuralının ilk kullanımıdır ve kaba kuvvet algoritmalarının neden 2ⁿ adımda çalıştığını da açıklar. Kartezyen çarpım A × B ise sıralı ikililerin kümesidir ve |A × B| = |A| · |B| sağlar.
 
-Küme işlemleriyle mantıksal bağlaçlar arasında birebir bir karşılık vardır: birleşim "veya", kesişim "ve", tümleyen ise "değil" ile aynı doğruluk davranışını gösterir. İkinci makaledeki De Morgan kuralları bu yüzden kümelerde de aynen geçerlidir.
+Küme işlemleriyle mantıksal bağlaçlar arasında birebir bir karşılık vardır: birleşim "veya", kesişim "ve", tümleyen ise "değil" ile aynı doğruluk davranışını gösterir. Mantık makalesindeki De Morgan kuralları bu yüzden kümelerde de aynen geçerlidir.
 
 ## Küme eşitliğinin ispat kalıbı
 
-İki kümenin eşit olduğunu göstermenin standart yolu **çift kapsamadır**: A ⊆ B ve B ⊆ A gösterilir. Bu, üçüncü makaledeki "ancak ve ancak" kuralının küme dilindeki hâlidir; tek yönü gösterip durmak yine en sık kaybedilen puandır.
+İki kümenin eşit olduğunu göstermenin standart yolu **çift kapsamadır**: A ⊆ B ve B ⊆ A gösterilir. Bu, ispat teknikleri makalesindeki "ancak ve ancak" kuralının küme dilindeki hâlidir; tek yönü gösterip durmak yine en sık kaybedilen puandır.
 
 **İddia.** A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).
 
-**Strateji.** Rastgele bir eleman al, üyeliği mantıksal bir önermeye çevir, önermeyi ikinci makaledeki dağılma kuralıyla dönüştür, sonucu tekrar küme diline çevir.
+**Strateji.** Rastgele bir eleman al, üyeliği mantıksal bir önermeye çevir, önermeyi dağılma kuralıyla — p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r) — dönüştür, sonucu tekrar küme diline çevir.
 
 **Birinci yön.** x ∈ A ∩ (B ∪ C) olsun. Tanım gereği x ∈ A **ve** (x ∈ B veya x ∈ C). Dağılma kuralıyla bu, (x ∈ A ve x ∈ B) **veya** (x ∈ A ve x ∈ C) önermesine denktir. Küme diline dönersek x ∈ (A ∩ B) ∪ (A ∩ C).
 
 **İkinci yön.** Bütün adımlar denklik olduğu için ters yönde de aynı zincir yürür: x ∈ (A ∩ B) ∪ (A ∩ C) alındığında aynı dönüşümler geriye doğru uygulanır.
 
-**Savunma.** İspatın tek maddesi şudur: küme özdeşlikleri, mantıksal denkliklerin kılık değiştirmiş hâlidir. Bu yüzden yeni bir özdeşlikle karşılaştığında ezberlemen gerekmez; üyeliği önermeye çevirip ikinci makaledeki denkliklerden birini uygularsın. Mülakatta "bunu Venn şemasıyla gösterebilir misin?" sorusu gelirse şema bir sezgi aracıdır; ispat, eleman kovalamaktır.
+**Savunma.** İspatın tek maddesi şudur: küme özdeşlikleri, mantıksal denkliklerin kılık değiştirmiş hâlidir. Bu yüzden yeni bir özdeşlikle karşılaştığında ezberlemen gerekmez; üyeliği önermeye çevirip mantık makalesindeki denkliklerden birini uygularsın. Mülakatta "bunu Venn şemasıyla gösterebilir misin?" sorusu gelirse şema bir sezgi aracıdır; ispat, eleman kovalamaktır.
 
 ## Fonksiyonlar
 
@@ -57,13 +57,13 @@ Sınır örneği tanımın iki yarısını da yoklar: f(x) = 1 / x kuralı ℝ �
 
 **Birebir (injective):** farklı girdiler farklı çıktılara gider. İspat kalıbı sabittir: f(a₁) = f(a₂) varsay, a₁ = a₂ sonucuna yürü.
 
-**Örten (surjective):** değer kümesinde karşılıksız eleman kalmaz. İspat kalıbı: rastgele bir b ∈ B al, f(a) = b sağlayan bir a **inşa et**. Bu, üçüncü makaledeki yapıcı ispatın tipik bir örneğidir.
+**Örten (surjective):** değer kümesinde karşılıksız eleman kalmaz. İspat kalıbı: rastgele bir b ∈ B al, f(a) = b sağlayan bir a **inşa et**. Bu, ispat teknikleri makalesindeki yapıcı ispatın tipik bir örneğidir.
 
 **Birebir örten (bijective):** ikisi birden. Bir fonksiyonun **tersinin var olması, birebir örten olmasıyla aynı şeydir** — mülakatın en sık sorulan karakterizasyonlarından biridir.
 
 Şekil 1 üç durumu yan yana koyuyor.
 
-![Üç panelde ok şemaları: solda birebir ama örten olmayan fonksiyon, değer kümesinde karşılıksız eleman kalır; ortada örten ama birebir olmayan fonksiyon, iki girdi aynı çıktıya gider; sağda birebir örten fonksiyon, her çıktı tam olarak bir girdiyle eşleşir](assets/fonksiyon-turleri.svg "Şekil 1 — Birebir, örten ve birebir örten: aynı üç noktanın üç farklı eşlemesi")
+![Üç panelde ok şemaları: solda birebir ama örten olmayan fonksiyon, değer kümesinde karşılıksız eleman kalır; ortada örten ama birebir olmayan fonksiyon, iki girdi aynı çıktıya gider; sağda birebir örten fonksiyon, her çıktı tam olarak bir girdiyle eşleşir](assets/fonksiyon-turleri.svg "Şekil 1 — Birebir, örten ve birebir örten: üç eşlemenin ok şemaları")
 
 **Çalışılmış örnek.** f: ℝ → ℝ, f(x) = 3x − 7 birebir örtendir. Birebirlik için 3a − 7 = 3b − 7 varsayalım; her iki tarafa 7 ekleyip 3'e bölünce a = b çıkar. Örtenlik için rastgele bir y alalım ve x = (y + 7) / 3 seçelim; bu bir gerçel sayıdır ve f(x) = 3 · (y + 7) / 3 − 7 = y verir. Ters fonksiyon böylece elimizde: f⁻¹(y) = (y + 7) / 3.
 
@@ -122,7 +122,7 @@ Mühendislikteki en yakın karşılığı bağımlılık grafıdır. Derleme sis
 
 Sonsuz kümelerin "boyutu" da fonksiyonlarla tanımlanır: iki küme arasında birebir örten bir fonksiyon varsa aynı boyuttadırlar. Doğal sayılarla eşlenebilen kümelere **sayılabilir (countable)** denir.
 
-Şaşırtıcı sonuçlar buradan gelir. Tam sayılar sayılabilirdir: 0, 1, −1, 2, −2 sırasıyla numaralandırılırlar. Rasyonel sayılar da sayılabilirdir. Ama gerçel sayılar **sayılamaz (uncountable)**; herhangi bir numaralandırma verildiğinde, köşegen üzerinde her basamağı değiştirerek listede olmayan bir sayı inşa edilebilir. Bu, üçüncü makaledeki karşı örnek disiplininin sonsuz kümelerdeki hâlidir.
+Şaşırtıcı sonuçlar buradan gelir. Tam sayılar sayılabilirdir: 0, 1, −1, 2, −2 sırasıyla numaralandırılırlar. Rasyonel sayılar da sayılabilirdir. Ama gerçel sayılar **sayılamaz (uncountable)**; herhangi bir numaralandırma verildiğinde, köşegen üzerinde her basamağı değiştirerek listede olmayan bir sayı inşa edilebilir. Bu, ispat teknikleri makalesindeki karşı örnek disiplininin sonsuz kümelerdeki hâlidir.
 
 Bilgisayar mühendisliği için sonucu şudur: programlar sonlu alfabede sonlu dizilerdir, dolayısıyla **program kümesi sayılabilirdir**. Doğal sayılardan {0, 1} kümesine giden fonksiyonların kümesi ise sayılamazdır. Her fonksiyonu hesaplayan bir program olsaydı, sayılabilir program kümesinden sayılamaz fonksiyon kümesine örten bir eşleme kurmuş olurduk; bu imkânsızdır. Dolayısıyla **hiçbir programın hesaplayamadığı fonksiyonlar vardır**. Durma probleminin ve karar verilemezliğin arkasındaki sayma argümanı budur; hesaplamanın sınırlarını konuştuğumuz makalede bu köprüye geri döneceğiz.
 

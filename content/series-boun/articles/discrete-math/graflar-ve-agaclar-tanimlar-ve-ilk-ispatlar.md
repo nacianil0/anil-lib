@@ -12,7 +12,7 @@ tags:
   - derece
   - el-sikisma-lemmasi
   - kapsayan-agac
-content_hash: sha256:58991b594768267cfc7cb8450ead5ce05020b0b64ae6d098bc11bc6a5583f926
+content_hash: sha256:cfca4dcc5258600314bdcab77d68159ca12b475a02bcb0d0707dd664576ded76
 classification_version: 1
 classification_batch: 2
 ---
@@ -158,7 +158,7 @@ Bir de dil uyarısı: mülakat İngilizce yürüyecekse "düğüm" için *vertex
 
 ### Sırada ne var
 
-Bu makaleyle graf ve ağaç dilini kurduk; bir sonraki makale Faz A'yı kapatıyor. Cebirsel yapılara — yarıgrup, monoid, grup — ve oradan kafeslere, kafeslerden Boolean cebirine geçeceğiz. Orada göreceğin şey şu olacak: ikinci makaledeki mantık, beşinci makaledeki küme cebiri ve devre tasarımının Boolean cebiri **aynı** kural setini paylaşır. Aynı kuralları üç ayrı yerde tanımak, mülakatta "bu neye benziyor?" sorusuna cevap verme refleksinin kendisidir.
+Bu makaleyle graf ve ağaç dilini kurduk; bir sonraki makale Faz A'yı kapatıyor. Cebirsel yapılara — yarıgrup, monoid, grup — ve oradan kafeslere, kafeslerden Boolean cebirine geçeceğiz. Orada göreceğin şey şu olacak: mantık makalesindeki önerme cebiri, kümeler makalesindeki küme cebiri ve devre tasarımının Boolean cebiri **aynı** kural setini paylaşır. Aynı kuralları üç ayrı yerde tanımak, mülakatta "bu neye benziyor?" sorusuna cevap verme refleksinin kendisidir.
 
 ## Kaynakça
 

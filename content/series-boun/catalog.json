@@ -38,7 +38,7 @@
         "niceleyici",
         "cikarim-kurallari"
       ],
-      "contentHash": "sha256:d1bbccc0807125affbf3c1adcc6cb89b2f8442f23d944c70425306ea1201c77c",
+      "contentHash": "sha256:69d364cb5b16fdea59179c61aec7a73b3056bfa7c5c69efcd1282944aeb300a4",
       "path": "content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -58,7 +58,7 @@
         "karsi-ornek",
         "kok-iki"
       ],
-      "contentHash": "sha256:7bf193df15dbe5f2a21ef990e5a0db87642eade6a98c3b46611c55dd669375fa",
+      "contentHash": "sha256:1f48e11149bae8a4c72a00149b54c25456ca9457a271d1441fd29fd25b5f677f",
       "path": "content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -78,7 +78,7 @@
         "ozyineleme",
         "yapisal-tumevarim"
       ],
-      "contentHash": "sha256:7edbf51080837ab7f0d4a724b3fc860a5063ebaf474c90ca9c357ecfbf1dce17",
+      "contentHash": "sha256:b2811a1c4668aa6c40b180423dee7b6f15ad13c7a9ce48f48ac9650d7d3282d0",
       "path": "content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -99,7 +99,7 @@
         "denklik-baginti",
         "kismi-sira"
       ],
-      "contentHash": "sha256:4878aebbe57072ef8f81665df25762a08424cd7be91be447f2838e120699c9ae",
+      "contentHash": "sha256:de100d264400dbd14b38d44654e1032800f782b7587314d63f4cb4d60cbc4d94",
       "path": "content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -119,7 +119,7 @@
         "binom-katsayisi",
         "guvercin-yuvasi"
       ],
-      "contentHash": "sha256:1eec830260e9692eb24c552724eacd49d9d4a4c14d09368d6c3c203b4cc2613f",
+      "contentHash": "sha256:66468dbda18767921cd6548f9cb7f71e67c8e6f9758641dce08fd0d352d05029",
       "path": "content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -139,7 +139,7 @@
         "el-sikisma-lemmasi",
         "kapsayan-agac"
       ],
-      "contentHash": "sha256:58991b594768267cfc7cb8450ead5ce05020b0b64ae6d098bc11bc6a5583f926",
+      "contentHash": "sha256:cfca4dcc5258600314bdcab77d68159ca12b475a02bcb0d0707dd664576ded76",
       "path": "content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -159,7 +159,7 @@
         "kafes",
         "boolean-cebiri"
       ],
-      "contentHash": "sha256:51856dc2da091442eb644752266db6fd813c05ab070297aa91eb9c94815a7e2f",
+      "contentHash": "sha256:b6a1eddfe92eecf24a2189c65642d476bf8228fadb3582fd1dce65e9f91554bd",
       "path": "content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -199,7 +199,7 @@
         "kuyruk",
         "amortize-maliyet"
       ],
-      "contentHash": "sha256:cd0e0b22b774b4d32c206ad53c4e13cd729a616dd3b8b2fb9bdf2b6720b475f7",
+      "contentHash": "sha256:4ba27defa1abcb55b2759c2193f4691af48fcb5fb26738d130e63693502bf572",
       "path": "content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -217,9 +217,9 @@
         "ikili-arama-agaci",
         "degismez",
         "yukseklik",
-        "siral-dolasma"
+        "sirali-dolasma"
       ],
-      "contentHash": "sha256:d127461f5a4eeddc209976baf840bd79e4c40f0f7f509f5ff3adb465132dc2a5",
+      "contentHash": "sha256:c76e9665c9559c76d92c3857e930576c60a93c9eee4891e48eca2986ee0ccf82",
       "path": "content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -251,7 +251,7 @@
       "category": "data-structures",
       "level": "advanced",
       "readingOrder": 13,
-      "summary": "Arama ağacının değişmezini bilinçli olarak zayıflatan yapı: öncelik kuyruğu arayüzü, heap özelliği ve kökün en küçük olduğunun tümevarımla ispatı, tam ikili ağacın dizi üzerindeki indis aritmetiği, yukarı ve aşağı sızdırma, yığın kurmanın neden doğrusal olduğu ve heapsort.",
+      "summary": "Arama ağacının değişmezini bilinçli olarak zayıflatan yapı: öncelik kuyruğu arayüzü, heap özelliği ve kökün en küçük olduğunun tümevarımla ispatı, tam ikili ağacın dizi üzerindeki indis aritmetiği, yukarı ve aşağı sızdırma, heap kurmanın neden doğrusal olduğu ve heapsort.",
       "tags": [
         "heap",
         "oncelik-kuyrugu",
@@ -259,7 +259,7 @@
         "build-heap",
         "tam-ikili-agac"
       ],
-      "contentHash": "sha256:5ed0571dfc02a0866e8ddbb0d59c289837c881f41f7f4cccdbdef68f3f0941bb",
+      "contentHash": "sha256:74a75e933b94e44af3943845e7f9e6b24f11db206930599166a05de1bc17e257",
       "path": "content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -279,7 +279,7 @@
         "yuk-faktoru",
         "evrensel-hash"
       ],
-      "contentHash": "sha256:74d1063d62d5f1aa0e5db78ffa668f896b8aaf8244844a1700930418b8ffdd1b",
+      "contentHash": "sha256:dd6157315263ed72b272d93092623a0b5821c17e64348973723a53b6b7c4afb7",
       "path": "content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -299,7 +299,7 @@
         "kararlilik",
         "radix-sort"
       ],
-      "contentHash": "sha256:f1f0849eb5e761356fe8c24c4f77a0f3cb282f139bff5c9389327724e2622f4b",
+      "contentHash": "sha256:74b875860e880f23fdf946d861a6c82b950ff0c0fd6af11246a0cda0f5d9da25",
       "path": "content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -319,7 +319,7 @@
         "topolojik-siralama",
         "bagli-bilesen"
       ],
-      "contentHash": "sha256:e0af275b69cb6e6e04651805390fb971e6d1b4b85dc369ca6a826452014101e3",
+      "contentHash": "sha256:d5ab96eb684dbb958337e0e6585aa3dd4fed5da30010ccd07c69c53c9d68f61f",
       "path": "content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -340,7 +340,7 @@
         "alt-sinir",
         "karar-agaci"
       ],
-      "contentHash": "sha256:1e7cfb0e4bd89a05dbb95aebf103aabadc1f827c41d9ce6fd79157eed685d407",
+      "contentHash": "sha256:9ac8b309f0adcac3f6973979533cd4ac7c505ada6ff16a6fb8fc17753f0f25fb",
       "path": "content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -360,7 +360,7 @@
         "bol-ve-yonet",
         "analiz"
       ],
-      "contentHash": "sha256:b125debc193827650f5b3642da66ec82cc1d679ace894b526b11c56c6a9f5d80",
+      "contentHash": "sha256:e9bee501f1f4a19a6b1d9f9c46ceea1176c655fd0454d1cd833625c4acfa80d7",
       "path": "content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -380,7 +380,7 @@
         "sonlanma",
         "eklemeli-siralama"
       ],
-      "contentHash": "sha256:a7d1397da99c24aa13ad1d08d51e7a1e960bf47ed9e10799dd71da87876be2f7",
+      "contentHash": "sha256:0f5c6d263950604c7ca293b304f4a707f0dca410223dfc877541fec42579f499",
       "path": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -400,7 +400,7 @@
         "medyan-bulma",
         "ozyineleme-agaci"
       ],
-      "contentHash": "sha256:12216fb3d24a0c11db8fd532942e7825072bcb221b59c88177de916f55dc1d7f",
+      "contentHash": "sha256:5a8d8696d7d2ebd0a93c1981871a3dc6e419a36aa1e0e6c803276f1950bfe860",
       "path": "content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -420,7 +420,7 @@
         "aralik-cizelgeleme",
         "karsi-ornek"
       ],
-      "contentHash": "sha256:690a5792a6dcd41ad1507ec4ad69852f9b156eb777e722de5623b05f30122725",
+      "contentHash": "sha256:0efdf32db4df97fa85c797b89c40d25f03144d03e45988f5db40591e08658dff",
       "path": "content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -460,7 +460,7 @@
         "bellman-ford",
         "azalt-anahtar"
       ],
-      "contentHash": "sha256:dbccdab19371a26517c0086ed49079f82cc584db01946aa0be16aa752693672e",
+      "contentHash": "sha256:abe35d5ed1f6bd113952abdf13ba99a596fed0244220d2a318f797329a8e74ee",
       "path": "content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
@@ -512,7 +512,7 @@
       "category": "operating-systems",
       "level": "advanced",
       "readingOrder": 26,
-      "summary": "Faz D açılıyor ve soru değişiyor: bu program ne kadar hızlı değil, bu makine kime ait? İşletim sisteminin sanallaştırma tanımı ve kaynak yöneticisi rolü, ilke ile düzenek ayrımı; güçlü yalıtımın donanım desteği olan kullanıcı modu ile çekirdek modu, bir sistem çağrısının tuzak komutundan dönüşe kadar yaşam döngüsü ve neden sıradan bir fonksiyon çağrısı olmadığı; zamanlayıcı kesmesiyle denetimin geri alınması ve maliyeti; toplu işten çoklu programlamaya, oradan zaman paylaşımına evrim; monolitik çekirdek ile mikroçekirdek.",
+      "summary": "Faz D açılıyor ve soru değişiyor: bu program ne kadar hızlı değil, bu makine kime ait? İşletim sisteminin sanallaştırma tanımı ve kaynak yöneticisi rolü, ilke ile düzenek ayrımı; güçlü yalıtımın donanım desteği olan kullanıcı kipi ile çekirdek kipi, bir sistem çağrısının tuzak komutundan dönüşe kadar yaşam döngüsü ve neden sıradan bir fonksiyon çağrısı olmadığı; zamanlayıcı kesmesiyle denetimin geri alınması ve maliyeti; toplu işten çoklu programlamaya, oradan zaman paylaşımına evrim; monolitik çekirdek ile mikroçekirdek.",
       "tags": [
         "isletim-sistemi",
         "cekirdek",
@@ -580,7 +580,7 @@
         "kosul-degiskeni",
         "test-and-set"
       ],
-      "contentHash": "sha256:019e1817b3751d335176dd21caa83428574f86a2804a4046fb8de8dd18b50c4f",
+      "contentHash": "sha256:7bdd88111c775159e5fbcf9d92ee3b9b49c23260ff0887229cc3c15d77b9b881",
       "path": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
       "relatedArticleIds": [],
       "classificationBatch": 9
@@ -620,7 +620,7 @@
         "kilit-sirasi",
         "livelock"
       ],
-      "contentHash": "sha256:6f67350fb670e973b35babae15ca2873116e2da93f1c8d8d8fdd1f83c301657c",
+      "contentHash": "sha256:3a91acd960f543a2d2da5ecd6e3b53b6d3a9b2b6055774b7606e3071ae355ab2",
       "path": "content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -640,7 +640,7 @@
         "sayfa-tablosu",
         "tlb"
       ],
-      "contentHash": "sha256:f6e7db6b1054d30cdd314796b71c3e7e00508f16bb582227ebd8741d1035a376",
+      "contentHash": "sha256:6df983ac8426767c9ca1897604b27c89d48db420fbc4d66cf1faf7bd45459373",
       "path": "content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -700,7 +700,7 @@
         "yetenekler",
         "linux"
       ],
-      "contentHash": "sha256:f92e2638235f65cef0f1db1c3081e3291daab7472a386a22fec2e6e2f41291fc",
+      "contentHash": "sha256:31505a64fbc5cce40c70cbe0d58cab0eb8236016f4c5946050fe8ca7883ccec5",
       "path": "content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -720,7 +720,7 @@
         "chebyshev",
         "istatistik"
       ],
-      "contentHash": "sha256:f8bfcb1aa09a9e3c9c6ccc362683f76dc85eb90416850f6511f51af27d33e389",
+      "contentHash": "sha256:46c15e03d17cb7cd1e99863405dd20512675a3601754d51383afad9090cfd8c7",
       "path": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -740,7 +740,7 @@
         "boru-hatti",
         "ram-modeli"
       ],
-      "contentHash": "sha256:c1a9bf29e21cc6c25a25d1c06f24dbf82115871a97b386065a3d2feab0b7b1a0",
+      "contentHash": "sha256:650272ef8c54111c6b5316c8d7474a9cda52b28ae50900fb7e41de56cbbb96dc",
       "path": "content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
@@ -760,7 +760,7 @@
         "malloc",
         "fork"
       ],
-      "contentHash": "sha256:5306d6cbb8759a460ee8da7a59542a7e83bb3d50557348f0f1e1445223fab088",
+      "contentHash": "sha256:4f9190cb0f7f263b54633c0b01d17b04c9361d44608400fb61ea8aad32fd01e0",
       "path": "content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
@@ -780,10 +780,50 @@
         "transaction",
         "yalitim-duzeyi"
       ],
-      "contentHash": "sha256:2b2883994b2cf41efae69d8a4c57a4dcd1fd4a96c4342010969b834753466bc1",
+      "contentHash": "sha256:f2bc6b2746946c398475518aeffca74248cea7f71e88298e59c99c82c24fd6f8",
       "path": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
+    },
+    {
+      "articleId": "article_e8a46a1f-b783-48d8-a8e9-59137ba6084f",
+      "title": "Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü",
+      "slug": "sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu",
+      "category": "interview-method",
+      "level": "advanced",
+      "readingOrder": 40,
+      "summary": "Otuz dokuz makale boyunca konu anlattık; bu makale anlatmanın kendisine geçiyor. Bir cevabın omurgası dört parçadır — iddia, koşul, mekanizma ve bozulma noktası — ve seride kurduğumuz bütün omurgalar aynı kalıptan çıkar. Maliyet ile doğruluk cevaplarının sabit sırasını tek yerde topluyor, takip zincirinin üç halkasını prova ediyor ve iyi cevabın sınır durumunu sorulmadan söylediğini gösteriyorum. Ardından tahta: altmış saniyede ne yazılır, ne yazılmaz ve dört bölge neye ayrılır. Kapanışta resmî tanımın teknik olmayan yarısı var — geçmiş akademik kayıt ve araştırma yönü — ve bilmediğini söylemenin iyi biçimi.",
+      "tags": [
+        "sozlu-anlatim",
+        "cevap-omurgasi",
+        "takip-sorusu",
+        "tahta-kullanimi",
+        "arastirma-yonu"
+      ],
+      "contentHash": "sha256:8395d06ada03acf4696a105b112302c299e422756568a56b6be63504aa8bce01",
+      "path": "content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 13
+    },
+    {
+      "articleId": "article_3ae3074c-428c-4557-bdfa-a8a6f773e61e",
+      "title": "Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı",
+      "slug": "kapanis-zayif-nokta-haritasi-ve-son-hafta-plani",
+      "category": "interview-method",
+      "level": "advanced",
+      "readingOrder": 41,
+      "summary": "Serinin son makalesi yeni konu anlatmıyor, elindekini ölçüyor. Önce ölçmenin kendisiyle ilgili kötü haber: tekrar tekrar okuyan grup kendini daha iyi hissediyor ama bir hafta sonra daha az hatırlıyor — akıcılık, bilgiyi değil tanıdıklığı ölçüyor. Sonra beş yetenek ile beş fazı kesiştiren boş bir zayıf nokta matrisi ve hücrelerin nasıl doldurulacağı. Ardından seri boyunca açık bıraktığım borçların provası: Boole sadeleştirmesinin devre karşılığını kapı sayarak, d-yollu heap'in dallanma çarpanı takasını üç d değeriyle ve alt problemi kısıtlama tekniğini artan alt dizi üzerinden ödüyorum. Kapanışta kaynağından hesaplanmış bir aralıklı tekrar takvimi, mülakat günü protokolü ve serinin ödeyemediği borçların dürüst listesi var.",
+      "tags": [
+        "oz-degerlendirme",
+        "arali-tekrar",
+        "mulakat-gunu",
+        "dallanma-carpani",
+        "seri-kapanisi"
+      ],
+      "contentHash": "sha256:240efa8db1236fe970253bc5c207a461b071c26ebf994b09ac207daa14599927",
+      "path": "content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 13
     }
   ]
 }

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+  <text x="21" y="26" font-size="13" fill="var(--text-muted)">Kaynakta ölçülmüş en iyi aralar</text>
+
+  <rect x="21" y="38" width="677" height="30" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="35" y="58" font-size="13" fill="var(--text)">Hedef aralık</text>
+  <text x="214" y="58" font-size="13" fill="var(--text)">Ölçülen en iyi ara</text>
+  <text x="380" y="58" font-size="13" fill="var(--text)">Ara değerli tahmin</text>
+  <text x="546" y="58" font-size="13" fill="var(--text)">Aralığın oranı</text>
+
+  <rect x="21" y="68" width="677" height="26" fill="var(--surface)" stroke="var(--border)" />
+  <text x="35" y="86" font-size="13" fill="var(--text-muted)">7 gün</text>
+  <text x="214" y="86" font-size="13" fill="var(--text-muted)">1 gün</text>
+  <text x="380" y="86" font-size="13" fill="var(--text-muted)">3 gün</text>
+  <text x="546" y="86" font-size="13" fill="var(--text-muted)">%43</text>
+
+  <rect x="21" y="94" width="677" height="26" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="35" y="112" font-size="13" fill="var(--text)">35 gün</text>
+  <text x="214" y="112" font-size="13" fill="var(--text)">11 gün</text>
+  <text x="380" y="112" font-size="13" fill="var(--text)">8 gün</text>
+  <text x="546" y="112" font-size="13" fill="var(--text)">%23</text>
+
+  <rect x="21" y="120" width="677" height="26" fill="var(--surface)" stroke="var(--border)" />
+  <text x="35" y="138" font-size="13" fill="var(--text-muted)">70 gün</text>
+  <text x="214" y="138" font-size="13" fill="var(--text-muted)">21 gün</text>
+  <text x="380" y="138" font-size="13" fill="var(--text-muted)">12 gün</text>
+  <text x="546" y="138" font-size="13" fill="var(--text-muted)">%17</text>
+
+  <rect x="21" y="146" width="677" height="26" fill="var(--surface)" stroke="var(--border)" />
+  <text x="35" y="164" font-size="13" fill="var(--text-muted)">350 gün</text>
+  <text x="214" y="164" font-size="13" fill="var(--text-muted)">21 gün</text>
+  <text x="380" y="164" font-size="13" fill="var(--text-muted)">27 gün</text>
+  <text x="546" y="164" font-size="13" fill="var(--text-muted)">%8</text>
+
+  <text x="21" y="202" font-size="13" fill="var(--text-muted)">Mülakat 35 gün sonraysa</text>
+
+  <line x1="60" y1="226" x2="640" y2="226" stroke="var(--border)" stroke-width="1.5" />
+
+  <circle cx="60" cy="226" r="5" fill="var(--accent)" />
+  <circle cx="193" cy="226" r="5" fill="var(--accent)" />
+  <circle cx="391" cy="226" r="5" fill="var(--surface)" stroke="var(--cool)" stroke-width="1.5" />
+  <circle cx="557" cy="226" r="5" fill="var(--surface)" stroke="var(--cool)" stroke-width="1.5" />
+  <circle cx="640" cy="226" r="5" fill="var(--accent)" />
+
+  <text x="60" y="252" font-size="13" text-anchor="middle" fill="var(--text)">0 · ilk okuma</text>
+  <text x="391" y="252" font-size="13" text-anchor="middle" fill="var(--text-muted)">20 · ikinci tur</text>
+  <text x="640" y="252" font-size="13" text-anchor="middle" fill="var(--text)">35 · mülakat günü</text>
+
+  <text x="193" y="274" font-size="13" text-anchor="middle" fill="var(--text)">8 · ilk geri çağırma</text>
+  <text x="557" y="274" font-size="13" text-anchor="middle" fill="var(--text-muted)">30 · üçüncü tur</text>
+
+  <text x="21" y="308" font-size="13" fill="var(--text-faint)">Tablodaki dört satır ve ara değerli tahminler kaynaktan alınmıştır.</text>
+  <text x="21" y="328" font-size="13" fill="var(--text-faint)">Takvimin sekizinci günü tablodan gelir; içi boş daireler kendi genişletmemdir.</text>
+</svg>

@@ -6,12 +6,17 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-09-11** (Batch 11 run'ında Faz D'nin dayanağı **CMPE322** yeniden çekilip
-önceki kopyayla birebir aynı bulundu ve Faz E'ye geçilirken **CMPE343, CMPE240 ve CMPE230**
-sayfaları Batch 0'dan bu yana ilk kez yeniden okundu — §16). Kapsamı etkilemeyen
-resmî sayfaların son tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam kararını
-etkileyen sayfaları yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28 (kurulum
-görevi).
+Erişim tarihi: **2026-09-13** (ilk bakım run'ı: on resmî sayfa yeniden çekildi ve §1'deki
+alıntılarla birebir aynı bulundu; **beş açık kaynak borcunun beşi de kapandı** — §19). Bir önceki tam
+doğrulama **2026-09-12**'dir (Batch 13, serinin kapanış run'ı: **M.Sc. programı sayfası ve lisans
+müfredatı sayfası** son bir kez çekildi, §1'deki alıntılarla birebir aynı bulundu — §18). Kapsamı
+etkilemeyen resmî sayfaların son tam doğrulaması **2026-08-29**'dur (§5); üretim run'ları kapsam
+kararını etkileyen sayfaları yeniden doğrular ve bu defteri günceller. İlk doğrulama: 2026-08-28
+(kurulum görevi).
+
+> **Seri tamamlandı (2026-09-12).** Bu defter artık yeni makale için değil, **bakım için** okunur:
+> resmî süreç bilgisi değişebilir (SOZLESME §4), dolayısıyla §1'deki alıntılar periyodik olarak
+> yeniden doğrulanmalıdır.
 
 ## 1. Resmî gerçekler (doğrudan sayfadan)
 
@@ -28,13 +33,19 @@ URL: <https://cmpe.bogazici.edu.tr/graduate/ms-program/>
   referans mektupları.
 - **Scientific Preparation dersleri** (gerekli görülürse): **CmpE220** Discrete Computational
   Structures, **CmpE250** Data Structures, **CmpE322** Operating Systems — iki ardışık dönemde,
-  en az 2.50 ortalamayla tamamlanmalıdır.
+  en az 2.50 ortalamayla tamamlanmalıdır. **Ek (2026-09-12 doğrulaması, §18):** sayfa CmpE220'nin
+  yanına parantez içinde "(equivalent: Discrete Math)" yazıyor.
 
 ### Güncel lisans müfredatı (2025 revizyonu)
 URL: <https://cmpe.bogazici.edu.tr/undergraduate/curriculum/>
 
 Çekirdek zorunlu dersler (dönem sırasıyla): CMPE101, CMPE142/160, **CMPE220/230/250**,
 CMPE222/244, **CMPE300/322/343/346**, CMPE320/350/354/362, CMPE492 + seçmeliler.
+**Ek (2026-09-13 bakım doğrulaması, §19.1):** dördüncü dönemdeki **CMPE222'nin adı
+*Introduction to Database Systems*** ve önkoşulu CMPE250'dir; yani müfredatın veritabanı çekirdek
+dersi CMPE222'dir, CMPE321 değildir (CMPE321'in kendi ders sayfası vardır ama müfredat tablolarında
+hiç geçmez). Ayrıca sayfada "required core course" gibi birebir bir ibare yoktur; "çekirdek zorunlu"
+nitelemesi dönem tablolarında yer alma ile seçmeli satırlarının ayrı etiketlenmesinden çıkarılmıştır.
 Matematik: MATH101/102 (Calculus), MATH201 (Matrix Theory), MATH202 (Differential Equations);
 olasılık/istatistik **CMPE343** ile verilir.
 
@@ -2480,3 +2491,333 @@ türetilmiş ve makalelerde açıkça "kendi hesabımdır" diye işaretlenmişti
 9. Dış sıralama: N = 25.000 blok, M = 256 blok → 25.000 / 256 = 97,7 → **98 parça**; 255 yollu
    birleştirmede 98 ≤ 255 olduğu için **tek birleştirme geçişi**; toplam
    2 × 25.000 × (1 + 1) = **100.000** blok G/Ç, yani tabloyu bir kez okumanın **dört katı**.
+
+## 18. Batch 13 üretim run'ında doğrulanan kaynaklar (2026-09-12)
+
+Serinin kapanış run'ı. Makale 40 ve 41'in **resmî bir dersi yoktur**; dayanakları mülakatın kendi
+resmî tanımıdır ve seri onun üzerine kurulduğu için o tanım bu run'da son bir kez yeniden okundu.
+
+### 18.1 Resmî sayfalar — yeniden doğrulama
+
+**M.Sc. Program** (<https://cmpe.bogazici.edu.tr/graduate/ms-program/>, erişim 12 Eylül 2026).
+§1'deki bütün alıntılar sayfayla **birebir aynı**; kapsam kararını değiştiren fark yok. Birebir
+metinler:
+
+- "At least two faculty members conduct the scientific interview of the candidates who passed the
+  pre-evaluation phase."
+- "Each interview takes 10 or 15 minutes at the interviewer's office."
+- "The interview involves a discussion of the candidate's past academic record, research direction,
+  skillset, and technical knowledge."
+- "If they cannot be physically present for the interview, a teleconference may be requested by the
+  applicant by directly writing to the interviewer. The interviewer may or may not accept the
+  teleconference request."
+- "The Admission Committee evaluates each application based on several criteria, including the
+  interview performance, evaluations of the CmpE Faculty Members about the candidate, transcript(s),
+  and reference letters to reach a final decision."
+- Scientific Preparation: "CmpE220: Discrete Computational Structures (equivalent: Discrete Math)",
+  "CmpE250: Data Structures", "CmpE322: Operating Systems"; dersler "have to be completed in at most
+  two successive academic terms" ve "The student has to complete the Scientific Prep with a GPA of at
+  least 2.50."
+
+**Küçük ek (yeni kayıt):** sayfa CmpE220'nin yanına parantez içinde **"(equivalent: Discrete Math)"**
+yazıyor. Kapsamı değiştirmiyor, §1'e bilgi olarak eklenmeye değer.
+
+**Undergraduate Curriculum** (<https://cmpe.bogazici.edu.tr/undergraduate/curriculum/>, erişim
+12 Eylül 2026). Ders–dönem eşleşmesi §1'deki kayıtla birebir aynı bulundu: **üçüncü dönem** CMPE220
+Discrete Computational Structures, CMPE230 System Programming, CMPE250 Data Structures and
+Algorithms; **dördüncü dönem** CMPE244 Computer Organization; **beşinci dönem** CMPE300 Analysis of
+Algorithms, CMPE322 Operating Systems, CMPE343 Introduction to Probability and Statistics for
+Computer Engineers. Yedisi de **zorunlu çekirdek derstir**.
+
+**Kapsam notu — CMPE321.** Batch 12'de CMPE321 *Introduction to Database Systems*'in kendi ders
+sayfası bulunmuş ve önkoşulunun CMPE250 olduğu doğrulanmıştı. Bu run'da müfredat sayfası okununca
+**CMPE321'in 2025 müfredatının zorunlu çekirdek listesinde yer almadığı** görüldü. Bu bir düzeltme
+değildir: makale 39 CMPE321'i hiçbir yerde zorunlu ders diye sunmuyor, dayanağını ders sayfası ve
+önkoşul zinciri üzerinden kuruyor. Kayda geçirilmesinin nedeni, ileride birinin "çekirdek ders"
+çıkarımı yapmasını önlemektir.
+
+### 18.2 Öğrenme bilimi kaynakları — birincil metinden okundu
+
+Makale 41'in aralıklı tekrar ve öz-değerlendirme bölümleri bu iki metne dayanır. İkisi de PDF olarak
+indirildi ve tam metinden okundu; gövdedeki bütün yüzdeler ve gün sayıları buradan birebir alınmıştır.
+
+**Roediger, H. L. & Karpicke, J. D. (2006). *Test-Enhanced Learning: Taking Memory Tests Improves
+Long-Term Retention*. Psychological Science, 17(3), 249–255.** Erişilebilen ayna:
+<https://colinallen.dnsalias.org/Readings/2006_Roediger_Karpicke_PsychSci.pdf> (7 sayfa).
+Alınan bulgular:
+
+- Deney 1 (denek içi, 40 kişi/gecikme): son test **5 dakika** sonraysa tekrar çalışma test etmeyi
+  geçiyor — "restudying produced better recall than testing (81% vs. 75%)", t(39) = 3,22, d = 0,52.
+  **2 gün** sonra yön tersine dönüyor: "the initially tested group recalled more than the
+  additional-study group (68% vs. 54%)", t(39) = 6,97, d = 0,95. **1 hafta** sonra "the tested group
+  recalled 56% of the material, whereas the restudy group recalled only 42%", t(39) = 6,41, d = 0,83.
+- Deney 2 (denekler arası, 180 kişi; SSSS / SSST / STTT): bir hafta sonra "students in the
+  repeated-testing condition recalled much more after a week than did students in the repeated-study
+  condition (61% vs. 40%), even though students in the former condition read the passage only 3,4
+  times and those in the latter condition read it 14,2 times."
+- Orantılı unutma: SSSS **%52**, SSST **%28**, STTT **%14**.
+- **Akıcılık yanılsamasının birincil kanıtı:** "subjects in the SSSS condition were more confident
+  that they would remember the passage in 1 week than were subjects in the SSST or STTT condition",
+  F(2, 177) = 6,09 — yani en çok okuyan grup en yüksek güveni verdi ve en az hatırladı.
+- Malzeme: TOEFL tarzı iki düzyazı parçası ("The Sun", "Sea Otters"), 256 ve 275 kelime, 30 fikir
+  birimine bölünerek puanlandı.
+
+**Cepeda, N. J., Vul, E., Rohrer, D., Wixted, J. T. & Pashler, H. (2008). *Spacing Effects in
+Learning: A Temporal Ridgeline of Optimal Retention*. Psychological Science, 19(11), 1095–1102.**
+Erişilebilen ayna: <https://www.yorku.ca/ncepeda/publications/CVRWP2008.pdf> (8 sayfa).
+Alınan bulgular:
+
+- Tasarım: "more than 1,350 individuals were taught a set of facts and—after a gap of up to 3.5
+  months—given a review. A final test was administered at a further delay of up to 1 year."
+- Ana bulgu: "At any given test delay, an increase in the interstudy gap at first increased, and then
+  gradually reduced, final test performance. The optimal gap increased as test delay increased.
+  However, when measured as a proportion of test delay, the optimal gap declined from about 20 to 40%
+  of a 1-week test delay to about 5 to 10% of a 1-year test delay."
+- Tablo değerleri (makale 41'in Şekil 2'sinde birebir kullanıldı): "For the RIs of 7, 35, 70, and 350
+  days, the optimal gaps (of those included in the study) were **1, 11, 21, and 21 days**,
+  respectively, for recall"; kübik eğri uydurmayla elde edilen tahminler "approximately **3, 8, 12,
+  and 27 days** (corresponding to **43%, 23%, 17%, and 8%** of the RIs, respectively)".
+- Etki büyüklüğü: "The 7-, 35-, 70-, and 350-day RIs yielded **10, 59, 111, and 77%** improvement in
+  recall for the optimal gap, as compared with the zero-day gap." Genel olarak "the optimal gap, as
+  compared with a zero-day gap, provided a 64% increase in final recall, d = 1,1".
+- **Kaynağın vermediği şey:** 35 günlük takvimin ikinci ve üçüncü turu. Çalışmada **iki** çalışma
+  olayı vardır (ilk çalışma + tek tekrar). Makale 41 bunu hem gövdede hem şekilde açıkça
+  "kendi genişletmem" diye işaretler ve şekilde içi boş dairelerle ayırır.
+- **Kaynağın sınırı, makalede söylendi:** malzeme kısa olgulardır, bir sistem mekanizması değil;
+  ayrıca çalışma aralıklı **tekrarı** ölçer, aralıklı **geri çağırmayı** değil. Makale ikisini
+  birleştiren öneriyi kendi çıkarımı olarak sunar (aralığı kaynaktan al, aranın içini hatırlama
+  testiyle doldur).
+
+**Fiorella, L. & Mayer, R. E. (2013). *The relative benefits of learning by teaching and teaching
+expectancy*. Contemporary Educational Psychology, 38(4), 281–288, DOI 10.1016/j.cedpsych.2013.06.001.**
+Künye Crossref'ten doğrulandı; yayıncı sayfası 403 döndüğü için **tam metin bu run'da okunmadı**.
+Makale 40 bu kaynağa yalnızca serinin ilk makalesinde zaten kurulmuş düzeyde atıf yapar (sesli prova
+disiplininin dayanağı) ve **hiçbir sayı bu kaynaktan alınmamıştır**; makale bunu kaynakçasında söyler.
+
+### 18.3 Erişim notları (ileride zaman kaybetmemek için)
+
+- `escholarship.org` içerik PDF adresleri **sıfır baytlık** dosya döndürdü.
+- `laplab.ucsd.edu` sertifikası süresi dolmuş (`certificate has expired`).
+- `pubmed.ncbi.nlm.nih.gov` WebFetch'e yalnızca çerez onay metnini gösteriyor.
+- `sciencedirect.com` **403** döndü.
+- Çalışan yollar: Cepeda 2008 için `yorku.ca/ncepeda/publications/CVRWP2008.pdf`, Roediger & Karpicke
+  2006 için `colinallen.dnsalias.org/Readings/2006_Roediger_Karpicke_PsychSci.pdf`, künye doğrulaması
+  için `api.crossref.org`.
+
+### 18.4 Bu run'da yazarın kendi hesapladığı sayılar
+
+Üçü de makale 41'de "benim kendi hesabımdır" diye işaretlenmiştir ve bağımsız bir betikle yeniden
+türetilmiştir.
+
+1. **Kapı sayısı.** `(A ∧ B) ∨ (A ∧ C)` iki girişli kapılarla 2 VE + 1 VEYA = **3 kapı**;
+   `A ∧ (B ∨ C)` 1 VEYA + 1 VE = **2 kapı**. Geniş hâl: n terimli ayrık birleşim **n + (n − 1) =
+   2n − 1 kapı**, sadeleştirilmişi **(n − 1) + 1 = n kapı**. n = 8 için **15 → 8 kapı**. Derinlik:
+   sol taraf 1 + ⌈log₂ 8⌉ = 4, sağ taraf ⌈log₂ 8⌉ + 1 = 4 — **değişmiyor**.
+2. **d-yollu heap, n = 10⁶.** Yükseklik `log_d n`: d = 2 → 19,93 ≈ **20**; d = 4 → 9,97 ≈ **10**;
+   d = 16 → 4,98 ≈ **5**. Aşağı süzülme `(d − 1) · log_d n`: **20**, **29,9 ≈ 30**, **74,7 ≈ 75**.
+   Yukarı yönlü işlem yükseklikle aynıdır: 20, 10, 5.
+3. **Cepeda oranlarının teyidi.** 3/7 = %42,9; 8/35 = %22,9; 12/70 = %17,1; 27/350 = %7,7 — kaynağın
+   verdiği %43, %23, %17, %8 yuvarlamalarıyla tutarlı.
+
+## 19. Bakım run'ında doğrulanan kaynaklar (2026-09-12/13)
+
+Serinin **ilk bakım run'ı**; yeni makale üretilmedi. `TRIGGER.md`'nin bakım maddeleri sırayla
+koşuldu: resmî sayfaların yeniden doğrulanması, açık borçların yeniden denenmesi, düzeltme ve
+doğrulama kapıları. **Beş açık kaynak borcunun beşi de bu run'da kapandı.**
+
+### 19.1 Resmî sayfalar — yeniden doğrulama (değişiklik yok)
+
+On resmî sayfa çekildi (hepsi HTTP 200): M.Sc. programı, lisans müfredatı ve CMPE220/230/244/250/
+300/321/322/343 ders sayfaları. **§1'deki bütün alıntılar sayfalarla birebir aynı bulundu**; mülakat
+formatını, Scientific Preparation üçlüsünü ya da kapsam kararını değiştiren hiçbir fark yok. Ayrıca
+doğrulanan sayılar ve koşullar: en az iki öğretim üyesi, 10 veya 15 dakika, en fazla iki ardışık
+akademik dönem, en az 2.50 ortalama, CMPE220 önkoşulsuz, CMPE250 önkoşulu CMPE160,
+CMPE300/CMPE321/CMPE322 önkoşulu CMPE250. CMPE300'ün "complexity analysis", "lower bound theory" ve
+"master theorem" ifadelerinin **Course Learning Outcomes** bölümünde, katalog tanımında değil olduğu
+da yeniden teyit edildi (§10 ile tutarlı).
+
+**Kayda değer yeni ayrıntılar (hiçbiri kapsam değişikliği değildir):**
+
+- **CMPE222 Introduction to Database Systems** müfredatın **dördüncü dönem** satırında, önkoşulu
+  CMPE250, 3 kredi / 6 ECTS. Batch 13'te "CMPE321 zorunlu çekirdek listesinde yok" diye kayda
+  geçmişti; bu run **çekirdeğin veritabanı dersinin CMPE222 olduğunu** gösteriyor. `CMPE321` dizesi
+  müfredat sayfasının ne metninde ne HTML kaynağında bulunuyor. **Makale 39 düzeltme gerektirmiyor:**
+  CMPE321'i hiçbir yerde zorunlu ders diye sunmuyor, dayanağını ders sayfası ve önkoşul zinciri
+  üzerinden kuruyor.
+- **CMPE244'ün önkoşulu ders sayfasında** "CMPE142 or EE240 or EE 243", müfredat tablosunda yalnızca
+  CMPE142.
+- **CMPE230'un adı** müfredatta "System Programming", ders sayfasında "Systems Programming".
+- **Sitenin kendi içinde kredi tutarsızlığı var:** CMPE230/CMPE250/CMPE322 müfredat tablosunda 3
+  kredi, ders sayfalarında 4 kredi.
+- ms-program sayfasının Scientific Prep bölümünde kayıtta olmayan iki cümle: "Courses have to be
+  taken whenever they are offered, i.e., prerequisite condition is not applied." ve "Students cannot
+  register for Main Program courses during Scientific Prep."
+- Müfredat sayfasında "required core course" / "core curriculum" gibi **birebir bir ibare geçmiyor**;
+  çekirdek zorunluluk, dönem tablolarında yer alma ile seçmeli satırlarının ayrı etiketlenmesinden
+  okunuyor. Bu, §1'deki "çekirdek zorunlu dersler" ifadesinin bir **çıkarım** olduğunu kayda geçirir.
+
+### 19.2 Kapanan borç 1 — Coffman, Elphick & Shoshani (1971)
+
+**Tam metne erişildi.** ACM DL her iki DOI için Cloudflare duvarı verdiği için metin bir üniversite
+ders kopyasından okundu: <https://uobdv.github.io/Design-Verification/Supplementary/System_Deadlocks-Four_necessary_and_sufficient_conditions_for_deadlock.pdf>
+(895.576 bayt, 12 sayfa, ACM Computing Surveys cilt 3 sayı 2, Haziran 1971, s. 67–78). Dört koşul
+**2. bölüm "Characterizations of Deadlocks", basılı s. 70**'te, birebir:
+
+1. "Tasks claim exclusive control of the resources they require (\"mutual exclusion\" condition)."
+2. "Tasks hold resources already allocated to them while waiting for additional resources (\"wait for\" condition)."
+3. "Resources cannot be forcibly removed from the tasks holding them until the resources are used to completion (\"no preemption\" condition)."
+4. "A circular chain of tasks exists, such that each task holds one or more resources that are being requested by the next task in the chain (\"circular wait\" condition)."
+
+Hemen ardından: "The existence of these conditions effectively defines a state of deadlock." ve bir
+paragraf sonra "In terms of these necessary conditions…".
+
+**İki bulgu kayda geçirilmelidir:**
+
+- **İkinci koşulun özgün adı "wait for"dur.** Normalize edilmiş tam metinde (bütün boşluk ve tireler
+  silinerek) `holdandwait` **0 kez** geçiyor; "hold-and-wait" adı OSTEP'in ve güncel ders
+  kitaplarının adlandırmasıdır. Tırnaklı `"wait for"` iki yerde (koşul listesi ve trafik örneği),
+  tireli `"wait-for"` bir yerde (Havender yaklaşımı) geçiyor.
+- **"necessary and sufficient" niteliği dört koşul için kullanılmıyor**, istek grafındaki çevrim için
+  kullanılıyor: "a circuit (directed loop) in the request graph is a necessary and sufficient
+  condition for a deadlock, assuming the first three conditions given above are operative."
+
+Makale 31 bu run'da güncellendi: Coffman kaynakçaya birinci elden eklendi, ad ve nitelik farkı hem
+kaynakçada hem gövdede söylendi, "özgün çalışmaya erişilemedi" cümlesi kaldırıldı.
+
+### 19.3 Kapanan borç 2 — Haerder & Reuter (1983)
+
+**Tam metne erişildi.** Kaynak: CMU 15-712 (Bahar 2005) ders arşivi,
+<http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15712-s05/www/readings/haerder83.pdf>
+(2.453.642 bayt, 31 sayfa). Kırılma noktası ders sayfasının `Readings` listesiydi (`/papers/`
+dizini 404). Dört özellik basılı **s. 289–290**'da, ACID kısaltması **s. 290**'da kuruluyor:
+
+> "These four properties, atomicity, consistency, isolation, and durability (ACID), describe the
+> major highlights of the transaction paradigm, which has influenced many aspects of development in
+> database systems."
+
+Dört tanım da birebir alındı; "Consistency … This condition is necessary for the fourth property,
+durability." ve "The techniques that achieve isolation are known as synchronization." cümleleri
+kayda değer. Makale 39 bu run'da güncellendi: "Erişilemeyen kaynak" maddesi normal bir kaynakça
+maddesine çevrildi, gövdedeki "tam metnine erişilemedi" cümlesi düzeltildi. **Gövdedeki dört tanımın
+biçimi değişmedi** — onlar hâlâ 1981 tarihli kurucu metin ile 1995 tarihli eleştiri çalışmasından
+geliyor ve makale bunu söylüyor.
+
+### 19.4 Kapanan borç 3 ve 4 — CLRS 4. baskı içindekiler ve döngü değişmezinin üç adı
+
+**Kaynak: MIT Press'in kendi içindekiler PDF'i.** Kitap sayfası curl ve WebFetch'e 403 veriyor;
+içindekiler bağlantısı tarayıcı panelinden alındı:
+<https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/4e_toc.pdf>
+(143.068 bayt). Ana oturumda indirilip `pdftotext -layout` ile çevrildi.
+
+- **1. bölüm: "The Role of Algorithms in Computing"** (s. 5) — 1.1 Algorithms, 1.2 Algorithms as a
+  technology. **18. bölüm: "B-Trees"** (s. 497) — 18.1 Definition of B-trees, 18.2 Basic operations
+  on B-trees, 18.3 Deleting a key from a B-tree. İki borç da kapandı.
+- Kayıttaki **on dört bölüm adının hepsi doğru** çıktı; hiçbiri yanlış hatırlanmamış.
+- **Alt bölüm başlıkları artık bütün ilgili bölümler için elde.** Örnekler: 2 Getting Started (2.1
+  Insertion sort, 2.2 Analyzing algorithms, 2.3 Designing algorithms); 5 Probabilistic Analysis and
+  Randomized Algorithms (5.1 The hiring problem, 5.2 Indicator random variables, 5.3 Randomized
+  algorithms, 5.4 Probabilistic analysis and further uses of indicator random variables); 9 Medians
+  and Order Statistics (9.1 Minimum and maximum, 9.2 Selection in expected linear time, 9.3
+  Selection in worst-case linear time); 11 Hash Tables (11.1–11.5); 12 Binary Search Trees
+  (12.1–12.3); 13 Red-Black Trees (13.1–13.4).
+- **3.1'in Yunan harfli doğru biçimi** "O-notation, Ω-notation, and Θ-notation"dur; `pdftotext`
+  Yunan harflerini düşürüyor.
+- Kısım adları: I Foundations, II Sorting and Order Statistics, III Data Structures, IV Advanced
+  Design and Analysis Techniques, V Advanced Data Structures, VI Graph Algorithms, VII Selected
+  Topics, VIII Appendix: Mathematical Background.
+- **Döngü değişmezinin üç adı birincil kaynakta doğrulandı** (kitabın kendi s. 20'si): "When you're
+  using a loop invariant, you need to show three things: **Initialization** … **Maintenance** …
+  **Termination** …". Makale 19 bu adları **zaten CLRS'in ikinci bölümüne atfediyordu** (gövde satır
+  55 ve kaynakça); borç atfın doğrulanamamasıydı ve kapandı. **Makale 19 ve 40'ta değişiklik
+  gerekmedi.**
+
+Makale 36'nın kaynakçasındaki "alt bölüm başlıkları doğrulanamadığı için atıf bölüm düzeyindedir"
+cümlesi bu run'da düzeltildi ve 5. ile 9. bölümün alt bölüm adları eklendi.
+
+**Kapanmayan kanallar:** LoC kaydında (LCCN 2021037260) MARC 505 alanı yok; HathiTrust 403,
+Stanford SearchWorks bot doğrulaması, Princeton kataloğunda kayıt yok, OpenLibrary'de
+`table_of_contents` alanı yok, Google Books API 429.
+
+### 19.5 Kapanan borç 5 — Patterson & Hennessy alt bölüm adları (ve bir ad düzeltmesi)
+
+COD RISC-V Edition 2. baskının (ISBN 978-0-12-820331-6) alt bölüm başlıkları kitabın kendi
+"Contents" sayfalarından (Google Books önizleme, `SearchWithinVolume`) sayfa numaralarıyla alındı;
+1–6. bölümler eksiksiz.
+
+**Ad düzeltmesi — ana oturumda bağımsız doğrulandı.** Kitabın kendi içindekileri ve **K10plus MARC
+505 alanı** (ISBN 9780128203316) 4. bölümü **"The Processor"** olarak veriyor:
+"Computer Abstractions and Technology -- Instructions: Language of the Computer -- Arithmetic for
+Computers -- **The Processor** -- Large and Fast: Exploiting Memory Hierarchy -- …".
+Elsevier'in satış sayfası ise bugün hâlâ "4. The RISC-V Processor" diyor (ana oturumda çekildi:
+sayfada "RISC-V Processor" 2 kez, "The Processor" 0 kez). Makale 37 adı satış sayfasından almıştı ve
+bunu kaynakçasında söylüyordu; bu run'da **kitabın kendi adı esas alınacak biçimde** düzeltildi ve
+iki kaynak arasındaki fark kaynakçaya yazıldı. Kitap TOC'unda iki dizgi hatası da görüldü: 4.5
+"Multicyle Implementation" ve 5.11 "Redundant Arrays of Inexpensive Disks".
+
+### 19.6 MIT 6.004 materyalleri — erişilebilir
+
+Eski run'ların başarısızlık nedeni bulundu: **Bahar 2017 sürümünde slaytlar PDF değil**, sayfa içi
+görsel + düz metin anlatımdır. Materyaller `/<birim>/` alt sayfalarından erişiliyor; ana oturumda
+<https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c14/> açıldı ve **14
+Caches and the Memory Hierarchy** biriminin içeriği doğrulandı: 14.1 Annotated Slides, 14.2 Topic
+Videos (Memory Technologies, SRAM, DRAM, Non-volatile Storage, The Locality Principle, Caches,
+Direct-mapped Caches, Block Size; Cache Conflicts, Associative Caches, Write Strategies, Worked
+Examples), 14.3 Worksheet. Makale 37'nin birim adları doğru; makale "ders materyallerinin içeriği
+okunmamıştır" diyor ve bu **hâlâ doğru** olduğu için gövdede değişiklik yapılmadı.
+
+### 19.7 Bot duvarı taraması — beş atıf da geçerli
+
+Makale gövdelerinde atıf verilen 62 adres HTTP ile tarandı. **57'si 200**, beşi curl'e 403 verdi:
+`dl.acm.org/doi/10.1145/289.291`, `doi.org/10.1111/j.1467-9280.2006.01693.x`,
+`journals.sagepub.com/doi/10.1177/1529100612453266`,
+`mitpress.mit.edu/9780262046305/introduction-to-algorithms/`,
+`sciencedirect.com/science/article/abs/pii/S0361476X13000209`. **Beşi de ölü değil**: gerçek
+tarayıcıda doğru esere açılıyor (dl.acm.org'da Cloudflare managed challenge; görünen metni yalnızca
+"Just a moment..." ve "Enable JavaScript and cookies to continue") ve dört DOI için
+`api.crossref.org` künyeyi doğruluyor. Tek yönlendirme `doi.org → journals.sagepub.com`, yani normal
+DOI çözümlemesi. **Düzeltme gerekmedi.**
+
+Bir adres aralıklı başarısızlık verdi: `www.os-book.com` iki A kaydı döndürüyor (128.36.0.108 ve
+205.178.189.129) ve **ikincisi bağlantı kabul etmiyor**; DNS hangi kaydı önce verirse istek ona
+gidiyor. Adres ölü değil, barındırıcının bayat bir A kaydı var.
+
+### 19.8 Bu run'da düzeltilen render kusurları ve ölçüm yöntemi
+
+**Yöntem notu (ileride tekrar kullanılmalı):** repo SVG denetleyicisi ve `svgoverlap.py` metin
+genişliğini `karakter × font × 0,55` ile **tahmin eder** ve bu tahmin Inter için fazla geniştir —
+`karar-agaci-alt-sinir.svg`'de 291,72 birimlik bir satırı 408 birim sayıp iki yanlış çakışma
+bildirdi. Bu run'da iki ölçüm eklendi ve ikisi de gerçek render üzerinden çalışıyor:
+`artifacts/b14-bakim/svg-geometry.mjs` her makale sayfasındaki her `<text>` için `getBBox()` alır
+(164 SVG), `artifacts/b14-bakim/ink-extents.mjs` ise canvas `actualBoundingBoxDescent` ile **gerçek
+mürekkep sınırını** ölçer. `getBBox()` em-kutusunu verdiği için inişi 0,55 birim abartır; 13px
+Inter'de Türkçe metnin gerçek iniş derinliği **3,00 birimdir**.
+
+Bulunan ve düzeltilen üç kırpma (üçü de görsel olarak önce/sonra karşılaştırıldı):
+
+| Diyagram | viewBox | Taban çizgisi | Mürekkep altı | Sonuç |
+|---|---|---|---|---|
+| `cpu-zamanlama…/zamanlama-gantt.svg` | 300 → **304** | 298 | 301 | 1,00 birim kırpılıyordu |
+| `veritabanlari…/erisim-yolu-maliyeti.svg` | 404 → **408** | 402 | 405 | 1,00 birim kırpılıyordu |
+| `cpu-zamanlama…/mlfq-kurallar.svg` | 285 → **288** | 282 | 285 | payı tam 0,00 birimdi |
+
+Düzeltmeden sonra üç diyagramın da alt payı 3,00 mürekkep birimine çıktı ve **41 sayfanın 164
+SVG'sinde negatif pay kalmadı**. Serinin geri kalanında en küçük paylar 1,00 (`dort-kosul.svg`,
+`onbellek-eslemesi.svg`) ve 2,00 (`karar-agaci-alt-sinir.svg`, `sinirli-tampon.svg`) birimdir.
+
+**İkinci render kusuru sınıfı:** üç makalede "Sesli anlat" kutusu **iki ayrı blockquote'a
+bölünüyordu**, çünkü kutu ile "İyi bir cevabın omurgası" arasında `>` yerine boş satır vardı.
+Seride 75 kutu doğru biçimde bağlıydı, bu üçü (makale 37, 38, 39) değildi. **İçerik denetleyicisi
+bunu yakalamaz**: bölünmüş kutuyu 1 kutu sayar ve 1–3 bandına takılmaz. Gerçek render'da ölçüldü
+(`artifacts/b14-bakim/blockquote-check.mjs`) ve düzeltmeden sonra üçünde de kutu tekrar tek parça.
+
+### 19.9 Bir ajan bulgusunun çürütülmesi (kayda geçirilmelidir)
+
+Editoryal tarama, makale 26'nın kaynakçasındaki Silberschatz alt bölüm adlarının yanlış olduğunu
+bildirdi (1.4'ün "Operating-System Operations", 1.6'nın "Security and Protection" olduğunu iddia
+etti) ve **bağımsız teyit ajanı da bunu doğruladı**. Ana oturum yayıncının kendi içindekiler PDF'ini
+(<https://www.os-book.com/OS10/toc-dir/toc.pdf>) indirince iddia çürüdü: **onuncu baskıda** 1.4
+"Operating-System Structure" (s. 21), 1.5 "Resource Management" (s. 27), 1.6 "Protection and
+Security" (s. 33), 2.1 "Operating-System Services" (s. 55), 2.3 "System Calls" (s. 62), 2.8
+"Operating-System Structure" (s. 81). Makale 26 onuncu baskıya atıf yapıyor ve **yedi alt bölüm adının
+hepsi doğrudur**. Ajanın kaynağı başka bir baskıydı. **Ders: teyit ajanı da baskı karıştırabilir;
+baskıya bağlı bir ad iddiası ancak o baskının kendi belgesiyle kapatılır.**

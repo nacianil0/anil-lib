@@ -12,7 +12,7 @@ tags:
   - dogruluk-tablosu
   - niceleyici
   - cikarim-kurallari
-content_hash: sha256:d1bbccc0807125affbf3c1adcc6cb89b2f8442f23d944c70425306ea1201c77c
+content_hash: sha256:69d364cb5b16fdea59179c61aec7a73b3056bfa7c5c69efcd1282944aeb300a4
 classification_version: 1
 classification_batch: 0
 ---
@@ -71,9 +71,9 @@ Mülakatta en sık yapılan mantık hatası, koşullu bir önermeyi yanlış yö
 - **Ters (inverse)**: ¬p → ¬q
 - **Karşıt ters (contrapositive)**: ¬q → ¬p
 
-Şekil 1 dördünü bir kare üzerinde gösteriyor: çapraz duran çiftler birbirine denktir, yan yana duranlar değildir.
+Şekil 1 dördünü bir kare üzerinde gösteriyor: aynı satırda duran çiftler birbirine denktir, alt alta duranlar değildir.
 
-![Koşullu önermenin dört akrabası bir kare üzerinde: sol üstte koşullu, sağ üstte karşıt, sol altta ters, sağ altta karşıt ters; çapraz çiftler denk olarak işaretli, yan yana çiftler denk değil olarak işaretli](assets/kosullu-onermenin-akrabalari.svg "Şekil 1 — Koşullunun dört akrabası: çapraz olanlar denktir")
+![Koşullu önermenin dört akrabası bir kare üzerinde: sol üstte koşullu, sağ üstte karşıt ters, sol altta karşıt, sağ altta ters; aynı satırdaki çiftler denk olarak işaretli, alt alta duran çiftler denk değil olarak işaretli](assets/kosullu-onermenin-akrabalari.svg "Şekil 1 — Koşullunun dört akrabası: aynı satırdakiler denktir")
 
 Denkliği doğruluk tablosuyla görelim. p → q ile ¬q → ¬p aynı sütunu üretir:
 
@@ -102,7 +102,7 @@ Bir bileşik önerme, bileşenlerinin bütün doğruluk değerleri için doğruy
 
 **De Morgan kuralları:** ¬(p ∧ q) ≡ ¬p ∨ ¬q ve ¬(p ∨ q) ≡ ¬p ∧ ¬q. Değilleme bir bağlacın içine girerken bağlacı çevirir.
 
-Üçüncüsünü türetelim, çünkü türetmek ezberden iyidir. p → q ≡ ¬p ∨ q olduğunu biliyoruz. O hâlde ¬(p → q) ≡ ¬(¬p ∨ q). De Morgan'ı uygula: ≡ ¬(¬p) ∧ ¬q. Çift değillemeyi sadeleştir: ≡ p ∧ ¬q. Üç satırda vardık.
+İkincisini türetelim, çünkü türetmek ezberden iyidir. p → q ≡ ¬p ∨ q olduğunu biliyoruz. O hâlde ¬(p → q) ≡ ¬(¬p ∨ q). De Morgan'ı uygula: ≡ ¬(¬p) ∧ ¬q. Çift değillemeyi sadeleştir: ≡ p ∧ ¬q. Üç satırda vardık.
 
 ## Çıkarım kuralları: geçerli ile geçerli olmayan
 
@@ -162,13 +162,13 @@ Son olarak, bu makalenin bir sonraki makaleye devrettiği en önemli araç: nice
 
 ¬∃x P(x) ≡ ∀x ¬P(x)
 
-Sözle: "hepsi öyle değil" demek, "öyle olmayan en az biri var" demektir; "hiçbiri öyle değil" demek ise "hepsi öyle değildir" demektir. Bu iki denklik, De Morgan kurallarının niceleyicili hâlidir ve karşı örnekle çürütmenin bütün gerekçesini verir: evrensel bir iddiayı yıkmak için tek bir tanık bulman yeterlidir, çünkü değillemesi varlıksal bir iddiadır.
+Sözle: "hepsi öyle değil" demek, "öyle olmayan en az biri var" demektir; "hiçbiri öyle değil" demek ise "her biri için öyle değildir" demektir. Bu iki denklik, De Morgan kurallarının niceleyicili hâlidir ve karşı örnekle çürütmenin bütün gerekçesini verir: evrensel bir iddiayı yıkmak için tek bir tanık bulman yeterlidir, çünkü değillemesi varlıksal bir iddiadır.
 
 > **Sesli anlat:** "∀x ∃y P(x, y) ile ∃y ∀x P(x, y) arasındaki fark nedir?" sorusunu doksan saniyede, kendi seçtiğin bir örnekle anlat ve hangisinin diğerini gerektirdiğini söyle.
 >
 > İyi bir cevabın omurgası: "Birincisinde y, x seçildikten sonra seçilebilir; ikincisinde tek bir y bütün x'ler için çalışmak zorundadır. Bu yüzden ikincisi birincisinden daha güçlü bir iddiadır ve onu gerektirir; tersi doğru değildir. Ayrıca hangi evren üzerinde konuştuğumuzu söylemem gerekir, çünkü doğruluk evrene bağlıdır."
 
-## Bu makalenin mülakattaki karşılığı
+## Mülakatta nasıl görünür
 
 Şimdiye kadar öğrendiklerini tek bir alışkanlığa indirgeyebilirsin: bir iddia söylerken hipotezini, evrenini ve niceleyicisini de söyle.
 

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 424" role="img" aria-label="Dört satırlı dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı dikkat algoritması, üç uygulama, iki çip. Sütunlar uygulama, çip, kullanım oranı ve ne değişti. Birinci satır birinci uygulama, A100, yüzde 25 ile 40 arası, ara matris kart belleğine hiç yazılmıyor. İkinci satır ikinci uygulama, A100, yüzde 50 ile 73 arası, çarpım dışı işlem azaldı ve iş dizi boyunca da bölündü. Üçüncü satır ayrı bir renkle vurguludur: aynı ikinci uygulama, H100, yüzde 35, ne değişti sütununda hiçbir şey yazar, yalnızca çip değişmiştir. Dördüncü satır vurguludur: üçüncü uygulama, H100, yüzde 75, eşzamansızlık ile iç içe softmax ve 8 bit. Birinci kutunun başlığı kıyas noktaları; içinde iyi yazılmış bir matris çarpımının aynı çipte yüzde 80 ile 90 arasına çıktığı ve ikinci uygulamanın uçtan uca 225 TFLOP bölü saniye verdiği, 225 bölü 312'nin yüzde 72 ettiği yazılıdır. İkinci kutunun başlığı duyarlık da bir çekirdek kararıdır; içinde üçüncü uygulamanın 8 bitte saniyede 1,2 katrilyon işleme yaklaştığı ve bloklara ayrılmış ölçeklemeyle düz 8 bitten 2,6 kat düşük sayısal hata verdiği yazılıdır. En altta bir kayıt: oranlar Dao ile Shah ve arkadaşlarından, 225 bölü 312 çevrimi bizim hesabımızdır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı dikkat algoritması, üç uygulama, iki çip</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">uygulama</text>
+  <text x="150" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">çip</text>
+  <text x="230" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kullanım oranı</text>
+  <text x="370" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">ne değişti</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">birinci</text>
+  <text x="150" y="100" font-size="13" fill="var(--text)">A100</text>
+  <text x="230" y="100" font-size="13" fill="var(--text)">%25–40</text>
+  <text x="370" y="100" font-size="13" fill="var(--text)">ara matris kart belleğine hiç yazılmıyor</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">ikinci</text>
+  <text x="150" y="126" font-size="13" fill="var(--text)">A100</text>
+  <text x="230" y="126" font-size="13" fill="var(--text)">%50–73</text>
+  <text x="370" y="126" font-size="13" fill="var(--text)">çarpım dışı işlem azaldı, iş dizi boyunca</text>
+  <text x="370" y="144" font-size="13" fill="var(--text)">da bölündü</text>
+
+  <text x="24" y="170" font-size="13" font-weight="bold" fill="var(--cool)">ikinci</text>
+  <text x="150" y="170" font-size="13" font-weight="bold" fill="var(--cool)">H100</text>
+  <text x="230" y="170" font-size="13" font-weight="bold" fill="var(--cool)">%35</text>
+  <text x="370" y="170" font-size="13" font-weight="bold" fill="var(--cool)">hiçbir şey — yalnızca çip değişti</text>
+
+  <text x="24" y="196" font-size="13" font-weight="bold" fill="var(--accent)">üçüncü</text>
+  <text x="150" y="196" font-size="13" font-weight="bold" fill="var(--accent)">H100</text>
+  <text x="230" y="196" font-size="13" font-weight="bold" fill="var(--accent)">%75</text>
+  <text x="370" y="196" font-size="13" font-weight="bold" fill="var(--accent)">eşzamansızlık, iç içe softmax, 8 bit</text>
+
+  <line x1="20" y1="212" x2="700" y2="212" stroke="var(--border)" />
+
+  <rect x="20" y="224" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="248" font-size="13" font-weight="bold" fill="var(--text)">Kıyas noktaları</text>
+  <text x="34" y="270" font-size="13" fill="var(--text)">İyi yazılmış bir matris çarpımı aynı çipte %80–90'a çıkar.</text>
+  <text x="34" y="290" font-size="13" fill="var(--text)">İkinci uygulama uçtan uca 225 TFLOP/s verdi: 225 ÷ 312 = %72.</text>
+
+  <rect x="20" y="312" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="336" font-size="13" font-weight="bold" fill="var(--text)">Duyarlık da bir çekirdek kararıdır</text>
+  <text x="34" y="358" font-size="13" fill="var(--text-muted)">Üçüncü uygulama 8 bitte saniyede 1,2 katrilyon işleme yaklaşıyor ve bloklara</text>
+  <text x="34" y="378" font-size="13" fill="var(--text-muted)">ayrılmış ölçeklemeyle düz 8 bitten 2,6 kat düşük sayısal hata veriyor.</text>
+
+  <text x="20" y="408" font-size="13" fill="var(--text-faint)">Oranlar Dao ile Shah ve arkadaşlarından; 225 ÷ 312 çevrimi bizim hesabımızdır.</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" role="img" aria-label="Dört satırlı beş sütunlu bir tablo ve altında bir kutu. Üstte başlık: bir modeli güncel tutmanın dört yolu. Sütunlar yol, neye dokunur, maliyeti, neyi bozar ve ne zaman doğru seçenektir. Birinci satır baştan eğitmek: bütün ağırlıklara dokunur, haftalar ve binlerce kart maliyeti vardır, hiçbir şeyi bozmaz, karışım gerçekten değiştiğinde doğrudur. İkinci satır eğitmeye devam etmek: bütün ağırlıklara ya da düşük ranklı bir eke dokunur, saatler ya da günler tutar, hedef alan dışındaki başarıyı geriletir, yeni bir alan ya da yeni bir biçim öğretilirken doğrudur. Üçüncü satır vurguludur, cerrahi düzenleme: tek bir katmanın ağırlık matrisine dokunur, saniyeler sürer, değişikliğin sonuçlarını taşımaz ve birikince modeli çökertir, tek bir olgu yanlışken ve sonuçları önemsizken doğrudur. Dördüncü satır bağlama koymak: hiçbir ağırlığa dokunmaz, her turda yeniden token öder, hiçbir şey öğrenilmez ve pencere daralır, bilgi sık değiştiğinde ya da kullanıcıya özel olduğunda doğrudur. Altta bir kutu durur: dört yol bir merdivenin basamakları değildir; ayrı sorulara cevap verirler ve birini ötekinin yerine koymak, ödenen faturayı görünmez kılar. En altta bir kayıt: maliyet sütunu büyüklük mertebesidir, bozulma sütunu ölçülmüş etkilerdir.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Bir modeli güncel tutmanın dört yolu</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">yol</text>
+  <text x="185" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">neye dokunur</text>
+  <text x="360" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">maliyeti</text>
+  <text x="480" y="64" font-size="13" font-weight="bold" fill="var(--accent)">neyi bozar</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">baştan eğitmek</text>
+  <text x="185" y="98" font-size="13" fill="var(--text)">bütün ağırlıklar</text>
+  <text x="356" y="98" font-size="13" fill="var(--text)">haftalar</text>
+  <text x="480" y="98" font-size="13" fill="var(--text)">hiçbir şeyi</text>
+
+  <text x="24" y="124" font-size="13" fill="var(--text)">eğitmeye devam etmek</text>
+  <text x="185" y="124" font-size="13" fill="var(--text)">hepsi ya da bir ek</text>
+  <text x="360" y="124" font-size="13" fill="var(--text)">saatler, günler</text>
+  <text x="480" y="124" font-size="13" fill="var(--text)">alan dışı başarıyı</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--text)">cerrahi düzenleme</text>
+  <text x="185" y="152" font-size="13" font-weight="bold" fill="var(--text)">tek bir matris</text>
+  <text x="360" y="152" font-size="13" font-weight="bold" fill="var(--text)">saniyeler</text>
+  <text x="480" y="152" font-size="13" font-weight="bold" fill="var(--accent)">sonucu ve birikince modeli</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">bağlama koymak</text>
+  <text x="185" y="178" font-size="13" fill="var(--text)">hiçbir ağırlığa</text>
+  <text x="360" y="178" font-size="13" fill="var(--text)">her turda token</text>
+  <text x="480" y="178" font-size="13" fill="var(--text)">pencereyi daraltır</text>
+
+  <line x1="20" y1="194" x2="720" y2="194" stroke="var(--border)" />
+
+  <text x="24" y="216" font-size="13" font-weight="bold" fill="var(--cool)">ne zaman doğru seçenektir</text>
+  <text x="24" y="240" font-size="13" fill="var(--text)">baştan eğitmek: karışımın kendisi gerçekten değiştiğinde</text>
+  <text x="24" y="260" font-size="13" fill="var(--text)">eğitmeye devam etmek: yeni bir alan ya da yeni bir biçim öğretilirken</text>
+  <text x="24" y="280" font-size="13" fill="var(--text)">cerrahi düzenleme: tek bir olgu yanlışken ve sonuçları önemsizken</text>
+  <text x="24" y="300" font-size="13" fill="var(--text)">bağlama koymak: bilgi sık değiştiğinde ya da kullanıcıya özel olduğunda</text>
+
+  <rect x="20" y="316" width="700" height="48" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="338" font-size="13" fill="var(--text)">Dört yol bir merdivenin basamakları değildir; ayrı sorulara cevap verirler.</text>
+  <text x="34" y="356" font-size="13" fill="var(--text)">Birini ötekinin yerine koymak, ödenen faturayı görünmez kılar.</text>
+
+  <text x="20" y="386" font-size="13" fill="var(--text-faint)">Maliyet sütunu büyüklük mertebesidir; bozulma sütunu ölçülmüş etkilerdir.</text>
+</svg>

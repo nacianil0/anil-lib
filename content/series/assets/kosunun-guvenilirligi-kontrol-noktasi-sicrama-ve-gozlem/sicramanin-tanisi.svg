@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 478" role="img" aria-label="Beş satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir kayıp sıçramasının tanısı, hangi koşu neyi eledi. Sütunlar yapılan, gözlenen ve öğrenilen. Birinci satır en büyük model eğitildi: yaklaşık 20 sıçrama gözlendi, gradyan kırpmanın tek başına yetmediği öğrenildi. İkinci satır aynı düzenle küçük modeller: hiç sıçrama yok, olgunun ölçeğe bağlı olduğu öğrenildi. Üçüncü satır 100 adım geri sarıp 200 ile 500 arası yığın atlamak: bir daha sıçramadı, düzeltme bulundu. Dördüncü satır vurguludur, aynı yığınları daha eski bir kontrol noktasından geçirmek: sıçrama olmadı, kötü veri açıklaması elendi. Beşinci satır küçük modelde öğrenme oranını yükseltmek: aynı kararsızlık çıktı, tanı ucuzladı. Birinci kutunun başlığı kalan açıklama: sıçrama ne tek başına veriden ne tek başına modelden doğuyor, belirli veri yığınlarının belirli bir parametre durumuyla bileşiminden doğuyor. İkinci kutunun başlığı üç düzeyde cevap: işletme düzeyinde geri sar ve yığınları atla, hiperparametre düzeyinde öğrenme oranını düşür, mimari düzeyinde sorgu ve anahtarları normalleştirip çıktı skorlarına ceza ekle. En altta bir kayıt: ilk dört satır Chowdhery ve arkadaşlarından, beşinci satır Wortsman ve arkadaşlarındandır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Bir kayıp sıçramasının tanısı — hangi koşu neyi eledi</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">yapılan</text>
+  <text x="300" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">gözlenen</text>
+  <text x="470" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">öğrenilen</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">en büyük model eğitildi</text>
+  <text x="300" y="100" font-size="13" fill="var(--text)">yaklaşık 20 sıçrama</text>
+  <text x="470" y="100" font-size="13" fill="var(--text)">gradyan kırpma</text>
+  <text x="470" y="118" font-size="13" fill="var(--text)">tek başına yetmiyor</text>
+
+  <text x="24" y="144" font-size="13" fill="var(--text)">aynı düzen, küçük modeller</text>
+  <text x="300" y="144" font-size="13" fill="var(--text)">hiç sıçrama yok</text>
+  <text x="470" y="144" font-size="13" fill="var(--text)">olgu ölçeğe bağlı</text>
+
+  <text x="24" y="170" font-size="13" fill="var(--text)">100 adım geri, 200–500 yığın atla</text>
+  <text x="300" y="170" font-size="13" fill="var(--text)">bir daha sıçramadı</text>
+  <text x="470" y="170" font-size="13" fill="var(--text)">düzeltme bulundu</text>
+
+  <text x="24" y="196" font-size="13" font-weight="bold" fill="var(--accent)">aynı yığınlar, eski kontrol noktası</text>
+  <text x="300" y="196" font-size="13" font-weight="bold" fill="var(--accent)">sıçrama olmadı</text>
+  <text x="470" y="196" font-size="13" font-weight="bold" fill="var(--accent)">"kötü veri" elendi</text>
+
+  <text x="24" y="222" font-size="13" fill="var(--text)">küçük modelde öğrenme oranı</text>
+  <text x="24" y="240" font-size="13" fill="var(--text)">yükseltildi</text>
+  <text x="300" y="222" font-size="13" fill="var(--text)">aynı kararsızlık</text>
+  <text x="470" y="222" font-size="13" fill="var(--text)">tanı ucuzladı</text>
+
+  <line x1="20" y1="256" x2="700" y2="256" stroke="var(--border)" />
+
+  <rect x="20" y="268" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="292" font-size="13" font-weight="bold" fill="var(--text)">Kalan açıklama</text>
+  <text x="34" y="314" font-size="13" fill="var(--text)">Sıçrama ne tek başına veriden ne tek başına modelden doğuyor; belirli veri</text>
+  <text x="34" y="334" font-size="13" fill="var(--text)">yığınlarının belirli bir parametre durumuyla bileşiminden doğuyor.</text>
+
+  <rect x="20" y="356" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="380" font-size="13" font-weight="bold" fill="var(--text)">Üç düzeyde cevap</text>
+  <text x="34" y="402" font-size="13" fill="var(--text-muted)">İşletme: geri sar ve yığınları atla. Hiperparametre: öğrenme oranını düşür.</text>
+  <text x="34" y="422" font-size="13" fill="var(--text-muted)">Mimari: sorgu ve anahtarları normalleştir, çıktı skorlarına ceza ekle.</text>
+
+  <text x="20" y="454" font-size="13" fill="var(--text-faint)">İlk dört satır Chowdhery ve arkadaşlarından, beşinci satır Wortsman ve arkadaşlarındandır.</text>
+</svg>

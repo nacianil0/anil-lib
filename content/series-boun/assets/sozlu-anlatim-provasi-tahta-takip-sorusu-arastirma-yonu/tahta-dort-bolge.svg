@@ -1,0 +1,35 @@
+<svg viewBox="0 0 720 352" xmlns="http://www.w3.org/2000/svg">
+  <text x="21" y="26" font-size="13" fill="var(--text-muted)">Tahta ya da kâğıt: altmış saniyede yazılabilecek kadarı</text>
+
+  <rect x="21" y="40" width="678" height="230" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1.5" />
+  <line x1="360" y1="40" x2="360" y2="270" stroke="var(--border)" stroke-width="1" />
+  <line x1="21" y1="155" x2="699" y2="155" stroke="var(--border)" stroke-width="1" />
+
+  <text x="41" y="68" font-size="13" fill="var(--text)">Tanım ya da değişmez</text>
+  <text x="41" y="90" font-size="13" fill="var(--text-muted)">Tek cümle, tam yazılır</text>
+  <rect x="41" y="98" width="298" height="44" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="55" y="118" font-size="13" fill="var(--text-muted)">her düğümde sol alt ağaç küçük,</text>
+  <text x="55" y="136" font-size="13" fill="var(--text-muted)">sağ alt ağaç büyük</text>
+
+  <text x="380" y="68" font-size="13" fill="var(--text)">Maliyet muhasebesi</text>
+  <text x="380" y="90" font-size="13" fill="var(--text-muted)">n nedir, kaç kez, hangi sınıf</text>
+  <rect x="380" y="98" width="299" height="44" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="394" y="118" font-size="13" fill="var(--text-muted)">n eleman, her adımda yarıya iner</text>
+  <text x="394" y="136" font-size="13" fill="var(--text-muted)">log n adım</text>
+
+  <text x="41" y="183" font-size="13" fill="var(--text)">Küçük örnek</text>
+  <text x="41" y="205" font-size="13" fill="var(--text-muted)">Gerçek sayılarla, en fazla yedi eleman</text>
+  <rect x="41" y="213" width="298" height="44" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="55" y="233" font-size="13" fill="var(--text-muted)">3   9   1   7   2   8   4</text>
+  <text x="55" y="251" font-size="13" fill="var(--text-muted)">yedi eleman, elle izlenebilir</text>
+
+  <text x="380" y="183" font-size="13" fill="var(--text)">Bozulma noktası</text>
+  <text x="380" y="205" font-size="13" fill="var(--text-muted)">Burayı sen yazarsın</text>
+  <rect x="380" y="213" width="299" height="44" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="394" y="233" font-size="13" fill="var(--text-muted)">sıralı eklemede yükseklik</text>
+  <text x="394" y="251" font-size="13" fill="var(--text-muted)">n olur, log n değil</text>
+
+  <text x="21" y="296" font-size="13" fill="var(--text-muted)">Konuşurken yaz, yazdıktan sonra sus; karşındakinin okumasını bekle.</text>
+  <text x="21" y="316" font-size="13" fill="var(--text-muted)">Kod yazma; en fazla üç satırlık, dil bağımsız sözde kod yaz.</text>
+  <text x="21" y="336" font-size="13" fill="var(--text-muted)">Yanlış yazdıysan silme; üstünü çiz, yanına doğrusunu yaz ve nedenini söyle.</text>
+</svg>

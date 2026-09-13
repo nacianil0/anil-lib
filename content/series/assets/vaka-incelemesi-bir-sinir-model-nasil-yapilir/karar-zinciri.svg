@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 352" role="img" aria-label="Altı satırlı dört sütunlu bir tablo. Üstte başlık: tek bütçe, altı karar. Sütunlar karar, bütçeden aldığı pay, ne zaman değiştirilemez olur ve neyi kapatır. Birinci satır bütçenin bölünmesi: payı neredeyse tamamı, koşu başlayınca değiştirilemez, çıkarım maliyetini ömür boyu kapatır. İkinci satır vurguludur, tokenizer: payı pratikte sıfır, ilk eğitim adımında değiştirilemez olur, aritmetiği ve dil maliyetini kapatır. Üçüncü satır veri karışımı: payı hattın kendi maliyeti kadar, okunan geri okunmaz, hem bilgiyi hem hangi sınavın geçerli kalacağını kapatır. Dördüncü satır sistem ve koşu: payı bütçeyi harcama hızıdır, koşu boyunca değiştirilebilir, yalnızca süreyi ve fiyatı kapatır. Beşinci satır vurguludur, post-training: payı yüzde ikinin altı, hiçbir zaman değiştirilemez olmaz ve yeniden yapılabilir, karakteri reddetmeyi ve kalibrasyonu kapatır. Altıncı satır ağırlığın yayımlanması: payı yok denecek kadar az, yayımlandığı an değiştirilemez olur ve geri alma kurumun elinde değildir, sonraki her savunma seçeneğini kapatır. Altta bir kayıt: paylar Llama 3 raporundan ve Ouyang ve arkadaşlarının bildirdiği değerlerden türetilmiştir; değiştirilebilirlik sütunu zincirin yapısından çıkar, ölçüm değildir.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Tek bütçe, altı karar</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">karar</text>
+  <text x="210" y="64" font-size="13" font-weight="bold" fill="var(--accent)">bütçeden payı</text>
+  <text x="360" y="64" font-size="13" font-weight="bold" fill="var(--cool)">ne zaman kilitlenir</text>
+  <text x="540" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">neyi kapatır</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">bütçenin bölünmesi</text>
+  <text x="210" y="98" font-size="13" fill="var(--text)">neredeyse tamamı</text>
+  <text x="360" y="98" font-size="13" fill="var(--text)">koşu başlayınca</text>
+  <text x="540" y="98" font-size="13" fill="var(--text)">ömür boyu çıkarım</text>
+
+  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--text)">tokenizer</text>
+  <text x="210" y="126" font-size="13" font-weight="bold" fill="var(--accent)">pratikte sıfır</text>
+  <text x="360" y="126" font-size="13" font-weight="bold" fill="var(--cool)">ilk eğitim adımında</text>
+  <text x="540" y="126" font-size="13" font-weight="bold" fill="var(--text)">aritmetik, dil</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">veri karışımı</text>
+  <text x="210" y="152" font-size="13" fill="var(--text)">hattın maliyeti</text>
+  <text x="360" y="152" font-size="13" fill="var(--text)">okunduğu anda</text>
+  <text x="540" y="152" font-size="13" fill="var(--text)">bilgi ve sınav</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">sistem ve koşu</text>
+  <text x="210" y="178" font-size="13" fill="var(--text)">harcama hızı</text>
+  <text x="360" y="178" font-size="13" fill="var(--text)">kilitlenmez</text>
+  <text x="540" y="178" font-size="13" fill="var(--text)">yalnızca süre, fiyat</text>
+
+  <text x="24" y="206" font-size="13" font-weight="bold" fill="var(--text)">post-training</text>
+  <text x="210" y="206" font-size="13" font-weight="bold" fill="var(--accent)">%2'nin altı</text>
+  <text x="360" y="206" font-size="13" font-weight="bold" fill="var(--cool)">hiç kilitlenmez</text>
+  <text x="540" y="206" font-size="13" font-weight="bold" fill="var(--text)">karakter, ret, güven</text>
+
+  <text x="24" y="232" font-size="13" fill="var(--text)">ağırlığın yayımlanması</text>
+  <text x="210" y="232" font-size="13" fill="var(--text)">yok denecek kadar</text>
+  <text x="360" y="232" font-size="13" fill="var(--text)">yayımlandığı an</text>
+  <text x="540" y="232" font-size="13" fill="var(--text)">sonraki savunmalar</text>
+
+  <line x1="20" y1="248" x2="720" y2="248" stroke="var(--border)" />
+
+  <text x="24" y="270" font-size="13" fill="var(--text-muted)">Yayım, geri alınması kurumun elinde olmayan tek karardır; ötekilerin hepsinde</text>
+  <text x="24" y="288" font-size="13" fill="var(--text-muted)">"yanlış karar verdik" demenin ödenebilir bir bedeli vardır.</text>
+
+  <text x="20" y="316" font-size="13" fill="var(--text-faint)">Paylar Llama 3 raporundan ve Ouyang ve ark.'nın değerlerinden</text>
+  <text x="20" y="334" font-size="13" fill="var(--text-faint)">türetilmiştir; kilitlenme sütunu zincirin yapısıdır, ölçüm değil.</text>
+</svg>

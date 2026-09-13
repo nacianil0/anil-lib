@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 372" role="img" aria-label="Üç sütunlu, beş satırlı bir tablo. Üstte başlık: iki ucuz kaynak, iki ayrı fatura. Sütunlar soru, benzetim ve başka gövdelerin verisi. Birinci satır neyi ucuzlatıyor: veriyi takvimden çıkarıp hesaba bağlıyor, kendi robotunu çalıştırmadan veri veriyor. İkinci satır neyi pahalılaştırıyor: aynı performans için üç yıl yerine yüz yıllık benzetilmiş deneyim, karışımı taşıyacak kapasite. Üçüncü satır vurguludur, ödendiğinde ne oluyor: gerçek robotta ortanca 13 arka arkaya döndürme, verisi az alanlarda ortalama yüzde elli daha yüksek başarı. Dördüncü satır ödenmediğinde ne oluyor: rastgeleleştirme olmadan ortanca 0, fizik sabitken 2; küçük modelde verisi bol alanda 92'den 73'e düşüş. Beşinci satır kalan sınır: dağılımın dışında kırılgan, aydınlatma değişince algı bozuluyor ve çarpışma sonrası toparlanma öğretilmemiş; kapasite büyütülünce 91'e dönüyor. En altta bir kayıt: benzetim sütunu OpenAI ekibinin ve Kaufmann ve arkadaşlarının, gövde sütunu O'Neill ve arkadaşlarının ölçümleridir.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">İki ucuz kaynak, iki ayrı fatura</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">soru</text>
+  <text x="270" y="64" font-size="13" font-weight="bold" fill="var(--accent)">benzetim</text>
+  <text x="500" y="64" font-size="13" font-weight="bold" fill="var(--cool)">başka gövdelerin verisi</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">neyi ucuzlatıyor</text>
+  <text x="270" y="98" font-size="13" fill="var(--text)">takvimi hesaba çeviriyor</text>
+  <text x="500" y="98" font-size="13" fill="var(--text)">kendi robotunu meşgul etmiyor</text>
+
+  <text x="24" y="124" font-size="13" fill="var(--text)">neyi pahalılaştırıyor</text>
+  <text x="270" y="124" font-size="13" fill="var(--text)">3 yıl yerine 100 yıl</text>
+  <text x="500" y="124" font-size="13" fill="var(--text)">karışımı taşıyacak kapasite</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--text)">ödendiğinde</text>
+  <text x="270" y="152" font-size="13" font-weight="bold" fill="var(--accent)">ortanca 13 döndürme</text>
+  <text x="500" y="152" font-size="13" font-weight="bold" fill="var(--cool)">verisi azda %50 artış</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">ödenmediğinde</text>
+  <text x="270" y="178" font-size="13" fill="var(--text)">ortanca 0; fizik sabitse 2</text>
+  <text x="500" y="178" font-size="13" fill="var(--text)">verisi bolda 92'den 73'e</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">kalan sınır</text>
+  <text x="270" y="204" font-size="13" fill="var(--text)">dağılımın dışında kırılgan</text>
+  <text x="500" y="204" font-size="13" fill="var(--text)">kapasite artınca 91'e döner</text>
+
+  <line x1="20" y1="220" x2="720" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="234" width="700" height="82" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="258" font-size="13" font-weight="bold" fill="var(--text)">Kırılganlığın ölçülmüş hâli</text>
+  <text x="34" y="280" font-size="13" fill="var(--text)">Benzetimde eğitilip gerçek pistte düzeltilen yarış politikası şampiyonları</text>
+  <text x="34" y="300" font-size="13" fill="var(--text)">yeniyor; aydınlatma değişirse algısı bozuluyor, çarpışmadan sonrası yok.</text>
+
+  <text x="20" y="340" font-size="13" fill="var(--text-faint)">Benzetim sütunu OpenAI ekibinin ve Kaufmann ve ark.'nın,</text>
+  <text x="20" y="358" font-size="13" fill="var(--text-faint)">gövde sütunu O'Neill ve ark.'nın ölçümleridir.</text>
+</svg>

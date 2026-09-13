@@ -3974,3 +3974,270 @@ Kapilar: typecheck 0, **661 test**, build exit 0 (106 yol, 167 statik sayfa, izo
 23 kaynak kaleminin 21'i hakemli. Paralel BOUN oturumu ayni worktree'de (port 3105) calisiyordu.
 | 00:36 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch25-faz12-kapanis.md | — | ~870 |
 | 00:38 | Session end: 108 writes across 78 files (strip.py, fetch.sh, wc.cjs, fetch2.sh, svgcheck.cjs) | 28 reads | ~167643 tok |
+
+## Session: 2026-09-12 14:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-12 14:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-12 14:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/wc.cjs | — | ~232 |
+| 14:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/svgcheck.cjs | — | ~1116 |
+| 14:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/scan.cjs | — | ~1035 |
+| 14:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/net.py | — | ~1260 |
+| 14:30 | Created content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md | — | ~5145 |
+| 14:32 | Created content/series-boun/assets/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu/cevap-omurgasi-ve-takip-zinciri.svg | — | ~1229 |
+| 14:32 | Created content/series-boun/assets/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu/tahta-dort-bolge.svg | — | ~750 |
+| 14:32 | Edited content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md | inline fix | ~334 |
+| 14:33 | Edited content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md | inline fix | ~319 |
+| 14:39 | Created content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | — | ~5974 |
+| 14:39 | Created content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | — | ~5418 |
+| 14:39 | Created content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/zayif-nokta-haritasi.svg | — | ~1258 |
+| 14:39 | Created content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/zayif-nokta-haritasi.svg | — | ~1299 |
+| 14:40 | Created content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/aralikli-tekrar-takvimi.svg | — | ~1063 |
+| 14:40 | Created artifacts/b13-research/svgoverlap.py | — | ~945 |
+| 14:41 | Edited src/app/boun/page.tsx | "Seri gruplar halinde yayı" → "Seri kırk bir makaleyle t" | ~54 |
+| 14:42 | Created artifacts/b13-research/gloss.py | — | ~543 |
+| 14:43 | Edited content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md | inline fix | ~138 |
+| 14:43 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~122 |
+| 14:43 | Created content/series/assets/dagitik-egitim-paralellik-stratejileri/dort-bolme-ekseni.svg | — | ~917 |
+| 14:43 | Created content/series/assets/dagitik-egitim-paralellik-stratejileri/ayni-formul-dort-duzen.svg | — | ~966 |
+| 14:44 | Created content/series/assets/dagitik-egitim-paralellik-stratejileri/uc-eksenin-carpimi.svg | — | ~1112 |
+| 14:44 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/syncalt.cjs | — | ~300 |
+| 14:46 | Created artifacts/b13-research/shot-batch13.mjs | — | ~2018 |
+| 14:47 | Edited artifacts/b13-research/shot-batch13.mjs | 1→6 lines | ~112 |
+| 14:49 | Created content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md | — | ~4290 |
+| 14:49 | Edited content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/aralikli-tekrar-takvimi.svg | 8→3 lines | ~39 |
+| 14:51 | Created artifacts/b13-research/code-b13.mjs | — | ~997 |
+| 14:51 | Created content/series/assets/performans-muhendisligi-dikkati-hizlandirmak/islem-sinifi-ve-sure.svg | — | ~766 |
+| 14:51 | Created content/series/assets/performans-muhendisligi-dikkati-hizlandirmak/cekirdegin-gidis-gelisi.svg | — | ~835 |
+| 14:52 | Created content/series/assets/performans-muhendisligi-dikkati-hizlandirmak/ayni-algoritma-uc-uygulama.svg | — | ~912 |
+| 14:56 | Created content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | — | ~3975 |
+| 14:58 | Edited docs/seri-boun/TRIGGER.md | expanded (+7 lines) | ~256 |
+| 14:59 | Created content/series/assets/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem/kontrol-noktasi-araligi.svg | — | ~911 |
+| 15:00 | Created content/series/assets/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem/gozlemin-uc-katmani.svg | — | ~809 |
+| 15:00 | Created content/series/assets/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem/sicramanin-tanisi.svg | — | ~852 |
+| 15:02 | Created docs/seri-boun/HANDOFF.md | — | ~7175 |
+| 15:02 | Edited docs/seri-boun/YOL-HARITASI.md | inline fix | ~102 |
+| 15:02 | Edited docs/seri-boun/YOL-HARITASI.md | modified aral() | ~792 |
+| 15:03 | Edited docs/seri-boun/YOL-HARITASI.md | expanded (+12 lines) | ~372 |
+| 15:03 | Edited docs/seri-boun/YOL-HARITASI.md | expanded (+29 lines) | ~647 |
+| 15:03 | Edited docs/seri-boun/YOL-HARITASI.md | 5→5 lines | ~132 |
+| 15:04 | Edited docs/seri-boun/YOL-HARITASI.md | 3→5 lines | ~131 |
+| 15:04 | Edited docs/seri-boun/ARASTIRMA.md | 6→9 lines | ~169 |
+| 15:04 | Created content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md | — | ~3478 |
+| 15:05 | Created artifacts/b13-research/arastirma-18.md | — | ~2355 |
+| 15:05 | Edited docs/seri-boun/ARASTIRMA.md | modified Ek() | ~94 |
+| 15:07 | Created content/series/assets/dunya-modelleri-metnin-otesinde-anlamak/terimin-iki-soyu.svg | — | ~779 |
+| 15:07 | Created content/series/assets/dunya-modelleri-metnin-otesinde-anlamak/ayirt-eden-dizi.svg | — | ~683 |
+| 15:07 | Edited docs/seri-boun/HANDOFF.md | 3→8 lines | ~191 |
+| 15:07 | Edited docs/seri-boun/HANDOFF.md | 1→2 lines | ~41 |
+| 15:07 | Created content/series/assets/dunya-modelleri-metnin-otesinde-anlamak/iki-sinav-iki-cevap.svg | — | ~804 |
+| 15:08 | Created content/series/assets/dunya-modelleri-metnin-otesinde-anlamak/ayirt-eden-dizi.svg | — | ~728 |
+| 15:08 | Created artifacts/b13-research/buglog-append.py | — | ~1172 |
+| 15:09 | Created artifacts/b13-research/cerebrum-append.py | — | ~1502 |
+| 15:10 | Created artifacts/b13-research/memory-append.md | — | ~612 |
+
+## Oturum özeti — 2026-09-12 · BOUN Batch 13 (`BATCH=3+1`) · **SERİ TAMAMLANDI**
+
+**Sonuç.** "Mülakat Aynası: Boğaziçi CmpE" serisinin son iki makalesi (40 ve 41) yayımlandı ve seri
+41/41 ile kapandı. `roadmap.json`'da `planlandi` durumunda tek satır kalmadı.
+
+- **40 — "Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü"** (`interview-method`, kohort 13):
+  cevabın dört parçalı omurgası, maliyet/doğruluk cevaplarının sabit sırası, takip zincirinin üç
+  halkası ve ikinci halkanın cevabın içine taşınması, tahtanın dört bölgesi, bilmediğini söylemenin
+  biçimi, geçmiş akademik kayıt ve araştırma yönü. 2 diyagram.
+- **41 — "Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı"** (`interview-method`, kohort 13):
+  akıcılık yanılsaması (Roediger & Karpicke 2006), beş yetenek × beş faz boş matris, üç borcun
+  ödenmesi + dokuz borcun soru biçiminde kapatılması, aralıklı tekrar takvimi (Cepeda ve ark. 2008),
+  mülakat günü protokolü, dürüst kapanış. 2 diyagram.
+
+**Tek kod dokunuşu (öngörülmüştü).** `src/app/boun/page.tsx` → `footerNote`. SOZLESME §4'ün zorunlu
+kıldığı "resmî bilgi değişebilir" cümlesi korundu. `tests/` ve `tools/` altında değişiklik yok.
+
+**State geçişi (+1 fazı).** HANDOFF "seri tamamlandı" durumuna çevrildi ve "Bundan sonrası: bakım"
+bölümü yazıldı; TRIGGER artık yeni makale üretmediğini açıkça söylüyor; YOL-HARITASI'nda 40–41
+*yayında* oldu, Batch 13 prerequisite satırları ve kapanış defteri eklendi; ARASTIRMA'ya §18 eklendi.
+
+**Doğrulama.** Denetleyiciler temiz (41 makale, 82 diyagram) · bağımsız Python denetimi 41/41 ·
+global id/slug 165/165 · `pnpm typecheck` temiz · `pnpm test` 667/667 → 674/674 (artış paralel AI
+oturumunun diyagramlarından) · `pnpm build` 169 statik sayfa, 41'i `/boun` · Playwright **50/1/2**
+(yalnızca bilinen `reader-data` çifti; `DATABASE_URL` yokluğu doğrudan doğrulandı) · 21 render + 8 + 8
+diyagram + 4 satır içi kod ekran görüntüsü · son makalenin okuyucu navigasyonu ayrıca denetlendi.
+
+**Görsel incelemede bulunan iki kusur düzeltildi:** makale 41'in ikinci şeklindeki görünmeyen eksen
+çizgileri silindi; `Bₙ` (U+2099) yedek fonta düştüğü için üç alt simge ASCII'ye çevrildi.
+
+**Yeni araç.** `artifacts/b13-research/svgoverlap.py` — repo SVG denetleyicisinin bakmadığı
+metin–metin ve metin–kutu çakışmalarını tarar.
+| 15:11 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-batch13-seri-tamamlandi.md | — | ~1440 |
+| 15:11 | Edited docs/seri-boun/HANDOFF.md | 1→3 lines | ~57 |
+| 15:11 | Edited docs/seri-boun/HANDOFF.md | inline fix | ~30 |
+| 15:11 | Edited docs/seri-boun/HANDOFF.md | 2→3 lines | ~73 |
+| 15:12 | Edited docs/seri-boun/HANDOFF.md | 8→9 lines | ~219 |
+| 15:12 | Edited docs/seri-boun/HANDOFF.md | 3→3 lines | ~71 |
+| 15:13 | Created .claude/launch.json | — | ~147 |
+| 15:13 | Session end: 63 writes across 42 files (wc.cjs, svgcheck.cjs, scan.cjs, net.py, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 16 reads | ~96173 tok |
+| 15:13 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/sweep.py | — | ~374 |
+| 15:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/shots.mjs | — | ~722 |
+| 15:21 | Created .claude/launch.json | — | ~56 |
+| 15:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/dec.py | — | ~2638 |
+| 15:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/notes.py | — | ~1627 |
+| 15:33 | Created docs/seri/HANDOFF.md | — | ~8283 |
+
+## Session: 2026-09-12 — AI serisi Batch 26 (107–110)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:0x | Araştırma: 15 kaynak PDF + Crossref/dizin doğrulaması | scratchpad | 24 künye, 22 hakemli | ~120k |
+| 15:1x | 107–110 yazıldı + 12 SVG | content/series/** | 2.269/2.199/2.108/2.017 kelime | ~180k |
+| 15:2x | Entegrasyon + kapılar | catalog.json, roadmap.json | 677 test, build exit 0, 111 rota 200 | ~40k |
+| 15:3x | +1 state geçişi | docs/seri/HANDOFF.md, YOL-HARITASI.md | kararlar #233–#239, cursor 111 | ~35k |
+| 15:34 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch26-faz13-kapanis.md | — | ~727 |
+| 15:35 | Session end: 70 writes across 47 files (wc.cjs, svgcheck.cjs, scan.cjs, net.py, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 28 reads | ~111295 tok |
+
+## Session: 2026-09-12 15:46
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-12 15:46
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-12 16:05
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-12 16:06
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-12 16:06
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:07 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/linkcheck.sh | — | ~163 |
+| 16:08 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/net.py | — | ~1355 |
+| 16:16 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/baselines.py | — | ~308 |
+| 16:18 | Created artifacts/b14-bakim/svg-geometry.mjs | — | ~1278 |
+| 16:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/verify/check.py | — | ~2885 |
+| 16:20 | Created artifacts/b14-bakim/shot-bands.mjs | — | ~885 |
+| 16:20 | Created artifacts/b14-bakim/svg-vars.mjs | — | ~595 |
+| 16:21 | Created artifacts/b14-bakim/ink-extents.mjs | — | ~1026 |
+| 16:22 | Created artifacts/b14-bakim/shot-figs.mjs | — | ~710 |
+| 16:26 | Created content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | — | ~6403 |
+| 16:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/wc.cjs | — | ~212 |
+| 16:27 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | 1→3 lines | ~214 |
+| 16:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/svgcheck.cjs | — | ~1204 |
+| 16:28 | Created content/series/assets/robotik-ve-somutlasmis-yapay-zeka/uc-eylem-arayuzu.svg | — | ~1475 |
+| 16:28 | Edited content/series/assets/robotik-ve-somutlasmis-yapay-zeka/uc-eylem-arayuzu.svg | 1→2 lines | ~67 |
+| 16:29 | Created content/series/assets/robotik-ve-somutlasmis-yapay-zeka/internetin-iki-yarisi.svg | — | ~1187 |
+| 16:29 | Created content/series/assets/robotik-ve-somutlasmis-yapay-zeka/iki-ucuz-kaynak.svg | — | ~1007 |
+| 16:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/syncalt.cjs | — | ~340 |
+| 16:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/scan.cjs | — | ~1108 |
+| 16:31 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~37 |
+| 16:31 | Created artifacts/b14-bakim/landing-and-nav.mjs | — | ~1148 |
+| 16:32 | Created artifacts/b14-bakim/fixed-articles-render.mjs | — | ~841 |
+| 16:36 | Created content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md | — | ~5659 |
+
+## Session: 2026-09-12 18:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 13:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 13:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 16:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 16:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-13 16:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/extract.py | — | ~915 |
+| 16:15 | Edited content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md | expanded (+6 lines) | ~463 |
+| 16:16 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/extract.py | modified get() | ~64 |
+| 16:16 | Edited content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md | expanded (+6 lines) | ~423 |
+| 16:16 | Created content/series/assets/surekli-ogrenme-ve-kisisellestirme/dort-guncelleme-yolu.svg | — | ~1214 |
+| 16:17 | Created content/series/assets/surekli-ogrenme-ve-kisisellestirme/cerrahinin-uc-faturasi.svg | — | ~1384 |
+| 16:17 | Created content/series/assets/surekli-ogrenme-ve-kisisellestirme/degisiklik-nereye-yazilir.svg | — | ~941 |
+| 16:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/toc.py | — | ~134 |
+| 16:22 | Created content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | — | ~5564 |
+| 16:22 | Created artifacts/b14-bakim/blockquote-check.mjs | — | ~460 |
+| 16:22 | Created content/series/assets/bilimde-yapay-zeka-kesif-araci-olarak-llm/dogrulamanin-dort-maliyeti.svg | — | ~1286 |
+| 16:23 | Created content/series/assets/bilimde-yapay-zeka-kesif-araci-olarak-llm/iddia-ve-hakemli-itiraz.svg | — | ~1138 |
+| 16:23 | Created content/series/assets/bilimde-yapay-zeka-kesif-araci-olarak-llm/uretim-ucuzlayinca.svg | — | ~911 |
+| 16:23 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~27 |
+| 16:23 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~23 |
+| 16:24 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | 1→3 lines | ~255 |
+| 16:24 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | 2→3 lines | ~482 |
+| 16:24 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | expanded (+6 lines) | ~408 |
+| 16:24 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~70 |
+| 16:25 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~87 |
+| 16:25 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~376 |
+| 16:25 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~128 |
+| 16:25 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | 1→5 lines | ~301 |
+| 16:25 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~139 |
+| 16:26 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | 3→3 lines | ~183 |
+| 16:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/journal_verdicts.py | — | ~337 |
+| 16:30 | Created content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | — | ~4855 |
+| 16:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/worklist.py | — | ~668 |
+| 16:30 | Created content/series/assets/vaka-incelemesi-bir-sinir-model-nasil-yapilir/karar-zinciri.svg | — | ~1219 |
+| 16:31 | Created content/series/assets/vaka-incelemesi-bir-sinir-model-nasil-yapilir/maliyet-ve-sonuc-tersine.svg | — | ~1036 |
+| 16:31 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | inline fix | ~108 |
+| 16:32 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | 1→5 lines | ~370 |
+| 16:32 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | 1→3 lines | ~178 |
+| 16:32 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | 1→3 lines | ~195 |
+| 16:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/fix_a.py | — | ~2952 |
+| 16:33 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~28 |
+| 16:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/fix_b.py | — | ~1216 |
+| 16:36 | Created .claude/launch.json | — | ~147 |
+| 16:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/sweep.py | — | ~392 |
+| 16:41 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/shots.mjs | — | ~646 |
+| 16:44 | Created .claude/launch.json | — | ~56 |
+| 16:45 | Created artifacts/b14-bakim/arastirma-19.md | — | ~3799 |
+| 16:45 | Edited docs/seri-boun/ARASTIRMA.md | modified dersler() | ~174 |
+| 16:45 | Edited docs/seri-boun/HANDOFF.md | modified uldu() | ~70 |
+| 16:46 | Created artifacts/b14-bakim/handoff-borclar.md | — | ~991 |
+| 16:47 | Created artifacts/b14-bakim/handoff-run.md | — | ~797 |
+| 16:47 | Created artifacts/b14-bakim/handoff-dogrulama.md | — | ~936 |
+| 16:49 | Edited docs/seri-boun/HANDOFF.md | modified 13() | ~498 |
+| 16:49 | Edited docs/seri-boun/HANDOFF.md | 5→10 lines | ~225 |
+| 16:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/add_decisions.py | — | ~2497 |
+| 16:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/add_notes.py | — | ~910 |
+| 16:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/add_repeat.py | — | ~605 |
+| 16:52 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-bakim-run1-borclar-kapandi.md | — | ~1168 |
+| 16:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/handoff_head.py | — | ~6994 |
+| 16:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/handoff_tail.py | — | ~1460 |
+| 16:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/statecheck.py | — | ~1028 |
+| 16:55 | Session end: 56 writes across 39 files (extract.py, surekli-ogrenme-ve-kisisellestirme.md, dort-guncelleme-yolu.svg, cerrahinin-uc-faturasi.svg, degisiklik-nereye-yazilir.svg) | 24 reads | ~56329 tok |
+| 16:56 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch27-faz14-govde.md | — | ~858 |
+| 17:00 | Batch 27 tamamlandı: AI serisi 111–114 yayımlandı, case-studies klasörü açıldı, +1 state geçişi yapıldı | content/series/**, docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md | typecheck 0, 688 test, build exit 0, 117 rota 200, 22 şekil PNG'i incelendi | ~— |
+| 16:56 | Session end: 57 writes across 40 files (extract.py, surekli-ogrenme-ve-kisisellestirme.md, dort-guncelleme-yolu.svg, cerrahinin-uc-faturasi.svg, degisiklik-nereye-yazilir.svg) | 24 reads | ~57248 tok |

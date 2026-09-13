@@ -2122,6 +2122,166 @@
       "path": "content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md",
       "relatedArticleIds": [],
       "classificationBatch": 25
+    },
+    {
+      "articleId": "article_51248140-9e07-4248-b881-712d00715fe4",
+      "title": "Dağıtık Eğitim: Paralellik Stratejileri",
+      "slug": "dagitik-egitim-paralellik-stratejileri",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 107,
+      "summary": "8. makalede adı konan dört bölme ekseninin tam kurulumu: veri, ağırlık matrisleri, katman yığını ve dizinin kendisi. Her eksenin neyi ucuzlattığını, karşılığında hangi iletişimi doğurduğunu ve nerede durduğunu sayılarla kurar; eniyileyici durumunu paylara bölmenin kapalı formülünü, boru hattı kabarcığının (p−1)/m oranını ve dizi paralelliğinin aktivasyon defterini neden tam olarak t'ye böldüğünü gösterir.",
+      "tags": [
+        "dagitik-egitim",
+        "paralellik",
+        "iletisim-maliyeti",
+        "bellek-bolusturme",
+        "egitim-sistemleri"
+      ],
+      "contentHash": "sha256:7fd596364a677d62d20827b12a00fd6dab50b303c0bd1146dbdd5ce9c62abebd",
+      "path": "content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 26
+    },
+    {
+      "articleId": "article_a8ba5966-f811-496e-872e-ab6832679b7c",
+      "title": "Performans Mühendisliği: Dikkati Hızlandırmak",
+      "slug": "performans-muhendisligi-dikkati-hizlandirmak",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 108,
+      "summary": "Bir işlemin bedelini işlem sayısı değil, taşıdığı bayt ve onu koşturan birim belirler: bir eğitim adımındaki işlemlerin yüzde 0,2'si zamanın yüzde 39'unu yiyor. Çekirdek, birleştirme, bellek yerleşimi ve bellek kullanım verimini kurar; aynı dikkat algoritmasının üç uygulamasında kullanım oranının nasıl yüzde 25'ten 75'e çıktığını ve yeni bir çip geldiğinde nasıl geri düştüğünü gösterir.",
+      "tags": [
+        "cekirdek-muhendisligi",
+        "bellek-erisimi",
+        "islem-birlestirme",
+        "karma-duyarlik",
+        "kullanim-orani"
+      ],
+      "contentHash": "sha256:a0321cae95c521579306c5d4ae9241b698086c9ae5d522657645861afb64f38c",
+      "path": "content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 26
+    },
+    {
+      "articleId": "article_4e7a5f67-ff81-4cdb-9395-e487916747ff",
+      "title": "Koşunun Güvenilirliği: Kontrol Noktası, Sıçrama ve Gözlem",
+      "slug": "kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem",
+      "category": "models-and-training",
+      "level": "advanced",
+      "readingOrder": 109,
+      "summary": "8. makaledeki arıza istatistiklerinin üzerine karar katmanını koyar: kontrol noktası aralığının kapalı formülü ve kaçınılmaz kayıp oranı, bir arızanın fark edilme ve toparlanma süresi, geride kalan sunucuların tanısı, ve kayıp sıçradığında ne yapıldığı. Sıçramanın kötü veriden değil verinin parametre durumuyla bileşiminden geldiğini gösteren ablasyonu ve aynı kararsızlığın küçük modellerde nasıl yeniden üretildiğini kurar.",
+      "tags": [
+        "egitim-operasyonu",
+        "kontrol-noktasi",
+        "hata-toleransi",
+        "kayip-sicramasi",
+        "gozlem"
+      ],
+      "contentHash": "sha256:e0ada21d9110950037ed68fa64d6ec9b51df9d611872f2c1d6591b0f85eb4983",
+      "path": "content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 26
+    },
+    {
+      "articleId": "article_60582af1-e07e-48e6-871d-829f774ebca3",
+      "title": "Dünya Modelleri: Metnin Ötesinde Anlamak",
+      "slug": "dunya-modelleri-metnin-otesinde-anlamak",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 110,
+      "summary": "1. makalede açık bırakılan soruyu ölçülebilir hâle getirir: sonraki token'ı tahmin etmeyi öğrenen bir sistem, metnin anlattığı dünyanın bir modelini de kurmuş olur mu? Terimin iki soyunu ayırır — pekiştirmeli öğrenmedeki açık geçiş modeli ile dil modelindeki örtük model — ve geçerli bir sonraki token ile okunabilir bir sondanın neyi kanıtlamadığını, Manhattan haritasını kuran ama sokakları uydurmuş bir modelin ölçümleriyle gösterir.",
+      "tags": [
+        "dunya-modeli",
+        "temsil",
+        "degerlendirme",
+        "pekistirmeli-ogrenme",
+        "saglamlik"
+      ],
+      "contentHash": "sha256:39cfe5338a69ab9b5d9dc4597a2c8499a48a0e0740cc32d26519c468ee2af278",
+      "path": "content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 26
+    },
+    {
+      "articleId": "article_2a73f0c5-9b41-4e8e-b6d2-5c1e4a8f7d20",
+      "title": "Robotik ve Somutlaşmış Yapay Zekâ",
+      "slug": "robotik-ve-somutlasmis-yapay-zeka",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 111,
+      "summary": "110. makalenin bıraktığı soruyu gövdede sınar: bir dil modelinin öğrendikleri, durumun bir konum ve eylemin bir tork olduğu bir dünyada ne kadar işe yarar? 51. makalenin eylem arayüzü borcunu gerçek bir kolda öder — sekiz tam sayı, 256 kutu, saniyede bir ile üç karar —, internetten gelen ön eğitimin görülen görevlerde hiçbir şey kazandırmayıp görülmemiş nesnelerde puanı ikiye katladığını gösterir, ve gerçek gövde verisinin neden bu kadar az olduğunu bir üretim hızı hesabıyla yanıtlar.",
+      "tags": [
+        "robotik",
+        "somutlasmis-yapay-zeka",
+        "eylem-arayuzu",
+        "veri-kitligi",
+        "benzetim"
+      ],
+      "contentHash": "sha256:5512fda7d70f70e6b08569bc471709298e5f1ed43bbd4941ba8ddeaca62fd4a7",
+      "path": "content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 27
+    },
+    {
+      "articleId": "article_7c1b9d42-3fa6-4e07-95c8-1d8b0f6e2a34",
+      "title": "Sürekli Öğrenme ve Kişiselleştirme",
+      "slug": "surekli-ogrenme-ve-kisisellestirme",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 112,
+      "summary": "39. ve 56. makale belleği ağırlıklara hiç dokunmadan kurmuştu; bu makale ağırlıklara dokunmak gerektiğinde ne olduğunu ölçer. Bir modeli güncel tutmanın dört yolunu — baştan eğitmek, eğitmeye devam etmek, cerrahi düzenleme, bağlama koymak — ve her birinin ayrı yerde ödenen faturasını kurar: esnek ağın kararlılığı kaybetmesinden, tek bir olguyu değiştiren güncellemenin o olgunun sonuçlarını taşımamasına ve bir tek düzenlemenin modeli tümden çalışmaz hâle getirmesine kadar.",
+      "tags": [
+        "surekli-ogrenme",
+        "kisisellestirme",
+        "model-duzenleme",
+        "felaket-unutmasi",
+        "getirme"
+      ],
+      "contentHash": "sha256:cf3079bba755a7a1ab95a135b108494f49e0e116b1f8835c2295ebe07cb5f597",
+      "path": "content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 27
+    },
+    {
+      "articleId": "article_4e58c1b7-62da-4a39-b0f1-8c37e29d5a61",
+      "title": "Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM",
+      "slug": "bilimde-yapay-zeka-kesif-araci-olarak-llm",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 113,
+      "summary": "35. makaledeki üretmek–doğrulamak asimetrisini laboratuvara taşır ve tek bir ölçütle dört vakayı sıralar: bir iddiayı üretmenin maliyeti ile doğrulamanın maliyeti arasındaki oran. Doğrulaması kör ve deneysel olan protein yapısında, doğrulayıcısı bir program olan matematikte, doğrulayanı bir insan olan sezgi kılavuzluğunda ve doğrulaması bir kimyagerin aylarını alan malzeme keşfinde ne olduğunu — hakemli itirazlarıyla birlikte — ölçer.",
+      "tags": [
+        "bilimde-yapay-zeka",
+        "dogrulama",
+        "tekrarlanabilirlik",
+        "malzeme-kesfi",
+        "hipotez-uretimi"
+      ],
+      "contentHash": "sha256:b54cf13056957b8cc9aafa235bb6134a56e130d4bb350c4fe2bca16f1506aab0",
+      "path": "content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 27
+    },
+    {
+      "articleId": "article_9d3c7b18-5e40-4a2f-8c61-6b2f0e7a4c93",
+      "title": "Vaka İncelemesi: Bir Sınır Model Nasıl Yapılır?",
+      "slug": "vaka-incelemesi-bir-sinir-model-nasil-yapilir",
+      "category": "case-studies",
+      "level": "advanced",
+      "readingOrder": 114,
+      "summary": "Serinin ilk vaka incelemesi: yeni bir kavram tanıtmadan, tek bir hesap bütçesini zincir boyunca izliyor. 8-16 ve 106-109'un kararlarını bir sıraya dizip her birine iki soru soruyor — bütçenin ne kadarını yiyor ve ne zaman değiştirilemez hâle geliyor. Çıkan tablo tersine: parayı harcayan karar ile kaderi belirleyen karar aynı karar değil, ve hesabın yüzde ikisinden azını tutan aşama kullanıcının gördüğü hemen her şeyi belirliyor.",
+      "tags": [
+        "vaka-incelemesi",
+        "sinir-model",
+        "hesap-butcesi",
+        "karar-zinciri",
+        "geri-alinamazlik"
+      ],
+      "contentHash": "sha256:55361204ac43487006e6310357280c3eebcdea4679a4e89889b755dee9edf491",
+      "path": "content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 27
     }
   ]
 }

@@ -1,0 +1,59 @@
+<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
+  <text x="144" y="30" font-size="13" text-anchor="middle" fill="var(--text)">Faz A</text>
+  <text x="144" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">Matematik</text>
+  <text x="144" y="66" font-size="13" text-anchor="middle" fill="var(--text-muted)">ve ispat</text>
+
+  <text x="267" y="30" font-size="13" text-anchor="middle" fill="var(--text)">Faz B</text>
+  <text x="267" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">Veri</text>
+  <text x="267" y="66" font-size="13" text-anchor="middle" fill="var(--text-muted)">yapıları</text>
+
+  <text x="390" y="30" font-size="13" text-anchor="middle" fill="var(--text)">Faz C</text>
+  <text x="390" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">Algoritma</text>
+  <text x="390" y="66" font-size="13" text-anchor="middle" fill="var(--text-muted)">analizi</text>
+
+  <text x="513" y="30" font-size="13" text-anchor="middle" fill="var(--text)">Faz D</text>
+  <text x="513" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">İşletim</text>
+  <text x="513" y="66" font-size="13" text-anchor="middle" fill="var(--text-muted)">sistemleri</text>
+
+  <text x="636" y="30" font-size="13" text-anchor="middle" fill="var(--text)">Faz E</text>
+  <text x="636" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">Destek</text>
+  <text x="636" y="66" font-size="13" text-anchor="middle" fill="var(--text-muted)">ve prova</text>
+
+  <text x="79" y="103" font-size="13" text-anchor="end" fill="var(--text)">Anlat</text>
+  <rect x="87" y="78" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="210" y="78" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="333" y="78" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="456" y="78" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="579" y="78" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+
+  <text x="79" y="149" font-size="13" text-anchor="end" fill="var(--text)">Çöz</text>
+  <rect x="87" y="124" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="210" y="124" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="333" y="124" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="456" y="124" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="579" y="124" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+
+  <text x="79" y="195" font-size="13" text-anchor="end" fill="var(--text)">İspatla</text>
+  <rect x="87" y="170" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="210" y="170" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="333" y="170" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="456" y="170" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="579" y="170" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+
+  <text x="79" y="241" font-size="13" text-anchor="end" fill="var(--text)">Savun</text>
+  <rect x="87" y="216" width="114" height="38" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="210" y="216" width="114" height="38" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="333" y="216" width="114" height="38" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="456" y="216" width="114" height="38" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="579" y="216" width="114" height="38" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" />
+
+  <text x="79" y="287" font-size="13" text-anchor="end" fill="var(--text)">Dayan</text>
+  <rect x="87" y="262" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="210" y="262" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="333" y="262" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="456" y="262" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="579" y="262" width="114" height="38" rx="4" fill="var(--surface)" stroke="var(--border)" />
+
+  <text x="21" y="324" font-size="13" fill="var(--text-muted)">Hücreleri sen doldurursun; üç işaret yeter: tam anlattım, takıldım, hiç deneyemedim.</text>
+  <text x="21" y="344" font-size="13" fill="var(--text-faint)">Ölçü tanıdık gelmesi değil, metne bakmadan altmış saniyede yüksek sesle söyleyebilmendir.</text>
+</svg>

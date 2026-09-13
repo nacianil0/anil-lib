@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 356" role="img" aria-label="İki bölmeli şekil. Üstte üç satırlı iki sütunlu bir tablo; sütunlar ölçülen ve sonuç. Birinci satır yenilik: model fikirleri insan uzmanların fikirlerinden yüksek puan alıyor, p değeri 0,05'in altında. İkinci satır uygulanabilirlik: model fikirleri biraz daha düşük. Üçüncü satır vurguludur, üretimin çeşitliliği: konu başına 4.000 aday fikirden benzerlik eşiğiyle tekilleştirme sonrası geriye yaklaşık yüzde 5 kalıyor. Altta iki kutu yan yana durur. Sol kutunun başlığı ucuzlayan taraf; içinde adayın sınırsıza yakın olduğu, bir konu başlığı için dört bin fikrin bir gecede üretilebildiği yazılıdır. Sağ kutunun başlığı ucuzlamayan taraf; içinde modelin kendi fikirlerini güvenilir biçimde değerlendiremediği, körlemesine insan değerlendirmesinin yüzden fazla araştırmacı gerektirdiği ve bir fikrin gerçekten işe yarayıp yaramadığının ancak yürütülerek anlaşıldığı yazılıdır. En altta bir kayıt: bütün değerler Si, Yang ve Hashimoto'nun ölçümüdür.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Dört bin aday, iki yüz fikir</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">ölçülen</text>
+  <text x="330" y="64" font-size="13" font-weight="bold" fill="var(--accent)">sonuç</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">yenilik</text>
+  <text x="330" y="98" font-size="13" fill="var(--text)">model fikirleri daha yüksek, p &lt; 0,05</text>
+
+  <text x="24" y="124" font-size="13" fill="var(--text)">uygulanabilirlik</text>
+  <text x="330" y="124" font-size="13" fill="var(--text)">model fikirleri biraz daha düşük</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--text)">üretimin çeşitliliği</text>
+  <text x="330" y="152" font-size="13" font-weight="bold" fill="var(--accent)">4.000 adaydan geriye yaklaşık %5</text>
+
+  <line x1="20" y1="168" x2="720" y2="168" stroke="var(--border)" />
+
+  <rect x="20" y="182" width="340" height="118" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="206" font-size="13" font-weight="bold" fill="var(--accent)">Ucuzlayan taraf</text>
+  <text x="34" y="228" font-size="13" fill="var(--text)">Aday sayısı sınırsıza yakın.</text>
+  <text x="34" y="250" font-size="13" fill="var(--text)">Bir konu başlığı için dört bin</text>
+  <text x="34" y="270" font-size="13" fill="var(--text)">fikir bir gecede üretiliyor.</text>
+
+  <rect x="380" y="182" width="340" height="118" fill="var(--surface)" stroke="var(--border)" />
+  <text x="394" y="206" font-size="13" font-weight="bold" fill="var(--cool)">Ucuzlamayan taraf</text>
+  <text x="394" y="228" font-size="13" fill="var(--text)">Model kendi fikirlerini</text>
+  <text x="394" y="248" font-size="13" fill="var(--text)">güvenilir ayıklayamıyor; kör</text>
+  <text x="394" y="268" font-size="13" fill="var(--text)">değerlendirme yüzden fazla</text>
+  <text x="394" y="288" font-size="13" fill="var(--text)">araştırmacı istiyor.</text>
+
+  <text x="20" y="324" font-size="13" fill="var(--text-faint)">Bütün değerler Si, Yang ve Hashimoto'nun ölçümüdür; bir fikrin gerçekten</text>
+  <text x="20" y="342" font-size="13" fill="var(--text-faint)">işe yarayıp yaramadığı ancak yürütülerek anlaşılır.</text>
+</svg>

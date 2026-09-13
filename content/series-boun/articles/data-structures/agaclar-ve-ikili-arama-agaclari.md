@@ -11,8 +11,8 @@ tags:
   - ikili-arama-agaci
   - degismez
   - yukseklik
-  - siral-dolasma
-content_hash: sha256:d127461f5a4eeddc209976baf840bd79e4c40f0f7f509f5ff3adb465132dc2a5
+  - sirali-dolasma
+content_hash: sha256:c76e9665c9559c76d92c3857e930576c60a93c9eee4891e48eca2986ee0ccf82
 classification_version: 1
 classification_batch: 3
 ---
@@ -72,9 +72,9 @@ Alt sınır kolay ve yapısal tümevarımla ispatlanır: yüksekliği h olan bir
 
 Bu kötü durum kurgusal değildir, en olası durumlardan biridir. Kayıtları tarih sırasına göre, kimlik numarasına göre veya alfabetik olarak eklemek gündelik iştir ve üçü de sıralı girdidir. Şekil 2 aynı yedi anahtarın iki farklı ekleme sırasıyla ürettiği iki ağacı yan yana koyuyor.
 
-![Solda yedi anahtarın dengeli ekleme sırasıyla oluşan üç katlı ağacı: yükseklik iki, en kötü arama yolu üç düğüm. Sağda aynı yedi anahtarın artan sırada eklenmesiyle oluşan tek dallı zincir: yükseklik altı, en kötü arama yolu yedi düğüm ve zincirin yanında bir milyon eleman için yirmi adıma karşı bir milyon adım karşılaştırması](assets/bst-yukseklik.svg "Şekil 2 — Aynı anahtarlar, iki ekleme sırası: dengeli ağaç ve zincir")
+![Solda yedi anahtarın dengeli ekleme sırasıyla oluşan üç katlı ağacı: yükseklik iki, en kötü arama üç karşılaştırma ve altında bir milyon anahtar dengeli dursaydı yüksekliğin yaklaşık yirmi, en fazla yirmi bir karşılaştırma olacağı notu. Sağda aynı yedi anahtarın artan sırada eklenmesiyle oluşan tek dallı zincir: yükseklik altı, en kötü arama yedi karşılaştırma ve altında sıralı girdide yüksekliğin n eksi bir olduğu notu](assets/bst-yukseklik.svg "Şekil 2 — Aynı anahtarlar, iki ekleme sırası: dengeli ağaç ve zincir")
 
-Sayıya dökelim. Bir milyon anahtar için dengeli bir ikili ağacın yüksekliği log₂(10⁶) ≈ 19,93, yani yaklaşık 20'dir: en kötü arama yirmi bir karşılaştırma yapar. Aynı bir milyon anahtar sıralı gelirse yükseklik 999.999 olur ve en kötü arama bir milyon karşılaştırma yapar. Aynı veri yapısı, aynı kod, aynı değişmez — aradaki fark elli bin katın üzerindedir.
+Sayıya dökelim. Bir milyon anahtar için dengeli bir ikili ağacın yüksekliği log₂(10⁶) ≈ 19,93, yani yaklaşık 20'dir: en kötü arama yirmi bir karşılaştırma yapar. Aynı bir milyon anahtar sıralı gelirse yükseklik 999.999 olur ve en kötü arama bir milyon karşılaştırma yapar. Aynı veri yapısı, aynı kod, aynı değişmez — aradaki fark kırk yedi bin katın üzerindedir.
 
 Bir ara sonuç daha önemlidir. Anahtarlar **rastgele bir sırayla** eklenirse beklenen yükseklik logaritmik mertebede kalır; bu bilinen bir sonuçtur. Ama karmaşıklık makalesinde konuşulan ayrım burada tam olarak devreye girer: bu bir **ortalama durum** iddiasıdır ve bir dağılım varsayımına dayanır. Girdinin sırasını sen seçmiyorsan o varsayımı savunamazsın; üstelik ekleme sırası dışarıdan belirlenen bir sistemde kötü durum kaza değil, girdinin doğal hâli olabilir. Mülakatta "ortalamada logaritmik" cevabı yeterli değildir, çünkü bir sonraki soru mutlaka "peki garantin ne?" olur.
 

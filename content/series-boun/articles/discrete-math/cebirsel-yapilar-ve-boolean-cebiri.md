@@ -12,13 +12,13 @@ tags:
   - monoid
   - kafes
   - boolean-cebiri
-content_hash: sha256:51856dc2da091442eb644752266db6fd813c05ab070297aa91eb9c94815a7e2f
+content_hash: sha256:b6a1eddfe92eecf24a2189c65642d476bf8228fadb3582fd1dce65e9f91554bd
 classification_version: 1
 classification_batch: 2
 ---
 ## Aynı kuralları paylaşan yapılar
 
-Şimdiye kadar birbirinden bağımsız görünen birkaç yapıyla çalıştık. Tam sayılar toplama altında; kümeler birleşme ve kesişme altında; önermeler "ve" ile "veya" altında; fonksiyonlar bileşke altında. Bu makalenin iddiası şu: bunların hepsi *aynı birkaç kuralın* farklı kılıklarıdır ve o kuralları bir kez öğrenirsen her yeni yapıda hangi soruları soracağını bilirsin.
+Şimdiye kadar birbirinden bağımsız görünen birkaç yapıyla çalıştık. Tam sayılar toplama altında; kümeler birleşim ve kesişim altında; önermeler "ve" ile "veya" altında; fonksiyonlar bileşke altında. Bu makalenin iddiası şu: bunların hepsi *aynı birkaç kuralın* farklı kılıklarıdır ve o kuralları bir kez öğrenirsen her yeni yapıda hangi soruları soracağını bilirsin.
 
 Bu, matematiksel bir zarafet gösterisi değil, mülakatta doğrudan işe yarayan bir refleks. "Bu işlem birleşme özelliğine sahip mi?" sorusu, bir hesabı paralelleştirip paralelleştiremeyeceğini söyler. "Bu yapının birim elemanı var mı?" sorusu, boş girdide ne döndüreceğini söyler. "Tersi var mı?" sorusu, işlemi geri alıp alamayacağını söyler. Soyutlama, cevap sayısını azaltmak için değil, doğru soruları elde tutmak içindir.
 
@@ -32,7 +32,7 @@ Bir S kümesi üzerinde **ikili işlem (binary operation)**, S'nin iki elemanın
 
 **Birleşme (associativity).** (a ∗ b) ∗ c ile a ∗ (b ∗ c) her zaman eşit mi? Toplama ve çarpma birleşmelidir; çıkarma değildir, çünkü (8 − 3) − 2 = 3 ama 8 − (3 − 2) = 7.
 
-**Birim eleman (identity element).** Her a için a ∗ e = e ∗ a = a olan bir e var mı? Toplamada 0, çarpmada 1, dizi birleştirmede boş dizi, küme birleşmesinde boş kümedir.
+**Birim eleman (identity element).** Her a için a ∗ e = e ∗ a = a olan bir e var mı? Toplamada 0, çarpmada 1, dizi birleştirmede boş dizi, küme birleşiminde boş kümedir.
 
 **Ters eleman (inverse element).** Her a için a ∗ b = b ∗ a = e olan bir b var mı? Tam sayılarda toplamanın tersi −a'dır; çarpmanın tersi tam sayılarda yoktur, çünkü 1/2 tam sayı değildir.
 
@@ -106,7 +106,7 @@ Tanımın kendisi kuru görünür; asıl mesele bu tanımı sağlayan üç siste
 | a ∨ a′ = 1 | A ∪ A′ = evrensel küme | p ∨ ¬p totolojidir | — |
 | (a ∨ b)′ = a′ ∧ b′ | (A ∪ B)′ = A′ ∩ B′ | ¬(p ∨ q) ≡ ¬p ∧ ¬q | De Morgan |
 
-Son satır, ikinci makalede mantıksal denklik olarak öğrendiğin De Morgan kuralının, beşinci makalede küme özdeşliği olarak ispatladığın kuralla ve devre tasarımında kullandığın kuralla **aynı** kural olduğunu gösteriyor. Üçü ayrı ayrı ezberlenecek üç şey değil, bir kuralın üç kılığıdır. Ders kitabı bunu doğrudan söyler: üç sistem de aynı davranır, yani izomorfiktir.
+Son satır, mantık makalesinde mantıksal denklik olarak öğrendiğin De Morgan kuralının, kümeler makalesinde küme diline çevirdiğin kuralla ve devre tasarımında kullandığın kuralla **aynı** kural olduğunu gösteriyor. Üçü ayrı ayrı ezberlenecek üç şey değil, bir kuralın üç kılığıdır. Ders kitabı bunu doğrudan söyler: üç sistem de aynı davranır, yani izomorfiktir.
 
 Bir sınır örneği tanımın hangi koşulunun gerçekten çalıştığını gösterir. 12'nin bölen kafesi sınırlıdır (en küçük eleman 1, en büyük eleman 12) ve dağılmalıdır, ama Boolean cebiri **değildir**: 2'nin tümleyeni olması için ebob(2, b) = 1 ve ekok(2, b) = 12 olan bir b gerekir; aday yalnızca 3'tür, ama ekok(2, 3) = 6 ≠ 12. Buna karşılık 30'un bölen kafesi Boolean cebiridir; sekiz elemanı vardır ve {2, 3, 5} kümesinin güç kümesiyle birebir eşleşir — örneğin 2'nin tümleyeni 15'tir, çünkü ebob(2, 15) = 1 ve ekok(2, 15) = 30. Fark, 30'un karesiz olması, 12'nin ise bir tam kare çarpanı (4) taşımasıdır.
 

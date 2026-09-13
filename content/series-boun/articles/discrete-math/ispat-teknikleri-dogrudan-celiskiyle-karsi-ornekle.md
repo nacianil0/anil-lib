@@ -12,7 +12,7 @@ tags:
   - celiskiyle-ispat
   - karsi-ornek
   - kok-iki
-content_hash: sha256:7bf193df15dbe5f2a21ef990e5a0db87642eade6a98c3b46611c55dd669375fa
+content_hash: sha256:1f48e11149bae8a4c72a00149b54c25456ca9457a271d1441fd29fd25b5f677f
 classification_version: 1
 classification_batch: 0
 ---
@@ -62,7 +62,7 @@ Doğrudan ispatın anahtarı neredeyse her zaman **tanımı açmaktır**. Mülak
 
 ## Karşıt tersiyle ispat
 
-Bazen p'den q'ya yürümek zordur ama ¬q'dan ¬p'ye yürümek kolaydır. İkinci makaledeki denklik sayesinde ikisi aynı şeydir.
+Bazen p'den q'ya yürümek zordur ama ¬q'dan ¬p'ye yürümek kolaydır. Mantık makalesindeki denklik sayesinde ikisi aynı şeydir.
 
 **İddia (Lemma).** n bir tam sayı ve n² çiftse, n de çifttir.
 

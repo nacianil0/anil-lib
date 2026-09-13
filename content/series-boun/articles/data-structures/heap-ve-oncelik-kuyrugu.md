@@ -5,14 +5,14 @@ slug: heap-ve-oncelik-kuyrugu
 category: data-structures
 level: advanced
 reading_order: 13
-summary: "Arama ağacının değişmezini bilinçli olarak zayıflatan yapı: öncelik kuyruğu arayüzü, heap özelliği ve kökün en küçük olduğunun tümevarımla ispatı, tam ikili ağacın dizi üzerindeki indis aritmetiği, yukarı ve aşağı sızdırma, yığın kurmanın neden doğrusal olduğu ve heapsort."
+summary: "Arama ağacının değişmezini bilinçli olarak zayıflatan yapı: öncelik kuyruğu arayüzü, heap özelliği ve kökün en küçük olduğunun tümevarımla ispatı, tam ikili ağacın dizi üzerindeki indis aritmetiği, yukarı ve aşağı sızdırma, heap kurmanın neden doğrusal olduğu ve heapsort."
 tags:
   - heap
   - oncelik-kuyrugu
   - heapsort
   - build-heap
   - tam-ikili-agac
-content_hash: sha256:5ed0571dfc02a0866e8ddbb0d59c289837c881f41f7f4cccdbdef68f3f0941bb
+content_hash: sha256:74a75e933b94e44af3943845e7f9e6b24f11db206930599166a05de1bc17e257
 classification_version: 1
 classification_batch: 4
 ---
@@ -125,7 +125,7 @@ Somut bir iz sürelim. Şekil 1'deki [1, 3, 2, 7, 4, 9, 5] heap'ine 0 ekleyelim.
 
 Karşılaştırma sayısını sıkı biçimde de verebiliriz: n öğeli bir heap'te ekleme en fazla 1 + log₂ n karşılaştırma, en küçüğü alma en fazla 2 log₂ n karşılaştırma yapar. Alma işleminin katsayısının iki olmasının nedeni her seviyede iki karşılaştırma yapılmasıdır: önce hangi çocuğun küçük olduğu, sonra o çocuğun ebeveynden küçük olup olmadığı.
 
-## Yığın kurmak: n log n mi, n mi?
+## Heap kurmak: n log n mi, n mi?
 
 Elinde n öğelik bir dizi var ve bunu bir heap hâline getirmek istiyorsun. İlk akla gelen yol tek tek eklemektir: n kez ekleme, her biri logaritmik, toplam O(n log n).
 
@@ -139,13 +139,13 @@ Burada bir ayrımı temiz tutmak gerekiyor, çünkü mülakatta karıştırılı
 
 ## Heapsort
 
-Öncelik kuyruğu sıralaması desenini heap ile çalıştırınca **heapsort** çıkar: önce yığını kur, sonra n kez en uçtakini al. Maliyet O(n log n)'dir; doğrusal kurma bu sonucu değiştirmez, çünkü ikinci faz zaten n logaritmik işlem yapar.
+Öncelik kuyruğu sıralaması desenini heap ile çalıştırınca **heapsort** çıkar: önce heap'i kur, sonra n kez en uçtakini al. Maliyet O(n log n)'dir; doğrusal kurma bu sonucu değiştirmez, çünkü ikinci faz zaten n logaritmik işlem yapar.
 
 Heapsort'un ayırt edici özelliği **yerinde (in-place)** çalışmasıdır ve numara zariftir: heap'i sıralanacak dizinin bir öneki olarak tut. Alma işlemi en uçtakini zaten dizinin sonuna takas ediyordu; onu silmek yerine heap'in sınırını bir azaltırsan, çıkarılan öğeler dizinin arkasında sıralı bir kuyruk oluşturur. Bir max-heap ile yapıldığında dizi artan sırada biter. Ek bellek sabittir. Karşılaştırma ve takas sayısı 2n log₂ n'nin altında kalır.
 
 İki not, mülakat için kritik. Birincisi, heapsort **kararlı değildir**: takaslar uzak hücreler arasında yapılır ve eşit anahtarlı öğelerin göreli sırası korunmaz. İkincisi, en kötü durumda da O(n log n)'dir — bu, sıralama makalesinde göreceğimiz gibi her algoritmanın veremediği bir garantidir.
 
-> **Sesli anlat:** "Heap neden bir dizide saklanır ve yığını kurmak neden doğrusal zamanda mümkün? Altmış saniyede açıkla."
+> **Sesli anlat:** "Heap neden bir dizide saklanır ve heap kurmak neden doğrusal zamanda mümkün? Altmış saniyede açıkla."
 >
 > İyi bir cevabın omurgası: "Heap'in değişmezi ağacın şeklini zorlamadığı için şekli ben seçerim; en derli toplu şekil olan tam ikili ağacı seçerim. Tam ikili ağaçlar ile diziler arasında birebir eşleme vardır: düğümleri okuma sırasında hücrelere yazarım, kök sıfırıncı hücrededir, sol çocuk 2i artı 1, sağ çocuk 2i artı 2, ebeveyn i eksi 1 bölü 2'nin alt tam sayısıdır. Böylece işaretçi maliyeti sıfır olur ve yükseklik tanım gereği log n kalır. Kurmaya gelince: tek tek eklersem her ekleme düğümün derinliği kadar iş yapar ve derinlikler toplamı n log n mertebesindedir. Onun yerine diziyi baştan tam ağaç kabul edip sondan başa doğru aşağı sızdırma uygularım; o zaman her düğümün maliyeti derinliği değil yüksekliği olur. Düğümlerin yarısı yaprak, dörtte biri bir yükseklikte olduğu için yükseklikler toplamı n ile sınırlıdır. Bu amortize bir sonuç değil, aynı işin daha sıkı sayılmasıdır."
 
@@ -159,7 +159,7 @@ Sorulabilecek iki ek ayrıntı hazırda dursun. Birincisi, heap'in ikili olması
 
 Sık yapılan üç hata: heap'i sıralı sanmak; "heap ile arama logaritmik" demek (değildir, doğrusaldır); ve öncelik kuyruğunu FIFO kuyruğuyla karıştırmak.
 
-İngilizce karşılıklar hazır olmalıdır: *priority queue*, *heap*, *min-heap* / *max-heap*, *heap property*, *complete binary tree*, *implicit tree*, *sift-up* (*swim*), *sift-down* (*sink*), *build-heap*, *heapsort*, *in-place*, *stable*.
+İngilizce karşılıklar hazır olmalıdır: *priority queue*, *heap*, *min-heap* / *max-heap*, *heap property*, *complete binary tree*, *sift-up* (*swim*), *sift-down* (*sink*), *build-heap*, *heapsort*, *in-place*, *stable*.
 
 ### Sırada ne var
 

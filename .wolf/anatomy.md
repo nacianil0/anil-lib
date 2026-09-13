@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-11T21:36:56.486Z
-> Files: 236 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-13T13:56:00.302Z
+> Files: 332 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -18,6 +18,21 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/03ccb4c3-d4f7-4d0a-86f1-65d9cd447984/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/
+
+- `baselines.py` — Her BOUN diyagraminda en alttaki <text> taban cizgisi ile viewBox yuksekligi arasindaki bosluk. (~308 tok)
+- `extract.py` — Workflow cikti dosyalarindan serit ozeti cikarir. (~950 tok)
+- `fix_a.py` — BOUN bakim run'i - teyit edilmis duzeltmeler. Her degistirme TAM 1 eslesme ister. (~2952 tok)
+- `fix_b.py` — BOUN bakim run'i - bilesik duzeltmeler (katalog kopyasi, cok gecisli terim, tablo). (~1216 tok)
+- `journal_verdicts.py` — Workflow journal'indan teyit ajanlarinin verdiklerini cikarir. (~337 tok)
+- `linkcheck.sh` — BOUN bakim run'i - makale gövdelerinde atif verilen URL'lerin canlilik taramasi (~163 tok)
+- `toc.py` (~134 tok)
+- `worklist.py` — Teyit edilmis bulgulari (defect + onerilen duzeltme + teyit notu) tek listede birlestirir. (~668 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/10e08d09-4faa-414b-b0b8-7bae72876fb0/scratchpad/verify/
+
+- `check.py` — norm (~2885 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/219dba1e-e9ce-4e11-a1cc-2c97c171f067/scratchpad/
 
@@ -37,6 +52,18 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/43aeecde-fc24-42a9-9acd-9370f13cf189/scratchpad/
+
+- `dec.py` — -*- coding: utf-8 -*- (~2638 tok)
+- `net.py` — fetch, strip_html, cmd_get, cmd_head (~1260 tok)
+- `notes.py` — ` ile `.wolf/*` altına (~1627 tok)
+- `scan.cjs` — Yayın öncesi mekanik taramalar. (~1035 tok)
+- `shots.mjs` — Declares require (~722 tok)
+- `svgcheck.cjs` — Repo kapısının (check-series-svg.cjs) görmediği kusurlar. (~1116 tok)
+- `sweep.py` (~374 tok)
+- `syncalt.cjs` — Markdown alt metnini SVG'nin aria-label'ına yazar. Elle yazıldığında ayrışıyor. (~300 tok)
+- `wc.cjs` — check-series-content.cjs içindeki countProseWords'ün birebir kopyası. (~232 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/46105a02-dc62-4c76-a799-b816a68efa70/scratchpad/
 
@@ -158,6 +185,22 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ea96cadd-5e00-4a54-a697-5ebfd7134545/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/ebba4b56-a033-4853-a901-94ae0b1891f9/scratchpad/
+
+- `add_decisions.py` (~2497 tok)
+- `add_notes.py` (~910 tok)
+- `add_repeat.py` (~605 tok)
+- `handoff_head.py` — ` + `content/series/assets/<slug>/*.svg` | (~6994 tok)
+- `handoff_tail.py` — `) ayrı bir üretim hattıyla ilerliyor ve rotası `/boun`.\n" (~1460 tok)
+- `net.py` — fetch, strip_html, cmd_get, cmd_head (~1355 tok)
+- `scan.cjs` — Yayın öncesi zorunlu taramalar (repo kapısının görmedikleri). (~1108 tok)
+- `shots.mjs` — Declares require (~646 tok)
+- `statecheck.py` — say (~1028 tok)
+- `svgcheck.cjs` — Repo kapısının görmediği SVG kusurları: aynı satırdaki metin çakışması, (~1204 tok)
+- `sweep.py` — get, main (~392 tok)
+- `syncalt.cjs` — Markdown alt metnini SVG'nin aria-label'ına yazar. Elle yazıldığında ayrışıyor. (~340 tok)
+- `wc.cjs` — stripFrontmatter: countProseWords (~212 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/edd1cce2-097e-4338-ad72-8698dcf742a0/scratchpad/
 
 
@@ -185,14 +228,18 @@
 
 ## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
 
+- `boun-bakim-run1-borclar-kapandi.md` (~1124 tok)
 - `boun-batch10-faz-d-sanallastirma.md` (~938 tok)
 - `boun-batch11-faz-d-kapanis.md` (~1066 tok)
 - `boun-batch12-faz-e-konu-makaleleri.md` (~1209 tok)
+- `boun-batch13-seri-tamamlandi.md` (~1378 tok)
 - `boun-batch9-faz-d-govde.md` (~988 tok)
 - `series-batch22-faz10-acilis.md` — Declares into (~1184 tok)
 - `series-batch23-faz10-kapanis.md` (~1009 tok)
 - `series-batch24-faz11-kapanis.md` (~710 tok)
 - `series-batch25-faz12-kapanis.md` (~844 tok)
+- `series-batch26-faz13-kapanis.md` (~710 tok)
+- `series-batch27-faz14-govde.md` (~827 tok)
 
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/
 
@@ -260,6 +307,29 @@
 
 ## artifacts/b13-research/
 
+- `arastirma-18.md` — 18. Batch 13 üretim run'ında doğrulanan kaynaklar (2026-09-12) (~2208 tok)
+- `buglog-append.py` — Batch 13'te bulunan gerçek kusurları .wolf/buglog.json'a ekler. (~1172 tok)
+- `cerebrum-append.py` — Batch 13'un ogrendiklerini .wolf/cerebrum.md'nin dogru bolumlerine ekler. (~1502 tok)
+- `code-b13.mjs` — Bu batch'te fenced kod blogu yok; yerine satir ici <code> ogeleri denetlenir. (~997 tok)
+- `gloss.py` — Yeni makalelerdeki parantezli gloss'ları çıkarır ve terim defteriyle karşılaştırır. (~543 tok)
+- `memory-append.md` — Oturum özeti — 2026-09-12 · BOUN Batch 13 (`BATCH=3+1`) · **SERİ TAMAMLANDI** (~573 tok)
+- `shot-batch13.mjs` — Declares BASE (~2108 tok)
+- `svgoverlap.py` — Metin-metin ve metin-kutu cakisma taramasi (repo denetleyicisi bunlara bakmaz). (~945 tok)
+
+## artifacts/b14-bakim/
+
+- `arastirma-19.md` — 19. Bakım run'ında doğrulanan kaynaklar (2026-09-12/13) (~3561 tok)
+- `blockquote-check.mjs` — "Sesli anlat" kutularinin gercek render'da tek blockquote mu iki blockquote mu oldugunu olcer. (~460 tok)
+- `fixed-articles-render.mjs` — Duzeltilen iki makalenin (28, 39) uc genislik x uc temada render regresyon denetimi. (~841 tok)
+- `handoff-borclar.md` — Açık borçlar (2026-09-13 bakım run'ından sonra) (~929 tok)
+- `handoff-dogrulama.md` — Bu run'da doğrulananlar (bakım run'ı 1, 2026-09-13) (~877 tok)
+- `handoff-run.md` — Bakım run'ı 1'de ne yapıldı (2026-09-13) (~747 tok)
+- `ink-extents.mjs` — Gercek MUREKKEP sinirini olcer. getBBox() em-kutusunu verir (abartir); (~1026 tok)
+- `landing-and-nav.mjs` — /boun girisi ve okuyucu navigasyonunun bakim denetimi (uc genislik, uc tema). (~1148 tok)
+- `shot-bands.mjs` — Bayrak kaldiran diyagramlarin ilgili seridini buyutulmus olarak yakalar (light + dark). (~885 tok)
+- `shot-figs.mjs` — Bayrakli diyagramlarin TAMAMINI eleman ekran goruntusu olarak alir (light + dark). (~710 tok)
+- `svg-geometry.mjs` — BOUN bakim run'i: 41 makale sayfasindaki BUTUN satir ici SVG'lerin GERCEK metin geometrisi. (~1278 tok)
+- `svg-vars.mjs` — Canli sayfadan diyagramlarin kullandigi CSS degiskenlerinin gercek degerlerini ve (~595 tok)
 
 ## artifacts/b14-research/
 
@@ -354,13 +424,15 @@
 
 ## content/series-boun/articles/interview-method/
 
+- `kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md` — Kırk bir makalenin sonunda (~5674 tok)
+- `sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md` — Konu bitti, sıra anlatmada (~4949 tok)
 
 ## content/series-boun/articles/operating-systems/
 
 - `bellek-yonetimi-adres-cevirisi-ve-sayfalama.md` — Sıfırdan başladığını sanan program (~7190 tok)
 - `cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md` — Hazır kümesinden hangisi? (~8042 tok)
 - `dosya-sistemleri-ve-giris-cikis.md` — Diskin asıl işi (~7486 tok)
-- `kilitlenme-kosullar-ve-stratejiler.md` — Döngüyü kırdık, ama neden yeterliydi? (~6738 tok)
+- `kilitlenme-kosullar-ve-stratejiler.md` — Döngüyü kırdık, ama neden yeterliydi? (~7155 tok)
 - `klasik-eszamanlilik-problemleri-cozumu-savunmak.md` — Neyi ispatlamaya çalışıyoruz? (~6933 tok)
 - `koruma-guvenlik-ve-linux-somutlamasi.md` — İki farklı "güvenlik" (~7167 tok)
 - `sanal-bellek-talep-sayfalama-ve-degistirme.md` — Adres uzayı belleğe sığmazsa (~5980 tok)
@@ -368,10 +440,10 @@
 
 ## content/series-boun/articles/supporting-fundamentals/
 
-- `bilgisayar-organizasyonu-osnin-altindaki-makine.md` — Soyutlamanın altına inmek (~6452 tok)
+- `bilgisayar-organizasyonu-osnin-altindaki-makine.md` — Soyutlamanın altına inmek (~6577 tok)
 - `c-ve-bellek-sistem-programlama-penceresi.md` — Kavramın programcıdaki karşılığı (~6298 tok)
-- `olasilik-ve-istatistik-mulakat-icin-cekirdek.md` — Ertelenen koşul (~6905 tok)
-- `veritabanlari-iliskisel-model-indeks-ve-transaction.md` — Bütün mekanizmaların buluştuğu yer (~7837 tok)
+- `olasilik-ve-istatistik-mulakat-icin-cekirdek.md` — Ertelenen koşul (~6999 tok)
+- `veritabanlari-iliskisel-model-indeks-ve-transaction.md` — Bütün mekanizmaların buluştuğu yer (~8549 tok)
 
 ## content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/
 
@@ -452,6 +524,11 @@
 ## content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/
 
 
+## content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/
+
+- `aralikli-tekrar-takvimi.svg` (~947 tok)
+- `zayif-nokta-haritasi.svg` (~1299 tok)
+
 ## content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/
 
 
@@ -500,6 +577,11 @@
 ## content/series-boun/assets/siralama-algoritmalari-karsilastirmali-ve-otesi/
 
 
+## content/series-boun/assets/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu/
+
+- `cevap-omurgasi-ve-takip-zinciri.svg` (~1229 tok)
+- `tahta-dort-bolge.svg` (~750 tok)
+
 ## content/series-boun/assets/surecler-ve-is-parcaciklari/
 
 
@@ -524,6 +606,10 @@
 ## content/series/articles/agents-and-retrieval/
 
 
+## content/series/articles/case-studies/
+
+- `vaka-incelemesi-bir-sinir-model-nasil-yapilir.md` — Aynı parçalar, bu kez tek bir sıra (~5145 tok)
+
 ## content/series/articles/foundations/
 
 - `arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md` — Masanın öbür tarafı (~5558 tok)
@@ -541,13 +627,20 @@
 
 ## content/series/articles/models-and-training/
 
+- `dagitik-egitim-paralellik-stratejileri.md` — Kapanmayan defter (~5079 tok)
 - `gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md` — Dizüstü bilgisayardan veri merkezine (~5153 tok)
 - `kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md` — Doğru cevabı olmayan bir soru (~5344 tok)
 - `kendi-egitim-kosun-tokenizer-veri-ve-dongu.md` — Ağırlıkları kim yazacak (~5575 tok)
+- `kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md` — Hızlı adım, uzun koşu (~3726 tok)
 - `mikro-gpt-bir-transformeri-elle-kurmak.md` — Kâğıda sığan bir model (~5504 tok)
+- `performans-muhendisligi-dikkati-hizlandirmak.md` — Kartın içinde kalan kayıp (~4022 tok)
 
 ## content/series/articles/multimodal-and-future/
 
+- `bilimde-yapay-zeka-kesif-araci-olarak-llm.md` — Bilgi eskimiyor, henüz yok (~5903 tok)
+- `dunya-modelleri-metnin-otesinde-anlamak.md` — Dört makalelik "nasıl"dan sonra "ne" (~3260 tok)
+- `robotik-ve-somutlasmis-yapay-zeka.md` — Kavşaktan konuma (~6168 tok)
+- `surekli-ogrenme-ve-kisisellestirme.md` — Dünya durmuyor, model duruyor (~5967 tok)
 
 ## content/series/articles/reasoning-and-memory/
 
@@ -633,6 +726,12 @@
 ## content/series/assets/bilgisayar-kullanan-ajanlar/
 
 
+## content/series/assets/bilimde-yapay-zeka-kesif-araci-olarak-llm/
+
+- `dogrulamanin-dort-maliyeti.svg` (~1286 tok)
+- `iddia-ve-hakemli-itiraz.svg` (~1138 tok)
+- `uretim-ucuzlayinca.svg` (~911 tok)
+
 ## content/series/assets/bir-calismayi-okumak-iddia-kanit-ve-hakemlik/
 
 - `ayar-butcesi-asimetrisi.svg` (~866 tok)
@@ -651,6 +750,12 @@
 ## content/series/assets/constitutional-ai-ve-olceklenebilir-denetim/
 
 
+## content/series/assets/dagitik-egitim-paralellik-stratejileri/
+
+- `ayni-formul-dort-duzen.svg` (~966 tok)
+- `dort-bolme-ekseni.svg` (~917 tok)
+- `uc-eksenin-carpimi.svg` (~1112 tok)
+
 ## content/series/assets/dalkavukluk-ve-model-karakteri/
 
 
@@ -668,6 +773,12 @@
 
 ## content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/
 
+
+## content/series/assets/dunya-modelleri-metnin-otesinde-anlamak/
+
+- `ayirt-eden-dizi.svg` (~728 tok)
+- `iki-sinav-iki-cevap.svg` (~804 tok)
+- `terimin-iki-soyu.svg` (~779 tok)
 
 ## content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/
 
@@ -763,6 +874,12 @@
 ## content/series/assets/kod-yazan-ajanlar-yazilim-muhendisliginde-llm/
 
 
+## content/series/assets/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem/
+
+- `gozlemin-uc-katmani.svg` (~809 tok)
+- `kontrol-noktasi-araligi.svg` (~911 tok)
+- `sicramanin-tanisi.svg` (~852 tok)
+
 ## content/series/assets/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari/
 
 
@@ -825,11 +942,23 @@
 ## content/series/assets/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci/
 
 
+## content/series/assets/performans-muhendisligi-dikkati-hizlandirmak/
+
+- `ayni-algoritma-uc-uygulama.svg` (~912 tok)
+- `cekirdegin-gidis-gelisi.svg` (~835 tok)
+- `islem-sinifi-ve-sure.svg` (~766 tok)
+
 ## content/series/assets/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati/
 
 
 ## content/series/assets/ragin-otesi-getirerek-akil-yuruten-sistemler/
 
+
+## content/series/assets/robotik-ve-somutlasmis-yapay-zeka/
+
+- `iki-ucuz-kaynak.svg` (~1007 tok)
+- `internetin-iki-yarisi.svg` (~1187 tok)
+- `uc-eylem-arayuzu.svg` (~1494 tok)
 
 ## content/series/assets/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler/
 
@@ -849,6 +978,12 @@
 ## content/series/assets/surec-denetimi-adim-adim-odullendirme/
 
 
+## content/series/assets/surekli-ogrenme-ve-kisisellestirme/
+
+- `cerrahinin-uc-faturasi.svg` (~1384 tok)
+- `degisiklik-nereye-yazilir.svg` (~941 tok)
+- `dort-guncelleme-yolu.svg` (~1214 tok)
+
 ## content/series/assets/talimatla-egitim-supervised-fine-tuning/
 
 
@@ -866,6 +1001,11 @@
 
 ## content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/
 
+
+## content/series/assets/vaka-incelemesi-bir-sinir-model-nasil-yapilir/
+
+- `karar-zinciri.svg` (~1219 tok)
+- `maliyet-ve-sonuc-tersine.svg` (~1036 tok)
 
 ## content/series/assets/vektor-veritabanlari-ve-dizinleme/
 
@@ -895,11 +1035,14 @@
 
 ## docs/seri-boun/
 
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~8618 tok)
+- `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~57447 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~9033 tok)
+- `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~254 tok)
+- `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~30910 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7601 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7765 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~153490 tok)
 
 ## docs/superpowers/plans/
@@ -928,6 +1071,7 @@
 
 ## src/app/boun/
 
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~360 tok)
 
 ## src/app/boun/[slug]/
 

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 486" role="img" aria-label="Üç sütunlu, altı satırlı bir tablo ve altında iki kutu. Üstte başlık: aynı soru, üç arayüz. Sütunlar metin ortamının şablonları, token olarak yazılan eylem ve sürekli eylem öbeği. Birinci satır eylemin biçimi: dokuz komut şablonu, sekiz tam sayı, sürekli değerlerden oluşan öbek. İkinci satır çözünürlük: şablon içi ya da dışı, boyut başına 256 kutu, ayrıklaştırma yok. Üçüncü satır karar sıklığı: adım adım metin turu, saniyede bir ile üç veya beş, saniyede elliye kadar. Dördüncü satır dünyaya ne gidiyor: altta düzinelerce hareketi tetikleyen tek komut, uç işlevcinin konum ve dönüş değişimi artı tutucu, aynı büyüklükler öbek hâlinde. Beşinci satır vurguludur, arayüzün yasakladığı: şablonun dışındaki her hareket, kutu genişliğinden ince düzeltme, yok denecek kadar az. Altıncı satır bedeli: fiziksel ayrıntı hiç görülmüyor, hızlı görevlerde geride kalıyor, eğitim ve çıkarım daha pahalı. Birinci kutunun başlığı iki sayı bütün arayüzü belirliyor; içinde 256 kutunun hareket aralığının 256'da birinden ince düzeltmeyi temsil edilemez kıldığı, saniyede üç kararın iki karar arasında 333 milisaniye bıraktığı ve bu aralıkta olan bitenin görülmediği yazılıdır. İkinci kutuda 47’nin dersi durur: biçim geçerliliği değeri zorlamaz; sekiz tam sayının her bileşimi geçerlidir ve bazıları bardağı devirir. En altta bir kayıt: kutu sayısı ve sıklıklar Brohan, Zitkovich ve Black ve arkadaşlarının bildirdiği değerlerdir, 333 milisaniye kendi hesabımızdır.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı soru, üç arayüz</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">soru</text>
+  <text x="190" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">metin ortamının şablonları</text>
+  <text x="400" y="64" font-size="13" font-weight="bold" fill="var(--accent)">token olarak eylem</text>
+  <text x="570" y="64" font-size="13" font-weight="bold" fill="var(--cool)">sürekli eylem öbeği</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">eylemin biçimi</text>
+  <text x="190" y="98" font-size="13" fill="var(--text)">dokuz komut şablonu</text>
+  <text x="400" y="98" font-size="13" fill="var(--text)">sekiz tam sayı</text>
+  <text x="570" y="98" font-size="13" fill="var(--text)">sürekli değerler</text>
+
+  <text x="24" y="124" font-size="13" fill="var(--text)">çözünürlük</text>
+  <text x="190" y="124" font-size="13" fill="var(--text)">şablon içi ya da dışı</text>
+  <text x="400" y="124" font-size="13" fill="var(--text)">boyut başına 256 kutu</text>
+  <text x="570" y="124" font-size="13" fill="var(--text)">ayrıklaştırma yok</text>
+
+  <text x="24" y="150" font-size="13" fill="var(--text)">karar sıklığı</text>
+  <text x="190" y="150" font-size="13" fill="var(--text)">adım adım metin turu</text>
+  <text x="400" y="150" font-size="13" fill="var(--text)">saniyede 1–3 ya da 5</text>
+  <text x="570" y="150" font-size="13" fill="var(--text)">saniyede 50'ye kadar</text>
+
+  <text x="24" y="176" font-size="13" fill="var(--text)">dünyaya ne gidiyor</text>
+  <text x="190" y="176" font-size="13" fill="var(--text)">tek komut, altta düzine</text>
+  <text x="400" y="176" font-size="13" fill="var(--text)">konum, dönüş, tutucu</text>
+  <text x="570" y="176" font-size="13" fill="var(--text)">aynısı, öbek hâlinde</text>
+
+  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--text)">arayüzün yasakladığı</text>
+  <text x="190" y="204" font-size="13" font-weight="bold" fill="var(--text-muted)">şablon dışı her hareket</text>
+  <text x="400" y="204" font-size="13" font-weight="bold" fill="var(--accent)">kutudan ince düzeltme</text>
+  <text x="570" y="204" font-size="13" font-weight="bold" fill="var(--cool)">yok denecek kadar az</text>
+
+  <text x="24" y="230" font-size="13" fill="var(--text)">bedeli</text>
+  <text x="190" y="230" font-size="13" fill="var(--text)">fizik hiç görülmüyor</text>
+  <text x="400" y="230" font-size="13" fill="var(--text)">hızlı görevde geride</text>
+  <text x="570" y="230" font-size="13" fill="var(--text)">daha pahalı koşuyor</text>
+
+  <line x1="20" y1="246" x2="720" y2="246" stroke="var(--border)" />
+
+  <rect x="20" y="260" width="700" height="102" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="284" font-size="13" font-weight="bold" fill="var(--text)">İki sayı bütün arayüzü belirliyor</text>
+  <text x="34" y="306" font-size="13" fill="var(--text)">256 kutu: hareket aralığının 256'da birinden ince bir düzeltme temsil edilemez.</text>
+  <text x="34" y="326" font-size="13" fill="var(--text)">Saniyede 3 karar: iki karar arasında 333 ms vardır ve o aralıkta olan biten</text>
+  <text x="34" y="346" font-size="13" fill="var(--text)">ne görülür ne düzeltilir. Kayan bir tabak o aralıkta düşer.</text>
+
+  <rect x="20" y="374" width="700" height="54" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="398" font-size="13" fill="var(--text-muted)">47'nin dersi: biçim geçerliliği değeri zorlamaz. Sekiz tam sayının her</text>
+  <text x="34" y="418" font-size="13" fill="var(--text-muted)">bileşimi geçerli bir eylemdir; bazıları bardağı devirir.</text>
+
+  <text x="20" y="446" font-size="13" fill="var(--text-faint)">Kutu sayısı ve sıklıklar Brohan, Zitkovich ve Black ve ark.'nın</text>
+  <text x="20" y="464" font-size="13" fill="var(--text-faint)">bildirdiği değerler; 333 ms kendi hesabımız.</text>
+</svg>

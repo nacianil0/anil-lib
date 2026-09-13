@@ -12,7 +12,7 @@ tags:
   - huffman
   - aralik-cizelgeleme
   - karsi-ornek
-content_hash: sha256:690a5792a6dcd41ad1507ec4ad69852f9b156eb777e722de5623b05f30122725
+content_hash: sha256:0efdf32db4df97fa85c797b89c40d25f03144d03e45988f5db40591e08658dff
 classification_version: 1
 classification_batch: 6
 ---
@@ -92,7 +92,7 @@ Maliyeti hesaplayalım: 34·2 + 25·2 + 15·2 + 12·3 + 9·4 + 5·4 = 68 + 50 + 
 
 Bu kuralın optimal olduğu — yani hiçbir önek-serbest kodun daha az bit harcamadığı — ispatlanmıştır. Açgözlü seçim özelliği burada şu biçimi alır: en seyrek iki simgenin ağacın **en derin seviyesinde kardeş** olduğu bir optimal ağaç vardır. Sezgisi basittir; en seyrek simgeler en uzun kodu almalıdır ve en derin seviyedeki iki yaprak zaten kardeştir, dolayısıyla onları yer değiştirerek maliyeti artırmadan istediğimiz biçime getirebiliriz. Optimal altyapı ise şudur: iki simgeyi tek bir birleşik simgeyle değiştirdiğinde, küçülmüş alfabe için optimal olan ağaç, geri açıldığında özgün alfabe için de optimaldir.
 
-Bir incelik mülakatta güzel bir takip sorusudur: **her optimal önek-serbest kod bir Huffman kodu değildir.** Frekanslar A: 26, B: 24, C: 14, D: 13, E: 12, F: 11 olsun. Huffman 250 bitlik bir kod üretir. Ama A = 00, B = 01, C = 100, D = 101, E = 110, F = 111 kodu da tam 250 bit harcar ve dolayısıyla o da optimaldir — oysa bu kodda A ile B **aynı bitle başlar** ve Huffman ağacında bu imkânsızdır, çünkü en seyrek iki simge (E ve F) kardeş olmak zorundadır. Optimal çözüm tek değildir; açgözlü kural onlardan **birini** bulur.
+Bir incelik mülakatta güzel bir takip sorusudur: **her optimal önek-serbest kod bir Huffman kodu değildir.** Frekanslar A: 26, B: 24, C: 14, D: 13, E: 12, F: 11 olsun. Huffman 250 bitlik bir kod üretir. Ama A = 00, B = 01, C = 100, D = 101, E = 110, F = 111 kodu da tam 250 bit harcar ve dolayısıyla o da optimaldir — oysa bu kodda A ile B **aynı bitle başlar**; Huffman'ın birleştirme sırası burada zorunludur (önce E + F = 23, sonra C + D = 27, sonra 23 + B = 47, sonra 27 + A = 53), yani A ile B kökün iki ayrı alt ağacına düşer ve hiçbir Huffman ağacında aynı bitle başlayamaz. Optimal çözüm tek değildir; açgözlü kural onlardan **birini** bulur.
 
 Son bir uyarı: aynı problemi yukarıdan aşağıya çözmek — simgeleri frekansları kabaca eşit iki gruba bölüp özyinelemeye girmek — Shannon ve Fano'nun önerdiği yöntemdir ve **optimal değildir.** Huffman'ı çalıştıran şey aşağıdan yukarıya, en seyrekten başlayan sıradır.
 
@@ -106,7 +106,7 @@ Açgözlü savunmasında tekrar tekrar karşına çıkacak üç kalıp var; üç
 
 **Kes ve yapıştır.** Optimal altyapıyı ispatlamanın standart yoludur: bir optimal çözümün içindeki alt çözüm optimal olmasaydı, onu daha iyisiyle değiştirip bütünü iyileştirirdin — bu da bütünün optimal olduğu varsayımıyla çelişir.
 
-Dördüncü bir araç da her zaman elinin altındadır ve çoğu zaman en hızlısıdır: **karşı örnek.** Bir kuralı bir iki dakikada ispatlayamıyorsan, üç dört elemanlı küçük girdilerle kırmayı dene. Yukarıdaki üç yanlış kuralın karşı örnekleri de dört ya da on bir istekle kurulmuştu.
+Dördüncü bir araç da her zaman elinin altındadır ve çoğu zaman en hızlısıdır: **karşı örnek.** Bir kuralı bir iki dakikada ispatlayamıyorsan, üç dört elemanlı küçük girdilerle kırmayı dene. Yukarıdaki üç yanlış kuralın karşı örnekleri de üç, dört ya da on bir istekle kurulmuştu.
 
 ## Mülakatta nasıl görünür
 

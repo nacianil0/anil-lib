@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Dört satırlı dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir eğitim adımını bölmenin dört ekseni. Sütunlar eksen, bölünen, doğan iletişim ve sınır. Birinci satır veri: bölünen yığın, doğan iletişim adım başına 2Ψ büyüklüğünde bir hepsi-indirge, sınır modelin küçülmemesi. İkinci satır tensör: bölünen ağırlık matrisleri, doğan iletişim katman başına dört hepsi-indirge, sınır sunucu içi ve en çok sekiz yol. Üçüncü satır boru hattı: bölünen katman yığını, doğan iletişim aşama başına noktadan noktaya bir gönderim, sınır p eksi bir bölü m büyüklüğündeki kabarcık. Dördüncü satır dizi: bölünen dizinin kendisi, doğan iletişim hepsi-topla artı indirge-dağıt, sınır tek başına kullanılamaması. Eksen adları vurgulu yazılmıştır. Birinci kutunun başlığı trafiğin büyüklüğü, GPT-3 ölçüleriyle: b çarpı s çarpı h eşittir 1 çarpı 2.048 çarpı 12.288 eşittir 25,2 milyon sayı; 96 katmanda tensör paralelliği mikro yığın başına 4 çarpı 96 eşittir 384 toplu işlem, boru hattı ise 63 aşama sınırında 63 noktadan noktaya gönderim yapar. İkinci kutunun başlığı bağlayıcı kural: hangi eksen seçilirse seçilsin, bölünmüş koşunun sonucu tek karttaki koşunun sonucuyla birebir aynı olmak zorundadır. En altta bir kayıt: iletişim biçimleri kaynaklardan, 25,2 milyon ile 384 ve 63 sayıları bizim hesabımızdır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Bir eğitim adımını bölmenin dört ekseni</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">eksen</text>
+  <text x="120" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">bölünen</text>
+  <text x="270" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">doğan iletişim</text>
+  <text x="510" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sınır</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" font-weight="bold" fill="var(--accent)">veri</text>
+  <text x="120" y="100" font-size="13" fill="var(--text)">yığın</text>
+  <text x="270" y="100" font-size="13" fill="var(--text)">2Ψ hepsi-indirge, adım başına</text>
+  <text x="510" y="100" font-size="13" fill="var(--text)">model küçülmez</text>
+
+  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--accent)">tensör</text>
+  <text x="120" y="126" font-size="13" fill="var(--text)">ağırlık matrisleri</text>
+  <text x="270" y="126" font-size="13" fill="var(--text)">4 hepsi-indirge, katman başına</text>
+  <text x="510" y="126" font-size="13" fill="var(--text)">sunucu içi, en çok 8 yol</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">boru hattı</text>
+  <text x="120" y="152" font-size="13" fill="var(--text)">katman yığını</text>
+  <text x="270" y="152" font-size="13" fill="var(--text)">noktadan noktaya, aşama başına</text>
+  <text x="510" y="152" font-size="13" fill="var(--text)">kabarcık, p − 1 bölü m</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">dizi</text>
+  <text x="120" y="178" font-size="13" fill="var(--text)">dizinin kendisi</text>
+  <text x="270" y="178" font-size="13" fill="var(--text)">hepsi-topla + indirge-dağıt</text>
+  <text x="510" y="178" font-size="13" fill="var(--text)">tek başına kullanılmaz</text>
+
+  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
+
+  <rect x="20" y="206" width="680" height="100" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="230" font-size="13" font-weight="bold" fill="var(--text)">Trafiğin büyüklüğü: GPT-3 ölçüleriyle</text>
+  <text x="34" y="252" font-size="13" fill="var(--text)">b·s·h = 1 × 2.048 × 12.288 = 25,2 milyon sayı.</text>
+  <text x="34" y="272" font-size="13" fill="var(--text)">96 katmanda tensör paralelliği mikro yığın başına 4 × 96 = 384 toplu işlem;</text>
+  <text x="34" y="292" font-size="13" fill="var(--text)">boru hattı ise 63 aşama sınırında 63 noktadan noktaya gönderim yapar.</text>
+
+  <rect x="20" y="318" width="680" height="72" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="342" font-size="13" font-weight="bold" fill="var(--text)">Bağlayıcı kural</text>
+  <text x="34" y="364" font-size="13" fill="var(--text-muted)">Hangi eksen seçilirse seçilsin, bölünmüş koşunun sonucu tek karttaki</text>
+  <text x="34" y="382" font-size="13" fill="var(--text-muted)">koşunun sonucuyla birebir aynı olmak zorundadır.</text>
+
+  <text x="20" y="410" font-size="13" fill="var(--text-faint)">İletişim biçimleri kaynaklardan; 25,2 milyon ile 384 ve 63 sayıları bizim hesabımızdır.</text>
+</svg>

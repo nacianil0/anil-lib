@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="Dört satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı modeller, iki ayrı sınav. Sütunlar soru, bilinen sınavlar ve dizi tabanlı ölçütler. Birinci satır ne sorar: sonraki token geçerli mi, ve aynı duruma götüren iki önek aynı devamları mı veriyor. İkinci satır neye erişir: modelin içine, ve yalnızca çıktıya. Üçüncü satır vurguludur, sonuç: geçerlilik neredeyse yüzde 100 ve sonda yüzde 90'ın üstünde, buna karşılık hiçbir model iyi değil. Dördüncü satır kurulan harita: bilinen sınavlarda sorulmuyor, dizi tabanlı ölçütlerde olmayan sokaklar ve üst geçitler çıkıyor. Birinci kutunun başlığı cevabı sınavın derinliği belirliyor; içinde rastgele yürüyüşlerle eğitilen modelin tek token'lık ayrımlarda yüzde 100 aldığı, ayırt eden dizilerin tamamına bakıldığında yüzde 50'ye indiği yazılıdır. İkinci kutunun başlığı başka bir alanda aynı tablo; içinde oturma düzeni bulmacalarında hiçbir modelin sıkıştırma isabetinin yüzde 40'ı, ayrım duyarlığının 0,60'ı geçmediği yazılıdır. En altta bir kayıt: bütün değerler Vafa ve arkadaşlarının ölçümleridir.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı modeller, iki ayrı sınav</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">soru</text>
+  <text x="190" y="66" font-size="13" font-weight="bold" fill="var(--cool)">bilinen sınavlar</text>
+  <text x="430" y="66" font-size="13" font-weight="bold" fill="var(--accent)">dizi tabanlı ölçütler</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">ne sorar</text>
+  <text x="190" y="100" font-size="13" fill="var(--text)">sonraki token geçerli mi</text>
+  <text x="430" y="100" font-size="13" fill="var(--text)">aynı duruma götüren iki önek</text>
+  <text x="430" y="118" font-size="13" fill="var(--text)">aynı devamları mı veriyor</text>
+
+  <text x="24" y="144" font-size="13" fill="var(--text)">neye erişir</text>
+  <text x="190" y="144" font-size="13" fill="var(--text)">modelin içine</text>
+  <text x="430" y="144" font-size="13" fill="var(--text)">yalnızca çıktıya</text>
+
+  <text x="24" y="170" font-size="13" font-weight="bold" fill="var(--text)">sonuç</text>
+  <text x="190" y="170" font-size="13" font-weight="bold" fill="var(--cool)">geçerlilik neredeyse %100</text>
+  <text x="190" y="188" font-size="13" font-weight="bold" fill="var(--cool)">sonda %90'ın üstünde</text>
+  <text x="430" y="170" font-size="13" font-weight="bold" fill="var(--accent)">hiçbir model iyi değil</text>
+
+  <text x="24" y="214" font-size="13" fill="var(--text)">kurulan harita</text>
+  <text x="190" y="214" font-size="13" fill="var(--text)">sorulmuyor</text>
+  <text x="430" y="214" font-size="13" fill="var(--text)">olmayan sokaklar, üst geçitler</text>
+
+  <line x1="20" y1="230" x2="700" y2="230" stroke="var(--border)" />
+
+  <rect x="20" y="242" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="266" font-size="13" font-weight="bold" fill="var(--text)">Cevabı sınavın derinliği belirliyor</text>
+  <text x="34" y="288" font-size="13" fill="var(--text)">Rastgele yürüyüşlerle eğitilen model, tek token'lık ayrımlarda %100 alıyor;</text>
+  <text x="34" y="308" font-size="13" fill="var(--text)">ayırt eden dizilerin tamamına bakıldığında %50'ye iniyor.</text>
+
+  <rect x="20" y="330" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="354" font-size="13" font-weight="bold" fill="var(--text)">Başka bir alanda aynı tablo</text>
+  <text x="34" y="376" font-size="13" fill="var(--text-muted)">Oturma düzeni bulmacalarında hiçbir modelin sıkıştırma isabeti %40'ı,</text>
+  <text x="34" y="396" font-size="13" fill="var(--text-muted)">ayrım duyarlığı 0,60'ı geçmiyor.</text>
+
+  <text x="20" y="426" font-size="13" fill="var(--text-faint)">Bütün değerler Vafa ve arkadaşlarının ölçümleridir.</text>
+</svg>

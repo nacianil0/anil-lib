@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 452" role="img" aria-label="Beş satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: üç işlem iki düzende, GPT-3 ölçüleri, mikro yığın 1, tek katman. Sütunlar ölçü, ayrı çekirdekler ve birleştirilmiş. Birinci satır çekirdek sayısı: 3 ve 1. İkinci satır kart belleği turu: 6 ve 2. Üçüncü satır taşınan bayt: 302 MB ve 101 MB. Dördüncü satır vurguludur, 1,5 TB bölü saniyelik bantta süre: 201 mikrosaniye ve 67 mikrosaniye. Beşinci satır yapılan işlem sayısı: iki sütunda da aynı. Birinci kutunun başlığı ölçülen karşılıkları; içinde birleştirmenin aynı kurulumda kart başına verimi yüzde 19 ve yüzde 11 artırdığı, sistematik uygulandığında taşınan veriyi yüzde 22,91 azaltıp katmanı 1,30 kat ve uçtan uca eğitimi 1,19 kat hızlandırdığı yazılıdır. İkinci kutunun başlığı sınır; içinde iki madde durur: bir öncekinin tamamını bekleyen işlem aynı çekirdeğe konamaz, ve birleştirilen çekirdek çipte daha çok yer tuttuğu için eşzamanlı iş azalır. En altta bir kayıt: 50,3 MB, 302 MB, 101 MB ve iki süre bizim hesabımızdır, yüzdeler kaynaklardan.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Üç işlem, iki düzen — GPT-3 ölçüleri, mikro yığın 1, tek katman</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">ölçü</text>
+  <text x="360" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">ayrı çekirdekler</text>
+  <text x="540" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">birleştirilmiş</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">çekirdek sayısı</text>
+  <text x="360" y="100" font-size="13" fill="var(--text)">3</text>
+  <text x="540" y="100" font-size="13" fill="var(--text)">1</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">kart belleği turu</text>
+  <text x="360" y="126" font-size="13" fill="var(--text)">6</text>
+  <text x="540" y="126" font-size="13" fill="var(--text)">2</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">taşınan bayt</text>
+  <text x="360" y="152" font-size="13" fill="var(--text)">302 MB</text>
+  <text x="540" y="152" font-size="13" fill="var(--text)">101 MB</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">1,5 TB/s bantta süre</text>
+  <text x="360" y="178" font-size="13" font-weight="bold" fill="var(--accent)">201 µs</text>
+  <text x="540" y="178" font-size="13" font-weight="bold" fill="var(--accent)">67 µs</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">yapılan işlem sayısı</text>
+  <text x="360" y="204" font-size="13" fill="var(--text)">aynı</text>
+  <text x="540" y="204" font-size="13" fill="var(--text)">aynı</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="232" width="680" height="96" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="256" font-size="13" font-weight="bold" fill="var(--text)">Ölçülen karşılıkları</text>
+  <text x="34" y="278" font-size="13" fill="var(--text)">Aynı kurulumda birleştirme tek başına kart başına verimi %19 ve %11 artırıyor.</text>
+  <text x="34" y="298" font-size="13" fill="var(--text)">Sistematik uygulandığında taşınan veri %22,91 azalıyor, katman 1,30 kat,</text>
+  <text x="34" y="318" font-size="13" fill="var(--text)">uçtan uca eğitim 1,19 kat hızlanıyor.</text>
+
+  <rect x="20" y="340" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="364" font-size="13" font-weight="bold" fill="var(--text)">Sınır</text>
+  <text x="34" y="386" font-size="13" fill="var(--text-muted)">Bağımlılık: bir öncekinin tamamını bekleyen işlem aynı çekirdeğe konamaz.</text>
+  <text x="34" y="406" font-size="13" fill="var(--text-muted)">Kaynak: birleştirilen çekirdek çipte daha çok yer tutar, eşzamanlı iş azalır.</text>
+
+  <text x="20" y="436" font-size="13" fill="var(--text-faint)">50,3 MB, 302 MB, 101 MB ve iki süre bizim hesabımızdır; yüzdeler kaynaklardan.</text>
+</svg>

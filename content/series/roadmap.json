@@ -198,9 +198,9 @@
       "description": "GPU zihinsel modelinden dağıtık eğitime: büyük koşuların gerçek maliyet yapısı.",
       "articles": [
         { "order": 106, "title": "GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği", "status": "yayinda", "slug": "gpu-zihinsel-modeli-hesap-bellek-bant-genisligi" },
-        { "order": 107, "title": "Dağıtık Eğitim: Paralellik Stratejileri", "status": "planlandi" },
-        { "order": 108, "title": "Performans Mühendisliği: Dikkati Hızlandırmak", "status": "planlandi" },
-        { "order": 109, "title": "Koşunun Güvenilirliği: Checkpoint, Spike ve Gözlem", "status": "planlandi" }
+        { "order": 107, "title": "Dağıtık Eğitim: Paralellik Stratejileri", "status": "yayinda", "slug": "dagitik-egitim-paralellik-stratejileri" },
+        { "order": 108, "title": "Performans Mühendisliği: Dikkati Hızlandırmak", "status": "yayinda", "slug": "performans-muhendisligi-dikkati-hizlandirmak" },
+        { "order": 109, "title": "Koşunun Güvenilirliği: Kontrol Noktası, Sıçrama ve Gözlem", "status": "yayinda", "slug": "kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem" }
       ]
     },
     {
@@ -208,11 +208,11 @@
       "title": "Sınır ve Sentez",
       "description": "Dünya modellerinden AGI tartışmasına: alanın sınırı ve serinin sentezi.",
       "articles": [
-        { "order": 110, "title": "Dünya Modelleri: Metnin Ötesinde Anlamak", "status": "planlandi" },
-        { "order": 111, "title": "Robotik ve Somutlaşmış Yapay Zekâ", "status": "planlandi" },
-        { "order": 112, "title": "Sürekli Öğrenme ve Kişiselleştirme", "status": "planlandi" },
-        { "order": 113, "title": "Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM", "status": "planlandi" },
-        { "order": 114, "title": "Vaka İncelemesi: Bir Frontier Model Nasıl Yapılır?", "status": "planlandi" },
+        { "order": 110, "title": "Dünya Modelleri: Metnin Ötesinde Anlamak", "status": "yayinda", "slug": "dunya-modelleri-metnin-otesinde-anlamak" },
+        { "order": 111, "title": "Robotik ve Somutlaşmış Yapay Zekâ", "status": "yayinda", "slug": "robotik-ve-somutlasmis-yapay-zeka" },
+        { "order": 112, "title": "Sürekli Öğrenme ve Kişiselleştirme", "status": "yayinda", "slug": "surekli-ogrenme-ve-kisisellestirme" },
+        { "order": 113, "title": "Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM", "status": "yayinda", "slug": "bilimde-yapay-zeka-kesif-araci-olarak-llm" },
+        { "order": 114, "title": "Vaka İncelemesi: Bir Sınır Model Nasıl Yapılır?", "status": "yayinda", "slug": "vaka-incelemesi-bir-sinir-model-nasil-yapilir" },
         { "order": 115, "title": "Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?", "status": "planlandi" },
         { "order": 116, "title": "Açık Sorular: Alanın Bilmedikleri", "status": "planlandi" },
         { "order": 117, "title": "AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri", "status": "planlandi" },

@@ -12,7 +12,7 @@ tags:
   - karatsuba
   - medyan-bulma
   - ozyineleme-agaci
-content_hash: sha256:12216fb3d24a0c11db8fd532942e7825072bcb221b59c88177de916f55dc1d7f
+content_hash: sha256:5a8d8696d7d2ebd0a93c1981871a3dc6e419a36aa1e0e6c803276f1950bfe860
 classification_version: 1
 classification_batch: 6
 ---
@@ -98,7 +98,7 @@ Bütün mesele x'i seçmektir. Rastgele seçmek ortalamada iyidir ama en kötü 
 
 Kazanç sayılabilir. Grupların yaklaşık yarısının medyanı x'ten büyüktür ve her böyle grup, kendi medyanıyla birlikte en az üç eleman katkı verir; x'in kendi grubu ile eksik kalan son grup düşüldüğünde x'ten büyük eleman sayısı en az 3(⌈n/10⌉ − 2) olur. Simetrik olarak küçükler için de aynı sayı geçerlidir. n = 1000 için bu en az 294 eleman demektir; yani özyinelemeye giden taraf en fazla 706 elemandır, girdinin yaklaşık %70,6'sı.
 
-Ortaya çıkan bağıntı, önceki makalede "Master Teoreminin susduğu yerler" arasında saydığımız biçimdedir:
+Ortaya çıkan bağıntı, önceki makalede "Master Teoreminin sustuğu yerler" arasında saydığımız biçimdedir:
 
 T(n) ≤ T(⌈n/5⌉) + T(7n/10 + 6) + Θ(n)
 
@@ -108,7 +108,7 @@ T(n) ≤ T(⌈n/5⌉) + T(7n/10 + 6) + Θ(n)
 >
 > İyi bir cevabın omurgası: "Evet, doğrusal zamanda bulunur. Fikir hızlı sıralamanın ayırma adımıdır ama iki tarafa değil **tek** tarafa iniyorum: bir x elemanı seçip kümeyi x'ten küçükler ve büyükler diye ayırıyorum, x'in sırasını hesaplıyorum ve aradığım sıra hangi taraftaysa yalnızca oraya özyinelemeli olarak giriyorum. Bütün mesele x'in yeterince ortada olduğunu **garanti etmek**; rastgele seçim ortalamada iyidir ama en kötü durumda Θ(n²) verir. Garanti için elemanları beşerli gruplara ayırıyorum, her grubun medyanını alıyorum ve bu medyanların medyanını aynı algoritmayla özyinelemeli buluyorum. Bu seçim, x'ten büyük ve küçük tarafların her birinde en az 3(⌈n/10⌉ − 2) eleman bulunmasını garanti eder; yani özyinelemeye giden taraf girdinin kabaca %70'ini geçemez. Bağıntı T(n) ≤ T(n/5) + T(7n/10) + Θ(n) olur. Master Teoremi burada uygulanmaz çünkü alt problemler eşit boyutta değil; ama payların toplamı 9/10, yani birden küçük — bu, işin geometrik azalacağını söyler. T(n) ≤ c·n tahmin edip tümevarımla doğruluyorum ve yeterince büyük c için yürüyor. Sonuç Θ(n)."
 
-Grup boyutunun neden beş olduğu, bu makalenin en güzel tasarım dersidir. Üçerli gruplarla yapsaydın garanti edilen eleme oranı 1/3'e düşer ve bağıntı T(n) = T(n/3) + T(2n/3) + Θ(n) olurdu; payların toplamı **tam olarak 1** eder ve geometrik azalma kaybolur. O bağıntının çözümü Θ(n log n)'dir, yani baştaki sıralama fikrine geri dönmüş olursun. Sayıyla da görülür: üçerli grupla T(n)/n oranı 1000, 10⁴, 10⁵, 10⁶ ve 10⁷ için 4,5 → 8,1 → 11,6 → 15,2 → 18,8 diye her onlukta sabit bir miktar artar — logaritmik büyüme budur. Beşerli grupla aynı oranlar 3,6 → 5,7 → 7,0 → 7,9 → 8,6 diye artar ve 1/(1 − 0,9) = 10 sınırına yaklaşarak durur. Beş, bu eşitsizliği sağlayan en küçük tek sayıdır.
+Grup boyutunun neden beş olduğu, bu makalenin en güzel tasarım dersidir. Üçerli gruplarla yapsaydın garanti edilen eleme oranı 1/3'e düşer ve bağıntı T(n) = T(n/3) + T(2n/3) + Θ(n) olurdu; payların toplamı **tam olarak 1** eder ve geometrik azalma kaybolur. O bağıntının çözümü Θ(n log n)'dir, yani baştaki sıralama fikrine geri dönmüş olursun. Sayıyla da görülür — aşağıdaki oranları iki bağıntıyı kendi kodumla çözerek hesapladım: üçerli grupla T(n)/n oranı 1000, 10⁴, 10⁵, 10⁶ ve 10⁷ için 4,5 → 8,1 → 11,6 → 15,2 → 18,8 diye her onlukta sabit bir miktar artar — logaritmik büyüme budur. Beşerli grupla aynı oranlar 3,6 → 5,7 → 7,0 → 7,9 → 8,6 diye artar ve 1/(1 − 0,9) = 10 sınırına yaklaşarak durur. Beş, bu eşitsizliği sağlayan en küçük tek sayıdır.
 
 ## Küçük girdilerde tabana devretmek
 

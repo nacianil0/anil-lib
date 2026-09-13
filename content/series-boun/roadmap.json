@@ -75,8 +75,8 @@
         { "order": 37, "title": "Bilgisayar Organizasyonu: OS'nin Altındaki Makine", "status": "yayinda", "slug": "bilgisayar-organizasyonu-osnin-altindaki-makine" },
         { "order": 38, "title": "C ve Bellek: Sistem Programlama Penceresi", "status": "yayinda", "slug": "c-ve-bellek-sistem-programlama-penceresi" },
         { "order": 39, "title": "Veritabanları: İlişkisel Model, İndeks ve Transaction", "status": "yayinda", "slug": "veritabanlari-iliskisel-model-indeks-ve-transaction" },
-        { "order": 40, "title": "Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü", "status": "planlandi" },
-        { "order": 41, "title": "Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı", "status": "planlandi" }
+        { "order": 40, "title": "Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü", "status": "yayinda", "slug": "sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu" },
+        { "order": 41, "title": "Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı", "status": "yayinda", "slug": "kapanis-zayif-nokta-haritasi-ve-son-hafta-plani" }
       ]
     }
   ]

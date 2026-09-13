@@ -12,7 +12,7 @@ tags:
   - ozyineleme-agaci
   - bol-ve-yonet
   - analiz
-content_hash: sha256:b125debc193827650f5b3642da66ec82cc1d679ace894b526b11c56c6a9f5d80
+content_hash: sha256:e9bee501f1f4a19a6b1d9f9c46ceea1176c655fd0454d1cd833625c4acfa80d7
 classification_version: 1
 classification_batch: 5
 ---
@@ -119,7 +119,7 @@ Teoremi tanıdık yinelemelere uygulayalım.
 | T(n) = 4T(n/2) + Θ(n) | n² | Θ(n) | 1 | Θ(n²) |
 | T(n) = 3T(n/2) + Θ(n) | n^1,585 | Θ(n) | 1 | Θ(n^log₂3) |
 
-Üçüncü satırın düzenlilik koşulunu denetleyelim, çünkü mülakatta atlanan yer tam olarak orasıdır: a · g(n/b) = 2 · (n/2)² = n²/2 ve bu, c = 1/2 alınarak c · g(n)'e eşittir; c < 1 olduğu için koşul sağlanır.
+Üçüncü satırın düzenlilik koşulunu denetleyelim, çünkü mülakatta atlanan yer tam olarak orasıdır: a · g(n/b) = 2 · (n/2)² = n²/2 ve bu, c = 3/4 alınırsa c · g(n) = 3n²/4'ten küçüktür; c < 1 olduğu için koşul sağlanır.
 
 İkinci ve üçüncü satırın karşılaştırması özellikle öğreticidir. İkisinde de a = 2 ve b = 2; yani aynı bölme yapısı. Fark yalnızca birleştirme maliyetinde ve sonuç Θ(n log n) ile Θ(n²) arasında değişiyor. Aynı fark gerçek bir algoritmada da görülür: iki yarının konveks kabuklarını birleştirirken bütün nokta çiftlerine bakan naif yöntem T(n) = 2T(n/2) + Θ(n²) verir ve Θ(n²) çıkar; iki parmakla ilerleyen doğrusal birleştirme T(n) = 2T(n/2) + Θ(n) verir ve Θ(n log n) çıkar. Böl-yönet algoritmalarında iyileştirme neredeyse her zaman **birleştirme adımındadır**.
 

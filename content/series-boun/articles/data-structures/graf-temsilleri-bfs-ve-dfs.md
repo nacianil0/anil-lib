@@ -12,7 +12,7 @@ tags:
   - dfs
   - topolojik-siralama
   - bagli-bilesen
-content_hash: sha256:e0af275b69cb6e6e04651805390fb971e6d1b4b85dc369ca6a826452014101e3
+content_hash: sha256:d5ab96eb684dbb958337e0e6585aa3dd4fed5da30010ccd07c69c53c9d68f61f
 classification_version: 1
 classification_batch: 5
 ---
@@ -98,7 +98,7 @@ Bir ayrıntı daha: DFS'in ürettiği ağaç, komşuluk listelerinin sırasına 
 
 BFS de DFS de tek bir kaynaktan erişilebilen düğümleri bulur. Bütün grafı görmek istiyorsan basit bir sarmalayıcı yeter: ziyaret edilmemiş bir düğüm kaldığı sürece, ondan yeni bir arama başlat. Buna **tam dolaşma** diyelim. Her düğüm tam olarak bir kez ziyaret edildiği için maliyet yine Θ(|V| + |E|)'dir.
 
-Bu sarmalayıcı, doğrudan bağlı bileşenleri verir: her aramanın ziyaret ettiği düğümler kümesi bir bağlı bileşendir. İspata gerek yok, çünkü ispatı çoktan yapmıştık. Graf makalesinde bağlılığın bir **denklik bağıntısı** olduğunu gösterdik; kümeler makalesinde de her denklik bağıntısının kümeyi parçalara ayırdığını ispatlamıştık. Bağlı bileşenler o parçalanışın ta kendisidir, tam dolaşma da parçaları tek tek numaralandıran işlemdir. İki makale önce ispatlanan bir teoremin, üç makale sonra bir algoritmanın doğruluk savunması hâline gelmesi bu serinin çalışma biçimidir.
+Bu sarmalayıcı, doğrudan bağlı bileşenleri verir: her aramanın ziyaret ettiği düğümler kümesi bir bağlı bileşendir. İspata gerek yok, çünkü ispatı çoktan yapmıştık. Graf makalesinde bağlılığın bir **denklik bağıntısı** olduğunu gösterdik; kümeler makalesinde de her denklik bağıntısının kümeyi parçalara ayırdığını ispatlamıştık. Bağlı bileşenler o parçalanışın ta kendisidir, tam dolaşma da parçaları tek tek numaralandıran işlemdir. Ayrık matematik fazında ispatlanan bir teoremin, veri yapıları fazının kapanışında bir algoritmanın doğruluk savunması hâline gelmesi bu serinin çalışma biçimidir.
 
 Ön işleme Θ(|V| + |E|) sürer; sonrasında "u ile v aynı bileşende mi?" sorusu iki bileşen numarasını karşılaştırmaktır, yani sabit zamanlıdır.
 

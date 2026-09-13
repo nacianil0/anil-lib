@@ -12,7 +12,7 @@ tags:
   - iyi-siralama
   - ozyineleme
   - yapisal-tumevarim
-content_hash: sha256:7edbf51080837ab7f0d4a724b3fc860a5063ebaf474c90ca9c357ecfbf1dce17
+content_hash: sha256:b2811a1c4668aa6c40b180423dee7b6f15ad13c7a9ce48f48ac9650d7d3282d0
 classification_version: 1
 classification_batch: 1
 ---
@@ -30,7 +30,7 @@ Elinde her n doğal sayısı için tanımlı bir yüklem olsun: P(n). Tümevarı
 
 Eğer **(a)** P(0) doğruysa ve **(b)** her n için "P(n) doğruysa P(n + 1) de doğrudur" önermesi doğruysa, o hâlde P(n) her doğal sayı için doğrudur.
 
-İkinci makalenin diliyle yazarsak ispatlaman gereken iki şey vardır: P(0) ve ∀n (P(n) → P(n + 1)). Bunların birincisine **taban durumu (base case)**, ikincisine **tümevarım adımı (inductive step)** denir. Adımın içinde doğru varsaydığın P(n) önermesi ise **tümevarım hipotezi (induction hypothesis)** adını alır.
+Mantık makalesinin diliyle yazarsak ispatlaman gereken iki şey vardır: P(0) ve ∀n (P(n) → P(n + 1)). Bunların birincisine **taban durumu (base case)**, ikincisine **tümevarım adımı (inductive step)** denir. Adımın içinde doğru varsaydığın P(n) önermesi ise **tümevarım hipotezi (induction hypothesis)** adını alır.
 
 Klasik sezgi merdivendir: taban durumu ilk basamağa çıkabildiğini, tümevarım adımı ise herhangi bir basamaktan bir sonrakine geçebildiğini gösterir. İkisi birlikte bütün basamaklara çıkabildiğin anlamına gelir.
 
@@ -38,9 +38,9 @@ Taban her zaman sıfır olmak zorunda değildir. Tabanı bir k tam sayısında k
 
 Şekil 1 bu merdiveni özyinelemenin yanına koyuyor. Dikkat et: iki sütun aynı zinciri gösteriyor, yalnızca oklar ters yönde. Tümevarım tabandan yukarı doğru **ispatlar**, özyineleme tepeden aşağı doğru **hesaplar**.
 
-![Solda tümevarım merdiveni: taban durumu P(1)'den başlayıp her adımda bir üst basamağa geçen yukarı yönlü oklar. Sağda özyineleme açılımı: f(4) çağrısının f(3), f(2) ve taban durum f(1)'e inen aşağı yönlü oklar. İki sütun aynı zinciri ters yönlerde kat eder](assets/tumevarim-merdiveni-ozyineleme-acilimi.svg "Şekil 1 — Aynı zincirin iki yönü: tümevarım yukarı ispatlar, özyineleme aşağı hesaplar")
+![Solda tümevarım merdiveni: taban durumu P(1)'den başlayıp her adımda bir üst basamağa geçen yukarı yönlü oklar. Sağda özyineleme açılımı: f(n) çağrısının f(n − 1), f(2) ve taban durum f(1)'e inen aşağı yönlü oklar. İki sütun aynı zinciri ters yönlerde kat eder](assets/tumevarim-merdiveni-ozyineleme-acilimi.svg "Şekil 1 — Aynı zincirin iki yönü: tümevarım yukarı ispatlar, özyineleme aşağı hesaplar")
 
-Tümevarım hipotezinin kafa karıştıran yanı şudur: P(n)'i "doğru varsaymak", ispatlamak istediğin şeyi varsaymak gibi görünür. Değildir. İspatladığın şey P(n)'in kendisi değil, P(n) → P(n + 1) **koşullu önermesidir**; ikinci makaledeki doğruluk tablosundan hatırla, koşullu önermeyi ispatlamanın yolu hipotezi varsayıp sonuca yürümektir. Mülakatta bu itiraz gelirse cevabın tek cümledir: "P(n)'i mutlak olarak varsaymıyorum; bir koşullu önermenin hipotezi olarak varsayıyorum."
+Tümevarım hipotezinin kafa karıştıran yanı şudur: P(n)'i "doğru varsaymak", ispatlamak istediğin şeyi varsaymak gibi görünür. Değildir. İspatladığın şey P(n)'in kendisi değil, P(n) → P(n + 1) **koşullu önermesidir**; mantık makalesindeki doğruluk tablosundan hatırla, koşullu önermeyi ispatlamanın yolu hipotezi varsayıp sonuca yürümektir. Mülakatta bu itiraz gelirse cevabın tek cümledir: "P(n)'i mutlak olarak varsaymıyorum; bir koşullu önermenin hipotezi olarak varsayıyorum."
 
 ## Çalışılmış örnek: ilk n sayının toplamı
 
@@ -148,13 +148,13 @@ Bu, ileride sık kullanacağın bir alışkanlığın tohumudur. Ağaçlar, list
 
 Takip sorusu zinciri burada tipik olarak üç halkadır. Birincisi tanımı yoklar: "Tümevarım adımında ne varsayıyorsun, ne ispatlıyorsun?" İkincisi sınır durumunu yoklar: "Taban durumunu atlarsan ne olur, bir örnek verebilir misin?" Üçüncüsü seçimi yoklar: "Bu ispatta zayıf tümevarım yeter miydi?"
 
-Üçüncüsünün cevabı, ispatın parçalama adımına bakmakla verilir. Adım n + 1'den n'ye iniyorsa zayıfı yeter; n'den kontrol edilemeyen daha küçük değerlere iniyorsa güçlüsü gerekir. Mergesort'un doğruluğu bu ikinci gruptadır, çünkü diziyi ikiye bölmek n − 1'e değil, kabaca n / 2'ye iner. Bu ayrımı söyleyebilmek, tekniği ezberlemekle kullanabilmek arasındaki farktır.
+Üçüncüsünün cevabı, ispatın parçalama adımına bakmakla verilir. Adım n + 1'den n'ye iniyorsa zayıfı yeter; n'den kontrol edilemeyen daha küçük değerlere iniyorsa güçlüsü gerekir. Birleştirmeli sıralamanın (merge sort) doğruluğu bu ikinci gruptadır, çünkü diziyi ikiye bölmek n − 1'e değil, kabaca n / 2'ye iner. Bu ayrımı söyleyebilmek, tekniği ezberlemekle kullanabilmek arasındaki farktır.
 
 Son bir uyarı: mülakatta "tümevarımla ispatlarım" demek tek başına cevap değildir. Cevap, P(n)'in ne olduğunu **açıkça yazmakla** başlar. Yanlış kurulmuş bir P(n) ile en dikkatli adım bile bir yere varmaz.
 
 ### Sırada ne var
 
-Buraya kadarki üç makale mülakatın **dilini** kurdu: iddiayı kesin söylemek, tek seferde biten argüman yürütmek ve sonsuz aileleri ispatlamak. Sıradaki makalede dilin konuştuğu **nesnelere** geçiyoruz: kümeler, fonksiyonlar ve bağıntılar. Birebir ve örten fonksiyonların ispat kalıplarını, denklik bağıntılarının kümeleri nasıl parçalara ayırdığını ve kısmi sıraların hangi mühendislik problemlerinde karşına çıktığını göreceksin. Bu makalede kurduğumuz tümevarım, orada sayılabilirlik tartışmasında ve sıradaki makalelerin sayma argümanlarında yeniden işe yarayacak.
+Buraya kadarki üç makale mülakatın **dilini** kurdu: iddiayı kesin söylemek, tek seferde biten argüman yürütmek ve sonsuz aileleri ispatlamak. Sıradaki makalede dilin konuştuğu **nesnelere** geçiyoruz: kümeler, fonksiyonlar ve bağıntılar. Birebir ve örten fonksiyonların ispat kalıplarını, denklik bağıntılarının kümeleri nasıl parçalara ayırdığını ve kısmi sıraların hangi mühendislik problemlerinde karşına çıktığını göreceksin. Bu makalede kurduğumuz tümevarım, kümelerin ardından gelen graf ve ağaç makalesinde ağaç karakterizasyonlarını ispatlarken yeniden işe yarayacak.
 
 ## Kaynakça
 

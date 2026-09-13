@@ -13,7 +13,7 @@ tags:
   - omega
   - alt-sinir
   - karar-agaci
-content_hash: sha256:1e7cfb0e4bd89a05dbb95aebf103aabadc1f827c41d9ce6fd79157eed685d407
+content_hash: sha256:9ac8b309f0adcac3f6973979533cd4ac7c505ada6ff16a6fb8fc17753f0f25fb
 classification_version: 1
 classification_batch: 5
 ---
@@ -109,7 +109,7 @@ Sıralama makalesinde "sıkı hâli ve genel karar ağacı kuramı alt sınırla
 
 Asimptotik gösterim sabitleri ve eşikleri **bilerek** atar. Bu bir kusur değil, bir tasarım kararıdır; ama kararın bedelini bilmek gerekir. Tanımdaki n₀, keyfi biçimde büyük olabilir.
 
-En bilinen örnek şu: 1000n mi küçüktür, n² mi? Asimptotik olarak 1000n kazanır, çünkü 1000n = o(n²). Ama iki fonksiyon tam olarak n = 1000'de kesişir; n = 100 iken 1000n = 100.000 ve n² = 10.000, yani n² dört kat küçüktür. Girdilerin hep 1000'in altında olduğu bir uygulamada "asimptotik olarak daha iyi" olan algoritma her zaman daha yavaş çalışır.
+En bilinen örnek şu: 1000n mi küçüktür, n² mi? Asimptotik olarak 1000n kazanır, çünkü 1000n = o(n²). Ama iki fonksiyon tam olarak n = 1000'de kesişir; n = 100 iken 1000n = 100.000 ve n² = 10.000, yani n² on kat küçüktür. Girdilerin hep 1000'in altında olduğu bir uygulamada "asimptotik olarak daha iyi" olan algoritma her zaman daha yavaş çalışır.
 
 Daha uç bir örnek, logaritma ile küçük kuvvetleri karşılaştırır. log₂ n = o(n^0,1) doğrudur — logaritma her kuvvetten yavaştır. Ama kesişim n ≈ 10¹⁷,⁷ civarındadır. n = 10¹⁵'te log₂ n ≈ 49,8 iken n^0,1 ≈ 31,6'dır; yani logaritma hâlâ **daha büyüktür**. Ancak n = 10²⁰ dolayında sıralama tersine döner: 66,4'e karşı 100. Evrende o kadar çok girdi yok. Asimptotik olarak doğru olan bir cümle, pratikte hiçbir zaman geçerli olmayabilir.
 

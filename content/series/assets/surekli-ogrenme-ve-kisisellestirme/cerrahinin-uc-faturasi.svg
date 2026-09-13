@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 470" role="img" aria-label="İki bölmeli şekil. Üstte iki sütunlu altı satırlı bir tablo; sütunlar ölçüt ve rank-bir düzenlemenin aldığı puan. Birinci satır düzenlenen olgunun kendisi doksan dokuz virgül sekiz. İkinci satır aynı olgunun başka sözcüklerle sorulmuş hâli seksen sekiz virgül bir. Üçüncü satır öznenin başka adları seksen altı virgül sekiz. Dördüncü satır ilgisiz bilgilerin korunması yüz. Beşinci satır vurguludur, olgudan çıkan mantıksal sonuç yirmi virgül iki. Altıncı satır bütün modeller ve yöntemler üzerinde ortalama otuz sekiz ile altmış altı arası. Altta üç kutu yan yana durur. Birinci kutunun başlığı sonuç taşınmıyor; içinde cevabın değiştiği ama inancın değişmediği, modelin yeni nesneyi söyleyip ondan çıkanı yeniden hesaplamadığı yazılıdır. İkinci kutunun başlığı birikince çöküyor; içinde tutma oranının yüz düzenleme kadar erken ya da bin düzenleme kadar geç düşmeye başladığı, devre dışı bırakan tek bir düzenlemenin ağırlıktaki uzaklığının sıradan düzenlemelerin üç mertebe üstünde olduğu ve aynı olgu ilk düzenleme olarak uygulandığında da modelin çöktüğü yazılıdır. Üçüncü kutunun başlığı yer bilmek yetmiyor; içinde bir olgunun iz sürmeyle bulunan yeri ile başarıyla düzenlenebildiği katman arasındaki bağıntının sıfıra yakın olduğu yazılıdır. En altta bir kayıt: ilk iki satır Meng ve arkadaşlarının, üçüncüden altıncıya Cohen ve arkadaşlarının, ikinci kutu Gupta ve arkadaşlarının, üçüncü kutu Hase ve arkadaşlarının ölçümüdür.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı düzenleme, altı ayrı ölçüt</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">ölçüt</text>
+  <text x="560" y="64" font-size="13" font-weight="bold" fill="var(--accent)">puan</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">düzenlenen olgunun kendisi</text>
+  <text x="560" y="98" font-size="13" fill="var(--text)">99,8</text>
+
+  <text x="24" y="122" font-size="13" fill="var(--text)">aynı olgu, başka sözcüklerle</text>
+  <text x="560" y="122" font-size="13" fill="var(--text)">88,1</text>
+
+  <text x="24" y="146" font-size="13" fill="var(--text)">öznenin başka adları</text>
+  <text x="560" y="146" font-size="13" fill="var(--text)">86,8</text>
+
+  <text x="24" y="170" font-size="13" fill="var(--text)">ilgisiz bilgilerin korunması</text>
+  <text x="560" y="170" font-size="13" fill="var(--text)">100</text>
+
+  <text x="24" y="196" font-size="13" font-weight="bold" fill="var(--text)">olgudan çıkan mantıksal sonuç</text>
+  <text x="560" y="196" font-size="13" font-weight="bold" fill="var(--accent)">20,2</text>
+
+  <text x="24" y="220" font-size="13" fill="var(--text)">bütün model ve yöntemlerde ortalama</text>
+  <text x="560" y="220" font-size="13" fill="var(--text)">38 – 66</text>
+
+  <line x1="20" y1="236" x2="720" y2="236" stroke="var(--border)" />
+
+  <rect x="20" y="250" width="224" height="132" fill="var(--surface)" stroke="var(--border)" />
+  <text x="32" y="274" font-size="13" font-weight="bold" fill="var(--cool)">Sonuç taşınmıyor</text>
+  <text x="32" y="296" font-size="13" fill="var(--text)">Cevap değişiyor,</text>
+  <text x="32" y="316" font-size="13" fill="var(--text)">inanç değişmiyor.</text>
+  <text x="32" y="336" font-size="13" fill="var(--text)">Model yeni nesneyi</text>
+  <text x="32" y="356" font-size="13" fill="var(--text)">söylüyor, ondan çıkanı</text>
+  <text x="32" y="374" font-size="13" fill="var(--text)">hesaplamıyor.</text>
+
+  <rect x="258" y="250" width="224" height="132" fill="var(--surface)" stroke="var(--border)" />
+  <text x="270" y="274" font-size="13" font-weight="bold" fill="var(--cool)">Birikince çöküyor</text>
+  <text x="270" y="296" font-size="13" fill="var(--text)">Tutma oranı 100 ile</text>
+  <text x="270" y="316" font-size="13" fill="var(--text)">1.000 düzenleme arası</text>
+  <text x="270" y="336" font-size="13" fill="var(--text)">düşüyor. Devre dışı</text>
+  <text x="270" y="356" font-size="13" fill="var(--text)">bırakanın izi üç mertebe</text>
+  <text x="270" y="374" font-size="13" fill="var(--text)">büyük; ilk sırada da öyle.</text>
+
+  <rect x="496" y="250" width="224" height="132" fill="var(--surface)" stroke="var(--border)" />
+  <text x="508" y="274" font-size="13" font-weight="bold" fill="var(--cool)">Yer bilmek yetmiyor</text>
+  <text x="508" y="296" font-size="13" fill="var(--text)">Olgunun iz sürmeyle</text>
+  <text x="508" y="316" font-size="13" fill="var(--text)">bulunan yeri ile</text>
+  <text x="508" y="336" font-size="13" fill="var(--text)">düzenlenebildiği katman</text>
+  <text x="508" y="356" font-size="13" fill="var(--text)">arasındaki bağıntı</text>
+  <text x="508" y="374" font-size="13" fill="var(--text)">sıfıra yakın.</text>
+
+  <text x="20" y="412" font-size="13" fill="var(--text-faint)">İlk iki satır Meng ve ark.'nın, üçüncüden altıncıya Cohen ve ark.'nın;</text>
+  <text x="20" y="430" font-size="13" fill="var(--text-faint)">ikinci kutu Gupta ve ark.'nın, üçüncü kutu Hase ve ark.'nın ölçümüdür.</text>
+</svg>

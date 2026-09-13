@@ -12,7 +12,7 @@ tags:
   - erisim-matrisi
   - yetenekler
   - linux
-content_hash: sha256:f92e2638235f65cef0f1db1c3081e3291daab7472a386a22fec2e6e2f41291fc
+content_hash: sha256:31505a64fbc5cce40c70cbe0d58cab0eb8236016f4c5946050fe8ca7883ccec5
 classification_version: 1
 classification_batch: 11
 ---
@@ -24,7 +24,7 @@ Bu makalede sözcük anlam değiştiriyor. Buradaki **güvenlik (security)** bir
 
 İkinci bir ayrım da baştan konmalı. **Koruma (protection)**, sistemin içindeki bir sorudur: hangi özne hangi nesneye hangi kipte erişebilir? **Güvenlik**, sistemin dışına bakan bir sorudur: tehdit modeli nedir, saldırgan neyi deneyebilir? Koruma, güvenliğin düzeneğidir; güvenlik, korumanın gerekçesidir.
 
-Güvenliğin üç klasik hedefi vardır: **gizlilik (confidentiality)** — gizli kalması gereken bilgi öğrenilemesin; **bütünlük (integrity)** — belirli bir durumda olması gereken şey değiştirilemesin; **kullanılabilirlik (availability)** — kullanıma açık olması gereken hizmet engellenemesin. Terim notu: burada "kullanılabilirlik" diyorum, çünkü "erişilebilirlik" bu seride graflar makalesinden beri *reachability* demektir.
+Güvenliğin üç klasik hedefi vardır: **gizlilik (confidentiality)** — gizli kalması gereken bilgi öğrenilemesin; **bütünlük (integrity)** — belirli bir durumda olması gereken şey değiştirilemesin; **kullanılabilirlik (availability)** — kullanıma açık olması gereken hizmet engellenemesin. Terim notu: burada "kullanılabilirlik" diyorum, çünkü "erişilebilirlik" bu seride graf temsilleri makalesinden beri *reachability* demektir.
 
 Üçüncü hedef tanıdık gelmeli. Kilitlenme ve açlık, canlılık özelliğinin ihlalleriydi; bir saldırgan aynı çöküşü **kasten** üretebiliyorsa aynı olay bir güvenlik sorunudur. Çizelgeleyici hatası ile saldırı arasındaki fark, olayın kendisi değil, niyettir — ve savunma da ona göre tasarlanır.
 

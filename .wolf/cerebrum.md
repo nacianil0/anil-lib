@@ -392,6 +392,47 @@ ode_modules`, sonra kopyayi sil.
 - **BOUN serisinin rotasi `/boun`**, `/seri-boun` degil.
 - **Playwright ESM'den `import "D:/..."` ile cagrilamaz;** `createRequire("file:///D:/dev/anil-lib/")`
   kullanilir. `waitUntil: "networkidle"` okuyucuda hic tetiklenmiyor.
+- **BOUN serisi 2026-09-12'de TAMAMLANDI (41/41).** `docs/seri-boun/TRIGGER.md` artik yeni makale
+  uretmez; calistirilirsa is bakimdir (resmi sayfa yeniden dogrulamasi, acik borclar, duzeltme).
+  Seriye baslik eklemek yalnizca kullanicinin acik talebiyle olur ve once YOL-HARITASI guncellenir.
+- **Seri bitince `/boun` girisinde iki sey degisir.** (a) `SeriesLanding`in "yakinda" dali hic
+  render edilmez (her satirin descriptor'u vardir) — AI serisi hala kullandigi icin kod kalmalidir;
+  (b) `footerNote`daki "gruplar halinde yayimlanir" cumlesi yanlis olur. SOZLESME §4'un zorunlu
+  kildigi "resmi bilgi degisebilir" cumlesi **kalmalidir**.
+- **`/boun` girisinde ham makale bagi sayisi makale sayisindan BIR FAZLADIR.** Yol haritasi
+  listesinde (ol) N bag vardir, ayrica listenin disinda bir "Seriye basla" CTA'si ilk makaleyi
+  tekrar baglar. Denetim `a.closest("ol")` ile filtrelemeli ya da benzersiz href saymalidir.
+- **Serinin son makalesinde okuyucu navigasyonu kendiliginden dogru.** Makale 41'de yalnizca
+  "Onceki" bagi cikiyor, sarkan "Sonraki" yok, `undefined`/`NaN` yok. Bu sinir durumu seri bitince
+  ilk kez olusur; kod degisikligi gerektirmedi ama dogrulanmasi gerekti.
+- **`src/lib/content/series-assets.test.ts` VERI GUDUMLUDUR** ve iki serinin butun diyagramlarini
+  gezer. Paralel AI oturumu asset eklerse `pnpm test` sayisi BOUN'a dokunulmadan artar
+  (bu run'da 667 → 674, cunku AI asset'leri 316 → 323 oldu). **Sabit referans mutlak sayi degil,
+  hepsinin gecmesidir** — statik sayfa sayisi icin de ayni.
+- **Ogrenme bilimi kaynaklari icin calisan aynalar:** Cepeda ve ark. 2008 →
+  `yorku.ca/ncepeda/publications/CVRWP2008.pdf`; Roediger & Karpicke 2006 →
+  `colinallen.dnsalias.org/Readings/2006_Roediger_Karpicke_PsychSci.pdf`. Kunye dogrulamasi
+  `api.crossref.org` ile yapilir.
+
+- **BOUN bakim run'i (2026-09-13): denetleyiciler render kusurunu gormuyor.** Repo SVG denetleyicisi
+  metin genisligini `karakter x font x 0,55` ile TAHMIN eder (Inter icin fazla genis: 291,72 birimlik
+  satiri 408 sayar) ve dusey murekkep sinirina hic bakmaz; icerik denetleyicisi bolunmus blockquote'u
+  1 kutu sayar. Gercek olcum icin `artifacts/b14-bakim/` altindaki uc betik kullanilir:
+  `svg-geometry.mjs` (41 sayfayi gezip her `<text>` icin `getBBox()`), `ink-extents.mjs` (canvas
+  `actualBoundingBoxDescent` ile gercek murekkep) ve `blockquote-check.mjs`. **13px Inter'de Turkce
+  metnin gercek inis derinligi 3,00 birimdir; `getBBox()` em-kutusudur ve inisi 0,55 abartir.**
+- **BOUN kaynak kanallari (2026-09-13'te calisti):** kitap icindekileri icin **K10plus SRU**
+  (`sru.k10plus.de/opac-de-627?...&recordSchema=marcxml`) MARC 505 alanini verir ve LoC/HathiTrust/
+  Stanford'un vermedigi yerde calisti; CLRS 4e icindekiler MIT Press'in kendi PDF'inde
+  (`mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/4e_toc.pdf`); Silberschatz
+  OSC10 icindekiler `os-book.com/OS10/toc-dir/toc.pdf`; ACM Computing Surveys makaleleri universite
+  ders arsivlerinde (Coffman 1971 -> `uobdv.github.io/Design-Verification/Supplementary/`,
+  Haerder & Reuter 1983 -> `cs.cmu.edu/afs/cs.cmu.edu/academic/class/15712-s05/www/readings/`).
+- **Bot filtresi olu baglanti degildir.** curl'e 403 veren bes atif adresi (ACM DL, SAGE, MIT Press,
+  ScienceDirect, doi.org) gercek tarayicida dogru esere aciliyor ve `api.crossref.org` kunyeyi
+  dogruluyor. Bir adres ancak 404 verirse ya da baska bir esere giderse duzeltilir.
+- **`www.os-book.com` iki A kaydi dondurur ve 205.178.189.129 baglanti kabul etmez**; curl araliıkli
+  olarak `000` verir. `--resolve www.os-book.com:443:128.36.0.108` ile calisir.
 
 ## Do-Not-Repeat
 
@@ -615,6 +656,38 @@ ode_modules`, sonra kopyayi sil.
   "inode" basligi ilk satira yapisikti. Her diyagram light + dark tek tek goz ile incelenmeli.
 - [2026-09-11] `netstat -ano | grep ":<port>"` ciktisindan PID okurken TIME_WAIT satirlarina aldanma; onlarin
   PID'i 0'dir. LISTENING satirini filtrele: `grep ":<port> .*LISTENING"`.
+- [2026-09-12] Heredoc'un yalnizca Turkce karakterleri bozdugunu varsayma: **ters bolulari da
+  bozuyor.** `'<<PY'` icinde yazilan `\\articles`, dosyaya `\a` (BEL) olarak dustu ve yol bozuldu.
+  Ters bolu ya da Turkce iceren betikleri **Write araciyla** yaz; Windows yollarinda ileri bolu kullan.
+- [2026-09-12] Render betiginin iddiasi basarisiz olunca **once iddiayi dogrula, icerigi degil.**
+  "makale bagi 42, beklenen 41" bir icerik hatasi degil, benim yanlis saymamdi ("Seriye basla" CTA'si).
+  Sayfayi inceleyip 42. bagin ne oldugunu kanitladiktan sonra betik duzeltildi.
+- [2026-09-12] SVG'ye **gorunmeyen isaretleme** birakma. Eksen isaret cizgileri r=5 dairelerin disina
+  yalnizca 3 birim tasiyordu ve iki temada da render'da yoktu; iki denetleyici de temiz dedi.
+  Daireler/kutular bir anlami zaten tasiyorsa cizgiyi ekleme, ekliyorsan PNG'de gorundugunu dogrula.
+- [2026-09-12] Alt simge karakterlerini monospace icinde karisik kullanma: JetBrains Mono `₁` ve `₂`
+  (U+2081/2082) kapsiyor ama `ₙ` (U+2099) kapsamiyor ve tek `<code>` icinde iki fonta dusuluyor.
+  Kod baglaminda ASCII yaz (`B1`, `B2`, `Bn`).
+- [2026-09-12] Erisilemeyen kaynak adresleri (zaman kaybettirdi): `escholarship.org` icerik PDF'leri
+  **sifir bayt**, `laplab.ucsd.edu` sertifikasi **suresi dolmus**, `pubmed.ncbi.nlm.nih.gov` WebFetch'e
+  **cerez duvari**, `sciencedirect.com` **403**.
+
+- [2026-09-13] **Render/olcum betiklerini `/tmp` altina yazma.** `@playwright/test` en yakin
+  `node_modules`'ten cozulur; depo disindaki bir `.mjs` `ERR_MODULE_NOT_FOUND` verir. Betikler
+  `artifacts/<run>/` altina yazilir.
+- [2026-09-13] **Okuyucu sayfali bir kap kullaniyor; diyagram goruntusu icin `clip` kullanma.**
+  `scrollIntoView` + `page.screenshot({clip})` govde metnini yakaladi. Dogrusu
+  `elementHandle.screenshot()`; Playwright elemani kendisi kaydirir.
+- [2026-09-13] **Teyit ajani da baski karistirabilir.** Silberschatz alt bolum adlari icin hem
+  tarayici hem teyitci ajan "yanlis" dedi; yayincinin **onuncu baski** icindekiler PDF'i yedi adin da
+  dogru oldugunu gosterdi ve duzeltme uygulanmadi. **Baskiya bagli bir ad iddiasi ancak o baskinin
+  kendi belgesiyle kapatilir.**
+- [2026-09-13] **Coffman 1971 "hold-and-wait" DEMEZ.** Ozgun metinde ikinci kosulun adi **"wait for"**
+  (normalize edilmis tam metinde `holdandwait` 0 kez gecer) ve "necessary and sufficient" niteligi
+  dort kosul icin degil **istek grafindaki cevrim** icin kullanilir. *hold-and-wait* OSTEP'in adidir.
+- [2026-09-13] **Patterson & Hennessy COD RISC-V 2e'nin 4. bolumunun adi "The Processor"dur.**
+  Elsevier'in satis sayfasi "The RISC-V Processor" der; kitabin kendi icindekileri ve K10plus MARC
+  505 alani "The Processor" der. Yayinci satis sayfasi tek kanal olarak yeterli degildir.
 
 ## Decision Log
 
@@ -831,3 +904,58 @@ mümkün değil.
 - **Ogrenilen (Batch 24) - Playwright kaplayicisina sayfanin kendi arka plan rengi verilmeli.** `#shotbox`
   div'ine `getComputedStyle(document.body).backgroundColor` atanmazsa koyu temadaki sekiller beyaz zeminde
   cikiyor ve inceleme yaniltiyor.
+- **Karar (Batch 13, 2026-09-12) - seri kapanisinda "Sirada ne var" bolumu SILINMEDI, anlami
+  degistirildi.** Icerik denetleyicisi bu basligi zorunlu kiliyor; 41'de bolum "siradaki makale yok,
+  siradaki sey senin kendi turun" diyor. Alternatif (denetleyiciyi gevsetmek) reddedildi: kural iki
+  seri icin ortak ve tek makale icin zayiflatilmamali.
+- **Karar (Batch 13) - 40 ve 41'in Ingilizce karsiliklar listesi TEKRAR LISTESI oldugu soylenerek
+  birakildi.** SOZLESME §2 "yalnizca o makalede kurulan terimler" diyor; sentez makaleleri yeni terim
+  kurmuyor. Listeyi bosaltmak yerine ne oldugu metinde adlandirildi — gloss taramasi ikisinde de
+  sifir gloss buldu ve bu bir eksiklik degil, sentez makalesinin beklenen sonucudur.
+- **Karar (Batch 13) - 41'deki borclarin ucu ODENDI, dokuzu SORU BICIMINDE kapatildi.** Odenenler kisa
+  ve somut oldugu icin secildi (Boole devresinin kapi sayisi, d-yollu heap'in uc d degeri, en uzun
+  artan alt dizi). Hepsini yeniden anlatmak makaleyi kelime bandinin disina tasirdi; HANDOFF zaten
+  "41 borclari soru bicimide sorabilir" diyordu.
+- **Karar (Batch 13) - 41'in matrisi bos birakildi, takvim ise kaynak sayilarini tasiyor.** Matriste
+  tek bir uydurma sayi yok (hucreleri okur doldurur); takvimdeki 8. gun kaynaktan, 20. ve 30. gun
+  turlari **acikca "kendi genisletmem"** diye hem govdede hem sekilde isaretlendi.
+
+- [2026-09-12] AI serisi Batch 26 (107-110, `BATCH=4+1`): **Faz 13 kapandi, Faz 14 acildi.** Kategori karari
+  bolunmus atamayla verildi (#233): 110-113 ve 116-118 `multimodal-and-future`, **114-115 `case-studies`**.
+  109'un basligi Turkcelestirildi (#234: Checkpoint -> Kontrol Noktasi, Spike -> Sicrama). Kararlar #233-#239;
+  sonraki numara #240. Ultracode acik olmasina ragmen workflow/subagent kullanilmadi (kullanici talimati).
+- **Ogrenilen (Batch 26) - bir borcu oderken borcun verildigi makalenin KOMSULARI da okunmali.** 107 uc ayri
+  makaleyle cakisma riski tasiyordu (8'in eksen adlari, 85'in hepsi-hepsiye iletisimi, 89'un kesim bandi) ve
+  ucu de okundu. Sonuc: 85 tekrarlanmadi, dort eksenin YANINA ayri bir eksen olarak yerlestirildi; 89'un
+  kesim bandi tekrarlanmadi, olculmus iki sayinin (892 GB/s <-> 12,9 TB/s) yerlestigi eksen oldu.
+- **Ogrenilen (Batch 26) - bir sonucu kaynaktan almak yerine yeniden turetmek daha iyi.** Young'in 1974
+  kontrol noktasi formulu uc satirda turetildi; turetme metinde durunca okuyucu delta'yi degistirip tabloyu
+  kendisi kurabiliyor ve kaynagin soylemedigi sonuc goruluyor: karekoklu yapi yuzunden asil kaldirac aralik
+  degil kaydin maliyeti.
+- **Do-Not-Repeat (2026-09-12) - sekil numaralari govde sirasina gore artmak zorunda.** 110'a sonradan sekil
+  eklenirken "Sekil 3" diye yazildi ve mevcut "Sekil 2"nin onune dustu; `check-series-content.cjs` yakalar
+  ama iki referans cumlesi de elle duzeltilmek zorunda kaldi. Sekil eklerken numarayi VE referans cumlesini
+  birlikte kaydir.
+- **Do-Not-Repeat (2026-09-12) - `svgcheck` benzeri ozel olcerler yalnizca yeni batch'in klasorlerine
+  calistirilmali.** Butun `content/series/assets/*/*.svg` uzerinde calistirilinca 125 eski dosyada "kusur"
+  raporladi; repo kapisi (0,55 carpan) ile ozel olcer (0,58) farkli tahmin ettigi icin eski makaleler
+  gurultu uretiyor.
+- **Do-Not-Repeat (2026-09-12) - scratchpad betigini `cd scratchpad && python x.py && grep ...` biciminde
+  zincirleme.** Ayni komuttaki `grep` de scratchpad'de arar ve "No such file" verir; dogrulama ayri komutta
+  yapilmali. (Uzun Python'u Write ile scratchpad'e yazma kurali yine dogrulandi: tek tirnak iceren metinlerde
+  Bash heredoc ayristirma hatasi veriyor.)
+- **Ogrenilen (Batch 26) - terim defteri yazimdan once tarandi ve uc cakisma onlendi.** "Cekirdek" seride
+  zaten uc nesne tasiyordu (10 cekirdek ornekleme, 97 cekirdek fonksiyonu, 26/89 hesap cekirdegi);
+  dorduncusu uydurulmadi, alan yazininin adi benimsendi ve gerekce YAYIMLANMIS GERCEKTE bulundu - 85
+  "blok-seyrek cekirdekler" derken zaten bu anlami kullanmisti (SOZLESME §8). "Sicrama" 74/78'de yetenek
+  egrisinindi -> 109 niteleyiciyi hic dusurmedi ("kayip sicramasi"). "Hat" 8 ve 41-50'de pipeline anlaminda
+  kullanildigi icin 107 "boru hatti" bilesigini secti.
+
+- [2026-09-13] **BOUN bakim run'i: eksik zorunlu bolumler duzeltilmedi, kullanici kararina birakildi.**
+  Editoryal tarama bes makalede (2-6) zorunlu "Ingilizce karsiliklar" satirinin, makale 1'de ise
+  "## Mulakatta nasil gorunur" bolumunun tamamen eksik oldugunu buldu (SOZLESME §2). Bunlar Batch
+  0-1'den beri boyle ve **icerik denetleyicisi bu kurallari zorlamiyor**. Duzeltmek yayimlanmis
+  makalelere **yeni metin yazmak** demek; TRIGGER'in bakim kapsami ise yazim hatasi, bozuk baglanti
+  ve render kusurudur. **Karar: dokunulmadi, HANDOFF'ta karara bagli kalem olarak kaydedildi.**
+  Makale 2'nin bolum basligi ("## Bu makalenin mulakattaki karsiligi") yalnizca ad degisikligi
+  oldugu icin duzeltildi.

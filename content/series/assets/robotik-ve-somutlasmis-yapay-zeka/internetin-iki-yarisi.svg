@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 460" role="img" aria-label="İki bölmeli şekil. Üstte üç satırlı üç sütunlu bir tablo; sütunlar sınav, robot verisiyle eğitilen küçük model ve görüntü-dil modeliyle kurulan sürüm. Birinci satır eğitimde görülmüş görevler: 92 ve 91 ile 93. İkinci satır vurguludur, görülmemiş nesne arka plan ve ortam ortalaması: 32 ve 62. Üçüncü satır robot verisinde bulunmayan anlamsal talimatlar: 17 ve 60. Ortada tek satırlık bir ablasyon kutusu: aynı 5 milyar parametreli model, aynı robot verisi, aynı geçmiş uzunluğu; görüntü-dil ön eğitiminden başlatılınca anlamsal talimatlarda yüzde 44,4 ve genellemede yüzde 52, sıfırdan başlatılınca yüzde 0 ve yüzde 1. Altta iki kutu yan yana durur. Sol kutunun başlığı internetin verdiği; içinde hangi nesne, hangi hedef, hangi sembol, hangi dil ve hangi kişi yazılıdır. Sağ kutunun başlığı internetin vermediği; içinde nesneyi sapından tutmak, robot verisinde görülmemiş yeni hareketler, havlu katlamak gibi ince hareketler ve çok katmanlı dolaylı akıl yürütme yazılıdır. En altta bir kayıt: ilk tablo Zitkovich ve arkadaşlarının, ablasyon O'Neill ve arkadaşlarının ölçümüdür; puanlar yüzdedir.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı arayüz, iki ayrı ön eğitim</text>
+  <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">sınav</text>
+  <text x="380" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">robot verisiyle eğitilen</text>
+  <text x="570" y="64" font-size="13" font-weight="bold" fill="var(--accent)">görüntü-dil modeliyle</text>
+  <line x1="20" y1="74" x2="720" y2="74" stroke="var(--border)" />
+
+  <text x="24" y="98" font-size="13" fill="var(--text)">eğitimde görülmüş görevler</text>
+  <text x="380" y="98" font-size="13" fill="var(--text)">92</text>
+  <text x="570" y="98" font-size="13" fill="var(--text)">91 ve 93</text>
+
+  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--text)">görülmemiş nesne, arka plan, ortam</text>
+  <text x="380" y="126" font-size="13" font-weight="bold" fill="var(--text)">32</text>
+  <text x="570" y="126" font-size="13" font-weight="bold" fill="var(--accent)">62</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--text)">robot verisinde olmayan talimatlar</text>
+  <text x="380" y="152" font-size="13" font-weight="bold" fill="var(--text)">17</text>
+  <text x="570" y="152" font-size="13" font-weight="bold" fill="var(--accent)">60</text>
+
+  <line x1="20" y1="168" x2="720" y2="168" stroke="var(--border)" />
+
+  <rect x="20" y="182" width="700" height="82" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="206" font-size="13" font-weight="bold" fill="var(--text)">Tek değişkenli ablasyon: aynı 5 milyar parametre, aynı robot verisi</text>
+  <text x="34" y="228" font-size="13" fill="var(--text)">Görüntü-dil ön eğitiminden başlatılınca: %44,4 talimat, %52 genelleme.</text>
+  <text x="34" y="248" font-size="13" fill="var(--text)">Sıfırdan başlatılınca: %0 talimat, %1 genelleme.</text>
+
+  <rect x="20" y="278" width="340" height="122" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="302" font-size="13" font-weight="bold" fill="var(--accent)">İnternetin verdiği</text>
+  <text x="34" y="324" font-size="13" fill="var(--text)">hangi nesne, hangi hedef</text>
+  <text x="34" y="344" font-size="13" fill="var(--text)">hangi sembol, hangi sayı</text>
+  <text x="34" y="364" font-size="13" fill="var(--text)">hangi dil</text>
+  <text x="34" y="384" font-size="13" fill="var(--text)">hangi kişi</text>
+
+  <rect x="380" y="278" width="340" height="122" fill="var(--surface)" stroke="var(--border)" />
+  <text x="394" y="302" font-size="13" font-weight="bold" fill="var(--cool)">İnternetin vermediği</text>
+  <text x="394" y="324" font-size="13" fill="var(--text)">nesneyi sapından tutmak</text>
+  <text x="394" y="344" font-size="13" fill="var(--text)">verisinde olmayan hareket</text>
+  <text x="394" y="364" font-size="13" fill="var(--text)">havlu katlamak</text>
+  <text x="394" y="384" font-size="13" fill="var(--text)">çok katmanlı dolaylılık</text>
+
+  <text x="20" y="424" font-size="13" fill="var(--text-faint)">Üstteki tablo Zitkovich ve ark.'nın, ablasyon O'Neill ve ark.'nın</text>
+  <text x="20" y="442" font-size="13" fill="var(--text-faint)">ölçümüdür; bütün puanlar yüzdedir.</text>
+</svg>

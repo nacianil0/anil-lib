@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 456" role="img" aria-label="Beş satırlı dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı aktivasyon formülü beş düzende, GPT-3 ölçüleri, mikro yığın 1, t eşittir 8. Sütunlar düzen, parantez içi, sayıyla ve 96 katman. Birinci satır bölme yok: parantez içi 34 artı 5as bölü h, sayıyla 114, toplam 275 GB. İkinci satır tensör paralelliği: 10 artı 24 bölü t artı 5as bölü ht, sayıyla 23, toplam 55,5 GB. Üçüncü satır vurguludur, tensör artı dizi: 34 bölü t artı 5as bölü ht, sayıyla 14,25, toplam 34,4 GB. Dördüncü satır tensör artı dizi artı seçici hesap: 34 bölü t, sayıyla 4,25, toplam 10,3 GB. Beşinci satır tam yeniden hesap: 2, sayıyla 2, toplam 4,8 GB. Birinci kutunun başlığı 14,25 tam olarak 114 bölü 8'dir: tensör paralelliği 34'ün yalnızca 24'ünü böler, dizi paralelliği kalan 10'u da böler ve bunu ek bant genişliği harcamadan yapar çünkü hepsi-indirge zaten bir indirge-dağıt ile bir hepsi-toplanın toplamıdır. İkinci kutuda ölçülen bedel durur: tam yeniden hesabın süre maliyeti yüzde 36 iken bu düzende yüzde 2'ye iniyor, 530 milyar parametre ve 2.240 kartta kullanım oranı yüzde 42,1'den yüzde 54,2'ye çıkıyor. En altta bir kayıt: katsayılar ve ölçümler Korthikanti ve arkadaşlarından, gigabayt karşılıkları 275 GB tabanından bizim hesabımızdır.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı aktivasyon formülü, beş düzende — GPT-3 ölçüleri, mikro yığın 1, t = 8</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">düzen</text>
+  <text x="300" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">parantez içi</text>
+  <text x="480" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sayıyla</text>
+  <text x="590" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">96 katman</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">bölme yok</text>
+  <text x="300" y="100" font-size="13" fill="var(--text)">34 + 5as/h</text>
+  <text x="480" y="100" font-size="13" fill="var(--text)">114</text>
+  <text x="590" y="100" font-size="13" fill="var(--text)">275 GB</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">tensör paralelliği</text>
+  <text x="300" y="126" font-size="13" fill="var(--text)">10 + 24/t + 5as/ht</text>
+  <text x="480" y="126" font-size="13" fill="var(--text)">23</text>
+  <text x="590" y="126" font-size="13" fill="var(--text)">55,5 GB</text>
+
+  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">tensör + dizi</text>
+  <text x="300" y="152" font-size="13" font-weight="bold" fill="var(--accent)">34/t + 5as/ht</text>
+  <text x="480" y="152" font-size="13" font-weight="bold" fill="var(--accent)">14,25</text>
+  <text x="590" y="152" font-size="13" font-weight="bold" fill="var(--accent)">34,4 GB</text>
+
+  <text x="24" y="178" font-size="13" fill="var(--text)">tensör + dizi + seçici hesap</text>
+  <text x="300" y="178" font-size="13" fill="var(--text)">34/t</text>
+  <text x="480" y="178" font-size="13" fill="var(--text)">4,25</text>
+  <text x="590" y="178" font-size="13" fill="var(--text)">10,3 GB</text>
+
+  <text x="24" y="204" font-size="13" fill="var(--text)">tam yeniden hesap</text>
+  <text x="300" y="204" font-size="13" fill="var(--text)">2</text>
+  <text x="480" y="204" font-size="13" fill="var(--text)">2</text>
+  <text x="590" y="204" font-size="13" fill="var(--text)">4,8 GB</text>
+
+  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
+
+  <rect x="20" y="232" width="680" height="98" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="256" font-size="13" font-weight="bold" fill="var(--text)">14,25 tam olarak 114 ÷ 8'dir</text>
+  <text x="34" y="278" font-size="13" fill="var(--text)">Tensör paralelliği 34'ün yalnızca 24'ünü böler; dizi paralelliği kalan 10'u da böler</text>
+  <text x="34" y="298" font-size="13" fill="var(--text)">ve bunu ek bant genişliği harcamadan yapar, çünkü hepsi-indirge zaten bir</text>
+  <text x="34" y="318" font-size="13" fill="var(--text)">indirge-dağıt ile bir hepsi-toplanın toplamıdır.</text>
+
+  <rect x="20" y="342" width="680" height="54" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="366" font-size="13" fill="var(--text-muted)">Ölçülen bedel: tam yeniden hesabın süre maliyeti %36 iken bu düzende %2'ye iniyor;</text>
+  <text x="34" y="386" font-size="13" fill="var(--text-muted)">530 milyar parametre ve 2.240 kartta kullanım oranı %42,1'den %54,2'ye çıkıyor.</text>
+
+  <text x="20" y="416" font-size="13" fill="var(--text-faint)">Katsayılar ve ölçümler Korthikanti ve arkadaşlarından;</text>
+  <text x="20" y="436" font-size="13" fill="var(--text-faint)">gigabayt karşılıkları 275 GB tabanından bizim hesabımızdır.</text>
+</svg>

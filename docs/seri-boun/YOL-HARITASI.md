@@ -5,7 +5,7 @@
 > `docs/seri-boun/ARASTIRMA.md`. Yayımlanmamış başlıklar **taslaktır**; batch hazırlığında
 > pedagojik gerekçeyle güncellenebilir (yayımlananlar asla).
 
-Son güncelleme: 2026-09-11 · Yayında: 39 (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5, 19–21 Batch 6, 22–24 Batch 7, 25–27 Batch 8, 28–30 Batch 9, 31–33 Batch 10, 34–36 Batch 11, 37–39 Batch 12) · Sıradaki: 40
+Son güncelleme: 2026-09-12 · **SERİ TAMAMLANDI — Yayında: 41/41** (1–3 Batch 0, 4–6 Batch 1, 7–9 Batch 2, 10–12 Batch 3, 13–15 Batch 4, 16–18 Batch 5, 19–21 Batch 6, 22–24 Batch 7, 25–27 Batch 8, 28–30 Batch 9, 31–33 Batch 10, 34–36 Batch 11, 37–39 Batch 12, 40–41 Batch 13) · Sıradaki: **yok** · Yayımlanmamış taslak başlık kalmadı; bu dosyadaki bütün başlıklar artık bağlayıcıdır.
 
 ## Serinin tezi
 
@@ -83,8 +83,8 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 37. **Bilgisayar Organizasyonu: OS'nin Altındaki Makine** — *yayında* · RAM modelinin "her erişim aynı fiyat" varsayımının donanımda nerede çöktüğü; statik ile dinamik bellek hücresinin farkı ve hiyerarşinin maliyet gerekçesi, yerelliğin bir teorem değil gözlenmiş bir huy olması, Drepper'ın Pentium M tablosu (yazmaç 1, L1d 3, L2 14, ana bellek 240 çevrim) ve ölçülmüş üç plato (10 altı / 28 / 480), AMAT formülünün bir kat yukarı taşınması ve aynı komut sayısıyla 4,9 → 10,6 → 29,8 çevrimlik üç senaryo, önbellek satırı ve adresin etiket/küme/konum bölünüşü, tam çağrışımlı–doğrudan eşlemeli–kümeli çağrışımlı karşılaştırması ve **çakışma ıskasının** işletim sisteminin sayfa önbelleğinde bulunmaması, CPU başarım denkleminin birim sadeleştirmesiyle türetilmesi ve boru hattının açıklığa saldırması, kesişim noktasının n = 20'den n = 1.600'e kayması, TLB'nin bir önbellek olması ve 64 girdi × 4 KB → 256 KB ile 64 girdi × 2 MB → 128 MB kapsama farkı, bağlam anahtarının çevrim cinsinden ucuzlamamasının Ousterhout 1990'daki ölçülmüş gerekçesi (göreli hız 0,3–0,5). Resmî dayanak **CMPE244 *Computer Organization***.
 38. **C ve Bellek: Sistem Programlama Penceresi** — *yayında* · xv6'nın gerçek adres uzayı düzeni ve izin bitlerinin yakaladığı hata sınıfları (kod yazılamaz, veri çalıştırılamaz, koruma sayfası), heap bölgesi ile öncelik kuyruğu makalesindeki heap veri yapısının açıkça ayrılması, işaretçi maliyetinin çevrim cinsinden hesabı (dizi 17,8 milyon, dağınık bağlı liste 240 milyon çevrim; oran 13,5), yığın belleği ile heap belleğinin kim yönetir ayrımı, `free`'nin boyutu başlık bloğundan okuması ve beş klasik bellek hatası, `fork()`'un iki kez dönmesi ve belirsizlik, `exec()`'in süreç yaratmayıp dönüştürmesi ve dönmemesi, kabuğun ikisini ayırmasının çıktı yönlendirmesini mümkün kılması, **kopyalarken yazmanın** sayfa hatasıyla kurulması ve `fork` ardından `exec` kalıbında kopyayı bütünüyle ortadan kaldırması. Resmî dayanak **CMPE230**'un "Unix environment and system calls" ifadesidir; katalog tanımı C dilini adlandırmaz ve makale bunu açıkça söyler.
 39. **Veritabanları: İlişkisel Model, İndeks ve Transaction** — *yayında* · **Resmî dayanak düzeltmesi (Batch 12):** bu makalenin resmî bir dersi **vardır** — **CMPE321 *Introduction to Database Systems***, önkoşulu bilimsel hazırlık üçlüsünün **CMPE250**'si; yol haritasının "resmî bir ders yoktur" beklentisi yanlıştı (ARASTIRMA §17). İçerik: Codd'un bağıntı tanımı ve tablonun kümeler makalesindeki bağıntı olması, değer alanı / derece / birincil ve yabancı anahtar, kaldırılan üç bağımlılık ve veri bağımsızlığının asıl vaat olması, normalleştirme yordamı ve Codd'un dört bağıntılı örneği, indeksin ayrı bir yapı olması, B+-ağacında bütün anahtarların yapraklarda durması ve **sıra kümesinin** "sıradaki" işlemini tek erişime indirmesi, kümelenmiş ile kümelenmemiş indeks, blok muhasebesiyle **kırılma noktası %2,5** ve kümelenmişte %100, Selinger'ın seçicilik çarpanının düzgün dağılım varsayımı ve çarpık dağılımda tam taramanın 12 katı maliyet, dış sıralamanın 100.000 blok G/Ç'si, Gray'in sözleşme hukukundan türettiği transaction kavramı ve ACID, Berenson ve ark.'nın üç olgusu ile **üç olguyu yasaklamanın sıralanabilirliği vermemesi**. **Terim kararı:** "işlem" bu seride *operation* karşılığı olduğu için transaction Türkçeleştirilmedi (SOZLESME §2 terim çakışması yasağı).
-40. **Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü** — 60–90 saniyelik anlatım kalıpları; takip zinciri provası; "past academic record + research direction" konuşmasına hazırlık.
-41. **Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı** — öz-değerlendirme matrisi (beş yetenek × beş faz), spaced tekrar planı, mülakat günü protokolü.
+40. **Sözlü Anlatım Provası: Tahta, Takip Sorusu, Araştırma Yönü** — *yayında* · konu anlatmayı bırakıp anlatmanın kendisine geçen makale. Serideki kırk küsur omurganın ortak kalıbının **dört parçaya** indirgenmesi (iddia → koşul → mekanizma → bozulma noktası) ve koşulun üç ekseni (durum, model, varsayım); "hash tablosunda arama O(1)'dir"in yirmi beş saniyelik tam hâle çevrilmesi; **maliyet cevabının dört adımlı sabit sırası** (n nedir → nereden sayıyorum → sınıf ve durum → bellek, özyineleme derinliği dahil) ve **doğruluk cevabının üç adımlı sırası** (değişmezi tam söyle → başlatma/koruma/sonuçlanma → sonlanmayı ayrıca ölçüyle), kısmi doğruluğun sonlanmayı vermemesinin tek başına bir sınav sorusu olması; takip zincirinin üç halkası ve **ikinci halkanın cevabın içine taşınması**, üçüncü halkanın taşınmaması çünkü altmış saniyeyi aşar; tahtanın dört bölgesi (tanım/değişmez, maliyet muhasebesi, küçük örnek, bozulma noktası) ve üç kuralı (konuşurken yaz sonra sus, kod yazma, silme yerine üstünü çiz); 37'nin **erişim desenini önce tarif et** ve 38'in **kim ayırıyor kim serbest bırakıyor** refleksinin anlatım kalıbına çevrilmesi; bilmediğini söylemenin üç parçalı biçimi (sınırı adlandır, komşu bildiğini ver, yolu göster); resmî tanımın teknik olmayan yarısı — geçmiş akademik kaydın tekrar okunması değil ona bir **okuma önerilmesi**, araştırma yönünün iki cümlesi ve bilinmeyenin üçüncü cümlede söylenmesi. Resmî dersi yoktur; dayanağı mülakatın kendi tanımıdır.
+41. **Kapanış: Zayıf Nokta Haritası ve Son Hafta Planı** — *yayında* · serinin kapanışı ve ölçüm makalesi. **Akıcılık yanılsaması** birincil kaynaktan: beş dakikada tekrar okuma önde (%81'e %75) ama iki günde (%68'e %54) ve bir haftada (%56'ya %42) test öne geçiyor; metni 14,2 kez okuyan grup bir hafta sonra %40, 3,4 kez okuyup üç kez test edilen grup %61 hatırlıyor ve **en çok okuyan grup en yüksek güveni veriyor**. Beş yetenek × beş faz **boş** öz-değerlendirme matrisi ve satır başına bir yoklama sorusu; savun satırının ayırt edici olması; haritanın işinin puan değil **çalışma sırası** üretmek olması. **Üç borç gerçekten ödendi:** Boole sadeleştirmesinin devre karşılığı kapı sayarak (3 → 2 kapı; geniş hâlde 2n − 1 → n, n = 8 için 15 → 8 kapı, derinlik ikisinde de 4), **d-yollu heap** (n = 10⁶ için d = 2/4/16 → yükseklik 20/10/5, aşağı süzülme 20/30/75; karar kuralı işlem karışımı) ve **alt problemi kısıtlama** (en uzun artan alt dizide "i ile biten" kısıtının bağıntıyı açması — hipotezi güçlendirme refleksinin aynısı). Dokuz borç **soru biçiminde** kapatıldı. **Aralıklı tekrar** kaynağından: 7/35/70/350 günlük hedef aralıklar için ölçülen en iyi aralar 1/11/21/21 gün, eğri uydurmayla 3/8/12/27 gün, yani %43/%23/%17/%8; hiç ara vermemeye kıyasla kazanç %10/%59/%111/%77. 35 günlük takvimde sekizinci gün kaynaktan, yirminci ve otuzuncu gün turları **açıkça kendi genişletmesi**. Mülakat günü protokolü ve serinin ödeyemediği borçların dürüst listesi. Resmî dersi yoktur.
 
 ## Prerequisite grafı (faz düzeyi; makale düzeyi satırlar batch hazırlıklarında yazılır)
 
@@ -160,6 +160,18 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - 38 ← 27 (süreç API'si: `fork()`, `exec()`, `wait()` somutlaması; devredilen borç), 32 (adres uzayı düzeni: kod, heap, yığın), 10 (dizi ile bağlı listenin işaretçi maliyeti C'de elle görünür olur), 33 (kopyalarken yazma; devredilen borç), 26 (sistem çağrısı ve kullanıcı kipi / çekirdek kipi geçişi)
 - 39 ← 12 (indeks bir B-ağacıdır; devredilen borç), 34 (dosya sistemi önbelleği, tampon havuzu ve dış sıralama), 31 (kilitlenme ve işlem yönetimi; güvensiz durum ile kilitlenmiş durum ayrımı), 30 (güvenlik ile canlılık özellikleri; yalıtım düzeyleri), 15 (kararlılık ve dış sıralama), 36 (seçicilik kestirimi ve maliyet tabanlı iyileştirme bir olasılık iddiasıdır)
 
+**Batch 13 (yayımlanmış, artık bağlayıcı) — serinin son iki makalesi:**
+- 40 ← 1 (resmî mülakat tanımı, on beş dakikalık format ve beş yetenek zinciri), ve **bütün fazların
+  "Sesli anlat" kutuları ile "Mülakatta nasıl görünür" bölümleri** — 40 yeni içerik öğretmez, mevcut
+  omurgaları tek kalıba indirir; ayrıca 9 (girdi boyutu ve durum ayrımı), 17 (model bilinci), 19
+  (doğruluk cevabının sabit sırası ve kısmi doğruluk), 14 (hash tablosunun koşullu omurgası — açılış
+  örneği), 37 (erişim deseni refleksi), 38 (kim ayırıyor kim serbest bırakıyor refleksi)
+- 41 ← **bütün fazlar**; doğrudan kullanılanlar: 1 (beş yetenek — matrisin satırları), 40 (omurga ve
+  ölçüt: metne bakmadan yüksek sesle söyleyebilmek), 8 (Boole sadeleştirmesi — ödenen borç), 13
+  (d-yollu heap ve dallanma çarpanı — ödenen borç), 22 (alt problemi kısıtlama — ödenen borç), 4/18/19
+  (hipotezi güçlendirme refleksi, kısıtlama tekniğinin ispat karşılığı), 29 (kilit ile semafor —
+  sözlü checkpoint), 25/32/36/37/39 (soru biçiminde kapatılan borçlar)
+
 ## Kapsam kararları ve elenenler (gerekçeli)
 
 - **Çekirdek = 220 + 250 + 322 + 300:** Scientific Preparation üçlüsü resmî sinyal; CMPE300,
@@ -167,8 +179,10 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 - **Destek (6 makale):** olasılık (343; randomized analiz zorunlu kılar), organizasyon (240/244;
   OS savunması donanım gerekçesi ister), C/bellek (230; OS kavramlarının somutlaşması),
   veritabanı (**CMPE321**; Batch 12'de bulundu — önkoşulu CMPE250'dir, dolayısıyla transkript
-  savunmasının yanında resmî bir dayanağı da vardır), sözlü prova ve sentez (mülakatın
-  "anlatabilme" doğası).
+  savunmasının yanında resmî bir dayanağı da vardır. **Batch 13 kaydı:** CMPE321'in kendi ders sayfası
+  vardır ama **2025 lisans müfredatının zorunlu çekirdek listesinde yer almaz**; makale 39 zaten zorunlu
+  ders demiyor, dayanağını ders sayfası ve önkoşul zinciri üzerinden kuruyor — ARASTIRMA §18), sözlü
+  prova ve sentez (mülakatın "anlatabilme" doğası; 40 ve 41'in resmî bir dersi yoktur).
 - **Elenenler:** biçimsel diller/otomata ayrı makalesi (25 içinde kısa köprü; SP üçlüsünde yok,
   hazırlık getirisi düşük) · sinyal işleme, gömülü sistemler, yazılım mühendisliği süreçleri
   (mülakat çekirdeğine uzak) · programlama dilleri kuramı ayrı makalesi (38–39 içinde değinilir)
@@ -194,11 +208,11 @@ sözlüğü değişmez (SOZLESME §5). Klasör adı `category` alanıyla birebir
 SOZLESME §5'teki öneri listesine `interview-method` eklendi: 1, 40 ve 41 diğer beş kategorinin
 hiçbirine düşmüyor ve sahte bir kategori ataması yapmak yerine sözlük genişletildi.
 
-**Kategori kullanım durumu (Batch 11 sonu).** Altı kategorinin **hepsi** artık kullanımdadır:
-`supporting-fundamentals` makale 36 ile devreye girdi ve klasör açmak dışında **kod değişikliği
-gerektirmedi** (sözlük `schema.ts`'te, etiket `labels.ts`'te zaten tanımlıydı). Kalan makalelerin kategorisi
-bu tablodan doğrudan okunur: 37–39 `supporting-fundamentals`, 40–41 `interview-method`. **Seride başka
-kategori kararı kalmamıştır.**
+**Kategori kullanım durumu (seri sonu, Batch 13).** Altı kategorinin **hepsi** kullanımdadır ve tablo
+artık tamamlanmış gerçeği gösterir: 40 ve 41 `interview-method` klasörüne girdi; o klasör 1. makaleden
+beri kuruluydu, dolayısıyla **son iki makale de kod değişikliği gerektirmedi**. `supporting-fundamentals`
+makale 36 ile devreye girmiş ve klasör açmak dışında kod değişikliği istememişti (sözlük `schema.ts`'te,
+etiket `labels.ts`'te zaten tanımlı). **Seride kategori kararı kalmamıştır.**
 
 ## Terim defteri
 
@@ -379,7 +393,7 @@ boyunca aynı kalır.
 | kararlı sıralama | stable sort | 15 |
 | seçmeli sıralama | selection sort | 15 |
 | eklemeli sıralama | insertion sort | 15 |
-| birleştirmeli sıralama | merge sort | 15 |
+| birleştirmeli sıralama | merge sort | 4 |
 | hızlı sıralama | quicksort | 15 |
 | ayırma | partition | 15 |
 | eksen | pivot | 15 |
@@ -686,7 +700,7 @@ boyunca aynı kalır.
 | dönme gecikmesi | rotational delay | 34 |
 | aktarım süresi | transfer time | 34 |
 | disk zamanlaması | disk scheduling | 34 |
-| en kısa arama süresi önce | shortest-seek-time-first (SSTF) | 34 |
+| en yakın izi önce | shortest-seek-time-first (SSTF) | 34 |
 | asansör algoritması | elevator algorithm (SCAN, C-SCAN) | 34 |
 | en kısa konumlanma süresi önce | shortest positioning time first (SPTF) | 34 |
 | silindir grubu | cylinder group | 34 |
@@ -1317,6 +1331,35 @@ Batch 11 ile açılan yeni pinler ve ödenen borçlar:
   refleksi 40'ta prova edilebilir.
 - **ANOMALY SERIALIZABLE uyarısı (39'da açılan yeni pin)** → üç olguyu yasaklamak sıralanabilirlik
   vermez ve "REPEATABLE READ" adı yanıltıcıdır; 41'in zayıf nokta haritasında sorulabilir.
-- **d-yollu heap (13)** → **hâlâ ödenmedi**. Dallanma çarpanı takasının kalan tek örneğidir; 37'nin
-  önbellek satırı tartışması ve 39'un B+-ağacı dallanması aynı fikri iki kez kullandı ama d-yollu heap
-  adıyla anılmadı.
+- **d-yollu heap (13)** → **41'de ödendi**. Yükseklik `log_d n`'e iner, yukarı yönlü işlem (ekleme ve
+  anahtar düşürme) seviye başına tek karşılaştırmayla ucuzlar, aşağı süzülme d çocuğun en küçüğünü
+  aradığı için `(d − 1) · log_d n`'e çıkar; n = 10⁶ için d = 2/4/16'da yükseklik 20/10/5 ve aşağı
+  süzülme 20/30/75 karşılaştırmadır. Karar kuralı işlem karışımıdır. 37'nin önbellek satırı ve 39'un
+  B+-ağacı dallanması aynı takasın iki hâliydi; burada adıyla anıldı ve **dallanma çarpanı takasının
+  son örneği kapandı**.
+
+### Batch 13'te kapanan defter (seri sonu)
+
+- **Boole sadeleştirme (8 → 37)** → **41'de ödendi**: `(A ∧ B) ∨ (A ∧ C)` üç kapıdan iki kapıya,
+  geniş hâlde 2n − 1 kapıdan n kapıya iner ve derinlik değişmez (n = 8 için 15 → 8 kapı, dört seviye).
+  Kapı sayıları yazarın kendi hesabıdır ve metinde öyle işaretlenmiştir.
+- **Alt problem kısıtlama/genişletme tekniği (22)** → **41'de ödendi**: en uzun artan alt dizide
+  "ilk i elemanın en uzun artan alt dizisi" birleşmez; "i'inci elemanla **biten**" kısıtı bağıntıyı
+  kendiliğinden verir. Daha zor görünen problem daha kolay çözülür — 4, 18 ve 19'daki **hipotezi
+  güçlendirme** refleksinin aynısı.
+- **İndirgemenin yönü (25), güçlü bağlı bileşenler (25 → 34, 39), Peterson (29), bölüt ve tersine
+  sayfa tablosu (32), Monte Carlo ile Las Vegas (36), güven olasılık değildir (36), üç C (37),
+  ANOMALY SERIALIZABLE (39), gerçek zamanlı öncelik tersine dönmesi (29 → 35)** → **41'de soru
+  biçiminde kapatıldı**: her biri bir yoklama sorusu ve omurganın ilk cümlesiyle verildi, yeniden
+  anlatılmadı. Güçlü bağlı bileşenler için "41'de kullanılmazsa kapatılmış sayılır" kuralı işledi ve
+  **kullanıldığı için kapandı**.
+- **Beklenti yetmez: yoğunlaşma (36)** → 41'de ayrıca açılmadı; Markov/Chebyshev karşılaştırması 36'da
+  tamdır ve kapanmış sayılmalıdır.
+- **Kesikli olay benzetimi ve indeksli öncelik kuyruğu (23 → 34)** → hiç kullanılmadı ve 41'in kapsamına
+  girmedi. **Kapatılmış sayılmalıdır.**
+- **Erişim deseni bir tasarım kararıdır (37, 38)** ve **kim ayırıyor, kim serbest bırakıyor (38)** →
+  **40'ta ödendi**: ikisi de bir soru türünün ilk cümlesini sabitleyen anlatım refleksine çevrildi.
+- **39'un 40'a verdiği vaat** (altmış-doksan saniyelik omurga, takip sorusunda genişletme, tahta düzeni,
+  araştırma yönü) → **40'ta tamamen karşılandı**.
+
+**Defter kapandı.** 41 numaralı makale ileri gönderme açmaz; karşılanmamış pin kalmamıştır.

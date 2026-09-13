@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 428" role="img" aria-label="Dört satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: dünya modeli iki ayrı nesneyi adlandırıyor. Sütunlar soru, pekiştirmeli öğrenmede ve dil modelinde. Birinci satır nedir: ayrı bir bileşen ve bir hipotez. İkinci satır ne tahmin eder: durum artı eylem ok durum, ve geçmiş ok sonraki token. Üçüncü satır ne işe yarar: dokunmadan plan yapmak, ve hedef değil yan ürün. Dördüncü satır vurguludur, nasıl sınanır: gerçek çevreyle kıyasla, ve ancak davranıştan. Birinci kutunun başlığı açık modelin iki ölçülmüş sonucu; içinde hayalî çevrede eğitilip gerçek çevreye taşınan ajanın bir araba yarışında 906 artı eksi 21 aldığı, o tarihteki en iyi sonucun 838 artı eksi 11 ve yaygın bir yöntemin puanının 343 artı eksi 18 olduğu, ayrıca tek sabit yapılandırmayla 150'den fazla görev ve elmas toplayan ilk sistem yazılıdır. İkinci kutuda asimetri durur: açık modelde karşılaştırılacak bir çevre var, örtük modelde yok; bu yüzden ikinci sütunun bütün sınavları dolaylıdır. En altta bir kayıt: puanlar Ha ile Schmidhuber'den, görev sayısı ve elmas Hafner ve arkadaşlarından.">
+  <text x="20" y="30" font-size="13" fill="var(--text)">"Dünya modeli" iki ayrı nesneyi adlandırıyor</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">soru</text>
+  <text x="200" y="66" font-size="13" font-weight="bold" fill="var(--accent)">pekiştirmeli öğrenmede</text>
+  <text x="450" y="66" font-size="13" font-weight="bold" fill="var(--cool)">dil modelinde</text>
+  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+
+  <text x="24" y="100" font-size="13" fill="var(--text)">nedir</text>
+  <text x="200" y="100" font-size="13" fill="var(--text)">ayrı bir bileşen</text>
+  <text x="450" y="100" font-size="13" fill="var(--text)">bir hipotez</text>
+
+  <text x="24" y="126" font-size="13" fill="var(--text)">ne tahmin eder</text>
+  <text x="200" y="126" font-size="13" fill="var(--text)">durum + eylem → durum</text>
+  <text x="450" y="126" font-size="13" fill="var(--text)">geçmiş → sonraki token</text>
+
+  <text x="24" y="152" font-size="13" fill="var(--text)">ne işe yarar</text>
+  <text x="200" y="152" font-size="13" fill="var(--text)">dokunmadan plan yapmak</text>
+  <text x="450" y="152" font-size="13" fill="var(--text)">hedef değil, yan ürün</text>
+
+  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--text)">nasıl sınanır</text>
+  <text x="200" y="178" font-size="13" font-weight="bold" fill="var(--accent)">gerçek çevreyle kıyasla</text>
+  <text x="450" y="178" font-size="13" font-weight="bold" fill="var(--cool)">ancak davranıştan</text>
+
+  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
+
+  <rect x="20" y="206" width="680" height="98" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="34" y="230" font-size="13" font-weight="bold" fill="var(--text)">Açık modelin iki ölçülmüş sonucu</text>
+  <text x="34" y="252" font-size="13" fill="var(--text)">Hayalî çevrede eğitilip gerçek çevreye taşınan ajan bir araba yarışında 906 ± 21;</text>
+  <text x="34" y="272" font-size="13" fill="var(--text)">o tarihteki en iyi sonuç 838 ± 11, yaygın bir yöntemin puanı 343 ± 18.</text>
+  <text x="34" y="292" font-size="13" fill="var(--text)">Tek sabit yapılandırma, 150'den fazla görev, ve elmas toplayan ilk sistem.</text>
+
+  <rect x="20" y="316" width="680" height="54" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34" y="340" font-size="13" fill="var(--text-muted)">Asimetri: açık modelde karşılaştırılacak bir çevre var, örtük modelde yok.</text>
+  <text x="34" y="360" font-size="13" fill="var(--text-muted)">Bu yüzden ikinci sütunun bütün sınavları dolaylıdır.</text>
+
+  <text x="20" y="394" font-size="13" fill="var(--text-faint)">Puanlar Ha ile Schmidhuber'den, görev sayısı ve elmas Hafner ve arkadaşlarından.</text>
+</svg>

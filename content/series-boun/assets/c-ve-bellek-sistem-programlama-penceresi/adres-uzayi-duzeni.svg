@@ -50,6 +50,6 @@
   <text x="450" y="314" font-size="13" fill="var(--text-muted)">bozmaz, temiz bir çökmeyle biter</text>
 
   <line x1="26" y1="404" x2="698" y2="404" stroke="var(--border)" stroke-width="1.2" />
-  <text x="26" y="424" font-size="13" fill="var(--text-muted)">Heap ile yığın aynı boşluğun iki ucundan büyür; aradaki mesafe ikisinin toplam bütçesidir</text>
+  <text x="26" y="424" font-size="13" fill="var(--text-muted)">Heap yukarı büyür ve eşlenmemiş boşluk onun bütçesidir; yığın tek sayfadır, altı koruma sayfası</text>
   <text x="26" y="444" font-size="13" fill="var(--text-faint)">Buradaki heap bir bölgedir; öncelik kuyruğu makalesindeki heap bir veri yapısıdır</text>
 </svg>

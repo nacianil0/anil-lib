@@ -12,7 +12,7 @@ tags:
   - sayfalama
   - sayfa-tablosu
   - tlb
-content_hash: sha256:f6e7db6b1054d30cdd314796b71c3e7e00508f16bb582227ebd8741d1035a376
+content_hash: sha256:6df983ac8426767c9ca1897604b27c89d48db420fbc4d66cf1faf7bd45459373
 classification_version: 1
 classification_batch: 10
 ---
@@ -90,7 +90,7 @@ Gerçek donanımda tablo genellikle iki değil üç ya da dört düzeylidir. xv6
 
 İkinci bedel hâlâ ortada: sayfa tablosu bellekteyse her sanal erişim en az iki fiziksel erişime döner. Çare, çizelgeleme makalesinde adını koyduğumuz kalıbın burada tekrarlanmasıdır: geçmişe bakıp geleceği kestir, yani **önbellek**.
 
-MMU'nun içine, en çok kullanılan çevirileri tutan küçük bir donanım önbelleği konur: **adres çevirisi önbelleği (translation-lookaside buffer, TLB)**. Tipik bir TLB 32, 64 ya da 128 girdi tutar ve tam çağrışımlıdır — yani bir çeviri içinde herhangi bir yerde olabilir ve donanım hepsine paralel bakar. Akış şudur: donanım VPN'i çıkarır ve önce TLB'ye sorar. **Isabet varsa** çeviri oradan alınır ve bellekte tablo aranmaz. **Iska varsa** tablo gezilir, bulunan çeviri TLB'ye yerleştirilir ve komut yeniden denenir; bu kez isabet eder.
+MMU'nun içine, en çok kullanılan çevirileri tutan küçük bir donanım önbelleği konur: **adres çevirisi önbelleği (translation-lookaside buffer, TLB)**. Tipik bir TLB 32, 64 ya da 128 girdi tutar ve tam çağrışımlıdır — yani bir çeviri içinde herhangi bir yerde olabilir ve donanım hepsine paralel bakar. Akış şudur: donanım VPN'i çıkarır ve önce TLB'ye sorar. **İsabet varsa** çeviri oradan alınır ve bellekte tablo aranmaz. **Iska varsa** tablo gezilir, bulunan çeviri TLB'ye yerleştirilir ve komut yeniden denenir; bu kez isabet eder.
 
 TLB'nin işe yaraması programların **yerelliğine (locality)** dayanır. Bir dizinin elemanlarını sırayla gezen bir döngü düşün: 16 baytlık sayfalarda ve 4 baytlık tamsayılarla, on elemanlık bir dizide erişim dizisi ıska, isabet, isabet, ıska, isabet, isabet, isabet, ıska, isabet, isabet olur — yani isabet oranı yüzde 70. Buradaki kazanç **uzamsal yerelliktir**: elemanlar aynı sayfaya sıkıştığı için yalnızca sayfanın ilk elemanı ıska yapar. Program aynı diziyi biraz sonra yeniden gezerse hepsi isabet eder; bu da **zamansal yerelliktir**.
 
