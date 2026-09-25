@@ -161,6 +161,18 @@ export function getOrderedArticles(): CatalogArticle[] {
   return [...loadCatalog().articles].sort((a, b) => a.readingOrder - b.readingOrder);
 }
 
+/**
+ * Revision fields for a UI shape. Absent keys stay absent (never `undefined`), so a
+ * never-revised article serializes exactly as it did before revisions existed.
+ */
+export function revisionOf(
+  article: CatalogArticle,
+): { revisedAt?: string; revisionNote?: string } {
+  return article.revisedAt && article.revisionNote
+    ? { revisedAt: article.revisedAt, revisionNote: article.revisionNote }
+    : {};
+}
+
 export function toDescriptor(article: CatalogArticle): ArticleDescriptor {
   return {
     articleId: article.articleId,
@@ -170,6 +182,7 @@ export function toDescriptor(article: CatalogArticle): ArticleDescriptor {
     level: article.level,
     readingOrder: article.readingOrder,
     classificationBatch: article.classificationBatch,
+    ...(article.revisedAt ? { revisedAt: article.revisedAt } : {}),
   };
 }
 

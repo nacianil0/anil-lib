@@ -12,9 +12,11 @@ tags:
   - bayes
   - chebyshev
   - istatistik
-content_hash: sha256:46c15e03d17cb7cd1e99863405dd20512675a3601754d51383afad9090cfd8c7
+content_hash: sha256:41d0c5c3296238ebffdaa4303c2d1438da1ca060131d25894156067464701548
 classification_version: 1
 classification_batch: 11
+revised_at: "2026-09-25"
+revision_note: "Formüller sezgiyle katmanlandı: seri örneği ve Bayes adım adım hesaplandı, doğum günü çift sayımıyla, Markov ve Chebyshev tek cümlelik gerekçeyle anlatıldı."
 ---
 ## Ertelenen koşul
 
@@ -32,7 +34,15 @@ Bir olasılık problemini çözmenin disiplinli yolu dört adımdır ve mülakat
 
 Sonlu ve **eşit olasılıklı** bir uzayda dördüncü adım sayma problemine indirgenir: P(A) = |A| / |S|. Sayma makalesinde kurduğumuz bütün araçlar — çarpma kuralı, kombinasyon, içerme-dışarma — burada doğrudan olasılık hesabına dönüşür. Olasılığın "yeni" tarafı, uzay eşit olasılıklı olmadığında başlar.
 
-Küçük bir örnek yapalım, çünkü mülakat problemleri tam bu boyuttadır. Üç maçlık bir seride ilk maçı kazanma olasılığı 1/2; sonraki maçlarda takım bir önceki maçı kazandıysa 2/3, kaybettiyse 1/3 olasılıkla kazanıyor. İki maç kazanan seriyi alıyor. Örneklem uzayı altı sonuçtan oluşur: `KK`, `KMK`, `KMM`, `MKK`, `MKM`, `MM` — yani "seriyi kazan" olayı `{KK, KMK, MKK}`'dır. Her sonucun olasılığı kökten yaprağa giden yol üzerindeki olasılıkların çarpımıdır. Toplam olasılığı hesapladım ve tam olarak **1/2** çıktı; simetri düşünüldüğünde şaşırtıcı değil. Kurulum bir sonraki bölümün de örneği olacak.
+Küçük bir örnek yapalım, çünkü mülakat problemleri tam bu boyuttadır. Üç maçlık bir seride ilk maçı kazanma olasılığı 1/2; sonraki maçlarda takım bir önceki maçı kazandıysa 2/3, kaybettiyse 1/3 olasılıkla kazanıyor. İki maç kazanan seriyi alıyor. Örneklem uzayı altı sonuçtan oluşur: `KK`, `KMK`, `KMM`, `MKK`, `MKM`, `MM` — yani "seriyi kazan" olayı `{KK, KMK, MKK}`'dır. Her sonucun olasılığı, maçları sırayla oynatan bir ağaçta kökten yaprağa giden yol üzerindeki olasılıkların çarpımıdır:
+
+```
+KK  : 1/2 · 2/3        = 1/3   (6/18)
+KMK : 1/2 · 1/3 · 1/3  = 1/18
+MKK : 1/2 · 1/3 · 2/3  = 1/9   (2/18)
+```
+
+`KMK` satırını okuyalım: ilk maçı 1/2 ile kazanır, kazandıktan sonra ikinciyi 1/3 ile kaybeder, kaybettikten sonra üçüncüyü 1/3 ile kazanır. Toplam 6/18 + 1/18 + 2/18 = **1/2**. İki takım baştan simetrik olduğu için şaşırtıcı değil; ama hesabın dört adımı atlamadan yürüdüğünü görmek, asimetrik bir soruda da aynı yolu izleyebilmek demektir. Kurulum bir sonraki bölümün de örneği olacak.
 
 ## Koşullu olasılık ve Bayes
 
@@ -46,7 +56,7 @@ Tanım `P(B) = 0` iken tanımsızdır ve bu bir ayrıntı değildir: gerçekleş
 
 İki sonuç hemen çıkar. **Toplam olasılık yasası**, `B` ve tümleyeni üzerinden `P(A) = P(A|B)P(B) + P(A|B̄)P(B̄)` der. **Bağımsızlık (independence)** ise `P(A ∩ B) = P(A)P(B)` eşitliğidir; denk olarak `P(A|B) = P(A)`, yani `B`'yi öğrenmek `A` hakkındaki bilgini değiştirmez. Bağımsızlık bir gözlem değil, bir **varsayımdır** ve mülakatta en sık atlanan yer burasıdır.
 
-Önceki bölümün seri örneğine dönelim: takım ilk maçı kazandıysa seriyi kazanma olasılığı nedir? Aynı dört adım, bu sefer `B` = "ilk maçı kazandı" koşulu altında çalışır. İlk maç kazanıldıysa ikinciyi 2/3 ile kazanıp seri biter; 1/3 ile kaybeder ve üçüncüyü 1/3 ile kazanır. Toplam `2/3 + 1/3 × 1/3 = 7/9 ≈ 0,778`. Yani tek bir maçlık bilgi, olasılığı 1/2'den 7/9'a çıkarıyor. İki sayıyı da kesirli aritmetikle hesapladım ve dört yüz bin koşuluk bir benzetimle doğruladım (0,5007 ve 0,7776).
+Önceki bölümün seri örneğine dönelim: takım ilk maçı kazandıysa seriyi kazanma olasılığı nedir? Tanımı doğrudan uygulayalım. `B` = "ilk maçı kazandı" olayı `{KK, KMK, KMM}`'dir ve olasılığı 1/2'dir. `A ∩ B` = "ilk maçı kazandı ve seriyi aldı" olayı `{KK, KMK}`'dir ve olasılığı az önceki tablodan 1/3 + 1/18 = 7/18'dir. Oran `(7/18) / (1/2) = 7/9 ≈ 0,778`. Aynı sayı ağaçtan da doğrudan okunur: ilk maç kazanıldıysa ikinciyi 2/3 ile kazanıp seri biter, 1/3 ile kaybeder ve üçüncüyü 1/3 ile kazanır; `2/3 + 1/3 × 1/3 = 7/9`. Koşullamak, örneklem uzayını `B`'ye daraltıp olasılıkları yeniden toplamı 1 edecek biçimde ölçeklemektir; formüldeki bölme tam olarak bu ölçeklemedir. Yani tek bir maçlık bilgi, olasılığı 1/2'den 7/9'a çıkarıyor. İki sayıyı da kesirli aritmetikle hesapladım ve dört yüz bin koşuluk bir benzetimle doğruladım (0,5007 ve 0,7776).
 
 Şimdi klasik örneği yapalım, çünkü sezgiyi en sert kıran odur. Bir hastalık her bin kişiden birinde var. Test **duyarlı**: hastaysan yüzde 99 olasılıkla pozitif çıkıyorsun. Test **özgül**: sağlıklıysan yüzde 99 olasılıkla negatif çıkıyorsun. Testin pozitif çıktı. Hasta olma olasılığın nedir?
 
@@ -55,6 +65,14 @@ Yüz bin kişilik bir topluluk üzerinden saydım. Hasta olanlar 100 kişidir ve
 ```
 P(hasta | pozitif) = 99 / 1098 = 0,0902 → yüzde 9,02
 ```
+
+Bu sayım, **Bayes kuralının (Bayes' rule)** kendisidir. Koşullu olasılığın tanımını iki yönden yazarsan payları aynı olur, `P(hasta ∩ pozitif) = P(pozitif | hasta) · P(hasta)`, ve buradan
+
+```
+P(hasta | pozitif) = P(pozitif | hasta) · P(hasta) / P(pozitif)
+```
+
+çıkar. Paydadaki `P(pozitif)`'i toplam olasılık yasası verir. Sayılarla pay `0,99 × 0,001 = 0,00099` (yüz bin kişide 99 kişi), payda `0,00099 + 0,01 × 0,999 = 0,01098` (yüz bin kişide 1098 kişi). Formül ile sayım aynı hesaptır; mülakatta sayımla başlayıp formülü onun kısaltması olarak yazmak, formülü ezberden yazıp hangi terimin ne olduğunu karıştırmaktan daha güvenlidir.
 
 Şekil 1 bu sayımı gösteriyor.
 
@@ -81,7 +99,7 @@ E[R] = Σ R(ω) · P(ω)   (bütün sonuçlar üzerinden)
 
 Özel ve çok işe yarar bir hâli var. Bir olay gerçekleştiğinde 1, gerçekleşmediğinde 0 değerini alan rastgele değişkene **gösterge rastgele değişkeni (indicator random variable)** denir ve beklentisi doğrudan olayın olasılığıdır: `E[I_A] = P(A)`.
 
-Asıl araç şimdi geliyor ve bu makalenin en önemli cümlesi budur:
+Asıl araç şudur:
 
 ```
 E[R₁ + R₂] = E[R₁] + E[R₂]
@@ -91,13 +109,15 @@ E[R₁ + R₂] = E[R₁] + E[R₂]
 
 Kanonik örnek: bir davette `n` kişi şapkalarını vestiyere bırakıyor, çıkışta şapkalar karışıyor ve herkese rastgele bir şapka veriliyor. Kaç kişi kendi şapkasını alır? Dağılımı yazmak zordur, çünkü olaylar bağımlıdır — `n − 1` kişi kendi şapkasını aldıysa sonuncusu da kesinlikle kendininkini alır. Ama doğrusallık bunu umursamaz. `i`'inci kişi için bir gösterge tanımla; her birinin kendi şapkasını alma olasılığı `1/n`'dir, yani her göstergenin beklentisi `1/n`'dir; `n` tanesini topla ve sonuç **tam olarak 1** çıkar — `n` ne olursa olsun. Benzetimle doğruladım: `n` = 3, 5 ve 10 için iki yüz biner koşuda ortalama 0,999 civarında çıktı.
 
-Aynı teknik veri yapıları makalesinin bıraktığı bir borcu ödüyor. `m` hücreli bir hash tablosuna `n` anahtar düzgün ve bağımsız dağılıyorsa, bir hücredeki **beklenen zincir uzunluğu** yük faktörünün kendisidir: `α = n/m`. Kanıtı yine göstergelerle üç satırdır. Benzetimde `α` = 0,5 için 0,497, `α` = 1 için 1,014, `α` = 2 için 1,972 ölçtüm. "Hash tablosu ortalamada sabit zamanlıdır" cümlesinin arkasındaki tek varsayım budur — ve düşman girdi tam olarak bu varsayımı bozar.
+Aynı teknik veri yapıları makalesinin bıraktığı bir borcu ödüyor. `m` hücreli bir hash tablosuna `n` anahtar düzgün ve bağımsız dağılıyorsa, bir hücredeki **beklenen zincir uzunluğu** yük faktörünün kendisidir: `α = n/m`. Kanıtı yine göstergelerle iki satırdır. Belirli bir `j` hücresini sabitle ve `i`'inci anahtar o hücreye düşerse 1, düşmezse 0 olan `I_i` göstergesini tanımla; düzgün dağılım varsayımıyla `E[I_i] = 1/m`. Zincirin uzunluğu `L_j = I_1 + … + I_n` olduğu için doğrusallıkla `E[L_j] = n · 1/m = α`. Bu iki satırda bağımsızlık bile kullanılmadı; her anahtarın tek başına düzgün dağılması yetti. Benzetimde `α` = 0,5 için 0,497, `α` = 1 için 1,014, `α` = 2 için 1,972 ölçtüm. "Hash tablosu ortalamada sabit zamanlıdır" cümlesinin arkasındaki tek varsayım budur — ve düşman girdi tam olarak bu varsayımı bozar.
 
 ## Üç eski borç
 
-**Doğum günü.** Sayma makalesinde güvercin yuvası ilkesiyle "366 kişide çakışma kesindir" demiş, "kaç kişide muhtemeldir?" sorusunu ertelemiştik. Kesin formül şudur: `d` günlük bir yılda `n` kişinin hepsinin farklı doğum günü olma olasılığı `d(d−1)…(d−n+1) / dⁿ`'dir. Kesirli aritmetikle hesapladım: `n` = 23'te çakışma olasılığı **0,5073** — yani yarıyı geçen en küçük kişi sayısı 23'tür. Kaynağın verdiği pratik kural `√(2d)` kişide çakışma olasılığının yaklaşık `1 − 1/e ≈ 0,632` olmasıdır; `d` = 365 için `√730 ≈ 27` ve gerçek değeri hesapladığımda **0,6269** çıktı, yani yaklaştırma gerçekten iyi. Kaynağın 95 kişi için verdiği sınır "çakışmama olasılığı 1/200.000'den küçüktür" biçimindedir; bu bir üst sınırdır ve tam değeri kendim hesapladım: **1/694.527**.
+**Doğum günü.** Sayma makalesinde güvercin yuvası ilkesiyle "366 kişide çakışma kesindir" demiş, "kaç kişide muhtemeldir?" sorusunu ertelemiştik. Sezgi az önce kurduğumuz araçtan geliyor: çakışmayı kişiler değil **çiftler** üretir. `n` kişide `n(n−1)/2` çift vardır ve her çiftin aynı günde doğmuş olma olasılığı `1/d`'dir. Her çift için bir gösterge tanımlayıp toplarsan beklenen çakışan çift sayısı `n(n−1)/(2d)` çıkar — çiftler birbirinden bağımsız olmadığı hâlde, çünkü doğrusallık bağımsızlık istemez. `d` = 365 ve `n` = 23 için 253 çift ve beklenen 253/365 ≈ 0,69 çakışan çift vardır. Sezginin yanıldığı yer burasıdır: 23 kişi yılın küçük bir kesridir, ama 253 çift küçük bir sayı değildir.
 
-Bunun hash tablosuyla bağlantısı doğrudandır ve kaynak da bu bağı kuruyor: `n` anahtarı `d` hücreye atarken `n²`, `d`'nin küçük bir kesrini aşar aşmaz çakışma beklemek gerekir. Güvercin yuvası "çakışma kaçınılmazdır" diyordu; olasılık "çok daha erken gelir" diyor.
+Kesin hesap tümleyenden yapılır: `n` kişinin hepsinin farklı doğum günü olma olasılığı `d(d−1)…(d−n+1) / dⁿ`'dir — birinci kişi serbesttir, ikincisi kalan `d−1` günden birine, üçüncüsü kalan `d−2` günden birine düşmek zorundadır. Kesirli aritmetikle hesapladım: `n` = 23'te çakışma olasılığı **0,5073**, yani yarıyı geçen en küçük kişi sayısı 23'tür. Kaynak bu çarpımı `1 + x < eˣ` eşitsizliğiyle `e^(−n(n−1)/2d)` ile üstten sınırlar; üsteki sayı, az önce hesapladığımız beklenen çakışan çift sayısının ta kendisidir. Kaynağın pratik kuralı da buradan okunur: beklenen çift sayısı 1'e ulaştığında, yani yaklaşık `√(2d)` kişide, çakışma olasılığı kabaca `1 − 1/e ≈ 0,632` olur. `d` = 365 için `√730 ≈ 27` ve gerçek değeri **0,6269** buldum. (Kaynağın 95 kişi için verdiği "çakışmama olasılığı 1/200.000'den küçüktür" ifadesi de bu üst sınırdan gelir; tam değer 1/694.527'dir.)
+
+Hash tablosuyla bağlantı doğrudandır ve kaynak da bu bağı kuruyor: `n` anahtarı `d` hücreye atarken beklenen çakışan çift sayısı yaklaşık `n²/(2d)`'dir, dolayısıyla `n`, `√d` mertebesine geldiğinde çakışma beklemek gerekir. Bir milyon hücreli bir tabloda bu eşik bin dört yüz civarında anahtardır. Güvercin yuvası "çakışma kaçınılmazdır" diyordu; olasılık "çok daha erken gelir" diyor.
 
 **Rastgeleleştirilmiş seçim.** Rastgeleleştirilmiş algoritmalar makalesinde paranoyak hızlı sıralamanın beklenti analizini yapmış, seçim algoritmasınınkini açıkça borç bırakmıştık. Şimdi ödeyelim. Bir ekseni, ayırdığı iki parçanın ikisi de `3n/4`'ten küçükse **iyi** sayalım. Sıralamada ortada duran elemanların yarısı iyi eksendir, yani `P(iyi) ≥ 1/2`. İlk başarıya kadar geçen deneme sayısı **geometrik dağılıma** uyar ve beklentisi `1/p ≤ 2`'dir. Her deneme en fazla `c·n` iş yaptığına göre
 
@@ -119,13 +139,17 @@ En zayıf ama en az varsayım isteyen araç **Markov eşitsizliğidir**: negatif
 P(R ≥ a) ≤ E[R] / a
 ```
 
-Yalnızca beklentiyi bilmek yeter. Daha iyisini istiyorsan ikinci bir sayı ödemelisin: **varyans**, `Var[R] = E[(R − E[R])²]`, ve karekökü olan **standart sapma**. Bunları bilirsen **Chebyshev eşitsizliği** çalışır:
+Yalnızca beklentiyi bilmek yeter. Neden doğru olduğu tek cümledir: `R ≥ a` olan sonuçların toplam olasılığı `P(R ≥ a)`'dır ve her birinde değer en az `a` olduğu için bu sonuçlar beklentiye en az `a · P(R ≥ a)` katkı verir; `R` negatif olmadığı için geri kalan sonuçlar bu katkıyı azaltamaz, yani `a · P(R ≥ a) ≤ E[R]`.
+
+Daha iyisini istiyorsan ikinci bir sayı ödemelisin: **varyans**, `Var[R] = E[(R − E[R])²]`, yani değişkenin kendi ortalamasından uzaklığının karesinin ortalaması — ne kadar yayıldığının ölçüsü. Karekökü **standart sapmadır** ve değişkenle aynı birimdedir. Varyansı bilirsen **Chebyshev eşitsizliği** çalışır:
 
 ```
 P(|R − E[R]| ≥ a) ≤ Var[R] / a²
 ```
 
-Somut örnek: adil bir madenî parayı 100 kez atalım ve `X` tura sayısı olsun. `E[X] = 50`, `Var[X] = 25`, `σ = 5`. `P(X ≥ 75)` nedir? Üç cevabı da hesapladım. Markov **0,667** diyor — yani neredeyse hiçbir şey söylemiyor. Chebyshev **0,04** diyor — on altı kat daha iyi. Gerçek değer, binom olasılıklarını toplayarak bulunur: **2,8 × 10⁻⁷**. Şekil 2 üçünü aynı ölçekte gösteriyor.
+Bu yeni bir fikir değildir: Markov'u `R`'ye değil, negatif olmayan `(R − E[R])²` değişkenine uygularsın. `|R − E[R]| ≥ a` olayı `(R − E[R])² ≥ a²` olayıyla aynıdır ve Markov bu olay için `E[(R − E[R])²] / a² = Var[R] / a²` sınırını verir.
+
+Somut örnek: adil bir madenî parayı 100 kez atalım ve `X` tura sayısı olsun. Her atış, beklentisi 1/2 ve varyansı `1/2 · 1/2 = 1/4` olan bir Bernoulli değişkenidir; beklentiler her zaman, varyanslar ise atışlar bağımsız olduğu için toplanır. Böylece `E[X] = 50`, `Var[X] = 100 · 1/4 = 25`, `σ = 5`. `P(X ≥ 75)` nedir? Üç cevabı da hesapladım. Markov `50/75` = **0,667** diyor — yani neredeyse hiçbir şey söylemiyor. Chebyshev'i uygulamak için `X ≥ 75` olayının `|X − 50| ≥ 25` olayının içinde kaldığını görmek yeter; sınır `25/25²` = **0,04**, on altı kat daha iyi. Gerçek değer, binom olasılıklarını toplayarak bulunur: **2,8 × 10⁻⁷**. Şekil 2 üçünü aynı ölçekte gösteriyor.
 
 ![Yatay ve logaritmik bir olasılık ekseni ve üstünde üç işaret var. Şeklin en üstünde başlık satırı, hemen altında kurulum satırı var; kurulumda şunlar yazıyor: X yüz adil para atışındaki tura sayısı, beklentisi elli, standart sapması beş ve sorulan X'in yetmiş beşten büyük ya da eşit olma olasılığı. Eksende beş etiket var: solda bir, sonra sırayla on üzeri eksi iki, on üzeri eksi dört, on üzeri eksi altı ve sağda on üzeri eksi sekiz; iki etiket arası yüz kat demektir. Eksenin üstünde üç dikey sap ve her sapın ucunda birer nokta var. Birinci sap eksenin en solunda, sıfır virgül altı yüz altmış yedi değerinde ve üstünde Markov küçük eşit sıfır virgül altı yüz altmış yedi yazıyor. İkinci sap biraz sağda, sıfır virgül sıfır dört değerinde ve daha yükseğe uzanıyor, üstünde Chebyshev küçük eşit sıfır virgül sıfır dört yazıyor. Üçüncü sap çok daha sağda, on üzeri eksi altı ile on üzeri eksi sekiz arasında ve üstünde gerçek iki virgül sekiz çarpı on üzeri eksi yedi yazıyor; bu sap başka bir renkte. Eksenin altında bir satır ekseni açıklıyor: sola doğru büyük olasılık, sağa doğru küçük olasılık, her aralık yüz kat. Onun altında üç satırlık çerçeveli bir kutu var: Markov yalnızca X'in negatif olmadığını ve beklentisini varsayar; Chebyshev ayrıca varyansı da bilir; gerçek değer dağılımın tamamını, yani binom olduğunu bilir. En altta tek satır: ne kadar çok varsayarsan sınır o kadar sıkı olur, ama varsayımın yanlışsa sınır da yanlıştır](assets/markov-chebyshev.svg "Şekil 2 — Aynı olasılık, üç cevap: sınırın sıkılığı varsayımın fiyatıdır")
 
@@ -139,7 +163,7 @@ Bu aynı zamanda rastgeleleştirilmiş algoritmalar makalesinin Monte Carlo/Las 
 
 ## Dağılımların adını bilmek
 
-Bir dağılımın adını bilmek, ona ait üç şeyi bedava almak demektir: beklenti, varyans ve kuyruk davranışı. Mülakatta derinlik değil, doğru eşleştirme beklenir.
+Bir dağılımın adını bilmek, ona ait üç şeyi hazır almak demektir: beklenti, varyans ve kuyruk davranışı. Mülakatta derinlik değil, doğru eşleştirme beklenir.
 
 **Bernoulli(p)** tek bir evet/hayır denemesidir; `E = p`, `Var = p(1−p)`. **Binom(n, p)** bağımsız `n` Bernoulli denemesindeki başarı sayısıdır; `E = np`, `Var = np(1−p)`. **Geometrik(p)** ilk başarıya kadar geçen deneme sayısıdır; `E = 1/p` — rastgeleleştirilmiş seçimde kullandığımız tam olarak buydu. **Düzgün dağılım** bütün sonuçları eşit olasılıklı sayar ve "ortalama durum" analizlerinin çoğunun sessiz varsayımıdır. **Poisson**, nadir olayların sabit bir aralıktaki sayısını modeller; **üstel dağılım** iki olay arasındaki bekleme süresini; **normal (Gauss) dağılım** ise çok sayıda bağımsız katkının toplamının limit biçimidir — Chebyshev'in gevşek kalmasının nedeni de budur.
 
@@ -151,7 +175,7 @@ Olasılık, dağılımı bilip sonucu tahmin etmektir. **İstatistik** ters yön
 
 Temel kavramlar sırayla şöyle. Bir **örneklem (sample)**, popülasyondan çekilmiş sonlu bir gözlem kümesidir ve ondan hesaplanan her şey (ortalama, varyans) bir **örneklem istatistiğidir** — yani kendisi de bir rastgele değişkendir. **Nokta kestirimi** bilinmeyen bir parametre için tek bir sayı verir; **aralık kestirimi** bir aralık ve bir güven düzeyi verir. **Hipotez testi**, gözlenen farkın rastgelelikle açıklanıp açıklanamayacağını sorar.
 
-Bu makalenin araçları burada doğrudan işe yarıyor. Bir örneklem ortalaması, `n` bağımsız gözlemin toplamının `n`'e bölümüdür; doğrusallık gereği beklentisi popülasyon ortalamasıdır ve varyansı `n` kat küçülür. Chebyshev eşitsizliği bunu bir güvene çevirir: örneklem büyüdükçe ortalamadan belirli bir uzaklığa düşme olasılığı `1/n` hızıyla azalır. "Kaç ölçüm yeter?" sorusunun cevabı tam olarak bu hesaptan çıkar.
+Bu makalenin araçları burada doğrudan işe yarıyor. Bir örneklem ortalaması, `n` bağımsız gözlemin toplamının `n`'e bölümüdür; doğrusallık gereği beklentisi popülasyon ortalamasıdır ve varyansı `n` kat küçülür. Chebyshev eşitsizliği bunu bir güvene çevirir: örneklem büyüdükçe ortalamadan belirli bir uzaklığa düşme olasılığının üst sınırı `1/n` hızıyla azalır. "Kaç ölçüm yeter?" sorusunun cevabı tam olarak bu hesaptan çıkar.
 
 Mülakatta ayırt edici tek bir incelik var ve kaynak da ayrı bir alt bölüm ayırıyor: **güven, olasılık değildir.** "Yüzde 95 güven aralığı", gerçek parametrenin o aralıkta olma olasılığının yüzde 95 olduğu anlamına gelmez; parametre sabittir, rastgele olan aralıktır. Doğru okuma şudur: bu **yöntem** tekrar tekrar uygulanırsa ürettiği aralıkların yüzde 95'i gerçek parametreyi içerir. Bu cümleyi doğru kurabilmek, konuyu ezberleyenle anlayanı ayırır.
 

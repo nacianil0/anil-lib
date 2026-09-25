@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Home, ListTree, X } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import type { ArticleDescriptor } from "@/lib/content/types";
+import type { PhaseOutline } from "@/lib/content/series-progress";
 import { LockButton } from "./lock-button";
 import { ReadingList } from "./reading-list";
 import { ProgressMeter } from "./progress-meter";
@@ -17,6 +18,7 @@ type Props = {
   title?: string;
   subtitle?: string;
   homeHref?: string;
+  phases?: PhaseOutline[];
 };
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -28,9 +30,11 @@ export function MobileReadingList({
   title = UI.libraryTitle,
   subtitle = UI.librarySubtitle,
   homeHref = "/",
+  phases,
 }: Props) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const articleIds = articles.map((article) => article.articleId);
 
@@ -55,6 +59,17 @@ export function MobileReadingList({
       panel ? Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE)) : [];
 
     focusables()[0]?.focus();
+
+    // Open on the chapter being read, not on chapter one: in a series of a hundred
+    // chapters the reader would otherwise scroll the whole list to find their place.
+    // Scoped to the list, like the desktop sidebar, so the page behind stays put.
+    const list = listRef.current;
+    const active = list?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (list && active) {
+      const listRect = list.getBoundingClientRect();
+      const activeRect = active.getBoundingClientRect();
+      list.scrollTop += activeRect.top - listRect.top - list.clientHeight / 3;
+    }
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -134,13 +149,14 @@ export function MobileReadingList({
             <div className="shrink-0 border-b border-border">
               <ProgressMeter articleIds={articleIds} />
             </div>
-            <div className="min-h-0 flex-1 overflow-y-auto pt-3">
+            <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain pt-3">
               <ReadingList
                 articles={articles}
                 currentArticleId={currentArticleId}
                 onNavigate={close}
                 idPrefix="mobile"
                 basePath={basePath}
+                phases={phases}
               />
             </div>
             <div className="flex shrink-0 items-center justify-between border-t border-border px-4 py-3">

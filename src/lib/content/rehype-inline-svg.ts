@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fromHtml } from "hast-util-from-html";
 import type { Element, ElementContent, Root } from "hast";
+import { UI } from "./labels";
 
 /**
  * Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline
@@ -91,6 +92,34 @@ function loadSvgElement(src: string, options: InlineSvgOptions): Element {
   return svg;
 }
 
+/** Lucide "maximize-2", drawn inline so the server markup needs no client icon. */
+const ENLARGE_ICON =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" x2="14" y1="3" y2="10"/><line x1="3" x2="10" y1="21" y2="14"/></svg>';
+
+/**
+ * The figure's "enlarge" control. It carries no text node on purpose: highlights
+ * and the reading anchor are measured against the article's text, and a visible
+ * word here would shift every offset after the figure. The reader's figure viewer
+ * picks it up by its data attribute.
+ */
+function enlargeButton(): Element {
+  const icon = fromHtml(ENLARGE_ICON, { fragment: true }).children.find(
+    (child): child is Element => child.type === "element",
+  );
+  return {
+    type: "element",
+    tagName: "button",
+    properties: {
+      type: "button",
+      className: ["series-figure-zoom"],
+      dataFigureZoom: "",
+      ariaLabel: UI.enlargeFigure,
+      title: UI.enlargeFigure,
+    },
+    children: icon ? [icon] : [],
+  };
+}
+
 function buildFigure(image: Element, options: InlineSvgOptions): Element {
   const src = String(image.properties.src);
   if (!ASSET_SRC.test(src)) {
@@ -105,9 +134,9 @@ function buildFigure(image: Element, options: InlineSvgOptions): Element {
   svg.properties.role = "img";
   if (alt) svg.properties.ariaLabel = alt;
 
-  // SVG kendi kaydırma kabında durur: dar ekranlarda diyagram okunaklı
-  // kalacak kadar geniş tutulur ve kullanıcı yatayda kaydırır. Şekil başlığı
-  // kabın dışındadır, böylece her zaman görünür genişlikte kalır.
+  // SVG kendi kabında durur ve kaba sığar (globals.css); ayrıntı için şeklin
+  // büyütme düğmesi okuyucunun görüntüleyicisini açar. Şekil başlığı kabın
+  // dışındadır, böylece her zaman görünür genişlikte kalır.
   const children: ElementContent[] = [
     {
       type: "element",
@@ -124,6 +153,7 @@ function buildFigure(image: Element, options: InlineSvgOptions): Element {
       children: [{ type: "text", value: caption }],
     });
   }
+  children.push(enlargeButton());
 
   return {
     type: "element",

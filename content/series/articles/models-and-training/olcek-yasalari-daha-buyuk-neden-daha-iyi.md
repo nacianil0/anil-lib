@@ -12,9 +12,11 @@ tags:
   - hesap-optimal-egitim
   - chinchilla
   - beliren-yetenekler
-content_hash: sha256:8aaccb1bd45c7046b3d8ab23906bf5c0db333560843eaaee099de63f5c01dd2e
+content_hash: sha256:a9737b0cbb4281754d3f79f528d71926836c596f7d39cf7259209fdb2616284f
 classification_version: 1
 classification_batch: 1
+revised_at: "2026-09-25"
+revision_note: "Kayıp formülü hesapları sonuç-önce anlatılıp ayrıntısı ileri nota taşındı; katsayılar yeniden uydurulunca farkların yarıya indiği eklendi."
 ---
 ## Aynı bütçe, iki ayrı kalem
 
@@ -24,11 +26,13 @@ Sorunun kendisi mühendislikten çok muhasebe: elinde sabit sayıda FLOP var, ha
 
 ## Düz bir çizgi çizen düşüş
 
-Ölçek yasasının çekirdek iddiası tek cümleye sığar. Önce sözle: harcadığın hesabı her on katına çıkardığında kayıp sabit bir *miktarla* değil, sabit bir *çarpanla* düşer. Sembolle, C_min yığın boyutu verimli seçildiğinde harcanan hesap olmak üzere L(C_min) = (C_c / C_min)^α; Jared Kaplan ve arkadaşlarının 2020'de ölçtüğü değerler α ≈ 0,050 ve C_c ≈ 3,1×10⁸ PF-gün. Alt indis boşuna değil: aynı çalışma yığın boyutu optimize edilmemiş ham hesap için ayrı bir eğri uydurur ve orada üs 0,057'ye kayar. PF-gün, bir petaFLOP/s hızındaki bir makinenin bir gün boyunca yaptığı işlem sayısıdır. Kaybın birimi ise nat/token: 5\. makaledeki perplexity'nin doğal logaritma cinsinden kardeşi — perplexity onun üstelidir, o yüzden kayıptaki küçük düşüşler perplexity'de büyük görünür.
+Ölçek yasasının çekirdek iddiası tek cümleye sığar. Önce sözle: harcadığın hesabı her on katına çıkardığında kayıp sabit bir *miktarla* değil, sabit bir *çarpanla* düşer. Farkı bir örnekle düşün: "her on katta 0,3 düşer" deseydik, birkaç on katta kayıp sıfırın altına inerdi; "her on katta yüzde 11 düşer" demek ise kaybın hep küçüldüğünü ama hiç bitmediğini söyler. Jared Kaplan ve arkadaşlarının 2020'de ölçtüğü çarpan tam bu türdendir.
 
-Şimdi küçük sayılarla. On katına çıkarmanın çarpanı 10^(−0,050) = 0,8913; yani her on kat hesap, kaybı önceki değerinin yüzde 89,1'ine indiriyor. Başlangıç noktasını hesaplayalım: C_min = 1 PF-gün için L = (3,1×10⁸)^0,050. Adım adım: ln(3,1×10⁸) = 1,1314 + 18,4207 = 19,5521; bunu 0,050 ile çarpınca 0,9776; e^0,9776 = 2,658. Sonra her satırda 0,8913 ile çarpıyoruz.
+Sembolle: L = (C_c / C)^α. Burada C harcanan hesaptır, birimi PF-gün — saniyede bir katrilyon işlem yapan bir makinenin bir günlük çalışması. Kaplan ve arkadaşlarının uydurduğu değerler α ≈ 0,050 ve C_c ≈ 3,1×10⁸ PF-gün; C_c yalnızca eğrinin nereden başladığını ayarlayan bir sabittir, asıl bilgiyi üs α taşır. (Kesin konuşursak bu eğri, her bütçede yığın boyutu verimli seçilmiş koşulara aittir; ham hesap için çalışma üssü 0,057 bulur.) Kaybın birimi nat/token: 5\. makaledeki perplexity'nin doğal logaritma cinsinden kardeşi — perplexity onun üstelidir, o yüzden kayıptaki küçük düşüşler perplexity'de büyük görünür.
 
-| Hesap C_min (PF-gün) | Kayıp L (nat/token) | log₁₀ C_min | log₁₀ L |
+Şimdi küçük sayılarla. On katına çıkarmanın çarpanı 10^(−0,050) = 0,8913; yani her on kat hesap, kaybı önceki değerinin yüzde 89,1'ine indiriyor. Formül 1 PF-gün için 2,658 veriyor (hesap makinesinde (3,1×10⁸)^0,05); sonra her satırda 0,8913 ile çarpıyoruz.
+
+| Hesap C (PF-gün) | Kayıp L (nat/token) | log₁₀ C | log₁₀ L |
 |---|---|---|---|
 | 1 | 2,658 | 0 | 0,4246 |
 | 10 | 2,369 | 1 | 0,3746 |
@@ -40,9 +44,9 @@ Sağdaki iki sütuna dikkat et. log₁₀ C her satırda 1 artarken log₁₀ L 
 
 ![Yan yana iki panel aynı beş ölçümü gösterir: doğrusal eksende eğri hızla düşüp yatay bir kuyruğa dönüşür, log-log eksende aynı noktalar eğimi üsse eşit tek bir doğru üzerine oturur.](assets/guc-yasasi-iki-eksen.svg "Şekil 1 — Aynı beş nokta, iki ayrı eksen")
 
-Şekil 1'de aynı beş nokta iki ayrı eksende duruyor. Soldaki doğrusal eksende eğri hızla düşüp yatay bir kuyruğa dönüşüyor ve "iş burada bitti" izlenimi veriyor; sağdaki log-log eksende aynı noktalar tam bir doğru üzerine oturuyor. Bitmemiş. Bedava öğle yemeği de yok: kaybı yarıya indirmek istersen 0,5 = k^(−0,050) denklemini çözmen gerekir ve k = 2^20 = 1.048.576 çıkar. Bir milyon kat hesap.
+Şekil 1'de aynı beş nokta iki ayrı eksende duruyor. Soldaki doğrusal eksende eğri hızla düşüp yatay bir kuyruğa dönüşüyor ve "iş burada bitti" izlenimi veriyor; sağdaki log-log eksende aynı noktalar tam bir doğru üzerine oturuyor ve düşüşün sürdüğü görülüyor. Sürüyor ama pahalı: kaybı yarıya indirmek için hesabı hangi k katına çıkarman gerektiğini soralım. k^(−0,050) = 0,5 olmalı, bu da k = 2^20, yani yaklaşık bir milyon kat hesap demek.
 
-Aynı düzenlilik diğer iki eksende de ölçüldü — ama her biri kendi kaydıyla. Embedding tablosu dışındaki parametre sayısını on katına çıkarmak, veri darboğaz olmadığı sürece, kaybı yaklaşık yüzde 16 düşürüyor; veriyi on katına çıkarmak, model yeterince büyük olduğu sürece, yüzde 19,6 düşürüyor. Sayılar mütevazı. Ölçek yasasının acımasız yüzü tam olarak bu: getiri gerçek ama azalan.
+Aynı düzenlilik diğer iki eksende de ölçüldü — ama her biri kendi kaydıyla. Embedding tablosu dışındaki parametre sayısını on katına çıkarmak, veri darboğaz olmadığı sürece, kaybı yaklaşık yüzde 16 düşürüyor; veriyi on katına çıkarmak, model yeterince büyük olduğu sürece, yüzde 19,6 düşürüyor. Sayılar mütevazı: getiri gerçek ama azalan.
 
 ## Paranın büyük kısmını modele
 
@@ -50,7 +54,7 @@ Bu düzenliliği dil modelleri için en geniş biçimde ölçen ve alanın günd
 
 Çalışma bir de reçete verdi. Sabit bir hesap bütçesinde kaybı en küçük yapan tahsis, parametre sayısı N ve token sayısı D için N ∝ C^0,73 ve D ∝ C^0,27 idi. İki üssün toplamı 1; olması da gerekiyor, çünkü hesap kabaca ikisinin çarpımıyla artar. Cümleye çevirirsek: paranın büyük kısmını modeli büyütmeye harca, veriyi yalnızca gerektiği kadar artır. Çalışmada bundan ayrı, sık alıntılanan ikinci bir ilişki daha vardır: model boyutunu sekiz kat artırdığında aşırı öğrenme cezasından kaçınmak için veriyi kabaca beş kat artırman gerekir. İkisi aynı soruya cevap vermez ve birbiriyle de tutmaz — yukarıdaki tahsis üsleriyle sekiz kat model ancak iki kat civarı veri ister. Çalışma bu gerilimi kendi metninde not eder. Tahsis reçetesinin sonucu ise açıkça yazılıdır: çok büyük modelleri görece mütevazı miktarda veriyle eğit ve yakınsamadan çok önce dur.
 
-Bir dürüstlük notu borçluyuz ve bunu makalenin geri kalanı boyunca aklında tut: alanın yönünü değiştiren bu çalışma hakem sürecinden geçmedi, bir ön baskı olarak kaldı.
+Makalenin geri kalanı boyunca aklında tutman gereken bir kayıt: alanın yönünü değiştiren bu çalışma hakem sürecinden geçmedi, bir ön baskı olarak kaldı.
 
 İkinci not teknik. Kaplan'ın formülünde toplanan sabit bir terim yoktur; N sonsuza giderken kayıp sıfıra iner. Bu imkânsızdır — dilin kendi belirsizliği vardır ve 2\. makaledeki indirgenemez hata tam da buydu. Yasanın bir yerde kırılması gerektiği, çalışmanın kendi konjektürüdür.
 
@@ -58,13 +62,13 @@ Bir dürüstlük notu borçluyuz ve bunu makalenin geri kalanı boyunca aklında
 
 İki yıl sonra DeepMind'dan Jordan Hoffmann ve arkadaşları aynı soruyu yeniden sordu ve başka bir cevap aldı. Ölçek yeterliydi: 70 milyon ile 16 milyardan fazla parametre arasında, 5 milyar ile 500 milyar token arasında dört yüzden fazla model eğittiler. Bulguları tek cümleyle şu: model boyutu her iki katına çıktığında token sayısı da iki katına çıkmalı.
 
-Popüler anlatı buradan "Kaplan yanıldı" diye devam eder. Birincil kaynağa bakalım. Hoffmann ve arkadaşlarının kendi açıklaması metodolojiktir: Kaplan bütün modeller için sabit sayıda token ve sabit bir öğrenme oranı çizelgesi kullanmıştı. 8\. makalede o çizelgenin eğitimin uzunluğuna göre kurulduğunu görmüştük; uzunluğa uyarlanmadığında erken ara noktalardaki kayıplar olduğundan kötü görünür ve büyük modeller haksız yere avantajlı çıkar. Üstelik Kaplan'ın koşularının birçoğu 100 milyon parametrenin altındaydı. Dürüst cümle şu: soruyu hangi kurulumla sorduğun cevabı değiştirdi.
+Popüler anlatı buradan "Kaplan yanıldı" diye devam eder. Birincil kaynağa bakalım. Hoffmann ve arkadaşlarının kendi açıklaması metodolojiktir: Kaplan bütün modeller için sabit sayıda token ve sabit bir öğrenme oranı çizelgesi kullanmıştı. 8\. makalede o çizelgenin eğitimin uzunluğuna göre kurulduğunu görmüştük; uzunluğa uyarlanmadığında erken ara noktalardaki kayıplar olduğundan kötü görünür ve büyük modeller haksız yere avantajlı çıkar. Üstelik Kaplan'ın koşularının birçoğu 100 milyon parametrenin altındaydı. Doğru cümle şu: soruyu hangi kurulumla sorduğun cevabı değiştirdi.
 
-Şimdi hesabı kendimiz yapalım. 8\. makaleden bir kural taşıyoruz: toplam hesap ≈ 6 × N × D. Chinchilla'nın kendi tahsisi — 70 milyar parametre, 1,4 trilyon token — parametre başına 20 token'a karşılık gelir; bu oranı kural sayıp D = 20N yazalım. Yerine koyunca C = 6 × N × 20N = 120N². Bütçemiz Gopher'ınki olsun — DeepMind'ın bir yıl önce eğittiği büyük dil modeli: C = 5,76×10²³ FLOP. N'i çözelim: N = √(C / 120) = √(4,8×10²¹). Burada √4,8 = 2,1909 ve √(10²¹) = 3,1623×10¹⁰; çarpınca N = 6,93×10¹⁰, yani yaklaşık 69 milyar parametre. Token sayısı da D = 20 × 6,93×10¹⁰ = 1,39×10¹², yani yaklaşık 1,4 trilyon.
+Şimdi hesabı kendimiz yapalım. 8\. makaleden bir kural taşıyoruz: toplam hesap ≈ 6 × N × D. Chinchilla'nın kendi tahsisi — 70 milyar parametre, 1,4 trilyon token — parametre başına 20 token'a karşılık gelir; bu oranı kural sayıp D = 20N yazalım. Yerine koyunca C = 6 × N × 20N = 120N². Bütçemiz Gopher'ınki olsun — DeepMind'ın bir yıl önce eğittiği büyük dil modeli: C = 5,76×10²³ FLOP. N'i çözelim: N = √(C / 120) = √(4,8×10²¹) ≈ 6,93×10¹⁰, yani yaklaşık 69 milyar parametre. Token sayısı da D = 20 × 6,93×10¹⁰ = 1,39×10¹², yani yaklaşık 1,4 trilyon.
 
 Çıkan sayı, DeepMind'ın yayımladığı modelin ta kendisi: Chinchilla 70 milyar parametre, 1,4 trilyon token. Bu bir kehanet değil — oranı zaten o modelden okumuştuk, hesap kendi girdisine dönüyor. Gösterdiği şey başka: bütçe ile oran verildiğinde model boyu tek bir değere çakılır. Bağımsız kontrol makalenin kendi tablosundan geliyor: aynı bütçe için 67 milyar parametre ve 1,5 trilyon token yazıyor.
 
-Peki aynı bütçeyle Gopher ne yapmıştı? 280 milyar parametre, 300 milyar token — parametre başına 300 ÷ 280 = 1,07 token. Chinchilla'nın yirmide biri. Sonuç: dört kat küçük olan Chinchilla, elli yedi ayrı konudan çoktan seçmeli soru soran MMLU değerlendirmesinde yüzde 67,6 ile Gopher'ın yüzde 60,0'ının 7,6 puan önüne geçti. Böyle değerlendirme kümelerinin neyi ölçtüğünü ve neyi ölçemediğini 16. makalede ele alacağız. Bu değerler makalenin Tablo 6'sından; özeti aynı sonucu 67,5 diye veriyor — çalışmanın kendi içinde küçük bir tutarsızlık, biz tablodakini kullandık.
+Peki aynı bütçeyle Gopher ne yapmıştı? 280 milyar parametre, 300 milyar token — parametre başına 300 ÷ 280 = 1,07 token. Chinchilla'nın yirmide biri. Sonuç: dört kat küçük olan Chinchilla, elli yedi ayrı konudan çoktan seçmeli soru soran MMLU değerlendirmesinde yüzde 67,6 ile Gopher'ın yüzde 60,0'ının 7,6 puan önüne geçti. Böyle değerlendirme kümelerinin neyi ölçtüğünü ve neyi ölçemediğini 16. makalede ele alacağız. (Değerler makalenin Tablo 6'sından; özet bölümü 67,5 yazar.)
 
 Bir kayıt gerekli. 6ND kaba bir kestirimdir ve 8\. makalede yayımlanan FLOP değerleriyle yüzde on mertebesinde sapmalar görülebileceğini söylemiştik. İşte örneği: Gopher için 6 × 280×10⁹ × 300×10⁹ = 5,04×10²³ çıkıyor, oysa makalenin verdiği bütçe 5,76×10²³ — yüzde 12,5 fark. Aynı büyüklük mertebesinde; birebir değil.
 
@@ -80,9 +84,7 @@ Veri yarıya iner, çünkü sabit bütçede N ile D'nin çarpımı sabittir. İy
 
 ## Kaybın ikinci ondalık basamağı
 
-Aynı bütçeyi iki reçeteyle paylaştırınca ne oluyor? Kaplan'ın reçetesi yalnızca üsler değil, mutlak bir sayı da verir: en iyi model boyu N = 1,3×10⁹ × C_min^0,73, burada C_min PF-gün cinsinden hesaptır. Bütçemizi çevirelim: 5,76×10²³ ÷ 8,64×10¹⁹ = 6.667 PF-gün. Yerine koyalım: 6.667^0,73 = 619 ve N = 1,3×10⁹ × 619 = 8,0×10¹¹, yani yaklaşık 800 milyar parametre. Token sayısı hesabın kendisinden çıkar: D = C / (6N) = 5,76×10²³ ÷ (6 × 8,0×10¹¹) = 1,2×10¹¹, yani yaklaşık 120 milyar token. Parametre başına 0,15 token. Chinchilla'nın üsleriyle aynı bütçe 69 milyar parametre ve 1,39 trilyon token veriyordu.
-
-Bir dürüstlük notu: Kaplan veri için de ayrı bir eğri uydurmuştur ve o eğri aynı bütçede yaklaşık 216 milyar token verir — 6ND'den türettiğimiz 120 milyarın 1,8 katı. Çalışmanın kendi iki fiti birbirini tam tutmuyor; biz, iki tahsis de aynı faturayı ödesin diye veriyi 6ND'den türettik. Bu tutarsızlığı aklında tut.
+Aynı bütçeyi iki reçeteyle paylaştırınca ne oluyor? Önce sonuca bakalım, aritmetiği bu bölümün sonundaki nota bırakalım. Gopher'ın bütçesini Kaplan'ın reçetesine ve Chinchilla'nın oranına ayrı ayrı verdiğimizde şu iki tahsis çıkıyor:
 
 | Kalem | Kaplan (2020) | Chinchilla (2022) |
 |---|---|---|
@@ -91,11 +93,17 @@ Bir dürüstlük notu: Kaplan veri için de ayrı bir eğri uydurmuştur ve o e�
 | Veri | 120 milyar token | 1,39 trilyon token |
 | Token/parametre | 0,15 | 20 |
 
-Aynı elektrik faturası, yaklaşık 12 kat farklı model, yaklaşık 12 kat farklı veri. Sıralamaya da dikkat et: parametre başına 0,15 token'la Kaplan'ın reçetesi, Gopher'ın 1,07'sinden bile uçtadır. Bir bütçe paylaştırma benzetmesi kurmak isteyebilirsin — sabit para, iki kalem, un mu şeker mi. Benzetmenin bozulduğu yer şurası: un ile şeker toplanır, model boyu ile token sayısı ise çarpılır, çünkü hesap 6ND'dir. Benzetmenin biçimsel karşılığı ise nettir: sabit C için N ile D'nin çarpımı sabittir — bütçe bir doğru değil hiperboldür, birini iki katına çıkarırsan diğeri tam olarak yarıya iner — ve ölçek yasası bu eğri üzerindeki hangi noktanın en düşük kaybı verdiğini söyler.
+Aynı elektrik faturası, yaklaşık 12 kat farklı model, yaklaşık 12 kat farklı veri. Sıralamaya da dikkat et: parametre başına 0,15 token'la Kaplan'ın reçetesi, Gopher'ın 1,07'sinden bile uçtadır. Bunu un mu şeker mi türünden bir bütçe paylaştırması gibi düşünmek cazip, ama un ile şeker toplanır, model boyu ile token sayısı ise çarpılır, çünkü hesap 6ND'dir. Sabit bir bütçede N ile D'nin çarpımı sabittir: bütçe bir doğru değil bir hiperboldür, birini iki katına çıkarırsan diğeri yarıya iner. Ölçek yasasının söylediği, bu eğri üzerindeki hangi noktanın en düşük kaybı verdiğidir.
 
-Peki fark ne kadar kayba karşılık geliyor? Chinchilla'nın veriye uyarladığı kayıp fonksiyonunu kullanalım — istatistikte buna eğri uydurma (curve fitting) denir. Önce sözle: formül kaybı üç parçaya ayırır — hiçbir modelin altına inemeyeceği bir taban, modelin küçüklüğünden gelen bir ceza ve verinin azlığından gelen bir ceza; iki ceza da kendi kalemi büyüdükçe küçülür ama hiçbir zaman sıfırlanmaz. Sembolle: L(N, D) = 1,69 + 406,4/N^0,34 + 410,7/D^0,28. Buradaki 1,69 tabandır — Kaplan'ın formülünde eksik olan terim tam olarak bu. Kaplan tahsisi için N^0,34 = 11.144 ve 406,4 ÷ 11.144 = 0,036; D^0,28 = 1.265 ve 410,7 ÷ 1.265 = 0,325; toplam 1,690 + 0,036 + 0,325 = 2,051. Chinchilla tahsisi için N^0,34 = 4.851 ve 406,4 ÷ 4.851 = 0,084; D^0,28 = 2.512 ve 410,7 ÷ 2.512 = 0,163; toplam 1,690 + 0,084 + 0,163 = 1,937.
+Peki iki tahsis arasındaki fark ne kadar kayba karşılık geliyor? Bunun için Chinchilla ekibinin veriye uydurduğu bir kayıp formülü var (istatistikte buna eğri uydurma, curve fitting, denir). Formül kaybı üç parçaya ayırır: hiçbir modelin altına inemeyeceği bir taban, modelin küçüklüğünden gelen bir ceza ve verinin azlığından gelen bir ceza. İki ceza da kendi kalemi büyüdükçe küçülür ama hiçbir zaman sıfırlanmaz; taban ise Kaplan'ın formülünde eksik olan terimin ta kendisidir. Formüle iki tahsisi koyunca Kaplan'ınki 2,051, Chinchilla'nınki 1,937 nat/token veriyor — fark 0,114. Kaplan'ın tahsisinde kaybın büyük kısmı veri cezasından geliyor: 120 milyar token, 800 milyarlık bir modeli beslemeye yetmiyor.
 
-Fark: 0,114 nat/token. Büyüklüğünü görmek için aynı formülü iki gerçek modele uygulayalım: Gopher'ın 280 milyar parametresi ve 300 milyar token'ıyla 1,690 + 0,052 + 0,251 = 1,993 çıkıyor. Chinchilla'nın 1,937'siyle arasındaki fark 0,056 — ve MMLU'daki 7,6 puanı yaratan kayıp farkı bu. İki tahsis arasındaki 0,114 onun iki katı. Ölçek yasası dünyasında kaybın ikinci ondalık basamağı puan eder.
+Bu farkın büyüklüğünü hissetmek için aynı formülü iki gerçek modele uygulayalım: Gopher için 1,993, Chinchilla için 1,937 çıkıyor, fark 0,056. MMLU'daki 7,6 puanlık ayrım bu büyüklükte bir öngörülen kayıp farkıyla birlikte geldi; iki tahsis arasındaki 0,114 onun iki katı. Ölçek yasası dünyasında kaybın ikinci ondalık basamağı puan eder. Yalnız bu sayılar ölçülmüş değil, uydurulmuş bir formülden okunuyor ve formülün katsayıları da tartışmalı: birazdan göreceğimiz yeniden üretme denemesi tam bu katsayıları sorguluyor. Bu yüzden farkların ondalıklarını değil yönünü ve mertebesini oku.
+
+### İleri okuma notu: iki tahsisin aritmetiği
+
+Kaplan'ın reçetesi yalnızca üsler değil, mutlak bir sayı da verir: en iyi model boyu N = 1,3×10⁹ × C^0,73, burada C PF-gün cinsinden hesaptır. Bütçemiz 5,76×10²³ ÷ 8,64×10¹⁹ = 6.667 PF-gün eder; 6.667^0,73 = 619 ve N = 1,3×10⁹ × 619 ≈ 8,0×10¹¹. Token sayısını hesabın kendisinden çıkarıyoruz: D = C / (6N) = 5,76×10²³ ÷ (6 × 8,0×10¹¹) ≈ 1,2×10¹¹. Bir kayıt: Kaplan veri için ayrı bir eğri de uydurmuştur ve o eğri aynı bütçede yaklaşık 216 milyar token verir; çalışmanın iki fiti birbirini tam tutmuyor, biz iki tahsis de aynı faturayı ödesin diye veriyi 6ND'den türettik.
+
+Kayıp formülünün sembolik hâli L(N, D) = 1,69 + 406,4/N^0,34 + 410,7/D^0,28. Kaplan tahsisi için model cezası 406,4 ÷ 11.144 = 0,036, veri cezası 410,7 ÷ 1.265 = 0,325, toplam 1,690 + 0,036 + 0,325 = 2,051. Chinchilla tahsisi için 406,4 ÷ 4.851 = 0,084 ve 410,7 ÷ 2.512 = 0,163, toplam 1,937. Gopher için aynı hesap 1,690 + 0,052 + 0,251 = 1,993 verir.
 
 ## Yasa mı, en iyi uyan çizgi mi?
 
@@ -103,7 +111,7 @@ Adı "yasa" ama elimizde birkaç yüz noktalı bir saçılım grafiği ve içind
 
 Kanıtı Chinchilla çalışmasının kendi içinden geliyor. Tamay Besiroglu, Ege Erdil, Matthew Barnett ve Josh You 2024'te o çalışmanın üçüncü kestirim yöntemini —grafiklerden yeniden oluşturulan veriye kayıp fonksiyonu uydurma— yeniden üretmeye (replication) çalıştı. Raporlanan katsayıların makalenin kendi ilk iki yöntemiyle tutarsız olduğunu, çıkarılan veriye uymadığını ve inanılmayacak kadar dar güven aralıkları —kestirimin ne kadar oynayabileceğini gösteren bantlar— taşıdığını buldular; kök nedeni DeepMind'a teyit ettirdiler. Uydurmada kullanılan Huber kaybı —büyük sapmaları kareli kayıptan daha az cezalandıran bir uyum ölçüsü— veri noktaları üzerinde toplanmak yerine ortalanmış, optimizasyon da erken sonlanmıştı.
 
-Sonucu küçük değil. Hoffmann'ın raporladığı katsayılardan türetilen tahsis politikası parametre başına yaklaşık 70 token önerirken, yeniden uydurma 20'ye dönüyor; yani çalışmanın kendi üçüncü yöntemi, ilk iki yöntemiyle ve Chinchilla'nın fiilen nasıl eğitildiğiyle çelişiyor. Bu deneme de hakem sürecinden geçmemiş bir ön çalışmadır; söylenmesi gereken buydu, saklanması değil.
+Sonucu küçük değil. Hoffmann'ın raporladığı katsayılardan türetilen tahsis politikası parametre başına yaklaşık 70 token önerirken, yeniden uydurma 20'ye dönüyor; yani çalışmanın kendi üçüncü yöntemi, ilk iki yöntemiyle ve Chinchilla'nın fiilen nasıl eğitildiğiyle çelişiyor. Bu, bir önceki bölümde kullandığımız formülün ta kendisi. Yeniden uydurulan katsayılarla (taban 1,82; üsler 0,348 ve 0,366) iki farkı biz yeniden hesapladık: Kaplan ile Chinchilla tahsisleri arasındaki 0,114 yerine 0,062, Gopher ile Chinchilla arasındaki 0,056 yerine 0,025 çıkıyor. Yön aynı kalıyor — veriye daha çok pay veren tahsis yine önde — ama büyüklük kabaca yarıya iniyor. Bu deneme de hakem sürecinden geçmemiş bir ön çalışmadır; iki sonucu birlikte bilmek, hangisine ne kadar yaslanacağını seçmenin ön koşulu.
 
 > **Kendini yokla:** Bir ölçek yasası eğrisi log-log ölçekte düz bir doğru çiziyor. Bu doğruyu sağa doğru uzatıp on yıl sonrasını okumanın sakıncası ne?
 
@@ -133,7 +141,7 @@ Son soru en zoru. Ölçek yasası kayıp hakkında konuşur; peki kaybın düşm
 
 5\. makalede bu tartışmayı açık bırakmıştık. Wei ve arkadaşlarının ortaya attığı ad beliren yeteneklerdi: küçük modellerde hiç görünmeyen, belli bir ölçekten sonra birden ortaya çıkan beceriler. Soru şuydu: ölçekle gelen sıçramaların ne kadarı modelde, ne kadarı ölçüm cetvelinde? Şimdi mekaniğine bakalım.
 
-Bir hastayı iki cetvelle ölçtüğünü düşün. Biri derece derece sıcaklık veriyor: 37,2 sonra 37,6 sonra 38,1, pürüzsüz bir tırmanış. Diğeri yalnızca "ateşi var" ya da "yok" diyor ve eşiği 38,0. İkinci cetvele bakan biri ateşin bir anda ortaya çıktığını söyler. Benzetmenin bozulduğu yer şurası: bazı görevlerde kullanıcının umursadığı şey gerçekten de eşiğin kendisidir — kod ya derlenir ya derlenmez; "cetvel keyfî" demek "eşikli çıktı önemsiz" demek değildir. Benzetmenin biçimsel karşılığı ise şudur: uzun bir dizinin tamamının doğru olma olasılığı, token başına doğruluk p'nin dizi uzunluğuncu kuvveti gibi davranır. Rylan Schaeffer, Brando Miranda ve Sanmi Koyejo'nun 2023'te NeurIPS'te ödül alan çalışmasının çekirdeği bu. Sayı koyalım: p 0,90'dan 0,95'e pürüzsüzce çıkarken yirmi token'lık bir dizide p²⁰ 0,12'den 0,36'ya, yani üç katına sıçrar. Sıçrama gerçek; kaynağı, küçük bir kaybın yirmi kez üst üste çarpılmasıdır.
+Bir hastayı iki cetvelle ölçtüğünü düşün. Biri derece derece sıcaklık veriyor: 37,2 sonra 37,6 sonra 38,1, pürüzsüz bir tırmanış. Diğeri yalnızca "ateşi var" ya da "yok" diyor ve eşiği 38,0. İkinci cetvele bakan biri ateşin bir anda ortaya çıktığını söyler. Ama bazı görevlerde kullanıcının umursadığı şey gerçekten de eşiğin kendisidir — kod ya derlenir ya derlenmez; "cetvel keyfî" demek "eşikli çıktı önemsiz" demek değildir. Dil modelinde eşiğin nereden geldiği hesaplanabilir: uzun bir dizinin tamamının doğru olma olasılığı, token başına doğruluk p'nin dizi uzunluğuncu kuvveti gibi davranır. Rylan Schaeffer, Brando Miranda ve Sanmi Koyejo'nun 2023'te NeurIPS'te ödül alan çalışmasının çekirdeği bu. Sayı koyalım: p 0,90'dan 0,95'e pürüzsüzce çıkarken yirmi token'lık bir dizide p²⁰ 0,12'den 0,36'ya, yani üç katına sıçrar. Sıçrama gerçek; kaynağı, küçük bir kaybın yirmi kez üst üste çarpılmasıdır.
 
 Aynı çalışma, BIG-Bench adlı geniş görev kümesinde bildirilen beliren yeteneklerin yüzde 92'sinden fazlasının yalnızca iki metrik altında ortaya çıktığını ve sürekli metriklere geçilince aynı eğrilerin pürüzsüzleştiğini gösterdi.
 
@@ -141,7 +149,7 @@ Aynı çalışma, BIG-Bench adlı geniş görev kümesinde bildirilen beliren ye
 
 Şekil 3 aynı temel eğriyi iki cetvelle okumanın nasıl iki ayrı resim ürettiğini gösteriyor. Ama tartışma burada bitmiyor. 5\. makalede Wei ve arkadaşlarının kendi ekinin kaybın pürüzsüzce iyileştiğini kaydettiğini söylemiştik; aynı çalışmanın bir başka eki, üç görevde beliren yeteneklerin hangi değerlendirme metriği kullanılırsa kullanılsın göründüğünü raporluyor. Zhengxiao Du ve arkadaşlarının NeurIPS 2024'teki çalışması ise üçüncü bir çerçeve öneriyor: belirleyici olan model boyutu değil, ön eğitim kaybının belirli bir eşiğin altına inmesi.
 
-Bugünkü dürüst özet 5\. makaledekiyle aynı, bir kat daha net: cetvel seçimi beliren yeteneklerin görünüşünü kesinlikle etkiliyor, buna rağmen metrikten bağımsız görünen vakalar da raporlanmış durumda. Tartışma kapanmadı. Nereye kadar açık olduğunu 78. makalede ele alacağız.
+Bugünkü özet 5\. makaledekiyle aynı, bir kat daha net: cetvel seçimi beliren yeteneklerin görünüşünü kesinlikle etkiliyor, buna rağmen metrikten bağımsız görünen vakalar da raporlanmış durumda. Tartışma kapanmadı. Nereye kadar açık olduğunu 78. makalede ele alacağız.
 
 > **Kendini yokla:** Ölçek yasası eğrisi kaybın ölçekle düzgün biçimde düştüğünü gösteriyor. Bu, modelin her işte düzgün biçimde iyileştiği anlamına gelir mi?
 

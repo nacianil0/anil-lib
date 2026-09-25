@@ -12,7 +12,7 @@ tags:
   - en-buyuk-olabilirlik
   - softmax
   - yansiz-tahminci
-content_hash: sha256:6f30a14c1b18c01febdbe412192a3320f3b2a768e0212a5bfcb0c3a4b07a993a
+content_hash: sha256:9aae9ab4c4d378470a92df35792f810438e69205b0f8e4b8545d199d528c0e8b
 classification_version: 1
 classification_batch: 22
 ---
@@ -62,19 +62,19 @@ Logaritmanın burada oynadığı rol küçük değil. Çarpımı toplama çeviri
 
 Bir soru daha var ve 6\. makaleden beri askıda: skorları toplamı 1 olan sayılara çevirmenin sonsuz yolu varken neden üstel alıp bölüyoruz?
 
-Cevap olasılık kuramının en zarif sonuçlarından birinde. Elinde veriden gelen birtakım kısıtlar varsa — "şu özellik ortalamada şu değeri almalı" gibi — ve bu kısıtları sağlayan sonsuz dağılım varsa, aralarından **en az ek varsayım yapanı** seçmek makul bir ilkedir. O dağılımın biçimi her zaman aynı çıkar: özelliklerin ağırlıklı toplamının üsteli, bölü bir normalleştirme sabiti. Adam Berger, Vincent Della Pietra ve Stephen Della Pietra'nın Computational Linguistics'te yayımladığı 1996 tarihli çalışma bu aileyi dil işleme problemlerine taşıyan klasik metindir.
+Cevap olasılık kuramının klasik bir sonucunda. Elinde veriden gelen birtakım kısıtlar varsa — "şu özellik ortalamada şu değeri almalı" gibi — ve bu kısıtları sağlayan sonsuz dağılım varsa, aralarından **en az ek varsayım yapanı** seçmek makul bir ilkedir. O dağılımın biçimi her zaman aynı çıkar: özelliklerin ağırlıklı toplamının üsteli, bölü bir normalleştirme sabiti. Adam Berger, Vincent Della Pietra ve Stephen Della Pietra'nın Computational Linguistics'te yayımladığı 1996 tarihli çalışma bu aileyi dil işleme problemlerine taşıyan klasik metindir.
 
 Yani softmax uydurulmuş bir kısayol değil; kısıtları sağlayan en az varsayımlı ailenin biçimi. Logit'ler o ailenin doğal parametreleri, sıcaklık da aynı parametreleri topluca ölçekleyen tek sayı.
-
-Bu seçimin ikinci ve daha somut bir armağanı var. Softmax ile en büyük olabilirlik kaybı bir arada kullanıldığında, kaybın logit'lere göre türevi olabilecek en sade biçime iner: **tahmin edilen olasılık eksi gözlenen değer.** Bishop'un kitabı bunu çok sınıflı durum için 4.3.4 bölümünde (s. 209, denklem 4.109) türetir. Örneğimizde doğru token birinciyse, birinci logit'in gradyanı 0,659 eksi 1 eşittir −0,341; ikincininki 0,242 eksi 0 eşittir 0,242; üçüncününki 0,099. Üç sayının toplamı sıfır — normalleştirme kısıtının doğrudan sonucu.
-
-2\. makalede gradyan inişini "hatayı azaltacak yönde it" diye kurmuştuk. Şimdi "hata" sözcüğünün burada ne olduğunu tam olarak söyleyebiliriz: modelin verdiği olasılık ile gerçekte olanın farkı. Kaybın seçimi, gradyanın biçimini de belirliyor.
 
 Aritmetiği bir kez sonuna kadar götürelim. Üç aday ve logit'leri 2,0 · 1,0 · 0,1 olsun. Üstelleri: 7,389 · 2,718 · 1,105. Toplamları 11,213. Her birini toplama böl: 0,659 · 0,242 · 0,099. Toplam 1.
 
 ![Softmax'ın üç adımını sayılarla gösteren bir tablo. Birinci satır logit'ler: 2,0 ve 1,0 ve 0,1. İkinci satır üstelleri: 7,389 ve 2,718 ve 1,105; sağda toplamları 11,213 yazılıdır. Üçüncü satır toplama bölünmüş sonuçlar: 0,659 ve 0,242 ve 0,099; sağda toplamın 1 olduğu yazılıdır. Altta iki karşılaştırma satırı vardır: sıcaklık 0,5 iken aynı üç adayın payları 0,864 ve 0,117 ve 0,019; sıcaklık 2 iken 0,502 ve 0,304 ve 0,194. En altta bir kayıt: sıcaklık logit'leri kendisine böler, yani aynı ailenin doğal parametrelerini topluca ölçekler; üstel biçim kısıtları sağlayan en az varsayımlı ailenin biçimidir ve buradaki sayılar üç logit'ten elle hesaplanmıştır.](assets/softmaxin-uc-adimi.svg "Şekil 2 — Üstelini al, topla, böl")
 
 Şekil 2 aynı üç adayı iki ayrı sıcaklıkta da gösteriyor. 10\. makalede sıcaklığın kuyruğu nasıl değiştirdiğini görmüştük; buradaki katman farklı — sıcaklık dağılımın biçimini dışarıdan bozan bir müdahale değil, aynı ailenin içinde kalan bir parametre değişimi. Bu okuma 65\. makaledeki sıcaklık ölçeklemenin neden tek parametreyle kalibrasyonu düzeltebildiğini de açıklıyor: müdahale dağılımın ailesini değiştirmiyor, yalnızca doğal parametrelerin ölçeğini düzeltiyor.
+
+Bu seçimin daha somut bir sonucu da var. Softmax ile en büyük olabilirlik kaybı bir arada kullanıldığında, kaybın logit'lere göre türevi olabilecek en sade biçime iner: **tahmin edilen olasılık eksi gözlenen değer.** Bishop'un kitabı bunu çok sınıflı durum için 4.3.4 bölümünde (s. 209, denklem 4.109) türetir. Yukarıdaki üç adayda doğru token birinciyse, birinci logit'in gradyanı 0,659 eksi 1 eşittir −0,341; ikincininki 0,242 eksi 0 eşittir 0,242; üçüncününki 0,099. Üç sayının toplamı sıfır — normalleştirme kısıtının doğrudan sonucu.
+
+2\. makalede gradyan inişini "hatayı azaltacak yönde it" diye kurmuştuk. Şimdi "hata" sözcüğünün burada ne olduğunu tam olarak söyleyebiliriz: modelin verdiği olasılık ile gerçekte olanın farkı. Kaybın seçimi, gradyanın biçimini de belirliyor.
 
 Ailenin bir de fazlalığı var ve pratikte sık karşılaşılır. Bütün logit'lere aynı sabiti eklersen sonuç değişmez: üsteller ortak bir çarpan kazanır, o çarpan bölmede sadeleşir. Örneğimizde 2,0 · 1,0 · 0,1 yerine 12,0 · 11,0 · 10,1 yazsan aynı üç payı bulursun. Bunun iki sonucu var. Birincisi, tek bir logit'in mutlak değeri hiçbir şey söylemez; anlamlı olan logit'ler arasındaki farklardır. İkincisi, sayısal kararlılık için gerçeklemeler önce en büyük logit'i hepsinden çıkarır — böylece üstel alınırken taşma olmaz ve sonuç değişmez. Aynı fazlalık 65\. makaledeki sıcaklık ölçeklemenin neden **tek** parametreyle çalıştığını da açıklıyor: ölçek bir serbestlik derecesidir, kaydırma değil.
 
@@ -84,7 +84,7 @@ Elinde bir dağılım varken sorabileceğin iki ayrı soru var ve ikisi farklı 
 
 10\. makalede Ari Holtzman ve arkadaşlarının ölçümünü görmüştük: en olası devamı seçmek metni tekrara sokuyor, insan metninin perplexity'si ise üretilen metninkinden kat kat yüksek. Şimdi bunun neden şaşırtıcı olmadığını söyleyebiliriz. Bir dağılımın **modu** — en yüksek olasılıklı sonucu — o dağılımdan çekilen tipik bir örnek değildir; çok sonuçlu dağılımlarda modun olasılığı çok küçük olabilir ve tipik örnekler modun etrafında değil, kütlenin yayıldığı yerde bulunur. Doğal dil de kütlesi geniş bir dağılımdır.
 
-Sayıyla görmek kolay. Yirmi token'lık bir dizi üretirken her adımda en olası adayın payının 0,4 olduğunu varsayalım. En olası dizinin olasılığı 0,4 üzeri 20, yani yaklaşık 1,1 çarpı 10 üzeri eksi 8. Bütün dizilerin olasılıkları toplamı 1 olduğuna göre, "en olası dizi" bu kütlenin yüz milyonda birinden azını taşıyor. Yani "en olası"yı seçmek, kütlenin neredeyse tamamını görmezden gelmek demek. (Bu küçük hesap açıklama amaçlı; gerçek bir modelde adım olasılıkları eşit değildir.)
+Sayıyla görmek kolay. Yirmi token'lık bir dizi üretirken her adımda en olası adayın payının 0,4 olduğunu varsayalım. En olası dizinin olasılığı 0,4 üzeri 20, yani yaklaşık 1,1 çarpı 10 üzeri eksi 8. Bütün dizilerin olasılıkları toplamı 1 olduğuna göre, "en olası dizi" bu kütlenin yalnızca yüz milyonda biri kadarını taşıyor. Yani "en olası"yı seçmek, kütlenin neredeyse tamamını görmezden gelmek demek. (Bu küçük hesap açıklama amaçlı; gerçek bir modelde adım olasılıkları eşit değildir.)
 
 > **Kendini yokla:** En olası diziyi seçmek neden "modelin en iyi bildiği cevabı seçmek" ile aynı şey değil?
 
@@ -98,19 +98,19 @@ Kesme yöntemleri — 10\. makaledeki top-k ve çekirdek örnekleme — bu yüzd
 
 ## Kestirim ile gerçeğin arası
 
-Son bir ayrım kaldı ve bu makalenin en pratik kazancı orada: elindeki sayı bir **dağılım** mı, yoksa dağılımdan yapılmış sonlu bir örneklemden hesaplanmış bir **kestirim** mi?
+Son bir ayrım kaldı ve pratikte en çok o işine yarayacak: elindeki sayı bir **dağılım** mı, yoksa dağılımdan yapılmış sonlu bir örneklemden hesaplanmış bir **kestirim** mi?
 
 33\. makalede kapsamayı şöyle kurmuştuk: modelin bir soruyu tek denemede çözme olasılığı p ise, k denemede en az bir kez çözme olasılığı 1 eksi (1 eksi p) üzeri k. p 0,1 ve k 10 için bu 0,6513. Hesap doğru — ama p'yi bilmiyorsun. Elinde n deneme ve c başarı var; p'nin yerine c bölü n koyuyorsun.
 
 Mark Chen ve arkadaşlarının Codex çalışması bu adımın sessiz bir bedeli olduğunu gösteriyor: c bölü n'yi formüle koymak **yanlı** bir tahminci veriyor. Yansız olanı doğrudan sayma üzerinden kurulur — n denemeden k tanesini seçmenin bütün yolları içinde, hiç doğru içermeyenlerin oranını 1'den çıkar. Çalışma 200 deneme üretip k'yı 100'e kadar değiştiriyor.
 
-Sayıyı görelim: n 200, başarı sayısı c 20, yani gözlenen oran 0,1. k 10 için yanlı hesap 0,6513, yansız tahminci 0,6602 veriyor. Fark küçük ama sistematik ve k büyüdükçe değil, küçük c değerlerinde belirginleşir.
+Sayıyı görelim: n 200, başarı sayısı c 20, yani gözlenen oran 0,1. k 10 için yanlı hesap 0,6513, yansız tahminci 0,6602 veriyor. Fark küçük ama sistematik ve hep aynı yönde: yerine koyma hesabı kapsamayı olduğundan düşük gösterir. k 50'de iki sayı da 1'e yaklaştığı için fark silinmiş gibi görünür; ama tersinden, hiç çözememe olasılıklarına bakarsan (0,0052 ile 0,0023) biri öbürünün iki katından fazladır.
 
 ![İki tahmincinin aynı örneklemde verdiği sayıları karşılaştıran bir tablo. Üstte kurulum yazılıdır: toplam deneme sayısı 200, doğru sayısı 20, yani gözlenen oran 0,1. Sütunlar deneme sayısı k, yerine koyma hesabı ve yansız tahminci. Satırlar: k eşittir 1 için 0,1000 ve 0,1000; k eşittir 5 için 0,4095 ve 0,4128; k eşittir 10 için 0,6513 ve 0,6602; k eşittir 50 için 0,9948 ve 0,9977. Altta iki kayıt vardır: birincisi, iki sütun k eşittir 1'de çakışır ve arada ayrışır; ikincisi, fark yuvarlama değil tanım farkıdır, çünkü yerine koyma hesabı gözlenen oranı gerçek olasılık sayar. En altta sayıların kaynağın kurulumundan elle hesaplandığı yazılıdır.](assets/iki-tahminci.svg "Şekil 3 — Aynı örneklem, iki ayrı sayı")
 
 Şekil 3 dört farklı k için iki sütunu yan yana koyuyor; sayılar çalışmanın verdiği tahminci tanımından elle hesaplandı. Buradaki ders 33\. makalenin hesabını geçersiz kılmıyor: orada p **verilmiş** bir olasılıktı ve formül doğrudur. Geçersiz olan, ölçülmüş bir orandan aynı formülle kapsama raporlamak.
 
-Ayrımın adı **yanlılık** (bias): bir tahminci, aynı deney sonsuz kez tekrarlansaydı ortalamada doğru değeri veriyorsa yansızdır. Bu, aynı İngilizce sözcüğün seride üçüncü kullanımı ve üçü karıştırılmamalı: 3\. makalede **sapma**, bir nöronun sabit terimiydi; 45 ve 73'te **yanlılık**, hakem modelin konum ya da uzunluk tercihiydi; burada ise bir tahmincinin ortalamada kaçırdığı paydır. Ortak yan yalnızca sözcük: üçü de "sistematik bir kayma" anlatır, ama nesneleri ayrıdır. Yanlılık, tahmincinin oynaklığından ayrı bir kusurdur — daha çok örnek almak oynaklığı düşürür ama yanlılığı kendiliğinden gidermez. Bu ayrım bir sonraki fazın konusu; burada kaydedilmesi gereken şey, "0,65" ile "0,66" arasındaki farkın yuvarlama olmadığı. Bir sayının nereden geldiğini bilmeden, iki modelin kapsama puanı karşılaştırılamaz.
+Ayrımın adı **yanlılık** (bias): bir tahminci, aynı deney sonsuz kez tekrarlansaydı ortalamada doğru değeri veriyorsa yansızdır. Bu, aynı İngilizce sözcüğün seride üçüncü kullanımı ve üçü karıştırılmamalı: 3\. makalede **sapma**, bir nöronun sabit terimiydi; 45 ve 73'te **yanlılık**, hakem modelin konum ya da uzunluk tercihiydi; burada ise bir tahmincinin ortalamada kaçırdığı paydır. Ortak yan yalnızca sözcük: üçü de "sistematik bir kayma" anlatır, ama nesneleri ayrıdır. Yanlılık, tahmincinin oynaklığından ayrı bir kusurdur — daha çok örnek almak oynaklığı düşürür ama yanlılığı kendiliğinden gidermez. Bu ayrımı genelleme kuramını kurarken yeniden ele alacağız; burada kaydedilmesi gereken şey, "0,65" ile "0,66" arasındaki farkın yuvarlama olmadığı. Bir sayının nereden geldiğini bilmeden, iki modelin kapsama puanı karşılaştırılamaz.
 
 Bu makalede kurduğumuz üç aracın ortak bir kullanımı var ve serinin geri kalanında hep işine yarayacak. Bir sayıyla karşılaştığında üç soruyu sırayla sor: bu bir dağılım mı, bir beklenti mi, yoksa sonlu bir örneklemden hesaplanmış bir kestirim mi? Üçü farklı şeylerdir ve üçü farklı biçimde yanılır. Dağılım yanlış olabilir, beklenti tek bir koşuda gerçekleşmeyebilir, kestirim ise doğru dağılımdan bile sistematik biçimde sapabilir.
 

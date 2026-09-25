@@ -1,41 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 424" role="img" aria-label="Dört satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir eğitim yinelemesinde işlem ile sürenin dağılımı. Sütunlar işlem sınıfı, işlemin yüzdesi ve sürenin yüzdesi. Birinci satır matris çarpımları: 99,80 ve 61,0. İkinci satır istatistiksel normalleştirme: 0,17 ve 25,5. Üçüncü satır öge bazlı işlemler: 0,03 ve 13,5. Bir çizginin altındaki dördüncü satır vurguludur, matris çarpımı dışındaki her şey: 0,20 ve 39,0. Birinci kutunun başlığı binde ikilik kısım, sürenin üçte birinden fazlası; içinde birim işlem başına oranın hesabı durur: 39 bölü 0,20 eşittir 195, 61 bölü 99,80 eşittir 0,611, ve 195 bölü 0,611 eşittir 319 kat. İkinci kutunun başlığı farkın iki ayrı sebebi; içinde taşınan baytın yinelemenin yüzde 37'sini bellekle sınırlı işlemlerde geçirmesi ve koşturan birimin matris çarpımı verimini ötekilerin 16 katına kadar çıkarması yazılıdır. En altta bir kayıt: yüzdeler Ivanov ve arkadaşlarından, 16 kat Dao'dan, 319 kat bizim hesabımızdır.">
-  <text x="20" y="30" font-size="13" fill="var(--text)">Bir eğitim yinelemesinde işlem ile sürenin dağılımı</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 368" role="img" aria-label="Üst üste iki yatay yüzde çubuğu. Üstteki işlemin payı: matris çarpımı yüzde 99,80 ile çubuğun neredeyse tamamını kaplar; normalleştirme ve öge bazlı işlemlerin toplamı yüzde 0,20'dir ve sağ uçta görünmeyecek kadar incedir. Alttaki sürenin payı: matris çarpımı yüzde 61,0, normalleştirme yüzde 25,5, öge bazlı işlemler yüzde 13,5. İki kesikli çizgi üst çubuktaki sınırları alttakilere bağlar ve binde ikilik dilimin sürenin yüzde 39'una yayıldığını gösterir. Altta: birim işlem başına 39 bölü 0,20 bölü 61 bölü 99,80, yaklaşık 319 kat; iki sebep taşınan bayt, yani yinelemenin yüzde 37'sinin bellekle sınırlı işlemlerde geçmesi, ve koşturan birim, yani 16 kata kadar verim farkı. Kayıt: yüzdeler Ivanov ve arkadaşlarından, 16 kat Dao'dan, 319 kat bizim hesabımızdır.">
+  <text x="20.0" y="30.0" font-size="13" fill="var(--text)">Aynı yineleme, iki çubuk: işlemin payı ve sürenin payı</text>
   <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
-
-  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">işlem sınıfı</text>
-  <text x="360" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">işlemin %'si</text>
-  <text x="520" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sürenin %'si</text>
-  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
-
-  <text x="24" y="100" font-size="13" fill="var(--text)">matris çarpımları</text>
-  <text x="360" y="100" font-size="13" fill="var(--text)">99,80</text>
-  <text x="520" y="100" font-size="13" fill="var(--text)">61,0</text>
-
-  <text x="24" y="126" font-size="13" fill="var(--text)">istatistiksel normalleştirme</text>
-  <text x="360" y="126" font-size="13" fill="var(--text)">0,17</text>
-  <text x="520" y="126" font-size="13" fill="var(--text)">25,5</text>
-
-  <text x="24" y="152" font-size="13" fill="var(--text)">öge bazlı işlemler</text>
-  <text x="360" y="152" font-size="13" fill="var(--text)">0,03</text>
-  <text x="520" y="152" font-size="13" fill="var(--text)">13,5</text>
-
-  <line x1="20" y1="168" x2="700" y2="168" stroke="var(--border)" />
-
-  <text x="24" y="192" font-size="13" font-weight="bold" fill="var(--accent)">matris çarpımı dışındaki her şey</text>
-  <text x="360" y="192" font-size="13" font-weight="bold" fill="var(--accent)">0,20</text>
-  <text x="520" y="192" font-size="13" font-weight="bold" fill="var(--accent)">39,0</text>
-
-  <line x1="20" y1="208" x2="700" y2="208" stroke="var(--border)" />
-
-  <rect x="20" y="220" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="244" font-size="13" font-weight="bold" fill="var(--text)">Binde ikilik kısım, sürenin üçte birinden fazlası</text>
-  <text x="34" y="266" font-size="13" fill="var(--text)">Birim işlem başına oranı: 39 ÷ 0,20 = 195 ve 61 ÷ 99,80 = 0,611.</text>
-  <text x="34" y="286" font-size="13" fill="var(--text)">195 ÷ 0,611 = 319 kat.</text>
-
-  <rect x="20" y="308" width="680" height="76" fill="var(--surface)" stroke="var(--border)" />
-  <text x="34" y="332" font-size="13" font-weight="bold" fill="var(--text)">Farkın iki ayrı sebebi</text>
-  <text x="34" y="354" font-size="13" fill="var(--text-muted)">Taşınan bayt: yinelemenin %37'si bellekle sınırlı işlemlerde geçiyor.</text>
-  <text x="34" y="374" font-size="13" fill="var(--text-muted)">Koşturan birim: matris çarpımı verimi ötekilerin 16 katına kadar çıkıyor.</text>
-
-  <text x="20" y="404" font-size="13" fill="var(--text-faint)">Yüzdeler Ivanov ve arkadaşlarından, 16 kat Dao'dan; 319 kat bizim hesabımızdır.</text>
+  <text x="90.0" y="72.0" font-size="13" font-weight="bold" fill="var(--text)">işlemin payı</text>
+  <text x="690.0" y="72.0" font-size="13" font-weight="bold" text-anchor="end" fill="var(--accent)">matris dışındaki işlemler: %0,20</text>
+  <text x="90.0" y="196.0" font-size="13" font-weight="bold" fill="var(--text)">sürenin payı</text>
+  <rect x="90.0" y="82" width="598.8" height="40" fill="var(--cool-soft)" stroke="var(--border)" />
+  <rect x="688.8" y="82" width="1.0" height="40" fill="var(--accent-soft)" stroke="var(--border)" />
+  <rect x="689.8" y="82" width="0.6" height="40" fill="var(--accent)" stroke="var(--border)" />
+  <rect x="90.0" y="206" width="366.0" height="40" fill="var(--cool-soft)" stroke="var(--border)" />
+  <rect x="456.0" y="206" width="153.0" height="40" fill="var(--accent-soft)" stroke="var(--border)" />
+  <rect x="609.0" y="206" width="81.0" height="40" fill="var(--accent)" stroke="var(--border)" />
+  <text x="102.0" y="107.0" font-size="13" font-weight="bold" fill="var(--cool)">matris çarpımı %99,80</text>
+  <text x="102.0" y="231.0" font-size="13" font-weight="bold" fill="var(--cool)">matris çarpımı %61,0</text>
+  <text x="532.5" y="224.0" font-size="13" text-anchor="middle" fill="var(--text)">normalleştirme</text>
+  <text x="532.5" y="240.0" font-size="13" text-anchor="middle" fill="var(--text)">%25,5</text>
+  <text x="649.5" y="224.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--bg)">öge bazlı</text>
+  <text x="649.5" y="240.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--bg)">%13,5</text>
+  <line x1="688.8" y1="122" x2="456.0" y2="206" stroke="var(--text-faint)" stroke-dasharray="4 4" />
+  <line x1="689.8" y1="122" x2="609.0" y2="206" stroke="var(--text-faint)" stroke-dasharray="4 4" />
+  <text x="420.0" y="160.0" font-size="13" font-weight="bold" text-anchor="end" fill="var(--accent)">binde iki, sürenin yüzde 39'una yayılıyor</text>
+  <text x="20.0" y="280.0" font-size="13" fill="var(--text)">Birim işlem başına: (39 ÷ 0,20) ÷ (61 ÷ 99,80) = 195 ÷ 0,611, yaklaşık 319 kat.</text>
+  <text x="20.0" y="304.0" font-size="13" fill="var(--text)">İki sebep: taşınan bayt (yinelemenin %37'si bellekle sınırlı işlemlerde)</text>
+  <text x="20.0" y="324.0" font-size="13" fill="var(--text)">ve koşturan birim (matris çarpımı verimi ötekilerin 16 katına kadar).</text>
+  <text x="20.0" y="354.0" font-size="13" fill="var(--text-faint)">Yüzdeler Ivanov ve arkadaşlarından, 16 kat Dao'dan; 319 kat bizim hesabımızdır.</text>
 </svg>

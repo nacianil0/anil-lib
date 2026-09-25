@@ -12,7 +12,7 @@ tags:
   - hesap-butcesi
   - karar-zinciri
   - geri-alinamazlik
-content_hash: sha256:55361204ac43487006e6310357280c3eebcdea4679a4e89889b755dee9edf491
+content_hash: sha256:62d4eb1c7549ef6247d7071f20a890000223efe18bda235549d80d5311473102
 classification_version: 1
 classification_batch: 27
 ---
@@ -62,9 +62,9 @@ Değiştirilebilirliği: karışım koşu sırasında ayarlanabilir, ama okunmu�
 
 Dördüncü halka, 106–109\. makalelerin tamamı. Ve bu halkanın işlevi zincirde ayrıdır: burada yeni bir şeye karar verilmiyor, **birinci halkadaki kararın gerçek fiyatı belirleniyor**.
 
-3,8×10²⁵ FLOP bir plan; o planın kaç gün süreceğini kartların ne kadarının gerçekten çalıştığı belirler. 108\. makalede bunun ölçüsünü görmüştük: aynı dikkat algoritmasının üç uygulamasında kullanım oranı yüzde 25–40'tan yüzde 50–73'e çıkıyor, sonra yeni bir çipte yüzde 35'e düşüp yeniden yüzde 75'e çıkarılıyor. Tri Dao'nun ICLR 2024'te sunduğu çalışma bu basamağın ortasındaki adımı ölçüyor.
+3,8×10²⁵ FLOP bir plan; o planın kaç gün süreceğini kartların ne kadarının gerçekten çalıştığı belirler. 108\. makalede bunun ölçüsünü görmüştük: aynı dikkat algoritmasının üç uygulamasında dikkat çekirdeğinin kullanım oranı yüzde 25–40'tan yüzde 50–73'e çıkıyor, sonra yeni bir çipte yüzde 35'e düşüp yeniden yüzde 75'e çıkarılıyor. Bu sayılar tek bir işlemin; bütün koşunun oranı değil. Tri Dao'nun ICLR 2024'te sunduğu çalışma uçtan uca da ölçmüş: ikinci uygulamayla bütün bir eğitim koşusu kart başına saniyede 225 teraFLOP'a, yani yüzde 72 kullanım oranına ulaşıyor.
 
-Sayının anlamı zincir açısından şu: kullanım oranı ikiye katlandığında, aynı plan yarı sürede biter. Yani birinci halkada "bütçe" diye yazılan şey bir niyet; gerçek bütçe, dördüncü halkada belli oluyor. Aynı şey güvenilirlik tarafında da geçerli — 109\. makalede kontrol noktası aralığının kapalı formülünü, John Young'ın 1974'te *Communications of the ACM*'de verdiği birinci mertebe yaklaşımdan türetmiştik; `T* = √(2δM)` ve kaçınılmaz kayıp `√(2δ/M)`, yani koşunun ne kadarının arızaya gideceği de burada kararlaştırılıyor.
+Sayının anlamı zincir açısından şu: bütün koşunun kullanım oranı ikiye katlandığında, aynı plan yarı sürede biter. Yani birinci halkada "bütçe" diye yazılan şey bir niyet; gerçek bütçe, dördüncü halkada belli oluyor. Aynı şey güvenilirlik tarafında da geçerli — 109\. makalede kontrol noktası aralığının kapalı formülünü, John Young'ın 1974'te *Communications of the ACM*'de verdiği birinci mertebe yaklaşımdan türetmiştik; `T* = √(2δM)` ve kaçınılmaz kayıp `√(2δ/M)`, yani koşunun ne kadarının arızaya gideceği de burada kararlaştırılıyor.
 
 Değiştirilebilirliği: zincirdeki en esnek halka. Çekirdek değiştirilebilir, paralellik yeniden bölünebilir, kontrol noktası aralığı koşu ortasında ayarlanabilir. Hiçbiri ürünün ne olduğunu değiştirmez; yalnızca ne zaman ve kaça biteceğini.
 
@@ -84,7 +84,7 @@ Ve aynı çalışmanın 11\. makalede aktardığımız ölçümü bu oranın kar
 
 İki sayıyı yan yana koy. Zincirin yüzde 1,78'lik halkası, kullanıcının gördüğü çıktıda yüz kat parametre farkını yenebiliyor.
 
-Bu halkanın ikinci özelliği daha da çarpıcı: **zincirdeki tek tam geri alınabilir karar** bu. Tokenizer değiştirilemez, okunan veri geri okunamaz, yayımlanan ağırlık geri çağrılamaz; ama post-training istendiği kadar yeniden yapılabilir — aynı ham modelin üzerine bir kez daha, başka verilerle, başka ilkelerle. 105\. makalede kendi küçük modelimizde bunun faturasını da ölçmüştük: hizalama vergisi olarak derlem kaybında 0,77'lik artış. Ödenen bedel var, ama kalıcı değil.
+Bu halkanın ikinci özelliği: ürünün ne olduğunu belirleyen kararlar arasında **zincirdeki tek tam geri alınabilir karar** bu. Dördüncü halkanın kararları da değiştirilebilir, ama onlar ürünü değil yalnızca süreyi ve fiyatı belirliyordu. Tokenizer değiştirilemez, okunan veri geri okunamaz, yayımlanan ağırlık geri çağrılamaz; ama post-training istendiği kadar yeniden yapılabilir — aynı ham modelin üzerine bir kez daha, başka verilerle, başka ilkelerle. 105\. makalede kendi küçük modelimizde bunun faturasını da ölçmüştük: hizalama vergisi olarak derlem kaybında 0,77'lik artış. Ödenen bedel var, ama kalıcı değil.
 
 ![İki sütunlu, üç satırlı bir tablo ve altında iki kutu. Üstte başlık: aynı zincir, iki ayrı sıralama. Sol sütun hesabın nereye gittiği, sağ sütun kullanıcının gördüğünü neyin belirlediği. Birinci satır: solda ön eğitim yüzde doksan sekizden fazlasını alır, sağda post-training kullanıcının gördüğü hemen her şeyi belirler. İkinci satır: solda post-training yüzde 1,78 alır, sağda ön eğitim bilgiyi ve yeteneği belirler. Üçüncü satır vurguludur: solda tokenizer pratikte sıfır alır, sağda tokenizer aritmetiği ve dil maliyetini kalıcı olarak belirler. Altta iki kutu yan yana durur. Sol kutunun başlığı ölçülen oran; içinde denetimli ince ayarın 4,9 ve tercih eğitiminin 60 petaflop saniye gün tuttuğu, aynı boydaki ham modelin ön eğitiminin 3.640 petaflop saniye gün tuttuğu, altmışın üç bin altı yüz kırka bölümünün yüzde 1,65 ve ikisi birlikte yüzde 1,78 ettiği yazılıdır. Sağ kutunun başlığı ölçülen karşılık; içinde etiketleyicilerin 1,3 milyar parametreli post-training görmüş modelin çıktılarını 175 milyar parametreli ham modelin çıktılarına tercih ettiği yazılıdır. En altta bir kayıt: bütün petaflop değerleri Ouyang ve arkadaşlarının bildirdiği sayılardır, iki yüzde kendi hesabımızdır.](assets/maliyet-ve-sonuc-tersine.svg "Şekil 2 — Yüzde 1,78, yüz kat parametreyi yeniyor")
 
@@ -128,11 +128,11 @@ Geri alma maliyetinin en yüksek olduğu yere — yani tokenizer ve veri kararla
 
 **Ölçülmüş karşılaştırma bu tersliği tek başına taşıyor.** 4,9 ve 60 petaflop/s-güne karşı 3.640; ve 1,3 milyar parametreli post-training görmüş modelin çıktıları, 175 milyar parametreli ham modele tercih ediliyor.
 
-**Bütçe birinci halkada yazılır, dördüncü halkada belli olur.** Aynı plan, kullanım oranı yüzde 25–40'tan yüzde 50–73'e çıktığında yarı sürede biter; kontrol noktası aralığı `√(2δM)` ile seçilir ve kaçınılmaz kayıp `√(2δ/M)` kadardır.
+**Bütçe birinci halkada yazılır, dördüncü halkada belli olur.** Bütün koşunun kullanım oranı ikiye katlanırsa aynı plan yarı sürede biter; tek bir çekirdekteki sıçrama bunun ancak bir parçasıdır; kontrol noktası aralığı `√(2δM)` ile seçilir ve kaçınılmaz kayıp `√(2δ/M)` kadardır.
 
 **Değerlendirme kararı, değerlendirmeden önce alınır.** Bir sınav eğitim verisine girdiyse o sınav o model için geçerli bir ölçüm aracı olmaktan çıkar; ve okunan geri okunmaz.
 
-**Zincirde tam geri alınabilir tek karar post-training'dir.** Bedeli vardır — kendi ölçümümüzde derlem kaybında 0,77'lik artış — ama kalıcı değildir.
+**Ürünü belirleyen kararlar arasında tam geri alınabilir tek karar post-training'dir.** Bedeli vardır — kendi ölçümümüzde derlem kaybında 0,77'lik artış — ama kalıcı değildir.
 
 **Ve tek dış geri alınamaz karar ağırlığın yayımlanmasıdır.** Geri çekme diye bir işlem olmadığı için, o karar anında istenen kanıt ötekilerden farklı olmak zorunda: deneyip görmek burada bir yöntem değil.
 

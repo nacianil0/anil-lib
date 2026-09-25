@@ -12,7 +12,7 @@ tags:
   - degerlendirme
   - pekistirmeli-ogrenme
   - saglamlik
-content_hash: sha256:39cfe5338a69ab9b5d9dc4597a2c8499a48a0e0740cc32d26519c468ee2af278
+content_hash: sha256:9f9f646c4c1a447752f084dfd23826e4699eec6e746c8d254352a2e807c4b271
 classification_version: 1
 classification_batch: 26
 ---
@@ -22,7 +22,7 @@ Son faz baştan sona bir mühendislik fazıydı. Bir eğitim adımının kaç ba
 
 Şimdi yön değişiyor. Bütün bu mühendisliğin ucunda duran şey, sonraki token'ı tahmin etmeyi öğrenmiş bir model. Peki o model **neyi** öğrenmiş oluyor?
 
-Bu soruyu 1\. makalede açık bırakmıştık. Emily Bender ve Alexander Koller'in 2020'de ACL'de ödül alan bildirisi, yalnızca dilin biçimiyle eğitilmiş bir sistemin ilke olarak anlamı öğrenemeyeceğini savunuyordu; o makalenin dürüst pozisyonu, tartışmanın açık olduğu ve okurun ilerleyen makalelerde tarafların gerekçeleriyle karşılaşacağıydı. Bu makale o borcun bir kısmını ödüyor — ama felsefi tartışmayı sürdürerek değil, sorunun **ölçülebilir** bir hâlini kurarak. Soru şu: bir dizi tahmincisinin, dizilerin ardında duran dünyanın doğru bir modelini kurup kurmadığını nasıl sınarsın?
+Bu soruyu 1\. makalede açık bırakmıştık. Emily Bender ve Alexander Koller'in 2020'de ACL'de ödül alan bildirisi, yalnızca dilin biçimiyle eğitilmiş bir sistemin ilke olarak anlamı öğrenemeyeceğini savunuyordu; o makalenin tutumu, tartışmanın açık olduğu ve okurun ilerleyen makalelerde tarafların gerekçeleriyle karşılaşacağıydı. Bu makale o borcun bir kısmını ödüyor — ama felsefi tartışmayı sürdürerek değil, sorunun **ölçülebilir** bir hâlini kurarak. Soru şu: bir dizi tahmincisinin, dizilerin ardında duran dünyanın doğru bir modelini kurup kurmadığını nasıl sınarsın?
 
 ## Terimin iki soyu
 
@@ -30,7 +30,7 @@ Bu soruyu 1\. makalede açık bırakmıştık. Emily Bender ve Alexander Koller'
 
 Birincisi pekiştirmeli öğrenmeden. 37\. makalede Markov karar sürecini kurmuştuk: durum, eylem, geçiş ve ödül. Orada geçiş fonksiyonu — hangi durumda hangi eylemin nereye götürdüğü — çevrenin bir özelliğiydi ve ajan onu bilmiyordu. Bir **dünya modeli**, işte o geçiş fonksiyonunun öğrenilmiş bir kopyasıdır. Açıktır, ayrı bir bileşendir ve tek bir işe yarar: dünyaya dokunmadan plan yapabilmek.
 
-David Ha ve Jürgen Schmidhuber'in NeurIPS 2018'de sunduğu çalışma bunun en çarpıcı gösterisini yapıyor. Ajan önce çevreyi gözlemliyor, sonra gördüklerinden bir geçiş modeli öğreniyor; ardından politika **tamamen o modelin ürettiği hayalî çevrenin içinde** eğitiliyor ve gerçek çevreye geri taşınıyor. Bir araba yarışı görevinde tam dünya modelli ajan 100 rastgele denemede 906 ± 21 puan alıyor; o tarihte bildirilen en iyi sonuç 838 ± 11, yaygın bir derin pekiştirmeli öğrenme yöntemininki 343 ± 18 idi.
+David Ha ve Jürgen Schmidhuber'in NeurIPS 2018'de sunduğu çalışma bunu uç bir biçimde gösteriyor. Ajan önce çevreyi gözlemliyor, sonra gördüklerinden bir geçiş modeli öğreniyor; ardından politika **tamamen o modelin ürettiği hayalî çevrenin içinde** eğitiliyor ve gerçek çevreye geri taşınıyor. Bir araba yarışı görevinde tam dünya modelli ajan 100 rastgele denemede 906 ± 21 puan alıyor; o tarihte bildirilen en iyi sonuç 838 ± 11, yaygın bir derin pekiştirmeli öğrenme yöntemininki 343 ± 18 idi.
 
 Bu soyun bugünkü hâli Danijar Hafner, Jurgis Pasukonis, Jimmy Ba ve Timothy Lillicrap'in 2025'te *Nature*'da yayımladığı çalışma. Yöntem yine aynı iskelet — çevrenin bir modelini öğren, davranışı o modelin içinde hayal ederek iyileştir — ama iddia farklı: **tek bir sabit yapılandırmayla** yüz elliden fazla farklı görevde, her biri için ayrı ayarlanmış uzman yöntemlerin üstüne çıkıyor. Aynı yöntem, insan verisi ya da kademeli müfredat olmadan, açık bir oyun dünyasında elmas toplamayı başaran ilk sistem olmuş; bu, seyrek ödül altında uzun vadeli plan gerektiren bir hedef olduğu için alanda bir ölçüt sayılıyordu.
 
@@ -52,13 +52,13 @@ Bu, 13\. makaledeki aşırı optimizasyonun ta kendisi. Orada ödül modeli ger�
 
 Şimdi ikinci soya, dil modellerine dönelim. Bu soruyu ölçmenin bilinen yolu 77\. makalede kurulmuştu: Kenneth Li ve arkadaşlarının ICLR 2023 çalışması, yalnızca Othello hamlelerinin dizisiyle eğitilmiş bir modelde tahta durumunun bir sondayla okunabildiğini, üstelik sonda üzerinden temsile müdahale edilince modelin hamlelerinin buna göre değiştiğini gösteriyordu. Okuma artı müdahale — o tarihten beri bu alandaki en güçlü kanıt biçimi.
 
-Peki bu kanıt ne kadarını kanıtlıyor? Keyon Vafa, Justin Y. Chen, Ashesh Rambachan, Jon Kleinberg ve Sendhil Mullainathan'ın NeurIPS 2024'te sunduğu çalışma tam bu soruyu soruyor ve cevabı rahatsız edici.
+Peki bu kanıt ne kadarını kanıtlıyor? Keyon Vafa, Justin Y. Chen, Ashesh Rambachan, Jon Kleinberg ve Sendhil Mullainathan'ın NeurIPS 2024'te sunduğu çalışma tam bu soruyu soruyor ve cevabı, okunabilirliğin yetmediği yönünde.
 
-Yazarların hamlesi önce kuramsal. Ardındaki gerçeklik sonlu bir durum makinesiyse — bir harita, bir oyun, bir mantık bulmacası — dil kuramının klasik bir sonucu devreye giriyor: **birbirinden farklı her iki durum, onları ayırt eden bir dizi vardır.** Kilit ayrıntı şu: o ayırt edici dizinin tek bir token uzunluğunda olması gerekmez. Dolayısıyla "modelin ürettiği bir sonraki token geçerli mi" diye bakmak, durumu doğru temsil edip etmediğini güvenilir biçimde ölçmez; yalnızca bir adımlık ayrımları sınar.
+Yazarların hamlesi önce kuramsal. Ardındaki gerçeklik sonlu bir durum makinesiyse — bir harita, bir oyun, bir mantık bulmacası — dil kuramının klasik bir sonucu, Myhill–Nerode teoremi devreye giriyor: **gerçekten farklı her iki durum için, onları ayırt eden bir devam dizisi vardır.** Kilit ayrıntı şu: o ayırt edici dizinin tek bir token uzunluğunda olması gerekmez. Dolayısıyla "modelin ürettiği bir sonraki token geçerli mi" diye bakmak, durumu doğru temsil edip etmediğini güvenilir biçimde ölçmez; yalnızca bir adımlık ayrımları sınar.
 
 Buradan iki ölçüt çıkıyor ve ikisi de sezgisel. Birincisi: aynı duruma götüren iki farklı önek, aynı devamları kabul etmeli. İkincisi: farklı durumlara götüren iki önek, farklı devamlar vermeli.
 
-Somut bir örnek bu kuramsal cümleyi bir anda anlaşılır kılıyor ve yazarların kendi örneği. Taşların sütunlara yığıldığı bir dört-taş oyununda iki ayrı tahta düşünün. İkisinde de geçerli hamleler kümesi **tamamen aynı**: hangi sütuna oynayabileceğin iki tahtada da birebir örtüşüyor. Yani "bir sonraki hamle geçerli mi" sınavı bu iki tahtayı asla ayırt edemez. Onları ayıran en kısa dizi dört hamle uzunluğunda, ve ikisini ayırt eden dizilerin tamamı otuz hamleye kadar uzanıyor. Bir sınav iki durumu ayırt edemiyorsa, modelin onları karıştırıp karıştırmadığını da ölçemez.
+Yazarların kendi örneği bu kuramsal cümleyi somutlaştırıyor. Taşların sütunlara yığıldığı bir dört-taş oyununda iki ayrı tahta düşün. İkisinde de geçerli hamleler kümesi **tamamen aynı**: hangi sütuna oynayabileceğin iki tahtada da birebir örtüşüyor. Yani "bir sonraki hamle geçerli mi" sınavı bu iki tahtayı asla ayırt edemez. Onları ayıran en kısa dizi dört hamle uzunluğunda, ve ikisini ayırt eden dizilerin tamamı otuz hamleye kadar uzanıyor. Bir sınav iki durumu ayırt edemiyorsa, modelin onları karıştırıp karıştırmadığını da ölçemez.
 
 ![Yan yana iki kutu, altında bir uzunluk ekseni ve en altta bir kural kutusu. Üstte başlık: iki farklı tahta, aynı geçerli hamleler. Soldaki kutunun başlığı Tahta A, sağdakinin başlığı Tahta B; ikisinde de geçerli hamleler her sütun açık, taşların dizilişi farklı yazar. Kutuların altında kalın bir cümle durur: bir adımlık sınav ikisini ayırt edemez çünkü geçerli hamle kümeleri birebir aynıdır. Onun altında ayırt eden dizinin uzunluğunu gösteren doğrusal bir eksen vardır; üzerinde üç işaret bulunur. Birinci işaret 1'dedir ve bir adımlık sınavı gösterir. İkinci işaret 4'tedir, vurguludur ve en kısa ayırt eden diziyi gösterir. Üçüncü işaret 30'dadır ve ayırt eden dizilerin en uzununu gösterir. En alttaki kutunun başlığı kural: iki durumu ayıran en kısa dizi birden uzunsa, bir sonraki token'a bakan sınav o çifti hiç göremez ve modelin onları karıştırdığını da ölçemez. En altta bir kayıt: eksen dizi uzunluğudur ve doğrusaldır, 1, 4 ve 30 değerleri Vafa ve arkadaşlarından gelir.](assets/ayirt-eden-dizi.svg "Şekil 2 — Aynı hamleler, farklı durumlar")
 

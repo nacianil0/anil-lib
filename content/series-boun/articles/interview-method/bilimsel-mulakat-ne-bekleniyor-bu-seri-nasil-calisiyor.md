@@ -12,7 +12,7 @@ tags:
   - yuksek-lisans
   - calisma-yontemi
   - scientific-preparation
-content_hash: sha256:6e7bd9360fef67c9cff468e1db2833fc1b6b846058a86c524d77e23e21d0534b
+content_hash: sha256:3a5219ff0804cd3b2959f0792d47e55906e09520313a480f6b82ce12b73617bc
 classification_version: 1
 classification_batch: 0
 ---
@@ -118,7 +118,7 @@ Dikkat et: üç halkanın hiçbiri yeni bir konu değil. Üçü de aynı cümlen
 
 Dunlosky ve arkadaşlarının 2013 tarihli, on farklı çalışma tekniğini değerlendiren kapsamlı incelemesi, **pratik test etme (practice testing)** ve **aralıklı çalışma (distributed practice)** tekniklerini yüksek fayda kategorisine koyuyor; buna karşılık öğrencilerin en çok kullandığı iki tekniği, yeniden okuma ile vurgulamayı, düşük fayda kategorisinde bırakıyor. İncelemenin sonucu keskin: bu iki teknik performansı tutarlı biçimde artırmıyor, dolayısıyla yerlerine başkaları kullanılmalı.
 
-İkinci dayanak sözlü anlatımla doğrudan ilgili. Fiorella ve Mayer'in 2013 tarihli çalışmasında katılımcılar bir konuyu ya sınav beklentisiyle ya da sonradan anlatma beklentisiyle çalıştı. Anlatma beklentisiyle çalışanlar hemen sonraki kavrama testinde daha iyi performans gösterdi; gerçekten anlatanlarda ise kazanım daha kalıcı oldu. Yani "birine anlatacakmış gibi çalışmak" ölçülebilir bir fark yaratıyor.
+İkinci dayanak sözlü anlatımla doğrudan ilgili. Fiorella ve Mayer'in 2013 tarihli çalışmasında katılımcılar bir konuyu ya sınav beklentisiyle ya da sonradan anlatma beklentisiyle çalıştı. Anlatma beklentisiyle çalışanlar hemen sonraki kavrama testinde daha iyi performans gösterdi, ama bir hafta sonraki testte bu fark kayboldu. Kalıcı kazanç, konuyu gerçekten anlatan — hayali bir öğrenciye video ders kaydeden — katılımcılarda görüldü; en büyük etki de hem anlatmaya hazırlanıp hem gerçekten anlatanlardaydı. Yani yalnızca "birine anlatacakmış gibi çalışmak" yetmiyor; anlatmayı gerçekten yapmak gerekiyor. Aşağıdaki protokolün sesli adımları bu yüzden var.
 
 Bunu somut bir protokole çevirelim:
 
@@ -145,6 +145,22 @@ Bu seri bütün lisans müfredatının tekrarı da değil. Kırk bir makale, dö
 Ve bu seri "çıkacak soruların" listesi hiç değil. Resmî süreç bilgisi değişebilir; bu makaledeki bilgiler yazıldığı tarihte bölümün sayfalarından doğrulandı, ama karar vermeden önce güncel hâlini kendin kontrol et.
 
 Geriye kalan şey şu: unuttuğun temelleri, savunabileceğin biçimde yeniden kurmak. Bunu yapabiliriz.
+
+## Mülakatta nasıl görünür
+
+Bu makalenin konusu mülakatın kendisi olduğu için takip zinciri de oradan kurulur. Aşağıdaki zincir bir "çıkmış soru" değildir; resmî sayfadaki dört başlığın — geçmiş akademik kayıt, araştırma yönü, beceri kümesi, teknik bilgi — bir konuşmada nasıl art arda gelebileceğini gösteren bir örnektir. "Transkriptinde veri yapıları dersi var, en çok hangi konuda rahatsın?" → "Hash tablosu diyorsun; arama maliyeti nedir?" → "Sabit zaman dedin; hangi durumda, hangi varsayımla?" Dikkat et: zincir hikâyenden başlayıp iki soruda zeminine iniyor. Bu yüzden transkriptindeki her ders, teknik bir soruya açılan bir kapıdır.
+
+Bu formatta puan kaybettiren alışkanlıklar, yukarıda anlattığımız on beş dakikalık bütçeden doğrudan çıkar:
+
+- **İlk cümleyi koşulsuz kurmak.** "Hash tablosu O(1)'dir" demek, ikinci halkada geri çekilmeyi garantiler; durumu ve varsayımı ilk cümlede söyle.
+- **Kısa soruya uzun anlatımla cevap vermek.** Teknik kısım için kalan beş-sekiz dakikayı tek bir ezber anlatım yer; önce altmış saniyelik çekirdeği ver, ayrıntıyı soru gelince aç.
+- **Bilmediğini örtmeye çalışmak.** Emin olmadığın yerde tahmini kesinmiş gibi sunmak, bir sonraki soruyu tam oraya çeker. Neyi bildiğini ve nerede emin olmadığını ayırmak daha iyi bir cevaptır.
+- **Transkriptteki dersi savunamamak.** Akademik kayıt resmî başlıklardan biridir; notunu aldığın bir dersin temel kavramını anlatamamak, o kaydı zayıflatır.
+- **Araştırma ilgisini teknik temelden kopuk anlatmak.** İlgilendiğin alanın hangi temel konuya dayandığını söyleyebilmek, hikâyeni zeminine bağlar.
+
+Anlatım ve tahta kullanımının ayrıntısı serinin sonundaki sözlü anlatım provası makalesinde; burada amaç, neye hazırlandığını baştan görmek.
+
+İngilizce karşılıklar hazır olmalıdır: *scientific interview*, *past academic record*, *research direction*, *skillset*, *technical knowledge*, *follow-up question*, *correctness*, *complexity*, *trade-off*, *practice testing*, *distributed practice*, *learning by teaching*.
 
 ### Sırada ne var
 

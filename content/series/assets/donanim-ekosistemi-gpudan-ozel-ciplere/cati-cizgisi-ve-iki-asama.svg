@@ -1,28 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 356" role="img" aria-label="Çatı çizgisi şeması. Yatay eksen işlem yoğunluğu, yani ana bellekten okunan bayt başına yapılan işlem; dikey eksen ulaşılabilir hız; iki eksen de logaritmiktir. Sol alttan yükselen eğik bir doğru bellek bant genişliğinin koyduğu sınırı, onun bittiği yerden sağa uzanan yatay bir çizgi işlem gücünün koyduğu tavanı gösterir. İkisinin kesiştiği yer sırt noktasıdır ve değeri okunan bayt başına 229 işlemdir. Eğik doğrunun üzerinde iki konum işaretlidir: en solda cihazda üretim, yığın bir olduğu için işlem yoğunluğu birdir; ortada bulutta üretim, yığın büyüdükçe yoğunluk da büyür ve nokta sağa kayar. Yatay çizginin üzerinde üçüncü konum vardır: ön dolum, bütün dizi bir kerede işlendiği için yoğunluğu yüksektir ve tavana yakın durur. En altta bir kayıt: çizimin biçimi şematiktir, ölçülmüş olan sırt noktasının değeridir.">
-  <line x1="80" y1="60" x2="80" y2="270" stroke="var(--border)" />
-  <line x1="80" y1="270" x2="680" y2="270" stroke="var(--border)" />
-  <line x1="80" y1="270" x2="340" y2="95" stroke="var(--accent)" stroke-width="2" />
-  <line x1="340" y1="95" x2="680" y2="95" stroke="var(--cool)" stroke-width="2" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 398" role="img" aria-label="Çatı çizgisi grafiği, iki eksen logaritmik. Yatay eksen işlem yoğunluğu, yani ana bellekten okunan bayt başına işlem; işaretler 1, 10, 100 ve 1000. Dikey eksen ulaşılabilir hız, saniyede trilyon işlem; işaretler 1, 10, 100 ve 1000. Sol alttan yükselen eğik doğru bellek sınırıdır: hız eşittir 1,2 çarpı yoğunluk. Yoğunluk 229'da doğru, saniyede 275 trilyon işlemlik yatay işlem tavanına ulaşır; kesişme sırt noktası olarak işaretli. Eğik doğru üzerinde iki nokta: cihazda üretim, yığın 1, hız 1,2; bulutta üretim, yığın 32, hız 38,4. Tavanın üzerinde üçüncü nokta: 2.000 token'lık bir istemin ön dolumu, hız 275. Altta kayıt: çip saniyede 275 trilyon işlem ve saniyede 1.200 gigabayt bant genişliğine sahip; noktalar bu iki sayıdan hesaplanmıştır, ölçüm değildir.">
+  <text x="20" y="50" font-size="13" font-weight="bold" fill="var(--text)">ulaşılabilir hız: saniyede trilyon işlem</text>
 
-  <text x="20" y="50" font-size="13" font-weight="bold" fill="var(--text)">ulaşılabilir hız</text>
-  <text x="560" y="78" font-size="13" fill="var(--cool)">işlem gücü tavanı</text>
-  <text x="95" y="115" font-size="13" fill="var(--accent)">bellek bant genişliği sınırı</text>
+  <line x1="90" y1="70" x2="90" y2="300" stroke="var(--border)" />
+  <line x1="90" y1="300" x2="670" y2="300" stroke="var(--border)" />
 
-  <circle cx="340" cy="95" r="5" fill="var(--text)" />
-  <text x="350" y="120" font-size="13" font-weight="bold" fill="var(--text)">sırt noktası: bayt başına 229 işlem</text>
+  <line x1="86" y1="280" x2="90" y2="280" stroke="var(--border)" />
+  <line x1="86" y1="213.3" x2="90" y2="213.3" stroke="var(--border)" />
+  <line x1="86" y1="146.7" x2="90" y2="146.7" stroke="var(--border)" />
+  <line x1="86" y1="80" x2="90" y2="80" stroke="var(--border)" />
+  <text x="82" y="284" font-size="13" text-anchor="end" fill="var(--text-muted)">1</text>
+  <text x="82" y="217" font-size="13" text-anchor="end" fill="var(--text-muted)">10</text>
+  <text x="82" y="151" font-size="13" text-anchor="end" fill="var(--text-muted)">100</text>
+  <text x="82" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">1000</text>
+  <text x="82" y="122" font-size="13" text-anchor="end" fill="var(--cool)">275</text>
 
-  <circle cx="450" cy="95" r="4" fill="var(--text-muted)" />
-  <text x="400" y="78" font-size="13" fill="var(--text-muted)">ön dolum</text>
+  <line x1="135" y1="300" x2="135" y2="304" stroke="var(--border)" />
+  <line x1="285" y1="300" x2="285" y2="304" stroke="var(--border)" />
+  <line x1="435" y1="300" x2="435" y2="304" stroke="var(--border)" />
+  <line x1="585" y1="300" x2="585" y2="304" stroke="var(--border)" />
+  <text x="135" y="318" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <text x="285" y="318" font-size="13" text-anchor="middle" fill="var(--text-muted)">10</text>
+  <text x="435" y="318" font-size="13" text-anchor="middle" fill="var(--text-muted)">100</text>
+  <text x="585" y="318" font-size="13" text-anchor="middle" fill="var(--text-muted)">1000</text>
+  <text x="489" y="318" font-size="13" text-anchor="middle" font-weight="bold" fill="var(--text)">229</text>
 
-  <circle cx="250" cy="156" r="4" fill="var(--text-muted)" />
-  <line x1="252" y1="160" x2="266" y2="180" stroke="var(--text-faint)" />
-  <text x="268" y="192" font-size="13" fill="var(--text)">bulutta üretim: yığın büyüdükçe sağa kayar</text>
+  <line x1="489" y1="122" x2="489" y2="300" stroke="var(--text-faint)" stroke-dasharray="4 4" />
 
-  <circle cx="115" cy="246" r="4" fill="var(--text-muted)" />
-  <line x1="118" y1="243" x2="136" y2="230" stroke="var(--text-faint)" />
-  <text x="144" y="234" font-size="13" fill="var(--text)">cihazda üretim: yığın 1</text>
+  <line x1="90" y1="294.8" x2="489" y2="117.4" stroke="var(--accent)" stroke-width="2" />
+  <line x1="489" y1="117.4" x2="670" y2="117.4" stroke="var(--cool)" stroke-width="2" />
 
-  <text x="80" y="296" font-size="13" fill="var(--text-muted)">işlem yoğunluğu: ana bellekten okunan bayt başına işlem</text>
-  <text x="20" y="322" font-size="13" fill="var(--text-faint)">İki eksen de logaritmiktir ve çizimin biçimi şematiktir; ölçülmüş olan, sırt</text>
-  <text x="20" y="340" font-size="13" fill="var(--text-faint)">noktasının değeridir.</text>
+  <text x="100" y="138" font-size="13" fill="var(--accent)">bellek sınırı: hız = 1,2 × yoğunluk</text>
+  <text x="500" y="104" font-size="13" fill="var(--cool)">işlem tavanı: 275</text>
+
+  <circle cx="489" cy="117.4" r="5" fill="var(--text)" />
+  <text x="480" y="104" font-size="13" text-anchor="end" font-weight="bold" fill="var(--text)">sırt noktası: bayt başına 229 işlem</text>
+
+  <circle cx="135" cy="274.7" r="4.5" fill="var(--text-muted)" />
+  <text x="150" y="292" font-size="13" fill="var(--text)">cihazda üretim, yığın 1: 1,2</text>
+
+  <circle cx="360.8" cy="174.4" r="4.5" fill="var(--text-muted)" />
+  <text x="350" y="168" font-size="13" text-anchor="end" fill="var(--text)">bulutta üretim, yığın 32: 38,4</text>
+
+  <circle cx="630.2" cy="117.4" r="4.5" fill="var(--text-muted)" />
+  <line x1="630.2" y1="123" x2="630.2" y2="134" stroke="var(--text-faint)" />
+  <text x="545" y="148" font-size="13" fill="var(--text)">ön dolum: 275</text>
+  <text x="545" y="166" font-size="13" fill="var(--text-muted)">(2.000 token'lık istem)</text>
+
+  <text x="90" y="340" font-size="13" fill="var(--text-muted)">işlem yoğunluğu: ana bellekten okunan bayt başına işlem (logaritmik)</text>
+  <text x="20" y="366" font-size="13" fill="var(--text-faint)">Çip: saniyede 275 trilyon işlem ve saniyede 1.200 GB bant genişliği (26. makaledeki çip).</text>
+  <text x="20" y="384" font-size="13" fill="var(--text-faint)">Noktalar bu iki sayıdan hesaplanmıştır; ölçüm değil, kendi hesabımız.</text>
 </svg>

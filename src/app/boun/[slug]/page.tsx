@@ -7,8 +7,10 @@ import {
   getBounAdjacent,
   getBounArticleBySlug,
   getBounDescriptors,
+  loadBounRoadmap,
   renderBounArticleBySlug,
 } from "@/lib/content/series-boun";
+import { outlinePhases } from "@/lib/content/series-progress";
 import { ReaderShell } from "@/components/reader/reader-shell";
 import { requireSessionUser } from "@/lib/auth/session-user";
 
@@ -61,6 +63,8 @@ export default async function BounArticlePage({
       listTitle={BOUN_TITLE}
       listSubtitle={BOUN_SUBTITLE}
       homeHref={BOUN_BASE_PATH}
+      phases={outlinePhases(loadBounRoadmap())}
+      showTitle
     >
       {rendered.content}
     </ReaderShell>

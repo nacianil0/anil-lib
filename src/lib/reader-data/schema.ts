@@ -123,6 +123,8 @@ export const readerDataSchema = z.object({
   workspaceId: z.string().min(1),
   deviceId: z.string().uuid(),
   cursor: z.number().int().nonnegative().default(0),
+  /** The last server-side progress reset this device has applied; 0 when none. */
+  resetVersion: z.number().int().nonnegative().default(0),
   currentArticleId: z.string().nullable().default(null),
   progress: z.record(z.string(), progressRecordSchema).default({}),
   savedPlaces: z.record(z.string(), savedPlaceRecordSchema).default({}),
@@ -147,6 +149,7 @@ export function emptyReaderData(
     workspaceId,
     deviceId,
     cursor: 0,
+    resetVersion: 0,
     currentArticleId: null,
     progress: {},
     savedPlaces: {},

@@ -1,61 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Altı satırlı tablo; sütunlar saldırı ailesi, saldırganın gerektirdiği erişim, örnek yöntemler ve metinden bir ölçüm. Elle yazılmış kalıp: yalnızca sohbet; rol oyunu istemi; bir modelde 0,75 öbüründe 0,00. İkna ve dil: yalnızca sohbet; ikna edici yeniden yazım, düşük kaynaklı dil; on denemede yüzde 92, düşük kaynaklı dilde üç kat. Many-shot: uzun pencere; yüzlerce sahte diyalog; 128 gösterim beş modelde yeter. Modelle bulunan istem: kara kutu artı ikinci model; PAIR ve TAP; GPT-4'te yüzde 48, sorgu başına 24. Gradyanla eniyilenen sonek: beyaz kutu, sonra aktarım; GCG; Vicuna'da yüzde 99, GPT-3.5'e yüzde 86,6 aktarım. Üretim kuralı ve ağırlık: açık ağırlık; sıcaklık ve sistem istemi, tek yönü silmek, ince ayar; sohbet modeli 0'dan 81'e. Altta erişim arttıkça saldırının bedelinin düştüğü ve savunmanın seçeneklerinin azaldığı, değerlerin metindeki kaynaklardan olduğu yazılıdır.">
-  <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">saldırı ailesi</text>
-  <text x="200" y="28" font-size="13" font-weight="bold" fill="var(--text)">erişim</text>
-  <text x="340" y="28" font-size="13" font-weight="bold" fill="var(--text)">yöntem</text>
-  <text x="540" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçüm</text>
-  <line x1="20" y1="38" x2="700" y2="38" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 476" role="img" aria-label="Üç satırlık merdiven şeması: saldırganın erişimi yukarıdan aşağıya genişliyor. Her satırın sağında dört kutu var: istem, olasılık, gradyan, ağırlık; dolu kutular saldırganın elindeki şeyi gösterir. Birinci satır, yalnızca sohbet: yalnızca istem dolu; kalıp, ikna, düşük kaynaklı dil, many-shot ve bir modelin yazdığı istemler, PAIR ve TAP; ikna on denemede yüzde 92, PAIR GPT-4'te yüzde 48; savunanın elinde istem, sınıflandırıcı, eğitim ve mimari katları. İkinci satır, API: istem ve olasılık dolu; rastgele aramayla sonek ve cevabı Elbette, işte ile başlatmak, gradyansız; ölçülen modellerde yüzde 100; savunan aynı dört katı tutar ama API düğmeleri saldırının kaldıracı olur. Üçüncü satır, açık ağırlık: dört kutu da dolu; GCG'nin gradyanı, üretim ayarlarını gezmek, ret yönünü silmek, ince ayar; ayar gezme sohbet modelinde 0'dan 81'e, GCG Vicuna'da yüzde 99; savunanın elinde yalnızca ağırlığın içindeki ret kalır. Sağda üçüncü satırdan birinci satıra giden bir ok aktarım yazar: açık modelde bulunan sonek kapalı modele yalnızca istemle taşınır, GPT-3.5'te yüzde 86,6.">
+  <defs>
+    <marker id="jkt-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
 
-  <text x="20" y="62" font-size="13" font-weight="bold" fill="var(--text)">elle yazılmış kalıp</text>
-  <text x="200" y="62" font-size="13" fill="var(--text-muted)">yalnızca sohbet</text>
-  <text x="340" y="62" font-size="13" fill="var(--text)">rol oyunu istemi</text>
-  <text x="340" y="80" font-size="13" fill="var(--text-muted)">("her şeyi yapan" kimlik)</text>
-  <text x="540" y="62" font-size="13" fill="var(--text)">bir modelde 0,75,</text>
-  <text x="540" y="80" font-size="13" fill="var(--text)">öbüründe 0,00</text>
+  <text x="20" y="26" font-size="13" font-weight="bold" fill="var(--text)">saldırganın erişimi</text>
+  <text x="392" y="18" font-size="13" fill="var(--text-muted)">saldırganın elindeki</text>
+  <text x="418" y="42" font-size="13" text-anchor="middle" fill="var(--text)">istem</text>
+  <text x="478" y="42" font-size="13" text-anchor="middle" fill="var(--text)">olasılık</text>
+  <text x="538" y="42" font-size="13" text-anchor="middle" fill="var(--text)">gradyan</text>
+  <text x="598" y="42" font-size="13" text-anchor="middle" fill="var(--text)">ağırlık</text>
 
-  <text x="20" y="108" font-size="13" font-weight="bold" fill="var(--text)">ikna ve dil</text>
-  <text x="200" y="108" font-size="13" fill="var(--text-muted)">yalnızca sohbet</text>
-  <text x="340" y="108" font-size="13" fill="var(--text)">ikna edici yeniden yazım;</text>
-  <text x="340" y="126" font-size="13" fill="var(--text)">düşük kaynaklı dil</text>
-  <text x="540" y="108" font-size="13" fill="var(--text)">on denemede %92;</text>
-  <text x="540" y="126" font-size="13" fill="var(--text)">düşük kaynaklı dilde 3×</text>
+  <!-- 1. satır: yalnızca sohbet -->
+  <rect x="20" y="56" width="616" height="104" fill="var(--surface-muted)" />
+  <text x="30" y="78" font-size="13" font-weight="bold" fill="var(--text)">1. yalnızca sohbet</text>
+  <text x="30" y="98" font-size="13" fill="var(--text)">kalıp, ikna, düşük kaynaklı dil, many-shot;</text>
+  <text x="30" y="116" font-size="13" fill="var(--text)">istemi bir model de yazabilir (PAIR, TAP)</text>
+  <text x="30" y="134" font-size="13" fill="var(--text-muted)">ikna on denemede %92 · PAIR GPT-4'te %48</text>
+  <text x="30" y="152" font-size="13" fill="var(--text-muted)">savunan: istem, sınıflandırıcı, eğitim, mimari</text>
+  <rect x="392" y="90" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="452" y="90" width="52" height="36" fill="none" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="512" y="90" width="52" height="36" fill="none" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="572" y="90" width="52" height="36" fill="none" stroke="var(--border)" stroke-dasharray="3 3" />
 
-  <text x="20" y="154" font-size="13" font-weight="bold" fill="var(--text)">many-shot</text>
-  <text x="200" y="154" font-size="13" fill="var(--text-muted)">uzun pencere</text>
-  <text x="340" y="154" font-size="13" fill="var(--text)">yüzlerce sahte diyalog</text>
-  <text x="540" y="154" font-size="13" fill="var(--text)">128 gösterim beş</text>
-  <text x="540" y="172" font-size="13" fill="var(--text)">modelde yeter</text>
+  <!-- 2. satır: API -->
+  <rect x="20" y="170" width="616" height="104" fill="var(--surface-muted)" />
+  <text x="30" y="192" font-size="13" font-weight="bold" fill="var(--text)">2. API: token olasılığı, cevap öneki</text>
+  <text x="30" y="212" font-size="13" fill="var(--text)">rastgele aramayla sonek; cevabı "Elbette,</text>
+  <text x="30" y="230" font-size="13" fill="var(--text)">işte" ile başlatmak; gradyan gerekmiyor</text>
+  <text x="30" y="248" font-size="13" fill="var(--text-muted)">ölçülen modellerde %100</text>
+  <text x="30" y="266" font-size="13" fill="var(--text-muted)">savunan: aynı dört kat; API kaldıraç olur</text>
+  <rect x="392" y="204" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="452" y="204" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="512" y="204" width="52" height="36" fill="none" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="572" y="204" width="52" height="36" fill="none" stroke="var(--border)" stroke-dasharray="3 3" />
 
-  <line x1="20" y1="186" x2="700" y2="186" stroke="var(--border)" stroke-dasharray="3 3" />
+  <!-- 3. satır: açık ağırlık -->
+  <rect x="20" y="284" width="616" height="104" fill="var(--surface-muted)" />
+  <text x="30" y="306" font-size="13" font-weight="bold" fill="var(--text)">3. açık ağırlık (beyaz kutu)</text>
+  <text x="30" y="326" font-size="13" fill="var(--text)">GCG'nin gradyanı, üretim ayarlarını gezmek,</text>
+  <text x="30" y="344" font-size="13" fill="var(--text)">ret yönünü silmek, ince ayar</text>
+  <text x="30" y="362" font-size="13" fill="var(--text-muted)">ayar gezme 0 → 81 · GCG Vicuna'da %99</text>
+  <text x="30" y="380" font-size="13" fill="var(--text-muted)">savunan: yalnızca ağırlığın içindeki ret</text>
+  <rect x="392" y="318" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="452" y="318" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="512" y="318" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <rect x="572" y="318" width="52" height="36" fill="var(--accent-soft)" stroke="var(--accent)" />
 
-  <text x="20" y="210" font-size="13" font-weight="bold" fill="var(--text)">modelle bulunan istem</text>
-  <text x="200" y="210" font-size="13" fill="var(--text-muted)">kara kutu +</text>
-  <text x="200" y="228" font-size="13" fill="var(--text-muted)">ikinci model</text>
-  <text x="340" y="210" font-size="13" fill="var(--text)">PAIR, TAP</text>
-  <text x="340" y="228" font-size="13" fill="var(--text-muted)">(saldırgan + hakem döngüsü)</text>
-  <text x="540" y="210" font-size="13" fill="var(--text)">GPT-4'te %48,</text>
-  <text x="540" y="228" font-size="13" fill="var(--text)">sorgu başına 24</text>
+  <!-- aktarım oku: açık modelde bulunan sonek, sohbet düzeyinde kullanılır -->
+  <path d="M636,336 C662,336 662,108 644,108" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#jkt-ok)" />
+  <text x="664" y="226" font-size="13" fill="var(--accent)">aktarım</text>
 
-  <text x="20" y="256" font-size="13" font-weight="bold" fill="var(--text)">gradyanla eniyilenen</text>
-  <text x="20" y="274" font-size="13" font-weight="bold" fill="var(--text)">sonek</text>
-  <text x="200" y="256" font-size="13" fill="var(--text-muted)">beyaz kutu,</text>
-  <text x="200" y="274" font-size="13" fill="var(--text-muted)">sonra aktarım</text>
-  <text x="340" y="256" font-size="13" fill="var(--text)">GCG: açgözlü</text>
-  <text x="340" y="274" font-size="13" fill="var(--text)">koordinat gradyanı</text>
-  <text x="540" y="256" font-size="13" fill="var(--text)">Vicuna'da %99;</text>
-  <text x="540" y="274" font-size="13" fill="var(--text)">GPT-3.5'e %86,6 aktarım</text>
-
-  <line x1="20" y1="288" x2="700" y2="288" stroke="var(--border)" stroke-dasharray="3 3" />
-
-  <rect x="20" y="298" width="680" height="48" fill="var(--accent-soft)" />
-  <text x="20" y="318" font-size="13" font-weight="bold" fill="var(--text)">üretim kuralı ve ağırlık</text>
-  <text x="200" y="318" font-size="13" fill="var(--text-muted)">açık ağırlık</text>
-  <text x="340" y="318" font-size="13" fill="var(--text)">sıcaklık ve sistem istemi;</text>
-  <text x="340" y="336" font-size="13" fill="var(--text)">tek yönü silmek; ince ayar</text>
-  <text x="540" y="318" font-size="13" fill="var(--text)">sohbet modeli</text>
-  <text x="540" y="336" font-size="13" fill="var(--text)">0 → 81</text>
-
-  <line x1="20" y1="358" x2="700" y2="358" stroke="var(--border)" />
-  <text x="20" y="382" font-size="13" fill="var(--text-muted)">Erişim sohbetten olasılığa, olasılıktan ağırlığa çıktıkça saldırının bedeli düşüyor,</text>
-  <text x="20" y="400" font-size="13" fill="var(--text-muted)">savunmanın seçenekleri azalıyor. Kesikli çizgiler üç erişim düzeyini ayırır;</text>
-  <text x="20" y="418" font-size="13" fill="var(--text-muted)">değerler metindeki kaynaklardan.</text>
+  <line x1="20" y1="400" x2="700" y2="400" stroke="var(--border)" />
+  <text x="20" y="420" font-size="13" fill="var(--text-muted)">Erişim genişledikçe saldırganın elindeki kutular çoğalıyor, savunanın katları azalıyor.</text>
+  <text x="20" y="438" font-size="13" fill="var(--text-muted)">Ok: açık modelde gradyanla bulunan sonek kapalı modele yalnızca istemle taşınıyor</text>
+  <text x="20" y="456" font-size="13" fill="var(--text-muted)">(GPT-3.5'te %86,6). Değerler metindeki kaynaklardan.</text>
 </svg>

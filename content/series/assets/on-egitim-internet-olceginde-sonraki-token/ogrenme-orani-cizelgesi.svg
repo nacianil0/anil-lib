@@ -18,5 +18,5 @@
   <text x="150" y="322" font-size="13" text-anchor="middle" fill="var(--text-faint)">375 milyon token</text>
   <text x="560" y="322" font-size="13" text-anchor="middle" fill="var(--text-faint)">260 milyar token</text>
   <text x="375" y="348" font-size="13" text-anchor="middle" fill="var(--text-muted)">işlenen token</text>
-  <text x="90" y="372" font-size="13" text-anchor="start" fill="var(--text-faint)">GPT-3'ün ön eğitim çizelgesi</text>
+  <text x="90" y="372" font-size="13" text-anchor="start" fill="var(--text-faint)">GPT-3'ün ön eğitim çizelgesi · yatay eksen ölçekli değil</text>
 </svg>

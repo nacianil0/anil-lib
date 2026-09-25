@@ -12,9 +12,11 @@ tags:
   - sozluk-boyu
   - entropi-tabani
   - kosular-arasi-sapma
-content_hash: sha256:3d38a6995b925016e79358915cba8b1292811315dc4b656ae8628c3abb07b25d
+content_hash: sha256:56236ebd226451aa82f0c89685bc36834db9379b0562f825092e3afabd041843
 classification_version: 1
 classification_batch: 25
+revised_at: "2026-09-25"
+revision_note: "Beş tohumun sonucu tek bir kayıp ekseninde çizildi; sözlük tablosundaki iki türetilmiş sayı ve ters yazılmış sütun başlığı düzeltildi."
 ---
 ## Ağırlıkları kim yazacak
 
@@ -59,24 +61,24 @@ Bu, 15\. makaledeki uyarının ters yüzü. Orada sınırların "dilbilgisine g�
 
 15\. makalede sözlük boyunun bir bütçe paylaşımı olduğunu söylemiş, Chaofan Tao ve arkadaşlarının ölçek yasası çalışmasını aktarmıştık. Şimdi aynı takası kendi derlemimizde ölçebiliriz, çünkü birleştirme sayısını istediğimiz gibi değiştirebiliyoruz.
 
-| Birleştirme | Sözlük | Token | Kelime/token | Satır başına kazanılan token |
+| Birleştirme | Sözlük | Token | Token/kelime | Satır başına kazanılan token |
 |---|---|---|---|---|
 | 0 | 85 | 1.739.841 | 6,821 | — |
 | 100 | 185 | 1.051.052 | 4,121 | 6.888 |
-| 400 | 483 | 726.244 | 2,847 | 815 |
-| 1.600 | 1.669 | 474.331 | 1,860 | 142 |
+| 400 | 483 | 726.244 | 2,847 | 1.090 |
+| 1.600 | 1.669 | 474.331 | 1,860 | 212 |
 | 3.200 | 3.242 | 389.428 | 1,527 | 54 |
 | 6.400 | 6.343 | 330.996 | 1,298 | 19 |
 
-Son sütun bu makalenin en kullanışlı sayısı ve onu biz türettik: bir aşamada kazanılan token sayısı, o aşamada sözlüğe eklenen satır sayısına bölündü. İlk yüz satırın her biri derlemden 6.888 token siliyor; son üç bin satırın her biri yalnızca 19. Aradaki oran 366.
+Son sütunu biz türettik: iki satır arasında kaybolan token sayısı, aynı aralıkta sözlüğe eklenen birim sayısına bölündü. İlk satırda (1.739.841 − 1.051.052) ÷ (185 − 85) = 6.888; son satırda (389.428 − 330.996) ÷ (6.343 − 3.242) ≈ 19. Yani ilk yüz birimin her biri derlemden 6.888 token siliyor, son üç bin birimin her biri yalnızca 19. Aradaki oran 366.
 
-Yani sözlük büyütmenin getirisi çok hızlı tükeniyor, maliyeti ise tükenmiyor: her yeni satır embedding tablosuna sabit bir vektör ekliyor. Mikro modelde bu takas acımasız biçimde görünür hâle geliyor. Vektör boyumuz 4 ve blokların tamamı 320 parametre tutuyor; sözlük 320 ÷ 4 = **80 token'ı** geçtiği anda defter makineden büyük oluyor. Yedi token'lık dilimizde embedding tablosu toplamın yüzde 7,7'si; 6.343 token'lık bir sözlük olsaydı 25.372 parametre tutar ve makinenin 79 katı olurdu.
+Yani sözlük büyütmenin getirisi çok hızlı tükeniyor, maliyeti ise tükenmiyor: her yeni satır embedding tablosuna sabit bir vektör ekliyor. Mikro modelde bu takas acımasız biçimde görünür hâle geliyor. Vektör boyumuz 4 ve blokların tamamı 320 parametre tutuyor; sözlük 320 ÷ 4 = **80 token'ı** geçtiği anda embedding tablosu blokların tamamından büyük oluyor. Yedi token'lık dilimizde embedding tablosu toplamın yüzde 7,7'si; 6.343 token'lık bir sözlük olsaydı tablo 25.372 parametre tutar ve blokların 79 katı olurdu.
 
 > **Kendini yokla:** Sözlüğü küçük tutmanın da bir maliyeti var. Aynı derlem harf düzeyinde 1.739.841 token, 6.400 birleştirmeyle 330.996 token tutuyor. Bu fark eğitim faturasına nasıl yansır?
 
-8\. makaledeki kaba kural faturayı parametre sayısı ile token sayısının çarpımına bağlıyordu. Aynı derlemi bir kez okumak, harf düzeyinde 5,25 kat daha fazla token işlemek demek — yani aynı model için 5,25 kat hesap. Küçük sözlük parametreden tasarruf eder, hesaptan etmez; büyük sözlük tam tersi. 15\. makalenin "bir tahsis kararı" dediği şey tam olarak bu iki kalem arasındaki paylaşım.
+8\. makaledeki kaba kural faturayı parametre sayısı ile token sayısının çarpımına bağlıyordu. Aynı derlemi bir kez okumak, harf düzeyinde 5,26 kat daha fazla token işlemek demek — yani aynı model için 5,26 kat hesap. Küçük sözlük parametreden tasarruf eder, hesaptan etmez; büyük sözlük tam tersi. 15\. makalenin "bir tahsis kararı" dediği şey tam olarak bu iki kalem arasındaki paylaşım.
 
-![Altı satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: birleştirme sayısı arttıkça ne kazanılıyor ve ne ödeniyor. Sütunlar birleştirme, sözlük, token, kelime bölü token ve satır başına kazanılan token. Birinci satır sıfır birleştirme: sözlük 85, 1.739.841 token, 6,821 kelime bölü token, satır başına kazanç yok. İkinci satır 100 birleştirme: sözlük 185, 1.051.052 token, 4,121, satır başına 6.888. Üçüncü satır 400 birleştirme: sözlük 483, 726.244 token, 2,847, satır başına 815. Dördüncü satır 1.600 birleştirme: sözlük 1.669, 474.331 token, 1,860, satır başına 142. Beşinci satır 3.200 birleştirme: sözlük 3.242, 389.428 token, 1,527, satır başına 54. Altıncı satır vurguludur, 6.400 birleştirme: sözlük 6.343, 330.996 token, 1,298, satır başına 19. Birinci kutuda oran durur: ilk yüz satırın her biri derlemden 6.888 token siliyor, son üç bin satırın her biri yalnızca 19; aradaki oran 366. İkinci kutuda mikro modelin eşiği durur: vektör boyu 4 ve blokların tamamı 320 parametre olduğu için sözlük 80 token'ı geçtiğinde defter makineden büyük olur. En altta bir kayıt: bütün sayımlar bu serinin derlemi üzerinde bizim ölçümümüzdür.](assets/sozluk-boyunun-getirisi.svg "Şekil 2 — Üç yüz altmış altı kat azalan getiri")
+![Altı satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: birleştirme sayısı arttıkça ne kazanılıyor ve ne ödeniyor. Sütunlar birleştirme, sözlük, token, token bölü kelime ve satır başına kazanılan token. Birinci satır sıfır birleştirme: sözlük 85, 1.739.841 token, 6,821 token bölü kelime, satır başına kazanç yok. İkinci satır 100 birleştirme: sözlük 185, 1.051.052 token, 4,121, satır başına 6.888. Üçüncü satır 400 birleştirme: sözlük 483, 726.244 token, 2,847, satır başına 1.090. Dördüncü satır 1.600 birleştirme: sözlük 1.669, 474.331 token, 1,860, satır başına 212. Beşinci satır 3.200 birleştirme: sözlük 3.242, 389.428 token, 1,527, satır başına 54. Altıncı satır vurguludur, 6.400 birleştirme: sözlük 6.343, 330.996 token, 1,298, satır başına 19. Birinci kutuda oran durur: ilk yüz satırın her biri derlemden 6.888 token siliyor, son üç bin satırın her biri yalnızca 19; aradaki oran 366. İkinci kutuda mikro modelin eşiği durur: vektör boyu 4 ve blokların tamamı 320 parametre olduğu için sözlük 80 token'ı geçtiğinde embedding tablosu bloklardan büyük olur. En altta bir kayıt: bütün sayımlar bu serinin derlemi üzerinde bizim ölçümümüzdür.](assets/sozluk-boyunun-getirisi.svg "Şekil 2 — Üç yüz altmış altı kat azalan getiri")
 
 Şekil 2'nin son sütunu 366 kat daralıyor; token sütunu ise yalnızca beş kat.
 
@@ -84,7 +86,7 @@ Yani sözlük büyütmenin getirisi çok hızlı tükeniyor, maliyeti ise tüken
 
 Tokenizer hazır, ama modelimizin sözlüğü onunla kurulmuyor. 103\. makalenin dili elle yazılmış yedi token taşıyor ve dört geçerli cümlesi var: `başla kedi bugün uyudu`, `başla kedi dün uyudu`, `başla köpek bugün havladı`, `başla köpek dün havladı`. Fiil özneyle uyuşuyor ve zarf hiçbir bilgi taşımıyor.
 
-14\. makalede eğitim verisinin nasıl kurulduğunu konuşmuştuk: filtreleme, tekilleştirme, karışım ağırlıkları. Bu ölçekte hiçbiri yok — dört cümlenin tekilleştirilecek bir yanı, karıştırılacak iki kaynağı yok. Ama bir şey **var** ve onu açıkça söylemek gerekiyor: ayrılmış bir sınama kümesi yok. Dilin bütün geçerli cümleleri eğitim verisinin içinde. Yani bu modelin genellemesini ölçemeyiz; yalnızca dört cümleyi ne kadar iyi modellediğini ölçebiliriz.
+14\. makalede eğitim verisinin nasıl kurulduğunu konuşmuştuk: filtreleme, tekilleştirme, karışım ağırlıkları. Bu ölçekte hiçbiri yok — dört cümlenin tekilleştirilecek bir yanı, karıştırılacak iki kaynağı yok. Ama eksik olan bir şey var: ayrılmış bir sınama kümesi yok. Dilin bütün geçerli cümleleri eğitim verisinin içinde. Yani bu modelin genellemesini ölçemeyiz; yalnızca dört cümleyi ne kadar iyi modellediğini ölçebiliriz.
 
 Küçük ölçekte eğitmenin kendisi meşru bir araştırma nesnesi; Stella Biderman ve arkadaşlarının ICML 2023'te yayımladığı Pythia paketi tam olarak bunun için kuruldu — aynı veriyle, aynı sırayla eğitilmiş bir model ailesi ve koşunun ara kayıtları, ölçek ile eğitim dinamiğini incelenebilir kılıyor. Bizim dört cümlelik deneyimiz o ölçeğin çok altında ama aynı mantıkta: koşuyu görünür kılmak için küçültmek.
 
@@ -111,7 +113,7 @@ Eğitimden sonra model dört cümlenin dördünde de doğru fiile 0,999 olasıl�
 
 Kayıp 0,46286'da duruyor ve daha aşağı inmiyor. Bu bir eksiklik değil; dilin kendi entropisi.
 
-Hesabı kendimiz yapalım. Üç hedef konumu var. Birinci konumda bağlam yalnızca `başla` ve devamı eşit olasılıkla `kedi` ya da `köpek`; hiçbir model bunu bilemez, kaybın alt sınırı ln 2 = 0,6931. İkinci konumda bağlam özneyi içeriyor ama devamı yine eşit olasılıkla `bugün` ya da `dün`; yine ln 2. Üçüncü konumda ise fiil özne tarafından belirlenmiş durumda, dolayısıyla alt sınır sıfır. Üçünün ortalaması 2 × ln 2 ÷ 3 = 0,46210.
+Hesabı kendimiz yapalım. Üç hedef konumu var; bu bölümde onları tahmin edilen token'ın sırasıyla sayıyoruz: birinci konum özne, ikinci konum zarf, üçüncü konum fiil. Birinci konumda bağlam yalnızca `başla` ve devamı eşit olasılıkla `kedi` ya da `köpek`; hiçbir model bunu bilemez, kaybın alt sınırı ln 2 = 0,6931. İkinci konumda bağlam özneyi içeriyor ama devamı yine eşit olasılıkla `bugün` ya da `dün`; yine ln 2. Üçüncü konumda ise fiil özne tarafından belirlenmiş durumda, dolayısıyla alt sınır sıfır. Üçünün ortalaması 2 × ln 2 ÷ 3 = 0,46210.
 
 Modelimizin konum başına kayıpları: 0,6939 · 0,6938 · 0,0010. Üçü de sınırın on binde birkaç üstünde. Model, öğrenilebilecek her şeyi öğrenmiş ve öğrenilemeyecek hiçbir şeyi öğrenmemiş.
 
@@ -127,7 +129,7 @@ Modelimizin konum başına kayıpları: 0,6939 · 0,6938 · 0,0010. Üçü de s�
 | **Mikro-GPT** | **0,4629** |
 | Dilin entropisi | 0,4621 |
 
-İkili sayım — yalnızca bir önceki token'a bakan bir tablo — 0,6931 alıyor, yani tam olarak ln 2. Sebebi 103\. makalede dili tasarlarken yazdığımız şey: zarf, fiil hakkında hiçbir bilgi taşımıyor, dolayısıyla bir önceki token'a bakan her model üçüncü konumda yazı tura atıyor. Mikro-GPT'nin ikili sayıma karşı kazancı 0,6931 − 0,4629 = 0,2302 nat, yani tam olarak bir konumdaki ln 2'nin üçte biri. Dikkat mekanizmasının bu dilde yaptığı işin tamamı budur ve tam olarak ölçülebilir.
+İkili sayım — yalnızca bir önceki token'a bakan bir tablo — 0,6931 alıyor, yani tam olarak ln 2. Sebebi 103\. makalede dili tasarlarken yazdığımız şey: zarf, fiil hakkında hiçbir bilgi taşımıyor, dolayısıyla bir önceki token'a bakan her model üçüncü konumda yazı tura atıyor. Mikro-GPT'nin ikili sayıma karşı kazancı 0,6931 − 0,4629 = 0,2302 nat; bu, tek bir konumdaki ln 2'nin üçte birine (0,2310) çok yakın, çünkü kazanç yalnızca üç hedeften birinde, fiilde elde ediliyor. Dikkat mekanizmasının bu dilde yaptığı işin tamamı budur ve bu kadar küçük bir dilde doğrudan ölçülebilir.
 
 ![Beş satırlı iki sütunlu bir tablo ve altında iki kutu. Üstte başlık: taban çizgileri ve tavan, nat cinsinden kayıp; düşük olan iyidir. Sütunlar tahminci ve kayıptır. Birinci satır düz tahmin yedi token eşit: 1,9459. İkinci satır tekli sayım: 1,7918. Üçüncü satır ikili sayım: 0,6931. Dördüncü satır vurguludur, mikro-GPT: 0,4629. Beşinci satır dilin entropisi: 0,4621. Birinci kutuda konum başına kayıplar durur: birinci konum 0,6939, ikinci konum 0,6938, üçüncü konum 0,0010; ilk iki konumun alt sınırı ln 2'dir çünkü devamları eşit olasılıklıdır, üçüncü konumun alt sınırı sıfırdır çünkü fiil özne tarafından belirlenir. İkinci kutuda kazanç durur: mikro-GPT'nin ikili sayıma karşı kazancı 0,2302 nattır ve bu, tek bir konumdaki ln 2'nin üçte biridir; dikkat mekanizmasının bu dilde yaptığı işin tamamı budur. En altta bir kayıt: taban çizgileri ve entropi kapalı formüllerden, model kaybı kendi koşumuzdan gelir.](assets/kaybin-durdugu-yer.svg "Şekil 3 — Kaybın tabanı dilin kendisidir")
 
@@ -149,9 +151,9 @@ Buraya kadar tek bir koşudan söz ettik. 101\. makalede bunun neden yetmediğin
 
 Beş sayının ortalaması 0,556 ve standart sapması 0,127. Ama **hiçbir koşu 0,556 vermedi.** Sonuçlar iki öbekte toplanmış durumda ve ortalama iki öbeğin arasındaki boşluğa düşüyor. 101\. makalede ortalamanın ve standart sapmanın ne zaman özet olmadığını konuşmuştuk; işte elimizde tam da o durum. Tek bir koşu bildirmiş olsaydık, tohuma göre "çalışıyor" ya da "çalışmıyor" derdik ve ikisi de doğru olmazdı.
 
-![Beş satırlık üç sütunlu bir tablo, altında bir ortalama satırı ve iki kutu. Üstte başlık: aynı kurulum, beş tohum, son kayıp. Sütunlar tohum, son kayıp ve nerede durdu. Birinci satır tohum 7: 0,46286, dilin entropisinde. İkinci satır tohum 11: 0,46425, dilin entropisinde. Üçüncü satır vurguludur, tohum 23: 0,69411, ikili sayım tabanında. Dördüncü satır tohum 42: 0,46333, dilin entropisinde. Beşinci satır vurguludur, tohum 101: 0,69545, ikili sayım tabanında. Altta ortalama 0,55600 ve standart sapma 0,12669 yazar. Birinci kutuda şu durur: hiçbir koşu 0,55600 vermedi, sonuçlar iki öbekte toplandı ve ortalama iki öbeğin arasındaki boşluğa düştü. İkinci kutuda şu durur: tek koşu bildirilseydi, tohuma göre çalışıyor ya da çalışmıyor denirdi. En altta bir kayıt: beş koşu da bizimdir ve değişen tek şey başlangıç ağırlıklarının tohumudur.](assets/bes-tohum-iki-sonuc.svg "Şekil 4 — Ortalama, hiçbir koşunun vermediği sayı")
+![Yatay bir kayıp ekseni, 0,40'tan 0,70'e, üzerinde beş nokta. Üç nokta, tohum 7, 11 ve 42, dilin entropisi 0,4621 çizgisinin hemen yanında 0,463 dolayında üst üste duruyor. İki nokta, tohum 23 ve 101, ikili sayım tabanı 0,6931 çizgisinin yanında 0,694 dolayında. Aradaki boşlukta, 0,556'da, içi boş bir işaret ortalamayı gösteriyor ve hiçbir koşunun orada durmadığı yazıyor. Eksenin altında ortalama artı eksi bir sapmayı, yani 0,429 ile 0,683 arasını gösteren bir ayraç iki öbeği birden kaplıyor. En altta beş koşunun da bizim olduğu ve değişen tek şeyin tohum olduğu yazıyor.](assets/bes-tohum-iki-sonuc.svg "Şekil 4 — Ortalama, hiçbir koşunun vermediği sayı")
 
-Şekil 4'ün son kutusu bu makalenin en pahalı dersi: üç koşu görseydik yöntemin çalıştığını, iki koşu görseydik çalışmadığını yazacaktık.
+Şekil 4 aynı beş sayıyı bir cetvele diziyor ve tablonun gizlediğini gösteriyor: ortalama ile sapmanın çizdiği aralık iki öbeği birden kaplıyor, ama öbeklerin arasında hiç koşu yok. Tohumların bir kısmına bakmanın bedeli de burada: yalnızca 7, 11 ve 42 numaralı tohumları görseydik yöntemin çalıştığını, yalnızca 23 ile 101'i görseydik çalışmadığını yazacaktık.
 
 > **Kendini yokla:** İki tohum tam olarak ikili sayım tabanında takıldı. Bu, o modellerin hiçbir şey öğrenmediği anlamına mı geliyor?
 
@@ -174,7 +176,9 @@ Hayır, tersine: iki konumun tamamını ve üçüncü konumun yarısını öğre
 
 Hiçbir farkın büyüklüğü iki standart sapmayı, yani 0,2534'ü geçmiyor. Tablonun okunacak yeri fark sütunu değil, sapma sütunu. Mimariyle ilgili hiçbir değişiklik ortalamayı iki standart sapmadan uzağa taşımıyor; yani bu deneyde konum embedding'inin, ikinci bloğun ve iki başın hiçbiri ölçülebilir bir katkı yapmıyor. Bu, o bileşenlerin gereksiz olduğunu göstermez — dilin dört cümleden ibaret olduğunu gösterir. 99\. makalenin cümlesiyle: ablasyonun kanıt yükü, farkın kendi gürültüsünden büyük olmasıdır.
 
-Yine de iki satır dikkat çekici ve dikkat çeken şey ortalamaları değil, sapmaları. Tek bloklu model beş tohumun beşinde de tabana indi ve sapması 0,00045'te kaldı; ısınmasız koşunun sapması 0,00405. İkisi de tam modelin 0,12669'unun yanında yok denecek kadar küçük. Yani bu iki değişiklik ortalamayı iyileştirmedi, **güvenilirliği** iyileştirdi: iki katlı yığında bazen kurulamayan bağ, tek katlıda hep kuruldu. Ters uçta on kat büyük öğrenme oranı sapmayı 0,27936'ya çıkarıyor, yani koşuların birbirinden farkı iyice açılıyor.
+Bu tabloyu bir önceki bölümün uyarısıyla okumak gerekiyor: sonuçlar iki öbekte toplanıyorsa ortalama ile sapma iyi bir özet değil. Ama sapma burada başka bir iş görüyor. Koşuların hepsi entropi tabanına inerse sonlar 0,462 ile 0,470 arasında kalır ve sapma binde birler düzeyinde çıkar; 0,1 dolayında bir sapma ise ancak koşulardan en az birinin 0,69'daki öbeğe düşmesiyle oluşur. Yani sapma sütunu, kaç koşunun takıldığının dolaylı bir sayacı.
+
+Bu gözle iki satır dikkat çekici ve dikkat çeken şey ortalamaları değil, sapmaları. Tek bloklu model beş tohumun beşinde de tabana indi ve sapması 0,00045'te kaldı; ısınmasız koşunun sapması 0,00405. İkisi de tam modelin 0,12669'unun yanında yok denecek kadar küçük. Yani bu iki değişiklik ortalamayı iyileştirmedi, **güvenilirliği** iyileştirdi: iki katlı yığında bazen kurulamayan bağ, tek katlıda hep kuruldu. Ters uçta on kat büyük öğrenme oranı sapmayı 0,27936'ya çıkarıyor, yani koşuların birbirinden farkı iyice açılıyor.
 
 Buradan bir tavsiye çıkarmıyoruz; beş tohum bunun için az. Ama bir okuma kuralı çıkıyor: bir ablasyon tablosunda yalnızca ortalamalara bakmak, ölçülen şeyin yarısını görmektir. Aynı kurulumun ne kadar oynadığı, o kurulumun ne kadar iyi olduğu kadar bilgi taşır.
 
@@ -198,7 +202,7 @@ Yani ağırlıklar neredeyse aynı, çıktı belirgin biçimde farklı. Bilgiyi 
 
 **Bir koşu bir sonuç değildir.** Beş tohumun ikisi kuralı hiç öğrenemedi ve beşinin ortalaması hiçbir koşunun vermediği bir sayı.
 
-**Ablasyon, sapmadan büyük olduğu kadar bilgi taşır.** Bu deneyde hiçbir mimari değişiklik sapmayı aşmadı; söylenebilecek dürüst cümle "ölçemedik"tir.
+**Ablasyon, sapmadan büyük olduğu kadar bilgi taşır.** Bu deneyde hiçbir mimari değişiklik sapmayı aşmadı; söylenebilecek cümle "ölçemedik"tir.
 
 ### Sırada ne var
 

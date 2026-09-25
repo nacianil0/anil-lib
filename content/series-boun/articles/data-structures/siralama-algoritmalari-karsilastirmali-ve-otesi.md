@@ -12,7 +12,7 @@ tags:
   - quicksort
   - kararlilik
   - radix-sort
-content_hash: sha256:74b875860e880f23fdf946d861a6c82b950ff0c0fd6af11246a0cda0f5d9da25
+content_hash: sha256:61d325186c5de27d2518a9902f9825146d93bb422e4c30394061b4e036df2bcb
 classification_version: 1
 classification_batch: 4
 ---
@@ -61,7 +61,7 @@ Ortalama durumda ise ayırma "yeterince ortada" olur: farklı anahtarlı n elema
 
 Buradaki "ortalama" kelimesine dikkat. Karmaşıklık makalesinde kurduğumuz uyarı burada da geçerlidir: ortalama durum bir dağılım varsayımıdır. Modern gerçekleştirimler bu varsayımı savunulabilir kılmak için **diziyi önceden rastgele karıştırır** ya da ekseni rastgele seçer. Böylece kötü durum girdinin bir özelliği olmaktan çıkar ve yalnızca kötü şansa bağlı kalır — hash makalesinde evrensel hash ailesiyle yaptığımız hamlenin aynısı. Ama en kötü durum **yok olmaz**, yalnızca olasılığı düşer.
 
-Belleği de sayalım: ayırma yerinde yapılır, ek bellek yalnızca özyineleme yığınıdır. Karmaşıklık makalesinden biliyoruz ki özyineleme derinliği doğrudan bellek maliyetidir; dengeli bölmelerde bu logaritmiktir, dengesiz bölmelerde doğrusal olabilir. Hızlı sıralama kararlı değildir: ayırma uzak elemanları takas eder.
+Belleği de sayalım: ayırma yerinde yapılır, ek bellek yalnızca özyineleme yığınıdır. Karmaşıklık makalesinden biliyoruz ki özyineleme derinliği doğrudan bellek maliyetidir; dengeli bölmelerde bu logaritmiktir, dengesiz bölmelerde doğrusal olabilir. Bunun standart çaresi, özyinelemeyle her zaman **kısa** parçaya inmek ve uzun parçayı döngüyle işlemektir: her özyinelemeli çağrı parçanın en fazla yarısını aldığı için derinlik en kötü durumda bile log₂ n'yi aşmaz — çalışma süresi karesel kalsa bile. Hızlı sıralama kararlı değildir: ayırma uzak elemanları takas eder.
 
 ## Heapsort: garanti ve yerinde, ama kararsız
 
@@ -76,7 +76,7 @@ Heapsort'un konumu tabloda tektir: **hem en kötü durumda n log n garantisi ver
 | Eklemeli sıralama | n² | n² | sabit | evet | evet |
 | Seçmeli sıralama | n² | n² | sabit | evet | hayır |
 | Birleştirmeli sıralama | n log n | n log n | n | hayır | evet |
-| Hızlı sıralama | n² | n log n | log n (yığın) | evet | hayır |
+| Hızlı sıralama | n² | n log n | log n (yığın; kısa parçaya önce inilirse) | evet (yığın hariç) | hayır |
 | Heapsort | n log n | n log n | sabit | evet | hayır |
 
 Tabloyu okuma biçimi şudur: son üç sütunun hiçbiri ilk iki sütundan türetilemez. Birleştirmeli sıralama ile heapsort aynı sınıftadır ve tamamen farklı takaslar sunar.
@@ -93,7 +93,7 @@ Tabloyu okuma biçimi şudur: son üç sütunun hiçbiri ilk iki sütundan türe
 
 ## Alt sınır: n log n'in altına neden inilemez?
 
-Hash makalesinde karar ağacı argümanını arama için kurmuştuk. Aynı argüman sıralamaya neredeyse hiç değiştirilmeden uygulanır ve sonuç çok daha çarpıcıdır.
+Hash makalesinde karar ağacı argümanını arama için kurmuştuk. Aynı argüman sıralamaya neredeyse hiç değiştirilmeden uygulanır ve bu kez çok daha yüksek bir alt sınır verir.
 
 Karşılaştırma modelinde bir sıralama algoritmasının yapabileceği tek şey karşılaştırmalardır; dolayısıyla algoritma yine bir ikili karar ağacıdır. Yapraklar olası çıktılardır ve sıralamada olası çıktı sayısı **girdinin n! permütasyonudur** — algoritma her permütasyonu ayırt edebilmek zorundadır, yoksa bazı girdilerde yanlış çıktı üretir. Yani ağacın en az n! yaprağı olmalıdır.
 

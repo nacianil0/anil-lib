@@ -48,6 +48,8 @@ export type ReaderDataContextValue = {
   data: ReaderData;
   progress: ReaderProgress;
   syncStatus: SyncStatus;
+  /** The account's latest progress reset this device has applied; rises when one lands. */
+  resetVersion: number;
   entryOf: (articleId: string) => ArticleProgress;
   /** The stored record, including the resolvable reading anchor the shell restores. */
   progressOf: (articleId: string) => ProgressRecord | null;
@@ -109,6 +111,57 @@ function withoutPendingEntity(
   );
 }
 
+/** The record for opening an article now: its stored position kept, the visit renewed. */
+function openedRecord(data: ReaderData, articleId: string, now: string): ProgressRecord {
+  const previous = data.progress[articleId];
+  return {
+    articleId,
+    headingId: previous?.headingId ?? null,
+    scrollRatio: previous?.scrollRatio ?? 0,
+    anchor: previous?.anchor ?? null,
+    completed: previous?.completed ?? false,
+    lastReadAt: now,
+    clientUpdatedAt: now,
+    deviceId: data.deviceId,
+    changeVersion: previous?.changeVersion ?? 0,
+  };
+}
+
+/** Stores a progress record and queues it for sync, replacing any pending write for it. */
+function withProgressWrite(
+  data: ReaderData,
+  record: ProgressRecord,
+  currentArticleId?: string,
+): ReaderData {
+  return {
+    ...data,
+    currentArticleId: currentArticleId ?? data.currentArticleId,
+    progress: { ...data.progress, [record.articleId]: record },
+    outbox: [
+      ...withoutPendingEntity(data.outbox, "progress", record.articleId),
+      {
+        operationId: crypto.randomUUID(),
+        entityType: "progress",
+        entityId: record.articleId,
+        operationType: "upsert",
+        deviceId: data.deviceId,
+        clientUpdatedAt: record.clientUpdatedAt,
+        payload: progressPayload(record),
+      },
+    ],
+  };
+}
+
+/**
+ * A blob that has never synced and holds no progress has nothing a server-side reset
+ * could void, so its first sync adopts the account's reset instead of being treated
+ * as behind it — otherwise a new browser would lose the reading it did before its
+ * first sync answered.
+ */
+function holdsNoPriorProgress(data: ReaderData): boolean {
+  return data.lastSyncAt === null && data.cursor === 0 && Object.keys(data.progress).length === 0;
+}
+
 /**
  * `workspaceId` comes from the server-resolved session. It scopes the storage key,
  * the in-memory blob and the outbox, so signing in as a different account in the
@@ -135,6 +188,10 @@ export function ReaderDataProvider({
   const mountedRef = useRef(true);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastWriteRef = useRef(0);
+  // Decided once per load; see `holdsNoPriorProgress`. Cleared by the first sync.
+  const freshRef = useRef(false);
+  // The article open on this page, so a reset learned mid-visit can record it again.
+  const openArticleRef = useRef<string | null>(null);
 
   const persist = useCallback((next: ReaderData, immediate = true) => {
     dataRef.current = next;
@@ -169,12 +226,26 @@ export function ReaderDataProvider({
     setSyncStatus("syncing");
     try {
       const snapshot = dataRef.current;
+      const adoptReset = freshRef.current;
       const response = await requestReaderSync({
         cursor: snapshot.cursor,
+        resetVersion: adoptReset ? null : snapshot.resetVersion,
         operations: snapshot.outbox.slice(0, 100),
       });
       if (!mountedRef.current) return;
-      const merged = mergeSyncResponse(dataRef.current, response);
+      const before = dataRef.current;
+      let merged = mergeSyncResponse(before, response, { adoptReset });
+      freshRef.current = false;
+      // The account was reset while an article is open here: the merge dropped this
+      // visit along with everything else, so record it again, from nothing.
+      const openArticleId = openArticleRef.current;
+      if (!adoptReset && response.resetVersion > before.resetVersion && openArticleId) {
+        merged = withProgressWrite(
+          merged,
+          openedRecord(merged, openArticleId, new Date().toISOString()),
+          openArticleId,
+        );
+      }
       persist(merged);
       finishLegacyMigration(workspaceId);
       setSyncStatus(merged.outbox.length > 0 ? "pending" : "idle");
@@ -196,6 +267,7 @@ export function ReaderDataProvider({
   useEffect(() => {
     setReady(false);
     const stored = readReaderData(workspaceId);
+    freshRef.current = holdsNoPriorProgress(stored);
     dataRef.current = stored;
     setData(stored);
     setStorageAvailable(isReaderDataStorageAvailable());
@@ -242,25 +314,7 @@ export function ReaderDataProvider({
 
   const mutateProgress = useCallback(
     (record: ProgressRecord, immediate = false, currentArticleId?: string) => {
-      const current = dataRef.current;
-      const mutation = {
-        operationId: crypto.randomUUID(),
-        entityType: "progress" as const,
-        entityId: record.articleId,
-        operationType: "upsert" as const,
-        deviceId: current.deviceId,
-        clientUpdatedAt: record.clientUpdatedAt,
-        payload: progressPayload(record),
-      };
-      persist(
-        {
-          ...current,
-          currentArticleId: currentArticleId ?? current.currentArticleId,
-          progress: { ...current.progress, [record.articleId]: record },
-          outbox: [...withoutPendingEntity(current.outbox, "progress", record.articleId), mutation],
-        },
-        immediate,
-      );
+      persist(withProgressWrite(dataRef.current, record, currentArticleId), immediate);
       scheduleSync();
     },
     [persist, scheduleSync],
@@ -268,20 +322,8 @@ export function ReaderDataProvider({
 
   const setCurrentArticle = useCallback(
     (articleId: string) => {
-      const current = dataRef.current;
-      const now = new Date().toISOString();
-      const previous = current.progress[articleId];
-      const record: ProgressRecord = {
-        articleId,
-        headingId: previous?.headingId ?? null,
-        scrollRatio: previous?.scrollRatio ?? 0,
-        anchor: previous?.anchor ?? null,
-        completed: previous?.completed ?? false,
-        lastReadAt: now,
-        clientUpdatedAt: now,
-        deviceId: current.deviceId,
-        changeVersion: previous?.changeVersion ?? 0,
-      };
+      openArticleRef.current = articleId;
+      const record = openedRecord(dataRef.current, articleId, new Date().toISOString());
       mutateProgress(record, true, articleId);
     },
     [mutateProgress],
@@ -539,6 +581,7 @@ export function ReaderDataProvider({
       storageAvailable,
       data,
       progress,
+      resetVersion: data.resetVersion,
       syncStatus,
       entryOf,
       progressOf: (articleId) => data.progress[articleId] ?? null,

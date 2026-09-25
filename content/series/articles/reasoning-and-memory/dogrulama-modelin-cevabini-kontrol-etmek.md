@@ -12,7 +12,7 @@ tags:
   - en-iyi-n-secimi
   - asiri-optimizasyon
   - cikarim-aninda-hesap
-content_hash: sha256:9ad7e6c7f5e6114a86e7a41f05b2d76041d77018fc4ecb670dfbf7f4071a19bf
+content_hash: sha256:a10dd30ea940793907ef6efa33fcab9f4c26c9880d8d3ad1295b97b7351531ac
 classification_version: 1
 classification_batch: 8
 ---
@@ -36,7 +36,7 @@ Düzenek üç adımdan ibaret. Önce bir model, çözümlü sorularla kısa sür
 
 Şekil 1'in üst yarısı 34\. makaledeki filtrenin kardeşidir: orada doğru cevaba varan çözümler **eğitim verisi** olarak saklanıyordu, burada aynı etiketler bir **puanlayıcının** eğitim verisi oluyor. Fark, kazancın nerede kullanıldığında: biri modelin dağılımını değiştiriyor, öbürü çıkarım anında seçim yapıyor.
 
-Ölçülen kazanç dikkat çekici. Tam eğitim kümesinde, 6 milyar parametreli bir üreticiye yüz aday ürettirip doğrulayıcıyla seçmek, 175 milyar parametreli bir modeli aynı veriyle ince ayarlamayı geçiyor. Çalışmanın kendi ifadesiyle bu, kabaca **otuz kat model boyu** artışına denk bir kazanç. Aynı çalışmanın ikinci bulgusu daha da öğretici: üreticiyi büyütmek, doğrulayıcıyı büyütmekten belirgin biçimde daha çok kazandırıyor. Küçük bir doğrulayıcı, kendinden çok daha büyük bir üreticinin adaylarını ayıklamakta hâlâ etkili. Yazarların yorumu dürüst: doğrulayıcı büyük ihtimalle tam bir denetim yapmıyor, o üreticinin çözümlerini ayırt etmeye yarayan görece kaba işaretlere dayanıyor.
+Ölçülen kazanç dikkat çekici. Tam eğitim kümesinde, 6 milyar parametreli bir üreticiye yüz aday ürettirip doğrulayıcıyla seçmek, 175 milyar parametreli bir modeli aynı veriyle ince ayarlamayı geçiyor. Çalışmanın kendi ifadesiyle bu, kabaca **otuz kat model boyu** artışına denk bir kazanç. Aynı çalışmanın ikinci bulgusu daha da öğretici: üreticiyi büyütmek, doğrulayıcıyı büyütmekten belirgin biçimde daha çok kazandırıyor. Küçük bir doğrulayıcı, kendinden çok daha büyük bir üreticinin adaylarını ayıklamakta hâlâ etkili. Yazarlar bunu temkinle yorumluyor: doğrulayıcı büyük ihtimalle tam bir denetim yapmıyor, o üreticinin çözümlerini ayırt etmeye yarayan görece kaba işaretlere dayanıyor.
 
 Bir ayrıntı daha var ve 32\. makaleyle doğrudan konuşuyor. Aynı 6 milyar parametreli model ara adımlar üretmeden doğrudan cevap vermeye ince ayarlandığında başarısı yüzde 20,6'dan yüzde 5,2'ye düşüyor. Doğrulanacak bir zincir olması, yalnızca doğrulayıcı için değil üretici için de gerekli.
 
@@ -52,7 +52,7 @@ Doğrulayıcının puanı **nereye** yazacağı da bir tasarım kararı ve çal�
 
 Bu cümle tanıdık gelmeli. 13\. makalede vekil bir ölçüyü fazla kovalamanın gerçek ölçütü bozduğunu görmüştük; aşırı optimizasyon, ödül modelinin hastalığıydı. Buradaki ders şu: **en iyi-N seçimi de bir eniyilemedir.** Model eğitilmiyor, ama N büyüdükçe doğrulayıcının puanına göre daha da uç adaylar seçiliyor ve seçilen cevabın dağılımı başlangıçtakinden uzaklaşıyor.
 
-Üstelik uzaklığın büyüklüğü hesaplanabiliyor. 13\. makalede aşırı optimizasyonu ölçen Gao, Schulman ve Hilton'ın çalışması, en iyi-N seçiminin başlangıç dağılımından ıraksamasını kapalı biçimde veriyor: `ln N − (N−1)/N`. Ölçü, 13\. makaledeki KL ıraksamasının aynısı. Sayılarla: N dört iken uzaklık 0,64; yüz iken 3,62; bin iken 5,91 nat. Yani adayları yüzden bine çıkarmak "biraz daha çok deneme" değil, seçim baskısını ölçülebilir biçimde artırmak demek. Aynı çalışmada ödül modelleri üzerinde ölçülen bozulma eğrisinin — vekil puan yükselmeye devam ederken gerçek puanın önce yükselip sonra düşmesi — doğrulayıcıdaki karşılığı tam olarak budur.
+Üstelik uzaklığın büyüklüğü hesaplanabiliyor. 13\. makalede aşırı optimizasyonu ölçen Gao, Schulman ve Hilton'ın çalışması, en iyi-N seçiminin başlangıç dağılımından ıraksamasını kapalı biçimde veriyor: `ln N − (N−1)/N`. Ölçü, 13\. makaledeki KL ıraksamasının aynısı. Formülün ikinci terimi N büyüdükçe hızla 1'e yaklaşır, yani uzaklığı belirleyen ilk terimdir: aday sayısının logaritması. Sözle: adayları on katına çıkarmak, seçilen cevabı başlangıç dağılımından her seferinde yaklaşık 2,3 nat daha uzağa taşır. Sayılarla: N dört iken uzaklık 0,64; yüz iken 3,62; bin iken 5,91 nat. Yani adayları yüzden bine çıkarmak "biraz daha çok deneme" değil, seçim baskısını ölçülebilir biçimde artırmak demek. Aynı çalışmada ödül modelleri üzerinde ölçülen bozulma eğrisinin — vekil puan yükselmeye devam ederken gerçek puanın önce yükselip sonra düşmesi — doğrulayıcıdaki karşılığı tam olarak budur.
 
 Pratik sonuç, çalışmanın kendi çözümünde görünüyor: tek bir en yüksek puanlı adayı seçmek yerine, en yüksek puanlı birkaç aday arasında çoğunluk oyu almak daha iyi çalışıyor. Yüz adayla en iyi üç ile beş arasında bir grup, üç bin iki yüz adayla ilk otuz kadarı oy vermeli. Bu düzeltmenin mantığı, iki farklı seçiciyi üst üste bindirmek: doğrulayıcı en uç adayları eleyerek havuzu daraltıyor, çoğunluk oyu ise o havuzun içinde tek bir adayın tuhaflığına teslim olmayı engelliyor. Doğrulayıcının puanı bir sıralama aracı olarak iyi, tek başına bir karar mercii olarak kırılgan.
 
@@ -96,15 +96,15 @@ Jie Huang, Xinyun Chen ve arkadaşlarının ICLR 2024'te sunduğu çalışma bu 
 | GPT-4, tek geçiş | 95,5 | 82,0 | 49,0 |
 | GPT-4, iki tur düzeltme | 89,0 | 80,0 | 43,0 |
 
-Üç kümenin üçünde de düzeltme başarıyı **düşürüyor**, üstelik üç ile beş kat daha çok model çağrısı harcayarak. Açık ağırlıklı bir modelde düşüş daha sert: ilkokul matematiğinde yüzde 62,0'den 36,5'e.
+Üç kümenin üçünde de düzeltme başarıyı **düşürüyor**, üstelik üç ile beş kat daha çok model çağrısı harcayarak. Açık ağırlıklı bir modelde düşüş daha sert: ilkokul matematiğinde yüzde 62,0'dan 36,5'e.
 
 Neden düştüğünü, cevapların nasıl değiştiğine bakınca görüyoruz.
 
 ![Dört yatay çubuktan oluşan bir grafik; ilkokul matematiği kümesinde ve dış geri bildirim olmadan ölçülmüştür. En uzun çubuk cevabın hiç değişmediği durumu gösterir ve yüzde 74,7'dir. İkinci çubuk doğru cevabın yanlışa çevrildiği durumdur ve yüzde 8,8'dir. Üçüncü çubuk yanlış cevabın doğruya çevrildiği durumdur ve yüzde 7,6'dır; ikinciden kısadır. Dördüncü çubuk yanlıştan yanlışa geçişleri gösterir ve yüzde 8,9'dur. İkinci ve üçüncü çubukları kapsayan bir köşeli ayraç, bozulan miktarın düzeltilenden çok olduğunu işaretler. Şeklin altında düzeltme turunun doğru cevapların bir kısmını bozup yanlışların bir kısmını onardığı, bilanço eksi olduğu için toplam başarının düştüğü ve bunun üç kat çağrı harcanarak olduğu yazılıdır.](assets/cevap-degisimi.svg "Şekil 3 — İki tur düzeltmeden sonra cevaplar nereye gitti?")
 
-Şekil 3'teki ikinci ve üçüncü çubuğun uzunluk farkı bütün hikâyeyi taşıyor: model doğru cevaplarının yüzde 8,8'ini bozarken yanlış cevaplarının yüzde 7,6'sını düzeltiyor. Bilanço eksi. Sebep, Şekil 2'deki yanlış ret kutusunun ta kendisi: model kendi gerekçesinin doğru olup olmadığını yeterince güvenilir yargılayamıyor, ve "bir daha bak" talimatı onu ilk cevabından uzaklaşmaya iten fazladan bir istem gibi çalışıyor.
+Şekil 3'teki ikinci ve üçüncü çubuğun uzunluk farkı bütün hikâyeyi taşıyor. Yüzdeler bütün sorulara göre: soruların yüzde 8,8'inde doğru cevap yanlışa dönerken yüzde 7,6'sında yanlış cevap doğruya dönüyor. Bilanço eksi ve tablodaki sayıyı da bu veriyor: tek geçişteki 75,9'dan 8,8 düşüp 7,6 eklenince 74,7 kalıyor. Sebep, Şekil 2'deki yanlış ret kutusunun ta kendisi: model kendi gerekçesinin doğru olup olmadığını yeterince güvenilir yargılayamıyor, ve "bir daha bak" talimatı onu ilk cevabından uzaklaşmaya iten fazladan bir istem gibi çalışıyor.
 
-Bu, "öz-düzeltme hiç işe yaramaz" demek değil ve sınırı görmek için karşı örneğe bakmak gerekiyor. Aman Madaan ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma, tam olarak aynı döngüyü — model üretir, kendi çıktısına geri bildirim yazar, yeniden yazar — yedi görevde ölçüyor ve ortalamada yaklaşık yirmi puanlık bir kazanç buluyor. Diyalog cevabı üretmede tercih puanı yüzde 25,4'ten 74,6'ya çıkıyor. Ama aynı tablonun matematik satırı şöyle: 64,1 → 64,1, 74,8 → 75,0, 92,9 → 93,1. Yani sıfır.
+Bu, "öz-düzeltme hiç işe yaramaz" demek değil ve sınırı görmek için karşı örneğe bakmak gerekiyor. Aman Madaan ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma, tam olarak aynı döngüyü — model üretir, kendi çıktısına geri bildirim yazar, yeniden yazar — yedi görevde ölçüyor ve ortalamada yaklaşık yirmi puanlık bir kazanç buluyor. Diyalog cevabı üretmede tercih puanı yüzde 25,4'ten 74,6'ya çıkıyor. Ama aynı tablonun matematik satırı şöyle: 64,1 → 64,1, 74,8 → 75,0, 92,9 → 93,1. Fark yok denecek kadar küçük.
 
 Çalışmanın kendi açıklaması, bu makalenin tezini yazarların ağzından söylüyor: matematikte hata ince olabiliyor ve tutarlı görünen bir zincir modeli aldatıyor — bir modelin geri bildirimlerinin yüzde 94'ü "her şey iyi görünüyor" diyor. Dışarıdan yalnızca "bu cevap yanlış" bilgisi verildiğinde ise matematikteki kazanç beş puanın üzerine çıkıyor.
 

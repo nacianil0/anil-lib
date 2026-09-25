@@ -828,6 +828,21 @@ boyunca aynı kalır.
 | yinelenemez okuma | non-repeatable read | 39 |
 | hayalet | phantom | 39 |
 | önden yazmalı günlük | write-ahead log | 39 |
+| sınırlı doğrudan yürütme | limited direct execution | 26 |
+| çift dönüş | double rotation | 12 |
+| kanonik para sistemi | canonical coin system | 21 |
+| eş-sağlanabilir | equisatisfiable | 25 |
+| süper anahtar | superkey | 39 |
+| güncelleme anomalisi | update anomaly | 39 |
+| yazma çarpıklığı | write skew | 39 |
+| anlık görüntü yalıtımı | snapshot isolation | 39 |
+
+**Çakışma kaydı (2026-09-25):** "takas" seri boyunca *trade-off* (değiş tokuş) anlamındadır;
+"takas alanı" yalnızca işletim sistemi bağlamında *swap space*'tir. İki elemanın yerini
+değiştirmek (*swap*) için "yer değiştirmek" kullanılır; *trade-off* anlamındaki "takas" ile aynı
+makalede "takas etmek" fiili geçmez (SOZLESME §2 terim çakışması yasağı). Karar ağacı alt
+sınırı yaprak sayısıyla h ≥ log₂(n + 1), düğüm sayısıyla ⌈log₂(n + 1)⌉ − 1 yazılır; hash ve alt
+sınırlar makaleleri ilk biçimi kullanır ve ikisinin farkını adlandırır.
 
 ## Kavram-tekrar defteri
 

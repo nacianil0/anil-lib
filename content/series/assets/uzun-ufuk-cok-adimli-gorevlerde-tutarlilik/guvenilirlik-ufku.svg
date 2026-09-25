@@ -1,4 +1,4 @@
-<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 302" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı model, iki farklı güvenilirlik çıtası</text>
   <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">çubuk uzunluğu: modelin o çıtada başarabildiği görevin insan süresi</text>
 

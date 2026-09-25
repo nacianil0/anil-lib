@@ -12,7 +12,7 @@ tags:
   - politika
   - deger-islevi
   - kredi-atama
-content_hash: sha256:65c413c8a1e654e4e76c652149638cd5f71eeace56940f830897f2829bd75b67
+content_hash: sha256:06235158d42d864f309671199c6430b72e30f5b2fd44190a02036a8a13e7ed2a
 classification_version: 1
 classification_batch: 8
 ---
@@ -60,7 +60,7 @@ Birinci seçenek, doğrudan cevap vermek. Diyelim bu yolda doğru cevap verme ol
 
 ![İki dallı bir karar şeması. Üstte soru kutusu vardır; ondan iki ok ayrılır. Sol dal doğrudan cevap vermeyi gösterir; ucunda beklenen getirinin 0,5 olduğu yazılıdır. Sağ dal önce ara adım yazmayı gösterir; ara adım kutusunun kendisinde ödülün sıfır olduğu, ondan sonraki cevap kutusunda ise beklenen ödülün 0,6 olduğu belirtilir. Şeklin alt kısmında iki satırlık bir karşılaştırma vardır: iskonto bir iken sağ dalın getirisi 0,60 ve sol daldan büyüktür; iskonto 0,8 iken sağ dalın getirisi 0,48'e iner ve sol daldan küçük olur. Kazanan dal her iki satırda ayrı ayrı işaretlenmiştir.](assets/iskonto-karari.svg "Şekil 2 — Aynı sayılar, iki farklı iskonto")
 
-Şekil 2'deki tersine dönüş bir oyun değil. 33\. makalede düşünme token'larının faturanın pahalı tarafına yazıldığını görmüştük; iskonto tam olarak o sabırsızlığı biçimselleştiriyor. γ küçüldükçe geç gelen ödül ucuzlar, yani uzun düşünmek pahalılaşır.
+Şekil 2'deki tersine dönüş bir oyun değil. 33\. makalede düşünme token'larının faturanın pahalı tarafına yazıldığını görmüştük; iskonto, bu tür bir sabırsızlığı amaç işlevinin içine yazmanın bir yolu. γ küçüldükçe geç gelen ödül ucuzlar, yani uzun düşünmek pahalılaşır. Makalenin sonunda göreceğimiz gibi, dil modeli eğitiminde bu yol pratikte çoğu zaman kullanılmıyor; bedel başka bir yerde ödeniyor.
 
 ## Politika, değer ve avantaj
 
@@ -70,9 +70,9 @@ Birinci seçenek, doğrudan cevap vermek. Diyelim bu yolda doğru cevap verme ol
 
 **Değer işlevi** (value function), bir durumdan başlayıp o politikayı izlemeye devam edersen beklediğin getiridir. Sözle: "buradan sonrası ne kadar iyi?" Yukarıdaki örnekte, ara adım yazılmış durumun değeri 0,6 idi. Aynı sorunun eylem başına sorulmuş hâline **eylem-değeri** denir: "bu durumda şu eylemi seçersem beklediğim getiri nedir?" Örnekteki iki sayı — 0,5 ve 0,48 — birer eylem-değeriydi.
 
-Bu iki büyüklük arasındaki bağıntı, alanın en çok kullanılan denklemidir. Sözle: bir durumun değeri, oradan alınacak ödül artı gidilen yeni durumun iskontolanmış değeridir. Sembolle, geçişin belirlenimci olduğu durumda: Q(s, a) = r + γ · V(s′); çevre zar atıyorsa aynı ifadenin beklenen değeri alınır. Sayıyla: örneğimizde r = 0, γ = 0,8, V(s′) = 0,6, dolayısıyla Q = 0,48. Bellman'ın adıyla anılan bu denklem, uzun bir bölümün hesabını tek adımlık parçalara böler.
+Bu iki büyüklük arasındaki bağıntı, alanın en çok kullanılan denklemidir. Sözle: bir durumda bir eylemi seçmenin değeri, o eylemin hemen getirdiği ödül artı eylemin götürdüğü yeni durumun iskontolanmış değeridir. Sembollerin adları şunlar: s şimdiki durum, a seçilen eylem, r o eylemin hemen getirdiği ödül, s′ eylemin götürdüğü yeni durum; V bir durumun değeri, Q bir durum-eylem çiftinin eylem-değeri. Geçişin belirlenimci olduğu durumda denklem Q(s, a) = r + γ · V(s′); çevre zar atıyorsa aynı ifadenin beklenen değeri alınır. Sayıyla: örneğimizde s soru, a "önce ara adım yaz", r = 0, γ = 0,8, s′ ara adımın yazılmış olduğu durum ve V(s′) = 0,6, dolayısıyla Q = 0,48. Bellman'ın adıyla anılan bu denklem, uzun bir bölümün hesabını tek adımlık parçalara böler.
 
-Bu denklemin ikinci bir işlevi daha var. Değer işlevi gökten inmez; onu da öğrenmek gerekir ve öğrenmenin hedefini yine kendisi verir. Bir durumun tahmin edilen değeri ile "ödül artı bir sonraki durumun tahmin edilen değeri" birbirini tutmuyorsa aradaki fark bir hata sinyalidir ve tahmin o yöne çekilir. 2\. makaledeki kayıp fonksiyonunun buradaki karşılığı budur; fark, hedefin sabit bir etiket değil, modelin kendi bir sonraki tahmini olması.
+Bu denklemin ikinci bir işlevi daha var. Değer işlevi gökten inmez; onu da öğrenmek gerekir ve öğrenmenin hedefini yine kendisi verir. Bir durumun tahmin edilen değeri ile "ödül artı bir sonraki durumun tahmin edilen değeri" birbirini tutmuyorsa aradaki fark bir hata sinyalidir ve tahmin o yöne çekilir. Sayıyla: modelimiz başlangıçta "önce ara adım yaz" eyleminin değerini 0,70 sanıyor olsun. Eylem denenir, ödül 0 gelir ve ara adımın yazılmış olduğu durumun tahmini değeri 0,6'dır; hedef 0 + 0,8 × 0,6 = 0,48. Tahmin hedefin 0,22 üstünde kalmış, yani eylem sanıldığı kadar iyi değil; tahmin 0,48'e doğru bir adım çekilir. 2\. makaledeki kayıp fonksiyonunun buradaki karşılığı budur; fark, hedefin sabit bir etiket değil, modelin kendi bir sonraki tahmini olması.
 
 Üçüncü kavram serinin sözlüğünde zaten var. **Avantaj** (advantage), bir eylemin değeri ile o durumun ortalama değeri arasındaki fark: "bu eylem, burada yapılacak ortalama şeyden ne kadar iyi?" 34\. makaledeki GRPO'nun yaptığı iş tam olarak buydu — bir cevabın ödülünden aynı soruya üretilen cevapların ortalamasını çıkarmak, o cevabın avantajını kestirmenin ucuz bir yoludur.
 
@@ -116,7 +116,7 @@ Geriye tek soru kalıyor: adım ne kadar büyük olmalı? Aynı ekibin ICML 2015
 
 Bu çerçevenin gücünü görmek için dil modellerinden çıkmak gerekiyor. Volodymyr Mnih ve arkadaşlarının Nature'da 2015'te yayımladığı çalışma, girdisi yalnızca ekran pikselleri ve puan olan tek bir sistemin — tek algoritma, tek mimari, tek hiperparametre kümesi — kırk dokuz ayrı Atari oyununu öğrenebildiğini gösterdi. Oyunların yarısından fazlasında, yani yirmi dokuzunda, profesyonel bir insan test oyuncusunun puanının yüzde 75'inden fazlasına ulaştı. Kullanılan iskonto 0,99'du: neredeyse hiç sabırsız olmayan bir ajan.
 
-Ama dürüst olmak gerekirse, dil modeli bu çerçevenin oldukça yoksul bir örneğidir ve farkları saymak önemli.
+Ama dil modeli bu çerçevenin oldukça yoksul bir örneğidir ve farkları saymak önemli.
 
 Çevre belirlenimcidir; token'ı diziye ekleyen bir işlemden başka bir şey yoktur. Ödül seyrektir ve neredeyse her zaman terminaldir. Bölümler kısadır — tek bir cevap. Klasik anlamda bir keşif problemi de yoktur: ajan yeni bir dünyayı yoklamaz, kendi dağılımından örnek çeker. Üstelik 13\. makaledeki KL cezası çerçevenin bir parçası değil, bizim eklediğimiz bir kısıttır; amaç en çok ödülü toplamak değil, başlangıç modelinden fazla uzaklaşmadan ödülü artırmaktır.
 

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 446" role="img" aria-label="Yan yana iki panel. Soldaki anahtarlar paneli: başlangıçtan çıkan üç ok, k yıldız eşittir 1 ve 0 sağa, k1 eşittir 0 ve 1 yukarı, k2 eşittir 0,6 ve 0,8 çapraz; not: k1 k yıldıza diktir, k2 onunla 0,6 örtüşür. Sağdaki değerler paneli: kesikli soluk oklar güncelleme öncesini gösterir, 1 ve 0 ile 0,6 ve 0,8. Güncelleme sonrası W′k yıldız sola döner, eksi 1 ve 0; W′k1 yukarıda aynen kalır, değişmedi; W′k2 eksi 0,6 ve 0,8 olur. Panelin altında Δ eşittir v yıldız eksi W k yıldız, çarpı k yıldız devrik, v yıldız eksi 1 ve 0. Altta: k1 hiç değişmiyor, k2'nin k yıldızla örtüşen 0,6'lık bileşeni yeniden yazılıyor, dik 0,8'lik bileşeni kalıyor; gerçek bir modelde anahtarlar tam dik olmadığı için ilgisiz bir olgu örtüştüğü kadar etkilenir. Kayıt: sayılar açıklama amaçlıdır, W birim matristir.">
+  <defs>
+    <marker id="ok-112-yildiz" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="ok-112-dik" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cool)" />
+    </marker>
+    <marker id="ok-112-egik" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text)" />
+    </marker>
+    <marker id="ok-112-once" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-faint)" />
+    </marker>
+  </defs>
+  <text x="20.0" y="30.0" font-size="13" fill="var(--text)">Rank-bir güncelleme yalnızca k* yönündeki bileşeni yeniden yazar</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+  <rect x="20" y="56" width="310" height="278" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="370" y="56" width="330" height="278" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <text x="34.0" y="78.0" font-size="13" font-weight="bold" fill="var(--text)">anahtarlar (girdi)</text>
+  <text x="384.0" y="78.0" font-size="13" font-weight="bold" fill="var(--text)">değerler (çıktı): önce W, sonra W′</text>
+  <line x1="334" y1="195" x2="364" y2="195" stroke="var(--text-faint)" stroke-width="1.5" marker-end="url(#ok-112-once)" />
+  <line x1="60" y1="250" x2="290" y2="250" stroke="var(--border)" />
+  <line x1="140" y1="310" x2="140" y2="130" stroke="var(--border)" />
+  <line x1="140" y1="250" x2="227.0" y2="250.0" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-112-yildiz)" />
+  <line x1="140" y1="250" x2="140.0" y2="163.0" stroke="var(--cool)" stroke-width="2" marker-end="url(#ok-112-dik)" />
+  <line x1="140" y1="250" x2="192.2" y2="180.4" stroke="var(--text)" stroke-width="2" marker-end="url(#ok-112-egik)" />
+  <text x="236.0" y="270.0" font-size="13" font-weight="bold" fill="var(--accent)">k* = (1; 0)</text>
+  <text x="148.0" y="156.0" font-size="13" font-weight="bold" fill="var(--cool)">k₁ = (0; 1)</text>
+  <text x="202.0" y="182.0" font-size="13" font-weight="bold" fill="var(--text)">k₂ = (0,6; 0,8)</text>
+  <text x="34.0" y="322.0" font-size="13" fill="var(--text-muted)">k₁, k*'e dik; k₂, k* ile 0,6 örtüşüyor</text>
+  <line x1="390" y1="250" x2="680" y2="250" stroke="var(--border)" />
+  <line x1="540" y1="310" x2="540" y2="130" stroke="var(--border)" />
+  <line x1="540" y1="250" x2="627.0" y2="250.0" stroke="var(--text-faint)" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ok-112-once)" />
+  <line x1="540" y1="250" x2="592.2" y2="180.4" stroke="var(--text-faint)" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ok-112-once)" />
+  <line x1="540" y1="250" x2="453.0" y2="250.0" stroke="var(--accent)" stroke-width="2" marker-end="url(#ok-112-yildiz)" />
+  <line x1="540" y1="250" x2="540.0" y2="163.0" stroke="var(--cool)" stroke-width="2" marker-end="url(#ok-112-dik)" />
+  <line x1="540" y1="250" x2="487.8" y2="180.4" stroke="var(--text)" stroke-width="2" marker-end="url(#ok-112-egik)" />
+  <text x="624.0" y="272.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">önce</text>
+  <text x="602.0" y="192.0" font-size="13" fill="var(--text-faint)">önce</text>
+  <text x="384.0" y="272.0" font-size="13" font-weight="bold" fill="var(--accent)">W′k* = (−1; 0)</text>
+  <text x="548.0" y="152.0" font-size="13" font-weight="bold" fill="var(--cool)">W′k₁ = k₁</text>
+  <text x="548.0" y="172.0" font-size="13" fill="var(--cool)">değişmedi</text>
+  <text x="384.0" y="172.0" font-size="13" font-weight="bold" fill="var(--text)">W′k₂ = (−0,6; 0,8)</text>
+  <text x="384.0" y="322.0" font-size="13" fill="var(--text-muted)">Δ = (v* − W k*) k*ᵀ, v* = (−1; 0)</text>
+  <text x="20.0" y="362.0" font-size="13" fill="var(--text)">k₁ hiç değişmiyor. k₂'nin k* ile örtüşen bileşeni (0,6) yeniden yazılıyor,</text>
+  <text x="20.0" y="382.0" font-size="13" fill="var(--text)">k*'e dik bileşeni (0,8) olduğu gibi kalıyor.</text>
+  <text x="20.0" y="404.0" font-size="13" fill="var(--text-muted)">Gerçek bir modelde anahtarlar tam dik değildir; ilgisiz bir olgu, örtüştüğü kadar etkilenir.</text>
+  <text x="20.0" y="432.0" font-size="13" fill="var(--text-faint)">Sayılar açıklama amaçlıdır: W birim matris. Gerçek yöntem araya bir eşdeğişirlik terimi koyar.</text>
+</svg>

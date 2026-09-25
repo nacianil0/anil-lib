@@ -1,45 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="Dört satırlı dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir eğitim adımını bölmenin dört ekseni. Sütunlar eksen, bölünen, doğan iletişim ve sınır. Birinci satır veri: bölünen yığın, doğan iletişim adım başına 2Ψ büyüklüğünde bir hepsi-indirge, sınır modelin küçülmemesi. İkinci satır tensör: bölünen ağırlık matrisleri, doğan iletişim katman başına dört hepsi-indirge, sınır sunucu içi ve en çok sekiz yol. Üçüncü satır boru hattı: bölünen katman yığını, doğan iletişim aşama başına noktadan noktaya bir gönderim, sınır p eksi bir bölü m büyüklüğündeki kabarcık. Dördüncü satır dizi: bölünen dizinin kendisi, doğan iletişim hepsi-topla artı indirge-dağıt, sınır tek başına kullanılamaması. Eksen adları vurgulu yazılmıştır. Birinci kutunun başlığı trafiğin büyüklüğü, GPT-3 ölçüleriyle: b çarpı s çarpı h eşittir 1 çarpı 2.048 çarpı 12.288 eşittir 25,2 milyon sayı; 96 katmanda tensör paralelliği mikro yığın başına 4 çarpı 96 eşittir 384 toplu işlem, boru hattı ise 63 aşama sınırında 63 noktadan noktaya gönderim yapar. İkinci kutunun başlığı bağlayıcı kural: hangi eksen seçilirse seçilsin, bölünmüş koşunun sonucu tek karttaki koşunun sonucuyla birebir aynı olmak zorundadır. En altta bir kayıt: iletişim biçimleri kaynaklardan, 25,2 milyon ile 384 ve 63 sayıları bizim hesabımızdır.">
-  <text x="20" y="30" font-size="13" fill="var(--text)">Bir eğitim adımını bölmenin dört ekseni</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 526" role="img" aria-label="Dört satır ve her satırda dört kart. Üstte başlık: dört kart, dört eksen, her kart neyi tutuyor. Her kartta üç satır yazar: hangi katmanlar, matrisin ne kadarı, yığının ya da dizinin ne kadarı; o eksenin böldüğü satır vurguludur. Veri satırında her kart bütün katmanları ve tam matrisleri tutar, yığının dörtte birini işler; iletişim adım sonunda tek bir 2Ψ'lik hepsi-indirgedir. Tensör satırında her kart her matrisin dörtte birini tutar, bütün yığını işler; her katmanda dört hepsi-indirge vardır ve sunucu içinde kalır. Boru hattı satırında kartlar katman 1–24, 25–48, 49–72 ve 73–96'yı tutar, oklar bir karttan komşusuna gider; bedeli kabarcıktır. Dizi satırında matrisin dörtte birine ek olarak dizinin dörtte biri tutulur; norm ve seyreltme bölgelerinde hepsi-topla ile indirge-dağıt, aynı bantla.">
+  <defs>
+    <marker id="ok-107-gonder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <text x="20.0" y="30.0" font-size="13" fill="var(--text)">Dört kart, dört eksen: her kart neyi tutuyor?</text>
   <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
-
-  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">eksen</text>
-  <text x="120" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">bölünen</text>
-  <text x="270" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">doğan iletişim</text>
-  <text x="510" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sınır</text>
-  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
-
-  <text x="24" y="100" font-size="13" font-weight="bold" fill="var(--accent)">veri</text>
-  <text x="120" y="100" font-size="13" fill="var(--text)">yığın</text>
-  <text x="270" y="100" font-size="13" fill="var(--text)">2Ψ hepsi-indirge, adım başına</text>
-  <text x="510" y="100" font-size="13" fill="var(--text)">model küçülmez</text>
-
-  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--accent)">tensör</text>
-  <text x="120" y="126" font-size="13" fill="var(--text)">ağırlık matrisleri</text>
-  <text x="270" y="126" font-size="13" fill="var(--text)">4 hepsi-indirge, katman başına</text>
-  <text x="510" y="126" font-size="13" fill="var(--text)">sunucu içi, en çok 8 yol</text>
-
-  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">boru hattı</text>
-  <text x="120" y="152" font-size="13" fill="var(--text)">katman yığını</text>
-  <text x="270" y="152" font-size="13" fill="var(--text)">noktadan noktaya, aşama başına</text>
-  <text x="510" y="152" font-size="13" fill="var(--text)">kabarcık, p − 1 bölü m</text>
-
-  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">dizi</text>
-  <text x="120" y="178" font-size="13" fill="var(--text)">dizinin kendisi</text>
-  <text x="270" y="178" font-size="13" fill="var(--text)">hepsi-topla + indirge-dağıt</text>
-  <text x="510" y="178" font-size="13" fill="var(--text)">tek başına kullanılmaz</text>
-
-  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
-
-  <rect x="20" y="206" width="680" height="100" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="230" font-size="13" font-weight="bold" fill="var(--text)">Trafiğin büyüklüğü: GPT-3 ölçüleriyle</text>
-  <text x="34" y="252" font-size="13" fill="var(--text)">b·s·h = 1 × 2.048 × 12.288 = 25,2 milyon sayı.</text>
-  <text x="34" y="272" font-size="13" fill="var(--text)">96 katmanda tensör paralelliği mikro yığın başına 4 × 96 = 384 toplu işlem;</text>
-  <text x="34" y="292" font-size="13" fill="var(--text)">boru hattı ise 63 aşama sınırında 63 noktadan noktaya gönderim yapar.</text>
-
-  <rect x="20" y="318" width="680" height="72" fill="var(--surface)" stroke="var(--border)" />
-  <text x="34" y="342" font-size="13" font-weight="bold" fill="var(--text)">Bağlayıcı kural</text>
-  <text x="34" y="364" font-size="13" fill="var(--text-muted)">Hangi eksen seçilirse seçilsin, bölünmüş koşunun sonucu tek karttaki</text>
-  <text x="34" y="382" font-size="13" fill="var(--text-muted)">koşunun sonucuyla birebir aynı olmak zorundadır.</text>
-
-  <text x="20" y="410" font-size="13" fill="var(--text-faint)">İletişim biçimleri kaynaklardan; 25,2 milyon ile 384 ve 63 sayıları bizim hesabımızdır.</text>
+  <text x="175.0" y="66.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">kart 1</text>
+  <text x="321.0" y="66.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">kart 2</text>
+  <text x="467.0" y="66.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">kart 3</text>
+  <text x="613.0" y="66.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">kart 4</text>
+  <text x="20.0" y="116.0" font-size="13" font-weight="bold" fill="var(--accent)">veri</text>
+  <rect x="110" y="76" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="175.0" y="96.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="175.0" y="115.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="175.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">yığının 1/4'ü</text>
+  <rect x="256" y="76" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="321.0" y="96.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="321.0" y="115.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="321.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">yığının 1/4'ü</text>
+  <rect x="402" y="76" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="467.0" y="96.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="467.0" y="115.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="467.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">yığının 1/4'ü</text>
+  <rect x="548" y="76" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="613.0" y="96.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="613.0" y="115.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="613.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">yığının 1/4'ü</text>
+  <text x="20.0" y="164.0" font-size="13" fill="var(--text-muted)">iletişim: adım sonunda gradyanlar tek bir hepsi-indirgeyle toplanır (2Ψ)</text>
+  <text x="20.0" y="224.0" font-size="13" font-weight="bold" fill="var(--accent)">tensör</text>
+  <rect x="110" y="184" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="175.0" y="204.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="175.0" y="223.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">matrisin 1/4'ü</text>
+  <text x="175.0" y="242.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <rect x="256" y="184" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="321.0" y="204.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="321.0" y="223.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">matrisin 1/4'ü</text>
+  <text x="321.0" y="242.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <rect x="402" y="184" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="467.0" y="204.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="467.0" y="223.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">matrisin 1/4'ü</text>
+  <text x="467.0" y="242.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <rect x="548" y="184" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="613.0" y="204.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="613.0" y="223.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">matrisin 1/4'ü</text>
+  <text x="613.0" y="242.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <text x="20.0" y="272.0" font-size="13" fill="var(--text-muted)">iletişim: her katmanda dört hepsi-indirge; aktivasyon taşınır, sunucu içinde kalır</text>
+  <text x="20.0" y="332.0" font-size="13" font-weight="bold" fill="var(--accent)">boru hattı</text>
+  <rect x="110" y="292" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="175.0" y="312.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">katman 1–24</text>
+  <text x="175.0" y="331.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="175.0" y="350.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <rect x="256" y="292" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="321.0" y="312.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">katman 25–48</text>
+  <text x="321.0" y="331.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="321.0" y="350.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <rect x="402" y="292" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="467.0" y="312.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">katman 49–72</text>
+  <text x="467.0" y="331.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="467.0" y="350.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <rect x="548" y="292" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="613.0" y="312.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">katman 73–96</text>
+  <text x="613.0" y="331.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">tam matrisler</text>
+  <text x="613.0" y="350.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün yığın</text>
+  <line x1="241" y1="326" x2="253" y2="326" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-107-gonder)" />
+  <line x1="387" y1="326" x2="399" y2="326" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-107-gonder)" />
+  <line x1="533" y1="326" x2="545" y2="326" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ok-107-gonder)" />
+  <text x="20.0" y="380.0" font-size="13" fill="var(--text-muted)">iletişim: yalnızca komşu karta aktivasyon gönderimi; bedeli kabarcık</text>
+  <text x="20.0" y="440.0" font-size="13" font-weight="bold" fill="var(--accent)">dizi</text>
+  <rect x="110" y="400" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="175.0" y="420.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="175.0" y="439.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">matrisin 1/4'ü</text>
+  <text x="175.0" y="458.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">dizinin 1/4'ü</text>
+  <rect x="256" y="400" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="321.0" y="420.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="321.0" y="439.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">matrisin 1/4'ü</text>
+  <text x="321.0" y="458.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">dizinin 1/4'ü</text>
+  <rect x="402" y="400" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="467.0" y="420.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="467.0" y="439.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">matrisin 1/4'ü</text>
+  <text x="467.0" y="458.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">dizinin 1/4'ü</text>
+  <rect x="548" y="400" width="130" height="68" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="613.0" y="420.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">bütün katmanlar</text>
+  <text x="613.0" y="439.0" font-size="13" text-anchor="middle" fill="var(--text-muted)">matrisin 1/4'ü</text>
+  <text x="613.0" y="458.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">dizinin 1/4'ü</text>
+  <text x="20.0" y="488.0" font-size="13" fill="var(--text-muted)">iletişim: norm ve seyreltme bölgelerinde hepsi-topla + indirge-dağıt; bant aynı</text>
+  <text x="20.0" y="512.0" font-size="13" fill="var(--text-faint)">Vurgulu satır o eksenin böldüğü şeydir; dört kart örnektir, 96 katman GPT-3'ün ölçüsüdür.</text>
 </svg>

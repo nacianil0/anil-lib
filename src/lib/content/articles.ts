@@ -9,7 +9,7 @@ import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeReact from "rehype-react";
 
-import { getArticleBySlug, loadCatalog, resolveArticlePath } from "./catalog";
+import { getArticleBySlug, loadCatalog, resolveArticlePath, revisionOf } from "./catalog";
 import { formatZodError, frontmatterSchema, type CatalogArticle, type Frontmatter } from "./schema";
 import { mdxComponents } from "@/components/reader/markdown-components";
 import type { CurrentArticle } from "./types";
@@ -59,6 +59,8 @@ export function assertCatalogMatch(
   compare("content_hash", meta.contentHash, fm.content_hash);
   compare("classification_version", classificationVersion, fm.classification_version);
   compare("classification_batch", meta.classificationBatch, fm.classification_batch);
+  compare("revised_at", meta.revisedAt, fm.revised_at);
+  compare("revision_note", meta.revisionNote, fm.revision_note);
 
   if (mismatches.length > 0) {
     throw new Error(
@@ -112,6 +114,7 @@ export async function renderArticleBySlug(slug: string): Promise<RenderedArticle
     readingMinutes: estimateReadingMinutes(body),
     totalCount: loadCatalog().articles.length,
     classificationBatch: article.classificationBatch,
+    ...revisionOf(article),
   };
 
   return { meta, content };

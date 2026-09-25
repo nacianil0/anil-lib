@@ -12,9 +12,11 @@ tags:
   - cogunluk-oyu
   - hesap-tahsisi
   - maliyet
-content_hash: sha256:20d772349bb8a238bb4d0d0e0a390d5f2678c410eec4dc8c6d64d5c64f3aa24e
+content_hash: sha256:be0173bacff6fefa8feee481f8c103d8855917dc7152441c9651240c45791763
 classification_version: 1
 classification_batch: 7
+revised_at: "2026-09-25"
+revision_note: "Eğitim–çıkarım takasındaki 258, 63 ve 16 katlık çarpanların nereden geldiği sözle ve formülle kuruldu; doyan eğriler şeklinin başlangıç sırası düzeltildi."
 ---
 ## Uzayan üretim bir maliyet kararıdır
 
@@ -42,7 +44,7 @@ Charlie Snell ve arkadaşlarının ICLR 2025'te sunduğu çalışma ikisini tek 
 
 Paralel eksenin en sade ölçüsü şu: `k` deneme yapıldığında, en az bir denemede doğru cevaba varılan soruların oranı. Bu ölçünün adı **kapsama** (coverage) ve gösterimi `pass@k`.
 
-Kapsama, `k` büyüdükçe şaşırtıcı biçimde iyi ölçekleniyor. Dört büyüklük mertebesi boyunca, yani bir denemeden on bin denemeye kadar, artmaya devam ediyor ve toplu eğri bir güç yasasına benziyor. 9\. makalede eğitim tarafında gördüğümüz log-log doğrusunun çıkarım tarafındaki karşılığı gibi duruyor.
+Kapsama, `k` büyüdükçe şaşırtıcı biçimde iyi ölçekleniyor. Tekrarlı örneklemeyi ölçen çalışmalarda — aşağıdaki çalışmanın yeniden çözümlediği ölçümler bunlar — dört büyüklük mertebesi boyunca, yani bir denemeden on bin denemeye kadar, artmaya devam ediyor ve toplu eğri bir güç yasasına benziyor. 9\. makalede eğitim tarafında gördüğümüz log-log doğrusunun çıkarım tarafındaki karşılığı gibi duruyor.
 
 Rylan Schaeffer ve arkadaşlarının ICML 2025'te sunduğu çalışma bu benzerliğin yanıltıcı olduğunu gösteriyor. Tek bir soru için hesap basit: modelin o soruyu tek denemede çözme olasılığı `p` ise, `k` denemede hiç çözememe olasılığı `(1 − p)` üzeri `k`'dir. Yani **her soru için** başarısızlık üstel olarak düşer, güç yasasıyla değil. Çalışma bunu ölçüyor da: tek tek sorulara bakıldığında eğriler gerçekten üstel.
 
@@ -64,7 +66,7 @@ Yangzhen Wu ve arkadaşlarının ICLR 2025'te sunduğu çalışma bu iki yolun m
 
 Deney bunu doğruluyor. Aynı aileden 410 milyon ile 12 milyar parametre arasında beş model, ilkokul matematiği kümesinde artan bütçelerle ölçülüyor: hata oranı önce düzenli olarak düşüyor, sonra doyuyor.
 
-![Yatay ekseni soru başına çıkarım işlem sayısı, dikey ekseni hata oranı olan bir eğri şeması. Beş ayrı model boyu için beş eğri çizilmiştir. Küçük modellerin eğrileri solda daha düşük başlar ve erken doyar; büyük modellerin eğrileri sağda daha aşağıya iner. Eğrilerin kesiştiği bölgelere birer işaret konmuş ve her işaret o bütçedeki en iyi model boyunu gösterir. Şeklin altında küçük modellerin düşük bütçede, büyük modellerin yüksek bütçede tercih edildiği ve her eğrinin bir doyma noktası olduğu yazılıdır.](assets/doyan-egriler.svg "Şekil 2 — Her eğrinin bir tabanı var")
+![Yatay ekseni soru başına çıkarım işlem sayısı, dikey ekseni hata oranı olan, üstü çok hata altı az hata diye etiketlenmiş bir eğri şeması. 410M, 1,4B, 2,8B, 6,9B ve 12B diye etiketli beş model boyu için beş eğri vardır. Küçük modellerin eğrileri solda, az işlemle başlar ve yüksek bir hata düzeyinde erken doyar; büyük modellerin eğrileri daha sağda ve daha düşük bir hatayla başlar, daha aşağıya iner. Üç işaret o bütçede en az hatayı veren boyu gösterir: solda 410M, ortada 2,8B, sağda 12B. Şeklin altında her eğrinin önce inip sonra kendi tabanında doyduğu, düşük bütçede küçük, yüksek bütçede büyük modelin daha iyi olduğu ve eğrilerin biçiminin şematik, kesişme ile doymanın yönünün ise ölçülmüş olduğu yazılıdır.](assets/doyan-egriler.svg "Şekil 2 — Her eğrinin bir tabanı var")
 
 Şekil 2'deki kesişmeler asıl bulguyu taşıyor: verilen bir çıkarım bütçesinde **en iyi model boyu değişiyor**. Düşük bütçede küçük modelden çok kez örneklemek daha iyi; küçük modelin eğrisi doyduktan sonra ise büyük model öne geçiyor. Çalışma bu ilişkiyi bir regresyonla da veriyor: bütçe ile en iyi model boyu arasında log-log ölçekte doğrusal bir bağıntı var.
 
@@ -86,21 +88,33 @@ Burada bir uyarı gerekli, çünkü 16\. makalenin disiplini bunu istiyor. "Soru
 
 Şimdi asıl soru. Aynı FLOP bütçesini eğitime mi çıkarıma mı harcamalı?
 
-Muhasebe 8\. ve 26\. makalelerden geliyor. Ön eğitim maliyeti 6ND, yani parametre sayısı çarpı token sayısı çarpı altı. Çıkarımda token başına maliyet 2N idi; bir doğrulayıcı da çalıştırılıyorsa bu 4N oluyor. Modeli M kat büyütürsen iki maliyet de M kat artar. Küçük modele aynı FLOP'u çıkarımda harcamak istiyorsan, çarpanın büyüklüğü eğitim token sayısının çıkarım token sayısına oranına bağlı.
+Önce sözle kuralım. Modeli büyütmeyi seçersen iki yerde fazladan ödersin: ön eğitimde bir kez, çünkü daha büyük bir model eğitiyorsun; ve modelin ömrü boyunca ürettiği her çıkarım token'ında, çünkü her token daha büyük bir modelden geçiyor. Küçük modelde kalırsan bu iki fark cebinde kalır ve onu küçük modelin çıkarımına — daha çok deneme, daha çok düzeltme — harcayabilirsin. Asıl soru, bu cebin ne kadar büyük olduğu.
 
-Bu oran kritik ve dağıtım ortamına göre çok değişiyor. Bir kez eğitilip milyonlarca kez çağrılan bir modelde çıkarım token'ları eğitim token'larını geçebilir; kendi kendini iyileştiren bir eğitim hattında ise çıkarım token'ları çok daha az olur. Çalışma üç senaryo ölçüyor: çıkarımın eğitime oranı 0,08 · 0,40 · 11.
+Muhasebe 8\. ve 26\. makalelerden geliyor. N parametre sayısı, E ön eğitimde görülen token sayısı, Ç de modelin ömrü boyunca ürettiği toplam çıkarım token'ı olsun. Ön eğitimin maliyeti 8\. makaledeki kuralla 6 × N × E. Çıkarımda token başına maliyet 26\. makalede 2N idi; çalışma her token'a bir doğrulayıcı da çalıştırdığı için bunu 4N sayıyor, yani çıkarımın toplamı 4 × N × Ç. Modeli M kat büyütürsen iki terim de M kat büyür. Büyük modelin toplam faturasını, çıkarım token'ları X katına çıkarılmış küçük modelinkine eşitleyip X'i çekince çalışmanın verdiği çarpan çıkıyor:
 
-Oranın neden bu kadar belirleyici olduğunu bir hesapla görelim. Büyütme çarpanı 14 olsun. Çıkarımın eğitime oranı 0,08 iken, küçük modelin çıkarım hesabı yaklaşık **258 katına** çıkarılabiliyor: büyük modelin harcadığı ek eğitim FLOP'u, küçük modelin çıkarımında devasa bir bütçeye dönüşüyor. Aynı çarpanla ama oran 11 iken bu sayı yaklaşık **16 kata** iniyor, çünkü modeli büyütmek zaten milyarlarca çıkarım çağrısının hepsini pahalılaştırdığından karşılaştırma noktası çok daha erken geliyor. Aynı model, aynı soru ve aynı yöntemle, yalnızca dağıtım ortamı değiştiği için karar tersine dönebiliyor.
+çıkarım çarpanı = M + 1,5 × (M − 1) ÷ R
 
-![Tek bir bütçe kutusundan iki kola ayrılan bir şema. Üstte aynı FLOP bütçesini gösteren bir kutu vardır. Sol kol ön eğitime harcamayı gösterir ve altında maliyetin altı çarpı parametre çarpı token biçiminde yazıldığı, modelin on dört kat büyütüldüğü belirtilir. Sağ kol çıkarıma harcamayı gösterir ve altında token başına maliyetin doğrulayıcıyla birlikte dört çarpı parametre olduğu, küçük modele daha çok deneme yaptırıldığı yazılıdır. Altta üç satırlık bir karşılaştırma bulunur: kolay ve orta sorularda çıkarıma harcamanın, en zor sorularda ve çıkarım yükünün yüksek olduğu ortamlarda ön eğitime harcamanın kazandığı belirtilir.](assets/hesap-takasi.svg "Şekil 3 — Aynı FLOP, iki farklı yer")
+Burada R = Ç ÷ E, yani modelin ömrü boyunca ürettiği token'ların eğitimde gördüğü token'lara oranı. Formülün iki parçası sözle okunabiliyor. İlk terim M: büyük modelin her çıkarım token'ı zaten M kat pahalı, dolayısıyla küçük model en az M kat fazla token üretebilir. İkinci terim, büyük modelin fazladan eğitim maliyetinin bütün çıkarım token'larına bölüştürülmüş payı; 1,5 katsayısı eğitimdeki 6 ile çıkarımdaki 4'ün oranı. Çıkarım token'ı azsa, yani R küçükse, bu pay az sayıda token'a bölünür ve büyür; çoksa erir.
+
+Bu oran dağıtım ortamına göre çok değişiyor. Bir kez eğitilip milyonlarca kez çağrılan bir modelde çıkarım token'ları eğitim token'larını geçebilir; kendi kendini iyileştiren bir eğitim hattında ise çıkarım token'ları çok daha az olur. Çalışma üç senaryo ölçüyor: R = 0,08 · 0,40 · 11.
+
+Sayıları koyalım. Çalışma modeli yaklaşık 14 kat büyütüyor, yani M = 14; buradan M − 1 = 13 ve 1,5 × 13 = 19,5. Üç senaryonun çarpanlarını çalışmanın formülünden biz hesapladık:
+
+- R = 0,08 iken 19,5 ÷ 0,08 ≈ 244; buna 14 eklenince yaklaşık **258 kat**.
+- R = 0,40 iken 19,5 ÷ 0,40 ≈ 49; buna 14 eklenince yaklaşık **63 kat**.
+- R = 11 iken 19,5 ÷ 11 ≈ 1,8; buna 14 eklenince yaklaşık **16 kat**.
+
+Sayıların anlamı şu: çıkarım token'ı az olan bir hatta küçük model, toplam fatura aynı kalmak şartıyla her soru için büyük modelin harcadığının yaklaşık 258 katı token harcayabiliyor; büyük modelin ek eğitim maliyeti, küçük modelin çıkarımında büyük bir bütçeye dönüşüyor. Milyarlarca çağrı alan bir üründe ise o pay neredeyse tamamen eriyor ve geriye kabaca M'nin kendisi kalıyor: küçük model her soru için büyük modelin ancak 16 katı kadar token harcayabiliyor, bu da aşağı yukarı iki modelin token başına fiyat farkı. Aynı model, aynı soru ve aynı yöntemle, yalnızca dağıtım ortamı değiştiği için karar tersine dönebiliyor.
+
+![Tek bir bütçe kutusundan iki kola ayrılan bir şema. Üstte aynı FLOP bütçesini gösteren bir kutu vardır. Sol kol ön eğitime harcamayı gösterir; maliyet 6 × N × E olarak yazılır ve modelin 14 kat büyütüldüğü belirtilir. Sağ kol çıkarıma harcamayı gösterir; doğrulayıcıyla birlikte maliyet 4 × N × Ç olarak yazılır ve küçük modele çok deneme yaptırıldığı belirtilir. Altta üç satırlık bir karşılaştırma bulunur: kolay ve orta sorularda çıkarıma harcamak, en zor sorularda ve R büyükken, yani çıkarım yükü yüksekken ön eğitime harcamak kazanır. En altta küçük modelin çıkarım çarpanı üç senaryo için verilir: R = 0,08 iken yaklaşık 258 kat, 0,40 iken 63 kat, 11 iken 16 kat; son satır eğitimin bir kez, çıkarımın her soruda ödendiğini ve iki hesabın birebir takas edilemediğini söyler.](assets/hesap-takasi.svg "Şekil 3 — Aynı FLOP, iki farklı yer")
 
 Şekil 3'ün alt satırları karşılaştırmanın sonucunu taşıyor. Çalışma bunu, on dört kat büyük bir modelin fazladan çıkarım hesabı olmadan aldığı puanı, küçük modelin aynı FLOP'la çizdiği eğriyle karşılaştırarak ölçüyor.
 
-Sonuç iki yönlü ve bu yüzden dürüst. Kolay ve orta zorluktaki sorularda, ya da çıkarım yükünün düşük olduğu ortamlarda, çıkarım anında hesap harcamak modeli büyütmeye tercih edilebilir. En zor sorularda ya da çıkarım yükünün yüksek olduğu ortamlarda ise ön eğitim kazanıyor. Yani iki hesap birebir takas edilebilir değil; hangisinin daha iyi olduğu soruya ve dağıtım biçimine bağlı.
+Sonuç iki yönlü. Kolay ve orta zorluktaki sorularda, ya da çıkarım yükünün düşük olduğu ortamlarda, çıkarım anında hesap harcamak modeli büyütmeye tercih edilebilir. En zor sorularda ya da çıkarım yükünün yüksek olduğu ortamlarda ise ön eğitim kazanıyor. Yani iki hesap birebir takas edilebilir değil; hangisinin daha iyi olduğu soruya ve dağıtım biçimine bağlı.
 
 > **Kendini yokla:** En zor sorularda çıkarım hesabının kaybetmesi, kapsama bölümünde kurduğumuz hangi gözlemin doğal sonucu?
 
-Modelin tek denemede çözme olasılığı çok küçük olan sorular, kapsamayı ancak katlanarak artan deneme sayısıyla yükseltiyordu. Yani zorluk arttıkça, aynı doğruluk kazancı için ödenen çıkarım hesabı hızla büyür. Ön eğitim ise o olasılığın kendisini değiştirir — dolayısıyla dağılımın en soğuk kuyruğunda tek etkili müdahale odur.
+Modelin tek denemede çözme olasılığı çok küçük olan sorular, kapsamayı ancak katlanarak artan deneme sayısıyla yükseltiyordu. Yani zorluk arttıkça, aynı doğruluk kazancı için ödenen çıkarım hesabı hızla büyür. Ön eğitim ise o olasılığın kendisini değiştirir — dolayısıyla tek denemede neredeyse hiç çözülemeyen soruların bulunduğu kuyrukta tek etkili müdahale odur.
 
 ## Faturayı kim öder
 
@@ -108,11 +122,11 @@ Bu eksenin mühendislik tarafı 26\. ve 28\. makalelerin doğrudan devamı, ve p
 
 Düşünme token'ları çıktı token'larıdır. Yani ön dolumun paralel ve ucuz tarafında değil, adım adım üretimin bellek bant genişliğiyle sınırlı tarafında üretilirler. 26\. makalede token başına yaklaşık 2N işlem hesabını yapmıştık; düşünme süresi satın almak, o hesabı istediğin token sayısıyla çarpmak demek. Doğrulayıcı da çalıştırılıyorsa çarpan ikiye katlanıyor.
 
-Küçük bir hesap yapalım. 7 milyar parametreli bir model, tek bir soru için 1.000 düşünme token'ı üretsin. Token başına yaklaşık 2N işlemden, bu sorunun çıkarım maliyeti 2 × 7×10⁹ × 1.000 = 1,4×10¹³ işlem eder. Her adaya bir doğrulayıcı da çalıştırılırsa 2,8×10¹³. Şimdi bunu on altı paralel adayla çarpalım: tek bir soru için yaklaşık 4,5×10¹⁴ işlem. Karşılaştırma için 20\. makaledeki sayıyı hatırlayalım: GPT-3'ün bütün ön eğitimi 3,14×10²³ işlemdi. Yani bu düzendeki yaklaşık yedi yüz milyon soru, bir ön eğitim koşusu kadar hesap harcar. Çıkarım hesabının eğitim hesabıyla yarışabilmesinin sebebi tam olarak budur: eğitim bir kez ödenir, çıkarım her soruda.
+Küçük bir hesap yapalım. 7 milyar parametreli bir model, tek bir soru için 1.000 düşünme token'ı üretsin. Token başına yaklaşık 2N işlemden, bu sorunun çıkarım maliyeti 2 × 7×10⁹ × 1.000 = 1,4×10¹³ işlem eder. Her adaya bir doğrulayıcı da çalıştırılırsa 2,8×10¹³. Şimdi bunu on altı paralel adayla çarpalım: tek bir soru için yaklaşık 4,5×10¹⁴ işlem. Karşılaştırma için 8\. makalede hesapladığımız sayıyı hatırlayalım: GPT-3'ün bütün ön eğitimi 3,14×10²³ işlemdi. Yani bu düzendeki yaklaşık yedi yüz milyon soru, bir ön eğitim koşusu kadar hesap harcar. Çıkarım hesabının eğitim hesabıyla yarışabilmesinin sebebi tam olarak budur: eğitim bir kez ödenir, çıkarım her soruda.
 
 Paralel adaylar bu tabloda avantajlı. Aynı istemi paylaştıkları için ön dolum bir kez ödenir ve önbelleğin istem kısmı yeniden kullanılır; ayrıca aynı yığında üretilebildikleri için kartın iş hacmi verimli kullanılır. Sıralı düzeltmelerde ise her adım bir öncekini beklediğinden yalnızca toplam token sayısı değil, **gecikme** de artar. 28\. makaledeki iki ölçüyü hatırlarsak: paralel eksen çıktı token'ı başına süreyi bozmadan iş hacmini kullanır, sıralı eksen ise doğrudan kullanıcının beklediği süreye yazılır.
 
-Son olarak bir ekonomi notu. Kapsama eğrisinin uzun süre yükselmesi cazip görünüyor ama ödenen bedel doğrusal: iki kat kapsama için değil, sabit bir kapsama artışı için katlanarak artan örnek gerekiyor. Doygunluk teoremi bunun matematiksel sınırını veriyordu; fatura ise pratik sınırını veriyor.
+Son olarak bir ekonomi notu. Kapsama eğrisinin uzun süre yükselmesi cazip görünüyor, ama iki taraf farklı hızda büyüyor. Fatura örnek sayısıyla doğrusal artar: her örnek aynı bedeli öder. Kapsamadaki artış ise giderek küçülür: sabit bir kapsama artışı için örnek sayısını her seferinde katlamak gerekiyor. Doygunluk teoremi bunun matematiksel sınırını veriyordu; fatura ise pratik sınırını veriyor.
 
 ## Çıkarım hesabının disiplini
 

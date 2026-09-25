@@ -47,5 +47,5 @@
   <text x="375" y="369" font-size="14" text-anchor="middle" fill="var(--text)">Politika</text>
 
   <text x="480" y="358" font-size="13" text-anchor="start" fill="var(--text-faint)">ayrı ödül modeli yok; tasma</text>
-  <text x="480" y="378" font-size="13" text-anchor="start" fill="var(--text-faint)">kaybın içine gömülü</text>
+  <text x="480" y="378" font-size="13" text-anchor="start" fill="var(--text-faint)">kaybın içine yerleşik</text>
 </svg>

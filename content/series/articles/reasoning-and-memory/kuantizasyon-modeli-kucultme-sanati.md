@@ -12,7 +12,7 @@ tags:
   - egitim-sonrasi-kuantizasyon
   - bit-genisligi
   - olcum-disiplini
-content_hash: sha256:513d804f22775385c8fb99013edbfa577582b104031165f97e76881dd87dd210
+content_hash: sha256:71e9b0b31ddd0bbca73206123d3e7fb712fb72ffe5515b4a38edcb5923462fd0
 classification_version: 1
 classification_batch: 6
 ---
@@ -40,7 +40,7 @@ Bu sabit bedava değil. Sabiti kaç ağırlığa bölüştürdüğün, kuantizas
 
 ![İki panelli bir sayı doğrusu karşılaştırması. Üstteki panelde eşit aralıklı ızgara çizgileri bulunur ve üç ağırlık örnek olarak çizginin üstüne konmuştur; her biri kısa bir bağlantıyla en yakın ızgara çizgisine çekilir ve altında hata payının ızgara adımının yarısı kadar olduğu yazılıdır. Alttaki panelde aynı sekiz ağırlıktan biri ötekilerin on kat uzağına yerleştirilmiştir; ızgara bu aykırı değere göre gerildiği için kalan yedi ağırlığın hepsi aynı sıfır çizgisine düşer ve panelin altında bu çöküşün sebebi yazılıdır.](assets/izgara-ve-aykiri-deger.svg "Şekil 1 — Aynı ızgara, tek bir aykırı değerle")
 
-Şekil 1'in alt paneli bu makalenin asıl sorununu gösteriyor. Aynı sekiz sayıdan birini −6,3 yapalım, yani ötekilerin on katı. Ölçek artık ona göre kurulur ve adım 0,9'a çıkar. Kalan yedi sayının hepsi 0,9'un yarısından küçük olduğu için hepsi **sıfıra** yuvarlanır. Tek bir **aykırı değer** (outlier), bloğun geri kalanını silmiştir.
+Şekil 1'in alt paneli işin nerede bozulduğunu gösteriyor. Aynı sekiz sayıdan −0,63'ü −6,3 yapalım, yani on katına çıkaralım. Ölçek artık ona göre kurulur ve adım 0,9'a çıkar. Kalan yedi sayının hepsi 0,9'un yarısından küçük olduğu için hepsi **sıfıra** yuvarlanır. Tek bir **aykırı değer** (outlier), bloğun geri kalanını silmiştir.
 
 ## Aykırı değerler nerede yaşıyor
 
@@ -71,7 +71,7 @@ En basit yöntem, her ağırlığı bağımsız olarak en yakın ızgara noktas�
 
 GPTQ'nun yaptığı şey, yuvarlamayı bağımsız kararlar dizisi olarak görmemek. Bir ağırlığı yuvarlarken oluşan hatayı aynı katmandaki **henüz yuvarlanmamış** ağırlıklara dağıtıyor; onlar da bu telafiyi üstlenerek yuvarlanıyor. Böylece hedef tek tek ağırlıkları korumak değil, katmanın çıktısını korumak oluyor. Hangi ağırlığın ne kadar telafi alacağını belirlemek için küçük bir kalibrasyon kümesi kullanılıyor: C4 derleminden rastgele seçilmiş 128 tane 2.048 token'lık parça. Bütün işlem 175 milyar parametreli bir model için tek bir kartta yaklaşık dört saat sürüyor — modeli yeniden eğitmek yok, tek geçişte yuvarlama var. Alanın adlandırması bu yüzden **eğitim sonrası kuantizasyon** (post-training quantization).
 
-Pratik karşılığı da var. 3 bite indirilmiş 175 milyarlık model, embedding ve çıkış katmanları 16 bitte bırakılsa bile yaklaşık 63 gigabayt tutuyor ve önbelleğiyle birlikte tek bir 80 gigabaytlık karta sığıyor; 16 bitlik hâli beş kart istiyordu. Token başına gecikme aynı kartta 230 milisaniyeden 71 milisaniyeye iniyor.
+Pratik karşılığı da var. 3 bite indirilmiş 175 milyarlık model, embedding ve çıkış katmanları 16 bitte bırakılsa bile yaklaşık 63 gigabayt tutuyor ve önbelleğiyle birlikte tek bir 80 gigabaytlık karta sığıyor; 16 bitlik hâli beş kart istiyordu. Token başına gecikme de düşüyor: aynı türden kartlarda 16 bitlik hâl beş kartta 230 milisaniye, 3 bitlik hâl tek kartta 71 milisaniye — kabaca 3,2 kat. Kazancın kaynağı 26\. makaledeki muhasebe: her token için okunacak bayt azaldı.
 
 Ji Lin ve arkadaşlarının MLSys 2024'te en iyi bildiri ödülünü alan çalışması aynı problemi başka bir yerden yakalıyor: bütün ağırlıklar eşit derecede önemli değil ve hangilerinin önemli olduğuna **ağırlığa değil aktivasyona** bakarak karar vermek gerekiyor. Ağırlıkların yüzde birini korumak kuantizasyon hatasını belirgin biçimde düşürüyor; korumanın yolu da o kanalları önceden ölçeklemek. Yöntem geriye yayılım ya da yeniden kurulum kullanmadığı için, yazarların iddiasına göre kalibrasyon kümesine aşırı uyum sağlamıyor. Buradaki risk 2\. makaledeki aşırı öğrenmenin bu alandaki karşılığıdır: yuvarlamayı 128 metin parçasına göre ayarlarsan, o parçalara benzemeyen girdilerde kaybın büyüyebilir.
 
@@ -81,7 +81,7 @@ Elimizde iki eksen var: modelin parametre sayısı ve parametre başına bit. To
 
 Dettmers ve Zettlemoyer'in ICML 2023'te sunduğu çalışma bu soruyu 19 milyondan 176 milyara kadar beş model ailesinde, 3 ile 16 bit arasında, 35.000'den fazla deneyle taradı. Sonuç şaşırtıcı derecede keskin: sabit bir toplam bit bütçesinde hassasiyeti 16'dan 4'e düşürmek başarıyı **istikrarlı biçimde artırıyor**, 3 bitte ise ilişki tersine dönüyor. Yani 4 bit, denenen bütün ölçeklerde ve ailelerde neredeyse evrensel olarak optimal. Aynı çalışma blok boyu için de 64 ile 128 arasını öneriyor.
 
-![Yatay ekseninde toplam model biti, dikey ekseninde ölçülen ortalama başarı bulunan bir grafik. Dört eğri çizilidir: 16 bit, 8 bit, 4 bit ve 3 bit hassasiyet. Aynı toplam bit değerinde 4 bitlik eğri 8 ve 16 bitlik eğrilerin üstünde, 3 bitlik eğri ise hepsinin altındadır. Grafiğin üzerinde dikey kesik çizgiyle aynı toplam bit değeri işaretlenmiş ve bu çizgi üzerinde iki nokta konmuştur: biri 8 bitlik eğrinin, öbürü 4 bitlik eğrinin üzerindedir ve 4 bitlik olan daha yüksektedir.](assets/bit-genisligi-ve-basari.svg "Şekil 2 — Aynı bit bütçesi, farklı hassasiyet")
+![Yatay ekseninde toplam model biti, dikey ekseninde ortalama başarı bulunan şematik bir grafik. Dört eğri çizilidir: 16 bit, 8 bit, 4 bit ve 3 bit hassasiyet. Aynı toplam bit değerinde 4 bitlik eğri 8 ve 16 bitlik eğrilerin üstünde, 3 bitlik eğri ise hepsinin altındadır. Dikey kesik çizgi aynı toplam bit değerini işaretler; üzerindeki iki noktadan 4 bitlik eğrideki, 8 bitlik eğridekinden yüksektir. Altta eğrilerin biçiminin şematik, sıralamanın ise ölçülmüş olduğu yazılıdır.](assets/bit-genisligi-ve-basari.svg "Şekil 2 — Aynı bit bütçesi, farklı hassasiyet")
 
 Şekil 2'deki eğriler bir mühendislik reçetesi veriyor: bütçen daralıyorsa hassasiyeti düşürme, **modeli küçült**. Dört bitte kal ve parametre sayısıyla oyna.
 
@@ -119,7 +119,7 @@ Bulgunun tuhaflığı da öğretici. Dört şıklı bir soruda doğru cevabın b
 
 Bu sezgiye ters bir sonuç ve 9\. makaledeki tahsis tartışmasını doğrudan etkiliyor. Chinchilla'nın hesap-optimal oranı parametre başına yaklaşık 20 token'dı. Bugün üretilen modeller bunun çok ötesinde eğitiliyor; bir aile parametre başına 2.000 token'a kadar çıkıyor. Çalışmanın bulduğu şey şu: yeterince yüksek bir token/parametre oranında ek veri, eğitim kaybını düşürdüğünden daha fazla kuantizasyon bozulması ekliyor. Yani modeli kuantize ederek servis edeceksen, bir noktadan sonra **daha fazla ön eğitim verisi çıkarım zamanında zarar veriyor**.
 
-Sebebin sezgisi 18\. makaleyle aynı çerçevede: model daha çok veri gördükçe aynı ağırlıklara daha çok bilgi sıkıştırıyor. Sıkıştırma arttıkça, ağırlıklara verilen aynı miktarda bozulma daha çok şeyi bozuyor. Aynı çalışma, ağırlık hassasiyetinden alınan kazancın parametre başına altı-yedi bit civarında doyduğunu da ölçüyor: 16 bitin bir gerekçe değil, bir alışkanlık olduğuna dair bir işaret.
+Sebebin sezgisi 18\. makaleyle aynı çerçevede: model daha çok veri gördükçe aynı ağırlıklara daha çok bilgi sıkıştırıyor. Sıkıştırma arttıkça, ağırlıklara verilen aynı miktarda bozulma daha çok şeyi bozuyor. Aynı çalışma, eğitim sırasında ağırlık hassasiyetini artırmanın kazancının parametre başına altı-yedi bit civarında doyduğunu da ölçüyor: 16 bitin bir gerekçe değil, bir alışkanlık olduğuna dair bir işaret.
 
 > **Kendini yokla:** Aynı mimariyi iki farklı veri bütçesiyle eğitip ikisini de dört bite indirsen, hangisinin kaybı daha büyük olur ve neden?
 

@@ -12,9 +12,11 @@ tags:
   - tercih-optimizasyonu
   - dpo
   - asiri-optimizasyon
-content_hash: sha256:b023bfcca42499f680a62f88180f2fb88d1402765bb211fdf9e01f9dc792c804
+content_hash: sha256:300d3ba6899af859022c9b0160e64ed78d07b6aee2864f242755413353f40bf0
 classification_version: 1
 classification_batch: 2
+revised_at: "2026-09-25"
+revision_note: "KL cezasına tek token üzerinden sayısal örnek eklendi; DPO'nun kaybı, ödül modeli tablosundaki aynı hesapla adım adım gösterildi."
 ---
 ## Cevap anahtarı olmayan sorular
 
@@ -69,11 +71,13 @@ InstructGPT'de bütün boyutlardaki politikalar için tek bir 6 milyar parametre
 
 2\. makaledeki döngüyle karşılaştır: orada kayıp vardı ve onu **azaltıyorduk**; burada ödül var ve onu **artırıyoruz**. İşaret dışında yapı aynıdır; ödül, tersine çevrilmiş bir kayıptır. Farklı olan şey, doğru cevabın önceden bilinmemesidir — model kendi ürettiği cevaplar üzerinden öğrenir. Bu ayrımın kendi biçimsel çerçevesi vardır ve seride ilerideki bir makalede kurulacaktır; burada mekanizmayı çalıştırmak için gereken tek şey, ödülün yönünü bilmektir.
 
-Şimdi bu döngünün en kritik parçası geliyor ve olmasa her şey çöker.
+Bu döngü tek başına bırakılırsa bozulur ve nedenini görmek, düzeneğin geri kalanını anlamanın anahtarı.
 
 Ödül modeli bir vekildir, gerçeğin kendisi değil. Politika, ödül modelinin zayıf noktalarını bulup sömürebilir: onun yüksek puan verdiği ama insanın berbat bulacağı metinler üretmeye başlayabilir. Bunu engellemek için politikanın başlangıç noktasından — yani SFT modelinden — fazla uzaklaşması cezalandırılır. Ölçü, iki olasılık dağılımının birbirinden ne kadar ayrıştığını veren bir sayıdır ve adı KL ıraksamasıdır (Kullback–Leibler divergence); biçimsel kurulumu seride ileride yapılacak, burada işlevi yeterli: SFT modelinin o token'a verdiği olasılıkla politikanın verdiği olasılık ayrıştıkça büyüyen bir ceza.
 
 InstructGPT'de bu ceza her token'da ayrı ayrı uygulanır. Nisan Stiennon ve arkadaşlarının NeurIPS 2020'de yayımlanan özetleme çalışması, aynı terimin iki işi birden gördüğünü yazar: politikanın tek bir kalıba çökmesini engelleyen bir keşif teşviki olur, ve politikanın ödül modelinin eğitim sırasında hiç görmediği türden çıktılara kaymasını önler.
+
+Yani politikanın gerçekte kovaladığı sayı tek parça değildir: ödül modelinin verdiği puandan, referans modelden uzaklaşmanın cezası düşülür. Cezanın ne kadar ağır basacağını bir katsayı belirler; InstructGPT'de bu katsayı 0,02'dir. Tek bir token üzerinde görelim — katsayı dışındaki sayılar açıklama amaçlı seçilmiştir. SFT modeli bir bağlamda belli bir kelimeye 0,20 olasılık veriyor, politika ise eğitim sırasında bunu 0,60'a çıkarmış olsun. Ceza iki olasılığın oranına bakar: 0,60 ÷ 0,20 = 3, doğal logaritması ln 3 = 1,10. Katsayıyla çarpınca 0,02 × 1,10 = 0,022 — tek token için ihmal edilebilir bir bedel. Ama cevap iki yüz token uzunluğundaysa ve politika ortalamada her adımda bu kadar kaymışsa, ceza 200 × 0,022 = 4,4'e çıkar; bu, az önceki tablodaki 0,8'lik ödül farkının beş katından fazladır. Bu cezaya bundan sonra kısaca tasma diyeceğiz, ve mantığı budur: tek tek token'larda küçük sapmalara izin verir, cevabın tamamına yayılan sistematik bir kaymayı ise ödülün karşılayamayacağı kadar pahalı kılar.
 
 ![Kapalı bir döngü: politika kutusundan çıkan ok üretilen cevaba, oradan ödül modeline, oradan güncelleme adımına ve geri politikaya gider. Politikanın yanında sabit duran referans model kutusu vardır; ikisi arasındaki kesikli bağ KL cezası diye etiketlenmiştir. Ayrı bir kısayol oku tercih çiftinden doğrudan politikaya gider ve ödül modeli kutusunu atlar.](assets/odul-dongusu-ve-kisayol.svg "Şekil 2 — Ödül döngüsü ve onu kısaltan yol")
 
@@ -93,7 +97,7 @@ Leo Gao, John Schulman ve Jacob Hilton'ın ICML 2023'te yayımladığı çalış
 
 Buradan çıkan şey 9\. makaledeki uyarının bir başka yüzü. Orada aynı eğriyi iki farklı cetvelle ölçmenin sonucu değiştirdiğini görmüştük; burada cetvelin kendisi optimize edilen şey olduğunda bozulduğunu görüyoruz.
 
-Bir benzetme yardımcı olabilir ama sınırını da baştan söyleyelim. Ödül modeli, sınavı hazırlayan öğretmenin yerine geçmiş bir asistan gibidir: gerçek öğretmenin nasıl puanladığını izlemiş ve taklit etmeyi öğrenmiştir. Öğrenci bir süre asistanı memnun ederek gerçekten öğrenir; ama asistanın alışkanlıklarını yeterince tanıdığında, öğrenmeden puan almanın yollarını bulur. Benzetmenin bozulduğu yer şurası: buradaki öğrenci kasten kandırmaya çalışmaz, hiçbir niyeti yoktur — yalnızca puanı yükselten yönde parametre oynatan bir yordam çalışır. Benzetmenin biçimsel karşılığı ise şudur: politika, ödül modelinin gerçek insan yargısıyla ayrıştığı bölgelere doğru gradyan izler, çünkü orada ödül daha yüksektir.
+Bir benzetme yardımcı olabilir. Ödül modeli, sınavı hazırlayan öğretmenin yerine geçmiş bir asistan gibidir: gerçek öğretmenin nasıl puanladığını izlemiş ve taklit etmeyi öğrenmiştir. Öğrenci bir süre asistanı memnun ederek gerçekten öğrenir; ama asistanın alışkanlıklarını yeterince tanıdığında, öğrenmeden puan almanın yollarını bulur. Benzetme bir noktada yanıltır: buradaki "öğrenci"nin niyeti yoktur, kimseyi kandırmaya çalışmaz; yalnızca puanı yükselten yönde parametre oynatan bir yordam çalışır. Olan şey şudur: politika, ödül modelinin gerçek insan yargısından ayrıştığı bölgelere doğru gradyan izler, çünkü orada ödül daha yüksektir.
 
 > **Kendini yokla:** Ödül modelinin puanı yükselirken gerçek kalite neden düşebilir?
 
@@ -105,9 +109,13 @@ Bu düzenek karmaşıktır. İki ayrı model, bir pekiştirmeli öğrenme döng�
 
 Rafael Rafailov ve arkadaşlarının NeurIPS 2023'te yayımlanan ve konferansın öne çıkan çalışmaları arasında ikincilikle anılan makalesi, düzeneği kısaltan bir gözlem yaptı. Ödül modeli farklı bir biçimde parametrelendirilirse, o ödülü en iyi kullanan politika kapalı biçimde yazılabiliyor. Sonuç şu: ayrı bir ödül modeli eğitip sonra ona göre pekiştirmeli öğrenme çalıştırmak yerine, tercih çiftleri doğrudan politikanın üzerinde basit bir sınıflandırma kaybıyla kullanılabiliyor. Çalışmanın başlığındaki espri de bunu söylüyor — dil modelin zaten gizliden gizliye bir ödül modelidir.
 
-Yaptığı iş sezgi düzeyinde şudur: yeğlenen cevabın olasılığını artır, yeğlenmeyenin olasılığını azalt; ama bunu referans modele göre yap ve modelin sıralamayı ne kadar yanlış kurduğuna göre ağırlıklandır. Tasma kaybolmuyor, kaybın içine gömülüyor. 11\. makalede üçüncü durağın toplu adını tercih optimizasyonu koymuştuk; ödül modelini hiç kurmadan ilerleyen bu doğrudan yolların en bilineni DPO'dur.
+Yaptığı iş sezgi düzeyinde şudur: yeğlenen cevabın olasılığını artır, yeğlenmeyenin olasılığını azalt; ama bunu referans modele göre yap ve modelin sıralamayı ne kadar yanlış kurduğuna göre ağırlıklandır.
 
-Dürüstlük notu: çalışmanın kendi deneyleri 6 milyar parametreye kadar olan modellerde yürütüldü ve yazarlar hem çok daha büyük ölçeklere taşımayı hem de dağılım dışı genellemenin pekiştirmeli öğrenmeyle nasıl karşılaştırıldığını açık soru olarak bırakıyor. DPO pratikte yaygın biçimde benimsendi, ama "her durumda RLHF'nin yerini alır" cümlesi kapanmış bir tartışma değil.
+Bunu sayıyla görmenin en kısa yolu yukarıdaki tabloya dönmek, çünkü DPO'nun kaybı o tablodaki kaybın ta kendisidir; değişen yalnızca *d*'nin nereden geldiği. DPO'da bir cevabın "örtük ödülü", politikanın o cevaba verdiği log-olasılığın referans modelin verdiğinden ne kadar yüksek olduğudur, bir katsayıyla çarpılmış hâliyle. Katsayı 0,1 olsun; politika yeğlenen cevabın log-olasılığını referansa göre 3 birim artırmış, yeğlenmeyeninkini 5 birim azaltmış olsun (sayılar açıklama amaçlıdır). Örtük ödüller 0,1 × 3 = 0,3 ve 0,1 × (−5) = −0,5; farkları *d* = 0,8. Buradan sonrası bildiğimiz yol: tablonun üçüncü satırı, tercih olasılığı 0,690, kayıp 0,371. Ayrı bir ödül modeline gerek kalmıyor, çünkü politikanın referansa göre ne kadar kaydığı ödülün yerini tutuyor. Referans model de tam bu yüzden hesabın içinde kalıyor: tasma kaybolmuyor, kaybın içine yerleşiyor. Kayma ödüllendiriliyor ama sınırsızca değil: *d* büyüdükçe kayıp sıfıra, onu azaltan itiş de sıfıra yaklaşır — tablonun son satırında *d* = 3,0 iken kayıp 0,049'dur ve o çift artık neredeyse hiçbir şey öğretmez. Katsayı da tasmanın boyunu ayarlar: katsayı küçüldükçe aynı *d*'ye ulaşmak için daha çok kayma gerekir, yani politika referanstan daha uzağa gidebilir.
+
+11\. makalede üçüncü durağın toplu adını tercih optimizasyonu koymuştuk; ödül modelini hiç kurmadan ilerleyen bu doğrudan yolların en bilineni DPO'dur.
+
+Yöntemin kanıtının nerede bittiğini de bilmek gerekiyor: çalışmanın kendi deneyleri 6 milyar parametreye kadar olan modellerde yürütüldü ve yazarlar hem çok daha büyük ölçeklere taşımayı hem de dağılım dışı genellemenin pekiştirmeli öğrenmeyle nasıl karşılaştırıldığını açık soru olarak bırakıyor. DPO pratikte yaygın biçimde benimsendi, ama "her durumda RLHF'nin yerini alır" cümlesi kapanmış bir tartışma değil.
 
 Tartışmanın nereye oturduğunu gösteren bir sonraki adım da geldi. Fahim Tajwar ve arkadaşlarının ICML 2024'te yayımlanan çalışması, tercih verisiyle ince ayarın farklı yollarını aynı düzenekte karşılaştırdı ve şu genel eğilimi buldu: modelin **kendi** ürettiği cevaplar üzerinde çalışan yöntemler ile belirli cevapların olasılığını aktif olarak aşağı iten yöntemler, sabit bir veri kümesi üzerinde en büyük olabilirlik hedefiyle çalışanlardan daha iyi sonuç veriyor. Bu, DPO'yu diskalifiye etmez — DPO da yeğlenmeyen cevabın olasılığını aşağı iter. Söylediği şey daha ince: asıl fark kaybın biçiminde değil, verinin nereden geldiğindedir. Tercih çiftleri eğitilen modelin güncel çıktılarından toplanıyorsa kazanç büyür; aylar önce başka bir modelden toplanmış sabit bir kümeyse küçülür.
 

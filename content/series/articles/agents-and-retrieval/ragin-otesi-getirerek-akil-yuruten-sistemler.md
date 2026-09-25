@@ -12,7 +12,7 @@ tags:
   - dusun-eyle-gozle
   - etkin-getirme
   - yansima-tokenlari
-content_hash: sha256:5d587253ce1ea09bf6bb51ea57823d0fb87a7aed3fc19e1c32587fe5c67d0c3f
+content_hash: sha256:726de179b48e2e1609f94dcd8cd090e3f13d2f68d68c4f1c7415a9c9ef22b8a1
 classification_version: 1
 classification_batch: 10
 ---
@@ -28,29 +28,21 @@ Alandaki adı **çok adımlı soru** (multi-hop question): cevabı birden çok b
 
 Önce getirmesiz hâli ölçelim. Model iki olguyu ayrı ayrı biliyorsa birleştirmesi kolay olmalı — değil mi?
 
-Ofir Press ve arkadaşlarının EMNLP 2023 bulguları programında sunduğu çalışma bunu doğrudan ölçtü. Ünlü kişilerin doğum yılı, doğum yeri gibi olgularını birleştiren iki adımlı sorular kurdular ve modele hem bileşik soruyu hem de iki alt soruyu ayrı ayrı sordular. Davinci-002, alt soruların büyük kısmını biliyor; bileşik soruların yüzde 45,4'ünü cevaplıyor. En zor kategoride tablo çarpıcı: alt soruların yüzde 80'i doğru, bileşik soruların yalnızca yüzde 1,2'si. Model her iki olguyu da "bilen" ama ikisini yan yana getiremeyen bir durumda.
+Ofir Press ve arkadaşlarının EMNLP 2023 bulguları programında sunduğu çalışma bunu doğrudan ölçtü. Ünlü kişilerin doğum yılı, doğum yeri gibi olgularını birleştiren iki adımlı sorular kurdular ve modele hem bileşik soruyu hem de iki alt soruyu ayrı ayrı sordular. Davinci-002, alt soruların büyük kısmını biliyor; bileşik soruların yüzde 45,4'ünü cevaplıyor. En zor kategoride alt soruların yüzde 80'i doğru, bileşik soruların ise yalnızca yüzde 1,2'si. Model her iki olguyu da "bilen" ama ikisini yan yana getiremeyen bir durumda.
 
 Yazarlar bu olguya **bileşim açığı** (compositionality gap) diyor: modelin alt soruları doğru cevaplayıp bileşik soruyu cevaplayamadığı soruların oranı. Ve çalışmanın asıl bulgusu, açığın ölçekle **kapanmaması**: küçükten büyüğe bütün model boylarında yaklaşık yüzde 40'ta sabit kalıyor. Model büyüdükçe daha çok olgu biliyor, ama bu olguları birleştirme yeteneği aynı hızda büyümüyor.
 
 31\. makaledeki tartışmayı hatırla: modelin akıl yürütmesi, eğitimde görülmüş hesap parçalarını tanıyıp birleştirmeye ne kadar dayanıyor? Bileşim açığı bu sorunun getirme dünyasındaki ölçüsü. İki olguyu birleştirmek eğitimde görülmemiş bir parça olabilir; model iki parçayı da tanıyıp aradaki köprüyü kuramıyor.
 
-Çalışmanın önerdiği düzeltme, 32\. makaledeki ara adımların bir özel biçimi. **Kendine sorma** (self-ask) düzeninde model, bileşik soruyu cevaplamadan önce açıkça takip sorusu yazar — "Justin Bieber ne zaman doğdu?" — kendi cevabını verir, sonra bir sonraki takip sorusunu yazar. Bu biçimin bir yan ürünü var: takip sorusu tek başına bir sorgudur ve **bir arama motoruna gönderilebilir**. Modelin kendi cevabı yerine aramanın sonucu isteme konur ve zincir devam eder.
-
-| yöntem | Bamboogle | 2WikiMultiHopQA | MuSiQue |
-|---|---|---|---|
-| doğrudan cevap | 17,6 | 25,4 | 5,6 |
-| düşünce zinciri | 46,4 | 29,8 | 12,6 |
-| yalnızca arama motoru | 0,0 | 2,2 | 1,5 |
-| kendine sorma | 57,6 | 30,0 | 13,8 |
-| kendine sorma + arama | 60,0 | 40,1 | 15,2 |
+Çalışmanın önerdiği düzeltme, 32\. makaledeki ara adımların bir özel biçimi. **Kendine sorma** (self-ask) düzeninde model, bileşik soruyu cevaplamadan önce açıkça takip sorusu yazar — "Justin Bieber ne zaman doğdu?" — kendi cevabını verir, sonra bir sonraki takip sorusunu yazar. Bu biçimin bir yan ürünü var: takip sorusu tek başına bir sorgudur ve **bir arama motoruna gönderilebilir**. Modelin kendi cevabı yerine aramanın sonucu isteme konur ve zincir devam eder. Dört düzenin üç çok adımlı soru kümesindeki doğruluğu Şekil 1'de; soruyu doğrudan arama motoruna verip dönen sonucu cevap sayan beşinci düzen şeklin sağında ayrıca yazılı.
 
 ![Üç gruplu, üç sütunlu yatay bir çubuk şeması. Her grupta solda bir soru kümesinin adı — Bamboogle, 2WikiMultiHopQA, MuSiQue — ortada üst üste dört çubuk, sağda dört değer vardır; çubuklar doğrudan cevap, düşünce zinciri, kendine sorma ve kendine sorma artı arama düzenlerinin doğruluğunu gösterir, sonuncusu vurgulu renktedir. Değerler ilk grupta 17,6, 46,4, 57,6, 60,0; ikinci grupta 25,4, 29,8, 30,0, 40,1; üçüncü grupta 5,6, 12,6, 13,8, 15,2 olarak yazılıdır. Şeklin sağında dört satırlık bir gösterge düzenleri açıklar. Şeklin altında ara adımların tek başına kazandırdığı, aramanın üstüne eklendiği ve arama motorunun tek başına neredeyse sıfır aldığı yazılıdır.](assets/bilesim-acigi-ve-arama.svg "Şekil 1 — Ara adımlar ve arama: her biri ayrı bir kazanç")
 
-Şekil 1'de üç şey aynı anda görünüyor. Ara adımlar tek başına büyük kazanç veriyor — Bamboogle'da 17,6'dan 46,4'e. Takip sorularını açıkça yazmak onun üstüne ekliyor. Arama, en çok 2WikiMultiHopQA'da kazandırıyor: 30,0'dan 40,1'e. Ve üçüncü satır önemli: arama motoru tek başına neredeyse hiçbir soruyu cevaplayamıyor, çünkü bileşik sorunun ikinci yarısı sorulmadan aranamıyor. Kazanç ne modelden ne aramadan; ikisinin **sırayla** çalışmasından geliyor.
+Şekil 1'de üç şey aynı anda görünüyor. Ara adımlar tek başına büyük kazanç veriyor — Bamboogle'da 17,6'dan 46,4'e. Takip sorularını açıkça yazmak onun üstüne ekliyor. Arama, en çok 2WikiMultiHopQA'da kazandırıyor: 30,0'dan 40,1'e. Ve arama motoru tek başına neredeyse hiçbir soruyu cevaplayamıyor — üç kümede 0,0, 2,2 ve 1,5 — çünkü bileşik sorunun ikinci yarısı sorulmadan aranamıyor. Kazanç ne modelden ne aramadan; ikisinin **sırayla** çalışmasından geliyor.
 
 > **Kendini yokla:** Bileşim açığı model büyüdükçe neden kapanmıyor?
 
-Çünkü ölçek, modelin olgu dağarcığını büyütüyor ama iki olguyu birleştirme işlemi ayrı bir yetenek ve aynı hızda büyümüyor. 40\. makaledeki uyarının bir başka biçimi: adım sayısı arttığında başarı çarpımsal düşer ve düzeltme modelin içinden değil, dışarıdan gelen bir yapıdan — burada zincire örülmüş bir aramadan — gelir.
+Çünkü ölçeğin kazandırdığı şey olguların tek tek bilinmesi: model büyüdükçe iki alt soruyu da daha sık doğru cevaplıyor, ama bileşik soru bu iki olgunun eğitimde büyük olasılıkla hiç birlikte görülmemiş bir birleşimini istiyor. Çalışma açığın nedenini doğrudan ölçmüyor, yalnızca model boyuyla küçülmediğini ölçüyor; bu açıklama bir yorum. Ölçülmüş olan şu: açığı kapatan şey modeli büyütmek değil, birleştirmeyi dışarıya — açık takip sorularına ve aramaya — taşımak.
 
 ## Getirmeyi zincire örmek
 
@@ -68,7 +60,7 @@ Zhihong Shao ve arkadaşlarının EMNLP 2023 bulguları programında sunduğu ç
 
 Shunyu Yao ve arkadaşlarının ICLR 2023'te sunduğu çalışma, döngüyü bir dil olarak kuruyor. Modelin ürettiği metin üç türde satırdan oluşur: bir **düşünce** (thought) — ne yapacağını planladığı serbest metin —, bir **eylem** — "şunu ara", "bu sayfada şu terimi bul", "cevabı ver" — ve eylemin dünyadan getirdiği **gözlem** (observation). 37\. makaledeki eylem sözcüğünü hatırlıyorsun; orada bir sonraki token'dı, burada dünyaya dokunan bir çağrı. Düşünce, eylem ve gözlem birbirini izler ve model bir sonraki düşünceyi bütün geçmişi görerek yazar.
 
-Sonuçlar tek başına etkileyici değil, öğretici:
+Sonuçlar ilk bakışta döngünün lehine değil:
 
 | yöntem | HotpotQA (tam eşleşme) | Fever (doğruluk) |
 |---|---|---|
@@ -81,7 +73,7 @@ Sonuçlar tek başına etkileyici değil, öğretici:
 
 Döngü, HotpotQA'da düşünce zincirinin biraz gerisinde. Ama yazarların insan eliyle yaptığı hata incelemesi tabloyu ters çeviriyor. Düşünce zincirinin doğru cevaplarının yüzde 14'ü uydurulmuş olgularla doğruya varmış; döngüde bu oran yüzde 6. Yanlış cevaplarda düşünce zincirinin hatalarının yüzde 56'sı uydurma; döngüde **yüzde sıfır**. Buna karşılık döngünün kendi hata türleri var: yanlışların yüzde 47'si akıl yürütme hatası — tekrar eden adımlardan çıkamamak dahil — ve yüzde 23'ü arama sonucunun boş ya da işe yaramaz gelmesi. Dış dünyaya bağlanmak uydurmayı siliyor, ama iki yeni hata kapısı açıyor: dünyanın cevap vermemesi ve döngünün kendine dolanması. 35\. makalede dış geri bildirimin öz-düzeltmeyi mümkün kıldığını görmüştük; burada dış geri bildirimin bedeli görünüyor.
 
-Bu yüzden tablonun son satırı HotpotQA'da en iyisi: önce döngü çalışıyor, belirli adım sayısında cevap bulamazsa öz-tutarlılığa devrediliyor. Ters sıra — önce öz-tutarlılık, zincirler uzlaşamazsa döngü — Fever'da 64,6 ile en iyi sonucu veriyor. İki düzenin hataları farklı olduğu için birleşimleri ikisinden de iyi; 29\. makaledeki melez arama fikrinin akıl yürütme biçimi.
+Bu yüzden tablonun son satırı HotpotQA'da en iyisi: önce döngü çalışıyor, belirli adım sayısında cevap bulamazsa öz-tutarlılığa devrediliyor. Ters sıra — önce öz-tutarlılık, zincirler uzlaşamazsa döngü — Fever'da 64,6 ile en iyi sonucu veriyor. İki düzenin hataları farklı olduğu için birleşimleri ikisinden de iyi; 29\. makaledeki hibrit aramanın — hataları farklı iki yöntemi birleştirerek birbirinin açığını kapatma fikrinin — akıl yürütmedeki karşılığı.
 
 ## Ne zaman getirmeli: model emin değilken
 
@@ -112,7 +104,7 @@ Sonuçlar, 7 milyar parametreli bir modelin ölçeğinde:
 | yansımalı model, 7B | 54,9 | 66,9 | 67,8 |
 | yansımalı model, 13B | 55,8 | 70,3 | 71,3 |
 
-Getirmeli sıradan bir 7 milyarlık model atıflarında neredeyse hiç isabet ettiremiyor; aynı ölçekte yansımalı model, çok daha büyük bir ticari modelin atıf kesinliğini geçiyor. Kazancın kaynağı modelin büyüklüğü değil, ne zaman getireceğine ve ürettiğinin desteklenip desteklenmediğine üretirken karar verebilmesi. Bir yan kazanç daha var: yansıma token'larının ağırlıkları çıkarım anında değiştirilebiliyor — destek token'ına daha çok ağırlık verirsen model daha çok atıf yapan, daha az akıcı cevaplar üretiyor. 45\. makaledeki fayda–atıf gerilimi burada bir düğme.
+Getirmeli sıradan bir 7 milyarlık model atıflarında neredeyse hiç isabet ettiremiyor; aynı ölçekte yansımalı model, çok daha büyük bir ticari modelin atıf kesinliğini geçiyor; atıf bulma oranında ise hâlâ geride. Kazancın kaynağı modelin büyüklüğü değil, ne zaman getireceğine ve ürettiğinin desteklenip desteklenmediğine üretirken karar verebilmesi. Bir yan kazanç daha var: yansıma token'larının ağırlıkları çıkarım anında değiştirilebiliyor — destek token'ına daha çok ağırlık verirsen model daha çok atıf yapan, daha az akıcı cevaplar üretiyor. 45\. makaledeki fayda–atıf gerilimi burada bir düğme.
 
 > **Kendini yokla:** Yansıma token'ları hakemi hattın dışından içine alınca ne değişir?
 
@@ -150,7 +142,7 @@ Son bir maliyet notu. Shao ve arkadaşlarının HotpotQA ölçümünde düşün�
 
 ### Sırada ne var
 
-Bu makale boyunca modelin dünyaya dokunduğu tek eylem vardı: aramak. Ama düşün–eyle–gözle döngüsündeki "eylem" satırı aramaya özel değil. Timo Schick ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma bunun ilk kanıtını verdi: 6,7 milyar parametreli bir model, hesap makinesi, soru-cevap sistemi, arama motoru, çevirmen ve takvim çağrılarını ne zaman yapacağını kendi kendine öğrenince, olgu sorularında 25 kat büyük bir modeli geçti — bir olgu kümesinde 39,8'e karşı 53,5, bir aritmetik kümesinde 14,0'a karşı 40,4. Arama, modelin çağırabileceği araçlardan yalnızca biri. Bir sonraki makale eylemin kendisini soruyor: model bir işlevi nasıl çağırır, çağrının biçimi nasıl garanti edilir ve dönen sonuç isteme nasıl girer?
+Bu makale boyunca modelin dünyaya dokunduğu tek eylem vardı: aramak. Ama düşün–eyle–gözle döngüsündeki "eylem" satırı aramaya özel değil. Timo Schick ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma bunun ilk kanıtını verdi: 6,7 milyar parametreli bir model, hesap makinesi, soru-cevap sistemi, arama motoru, çevirmen ve takvim çağrılarını ne zaman yapacağını kendi kendine öğrenince, olgu ve aritmetik sorularında 25 kat büyük bir modeli geçti. Arama, modelin çağırabileceği araçlardan yalnızca biri. Bir sonraki makale eylemin kendisini soruyor: model bir işlevi nasıl çağırır, çağrının biçimi nasıl garanti edilir ve dönen sonuç isteme nasıl girer?
 
 ## Kaynakça
 

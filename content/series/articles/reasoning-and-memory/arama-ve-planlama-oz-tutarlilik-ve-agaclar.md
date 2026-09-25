@@ -12,7 +12,7 @@ tags:
   - arama
   - planlama
   - cikarim-aninda-hesap
-content_hash: sha256:e3664fb1d15e0e304cf7f5719329f4ce03f20ea7ca53a5b723f40f0b807b9726
+content_hash: sha256:1f92f2784b1583101f1d3598f089e02e2a9c55a9cad894fe8dc6ab67abfcf4e3
 classification_version: 1
 classification_batch: 8
 ---
@@ -38,7 +38,7 @@ Xuezhi Wang, Jason Wei ve arkadaşlarının ICLR 2023'te sunduğu çalışma bur
 
 Çalışmanın bu düzene verdiği ad **öz-tutarlılık** (self-consistency): tek bir zincire güvenmek yerine, aynı sorudan çıkan birçok zincirin aynı cevapta ne kadar uzlaştığına bakmak. 33\. makaledeki çoğunluk oyu bunun karar kuralı; öz-tutarlılık ise o kuralın ara adımlı üretimle birleştirilmiş tam hâli. Adındaki "öz" sözcüğü, uzlaşmanın dışarıdan bir hakemle değil modelin kendi üretimleri arasında aranmasına işaret ediyor.
 
-Küçük bir hesap bu asimetriyi somutlaştırıyor. Modelin bir soruyu tek denemede doğru çözme olasılığı 0,4 olsun ve yanlış gittiğinde her seferinde **başka bir** yanlış cevaba varsın. Beş zincir çektiğimizde doğru cevabın en az iki kez gelme olasılığı 1 − 0,6⁵ − 5 × 0,4 × 0,6⁴, yani yaklaşık 0,663. Yanlışlar dağıldığı için iki kez tekrarlanan cevap sayımı kazanır. Tek zincirle yüzde 40 olan başarı, beş zincirle yüzde 66'ya çıkıyor — ve tek satırlık bu hesabın tamamı, yanlışların dağıldığı varsayımına dayanıyor. Varsayımın çöktüğü yerde ne olduğunu birazdan göreceğiz.
+Küçük bir hesap bu asimetriyi somutlaştırıyor. Modelin bir soruyu tek denemede doğru çözme olasılığı 0,4 olsun ve yanlış gittiğinde her seferinde **başka bir** yanlış cevaba varsın. Beş zincir çektiğimizde doğru cevabın en az iki kez gelme olasılığı 1 − 0,6⁵ − 5 × 0,4 × 0,6⁴, yani yaklaşık 0,663. Yanlışlar dağıldığı için iki kez tekrarlanan cevap sayımı kazanır. Doğru cevabın yalnızca bir kez geldiği ve beş cevabın beşinin de farklı olduğu beraberlikleri kaybedilmiş saysak bile, tek zincirle yüzde 40 olan başarı beş zincirle en az yüzde 66'ya çıkıyor — ve tek satırlık bu hesabın tamamı, yanlışların dağıldığı varsayımına dayanıyor. Varsayımın çöktüğü yerde ne olduğunu birazdan göreceğiz.
 
 Bu, aynı zamanda yöntemin sınırını da belirliyor. Oylama, ancak cevap **sabit bir kümeden** geliyorsa yapılabilir: bir sayı, bir şık, bir kısa dize. Serbest metinde iki cevabın "aynı" olup olmadığını söyleyecek bir ölçüt yoktur — 30\. makaledeki biçim sözleşmelerinin buradaki karşılığı bu. Çalışmanın kendisi de bu kısıtı açıkça yazıyor.
 
@@ -66,7 +66,7 @@ Bir karşılaştırma bu tabloyu bağlama oturtuyor. Aynı çalışma, ilkokul m
 
 Aynı çalışma bunu iki karşılaştırmayla yanıtlıyor. Birincisi, adayları modelin kendi log olasılığına göre sıralayıp en yükseğini almak — örnekle-ve-sırala düzeni. Bu da kazandırıyor, ama oylamadan belirgin biçimde az.
 
-İkincisi daha çarpıcı. 10\. makalede ileri okuma notu düzeyinde geçtiğimiz **ışın araması**, her adımda en olası birkaç devamı canlı tutan bir kod çözme kuralıydı. Işın sayısını artırmak, sezgiye göre daha iyi zincirler vermeliydi:
+İkinci karşılaştırma ışın aramasıyla. 10\. makalede ileri okuma notu düzeyinde geçtiğimiz **ışın araması**, her adımda en olası birkaç devamı canlı tutan bir kod çözme kuralıydı. Işın sayısını artırmak, sezgiye göre daha iyi zincirler vermeliydi. Aynı bütçeyle yapılan karşılaştırma, 20 milyar parametreli bir modelde çoktan seçmeli cebir kümesinde şöyle:
 
 | Işın / yol sayısı | 1 | 5 | 10 | 20 | 40 |
 |---|---|---|---|---|---|
@@ -75,7 +75,7 @@ Aynı çalışma bunu iki karşılaştırmayla yanıtlıyor. Birincisi, adaylar�
 
 Aynı model, aynı küme, aynı bütçe. Işın sayısı büyüdükçe ışın aramasının başarısı **düşüyor**; oylamanınki yükseliyor. Yorum, 30\. makaledeki ayrışmanın bir başka yüzü: en yüksek olasılıklı dizi, en yüksek olasılıklı **cevaba** karşılık gelmez. Bir cevaba giden yüzlerce farklı ifade varsa, o cevabın toplam olasılığı yüksek olsa bile tek tek zincirlerinin her biri düşük olasılıklı kalır. Işın araması olasılığı zincir üzerinde toplar; oylama cevap üzerinde toplar. Aranan şey cevapsa, ikincisi doğru muhasebedir.
 
-Buradan pratik bir sonuç daha çıkıyor. Çeşitlilik bu düzende bir kusur değil, **kaynaktır**. Aynı çalışma, oylamayı ışın aramasıyla üretilen zincirler üzerinde denediğinde sonucun kötüleştiğini de ölçüyor — çünkü ışın araması birbirine benzeyen zincirler üretiyor. Aynı sebeple, istemdeki örneklerin sırasını kırk kez değiştirerek elde edilen bir topluluk 17,1'den ancak 19,2'ye çıkarken, örneklemeli oylama 27,7'ye çıkıyor.
+Buradan pratik bir sonuç daha çıkıyor. Çeşitlilik bu düzende bir kusur değil, **kaynaktır**. Aynı çalışma, oylamayı ışın aramasıyla üretilen zincirler üzerinde denediğinde sonucun kötüleştiğini de ölçüyor — çünkü ışın araması birbirine benzeyen zincirler üretiyor. Aynı sebeple, 137 milyar parametreli bir modelde ilkokul matematiği kümesinde, istemdeki örneklerin sırasını kırk kez değiştirerek elde edilen bir topluluk 17,1'den ancak 19,2'ye çıkarken, örneklemeli oylama 27,7'ye çıkıyor.
 
 > **Kendini yokla:** Sıcaklığı sıfıra indirmek bu yöntemi neden tamamen bozar?
 
@@ -96,7 +96,7 @@ Shunyu Yao ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma bunu net bir
 | ağaç araması, genişlik 1 | %45 |
 | ağaç araması, genişlik 5 | %74 |
 
-Üçüncü satır makalenin sessiz dersi: yüz zincirin öz-tutarlılığı yüzde 9'da kalıyor. Oysa dördüncü satır, doğru cevabın o yüz adayın içinde soruların yaklaşık yarısında **bulunduğunu** söylüyor. Aradaki kırk puan yine 33\. makaledeki kapsama-seçim açığı, ve sebebi az önceki hesabın varsayımının burada çökmesi: dört sayıyla yapılan hatalı bir işlem birçok zincirde aynı yanlış sonuca çıkabildiği için yanlışlar dağılmıyor, aksine belirli yanlışlarda toplanıyor. Sayım, toplanan yanlışı seçiyor.
+Üçüncü satırı dördüncüyle birlikte okumak gerekiyor: yüz zincirin öz-tutarlılığı yüzde 9'da kalıyor. Oysa dördüncü satır, doğru cevabın o yüz adayın içinde soruların yaklaşık yarısında **bulunduğunu** söylüyor. Aradaki kırk puan yine 33\. makaledeki kapsama-seçim açığı, ve sebebi az önceki hesabın varsayımının burada çökmesi: dört sayıyla yapılan hatalı bir işlem birçok zincirde aynı yanlış sonuca çıkabildiği için yanlışlar dağılmıyor, aksine belirli yanlışlarda toplanıyor. Sayım, toplanan yanlışı seçiyor.
 
 Asıl sorun daha erken. Aynı çalışmanın hata çözümlemesi, ara adımlı örneklerin yaklaşık yüzde 60'ının daha **ilk adımdan** sonra kaybettiğini buluyor: ilk üç sözcük yazıldığı anda oyun bitmiş oluyor. Soldan sağa üretim geri dönemez; 32\. makalede kurduğumuz cümle burada faturayı kesiyor — cevaptan sonra yazılan hiçbir şey cevabı etkileyemez, ve yanlış açılan bir zincirde ilk adımdan sonra yazılan hiçbir şey ilk adımı düzeltemez.
 
@@ -122,7 +122,7 @@ Ağacın zayıf noktası ise 35\. makaleden tanıdık: puanı yine model veriyor
 
 > **Kendini yokla:** Oylama ilkokul matematiğinde on yedi puandan fazla kazandırırken 24 oyununda neden neredeyse hiçbir şey yapmıyor?
 
-İki koşulun ikisi de o görevde sağlanmıyor. Birincisi kapsama: ilkokul matematiğinde model soruların çoğunu tek denemede zaten çözebiliyor, oylama yalnızca dikkatsizlikten gelen sapmaları eliyor. 24 oyununda tek denemede doğru cevap gelme olasılığı yüzde on bile değil. İkincisi dağılma: matematikte hatalar aritmetik kaymalardan doğduğu için her zincir başka bir yanlış sayıya varıyor; 24 oyununda ise yanlış işlemler belirli sonuçlarda toplanıyor. Oylama, ikisi birden sağlanmadığında bir cetvel değil, bir yanılsama üretir.
+İki koşulun ikisi de o görevde sağlanmıyor. Birincisi kapsama: ilkokul matematiğinde model soruların çoğunu tek denemede zaten çözebiliyor, oylama yalnızca dikkatsizlikten gelen sapmaları eliyor. 24 oyununda tek denemede doğru cevap gelme olasılığı yüzde on bile değil. İkincisi dağılma: matematikte hatalar aritmetik kaymalardan doğduğu için her zincir başka bir yanlış sayıya varıyor; 24 oyununda ise yanlış işlemler belirli sonuçlarda toplanıyor. Bu iki koşul sağlanmadığında oylamanın seçtiği cevap, doğruluk hakkında bir şey söylemez; yalnızca en sık tekrarlanan hatayı gösterir.
 
 ## Arama başka yerde neden bu kadar iyi çalıştı
 
@@ -130,7 +130,7 @@ Ağaç araması yapay zekânın en eski aletlerinden biri ve en görünür başa
 
 Sonuçlar biliniyor: öbür Go programlarına karşı 495 maçın 494'ü, Avrupa şampiyonuna karşı 5–0. Bizim için asıl ilginç olan çalışmanın kendi karşılaştırması: AlphaGo o maçta, Deep Blue'nun Kasparov maçında incelediğinden **binlerce kat az** konum değerlendirdi. Farkı kapatan şey, konumları daha akıllıca seçmesi ve daha isabetli puanlamasıydı.
 
-Ders şu: aramanın değeri, değerlendiricinin kalitesi kadardır. Go'da değerlendirici milyonlarca kendi kendine oynanan oyundan, kazanma-kaybetme gibi kesin bir sinyalle eğitilmişti. Dil modelinde ara adımı puanlayan şey çoğu zaman modelin kendisidir ve 35\. makalede o puanın ne kadar güvenilir olduğunu gördük. Ağaçların dil modellerinde beklendiği kadar iyi çalışmamasının sebebi arama fikrinde değil, buradadır.
+Ders şu: aramanın değeri, değerlendiricinin kalitesi kadardır. Go'da değerlendirici milyonlarca kendi kendine oynanan oyundan, kazanma-kaybetme gibi kesin bir sinyalle eğitilmişti. Dil modelinde ara adımı puanlayan şey çoğu zaman modelin kendisidir ve 35\. makalede o puanın ne kadar güvenilir olduğunu gördük. Ağaçların dil modellerinde beklendiği kadar iyi çalışmamasının sebebini arama fikrinden önce burada aramak gerekiyor.
 
 ## Planlama neden ayrı bir başlık
 

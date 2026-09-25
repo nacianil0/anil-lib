@@ -1,5 +1,5 @@
 <svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
-  <text x="90" y="44" font-size="13" fill="var(--text-muted)">adım sayısı</text>
+  <text x="90" y="44" font-size="13" fill="var(--text-muted)">adım sayısı (biçim şematiktir; eksenler ölçekli değildir)</text>
 
   <line x1="90" y1="310" x2="640" y2="310" stroke="var(--border)" stroke-width="1.4" />
   <line x1="90" y1="310" x2="90" y2="56" stroke="var(--border)" stroke-width="1.4" />

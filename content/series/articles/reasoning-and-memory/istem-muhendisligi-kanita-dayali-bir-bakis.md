@@ -12,7 +12,7 @@ tags:
   - rol-istemi
   - kanit
   - olcum-disiplini
-content_hash: sha256:85f87b2498ee2362f78de70aea98ec8aa3821c41bd6dfeefb2224da951f7bd82
+content_hash: sha256:4aac26f876b111e6b68c3bb941ee0fda91d80e3da6a8f1d94f0ad1603bdc893e
 classification_version: 1
 classification_batch: 4
 ---
@@ -26,7 +26,7 @@ Oysa 16\. makalede bir şeyi öğrenmiştik: bir modelin bir görevdeki başarı
 
 ## Ölçülen ilk şey: biçim
 
-Başlangıç noktası rahatsız edici bir ölçüm ve 16\. makalede bir kez karşılaşmıştık; şimdi ona başka bir soruyla dönüyoruz.
+Başlangıç noktası, 16\. makalede bir kez karşılaştığımız bir ölçüm; şimdi ona başka bir soruyla dönüyoruz.
 
 Melanie Sclar ve arkadaşlarının ICLR 2024'te sunduğu çalışma, anlamı hiç değiştirmeyen biçim farklarının etkisini ölçtü: iki nokta üst üste yerine tire kullanmak, bir boşluk eklemek, şıkları rakam yerine harfle işaretlemek, alanları farklı ayırmak. Bu farkları üreten bir dilbilgisi tanımlayıp elli üç görevde, görev başına yüzlerce eşdeğer biçim ürettiler.
 
@@ -46,7 +46,7 @@ Bunun bir sonucu da yayımlanmış ölçümlere düşüyor. Bir çalışma iki m
 
 Aynı kırılganlığın ikinci yüzü, isteme örnek koyduğunda ortaya çıkıyor.
 
-Yao Lu ve arkadaşlarının ACL 2022'de yayımladığı çalışma, isteme konan birkaç çözülmüş örneğin **sırasını** değiştirmenin etkisini ölçtü. İçerik sabit: aynı örnekler, aynı sayıda. Değişen tek şey hangisinin önce geldiği. Sonuç, alanın en çok alıntılanan cümlelerinden biri: bazı sıralamalar alanın en iyi sonucuna yaklaşırken, bazıları rastgele tahmin düzeyine düşüyor.
+Yao Lu ve arkadaşlarının ACL 2022'de yayımladığı çalışma, isteme konan birkaç çözülmüş örneğin **sırasını** değiştirmenin etkisini ölçtü. İçerik sabit: aynı örnekler, aynı sayıda. Değişen tek şey hangisinin önce geldiği. Sonuç: bazı sıralamalar alanın en iyi sonucuna yaklaşırken, bazıları rastgele tahmin düzeyine düşüyor.
 
 Burada da aynı taşınmazlık var: bir model için iyi olan sıralama, başka bir model için iyi olmuyor. Yazarların çözümü ise bu makalenin sonunda döneceğimiz fikri önceden söylüyor — sıralamayı sezgiyle seçmek yerine, modelin kendi ürettiği bir doğrulama kümesiyle otomatik olarak seçmek. Bu yolla on bir sınıflandırma görevinde göreli yüzde 13'lük bir iyileşme elde ediyorlar.
 
@@ -72,7 +72,7 @@ Yazarların sonucu şu: en iyi kibarlık düzeyi dile göre değişiyor. 15\. ma
 
 Değil, ve fark pratikte önemli. Ölçüm, kaba istemlerin sonucu bozduğunu destekliyor; nazik istemlerin sonucu iyileştirdiğini desteklemiyor. Aradaki bölge — sıradan, nötr, açık bir talimat — çoğu durumda en iyilerden biri. "Lütfen" eklemenin bir bedeli yok, ama onu bir teknik saymak, olmayan bir kazancı beklemek demek.
 
-Listenin geri kalanı — bahşiş vaat etmek, cezayla tehdit etmek, işin ne kadar önemli olduğunu söylemek — aynı sınıfa giriyor ve ortak bir sorunları var. Bu iddiaların çoğu tek bir modelde, tek bir görevde ve biçim değişkeni sabitlenmeden denenmiş durumda. Şekil 1'i hatırla: böyle bir kurulumda ölçülen birkaç puanlık kazancın cümlenin anlamından mı, yoksa isteme eklenen fazladan bir satırın biçim etkisinden mi geldiğini ayırmak mümkün değil. Bu, iddiaların yanlış olduğu anlamına gelmiyor; **ölçülmemiş** olduğu anlamına geliyor. Bu ikisini birbirinden ayırmak, bu makalenin asıl meselesi.
+Listenin geri kalanı — bahşiş vaat etmek, cezayla tehdit etmek, işin ne kadar önemli olduğunu söylemek — aynı sınıfa giriyor ve ortak bir sorunları var. Bu iddiaların çoğu tek bir modelde, tek bir görevde ve biçim değişkeni sabitlenmeden denenmiş durumda. Şekil 1'i hatırla: böyle bir kurulumda ölçülen birkaç puanlık kazancın cümlenin anlamından mı, yoksa isteme eklenen fazladan bir satırın biçim etkisinden mi geldiğini ayırmak mümkün değil. Bu, iddiaların yanlış olduğu anlamına gelmiyor; **ölçülmemiş** olduğu anlamına geliyor. Bu ikisini birbirinden ayırmak gerekiyor.
 
 ## Peki ne işe yarıyor
 
@@ -110,7 +110,7 @@ J.D. Zamfirescu-Pereira ve arkadaşlarının CHI 2023'te sunduğu araştırma, y
 
 Katılımcılar bu imkânı kullanmadı. Yazarların ifadesiyle istem tasarımını **sistematik değil fırsatçı** biçimde keşfettiler: bir değişiklik yapıp tek bir örnekte denediler, sonuç iyiyse kuralı benimsediler, kötüyse başka bir şey denediler.
 
-İki engel bulundu ve ikisi de bu makalenin bütün bulgularını açıklıyor. Birincisi **tek gözlemden genelleme**: bir istem değişikliğinin bir seferlik başarısı ya da başarısızlığı, genel bir kurala dönüştürülüyor. Şekil 1'i hatırla — tek deneme, dağılımdan çekilmiş bir noktaydı; o noktadan kural çıkarmak, kaçınılmaz olarak yanlış kurallar üretir. İkincisi **insandan insana talimat alışkanlığı**: katılımcılar modelden, bir insana verilen talimatın anlaşılacağı gibi anlaşılmasını bekliyorlar.
+İki engel bulundu ve ikisi de halk bilgisinin neden bu kadar kalabalık olduğunu açıklıyor. Birincisi **tek gözlemden genelleme**: bir istem değişikliğinin bir seferlik başarısı ya da başarısızlığı, genel bir kurala dönüştürülüyor. Şekil 1'i hatırla — tek deneme, dağılımdan çekilmiş bir noktaydı; o noktadan kural çıkarmak, kaçınılmaz olarak yanlış kurallar üretir. İkincisi **insandan insana talimat alışkanlığı**: katılımcılar modelden, bir insana verilen talimatın anlaşılacağı gibi anlaşılmasını bekliyorlar.
 
 İnternetteki istem tavsiyelerinin çoğu tam olarak bu iki mekanizmanın ürünü. Kimse yalan söylemiyor; herkes bir noktayı dağılım sanıyor.
 
@@ -120,7 +120,7 @@ Yapıcı sonuç da aynı yerden geliyor. Eğer iyi istem, sezgiyle değil ölçm
 
 Yongchao Zhou ve arkadaşlarının ICLR 2023'te sunduğu çalışma bunu yaptı: bir dil modeline, örnek girdi-çıktı çiftlerine bakarak aday talimatlar ürettirdiler, adayları bir hedef model üzerinde puanladılar ve en iyisini seçtiler. Yirmi dört görevin yirmi dördünde, otomatik bulunan talimat insan eliyle yazılmış talimatı yakaladı ya da geçti.
 
-En çarpıcı örnek ise ara adımlar konusunda. Takeshi Kojima ve arkadaşlarının NeurIPS 2022'de gösterdiği "adım adım düşünelim" cümlesi, alandaki en ünlü istem hilesiydi. Otomatik arama bunun yerine daha uzun bir cümle buldu — doğru cevaba ulaştığımızdan emin olmak için adım adım ilerleyelim anlamında — ve iki matematik kümesinde daha iyi sonuç verdi: 78,7'ye karşı 82,0 ve 40,7'ye karşı 43,0.
+Aynı çalışmanın ara adımlar konusundaki sonucu bunu somutlaştırıyor. Takeshi Kojima ve arkadaşlarının NeurIPS 2022'de gösterdiği "adım adım düşünelim" cümlesi, alandaki en ünlü istem hilesiydi. Otomatik arama bunun yerine daha uzun bir cümle buldu — doğru cevaba ulaştığımızdan emin olmak için adım adım ilerleyelim anlamında — ve iki matematik kümesinde daha iyi sonuç verdi: 78,7'ye karşı 82,0 ve 40,7'ye karşı 43,0.
 
 Bu sayılar 2022'nin modelleriyle alınmıştır ve bugünkü modellerde aynı çıkacağının garantisi yok. Zaten çıkarılacak ders belirli bir cümle değil: en iyi istemi bulan şey, insanın sezgisi değil sistematik aramaydı.
 
@@ -138,7 +138,7 @@ Bütün bunlardan çıkan yöntem sade ve 16\. makaledeki listeyle aynı aileden
 
 Bunlar kulağa ağır geliyorsa, ölçüsüz alternatifin ne olduğunu hatırlamak yeterli: internetteki tavsiyeleri toplamak ve hangisinin senin görevinde işe yaradığını hiç bilmemek.
 
-Son bir kayıt: bu makaledeki ölçümlerin tamamı belirli modellerle ve belirli tarihlerde yapıldı; modeller değiştikçe sayılar da değişecek. Değişmeyecek olan yöntem — bir iddiayı ölçmeden kural saymamak — bu makalenin asıl kalıcı kısmı.
+Son bir kayıt: bu makaledeki ölçümlerin tamamı belirli modellerle ve belirli tarihlerde yapıldı; modeller değiştikçe sayılar da değişecek. Değişmeyecek olan ise yöntem: bir iddiayı ölçmeden kural saymamak.
 
 ### Sırada ne var
 

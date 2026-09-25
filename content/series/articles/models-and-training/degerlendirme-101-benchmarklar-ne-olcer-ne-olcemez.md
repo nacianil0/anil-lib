@@ -12,9 +12,11 @@ tags:
   - mmlu
   - olcum
   - siralama
-content_hash: sha256:239d690a5e8d081b7cf6322b0f758cb3fc8686b73511edf0c854470b10decd58
+content_hash: sha256:79e282d3ad7f4c661b1d79fddb69c194235ffc78facd36e2bf3ce9154f4e592b
 classification_version: 1
 classification_batch: 3
+revised_at: "2026-09-25"
+revision_note: "Perplexity'nin tokenizer'a bağımlılığı doğru sayılarla ve adım adım örnekle yeniden kuruldu; hata payı için kaba bir standart hata hesabı eklendi."
 ---
 ## Cetvel arayışı
 
@@ -24,9 +26,9 @@ Bakma zamanı geldi, çünkü 15\. makale cetvellerin ne kadar oynak olabileceğ
 
 5\. makalede bu tartışmaya bir randevu vermiştik. Orada perplexity'yi kurmuş ve iki uyarı düşmüştük: perplexity **içsel** bir ölçüdür — düşmesi çeviri ya da soru cevaplama gibi dışsal görevlerde iyileşme garanti etmez — ve iki modelin perplexity'si ancak aynı sözlükle, yani aynı tokenizer'la hesaplanmışsa karşılaştırılabilir. 15\. makaleden sonra bu ikinci uyarının ne kadar ciddi olduğunu biliyoruz: tokenizer değişince "bir token" ifadesinin anlamı değişir, dolayısıyla "token başına şaşkınlık" da başka bir şeyi ölçer.
 
-Bunu somutlaştıralım. Perplexity token başına ortalama şaşkınlıktır: modelin gerçekleşen her token'a verdiği olasılıklar üzerinden hesaplanır ve kaç adım üzerinden ortalama alındığı doğrudan tokenizer'a bağlıdır. 15\. makaledeki ölçümde aynı cümle bir tokenizer'da 33, başkasında 60 token tutuyordu. İki model bu iki tokenizer'ı kullanıyorsa, "token başına şaşkınlık" birinde otuz üç adımın, öbüründe altmış adımın ortalamasıdır — ve altmış adıma bölünen bir toplam, otuz üçe bölünene göre kendiliğinden daha küçük görünür. Sayılar aynı ölçekte değildir; birini öbüründen küçük bulmak, modelin daha iyi olduğunu göstermez. Bu yüzden perplexity, aynı tokenizer'ı paylaşan modelleri karşılaştırmak için iyi, farklı tokenizer'lı modelleri karşılaştırmak için kullanılamaz bir cetveldir.
+Bunu somutlaştıralım. 5\. makalede perplexity'yi, modelin gerçekleşen token'lara verdiği olasılıkların geometrik ortalamasının tersi olarak kurmuştuk; aynı şey, token başına ortalama kaybın üstel karşılığıdır. Ortalama bir bölmedir ve paydası token sayısıdır — yani tokenizer'a bağlıdır. 15\. makalede hatırladığımız ölçümde aynı Türkçe cümle GPT-4'ün tokenizer'ında 60, GPT-4o'nunkinde 46 token tutuyordu. Şimdi iki modelin bu cümlenin **tamamına** aynı olasılığı verdiğini varsayalım: ikisi de cümle karşısında eşit derecede şaşkın. Cümle boyunca toplam kayıp ikisinde de 120 olsun (sayı açıklama amaçlıdır). Token başına ortalama birinde 120 ÷ 60 = 2,0, öbüründe 120 ÷ 46 = 2,61; perplexity bunların üstel karşılığı olduğundan *e*^2,0 ≈ 7,4 ile *e*^2,61 ≈ 13,6 çıkar. Aynı cümle, aynı toplam olasılık, ama biri öbürünün neredeyse iki katı perplexity. Fark modelde değil paydada: cümleyi daha ince bölen tokenizer aynı şaşkınlığı daha çok adıma yayar. Bu yüzden perplexity, aynı tokenizer'ı paylaşan modelleri karşılaştırmak için iyi, farklı tokenizer'lı modelleri karşılaştırmak için kullanılamaz bir cetveldir; böyle bir karşılaştırma gerekiyorsa kaybı token yerine karakter ya da bayt başına ölçmek yaygın çaredir, çünkü o payda tokenizer'dan bağımsızdır.
 
-12\. makalede aynı ayrışmanın daha rahatsız edici bir örneğini görmüştük. LIMA çalışmasında doğrulama kaybı yükselirken insan değerlendiricilerin tercih ettiği cevapların kalitesi artmaya devam ediyordu. İçsel cetvel bir yöne, insan yargısı öbür yöne gidiyordu.
+12\. makalede aynı ayrışmanın daha uç bir örneğini görmüştük. InstructGPT'nin talimatla eğitim koşusunda doğrulama kaybı birinci epoktan sonra yükselirken insan tercih puanları yükselmeye devam ediyordu; LIMA ekibi de perplexity'nin üretim kalitesiyle bağlantılı çıkmadığını yazmıştı. İçsel cetvel bir yöne, insan yargısı öbür yöne gidiyordu.
 
 Öyleyse soru şu: model bir kez eğitildikten sonra "iyi" olduğunu nasıl gösteririz? Bu makalenin cevabı iki katmanlı. Önce standart yolları kuracağız; sonra her birinin nerede kırıldığını ölçeceğiz. Amaç değerlendirmeyi itibarsızlaştırmak değil — 9\. makaledeki "aynı eğri, iki cetvel" uyarısını bir üst basamağa taşımak: bir sayı gördüğünde neyin ölçüldüğünü sorabilmek.
 
@@ -48,7 +50,7 @@ Ama çoktan seçmeli sınavın asıl bedeli başka ve 11\. makaledeki tabloyu ha
 
 Sınavın kapsamı dar olabilir; peki kapsadığı yerde doğru mu?
 
-Aryo Pradipta Gema ve on beş arkadaşının NAACL 2025'te sunduğu çalışma bu soruyu MMLU'ya sordu ve cevabı rahatsız edici. Ekip 57 konunun tamamından toplam 5.700 soruyu elle yeniden etiketledi ve bir hata sınıflandırması kurdu: yanlış işaretlenmiş doğru cevap, birden çok doğru şık, hiç doğru şık olmaması, sorunun kendisinin anlaşılamaz olması.
+Aryo Pradipta Gema ve on beş arkadaşının NAACL 2025'te sunduğu çalışma bu soruyu MMLU'ya sordu. Ekip 57 konunun tamamından toplam 5.700 soruyu elle yeniden etiketledi ve bir hata sınıflandırması kurdu: yanlış işaretlenmiş doğru cevap, birden çok doğru şık, hiç doğru şık olmaması, sorunun kendisinin anlaşılamaz olması.
 
 Sonuç iki katmanlı. Kümenin bütününde hatalı soru oranı yaklaşık yüzde 6,5 olarak tahmin ediliyor — tek başına bakıldığında yönetilebilir görünen bir sayı. Ama dağılım hiç düzgün değil: viroloji alt kümesinde incelenen soruların **yüzde 57'si** hatalı çıktı. Düzeltilmiş kümeyle ölçüm tekrarlandığında, modellerin daha önce bildirilen performanslarıyla belirgin farklar ortaya çıktı.
 
@@ -62,7 +64,7 @@ Melanie Sclar ve arkadaşlarının ICLR 2024'te sunduğu çalışma bunu sistema
 
 Bu tek bir modelin tuhaflığı olsa önemsenmeyebilirdi. Norah Alzahrani ve arkadaşlarının ACL 2024'te yayımladığı çalışma etkinin sıralamalara nasıl yansıdığını gösterdi: şıkların sırasını değiştirmek ya da cevabı okuma yöntemini değiştirmek gibi küçük protokol farkları, liderlik tablosundaki sıralamayı **sekiz basamağa kadar** oynatabiliyor.
 
-![Aynı model kümesi iki kez sıralanır: solda bir istem biçimiyle elde edilen sıralama, sağda yalnızca biçim ayrıntısı değiştirilerek elde edilen sıralama; aynı modeli gösteren çizgiler kesişerek basamak değişimini görünür kılar.](assets/ayni-model-farkli-siralama.svg "Şekil 1 — Sıralamayı değiştiren şey modeller değil")
+![Aynı model kümesi iki kez sıralanır: solda bir istem biçimiyle elde edilen sıralama, sağda yalnızca biçim ayrıntısı değiştirilerek elde edilen sıralama; aynı modeli gösteren çizgiler kesişerek basamak değişimini görünür kılar; A'dan E'ye beş model ve sıraları temsilîdir.](assets/ayni-model-farkli-siralama.svg "Şekil 1 — Sıralamayı değiştiren şey modeller değil")
 
 Şekil 1'in söylediği şey basit ama sonuçları ağır: bir liderlik tablosunda gördüğün sıra, modellerin yeteneklerinin yanı sıra ölçümü yapan ekibin biçim tercihlerini de taşır. İki farklı ekip aynı modelleri aynı sınavla ölçüp farklı sıralamalar yayımlayabilir ve ikisi de teknik olarak doğru olabilir.
 
@@ -72,7 +74,9 @@ Buraya kadarki bütün sorunların altında ortak bir alışkanlık yatıyor: de
 
 Oysa bir değerlendirme, özünde bir deneydir. Sorular, sorulabilecek bütün soruların oluşturduğu görünmeyen bir havuzdan çekilmiş bir örneklemdir; başka bir çekilişte başka sorular gelirdi. Evan Miller'ın 2024 tarihli çalışması bu çerçeveyi açıkça kuruyor ve deneysel istatistiğin standart araçlarının — güven aralıkları, iki modeli karşılaştıran testler, deney öncesi örneklem büyüklüğü planlaması — değerlendirmelere nasıl uygulanacağını gösteriyor. Çalışmanın işaret ettiği alışkanlık, alanın "en yüksek sayı kazanır" zihniyetiyle çalışması ve istatistiksel anlamlılığı sınamaması. Bu çalışmanın hakem sürecinden geçmemiş bir teknik rapor olduğunu belirtelim; ama önerdiği araçlar deneysel istatistiğin standart araçlarıdır.
 
-Sayıyla görelim. Beş yüz soruluk bir değerlendirme kümesinde her soru toplam puanın 1 ÷ 500 = 0,002'sini, yani yüzde 0,2'sini taşır. Yüzde 71,2 ile yüzde 70,8 arasındaki 0,4 puanlık fark, bu kümede tam olarak **iki soru** demektir. İki soru, farklı bir soru çekilişinde kolayca ters yöne dönebilecek bir farktır — ama tabloda "A modeli önde" diye görünür ve öyle aktarılır.
+Sayıyla görelim. Beş yüz soruluk bir değerlendirme kümesinde her soru toplam puanın 1 ÷ 500 = 0,002'sini, yani yüzde 0,2'sini taşır. Yüzde 71,2 ile yüzde 70,8 arasındaki 0,4 puanlık fark, bu kümede **iki soru** demektir. İki soru, farklı bir soru çekilişinde kolayca ters yöne dönebilecek bir farktır — ama tabloda "A modeli önde" diye görünür ve öyle aktarılır.
+
+Gürültünün büyüklüğünü kabaca görmek de mümkün. Her soruyu yazı-tura gibi "doğru ya da yanlış" çıkan bir deneme sayarsak, yüzde 71 civarındaki bir puanın 500 soruda ne kadar oynayacağını veren standart hata √(0,71 × 0,29 ÷ 500) ≈ 0,020, yani yaklaşık 2 puandır (kendi hesabımız; Miller'ın çalışmasının kullandığı temel araç budur). 0,4 puanlık fark, tek bir modelin kendi puanındaki bu olağan oynamanın beşte biri kadar.
 
 Buradan çıkan kural sade: bir farkın anlamlı sayılabilmesi için kümenin büyüklüğüne göre değerlendirilmesi gerekir. Küçük kümelerde büyük farklar bile gürültü olabilir; büyük kümelerde küçük farklar anlamlı olabilir. Ölçümün disiplinini — hangi farkın anlamlı sayılabileceğini, kaç örneğin gerektiğini, güven aralığının nasıl kurulacağını — 101\. makalede biçimsel olarak kuracağız.
 
@@ -88,7 +92,7 @@ Bir sınır da hemen not edilmeli: insan tercihi de bir ölçüdür ve neyi öd�
 
 Ama arena da bir ölçüm aracıdır ve aracın kendi çarpıklıkları vardır. Shivalika Singh ve arkadaşlarının NeurIPS 2025 Datasets and Benchmarks izleğinde yayımlanan çalışması bunları saydı. En keskin bulgu, yayımlama seçiciliğiyle ilgili: bazı sağlayıcılar aynı modelin birçok özel sürümünü arenada gizlice deneyip yalnızca en iyi sonucu alanı kamuya açabiliyor. Uç bir örnekte bir sağlayıcı, bir modeli tabloda ikinci sıraya yerleştirmeden önce 27 özel sürümü denemişti. Yayımlanan puan artık rastgele bir örneklem değil, birçok denemenin **maksimumu**dur ve maksimum, ortalamadan sistematik olarak yüksektir.
 
-![Bir sağlayıcı çok sayıda özel sürümü arenada dener; sonuçlar dağılmış noktalar olarak gösterilir, yalnızca en yüksek olan kamuya açılır ve tabloya bu değer yazılır; öbür noktalar soluk bırakılır.](assets/secici-yayimlama.svg "Şekil 2 — Yayımlanan puan bir maksimumdur")
+![Bir sağlayıcı çok sayıda özel sürümü arenada dener; sonuçlar dağılmış noktalar olarak gösterilir, yalnızca en yüksek olan kamuya açılır ve tabloya bu değer yazılır; öbür noktalar soluk bırakılır ve denemelerin ortalaması ayrı bir çizgiyle gösterilir. Noktalar temsilîdir.](assets/secici-yayimlama.svg "Şekil 2 — Yayımlanan puan bir maksimumdur")
 
 Şekil 2'deki mekanizma, sıralamanın ötesinde bir sorun daha yaratıyor. Aynı çalışma, arenada toplanan verinin de eşitsiz dağıldığını ölçüyor: iki büyük sağlayıcı tek başına verinin tahminî yüzde 19,2'sini ve yüzde 20,4'ünü alırken, 83 açık ağırlıklı model toplamda yüzde 29,7'sini alıyor. Bu veri işe yarıyor: sınırlı miktarda ek arena verisi bile, arena dağılımından türetilmiş bir test kümesinde göreli olarak yüzde 112'ye varan kazanç sağlayabiliyor. Sonuç, modellerin genel kalitesine değil arenanın kendi dinamiklerine aşırı uyum sağlaması.
 
@@ -100,7 +104,7 @@ Percy Liang, Rishi Bommasani ve büyük bir ekibin 2023'te TMLR'de yayımladığ
 
 ![Solda liderlik tablosunun gösterdiği tek kutu (doğruluk), sağda aynı model için raporlanan yedi ölçünün listesi; yalnızca doğruluk vurgulanır, kalan altı ölçü soluk bırakılarak tabloya girmedikleri işaretlenir.](assets/tek-sayi-yetmez.svg "Şekil 3 — Tabloya giren ölçü, girmeyen altısı")
 
-Şekil 3'ün sol tarafı bugün liderlik tablolarında gördüğümüz şey, sağ tarafı ise aynı modelin daha dürüst resmi. Aradaki fark bir teknik ayrıntı değil: hangi sütunu yayımladığın, alanın neyi iyileştirmeye çalışacağını belirler.
+Şekil 3'ün sol tarafı bugün liderlik tablolarında gördüğümüz şey, sağ tarafı ise aynı modelin yedi ölçüyle çizilmiş resmi. Aradaki fark bir teknik ayrıntı değil: hangi sütunu yayımladığın, alanın neyi iyileştirmeye çalışacağını belirler.
 
 > **Kendini yokla:** Bir değerlendirme kümesi yaygınlaştıkça neden güvenilirliğini yitirmeye başlar?
 

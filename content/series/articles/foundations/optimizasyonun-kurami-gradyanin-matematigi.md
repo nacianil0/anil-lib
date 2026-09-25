@@ -5,16 +5,18 @@ slug: optimizasyonun-kurami-gradyanin-matematigi
 category: foundations
 level: advanced
 reading_order: 95
-summary: "2. makalede gradyan inişinin tarifini verdik, 8. makalede gerçek koşuların çizelgelerini okuduk; bu makale neden işe yaradığını kuruyor. Gradyan bir sayı değil bir yöndür ve tersinin en dik iniş olması 91. makalenin nokta çarpımından çıkar: (2; 20) gradyanında en hızlı azalma 20,0998, köşegen yönde 15,5563. Adımın tavanı eğrilikten gelir — 2. makalenin deneyle bulduğu 3/14 eşiği, ikinci türevin 28/3 olmasının doğrudan sonucudur. Aynı eğrilik ikinci faturayı da keser: koşul sayısı 20 iken uzaklığı yüzde bire indirmek 47 adım sürer, momentumla 11. Adam'ın ilk adımı her parametreyi tam öğrenme oranı kadar oynatır — gradyanı 0,001 olanı da 10 olanı da; AdamW ise kayba yazılan cezanın uyarlamalı paydadan geçince 100 kat çarpıldığını düzeltir."
+summary: "2. makalede gradyan inişinin tarifini verdik, 8. makalede gerçek koşuların çizelgelerini okuduk; bu makale neden işe yaradığını kuruyor. Gradyan bir sayı değil bir yöndür ve tersinin en dik iniş olması 91. makalenin nokta çarpımından çıkar: (2; 20) gradyanında en hızlı azalma 20,0998, köşegen yönde 15,5563. Adımın tavanı eğrilikten gelir — 2. makalede çanağın dikliğinden kurulup deneyle doğrulanan 3/14 eşiği, ikinci türevin 28/3 olmasının doğrudan sonucudur. Aynı eğrilik ikinci faturayı da keser: koşul sayısı 20 iken uzaklığı yüzde bire indirmek 47 adım sürer, momentumla formüle göre 11, gerçek koşuda 15. Adam'ın ilk adımı her parametreyi tam öğrenme oranı kadar oynatır — gradyanı 0,001 olanı da 10 olanı da; AdamW ise kayba yazılan cezanın uyarlamalı paydadan geçince 100 kat çarpıldığını düzeltir."
 tags:
   - optimizasyon
   - gradyan
   - adam
   - momentum
   - ogrenme-orani
-content_hash: sha256:da5cb7e1a6878809d03f949c95945d19e3e272a80b84236b5c978918facca750
+content_hash: sha256:665ece40db551e0f4664f74296a17bd539fbaab1b93d6b9946654853c6c17106
 classification_version: 1
 classification_batch: 23
+revised_at: "2026-09-25"
+revision_note: "Koşul sayısı tablosu yerine, dar bir vadide gradyan inişi ile momentumun gerçek yollarını çizen yeni bir şekil geldi; sayılar metne taşındı."
 ---
 ## Yönü kim seçiyor
 
@@ -48,9 +50,9 @@ O hâlde adım ne kadar uzun olabilir? Cevabı görmek için kaybı bulunduğun 
 
 Kısmi ikinci türevlerin oluşturduğu matrisin adı **Hessian**'dır ve simetriktir. 92\. makalede simetrik matrislerin özdeğerlerinin gerçek, özvektörlerinin de birbirine dik olduğunu görmüştük; Hessian'ın özdeğerleri o yönlerdeki **eğriliği** verir. Bir yönde eğrilik büyükse çanak o yönde dardır ve küçük bir adım bile karşı yamaca tırmanır.
 
-Tek yönlü bir çanakta hesap kapalı biçimde çıkar: eğrilik λ ise, güncelleme her adımda en iyi noktaya olan uzaklığı (1 − αλ) çarpanıyla çarpar. Uzaklığın küçülmesi için bu çarpanın mutlak değeri 1'den küçük olmalı, yani **α < 2/λ**.
+Tek yönlü bir çanakta hesap kapalı biçimde çıkar: eğrilik λ ise, güncelleme her adımda en iyi noktaya olan uzaklığı (1 − αλ) çarpanıyla çarpar. Nedeni kısa: böyle bir çanakta eğim, en iyi noktaya olan uzaklığın λ katıdır; α ile çarpılmış bir adım uzaklıktan αλ kadar payı çıkarır ve geriye (1 − αλ) kat uzaklık kalır. Uzaklığın küçülmesi için bu çarpanın mutlak değeri 1'den küçük olmalı, yani **α < 2/λ**.
 
-Şimdi 2\. makaleye dönelim. Orada üç evlik oyuncak problemde eşiği deneyerek bulmuş, α < 3/14 ≈ 0,214 yazmıştık. Kaybımız L(w) = ⅓ × [(w−2)² + (2w−4)² + (3w−7)²] idi; ikinci türevi (2/3) × (1 + 4 + 9) = **28/3 ≈ 9,333**. Genel kuralı uygula: 2 ÷ (28/3) = 6/28 = **3/14**. Aynı sayı, bu kez ölçüm değil sonuç.
+Şimdi 2\. makaleye dönelim. Orada üç evlik oyuncak problemde eşiği "çanağın dikliği" dediğimiz 9,333 sayısından kurmuş, beş öğrenme oranıyla deneyip α < 3/14 ≈ 0,214 yazmıştık. Kaybımız L(w) = ⅓ × [(w−2)² + (2w−4)² + (3w−7)²] idi; ikinci türevi (2/3) × (1 + 4 + 9) = **28/3 ≈ 9,333** — o dikliğin biçimsel adı ikinci türevdir. Genel kuralı uygula: 2 ÷ (28/3) = 6/28 = **3/14**. Aynı sayı, bu kez tek bir oyuncak problemin hesabı değil, her çanakta geçerli bir kuralın sonucu.
 
 ![İki panelli bir şekil. Sol panel 2. makalenin ölçümü başlığını taşır ve beş satırlık bir tablo içerir; sütunlar öğrenme oranı alfa, uzaklık çarpanı ve sonuç. Satırlar sırasıyla: 0,0500 için çarpan artı 0,5333, düzgün yakınsar; 0,1000 için çarpan artı 0,0667, çok hızlı yakınsar; 0,2000 için çarpan eksi 0,8667, salınarak yakınsar; 0,2143 için çarpan eksi 1,0000, kıl payı ıraksar; 0,2500 için çarpan eksi 1,3333, patlar. Panelin altında bu tablonun deneyerek bulunduğu yazılıdır. Sağ panel genel kural başlığını taşır ve üç satırlık bir türetme içerir: kaybın ikinci türevi lambda eşittir üçte iki çarpı ondört eşittir 28 bölü 3 eşittir 9,333; uzaklık çarpanı bir eksi alfa çarpı lambda; yakınsama koşulu alfa küçüktür iki bölü lambda eşittir 6 bölü 28 eşittir 3 bölü 14 eşittir 0,2143. Sağ panelin altında bu sayının hiçbir deney yapılmadan çıktığı yazılıdır. İki panelin arasında bir bağ oku ve üstünde aynı sayı, iki yoldan yazısı vardır. En altta bir kayıt: buradaki lambda Hessian'ın tek özdeğeridir, çünkü modelin tek bir parametresi vardır.](assets/esik-nereden-cikiyor.svg "Şekil 2 — Aynı eşik, ölçümden ve teoremden")
 
@@ -68,13 +70,15 @@ Tavanı en **büyük** eğrilik belirliyor. Ama ilerleme hızını en **küçük
 
 En büyük özdeğerin en küçüğe oranına **koşul sayısı** (condition number) denir. Sezgisi geometrik: koşul sayısı 1 ise çanak küresel, büyükse çanak uzun ve dar bir vadidir. Vadide dik yamaç seni oraya buraya savurur, uzun eksen boyunca ise ancak sürünürsün.
 
-Sayıyla görelim. f(w) = ½(w₁² + 20w₂²) alalım; eğrilikler 1 ve 20, koşul sayısı 20. Sabit adımlı gradyan inişinde en iyi seçim α = 2/(1 + 20) = 0,09524'tür ve bu adımda iki eksenin çarpanları +0,90476 ile −0,90476 olur: biri düzgün ilerler, öbürü salınır, ikisi de aynı hızda küçülür. (20; 1) noktasından başlayan gerçek koşu, uzaklığı 20,025'ten 46 adımda 0,2005'e indiriyor — tam yüzde birine.
+Sayıyla görelim. f(w) = ½(w₁² + 20w₂²) alalım; eğrilikler 1 ve 20, koşul sayısı 20. Sabit adımlı gradyan inişinde en iyi seçim α = 2/(1 + 20) = 0,09524'tür ve bu adımda iki eksenin çarpanları +0,90476 ile −0,90476 olur: biri düzgün ilerler, öbürü salınır, ikisi de aynı hızda küçülür. (20; 1) noktasından başlayan gerçek koşu, uzaklığı 20,025'ten 46 adımda 0,2005'e (başlangıcın yüzde 1,001'ine) indiriyor; 47. adımda yüzde birin altına iniyor.
 
-Léon Bottou, Frank Curtis ve Jorge Nocedal'in SIAM Review'da 2018'de yayımladığı derleme bu iki hızı tek satırda karşılaştırıyor. Koşul sayısı κ olan bir çanakta sabit adımlı gradyan inişi uzaklığı her adımda (κ−1)/(κ+1) çarpanıyla küçültür. Her adımda bir önceki adımın yönünü de hesaba katan **momentum**'lu sürüm — Boris Polyak'ın 1964 tarihli çalışmasında kurduğu ağır top yöntemi — aynı çanakta (√κ−1)/(√κ+1) verir. Fark kökün altında duruyor ve kök büyük sayılarda çok şey demek.
+Léon Bottou, Frank Curtis ve Jorge Nocedal'in SIAM Review'da 2018'de yayımladığı derleme bu hızı başka bir yöntemle karşılaştırıyor. Koşul sayısı κ olan bir çanakta sabit adımlı gradyan inişi uzaklığı her adımda (κ−1)/(κ+1) çarpanıyla küçültür. Her adımda bir önceki adımın yönünü de hesaba katan **momentum**'lu sürüm — Boris Polyak'ın 1964 tarihli çalışmasında kurduğu ağır top yöntemi — aynı çanakta (√κ−1)/(√κ+1) verir. Fark kökün altında duruyor ve kök büyük sayılarda çok şey demek.
 
-![Altı sütunlu bir karşılaştırma tablosu ve altında iki kayıt. Sütunlar: koşul sayısı kappa, gradyan inişinin adım başına uzaklık çarpanı, uzaklığı yüzde bire indirmek için gereken adım sayısı, momentumun adım başına çarpanı, momentumun adım sayısı ve kazanç. Birinci satır kappa eşittir 20 için gradyan inişinde 0,9048 ve 47 adım, momentumda 0,6345 ve 11 adım, kazanç 4,5 kat. İkinci satır kappa eşittir 100 için gradyan inişinde 0,9802 ve 231 adım, momentumda 0,8182 ve 23 adım, kazanç 10,0 kat. Tablonun altındaki kutuda formüller ve geometrik okuma durur: gradyan inişi çarpanı kappa eksi bir bölü kappa artı bir, momentum çarpanı karekök kappa eksi bir bölü karekök kappa artı bir; tavanı en büyük eğrilik belirler, ilerleme hızını en küçük eğrilik; koşul sayısı ikisinin oranıdır, yani çanağın ne kadar uzun ve dar olduğu. En altta iki kayıt: çarpanlar kaynağın verdiği formülden ve adım sayıları o çarpanlardan elle hesaplanmıştır; ölçülmüş bir eğitim koşusu değil, koşul sayısı kappa olan bir çanağın kapalı çözümüdür.](assets/kosul-sayisi-vergisi.svg "Şekil 3 — Aynı çanak, iki yöntem, iki adım sayısı")
+Sayı koyalım (adım sayıları bu çarpanlardan bizim hesabımız). κ 20 iken gradyan inişinin çarpanı 0,9048 ve uzaklığı yüzde bire indirmek 47 adım sürüyor; momentumun çarpanı 0,6345 ve 11 adım — yaklaşık 4,3 kat. κ 100'e çıkınca çarpanlar 0,9802 ile 0,8182, adım sayıları 231 ile 23 — 10 kat. Kazanç koşul sayısıyla birlikte büyüyor, çünkü gereken adım sayısı gradyan inişinde κ ile, momentumda yalnızca √κ ile orantılı artıyor.
 
-Şekil 3'ün ikinci satırı meselenin ölçekteki hâlini veriyor: koşul sayısı 100'e çıkınca gradyan inişi 231 adım isterken momentum 23 adımla bitiriyor. Momentum bir hile değil; vadinin uzun ekseni boyunca üst üste binen katkıları biriktirirken, dik yamaçtaki ileri geri savrulmaları birbirine götürüyor.
+![Uzun ve dar bir vadinin eşyükselti çizgileri üzerinde iki eniyileme yolu. Çanak yarım çarpı w1 kare artı 20 w2 kare; iki eksen aynı ölçekte, koşul sayısı 20. Sağda (20; 1) başlangıç, solda (0; 0) en iyi nokta. Gradyan inişinin yolu dar eksende her adımda işaret değiştirerek savrulur ve uzun eksende küçük adımlarla sürünür; başlangıç uzaklığının yüzde birine 47 adımda iner. Momentumun yolu ilk adımlarda daha geniş salınır ama uzun eksende çok daha büyük adımlar atar; yüzde bire 15 adımda iner. Adımlar noktayla işaretli; onuncu adımda momentum en iyi noktaya neredeyse varmışken gradyan inişi uzun eksenin ortasındadır. Altta kayıt: yollar gradyan inişi için alfa 0,0952, momentum için alfa 0,1336 ve beta 0,4026 ile hesaplanmıştır.](assets/kosul-sayisi-vergisi.svg "Şekil 3 — Aynı vadide iki yol")
+
+Şekil 3 aynı çanakta iki gerçek koşuyu çiziyor; onuncu adımlarına bakmak farkı tek bakışta veriyor. Gradyan inişi dar eksende her adımda karşı yamaca savruluyor ve uzun eksen boyunca sürünüyor; tavanı en büyük eğrilik, hızı en küçük eğrilik belirlediği için ikisinin arasında sıkışmış durumda. Momentum ilk adımlarda daha geniş salınıyor, ama vadinin uzun ekseni boyunca üst üste binen katkıları biriktirirken dik yamaçtaki ileri geri savrulmaları birbirine götürüyor. Bir ayrıntı dikkat istiyor: şekildeki momentum koşusu yüzde bire 11 değil 15 adımda iniyor. Çarpan formülü uzun vadeli hızı verir; koşunun başındaki geçiş evresi birkaç adım ekler. Yine de gradyan inişinin 47 adımının üçte birinden az.
 
 Bu bölümdeki sayılar bir çanak için. Sinir ağının kayıp yüzeyi çanak değil ve Hessian'ı yüz milyarlarca satırlı olduğu için özdeğerleri hiç hesaplanmaz. Ama sezgi taşınıyor: **eniyileyicilerin tarihi, koşul sayısını görmeden onun faturasını azaltma denemelerinin tarihidir.**
 
@@ -90,7 +94,7 @@ Adam'ın ne yaptığını en açık gösteren şey ilk adımıdır ve elle hesap
 
 Şekil 4'ün sol paneli bunu iki gradyanla gösteriyor. Gradyan inişinde iki adım arasında on bin kat fark varken Adam'da fark yok. Frederik Kunstner ve arkadaşlarının ICLR 2023'te sunduğu çalışma bu gözlemin peşine düşüyor. Alanda yaygın açıklama, Adam'ın transformer eğitiminde SGD'yi geçmesinin gradyan gürültüsünün ağır kuyruklu olmasından kaynaklandığıydı. Yazarlar yığın büyüklüğünü bütün veri kümesine kadar büyüterek gürültüyü tamamen ortadan kaldırıyorlar ve fark **kapanmıyor**, hatta açılıyor. Kalan aday ise Adam'ın işaret benzeri davranışı: momentumlu işaret inişi, büyük yığında Adam'ı yakından izliyor.
 
-Adam'ın hikâyesinde bir de dürüstlük dersi var. Sashank Reddi, Satyen Kale ve Sanjiv Kumar'ın ICLR 2018'de sunduğu çalışma, özgün makalenin yakınsama kanıtındaki hatayı buldu ve bunu tek boyutlu, dışbükey, akla gelebilecek en basit örnekle gösterdi: üç adımda bir büyük gradyan, diğer iki adımda küçük ve ters yönlü gradyan gelen bir problemde Adam, aralıktaki **en kötü** noktaya yakınsıyor. Aynı problemde sıradan gradyan inişi ile AdaGrad doğru noktaya gidiyor. Yazarların önerdiği düzeltmenin adı AMSGrad; ama asıl kalıcı olan, alanın en yaygın kullanılan eniyileyicisinin arkasındaki kanıtın üç yıl boyunca kimse tarafından denetlenmemiş olması.
+Adam'ın hikâyesinin bir de kanıtla ilgili bir dersi var. Sashank Reddi, Satyen Kale ve Sanjiv Kumar'ın ICLR 2018'de sunduğu çalışma, özgün makalenin yakınsama kanıtındaki hatayı buldu ve bunu tek boyutlu, dışbükey, akla gelebilecek en basit örnekle gösterdi: üç adımda bir büyük gradyan, diğer iki adımda küçük ve ters yönlü gradyan gelen bir problemde Adam, aralıktaki **en kötü** noktaya yakınsıyor. Aynı problemde sıradan gradyan inişi ile AdaGrad doğru noktaya gidiyor. Yazarların önerdiği düzeltmenin adı AMSGrad; ama asıl kalıcı olan, alanın en yaygın kullanılan eniyileyicisinin arkasındaki kanıttaki hatanın üç yıl boyunca fark edilmemiş olması.
 
 ## Kayba yazılan ceza ile sönüm aynı şey değil
 
@@ -100,7 +104,7 @@ Ağırlıkları küçük tutmanın iki yolu var. Birincisi kayba ağırlıkları
 
 Şekil 4'ün sağ paneli bunu iki ağırlıkla gösteriyor. İkisinin de değeri 1,0, sönüm katsayısı 0,01. Ama biri gradyanları büyük bir yönde duruyor, öbürü küçük. Kayba ceza yazan yolda birincinin etkin sönümü 10⁻⁶, ikincininki 10⁻⁴ — arada yüz kat. Ayrık sönüm yolunda ikisi de 10⁻⁵. Ilya Loshchilov ve Frank Hutter'ın ICLR 2019'da sunduğu çalışma bu ayrımı yaptı ve iki sonuç bildirdi: en iyi sönüm katsayısı artık öğrenme oranından bağımsız seçilebiliyor ve Adam'ın genelleme başarısı, o güne dek momentumlu SGD'nin gerisinde kaldığı görüntü görevlerinde onunla yarışır hâle geliyor.
 
-Bu bölüm §3'teki karıştırılabilir kavram kuralının tam bir örneği: iki şey yıllarca aynı sanıldı, çünkü tek bir özel durumda gerçekten aynıydılar.
+Karıştırılması kolay iki kavramın öğretici bir örneği bu: iki şey yıllarca aynı sanıldı, çünkü tek bir özel durumda — sıradan gradyan inişinde — gerçekten aynıydılar.
 
 ## Çizelgelerin gerekçesi
 

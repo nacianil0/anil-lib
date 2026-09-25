@@ -1,10 +1,23 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-13T13:56:00.302Z
-> Files: 332 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-25T19:37:58.211Z
+> Files: 402 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../anil-lib-ux/artifacts/ux/
+
+- `focus.mjs` — Keyboard pass over a series chapter: is focus visible, and is it ever hidden (~670 tok)
+- `p-popovers.js` — Declares out (~313 tok)
+- `p-reflow.js` — sleep: overflow (~521 tok)
+- `paged-viewer.mjs` — Paged layout: the figure viewer must own arrows and wheel while it is open. (~673 tok)
+- `print-and-done.mjs` — Print hides the enlarge button; a fully read series sends the hero elsewhere. (~640 tok)
+- `probe.mjs` — Usage: node probe.mjs <url> <width> <height> <exprFile> [mode] [prefsJSON] (~392 tok)
+- `seed.mjs` — mode: "returning" (mid-series), "fresh" (nothing read), "done-many" (long history). (~1155 tok)
+- `shot.mjs` — Usage: node shot.mjs <label> [mode=returning] (~1818 tok)
+- `zoom.mjs` — Usage: node zoom.mjs <label> <url> <selector> <width> <theme> [scale] [prefsJSON] (~505 tok)
 
 ## ./
 
+- `tailwind.config.ts` — /*.{ts,tsx}"], (~438 tok)
 
 ## .agents/skills/handoff/
 
@@ -153,6 +166,13 @@
 - `yol25b.py` — YOL-HARITASI: Batch 25 tekrar defteri, prerequisite satirlari ve terim defteri. (~1713 tok)
 - `yol25c.py` — YOL-HARITASI: 103-106 prerequisite satirlari + terim defteri satirlari. (~1197 tok)
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b60faeed-d52e-439a-ae92-4a123388a76a/scratchpad/
+
+- `buglog-append.cjs` — Appends this session's bug records to .wolf/buglog.json without reformatting it. (~1212 tok)
+- `cerebrum-append.md` — ## Okuma Odası ekran ekran UX turu (2026-09-25) (~961 tok)
+- `cerebrum-append2.md` (~134 tok)
+- `settings-body.tsx` — Icon (~3041 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/c5fcd13f-0c50-4b18-b590-de2f6b97beb4/scratchpad/
 
 
@@ -234,6 +254,9 @@
 - `boun-batch12-faz-e-konu-makaleleri.md` (~1209 tok)
 - `boun-batch13-seri-tamamlandi.md` (~1378 tok)
 - `boun-batch9-faz-d-govde.md` (~988 tok)
+- `editoryal-yenileme-2026-09-25.md` (~730 tok)
+- `MEMORY.md` — Memory index (~1998 tok)
+- `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `series-batch22-faz10-acilis.md` — Declares into (~1184 tok)
 - `series-batch23-faz10-kapanis.md` (~1009 tok)
 - `series-batch24-faz11-kapanis.md` (~710 tok)
@@ -243,6 +266,10 @@
 
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/
 
+
+## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/
+
+- `edit_anatomy.py` (~584 tok)
 
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/eec20059-3b22-4975-b9af-f7cf476b7f59/scratchpad/
 
@@ -378,6 +405,10 @@
 - `login-b9.mjs` — Declares BASE (~418 tok)
 - `login-debug.mjs` — Declares BASE (~244 tok)
 - `pre-b9.mjs` — Declares BASE (~897 tok)
+
+## artifacts/editoryal-2026-09-25/
+
+- `figures.render.ts` — Geometry of one inline figure: text boxes against the viewBox and against each other. (~1403 tok)
 
 ## artifacts/ux-render/
 
@@ -812,7 +843,6 @@
 
 ## content/series/assets/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi/
 
-- `bellek-merdiveni.svg` (~809 tok)
 - `egitim-bellek-defteri.svg` (~838 tok)
 - `sirt-noktasinin-iki-yani.svg` (~803 tok)
 
@@ -969,6 +999,9 @@
 ## content/series/assets/ses-konusma-ve-gercek-zamanli-modeller/
 
 
+## content/series/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/
+
+
 ## content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/
 
 
@@ -1043,6 +1076,7 @@
 ## docs/seri/
 
 - `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7765 tok)
+- `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~11457 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~153490 tok)
 
 ## docs/superpowers/plans/
@@ -1065,9 +1099,13 @@
 
 ## src/app/
 
+- `globals.css` — Styles: 7 rules, 43 vars (~5692 tok)
+- `icon.svg` — Favicon: bordo karo + kâğıt yer imi; `prefers-color-scheme: dark` ile karo `#b5435a` (~81 tok)
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~485 tok)
 
 ## src/app/api/reader-sync/
 
+- `route.ts` — Next.js API route: POST (~609 tok)
 
 ## src/app/boun/
 
@@ -1075,6 +1113,7 @@
 
 ## src/app/boun/[slug]/
 
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~556 tok)
 
 ## src/app/login/
 
@@ -1090,24 +1129,47 @@
 
 ## src/app/seri/[slug]/
 
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~579 tok)
 
 ## src/app/yonetim/
 
+- `actions.test.ts` — OWNER_ID: form (~1331 tok)
+- `actions.ts` — Renders a failure into something the owner can act on. This screen is owner-only, (~1014 tok)
+- `reset-reading-form.test.tsx` — hoisted (~1357 tok)
+- `reset-reading-form.tsx` — A confirm this soon after arming is the tail of the arming gesture, not a decision. (~1794 tok)
+- `reset-reading-state.ts` — Shared shape for the reset-reading form result. Kept out of `actions.ts` for the (~131 tok)
 
 ## src/app/yonetim/ (2026-09-02 eklendi)
 
 
 ## src/app/yonetim/[userId]/
 
+- `page.tsx` — dynamic (~1944 tok)
 
 ## src/components/dashboard/
 
+- `reader-dashboard.tsx` — Ana sayfada kendi satırıyla görünen bir öğrenme serisi. (~5885 tok)
 
 ## src/components/reader/
 
+- `article-toc.tsx` — extractHeadings (~1856 tok)
+- `chapter-header.tsx` — Series chapter title block (phase eyebrow, h1, level · reading time), rendered by the shell OUTSIDE `.prose-reader` in flow mode only. (~379 tok)
+- `figure-viewer.tsx` — Where focus goes back to when the viewer closes. (~2470 tok)
+- `mobile-reading-list.tsx` — FOCUSABLE (~1818 tok)
+- `reader-pager.tsx` — The paged frame never scrolls, so the keys that would normally move down the (~911 tok)
+- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~6139 tok)
+- `reader-sidebar.tsx` — ReaderSidebar (~914 tok)
+- `reading-list.test.tsx` — article (~874 tok)
+- `reading-list.tsx` — The series roadmap's phases. When given, the list follows the structure the (~2310 tok)
+- `reading-settings.test.tsx` — dialog (~2758 tok)
+- `reading-settings.tsx` — Typography a reader rarely touches once it suits them. They stay available, one (~5299 tok)
+- `resume-notice.tsx` — Resume pill after a restored position; "Baştan başla" + close. With `revisedSinceRead` it says the article was revised since last read (short wording on phones, 9 s). (~1000 tok)
+- `revision-notice.tsx` — Presentational "Gözden geçirildi · tarih" line above the article body (outside bodyRef); since-read variant, compact/concealed in paged mode. Never touches progress. (~572 tok)
 
 ## src/components/series/
 
+- `phase-progress.tsx` — Phase-segmented series progress bar (segment width = planned chapters, fill = completed, hairline marker = continue target); aria-hidden, numbers written beside it. Used by home and series landing. (~566 tok)
+- `series-landing.tsx` — Rota tabanı, ör. "/seri" veya "/boun". (~3908 tok)
 
 ## src/lib/
 
@@ -1120,9 +1182,16 @@
 
 ## src/lib/content/
 
+- `labels.ts` — Turkish display labels for the controlled categories of every series. (~2019 tok)
+- `rehype-inline-svg.test.ts` — assetsDir: transform, firstElement (~1773 tok)
+- `rehype-inline-svg.ts` — Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline (~1942 tok)
+- `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~957 tok)
+- `series-progress.test.ts` — PhaseOutline: article, lookup (~1182 tok)
+- `series-progress.ts` — Client-safe series progress model: outlinePhases (roadmap → PhaseOutline), groupByPhase, nextStep (resume most recent / first unfinished), summarizePhases, phaseForOrder. (~1434 tok)
 
 ## src/lib/db/
 
+- `schema.ts` — Reader accounts. `workspace_id` is the tenant key every reader table is already (~1960 tok)
 
 ## src/lib/preferences/
 
@@ -1132,9 +1201,20 @@
 
 ## src/lib/reader-data/
 
+- `merge.test.ts` — ProgressRecord: progress, readerWithHistory, response (~2155 tok)
+- `merge.ts` — `adoptReset`: the request came from a device with no progress from before (see (~740 tok)
+- `schema.test.ts` — DEVICE: legacyProgress (~1521 tok)
+- `schema.ts` — A resolvable reading position inside an article. (~1759 tok)
+- `sync-contract.ts` — `resetVersion` is the last progress reset this device has applied (0 = none). A (~510 tok)
+- `use-reader-data.test.tsx` — hoisted (~1409 tok)
+- `use-reader-data.tsx` — The account's latest progress reset this device has applied; rises when one lands. (~5935 tok)
 
 ## src/lib/reader-data/server/
 
+- `reset-service.test.ts` — Declares Call (~1287 tok)
+- `reset-service.ts` — Written as the device of the tombstones a reset leaves on saved places and (~1291 tok)
+- `sync-service.test.ts` — Call: progressWrite, selectOf (~1726 tok)
+- `sync-service.ts` — AI serisi ∪ BOUN serisi, owner workspace'inde ayrıca arşiv; bilinmeyen id reddedilir. (~4044 tok)
 
 ## src/lib/reader-layout/
 
@@ -1159,6 +1239,11 @@
 
 ## tests/e2e/
 
+- `reader-reset.spec.ts` — An owner can reset an account's reading progress (/yonetim). Each device learns it (~1890 tok)
+- `reader-resume.spec.ts` — Toolbar offset + the gap the reader restores with; see `use-reader-layout`. (~4366 tok)
+- `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~8746 tok)
+- `series-reader.spec.ts` — Chapters carrying the widest figures and the widest tables. Both series render (~3165 tok)
+- `series-revision.spec.ts` — Editorial revision notice (docs/seri/SOZLESME.md §12). The notice is read-only (~1890 tok)
 
 ## tools/
 

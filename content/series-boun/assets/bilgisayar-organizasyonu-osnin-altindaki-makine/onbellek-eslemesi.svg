@@ -1,4 +1,4 @@
-<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 474" xmlns="http://www.w3.org/2000/svg">
   <text x="15" y="22" font-size="13" fill="var(--text)">Sekiz yuvalı bir önbellek, üç eşleme düzeni; aynı iki blok yerleştiriliyor: blok 3 ve blok 11</text>
 
   <rect x="25" y="40" width="280" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />

@@ -12,9 +12,11 @@ tags:
   - parcali-on-dolum
   - is-hacmi
   - gecikme
-content_hash: sha256:86ef0544cb31d6f16a0b89ba1544cad641ce33c4c4936a5a733fc02becc7f8b1
+content_hash: sha256:b63716b227163176d34ed23b452beb5db7ea8a87615df2bab4113f481e3c23a3
 classification_version: 1
 classification_batch: 6
+revised_at: "2026-09-25"
+revision_note: "Ön dolumun üretimi ne kadar durdurduğu iş ve süre ayrılarak yeniden hesaplandı; spekülatif üretimde token sayısı ile hızlanma ayrıldı."
 ---
 ## Boştaki çip
 
@@ -40,7 +42,7 @@ Aynı çalışmanın ikinci fikri daha ince ve doğrudan 26\. makaleye bağlanı
 
 > **Kendini yokla:** Sürekli yığınlama iş hacmini bu kadar artırıyorsa, tek bir kullanıcının cevabı neden aynı ölçüde hızlanmıyor?
 
-Çünkü kazanılan şey boş hücrelerin doldurulması, yani birim zamanda hizmet verilen istek sayısı. Tek bir isteğin cevabı hâlâ token token üretiliyor ve her token için ağırlıkların tamamı okunuyor. İş hacmi ile gecikme farklı kalemler; sürekli yığınlama birincisini iyileştirir, ikincisine dokunmaz.
+Çünkü kazanılan şey boş hücrelerin doldurulması, yani birim zamanda hizmet verilen istek sayısı. Tek bir isteğin cevabı hâlâ token token üretiliyor ve her token için ağırlıkların tamamı okunuyor. İş hacmi ile gecikme farklı kalemler; sürekli yığınlama birincisini büyük ölçüde iyileştirir, ikincisinde yalnızca kuyrukta bekleme süresini kısaltır — bir kez üretim başladıktan sonra token'ların akış hızı aynı kalır.
 
 Yığını ne kadar büyütebileceğimizin sınırı da 26\. makalede kurulmuştu ve bir çizelgeleme sorunu değil: her ek isteğin kendi anahtar-değer önbelleği var ve o önbellek, ağırlıkların yanında kalan yerden yeniyor. Yani sürekli yığınlama yığındaki boşlukları doldurur, ama yığının tavanını bellek belirler. 27\. makalenin bu makaleye bağlandığı yer tam olarak burası: ağırlıkları ya da önbelleği küçültmek çipi doğrudan hızlandırmaz, **daha büyük bir yığına yer açar** ve hızlanma o yığından gelir.
 
@@ -48,15 +50,19 @@ Yığını ne kadar büyütebileceğimizin sınırı da 26\. makalede kurulmuşt
 
 Sürekli yığınlama bir sorunu çözerken bir yenisini açıyor. Yığına yeni bir istek girdiğinde önce onun ön dolumu yapılmalı: 26\. makaledeki tanımla, istemin bütün token'larının tek geçişte işlenmesi. Bu aşama hesap yoğun ve uzun — beş bin token'lık bir istem, tek token üreten bir adımdan kat kat fazla iş demektir.
 
-Bu asimetriyi 26\. makalenin muhasebesiyle sayıya dökebiliriz. N parametreli bir model bir token için yaklaşık 2N işlem yapıyordu. 5.000 token'lık bir istemin ön dolumu, o hâlde, 5.000 × 2N işlem demektir. Aynı anda on altı isteğe hizmet veren bir yığının tek bir üretim adımı ise 16 × 2N. Oran 5.000 ÷ 16 ≈ **312**: tek bir ön dolum, yığının üç yüz adımından fazlasına bedel bir iş yükü getiriyor ve bu iş bitene kadar hiç kimse token almıyor.
+Bu asimetriyi 26\. makalenin muhasebesiyle sayıya dökebiliriz, ama iki ayrı soruyu ayırarak: ne kadar **iş** var ve bu iş ne kadar **sürer**?
 
-O sırada yığındaki öteki isteklerin üretimi bekler. Kullanıcı tarafında bunun görüntüsü, akan metnin ortada saniyelerce takılmasıdır. Amey Agrawal ve arkadaşlarının OSDI 2024'te sunduğu çalışma bu duraklamaları ölçtü ve yükle birlikte hızla kötüleştiklerini gösterdi: yaygın bir servis sisteminde, iki kart üzerinde çalışan 34 milyar parametreli bir modelde, token'lar arası sürenin en kötü yüzdelik dilimi kuyruk yoğunlaştıkça saniye mertebesine çıkıyor. Dikkat edilmesi gereken şey, bu bozulmanın **ortalamada görünmemesi**: aynı sistem ortalama token hızında iyi bir sayı bildirebilir, çünkü duraklamalar seyrek ama uzundur.
+İş sorusu kolay. N parametreli bir model bir token için yaklaşık 2N işlem yapıyordu. 5.000 token'lık bir istemin ön dolumu 5.000 × 2N işlem; aynı anda on altı isteğe hizmet veren bir yığının tek bir üretim adımı 16 × 2N işlem. İş oranı 5.000 ÷ 16 ≈ 312.
+
+Ama süre işlem sayısından değil, darboğazdan çıkar ve iki aşamanın darboğazı farklıdır. Üretim adımı bellekle sınırlıdır: süresi, ağırlıkların tamamını bir kez okumanın süresidir ve yığındaki 16 isteğin hesabı bu okumanın gölgesinde neredeyse bedavaya yapılır. 26\. makaledeki çipte o okuma süresi boyunca yaklaşık 229 token'lık hesap yapılabilirdi. Ön dolum ise hesapla sınırlıdır: 5.000 token'ın hesabı, çip tam verimle çalışsa bile, 5.000 ÷ 229 ≈ **22** üretim adımı kadar sürer. Yani iş 312 kat, süre yaklaşık 22 adım. Bu hesap bizim kaba hesabımız — önbelleğin okunmasını ve dikkatin payını yok sayıyor, gerçek verim de yüzde yüz değil — ama sonucun yönünü değiştirmiyor: bu yirmi küsur adım boyunca yığındaki on altı isteğin hiçbiri token almaz. İstem uzadıkça ve kuyrukta birden çok yeni istek biriktikçe bu boşluk da uzar.
+
+Kullanıcı tarafında bunun görüntüsü, akan metnin ortada takılmasıdır; yük arttıkça bu takılmalar saniyelere uzayabiliyor. Amey Agrawal ve arkadaşlarının OSDI 2024'te sunduğu çalışma bu duraklamaları ölçtü ve yükle birlikte hızla kötüleştiklerini gösterdi: yaygın bir servis sisteminde, iki kart üzerinde çalışan 34 milyar parametreli bir modelde, token'lar arası sürenin en kötü yüzdelik dilimi kuyruk yoğunlaştıkça saniye mertebesine çıkıyor. Dikkat edilmesi gereken şey, bu bozulmanın **ortalamada görünmemesi**: aynı sistem ortalama token hızında iyi bir sayı bildirebilir, çünkü duraklamalar seyrek ama uzundur.
 
 İki farklı çözüm önerildi ve ikisi de aynı yıl aynı konferansta sunuldu. Şekil 2 üç düzeni aynı zaman çizelgesi üzerinde yan yana koyuyor.
 
 ![Üç şeritli bir zaman çizelgesi. Üstteki şeritte devam eden küçük üretim kutularının ortasına büyük bir ön dolum bloğu girer ve o blok boyunca hiç üretim kutusu yoktur; şeridin altında bunun akışta duraklama olarak görüldüğü yazılıdır. Ortadaki şeritte aynı ön dolum dört eşit parçaya bölünmüştür ve her parça üretim adımlarının arasına serpiştirilmiştir; üretim hiç durmaz. Alttaki şeritte iki ayrı kart gösterilir: solda yalnızca ön dolum yapan kart, sağda yalnızca üretim yapan kart, aralarında bir bağlantı ve altında anahtar-değer önbelleğinin aktarıldığını söyleyen bir satır vardır.](assets/on-dolum-catismasi.svg "Şekil 2 — Aynı çatışmaya üç farklı cevap")
 
-**Parçalı ön dolum** (chunked prefill) aşamaları ayırmıyor, ön dolumu bölüyor. Uzun bir istem yaklaşık eşit parçalara ayrılıyor ve her yinelemede bir parça, devam eden üretimlerle **aynı** yığında işleniyor. Böylece her yineleme benzer büyüklükte oluyor ve hiçbir üretim duraklamıyor. Ölçülen kazanç, aynı gecikme kısıtları altında servis kapasitesinde: tek kart üzerindeki 7 milyarlık bir modelde 2,6 kat, iki kart üzerindeki 34 milyarlıkta 3,7 kata kadar, boru hattı paralelliğiyle çalışan 180 milyarlıkta 5,6 kata kadar.
+**Parçalı ön dolum** (chunked prefill) aşamaları ayırmıyor, ön dolumu bölüyor. Uzun bir istem yaklaşık eşit parçalara ayrılıyor ve her yinelemede bir parça, devam eden üretimlerle **aynı** yığında işleniyor. Böylece her yineleme benzer büyüklükte oluyor ve hiçbir üretim duraklamıyor. Ölçülen kazanç, aynı gecikme kısıtları altında servis kapasitesinde: tek kart üzerindeki 7 milyarlık bir modelde 2,6 kata kadar, iki kart üzerindeki 34 milyarlıkta 3,7 kata kadar, boru hattı paralelliğiyle çalışan 180 milyarlıkta 5,6 kata kadar.
 
 Parça boyunun kendisi bir ayar. Parçalar çok büyükse duraklamalar geri gelir; çok küçükse ön dolumun asıl avantajı kaybolur, çünkü her parça ağırlıkların yeniden okunmasını gerektirir ve 26\. makaledeki hesap gücüyle sınırlı rejimden bellekle sınırlı rejime kayılır. Aranan nokta, bir yinelemenin çipi doyuracak kadar büyük, akışı takmayacak kadar küçük olduğu yerdir.
 
@@ -80,21 +86,21 @@ Sonra kabul kararı geliyor ve asıl incelik burada. Taslağın önerdiği token
 
 Şekil 3'teki döngünün getirisi tek bir sayıya bağlı: **kabul oranı**, yani taslağın önerdiği bir token'ın kabul edilme olasılığı. Buna α diyelim ve bir adımda kaç token üretildiğini hesaplayalım. Öneriler ilk reddedilene kadar kabul edilir ve reddedilen konumda da bir token üretilir; yani üretilen token sayısı, en fazla γ+1 ile sınırlanmış geometrik bir değişkendir. Beklenen değeri şudur: 1 eksi α'nın γ+1'inci kuvveti, bölü 1 eksi α.
 
-Somut yapalım. Taslak model yedi token öneriyor (γ = 7) ve kabul oranı 0,62 ölçülmüş olsun. 0,62'nin sekizinci kuvveti 0,0218; hesap (1 − 0,0218) ÷ (1 − 0,62) = 2,57 çıkıyor. Yani büyük modelin her geçişinde ortalama 2,57 token üretiliyor. Aynı düzende ölçülen gerçek duvar saati hızlanması 2,6 kat.
+Somut yapalım. Taslak model yedi token öneriyor (γ = 7) ve kabul oranı 0,62 ölçülmüş olsun. 0,62'nin sekizinci kuvveti 0,0218; hesap (1 − 0,0218) ÷ (1 − 0,62) = 2,57 çıkıyor. Yani büyük modelin her geçişinde ortalama 2,57 token üretiliyor. Bu sayı doğrudan hızlanma değildir: her geçişin başında taslağın yedi adımı da çalışır ve o süre hesaba eklenmelidir — bir sonraki bölümün konusu tam da bu denge. Aynı düzende ölçülen gerçek duvar saati hızlanması 2,6 kat.
 
 ## Taslak modeli seçmenin değiş tokuşu
 
 Kabul oranı yüksek olsun istiyoruz. En kolay yol taslağı büyütmek — ama bu, hızlanmayı **düşürüyor**. Aynı çalışmanın 11 milyar parametreli bir hedef model üzerindeki ölçümü:
 
-| Taslak model | Kabul oranı | Hızlanma |
-|---|---|---|
-| 77 milyon | 0,62 | 2,6× |
-| 250 milyon | 0,68 | 2,4× |
-| 800 milyon | 0,71 | 1,4× |
+| Taslak model | Öneri sayısı (γ) | Kabul oranı | Hızlanma |
+|---|---|---|---|
+| 77 milyon | 7 | 0,62 | 2,6× |
+| 250 milyon | 5 | 0,68 | 2,4× |
+| 800 milyon | 3 | 0,71 | 1,4× |
 
-Sebep açık: taslağın kendi çalışması da zaman alıyor ve bu maliyet her adımda γ kez ödeniyor. 800 milyonluk taslak daha isabetli tahminler yapıyor ama hedefin on dörtte biri kadar bir maliyetle geliyor; kazandırdığından fazlasını yiyor.
+Sebep açık: taslağın kendi çalışması da zaman alıyor ve bu maliyet her adımda γ kez ödeniyor. 800 milyonluk taslak daha isabetli tahminler yapıyor ama parametre sayısıyla kabaca hedefin on dörtte biri kadar bir maliyetle geliyor; kazandırdığından fazlasını yiyor. İkinci sütun da aynı dengeyi gösteriyor: taslak pahalılaştıkça en iyi sonucu veren öneri sayısı küçülüyor.
 
-Ölçeğin öbür ucu daha da öğretici. Aynı çalışma, taslak yerine 5\. makalede elle kurduğumuz **bigram** modelini — yalnızca bir önceki token'a bakıp sonrakini sayımla tahmin eden model — kullandığında kabul oranının 0,20'ye düştüğünü, ama maliyeti sıfıra yakın olduğu için yine de 1,25 kat hızlanma sağladığını ölçüyor. Yani seçilecek şey en iyi taslak değil, kabul oranı ile maliyetin çarpımını en iyileyen taslak.
+Ölçeğin öbür ucu daha da öğretici. Aynı çalışma, taslak yerine 5\. makalede elle kurduğumuz **bigram** modelini — yalnızca bir önceki token'a bakıp sonrakini sayımla tahmin eden model — kullandığında kabul oranının 0,20'ye düştüğünü ölçüyor. Bigram'ın maliyeti bir tablo okumasından ibaret, yani sıfıra yakın; bu yüzden yukarıdaki formül doğrudan hızlanmayı verir. γ = 3 ile: (1 − 0,2⁴) ÷ (1 − 0,2) = 0,9984 ÷ 0,8 ≈ 1,25. Yazarların bildirdiği 1,25 kat, ölçülmüş bir duvar saati değil, ölçülen kabul oranından bu formülle çıkan kazançtır. Yani seçilecek şey en iyi taslak değil, kabul oranı ile maliyetin çarpımını en iyileyen taslak.
 
 Üçüncü bir değişken de 10\. makaleden tanıdık: sıcaklık. Açgözlü seçimde kabul oranı belirgin biçimde yükseliyor (aynı 77 milyonluk taslakla 0,62 yerine 0,75) ve hızlanma 3,4 kata çıkıyor. Sebep sezgisel — dağılım keskinleştikçe iki modelin en olası seçimde anlaşma ihtimali artıyor.
 
@@ -116,7 +122,7 @@ Adın yazıldığı noktaya kadar tamamen; ondan sonrası her kullanıcı için 
 
 Bu makaledeki tekniklerin ortak bir sonucu var: bir modelin hızı ve fiyatı, o modelin özelliği değil, çalıştığı sistemin ve o anki yükün sonucudur.
 
-**İş hacmi ile gecikmeyi ayrı tut.** Yığını büyütmek birim zamanda hizmet verilen istek sayısını artırır ve tek kullanıcının cevabını yavaşlatır. İki ölçü aynı yönde iyileşmez; bir servis düzeni bu gerilimde bir nokta seçmektir.
+**İş hacmi ile gecikmeyi ayrı tut.** Yığını büyütmek birim zamanda hizmet verilen istek sayısını artırır; çip hesapla sınırlı rejime yaklaştıkça ve okunacak önbellek büyüdükçe de tek kullanıcının cevabını yavaşlatır. İki ölçü aynı yönde iyileşmez; bir servis düzeni bu gerilimde bir nokta seçmektir.
 
 **"Saniyede kaç token" yükten bağımsız bir sayı değildir.** Aynı model, boş bir sistemde ve dolu bir kuyrukta bambaşka davranır. İlan edilen sayının hangi yükte ölçüldüğü sorulmalıdır.
 

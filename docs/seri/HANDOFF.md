@@ -6,7 +6,7 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-13 · Durum: **1–114 yayında (kohort Batch 0 → Batch 27) · Faz 14'ün gövdesi ve ilk vaka incelemesi bitti · Sıradaki: 115 (ikinci vaka incelemesi) + 116–118'in açılışı**
+Son güncelleme: 2026-09-25 · Durum: **1–114 yayında (kohort Batch 0 → Batch 27) · 2026-09-25 editoryal yenileme turu tamamlandı (bkz. aşağıdaki bölüm) · Sıradaki: 115 (ikinci vaka incelemesi) + 116–118'in açılışı**
 
 ## Cursor ve güvenli başlangıç
 
@@ -22,6 +22,51 @@ Son güncelleme: 2026-09-13 · Durum: **1–114 yayında (kohort Batch 0 → Bat
 | Level bandı | 1–10 `beginner`; 11–90 `intermediate`; **91'den itibaren `advanced`** (kararlar #19, #201) |
 | Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–80 `safety-and-evaluation`; 81–90 `multimodal-and-future`; 91–102 `foundations`; 103–109 `models-and-training`; 110–113 ve 116–118 `multimodal-and-future`; **114–115 `case-studies`** (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148, #160, #168, #176, #192, #200, #209, #219, #225, #233). **`case-studies` klasörü Batch 27'de açıldı ve kod değişikliği gerekmedi (karar #241); kontrollü sözlükteki yedi kategorinin tamamı artık kullanımda.** Okuma listesinde Batch 27 kohortu iki öbeğe bölünüyor (111–113 `multimodal-and-future`, 114 `case-studies`) ve render'da doğrulandı; `reading-list-groups.test.ts` çalıştırıldı ve geçti |
 
+## Editoryal yenileme turu (2026-09-25) — kararlar #247–#253
+
+Kullanıcının açık talebiyle 1–114'ün **tamamı** gerçek gövdeleri, şekilleri ve kaynaklarıyla
+yeniden okundu; düzeltmeler uygulandı ve kalıcı kurallar SOZLESME v2.2'ye yazıldı. Yöntem: faz
+başına bir denetim ajanı (AI'da 12 küme) okudu, gerekli yerde doğruladı ve düzeltti; kabul ana
+oturumda diff üzerinden verildi; kalan slogan kalıpları tek bir üslup ajanıyla temizlendi.
+Cursor değişmedi: sıradaki üretim yine 115'tir.
+
+- **Sonuç:** 43 yazı anlamlı biçimde revize edildi ve "gözden geçirildi" işareti aldı
+  (2, 3, 9, 13, 14, 16, 17, 18, 19, 28, 30, 33, 34, 40, 42, 43, 54, 57, 63, 67, 69, 71, 72, 73, 74,
+  75, 81, 83, 86, 89, 92, 94, 95, 96, 97, 101, 103, 104, 105, 106, 107, 109, 112); 69 yazıda yerel
+  düzeltme (kalıp, terim, tek sayı/künye, köprü), 64 ve 66'da değişiklik yok. İlk 10'un
+  değerlendirmesi: bugünkü seride "sezgi katmanı" işini görüyorlar ve 91–97, 100, 103 onların
+  sayılarını girdi olarak kullanıyor; eksik köprüler (1'in seri tanıtımı v2 eksenlerini anmıyordu,
+  2'nin eşik kurulumu 95'e bağlanmıyordu, geriye yayılım seride hiç sayılarla işlenmemişti)
+  kapatıldı; kalıp cümleler (makale başına 6–10) temizlendi; numaralı sözlerinin tamamı ödenmiş.
+- **#247 Revizyon işareti:** `revised_at` + `revision_note` frontmatter alanları, katalog kopyası
+  `sync-series-hashes.cjs --write` ile; okuyucuda metnin üstünde sakin satır, revizyondan önce
+  okumuş okura "Sen okuduktan sonra…" ve listede "yenilendi"; ilerleme verisine yazmaz
+  (SOZLESME §12; kod `src/lib/content/revision.ts`, `src/components/reader/revision-notice.tsx`;
+  e2e `tests/e2e/series-revision.spec.ts`).
+- **#248 Hash tanımı:** `content_hash` artık satır sonları LF'ye normalleştirilerek hesaplanır;
+  eski hash'ler çalışma kopyasının CRLF'sine bağlıydı. Bütün hash'ler bu turda yeniden yazıldı.
+- **#249 Şekil tabanı 2 → 1:** kota kaldırıldı (şekillerin ~üçte ikisi SVG'ye çizilmiş tablo ya da
+  düzyazıydı). Tablo–şekil tekrarı yasak; kavramın biçimi varsa şekil onu çizer (SOZLESME §6).
+- **#250 Mekanik kapılar:** `check-series-content.cjs` kalıp listesi, ondalık eki, okura sızan
+  üretim dili ve alt metin uyarısı; `check-series-svg.cjs` alt kenar payı 8 (17 SVG'nin viewBox'ı
+  bu yüzden birkaç birim uzatıldı, hiçbir öğe yer değiştirmedi).
+- **#251 Terim kararları:** kavram "hibrit arama"dır (29), 44'teki "melez getirme" ve şekil etiketi
+  buna çekildi; "konfabülasyon" ilk kez 17'de, 65 yeniden gloss'lamaz; "kalibrasyon"un
+  Kalai–Vempala'daki dar anlamı 17'de ayrıca adlandırılır; "hoşgörülü bulma oranı" (43) deftere
+  girdi.
+- **#252 Başlık istisnası:** 78'in ilk başlığı "Beş makale önce açık bırakılan soru" olgusal olarak
+  yanlıştı (soru 5. makalede bırakılmıştı) → "Beşinci makalenin açık bıraktığı soru". Bu başlıkta
+  kayıtlı okuma konumu olan okur metin çıpasıyla geri döner. Başka başlık değişmedi.
+- **#253 Özet hizalaması:** gövdesi düzeltilen yazılarda özet gövdeyle çelişiyordu ve frontmatter +
+  katalogda birlikte güncellendi: 34, 60 (olgu hatası: "en pahalı üçüncü" → ajansız hattın iki
+  katı), 67, 69, 73, 75, 77, 92, 94, 95, 105. YOL-HARITASI'nın bağlayıcı olgu kayıtlarında
+  (LaMDA 17,8; 558 deneme; Thakur; özellik başına boyut) ve terim defterinde düzeltmeler işlendi.
+- **Önemli olgu düzeltmeleri (örnek):** Eckart–Young hatasının normu (92), en iyi-n KL'nin üst sınır
+  olduğu (94), EO 14110'u kaldıran belge EO 14148 ve Kaliforniya SB 53 (69), hizalama taklidinin
+  25 modellik tekrarı (67), Whisper karşılaştırmasının yönü (82), çatı çizgisi ilişkisinin yönü
+  (89), OPT'nin 35 yeniden başlatmasının donanım arızasına ait olması (8, 109), A-Lab düzeltmesi
+  (113), Dijkstra'nın negatif kenar örneği ve Master teoreminin baskı farkı (BOUN).
+
 ## Sıradaki run'ın kararları
 
 **Kategori kararı yok.** Karar #233 Faz 14'ün tamamını bağladı ve 115–118 o kararın kapsamındadır.
@@ -30,7 +75,12 @@ Verilecek karar sınıfları: çıkarsa **terim** ve **başlık** kararları; ve
 tanımladığı "roadmap'te kalan makale sayısı `N`'den az" durumuna değil, **kalan makale kalmaması**
 durumuna geçer; `+1` fazında seri "tamamlanmış / yeniden planlama gerektirir" state'ine alınmalıdır.
 Yeni başlık icat edilmez; kapsamın uzatılıp uzatılmayacağı **kullanıcı kararıdır** ve HANDOFF'a soru
-olarak değil, state olarak yazılır. **Sonraki bağlayıcı karar numarası #247'dir.**
+olarak değil, state olarak yazılır. **Sonraki bağlayıcı karar numarası #254'tür** (#247–#253 editoryal
+yenileme turunda kullanıldı). 115–118 yazılırken SOZLESME v2.2'nin yeni hükümleri bağlayıcıdır:
+§3 "Formül katmanlama", §4 kaynak koşulu ve tarihleme, §6 şekil tabanı 1 ve tablo–şekil tekrarı
+yasağı, §11 "Anlam önce" ve yazan model için on soru, §12 revizyon işareti (yeni yazıya işaret
+konmaz). `check-series-content.cjs` artık kalıp listesini, ondalık ekini ve okura sızan üretim dilini
+reddeder.
 
 ## Açık borçlar
 
@@ -63,8 +113,27 @@ olarak değil, state olarak yazılır. **Sonraki bağlayıcı karar numarası #2
 - **Prerequisite grafında 79–82 boşluğu.** YOL-HARITASI'ndaki graf satırları 78'de kesilip 83'ten devam
   ediyor; Batch 19 kendi dörtlüsünün satırlarını eklememişti. Batch 20–27 kendi satırlarını ekledi.
   Devrolan eksik; ileride toplu kapatılabilir, hiçbir kapı buna bağlı değil.
-- **Ertelenen inceleme bulguları:** Batch 1 son doğrulamasından kalan ~29 MINOR hâlâ uygulanmadı; tam
-  listeler repo dışındaki tarihsel arşivdedir; hiçbir kapı bu arşive bağımlı değildir.
+- **Ertelenen inceleme bulguları:** Batch 1'den kalan ~29 MINOR'ın arşivi repo dışındaydı; 2026-09-25
+  turu 1–10'u baştan okuduğu için bu kalem kapanmış sayılır.
+- **2026-09-25 turundan kalan bakım borçları (hiçbiri kapı değil):**
+  (1) **Alt metin uzunluğu:** SOZLESME §6'nın ileriye dönük hedefi ≤ 120 kelime; 200'ü aşan 4 AI alt
+  metni `check-series-content.cjs --warnings` ile listelenir. Toplu kısaltılmadı.
+  (2) **Hâlâ SVG'ye çizilmiş tablo olan şekiller** (yeniden çizime aday; ajan raporlarındaki
+  sınıflandırma): 63 Ş2–4, 67 Ş3, 68 Ş2, 71 Ş3, 82/87/88'in üç şekli, 91 Ş3, 93 Ş1, 96 Ş3, 99 Ş3,
+  102 Ş3, 103 Ş1, 104 Ş1–3, 105 Ş1, 106 `egitim-bellek-defteri.svg`, 111/113/114'ün şekilleri,
+  70 `faz-yedi-haritasi.svg`, 84 `tek-sozlugun-defteri.svg`. Yeni kurala göre bir yazıda en fazla
+  bir SVG-tablo; bu yazılar dokunulduğunda gözden geçirilir.
+  (3) **Bu turda yeniden açılmayan sayılar** (önceki batch'lerde doğrulanmış, bu tur kaynak yeniden
+  okunmadı): 15 (CUTE, Singh–Strouse), 19 (Ovadia), 41 (Longpre), 43–47 (Macdonald–Tonellotto,
+  Wang, Xu, Adlakha, Press, BFCL), 58 (AgentHarm), 61 (Singhal), 63 (Shen/Deng/Zeng), 76 (AxBench
+  0,098), 83 (Dhariwal ölçek 10), 85–87, 89 (TPU v4 %60), 94 (Delétang), 96 (Zhang MLP), 105
+  (Ivison), 109 (MegaScale), 111 (OXE ablasyonu), 112 (RippleEdits).
+  (4) **Doğrulanamayan mecra/künye:** 78 Snell ve ark. (COLM 2024/2025?), 75 Paulo–Belrose ve Heap
+  (ICLR 2026?), 81 "VLMs are blind" sayıları (CVF 403), 34 R1 tablosundaki "tercih arenası"
+  satırının hangi kıyas olduğu, 92 LASER'in 29,2'sinin top-10 doğruluk olması, 105 Şekil 1'in "yedi
+  bağlam ortalaması" notu ile değerlerin yalnızca `başla kedi` bağlamıyla tutması, 101'deki Dror
+  "110 bildirinin 3'ü" cümlesinin hangi çalışmaya ait olduğu, 50'deki Weller "%99,9 / %17" cümlesinin
+  anlamı.
 - **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(15) önceki batch'lerden (kararlar #21, #97, #104,
   #106, #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20–27'de doğrulanamayan
   künye yok** (kararlar #191, #198, #207, #216, #224, #232, #239, **#246**). Tek kısmi kalem: Gundersen–Kjensmo'nun

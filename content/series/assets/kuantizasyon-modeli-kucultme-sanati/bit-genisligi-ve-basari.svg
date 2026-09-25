@@ -1,6 +1,6 @@
-<svg viewBox="0 0 720 334" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı bit bütçesinde hassasiyet ile model boyunun değiş tokuşu</text>
-  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--text-muted)">↑ ölçülen ortalama başarı</text>
+  <text x="16" y="52" font-size="13" text-anchor="start" fill="var(--text-muted)">↑ ortalama başarı</text>
 
   <line x1="80" y1="60" x2="80" y2="252" stroke="var(--border)" stroke-width="1"/>
   <line x1="80" y1="252" x2="560" y2="252" stroke="var(--border)" stroke-width="1"/>
@@ -24,4 +24,5 @@
 
   <text x="16" y="296" font-size="13" text-anchor="start" fill="var(--text-muted)">4 bitte saklanan iki kat büyük model, 8 bitteki küçük modelin üstündedir</text>
   <text x="16" y="318" font-size="13" text-anchor="start" fill="var(--text-faint)">3 bitte ilişki tersine döner</text>
+  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-faint)">eğrilerin biçimi şematiktir; ölçülmüş olan, aynı toplam bitteki sıralamadır</text>
 </svg>

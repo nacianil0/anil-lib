@@ -1,10 +1,32 @@
 "use client";
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { BookOpenText, Minus, Monitor, Moon, Plus, SlidersHorizontal, Sun, X } from "lucide-react";
+import {
+  BookOpenText,
+  ChevronDown,
+  Minus,
+  Monitor,
+  Moon,
+  Plus,
+  SlidersHorizontal,
+  Sun,
+  X,
+} from "lucide-react";
 import { UI } from "@/lib/content/labels";
-import { TEXT_SIZES } from "@/lib/preferences/schema";
+import { DEFAULT_PREFERENCES, TEXT_SIZES } from "@/lib/preferences/schema";
 import { useReaderPreferences } from "@/lib/preferences/use-reader-preferences";
+
+/**
+ * Typography a reader rarely touches once it suits them. They stay available, one
+ * disclosure away, so the panel opens on the choices that change reading most.
+ */
+const FINE_KEYS = [
+  "fontWeight",
+  "paragraphSpacing",
+  "firstLineIndent",
+  "letterSpacing",
+  "hyphenation",
+] as const;
 
 type SegmentOption<T extends string> = {
   value: T;
@@ -82,7 +104,7 @@ function PreferenceSwitch({
         onClick={() => onChange(!checked)}
         className="flex h-[31px] w-full items-center justify-between gap-3 rounded-md border border-border bg-surface-muted pl-2.5 pr-2 text-left transition-colors hover:bg-surface"
       >
-        <span id={descriptionId} className="min-w-0 truncate text-[11px] text-text-faint">
+        <span id={descriptionId} className="min-w-0 truncate text-[11px] text-text-muted">
           {description}
         </span>
         <span
@@ -122,6 +144,11 @@ export function ReadingSettings({
   const { preferences, updatePreference, resetPreferences } = useReaderPreferences();
   const [open, setOpen] = useState(false);
   const [resetConfirm, setResetConfirm] = useState(false);
+  const [fineOpen, setFineOpen] = useState(false);
+  const fineId = useId();
+  const fineChanged = FINE_KEYS.filter(
+    (key) => preferences[key] !== DEFAULT_PREFERENCES[key],
+  ).length;
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -231,42 +258,9 @@ export function ReadingSettings({
           </div>
 
           <div className="space-y-4">
-            <SettingsSection title={UI.settingsLayout}>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <PreferenceSegments
-                    label={UI.readingMode}
-                    value={preferences.readingMode}
-                    options={[
-                      { value: "flow", label: UI.readingModeFlow },
-                      { value: "paged", label: UI.readingModePaged },
-                    ]}
-                    onChange={(value) => updatePreference("readingMode", value)}
-                  />
-                  <p className="mt-1 text-[10px] text-text-faint">
-                    {preferences.readingMode === "paged" && !isPagedAvailable
-                      ? UI.readingModeFlowActive
-                      : UI.readingModeHint}
-                  </p>
-                </div>
-                <PreferenceSegments
-                  label={UI.columnWidth}
-                  value={preferences.measure}
-                  options={[
-                    { value: "standard", label: UI.measureStandard },
-                    { value: "wide", label: UI.measureWide },
-                    { value: "extra-wide", label: UI.measureExtraWide },
-                    { value: "full", label: UI.measureFull },
-                  ]}
-                  onChange={(value) => updatePreference("measure", value)}
-                />
-              </div>
-            </SettingsSection>
-
-            <div className="border-t border-border" />
-
-            <SettingsSection title={UI.settingsTypography}>
-              <div className="grid gap-x-4 gap-y-3.5 sm:grid-cols-3">
+            {/* What a reader reaches for first: size, theme, face and leading. */}
+            <SettingsSection title={UI.settingsReading}>
+              <div className="grid gap-x-4 gap-y-3.5 sm:grid-cols-2">
                 <div>
                   <span className="mb-1.5 block text-xs font-medium text-text-muted">
                     {UI.textSize}
@@ -296,87 +290,6 @@ export function ReadingSettings({
                   </div>
                 </div>
 
-                <PreferenceSegments
-                  label={UI.articleFont}
-                  value={preferences.fontFamily}
-                  options={[
-                    { value: "editorial", label: UI.fontEditorial },
-                    { value: "sans", label: UI.fontSans },
-                  ]}
-                  onChange={(value) => updatePreference("fontFamily", value)}
-                />
-
-                <PreferenceSegments
-                  label={UI.fontWeight}
-                  value={preferences.fontWeight}
-                  options={[
-                    { value: "light", label: UI.fontWeightLight },
-                    { value: "regular", label: UI.fontWeightRegular },
-                    { value: "medium", label: UI.fontWeightMedium },
-                  ]}
-                  onChange={(value) => updatePreference("fontWeight", value)}
-                />
-
-                <PreferenceSegments
-                  label={UI.lineSpacing}
-                  value={preferences.lineSpacing}
-                  options={[
-                    { value: "compact", label: UI.spacingCompact },
-                    { value: "balanced", label: UI.spacingBalanced },
-                    { value: "relaxed", label: UI.spacingRelaxed },
-                  ]}
-                  onChange={(value) => updatePreference("lineSpacing", value)}
-                />
-
-                <PreferenceSegments
-                  label={UI.paragraphSpacing}
-                  value={preferences.paragraphSpacing}
-                  options={[
-                    { value: "compact", label: UI.spacingCompact },
-                    { value: "balanced", label: UI.spacingBalanced },
-                    { value: "relaxed", label: UI.spacingRelaxed },
-                  ]}
-                  onChange={(value) => updatePreference("paragraphSpacing", value)}
-                />
-
-                <PreferenceSegments
-                  label={UI.firstLineIndent}
-                  value={preferences.firstLineIndent}
-                  options={[
-                    { value: "none", label: UI.indentNone },
-                    { value: "subtle", label: UI.indentSubtle },
-                    { value: "classic", label: UI.indentClassic },
-                  ]}
-                  onChange={(value) => updatePreference("firstLineIndent", value)}
-                />
-
-                <PreferenceSegments
-                  label={UI.letterSpacing}
-                  value={preferences.letterSpacing}
-                  options={[
-                    { value: "tight", label: UI.letterSpacingTight },
-                    { value: "normal", label: UI.letterSpacingNormal },
-                    { value: "relaxed", label: UI.letterSpacingRelaxed },
-                  ]}
-                  onChange={(value) => updatePreference("letterSpacing", value)}
-                />
-
-                <PreferenceSegments
-                  label={UI.hyphenation}
-                  value={preferences.hyphenation}
-                  options={[
-                    { value: "off", label: UI.hyphenationOff },
-                    { value: "auto", label: UI.hyphenationAuto },
-                  ]}
-                  onChange={(value) => updatePreference("hyphenation", value)}
-                />
-              </div>
-            </SettingsSection>
-
-            <div className="border-t border-border" />
-
-            <SettingsSection title={UI.settingsAppearance}>
-              <div className="grid gap-x-4 gap-y-3.5 sm:grid-cols-3">
                 <div className="min-w-0">
                   <span className="mb-1.5 block text-xs font-medium text-text-muted">
                     {UI.theme}
@@ -424,6 +337,61 @@ export function ReadingSettings({
                   </div>
                 </div>
 
+                <PreferenceSegments
+                  label={UI.articleFont}
+                  value={preferences.fontFamily}
+                  options={[
+                    { value: "editorial", label: UI.fontEditorial },
+                    { value: "sans", label: UI.fontSans },
+                  ]}
+                  onChange={(value) => updatePreference("fontFamily", value)}
+                />
+
+                <PreferenceSegments
+                  label={UI.lineSpacing}
+                  value={preferences.lineSpacing}
+                  options={[
+                    { value: "compact", label: UI.spacingCompact },
+                    { value: "balanced", label: UI.spacingBalanced },
+                    { value: "relaxed", label: UI.spacingRelaxed },
+                  ]}
+                  onChange={(value) => updatePreference("lineSpacing", value)}
+                />
+              </div>
+            </SettingsSection>
+
+            <div className="border-t border-border" />
+
+            <SettingsSection title={UI.settingsLayout}>
+              <div className="grid gap-x-4 gap-y-3.5 sm:grid-cols-2">
+                <div>
+                  <PreferenceSegments
+                    label={UI.readingMode}
+                    value={preferences.readingMode}
+                    options={[
+                      { value: "flow", label: UI.readingModeFlow },
+                      { value: "paged", label: UI.readingModePaged },
+                    ]}
+                    onChange={(value) => updatePreference("readingMode", value)}
+                  />
+                  <p className="mt-1 text-[11px] text-text-faint">
+                    {preferences.readingMode === "paged" && !isPagedAvailable
+                      ? UI.readingModeFlowActive
+                      : UI.readingModeHint}
+                  </p>
+                </div>
+                <PreferenceSegments
+                  label={UI.columnWidth}
+                  value={preferences.measure}
+                  options={[
+                    { value: "standard", label: UI.measureStandard },
+                    { value: "wide", label: UI.measureWide },
+                    { value: "extra-wide", label: UI.measureExtraWide },
+                    { value: "full", label: UI.measureFull },
+                  ]}
+                  onChange={(value) => updatePreference("measure", value)}
+                />
+
                 <PreferenceSwitch
                   label={UI.lineGuide}
                   description={UI.lineGuideHint}
@@ -439,6 +407,90 @@ export function ReadingSettings({
                 />
               </div>
             </SettingsSection>
+
+            <div className="border-t border-border" />
+
+            <section>
+              <button
+                type="button"
+                aria-expanded={fineOpen}
+                aria-controls={fineId}
+                onClick={() => setFineOpen((value) => !value)}
+                className="-mx-1 flex w-[calc(100%+0.5rem)] items-center gap-2 rounded px-1 py-1 text-left transition-colors hover:bg-surface-muted"
+              >
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-text-muted">
+                  {UI.settingsFine}
+                </span>
+                {fineChanged > 0 && (
+                  <span className="text-[11px] text-accent">
+                    {UI.settingsFineChanged(fineChanged)}
+                  </span>
+                )}
+                <ChevronDown
+                  className={`ml-auto h-4 w-4 text-text-muted transition-transform ${
+                    fineOpen ? "rotate-180" : ""
+                  }`}
+                  aria-hidden="true"
+                />
+              </button>
+              {fineOpen && (
+                <div id={fineId} className="mt-3 grid gap-x-4 gap-y-3.5 sm:grid-cols-3">
+                  <PreferenceSegments
+                    label={UI.fontWeight}
+                    value={preferences.fontWeight}
+                    options={[
+                      { value: "light", label: UI.fontWeightLight },
+                      { value: "regular", label: UI.fontWeightRegular },
+                      { value: "medium", label: UI.fontWeightMedium },
+                    ]}
+                    onChange={(value) => updatePreference("fontWeight", value)}
+                  />
+
+                  <PreferenceSegments
+                    label={UI.paragraphSpacing}
+                    value={preferences.paragraphSpacing}
+                    options={[
+                      { value: "compact", label: UI.spacingCompact },
+                      { value: "balanced", label: UI.spacingBalanced },
+                      { value: "relaxed", label: UI.spacingRelaxed },
+                    ]}
+                    onChange={(value) => updatePreference("paragraphSpacing", value)}
+                  />
+
+                  <PreferenceSegments
+                    label={UI.firstLineIndent}
+                    value={preferences.firstLineIndent}
+                    options={[
+                      { value: "none", label: UI.indentNone },
+                      { value: "subtle", label: UI.indentSubtle },
+                      { value: "classic", label: UI.indentClassic },
+                    ]}
+                    onChange={(value) => updatePreference("firstLineIndent", value)}
+                  />
+
+                  <PreferenceSegments
+                    label={UI.letterSpacing}
+                    value={preferences.letterSpacing}
+                    options={[
+                      { value: "tight", label: UI.letterSpacingTight },
+                      { value: "normal", label: UI.letterSpacingNormal },
+                      { value: "relaxed", label: UI.letterSpacingRelaxed },
+                    ]}
+                    onChange={(value) => updatePreference("letterSpacing", value)}
+                  />
+
+                  <PreferenceSegments
+                    label={UI.hyphenation}
+                    value={preferences.hyphenation}
+                    options={[
+                      { value: "off", label: UI.hyphenationOff },
+                      { value: "auto", label: UI.hyphenationAuto },
+                    ]}
+                    onChange={(value) => updatePreference("hyphenation", value)}
+                  />
+                </div>
+              )}
+            </section>
           </div>
 
           <div className="mt-3 flex items-center justify-between gap-3 border-t border-border pt-2.5">

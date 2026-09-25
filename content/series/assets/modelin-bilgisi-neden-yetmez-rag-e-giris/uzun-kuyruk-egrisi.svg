@@ -1,13 +1,13 @@
-<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Doğruluk, olgunun kaç belgede geçtiğine bağlı</text>
   <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">yatay eksen logaritmiktir: ön eğitim verisindeki ilgili belge sayısı</text>
 
   <line x1="70" y1="236" x2="680" y2="236" stroke="var(--border)" stroke-width="1"/>
-  <line x1="70" y1="58" x2="70" y2="236" stroke="var(--border)" stroke-width="1"/>
-  <text x="62" y="66" font-size="13" text-anchor="end" fill="var(--text-faint)">%65</text>
+  <line x1="70" y1="54" x2="70" y2="236" stroke="var(--border)" stroke-width="1"/>
+  <text x="62" y="62" font-size="13" text-anchor="end" fill="var(--text-faint)">%80</text>
   <text x="62" y="240" font-size="13" text-anchor="end" fill="var(--text-faint)">%0</text>
 
-  <rect x="70" y="58" width="118" height="178" fill="var(--surface-muted)" stroke="none"/>
+  <rect x="70" y="54" width="118" height="182" fill="var(--surface-muted)" stroke="none"/>
   <text x="129" y="80" font-size="13" text-anchor="middle" fill="var(--text-muted)">uzun kuyruk</text>
 
   <polyline fill="none" stroke="var(--accent)" stroke-width="2" points="70,201 95,196 119,190 144,184 168,178 193,173 218,167 242,161 267,156 291,150 316,144 340,139 365,133 390,127 414,122 439,116 463,110 488,104 512,99 537,93 562,87 586,82 611,76 635,70 660,67"/>
@@ -31,4 +31,5 @@
   <line x1="16" y1="286" x2="704" y2="286" stroke="var(--border)" stroke-width="1"/>
   <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-muted)">modeli büyütmek eğriyi yukarı kaydırır</text>
   <text x="16" y="328" font-size="13" text-anchor="start" fill="var(--text-faint)">ama sol uçtaki açığı kapatmaz</text>
+  <text x="16" y="346" font-size="13" text-anchor="start" fill="var(--text-faint)">eğrilerin biçimi şematiktir; ölçülmüş olan, büyük model üzerindeki iki işaretli değerdir</text>
 </svg>

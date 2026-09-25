@@ -36,5 +36,5 @@
   <rect x="76" y="306" width="568" height="80" rx="8" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.4" />
   <text x="94" y="330" font-size="13" fill="var(--text)">16 ekleme, toplam 31 adım = 16 ekleme + 15 kopyalama</text>
   <text x="94" y="352" font-size="13" fill="var(--text-muted)">kopyalama toplamı 1 + 2 + 4 + 8 = 15, her zaman 2n sınırının altında</text>
-  <text x="94" y="374" font-size="13" fill="var(--text-muted)">işlem başına 31 / 16 ≈ 1,9 adım: tek işlem doğrusal olsa da dizi sabit</text>
+  <text x="94" y="374" font-size="13" fill="var(--text-muted)">işlem başına 31 / 16 ≈ 1,9 adım: tek ekleme doğrusal olabilir, işlem başına pay sabit</text>
 </svg>

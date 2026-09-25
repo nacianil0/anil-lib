@@ -12,7 +12,7 @@ tags:
   - takip-sorusu
   - tahta-kullanimi
   - arastirma-yonu
-content_hash: sha256:8395d06ada03acf4696a105b112302c299e422756568a56b6be63504aa8bce01
+content_hash: sha256:94851a2e8c38dfeece30966a14c943528406bffaa61ad7069863d44aecc34cfa
 classification_version: 1
 classification_batch: 13
 ---
@@ -84,7 +84,7 @@ Görüşme bir ofiste geçiyor ve büyük ihtimalle elinin altında bir tahta ya
 
 Altmış saniyede yazabileceğin şey çok azdır. Bu yüzden ne yazacağına önceden karar vermelisin. Şekil 2 dört bölgelik bir düzen öneriyor ve bu düzen, yukarıdaki iki sabit sırayla birebir uyuşuyor.
 
-![Üstünde tahta ya da kâğıt, altmış saniyede yazılabilecek kadarı etiketi bulunan dikdörtgen bir çerçeve; çerçeve bir dikey ve bir yatay çizgiyle dört bölgeye ayrılmış. Sol üst bölgede tanım ya da değişmez başlığı, altında tek cümle tam yazılır notu ve nötr renkli bir örnek kutusu var: her düğümde sol alt ağaç küçük, sağ alt ağaç büyük. Sağ üst bölgede maliyet muhasebesi başlığı, altında n nedir kaç kez hangi sınıf notu ve vurgulu renkte bir örnek kutusu var: n eleman, her adımda yarıya iner, log n adım. Sol alt bölgede küçük örnek başlığı, altında gerçek sayılarla en fazla yedi eleman notu ve nötr renkli bir örnek kutusu var: yedi sayılık bir dizi ve elle izlenebilir notu. Sağ alt bölgede bozulma noktası başlığı, altında burayı sen yazarsın notu ve ikinci vurgu renginde bir örnek kutusu var: sıralı eklemede yükseklik n olur, log n değil. Çerçevenin altında üç kural satırı duruyor: konuşurken yaz, yazdıktan sonra sus ve karşındakinin okumasını bekle; kod yazma, en fazla üç satırlık dil bağımsız sözde kod yaz; yanlış yazdıysan silme, üstünü çiz ve yanına doğrusunu yazıp nedenini söyle](assets/tahta-dort-bolge.svg "Şekil 2 — Tahtanın dört bölgesi ve hangi bölgeye ne yazıldığı")
+![Üstünde tahta ya da kâğıt, altmış saniyede yazılabilecek kadarı etiketi bulunan dikdörtgen bir çerçeve; çerçeve bir dikey ve bir yatay çizgiyle dört bölgeye ayrılmış. Sol üst bölgede tanım ya da değişmez başlığı, altında tek cümle tam yazılır notu ve nötr renkli bir örnek kutusu var: soldaki bütün anahtarlar düğümden küçük, sağdakiler büyük. Sağ üst bölgede maliyet muhasebesi başlığı, altında n nedir kaç kez hangi sınıf notu ve vurgulu renkte bir örnek kutusu var: n eleman, her adımda yarıya iner, log n adım. Sol alt bölgede küçük örnek başlığı, altında gerçek sayılarla en fazla yedi eleman notu ve nötr renkli bir örnek kutusu var: yedi sayılık bir dizi ve elle izlenebilir notu. Sağ alt bölgede bozulma noktası başlığı, altında burayı sen yazarsın notu ve ikinci vurgu renginde bir örnek kutusu var: sıralı eklemede yükseklik n olur, log n değil. Çerçevenin altında üç kural satırı duruyor: konuşurken yaz, yazdıktan sonra sus ve karşındakinin okumasını bekle; kod yazma, en fazla üç satırlık dil bağımsız sözde kod yaz; yanlış yazdıysan silme, üstünü çiz ve yanına doğrusunu yazıp nedenini söyle](assets/tahta-dort-bolge.svg "Şekil 2 — Tahtanın dört bölgesi ve hangi bölgeye ne yazıldığı")
 
 **Sol üst: tanım ya da değişmez.** Yanlış söylenmemesi gereken tek cümle burada durur. Ağaç sorusunda arama ağacı değişmezi, döngü sorusunda döngü değişmezi, olasılık sorusunda örneklem uzayı.
 

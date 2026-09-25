@@ -1,35 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" role="img" aria-label="Altı sütunlu bir karşılaştırma tablosu ve altında iki kayıt. Sütunlar: koşul sayısı kappa, gradyan inişinin adım başına uzaklık çarpanı, uzaklığı yüzde bire indirmek için gereken adım sayısı, momentumun adım başına çarpanı, momentumun adım sayısı ve kazanç. Birinci satır kappa eşittir 20 için gradyan inişinde 0,9048 ve 47 adım, momentumda 0,6345 ve 11 adım, kazanç 4,5 kat. İkinci satır kappa eşittir 100 için gradyan inişinde 0,9802 ve 231 adım, momentumda 0,8182 ve 23 adım, kazanç 10,0 kat. Tablonun altındaki kutuda formüller ve geometrik okuma durur: gradyan inişi çarpanı kappa eksi bir bölü kappa artı bir, momentum çarpanı karekök kappa eksi bir bölü karekök kappa artı bir; tavanı en büyük eğrilik belirler, ilerleme hızını en küçük eğrilik; koşul sayısı ikisinin oranıdır, yani çanağın ne kadar uzun ve dar olduğu. En altta iki kayıt: çarpanlar kaynağın verdiği formülden ve adım sayıları o çarpanlardan elle hesaplanmıştır; ölçülmüş bir eğitim koşusu değil, koşul sayısı kappa olan bir çanağın kapalı çözümüdür.">
-  <text x="130" y="40" font-size="13" font-weight="bold" fill="var(--text)">gradyan inişi</text>
-  <text x="390" y="40" font-size="13" font-weight="bold" fill="var(--accent)">momentum</text>
-  <line x1="20" y1="50" x2="700" y2="50" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 404" role="img" aria-label="Uzun ve dar bir vadinin eşyükselti çizgileri üzerinde iki eniyileme yolu. Çanak f eşittir yarım çarpı w1 kare artı 20 w2 kare; iki eksen aynı ölçekte, koşul sayısı 20, eşyükselti elipsleri yatayda uzun, düşeyde dar. Sağda (20; 1) başlangıç noktası, solda (0; 0) en iyi nokta. Gradyan inişinin yolu her adımda dar eksende işaret değiştirerek yukarı aşağı savrulur ve uzun eksen boyunca küçük adımlarla sürünür; başlangıç uzaklığının yüzde birine 47 adımda iner. Momentumun yolu ilk adımlarda daha geniş salınır ama uzun eksende çok daha büyük adımlar atar; yüzde bire 15 adımda iner. Her iki yolda adımlar noktayla işaretlidir; onuncu adımda momentum en iyi noktaya neredeyse varmışken gradyan inişi uzun eksenin ortasındadır. Altta kayıtlar: eşyükselti çizgileri çanağındır; yollar gradyan inişi için alfa 0,0952, momentum için alfa 0,1336 ve beta 0,4026 ile hesaplanmıştır.">
+  <defs>
+    <clipPath id="okc-95-pencere">
+      <rect x="20" y="40" width="680" height="290" />
+    </clipPath>
+  </defs>
 
-  <text x="24" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">κ</text>
-  <text x="130" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">çarpan</text>
-  <text x="270" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">%1'e adım</text>
-  <text x="390" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">çarpan</text>
-  <text x="530" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">%1'e adım</text>
-  <text x="632" y="72" font-size="13" font-weight="bold" fill="var(--text-muted)">kazanç</text>
+  <g clip-path="url(#okc-95-pencere)" fill="none" stroke="var(--border)" stroke-width="1">
+    <ellipse cx="70" cy="190" rx="615" ry="137.5" />
+    <ellipse cx="70" cy="190" rx="465" ry="104" />
+    <ellipse cx="70" cy="190" rx="300" ry="67" />
+    <ellipse cx="70" cy="190" rx="147" ry="33" />
+    <ellipse cx="70" cy="190" rx="60" ry="13.4" />
+  </g>
+  <line x1="20" y1="190" x2="700" y2="190" stroke="var(--text-faint)" stroke-width="0.8" stroke-dasharray="3 4" />
+  <line x1="70" y1="40" x2="70" y2="330" stroke="var(--text-faint)" stroke-width="0.8" stroke-dasharray="3 4" />
+  <text x="684" y="210" font-size="13" fill="var(--text-faint)">w₁</text>
+  <text x="78" y="54" font-size="13" fill="var(--text-faint)">w₂</text>
 
-  <text x="24" y="100" font-size="13" fill="var(--text)">20</text>
-  <text x="130" y="100" font-size="13" fill="var(--text)">0,9048</text>
-  <text x="270" y="100" font-size="13" fill="var(--text)">47</text>
-  <text x="390" y="100" font-size="13" fill="var(--accent)">0,6345</text>
-  <text x="530" y="100" font-size="13" fill="var(--accent)">11</text>
-  <text x="632" y="100" font-size="13" font-weight="bold" fill="var(--accent)">4,5 kat</text>
+  <polyline points="670,160 613,217 561,165 514,212 472,170 434,208 399,174 368,205 339,177 314,202 291,179 270,200 251,181 233,198 218,183 204,197 191,184 179,195 169,185 160,194 151,186 143,194 136,187 130,193 124,187 119,192 114,188 110,192 106,188 103,192 100,189 97,191 94,189 92,191 90,189 88,191 86,189 85,191 83,189 82,191 81,189 80,190 79,190 78,190 77,190 77,190 76,190 75,190" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linejoin="round" />
+  <polyline points="670,160 590,240 488,138 391,235 309,153 244,218 195,169 158,205 132,179 113,198 100,184 90,194 84,187 79,192 76,189 74,191" fill="none" stroke="var(--cool)" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="6 3" />
 
-  <text x="24" y="126" font-size="13" fill="var(--text)">100</text>
-  <text x="130" y="126" font-size="13" fill="var(--text)">0,9802</text>
-  <text x="270" y="126" font-size="13" fill="var(--text)">231</text>
-  <text x="390" y="126" font-size="13" fill="var(--accent)">0,8182</text>
-  <text x="530" y="126" font-size="13" fill="var(--accent)">23</text>
-  <text x="632" y="126" font-size="13" font-weight="bold" fill="var(--accent)">10,0 kat</text>
+  <circle cx="670" cy="160" r="5" fill="var(--text)" />
+  <circle cx="70" cy="190" r="4" fill="var(--text)" />
+  <text x="700" y="108" font-size="13" text-anchor="end" fill="var(--text)">başlangıç (20; 1)</text>
+  <line x1="668" y1="114" x2="670" y2="152" stroke="var(--text-faint)" />
+  <text x="30" y="240" font-size="13" fill="var(--text)">en iyi nokta</text>
+  <line x1="58" y1="228" x2="68" y2="196" stroke="var(--text-faint)" />
 
-  <rect x="20" y="144" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="168" font-size="13" fill="var(--text)">gradyan inişi: (κ − 1) / (κ + 1)</text>
-  <text x="380" y="168" font-size="13" fill="var(--accent)">momentum: (√κ − 1) / (√κ + 1)</text>
-  <text x="34" y="190" font-size="13" fill="var(--text)">Tavanı en büyük eğrilik belirler, ilerleme hızını en küçük eğrilik.</text>
-  <text x="34" y="210" font-size="13" fill="var(--text-muted)">Koşul sayısı ikisinin oranıdır: çanağın ne kadar uzun ve dar olduğu.</text>
+  <g fill="var(--accent)"><circle cx="613" cy="217" r="2.2" /> <circle cx="561" cy="165" r="2.2" /> <circle cx="514" cy="212" r="2.2" /> <circle cx="472" cy="170" r="2.2" /> <circle cx="434" cy="208" r="2.2" /> <circle cx="399" cy="174" r="2.2" /> <circle cx="368" cy="205" r="2.2" /> <circle cx="339" cy="177" r="2.2" /> <circle cx="314" cy="202" r="2.2" /> <circle cx="291" cy="179" r="3.5" /> <circle cx="270" cy="200" r="2.2" /> <circle cx="251" cy="181" r="2.2" /> <circle cx="233" cy="198" r="2.2" /> <circle cx="218" cy="183" r="2.2" /> <circle cx="204" cy="197" r="2.2" /> <circle cx="191" cy="184" r="2.2" /> <circle cx="179" cy="195" r="2.2" /> <circle cx="169" cy="185" r="2.2" /> <circle cx="160" cy="194" r="2.2" /> <circle cx="151" cy="186" r="2.2" /> <circle cx="143" cy="194" r="2.2" /> <circle cx="136" cy="187" r="2.2" /> <circle cx="130" cy="193" r="2.2" /> <circle cx="124" cy="187" r="2.2" /></g>
+  <g fill="var(--cool)"><circle cx="590" cy="240" r="3" /> <circle cx="488" cy="138" r="3" /> <circle cx="391" cy="235" r="3" /> <circle cx="309" cy="153" r="3" /> <circle cx="244" cy="218" r="3" /> <circle cx="195" cy="169" r="3" /> <circle cx="158" cy="205" r="3" /> <circle cx="132" cy="179" r="3" /> <circle cx="113" cy="198" r="3" /> <circle cx="100" cy="184" r="4" /> <circle cx="90" cy="194" r="3" /></g>
 
-  <text x="20" y="246" font-size="13" fill="var(--text-faint)">Çarpanlar kaynağın verdiği formülden, adım sayıları da o çarpanlardan elle hesaplandı.</text>
-  <text x="20" y="268" font-size="13" fill="var(--text-faint)">Ölçülmüş bir eğitim koşusu değil; koşul sayısı κ olan bir çanağın kapalı çözümü.</text>
+  <text x="330" y="140" font-size="13" font-weight="bold" fill="var(--accent)">gradyan inişi</text>
+  <text x="318" y="258" font-size="13" font-weight="bold" fill="var(--cool)">momentum</text>
+  <text x="268" y="224" font-size="13" fill="var(--accent)">10. adım</text>
+  <line x1="291" y1="211" x2="291" y2="184" stroke="var(--accent)" stroke-width="0.8" />
+  <text x="104" y="148" font-size="13" fill="var(--cool)">10. adım</text>
+  <line x1="104" y1="152" x2="101" y2="179" stroke="var(--cool)" stroke-width="0.8" />
+
+  <text x="20" y="352" font-size="13" fill="var(--text)">Gradyan inişi 47 adımda, momentum 15 adımda başlangıç uzaklığının yüzde birine iniyor.</text>
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">Eşyükselti çizgileri f = ½(w₁² + 20w₂²) çanağının; iki eksen aynı ölçekte, koşul sayısı 20.</text>
+  <text x="20" y="396" font-size="13" fill="var(--text-faint)">Yollar hesaplandı: gradyan inişi α = 0,0952; momentum α = 0,1336, β = 0,4026.</text>
 </svg>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 396" role="img" aria-label="Üstte 100 görevlik açıklama amaçlı düzenek: modelin emin olduğu 70 görevde model yüzde 95, emin olmadığı 30 görevde yüzde 50 doğru; insan her yerde yüzde 85, emin olunmayan bölgede bağımsız bilgiyle yüzde 80 ya da modelle aynı yerde zorlanıyorsa yüzde 55. Altta dört politika satırı: yalnız model 18,5 hata ve 0 devir; yalnız insan 15 hata ve 100 devir; emin değilse devret, insan bağımsız 9,5 hata ve 30 devir; emin değilse devret, insan modelle aynı yerde zorlanıyor 17 hata ve 30 devir.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 396" role="img" aria-label="Üstte 100 görevlik açıklama amaçlı düzenek: modelin emin olduğu 70 görevde model yüzde 95, emin olmadığı 30 görevde yüzde 50 doğru; insan ortalamada yüzde 85, emin olunmayan bölgede bağımsız bilgiyle yüzde 80 ya da modelle aynı yerde zorlanıyorsa yüzde 55. Altta dört politika satırı: yalnız model 18,5 hata ve 0 devir; yalnız insan 15 hata ve 100 devir; emin değilse devret, insan bağımsız 9,5 hata ve 30 devir; emin değilse devret, insan modelle aynı yerde zorlanıyor 17 hata ve 30 devir.">
   <text x="20" y="26" font-size="13" font-weight="bold" fill="var(--text)">Düzenek (100 görev; sayılar açıklama amaçlı)</text>
   <rect x="20" y="36" width="330" height="74" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
   <text x="30" y="56" font-size="13" font-weight="bold" fill="var(--text)">model</text>
@@ -6,7 +6,7 @@
   <text x="30" y="96" font-size="13" fill="var(--text)">emin değil: 30 görev, %50 doğru → 15 hata</text>
   <rect x="370" y="36" width="330" height="74" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
   <text x="380" y="56" font-size="13" font-weight="bold" fill="var(--text)">insan</text>
-  <text x="380" y="76" font-size="13" fill="var(--text)">her yerde %85 doğru; her devir zaman ister</text>
+  <text x="380" y="76" font-size="13" fill="var(--text)">ortalama %85 doğru; her devir zaman ister</text>
   <text x="380" y="96" font-size="13" fill="var(--text)">emin-değilde: bağımsız %80 · bağıntılı %55</text>
 
   <text x="20" y="140" font-size="13" font-weight="bold" fill="var(--text)">politika</text>

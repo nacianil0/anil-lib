@@ -6,7 +6,8 @@
 > (2) bu dosya, (3) YOL-HARITASI'nın ilgili bölümleri. Üretim trigger'ı:
 > `docs/seri-boun/TRIGGER.md`.
 
-Son güncelleme: 2026-09-13 · Durum: **SERİ TAMAMLANDI — 1–41 yayında; ilk bakım run'ı koşuldu
+Son güncelleme: 2026-09-25 · Durum: **SERİ TAMAMLANDI — 1–41 yayında; 2026-09-25 editoryal yenileme
+turu tamamlandı (bkz. aşağıdaki bölüm); ilk bakım run'ı koşuldu
 (2026-09-13): beş açık kaynak borcunun beşi kapandı, 3 diyagramda kırpma ve 3 makalede bölünmüş
 "Sesli anlat" kutusu düzeltildi, 50 teyitli editoryal kusur giderildi** (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18, Batch 6: 19–21, Batch 7: 22–24, Batch 8: 25–27, Batch 9: 28–30, Batch 10: 31–33, Batch 11: 34–36, Batch 12: 37–39, Batch 13: 40–41) · Sıradaki makale: **yok**
 
@@ -24,6 +25,39 @@ Son güncelleme: 2026-09-13 · Durum: **SERİ TAMAMLANDI — 1–41 yayında; il
 | Kullanılan kategoriler | 1 + 40–41 → `interview-method`, 2–8 → `discrete-math`, 9–16 → `data-structures`, 17–25 → `algorithms`, 26–35 → `operating-systems`, 36–39 → `supporting-fundamentals`. **Altı kategorinin hepsi kullanımdadır ve seride kategori kararı kalmamıştır.** |
 | Kod dokunuş noktaları | `src/lib/content/series-boun.ts` (seri örneği), `series-content.ts` (ortak fabrika), `schema.ts` (seri başına kategori sözlüğü), `labels.ts`; `SeriesLanding` `basePath/intro/footerNote` prop'ları; `ReaderDashboard` `series[]` prop'u; sync `validArticleIds` = ana ∪ AI ∪ BOUN (katalogdan türetilir) |
 | Araçlar | `node tools/series/check-series-content.cjs --series=boun`, `check-series-svg.cjs content/series-boun/assets`, `sync-series-hashes.cjs --series=boun [--write]`, `entegre-batch.cjs --series=boun [--write]` |
+
+## Editoryal yenileme turu (2026-09-25)
+
+Kullanıcının açık talebiyle 1–41'in tamamı gerçek gövdeleri, şekilleri ve kaynaklarıyla yeniden
+okundu (faz başına bir denetim ajanı, beş küme; kabul ana oturumda diff üzerinden). Kalıcı kurallar
+SOZLESME v1.2'ye yazıldı. Yeni makale üretilmedi; seri tamamlanmış hâlde kalır.
+
+- **Sonuç:** 7 yazı anlamlı biçimde revize edildi ve "gözden geçirildi" işareti aldı (12 AVL çift
+  dönüş örneği ve yeni şema; 18 Master teoreminin CLRS 3e/4e farkı ve düzenlilik koşulu; 25 durma
+  ispatının tutarlılığı, eş-sağlanabilirlik ve 2-SAT'ın iki yönü; 29 Dijkstra'nın maddeleriyle ders
+  kitabı koşullarının doğru eşlemesi ve üç görevli öncelik tersine dönmesi; 36 formüllerin sezgiyle
+  katmanlanması; 37 log ölçekli bellek hiyerarşisi ve kesişim aralığı; 39 normal biçimler ve yazma
+  çarpıklığı). Kalan 34 yazıda yerel düzeltme yapıldı.
+- **Karara bağlı açık kalem kapandı:** 1'e "## Mülakatta nasıl görünür", 2–7 ve 40'a İngilizce
+  karşılıklar satırı, 4'e sık hatalar listesi eklendi; ikisi artık `check-series-content.cjs
+  --series=boun` tarafından zorlanıyor. Takip zinciri 16, 18, 19, 21, 22 ve 23'e eklendi.
+- **Önemli doğruluk düzeltmeleri:** Dijkstra negatif kenar karşı örneği iki gerçekleştirimde
+  çalıştırılarak onarıldı (23); karar ağacı arama sınırı yaprak sayısıyla h ≥ log₂(n + 1) diye
+  hizalandı (14, 24); iki yığınlı kuyrukta ihlalin bozduğu şey FIFO sırasıdır (10); `hiçbiri bölünmez
+  değildir` çift olumsuzu düzeltildi (27); Linux CFS'in 6.6'dan beri EEVDF'e geçtiği resmî belgeyle
+  eklendi (28); indeks maliyet tablosunda k = 10 hücresi 4 blok (39).
+- **Özet hizalaması:** 7 (yaprak silerek tümevarım) ve 39 (normal biçimler, yazma çarpıklığı)
+  frontmatter + katalogda güncellendi. Hiçbir başlık değişmedi.
+- **Ortak altyapı değişiklikleri** (AI HANDOFF'ta ayrıntılı): revizyon işareti, hash'in LF
+  normalleştirmesiyle yeniden tanımlanması (bütün hash'ler yeniden yazıldı), şekil tabanı 2 → 1,
+  mekanik kalıp/ondalık/süreç dili kapıları, SVG alt kenar payı (BOUN'da 10 SVG'nin viewBox'ı
+  birkaç birim uzatıldı).
+- **Kalan bakım borçları:** (1) 200 kelimeyi aşan 28 alt metin (`--warnings`; ileriye dönük hedef
+  ≤ 120, toplu kısaltılmadı). (2) Hâlâ SVG'ye çizilmiş tablo olan şekiller (17 aday; ajan
+  raporundaki sınıflandırma). (3) Yazarın kendi modeline bağlı durum sayıları (29–31: 57/5, 10/14,
+  82/70, 11, 19/16) ve 20'deki grup boyutu oranları yeniden üretilmedi. (4) 12'deki B-ağacı
+  şeklinde kök "anahtar 1 … anahtar 100" diyor (yüz çocuklu düğüm 99 anahtar taşır); metin
+  "yaklaşık" dediği için dokunulmadı.
 
 ## Bakım run'ı 1'de ne yapıldı (2026-09-13)
 
@@ -134,7 +168,7 @@ borçlar ve makalelere yansıması:
 **Kalan borç yoktur.** Aşağıdakiler borç değil, **karara bağlı açık kalemler** ve bunlar
 kullanıcının kararını bekler:
 
-- **Beş makalede zorunlu "İngilizce karşılıklar" satırı yok** (2, 3, 4, 5, 6) ve **makale 1'de
+- **[2026-09-25'te KAPANDI — yukarıdaki bölüm]** **Beş makalede zorunlu "İngilizce karşılıklar" satırı yok** (2, 3, 4, 5, 6) ve **makale 1'de
   "## Mülakatta nasıl görünür" bölümünün tamamı yok**; makale 4'te ayrıca SOZLESME §3'ün istediği
   3–6 maddelik sık hatalar listesi yok. Bunlar Batch 0–1'den beri böyledir, **içerik denetleyicisi
   bu kuralları zorlamaz** ve düzeltilmeleri yayımlanmış makalelere **yeni metin yazmak** anlamına

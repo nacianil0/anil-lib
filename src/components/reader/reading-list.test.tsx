@@ -50,4 +50,35 @@ describe("ReadingList", () => {
     const headingIds = Array.from(navigation.querySelectorAll("h3")).map((heading) => heading.id);
     expect(new Set(headingIds).size).toBe(headingIds.length);
   });
+
+  it("follows the series roadmap's phases when it is given them", () => {
+    render(
+      <ReaderProgressProvider workspaceId="test-workspace">
+        <ReadingList
+          currentArticleId="article-3"
+          idPrefix="test"
+          phases={[
+            { id: "faz-01", title: "Temeller", orders: [1, 2] },
+            { id: "faz-02", title: "Derinleşme", orders: [3, 4, 5] },
+          ]}
+          articles={[
+            article(1, 0, "foundations"),
+            article(2, 0, "foundations"),
+            article(3, 1, "models-and-training"),
+          ]}
+        />
+      </ReaderProgressProvider>,
+    );
+
+    const navigation = screen.getByRole("navigation", { name: "Fazlara göre okuma listesi" });
+    // Production batches are not the reader's structure; phases are.
+    expect(screen.queryByRole("heading", { name: /Sınıflandırma/ })).toBeNull();
+    expect(
+      screen.getByRole("heading", { name: "Faz 01: Temeller — 0 / 2 tamamlandı" }),
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Faz 02: Derinleşme — 0 / 1 tamamlandı" }),
+    ).toBeVisible();
+    expect(navigation.querySelector('[aria-current="page"]')?.textContent).toContain("Makale 3");
+  });
 });

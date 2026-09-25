@@ -12,9 +12,11 @@ tags:
   - dikkat-matrisi
   - baglanmis-embedding
   - ileri-gecis
-content_hash: sha256:bf8f4406f11d2ed2d6cf79b2b332bc49a14687ef7b1f8c5399f6c891b3c0c923
+content_hash: sha256:423674a21844e785ec0c3f4312271fcc05d14247245d2ee6310f86ed392e7002
 classification_version: 1
 classification_batch: 25
+revised_at: "2026-09-25"
+revision_note: "Token yolculuğu tek token üzerinden yeniden anlatıldı ve akış şemasıyla çizildi; rastgele modelin neden düz tahminden kötü olduğu açıklandı."
 ---
 ## Kâğıda sığan bir model
 
@@ -35,7 +37,7 @@ Bu makalede o mimarinin çalışan ama **kâğıda sığan** bir örneğini kuru
 | 3 | başla | köpek | bugün | havladı |
 | 4 | başla | köpek | dün | havladı |
 
-Tasarımın tek amacı şu: üçüncü konumdaki zarf iki cümlede de aynı olabildiği için, fiili tahmin etmek isteyen bir modelin **bir önceki token'a bakması yetmez**; ikinci konumdaki özneye ulaşması gerekir. 6\. makaledeki mekanizmanın varlık sebebi buydu ve bu minik dil onu ölçülebilir hâle getiriyor.
+Tasarımın tek amacı şu: konum 2'deki zarf iki cümlede de aynı olabildiği için, fiili tahmin etmek isteyen bir modelin **bir önceki token'a bakması yetmez**; konum 1'deki özneye ulaşması gerekir. 6\. makaledeki mekanizmanın varlık sebebi buydu ve bu minik dil onu ölçülebilir hâle getiriyor.
 
 Kurduğumuz kol, 7\. makaledeki üç koldan kod çözücü olanı: Alec Radford ve arkadaşlarının 2018'de tanıttığı GPT'nin düzeni, yani nedensel maske ve öğrenilen konum embedding'leri. Şimdi modelin ölçüleri. Vektör boyu dört; sekiz olsaydı sayılar satıra sığmazdı, iki olsaydı iki başa bölünemezdi. Baş sayısı iki, yani her başın çalıştığı boyut 4 ÷ 2 = 2 — 7\. makaledeki bölme kuralının aynısı. Bağlam dört token, sözlük yedi token, blok sayısı iki. İleri beslemeli katmanın ara boyutu sekiz; taban modelde bu oran dörttü (512 ve 2.048), biz okunabilirlik için ikide bıraktık ve bu sapmayı burada kaydediyoruz.
 
@@ -57,7 +59,7 @@ Kurduğumuz kol, 7\. makaledeki üç koldan kod çözücü olanı: Alec Radford 
 | Çıktı izdüşümü | embedding tablosuyla paylaşılır | 0 |
 | **Toplam** | | **364** |
 
-Dikkat satırındaki dört matris sorgu, anahtar, değer ve başların çıktısını birleştiren izdüşümdür; 7\. makalede taban model için 4 × 512 × 512 diye saymıştık, burada 4 × 4 × 4. İleri beslemeli satırdaki dört terim iki matris ve iki sapma vektörüdür.
+Satırları tek tek okuyalım. Katman normalleştirme bir vektörü ortalaması sıfır, yayılımı bir olacak biçimde yeniden ölçekler, sonra her boyutu öğrenilen bir katsayıyla çarpıp öğrenilen bir kaymayla öteler; vektör boyu 4 olduğu için bu 4 + 4 = 8 sayı, blokta iki normalleştirme olduğu için 16. Dikkat satırındaki dört matris sorgu, anahtar, değer ve başların çıktısını birleştiren izdüşümdür; her biri dört sayıyı dört sayıya çevirdiği için 4 × 4. Bu matrislere sapma vektörü eklemiyoruz — şartnamenin bir sadeleştirmesi —, bu yüzden satır 4 × 4 × 4 = 64. 7\. makalede taban model için aynı satırı 4 × 512 × 512 diye saymıştık. İleri beslemeli satırdaki dört terim, dördü sekize açan matris ile onun sapması, sekizi dörde indiren matris ile onun sapmasıdır.
 
 Son satır yeni bir şey içeriyor. Modelin en sonunda dört sayılık vektörü sözlük boyunda bir skor listesine çeviren bir izdüşüm var. Onun için ayrı bir matris tutmuyoruz; girişteki embedding tablosunu **aynen** kullanıyoruz. Buna bağlanmış embedding (tied embedding) denir ve 7\. makalede taban modelin tablosunda "paylaşılan embedding tablosu" diye tek satırda saymıştık. Ofir Press ve Lior Wolf'un EACL 2017'de yayımladığı çalışma bunun yalnızca yer tasarrufu olmadığını gösteriyor: iki tabloyu bağlamak, dil modellerinin perplexity'sini düşürüyor ve modelin boyutunu belirgin biçimde küçültüyor.
 
@@ -75,36 +77,31 @@ Defteri oranlara çevirelim. İleri beslemeli katmanlar 152 parametre tutuyor, d
 
 ## Bir token'ın yolculuğu
 
-Şimdi birinci diziyi — `başla kedi bugün uyudu` — modelden geçirelim. Bütün ağırlıklar rastgele çekildi ve iki ondalığa yuvarlandı; aşağıdaki her sayı o yuvarlanmış değerlerden çıkıyor, dolayısıyla zincir baştan sona tutarlı.
+Şimdi birinci diziyi — `başla kedi bugün uyudu` — modelden geçirelim ve tek bir token'ı baştan sona izleyelim: dizinin üçüncü token'ı olan `bugün`. Konumları sıfırdan saydığımız için tabloda konum 2'de duruyor; bu konumun işi, kendisinden sonra gelecek fiili tahmin etmek. Bütün ağırlıklar rastgele çekildi ve iki ondalığa yuvarlandı; aşağıdaki her sayı o yuvarlanmış değerlerden çıkıyor, dolayısıyla zincir baştan sona tutarlı.
 
-İlk adım toplama. `kedi` token'ının embedding satırı (−0,33 ; −0,07 ; 0,39 ; 0,15), birinci konumun embedding satırı (−0,12 ; −0,04 ; 0,22 ; 0,09). İkisini topluyoruz: (−0,45 ; −0,11 ; 0,61 ; 0,24). Dört sayı, ve bu dört sayı modelin o token hakkında bildiği her şey. 7\. makalede "konum bilgisi ayrıca enjekte edilmelidir" demiştik; enjeksiyonun tamamı bu toplamadır.
+Sayıların tek tek bir anlamı yok, çünkü ağırlıklar rastgele. Okunacak şey iki tane: vektörün boyunun basamaktan basamağa nasıl değiştiği ve hangi basamağın öteki konumlara baktığı. Şekil 2 bu yolu dokuz basamak olarak çiziyor; sayılar aşağıda.
 
-Sonra blok başlıyor. Vektör önce katman normalleştirmeden geçiyor, sonra üç matrisle çarpılıp sorgu, anahtar ve değer üretiyor. Üçüncü konum için — `bugün` — bunlar sırasıyla (0,601 ; −0,482 ; 1,122 ; −0,418), (−1,271 ; −0,880 ; 0,469 ; 0,294) ve (1,038 ; −0,221 ; −1,541 ; −0,340). Dörder sayı; ilk ikisi birinci başın, son ikisi ikinci başın. Çok başlı dikkatte "başa bölmek" dediğimiz şey fiziksel bir bölme değil, bu dört sayının ikişerli okunmasıdır.
+![Dokuz basamaklı dikey bir akış. bugün token'ının dört sayılık vektörü yukarıdan aşağı şu basamaklardan geçer: token ve konum embedding'lerinin toplanması, katman normalleştirme, sorgu-anahtar-değer üretimi, maskelenmiş dikkat, başları birleştiren izdüşüm ve artık toplama, ikinci katman normalleştirme, ileri besleme ve artık toplama, ikinci blok ile son normalleştirme, bağlanmış çıktı izdüşümü ve softmax. Sağda vektör boyu yazar: çoğu basamakta 4, sorgu-anahtar-değerde 3 kere 2 artı 2, ileri beslemede 4'ten 8'e ve 4'e, sonda 7 olasılık. Yalnızca dördüncü basamak, maskelenmiş dikkat, vurguludur ve ona soldan başla ile kedi konumlarından iki ok gelir. Son basamakta uyudu'ya 0,061 olasılık düşer. Altta uyudu'nun maskeli olduğu ve öteki sekiz basamağın konumun kendi sayılarıyla çalıştığı yazar.](assets/token-yolculugu.svg "Şekil 2 — Dokuz basamağın yalnızca biri komşulara bakıyor")
 
-Dikkat çıktısı alındıktan ve başlar birleştirildikten sonra dördüncü matris devreye giriyor ve sonuç girdinin **üstüne** ekleniyor. Üçüncü konumda giren vektör (−0,74 ; −0,03 ; 0,00 ; 0,60) idi; dikkatin kattığı pay (0,107 ; −0,375 ; −0,030 ; 0,008), toplam (−0,633 ; −0,405 ; −0,030 ; 0,608). Aynı sıra ileri beslemeli katman için tekrarlanıyor: normalleştir, dört sayıyı sekize aç, GELU'dan geçir, dörde indir, üstüne ekle. Birinci bloğun çıkışı (−0,436 ; −0,195 ; −0,033 ; −0,058).
+İlk adım toplama. `bugün` token'ının embedding satırı (−0,58 ; 0,30 ; 0,18 ; 0,17), konum 2'nin embedding satırı (−0,16 ; −0,33 ; −0,18 ; 0,43). İkisini topluyoruz: (−0,74 ; −0,03 ; 0,00 ; 0,60). Dört sayı, ve bu dört sayı modelin o token hakkında bildiği her şey. 7\. makalede "konum bilgisi ayrıca enjekte edilmelidir" demiştik; enjeksiyonun tamamı bu toplamadır.
+
+Sonra blok başlıyor. Vektör önce katman normalleştirmeden geçiyor, sonra üç matrisle çarpılıp sorgu, anahtar ve değer üretiyor. `bugün`ün konumu için bunlar sırasıyla (0,601 ; −0,482 ; 1,122 ; −0,418), (−1,271 ; −0,880 ; 0,469 ; 0,294) ve (1,038 ; −0,221 ; −1,541 ; −0,340). Dörder sayı; ilk ikisi birinci başın, son ikisi ikinci başın. Çok başlı dikkatte "başa bölmek" dediğimiz şey fiziksel bir bölme değil, bu dört sayının ikişerli okunmasıdır.
+
+Dikkat, bu sorguyu `başla`, `kedi` ve `bugün`ün kendi anahtarlarıyla karşılaştırıp onların değerlerini tartıyor; bir sonraki bölüm bu tartının sayısal hâlini açıyor. Dikkat çıktısı alındıktan ve başlar birleştirildikten sonra dördüncü matris devreye giriyor ve sonuç girdinin **üstüne** ekleniyor. Bu konuma giren vektör (−0,74 ; −0,03 ; 0,00 ; 0,60) idi; dikkatin kattığı pay (0,107 ; −0,375 ; −0,030 ; 0,008), toplam (−0,633 ; −0,405 ; −0,030 ; 0,608). Aynı sıra ileri beslemeli katman için tekrarlanıyor: normalleştir, dört sayıyı sekize aç, GELU'dan geçir, dörde indir, üstüne ekle. Birinci bloğun çıkışı (−0,436 ; −0,195 ; −0,033 ; −0,058).
 
 İkinci blok aynı işi yapıyor ve (−0,478 ; −0,150 ; −0,043 ; 0,211) veriyor. Son katman normalleştirmeden sonra elimizde (−1,468 ; −0,140 ; 0,290 ; 1,319) kalıyor.
 
-![On bir satırlık üç sütunlu bir tablo ve altında bir kutu. Üstte başlık: üçüncü konumun dokuz basamağı, bugün token'ı logit'e nasıl gidiyor. Sütunlar basamak, boyut ve çıkan sayılar. Birinci satır token embedding satırı, 4 boyut, eksi 0,58; 0,30; 0,18; 0,17. İkinci satır konum embedding eklenir, 4 boyut, eksi 0,74; eksi 0,03; 0,00; 0,60. Üçüncü satır katman normalleştirme, 4 boyut, ortalama sıfır ve yayılım bir. Dördüncü satır sorgu üretimi, 2 artı 2 boyut, 0,601; eksi 0,482 ile 1,122; eksi 0,418. Beşinci satır anahtar üretimi, 2 artı 2 boyut, eksi 1,271; eksi 0,880 ile 0,469; 0,294. Altıncı satır değer üretimi, 2 artı 2 boyut, 1,038; eksi 0,221 ile eksi 1,541; eksi 0,340. Yedinci satır vurguludur, maskelenmiş dikkat, 4 boyut, 0,107; eksi 0,375; eksi 0,030; 0,008. Sekizinci satır artık bağlantı, 4 boyut, eksi 0,633; eksi 0,405; eksi 0,030; 0,608. Dokuzuncu satır ileri besleme ve artık, 4'ten 8'e ve 4'e, eksi 0,436; eksi 0,195; eksi 0,033; eksi 0,058. Onuncu satır ikinci blok ve son katman normalleştirme, 4 boyut, eksi 1,468; eksi 0,140; 0,290; 1,319. On birinci satır bağlanmış çıktı izdüşümü, 4'ten 7'ye, uyudu logit'i eksi 0,397 ve olasılık 0,061. Alttaki kutuda şu durur: dokuz basamağın yalnızca beşincisi öteki konumlara bakar, kalan sekizi bu konumun kendi dört sayısı üzerinde çalışır. En altta bir kayıt: ağırlıklar rastgele çekilip iki ondalığa yuvarlandı ve zincir bu değerlerden çıkar.](assets/token-yolculugu.svg "Şekil 2 — Dört sayının dokuz basamağı")
-
-Şekil 2'nin alt kutusu bu makalenin en kolay gözden kaçan cümlesi: dokuz basamağın yalnızca biri komşulara bakıyor. Geri kalan her şey o konumun kendi dört sayısı üzerinde çalışıyor.
+Şekil 2'ye bu sayılarla dönünce kolay gözden kaçan bir şey görünüyor: dokuz basamağın yalnızca dördüncüsü komşulara bakıyor. Normalleştirme, izdüşümler ve ileri beslemeli katman o konumun kendi dört sayısı üzerinde çalışıyor; token'lar arasındaki bütün bilgi alışverişi tek bir basamaktan geçiyor.
 
 ## Maskelenmiş dikkat matrisinin sayısal hâli
 
-6\. makalede dikkat ağırlıklarını tek bir satır olarak görmüştük: bir token'ın komşularına dağıttığı paylar. Bütün satırları bir araya koyduğumuzda bir kare çıkıyor ve nedensel maskenin ne yaptığı orada görünür hâle geliyor. Birinci başın ağırlıkları şunlar:
+6\. makalede dikkat ağırlıklarını tek bir satır olarak görmüştük: bir token'ın komşularına dağıttığı paylar. Bütün satırları bir araya koyduğumuzda bir kare çıkıyor ve nedensel maskenin ne yaptığı orada görünür hâle geliyor. Birinci başın ağırlıkları Şekil 3'te; satırlar sorgu, sütunlar anahtar konumu.
 
-| Sorgu \ Anahtar | başla | kedi | bugün | uyudu |
-|---|---|---|---|---|
-| başla | 1,000 | — | — | — |
-| kedi | 0,356 | 0,644 | — | — |
-| bugün | 0,441 | 0,243 | 0,316 | — |
-| uyudu | 0,070 | 0,375 | 0,459 | 0,095 |
+![Dört satırlı dört sütunlu bir matris ve altında iki kutu. Üstte başlık: birinci başın dikkat ağırlıkları, satır sorgu ve sütun anahtar konumudur. Sütun başlıkları başla, kedi, bugün, uyudu. Birinci satır başla: 1,000 ve üç boş hücre. İkinci satır kedi: 0,356, 0,644 ve iki boş hücre. Üçüncü satır vurguludur, bugün: 0,441, 0,243, 0,316 ve bir boş hücre. Dördüncü satır uyudu: 0,070, 0,375, 0,459, 0,095. Boş hücreler tire ile gösterilmiştir. Birinci kutunun başlığı üçüncü satır nasıl doğdu: ham skorlar 0,1307, eksi 0,7146 ve eksi 0,3395; karekök ikiye bölününce 0,0925, eksi 0,5053 ve eksi 0,2401; üstelleri 1,0969, 0,6033 ve 0,7865, toplamı 2,4867 ve bölme sonucu 0,441, 0,243, 0,316. İkinci kutunun başlığı boş hücreler sıfır değildir: yasak konumun skoru softmax'a girmeden eksi sonsuza gider, bu yüzden üç sayılık satır da dört sayılık satır da kendi içinde bir eder. En altta iki kayıt: bu ağırlıklar rastgele çekilmiş parametrelerden geliyor ve hiçbir örüntü taşımıyorlar; değerler eğitilmemiş mikro modelin ileri geçişinden alındı.](assets/maskelenmis-dikkat-matrisi.svg "Şekil 3 — Ağırlıkların kare hâli")
 
 Bir satırın nasıl doğduğunu açalım — üçüncü satır, yani `bugün` sorgusu. Sorgunun ilk iki sayısı her anahtarın ilk iki sayısıyla çarpılıp toplanıyor: `başla` için 0,1307, `kedi` için −0,7146, `bugün` için −0,3395. Baş boyutu 2 olduğu için hepsi √2'ye bölünüyor ve 0,0925 · −0,5053 · −0,2401 kalıyor. Üstelleri 1,0969 · 0,6033 · 0,7865, toplamları 2,4867; her birini toplama bölünce 0,441 · 0,243 · 0,316 çıkıyor. Dördüncü sütun yok, çünkü `uyudu` henüz gelmedi.
 
 Boş hücreleri "sıfır kondu" diye okumak yanlış olur. 6\. makalede kuralı şöyle kurmuştuk: yasak konumların skoru eksi sonsuz yapılır ve normalleştirme kalanlar üzerinden yapılır. Yani sıfır, softmax'tan **sonra** eklenen bir değer değil; softmax'ın girdisinden **önce** çıkarılmış bir konumdur. Fark, satır toplamlarında görünüyor: her satır kendi içinde 1 ediyor, üçüncü satır üç sayıyla, dördüncü satır dörtle.
-
-![Dört satırlı dört sütunlu bir matris ve altında iki kutu. Üstte başlık: birinci başın dikkat ağırlıkları, satır sorgu ve sütun anahtar konumudur. Sütun başlıkları başla, kedi, bugün, uyudu. Birinci satır başla: 1,000 ve üç boş hücre. İkinci satır kedi: 0,356, 0,644 ve iki boş hücre. Üçüncü satır vurguludur, bugün: 0,441, 0,243, 0,316 ve bir boş hücre. Dördüncü satır uyudu: 0,070, 0,375, 0,459, 0,095. Boş hücreler tire ile gösterilmiştir. Birinci kutunun başlığı üçüncü satır nasıl doğdu: ham skorlar 0,1307, eksi 0,7146 ve eksi 0,3395; karekök ikiye bölününce 0,0925, eksi 0,5053 ve eksi 0,2401; üstelleri 1,0969, 0,6033 ve 0,7865, toplamı 2,4867 ve bölme sonucu 0,441, 0,243, 0,316. İkinci kutunun başlığı boş hücreler sıfır değildir: yasak konumun skoru softmax'a girmeden eksi sonsuza gider, bu yüzden üç sayılık satır da dört sayılık satır da kendi içinde bir eder. En altta iki kayıt: bu ağırlıklar rastgele çekilmiş parametrelerden geliyor ve hiçbir örüntü taşımıyorlar; değerler eğitilmemiş mikro modelin ileri geçişinden alındı.](assets/maskelenmis-dikkat-matrisi.svg "Şekil 3 — Ağırlıkların kare hâli")
 
 Şekil 3'ün en alt kaydı önemli. Bu sayılar bir örüntü değil; rastgele çekilmiş ağırlıkların ürünü. Dördüncü satırda `bugün`e verilen 0,459'un anlamı yok.
 
@@ -112,15 +109,15 @@ Boş hücreleri "sıfır kondu" diye okumak yanlış olur. 6\. makalede kuralı 
 
 7\. makalede yazarların iddiasını aktarmıştık: baş sayısını artırmak toplam hesabı büyütmez, çünkü her başın boyutu aynı oranda küçülür. Mikro modelde bunu doğrudan sayabiliyoruz. İki başlı kurulumda sorgu, anahtar ve değer matrislerinin toplam boyu 3 × 4 × 4 = 48 parametre; tek başlı kurulumda da 48, çünkü değişen şey matrislerin boyu değil, çıkan dört sayının nasıl gruplandığı. Skor hesabı da aynı: iki baş için 2 baş × 10 izinli çift × 2 boyut = 40 çarpma, tek baş için 1 × 10 × 4 = 40. Tek fark, iki başta iki ayrı softmax çalışması. Yani "daha çok bakış açısı" ek parametreyle değil, aynı parametrelerin bölünmesiyle geliyor — ve 7\. makaledeki ölçüm de bunu söylüyordu: baş sayısını otuz ikiye çıkarmak kaliteyi düşürüyordu, çünkü her başa kalan boyut artık bir şey taşıyamayacak kadar küçülüyor.
 
-Bir muhasebe daha buradan çıkıyor ve ileride işimize yarayacak. 26\. makalede anahtar-değer önbelleğini kurmuştuk: üretim sırasında her token'ın anahtar ve değer vektörleri saklanır ki bir daha hesaplanmasın. Mikro modelde bu, blok başına token başına 2 × 4 = 8 sayı demek; iki blok ve dört token için 64 sayı. Modelin kendisi 364 parametre taşıyor, yani dört token'lık bir bağlamın önbelleği modelin altıda biri kadar yer tutuyor. 26\. makalede önbelleğin ağırlıkları geçtiği eşiği konuşmuştuk; burada eşiğin neden bu kadar erken geldiği görünüyor — önbellek token sayısıyla büyür, ağırlıklar büyümez.
+Bir muhasebe daha buradan çıkıyor ve ileride işimize yarayacak. 26\. makalede anahtar-değer önbelleğini kurmuştuk: üretim sırasında her token'ın anahtar ve değer vektörleri saklanır ki bir daha hesaplanmasın. Mikro modelde bu, blok başına token başına 2 × 4 = 8 sayı demek; iki blok ve dört token için 64 sayı. Modelin kendisi 364 parametre taşıyor, yani dört token'lık bir bağlamın önbelleği modelin altıda biri kadar yer tutuyor. 26\. makalede önbelleğin ağırlıkları geçebildiğini konuşmuştuk; mikro modelde o eşiği elle bulabiliyoruz. Önbellek her yeni token'la iki blokta 16 sayı büyüyor, ağırlıklar hiç büyümüyor; bağlam 23 token olsaydı önbellek 368 sayıyla 364'lük modeli geçerdi (bizim hesabımız: 364 ÷ 16 ≈ 22,75).
 
 > **Kendini yokla:** Matrisin birinci satırında tek bir sayı var ve o sayı 1,000. Bu değer ağırlıklara mı bağlı, yoksa hangi ağırlıkları seçersek seçelim aynı mı çıkar?
 
-Aynı çıkar. Birinci konumun bakabileceği tek konum kendisidir; softmax tek elemanlı bir liste üzerinde çalıştığında o elemanın payı toplamın tamamıdır. Yani ilk satırın 1,000'i bir öğrenme sonucu değil, aritmetik bir zorunluluk. Nedensel maskenin ilk satırda hiçbir şey söylememesi, dil modellerinin metnin ilk token'ını yalnızca kendi önyargılarıyla üretmesinin de sebebi.
+Aynı çıkar. Birinci konumun bakabileceği tek konum kendisidir; softmax tek elemanlı bir liste üzerinde çalıştığında o elemanın payı toplamın tamamıdır. Yani ilk satırın 1,000'i bir öğrenme sonucu değil, aritmetik bir zorunluluk. Bu yüzden ilk konumdan yapılan tahmin — `başla`dan sonra ne geleceği — yalnızca o konumun kendi vektörüne dayanır; bakacak başka bir yer yoktur.
 
 ## Logit'ten dağılıma, dağılımdan kayba
 
-Son adım kaldı. Üçüncü konumun son vektörü (−1,468 ; −0,140 ; 0,290 ; 1,319) idi. Bunu sözlükteki yedi satırın her biriyle nokta çarpıma sokuyoruz. `uyudu` satırı (0,11 ; −0,02 ; 0,18 ; −0,22) olduğuna göre: −1,468×0,11 + (−0,140)×(−0,02) + 0,290×0,18 + 1,319×(−0,22) = −0,161 + 0,003 + 0,052 − 0,290 = −0,397. Yedi satır için aynı işlem yedi logit veriyor, softmax onları dağılıma çeviriyor:
+Son adım kaldı. `bugün`ün konumundaki son vektör (−1,468 ; −0,140 ; 0,290 ; 1,319) idi. Bunu sözlükteki yedi satırın her biriyle nokta çarpıma sokuyoruz. `uyudu` satırı (0,11 ; −0,02 ; 0,18 ; −0,22) olduğuna göre: −1,468×0,11 + (−0,140)×(−0,02) + 0,290×0,18 + 1,319×(−0,22) = −0,161 + 0,003 + 0,052 − 0,290 = −0,397. Yedi satır için aynı işlem yedi logit veriyor, softmax onları dağılıma çeviriyor:
 
 | Token | Logit | Olasılık |
 |---|---|---|
@@ -136,13 +133,15 @@ Son adım kaldı. Üçüncü konumun son vektörü (−1,468 ; −0,140 ; 0,290 
 
 Ama cevap ne kadar kötü ona da bakalım. Doğru token `uyudu` ve model ona 0,061 veriyor; kaybı −ln(0,061) = 2,804 nat. Dizinin üç hedefi üzerinden ortalama 2,447, dört dizinin tamamında 2,126. Hiçbir şey bilmeyen, yedi token'a eşit olasılık veren bir tahminci ise ln 7 = 1,946 alırdı.
 
-Rastgele ağırlıklı model, hiçbir şey bilmeyen tahminciden **daha kötü**. Bu tuhaf değil, beklenen bir şey: rastgele parametreler tarafsız değildir. Sıfırın çevresinde çekilmiş sayılar sözlükteki bazı satırları yukarı, bazılarını aşağı iten bir eğilim üretiyor ve o eğilimin doğru cevapla hizalanması için hiçbir sebep yok. 2\. makaledeki döngünün ilk işi bu fazlalığı temizlemek olacak.
+Rastgele ağırlıklı model, hiçbir şey bilmeyen tahminciden **daha kötü**. Bu tuhaf değil, beklenen bir şey: rastgele parametreler tarafsız değildir. Sıfırın çevresinde çekilmiş sayılar sözlükteki bazı satırları yukarı, bazılarını aşağı iten bir eğilim üretiyor ve o eğilimin doğru cevapla hizalanması için hiçbir sebep yok.
+
+Hizasız bir eğilimin neden düz tahminden kötü olduğu, logaritmanın asimetrisinden geliyor. Yukarıdaki tabloda `bugün`ün olasılığı düz tahminin 1/7 ≈ 0,143'ünden 0,267'ye çıkmış, `uyudu`nunki 0,061'e inmiş. Doğru cevap `bugün` olsaydı kayıp 1,946'dan 1,321'e inecekti: 0,63 nat kazanç. Doğru cevap `uyudu` olunca kayıp 2,804'e çıkıyor: 0,86 nat ceza. Olasılığı düşürmenin cezası, aynı oranda yükseltmenin ödülünden büyük; doğru cevaptan habersiz bir eğilim ortalamada her zaman zarar yazar. Doğru cevabın hangi token olacağını hiç bilmeyen biri için düz tahmin, ortalamada en az kaybettiren tahmindir. 2\. makaledeki döngünün ilk işi bu fazlalığı temizlemek olacak.
 
 ## Kaba hesabın nereye kadar doğru olduğu
 
 8\. makalede eğitim faturasının kaba kuralını kurmuştuk: parametre başına, token başına altı işlem; yalnız ileri geçiş için iki. Mikro modelde bu kuralı sınayabiliriz, çünkü işlemleri gerçekten sayabiliyoruz.
 
-İleri geçişi tek tek sayalım. Blok başına sorgu, anahtar, değer ve çıktı izdüşümü 4 × 16 × 2 × 4 = 512 işlem; dikkat skorları ve ağırlıklı toplamlar 160; ileri beslemeli katman 512. Blok toplamı 1.184, iki blok 2.368, çıktı izdüşümü 224. Dört token için 2.592, yani token başına 648 işlem.
+İleri geçişi tek tek sayalım. Kural basit: bir matristeki her ağırlık, her token için bir çarpma ve bir toplama yapar, yani iki işlem. Blok başına sorgu, anahtar, değer ve çıktı izdüşümü dört matris × 16 ağırlık × 2 işlem × 4 token = 512 işlem. Dikkat skorları ve ağırlıklı toplamlar 160: dört token'ın izinli çifti 1 + 2 + 3 + 4 = 10, her çift 4 boyutta 2 işlem, bir kez skor bir kez toplam için. İleri beslemeli katman 64 ağırlık × 2 × 4 = 512. Blok toplamı 1.184, iki blok 2.368, çıktı izdüşümü 224. Dört token için 2.592, yani token başına 648 işlem.
 
 Kaba kural ise 2 × 364 = 728 der. Fark yüzde 12 ve kaynağı belli: 364 parametrenin 80'i hiçbir çarpma yapmıyor. On altı konum embedding'i bir tablodan okunuyor, kırk katman normalleştirme parametresi ile yirmi dört sapma terimi ise çarpma değil eleman düzeyinde toplama ve ölçekleme yapıyor. Geriye 284 parametre kalıyor; 2 × 284 = 568, üstüne dikkat skorlarının token başına 80 işlemi eklenince tam 648.
 

@@ -34,5 +34,6 @@
   <text x="378" y="146" font-size="13" fill="var(--text)">başlangıç 1 · kilit: aynı anda tek giriş</text>
   <text x="378" y="168" font-size="13" fill="var(--text)">başlangıç 0 · sıralama: biri bitmeden geçilmez</text>
   <text x="378" y="190" font-size="13" fill="var(--text)">başlangıç N · havuz: en fazla N giriş</text>
-  <text x="378" y="216" font-size="13" fill="var(--text-faint)">negatif değer: mutlak değeri bekleyen sayısı</text>
+  <text x="378" y="214" font-size="13" fill="var(--text-faint)">başka biçim: P önce azaltır, negatife iner;</text>
+  <text x="378" y="232" font-size="13" fill="var(--text-faint)">orada |değer| = bekleyen sayısı</text>
 </svg>

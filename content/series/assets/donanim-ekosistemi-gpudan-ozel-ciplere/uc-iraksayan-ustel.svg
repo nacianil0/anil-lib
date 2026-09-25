@@ -1,35 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 318" role="img" aria-label="Beş satırlı tablo; satırlar birlikte fakat farklı hızlarda büyüyen beş büyüklük. Donanımın tepe işlem kapasitesi yirmi yılda yaklaşık 60.000 kat, yani iki yılda 3,0 kat arttı. DRAM bant genişliği aynı sürede 100 kat, yani iki yılda 1,6 kat arttı. Kartlar arası iletişim bandı 30 kat, yani iki yılda 1,4 kat arttı. Büyük Transformer modellerinin parametre sayısı 2018 ile 2022 arasında iki yılda 410 kat arttı. Tek bir hızlandırıcının belleği ise iki yılda yalnızca 2 kat arttı. En altta bir kayıt: 26, 27, 28, 85, 86 ve 88. makalelerde ayrı ayrı karşılaştığımız darboğazlar bu satırlar arasındaki farktan çıkıyor; çipin tepe hızı hızlı büyüdü, ona veri taşıyan her şey yavaş.">
-  <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">büyüyen şey</text>
-  <text x="380" y="24" font-size="13" font-weight="bold" fill="var(--text)">yirmi yılda</text>
-  <text x="540" y="24" font-size="13" font-weight="bold" fill="var(--text)">iki yılda</text>
-  <line x1="20" y1="34" x2="700" y2="34" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 388" role="img" aria-label="Logaritmik dikey eksenli bir büyüme grafiği. Yatay eksen yıl, 0'dan 20'ye. Dikey eksen başlangıca göre büyüme katı, 1'den 100.000'e. Üç doğru aynı noktadan başlar: donanımın tepe işlem kapasitesi yirmi yılda 60.000 kata, DRAM bant genişliği 100 kata, kartlar arası iletişim bandı 30 kata çıkar. Logaritmik eksende üçü de düz doğrudur ama eğimleri farklıdır ve aralarındaki açı yıllar geçtikçe büyür. Hesap ile bellek bandı doğruları arasındaki dikey aralık yirminci yılda 600 kattır ve sırt noktasının bu kadar sağa kaydığı anlamına gelir. Altta kayıt: uç noktalar kaynaktan, aradaki doğrular sabit hızlı üstel büyüme varsayımıdır, iki yılda 3,0, 1,6 ve 1,4 kat; 600 sayısı 60.000 bölü 100, kendi hesabımız.">
+  <text x="20" y="40" font-size="13" font-weight="bold" fill="var(--text)">başlangıca göre büyüme (kat, logaritmik)</text>
 
-  <rect x="20" y="42" width="680" height="30" fill="var(--surface-muted)" />
-  <text x="30" y="62" font-size="13" fill="var(--text)">donanımın tepe işlem kapasitesi</text>
-  <text x="380" y="62" font-size="13" fill="var(--cool)">60.000 kat</text>
-  <text x="540" y="62" font-size="13" fill="var(--cool)">3,0 kat</text>
+  <line x1="90" y1="56" x2="90" y2="290" stroke="var(--border)" />
+  <line x1="90" y1="290" x2="520" y2="290" stroke="var(--border)" />
 
-  <text x="30" y="92" font-size="13" fill="var(--text)">DRAM bant genişliği</text>
-  <text x="380" y="92" font-size="13" fill="var(--accent)">100 kat</text>
-  <text x="540" y="92" font-size="13" fill="var(--accent)">1,6 kat</text>
+  <text x="82" y="294" font-size="13" text-anchor="end" fill="var(--text-muted)">1</text>
+  <text x="82" y="248" font-size="13" text-anchor="end" fill="var(--text-muted)">10</text>
+  <text x="82" y="202" font-size="13" text-anchor="end" fill="var(--text-muted)">100</text>
+  <text x="82" y="156" font-size="13" text-anchor="end" fill="var(--text-muted)">1.000</text>
+  <text x="82" y="110" font-size="13" text-anchor="end" fill="var(--text-muted)">10.000</text>
+  <text x="82" y="64" font-size="13" text-anchor="end" fill="var(--text-muted)">100.000</text>
+  <line x1="90" y1="244" x2="520" y2="244" stroke="var(--border)" stroke-dasharray="2 6" />
+  <line x1="90" y1="198" x2="520" y2="198" stroke="var(--border)" stroke-dasharray="2 6" />
+  <line x1="90" y1="152" x2="520" y2="152" stroke="var(--border)" stroke-dasharray="2 6" />
+  <line x1="90" y1="106" x2="520" y2="106" stroke="var(--border)" stroke-dasharray="2 6" />
+  <line x1="90" y1="60" x2="520" y2="60" stroke="var(--border)" stroke-dasharray="2 6" />
 
-  <rect x="20" y="102" width="680" height="30" fill="var(--surface-muted)" />
-  <text x="30" y="122" font-size="13" fill="var(--text)">kartlar arası iletişim bandı</text>
-  <text x="380" y="122" font-size="13" fill="var(--accent)">30 kat</text>
-  <text x="540" y="122" font-size="13" fill="var(--accent)">1,4 kat</text>
+  <text x="90" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
+  <text x="197.5" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">5</text>
+  <text x="305" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">10</text>
+  <text x="412.5" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">15</text>
+  <text x="520" y="308" font-size="13" text-anchor="middle" fill="var(--text-muted)">20</text>
+  <text x="90" y="330" font-size="13" fill="var(--text-muted)">yıl (yirmi yıllık dönem, sunucu donanımı)</text>
 
-  <text x="30" y="152" font-size="13" fill="var(--text)">model parametre sayısı (2018–2022)</text>
-  <text x="380" y="152" font-size="13" fill="var(--text-muted)">—</text>
-  <text x="540" y="152" font-size="13" fill="var(--cool)">410 kat</text>
+  <line x1="90" y1="290" x2="520" y2="70.2" stroke="var(--cool)" stroke-width="2.5" />
+  <line x1="90" y1="290" x2="520" y2="198" stroke="var(--accent)" stroke-width="2" />
+  <line x1="90" y1="290" x2="520" y2="222.1" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 4" />
 
-  <rect x="20" y="162" width="680" height="30" fill="var(--surface-muted)" />
-  <text x="30" y="182" font-size="13" fill="var(--text)">tek hızlandırıcının belleği</text>
-  <text x="380" y="182" font-size="13" fill="var(--text-muted)">—</text>
-  <text x="540" y="182" font-size="13" fill="var(--accent)">2 kat</text>
+  <text x="530" y="74" font-size="13" font-weight="bold" fill="var(--cool)">hesap: 60.000 kat</text>
+  <text x="530" y="202" font-size="13" font-weight="bold" fill="var(--accent)">bellek bandı: 100 kat</text>
+  <text x="530" y="226" font-size="13" fill="var(--accent)">kartlar arası: 30 kat</text>
 
-  <line x1="20" y1="200" x2="700" y2="200" stroke="var(--border)" />
-  <text x="20" y="224" font-size="13" fill="var(--text-muted)">Üçü de üstel büyüyor, ama üsler farklı; iki farklı üstelin arası da üstel büyür.</text>
-  <text x="20" y="248" font-size="13" fill="var(--text-muted)">26, 27, 28, 85, 86 ve 88'de ayrı ayrı karşılaştığımız darboğazlar bu satırlar</text>
-  <text x="20" y="266" font-size="13" fill="var(--text-muted)">arasındaki farktan çıkıyor.</text>
-  <text x="20" y="290" font-size="13" fill="var(--text-faint)">Çipin tepe hızı hızlı büyüdü; ona veri taşıyan her şey yavaş.</text>
+  <line x1="505" y1="76" x2="505" y2="194" stroke="var(--text-muted)" />
+  <line x1="500" y1="76" x2="510" y2="76" stroke="var(--text-muted)" />
+  <line x1="500" y1="194" x2="510" y2="194" stroke="var(--text-muted)" />
+  <text x="495" y="176" font-size="13" text-anchor="end" fill="var(--text)">aradaki oran: 600 kat</text>
+  <text x="495" y="192" font-size="13" text-anchor="end" fill="var(--text)">sırt noktası sağa kaydı</text>
+
+  <text x="20" y="356" font-size="13" fill="var(--text-faint)">Uç noktalar kaynaktan; aradaki doğrular sabit hızlı üstel büyüme varsayımıdır</text>
+  <text x="20" y="374" font-size="13" fill="var(--text-faint)">(iki yılda 3,0; 1,6 ve 1,4 kat). 600 = 60.000 ÷ 100, kendi hesabımız.</text>
 </svg>

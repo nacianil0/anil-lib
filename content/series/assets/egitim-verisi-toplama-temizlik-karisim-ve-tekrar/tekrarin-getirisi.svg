@@ -1,26 +1,35 @@
-<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg">
-  <text x="16" y="28" font-size="14" text-anchor="start" fill="var(--text)">Tekrarlanan token'ın taze token'a kıyasla değeri</text>
+<svg viewBox="0 0 720 336" xmlns="http://www.w3.org/2000/svg">
+  <text x="16" y="24" font-size="14" text-anchor="start" fill="var(--text)">Bir epokta okunan token'ın değeri (taze token = 1)</text>
 
-  <line x1="70" y1="46" x2="70" y2="252" stroke="var(--border)" stroke-width="1"/>
-  <line x1="70" y1="252" x2="690" y2="252" stroke="var(--border)" stroke-width="1"/>
+  <line x1="90" y1="52" x2="90" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <line x1="90" y1="240" x2="668" y2="240" stroke="var(--border)" stroke-width="1"/>
+  <text x="80" y="64" font-size="13" text-anchor="end" fill="var(--text-muted)">1</text>
+  <text x="80" y="244" font-size="13" text-anchor="end" fill="var(--text-muted)">0</text>
 
-  <rect x="100" y="52" width="100" height="200" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="150" y="44" font-size="13" text-anchor="middle" fill="var(--accent)">tam</text>
-  <text x="150" y="276" font-size="13" text-anchor="middle" fill="var(--text)">1. epok</text>
+  <path d="M 90.0,60.0 L 97.3,65.8 L 104.6,71.3 L 111.9,76.7 L 119.2,81.9 L 126.5,87.0 L 133.8,91.9 L 141.2,96.6 L 148.5,101.2 L 155.8,105.6 L 163.1,109.9 L 170.4,114.1 L 177.7,118.1 L 185.0,122.0 L 192.3,125.7 L 199.6,129.4 L 206.9,132.9 L 214.2,136.4 L 221.5,139.7 L 228.8,142.9 L 236.2,146.0 L 243.5,149.0 L 250.8,151.9 L 258.1,154.7 L 265.4,157.4 L 272.7,160.1 L 280.0,162.6 L 287.3,165.1 L 294.6,167.5 L 301.9,169.8 L 309.2,172.0 L 316.5,174.2 L 323.8,176.3 L 331.2,178.3 L 338.5,180.3 L 345.8,182.2 L 353.1,184.1 L 360.4,185.9 L 367.7,187.6 L 375.0,189.3 L 382.3,190.9 L 389.6,192.4 L 396.9,194.0 L 404.2,195.4 L 411.5,196.9 L 418.8,198.2 L 426.2,199.6 L 433.5,200.9 L 440.8,202.1 L 448.1,203.3 L 455.4,204.5 L 462.7,205.6 L 470.0,206.7 L 477.3,207.8 L 484.6,208.8 L 491.9,209.8 L 499.2,210.8 L 506.5,211.7 L 513.8,212.6 L 521.2,213.5 L 528.5,214.3 L 535.8,215.2 L 543.1,216.0 L 550.4,216.7 L 557.7,217.5 L 565.0,218.2 L 572.3,218.9 L 579.6,219.6 L 586.9,220.2 L 594.2,220.8 L 601.5,221.5 L 608.8,222.0 L 616.2,222.6 L 623.5,223.2 L 630.8,223.7 L 638.1,224.2 L 645.4,224.7 L 652.7,225.2 L 660.0,225.7" fill="none" stroke="var(--accent)" stroke-width="2"/>
 
-  <rect x="255" y="52" width="100" height="200" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="305" y="44" font-size="13" text-anchor="middle" fill="var(--accent)">tam sayılır</text>
-  <text x="305" y="276" font-size="13" text-anchor="middle" fill="var(--text)">4. epok</text>
-  <text x="305" y="296" font-size="13" text-anchor="middle" fill="var(--text-faint)">kayıpta fark yok</text>
+  <line x1="133.8" y1="91.9" x2="133.8" y2="240" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="133.8" cy="91.9" r="4" fill="var(--accent)"/>
+  <text x="150" y="52" font-size="13" text-anchor="start" fill="var(--text)">4. epok: 0,82</text>
+  <text x="150" y="70" font-size="13" text-anchor="start" fill="var(--text-muted)">birikimli: 3,7 taze epok</text>
 
-  <rect x="410" y="178" width="100" height="74" rx="3" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
-  <text x="460" y="170" font-size="13" text-anchor="middle" fill="var(--cool)">yaklaşık 1/3</text>
-  <text x="460" y="276" font-size="13" text-anchor="middle" fill="var(--text)">16. epok</text>
-  <text x="460" y="296" font-size="13" text-anchor="middle" fill="var(--text-faint)">değerin 1 − 1/e'si gitti</text>
+  <line x1="309.2" y1="172" x2="309.2" y2="240" stroke="var(--text-faint)" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="309.2" cy="172" r="4" fill="var(--accent)"/>
+  <text x="322" y="140" font-size="13" text-anchor="start" fill="var(--text)">16. epok: 0,38</text>
+  <text x="322" y="158" font-size="13" text-anchor="start" fill="var(--text-muted)">birikimli: 10,6 taze epok</text>
 
-  <rect x="565" y="244" width="100" height="8" rx="2" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
-  <text x="615" y="236" font-size="13" text-anchor="middle" fill="var(--text-muted)">sıfıra yakın</text>
-  <text x="615" y="276" font-size="13" text-anchor="middle" fill="var(--text)">sonrası</text>
+  <circle cx="660" cy="225.7" r="4" fill="var(--accent)"/>
+  <text x="660" y="184" font-size="13" text-anchor="end" fill="var(--text)">40. epok: 0,08</text>
+  <text x="660" y="202" font-size="13" text-anchor="end" fill="var(--text-muted)">birikimli: 15,2 taze epok</text>
 
-  <text x="16" y="322" font-size="13" text-anchor="start" fill="var(--text-faint)">sabit hesap bütçesinde ölçülmüştür; yükseklikler oranları gösterir</text>
+  <text x="660" y="100" font-size="13" text-anchor="end" fill="var(--cool)">sonsuz tekrar bile toplamda 16,4 taze epoku geçemez</text>
+
+  <text x="90" y="262" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <text x="133.8" y="262" font-size="13" text-anchor="middle" fill="var(--text-muted)">4</text>
+  <text x="309.2" y="262" font-size="13" text-anchor="middle" fill="var(--text-muted)">16</text>
+  <text x="660" y="262" font-size="13" text-anchor="middle" fill="var(--text-muted)">40</text>
+  <text x="380" y="282" font-size="13" text-anchor="middle" fill="var(--text-muted)">epok</text>
+
+  <text x="16" y="306" font-size="13" text-anchor="start" fill="var(--text-faint)">eğri, çalışmanın uydurduğu formülden hesaplandı (sabit: 15,4 tekrar); ölçüm noktası değildir</text>
+  <text x="16" y="324" font-size="13" text-anchor="start" fill="var(--text-faint)">birikimli: o epoka kadar okunan verinin taze epok cinsinden toplam değeri</text>
 </svg>

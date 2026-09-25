@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar aynı modelin iki çalışma yeri: veri merkezi ve cihaz. Aynı anda hizmet verilen istek sayısı veri merkezinde onlarca ya da yüzlerce, cihazda birdir. Okunan bayt başına yapılan işlem veri merkezinde yığın büyüklüğü kadar, cihazda birdir. Ağırlıkları okumanın bedelini veri merkezinde bütün yığın paylaşır, cihazda tek kullanıcı öder. Neyin sınırladığı veri merkezinde ön dolumda hesap gücü ve üretimde bellek bant genişliğidir, cihazda her iki aşamada da bellek bant genişliğidir. Boşta duran kapasiteyi doldurmanın yolu veri merkezinde sürekli yığınlama ve parçalı ön dolumdur, cihazda böyle bir yol yoktur. En altta bir kayıt: ölçüm aynı yöne bakıyor, cihazda üretim verimi ön dolum veriminin çok altında kalıyor.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="İki sütunlu karşılaştırma tablosu; sütunlar aynı modelin iki çalışma yeri: veri merkezi ve cihaz. Aynı anda hizmet verilen istek sayısı veri merkezinde onlarca ya da yüzlerce, cihazda birdir. Okunan bayt başına yapılan işlem veri merkezinde yığın büyüklüğü kadar, cihazda 16 bitlik ağırlıklarla birdir. Ağırlıkları okumanın bedelini veri merkezinde bütün yığın paylaşır, cihazda tek kullanıcı öder. Neyin sınırladığı veri merkezinde ön dolumda hesap gücü ve üretimde bellek bant genişliğidir, cihazda her iki aşamada da bellek bant genişliğidir. Boşta duran kapasiteyi doldurmanın yolu veri merkezinde sürekli yığınlama ve parçalı ön dolumdur, cihazda böyle bir yol yoktur. En altta bir kayıt: ölçüm aynı yöne bakıyor, cihazda üretim verimi ön dolum veriminin çok altında kalıyor.">
   <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">soru</text>
   <text x="280" y="24" font-size="13" font-weight="bold" fill="var(--text)">veri merkezi</text>
   <text x="510" y="24" font-size="13" font-weight="bold" fill="var(--text)">cihaz</text>
@@ -11,7 +11,7 @@
 
   <text x="30" y="92" font-size="13" fill="var(--text)">okunan bayt başına işlem</text>
   <text x="280" y="92" font-size="13" fill="var(--text)">yığın büyüklüğü kadar</text>
-  <text x="510" y="92" font-size="13" fill="var(--accent)">bir</text>
+  <text x="510" y="92" font-size="13" fill="var(--accent)">bir (16 bitte)</text>
 
   <rect x="20" y="102" width="680" height="30" fill="var(--surface-muted)" />
   <text x="30" y="122" font-size="13" fill="var(--text)">okuma bedelini kim öder</text>

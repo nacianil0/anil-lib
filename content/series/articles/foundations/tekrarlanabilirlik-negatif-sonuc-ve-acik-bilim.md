@@ -12,7 +12,7 @@ tags:
   - veri-sizintisi
   - negatif-sonuc
   - belgeleme
-content_hash: sha256:c982f4178e26ac1513a944486fd26f5f65c419c298af77e06b61ead7d7ccd6b3
+content_hash: sha256:66972739f0d3ca4452d44891caab78021638b8087cb21be074a114baaacb09dc
 classification_version: 1
 classification_batch: 24
 ---
@@ -56,7 +56,7 @@ Sol sütun ise doğrudan yazılabilir şeylerden oluşuyor: metin kaç okumada a
 
 İki ayrıntı daha bu listeyi somutlaştırıyor. Okunabilirlik, yazarın tanımında "tam bir uygulamaya ulaşmak için metnin kaç kez okunması gerektiği" demek; en yüksek sınıfa giren bildirilerin **hepsi** yeniden üretilmiş. Ve tablo sayısı ilişkili çıkarken grafik sayısı çıkmıyor — yazarların yorumu, tablonun okura vurulacak kesin bir hedef vermesi, grafiğin vermemesi. 9\. makalede ölçek yasası eğrilerinin altında kaç ölçülmüş nokta olduğunu sormuştuk; burada aynı ayrım yeniden kuran kişinin tarafından görünüyor.
 
-İkinci kutudaki sınır da dürüstçe söylenmeli: küme düzeyinde hesap gerektiren hiçbir bildiri bu çalışmada yeniden üretilemedi. Yeniden üretilebilirlik bir yazım disiplini olduğu kadar bir kaynak sorunu; 20\. makaledeki açıklık eksenlerinin yanında bir de hesap ekseni var ve o eksen açılmıyor. Yazarların kendi uyarısı da kayda değer: konu alanı da anlamlı bir etken çıkıyor ve kendi başarı oranları alt alanlara göre belirgin biçimde değişiyor — bunu yeniden üretenin uzmanlığına bağlıyor ve sonucun genelleştirilmemesini istiyorlar. Yani "yeniden üretilebilir" bir nitelik değil, bir **ilişki**: bildiri, onu kuran kişi ve o kişinin alanı birlikte belirliyor.
+İkinci kutudaki sınır ayrıca önemli: küme düzeyinde hesap gerektiren hiçbir bildiri bu çalışmada yeniden üretilemedi. Yeniden üretilebilirlik bir yazım disiplini olduğu kadar bir kaynak sorunu; 20\. makaledeki açıklık eksenlerinin yanında bir de hesap ekseni var ve o eksen açılmıyor. Yazarların kendi uyarısı da kayda değer: konu alanı da anlamlı bir etken çıkıyor ve kendi başarı oranları alt alanlara göre belirgin biçimde değişiyor — bunu yeniden üretenin uzmanlığına bağlıyor ve sonucun genelleştirilmemesini istiyorlar. E-posta bulgusundaki ilişki burada üçüncü bir tarafa genişliyor: sonucu bildiri, onu kuran kişi ve o kişinin alanı birlikte belirliyor.
 
 ## Kurumun cevabı
 
@@ -66,13 +66,13 @@ Alan bu bulgulara kurumsal olarak da karşılık verdi. Joelle Pineau ve arkada�
 
 Yarışmanın tasarımında iki ayrıntı önemli. Süreç, yazarların kod göndermesi için tanınan sürenin **bitiminden sonra** başlatılıyor, böylece katılımcılar yazarın paylaştığı her şeyden yararlanabiliyor; ve yazarlarla katılımcılar arasında açık bir yazışma kanalı kuruluyor, yani bulunan eksikler sessizce başarısızlığa dönüşmek yerine soruya dönüşebiliyor. Programın ilan edilmiş amacı da yalnızca doğrulama değil: bu ikincil çözümlemenin kamuya açık bir iz bırakması.
 
-Bu rakamların ikinci yarısı da söylenmeli: 173, o yılın kabul edilen bildirilerinin küçük bir azınlığı. Yani bağımsız doğrulama artık var ve kurumsal bir yeri de var, ama alanın ürettiği iddiaların büyük çoğunluğu hâlâ denenmeden duruyor. 80\. makaledeki model kartı ve sistem kartı tartışmasının buradaki karşılığı da bu: belgeleme zorunlu hâle getirildiğinde hızla yayılıyor, fakat belgelemenin kendisi doğrulama değil.
+Bu rakamların öbür yüzü de var: 173, o yılın kabul edilen bildirilerinin küçük bir azınlığı. Yani bağımsız doğrulama artık var ve kurumsal bir yeri de var, ama alanın ürettiği iddiaların büyük çoğunluğu hâlâ denenmeden duruyor. 80\. makaledeki model kartı ve sistem kartı tartışmasının buradaki karşılığı da bu: belgeleme zorunlu hâle getirildiğinde hızla yayılıyor, fakat belgelemenin kendisi doğrulama değil.
 
 Bunun yüksek görünürlüklü bir örneği de var ve tam olarak bu boşluğu gösteriyor. Benjamin Haibe-Kains ve arkadaşlarının Nature'da 2020'de yayımlanan yazısı, aynı dergide yayımlanmış bir meme kanseri taraması çalışmasına karşı çıkıyor — bulgusunun yanlış olduğunu iddia ederek değil, **denetlenemez** olduğunu söyleyerek: yöntem ayrıntılarının ve algoritma kodunun verilmemiş olması çalışmanın bilimsel değerini zayıflatıyor. İtiraz bir hata bildirimi değil, bir kapı kapanması bildirimidir: iddia doğru da olabilir, ama dışarıdan biri bunu sınayamaz. 98\. makalenin sonundaki cümle burada kurumsal bir karşılık buluyordu — kanıt yayımlanmamışsa, iddia ile kanıt arasındaki bağı kurmak ilkece mümkün değildir.
 
 ## Yeniden üretilebilir ama yanlış
 
-Buraya kadar sorun eksik bilgiydi. Şimdi daha rahatsız edici bir duruma geliyoruz: bilgi eksik değil, sonuç yine de yanlış — ve yanlışlık her seferinde aynı yerden geliyor.
+Buraya kadar sorun eksik bilgiydi. Şimdi başka bir duruma geliyoruz: bilgi eksik değil, sonuç yine de yanlış — ve yanlışlık her seferinde aynı yerden geliyor.
 
 Sayash Kapoor ve Arvind Narayanan'ın Patterns'te 2023'te yayımladığı çalışma, makine öğrenmesini araç olarak kullanan bilim alanlarını tarıyor ve **veri sızıntısı** (data leakage) dedikleri hatanın yaygınlığını sayıyor: 17 alanda, toplam 329 bildiriyi etkileyen sızıntı vakaları ve sekiz ayrı sızıntı türü. Sızıntı, ders kitabı düzeyinde bir hatadan — eğitim ve test kümesini birlikte işlemek — açık bir araştırma problemine kadar uzanan bir aile.
 
@@ -84,7 +84,7 @@ Sayash Kapoor ve Arvind Narayanan'ın Patterns'te 2023'te yayımladığı çalı
 
 72\. makaledeki kirlilik tartışmasıyla akrabalığı açık ama nesnesi farklı: orada sınav soruları eğitim verisine sızıyordu, burada test kümesinin bilgisi eğitim hattına sızıyor. İkisinin ortak yanı, sızıntının puanı **yukarı** taşıması ve hiçbir istatistiksel testin bunu görmemesi. Güven aralığı, yanlış hesaplanmış bir sayının etrafında da dar olabilir.
 
-Yazarların önerdiği çare de bu yüzden istatistiksel değil, biçimsel: her iddianın yanında, modelin nasıl kurulduğunu ve verinin nasıl bölündüğünü madde madde beyan eden bir bilgi çizelgesi. Kendi incelemelerinde bu çizelge, saydıkları vakaların her birindeki sızıntıyı yakalıyor. Mekanizması 99\. makaledeki ön kayıt fikrinin akrabası — kararın metinde görünür hâle getirilmesi — ama nesnesi hipotez değil, veri hattı.
+Yazarların önerdiği çare de bu yüzden istatistiksel değil, biçimsel: her iddianın yanında, modelin nasıl kurulduğunu ve verinin nasıl bölündüğünü madde madde beyan eden bir bilgi çizelgesi. Çizelge, taramada saydıkları sızıntı türlerinin hepsini kapsayacak biçimde tasarlanmış; yazarların iddiası, iç savaş literatüründeki vakaların her birinde sızıntıyı görünür kılacağı — bu, çizelgenin gerçek bildirilerde sınanmış başarısı değil, tasarım hedefi. Mekanizması 99\. makaledeki ön kayıt fikrinin akrabası — kararın metinde görünür hâle getirilmesi — ama nesnesi hipotez değil, veri hattı.
 
 > **Kendini yokla:** 72\. makaledeki kirlilik ile buradaki sızıntı aynı şey mi?
 
@@ -96,9 +96,9 @@ Son bir eksiklik kalıyor ve bu, yapılan işle değil yapılıp **anlatılmayan
 
 Bir alan yalnızca olumlu sonuçları yayımlıyorsa, literatür gerçekliğin yanlı bir örneklemi hâline gelir: aynı fikri deneyip başarısız olan on ekip görünmez, başaran bir ekip görünür. Bunun ölçülmüş hâli alan dışından geliyor. Açık Bilim İşbirliği'nin Science'ta 2015'te yayımladığı çalışma, psikolojinin üç dergisinden seçilen 100 çalışmayı, çoğu zaman özgün malzemeyle ve yüksek güçlü tasarımlarla yeniden yapıyor. Özgün çalışmaların yüzde 97'si anlamlı sonuç bildirmiş; yeniden yapılanların yüzde 36'sı anlamlı çıkıyor. Etki büyüklükleri ortalamada yarıya iniyor: 0,403'ten 0,197'ye. Özgün etki büyüklüklerinin yüzde 47'si tekrarın güven aralığının içinde kalıyor. Ve bir ayrıntı, 99\. makaledeki hipotez tartışmasına doğrudan bağlanıyor: ana etkileri sınayan çalışmaların yüzde 47'si tekrarlanırken, etkileşim sınayanların yalnızca yüzde 22'si tekrarlanıyor — daha ince bir iddia, daha kırılgan bir sonuç.
 
-Aynı çalışmanın ölçüyü tek bir kapıya bağlamaması da öğretici. "Tekrarlandı mı" sorusunun cevabı hangi ölçütle bakıldığına göre değişiyor: anlamlılık eşiğiyle yüzde 36, özgün etki büyüklüğünün tekrarın aralığında kalmasıyla yüzde 47, tekrarı yapan ekiplerin öznel değerlendirmesiyle yüzde 39; özgün ve tekrar sonuçları birleştirilip tek bir çözümleme yapıldığında ise yüzde 68. Beş sayı, tek bir olgu. 16\. makaleden beri tekrarladığımız cümlenin bu fazdaki son hâli: cevap, hangi cetveli seçtiğine bağlı — ve burada cetvelin seçimi bir tanım kararıdır, bir ölçüm kararı değil.
+Aynı çalışmanın ölçüyü tek bir kapıya bağlamaması da öğretici. "Tekrarlandı mı" sorusunun cevabı hangi ölçütle bakıldığına göre değişiyor: anlamlılık eşiğiyle yüzde 36, özgün etki büyüklüğünün tekrarın aralığında kalmasıyla yüzde 47, tekrarı yapan ekiplerin öznel değerlendirmesiyle yüzde 39; özgün ve tekrar sonuçları birleştirilip tek bir çözümleme yapıldığında ise yüzde 68. Dört ölçüt, dört ayrı sayı, tek bir olgu. 16\. makaleden beri tekrarladığımız cümlenin bu fazdaki son hâli: cevap, hangi cetveli seçtiğine bağlı — ve burada cetvelin seçimi bir tanım kararıdır, bir ölçüm kararı değil.
 
-Bu sayıların makine öğrenmesine doğrudan taşınamayacağını söylemek gerekiyor: deneyler farklı, ölçüler farklı, tekrar maliyeti farklı. Karşılaştırılabilir ölçekte bir tarama bu alanda henüz yapılmadı — ve bu, bilinen bir eksikliktir, çözülmüş bir soru değil. Ama mekanizma ortak: yayımlanan sonuçların kümesi, denenen şeylerin kümesi değildir. 99\. makalede gördüğümüz yirmi beş yapılandırmadan yalnızca ikisinin işe yaradığı sonuç, tam da amacı olumsuz bir bulguyu bildirmek olduğu için yayımlanabilmişti.
+Bu sayılar makine öğrenmesine doğrudan taşınamaz: deneyler farklı, ölçüler farklı, tekrar maliyeti farklı. Karşılaştırılabilir ölçekte bir tarama bu alanda henüz yapılmadı — ve bu, bilinen bir eksikliktir, çözülmüş bir soru değil. Ama mekanizma ortak: yayımlanan sonuçların kümesi, denenen şeylerin kümesi değildir. 99\. makalede gördüğümüz yirmi beş yapılandırmadan yalnızca ikisinin işe yaradığı sonuç, tam da amacı olumsuz bir bulguyu bildirmek olduğu için yayımlanabilmişti.
 
 ## Tekrarlanabilirliğin disiplini
 

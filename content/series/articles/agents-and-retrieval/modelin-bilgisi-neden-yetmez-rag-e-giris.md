@@ -12,7 +12,7 @@ tags:
   - baglamsal-bilgi
   - uzun-kuyruk
   - bilgi-catismasi
-content_hash: sha256:55ed0ed756a34d4bc3bf7bd9fb8f5674c7022ce2d26438cad7a6be6b482cafbf
+content_hash: sha256:965d6b61d0df0ff656bb2b641af1482e66ea27275ea46e20e3c87009f4617d4f
 classification_version: 1
 classification_batch: 9
 ---
@@ -49,9 +49,9 @@ Yöntem titiz. Ön eğitim derlemleri varlık bağlama işleminden geçiriliyor,
 
 Sonuç net bir eğri veriyor. 176 milyar parametreli bir modelin doğruluğu, ilgili belge sayısı 10'dan 10.000'e çıktığında yüzde 25'ten yüzde 55'in üzerine tırmanıyor. İlişkinin nedensel olduğu ayrıca sınanmış: 4,8 milyar parametreli bir model, belirli belgeler çıkarılarak yeniden eğitildiğinde tam olarak o soruların doğruluğu düşüyor.
 
-![Yatay ekseni ön eğitim verisindeki ilgili belge sayısı, dikey ekseni soru cevaplama doğruluğu olan bir eğri şeması. Yatay eksen logaritmiktir ve on üzeri sıfırdan on üzeri altıya kadar işaretlidir. Birbirinden ayrık üç eğri, üç farklı model boyunu temsil eder ve üçü de soldan sağa yükselir; büyük model eğrisi en üstte, küçük model eğrisi en alttadır. Büyük model eğrisinde on ilgili belge hizasında doğruluk yüzde 25, on bin belge hizasında yüzde 55 olarak işaretlenmiştir. Sol tarafta belge sayısının az olduğu bölge uzun kuyruk olarak etiketlenmiş ve üç eğrinin de orada birbirine yaklaşarak alçakta kaldığı görülür. Şeklin altında modeli büyütmenin eğriyi yukarı kaydırdığı ama sol uçtaki açığı kapatmadığı yazılıdır.](assets/uzun-kuyruk-egrisi.svg "Şekil 1 — Doğruluk, olgunun kaç belgede geçtiğine bağlı")
+![Yatay ekseni ön eğitim verisindeki ilgili belge sayısı, dikey ekseni soru cevaplama doğruluğu olan bir eğri şeması. Yatay eksen logaritmiktir ve on üzeri sıfırdan on üzeri altıya kadar işaretlidir. Birbirinden ayrık üç eğri, üç farklı model boyunu temsil eder ve üçü de soldan sağa yükselir; büyük model eğrisi en üstte, küçük model eğrisi en alttadır. Büyük model eğrisinde on ilgili belge hizasında doğruluk yüzde 25, on bin belge hizasında yüzde 55 olarak işaretlenmiştir. Sol tarafta belge sayısının az olduğu bölge uzun kuyruk olarak etiketlenmiş ve üç eğrinin de orada birbirine yaklaşarak alçakta kaldığı görülür. Şeklin altında modeli büyütmenin eğriyi yukarı kaydırdığı ama sol uçtaki açığı kapatmadığı, eğrilerin biçiminin şematik olduğu ve ölçülmüş olanın büyük model üzerindeki iki işaretli değer olduğu yazılıdır.](assets/uzun-kuyruk-egrisi.svg "Şekil 1 — Doğruluk, olgunun kaç belgede geçtiğine bağlı")
 
-Şekil 1'in sol ucu bu makalenin gerekçesi. Orada, ön eğitimde yalnızca birkaç kez geçen olgular var — 17\. makaledeki "tam bir kez görülmüş olgular" kategorisiyle aynı bölge — ve model orada zayıf. İki doğal çözüm akla geliyor ve çalışma ikisini de kapatıyor.
+Getirmeye neden ihtiyaç duyduğumuzu Şekil 1'in sol ucu gösteriyor. Orada, ön eğitimde yalnızca birkaç kez geçen olgular var — 17\. makaledeki "tam bir kez görülmüş olgular" kategorisiyle aynı bölge — ve model orada zayıf. İki doğal çözüm akla geliyor ve çalışma ikisini de kapatıyor.
 
 Birincisi daha çok veri. Ama farklı yöntemlerle toplanmış beş ayrı ön eğitim derleminde aynı soruların ilgili belge sayıları arasındaki sıra ilişkisi 0,87 ile 0,97 arasında. Yani derlemler birbirini tekrar ediyor: internete daha çok bakmak, uzun kuyruğu doldurmuyor.
 
@@ -61,11 +61,11 @@ Birincisi daha çok veri. Ama farklı yöntemlerle toplanmış beş ayrı ön e�
 
 Çünkü kaynaklar birbirinden bağımsız değil. Farklı yöntemlerle toplanmış derlemlerin bile hangi olguyu ne kadar desteklediği neredeyse aynı sırayı izliyor: bir olgu internette azsa, her derlemde azdır. Yeni kaynak, çok geçen olguların sayısını daha da artırır ve nadir olanları nadir bırakır. Kuyruğu doldurmak için gereken şey daha çok metin değil, o olgunun **istendiği anda** getirilmesidir.
 
-Aynı çalışma çözümü de aynı yerde deniyor ve sonucu bu makalenin dönüm noktası. Modele, cevabı destekleyen Wikipedia paragrafı doğrudan verildiğinde eğri yalnızca yukarı kaymıyor — **yön değiştiriyor**. Kapalı kitap düzende doğruluk belge sayısıyla artarken, paragrafı elinde olan modelde nadir sorular ortalamada daha kolay hâle geliyor ve eğri insanların eğrisine benziyor. Sebebi sezgisel: bir olgu nadirse, onu anlatan metin genellikle daha doğrudandır. Bilgiyi ezberden okumaya çevirmek, sorunun sınıfını değiştiriyor.
+Aynı çalışma çözümü de aynı yerde deniyor. Modele, cevabı destekleyen Wikipedia paragrafı doğrudan verildiğinde eğri yalnızca yukarı kaymıyor — **yön değiştiriyor**. Kapalı kitap düzende doğruluk belge sayısıyla artarken, paragrafı elinde olan modelde nadir sorular ortalamada daha kolay hâle geliyor ve eğri insanların eğrisine benziyor. Sebebi sezgisel: bir olgu nadirse, onu anlatan metin genellikle daha doğrudandır. Bilgiyi ezberden okumaya çevirmek, sorunun sınıfını değiştiriyor.
 
 ## Bilgiyi dışarıda tutmak
 
-İşte buradan çıkan fikir. Bilgiyi ağırlıklara yazmak yerine dışarıda bir dizinde tut; soru geldiğinde ilgili parçayı bul, modelin önüne koy, cevabı öyle ürettir.
+Buradan çıkan fikir basit: bilgiyi ağırlıklara yazmak yerine dışarıda bir dizinde tut; soru geldiğinde ilgili parçayı bul, modelin önüne koy, cevabı öyle ürettir.
 
 Patrick Lewis ve arkadaşlarının NeurIPS 2020'de sunduğu çalışma bu düzeni adlandırdı ve uçtan uca eğitilebilir bir mimariye çevirdi: **getirmeyle güçlendirilmiş üretim** (retrieval-augmented generation, RAG). Çalışmanın kurduğu ayrım seri boyunca kullanacağımız ayrımdır: **parametrik bellek** ağırlıklarda duran bilgidir, **parametrik olmayan bellek** ise dışarıdaki dizindir.
 
@@ -87,16 +87,14 @@ Bir ablasyon da getiricinin kendisini sınıyor. Öğrenilen getirici yerine sab
 
 ## Dizini değiştirmek
 
-Şimdi bu mimarinin en öğretici deneyine geliyoruz.
-
-Araştırmacılar iki ayrı dizin kuruyor: biri 2016 tarihli Wikipedia'dan, öbürü 2018 tarihli olandan. Sonra bu iki tarih arasında görevi değişmiş **82 dünya lideri** seçip her birini "şu makamdaki kişi kimdir" biçiminde soruyorlar. Model aynı model; değişen tek şey hangi dizine bağlandığı.
+Parametrik olmayan belleğin iddiası, bilginin dizinle birlikte değişebileceğiydi. Aynı çalışma bunu doğrudan sınıyor. Araştırmacılar iki ayrı dizin kuruyor: biri 2016 tarihli Wikipedia'dan, öbürü 2018 tarihli olandan. Sonra bu iki tarih arasında görevi değişmiş **82 dünya lideri** seçip her birini "şu makamdaki kişi kimdir" biçiminde soruyorlar. Model aynı model; değişen tek şey hangi dizine bağlandığı.
 
 | soru dönemi | 2016 dizini | 2018 dizini |
 |---|---|---|
 | 2016 liderleri | %70 | %12 |
 | 2018 liderleri | %4 | %68 |
 
-Köşegen ile köşegen dışı arasındaki fark bu makalenin özeti. Modelin "bildiği" şey, bağlandığı dizinin bildiği şeydir. Ağırlıklara hiç dokunulmadan, tek bir eğitim adımı atılmadan, modelin dünya bilgisi güncellenmiş oluyor.
+Köşegendeki yüksek sayılarla köşegen dışındaki düşük sayılar aynı şeyi söylüyor: modelin "bildiği" şey, bağlandığı dizinin bildiği şeydir. Ağırlıklara hiç dokunulmadan, tek bir eğitim adımı atılmadan, modelin dünya bilgisi güncellenmiş oluyor.
 
 18\. makaledeki tabloyla karşılaştır. Orada bir olguyu değiştirmek için ağırlıklara müdahale etmek gerekiyordu ve o müdahalenin nereye dokunduğunu bilmenin, düzenlemeyi bilmek anlamına gelmediğini görmüştük. Burada aynı iş bir dosyayı değiştirerek yapılıyor. Parametrik olmayan belleğin asıl vaadi doğruluk artışı değil, **düzenlenebilirlik**.
 
@@ -104,18 +102,13 @@ Aynı çalışmanın insan değerlendirmesi bunu bir başka eksende gösteriyor.
 
 ## Ne zaman zarar veriyor
 
-Şimdiye kadarki tablo tek yönlü göründü. Değil.
+Buraya kadarki ölçümler getirmenin her zaman kazandırdığını düşündürebilir; öyle değil.
 
-Alex Mallen ve arkadaşlarının ACL 2023'te sunduğu çalışma, uzun kuyruk sorularından oluşan 14 binlik bir küme kurup her soruyu iki kez soruyor: getirme ile ve getirme olmadan. Sonra soruları dört öbeğe ayırıyor ve her öbekte getirilen ilk belgenin cevabı içerme oranına bakıyor.
-
-| | getirmeli düzen doğru | getirmeli düzen yanlış |
-|---|---|---|
-| **model tek başına doğru** | %24 (bulma 0,83) | %10 (bulma 0,14) |
-| **model tek başına yanlış** | %17 (bulma 0,88) | %49 (bulma 0,11) |
+Alex Mallen ve arkadaşlarının ACL 2023'te sunduğu çalışma, uzun kuyruk sorularından oluşan 14 binlik bir küme kurup her soruyu iki kez soruyor: getirme ile ve getirme olmadan. Sonra soruları dört öbeğe ayırıyor ve her öbekte getirilen ilk belgenin cevabı içerme oranına — **bulma** oranına — bakıyor. Dört öbek ve her birinin bulma oranı Şekil 3'te.
 
 ![Dört gözlü bir tablo şeması. Satırlar modelin getirme olmadan doğru ya da yanlış cevap verdiğini, sütunlar getirmeli düzenin doğru ya da yanlış cevap verdiğini gösterir. Sol üst göz soruların yüzde 24'ünü ve 0,83 bulma oranını taşır ve nötr renktedir. Sağ üst göz yüzde 10 ve 0,14 bulma oranını taşır, vurgulu renktedir ve yanında getirmenin zarar verdiği yazar. Sol alt göz yüzde 17 ve 0,88 bulma oranını taşır, vurgulu renktedir ve yanında getirmenin kazandırdığı yazar. Sağ alt göz yüzde 49 ve 0,11 bulma oranını taşır ve nötr renktedir. Şeklin altında iki vurgulu gözün bulma oranları arasındaki büyük farkın, getirmenin kalitesinin sonucu belirlediğini gösterdiği yazılıdır.](assets/getirme-fayda-zarar.svg "Şekil 3 — Getirmenin kazandırdığı ve kaybettirdiği sorular")
 
-Şekil 3'ün sağ üst gözü bu makalenin uyarısı: soruların yüzde 10'unda getirme, modelin zaten doğru bildiği bir cevabı bozuyor. O gözde getirilen belgenin cevabı içerme oranı 0,14 — genel ortalama olan 0,42'nin çok altında. Sol alttaki kazanç gözünde ise aynı oran 0,88. Yani getirme, kendisi doğru çalıştığında kazandırıyor; yanlış çalıştığında modelin kendi doğrusunu da götürüyor.
+Şekil 3'ün sağ üst gözü asıl uyarıyı taşıyor: soruların yüzde 10'unda getirme, modelin zaten doğru bildiği bir cevabı bozuyor. O gözde getirilen belgenin cevabı içerme oranı 0,14 — genel ortalama olan 0,42'nin çok altında. Sol alttaki kazanç gözünde ise aynı oran 0,88. Yani getirme, kendisi doğru çalıştığında kazandırıyor; yanlış çalıştığında modelin kendi doğrusunu da götürüyor.
 
 > **Kendini yokla:** Getirme, modelin zaten doğru bildiği bir soruda nasıl zarar verebilir?
 
@@ -127,15 +120,15 @@ Buradan doğal bir öneri çıkıyor ve çalışma onu **uyarlanabilir getirme**
 
 Getirme, 17\. makaledeki dışsal uydurmayı içsel uydurmaya çeviriyordu; yani sorunu denetlenebilir hâle getiriyordu. Denetlenebilir olmak, çözülmüş olmak değil.
 
-**Model getirileni okumayabilir.** Shayne Longpre ve arkadaşlarının EMNLP 2021'de sunduğu çalışma bunu ölçmek için zarif bir düzenek kuruyor: bağlamdaki cevap varlığını başka bir varlıkla değiştirip modelin hangisini söylediğine bakıyorlar. "ABD Birinci Dünya Savaşı'nda kiminle savaştı?" sorusunun bağlamındaki "Almanya" ifadesi "Tayvan" ile değiştirildiğinde model hâlâ "Almanya" diyorsa, önündeki metni değil ezberini okuyor demektir. Ölçülen oran ezber oranı olarak adlandırılıyor ve düzeneğe göre modelin ezberlediği cevaba dönme sıklığı yüzde 20 ile yüzde 75 arasında değişiyor. Aynı çalışma iki uyarı daha veriyor: bu eğilim model büyüdükçe artıyor, ve getirilen belge sayısı arttıkça da artıyor — altın belgenin verildiği düzende ezber oranı 4 iken, yüz belge getirildiğinde 77'ye çıkıyor.
+**Model getirileni okumayabilir.** Shayne Longpre ve arkadaşlarının EMNLP 2021'de sunduğu çalışma bunu ölçmek için basit bir düzenek kuruyor: bağlamdaki cevap varlığını başka bir varlıkla değiştirip modelin hangisini söylediğine bakıyorlar. "ABD Birinci Dünya Savaşı'nda kiminle savaştı?" sorusunun bağlamındaki "Almanya" ifadesi "Tayvan" ile değiştirildiğinde model hâlâ "Almanya" diyorsa, önündeki metni değil ezberini okuyor demektir. Ölçülen oran ezber oranı olarak adlandırılıyor ve düzeneğe göre modelin ezberlediği cevaba dönme sıklığı yüzde 20 ile yüzde 75 arasında değişiyor. Aynı çalışma iki uyarı daha veriyor: bu eğilim model büyüdükçe artıyor, ve getirilen belge sayısı arttıkça da artıyor — altın belgenin verildiği düzende ezber oranı yüzde 4 iken, yüz belge getirildiğinde yüzde 77'ye çıkıyor.
 
 **Getirilen her belge yardımcı değil.** Florin Cuconasu ve arkadaşlarının SIGIR 2024'te sunduğu çalışma getirilen parçaları dört türe ayırıyor: cevabı içeren altın belge, cevabı içeren başka ilgili belgeler, cevabı içermeyen ama konuyla yakından ilgili **dikkat dağıtıcı** belgeler, ve tamamen ilgisiz rastgele belgeler. Dikkat dağıtıcı belgenin tanımı önemli: bunlar getiricinin en yüksek puan verdiği ama cevabı taşımayan parçalardır. Çalışmanın örneği açıklayıcı — Napolyon'un atının rengi soruluyorsa, eşinin atının rengini anlatan pasaj hem çok ilgili hem tamamen yanlıştır.
 
-Sonuç iki katmanlı ve ikisi de sezgiye aykırı. Dikkat dağıtıcı belgeler doğruluğu **düşürüyor**. Buna karşılık isteme rastgele belgeler eklemek doğruluğu yüzde 35'e varan oranda **artırıyor**. Yani getiricinin en iyi bulduğu ama alakasız çıkan parçalar, hiç ilgisi olmayan parçalardan daha zararlı. 29\. makaledeki uyarı burada karşılığını buluyor: bir getirme hattında ölçülen kalite, yalnızca hangi belgelerin bulunduğunun değil, hangi yanlışların bulunduğunun da fonksiyonudur.
+Sonuç iki katmanlı. Dikkat dağıtıcı belgeler doğruluğu **düşürüyor**. Buna karşılık isteme rastgele belgeler eklemek doğruluğu yüzde 35'e varan oranda **artırıyor**. Yani getiricinin en iyi bulduğu ama alakasız çıkan parçalar, hiç ilgisi olmayan parçalardan daha zararlı. İkinci bulguyu dikkatle okumak gerekiyor: bu, belirli modellerde ve belirli bir istem düzeninde yapılmış tek bir ölçüm; rastgele metnin neden yardım ettiği çalışmada açıklanmış değil ve "isteme gürültü ekle" diye bir tavsiyeye çevrilmemeli. Sağlam olan ders ilk yarıdır: ilgili görünen yanlış belge zarar verir. 29\. makaledeki uyarı burada karşılığını buluyor: bir getirme hattında ölçülen kalite, yalnızca hangi belgelerin bulunduğunun değil, hangi yanlışların bulunduğunun da fonksiyonudur.
 
 ## Getirmenin disiplini
 
-**Parametrik bilgi düzgün dağılmaz.** Aynı model bire bir ilişkilerde dörtte üç doğrulukla çalışırken doğum tarihlerinde yüzde iki bandında kalabilir.
+**Parametrik bilgi düzgün dağılmaz.** Aynı model bire bir ilişkilerde dörtte üç doğrulukla çalışırken doğum tarihlerinde yüzde 1,4'te kalabilir.
 
 **Bir olguyu bilmek, onu kaç belgede gördüğüyle ölçülür.** İlgili belge sayısı bin kat arttığında doğruluk iki katına çıkabiliyor.
 

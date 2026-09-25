@@ -12,7 +12,7 @@ tags:
   - taban-cizgisi
   - ablasyon
   - arama-butcesi
-content_hash: sha256:4bbf424014b4211818eba6a00e60b3d7602e8e28bd39549eefb1093217e5cdd0
+content_hash: sha256:f376adf75f27090bd50da81cdd646d2a94cfc2d77e60804eb3253eaf85e22264
 classification_version: 1
 classification_batch: 24
 ---
@@ -32,7 +32,7 @@ Sınanabilir hâle getirmek, deneyden **önce** dört şeyi yazmak demek: hangi 
 
 Brian Nosek ve arkadaşlarının PNAS'ta 2018'de yayımladığı çalışma bu ayrımı iki sözcükle adlandırıyor: **öngörü** (prediction) ile **sonradan açıklama** (postdiction). Öngörü, hangi çözümlemenin yapılacağının sonuçlar görülmeden belirlenmesidir; sonradan açıklama, veriye baktıktan sonra hangi çözümlemenin bildirileceğine karar vermektir. İkisi de meşru iştir — birincisi sınar, ikincisi hipotez üretir — ama aynı kanıt gücüne sahip değillerdir, ve sıralamaları görünmediğinde okuyucu ikisini ayırt edemez. Çözüm olarak önerilen pratiğin adı **ön kayıt** (preregistration): çözümleme planını, sonuçlar bilinmeden bağımsız bir kayda yazmak.
 
-Bunun etkisi alan dışında ölçüldü ve sayı çarpıcı. Robert Kaplan ve Veronica Irvin'in PLOS ONE'da 2015'te yayımladığı çalışma, ABD'nin ulusal kalp-akciğer-kan enstitüsünün 1970–2012 arasında desteklediği 55 büyük klinik denemeyi tarıyor. 2000 öncesinde yayımlanan 30 denemenin 17'si (yüzde 57) birincil sonuç değişkeninde anlamlı bir yarar bildiriyor; 2000 sonrasında yayımlanan 25 denemenin yalnızca 2'si (yüzde 8). Arada değişen şey tedaviler değil, birincil sonucun denemeden önce kamuya kaydedilmesi zorunluluğu.
+Bunun etkisi alan dışında ölçüldü. Robert Kaplan ve Veronica Irvin'in PLOS ONE'da 2015'te yayımladığı çalışma, ABD'nin ulusal kalp-akciğer-kan enstitüsünün 1970–2012 arasında desteklediği 55 büyük klinik denemeyi tarıyor. 2000 öncesinde yayımlanan 30 denemenin 17'si (yüzde 57) birincil sonuç değişkeninde anlamlı bir yarar bildiriyor; 2000 sonrasında yayımlanan 25 denemenin yalnızca 2'si (yüzde 8). Arada değişen şey tedaviler değil, birincil sonucun denemeden önce kamuya kaydedilmesi zorunluluğu.
 
 Nosek'te aktarılan bir yan bulgu da kaydın neyi yakaladığını gösteriyor: ön kayıtlı çalışmaların yayımlanmış makalelerinin yüzde 40'ı deney koşullarından en az birini, yüzde 70'i sonuç değişkenlerinden en az birini bildirmemiş. Sürekli anlamlı çıkan bulguların yüzde 96'sı makaleye girerken, boş çıkan etkilerin yüzde 65'i girmemiş. Yani kayıt olmasa bu ayıklama görünmezdi.
 
@@ -116,7 +116,7 @@ Bunun bir ön koşulu da var ve atlandığında deney anlamını yitiriyor: bozu
 
 **Bozma deneyi varsayımı hedef alır.** Rastgele gürültü değil, iddianın dayandığı şey bozulur.
 
-Bu listenin çalışmadığı bir yer de var ve söylenmesi gerekiyor. Buradaki bütün kararlar deneyi **kurmakla** ilgili; hiçbiri elde edilen iki sayıya bakıp "bu fark gerçek mi" sorusunu cevaplamıyor. Şekil 3'teki 0,003 ile 0,005'i yan yana koyup bir hüküm verdiğimizde aslında sezgiyle davrandık — o karşılaştırmanın biçimsel hâli, kaç ölçüm gerektiği ve hangi belirsizlikle geldiği henüz kurulmadı.
+Bu listenin eksik bıraktığı bir yer var. Buradaki bütün kararlar deneyi **kurmakla** ilgili; hiçbiri elde edilen iki sayıya bakıp "bu fark gerçek mi" sorusunu cevaplamıyor. Şekil 3'teki 0,003 ile 0,005'i yan yana koyup bir hüküm verdiğimizde aslında sezgiyle davrandık — o karşılaştırmanın biçimsel hâli, kaç ölçüm gerektiği ve hangi belirsizlikle geldiği henüz kurulmadı.
 
 ### Sırada ne var
 

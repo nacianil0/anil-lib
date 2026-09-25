@@ -12,7 +12,7 @@ tags:
   - softmax
   - baglamsal-temsil
   - oz-dikkat
-content_hash: sha256:2aa8652d2a30fbfa9c7dcd05e0341061c52a1fbc07799dd6c36c2bfedc65f72b
+content_hash: sha256:3b261e5538bfbc211de31e985e20734fff2873276a929fee222d891171524ff9
 classification_version: 1
 classification_batch: 1
 ---
@@ -26,7 +26,7 @@ Bu makalenin sorusu tek cümleye sığar: bir kelimenin vektörü, cümlenin ger
 
 Fikrin doğduğu yer bir dil modeli değil, bir çeviri sistemiydi. 2014'ün standart tarifi şuydu: bir ağ kaynak cümleyi baştan sona okur ve cümlenin tamamını sabit uzunlukta tek bir vektöre sıkıştırır; ikinci bir ağ yalnızca o vektöre bakarak hedef cümleyi kelime kelime üretir. Cümle üç kelime de olsa elli kelime de olsa aradaki kâğıdın boyu aynıdır.
 
-Şöyle hayal et: bir çevirmene beş yüz sayfalık kitabı okutuyorsun, ama not almasına izin vermiyorsun. Yalnızca tek bir küçük kâğıda özet çıkarabiliyor; sonra kitabı elinden alıp o kâğıtla çeviri yaptırıyorsun. Benzetmenin bozulduğu yer şurası: insan çevirmenin kâğıdı ayrık kelimelerden oluşur ve neyi unuttuğunu fark eder, kodlayan ağın vektörü ise sürekli sayılardan oluşur ve neyi kaybettiğini "bilmez". Benzetmenin biçimsel karşılığı ise nettir: kaynak cümlenin uzunluğu ne olursa olsun, üretim aşamasının eriştiği tek şey sabit boyutlu bir sayı listesidir.
+Şöyle hayal et: bir çevirmene beş yüz sayfalık kitabı okutuyorsun, ama not almasına izin vermiyorsun. Yalnızca tek bir küçük kâğıda özet çıkarabiliyor; sonra kitabı elinden alıp o kâğıtla çeviri yaptırıyorsun. İnsan çevirmenin kâğıdı yine de ayrık kelimelerden oluşur ve neyi unuttuğunu fark eder; kodlayan ağın vektörü ise sürekli sayılardan oluşur ve neyi kaybettiğini "bilmez". Kâğıdın ağdaki karşılığı şudur: kaynak cümlenin uzunluğu ne olursa olsun, üretim aşamasının eriştiği tek şey sabit boyutlu bir sayı listesidir.
 
 Dzmitry Bahdanau, Kyunghyun Cho ve Yoshua Bengio 2015'te bu darboğazı işaret edip bir çözüm önerdi ve önerileri bugünkü büyük dil modellerinin çekirdeğine kadar yaşadı. Çözüm şuydu: kâğıdı tamamen kaldır. Üretimin her adımında kaynak cümlenin **bütün** konumlarına yeniden bak, her konuma bir ağırlık ver ve o adıma özel yeni bir bağlam vektörü hesapla. Ağırlıkları elle yazılmış bir tablo belirlemiyordu; küçük bir ağ, sistemin geri kalanıyla birlikte eğitiliyordu. Yazarlar bu parçaya hizalama (alignment) modeli adını verdi.
 
@@ -34,13 +34,13 @@ Sonuç ölçüldü. Kalite burada BLEU ile ölçülüyor: makine çevirisinin in
 
 Ağırlıkların ne öğrendiğine bakmak da öğreticiydi, çünkü kimse onlara hangi kelimenin hangisine karşılık geldiğini söylememişti. Yazarların incelediği İngilizce–Fransızca çevirilerde model, iki dilin sıfat-isim sırasının ters olduğu yerlerde ağırlığı doğru kelimeye kaydırıyor, gerektiğinde iki kelime ileri atlayıp sonra geriye dönüyordu. Tek bir hedef kelimeyi doğru üretmek için kaynakta iki kelimeye birden bakmak gerektiğinde de tıkanmıyordu: Fransızca artikelin biçimi ardından gelen isme bağlı olduğu için model, o artikeli üretirken hem karşılık gelen kelimeye hem ardındaki isme pay veriyordu. Sert eşleştirme yerine tartım yapmanın somut faydası tam buydu.
 
-Burada iki dürüstlük notu gerekiyor. Birincisi: yazarlar sabit uzunluklu vektörün darboğaz olduğunu kanıtlanmış bir teorem gibi sunmaz, açıkça bir varsayım olarak ortaya koyar. İkincisi: bu sistem o günün geleneksel çeviri yazılımını geçmedi. Tüm cümlelerde geleneksel sistem 33,30, dikkatli sistemin en iyi sürümü 28,45 aldı; dikkat yalnızca sözlük dışı kelime içermeyen alt kümede öne geçti (36,15'e karşı 35,63).
+Bu sonucu iki kayıtla okumak gerekiyor. Birincisi: yazarlar sabit uzunluklu vektörün darboğaz olduğunu kanıtlanmış bir teorem gibi sunmaz, açıkça bir varsayım olarak ortaya koyar. İkincisi: bu sistem o günün geleneksel çeviri yazılımını geçmedi. Tüm cümlelerde geleneksel sistem 33,30, dikkatli sistemin en iyi sürümü 28,45 aldı; dikkat yalnızca sözlük dışı kelime içermeyen alt kümede öne geçti (36,15'e karşı 35,63).
 
 Şekil 1'deki karşıtlık meselenin tamamıdır: üstte n girişten tek bir kutuya giden dar boğaz, altta her üretim adımı için yeniden hesaplanan ağırlıklı toplam.
 
 ![Üstte tüm kaynak token'ları tek bir sabit uzunluklu bağlam vektörüne sıkışır; altta her üretim adımı için token'lara ayrı dikkat ağırlıkları verilir ve her adımda yeni bir bağlam vektörü hesaplanır.](assets/sabit-vektor-darbogazi.svg "Şekil 1 — Tek özetten tartıma")
 
-Popüler anlatı dikkatin 2017'de "Attention Is All You Need" başlıklı çalışmayla icat edildiğini söyler. Birincil kaynak buna izin vermiyor: 2015 tarihli makale "dikkat" sözcüğünü kendisi kullanır ve kod çözen tarafta bir dikkat mekanizması uyguladığını açıkça yazar. Dürüst sonuç şu: 2017'nin katkısı dikkati icat etmek değil, yinelemeli yapıyı tamamen atıp yalnızca dikkatle çalışan bir mimari kurmaktı. Başlık da tam bunu iddia ediyor.
+Popüler anlatı dikkatin 2017'de "Attention Is All You Need" başlıklı çalışmayla icat edildiğini söyler. Birincil kaynak buna izin vermiyor: 2015 tarihli makale "dikkat" sözcüğünü kendisi kullanır ve kod çözen tarafta bir dikkat mekanizması uyguladığını açıkça yazar. Doğru okuma şu: 2017'nin katkısı dikkati icat etmek değil, yinelemeli yapıyı tamamen atıp yalnızca dikkatle çalışan bir mimari kurmaktı. Başlık da tam bunu iddia ediyor.
 
 ## Sorgu, anahtar, değer: aynı satırın üç okunuşu
 
@@ -50,9 +50,9 @@ Roller şöyle: dizideki her token'ın vektörü, üç ayrı öğrenilmiş dön�
 
 Mekanizmanın tamamı iki cümlede özetlenebilir. Her token'ın sorgusu, cümledeki bütün token'ların anahtarlarıyla karşılaştırılıp birer benzerlik skoru üretir; sonra bu skorlar toplamı 1 olan katsayılara çevrilir ve o token'ın yeni temsili, bütün değerlerin bu katsayılarla alınmış ağırlıklı ortalaması olur. Tartım dediğimiz şey tam olarak budur: seçmek değil, pay dağıtmak.
 
-Bu makalenin ana benzetmesi 4\. makalenin defterinin üzerine biner. Dikkat, defterden çektiğin satırı silmez; o satırın **üzerine**, aynı cümledeki komşulardan gelen katkıları yazar. Benzetmenin bozulduğu yer şurası: gerçek bir deftere yazınca satır kalıcı olarak değişir, oysa dikkatte özgün satır dokunulmadan durur — değişen, yalnızca o cümle için üretilen kopyadır; aynı token başka bir cümlede yine el değmemiş satırdan yola çıkar. Benzetmenin biçimsel karşılığı ise şudur: dikkatin çıktısı, komşuların değer vektörlerinin, dikkat ağırlıklarıyla alınmış ağırlıklı ortalamasıdır.
+Bu makalenin ana benzetmesi 4\. makalenin defterinin üzerine biner. Dikkat, defterden çektiğin satırı silmez; o satırın **üzerine**, aynı cümledeki komşulardan gelen katkıları yazar. Gerçek bir deftere yazınca satır kalıcı olarak değişir, oysa dikkatte özgün satır dokunulmadan durur — değişen, yalnızca o cümle için üretilen kopyadır; aynı token başka bir cümlede yine el değmemiş satırdan yola çıkar. "Üzerine yazılan" şeyin kendisi de bellidir: komşuların değer vektörlerinin, dikkat ağırlıklarıyla alınmış ağırlıklı ortalaması.
 
-İkinci bir benzetme yardımcı olabilir ama üç sınırıyla birlikte verilmezse zarar verir. Kütüphane fişi benzetmesinde elindeki arama terimi sorgu, rafın etiketi anahtar, raftaki kitap değerdir. Benzetmenin bozulduğu üç yer şunlar: kütüphanede tek bir kitap seçilir, dikkatte hiçbir raf kapanmaz ve hepsinden bir pay alınır; etiketler ve kitaplar dışarıdan konmuş içerik değildir, aynı vektörün üç ayrı öğrenilmiş dönüşümüdür; nokta çarpım da "bu kayıt ilgili mi" sorusuna cevap vermez, yalnızca eğitimle şekillenmiş bir yön benzerliği ölçer. Biçimsel karşılığı yine aynı üç çarpımdır: sorgu, anahtar ve değer tek bir girdi vektöründen türer.
+İkinci bir benzetme yardımcı olabilir ama üç sınırıyla birlikte verilmezse zarar verir. Kütüphane fişi benzetmesinde elindeki arama terimi sorgu, rafın etiketi anahtar, raftaki kitap değerdir. Benzetme üç yerde ayrılır: kütüphanede tek bir kitap seçilir, dikkatte hiçbir raf kapanmaz ve hepsinden bir pay alınır; etiketler ve kitaplar dışarıdan konmuş içerik değildir, aynı vektörün üç ayrı öğrenilmiş dönüşümüdür; nokta çarpım da "bu kayıt ilgili mi" sorusuna cevap vermez, yalnızca eğitimle şekillenmiş bir yön benzerliği ölçer. Biçimsel karşılığı yine aynı üç çarpımdır: sorgu, anahtar ve değer tek bir girdi vektöründen türer.
 
 > **Kendini yokla:** Bir kelimenin embedding satırı eğitimden sonra sabittir. O hâlde "yüz" kelimesinin temsili, "Denizde yüz!" ile "Yüz lira verdim." cümlelerinde nasıl farklı olabiliyor?
 
@@ -66,7 +66,7 @@ Bize gereken şey bu değil. Bize toplamı 1 olan tartı katsayıları lazım, �
 
 Önce sözle: softmax, elindeki skorları önce hepsi pozitif olacak biçimde dönüştürür, sonra toplamları tam olarak 1 olacak şekilde ölçekler. Pozitifleştirmeyi üstel fonksiyon yapar ve bu masum bir seçim değildir — üstel alma, büyük skorları küçüklerin önüne orantısız biçimde çıkarır. Sembolle: bir skor kümesi için i'nci ağırlık, e üzeri i'nci skorun, bütün skorların üstellerinin toplamına bölümüdür. Küçük sayıyla: skorlar 1 ve 2,5 ise üsteller 2,7183 ve 12,1825 olur; ikinci skor birinciden 1,5 fazlayken üsteli yaklaşık 4,5 katıdır.
 
-Çıkan sayıların adı dikkat ağırlığı (attention weight). Negatif olamazlar ve toplamları 1'dir; yani bir olasılık dağılımıdır. Burada bu makalenin en ince ayrımı geliyor: bu dağılım, 5\. makaledeki sonraki token dağılımıyla **aynı matematiksel nesnedir ama aynı şey değildir**. Orada soru "sıradaki kelime ne olabilir" idi; burada soru "bu kelimeyi yeniden yazarken hangi komşuya ne kadar pay verilecek". İkisini karıştırmamak gerekir.
+Çıkan sayıların adı dikkat ağırlığı (attention weight). Negatif olamazlar ve toplamları 1'dir; yani bir olasılık dağılımıdır. Burada ince bir ayrım var: bu dağılım, 5\. makaledeki sonraki token dağılımıyla **aynı matematiksel nesnedir ama aynı şey değildir**. Orada soru "sıradaki kelime ne olabilir" idi; burada soru "bu kelimeyi yeniden yazarken hangi komşuya ne kadar pay verilecek". İkisini karıştırmamak gerekir.
 
 > **Kendini yokla:** Bir token için bütün dikkat ağırlıkları eşit çıkarsa o katman ne yapmış olur?
 
@@ -92,9 +92,9 @@ Birinci adımda sorgunun her anahtarla nokta çarpımını alıyoruz: birinci c�
 
 İkinci adımda skorlar, anahtar boyutunun kareköküne bölünür; boyut 4 olduğu için bölen 2 ve elimizde birinci cümle için 1 · 2,5 · 1, ikinci cümle için 1 · 1 · 2,5 kalıyor.
 
-Üçüncü adımda softmax devreye giriyor: gereken iki üstel 2,7183 ve 12,1825, birinci cümlenin toplamı ise 2,7183 + 12,1825 + 2,7183 = 17,6191. Ağırlıklar buradan çıkıyor: "serin" 2,7183 / 17,6191 = 0,154, "denizde" 12,1825 / 17,6191 = 0,691, "yüz" yine 0,154. (Üç basamağa yuvarlanmış hâlleri 0,999 topluyor; eksik kalan binde bir, tam değerlerin toplamı 1 olduğu için ortaya çıkan bir yuvarlama artığıdır.) İkinci cümlede aynı üç sayı başka token'lara düşüyor: "cebimde" 0,154, "yüz" 0,154, "lira" 0,691.
+Üçüncü adımda softmax devreye giriyor: gereken iki üstel 2,7183 ve 12,1825, birinci cümlenin toplamı ise 2,7183 + 12,1825 + 2,7183 = 17,6191. Ağırlıklar buradan çıkıyor: "serin" 2,7183 / 17,6191 = 0,154, "denizde" 12,1825 / 17,6191 = 0,691, "yüz" yine 0,154. (Üç basamağa yuvarladığımız için toplam 0,999 görünüyor; bu ve aşağıdaki son basamak farkları yuvarlama artığıdır.) İkinci cümlede aynı üç sayı başka token'lara düşüyor: "cebimde" 0,154, "yüz" 0,154, "lira" 0,691.
 
-Dördüncü adımda değerlerin ağırlıklı ortalamasını alıyoruz. Birinci cümlede eylem boyutu 0,154×1 + 0,691×2 + 0,154×1 = 0,154 + 1,382 + 0,154 = 1,690 veriyor; ama bu, ağırlıkların 0,999'a düşen yuvarlanmış hâlleriyle yapılmış bir hesap — tam değerlerle sonuç 1,691. Miktar boyutu ise 0,154×0 + 0,691×0 + 0,154×1 = 0,154. Yani çıktı (1,691 ; 0,154). İkinci cümlede aynı iki sayı yer değiştiriyor: eylem boyutu 0,154, miktar boyutu 1,691, çıktı (0,154 ; 1,691).
+Dördüncü adımda değerlerin ağırlıklı ortalamasını alıyoruz. Birinci cümlede eylem boyutu 0,154×1 + 0,691×2 + 0,154×1 ≈ 1,691 veriyor. Miktar boyutu ise 0,154×0 + 0,691×0 + 0,154×1 = 0,154. Yani çıktı (1,691 ; 0,154). İkinci cümlede aynı iki sayı yer değiştiriyor: eylem boyutu 0,154, miktar boyutu 1,691, çıktı (0,154 ; 1,691).
 
 Şekil 2 bu dört adımı akış olarak gösteriyor; kutulardaki sayılar yukarıdaki hesabın birebir aynısıdır. Mekanizmanın alandaki adı da bu dört adımdan geliyor: ölçekli nokta çarpım dikkati (scaled dot-product attention).
 
@@ -108,7 +108,7 @@ Söz verdiğimiz ek kural şimdi geliyor ve 5\. makaledeki hedeften doğuyor. Bi
 
 ### İleri okuma notu: neden kareköke bölünüyor
 
-O ikinci adım keyfî görünüyor olabilir. Değil. Aynı skorları (2 · 5 · 2) bölmeden softmax'a verirsek ağırlıklar 0,045 · 0,909 · 0,045 çıkar — dağılım neredeyse tek bir token'a kilitlenmiş. Vaswani ve arkadaşlarının dipnotu gerekçeyi verir: bileşenleri ortalaması sıfır, yayılımı (varyansı) 1 olan bağımsız değişkenler kabul edilirse — yani sayılar sıfırın çevresinde tipik olarak bir birim oynuyorsa — nokta çarpımın yayılımı anahtar boyutuna eşit olur. Yayılım boyut kadarsa standart sapma da karekökü kadardır; kareköke bölmek skorları eski ölçeğine geri çeker. Vaswani ve arkadaşlarının taban modelinde bu boyut 64'tür, yani bölen 8; sonraki büyük modellerde boyut da bölen de büyür (GPT-3'ün büyük sürümlerinde 128). Bu bir olasılık zorunluluğu değil, sayısal bir önlemdir: aşırı sivrilen softmax'ın gradyanları yok denecek kadar küçülür ve öğrenme durur.
+O ikinci adım keyfî görünebilir, ama bir gerekçesi var. Aynı skorları (2 · 5 · 2) bölmeden softmax'a verirsek ağırlıklar 0,045 · 0,909 · 0,045 çıkar — dağılım neredeyse tek bir token'a kilitlenmiş. Vaswani ve arkadaşlarının dipnotu gerekçeyi verir: bileşenleri ortalaması sıfır, yayılımı (varyansı) 1 olan bağımsız değişkenler kabul edilirse — yani sayılar sıfırın çevresinde tipik olarak bir birim oynuyorsa — nokta çarpımın yayılımı anahtar boyutuna eşit olur. Yayılım boyut kadarsa standart sapma da karekökü kadardır; kareköke bölmek skorları eski ölçeğine geri çeker. Vaswani ve arkadaşlarının taban modelinde bu boyut 64'tür, yani bölen 8; sonraki büyük modellerde boyut da bölen de büyür (GPT-3'ün büyük sürümlerinde 128). Bu bir olasılık zorunluluğu değil, sayısal bir önlemdir: aşırı sivrilen softmax'ın gradyanları yok denecek kadar küçülür ve öğrenme durur.
 
 ## Mesafenin ortadan kalktığı yer
 
@@ -132,11 +132,11 @@ Elimizde tek bir işlem var ve iş görüyor. Ama bir işlem bir mimari değil; 
 
 > **Kendini yokla:** Dikkatin çıktısı, komşuların değerlerinin ağırlıklı ortalamasıydı. Bu ortalamada terimlerin sırasını değiştirsen sonuç değişir mi?
 
-Değişmez; toplamada sıra önemsizdir. Bunun bedeli şu: dikkat kelimelerin sırasını kendiliğinden bilmez. Kalemi al ve dene: birinci cümlede "serin" ile "denizde"nin yerini değiştir, yani "denizde serin yüz". Skorlar aynı üç çarpımdan çıkar — "denizde" 5, "serin" 2, "yüz" 2 — ve ağırlıklar yine aynı token'lara yapışır: 0,691 · 0,154 · 0,154. "Yüz"ün çıktısı yine (1,691 ; 0,154); token'ların yerini değiştirdiğinde her token'ın kendi çıktı vektörü zerre değişmez, yalnızca dizideki yeri değişir. Aynı örnek ikinci cümlede daha rahatsız edicidir: maskesiz bir dikkat katmanı için "yüz lira" ile "lira yüz" ayırt edilemez. Az önceki maske kısmi bir istisnadır — hangi komşunun görülebildiğini konum belirlediği için sıra tümüyle kaybolmaz — ama maske yalnızca "öncesi mi, sonrası mı" ayrımını taşır, "kaçıncı komşu" bilgisini taşımaz. Sıra bilgisi mekanizmanın içinde yoktur; dışarıdan, ayrı bir sinyal olarak eklenmesi gerekir.
+Değişmez; toplamada sıra önemsizdir. Bunun bedeli şu: dikkat kelimelerin sırasını kendiliğinden bilmez. Kalemi al ve dene: birinci cümlede "serin" ile "denizde"nin yerini değiştir, yani "denizde serin yüz". Skorlar aynı üç çarpımdan çıkar — "denizde" 5, "serin" 2, "yüz" 2 — ve ağırlıklar yine aynı token'lara yapışır: 0,691 · 0,154 · 0,154. "Yüz"ün çıktısı yine (1,691 ; 0,154); token'ların yerini değiştirdiğinde her token'ın kendi çıktı vektörü zerre değişmez, yalnızca dizideki yeri değişir. İkinci cümlede bu, anlamı doğrudan etkiler: maskesiz bir dikkat katmanı için "yüz lira" ile "lira yüz" ayırt edilemez. Az önceki maske kısmi bir istisnadır — hangi komşunun görülebildiğini konum belirlediği için sıra tümüyle kaybolmaz — ama maske yalnızca "öncesi mi, sonrası mı" ayrımını taşır, "kaçıncı komşu" bilgisini taşımaz. Sıra bilgisi mekanizmanın içinde yoktur; dışarıdan, ayrı bir sinyal olarak eklenmesi gerekir.
 
 İkinci eksik daha incedir. Bir cümlede aynı anda birden çok ilişki türü vardır: hangi kelime hangi fiilin öznesi, hangi zamir hangi ismi işaret ediyor, hangi sıfat hangi ismi niteliyor. Tek bir ağırlık kümesi bunların hepsini tek bir tartıya sıkıştırmak zorundadır ve kaçınılmaz olarak bulanıklaşır. Çözümün adı çok başlı dikkat (multi-head attention): aynı anda birden çok tartım çalıştırmak. Vaswani ve arkadaşları bunun ölçüsünü de verir — doğrulama kümesinde ölçüldüğünde tek başlı ayar, kendi en iyi ayarlarından 0,9 BLEU geride kalıyor. Nasıl kurulduğu 7\. makalenin işi.
 
-Kazandığımız şeyi sayalım: bir kelimenin temsili artık cümleye göre yeniden yazılıyor, tartım öğreniliyor ve uzak komşular tek adımda erişilebiliyor. Fazlası iddia edilmiyor.
+Kazandığımız şeyi sayalım: bir kelimenin temsili artık cümleye göre yeniden yazılıyor, tartım öğreniliyor ve uzak komşular tek adımda erişilebiliyor.
 
 ### Sırada ne var
 

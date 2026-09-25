@@ -12,9 +12,11 @@ tags:
   - ogrenilmis-seyrek
   - gec-etkilesim
   - siralamayla-birlestirme
-content_hash: sha256:ee5c3af4a3da93c306c33c8a4ab59123c5efb4c08fb8dca918338603a06b89eb
+content_hash: sha256:c667a72d0476430ed717c722273f7bada754e44e9a07b8afda26da78c4fdfa6a
 classification_version: 1
 classification_batch: 9
+revised_at: "2026-09-25"
+revision_note: "Nadir terim ağırlığı sayısal örnekle kuruldu, üç bileşenin tek BM25 puanında nasıl birleştiği gösterildi; TREC DL karşılaştırması düzeltildi."
 ---
 ## Kara kutunun öbür yarısı
 
@@ -36,7 +38,9 @@ Geriye tek soru kalıyor: listedeki belgeler nasıl puanlanacak?
 
 Stephen Robertson ve Hugo Zaragoza'nın 2009 tarihli derlemesi, alanın onlarca yıllık gelişimini tek bir puanlama işlevinde topluyor. İşlev üç fikirden oluşuyor ve üçünü de sırayla kuralım.
 
-**Birincisi: nadir terim daha çok bilgi taşır.** "ve" kelimesi her belgede geçer, dolayısıyla bir belgeyi ayırt etmez. "kuokka" az belgede geçer, dolayısıyla geçtiği belge hakkında çok şey söyler. Her terime, derlemde ne kadar nadir olduğuna göre bir ağırlık verilir; bu bileşen ters belge sıklığı olarak bilinir.
+**Birincisi: nadir terim daha çok bilgi taşır.** "ve" kelimesi her belgede geçer, dolayısıyla bir belgeyi ayırt etmez. "kuokka" az belgede geçer, dolayısıyla geçtiği belge hakkında çok şey söyler. Her terime, derlemde ne kadar nadir olduğuna göre bir ağırlık verilir; bu bileşen **ters belge sıklığı** (inverse document frequency) olarak bilinir.
+
+Ağırlığın biçimi logaritmiktir, kabaca log(N ⁄ n): `N` derlemdeki belge sayısı, `n` terimi içeren belge sayısı. Bir milyon belgelik bir derlemde "kuokka" 50 belgede geçiyorsa ağırlığı ln(1.000.000 ⁄ 50) ≈ 9,9; "ve" 900.000 belgede geçiyorsa ln(1.000.000 ⁄ 900.000) ≈ 0,1. Yani tek bir "kuokka" eşleşmesi yaklaşık yüz "ve" eşleşmesi kadar değerlidir. Logaritma, "kaç kat nadir" sorusunu toplanabilir bir sayıya çevirir. Robertson ve Zaragoza'nın yazdığı kesin biçim pay ve paydaya 0,5'lik düzeltmeler ekler; o biçimde belgelerin yarısından fazlasında geçen bir terimin ağırlığı sıfırın altına indiği için uygulamalar formülü negatif çıkmayacak biçimde değiştirir. Sezgi aynı kalır.
 
 **İkincisi: terim sıklığı doyuma ulaşır.** Bir belgede "kuokka" bir kez geçiyorsa o belge kuokka hakkındadır. Yirmi kez geçiyorsa yirmi kat daha fazla kuokka hakkında değildir. Bu yüzden terim sıklığı doğrusal değil, artan ama bir tavana yaklaşan bir işlevden geçirilir:
 
@@ -65,6 +69,12 @@ Ortalama belge uzunluğu 200 kelime olsun. İki belge karşılaştıralım:
 
 B belgesinde terim dört kat fazla geçiyor ama ağırlığı yalnızca yaklaşık yüzde 15 daha yüksek. İki bileşen birlikte çalıştı: doyum ikinci, üçüncü ve dördüncü geçişin katkısını kırptı; uzunluk normalleştirmesi de belgenin dört kat uzun olmasını hesaba kattı. Aynı terim 100 kelimelik bir belgede dört kez geçseydi ağırlık 0,842 olurdu — bu, "kısa ve yoğun" belgenin ödüllendirilmesidir.
 
+Tablo tek bir terimi izledi; puanın tamamı artık tek cümleyle söylenebilir. Bir belgenin bir sorguya aldığı BM25 puanı, sorgudaki her terim için iki sayının çarpımının toplamıdır — terimin ne kadar nadir olduğu ve belgede ne kadar geçtiği:
+
+puan(sorgu, belge) = Σ ters belge sıklığı(terim) × doyumlu ağırlık(terim, belge)
+
+Sorgu yalnızca "kuokka" olsaydı A belgesinin puanı 9,9 × 0,571 ≈ 5,65, B'ninki 9,9 × 0,656 ≈ 6,49 olurdu; ters belge sıklığı iki belgede aynı olduğu için sıralamayı doyumlu ağırlık belirler. Sorguya "ve" eklemek her belgeye en fazla 0,1 civarında katkı yapar: sıralamayı nadir terim taşır. Kaynaklarda doyumlu ağırlık çoğu zaman bir de `(k₁ + 1)` ile çarpılmış görünür; bu çarpan bütün belgeleri aynı oranda büyüttüğü için sıralamayı değiştirmez, yalnızca ortalama uzunlukta ve terimi bir kez geçiren belgenin ağırlığını tam bire getirir.
+
 > **Kendini yokla:** Terim sıklığını doyuma sokmasak ne olurdu?
 
 Aynı kelimeyi yüz kez tekrar eden bir belge, o kelimeyi bir kez geçen ve gerçekten o konuyu anlatan bir belgeyi kolayca geçerdi. Doyum, bu tür manipülasyonu yapısal olarak sınırlar: yüzüncü geçiş, birincinin yanında neredeyse hiçbir şey eklemez. Uzunluk normalleştirmesi de aynı savunmanın ikinci yarısıdır — tekrarı uzatarak yapmak da işe yaramaz.
@@ -75,21 +85,13 @@ Aynı kelimeyi yüz kez tekrar eden bir belge, o kelimeyi bir kez geçen ve ger�
 
 Nandan Thakur ve arkadaşlarının NeurIPS 2021 veri kümeleri ve kıyaslamalar programında sunduğu çalışma, on getirme sistemini on sekiz derlem üzerinde, eğitildikleri alanın **dışında** karşılaştırdı. Kullanılan ölçü **nDCG@10**: ilk on sonucun ilgililik derecelerini, üst sıralardakine daha çok ağırlık verecek biçimde toplayan ve kusursuz sıralamaya bölerek sıfır ile bir arasına getiren bir sıralama kalitesi ölçüsü. Eğitim alanı olan kümede sıralama nettir: BM25 bu ölçüde 0,228 alırken yoğun bir model 0,408 alıyor — arada yaklaşık iki kat.
 
-Alan dışına çıkıldığında aynı modellerin BM25'e göre ortalama performansı şöyle:
-
-| yaklaşım | BM25'e göre ortalama |
-|---|---|
-| terim ağırlığı öğrenen seyrek modeller | −%27,9 ve −%20,3 |
-| yoğun getirme modelleri | −%47,7 · −%7,4 · −%3,6 · −%2,8 |
-| belge genişletmeli seyrek model | +%1,6 |
-| geç etkileşimli model | +%2,5 |
-| BM25 üstüne çapraz kodlayıcıyla yeniden sıralama | +%11 |
+Alan dışına çıkıldığında aynı modellerin BM25'e göre ortalama farkı Şekil 2'de: dört yoğun getirme modeli ve terim ağırlığını öğrenen iki seyrek model BM25'in gerisinde; belgeyi genişleten seyrek model, geç etkileşimli model ve BM25'in üstüne çapraz kodlayıcıyla yeniden sıralama önünde.
 
 ![Dokuz satırlı yatay bir çubuk şeması. Ortada dikey bir çizgi vardır ve üstünde BM25 yazar; bu çizgi sıfır farkı temsil eder. Her satırda solda yaklaşımın adı, ortada çubuk, sağda değeri yazılıdır. Çizginin solundaki altı çubuk BM25'in gerisinde kalan yaklaşımları gösterir ve değerleri yukarıdan aşağıya şöyledir: yoğun getirme eksi yüzde 47,7; terim ağırlığı öğrenen eksi yüzde 27,9; terim ağırlığı öğrenen eksi yüzde 20,3; yoğun getirme eksi yüzde 7,4; yoğun getirme eksi yüzde 3,6; yoğun getirme eksi yüzde 2,8. Çizginin sağındaki üç çubuk onu geçen yaklaşımları gösterir: belge genişletmeli seyrek artı yüzde 1,6; geç etkileşimli artı yüzde 2,5; yeniden sıralamalı artı yüzde 11. Şeklin altında soldakilerin BM25'in gerisinde, sağdakilerin önünde olduğu ve aynı modellerin eğitim alanında BM25'i açık farkla geçtiği belirtilir.](assets/alan-disi-tersine-donus.svg "Şekil 2 — Alan dışına çıkınca sıralama değişiyor")
 
 Şekil 2, 16\. makaledeki ölçüm disiplininin getirmeye taşınmış hâli: alan içi başarı, alan dışı genellemenin göstergesi değil. Aynı eğitim verisiyle ince ayarlanmış modeller birbirinden çok farklı genelleyebiliyor.
 
-Ama tablonun asıl değeri sağ tarafında. BM25'i alan dışında geçebilen yalnızca üç yaklaşım var ve üçü birbirinden bağımsız üç fikri temsil ediyor. Makalenin geri kalanı bu üçünü tek tek açıyor.
+Ama şeklin asıl değeri sağ tarafında. BM25'i alan dışında geçebilen yalnızca üç yaklaşım var ve üçü birbirinden bağımsız üç fikri temsil ediyor. Makalenin geri kalanı bu üçünü tek tek açıyor.
 
 ## Birinci yol: terimleri genişletmek
 
@@ -105,7 +107,7 @@ Sonuç, ters dizinde çalışan ama anlamı gören bir getirici. Aşağıdaki il
 | öğrenilmiş seyrek | 0,322 | 0,955 | 0,813 | 0,73 |
 | yoğun (en iyi) | 0,335 | 0,964 | 0,720 | — |
 
-Üçüncü sütun bu tablonun en öğretici yeri. Alan dışı bir değerlendirmede BM25'in bulma oranı 0,745, yoğun modelinki 0,720 — yani orada klasik yöntem hâlâ önde. Öğrenilmiş seyrek model ise 0,813 ile ikisini de geçiyor ve bunu ters dizinle yapıyor. Bedeli sütunun son hanesinde: sorgu başına ortalama işlem sayısı BM25'in kabaca beş katı, ama yaklaşık komşu araması gerektiren yoğun dizinlerin dünyasına hiç girmiyor.
+TREC DL sütunu tablonun en öğretici yeri. Bu küme aynı derlemi kullanır ama ayrı yazılmış ve çok daha derin etiketlenmiş sorgular taşır; yani alan dışı değildir, ama farklı ve daha titiz etiketlenmiş bir ölçümdür. Orada BM25'in bulma oranı 0,745, yoğun modelinki 0,720 — klasik yöntem hâlâ önde. Öğrenilmiş seyrek model ise 0,813 ile ikisini de geçiyor ve bunu ters dizinle yapıyor. Bedeli sütunun son hanesinde: sorgu başına ortalama işlem sayısı BM25'in kabaca beş katı, ama yaklaşık komşu araması gerektiren yoğun dizinlerin dünyasına hiç girmiyor.
 
 ## İkinci yol: etkileşimi geciktirmek
 
@@ -126,7 +128,7 @@ Geç etkileşimli düzen, çapraz kodlayıcının doğruluğunu neredeyse koruyu
 
 ## Üçüncü yol: ikinci aşamayı ödemek
 
-Üçüncü yol yeni bir fikir değil; 29\. makalede iki aşamalı sıralama olarak zaten anlatılmıştı. Ucuz getirici yüz civarı aday çıkarır, pahalı çapraz kodlayıcı yalnızca onları yeniden sıralar. Yukarıdaki alan dışı tabloda BM25'i en çok geçen düzen buydu: yüzde 11.
+Üçüncü yol yeni bir fikir değil; 29\. makalede iki aşamalı sıralama olarak zaten anlatılmıştı. Ucuz getirici yüz civarı aday çıkarır, pahalı çapraz kodlayıcı yalnızca onları yeniden sıralar. Şekil 2'de BM25'i alan dışında en çok geçen düzen buydu: yüzde 11.
 
 Bu yolun tek dezavantajı bedelidir ve bedel yukarıdaki gecikme sütununda duruyor. Yeniden sıralama, aday sayısıyla doğrusal olarak pahalanır ve bu maliyet **her sorguda** ödenir. 28\. ve 33\. makalelerdeki muhasebe aynen geçerli: ucuz olan aday üretsin, pahalı olan karar versin — ve pahalı olanın ne kadar aday göreceği bir bütçe kararıdır.
 
@@ -154,7 +156,7 @@ Sayıyla görelim. Bir belge birinci listede 1., ikincide 30. sırada olsun; ba�
 
 ## Ölçtüğümüz şey gerçekten kalite mi
 
-Son bir uyarı ve bu makalenin belki en rahatsız edici bulgusu.
+Son uyarı cetvelin kendisiyle ilgili.
 
 Bir getirme değerlendirme kümesi kurulurken hangi belgelerin ilgili olduğunu insanlar etiketler. Ama bütün derlemi etiketlemek imkânsız olduğu için, etiketlenecek adaylar mevcut sistemlerin getirdikleri arasından seçilir. O sistemler ağırlıklı olarak sözcük eşleşmesine dayanıyorsa, sonuç öngörülebilir: yoğun bir getiricinin bulduğu ama hiçbir klasik sistemin bulmadığı bir belge **hiç etiketlenmez** ve otomatik olarak ilgisiz sayılır.
 
@@ -168,7 +170,7 @@ Aynı BEIR çalışması bunu bir kümede ölçtü. İlk on sonucu içinde hiç 
 | yoğun (başka bir model) | 0,332 | 0,445 |
 | geç etkileşimli | 0,677 | 0,735 |
 
-Sözcük eşleşmesinin puanı neredeyse hiç değişmiyor; yoğun modellerinki 7 ile 11 puan arası yükseliyor. Bu, o modellerin gerçekten daha iyi olduğunu kanıtlamıyor — ama önceki tablonun bir kısmının yöntemden değil **ölçme düzeninden** geldiğini kanıtlıyor. 16\. makaledeki uyarının en somut hâli: bir cetvelin kendisi de bir tasarım ürünüdür ve kimin lehine tasarlandığı ölçülebilir.
+Sözcük eşleşmesinin puanı neredeyse hiç değişmiyor; yoğun modellerinki 7 ile 11 puan arası yükseliyor. Bu, o modellerin daha iyi olduğunu kanıtlamıyor; ama Şekil 2'deki farkların bir kısmının yöntemden değil **ölçme düzeninden** gelebildiğini gösteriyor. 16\. makaledeki uyarının en somut hâli: bir cetvelin kendisi de bir tasarım ürünüdür ve kimin lehine tasarlandığı ölçülebilir.
 
 ## Getirmenin disiplini
 

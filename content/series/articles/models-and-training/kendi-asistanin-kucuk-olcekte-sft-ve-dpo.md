@@ -5,16 +5,18 @@ slug: kendi-asistanin-kucuk-olcekte-sft-ve-dpo
 category: models-and-training
 level: advanced
 reading_order: 105
-summary: "104'ün eğittiği modeli asistanlaştırır: kayıp maskesinin koruduğu ve korumadığı şeyler, hizalama vergisinin ölçülmüş hâli, DPO kaybının aritmetiği ve tasmanın tam olarak 1,5 bölü beta kadar uzunluk verdiği ölçüm — ve tercihi karşılayan bir güncellemenin yeğlenen cevabı daha az olası yapabildiği yer."
+summary: "104'ün eğittiği modeli asistanlaştırır: kayıp maskesinin koruduğu ve korumadığı şeyler, hizalama vergisinin ölçülmüş hâli ve neredeyse tamamının eşit gösterilen öbür cevabın bedeli olduğu, DPO kaybının aritmetiği ve aynı kayba inen koşularda tasmanın neden 1,5 bölü beta uzunluğunda olmak zorunda olduğu — ve tercihi karşılayan bir güncellemenin yeğlenen cevabı daha az olası yapabildiği yer."
 tags:
   - denetimli-ince-ayar
   - dpo
   - kayip-maskesi
   - hizalama-vergisi
   - ortuk-odul
-content_hash: sha256:45a8609d4860d36de2b2c2842d92d414eabf76ce12741fe596f7a1fdb548fdd8
+content_hash: sha256:557d2822cadc994cd826f7a57c3297793e616b382df6aa250a76329bb726f052
 classification_version: 1
 classification_batch: 25
+revised_at: "2026-09-25"
+revision_note: "δ'nın tanımı ve DPO'nun yeğlenen cevabı düşürdüğü koşu elle hesaplandı; 1,5/β ilişkisinin kaybın aritmetiği olduğu ve SFT bedelinin kaynağı düzeltildi."
 ---
 ## Doğru cevabı olmayan bir soru
 
@@ -30,7 +32,7 @@ Bu makalede o yeğlemeyi modele yerleştirmenin iki yolunu 364 parametre üzerin
 
 Eğitim çiftlerimiz iki tane ve maske dört konumun ikisini kapsıyor:
 
-| Konum | 1 | 2 | 3 | 4 |
+| Konum | 0 | 1 | 2 | 3 |
 |---|---|---|---|---|
 | Birinci çift | başla | kedi | **bugün** | **uyudu** |
 | İkinci çift | başla | köpek | **bugün** | **havladı** |
@@ -46,25 +48,33 @@ Sonuç ölçülebilir. Aşağıdaki tabloda dört ayrı koşu var; her biri ayn�
 | 30 | 0,9926 | 0,6504 | 0,9991 | 1,05479 |
 | 120 | 0,9976 | 0,6761 | 0,9986 | 1,23545 |
 
-Üç sütun üç ayrı şey söylüyor. **Biçim taşındı:** `bugün`ün olasılığı yarıdan neredeyse bire çıktı. **Bilgi yerinde kaldı:** doğru fiile verilen olasılık 0,9990'dan 0,9986'ya indi, yani hiç oynamadı. **Bedel derlem kaybında ödendi:** 0,46286'dan 1,23545'e, yani modelin dili modelleme yeteneği belirgin biçimde kötüleşti.
+Üç sütun üç ayrı şey söylüyor. **Biçim taşındı:** `bugün`ün olasılığı yarıdan neredeyse bire çıktı. **Bilgi yerinde kaldı:** doğru fiile verilen olasılık 0,9990'dan 0,9986'ya indi, yani hiç oynamadı. **Bedel derlem kaybında ödendi:** 0,46286'dan 1,23545'e. Dördüncü sütun, referanstan KL, 13\. makalenin tasmasının burada ne kadar gerildiğini gösteriyor: SFT'nin kaybında modeli referansa bağlayan bir terim yok, bu yüzden KL `bugün` bire dayanana kadar serbestçe büyüyor ve orada duruyor.
 
-12\. makalede Chunting Zhou ve arkadaşlarının LIMA çalışmasından yüzeysel hizalama hipotezini aktarmıştık: bir modelin bilgisi ve yetenekleri neredeyse tamamen ön eğitimde öğrenilir, hizalama ona yalnızca hangi biçim alt dağılımını kullanacağını öğretir. Elimizdeki üç sütun o hipotezin en küçük ölçekli doğrulaması. 11\. makalede adını koyduğumuz hizalama vergisi de aynı tabloda: derlem kaybındaki 0,77'lik artış, biçim için ödenen fatura.
+12\. makalede Chunting Zhou ve arkadaşlarının LIMA çalışmasından yüzeysel hizalama hipotezini aktarmıştık: bir modelin bilgisi ve yetenekleri neredeyse tamamen ön eğitimde öğrenilir, hizalama ona yalnızca hangi biçim alt dağılımını kullanacağını öğretir. Elimizdeki üç sütun o hipotezin en küçük ölçekli örneği. 11\. makalede adını koyduğumuz hizalama vergisinin bir hâli de aynı tabloda: derlem kaybındaki 0,77'lik artış, biçim için ödenen fatura.
 
-Neyin korunduğunun mekanik sebebi de görünüyor ve maskede duruyor. Fiil token'ı maskenin **içinde**; SFT her adımda biçimi kaydırırken fiil kuralını da yeniden pekiştiriyor. Maskenin dışında kalan hiçbir şey böyle bir koruma almıyor — derlem kaybının bozulması tam olarak bu yüzden.
+Neyin korunduğunun mekanik sebebi de görünüyor ve maskede duruyor. Fiil token'ı maskenin **içinde**; SFT her adımda biçimi kaydırırken fiil kuralını da yeniden pekiştiriyor.
+
+Ama bu verginin neyi ölçtüğüne bakmak gerekiyor. Derlem kaybındaki artışın nereden geldiğini elle bulabiliyoruz ve cevap sanıldığı yerde değil. Derlemin on iki hedefinden ikisi `dün`: `dün`lü iki cümlenin zarf konumu. 120 adımdan sonra `bugün` 0,9976 aldığına göre `dün`e en fazla 0,0024 kalıyor ve o iki hedefin her birinin kaybı −ln(0,0024) ≈ 6,03 nat'a çıkıyor; önceden ln 2 = 0,693'tü. Öteki on hedefi yerinde bırakıp yalnızca bu ikisini değiştirirsek ortalama 1,237 çıkıyor — ölçülen 1,23545'in neredeyse aynısı (bu hesap bizim). Yani derlem kaybının artışı, maskenin dışında kalan bir yeteneğin çürümesinden gelmiyor; neredeyse tamamı yeğlemenin kendisinin faturası. Derlem iki zarfı eşit sıklıkta gösteriyor, model artık birini yeğliyor ve derlem kaybı bu anlaşmazlığı ölçüyor.
 
 ![Dört satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: SFT, aynı temel model ve değişen tek şey adım sayısı. Sütunlar adım, p bugün, referanstan KL, doğru fiil ve derlem kaybı. Birinci satır temel model: 0,4996, 0,0000, 0,9990, 0,46286. İkinci satır 10 adım: 0,8601, 0,2787, 0,9984, 0,58008. Üçüncü satır 30 adım: 0,9926, 0,6504, 0,9991, 1,05479. Dördüncü satır vurguludur, 120 adım: 0,9976, 0,6761, 0,9986, 1,23545. Birinci kutunun başlığı üç sütun üç ayrı şey söylüyor: biçim taşındı, 0,4996'dan 0,9976'ya; bilgi yerinde kaldı, 0,9990'dan 0,9986'ya; bedel derlem kaybında ödendi, 0,46286'dan 1,23545'e. İkinci kutuda şu durur: fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. En altta iki kayıt: dört ayrı koşu vardır ve hepsi aynı temel modelden başlar; KL yedi bağlam üzerinden ortalanmıştır.](assets/sft-neyi-tasiyor.svg "Şekil 1 — Biçim taşındı, bilgi taşınmadı")
 
-Şekil 1'in okunacak yeri iki bitişik sütun: doğru fiil sütunu hiç oynamıyor, derlem kaybı sütunu ikiye katlanıyor.
+Şekil 1'in okunacak yeri iki bitişik sütun: doğru fiil sütunu hiç oynamıyor, derlem kaybı sütunu iki buçuk katından fazlasına çıkıyor.
 
 > **Kendini yokla:** Model artık `dün`e neredeyse hiç olasılık vermiyor. Bu, `dün`ün yanlış olduğunu öğrendiği anlamına mı gelir?
 
-Hayır. Model `dün`ü unutmadı; onu kullanıcıya dönmeyecek bölgeye itti. Nitekim derlem kaybının yükselmesinin sebebi tam olarak bu — `dün` geçen iki cümleyi artık kötü modelliyor. Öğrenilen şey bir olgu değil, bir tercih; ve tercih olgunun üzerine yazıldığında ölçüsü derlem kaybında görünüyor.
+Hayır. Model `dün`ü unutmadı; onu kullanıcıya dönmeyecek bölgeye itti. Derlem kaybının yükselmesinin sebebi de bu — `dün` geçen iki cümleyi artık kötü modelliyor. Öğrenilen şey bir olgu değil, bir tercih; ve tercih olgunun üzerine yazıldığında ölçüsü derlem kaybında görünüyor.
 
 ## DPO'nun aritmetiği
 
 İkinci yol cevabı baştan yazmadan ilerliyor. 13\. makalede Rafael Rafailov ve arkadaşlarının doğrudan tercih optimizasyonunu kurmuştuk: ayrı bir ödül modeli eğitmek yerine tercih çiftleri doğrudan politikanın üzerinde bir sınıflandırma kaybıyla kullanılıyor.
 
-Kaybı açalım. Bir çift için yeğlenen cevabın ve yeğlenmeyenin, politika ile referans model altındaki log olasılıkları alınır; iki fark birbirinden çıkarılır ve çıkan sayıya *δ* diyelim. Kayıp, β çarpı δ'nın sigmoid'inin eksi logaritmasıdır. β, 13\. makaledeki tasmanın kaybın içine gömülmüş hâli.
+Kaybı açalım, önce sözle. Her cevap için bir soru soruluyor: eğitilen model — politika — bu cevaba referans modelden ne kadar daha çok ya da daha az olasılık veriyor? Bu, iki olasılığın logaritmalarının farkı; yeğlenen cevap için pozitifse politika onu referanstan daha çok seviyor demek. Aynı hesap yeğlenmeyen cevap için de yapılıyor ve ikincisi birincisinden çıkarılıyor. Çıkan sayıya *δ* diyelim:
+
+δ = [ln π(yeğlenen) − ln π_ref(yeğlenen)] − [ln π(yeğlenmeyen) − ln π_ref(yeğlenmeyen)]
+
+δ pozitifse politika, yeğlenen cevabı yeğlenmeyene göre referansın yaptığından daha çok öne çıkarmış demek. Burada π politikayı, π_ref referans modeli gösteriyor. Kayıp, β çarpı δ'nın sigmoid'inin eksi logaritmasıdır: −ln σ(β × δ). β, 13\. makaledeki tasmanın kaybın içine yerleşmiş hâli.
+
+Dikkat edilecek şey, δ'nın iki cevabın **kendi** olasılıklarından değil, ikisinin arasındaki farkın referansa göre nasıl değiştiğinden hesaplandığı. İki cevabın olasılığı birlikte düşse bile, biri öbüründen yavaş düştüğü sürece δ pozitif kalır. Bu ayrıntı aşağıda belirleyici olacak.
 
 Tercih çiftlerimiz şunlar: `başla kedi` bağlamında `bugün` ≻ `dün`, ve `başla köpek` bağlamında aynısı. Eğitim başlamadan önce politika referansın kendisidir, yani δ = 0 ve kayıp −ln σ(0) = ln 2 = 0,69315. 13\. makaledeki Bradley–Terry tablosunun orta satırındaki 0,693 ile aynı sayı — ve aynı sebeple: model iki cevaba aynı puanı verdiğinde, yani hiçbir şey söylemediğinde, kayıp ln 2'dir.
 
@@ -81,24 +91,22 @@ Tablodan çıkan şey, β'nın ne yaptığının tam tanımı: kaybı belirleyen
 
 ## Tasma tam olarak 1,5 bölü beta kadar
 
-Bunu sınamanın temiz bir yolu var: bütün koşuları **aynı** kayba indirmek ve o noktada δ'ya bakmak. Hedefi 0,20 seçtik, çünkü tablodan biliyoruz ki 0,20 kaybı β × δ = 1,5 demek. Öyleyse kuram şunu söylüyor: δ = 1,5 ÷ β.
+Bunu sınamanın temiz bir yolu var: bütün koşuları **aynı** kayba indirmek ve o noktada δ'ya bakmak. Hedefi 0,20 seçtik; tablodan biliyoruz ki 0,20 kaybı β × δ ≈ 1,5 demek (tam değeri 1,508). Öyleyse kaybın tanımı şunu dayatıyor: δ ≈ 1,5 ÷ β.
 
-Ölçtük. İki ayrı model boyunda, her β için aynı eşiğe kadar eğittik:
+Bu bir keşif değil, aritmetik. Kayıp yalnızca β × δ çarpımına baktığı için 0,20'ye inen her koşu, model hangi boyda olursa olsun, aynı çarpıma inmek zorunda. Yine de ölçtük, çünkü ölçüm iki şeyi sınıyor: eğitim döngümüz kaybı doğru hesaplıyor mu, ve gerçek bir modelde optimizasyon bu hedefe gerçekten ulaşıyor mu? İki ayrı model boyunda, her β için aynı eşiğe kadar eğittik:
 
-| β | Kuramın dediği δ | Mikro modelde ölçülen | Geniş modelde ölçülen |
+| β | Kaybın dayattığı δ | Mikro modelde ölçülen | Geniş modelde ölçülen |
 |---|---|---|---|
 | 2,0 | 0,750 | 0,766 | 0,770 |
 | 1,0 | 1,500 | 1,530 | 1,522 |
 | 0,5 | 3,000 | 3,018 | 3,033 |
 | 0,2 | 7,500 | 7,565 | 7,569 |
 
-Dört satırın sekiz ölçümü de kuramın verdiği değerin yüzde üçü içinde ve iki model boyu arasında kayda değer fark yok. İlişki tohum değiştirince de bozulmuyor: mikro modeli üç ayrı tohumla çalıştırdığımızda β = 2,0'de δ 0,766 ile 0,843 arasında, β = 1,0'de 1,505 ile 1,540 arasında kaldı.
+Sekiz ölçümün hepsi 1,5 ÷ β'nın yüzde üçü içinde ve hepsi biraz üstünde. O pay da aritmetik: 0,20'nin tam karşılığı 1,508 ÷ β, ve eğitim eşiği geçtiği adımda durduğu için son adım δ'yı eşiğin biraz ötesine taşıyor. İki model boyunun aynı sayıları vermesi de bu yüzden bir bulgu değil, beklenen sonuç: eğriyi model değil kayıp çiziyor. Tohumlar arasındaki yayılım biraz daha geniş — mikro modeli üç tohumla çalıştırdığımızda β = 2,0'da δ 0,766 ile 0,843 arasında, β = 1,0'da 1,505 ile 1,540 arasında kaldı.
 
-Tasma gerçekten tasma: β'yı beşe bölmek, aynı tercihi karşılamak için politikanın on kat daha uzağa gitmesini gerektiriyor. 13\. makalede "tasmanın sıkılığı ayarlanması gereken bir hiperparametredir" demiştik; buradaki tablo o cümlenin tam sayısal karşılığı.
+![Yatay eksende beta, 0'dan 2,0'a; dikey eksende delta, 0'dan 8'e. Delta eşittir 1,5 bölü beta eğrisi solda yukarıdan sağda aşağıya inen bir hiperbol çiziyor. Dört ölçüm noktası eğrinin üstüne oturuyor: beta 0,2'de delta 7,57, beta 0,5'te 3,02, beta 1,0'da 1,53, beta 2,0'da 0,77. Her noktada mikro modelin dolu noktası ile geniş modelin halkası çakışıyor. Sağ üstte bir açıklama: beta onda birine inince delta on katına çıkıyor. En altta noktaların bizim koşularımız, eğrinin kaybın formülü olduğu yazıyor.](assets/tasmanin-uzunlugu.svg "Şekil 2 — Tasma gevşedikçe politika uzaklaşıyor")
 
-![Dört satırlık dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı kayba inen koşularda tasmanın uzunluğu, hedef kayıp 0,20 ve beta çarpı delta 1,5. Sütunlar beta, kuramın dediği delta, mikro modelde ölçülen ve geniş modelde ölçülen. Birinci satır beta 2,0: kuram 0,750, mikro 0,766, geniş 0,770. İkinci satır beta 1,0: kuram 1,500, mikro 1,530, geniş 1,522. Üçüncü satır beta 0,5: kuram 3,000, mikro 3,018, geniş 3,033. Dördüncü satır vurguludur, beta 0,2: kuram 7,500, mikro 7,565, geniş 7,569. Birinci kutuda sonuç durur: sekiz ölçümün hepsi kuramın verdiği değerin yüzde üçü içinde ve iki model boyu arasında fark yok, yani delta tam olarak 1,5 bölü betadır. İkinci kutuda anlamı durur: betayı beşe bölmek, aynı tercihi karşılamak için politikanın referanstan on kat daha uzağa gitmesini gerektirir. En altta bir kayıt: delta değerleri kendi koşularımızdan, 1,5 bölü beta ise kaybın kapalı formülünden gelir.](assets/tasmanin-uzunlugu.svg "Şekil 2 — Delta tam olarak 1,5 bölü beta")
-
-Şekil 2'nin iki ölçüm sütunu birbirinin neredeyse aynısı: tasmanın uzunluğu modelin boyuna değil, yalnızca β'ya bağlı.
+Şekil 2 bu aritmetiğin anlamını gösteriyor. δ, politikanın referanstan ne kadar ayrıldığının ölçüsü ve β onun tasması: β'yı onda birine indirmek — 2,0'dan 0,2'ye — aynı tercihi karşılamak için politikanın referanstan on kat daha uzağa gitmesini gerektiriyor. Eğri sola doğru dikleşiyor; tasma gevşedikçe her küçük β adımı uzaklığı daha çok büyütüyor. 13\. makalede "tasmanın sıkılığı ayarlanması gereken bir hiperparametredir" demiştik; buradaki eğri o cümlenin sayısal karşılığı.
 
 ## Tasmanın tutmadığı yer
 
@@ -113,11 +121,11 @@ Tasma gerçekten tasma: β'yı beşe bölmek, aynı tercihi karşılamak için p
 | 11 | 1,0 | 1,540 | **0,0006** | 0,9975 | 0,9922 | 2,49577 |
 | 42 | 1,0 | 1,505 | 0,8164 | 0,9980 | 0,9398 | 0,59280 |
 
-Üçüncü sütun ile dördüncü sütunun ayrışması bu makalenin asıl bulgusu.
+Tabloyu okurken üçüncü sütunla dördüncü sütunu yan yana tut: aynı β'da δ tohumdan tohuma neredeyse aynı kalıyor (0,766–0,843; 1,505–1,540), p(bugün) ise 0,82 ile 0,0006 arasında savruluyor.
 
 **δ her tohumda aynı.** β = 2,0 satırlarında 0,766 · 0,843 · 0,775; β = 1,0 satırlarında 1,530 · 1,540 · 1,505. Yani kayıp hedefine her koşuda aynı biçimde ulaşıldı ve tercih, tanımı gereği, her koşuda karşılandı.
 
-**Modelin gerçekte yaptığı şey hiç de aynı değil.** `bugün`ün olasılığı aynı üç koşuda 0,6809 · 0,0011 · 0,6840. Ortadaki koşuda **yeğlenen cevap binde bire indi** — üstelik tercih formel olarak karşılanmış durumdayken. Nasıl? δ, iki cevabın oranını ölçüyor; 0,843'lük bir δ, `bugün`ün `dün`den e üzeri 0,843 = 2,32 kat olası olduğunu söylüyor. İkisini birden aşağı iterek bu oranı korumak mümkün ve model tam olarak bunu yapmış: olasılık kütlesi ikisine de değil, tercih verisinde hiç geçmeyen token'lara gitmiş.
+**Modelin gerçekte yaptığı şey hiç de aynı değil.** `bugün`ün olasılığı aynı üç koşuda 0,6809 · 0,0011 · 0,6840. Ortadaki koşuda **yeğlenen cevap binde bire indi** — üstelik tercih formel olarak karşılanmış durumdayken. Nasıl? δ'nın tanımında gördüğümüz gibi δ, iki cevabın olasılıklarını değil, aralarındaki oranın referansa göre nasıl değiştiğini ölçüyor. Referans iki cevaba neredeyse eşit olasılık verdiği için burada 0,843'lük δ, kabaca `bugün`ün `dün`den e^0,843 ≈ 2,3 kat olası olduğu anlamına geliyor. İkisini birden aşağı iterek bu oranı korumak mümkün ve model bunu yapmış: olasılık kütlesi ikisine de değil, tercih verisinde hiç geçmeyen token'lara gitmiş.
 
 **Hasar da tohuma göre değişiyor.** Doğru fiil olasılığı bir tohumda 0,999'dan 0,500'e çöküyor, öteki ikisinde neredeyse yerinde kalıyor. Derlem kaybı üçünde de yükseliyor ama artış 0,04 ile 2,03 arasında.
 
@@ -133,7 +141,11 @@ Ortadaki koşunun tam dağılımına bakmak gerekiyor, çünkü olasılık kütl
 | uyudu | 0,00109 | **0,99422** |
 | havladı | 0,00000 | 0,00411 |
 
-Tercih karşılandı: `bugün`, `dün`den 2,32 kat olası ve δ = 0,8427 bunu söylüyor. Ama modelin ağzından çıkacak şey ikisi de değil. Kütlenin yüzde 99,4'ü `uyudu`ya gitmiş — yani karşılaştırmaya hiç girmemiş, üstelik o konumda dilbilgisi olarak yanlış olan bir token'a. Önce ikisi toplam 0,99763 tutuyordu, sonra 0,00161.
+Kayıp fonksiyonunun gözünde tercih karşılandı ve bunu δ'nın iki parçasından elle görebiliyoruz. `bugün` için politika ile referansın log farkı ln(0,00112 ÷ 0,49663) ≈ −6,09: yeğlenen cevap referansa göre yaklaşık 440 kat daha az olası. `dün` için ln(0,00049 ÷ 0,50100) ≈ −6,93: yeğlenmeyen cevap yaklaşık 1.020 kat daha az olası. İkisi de derin eksi, ama ikincisi daha derin; δ = −6,09 − (−6,93) ≈ 0,84. Tablodaki yuvarlanmış değerlerle 0,835 çıkıyor, koşunun kendi hesabı 0,8427; fark 0,00049'un yuvarlanmasından.
+
+Yani yeğlenen cevap, yeğlenmeyene göre referansın yaptığından daha öne çıkmış — ama ikisi birlikte neredeyse sıfıra inerek. Modelin ağzından çıkacak şey ikisi de değil. Önce ikisi toplam 0,99763 tutuyordu, sonra 0,00161; kütlenin yüzde 99,4'ü `uyudu`ya gitmiş — yani karşılaştırmaya hiç girmemiş, üstelik o konumda dilbilgisi olarak yanlış olan bir token'a. Şekil 3 aynı iki sütunu çubuk olarak çiziyor.
+
+![İki panelli yatay çubuk grafik; satırlar sözlüğün yedi token'ı. Sol panel DPO'dan önceki, yani referans dağılım: bugün 0,497 ve dün 0,501 uzun çubuklar, öteki beş token sıfıra yakın. Sağ panel DPO'dan sonraki dağılım: tek uzun çubuk uyudu, 0,994; bugün 0,001, dün 0,0005, havladı 0,004. bugün ve dün satırları vurgulu. Altta: karşılaştırılan iki cevabın toplamı 0,998'den 0,002'ye indi ve kütlenin yüzde 99,4'ü uyudu'ya kaçtı; kaybın gördüğü oran ise hâlâ yeğlenen lehine, 0,00112 bölü 0,00049, yaklaşık 2,3. Tohum 11, beta 2,0, başla kedi bağlamı.](assets/tasmanin-tutmadigi-yer.svg "Şekil 3 — Oran korundu, kütle kaçtı")
 
 Kayıp fonksiyonu bundan hiç haberdar değil, çünkü baktığı tek şey iki cevabın birbirine oranı. Bir oranı korumanın iki yolu var: payı yükseltmek ya da ikisini birden düşürmek. İkincisi de aynı kaybı verir.
 
@@ -145,19 +157,15 @@ Bu bir uygulama kazası değil, yöntemin bilinen bir açığı. Shusheng Xu ve 
 
 Aynı modele, aynı tercihi, iki ayrı yoldan yerleştirdik ve sonuçlar bambaşka çıktı. Farkın kaynağı ölçekte ya da hiperparametrede değil; iki kaybın neye baktığında.
 
-SFT'nin kaybı **mutlak** bir şey söylüyor: "bu bağlamda bu token gelmeliydi." Bir token'ın olasılığını doğrudan yukarı iter ve maskenin içindeki her konumda bunu yapar. Fiil kuralının SFT'de ayakta kalmasının sebebi bu — fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. Bedeli de aynı yerden geliyor: maskede olmayan hiçbir şeyin korunacağına dair bir söz yok, derlem kaybı bu yüzden yükseliyor.
+SFT'nin kaybı **mutlak** bir şey söylüyor: "bu bağlamda bu token gelmeliydi." Bir token'ın olasılığını doğrudan yukarı iter ve maskenin içindeki her konumda bunu yapar. Fiil kuralının SFT'de ayakta kalmasının sebebi bu — fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. Bedeli de aynı yerden geliyor: mutlak bir hedef, eşit derecede doğru öbür devamı da doğrudan aşağı iter — derlem kaybındaki artışın neredeyse tamamı buydu. Maskenin dışındaki şeyler için ise bir koruma sözü yok; bu deneyde bozulmadılar, ama korunmaları garanti değil.
 
-DPO'nun kaybı ise **göreli** bir şey söylüyor: "bu iki cevabın oranı şu yönde olmalı." Tek bir cevabın olasılığı hakkında hiçbir şey talep etmiyor ve karşılaştırmaya girmeyen token'lar hakkında hiçbir şey bilmiyor. Yukarıdaki tabloda gördüğümüz şey bu boşluğun tam olarak doldurulması: oran korunurken kütle üçüncü bir yere kaçtı.
+DPO'nun kaybı ise **göreli** bir şey söylüyor: "bu iki cevabın oranı şu yönde olmalı." Tek bir cevabın olasılığı hakkında hiçbir şey talep etmiyor ve karşılaştırmaya girmeyen token'lar hakkında hiçbir şey bilmiyor. Şekil 3'te gördüğümüz şey bu boşluğun doldurulması: oran korunurken kütle üçüncü bir yere kaçtı.
 
 Kapasitenin de payı var ve ölçtük. Aynı deneyi vektör boyunu ikiye katlayıp 1.240 parametreli bir modelle, yine üç tohumla tekrarladık. En sıkı tasmada doğru fiil olasılığı mikro modelde 0,8287 ± 0,2847, geniş modelde 0,9995 ± 0,0002. Yani kapasite ortalamayı biraz yükseltmekle kalmıyor, sapmayı bin kattan fazla daraltıyor: geniş modelde bilgi üç koşunun üçünde de yerinde kalıyor, mikro modelde tohuma kalıyor.
 
 Ama kapasite ikinci sorunu çözmüyor. On iki koşunun üçünde — mikro modelin bir tohumunda iki kez, geniş modelin bir tohumunda bir kez — tercih karşılandığı hâlde `bugün`ün olasılığı başlangıçtaki 0,50'nin altına indi. Geniş modelde bu δ = 1,522 ile oluyor ve `bugün` 0,5002'den 0,2673'e düşüyor. Bilgiyi koruyan şey kapasite; çıktının yönünü garanti eden bir şey ise ortada yok.
 
 Pratikteki reçetelerin neden DPO'yu tek başına kullanmadığı buradan görünüyor: önce SFT ile mutlak bir taban kurulur, tercih optimizasyonu o tabanın üzerine ve çoğu zaman denetimli veriyle karışık biçimde uygulanır.
-
-![Altı satırlık yedi sütunlu bir tablo ve altında üç kutu. Üstte başlık: aynı kayıp eşiği, üç tohum, tercih dışındaki her şey. Sütunlar tohum, beta, delta, p bugün, doğru fiil önce, sonra ve derlem kaybı. Birinci satır tohum 7, beta 2,0: delta 0,766, p 0,6809, fiil 0,9990'dan 0,4999'a, derlem 1,67270. İkinci satır vurguludur, tohum 11, beta 2,0: delta 0,843, p 0,0011, fiil 0,9975'ten 0,9925'e, derlem 1,59842. Üçüncü satır tohum 42, beta 2,0: delta 0,775, p 0,6840, fiil 0,9980'den 0,9937'ye, derlem 0,49886. Dördüncü satır tohum 7, beta 1,0: delta 1,530, p 0,7003, fiil 0,9990'dan 0,4999'a, derlem 1,82731. Beşinci satır vurguludur, tohum 11, beta 1,0: delta 1,540, p 0,0006, fiil 0,9975'ten 0,9922'ye, derlem 2,49577. Altıncı satır tohum 42, beta 1,0: delta 1,505, p 0,8164, fiil 0,9980'den 0,9398'e, derlem 0,59280. Birinci kutuda şu durur: delta her tohumda aynı, yani kayıp hedefine her koşuda aynı biçimde ulaşıldı ve tercih tanımı gereği karşılandı. İkinci kutu vurguludur: modelin gerçekte yaptığı şey aynı değil, bugünün olasılığı üç koşuda 0,6809, 0,0011 ve 0,6840; ortadaki koşuda yeğlenen cevap binde bire indi çünkü delta iki cevabın oranını ölçüyor ve ikisini birden aşağı iterek o oran korunabiliyor. Üçüncü kutuda hasar durur: doğru fiil olasılığı bir tohumda 0,999'dan 0,500'e çöküyor, öteki ikisinde yerinde kalıyor; derlem kaybı üçünde de yükseliyor ama artış 0,04 ile 2,03 arasında. En altta bir kayıt: üç tohum bir yöntemi ölçmeye yetmez, yalnızca ayrışmanın üçünde de göründüğünü söyler.](assets/tasmanin-tutmadigi-yer.svg "Şekil 3 — Tercih karşılandı, cevap kötüleşti")
-
-Şekil 3'ün üçüncü ve dördüncü sütunu bu makalenin tamamını taşıyor: kaybın gördüğü sayı üç koşuda da aynı, modelin yaptığı iş değil.
 
 ## Bu farkı gerçekten ölçmek isteseydik
 
@@ -183,9 +191,9 @@ Hamish Ivison ve arkadaşlarının NeurIPS 2024'te yayımladığı çalışma te
 
 **Maske neyi koruyacağını belirler.** SFT'nin kaybına giren her token pekiştirilir; girmeyen hiçbir şey korunmaz. Fiil kuralının SFT'de ayakta kalmasının sebebi maskenin içinde olmasıdır.
 
-**Hizalama vergisi ölçülebilir bir sayıdır.** Biçim 0,50'den 0,998'e taşınırken derlem kaybı 0,46286'dan 1,23545'e çıktı.
+**Hizalama vergisi ölçülebilir bir sayıdır, ama neyi ölçtüğü sorulmalı.** Biçim 0,50'den 0,998'e taşınırken derlem kaybı 0,46286'dan 1,23545'e çıktı; bu artışın neredeyse tamamı, derlemin eşit gösterdiği öbür zarfın bedeli.
 
-**Tasmanın uzunluğu kapalı formülden okunur.** Aynı kayba inen koşularda δ = 1,5 ÷ β; sekiz ölçümün hepsi bu değerin yüzde üçü içinde.
+**Tasmanın uzunluğu kapalı formülden okunur.** Kayıp yalnızca β × δ'ya baktığı için aynı kayba inen koşularda δ ≈ 1,5 ÷ β; sekiz ölçümün hepsi bu değerin yüzde üçü içinde ve model boyu buna karışmıyor.
 
 **Tercihin karşılanması cevabın iyileşmesi değildir.** δ büyürken yeğlenen cevabın olasılığı düşebilir; ölçülmesi gereken şey ödül farkı değil, çıktının kendisi.
 

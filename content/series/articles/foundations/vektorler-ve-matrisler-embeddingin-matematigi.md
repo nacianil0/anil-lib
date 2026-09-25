@@ -12,7 +12,7 @@ tags:
   - kosinus-benzerligi
   - esyonsuzluk
   - matris-ayristirmasi
-content_hash: sha256:d9e9e929c18b4abbc833ae1a7b053efbee565a7b49c3ac59ebb7eafbbc60638f
+content_hash: sha256:53a9214368040aaec5f8f79fb8a1a8d8d05c31d8f7a05dbefb5dbd247d9dfc77
 classification_version: 1
 classification_batch: 22
 ---
@@ -30,7 +30,7 @@ Bir vektör uzayı (vector space), üzerinde iki işlem tanımlı bir nesneler k
 
 Somutlaştıralım. Gerçek bir modelden değil, işlemi görünür kılmak için kurulmuş üç boyutlu bir oyuncakla çalışalım: kral (0,8; 0,2; 0,9), erkek (0,7; 0,1; 0,1), kadın (0,1; 0,8; 0,1). "Kral eksi erkek artı kadın" hesabı bileşen bileşen yapılır: birinci bileşen 0,8 − 0,7 + 0,1 = 0,2, ikincisi 0,2 − 0,1 + 0,8 = 0,9, üçüncüsü 0,9 − 0,1 + 0,1 = 0,9. Sonuç (0,2; 0,9; 0,9).
 
-Şimdi asıl noktaya gel: bu hesabın **yapılabilir olması** bir keşif değil, tanımın sonucu. Toplama ve sayıyla çarpma tanımlı olduğu için "iki vektörün farkı" diye bir nesne var; o fark da uzayın bir öğesi, yani kendisi bir yön. 4\. makaledeki "kraliyet yönü" benzetmesinin biçimsel karşılığı budur: yön, iki nokta arasındaki farktır ve fark, uzayın iki temel işleminden doğar. Orada aritmetiğin ne kadar temiz çalıştığını ölçümlerle tartışmıştık; buradaki soru başka ve daha temel — sorunun **sorulabilir** olması neye dayanıyor.
+Buradaki asıl nokta şu: bu hesabın **yapılabilir olması** bir keşif değil, tanımın sonucu. Toplama ve sayıyla çarpma tanımlı olduğu için "iki vektörün farkı" diye bir nesne var; o fark da uzayın bir öğesi, yani kendisi bir yön. 4\. makaledeki "kraliyet yönü" benzetmesinin biçimsel karşılığı budur: yön, iki nokta arasındaki farktır ve fark, uzayın iki temel işleminden doğar. Orada aritmetiğin ne kadar temiz çalıştığını ölçümlerle tartışmıştık; buradaki soru başka ve daha temel — sorunun **sorulabilir** olması neye dayanıyor.
 
 Cevabı görmek için karşı örneğe bak. Token kimlik numaraları da sayıdır: "kral" 15.213, "erkek" 8.222, "kadın" 9.674 olsun. 15.213 − 8.222 + 9.674 = 16.665 hesabı da yapılabilir. Ama sonuç sözlükteki 16.665 numaralı token'dır ve o token'ın anlamla hiçbir ilişkisi yoktur. Kimlik numaraları bir vektör uzayı oluşturmaz — daha doğrusu, oluşturdukları uzayın işlemleri anlamı taşımaz. Fark burada: embedding uzayında işlemler eğitimle anlam kazandırılmış bir yapının üzerinde çalışır, kimlik uzayında ise çalışmaz.
 
@@ -44,19 +44,19 @@ Ayıran şey işlemlerin varlığı değil, işlemlerin kaybı azaltmaya katıl�
 
 ## Matris: bir dönüşümün yazılı hâli
 
-3\. makalede bir katmanı "doğrusal dönüşüm artı aktivasyon" diye tarif etmiştik. Doğrusal dönüşüm (linear transformation), iki işlemi koruyan bir eşlemedir: toplamın görüntüsü görüntülerin toplamı, katın görüntüsü görüntünün katıdır. Bu iki koşulun ilginç bir sonucu var — bir doğrusal dönüşümü tanımak için bütün vektörlerde ne yaptığını bilmek gerekmez; **taban** (basis) vektörlerinde ne yaptığını bilmek yeter. Taban, uzaydaki her vektörün tek bir biçimde toplamı olarak yazılabildiği en küçük vektör kümesidir.
+3\. makalede bir katmanı "doğrusal dönüşüm artı aktivasyon" diye tarif etmiştik. Doğrusal dönüşüm (linear transformation), iki işlemi koruyan bir eşlemedir: toplamın görüntüsü görüntülerin toplamı, katın görüntüsü görüntünün katıdır. Bu iki koşulun ilginç bir sonucu var — bir doğrusal dönüşümü tanımak için bütün vektörlerde ne yaptığını bilmek gerekmez; **taban** (basis) vektörlerinde ne yaptığını bilmek yeter. Taban, uzaydaki her vektörün kendi katlarının toplamı olarak tek bir biçimde yazılabildiği vektör kümesidir; üç boyutta (1; 0; 0), (0; 1; 0) ve (0; 0; 1) böyle bir kümedir.
 
 Matris tam olarak budur: taban vektörlerinin nereye gittiğinin listesi. İki satır ve üç sütunlu bir M matrisi düşün; sütunları (1; 0), (0; 2) ve (−1; 1) olsun. Bu matris üç boyutlu bir vektörü iki boyuta indirir ve sütunları bize üç taban vektörünün nereye düştüğünü söyler. Şimdi x = (3; 1; 2) vektörünü geçirelim. İki yoldan da aynı sonuca varmalıyız.
 
 Birinci yol, satır satır çarpma: birinci satır (1; 0; −1) ile x'in nokta çarpımı 3 − 2 = 1, ikinci satır (0; 2; 1) ile 2 + 2 = 4. Sonuç (1; 4). İkinci yol, sütunları ağırlıklı toplama: 3 · (1; 0) + 1 · (0; 2) + 2 · (−1; 1) = (3; 0) + (0; 2) + (−2; 2) = (1; 4). Aynı sayı.
-
-Bir sonuç daha var ve seride uzun süredir kullandığımız bir kuralın gerekçesini veriyor. İki doğrusal dönüşümü peş peşe uygularsan sonuç yine doğrusal bir dönüşümdür ve onun matrisi, iki matrisin çarpımıdır. Yani üst üste konmuş yüz matris, tek bir matrisin yaptığı işi yapar. 3\. makalede her katmandan sonra bir aktivasyon işlevi olduğunu görmüştük ve o zaman gerekçesini "doğrusal olmayan ilişkileri öğrenebilmek" diye vermiştik; biçimsel karşılığı tam olarak budur. Aktivasyonu kaldırırsan derinlik kelimenin tam anlamıyla kaybolur — model yüz katmanlık değil, tek katmanlık bir modele denk düşer. Derinliğin bir işe yaraması, aradaki doğrusal olmayan adımın bileşkeyi tek bir matrise indirgenemez kılmasına bağlıdır.
 
 İkinci yol daha öğretici, çünkü matris çarpımının ne yaptığını söylüyor: **girdinin bileşenleri, sütunların ne kadar karışacağını belirleyen ağırlıklardır.** 7\. makalede modelin her yerinde matris çarpımı gördüğümüzde, her seferinde olan şey buydu.
 
 ![Bir matrisin iki okunuşu tek şekilde gösterilir. Üstte iki satır ve üç sütunlu M matrisi yazılıdır; sütunları sırasıyla bir sıfır, sıfır iki ve eksi bir birdir. Solda satır okuması: birinci satır bir sıfır eksi bir ile x eşittir üç bir iki vektörünün nokta çarpımı üç eksi iki eşittir bir; ikinci satır sıfır iki bir ile aynı vektörün nokta çarpımı iki artı iki eşittir dört. Sağda sütun okuması: üç kere bir sıfır artı bir kere sıfır iki artı iki kere eksi bir bir eşittir bir dört. Ortada iki sonucun aynı olduğu ve sütun okumasının matrisin ne yaptığını söylediği yazılıdır: sütunlar taban vektörlerinin gittiği yerdir, girdinin bileşenleri de onların karışım ağırlıklarıdır.](assets/matrisin-sutunlari.svg "Şekil 2 — Sütunlar taban vektörlerinin gittiği yerdir")
 
 Şekil 2 iki okumayı aynı sayılarla karşılaştırıyor. Buradan çıkan ilk kazanç, 4\. makaledeki "defterden satır okumak" benzetmesinin biçimsel karşılığıdır. Sözlükte dört token varsa ve embedding boyutu üçse, embedding tablosu dört satır ve üç sütunlu bir matristir. İkinci token'ı okumak, aslında (0; 1; 0; 0) vektörünü — yalnızca bir bileşeni 1, kalanı 0 olan **tek-sıcak** (one-hot) vektör — bu matrisle çarpmaktır. Sonuç ikinci satırdır. Yani embedding tablosu bir "arama tablosu" değil, bir doğrusal dönüşümdür; arama, o dönüşümün seyreklikten yararlanan verimli gerçeklemesidir. Bu ayrım boş bir titizlik değil: 19\. makaledeki düşük ranklı uyarlama, tabloyu bir dönüşüm olarak gördüğün anda anlam kazanır.
+
+Dönüşüm okumasının bir sonucu daha var ve seride uzun süredir kullandığımız bir kuralın gerekçesini veriyor. İki doğrusal dönüşümü peş peşe uygularsan sonuç yine doğrusal bir dönüşümdür ve onun matrisi, iki matrisin çarpımıdır. Yani üst üste konmuş yüz matris, tek bir matrisin yaptığı işi yapar. 3\. makalede her katmandan sonra bir aktivasyon işlevi olduğunu görmüştük ve o zaman gerekçesini "doğrusal olmayan ilişkileri öğrenebilmek" diye vermiştik; biçimsel karşılığı budur. Aktivasyonu kaldırırsan derinlik kelimenin tam anlamıyla kaybolur — model yüz katmanlık değil, tek katmanlık bir modele denk düşer. Derinliğin bir işe yaraması, aradaki doğrusal olmayan adımın bileşkeyi tek bir matrise indirgenemez kılmasına bağlıdır.
 
 ## Benzerliğin üç cetveli
 
@@ -74,7 +74,7 @@ Kosinüs: a'nın normu 5, b'nin normu 10, c'nin normu 2,83. Kosinüs benzerliği
 
 ![Üç sütunlu bir tablo şekli. Satırlar sabit a vektörü üç dört ile iki aday arasındaki ölçümleri verir. Birinci aday b eşittir on sıfır: normu on, nokta çarpım otuz, kosinüs benzerliği sıfır virgül altı yüz, Öklit uzaklığı sekiz virgül sıfır altı. İkinci aday c eşittir iki iki: normu iki virgül seksen üç, nokta çarpım on dört, kosinüs benzerliği sıfır virgül dokuz yüz doksan, Öklit uzaklığı iki virgül yirmi dört. Altta üç cetvelin sıralaması yazılıdır: nokta çarpıma göre b önde, kosinüse göre c önde, Öklit uzaklığına göre c önde. En altta bir kayıt vardır: nokta çarpım uzunluğu da hesaba katar, kosinüs yalnızca açıyı ölçer, Öklit uzaklığı ikisini birden görür; hangisinin doğru olduğu ölçmek istediğin şeye bağlıdır ve sayılar bu üç vektörden elle hesaplanmıştır.](assets/uc-cetvel-iki-siralama.svg "Şekil 3 — Aynı üçlü, birbirine zıt iki sıralama")
 
-Şekil 3'teki tablo bu makalenin en pratik cümlesini taşıyor: nokta çarpım ile kosinüs **aynı çift üzerinde zıt sıralama verebilir** ve bu bir hata değildir. Nokta çarpım "büyük ve aynı yönde" arar, kosinüs "yalnızca aynı yönde" arar. 29\. makaledeki anlamsal aramada uzun belgelerin normu büyür; hangi cetveli seçtiğin, uzunluğun sıralamaya girip girmeyeceğine karar verir.
+Şekil 3'teki tablonun pratik sonucu şu: nokta çarpım ile kosinüs **aynı çift üzerinde zıt sıralama verebilir** ve bu bir hata değildir. Nokta çarpım "büyük ve aynı yönde" arar, kosinüs "yalnızca aynı yönde" arar. 29\. makaledeki anlamsal aramada uzun belgelerin normu büyür; hangi cetveli seçtiğin, uzunluğun sıralamaya girip girmeyeceğine karar verir.
 
 Bir de üç cetvelin ikisini birbirine indirgeyen özel bir durum var ve pratikte en çok kullanılan durum o. Vektörleri normlarına bölüp uzunluklarını 1 yaparsan — yani birim küre üzerine izdüşürürsen — iki vektör arasındaki Öklit uzaklığının karesi 2 eksi 2 çarpı nokta çarpım olur. Yani nokta çarpım büyüdükçe uzaklık küçülür; iki cetvel **aynı sıralamayı** verir. 43\. makaledeki vektör dizinlerinin çoğu bu yüzden vektörleri normalleştirerek saklar: en büyük nokta çarpımı aramak ile en yakın komşuyu aramak, birim kürede tek ve aynı problemdir. Normalleştirmeden bunu varsaymak ise yukarıdaki b–c örneğindeki ters sıralamayı üretir.
 
@@ -82,7 +82,7 @@ Bunun ölçülmüş bir uyarısı da var. Harald Steck, Chaitanya Ekanadham ve N
 
 ## Uzayın gerçek biçimi
 
-Şimdi rahatsız edici kısım. 4\. makaledeki iki boyutlu anlam haritasında kelimeler her yöne dağılmıştı. Gerçek uzay öyle görünmüyor.
+4\. makaledeki iki boyutlu anlam haritasında kelimeler her yöne dağılmıştı. Ölçülen gerçek uzaylar öyle görünmüyor.
 
 Kawin Ethayarajh'ın EMNLP-IJCNLP 2019'da yayımladığı çalışma, bağlamsal temsillerin yönlere göre düzgün dağılmadığını ölçtü: temsiller uzayda dar bir koni işgal ediyor. Bu özelliğe **eşyönsüzlük** (anisotropy) diyoruz; karşıtı, yönlerin dengeli dağıldığı **eşyönlülük** (isotropy). Ethayarajh'ın ölçümündeki uç durum GPT-2'nin son katmanı: rastgele seçilmiş iki kelime, ortalamada neredeyse tam kosinüs benzerliği veriyor. Yani ham kosinüs sayısına bakıp "bu iki kelime benzer" demek, o katmanda hiçbir şey söylemiyor.
 
@@ -96,17 +96,17 @@ Bu üç bulgu birlikte şunu söylüyor: uzayın **koordinatları** ile uzayın 
 
 Karşılaştırmayı mutlak sayıyla değil, bir tabana göre yaparak. Ethayarajh'ın kendi yöntemi budur: rastgele seçilmiş kelime çiftlerinin ortalama benzerliğini taban kabul edip ölçülen benzerlikten çıkarır. Kalan pay, eşyönsüzlüğün payı değil, o çiftin kendi payıdır.
 
+Bu üç ölçümün toplu dersi bir yöntem kuralı: bir embedding uzayında ölçüm yapıyorsan, ölçüyü uygulamadan önce uzayın o ölçünün varsaydığı biçime sahip olup olmadığına bakman gerekiyor. Kosinüs benzerliği yönlerin dengeli dağıldığını varsayar; ölçülen uzaylar bu varsayımı sağlamıyor. Düzeltme ucuz — ortalamayı çıkarmak, baskın yönleri atmak, boyutları standartlaştırmak — ama düzeltmeyi yapmadan alınan sayı, iki kelime hakkında değil, uzayın ortak kayması hakkında bilgi veriyor.
+
 ## Aynı uzayın ikinci okunuşu
 
 Kapanışta bir bağ kuralım, çünkü bir sonraki adım oradan çıkıyor.
 
 4\. makalede word2vec'in küçük bir ağla eğitildiğini görmüştük; Tomáš Mikolov ve arkadaşlarının NeurIPS 2013'te yayımladığı hakemli çalışma, eğitimi ucuzlatan negatif örnekleme hilesini oraya eklemişti. Omer Levy ve Yoav Goldberg'in NeurIPS 2014'te yayımladığı çalışma bu eğitimin ne yaptığını başka bir dille yeniden yazdı: negatif örneklemeli skip-gram, örtük olarak bir **kelime-bağlam matrisini ayrıştırıyor**. O matrisin her hücresinde, kelime ile bağlamın birlikte görülme eğilimini ölçen bir sayı var — noktasal karşılıklı bilgi (pointwise mutual information) — ve genel bir sabitle kaydırılmış hâli. Yazarlar ayrıca bu matrisi doğrudan ayrıştırmanın, kelime benzerliği görevlerinde skip-gram'ın çözümü kadar iyi sonuç verdiğini ölçüyor; analoji sorularında skip-gram önde kalıyor.
 
-Aynı ekibin bir yıl sonra Transactions of the ACL'de yayımladığı geniş karşılaştırma tabloyu tamamlıyor: varsayılan ayarlarla sayım tabanlı kaydırılmış pozitif noktasal karşılıklı bilgi Google analoji kümesinde 0,491, doğrudan matris ayrıştırması 0,452, negatif örneklemeli skip-gram 0,530 alıyor. Yazarların sonucu şu: kazançların çoğu algoritmadan değil, tasarım ve hiperparametre seçimlerinden geliyor ve bu seçimler eski usul yöntemlere de taşınabiliyor.
+Aynı ekibin bir yıl sonra Transactions of the ACL'de yayımladığı geniş karşılaştırma tabloyu tamamlıyor: varsayılan ayarlarla ve toplama-çıkarma yöntemiyle, sayım tabanlı pozitif noktasal karşılıklı bilgi Google analoji kümesinde 0,491, doğrudan matris ayrıştırması 0,452, negatif örneklemeli skip-gram 0,530 alıyor. Yazarların sonucu şu: kazançların çoğu algoritmadan değil, tasarım ve hiperparametre seçimlerinden geliyor ve bu seçimler eski usul yöntemlere de taşınabiliyor.
 
 Sonucu iki kere oku. Birincisi: "sinir ağı embedding'i" ile "sayım tabanlı vektör" arasındaki sınır, sanıldığı kadar keskin değil. İkincisi ve bizim için asıl önemlisi: bir embedding tablosunu, daha büyük bir matrisin sıkıştırılmış hâli olarak görmek mümkün. Bu cümle bir soru doğuruyor — bir matrisi "sıkıştırmak" ne demek, hangi bilgi kalıyor ve hangisi atılıyor?
-
-Bu bölümün toplu dersi bir yöntem kuralı: bir embedding uzayında ölçüm yapıyorsan, ölçüyü uygulamadan önce uzayın o ölçünün varsaydığı biçime sahip olup olmadığına bakman gerekiyor. Kosinüs benzerliği yönlerin dengeli dağıldığını varsayar; ölçülen uzaylar bu varsayımı sağlamıyor. Düzeltme ucuz — ortalamayı çıkarmak, baskın yönleri atmak, boyutları standartlaştırmak — ama düzeltmeyi yapmadan alınan sayı, iki kelime hakkında değil, uzayın ortak kayması hakkında bilgi veriyor.
 
 ### Sırada ne var
 

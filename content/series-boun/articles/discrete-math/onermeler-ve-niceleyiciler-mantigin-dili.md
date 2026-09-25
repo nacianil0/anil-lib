@@ -12,13 +12,13 @@ tags:
   - dogruluk-tablosu
   - niceleyici
   - cikarim-kurallari
-content_hash: sha256:69d364cb5b16fdea59179c61aec7a73b3056bfa7c5c69efcd1282944aeb300a4
+content_hash: sha256:8adf7122e038cb95ad876247b488d5b91e363447cdefcf474d1b57a9913ad923
 classification_version: 1
 classification_batch: 0
 ---
 ## Neden mantıkla başlıyoruz
 
-İlk makalede beş yeteneği kurduk: anlatmak, çözmek, ispatlamak, savunmak ve takip sorularına dayanmak. Beşinin de ortak bir aracı var, o araç dil. Mülakatta yanlış cevaptan daha sık başa bela olan şey, *belirsiz* cevaptır: "genelde çalışır", "hemen hemen her durumda", "bazen bozulur". Bu cümlelerin hiçbiri sınanabilir değil, dolayısıyla hiçbiri savunulabilir değil.
+Seriyi tanıtan makalede beş yeteneği kurduk: anlatmak, çözmek, ispatlamak, savunmak ve takip sorularına dayanmak. Beşinin de ortak bir aracı var, o araç dil. Mülakatta yanlış cevaptan daha sık başa bela olan şey, *belirsiz* cevaptır: "genelde çalışır", "hemen hemen her durumda", "bazen bozulur". Bu cümlelerin hiçbiri sınanabilir değil, dolayısıyla hiçbiri savunulabilir değil.
 
 Bu makale o belirsizliği kesip atan aracı kuruyor. CmpE220 katalog tanımının ilk cümlesi de tam buradan başlar: önerme mantığı ve ispatlar. Sırayla üç şey yapacağız. Önce bir cümlenin ne zaman değerlendirilebilir bir iddia olduğunu netleştireceğiz. Sonra iddiaları birleştiren bağlaçları ve bunların doğruluk tablolarını kuracağız. Son olarak "her" ve "bazı" sözcüklerinin arkasındaki niceleyicilere geçip, cümledeki sıralarının anlamı nasıl tersine çevirdiğini göreceğiz.
 
@@ -152,7 +152,7 @@ Türkçe burada ekstra bir tuzak kuruyor. "Her öğrenci bir dil biliyor" cümle
 
 ∃y ∀x A(x, y): "öyle bir kişi vardır ki, bütün insanların annesidir." Yanlış.
 
-Aradaki fark şudur: birinci ifadede y, x'e bağlı olarak seçilebilir; ikincisinde önce y sabitlenir ve sonra bütün x'ler için çalışmak zorundadır. Bilgisayar mühendisliğinde bu ayrım her yerdedir. "Her girdi için bir algoritma çalışır" ile "bir algoritma bütün girdiler için çalışır" aynı şey değildir; asimptotik tanımlarda göreceğin "her ε için bir N vardır" kalıbı da tam olarak bu sıraya dayanır.
+Aradaki fark şudur: birinci ifadede y, x'e bağlı olarak seçilebilir; ikincisinde önce y sabitlenir ve sonra bütün x'ler için çalışmak zorundadır. Bilgisayar mühendisliğinde bu ayrım her yerdedir. "Her girdi için onu doğru çözen bir algoritma vardır" ile "bütün girdileri doğru çözen bir algoritma vardır" aynı şey değildir. Asimptotik analiz makalesinde göreceğin Big-O tanımı da — "öyle bir c sabiti ve n₀ eşiği vardır ki her n ≥ n₀ için…" — bu sıraya dayanır: c ve n₀ önce, n'den bağımsız seçilir; n'ye göre değişebilselerdi tanım hiçbir şey söylemezdi.
 
 Bir de yaygın bir yanlış anlama: aynı türden niceleyicilerin sırası değiştirilebilir. ∀x ∀y P(x, y) ile ∀y ∀x P(x, y) denktir; ∃x ∃y için de öyle. Sıra yalnızca **farklı** türden niceleyiciler arasında önemlidir.
 
@@ -175,6 +175,10 @@ Sözle: "hepsi öyle değil" demek, "öyle olmayan en az biri var" demektir; "hi
 "Hash tablosunda arama sabit zamandadır" cümlesi, hipotezi ve evreni gizlediği için savunulamaz. Aynı iddianın savunulabilir hâli şöyledir: "Uniform dağılım varsayımı altında ve yük faktörü sabit tutulduğunda, ortalama durumda arama sabit zamandadır; en kötü durumda değildir." Fark, konuyu daha iyi bilmek değil; cümlenin mantıksal iskeletini görünür kılmaktır.
 
 Takip sorusu zincirini de artık okuyabilirsin. Görüşmeci "her zaman mı?" diye sorduğunda niceleyicini yokluyordur; "hangi durumda bozulur?" diye sorduğunda değillemeni istiyordur; "tersi de doğru mu?" diye sorduğunda karşıtı ile karşıt tersi ayırt edip etmediğine bakıyordur.
+
+Bu konuda en sık dört hata görülür. **Karşıtı orijinal sanmak**: "4'e bölünen çifttir" doğruyken "çift olan 4'e bölünür" demek. **Sonucu doğrulamak**: belirtiyi görüp nedeni kesinleştirmek; hata ayıklamada en pahalı yanılgılardan biri. **Evreni söylememek**: tam sayılarda doğru olan bir eşitsizliği gerçel sayılarda da doğru sanmak. **Niceleyici sırasını çevirmek**: ∀x ∃y ile ∃y ∀x'i aynı iddia gibi okumak.
+
+İngilizce karşılıklar hazır olmalıdır: *proposition*, *predicate*, *connective*, *negation*, *conjunction*, *disjunction*, *exclusive or*, *conditional (implication)*, *biconditional*, *converse*, *inverse*, *contrapositive*, *vacuous truth*, *tautology*, *contradiction*, *contingency*, *logically equivalent*, *rule of inference*, *modus ponens*, *modus tollens*, *affirming the consequent*, *universal / existential quantifier*, *domain of discourse*.
 
 ### Sırada ne var
 

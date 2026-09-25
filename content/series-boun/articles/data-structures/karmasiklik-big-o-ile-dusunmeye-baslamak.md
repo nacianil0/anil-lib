@@ -12,7 +12,7 @@ tags:
   - ram-modeli
   - buyume-siniflari
   - en-kotu-durum
-content_hash: sha256:0fa1ec5f4e726c4dd604069eab89e6f65fb12a78956b601f675ec5775b383cfe
+content_hash: sha256:ed80c4ef4acd176b010eb8715a8a199444855ffe0226626954862170ae0c307f
 classification_version: 1
 classification_batch: 2
 ---
@@ -70,12 +70,12 @@ Farklı büyüme sınıflarının arasındaki mesafeyi görmenin en hızlı yolu
 | n | 10 | 100 | 1.000 | dizide tek geçiş |
 | n log₂n | ~33 | ~664 | ~9.966 | verimli sıralama |
 | n² | 100 | 10.000 | 1.000.000 | bütün ikililer |
-| 2ⁿ | 1.024 | ~1,26 × 10³⁰ | ~1,07 × 10³⁰¹ | bütün alt kümeler |
+| 2ⁿ | 1.024 | ~1,27 × 10³⁰ | ~1,07 × 10³⁰¹ | bütün alt kümeler |
 | n! | 3.628.800 | ~9,33 × 10¹⁵⁷ | ~4,02 × 10²⁵⁶⁷ | bütün sıralamalar |
 
 Şekil 2 aynı sınıfları eğri olarak yan yana koyuyor; üstel ve karesel eğrilerin tuvali ne kadar erken terk ettiğine dikkat et.
 
-![Beş büyüme eğrisinin aynı eksende karşılaştırması: logaritmik eğri neredeyse yatay kalır, doğrusal eğri düzgün yükselir, n log n daha dik yükselip tuvali terk eder, karesel ve üstel eğriler çok daha erken tepeye ulaşır. Her eğri kendi ucunda etiketlenmiş](assets/buyume-siniflari.svg "Şekil 2 — Büyüme sınıflarının aynı eksende karşılaştırması")
+![Beş büyüme eğrisinin aynı eksende karşılaştırması: logaritmik eğri neredeyse yatay kalır, doğrusal eğri düzgün yükselir, n log n daha dik yükselip tuvali terk eder, karesel ve üstel eğriler çok daha erken tepeye ulaşır. Her eğri kendi ucunda etiketlenmiş; eksen başlığı biçimin şematik, eksenlerin ölçeksiz olduğunu belirtiyor, altta n = 1000 için gerçek değerler yazılı](assets/buyume-siniflari.svg "Şekil 2 — Büyüme sınıflarının aynı eksende karşılaştırması")
 
 Son üç satırın ne demek olduğunu somutlaştıralım. Saniyede bir milyar temel işlem yapan bir makine düşün. 2¹⁰⁰ işlemi bitirmesi yaklaşık 4 × 10¹³ yıl sürer; evrenin yaşı yaklaşık 1,4 × 10¹⁰ yıl olduğuna göre bu, evrenin yaşının kabaca üç bin katıdır. Donanımı bin kat hızlandırmak bu tabloyu kurtarmaz; üstel büyümede sabit çarpanlar anlamsızdır. "Daha hızlı bilgisayar alalım" cevabının neden çalışmadığının teknik gerekçesi budur.
 
@@ -113,7 +113,7 @@ Ortalama durumun gizli maliyeti tam da budur: bir **olasılık dağılımı vars
 
 **Sabit çarpanları tamamen unutmak.** Big-O sabitleri atar ama gerçek dünya atmaz. Küçük n'de daha kötü büyüme sınıfına sahip bir algoritma daha hızlı olabilir; gerçek sıralama kütüphanelerinin küçük parçalarda basit yöntemlere geçmesi bu yüzdendir. "Asimptotik olarak daha iyi" ile "bu girdide daha hızlı" farklı cümlelerdir.
 
-**Döngü sayısını sınıf sanmak.** İç içe iki döngü her zaman karesel değildir: iç döngü dış değişkene bağlı olarak yarıya bölünüyorsa sonuç n log n olabilir. Sayarken döngünün kaç kez döndüğüne bakılır, kaç tane döngü olduğuna değil.
+**Döngü sayısını sınıf sanmak.** İç içe iki döngü her zaman karesel değildir. İç döngü sayacını her turda ikiye bölerek ilerliyorsa (n, n/2, n/4, …) her dış adımda yaklaşık log₂n kez döner ve toplam n log n olur. Dış döngü i'yi ikiye bölerek ilerliyor ve iç döngü i kez dönüyorsa toplam n + n/2 + n/4 + ⋯ < 2n, yani doğrusaldır. Sayarken döngünün kaç kez döndüğüne bakılır, kaç tane döngü olduğuna değil.
 
 **Bellek maliyetini atlamak.** Karmaşıklık yalnızca zaman değildir. Bir çözümün zaman karmaşıklığını söyleyip **yer karmaşıklığını (space complexity)** söylememek, mülakatta en sık gelen takip sorusunu davet eder: "Peki ne kadar ek bellek kullanıyor?" Yer karmaşıklığında en çok unutulan kalem, özyinelemeli çağrıların yığında tuttuğu yerdir: her açık çağrı bir çerçeve tutar, dolayısıyla özyineleme derinliği doğrudan bellek maliyetidir. Aynı işi yapan döngülü bir çözüm sabit ek bellekle çalışırken özyinelemeli hâli derinlikle orantılı bellek isteyebilir. Zaman ile bellek arasındaki bu değiş tokuş, fazın tamamında tekrar eden temadır.
 

@@ -12,7 +12,7 @@ tags:
   - geri-cagirma
   - olcut-secimi
   - arastirma-pratigi
-content_hash: sha256:f920b7dfd4f7c33cd6abc1b68d4069c4f90888625262f8574a2097af8a4cedc9
+content_hash: sha256:09e9ffac30cb9b9cf5823df5749de83d374cdba0103990c864cf711345897836
 classification_version: 1
 classification_batch: 24
 ---
@@ -104,11 +104,11 @@ Bu ayrımların hepsi ilgili makalede yapıldı ve hiçbiri geriye dönük olara
 
 ## Sezgiden bilime
 
-Başlıktaki "sezgiden bilime" ifadesi bir üslup tercihi değil, haritanın kendisinin biçimi.
+Başlıktaki "sezgiden bilime" ifadesi, haritanın kendi biçimini tarif ediyor.
 
 Serinin ilk fazlarında her şey sezgiyle kuruldu: model ayarlanabilir bir fonksiyondu, dikkat bir tartım işlemiydi, ölçek yasası bir eğilimdi. Orta fazlarda bu sezgiler mekanizmaya döndü: dikkatin karesel maliyeti bir bellek hesabına, hizalama bir eğitim düzenine, ajan bir kontrol döngüsüne. İleri fazlarda mekanizmalar biçimsel düzeyde yeniden kuruldu: gradyan bir yön, kayıp bir bilgi ölçüsü, genelleme bir ayrışım oldu. Ve bu fazda, aynı disiplin literatürün kendisine uygulandı.
 
-Bu sıra pedagojik bir tercih değil, zorunluluk. 91\. makaledeki vektör uzayı kurulumu 4\. makaleyi yeniden anlatmıyor; 4'te kurulan sezgiyi **girdi** olarak kullanıyor. 95, 2\. makalenin ölçümünü girdi olarak alıyor. 98, seri boyunca kullanılmış onlarca çalışmanın okunma biçimini konu ediniyor. Her biçimselleştirme, kendisinden önce gelen bir sezgiyi gerektiriyor — tersi mümkün değil, çünkü biçimselleştirme neyin biçimselleştirileceğini söylemiyor.
+Bu sıra keyfî de seçilmedi; başka türlü kurulamazdı. 91\. makaledeki vektör uzayı kurulumu 4\. makaleyi yeniden anlatmıyor; 4'te kurulan sezgiyi **girdi** olarak kullanıyor. 95, 2\. makalenin ölçümünü girdi olarak alıyor. 98, seri boyunca kullanılmış onlarca çalışmanın okunma biçimini konu ediniyor. Her biçimselleştirme, kendisinden önce gelen bir sezgiyi gerektiriyor — tersi mümkün değil, çünkü biçimselleştirme neyin biçimselleştirileceğini söylemiyor.
 
 Aynı şey geriye doğru da işliyor ve haritanın en pratik parçası bu: **erken bir makaledeki bir sayı, ileri bir makalenin sınama aracı hâline geliyor.** 2'nin 3/14'ü 95'in teoremini sınadı. 4'ün analoji aritmetiği ölçümü 91'in geometri kurulumunun sınırını çizdi. 16'nın iki soruluk farkı 71'in hata payı tablosunda yerine oturdu. 33'ün kapsama eğrisi 40'ın güvenilirlik çıtasıyla birleşti.
 
@@ -118,7 +118,7 @@ Aynı şey geriye doğru da işliyor ve haritanın en pratik parçası bu: **erk
 
 ## Haritayı kendin çiz
 
-Bu makalenin çıktısı bir özet değil, bir okuma düzeni. Elindeki haritayı kullanmanın üç yolu var.
+Bu makalenin çıktısı bir okuma düzeni: elindeki haritayı dört soruyla kullanabilirsin.
 
 **Bir sayıyı gördüğünde nereden geldiğini sor.** Serinin hemen her makalesinde bir sayı, koşulu söylenmeden aktarıldığında anlamını yitiriyordu. 9'un 0,114 nat'ı, 71'in 15 puanlık şık etkisi, 96'nın 9,78'i — üçü de ancak koşuluyla birlikte bir şey söylüyor.
 
@@ -132,7 +132,7 @@ Bu dört sorunun ortak yanı, hiçbirinin bilgi değil **alışkanlık** olması
 
 Bu haritanın bir de kasıtlı boşluğu var. Buraya kadar hiçbir makale, bir Transformer'ı baştan sona kendi elleriyle kurmadı; mimarinin parçaları 6 ve 7'de ayrı ayrı anlatıldı, eğitim döngüsü 8'de ölçek düzeyinde kuruldu, ama ikisi hiç birleştirilmedi. Bu boşluk bilinçli ve haritanın ilerisinde duruyor.
 
-Ve bir sınır, çünkü harita bir bilgi değil bir düzen: buradaki hiçbir satır, kendi makalesini okumanın yerine geçmiyor. Şekil 1 ve Şekil 2 yalnızca nerede ne olduğunu söylüyor; o yerlerdeki sayıların nasıl üretildiği kendi makalelerinde duruyor ve bu makale onları yeniden üretmiyor.
+Bir de sınırı var, çünkü harita yalnızca bir düzen kuruyor: buradaki hiçbir satır, kendi makalesini okumanın yerine geçmiyor. Şekil 1 ve Şekil 2 yalnızca nerede ne olduğunu söylüyor; o yerlerdeki sayıların nasıl üretildiği kendi makalelerinde duruyor ve bu makale onları yeniden üretmiyor.
 
 ### Sırada ne var
 

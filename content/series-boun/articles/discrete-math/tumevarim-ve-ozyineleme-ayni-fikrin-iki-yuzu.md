@@ -12,7 +12,7 @@ tags:
   - iyi-siralama
   - ozyineleme
   - yapisal-tumevarim
-content_hash: sha256:b2811a1c4668aa6c40b180423dee7b6f15ad13c7a9ce48f48ac9650d7d3282d0
+content_hash: sha256:6c709feefcfe141fb34895e237b168dd5d8e3c1f84aa67716ec6a9ba9e2cd22d
 classification_version: 1
 classification_batch: 1
 ---
@@ -118,7 +118,7 @@ Kullanımı çelişkiyle ispatın bir kalıbıdır: iddianın yanlış olduğunu
 
 Yapı tanıdık gelmeli: özyinelemeli tanımın taban durumu tümevarımın taban durumudur, özyineleme kuralı da tümevarım adımıdır. Bu yüzden **özyinelemeli olarak tanımlanmış bir nesne hakkındaki iddia neredeyse her zaman tümevarımla ispatlanır**; başka bir araç aramak gereksizdir.
 
-Somut bir örnek üzerinde yürütelim. Hanoi kuleleri probleminde n diski bir çubuktan diğerine taşıyan standart özyinelemeli çözüm şu adımlardan oluşur: üstteki n − 1 diski ara çubuğa taşı, en büyük diski hedefe koy, n − 1 diski üstüne taşı. Harcanan hamle sayısı T(1) = 1 ve T(n) = 2 · T(n − 1) + 1 özyinelemesini sağlar. Bu sayının aynı zamanda en azı olduğu da kısa bir argümanla görülür: en büyük diski hareket ettirebilmek için diğer n − 1 diskin üçüncü çubukta toplanmış olması gerekir, bu en az T(n − 1) hamle eder; en büyük disk en az bir hamle yapar; sonra aynı n − 1 disk yeniden taşınır.
+Somut bir örnek üzerinde yürütelim. Hanoi kuleleri probleminde n diski bir çubuktan diğerine taşıyan standart özyinelemeli çözüm şu adımlardan oluşur: üstteki n − 1 diski ara çubuğa taşı, en büyük diski hedefe koy, n − 1 diski üstüne taşı. Harcanan hamle sayısı T(1) = 1 ve T(n) = 2 · T(n − 1) + 1 özyinelemesini sağlar. Bu sayının aynı zamanda en azı olduğu da kısa bir argümanla görülür ve argümanın kendisi bir tümevarımdır. n diski taşımanın en az hamle sayısına M(n) diyelim. En büyük diski hareket ettirebilmek için diğer n − 1 diskin üçüncü çubukta toplanmış olması gerekir, bu en az M(n − 1) hamle eder; en büyük disk en az bir hamle yapar; sonra aynı n − 1 disk yeniden onun üstüne taşınır, bu da en az M(n − 1) hamle eder. Yani M(n) ≥ 2 · M(n − 1) + 1; M(1) = T(1) = 1 olduğundan her n için M(n) ≥ T(n), standart çözüm de tam T(n) hamle kullandığı için M(n) = T(n).
 
 **İddia.** Her n ≥ 1 için T(n) = 2ⁿ − 1.
 
@@ -142,7 +142,7 @@ Tümevarım yalnızca sayılar üzerinde çalışmaz. Bir küme özyinelemeli ol
 
 Örnek olarak dengeli parantez dizilerini alalım. Küme şöyle tanımlansın: boş dizi dengelidir; s dengeliyse "(" s ")" dizisi de dengelidir; s ve t dengeliyse s ile t'nin yan yana yazılışı da dengelidir. Bu kümedeki her dizide açılan ve kapanan parantez sayısının eşit olduğunu göstermek üç satırlık bir yapısal tümevarımdır: boş dizide ikisi de sıfırdır; birinci kural her iki sayıyı bir artırır; ikinci kural iki eşit çifti toplar.
 
-Bu, ileride sık kullanacağın bir alışkanlığın tohumudur. Ağaçlar, listeler ve dilbilgisi kuralları hep özyinelemeli tanımlarla gelir; onlar hakkındaki iddiaların ispatı da hep yapısal tümevarımla gider. Ağaç karakterizasyonlarını kurarken bu aracı doğrudan kullanacağız.
+Bu, ileride sık kullanacağın bir alışkanlığın tohumudur. Ağaçlar, listeler ve dilbilgisi kuralları hep özyinelemeli tanımlarla gelir; onlar hakkındaki iddiaların ispatı da çoğu zaman yapısal tümevarımla gider. Graf ve ağaç makalesinde aynı fikrin yakın bir akrabasını göreceksin: ağacın kenar sayısını, bir yaprağı silip hipotezi kalan küçük ağaca uygulayarak ispatlayacağız.
 
 ## Mülakatta nasıl görünür
 
@@ -150,11 +150,20 @@ Takip sorusu zinciri burada tipik olarak üç halkadır. Birincisi tanımı yokl
 
 Üçüncüsünün cevabı, ispatın parçalama adımına bakmakla verilir. Adım n + 1'den n'ye iniyorsa zayıfı yeter; n'den kontrol edilemeyen daha küçük değerlere iniyorsa güçlüsü gerekir. Birleştirmeli sıralamanın (merge sort) doğruluğu bu ikinci gruptadır, çünkü diziyi ikiye bölmek n − 1'e değil, kabaca n / 2'ye iner. Bu ayrımı söyleyebilmek, tekniği ezberlemekle kullanabilmek arasındaki farktır.
 
-Son bir uyarı: mülakatta "tümevarımla ispatlarım" demek tek başına cevap değildir. Cevap, P(n)'in ne olduğunu **açıkça yazmakla** başlar. Yanlış kurulmuş bir P(n) ile en dikkatli adım bile bir yere varmaz.
+Tümevarım ispatlarında sık görülen hatalar, yukarıdaki bölümlerden tek tek çıkıyor:
+
+- **P(n)'i yazmadan başlamak.** "Tümevarımla ispatlarım" tek başına cevap değildir; cevap P(n)'in ne olduğunu açıkça yazmakla başlar. Yanlış kurulmuş bir P(n) ile en dikkatli adım bile bir yere varmaz.
+- **Taban durumunu atlamak.** "n = n + 1" örneğindeki gibi adım kusursuz yürüyebilir ve iddia yine yanlış olabilir.
+- **Adımı en küçük değerde denememek.** Atlar örneğinde halka tam n = 1'de kopuktu; adım "her n ≥ 1 için" diyorsa n = 1'i elle çalıştır.
+- **Hipotezi hiç kullanmamak.** Hipotezin kullanıldığı satırı gösteremiyorsan ya ispat yanlıştır ya da tümevarım gerekmiyordur.
+- **Güçlü tümevarımda taban durumlarını eksik kurmak.** Adım üç birim geriye atlıyorsa 3'ler ve 5'ler örneğindeki gibi üç taban durumu gerekir; biri eksikse zincir o noktada başlamaz.
+- **Özyinelemede küçülmeyi göstermemek.** Çağrıların daha küçük girdiyle yapıldığını söylemeden doğruluk savunması yarım kalır; sonlanma bu adımdan gelir.
+
+İngilizce karşılıklar hazır olmalıdır: *mathematical induction*, *base case*, *inductive step*, *induction hypothesis*, *strong induction*, *well ordering principle*, *smallest counterexample*, *recursion*, *recursive definition*, *recurrence*, *structural induction*, *Towers of Hanoi*.
 
 ### Sırada ne var
 
-Buraya kadarki üç makale mülakatın **dilini** kurdu: iddiayı kesin söylemek, tek seferde biten argüman yürütmek ve sonsuz aileleri ispatlamak. Sıradaki makalede dilin konuştuğu **nesnelere** geçiyoruz: kümeler, fonksiyonlar ve bağıntılar. Birebir ve örten fonksiyonların ispat kalıplarını, denklik bağıntılarının kümeleri nasıl parçalara ayırdığını ve kısmi sıraların hangi mühendislik problemlerinde karşına çıktığını göreceksin. Bu makalede kurduğumuz tümevarım, kümelerin ardından gelen graf ve ağaç makalesinde ağaç karakterizasyonlarını ispatlarken yeniden işe yarayacak.
+Buraya kadarki üç makale mülakatın **dilini** kurdu: iddiayı kesin söylemek, tek seferde biten argüman yürütmek ve sonsuz aileleri ispatlamak. Sıradaki makalede dilin konuştuğu **nesnelere** geçiyoruz: kümeler, fonksiyonlar ve bağıntılar. Birebir ve örten fonksiyonların ispat kalıplarını, denklik bağıntılarının kümeleri nasıl parçalara ayırdığını ve kısmi sıraların hangi mühendislik problemlerinde karşına çıktığını göreceksin. Bu makalede kurduğumuz tümevarım, kümelerin ardından gelen graf ve ağaç makalesinde ağacın kenar sayısını ve ağaç karakterizasyonlarını ispatlarken yeniden işe yarayacak.
 
 ## Kaynakça
 

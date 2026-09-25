@@ -13,7 +13,7 @@ tags:
   - baginti
   - denklik-baginti
   - kismi-sira
-content_hash: sha256:de100d264400dbd14b38d44654e1032800f782b7587314d63f4cb4d60cbc4d94
+content_hash: sha256:20bbab4751af0dd891287eab29a3de5ad41b26387f683f5c56029d9bc4f8f917
 classification_version: 1
 classification_batch: 1
 ---
@@ -21,7 +21,7 @@ classification_batch: 1
 
 Şimdiye kadarki üç makale iddiaların **nasıl** söyleneceğini ve ispatlanacağını kurdu. Bu makale, o iddiaların **neyin hakkında** olduğunu kuruyor. Bilgisayar mühendisliğindeki hemen her nesne üç temel yapıdan birine indirgenir: bir **küme (set)**, bir **fonksiyon (function)** ya da bir **bağıntı (relation)**.
 
-Bunun mülakat açısından pratik karşılığı şudur. Bir hash tablosu bir fonksiyondur; sorulacak ilk soru o fonksiyonun birebir olup olmadığıdır. Bir veri tabanı tablosu bir bağıntıdır; birincil anahtar tartışması bir fonksiyonel bağımlılık tartışmasıdır. Bir görev bağımlılık grafı kısmi sıradır; topolojik sıralama, o kısmi sırayı bir tam sıraya genişletmektir. Bu dili konuşabilmek, cevabı "biliyorum" düzeyinden "tanımıyla savunuyorum" düzeyine taşır.
+Bunun mülakat açısından pratik karşılığı şudur. Bir hash fonksiyonu, anahtarlardan kova numaralarına giden bir fonksiyondur; sorulacak ilk soru o fonksiyonun birebir olup olamayacağıdır. Bir veri tabanı tablosu bir bağıntıdır; birincil anahtar tartışması bir fonksiyonel bağımlılık tartışmasıdır. Döngüsüz bir görev bağımlılık grafı bir kısmi sıra tanımlar ("şu iş, bu işten önce gelmeli"); topolojik sıralama, o kısmi sırayı bir tam sıraya genişletmektir. Bu dili konuşabilmek, cevabı "biliyorum" düzeyinden "tanımıyla savunuyorum" düzeyine taşır.
 
 ## Kümeler ve iki tuzak
 
@@ -130,9 +130,11 @@ Bilgisayar mühendisliği için sonucu şudur: programlar sonlu alfabede sonlu d
 
 Takip zinciri burada genellikle şöyle işler. Birinci halka tanımı yoklar: "Denklik bağıntısı nedir?" İkinci halka sınırı yoklar: "Üç koşuldan birini atarsan ne bozulur?" Üçüncü halka uygulamayı yoklar: "Bunu kodda nerede görürsün?"
 
-Üçüncüsünün iyi cevabı somut olmalıdır: bir önbellekte anahtarları "aynı kovaya düşenler" diye gruplamak bir denklik bağıntısıdır ve kovalar denklik sınıflarıdır. Bir görev planlayıcıdaki bağımlılık ilişkisi kısmi sıradır. Bir eşitlik karşılaştırıcısını yanlış yazmak — örneğin geçişliliği bozmak — sıralama kütüphanelerinde gerçek hatalara yol açar, çünkü sıralama algoritmaları karşılaştırıcının geçişli ve kendi içinde tutarlı bir sıra tanımladığını varsayar.
+Üçüncüsünün iyi cevabı somut olmalıdır: bir önbellekte anahtarları "aynı kovaya düşenler" diye gruplamak bir denklik bağıntısıdır ve kovalar denklik sınıflarıdır. Bir görev planlayıcıdaki bağımlılık ilişkisi kısmi sıradır. Bir sıralama karşılaştırıcısını (comparator) yanlış yazmak — örneğin geçişliliği bozmak — sıralama kütüphanelerinde gerçek hatalara yol açar, çünkü sıralama algoritmaları karşılaştırıcının geçişli ve kendi içinde tutarlı bir sıra tanımladığını varsayar.
 
-Son bir uyarı: bu makalenin tanımları kısa olduğu için ezberlenmeye çok müsaittir. Ezberin görüşmede çöktüğü nokta hep aynıdır — sınır örneği istendiğinde. Her tanımın yanına bir sağlayan ve bir sağlamayan örnek koymadan çalışmayı bitmiş sayma.
+Bu makalenin tanımları kısa olduğu için ezberlenmeye çok müsaittir ve ezber en çok sınır örneği istendiğinde çöker. Sık görülen hatalar da bu sınırlarda toplanır. **Üyelik ile alt kümeyi karıştırmak**: ∅ ⊆ A her zaman doğruyken ∅ ∈ A'yı da doğru sanmak. **Fonksiyonu formülden ibaret saymak**: birebirlik ya da örtenlik sorulurken tanım ve değer kümesini söylememek. **Simetrik ile ters simetriği zıt sanmak**: eşitlik ikisini birden sağlar. **Simetri ve geçişlilikten yansımalılık türetmek**: boş bağıntı bu argümanı çürütür. Her tanımın yanına bir sağlayan ve bir sağlamayan örnek koymadan çalışmayı bitmiş sayma.
+
+İngilizce karşılıklar hazır olmalıdır: *set*, *element*, *subset*, *power set*, *Cartesian product*, *double inclusion*, *function*, *domain*, *codomain*, *range*, *injective (one-to-one)*, *surjective (onto)*, *bijective*, *inverse function*, *composition*, *binary relation*, *reflexive*, *symmetric*, *antisymmetric*, *transitive*, *equivalence relation*, *equivalence class*, *partition*, *partial order*, *total order*, *incomparable*, *countable*, *uncountable*, *diagonal argument*.
 
 ### Sırada ne var
 

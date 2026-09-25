@@ -18,7 +18,7 @@
         "calisma-yontemi",
         "scientific-preparation"
       ],
-      "contentHash": "sha256:6e7bd9360fef67c9cff468e1db2833fc1b6b846058a86c524d77e23e21d0534b",
+      "contentHash": "sha256:3a5219ff0804cd3b2959f0792d47e55906e09520313a480f6b82ce12b73617bc",
       "path": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -38,7 +38,7 @@
         "niceleyici",
         "cikarim-kurallari"
       ],
-      "contentHash": "sha256:69d364cb5b16fdea59179c61aec7a73b3056bfa7c5c69efcd1282944aeb300a4",
+      "contentHash": "sha256:8adf7122e038cb95ad876247b488d5b91e363447cdefcf474d1b57a9913ad923",
       "path": "content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -58,7 +58,7 @@
         "karsi-ornek",
         "kok-iki"
       ],
-      "contentHash": "sha256:1f48e11149bae8a4c72a00149b54c25456ca9457a271d1441fd29fd25b5f677f",
+      "contentHash": "sha256:339c162356c7ffce3c7745bac5d98fc261acb677259a9820023ca8299e3f9fc9",
       "path": "content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -78,7 +78,7 @@
         "ozyineleme",
         "yapisal-tumevarim"
       ],
-      "contentHash": "sha256:b2811a1c4668aa6c40b180423dee7b6f15ad13c7a9ce48f48ac9650d7d3282d0",
+      "contentHash": "sha256:6c709feefcfe141fb34895e237b168dd5d8e3c1f84aa67716ec6a9ba9e2cd22d",
       "path": "content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -99,7 +99,7 @@
         "denklik-baginti",
         "kismi-sira"
       ],
-      "contentHash": "sha256:de100d264400dbd14b38d44654e1032800f782b7587314d63f4cb4d60cbc4d94",
+      "contentHash": "sha256:20bbab4751af0dd891287eab29a3de5ad41b26387f683f5c56029d9bc4f8f917",
       "path": "content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -119,7 +119,7 @@
         "binom-katsayisi",
         "guvercin-yuvasi"
       ],
-      "contentHash": "sha256:66468dbda18767921cd6548f9cb7f71e67c8e6f9758641dce08fd0d352d05029",
+      "contentHash": "sha256:0370c2f77b7ba01ba18442cb52ebff8a55d57d3d28bedf40fed37aff3f32adb4",
       "path": "content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -131,7 +131,7 @@
       "category": "discrete-math",
       "level": "intermediate",
       "readingOrder": 7,
-      "summary": "Bilgisayar mühendisliğinin en çok kullandığı yapıyı kurar: düğüm, kenar ve derece tanımları, el sıkışma lemmasının sayma refleksiyle ispatı ve tek dereceli düğüm sonucu, yürüyüş/yol/döngü/bağlılık dili, ağaçların yapısal tümevarımla kurulan üç denk karakterizasyonu ve kapsayan ağaç.",
+      "summary": "Bilgisayar mühendisliğinin en çok kullandığı yapıyı kurar: düğüm, kenar ve derece tanımları, el sıkışma lemmasının sayma refleksiyle ispatı ve tek dereceli düğüm sonucu, yürüyüş/yol/döngü/bağlılık dili, ağaçların yaprak silerek tümevarımla kurulan üç denk karakterizasyonu ve kapsayan ağaç.",
       "tags": [
         "graf",
         "agac",
@@ -139,7 +139,7 @@
         "el-sikisma-lemmasi",
         "kapsayan-agac"
       ],
-      "contentHash": "sha256:cfca4dcc5258600314bdcab77d68159ca12b475a02bcb0d0707dd664576ded76",
+      "contentHash": "sha256:2e29bfc2d64753c4531c30a6d96983bd5e2a83ee5d698c4a563babb97cecdd30",
       "path": "content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -159,7 +159,7 @@
         "kafes",
         "boolean-cebiri"
       ],
-      "contentHash": "sha256:b6a1eddfe92eecf24a2189c65642d476bf8228fadb3582fd1dce65e9f91554bd",
+      "contentHash": "sha256:59afcc0847a4008ff8f28a0c871566c3eec6111709ca4c57ac5b64429da98457",
       "path": "content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -179,7 +179,7 @@
         "buyume-siniflari",
         "en-kotu-durum"
       ],
-      "contentHash": "sha256:0fa1ec5f4e726c4dd604069eab89e6f65fb12a78956b601f675ec5775b383cfe",
+      "contentHash": "sha256:ed80c4ef4acd176b010eb8715a8a199444855ffe0226626954862170ae0c307f",
       "path": "content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -199,7 +199,7 @@
         "kuyruk",
         "amortize-maliyet"
       ],
-      "contentHash": "sha256:4ba27defa1abcb55b2759c2193f4691af48fcb5fb26738d130e63693502bf572",
+      "contentHash": "sha256:d426e797366b6342c1a4d183e139988448fe2ebeec46e9451d031df559cb6500",
       "path": "content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -219,7 +219,7 @@
         "yukseklik",
         "sirali-dolasma"
       ],
-      "contentHash": "sha256:c76e9665c9559c76d92c3857e930576c60a93c9eee4891e48eca2986ee0ccf82",
+      "contentHash": "sha256:80f8d1245d36e13dd5c3c0db04e66eda40ac0d6fceffffb5f0d2fffc503f6911",
       "path": "content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -239,10 +239,12 @@
         "kirmizi-siyah-agac",
         "b-agaci"
       ],
-      "contentHash": "sha256:7b51a5cd9cf22bf83a3490a1094d504f580972867e3f2a56519304bcc16b2117",
+      "contentHash": "sha256:3f8a507079ebd0e3314c35eddd5df3ee6c22713601393ebefb129f79f49923ae",
       "path": "content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md",
       "relatedArticleIds": [],
-      "classificationBatch": 3
+      "classificationBatch": 3,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "AVL onarımına 3, 1, 2 eklemeli çift dönüş örneği ve yeni bir şema eklendi; eklemede tek onarımın yettiği, silmede köke kadar sürebildiği açıklandı."
     },
     {
       "articleId": "article_83b44d0c-556d-42ed-8dd4-3bafbefa52a3",
@@ -259,7 +261,7 @@
         "build-heap",
         "tam-ikili-agac"
       ],
-      "contentHash": "sha256:74a75e933b94e44af3943845e7f9e6b24f11db206930599166a05de1bc17e257",
+      "contentHash": "sha256:e1cdc7e67fc1e09fc5d1492ab3fd3f8873b5745a2447e7f8a9040bcb31c4ea17",
       "path": "content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -279,7 +281,7 @@
         "yuk-faktoru",
         "evrensel-hash"
       ],
-      "contentHash": "sha256:dd6157315263ed72b272d93092623a0b5821c17e64348973723a53b6b7c4afb7",
+      "contentHash": "sha256:78197df39db080fff7095e4eec52f00ed43876d9936bca30a2c8b893c0c517df",
       "path": "content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -299,7 +301,7 @@
         "kararlilik",
         "radix-sort"
       ],
-      "contentHash": "sha256:74b875860e880f23fdf946d861a6c82b950ff0c0fd6af11246a0cda0f5d9da25",
+      "contentHash": "sha256:61d325186c5de27d2518a9902f9825146d93bb422e4c30394061b4e036df2bcb",
       "path": "content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -319,7 +321,7 @@
         "topolojik-siralama",
         "bagli-bilesen"
       ],
-      "contentHash": "sha256:d5ab96eb684dbb958337e0e6585aa3dd4fed5da30010ccd07c69c53c9d68f61f",
+      "contentHash": "sha256:5f233900663be2ecde6847b925b1d341c9f369a4994022ecf422a16cce68eabc",
       "path": "content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -340,7 +342,7 @@
         "alt-sinir",
         "karar-agaci"
       ],
-      "contentHash": "sha256:9ac8b309f0adcac3f6973979533cd4ac7c505ada6ff16a6fb8fc17753f0f25fb",
+      "contentHash": "sha256:e2ef4477b67064e3f10bd080012e655cbe561f32b892e4559e38df95a0bb81f9",
       "path": "content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -360,10 +362,12 @@
         "bol-ve-yonet",
         "analiz"
       ],
-      "contentHash": "sha256:e9bee501f1f4a19a6b1d9f9c46ceea1176c655fd0454d1cd833625c4acfa80d7",
+      "contentHash": "sha256:013a84e3777da95eb02534a8b2b4f34428c3a4f8ef2846b35376d5ce48ab99bb",
       "path": "content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md",
       "relatedArticleIds": [],
-      "classificationBatch": 5
+      "classificationBatch": 5,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "Master Teoremi'nin CLRS 3. ve 4. baskılarındaki farkı ile düzenlilik koşulunun polinomlarda neden kendiliğinden sağlandığı eklendi."
     },
     {
       "articleId": "article_5720977d-9343-4f86-bee7-b4d9bfc0a034",
@@ -380,7 +384,7 @@
         "sonlanma",
         "eklemeli-siralama"
       ],
-      "contentHash": "sha256:0f5c6d263950604c7ca293b304f4a707f0dca410223dfc877541fec42579f499",
+      "contentHash": "sha256:f6da04ee511a41c9cb0b5e72b3818e61d7acd049726988f80be5a55b41510761",
       "path": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -400,7 +404,7 @@
         "medyan-bulma",
         "ozyineleme-agaci"
       ],
-      "contentHash": "sha256:5a8d8696d7d2ebd0a93c1981871a3dc6e419a36aa1e0e6c803276f1950bfe860",
+      "contentHash": "sha256:7aa568803889d3064ccf695607c792914eb0d44bb9fc0788e82fea843d5ba02f",
       "path": "content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -420,7 +424,7 @@
         "aralik-cizelgeleme",
         "karsi-ornek"
       ],
-      "contentHash": "sha256:0efdf32db4df97fa85c797b89c40d25f03144d03e45988f5db40591e08658dff",
+      "contentHash": "sha256:7acd505dc38d8dab224b64278dc7ba16efc1c2941bf4d10f0941b360a28b1ce3",
       "path": "content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -440,7 +444,7 @@
         "sirt-cantasi",
         "optimal-altyapi"
       ],
-      "contentHash": "sha256:3a1a75948c3b91a4f9f841500bdf2e6b28459bdfab01897347fc9b8a8cdf599e",
+      "contentHash": "sha256:42851649bb7fbf75a35b6ae02704c3cfab76f28a2f9b2f94daab9ce69983b7e2",
       "path": "content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
@@ -460,7 +464,7 @@
         "bellman-ford",
         "azalt-anahtar"
       ],
-      "contentHash": "sha256:abe35d5ed1f6bd113952abdf13ba99a596fed0244220d2a318f797329a8e74ee",
+      "contentHash": "sha256:beee7a4f560d37e29618b8ac731aeec3abc06ff62af952e4c02341237780c32c",
       "path": "content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
@@ -480,7 +484,7 @@
         "paralel-algoritmalar",
         "is-ve-derinlik"
       ],
-      "contentHash": "sha256:557816efadcae35535e676d52fa6aa81d7b39739025e5bd891b189edb04a689b",
+      "contentHash": "sha256:2e40b913e22922316efb150f7e97760915a0f95c0f97e0fdfa8b2a3789b94e95",
       "path": "content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
@@ -500,10 +504,12 @@
         "guclu-bagli-bilesenler",
         "sozde-polinom"
       ],
-      "contentHash": "sha256:f0966a726f793d1cafac147bad4ba57c6bf10356348a8531c251f5089521024c",
+      "contentHash": "sha256:4806c5d36987ada6301150dd44fef54e4c1c1d3edd025c7f3189c025ce6626e9",
       "path": "content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md",
       "relatedArticleIds": [],
-      "classificationBatch": 8
+      "classificationBatch": 8,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "Durma ispatı tutarlı hâle getirildi; 3SAT çevirisinin eş-sağlanabilir olduğu ve 2-SAT teoreminin iki yönü ayrı ayrı açıklandı."
     },
     {
       "articleId": "article_71e9e26c-46c7-4b5d-a23c-49c74dd0323c",
@@ -520,7 +526,7 @@
         "kullanici-modu",
         "zaman-paylasimi"
       ],
-      "contentHash": "sha256:869a3534661dea07bc0b3b213613aad2128887476ec67a0c07f03fd07a890c40",
+      "contentHash": "sha256:5c3c6467c071b6e5c104b59557b3604f37e169cd51c129db34eefe969c8ef7d0",
       "path": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
@@ -540,7 +546,7 @@
         "yaris-kosulu",
         "kritik-kesim"
       ],
-      "contentHash": "sha256:b177f7035d79f880ed6e9317e344dd5e6c61320fe0d04fd2b447950dd28cfc75",
+      "contentHash": "sha256:1ac173f2b423c55cca008ab55e2322415895c2de169aa3a7a3a86c0a1664897c",
       "path": "content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
@@ -560,7 +566,7 @@
         "round-robin",
         "geri-besleme-kuyrugu"
       ],
-      "contentHash": "sha256:a0e280caf390c466cd7d5c0b6770b0abd8addf51df023cc1369dba8615db5024",
+      "contentHash": "sha256:6fddb9d3fa20c0448309e4a14a9ff6f54e25d1bbd62dc34dc5a8f6cc5fe06848",
       "path": "content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md",
       "relatedArticleIds": [],
       "classificationBatch": 9
@@ -580,10 +586,12 @@
         "kosul-degiskeni",
         "test-and-set"
       ],
-      "contentHash": "sha256:7bdd88111c775159e5fbcf9d92ee3b9b49c23260ff0887229cc3c15d77b9b881",
+      "contentHash": "sha256:1c8d5ad140ac38df8f56e4a0c2bc5d5f60f157ec517b639542b5f3b2ea3bb023",
       "path": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
       "relatedArticleIds": [],
-      "classificationBatch": 9
+      "classificationBatch": 9,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "Üç koşulun kaynağı düzeltildi: sınırlı bekleme Dijkstra'nın maddesi değil, ayrı bir adalet koşulu; öncelik tersine dönmesinin üç iş parçacıklı hâli ve monitör farkı eklendi."
     },
     {
       "articleId": "article_52ac6ec5-db5f-4042-831a-5cbad0b4901e",
@@ -600,7 +608,7 @@
         "guvenlik-ve-canlilik",
         "kilitlenme"
       ],
-      "contentHash": "sha256:7d340a62897b07dca909df276948b5c7ee7710f98f3886b8b096cf0dcd6e9b8d",
+      "contentHash": "sha256:f5a7a45bfa1e3710cc30e5edc0faf4bfc7f045c36558354ee8918c9822497844",
       "path": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
       "relatedArticleIds": [],
       "classificationBatch": 9
@@ -620,7 +628,7 @@
         "kilit-sirasi",
         "livelock"
       ],
-      "contentHash": "sha256:3a91acd960f543a2d2da5ecd6e3b53b6d3a9b2b6055774b7606e3071ae355ab2",
+      "contentHash": "sha256:50c54c7b26925f7f46b0d6bd98cc07b59c41da1d695fa6d635b29980864d5ebd",
       "path": "content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -640,7 +648,7 @@
         "sayfa-tablosu",
         "tlb"
       ],
-      "contentHash": "sha256:6df983ac8426767c9ca1897604b27c89d48db420fbc4d66cf1faf7bd45459373",
+      "contentHash": "sha256:44083ae14a8d34bc30c9def8a371ef9e386967f4b4a92331baefb25b771e3ee0",
       "path": "content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -660,7 +668,7 @@
         "degistirme-ilkeleri",
         "thrashing"
       ],
-      "contentHash": "sha256:b9e1150362f9ed9731b1601e7f994023f727fe33f7ff7cbfd5ac7a60ddd07ff3",
+      "contentHash": "sha256:fbc94665ae2dc9ebcb71a9db3e903f6c46a6f79ce5e822aece697e2af814e5e4",
       "path": "content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -680,7 +688,7 @@
         "disk",
         "giris-cikis"
       ],
-      "contentHash": "sha256:b6cdd51bc22f9cf09b6513a1d339660ac41fdf8466bd83c438eb102f2cd86c06",
+      "contentHash": "sha256:806b88b405597eebfa467abde5abc9e6a2a4ee6f7cc5651d7d9458f31528dea0",
       "path": "content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -700,7 +708,7 @@
         "yetenekler",
         "linux"
       ],
-      "contentHash": "sha256:31505a64fbc5cce40c70cbe0d58cab0eb8236016f4c5946050fe8ca7883ccec5",
+      "contentHash": "sha256:49e0a79005b0e8755c8820bca7f6ebfb16304a82504c029eb676d1a19f910405",
       "path": "content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -720,10 +728,12 @@
         "chebyshev",
         "istatistik"
       ],
-      "contentHash": "sha256:46c15e03d17cb7cd1e99863405dd20512675a3601754d51383afad9090cfd8c7",
+      "contentHash": "sha256:41d0c5c3296238ebffdaa4303c2d1438da1ca060131d25894156067464701548",
       "path": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
       "relatedArticleIds": [],
-      "classificationBatch": 11
+      "classificationBatch": 11,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "Formüller sezgiyle katmanlandı: seri örneği ve Bayes adım adım hesaplandı, doğum günü çift sayımıyla, Markov ve Chebyshev tek cümlelik gerekçeyle anlatıldı."
     },
     {
       "articleId": "article_10e5a169-82f9-49ef-8b2d-296c2f49149e",
@@ -740,10 +750,12 @@
         "boru-hatti",
         "ram-modeli"
       ],
-      "contentHash": "sha256:650272ef8c54111c6b5316c8d7474a9cda52b28ae50900fb7e41de56cbbb96dc",
+      "contentHash": "sha256:8f7dd789cf766cdf1ed94260711bbba20451bea692ff6cfb1d9ab3fcfeba5a39",
       "path": "content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md",
       "relatedArticleIds": [],
-      "classificationBatch": 12
+      "classificationBatch": 12,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "Bellek hiyerarşisi şekli tablo yerine logaritmik eksende yeniden çizildi; kesişim aralığı, sayfa boyutu ve boru hattı açıklamaları düzeltildi."
     },
     {
       "articleId": "article_0a3ffcc2-e270-476a-bcb0-d9af6912c388",
@@ -760,7 +772,7 @@
         "malloc",
         "fork"
       ],
-      "contentHash": "sha256:4f9190cb0f7f263b54633c0b01d17b04c9361d44608400fb61ea8aad32fd01e0",
+      "contentHash": "sha256:4ad2e73b235bcfed8ec1c4c0105ad8b1ce8df26502323bc236386c87c205f67d",
       "path": "content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
@@ -772,7 +784,7 @@
       "category": "supporting-fundamentals",
       "level": "advanced",
       "readingOrder": 39,
-      "summary": "Bu makale dengeli arama makalesinden devreden indeks borcunu ödüyor ve işletim sistemleri fazının bütün mekanizmalarını tek bir sistemde birleştiriyor. Önce ilişkisel modelin kendisi: bir tablo, kümeler makalesinde tanımladığımız bağıntının ta kendisidir ve modelin asıl vaadi veri bağımsızlığıdır. Sonra indeks — B-ağacının yapraklarının neden birbirine bağlandığı ve bunun aralık sorgusuna ne kazandırdığı. Ardından asıl mülakat sorusu: indeks her zaman hızlandırır mı? Kendi blok hesabımda kırılma noktası yüzde 2,5 çıkıyor ve kümelenmiş indeksle yüzde 100'e taşınıyor; seçicilik kestiriminin düzgün dağılım varsayımı bozulduğunda iyileştirici tam taramadan on iki kat kötü bir plan seçiyor. Kapanışta transaction kavramı, ACID'in dört harfi ve ANSI yalıtım düzeylerinin neden sıralanabilirlik vermediği var.",
+      "summary": "Bu makale dengeli arama makalesinden devreden indeks borcunu ödüyor ve işletim sistemleri fazının bütün mekanizmalarını tek bir sistemde birleştiriyor. Önce ilişkisel modelin kendisi: bir tablo, kümeler makalesinde tanımladığımız bağıntının ta kendisidir ve modelin asıl vaadi veri bağımsızlığıdır; normal biçimler işlevsel bağımlılık ve güncelleme anomalisi üzerinden kuruluyor. Sonra indeks — B-ağacının yapraklarının neden birbirine bağlandığı ve bunun aralık sorgusuna ne kazandırdığı. Ardından asıl mülakat sorusu: indeks her zaman hızlandırır mı? Kendi blok hesabımda kırılma noktası yüzde 2,5 çıkıyor ve kümelenmiş indeksle yüzde 100'e taşınıyor; seçicilik kestiriminin düzgün dağılım varsayımı bozulduğunda iyileştirici tam taramadan on iki kat kötü bir plan seçiyor. Kapanışta transaction kavramı, ACID'in dört harfi ve ANSI yalıtım düzeylerinin neden sıralanabilirlik vermediği — yazma çarpıklığı örneğiyle — var.",
       "tags": [
         "veritabani",
         "iliskisel-model",
@@ -780,10 +792,12 @@
         "transaction",
         "yalitim-duzeyi"
       ],
-      "contentHash": "sha256:f2bc6b2746946c398475518aeffca74248cea7f71e88298e59c99c82c24fd6f8",
+      "contentHash": "sha256:89ca6496019d57e51157d615b2edbbdb091f1bf852d2a54bf1f3bc0938662bdb",
       "path": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
       "relatedArticleIds": [],
-      "classificationBatch": 12
+      "classificationBatch": 12,
+      "revisedAt": "2026-09-25",
+      "revisionNote": "Normal biçimler bağımlılık örneğiyle, yalıtım tablosunun sınırı yazma çarpıklığı örneğiyle anlatıldı; indeks maliyet tablosu düzeltildi."
     },
     {
       "articleId": "article_e8a46a1f-b783-48d8-a8e9-59137ba6084f",
@@ -800,7 +814,7 @@
         "tahta-kullanimi",
         "arastirma-yonu"
       ],
-      "contentHash": "sha256:8395d06ada03acf4696a105b112302c299e422756568a56b6be63504aa8bce01",
+      "contentHash": "sha256:94851a2e8c38dfeece30966a14c943528406bffaa61ad7069863d44aecc34cfa",
       "path": "content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
@@ -820,7 +834,7 @@
         "dallanma-carpani",
         "seri-kapanisi"
       ],
-      "contentHash": "sha256:240efa8db1236fe970253bc5c207a461b071c26ebf994b09ac207daa14599927",
+      "contentHash": "sha256:c3b67d2f86798f0301f1eed9dc8a8750e2f93217a46e146cecdad70de951f11a",
       "path": "content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md",
       "relatedArticleIds": [],
       "classificationBatch": 13

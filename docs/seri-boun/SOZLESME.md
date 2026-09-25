@@ -5,7 +5,7 @@
 > **zorundadır**. Sözleşme ancak kullanıcının açık talebiyle değiştirilebilir; değişiklik yapılırsa
 > sonuna tarihli bir değişiklik notu eklenir.
 
-Sürüm: 1.1 · Oluşturma: 2026-08-28 · Son revizyon: 2026-09-03 · Kapsam: serinin bütün yaşam döngüsü
+Sürüm: 1.2 · Oluşturma: 2026-08-28 · Son revizyon: 2026-09-25 · Kapsam: serinin bütün yaşam döngüsü
 
 ---
 
@@ -48,15 +48,23 @@ Sürüm: 1.1 · Oluşturma: 2026-08-28 · Son revizyon: 2026-09-03 · Kapsam: se
   makalenin faz haritasında geçer. Böylece yayımlanmış metin, ileride araya makale girse bile
   bozulmaz ve numaralı ileri vaat açılmaz.
 - **İngilizce karşılıklar bloğu:** "Mülakatta nasıl görünür" bölümü, makalenin çekirdek
-  terimlerinin İngilizcelerini tek satırlık bir listeyle kapatır; liste yalnızca o makalede
-  kurulan terimleri içerir.
+  terimlerinin İngilizcelerini tek satırlık bir listeyle kapatır ("İngilizce karşılıklar hazır
+  olmalıdır: *…*, *…*"); liste yalnızca o makalede kurulan terimleri içerir (yeni terim kurmayan
+  bir prova yazısında gerekçesiyle açılan tekrar listesi olabilir). Bölümün ve satırın varlığı
+  2026-09-25'ten beri mekanik kapıdadır — 1–7 ve 40'ta eksikti, Batch 0–1'den beri kimse
+  zorlamadığı için taşındı.
 - **Terim çakışması yasağı:** Aynı makalede iki farklı kavram aynı Türkçe sözcüğü ya da aynı
   kökten türemiş sıfatı paylaşamaz ("koşullu önerme" varken "contingency" için "koşullu
   doğruluktaki önerme" değil "olumsal önerme"; *stack* için "yığın" varken *heap* İngilizce
-  kalır). Çakışma kaçınılmazsa ayrım metinde açıkça adlandırılır.
-- **Kalıp yasağı:** AI sözleşmesi §2'deki kalıp yasağı burada da geçerlidir; "Sesli anlat"
-  kutusu ve "Mülakatta nasıl görünür" bölümü bilinçli araçlardır, onların dışında tekrar eden
-  etiket ya da geçiş cümlesi kurulmaz.
+  kalır; "takas" *trade-off*'tur, iki elemanın yerini değiştirmek için "yer değiştirmek" yazılır,
+  "takas alanı" yalnızca *swap space*'tir). Çakışma kaçınılmazsa ayrım metinde açıkça adlandırılır.
+  Makalede tanımlı bir sembol (a, b, c, k, n, T) ispat içinde yeni bir sabit için kullanılmaz
+  (medyan bağıntısında alt problem sayısı a iken sabit artık `s` olur).
+- **Kalıp yasağı:** AI sözleşmesi §2'deki kalıp yasağı ve mekanik listesi burada da geçerlidir;
+  "Sesli anlat" kutusu ve "Mülakatta nasıl görünür" bölümü bilinçli araçlardır, onların dışında
+  tekrar eden etiket ya da geçiş cümlesi kurulmaz. BOUN'da tekrar ettiği görülenler: "X'i
+  söyleyebilmek ezberlemekten güçlü bir sinyaldir" kapanışı, "Son bir uyarı:" / "Bir de … uyarısı:"
+  etiketli paragraf açılışları, "dürüst olmam gereken bir yer var", "bedava", "zarif".
 - Yasaklar: doldurma, kaynaksız iddia, TODO/placeholder, emoji, uydurulmuş "çıkmış soru".
 
 ## 3. Pedagojik kurallar (sözlü mülakat odaklı)
@@ -104,6 +112,33 @@ worked examples, cognitive load, scaffolding/fading, analoji disiplini — bkz.
 - **Ne öğretti sorusu:** Her makale beş yeteneğin (anlat / çöz / ispatla / savun / dayan) en az
   birinde okuru ilerletir ve hangisinde ilerlettiği metinden okunur. Bunu sağlamayan bölüm,
   kelime bandını tutturmak için kalmaz.
+- **Koşul disiplini her yerde geçerlidir (2026-09-25):** Omurgada uygulanan "durum / model /
+  varsayım" koşulu köprü cümlelerinde, "Sırada ne var"da, tablo hücrelerinde ve sık hata
+  maddelerinde de yazılır; "sabit", "tek adım", "O(1)", "garanti", "gerekir" geçen her cümle yazı
+  bitince taranıp tek tek okunur ("arama tek adıma iner" değil "uygun varsayımlar altında,
+  beklenen durumda sabit sayıda adıma iner").
+- **Gösterilmeyen hesap yoktur:** "Kendim hesapladım", "kanıtı üç satırdır" diyen cümlenin hemen
+  yanında hesabın ara adımı ya da kanıtın kendisi durur; kaynaktaki yuvarlanmış sayı ile tam değer
+  farklıysa ikisi birlikte yazılır, "birebir aynı" yalnızca tam eşitlikte kullanılır. Omurgadaki
+  sayılar gövdedeki birimle aynen tekrar edilir (%0,06 "binde altı" değil "on binde altı").
+- **Bozulma iddiası izlemeyle sınanır:** "Şu kural çiğnenirse X bozulur", "tek dönüş neden
+  yetmez", "şu adım nerede kırılır" diyen her cümle 3–4 elemanlı elle bir izlemeyle ya da somut
+  bir değerle sınanır ve bozulan şeyin doğruluk mu maliyet mi olduğu söylenir. En azlık/en iyilik
+  ispatlarında minimum için ayrı sembol kullanılır (Hanoi'de M(n) ≥ …, T(n) değil).
+- **İki yönlü iddia iki yönle yazılır:** "Ancak ve ancak" iddiasında iki yön ayrı adlandırılır;
+  ispatlanmayan yön "burada ispatlanmıyor" diye işaretlenir. Bir sonucun mekanizması anlatılıyorsa
+  kaynağın kullandığı mekanizma yazılır (3SAT çevirisi denk değil, eş-sağlanabilirdir).
+- **Karşı örnekte eşitlik aranır:** Bir açgözlü kuralın sonucunu iddia eden örnekte seçim anındaki
+  eşitlikler kontrol edilir; eşitlik varsa örnek eşitliksiz kurulur ya da iki bozulma da yazılır.
+- **Kaynak adı ile ders kitabı adı eşlenirken kapsam söylenir:** Birincil kaynağın maddeleri
+  (Dijkstra'nın koşulları, Coffman'ın "wait for"u) ders kitabının adlarıyla "=" ile eşlenmez;
+  eşlemenin kapsamı yazılır ("ilerleme, Dijkstra'nın 2. ve 3. maddelerinin birleşimidir; sınırlı
+  bekleme onda yoktur"). Standart kaynaklar bir teoremi farklı ifade ediyorsa (CLRS 3e/4e Master
+  teoreminin 2. durumu) makale hangisini kullandığını ve farkın mülakattaki sonucunu söyler.
+  Ders kitabı adımının İngilizcesi kitaptaki kelimenin aynısıdır (Initialization / Maintenance /
+  Termination).
+- **Olumlu cümle kur:** "Hiçbiri … değildir", "X olmadan Y olmaz" gibi çift olumsuzlar doğrudan
+  olumlu biçimde yazılır; bu korpusta iki kez amaçlananın tersini iddia etti.
 
 ## 4. Kaynak ve doğruluk kuralları
 
@@ -136,10 +171,14 @@ worked examples, cognitive load, scaffolding/fading, analoji disiplini — bkz.
 - Diyagramlar AI serisinin SVG sözleşmesini aynen izler (CSS değişkenli renk, viewBox, sanitize
   kuralları ve şekil ilkeleri — `docs/seri/SOZLESME.md` §6). İçerik denetleyicileri kuruludur:
   `node tools/series/check-series-content.cjs --series=boun` (H2 başlangıcı, "### Sırada ne var"
-  → "## Kaynakça" sırası, 1.800–3.200 kelime, ≥2 şekil ve şekil göndermesi, 1–3 "Sesli anlat"
-  kutusu, ham HTML yok), `check-series-svg.cjs content/series-boun/assets`,
-  `sync-series-hashes.cjs --series=boun [--write]` (gövde değişince zorunlu),
-  `entegre-batch.cjs --series=boun [--write]`.
+  → "## Kaynakça" sırası, 1.800–3.200 kelime, ≥1 şekil ve şekil göndermesi, 1–3 "Sesli anlat"
+  kutusu, ham HTML yok, "## Mülakatta nasıl görünür" + İngilizce karşılıklar satırı, kalıp yasağı,
+  ondalık eki, okura sızan üretim dili; `--warnings` uzun alt metinleri listeler),
+  `check-series-svg.cjs content/series-boun/assets` (alt kenar payı dahil),
+  `sync-series-hashes.cjs --series=boun [--write]` (gövde ya da revizyon alanı değişince zorunlu),
+  `entegre-batch.cjs --series=boun [--write]`. Şekil tabanı 2026-09-25'ten beri 1'dir (AI §6
+  normalizasyonu). Editoryal revizyon işareti (`revised_at` + `revision_note`) AI sözleşmesi
+  §12'ye göre konur; kurallar ve araçlar ortaktır.
 - Frontmatter/katalog şeması ana kütüphaneyle aynı alan yapısını kullanır (article_id, slug,
   reading_order, content_hash, classification_batch …); `classification_batch` = ardışık üretim
   kohortu (ilk run Batch 0).
@@ -177,9 +216,16 @@ düzeni veya harness zorunlu kılmaz ve repo dışı geçici alanlara bağımlı
 
 ## 8. Editoryal muhakeme ilkeleri (amaç önce, kural sonra)
 
-AI sözleşmesinin §11'i (ölçüt sırası, makalenin tek cümlelik işi, sezgi → mekanizma → biçim
-sırası, ölçüm dürüstlüğü, kaynak–iddia bağı, kalıp yasağı, inceleyen için "ne öğretti" sorusu)
-burada da geçerlidir. BOUN'un amacı farklı olduğu için ölçüt de farklı okunur:
+AI sözleşmesinin §11'i (anlam önce ilkesi, dört soruluk başarı ölçütü, ölçüt sırası, makalenin
+tek cümlelik işi, sezgi → mekanizma → biçim sırası, ölçüm dürüstlüğü, kaynak–iddia bağı, kalıp
+yasağı, inceleyen için "ne öğretti" sorusu, yazan model için hata listesi) ve §3'ün "Formül
+katmanlama" kuralları burada da geçerlidir. BOUN'un amacı farklı olduğu için ölçüt de farklı
+okunur:
+
+- **Anlam önce, tahtada da:** Mülakatta bir formül ya da ispat, "neyi cevaplıyor" cümlesiyle açılır;
+  sonra tanım, sonra küçük bir örnek, sonra koşul ve bozulma noktası gelir. Olasılık, yineleme ve
+  ispat yazılarında formül zinciri sözlü savunmanın önüne geçiyorsa (36'daki ilk hâli gibi) sezgi
+  ve tek bir izlenebilir hesap ana metne, uzun türetim ayrı bir paragrafa ya da koda alınır.
 
 - **Başarı ölçütü sözlü savunmadır.** Bir bölüm, okurun tahtada altmış saniyede söyleyebileceği
   ve itiraz gelince genişletebileceği bir cevap üretmiyorsa amacına ulaşmamıştır; kelime bandı,
@@ -211,3 +257,14 @@ burada da geçerlidir. BOUN'un amacı farklı olduğu için ölçüt de farklı 
   model bilinci, sık hatalar, kendi doğrulamanı işaretle ve "ne öğretti" ilkeleri eklendi.
   (d) Yeni §8 "Editoryal muhakeme ilkeleri" eklendi. Yayımlanmış makalelerin id/slug/sıra/URL'si
   değişmedi; gövdesi değişen 2 için `content_hash` yeniden senkronlandı.
+- **2026-09-25 (v1.2, kullanıcının açık talebiyle — iki serinin bütün yayımlanmış yazılarının
+  editoryal-pedagojik yenilemesi):** (a) §2: "Mülakatta nasıl görünür" bölümü ve İngilizce
+  karşılıklar satırı mekanik kapıya alındı; 1'e bölüm, 2–7 ve 40'a satır, 4'e sık hatalar listesi
+  eklendi (HANDOFF'taki "karara bağlı açık kalem" kapandı). "Takas" çakışması ve sembol çakışması
+  kuralı, BOUN'da tekrar eden kalıplar eklendi. (b) §3'e koşul disiplininin her yerde geçerliliği,
+  gösterilmeyen hesap yasağı, bozulma iddiasının izlemeyle sınanması, iki yönlü iddia, karşı
+  örnekte eşitlik, kaynak–ders kitabı eşlemesi ve olumlu cümle kuralları eklendi. (c) §5: şekil
+  tabanı 2'den 1'e indi, denetleyici listesi güncellendi, revizyon işareti AI §12'ye bağlandı.
+  (d) §8'e "anlam önce, tahtada da" eklendi. Yedi yazı (12, 18, 25, 29, 36, 37, 39) "gözden
+  geçirildi" işareti aldı. id/slug/sıra/URL ve bütün başlıklar değişmedi; hash'ler satır sonu
+  normalleştirmesiyle yeniden yazıldı.

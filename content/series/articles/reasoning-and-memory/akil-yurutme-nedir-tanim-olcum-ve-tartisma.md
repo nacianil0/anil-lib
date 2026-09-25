@@ -12,13 +12,13 @@ tags:
   - sadakat
   - kirilganlik
   - icerik-etkisi
-content_hash: sha256:3e89d25770034e39cb2247a1f42447e8c57beb06722fd98825ff76cf71f962be
+content_hash: sha256:222bfeba6bc3ff6d479e4fbd8f696c9fde9a71b1ce36f6fb62fbcf071216d3b3
 classification_version: 1
 classification_batch: 7
 ---
 ## Adı konmamış bir gözlem
 
-Serinin son üç fazında aynı gözlemle üç ayrı yerden çarpıştık. 15\. makalede bir toplama işleminin, sayıyı virgüllü hâlde tekrar ettirince düzeldiğini gördük. 22\. makalede ara adım istemenin ölçülen kazancını dört görev sınıfına ayırdık. 30\. makalede bir şemanın alan sırasının, cevabı gerekçeden önce yazdırarak o kazancı tamamen sildiğini ölçtük.
+Serinin son üç fazında aynı gözlemle üç ayrı yerden çarpıştık. 15\. makalede bir toplama işleminin, sayıyı virgüllü hâlde tekrar ettirince düzeldiğini gördük. 22\. makalede ara adım istemenin ölçülen kazancını dört görev sınıfına ayırdık. 30\. makalede, yapılandırılmış çıktıda cevap alanı gerekçeden önce yazıldığında o kazancın sessizce silindiğini gördük.
 
 Üçü de aynı yere işaret ediyor: model cevaba varmadan önce metin üretirse, ölçülebilir biçimde daha doğru cevap veriyor.
 
@@ -40,9 +40,9 @@ Mirzadeh ve arkadaşları, ilkokul düzeyi matematik sorularından oluşan yayg�
 
 Beklenti şu: elli sürümün puanları birbirine çok yakın çıkmalı. Çıkmıyor.
 
-![Yatay eksende doğruluk yüzdesi bulunan bir dağılım şeması. Elli sürümün puanları bir çan biçiminde dağılmış çubuklarla gösterilir ve dağılımın ortalaması ile standart sapması etiketlenmiştir. Dağılımın sağ tarafında, ortalamadan belirgin biçimde uzakta, özgün değerlendirme kümesinin puanını gösteren kesikli dikey bir çizgi durur. Şeklin altında, çözüm adımlarının elli sürümde birebir aynı olduğu, değişen tek şeyin isimler ve sayılar olduğu ve özgün kümenin puanının dağılımın merkezinde değil sağ kuyruğunda yer aldığı yazılıdır.](assets/ayni-soru-elli-surum.svg "Şekil 1 — Tek bir puan yerine bir dağılım")
+![Dokuz milyar parametreli Gemma2-9b-it modelinin elli şablon sürümündeki puanlarını gösteren, yatay ekseni yüzde 70 ile 90 arasında doğruluk olan bir dağılım şeması. Puanlar çan biçiminde dizilmiş çubuklarla gösterilir; üstte ortalamanın 79,1 ve standart sapmanın 3,0 olduğu yazar. Sağda, ortalamadan belirgin biçimde uzakta, özgün değerlendirme kümesinin 87,0 puanını gösteren kesikli dikey bir çizgi durur. Şeklin altında çözüm adımlarının elli sürümde birebir aynı olduğu, değişenin yalnızca isimler ve sayılar olduğu, özgün puanın dağılımın sağ kuyruğunda kaldığı ve çubuk boylarının şematik, ortalama, sapma ve özgün puanın ise ölçülmüş olduğu yazılıdır.](assets/ayni-soru-elli-surum.svg "Şekil 1 — Tek bir puan yerine bir dağılım")
 
-Şekil 1'in gösterdiği iki ayrı bulgu var. Birincisi yayılma. Dokuz milyar parametreli bir modelde en iyi sürümle en kötü sürüm arasındaki fark yüzde 12'den büyük; başka bir modelde yaklaşık yüzde 15. İkincisi, kesikli çizginin yeri: özgün kümenin puanı çoğu modelde dağılımın merkezinde değil, sağ kuyruğunda. Yirmi beş modelin yirmi birinde bu böyle. İstatistiksel olarak, bir dağılımdan çekilmiş rastgele bir örneğin sistematik olarak dağılımın sağında olması beklenmez.
+Şekil 1, dokuz milyar parametreli bir modelin (Gemma2-9b-it) elli sürümdeki dağılımını gösteriyor ve iki ayrı bulgu taşıyor. Birincisi yayılma. Dokuz milyar parametreli bir modelde en iyi sürümle en kötü sürüm arasındaki fark yüzde 12'den büyük; başka bir modelde yaklaşık yüzde 15. İkincisi, kesikli çizginin yeri: özgün kümenin puanı çoğu modelde dağılımın merkezinde değil, sağ kuyruğunda. Yirmi beş modelin yirmi birinde bu böyle. İstatistiksel olarak, bir dağılımdan çekilmiş rastgele bir örneğin sistematik olarak dağılımın sağında olması beklenmez.
 
 Değişimin türü de ayrıştırıldı ve sonuç ilginç. Yalnız isimleri değiştirmek ile yalnız sayıları değiştirmek aynı etkiyi yapmıyor:
 
@@ -55,7 +55,7 @@ Değişimin türü de ayrıştırıldı ve sonuç ilginç. Yalnız isimleri değ
 
 Tabloda iki eğilim var: değişimin "zorluğu" arttıkça ortalama düşüyor ve standart sapma büyüyor. Sadece isimlerin değişmesi bile ölçülebilir bir yayılma üretiyor — oysa isim, çözümün hiçbir adımında kullanılmaz.
 
-Zorluk ekseni de aynı yönde çalışıyor. Sorulardan bir koşul çıkarınca ya da bir ve iki koşul ekleyince, dokuz milyar parametreli modelde ortalama sırasıyla 84,4 · 79,1 · 68,1 · 41,8 oluyor; standart sapma ise 2,4'ten 6,0'a çıkıyor. Yani soru zorlaştıkça yalnızca başarı düşmüyor, aynı sorunun farklı örnekleri arasındaki savrulma da büyüyor.
+Zorluk ekseni de aynı yönde çalışıyor. Dokuz milyar parametreli modelde ortalama, sorudan bir koşul çıkarılmış sürümde 84,4, özgün şablonda 79,1, bir koşul eklenmiş sürümde 68,1 ve iki koşul eklenmiş sürümde 41,8; standart sapma ise en kolay sürümdeki 2,4'ten en zor sürümdeki 6,0'a çıkıyor. Yani soru zorlaştıkça yalnızca başarı düşmüyor, aynı sorunun farklı örnekleri arasındaki savrulma da büyüyor.
 
 Ölçümün kurulma biçimi de kayda değer, çünkü 16\. makaledeki disiplinin somut hâli. Şablonlardaki sayı aralıkları özgün kümenin aralıklarına yakın tutulmuş — amaç aritmetik becerisini değil mantığı sınamak. Üretilen veride her şablondan on örnek elle gözden geçirilmiş, ve bütün modeller değerlendirildikten sonra hiçbir modelin doğru cevaplayamadığı sorular yeniden elle incelenmiş. Bir kırılganlık iddiasının inandırıcılığı, tam olarak bu tür ayrıntılara bağlı: aksi hâlde ölçülen şey modelin akıl yürütmesi değil, veri üreticisinin hatası olurdu.
 
@@ -67,7 +67,7 @@ Modeller o beşi çıkarıyor.
 
 ![İki kutulu bir şema. Üstteki kutu soruyu özet biçimde verir ve içindeki ilgisiz cümle vurgulu bir çerçeveyle ayrılıp yanına hesaba girmediği not düşülür. Alttaki kutu modelin ara adımlarını sırayla listeler: önce pazar günkü sayı, sonra ilgisiz cümledeki beşin bir çıkarma işlemine çevrildiği adım, sonra eksik toplam ve son satırda doğru toplam. Şeklin altında eklenen cümlenin hiçbir işlem gerektirmediği, modelin onu anlamına bakmadan bir işleme çevirdiği ve aynı sorunun sekiz doğru çözülmüş sürümü isteme konsa bile düşüşün kapanmadığı yazılıdır.](assets/ilgisiz-cumle.svg "Şekil 2 — Anlamı değil, biçimi işleme çeviren adım")
 
-Şekil 2'deki hata biçimi tesadüfi değil. Çalışmanın gözlemi şu: modeller bir ifadeyi anlamını değerlendirmeden bir işleme çeviriyorlar; "indirim" geçen bir cümleyi bağlamdan bağımsız olarak çarpma sayıyorlar. Düşüşün büyüklüğü çarpıcı: küçük bir modelde yüzde 65,7'ye varan, güçlü bir akıl yürütme modelinde yüzde 17,5 düzeyinde bir gerileme. Bütün modellerde düşüş var, yalnızca büyüklüğü değişiyor.
+Şekil 2'deki hata biçimi tesadüfi değil. Çalışmanın gözlemi şu: modeller bir ifadeyi anlamını değerlendirmeden bir işleme çeviriyorlar; "indirim" geçen bir cümleyi bağlamdan bağımsız olarak çarpma sayıyorlar. Gerileme küçük bir modelde yüzde 65,7'ye varıyor, güçlü bir akıl yürütme modelinde yüzde 17,5 düzeyinde kalıyor. Bütün modellerde düşüş var, yalnızca büyüklüğü değişiyor.
 
 Asıl önemli olan ise düzeltme denemesinin sonucu. İsteme, **aynı sorunun** sekiz farklı sürümünü çözülmüş örnek olarak koyuyorlar; yani gereken bütün adımlar modelin gözünün önünde duruyor ve hedef soru yalnızca ilgisiz cümleyle ayrılıyor. On dört milyar parametreli bir modelde sonuç: özgün kümede 87,3, şablonlu sürümde 82,5, ilgisiz cümleli sürümde 29,4 — ve sekiz doğru örnek eklenince 30,2. Örnekler sorunu çözmüyor.
 
@@ -93,7 +93,7 @@ Bu, 18\. makalenin ezber ↔ genelleme gerilimini yeni bir yerde gösteriyor. Or
 
 Bu soruyu ölçen kavramın adı **sadakat** (faithfulness): bir açıklamanın, tahmini gerçekte üreten süreci ne kadar doğru temsil ettiği. Miles Turpin ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma bunu doğrudan sınıyor.
 
-Düzenek sade. On üç zor görevde modele önce normal istem veriliyor, sonra aynı istem bir **yanlılık** eklenerek tekrar veriliyor. Yanlılık iki biçimde: ya isteme konan çözülmüş örneklerde doğru cevap hep aynı şıkka konuyor, ya da kullanıcı "bence cevap (A), ama senin ne düşündüğünü merak ediyorum" diye ekliyor. İkisi de görevin doğru cevabıyla ilgisiz.
+Düzenek sade. On üç zor görevde — ölçülen modeller o dönemin GPT-3.5'i ve Claude 1.0'ı — modele önce normal istem veriliyor, sonra aynı istem bir **yanlılık** eklenerek tekrar veriliyor. Yanlılık iki biçimde: ya isteme konan çözülmüş örneklerde doğru cevap hep aynı şıkka konuyor, ya da kullanıcı "bence cevap (A), ama senin ne düşündüğünü merak ediyorum" diye ekliyor. İkisi de görevin doğru cevabıyla ilgisiz.
 
 Sonuç: yanlılık yanlış cevabı işaret ettiğinde doğruluk düşüyor — bir düzende yüzde 36,3'e varan bir düşüş. Düşüşün kaynağı da ölçülmüş: kayıp neredeyse tamamen yanlılığın işaret ettiği cevaba kayan tahminlerden geliyor, rastgele gürültüden değil.
 
@@ -115,7 +115,7 @@ Buraya kadarki ölçümlerin çoğu, ara adımları istemle üretmesi istenen s�
 
 Yüzeysel varyantlarda fark neredeyse kapanıyor: özgün kümeden şablonlu sürüme geçişte bu modellerin kaybı yüzde 2,2 ve yüzde 0,6 düzeyinde, oysa küçük modellerde kayıp yüzde 9'a çıkıyordu. İki koşul eklendiğinde de dayanıklılık belirgin: bir modelde şablonlu sürümdeki 94,5 puanı, iki ek koşulla 89,1'e iniyor — dokuz milyar parametreli modelde aynı geçiş 79,1'den 41,8'e düşüyordu.
 
-Ama ilgisiz cümle testinde düşüş sürüyor: bu iki modelde sırasıyla yüzde 29,1 ve yüzde 17,5. Küçük modellerdeki yüzde 60'lık çöküşün yanında bu küçük bir sayı; sıfır olmadığı da açık. Yani akıl yürütmeye eğitmek kırılganlığı azaltıyor, biçimini değiştirmiyor: en çok zarar veren müdahale hâlâ hesaba girmeyen bir cümle. Bu modellerin nasıl eğitildiğini 34\. makalede kuracağız; şimdilik kaydedilecek şey, ölçümün eğitimle birlikte iyileştiği ama aynı ekseni işaret etmeye devam ettiği.
+Ama ilgisiz cümle testinde düşüş sürüyor: bu iki modelde sırasıyla yüzde 29,1 ve yüzde 17,5. Küçük modellerde yüzde 65'e varan çöküşün yanında bu küçük bir sayı; sıfır olmadığı da açık. Yani akıl yürütmeye eğitmek kırılganlığı azaltıyor, biçimini değiştirmiyor: en çok zarar veren müdahale hâlâ hesaba girmeyen bir cümle. Bu modellerin nasıl eğitildiğini 34\. makalede kuracağız; şimdilik kaydedilecek şey, ölçümün eğitimle birlikte iyileştiği ama aynı ekseni işaret etmeye devam ettiği.
 
 ## İnsan da böyle
 

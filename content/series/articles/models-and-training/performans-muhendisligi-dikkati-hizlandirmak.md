@@ -12,7 +12,7 @@ tags:
   - islem-birlestirme
   - karma-duyarlik
   - kullanim-orani
-content_hash: sha256:a0321cae95c521579306c5d4ae9241b698086c9ae5d522657645861afb64f38c
+content_hash: sha256:9baec65f08bb8e1fb405d2fecad9845e8a110a052ebae11c870e430568636e5e
 classification_version: 1
 classification_batch: 26
 ---
@@ -38,6 +38,10 @@ Andrei Ivanov, Nikoli Dryden, Tal Ben-Nun, Shigang Li ve Torsten Hoefler'in MLSy
 
 Tablodaki iki sütun birbirini tutmuyor ve tutmaması bu makalenin başlangıç noktası. Kalanı biz hesaplayalım: matris çarpımı **dışındaki** işlemler toplamın yüzde 0,20'si, ama sürenin yüzde 39'u. Birim işlem başına düşen süreyi oranlarsak, matris çarpımı dışındaki bir işlem matris çarpımı içindeki bir işlemden yaklaşık **319 kat** pahalı: (39 ÷ 0,20) ÷ (61 ÷ 99,80) = 195 ÷ 0,611.
 
+![Üst üste iki yatay yüzde çubuğu. Üstteki işlemin payı: matris çarpımı yüzde 99,80 ile çubuğun neredeyse tamamını kaplar; normalleştirme ve öge bazlı işlemlerin toplamı yüzde 0,20'dir ve sağ uçta görünmeyecek kadar incedir. Alttaki sürenin payı: matris çarpımı yüzde 61,0, normalleştirme yüzde 25,5, öge bazlı işlemler yüzde 13,5. İki kesikli çizgi üst çubuktaki sınırları alttakilere bağlar ve binde ikilik dilimin sürenin yüzde 39'una yayıldığını gösterir. Altta: birim işlem başına 39 bölü 0,20 bölü 61 bölü 99,80, yaklaşık 319 kat; iki sebep taşınan bayt, yani yinelemenin yüzde 37'sinin bellekle sınırlı işlemlerde geçmesi, ve koşturan birim, yani 16 kata kadar verim farkı. Kayıt: yüzdeler Ivanov ve arkadaşlarından, 16 kat Dao'dan, 319 kat bizim hesabımızdır.](assets/islem-sinifi-ve-sure.svg "Şekil 1 — İşlemlerin binde ikisi, sürenin üçte birinden fazlası")
+
+Şekil 1 tablonun iki sütununu aynı genişlikte iki çubuk olarak çiziyor. Üst çubukta görünmeyecek kadar ince kalan dilim, alt çubukta üçte bire yayılıyor; kesikli çizgiler o yayılmayı gösteriyor. Azaltılacak şey işlem değil, gidiş geliş.
+
 Bu farkın iki ayrı kaynağı var ve ikisini ayırmak gerekiyor.
 
 Birincisi bellek erişimi, yani 106'nın sırt noktası. Katman normalleştirmesi ya da bir toplama, girdisini kart belleğinden okur, üzerinde bir iki işlem yapar ve sonucu geri yazar; işlem yoğunluğu bir mertebesindedir ve sırt noktasının çok solundadır. Çalışmanın kendi özeti bu: bir eğitim yinelemesinin üçte birinden fazlası — yüzde 37'si — bellekle sınırlı işlemlerde geçiyor.
@@ -47,10 +51,6 @@ Birincisi bellek erişimi, yani 106'nın sırt noktası. Katman normalleştirmes
 > **Kendini yokla:** Bir mimari değişiklik toplam işlem sayısını yüzde 10 azaltıyor. Duvar saatinde en çok ne kazanırsın?
 
 En çok yüzde 6,1. Sebebi tablonun ilk sütununda: işlemlerin yüzde 99,8'i matris çarpımlarında olduğu için yüzde 10'luk bir kesinti ancak oradan gelebilir, ve matris çarpımları sürenin yüzde 61'ini tutuyor. 0,10 × 61 = 6,1 puan. 86\. makaledeki uyarının aritmetiği tam olarak budur: işlem saymak, süreyi saymanın kötü bir vekilidir.
-
-![Dört satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir eğitim yinelemesinde işlem ile sürenin dağılımı. Sütunlar işlem sınıfı, işlemin yüzdesi ve sürenin yüzdesi. Birinci satır matris çarpımları: 99,80 ve 61,0. İkinci satır istatistiksel normalleştirme: 0,17 ve 25,5. Üçüncü satır öge bazlı işlemler: 0,03 ve 13,5. Bir çizginin altındaki dördüncü satır vurguludur, matris çarpımı dışındaki her şey: 0,20 ve 39,0. Birinci kutunun başlığı binde ikilik kısım, sürenin üçte birinden fazlası; içinde birim işlem başına oranın hesabı durur: 39 bölü 0,20 eşittir 195, 61 bölü 99,80 eşittir 0,611, ve 195 bölü 0,611 eşittir 319 kat. İkinci kutunun başlığı farkın iki ayrı sebebi; içinde taşınan baytın yinelemenin yüzde 37'sini bellekle sınırlı işlemlerde geçirmesi ve koşturan birimin matris çarpımı verimini ötekilerin 16 katına kadar çıkarması yazılıdır. En altta bir kayıt: yüzdeler Ivanov ve arkadaşlarından, 16 kat Dao'dan, 319 kat bizim hesabımızdır.](assets/islem-sinifi-ve-sure.svg "Şekil 1 — İşlemlerin binde ikisi, sürenin üçte birinden fazlası")
-
-Şekil 1'in alt kutusu bu bölümün tek cümlelik sonucu: azaltılacak şey işlem değil, gidiş geliş.
 
 ## Çekirdek: karta gönderilen tek bir program
 
@@ -64,9 +64,9 @@ Sayı koyalım, çünkü bu hesap tamamen bizim elimizde. GPT-3'ün ölçüleriy
 
 Kazanç ölçülmüş de. Deepak Narayanan ve arkadaşlarının SC 2021 çalışması, 107'de gördüğümüz kurulumda birleştirmenin tek başına etkisini ayırıyor: 175 milyar parametreli modelde kart başına verim 113'ten 135 teraFLOP/s'ye çıkıyor, yüzde 19; 530 milyarlık modelde 133'ten 148'e, yüzde 11. Ivanov ve arkadaşlarının çalışması aynı kaldıracı sistematik uyguluyor ve taşınan veriyi yüzde 22,91'e kadar azaltıp bir kodlayıcı katmanında 1,30 kat, uçtan uca eğitimde 1,19 kat hızlanma ölçüyor. İkincisi daha küçük, ve yazarlar sebebini de söylüyor: uçtan uca koşuda eniyilenmemiş başka parçalar var.
 
-Birleştirmenin de bir sınırı var ve iki yerden geliyor. Birincisi bağımlılık: bir işlemin girdisi ancak bir öncekinin **tamamı** bittikten sonra hazır oluyorsa ikisi tek çekirdeğe konamaz; normalleştirmenin ortalamayı bütün dizi üzerinden alması bunun tipik örneğidir. İkincisi kaynak: birleştirilen çekirdek daha çok ara değeri çipin içinde tutmak zorunda kalır, bu da aynı anda koşabilen iş sayısını düşürür. İkinci uygulamanın yeniden yazılma gerekçelerinden biri tam olarak buydu. Yani birleştirme sınırsız bir kaldıraç değil, dengelenen bir takas.
+Birleştirmenin de bir sınırı var ve iki yerden geliyor. Birincisi bağımlılık: bir işlemin girdisi ancak bir öncekinin **tamamı** bittikten sonra hazır oluyorsa ikisi tek çekirdeğe konamaz; normalleştirmenin ortalamayı bütün dizi üzerinden alması bunun tipik örneğidir. İkincisi kaynak: birleştirilen çekirdek daha çok ara değeri çipin içinde tutmak zorunda kalır, bu da aynı anda koşabilen iş sayısını düşürür. Birazdan göreceğimiz dikkat uygulamalarının yeniden yazılma gerekçelerinden biri de buydu. Yani birleştirme sınırsız bir kaldıraç değil, dengelenen bir takas.
 
-Aynı çalışmanın ikinci bulgusu daha da şaşırtıcı, çünkü aritmetiğe hiç dokunmuyor: verinin bellekte **hangi düzende** durduğu. Aynı matris çarpımı, aynı sayılar, aynı işlem sayısı — yalnızca boyutların bellekteki sırası değiştirilerek yüzde 52'ye varan hızlanma elde ediliyor. Sebebi 106'daki bellek merdiveni: uygun sırayla dizilmiş veri tek seferde ve bitişik olarak okunabiliyor, uygun olmayan sırada aynı baytlar için daha çok tur atılıyor.
+Aynı çalışmanın ikinci bulgusu aritmetiğe hiç dokunmuyor: verinin bellekte **hangi düzende** durduğu. Aynı matris çarpımı, aynı sayılar, aynı işlem sayısı — yalnızca boyutların bellekteki sırası değiştirilerek yüzde 52'ye varan hızlanma elde ediliyor. Sebebi 106'daki bellek merdiveni: uygun sırayla dizilmiş veri tek seferde ve bitişik olarak okunabiliyor, uygun olmayan sırada aynı baytlar için daha çok tur atılıyor.
 
 Bu bölümü kapatan sayı ise alçakgönüllülük dersi. Aynı çalışma kendi sonucunu yalnızca genel amaçlı kütüphanelerle değil, elle eniyilenmiş bir uygulamayla da karşılaştırıyor ve aradaki fark 1,08 kat. Yani kazancın büyük kısmını uzmanlar zaten almış durumda; sistematik yöntemin getirdiği şey o son dilim ve — daha önemlisi — aynı işi her yeni model için elle yapmak zorunda kalmamak.
 

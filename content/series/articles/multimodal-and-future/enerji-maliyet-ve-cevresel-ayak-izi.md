@@ -12,7 +12,7 @@ tags:
   - olcum-kosullari
   - cikarim-maliyeti
   - veri-merkezi
-content_hash: sha256:6e88d8d28758e9051423782088de9db251e75200dfdb51a8537141fd02518267
+content_hash: sha256:5ef98af29bb32bda33f390846880a2e916f7638b9fcc74bd05d2ee648b7dc672
 classification_version: 1
 classification_batch: 21
 ---
@@ -20,7 +20,7 @@ classification_batch: 21
 
 89\. makale boyunca üç birimle konuştuk: işlem, bayt, saniye. Dördüncüsü hepsinin altında duruyor — vat. Bir çipin yaptığı her işlem elektrik harcar; harcanan elektriğin bir karbon karşılığı vardır; ve o karşılık, elektriğin hangi şebekeden çekildiğine bağlıdır.
 
-8\. makalede bu zincirin bir çıktısını zaten vermiştik: GPT-3'ün eğitimi 10.000 çipte 14,8 gün sürdü, 1.287 megavat-saat elektrik harcadı ve 552,1 ton karbondioksit eşdeğerine karşılık geldi. O sayıyı orada bir ölçek göstergesi olarak kullanmış ve tahmin olduğunu not düşmüştük. Bu makalenin işi, o zinciri açmak — çünkü bu makalenin asıl konusu enerji değil, **bir enerji sayısının nasıl okunacağı**.
+8\. makalede bu zincirin bir çıktısını zaten vermiştik: GPT-3'ün eğitimi 10.000 çipte 14,8 gün sürdü, 1.287 megavat-saat elektrik harcadı ve 552,1 ton karbondioksit eşdeğerine karşılık geldi. O sayıyı orada bir ölçek göstergesi olarak kullanmış ve tahmin olduğunu not düşmüştük. Bu makalenin işi o zinciri açmak; konu enerjinin kendisinden çok **bir enerji sayısının nasıl okunacağı**.
 
 ## Bir sayının anatomisi
 
@@ -28,7 +28,7 @@ classification_batch: 21
 
 Birinci halka, işlemden kart-saatine. 9\. makaledeki 6ND kestirimi toplam işlem sayısını verir; bunu kartın gerçekte ulaştığı hıza böldüğünde kart-saati çıkar. 89\. makalede gördük ki bu hız tepe hızın yarısı mertebesinde olabiliyor, dolayısıyla hangi verimin kullanıldığı sonucu ikiye katlayabilir.
 
-İkinci halka, kart-saatinden kilovat-saate. Burada iki yol var: kartın anma gücünü (üreticinin bildirdiği tasarım gücü) kullanmak ya da gerçekte çekilen gücü ölçmek. İkisi aynı değildir — bir çalışmada, çıkarım yapan kartların ölçülen çekimi 400 vatlık anma gücünün karşısında 78 ile 171 vat arasında kalmış. Sonra veri merkezinin kendi payı: soğutma ve dağıtım için harcanan elektriği hesaba katan çarpana **PUE** (power usage effectiveness) deniyor ve modern veri merkezlerinde 1,08 ile 1,2 arasında değişiyor.
+İkinci halka, kart-saatinden kilovat-saate. Burada iki yol var: kartın anma gücünü (üreticinin bildirdiği tasarım gücü) kullanmak ya da gerçekte çekilen gücü ölçmek. İkisi aynı değildir — aşağıda döneceğimiz BLOOM ölçümünde, modeli arayüz ardında sunan kartların ölçülen çekimi 400 vatlık anma gücünün karşısında 78 ile 171 vat arasında kalmış. Sonra veri merkezinin kendi payı: soğutma ve dağıtım için harcanan elektriği hesaba katan çarpana **PUE** (power usage effectiveness) deniyor ve modern veri merkezlerinde 1,08 ile 1,2 arasında değişiyor.
 
 Üçüncü halka, kilovat-saatten karbona. Şebekenin karbon yoğunluğu — kilovat-saat başına gram karbondioksit eşdeğeri — bölgeye ve saate göre kat kat değişir. Dahası iki ayrı muhasebe biçimi var: **bulunduğu yere göre** sayım, bölgesel şebekenin ortalama karışımını kullanır; **satın alınan enerjiye göre** sayım, kurumun aldığı karbonsuz enerji sözleşmelerini de hesaba katar. Aynı elektrik, iki yöntemle iki ayrı karbon sayısı verir.
 
@@ -38,7 +38,7 @@ Dördüncü halka, sınırın nereye çizildiği. Yalnızca eğitim koşusu mu? 
 
 Şekil 1 zinciri ve her halkanın taşıdığı varsayımı gösteriyor. Zinciri bir kez uçtan uca yürüyelim; girdilerin hepsi 8\. makalede verdiğimiz aynı çalışmadan geliyor ve sonuç oradaki sayının ta kendisi.
 
-Koşu 10.000 karttan oluşan bir kümede 14,8 gün sürmüş. Aynı çalışma kart başına **ölçülmüş** ortalama gücü 330 vat, kart başına ölçülmüş hızı ise saniyede 24,6 trilyon işlem olarak veriyor. İki hesabı ayrı ayrı yapalım.
+Koşu 10.000 karttan oluşan bir kümede 14,8 gün sürmüş. Aynı çalışma kart başına **ölçülmüş** ortalama sistem gücünü 330 vat — kartın kendisine bellek, ağ arabirimi, fanlar ve sunucu işlemcisinden düşen payın eklenmiş hâli — kart başına ölçülmüş hızı ise saniyede 24,6 trilyon işlem olarak veriyor. İki hesabı ayrı ayrı yapalım.
 
 Enerji: 10.000 × 0,330 kilovat × 355,2 saat = 1.172 megavat-saat. Bu, kartların çektiği elektrik. Veri merkezinin kendi payı için 1,10'luk çarpanla çarpalım: 1.172 × 1,10 ≈ **1.290 megavat-saat** — çalışmanın bildirdiği 1.287'yle yuvarlama farkı kadar örtüşüyor.
 
@@ -46,13 +46,15 @@ Enerji: 10.000 × 0,330 kilovat × 355,2 saat = 1.172 megavat-saat. Bu, kartlar�
 
 Karbon: koşunun yapıldığı bölgenin şebekesi kilovat-saat başına 429 gram; 1.287.000 kilovat-saat × 0,429 kilogram ≈ **552 ton**.
 
-Üç sayının da nereden geldiğini artık biliyoruz — ve daha önemlisi, hangi girdiyi değiştirirsek hangisinin oynayacağını. Kartın ölçülen gücü yerine 300 vatlık anma gücü kullanılsaydı enerji yüzde dokuz düşerdi; şebeke 57 gramlık olsaydı karbon yedide birine inerdi; kartların imalatı sınıra girseydi toplam yükselirdi. Aynı koşu, aynı model, dört ayrı sayı.
+Üç sayının da nereden geldiğini artık biliyoruz — ve daha önemlisi, hangi girdiyi değiştirirsek hangisinin oynayacağını. Sistemin ölçülen gücü yerine yalnızca kartın 300 vatlık anma gücü kullanılsaydı enerji yüzde dokuz düşük çıkardı — burada anma gücü gerçeğin altında kalıyor, çünkü sunucunun geri kalanını saymıyor; BLOOM'un çıkarım ölçümünde ise tersine, üstündeydi; şebeke 57 gramlık olsaydı karbon yedide birine inerdi; kartların imalatı sınıra girseydi toplam yükselirdi. Aynı koşu, aynı model, dört ayrı sayı.
 
 ## Enerji ile karbon aynı eğri değil
 
 Sasha Luccioni, Sylvain Viguier ve Anne-Laure Ligozat'ın JMLR'de 2023'te yayımladığı çalışma, 176 milyar parametreli açık bir modelin eğitim ayak izini kaynaktan ölçüyor ve benzer boyuttaki modellerle karşılaştırıyor. Tablodaki iki satır tek başına öğretici.
 
-Bu model 433 megavat-saat harcamış ve 25 ton karbondioksit eşdeğeri salmış. Benzer boyuttaki başka bir açık model 324 megavat-saat harcamış ve 70 ton salmış. Yani **daha az enerji harcayan model, iki buçuk kattan fazla karbon salmış**. Sebep tek bir sayıda: birincinin çalıştığı şebekenin karbon yoğunluğu kilovat-saat başına 57 gram, ikincininki 231 gram. Aynı tabloda GPT-3'ün eğitimi 1.287 megavat-saat ve 429 gramlık bir şebekeyle 502 ton, Gopher 1.066 megavat-saat ve 330 gramlık bir şebekeyle 352 ton.
+Bu model 433 megavat-saat harcamış ve 25 ton karbondioksit eşdeğeri salmış. Benzer boyuttaki başka bir açık model 324 megavat-saat harcamış ve 70 ton salmış. Yani **daha az enerji harcayan model, iki buçuk kattan fazla karbon salmış**. Sebep tek bir sayıda: birincinin çalıştığı şebekenin karbon yoğunluğu kilovat-saat başına 57 gram, ikincininki 231 gram.
+
+Aynı tablo, yukarıda yürüdüğümüz zincirin bir halkasını da gösteriyor. GPT-3 için 552 değil **502 ton** yazıyor ve yanındaki sütunda, veri merkezi çarpanıyla çarpılmış hâli olarak 552'yi veriyor. 502, kartların çektiği 1.172 megavat-saatin 0,429 kilogramla çarpımına denk düşüyor; 552 ise 1,10'luk çarpan eklendikten sonraki değer — bu eşleştirme bizim hesabımız, tablo yolu yazmıyor. Aynı koşu, aynı kaynaklardan, iki sayı: fark yalnızca ikinci halkanın sayılıp sayılmadığında.
 
 Aynı çalışma dördüncü halkayı da açıyor: yalnızca elektrik sayıldığında 24,7 ton olan rakam, kartların imalatından veri merkezinin işletimine kadar bütün süreçler dâhil edildiğinde **50,5 tona** çıkıyor. Tek bir eğitim koşusu, iki sınırla iki katı fark ediyor.
 
@@ -64,7 +66,7 @@ Hayır; harcanan enerji aynı kalmış olabilir. Karbon, enerji ile şebekenin y
 
 Alanın bu konudaki en öğretici vakası, tek bir rakamın iki kez ölçülmesi.
 
-Emma Strubell, Ananya Ganesh ve Andrew McCallum'un ACL 2019'da sunduğu çalışma, dil işleme modellerinin eğitim maliyetini gündeme sokan iş oldu. Tabloları çarpıcıydı: bir Transformer modelinin eğitimi 192 pound karbondioksit eşdeğeri, **mimari arama** ile birlikte eğitilen aynı ailedeki model ise 626.155 pound — aynı tablodaki "bir otomobilin yakıtıyla birlikte ömür boyu salımı" değeri 126.000 pound.
+Emma Strubell, Ananya Ganesh ve Andrew McCallum'un ACL 2019'da sunduğu çalışma, dil işleme modellerinin eğitim maliyetini gündeme sokan iş oldu. Tablolarına göre bir Transformer modelinin eğitimi 192 pound karbondioksit eşdeğeri, **mimari arama** ile birlikte eğitilen aynı ailedeki model ise 626.155 pound — aynı tablodaki "bir otomobilin yakıtıyla birlikte ömür boyu salımı" değeri 126.000 pound.
 
 David Patterson ve arkadaşlarının 2021'de yayımladığı — hakemli olmayan — çalışma bu ikinci sayıyı yeniden hesapladı ve ortalama bir kuruluş için **18,7 kat**, enerji açısından verimli bir kuruluş için **88 kat** yüksek olduğunu buldu. Hata kötü niyetten değil, görünmeyen bir yordamdan kaynaklanıyordu: mimari arama küçük bir **vekil görev** üzerinde yapılmış, bulunan model sonradan tam boyuta ölçeklenmişti. Dışarıdan bakan biri, aramanın tam boyutlu görevlerle yapıldığını varsaymıştı. Yazarların ilk önerisi de buradan çıkıyor: hesap ağırlıklı projelerde enerji ve karbon **ölçülmeli ve bildirilmeli**; başkasının geriye dönük tahminine bırakılmamalı.
 
@@ -82,7 +84,7 @@ Luccioni'nin Yacine Jernite ve Emma Strubell ile birlikte FAccT 2024'te sunduğu
 
 Karşılaştırma ölçüsü olarak bir telefonu tam şarj etmenin 0,022 kilovat-saat olduğunu veriyorlar. Bu ölçekle: en verimli metin üreten model bin çıkarımda bir telefon şarjının yüzde 9'unu harcıyor; en verimsiz görüntü üreten model 522 şarjı, yani üretilen görüntü başına yaklaşık yarım şarj.
 
-Sonra eşitlik noktasını hesaplıyorlar: bir modelin eğitim ve ince ayar enerjisine ulaşmak için kaç çıkarım gerekir? Aynı ailedeki dört model için sayılar 205 milyon ile 593 milyon çıkarım arasında.
+Sonra eşitlik noktasını hesaplıyorlar: bir modelin eğitim ve ince ayar enerjisine ulaşmak için kaç çıkarım gerekir? Aynı ailedeki dört model için sayılar 205 milyon ile 593 milyon çıkarım arasında. Bu sayıyı zamana çevirmek için talebi bilmek gerekir ve kaynak onu vermiyor; varsayımı açıkça koyarak kendi kaba hesabımızı yapalım: günde on milyon istek alan bir hizmette 205 milyon çıkarım yaklaşık üç haftada, 593 milyon yaklaşık iki ayda dolar. Talep on kat düşükse süreler de on kat uzar.
 
 ![İki bölmeli şekil. Üst bölmede bin çıkarım için harcanan ortalama enerji, kilovat-saat cinsinden, dört görev için: metin sınıflandırma 0,002, görüntü sınıflandırma 0,007, metin üretimi 0,047, görüntü üretimi 2,907. Ölçek için bir telefonu tam şarj etmek 0,022 kilovat-saat; incelenen on görevin en düşüğü ile en yükseği arasındaki oran 1.450'yi aşıyor. Alt bölmede aynı model ailesindeki dört boyut için maliyet eşitliği, yani çıkarım enerjisinin eğitim ve ince ayar enerjisine ulaşması için gereken çıkarım sayısı: 560 milyonluk modelde 205 milyon, 1 milyarlıkta 292 milyon, 3 milyarlıkta 396 milyon, 7 milyarlıkta 593 milyon çıkarım. En altta bir kayıt: sayılar tek bir çalışmanın ölçtüğü modellere aittir ve donanıma, yığınlamaya ve bölgeye göre değişir.](assets/cikarimin-payi.svg "Şekil 2 — Ne zaman eşitleniyorlar")
 
@@ -112,7 +114,7 @@ Eric Masanet ve arkadaşlarının Science'ta 2020'de yayımladığı çalışma,
 
 Bu, iyimserlik için iyi bir kanıt — ve aynı zamanda kolayca yanlış genelleştirilen bir kanıt. Ölçüm 2018'de bitiyor; bugünkü yapay zekâ altyapısının kurulmasından önce. Ve mekanizma dikkatle okunmalı: birim başına enerjinin düşmesi toplamın düşeceği anlamına gelmez, yalnızca toplamın talebin büyüme hızından yavaş büyüyebileceği anlamına gelir. Birim ucuzladıkça talep de artabilir ve bu, verimliliğin kendi kazancını yiyebileceği klasik durumdur.
 
-Para tarafı da aynı ayrımı gösteriyor, ters yönde. Ben Cottier ve arkadaşlarının 2024'te yayımladığı — hakemli olmayan — çalışma, sınır modellerinin amortize edilmiş eğitim maliyetinin 2016'dan beri yılda **2,4 kat** büyüdüğünü hesaplıyor; en pahalı iki koşu için verdikleri değerler 40 ve 30 milyon dolar. Ama bu paranın dağılımı şaşırtıcı: hesaplama donanımı toplamın yüzde 47–64'ü, araştırma personeli (hisse dâhil) yüzde 29–49'u, **enerji ise yalnızca yüzde 2–6'sı**. 20\. makalede bir modelin nihai eğitim koşusu için bildirdiği 5,576 milyon dolarlık rakamı hatırla; o rakamın içinde elektriğin payı, bu orana göre birkaç yüz bin dolar mertebesindedir.
+Para tarafı da aynı ayrımı gösteriyor, ters yönde. Ben Cottier ve arkadaşlarının 2024'te yayımladığı — hakemli olmayan — çalışma, sınır modellerinin amortize edilmiş eğitim maliyetinin 2016'dan beri yılda **2,4 kat** büyüdüğünü hesaplıyor; en pahalı iki koşu için verdikleri değerler 40 ve 30 milyon dolar. Ama bu paranın dağılımı şaşırtıcı: hesaplama donanımı toplamın yüzde 47–64'ü, araştırma personeli (hisse dâhil) yüzde 29–49'u, **enerji ise yalnızca yüzde 2–6'sı**. 20\. makalede bir modelin nihai eğitim koşusu için bildirdiği 5,576 milyon dolarlık rakamı hatırla; bu oranı ona uygularsak elektriğin payı kabaca 110 ile 335 bin dolar arasında çıkar. Bu kendi hesabımız ve yalnızca büyüklük mertebesi verir: o rakam kiralık kart-saati üzerinden hesaplanmış bir bedeldi, buradaki oranlar ise amortize edilmiş maliyetin dağılımı.
 
 > **Kendini yokla:** Enerji, bir eğitim koşusunun parasal maliyetinin yalnızca yüzde birkaçıysa, enerji tartışması neden önemli?
 
@@ -128,7 +130,7 @@ Para tarafı da aynı ayrımı gösteriyor, ters yönde. Ben Cottier ve arkadaş
 
 **Tahmin ile ölçüm ayrı şeylerdir.** Geriye dönük tahminler görünmeyen yordamlar yüzünden kat kat sapabiliyor; bildirmek, tahmin ettirmekten iyidir.
 
-**Eğitim ile çıkarım ayrı kalemlerdir ve eşitlendikleri bir nokta vardır.** O nokta yüz milyonlar mertebesindedir; yaygın kullanılan bir model için aylar demektir.
+**Eğitim ile çıkarım ayrı kalemlerdir ve eşitlendikleri bir nokta vardır.** O nokta yüz milyonlarca çıkarım mertebesindedir; günde on milyon istek alan bir hizmet için haftalar ile aylar arası demektir.
 
 **Su, enerjiyle aynı biçimde toplanmaz.** Bir kilovat-saat her yerde aynıdır; bir litre suyun anlamı bulunduğu havzaya bağlıdır.
 

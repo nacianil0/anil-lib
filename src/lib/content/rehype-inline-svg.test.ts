@@ -67,6 +67,26 @@ describe("rehypeInlineSvg", () => {
     expect(caption.children[0]).toMatchObject({ value: "Şekil 1 — Deneme" });
   });
 
+  it("gives every figure an enlarge button that adds no text to the article", async () => {
+    const tree = await transform(`![Açıklama](assets/temiz.svg "Şekil 1 — Deneme")`);
+    const figure = firstElement(tree);
+    const button = (figure.children as Element[]).at(-1)!;
+
+    expect(button.tagName).toBe("button");
+    expect(button.properties.type).toBe("button");
+    expect(button.properties.ariaLabel).toBe("Şekli büyüt");
+    expect(button.properties.dataFigureZoom).toBe("");
+    // Highlights and the reading anchor count the article's characters; a word in
+    // the button would shift every offset after the figure.
+    const texts: string[] = [];
+    const walk = (node: Element) =>
+      node.children.forEach((child) =>
+        child.type === "text" ? texts.push(child.value) : child.type === "element" && walk(child),
+      );
+    walk(button);
+    expect(texts.join("").trim()).toBe("");
+  });
+
   it("drops script elements and on* attributes", async () => {
     const tree = await transform(`![t](assets/kirli.svg "Şekil")`);
     const figure = firstElement(tree);

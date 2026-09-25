@@ -12,7 +12,7 @@ tags:
   - karatsuba
   - medyan-bulma
   - ozyineleme-agaci
-content_hash: sha256:5a8d8696d7d2ebd0a93c1981871a3dc6e419a36aa1e0e6c803276f1950bfe860
+content_hash: sha256:7aa568803889d3064ccf695607c792914eb0d44bb9fc0788e82fea843d5ba02f
 classification_version: 1
 classification_batch: 6
 ---
@@ -24,7 +24,7 @@ Son üç makale **analiz** araçları kurdu: asimptotik tanımlar ölçüyü, yi
 
 T(n) = a · T(n/b) + [bölme ve birleştirme işi]
 
-Bu seride deseni farkında olmadan zaten kullandık: birleştirmeli sıralama, ikili arama, hatta hızlı üs alma aynı fikrin türevleridir. Ama deseni bir **tasarım aracına** çevirmek için önce rahatsız edici bir gerçekle yüzleşmek gerekiyor.
+Bu seride deseni farkında olmadan zaten kullandık: birleştirmeli sıralama, ikili arama, hatta hızlı üs alma aynı fikrin türevleridir. Ama deseni bir **tasarım aracına** çevirmek için önce onun sınırını görmek gerekiyor.
 
 ## Bölmek tek başına hiçbir şey kazandırmaz
 
@@ -102,13 +102,13 @@ Ortaya çıkan bağıntı, önceki makalede "Master Teoreminin sustuğu yerler" 
 
 T(n) ≤ T(⌈n/5⌉) + T(7n/10 + 6) + Θ(n)
 
-İki alt problem var ve boyutları farklı; tek bir a ve b çifti yazılamaz. Çözüm için tahmin-et-ve-tümevarımla-doğrula yöntemine dönülür. Sezgi, alt problem paylarının toplamının 1/5 + 7/10 = 9/10 olması, yani girdinin tamamından küçük kalmasıdır; bu, işin seviyeler boyunca geometrik olarak azalacağını düşündürür. T(n) ≤ c·n tahmin edilir ve yeterince büyük bir c için tümevarım yürür: c·n/5 + 7c·n/10 + a·n = 9c·n/10 + a·n ≤ c·n eşitsizliği c ≥ 10a seçildiğinde sağlanır. Sonuç **Θ(n)** — sıralamadan bile ucuz, doğrusal zamanda medyan.
+İki alt problem var ve boyutları farklı; tek bir a ve b çifti yazılamaz. Çözüm için tahmin-et-ve-tümevarımla-doğrula yöntemine dönülür. Sezgi, alt problem paylarının toplamının 1/5 + 7/10 = 9/10 olması, yani girdinin tamamından küçük kalmasıdır; bu, işin seviyeler boyunca geometrik olarak azalacağını düşündürür. T(n) ≤ c·n tahmin edilir ve yeterince büyük bir c için tümevarım yürür. Θ(n) terimini bir s·n ile sınırlarsak (burada s yalnızca bir sabittir, alt problem sayısı a ile karıştırma) c·n/5 + 7c·n/10 + s·n = 9c·n/10 + s·n ≤ c·n eşitsizliği c ≥ 10s seçildiğinde sağlanır. Sonuç **Θ(n)** — sıralamadan bile ucuz, doğrusal zamanda medyan.
 
 > **Sesli anlat:** "Bir kümenin medyanını sıralamadan daha hızlı bulabilir misin? Nasıl ve neden çalışır? Doksan saniye."
 >
 > İyi bir cevabın omurgası: "Evet, doğrusal zamanda bulunur. Fikir hızlı sıralamanın ayırma adımıdır ama iki tarafa değil **tek** tarafa iniyorum: bir x elemanı seçip kümeyi x'ten küçükler ve büyükler diye ayırıyorum, x'in sırasını hesaplıyorum ve aradığım sıra hangi taraftaysa yalnızca oraya özyinelemeli olarak giriyorum. Bütün mesele x'in yeterince ortada olduğunu **garanti etmek**; rastgele seçim ortalamada iyidir ama en kötü durumda Θ(n²) verir. Garanti için elemanları beşerli gruplara ayırıyorum, her grubun medyanını alıyorum ve bu medyanların medyanını aynı algoritmayla özyinelemeli buluyorum. Bu seçim, x'ten büyük ve küçük tarafların her birinde en az 3(⌈n/10⌉ − 2) eleman bulunmasını garanti eder; yani özyinelemeye giden taraf girdinin kabaca %70'ini geçemez. Bağıntı T(n) ≤ T(n/5) + T(7n/10) + Θ(n) olur. Master Teoremi burada uygulanmaz çünkü alt problemler eşit boyutta değil; ama payların toplamı 9/10, yani birden küçük — bu, işin geometrik azalacağını söyler. T(n) ≤ c·n tahmin edip tümevarımla doğruluyorum ve yeterince büyük c için yürüyor. Sonuç Θ(n)."
 
-Grup boyutunun neden beş olduğu, bu makalenin en güzel tasarım dersidir. Üçerli gruplarla yapsaydın garanti edilen eleme oranı 1/3'e düşer ve bağıntı T(n) = T(n/3) + T(2n/3) + Θ(n) olurdu; payların toplamı **tam olarak 1** eder ve geometrik azalma kaybolur. O bağıntının çözümü Θ(n log n)'dir, yani baştaki sıralama fikrine geri dönmüş olursun. Sayıyla da görülür — aşağıdaki oranları iki bağıntıyı kendi kodumla çözerek hesapladım: üçerli grupla T(n)/n oranı 1000, 10⁴, 10⁵, 10⁶ ve 10⁷ için 4,5 → 8,1 → 11,6 → 15,2 → 18,8 diye her onlukta sabit bir miktar artar — logaritmik büyüme budur. Beşerli grupla aynı oranlar 3,6 → 5,7 → 7,0 → 7,9 → 8,6 diye artar ve 1/(1 − 0,9) = 10 sınırına yaklaşarak durur. Beş, bu eşitsizliği sağlayan en küçük tek sayıdır.
+Grup boyutunun neden beş olduğu ayrı bir tasarım dersidir. Üçerli gruplarla yapsaydın garanti edilen eleme oranı 1/3'e düşer ve bağıntı T(n) = T(n/3) + T(2n/3) + Θ(n) olurdu; payların toplamı **tam olarak 1** eder ve geometrik azalma kaybolur. O bağıntının çözümü Θ(n log n)'dir, yani baştaki sıralama fikrine geri dönmüş olursun. Sayıyla da görülür — aşağıdaki oranları iki bağıntıyı kendi kodumla çözerek hesapladım: üçerli grupla T(n)/n oranı 1000, 10⁴, 10⁵, 10⁶ ve 10⁷ için 4,5 → 8,1 → 11,6 → 15,2 → 18,8 diye her onlukta sabit bir miktar artar — logaritmik büyüme budur. Beşerli grupla aynı oranlar 3,6 → 5,7 → 7,0 → 7,9 → 8,6 diye artar ve 1/(1 − 0,9) = 10 sınırına yaklaşarak durur. Beş, bu eşitsizliği sağlayan en küçük tek sayıdır.
 
 ## Küçük girdilerde tabana devretmek
 

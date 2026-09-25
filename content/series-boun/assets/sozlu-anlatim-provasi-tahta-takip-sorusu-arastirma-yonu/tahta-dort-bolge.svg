@@ -8,8 +8,8 @@
   <text x="41" y="68" font-size="13" fill="var(--text)">Tanım ya da değişmez</text>
   <text x="41" y="90" font-size="13" fill="var(--text-muted)">Tek cümle, tam yazılır</text>
   <rect x="41" y="98" width="298" height="44" rx="4" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="55" y="118" font-size="13" fill="var(--text-muted)">her düğümde sol alt ağaç küçük,</text>
-  <text x="55" y="136" font-size="13" fill="var(--text-muted)">sağ alt ağaç büyük</text>
+  <text x="55" y="118" font-size="13" fill="var(--text-muted)">soldaki bütün anahtarlar düğümden</text>
+  <text x="55" y="136" font-size="13" fill="var(--text-muted)">küçük, sağdakiler büyük</text>
 
   <text x="380" y="68" font-size="13" fill="var(--text)">Maliyet muhasebesi</text>
   <text x="380" y="90" font-size="13" fill="var(--text-muted)">n nedir, kaç kez, hangi sınıf</text>

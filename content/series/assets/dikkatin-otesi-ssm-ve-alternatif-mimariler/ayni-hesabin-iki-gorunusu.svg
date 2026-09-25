@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 378" role="img" aria-label="İki bölmeli şema; aynı tek sayılık durum uzayı hesabı iki biçimde. Üst bölme yineleme: girdiler 1, 0 ve 2 sırayla üç kutuya girer; kutular h1 eşittir 1, h2 eşittir 0,5 ve h3 eşittir 2,25; kutular arasındaki oklar çarpı 0,5 ile etiketli, yani eski durum her adımda yarıya iner ve yeni girdi eklenir; bellek sabittir. Alt bölme evrişim: girdi satırı 1, 0, 2 ve altında ağırlık satırı 0,25, 0,5, 1; sonuç y3 eşittir 0,25 çarpı 1 artı 0,5 çarpı 0 artı 1 çarpı 2, yani 2,25, yinelemeyle aynı. En altta kayıt: iki görünüş ancak a, b ve c her adımda aynıysa eşdeğerdir; seçicilik a'yı girdiye bağlayınca tek bir ağırlık listesi kalmaz ve yerine paralel tarama geçer.">
+  <defs>
+    <marker id="ssm86-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">yineleme: her adım yalnızca bir önceki durumu kullanır</text>
+
+  <text x="135" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">girdi 1</text>
+  <text x="360" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">girdi 0</text>
+  <text x="585" y="48" font-size="13" text-anchor="middle" fill="var(--text-muted)">girdi 2</text>
+  <line x1="135" y1="53" x2="135" y2="68" stroke="var(--text-muted)" marker-end="url(#ssm86-ok)" />
+  <line x1="360" y1="53" x2="360" y2="68" stroke="var(--text-muted)" marker-end="url(#ssm86-ok)" />
+  <line x1="585" y1="53" x2="585" y2="68" stroke="var(--text-muted)" marker-end="url(#ssm86-ok)" />
+
+  <rect x="60" y="72" width="150" height="42" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="285" y="72" width="150" height="42" rx="6" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="510" y="72" width="150" height="42" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="135" y="98" font-size="14" text-anchor="middle" fill="var(--text)">h₁ = 1</text>
+  <text x="360" y="98" font-size="14" text-anchor="middle" fill="var(--text)">h₂ = 0,5</text>
+  <text x="585" y="98" font-size="14" text-anchor="middle" fill="var(--text)">h₃ = 2,25</text>
+
+  <line x1="212" y1="93" x2="280" y2="93" stroke="var(--text-muted)" marker-end="url(#ssm86-ok)" />
+  <line x1="437" y1="93" x2="505" y2="93" stroke="var(--text-muted)" marker-end="url(#ssm86-ok)" />
+  <text x="247" y="85" font-size="13" text-anchor="middle" fill="var(--text-muted)">× 0,5</text>
+  <text x="472" y="85" font-size="13" text-anchor="middle" fill="var(--text-muted)">× 0,5</text>
+
+  <text x="20" y="140" font-size="13" fill="var(--text-muted)">Bellek sabittir: h₃'ü bulmak için yalnızca h₂ gerekir; ama adımlar birbirini bekler.</text>
+
+  <line x1="20" y1="158" x2="700" y2="158" stroke="var(--border)" />
+
+  <text x="20" y="184" font-size="13" font-weight="bold" fill="var(--text)">evrişim: aynı ağırlık listesi bütün girdilere birden uygulanır</text>
+
+  <text x="30" y="224" font-size="13" fill="var(--text)">girdi</text>
+  <rect x="210" y="204" width="80" height="30" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="330" y="204" width="80" height="30" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <rect x="450" y="204" width="80" height="30" rx="4" fill="var(--surface)" stroke="var(--border)" />
+  <text x="250" y="224" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="370" y="224" font-size="13" text-anchor="middle" fill="var(--text)">0</text>
+  <text x="490" y="224" font-size="13" text-anchor="middle" fill="var(--text)">2</text>
+
+  <text x="30" y="270" font-size="13" fill="var(--text)">ağırlık (c · aᵏ · b)</text>
+  <rect x="210" y="250" width="80" height="30" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <rect x="330" y="250" width="80" height="30" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <rect x="450" y="250" width="80" height="30" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" />
+  <text x="250" y="270" font-size="13" text-anchor="middle" fill="var(--text)">0,25</text>
+  <text x="370" y="270" font-size="13" text-anchor="middle" fill="var(--text)">0,5</text>
+  <text x="490" y="270" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
+  <text x="560" y="248" font-size="13" fill="var(--text-muted)">üst üste çarp,</text>
+  <text x="560" y="266" font-size="13" fill="var(--text-muted)">sonra topla</text>
+
+  <text x="30" y="312" font-size="13" fill="var(--accent)">y₃ = 0,25 × 1 + 0,5 × 0 + 1 × 2 = 2,25 — yinelemeyle aynı sonuç, beklemeden.</text>
+
+  <text x="20" y="346" font-size="13" fill="var(--text-faint)">Eşdeğerlik koşulu: a, b ve c her adımda aynı. Seçicilik a'yı girdiye bağlayınca tek bir</text>
+  <text x="20" y="364" font-size="13" fill="var(--text-faint)">ağırlık listesi kalmaz; yerine paralel tarama geçer.</text>
+</svg>

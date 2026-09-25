@@ -12,7 +12,7 @@ tags:
   - isaretci
   - malloc
   - fork
-content_hash: sha256:4f9190cb0f7f263b54633c0b01d17b04c9361d44608400fb61ea8aad32fd01e0
+content_hash: sha256:4ad2e73b235bcfed8ec1c4c0105ad8b1ce8df26502323bc236386c87c205f67d
 classification_version: 1
 classification_batch: 12
 ---
@@ -22,7 +22,7 @@ classification_batch: 12
 
 C bu perdeyi kaldırır. Adres bir değerdir, bellek ayırmak bir kütüphane çağrısıdır, serbest bırakmak senin sorumluluğundur ve hata yapınca sonucu işletim sistemi makalelerinde tanımladığımız mekanizmalarla karşılaşırsın. Bu makalenin işi, işletim sistemi fazında soyut olarak kurduğumuz her kavramın kodda nasıl göründüğünü tek tek eşleştirmek.
 
-Resmî dayanak konusunda dürüst olmak gerekir. Bölümün sistem programlama dersinin katalog tanımı C dilini, işaretçileri ya da bellek düzenini **adlandırmıyor**; saydığı şeyler arasında bizim için belirleyici olan iki ifade var: "Unix environment and system calls" ve "assembly language programming". Yani bu makalenin resmî zemini dilin kendisi değil, **sistem çağrıları** tarafıdır; C ise o çağrıların görüldüğü pencere olduğu için seçilmiştir.
+Resmî dayanağın bir sınırı var. Bölümün sistem programlama dersinin katalog tanımı C dilini, işaretçileri ya da bellek düzenini **adlandırmıyor**; saydığı şeyler arasında bizim için belirleyici olan iki ifade var: "Unix environment and system calls" ve "assembly language programming". Yani bu makalenin resmî zemini dilin kendisi değil, **sistem çağrıları** tarafıdır; C ise o çağrıların görüldüğü pencere olduğu için seçilmiştir.
 
 ## Bir sürecin adres uzayı düzeni
 
@@ -136,11 +136,11 @@ Sanal bellek makalesinde adını anıp mekanizmasını açmadığımız çözüm
 
 ![Üst üste iki aşamalı bir şema. Birinci aşamanın başlığı fork hemen sonrası. Üç sıra var: üstte ebeveyn sayfa tablosunun s0, s1, s2 girdileri; ortada P0, P1, P2 adlı üç fiziksel sayfa; altta çocuk sayfa tablosunun s0, s1, s2 girdileri. Her iki tablodan da dikey çizgiler aynı fiziksel sayfalara iniyor. Sağdaki notlar paylaşılan sayfa sayısının üç, kopyalanan sayfa sayısının sıfır olduğunu ve her iki tabloda da girdilerin salt okunur olduğunu söylüyor. İki aşamanın arasındaki ayırıcı çizginin altında sıra yazılı: çocuk s1'e yazmaya kalkışır, donanım sayfa hatası doğurur, çekirdek yeni bir sayfa ayırıp içeriği kopyalar, girdiyi kopyaya yöneltir ve yazma iznini açar, komut baştan çalıştırılır. İkinci aşamanın başlığı ilk yazmadan sonra. Aynı üç sıra duruyor ama fiziksel sayfalar sırasına vurgulu renkte dördüncü bir sayfa, P3, eklenmiş. Ebeveynin üç girdisi hâlâ P0, P1 ve P2'ye iniyor; çocuğun s0 ve s2 girdileri de öyle, ama çocuğun vurgulanmış s1 girdisinden çıkan kalın bağlantı önce aşağı iniyor, sonra sağa uzanıyor ve en sonunda yukarı çıkarak P3'e varıyor. Sağdaki notlar paylaşılan sayfa sayısının iki, kopyalanan sayfa sayısının bir olduğunu ve çocuğun s1 girdisinin artık oku ve yaz izinli olduğunu söylüyor. En altta bir not: fork ardından exec kalıbında devralınan sayfaların çoğu hiç yazılmaz, o sayfalar hiç kopyalanmaz](assets/kopyalarken-yazma.svg "Şekil 2 — Kopyalarken yazma: paylaşılan sayfalar, yazma hatası ve tek sayfalık kopya")
 
-Bedava değildir. Her fiziksel sayfaya kaç sayfa tablosundan başvurulduğunun sayılması gerekir, çünkü sayfanın ne zaman serbest bırakılabileceği buna bağlıdır. Bu muhasebe bir iyileştirme de getirir: yazma hatası veren sayfaya yalnızca o sürecin tablosundan başvuruluyorsa kopyalamaya gerek yoktur, izni açmak yeterlidir.
+Bunun da bir maliyeti var. Her fiziksel sayfaya kaç sayfa tablosundan başvurulduğunun sayılması gerekir, çünkü sayfanın ne zaman serbest bırakılabileceği buna bağlıdır. Bu muhasebe bir iyileştirme de getirir: yazma hatası veren sayfaya yalnızca o sürecin tablosundan başvuruluyorsa kopyalamaya gerek yoktur, izni açmak yeterlidir.
 
 Kazancı asıl gösteren, en yaygın kalıptır: `fork` ardından `exec`. Çatallanmadan sonra birkaç sayfa yazılır, sonra `exec` ebeveynden devralınan belleğin neredeyse tamamını serbest bırakır. Kopyalarken yazma bu belleğin hiç kopyalanmamasını sağlar. Üstelik **saydamdır**: uygulamada tek satır değişmez.
 
-Bu mekanizma, işletim sistemi fazının üç parçasını aynı anda kullanır ve mülakatta bunu söylemek iyi bir işarettir. Sayfa tablosu ve izin bitleri bellek yönetimi makalesinden, sayfa hatasının bir tuzak olması ve işleyicinin işletim sisteminde durması sanal bellek makalesinden, "işi gerçekten gerekene kadar erteleme" fikri de dinamik programlama makalesindeki sakla-ya-da-yeniden-hesapla takasının tersi yönünden gelir.
+Bu mekanizma, işletim sistemi fazının üç parçasını aynı anda kullanır ve mülakatta bunu söylemek iyi bir işarettir. Sayfa tablosu ve izin bitleri bellek yönetimi makalesinden, sayfa hatasının bir tuzak olması ve işleyicinin işletim sisteminde durması sanal bellek makalesinden gelir; "işi gerçekten gerekene kadar erteleme" fikri de aynı makaledeki talep sayfalamanın fikridir — orada sayfa ancak erişildiğinde getiriliyordu, burada ancak yazıldığında kopyalanıyor.
 
 ## Mülakatta nasıl görünür
 

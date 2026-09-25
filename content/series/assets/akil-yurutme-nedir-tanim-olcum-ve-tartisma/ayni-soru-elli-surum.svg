@@ -1,5 +1,6 @@
-<svg viewBox="0 0 720 332" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 354" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Tek bir puan yerine bir dağılım</text>
+  <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">Gemma2-9b-it, elli şablon sürümü</text>
 
   <line x1="243" y1="78" x2="423" y2="78" stroke="var(--cool)" stroke-width="1"/>
   <line x1="243" y1="72" x2="243" y2="84" stroke="var(--cool)" stroke-width="1"/>
@@ -34,4 +35,5 @@
   <line x1="16" y1="270" x2="704" y2="270" stroke="var(--border)" stroke-width="1"/>
   <text x="16" y="292" font-size="13" text-anchor="start" fill="var(--text-muted)">çözüm adımları elli sürümde birebir aynı; değişen yalnızca isimler ve sayılar</text>
   <text x="16" y="314" font-size="13" text-anchor="start" fill="var(--text-faint)">özgün kümenin puanı dağılımın merkezinde değil, sağ kuyruğunda duruyor</text>
+  <text x="16" y="336" font-size="13" text-anchor="start" fill="var(--text-faint)">çubuk boyları şematiktir; ortalama, sapma ve özgün puan ölçülmüş değerlerdir</text>
 </svg>

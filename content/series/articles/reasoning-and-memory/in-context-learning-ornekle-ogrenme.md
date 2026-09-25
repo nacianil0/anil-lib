@@ -12,7 +12,7 @@ tags:
   - gosterim
   - gorev-tanima
   - many-shot
-content_hash: sha256:960a10c9c8d9dfe77a10696cba14fa7b8888c7566c4996fc16aff8d8e16e3264
+content_hash: sha256:52cb462d5947a1dd1605f63e2a4336ecab322f5d93f8a8643e8ae6bf7808d9ff
 classification_version: 1
 classification_batch: 5
 ---
@@ -30,7 +30,7 @@ En iyi başlangıç, alanın sezgisini bir kerede sarsan ölçüm. Sewon Min ve 
 
 Beklenti açıktı. Denetimli eğitimde doğru eşleştirilmiş veri her şeydir; yanlış etiketlerle eğitilen bir model yanlış öğrenir. Ölçülen ise şu oldu: rastgele etiketler performansı yalnızca **çok az** düşürüyor. GPT-3'ün de aralarında bulunduğu on iki modelde düşüş mutlak 0 ile 5 puan arasında kaldı; sınıflandırma görevlerinde ortalama 2,6 puan, çoktan seçmeli görevlerde 1,7 puan.
 
-Daha da rahatsız edici olan ayrıntı: gösterimlerin **hiçbirinin** etiketi doğru olmadığında bile, örneksiz istemin oldukça üstünde kalınıyor. Ölçülen üç düzende, örnek koymanın sağladığı kazancın yüzde 92'si, yüzde 100'ü ve yüzde 97'si korunuyordu. Yani "yanlış cevaplarla dolu bir örnek listesi", "hiç örnek yok"tan çok daha iyi.
+Bulgu daha da ileri gidiyor: gösterimlerin **hiçbirinin** etiketi doğru olmadığında bile, örneksiz istemin oldukça üstünde kalınıyor. Ölçülen üç düzende, örnek koymanın sağladığı kazancın yüzde 92'si, yüzde 100'ü ve yüzde 97'si korunuyordu. Yani "yanlış cevaplarla dolu bir örnek listesi", "hiç örnek yok"tan çok daha iyi.
 
 Örnek sayısının etkisi de sezgiye aykırı. Dört gösterimle örneksiz düzenin çok üstüne çıkılıyor, ama sekizden sonra eğri düzleşiyor: ne doğru etiketlerle ne rastgele etiketlerle kayda değer bir iyileşme geliyor. Oysa denetimli eğitimde, özellikle küçük veri kümelerinde, örnek sayısı arttıkça başarı hızla yükselir. Bu farkın kendisi bir ipucu: gösterimlerin taşıdığı şey, denetimli eğitimin veriden aldığı şeyle aynı cinsten değil.
 
@@ -48,7 +48,7 @@ Aynı çalışma bu cevabı tahmin olarak bırakmadı, parçalara ayırdı. Bir 
 
 Şekil 1'deki sıralama makalenin çekirdeği. **Girdi dağılımı** bozulduğunda — gösterimlerdeki cümleler görevin verisinden değil, ilgisiz bir derlemden çekildiğinde — düşüş 3 ila 16 puan arasında. **Etiket kümesi** bozulduğunda — gerçek etiketler yerine rastgele İngilizce kelimeler kullanıldığında — modelin etiketi kendisinin üretmek zorunda olduğu düzende düşüş 5 ila 16 puan. **Biçim** bozulduğunda, yani etiketler tamamen kaldırılıp yalnızca girdiler ya da yalnızca etiketler art arda dizildiğinde, sonuç örneksiz istemle aynı düzeye ya da altına iniyor.
 
-Buradan güzel bir ters okuma çıkıyor. Biçim korunduğu sürece, taşınan bilginin çoğu ayakta kalıyor: ilgisiz cümleleri doğru etiket kümesinden rastgele etiketlerle eşleştirmek, örnek koymanın kazancının yüzde 95'ini koruyabiliyor; gerçek girdileri rastgele İngilizce kelimelerle eşleştirmek yüzde 75 ile 87 arasında bir korunma sağlıyor. Aynı bilgiyi biçimi bozarak vermek ise hiçbir şey kazandırmıyor.
+Aynı tabloyu tersinden okumak da mümkün. Biçim korunduğu sürece, taşınan bilginin çoğu ayakta kalıyor: ilgisiz cümleleri doğru etiket kümesinden rastgele etiketlerle eşleştirmek, örnek koymanın kazancının yüzde 95'ini koruyabiliyor; gerçek girdileri rastgele İngilizce kelimelerle eşleştirmek yüzde 75 ile 87 arasında bir korunma sağlıyor. Aynı bilgiyi biçimi bozarak vermek ise hiçbir şey kazandırmıyor.
 
 Yani gösterim listesi bir ders değil, bir **tarif**. "Şu türden bir girdi gelecek, şu kümeden bir etiket üreteceksin, bu biçimde." 22\. makaledeki sonucun mekanizması tam olarak burada: biçim taşıyıcının kendisiyse, biçimi değiştirmenin sonucu oynatması şaşırtıcı değil.
 
@@ -76,7 +76,7 @@ Rishabh Agarwal ve arkadaşlarının NeurIPS 2024'te sunduğu çalışma, isteme
 
 Çeviri sonuçları en okunaklı olanı. İngilizceden Bemba diline çeviride, tek örnekli isteme kıyasla 997 örnekli istem göreli yüzde 15,3 iyileşme veriyor; Kürtçede yüzde 4,5. O 997 örnek yaklaşık 85.000 token tutuyor — yani bu rejim, ancak 21\. makalede konuştuğumuz uzun pencerelerle mümkün.
 
-Asıl çarpıcı karşılaştırma ise başka. Aynı çalışma, aynı örneklerle **denetimli ince ayar** yapmakla bu örnekleri isteme koymayı yan yana ölçtü. Puanlar, 6\. makalede tanıştığımız BLEU ile aynı aileden bir cetvelden geliyor: chrF2++, üretilen çeviri ile referans çeviri arasındaki karakter ve kelime örtüşmesini ölçer, yüksek olan iyidir.
+Çalışmanın bu makale açısından en önemli karşılaştırması başka. Aynı çalışma, aynı örneklerle **denetimli ince ayar** yapmakla bu örnekleri isteme koymayı yan yana ölçtü. Puanlar, 6\. makalede tanıştığımız BLEU ile aynı aileden bir cetvelden geliyor: chrF2++, üretilen çeviri ile referans çeviri arasındaki karakter ve kelime örtüşmesini ölçer, yüksek olan iyidir.
 
 ![İki dil için üç sütunlu bir karşılaştırma çubuk grafiği. Bembada taban model 28,3, aynı 997 örnekle denetimli ince ayar 47,7, aynı örnekler isteme konduğunda 47,2 puan; Kürtçede taban 39,5, ince ayar 46,5, isteme konan örnekler 44,0 puan veriyor. İnce ayar ile örnekle öğrenmenin çubukları her iki dilde de birbirine çok yakındır.](assets/cok-ornekli-ve-ince-ayar.svg "Şekil 3 — Aynı örnekler, iki ayrı yol")
 
@@ -94,7 +94,7 @@ Bunun bedeli var ve çalışma bunu da kaydediyor: örnek sayısı arttıkça ç
 
 ## Mekanizma açıklamaları ve durdukları yer
 
-Peki içeride ne oluyor? Burada dürüst cevap şu: kapanmış bir açıklama yok, iki ciddi öneri ve bu önerilere yöneltilmiş ciddi bir itiraz var.
+Peki içeride ne oluyor? Bugünkü durum şu: kapanmış bir açıklama yok, iki ciddi öneri ve bu önerilere yöneltilmiş ciddi bir itiraz var.
 
 **Birinci öneri: örtük Bayesçi çıkarım.** Sang Michael Xie, Aditi Raghunathan, Percy Liang ve Tengyu Ma'nın ICLR 2022'de sunduğu çalışma, örnekle öğrenmeyi bir çıkarım işi olarak kuruyor. Ön eğitim belgeleri uzun erimli tutarlılık taşır: bir metnin devamını doğru tahmin etmek için modelin, o belgenin hangi "kavram" etrafında yazıldığını örtük olarak kestirmesi gerekir. Gösterimler de aynı işi yapar; model onlara bakıp gizli görevi kestirir ve devamını o kestirime göre üretir. Bu çerçeve, önceki bölümlerdeki bulgularla iyi uyuşuyor: gösterimlerin işi bir kavramı **işaret etmek**. Sınırı ise açık — kanıt, ön eğitim dağılımının belirli bir matematiksel biçimde kurulduğu bir kuramsal düzenekten geliyor, gerçek bir dil modelinin içine bakmaktan değil.
 
@@ -110,7 +110,7 @@ Bir yandan bu, öğrenmenin bilinen tanımına uymuyor. Model hiçbir şey sakla
 
 Öte yandan, örnek sayısı arttıkça ön eğitim eğilimlerinin yenilebildiğini gördük; soyut simgelerle kurulmuş, ön eğitimde hiç görülmemiş bir eşlemenin ölçekle çıkarılabildiğini gördük. Bu, "yalnızca hatırlama"dan fazlası.
 
-Dürüst formülasyon şu olabilir: örnekle öğrenme, tek bir ileri geçişin içinde, kanıta bakarak davranışı ayarlamaktır. Ayarlanan şey davranıştır, edinilen şey bilgi değildir — 19\. makaledeki ayrımla çelişmez, onu tamamlar. Ve kalıcı değildir; kalıcılık ancak ağırlığa yazmakla ya da bilgiyi her seferinde pencereye yeniden koymakla gelir.
+Ölçümlerin desteklediği formülasyon şu olabilir: örnekle öğrenme, tek bir ileri geçişin içinde, kanıta bakarak davranışı ayarlamaktır. Ayarlanan şey davranıştır, edinilen şey bilgi değildir — 19\. makaledeki ayrımla çelişmez, onu tamamlar. Ve kalıcı değildir; kalıcılık ancak ağırlığa yazmakla ya da bilgiyi her seferinde pencereye yeniden koymakla gelir.
 
 18\. makaledeki bir bulgu bu ayrımı somutlaştırıyor. Ağırlıklara "A, B'dir" yönünde yazılmış bir ilişki ters yönde sorulduğunda çıkarılamıyordu; ama aynı ilişki **bağlamda** verildiğinde model tersini çıkarabiliyordu. Bağlamdaki bilgi ile ağırlıktaki bilgi aynı biçimde erişilebilir değil: biri dikkat yoluyla önünde duruyor, öbürü eğitim sırasında hangi yönde kurulduysa o yönde çalışıyor. Örnekle öğrenmenin gücü de sınırı da bu farktan doğuyor.
 
@@ -124,7 +124,7 @@ Bütün bunlardan çıkan pratik kurallar kısa ve çoğu sezgiye aykırı.
 
 **Biçimi sabit tut.** Girdi–etiket çiftlerinin düzeni taşıyıcının kendisi. Aynı biçimi bütün gösterimlerde ve son girdide birebir koru.
 
-**Etiketlerin doğruluğunu önemseme lüksüne kapılma.** "Rastgele etiketler de çalışıyor" bulgusu küçük modeller ve az örnek için geçerliydi. Büyük modelde ve çok örnekle etiketlerin doğruluğu geri geliyor.
+**Etiketlerin doğruluğunu önemsememe lüksüne kapılma.** "Rastgele etiketler de çalışıyor" bulgusu küçük modeller ve az örnek için geçerliydi. Büyük modelde ve çok örnekle etiketlerin doğruluğu geri geliyor.
 
 **Sırayı ölç, tahmin etme.** 22\. makalede gördüğümüz sıra duyarlılığı burada da geçerli. Aynı örnekler, farklı sırada, farklı sonuç verir; hangi sıranın iyi olduğunu ancak cevabı bilinen bir kümede ölçerek bulabilirsin.
 

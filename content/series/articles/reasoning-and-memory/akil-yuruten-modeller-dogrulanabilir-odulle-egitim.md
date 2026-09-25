@@ -5,16 +5,18 @@ slug: akil-yuruten-modeller-dogrulanabilir-odulle-egitim
 category: reasoning-and-memory
 level: intermediate
 reading_order: 34
-summary: "Post-training haritasının dördüncü durağını açar: doğru cevabın makineyle denetlenebildiği alanlarda ödülü insan yargısı yerine bir kuralın vermesini, kendi çözümlerinden öğrenmenin en sade biçiminden grup göreli politika optimizasyonuna uzanan mekanizmayı, hakemli bir koşuda ölçülen kazancı ve bu eğitimin modelin yetenek sınırını genişletip genişletmediği tartışmasını kurar."
+summary: "Post-training haritasının dördüncü durağını açar: doğru cevabın makineyle denetlenebildiği alanlarda ödülü insan yargısı yerine bir kuralın vermesini, kendi çözümlerinden öğrenmenin en sade biçiminden grup göreli politika optimizasyonuna uzanan mekanizmayı, hakemli bir koşuda ölçülen kazancı ve bu eğitimin modelin yetenek sınırını genişletip genişletmediği tartışmasını iki tarafın ölçümüyle kurar."
 tags:
   - dogrulanabilir-odul
   - pekistirmeli-ogrenme
   - post-training
   - dogrulayici
   - yetenek-siniri
-content_hash: sha256:f55cb1566b699454dcfe1322cbc9b903bd676728086b52711b578189351c6ba2
+content_hash: sha256:34b4a915e0b6433543daff9269733786f82c03e55a7639a9af83292cb2277e09
 classification_version: 1
 classification_batch: 7
+revised_at: "2026-09-25"
+revision_note: "Pekiştirmeli öğrenmenin yetenek sınırı tartışmasına karşı tarafın ölçümü ve kanıt sınırları eklendi; 'kural kandırılamaz' etiketi ve kapsama şeklinin ölçeği düzeltildi."
 ---
 ## Haritanın kenarındaki durak
 
@@ -46,15 +48,15 @@ Sağduyu sütununun son satırı dikkat çekici: 72,5 puan, otuz kat büyük bir
 
 Bu tabloda iki ders var. Birincisi, modelin kendi ürettiği ara adımlar bir eğitim verisi kaynağı olabiliyor — 12\. makaledeki sentetik veri fikrinin doğrulama filtresiyle sıkılaştırılmış hâli. İkincisi, filtrenin ucuz olması bütün mekanizmanın ön koşulu.
 
-Düzenekte bir de dürüstlük ayrıntısı var. Model bir soruyu hiçbir denemede çözemezse, ona doğru cevap **ipucu olarak** verilip bir gerekçe yazması isteniyor; üretilen gerekçe sonra ipucu silinerek eğitime katılıyor. Tablodaki son satırın kazancı buradan geliyor. Bu adım, çözülemeyen soruların tamamen boşa gitmesini önlüyor ama bir riski de beraberinde getiriyor: cevabı bilerek yazılmış bir gerekçe, cevaba gerçekten götüren bir gerekçe olmak zorunda değil. 31\. makaledeki sadakat sorusu, bu kez eğitim verisinin içine yerleşiyor.
+Düzenekte bir ayrıntı daha var ve kendi bedelini taşıyor. Model bir soruyu hiçbir denemede çözemezse, ona doğru cevap **ipucu olarak** verilip bir gerekçe yazması isteniyor; üretilen gerekçe sonra ipucu silinerek eğitime katılıyor. Tablodaki son satırın kazancı buradan geliyor. Bu adım, çözülemeyen soruların tamamen boşa gitmesini önlüyor ama bir riski de beraberinde getiriyor: cevabı bilerek yazılmış bir gerekçe, cevaba gerçekten götüren bir gerekçe olmak zorunda değil. 31\. makaledeki sadakat sorusu, bu kez eğitim verisinin içine yerleşiyor.
 
 ## Ödülü kim verir
 
 Şimdi 13\. makaleye geri dönelim. Orada ödülü, insan tercihlerinden eğitilmiş bir **ödül modeli** veriyordu ve bunun bilinen bir hastalığı vardı: aşırı optimizasyon. Vekil ölçü fazla kovalanınca gerçek ölçüt bozuluyordu.
 
-Doğrulanabilir ödül bu hastalığı kökünden kesiyor, ama yalnızca belirli alanlarda. Bir matematik probleminin cevabı belirli bir biçimde isteniyorsa, doğruluk bir dize karşılaştırmasıyla sınanabilir. Bir programlama sorusunda cevap bir test takımından geçer ya da geçmez. İki durumda da puanı bir model değil, bir kural veriyor.
+Doğrulanabilir ödül bu hastalığın ödül modeline özgü kısmını kesiyor, ama yalnızca belirli alanlarda. Bir matematik probleminin cevabı belirli bir biçimde isteniyorsa, doğruluk bir dize karşılaştırmasıyla sınanabilir. Bir programlama sorusunda cevap bir test takımından geçer ya da geçmez. İki durumda da puanı bir model değil, bir kural veriyor.
 
-![İki yollu bir karşılaştırma şeması. Solda modelin ürettiği cevap, insan tercihlerinden eğitilmiş bir ödül modeline girer ve çıkışta öğrenilmiş bir puan üretilir; altında bu puanın bir vekil ölçü olduğu ve fazla kovalanınca bozulabildiği yazılıdır. Sağda aynı cevap bir kurala girer: matematikte cevap anahtarıyla karşılaştırma, kodda test takımından geçme. Çıkışta deterministik bir doğru ya da yanlış vardır ve altında bu ölçütün kandırılamayacağı ama yalnızca doğrulanabilir alanlarda kurulabildiği belirtilir.](assets/odul-modeli-ve-kural.svg "Şekil 1 — Puanı bir model mi veriyor, bir kural mı?")
+![İki yollu bir karşılaştırma şeması. Solda modelin ürettiği cevap, insan tercihlerinden eğitilmiş bir ödül modeline girer ve çıkışta öğrenilmiş bir puan üretilir; altında bu puanın bir vekil ölçü olduğu ve fazla kovalanınca bozulabildiği yazılıdır. Sağda aynı cevap bir kurala girer: matematikte cevap anahtarıyla karşılaştırma, kodda test takımından geçme. Çıkışta deterministik bir doğru ya da yanlış vardır; altında kandırılacak öğrenilmiş bir vekil olmadığı ama kuralın yalnızca sonucu sınadığı ve yalnızca doğrulanabilir alanda kurulabildiği belirtilir.](assets/odul-modeli-ve-kural.svg "Şekil 1 — Puanı bir model mi veriyor, bir kural mı?")
 
 Şekil 1'deki ayrım yalnızca kuramsal değil. DeepSeek-R1 çalışmasının açık tercihi bu: akıl yürütme görevlerinde ne sonuç tabanlı ne de süreç tabanlı, **sinir ağı tabanlı** bir ödül modeli kullanılıyor. Gerekçe doğrudan yazılmış — büyük ölçekli pekiştirmeli öğrenmede öğrenilmiş ödül modelleri ödül kandırmasına açık hâle geliyor. Kural tabanlı ödül iki bileşenden oluşuyor ve ikisi eşit ağırlıklı: cevabın doğruluğu ve çıktının istenen biçimde olması.
 
@@ -119,7 +121,7 @@ Bir de güvenlik tarafı var ve çalışma bunu kendi etik bölümünde açıkç
 
 Yang Yue ve arkadaşlarının NeurIPS 2025'te sunduğu çalışma bu soruyu 33\. makaledeki araçla ölçüyor: kapsama. Aynı sorulara hem temel model hem pekiştirmeli öğrenmeden geçmiş sürümü, artan deneme sayılarıyla çalıştırıyorlar.
 
-![Yatay ekseni deneme sayısı, dikey ekseni kapsama olan bir eğri şeması. İki eğri vardır. Pekiştirmeli öğrenmeden geçmiş modelin eğrisi az denemede belirgin biçimde yukarıda başlar ama erken düzleşir. Temel modelin eğrisi düşük başlar, daha dik yükselir ve orta bölgede öbürünü keserek üstüne çıkar. Kesişme noktası işaretlenmiştir. Şeklin altında düşük deneme sayısında eğitimin kazandırdığı, yüksek deneme sayısında temel modelin daha çok soruyu çözebildiği yazılıdır.](assets/kapsama-egrileri.svg "Şekil 3 — Az denemede kazanç, çok denemede kayıp")
+![Yatay ekseni deneme sayısı, dikey ekseni kapsama olan bir eğri şeması. İki eğri vardır. Pekiştirmeli öğrenmeden geçmiş modelin eğrisi az denemede belirgin biçimde yukarıda başlar ama erken düzleşir. Temel modelin eğrisi düşük başlar, daha dik yükselir ve orta bölgede öbürünü keserek üstüne çıkar. Yatay eksen 1, 16, 256 ve 1024 işaretli logaritmik bir ölçektir; kesişme noktası 16 ile 256 arasında işaretlenmiştir. Şeklin altında düşük deneme sayısında eğitimin kazandırdığı, yüksek deneme sayısında temel modelin daha çok soruyu çözebildiği ve eğrilerin biçiminin şematik olduğu, kesişmenin yerinin kümeye ve modele göre değiştiği yazılıdır.](assets/kapsama-egrileri.svg "Şekil 3 — Az denemede kazanç, çok denemede kayıp")
 
 Şekil 3'teki kesişme çalışmanın merkezi bulgusu. Tek denemede pekiştirmeli öğrenmeden geçmiş model açık ara önde; deneme sayısı onlara, yüzlere çıktığında temel model yetişiyor ve geçiyor. Eğitim ilerledikçe bu daha da belirginleşiyor: bir düzenekte ilk deneme başarısı 26,1'den 42,5'e çıkarken, iki yüz elli altı denemedeki kapsama düşüyor.
 
@@ -129,7 +131,11 @@ Yorum şu: pekiştirmeli öğrenme, doğru yolların olasılığını artırıyo
 
 Aynı çalışma bir de karşıt örnek veriyor. Daha güçlü bir modelin uzun çözümleriyle eğitilen küçük bir model — yani **damıtma** yoluyla — temel modelin eğrisinin belirgin biçimde üstüne çıkıyor. Yani sınırı aşmak mümkün; ama bunu yapan şey öğretmenin getirdiği yeni kalıplar, modelin kendi keşfi değil.
 
-> **Kendini yokla:** Kapsama ölçüsünün pratikte doğrudan kullanılamamasına rağmen bu tartışmanın merkezinde durmasının sebebi ne?
+Tartışma burada kapanmıyor, çünkü karşı tarafın da ölçümü var. Mingjie Liu ve arkadaşlarının yine NeurIPS 2025'te sunduğu çalışma, pekiştirmeli öğrenmeyi çok daha uzun süre — önceki çalışmaların tipik olarak birkaç yüz adımına karşı iki binden fazla adım — ve matematik, kod, fen, mantık bulmacaları ile talimata uymayı kapsayan geniş bir görev karışımıyla koşturuyor. Sürüklenmeyi sınırlamak için KL cezası tutuluyor, ama cezanın ölçüldüğü referans model eğitim boyunca aralıklarla güncel politikayla değiştiriliyor; ceza böylece modeli başlangıç noktasına zincirlemiyor. Bu düzende 1,5 milyar parametreli bir model, temel modelin deneme sayısı ne olursa olsun hiç çözemediği bazı bulmaca görevlerinde belirgin bir başarıya ulaşıyor ve kapsama eğrileri pek çok görevde temel modelin üstünde kalıyor.
+
+İki sonuç yan yana konduğunda çelişkiden çok bir koşul çıkıyor. Aynı çalışmanın kendi ölçümüne göre sınırın genişlemesi, temel modelin başlangıçta zayıf olduğu görevlerde yoğunlaşıyor; temel modelin zaten güçlü olduğu görevlerde — özellikle matematikte — genişlik ya değişmiyor ya da daralıyor, yani Yue ve arkadaşlarının gördüğü tablo. Kanıtın gücü de iki tarafta sınırlı. Daralmayı gösteren ölçümler, karşı tarafın vurguladığı gibi görece kısa eğitim koşularına dayanıyor; karşı örnek ise tek bir küçük modelde ve temel modelin bazı bulmacalardaki başarısızlığı kısmen biçim hatalarından kaynaklanıyor. Bugün söylenebilecek olan, pekiştirmeli öğrenmenin yeni yetenek ekleyip eklemediğinin tek bir cevabı olmadığı; cevabın temel modelin o görevdeki yetkinliğine, eğitimin süresine ve görev karışımına bağlı göründüğü.
+
+> **Kendini yokla:** Kapsama ölçüsü çoğu ürün düzeninde doğrudan başarıya çevrilemiyor, çünkü doğru adayı seçecek bir sınayıcı yok. Buna rağmen bu tartışmanın merkezinde durmasının sebebi ne?
 
 Çünkü iki farklı soruyu ayırıyor. "Hangi model daha kullanışlı" sorusunun cevabı ilk denemedeki başarıdır ve orada eğitilmiş model kazanır. "Eğitim yeni bir yetenek ekledi mi" sorusunun cevabı ise sınırdadır ve onu ancak çok sayıda denemeyle görebilirsin. Ürün kararı birinciye, bilimsel iddia ikincisine bakar.
 
@@ -140,6 +146,8 @@ Aynı çalışma bir de karşıt örnek veriyor. Daha güçlü bir modelin uzun 
 **Sonuç ödülü gerekçeyi denetlemez.** Doğru cevaba yanlış yoldan varan çözüm de tam puan alır.
 
 **Kazanç ilk denemede ölçülür, sınır çok denemede.** İki ölçü farklı soruları yanıtlıyor; birini öbürünün yerine kullanmak yanıltıcı.
+
+**Sınırın genişleyip genişlemediği hâlâ açık bir soru.** Temel modelin zaten güçlü olduğu görevlerde sınır daralıyor; uzun ve çeşitli bir eğitimde, temel modelin zayıf olduğu görevlerde genişleyebiliyor.
 
 **Akıl yürütme eğitimi genel yardımseverliği getirmez.** Ölçülen tabloda tercih kümelerindeki sıçrama ayrı aşamalardan geliyor.
 
@@ -158,3 +166,4 @@ Bu makalede ödülü veren şey bir kuraldı ve kuralın kurulabildiği yer dard
 - Zelikman, E., Wu, Y., Mu, J. & Goodman, N. D. (2022). *STaR: Bootstrapping Reasoning With Reasoning*. NeurIPS 2022. [Bağlantı](https://papers.nips.cc/paper_files/paper/2022/hash/639a9a172c044fbb64175b5fad42e9a5-Abstract-Conference.html)
 - DeepSeek-AI (Guo, D., Yang, D., Zhang, H. ve ark.) (2025). *DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning*. Nature, 645, s. 633–638. [Bağlantı](https://www.nature.com/articles/s41586-025-09422-z)
 - Yue, Y., Chen, Z., Lu, R., Zhao, A., Wang, Z., Yue, Y., Song, S. & Huang, G. (2025). *Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?*. NeurIPS 2025. [Bağlantı](http://papers.nips.cc/paper_files/paper/2025/hash/537d5aa768c2d534016a4d06f87bc8fb-Abstract-Conference.html)
+- Liu, M., Diao, S., Lu, X., Hu, J., Dong, X., Choi, Y., Kautz, J. & Dong, Y. (2025). *ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models*. NeurIPS 2025. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2025/hash/1a22b912945fb7c0bdd079e792b31b6f-Abstract-Conference.html)

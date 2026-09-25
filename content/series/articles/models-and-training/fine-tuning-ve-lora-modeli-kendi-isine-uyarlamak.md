@@ -12,9 +12,11 @@ tags:
   - dusuk-rank
   - parametre-verimli-uyarlama
   - qlora
-content_hash: sha256:82e7a3642c680193bdcfdd5a26aa750fddd56ceac97f606350f7d1aa382cd570
+content_hash: sha256:472048aa0268a07112435218b83efa7f92d06109a4d77993c9c7aee6664e1457
 classification_version: 1
 classification_batch: 4
+revised_at: "2026-09-25"
+revision_note: "Rankın ne demek olduğu 3×3'lük bir rank-1 örnekle adım adım anlatıldı; ince ayarla bilgi yükleme sonucu ölçümle uyumlu biçimde yumuşatıldı."
 ---
 ## Sabit modelin sonu
 
@@ -22,7 +24,7 @@ Son dört makale boyunca modeli sabit varsaydık. Ağırlıklar ön eğitimde ya
 
 11\. makalede ince ayarı tanımlamıştık: eğitilmiş bir modeli daha küçük ve amaca dönük bir veriyle bir kez daha eğitmek. Orada bu işlemin post-training'in içinde de dışında da kullanıldığını, kendi verinle kendi işine uyarlamanın da bir ince ayar olduğunu söyleyip verimli biçimini ileriye bırakmıştık. Randevu burada.
 
-Soru iki katmanlı. Birincisi mekanik: milyarlarca parametreli bir modeli, hepsini yeniden yazmadan uyarlamak nasıl mümkün oluyor? İkincisi dürüst: 17\. ve 18\. makale ince ayarın bilgi yüklemek için kötü bir kanal olduğunu gösterdiyse, ucuzlatılmış bir ince ayar bu sınırı aşabilir mi?
+Soru iki katmanlı. Birincisi mekanik: milyarlarca parametreli bir modeli, hepsini yeniden yazmadan uyarlamak nasıl mümkün oluyor? İkincisi sınırla ilgili: 17\. ve 18\. makale ince ayarın bilgi yüklemek için kötü bir kanal olduğunu gösterdiyse, ucuzlatılmış bir ince ayar bu sınırı aşabilir mi?
 
 ## Tam ince ayarın faturası
 
@@ -53,6 +55,8 @@ LoRA'nın cevabı tam olarak budur ve tek bir cümleye sığar: ağırlık matri
 7\. makalede bir Transformer bloğunun matrislerini saymıştık. Diyelim model boyutu 4.096 ve elimizde bir kare ağırlık matrisi var. Bu matris 4.096 × 4.096 = 16.777.216, yani yaklaşık 16,8 milyon parametre taşır. Tam ince ayarda bu sayıların hepsi güncellenir.
 
 LoRA bu matrise hiç dokunmaz. Onun yerine yanına iki matris koyar: biri 8 satır ve 4.096 sütunlu, öbürü 4.096 satır ve 8 sütunlu. Modelin kullandığı ağırlık artık donmuş matrisle bu ikisinin çarpımının toplamıdır ve eğitilen tek şey iki küçük matristir. Buradaki 8 sayısı eklenen güncellemenin **rankıdır** ve kaç yönde değişime izin verdiğimizi söyler.
+
+"Kaç yönde" ifadesini küçük bir örnekte açalım, çünkü LoRA'nın hem gücü hem sınırı buradan çıkıyor. Model boyutu 4.096 yerine 3, rank da 1 olsun. O zaman iki küçük matris birer vektöre iner: 8 × 4.096'lık matrisin yerini 1 × 3'lük bir satır, *a* = (0, 1, 1) alır; 4.096 × 8'lik matrisin yerini 3 × 1'lik bir sütun, *b* = (1, 2, 0). Çarpımları 3 × 3'lük bir güncelleme matrisidir ve her satırı *a*'nın bir katıdır: birinci satır (0, 1, 1), ikincisi (0, 2, 2), üçüncüsü (0, 0, 0). Dokuz sayılık bir matris, ama arkasında yalnızca 3 + 3 = 6 serbest sayı var. Güncellemenin bir girdiye ne yaptığına bakalım. Girdi önce *a* ile çarpılıp tek bir sayıya iner. Girdi (1, 0, 0) ise bu sayı 0 × 1 + 1 × 0 + 1 × 0 = 0'dır ve güncelleme bu girdiyi hiç görmez. Girdi (0, 1, 0) ise sayı 1 olur ve çıktıya 1 × *b* = (1, 2, 0) eklenir. Yani rank 1 bir güncelleme her girdiyi önce tek bir yöne izdüşürür, sonra çıktıya hep aynı yönü, *b*'yi, o kadar ekler. Rank 8'de aynı şey sekiz yön için olur: girdi sekiz sayıya sıkıştırılır, çıktıya sekiz sütunun bir karışımı eklenir. Güncelleme ne kadar eğitilirse eğitilsin bu sekiz yönlük darboğazın dışına çıkamaz.
 
 Sayıyı yapalım. Her iki küçük matris de 8 × 4.096 = 32.768 parametre taşır; toplam 65.536. Oran: 65.536 ÷ 16.777.216 = 0,0039, yani binde 3,9. Formülü sadeleştirmek de kolay: eğitilen parametrelerin oranı, rankın iki katının model boyutuna bölümüdür — matrisin kendisi model boyutunun karesiyle büyürken ek maliyet doğrusal büyür, dolayısıyla model büyüdükçe oran **küçülür**.
 
@@ -118,19 +122,19 @@ Aynı çalışmanın en çok alıntılanan cümlesini ise 16\. makalenin disipli
 
 ## Düşük rank yeni bilgi ekler mi
 
-Geriye makalenin dürüst sorusu kalıyor. 17\. makale ince ayarın uydurmayı artırabildiğini, 18\. makale olgusal bilginin ön eğitimde ve tekrarla yazıldığını göstermişti. LoRA bu tabloyu değiştiriyor mu?
+Geriye makalenin başta sorduğu ikinci soru kalıyor. 17\. makale ince ayarın uydurmayı artırabildiğini, 18\. makale olgusal bilginin ön eğitimde ve tekrarla yazıldığını göstermişti. LoRA bu tabloyu değiştiriyor mu?
 
 Oded Ovadia ve arkadaşlarının EMNLP 2024'te yayımladığı çalışma bunu doğrudan ölçtü. Modellerin eğitim kesim tarihinden sonraki bir döneme ait, 910 çoktan seçmeli sorudan oluşan bir küme hazırladılar — yani modellerin kesinlikle bilmediği olgular. Sonra aynı bilgiyi iki ayrı yoldan verdiler: ince ayarla ağırlıklara yazarak ve üretim anında metni modelin önüne koyarak. İnce ayar tarafında düşük rank kullanmadılar; bütün parametreleri serbest bırakıp ilgili belgeler üzerinde yukarıda tanımladığımız sürekli ön eğitimi yaptılar.
 
-Sayılar keskin. 7 milyar parametreli Mistral, hiçbir müdahale olmadan 0,481 doğruluk veriyor. İnce ayardan sonra 0,504 — yani neredeyse hiç kıpırdamıyor. Aynı bilgi üretim anında önüne konduğunda ise 0,875. Llama 2'de tablo daha da net: taban model 0,353 iken ince ayar doğruluğu **0,219'a düşürüyor**. Bilgiyi ağırlıklara yazmaya çalışmak, modeli bozuyor.
+Sayılar keskin. 7 milyar parametreli Mistral, hiçbir müdahale olmadan 0,481 doğruluk veriyor. İnce ayardan sonra 0,504 — yani neredeyse hiç kıpırdamıyor. Aynı bilgi üretim anında önüne konduğunda ise 0,875. Llama 2'de tablo daha da net: taban model 0,353 iken ince ayar doğruluğu **0,219'a düşürüyor**. Bu modelde bilgiyi ağırlıklara yazma girişimi, kazandırmak bir yana, var olan başarıyı da aşındırıyor.
 
 Aynı çalışmanın ikinci deneyi mekanizmayı açıklıyor. Her bilgi parçasının on ayrı yeniden yazımıyla ince ayar yapıldığında doğruluk düzenli biçimde yükseliyor: Mistral'de 0,504'ten 0,588'e. Yani ince ayar bilgi yazabiliyor — ama aynı olguyu defalarca, farklı biçimlerde görmek şartıyla. Bu, 18\. makaledeki ölçümün tam karşılığı: ezberlenen metin miktarı, bir örneğin veride kaç kez tekrarlandığıyla birlikte artıyordu.
 
-![Dört yatay çubuk aynı ölçekte dizilir: en üstte hiç müdahale edilmemiş taban modelin doğruluğu, altında bilgiyi ince ayarla ağırlığa yazmanın doğruluğu — taban modelin çok az üstünde — altında aynı bilginin on yeniden yazımıyla yapılan ince ayarın biraz daha yüksek doğruluğu ve en altta bilgiyi üretim anında modelin önüne koymanın belirgin biçimde daha uzun çubuğu.](assets/agirliga-yazmak-mi-onune-koymak-mi.svg "Şekil 2 — Aynı olgu, iki ayrı kanal")
+![Mistral 7B için dört yatay çubuk, 0'dan 1'e aynı ölçekte dizilir: en üstte hiç müdahale edilmemiş taban model 0,481, altında bilgiyi ince ayarla ağırlığa yazmak 0,504 — taban modelin çok az üstünde — altında aynı bilginin on yeniden yazımıyla yapılan ince ayar 0,588 ve en altta bilgiyi üretim anında modelin önüne koymanın belirgin biçimde daha uzun çubuğu, 0,875.](assets/agirliga-yazmak-mi-onune-koymak-mi.svg "Şekil 2 — Aynı olgu, iki ayrı kanal")
 
 > **Kendini yokla:** Şekil 2'deki fark LoRA'nın rankının küçük olmasından mı kaynaklanıyor?
 
-Hayır — ve ayrımı görmek önemli. Ovadia ve arkadaşları bütün parametreleri serbest bırakmıştı; yani ölçtükleri şey ince ayarın kendisiydi, düşük rank değil. Biderman ve arkadaşlarının sürekli ön eğitim sonucu ise düşük rankın **ayrıca** bir sınır koyduğunu gösteriyor. İki etki üst üste biniyor: ince ayar zaten kötü bir bilgi kanalıdır, düşük ranklı ince ayar ise o kanalı daha da daraltır. Bu yüzden "LoRA ile modele kurumumun belgelerini öğretirim" cümlesi, kulağa makul gelse de ölçüldüğünde çalışmıyor.
+Hayır — ve ayrımı görmek önemli. Ovadia ve arkadaşları bütün parametreleri serbest bırakmıştı; yani ölçtükleri şey ince ayarın kendisiydi, düşük rank değil. Biderman ve arkadaşlarının sürekli ön eğitim sonucu ise düşük rankın **ayrıca** bir sınır koyduğunu gösteriyor. İki etki üst üste biniyor: ince ayar zaten kötü bir bilgi kanalıdır, düşük ranklı ince ayar ise o kanalı daha da daraltır. Bu yüzden "LoRA ile modele kurumumun belgelerini öğretirim" cümlesi, kulağa makul gelse de ölçüldüğünde beklenenden çok zayıf çalışıyor: belgelerin tek geçişi neredeyse hiçbir şey kazandırmıyor, aynı olgunun on ayrı yazımı ise ancak bir kısmını.
 
 O hâlde LoRA ne için iyi? Cevap 11\. ve 12\. makalelerin ayrımında: **davranış** ucuzdur, **bilgi** pahalıdır. Bir modele belirli bir biçimde cevap vermeyi, belirli bir alanın diliyle konuşmayı, belirli bir çıktı düzenine uymayı öğretmek düşük ranklı bir güncellemeyle yapılabilir — çünkü bunlar modelin zaten sahip olduğu yeteneklerin yeniden düzenlenmesidir. Modelin hiç görmediği olguları yüklemek ise başka bir iştir ve doğru çözümü ağırlıklarda değil, üretim anında modelin önüne konan metinde aranır. O çözümü 41\. makalede kuracağız.
 

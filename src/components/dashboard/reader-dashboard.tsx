@@ -1,14 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { Users } from "lucide-react";
-import { cn } from "@/lib/utils";
-import type { ArticleDescriptor, ReadingStatus } from "@/lib/content/types";
+import { ArrowRight, Users } from "lucide-react";
+import type { ArticleDescriptor } from "@/lib/content/types";
 import { pad, UI } from "@/lib/content/labels";
+import {
+  nextStep,
+  phaseForOrder,
+  summarizePhases,
+  type NextStep,
+  type PhaseOutline,
+} from "@/lib/content/series-progress";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
 import { LockButton } from "@/components/reader/lock-button";
 import { SyncStatus } from "@/components/reader/sync-status";
+import { PhaseProgress } from "@/components/series/phase-progress";
 
 function formatDate(value: string): string {
   try {
@@ -28,6 +35,8 @@ export type DashboardSeries = {
   /** Rota tabanı, ör. "/seri" veya "/boun". */
   basePath: string;
   articles: ArticleDescriptor[];
+  /** Yol haritasının fazları; ilerleme bölüm bölüm değil faz faz çizilir. */
+  phases: PhaseOutline[];
 };
 
 type DashboardProps = {
@@ -60,33 +69,20 @@ function EmptyNote({ children }: { children: React.ReactNode }) {
   return <p className="font-sans text-sm leading-relaxed text-text-muted">{children}</p>;
 }
 
-/**
- * Serinin okuma sırası, makale başına bir hücre: tamamlananlar mürekkep, devam eden
- * çelik mavisi, kalanlar boş. Yüzde yerine "nerede olduğunu" gösterir; sayılar altta
- * metin olarak verildiği için şerit dekoratiftir.
- */
-function SeriesStrip({ statuses }: { statuses: ReadingStatus[] }) {
-  return (
-    <div className="flex h-[3px] gap-[2px]" aria-hidden="true">
-      {statuses.map((status, index) => (
-        <span
-          key={index}
-          className={cn(
-            "flex-1 rounded-[1px]",
-            status === "completed"
-              ? "bg-accent"
-              : status === "in-progress"
-                ? "bg-cool"
-                : "bg-border",
-          )}
-        />
-      ))}
-    </div>
-  );
-}
+const STEP_LABELS: Record<NextStep["kind"], string> = {
+  resume: UI.resumeLabel,
+  next: UI.nextChapterLabel,
+  start: "İlk bölüm",
+};
 
 function DashboardContent({ series, archive, isOwner, username }: DashboardProps) {
   const { ready, data, statusOf } = useReaderData();
+  const lookup = {
+    statusOf,
+    lastReadAt: (articleId: string) => data.progress[articleId]?.lastReadAt ?? "",
+  };
+  const percentOf = (articleId: string) =>
+    Math.round((data.progress[articleId]?.scrollRatio ?? 0) * 100);
 
   const seriesArticles = series.flatMap((entry) => entry.articles);
   // Görünür küme kullanıcıya göre değişir: seri dışı yazılar yalnızca owner'da var.
@@ -103,15 +99,44 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
   const progressEntries = Object.values(data.progress)
     .filter((entry) => byId.has(entry.articleId))
     .sort((a, b) => b.lastReadAt.localeCompare(a.lastReadAt));
-  const currentId =
+  const lastId =
     (data.currentArticleId && byId.has(data.currentArticleId) ? data.currentArticleId : null) ??
     progressEntries[0]?.articleId;
-  const current = (currentId ? byId.get(currentId) : undefined) ?? seriesArticles[0];
+  const last = lastId ? byId.get(lastId) : undefined;
+
+  // The one action the page leads with. An unfinished last chapter is where the
+  // reader stopped; a finished one has nothing left to return to, so the page
+  // offers what comes after it in the same series instead of sending them back
+  // to a chapter they already closed.
+  let current: ArticleDescriptor | undefined = seriesArticles[0];
+  let heroLabel = "Başlangıç";
+  let heroAction = "Okumaya başla";
+  if (last && statusOf(last.articleId) !== "completed") {
+    current = last;
+    heroLabel = UI.resumeLabel;
+    heroAction = "Okumaya dön";
+  } else if (last) {
+    // Its own series first; once that is read through, whatever another series
+    // has waiting. Only when nothing is left anywhere does the page show the
+    // finished chapter itself.
+    const lastPool = seriesById.get(last.articleId)?.articles ?? archive;
+    const pools = [lastPool, ...series.map((entry) => entry.articles)];
+    const step = pools.reduce<NextStep | null>(
+      (found, pool) => found ?? nextStep(pool, lookup),
+      null,
+    );
+    if (step) {
+      current = step.article;
+      heroLabel = step.kind === "resume" ? UI.resumeLabel : UI.nextChapterLabel;
+      heroAction = step.kind === "resume" ? "Okumaya dön" : "Okumaya başla";
+    } else {
+      current = last;
+      heroLabel = "Son okuduğun";
+      heroAction = "Yeniden aç";
+    }
+  }
   const currentProgress = current ? (data.progress[current.articleId] ?? null) : null;
   const currentSeries = current ? seriesById.get(current.articleId) : undefined;
-  // Kayıt hazır olana kadar dönen okuyucuyu varsay; ilk açılışta tek karelik bir
-  // "Kaldığın yer → Başlangıç" geçişi, tersinden daha az rahatsız eder.
-  const started = !ready || Boolean(currentProgress);
   const currentPercent = currentProgress ? Math.round(currentProgress.scrollRatio * 100) : 0;
 
   const places = Object.values(data.savedPlaces)
@@ -146,9 +171,16 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
       </header>
 
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
-        <section aria-labelledby="continue-title" className="border-b border-border pb-10">
-          <p className="font-sans text-2xs font-medium uppercase tracking-[0.14em] text-text-faint">
-            {started ? "Kaldığın yer" : "Başlangıç"}
+        {/* Until the reading record has loaded the page cannot know which chapter to
+            lead with; the block keeps its place but shows nothing rather than a
+            first chapter that is swapped out a moment later. */}
+        <section
+          aria-labelledby="continue-title"
+          aria-busy={!ready}
+          className={`border-b border-border pb-10 ${ready ? "" : "invisible"}`}
+        >
+          <p className="font-sans text-2xs font-medium uppercase tracking-[0.14em] text-text-muted">
+            {heroLabel}
           </p>
           {current ? (
             <>
@@ -168,7 +200,8 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
                 )}
                 {ready && currentProgress && currentPercent > 0 && !currentProgress.completed && (
                   <>
-                    <span className="px-1.5 text-text-faint">·</span>%{currentPercent} okundu
+                    <span className="px-1.5 text-text-faint">·</span>
+                    {UI.percentRead(currentPercent)}
                   </>
                 )}
                 {ready && currentProgress?.completed && (
@@ -182,7 +215,7 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
                 href={hrefFor(current)}
                 className="mt-6 inline-flex items-center rounded-md bg-accent-fill px-4 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
-                {started ? "Okumaya dön" : "Okumaya başla"}
+                {heroAction}
               </Link>
             </>
           ) : (
@@ -199,33 +232,81 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
               const statuses = entry.articles.map((article) => statusOf(article.articleId));
               const completed = statuses.filter((status) => status === "completed").length;
               const inProgress = statuses.filter((status) => status === "in-progress").length;
+              const summaries = summarizePhases(entry.articles, entry.phases, statusOf);
+              const step = ready ? nextStep(entry.articles, lookup) : null;
+              const stepPhase = step
+                ? phaseForOrder(step.article.readingOrder, entry.phases)
+                : null;
+              const stepPercent = step?.kind === "resume" ? percentOf(step.article.articleId) : 0;
               return (
                 <li key={entry.key}>
-                  <h3 className="font-serif text-2xl font-semibold leading-snug">
-                    <Link href={entry.basePath} className="transition-colors hover:text-accent">
-                      {entry.title}
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="font-serif text-2xl font-semibold leading-snug">
+                      <Link href={entry.basePath} className="transition-colors hover:text-accent">
+                        {entry.title}
+                      </Link>
+                    </h3>
+                    <Link
+                      href={entry.basePath}
+                      className="-my-1 shrink-0 py-1 font-sans text-xs text-accent underline-offset-4 hover:underline"
+                    >
+                      {UI.roadmap}
                     </Link>
-                  </h3>
+                  </div>
                   <p className="mt-1.5 max-w-2xl font-sans text-sm leading-relaxed text-text-muted">
                     {entry.subtitle}
                   </p>
-                  <div className="mt-4">
-                    <SeriesStrip statuses={statuses} />
-                    <div className="mt-2 flex items-baseline justify-between gap-4 font-sans text-2xs">
-                      <p className="tabular-nums text-text-faint">
-                        {ready
-                          ? `${completed} / ${entry.articles.length} tamamlandı`
-                          : UI.articleCount(entry.articles.length)}
-                        {ready && inProgress > 0 && ` · ${inProgress} devam ediyor`}
+                  <div className="mt-5">
+                    <PhaseProgress phases={summaries} markerOrder={step?.article.readingOrder} />
+                    <div className="mt-2.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 font-sans text-xs text-text-muted">
+                      <p className="min-w-0">
+                        {stepPhase ? (
+                          <>
+                            <span className="font-medium text-text">
+                              {UI.phaseOf(stepPhase.number, entry.phases.length)}
+                            </span>
+                            <span className="px-1.5 text-text-faint">·</span>
+                            {stepPhase.phase.title}
+                          </>
+                        ) : ready &&
+                          entry.articles.length > 0 &&
+                          completed === entry.articles.length ? (
+                          UI.seriesDone
+                        ) : (
+                          UI.articleCount(entry.articles.length)
+                        )}
                       </p>
-                      <Link
-                        href={entry.basePath}
-                        className="shrink-0 text-accent underline-offset-4 hover:underline"
-                      >
-                        Yol haritası
-                      </Link>
+                      <p className="tabular-nums">
+                        {ready && UI.phaseProgress(completed, entry.articles.length)}
+                        {ready && inProgress > 0 && ` · ${UI.inProgressCount(inProgress)}`}
+                      </p>
                     </div>
                   </div>
+                  {step && (
+                    <Link
+                      href={`${entry.basePath}/${step.article.slug}`}
+                      className="group mt-4 block border-t border-border py-3 font-sans"
+                    >
+                      <span className="block text-xs text-text-muted">
+                        <span className="font-medium">{STEP_LABELS[step.kind]}</span>
+                        {stepPercent > 0 && (
+                          <span className="tabular-nums"> · {UI.percentRead(stepPercent)}</span>
+                        )}
+                      </span>
+                      <span className="mt-1 flex items-baseline gap-3">
+                        <span className="shrink-0 text-xs tabular-nums text-text-faint">
+                          {pad(step.article.readingOrder)}
+                        </span>
+                        <span className="min-w-0 flex-1 font-serif text-base font-semibold leading-snug transition-colors group-hover:text-accent">
+                          {step.article.title}
+                        </span>
+                        <ArrowRight
+                          className="h-4 w-4 shrink-0 self-center text-text-faint transition-colors group-hover:text-accent"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </Link>
+                  )}
                 </li>
               );
             })}

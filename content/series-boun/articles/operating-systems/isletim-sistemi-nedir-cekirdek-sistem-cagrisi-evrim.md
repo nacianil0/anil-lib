@@ -12,7 +12,7 @@ tags:
   - sistem-cagrisi
   - kullanici-modu
   - zaman-paylasimi
-content_hash: sha256:869a3534661dea07bc0b3b213613aad2128887476ec67a0c07f03fd07a890c40
+content_hash: sha256:5c3c6467c071b6e5c104b59557b3604f37e169cd51c129db34eefe969c8ef7d0
 classification_version: 1
 classification_batch: 8
 ---
@@ -36,7 +36,7 @@ Buradan alanın en çok işe yarayan tasarım ayrımı çıkar ve mülakatta ad�
 
 ## Güçlü yalıtım ve donanım desteği
 
-İşletim sistemini bir kütüphane olarak yazmak neden yetmez? Sistem çağrılarını sıradan fonksiyonlar hâlinde bir kütüphaneye koyup uygulamalara bağlasak, her uygulama donanımla doğrudan konuşurdu ve kendi ihtiyacına göre en iyi kullanımı seçebilirdi. Bazı gömülü ve gerçek zamanlı sistemler tam olarak böyle kurulur.
+İşletim sistemini bir kütüphane olarak yazmak neden yetmez? Sistem çağrılarını sıradan fonksiyonlar hâlinde bir kütüphaneye koyup uygulamalara bağlasak, her uygulama donanımla doğrudan konuşurdu ve kendi ihtiyacına göre en iyi kullanımı seçebilirdi. Bazı gömülü ve gerçek zamanlı sistemler böyle kurulur.
 
 Bu tasarımın bedeli şudur: birden çok uygulama çalışıyorsa **hepsinin uslu olması** gerekir. Her uygulama işlemciyi kendi isteğiyle bırakmalı, kimse başkasının belleğini okumamalıdır. Uygulamaların birbirine güvendiği ve hatasız olduğu bir dünyada bu işe yarar; gerçek dünyada yaramaz. Bu yüzden işbirliğine dayalı bir şemadan daha güçlüsü istenir: **güçlü yalıtım (strong isolation)**.
 
@@ -46,9 +46,9 @@ Yazılım bunu tek başına yapamaz; **donanım desteği** şarttır. İşlemci 
 
 Buradan **çekirdeğin (kernel)** tanımı çıkar: çekirdek kipinde çalışan yazılıma çekirdek denir; kullanıcı kipinde çalışan yazılım kullanıcı alanındadır. Tanım bir dosya ya da bir program adı değil, bir **ayrıcalık düzeyidir**.
 
-![Dikey bir çizgiyle ayrılmış iki panelli bir şema. Sol panelin başlığı iki kip, dört geçiş. Panelde yan yana iki dikey kutu var. Soldaki kutu KULLANICI KİPİ diye etiketlenmiş ve altında kısıtlı yazıyor; sağdaki vurgulanmış kutu ÇEKİRDEK KİPİ diye etiketlenmiş ve altında tam yetki yazıyor. İki kutu arasında iki ok var. Üstteki ok soldan sağa, yani kullanıcı kipinden çekirdek kipine gidiyor; okun üstünde tuzak, altında kesme yazıyor. Alttaki ok sağdan sola, yani çekirdek kipinden kullanıcı kipine geri dönüyor; okun üstünde dönüş, altında sonlandır yazıyor. Panelin altında dört satır: tuzağı uygulamanın gönüllü olarak çağırdığı; kesmenin dışarıdan ve istem dışı geldiği; her geçişin ayrıcalık düzeyini de değiştirdiği; giriş noktasını çekirdeğin belirlediği. Sağ panelin başlığı hangi işlem hangi kipte. Panelde üst üste iki kutu var. Üstteki kutunun başlığı kullanıcı kipinde serbest ve içinde üç madde sıralanmış: aritmetik ve mantık; kendi belleğini okuma ve yazma; fonksiyon çağrısı ve dönüş. Alttaki vurgulanmış kutunun başlığı yalnızca çekirdek kipinde ve içinde beş madde sıralanmış: giriş ve çıkış isteği başlatma; sayfa tablosu yazmacını değiştirme; kesmeleri açma ve kapatma; tuzak tablosunun yerini bildirme; zamanlayıcıyı başlatma ve durdurma. Kutunun altında not: kullanıcı kipinde denenirse istisna doğar. En altta not: çekirdek bir dosya değil, bir ayrıcalık düzeyidir](assets/kullanici-cekirdek-kipi.svg "Şekil 1 — İki kip ve aralarındaki geçişler: her geçiş aynı anda ayrıcalık düzeyini de değiştirir")
+![Dikey bir çizgiyle ayrılmış iki panelli bir şema. Sol panelin başlığı iki kip ve aralarındaki geçişler. Panelde yan yana iki dikey kutu var. Soldaki kutu KULLANICI KİPİ diye etiketlenmiş ve altında kısıtlı yazıyor; sağdaki vurgulanmış kutu ÇEKİRDEK KİPİ diye etiketlenmiş ve altında tam yetki yazıyor. İki kutu arasında iki ok var. Üstteki ok soldan sağa, yani kullanıcı kipinden çekirdek kipine gidiyor; okun üstünde tuzak, altında kesme ve istisna yazıyor. Alttaki ok sağdan sola, yani çekirdek kipinden kullanıcı kipine geri dönüyor ve üstünde tuzaktan dönüş yazıyor. Panelin altında beş satır: tuzağı uygulamanın gönüllü olarak çağırdığı; kesmenin dışarıdan ve istem dışı geldiği; istisnanın yasak bir komut ya da sıfıra bölme gibi bir hatadan doğduğu; her geçişin ayrıcalık düzeyini de değiştirdiği; giriş noktasını çekirdeğin belirlediği. Sağ panelin başlığı hangi işlem hangi kipte. Panelde üst üste iki kutu var. Üstteki kutunun başlığı kullanıcı kipinde serbest ve içinde üç madde sıralanmış: aritmetik ve mantık; kendi belleğini okuma ve yazma; fonksiyon çağrısı ve dönüş. Alttaki vurgulanmış kutunun başlığı yalnızca çekirdek kipinde ve içinde beş madde sıralanmış: giriş ve çıkış isteği başlatma; sayfa tablosu yazmacını değiştirme; kesmeleri açma ve kapatma; tuzak tablosunun yerini bildirme; zamanlayıcıyı başlatma ve durdurma. Kutunun altında not: kullanıcı kipinde denenirse istisna doğar. En altta not: çekirdek bir dosya değil, bir ayrıcalık düzeyidir](assets/kullanici-cekirdek-kipi.svg "Şekil 1 — Çekirdeğe üç kapıdan girilir, tek kapıdan çıkılır; her geçiş ayrıcalık düzeyini de değiştirir")
 
-Şekil 1'in solundaki durum makinesi, doğruluk makalesindeki modelin birebir aynısıdır: sonlu sayıda durum, etiketli geçişler ve geçişlerin koruduğu bir değişmez. Buradaki değişmez şudur: **çekirdek kipine yalnızca çekirdeğin önceden belirlediği bir noktadan girilir.** Uygulama nereye atlayacağını seçebilseydi, örneğin izin denetiminin hemen sonrasına atlar ve bütün korumayı atlatırdı.
+Şekil 1'in solundaki durum makinesi, doğruluk makalesindeki modelin birebir aynısıdır: sonlu sayıda durum, etiketli geçişler ve geçişlerin koruduğu bir değişmez. Çekirdeğe üç yoldan girilir — uygulamanın istediği tuzak, dışarıdan gelen kesme ve yasak bir işlemin doğurduğu istisna — ama kullanıcı kipine yalnızca tuzaktan dönüş komutuyla çıkılır; çekirdek bir süreci sonlandırdığında bile kullanıcı kipine bu komutla, başka bir sürece dönerek iner. Buradaki değişmez şudur: **çekirdek kipine yalnızca çekirdeğin önceden belirlediği bir noktadan girilir.** Uygulama nereye atlayacağını seçebilseydi, örneğin izin denetiminin hemen sonrasına atlar ve bütün korumayı atlatırdı.
 
 ## Sistem çağrısı: fonksiyon çağrısı gibi görünen şey
 
@@ -72,7 +72,7 @@ Sayılar ölçeği gösteriyor: modern bir işletim sistemi birkaç yüz sistem 
 
 ## Denetimi geri almak
 
-Sınırlı doğrudan yürütmenin ikinci problemi daha inceliklidir. Bir süreç işlemcide çalışıyorsa, tanım gereği **işletim sistemi çalışmıyordur**. Çalışmayan bir program hiçbir şey yapamaz. Öyleyse işletim sistemi denetimi nasıl geri alır?
+Buraya kadar anlattığımız düzenin bir adı var: **sınırlı doğrudan yürütme (limited direct execution)**. "Doğrudan", çünkü program işlemcide aracısız, tam hızla koşar; "sınırlı", çünkü kısıtlı işlemleri ancak tuzakla çekirdekten isteyebilir. Kısıtlı işlemler bu düzenin ilk problemiydi ve sistem çağrısıyla çözüldü. İkinci problem daha inceliklidir. Bir süreç işlemcide çalışıyorsa, tanım gereği **işletim sistemi çalışmıyordur**. Çalışmayan bir program hiçbir şey yapamaz. Öyleyse işletim sistemi denetimi nasıl geri alır?
 
 **İşbirliğine dayalı yaklaşım** işlemcinin gönüllü bırakılmasına güvenir. Süreçlerin çoğu zaten sık sık sistem çağrısı yapar ve o anda denetim çekirdeğe geçer; bazı sistemler ayrıca hiçbir iş yapmayıp yalnızca denetimi devreden bir çağrı sunar. Uygulamalar yasak bir şey yaptıklarında da — sıfıra bölmek, izinsiz belleğe erişmek — denetim çekirdeğe geçer. Erken Macintosh sürümleri ve Xerox Alto böyle çalışıyordu.
 
@@ -86,11 +86,11 @@ Maliyeti kaba bir hesapla görebilirsin. İşleyicinin bir mikrosaniye sürdüğ
 
 ## Evrim: toplu işten zaman paylaşımına
 
-İşletim sistemlerinin tarihi, bugünkü mekanizmaların hangi problemi çözmek için doğduğunu anlatır ve CMPE322 katalog tanımının ilk iki cümlesi de tam olarak budur.
+İşletim sistemlerinin tarihi, bugünkü mekanizmaların hangi problemi çözmek için doğduğunu anlatır ve CMPE322 katalog tanımının ilk iki cümlesi de budur.
 
 **Başlangıçta işletim sistemi bir kütüphaneydi.** Ortak kullanılan işlevlerin — özellikle düşük düzeyli giriş/çıkış kodunun — bir araya toplanmış hâliydi. O eski ana bilgisayarlarda **aynı anda tek bir program** çalışırdı ve sırayı bir insan operatör yönetirdi. Bu çalışma biçimine **toplu iş (batch processing)** denir: işler toplanır ve operatör tarafından bir "toplu" hâlinde çalıştırılır. Etkileşimli kullanım yoktu, çünkü pahalıydı — bir kullanıcının makinenin başına oturması, saatte yüz binlerce dolara mal olan makineyi çoğu zaman boş bekletmek demekti.
 
-**Sonra koruma geldi.** İşletim sistemi adına çalışan kodun özel olduğu, aygıtları denetlediği için sıradan uygulama kodundan farklı davranması gerektiği fark edildi. Böylece **sistem çağrısı fikri icat edildi** — öncüsü Atlas sistemidir. Kütüphane çağrısı yerine, çekirdeğe geçişi resmî ve denetimli kılan özel bir donanım komutu çifti ve donanım durumu eklendi. Bu makalenin ikinci ve üçüncü bölümü, tam olarak o icadın bugünkü hâlidir.
+**Sonra koruma geldi.** İşletim sistemi adına çalışan kodun özel olduğu, aygıtları denetlediği için sıradan uygulama kodundan farklı davranması gerektiği fark edildi. Böylece **sistem çağrısı fikri icat edildi** — öncüsü Atlas sistemidir. Kütüphane çağrısı yerine, çekirdeğe geçişi resmî ve denetimli kılan özel bir donanım komutu çifti ve donanım durumu eklendi. Bu makalenin ikinci ve üçüncü bölümü o icadın bugünkü hâlidir.
 
 **Sonra çoklu programlama (multiprogramming) yaygınlaştı.** Mini bilgisayarların ucuzlamasıyla makine kaynaklarını daha iyi kullanma isteği öne çıktı: tek bir işi çalıştırmak yerine işletim sistemi belleğe birden çok iş yükler ve aralarında hızla geçiş yapar. Asıl gerekçe giriş/çıkış aygıtlarının **yavaş** olmasıydı; bir program diskini beklerken işlemciyi tutması saf israftır. Bu istek beraberinde iki yeni problem getirdi: **bellek koruması** (bir program başkasının belleğine erişememeli) ve **eşzamanlılık** (kesmelerin varlığında çekirdeğin doğru davranması). İkisi de Faz D'nin ilerleyen makalelerinin konusudur.
 
@@ -132,7 +132,7 @@ Beş tipik hata var. **Sistem çağrısını kütüphane çağrısı sanmak** �
 
 Bir de sık atlanan güvenlik noktası var: sınır yalnızca **var olmakla** yetmez, argümanların denetlenmesiyle **korunur**. Bir yazma çağrısında verilen adresin kullanıcıya ait olduğunu doğrulamayan bir çekirdek, bütün fiziksel belleği okunur hâle getirir. Bu, "kullanıcı girdisine güvenme" ilkesinin işletim sistemi sınırındaki hâlidir.
 
-İngilizce karşılıklar hazır olmalıdır: *virtualization*, *resource manager*, *policy and mechanism*, *strong isolation*, *user mode*, *kernel mode*, *supervisor mode*, *privileged instruction*, *trap*, *trap table*, *trap handler*, *return-from-trap*, *system call number*, *timer interrupt*, *batch processing*, *multiprogramming*, *time-sharing*, *monolithic kernel*, *microkernel*.
+İngilizce karşılıklar hazır olmalıdır: *virtualization*, *resource manager*, *policy and mechanism*, *strong isolation*, *user mode*, *kernel mode*, *supervisor mode*, *privileged instruction*, *trap*, *trap table*, *trap handler*, *return-from-trap*, *limited direct execution*, *system call number*, *timer interrupt*, *batch processing*, *multiprogramming*, *time-sharing*, *monolithic kernel*, *microkernel*.
 
 ### Sırada ne var
 

@@ -12,7 +12,7 @@ tags:
   - getirme
   - embedding-boyutu
   - olcum-disiplini
-content_hash: sha256:9d1b8db77e75999ce7c5a893bebf3c3c24d3fe79d0d9f525e0003ed954bc388f
+content_hash: sha256:cca180cee209a59a81a5a9e265455bddae01e7964b10acc210964bfaefe5fb3b
 classification_version: 1
 classification_batch: 6
 ---
@@ -22,7 +22,7 @@ Son dört makale pencerenin maliyetiyle uğraştı: önbellekte ne durduğunu g�
 
 Gerçek bir sistemde öyle değil. Elinde bir kullanıcı sorusu ve milyonlarca belge var; pencereye sığacak olan birkaç tanesi. Hangileri?
 
-En eski cevap sözcük eşleşmesidir: sorudaki kelimeleri içeren belgeleri getir. Bu yol şaşırtıcı derecede iyi çalışır ve altmış yıllık bir mühendislik birikimi taşır. Ama bir duvarı var. "Yüzüklerin Efendisi'ndeki kötü adam kim?" diye soran birine, "Sauron'u canlandıran Sala Baker…" diye başlayan belge lazımdır — ve o belgede "kötü adam" ifadesi geçmez. Ortak tek bir kelime yoksa sözcük tabanlı bir sistem o belgeyi hiç görmez.
+En eski cevap sözcük eşleşmesidir: sorudaki kelimeleri içeren belgeleri getir. Bu yol şaşırtıcı derecede iyi çalışır ve altmış yıllık bir mühendislik birikimi taşır. Ama bir duvarı var. "Yüzüklerin Efendisi'ndeki kötü adam kim?" diye soran birine, "Sala Baker, kötücül Sauron'u canlandırmasıyla tanınır…" diye başlayan belge lazımdır — ve o belgede "kötü adam" ifadesi geçmez. Ortak tek bir kelime yoksa sözcük tabanlı bir sistem o belgeyi hiç görmez.
 
 4\. makalede bu duvarı aşacak fikri zaten kurmuştuk. Benzer bağlamlarda geçen kelimelerin benzer vektörler aldığı bir uzay; anlamın bir konum olduğu bir harita. O makalede embedding, modelin girişindeki bir ara adımdı. Bu makalede kendi başına bir ürün bileşenine dönüşüyor ve yaptığı işin adı **anlamsal arama** (semantic search), pencereye konacak metni bulma işinin genel adı ise **getirme** (retrieval).
 
@@ -50,7 +50,7 @@ Bu düzenin gerektirdiği tek koşul, sorgu ile belgenin **aynı uzaya** yerleş
 
 4\. makalede embedding defterini eğitimin yazdığını söylemiştik: benzer bağlamlarda geçen kelimeler benzer satırlar alıyordu. Getirme için kullanılan vektörler de eğitiliyor, ama hedef farklı. Burada istenen şey "benzer bağlamda geçiyor" değil, "bu soruya bu belge cevap veriyor".
 
-Eğitim verisi soru-belge çiftlerinden oluşur ve döngü 2\. makaledekiyle aynıdır; değişen tek şey kaybın neyi ölçtüğü. Doğru belgenin puanı yükseltilir, yanlışlarınki düşürülür. Asıl incelik yanlış örneklerin nereden geldiği. Karpukhin ve arkadaşlarının bulduğu ucuz numara şu: bir mini yığında B tane soru varsa, her sorunun doğru belgesi öteki B−1 sorunun **yanlış** belgesidir. Soru ve belge vektörleri zaten hesaplandığı için B×B'lik bütün karşılaştırma tablosu bedavaya gelir; tek bir yığından B² eğitim çifti çıkar. Çalışmanın en iyi düzeni bunun üstüne bir de sözcük eşleşmesinin getirdiği, cevabı içermeyen ama kelimeleri örtüşen bir "zor" yanlış örnek ekliyor.
+Eğitim verisi soru-belge çiftlerinden oluşur ve döngü 2\. makaledekiyle aynıdır; değişen tek şey kaybın neyi ölçtüğü. Doğru belgenin puanı yükseltilir, yanlışlarınki düşürülür. Asıl incelik yanlış örneklerin nereden geldiği. Birazdan sonuçlarına bakacağımız Karpukhin ve arkadaşlarının çalışmasının kullandığı ucuz numara şu: bir mini yığında B tane soru varsa, her sorunun doğru belgesi öteki B−1 sorunun **yanlış** belgesidir. Soru ve belge vektörleri zaten hesaplandığı için B×B'lik bütün karşılaştırma tablosu bedavaya gelir; tek bir yığından B² eğitim çifti çıkar. Çalışmanın en iyi düzeni bunun üstüne bir de sözcük eşleşmesinin getirdiği, cevabı içermeyen ama kelimeleri örtüşen bir "zor" yanlış örnek ekliyor.
 
 Bir de tanım meselesi var. Buradaki "belge" bir makalenin tamamı değil; çalışma Wikipedia'yı yüz kelimelik ayrık parçalara bölüyor ve getirmenin birimi bu parçalar oluyor — toplam 21.015.324 tane. Metnin nereden kesileceği başlı başına bir tasarım kararıdır ve getirme hattının ayrı bir konusudur; burada bilmemiz gereken tek şey, tek bir vektörün temsil ettiği metnin bir sayfa değil bir paragraf mertebesinde olduğudur.
 
@@ -90,9 +90,9 @@ Bu, liderlik tablosu okuma disiplinini embedding'lere taşıyor. Bir modelin "en
 
 Şimdi asıl soruya gelelim. Bir belgeyi tek bir vektörle temsil etmenin bir tavanı var mı?
 
-Orion Weller ve arkadaşlarının ICLR 2026'da sunduğu çalışma bunu hem kanıtlıyor hem gösteriyor. Kanıt tarafı sezgisel olarak şöyle kurulabilir: bir sorgu, belgeleri puanlarına göre sıralar ve ilk k tanesini döndürür. Belge sayısı arttıkça, "ilk k'da hangi belgelerin birlikte bulunabileceğine" dair kombinasyon sayısı çok hızlı büyür. Vektörlerin yaşadığı uzayın boyutu ise sabittir. Belirli bir boyutun üstünde, hiçbir sorgunun döndüremeyeceği belge kombinasyonları **zorunlu olarak** ortaya çıkar. Araştırmacılar bu kırılma noktasını, vektörleri doğrudan test verisine göre eniyileyerek, yani gerçek bir modelin asla erişemeyeceği en iyi durumda ölçüyorlar; 1.024 boyutlu bir uzay için elde ettikleri eşik dört milyon belge civarında.
+Orion Weller ve arkadaşlarının ICLR 2026'da sunduğu çalışma bunu hem kanıtlıyor hem gösteriyor. Kanıt tarafı sezgisel olarak şöyle kurulabilir: bir sorgu, belgeleri puanlarına göre sıralar ve ilk k tanesini döndürür. Belge sayısı arttıkça, "ilk k'da hangi belgelerin birlikte bulunabileceğine" dair kombinasyon sayısı çok hızlı büyür. Vektörlerin yaşadığı uzayın boyutu ise sabittir. Bu yüzden belirli bir boyut için, belge sayısı bir eşiği aştığında hiçbir sorgu vektörünün döndüremeyeceği belge kombinasyonları **zorunlu olarak** ortaya çıkar. Araştırmacılar bu kırılma noktasını, vektörleri doğrudan test verisine göre eniyileyerek, yani gerçek bir modelin asla erişemeyeceği en iyi durumda ölçüyorlar; 1.024 boyutlu bir uzay için elde ettikleri eşik dört milyon belge civarında.
 
-Bu soyut sonucu somut hâle getirmek için tuhaf derecede basit bir veri kümesi kuruyorlar. Belgeler "Jon Durben kuokkaları ve elmaları sever" biçiminde tek cümleler; sorgular "kim kuokkaları sever?" biçiminde. Kırk altı belgeden seçilebilecek ikili kombinasyonların tamamı — 1.035 tane — sorgu olarak soruluyor ve bu kırk altı belge elli bin belgelik bir yığının içine saklanıyor. Görev, bir insan için önemsiz.
+Bu soyut sonucu somut hâle getirmek için tuhaf derecede basit bir veri kümesi kuruyorlar. Belgeler "Jon Durben kuokkaları ve elmaları sever" biçiminde tek cümleler; sorgular "kim kuokkaları sever?" biçiminde. Her sorgunun iki doğru belgesi var ve bin sorgu soruluyor. Kırk altı sayısı buradan geliyor: kırk altı belgeden seçilebilecek ikili kombinasyon sayısı 46 × 45 ÷ 2 = 1.035, bini aşan en küçük değer; yani sorgular, bu belgelerin neredeyse her ikilisini ayrı ayrı döndürmeyi istiyor. Bu kırk altı belge elli bin belgelik bir yığının içine saklanıyor. Görev, bir insan için önemsiz.
 
 Sonuçlar şaşırtıcı. Aşağıdaki sayılar, yalnızca kırk altı belgelik küçük sürümde ilk iki sonuç içinde doğru belgeyi bulma oranı:
 
@@ -107,7 +107,7 @@ Elli bin belgelik tam sürümde durum daha da sert: modeller ilk **yüz** sonuç
 
 ![İki eksenli bir çubuk grafik. Yatay eksende dört yöntem sıralanır: sözcük eşleşmesi, çok vektörlü geç etkileşimli model, en iyi tek vektörlü model ve tek vektörlü modellerin alt ucu. Her yöntem için iki çubuk vardır: koyu olan özgün veri kümesindeki bulma oranını, açık olan aynı kümenin eş anlamlılarla değiştirilmiş sürümündeki oranı gösterir. Sözcük eşleşmesinin koyu çubuğu neredeyse tavana ulaşır ama açık çubuğu en kısa çubuklardan biridir; tek vektörlü modellerin iki çubuğu da alçaktır. Grafiğin altında, her iki yöntemin de kendi kör noktası olduğu yazılıdır.](assets/limit-bulma-oranlari.svg "Şekil 3 — Basit bir görevde iki farklı kör nokta")
 
-Şekil 3'ün sağ sütunları, sözcük eşleşmesinin zafer ilanı olmadığını gösteriyor. Araştırmacılar aynı kümenin bütün kelimelerini eş anlamlılarıyla değiştirdiklerinde sözcük eşleşmesi yüzde 89'dan fazla düşerek tek vektörlü modellerin altına iniyor. Yani tabloda iki kör nokta var: biri anlamı görmüyor, öbürü ilişki sayısını taşıyamıyor.
+Şekil 3'ün sağ sütunları, sözcük eşleşmesinin zafer ilanı olmadığını gösteriyor. Araştırmacılar aynı kümenin bütün kelimelerini eş anlamlılarıyla değiştirdiklerinde sözcük eşleşmesi yüzde 89'dan fazla düşerek tek vektörlü modellerin çoğunun altına iniyor. Yani tabloda iki kör nokta var: biri anlamı görmüyor, öbürü ilişki sayısını taşıyamıyor.
 
 Bulgunun bir alan kayması olmadığı da ayrıca sınanmış. Bir embedding modelini aynı biçimde üretilmiş bir eğitim kümesiyle eğitmek neredeyse hiç yardımcı olmuyor; ilk on sonuçta bulma oranı sıfıra yakın bir yerden yalnızca 2,8'e çıkıyor. Buna karşılık kırk altı belgenin tamamını bağlam penceresine koyup bir modele hepsini birden okutmak — yani bu makalenin başında pahalı bulduğumuz çapraz okuma — bin sorgunun tamamını doğru cevaplıyor.
 
@@ -119,7 +119,7 @@ Bu tablo, üretim sistemlerinde yerleşmiş üç alışkanlığı açıklıyor.
 
 **İki aşamalı sıralama.** Ucuz ikili kodlayıcı yüz civarı aday getirir; pahalı çapraz kodlayıcı yalnızca o adayları yeniden sıralar. Böylece çapraz okumanın doğruluğu, milyonlarca belge yerine yüz belge maliyetiyle alınır. Getirme hattının bu iki katmanlı yapısı, 28\. makaledeki taslak-ve-doğrulayıcı düzeniyle aynı fikrin başka bir alandaki hâli: ucuz olan aday üretsin, pahalı olan karar versin.
 
-**Yaklaşık arama.** Sorgu vektörü hazır olduğunda geriye "en yakın k tanesini bul" işi kalır ve yirmi bir milyon vektörü tek tek taramak bu işi yeniden pahalı yapar. Pratikte tarama yapılmaz: vektörler önceden kümelenip bir dizine yerleştirilir ve sorgu yalnızca yakın kümelere bakar. Bu, sonucun **yaklaşık** olduğu anlamına gelir; gerçekten en yakın belge kaçırılabilir. Yukarıdaki saniyede 995 soru sayısı da bu yaklaşıklığın karşılığıdır. Buradan çıkacak not şu: bir getirme hattında ölçülen kalite yalnızca embedding modelinin değil, dizinin de bir fonksiyonudur.
+**Yaklaşık arama.** Sorgu vektörü hazır olduğunda geriye "en yakın k tanesini bul" işi kalır ve yirmi bir milyon vektörü tek tek taramak bu işi yeniden pahalı yapar. Pratikte tarama yapılmaz: vektörler önceden bir dizin yapısına — kümelere ya da birbirine yakın vektörleri bağlayan bir komşuluk grafiğine — yerleştirilir ve sorgu yalnızca yakın bölgeye bakar. Bu, sonucun **yaklaşık** olduğu anlamına gelir; gerçekten en yakın belge kaçırılabilir. Yukarıdaki saniyede 995 soru sayısı da bu yaklaşıklığın karşılığıdır. Buradan çıkacak not şu: bir getirme hattında ölçülen kalite yalnızca embedding modelinin değil, dizinin de bir fonksiyonudur.
 
 **Boyutu bir bütçe olarak yönetmek.** Depolama ve arama maliyeti boyutla doğrusal artar, ve yukarıdaki sonuç boyutun aynı zamanda bir kapasite olduğunu söylüyor. Aditya Kusupati ve arkadaşlarının NeurIPS 2022'de sunduğu iç içe temsil fikri bu ikilemi yönetilebilir kılıyor: model öyle eğitiliyor ki vektörün ilk 64, ilk 256 ya da ilk 1.024 boyutu tek başına anlamlı bir temsil oluyor. Aynı vektör, işin gerektirdiği yerde kısaltılıp kullanılabiliyor; ImageNet üzerindeki sınıflandırma deneylerinde aynı doğruluk 14 kata kadar küçük bir temsille elde edilmiş, aynı kümedeki büyük ölçekli getirmede ise 14 kata varan hızlanma ölçülmüş.
 

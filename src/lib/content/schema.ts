@@ -60,25 +60,66 @@ const contentHashSchema = z
 
 const tagSchema = z.string().min(1);
 
+/** True for a real calendar day written as YYYY-MM-DD (rejects 2026-02-30). */
+function isCalendarDate(value: string): boolean {
+  const date = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+}
+
+/**
+ * The day an article was meaningfully revised. Unquoted YAML dates arrive as Date
+ * objects, so both shapes resolve to the same YYYY-MM-DD string.
+ */
+const revisionDateSchema = z.preprocess(
+  (value) =>
+    value instanceof Date && !Number.isNaN(value.getTime())
+      ? value.toISOString().slice(0, 10)
+      : value,
+  z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "revizyon tarihi YYYY-MM-DD biçiminde olmalı")
+    .refine(isCalendarDate, "revizyon tarihi geçerli bir takvim günü olmalı"),
+);
+
+/** One calm, reader-facing sentence about what changed. */
+const revisionNoteSchema = z.string().trim().min(1).max(200);
+
+/**
+ * A revision is a date and a note together: a date alone tells the reader nothing,
+ * a note alone cannot say whether they read the article before it.
+ */
+function revisionPairIssue(date: unknown, note: unknown): string | null {
+  return (date === undefined) === (note === undefined)
+    ? null
+    : "revizyon tarihi ve notu birlikte verilmeli";
+}
+
 /**
  * A single catalog record. The category vocabulary is a parameter so each series
  * enforces its own controlled list while every other field stays identical.
  */
 function makeCatalogArticleSchema<T extends z.ZodTypeAny>(category: T) {
-  return z.object({
-    articleId: articleIdSchema,
-    title: z.string().min(1),
-    slug: slugSchema,
-    category,
-    level: levelSchema,
-    readingOrder: z.number().int().positive(),
-    summary: z.string().min(1),
-    tags: z.array(tagSchema).default([]),
-    contentHash: contentHashSchema,
-    path: z.string().min(1),
-    relatedArticleIds: z.array(articleIdSchema).default([]),
-    classificationBatch: z.number().int().nonnegative(),
-  });
+  return z
+    .object({
+      articleId: articleIdSchema,
+      title: z.string().min(1),
+      slug: slugSchema,
+      category,
+      level: levelSchema,
+      readingOrder: z.number().int().positive(),
+      summary: z.string().min(1),
+      tags: z.array(tagSchema).default([]),
+      contentHash: contentHashSchema,
+      path: z.string().min(1),
+      relatedArticleIds: z.array(articleIdSchema).default([]),
+      classificationBatch: z.number().int().nonnegative(),
+      revisedAt: revisionDateSchema.optional(),
+      revisionNote: revisionNoteSchema.optional(),
+    })
+    .superRefine((article, ctx) => {
+      const issue = revisionPairIssue(article.revisedAt, article.revisionNote);
+      if (issue) ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["revisedAt"], message: issue });
+    });
 }
 
 function makeCatalogSchema<T extends z.ZodTypeAny>(category: T) {
@@ -94,19 +135,26 @@ function makeCatalogSchema<T extends z.ZodTypeAny>(category: T) {
 
 /** Frontmatter embedded at the top of each article Markdown file (snake_case). */
 function makeFrontmatterSchema<T extends z.ZodTypeAny>(category: T) {
-  return z.object({
-    article_id: articleIdSchema,
-    title: z.string().min(1),
-    slug: slugSchema,
-    category,
-    level: levelSchema,
-    reading_order: z.number().int().positive(),
-    summary: z.string().min(1),
-    tags: z.array(tagSchema).default([]),
-    content_hash: contentHashSchema,
-    classification_version: z.number().int().positive(),
-    classification_batch: z.number().int().nonnegative(),
-  });
+  return z
+    .object({
+      article_id: articleIdSchema,
+      title: z.string().min(1),
+      slug: slugSchema,
+      category,
+      level: levelSchema,
+      reading_order: z.number().int().positive(),
+      summary: z.string().min(1),
+      tags: z.array(tagSchema).default([]),
+      content_hash: contentHashSchema,
+      classification_version: z.number().int().positive(),
+      classification_batch: z.number().int().nonnegative(),
+      revised_at: revisionDateSchema.optional(),
+      revision_note: revisionNoteSchema.optional(),
+    })
+    .superRefine((fm, ctx) => {
+      const issue = revisionPairIssue(fm.revised_at, fm.revision_note);
+      if (issue) ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["revised_at"], message: issue });
+    });
 }
 
 /** Main library + AI series: content/catalog.json, content/series/catalog.json. */

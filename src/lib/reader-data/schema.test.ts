@@ -6,6 +6,7 @@ import {
   savedPlaceRecordSchema,
   syncMutationSchema,
 } from "./schema";
+import { syncRequestSchema, syncResponseSchema } from "./sync-contract";
 
 const DEVICE = "11111111-1111-4111-8111-111111111111";
 const NOW = "2026-06-29T10:00:00.000Z";
@@ -110,6 +111,40 @@ describe("readerDataSchema", () => {
     });
     expect(parsed.success).toBe(true);
     expect(parsed.success && parsed.data.progress["article-1"].anchor).toBeNull();
+  });
+
+  it("reads a blob stored before progress resets existed as never reset", () => {
+    const parsed = readerDataSchema.parse({
+      version: 2,
+      workspaceId: "owner",
+      deviceId: DEVICE,
+      cursor: 3,
+      progress: { "article-1": legacyProgress() },
+    });
+    expect(parsed.resetVersion).toBe(0);
+    expect(parsed.progress["article-1"].scrollRatio).toBe(0.5);
+  });
+});
+
+describe("sync contract and progress resets", () => {
+  it("treats a request from a client that predates resets as never reset", () => {
+    expect(syncRequestSchema.parse({ cursor: 5, operations: [] }).resetVersion).toBe(0);
+  });
+
+  it("parses a response from a server that predates resets", () => {
+    const parsed = syncResponseSchema.parse({
+      cursor: 5,
+      acknowledged: [],
+      errors: [],
+      changes: { progress: [], savedPlaces: [], highlights: [] },
+      serverTime: NOW,
+    });
+    expect(parsed.resetVersion).toBe(0);
+  });
+
+  it("rejects a negative or fractional reset version", () => {
+    expect(syncRequestSchema.safeParse({ resetVersion: -1 }).success).toBe(false);
+    expect(syncRequestSchema.safeParse({ resetVersion: 1.5 }).success).toBe(false);
   });
 });
 

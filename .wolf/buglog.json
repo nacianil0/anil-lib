@@ -8215,6 +8215,3471 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-13T16:50:00Z"
+    },
+    {
+      "id": "bug-491",
+      "timestamp": "2026-09-25T17:13:15.669Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/workflows/scripts/iki-seri-editoryal-yenileme-wf_074b3edd-f41.js",
+      "root_cause": "Had `${args.length} küme, ${args.reduce((n, c) => n + ",
+      "fix": "Changed to `${args.length} küme, ${args.reduce((n, c) => n + ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:13:15.669Z"
+    },
+    {
+      "id": "bug-492",
+      "timestamp": "2026-09-25T17:15:12.108Z",
+      "error_message": "Type error",
+      "file": "src/lib/content/schema.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:15:12.108Z"
+    },
+    {
+      "id": "bug-493",
+      "timestamp": "2026-09-25T17:15:30.152Z",
+      "error_message": "Type error",
+      "file": "src/lib/content/catalog.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:15:30.152Z"
+    },
+    {
+      "id": "bug-494",
+      "timestamp": "2026-09-25T17:16:59.213Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/revision-notice.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→9 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:16:59.213Z"
+    },
+    {
+      "id": "bug-495",
+      "timestamp": "2026-09-25T17:17:14.424Z",
+      "error_message": "Wrong reference: useReaderProgress should be entryOf",
+      "file": "src/components/reader/reading-list.tsx",
+      "root_cause": "Used \"useReaderProgress\" instead of \"entryOf\"",
+      "fix": "Changed useReaderProgress → entryOf",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:17:14.424Z"
+    },
+    {
+      "id": "bug-496",
+      "timestamp": "2026-09-25T17:17:26.831Z",
+      "error_message": "Wrong reference: useReaderData should be entryOf",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Used \"useReaderData\" instead of \"entryOf\"",
+      "fix": "Changed useReaderData → entryOf",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:17:26.831Z"
+    },
+    {
+      "id": "bug-497",
+      "timestamp": "2026-09-25T17:17:56.128Z",
+      "error_message": "Type error",
+      "file": "src/lib/content/schema.test.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:17:56.128Z"
+    },
+    {
+      "id": "bug-498",
+      "timestamp": "2026-09-25T17:18:35.635Z",
+      "error_message": "Wrong reference: text should be bi",
+      "file": "content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari.svg",
+      "root_cause": "Used \"text\" instead of \"bi\"",
+      "fix": "Changed text → bi",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:18:35.635Z"
+    },
+    {
+      "id": "bug-499",
+      "timestamp": "2026-09-25T17:18:41.436Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md",
+      "root_cause": "Had \"Her girdi için bir algoritma çalışır\"",
+      "fix": "Changed to \"Her girdi için onu doğru çözen bir algoritma vard",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:18:41.436Z"
+    },
+    {
+      "id": "bug-500",
+      "timestamp": "2026-09-25T17:18:54.771Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md",
+      "root_cause": "Had \"¬q varsayalım... doğrudan yürüyelim... q elde ett",
+      "fix": "Changed to \"¬q varsayalım... (bu varsayımı hiç kullanmadan) p",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:19:16.281Z"
+    },
+    {
+      "id": "bug-501",
+      "timestamp": "2026-09-25T17:18:59.925Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:18:59.925Z"
+    },
+    {
+      "id": "bug-502",
+      "timestamp": "2026-09-25T17:19:03.845Z",
+      "error_message": "Missing guard clause",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "No early return/throw for edge case: rawDate === undefined && rawNote === undefined",
+      "fix": "Added guard clause: if (rawDate === undefined && rawNote === und)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:19:03.845Z"
+    },
+    {
+      "id": "bug-503",
+      "timestamp": "2026-09-25T17:19:07.856Z",
+      "error_message": "Wrong condition in logic",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "Condition was: if (fmOk && catalogOk)",
+      "fix": "Changed to: if (revision && revision.error)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:19:07.856Z"
+    },
+    {
+      "id": "bug-504",
+      "timestamp": "2026-09-25T17:19:30.913Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md",
+      "root_cause": "Had 'da öğrenmiştik: alan sabitlenmiş değerlendirme kü",
+      "fix": "Changed to 'da öğrenmiştik: alan sabitlenmiş değerlendirme kü",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 6,
+      "last_seen": "2026-09-25T17:21:48.620Z"
+    },
+    {
+      "id": "bug-505",
+      "timestamp": "2026-09-25T17:19:49.618Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→5 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:19:49.618Z"
+    },
+    {
+      "id": "bug-506",
+      "timestamp": "2026-09-25T17:19:57.769Z",
+      "error_message": "Wrong reference: paradox should be principle",
+      "file": "content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md",
+      "root_cause": "Used \"paradox\" instead of \"principle\"",
+      "fix": "Changed paradox → principle",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:19:57.769Z"
+    },
+    {
+      "id": "bug-507",
+      "timestamp": "2026-09-25T17:19:58.700Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
+      "root_cause": "Had 'nin 2024/1689 sayılı Yapay Zekâ Yasası. 1 Ağustos",
+      "fix": "Changed to 'nin 2024/1689 sayılı Yapay Zekâ Yasası. Takvimi ü",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:19:58.700Z"
+    },
+    {
+      "id": "bug-508",
+      "timestamp": "2026-09-25T17:20:20.732Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md",
+      "root_cause": "Had \"hiçbir şey ezberlemez\"",
+      "fix": "Changed to \"model ezberler\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-09-25T17:21:31.793Z"
+    },
+    {
+      "id": "bug-509",
+      "timestamp": "2026-09-25T17:20:43.010Z",
+      "error_message": "Wrong reference: uygulama should be NIST",
+      "file": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
+      "root_cause": "Used \"uygulama\" instead of \"NIST\"",
+      "fix": "Changed uygulama → NIST",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:20:43.010Z"
+    },
+    {
+      "id": "bug-510",
+      "timestamp": "2026-09-25T17:20:46.065Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md",
+      "root_cause": "Had 'nin tümleyeni olması için ebob(2, b) = 1 ve ekok(",
+      "fix": "Changed to 'nin tümleyeni olması için ebob(2, b) = 1 ve ekok(",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:20:46.065Z"
+    },
+    {
+      "id": "bug-511",
+      "timestamp": "2026-09-25T17:20:48.321Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md",
+      "root_cause": "Had \"ayağın altındaki eğim\"",
+      "fix": "Changed to \"Ayağın altındaki eğim\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:20:48.321Z"
+    },
+    {
+      "id": "bug-512",
+      "timestamp": "2026-09-25T17:21:05.713Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 11→11 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:21:05.713Z"
+    },
+    {
+      "id": "bug-513",
+      "timestamp": "2026-09-25T17:21:12.515Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md",
+      "root_cause": "Had 'i rol ve görev tanımından, 21,3'",
+      "fix": "Changed to 'i sistem tasarımından — rol ve görev tanımı, biti",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:21:12.515Z"
+    },
+    {
+      "id": "bug-514",
+      "timestamp": "2026-09-25T17:21:32.771Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md",
+      "root_cause": "Had 'i öbür komitede reddedilirdi; rastgele seçim yapa",
+      "fix": "Changed to 'i öbür tarafta reddedilir (bu örnek sayı bizim, r",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:21:58.019Z"
+    },
+    {
+      "id": "bug-515",
+      "timestamp": "2026-09-25T17:21:47.564Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md",
+      "root_cause": "Had \"BFS mi DFS mi, DFS neden olmaz?\"",
+      "fix": "Changed to \"BFS mi DFS mi, neden?\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:21:47.564Z"
+    },
+    {
+      "id": "bug-516",
+      "timestamp": "2026-09-25T17:21:54.324Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md",
+      "root_cause": "Had 'da görevi kusursuz çözerken 3.000 token'",
+      "fix": "Changed to 'da 0,92 iken 3.000 token'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:21:54.324Z"
+    },
+    {
+      "id": "bug-517",
+      "timestamp": "2026-09-25T17:22:15.720Z",
+      "error_message": "Wrong reference: zariftir should be udur",
+      "file": "content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md",
+      "root_cause": "Used \"zariftir\" instead of \"udur\"",
+      "fix": "Changed zariftir → udur",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:15.720Z"
+    },
+    {
+      "id": "bug-518",
+      "timestamp": "2026-09-25T17:22:15.734Z",
+      "error_message": "Wrong reference: nemseme should be nemsememe",
+      "file": "content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md",
+      "root_cause": "Used \"nemseme\" instead of \"nemsememe\"",
+      "fix": "Changed nemseme → nemsememe",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:15.734Z"
+    },
+    {
+      "id": "bug-519",
+      "timestamp": "2026-09-25T17:22:22.719Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md",
+      "root_cause": "Had 'ye yansır ve kayıp 0'",
+      "fix": "Changed to 'dur ve o çift artık neredeyse hiçbir şey öğretmez",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:22.719Z"
+    },
+    {
+      "id": "bug-520",
+      "timestamp": "2026-09-25T17:22:23.864Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md",
+      "root_cause": "Had 'da saklı. Bu işaretler sıradan metinden **üretile",
+      "fix": "Changed to 'da saklı, ama kendiliğinden gelmiyor. Bu işaretle",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:23.864Z"
+    },
+    {
+      "id": "bug-521",
+      "timestamp": "2026-09-25T17:22:26.242Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md",
+      "root_cause": "Had \"Şekil 3 — Beş ortam, aynı uçurum\"",
+      "fix": "Changed to 'te biter ve yanında Eylül 2025 yazar. Şeklin altı",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:26.242Z"
+    },
+    {
+      "id": "bug-522",
+      "timestamp": "2026-09-25T17:22:35.132Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (2 removed) | Also: her öbekte getirilen ilk belgenin cevabı içerme or; | | getirmeli düzen doğru | getirmeli düzen yanlış",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:22:45.508Z"
+    },
+    {
+      "id": "bug-523",
+      "timestamp": "2026-09-25T17:22:42.459Z",
+      "error_message": "Wrong reference: ini should be n",
+      "file": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
+      "root_cause": "Used \"ini\" instead of \"n\"",
+      "fix": "Changed ini → n",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:22:55.960Z"
+    },
+    {
+      "id": "bug-524",
+      "timestamp": "2026-09-25T17:22:47.099Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/insan-degerlendirmesinin-anatomisi.svg",
+      "root_cause": "Had \"130\"",
+      "fix": "Changed to 'ı aşsa da puanlar 10</text>\n  <text x=\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:47.099Z"
+    },
+    {
+      "id": "bug-525",
+      "timestamp": "2026-09-25T17:22:47.423Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md",
+      "root_cause": "Had 'deki benzetme bir cetvel: elindeki cetvelin sonu ",
+      "fix": "Changed to 'i bir cetvel gibi okuyabilirsin: elindeki cetveli",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:47.423Z"
+    },
+    {
+      "id": "bug-526",
+      "timestamp": "2026-09-25T17:22:48.078Z",
+      "error_message": "Wrong reference: zarif should be basit",
+      "file": "content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md",
+      "root_cause": "Used \"zarif\" instead of \"basit\"",
+      "fix": "Changed zarif → basit",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:23:02.562Z"
+    },
+    {
+      "id": "bug-527",
+      "timestamp": "2026-09-25T17:22:49.072Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
+      "root_cause": "Had 'inde yanıltıcı bir çözümün yazılı olduğunu ve yüz",
+      "fix": "Changed to 'ında yanıltıcı bir çözümün yazılı olduğunu ve yüz",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:22:53.362Z"
+    },
+    {
+      "id": "bug-528",
+      "timestamp": "2026-09-25T17:22:56.758Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md",
+      "root_cause": "Had 'te yayımladığı, hakemli olmayan not sondayı uyuya",
+      "fix": "Changed to 'te yayımladığı, hakemli olmayan not, tetikleyicid",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:22:56.758Z"
+    },
+    {
+      "id": "bug-529",
+      "timestamp": "2026-09-25T17:22:59.098Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md",
+      "root_cause": "Had 'te kurmuştuk: bir dil modelinin iki cevaptan hang",
+      "fix": "Changed to 'te kurmuştuk: bir dil modelinin iki cevaptan hang",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:23:12.682Z"
+    },
+    {
+      "id": "bug-530",
+      "timestamp": "2026-09-25T17:23:00.716Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md",
+      "root_cause": "Had 'deki formül bu makalenin geri kalanının anahtarı.",
+      "fix": "Changed to 'deki formül bu makalenin geri kalanının anahtarı ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:00.716Z"
+    },
+    {
+      "id": "bug-531",
+      "timestamp": "2026-09-25T17:23:08.799Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→7 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:08.799Z"
+    },
+    {
+      "id": "bug-532",
+      "timestamp": "2026-09-25T17:23:22.469Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md",
+      "root_cause": "Had 'ten 18,0'",
+      "fix": "Changed to 'dan 18,0'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:23:27.358Z"
+    },
+    {
+      "id": "bug-533",
+      "timestamp": "2026-09-25T17:23:24.948Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md",
+      "root_cause": "Had 'in ücretsiz çevrimiçi kitabındaki sigmoid gerekçe",
+      "fix": "Changed to 'in ücretsiz çevrimiçi kitabındaki sigmoid gerekçe",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:24.948Z"
+    },
+    {
+      "id": "bug-534",
+      "timestamp": "2026-09-25T17:23:39.402Z",
+      "error_message": "Wrong reference: tablonun should be eklin",
+      "file": "content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md",
+      "root_cause": "Used \"tablonun\" instead of \"eklin\"",
+      "fix": "Changed tablonun → eklin",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:39.402Z"
+    },
+    {
+      "id": "bug-535",
+      "timestamp": "2026-09-25T17:23:41.366Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md",
+      "root_cause": "Had \"ok\"",
+      "fix": "Changed to \"k–u\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:23:45.826Z"
+    },
+    {
+      "id": "bug-536",
+      "timestamp": "2026-09-25T17:23:44.200Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 11→3 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:44.200Z"
+    },
+    {
+      "id": "bug-537",
+      "timestamp": "2026-09-25T17:23:46.086Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md",
+      "root_cause": "Had 'ten 6,0'",
+      "fix": "Changed to 'ten en zor sürümdeki 6,0'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:46.086Z"
+    },
+    {
+      "id": "bug-538",
+      "timestamp": "2026-09-25T17:23:54.937Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md",
+      "root_cause": "Had 'in yaklaşık 3/2 katına çıkar ve 1'",
+      "fix": "Changed to 'in yaklaşık 3/2 katına çıkar (bu çarpan kendi hes",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:54.937Z"
+    },
+    {
+      "id": "bug-539",
+      "timestamp": "2026-09-25T17:23:58.353Z",
+      "error_message": "Wrong reference: Sonu should be belirlenimci",
+      "file": "content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md",
+      "root_cause": "Used \"Sonu\" instead of \"belirlenimci\"",
+      "fix": "Changed Sonu → belirlenimci",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:23:58.353Z"
+    },
+    {
+      "id": "bug-540",
+      "timestamp": "2026-09-25T17:24:06.907Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
+      "root_cause": "Had 'sini çözüyor — 51 ve 57'",
+      "fix": "Changed to 'sini çözüyor ve saldırı altında 51,2'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:24:06.907Z"
+    },
+    {
+      "id": "bug-541",
+      "timestamp": "2026-09-25T17:24:07.358Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/kuantizasyon-modeli-kucultme-sanati/bit-genisligi-ve-basari.svg",
+      "root_cause": "Had \"0 0 720 334\"",
+      "fix": "Changed to \"0 0 720 356\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:24:07.358Z"
+    },
+    {
+      "id": "bug-542",
+      "timestamp": "2026-09-25T17:24:14.748Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md",
+      "root_cause": "Had 'un kendi tablosunda kılavuzluk katsayısı ona çıka",
+      "fix": "Changed to 'un kendi tablosunda — orada düğme sınıflandırıcı ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:24:14.748Z"
+    },
+    {
+      "id": "bug-543",
+      "timestamp": "2026-09-25T17:24:16.619Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 11→9 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:24:16.619Z"
+    },
+    {
+      "id": "bug-544",
+      "timestamp": "2026-09-25T17:24:27.820Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
+      "root_cause": "Had \"Başlatmada neden doğru, sıralılığı nerede kulland",
+      "fix": "Changed to \"Koruma adımında hangi varsayımı kullandın?\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:24:27.820Z"
+    },
+    {
+      "id": "bug-545",
+      "timestamp": "2026-09-25T17:24:33.123Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→5 lines (2 removed) | Also: Sıralama ölçüsü, saniyede belirli bir sorgu eşiğin; | veri kümesi | 64 gigabayt bellek, saniyede 10.00",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:25:14.191Z"
+    },
+    {
+      "id": "bug-546",
+      "timestamp": "2026-09-25T17:24:44.886Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/uc-ablasyon.svg",
+      "root_cause": "Had \"0 0 720 300\"",
+      "fix": "Changed to \"0 0 720 324\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:24:44.886Z"
+    },
+    {
+      "id": "bug-547",
+      "timestamp": "2026-09-25T17:25:00.655Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
+      "root_cause": "Had 'a bakıp tekrarın konumunu yazar; özne bastırma ba",
+      "fix": "Changed to 'de, S1'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:00.655Z"
+    },
+    {
+      "id": "bug-548",
+      "timestamp": "2026-09-25T17:25:05.422Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md",
+      "root_cause": "Had 'a verdiği olasılıklar üzerinden hesaplanır ve kaç",
+      "fix": "Changed to 'yi, modelin gerçekleşen token'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:05.422Z"
+    },
+    {
+      "id": "bug-549",
+      "timestamp": "2026-09-25T17:25:05.581Z",
+      "error_message": "Wrong reference: okla should be izgiyle",
+      "file": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "root_cause": "Used \"okla\" instead of \"izgiyle\"",
+      "fix": "Changed okla → izgiyle",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:05.581Z"
+    },
+    {
+      "id": "bug-550",
+      "timestamp": "2026-09-25T17:25:11.286Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md",
+      "root_cause": "Had 'ten 17,3'",
+      "fix": "Changed to 'ten 17,8'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:11.286Z"
+    },
+    {
+      "id": "bug-551",
+      "timestamp": "2026-09-25T17:25:11.915Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/token-yolculugu.svg",
+      "root_cause": "Had \"bold\"",
+      "fix": "Changed to \"var(--text)\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:11.915Z"
+    },
+    {
+      "id": "bug-552",
+      "timestamp": "2026-09-25T17:25:14.345Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 9→9 lines (7 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:14.345Z"
+    },
+    {
+      "id": "bug-553",
+      "timestamp": "2026-09-25T17:25:18.404Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md",
+      "root_cause": "Had \"Sauron'",
+      "fix": "Changed to \"Sala Baker, kötücül Sauron'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:18.404Z"
+    },
+    {
+      "id": "bug-554",
+      "timestamp": "2026-09-25T17:25:20.781Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→7 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:20.781Z"
+    },
+    {
+      "id": "bug-555",
+      "timestamp": "2026-09-25T17:25:24.701Z",
+      "error_message": "Wrong reference: rnek should be Soru",
+      "file": "content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md",
+      "root_cause": "Used \"rnek\" instead of \"Soru\"",
+      "fix": "Changed rnek → Soru",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:24.701Z"
+    },
+    {
+      "id": "bug-556",
+      "timestamp": "2026-09-25T17:25:27.914Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md",
+      "root_cause": "Had ` boyutlu uzayda tam olarak `",
+      "fix": "Changed to ` boyutlu uzayda karşılıklı olarak birbirine dik e",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:27.914Z"
+    },
+    {
+      "id": "bug-557",
+      "timestamp": "2026-09-25T17:25:34.904Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 10→3 lines (7 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:34.904Z"
+    },
+    {
+      "id": "bug-558",
+      "timestamp": "2026-09-25T17:25:37.261Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→5 lines (2 removed) | Also: İki'yi bir yerde gördük: kestiğimiz tekil değer. B; ![Üç adımlı bir hesap şeması. Birinci kutuda A mat",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:25:58.727Z"
+    },
+    {
+      "id": "bug-559",
+      "timestamp": "2026-09-25T17:25:54.161Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md",
+      "root_cause": "Had 'ü Wikipedia'",
+      "fix": "Changed to 'ı Common Crawl'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:25:54.161Z"
+    },
+    {
+      "id": "bug-560",
+      "timestamp": "2026-09-25T17:26:03.438Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→17 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:03.438Z"
+    },
+    {
+      "id": "bug-561",
+      "timestamp": "2026-09-25T17:26:08.813Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md",
+      "root_cause": "11 lines replaced/restructured",
+      "fix": "Rewrote 15→3 lines (11 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:08.813Z"
+    },
+    {
+      "id": "bug-562",
+      "timestamp": "2026-09-25T17:26:09.021Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md",
+      "root_cause": "Had 'da model 0'",
+      "fix": "Changed to 'da 0'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T17:27:41.341Z"
+    },
+    {
+      "id": "bug-563",
+      "timestamp": "2026-09-25T17:26:13.284Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
+      "root_cause": "Had \"bilmiyorum\"",
+      "fix": "Changed to 'dan 26,3'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:13.284Z"
+    },
+    {
+      "id": "bug-564",
+      "timestamp": "2026-09-25T17:26:15.816Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:15.816Z"
+    },
+    {
+      "id": "bug-565",
+      "timestamp": "2026-09-25T17:26:17.210Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md",
+      "root_cause": "Had ` girdisi, `",
+      "fix": "Changed to `, `",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:26:34.092Z"
+    },
+    {
+      "id": "bug-566",
+      "timestamp": "2026-09-25T17:26:21.418Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md",
+      "root_cause": "Had 'i bir öğrenme sonucu değil, aritmetik bir zorunlu",
+      "fix": "Changed to 'i bir öğrenme sonucu değil, aritmetik bir zorunlu",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:21.418Z"
+    },
+    {
+      "id": "bug-567",
+      "timestamp": "2026-09-25T17:26:25.509Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md",
+      "root_cause": "Had 'in dördüncü satırı: açık bir sohbet modelinde yüz",
+      "fix": "Changed to 'in ilk satırında, yalnızca istem yazıyor; farkı, ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-09-25T17:27:26.368Z"
+    },
+    {
+      "id": "bug-568",
+      "timestamp": "2026-09-25T17:26:28.005Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md",
+      "root_cause": "Had 'ın 2017'",
+      "fix": "Changed to 'de neden terk edildiklerini görmüştük: dizinin ge",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:28.005Z"
+    },
+    {
+      "id": "bug-569",
+      "timestamp": "2026-09-25T17:26:34.311Z",
+      "error_message": "Wrong reference: text should be yatay",
+      "file": "content/series/assets/on-egitim-internet-olceginde-sonraki-token/ogrenme-orani-cizelgesi.svg",
+      "root_cause": "Used \"text\" instead of \"yatay\"",
+      "fix": "Changed text → yatay",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:34.311Z"
+    },
+    {
+      "id": "bug-570",
+      "timestamp": "2026-09-25T17:26:35.937Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/sinavin-tesviki.svg",
+      "root_cause": "Had \"300\"",
+      "fix": "Changed to \"260\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:35.937Z"
+    },
+    {
+      "id": "bug-571",
+      "timestamp": "2026-09-25T17:26:45.593Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md",
+      "root_cause": "Had \"Şekil 2 — Puanlama kuralı davranışı belirler\"",
+      "fix": "Changed to 'dan 1'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:45.593Z"
+    },
+    {
+      "id": "bug-572",
+      "timestamp": "2026-09-25T17:26:50.874Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
+      "root_cause": "Had 'da kurmuştuk: model token başına hata oranını düz",
+      "fix": "Changed to 'da sayısıyla kurmuştuk: cevap birkaç token'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:50.874Z"
+    },
+    {
+      "id": "bug-573",
+      "timestamp": "2026-09-25T17:26:56.292Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md",
+      "root_cause": "9 lines replaced/restructured",
+      "fix": "Rewrote 14→14 lines (9 removed) | Also: cevap alanı önce geldiğinde koşullanacak bir ara a; Bulgunun tersi de var ve dürüst bir tablo için ger | Also: **Şemanın alan sırası bir performans kararıdır.** ; **Şemayı gerektiği kadar sıkı tut.** Ölçümde en bü",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T17:27:09.748Z"
+    },
+    {
+      "id": "bug-574",
+      "timestamp": "2026-09-25T17:26:59.627Z",
+      "error_message": "Wrong reference: 6ODFPnrDMy should be jOmk0uS1hl",
+      "file": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
+      "root_cause": "Used \"6ODFPnrDMy\" instead of \"jOmk0uS1hl\"",
+      "fix": "Changed 6ODFPnrDMy → jOmk0uS1hl",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:26:59.627Z"
+    },
+    {
+      "id": "bug-575",
+      "timestamp": "2026-09-25T17:27:01.029Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md",
+      "root_cause": "Had 'den q'",
+      "fix": "Changed to 'un ICML 2023'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:01.029Z"
+    },
+    {
+      "id": "bug-576",
+      "timestamp": "2026-09-25T17:27:05.165Z",
+      "error_message": "Wrong reference: yaln should be bedeli",
+      "file": "content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md",
+      "root_cause": "Used \"yaln\" instead of \"bedeli\"",
+      "fix": "Changed yaln → bedeli",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:05.165Z"
+    },
+    {
+      "id": "bug-577",
+      "timestamp": "2026-09-25T17:27:20.221Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 8→3 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:20.221Z"
+    },
+    {
+      "id": "bug-578",
+      "timestamp": "2026-09-25T17:27:22.305Z",
+      "error_message": "Wrong reference: sert should be y",
+      "file": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
+      "root_cause": "Used \"sert\" instead of \"y\"",
+      "fix": "Changed sert → y",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:22.305Z"
+    },
+    {
+      "id": "bug-579",
+      "timestamp": "2026-09-25T17:27:24.768Z",
+      "error_message": "Wrong reference: koruyor should be korunuyor",
+      "file": "content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md",
+      "root_cause": "Used \"koruyor\" instead of \"korunuyor\"",
+      "fix": "Changed koruyor → korunuyor",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:24.768Z"
+    },
+    {
+      "id": "bug-580",
+      "timestamp": "2026-09-25T17:27:26.137Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:26.137Z"
+    },
+    {
+      "id": "bug-581",
+      "timestamp": "2026-09-25T17:27:28.213Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md",
+      "root_cause": "Had \"Şekil 1 — Bölümü puanlamanın üç yolu ve her birin",
+      "fix": "Changed to \"Şekil 1 — Her puanlama yolu bölümün başka bir par",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:28.214Z"
+    },
+    {
+      "id": "bug-582",
+      "timestamp": "2026-09-25T17:27:29.827Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
+      "root_cause": "Had 'te sunduğu çalışma aynı soruya başka bir cevap ve",
+      "fix": "Changed to 'te sunduğu çalışma başka bir cevap veriyor: her a",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:29.827Z"
+    },
+    {
+      "id": "bug-583",
+      "timestamp": "2026-09-25T17:27:32.159Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:32.159Z"
+    },
+    {
+      "id": "bug-584",
+      "timestamp": "2026-09-25T17:27:33.521Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md",
+      "root_cause": "Had \"Ankara\"",
+      "fix": "Changed to 'deki basitleştirilmiş örnekte, \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:27:51.698Z"
+    },
+    {
+      "id": "bug-585",
+      "timestamp": "2026-09-25T17:27:51.684Z",
+      "error_message": "Wrong reference: adb should be puanlama",
+      "file": "content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/bolumu-puanlamanin-uc-yolu.svg",
+      "root_cause": "Used \"adb\" instead of \"puanlama\"",
+      "fix": "Changed adb → puanlama",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:51.684Z"
+    },
+    {
+      "id": "bug-586",
+      "timestamp": "2026-09-25T17:27:54.685Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:27:54.685Z"
+    },
+    {
+      "id": "bug-587",
+      "timestamp": "2026-09-25T17:27:56.468Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/cati-cizgisi-ve-iki-asama.svg",
+      "root_cause": "Had \"160\"",
+      "fix": "Changed to \"138\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:27:58.323Z"
+    },
+    {
+      "id": "bug-588",
+      "timestamp": "2026-09-25T17:28:10.511Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md",
+      "root_cause": "Had 'deki \"",
+      "fix": "Changed to \"en çok tekrarlanan sürüm\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:28:10.511Z"
+    },
+    {
+      "id": "bug-589",
+      "timestamp": "2026-09-25T17:28:19.610Z",
+      "error_message": "Wrong reference: ikincisinden should be ikincisinde",
+      "file": "content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md",
+      "root_cause": "Used \"ikincisinden\" instead of \"ikincisinde\"",
+      "fix": "Changed ikincisinden → ikincisinde",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:28:19.611Z"
+    },
+    {
+      "id": "bug-590",
+      "timestamp": "2026-09-25T17:28:20.566Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 5→5 lines (5 removed) | Also: bölmek.; ![Üç satırlı dört sütunlu bir tablo ve altında iki | Also: 86\\. makalede FlashAttention'ın neden işlem sayısı; ![Beş satırlı üç sütunlu bir tablo ve altında iki ",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T17:29:09.636Z"
+    },
+    {
+      "id": "bug-591",
+      "timestamp": "2026-09-25T17:28:49.505Z",
+      "error_message": "Wrong reference: model should be d",
+      "file": "content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/insa-edilen-aldatma.svg",
+      "root_cause": "Used \"model\" instead of \"d\"",
+      "fix": "Changed model → d",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:28:49.505Z"
+    },
+    {
+      "id": "bug-592",
+      "timestamp": "2026-09-25T17:28:50.898Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md",
+      "root_cause": "Had 'te sunduğu çalışma bu defteri tek bir formülde to",
+      "fix": "Changed to `s·b·h`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:28:52.592Z"
+    },
+    {
+      "id": "bug-593",
+      "timestamp": "2026-09-25T17:28:53.121Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "root_cause": "Had 'de sunduğu çalışma bu faturayı bu makalenin araçl",
+      "fix": "Changed to 'de sunduğu çalışma bu faturayı bu makalenin araçl",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:28:53.121Z"
+    },
+    {
+      "id": "bug-594",
+      "timestamp": "2026-09-25T17:28:59.664Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→11 lines (3 removed) | Also: ![Beş satırlı bir tablo; satırlar birlikte büyüyen; Şekil 2'nin son iki satırı işi bitiriyor. Aynı çal",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:29:40.849Z"
+    },
+    {
+      "id": "bug-595",
+      "timestamp": "2026-09-25T17:29:09.591Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
+      "root_cause": "Had 'nın Llama 3.1 için yayımladığı Community License,",
+      "fix": "Changed to 'te yayımlanan Llama 3.1 sürümüne aittir, sonraki ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:29:09.591Z"
+    },
+    {
+      "id": "bug-596",
+      "timestamp": "2026-09-25T17:29:12.539Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
+      "root_cause": "Had \"Şekil 1 — İki kip ve aralarındaki geçişler: her g",
+      "fix": "Changed to \"Şekil 1 — Çekirdeğe üç kapıdan girilir, tek kapıd",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:29:12.539Z"
+    },
+    {
+      "id": "bug-597",
+      "timestamp": "2026-09-25T17:29:15.580Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/kapsama-egrileri.svg",
+      "root_cause": "Had \"0 0 720 342\"",
+      "fix": "Changed to \"0 0 720 372\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:29:15.580Z"
+    },
+    {
+      "id": "bug-598",
+      "timestamp": "2026-09-25T17:29:19.553Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md",
+      "root_cause": "Had 'de 6 mikrosaniye **1.200 çevrim** demektir. 3 GHz",
+      "fix": "Changed to 'de 6 mikrosaniye **1.200 çevrim** demektir. Kayna",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:29:19.553Z"
+    },
+    {
+      "id": "bug-599",
+      "timestamp": "2026-09-25T17:29:30.120Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md",
+      "root_cause": "Had 'den 36,5'",
+      "fix": "Changed to 'dan 36,5'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:29:33.446Z"
+    },
+    {
+      "id": "bug-600",
+      "timestamp": "2026-09-25T17:29:51.504Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md",
+      "root_cause": "Had 'si**. Yani alanın en iyi mühendisliğe sahip eğiti",
+      "fix": "Changed to 'si**. Yani alanın en iyi mühendisliğe sahip eğiti",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:29:51.504Z"
+    },
+    {
+      "id": "bug-601",
+      "timestamp": "2026-09-25T17:30:08.938Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 7→9 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:30:08.938Z"
+    },
+    {
+      "id": "bug-602",
+      "timestamp": "2026-09-25T17:30:29.842Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md",
+      "root_cause": "Had 'ten 3,4'",
+      "fix": "Changed to 'dan 3,4'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:30:29.842Z"
+    },
+    {
+      "id": "bug-603",
+      "timestamp": "2026-09-25T17:31:02.449Z",
+      "error_message": "Wrong reference: text should be logaritmik",
+      "file": "content/series/assets/surec-denetimi-adim-adim-odullendirme/en-iyi-n-egrileri.svg",
+      "root_cause": "Used \"text\" instead of \"logaritmik\"",
+      "fix": "Changed text → logaritmik",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:02.449Z"
+    },
+    {
+      "id": "bug-604",
+      "timestamp": "2026-09-25T17:31:05.368Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/senkronizasyon-kilit-semafor-ve-monitor/bekleme-ve-semafor.svg",
+      "root_cause": "Had \"216\"",
+      "fix": "Changed to \"214\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:05.368Z"
+    },
+    {
+      "id": "bug-605",
+      "timestamp": "2026-09-25T17:31:11.184Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md",
+      "root_cause": "Had 'ın içine gömüldüğünde doğruluk yüzde 60,6'",
+      "fix": "Changed to 'ın arasına karıştığında doğruluk yüzde 60,6'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:11.184Z"
+    },
+    {
+      "id": "bug-606",
+      "timestamp": "2026-09-25T17:31:20.573Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md",
+      "root_cause": "Had 'larının yanına konur; dil modeline yama sayısı ka",
+      "fix": "Changed to 'ları var; görüntü kodlayıcısından çıkan ok diziye",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:20.573Z"
+    },
+    {
+      "id": "bug-607",
+      "timestamp": "2026-09-25T17:31:23.985Z",
+      "error_message": "Wrong reference: zarif should be tek",
+      "file": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
+      "root_cause": "Used \"zarif\" instead of \"tek\"",
+      "fix": "Changed zarif → tek",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:23.985Z"
+    },
+    {
+      "id": "bug-608",
+      "timestamp": "2026-09-25T17:31:49.745Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:49.745Z"
+    },
+    {
+      "id": "bug-609",
+      "timestamp": "2026-09-25T17:31:51.224Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:31:51.224Z"
+    },
+    {
+      "id": "bug-610",
+      "timestamp": "2026-09-25T17:31:51.829Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md",
+      "root_cause": "Had \"Şekil 2 — Neredeyse bölmek ile tam bölmek arasınd",
+      "fix": "Changed to \"Şekil 3 — Neredeyse bölmek ile tam bölmek arasınd",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-09-25T17:32:25.164Z"
+    },
+    {
+      "id": "bug-611",
+      "timestamp": "2026-09-25T17:32:03.158Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md",
+      "root_cause": "Had 'in okunması gereken yeri sütunlar arası fark. Adı",
+      "fix": "Changed to 'de okunması gereken yer eğriler arasındaki mesafe",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:32:03.158Z"
+    },
+    {
+      "id": "bug-612",
+      "timestamp": "2026-09-25T17:32:16.672Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 7→19 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:32:16.672Z"
+    },
+    {
+      "id": "bug-613",
+      "timestamp": "2026-09-25T17:32:21.114Z",
+      "error_message": "Wrong reference: 806 should be 800",
+      "file": "content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md",
+      "root_cause": "Used \"806\" instead of \"800\"",
+      "fix": "Changed 806 → 800",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:32:21.114Z"
+    },
+    {
+      "id": "bug-614",
+      "timestamp": "2026-09-25T17:32:24.791Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md",
+      "root_cause": "Had 'dir. Bayt başına bir işlem yapılır. 229'",
+      "fix": "Changed to 'dir; 16 bitlik ağırlıklarda bayt başına bir işlem",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:32:24.791Z"
+    },
+    {
+      "id": "bug-615",
+      "timestamp": "2026-09-25T17:32:44.366Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
+      "root_cause": "Had \" koşulu altında çalışır. İlk maç kazanıldıysa iki",
+      "fix": "Changed to \" olayı `",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:33:36.454Z"
+    },
+    {
+      "id": "bug-616",
+      "timestamp": "2026-09-25T17:32:54.628Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→5 lines (2 removed) | Also: \"kaç kişide muhtemeldir?\" sorusunu ertelemiştik. K; Bunun hash tablosuyla bağlantısı doğrudandır ve ka | Also: Yalnızca beklentiyi bilmek yeter. Daha iyisini ist; Somut örnek: adil bir madenî parayı 100 kez atalım",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T17:33:26.666Z"
+    },
+    {
+      "id": "bug-617",
+      "timestamp": "2026-09-25T17:32:55.820Z",
+      "error_message": "Wrong reference: imdi should be udur",
+      "file": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
+      "root_cause": "Used \"imdi\" instead of \"udur\"",
+      "fix": "Changed imdi → udur",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:32:55.820Z"
+    },
+    {
+      "id": "bug-618",
+      "timestamp": "2026-09-25T17:33:28.620Z",
+      "error_message": "Wrong reference: tabloyu should be resmi",
+      "file": "content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md",
+      "root_cause": "Used \"tabloyu\" instead of \"resmi\"",
+      "fix": "Changed tabloyu → resmi",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:33:28.620Z"
+    },
+    {
+      "id": "bug-619",
+      "timestamp": "2026-09-25T17:33:29.267Z",
+      "error_message": "Wrong reference: tam should be budur",
+      "file": "content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md",
+      "root_cause": "Used \"tam\" instead of \"budur\"",
+      "fix": "Changed tam → budur",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:33:29.267Z"
+    },
+    {
+      "id": "bug-620",
+      "timestamp": "2026-09-25T17:33:36.352Z",
+      "error_message": "Wrong reference: tam should be budur",
+      "file": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
+      "root_cause": "Used \"tam\" instead of \"budur\"",
+      "fix": "Changed tam → budur",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:33:36.353Z"
+    },
+    {
+      "id": "bug-621",
+      "timestamp": "2026-09-25T17:33:44.838Z",
+      "error_message": "Wrong reference: tam should be budur",
+      "file": "content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md",
+      "root_cause": "Used \"tam\" instead of \"budur\"",
+      "fix": "Changed tam → budur",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:33:44.838Z"
+    },
+    {
+      "id": "bug-622",
+      "timestamp": "2026-09-25T17:33:49.663Z",
+      "error_message": "Wrong reference: tam should be budur",
+      "file": "content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md",
+      "root_cause": "Used \"tam\" instead of \"budur\"",
+      "fix": "Changed tam → budur",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:33:50.288Z"
+    },
+    {
+      "id": "bug-623",
+      "timestamp": "2026-09-25T17:34:32.530Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md",
+      "root_cause": "Had 'ı az olan bir hatta küçük model, büyük modelin to",
+      "fix": "Changed to 'ı az olan bir hatta küçük model, toplam fatura ay",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:34:32.530Z"
+    },
+    {
+      "id": "bug-624",
+      "timestamp": "2026-09-25T17:34:59.581Z",
+      "error_message": "Wrong return value",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "Was returning: \"sha256:\" + createHash(\"sha256\").update(body.trim(",
+      "fix": "Now returns: \"sha256:\" + createHash(\"sha256\").update(normalized",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:34:59.581Z"
+    },
+    {
+      "id": "bug-625",
+      "timestamp": "2026-09-25T17:35:14.133Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md",
+      "root_cause": "Had 'da yayımlanan yazar düzeltmesiyle özet 57 hedefte",
+      "fix": "Changed to 'da bir yazar düzeltmesi yayımlandı; makalenin bug",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:35:14.133Z"
+    },
+    {
+      "id": "bug-626",
+      "timestamp": "2026-09-25T17:35:28.911Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:35:28.911Z"
+    },
+    {
+      "id": "bug-627",
+      "timestamp": "2026-09-25T17:35:45.076Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→7 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:35:45.076Z"
+    },
+    {
+      "id": "bug-628",
+      "timestamp": "2026-09-25T17:36:21.044Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
+      "root_cause": "Had 'dir ve iki transaction'",
+      "fix": "Changed to 'dir. İki transaction'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:36:21.044Z"
+    },
+    {
+      "id": "bug-629",
+      "timestamp": "2026-09-25T17:36:26.968Z",
+      "error_message": "Wrong reference: rlar should be r",
+      "file": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
+      "root_cause": "Used \"rlar\" instead of \"r\"",
+      "fix": "Changed rlar → r",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:36:26.968Z"
+    },
+    {
+      "id": "bug-630",
+      "timestamp": "2026-09-25T17:48:50.510Z",
+      "error_message": "Incorrect value in code",
+      "file": "tools/series/check-series-content.cjs",
+      "root_cause": "Had `en az 2 diyagram gerekli (bulunan: ${figures.leng",
+      "fix": "Changed to `en az ${MIN_FIGURES} diyagram gerekli (bulunan: $",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:48:50.510Z"
+    },
+    {
+      "id": "bug-631",
+      "timestamp": "2026-09-25T17:49:01.528Z",
+      "error_message": "Wrong condition in logic",
+      "file": "tools/series/check-series-content.cjs",
+      "root_cause": "Condition was: if (all.length === 0)",
+      "fix": "Changed to: if (warnings.length > 0 && process.argv.includes(\"--wa)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T17:49:32.114Z"
+    },
+    {
+      "id": "bug-632",
+      "timestamp": "2026-09-25T17:52:26.745Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md",
+      "root_cause": "Had 'i doğru, bileşik soruların yalnızca yüzde 1,2'",
+      "fix": "Changed to 'i doğru, bileşik soruların ise yalnızca yüzde 1,2",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:52:26.745Z"
+    },
+    {
+      "id": "bug-633",
+      "timestamp": "2026-09-25T17:53:03.184Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/SOZLESME.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→4 lines (2 removed) | Also: - **Kalıp yasağı:** Aynı geçiş cümlesi, aynı etike; kapanışı (\"Benzetmenin bozulduğu yer şurası… biçim | Also: pekiştirmeli öğrenmenin yetenek sınırı, anlamsal p; gücüyle birlikte verilir; makale bir tarafı seçiyo | Also: - Her makalede **en az 2 öğretici diyagram**; deko; yapıyı (akış, mimari, karşılaştırma, uzay/geometri | Also: - **Alt metin doğrulanabilir olmalı:** `alt`, şekl; kadar somuttur (kaç panel, hangi etiketler, hangi  | Also: Bu bölüm, 1–46 arası yayımlanmış makalelerin bağım; (2026-09-03) çıkarılan ve güçlü makalelerin arkası | Also: terimlerinin İngilizcelerini tek satırlık bir list; kurulan terimleri içerir. | Also: kalır). Çakışma kaçınılmazsa ayrım metinde açıkça ; - **Kalıp yasağı:** AI sözleşmesi §2'deki kalıp ya | Also: → \"## Kaynakça\" sırası, 1.800–3.200 kelime, ≥2 şek; kutusu, ham HTML yok), `check-series-svg.cjs conte | Also: AI sözleşmesinin §11'i (ölçüt sırası, makalenin te; sırası, ölçüm dürüstlüğü, kaynak–iddia bağı, kalıp",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 10,
+      "last_seen": "2026-09-25T17:56:11.665Z"
+    },
+    {
+      "id": "bug-634",
+      "timestamp": "2026-09-25T17:54:39.379Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md",
+      "root_cause": "Had 'te sunduğu çalışma rahatsız edici bir cevap verdi",
+      "fix": "Changed to 'te sunduğu çalışmaya göre bu esneklik sanıldığınd",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T17:54:39.379Z"
+    },
+    {
+      "id": "bug-635",
+      "timestamp": "2026-09-25T18:00:32.407Z",
+      "error_message": "Wrong reference: zarif should be u",
+      "file": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
+      "root_cause": "Used \"zarif\" instead of \"u\"",
+      "fix": "Changed zarif → u",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:00:32.407Z"
+    },
+    {
+      "id": "bug-636",
+      "timestamp": "2026-09-25T21:30:00Z",
+      "error_message": "content_hash of an article changed although its text did not: hashes were computed over CRLF working-copy bodies while git stores LF, and edit tools wrote LF files",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "hashBody() hashed body.trim() without normalizing line endings; with core.autocrlf=true the same body hashes differently per checkout/editor",
+      "fix": "hashBody() now replaces CRLF with LF before hashing; all series hashes rewritten with --write; SOZLESME §1 definition updated",
+      "tags": [
+        "series",
+        "content-hash",
+        "crlf",
+        "tooling"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T21:30:00Z"
+    },
+    {
+      "id": "bug-637",
+      "timestamp": "2026-09-25T21:30:00Z",
+      "error_message": "Decimal suffix errors in published series text: 18,0'ini, 75,0'e, 2,0'ye, 8,0'inde, 2,0'de",
+      "file": "content/series/articles/**",
+      "root_cause": "Suffix was harmonized with the integer part instead of the spoken 'sıfır'",
+      "fix": "Fixed all occurrences; check-series-content.cjs now rejects \\d,0'(e|de|den|i|in|...) in prose",
+      "tags": [
+        "series",
+        "turkish",
+        "checker"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T21:30:00Z"
+    },
+    {
+      "id": "bug-638",
+      "timestamp": "2026-09-25T21:30:00Z",
+      "error_message": "SVG text baseline within 2–7 units of the viewBox bottom (Turkish descenders ~3 units can clip), 17 figures",
+      "file": "content/series*/assets/**",
+      "root_cause": "check-series-svg.cjs only rejected y > viewBox height",
+      "fix": "viewBox heights extended minimally for 17 SVGs; checker now requires y <= height - 8",
+      "tags": [
+        "series",
+        "svg",
+        "checker"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T21:30:00Z"
+    },
+    {
+      "id": "bug-639",
+      "timestamp": "2026-09-25T21:30:00Z",
+      "error_message": "Series articles contradicted their own tables or sources (e.g. 60 summary 'en pahalı üçüncü', 71 '0,4 puan ±0,8 dışına', 75 ters oran adı, 92 Eckart–Young hatası, 82/89 ters yön, 8/109 OPT 35 restart misattribution)",
+      "file": "content/series/articles/**, content/series-boun/articles/**",
+      "root_cause": "Numbers transferred without source condition, derived vs measured not separated, back-references not grep-verified",
+      "fix": "Full-corpus audit 2026-09-25 corrected bodies, figures and summaries; SOZLESME v2.2/v1.2 rules (§3 Formül katmanlama, §4 kaynağın koşulu, §5 düzeltme yayılır, §11 yazan model soruları)",
+      "tags": [
+        "series",
+        "editorial",
+        "accuracy"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T21:30:00Z"
+    },
+    {
+      "id": "bug-640",
+      "timestamp": "2026-09-25T18:21:48.940Z",
+      "error_message": "Missing error handling in unknown",
+      "file": "artifacts/editoryal-2026-09-25/figures.render.ts",
+      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:21:48.940Z"
+    },
+    {
+      "id": "bug-641",
+      "timestamp": "2026-09-25T18:30:14.344Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:30:14.344Z"
+    },
+    {
+      "id": "bug-642",
+      "timestamp": "2026-09-25T18:30:38.198Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 20→69 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:30:38.198Z"
+    },
+    {
+      "id": "bug-643",
+      "timestamp": "2026-09-25T18:31:07.565Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/SOZLESME.md",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 5→7 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:31:07.565Z"
+    },
+    {
+      "id": "bug-644",
+      "timestamp": "2026-09-25T18:40:10.792Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/lib/content/labels.ts",
+      "root_cause": "Had `Gözden geçirildi ${date}`",
+      "fix": "Changed to \"Okuduktan sonra yenilendi\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:40:10.792Z"
+    },
+    {
+      "id": "bug-645",
+      "timestamp": "2026-09-25T18:40:13.491Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 6→9 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:40:13.491Z"
+    },
+    {
+      "id": "bug-646",
+      "timestamp": "2026-09-25T18:40:39.626Z",
+      "error_message": "Wrong reference: Okuma should be telefonda",
+      "file": "docs/seri/SOZLESME.md",
+      "root_cause": "Used \"Okuma\" instead of \"telefonda\"",
+      "fix": "Changed Okuma → telefonda",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:40:39.626Z"
+    },
+    {
+      "id": "bug-647",
+      "timestamp": "2026-09-25T18:42:33.660Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "Had \"shrink-0 font-medium text-accent hover:underline\"",
+      "fix": "Changed to 's min-content width: the pill is centred\n        ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:42:33.660Z"
+    },
+    {
+      "id": "bug-648",
+      "timestamp": "2026-09-25T18:50:00.000Z",
+      "error_message": "Resume pill truncates its message on a 375px phone ('Sen okuduktan sonra gözden…', also 'Kaldığın yere dön…')",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "The pill is position:fixed with left-1/2 -translate-x-1/2, so its available width is only half the viewport and it shrink-to-fits to min-content. The 'Baştan başla' button could wrap, so its min-content was one word; the pill came out narrower than the buttons' real width and flex starved the min-w-0 truncate text.",
+      "fix": "whitespace-nowrap on the 'Baştan başla' button (its min-content = full label, pill widens up to its max-w cap); revised pill shows a short phone wording UI.revisionSinceReadShort 'Okuduktan sonra yenilendi' (sm:hidden) and the long label from sm up; unused UI.revisionShort removed. Verified by 375/768/1280 render and reader-resume + series-revision e2e 16/16.",
+      "tags": [
+        "reader",
+        "resume-notice",
+        "mobile",
+        "truncate",
+        "shrink-to-fit",
+        "fixed-position",
+        "revision"
+      ],
+      "related_bugs": [
+        "bug-647"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:50:00.000Z"
+    },
+    {
+      "id": "bug-649",
+      "timestamp": "2026-09-25T18:51:15.773Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "12 lines replaced/restructured",
+      "fix": "Rewrote 15→3 lines (12 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:51:15.773Z"
+    },
+    {
+      "id": "bug-650",
+      "timestamp": "2026-09-25T18:55:00.000Z",
+      "error_message": "Isolated-copy next build: Module not found: Can't resolve './D:/dev/anil-lib/node_modules/.pnpm/next@15.5.19.../next/dist/client/next.js'",
+      "file": "(temporary isolated copy, no repo file)",
+      "root_cause": "The isolated copy lived on C: (scratchpad) while its node_modules junction pointed to D:; webpack builds a relative path across drives and fails.",
+      "fix": "Put the isolated copy on the same drive (D:\\dev\\.anil-lib-favicon-iso) with a node_modules junction; delete it afterwards with `cmd /c rmdir` on the junction first.",
+      "tags": [
+        "build",
+        "isolation",
+        "junction",
+        "windows",
+        "cross-drive",
+        "webpack"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:55:00.000Z"
+    },
+    {
+      "id": "bug-651",
+      "timestamp": "2026-09-25T19:05:00.000Z",
+      "error_message": "next build: [Error: spawn ENOMEM] / Next.js build worker exited with code: 2147483651 during 'Generating static pages (0/180)'",
+      "file": "(temporary isolated copy next.config.mjs, no repo file)",
+      "root_cause": "System commit memory was ~1.1-1.8 GB free because parallel sessions' dev servers and Playwright runs were alive; default static-generation worker pool (cpus-1) exhausts it.",
+      "fix": "In the throwaway copy only, set `experimental: { cpus: 1 }` in next.config.mjs; build then completed 180/180. Output is identical, only parallelism changes. Do not change the repo config for this.",
+      "tags": [
+        "build",
+        "oom",
+        "enomem",
+        "next",
+        "static-generation",
+        "memory"
+      ],
+      "related_bugs": [
+        "bug-650"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:05:00.000Z"
+    },
+    {
+      "id": "bug-652",
+      "timestamp": "2026-09-25T18:53:54.579Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 9→16 lines (3 removed) | Also: <section aria-labelledby=\"continue-title\" classNam; <p className=\"font-sans text-2xs font-medium upper",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T18:54:19.218Z"
+    },
+    {
+      "id": "bug-653",
+      "timestamp": "2026-09-25T18:54:03.190Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check) | Also: const summaries = summarizePhases(entry.articles, entry.phas; const step = ready ? nextStep(entry.articles, lookup) : null",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T18:54:37.020Z"
+    },
+    {
+      "id": "bug-654",
+      "timestamp": "2026-09-25T18:54:09.777Z",
+      "error_message": "Wrong operator: || should be ===",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "Used \"||\" instead of \"===\"",
+      "fix": "Changed operator || → ===",
+      "tags": [
+        "auto-detected",
+        "operator-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:54:09.777Z"
+    },
+    {
+      "id": "bug-655",
+      "timestamp": "2026-09-25T18:54:59.993Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check) | Also: <div className={cn(\"mt-7\", !ready && \"invisible\")} aria-busy; className=\"inline-flex items-center gap-2 rounded-md bg-acce | Also: const isStep = step?.article.articleId === descriptor.articl; const percent =",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T18:55:26.097Z"
+    },
+    {
+      "id": "bug-656",
+      "timestamp": "2026-09-25T18:55:22.832Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 15→21 lines (5 removed) | Also: className=\"h-1.5 w-1.5 rounded-full bg-cool\"; />",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T18:55:28.562Z"
+    },
+    {
+      "id": "bug-657",
+      "timestamp": "2026-09-25T18:56:02.861Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/reader-sidebar.tsx",
+      "root_cause": "Had \"./lock-button\"",
+      "fix": "Changed to \"@/lib/content/series-progress\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:56:02.861Z"
+    },
+    {
+      "id": "bug-658",
+      "timestamp": "2026-09-25T18:56:10.640Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/mobile-reading-list.tsx",
+      "root_cause": "Had \"./lock-button\"",
+      "fix": "Changed to \"@/lib/content/series-progress\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:56:10.640Z"
+    },
+    {
+      "id": "bug-659",
+      "timestamp": "2026-09-25T18:58:03.466Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation | Also: {headerShown && (; <ChapterHeader",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T18:58:18.546Z"
+    },
+    {
+      "id": "bug-660",
+      "timestamp": "2026-09-25T18:58:13.582Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 17→23 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:58:13.582Z"
+    },
+    {
+      "id": "bug-661",
+      "timestamp": "2026-09-25T18:58:35.139Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/article-toc.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:58:35.139Z"
+    },
+    {
+      "id": "bug-662",
+      "timestamp": "2026-09-25T18:58:42.771Z",
+      "error_message": "Type error",
+      "file": "src/lib/db/schema.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:58:42.771Z"
+    },
+    {
+      "id": "bug-663",
+      "timestamp": "2026-09-25T18:58:53.412Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/reading-settings.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:58:53.412Z"
+    },
+    {
+      "id": "bug-664",
+      "timestamp": "2026-09-25T18:58:54.771Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/reading-settings.tsx",
+      "root_cause": "Had \"min-w-0 truncate text-[11px] text-text-faint\"",
+      "fix": "Changed to \"min-w-0 truncate text-[11px] text-text-muted\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:58:54.771Z"
+    },
+    {
+      "id": "bug-665",
+      "timestamp": "2026-09-25T18:59:05.607Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-data/merge.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 15→26 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:59:05.607Z"
+    },
+    {
+      "id": "bug-666",
+      "timestamp": "2026-09-25T18:59:17.230Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation | Also: const resetRow = (resetRows as Record<string, unknown>[])[0]; resetVersion: resetRow ? Number(resetRow.reset_version) : 0, | Also: // Read the reset before the changes. A device behind it cle; // on this response, so it must receive every progress row t",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T18:59:55.975Z"
+    },
+    {
+      "id": "bug-667",
+      "timestamp": "2026-09-25T18:59:21.769Z",
+      "error_message": "Wrong return value",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "Was returning: progressQuery(sql, workspaceId, operation);",
+      "fix": "Now returns: progressQuery(sql, workspaceId, operation, options",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:59:21.769Z"
+    },
+    {
+      "id": "bug-668",
+      "timestamp": "2026-09-25T18:59:48.739Z",
+      "error_message": "CSS fix: --text-faint",
+      "file": "src/app/globals.css",
+      "root_cause": "--text-faint: #898d94 → #6b6f76",
+      "fix": "Changed --text-faint: #898d94 → #6b6f76",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-25T19:00:18.712Z"
+    },
+    {
+      "id": "bug-669",
+      "timestamp": "2026-09-25T18:59:49.794Z",
+      "error_message": "Wrong reference: 71777f should be 858b93",
+      "file": "src/app/globals.css",
+      "root_cause": "Used \"71777f\" instead of \"858b93\"",
+      "fix": "Changed 71777f → 858b93",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T18:59:50.785Z"
+    },
+    {
+      "id": "bug-670",
+      "timestamp": "2026-09-25T18:59:58.530Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→3 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T18:59:58.530Z"
+    },
+    {
+      "id": "bug-671",
+      "timestamp": "2026-09-25T19:01:07.233Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/components/reader/reading-list.test.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:01:07.233Z"
+    },
+    {
+      "id": "bug-672",
+      "timestamp": "2026-09-25T19:01:13.366Z",
+      "error_message": "Missing await",
+      "file": "src/lib/content/rehype-inline-svg.test.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:01:13.366Z"
+    },
+    {
+      "id": "bug-673",
+      "timestamp": "2026-09-25T19:01:31.307Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/content/series-assets.test.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 4→9 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:01:31.307Z"
+    },
+    {
+      "id": "bug-674",
+      "timestamp": "2026-09-25T19:02:21.367Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-data/merge.test.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:02:21.367Z"
+    },
+    {
+      "id": "bug-675",
+      "timestamp": "2026-09-25T19:02:33.725Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-data/schema.test.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:02:33.725Z"
+    },
+    {
+      "id": "bug-676",
+      "timestamp": "2026-09-25T19:07:40.074Z",
+      "error_message": "Significant refactor of ",
+      "file": "tests/e2e/series-reader.spec.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 12→79 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:07:40.074Z"
+    },
+    {
+      "id": "bug-677",
+      "timestamp": "2026-09-25T19:07:51.341Z",
+      "error_message": "Type error",
+      "file": "tests/e2e/series-reader.spec.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:07:51.341Z"
+    },
+    {
+      "id": "bug-678",
+      "timestamp": "2026-09-25T19:07:56.871Z",
+      "error_message": "Missing await",
+      "file": "tests/e2e/series-reader.spec.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:07:56.871Z"
+    },
+    {
+      "id": "bug-679",
+      "timestamp": "2026-09-25T19:08:52.878Z",
+      "error_message": "Type error",
+      "file": "src/app/yonetim/reset-reading-form.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:08:52.878Z"
+    },
+    {
+      "id": "bug-680",
+      "timestamp": "2026-09-25T19:08:54.536Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/app/yonetim/reset-reading-form.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:08:54.536Z"
+    },
+    {
+      "id": "bug-681",
+      "timestamp": "2026-09-25T19:12:07.367Z",
+      "error_message": "Type error",
+      "file": "src/app/yonetim/reset-reading-form.test.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:12:07.367Z"
+    },
+    {
+      "id": "bug-682",
+      "timestamp": "2026-09-25T19:20:22.324Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:20:22.324Z"
+    },
+    {
+      "id": "bug-683",
+      "timestamp": "2026-09-25T19:20:28.714Z",
+      "error_message": "CSS fix: resetVersion",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "resetVersion: snapshot.resetVersion, → adoptReset ? null : snapshot.resetVersion,",
+      "fix": "Changed resetVersion: snapshot.resetVersion, → adoptReset ? null : snapshot.resetVersion,",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T19:20:35.753Z"
+    },
+    {
+      "id": "bug-684",
+      "timestamp": "2026-09-25T19:20:49.448Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-data/merge.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:20:49.448Z"
+    },
+    {
+      "id": "bug-685",
+      "timestamp": "2026-09-25T19:20:54.050Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-data/sync-contract.ts",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 9→12 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:20:54.051Z"
+    },
+    {
+      "id": "bug-686",
+      "timestamp": "2026-09-25T19:21:06.492Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:21:06.492Z"
+    },
+    {
+      "id": "bug-687",
+      "timestamp": "2026-09-25T19:21:53.845Z",
+      "error_message": "Missing guard clause",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "No early return/throw for edge case: !ready",
+      "fix": "Added guard clause: if (!ready)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:21:53.845Z"
+    },
+    {
+      "id": "bug-688",
+      "timestamp": "2026-09-25T19:22:02.599Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/app/yonetim/reset-reading-form.tsx",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 8→10 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:22:02.599Z"
+    },
+    {
+      "id": "bug-689",
+      "timestamp": "2026-09-25T19:22:35.977Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/app/yonetim/reset-reading-form.test.tsx",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 9→11 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:22:35.977Z"
+    },
+    {
+      "id": "bug-690",
+      "timestamp": "2026-09-25T19:22:38.405Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-data/merge.test.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:22:38.405Z"
+    },
+    {
+      "id": "bug-691",
+      "timestamp": "2026-09-25T19:22:43.787Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/lib/reader-data/server/sync-service.test.ts",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:22:43.787Z"
+    },
+    {
+      "id": "bug-692",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "Sepya temasında bütün sayfa sarımsı/filtreli görünüyor; hesaplanan background-color doğru (rgb(244,239,228)) ama piksel rgb(255,255,224)",
+      "file": "tailwind.config.ts",
+      "root_cause": "Tailwind içerik tarayıcısı tema kodundaki 'sepia' kelimesini görüp `sepia` filtre utility'sini üretiyordu; tema sınıfı <html class=\"sepia\"> aynı adı taşıdığı için kök elemana `filter: sepia(1)` uygulanıyordu",
+      "fix": "tailwind.config.ts'e `blocklist: [\"sepia\"]`; e2e 'keeps the sepia theme free of a page-wide filter' html filter:none'ı doğruluyor",
+      "tags": [
+        "tailwind",
+        "theme",
+        "sepia",
+        "css-filter",
+        "class-collision",
+        "reader"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-693",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "Seri bölümlerinde başlık hiçbir yerde görünmüyor; sayfa ilk H2 ile ve üstte başıboş bir çizgiyle başlıyor",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Seri sözleşmesi başlığı frontmatter'da tutar ve gövde H2 ile başlar; okuyucu kabuğu başlığı yalnızca document.title'a koyuyordu (araç çubuğu da başlığı değil kategoriyi gösteriyordu)",
+      "fix": "ChapterHeader (faz + başlık + düzey/süre) akış düzeninde .prose-reader DIŞINDA; başlık görünmez olunca araç çubuğu başlığı gösteriyor (IntersectionObserver), sayfalı düzende hep",
+      "tags": [
+        "reader",
+        "series",
+        "title",
+        "orientation",
+        "a11y"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-694",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "İçindekiler paneli 768–1024 px'te sağdan 10 px taşıyor",
+      "file": "src/components/reader/article-toc.tsx",
+      "root_cause": "sm:right-auto paneli tetikleyicinin soluna sabitleyip sağa açıyordu; tetikleyici sağ grupta",
+      "fix": "right-0 bütün genişliklerde (işaretler paneliyle aynı)",
+      "tags": [
+        "reader",
+        "popover",
+        "overflow",
+        "responsive"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-695",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "Telefonda araç çubuğu 'Bölüm 38 / 1…' diye kesiliyor",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "375 px'te etikete ~75 px kalıyor; 'Bölüm 38 / 114' ~85 px",
+      "fix": "Telefonda görünür '38 / 114', 'Bölüm …' sr-only; reader-resume.spec'teki ölçüm scrollWidth<=clientWidth'e çevrildi",
+      "tags": [
+        "reader",
+        "toolbar",
+        "mobile",
+        "truncation"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-696",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "Mobil okuma listesi 114 bölümlük seride 1. bölümden açılıyor",
+      "file": "src/components/reader/mobile-reading-list.tsx",
+      "root_cause": "Masaüstü kenar çubuğundaki 'mevcut bölümü görünür kıl' etkisi mobil çekmecede yoktu",
+      "fix": "Açılışta liste içinde (scrollIntoView değil) mevcut bölüme kaydırma",
+      "tags": [
+        "reader",
+        "navigation",
+        "mobile",
+        "long-list"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-697",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "--text-faint üç temada da AA altında (3.17 / 4.08 / 3.19) ve ilerleme sayıları bu renkte",
+      "file": "src/app/globals.css",
+      "root_cause": "Soluk metin tokenı dekoratif varsayılmış ama anlamlı metinlerde (sayılar, tarihler, 'yakında') kullanılıyor",
+      "fix": "light #6b6f76, dark #858b93, sepia #786852 (≥4.5:1 zeminde); surface-muted üstündeki anahtar açıklamaları text-muted",
+      "tags": [
+        "a11y",
+        "contrast",
+        "wcag-1.4.3",
+        "tokens"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-698",
+      "timestamp": "2026-09-25T19:23:16.978Z",
+      "error_message": "Ana sayfa, son okunan bölüm bitmişse okuru 'Okumaya dön' ile bitmiş bölüme geri gönderiyor",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "Kahraman alanı yalnızca currentArticleId'yi gösteriyordu; tamamlanma durumunu hesaba katmıyordu",
+      "fix": "series-progress.nextStep: yarım bölüm varsa en son ziyaret edilen, yoksa okuma sırasındaki ilk bitmemiş bölüm; 'Sıradaki bölüm' + 'Okumaya başla'",
+      "tags": [
+        "home",
+        "progress",
+        "next-step",
+        "ux"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:23:16.978Z"
+    },
+    {
+      "id": "bug-699",
+      "timestamp": "2026-09-25T19:26:17.274Z",
+      "error_message": "Wrong reference: return should be MUTATION",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Used \"return\" instead of \"MUTATION\"",
+      "fix": "Changed return → MUTATION",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T19:26:44.418Z"
+    },
+    {
+      "id": "bug-700",
+      "timestamp": "2026-09-25T19:30:45.953Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/figure-viewer.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:30:45.953Z"
+    },
+    {
+      "id": "bug-701",
+      "timestamp": "2026-09-25T19:30:46.957Z",
+      "error_message": "Wrong condition in logic",
+      "file": "src/components/reader/figure-viewer.tsx",
+      "root_cause": "Condition was: if (!event.shiftKey && document.activeElement === last)",
+      "fix": "Changed to: if (!event.shiftKey && active === last)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:30:46.957Z"
+    },
+    {
+      "id": "bug-702",
+      "timestamp": "2026-09-25T19:31:30.582Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 12→24 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:31:30.582Z"
+    },
+    {
+      "id": "bug-703",
+      "timestamp": "2026-09-25T19:32:16.614Z",
+      "error_message": "Null/undefined access in ",
+      "file": "../anil-lib-ux/artifacts/ux/paged-viewer.mjs",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:32:16.614Z"
+    },
+    {
+      "id": "bug-704",
+      "timestamp": "2026-09-25T19:32:18.541Z",
+      "error_message": "Missing await",
+      "file": "../anil-lib-ux/artifacts/ux/paged-viewer.mjs",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:32:18.541Z"
+    },
+    {
+      "id": "bug-705",
+      "timestamp": "2026-09-25T19:37:39.361Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "12 lines replaced/restructured",
+      "fix": "Rewrote 15→3 lines (12 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:37:39.361Z"
     }
   ]
 }

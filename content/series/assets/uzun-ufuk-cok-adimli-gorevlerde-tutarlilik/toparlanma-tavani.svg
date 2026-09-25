@@ -1,10 +1,10 @@
-<svg viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 362" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Toparlanma sıfırı engelliyor, ama tavanı düşük</text>
   <text x="16" y="46" font-size="13" text-anchor="start" fill="var(--text-faint)">ε: adım başına hata olasılığı · c: yanlış girdiden doğru çıktıya varma olasılığı</text>
 
   <line x1="356" y1="66" x2="356" y2="292" stroke="var(--border)" stroke-width="1"/>
 
-  <text x="16" y="88" font-size="13" text-anchor="start" fill="var(--text-muted)">toparlanma yok (c = 0)</text>
+  <text x="16" y="76" font-size="13" text-anchor="start" fill="var(--text-muted)">toparlanma yok (c = 0)</text>
   <rect x="16" y="104" width="66" height="34" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
   <text x="49" y="126" font-size="13" text-anchor="middle" fill="var(--text)">doğru</text>
   <rect x="98" y="104" width="66" height="34" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
@@ -22,7 +22,7 @@
   <text x="16" y="222" font-size="13" text-anchor="start" fill="var(--text)">başarı = (1 − ε)ⁿ</text>
   <text x="16" y="248" font-size="13" text-anchor="start" fill="var(--text-faint)">n büyüdükçe sıfıra gider</text>
 
-  <text x="380" y="88" font-size="13" text-anchor="start" fill="var(--text-muted)">toparlanma var (c &gt; 0)</text>
+  <text x="380" y="76" font-size="13" text-anchor="start" fill="var(--text-muted)">toparlanma var (c &gt; 0)</text>
   <rect x="380" y="104" width="66" height="34" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
   <text x="413" y="126" font-size="13" text-anchor="middle" fill="var(--text)">doğru</text>
   <rect x="462" y="104" width="66" height="34" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
@@ -38,7 +38,7 @@
   <text x="535" y="98" font-size="13" text-anchor="middle" fill="var(--text-muted)">c</text>
   <text x="380" y="170" font-size="13" text-anchor="start" fill="var(--text-muted)">hataya düşen dizi geri</text>
   <text x="380" y="190" font-size="13" text-anchor="start" fill="var(--text-muted)">dönebilir</text>
-  <text x="380" y="222" font-size="13" text-anchor="start" fill="var(--text)">tavan = c ⁄ (c + ε)</text>
+  <text x="380" y="222" font-size="13" text-anchor="start" fill="var(--text)">uzun görevde tavan = c ⁄ (c + ε)</text>
   <text x="380" y="248" font-size="13" text-anchor="start" fill="var(--text-faint)">c ≪ ε olduğundan tavan da küçük</text>
   <text x="380" y="270" font-size="13" text-anchor="start" fill="var(--text-faint)">ε = 0,05 ve c = 0,005 için 0,091</text>
 

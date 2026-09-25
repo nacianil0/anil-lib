@@ -12,7 +12,7 @@ tags:
   - degismez
   - yukseklik
   - sirali-dolasma
-content_hash: sha256:c76e9665c9559c76d92c3857e930576c60a93c9eee4891e48eca2986ee0ccf82
+content_hash: sha256:80f8d1245d36e13dd5c3c0db04e66eda40ac0d6fceffffb5f0d2fffc503f6911
 classification_version: 1
 classification_batch: 3
 ---
@@ -60,7 +60,7 @@ Buradan doğru denetim yöntemi de çıkar. Kökten aşağı inerken her düğü
 
 **Ekleme** başarısız bir aramadır. Aranan anahtarı ararsın; yürüyüş boş bir yere düştüğünde yeni düğümü tam oraya yaprak olarak asarsın. Yürüyüş boyunca geçtiğin her düğümde doğru tarafa indiğin için değişmez kendiliğinden korunur. Maliyet yine h ile orantılıdır.
 
-**Silme** üç duruma ayrılır ve mülakatta en çok bu ayrım sorulur. Silinecek düğüm yapraksa doğrudan koparılır. Tek çocuğu varsa, o çocuk düğümün yerine geçer; alt ağaç bütünüyle yukarı kayar ve sıra bozulmaz. İki çocuğu varsa düğüm doğrudan koparılamaz, çünkü yerine iki alt ağacı birden koyacak tek bir yer yoktur. Çözüm, düğümün **sıralı ardılını (in-order successor)** bulmaktır: sağ alt ağacın en küçük düğümü. Bu düğümün anahtarı, silinecek anahtarla sağ alt ağacın geri kalanı arasında duran tek anahtardır; onu silinecek düğümün yerine yazarsan değişmez bozulmaz. Ardından ardılın kendisi silinir ve burada iş kolaydır: sağ alt ağacın en küçük düğümünün tanım gereği sol çocuğu yoktur, dolayısıyla ikinci silme mutlaka birinci ya da ikinci duruma düşer. Toplam maliyet yine h ile orantılıdır.
+**Silme** üç duruma ayrılır ve mülakatta en çok bu ayrım sorulur. Silinecek düğüm yapraksa doğrudan koparılır. Tek çocuğu varsa, o çocuk düğümün yerine geçer; alt ağaç bütünüyle yukarı kayar ve sıra bozulmaz. İki çocuğu varsa düğüm doğrudan koparılamaz, çünkü yerine iki alt ağacı birden koyacak tek bir yer yoktur. Çözüm, düğümün **sıralı ardılını (in-order successor)** bulmaktır: sağ alt ağacın en küçük düğümü. Ardılın anahtarı silinecek anahtardan büyük olduğu için sol alt ağaçtaki her anahtardan büyüktür; sağ alt ağacın en küçüğü olduğu için de sağda kalan her anahtardan küçüktür. Onu silinecek düğümün yerine yazarsan değişmez bu yüzden bozulmaz. Ardından ardılın kendisi silinir ve burada iş kolaydır: sağ alt ağacın en küçük düğümünün tanım gereği sol çocuğu yoktur, dolayısıyla ikinci silme mutlaka birinci ya da ikinci duruma düşer. Toplam maliyet yine h ile orantılıdır.
 
 Bu üç işlemin yanına iki tanesini daha koyunca yapının asıl değeri görünür: sıralı dolaşma doğrusal zamanda **sıralı çıktı** verir ve bir anahtarın ardılı ile öncülü h ile orantılı zamanda bulunur. Sıralı diziyle karşılaştır: dizide arama ve ardıl ucuzdur ama ekleme doğrusaldır. Bağlı listeyle karşılaştır: listede ekleme ucuzdur ama arama doğrusaldır. İkili arama ağacı beşinin hepsini aynı ölçüye, h'ye bağlar. Bütün mesele artık tek bir soruya indi: **h ne kadar?**
 
@@ -76,11 +76,11 @@ Bu kötü durum kurgusal değildir, en olası durumlardan biridir. Kayıtları t
 
 Sayıya dökelim. Bir milyon anahtar için dengeli bir ikili ağacın yüksekliği log₂(10⁶) ≈ 19,93, yani yaklaşık 20'dir: en kötü arama yirmi bir karşılaştırma yapar. Aynı bir milyon anahtar sıralı gelirse yükseklik 999.999 olur ve en kötü arama bir milyon karşılaştırma yapar. Aynı veri yapısı, aynı kod, aynı değişmez — aradaki fark kırk yedi bin katın üzerindedir.
 
-Bir ara sonuç daha önemlidir. Anahtarlar **rastgele bir sırayla** eklenirse beklenen yükseklik logaritmik mertebede kalır; bu bilinen bir sonuçtur. Ama karmaşıklık makalesinde konuşulan ayrım burada tam olarak devreye girer: bu bir **ortalama durum** iddiasıdır ve bir dağılım varsayımına dayanır. Girdinin sırasını sen seçmiyorsan o varsayımı savunamazsın; üstelik ekleme sırası dışarıdan belirlenen bir sistemde kötü durum kaza değil, girdinin doğal hâli olabilir. Mülakatta "ortalamada logaritmik" cevabı yeterli değildir, çünkü bir sonraki soru mutlaka "peki garantin ne?" olur.
+Bir ara sonuç daha önemlidir. Anahtarlar **rastgele bir sırayla** eklenirse ağaç ortalamada iyi davranır: Sedgewick ve Wayne, n rastgele anahtardan kurulan ağaçta bir aramanın ortalama yaklaşık 2 ln n ≈ 1,39 log₂n karşılaştırma yaptığını gösterir, beklenen yükseklik de logaritmik mertebededir. Ama karmaşıklık makalesinde konuşulan ayrım burada devreye girer: bu bir **ortalama durum** iddiasıdır ve bir dağılım varsayımına dayanır. Girdinin sırasını sen seçmiyorsan o varsayımı savunamazsın; üstelik ekleme sırası dışarıdan belirlenen bir sistemde kötü durum kaza değil, girdinin doğal hâli olabilir. Mülakatta "ortalamada logaritmik" cevabı yeterli değildir, çünkü bir sonraki soru mutlaka "peki garantin ne?" olur.
 
 **Problem.** Artan sırada verilmiş n farklı anahtardan, yüksekliği mümkün olan en küçük ikili arama ağacını kur ve maliyetini savun.
 
-**Strateji.** Değişmez, kökün solunda küçükleri sağında büyükleri ister. Sıralı bir dizide ortadaki eleman bu ayrımı tam olarak eşit iki parçaya böler; kalanı böl ve yönet.
+**Strateji.** Değişmez, kökün solunda küçükleri sağında büyükleri ister. Sıralı bir dizide ortadaki eleman bu ayrımı boyları en fazla bir farklı iki parçaya böler; kalanı böl ve yönet.
 
 **Adımlar.** Dizinin ortadaki elemanını kök yap. Sol yarıdan aynı yöntemle sol alt ağacı, sağ yarıdan sağ alt ağacı özyinelemeli olarak kur. Her adımda parça uzunluğu yarıya indiği için ağacın yüksekliği kabaca log₂n olur; her eleman tam bir kez düğüme dönüştüğü için toplam kurulum maliyeti doğrusaldır.
 
@@ -110,5 +110,5 @@ Bu makale bir sözü yarım bıraktı: işlemleri h'ye bağladık ama h'yi bağl
 
 - Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. *Introduction to Algorithms*, dördüncü baskı, 12. bölüm (Binary Search Trees — 12.1 ikili arama ağacının tanımı ve sıralı dolaşma, 12.2 sorgular, 12.3 ekleme ve silme). MIT Press, 2022. [Bağlantı](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 - Demaine, E., Ku, J. & Solomon, J. *6.006 Introduction to Algorithms*, Lecture 6: Binary Trees I — düğüm temsili (öğe, ebeveyn, sol, sağ), derinlik ve yükseklik tanımları, dolaşma sırası ve işlemlerin yükseklikle orantılı maliyeti. MIT OpenCourseWare, Bahar 2020. [Bağlantı](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/)
-- Sedgewick, R. & Wayne, K. *Algorithms*, dördüncü baskı, 3.2 (Binary Search Trees — arama, ekleme, silme ve ekleme sırasının ağaç şekline etkisi). Addison-Wesley. [Bağlantı](https://algs4.cs.princeton.edu/home/)
+- Sedgewick, R. & Wayne, K. *Algorithms*, dördüncü baskı, 3.2 (Binary Search Trees — arama, ekleme, silme, ekleme sırasının ağaç şekline etkisi ve n rastgele anahtardan kurulan ağaçta arama başına ortalama ~2 ln n karşılaştırma). Addison-Wesley. [Bağlantı](https://algs4.cs.princeton.edu/home/)
 - Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *CMPE250 — Data Structures and Algorithms* (katalog tanımı "Search Structures" başlığını içerir). Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/courses/cmpe250/)

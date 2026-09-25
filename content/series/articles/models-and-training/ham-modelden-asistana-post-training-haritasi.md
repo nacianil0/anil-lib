@@ -12,7 +12,7 @@ tags:
   - talimat-takibi
   - hizalama-vergisi
   - instructgpt
-content_hash: sha256:5c95883a270bb2f80796988d81949e1b7bd5274f26f747901c05ba26581b7522
+content_hash: sha256:03c7d1e42b5705578dc2c2faf71aff9b772932b05405f6d7dfcb5dde283c3bc1
 classification_version: 1
 classification_batch: 2
 ---
@@ -44,7 +44,7 @@ Post-training tek bir işlem değil, sıralı bir hattır. InstructGPT çalışm
 
 **Birinci durak: gösterip öğretmek.** İnsanlar örnek talimatlar ve o talimatlara verilmesi gereken örnek cevapları yazar; model bu çiftler üzerinde normal denetimli öğrenmeyle eğitilir. Bu işlemin genel adı ince ayardır (fine-tuning) — eğitilmiş bir modeli daha küçük ve amaca dönük bir veriyle bir kez daha eğitmek. Talimat verisiyle yapılan biçimine denetimli ince ayar (supervised fine-tuning, SFT) denir.
 
-Burada 8\. makalenin bedava öğle yemeği biter. Ön eğitimin sessiz avantajı, etiketin veriden kesilmesiydi: her token kendinden öncekiler için doğru cevaptı ve hiçbir insan bunu yazmıyordu. SFT'de etiket geri gelir ve bedeli vardır. InstructGPT için OpenAI, Upwork ve Scale AI üzerinden yaklaşık kırk kişilik bir ekip tuttu; SFT eğitim kümesi 11.295 etiketleyici tarafından yazılmış ve 1.430 gerçek kullanıcı isteminden gelmek üzere toplam 12.725 istemden ibaretti. Trilyonların yanında bu sayı yuvarlama hatası gibi durur; öyle olmadığını birazdan göreceğiz.
+Burada 8\. makaledeki kolaylık biter. Ön eğitimin sessiz avantajı, etiketin veriden kesilmesiydi: her token kendinden öncekiler için doğru cevaptı ve hiçbir insan bunu yazmıyordu. SFT'de etiket geri gelir ve bedeli vardır. InstructGPT için OpenAI, Upwork ve Scale AI üzerinden yaklaşık kırk kişilik bir ekip tuttu; SFT eğitim kümesi 11.295 etiketleyici tarafından yazılmış ve 1.430 gerçek kullanıcı isteminden gelmek üzere toplam 12.725 istemden ibaretti. GPT-3'ün ön eğitimde gördüğü 300 milyar token'ın yanında bu sayı yuvarlama hatası gibi durur; öyle olmadığını birazdan göreceğiz.
 
 **İkinci durak: yargıyı modellemek.** Cevap yazmak pahalıdır, ama iki cevabı karşılaştırıp hangisinin daha iyi olduğunu söylemek çok daha ucuzdur ve daha güvenilirdir. İkinci aşamada etiketleyiciler aynı isteme verilen birden fazla cevabı sıralar; bu sıralamalardan, bir cevabın ne kadar iyi olduğunu tek bir sayıya çeviren ayrı bir model eğitilir. Adı ödül modeli (reward model). InstructGPT'nin ödül modeli 33.207 istem üzerinde toplanmış karşılaştırmalarla eğitildi.
 
@@ -91,7 +91,7 @@ Bölelim. 60 ÷ 3.640 = 0,0165, yani üçüncü aşama ön eğitimin yüzde 1,6'
 
 ![İki panel yan yana: soldaki panelde ön eğitimin uzun hesap çubuğunun yanında post-training'in ince çubuğu yüzde 1,8 etiketiyle durur; sağdaki panelde post-training sonrası ölçülen insan tercih oranları karşılaştırılır ve ince çubuğun yarattığı fark belirgindir.](assets/hesap-ve-davranis.svg "Şekil 3 — Küçük hesap, büyük davranış farkı")
 
-Şekil 3 bu asimetriyi iki panelde yan yana koyuyor ve makalenin en önemli cümlesi buradan çıkıyor: **modelin bildikleri ön eğitimden, davranışı post-training'den gelir.** Bilgiyi yazan koşu haftalar sürdü ve on binlerce çip çalıştırdı; davranışı yazan koşu onun yüzde ikisinden azını harcadı.
+Şekil 3 bu asimetriyi iki panelde yan yana koyuyor ve makalenin geri kalanını taşıyacak cümleye götürüyor: **modelin bildikleri ön eğitimden, davranışı post-training'den gelir.** Bilgiyi yazan koşu 3.640 PF-gün harcadı; davranışı yazan iki koşu toplamda bunun yüzde ikisinden azını.
 
 Bu, "post-training ucuzdur" demek değildir. Hesap ucuzdur; veri değildir. Ön eğitim verisi de emek ister — 8\. makaledeki temizlik hattı bunu göstermişti — ama o emek metni **süzmeye** gider, tek tek etiket yazmaya değil. Post-training verisinin her satırının arkasında bir insanın oturup ya cevabı yazması ya da iki cevabı okuyup karşılaştırması vardır. InstructGPT'nin kırk kişilik ekibi, birbirleriyle zamanın yüzde 72,6 ± 1,5'inde hemfikir oldu — yani bu iş, üzerinde kolayca anlaşılan bir iş bile değil.
 
@@ -99,7 +99,7 @@ Bu, "post-training ucuzdur" demek değildir. Hesap ucuzdur; veri değildir. Ön 
 
 Peki bütçenin yüzde ikisi neyi değiştirdi? Çalışmanın kendi ölçümleri şöyle.
 
-Etiketleyiciler, 175 milyar parametreli InstructGPT'nin çıktısını aynı boyuttaki ham GPT-3'ün çıktısına karşı zamanın yüzde 85 ± 3'ünde tercih etti. Daha çarpıcı olan karşılaştırma ise şu: 1,3 milyar parametreli InstructGPT'nin çıktıları, 175 milyar parametreli GPT-3'ün çıktılarına tercih edildi. Yüz kattan fazla küçük bir model, yalnızca post-training'den geçtiği için.
+Etiketleyiciler, 175 milyar parametreli InstructGPT'nin çıktısını aynı boyuttaki ham GPT-3'ün çıktısına karşı zamanın yüzde 85 ± 3'ünde tercih etti. İkinci karşılaştırma daha da öğretici: 1,3 milyar parametreli InstructGPT'nin çıktıları, 175 milyar parametreli GPT-3'ün çıktılarına tercih edildi. Yüz kattan fazla küçük bir model, yalnızca post-training'den geçtiği için.
 
 Bunun ne demek olduğunu 9\. makalenin cetveliyle okumak gerekiyor. Orada ölçek yasaları bize parametre sayısını artırmanın kaybı ne kadar düşüreceğini söylüyordu. Burada ölçülen şey kayıp değil, insan tercihi. Aynı eğri, iki cetvel — 9\. makaledeki uyarı burada tam karşılığını buluyor: bir model başka bir modelden yüz kat küçükken "daha iyi" olabilir, çünkü hangi cetvelle ölçtüğün sonucu belirler.
 
@@ -137,7 +137,7 @@ Bir de haritanın söylemediği şey var. Post-training modele yeni bilgi öğre
 
 ### Sırada ne var
 
-Haritayı çizdik: üç durak, üç ayrı veri türü, üç ayrı etiket sahibi. Şimdi ilk durağa inip mekanizmaya bakmak gerekiyor. Bir talimat-cevap çifti kayba tam olarak nasıl dönüşüyor, cümlenin hangi token'ları kayba giriyor, hangileri girmiyor? Ve asıl rahatsız edici soru: on iki bin örnek nasıl yetiyor — yoksa aslında bin örnek de mi yeter?
+Haritayı çizdik: üç durak, üç ayrı veri türü, üç ayrı etiket sahibi. Şimdi ilk durağa inip mekanizmaya bakmak gerekiyor. Bir talimat-cevap çifti kayba tam olarak nasıl dönüşüyor, cümlenin hangi token'ları kayba giriyor, hangileri girmiyor? Bir de şu soru var: on iki bin örnek nasıl yetiyor — yoksa aslında bin örnek de mi yeter?
 
 ## Kaynakça
 

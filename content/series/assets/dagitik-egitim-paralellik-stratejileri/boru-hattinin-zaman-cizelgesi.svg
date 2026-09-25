@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 374" role="img" aria-label="Bir zaman çizelgesi: dört satır aşama 1'den 4'e, yatayda 22 zaman dilimi. Solda ileri geçiş, sağda geri geçiş bölgesi. İleri geçişte 1'den 8'e numaralı mikro yığınlar her aşamada bir dilim kayarak ilerler; geri geçişte aynı sekiz mikro yığın ters yönde, aşama 4'ten aşama 1'e doğru kayarak geçer. Kesikli çizgili boş dilimler hattın dolarken ve boşalırken oluşan kabarcıktır: aşama 4'ün başında üç boş dilim, aşama 1'in ortasında altı boş dilim. Altta hesap: her aşama 16 dilim çalışır, 6 dilim bekler; boş bölü dolu 6 bölü 16, yani 3 bölü 8, yani p eksi 1 bölü m. m 32 olsaydı oran 3 bölü 32, yaklaşık yüzde 9 olurdu. Kayıt: biçim şematiktir, ileri ve geri geçiş eşit süreli çizilmiştir.">
+  <defs>
+    <marker id="ok-107-zaman" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-faint)" />
+    </marker>
+  </defs>
+  <text x="20.0" y="30.0" font-size="13" fill="var(--text)">Boru hattının zaman çizelgesi: p = 4 aşama, m = 8 mikro yığın</text>
+  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+  <text x="253.0" y="64.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">ileri geçiş</text>
+  <text x="539.0" y="64.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">geri geçiş</text>
+  <text x="20.0" y="96.0" font-size="13" fill="var(--text)">aşama 1</text>
+  <rect x="110" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="123.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">1</text>
+  <rect x="136" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="149.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">2</text>
+  <rect x="162" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="175.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">3</text>
+  <rect x="188" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="201.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">4</text>
+  <rect x="214" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="227.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">5</text>
+  <rect x="240" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="253.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">6</text>
+  <rect x="266" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="279.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">7</text>
+  <rect x="292" y="76" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="305.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">8</text>
+  <rect x="318" y="76" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="344" y="76" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="370" y="76" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="396" y="76" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="422" y="76" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="448" y="76" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="474" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="487.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">1</text>
+  <rect x="500" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="513.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">2</text>
+  <rect x="526" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="539.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">3</text>
+  <rect x="552" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="565.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">4</text>
+  <rect x="578" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="591.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">5</text>
+  <rect x="604" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="617.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">6</text>
+  <rect x="630" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="643.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">7</text>
+  <rect x="656" y="76" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="669.0" y="96.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">8</text>
+  <text x="20.0" y="134.0" font-size="13" fill="var(--text)">aşama 2</text>
+  <rect x="110" y="114" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="136" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="149.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">1</text>
+  <rect x="162" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="175.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">2</text>
+  <rect x="188" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="201.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">3</text>
+  <rect x="214" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="227.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">4</text>
+  <rect x="240" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="253.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">5</text>
+  <rect x="266" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="279.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">6</text>
+  <rect x="292" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="305.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">7</text>
+  <rect x="318" y="114" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="331.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">8</text>
+  <rect x="344" y="114" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="370" y="114" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="396" y="114" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="422" y="114" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="448" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="461.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">1</text>
+  <rect x="474" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="487.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">2</text>
+  <rect x="500" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="513.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">3</text>
+  <rect x="526" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="539.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">4</text>
+  <rect x="552" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="565.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">5</text>
+  <rect x="578" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="591.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">6</text>
+  <rect x="604" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="617.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">7</text>
+  <rect x="630" y="114" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="643.0" y="134.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">8</text>
+  <rect x="656" y="114" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <text x="20.0" y="172.0" font-size="13" fill="var(--text)">aşama 3</text>
+  <rect x="110" y="152" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="136" y="152" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="162" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="175.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">1</text>
+  <rect x="188" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="201.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">2</text>
+  <rect x="214" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="227.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">3</text>
+  <rect x="240" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="253.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">4</text>
+  <rect x="266" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="279.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">5</text>
+  <rect x="292" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="305.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">6</text>
+  <rect x="318" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="331.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">7</text>
+  <rect x="344" y="152" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="357.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">8</text>
+  <rect x="370" y="152" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="396" y="152" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="422" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="435.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">1</text>
+  <rect x="448" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="461.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">2</text>
+  <rect x="474" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="487.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">3</text>
+  <rect x="500" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="513.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">4</text>
+  <rect x="526" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="539.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">5</text>
+  <rect x="552" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="565.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">6</text>
+  <rect x="578" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="591.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">7</text>
+  <rect x="604" y="152" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="617.0" y="172.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">8</text>
+  <rect x="630" y="152" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="656" y="152" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <text x="20.0" y="210.0" font-size="13" fill="var(--text)">aşama 4</text>
+  <rect x="110" y="190" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="136" y="190" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="162" y="190" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="188" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="201.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">1</text>
+  <rect x="214" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="227.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">2</text>
+  <rect x="240" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="253.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">3</text>
+  <rect x="266" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="279.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">4</text>
+  <rect x="292" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="305.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">5</text>
+  <rect x="318" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="331.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">6</text>
+  <rect x="344" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="357.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">7</text>
+  <rect x="370" y="190" width="26" height="30" fill="var(--accent-soft)" stroke="var(--border)" />
+  <text x="383.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--accent)">8</text>
+  <rect x="396" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="409.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">1</text>
+  <rect x="422" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="435.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">2</text>
+  <rect x="448" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="461.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">3</text>
+  <rect x="474" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="487.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">4</text>
+  <rect x="500" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="513.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">5</text>
+  <rect x="526" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="539.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">6</text>
+  <rect x="552" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="565.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">7</text>
+  <rect x="578" y="190" width="26" height="30" fill="var(--cool-soft)" stroke="var(--border)" />
+  <text x="591.0" y="210.0" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--cool)">8</text>
+  <rect x="604" y="190" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="630" y="190" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <rect x="656" y="190" width="26" height="30" fill="var(--bg)" stroke="var(--border)" stroke-dasharray="3 3" />
+  <text x="149.0" y="210.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">boş</text>
+  <text x="396.0" y="96.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">kabarcık</text>
+  <line x1="110" y1="232" x2="682" y2="232" stroke="var(--text-faint)" marker-end="url(#ok-107-zaman)" />
+  <text x="642.0" y="250.0" font-size="13" text-anchor="middle" fill="var(--text-faint)">zaman</text>
+  <text x="20.0" y="280.0" font-size="13" fill="var(--text)">Her aşama 2m = 16 dilim çalışıyor; hat dolarken ve boşalırken 2(p − 1) = 6 dilim bekliyor.</text>
+  <text x="20.0" y="304.0" font-size="13" font-weight="bold" fill="var(--accent)">Boş ÷ dolu = 6 ÷ 16 = 3 ÷ 8 = (p − 1) ÷ m</text>
+  <text x="20.0" y="328.0" font-size="13" fill="var(--text-muted)">m = 32 olsaydı bekleyen yine 6, çalışan 64 dilim olurdu: 3 ÷ 32, yaklaşık yüzde 9.</text>
+  <text x="20.0" y="360.0" font-size="13" fill="var(--text-faint)">Biçim şematiktir: ileri ve geri geçiş eşit süreli çizildi; oran bu varsayıma bağlı değildir.</text>
+</svg>

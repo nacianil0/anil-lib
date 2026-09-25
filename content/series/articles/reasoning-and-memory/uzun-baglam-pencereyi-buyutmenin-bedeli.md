@@ -12,7 +12,7 @@ tags:
   - dikkat-cukuru
   - flashattention
   - etkin-uzunluk
-content_hash: sha256:21e1b134f2e2a52c49b5cb8196d48824582a55b683da1f21c358557bf16f561a
+content_hash: sha256:ef077beaeefea84fb59fa78b57b3758b901c3f8e235e7a0ef9886520a56b1d46
 classification_version: 1
 classification_batch: 5
 ---
@@ -34,7 +34,7 @@ Modele o uzunluğun ötesinde bir dizi verirsen, hiç görmediği açılarla kar
 
 ![Üç şerit alt alta gösterilir. Birincisi modelin eğitildiği pozisyon aralığıdır ve eşit aralıklı çentiklerle işaretlidir. İkincisinde aynı çentik aralığı korunarak dizi eğitilmiş aralığın ötesine taşırılmıştır; taşan bölge kesikli çizgiyle çizilmiş ve bozulma bölgesi olarak etiketlenmiştir. Üçüncüsünde ise aynı uzun dizi, çentikler arası mesafe küçültülerek eğitilmiş aralığın içine sıkıştırılmıştır ve komşu token konumlarının birbirine yaklaştığı belirtilmiştir.](assets/pozisyonlari-sikistirmak.svg "Şekil 1 — Uzatmak yerine sıkıştırmak")
 
-Şekil 1'deki benzetme bir cetvel: elindeki cetvelin sonu geldiğinde ya cetveli uzatırsın ya da çentikleri sıklaştırıp aynı cetvele daha çok şey sığdırırsın. Benzetme şurada bozulur: cetvelde çentikleri sıklaştırmak ölçümü bozmaz, burada bozar — birbirine yaklaşan komşu token'ların konumları modelin gözünde daha az ayırt edilebilir hâle gelir. Benzetmenin biçimsel karşılığı da tam olarak bu: konum indeksi ölçeklenerek küçültülür, yani her token'ın açısı orantılı olarak daraltılır, dolayısıyla art arda gelen iki token arasındaki açı farkı da daralır.
+Şekil 1'i bir cetvel gibi okuyabilirsin: elindeki cetvelin sonu geldiğinde ya cetveli uzatırsın ya da çentikleri sıklaştırıp aynı cetvele daha çok şey sığdırırsın. Fark şu ki gerçek bir cetvelde çentikleri sıklaştırmak ölçümü bozmaz; burada bozar, çünkü birbirine yaklaşan komşu token'ların konumları modelin gözünde daha az ayırt edilebilir hâle gelir. İşlemin kendisi basit: konum indeksi sabit bir oranla küçültülür, her token'ın açısı da aynı oranda daralır ve art arda gelen iki token arasındaki açı farkı bununla birlikte küçülür.
 
 Aritmetiği küçük bir örnekle görelim. 4.096 token'lık bir pencereyle eğitilmiş bir modele 32.768 token'lık bir dizi vereceksin. Doğrudan uzatmada dizinin son token'ının konumu 32.767 olur ve model bu sayıyı hiç görmemiştir. Sıkıştırmada ise bütün konumlar sekize bölünür: son token'ın konumu 32.767 ÷ 8 = 4.095,875 olur. Model artık bilmediği bir bölgeye değil, **bildiği bölgenin arasına** düşen bir sayıyla karşılaşır. Komşu iki token'ın konumları arasındaki fark da 1 yerine 0,125'e iner — kazanç ile bedel aynı işlemden çıkıyor.
 
@@ -106,7 +106,7 @@ Bilgi değil, yer. 6\. makalede softmax'ın skorları toplamı bir olan ağırl�
 
 21\. makaledeki RULER ölçümünü hatırla: on yedi modelin yalnızca yarısı 32.000 token'da tatmin edici başarı gösterebiliyordu, hepsinin ilan ettiği sayı 32.000 ya da daha büyük olmasına rağmen. Bu makalede anlatılan tekniklerin tamamı, ilan edilen sayıyı üretenler.
 
-Buradan dürüst bir özet çıkıyor. Pencereyi esnetmek modelin uzun diziyi **çalıştırabilmesini** sağlar: hesap patlamaz, perplexity bozulmaz, metin sonuna kadar okunur. Modelin o dizinin ortasındaki bilgiyi bulabilmesini, uzun metin üzerinde akıl yürütebilmesini ise sağlamaz. 21\. makaledeki üç ölçüm — ortadaki bilginin kaybı, uzunluğun kendisinin yük olması, etkin uzunluğun ilan edilenin altında kalması — esnetilmiş modellerde de geçerli.
+Buradan çıkan özet iki parçalı. Pencereyi esnetmek modelin uzun diziyi **çalıştırabilmesini** sağlar: hesap patlamaz, perplexity bozulmaz, metin sonuna kadar okunur. Modelin o dizinin ortasındaki bilgiyi bulabilmesini, uzun metin üzerinde akıl yürütebilmesini ise sağlamaz. 21\. makaledeki üç ölçüm — ortadaki bilginin kaybı, uzunluğun kendisinin yük olması, etkin uzunluğun ilan edilenin altında kalması — esnetilmiş modellerde de geçerli.
 
 Bu ayrımın kaçmasının bir sebebi de ölçme alışkanlığı. Esnetme çalışmalarının çoğu başarıyı iki şeyle gösteriyor: uzun metinde perplexity ve saklanmış bir parolayı bulma sınavı. İkisi de 21\. makalede uyardığımız türden ölçüler. Perplexity, 5\. makalede kurduğumuz gibi içsel bir ölçüdür ve uzun bağlamda görev başarısıyla ilişkisi zayıflar; parola bulma sınavı ise yalnızca geri çağırmayı ölçer. Bir modelin 128.000 token'da düşük perplexity vermesi, o 128.000 token'ı kullanarak bir soruyu cevaplayabileceği anlamına gelmiyor. Aynı ayrım tersten de doğru: esnetme olmadan model o uzunluğa hiç ulaşamaz. Yani bu teknikler gerekli, ama yeterli değil.
 

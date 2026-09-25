@@ -12,7 +12,7 @@ tags:
   - dfs
   - topolojik-siralama
   - bagli-bilesen
-content_hash: sha256:d5ab96eb684dbb958337e0e6585aa3dd4fed5da30010ccd07c69c53c9d68f61f
+content_hash: sha256:5f233900663be2ecde6847b925b1d341c9f369a4994022ecf422a16cce68eabc
 classification_version: 1
 classification_batch: 5
 ---
@@ -52,7 +52,7 @@ Maliyetleri tek tabloda toplayalım.
 
 Seçimi belirleyen tek şey grafın **yoğunluğudur**. Basit yönsüz bir grafta kenar sayısı en fazla C(|V|, 2) = |V|(|V| − 1)/2'dir; sayma makalesindeki o değer burada üst sınır olarak geri geliyor. |E| bu üst sınıra yakınsa graf **yoğundur (dense)** ve matris hem yerini hak eder hem de sabit zamanlı kenar sorgusunu bedava verir. |E| kabaca |V| mertebesindeyse graf **seyrektir (sparse)** ve matris neredeyse tamamen sıfır saklar.
 
-Somut bir hesap yapalım. |V| = 10⁶ düğüm ve |E| = 10⁷ kenar olan bir ağ düşün — ortalama derece 20, gerçek sosyal ve yol ağlarına yakın bir profil. Matris 10¹² hücre ister; hücre başına yalnızca 1 bit saysan bile 1,25 × 10¹¹ bayt, yani 125 GB eder. Komşuluk listeleri ise 10⁶ + 2 × 10⁷ = 2,1 × 10⁷ girdi tutar. Yoğunluk oranı 10⁷ / (≈5 × 10¹¹) = 2 × 10⁻⁵; matrisin yüz binde ikisi doludur. Aynı fark dolaşma maliyetinde de görünür: matris üzerinde her düğümün komşularını bulmak bütün satırı taramak demektir ve toplam 10¹² adıma çıkar, listelerle 1,1 × 10⁷ adım yeter.
+Somut bir hesap yapalım. |V| = 10⁶ düğüm ve |E| = 10⁷ kenar olan bir ağ düşün — ortalama derece 20; gerçek dünyadaki büyük ağların çoğu gibi seyrek bir profil. Matris 10¹² hücre ister; hücre başına yalnızca 1 bit saysan bile 1,25 × 10¹¹ bayt, yani 125 GB eder. Komşuluk listeleri ise 10⁶ + 2 × 10⁷ = 2,1 × 10⁷ girdi tutar. Yoğunluk oranı 10⁷ / (≈5 × 10¹¹) = 2 × 10⁻⁵; matrisin yüz binde ikisi doludur. Aynı fark dolaşma maliyetinde de görünür: matris üzerinde her düğümün komşularını bulmak bütün satırı taramak demektir ve toplam 10¹² adıma çıkar; listelerle her düğüme bir kez, her liste girdisine bir kez bakılır ve yaklaşık 2,1 × 10⁷ adım yeter.
 
 Pratikte neredeyse bütün büyük graflar seyrektir; bu yüzden varsayılan cevap komşuluk listesidir. Matris, düğüm sayısı küçük ve kenar sorgusu sık olduğunda ya da matris çarpımı gibi cebirsel işlemler yapılacağında tercih edilir. Mülakatta doğru cümle "komşuluk listesi kullanırım" değil, "graf seyrek olduğu için komşuluk listesi kullanırım; yoğun olsaydı ve sık sık kenar sorgusu yapacak olsaydım matrisi düşünürdüm"dür.
 
@@ -92,7 +92,7 @@ Bir ayrıntı daha: DFS'in ürettiği ağaç, komşuluk listelerinin sırasına 
 
 > **Sesli anlat:** "BFS ile DFS arasındaki farkı ve hangisini ne zaman seçeceğini altmış saniyede anlat."
 >
-> İyi bir cevabın omurgası: "İkisi de grafın tamamını dolaşır ve ikisi de komşuluk listeleriyle Θ(|V| + |E|) sürer; fark, sıradaki düğümü hangi yapıdan aldıklarındadır. BFS kuyruk kullanır, yani önce göreni önce açar; bu yüzden düğümleri uzaklık sırasına göre keşfeder ve ağırlıksız grafta en kısa yolları verir. DFS yığın kullanır — ya da eşdeğer olarak özyineleme — ve bir yolu tıkanana kadar takip eder; verdiği ağaç en kısa yol ağacı değildir, üstelik komşuluk listelerinin sırasına bağlıdır. En kısa yol, katman katman yayılma ya da en yakın komşuları önce bulma isteniyorsa BFS seçerim. Derinlemesine yapıyla ilgili bir soru varsa DFS seçerim: erişilebilirlik, bağlı bileşenler, döngü tespiti, topolojik sıralama. Bellek tarafında da farklılar: BFS'in kuyruğu en geniş katman kadar büyür, DFS'in yığını en uzun yol kadar derinleşir."
+> İyi bir cevabın omurgası: "İkisi de kaynaktan erişilebilen bütün düğümleri dolaşır ve ikisi de komşuluk listeleriyle O(|V| + |E|) sürer; fark, sıradaki düğümü hangi yapıdan aldıklarındadır. BFS kuyruk kullanır, yani önce göreni önce açar; bu yüzden düğümleri uzaklık sırasına göre keşfeder ve ağırlıksız grafta en kısa yolları verir. DFS yığın kullanır — ya da eşdeğer olarak özyineleme — ve bir yolu tıkanana kadar takip eder; verdiği ağaç en kısa yol ağacı değildir, üstelik komşuluk listelerinin sırasına bağlıdır. En kısa yol, katman katman yayılma ya da en yakın komşuları önce bulma isteniyorsa BFS seçerim. Derinlemesine yapıyla ilgili bir soru varsa DFS seçerim: erişilebilirlik, bağlı bileşenler, döngü tespiti, topolojik sıralama. Bellek tarafında da farklılar: BFS'in kuyruğu en geniş katman kadar büyür, DFS'in yığını en uzun yol kadar derinleşir."
 
 ## Bağlı bileşenler: eski teoremin algoritmik karşılığı
 
@@ -102,7 +102,7 @@ Bu sarmalayıcı, doğrudan bağlı bileşenleri verir: her aramanın ziyaret et
 
 Ön işleme Θ(|V| + |E|) sürer; sonrasında "u ile v aynı bileşende mi?" sorusu iki bileşen numarasını karşılaştırmaktır, yani sabit zamanlıdır.
 
-Yönlü graflarda işler karışır: u'dan v'ye gidebiliyor olmak, v'den u'ya gidilebildiği anlamına gelmez. Orada aranan şey **güçlü bağlı bileşenlerdir** ve karşılıklı erişilebilirlik yine bir denklik bağıntısıdır; ama bulmak için DFS'i iki kez, ikincisini grafın kenarları ters çevrilmiş hâlinde çalıştırmak gerekir. Bu makale yönsüz durumla yetiniyor.
+Yönlü graflarda işler karışır: u'dan v'ye gidebiliyor olmak, v'den u'ya gidilebildiği anlamına gelmez. Orada aranan şey **güçlü bağlı bileşenlerdir** ve karşılıklı erişilebilirlik yine bir denklik bağıntısıdır; bulmanın klasik yollarından biri DFS'i iki kez, ikincisini grafın kenarları ters çevrilmiş hâlinde çalıştırmaktır. Bu makale yönsüz durumla yetiniyor.
 
 ## Topolojik sıralama: kısmi sıranın algoritması
 
@@ -118,7 +118,7 @@ Algoritma şaşırtıcı derecede kısadır. Tam DFS çalıştır ve düğümler
 
 Somutlaştıralım. Şu bağımlılık grafını alalım: a → c, a → d, b → d, c → e, d → e, d → f, e → g, f → g. Düğümleri a'dan g'ye alfabetik sırayla deneyerek tam DFS çalıştırırsak bitiş sırası g, e, c, f, d, a, b çıkar. Tersi: **b, a, d, f, c, e, g.** Sekiz kenarın hepsini tek tek denetle — hepsinde kaynak, hedeften önce geliyor. Dikkat çekici olan, b'nin en son ziyaret edilmesine rağmen sırada başa geçmesidir; bu, "en son biten en başa gelir" kuralının doğal sonucudur.
 
-Aynı algoritma bedavaya **döngü tespiti** verir. Graf döngülüyse ters bitiş sırası topolojik sıralama olamaz; o hâlde sırayı bulduktan sonra her kenarı tek tek denetle — bir kenarın kaynağı hedefinden sonra geliyorsa graf döngülüdür. Denetim Θ(|E|) sürer. Yukarıdaki grafa g → a kenarını eklersek ters bitiş sırası aynı kalır ama tam olarak o kenar kuralı ihlal eder ve döngü yakalanır.
+Aynı algoritma bedavaya **döngü tespiti** verir. Graf döngülüyse ters bitiş sırası topolojik sıralama olamaz; o hâlde sırayı bulduktan sonra her kenarı tek tek denetle — bir kenarın kaynağı hedefinden sonra geliyorsa graf döngülüdür. Denetim Θ(|E|) sürer. Yukarıdaki grafa g → a kenarını eklersek ters bitiş sırası aynı kalır ama o kenar kuralı ihlal eder ve döngü yakalanır.
 
 > **Sesli anlat:** "Topolojik sıralama nedir, ne zaman vardır ve nasıl bulursun? Doksan saniyede anlat ve doğruluğunu savun."
 >
@@ -130,7 +130,7 @@ Son bir bağlantı: topolojik sıralama tek değildir. Yukarıdaki örnekte a il
 
 Graf soruları genellikle graf diliyle sorulmaz. "Şu bağımlılıkları hangi sırayla çalıştırırsın?", "İki kişi arasındaki en kısa tanışıklık zinciri kaç adım?", "Bu yapılandırmada döngüsel bağımlılık var mı?" — üçü de graf sorusudur ve ilk iş problemi grafa çevirmektir: düğümler ne, kenarlar ne, graf yönlü mü, ağırlıklı mı?
 
-Sonra sırayla üç şey söylenir. Temsil: graf seyrek mi yoğun mu, komşuluk listesi mi matris mi. Algoritma: BFS mi DFS mi, ve gerekçesi. Maliyet: Θ(|V| + |E|) ve bunun neden doğrusal sayıldığı.
+Sonra sırayla üç şey söylenir. Temsil: graf seyrek mi yoğun mu, komşuluk listesi mi matris mi. Algoritma: BFS mi DFS mi, ve gerekçesi. Maliyet: Θ(|V| + |E|) ve bunun neden doğrusal sayıldığı. Takip zinciri çoğu zaman buradan yürür: "Neden liste, neden matris değil?" → "BFS mi DFS mi, neden?" → "Kenarlar ağırlıklı olsaydı?" Son halkanın iyi cevabı sınırı kendin söylemektir: ağırlıklar eşit değilse en az kenarlı yol en kısa yol olmayabilir, BFS'in katman argümanı çöker ve öncelik kuyruğuna geçilir.
 
 Sık yapılan dört hata var. Birincisi, DFS'in bulduğu yolu en kısa yol sanmak. İkincisi, ziyaret işaretini koymayı unutmak — döngülü bir grafta bu sonsuz döngüdür ve tahtada kod yazarken en sık düşülen tuzaktır. Üçüncüsü, maliyeti yalnızca |V| cinsinden söylemek; graf algoritmalarında iki parametre vardır ve ikisi de söylenmelidir. Dördüncüsü, temsil seçimini hiç anmamak: aynı algoritma matris üzerinde Θ(|V|²), listeler üzerinde Θ(|V| + |E|) sürer ve seyrek grafta bu fark mertebelerdir.
 

@@ -12,13 +12,15 @@ tags:
   - aktivasyon-bellegi
   - yeniden-hesaplama
   - kullanim-orani
-content_hash: sha256:86ee01a7b99314d1c9ca3434bdaed3be7f4f16bd45f4e348301442fe3fcac2e6
+content_hash: sha256:effdd6c35e24afe9d420deb1f4c35813874980b3f44ae210460a8796e9167095
 classification_version: 1
 classification_batch: 25
+revised_at: "2026-09-25"
+revision_note: "Aktivasyon formülündeki 34'ün kalemleri tek tek açıldı; tekrarlanan tablo-şekil kaldırıldı, sırt noktası tablosu bir çatı çizgisi grafiğiyle yeniden çizildi."
 ---
 ## Dizüstü bilgisayardan veri merkezine
 
-Son üç makalede 364 parametreli bir modeli kurduk, eğittik ve hizaladık. Bütün koşu tek bir dizüstü bilgisayarda, saniyeler içinde bitti; kaynak diye bir sorun hiç çıkmadı. Bu fazın ilk cümlesi tam olarak bunun tersini söylüyor: ölçek büyüdüğünde kaynak **tek** sorun hâline geliyor.
+Son üç makalede 364 parametreli bir modeli kurduk, eğittik ve hizaladık. Bütün koşu tek bir dizüstü bilgisayarda, saniyeler içinde bitti; kaynak diye bir sorun hiç çıkmadı. Bu fazın ilk cümlesi bunun tersini söylüyor: ölçek büyüdüğünde kaynak **tek** sorun hâline geliyor.
 
 Manzarayı 89\. makalede çizmiştik. Samuel Williams, Andrew Waterman ve David Patterson'ın çatı çizgisi modelini kurmuş, işlem yoğunluğunu — ana bellekten okunan bayt başına yapılan işlem sayısını — tanımlamış ve bir hesabın sırt noktasının hangi yanında durduğuna bakmayı öğrenmiştik. 26 ve 28\. makalelerde aynı muhasebeyi çıkarım tarafında yapmıştık: ön dolum hesapla, adım adım üretim bellek bant genişliğiyle sınırlı. O makale kapanırken Faz 13'e bir randevu bırakmıştı ve randevu bu.
 
@@ -28,25 +30,21 @@ Bu makale aracı yeniden kurmuyor; onu **eğitim adımına** uyguluyor. Soru şu
 
 Bir hızlandırıcıda tek bir bellek yok; boyu ve hızı ters yönde değişen bir merdiven var. 25\. makalede FlashAttention'ı anlatırken bu farkı sözle söylemiştik: çipin hesap yaptığı küçük ve hızlı belleğiyle verinin durduğu büyük ve yavaş belleği arasında ciddi bir hız farkı var. Şimdi sayıları koyalım; Tri Dao ve arkadaşlarının aynı çalışması bunları doğrudan veriyor.
 
-| Katman | Bant genişliği | Kapasite |
-|---|---|---|
-| Çip içi SRAM | ~19 TB/s | 20 MB |
-| Kart belleği (HBM) | ~1,5 TB/s | 40 GB |
-| Ana bellek (DRAM) | ~12,8 GB/s | 1 TB'dan fazla |
+| Katman | Bant genişliği | Kapasite | Ne durur |
+|---|---|---|---|
+| Çip içi SRAM | ~19 TB/s | 20 MB | o anda hesaplanan küçük parça |
+| Kart belleği (HBM) | ~1,5 TB/s | 40 GB | modelin kendisi |
+| Ana bellek (DRAM) | ~12,8 GB/s | 1 TB'dan fazla | karta sığmayanlar |
 
 Çalışmanın verdiği ayrıntı merdivenin biçimini gösteriyor: A100 kartında 108 hesap biriminin her birinde 192 KB'lık bir çip içi bellek var ve toplamı 20 MB ediyor. Basamaklar arasındaki oranları biz çıkaralım: SRAM, HBM'den yaklaşık 12,7 kat hızlı ama 2.000 kat küçük; HBM de ana bellekten 117 kat hızlı. Yani her basamakta hız düşerken kapasite artıyor, ve iki eğri hiçbir yerde kesişmiyor.
 
-Buradan çıkan kural tek cümle: **bir hesabın hızını, verinin hangi basamakta durduğu belirler.** Aynı çarpma, verisi SRAM'de ise HBM'dekinin on iki katı hızda yapılır; ama SRAM'e 20 MB sığar ve 8 milyar parametreli bir modelin ağırlıkları 16 GB tutar. 86\. makalede FlashAttention'ın yaptığı işin özü buydu: dev ara matrisi HBM'e hiç yazmayıp işi SRAM'e sığacak parçalara bölmek.
-
-![Üç satırlı dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: bellek merdiveni, A100 kartı. Sütunlar katman, bant genişliği, kapasite ve ne durur. Birinci satır vurguludur, çip içi SRAM: yaklaşık 19 TB bölü saniye, 20 MB, 108 çarpı 192 KB. İkinci satır kart belleği HBM: yaklaşık 1,5 TB bölü saniye, 40 GB, modelin durduğu yer. Üçüncü satır ana bellek DRAM: yaklaşık 12,8 GB bölü saniye, 1 TB'dan büyük, karta sığmayanlar. Birinci kutunun başlığı hız ile kapasite ters yönde değişir: SRAM HBM'den 12,7 kat hızlı ama 2.000 kat küçük, HBM de ana bellekten 117 kat hızlıdır ve iki eğri hiçbir basamakta kesişmez. İkinci kutunun başlığı kural: bir hesabın hızını verinin hangi basamakta durduğu belirler, ve 8 milyar parametrenin 16 gigabaytı hiçbir zaman 20 megabaytlık basamağa sığmaz. En altta bir kayıt: bant genişliği ve kapasite değerleri Dao ve arkadaşlarının çalışmasından, basamaklar arasındaki oranlar bizim hesabımızdır.](assets/bellek-merdiveni.svg "Şekil 1 — Hız ile kapasite ters yönde")
-
-Şekil 1'in okunacak yeri son sütun: yukarı çıktıkça hız artıyor ama sığan şey küçülüyor.
+Buradan çıkan kural tek cümle: **bir hesabın hızını, verinin hangi basamakta durduğu belirler.** Aynı çarpma, verisi SRAM'de ise HBM'dekinin on iki katı hızda yapılır; ama SRAM'e 20 MB sığar ve 8 milyar parametreli bir modelin ağırlıkları 16 GB tutar. 86\. makalede FlashAttention'ın yaptığı işin özü buydu: dev ara matrisi HBM'e hiç yazmayıp işi SRAM'e sığacak parçalara bölmek. Tablonun son sütunu bu yüzden okunmaya değer: merdivende yukarı çıktıkça hız artıyor ama sığan şey küçülüyor.
 
 ## Bir eğitim adımının bellek defteri
 
 Şimdi ilk deftere geçelim. Naif hesap şöyle işler: 8 milyar parametreli bir model, 16 bitlik sayılarla 16 GB tutar; 80 GB'lık bir kart rahat alır. Bu hesap yanlış ve neden yanlış olduğunu Samyam Rajbhandari ve arkadaşlarının SC 2020'de sunduğu çalışma kalem kalem yazar — 89\. makalede eğitim durumunu kartlara bölen çalışma olarak anmıştık, burada o durumun **içine** bakıyoruz.
 
-Karma hassasiyetli eğitimde, 89\. makalede Micikevicius ve arkadaşlarından aktardığımız düzende, bir parametre başına şunlar tutulur: 16 bitlik ağırlık 2 bayt, 16 bitlik gradyan 2 bayt, ve eniyileyicinin kendi durumu (optimizer state) için 32 bitlik ağırlık kopyası, momentum ve yayılım, yani 4 + 4 + 4 = 12 bayt. Toplam **parametre başına 16 bayt**. Çalışmanın kendi örneği çarpıcı: 1,5 milyar parametreli GPT-2 için bu 24 GB eder, oysa yalnız 16 bitlik ağırlıkları tutmak 3 GB'lık mütevazı bir yer ister.
+Karma hassasiyetli eğitimde, 89\. makalede Micikevicius ve arkadaşlarından aktardığımız düzende, bir parametre başına şunlar tutulur: 16 bitlik ağırlık 2 bayt, 16 bitlik gradyan 2 bayt, ve eniyileyicinin kendi durumu (optimizer state) için 32 bitlik ağırlık kopyası, momentum ve yayılım, yani 4 + 4 + 4 = 12 bayt. Toplam **parametre başına 16 bayt**. Çalışmanın kendi örneği farkın büyüklüğünü gösteriyor: 1,5 milyar parametreli GPT-2 için bu 24 GB eder, oysa yalnız 16 bitlik ağırlıkları tutmak 3 GB'lık mütevazı bir yer ister.
 
 Son üç bileşen 95\. makalede kurduğumuz AdamW'nin ta kendisi: momentum ve yayılım, her parametre için ayrı ayrı saklanan iki geçmiş. 95\. makalede "her yöne kendi adımı" demiştik; o adımın bedeli burada, parametre başına sekiz fazladan bayt olarak görünüyor.
 
@@ -60,13 +58,15 @@ Oranları biz çıkaralım. 8 milyar parametre 128 GB eder — 80 GB'lık tek bi
 
 İkinci defter daha sinsi, çünkü parametre sayısına değil **yığına ve dizi uzunluğuna** bağlı. Geri geçişin her ara değeri hesaplayabilmesi için ileri geçişte üretilen ara sonuçların saklanması gerekir; bunlara aktivasyon belleği (activation memory) diyoruz.
 
-Vijay Korthikanti ve arkadaşlarının MLSys 2023'te sunduğu çalışma bu defteri tek bir formülde topluyor. Bir Transformer katmanının aktivasyonları, dizi uzunluğu *s*, yığın *b*, vektör boyu *h* ve baş sayısı *a* olmak üzere `s·b·h·(34 + 5as/h)` bayt tutar. Parantezin içi iki parçalı: 34, katmanın bütün sıradan ara değerlerinin toplamı; `5as/h` ise yalnızca dikkat skorlarının payı, çünkü o ara matris dizi uzunluğunun karesiyle büyüyor.
+Bu defteri saymanın mantığı basit. Geri geçiş, bir matris çarpımının gradyanını hesaplamak için o çarpımın **girdisini** ister; dolayısıyla ileri geçişte her çarpımın girdisi bir kenara konur. Bir katmandan geçen dizilim, dizi uzunluğu *s*, yığın *b* ve vektör boyu *h* olmak üzere `s·b·h` sayıdır ve 16 bitte `2·s·b·h` bayt tutar. Defter, bu büyüklükte kaç kopyanın saklandığını saymaktan ibaret.
+
+Vijay Korthikanti ve arkadaşlarının MLSys 2023'te sunduğu çalışma bu sayımı kalem kalem yapıp tek bir formülde topluyor: *a* baş sayısı olmak üzere bir Transformer katmanının aktivasyonları `s·b·h·(34 + 5as/h)` bayt tutar. 34, `s·b·h` boyundaki sıradan kopyaların toplamı. Dikkat bloğu 11 getiriyor: sorgu, anahtar ve değer çarpımlarının ortak girdisi 2, sorgu ile anahtarın kendileri 4, değerler 2, çıkış izdüşümünün girdisi 2, seyreltme (dropout) maskesi 1. İleri beslemeli blok 19 getiriyor: ilk çarpımın girdisi 2, dört kat genişleyen ara katmanda etkinleştirmenin girdisi ile ikinci çarpımın girdisi 8'er, seyreltme maskesi 1. İki katman normalleştirmesinin girdileri de 4. Maskeler eleman başına bir bayt tuttuğu için 1'le, öbürleri 16 bit oldukları için 2'yle sayılıyor. `5as/h` ise dikkat skorlarının payı: her baş için `s × s` büyüklüğünde bir skor matrisi saklanıyor, bu yüzden bu terim dizi uzunluğunun karesiyle büyüyor.
 
 Sayı koyalım. Yazarların kendi örneğinde GPT-3 için *a* = 96, *s* = 2.048, *h* = 12.288 ve `5as/h` = 80. Yani katsayı 34 değil 114 ve payın yüzde 70'i tek bir ara matristen geliyor. Kalanını biz hesaplayalım: mikro yığın 1 için katman başına 2.048 × 1 × 12.288 × 114 = 2,87 GB, doksan altı katman için **275 GB**. Mikro yığın bir iken. 7\. makalede karesel maliyeti bir hesap sorunu olarak görmüştük; burada aynı kare bir bellek sorunu olarak karşımıza çıkıyor.
 
-![Altı satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir eğitim adımının bellek defteri. Sütunlar kalem, parametre başına bayt ve 8 milyar parametredeki karşılığı. Birinci satır 16 bitlik ağırlık: 2 bayt, 16 GB. İkinci satır 16 bitlik gradyan: 2 bayt, 16 GB. Üçüncü satır 32 bitlik ağırlık kopyası: 4 bayt, 32 GB. Dördüncü satır momentum: 4 bayt, 32 GB. Beşinci satır yayılım: 4 bayt, 32 GB. Altıncı satır toplam vurguludur: 16 bayt, 128 GB. Birinci kutuda sınır durur: 80 gigabaytlık bir kartın alabileceği en büyük model 5 milyar parametredir ve bu sınır henüz tek bir aktivasyon saklanmadan öncedir; 405 milyar parametrelik bir modelin durumu 6.480 gigabayt, yani en az 81 kart eder. İkinci kutuda aktivasyonlar durur: katman başına s çarpı b çarpı h çarpı parantez içinde 34 artı 5as bölü h bayt; GPT-3'ün ölçüleriyle parantez içi 114'tür ve mikro yığın bir iken katman başına 2,87 gigabayt, doksan altı katman için 275 gigabayt eder. En altta bir kayıt: bayt başı muhasebe Rajbhandari ve arkadaşlarından, formül Korthikanti ve arkadaşlarından, çarpımlar bizimdir.](assets/egitim-bellek-defteri.svg "Şekil 2 — Parametre başına on altı bayt ve fazlası")
+![Altı satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir eğitim adımının bellek defteri. Sütunlar kalem, parametre başına bayt ve 8 milyar parametredeki karşılığı. Birinci satır 16 bitlik ağırlık: 2 bayt, 16 GB. İkinci satır 16 bitlik gradyan: 2 bayt, 16 GB. Üçüncü satır 32 bitlik ağırlık kopyası: 4 bayt, 32 GB. Dördüncü satır momentum: 4 bayt, 32 GB. Beşinci satır yayılım: 4 bayt, 32 GB. Altıncı satır toplam vurguludur: 16 bayt, 128 GB. Birinci kutuda sınır durur: 80 gigabaytlık bir kartın alabileceği en büyük model 5 milyar parametredir ve bu sınır henüz tek bir aktivasyon saklanmadan öncedir; 405 milyar parametrelik bir modelin durumu 6.480 gigabayt, yani en az 81 kart eder. İkinci kutuda aktivasyonlar durur: katman başına s çarpı b çarpı h çarpı parantez içinde 34 artı 5as bölü h bayt; GPT-3'ün ölçüleriyle parantez içi 114'tür ve mikro yığın bir iken katman başına 2,87 gigabayt, doksan altı katman için 275 gigabayt eder. En altta bir kayıt: bayt başı muhasebe Rajbhandari ve arkadaşlarından, formül Korthikanti ve arkadaşlarından, çarpımlar bizimdir.](assets/egitim-bellek-defteri.svg "Şekil 1 — Parametre başına on altı bayt ve fazlası")
 
-Şekil 2'nin alt kutusu defterin neden iki yarısı olduğunu söylüyor: üst yarı model büyüdükçe büyür, alt yarı yığın ve dizi büyüdükçe. İkisi aynı karta sığmak zorunda.
+Şekil 1'in alt kutusu defterin neden iki yarısı olduğunu söylüyor: üst yarı model büyüdükçe büyür, alt yarı yığın ve dizi büyüdükçe. İkisi aynı karta sığmak zorunda.
 
 ## Belleği zamanla satın almak
 
@@ -76,7 +76,7 @@ Aktivasyon defteri kapanmıyorsa bilinen bir takas var: ara değerleri saklamak 
 
 Bedeli ne? Yaygın rakam, aktivasyon belleğinin yaklaşık kareköke inmesi karşılığında yüzde 33 ek hesap. Korthikanti ve arkadaşları bunu doğrudan ölçmüş ve 22 milyar parametreli bir modelin tek bir katmanı için şu süreleri bildirmiş: taban durumda ileri geçiş 7,7 ms, geri geçiş 11,9 ms, toplam 19,6 ms. Bütün aktivasyonlar yeniden hesaplandığında ileri geçiş değişmiyor, geri geçiş 19,5 ms'ye çıkıyor ve toplam 27,2 ms oluyor. Farkı biz çıkaralım: yüzde 39. Yani folklorik yüzde 33 iyimser bir yuvarlama; ölçülen bedel daha yüksek.
 
-Aynı çalışmanın önerdiği seçici sürümde — ucuz olanı sakla, pahalı olanı yeniden hesapla — toplam 20,9 ms'de kalıyor, yani ek maliyet yüzde 7. Bu tür bir kazanç bedava değil: hangi ara değerin saklanacağı elle yapılmış bir arama sonucudur ve yazarlar bunu açıkça söyler.
+Aynı çalışmanın önerdiği seçici sürümde — ucuz olanı sakla, pahalı olanı yeniden hesapla — toplam 20,9 ms'de kalıyor, yani ek maliyet yüzde 7. Bu kazancın da bir bedeli var: hangi ara değerin saklanacağı elle yapılmış bir arama sonucudur ve yazarlar bunu açıkça söyler.
 
 Kazanç tarafı da ölçülmüş. ZeRO çalışmasının örneğinde yeniden hesaplama, 1,5 milyar parametreli modelin 60 GB'lık aktivasyon defterini yaklaşık 8 GB'a indiriyor — yedi buçuk kat. Korthikanti ve arkadaşlarının seçici sürümü ise bunun yerine yaklaşık beş kat indirim sağlıyor ve yeniden hesaplamanın süre maliyetinin yüzde doksanından fazlasını ortadan kaldırıyor. İki uç arasında seçim yapmak, "belleğim mi dar, sürem mi" sorusuna verilen bir cevaptır ve her koşuda yeniden verilir.
 
@@ -98,13 +98,11 @@ A100 kartının sırt noktasını da kendimiz çıkaralım: 16 bitlik tepe hız�
 | Eğitim adımı, mikro yığın 1 × dizi 2.048 | 2.048 | 9,8 kat sağında |
 | Eğitim adımı, mikro yığın 4 × dizi 8.192 | 32.768 | 157,5 kat sağında |
 
-Tablonun söylediği tek şey var ve bu makalenin omurgası: **aynı çip, aynı ağırlıklar, iki bambaşka rejim.** Otuz iki isteğe hizmet veren bir üretim adımı ile dört diziyi işleyen bir eğitim adımı arasındaki işlem yoğunluğu oranı 32.768 ÷ 32 = 1.024. Biri sırt noktasının solunda beklerken öbürü sağında hesap yapıyor. 26\. makaledeki bütün yığınlama mühendisliğinin amacı paydayı sırt noktasına yaklaştırmaktı; eğitimde o sorun yok, çünkü dizi uzunluğu paydayı zaten binlerle çarpıyor.
+![Logaritmik iki eksenli bir çatı çizgisi. Yatay eksen işlem yoğunluğu, 1'den 100.000 işlem/bayta; dikey eksen ulaşılabilir hız, 1'den 1.000 TFLOP/s'ye. Çatı, solda bant genişliğiyle sınırlı eğik bir koldan 208 işlem/baytlık sırt noktasında 312 TFLOP/s'lik düz tavana döner. Eğik kolda üç üretim noktası durur: yığın 1, yığın 32 ve sırt noktasının hemen sağında yığın 256. Düz tavanda iki eğitim noktası durur: 1 çarpı 2.048 ve 4 çarpı 8.192. Altta: yığın 1 ve 32'nin hızını bant belirler, yığın 256 sırtı ancak geçer, eğitim noktalarının hızını hesap belirler; yığın 32 ile 4 çarpı 8.192 arasındaki yoğunluk farkı 1.024 kattır; hesap yalnızca ağırlıkla yapılan çarpımlar içindir. Kayıt: çizgi, noktalar ve 312 bölü 1,5 eşittir 208 bizim hesabımızdır.](assets/sirt-noktasinin-iki-yani.svg "Şekil 2 — Aynı çip, iki rejim: eğik kolda bant, düz tavanda hesap")
 
-Bir sınırı hemen söyleyelim. Bu hesap ağırlıkla yapılan çarpımlar için geçerli; dikkat işleminin kendisinde ağırlık yoktur ve ara matris dizi uzunluğunun karesiyle büyür, dolayısıyla o parça bambaşka davranır. 86\. makalede FlashAttention'ın neden işlem sayısını hiç azaltmadan hızlandırdığını görmüştük — sebebi tam olarak buydu.
+Şekil 2 tablonun satırlarını 89\. makaledeki çatı çizgisinin üstüne yerleştiriyor. Soldaki eğik kolda bir noktanın hızını bant genişliği belirler: yoğunluk iki katına çıkarsa hız da iki katına çıkar. Sırt noktasından sonra tavan düzdür: yoğunluğu artırmak artık hiçbir şey kazandırmaz, çünkü çip zaten hesabının sınırındadır. Üretim noktaları eğik kolda ya da sırtın hemen yanında, eğitim noktaları tavanın derinliğinde duruyor: **aynı çip, aynı ağırlıklar, iki bambaşka rejim.** Otuz iki isteğe hizmet veren bir üretim adımı ile dört diziyi işleyen bir eğitim adımı arasındaki işlem yoğunluğu oranı 32.768 ÷ 32 = 1.024. Biri sırt noktasının solunda beklerken öbürü sağında hesap yapıyor. 26\. makaledeki bütün yığınlama mühendisliğinin amacı paydayı sırt noktasına yaklaştırmaktı; eğitimde o sorun yok, çünkü dizi uzunluğu paydayı zaten binlerle çarpıyor.
 
-![Beş satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı çip, sırt noktasının iki yanı; A100 kartının sırt noktası 208 işlem bölü bayt. Sütunlar rejim, işlem yoğunluğu ve sırt noktasına göre konum. Birinci satır adım adım üretim yığın bir: yoğunluk 1, 208 kat solunda. İkinci satır adım adım üretim yığın 32: yoğunluk 32, 6,5 kat solunda. Üçüncü satır adım adım üretim yığın 256: yoğunluk 256, 1,2 kat sağında. Dördüncü satır eğitim adımı mikro yığın bir çarpı dizi 2.048: yoğunluk 2.048, 9,8 kat sağında. Beşinci satır vurguludur, eğitim adımı mikro yığın dört çarpı dizi 8.192: yoğunluk 32.768, 157,5 kat sağında. Birinci kutuda oran durur: iki uç arasındaki fark 32.768 bölü 32, yani 1.024 kat; aynı çip ve aynı ağırlıklar, iki bambaşka rejim. İkinci kutuda sınır durur: bu hesap yalnızca ağırlıkla yapılan çarpımlar için geçerlidir, dikkat işleminin kendisinde ağırlık yoktur ve ara matris dizi uzunluğunun karesiyle büyüdüğü için o parça ayrı davranır. En altta bir kayıt: sırt noktası 312 bölü 1,5 ile bizim hesabımızdır, yoğunluklar da öyle.](assets/sirt-noktasinin-iki-yani.svg "Şekil 3 — Bin yirmi dört kat")
-
-Şekil 3'ün ikinci kutusu hesabın sınırını taşıyor; birinci kutusu ise tek cümlelik sonucu.
+Bir sınırı hemen söyleyelim. Bu hesap ağırlıkla yapılan çarpımlar için geçerli; dikkat işleminin kendisinde ağırlık yoktur ve ara matris dizi uzunluğunun karesiyle büyür, dolayısıyla o parça bambaşka davranır. 86\. makalede FlashAttention'ın neden işlem sayısını hiç azaltmadan hızlandırdığını görmüştük — sebebi buydu.
 
 ## Tepe hız bir sayı, ulaşılan hız başka
 

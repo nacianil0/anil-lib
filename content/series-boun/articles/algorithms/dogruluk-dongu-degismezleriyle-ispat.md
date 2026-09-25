@@ -12,7 +12,7 @@ tags:
   - ispat
   - sonlanma
   - eklemeli-siralama
-content_hash: sha256:0f5c6d263950604c7ca293b304f4a707f0dca410223dfc877541fec42579f499
+content_hash: sha256:f6da04ee511a41c9cb0b5e72b3818e61d7acd049726988f80be5a55b41510761
 classification_version: 1
 classification_batch: 6
 ---
@@ -58,13 +58,13 @@ Bir döngüde durumlar yineleme sınırlarıdır: her yinelemenin başında değ
 
 **Koruma (maintenance).** Değişmez bir yinelemenin başında doğruysa, o yinelemenin gövdesi çalıştıktan sonra — yani bir sonraki yinelemenin başında — hâlâ doğrudur.
 
-**Sonuçlanma (conclusion).** Döngü bittiğinde, değişmez ile döngünün çıkış koşulu **birlikte** istediğimiz sonucu verir.
+**Sonuçlanma (CLRS'teki adıyla *termination*).** Döngü bittiğinde, değişmez ile döngünün çıkış koşulu **birlikte** istediğimiz sonucu verir.
 
 Üçünün her biri ayrı bir iş yapar. Başlatma ile koruma birlikte, tümevarımın taban ve adım durumlarıdır; ikisi değişmezin döngü boyunca doğru kaldığını söyler. Asıl kazancı veren üçüncü adımdır: değişmez tek başına genellikle işe yaramaz, ama çıkış koşuluyla birleşince tam olarak ispatlamak istediğin şeye dönüşür.
 
 Başlatma adımı çoğu zaman bedavadır ve bunun nedeni mantık makalesinde tanımladığımız **boş doğruluk (vacuous truth)** kavramıdır: bir döngü henüz hiç dönmemişken üzerinde konuştuğun aralık boştur ve boş bir küme hakkındaki "her elemanı şu özelliği sağlar" iddiası ihlal eden eleman bulunmadığı için doğrudur.
 
-Bir uyarı, ve bu makalenin en sık atlanan noktası: **üçlü yalnızca kısmi doğruluk verir.** Sonuçlanma adımı "döngü bittiğinde" diye başlar; döngünün bittiğini varsayar, ispatlamaz. Sonlanma ayrı bir iştir ve birazdan ayrıca yapacağız. Türkçede iki kelimenin birbirine benzemesi tuzağı büyütür: **sonuçlanma** değişmez ispatının üçüncü adımıdır, **sonlanma** ise döngünün gerçekten durduğu iddiasıdır.
+Sık atlanan bir uyarı: **üçlü yalnızca kısmi doğruluk verir.** Sonuçlanma adımı "döngü bittiğinde" diye başlar; döngünün bittiğini varsayar, ispatlamaz. Sonlanma ayrı bir iştir ve birazdan ayrıca yapacağız. Türkçede iki kelimenin birbirine benzemesi tuzağı büyütür: **sonuçlanma** değişmez ispatının üçüncü adımıdır, **sonlanma** ise döngünün gerçekten durduğu iddiasıdır. İngilizcede tuzak daha da derindir, çünkü mülakatçı üçüncü adıma CLRS'teki adıyla *termination* der ve o adımı yazarken çoğu zaman "döngü şu yüzden sonlanır" diye bir cümle de ekler. `for` döngüsünde bu cümle bedavadır, sayaç sınırına varır; `while` döngüsünde ise o cümle aşağıdaki ayrı sonlanma ispatının ta kendisidir ve atlanırsa ispat eksik kalır. Bu makalede iki işi iki ayrı kelimeyle tutmamızın nedeni budur.
 
 Değişmez yazarken niceleyici disiplini de asimptotik makalesindeki gibi geçerlidir. "Dizinin başı sıralı" bir değişmez değildir; "her i için, i'inci yinelemenin başında A[1..i − 1] alt dizisi sıralıdır" bir değişmezdir. Neyin, ne zaman, hangi aralıkta doğru olduğu yazılmalıdır.
 
@@ -92,7 +92,7 @@ Doğru değişmez şudur: **her i için, dış döngünün i'inci yinelemesi ba�
 
 **Sonuçlanma.** Döngü i = n + 1 olunca biter. Değişmezde i yerine n + 1 koy: A[1..n] alt dizisi, başlangıçtaki A[1..n] elemanlarının sıralı bir permütasyonudur. A[1..n] bütün dizidir; yani dizi sıralanmıştır ve içindeki elemanlar aynı elemanlardır. İstediğimiz tam olarak buydu. Şekil 1 üç adımı [5, 2, 4, 6, 1, 3] dizisi üzerinde gösteriyor.
 
-![Üç satırlı bir şema. Üstte başlatma etiketiyle altı hücreli bir dizi var: beş, iki, dört, altı, bir, üç. Yalnızca ilk hücrenin üstünde sıralı önek yazan koyu bir bant duruyor ve altında i eşittir iki yazıyor. Ortada koruma etiketiyle aynı dizinin dördüncü yineleme sırasındaki hâli var: ilk üç hücre iki, dört, beş olarak sıralanmış ve üstlerinde sıralı önek bandı duruyor; dördüncü hücredeki altı değeri anahtar olarak dışarı alınmış ve oka bağlı bir kutuda gösteriliyor; kalan iki hücre bir ve üç değerlerini taşıyor. Bandın altında i eşittir dört yazıyor. En altta sonuçlanma etiketiyle bir, iki, üç, dört, beş, altı biçiminde tamamen sıralı dizi var ve bant bütün diziyi kaplıyor; altında i eşittir yedi, yani n artı bir yazıyor. En altta değişmezin tam ifadesi duruyor: i'inci yinelemenin başında A bir ile i eksi bir arası, başlangıçtaki aynı hücrelerin sıralı bir permütasyonudur](assets/eklemeli-siralama-degismezi.svg "Şekil 1 — Eklemeli sıralamanın döngü değişmezi: başlatma, koruma, sonuçlanma")
+![Üç satırlı bir şema. Üstte başlatma etiketiyle altı hücreli bir dizi var: beş, iki, dört, altı, bir, üç. Yalnızca ilk hücrenin üstünde sıralı önek yazan koyu bir bant duruyor, satırın solunda i eşittir iki, sağında tek eleman: sıralı ve permütasyon yazıyor. Ortada koruma etiketiyle aynı dizinin i eşittir dört yinelemesindeki hâli var: ilk üç hücre iki, dört, beş olarak sıralanmış ve üstlerinde sıralı önek büyüyor yazan bant duruyor; dördüncü hücredeki altı değeri anahtar olarak dışarı alınmış ve yerine yerleşir notuyla bir kutuda gösteriliyor; kalan iki hücre bir ve üç değerlerini taşıyor. Satırın solunda i eşittir dörtten beşe yazıyor. En altta sonuçlanma etiketiyle bir, iki, üç, dört, beş, altı biçiminde tamamen sıralı dizi var ve bant bütün diziyi kaplıyor; satırın solunda i eşittir yedi, yani n artı bir yazıyor. En altta değişmezin tam ifadesi duruyor: i'inci yinelemenin başında A bir ile i eksi bir arası, başlangıçtaki aynı hücrelerin sıralı bir permütasyonudur](assets/eklemeli-siralama-degismezi.svg "Şekil 1 — Eklemeli sıralamanın döngü değişmezi: başlatma, koruma, sonuçlanma")
 
 > **Sesli anlat:** "Döngü değişmezi nedir, üç adımı nedir ve bir döngünün doğruluğunu onunla nasıl ispatlarsın? Doksan saniye."
 >
@@ -169,7 +169,9 @@ Sayıyla görelim: a = 3, b = 13 için (x, y, z) üçlüsü (3, 1, 13) → (9, 3
 
 Dört tipik hata var. Değişmezi fazla zayıf kurmak — eklemeli sıralamada permütasyon şartını unutmak bunun kanonik örneğidir. Sonuçlanma adımını atlayıp "değişmez doğru, demek ki algoritma doğru" demek; değişmez tek başına hiçbir şey ispatlamaz, çıkış koşuluyla birleşmesi gerekir. Sonuçlanma ile sonlanmayı karıştırmak. Ve döngünün sıralılık gibi bir önkoşulunu hangi adımda kullandığını gösterememek; ikili aramada sıralılık tam olarak koruma adımında devreye girer, başka hiçbir yerde değil.
 
-İngilizce karşılıklar hazır olmalıdır: *loop invariant*, *initialization*, *maintenance*, *termination*, *partial correctness*, *preserved invariant*, *well ordering principle*, *derived variable*, *decreasing measure*, *off-by-one error*.
+Takip zinciri genellikle şöyle ilerler: "Değişmezin ne?" → "Koruma adımında hangi varsayımı kullandın?" → "Peki döngünün durduğunu nereden biliyorsun?" Üçüncü halka, üçlünün yalnızca kısmi doğruluk verdiğini bilen adayı bilmeyenden ayırır; cevabı ölçüyü adıyla vermektir.
+
+İngilizce karşılıklar hazır olmalıdır: *loop invariant*, *initialization*, *maintenance*, *termination* (hem üçüncü adımın adı hem sonlanma), *partial correctness*, *preserved invariant*, *well ordering principle*, *derived variable*, *decreasing measure*, *off-by-one error*.
 
 ### Sırada ne var
 

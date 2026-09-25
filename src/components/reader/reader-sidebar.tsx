@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Home } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import type { ArticleDescriptor } from "@/lib/content/types";
+import type { PhaseOutline } from "@/lib/content/series-progress";
 import { LockButton } from "./lock-button";
 import { ReadingList } from "./reading-list";
 import { ProgressMeter } from "./progress-meter";
@@ -16,6 +17,7 @@ type Props = {
   title?: string;
   subtitle?: string;
   homeHref?: string;
+  phases?: PhaseOutline[];
 };
 
 export function ReaderSidebar({
@@ -25,6 +27,7 @@ export function ReaderSidebar({
   title = UI.libraryTitle,
   subtitle = UI.librarySubtitle,
   homeHref = "/",
+  phases,
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const articleIds = articles.map((article) => article.articleId);
@@ -64,6 +67,7 @@ export function ReaderSidebar({
           currentArticleId={currentArticleId}
           idPrefix="desktop"
           basePath={basePath}
+          phases={phases}
         />
       </div>
       <div className="flex shrink-0 items-center justify-between border-t border-border px-5 py-3">

@@ -94,6 +94,74 @@ describe("catalogArticleSchema", () => {
   });
 });
 
+describe("editorial revision fields", () => {
+  const note = "Kabarcık oranı küçük bir zaman çizelgesiyle yeniden anlatıldı.";
+  const catalogBase = {
+    articleId: validFrontmatter.article_id,
+    title: "t",
+    slug: "t",
+    category: "foundations",
+    level: "beginner",
+    readingOrder: 1,
+    summary: "s",
+    contentHash: validFrontmatter.content_hash,
+    path: "content/series/articles/foundations/t.md",
+    classificationBatch: 0,
+  };
+
+  it("keeps every never-revised record valid and revision-free", () => {
+    const fm = frontmatterSchema.parse(validFrontmatter);
+    expect(fm.revised_at).toBeUndefined();
+    expect(fm.revision_note).toBeUndefined();
+    const article = catalogArticleSchema.parse(catalogBase);
+    expect("revisedAt" in article).toBe(false);
+  });
+
+  it("accepts a quoted date with its note", () => {
+    const fm = frontmatterSchema.parse({
+      ...validFrontmatter,
+      revised_at: "2026-09-25",
+      revision_note: note,
+    });
+    expect(fm.revised_at).toBe("2026-09-25");
+    expect(fm.revision_note).toBe(note);
+  });
+
+  it("normalizes an unquoted YAML date to the same string", () => {
+    const fm = frontmatterSchema.parse({
+      ...validFrontmatter,
+      revised_at: new Date("2026-09-25T00:00:00Z"),
+      revision_note: note,
+    });
+    expect(fm.revised_at).toBe("2026-09-25");
+  });
+
+  it("rejects a date without a note, a note without a date, and impossible days", () => {
+    expect(() => frontmatterSchema.parse({ ...validFrontmatter, revised_at: "2026-09-25" })).toThrow();
+    expect(() => frontmatterSchema.parse({ ...validFrontmatter, revision_note: note })).toThrow();
+    expect(() =>
+      frontmatterSchema.parse({ ...validFrontmatter, revised_at: "2026-02-30", revision_note: note }),
+    ).toThrow();
+    expect(() =>
+      catalogArticleSchema.parse({ ...catalogBase, revisedAt: "25.09.2026", revisionNote: note }),
+    ).toThrow();
+    expect(() => catalogArticleSchema.parse({ ...catalogBase, revisionNote: note })).toThrow();
+  });
+
+  it("rejects an empty or overlong note", () => {
+    expect(() =>
+      catalogArticleSchema.parse({ ...catalogBase, revisedAt: "2026-09-25", revisionNote: "  " }),
+    ).toThrow();
+    expect(() =>
+      catalogArticleSchema.parse({
+        ...catalogBase,
+        revisedAt: "2026-09-25",
+        revisionNote: "a".repeat(201),
+      }),
+    ).toThrow();
+  });
+});
+
 describe("catalogSchema", () => {
   it("accepts schema version 2 and rejects legacy version 1", () => {
     const candidate = {

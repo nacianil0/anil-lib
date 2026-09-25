@@ -12,7 +12,7 @@ tags:
   - celiskiyle-ispat
   - karsi-ornek
   - kok-iki
-content_hash: sha256:1f48e11149bae8a4c72a00149b54c25456ca9457a271d1441fd29fd25b5f677f
+content_hash: sha256:339c162356c7ffce3c7745bac5d98fc261acb677259a9820023ca8299e3f9fc9
 classification_version: 1
 classification_batch: 0
 ---
@@ -28,7 +28,7 @@ Sezgisel tanım: **ispat (proof)**, bir iddianın doğru olduğunu, kabul edilmi
 
 Formal tanım: aksiyomlardan, tanımlardan ve önceden ispatlanmış teoremlerden başlayarak, geçerli çıkarım kurallarıyla iddiaya ulaşan sonlu adım dizisi.
 
-Sınır örneği kritik: bir iddianın yüz örnekte doğrulanması ispat değildir. Yüz örnek yalnızca iddianın yüz örnekte doğru olduğunu gösterir. Buna karşılık **tek bir karşı örnek**, evrensel bir iddiayı tamamen yıkar. Bu asimetri bu makalenin en pratik cümlesidir ve doğrudan niceleyicilerden gelir: evrensel iddianın değillemesi varlıksal bir iddiadır, dolayısıyla onu kanıtlamak için tek tanık yeter.
+Sınır örneği kritik: bir iddianın yüz örnekte doğrulanması ispat değildir. Yüz örnek yalnızca iddianın yüz örnekte doğru olduğunu gösterir. Buna karşılık **tek bir karşı örnek**, evrensel bir iddiayı tamamen yıkar. Bu asimetri doğrudan niceleyicilerden gelir: evrensel iddianın değillemesi varlıksal bir iddiadır, dolayısıyla onu kanıtlamak için tek tanık yeter.
 
 Sözlüğü de netleştirelim, çünkü mülakatta bu kelimeler ayrım gözetilerek kullanılır. **Teorem (theorem)** ispatlanmış önemli bir iddiadır. **Lemma** başka bir ispatta kullanılmak üzere ispatlanmış yardımcı iddiadır. **Sonuç (corollary)** bir teoremden hemen çıkan iddiadır. **Varsayım (conjecture)** ise henüz ispatlanmamış, doğru olduğu düşünülen iddiadır.
 
@@ -126,7 +126,7 @@ Aynı gerekçeyle b² çifttir, dolayısıyla b de çifttir.
 
 **Savunma.** İspatın kalbi, çiftlik lemmasının iki kez kullanılmasıdır; lemma olmadan "a² çift, öyleyse a çift" adımı boşlukta kalır. Mülakatta bu ispat istendiğinde en sık atlanan yer de burasıdır: lemmayı gerekçesiz kullanmak, ispatı yarım bırakmak demektir.
 
-Bir uyarı: çelişkiyle ispat güçlü olduğu için fazla kullanılmaya müsaittir. Bir iddiayı doğrudan ispatlayabiliyorken çelişkiye sarmak, ispatı okunması zor hâle getirir. "¬q varsayalım... doğrudan yürüyelim... q elde ettik, çelişki" biçimindeki ispatlar aslında gizlenmiş doğrudan ispatlardır ve öyle yazılmalıdır.
+Bir uyarı: çelişkiyle ispat güçlü olduğu için fazla kullanılmaya müsaittir. Bir iddiayı doğrudan ispatlayabiliyorken çelişkiye sarmak, ispatı okunması zor hâle getirir. "¬q varsayalım... (bu varsayımı hiç kullanmadan) p'den yürüyelim... q elde ettik, çelişki" biçimindeki ispatlar aslında gizlenmiş doğrudan ispatlardır ve öyle yazılmalıdır. Test basittir: çelişkiye giderken ¬q varsayımını gerçekten kullandın mı? Kullanmadıysan, çelişki kılığı gereksizdir.
 
 ## Karşı örnek disiplini
 
@@ -144,7 +144,7 @@ Buradan çıkan üç kural:
 
 **Bir örnek ispat değildir, ama bir karşı örnek çürütmedir.** Asimetrinin kaynağı niceleyicilerdir.
 
-**Karşı örnek ararken sınırlara git.** Sıfır, boş küme, tek elemanlı küme, negatif değerler, eşitlik hâlleri. Yukarıdaki örnekte karşı örnek, ifadenin kendi katsayısıyla (41) ilişkili yerde ortaya çıktı; tesadüf değil, çünkü n = 41 olduğunda ifade 41'in katı olur.
+**Karşı örnek ararken sınırlara git.** Sıfır, boş küme, tek elemanlı küme, negatif değerler, eşitlik hâlleri. Yukarıdaki örnekte karşı örnek, ifadenin kendi sabitiyle (41) ilişkili yerde ortaya çıktı; tesadüf değil. İfadeyi n(n + 1) + 41 diye yaz: n = 40 ya da n = 41 olduğunda n(n + 1) çarpımı 41'in katıdır, dolayısıyla bütün ifade 41'in katı olur ve 41'den büyük olduğu için asal olamaz. Karşı örneği aramak yerine, ifadenin hangi n'de bölünebilir hâle geleceğini sormak onu doğrudan verir.
 
 **Karşı örnek bulamamak, iddianın doğru olduğunu göstermez.** Aramayı bıraktığında elinde ya bir karşı örnek ya da bir ispat olmalı; ikisi de yoksa iddian hâlâ varsayımdır ve mülakatta öyle sunulmalıdır.
 
@@ -156,7 +156,7 @@ Buradan çıkan üç kural:
 
 **Yapıcı olmayan (nonconstructive) ispat**, tanığın var olduğunu gösterir ama hangisi olduğunu söylemez. Klasik örnek: irrasyonel a ve b sayıları için a^b'nin rasyonel olabileceğini göstermek. √2^√2 sayısını düşün. Bu sayı ya rasyoneldir ya da değildir. Rasyonelse a = b = √2 seçimi iddiayı verir. Rasyonel değilse a = √2^√2 ve b = √2 al; o zaman a^b = (√2^√2)^√2 = √2^2 = 2 olur ve 2 rasyoneldir. Her iki durumda da böyle bir çift vardır — ama hangisi olduğunu bu argüman söylemez.
 
-Bu ayrım bilgisayar mühendisliğinde önemlidir, çünkü yapıcı bir ispat çoğu zaman doğrudan bir algoritma verir; yapıcı olmayan ispat vermez. İleride açgözlü algoritmaların doğruluğunu tartışırken bu farkı tekrar kullanacağız.
+Bu ayrım bilgisayar mühendisliğinde önemlidir, çünkü yapıcı bir ispat çoğu zaman doğrudan bir algoritma verir; yapıcı olmayan ispat vermez. Hesaplamanın sınırlarını konuştuğumuz makalede bu farka geri döneceğiz: çözülemeyen problemlerin var olduğunu gösteren sayma argümanı yapıcı değildir, somut bir örneği ise ayrı bir argüman verir.
 
 ## Sık yapılan dört hata
 
@@ -178,7 +178,11 @@ Dördünün de ortak paydası şu: ispatın bir yerinde, gerekçesi söylenmeyen
 
 Takip sorusu zinciri burada da tanıdık bir biçim alır. Birinci halka tekniği yoklar: "Neden çelişkiyle ispatladın, doğrudan olmuyor mu?" İkinci halka kullandığın ara adımı yoklar: "Kare çiftse sayının kendisi çift, bunu nereden biliyorsun?" Üçüncü halka genelleştirmeyi yoklar: "Aynı argüman √4 için de yürür mü?"
 
-Üçüncüsünün cevabı öğreticidir: yürümez. √4 = 2 rasyoneldir, çünkü argümanın "a² = 2b²" adımı 2'nin asal olmasına dayanır ve 4 asal değildir. Bir ispatın nerede bozulduğunu söyleyebilmek, ispatı ezberlemekten daha güçlü bir sinyaldir.
+Üçüncüsünün cevabı öğreticidir: yürümez, zaten yürümemeli, çünkü √4 = 2 rasyoneldir. Argümanı 4 ile tekrar etmeye çalışınca kırılan halka lemmadır. a² = 4b² eşitliğinden "a² 4'ün katı" çıkar, ama "a² 4'ün katıysa a da 4'ün katıdır" önermesi yanlıştır: a = 2 için a² = 4 dörde bölünür, a bölünmez. 2 için lemma doğrudur, çünkü 2 asaldır ve asal bir sayı bir çarpımı bölüyorsa çarpanlardan birini böler. Yani ispatın taşıyıcı adımını adlandırabilmek, o adımın hangi sayılarda çöktüğünü de söylemeni sağlar.
+
+Sık hataların listesi yukarıda, dört hata bölümünde duruyor. Sözlü bir ispatta özellikle ikisine dikkat et: gizli varsayım ve "açıkça görülüyor ki" ile geçiştirilen adım. İkisi de hızlı konuşurken fark edilmeden kayar ve takip sorusu tam oradan gelir.
+
+İngilizce karşılıklar hazır olmalıdır: *proof*, *theorem*, *lemma*, *corollary*, *conjecture*, *direct proof*, *proof by contrapositive*, *proof by contradiction*, *proof by cases*, *counterexample*, *if and only if*, *necessary and sufficient condition*, *constructive / nonconstructive proof*, *irrational number*, *circular reasoning*.
 
 ### Sırada ne var
 

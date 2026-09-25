@@ -5,16 +5,18 @@ slug: matrisin-icini-okumak-rank-ozdeger-ve-svd
 category: foundations
 level: advanced
 reading_order: 92
-summary: "91'de matrisi bir dönüşüm olarak kurduk; bu makale o dönüşümün içindeki ikinci sayıyı — gerçekte kaç bağımsız yönde iş yaptığını — kuruyor. Dokuz sayı taşıyan bir matrisin iki bağımsız yönü olabiliyor; özdeğerlerin hepsi sıfır olan bir matris hiç de etkisiz olmayabiliyor. Tekil değer ayrışımı her matrisi dönme, gerdirme ve dönmeye ayırır; en iyi düşük ranklı yaklaşıklığı vermenin bedeli tam olarak kesilen ilk tekil değerdir. Ölçümler hem iddiayı destekliyor hem sınırlıyor: bir ağın ağırlıklarının yüzde 95'inden fazlası tahmin edilebiliyor, ama ham tekil değer kesmesi LLaMA 2-7B'nin perplexity'sini 5,47'den 18.192'ye çıkarıyor. Katman seçerek yüksek dereceli bileşenleri atmak ise doğruluğu 13,1'den 24,0'a taşıyor — çünkü Eckart–Young matrisi eniyiler, modeli değil."
+summary: "91'de matrisi bir dönüşüm olarak kurduk; bu makale o dönüşümün içindeki ikinci sayıyı — gerçekte kaç bağımsız yönde iş yaptığını — kuruyor. Dokuz sayı taşıyan bir matrisin iki bağımsız yönü olabiliyor; özdeğerlerin hepsi sıfır olan bir matris hiç de etkisiz olmayabiliyor. Tekil değer ayrışımı her matrisi dönme, gerdirme ve dönmeye ayırır; en iyi düşük ranklı yaklaşıklığın hatasını kesilen tekil değerler belirler — spektral normda tam olarak kesilen ilk tekil değer. Ölçümler hem iddiayı destekliyor hem sınırlıyor: bir ağın ağırlıklarının yüzde 95'inden fazlası tahmin edilebiliyor, ama ham tekil değer kesmesi LLaMA 2-7B'nin perplexity'sini 5,47'den 18.192'ye çıkarıyor. Katman seçerek yüksek dereceli bileşenleri atmak ise doğruluğu 13,1'den 24,0'a taşıyor — çünkü Eckart–Young matrisi eniyiler, modeli değil."
 tags:
   - rank
   - tekil-deger
   - ozdeger
   - dusuk-rank
   - matris-sikistirma
-content_hash: sha256:b9d8a947f6b4a76e9542370ecc9a389844836e84a2b54516074a8e8a4b5b4cc6
+content_hash: sha256:b7fe6d4bfae4f1b0f7c22f2f4eff3fd392c5057676e51fe0e57a01f6806837c2
 classification_version: 1
 classification_batch: 22
+revised_at: "2026-09-25"
+revision_note: "Özdeğer ile tekil değer, birim çemberin elipse döndüğü yeni bir şekille anlatıldı; Eckart–Young hatasının hangi normda neye eşit olduğu düzeltildi."
 ---
 ## Dokuz sayı, iki yön
 
@@ -36,15 +38,17 @@ Kazancın ne zaman gerçek olduğunu tek satırda yazabiliriz. Satır sayısı m
 
 Karışması en kolay iki kavramla devam edelim; ikisini yan yana koymak, ayrı ayrı tanımlamaktan daha öğreticidir.
 
-Bir kare matris için **özvektör** (eigenvector), dönüşümden geçtiğinde yönü değişmeyen sıfırdan farklı bir vektördür; yalnızca uzar ya da kısalır. Ne kadar uzadığını söyleyen sayıya **özdeğer** (eigenvalue) denir. Örnek: A matrisi birinci satırı (3; 1), ikinci satırı (1; 3) olsun. (1; 1) vektörünü geçir: (3 + 1; 1 + 3) = (4; 4), yani aynı yön, dört katı. Demek ki (1; 1) bir özvektör ve özdeğeri 4. (1; −1) vektörünü geçir: (3 − 1; 1 − 3) = (2; −2), yani özdeğeri 2.
+Bir kare matris için **özvektör** (eigenvector), dönüşümden geçtiğinde yönü değişmeyen sıfırdan farklı bir vektördür; yalnızca uzar ya da kısalır. Ne kadar uzadığını söyleyen sayıya **özdeğer** (eigenvalue) denir. Soru yalnızca kare matriste sorulabilir ve cevap negatif, hatta karmaşık bir sayı olabilir: düzlemi 90 derece döndüren bir matrisin yönünü koruyan hiçbir gerçek vektörü yoktur. Örnek: A matrisi birinci satırı (3; 1), ikinci satırı (1; 3) olsun. (1; 1) vektörünü geçir: (3 + 1; 1 + 3) = (4; 4), yani aynı yön, dört katı. Demek ki (1; 1) bir özvektör ve özdeğeri 4. (1; −1) vektörünü geçir: (3 − 1; 1 − 3) = (2; −2), yani özdeğeri 2.
 
 **Tekil değer** (singular value) başka bir soruyu cevaplar: dönüşüm, birim uzunluktaki vektörleri en çok ne kadar gerdiriyor, sonra ona dik yönde ne kadar? Yön korunması şart değil. Bu yüzden tekil değerler her matris için tanımlıdır — kare olmayanlar için de — ve hep sıfır ya da pozitiftir.
 
 Farkı gösteren en temiz örnek şu: birinci satırı (0; 2), ikinci satırı (0; 0) olan B matrisi. Bu matrisin iki özdeğeri de sıfırdır. "Özdeğerleri sıfır" cümlesini "hiçbir şey yapmıyor" diye okumak isteyebilirsin — yanlış olur: B, (0; 1) vektörünü (2; 0)'a taşır, yani uzunluğunu iki katına çıkarır. Tekil değerleri 2 ve 0'dır ve asıl doğruyu bunlar söyler.
 
-![İki sütunlu bir karşılaştırma tablosu. Sol sütun özdeğer: sorusu hangi yön korunur ve ne kadar uzar; yalnızca kare matrislerde tanımlıdır; negatif ya da karmaşık olabilir; A matrisi 3 1 ve 1 3 için özdeğerler 4 ve 2, özvektörler 1 1 ve 1 eksi 1. Sağ sütun tekil değer: sorusu birim vektörler en çok ne kadar gerilir; her matriste tanımlıdır, kare olması gerekmez; her zaman sıfır ya da pozitiftir; aynı A matrisi için tekil değerler 4 ve 2, yani simetrik ve pozitif tanımlı bir matriste ikisi çakışır. Altta karşı örnek kutusu: B matrisi 0 2 ve 0 0; iki özdeğeri de sıfırdır ama tekil değerleri 2 ve 0'dır ve B, 0 1 vektörünü 2 0 vektörüne taşıdığı için etkisiz değildir. En altta bir kayıt: özdeğerlerin sıfır olması matrisin hiçbir şey yapmadığı anlamına gelmez.](assets/ozdeger-tekil-deger.svg "Şekil 2 — İki soru, iki cetvel")
+İki cetvelin farkını en iyi, bir matrisin birim çemberi nereye götürdüğüne bakarak görürsün. Çemberin üzerindeki her nokta uzunluğu 1 olan bir vektördür; matristen geçen bütün bu vektörlerin uçları yeni bir şekil çizer. Tekil değerler o şeklin yarı eksenleridir.
 
-Şekil 2 ikisini yan yana koyuyor. Not edilecek özel durum şudur: A gibi simetrik ve gerdirmesi hep pozitif olan matrislerde özdeğerler ile tekil değerler çakışır. Genel durumda çakışmazlar ve karıştırılırsa yanlış sonuç verirler.
+![İki panelli geometrik şekil. Sol panelde A matrisi, satırları 3 1 ve 1 3: kesikli birim çember, eksenleri çapraz duran bir elipse dönüşür; uzun yarı ekseni 4 ve (1; 1) yönünde, kısa yarı ekseni 2 ve (1; −1) yönünde. Yarı eksenler tekil değerler 4 ve 2; aynı eksenler özvektörler, özdeğerler de 4 ve 2. Sağ panelde B matrisi, satırları 0 2 ve 0 0: çember yatay eksende −2'den 2'ye uzanan bir doğru parçasına ezilir; (0; 1) vektörü (2; 0)'a gider. Tekil değerler 2 ve 0, özdeğerler 0 ve 0. Altta kayıt: tekil değerler birim çemberin gittiği şeklin yarı eksenleridir; çizim ölçekli ve iki matristen hesaplanmıştır.](assets/ozdeger-tekil-deger.svg "Şekil 2 — Tekil değerler çemberin gittiği şeklin yarı eksenleridir")
+
+Şekil 2 iki matrisi bu gözle çiziyor. A çemberi, eksenleri (1; 1) ve (1; −1) yönünde duran bir elipse çevirir; yarı eksenlerin uzunlukları 4 ve 2, yani tekil değerler. Aynı iki eksen A'nın özvektörleridir ve özdeğerler de aynı sayılardır: A gibi simetrik ve gerdirmesi hep pozitif olan matrislerde iki cetvel çakışır. Bu rastlantı değil, simetrik matrislerin genel bir özelliğine dayanıyor — özdeğerleri hep gerçektir ve özvektörleri birbirine diktir; elipsin eksenlerinin dik durması bundandır. B ise çemberi yatay eksende uzunluğu 4 olan bir doğru parçasına ezer: en uzun yarı eksen 2, öbürü 0. Özdeğerler bu gerdirmeyi göremez, çünkü B'nin yönünü koruyan tek vektör ailesi (1; 0) doğrultusudur ve B onu sıfıra götürür. Genel durumda iki cetvel çakışmaz ve karıştırılırsa yanlış sonuç verir.
 
 Bu özel durum boş bir ayrıntı değil, çünkü veri çözümlemesinde en sık karşılaşılan matris tam olarak o türdendir. Bir veri kümesinin ortalaması çıkarıldıktan sonra kurulan **kovaryans matrisi** simetriktir; özvektörleri verinin en çok yayıldığı yönleri, özdeğerleri de o yönlerdeki yayılım miktarını verir. Bu işlemin adı temel bileşen çözümlemesidir ve Bishop'un kitabı 12.1 bölümünde (s. 561) kurar. Aynı yönler, ortalanmış veri matrisinin tekil vektörleridir — yani iki hesap tek hesaptır. 91\. makalede gördüğümüz "en baskın birkaç yönü atmak temsilleri iyileştiriyor" düzeltmesinin ne yaptığı da böylece görünür hâle geliyor: atılan şey, kovaryansın en büyük özdeğerlerine karşılık gelen yönlerdir.
 
@@ -54,15 +58,17 @@ Tekil değerlerinden en büyüğü. O sayı, birim uzunluktaki bir vektörün ul
 
 ## Bir matrisin en iyi küçük hâli
 
-Şimdi bu makalenin merkezindeki teoreme gelelim. **Tekil değer ayrışımı** (singular value decomposition, SVD) her matrisi üç parçaya ayırır: bir dönme, eksenler boyunca bir gerdirme ve bir dönme daha. Gerdirme miktarları tekil değerlerdir ve büyükten küçüğe sıralanır. Ayrışımın tarihi 91\. makalede kullandığımız dilden eski: G. W. Stewart'ın SIAM Review'da yayımladığı tarihçe, Eugenio Beltrami'nin 1873 tarihli çalışmasını ve Camille Jordan'ın hemen ardından gelen kurulumunu ayrışımın ataları sayıyor.
+Makalenin merkezindeki teorem bu geometrinin üstüne kurulu. **Tekil değer ayrışımı** (singular value decomposition, SVD) her matrisi üç parçaya ayırır: bir dönme, eksenler boyunca bir gerdirme ve bir dönme daha. Gerdirme miktarları tekil değerlerdir ve büyükten küçüğe sıralanır. Şekil 2'deki elips tam bu üç adımla çizilir: çemberi döndür (çember döndürülünce değişmez), eksenler boyunca 4 ve 2 kat gerdir, sonra oluşan elipsi çapraz konuma döndür. Ayrışımın tarihi 91\. makalede kullandığımız dilden eski: G. W. Stewart'ın SIAM Review'da yayımladığı tarihçe, Eugenio Beltrami'nin 1873 tarihli çalışmasını ve Camille Jordan'ın hemen ardından gelen kurulumunu ayrışımın ataları sayıyor.
 
 Ayrışımın verdiği şey bir yeniden yazım kuralıdır: matris, tekil değerlerle ağırlıklandırılmış basit parçaların toplamı olarak yazılabilir. En büyük tekil değere karşılık gelen parça en çok bilgi taşır, sonrakiler gitgide azını.
 
 A matrisimizle yapalım — birinci satır (3; 1), ikinci satır (1; 3), tekil değerleri 4 ve 2. Yalnızca ilk parçayı tutarsak elde ettiğimiz matris bütün girdileri 2 olan matristir: birinci satır (2; 2), ikinci satır (2; 2). Bu matrisin rankı 1'dir. Yaptığımız hatayı ölçelim: A eksi bu yaklaşıklık, birinci satırı (1; −1), ikinci satırı (−1; 1) olan matristir. Bir matrisin bütün girdilerinin karelerini toplayıp karekökünü alan ölçüye **Frobenius normu** denir; hata matrisinin Frobenius normu dört tane 1'den, yani 2.
 
-İki'yi bir yerde gördük: kestiğimiz tekil değer. Bu tesadüf değil, teoremin kendisi. Erhard Schmidt'in 1907'de kurduğu ve Carl Eckart ile Gale Young'ın 1936'da dikdörtgen matrislere genişleterek yeniden keşfettiği sonuç şunu söyler: **en iyi düşük ranklı yaklaşıklık, tekil değer ayrışımını baştan keserek elde edilir ve yapılan hata, kesilen ilk tekil değere eşittir.** (Stewart'ın tarihçesi buradaki adlandırmayı da düzeltiyor: teoremin sahibi Schmidt'tir, "Eckart–Young" adı alanın kısayoludur.)
+İki'yi bir yerde daha gördük: kestiğimiz tekil değer. Bu tesadüf değil. Erhard Schmidt'in 1907'de kurduğu ve Carl Eckart ile Gale Young'ın 1936'da dikdörtgen matrislere genişleterek yeniden keşfettiği sonuç şunu söyler: **en iyi düşük ranklı yaklaşıklık, tekil değer ayrışımını baştan keserek elde edilir ve yapılan hatayı kesilen tekil değerler belirler.** (Stewart'ın tarihçesi buradaki adlandırmayı da düzeltiyor: teoremin sahibi Schmidt'tir, "Eckart–Young" adı alanın kısayoludur.)
 
-![Üç adımlı bir hesap şeması. Birinci kutuda A matrisi: birinci satır 3 ve 1, ikinci satır 1 ve 3; yanında tekil değerleri 4 ve 2 yazılıdır ve Frobenius normu karekök 20, yani 4,47. İkinci kutuda en iyi rank-1 yaklaşıklık: bütün girdileri 2 olan matris; Frobenius normu 4, yani en büyük tekil değerin kendisi. Üçüncü kutuda hata matrisi: birinci satır 1 ve eksi 1, ikinci satır eksi 1 ve 1; Frobenius normu 2, yani kesilen ikinci tekil değerin kendisi. Altta iki kayıt vardır: birincisi, karelerin toplamı olarak 16 artı 4 eşittir 20 ve bu A'nın Frobenius normunun karesidir; ikincisi, tutulan payın oranı 16 bölü 20, yani yüzde 80. En altta teoremin cümlesi yazılıdır: en iyi düşük ranklı yaklaşıklık baştan kesmekle elde edilir ve hata, kesilen ilk tekil değere eşittir.](assets/kesmenin-bedeli.svg "Şekil 3 — Kesilen tekil değer, yapılan hatanın kendisidir")
+Hatanın tam olarak hangi sayıya eşit olduğu, onu hangi cetvelle ölçtüğüne bağlı. Hata matrisinin bir birim vektörü en çok ne kadar uzattığına bakan cetvelde (spektral norm) hata, kesilen **ilk** tekil değerdir. Frobenius normunda ise kesilen **bütün** tekil değerlerin karelerinin toplamının kareköküdür. Örneğimizde yalnızca bir tekil değer kestiğimiz için iki cetvel aynı sayıyı veriyor: 2. Tekil değerleri 5, 3 ve 1 olan bir matrisi rank 1'e indirseydin, spektral hata 3, Frobenius hatası ise karekök (9 + 1), yani yaklaşık 3,16 olurdu.
+
+![Üç adımlı bir hesap şeması. Birinci kutuda A matrisi: birinci satır 3 ve 1, ikinci satır 1 ve 3; yanında tekil değerleri 4 ve 2 yazılıdır. İkinci kutuda en iyi rank-1 yaklaşıklık: bütün girdileri 2 olan matris; Frobenius normu 4, yani en büyük tekil değerin kendisi. Üçüncü kutuda hata matrisi: birinci satır 1 ve eksi 1, ikinci satır eksi 1 ve 1; Frobenius normu 2, yani kesilen ikinci tekil değerin kendisi. Altta iki kayıt: 16 artı 4 eşittir 20, bu A'nın Frobenius normunun karesidir; tutulan payın oranı 16 bölü 20, yani yüzde 80. En altta teoremin cümlesi: en iyi düşük ranklı yaklaşıklık baştan kesmekle elde edilir; burada tek bir tekil değer kesildiği için hata 2'dir, genelde Frobenius hatası kesilen bütün tekil değerlerin karelerinin toplamının kareköküdür.](assets/kesmenin-bedeli.svg "Şekil 3 — Kesilen tekil değerler, yapılan hatayı belirler")
 
 Şekil 3 hesabı adım adım gösteriyor. Bir sayı daha: A'nın Frobenius normunun karesi 20 ve bu, tekil değerlerin kareleri toplamına eşit (16 artı 4). Tuttuğumuz payın oranı 16 bölü 20, yani yüzde 80. "Tekil değer spektrumunun ne kadarını tuttun" sorusu bu yüzden anlamlıdır: spektrum, bilginin nasıl dağıldığını okunur biçimde verir.
 
@@ -84,13 +90,11 @@ Bu gerilimin etrafından dolaşmanın matematiksel bir yolu var ve rankın basit
 
 ## En iyi yaklaşıklık en iyi model değildir
 
-Şimdi bu makalenin en önemli cümlesine geldik ve ölçüm onu sert biçimde söylüyor.
-
 Eckart–Young teoremi "en iyi" derken belirli bir şeyi kastediyor: **matrisin kendisine** en yakın düşük ranklı matris. Ama bir ağırlık matrisi kendi başına bir amaç değil; modelin kaybını düşürmek için orada. Bu iki "en iyi" örtüşmez.
 
 Xin Wang ve arkadaşlarının ICLR 2025'te sunduğu çalışma farkı ölçüyor. LLaMA 2-7B'nin WikiText-2 üzerindeki perplexity'si 5,47. Ağırlıklara doğrudan tekil değer kesmesi uygulayıp modeli yüzde 20 küçültürsen perplexity **18.192**'ye çıkıyor — model tamamen bozuluyor. Aynı sıkıştırma oranında, kesmenin kayba etkisini hesaba katan ve kesme sonrası ağırlıkları güncelleyen yöntemleriyle perplexity 7,73'te kalıyor. Aradaki uçurum teoremin yanlış olduğunu göstermiyor; teoremin **başka bir soruyu** cevapladığını gösteriyor.
 
-Ters yönde daha da şaşırtıcı bir ölçüm var. Pratyusha Sharma, Jordan Ash ve Dipendra Misra'nın ICLR 2024'te sunduğu çalışma, eğitilmiş bir modelde **seçilmiş katmanların** yüksek dereceli tekil bileşenlerini atmanın başarıyı artırdığını buluyor. GPT-J'nin CounterFact kümesindeki doğruluğu 13,1; tek bir katmanda yapılan en iyi kesmeden sonra 24,0; birkaç kesme birleştirildiğinde 29,2. Ek parametre yok, ek veri yok, eğitim yok — yalnızca silme.
+Ters yönde daha da şaşırtıcı bir ölçüm var. Pratyusha Sharma, Jordan Ash ve Dipendra Misra'nın ICLR 2024'te sunduğu çalışma, eğitilmiş bir modelde **seçilmiş katmanların** yüksek dereceli tekil bileşenlerini atmanın başarıyı artırdığını buluyor. GPT-J'nin CounterFact kümesindeki doğruluğu 13,1; tek bir katmanda yapılan en iyi kesmeden sonra 24,0; birkaç katmandaki kesmeler birleştirildiğinde 29,2. Ek parametre, ek veri ya da ek eğitim kullanılmıyor; yapılan tek şey bileşen silmek.
 
 > **Kendini yokla:** Aynı işlem — yüksek dereceli tekil bileşenleri atmak — neden bir çalışmada modeli bozup diğerinde iyileştiriyor?
 

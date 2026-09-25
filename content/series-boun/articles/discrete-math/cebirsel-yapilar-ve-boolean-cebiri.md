@@ -12,7 +12,7 @@ tags:
   - monoid
   - kafes
   - boolean-cebiri
-content_hash: sha256:b6a1eddfe92eecf24a2189c65642d476bf8228fadb3582fd1dce65e9f91554bd
+content_hash: sha256:59afcc0847a4008ff8f28a0c871566c3eec6111709ca4c57ac5b64429da98457
 classification_version: 1
 classification_batch: 2
 ---
@@ -46,7 +46,7 @@ Bu dört sorunun cevabı bir merdiven oluşturur ve her basamak bir isim taşır
 
 **Yarıgrup (semigroup)**, üzerinde birleşmeli bir ikili işlem tanımlı kümedir — tek koşul birleşmedir. Boş olmayan diziler, birleştirme işlemi altında yarıgruptur.
 
-**Monoid**, birim elemanı da olan yarıgruptur. Bütün diziler (boş dizi dâhil) birleştirme altında monoiddir; boş dizi birim elemandır. Doğal sayılar toplama altında monoiddir; birim eleman 0'dır.
+**Monoid**, birim elemanı da olan yarıgruptur. Bütün diziler (boş dizi dâhil) birleştirme altında monoiddir; boş dizi birim elemandır. Doğal sayılar (0 dâhil sayıldığında) toplama altında monoiddir; birim eleman 0'dır. 0'ı dışarıda bırakırsan elinde yalnızca bir yarıgrup kalır.
 
 **Grup (group)**, her elemanın tersi de olan monoiddir. Tam sayılar toplama altında gruptur. Doğal sayılar toplama altında grup **değildir**, çünkü 3'ün toplamaya göre tersi olan −3 kümede yoktur. Tam sayılar çarpma altında da grup değildir: birim eleman 1 vardır ama 2'nin tersi yoktur.
 
@@ -94,7 +94,7 @@ Bir kafeste bazı ek özellikler olabilir ya da olmayabilir. Kafes **sınırlıy
 
 **Boolean cebiri**, en küçük ve en büyük elemanı olan, hem dağılmalı hem tümleyenli bir kafestir.
 
-Tanımın kendisi kuru görünür; asıl mesele bu tanımı sağlayan üç sistemin **aynı** olmasıdır. Bu makalenin asıl teslim ettiği fikir budur.
+Tanımın kendisi kuru görünür; asıl mesele bu tanımı sağlayan üç sistemin **aynı** kurallara uymasıdır. Aşağıdaki tablo karşılıkları satır satır eşliyor.
 
 | Boolean cebiri | Küme cebiri | Önerme mantığı | Devre |
 |---|---|---|---|
@@ -108,7 +108,7 @@ Tanımın kendisi kuru görünür; asıl mesele bu tanımı sağlayan üç siste
 
 Son satır, mantık makalesinde mantıksal denklik olarak öğrendiğin De Morgan kuralının, kümeler makalesinde küme diline çevirdiğin kuralla ve devre tasarımında kullandığın kuralla **aynı** kural olduğunu gösteriyor. Üçü ayrı ayrı ezberlenecek üç şey değil, bir kuralın üç kılığıdır. Ders kitabı bunu doğrudan söyler: üç sistem de aynı davranır, yani izomorfiktir.
 
-Bir sınır örneği tanımın hangi koşulunun gerçekten çalıştığını gösterir. 12'nin bölen kafesi sınırlıdır (en küçük eleman 1, en büyük eleman 12) ve dağılmalıdır, ama Boolean cebiri **değildir**: 2'nin tümleyeni olması için ebob(2, b) = 1 ve ekok(2, b) = 12 olan bir b gerekir; aday yalnızca 3'tür, ama ekok(2, 3) = 6 ≠ 12. Buna karşılık 30'un bölen kafesi Boolean cebiridir; sekiz elemanı vardır ve {2, 3, 5} kümesinin güç kümesiyle birebir eşleşir — örneğin 2'nin tümleyeni 15'tir, çünkü ebob(2, 15) = 1 ve ekok(2, 15) = 30. Fark, 30'un karesiz olması, 12'nin ise bir tam kare çarpanı (4) taşımasıdır.
+Bir sınır örneği tanımın hangi koşulunun gerçekten çalıştığını gösterir. 12'nin bölen kafesi sınırlıdır (en küçük eleman 1, en büyük eleman 12) ve dağılmalıdır, ama Boolean cebiri **değildir**: 2'nin tümleyeni olması için ebob(2, b) = 1 ve ekok(2, b) = 12 olan bir b gerekir; ebob koşulunu sağlayan bölenler yalnızca 1 ve 3'tür, ama ekok(2, 1) = 2 ve ekok(2, 3) = 6, ikisi de 12 değildir. Buna karşılık 30'un bölen kafesi Boolean cebiridir; sekiz elemanı vardır ve {2, 3, 5} kümesinin güç kümesiyle birebir eşleşir — örneğin 2'nin tümleyeni 15'tir, çünkü ebob(2, 15) = 1 ve ekok(2, 15) = 30. Fark, 30'un karesiz olması, 12'nin ise bir tam kare çarpanı (4) taşımasıdır.
 
 > **Sesli anlat:** "Boolean cebiri ile küme cebiri arasındaki karşılığı bir örnekle altmış saniyede anlat."
 >

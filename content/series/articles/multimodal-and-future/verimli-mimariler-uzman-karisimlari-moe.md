@@ -12,7 +12,7 @@ tags:
   - yonlendirme
   - yuk-dengeleme
   - olcek-yasalari
-content_hash: sha256:5a76c6cd5105975b3f809e5a27987cc6a35c586270b535d07af5396a85a1b99b
+content_hash: sha256:19ea027bd573d7dfa38ce5ccc4b8170c9a21fd6e242d677268f0e7a38c990f7b
 classification_version: 1
 classification_batch: 20
 ---
@@ -46,7 +46,7 @@ Aritmetiği tanım gereği: sekiz uzman ve her token için iki uzman seçilirse,
 
 Alanın standart cevabı bir **yük dengeleme kaybı** (load balancing loss) eklemek: eğitim kaybına, uzmanlar arasındaki kullanım dengesizliğini cezalandıran bir terim konur. İkinci bir önlem **kapasite**: her uzmanın bir yığın içinde kabul edeceği en fazla token sayısı önceden belirlenir; sınırı aşan token'lar o uzman tarafından işlenmez, katmanı artık bağlantı üzerinden atlayarak geçer. Yani dengesizliğin bedeli **düşen token** olarak ödenir.
 
-Dmitry Lepikhin ve arkadaşlarının ICLR 2021'de sunduğu çalışma bu düzeni ölçekte gösterdi: 600 milyar parametreli bir çeviri modeli, 2048 hızlandırıcıda dört günde eğitildi — toplam 22 hızlandırıcı-yılı. Karşılaştırma çarpıcı: o güne kadarki en iyi yoğun karşılığı 235,5 hızlandırıcı-yılı harcamış ve daha düşük çeviri kalitesinde kalmıştı.
+Dmitry Lepikhin ve arkadaşlarının ICLR 2021'de sunduğu çalışma bu düzeni ölçekte gösterdi: 600 milyar parametreli bir çeviri modeli, 2048 hızlandırıcıda dört günde eğitildi — toplam 22 hızlandırıcı-yılı. O güne kadarki en iyi yoğun karşılığı ise 235,5 hızlandırıcı-yılı harcamış ve daha düşük çeviri kalitesinde kalmıştı.
 
 William Fedus ve arkadaşlarının JMLR 2022'de yayımladığı çalışma düzeni sadeleştirdi: iki uzman yerine **bir** uzman seç. Sadeleştirme hem yönlendirme hesabını hem iletişimi düşürdü ve aynı işlem bütçesinde ön eğitimde 7 kata varan hızlanma ölçüldü. Aynı çalışma mimariyi bir trilyon parametrenin üstüne taşıdı.
 
@@ -92,7 +92,7 @@ Bu yüzden uzmanlar karışımının çıkarım tarafı ayrı bir mühendislik a
 
 Adın çağrıştırdığı resim şu: bir uzman matematiğe, bir başkası koda, bir başkası biyolojiye bakar. Ölçüm bu resmi doğrulamıyor — ya da tam olarak doğrulamıyor, ve iki ölçümün ayrıldığı yer öğretici.
 
-Albert Jiang ve arkadaşlarının 2024'te yayımladığı — hakemli bir yerde yayımlandığı doğrulanamayan — çalışma, sekiz uzmanlı ve token başına iki uzman seçen bir modelin yönlendirmesini inceliyor. Bulgu açık: uzman atamalarının dağılımı LaTeX ile yazılmış makalelerde, biyoloji özetlerinde ve ansiklopedi maddelerinde birbirine çok benziyor; yani konuya göre bir uzmanlaşma **görünmüyor**. Görünen şey başka: ardışık token'lar sık sık aynı uzmana gidiyor. Orta katmanlarda ardışık iki token'ın birinci tercihinin aynı çıkma oranı yüzde 22,7 ile 28,4 arasında, oysa rastgele atamada beklenen oran yüzde 12,5. Yani yönlendirici konuyu değil, konumsal ve sözdizimsel bir yapıyı yakalıyor.
+Albert Jiang ve arkadaşlarının 2024'te yayımladığı — hakemli bir yerde yayımlandığı doğrulanamayan — çalışma, sekiz uzmanlı ve token başına iki uzman seçen bir modelin — Şekil 1'deki 47 milyar toplam, 13 milyar etkin parametreli model — yönlendirmesini inceliyor. Bulgu açık: uzman atamalarının dağılımı LaTeX ile yazılmış makalelerde, biyoloji özetlerinde ve ansiklopedi maddelerinde birbirine çok benziyor; yani konuya göre bir uzmanlaşma **görünmüyor**. Görünen şey başka: ardışık token'lar sık sık aynı uzmana gidiyor. Orta katmanlarda ardışık iki token'ın birinci tercihinin aynı çıkma oranı yüzde 22,7 ile 28,4 arasında, oysa rastgele atamada beklenen oran yüzde 12,5. Yani yönlendirici konuyu değil, konumsal ve sözdizimsel bir yapıyı yakalıyor.
 
 Niklas Muennighoff ve arkadaşlarının ICLR 2025'te sunduğu çalışma ise tersini buluyor — ve bulabilmesinin sebebi, modelin bütün eğitim ara kayıtlarıyla birlikte açık olması. 64 uzmanlı ve token başına sekiz uzman seçen bir modelde: yönlendirme eğitimin erken bir aşamasında **doyuyor** (ön eğitimin yüzde 40'ında, son hâline göre doyma yüzde 80'e varıyor), uzmanlar nadiren birlikte etkinleşiyor, ve alan düzeyinde de sözlük düzeyinde de uzmanlaşma görülüyor.
 

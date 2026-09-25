@@ -12,7 +12,7 @@ tags:
   - cakisma
   - yuk-faktoru
   - evrensel-hash
-content_hash: sha256:dd6157315263ed72b272d93092623a0b5821c17e64348973723a53b6b7c4afb7
+content_hash: sha256:78197df39db080fff7095e4eec52f00ed43876d9936bca30a2c8b893c0c517df
 classification_version: 1
 classification_batch: 4
 ---
@@ -28,7 +28,7 @@ Bir modeli adlandıralım. **Karşılaştırma modelinde (comparison model)** al
 
 Şimdi bu modeldeki **her** algoritmayı tek bir nesneyle temsil edelim: **karar ağacı (decision tree)**. İç düğümler yapılan bir karşılaştırmayı, iki dal karşılaştırmanın iki olası sonucunu, yapraklar ise algoritmanın verebileceği çıktıları gösterir. Kökten bir yaprağa giden yol, algoritmanın belirli bir girdideki çalışmasıdır ve o yolun uzunluğu yapılan karşılaştırma sayısıdır.
 
-Alt sınır üç adımda çıkar. **Birinci adım:** n öğe saklıyorsak arama işleminin en az n + 1 farklı çıktısı vardır — n öğeden her biri ya da "yok" — ve her çıktı için en az bir yaprak gerekir. **İkinci adım:** karşılaştırmanın iki sonucu olduğu için ağaç ikilidir; en az n + 1 yaprağı olan bir ikili ağacın yüksekliği en az ⌈log₂(n + 1)⌉ − 1'dir. Bu, ikili arama ağaçları makalesinde tümevarımla ispatladığımız yükseklik alt sınırının aynısıdır. **Üçüncü adım:** en kötü durumdaki karşılaştırma sayısı en uzun kök–yaprak yolunun uzunluğudur, yani yükseklik.
+Alt sınır üç adımda çıkar. **Birinci adım:** n öğe saklıyorsak arama işleminin en az n + 1 farklı çıktısı vardır — n öğeden her biri ya da "yok" — ve her çıktı için en az bir yaprak gerekir. **İkinci adım:** karşılaştırmanın iki sonucu olduğu için ağaç ikilidir; yüksekliği h olan bir ikili ağacın en fazla 2^h yaprağı olabilir, dolayısıyla en az n + 1 yaprak için h ≥ log₂(n + 1) olmalıdır. İkili arama ağaçları makalesinde tümevarımla kurduğumuz ⌈log₂(n + 1)⌉ − 1 sınırı aynı fikrin düğüm sayısıyla yazılmış hâlidir; eksi bir, yaprak yerine düğüm saymaktan gelir. **Üçüncü adım:** en kötü durumdaki karşılaştırma sayısı en uzun kök–yaprak yolunun uzunluğudur, yani yükseklik.
 
 Sonuç: **karşılaştırma modelinde hiçbir arama algoritması en kötü durumda logaritmadan hızlı olamaz.** Bir milyon öğe için bu en az 19 karşılaştırma demektir; sıralı dizide ikili arama ve dengeli arama ağacı bu sınıra zaten ulaşıyordu. Yapının daha akıllısını icat ederek bu duvarın öte tarafına geçilemez.
 
@@ -36,7 +36,7 @@ Duvarı aşmanın tek yolu ispatın içinde yazılı. Dal sayısı iki olduğu i
 
 Şekil 1 iki dünyayı yan yana koyuyor.
 
-![Dikey bir çizgiyle ayrılmış iki yarı. Solda karar ağacı: kökte k küçüktür x bir sorusunu taşıyan bir kutu, ondan evet ve hayır etiketli iki dal, altlarında iki karşılaştırma kutusu daha ve en altta olası çıktıları temsil eden dört yaprak kutusu; altında iç düğümün karşılaştırma, yaprağın çıktı olduğu ve dallanma çarpanı iki iken yüksekliğin en az log iki n artı bir eksi bir olduğu yazıyor. Sağda doğrudan erişim dizisi: anahtar k yazan bir kutudan çıkıp h parantez k etiketli bir okla sekiz hücrelik bir şeridin içindeki tek bir vurgulu hücreye inen erişim; şeridin altında u hücre yazıyor ve yanında dallanma çarpanının u kadar büyük olduğu, erişimin sabit zamanlı ve karşılaştırmasız olduğu, bedelinin u hücrelik yer olduğu ve on harfli isimler için bunun yaklaşık on yedi virgül altı terabayt ettiği belirtiliyor. En altta iki modelin farkı özetleniyor: karşılaştırma yalnızca yön seçer, adres hesabı hedefi doğrudan bulur](assets/karsilastirma-duvari.svg "Şekil 1 — Karar ağacı ile doğrudan erişim dizisi: dallanma çarpanı neyi değiştirir")
+![Dikey bir çizgiyle ayrılmış iki yarı. Solda karar ağacı: kökte k küçüktür x bir sorusunu taşıyan bir kutu, ondan evet ve hayır etiketli iki dal, altlarında iki karşılaştırma kutusu daha ve en altta olası çıktıları temsil eden dört yaprak kutusu; altında iç düğümün karşılaştırma, yaprağın çıktı olduğu ve dallanma çarpanı iki iken yüksekliğin en az log iki n artı bir olduğu yazıyor. Sağda doğrudan erişim dizisi: anahtar k yazan bir kutudan çıkıp "indis = k" etiketli bir okla sekiz hücrelik bir şeridin içindeki tek bir vurgulu hücreye inen erişim; şeridin altında u hücre yazıyor ve yanında dallanma çarpanının u kadar büyük olduğu, erişimin sabit zamanlı ve karşılaştırmasız olduğu, bedelinin u hücrelik yer olduğu ve on harfli isimler için bunun yaklaşık on yedi virgül altı terabayt ettiği belirtiliyor. En altta iki modelin farkı özetleniyor: karşılaştırma yalnızca yön seçer, adres hesabı hedefi doğrudan bulur](assets/karsilastirma-duvari.svg "Şekil 1 — Karar ağacı ile doğrudan erişim dizisi: dallanma çarpanı neyi değiştirir")
 
 ## Doğrudan erişim dizisi ve alan sorunu
 
@@ -107,19 +107,19 @@ Kötü haber şu: u, n'den çok büyük olduğu sürece **sabit** her hash fonks
 
 Bu sadece teorik bir kaygı değildir: bir kütüphanenin hash fonksiyonu bilinen ve sabitse, aynı hash değerine sahip anahtarları toplu hâlde üretmek mümkündür ve bu, tabloyu bilerek doğrusal davranmaya zorlar.
 
-Kuramsal çıkış yolu zariftir: **hash fonksiyonunu sabitleme, rastgele seç.** Evrensel hash ailesi, u'dan büyük bir p asalı için h_{a,b}(k) = ((a·k + b) mod p) mod m biçimindeki fonksiyonların kümesidir; a ve b {0, …, p − 1} aralığından seçilir ve a sıfır olamaz. Bu ailenin özelliği şudur: aileden rastgele seçilen bir h için, herhangi iki farklı anahtarın çakışma olasılığı en fazla 1/m'dir. Buradan bir zincirin beklenen uzunluğunun 1 + (n − 1)/m ile sınırlı olduğu doğrudan çıkar.
+Kuramsal çıkış yolu şudur: **hash fonksiyonunu sabitleme, rastgele seç.** Evrensel hash ailesi, u'dan büyük bir p asalı için h_{a,b}(k) = ((a·k + b) mod p) mod m biçimindeki fonksiyonların kümesidir; a ve b {0, …, p − 1} aralığından seçilir ve a sıfır olamaz. Bu ailenin özelliği şudur: aileden rastgele seçilen bir h için, herhangi iki farklı anahtarın çakışma olasılığı en fazla 1/m'dir. Buradan bir zincirin beklenen uzunluğunun 1 + (n − 1)/m ile sınırlı olduğu doğrudan çıkar.
 
-Farkı iyi anlamak gerekiyor, çünkü mülakatta buraya kadar gelen aday azdır. **Beklenti artık girdiler üzerinden değil, hash fonksiyonu seçimi üzerinden alınıyor.** Yani garanti girdinin "tipik" olmasına bağlı değildir; düşman girdiyi seçse bile, senin hangi h'yi seçtiğini bilmediği sürece beklenen maliyet sabittir. Yine de en kötü durum değişmemiştir: kötü şansla bütün anahtarlar aynı hücreye düşebilir ve arama doğrusal olur. Hash tablosunun en kötü durum garantisi yoktur; olan, girdiden bağımsız hâle getirilmiş bir beklentidir.
+Farkı iyi anlamak gerekiyor, çünkü mülakatta buraya kadar gelen aday azdır. **Beklenti artık girdiler üzerinden değil, hash fonksiyonu seçimi üzerinden alınıyor.** Yani garanti girdinin "tipik" olmasına bağlı değildir; düşman girdiyi seçse bile, senin hangi h'yi seçtiğini bilmediği sürece beklenen maliyet sabittir. Yine de en kötü durum değişmemiştir: kötü şansla bütün anahtarlar aynı hücreye düşebilir ve arama doğrusal olur. Burada kurduğumuz zincirlemeli ve doğrusal denemeli tabloların en kötü durum garantisi yoktur; olan, girdiden bağımsız hâle getirilmiş bir beklentidir.
 
 ## Mülakatta nasıl görünür
 
-Bu serinin ilk makalesinde örnek olarak verilen takip zinciri tam olarak buydu ve şimdi cevaplarını verebiliyoruz.
+Seriyi açan bilimsel mülakat makalesinde örnek olarak verilen takip zinciri tam olarak buydu ve şimdi cevaplarını verebiliyoruz.
 
 "Sabit zaman derken hangi durumu kastediyorsun?" → Ortalama durumu; en kötü durumda bütün anahtarlar aynı hücreye düşerse arama doğrusaldır.
 
 "Anahtarları kim seçiyor? Girdiyi düşman seçiyorsa ne olur?" → Sabit bir hash fonksiyonunda düşman çakışan anahtarlar üretebilir. Savunma, hash fonksiyonunu çalışma anında rastgele seçmek ve beklentiyi girdiden bağımsız hâle getirmektir.
 
-"O hâlde neden her yerde hash tablosu kullanmıyoruz?" → Çünkü hash tablosu **sırayı yok eder**. En küçük ya da en büyük elemanı bulma, ardıl ve öncül, sıralı gezinme ve aralık sorgusu hash tablosunda desteklenmez; hepsi doğrusal tarama ister. Dengeli arama ağacı bu işlemleri logaritmik verir. Ayrıca hash tablosu en kötü durum garantisi vermez, dengeli ağaç verir. Seçim bu iki eksende yapılır: sıralı işlemlere ihtiyacın var mı, ve en kötü durum garantisine ihtiyacın var mı.
+"O hâlde neden her yerde hash tablosu kullanmıyoruz?" → Çünkü hash tablosu **sırayı yok eder**. En küçük ya da en büyük elemanı bulma, ardıl ve öncül, sıralı gezinme ve aralık sorgusu hash tablosunda desteklenmez; hepsi doğrusal tarama ister. Dengeli arama ağacı bu işlemleri logaritmik verir. Ayrıca burada kurduğumuz hash tablosu en kötü durum garantisi vermez, dengeli ağaç verir. Seçim bu iki eksende yapılır: sıralı işlemlere ihtiyacın var mı, ve en kötü durum garantisine ihtiyacın var mı.
 
 Sorulabilecek iki ek ayrıntı. Birincisi, anahtar tam sayı değilse önce tam sayıya çevrilir; dizgiler için standart yöntem, dizgiyi bir tabana göre büyük bir sayı gibi okuyup mod almaktır. İkincisi, eşitlik denetimi hash denetiminden ayrıdır: aynı hash değeri eşitlik anlamına gelmez, o yüzden hücreye vardıktan sonra anahtarın kendisi karşılaştırılır. Bu ayrımı atlamak, gerçek kodda sessiz hatalara yol açar.
 

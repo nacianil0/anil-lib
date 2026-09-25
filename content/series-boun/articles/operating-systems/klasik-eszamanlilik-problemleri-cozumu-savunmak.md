@@ -12,7 +12,7 @@ tags:
   - yemek-yiyen-filozoflar
   - guvenlik-ve-canlilik
   - kilitlenme
-content_hash: sha256:7d340a62897b07dca909df276948b5c7ee7710f98f3886b8b096cf0dcd6e9b8d
+content_hash: sha256:f5a7a45bfa1e3710cc30e5edc0faf4bfc7f045c36558354ee8918c9822497844
 classification_version: 1
 classification_batch: 9
 ---
@@ -22,7 +22,7 @@ classification_batch: 9
 
 Ama önce ispatın neye benzediğini adlandıralım. Eşzamanlı bir programın doğruluğu iki ayrı türden özelliğe bölünür. **Güvenlik özelliği (safety property)** "kötü bir şey **olmaz**" der. **Canlılık özelliği (liveness property)** ise "iyi bir şey **olur**" der. İkisini ispatlamanın teknikleri de birbirinden farklıdır.
 
-Bu ayrım, doğruluk makalesinde kurduğumuz ikilinin doğrudan genellemesidir ve kaynağın kendisi de tam olarak bu köprüyü kurar: tek süreçli bir programın **kısmi doğruluğu** bir güvenlik özelliğidir — doğru girdiyle başlayan program, doğru çıktıyı üretmeden duramaz. Programın **sonlanacağı** iddiası ise bir canlılık özelliğidir. Eşzamanlılıkta karşılıkları şunlardır: karşılıklı dışlama ve "kaybolan artırma yok" birer güvenlik özelliğidir; kilitlenmesizlik ve açlıksızlık birer canlılık özelliğidir.
+Bu ayrım, doğruluk makalesinde kurduğumuz ikilinin doğrudan genellemesidir ve kaynağın kendisi de bu köprüyü kurar: tek süreçli bir programın **kısmi doğruluğu** bir güvenlik özelliğidir — doğru girdiyle başlayan program yanlış bir cevapla duramaz. Programın **sonlanacağı** iddiası ise bir canlılık özelliğidir. Eşzamanlılıkta karşılıkları şunlardır: karşılıklı dışlama ve "kaybolan artırma yok" birer güvenlik özelliğidir; kilitlenmesizlik ve açlıksızlık birer canlılık özelliğidir.
 
 Terim uyarısı: buradaki "güvenlik", bir sistemin saldırıya dayanıklılığı anlamındaki güvenlik değildir; sözcük teknik bir sınıf adıdır ve karşılığı İngilizcede *safety*'dir. Koruma ve güvenlik konusunun kendi makalesi geldiğinde ayrımı hatırlamak gerekecek.
 
@@ -58,7 +58,7 @@ uretici:                       tuketici:
 
 **Adım 4: aynı problemi semaforla kur ve sırayı boz.** Semafor bu problem için icat edilmişti; üç semafor yeter. `bos` sayacı MAX ile, `dolu` sayacı 0 ile başlatılır — ikisi de kaynak sayan genel semafordur; `mutex` ise 1 ile başlatılan ikili semafordur. Üretici `P(bos)`, `P(mutex)`, koy, `V(mutex)`, `V(dolu)` yapar; tüketici simetriğini.
 
-Şimdi tek bir şeyi değiştirelim: kilidi **en dışa** alalım, yani önce `P(mutex)`, sonra `P(bos)`. Tüketici kilidi alır, sonra `dolu` semaforunda bekler — çünkü tampon boştur — ve **kilidi tutmaya devam eder**. Üretici gelir, ilk iş olarak kilidi ister ve bekler. Tüketici üreticinin bildirimini bekliyor, üretici tüketicinin bıraktığı kilidi bekliyor: klasik bir kilitlenme.
+Şimdi tek bir şeyi değiştirelim: kilidi **en dışa** alalım, yani üretici önce `P(mutex)` sonra `P(bos)`, tüketici önce `P(mutex)` sonra `P(dolu)` yapsın. Tüketici kilidi alır, sonra `dolu` semaforunda bekler — çünkü tampon boştur — ve **kilidi tutmaya devam eder**. Üretici gelir, ilk iş olarak kilidi ister ve bekler. Tüketici üreticinin bildirimini bekliyor, üretici tüketicinin bıraktığı kilidi bekliyor: klasik bir kilitlenme.
 
 Bu iki kurulumu da kaba kuvvetle taradım. Kilit en içteyken erişilebilir 10 durumun hiçbirinde iki iş parçacığı da bloke değil; kilit en dıştayken erişilebilir 14 durumun içinde bir kilitlenme durumu var (tüketici `mutex`i tutuyor, `dolu`yu bekliyor; üretici `mutex`i bekliyor). Bu sayılar kaynaktan değil, kendi programımdandır.
 
@@ -86,9 +86,9 @@ Bir ek uyarı: bazı iş parçacığı kütüphanelerinde tek bir bildirimle iki
 
 Paylaşılan bir listede iki tür işlem düşün: ekleme yapısını değiştirir, arama yalnızca okur. Hiçbir ekleme sürmüyorsa çok sayıda aramanın **aynı anda** yürümesinde bir sakınca yoktur. Bu gözlemi kurala çeviren yapıya **okuyucu-yazar kilidi (reader-writer lock)** denir: aynı anda ya bir yazar vardır ya da istediğin kadar okuyucu.
 
-Semaforlarla kurulumu zarif bir numaraya dayanır. İki semafor ve bir sayaç tutulur: `yazma_kilidi`, okuyucu sayacını koruyan `kilit` ve `okuyucu_sayısı`. Okuma kilidini alan okuyucu sayacı bir artırır; **eğer birinci okuyucuysa** `yazma_kilidi` üzerinde de `P` yapar. Bırakırken sayacı azaltır ve **son okuyucuysa** `yazma_kilidi` üzerinde `V` yapar. Yazar ise doğrudan `yazma_kilidi`ni alır. Böylece ilk okuyucu bütün okuyucular adına yazma kilidini tutar; sonrakiler bedava girer, yazarlar son okuyucu çıkana kadar bekler.
+Semaforlarla kurulumu tek bir numaraya dayanır. İki semafor ve bir sayaç tutulur: `yazma_kilidi`, okuyucu sayacını koruyan `kilit` ve `okuyucu_sayısı`. Okuma kilidini alan okuyucu sayacı bir artırır; **eğer birinci okuyucuysa** `yazma_kilidi` üzerinde de `P` yapar. Bırakırken sayacı azaltır ve **son okuyucuysa** `yazma_kilidi` üzerinde `V` yapar. Yazar ise doğrudan `yazma_kilidi`ni alır. Böylece ilk okuyucu bütün okuyucular adına yazma kilidini tutar; sonrakiler yazma kilidine dokunmadan girer, yazarlar son okuyucu çıkana kadar bekler.
 
-Bu çözümün güvenlik özelliği tamdır: yazar yazarken hiçbir okuyucu içeride değildir. Canlılık tarafında ise açık bir kusur vardır ve mülakat sorusu tam olarak burasıdır: **okuyucular yazarı aç bırakabilir.** Okuyucu akışı hiç kesilmezse sayaç sıfıra hiç inmez ve bekleyen yazar hiç giremez. Düzeltmenin yönü bellidir — bir yazar beklemeye başladığı andan itibaren yeni okuyucuların girişini engelle — ama bu kurulum daha karmaşıktır.
+Bu çözümün güvenlik özelliği tamdır: yazar yazarken hiçbir okuyucu içeride değildir. Canlılık tarafında ise açık bir kusur vardır ve mülakat sorusu da buradadır: **okuyucular yazarı aç bırakabilir.** Okuyucu akışı hiç kesilmezse sayaç sıfıra hiç inmez ve bekleyen yazar hiç giremez. Düzeltmenin yönü bellidir — bir yazar beklemeye başladığı andan itibaren yeni okuyucuların girişini engelle — ama bu kurulum daha karmaşıktır.
 
 Bir de başarım uyarısı: okuyucu-yazar kilidi kulağa hoş gelir, ama sayaç bakımı ve ek semaforlar yüzünden basit bir kilitten daha yavaş kalabilir. Karmaşıklık makalesinden beri tekrarladığımız refleks burada da geçerli: önce basit çözümü ölç, sonra karmaşığa geç.
 
@@ -98,9 +98,9 @@ Bir de başarım uyarısı: okuyucu-yazar kilidi kulağa hoş gelir, ama sayaç 
 
 En doğal deneme her çatala bir ikili semafor koymak ve sırayla önce solu, sonra sağı almaktır. Kaynağın da uyardığı gibi bu çözüm basit **ve bozuktur**: beş filozof da aynı anda acıkırsa her biri solundaki çatalı kapar ve grup sonsuza kadar donar. Dijkstra bu duruma **ölümcül kucaklaşma (deadly embrace)** adını vermişti; bugünkü adı **kilitlenmedir (deadlock)**.
 
-Durumu göz kararıyla bırakmadım. Beş filozofun bütün erişilebilir durumlarını tarayan küçük bir program yazdım. Naif kurulumda **82 erişilebilir durum** var ve içlerinden biri tam olarak beklenen felaket: her filozof kendi solundaki çatalı tutuyor ve hiçbiri ilerleyemiyor. Filozoflardan yalnızca birinin — diyelim en yüksek numaralının — çatalları **ters sırada** aldığı kurulumda ise erişilebilir **70 durumun hiçbirinde** böyle bir tıkanma yok. İki kurulumda da aynı anda en fazla **iki** filozof yiyebiliyor, çünkü beş çatal var ve her yiyen iki tanesini tutuyor.
+Durumu göz kararıyla bırakmadım. Beş filozofun bütün erişilebilir durumlarını tarayan küçük bir program yazdım. Naif kurulumda **82 erişilebilir durum** var ve içlerinden biri beklenen felaket: her filozof kendi solundaki çatalı tutuyor ve hiçbiri ilerleyemiyor. Filozoflardan yalnızca birinin — diyelim en yüksek numaralının — çatalları **ters sırada** aldığı kurulumda ise erişilebilir **70 durumun hiçbirinde** böyle bir tıkanma yok. İki kurulumda da aynı anda en fazla **iki** filozof yiyebiliyor, çünkü beş çatal var ve her yiyen iki tanesini tutuyor.
 
-Neden işe yaradığı Şekil 2'de görülüyor. Herkes önce solunu alırsa "kimin çatalını bekliyorum" grafında beş ok da aynı yönde döner ve bir **döngü** kapanır; kilitlenmenin çekirdek koşulu budur. Tek bir filozofun sırasını ters çevirmek, o kenarın yönünü ters çevirir; kalan dört ok aynı yönde olsa bile döngü artık kapanamaz. Aynı fikri Dijkstra iki çatalı **tek bir bölünmez işlemle** alarak da çözmüştü; o kurulumda erişilebilir durum sayısı 11'e düşüyor ve orada da kilitlenme yok.
+Neden işe yaradığı Şekil 2'de görülüyor. Herkes önce solunu alırsa "kimin çatalını bekliyorum" grafında beş ok da aynı yönde döner ve bir **döngü** kapanır; kilitlenmenin çekirdek koşulu budur. Tek bir filozofun sırasını ters çevirmek, o kenarın yönünü ters çevirir; kalan dört ok aynı yönde olsa bile döngü artık kapanamaz. Dijkstra'nın andığı bir başka yol, iki çatalı **tek bir bölünmez işlemle** almaktır; bu, döngüyü değil, bir çatalı tutarken ötekini beklemeyi ortadan kaldırır — kilitlenme makalesinde bu iki yol iki ayrı koşulun adıyla anılacak. O kurulumda erişilebilir durum sayısı 11'e düşüyor ve orada da kilitlenme yok.
 
 Burada bir kaynak farkını da açıkça söylemek gerekir. Ders kitabı anlatımı, asimetrik sırayı "Dijkstra'nın kendi çözümü" olarak sunar; ama işaret ettiği 1971 tarihli çalışmayı okuduğunda orada başka bir çözüm bulursun. Dijkstra her filozofa bir durum değişkeni (düşünüyor / **aç** / yiyor) ve birer özel semafor verir, komşuları uygunsa aç filozofu masaya gönderen bir test yordamı yazar. Üstelik kendi çözümü için şunu da açıkça yazar: bu kurulum kilitlenmeden bağışıktır **ama** bir filozof iki komşusunun iş birliğiyle açlıktan ölebilir; bunu düzeltmek için "çok aç" gibi bir ara durum daha gerekir. Bu makale asimetrik sırayı, olduğu şey olarak sunuyor: **kilitlenmeyi kıran en basit yol** — Dijkstra'nın çözümü olarak değil. Açlık ise ikisinde de ayrı bir sorundur, yani güvenliği çözmek canlılığı çözmez.
 
@@ -116,7 +116,7 @@ Burada bir kaynak farkını da açıkça söylemek gerekir. Ders kitabı anlatı
 
 | Problem | Güvenlik özelliği | Canlılık özelliği | Asıl sınadığı |
 |---|---|---|---|
-| Üretici-tüketici | Dolu tampona koyma, boş tampondan alma yok | Uyandırma doğru tarafa gider; kimse boşuna uyumaz | Koşul değişkeninin doğru kullanımı |
+| Üretici-tüketici | Dolu tampona koyma, boş tampondan alma yok | Karşı taraf ilerledikçe bekleyen eninde sonunda uyanır; herkesin uyuduğu durum yok | Koşul değişkeninin doğru kullanımı |
 | Okuyucu-yazar | Yazar yazarken içeride okuyucu yok | Yazar sonunda girer | Adalet ve açlık |
 | Filozoflar | İki komşu aynı anda yemez | Kimse sonsuza kadar beklemez | Kilit alma sırası |
 
@@ -136,7 +136,7 @@ Bir de savunma refleksi: her çözümden sonra "hangi kötü şey olamaz, hangi 
 
 Filozoflar problemi bir kapı açtı ve kapamadı. Kilitlenmenin çekirdeğinde bir bekleme döngüsü olduğunu gördük ve tek bir oku çevirerek onu kırdık — ama bunun neden yeterli olduğunu, hangi koşullar bir araya gelirse kilitlenmenin **mümkün** hâle geldiğini söylemedik.
 
-Sıradaki makale tam olarak bunu yapıyor: kilitlenmenin dört koşulu, koşullardan birini kaldırarak **önleme**, kaynakların önceden bildirilmesine dayanan **kaçınma** — bankacı algoritması —, döngüyü çalışırken bulan **tespit** ve bulduktan sonraki **kurtarma**. Doğruluk makalesindeki azalan ölçü fikri orada güvenli durum kavramına dönüşecek; graf algoritmaları makalesindeki döngü tespiti ise beklenenler grafında bire bir işe yarayacak.
+Sıradaki makale bunu yapıyor: kilitlenmenin dört koşulu, koşullardan birini kaldırarak **önleme**, kaynakların önceden bildirilmesine dayanan **kaçınma** — bankacı algoritması —, döngüyü çalışırken bulan **tespit** ve bulduktan sonraki **kurtarma**. Doğruluk makalesindeki azalan ölçü fikri orada güvenli durum kavramına dönüşecek; graf algoritmaları makalesindeki döngü tespiti ise beklenenler grafında bire bir işe yarayacak.
 
 ## Kaynakça
 

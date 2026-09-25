@@ -28,24 +28,24 @@
 
   <line x1="520" y1="84" x2="520" y2="114" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-bpe)"/>
   <text x="616" y="94" font-size="14" text-anchor="middle" fill="var(--text)">birleştir</text>
-  <text x="616" y="112" font-size="13" text-anchor="middle" fill="var(--text-muted)">o–k, l–a, d–a</text>
+  <text x="616" y="112" font-size="13" text-anchor="middle" fill="var(--text-muted)">o–k, ok–u, oku–l</text>
 
-  <rect x="148" y="118" width="52" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
-  <text x="174" y="142" font-size="15" text-anchor="middle" fill="var(--text)">ok</text>
-  <rect x="208" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
-  <text x="226" y="142" font-size="15" text-anchor="middle" fill="var(--text)">u</text>
-  <rect x="252" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
-  <text x="270" y="142" font-size="15" text-anchor="middle" fill="var(--text)">l</text>
-  <rect x="296" y="118" width="52" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
-  <text x="322" y="142" font-size="15" text-anchor="middle" fill="var(--text)">la</text>
-  <rect x="356" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
-  <text x="374" y="142" font-size="15" text-anchor="middle" fill="var(--text)">r</text>
-  <rect x="400" y="118" width="52" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
-  <text x="426" y="142" font-size="15" text-anchor="middle" fill="var(--text)">da</text>
+  <rect x="150" y="118" width="76" height="36" rx="6" fill="var(--cool-soft)" stroke="var(--cool)"/>
+  <text x="188" y="142" font-size="15" text-anchor="middle" fill="var(--text)">okul</text>
+  <rect x="236" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="254" y="142" font-size="15" text-anchor="middle" fill="var(--text)">l</text>
+  <rect x="280" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="298" y="142" font-size="15" text-anchor="middle" fill="var(--text)">a</text>
+  <rect x="324" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="342" y="142" font-size="15" text-anchor="middle" fill="var(--text)">r</text>
+  <rect x="368" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="386" y="142" font-size="15" text-anchor="middle" fill="var(--text)">d</text>
+  <rect x="412" y="118" width="36" height="36" rx="6" fill="var(--surface-muted)" stroke="var(--border)"/>
+  <text x="430" y="142" font-size="15" text-anchor="middle" fill="var(--text)">a</text>
 
   <line x1="520" y1="156" x2="520" y2="186" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#ok-bpe)"/>
   <text x="616" y="166" font-size="14" text-anchor="middle" fill="var(--text)">birleştir</text>
-  <text x="616" y="184" font-size="13" text-anchor="middle" fill="var(--text-muted)">ok–u, oku–l, la–r</text>
+  <text x="616" y="184" font-size="13" text-anchor="middle" fill="var(--text-muted)">l–a, la–r, d–a</text>
 
   <rect x="150" y="190" width="76" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
   <text x="188" y="216" font-size="15" text-anchor="middle" fill="var(--text)">okul</text>

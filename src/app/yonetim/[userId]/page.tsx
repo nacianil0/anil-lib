@@ -6,6 +6,7 @@ import { requireOwnerUser } from "@/lib/auth/session-user";
 import { getUserStatsDetail } from "@/lib/stats/server/user-stats";
 import { formatDate, formatDateTime } from "@/lib/stats/format";
 import { pad } from "@/lib/content/labels";
+import { ResetReadingForm } from "../reset-reading-form";
 
 export const dynamic = "force-dynamic";
 
@@ -104,6 +105,13 @@ export default async function UserDetailPage({
             </dd>
           </div>
         </dl>
+
+        <ResetReadingForm
+          highlightCount={stats.highlightCount}
+          savedPlaceCount={stats.savedPlaceCount}
+          userId={stats.user.id}
+          username={stats.user.username}
+        />
 
         {articles.map(({ scope, rows }) => {
           const series = stats.series.find((entry) => entry.key === scope.key);

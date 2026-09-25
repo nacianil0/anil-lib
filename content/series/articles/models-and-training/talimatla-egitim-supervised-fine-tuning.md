@@ -12,7 +12,7 @@ tags:
   - kayip-maskesi
   - lima
   - sentetik-veri
-content_hash: sha256:42b3b0bf7b18fe5dbf4161b10749e9517982a9240ab8a77755041298f4ddd7a6
+content_hash: sha256:7183002f2f760a576f3fba291f757faed6709c9eb083a79cae0d2a63703c4c34
 classification_version: 1
 classification_batch: 2
 ---
@@ -98,7 +98,7 @@ Sonuç: insan değerlendiricilere göre LIMA'nın cevapları, GPT-4'ün cevaplar
 
 Yazarlar bulgularını bir hipotez hâline getirdi ve adını koydular: **yüzeysel hizalama hipotezi** (superficial alignment hypothesis). Kendi ifadeleriyle, bir modelin bilgisi ve yetenekleri neredeyse tamamen ön eğitimde öğrenilir; hizalama ona yalnızca kullanıcıyla etkileşirken hangi biçim alt dağılımını kullanacağını öğretir. 11\. makalenin kapanışındaki cümle bu hipotezin tam karşılığıydı: post-training modele yeni bilgi öğretmez, hangi bölgenin kullanıcıya döneceğini seçer.
 
-Hipotez cazip ama tartışmalı ve karşı kanıtı aynı yıl geldi. Arnav Gudibande ve arkadaşlarının hakem sürecinden geçmemiş 2023 tarihli çalışması, güçlü bir modelin çıktılarını taklit ederek eğitilen modelleri inceledi. İnternet üzerinden görevlendirilen değerlendiriciler bu modellerin çıktılarını ChatGPT'ninkiyle yarışır buldu; hedefli otomatik değerlendirmeler ise taklit verisinde iyi temsil edilmeyen görevlerde temel modelle hedef model arasındaki açığın neredeyse hiç kapanmadığını gösterdi. Yazarların sonucu tek cümle: taklit modelleri üslubu taklit etmekte ustadır, olgusallığı taklit etmekte değil.
+Hipotez cazip ama tartışmalı ve karşı kanıtı aynı yıl geldi. Arnav Gudibande ve arkadaşlarının 2023'te ön baskı olarak yayılan, ICLR 2024'te yayımlanan çalışması, güçlü bir modelin çıktılarını taklit ederek eğitilen modelleri inceledi. İnternet üzerinden görevlendirilen değerlendiriciler bu modellerin çıktılarını ChatGPT'ninkiyle yarışır buldu; hedefli otomatik değerlendirmeler ise taklit verisinde iyi temsil edilmeyen görevlerde temel modelle hedef model arasındaki açığın neredeyse hiç kapanmadığını gösterdi. Yazarların sonucu tek cümle: taklit modelleri üslubu taklit etmekte ustadır, olgusallığı taklit etmekte değil.
 
 İki bulgu çelişmiyor; aynı madalyonun iki yüzü. Biçim ucuzdur, bilgi değildir. LIMA ekibinin kendi sınırlama notu da bu yöndedir: modelin ürün düzeyindeki sistemler kadar sağlam olmadığını, üretimde talihsiz bir çekiliş ya da düşmanca bir istemin sık sık zayıf bir cevaba yol açtığını yazarlar. 10\. makaleyi hatırla — üretim bir çekiliştir; bin örnekle kurulmuş bir davranış, çekilişin kötü gittiği durumlara karşı dayanıksızdır.
 
@@ -139,7 +139,7 @@ Ucuz, ölçeklenebilir ve işe yarıyor. Ama aynı çalışmanın kendi kalite d
 
 Talimatların yüzde 92'si anlamlı; ama tam ve doğru olan örneklerin oranı yüzde 54. Yani bu yöntemle üretilen verinin yaklaşık yarısı kusurlu. Yazarların kendi yorumu da bu yönde: yöntem çeşitlilikte iyi, doğrulukta değil.
 
-Bir de yöntemin yapısal sınırı var ve bu makalenin tavanını çiziyor. SFT'nin öğrenme sinyali tek yönlüdür: "şu bağlamda şu token gelmeliydi." Bu sinyalle modele iyi bir cevabı gösterebilirsin, ama kötü bir cevabın neden kötü olduğunu söyleyemezsin — kayıp fonksiyonunun böyle bir kanalı yoktur. Sözlükteki bütün öteki token'lar, kusurlu bir cevap da mükemmel bir cevap da olsa aynı biçimde cezalandırılır. Elinde bir kez "bu cevap şundan daha iyi" biçiminde bir yargı varsa, onu SFT'nin dilinde ifade etmenin yolu yoktur.
+Bir de yöntemin yapısal sınırı var ve bu makalenin tavanını çiziyor. SFT'nin öğrenme sinyali tek yönlüdür: "şu bağlamda şu token gelmeliydi." Bu sinyalle modele iyi bir cevabı gösterebilirsin, ama kötü bir cevabın neden kötü olduğunu söyleyemezsin — kayıp fonksiyonunun böyle bir kanalı yoktur. Kayıp yalnızca hedef token'a verilen olasılığa bakar; hedefin dışındaki her aday — neredeyse aynı anlama gelen bir eş anlamlı da olsa, cevabı tamamen bozan bir kelime de olsa — aynı biçimde "yanlış" sayılır. Elinde bir kez "bu cevap şundan daha iyi" biçiminde bir yargı varsa, onu SFT'nin dilinde ifade etmenin yolu yoktur.
 
 Buradan çıkan pratik sonuç, üç kaynağın birbirinin alternatifi olmadığıdır. Mevcut veri kümelerini şablonla talimata çevirmek geniş görev çeşitliliği verir; insan yazımı örnekler biçimi ve tonu belirler; sentetik üretim ölçek sağlar ama filtrelenmeden kullanıldığında hatayı da ölçeklendirir. Bugünkü reçeteler üçünü birden karıştırır ve karışım oranının kendisi bir tasarım kararıdır — verinin kendisiyle ilgili bu soruların tamamına bir sonraki makalelerden birinde döneceğiz.
 
@@ -154,5 +154,5 @@ SFT'nin yapabileceğinin sınırını gördük: model, kendisine gösterilen cev
 - Wei, J., Bosma, M., Zhao, V. Y., Guu, K., Yu, A. W., Lester, B., Du, N., Dai, A. M. & Le, Q. V. (2022). *Finetuned Language Models are Zero-Shot Learners*. ICLR 2022 (sözlü sunum). [Bağlantı](https://openreview.net/forum?id=gEZrGCozdqR)
 - Zhou, C., Liu, P., Xu, P., Iyer, S., Sun, J., Mao, Y., Ma, X., Efrat, A., Yu, P., Yu, L., Zhang, S., Ghosh, G., Lewis, M., Zettlemoyer, L. & Levy, O. (2023). *LIMA: Less Is More for Alignment*. Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2023/hash/ac662d74829e4407ce1d126477f4a03a-Abstract-Conference.html)
 - Touvron, H. ve ark. (2023). *LLaMA: Open and Efficient Foundation Language Models*. Meta AI teknik raporu, arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2302.13971)
-- Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. & Song, D. (2023). *The False Promise of Imitating Proprietary LLMs*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2305.15717)
+- Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. & Song, D. (2024). *The False Promise of Imitating Proprietary Language Models*. ICLR 2024 (ön baskısı 2023, arXiv:2305.15717). [Bağlantı](https://openreview.net/forum?id=Kz3yckpCN5)
 - Wang, Y., Kordi, Y., Mishra, S., Liu, A., Smith, N. A., Khashabi, D. & Hajishirzi, H. (2023). *Self-Instruct: Aligning Language Models with Self-Generated Instructions*. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023), s. 13484–13508. [Bağlantı](https://aclanthology.org/2023.acl-long.754/)

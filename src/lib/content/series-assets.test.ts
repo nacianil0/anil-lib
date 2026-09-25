@@ -62,10 +62,15 @@ describe("series diagrams", () => {
       expect(html).toContain("<svg");
       expect(html).toContain("viewBox");
 
-      // Ok uçları, yollar ve daireler React'e taşınmalı.
+      // Ok uçları, yollar ve daireler React'e taşınmalı. Sayım yalnızca çizimin
+      // kabında yapılır: şeklin büyütme düğmesinin kendi simgesi vardır.
+      const drawing = html.slice(
+        html.indexOf('class="series-figure-scroll"'),
+        html.indexOf('class="series-figure-zoom"'),
+      );
       for (const tag of ["marker", "path", "circle", "rect", "line", "text"] as const) {
         const inSource = (source.match(new RegExp(`<${tag}[\\s/>]`, "g")) ?? []).length;
-        const inHtml = (html.match(new RegExp(`<${tag}[\\s/>]`, "g")) ?? []).length;
+        const inHtml = (drawing.match(new RegExp(`<${tag}[\\s/>]`, "g")) ?? []).length;
         expect(inHtml, `${file}: <${tag}> sayısı korunmalı`).toBe(inSource);
       }
 

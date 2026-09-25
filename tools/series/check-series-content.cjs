@@ -8,11 +8,19 @@
  *  - Gövdede H1 yok; gövde H2 ile başlar.
  *  - "### Sırada ne var" ve "## Kaynakça" bölümleri var ve sonda.
  *  - Kelime sayısı 2.000–3.500.
- *  - En az 2 diyagram; her diyagram kendi paragrafında, alt metni ve başlığı var.
+ *  - En az 1 diyagram (şekil sayısı içerikten doğar; kota yoktur — SOZLESME §6); her
+ *    diyagram kendi paragrafında, alt metni ve başlığı var.
  *  - Her şekil metinde "Şekil N" ile referanslanmış.
  *  - Geri çağırma kutuları blockquote içinde ve 1–3 adet (AI: "Kendini yokla",
  *    BOUN: "Sesli anlat" — docs/seri-boun/SOZLESME.md §3).
  *  - Ham HTML yok (pipeline zaten düşürür, sessiz kayıp olmasın).
+ *  - Kalıp yasağı (SOZLESME §2): sabit benzetme kapanışı, ilan edilen dürüstlük ve
+ *    kendini duyuran vurgu cümleleri düzyazıda geçmez (başlıklar hariç).
+ *  - "N,0" ondalığından sonra ek "sıfır" okunuşuna göre gelir (18,0'a, 18,0'ın).
+ *  - Üretim süreci dili (§ işareti, "vaat defteri", "terim defteri", "batch") okura sızmaz.
+ *  - BOUN: "## Mülakatta nasıl görünür" bölümü "### Sırada ne var"dan önce durur ve
+ *    içinde "İngilizce karşılıklar" satırı vardır (docs/seri-boun/SOZLESME.md §2).
+ *  - Uyarı (hata değil): 200 kelimeden uzun şekil alt metni.
  *
  * Kullanım: node tools/series/check-series-content.cjs [--series=ai|boun] [klasör]
  */
@@ -29,14 +37,47 @@ const PROFILES = {
     minWords: 2000,
     maxWords: 3500,
     checkpointLabel: "Kendini yokla",
+    interviewSection: false,
   },
   boun: {
     articlesDir: "../../content/series-boun/articles",
     minWords: 1800,
     maxWords: 3200,
     checkpointLabel: "Sesli anlat",
+    interviewSection: true,
   },
 };
+
+const MIN_FIGURES = 1;
+const ALT_WARN_WORDS = 200;
+
+/**
+ * Kalıplaşmış yazar tikleri (SOZLESME §2 kalıp yasağı). Her biri 2026-09-25 iki seri
+ * denetiminde korpus boyunca tekrar ettiği için mekanik kapıya alındı; içerik (analojinin
+ * sınırı, kaynağın sınırı) kalır, yalnızca kalıp cümle yasaktır. Başlık satırları denetlenmez.
+ */
+const FORBIDDEN_PHRASES = [
+  [/[Bb]enzetmenin bozulduğu yer/, "sabit benzetme kapanışı"],
+  [/biçimsel karşılığı (ise|da|şudur)/, "sabit benzetme kapanışı"],
+  [/[Dd]ürüstlük notu/, "ilan edilen dürüstlük"],
+  [/[Dd]ürüst olmak gerek/, "ilan edilen dürüstlük"],
+  [/[Dd]ürüstçe söyle/, "ilan edilen dürüstlük"],
+  [/\bCümle şu:/, "slogan girişi"],
+  [/\b[Ee]n çarpıcı\b/, "kendini duyuran vurgu"],
+  [/bu makalenin (en (önemli|ince|öğretici|pratik|çarpıcı|sık)|bütün (öncülü|mekanizması|gerekçesi|konusu|iddiası)|asıl (konusu|meselesi|sorunu|kalıcı))/, "kendini duyuran vurgu"],
+  [/(^|[.!?]\s)Bedava\./, "tek kelimelik dramatik cümle"],
+];
+
+/** Okurun göremeyeceği üretim süreci dili. */
+const PROCESS_LANGUAGE = [
+  [/§/, "sözleşme bölüm işareti (§)"],
+  [/\b(vaat|terim|kavram-tekrar) defteri/, "iç defter adı"],
+  [/\bBu batch\b|\bbatch boyunca\b/i, "üretim kohortu dili"],
+];
+
+/** "18,0'e" değil "18,0'a": ek, sıfırın okunuşuna uyar. */
+const DECIMAL_ZERO_SUFFIX =
+  /\d,0'(e|ye|de|den|te|ten|i|in|ini|inin|inde|ü|ün|ünü|ünün|ünde|u|un|unu)(?![a-zçğıöşü])/;
 
 const seriesArg = process.argv.find((a) => a.startsWith("--series="));
 const seriesKey = seriesArg ? seriesArg.slice("--series=".length) : "ai";
@@ -125,7 +166,9 @@ function checkArticle(file) {
   // Diyagramlar
   const figures = [...body.matchAll(/!\[([^\]]*)\]\((assets\/[a-z0-9-]+\.svg)\s+"([^"]*)"\)/g)];
   const anyImages = [...body.matchAll(/!\[([^\]]*)\]\(([^)\s]+)/g)];
-  if (figures.length < 2) add(`en az 2 diyagram gerekli (bulunan: ${figures.length})`);
+  if (figures.length < MIN_FIGURES) {
+    add(`en az ${MIN_FIGURES} diyagram gerekli (bulunan: ${figures.length})`);
+  }
   if (anyImages.length !== figures.length) {
     add(
       `başlıksız ya da biçimi hatalı görsel var: her diyagram ![alt](assets/ad.svg "Şekil N — başlık") biçiminde olmalı`,
@@ -170,8 +213,55 @@ function checkArticle(file) {
     add("ham HTML var; pipeline bunu sessizce düşürür");
   }
 
+  // Düzyazı: kaynakçadan önceki, başlık ve şekil satırı olmayan satırlar.
+  const refStart = lines.findIndex((l) => l.startsWith("## Kaynakça"));
+  const proseLines = (refStart === -1 ? lines : lines.slice(0, refStart))
+    .map((text, i) => ({ text, n: i + 1 }))
+    .filter(({ text }) => !/^#{1,6}\s/.test(text) && !text.trim().startsWith("!["));
+  for (const { text, n } of proseLines) {
+    for (const [re, what] of FORBIDDEN_PHRASES) {
+      const m = text.match(re);
+      if (m) add(`satır ${n}: kalıp yasağı (${what}) — "${m[0]}"`);
+    }
+    for (const [re, what] of PROCESS_LANGUAGE) {
+      const m = text.match(re);
+      if (m) add(`satır ${n}: okura sızan üretim dili (${what}) — "${m[0]}"`);
+    }
+    const dz = text.match(DECIMAL_ZERO_SUFFIX);
+    if (dz) add(`satır ${n}: "${dz[0]}" — ",0" sıfır diye okunur, ek ona uyar (ör. 18,0'a, 18,0'ın)`);
+  }
+
+  if (profile.interviewSection) {
+    const interviewIdx = lines.findIndex((l) => l.trim() === "## Mülakatta nasıl görünür");
+    const nextLineIdx = lines.findIndex((l) => l.startsWith("### Sırada ne var"));
+    if (interviewIdx === -1) {
+      add('"## Mülakatta nasıl görünür" bölümü eksik');
+    } else {
+      if (nextLineIdx !== -1 && interviewIdx > nextLineIdx) {
+        add('"## Mülakatta nasıl görünür" bölümü "### Sırada ne var"dan önce gelmeli');
+      }
+      const section = lines.slice(interviewIdx + 1, nextLineIdx === -1 ? undefined : nextLineIdx);
+      // Standart biçim "İngilizce karşılıklar hazır olmalıdır: *…*"; tekrar listesi gibi
+      // gerekçeli bir giriş cümlesiyle başlayan satır da kabul edilir (en az üç italik terim).
+      const englishLine = (l) =>
+        /İngilizce/.test(l) && (l.match(/\*[^*\s][^*]*\*/g) || []).length >= 3;
+      if (!section.some(englishLine)) {
+        add('"## Mülakatta nasıl görünür" bölümünde İngilizce karşılıklar satırı yok');
+      }
+    }
+  }
+
+  for (const [, alt, src] of figures) {
+    const altWords = alt.split(/\s+/u).filter(Boolean).length;
+    if (altWords > ALT_WARN_WORDS) {
+      warnings.push(`${rel}: ${src} alt metni ${altWords} kelime (ileriye dönük hedef ≤ 120; bkz. SOZLESME §6)`);
+    }
+  }
+
   return problems;
 }
+
+const warnings = [];
 
 const files = walkMarkdown(ARTICLES_DIR);
 if (files.length === 0) {
@@ -181,6 +271,13 @@ if (files.length === 0) {
 
 const all = files.flatMap(checkArticle);
 console.log(`${files.length} makale denetlendi.`);
+if (warnings.length > 0 && process.argv.includes("--warnings")) {
+  console.log(`\n${warnings.length} uyarı (hata değil):`);
+  for (const w of warnings) console.log("  ~ " + w);
+  console.log("");
+} else if (warnings.length > 0) {
+  console.log(`${warnings.length} uyarı (ayrıntı için --warnings).`);
+}
 if (all.length === 0) {
   console.log("Sorun yok.");
 } else {

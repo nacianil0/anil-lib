@@ -29,7 +29,7 @@
   <text x="328" y="230" font-size="13" text-anchor="start" fill="var(--text)">Olumlu bir film yorumu yaz.</text>
   <text x="328" y="250" font-size="13" text-anchor="start" fill="var(--text-muted)">hedef: Film beklediğimden çok daha iyiydi.</text>
 
-  <text x="314" y="176" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı satır için elle yazılmış on şablondan üçü</text>
+  <text x="314" y="176" font-size="13" text-anchor="start" fill="var(--text-faint)">aynı satır için elle yazılmış on şablondan ikisi</text>
   <text x="314" y="286" font-size="13" text-anchor="start" fill="var(--accent)">bu şablon görevi tersine çevirir: etiket girdi olur</text>
 
   <text x="16" y="316" font-size="13" text-anchor="start" fill="var(--text-faint)">eğitimde her örnek, o veri kümesinin şablonlarından rastgele biriyle biçimlenir</text>

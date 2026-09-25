@@ -12,7 +12,7 @@ tags:
   - atif
   - hakem-model
   - olcum-disiplini
-content_hash: sha256:66e664c1e5a0e35ceb60fb1ad03b4bde27ac052d8486f7a63294e26d861e3369
+content_hash: sha256:b1300410954553e379454daba85cb4c6353b32730aa301ca0210b5b199b12465
 classification_version: 1
 classification_batch: 10
 ---
@@ -53,16 +53,11 @@ Vaibhav Adlakha ve arkadaşlarının Transactions of the Association for Computa
 
 Tam eşleşme, insan kararıyla en zayıf ilişkilenen ölçü. Referansın token'larının cevapta bulunup bulunmadığına bakan basit bir bulma oranı iki kat daha iyi; bir dil modeline sormak en iyisi, ama en pahalısı. Aynı çalışma kaynak sadakati için de ucuz bir cetvel öneriyor: cevabın token'larının ne kadarının bilgi parçasında geçtiği. Bu sayı insan kararıyla 43,4 ilişki veriyor; GPT-4 hakem 55,0 veriyor; cevap ile parça arasındaki F1 ise **negatif** — çünkü uzun ve doğru bir cevap parçadaki her şeyi tekrar etmez ve F1 bunu cezalandırır. 16\. makaledeki ders bir kez daha: cetvel bir tasarım ürünüdür ve neyi ödüllendirdiği ölçülmelidir.
 
-Cetvelin bir başka tasarım kararı, bilmemenin nasıl puanlanacağı. Xiao Yang ve arkadaşlarının NeurIPS 2024 veri kümeleri ve kıyaslamalar programında sunduğu çalışma, her cevabı dört sınıfa ayırıyor — kusursuz, kabul edilebilir, eksik, yanlış — ve bunları 1, 0,5, 0 ve **−1** ile puanlıyor. Yanlış cevap, "bilmiyorum" demekten daha kötüdür; 39\. makaledeki çekimserlik burada bir ölçüye dönüşüyor. Bu cetvelle ölçüldüğünde getirmenin etkisi öğretici:
+Cetvelin bir başka tasarım kararı, bilmemenin nasıl puanlanacağı. Xiao Yang ve arkadaşlarının NeurIPS 2024 veri kümeleri ve kıyaslamalar programında sunduğu çalışma, her cevabı dört sınıfa ayırıyor — kusursuz, kabul edilebilir, eksik, yanlış — ve bunları 1, 0,5, 0 ve **−1** ile puanlıyor. Yanlış cevap, "bilmiyorum" demekten daha kötüdür; 39\. makaledeki çekimserlik burada bir ölçüye dönüşüyor. Güvenilirlik puanı, doğru cevapların yüzdesinden uydurmaların yüzdesinin çıkarılmasıyla bulunur. Bu cetvelle ölçüldüğünde getirmenin etkisi Şekil 2'de: aynı model, aynı sorular, bir kez yalnızca kendi bilgisiyle, bir kez web getirmeli bir hatla.
 
-| düzen | doğru | uydurma | eksik | güvenilirlik |
-|---|---|---|---|---|
-| yalnızca model | 33,5 | 13,5 | 53,0 | 20,0 |
-| web getirmeli hat | 43,6 | 30,1 | 26,3 | 13,4 |
+![İki gruplu, üç sütunlu yatay bir çubuk şeması. Her grupta solda düzenin adı — yalnızca model ve web getirmeli hat — ortada üst üste üç çubuk, sağda üç değer vardır; çubuklar doğru, uydurma ve eksik cevap yüzdelerini gösterir ve uydurma çubuğu vurgulu renktedir. Değerler yalnızca model için 33,5, 13,5 ve 53,0; getirmeli hat için 43,6, 30,1 ve 26,3 olarak yazılıdır. Şeklin sağında her düzenin güvenilirlik puanı ayrıca yazılıdır: 20,0 ve 13,4. Şeklin altında eksik cevaplardaki 26,7 puanlık düşüşün net olarak 10,1 puanının doğruya, 16,6 puanının uydurmaya gittiği ve uydurma eksi puanla cezalandırıldığı için güvenilirliğin düştüğü yazılıdır.](assets/getirme-ne-degistirdi.svg "Şekil 2 — Getirme doğruyu artırdı, güvenilirliği düşürdü")
 
-![İki gruplu, üç sütunlu yatay bir çubuk şeması. Her grupta solda düzenin adı — yalnızca model ve web getirmeli hat — ortada üst üste üç çubuk, sağda üç değer vardır; çubuklar doğru, uydurma ve eksik cevap yüzdelerini gösterir ve uydurma çubuğu vurgulu renktedir. Değerler yalnızca model için 33,5, 13,5 ve 53,0; getirmeli hat için 43,6, 30,1 ve 26,3 olarak yazılıdır. Şeklin sağında her düzenin güvenilirlik puanı ayrıca yazılıdır: 20,0 ve 13,4. Şeklin altında getirmenin eksik cevapların yarısını doğruya, öteki yarısını uydurmaya çevirdiği ve uydurma eksi puanla cezalandırıldığı için güvenilirliğin düştüğü yazılıdır.](assets/getirme-ne-degistirdi.svg "Şekil 2 — Getirme doğruyu artırdı, güvenilirliği düşürdü")
-
-Şekil 2 bu makalenin en rahatsız edici tablosu. Getirme, doğru cevapları 33,5'ten 43,6'ya çıkarıyor; ama aynı anda uydurmayı 13,5'ten 30,1'e çıkarıyor. Eksik cevaplar yarıya inmiş; kaybolan "bilmiyorum"ların bir kısmı doğruya, bir kısmı yanlışa dönüşmüş. Yanlış cevap eksi puan aldığı için güvenilirlik 20,0'dan 13,4'e düşüyor. Getirme, çekimser bir modeli kendinden emin bir yanlışçıya çevirebiliyor. Aynı çalışmanın ölçtüğü en iyi endüstri sistemleri bile soruların yalnızca yüzde 63'ünü hiç uydurma yapmadan cevaplıyor.
+Şekil 2 iki yönlü bir sonuç gösteriyor. Getirme, doğru cevapları 33,5'ten 43,6'ya çıkarıyor; ama aynı anda uydurmayı 13,5'ten 30,1'e çıkarıyor. Eksik cevaplar 53,0'dan 26,3'e inmiş. Net farklara bakınca kaybolan 26,7 puanlık "bilmiyorum"un 10,1 puanı doğruya, 16,6 puanı uydurmaya gitmiş; soru soru geçişler raporlanmadığı için bu bir net bilançodur, ama yönü açıktır. Yanlış cevap eksi puan aldığı için güvenilirlik 20,0'dan 13,4'e düşüyor. Getirme, çekimser bir modeli kendinden emin bir yanlışçıya çevirebiliyor. Aynı çalışmanın ölçtüğü en iyi endüstri sistemleri bile soruların yalnızca yüzde 63'ünü hiç uydurma yapmadan cevaplıyor.
 
 > **Kendini yokla:** Getirme doğru cevap oranını artırırken güvenilirlik puanı neden düşebilir?
 
@@ -99,7 +94,7 @@ Son sayı 41\. makaledeki ezber oranının aynadaki görüntüsü. Orada model �
 
 ## Atıf: cümleyi kaynağa bağlamak
 
-Kaynak sadakatinin okuyucuya görünen biçimi **atıftır** (citation): cevaptaki her iddianın yanında, onu destekleyen belgenin işareti. Bu, sadakati ölçülebilir kılmanın en dürüst yolu — ve en kolay kırılanı.
+Kaynak sadakatinin okuyucuya görünen biçimi **atıftır** (citation): cevaptaki her iddianın yanında, onu destekleyen belgenin işareti. Bu, sadakati ölçülebilir kılmanın en doğrudan yolu — ve en kolay kırılanı.
 
 Hannah Rashkin ve arkadaşlarının Computational Linguistics'te 2023'te yayımlanan çalışması önce tanımı sağlamlaştırdı. Bir cümle bir kaynağa **atfedilebilir** (attributable to identified sources) ise, "kaynağa göre, [cümle]" ifadesi doğru olmalıdır. Test bu kadar basit görünüyor, ama iki incelik taşıyor: cümle bağlamı olmadan anlaşılabilir olmalı — "o yıl" hangi yıl? — ve kaynak, cümlenin çıkarımını değil kendisini desteklemelidir. Yazarlar bu testi üç görevde insan etiketleyicilere uygulattı ve tutarlı biçimde uygulanabildiğini gösterdi; çerçeve, sonraki bütün atıf ölçümlerinin dayanağı oldu.
 
@@ -121,17 +116,11 @@ Xiang Yue ve arkadaşlarının aynı programda sunduğu çalışma, atıf deneti
 
 Bu makaledeki ölçülerin çoğunu bir dil modeli hesaplıyor: ifadeleri ayıran, desteklenip desteklenmediğine karar veren, doğruluğa puan veren model. Alandaki adı **hakem model** (LLM-as-a-judge). 35\. makalede doğrulayıcının yanlış pozitif ve yanlış negatiflerini konuşmuştuk; hakem model de bir doğrulayıcıdır ve aynı iki hatayı yapar. Soru, ne kadar ve hangi yönde.
 
-Lianmin Zheng ve arkadaşlarının NeurIPS 2023 veri kümeleri ve kıyaslamalar programında sunduğu çalışma bunu insanlarla karşılaştırarak ölçtü. İyi haber: iki cevaptan hangisinin iyi olduğuna GPT-4 ile insanlar, beraberlik dışı kararlarda yüzde 85 uzlaşıyor — insanların kendi aralarındaki uzlaşma yüzde 81. Kötü haber üç yanlılık. **Konum yanlılığı** (position bias): iki cevabın sırası değiştirildiğinde hakem aynı kararı veriyor mu?
-
-| hakem | tutarlı karar | ilk sıradakini kayırma |
-|---|---|---|
-| Claude-v1 | %23,8 | %75,0 |
-| GPT-3.5 | %46,2 | %50,0 |
-| GPT-4 | %65,0 | %30,0 |
+Lianmin Zheng ve arkadaşlarının NeurIPS 2023 veri kümeleri ve kıyaslamalar programında sunduğu çalışma bunu insanlarla karşılaştırarak ölçtü. İyi haber: iki cevaptan hangisinin iyi olduğuna GPT-4 ile insanlar, beraberlik dışı kararlarda yüzde 85 uzlaşıyor — insanların kendi aralarındaki uzlaşma yüzde 81. Kötü haber üç yanlılık. **Konum yanlılığı** (position bias): iki cevabın sırası değiştirildiğinde hakem aynı kararı veriyor mu? Üç hakem modelin cevabı Şekil 3'te.
 
 ![Üç satırlı, üç sütunlu yatay bir çubuk şeması. Her satırda solda bir hakem modelin adı, ortada üst üste iki çubuk, sağda iki değer vardır; üstteki çubuk iki cevabın sırası değiştirildiğinde hakemin aynı kararı verme oranını, alttaki vurgulu çubuk ilk sıradaki cevabı kayırma oranını gösterir. Değerler yukarıdan aşağıya yüzde 23,8 ve 75,0; 46,2 ve 50,0; 65,0 ve 30,0 olarak yazılıdır. Şeklin sağında iki satırlık bir gösterge çubukları açıklar. Şeklin altında en iyi hakemin bile üç karardan birinde sıraya göre fikir değiştirdiği ve yanlılığın rastgele değil tek yönlü olduğu yazılıdır.](assets/hakem-konum-yanliligi.svg "Şekil 3 — Hakem model cevapların sırasına göre fikir değiştiriyor")
 
-Şekil 3'teki en iyi hakem bile üç karardan birinde sıraya göre fikir değiştiriyor ve yanlılık rastgele değil: ilk sıradaki kayırılıyor. İkinci yanlılık **uzunluk yanlılığı** (verbosity bias): daha uzun cevap, daha iyi görünüyor. Üçüncüsü **kendini kayırma** (self-enhancement bias): hakemin, kendi ürettiği cevapları tercih etme eğilimi. Peiyi Wang ve arkadaşlarının ACL 2024'te sunduğu çalışma konum yanlılığının ne kadar ileri gidebildiğini gösterdi: cevapların sırası uygun seçildiğinde, 13 milyar parametreli bir model 80 sorunun 66'sında ChatGPT'yi geçiyor — hakem ChatGPT'nin kendisiyken. Çözüm mekanik: her karşılaştırmayı iki sırayla da yap, yalnızca iki sırada da aynı çıkan kararı say. Bu iki düzeltme hakemin insanla uzlaşmasını 9,8 ve 14,3 puan artırıyor.
+Şekil 3'teki en iyi hakem bile üç karardan birinde sıraya göre fikir değiştiriyor ve yanlılık rastgele değil: ilk sıradaki kayırılıyor. İkinci yanlılık **uzunluk yanlılığı** (verbosity bias): daha uzun cevap, daha iyi görünüyor. Üçüncüsü **kendini kayırma** (self-enhancement bias): hakemin, kendi ürettiği cevapları tercih etme eğilimi. Peiyi Wang ve arkadaşlarının ACL 2024'te sunduğu çalışma konum yanlılığının ne kadar ileri gidebildiğini gösterdi: cevapların sırası uygun seçildiğinde, 13 milyar parametreli bir model 80 sorunun 66'sında ChatGPT'yi geçiyor — hakem ChatGPT'nin kendisiyken. Düzeltmeler mekanik. Zheng ve arkadaşlarının tutucu kuralı: her karşılaştırmayı iki sırayla da yap, yalnızca iki sırada da aynı çıkan kararı kazanç say, gerisini beraberlik. Wang ve arkadaşları iki adım öneriyor: hakemden puanı vermeden önce gerekçesini yazmasını isteyip birkaç örneğin ortalamasını almak, ve iki sıradaki puanları birleştirmek. Bu ikisi birlikte hakemin insan kararıyla uyuşmasını GPT-4 hakeminde 9,8, ChatGPT hakeminde 14,3 puan artırıyor.
 
 Jon Saad-Falcon ve arkadaşlarının NAACL 2024'te sunduğu çalışma bir adım daha atıyor ve hakemin hatasını **ölçüp düzeltiyor**. Düzen üç aşamalı: alanın belgelerinden sentetik soru-cevap çiftleri üretilir; bu verilerle bağlam ilgililiği, kaynak sadakati ve cevap ilgililiği için üç küçük hakem eğitilir; sonra yaklaşık 150 insan etiketli örnek, hakemin sistematik hatasını kestirmek ve puana bir **güven aralığı** (confidence interval) koymak için kullanılır. Yöntemin adı tahmin destekli çıkarım (prediction-powered inference): hakemin binlerce kararı sayıyı verir, küçük insan kümesi o sayının ne kadar yanıldığını söyler. Sonuç, sistemlerin gerçek sıralamasıyla 0,91 ve 0,97 sıra ilişkisi; genel amaçlı hakem çerçevesinden bağlam ilgililiğinde 0,16 daha yüksek.
 

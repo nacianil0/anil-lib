@@ -12,9 +12,11 @@ tags:
   - tekillestirme
   - sentetik-veri
   - model-cokusu
-content_hash: sha256:208d67ad2ab9d231e6de3f60f9b93d8e31aad1293bd0732fb428b534f30b393a
+content_hash: sha256:1baf362a37cbd142395497bf72242409d4dafa766fcf8f72edcd16b847789bed
 classification_version: 1
 classification_batch: 2
+revised_at: "2026-09-25"
+revision_note: "Tekrarın getirisi basamak yerine üstel sönümle yeniden çizildi; anlık değer ile toplam değer ayrıldı ve 4, 16, 40 epok için sayılar hesaplandı."
 ---
 ## Üç makale, tek darboğaz
 
@@ -32,7 +34,7 @@ Jesse Dodge ve arkadaşlarının EMNLP 2021'de yayımlanan çalışması tam ola
 
 Birincisi, derlemin içinde beklenmedik şeyler var: patent metinleri ve resmî kurum sayfaları en çok temsil edilen kaynaklar arasında. İkincisi, içeride makine üretimi metin — örneğin makine çevirisi çıktıları — ve başka değerlendirme kümelerinin test örnekleri bulunuyor. Bir özetleme kümesinin hedef özetlerinin yüzde 15,49'u, bir başkasının kısa özetlerinin yüzde 24,88'i C4'ün içinde birebir geçiyordu. Buna kirlilik (contamination) denir ve seride ayrı bir makalenin konusu olacak; burada işaretlenecek şey, kirliliğin bir değerlendirme sorunu olmadan önce bir **veri** sorunu olduğudur.
 
-Üçüncü bulgu en rahatsız edici olanı. C4'ün kural setinde, müstehcen kabul edilen kelimeleri içeren sayfaları atan bir engel listesi (blocklist) var. Dodge ve arkadaşları bu listenin hangi metinleri attığını lehçelere göre ölçtü.
+Üçüncü bulgu, filtrenin kimin metnini dışarıda bıraktığıyla ilgili. C4'ün kural setinde, müstehcen kabul edilen kelimeleri içeren sayfaları atan bir engel listesi (blocklist) var. Dodge ve arkadaşları bu listenin hangi metinleri attığını lehçelere göre ölçtü.
 
 | Metnin lehçesi | Engel listesinin çıkardığı belge oranı |
 |---|---|
@@ -93,31 +95,29 @@ Derlem kuruldu, temizlendi. Şimdi bütçe sorusu: elindeki token'ları kaç kez
 
 9\. makalede bu sorunun cevabını bir ileri okuma notunda kısaca vermiş, ayrıntısını buraya bırakmıştık. Niklas Muennighoff ve arkadaşlarının NeurIPS 2023'te yayımlanan çalışması, sabit bir hesap bütçesinde veriyi tekrar etmenin ne kadar işe yaradığını doğrudan ölçtü. Ölçeği ciddi: dört yüzden fazla eğitim koşusu, 10 milyondan 9 milyar parametreye kadar modeller, 900 milyar token'a kadar eğitim, ve 100 milyon, 400 milyon, 1,5 milyar tekil token'lık sabit veri bütçeleri.
 
-Sonuç üç kademeli.
+Sonucu iki ayrı soruyla okumak gerekiyor, çünkü çalışma ikisine de cevap veriyor ve ikisi kolayca birbirine karışıyor: tekrarlanan bir token **o an** ne kadar öğretiyor, ve bütün tekrarlar **toplamda** kaç taze token ediyor?
 
-**Dörde kadar bedava.** Aynı veriyi dört epoka kadar tekrar etmek, aynı miktarda taze veri kullanmaya kıyasla kayıpta ihmal edilebilir bir fark yaratıyor. Yani elindeki derlem, hesap bütçesi açısından dört katına kadar "büyüyor".
+Ölçülmüş ana bulgu toplamla ilgili: aynı veriyi dört epoka kadar tekrar etmek, aynı miktarda taze veri kullanmaya kıyasla kayıpta ihmal edilebilir bir fark yaratıyor. Yazarlar ölçümlerini bir formüle de uydurdu ve formülün veri tarafında tek bir sabit var: yaklaşık 15,4 tekrar. Bu sabit, tekrarın değerinin ne hızla söndüğünü söylüyor. Her yeni tekrarda okunan token bir öncekinden biraz daha az şey öğretir ve bu azalma üstel ilerler; 15 tekrarda, yani 16. epokta, o an okunan bir token'ın değeri taze bir token'ınkinin kabaca 1 ÷ *e*'sine, yaklaşık üçte birine iner. Yazarlar da anlamlı kazancın kabaca 16 epoka kadar sürdüğünü yazıyor.
 
-**On altıda yarı yol.** Çalışma tekrarlanan token'ın değer kaybını bir sayıyla veriyor: yaklaşık 15 tekrar, yani 16 epok, tekrarlanan token'ların değerinin 1 − 1/*e* kadarını yitirdiği nokta. Bu oran hesaplanabilir: 1 ÷ *e* = 0,368, dolayısıyla değerin yaklaşık yüzde 63'ü gitmiş, yüzde 37'si kalmıştır. Yazarların ifadesiyle anlamlı kazanç kabaca 16 epoka kadar sürüyor.
+Formülü kendimiz çalıştıralım; girdi yalnızca çalışmanın 15,4'lük sabiti, aşağıdaki sayılar bizim hesabımız. Dördüncü epokta okunan token'ın değeri taze bir token'ın 0,82'si, ama dört epokun toplamı hâlâ 3,7 taze epok ediyor — dört taze epoka göre yüzde 7'lik bir açık; "ihmal edilebilir fark" budur. On altıncı epokta toplam 10,6'ya çıkmış, ama o an okunan token artık 0,38 değerinde. Kırkıncı epokta tek bir okumanın değeri 0,08; yazarların kendi özet şekli bu noktada tekrarın değersizleştiğini söylüyor. Toplamın da bir tavanı var: veriyi kaç kez tekrar edersen et, derlem 1 + 15,4 = 16,4 taze epoktan fazlasına denk gelmez.
 
-**Sonrası boş.** On altıncı epoktan sonra getiri son derece hızlı düşüyor ve eklenen hesabın değeri sıfıra yaklaşıyor.
+![Azalan tek bir eğri: yatay eksen 1'den 40'a epok, dikey eksen o epokta okunan token'ın taze token'a göre değeri, 1'den 0'a. Eğri 1. epokta 1 değerinden başlar ve basamaksız, üstel biçimde söner. Üç nokta işaretlidir: 4. epokta 0,82 ve birikimli 3,7 taze epok, 16. epokta 0,38 ve birikimli 10,6, 40. epokta 0,08 ve birikimli 15,2. Üstte sonsuz tekrarın bile toplamda 16,4 taze epoku geçemeyeceği yazar; altta eğrinin çalışmanın uydurduğu formülden, 15,4 tekrarlık sabitle hesaplandığı ve ölçüm noktası olmadığı belirtilir.](assets/tekrarin-getirisi.svg "Şekil 3 — Tekrarın değeri basamakla değil, üstel sönümle düşer")
 
-![Dört basamaklı azalan bir merdiven: birinci ve dördüncü epokta tekrarlanan token'ın değeri taze token'a yakın gösterilir, on altıncı epokta yaklaşık üçte bire iner, ilerisinde neredeyse sıfırdır.](assets/tekrarin-getirisi.svg "Şekil 3 — Tekrarlanan token'ın değeri")
+Şekil 3 aynı hesabı eğri olarak gösteriyor ve okunacak yeri eğrinin biçimi: bir basamak ya da kesin bir eşik yok, düzgün bir sönüm var. "Dört" ve "on altı" eğrinin üzerindeki doğal duraklar değil, çalışmanın sonucu özetlemek için seçtiği işaretler. 2\. makaledeki aşırı öğrenme uyarısı burada ortadan kalkmıyor, yalnızca bedelin nasıl biriktiği görünür hâle geliyor — tehlike tekrarın kendisinde değil, tekrarın miktarındadır.
 
-Şekil 3'ün okunacak yeri ilk iki basamağın neredeyse eşit yüksekliği: dört epok, bir epok kadar iyi. 2\. makaledeki aşırı öğrenme uyarısı burada ortadan kalkmıyor, yalnızca eşiği görünür hâle geliyor — tehlike tekrarın kendisinde değil, tekrarın miktarındadır.
-
-Aynı çalışmadan iki ek bulgu daha var ve ikisi de karışım kararlarını doğrudan ilgilendiriyor. Birincisi: veri kısıtlı bir rejimde eğitim karışımına Python kodu eklemek, yalnızca doğal dil görevlerinde ölçüldüğünde bile etkin token sayısını — yani elindeki verinin taze token cinsinden karşılığını — iki katına çıkarabiliyor — kod, doğal dilde işe yarayan bir şey öğretiyor. İkincisi ve daha rahatsız edici olanı: aynı rejimde perplexity'ye göre filtreleme işe yarıyor, tekilleştirme ise yaramıyor.
+Aynı çalışmadan iki ek bulgu daha var ve ikisi de karışım kararlarını doğrudan ilgilendiriyor. Birincisi: veri kısıtlı bir rejimde eğitim karışımına Python kodu eklemek, yalnızca doğal dil görevlerinde ölçüldüğünde bile etkin token sayısını, yani elindeki verinin taze token cinsinden karşılığını, iki katına çıkarabiliyor; kod, doğal dilde de işe yarayan bir şey öğretiyor. İkincisi: aynı rejimde perplexity'ye göre filtreleme işe yarıyor, tekilleştirme ise yaramıyor.
 
 Bu ikinci bulgu, biraz önce anlattığımız FineWeb sonucuyla çelişmiyor; iki farklı soruya cevap veriyorlar. FineWeb'in sorusu "hangi pencerede tekilleştireyim", Muennighoff ve arkadaşlarınınki "verim zaten kısıtlıyken tekilleştirme bana ek kazanç sağlar mı". İkinci soruda cevap hayır çıkıyor, çünkü tekilleştirmenin faydası veri bolken tekrarı azaltmaktır; veri zaten kıtsa ve tekrar zaten kaçınılmazsa, elindekini daha da küçültmenin bir getirisi kalmıyor.
 
 > **Kendini yokla:** "Dört epoka kadar tekrar bedavadır" cümlesi, 2\. makaledeki aşırı öğrenme uyarısını geçersiz kılar mı?
 
-Kılmaz. Aşırı öğrenme, modelin örüntü yerine örneğin kendisini yeniden üretmeye yaklaşmasıdır ve yeterince tekrarda hâlâ olur. Ölçülen şey, bu bozulmanın nerede başladığıdır: bu ölçekte dördüncü epoka kadar fark edilir bir bedel yok, on altıncıdan sonra ise eklenen hesabın karşılığı yok. Uyarı geçerli, eşiği artık sayıyla biliniyor.
+Kılmaz. Aşırı öğrenme, modelin örüntü yerine örneğin kendisini yeniden üretmeye yaklaşmasıdır ve yeterince tekrarda hâlâ olur. Ölçülen şey, tekrarın getirisinin nasıl söndüğüdür: bu ölçekte dört epoka kadar toplamdaki kayıp fark edilmeyecek kadar küçük, on altı epoktan sonra ise eklenen her okumanın karşılığı hızla sıfıra yaklaşıyor. Uyarı geçerli; bedelin ne hızla biriktiği artık sayıyla biliniyor.
 
 ## Post-training verisi: az, pahalı ve kırılgan
 
 Buraya kadarki her şey ön eğitim içindi: milyarlarca sayfayı eleyip azaltmak. Post-training verisinde huni ters çalışır — hiçbir şeyden başlayıp binlerce örneği tek tek inşa edersin.
 
-Ölçek farkı çarpıcı. 12\. makalede LIMA'nın bütün eğitim kümesinin yaklaşık 750.000 token olduğunu görmüştük; aynı modelin ön eğitimi 1,4 trilyon token gördü. Ama post-training verisinde her satırın kalitesi, ön eğitimdeki bir satırdan kat kat önemlidir: on iki bin örneğin içindeki iki yüz kötü örnek, trilyonlarca token içindeki aynı sayıda kötü örnekten çok daha görünür bir iz bırakır.
+Ölçek farkını iki sayı gösteriyor: 12\. makalede LIMA'nın bütün eğitim kümesinin yaklaşık 750.000 token olduğunu görmüştük; aynı modelin ön eğitimi 1,4 trilyon token gördü. Ama post-training verisinde her satırın kalitesi, ön eğitimdeki bir satırdan kat kat önemlidir: on iki bin örneğin içindeki iki yüz kötü örnek, trilyonlarca token içindeki aynı sayıda kötü örnekten çok daha görünür bir iz bırakır.
 
 Bu yüzden aynı temizlik sorusu, burada daha keskin biçimde geri geliyor. 12\. makaledeki Self-Instruct kalite denetimini hatırla: üretilen talimatların yüzde 92'si geçerli bir görev tarif ediyordu, ama bütün alanları doğru olan örneklerin oranı yüzde 54'tü. Ölçek ucuz, doğruluk değil.
 
@@ -127,7 +127,7 @@ Ilia Shumailov ve arkadaşlarının 2024'te Nature'da yayımlanan çalışması 
 
 Ama bu sonucun bir varsayımı var ve varsayım kritik: her kuşakta yeni sentetik veri, eskisinin **yerine** geçiyor. Matthias Gerstgrasser ve arkadaşlarının aynı yıl yayımlanan çalışması bu varsayımı değiştirdi. Gerçek dünyada veri birikir — eski gerçek metin ortadan kalkmaz, üzerine yenisi eklenir. Bu düzende deneyi tekrarladıklarında çöküş görülmedi; sentetik veriyi gerçek verinin yerine koymak yerine yanına eklemek, hatayı sınırlı tutuyor.
 
-Dürüst formülasyon şu: model çöküşü gerçek bir olgudur ama otomatik bir kader değildir. Belirleyici olan sentetik verinin varlığı değil, gerçek verinin korunup korunmadığıdır.
+İki çalışmayı birlikte okuyunca kalan sonuç şu: model çöküşü gerçek bir olgudur ama otomatik bir kader değildir. Belirleyici olan sentetik verinin varlığı değil, gerçek verinin korunup korunmadığıdır.
 
 ## Verinin sahibi kim?
 

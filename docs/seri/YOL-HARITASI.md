@@ -469,7 +469,7 @@ araştırmacı formasyonunun giriş kapısı.
 ### Faz 13 — Eğitim Sistemleri Mühendisliği (106–109)
 
 106. **GPU Zihinsel Modeli: Hesap, Bellek, Bant Genişliği** — parametre başına 16 bayt, aktivasyon formülü, yeniden hesaplamanın ölçülmüş bedeli, sırt noktasının iki yanı ve kullanım oranı. Faz 13'ün açılışı, kategori `models-and-training` (karar #225). `[yayında]`
-107. **Dağıtık Eğitim: Paralellik Stratejileri** — dört bölme ekseninin tam kurulumu: veri (ZeRO'nun üç kademesi), tensör (katman başına dört hepsi-indirge), boru hattı (kabarcık `(p−1)/m`, açılmış hâliyle `(n/t − d)/(B/b)`) ve dizi (34'ün kalan 10'unu bedava bölmesi). 106'nın dört eksenli sorusu ödendi. `[yayında]`
+107. **Dağıtık Eğitim: Paralellik Stratejileri** — dört bölme ekseninin tam kurulumu: veri (ZeRO'nun üç kademesi), tensör (katman başına dört hepsi-indirge), boru hattı (kabarcık `(p−1)/m`; açılmış hâli `(n/t − d)/(B/b)` 2026-09-25'ten beri ileri okuma notunda) ve dizi (34'ün kalan 10'unu bedava bölmesi). 106'nın dört eksenli sorusu ödendi. `[yayında]`
 108. **Performans Mühendisliği: Dikkati Hızlandırmak** — bir FLOP bir zaman birimi değildir: işlemlerin %0,2'si sürenin %39'unu yiyor, birim işlem başına 319 kat. Çekirdek, birleştirme, bellek yerleşimi ve bellek kullanım verimi; aynı algoritmanın üç uygulamasında kullanım oranı %25–40 → %50–73 → yeni çipte %35 → %75. Başlık Türkçeleştirildi (karar #227). `[yayında]`
 109. **Koşunun Güvenilirliği: Kontrol Noktası, Sıçrama ve Gözlem** — `T* = √(2δM)` ve `√(2δ/M)`, gözlemin üç katmanı, geride kalan makine, ve kayıp sıçramasının veri ile parametre durumunun bileşiminden doğduğunu gösteren eleme. **Faz 13 kapandı.** Başlık Türkçeleştirildi (karar #234). `[yayında]`
 
@@ -2269,7 +2269,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | ezber | (memorization) | 8 | eğitim metnini birebir üretebilme; 18'de kapasiteyle, 72'de değerlendirmeyle bağlanır |
 | benchmark | — | 16 | Türkçeleştirilmez; sabitlenmiş değerlendirme kümesi. Gövdede "değerlendirme kümesi" ile eşanlamlı kullanılır |
 | liderlik tablosu | (leaderboard) | 16 | modelleri puanlarına göre dizen kamuya açık sıralama |
-| kalibrasyon | (calibration) | 16 | modelin kendi güveninin gerçek doğrulukla örtüşmesi; tam kurulumu 65'te |
+| kalibrasyon | (calibration) | 16 | modelin kendi güveninin gerçek doğrulukla örtüşmesi; tam kurulumu 65'te. **Dar anlam:** 17 Kalai–Vempala'nın 'üretim dağılımının veriyle uyumu' anlamını ayrıca adlandırır; iki anlam aynı cümlede karıştırılmaz (2026-09-25) |
 | içsel uydurma | (intrinsic hallucination) | 17 | çıktının verilen kaynakla çelişmesi |
 | dışsal uydurma | (extrinsic hallucination) | 17 | çıktının verilen kaynaktan doğrulanamaması |
 | atomik olgu | (atomic fact) | 17 | uzun metnin tek tek denetlenebilir en küçük iddia birimi |
@@ -2410,6 +2410,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | uyarlanabilir getirme | (adaptive retrieval) | 41 | yalnızca modelin bilmesi beklenmeyen sorularda getirme yapmak |
 | ters dizin | (inverted index) | 42 | her terim için o terimin geçtiği belgelerin listesi. 29\. makalede glosssuz kullanılmıştı; kurulumu 42'dedir |
 | ters belge sıklığı | (inverse document frequency) | 42 | terimin derlemdeki nadirliğine göre aldığı ağırlık |
+| hoşgörülü bulma oranı | (tolerant recall) | 43 | gerçek komşuya çok yakın bir aday da bulunmuş sayılır; Kuffo ve ark. (2026-09-25) |
 | terim sıklığı doyumu | — | 42 | sıklığın artan ama bir tavana yaklaşan bir işlevden geçirilmesi; parametresi metinde `k₁` |
 | uzunluk normalleştirmesi | — | 42 | terim sıklığının belge uzunluğuna göre yumuşak biçimde bölünmesi; parametresi metinde `b` |
 | öğrenilmiş seyrek getirme | (learned sparse retrieval) | 42 | modelin sözlük üzerinde seyrek bir ağırlık dağılımı üretmesi; ters dizinde çalışır |
@@ -2431,7 +2432,8 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | atlamalı liste | (skip list) | 43 | HNSW'nin akrabası olduğu 1D yapı |
 | dizin bulma oranı | — | 43 | serinin terimi: dizinin döndürdüğü `k` sonucun tam taramanın `k` gerçek komşusuyla örtüşme oranı; 29/42'deki **bulma oranıyla (doğru belge) karıştırılmaz** |
 | vektör veritabanı yönetim sistemi | (vector database management system) | 43 | gövdede "vektör veritabanı"; dizin + orta katman |
-| melez sorgu | (hybrid query) | 43 | öznitelik/etiket + vektör; 42'deki **melez arama** (seyrek + yoğun) ile aynı sözcüğün farklı kullanımı |
+| hibrit arama | (hybrid search) | 29 | sözcük eşleşmesi + vektör araması, sonuçlar birleştirilerek; 44 ve 46 aynı terimi kullanır. **Bu kavram için "melez arama/getirme" kullanılmaz** (2026-09-25) |
+| melez sorgu | (hybrid query) | 43 | öznitelik/etiket + vektör; 29'daki **hibrit arama** (seyrek + yoğun) ile karıştırılmaz |
 | seçicilik | (specificity) | 43 | etiketi taşıyan vektörlerin oranı |
 | parçalama | (chunking) | 44 | belgenin dizin birimlerine kesilmesi; birimi **parça** (chunk). 29/41'de "parça" glosssuz kullanılmıştı |
 | önerme | (proposition) | 44 | kendine yeten, tek olgulu atomik ifade; 17'deki **atomik olgunun** getirme birimi |
@@ -2636,7 +2638,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | sözel güven | (verbalized confidence) | 65 | |
 | dilsel kalibrasyon | (linguistic calibration) | 65 | |
 | anlamsal entropi | (semantic entropy) | 65 | |
-| konfabülasyon | (confabulation) | 65 | 17'nin halüsinasyonunun keyfî / tutarsız alt türü |
+| konfabülasyon | (confabulation) | 17 | 17'de adıyla anılır, tanımı ve ölçümü 65'te (keyfî / tutarsız uydurma); 65 yeniden gloss'lamaz (2026-09-25) |
 | seçici tahmin | (selective prediction) | 65 | |
 | cevaplama oranı | (coverage) | 65 | 33'teki "kapsama" ile aynı İngilizce sözcük, başka nesne |
 | dalkavukluk | (sycophancy) | 66 | başlıkta; 13'ün "hoşa gideni ödüllendirir" işaretinin adı |
@@ -2928,7 +2930,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | kararlılık–esneklik ikilemi | (stability-plasticity dilemma) | 112 | aynı parametrelerin hem yeni bilgiyi alması hem eskisini koruması gerekmesi |
 | model düzenleme | (model editing) | 112 | tek bir olguyu tek bir küçük ağırlık güncellemesiyle değiştirmek; gövdede "cerrahi düzenleme" ile eşanlamlı |
 | çağrışımsal bellek | (associative memory) | 112 | anahtar vektörünü ona eşlenmiş değer vektörüne götüren doğrusal eşleme; ileri beslemeli katmanın bu gözle okunuşu |
-| devre dışı bırakan düzenleme | (disabling edit) | 112 | modeli tek başına kullanılamaz hâle getiren tek bir güncelleme; ağırlıktaki izi sıradan düzenlemelerin üç mertebe üstünde |
+| devre dışı bırakan düzenleme | (disabling edit) | 112 | modeli tek başına kullanılamaz hâle getiren tek bir güncelleme; ağırlıktaki izi sıradan düzenlemelerin yaklaşık 400 katı (3,339×10⁻⁴ ÷ 8,156×10⁻⁷ ≈ 409; 2026-09-25'te 'üç mertebe' düzeltildi) |
 | dışbükey zarf | (convex hull) | 113 | malzeme keşfinde termodinamik kararlılık sınırı; gövdede ilk geçişten sonra "kararlılık sınırı" ile eşanlamlı |
 | sınır model | (frontier model) | 70 | alanın en yetenekli modelleri. 114'ün başlığı bu yerleşik karşılıkla Türkçeleştirildi (karar #240); gövdelerde on sekiz geçişte zaten kullanılıyordu |
 
@@ -3369,7 +3371,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     denklem uzunluğunda nokta üretimi, cevaptan sonra gerekçe) tabanla aynı düzeyde kalıyor.
     Hata çözümlemesi: 50 doğru cevapta ikisi dışında bütün zincirler geçerli; 50 yanlış cevapta
     yüzde 46 küçük hata (yüzde 8 hesap makinesi, 16 sembol eşleme, 22 tek adım eksik), yüzde 54
-    anlam hatası. Dış hesaplayıcı bağlanınca LaMDA 137B 14,3 → 17,3.
+    anlam hatası. Dış hesaplayıcı bağlanınca LaMDA 137B 14,3 → 17,8 (2026-09-25 düzeltmesi).
 91. **Ara adımların biçimsel gücü (Li ve ark., ICLR 2024).** Sabit derinlikli ve sabit bit
     hassasiyetli bir kod çözücü, ara adım üretmeden AC0 ile sınırlıdır; T adımlık bir zincirle
     ve embedding boyutunun log n ile büyümesine izin verilirse, T boyutundaki devrelerle
@@ -3581,8 +3583,8 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     katlanma 207 gün (%95 önyükleme aralığı 166–240 gün); 2023–2025 hızı 2019–2025'in yaklaşık
     %20 üstünde. %80 ufku kabaca beş kat kısa. Başarı oranının insan süresi logaritmasına göre
     üstel uyumu R² ≈ 0,80. Bir aylık (167 iş saatlik) ufuk için ekstrapolasyon 2028 ortası –
-    2031 ortası, açık çekincelerle. İnsan taban çizgileri: yaklaşık 460 denemenin 286'sı
-    başarılı. Mialon ve ark. (ICLR 2024): 466 soru, üç düzey adım sayısına göre tanımlı (en fazla
+    2031 ortası, açık çekincelerle. İnsan taban çizgileri: 558 denemenin 286'sı
+    başarılı (2026-09-25 düzeltmesi). Mialon ve ark. (ICLR 2024): 466 soru, üç düzey adım sayısına göre tanımlı (en fazla
     5 adım / 5–10 adım / keyfî uzunluk); insan ortalaması %92, araçlı güçlü model en kolay
     düzeyde %30'u aşamıyor, en zorda %0, genel %15. Zhou ve ark. (ICLR 2024): uçtan uca görev
     başarısı %14,41, insan %78,24.
@@ -4499,7 +4501,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     50 token önek %33, 450 token %65; GSM8k → GSM1k düşüşleri Yi-6B-Chat 8,0, math-shepherd 7,2, phi-2 6,3,
     Llama-3-8B 6,2 … gemini-1.5-pro 0,6; düşüş ↔ üretme olasılığı 0,36 sıra ilişkisi. **73:** işçilerin %42'si
     < 40 sn; ayırt etme %50 → %55; sohbet modeli kitle işçisini ≈ 25 puan geçiyor, etiket başına < 0,003 dolar;
-    ham %80 uzlaşma 10–20 puan sapma gizler; ikili tercihte insan–insan %63–66; Bavaresco Tablo 1: akıl yürütme
+    ham uzlaşma %90'ı aşsa da puanlar 10 puandan fazla ayrışabiliyor (2026-09-25 düzeltmesi); ikili tercihte insan–insan %63–66; Bavaresco Tablo 1: akıl yürütme
     adımları 0,82/0,83, diyalog güvenliği −0,24/−0,17 (insan 0,27); ortalama kappa 0,28, sıra ilişkisi 0,50; Shi
     15 hakem 22 görev > 150 bin karar; Wang 80 sorunun 66'sı; iki sırayla sorma +9,8 ve +14,3; uzunluk kontrolü
     0,94 → 0,98; kendini tanıma > %50, en büyüğü %73,5, 500 örnekle > %90; 15 hakemin 11'i sahte "%85" cümlesine
@@ -4558,7 +4560,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     tamamlama"sı; "atıf" (attribution) ↔ 45'in atfı (citation); "duyarlılık" (sensitivity, 77 aksiyomu) ↔ 22'nin istem
     duyarlılığı; "girişim", "emilim", "kelepçeleme", "ölü özellik", "gerçekleme değişmezliği", "örtük sonradan
     gerekçelendirme" ilk kez kuruldu. "grokking" 74'teki gibi Türkçeleştirilmedi; 78'de "geç genelleme" adıyla anıldı.
-173. **Sayılar (Batch 18).** **75:** oyuncak modelde 5 özellik / 2 boyut, boyut başına özellik basamakları 1, 3/4, 2/3,
+173. **Sayılar (Batch 18).** **75:** oyuncak modelde 5 özellik / 2 boyut, özellik başına boyut basamakları (2026-09-25 düzeltmesi) 1, 3/4, 2/3,
     1/2, 2/5, 3/8, 0; tek katmanlı modelin 512 nöronlu katmanı, 8 milyar örnek, genişleme 1×–256×, incelenen koşuda
     4.096 parça, 168 ölü ve 292'si milyonda birden az; üretim modelinde 1.048.576 / 4.194.304 / 33.554.432 parça, ölü
     oranı ≈ %2 / %35 / %65, token başına < 300 etkin parça, varyansın ≥ %65'i, parçaların %82'sinde en ilişkili nöronun

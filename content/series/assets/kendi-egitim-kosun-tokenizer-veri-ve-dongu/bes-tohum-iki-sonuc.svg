@@ -1,43 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Beş satırlık üç sütunlu bir tablo, altında bir ortalama satırı ve iki kutu. Üstte başlık: aynı kurulum, beş tohum, son kayıp. Sütunlar tohum, son kayıp ve nerede durdu. Birinci satır tohum 7: 0,46286, dilin entropisinde. İkinci satır tohum 11: 0,46425, dilin entropisinde. Üçüncü satır vurguludur, tohum 23: 0,69411, ikili sayım tabanında. Dördüncü satır tohum 42: 0,46333, dilin entropisinde. Beşinci satır vurguludur, tohum 101: 0,69545, ikili sayım tabanında. Altta ortalama 0,55600 ve standart sapma 0,12669 yazar. Birinci kutuda şu durur: hiçbir koşu 0,55600 vermedi, sonuçlar iki öbekte toplandı ve ortalama iki öbeğin arasındaki boşluğa düştü. İkinci kutuda şu durur: tek koşu bildirilseydi, tohuma göre çalışıyor ya da çalışmıyor denirdi. En altta bir kayıt: beş koşu da bizimdir ve değişen tek şey başlangıç ağırlıklarının tohumudur.">
-  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı kurulum, beş tohum — son kayıp</text>
-  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 350" role="img" aria-label="Yatay bir kayıp ekseni üzerinde beş nokta. Üç nokta dilin entropisi 0,4621 çizgisinin hemen yanında, iki nokta ikili sayım tabanı 0,6931 çizgisinin hemen yanında toplanmış. Aradaki boşlukta, 0,556'da, içi boş bir işaret ortalamayı gösteriyor ve hiçbir koşunun orada durmadığı yazıyor. Altta ortalama artı eksi bir sapmanın iki öbeği birden kapladığı bir ayraç var.">
+  <text x="20" y="24" font-size="13" fill="var(--text)">Beş tohumun son kaybı, tek bir cetvel üzerinde</text>
 
-  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">tohum</text>
-  <text x="200" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">son kayıp</text>
-  <text x="380" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">nerede durdu</text>
-  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+  <line x1="173" y1="62" x2="173" y2="220" stroke="var(--cool)" stroke-width="1.2" stroke-dasharray="4 3" />
+  <text x="173" y="54" font-size="13" text-anchor="middle" fill="var(--cool)">dilin entropisi 0,4621</text>
+  <line x1="594" y1="62" x2="594" y2="220" stroke="var(--text-faint)" stroke-width="1.2" stroke-dasharray="4 3" />
+  <text x="594" y="54" font-size="13" text-anchor="middle" fill="var(--text-muted)">ikili sayım tabanı 0,6931</text>
 
-  <text x="24" y="100" font-size="13" fill="var(--text)">7</text>
-  <text x="200" y="100" font-size="13" fill="var(--text)">0,46286</text>
-  <text x="380" y="100" font-size="13" fill="var(--text)">dilin entropisinde</text>
+  <circle cx="176" cy="204" r="6" fill="var(--cool)" />
+  <circle cx="176" cy="188" r="6" fill="var(--cool)" />
+  <circle cx="176" cy="172" r="6" fill="var(--cool)" />
+  <text x="190" y="176" font-size="13" fill="var(--text)">tohum 7, 11, 42</text>
+  <text x="190" y="194" font-size="13" fill="var(--text-muted)">3 koşu, 0,463 dolayı</text>
 
-  <text x="24" y="126" font-size="13" fill="var(--text)">11</text>
-  <text x="200" y="126" font-size="13" fill="var(--text)">0,46425</text>
-  <text x="380" y="126" font-size="13" fill="var(--text)">dilin entropisinde</text>
+  <circle cx="597" cy="204" r="6" fill="var(--text-muted)" />
+  <circle cx="597" cy="188" r="6" fill="var(--text-muted)" />
+  <text x="582" y="184" font-size="13" text-anchor="end" fill="var(--text)">tohum 23, 101</text>
+  <text x="582" y="202" font-size="13" text-anchor="end" fill="var(--text-muted)">2 koşu, 0,694 dolayı</text>
 
-  <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">23</text>
-  <text x="200" y="152" font-size="13" font-weight="bold" fill="var(--accent)">0,69411</text>
-  <text x="380" y="152" font-size="13" font-weight="bold" fill="var(--accent)">ikili sayım tabanında</text>
+  <line x1="345" y1="122" x2="345" y2="220" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="5 3" />
+  <path d="M 345 196 L 353 204 L 345 212 L 337 204 z" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="345" y="96" font-size="13" text-anchor="middle" fill="var(--accent)">ortalama 0,556</text>
+  <text x="345" y="114" font-size="13" text-anchor="middle" fill="var(--text)">hiçbir koşu burada durmadı</text>
 
-  <text x="24" y="178" font-size="13" fill="var(--text)">42</text>
-  <text x="200" y="178" font-size="13" fill="var(--text)">0,46333</text>
-  <text x="380" y="178" font-size="13" fill="var(--text)">dilin entropisinde</text>
+  <line x1="60" y1="220" x2="680" y2="220" stroke="var(--text)" stroke-width="1.2" />
+  <line x1="60" y1="220" x2="60" y2="226" stroke="var(--text)" />
+  <line x1="242" y1="220" x2="242" y2="226" stroke="var(--text)" />
+  <line x1="425" y1="220" x2="425" y2="226" stroke="var(--text)" />
+  <line x1="607" y1="220" x2="607" y2="226" stroke="var(--text)" />
+  <text x="60" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,40</text>
+  <text x="242" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,50</text>
+  <text x="425" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,60</text>
+  <text x="607" y="240" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,70</text>
+  <text x="370" y="260" font-size="13" text-anchor="middle" fill="var(--text-faint)">son kayıp, nat — düşük olan iyidir</text>
 
-  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--accent)">101</text>
-  <text x="200" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,69545</text>
-  <text x="380" y="204" font-size="13" font-weight="bold" fill="var(--accent)">ikili sayım tabanında</text>
+  <line x1="113" y1="284" x2="576" y2="284" stroke="var(--accent)" stroke-width="1.2" />
+  <line x1="113" y1="278" x2="113" y2="290" stroke="var(--accent)" stroke-width="1.2" />
+  <line x1="576" y1="278" x2="576" y2="290" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="345" y="306" font-size="13" text-anchor="middle" fill="var(--text-muted)">ortalama ± 1 sapma (0,127): iki öbeğin arasını kaplıyor</text>
 
-  <line x1="20" y1="220" x2="700" y2="220" stroke="var(--border)" />
-
-  <text x="24" y="244" font-size="13" fill="var(--text-muted)">ortalama 0,55600</text>
-  <text x="200" y="244" font-size="13" fill="var(--text-muted)">standart sapma 0,12669</text>
-
-  <rect x="20" y="260" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="284" font-size="13" fill="var(--text)">Hiçbir koşu 0,55600 vermedi. Sonuçlar iki öbekte toplandı ve ortalama</text>
-  <text x="34" y="304" font-size="13" fill="var(--text)">iki öbeğin arasındaki boşluğa düştü.</text>
-
-  <rect x="20" y="326" width="680" height="36" fill="var(--surface)" stroke="var(--border)" />
-  <text x="34" y="350" font-size="13" fill="var(--text-muted)">Tek koşu bildirilseydi, tohuma göre "çalışıyor" ya da "çalışmıyor" denirdi.</text>
-
-  <text x="20" y="382" font-size="13" fill="var(--text-faint)">Beş koşu da bizimdir; değişen tek şey başlangıç ağırlıklarının tohumudur.</text>
+  <text x="20" y="338" font-size="13" fill="var(--text-faint)">Beş koşu da bizimdir; değişen tek şey başlangıç ağırlıklarının tohumudur.</text>
 </svg>

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 720 342" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Az denemede kazanç, çok denemede kayıp</text>
 
   <line x1="16" y1="44" x2="40" y2="44" stroke="var(--cool)" stroke-width="2"/>
@@ -17,12 +17,13 @@
   <text x="452" y="92" font-size="13" text-anchor="middle" fill="var(--text)">kesişme</text>
 
   <text x="84" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
-  <text x="260" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">16</text>
-  <text x="452" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">256</text>
-  <text x="632" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">1024</text>
-  <text x="360" y="278" font-size="13" text-anchor="middle" fill="var(--text-muted)">deneme sayısı</text>
+  <text x="308" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">16</text>
+  <text x="532" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">256</text>
+  <text x="644" y="258" font-size="13" text-anchor="middle" fill="var(--text-muted)">1024</text>
+  <text x="360" y="278" font-size="13" text-anchor="middle" fill="var(--text-muted)">deneme sayısı (logaritmik ölçek)</text>
 
   <line x1="16" y1="294" x2="704" y2="294" stroke="var(--border)" stroke-width="1"/>
   <text x="16" y="316" font-size="13" text-anchor="start" fill="var(--text-muted)">tek denemede eğitilmiş model açık ara önde; deneme sayısı büyüyünce temel model geçiyor</text>
   <text x="16" y="338" font-size="13" text-anchor="start" fill="var(--text-faint)">eğitim doğru yolları daha olası kılıyor, ama dağılımı daraltarak</text>
+  <text x="16" y="360" font-size="13" text-anchor="start" fill="var(--text-faint)">eğrilerin biçimi şematiktir; kesişmenin yeri kümeye ve modele göre değişir</text>
 </svg>

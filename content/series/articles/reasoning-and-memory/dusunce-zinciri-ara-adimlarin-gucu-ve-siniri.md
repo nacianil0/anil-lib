@@ -12,7 +12,7 @@ tags:
   - sirali-hesap
   - gosterim-tasarimi
   - olcek
-content_hash: sha256:2ad54a31ef657628ee5e18c3448458b8286ce09d699519ce977a37b7c3e35e10
+content_hash: sha256:eb2e22ba04a84a67cf0d305bc8627c7c224502987a3520d15f7998a1b8ae3644
 classification_version: 1
 classification_batch: 7
 ---
@@ -26,11 +26,11 @@ Bu makale üç ayrı yerden aynı soruyu yanıtlıyor. Önce kazancın nerede ol
 
 ## Somut bir zincir
 
-Mekanizmaya girmeden önce elle bir örnek yürütelim. Soru şu: bir rafta 3 kutu var, her kutuda 12 kalem; hepsi boşaltılıp kalemler 8 kişiye eşit dağıtılıyor. Kişi başına kaç kalem düşüyor?
+Mekanizmaya girmeden önce elle bir örnek yürütelim. Soru şu: bir rafta 3 kutu var, her kutuda 12 kalem; hepsi boşaltılıp kalemler 9 kişiye eşit dağıtılıyor. Kişi başına kaç kalem düşüyor?
 
-Doğrudan cevap düzeninde model, sorunun son token'ından hemen sonra cevabı üretmek zorunda. Yani "3", "12" ve "8" sayılarından tek bir ileri geçişte 4,5 sonucuna varması gerekiyor — çarpma ve bölmenin ikisi de o tek geçişin içinde.
+Doğrudan cevap düzeninde model, sorunun son token'ından hemen sonra cevabı üretmek zorunda. Yani "3", "12" ve "9" sayılarından tek bir ileri geçişte 4 sonucuna varması gerekiyor — çarpma ve bölmenin ikisi de o tek geçişin içinde.
 
-Ara adımlı düzende aynı hesap üç ayrı token dizisine yayılıyor: "3 kutu boşaltıldı, yani 3 × 12 = 36 kalem", sonra "36 kalem 8 kişiye bölünüyor", sonra "36 ÷ 8 = 4,5". Kritik nokta ortadaki adımda: model 36 sayısını yazdıktan sonra, o sayı artık bağlamda duruyor ve bir sonraki adımın girdisi oluyor. Model 36'yı yeniden hesaplamak zorunda değil; **okuyor**.
+Ara adımlı düzende aynı hesap üç ayrı token dizisine yayılıyor: "3 kutu boşaltıldı, yani 3 × 12 = 36 kalem", sonra "36 kalem 9 kişiye bölünüyor", sonra "36 ÷ 9 = 4". Kritik nokta ortadaki adımda: model 36 sayısını yazdıktan sonra, o sayı artık bağlamda duruyor ve bir sonraki adımın girdisi oluyor. Model 36'yı yeniden hesaplamak zorunda değil; **okuyor**.
 
 15\. makaledeki tokenizasyon bulgusu tam burada bağlanıyor. Sayılar token ızgarasında parçalara bölündüğü için, uzun bir hesabı tek geçişte yapmak modelin en zayıf olduğu iştir; ara sonucu yazıp geri okumak, aynı hesabı modelin en güçlü olduğu işe — metin devam ettirmeye — çeviriyor.
 
@@ -49,7 +49,7 @@ Sonuçlar ilkokul matematiği kümesinde şöyle:
 | LaMDA 137B | 6,5 | 14,3 |
 | GPT-3 175B | 15,6 | 46,9 |
 
-Tablonun en öğretici satırları küçük modellerinkiler. 420 milyon parametreli modelde ara adım istemek başarıyı 2,6'dan 0,4'e **düşürüyor**; 8 milyar parametreli modelde de küçük bir gerileme var. Teknik büyük modellerde başarıyı üçe katlarken küçük modellerde zarar veriyor. Bu, tekniğin ölçekle birlikte ortaya çıkan bir davranış olduğu anlamına geliyor.
+Tablonun en öğretici satırları küçük modellerinkiler. 420 milyon parametreli modelde ara adım istemek başarıyı 2,6'dan 0,4'e **düşürüyor**; 8 milyar parametreli modelde de küçük bir gerileme var. Teknik büyük modellerde başarıyı üçe katlarken küçük modellerde zarar veriyor. Çalışma bunu ölçekle birlikte ortaya çıkan bir yetenek olarak yorumluyor. Bu ölçümün söylediği şey, kazancın küçük modellerde olmadığı, büyüklerde olduğu; kazancın bir eşikte **aniden** mi belirdiği ise ayrı ve tartışmalı bir soru, çünkü cevap kısmen hangi ölçütle puanladığına bağlı. Bu tartışmayı ilerideki bir makalede ayrıca ele alacağız.
 
 İkinci eksen görevin zorluğu. Aynı çalışma, dört alt kümeye ayrılmış bir matematik kümesinde 540 milyar parametreli modeli ölçüyor: tek işlemle çözülen en kolay alt kümede puan 94,1'den 94,1'e, yani hiç değişmiyor; çok adımlı alt kümede 42,2'den 94,7'ye çıkıyor.
 
@@ -57,7 +57,7 @@ Tablonun en öğretici satırları küçük modellerinkiler. 420 milyon parametr
 
 Şekil 1'in iki paneli tek bir cümleye çıkıyor: ara adımlar, yeterince büyük bir modelin yeterince adımlı bir problemde işine yarıyor. Küçük modelde ya da tek adımlı problemde kazanç yok, hatta eksi.
 
-Çalışmanın elle yaptığı hata çözümlemesi de kayda değer. Doğru cevap veren elli örnekte üretilen zincirlerin tamamı — tesadüfen doğru cevaba varan iki tanesi dışında — mantıksal ve matematiksel olarak doğru. Yanlış cevap veren elli örnekte ise zincirlerin yüzde 46'sı küçük bir düzeltmeyle doğru hâle geliyor: yüzde 8'i yalnızca hesap makinesi hatası taşıyor, yüzde 16'sı sembolleri karıştırmış, yüzde 22'si tek bir adımı atlamış. Kalan yüzde 54'te hata anlamı kavramada. Dışarıdan bir hesaplayıcı bağlandığında 137 milyar parametreli modelin puanı 14,3'ten 17,3'e çıkıyor — küçük ama beklenen bir kazanç.
+Çalışmanın elle yaptığı hata çözümlemesi de kayda değer. Doğru cevap veren elli örnekte üretilen zincirlerin tamamı — tesadüfen doğru cevaba varan iki tanesi dışında — mantıksal ve matematiksel olarak doğru. Yanlış cevap veren elli örnekte ise zincirlerin yüzde 46'sı küçük bir düzeltmeyle doğru hâle geliyor: yüzde 8'i yalnızca hesap makinesi hatası taşıyor, yüzde 16'sı sembolleri karıştırmış, yüzde 22'si tek bir adımı atlamış. Kalan yüzde 54'te hata anlamı kavramada. Dışarıdan bir hesaplayıcı bağlandığında 137 milyar parametreli modelin puanı 14,3'ten 17,8'e çıkıyor — küçük ama beklenen bir kazanç.
 
 ## Kazanç neyden gelmiyor
 
@@ -69,9 +69,9 @@ Açıklama arayışında üç sezgisel aday var ve aynı çalışma üçünü de
 
 **Cevaptan sonra gerekçe.** Belki ara adımlar yalnızca modelin ön eğitimde öğrendiği ilgili bilgiyi harekete geçiriyordur. Bunu sınamak için zincir cevaptan **sonra** yazdırılıyor. Sonuç yine doğrudan cevaptan farksız.
 
-![Beş çubuklu bir karşılaştırma. Soldan sağa doğrudan cevap, yalnızca denklem, yalnızca nokta üretimi, cevaptan sonra gerekçe ve ara adımlı cevap çubukları yer alır. İlk dört çubuk birbirine yakın yükseklikteyken beşinci çubuk belirgin biçimde daha uzundur. Çubukların altında her ablasyonun neyi koruyup neyi bozduğu kısa etiketlerle yazılıdır ve kazancın ne fazladan hesaptan ne de bilgi hatırlatmadan geldiği belirtilir.](assets/uc-ablasyon.svg "Şekil 2 — Üç aday açıklama, üç eleme")
+![Beş çubuklu bir karşılaştırma. Soldan sağa doğrudan cevap, yalnızca denklem, yalnızca nokta üretimi, cevaptan sonra gerekçe ve ara adımlı cevap çubukları yer alır. İlk dört çubuk birbirine yakın yükseklikteyken beşinci çubuk belirgin biçimde daha uzundur. Çubukların altında her ablasyonun neyi koruyup neyi bozduğu kısa etiketlerle yazılıdır ve kazancın ne fazladan hesaptan ne de bilgi hatırlatmadan geldiği belirtilir; son satır çubuk boylarının şematik olduğunu, ölçülen şeyin ilk dördünün yakınlığı ile sonuncunun yüksekliği olduğunu söyler.](assets/uc-ablasyon.svg "Şekil 2 — Üç aday açıklama, üç eleme")
 
-Şekil 2'deki üçüncü çubuk özellikle önemli, çünkü 30\. makalede ölçtüğümüz şemanın alan sırası bulgusunun kurucu hâli. Aynı sayıda token, aynı içerik, yalnızca sıra farklı: cevap önce gelirse kazanç yok. Sebebi 10\. makaledeki otoregresif döngü — model her adımda kendi ürettiği metne koşullanır, dolayısıyla cevaptan sonra yazılan hiçbir şey cevabı etkileyemez.
+Şekil 2'deki dördüncü çubuk özellikle önemli, çünkü 30\. makalede ölçtüğümüz şemanın alan sırası bulgusunun kurucu hâli. Aynı sayıda token, aynı içerik, yalnızca sıra farklı: cevap önce gelirse kazanç yok. Sebebi 10\. makaledeki otoregresif döngü — model her adımda kendi ürettiği metne koşullanır, dolayısıyla cevaptan sonra yazılan hiçbir şey cevabı etkileyemez.
 
 > **Kendini yokla:** Nokta üretme ablasyonu neden "fazladan hesap" açıklamasını eliyor da, "üretilen token sayısı hiç önemli değil" sonucuna götürmüyor?
 
@@ -109,7 +109,7 @@ Bu açıklama 4\. ve 8\. makalelerle doğrudan bağlantılı. Dağılımsal hipo
 
 ## Gösterimlerdeki adımlar doğru olmak zorunda mı
 
-Şimdi rahatsız edici bir bulgu. Eğer ara adımlar bir hesabı taşıyorsa, isteme konan örnek zincirlerin doğru olması gerekmez mi?
+Şimdi bu fikri zorlayan bir soru. Eğer ara adımlar bir hesabı taşıyorsa, isteme konan örnek zincirlerin doğru olması gerekmez mi?
 
 Boshi Wang ve arkadaşlarının ACL 2023'te sunduğu çalışma tam bunu sınıyor. İsteme konan çözülmüş örneklerin akıl yürütmesi kasten bozuluyor: adımlar hem yanlış sayılar taşıyor hem birbirinden çıkmıyor hem de cevaba mantıksal olarak götürmüyor. Hedef sorular değişmiyor.
 
@@ -132,9 +132,9 @@ Geçersiz akıl yürütmeyle bile kazancın büyük kısmı korunuyor; zincirin 
 
 Birincisi keskin bir ayrım testi. Geniş kapsamlı bir çoktan seçmeli kümede kazancın nereden geldiğini bulmak için sorular ikiye ayrılıyor: soruda ya da modelin cevabında eşittir işareti geçenler ve geçmeyenler. Toplam kazancın yüzde 95'e varan kısmı ilk gruptan geliyor. Matematik dışında kazancın ne zaman geleceğini önceden söyleyen hiçbir özellik bulunamıyor.
 
-İkincisi kazancın kaynağını ayrıştırıyor. Matematik ve mantık soruları iki aşamaya bölünebilir: problemi biçimsel bir plana çevirmek ve o planı yürütmek. Dört düzen karşılaştırılıyor — doğrudan cevap, ara adımlar, plan üretip doğrudan çözdürmek, plan üretip ara adımlarla çözdürmek ve plan üretip bir dış çözücüye çalıştırmak. Sonuç: yalnızca planı üretmek kazancın büyük kısmını vermiyor; kazanç yürütme aşamasında. Ama aynı planı bir Python yorumlayıcısına ya da bir teorem kanıtlayıcısına verdiğinizde sonuç ara adımlardan belirgin biçimde daha iyi.
+İkincisi kazancın kaynağını ayrıştırıyor. Matematik ve mantık soruları iki aşamaya bölünebilir: problemi biçimsel bir plana çevirmek ve o planı yürütmek. Beş düzen karşılaştırılıyor — doğrudan cevap, ara adımlar, plan üretip doğrudan çözdürmek, plan üretip ara adımlarla çözdürmek ve plan üretip bir dış çözücüye çalıştırmak. Sonuç: yalnızca planı üretmek kazancın büyük kısmını vermiyor; kazanç yürütme aşamasında. Ama aynı planı bir Python yorumlayıcısına ya da bir teorem kanıtlayıcısına verdiğinizde sonuç ara adımlardan belirgin biçimde daha iyi.
 
-Bu, tekniğin yerini dürüstçe koyuyor: düşünce zinciri, sembolik bir çözücünün evrensel ama kaba bir yaklaşımı. Çözücünün olduğu yerde çözücü kazanıyor; olmadığı yerde ise zaten kazanç küçük.
+Bu, tekniğin yerini belirliyor: düşünce zinciri, sembolik bir çözücünün evrensel ama kaba bir yaklaşımı. Çözücünün olduğu yerde çözücü kazanıyor; olmadığı yerde ise zaten kazanç küçük.
 
 Bir kapsam uyarısı gerekli. Buradaki ölçümlerin tamamı **istemle** tetiklenen ara adımlara ait: model hazır alınıyor, ağırlıklarına dokunulmuyor, yalnızca isteme örnek ya da bir cümle konuyor. Ara adım üretmek üzere ayrıca eğitilmiş modellerde tablonun aynı kalacağını varsaymak için bir sebep yok; onların nasıl eğitildiğini ve neyi değiştirdiğini 34\. makalede kuracağız. Bu makalenin ölçtüğü şey, eğitim değişmeden yalnızca istemle ne kadar yol alınabildiği.
 
@@ -152,7 +152,7 @@ Bir kapsam uyarısı gerekli. Buradaki ölçümlerin tamamı **istemle** tetikle
 
 **Sembolik bir çözücü varsa onu kullan.** Ara adımlar yürütmeyi iyileştiriyor ama gerçek bir yorumlayıcının altında kalıyor.
 
-**Teknik bedelsiz değil.** Kazancın olmadığı görevlerde ara adım istemek yalnızca boşa token harcamak demektir; kazancın olduğu görevlerde bile fatura üretilen token sayısıyla doğru orantılı büyür.
+**Teknik bedelsiz değil.** Kazancın olmadığı görevlerde ara adım istemek yalnızca boşa token harcamak demektir; kazancın olduğu görevlerde bile fatura üretilen token sayısıyla birlikte büyür — hem de doğrusaldan hızlı, çünkü her yeni token bağlamdaki bütün eski token'lara bakar.
 
 ### Sırada ne var
 

@@ -12,7 +12,7 @@ tags:
   - dijkstra
   - bellman-ford
   - azalt-anahtar
-content_hash: sha256:abe35d5ed1f6bd113952abdf13ba99a596fed0244220d2a318f797329a8e74ee
+content_hash: sha256:beee7a4f560d37e29618b8ac731aeec3abc06ff62af952e4c02341237780c32c
 classification_version: 1
 classification_batch: 7
 ---
@@ -98,9 +98,9 @@ Yukarıdaki graf üzerinde A'dan izleme şöyle yürüyor. A çıkar (0): B = 4,
 
 Doğruluğun ispatı tümevarımdır ve **negatif olmama varsayımının tam olarak nerede kullanıldığını** görmek gerekir. Kuyruktan çıkarılan k'ıncı düğüm v olsun ve s'ten v'ye bir en kısa yol düşünelim. Bu yol üzerinde henüz çıkarılmamış ilk düğüm y, ondan önceki düğüm x olsun. x çıkarıldığında tümevarım hipotezine göre d(s, x) = δ(s, x)'ti ve (x, y) gevşetildi, dolayısıyla d(s, y) ≤ δ(s, y)'dir. Şimdi kritik adım: **δ(s, y) ≤ δ(s, v)**, çünkü y, v'ye giden en kısa yolun üzerindedir ve **ağırlıklar negatif olmadığı için** yolun geri kalanı maliyeti düşüremez. Öte yandan v en küçük tahminli düğüm olduğu için d(s, v) ≤ d(s, y). Zinciri birleştirince d(s, v) = δ(s, v) çıkar.
 
-Negatif bir kenar bu zinciri kırar ve algoritma sessizce yanlış cevap verir. En küçük karşı örnek üç düğümlüdür: s → a ağırlık 1, s → b ağırlık 2, b → a ağırlık −2. Dijkstra a'yı 1 tahminiyle çıkarır ve kesinleştirir; oysa gerçek uzaklık s → b → a yolundan 2 − 2 = **0**'dır. Bu çöküşü kodla da çalıştırıp doğruladım.
+Negatif bir kenar bu zinciri kırar ve algoritma sessizce yanlış cevap verir. En küçük karşı örnek üç düğümlüdür: s → a ağırlık 1, s → b ağırlık 2, b → a ağırlık −2. Dijkstra a'yı 1 tahminiyle çıkarır ve kesinleştirir; oysa gerçek uzaklık s → b → a yolundan 2 − 2 = **0**'dır. Bir incelik var: CLRS'teki gibi kesinleşmiş düğümlere de gevşetme uygulayan bir gerçekleştirim, b çıkınca a'nın değerini sonradan 0'a düşürür ve bu küçük örnekte şans eseri doğru sayıyı basar. Ama a'nın çıkan kenarları bir daha işlenmez; a → c ağırlık 1 kenarını eklersen c 2'de kalır, gerçek uzaklığı 1'dir. İki gerçekleştirimi de bu dört düğümlü örnekte kendi kodumla çalıştırdım: kesinleşeni atlayan sürüm a için 1, c için 2; kesinleşeni de gevşeten sürüm a için 0 ama c için yine 2 veriyor. Sorun tek bir sayıda değil, kesinleştirme varsayımındadır; o varsayım kırıldığında hatanın nereye sızacağını önceden bilemezsin.
 
-**Bellman-Ford.** Negatif kenarlar varsa sıraya güvenemeyiz, o hâlde sırayı **kenar sayısı** üzerinden kuralım. δ_k(s, v), en fazla k kenar kullanan yolların en küçük ağırlığı olsun. Negatif çevrim yoksa her sonlu en kısa yol **basittir** (bir çevrim içerseydi çevrimin ağırlığı negatif olmadığı için onu atmak yolu uzatmaz ama daha az düğümlü bir yol verirdi), dolayısıyla en fazla |V| − 1 kenar taşır ve δ(s, v) = δ_{|V|−1}(s, v) olur.
+**Bellman-Ford.** Negatif kenarlar varsa sıraya güvenemeyiz, o hâlde sırayı **kenar sayısı** üzerinden kuralım. δ_k(s, v), en fazla k kenar kullanan yolların en küçük ağırlığı olsun. Negatif çevrim yoksa her düğüm için **basit** bir en kısa yol vardır: bir en kısa yol çevrim içerse, çevrimin ağırlığı negatif olmadığı için onu atmak yolu uzatmaz ve daha az kenarlı bir yol verir (sıfır ağırlıklı çevrim içeren en kısa yollar olabilir, ama çevrimi atılmış bir kopyaları hep vardır). Basit bir yol en fazla |V| − 1 kenar taşıdığı için δ(s, v) = δ_{|V|−1}(s, v) olur.
 
 Algoritma bu alt problemleri artan k sırasında doldurur: |V| − 1 tur boyunca bütün kenarları gevşet. Bu, kelimenin tam anlamıyla bir **dinamik programdır** — alt problem (v, k) çifti, topolojik sıra artan k. Maliyet |V| − 1 tur × |E| kenar = **O(|V| · |E|)**.
 
@@ -123,7 +123,9 @@ Tablonun okunuşu tek cümledir: **kısıt gevşedikçe maliyet artar.** Mülaka
 
 Beş tipik hata var. **MST ile en kısa yollar ağacını karıştırmak** — biri toplamı, diğeri her düğüme olan uzaklığı en küçük yapar ve aynı grafta farklı çıkarlar. **Dijkstra'yı negatif kenarda kullanmak** — sessizce yanlış cevap verir, çökmez. **Prim ile Dijkstra'yı ayırt edememek** — tek fark anahtarın w(u, v) mi d(u) + w(u, v) mi olduğudur. **Öncelik kuyruğu temsilini yoğunluğa göre seçmemek** — seyrek grafta heap, yoğun grafta sırasız dizi kazanır. **`azalt_anahtar`ı sihir sanmak** — çapraz bağlı bir sözlük olmadan heap'te öğe bulmak doğrusal zaman alır ve bütün analiz çöker.
 
-Bir de kaynak seçimi hatası: negatif çevrim varlığında "en kısa yol" sorusunun **iyi tanımlı olmadığını** söylemek gerekir. Doğru cevap bir sayı değil, çevrimin kendisini raporlamaktır.
+Takip zinciri çoğu zaman aynı grafın üzerinde yürür: "Bu grafta en kısa yolları nasıl bulursun?" → "Bir kenar negatif olsaydı?" → "Peki bir negatif çevrim olsaydı?" Birinci halkada ağırlıkların işaretini sorarak Dijkstra'yı seçersin, ikincide Bellman-Ford'a geçer ve nedenini ispatın kırılan adımıyla söylersin, üçüncüde sorunun kendisinin değiştiğini fark edersin.
+
+Bir de tanım hatası var: negatif çevrim varlığında "en kısa yol" sorusunun **iyi tanımlı olmadığını** söylemek gerekir. Doğru cevap bir sayı değil, çevrimin kendisini raporlamaktır.
 
 İngilizce karşılıklar hazır olmalıdır: *minimum spanning tree*, *cut*, *crossing edge*, *cut property*, *shortest paths tree*, *relaxation*, *triangle inequality*, *negative-weight cycle*, *decrease-key*, *indexed priority queue*, *single-source shortest paths*, *witness*.
 

@@ -5,16 +5,18 @@ slug: bilgi-kurami-entropi-capraz-entropi-ve-kl
 category: foundations
 level: advanced
 reading_order: 94
-summary: "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 43,4'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli log n eksi (n eksi 1) bölü n nat."
+summary: "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 43,4'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli en fazla log n eksi (n eksi 1) bölü n nat."
 tags:
   - entropi
   - capraz-entropi
   - kl-iraksamasi
   - perplexity
   - sikistirma
-content_hash: sha256:a61743a26f09af80c0c3019a0116f4f8f0ab9ab8c64a3c5d8708e43d331c39b3
+content_hash: sha256:5f100ea87362c855ad63b81df2f4f6eeb25517fab17edbe1e056e50139a730b3
 classification_version: 1
 classification_batch: 22
+revised_at: "2026-09-25"
+revision_note: "İleri ve ters KL'nin farkı, iki tepeli bir dağılıma uyumu çizen yeni bir şekille gösterildi; en iyi n seçiminin KL formülünün üst sınır olduğu eklendi."
 ---
 ## Kaybın bir birimi var
 
@@ -48,7 +50,7 @@ Aynı p ile devam edelim ve modelimiz q'nun olasılıkları 0,8 · 0,19 · 0,01 
 
 Entropi 1,5 idi, çapraz entropi 2,421. Aradaki 0,921 bit nereden geliyor? Modelin yanlışlığından. Bu farkın adı **KL ıraksaması** ve tanımı tam olarak budur: çapraz entropi eksi entropi. Solomon Kullback ile Richard Leibler'ın 1951 tarihli çalışması bu büyüklüğü istatistiksel ayırt edilebilirlik ölçüsü olarak kurar.
 
-Üç sonucu birlikte oku, çünkü bu makalenin omurgası bu üç cümlede:
+Bu tanımdan üç sonuç çıkıyor ve makalenin geri kalanı onların üstüne kurulu:
 
 Birincisi, çapraz entropi hiçbir zaman entropiden küçük olamaz. Yani KL sıfır ya da pozitiftir ve yalnızca q ile p tıpatıp aynıysa sıfırdır. Eğitimin ulaşabileceği en düşük kayıp, verinin kendi entropisidir.
 
@@ -84,17 +86,15 @@ Shannon'ın kendisi bu araçları hemen dile uyguladı. 1951 tarihli çalışmas
 
 Peter Brown ve arkadaşlarının 1992'de Computational Linguistics'te yayımladığı çalışma yöntemi tersine çevirdi ve bizim için en öğretici olanı yaptı: bir kelime üçlü modeli kurup **bu modelin metne göre çapraz entropisini** hesapladılar. Bulunan sayı 1,75 bit/karakter. Cümlenin tamamını oku: çapraz entropi hiçbir zaman entropiden küçük olamayacağına göre, herhangi bir modelin ölçülen kaybı gerçek entropinin bir **üst sınırıdır**. Yani "daha iyi bir dil modeli" demek, "daha sıkı bir üst sınır" demek.
 
-Bu bakış modern ölçekte de ölçüldü. Grégoire Delétang ve arkadaşlarının ICLR 2024'te sunduğu çalışma özdeşliği açıkça kuruyor: log-kaybı en küçültmek, aritmetik kodlamayla kayıpsız sıkıştırma oranını en küçültmekle aynı şey. Sayılar da çarpıcı: metin üzerinde eğitilmiş Chinchilla 70B, ImageNet görüntü parçalarını özgün boyutunun yüzde 43,4'üne, LibriSpeech ses örneklerini yüzde 16,4'üne indiriyor — PNG'nin yüzde 58,5'i ve FLAC'ın yüzde 30,3'ü karşısında. (Çalışma model boyutunu sıkıştırılmış boyuta katmadığında böyle; kattığında tablo tersine dönüyor.)
+Bu bakış modern ölçekte de ölçüldü. Grégoire Delétang ve arkadaşlarının ICLR 2024'te sunduğu çalışma özdeşliği açıkça kuruyor: log-kaybı en küçültmek, aritmetik kodlamayla kayıpsız sıkıştırma oranını en küçültmekle aynı şey. Sayılar şöyle: metin üzerinde eğitilmiş Chinchilla 70B, ImageNet görüntü parçalarını özgün boyutunun yüzde 43,4'üne, LibriSpeech ses örneklerini yüzde 16,4'üne indiriyor — PNG'nin yüzde 58,5'i ve FLAC'ın yüzde 30,3'ü karşısında.
 
-Buradaki parantez önemli, çünkü ölçünün sınırını çiziyor. Sıkıştırma oranını hesaplarken sıkıştırıcının kendisini de saymak gerekir: bir gzip programı birkaç kilobayttır, 70 milyar parametreli bir model ise yüz gigabayt mertebesinde. Bir gigabaytlık veriyi sıkıştırırken model boyutunu koda katarsan tablo tersine döner ve klasik sıkıştırıcılar öne geçer. Yani "dil modeli en iyi sıkıştırıcıdır" cümlesi, ancak modelin bedeli sayılmadığında doğru.
+Bu oranlar model boyutu sıkıştırılmış boyuta katılmadan hesaplanıyor ve ölçünün sınırı tam burada. Sıkıştırma oranını hesaplarken sıkıştırıcının kendisini de saymak gerekir: bir gzip programı birkaç kilobayttır, 70 milyar parametreli bir model ise yüz gigabayt mertebesinde. Bir gigabaytlık veriyi sıkıştırırken model boyutunu koda katarsan tablo tersine döner ve klasik sıkıştırıcılar öne geçer. Yani "dil modeli en iyi sıkıştırıcıdır" cümlesi, ancak modelin bedeli sayılmadığında doğru.
 
 Sıkıştırma ile yetenek arasındaki bağ ise ölçülmüş bir ilişki. Yuzhen Huang ve arkadaşlarının COLM 2024'te sunduğu çalışma, 31 açık modeli aynı dış metinler üzerinde sıkıştırıcı olarak çalıştırıp 12 ölçütteki ortalama puanlarıyla karşılaştırıyor ve neredeyse doğrusal bir ilişki buluyor: bilgi, kod ve matematik alanlarının her birinde Pearson katsayısı yaklaşık eksi 0,95. İşaretin negatif olması beklenen yönde — daha küçük sıkıştırma oranı daha iyi model demek. Yine de bunun bir bağıntı olduğunu ve kuramsal bir eşitlik iddiası taşımadığını not etmek gerekiyor; çalışma da bunu kendi sınırı olarak yazıyor.
 
-Bir uyarıyla kapatalım. Perplexity token başına tanımlıdır ve 15\. makalede gördüğümüz gibi token'lama modelden modele değişir. İki modelin perplexity'sini karşılaştırmak, ancak aynı token'lamayı kullanıyorlarsa anlamlıdır; farklı token'lamalarda karşılaştırılabilir olan şey karakter ya da bayt başına ölçülen sayıdır.
+Bir uyarı daha. Perplexity token başına tanımlıdır ve 15\. makalede gördüğümüz gibi token'lama modelden modele değişir. İki modelin perplexity'sini karşılaştırmak, ancak aynı token'lamayı kullanıyorlarsa anlamlıdır; farklı token'lamalarda karşılaştırılabilir olan şey karakter ya da bayt başına ölçülen sayıdır.
 
 Bu uyarının pratik çözümü de aynı yerden çıkıyor. Bir metnin bayt sayısı token'lamadan bağımsızdır; dolayısıyla toplam kaybı token sayısına değil **bayt sayısına** bölersen elde ettiğin sayı modeller arasında karşılaştırılabilir olur. Alanın kullandığı ad bayt başına bit ve tanımı doğrudan: bir metni kodlamak için harcanan toplam bit, metnin bayt uzunluğuna bölünür. Sıkıştırma oranı da bunun başka bir yazılışıdır — sekiz bit bir bayt ettiğine göre, bayt başına 2 bit demek özgün boyutun yüzde 25'ine inmek demektir. Delétang ve arkadaşlarının yüzde 43,4 gibi sayıları tam olarak bu ölçekte veriliyor ve bu yüzden farklı modalitelerdeki sonuçları yan yana koyabiliyorlar.
-
-Brown ve arkadaşlarının yöntemindeki incelik de burada. Ölçtükleri sayı modellerinin İngilizce hakkındaki bilgisinin bir özeti değil; **modelin metne göre çapraz entropisi**, yani modelin kendi kaybı. O kayıp gerçek entropiden büyük olduğu için üst sınır oluyor ve modeli iyileştiren herkes sınırı aşağı çekiyor. Aynı mantık modern ölçütlerde de geçerli: bir modelin ölçülen kaybı, dilin entropisi hakkında verdiğin en iyi üst sınırdır — alt sınır için kimsenin elinde bir yöntem yok.
 
 ## KL simetrik değildir ve bu bir bütçe kurar
 
@@ -104,21 +104,23 @@ Aynı çiftle görelim. p'den q'ya KL 0,921 bit hesaplamıştık. Ters yönü he
 
 Fark yalnızca aritmetik değil, davranışsal. İleri yönde — gerçek dağılımı ağırlık, modeli şaşkınlık olarak alan yönde — model, p'nin kütle koyduğu hiçbir yeri boş bırakamaz; boş bıraktığı yerde logaritma patlar. Bu yön modeli **kütleyi örtmeye** zorlar. Ters yönde ise model kendi kütlesini nereye koyduğuna göre cezalandırılır; p'nin boş bıraktığı yerlere gitmemeyi öğrenir ama p'nin bazı tepelerini tümden ihmal edebilir. Bu yön modeli **tepe aramaya** zorlar.
 
-Yuxian Gu ve arkadaşlarının ICLR 2024'te sunduğu çalışma bunu doğrudan bir yöntem kararına çeviriyor. 87\. makalede damıtmayı görmüştük: öğrenci öğretmenin dağılımına uyduruluyor. Standart damıtma ileri yönde çalışır ve öğrenci öğretmeni tam taklit edecek kapasitede değilse, öğretmenin neredeyse hiç kütle koymadığı bölgelere olasılık dağıtmayı öğrenir — pratikte düşük kaliteli metin. Yazarlar ters yönü kullanıyor ve gerekçeleri tam olarak bu.
+![İki panelli şekil; iki panelde de aynı gerçek dağılım p çizilidir: tepeleri eksi 2 ve artı 2'de duran, aralarında boş bir vadi bulunan iki tepeli bir eğri. Sol panel ileri yön, p'den q'ya: en uygun tek tepeli q geniş ve basıktır, iki tepeyi de örter ve p'nin boş bıraktığı ortadaki vadiye de kütle koyar. Sağ panel ters yön, q'dan p'ye: en uygun q dardır, tepelerden birinin üstüne oturur ve öbür tepeyi ihmal eder. Altta iki kayıt: ileri yönde q, p'nin kütle koyduğu hiçbir yerde sıfıra inemez; ters yönde q'nun kütle koyduğu yerde p küçük olmamalıdır. En altta eğrilerin iki eşit Gauss'un karışımı ve en uygun tek Gauss'tan hesaplandığı yazılıdır.](assets/kl-iki-yon.svg "Şekil 3 — Aynı hedef, iki yön, iki ayrı uyum")
+
+Şekil 3 bunu, tek tepeli bir modelin iki tepeli bir gerçeğe uydurulmasıyla gösteriyor. İleri yönde en iyi uyum iki tepenin ortasına oturan geniş bir eğridir: hiçbir tepeyi kaçırmaz, ama gerçekte neredeyse hiç görülmeyen ortadaki vadiye de kütle koyar. Ters yönde en iyi uyum tek bir tepeye yapışır: koyduğu kütle hep gerçekten olası bir bölgededir, ama öbür tepe yok sayılır. İkisi de "en iyi" uyumdur; neyin en iyi olduğunu seçilen yön belirler.
+
+Yuxian Gu ve arkadaşlarının ICLR 2024'te sunduğu çalışma bunu doğrudan bir yöntem kararına çeviriyor. 87\. makalede damıtmayı görmüştük: öğrenci öğretmenin dağılımına uyduruluyor. Standart damıtma ileri yönde çalışır ve öğrenci öğretmeni tam taklit edecek kapasitede değilse, Şekil 3'ün sol panelindeki gibi öğretmenin neredeyse hiç kütle koymadığı bölgelere olasılık dağıtmayı öğrenir — pratikte düşük kaliteli metin. Yazarlar ters yönü kullanıyor ve gerekçeleri tam olarak bu.
 
 Aynı asimetri 13\. makaledeki cezayı da açıklıyor. Orada politikanın referans modelden uzaklaşması KL ile ölçülüyordu. Şimdi o cezanın ne olduğunu tam söyleyebiliriz: politikanın ürettiği dağılıma göre ölçülen, referans modelden ayrışmanın nat cinsinden bedeli. Ve bedeli olan her şey bir bütçedir.
 
-Bütçenin somut hâli var. Nisan Stiennon ve arkadaşlarının NeurIPS 2020'de yayımladığı çalışma, n aday üretip en yüksek puanlıyı seçmenin — 33\. ve 36\. makalelerdeki tanıdık kural — referans modelden ne kadar uzaklaştırdığını kapalı biçimde veriyor: logaritma n eksi (n eksi 1) bölü n nat. Sayılar: n 4 için 0,636; n 10 için 1,403; n 1.000 için 5,909; n 60.000 için 10,002 nat.
+Bütçenin somut hâli var. Nisan Stiennon ve arkadaşlarının NeurIPS 2020'de yayımladığı çalışma, n aday üretip en yüksek puanlıyı seçmenin — 33\. ve 36\. makalelerdeki tanıdık kural — referans modelden ne kadar uzaklaştırdığını kapalı bir ifadeyle veriyor: logaritma n eksi (n eksi 1) bölü n nat. Sayılar: n 4 için 0,636; n 10 için 1,403; n 1.000 için 5,909; n 60.000 için 10,002 nat (ifadeden bizim hesabımız). Bu ifade alanda uzun süre kesin değer olarak kullanıldı; Ahmad Beirami ve arkadaşlarının ICML 2025'te yayımladığı çalışma, onun gerçek KL'yi değil gerçek KL'nin bir **üst sınırını** verdiğini gösterdi. Yani bu sayılar bütçenin tavanıdır: en iyisini seçmek en fazla bu kadar uzaklaştırır.
 
 Bütçenin bir de kapalı çözümü var ve 93\. makaledeki üstel aileyi doğrudan geri getiriyor. Rafael Rafailov ve arkadaşlarının NeurIPS 2023'te sunduğu ve 13\. makalede kısayol olarak tanıştığımız çalışma şunu yazıyor: "ödülü en büyüt ama referans modelden KL cinsinden şu kadardan fazla uzaklaşma" probleminin en iyi çözümü, referans modelin her cevaba verdiği olasılığın, o cevabın ödülünün bütçe katsayısına bölünmüş üsteliyle çarpılıp yeniden normalleştirilmiş hâlidir. Biçime bak: üstel al, topla, böl. Softmax'ın ta kendisi — yalnızca logit'lerin yerinde ödül, sıcaklığın yerinde KL bütçesinin katsayısı duruyor. Tercih optimizasyonunun ödül modeli olmadan da yapılabilmesinin sebebi bu özdeşlik; 13\. makaledeki kısayol okunun matematiği burada.
 
-![Üç panelli bir şekil. Sol panel aynı iki dağılımın iki yöndeki KL değerini verir: p'den q'ya 0,921 bit, q'dan p'ye 0,421 bit; altında aynı çiftin iki ayrı sayı verdiği yazılıdır. Orta panel iki yönün davranışını karşılaştırır: ileri yön modeli gerçek dağılımın kütle koyduğu her yeri örtmeye zorlar, ters yön ise modeli gerçek dağılımın tepelerine yerleşmeye zorlar ve bazı tepeleri ihmal edebilir. Sağ panel KL'yi bir bütçe olarak gösterir: n aday üretip en iyisini seçmenin bedeli logaritma n eksi (n eksi 1) bölü n nattır; n 4 için 0,636, n 10 için 1,403, n 1.000 için 5,909, n 60.000 için 10,002. En altta bir kayıt: KL bir uzaklık değildir, çünkü iki yön aynı sayıyı vermez; ve bütçe satırındaki değerler kaynağın verdiği kapalı biçimden elle hesaplanmıştır.](assets/kl-iki-yon.svg "Şekil 3 — Aynı çift, iki yön, iki sayı")
-
-Şekil 3 üç okumayı bir arada veriyor. Leo Gao, John Schulman ve Jacob Hilton'un ICML 2023'te sunduğu çalışma bütçeyi bir eksen hâline getiriyor: ödül modeli üzerinden eniyileme yapıldıkça gerçek başarı önce yükselip sonra düşüyor ve eğrinin doğal ekseni KL'nin kendisi değil, **karekökü**. Yani KL'yi bir uzaklık gibi okumak istiyorsan karekökünü almalısın — çalışmanın bunu bir ön kestirim olarak yapıp sonradan on nat'a kadar doğrulaması, ölçünün seçiminin ne kadar önemli olduğunu gösteriyor.
+Leo Gao, John Schulman ve Jacob Hilton'un ICML 2023'te sunduğu çalışma bütçeyi bir eksen hâline getiriyor: ödül modeli üzerinden eniyileme yapıldıkça gerçek başarı önce yükselip sonra düşüyor ve yazarlar eğrileri KL'nin kendisiyle değil, **karekökü**yle çiziyor. Gerekçeleri şu: küçük değişimlerde KL, uzaklığın karesi gibi büyür; karekök bu yüzden yerel olarak bir uzaklık gibi davranır. (Yine de simetrik değildir; KL'yi bir uzaklığa çevirmez.) Ölçünün bu seçimi sonuç da verdi: en iyisini seçme eğrisinin biçimi yalnızca n = 1.000'e, yani yaklaşık 6 nat'a kadarki veriyle kurulmuş, ardından n = 60.000'de, yaklaşık 10 nat'ta önceden yapılmış bir tahmin olarak doğrulanmış.
 
 > **Kendini yokla:** "Modelin referans modelden 6 nat uzaklaştı" cümlesi tek başına neden bir şey söylemez?
 
-Çünkü KL bir yön taşır ve hangi dağılıma göre ortalama alındığını söylemeden sayı tanımsızdır. Üstelik 6 nat'ın ne kadar olduğu da bağlama bağlı: en iyi adayı bin adaydan seçmek zaten yaklaşık 5,9 nat harcıyor. Aynı sayı, bir yöntemde aşırı eniyileme işareti, başka bir yöntemde sıradan bir çalışma noktası olabilir.
+Çünkü KL bir yön taşır ve hangi dağılıma göre ortalama alındığını söylemeden sayı tanımsızdır. Üstelik 6 nat'ın ne kadar olduğu da bağlama bağlı: en iyi adayı bin adaydan seçmek bile en fazla yaklaşık 5,9 nat harcıyor. Aynı sayı, bir yöntemde aşırı eniyileme işareti, başka bir yöntemde sıradan bir çalışma noktası olabilir.
 
 ### Sırada ne var
 
@@ -137,5 +139,6 @@ Dört makaledir aynı işi yapıyoruz: sezgiyle kurulmuş kavramları biçimsel 
 - Hoffmann, J., Borgeaud, S., Mensch, A., Buchatskaya, E., Cai, T., Rutherford, E., de Las Casas, D., Hendricks, L. A., Welbl, J., Clark, A. ve ark. (2022). *An empirical analysis of compute-optimal large language model training*. Advances in Neural Information Processing Systems 35 (NeurIPS 2022). [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/c1e2faff6f588870935f114ebe04a3e5-Abstract-Conference.html)
 - Gu, Y., Dong, L., Wei, F. & Huang, M. (2024). *MiniLLM: Knowledge Distillation of Large Language Models*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=5h0qf7IBZZ)
 - Stiennon, N., Ouyang, L., Wu, J., Ziegler, D. M., Lowe, R., Voss, C., Radford, A., Amodei, D. & Christiano, P. (2020). *Learning to summarize with human feedback*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1f89885d556929e98d3ef9b86448f951-Abstract.html)
+- Beirami, A., Agarwal, A., Berant, J., D'Amour, A., Eisenstein, J., Nagpal, C. & Suresh, A. T. (2025). *Theoretical guarantees on the best-of-n alignment policy*. ICML 2025, PMLR 267, 3580–3602. [Bağlantı](https://proceedings.mlr.press/v267/beirami25a.html)
 - Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D. & Finn, C. (2023). *Direct Preference Optimization: Your Language Model is Secretly a Reward Model*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html)
 - Gao, L., Schulman, J. & Hilton, J. (2023). *Scaling Laws for Reward Model Overoptimization*. ICML 2023. [Bağlantı](https://proceedings.mlr.press/v202/gao23h.html)

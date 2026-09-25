@@ -3,7 +3,8 @@
  * Seri makalelerinin content_hash değerlerini doğrular ve isteğe bağlı olarak yazar.
  *
  * Sözleşme (docs/seri/SOZLESME.md §1): content_hash, makale gövdesinin
- * (frontmatter sonrası, trim edilmiş) UTF-8 SHA-256'sıdır ve
+ * (frontmatter sonrası, satır sonları LF'ye normalleştirilmiş, trim edilmiş) UTF-8
+ * SHA-256'sıdır ve
  * `content/series/catalog.json` ile frontmatter birebir eşleşmek zorundadır.
  * Build yalnızca katalog ↔ frontmatter eşitliğini denetler; hash'in gövdeyle
  * gerçekten uyuştuğunu denetleyen tek yer burasıdır.
@@ -16,10 +17,18 @@
  * Katalog henüz yoksa (bir serinin ilk üretim run'ı) araç makale klasörünü gezer
  * ve yalnızca frontmatter hash'lerini düzeltir; katalog daha sonra entegre-batch.cjs
  * tarafından bu frontmatter'lardan üretilir.
+ *
+ * Editoryal revizyon alanları (docs/seri/SOZLESME.md §12): `revised_at` + `revision_note`
+ * frontmatter'da elle yazılır; bu araç onları katalogdaki `revisedAt` + `revisionNote`
+ * alanlarına taşır (--write) ya da uyuşmazlığı raporlar. Hash değişimi revizyon
+ * değildir; araç hiçbir makaleyi kendiliğinden "revize edildi" diye işaretlemez.
  */
 const { createHash } = require("node:crypto");
 const { existsSync, readFileSync, readdirSync, statSync, writeFileSync } = require("node:fs");
 const path = require("node:path");
+
+// Uygulamanın kullandığı ayrıştırıcı: tırnaksız bir YAML tarihi Date olarak gelir.
+const matter = require("gray-matter");
 
 const SERIES_DIRS = { ai: "series", boun: "series-boun" };
 
@@ -56,8 +65,35 @@ function splitFrontmatter(text) {
   return { frontmatter: text.slice(0, bodyStart), body: text.slice(bodyStart) };
 }
 
+/**
+ * Satır sonları LF'ye normalleştirilerek hesaplanır: git `core.autocrlf` açıkken çalışma
+ * kopyası CRLF, dizin LF tutar ve düzenleme araçları iki biçimi de yazabilir. Hash satır
+ * sonuna bağlı olsaydı aynı gövde makineden makineye farklı hash verirdi.
+ */
 function hashBody(body) {
-  return "sha256:" + createHash("sha256").update(body.trim(), "utf8").digest("hex");
+  const normalized = body.replace(/\r\n/g, "\n").trim();
+  return "sha256:" + createHash("sha256").update(normalized, "utf8").digest("hex");
+}
+
+/**
+ * Frontmatter'daki revizyonu okur: { revisedAt, revisionNote } ya da hiç revizyon yoksa null.
+ * Yarım ya da biçimsiz bir revizyon { error } döner.
+ */
+function readRevision(data) {
+  const rawDate = data.revised_at;
+  const rawNote = data.revision_note;
+  if (rawDate === undefined && rawNote === undefined) return null;
+  if (rawDate === undefined || rawNote === undefined) {
+    return { error: "revised_at ve revision_note birlikte verilmeli" };
+  }
+  const date = rawDate instanceof Date ? rawDate.toISOString().slice(0, 10) : String(rawDate);
+  const valid =
+    /^\d{4}-\d{2}-\d{2}$/.test(date) &&
+    new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) === date;
+  if (!valid) return { error: `revised_at geçerli bir YYYY-MM-DD değil: ${date}` };
+  const note = String(rawNote).trim();
+  if (!note || note.length > 200) return { error: "revision_note 1–200 karakter olmalı" };
+  return { revisedAt: date, revisionNote: note };
 }
 
 const hasCatalog = existsSync(CATALOG_PATH);
@@ -94,6 +130,30 @@ for (const entry of targets) {
 
   const fmOk = fmHash === expected;
   const catalogOk = !hasCatalog || entry.contentHash === expected;
+
+  // Revizyon: frontmatter kaynaktır, katalog onun izdüşümüdür.
+  const revision = readRevision(matter(raw).data);
+  if (revision && revision.error) {
+    problems.push(`${entry.path}: ${revision.error}`);
+  } else if (hasCatalog) {
+    const wantDate = revision ? revision.revisedAt : undefined;
+    const wantNote = revision ? revision.revisionNote : undefined;
+    if (entry.revisedAt !== wantDate || entry.revisionNote !== wantNote) {
+      if (!WRITE) {
+        problems.push(`${entry.slug}: katalog revizyonu frontmatter ile uyuşmuyor`);
+      } else {
+        if (revision) {
+          entry.revisedAt = wantDate;
+          entry.revisionNote = wantNote;
+        } else {
+          delete entry.revisedAt;
+          delete entry.revisionNote;
+        }
+        catalogChanged = true;
+        console.log(`yazıldı  revizyon     ${entry.slug}`);
+      }
+    }
+  }
 
   if (fmOk && catalogOk) continue;
 

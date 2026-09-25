@@ -147,7 +147,10 @@ export function ArticleToc({
           ref={panelRef}
           role="dialog"
           aria-label={UI.tableOfContents}
-          className="absolute right-0 top-full z-50 mt-2 max-h-[60vh] w-64 overflow-y-auto rounded-lg border border-border bg-surface p-3 font-sans shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:max-h-[50vh] max-sm:w-full max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0 sm:right-auto"
+          // Anchored to the trigger's right edge like the other toolbar panels: the
+          // trigger sits in the right-hand group, so opening rightwards ran 10px
+          // past the viewport between 640 and 1100px.
+          className="absolute right-0 top-full z-50 mt-2 max-h-[60vh] w-64 overflow-y-auto rounded-lg border border-border bg-surface p-3 font-sans shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:max-h-[50vh] max-sm:w-full max-sm:rounded-b-none max-sm:border-x-0 max-sm:border-b-0"
         >
           <div className="mb-2 px-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">

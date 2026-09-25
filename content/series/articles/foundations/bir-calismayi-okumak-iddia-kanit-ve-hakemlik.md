@@ -12,13 +12,13 @@ tags:
   - iddia-kanit
   - taban-cizgisi
   - on-baski
-content_hash: sha256:69641c78c732e7a4af4e5074700dd9f1aeb2df59a3daba1ffb3365eef9eb971b
+content_hash: sha256:8c573b6f5a0daeebc827cf446d7131b31f252ee99144471afa319844581eef87
 classification_version: 1
 classification_batch: 23
 ---
 ## Şimdiye kadar hep başkası okudu
 
-Doksan yedi makaledir aynı şeyi yapıyoruz: bir çalışmanın sonucunu alıp anlatıyoruz. 96\. makalede bir kuramsal sınırın modelleri ters sıraladığını, 97\. makalede aynı soruya üç çalışmanın üç farklı cevap verdiğini gördük. İkisinde de kurtarıcı aynı şeydi — sonucun hangi koşulda ölçüldüğünü okumak.
+Seri boyunca hep aynı şeyi yaptık: bir çalışmanın sonucunu alıp anlattık. 96\. makalede bir kuramsal sınırın modelleri ters sıraladığını, 97\. makalede aynı soruya üç çalışmanın üç farklı cevap verdiğini gördük. İkisinde de kurtarıcı aynı şeydi — sonucun hangi koşulda ölçüldüğünü okumak.
 
 Serinin bu fazı o okumayı doğrudan konu ediniyor. İlk sorusu şu: **bir çalışmanın iddiası tam olarak nerede yazılıdır, o iddiayı hangi kanıt taşır ve ikisi arasındaki bağ koptuğunda bunu nasıl fark ederiz?**
 
@@ -60,15 +60,17 @@ Hayır. Yanlış olduğu değil, **kanıt yükünün henüz ödenmediği** anlam
 
 Sorunun ölçülmüş bir cevabı var, üstelik ölçümü alanın kendisi yaptı. NeurIPS'in 2014 program başkanları Corinna Cortes ve Neil Lawrence bir deney kurdu: gönderilerin yüzde 10'u ikiye bölünmüş iki bağımsız komite tarafından ayrı ayrı değerlendirildi. Deney 2021'de çok daha büyük ölçekte tekrarlandı — 9.122 gönderiden 882'si iki komiteye birden gitti ve komitelerin bundan haberi yoktu.
 
-![İki sütunlu bir karşılaştırma ve altında bir kutu. Üstte aynı bildirilerin iki bağımsız komiteye verildiği ve bunun NeurIPS'in kendi deneyi olduğu yazılıdır. Sütunlar NeurIPS 2014 ve NeurIPS 2021 deneyleridir. Birinci satır çift değerlendirilen bildiri sayısı: 2014'te 116, 2021'de 882. İkinci satır kabul veya ret kararında anlaşmazlık oranı: 2014 için bildirilmemiş, 2021 için yüzde 23. Üçüncü satır vurguludur: bir komitenin kabul ettiği bildirilerden öbür komitenin reddettiklerinin oranı 2014'te yüzde 49,5, 2021'de yüzde 50,6. Dördüncü satır rastgele bir komiteye göre görece iyileşme: 2014 için bildirilmemiş, 2021 için yüzde 35. Alttaki kutuda 2021 deneyinin eşik çözümlemesi durur: eşik seçicileştikçe süreç rastgeleye yaklaşıyor. Yalnızca sözlü ve öne çıkan sunumlar kabul edilseydi kabul edilenlerin yüzde 88,8'i reddedilirdi ve iyileşme yalnızca yüzde 8 olurdu; poster eşiği bir kademe aşağı çekilseydi oran yüzde 63,2 ve iyileşme yüzde 25 olurdu; gerçek eşikte oran yüzde 50,6 ve iyileşme yüzde 35. En altta bir kayıt: sayılar 2021 deneyinin raporundan alınmıştır ve o rapor hakemlikten geçmemiştir.](assets/hakemligin-tutarliligi.svg "Şekil 2 — Aynı bildiriler, iki komite")
+![İki sütunlu bir karşılaştırma ve altında bir kutu. Üstte aynı bildirilerin iki bağımsız komiteye verildiği ve bunun NeurIPS'in kendi deneyi olduğu yazılıdır. Sütunlar NeurIPS 2014 ve NeurIPS 2021 deneyleridir. Birinci satır çift değerlendirilen bildiri sayısı: 2014'te 166, 2021'de 882. İkinci satır kabul veya ret kararında anlaşmazlık oranı: 2014'te yüzde 25,9, 2021'de yüzde 23. Üçüncü satır vurguludur: bir komitenin kabul ettiği bildirilerden öbür komitenin reddettiklerinin oranı 2014'te yüzde 49,5, 2021'de yüzde 50,6. Dördüncü satır rastgele bir komiteye göre görece iyileşme: 2014 için bildirilmemiş, 2021 için yüzde 35. Alttaki kutuda 2021 deneyinin eşik çözümlemesi durur: eşik seçicileştikçe süreç rastgeleye yaklaşıyor. Yalnızca sözlü ve öne çıkan sunumlar kabul edilseydi kabul edilenlerin yüzde 88,8'i reddedilirdi ve iyileşme yalnızca yüzde 8 olurdu; poster eşiği bir kademe aşağı çekilseydi oran yüzde 63,2 ve iyileşme yüzde 25 olurdu; gerçek eşikte oran yüzde 50,6 ve iyileşme yüzde 35. En altta bir kayıt: sayılar 2021 deneyinin raporundan alınmıştır ve o rapor hakemlikten geçmemiştir.](assets/hakemligin-tutarliligi.svg "Şekil 2 — Aynı bildiriler, iki komite")
 
 Şekil 2'nin üçüncü satırı manşet. Bir komitenin kabul ettiği bildirilerin yaklaşık **yarısı**, öbür komite tarafından reddedilirdi — ve bu oran yedi yılda neredeyse hiç değişmedi.
 
-Ama asıl öğretici bulgu alttaki kutuda. Yazarlar eşiği oynatıp ne olacağını hesaplıyorlar ve sezgiye aykırı bir sonuç çıkıyor: **süreç ne kadar seçici olursa o kadar keyfîleşiyor.** Yalnızca sözlü sunumlar kabul edilseydi, kabul edilenlerin yüzde 88,8'i öbür komitede reddedilirdi; rastgele seçim yapan bir komiteye göre iyileşme yüzde 35'ten yüzde 8'e düşerdi. Sebebi anlaşılır: eşik yükseldikçe karar, hakemler arası gürültünün büyük olduğu dar bir aralıkta veriliyor.
+Bu "yarı"nın ne kadar kötü olduğunu anlamak için bir kıyas noktası gerekiyor. Raporun kullandığı taban çizgisi, kabul oranı aynı kalmak koşuluyla kararlarını yazı turayla veren iki komite. Böyle iki komitede bir bildirinin öbür tarafta reddedilme olasılığı yalnızca kabul oranına bağlıdır: kabul oranı yüzde 25 ise, kabul edilenlerin yüzde 75'i öbür tarafta reddedilir (bu örnek sayı bizim, raporun değil). Gerçek komitelerin yüzde 50,6'sı bu rastgele düzeyden yüzde 35 daha iyi; şekildeki "iyileşme" satırı bu kıyastır.
+
+Asıl öğretici bulgu alttaki kutuda. Yazarlar eşiği oynatıp ne olacağını hesaplıyorlar ve sezgiye aykırı bir sonuç çıkıyor: **süreç ne kadar seçici olursa o kadar keyfîleşiyor.** Yalnızca sözlü sunumlar kabul edilseydi, kabul edilenlerin yüzde 88,8'i öbür komitede reddedilirdi; rastgele komiteye göre iyileşme yüzde 35'ten yüzde 8'e düşerdi. Sebebi anlaşılır: eşik yükseldikçe karar, hakemler arası gürültünün büyük olduğu dar bir aralıkta veriliyor. Kabul oranı birkaç yüzdeye indiğinde rastgele komite de kabul ettiklerinin neredeyse tamamını öbür tarafta kaybeder; gerçek komitenin yüzde 88,8'i o tavana yakın duruyor.
 
 Bunu doğru okumak önemli. Sonuç "hakemlik işe yaramıyor" değil. Cortes ve Lawrence'ın 2014 deneyini yedi yıl sonra yeniden inceledikleri çalışma daha ölçülü bir cümle kuruyor: puanlardaki değişkenliğin yaklaşık yarısı öznel kaynaklı, ve süreç **kötü bildirileri elemekte iyi, iyi bildirileri seçmekte zayıf**. Yani hakemlik bir alt sınır güvencesi veriyor, bir kalite sıralaması vermiyor.
 
-Bir de ironi var ve söylenmesi gerekiyor: 2021 deneyinin raporu bir konferansta hakemlikten geçmedi; program başkanlarının yayımladığı bir belge. Hakemliğin ölçümü hakemsiz.
+İşin bir de ironik yanı var: 2021 deneyinin raporu bir konferansta hakemlikten geçmedi; program başkanlarının yayımladığı bir belge. Hakemliğin ölçümü hakemsiz.
 
 Sürecin neyi ölçtüğüne dair ikinci bir ölçüm daha var. Andrew Tomkins, Min Zhang ve William Heavlin'in PNAS'ta 2017'de yayımladığı çalışma, kabul oranı yüzde 15,6 olan bir konferansta her gönderiyi **aynı anda** iki tek-kör ve iki çift-kör hakeme verdi — tek-körde hakem yazarları görüyor, çift-körde görmüyor. Sonuç: tek-kör değerlendirme, tanınmış yazarların ve yüksek itibarlı kurumların bildirilerine anlamlı bir avantaj sağlıyor. Yani kararın bir kısmı, bildirinin içeriğinden değil künyesinden geliyor.
 
@@ -88,7 +90,7 @@ Mekanizması basit. Yeni bir yöntem öneren ekip, kendi yönteminin ayarların�
 
 ## Dört yaygın kopma biçimi
 
-Ayar bütçesi, iddia ile kanıt arasındaki bağın koptuğu tek yer değil. Zachary Lipton ve Jacob Steinhardt'ın ACM Queue'da 2019'da yayımladığı inceleme — hakem sürecinden değil editoryal incelemeden geçmiş bir yazı, ki bu makalenin kendi ölçütüne göre söylenmesi gerekiyor — alanda tekrarlanan dört deseni adlandırıyor ve dördü de bir okuma denetimine çevrilebiliyor.
+Ayar bütçesi, iddia ile kanıt arasındaki bağın koptuğu tek yer değil. Zachary Lipton ve Jacob Steinhardt'ın ACM Queue'da 2019'da yayımladığı inceleme — hakem sürecinden değil editoryal incelemeden geçmiş bir yazı; bu makalenin kendi ölçütü bu ayrımın yazılmasını istiyor — alanda tekrarlanan dört deseni adlandırıyor ve dördü de bir okuma denetimine çevrilebiliyor.
 
 **Açıklama ile tahminin karışması.** Bir çalışma bir olguyu ölçer, sonra neden olduğuna dair bir hikâye anlatır. İkisi aynı cümlede geçtiğinde okuyucu ikisini birden ölçülmüş sanır. Denetim: hikâyenin kendisini sınayan bir deney var mı?
 
@@ -96,7 +98,7 @@ Ayar bütçesi, iddia ile kanıt arasındaki bağın koptuğu tek yer değil. Za
 
 **Süsleme matematiği.** Sonucun kurulmasında rol oynamayan gösterişli bir biçimselleştirme, teknik ile teknik olmayan kavramların aynı sembollerle karıştırılması. Denetim: teoremi çıkarsan deneysel sonuç değişir miydi?
 
-**Dilin kötüye kullanımı.** Gündelik çağrışımı olan sözcüklerin teknik terim olarak seçilmesi ya da yerleşik bir terime yeni bir anlam yüklenmesi. Bu seride terim defteri tutmamızın sebebi tam olarak bu.
+**Dilin kötüye kullanımı.** Gündelik çağrışımı olan sözcüklerin teknik terim olarak seçilmesi ya da yerleşik bir terime yeni bir anlam yüklenmesi. Bu seride her terimi ilk geçtiği yerde tanımlayıp sonra hep aynı anlamda kullanmamızın sebebi de bu.
 
 Yazarların kendi çerçevesi bir suçlama değil, bir öz-denetim çağrısı: alan hızla büyüdükçe bu desenler kendiliğinden çoğalıyor. D. Sculley ve arkadaşlarının ICLR 2018 çalıştayında sunduğu kısa bildiri aynı gerilimi tek cümlede kuruyor — yayın hızı ile deneysel titizlik birbirinin rakibi ve rekabetin kazananı otomatik olarak ikincisi değil.
 
@@ -116,7 +118,7 @@ Buradan çıkan ders bir güvensizlik çağrısı değil, bir ölçek düzeltmes
 
 > **Kendini yokla:** İki çalışma çelişen sonuçlar bildiriyorsa, hangisinin hakemli mecrada yayımlandığına bakmak yeterli midir?
 
-Değil. Hakemlik, Şekil 2'nin gösterdiği gibi, iyi çalışmayı seçmekte zayıf bir cetvel. Çelişkiyi çözmek için bakılacak yer mecra değil kurulum: iki çalışma aynı ölçüyü mü kullanıyor, aynı kapsamda mı ölçüyor, taban çizgilerine aynı bütçeyi mi vermişler? 97\. makaledeki üç tablo çalışması gibi, çoğu zaman çelişki değil kapsam farkı çıkar.
+Yeterli değil, çünkü hakemlik, Şekil 2'nin gösterdiği gibi, iyi çalışmayı seçmekte zayıf bir cetvel. Çelişkiyi çözmek için bakılacak yer mecra değil kurulum: iki çalışma aynı ölçüyü mü kullanıyor, aynı kapsamda mı ölçüyor, taban çizgilerine aynı bütçeyi mi vermişler? 97\. makaledeki üç tablo çalışması gibi, çoğu zaman çelişki değil kapsam farkı çıkar.
 
 ## Okumanın disiplini
 
@@ -134,7 +136,7 @@ Bu makalenin çıktısı bir kontrol listesi değil, bir sıra. Bir çalışmay�
 
 **Ölçülen sayı mı, türetilen sayı mı?** Bir bildirideki her sayı ölçüm değildir: bazıları başka sayılardan hesaplanmış oranlar, bazıları bir modele uydurulmuş kestirimlerdir. 9\. makaledeki ölçek yasası eğrileri bunun en görünür örneğiydi — ölçülen şey birkaç yüz nokta, çizilen şey içinden geçirilmiş bir regresyondu.
 
-Bu sıranın çalışmadığı bir yer de var ve onu da söylemek gerekiyor: kanıtın kendisi yayımlanmamışsa liste boşa döner. Kapalı bir modelin raporunda eğitim verisi, ayar bütçesi ve değerlendirme protokolü verilmiyorsa, iddia ile kanıt arasındaki bağı kurmak ilkece mümkün değildir. 20\. makaledeki açıklık eksenleri tartışmasının okuyucu tarafındaki karşılığı budur.
+Bu sıranın çalışmadığı bir yer de var: kanıtın kendisi yayımlanmamışsa liste boşa döner. Kapalı bir modelin raporunda eğitim verisi, ayar bütçesi ve değerlendirme protokolü verilmiyorsa, iddia ile kanıt arasındaki bağı kurmak ilkece mümkün değildir. 20\. makaledeki açıklık eksenleri tartışmasının okuyucu tarafındaki karşılığı budur.
 
 ### Sırada ne var
 

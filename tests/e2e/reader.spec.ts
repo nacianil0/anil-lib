@@ -333,6 +333,8 @@ test.describe("desktop reader", () => {
 
     // Alignment is fixed to justified for everyone; the control is gone.
     await expect(dialog.getByRole("group", { name: "Metin hizası" })).toHaveCount(0);
+    // The finer typography sits behind one disclosure.
+    await dialog.getByRole("button", { name: /İnce ayarlar/ }).click();
     await dialog
       .getByRole("group", { name: "Paragraf aralığı" })
       .getByRole("button", { name: "Ferah" })

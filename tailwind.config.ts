@@ -3,6 +3,10 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: "class",
   content: ["./src/**/*.{ts,tsx}"],
+  // "sepia" is the reading theme's class on <html>. The scanner finds that word in
+  // the theme code and would emit Tailwind's `sepia` filter utility, which turned
+  // the whole page into `filter: sepia(1)` under the sepia theme.
+  blocklist: ["sepia"],
   theme: {
     extend: {
       colors: {

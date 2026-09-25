@@ -28,6 +28,11 @@
   <rect x="216" y="180" width="46" height="30" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
   <text x="239" y="199" font-size="13" text-anchor="middle" fill="var(--text)">0,30</text>
 
+  <text x="308" y="148" font-size="13" text-anchor="middle" fill="var(--text-faint)">1</text>
+  <text x="344" y="148" font-size="13" text-anchor="middle" fill="var(--text-faint)">2</text>
+  <text x="380" y="148" font-size="13" text-anchor="middle" fill="var(--text-faint)">3</text>
+  <text x="416" y="148" font-size="13" text-anchor="middle" fill="var(--text-faint)">4</text>
+  <text x="442" y="148" font-size="13" text-anchor="start" fill="var(--text-faint)">merkez no.</text>
   <rect x="290" y="156" width="36" height="28" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <text x="308" y="174" font-size="13" text-anchor="middle" fill="var(--text)">0,02</text>
   <rect x="326" y="156" width="36" height="28" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
@@ -55,7 +60,7 @@
   <rect x="70" y="256" width="222" height="34" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <text x="181" y="277" font-size="14" text-anchor="middle" fill="var(--text)">tahmin: 0,02 + 0,08 = 0,10</text>
   <text x="308" y="270" font-size="13" text-anchor="start" fill="var(--text)">gerçek karesel uzaklık: 0,1225</text>
-  <text x="308" y="290" font-size="13" text-anchor="start" fill="var(--text-muted)">fark, ilk yarının yuvarlama hatasından gelir</text>
+  <text x="308" y="290" font-size="13" text-anchor="start" fill="var(--text-muted)">fark iki yuvarlamadan: 0,95 → 0,8 ve 0,80 → 0,9</text>
 
   <line x1="16" y1="316" x2="704" y2="316" stroke="var(--border)" stroke-width="1"/>
   <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-muted)">tablolar sorgu başına bir kez kurulur; belge başına yalnızca iki okuma ve bir toplama yapılır</text>

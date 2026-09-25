@@ -12,9 +12,11 @@ tags:
   - belirsizlik
   - olgusallik
   - degerlendirme
-content_hash: sha256:143765df0ce5d232edef1c002f0d0a24fed390ed41710a6a633b725d71355d1b
+content_hash: sha256:0b64860dec374512cd449fefb065128f98ad07db63a9b408675173bb4b1c220d
 classification_version: 1
 classification_batch: 3
+revised_at: "2026-09-25"
+revision_note: "Kalibrasyonun iki anlamı ayrıldı; puanlama kuralı şekli tabloyu tekrar etmek yerine yüzde 25 eşiğini gösteren bir grafikle yeniden çizildi."
 ---
 ## Akıcılıkla doğruluk arasındaki boşluk
 
@@ -32,9 +34,9 @@ Borcu ödeme vakti. Bu makalenin tezi tek cümle: **uydurma bir arıza değil, s
 
 **Dışsal uydurma** (extrinsic hallucination), çıktının verilen kaynaktan doğrulanamamasıdır. Model kaynağın içermediği bir tarih, bir isim, bir sayı ekler. Bu bilgi tesadüfen doğru bile olabilir; sorun, elimizdeki malzemeyle kontrol edilememesidir.
 
-Ayrım pratik bir sonuç taşıyor: iki tür farklı yerden gelir ve farklı çözüm ister. İçsel uydurma, modelin önündeki metni doğru işlememesidir. Dışsal uydurma ise modelin **parametrelerinden** gelen ve doğrulanmamış bir iddiadır — bu makalenin asıl konusu odur.
+Ayrım pratik bir sonuç taşıyor: iki tür farklı yerden gelir ve farklı çözüm ister. İçsel uydurma, modelin önündeki metni doğru işlememesidir. Dışsal uydurma ise modelin **parametrelerinden** gelen ve doğrulanmamış bir iddiadır; buradan sonra ağırlıkla bu ikincisini ele alacağız.
 
-Bir terim uyarısı daha. "Halüsinasyon" sözcüğü, modelin bir şey "gördüğünü sandığını" ima ettiği için eleştiriliyor; alanda daha dar bir sözcük de kullanılıyor. Nature'da yayımlanan bir çalışma bunu şöyle tanımlıyor: model bir şeyi **sebepsiz** uydurur ve bunun işareti şudur — aynı soruyu farklı bir rastgele tohumla tekrar sorduğunda başka bir cevap üretir. Bu tanım işimize yarayacak, çünkü ölçülebilir bir davranışa dayanıyor.
+Bir terim uyarısı daha. "Halüsinasyon" sözcüğü, modelin bir şey "gördüğünü sandığını" ima ettiği için eleştiriliyor; alanda daha dar bir sözcük de kullanılıyor: konfabülasyon (confabulation), yani uydurmanın belirli bir türü. Nature'da yayımlanan bir çalışma bunu şöyle tanımlıyor: model bir şeyi **sebepsiz** uydurur ve bunun işareti şudur — aynı soruyu farklı bir rastgele tohumla tekrar sorduğunda başka bir cevap üretir. Bu tanım işimize yarayacak, çünkü ölçülebilir bir davranışa dayanıyor.
 
 ## Ne kadar sık?
 
@@ -42,21 +44,21 @@ Sayıya geçelim. 11\. makalede InstructGPT ölçümünü görmüştük: girdide
 
 Serbest üretimde ölçmek daha zor, çünkü uzun bir metin doğru ve yanlış bilgileri karıştırır; "bu cevap doğru mu" sorusunun ikili bir cevabı yoktur. Sewon Min ve arkadaşlarının EMNLP 2023'te sunduğu FActScore bu sorunu bir ölçme kararıyla çözüyor: üretilen metni **atomik olgulara** (atomic facts) ayır, her birini güvenilir bir bilgi kaynağıyla ayrı ayrı denetle, desteklenen olguların oranını raporla.
 
-Yöntemi insan değerlendirmesiyle kişi biyografileri üzerinde uyguladıklarında çıkan sayı çarpıcı: çalışmanın 2023'te değerlendirdiği ChatGPT sürümü, ürettiği atomik olguların yalnızca yüzde 58'ini destekleyebiliyordu. Yani ortalama bir biyografide cümlelerin kabaca beşte ikisi doğrulanamıyordu — üstelik metin akıcı, kendinden emin ve iyi biçimlendirilmiş olarak.
+Yöntemi insan değerlendirmesiyle kişi biyografileri üzerinde uyguladıklarında çıkan sayı şu: çalışmanın 2023'te değerlendirdiği ChatGPT sürümü, ürettiği atomik olguların yalnızca yüzde 58'ini destekleyebiliyordu. Yani ortalama bir biyografideki atomik olguların kabaca beşte ikisi bilgi kaynağında desteklenmiyordu — üstelik metin akıcı, kendinden emin ve iyi biçimlendirilmiş olarak.
 
-Bu ölçümün kendisi 16\. makalenin dersini taşıyor: "modeller ne kadar uyduruyor" sorusunun cevabı, uydurmayı nasıl ölçtüğüne bağlı. İkili puanlayan bir sınav yüzde 90 doğruluk gösterirken, atomik olgu düzeyinde bakan bir ölçüm aynı model için yüzde 58 verebilir. İkisi de doğrudur; farklı şeyleri ölçüyorlar.
+Bu ölçümün kendisi 16\. makalenin dersini taşıyor: "modeller ne kadar uyduruyor" sorusunun cevabı, uydurmayı nasıl ölçtüğüne bağlı. Aynı model, kısa ve tek cevaplı bilgi sorularından oluşan ikili puanlı bir sınavda çok daha yüksek bir puan alabilir, çünkü orada yalnızca iyi bilinen olgular sorulur ve uzun bir metnin her iddiası tek tek denetlenmez. İki sayı çelişmez; farklı şeyleri ölçerler.
 
 ## Kökü: bir kez görülmüş olgular
 
 Şimdi asıl soruya gelelim. Model neden uyduruyor? İlk akla gelen cevaplar — "veri kirli", "mimari yetersiz" — tek başına yetmiyor, çünkü kusursuz veriyle ve kusursuz mimariyle bile ortadan kalkmayan bir taban var.
 
-Adam Tauman Kalai ve Santosh Vempala'nın STOC 2024'te sunduğu çalışma bu tabanı matematiksel olarak kurdu ve sonucu tek cümleyle söylenebilir: **kalibre bir dil modeli, belirli türden olgularda uydurmak zorundadır.** Burada "kalibre" olmak, modelin ürettiği metnin istatistiksel özelliklerinin eğitim dağılımınınkine uyması demektir — 5\. makalede kurduğumuz sonraki-token hedefinin doğal olarak ittiği yer.
+Adam Tauman Kalai ve Santosh Vempala'nın STOC 2024'te sunduğu çalışma bu tabanı matematiksel olarak kurdu ve sonucu tek cümleyle söylenebilir: **kalibre bir dil modeli, belirli türden olgularda uydurmak zorundadır.** Buradaki "kalibre" sözcüğü 16\. makaledeki anlamla karıştırılmamalı. Orada kalibrasyon, modelin kendi güveninin doğrulukla örtüşmesiydi: "yüzde 70 eminim" dediği cevapların yüzde 70'i doğru çıkıyorsa model kalibredir. Kalai ve Vempala'nın kullandığı anlam ise üretimle ilgili ve daha dar: modelin ürettiği metnin istatistiksel özellikleri eğitim dağılımınınkine uyuyorsa model kalibredir — 5\. makalede kurduğumuz sonraki-token hedefinin doğal olarak ittiği yer. Bu bölümde "kalibre" dendiğinde bu ikinci anlam kastediliyor.
 
 Mekanizma sezgisel olarak şöyle işliyor. Bir derlemde bazı olgular defalarca geçer: bir ülkenin başkenti, ünlü bir kişinin doğum yılı. Bazıları ise **tam bir kez** geçer — az bilinen bir kişinin doğum tarihi, küçük bir kasabanın kuruluş yılı. Bir de derlemde hiç geçmeyenler var.
 
 Buradaki kritik istatistiksel fikir eskidir ve adı Good-Turing tahminidir: bir örneklemde **hiç görülmemiş** şeylerin toplam olasılığı, kabaca **tam bir kez görülmüş** şeylerin oranına eşittir. Bir kez görülenlerin çokluğu, henüz görmediklerinin de çok olduğunun işaretidir.
 
-Sezgiyi bir örnekle kuralım. Bir gölden yüz balık tutmuş olduğunu düşün. Türleri sayıyorsun: bazıları onlarca kez çıktı, yirmi tanesi ise yalnızca birer kez. Bir sonraki balığın, listende hiç olmayan bir tür olma olasılığı nedir? Good-Turing'in cevabı kabaca 20 ÷ 100 = 0,2'dir — tek seferlik türlerin oranı, görmediklerinin payını tahmin eder. Bu benzetmenin bozulduğu yer şurası: gölden çekilen balıklar birbirinden bağımsızdır, oysa bir derlemdeki olgular bağımsız değildir — biri diğerinden çıkarılabilir. Bir kişinin doğum yılını hiç görmemiş olsan bile, meslek hayatının tarihlerinden onu daraltabilirsin. Benzetmenin biçimsel karşılığı da tam olarak bu kayıtla verilir: çalışmanın sonucu, **keyfî** olgular için — yani doğruluğu eğitim verisinden türetilemeyecek olanlar için — geçerlidir. Türetilebilir olgular bu tabanın dışındadır.
+Sezgiyi bir örnekle kuralım. Bir gölden yüz balık tutmuş olduğunu düşün. Türleri sayıyorsun: bazıları onlarca kez çıktı, yirmi tanesi ise yalnızca birer kez. Bir sonraki balığın, listende hiç olmayan bir tür olma olasılığı nedir? Good-Turing'in cevabı kabaca 20 ÷ 100 = 0,2'dir — tek seferlik türlerin oranı, görmediklerinin payını tahmin eder. Göl ile derlem arasında bir fark var ve sonucun sınırı tam oradan çıkıyor: gölden çekilen balıklar birbirinden bağımsızdır, oysa bir derlemdeki olgular bağımsız değildir — biri diğerinden çıkarılabilir. Bir kişinin doğum yılını hiç görmemiş olsan bile, meslek hayatının tarihlerinden onu daraltabilirsin. Bu yüzden çalışmanın sonucu yalnızca **keyfî** olgular için — yani doğruluğu eğitim verisinden türetilemeyecek olanlar için — geçerlidir. Türetilebilir olgular bu tabanın dışındadır.
 
 Şimdi ikisini birleştir. Model kalibre ise, eğitim verisinin ima ettiği "henüz görmediğim olgular" payını da üretmek zorundadır. Ama o olgular hakkında bilgisi yoktur; ürettiği şey, doğru biçimde ama yanlış içerikle doldurulmuş bir cümledir. Çalışmanın sonucu tam olarak bu: uydurma oranının alt sınırı, eğitim verisinde tam bir kez geçen olguların oranına yaklaşır — ve bu sınır mimariden de veri kalitesinden de bağımsızdır.
 
@@ -68,7 +70,7 @@ Buradan iki bağ çıkıyor. Birincisi 14\. makaleye: tekilleştirme tartışmas
 
 > **Kendini yokla:** Bu sonuç neden "daha çok veri toplarsak halüsinasyon biter" demeyi engelliyor?
 
-Çünkü veri büyüdükçe bir kez geçen olguların **sayısı** da büyür. Yeni veri, daha önce hiç görülmemiş binlerce az bilinen olguyu getirir ve bunların çoğu yine tek seferlik olur. Taban oran veriyle otomatik olarak sıfıra gitmez; hangi olguların kaç kez geçtiğine bağlıdır. Uydurmayı azaltmanın yolu veriyi büyütmekten değil, modelin bilmediğini söyleyebilmesinden geçer — yani kalibrasyonu bilerek bozmaktan.
+Çünkü veri büyüdükçe bir kez geçen olguların **sayısı** da büyür. Yeni veri, daha önce hiç görülmemiş binlerce az bilinen olguyu getirir ve bunların çoğu yine tek seferlik olur. Taban oran veriyle otomatik olarak sıfıra gitmez; hangi olguların kaç kez geçtiğine bağlıdır. Uydurmayı azaltmanın yolu veriyi büyütmekten değil, modelin bilmediğini söyleyebilmesinden geçer — yani eğitim dağılımını birebir taklit etmekten, bu dar anlamdaki kalibrasyondan, bilerek sapmaktan.
 
 ## Neden geçmiyor: sınavın teşviki
 
@@ -92,11 +94,11 @@ Tahmin, susmayı her koşulda yener. Şimdi klasik sınavlardaki düzeltme form�
 
 Artık iki seçenek eşit; güven yüzde 25'in altına düştüğünde susmak kârlı hâle gelir. Değişen tek şey puanlama kuralı.
 
-![İki puanlama düzeni yan yana: solda yanlışın sıfır getirdiği ikili puanlamada tahminin beklenen değerinin susmayı geçtiği, sağda yanlışın ceza getirdiği düzende iki seçeneğin eşitlendiği ve eşiğin altında susmanın kârlı olduğu gösterilir.](assets/sinavin-tesviki.svg "Şekil 2 — Puanlama kuralı davranışı belirler")
+![Yatay eksen modelin doğru bilme olasılığı, 0'dan 1'e; dikey eksen tahmin etmenin beklenen puanı. "Bilmiyorum de" her durumda 0 olan kesikli yatay çizgidir. Yanlışın 0 puan aldığı ikili puanlamada tahmin çizgisi 0'dan 1'e çıkar ve hiçbir yerde sıfırın altına inmez; yüzde 25'te değeri 0,25'tir. Yanlışın 1/3 puan götürdüğü kuralda çizgi −1/3'ten başlar, yüzde 25 eşiğinde sıfırı keser ve 1'de öbür çizgiyle buluşur. Eşiğin solunda sıfırın altında kalan üçgen gölgelidir: orada susmak kârlıdır.](assets/sinavin-tesviki.svg "Şekil 2 — Puanlama kuralı davranışı belirler")
 
-Şekil 2'nin gösterdiği şey teknik değil kurumsal bir sorun. Çalışmanın önerdiği çözüm de buna uygun: yeni bir halüsinasyon değerlendirmesi eklemek yerine, liderlik tablolarına hâkim olan mevcut değerlendirmelerin **puanlamasını** değiştirmek. Bu çalışmanın hakem sürecinden geçmemiş bir teknik rapor olduğunu belirtelim; argümanın kendisi ise 16\. makalede ölçtüğümüz gerçeklerin doğrudan sonucudur.
+Şekil 2 iki tabloyu bütün olasılıklara genişletiyor. İkili puanlamada tahmin çizgisi hiçbir yerde sıfırın altına inmiyor: model ne kadar az bilirse bilsin, tahmin etmek susmaktan kötü olmuyor. Ceza eklenince çizgi aşağı kayıyor ve yüzde 25'te sıfırı kesiyor; o noktanın solunda susmak kazandırıyor. Şeklin gösterdiği şey teknik değil kurumsal bir sorun. Çalışmanın önerdiği çözüm de buna uygun: yeni bir halüsinasyon değerlendirmesi eklemek yerine, liderlik tablolarına hâkim olan mevcut değerlendirmelerin **puanlamasını** değiştirmek. Bu çalışmanın hakem sürecinden geçmemiş bir teknik rapor olduğunu belirtelim; argümanın kendisi ise 16\. makalede ölçtüğümüz gerçeklerin doğrudan sonucudur.
 
-Öğrenci benzetmesinin sınırını da söyleyelim: bir öğrenci puanı umursadığı için tahmin eder, modelin ise umursaması yoktur. Benzetmenin biçimsel karşılığı şudur — model, eğitimi sırasında değerlendirmeye benzeyen sinyallerle ayarlanır ve o sinyal tahmini ödüllendiriyorsa, ortaya çıkan davranış tahmin etmek olur. Niyet yoktur; teşvik vardır.
+Öğrenci benzetmesi bir yerde fazla insanca: bir öğrenci puanı umursadığı için tahmin eder, modelin ise umursaması yoktur. Olan şey şudur: model, eğitimi sırasında değerlendirmeye benzeyen sinyallerle ayarlanır ve o sinyal tahmini ödüllendiriyorsa, ortaya çıkan davranış tahmin etmek olur. Niyet yoktur; teşvik vardır.
 
 13\. makaledeki ödül tartışması da aynı yere bakıyor. Ödül modeli insan memnuniyetini ölçer; kendinden emin, akıcı, kararlı bir cevap, "emin değilim" diye başlayan bir cevaptan daha çok beğenilir. Yani hem sınav hem de tercih verisi aynı yöne itiyor.
 
@@ -106,7 +108,7 @@ Artık iki seçenek eşit; güven yüzde 25'in altına düştüğünde susmak k�
 
 ## Tespit: aynı soruyu birkaç kez sormak
 
-Uydurmayı azaltmadan önce fark etmek gerekiyor. Buradaki en zarif fikirlerden biri, Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn ve Yarin Gal'in 2024'te Nature'da yayımladığı çalışmadan geliyor ve dayanağı yukarıdaki tanım: model sebepsiz uyduruyorsa, aynı soruyu yeniden sorduğunda başka bir şey uydurur.
+Uydurmayı azaltmadan önce fark etmek gerekiyor. Bunun için güçlü bir fikir Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn ve Yarin Gal'in 2024'te Nature'da yayımladığı çalışmadan geliyor ve dayanağı yukarıdaki tanım: model sebepsiz uyduruyorsa, aynı soruyu yeniden sorduğunda başka bir şey uydurur.
 
 Naif uygulama işe yaramaz. Modelin ürettiği metinlerin çeşitliliğini doğrudan ölçersen, aynı şeyi farklı kelimelerle söylemeyi de belirsizlik sanırsın: "Paris" ile "Fransa'nın başkenti Paris'tir" iki farklı dizedir ama tek bir cevaptır.
 
@@ -124,7 +126,7 @@ Uydurmayı azaltma önerileri bir yığın hâlinde sunuluyor ama hepsi aynı ye
 
 **Çıktıya müdahale.** Semantik belirsizlik gibi ölçüler cevabı ürettikten sonra devreye girer: düşük güvenli cevaplar elenebilir, kullanıcıya işaretle sunulabilir ya da başka bir kaynağa yönlendirilebilir. Bu katmanın üstünlüğü, modelin kendisine hiç dokunmadan çalışması; bedeli ise hesap — tek cevap yerine birkaç cevap üretmek gerekir, yani her soru birkaç kat pahalılaşır. Bu ödünleşim, 16\. makaledeki verimlilik ölçüsünün neden ayrı bir sütun olarak raporlanması gerektiğinin somut bir örneği.
 
-**Eğitime müdahale.** Modelin belirsizken çekimser kalmasını öğretmek mümkündür ve tercih verisi bunun doğal aracıdır: "emin değilim" diyen cevap, kendinden emin yanlış cevaba tercih edilirse ödül modeli bunu öğrenir. Ama burada 11\. makaledeki hizalama vergisinin bir başka yüzü çıkar karşımıza — fazla çekimser bir model, cevabı bildiği yerlerde de susmaya başlar ve yardımseverliğini kaybeder. Dahası bu, kalibrasyonu bilerek bozmak demektir: model artık eğitim dağılımını taklit etmez, bilmediği yerde durur. Modelin kendi güveninin doğrulukla ne kadar örtüştüğü, yani kalibrasyon sorusunun kendisi, ileride ayrı bir makalenin konusu.
+**Eğitime müdahale.** Modelin belirsizken çekimser kalmasını öğretmek mümkündür ve tercih verisi bunun doğal aracıdır: "emin değilim" diyen cevap, kendinden emin yanlış cevaba tercih edilirse ödül modeli bunu öğrenir. Ama burada 11\. makaledeki hizalama vergisinin bir başka yüzü çıkar karşımıza — fazla çekimser bir model, cevabı bildiği yerlerde de susmaya başlar ve yardımseverliğini kaybeder. Dahası bu, Kalai ve Vempala'nın dar anlamındaki kalibrasyondan bilerek sapmak demektir: model artık eğitim dağılımını taklit etmez, bilmediği yerde durur. Modelin kendi güveninin doğrulukla ne kadar örtüştüğü, yani 16\. makaledeki anlamıyla kalibrasyon sorusu, ileride ayrı bir makalenin konusu.
 
 Üçünün ortak dersi şu: hiçbiri uydurmayı sıfırlamıyor, her biri onu başka bir yere taşıyor. Girdiye müdahale sorunu denetlenebilir hâle getirir, çıktıya müdahale görünür kılar, eğitime müdahale ise sıklığını yardımseverlik karşılığında azaltır.
 

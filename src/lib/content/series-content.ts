@@ -16,6 +16,7 @@ import {
   assertContiguousReadingOrder,
   assertUnique,
   assertValidClassificationBatches,
+  revisionOf,
   toDescriptor,
 } from "./catalog";
 import { assertCatalogMatch, estimateReadingMinutes } from "./articles";
@@ -243,6 +244,7 @@ export function createSeriesContent(config: SeriesConfig): SeriesContent {
       readingMinutes: estimateReadingMinutes(body),
       totalCount: loadCatalog().articles.length,
       classificationBatch: article.classificationBatch,
+      ...revisionOf(article),
     };
 
     return { meta, content };

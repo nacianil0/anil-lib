@@ -12,9 +12,11 @@ tags:
   - dilbilgisi
   - sema-tasarimi
   - kod-cozme
-content_hash: sha256:09e56d93703ba2be09589877866d199ed29c906206293c5b90cbc0060ee7f7a2
+content_hash: sha256:c27147629d0d0768ad832e51054a0d9254f4c614f0c4c8f1863fdc1c65629b58
 classification_version: 1
 classification_batch: 6
+revised_at: "2026-09-25"
+revision_note: "Şema bulgusu doğru bağlamına kondu: düşüş talimat düzeyinde ölçüldü, cevap-önce sırası modelin kendi seçimiydi; maske örneğinin hesabı düzeltildi."
 ---
 ## Cevabı bir program okuyacaksa
 
@@ -38,7 +40,7 @@ Bu üçüncü yolun mekanizması bir **ayrıştırıcıdır** (parser). Şimdiye
 
 Adım adım izleyelim. Model `{` yazmış olsun; ayrıştırıcının durumu "nesne açıldı, ilk anahtar bekleniyor"dur. Model tırnağı seçtiğinde durum "anahtar yazılıyor"a geçer ve geçerli küme genişler: herhangi bir harf ya da kapanış tırnağı. Beklenen alan adlarını ve türlerini tanımlayan bir **şema** (schema) da dayatılmışsa küme daha da daralır — anahtar adı yalnızca şemada tanımlı alanlardan biri olabilir, hatta ilk harf seçildiği anda geri kalanı tek bir olasılığa inebilir. Kapanış tırnağından sonra geçerli tek karakter iki noktadır; ondan sonra değerin türü şemadan okunur. Her adımda sözlüğün büyük bir kısmı elenir ve elenen oran, şema sıkılaştıkça artar.
 
-Bir ayrım da burada yapılmalı, çünkü pratikte karışıyor. "Geçerli JSON döndür" garantisi ile "şu şemaya uy" garantisi aynı şey değil. Birincisi yalnızca ayraçların dengeli, tırnakların kapalı olmasını sağlar; alan adlarına, sayısına ya da sırasına karışmaz. İkincisi bunların hepsini dayatır. Birazdan göreceğimiz ölçümlerde ikisi arasındaki fark, bir modelde altmış puandan fazla.
+Bir ayrım da burada yapılmalı, çünkü pratikte karışıyor. "Geçerli JSON döndür" garantisi ile "şu şemaya uy" garantisi aynı şey değil. Birincisi yalnızca ayraçların dengeli, tırnakların kapalı olmasını sağlar; alan adlarına, sayısına ya da sırasına karışmaz. İkincisi bunların hepsini dayatır. Ayrım makalenin son bölümünde önem kazanacak: şema alanların sırasını da belirleyebilir; yalnızca geçerli JSON isteyen bir kısıt ise sırayı modele bırakır.
 
 ![Bir kod çözme adımının çubuk grafiği. Yatay eksende aday token'lar, dikey eksende olasılıkları vardır. Geçerli adayların çubukları doludur; geçersiz olanlar boş bırakılmış ve üzerleri çizilmiştir. Grafiğin sağında, dikey bir ayırıcının ardından yalnızca geçerli üç çubuğun kaldığı ve toplamları bire gelecek biçimde yeniden ölçeklendiği ikinci bir grafik vardır. Altta, geçersiz adayların olasılığının sıfırlandığı, çekilişin yalnızca kalanlar arasından yapıldığı ve geçerliliğe üretilen metni izleyen bir ayrıştırıcının karar verdiği yazılıdır.](assets/uretim-maskesi.svg "Şekil 1 — Çekilişten önce daraltılan dağılım")
 
@@ -50,15 +52,15 @@ Bir ayrıntı da 10\. makaleyle doğrudan ilgili. Maske uygulandıktan sonra kal
 
 Şimdi bir soru. Maske yalnızca geçersiz token'ları eliyorsa, geriye kalan seçim modelin kendi tercihi olmaz mı? Yani kısıt, modeli yalnızca hatalardan mı koruyor?
 
-Hayır, ve sebebi Kanghee Park ve arkadaşlarının NeurIPS 2024'te sunduğu çalışmada çarpıcı bir örnekle gösteriliyor.
+Hayır, ve sebebi Kanghee Park ve arkadaşlarının NeurIPS 2024'te sunduğu çalışmada küçük ve elle izlenebilir bir örnekle gösteriliyor.
 
 Modelden "1 ile biten bir ikili dizi üret" diye istiyorlar. Kısıtsız bırakıldığında model bunu yaklaşık yüzde 90 oranında doğru yapıyor. Sonra biçimsel bir **dilbilgisi** (grammar) dayatıyorlar: geçerli diziler ya tam olarak `00000` ya da 1 ile başlayan beş uzunluklu dizilerdir.
 
-İlk token'da model 0'a yaklaşık 0,45, 1'e yaklaşık 0,30 olasılık veriyor. Maske ne yapar? Her iki token da geçerli bir devama açıktır: 0 ile yalnızca `00000`'a, 1 ile beş uzunluklu on altı ayrı diziye gidilebilir — ve bu on altının sekizi 1 ile biter. Dolayısıyla maske ikisini de bırakır ve model 0'ı kabaca yarı yarıya seçer. Ama 0'ı seçtiği anda tuzağa düşmüştür: o daldaki tek geçerli dizi `00000`'dır ve o da 1 ile bitmez.
+Çalışmanın mekanizmayı göstermek için çizdiği örnek dağılımda, model ilk token'da 0'a 0,45, 1'e 0,30 olasılık veriyor. Maske ne yapar? Her iki token da geçerli bir devama açıktır: 0 ile yalnızca `00000`'a, 1 ile beş uzunluklu on altı ayrı diziye gidilebilir — ve bu on altının sekizi 1 ile biter. Dolayısıyla maske ikisini de bırakır, geçersiz adayların payı atılır ve kalan iki olasılık toplamları bire gelecek biçimde yeniden ölçeklenir: 0'ın payı 0,45 ÷ (0,45 + 0,30) = 0,6 olur. Model on seferden altısında 0'ı seçer. Ama 0'ı seçtiği anda tuzağa düşmüştür: o daldaki tek geçerli dizi `00000`'dır ve o da 1 ile bitmez.
 
-Sonuç ölçülmüş: kısıt altında modelin 1 ile biten dizi üretme oranı yüzde 90'dan **yüzde 30'a** düşüyor. Dilbilgisi kusursuz biçimde uygulanmıştır; istem ise çiğnenmiştir.
+Sonuç: kısıt altında 1 ile biten dizi üretme oranı yüzde 90'dan **yüzde 30'a** düşüyor. Kaybın büyük kısmının ilk adımda verildiğini elle de görebilirsin: 1 ile biten bir diziye yalnızca 1 dalından gidilebilir ve model o dala yüzde 40 olasılıkla girer; dolayısıyla oran, sonraki adımlar ne olursa olsun yüzde 40'ı geçemez. Dilbilgisi kusursuz biçimde uygulanmıştır; istem ise çiğnenmiştir.
 
-![Bir ağaç şeması. Kökten iki dal çıkar. Sol dal sıfır token'ıyla etiketlenmiş ve olasılığı 0,45 yazılıdır; bu dal aşağıda tek bir yaprağa, beş sıfırdan oluşan diziye iner. Sağ dal bir token'ıyla etiketlenmiş ve olasılığı 0,30 yazılıdır; bu dal aşağıda beş kutuya açılır: üçü bir ile biten tamamlamaları, ikisi sıfır ile biten tamamlamaları temsil eder ve sıfırla bitenler soluk çizilmiştir. Dalların altında sol dalın tek bir tamamlaması olduğu ve onun bir ile bitmediği, sağ dalın on altı tamamlamasından sekizinin bir ile bittiği yazılıdır. Şeklin altında maskenin her iki dalı da geçerli saydığı ve kısıt altında bir ile bitme oranının yüzde doksandan yüzde otuza düştüğü belirtilir.](assets/yerel-karar-kuresel-sonuc.svg "Şekil 2 — Maskenin göremediği şey")
+![Bir ağaç şeması. Kökten iki dal çıkar. Sol dal sıfır token'ıyla etiketlenmiş ve olasılığı 0,45 yazılıdır; bu dal tek bir yaprağa, beş sıfırdan oluşan diziye iner ve altında bu dizinin bir ile bitmediği yazılıdır. Sağ dal bir token'ıyla etiketlenmiş ve olasılığı 0,30 yazılıdır; bu dal dört kutuya açılır: ikisi bir ile, ikisi sıfır ile biten tamamlamalardır ve altında on altı tamamlamanın yarısının bir ile bittiği yazılıdır. Altta maskenin iki dalı da geçerli saydığı, yeniden ölçeklemeden sonra sol dalın payının 0,45 ÷ 0,75 = 0,6 olduğu, kısıt altında bir ile bitme oranının yüzde 90'dan yüzde 30'a düştüğü ve dal olasılıklarının çalışmanın örnek dağılımı olduğu belirtilir.](assets/yerel-karar-kuresel-sonuc.svg "Şekil 2 — Maskenin göremediği şey")
 
 Şekil 2 hatanın nerede olduğunu gösteriyor. Maske "bu token geçerli bir yere varabilir mi" sorusunu cevaplar. Cevaplamadığı soru şudur: "ne kadar olası bir yere varır?" Sol daldaki tek geçerli dizinin gerçek olasılığı 0,45 değil, o dizinin bütün adımlarının çarpımıdır ve çalışmanın hesabında bu değer on milyarda iki mertebesine iniyor. Maske bunu göremez, çünkü kararı yalnızca bir adım ileriye bakarak verir.
 
@@ -83,9 +85,9 @@ Luca Beurer-Kellner ve arkadaşlarının ICML 2024'te sunduğu çalışma bunun 
 | hizalamayı gözetmeyen kısıt, ikinci araç | 0,375 |
 | token hizalı kısıt | 0,418 |
 
-İki aracın da geçerli JSON ürettiğini vurgulamak gerekiyor; fark yalnızca hangi token yolundan geçildiğinde. Aynı çalışma ileriye bakış derinliğini de ayrı ayrı ölçüyor. Hiç ileriye bakmayan bir maske doğruluğu 0,308'e, bir token ileriye bakan 0,100'e düşürüyor; tam hizalı düzen ise kısıtsız üretimin bir tık üstünde kalıyor. Yani kaybın kaynağı kısıtın kendisi değil, **kötü uygulanmış** kısıt.
+Çalışmanın çıktının iyi biçimli olup olmadığını ölçen sayısı dört düzende de birbirine yakın (0,95 ile 0,97 arası); fark biçimde değil, hangi token yolundan geçildiğinde. Aynı çalışma, maskenin köprü token'larını ne kadar ileriye bakarak değerlendirdiğini de ayrı ayrı ölçüyor. Hiç ileriye bakmayan bir maske doğruluğu 0,308'e, bir token ileriye bakan 0,100'e düşürüyor; tam hizalı düzen ise kısıtsız üretimin bir tık üstünde kalıyor. Sıranın düz olmaması öğretici: kayıp, ileriye bakışın miktarıyla değil, hangi köprü token'larının yasaklandığıyla ilgili. Yazarların incelemesine göre bu düzenlerde `},` gibi köprü token'ları kullanılamadığı için model alışılmadık boşluk düzenlerine zorlanıyor ve bu, akıl yürütmeyi de bozuyor. Yani kaybın kaynağı kısıtın kendisi değil, **kötü uygulanmış** kısıt.
 
-Bir de sürpriz var: aynı hizalı yöntem, geçerli devamların bir kısmını önceden hesaplayıp 28\. makaledeki spekülatif üretimi kullanarak, şemalı JSON üretiminde kısıtsız üretimden 1,77 kat **hızlı** çalışıyor. Kısıt, doğru kurulduğunda bir yavaşlatıcı olmak zorunda değil.
+Bir de sürpriz var: aynı hizalı yöntem, şemalı JSON üretiminde kısıtsız üretimden 1,77 kat **hızlı** çalışıyor. Yöntem, 28\. makaledeki spekülatif üretime benzer bir fikir kullanıyor ama taslak model olmadan: dilbilgisinden ve önceki örneklerden, sıradaki birkaç token'ın ne olacağını tahmin edip modele tek geçişte doğrulatıyor. Kısıt, doğru kurulduğunda bir yavaşlatıcı olmak zorunda değil.
 
 Sebebi 28\. makaledeki servis katmanına bağlanıyor. Bir şemada dilbilgisi çoğu adımda tek bir devama izin verir: alan adının harfleri, iki nokta, tırnak, virgül. O adımlarda modele sormanın bir anlamı yoktur — cevap zaten bellidir. Lianmin Zheng ve arkadaşlarının NeurIPS 2024'te sunduğu çalışma bunu sistem düzeyinde otomatikleştiriyor: dilbilgisi durumları önceden sıkıştırılıyor ve tek devamlı zincirler tek adımda geçiliyor. Yani kısıt, üretilecek token sayısını azaltarak zaman kazandırabiliyor.
 
@@ -101,28 +103,30 @@ Kısıt bu yüzden bir doğrulama katmanının yerine geçmez. Yaptığı şey, 
 
 ## Şemanın kendisi bir müdahaledir
 
-Buraya kadar kısıtın nasıl uygulandığına baktık. Zhi Rui Tam ve arkadaşlarının EMNLP 2024 endüstri programında sunduğu çalışma başka bir soru soruyor: kısıtın **sıkılığı** ne yapıyor?
+Buraya kadar kısıtın nasıl uygulandığına baktık. Zhi Rui Tam ve arkadaşlarının EMNLP 2024 endüstri programında sunduğu çalışma başka bir soru soruyor: biçim kısıtının **sıkılığı** akıl yürütmeyi nasıl etkiliyor? Bu makalenin başındaki üç sertlik derecesini yan yana ölçüyorlar: sağlayıcıların JSON kipi (kod çözme katmanında yalnızca geçerli JSON'u dayatan kısıtlı üretim), biçimi yalnızca talimatla istemek ve önce serbest metinle cevaplatıp sonra çevirtmek.
 
-Aynı matematik sorularını dört modele üç düzende soruyorlar. Sayılar doğruluk yüzdesi:
+İlk bulgu talimat düzeyinde ve bu ayrım önemli: aşağıdaki tabloda hiçbir maske yok. Aynı matematik sorularında (GSM8K) istemde ya yalnızca "cevabını JSON olarak ver" deniyor ya da buna uyulacak şema da veriliyor — alanlar gerekçe önce, cevap sonra gelecek biçimde. Her sayı, istemin ifadesi değiştirilerek yapılmış birkaç denemenin ortalama doğruluğu; parantez içindeki değer bu denemeler arasındaki standart sapma.
 
-| Model | serbest metin | JSON, şemasız | JSON, şemalı |
+| Model | serbest metin | JSON istemi, şemasız | JSON istemi, şemalı |
 |---|---|---|---|
-| claude-3-haiku | 86,51 | 86,99 | 23,44 |
-| gpt-3.5-turbo | 75,99 | 74,70 | 49,25 |
-| LLaMA-3-8B | 75,13 | 64,67 | 48,90 |
-| gemini-1.5-flash | 89,33 | 89,66 | 89,21 |
+| claude-3-haiku | 86,51 (0,8) | 86,99 (0,2) | 23,44 (22,9) |
+| gpt-3.5-turbo | 75,99 (3,1) | 74,70 (1,1) | 49,25 (12,0) |
+| LLaMA-3-8B | 75,13 (0,9) | 64,67 (2,2) | 48,90 (6,7) |
+| gemini-1.5-flash | 89,33 (0,8) | 89,66 (0,3) | 89,21 (1,5) |
 
-İlk satır tek başına bir uyarı: JSON istemek zararsızken, JSON'un **şemasını** dayatmak aynı modeli 86,99'dan 23,44'e düşürüyor. Son satır ise etkinin evrensel olmadığını gösteriyor — bir model neredeyse hiç etkilenmiyor.
+İlk satır tek başına bir uyarı: JSON istemek zararsızken, istemde bir şema da vermek aynı modeli ortalamada 86,99'dan 23,44'e düşürüyor. Parantezdeki sayı en az onun kadar önemli: şemalı düzende standart sapma 22,9 puan, yani sonuç istemin küçük ifade farklarına aşırı duyarlı hâle geliyor — 22\. makaledeki biçim duyarlılığının uç bir örneği. Son satır ise etkinin evrensel olmadığını gösteriyor; bir model neredeyse hiç etkilenmiyor. Bu şemada gerekçe cevaptan önce geldiği için düşüşü alan sırasıyla açıklayamayız ve çalışma da şemanın hangi özelliğinin zarar verdiğini ayrıştırmıyor.
 
-Sebep, çalışmanın en öğretici bulgusunda. Harf birleştirme görevinde GPT-3.5 Turbo'nun JSON kipiyle ürettiği cevapların **tamamı**, "cevap" alanını "gerekçe" alanından önce koymuş. Şema alanları o sırayla tanımlandığı için model önce cevabı yazmak zorunda kalıyor; yani ara adımları hiç üretmeden karar veriyor. 22\. makalede ölçtüğümüz ara adım kazancı, tek bir şema kararıyla silinmiş oluyor.
+Alan sırasının etkisi ikinci bir bulguda, bu kez kod çözme düzeyinde görünüyor. Harf birleştirme görevinde GPT-3.5 Turbo'nun JSON kipinde ürettiği cevapların **tamamı**, "cevap" alanını "gerekçe" alanından önce koymuş. JSON kipi yalnızca geçerli JSON'u garanti eder, alanların sırasına karışmaz; sırayı model kendisi seçmiş. Sonuç, modelin ara adımları hiç üretmeden karar vermesi: 22\. makalede ölçtüğümüz ara adım kazancı sessizce silinmiş oluyor.
 
 ![İki JSON şeması yan yana gösterilir. Solda cevap alanı önce, gerekçe alanı sonra gelir; altında modelin cevabı yazarken henüz hiçbir ara adım üretmemiş olduğu ve gerekçenin karardan sonra yazıldığı belirtilir. Sağda gerekçe alanı önce, cevap alanı sonra gelir; altında modelin cevabı yazmadan önce ara adımları üretmiş olduğu belirtilir. İki şemanın altında ortak bir satır, ikisinin de aynı derecede geçerli JSON ürettiğini fakat aynı doğruluğu vermediğini söyler.](assets/sema-sirasi.svg "Şekil 3 — Aynı şema, iki farklı alan sırası")
 
-Şekil 3'teki iki şema arasındaki tek fark iki satırın yeri. Model her adımda kendi ürettiği metne koşullanarak devam ettiği için — 10\. makaledeki otoregresif döngü — cevap alanı önce geldiğinde koşullanacak bir ara adım yoktur.
+Şekil 3'teki iki şema arasındaki tek fark iki satırın yeri. Model her adımda kendi ürettiği metne koşullanarak devam ettiği için — 10\. makaledeki otoregresif döngü — cevap alanı önce geldiğinde koşullanacak bir ara adım yoktur. Sırayı sabitleyen bir şema bu yüzden iki yöne de işler: cevabı öne koyan şema bu hatayı garanti eder, gerekçeyi öne koyan şema onu önler.
 
-Bulgunun tersi de var ve dürüst bir tablo için gerekli. Sınıflandırma görevlerinde aynı kısıt bazı modellerde doğruluğu **yükseltiyor**; cevap uzayı daraldığı için seçim hataları azalıyor. Yani biçim kısıtının etkisi göreve bağlı: ara adım gerektiren işlerde riskli, sabit bir kümeden seçim yapılan işlerde yardımcı.
+Bulgunun tersi de var. Sınıflandırma görevlerinde JSON kipi bazı modellerde doğruluğu **yükseltiyor**; cevap uzayı daraldığı için seçim hataları azalıyor. Yani biçim kısıtının etkisi göreve bağlı: ara adım gerektiren işlerde riskli, sabit bir kümeden seçim yapılan işlerde yardımcı.
 
-Bir yanlış açıklamayı da eliyorlar. Düşüşün sebebi ayrıştırma hataları değil: bir modelde ayrıştırma hata oranı binde 1,5 civarındayken başarı farkı yüzde 38'e çıkıyor. Kaybolan şey biçim değil, akıl yürütme.
+Bir yanlış açıklamayı da eliyorlar. Düşüşün sebebi ayrıştırma hataları değil: LLaMA-3-8B'de harf birleştirme görevinin JSON biçiminde ayrıştırma hata oranı binde 1,5 civarındayken başarı farkı 38 puana çıkıyor. Kaybolan şey biçim değil, akıl yürütme.
+
+Bu sayıların sınırını da kaydetmek gerekiyor. Hepsi tek bir çalışmanın, belirli istem ve şema metinleriyle aldığı ölçümler; bir önceki bölümdeki ölçüm ise doğru uygulanmış bir kısıtın kısıtsız üretim kadar doğru olabildiğini gösteriyordu. "Biçim kısıtı akıl yürütmeyi bozar" bu yüzden genel bir yasa değil: düşüşün ne kadarının kısıtın kendisinden, ne kadarının alan sırasından, istemin ifadesinden ve uygulamanın kalitesinden geldiği bu ölçümlerde ayrışmış değil.
 
 > **Kendini yokla:** Şemadaki alanların sırası bu kadar belirleyiciyse, aynı şemayı kullanan iki uygulamadan biri neden hiç sorun yaşamayabilir?
 
@@ -132,11 +136,11 @@ Aynı çalışmada üçüncü düzen — önce serbest metinle cevaplatıp sonra
 
 ## Yapılandırılmış çıktının disiplini
 
-**Şemanın alan sırası bir performans kararıdır.** Ara adımların yazılacağı alan, cevap alanından **önce** gelmelidir. Aksi hâlde model düşünmeden cevap vermek zorunda kalır.
+**Şemanın alan sırası bir performans kararıdır.** Ara adımların yazılacağı alan, cevap alanından **önce** gelmelidir. Sırayı şemayla sabitlemezsen model onu kendisi seçer ve cevabı öne koyabilir.
 
-**Şemayı gerektiği kadar sıkı tut.** Ölçümde en büyük düşüş, biçimi istemekten değil şemayı dayatmaktan geldi. İhtiyacın olmayan alan kısıtlarını koyma.
+**Şemayı gerektiği kadar sıkı tut.** Ölçümde en büyük düşüş JSON istemekten değil, isteme şemayı da eklemekten geldi; şema, sonucu istemin ifadesine çok daha duyarlı yaptı. İhtiyacın olmayan alan kısıtlarını koyma ve şemalı istemi birden çok ifadeyle ölç.
 
-**Kısıtın uygulanışını sor.** Token hizalı bir uygulama kısıtsız üretimin doğruluğunu korur; naif bir uygulama on puana varan kayıp verir. İkisi de aynı geçerli JSON'u üretir.
+**Kısıtın uygulanışını sor.** Token hizalı bir uygulama kısıtsız üretimin doğruluğunu korur; köprü token'larını yanlış eleyen uygulamalar ölçümde 4 ile 31 puan arasında kayıp verdi. Hepsi benzer oranda iyi biçimli JSON üretir.
 
 **Ara adım gerektiren işte kısıtı gevşet, seçim işinde sıkılaştır.** Etki göreve göre işaret değiştiriyor.
 
@@ -146,7 +150,7 @@ Aynı çalışmada üçüncü düzen — önce serbest metinle cevaplatıp sonra
 
 ### Sırada ne var
 
-Bu makalede aynı şeye tekrar tekrar çarptık. Şemanın sırası ara adımları siliyordu; 22\. makalede ara adımların kazancını ölçmüştük; 15\. makalede bir toplama işleminin ara adımlarla düzeldiğini görmüştük. Model bir cevaba varmadan önce metin üretmek, ölçülebilir biçimde işe yarıyor.
+Bu makalede aynı şeye tekrar tekrar çarptık. Cevabın gerekçeden önce yazılması ara adımları siliyordu; 22\. makalede ara adımların kazancını ölçmüştük; 15\. makalede bir toplama işleminin ara adımlarla düzeldiğini görmüştük. Model bir cevaba varmadan önce metin üretmek, ölçülebilir biçimde işe yarıyor.
 
 Peki bu ara adımlar tam olarak nedir? Modelin ürettiği o cümleler bir düşünme süreci mi, yoksa doğru cevabı daha olası kılan bir istem devamı mı? Serinin bundan sonraki fazı bu soruyla açılıyor ve önce kavramın kendisini masaya yatırmak gerekiyor: bir dil modelinin "akıl yürütmesi" ne demek ve nasıl ölçülür?
 

@@ -8,7 +8,8 @@
  *  - script/foreignForeign/on* yasak
  *  - font-family belirtilmemeli (CSS devralır)
  *  - metin boyutu >= 13
- *  - metinler viewBox sınırları içinde kalmalı (kaba tahmin)
+ *  - metinler viewBox sınırları içinde kalmalı (kaba tahmin); son metin satırının tabanı
+ *    alt kenara en az 8 birim uzak (Türkçe inişler kırpılmasın)
  *
  * Kullanım: node tools/series/check-series-svg.cjs [asset-klasörü]
  */
@@ -18,6 +19,8 @@ const path = require("node:path");
 const ASSETS_DIR = process.argv[2]
   ? path.resolve(process.argv[2])
   : path.resolve(__dirname, "../../content/series/assets");
+
+const BOTTOM_MARGIN = 8;
 
 const ALLOWED_NON_VAR = new Set(["none", "transparent", "currentColor", "inherit"]);
 const COLOR_ATTRS = ["fill", "stroke", "stop-color", "color"];
@@ -93,6 +96,9 @@ function checkFile(file) {
       }
       if (y < 0 || y > vbH) {
         add(`metin dikeyde viewBox dışında: "${label}" (y=${y}, yükseklik ${vbH})`);
+      } else if (y > vbH - BOTTOM_MARGIN) {
+        // 13 birimlik Türkçe metinde iniş (ç, ş, g, y) ~3 birim; güvenli pay 8.
+        add(`son metin satırı alt kenara ${BOTTOM_MARGIN} birimden yakın: "${label}" (y=${y}, yükseklik ${vbH})`);
       }
     }
   }

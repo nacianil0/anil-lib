@@ -12,9 +12,11 @@ tags:
   - cift-inis
   - ezber
   - duzenlilestirme
-content_hash: sha256:39d96c9b6073d50048d7dfd739652554708e0628af63c53eb0f3f5e94c2dfdf4
+content_hash: sha256:7bdfa51982ce8ab2d0134950c75b7f2d8855254e2783d010ebed35bc086be28c
 classification_version: 1
 classification_batch: 23
+revised_at: "2026-09-25"
+revision_note: "Yanlılık–oynaklık tablosu, toplamın U biçimini ve dibin nereden geldiğini gösteren hesaplanmış eğrilere dönüştü; en iyi katsayının kökeni açıklandı."
 ---
 ## Azalttığımız sayı, umursadığımız sayı değil
 
@@ -30,19 +32,21 @@ Bu makalenin işi tek cümle: **eğitimde ölçtüğümüz sayı ile görülmemi
 
 Bir tahmincinin belirli bir girdideki hatasını, bütün olası eğitim kümeleri üzerinden ortalayarak düşün. **Yanlılık** (bias), tahmincinin ortalamada gerçek değeri ne kadar kaçırdığıdır — modelin fazla katı olmasından gelir. **Oynaklık** (variance), farklı eğitim kümelerinde tahminin ne kadar oynadığıdır — modelin fazla esnek olup gürültüyü kovalamasından gelir. **İndirgenemez hata** ise verinin kendi gürültüsüdür ve 2\. makalede gördüğümüz gibi hiçbir model onu azaltamaz. Karesel kayıpta beklenen hata bu üçünün toplamına **tam olarak** eşittir.
 
-Buradaki asıl ders toplamın kendisi değil, toplamın hangi yönde en küçüldüğü. Elle görelim. Gerçek değeri 2,0 olan bir büyüklüğü, gürültü varyansı 1,5 olan tek bir ölçümle kestirmeye çalışalım. Tahmincimiz ölçümü bir c katsayısıyla çarpsın.
+Buradaki asıl ders toplamın kendisi değil, toplamın hangi yönde en küçüldüğü. Elle görelim. Gerçek değeri 2,0 olan bir büyüklüğü, gürültü varyansı 1,5 olan tek bir ölçümle kestirmeye çalışalım. Tahmincimiz ölçümü bir c katsayısıyla çarpsın. İki kalemi sözle kurmak kolay. Ölçüm ortalamada 2,0 olduğuna göre tahmin ortalamada c × 2,0'dır; yanlılık, bunun gerçek değerden farkı: (c − 1) × 2,0. c 1'den küçükse tahmin ortalamada gerçeğin altında kalır. Oynaklık ise ölçümün gürültüsünün c ile ölçeklenmiş hâlidir: c² × 1,5. Ölçümü küçülttükçe gürültüsü de küçülür. Örneğin c = 0,5'te yanlılığın karesi 1,0, oynaklık 0,375, toplam 1,375.
 
-![Beş satırlık bir tablo ve altında bir kutu. Kurulum satırında gerçek değer 2,0, ölçüm gürültüsünün varyansı 1,5 ve tahmincinin ölçümü c katsayısıyla çarptığı yazılıdır. Tablonun sütunları: katsayı c, yanlılık, yanlılığın karesi, oynaklık, toplam ve işaret. Satırlar sırasıyla: c eşittir 0 için yanlılık eksi 2,0000, karesi 4,0000, oynaklık 0,0000, toplam 4,0000. c eşittir 0,5 için yanlılık eksi 1,0000, karesi 1,0000, oynaklık 0,3750, toplam 1,3750. c eşittir 0,7273 için yanlılık eksi 0,5455, karesi 0,2975, oynaklık 0,7934, toplam 1,0909 ve işaret sütununda en iyi yazar; bu satır vurguludur. c eşittir 0,9 için yanlılık eksi 0,2000, karesi 0,0400, oynaklık 1,2150, toplam 1,2550. c eşittir 1 için yanlılık 0,0000, karesi 0,0000, oynaklık 1,5000, toplam 1,5000 ve işaret sütununda yansız yazar. Alttaki kutuda iki cümle durur: yansız seçim 1,5000 verirken bilerek yanlı olan 1,0909 veriyor, yani yüzde 27,3 daha az; ve toplama indirgenemez hata 1,5000 olarak eklenir, hiçbir seçim onun altına inemez. En altta bir kayıt: bütün değerler verilen iki sayıdan elle hesaplanmıştır ve ölçülmüş bir deney değildir.](assets/yanlilik-oynaklik-takasi.svg "Şekil 1 — Yansız tahminci en iyi tahminci değildir")
+![Üç eğrili bir grafik. Kurulum: gerçek değer 2,0, gürültü varyansı 1,5, tahminci ölçümü c katsayısıyla çarpar. Yatay eksen katsayı c, 0'dan 1,1'e; düşey eksen beklenen hata, 0'dan 4'e. Yanlılığın karesi c eşittir 0'da 4'ten başlayıp c eşittir 1'de sıfıra iner. Oynaklık sıfırdan başlayıp c eşittir 1'de 1,5'e çıkar; iki eğri c yaklaşık 0,62'de kesişir. Toplam eğrisi U biçimindedir: c eşittir 0'da 4,0, dibi c eşittir 0,7273'te 1,0909 ile vurgulanmıştır, c eşittir 1'deki yansız seçim 1,5000'dir. Altta kayıt: eğriler yanlılık kare eşittir 4 çarpı 1 eksi c'nin karesi ve oynaklık eşittir 1,5 çarpı c kare formüllerinden hesaplanmıştır; tahminde gürültünün kendisi, 1,5, her noktaya eklenir ve eğrilerin biçimini değiştirmez.](assets/yanlilik-oynaklik-takasi.svg "Şekil 1 — Yansız tahminci en iyi tahminci değildir")
 
-Şekil 1'in dördüncü satırı bu makalenin ilk sürprizi. c = 1 seçmek, yani ölçümü olduğu gibi kullanmak, **yansız** bir tahminci verir: ortalamada tam 2,0. Ama hatası 1,5000. c = 8/11 ≈ 0,7273 seçmek tahminciyi bilerek yanlı yapar ve hatayı 1,0909'a indirir — yüzde 27,3 daha az. Yanlılığın maliyeti 0,2975; oynaklıktan kazandırdığı 0,7066.
+Şekil 1 iki kalemi ve toplamlarını aynı eksende çiziyor; bu makalenin ilk sürprizi toplam eğrisinin dibinde. c = 1 seçmek, yani ölçümü olduğu gibi kullanmak, **yansız** bir tahminci verir: ortalamada tam 2,0. Ama hatası 1,5000. Dip ise c = 8/11 ≈ 0,7273'te: tahminciyi bilerek yanlı yapmak hatayı 1,0909'a indiriyor — yüzde 27,3 daha az. Yanlılığın maliyeti 0,2975; oynaklıktan kazandırdığı 0,7066. Dibin yeri de bir oran: gerçek değerin karesi 4, gürültü 1,5; en iyi c = 4 ÷ (4 + 1,5) = 8/11. Gürültü büyüdükçe en iyi c küçülür, yani tahminci ölçüme daha az güvenir.
 
-Düzenlileştirmenin bütün gerekçesi bu satırda. 2\. makalede polinom katsayılarına eklenen minik ceza tam olarak bunu yapıyordu: modeli bilerek yanlı hâle getirip oynaklığını düşürmek. 93\. makalede en büyük olabilirliğin kusuru olarak andığımız şey de aynı yerden bakılıyor — sonlu veriyi en iyi açıklayan parametre, en iyi tahmin eden parametre olmak zorunda değil.
+Bir sınırı da söyleyelim: dibi bulmak için gerçek değeri bilmemiz gerekti. Pratikte bilmediğimiz için ceza katsayısını doğrulama verisinde deneyerek ayarlarız; takasın yönü ise değişmez — biraz yanlılığı kabul etmek, oynaklığı ondan daha fazla düşürür.
+
+Düzenlileştirmenin gerekçesi bu dipte. 2\. makalede polinom katsayılarına eklenen minik ceza tam olarak bunu yapıyordu: modeli bilerek yanlı hâle getirip oynaklığını düşürmek. 93\. makalede en büyük olabilirliğin kusuru olarak andığımız şey de aynı yerden bakılıyor — sonlu veriyi en iyi açıklayan parametre, en iyi tahmin eden parametre olmak zorunda değil.
 
 Ayrışımın bir sınırı hemen söylenmeli: bu temiz üçe bölünme **karesel kayba** özgüdür. Dil modelinin kullandığı çapraz entropi kaybında ya da doğruluk gibi 0-1 ölçülerinde böyle bir toplamsal ayrışım kendiliğinden gelmez; benzer çerçeveler kurulabilir ama terimlerin toplanır olması artık bir seçimdir, bir teorem değil.
 
 > **Kendini yokla:** Bir modelin oynaklığı sıfırsa, o modelin iyi olduğunu söyleyebilir miyiz?
 
-Hayır. Her girdiye sabit bir sayı söyleyen modelin oynaklığı tam sıfırdır ve Şekil 1'in ilk satırında hatası en büyüktür. Oynaklık tek başına bir kalite ölçüsü değil, toplamın bir kalemi.
+Hayır. Her girdiye sabit bir sayı söyleyen modelin oynaklığı tam sıfırdır ve Şekil 1'de c = 0 noktasında hatası en büyüktür: 4,0. Oynaklık tek başına bir kalite ölçüsü değil, toplamın bir kalemi.
 
 ## Klasik cevabın tutmadığı yer
 
@@ -56,7 +60,7 @@ Chiyuan Zhang ve arkadaşlarının ICLR 2017'de sunduğu deneyi 72\. makalede ez
 
 Çürütülen şeyin adını koyalım. Vladimir Vapnik ile Alexey Chervonenkis'in 1971 tarihli çalışması, bir model ailesinin ne kadar farklı etiketlemeyi üretebildiğini sayan bir kapasite ölçüsü kurar ve eğitim hatasıyla gerçek hata arasındaki farkın, örnek sayısı büyüdükçe bu ölçüyle sınırlanan bir miktarın altında kaldığını gösterir. Yöntemin adı **düzgün yakınsama** (uniform convergence): sınır, ailedeki **bütün** modeller için aynı anda geçerli olmak zorundadır ve bu yüzden ailenin en kötü üyesine göre kurulur.
 
-Rastgele etiket deneyinin kırdığı yer tam burası. Aynı aile, aynı yordamla, hem gerçek hem rastgele etiketi ezberleyebiliyorsa kapasite ölçüsü iki durumda da aynıdır — oysa gerçek fark yetmiş beş puandır. Yalnızca modele bakan bir sınır bu farkı ilkece açıklayamaz.
+Rastgele etiket deneyinin kırdığı yer tam burası. Aynı aile, aynı yordamla, hem gerçek hem rastgele etiketi ezberleyebiliyorsa kapasite ölçüsü iki durumda da aynıdır — oysa test doğruluğundaki gerçek fark yaklaşık yetmiş altı puandır (85,75'e karşı 9,78). Yalnızca modele bakan bir sınır bu farkı ilkece açıklayamaz.
 
 Vaishnavh Nagarajan ile Zico Kolter'ın NeurIPS 2019'da sunduğu çalışma bunu bir adım öteye taşıyor. İki bulgu veriyorlar. Birincisi ölçüm: literatürdeki sınırların birçoğu, eğitim kümesi **büyüdükçe** büyüyor — oysa daha çok veri daha iyi genelleme demek. İkincisi kurgu: gradyan inişiyle eğitilen aşırı parametreli doğrusal sınıflandırıcılarda, aileyi yalnızca gradyan inişinin gerçekten ürettiği ve test hatası küçük olan modellere daraltsan bile, düzgün yakınsama boş bir güvence veriyor. Yani sorun "yanlış aile seçildi" değil; yöntemin kendisi bu ortamda bilgi taşımıyor.
 
@@ -70,11 +74,11 @@ Preetum Nakkiran ve arkadaşlarının ICLR 2020'de sunduğu çalışma deseni de
 
 ![Üç bloklu bir liste ve altında bir kutu. Üstte deney kurulumu yazılıdır: ResNet18, CIFAR-10, etiketlerin yüzde 15'i bozulmuş, Adam ile 4.000 dönem. Birinci blok modelin genişliği: test hatası önce düşer, eşiğin civarında yükselir, sonra yeniden düşer; yani daha büyük model bir aralıkta daha kötüdür. İkinci blok eğitim süresi: aynı desen dönem sayısında da vardır, tepe model sıfır eğitim hatasına ulaştığı sırada oluşur, yani uzun eğitmek aşırı öğrenmeyi düzeltebiliyor. Üçüncü blok örnek sayısı ve vurguludur: kritik bölgede dördün katı veri iyileştirmiyor, bir çeviri düzeneğinde daha çok veri hatayı yükseltiyor. Alttaki kutuda birleştirici değişken tanıtılır: etkin model karmaşıklığı, yani yordamın sıfır eğitim hatasıyla uydurabildiği en büyük örnek sayısı; üç eksen de bu sayının eşiği geçmesiyle açıklanıyor ve desen en güçlü biçimde etiket gürültüsü varken görülüyor. En altta bir kayıt: sayılar ve koşullar kaynağın düzeneğinden alınmıştır ve ölçülmemiş bir eğri çizilmemiştir.](assets/cift-inisin-uc-ekseni.svg "Şekil 3 — Aynı desen, üç farklı eksen")
 
-Şekil 3'ün üçüncü satırı en rahatsız edici olanı: belirli bir bölgede eğitim verisini dörde katlamak test hatasını iyileştirmiyor, bir çeviri düzeneğinde ise doğrudan kötüleştiriyor. "Daha çok veri her zaman iyidir" cümlesi, koşulsuz doğru değil.
+Şekil 3'ün üçüncü satırına göre belirli bir bölgede eğitim verisini dörde katlamak test hatasını iyileştirmiyor, bir çeviri düzeneğinde ise doğrudan kötüleştiriyor. "Daha çok veri her zaman iyidir" cümlesi, koşulsuz doğru değil.
 
 Üçünü birleştiren değişkenin adı **etkin model karmaşıklığı**: bir eğitim yordamının sıfır eğitim hatasıyla uydurabildiği en büyük örnek sayısı. Dikkat: bu sayı yalnızca mimarinin değil, yordamın tamamının bir özelliği — eniyileyici, süre ve düzenlileştirme dâhil. Tepe, bu sayı eldeki veri miktarına eşitlendiği kritik bölgede oluşuyor.
 
-Sezgisi de bu tanımdan çıkıyor. Yordam veriyi ancak kıl payı uydurabiliyorsa, uyduran tek bir çözüm vardır ve o çözümü seçmekten başka seçenek yoktur — gürültü de dâhil her şeyi taşımak zorundadır. Kapasite arttıkça uyduran çözüm sayısı çoğalır ve bir önceki bölümdeki örtük tercih devreye girer: aralarından daha basit olanı seçilebilir hâle gelir. Tepe, seçeneksizliğin tepesi.
+Sezgisi de bu tanımdan çıkıyor. Yordam veriyi ancak kıl payı uydurabiliyorsa, uyduran tek bir çözüm vardır ve o çözümü seçmekten başka seçenek yoktur — gürültü de dâhil her şeyi taşımak zorundadır. Kapasite arttıkça uyduran çözüm sayısı çoğalır ve bir sonraki bölümde kuracağımız örtük tercih devreye girer: aralarından daha basit olanı seçilebilir hâle gelir. Tepe, seçeneğin en az olduğu yerde oluşuyor.
 
 Bir koşula dikkat: desen en güçlü biçimde **etiket gürültüsü varken** görülüyor. Kaynağın düzeneğinde etiketlerin yüzde 15'i bilerek bozulmuş; gürültü azaldıkça tepe küçülüyor. Bu, 9\. makaledeki dil modeli koşullarının neden U eğrisini kırmadığını da açıklıyor: orada veri boldur ve model aynı token'ı ezberleyecek kadar çok görmez.
 

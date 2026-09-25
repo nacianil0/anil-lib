@@ -54,7 +54,19 @@ function anchorFromRow(value: unknown): ReadingAnchor | null {
   return parsed.success ? parsed.data : null;
 }
 
-function progressQuery(sql: SqlClient, workspaceId: string, mutation: SyncMutation) {
+/**
+ * A progress write from a device that has not yet applied the account's latest reset
+ * is recorded as settled but not applied: it was made on top of reading state that
+ * the reset removed. The check runs inside the statement, so it also holds for a
+ * reset that commits while this request is in flight. `null` (a device with no prior
+ * progress) is never behind.
+ */
+function progressQuery(
+  sql: SqlClient,
+  workspaceId: string,
+  mutation: SyncMutation,
+  resetVersion: number | null,
+) {
   if (mutation.entityType !== "progress") throw new Error("Unexpected mutation type");
   const value = mutation.payload;
   return sql.query(
@@ -70,6 +82,13 @@ function progressQuery(sql: SqlClient, workspaceId: string, mutation: SyncMutati
         last_read_at, client_updated_at, device_id)
      SELECT $1, $4, $5, $6, $10::jsonb, $7, $8::timestamptz, $9::timestamptz, $3::uuid
      WHERE EXISTS (SELECT 1 FROM accepted)
+       AND (
+         $11::bigint IS NULL
+         OR NOT EXISTS (
+           SELECT 1 FROM reading_resets
+           WHERE workspace_id = $1 AND reset_version > $11::bigint
+         )
+       )
      ON CONFLICT (workspace_id, article_id) DO UPDATE SET
        heading_id = EXCLUDED.heading_id,
        scroll_ratio = EXCLUDED.scroll_ratio,
@@ -93,6 +112,7 @@ function progressQuery(sql: SqlClient, workspaceId: string, mutation: SyncMutati
       value.lastReadAt,
       value.clientUpdatedAt,
       anchorParameter(value.anchor),
+      resetVersion,
     ],
   );
 }
@@ -247,7 +267,7 @@ export async function synchronizeReaderData(
   workspaceId: string,
   cursor: number,
   operations: SyncMutation[],
-  options: { allowArchive: boolean },
+  options: { allowArchive: boolean; resetVersion: number | null },
 ): Promise<SyncResponse> {
   const now = Date.now();
   const articleIds = validArticleIds(options.allowArchive);
@@ -265,8 +285,18 @@ export async function synchronizeReaderData(
     return true;
   });
 
-  const queries = accepted.map((operation) => {
-    if (operation.entityType === "progress") return progressQuery(sql, workspaceId, operation);
+  // Progress writes go first, so this transaction takes reading_progress before any
+  // saved-place or highlight row — the order a reset takes them in. Interleaved, a
+  // reset with marks included and this batch would each hold what the other waits
+  // for. Entities are independent and the sort is stable, so nothing else changes.
+  const ordered = [
+    ...accepted.filter((operation) => operation.entityType === "progress"),
+    ...accepted.filter((operation) => operation.entityType !== "progress"),
+  ];
+  const queries = ordered.map((operation) => {
+    if (operation.entityType === "progress") {
+      return progressQuery(sql, workspaceId, operation, options.resetVersion);
+    }
     if (operation.entityType === "saved-place") {
       return savedPlaceQuery(sql, workspaceId, operation);
     }
@@ -274,12 +304,25 @@ export async function synchronizeReaderData(
   });
   if (queries.length > 0) await sql.transaction(queries);
 
+  // Read the reset before the changes. A device behind it clears all of its progress
+  // on this response, so it must receive every progress row that exists now — not
+  // only those past its cursor, some of which it may already have been sent and
+  // would otherwise lose. If a reset lands between these reads, the device is only
+  // told on its next sync, and gets the full set then.
+  const resetRows = (await sql.query(
+    `SELECT reset_version FROM reading_resets WHERE workspace_id = $1`,
+    [workspaceId],
+  )) as Record<string, unknown>[];
+  const resetVersion = resetRows[0] ? Number(resetRows[0].reset_version) : 0;
+  const behindReset = options.resetVersion !== null && options.resetVersion < resetVersion;
+  const progressCursor = behindReset ? 0 : cursor;
+
   const [progressRows, savedPlaceRows, highlightRows] = await Promise.all([
     sql.query(
       `SELECT * FROM reading_progress
        WHERE workspace_id = $1 AND change_version > $2
        ORDER BY change_version ASC`,
-      [workspaceId, cursor],
+      [workspaceId, progressCursor],
     ),
     sql.query(
       `SELECT * FROM saved_places
@@ -307,6 +350,7 @@ export async function synchronizeReaderData(
 
   return {
     cursor: Math.max(...versions),
+    resetVersion,
     acknowledged: accepted.map((operation) => operation.operationId),
     errors,
     changes: { progress, savedPlaces, highlights },

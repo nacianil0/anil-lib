@@ -12,7 +12,7 @@ tags:
   - heapsort
   - build-heap
   - tam-ikili-agac
-content_hash: sha256:74a75e933b94e44af3943845e7f9e6b24f11db206930599166a05de1bc17e257
+content_hash: sha256:e1cdc7e67fc1e09fc5d1492ab3fd3f8873b5745a2447e7f8a9040bcb31c4ea17
 classification_version: 1
 classification_batch: 4
 ---
@@ -77,7 +77,7 @@ Burada durup ne olduğunu adlandıralım. Yerel bir kural (ebeveyn ≤ çocuk) k
 
 ## Tam ikili ağaç ve dizinin geri dönüşü
 
-Zayıflatmanın ikinci karşılığı bellektedir ve daha da çarpıcıdır: heap **hiç işaretçi kullanmaz.**
+Zayıflatmanın ikinci karşılığı bellektedir: heap **hiç işaretçi kullanmaz.**
 
 Nedeni şu: değişmez artık şeklin nasıl olduğunu umursamıyor. Arama ağacında şekil, anahtarların değerleri tarafından zorlanır — 5'i nereye koyacağın serbest değildir. Heap'te ise ebeveyn–çocuk ilişkisi dışında bir şart olmadığı için şekli **biz seçebiliriz** ve mümkün olan en derli toplu şekli seçeriz: **tam ikili ağaç (complete binary tree)**. Tanımı şudur: son seviye dışındaki bütün seviyeler doludur, son seviye ise soldan sağa doğru boşluksuz doldurulmuştur.
 
@@ -95,7 +95,7 @@ Bu, temel yapılar makalesindeki indis aritmetiğinin ta kendisidir: dizinin ucu
 
 Şekildeki dizinin **sıralı olmadığına** dikkat et: 1, 3, 2, 7, 4, 9, 5. Heap özelliği sağlanıyor ama artan sıra yok. Bu, mülakatta en sık düzeltilen kavram yanılgısıdır.
 
-Yüksekliği de buradan okuruz. Derinlik d seviyesinde en fazla 2^d düğüm bulunur; n düğümlü tam bir ağacın yüksekliği tam olarak ⌊log₂ n⌋'dir. Bir milyon eleman için bu 19, bir milyar için 29 eder. Heap **her zaman** dengelidir ve bunun için hiçbir dengeleme işi yapılmaz — denge, temsilin bedava yan ürünüdür. Dengeli arama ağacında dönüşlerle satın aldığımız garantiyi burada tanım gereği alıyoruz.
+Yüksekliği de buradan okuruz. Derinlik d seviyesinde en fazla 2^d düğüm bulunur; n düğümlü tam bir ağacın yüksekliği tam olarak ⌊log₂ n⌋'dir. Bir milyon eleman için bu 19, bir milyar için 29 eder. Heap **her zaman** dengelidir ve bunun için hiçbir dengeleme işi yapılmaz — denge, temsilin yan ürünüdür. Dengeli arama ağacında dönüşlerle satın aldığımız garantiyi burada tanım gereği alıyoruz.
 
 > **Sesli anlat:** "Heap ile ikili arama ağacının değişmezleri nasıl farklıdır ve bu fark neyi ucuzlatır? Doksan saniyede anlat."
 >
@@ -131,9 +131,9 @@ Elinde n öğelik bir dizi var ve bunu bir heap hâline getirmek istiyorsun. İl
 
 Daha iyisi var ve nedeni sayma refleksiyle görülür. Diziyi baştan **zaten bir tam ikili ağaç** olarak kabul et — şekil olarak öyle, yalnızca heap özelliği bozuk. Sondan başa doğru her düğüm için aşağı sızdırma uygula. Bir düğüme sıra geldiğinde iki çocuğunun alt ağaçları zaten birer heap'tir, dolayısıyla tek bir aşağı sızdırma o alt ağacı heap yapmaya yeter.
 
-Maliyeti neden düşük? Çünkü aşağı sızdırmanın maliyeti düğümün **derinliği** değil **yüksekliğidir** ve tam bir ağaçta düğümlerin ezici çoğunluğu yaprağa yakındır. Düğümlerin yaklaşık yarısı yapraktır (yükseklik 0, hiç iş yok), dörtte biri yükseklik 1'dir, sekizde biri yükseklik 2'dir. Toplam iş, her yükseklik seviyesindeki düğüm sayısıyla o yüksekliğin çarpımlarının toplamıdır ve bu toplam n ile sınırlıdır; ∑ h/2^h serisi 2'ye yakınsadığı için sınır tam olarak n çıkar.
+Maliyeti neden düşük? Çünkü aşağı sızdırmanın maliyeti düğümün **derinliği** değil **yüksekliğidir** ve tam bir ağaçta düğümlerin ezici çoğunluğu yaprağa yakındır. Düğümlerin yaklaşık yarısı yapraktır (yükseklik 0, hiç iş yok), dörtte biri yükseklik 1'dir, sekizde biri yükseklik 2'dir. Toplam iş, her yükseklik seviyesindeki düğüm sayısıyla o yüksekliğin çarpımlarının toplamıdır. Yüksekliği h olan düğüm sayısı en fazla yaklaşık n/2^(h+1) olduğu için toplam n · (0/2 + 1/4 + 2/8 + 3/16 + ⋯) biçimindedir; parantezdeki seri 1'e yakınsar, yani toplam iş n'yi aşmaz.
 
-Sayılarla görelim. n = 1000 için derinlikler toplamı 7.987, yükseklikler toplamı 994. n = 10⁶ için derinlikler toplamı 17.951.445, yükseklikler toplamı 999.993. Aynı işi yapan iki yol arasında on sekiz kat fark var ve fark, hangi büyüklüğün toplandığından geliyor.
+Sayılarla görelim. n = 1000 için derinlikler toplamı 7.987, yükseklikler toplamı 994. n = 10⁶ için derinlikler toplamı 17.951.445, yükseklikler toplamı 999.993. Bu sayılar kendi hesabımdır; yükseklikler toplamının her iki boyutta da n'nin hemen altında kaldığına dikkat et. Bir milyon elemanda aynı işi yapan iki yol arasında on sekiz kat fark var ve fark, hangi büyüklüğün toplandığından geliyor.
 
 Burada bir ayrımı temiz tutmak gerekiyor, çünkü mülakatta karıştırılır. Bu **amortize bir sonuç değildir.** Dinamik dizide amortize maliyet, tek tek pahalı olabilen işlemlerin toplamını sınırlıyordu; burada ise her aşağı sızdırma zaten kendi düğümünün yüksekliği kadar iş yapar ve biz yalnızca **toplamı daha sıkı hesaplıyoruz**. Kaba hesap her düğüme log n biçiyor, sıkı hesap gerçek yükseklikleri topluyor. Sonuç en kötü durum için geçerli bir üst sınırdır, bir ortalama ya da muhasebe hilesi değildir.
 
@@ -141,7 +141,7 @@ Burada bir ayrımı temiz tutmak gerekiyor, çünkü mülakatta karıştırılı
 
 Öncelik kuyruğu sıralaması desenini heap ile çalıştırınca **heapsort** çıkar: önce heap'i kur, sonra n kez en uçtakini al. Maliyet O(n log n)'dir; doğrusal kurma bu sonucu değiştirmez, çünkü ikinci faz zaten n logaritmik işlem yapar.
 
-Heapsort'un ayırt edici özelliği **yerinde (in-place)** çalışmasıdır ve numara zariftir: heap'i sıralanacak dizinin bir öneki olarak tut. Alma işlemi en uçtakini zaten dizinin sonuna takas ediyordu; onu silmek yerine heap'in sınırını bir azaltırsan, çıkarılan öğeler dizinin arkasında sıralı bir kuyruk oluşturur. Bir max-heap ile yapıldığında dizi artan sırada biter. Ek bellek sabittir. Karşılaştırma ve takas sayısı 2n log₂ n'nin altında kalır.
+Heapsort'un ayırt edici özelliği **yerinde (in-place)** çalışmasıdır. Yöntem şu: heap'i sıralanacak dizinin bir öneki olarak tut. Alma işlemi en uçtakini zaten dizinin sonuna takas ediyordu; onu silmek yerine heap'in sınırını bir azaltırsan, çıkarılan öğeler dizinin arkasında sıralı bir kuyruk oluşturur. Bir max-heap ile yapıldığında dizi artan sırada biter. Ek bellek sabittir. Karşılaştırma ve takas sayısı 2n log₂ n'nin altında kalır.
 
 İki not, mülakat için kritik. Birincisi, heapsort **kararlı değildir**: takaslar uzak hücreler arasında yapılır ve eşit anahtarlı öğelerin göreli sırası korunmaz. İkincisi, en kötü durumda da O(n log n)'dir — bu, sıralama makalesinde göreceğimiz gibi her algoritmanın veremediği bir garantidir.
 
@@ -155,7 +155,7 @@ Heap neredeyse hiç "heap anlat" diye sorulmaz; bir tasarım sorusunun içinden 
 
 İlk soruya cevap arayüzü adlandırmak ve heap'i temsil olarak önermektir. İkinci soruya cevap zayıflatma argümanıdır: tam sıralama fazladan iştir; ihtiyacın olan tek şey en uçtakine sabit zamanda erişmek ve onu logaritmik zamanda değiştirmektir. Üçüncü soru cevabın kalitesini ölçer ve sınırı **kendin** söylemelisin: heap'te verilen bir anahtarı aramak doğrusaldır, ardıl ve öncül yoktur, sıralı gezinme yoktur, aralık sorgusu yoktur. Bunlar isteniyorsa dengeli arama ağacına dönersin. Aynı biçimde "en küçük ve en büyük ikisi birden sürekli isteniyor" denirse tek bir heap yetmez; iki uçlu yapılar ya da iki heap'in eşlenmesi konuşulur.
 
-Sorulabilecek iki ek ayrıntı hazırda dursun. Birincisi, heap'in ikili olması zorunlu değildir: her düğüme d çocuk verirsen yükseklik log_d n'ye iner ama her aşağı sızdırma adımında d çocuk arasından en küçüğü bulmak gerekir; takas ağırlıklı iş yükünde bu takas kârlı olabilir. Bu, blok tabanlı arama yapılarındaki dallanma çarpanı tartışmasının aynısıdır. İkincisi, dinamik dizi üstünde çalışıldığı için yeniden boyutlandırma varsa logaritmik sınırlar amortize olur.
+Sorulabilecek iki ek ayrıntı hazırda dursun. Birincisi, heap'in ikili olması zorunlu değildir: her düğüme d çocuk verirsen yükseklik log_d n'ye iner ve yukarı sızdırma kısalır, ama her aşağı sızdırma adımında d çocuk arasından en küçüğü bulmak gerekir. Ekleme ağırlıklı, en küçüğü almanın seyrek olduğu bir iş yükünde bu değiş tokuş kârlı olabilir. Bu, blok tabanlı arama yapılarındaki dallanma çarpanı tartışmasının aynısıdır. İkincisi, dinamik dizi üstünde çalışıldığı için yeniden boyutlandırma varsa logaritmik sınırlar amortize olur.
 
 Sık yapılan üç hata: heap'i sıralı sanmak; "heap ile arama logaritmik" demek (değildir, doğrusaldır); ve öncelik kuyruğunu FIFO kuyruğuyla karıştırmak.
 
@@ -165,7 +165,7 @@ Sık yapılan üç hata: heap'i sıralı sanmak; "heap ile arama logaritmik" dem
 
 Bu fazda üç kez aynı şeyi yaptık: bir değişmez seçtik, işlemleri o değişmeze bağladık ve maliyeti ağacın yüksekliğine indirdik. Ama temel yapılar makalesinin bıraktığı bir hücre hâlâ boş: **sırasız arama.** Dizi de bağlı liste de heap de "bu anahtar var mı?" sorusuna doğrusal cevap veriyor; dengeli arama ağacı logaritmik veriyor ve dahasını vermiyor.
 
-Sıradaki makale bu duvarı yıkıyor, ama bunun için karşılaştırma yapmayı tamamen bırakmak gerekiyor. Anahtarı başka anahtarlarla kıyaslamak yerine anahtarın **kendisinden bir adres hesaplarsak** arama tek adıma iner. Bedeli ise sayma makalesinde çoktan ispatladığımız bir gerçektir: anahtar uzayı kova sayısından büyükse çakışma kaçınılmazdır. O yüzden orada sorulacak doğru soru "çakışma olur mu?" değil, "çakışma olunca ne yapıyoruz ve maliyeti ne?" olacak.
+Sıradaki makale bu duvarı yıkıyor, ama bunun için karşılaştırma yapmayı tamamen bırakmak gerekiyor. Anahtarı başka anahtarlarla kıyaslamak yerine anahtarın **kendisinden bir adres hesaplarsak** arama, uygun varsayımlar altında, beklenen durumda sabit sayıda adıma iner. Bedeli ise sayma makalesinde çoktan ispatladığımız bir gerçektir: anahtar uzayı kova sayısından büyükse çakışma kaçınılmazdır. O yüzden orada sorulacak doğru soru "çakışma olur mu?" değil, "çakışma olunca ne yapıyoruz ve maliyeti ne?" olacak.
 
 ## Kaynakça
 

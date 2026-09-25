@@ -1,4 +1,4 @@
-<svg viewBox="0 0 720 332" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 336" xmlns="http://www.w3.org/2000/svg">
   <text x="16" y="26" font-size="14" text-anchor="start" fill="var(--text)">Aynı FLOP, iki farklı yer</text>
 
   <rect x="270" y="44" width="180" height="32" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
@@ -9,21 +9,21 @@
 
   <rect x="40" y="110" width="290" height="62" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
   <text x="56" y="132" font-size="13" text-anchor="start" fill="var(--cool)">ön eğitime harca</text>
-  <text x="56" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">6ND · modeli 14 kat büyüt</text>
+  <text x="56" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">6 × N × E · modeli 14 kat büyüt</text>
 
   <rect x="390" y="110" width="290" height="62" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <text x="406" y="132" font-size="13" text-anchor="start" fill="var(--accent)">çıkarıma harca</text>
-  <text x="406" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">4ND · küçük modele çok deneme</text>
+  <text x="406" y="154" font-size="13" text-anchor="start" fill="var(--text-muted)">4 × N × Ç · küçük modele çok deneme</text>
 
   <line x1="16" y1="192" x2="704" y2="192" stroke="var(--border)" stroke-width="1"/>
   <text x="40" y="214" font-size="13" text-anchor="start" fill="var(--text)">kolay ve orta sorular</text>
   <text x="360" y="214" font-size="13" text-anchor="start" fill="var(--accent)">çıkarıma harcamak kazanıyor</text>
   <text x="40" y="240" font-size="13" text-anchor="start" fill="var(--text)">en zor sorular</text>
   <text x="360" y="240" font-size="13" text-anchor="start" fill="var(--cool)">ön eğitime harcamak kazanıyor</text>
-  <text x="40" y="266" font-size="13" text-anchor="start" fill="var(--text)">çıkarım yükü çok yüksekse</text>
+  <text x="40" y="266" font-size="13" text-anchor="start" fill="var(--text)">çıkarım yükü yüksekse (R büyük)</text>
   <text x="360" y="266" font-size="13" text-anchor="start" fill="var(--cool)">ön eğitime harcamak kazanıyor</text>
 
   <line x1="16" y1="286" x2="704" y2="286" stroke="var(--border)" stroke-width="1"/>
-  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-muted)">eğitim bir kez ödenir, çıkarım her soruda; bu yüzden oran kararı belirler</text>
-  <text x="16" y="328" font-size="13" text-anchor="start" fill="var(--text-faint)">iki hesap birebir takas edilebilir değildir</text>
+  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-muted)">küçük modelin çıkarım çarpanı: R = 0,08 → ≈258 kat · R = 0,40 → ≈63 kat · R = 11 → ≈16 kat</text>
+  <text x="16" y="328" font-size="13" text-anchor="start" fill="var(--text-faint)">eğitim bir kez ödenir, çıkarım her soruda; iki hesap birebir takas edilemez</text>
 </svg>

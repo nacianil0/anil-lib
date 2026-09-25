@@ -20,9 +20,9 @@
   <rect x="342" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
   <text x="386" y="112" font-size="13" text-anchor="middle" fill="var(--text)">= 36</text>
   <rect x="454" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="498" y="112" font-size="13" text-anchor="middle" fill="var(--text)">36 ÷ 8</text>
+  <text x="498" y="112" font-size="13" text-anchor="middle" fill="var(--text)">36 ÷ 9</text>
   <rect x="566" y="66" width="88" height="86" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-  <text x="610" y="112" font-size="13" text-anchor="middle" fill="var(--text)">= 4,5</text>
+  <text x="610" y="112" font-size="13" text-anchor="middle" fill="var(--text)">= 4</text>
 
   <line x1="318" y1="109" x2="342" y2="109" stroke="var(--accent)" stroke-width="1"/>
   <line x1="430" y1="109" x2="454" y2="109" stroke="var(--accent)" stroke-width="1"/>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 486" role="img" aria-label="Beş satırlı tablo; sütunlar karar, ölçülmüş kırılma ve düzeltme. Kim: kitle işçileri model metnini insan metninden ayıramıyor, öğretmenler ayırıyor; işçilerin yüzde 42'si görev başına 40 saniyeden az; uzman çevirmenler kitle sıralamasını baştan yazıyor; düzeltme uzman ve belge bağlamı. Ölçek: göreli ve sürekli ölçek uzlaşmayı artırıyor; kendinden emin üslup olgusallık algısını çarpıtıyor; düzeltme yan yana çıktı ve ayrı ölçütler. Kaç: üç etiketleyici ve yüz örnek küçük farkı göremiyor; düzeltme güç hesabı. Uzlaşma: yüzde 80 ham uzlaşma 10 ile 20 puanlık sapmayı gizleyebiliyor; ikili tercihte insan uzlaşması yüzde 63 ile 66; düzeltme şansa göre düzeltilmiş katsayı. Maliyet: sohbet modeli kitle işçisini yaklaşık 25 puan geçiyor, etiket başına 0,003 dolardan ucuz, yaklaşık otuz kat; düzeltme ucuz olanı insanla doğrulamak. Altta insan değerlendirmesinin bir protokol olduğu ve her satırın raporlanması gerektiği yazılıdır.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 486" role="img" aria-label="Beş satırlı tablo; sütunlar karar, ölçülmüş kırılma ve düzeltme. Kim: kitle işçileri model metnini insan metninden ayıramıyor, öğretmenler ayırıyor; işçilerin yüzde 42'si görev başına 40 saniyeden az; uzman çevirmenler kitle sıralamasını baştan yazıyor; düzeltme uzman ve belge bağlamı. Ölçek: göreli ve sürekli ölçek uzlaşmayı artırıyor; kendinden emin üslup olgusallık algısını çarpıtıyor; düzeltme yan yana çıktı ve ayrı ölçütler. Kaç: üç etiketleyici ve yüz örnek küçük farkı göremiyor; düzeltme güç hesabı. Uzlaşma: ham uzlaşma yüzde 90'ı aşsa da puanlar 10 puandan fazla ayrışabiliyor; ikili tercihte insan uzlaşması yüzde 63 ile 66; düzeltme şansa göre düzeltilmiş katsayı. Maliyet: sohbet modeli kitle işçisini yaklaşık 25 puan geçiyor, etiket başına 0,003 dolardan ucuz, yaklaşık otuz kat; düzeltme ucuz olanı insanla doğrulamak. Altta insan değerlendirmesinin bir protokol olduğu ve her satırın raporlanması gerektiği yazılıdır.">
   <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">karar</text>
   <text x="130" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş kırılma</text>
   <text x="500" y="28" font-size="13" font-weight="bold" fill="var(--text)">düzeltme</text>
@@ -31,9 +31,9 @@
 
   <rect x="20" y="280" width="680" height="76" fill="var(--surface-muted)" />
   <text x="30" y="302" font-size="13" font-weight="bold" fill="var(--text)">uzlaşma</text>
-  <text x="130" y="302" font-size="13" fill="var(--text)">ham %80 uzlaşma 10–20 puanlık sapmayı</text>
-  <text x="130" y="320" font-size="13" fill="var(--text)">gizleyebiliyor; ikili tercihte insan–insan</text>
-  <text x="130" y="338" font-size="13" fill="var(--text)">uzlaşması %63–66, rastgele taban %50</text>
+  <text x="130" y="302" font-size="13" fill="var(--text)">ham uzlaşma %90'ı aşsa da puanlar 10</text>
+  <text x="130" y="320" font-size="13" fill="var(--text)">puandan fazla ayrışabiliyor; ikili tercihte</text>
+  <text x="130" y="338" font-size="13" fill="var(--text)">insan–insan uzlaşması %63–66, taban %50</text>
   <text x="500" y="302" font-size="13" fill="var(--text)">şansa göre düzeltilmiş</text>
   <text x="500" y="320" font-size="13" fill="var(--text)">katsayı: kappa, alfa, pi;</text>
   <text x="500" y="338" font-size="13" fill="var(--text)">neye uzlaşıldığı yazılır</text>

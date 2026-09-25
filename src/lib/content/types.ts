@@ -9,6 +9,8 @@ export type ArticleDescriptor = {
   level: Level;
   readingOrder: number;
   classificationBatch: number;
+  /** YYYY-MM-DD of the last meaningful editorial revision; absent if never revised. */
+  revisedAt?: string;
 };
 
 /** The article currently being read, with presentation metadata. */
@@ -17,6 +19,8 @@ export type CurrentArticle = ArticleDescriptor & {
   readingMinutes: number;
   tags: string[];
   totalCount: number;
+  /** Reader-facing sentence about the last revision; present exactly when `revisedAt` is. */
+  revisionNote?: string;
 };
 
 /** A previous/next navigation target, or null at the ends of the sequence. */

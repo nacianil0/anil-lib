@@ -12,7 +12,7 @@ tags:
   - sicaklik
   - cekirdek-ornekleme
   - acgozlu-secim
-content_hash: sha256:c4b45db3b8badd82ce33893ea2e5ef76b8e6506807e95d5613cb7b0e0703e988
+content_hash: sha256:9bfe419a0c9480b5d980f846ed8971e3c98ba90291b2b28a6bfe388b27f8a316
 classification_version: 1
 classification_batch: 1
 ---
@@ -32,7 +32,7 @@ Döngü üç adımlıdır ve hiç değişmez. Bağlamı modele verirsin; model s
 
 Şekil 1 döngünün tek turunu gösteriyor: bağlam, dağılım, seçim, genişlemiş bağlam. Döngüde geri alma yok. "güzel" bir kez seçildiğinde bağlam "Bugün hava çok güzel" olur ve sonraki bütün dağılımlar bu seçime koşullanır; model "keşke sıcak deseydim" diye geri dönemez.
 
-5\. makalede perplexity'yi bir yol ayrımı sayısı olarak okumuştuk: modelin her adımda kaç yollu bir kavşakta durduğunun ölçüsü. Üretim ise o kavşakta hangi yola sapıldığıdır. Benzetmenin bozulduğu yer şurası: gerçek bir kavşakta yollar eşdeğerdir ve yanlış saptığında geri dönebilirsin; buradaki yolların ağırlıkları birbirinden farklıdır ve seçilen token bağlama eklendiği için geri dönüş yoktur. Benzetmenin biçimsel karşılığı ise şudur: her adımda dağılımdan bir token seçilir, bağlama eklenir ve bir sonraki dağılım genişlemiş bağlama koşullanarak yeniden hesaplanır.
+5\. makalede perplexity'yi bir yol ayrımı sayısı olarak okumuştuk: modelin her adımda kaç yollu bir kavşakta durduğunun ölçüsü. Üretim ise o kavşakta hangi yola sapıldığıdır. Yalnız gerçek bir kavşakta yollar eşdeğerdir ve yanlış saptığında geri dönebilirsin; buradaki yolların ağırlıkları birbirinden farklıdır ve seçilen token bağlama eklendiği için geri dönüş yoktur: her adımda dağılımdan bir token seçilir, bağlama eklenir ve bir sonraki dağılım genişlemiş bağlama koşullanarak yeniden hesaplanır.
 
 Dikkat: model kelime değil token üretir; 4\. makaledeki ayrım burada da geçerlidir. Ve 1\. makaledeki tanım hiç değişmedi — tahmin, görülmemiş bir girdiye çıktı üretmektir.
 
@@ -40,7 +40,7 @@ Dikkat: model kelime değil token üretir; 4\. makaledeki ayrım burada da geçe
 
 En sade kural akla ilk geleni yapar: her adımda en yüksek olasılıklı token'ı al. Buna açgözlü seçim (greedy decoding) denir ve hava durumu örneğinde her seferinde "güzel" çıkarır. Karşı kutupta örnekleme (sampling) durur: dağılımı bir zar gibi kullanıp payları oranında çekiliş yapmak. Bunu 2\. makaledeki "rastgele seçilmiş küçük bir parça" ile karıştırma: orada rastgelelik verinin seçimindeydi, burada çıktının seçiminde.
 
-Açgözlü seçim kulağa doğru geliyor. Sonuç berbat.
+Açgözlü seçim kulağa doğru geliyor; ölçüldüğünde sonuç kötü.
 
 Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes ve Yejin Choi'nin 2020'de ICLR'de yayımlanan çalışması bunu ölçtü ve alanın konuya bakışını değiştirdi. GPT-2'nin büyük sürümünü aldılar, eğitim derleminin ayrılmış kısmından gelen kısa paragraflara koşullayarak beş bin metin pasajı ürettiler ve yalnızca üretim kuralını değiştirdiler. Tekrar ölçüsü şu: ilk iki yüz token içinde, en az iki token uzunluğundaki bir ifadenin sonda üst üste en az üç kez yinelenmesi.
 
@@ -75,9 +75,9 @@ Açgözlü seçim ile saf örnekleme arasında sürekli bir ayar var ve adı sı
 
 Önce sözle: her adayın olasılığını sıcaklığın tersi kuvvetine yükselt, sonra çıkan sayıları toplamları 1 olacak biçimde yeniden ölçekle. Sembolle, p bir adayın başlangıç olasılığı ve T sıcaklık olmak üzere, adayın yeni payı p^(1/T) bölü bütün adayların p^(1/T) değerlerinin toplamıdır.
 
-Sıcaklık aslında softmax'a giren ham skorlar üzerinde tanımlıdır — 7\. makalede bu skorlara logit dendiğini görmüştük — ve sıcaklık her logit'i T'ye böler. İki işlem birbirine denktir: T = 1'deki olasılıkları biliyorsan, logit'lere hiç dokunmadan yukarıdaki üs alma kuralıyla aynı sonuca varırsın. Bu bir yaklaştırma değil, özdeşliktir. Bir yan faydası daha var: formül, başlangıç sayılarının ortak bir çarpanla ölçeklenmesine duyarsızdır. Yani ham değerlerle de yeniden normalleştirilmiş değerlerle de başlasan aynı beş sayıyı bulursun; aşağıda aritmetiği kolay olsun diye ham değerlerle çalışıyoruz.
+Sıcaklık aslında softmax'a giren ham skorlar üzerinde tanımlıdır — 7\. makalede bu skorlara logit dendiğini görmüştük — ve sıcaklık her logit'i T'ye böler. İki işlem birbirine denktir: T = 1'deki olasılıkları biliyorsan, logit'lere hiç dokunmadan yukarıdaki üs alma kuralıyla aynı sonuca varırsın. Bu bir yaklaştırma değil, özdeşliktir.
 
-Bir dürüstlük notu: bu beş olasılığın toplamı 1 değil, 0,801. Hata değil — kalan yaklaşık yüzde 19,9'luk pay, sözlüğün geri kalanındaki on binlerce token'a dağılmıştır. Elle takip edilebilsin diye sözlüğü bu beş adaya indiriyoruz. Beşini kendi içlerinde normalleştirince, yani her birini 0,801'e bölünce, T = 1'deki çalışma dağılımımız çıkar: güzel 0,387, sıcak 0,275, soğuk 0,225, yağmurlu 0,112, mikroskop 0,001.
+Hesaba geçmeden bir hazırlık. Girişteki beş olasılığın toplamı 1 değil, 0,801: kalan yaklaşık yüzde 19,9'luk pay, sözlüğün geri kalanındaki on binlerce token'a dağılmıştır. Elle takip edilebilsin diye sözlüğü bu beş adaya indiriyoruz. Beşini kendi içlerinde normalleştirince, yani her birini 0,801'e bölünce, T = 1'deki çalışma dağılımımız çıkar: güzel 0,387, sıcak 0,275, soğuk 0,225, yağmurlu 0,112, mikroskop 0,001. Formülün işimizi kolaylaştıran bir özelliği var: sonunda yeniden normalleştirdiği için başlangıç sayılarını ortak bir çarpanla büyütüp küçültmek sonucu değiştirmez. Bu yüzden aşağıda, aritmetik kolay olsun diye 0,31, 0,22 gibi ham değerlerle çalışıyoruz; normalleştirilmiş değerlerle başlasan da aynı sayıları bulursun.
 
 Sayı koyalım. T = 0,5 için üs 1/T = 2, yani her olasılığın karesi: 0,31² = 0,0961; 0,22² = 0,0484; 0,18² = 0,0324; 0,09² = 0,0081; 0,001² = 0,000001. Toplam 0,185001. Her satırı bu toplama bölünce sırasıyla 0,519 / 0,262 / 0,175 / 0,044 çıkar; "mikroskop" ise milyonda beş, yani pratikte sıfır.
 
@@ -99,9 +99,9 @@ Küçük bir uyarı: bu makaledeki üç basamaklı olasılık listelerini toplad
 
 Bir sınır kaydı gerekiyor: bu beş sayı, kapalı bir dünyanın sayılarıdır. Gerçek bir modelde sıcaklığı değiştirmek, dışarıda bıraktığımız yüzde 19,9'luk kuyruğu da yeniden şekillendirir; dolayısıyla "gerçek modelde de mikroskop 0,007'ye çıkar" denemez.
 
-Sıcaklığı hileli bir zarın ağırlığı gibi düşünebilirsin: düşürmek ağır yüzü daha da ağırlaştırmak, yükseltmek zarı dengeye yaklaştırmaktır. Benzetmenin bozulduğu yer şurası: zarın yüzleri elle değiştirilebilir, oysa sıcaklık modelin bildiklerine hiç dokunmaz ve listeye tek bir yeni aday eklemez — olasılığı tam sıfır olan bir token hiçbir sıcaklıkta seçilebilir hâle gelmez, çünkü sıfırın pozitif her kuvveti yine sıfırdır. Benzetmenin biçimsel karşılığı ise şudur: parametreler sabit kalır, değişen tek şey softmax çıktısının şeklidir.
+Sıcaklığı hileli bir zarın ağırlığı gibi düşünebilirsin: düşürmek ağır yüzü daha da ağırlaştırmak, yükseltmek zarı dengeye yaklaştırmaktır. Zarın yüzleri elle değiştirilebilir, oysa sıcaklık modelin bildiklerine hiç dokunmaz ve listeye tek bir yeni aday eklemez — olasılığı tam sıfır olan bir token hiçbir sıcaklıkta seçilebilir hâle gelmez, çünkü sıfırın pozitif her kuvveti yine sıfırdır. Parametreler sabit kalır; değişen tek şey softmax çıktısının şeklidir.
 
-İsim de tesadüf değil. Popüler anlatı "sıcaklık"ı dil modelleri için uydurulmuş şirin bir metafor sayar; birincil kaynak başka yeri gösteriyor. David Ackley, Geoffrey Hinton ve Terrence Sejnowski'nin 1985 tarihli Boltzmann makineleri çalışmasında bir birimin, önceki durumundan bağımsız olarak açık duruma ayarlanma olasılığı, enerji farkının T'ye bölünmesiyle hesaplanır ve metin açıkça T'nin sıcaklık gibi davranan bir parametre olduğunu söyler; makalenin şekli aynı eğriyi T = 1,0, T = 4,0 ve T = 0,25 için çizer. Dürüst sonuç: formül gerçekten istatistiksel mekanikten ödünç alınmıştır, ama dil modelinde ne ısı ne enerji vardır — "enerji"nin yerinde logit durur ve ortada fiziksel bir denge süreci değil, tek adımlık bir yeniden ölçekleme vardır.
+İsim de tesadüf değil. Popüler anlatı "sıcaklık"ı dil modelleri için uydurulmuş şirin bir metafor sayar; birincil kaynak başka yeri gösteriyor. David Ackley, Geoffrey Hinton ve Terrence Sejnowski'nin 1985 tarihli Boltzmann makineleri çalışmasında bir birimin, önceki durumundan bağımsız olarak açık duruma ayarlanma olasılığı, enerji farkının T'ye bölünmesiyle hesaplanır ve metin açıkça T'nin sıcaklık gibi davranan bir parametre olduğunu söyler; makalenin şekli aynı eğriyi T = 1,0, T = 4,0 ve T = 0,25 için çizer. Sonuç şu: formül gerçekten istatistiksel mekanikten ödünç alınmıştır, ama dil modelinde ne ısı ne enerji vardır — "enerji"nin yerinde logit durur ve ortada fiziksel bir denge süreci değil, tek adımlık bir yeniden ölçekleme vardır.
 
 > **Kendini yokla:** Sıcaklığı sıfıra yaklaştırırsan ne olur — ve bu neden her zaman istenen şey değildir?
 
@@ -113,7 +113,7 @@ Yaygın anlatı sıcaklığı böyle tanıtır. Ölçüldüğünde bu kadar temi
 
 Max Peeperkorn, Tom Kouwenhoven, Dan Brown ve Anna Jordanous'un 2024'te Hesaplamalı Yaratıcılık Konferansı'nda en iyi öğrenci bildirisi ödülü alan çalışması, tek bir modele tek ve sabit bir hikâye yazma istemi (prompt) verip yedi ayrı sıcaklık değerinde yüzer hikâye üretti. Sonuç: sıcaklık, yenilikle zayıf ve tutarsızlıkla orta düzeyde ilişkili çıktı; tutunum ve tipiklikle hiçbir ilişkisi bulunmadı.
 
-Bu bulguyu da fazla uzatmamak gerekir; ölçüm tek model ve tek istem üzerinde kurulmuştur. Dürüst formülasyon şu: sıcaklık, dağılımın ne kadar sivri olacağını ayarlayan tek bir sayıdır ve çeşitlilik bunun doğrudan sonucudur. Sıcaklığı yükseltmek modele yeni bir fikir vermez — zaten dağılımda payı olan ama arkalarda kalmış adayların şansını artırır.
+Bu bulguyu da fazla uzatmamak gerekir; ölçüm tek model ve tek istem üzerinde kurulmuştur. Kanıtın taşıdığı formülasyon şu: sıcaklık, dağılımın ne kadar sivri olacağını ayarlayan tek bir sayıdır ve çeşitlilik bunun doğrudan sonucudur. Sıcaklığı yükseltmek modele yeni bir fikir vermez — zaten dağılımda payı olan ama arkalarda kalmış adayların şansını artırır.
 
 ## Kuyruğu kesmenin iki yolu
 
@@ -125,7 +125,7 @@ Hesabı yapalım. k = 3 dediğimizde hava durumu örneğinde güzel, sıcak ve s
 
 İkincisi, tabloda adını andığımız çekirdek örnekleme: adaylar olasılığa göre sıralanır ve kümülatif toplam p eşiğine ulaşana kadar aday alınır; yani çekirdek, eşiği geçmeye yetecek en küçük aday kümesidir. p = 0,7 için çalışma dağılımımızda kümülatif toplam önce 0,387, sonra 0,662, sonra 0,887 olur; eşik üçüncü adayda aşılır. Çekirdek {güzel, sıcak, soğuk} olur ve yeniden normalleştirince yine 0,437 / 0,310 / 0,254 çıkar.
 
-Aynı sonuç. Bunu tesadüf diye söylemek dürüstlük gereği: bu tek dağılımda iki kural aynı kümeyi seçti. Farkı görmek için ikinci bir bağlam gerekiyor. Kendi kurduğumuz küçük bir örnek olsun: "Türkiye'nin başkenti ___" için Ankara 0,92, İstanbul 0,03, Konya 0,02, İzmir 0,015, Bursa 0,015.
+Aynı sonuç, ama bu bir tesadüf: bu tek dağılımda iki kural aynı kümeyi seçti. Farkı görmek için ikinci bir bağlam gerekiyor. Kendi kurduğumuz küçük bir örnek olsun: "Türkiye'nin başkenti ___" için Ankara 0,92, İstanbul 0,03, Konya 0,02, İzmir 0,015, Bursa 0,015.
 
 k = 3 kuralı burada Ankara, İstanbul ve Konya'yı tutar; ham toplam 0,97 ve yeniden normalleştirilmiş paylar 0,948 / 0,031 / 0,021. Yani sabit k, cevabın apaçık olduğu bir bağlamda bile yaklaşık yüzde 5 ihtimalle yanlış bir şehir üretmeye izin veriyor. p = 0,9 kuralında ise kümülatif toplam daha ilk adayda 0,92 olur, eşik hemen aşılır ve çekirdek tek adaydan ibaret kalır: Ankara, olasılık 1,000. Aynı p = 0,9'u hava durumu bağlamına uygularsak kümülatif toplam 0,387, 0,662, 0,887, 0,999 diye ilerler; eşik ancak dördüncü adayda aşılır ve çekirdekte dört aday olur.
 
@@ -153,7 +153,7 @@ Yani "aynı soruyu sordum, başka cevap aldım" deneyiminin iki ayrı kaynağı 
 
 ## Akıcılık, doğruluk değildir
 
-Bütün makale tek bir cümleye sığıyor: üretim bir çekiliştir. Buradan rahatsız edici bir sonuç çıkar — çekiliş kuralı, çekildiği dağılımdan daha iyi olamaz.
+Bütün makale tek bir cümleye sığıyor: üretim bir çekiliştir. Buradan bir sınır çıkar: çekiliş kuralı, çekildiği dağılımdan daha iyi olamaz.
 
 Adam Tauman Kalai ve arkadaşlarının 2025 tarihli, hakem sürecinden geçmemiş ön çalışması bu sorunun kaynağını örnekleme ayarlarında değil, eğitim ve değerlendirme hedeflerinde arıyor: modeller belirsizliği kabul etmek yerine tahmin yürütmeye teşvik ediliyor, çünkü yaygın değerlendirmelerin çoğu ikili puanlıyor ve "bilmiyorum" cevabına hiç kredi vermiyor. İyi bir sınav çözücü olacak biçimde ayarlanan bir sistem, emin olmadığında susmaz, tahmin eder.
 

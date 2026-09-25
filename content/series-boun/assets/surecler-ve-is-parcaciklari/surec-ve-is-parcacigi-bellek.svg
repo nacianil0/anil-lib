@@ -29,7 +29,7 @@
   <text x="222" y="208" font-size="13" fill="var(--text-faint)">yığın büyür</text>
 
   <text x="15" y="296" font-size="13" fill="var(--text)">tek yürütme noktası, tek program sayacı</text>
-  <text x="15" y="316" font-size="13" fill="var(--text-faint)">tek yığın, adres uzayının tepesinde</text>
+  <text x="15" y="316" font-size="13" fill="var(--text-faint)">tek yığın, en yüksek adreslerde</text>
 
   <line x1="362" y1="36" x2="362" y2="308" stroke="var(--border)" stroke-width="1" />
 

@@ -12,9 +12,11 @@ tags:
   - hata-toleransi
   - kayip-sicramasi
   - gozlem
-content_hash: sha256:e0ada21d9110950037ed68fa64d6ec9b51df9d611872f2c1d6591b0f85eb4983
+content_hash: sha256:0fc1efb928f169554a07e57fe0c3d86a0e69a8055a5f24795124f1c273c3bc5e
 classification_version: 1
 classification_batch: 26
+revised_at: "2026-09-25"
+revision_note: "Kontrol noktası aralığı iki kaybın dengesiyle sezgiden kuruldu ve U eğrisiyle çizildi; OPT'nin yeniden başlatma sayısının hangi arızaya ait olduğu düzeltildi."
 ---
 ## Hızlı adım, uzun koşu
 
@@ -26,15 +28,17 @@ Orada anlattığımız şey olgulardı. Bu makale onların üzerine **karar katm
 
 ## Ne sıklıkta kaydedersin
 
-Bu sorunun kapalı bir cevabı var ve yapay zekâdan elli yıl eski. John Young'ın 1974'te *Communications of the ACM*'de yayımladığı iki sayfalık makale, uzun koşan bir hesapta en iyi kayıt aralığını türetiyor. Türetmeyi birlikte yapalım, çünkü üç satır.
+Bu sorunun kapalı bir cevabı var ve yapay zekâdan elli yıl eski. John Young'ın 1974'te *Communications of the ACM*'de yayımladığı iki sayfalık makale, uzun koşan bir hesapta en iyi kayıt aralığını türetiyor. Türetme kısa, ve sezgisi türetmeden önce kurulabiliyor.
 
 İki kaynaktan kaybediyorsun. Birincisi kaydın kendisi: her kontrol noktası `δ` kadar süre alıyor ve o süre boyunca iş ilerlemiyor. `T` aralıkla kaydedersen bu kalem `δ/T` oranında bir kayıp demek. İkincisi arızanın sildiği iş: arızalar `M` ortalama aralıkla geliyorsa bir aralıkta arıza görme olasılığı `T/M`, ve arıza aralığın ortasında bir yere düştüğü için ortalama `T/2` kadar iş kayboluyor; oran `T/(2M)`. Toplam kayıp:
 
 `f(T) = δ/T + T/(2M)`
 
-İki terim ters yönde çalışıyor: sık kaydedersen ilki, seyrek kaydedersen ikincisi büyüyor. En küçüğü için türevi sıfıra eşitle — `−δ/T² + 1/(2M) = 0` — ve çöz:
+İki terim ters yönde çalışıyor: sık kaydedersen ilki, seyrek kaydedersen ikincisi büyüyor. Aralığı biraz uzattığını düşün. Kayıt kaybından kazandığın pay aralık kısayken büyük, aralık uzadıkça küçük; arızanın sildiği işe eklediğin pay ise her uzunlukta aynı. En iyi nokta bu iki etkinin dengelendiği yer, ve bu biçimdeki bir toplamda denge, iki terimin **birbirine eşit** olduğu noktaya düşüyor. `δ/T = T/(2M)` eşitliğini çözünce:
 
 **T\* = √(2δM)** ve bu aralıkta kaçınılmaz kayıp **f(T\*) = √(2δ/M)**
+
+İkinci formül birincisinden hemen çıkıyor: en iyi noktada iki terim eşit olduğu için toplam, birinin iki katıdır, yani `2δ/T*`. Türevi sıfıra eşitlemek — `−δ/T² + 1/(2M) = 0` — aynı sonucu verir.
 
 Sayı koyalım. 8\. makaledeki Llama 3 kesitinden ortalama arıza aralığını biz çıkaralım: 54 gün 77.760 dakika eder, 419 beklenmedik kesintiye bölününce **185,6 dakika**, yani yaklaşık üç saat. Şimdi kayıt maliyetini değiştirip sonuca bakalım:
 
@@ -44,7 +48,11 @@ Sayı koyalım. 8\. makaledeki Llama 3 kesitinden ortalama arıza aralığını 
 | 2 dakika | 27,2 dakika | %14,7 |
 | 10 dakika | 60,9 dakika | %32,8 |
 
-Tablonun okunacak yeri son sütun: kayıt maliyetini otuz kat düşürmek kaybı sekiz kat düşürüyor. Bu, formülün kareköklü yapısından geliyor ve tek bir mühendislik önceliği söylüyor — **aralığı ayarlamak değil, kaydı ucuzlatmak.**
+Tablonun okunacak yeri son sütun: kayıt maliyetini altmış kat düşürmek — on dakikadan on saniyeye — kaybı sekiz kat düşürüyor. Bu, formülün kareköklü yapısından geliyor (√60 ≈ 7,7) ve tek bir mühendislik önceliği söylüyor — **aralığı ayarlamak değil, kaydı ucuzlatmak.**
+
+![Bir çizgi grafiği. Yatay eksen kayıt aralığı T, 0'dan 120 dakikaya; dikey eksen kaybedilen süre, yüzde 0'dan 60'a. Kesikli iki eğri: kaydın maliyeti δ bölü T soldan hızla inen bir eğri, arızanın sildiği iş T bölü 2M sıfırdan yükselen bir doğru. Kalın üçüncü eğri toplam kayıptır ve U biçimindedir. İki kesikli eğrinin kesiştiği yerde ikisi de yüzde 7,3'tür; toplamın en küçük noktası aynı aralıkta durur: T yıldız 27,2 dakika, kayıp yüzde 14,7. Altta: toplam, iki kaybın eşitlendiği yerde en küçüktür; δ bölü T eşittir T bölü 2M, buradan T yıldız eşittir karekök 2δM ve toplam kayıp karekök 2δ bölü M. Kayıt: δ 2 dakika, M 185,6 dakika; eğriler formülden çizilmiştir, ölçüm değildir.](assets/kontrol-noktasi-araligi.svg "Şekil 1 — En iyi aralık, iki kaybın eşitlendiği yer")
+
+Şekil 1 tablonun ikinci satırını çiziyor. Toplam kaybın dibi, iki kesikli eğrinin kesiştiği aralığın tam üstünde duruyor; dipten sağa ya da sola gitmek bir kaybı azaltırken öbürünü daha hızlı büyütüyor. Dibin yüksekliği ise δ'ya bağlı: kaydı ucuzlatmak bütün U'yu aşağı çekiyor.
 
 Bu yüzdeleri somutlaştıralım. Aynı 54 günlük kesitte iki dakikalık bir kayıt maliyeti, yüzde 14,7'lik kayıpla, sekiz güne yakın bir süreyi hiçbir şey öğrenmeden geçirmek demek; on saniyelik bir kayıt aynı kesitte iki buçuk günden azına mal olur. Aradaki beş buçuk gün on binlerce kartın beş buçuk günüdür ve kayıp eğrisinde hiç görünmez.
 
@@ -52,9 +60,7 @@ John Daly'nin 2006'da *Future Generation Computer Systems*'te yayımladığı ç
 
 Kaydın neden pahalı olduğunu da 106'nın defterinden okuyabiliriz. Kontrol noktası ağırlıkları **ve** eniyileyici durumunu tutar, yani parametre başına 16 bayt: 405 milyar parametrelik bir model için 6,48 TB. Bu hacmi dosya sistemine yazmak dakikalar sürer.
 
-![Üç formül, üç satırlık dört sütunlu bir tablo ve altında bir kutu. Üstte başlık: kontrol noktası aralığı, Llama 3 kesitinden arıza aralığı M eşittir 185,6 dakika. Formüller sırasıyla f parantez T eşittir δ bölü T artı T bölü 2M, yanında kaydın maliyeti artı arızanın sildiği iş yazar; T yıldız eşittir karekök içinde 2δM, yanında türevi sıfırlayan aralık yazar; f parantez T yıldız eşittir karekök içinde 2δ bölü M, yanında o aralıkta kaçınılmaz kayıp yazar. Tablonun sütunları kayıt maliyeti δ, en iyi aralık, kaçınılmaz kayıp ve 54 günde karşılığı. Birinci satır vurguludur, 10 saniye: 7,9 dakika, yüzde 4,2 ve 2,3 gün. İkinci satır 2 dakika: 27,2 dakika, yüzde 14,7 ve 7,9 gün. Üçüncü satır 10 dakika: 60,9 dakika, yüzde 32,8 ve 17,7 gün. Kutunun başlığı kaydı ucuzlatmanın yolu iki aşama; içinde birinci aşamanın koşuyu durdurup karta düşen payı makinenin ana belleğine yazdığı ve 405 milyar parametrenin 1.024 karta bölünmesiyle kart başına 6,33 GB düştüğü, ikinci aşamanın ise 6,48 TB'ı dosya sistemine arka planda taşıdığı yazılıdır. En altta iki kayıt: formül Young'dan ve iki aşamalı kayıt Jiang ve arkadaşlarından; M, tablodaki bütün değerler ve iki bayt hacmi bizim hesabımızdır.](assets/kontrol-noktasi-araligi.svg "Şekil 1 — Aralığı ayarlamak değil, kaydı ucuzlatmak")
-
-Şekil 1'in alt kutusu çözümün biçimini gösteriyor. Ziheng Jiang ve arkadaşlarının NSDI 2024'te sunduğu, on iki binden fazla kartlı bir üretim sistemini anlatan çalışma kaydı **iki aşamaya** ayırıyor: birinci aşamada her kart kendi durumunu makinenin ana belleğine yazıyor ve eğitime devam ediyor; ikinci aşamada bir arka plan süreci o kopyayı dağıtık dosya sistemine taşıyor. Koşuyu durduran yalnızca birinci aşama, ve yazarlar onu saniyeler mertebesine indirdiklerini bildiriyor.
+Kaydı ucuzlatmanın bilinen yolu onu ikiye bölmek. Ziheng Jiang ve arkadaşlarının NSDI 2024'te sunduğu, on iki binden fazla kartlı bir üretim sistemini anlatan çalışma kaydı **iki aşamaya** ayırıyor: birinci aşamada her kart kendi durumunu makinenin ana belleğine yazıyor ve eğitime devam ediyor; ikinci aşamada bir arka plan süreci o kopyayı dağıtık dosya sistemine taşıyor. Koşuyu durduran yalnızca birinci aşama, ve yazarlar onu saniyeler mertebesine indirdiklerini bildiriyor.
 
 Neden mümkün olduğunu hesaplayabiliriz: 6,48 TB'lık durum zaten 107'deki eksenler boyunca kartlara bölünmüş durumda. Bin yirmi dört kart arasında bölüşülmüşse kart başına 6,33 GB düşer, ve o kadarını kendi makinesinin belleğine yazmak kısa sürer. Dosya sistemine giden 6,48 TB'ın tamamı ise koşunun yolundan çıkmıştır.
 
@@ -68,7 +74,7 @@ Kaydı ucuzlattın; ikinci kalem arızanın fark edilme süresi. On iki bin kart
 
 Aynı üretim sistemi bu tarafı üç katmanda kuruyor. En altta **kalp atışı** iletileri var: her çalışan düzenli aralıklarla durumunu bildiriyor, ileti gelmezse sürücü koşuyu askıya alıp tanı sınamalarını başlatıyor. Sınamalar kasten hafif tutulmuş — kartlar arası bant ölçümü, komşu makinelerle bir hepsi-indirge denemesi — çünkü uzun bir tanı turu zaten kaybedilen süreyi büyütür. Sorunlu düğümler bulununca dışlanıyor, yerlerine sağlıklıları geliyor ve koşu son kontrol noktasından devam ediyor. Bildirilen süreler: arızayı bulup tanı sınamalarını çalıştırmak **on dakikadan az**, kesinti öncesindeki ilerlemeyi yakalamak **on beş dakika içinde**. Sonuç, etkin eğitim süresi oranının yüzde 90'ın üstünde kalması.
 
-Fakat her bozulma bir durma değil. Bu makalenin en sinsi kalemi **geride kalan** (straggler): çalışmaya devam eden ama ötekilerden yavaş olan bir makine. 107'de kurduğumuz düzende her adım bir eşitlemeyle bitiyor, dolayısıyla on iki bin kartın hızını en yavaş kart belirliyor. Çalışmanın gözlemi somut: belirli makineler aynı ileri geçişi ötekilerden yaklaşık **yüzde 10 daha yavaş** yapıyor. Böyle bir kayıp hiçbir hata günlüğüne düşmez; yalnızca kart başına adım süresi ölçülürse görünür.
+Fakat her bozulma bir durma değil. Fark edilmesi en zor kalem **geride kalan** (straggler): çalışmaya devam eden ama ötekilerden yavaş olan bir makine. 107'de kurduğumuz düzende her adım bir eşitlemeyle bitiyor, dolayısıyla on iki bin kartın hızını en yavaş kart belirliyor. Çalışmanın gözlemi somut: belirli makineler aynı ileri geçişi ötekilerden yaklaşık **yüzde 10 daha yavaş** yapıyor. Böyle bir kayıp hiçbir hata günlüğüne düşmez; yalnızca kart başına adım süresi ölçülürse görünür.
 
 Geride kalanı bulmak üçüncü katmanı gerektiriyor: ince taneli ölçüm. Aynı çalışma her sıranın kod parçalarını çipin kendi olay zamanlayıcılarıyla ölçüp bütün kümeyi tek bir ısı haritası olarak çiziyor; haritada bir sıranın 2,5 saniye, komşusunun 2,0 saniye sürdüğü tek bakışta görünüyor. Aynı araç bir sıra seçildiğinde onun veri, tensör ve boru hattı eksenlerindeki bağımlılıklarını da gösteriyor — yani 107'deki üç eksen burada bir hata ayıklama aracına dönüşüyor.
 
@@ -80,7 +86,7 @@ Geride kalanı bulmak üçüncü katmanı gerektiriyor: ince taneli ölçüm. Ay
 
 Şekil 2'nin üçüncü satırı bu bölümün asıl mesajı: durmayan bir arıza en pahalı arızadır, çünkü kendini bildirmez.
 
-Ölçeğin kendisinin de bir bedeli var ve 107'nin formülüyle uyumlu. Aynı çalışmada yığın büyüklüğü sabit tutulup kart sayısı artırıldığında kullanım oranı yüzde 59,1'den yüzde 55,2'ye iniyor. Yazarların açıklaması hesap–iletişim oranının düşmesi; 107'de türettiğimiz kabarcık oranı `(n/t − d)/(B/b)` da aynı yöne işaret ediyor — yığın sabitken kart sayısını büyütmek boşluğu büyütür. Yine de bu kurulum, on iki bin kartta yüzde 55,2'lik bir kullanım oranıyla, aynı ölçekte yüzde 41,2'de kalan taban sisteme göre 1,34 kat daha verimli.
+Ölçeğin kendisinin de bir bedeli var ve 107'nin formülüyle uyumlu. Aynı çalışmada yığın büyüklüğü sabit tutulup kart sayısı artırıldığında kullanım oranı yüzde 59,1'den yüzde 55,2'ye iniyor. Yazarların açıklaması hesap–iletişim oranının düşmesi; 107'de türettiğimiz kabarcık oranı `(p − 1)/m` da aynı yöne işaret ediyor — yığın sabitken kart eklemek ya hattı uzatır ya da hat başına düşen mikro yığını azaltır, ikisi de boşluğu büyütür. Yine de bu kurulum, on iki bin kartta yüzde 55,2'lik bir kullanım oranıyla, aynı ölçekte yüzde 41,2'de kalan taban sisteme göre 1,34 kat daha verimli.
 
 ## Kayıp sıçradığında
 
@@ -92,19 +98,19 @@ En açık kayıt, 106\. makalede kullanım oranı tablosunu aldığımız PaLM �
 
 Bu müdahalenin mümkün olmasının bir önkoşulu var ve kolayca gözden kaçıyor: "şu yığınları atla" diyebilmek için hangi adımda hangi yığının görüleceğinin baştan belli olması gerekiyor. Aynı çalışma veriyi, bir yığının içeriği yalnızca adım numarasının bir fonksiyonu olacak biçimde yazdıklarını söylüyor. 102\. makalede yeniden üretilebilirliği bir bilimsel erdem olarak kurmuştuk; burada aynı özellik bir operasyon aracı hâline geliyor — veri sırası yeniden üretilebilir değilse ne atlayacağını bilemezsin, ve birazdan geleceğimiz eleme deneyini de kuramazsın.
 
-Buradan "demek ki veri bozuktu" sonucu çıkar gibi görünüyor — ve çıkmıyor, çünkü ekip bunu sınamış. Aynı veri yığınlarını alıp **daha eski, farklı bir kontrol noktasından** başlayarak eğitmişler; sıçrama olmamış. İki koşunun tek farkı modelin o anki parametre durumuydu. Vardıkları sonuç bu yüzden hem dürüst hem öğretici: sıçrama belirli veri yığınlarının belirli bir parametre durumuyla **bileşiminden** doğuyor; ne tek başına veriden, ne tek başına modelden.
+Buradan "demek ki veri bozuktu" sonucu çıkar gibi görünüyor — ve çıkmıyor, çünkü ekip bunu sınamış. Aynı veri yığınlarını alıp **daha eski, farklı bir kontrol noktasından** başlayarak eğitmişler; sıçrama olmamış. İki koşunun tek farkı modelin o anki parametre durumuydu. Vardıkları sonuç bu yüzden temkinli: sıçrama belirli veri yığınlarının belirli bir parametre durumuyla **bileşiminden** doğuyor; ne tek başına veriden, ne tek başına modelden.
 
 Bu, 99\. makaleden beri savunduğumuz ölçüm disiplininin ta kendisi. Bir düzeltme işe yaradığında "neyi düzelttiğini" bilmek için ayrı bir deney gerekiyor, ve o deney burada bir açıklamayı elemek için kurulmuş.
 
 Sıçramanın içinde ne olduğunu görmek için başka bir yol daha var ve maliyeti çok daha düşük. Mitchell Wortsman ve arkadaşlarının ICLR 2024'te sunduğu çalışma, büyük ölçekte bildirilen iki kararsızlığı **küçük modellerde yeniden üretiyor**: yeter ki öğrenme oranı yükseltilsin. Birincisi dikkat skorlarının büyümesi — 9,4 milyon parametreli bir modelde skorların en büyüğü eğitim boyunca 10 mertebesinden 10⁶ mertebesine çıkıyor ve kayıp ıraksıyor; aynı olgu 4,8 milyar parametreli bir modelde on kat düşük bir öğrenme oranında görülüyor. İkincisi çıktı skorlarının olasılıklardan uzaklaşması. Büyük ölçekte kullanılan iki düzeltme — dikkatin sorgu ve anahtarlarını normalleştirmek ve çıktı skorlarına ek bir ceza koymak — küçük ölçekte de aynı işi görüyor.
 
-Sıçramaya verilen cevapları bu noktada üç düzeye ayırmak mümkün ve üçü de yayımlanmış kayıtlarda duruyor. En üstte **işletme düzeyi** cevap var: geri sar ve veriyi atla — PaLM ekibinin yaptığı. Ortada **hiperparametre düzeyi** cevap: 8\. makalede aktardığımız, Susan Zhang ve arkadaşlarının OPT raporu ile ekibin tuttuğu günlükte, kayıp ıraksadığında öğrenme oranı düşürülüp daha eski bir kontrol noktasından yeniden başlanmış ve iki ay içinde en az otuz beş kez elle müdahale edilmiş. En altta **mimari düzeyi** cevap: kararsızlığın doğduğu yeri değiştirmek. Üçünün maliyeti çok farklı — birincisi dakikalar, ikincisi bir insanın sürekli nöbeti, üçüncüsü bir sonraki koşunun tasarımı — ve hangisinin uygun olduğu koşunun nerede olduğuna bağlı.
+Sıçramaya verilen cevapları bu noktada üç düzeye ayırmak mümkün ve üçü de yayımlanmış kayıtlarda duruyor. En üstte **işletme düzeyi** cevap var: geri sar ve veriyi atla — PaLM ekibinin yaptığı. Ortada **hiperparametre düzeyi** cevap: 8\. makalede aktardığımız Susan Zhang ve arkadaşlarının OPT raporunda, kayıp ıraksadığında öğrenme oranı düşürülüp daha eski bir kontrol noktasından yeniden başlanmış. Aynı raporun sık anılan "iki ayda en az otuz beş elle yeniden başlatma" sayısı ise donanım arızalarına ait, ıraksamalara değil; ikisini karıştırmamak gerekiyor. En altta **mimari düzeyi** cevap: kararsızlığın doğduğu yeri değiştirmek. Üçünün maliyeti çok farklı — birincisi dakikalar, ikincisi bir insanın sürekli nöbeti, üçüncüsü bir sonraki koşunun tasarımı — ve hangisinin uygun olduğu koşunun nerede olduğuna bağlı.
 
-Aynı çalışma bir de ölçü öneriyor: öğrenme oranını üç büyüklük mertebesi boyunca değiştirdiğinde en iyi kayıptan ne kadar uzaklaştığın. Bu ölçü tek bir koşudan değil bir koşu ailesinden çıkıyor ve şunu gösteriyor: düzeltmeler duyarlığı azaltıyor, ama duyarlık model büyüdükçe yine de artıyor. Yani kararsızlık çözülmüş bir problem değil, ölçeğe göre yeniden pahalılaşan bir problem.
+Wortsman ve arkadaşlarının çalışması bir de ölçü öneriyor: öğrenme oranını üç büyüklük mertebesi boyunca değiştirdiğinde en iyi kayıptan ne kadar uzaklaştığın. Bu ölçü tek bir koşudan değil bir koşu ailesinden çıkıyor ve şunu gösteriyor: düzeltmeler duyarlığı azaltıyor, ama duyarlık model büyüdükçe yine de artıyor. Yani kararsızlık çözülmüş bir problem değil, ölçeğe göre yeniden pahalılaşan bir problem.
 
 ![Beş satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: bir kayıp sıçramasının tanısı, hangi koşu neyi eledi. Sütunlar yapılan, gözlenen ve öğrenilen. Birinci satır en büyük model eğitildi: yaklaşık 20 sıçrama gözlendi, gradyan kırpmanın tek başına yetmediği öğrenildi. İkinci satır aynı düzenle küçük modeller: hiç sıçrama yok, olgunun ölçeğe bağlı olduğu öğrenildi. Üçüncü satır 100 adım geri sarıp 200 ile 500 arası yığın atlamak: bir daha sıçramadı, düzeltme bulundu. Dördüncü satır vurguludur, aynı yığınları daha eski bir kontrol noktasından geçirmek: sıçrama olmadı, kötü veri açıklaması elendi. Beşinci satır küçük modelde öğrenme oranını yükseltmek: aynı kararsızlık çıktı, tanı ucuzladı. Birinci kutunun başlığı kalan açıklama: sıçrama ne tek başına veriden ne tek başına modelden doğuyor, belirli veri yığınlarının belirli bir parametre durumuyla bileşiminden doğuyor. İkinci kutunun başlığı üç düzeyde cevap: işletme düzeyinde geri sar ve yığınları atla, hiperparametre düzeyinde öğrenme oranını düşür, mimari düzeyinde sorgu ve anahtarları normalleştirip çıktı skorlarına ceza ekle. En altta bir kayıt: ilk dört satır Chowdhery ve arkadaşlarından, beşinci satır Wortsman ve arkadaşlarındandır.](assets/sicramanin-tanisi.svg "Şekil 3 — Ne denendi, ne eledi")
 
-Şekil 3'ün ikinci satırı bu makalenin en öğretici kaydı: bir açıklamayı eleyen koşu, düzeltmeyi bulan koşudan daha değerli.
+Şekil 3'ün dördüncü satırı vurgulu, çünkü bir açıklamayı eleyen koşu, düzeltmeyi bulan koşudan daha değerli.
 
 > **Kendini yokla:** Kaybı sıçrayan bir koşuda öğrenme oranını düşürüp devam ettin ve sıçrama bir daha olmadı. Sebebi bulmuş oldun mu?
 
@@ -122,7 +128,7 @@ Hayır; yalnızca bir düzeltme bulmuş oldun. Sebebi bulmak için, aynı veriyi
 
 **Bir düzeltme bir açıklama değildir.** Sıçramayı durduran bir müdahale onun sebebini göstermez; sebebi göstermek için bir açıklamayı eleyen ayrı bir koşu gerekir.
 
-**Ölçülen hiçbir gösterge sıçramayı önceden haber vermiyor.** Kayıp, gradyan normu, dikkat skorlarının en büyüğü ve adım süresi bir sıçramayı olduktan sonra adlandırmaya yarar; hangi veri yığınının hangi durumda sıçratacağını söylemez. Gözlem katmanının işi öngörmek değil, kararı hızlandırmaktır.
+**Göstergeler sıçramanın yerini söylemiyor.** Kayıp ve gradyan normu bir sıçramayı çoğu zaman olduktan sonra adlandırır. Dikkat skorlarının büyümesi küçük ölçekte ıraksamadan önce izlenebilen bir öncüdür, ama hangi veri yığınının hangi durumda sıçratacağını o da söylemez. Gözlem katmanının asıl işi öngörmek değil, kararı hızlandırmaktır.
 
 **Kararsızlık küçük ölçekte yeniden üretilebilir.** Öğrenme oranı yükseltildiğinde büyük modellerde bildirilen kararsızlıklar milyonlarca parametreli modellerde de çıkıyor; bu, hem tanıyı hem düzeltmenin sınanmasını ucuzlatıyor.
 

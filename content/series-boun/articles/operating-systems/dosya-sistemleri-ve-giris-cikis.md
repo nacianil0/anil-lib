@@ -12,7 +12,7 @@ tags:
   - ayirma-yontemleri
   - disk
   - giris-cikis
-content_hash: sha256:b6cdd51bc22f9cf09b6513a1d339660ac41fdf8466bd83c438eb102f2cd86c06
+content_hash: sha256:806b88b405597eebfa467abde5abc9e6a2a4ee6f7cc5651d7d9458f31528dea0
 classification_version: 1
 classification_batch: 11
 ---
@@ -42,9 +42,9 @@ T_G/Ç = T_iz + T_dönme + T_aktarım
 
 Terim notu: İngilizcede birinci bileşenin adı *seek time*'dır; bu seride "arama" ikili aramadan beri başka bir şey demek olduğu için ona **iz değiştirme süresi** diyorum.
 
-Sayı koyalım. Kaynağın verdiği yüksek başarımlı bir sürücü 15.000 devir/dakika ile döner, ortalama iz değiştirmesi 4 ms, tepe aktarım hızı 125 MB/s'dir. Rastgele bir yerden 4 KB okumak: 4 ms + 2 ms + 0,03 ms = **6,03 ms**, yani saniyede yalnızca **0,65 MB**. Aynı sürücüden 100 MB'ı ardışık okumak: 4 + 2 + 806 = **806 ms**, yani **124 MB/s**. Oran **192 kat**. Kapasite için yapılmış ikinci sürücüde (7.200 devir, 9 ms) aynı hesap 0,30 MB/s'ye karşı 104 MB/s veriyor: **350 kat**. Üç hesabı da kendim yaptım; kaynağın "neredeyse 200 kat" ve "300 kattan fazla" ifadeleriyle uyuşuyorlar.
+Sayı koyalım. Kaynağın verdiği yüksek başarımlı bir sürücü 15.000 devir/dakika ile döner, ortalama iz değiştirmesi 4 ms, tepe aktarım hızı 125 MB/s'dir. Rastgele bir yerden 4 KB okumak: 4 ms + 2 ms + 0,03 ms = **6,03 ms**, yani saniyede yalnızca **0,65 MB**. Aynı sürücüden 100 MB'ı ardışık okumak: 4 + 2 + 800 = **806 ms**, yani **124 MB/s**. Oran **192 kat**. Kapasite için yapılmış ikinci sürücüde (7.200 devir, 9 ms) aynı hesap 0,30 MB/s'ye karşı 104 MB/s veriyor: **350 kat**. Üç hesabı da kendim yaptım; kaynağın "neredeyse 200 kat" ve "300 kattan fazla" ifadeleriyle uyuşuyorlar.
 
-Bu oran, bu makalenin tamamının gerekçesidir. Veri yapıları makalesinde RAM modelini bilinçli olarak terk edip **dış bellek modeline** geçmiştik: maliyet birimi komut değil, bloktur. Disk bunu bir adım ileri götürür — bloklar arasında da fark vardır, **komşu bloklar ucuz, uzak bloklar pahalıdır.**
+Buradan sonraki tasarım kararlarının gerekçesi bu orandır. Veri yapıları makalesinde RAM modelini bilinçli olarak terk edip **dış bellek modeline** geçmiştik: maliyet birimi komut değil, bloktur. Disk bunu bir adım ileri götürür — bloklar arasında da fark vardır, **komşu bloklar ucuz, uzak bloklar pahalıdır.**
 
 Bunun ilk sonucu işletim sisteminin isteklerin sırasına karışmasıdır. **Disk zamanlaması (disk scheduling)**, CPU zamanlama makalesindeki en kısa iş önce kuralının disk hâlidir — üstelik burada iş süresi tahmin edilebilir, çünkü kafanın nerede olduğu bilinir. Saf "en yakın izi önce" kuralı (SSTF) aynı hastalığa yakalanır: kafanın bulunduğu bölgeye sürekli istek gelirse uzaktaki istekler **aç kalır.** Çözüm **asansör algoritmasıdır (elevator, SCAN)**: kafa diskin bir ucundan öbürüne süpürür ve yolda denk gelen isteği karşılar; bu turda geçilmiş bir ize gelen istek sıradaki tura kalır. Daha iyisi **en kısa konumlanma süresi önce (shortest positioning time first, SPTF)** kuralıdır: yalnızca iz değiştirmeyi değil, dönmeyi de hesaba katar. Hangisinin kazandığı iz değiştirme ile dönmenin göreli maliyetine bağlıdır — yani ölçütü söylemeden "daha iyi" denemez.
 

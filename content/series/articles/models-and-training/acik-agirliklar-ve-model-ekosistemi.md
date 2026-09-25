@@ -12,7 +12,7 @@ tags:
   - lisans
   - seffaflik
   - model-ekosistemi
-content_hash: sha256:3e85a2a5055dfb6f914bad2897ea02dc2a3e4de21fbba80c587d0f161d5b5f44
+content_hash: sha256:4f96cf038aa46fedde8c09b075b9bcc77782271e9edc5ac726d711ec79fb64d5
 classification_version: 1
 classification_batch: 4
 ---
@@ -38,7 +38,7 @@ DeepSeek-AI ekibinin 2024 sonunda yayımladığı DeepSeek-V3 teknik raporu, ken
 
 6 × 37×10⁹ × 14,8×10¹² ≈ 3,3×10²⁴ işlem.
 
-Bölelim: 3,3×10²⁴ ÷ 8,64×10¹⁹ ≈ **38.000 PF-gün**. Yani aradan geçen dört yılda tek bir eğitim koşusunun büyüklüğü **on kata yakın** arttı.
+Bölelim: 3,3×10²⁴ ÷ 8,64×10¹⁹ ≈ **38.000 PF-gün**. Yani bu iki koşu arasında **on kata yakın** fark var. Bunu alanın büyüme hızı diye okuma: DeepSeek-V3 döneminin en büyük koşusu değildi. 8\. makalenin tablosundaki Llama 3 405B, 3,8×10²⁵ işlemle bunun on bir katından fazlasıydı; GPT-3'ten o koşuya kadar büyüme yüz kattan fazla.
 
 Raporun kendi verdiği para karşılığı ise ters yönde okunuyor: 2,788 milyon H800 kart-saati ve saat başına 2 dolar varsayımıyla toplam 5,576 milyon dolar. Rakam, bu ölçekteki bir model için beklenenden düşük ve rapor bunun sebebini mühendislik optimizasyonlarına bağlıyor. Yazarların kendi koydukları kayıt önemli: bu tutar yalnızca nihai eğitim koşusunu kapsıyor; ondan önceki araştırma, mimari denemeleri ve başarısız koşular sayılmıyor. Teknik raporun kendisi de hakem sürecinden geçmiş bir yayın değil.
 
@@ -70,7 +70,7 @@ Alandaki iki terim bu ayrımı taşıyor. Ağırlıkları indirilebilen ama geri
 
 Ağırlıklar indirilebiliyorsa iş bitmiş sayılmıyor; hangi koşullarla kullanabileceğini lisans söylüyor.
 
-Somut bir örnek üzerinden gidelim. Meta'nın Llama 3.1 için yayımladığı Community License, adında "topluluk" geçmesine rağmen standart bir açık kaynak lisansı değil. İki maddesi karakteristik. Birincisi ölçek eşiği: sürümün yayımlandığı tarihte aylık etkin kullanıcısı 700 milyonu aşan bir kuruluş, modeli kullanmak için ayrıca izin almak zorunda. İkincisi görünürlük: modeli kullanan ürünlerin ilgili yerlerde "Built with Llama" ibaresini göstermesi ve bu modelden türetilen modellerin adının "Llama" ile başlaması gerekiyor.
+Somut bir örnek üzerinden gidelim; yalnız lisans metinlerinin sürümden sürüme değiştiğini baştan söyleyelim — aşağıdaki maddeler 2024'te yayımlanan Llama 3.1 sürümüne aittir, sonraki sürümlerin lisansı ayrıca okunmalıdır. Meta'nın Llama 3.1 için yayımladığı Community License, adında "topluluk" geçmesine rağmen standart bir açık kaynak lisansı değil. İki maddesi karakteristik. Birincisi ölçek eşiği: sürümün yayımlandığı tarihte aylık etkin kullanıcısı 700 milyonu aşan bir kuruluş, modeli kullanmak için ayrıca izin almak zorunda. İkincisi görünürlük: modeli kullanan ürünlerin ilgili yerlerde "Built with Llama" ibaresini göstermesi ve bu modelden türetilen modellerin adının "Llama" ile başlaması gerekiyor.
 
 Bu maddeler ticari olarak anlaşılır. Ama açık kaynak tanımıyla uyuşmuyorlar, çünkü o tanımın çekirdeğinde kimseyi ve hiçbir kullanım alanını dışlamama ilkesi var: kullanıcıyı büyüklüğüne göre ayıran bir madde, tanım gereği açık kaynak sayılmıyor.
 
@@ -94,7 +94,7 @@ Kısmen. Ağırlıklar elindeyse modelin bir girdiye ne yanıt verdiğini istedi
 
 "Açıklık bir derece meselesidir" demek, ölçmeyi de gerektiriyor. Bu alandaki en düzenli çaba, Rishi Bommasani ve arkadaşlarının Stanford'da yürüttüğü Temel Model Şeffaflık Endeksi.
 
-Yöntem sade ve 16\. makaledeki cetvel tartışmasının içine oturuyor: yüz ayrı şeffaflık göstergesi tanımlanıyor, sağlayıcılar bu göstergelerde tek tek puanlanıyor. 2023 Ekim'indeki ilk turda on temel model sağlayıcısı puanlandı ve ortalama 100 üzerinden 37'ydi. Bir yıl sonra, sağlayıcıların kendi şeffaflık raporlarını sundukları ikinci turda on dört sağlayıcı puanlandı ve ortalama **58** oldu. İki turdaki sağlayıcı kümesi birebir aynı olmadığı için bu 21 puanlık farkı bir eğilim olarak okumak gerekiyor, tek tek şirketlerin ilerlemesi olarak değil. Çalışmanın hakem sürecinden geçmiş sürümü 2025'te TMLR'de yayımlandı.
+Yöntem sade ve 16\. makaledeki cetvel tartışmasının içine oturuyor: yüz ayrı şeffaflık göstergesi tanımlanıyor, sağlayıcılar bu göstergelerde tek tek puanlanıyor. 2023 Ekim'indeki ilk turda on temel model sağlayıcısı puanlandı ve ortalama 100 üzerinden 37'ydi. Mayıs 2024'teki ikinci turda, sağlayıcıların kendi şeffaflık raporlarını sunduğu düzende on dört sağlayıcı puanlandı ve ortalama **58** oldu. İki turdaki sağlayıcı kümesi birebir aynı olmadığı için bu 21 puanlık farkı bir eğilim olarak okumak gerekiyor, tek tek şirketlerin ilerlemesi olarak değil. Çalışmanın hakem sürecinden geçmiş sürümü 2025'te TMLR'de yayımlandı.
 
 Artışın nedeni öğretici: sağlayıcılar, ölçüldüklerini bilerek daha önce hiç açıklamadıkları bilgileri açıkladılar. Ölçüm, ölçtüğü şeyi değiştirdi — bu kez olumlu yönde.
 
@@ -108,7 +108,7 @@ Birincisi uyarlama. 19\. makaledeki LoRA yalnızca ağırlıklara erişimle müm
 
 İkincisi yerellik. Model kendi donanımında çalışıyorsa istem de cevap da dışarı çıkmaz. Bu, gizlilik gerektiren alanlarda başka hiçbir yolla elde edilemeyen bir özellik.
 
-Üçüncüsü denetlenebilirlik. FAccT çalışmasının görsel üreteçler bölümündeki gözlem çarpıcı: değerlendirilen sistemler arasında yalnızca birinin eğitim verisi incelenebilir durumdaydı ve incelendiğinde ciddi hukuki ve etik sorunlar bulundu. Kapalı sistemlerde aynı sorunların bulunmadığını değil, **bakılamadığını** biliyoruz.
+Üçüncüsü denetlenebilirlik. FAccT çalışmasının görsel üreteçler bölümündeki gözlem bunu somutlaştırıyor: değerlendirilen sistemler arasında yalnızca birinin eğitim verisi incelenebilir durumdaydı ve incelendiğinde ciddi hukuki ve etik sorunlar bulundu. Kapalı sistemlerde aynı sorunların bulunmadığını değil, **bakılamadığını** biliyoruz.
 
 Dördüncüsü bilimsel tekrarlanabilirlik. Aynı çalışma, kapalı bir sağlayıcının modellerini kullanan araştırma ekiplerinin, o modeller kullanımdan kaldırıldığında sonuçlarını tekrarlayamaz hâle geldiğini örnekliyor. Bir modelin ağırlıkları elindeyse ölçümün beş yıl sonra tekrarlanabilir; değilse ölçüm, sağlayıcının ürün takvimine bağlıdır.
 
@@ -118,13 +118,13 @@ Başlıktaki "ekosistem" sözcüğünün karşılığı da burada. Yayımlanan b
 
 ## Geri alınamayan bir karar
 
-Bunun bir de öbür yüzü var ve dürüstlük onu da söylemeyi gerektiriyor.
+Açık ağırlığın bir de öbür yüzü var ve kazanımlar kadar somut.
 
 Kapalı bir modelin sağlayıcısı, bir sorun bulduğunda modeli geri çekebilir, davranışını değiştirebilir, belirli kullanımları teknik olarak engelleyebilir. Ağırlıklar bir kez yayımlandığında bu araçların hiçbiri kalmaz: indirilmiş kopya kalıcıdır ve üzerindeki her kısıt yalnızca lisans metninde durur.
 
-Bu asimetri soyut değil; ölçülmüş bir yüzü var ve doğrudan 19\. makalenin mekanizmasına bağlanıyor. Xiangyu Qi ve arkadaşlarının ICLR 2024'te sunduğu çalışma, hizalanmış bir modelin güvenlik davranışının ince ayarla ne kadar kolay bozulduğunu ölçtü. Kasıtlı taraf çarpıcı: on kadar özel olarak hazırlanmış eğitim örneğiyle, bir arayüz üzerinden sunulan ticari bir modelin güvenlik davranışı 0,20 doların altında bir maliyetle geçersiz kılınabiliyordu.
+Bu asimetri soyut değil; ölçülmüş bir yüzü var ve doğrudan 19\. makalenin mekanizmasına bağlanıyor. Xiangyu Qi ve arkadaşlarının ICLR 2024'te sunduğu çalışma, hizalanmış bir modelin güvenlik davranışının ince ayarla ne kadar kolay bozulduğunu ölçtü. Önce kasıtlı taraf: on kadar özel olarak hazırlanmış eğitim örneğiyle, bir arayüz üzerinden sunulan ticari bir modelin güvenlik davranışı 0,20 doların altında bir maliyetle geçersiz kılınabiliyordu.
 
-Daha rahatsız edici bulgu ikinci deneyde. Hiçbir kötü niyet taşımayan, yaygın kullanılan talimat kümeleriyle yapılan sıradan bir ince ayar bile güvenlik davranışını ölçülebilir biçimde zayıflatıyor. Yani zarar saldırganın niyetine bağlı değil; ince ayarın kendisi 11\. ve 13\. makalelerde kurulan hizalamayı aşındırıyor.
+İkinci deney daha ileri gidiyor. Hiçbir kötü niyet taşımayan, yaygın kullanılan talimat kümeleriyle yapılan sıradan bir ince ayar bile güvenlik davranışını ölçülebilir biçimde zayıflatıyor. Yani zarar saldırganın niyetine bağlı değil; ince ayarın kendisi 11\. ve 13\. makalelerde kurulan hizalamayı aşındırıyor.
 
 Bunu 19\. makaleyle yan yana koy. Orada LoRA'nın davranışı ucuza değiştirebildiğini, bilgiyi ise zor taşıdığını görmüştük. Güvenlik davranışı da bir davranıştır — yani post-training'in en pahalı ürünü, uyarlamanın en ucuz hedefi. Açık ağırlık bu iki cümleyi aynı anda doğru kılıyor: kendi işine uyarlama özgürlüğüyle, hizalamayı sökme özgürlüğü aynı erişimden doğuyor.
 

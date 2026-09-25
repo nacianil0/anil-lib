@@ -15,7 +15,9 @@
   --border-strong: #d4d0c6;
   --text: #1b1d1f;
   --text-muted: #5b5f66;
-  --text-faint: #898d94;
+  /* Quietest text that still carries meaning (counts, dates, "coming soon"), so it
+     keeps 4.5:1 on the page and on surfaces in every theme (WCAG 1.4.3). */
+  --text-faint: #6b6f76;
   --accent: #8a2e43;
   --accent-fill: #8a2e43;
   --accent-soft: #f4e4e7;
@@ -37,7 +39,7 @@
   --border-strong: #3a414a;
   --text: #e9e8e4;
   --text-muted: #a3a8af;
-  --text-faint: #71777f;
+  --text-faint: #858b93;
   --accent: #d98597;
   --accent-fill: #b5435a;
   --accent-soft: #36222a;
@@ -57,7 +59,7 @@
   --border-strong: #c3b296;
   --text: #2c261e;
   --text-muted: #6f6251;
-  --text-faint: #95836b;
+  --text-faint: #786852;
   --accent: #8b3f2f;
   --accent-fill: #8b3f2f;
   --accent-soft: #ead8cc;
@@ -245,6 +247,64 @@
 
   .prose-reader > *:first-child {
     margin-top: 0;
+  }
+
+  /* --------------------------------------------------------------------------
+     Chapter title. Series chapters keep their title in frontmatter, so the shell
+     sets it above the text on the prose column's own measure (the header carries
+     the reader font size so `ch` and `em` resolve as they do in the text).
+  -------------------------------------------------------------------------- */
+  .chapter-header {
+    font-size: var(--reader-font-size, 1.1875rem);
+    max-width: var(--reader-measure, 68ch);
+    margin: 0 auto 1.75rem;
+  }
+
+  .chapter-header-title {
+    margin: 0.4rem 0 0.6rem;
+    font-family: var(--reader-font-family, theme("fontFamily.serif"));
+    font-size: 1.768em;
+    font-weight: 600;
+    line-height: 1.16;
+    letter-spacing: -0.012em;
+    color: var(--text);
+    text-wrap: balance;
+  }
+
+  @media (max-width: 40rem) {
+    .chapter-header-title {
+      font-size: 1.55em;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Editorial revision note. It sits above the text on the prose column's own
+     measure (the frame carries the reader font size so `ch` resolves the same)
+     and stays quiet: a hairline and small sans type, never a badge.
+  -------------------------------------------------------------------------- */
+  .revision-notice {
+    font-size: var(--reader-font-size, 1.1875rem);
+    max-width: var(--reader-measure, 68ch);
+    margin: 0 auto 2.25rem;
+  }
+
+  .revision-notice-line {
+    border-left: 2px solid var(--border-strong);
+    padding-left: 0.75rem;
+  }
+
+  .revision-notice[data-since-read] .revision-notice-line {
+    border-left-color: var(--accent);
+  }
+
+  .revision-notice[data-since-read] .revision-notice-label {
+    color: var(--accent);
+  }
+
+  .reader-shell[data-reading-mode="paged"] .revision-notice {
+    flex: none;
+    max-width: none;
+    margin: 0 0 1rem;
   }
 
   .prose-reader :is(h1, h2, h3, h4) {
@@ -482,11 +542,53 @@
 
   /* Series diagrams — theme-aware inline SVG figures (see docs/seri/SOZLESME.md §6). */
   .prose-reader figure.series-figure {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.75rem;
+    align-items: start;
     margin: 1.8rem 0;
     padding: 1.1rem 1.1rem 0.8rem;
     border: 1px solid var(--border);
     border-radius: 8px;
     background-color: var(--surface);
+  }
+
+  /* The drawing spans the figure; the caption and the enlarge button share the
+     row beneath it, so the button never sits on top of the drawing. */
+  .prose-reader figure.series-figure .series-figure-scroll {
+    grid-column: 1 / -1;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border);
+    cursor: zoom-in;
+  }
+
+  .prose-reader figure.series-figure .series-figure-zoom {
+    grid-column: 2;
+    grid-row: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--surface);
+    color: var(--text-muted);
+    cursor: zoom-in;
+    transition:
+      color 150ms ease,
+      border-color 150ms ease;
+  }
+
+  .prose-reader figure.series-figure .series-figure-zoom:hover {
+    border-color: var(--border-strong);
+    color: var(--text);
+  }
+
+  .prose-reader figure.series-figure .series-figure-zoom svg {
+    width: 1rem;
+    height: 1rem;
   }
 
   /*
@@ -529,15 +631,22 @@
   }
 
   .prose-reader figure.series-figure figcaption {
-    margin-top: 0.7rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid var(--border);
+    grid-column: 1;
+    margin-top: 0.6rem;
     font-family: theme("fontFamily.sans");
     font-size: 0.78rem;
     line-height: 1.5;
     color: var(--text-muted);
     text-align: left;
   }
+}
+
+/* The figure viewer shows a copy of the drawing outside the prose column. */
+.figure-viewer-drawing svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: theme("fontFamily.sans");
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -570,7 +679,10 @@
     overflow: visible;
   }
 
-  .reader-pager {
+  /* Tailwind's @layer is resolved at build time, not a cascade layer, so this has
+     to out-specify the screen rule for the figure's enlarge button. */
+  .reader-pager,
+  .prose-reader figure.series-figure .series-figure-zoom {
     display: none;
   }
 }

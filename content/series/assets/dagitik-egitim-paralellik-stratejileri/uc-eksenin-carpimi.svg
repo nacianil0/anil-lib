@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Üç bölmeli bir şema. Üstte başlık: bir kurulum, üç çarpan ve kümenin şekli. Birinci bölme vurgulu bir kutudur ve içinde 3.072 kart eşittir 8 çarpı 64 çarpı 6 yazar; altında 8 yollu tensör paralelliğinin sunucu içinde, 64 yollu boru hattının sunucular arasında ve 6 yollu veri paralelliğinin en dışta durduğu, dizi paralelliğinin ise ayrı bir çarpan olmayıp tensör eksenine bindiği yazılıdır. İkinci bölmenin başlığı aynı kümede ölçülen iki kesim bandı: veri paralel kopyalar arası hepsi-indirge saniyede 12,9 TB, boru hattı aşamaları arası noktadan noktaya saniyede 892 GB, aradaki oran 14,5 kat. Üçüncü bölme dört satırlık bir tablodur; sütunlar model, t çarpı p, kart, TFLOP bölü saniye ve tepenin yüzdesi. Birinci satır 1,7 milyar: 1 çarpı 1, 32 kart, 137, yüzde 44. İkinci satır 145,6 milyar: 8 çarpı 8, 1.536 kart, 148, yüzde 47. Üçüncü satır 529,6 milyar: 8 çarpı 35, 2.520 kart, 163, yüzde 52. Dördüncü satır vurguludur, 1.008 milyar: 8 çarpı 64, 3.072 kart, 163, yüzde 52. En altta iki kayıt: değerler Narayanan ve arkadaşlarının ölçümleridir ve 14,5 katlık oran bizim hesabımızdır; aynı kart sayısında kötü seçilmiş bir bileşim iki kata kadar düşük iş hacmi verir.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Üç bölmeli bir şema. Üstte başlık: bir kurulum, üç çarpan ve kümenin şekli. Birinci bölme vurgulu bir kutudur ve içinde 3.072 kart eşittir 8 çarpı 64 çarpı 6 yazar; altında 8 yollu tensör paralelliğinin sunucu içinde, 64 yollu boru hattının sunucular arasında ve 6 yollu veri paralelliğinin en dışta durduğu, dizi paralelliğinin ise ayrı bir çarpan olmayıp tensör eksenine bindiği yazılıdır. İkinci bölmenin başlığı 3.072 kartta sunucular arası ağın kullandığı etkin kesim bandı: veri paralel kopyalar arası hepsi-indirge saniyede 12,9 TB, boru hattı aşamaları arası noktadan noktaya saniyede 892 GB; altında daha yavaş bir ağın ya da daha çok iletişim doğuran bir bölmenin ölçeklemeyi bozacağı yazılıdır. Üçüncü bölme dört satırlık bir tablodur; sütunlar model, t çarpı p, kart, TFLOP bölü saniye ve tepenin yüzdesi. Birinci satır 1,7 milyar: 1 çarpı 1, 32 kart, 137, yüzde 44. İkinci satır 145,6 milyar: 8 çarpı 8, 1.536 kart, 148, yüzde 47. Üçüncü satır 529,6 milyar: 8 çarpı 35, 2.520 kart, 163, yüzde 52. Dördüncü satır vurguludur, 1.008 milyar: 8 çarpı 64, 3.072 kart, 163, yüzde 52. En altta iki kayıt: değerler Narayanan ve arkadaşlarının ölçümleridir; aynı kart sayısında kötü seçilmiş bir bileşim iki kata kadar düşük iş hacmi verir.">
   <text x="20" y="30" font-size="13" fill="var(--text)">Bir kurulum, üç çarpan ve kümenin şekli</text>
   <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
 
@@ -8,14 +8,13 @@
   <text x="34" y="126" font-size="13" fill="var(--text)">6 yollu veri paralelliği: en dışta. Dizi paralelliği ayrı bir çarpan değildir;</text>
   <text x="34" y="140" font-size="13" fill="var(--text)">tensör eksenine biner.</text>
 
-  <text x="24" y="176" font-size="13" font-weight="bold" fill="var(--text-muted)">Aynı kümede ölçülen iki kesim bandı</text>
+  <text x="24" y="176" font-size="13" font-weight="bold" fill="var(--text-muted)">3.072 kartta sunucular arası ağın kullandığı etkin kesim bandı</text>
   <line x1="20" y1="186" x2="700" y2="186" stroke="var(--border)" />
   <text x="24" y="208" font-size="13" fill="var(--text)">veri paralel kopyalar arası hepsi-indirge</text>
   <text x="450" y="208" font-size="13" font-weight="bold" fill="var(--accent)">12,9 TB/s</text>
   <text x="24" y="230" font-size="13" fill="var(--text)">boru hattı aşamaları arası noktadan noktaya</text>
   <text x="450" y="230" font-size="13" font-weight="bold" fill="var(--cool)">892 GB/s</text>
-  <text x="24" y="252" font-size="13" fill="var(--text-muted)">aradaki oran</text>
-  <text x="450" y="252" font-size="13" fill="var(--text-muted)">14,5 kat</text>
+  <text x="24" y="252" font-size="13" fill="var(--text-muted)">Daha yavaş bir ağ ya da daha çok iletişim doğuran bir bölme ölçeklemeyi bozar.</text>
 
   <line x1="20" y1="266" x2="700" y2="266" stroke="var(--border)" />
 
@@ -51,6 +50,6 @@
   <text x="580" y="396" font-size="13" font-weight="bold" fill="var(--accent)">52</text>
 
   <line x1="20" y1="412" x2="700" y2="412" stroke="var(--border)" />
-  <text x="20" y="434" font-size="13" fill="var(--text-faint)">Değerler Narayanan ve arkadaşlarının ölçümleridir; 14,5 katlık oran bizim hesabımızdır.</text>
+  <text x="20" y="434" font-size="13" fill="var(--text-faint)">Değerler Narayanan ve arkadaşlarının ölçümleridir.</text>
   <text x="20" y="454" font-size="13" fill="var(--text-faint)">Aynı kart sayısında kötü seçilmiş bir bileşim iki kata kadar düşük iş hacmi verir.</text>
 </svg>

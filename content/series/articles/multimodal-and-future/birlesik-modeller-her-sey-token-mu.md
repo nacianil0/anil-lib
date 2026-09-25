@@ -12,7 +12,7 @@ tags:
   - kuantizasyon
   - erken-kaynasma
   - kisitli-uretim
-content_hash: sha256:4b84044faee170ffac4f72d6becb4fc5e87c2d22c764ce9661aafc2c000d2a4c
+content_hash: sha256:b88605c353e1002b4939700417bc7b6a57239eff1ed1eb2240fdc7de103b88a4
 classification_version: 1
 classification_batch: 20
 ---
@@ -28,7 +28,7 @@ Bu makale iddiayı sınıyor. Üç adım: bir modaliteyi sözlüğe sokmanın me
 
 4\. makalede tokenizasyonun bir tasarım kararı olduğunu görmüştük: sözlüğü sen seçiyorsun, ve seçim hem dizi uzunluğunu hem de her birimin ne kadar anlam taşıdığını belirliyor. Görüntü tarafında bu adımın karşılığı **kuantizasyon**: sürekli değerli bir vektörü, sonlu bir defterdeki en yakın girdiyle değiştirmek.
 
-Aaron van den Oord ve arkadaşlarının NeurIPS 2017'de sunduğu çalışma bunun kanonik biçimini kuruyor. Bir kodlayıcı görüntüyü küçük bir ızgaraya indirir ve her ızgara hücresi için bir vektör üretir; her vektör, öğrenilen bir kod defterindeki en yakın girdiyle değiştirilir; bir çözücü bu kodlardan görüntüyü geri üretir. Kod defteri 512 girdiliyse her hücre yalnızca dokuz bit taşır, çünkü 512 seçenek dokuz bitle numaralanır. Çalışmanın kendi hesabı bunu somutlaştırıyor: 128×128×3 boyutundaki bir görüntü, 512 kodlu bir defterle 32×32'lik bir ızgaraya indiriliyor ve bitte yaklaşık 42,6 kat indirgeme elde ediliyor.
+Aaron van den Oord ve arkadaşlarının NeurIPS 2017'de sunduğu çalışma bunun kanonik biçimini kuruyor. Bir kodlayıcı görüntüyü küçük bir ızgaraya indirir ve her ızgara hücresi için bir vektör üretir; her vektör, öğrenilen bir kod defterindeki en yakın girdiyle değiştirilir; bir çözücü bu kodlardan görüntüyü geri üretir. Kod defteri 512 girdiliyse her hücre yalnızca dokuz bit taşır, çünkü 512 seçenek dokuz bitle numaralanır. Çalışmanın kendi hesabı bunu somutlaştırıyor: 128×128×3 boyutundaki bir görüntü, 512 kodlu bir defterle 32×32'lik bir ızgaraya indiriliyor ve bitte yaklaşık 42,6 kat indirgeme elde ediliyor. Hesabı yeniden yapabilirsin: görüntü 128 × 128 × 3 değer çarpı 8 bit, yani 393.216 bit; ızgara 32 × 32 hücre çarpı 9 bit, yani 9.216 bit; oran 42,67 — kaynak bunu 42,6 diye kesiyor.
 
 Bedel de burada. Kuantizasyon geri döndürülemez bir kayıptır: en yakın koda yuvarlanan her hücre, o kod ile gerçek vektör arasındaki farkı atar. Patrick Esser ve arkadaşlarının CVPR 2021'de sunduğu çalışma kaybı azaltmak yerine **yönlendirmeyi** önerdi: yeniden üretim hatasına algısal bir kayıp ve düşmanca bir ayırt edici ekleyerek, defterin insanın önemsediği yerel yapıları tutmasını sağladılar. Sonuç, kuantize edilmiş görüntü token'ları üzerinde çalışan bir Transformer'ın megapiksel ölçeğinde görüntü üretebilmesi oldu.
 
@@ -36,7 +36,7 @@ Bedel de burada. Kuantizasyon geri döndürülemez bir kayıptır: en yakın kod
 
 Bu noktada alanın uzun süre kabul ettiği bir kanı vardı: görsel üretimde dil modeli düzeni difüzyonun gerisinde kalır. Kanının arkasında somut bir sayı da vardı. Lijun Yu ve arkadaşlarının ICLR 2024'te sunduğu çalışma bunu açılışında yazıyor: ImageNet 256×256'da o günün en iyi dil modeli 3,41 FID verirken en iyi difüzyon modeli 1,79 veriyordu — yazarların ifadesiyle yüzde 48'lik bir fark.
 
-Çalışmanın tezi, farkın model ailesinden değil **sözlükten** geldiği. İki değişiklik yapıyorlar. Birincisi, en yakın kodu aramak yerine kuantizasyonu arama gerektirmeyen bir biçime çeviriyorlar; bu, defteri çok büyütmeyi mümkün kılıyor. İkincisi defteri gerçekten büyütüyorlar: 2¹⁸, yani yaklaşık 262 bin kod. Büyük sözlüğün kendi sorunu var — bu kadar geniş bir çıktı katmanını tek seferde tahmin etmek pahalı — ve çözüm 4\. makaledeki alt-kelime mantığının aynısı: tahmini iki parçaya bölüp her biri 2⁹ boyutunda iki deftere yaymak.
+Çalışmanın tezi, farkın model ailesinden değil **sözlükten** geldiği. İki değişiklik yapıyorlar. Birincisi, en yakın kodu aramak yerine kuantizasyonu arama gerektirmeyen bir biçime çeviriyorlar; bu, defteri çok büyütmeyi mümkün kılıyor. İkincisi defteri gerçekten büyütüyorlar: 2¹⁸, yani yaklaşık 262 bin kod. Büyük sözlüğün kendi sorunu var — bu kadar geniş bir çıktı katmanını tek seferde tahmin etmek pahalı — ve çözüm 4\. makaledeki alt-kelime mantığının akrabası: büyük bir birimi küçük parçaların birleşimi olarak yazmak. Burada tahmin iki parçaya bölünüyor ve her biri 2⁹ boyutunda iki deftere yayılıyor; 2⁹ × 2⁹ = 2¹⁸ olduğu için iki küçük seçim bütün kodları kapsıyor.
 
 Ayrıştırma çalışmanın kendi tablosunda duruyor ve okunması gereken şey sıralama. ImageNet 128×128 üzerinde tokenizasyon kalitesi, arama gerektirmeyen kuantizasyonla 2,65'ten 2,48'e, sözlük büyütülünce 1,34'e, kalan tasarım değişiklikleriyle 1,15'e iniyor. Sıçramayı yapan adım sözlüğün büyütülmesi. Ve nihai sonuç, açılıştaki sıralamayı tersine çeviriyor: aynı veri, karşılaştırılabilir model boyu ve eğitim bütçesiyle, maskeli bir dil modeli difüzyon modellerini geçiyor.
 
@@ -58,7 +58,7 @@ Huiwen Chang ve arkadaşlarının CVPR 2022'de sunduğu çalışma sırayı tama
 
 ## Tek gövde: erken kaynaşma ve ölçülmüş bedeli
 
-Şimdi iddianın en saf hâline gelebiliriz; alanda bu düzene **erken kaynaşma** (early fusion) deniyor, çünkü modaliteler ayrı ayrı işlenip sonda birleştirilmek yerine daha modelin girişinde tek bir diziye karışıyor. Chameleon ekibinin 2024'te yayımladığı çalışma her şeyi tek bir diziye koyuyor: 512×512'lik bir görüntü 8192 kodluk bir defterden 1024 token'a çevriliyor, metin token'larıyla aynı dizide yer alıyor, ve tek bir Transformer tek bir softmax ile ikisini birden üretiyor. Ortak sözlüğün boyu 65.536 ve bunun 8.192'si görüntü kodları — yani metne kalan 57.344. Eğitim yaklaşık 10 trilyon token üzerinde, ve bunun 2,9 trilyonu yalnızca metin.
+Şimdi iddianın en saf hâline gelebiliriz; alanda bu düzene **erken kaynaşma** (early fusion) deniyor, çünkü modaliteler ayrı ayrı işlenip sonda birleştirilmek yerine daha modelin girişinde tek bir diziye karışıyor. Chameleon ekibinin 2024'te yayımladığı çalışma her şeyi tek bir diziye koyuyor: 512×512'lik bir görüntü 8192 kodluk bir defterden 1024 token'a çevriliyor, metin token'larıyla aynı dizide yer alıyor, ve tek bir Transformer tek bir softmax ile ikisini birden üretiyor. Ortak sözlüğün boyu 65.536 ve bunun 8.192'si görüntü kodları — yani metne kalan 57.344. Model, veri kümesinin üzerinden 2,1 tur geçerek toplam 9,2 trilyon token görüyor; kümedeki 2,9 trilyon token yalnızca metin.
 
 Bu düzenin kazandırdığı şey açık ve bir yetenek farkına karşılık geliyor. 81\. makaledeki bağlantı yolları — izdüşüm, yeniden örnekleyici, kapılı çapraz dikkat — görüntüyü dil modeline **okutuyordu**; çıktı hep metindi. Tek sözlükte ise girdi ile çıktı arasındaki asimetri kalkıyor: model, bir cümlenin ortasında görüntü token'ları üretip sonra metne dönebiliyor. Metinle görüntünün gerçekten iç içe geçtiği belgeler bu yüzden doğal biçimde modelleniyor — aralarında bir dikiş yok.
 
@@ -76,7 +76,7 @@ Tek dizide çalışan bir model, görüntünün nerede başlayıp nerede bittiğ
 
 30'da kısıtlı üretimi kurmuştuk: bir dilbilgisi ya da şema, her adımda hangi token'lara izin verileceğini belirler ve izin verilmeyenlerin olasılığı sıfırlanır. Orada bu, çıktıyı bir programın okuyabilmesi için konan bir katmandı. Burada aynı düzenek mimarinin **zorunlu** parçası: görüntünün başlangıcını ve bitişini işaretleyen özel token'lar vardır, ve model bir görüntünün içindeyken üretim görüntü alt sözlüğüne kısıtlanır. Uzunluk da sabittir — görüntü başına 1024 token — yani modelin nerede duracağını ayrıca öğrenmesi gerekmez.
 
-30'un iki dersi olduğu gibi geçerli. Birincisi kısıtın **ne garanti ettiği**: çıktının sözdizimsel geçerliliği, yani token dizisinin gerçekten bir görüntüye çözülebilmesi. Garanti etmediği şey görüntünün istenen görüntü olması. İkincisi kısıtın **nasıl uygulandığı**: 30'da hizalamayı gözetmeyen bir maskenin doğruluğu 0,415'ten 0,345'e düşürdüğünü, token hizalı bir maskenin ise kısıtsız üretimin bir tık üstünde kaldığını görmüştük. Aynı duyarlılık burada da var; sınır token'ları ile kod ızgarası arasındaki hizalama bozulursa model, eğitimde hiç görmediği bir bölme yolundan geçer.
+30'un iki dersi olduğu gibi geçerli. Birincisi kısıtın **ne garanti ettiği**: çıktının sözdizimsel geçerliliği, yani token dizisinin gerçekten bir görüntüye çözülebilmesi. Garanti etmediği şey görüntünün istenen görüntü olması. İkincisi kısıtın **nasıl uygulandığı**: 30'da hizalamayı gözetmeyen bir maskenin doğruluğu 0,415'ten 0,345'e düşürdüğünü, token hizalı bir maskenin ise kısıtsız üretimin bir tık üstünde kaldığını görmüştük. Görüntü tarafında her kod tek bir token olduğu için 30'daki alt-kelime sınırı sorunu aynı biçimde doğmaz; kalan duyarlılık sınır token'ları ile sabit uzunluk sözleşmesindedir. Bu sözleşme bozulduğunda — başlangıç işaretinden sonra 1024'ten az ya da çok kod üretildiğinde — dizi bir görüntüye çözülemez; bu bizim çıkarımımız, kaynak bunu ayrıca ölçmüyor.
 
 ## Ayrık olmak zorunda mı?
 

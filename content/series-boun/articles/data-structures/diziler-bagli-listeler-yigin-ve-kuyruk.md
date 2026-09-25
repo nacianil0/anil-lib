@@ -12,7 +12,7 @@ tags:
   - yigin
   - kuyruk
   - amortize-maliyet
-content_hash: sha256:4ba27defa1abcb55b2759c2193f4691af48fcb5fb26738d130e63693502bf572
+content_hash: sha256:d426e797366b6342c1a4d183e139988448fe2ebeec46e9451d031df559cb6500
 classification_version: 1
 classification_batch: 3
 ---
@@ -60,13 +60,15 @@ Dizi sabit zamanlı erişim verir ama boyutu sabittir. Sona ekleme yapabilmek i�
 
 Hesabı bir kere elle yapalım. Kapasite 1'den başlasın ve her dolduğunda ikiye katlansın. Bin kez sona ekleme yaparsan yeniden tahsisler kapasite 1, 2, 4, …, 512 iken olur ve kopyalanan toplam eleman sayısı 1 + 2 + 4 + ⋯ + 512 = 1023'tür. Bu, ikinin kuvvetlerinin toplamının bir sonraki kuvvetin bir eksiği olmasının doğrudan sonucudur; dolayısıyla toplam kopyalama işi her zaman 2n'in altında kalır. Bin eklemenin toplam maliyeti bin ekleme adımı artı 1023 kopyalama adımıdır, yani işlem başına üç adımın altında: **sabit**.
 
+Şekil 2 aynı muhasebeyi on altı eklemelik küçük bir örnekte çubuklarla gösteriyor: pahalı adımlar seyrek ve arası her seferinde iki katına çıkıyor, bu yüzden toplamın işlem sayısına oranı ikinin altında kalıyor.
+
+![Sona ekleme işlemlerinin tek tek maliyetini gösteren çubuklar: çoğu çubuk bir birim yüksekliğinde, kapasitenin katlandığı yerlerde tek tek yükselen sivri çubuklar var ve sivrilerin arası her seferinde iki katına çıkıyor. Altta aynı işlemlerin toplam maliyetini işlem sayısına bölen düz amortize çizgisi ve kopyalama toplamının iki n sınırının altında kaldığını gösteren hesap kutusu](assets/amortize-buyutme.svg "Şekil 2 — Dinamik dizi büyütmesinde tek işlem maliyeti ile amortize maliyet")
+
 Bu sonucun adı vardır: sona ekleme **amortize (amortized)** sabit zamanlıdır. Tanımı şudur: bir işlemin amortize maliyeti T(n) ise, k işlemden oluşan herhangi bir dizinin toplam maliyeti en fazla k çarpı T(n)'dir. Tek bir işlem doğrusal olabilir; garanti tek işlem için değil, **işlem dizisi** içindir.
 
 Buradaki ayrım mülakatın sevdiği tuzaklardan biridir ve karmaşıklık makalesinde bilerek askıya almıştık. **Amortize maliyet ile ortalama durum aynı şey değildir.** Ortalama durum bir **olasılık dağılımı** varsayar: girdiler şu dağılımdan gelirse beklenen maliyet budur. Amortize maliyet hiçbir olasılık varsayımı yapmaz; en kötü işlem dizisi için bile geçerli bir **muhasebe** sonucudur. Şanssız bir kullanıcı ortalamanın dışına düşebilir, ama amortize garantiyi delemez.
 
-Silme tarafı düşünülmeden yapı yarım kalır. Diziyi doluluk oranı yarının altına düştüğü anda yarıya indirirsen, tam sınırda ekleme ve silmeyi dönüşümlü yapan bir kullanıcı her adımda yeniden tahsis tetikler ve amortize garanti çöker. Standart çözüm iki eşiği ayırmaktır: küçültmeyi daha düşük bir doluluk oranında yap ve küçülttükten sonra diziyi tam dolu bırakma. Böylece pahalı bir adımdan sonra bir sonrakine kadar yine doğrusal sayıda ucuz adım yapılması **zorunlu** hâle gelir. Şekil 2 bu muhasebeyi gösteriyor.
-
-![Sona ekleme işlemlerinin tek tek maliyetini gösteren çubuklar: çoğu çubuk bir birim yüksekliğinde, kapasitenin katlandığı yerlerde tek tek yükselen sivri çubuklar var ve sivrilerin arası her seferinde iki katına çıkıyor. Altta aynı işlemlerin toplam maliyetini işlem sayısına bölen düz amortize çizgisi ve kopyalama toplamının iki n sınırının altında kaldığını gösteren hesap kutusu](assets/amortize-buyutme.svg "Şekil 2 — Dinamik dizi büyütmesinde tek işlem maliyeti ile amortize maliyet")
+Silme tarafı düşünülmeden yapı yarım kalır. Diziyi doluluk oranı yarının altına düştüğü anda yarıya indirirsen, tam sınırda ekleme ve silmeyi dönüşümlü yapan bir kullanıcı her adımda yeniden tahsis tetikler ve amortize garanti çöker. Standart çözüm iki eşiği ayırmaktır: küçültmeyi daha düşük bir doluluk oranında yap ve küçülttükten sonra diziyi tam dolu bırakma. Böylece pahalı bir adımdan sonra bir sonrakine kadar yine doğrusal sayıda ucuz adım yapılması **zorunlu** hâle gelir.
 
 > **Sesli anlat:** "Amortize maliyetle ortalama durumun farkını ve dinamik dizide sona eklemenin neden amortize sabit olduğunu altmış saniyede açıkla."
 >
@@ -90,7 +92,7 @@ Kuyruk, işletim sistemleri fazında tekrar karşımıza çıkacak: hazır süre
 
 **Adımlar.** İki yığın tut, giriş ve çıkış. Kuyruğa ekleme, giriş yığınına eklemektir. Kuyruktan alma, çıkış yığını boş değilse doğrudan ondan almaktır; boşsa önce giriş yığınındaki bütün elemanlar tek tek alınıp çıkış yığınına konur, sonra çıkıştan alınır. Bir yığından alıp diğerine koymak sırayı ters çevirdiği için en eski eleman çıkışın tepesine gelir ve ilk giren ilk çıkar kuralı sağlanır.
 
-**Savunma.** Tek bir alma işlemi doğrusal olabilir, çünkü aktarma bütün elemanlara dokunur. Ama her eleman hayatı boyunca en fazla dört işlem görür: girişe konur, girişten alınır, çıkışa konur, çıkıştan alınır. n elemanlı bir işlem dizisinin toplam maliyeti bu yüzden 4n ile sınırlıdır, yani işlem başına amortize sabittir. Bu, dinamik dizideki muhasebenin aynısıdır: garanti tek işleme değil, dizinin toplamına verilir. Dikkat edilecek yer değişmezdir: aktarma yalnızca çıkış yığını boşken yapılmalıdır. Çıkış boşalmadan aktarma yapılırsa aynı eleman birden çok kez taşınabilir ve dört işlem argümanı çöker.
+**Savunma.** Tek bir alma işlemi doğrusal olabilir, çünkü aktarma bütün elemanlara dokunur. Ama her eleman hayatı boyunca en fazla dört işlem görür: girişe konur, girişten alınır, çıkışa konur, çıkıştan alınır. n elemanlı bir işlem dizisinin toplam maliyeti bu yüzden 4n ile sınırlıdır, yani işlem başına amortize sabittir. Bu, dinamik dizideki muhasebenin aynısıdır: garanti tek işleme değil, dizinin toplamına verilir. Dikkat edilecek yer değişmezdir: aktarma yalnızca çıkış yığını boşken yapılmalıdır. Çıkışta hâlâ eski elemanlar varken aktarma yapılırsa daha yeni elemanlar onların üstüne biner ve bir sonraki alma işlemi en eskiyi değil daha yeni bir elemanı verir. Yani bu kural bir maliyet ayrıntısı değil, ilk giren ilk çıkar davranışının doğruluk koşuludur.
 
 ## Dört yapının maliyet tablosu
 

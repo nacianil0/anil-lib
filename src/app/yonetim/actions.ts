@@ -1,10 +1,13 @@
 "use server";
 
+import { z } from "zod";
 import { getOwnerUser } from "@/lib/auth/session-user";
 import { createUserSchema } from "@/lib/auth/user-schema";
-import { createStandardUser, DuplicateUsernameError } from "@/lib/auth/users";
+import { createStandardUser, DuplicateUsernameError, findUserById } from "@/lib/auth/users";
 import { getDatabaseClient } from "@/lib/db/client";
+import { resetReadingProgress } from "@/lib/reader-data/server/reset-service";
 import type { CreateUserState } from "./create-user-state";
+import type { ResetReadingState } from "./reset-reading-state";
 
 /**
  * Renders a failure into something the owner can act on. This screen is owner-only,
@@ -86,5 +89,79 @@ export async function createUserAction(
   } catch (error) {
     console.error("[yonetim] createUserAction failed", error);
     return { status: "error", message: `Beklenmeyen hata — ${describeError(error)}` };
+  }
+}
+
+const resetReadingSchema = z.object({
+  userId: z.string().uuid(),
+  savedPlaces: z.boolean(),
+  highlights: z.boolean(),
+});
+
+/**
+ * Owner-only: starts one account's reading over (see `resetReadingProgress`).
+ *
+ * The target is resolved from the database by id, so the workspace that is cleared
+ * is never taken from the form. Authorization is checked here and again inside the
+ * reset service, before any query runs.
+ */
+export async function resetReadingAction(
+  _previous: ResetReadingState,
+  formData: FormData,
+): Promise<ResetReadingState> {
+  try {
+    const owner = await getOwnerUser();
+    if (!owner) {
+      return { status: "error", message: "Bu işlem için yetkin yok." };
+    }
+
+    const parsed = resetReadingSchema.safeParse({
+      userId: formData.get("userId") ?? "",
+      savedPlaces: formData.get("savedPlaces") === "on",
+      highlights: formData.get("highlights") === "on",
+    });
+    if (!parsed.success) {
+      return { status: "error", message: "Geçersiz kullanıcı." };
+    }
+
+    const sql = getDatabaseClient();
+    if (!sql) {
+      return {
+        status: "error",
+        message: "Veritabanı yapılandırılmamış; okuma geçmişi sıfırlanamıyor.",
+      };
+    }
+
+    const user = await findUserById(sql, parsed.data.userId);
+    if (!user) {
+      return { status: "error", message: "Kullanıcı bulunamadı." };
+    }
+
+    const result = await resetReadingProgress(sql, owner, user.workspaceId, {
+      savedPlaces: parsed.data.savedPlaces,
+      highlights: parsed.data.highlights,
+    });
+    // Audit trail for a destructive owner action: who, for whom, how much. Ids and
+    // counts only; no reader-authored text.
+    console.info("[yonetim] reading reset", {
+      actorId: owner.id,
+      targetUserId: user.id,
+      resetVersion: result.resetVersion,
+      progress: result.progress,
+      savedPlaces: result.savedPlaces,
+      highlights: result.highlights,
+    });
+
+    // As with account creation, no revalidatePath: the client refreshes the page once
+    // it has this result, so a rendering problem cannot hide whether the reset ran.
+    return {
+      status: "success",
+      progress: result.progress,
+      savedPlaces: result.savedPlaces,
+      highlights: result.highlights,
+    };
+  } catch (error) {
+    console.error("[yonetim] resetReadingAction failed", error);
+    return { status: "error", message: `Sıfırlanamadı — ${describeError(error)}` };
   }
 }

@@ -12,7 +12,7 @@ tags:
   - budama
   - ogretmen-ogrenci
   - hesap-butcesi
-content_hash: sha256:628fb20a8cdc5d1ef8e8e92fb8f59af7a582f2771eda43573f0fcbf91a8634a9
+content_hash: sha256:13be1bc30f85ff21f283cb8657f250df1aa7d301c35dcfe3f56a5991c5f7c769
 classification_version: 1
 classification_batch: 21
 ---
@@ -28,7 +28,7 @@ Bir sınıflandırma modelini olağan biçimde eğitirken hedef, doğru sınıfa
 
 Eğitilmiş büyük bir model ise tam olarak bunu söyler. Çıkışındaki softmax bütün sınıflara bir olasılık dağıtır ve bu dağılımdaki küçük sayılar — 2'ye verilen 0,9'un yanında 7'ye verilen 10⁻⁶ ile 3'e verilen 10⁻⁹ — modelin öğrendiği benzerlik yapısını taşır. Sorun şu ki bu sayılar softmax'tan sonra o kadar küçüktür ki eğitim sinyaline neredeyse hiç katkı yapmazlar.
 
-Geoffrey Hinton, Oriol Vinyals ve Jeff Dean'in 2015'te yayımladığı — hakemli bir konferans bildirisi değil, bir çalıştay çalışması olan — kısa metin bu sorunu tek bir müdahaleyle çözüyor: 10\. makalede kurduğumuz **sıcaklık**. Softmax'a girmeden önce logit'leri `T`'ye bölersen dağılım yumuşar; küçük olasılıklar büyür ve okunur hâle gelir. Öğretmen modelin yüksek sıcaklıkta ürettiği bu dağılıma **yumuşak etiket** (soft target) denir ve öğrenci aynı sıcaklıkta ona uymaya çalışır. Eğitim bittiğinde sıcaklık 1'e döner.
+Geoffrey Hinton, Oriol Vinyals ve Jeff Dean'in 2015'te yayımladığı — hakemli bir konferans bildirisi değil, bir çalıştay çalışması olan — kısa metin bu sorunu tek bir müdahaleyle çözüyor: 10\. makalede kurduğumuz **sıcaklık**. Softmax'a girmeden önce logit'leri `T`'ye bölersen dağılım yumuşar; küçük olasılıklar büyür ve okunur hâle gelir. Öğretmen modelin yüksek sıcaklıkta ürettiği bu dağılıma **yumuşak etiket** (soft target) denir ve öğrenci aynı sıcaklıkta ona uymaya çalışır. Eğitim bittiğinde sıcaklık 1'e döner. Küçük bir örnek, kendi hesabımız: logit'ler 6, 2 ve 0 ise `T = 1`'de olasılıklar yaklaşık 0,980 / 0,018 / 0,002; `T = 4`'te 0,63 / 0,23 / 0,14. Sıralama değişmedi, ama ikinci ve üçüncü sınıf arasındaki fark — hangi yanlışın "daha az yanlış" olduğu — artık gözle görülür büyüklükte ve eğitim sinyaline katılıyor.
 
 Bir kayıt: yumuşak etiketten gelen gradyanların büyüklüğü `1/T²` ile ölçekleniyor, dolayısıyla sert ve yumuşak hedefler birlikte kullanılacaksa yumuşak terim `T²` ile çarpılır. Bu, bir uygulama ayrıntısı gibi görünüyor ama mekanizmanın nerede yaşadığını gösteriyor: aktarılan şey, sıcaklığın büyüttüğü o küçük olasılıklar.
 
@@ -50,7 +50,7 @@ Birincisi eski. Jimmy Ba ve Rich Caruana'nın NeurIPS 2014'te sunduğu çalışm
 
 İkincisi Lucas Beyer ve arkadaşlarının CVPR 2022'de sunduğu çalışma. Yazarlar damıtmayı bir **fonksiyon eşleştirme** problemi olarak ele alıyorlar: öğretmen ile öğrenci **tam olarak aynı** girdiyi görmeli — aynı kırpma, aynı bozma, aynı artırma — ve eğitim çok uzun sürmeli. İki koşul da sezgiye aykırı: alışıldık düzende öğretmenin etiketleri bir kez hesaplanıp saklanır ve öğrenci kendi artırmalarını görür. Tutarlı görüntü ve sabırlı eğitimle, 9.600 dönemlik bir damıtmayla ImageNet'te bir ResNet-50'yi yüzde 82,8 doğruluğa çıkarıyorlar — aynı mimarinin olağan eğitimine göre 4,4 puan.
 
-Üçüncüsü daha da rahatsız edici. Tommaso Furlanello ve arkadaşlarının ICML 2018'de sunduğu çalışma, öğrenciyi öğretmenle **aynı mimaride ve aynı boyutta** kuruyor. Sıkıştırma yok; tek fark, öğrencinin hedefinin öğretmenin çıktısı olması. CIFAR-10'da sonuçlar: 0,38 milyon parametreli ağda test hatası 6,69'dan 6,64'e, 1,48 milyonda 5,06'dan 4,86'ya, 9,16 milyonda 4,13'ten 4,03'e iniyor. Öğrenci öğretmenini geçiyor. En büyük yapılandırmada — 36 milyon parametre — yön tersine dönüyor: 3,77'den 3,86'ya. Yani kazanç ne evrensel ne de sıkıştırmadan geliyor.
+Üçüncüsü bir adım daha ileri gidiyor. Tommaso Furlanello ve arkadaşlarının ICML 2018'de sunduğu çalışma, öğrenciyi öğretmenle **aynı mimaride ve aynı boyutta** kuruyor. Sıkıştırma yok; tek fark, öğrencinin hedefinin öğretmenin çıktısı olması. CIFAR-10'da sonuçlar: 0,38 milyon parametreli ağda test hatası 6,69'dan 6,64'e, 1,48 milyonda 5,06'dan 4,86'ya, 9,16 milyonda 4,13'ten 4,03'e iniyor. Öğrenci öğretmenini geçiyor. En büyük yapılandırmada — 36 milyon parametre — yön tersine dönüyor: 3,77'den 3,86'ya. Yani kazanç ne evrensel ne de sıkıştırmadan geliyor.
 
 Bu üç ölçüm birlikte okununca damıtmanın tanımı değişiyor: öğrenci, öğretmenin **fonksiyonunu** örnekliyor ve bu fonksiyon, sert etiketlerin tanımladığı hedeften daha yumuşak, daha düzenli, öğrenilmesi daha kolay bir hedef. Furlanello ve arkadaşlarının gradyan çözümlemesi de bunu söylüyor: damıtma kaybının gradyanı, yanlış sınıflara dair bilgiyi taşıyan bir terim ile gerçek etiketten gelen gradyanın yeniden ölçeklenmiş hâlinin toplamı.
 
@@ -112,7 +112,7 @@ DeepSeek-AI ekibinin Nature'da 2025'te yayımladığı çalışma — 34\. makal
 
 Damıtılan model AIME 2024'te ilk denemede yüzde 72,6, MATH-500'de 94,3, LiveCodeBench'te 57,2. Pekiştirmeli öğrenmeden geçen sürüm sırasıyla 47,0, 91,6 ve 40,2. Aynı boyuttaki bir başka akıl yürütme modeli 50,0, 90,6 ve 41,9. Fark küçük değil ve bütün ölçütlerde aynı yönde. Damıtılan 1,5 milyarlık model bile AIME'de yüzde 28,9 ile, karşılaştırma tabanı olarak konan iki büyük ticari modelin 9,3 ve 16,0'ının önüne geçiyor.
 
-Yazarların kendi çıkarımı iki cümle ve ikisi de kayıtlı: küçük modele doğrudan uygulanan büyük ölçekli pekiştirmeli öğrenme muazzam hesap istiyor ve damıtmanın başarısına ulaşamayabiliyor; fakat **insan zekâsının sınırının ötesine geçmek** için hâlâ daha güçlü temel modeller ve daha büyük ölçekli pekiştirmeli öğrenme gerekebilir. Yani 34'ün işareti ödendi ve sınırı olduğu gibi duruyor: damıtma öğrencinin tavanını yükseltir, ama o tavanı öğretmenin nerede olduğu belirler. Bir sürü küçük modelin toplamı, hiç kimsenin bulmadığı bir çözümü bulmaz.
+Yazarların kendi çıkarımı iki cümle ve ikisi de kayıtlı: küçük modele doğrudan uygulanan büyük ölçekli pekiştirmeli öğrenme muazzam hesap istiyor ve damıtmanın başarısına ulaşamayabiliyor; fakat **zekânın sınırlarını ilerletmek** için hâlâ daha güçlü temel modeller ve daha büyük ölçekli pekiştirmeli öğrenme gerekebilir. Yani 34'ün işareti ödendi ve sınırı olduğu gibi duruyor: damıtma öğrencinin tavanını yükseltir, ama o tavanı öğretmenin nerede olduğu belirler. Bu son cümle yazarların ölçümü değil, iki çıkarımının birlikte okunuşu; damıtılmış bir öğrencinin öğretmenini hangi koşulda geçebileceği, yukarıdaki aynı boyutlu öğrenci deneyinin gösterdiği gibi, hâlâ açık bir soru.
 
 ## Damıtmanın disiplini
 

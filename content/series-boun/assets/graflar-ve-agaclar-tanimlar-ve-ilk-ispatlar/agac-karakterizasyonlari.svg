@@ -21,11 +21,11 @@
   <line x1="444" y1="234" x2="278" y2="234" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a7-halka-ok)" />
   <line x1="154" y1="194" x2="265" y2="102" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#boun-a7-halka-ok)" />
 
-  <text x="506" y="140" font-size="13" fill="var(--text-muted)">yaprak silen</text>
-  <text x="506" y="160" font-size="13" fill="var(--text-muted)">tümevarım</text>
+  <text x="536" y="140" font-size="13" fill="var(--text-muted)">yaprak silen</text>
+  <text x="536" y="160" font-size="13" fill="var(--text-muted)">tümevarım</text>
 
-  <text x="214" y="140" font-size="13" text-anchor="end" fill="var(--text-muted)">iki farklı yol</text>
-  <text x="214" y="160" font-size="13" text-anchor="end" fill="var(--text-muted)">bir döngü kapatır</text>
+  <text x="184" y="140" font-size="13" text-anchor="end" fill="var(--text-muted)">döngü olsaydı iki</text>
+  <text x="184" y="160" font-size="13" text-anchor="end" fill="var(--text-muted)">farklı yol verirdi</text>
 
   <text x="360" y="300" font-size="13" text-anchor="middle" fill="var(--text-muted)">döngü kenarını sil; bağlı graf n − 1 kenardan aşağı inemez</text>
 

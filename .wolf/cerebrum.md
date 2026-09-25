@@ -19,6 +19,20 @@
 
 ## Key Learnings
 
+- [2026-09-25] **Favicon, Next dosya kuralıyla `src/app/` altında:** `favicon.ico` (16/32/48), `icon.svg`
+  (koyu tema `@media (prefers-color-scheme: dark)` ile `#b5435a`), `apple-icon.png` (180, opak). Next head'e
+  kendisi `/favicon.ico sizes=16x16` (ICO'nun ilk girdisi), `/icon.svg?hash sizes=any`, `apple-touch-icon` ekler;
+  `layout.tsx` metadata'sına `icons` yazılmaz. İkonlar **statik dosya olmalı**: middleware'in `PUBLIC_FILE`
+  regex'i yalnızca uzantılı yolları gate'ten geçirir; `icon.tsx`/`manifest.webmanifest` gibi uzantısız ya da
+  listede olmayan yollar production'da `/login`e yönlenir.
+- [2026-09-25] **Sekmedeki gerçek favicon'u ekran görüntüsü olmadan doğrulama:** gerçek Chrome'u
+  (`channel: "chrome"`, geçici `launchPersistentContext` profili) sayfaya götür, sonra
+  `chrome://favicon2/?size=16&scaleFactor=1x&pageUrl=<url>&allowGoogleServerFallback=0` aç ve `img`'yi canvas'a
+  çizip pikselleri oku (element screenshot'ı Chrome'un damalı saydamlık zeminini de yakalar). Chrome favicon
+  SVG'sini **sayfanın değil tarayıcı modunun** `prefers-color-scheme`'iyle çizer: Playwright `colorScheme` bunu
+  değiştirmez; geçici profilin `Default/Preferences` dosyasına `browser.theme.color_scheme(2)` = 1 (açık) / 2
+  (koyu) yaz. Ekran kilitliyken OS ekran yakalama kilit ekranını verir; bu yol kilitten etkilenmez.
+
 - [2026-09-10] BOUN Batch 10: **repo SVG denetleyicisi metin–metin çakışmasına bakmıyor**, yalnızca
   viewBox taşmasına. İki panelli şemalarda sol panel başlığı sağ panelin üzerine binebiliyor ve bunu
   yalnızca diyagramı tek tek render edip **görsel olarak incelemek** yakalıyor. Ek denetleyici:
@@ -434,7 +448,37 @@ ode_modules`, sonra kopyayi sil.
 - **`www.os-book.com` iki A kaydi dondurur ve 205.178.189.129 baglanti kabul etmez**; curl araliıkli
   olarak `000` verir. `--resolve www.os-book.com:443:128.36.0.108` ile calisir.
 
+### İki seri editoryal yenileme turu (2026-09-25)
+
+- Serilerin kalıcı ana ilkesi artık "anlam önce"dir (AI SOZLESME §11 başı, §3 "Formül katmanlama";
+  BOUN §8): formül okura soru → söz → adlandırılmış sembol → küçük sayı → sonucun anlamı sırasıyla
+  gelir; kökeni söylenmemiş sabit işlenmez; 3+ adımlı türetim `### İleri okuma notu` altına gider.
+- Şekil tabanı 2'den 1'e indi (kota kaldırıldı). Aynı veri hem Markdown tablosu hem SVG olamaz;
+  kavramın biçimi varsa (elips, yol, çatı çizgisi, zaman çizelgesi, kim neyi tutuyor) şekil onu çizer.
+- Editoryal revizyon işareti: frontmatter `revised_at: "YYYY-MM-DD"` + `revision_note` (birlikte),
+  katalog kopyası `sync-series-hashes.cjs --write` ile; UI `src/components/reader/revision-notice.tsx`
+  (ilerleme verisine yazmaz; "okuduktan sonra" kararı `ready` ile aynı render'da donar).
+- `content_hash` satır sonları LF'ye normalleştirilerek hesaplanır; eski hash'ler çalışma kopyasının
+  CRLF'sine bağlıydı (bu repoda core.autocrlf=true, dizin LF, çalışma kopyası CRLF).
+- `check-series-content.cjs` kalıp listesini (benzetme kapanışı, dürüstlük ilanı, "bu makalenin
+  en/asıl/bütün…", "en çarpıcı", "Cümle şu:"), `,0'e` ondalık ekini, gövdeye sızan üretim dilini (§,
+  defter adları, batch) ve BOUN'da "Mülakatta nasıl görünür" + İngilizce satırını reddeder;
+  `--warnings` 200 kelimeyi aşan alt metinleri listeler. `check-series-svg.cjs` son metin tabanını
+  viewBox alt kenarına ≥ 8 birim ister.
+- Denetim yöntemi işe yaradı: faz başına bir ajan (okur + gerektiğinde doğrular + düzeltir + yapılandırılmış
+  rapor), kabul ana oturumda diff üzerinden; ajanların 'ölçüm/sayı/kaynak koşulu' bulguları gerçek
+  olgu hatalarını yakaladı (Eckart–Young normu, EO 14148, çatı çizgisinin yönü, Whisper karşılaştırması).
+- Resume pill (`resume-notice.tsx`) `fixed left-1/2 -translate-x-1/2` ile ortalanır: kullanılabilir
+  genişlik viewport'un yarısıdır, telefonda pill min-content'e küçülür. Pill içine konan her düğme/etiket
+  `whitespace-nowrap` olmalı, yoksa truncate metin aç kalır (bug-648). Pill metnini değiştirince 375px
+  ekran görüntüsüne bak; e2e `toContainText` gizli span'leri de okuduğu için kesilmeyi yakalamaz.
+
 ## Do-Not-Repeat
+
+- [2026-09-25] Paralel oturum aynı worktree'de dev/e2e sunucusu çalıştırırken ana dizinde `pnpm build` alma:
+  paylaşılan `.next` birbirini siler (favicon run'ında build çıktısı 3100'deki e2e dev sunucusunca silindi).
+  Build/prod doğrulaması **aynı sürücüde** (`D:\dev\.<ad>-iso`) node_modules junction'lı izole kopyada yapılır;
+  sunucu `.claude/launch.json`'a geçici girdiyle açılır ve iş sonunda yalnızca kendi girdin çıkarılır.
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
@@ -688,6 +732,20 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-13] **Patterson & Hennessy COD RISC-V 2e'nin 4. bolumunun adi "The Processor"dur.**
   Elsevier'in satis sayfasi "The RISC-V Processor" der; kitabin kendi icindekileri ve K10plus MARC
   505 alani "The Processor" der. Yayinci satis sayfasi tek kanal olarak yeterli degildir.
+
+- [2026-09-25] Bir kaynaktan sayı aktarırken satır/sütun koşulunu düşürme: "en güçlü model %68" değil
+  "modellerin ortalaması %68"; "aynı kartta 230→71 ms" değil "beş kartta 230, tek kartta 71". Bu turda
+  en az 15 yazıda bu sınıf hata çıktı.
+- [2026-09-25] "X kat / yarısı / üç mertebe / en pahalı üçüncü" diyen cümlede bölmeyi yap ve sırayı say;
+  60'ın özeti ("en pahalı üçüncü") ve 112 ("üç mertebe", gerçekte ~409 kat) yanlıştı.
+- [2026-09-25] Kurulumun zorunlu kıldığı özdeşliği "ölçtük" diye sunma (105: sabit kayba eğitilen
+  koşularda δ = 1,5/β kaçınılmazdır). Küçük örnekte doğru olanı genel teorem yapma (92: Eckart–Young).
+- [2026-09-25] Bash heredoc'una ters bölü ya da Türkçe içeren Python/metin gömme — bu oturumda iki kez
+  daha bozuldu ("30\\. makale" ve bir betiğin bütün kaçışları). Betikleri Write ile scratchpad'e yaz.
+- [2026-09-25] Mevcut H2/H3 başlıklarını yeniden adlandırma: okuma çıpaları başlık kimliğine bağlı.
+  Tek istisna olgusal olarak yanlış başlık (78) ve HANDOFF'a yazılır.
+- [2026-09-25] Bir bulguyu düzelttiğinde onu geri çağıran yazıları grep'le ve aynı turda hizala
+  (30 → 31, 2 → 95); frontmatter özeti gövdeyle çelişirse özeti katalogla birlikte güncelle.
 
 ## Decision Log
 
@@ -959,3 +1017,63 @@ mümkün değil.
   ve render kusurudur. **Karar: dokunulmadi, HANDOFF'ta karara bagli kalem olarak kaydedildi.**
   Makale 2'nin bolum basligi ("## Bu makalenin mulakattaki karsiligi") yalnizca ad degisikligi
   oldugu icin duzeltildi.
+
+### İki serinin tam korpus yenilemesi: işaret, hash ve şekil politikası (2026-09-25)
+
+Kullanıcı iki serinin bütün yazılarının yeniden değerlendirilmesini, düzeltmelerin uygulanmasını ve
+"yenilendi" işaretini istedi. Kararlar (AI #247–#253): işaret yalnızca okurun anladığı şey değiştiğinde
+konur (43 AI + 7 BOUN yazı), not somut ve ≤ 200 karakter; hash LF-normalize edildi ve bütün hash'ler
+yeniden yazıldı; şekil tabanı 1'e indi çünkü "en az 2" kotası kutu içi düzyazı/tablo şekiller
+üretiyordu; alt metinler toplu kısaltılmadı (ileriye dönük ≤ 120 hedef, 200+ uyarı); 78'in olgusal
+olarak yanlış başlığı tek başlık istisnası. Reddedilen seçenek: işareti content_hash değişiminden
+otomatik türetmek — typo düzeltmesini de "yenilendi" gösterirdi.
+
+### Okuma Odası ekran ekran UX turu (2026-09-25)
+
+- **Karar — ilerleme faz faz çizilir, bölüm bölüm değil.** 114 hücreli şerit telefonda ~1 px'lik
+  noktalara dönüşüyordu. `src/components/series/phase-progress.tsx` fazı yol haritasındaki planlanan
+  bölüm sayısı kadar geniş bir parça, doluluğu tamamlanan oranı, "buradan devam" konumunu ince bir
+  dikey çizgiyle çizer; sayılar hep yanında yazılıdır (şerit aria-hidden). 5 fazda da 14 fazda da okunur.
+- **Karar — "sıradaki" tek kuraldan gelir:** `src/lib/content/series-progress.ts` `nextStep`: yarım
+  bölüm varsa EN SON ziyaret edilen (ilk sıradaki değil — yıllar önce açılıp bırakılan 5. bölüm
+  38'i gölgelemesin), yoksa okuma sırasındaki ilk bitmemiş bölüm (sıra dışı okunan 52 sıçratmasın).
+  Ana sayfa kahramanı, seri satırları ve `/seri` CTA'sı aynı fonksiyonu kullanır; son okunan bölüm
+  bitmişse kahraman "Sıradaki bölüm"ü önerir.
+- **Karar — okuma listesi seride fazlara göre gruplanır** (`ReadingList` `phases` prop'u); "Sınıflandırma
+  NN" üretim kohortu okura anlamsızdı. Arşiv (`/read`) fazsızdır ve kohort gruplamasını korur; iki e2e
+  ("Sınıflandırma 00 · 18 makale") ona bağlı.
+- **Karar — seri bölüm başlığı `.prose-reader` DIŞINDA** (`chapter-header.tsx`): vurgular ve okuma çıpası
+  `.prose-reader` textContent'ine göre ofset tutar; içeri konan bir başlık her ofseti kaydırırdı. Aynı
+  sebeple şeklin büyütme düğmesinde metin düğümü yoktur (yalnızca aria-label + simge). Sayfalı düzende
+  başlık sütun üstüne konmaz (her sayfadan yükseklik yer, gizlense de reflow'u bozar); başlık araç
+  çubuğunda durur.
+- **Karar — şekil: satır içinde bütün, istek üzerine ayrıntı.** 2026-09-06'daki "kaba sığdır" kararı
+  korunur; `figure-viewer.tsx` şeklin kopyasını portal'da tam ekran açar, sığdırma genişliği 600 px'in
+  altındaysa büyütülmüş (≥900 px) ve kaydırılabilir başlar. Portal olduğu için `main` üzerindeki wheel
+  paging görmez; `reader-pager` `[role='dialog']` içindeki tuşları artık yok sayar.
+- **Karar — ince tipografi tek açılımın arkasında** ("İnce ayarlar": kalınlık, paragraf aralığı, girinti,
+  harf aralığı, heceleme). Şema ve kayıt değişmedi; değiştirilmiş ince ayar sayısı kapalıyken görünür.
+- **Bilinçli dokunulmayan:** `measure.standard = 84ch` (masaüstünde ~87 karakter/satır ölçüldü) kullanıcının
+  f77ea49 commit'indeki açık seçimi; iki yana yaslı + heceleme kararı (2026-09-03).
+- **Öğrenilen — Tailwind utility adı ile tema sınıfı çakışabilir:** `.sepia` tema sınıfı Tailwind'in
+  `sepia` filtre utility'siyle aynı adı taşıdığı için `<html class="sepia">` bütün sayfaya
+  `filter: sepia(1)` alıyordu. Hesaplanan `background-color` doğru göründüğü için "body rengini ölç"
+  doğrulaması bunu kaçırıyordu; tema doğrulamasında `getComputedStyle(html).filter` ve piksel örneği de
+  bakılmalı. Çözüm `blocklist: ["sepia"]`.
+- **Öğrenilen (ortam):** Bu turda üç oturum aynı ağaçta çalıştı (editoryal yenileme, okuma sıfırlama/
+  resetVersion, bu UX turu). `reader-shell.tsx` benim düzenlememden dakikalar sonra başka oturumca
+  değişti; ortak dosyada her düzenlemeden önce yeniden oku. `merge.test.ts` tip hatası o oturumun yarım işiydi.
+- **Öğrenilen (araç):** Git Bash'te `node script.mjs /` gibi eğik çizgiyle başlayan argüman Windows yoluna
+  çevrilir ("http://localhost:3220C:/Users/…"); `MSYS_NO_PATHCONV=1` gerekir. Yalıtılmış kopya için
+  `.claude/launch.json`'a bash + `next dev <port>` girdisi ekleyip `preview_start` ile başlatmak çalışıyor;
+  dev sunucusu çok sayıda Playwright bağlamı altında `ERR_MEMORY_ALLOCATION_FAILED` ile düşebiliyor,
+  çekimleri küçük parçalara böl.
+- **Do-Not-Repeat [2026-09-25]:** Ekrandaki etiketi ölçen testte `textContent` kullanma; sr-only metin
+  sayıma girer (reader-resume "toolbar still shows which chapter" testi bu yüzden 102 px "gerekli" dedi).
+  Görünür kırpılmayı `scrollWidth > clientWidth` ile ölç.
+- **Öğrenilen (inceleme sonrası):** Tailwind v3 `@layer components` gerçek bir CSS cascade layer
+  üretmez (derlenmiş CSS'te `@layer` yok); dışarıdaki bir `@media print` kuralı katmanlı sanılıp
+  özgüllükte kaybedebilir. Yazdırma/tema geçersiz kılmalarında seçiciyi ekran kuralı kadar özgül yaz.
+  Bağımsız inceleme ajanı ayrıca şekil görüntüleyicide odak tuzağı sızıntısını yakaladı (başlığa
+  tıklayınca odak body'ye düşüp sayfalı metni çeviriyordu): dialog köküne `tabIndex=-1` ve Tab
+  işleyicisinde dışarıdaki odağı içeri alma.

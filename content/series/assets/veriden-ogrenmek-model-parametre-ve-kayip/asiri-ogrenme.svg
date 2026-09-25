@@ -20,4 +20,5 @@
 
   <line x1="360" y1="228" x2="360" y2="344" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="5 4"/>
   <text x="360" y="364" font-size="15" text-anchor="middle" fill="var(--text)">en iyi denge</text>
+  <text x="704" y="30" font-size="13" text-anchor="end" fill="var(--text-faint)">eğrilerin biçimi şematiktir</text>
 </svg>

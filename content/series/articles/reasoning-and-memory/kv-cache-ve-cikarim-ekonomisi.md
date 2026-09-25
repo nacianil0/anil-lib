@@ -12,7 +12,7 @@ tags:
   - bellek-bant-genisligi
   - gruplandirilmis-sorgu-dikkati
   - sayfali-dikkat
-content_hash: sha256:d31d3e9409f0246eb0abbca722175f9e3835db53609665e6eda47fcff150876c
+content_hash: sha256:dea48ae4f8e27f7db4c974f476e253bfe09a9664387073b13c34d2813fe0aae5
 classification_version: 1
 classification_batch: 5
 ---
@@ -34,9 +34,9 @@ Kritik gözlem şu: 7\. makaledeki nedensel maske yüzünden bir token'ın anaht
 
 ![Solda katmanlar boyunca dizilmiş token sütunları gösterilir; her hücrede o token için saklanan anahtar ve değer vektörleri vardır ve bunlar dolu kutularla işaretlenmiştir. Sağdaki yeni token yalnızca kendi sorgu vektörünü üretir ve okla bütün önceki hücrelere bağlanır; sorgu vektörünün saklanmadığı belirtilir. Altta önbellek boyutunun formülü verilir: iki çarpı katman sayısı çarpı anahtar-değer başı sayısı çarpı baş boyutu çarpı sayı başına bayt.](assets/onbellekte-ne-saklanir.svg "Şekil 1 — Saklanan şey anahtarlar ve değerler")
 
-Şekil 1'deki formül bu makalenin geri kalanının anahtarı. Bir token için saklanan bayt sayısı şudur: 2 (anahtar ve değer) × katman sayısı × anahtar-değer başı sayısı × baş boyutu × sayı başına bayt.
+Şekil 1'deki formül bu makalenin geri kalanının anahtarı ve her çarpanı bir sorunun cevabı. Bir token için kaç vektör saklanıyor? Her katmanda bir anahtar ve bir değer; o hâlde **2 × katman sayısı** vektör. Her vektör kaç sayıdan oluşuyor? Her anahtar-değer başı kendi parçasını tuttuğu için **anahtar-değer başı sayısı × baş boyutu** sayı. Her sayı kaç bayt? 16 bitlik sayılarla **2 bayt**. Hepsini çarpınca bir token için saklanan bayt sayısı çıkar: 2 × katman sayısı × anahtar-değer başı sayısı × baş boyutu × sayı başına bayt.
 
-Somut bir örnek yapalım. Anahtar-değer başı sayısı ile baş boyutunun çarpımı, modelin iç genişliğini verir; başların hepsi kendi çiftini tutuyorsa bu çarpım doğrudan model genişliğidir. On üç milyar parametreli, 40 katmanlı ve 5.120 birim genişliğinde bir modelde, 16 bitlik sayılarla bir token'ın maliyeti 2 × 5.120 × 40 × 2 = 819.200 bayt, yani yaklaşık 800 kilobayt. Bu modelin 2.048 token'lık bir dizisi için önbellek **1,6 gigabayt** tutar. Tek bir kullanıcı, tek bir istek için.
+Somut bir örnek yapalım; sayılar, birazdan göreceğimiz Kwon ve arkadaşlarının çalışmasının kullandığı 13 milyar parametreli modelden. Başların hepsi kendi anahtar-değer çiftini tutuyorsa, baş sayısı ile baş boyutunun çarpımı doğrudan modelin genişliğidir; bu modelde 5.120. Model 40 katmanlı. Bir token'ın maliyeti o hâlde 2 (anahtar ve değer) × 40 (katman) × 5.120 (baş sayısı × baş boyutu) × 2 (bayt) = 819.200 bayt, yani yaklaşık 800 kilobayt. Bu modelin 2.048 token'lık bir dizisi için önbellek 819.200 × 2.048 ≈ **1,6 gigabayt** tutar. Tek bir kullanıcı, tek bir istek için.
 
 Şimdi bunu ağırlıkların yanına koy. Aynı modeli 40 gigabaytlık bir kartta çalıştırırken ağırlıklar belleğin yaklaşık yüzde 65'ini, yani 26 gigabaytını kaplar. Ağırlıklar sabittir: kaç kullanıcıya hizmet verirsen ver bir kez yüklenir. Önbellek ise **kullanıcı başınadır**. Geriye kalan bellek, aynı anda kaç isteğe hizmet verilebileceğini doğrudan belirler.
 
@@ -82,13 +82,13 @@ Bu gerilimin ne kadar sertleşebileceğini aynı çalışmadan bir sayı göster
 
 Formüldeki kaldıraç, anahtar-değer başı sayısında. Her sorgu başının kendi anahtar ve değer başı olmak zorunda değil; birden çok sorgu başı aynı anahtar-değer çiftini paylaşabilir. Buna **gruplandırılmış sorgu dikkati** (grouped-query attention, GQA) deniyor ve bugün büyük modellerin çoğunda standart.
 
-Llama 3'ün 70 milyar parametreli sürümünün resmî teknik raporundaki sayılarla hesaplayalım — rapor hakemli bir yayın değil, mimari değerleri oradan alıyoruz. Model 80 katmanlı, genişliği 8.192 ve 64 sorgu başı var — yani baş boyutu 8.192 ÷ 64 = 128 — ama yalnızca **8** anahtar-değer başı. Formülü uygulayalım: 2 × 80 × 8 × 128 × 2 = 327.680 bayt, yani token başına 320 kilobayt.
+Llama 3'ün 70 milyar parametreli sürümünün resmî teknik raporundaki sayılarla hesaplayalım — rapor hakemli bir yayın değil, mimari değerleri oradan alıyoruz. Model 80 katmanlı, genişliği 8.192 ve 64 sorgu başı var — yani baş boyutu 8.192 ÷ 64 = 128 — ama yalnızca **8** anahtar-değer başı. Formülü uygulayalım: 2 × 80 × 8 × 128 × 2 = 327.680 bayt, yani token başına 320 kilobayt. 128.000 token'lık bir sohbette bu, 327.680 × 128.000 ≈ 42 milyar bayt, yani yaklaşık 42 gigabayt eder. Bu sayı raporda yok; girdileri raporun mimari değerleri olan kendi hesabımız.
 
 ![Üç çubuklu bir karşılaştırma. Birinci çubuk 70 milyar parametreli bir modelin 16 bitlik ağırlıklarını 140 gigabayt olarak gösterir. İkinci çubuk aynı model için 128.000 token'lık tek bir sohbetin anahtar-değer önbelleğini gruplandırılmış sorgu dikkatiyle yaklaşık 42 gigabayt olarak gösterir. Üçüncü çubuk aynı önbelleğin, her sorgu başının kendi anahtar-değer çiftini tutması hâlinde yaklaşık 336 gigabayta çıkacağını gösterir; bu çubuk ağırlıklar çubuğundan belirgin biçimde uzundur.](assets/onbellegin-bellek-yuku.svg "Şekil 3 — Tek bir uzun sohbetin bellek yükü")
 
-Şekil 3'teki karşılaştırma 25\. makaleyi doğrudan buraya bağlıyor. Modelin ağırlıkları 16 bitlik sayılarla 140 gigabayt. 128.000 token'lık **tek** bir uzun sohbetin önbelleği yaklaşık 42 gigabayt — ağırlıkların neredeyse üçte biri, ve bu tek bir kullanıcı için. Aynı model anahtar-değer başlarını paylaşmasaydı, yani 8 yerine 64 başı olsaydı, aynı sohbet yaklaşık 336 gigabayt tutardı: ağırlıkların iki katından fazla, tek bir kullanıcı için.
+Şekil 3'teki karşılaştırma 25\. makaleyi doğrudan buraya bağlıyor. Modelin ağırlıkları 16 bitlik sayılarla 140 gigabayt. 128.000 token'lık **tek** bir uzun sohbetin önbelleği yaklaşık 42 gigabayt — ağırlıkların neredeyse üçte biri, ve bu tek bir kullanıcı için. Aynı model anahtar-değer başlarını paylaşmasaydı, yani 8 yerine 64 başı olsaydı, formüldeki tek çarpan sekiz katına çıkar ve aynı sohbet yaklaşık 42 × 8 = 336 gigabayt tutardı: ağırlıkların iki katından fazla, tek bir kullanıcı için.
 
-Bu, uzun bağlamın gerçek faturasının nerede kesildiğini gösteriyor. 25\. makalede pencereyi esnetmenin eğitim tarafındaki bedelini görmüştük; çalışma anındaki bedeli bu. Pencereyi sekiz kat büyütmek, aynı karta sığdırabileceğin eşzamanlı kullanıcı sayısını kabaca sekizde birine indirir.
+Bu, uzun bağlamın gerçek faturasının nerede kesildiğini gösteriyor. 25\. makalede pencereyi esnetmenin eğitim tarafındaki bedelini görmüştük; çalışma anındaki bedeli bu. Kullanıcılar pencereyi gerçekten dolduruyorsa, pencereyi sekiz kat büyütmek aynı karta sığdırabileceğin eşzamanlı kullanıcı sayısını kabaca sekizde birine indirir.
 
 ## Önbelleği küçültmek ve israf etmemek
 
@@ -122,7 +122,7 @@ Bu yapı, model kullanırken gördüğün birkaç şeyi doğrudan açıklıyor.
 
 **Cevabın parça parça akması bir görsel efekt değil.** Arayüzün metni akıtarak göstermesi bir animasyon değil; model cevabı gerçekten token token üretiyor. 10\. makaledeki döngü tek tek ilerlediği için, ilk token hazır olduğunda geri kalanını beklemenin bir anlamı yok.
 
-**Değişmeyen başlangıç ucuzdur.** Sistem isteminin ve sabit örneklerin dizinin başında ve değişmeden durması, o kısmın hesabının yeniden kullanılabilmesini sağlar. 23\. makaledeki 997 örnekli istem — yaklaşık 85.000 token — tam olarak bu yüzden göründüğü kadar korkutucu değil: değişmeyen bir önek olarak bir kez ödenebilir.
+**Değişmeyen başlangıç daha ucuzdur, bedava değildir.** Sistem isteminin ve sabit örneklerin dizinin başında ve değişmeden durması, o kısmın hesabının yeniden kullanılabilmesini sağlar. 23\. makaledeki 997 örnekli istem — yaklaşık 85.000 token — bu yüzden göründüğü kadar korkutucu değil: ön dolum hesabı değişmeyen bir önek olarak bir kez ödenebilir. Ödenmeye devam eden iki kalem kalır: o 85.000 token'ın önbelleği bellekte yer tutar ve üretilen her yeni token dikkat hesabında o önbelleğin tamamını okur.
 
 ## Çıkarım ekonomisinin disiplini
 
@@ -132,7 +132,7 @@ Bu yapı, model kullanırken gördüğün birkaç şeyi doğrudan açıklıyor.
 
 **Uzun bağlamı bellek bütçesi olarak düşün.** İlan edilen pencere, aynı zamanda kullanıcı başına ayrılacak belleği ilan ediyor.
 
-**Ölçerken iki sayıyı ayrı tut.** İlk token'a kadar geçen süre ile saniyedeki token sayısı farklı darboğazları ölçer; birini iyileştiren değişiklik öbürünü iyileştirmeyebilir. İstemi kısaltmak birinciyi düzeltir, ikinciye dokunmaz; daha küçük bir model seçmek ikinciyi düzeltir.
+**Ölçerken iki sayıyı ayrı tut.** İlk token'a kadar geçen süre ile saniyedeki token sayısı farklı darboğazları ölçer; birini iyileştiren değişiklik öbürünü iyileştirmeyebilir. İstemi kısaltmak en çok birinciyi düzeltir, ikinciye yalnızca okunacak önbelleği küçülttüğü kadar dokunur; daha küçük bir model seçmek, taşınacak ağırlığı azalttığı için en çok ikinciyi düzeltir.
 
 Son olarak, bu makaledeki bütün sayıların ortak bir dersi var ve 16\. makaledeki disiplinin donanım tarafındaki karşılığı. Bir modelin "hızlı" ya da "ucuz" olması tek başına bir özelliği değil; hangi yığın büyüklüğünde, hangi bağlam uzunluğunda ve hangi donanımda ölçüldüğüne bağlı bir sonuç. Aynı model, tek kullanıcıya hizmet verirken çipin hesap gücünün küçük bir kısmını kullanır ve token başına pahalıdır; kalabalık bir yığında aynı çip verimli çalışır ve token başına maliyet düşer. Bir sağlayıcının fiyatı bu tercihlerin toplamıdır, modelin bir sabiti değil.
 

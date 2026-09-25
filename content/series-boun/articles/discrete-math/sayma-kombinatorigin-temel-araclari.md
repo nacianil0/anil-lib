@@ -12,7 +12,7 @@ tags:
   - kombinasyon
   - binom-katsayisi
   - guvercin-yuvasi
-content_hash: sha256:66468dbda18767921cd6548f9cb7f71e67c8e6f9758641dce08fd0d352d05029
+content_hash: sha256:0370c2f77b7ba01ba18442cb52ebff8a55d57d3d28bedf40fed37aff3f32adb4
 classification_version: 1
 classification_batch: 1
 ---
@@ -98,7 +98,7 @@ C(n, k) = C(n − 1, k − 1) + C(n − 1, k).
 
 Özdeşliğin cebirsel ispatı faktöriyelleri açmakla yapılır ama **kombinatoryal ispatı** çok daha öğreticidir ve mülakatta daha iyi durur. Her iki taraf da aynı şeyi sayar: n elemanlı bir kümenin k elemanlı alt kümelerini. Kümedeki bir elemanı sabitle. Bir alt küme ya o elemanı içerir — geri kalan k − 1 eleman diğer n − 1 arasından seçilir, C(n − 1, k − 1) yol — ya da içermez — k elemanın hepsi diğer n − 1 arasından seçilir, C(n − 1, k) yol. İki durum ayrıktır ve hepsini kapsar; toplama kuralı sonucu verir.
 
-Aynı teknik satır toplamlarını da verir: k sıfırdan n'ye kadar C(n, k) toplamı 2ⁿ'dir, çünkü sol taraf alt kümeleri boyutlarına göre gruplayarak, sağ taraf ise "her eleman için içeride mi dışarıda mı" diyerek **aynı** alt küme koleksiyonunu sayar. Bir eşitliği iki farklı sayma yoluyla göstermek, kombinatoriğin en zarif aracıdır.
+Aynı teknik satır toplamlarını da verir: k sıfırdan n'ye kadar C(n, k) toplamı 2ⁿ'dir, çünkü sol taraf alt kümeleri boyutlarına göre gruplayarak, sağ taraf ise "her eleman için içeride mi dışarıda mı" diyerek **aynı** alt küme koleksiyonunu sayar. Bir eşitliği iki farklı sayma yoluyla göstermek, kombinatoriğin temel araçlarından biridir.
 
 ## Güvercin yuvası ilkesi
 
@@ -145,6 +145,8 @@ Sayma soruları mülakatın en sevilen küçük problemleridir, çünkü on daki
 En sık yapılan üç hata bellidir. Birincisi **çift sayma**: örtüşen durumları toplamak. İkincisi **sıra karışıklığı**: sırasız bir seçimi permütasyonla saymak, yani sonucu r! kat fazla bulmak. Üçüncüsü **bağımsızlık varsayımı**: ikinci adımın seçenek sayısı birinci adımın sonucuna bağlıysa çarpma kuralı doğrudan uygulanamaz.
 
 Bu hataların hepsinin panzehiri aynıdır ve önceki makalelerden tanıdıktır: küçük bir değerde elle say. n = 3 için hem formülü hesapla hem de bütün durumları listele. İki sayı tutmuyorsa formül yanlıştır ve hangi hatayı yaptığın genellikle listeye bakınca görünür.
+
+İngilizce karşılıklar hazır olmalıdır: *product rule*, *sum rule*, *bijection rule*, *inclusion-exclusion*, *permutation*, *combination*, *division rule*, *binomial coefficient*, *Pascal's identity*, *combinatorial proof*, *double counting*, *pigeonhole principle*, *generalized pigeonhole principle*, *birthday principle* (ya da *birthday paradox*), *lossless compression*.
 
 ### Sırada ne var
 

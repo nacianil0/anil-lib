@@ -50,8 +50,8 @@
   <text x="440" y="240" font-size="13" fill="var(--text)">Tümleyen çifti: {a} ve {b, c}</text>
   <text x="440" y="262" font-size="13" fill="var(--text-muted)">üst sınırları en üstteki eleman,</text>
   <text x="440" y="284" font-size="13" fill="var(--text-muted)">alt sınırları en alttaki eleman.</text>
-  <text x="440" y="316" font-size="13" fill="var(--text-muted)">Her eleman bir tümleyen bulduğu</text>
-  <text x="440" y="338" font-size="13" fill="var(--text-muted)">için bu kafes Boolean cebiridir.</text>
+  <text x="440" y="316" font-size="13" fill="var(--text-muted)">Dağılmalı ve her eleman tümleyen</text>
+  <text x="440" y="338" font-size="13" fill="var(--text-muted)">bulduğu için Boolean cebiridir.</text>
 
   <text x="360" y="378" font-size="13" text-anchor="middle" fill="var(--text-muted)">Hasse diyagramı yalnızca örtme kenarlarını çizer; yansımalı ve geçişli kenarlar tanımdan bilinir</text>
 </svg>

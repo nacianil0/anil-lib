@@ -12,7 +12,7 @@ tags:
   - eylem-arayuzu
   - veri-kitligi
   - benzetim
-content_hash: sha256:5512fda7d70f70e6b08569bc471709298e5f1ed43bbd4941ba8ddeaca62fd4a7
+content_hash: sha256:43f2125ccfc6aec619d17dbe5d459a41b9e4ce6f426a6138a40b2f40d4c25265
 classification_version: 1
 classification_batch: 27
 ---
@@ -24,7 +24,7 @@ Bu makale sınavı gövdeye taşıyor. Aynı model bir robot kolunu sürdüğün
 
 Önce bir sözcük uyarısı, çünkü bu makalede iki ayrı nesneyi adlandırma riski var. 81\. makalede "donuk gövde" derken kastettiğimiz, üstüne yeni katmanlar bindirilen önceden eğitilmiş ağdı. Burada gövde fiziksel anlamında kullanılıyor: kolu, kamerası ve eklem motorları olan bir makine. Karışmasın diye ağ anlamındaki gövdeye bu makalede "önceden eğitilmiş ağ" diyeceğiz.
 
-**Somutlaşmış yapay zekâ** (embodied AI), kararlarını bir bedenin içinden, gerçek zamanda ve geri alınamayan eylemlerle veren sistemlerin adı. Bedenin getirdiği fark tek bir şey değil, üç ayrı şey: eylemin biçimi değişiyor, verinin kaynağı değişiyor, hatanın bedeli değişiyor. Bu makale üçünü sırayla ölçüyor. Sonucu baştan söylemek daha dürüst: internetten gelen ön eğitim bu üç parçadan yalnızca birinin yarısına yarıyor, ve hangisi olduğu ölçülmüş durumda.
+**Somutlaşmış yapay zekâ** (embodied AI), kararlarını bir bedenin içinden, gerçek zamanda ve geri alınamayan eylemlerle veren sistemlerin adı. Bedenin getirdiği fark tek bir şey değil, üç ayrı şey: eylemin biçimi değişiyor, verinin kaynağı değişiyor, hatanın bedeli değişiyor. Bu makale üçünü sırayla ölçüyor. Sonucu baştan söyleyelim: internetten gelen ön eğitim bu üç parçadan yalnızca birinin yarısına yarıyor, ve hangisi olduğu ölçülmüş durumda.
 
 ## Eylem arayüzü gövdeye takılınca
 
@@ -46,7 +46,7 @@ Black ve arkadaşlarının Robotics: Science and Systems 2025'te sunduğu çalı
 
 > **Kendini yokla:** Bir görevi saniyede üç karar yerine saniyede elli kararla sürmek, "daha pürüzsüz" olmanın ötesinde neyi değiştirir?
 
-Düzeltmenin en küçük aralığını değiştirir. Saniyede üç kararda iki karar arasında 333 milisaniye vardır — bu bizim hesabımız, 1 saniyeyi 3'e bölmek — ve o aralıkta dünyada olan biten ne görülür ne düzeltilir. Kayan bir tabak o aralıkta düşer. İkinci sınır ayrıklaştırmadan gelir: 256 kutu, hareket aralığının 256'da birinden ince bir düzeltmeyi temsil edilemez kılar. Yani arayüz yalnızca modelin ne söyleyebileceğini değil, ne kadar erken ve ne kadar ince söyleyebileceğini de belirliyor.
+Düzeltmenin en küçük aralığını değiştirir. Saniyede üç kararda iki karar arasında 333 milisaniye vardır — bu bizim hesabımız, 1 saniyeyi 3'e bölmek — ve o aralıkta dünyada olan biten ne görülür ne düzeltilir. Kayan bir tabak o aralıkta düşmeye başlayabilir. İkinci sınır ayrıklaştırmadan gelir: 256 kutu, hareket aralığının 256'da birinden ince bir düzeltmeyi temsil edilemez kılar. Yani arayüz yalnızca modelin ne söyleyebileceğini değil, ne kadar erken ve ne kadar ince söyleyebileceğini de belirliyor.
 
 ## İnternetin verdiği ve vermediği
 
@@ -72,21 +72,21 @@ Brohan ve arkadaşlarının çalışması kendi veri kümesinin nasıl toplandı
 
 Bu üçlüden bir üretim hızı çıkar. Kendi hesabımız: 130.000 ÷ (13 × 17) ≈ **robot başına ayda 588 gösterim**, yani robot başına günde yirmi civarı. Sayıların üçü de çalışmanın kendi bildirdiği değerlerdir; bölme bize aittir.
 
-Alanın havuzunu da biliyoruz. O'Neill ve arkadaşlarının derlediği ortak küme, 34 laboratuvarın 60 ayrı veri kümesini tek biçime çevirip birleştiriyor: 22 farklı gövde, 527 beceri ve bir milyondan fazla gerçek robot yörüngesi. Bu, dünyanın açık robot verisinin neredeyse tamamıdır.
+Alanın havuzunu da biliyoruz. O'Neill ve arkadaşlarının derlediği ortak küme, 34 laboratuvarın 60 ayrı veri kümesini tek biçime çevirip birleştiriyor: 22 farklı gövde, 527 beceri ve bir milyondan fazla gerçek robot yörüngesi. Yayımlandığı tarihte bu, alanın açık robot verisinin büyük kısmını tek çatı altında topluyordu; o günden bu yana başka açık kümeler de eklendi.
 
 Karşılaştırma buradan çıkıyor ve 8\. makalenin sayısıyla yan yana konunca ölçek farkı görünüyor.
 
 | | Ne kadar | Nasıl üretildi |
 |---|---|---|
 | Bir modelin ön eğitim metni | 15,6 trilyon token | İnsanlar kendi sebepleriyle zaten yazmıştı |
-| Alanın açık robot havuzunun tamamı | 1 milyondan fazla yörünge | 34 laboratuvar, 60 küme, yıllar |
+| Alanın ortak açık robot havuzu | 1 milyondan fazla yörünge | 34 laboratuvar, 60 küme, yıllar |
 | Tek bir laboratuvarın kendi hattı | 130 bin gösterim | 13 robot × 17 ay |
 
 Aradaki mesafeyi bir hesapla görmek mümkün, ve girdilerinin hepsi yukarıdaki paragraflarda duruyor. Saniyede üç karar veren bir robot bir saatte 3 × 3.600 = 10.800 adım üretir; her adım sekiz sayıysa, saat başına 86.400 sayı. 8\. makaledeki 15,6 trilyon token'ı bu birimle doldurmak için 15,6×10¹² ÷ 86.400 ≈ 1,8×10⁸ robot-saati, yani yaklaşık **20.600 robot-yılı** gerekirdi. Birimler birebir aynı şey değil — bir eylem sayısı bir sözcük parçası değildir ve ikisinin taşıdığı bilgi karşılaştırılamaz — ama büyüklük mertebesi soruyu görünür kılıyor: az önceki tablodaki bir milyon yörünge, bu ölçekte bir yuvarlama hatasıdır.
 
 Asıl fark satırların sağ sütununda. Metin bir **yan üründür**: insanlar zaten yazıyordu, yazdıkları duruyordu, model sonradan geldi ve okudu. Bir yörünge yan ürün değildir. Bir insanın bir robotu, gerçek zamanda, o veri için sürmesi gerekir; bir saatlik veri bir saat sürer ve kısaltılamaz. 9\. makaledeki ölçek yasaları bir bütçeyi model boyu ile veri arasında paylaştırmayı öğretiyordu; burada veri ekseninin fiyatı para değil, takvim.
 
-Black ve arkadaşlarının çalışması bu kıtlığın bugünkü hâlini tek bir oranla gösteriyor. Kendi ön eğitim karışımlarının yalnızca yüzde 9,1'i açık kaynaklı kümelerden geliyor — az önceki bir milyon yörüngelik havuz da içinde. Geri kalanı kendi topladıkları, on bin saatin üzerinde bir gösterim yığını. Yani alanın paylaştığı her şey, tek bir ekibin karışımının onda birinden azını dolduruyor.
+Black ve arkadaşlarının çalışması bu kıtlığın bugünkü hâlini tek bir oranla gösteriyor. Kendi ön eğitim karışımlarının yalnızca yüzde 9,1'i açık kaynaklı kümelerden geliyor — az önceki bir milyon yörüngelik havuz da içinde. Geri kalanı kendi topladıkları, on bin saatin üzerinde bir gösterim yığını. Yani alanın ortak açık havuzu, tek bir ekibin karışımının onda birinden azını dolduruyor.
 
 > **Kendini yokla:** Görüntü ve ses de "dünyaya ait" verilerdir ve 81–84\. makalelerde bunların bolluğundan yararlanıldığını gördük. Robot verisindeki kıtlık neden orada yok?
 

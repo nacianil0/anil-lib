@@ -1,49 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="Beş satırlık bir tablo ve altında bir kutu. Kurulum satırında gerçek değer 2,0, ölçüm gürültüsünün varyansı 1,5 ve tahmincinin ölçümü c katsayısıyla çarptığı yazılıdır. Tablonun sütunları: katsayı c, yanlılık, yanlılığın karesi, oynaklık, toplam ve işaret. Satırlar sırasıyla: c eşittir 0 için yanlılık eksi 2,0000, karesi 4,0000, oynaklık 0,0000, toplam 4,0000. c eşittir 0,5 için yanlılık eksi 1,0000, karesi 1,0000, oynaklık 0,3750, toplam 1,3750. c eşittir 0,7273 için yanlılık eksi 0,5455, karesi 0,2975, oynaklık 0,7934, toplam 1,0909 ve işaret sütununda en iyi yazar; bu satır vurguludur. c eşittir 0,9 için yanlılık eksi 0,2000, karesi 0,0400, oynaklık 1,2150, toplam 1,2550. c eşittir 1 için yanlılık 0,0000, karesi 0,0000, oynaklık 1,5000, toplam 1,5000 ve işaret sütununda yansız yazar. Alttaki kutuda iki cümle durur: yansız seçim 1,5000 verirken bilerek yanlı olan 1,0909 veriyor, yani yüzde 27,3 daha az; ve toplama indirgenemez hata 1,5000 olarak eklenir, hiçbir seçim onun altına inemez. En altta bir kayıt: bütün değerler verilen iki sayıdan elle hesaplanmıştır ve ölçülmüş bir deney değildir.">
-  <text x="20" y="30" font-size="13" fill="var(--text)">gerçek değer 2,0 · ölçüm gürültüsünün varyansı 1,5 · tahminci = c × ölçüm</text>
-  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 406" role="img" aria-label="Üç eğrili bir grafik. Kurulum: gerçek değer 2,0, ölçüm gürültüsünün varyansı 1,5, tahminci ölçümü c katsayısıyla çarpar. Yatay eksen katsayı c, 0'dan 1,1'e; düşey eksen hata, 0'dan 4'e. Yanlılığın karesi c eşittir 0'da 4'ten başlayıp c eşittir 1'de sıfıra inen bir eğridir. Oynaklık c eşittir 0'da sıfırdan başlayıp c eşittir 1'de 1,5'e çıkan bir eğridir; iki eğri c yaklaşık 0,62'de kesişir. Toplam eğrisi ikisinin toplamıdır ve U biçimindedir: c eşittir 0'da 4,0, dibi c eşittir 0,7273'te 1,0909 ile vurgulanmıştır, c eşittir 1'de yansız seçim 1,5000'dir. Altta kayıtlar: eğriler iki sayıdan hesaplanmıştır, yanlılık kare eşittir 4 çarpı 1 eksi c'nin karesi, oynaklık eşittir 1,5 çarpı c kare; tahminde gürültünün kendisi, 1,5, her noktaya eklenir ve eğrilerin biçimini değiştirmez.">
+  <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">gerçek değer 2,0 · gürültü varyansı 1,5 · tahminci = c × ölçüm</text>
+  <text x="20" y="56" font-size="13" fill="var(--text-muted)">beklenen hata</text>
 
-  <text x="24" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">c</text>
-  <text x="100" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">yanlılık</text>
-  <text x="225" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">yanlılık²</text>
-  <text x="350" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">oynaklık</text>
-  <text x="475" y="70" font-size="13" font-weight="bold" fill="var(--text-muted)">toplam</text>
+  <line x1="90" y1="330" x2="620" y2="330" stroke="var(--text-faint)" />
+  <line x1="90" y1="330" x2="90" y2="64" stroke="var(--text-faint)" />
+  <line x1="90" y1="268" x2="620" y2="268" stroke="var(--border)" stroke-dasharray="2 4" />
+  <line x1="90" y1="206" x2="620" y2="206" stroke="var(--border)" stroke-dasharray="2 4" />
+  <line x1="90" y1="144" x2="620" y2="144" stroke="var(--border)" stroke-dasharray="2 4" />
+  <text x="80" y="334" font-size="13" text-anchor="end" fill="var(--text-faint)">0</text>
+  <text x="80" y="272" font-size="13" text-anchor="end" fill="var(--text-faint)">1</text>
+  <text x="80" y="210" font-size="13" text-anchor="end" fill="var(--text-faint)">2</text>
+  <text x="80" y="148" font-size="13" text-anchor="end" fill="var(--text-faint)">3</text>
+  <text x="80" y="86" font-size="13" text-anchor="end" fill="var(--text-faint)">4</text>
+  <text x="90" y="350" font-size="13" text-anchor="middle" fill="var(--text-faint)">0</text>
+  <text x="330" y="350" font-size="13" text-anchor="middle" fill="var(--text-faint)">0,5</text>
+  <text x="570" y="350" font-size="13" text-anchor="middle" fill="var(--text-faint)">1</text>
+  <text x="628" y="334" font-size="13" fill="var(--text-muted)">katsayı c</text>
 
-  <text x="24" y="96" font-size="13" fill="var(--text)">0</text>
-  <text x="100" y="96" font-size="13" fill="var(--text)">−2,0000</text>
-  <text x="225" y="96" font-size="13" fill="var(--text)">4,0000</text>
-  <text x="350" y="96" font-size="13" fill="var(--text)">0,0000</text>
-  <text x="475" y="96" font-size="13" fill="var(--text)">4,0000</text>
+  <polyline points="90,82.0 102,94.2 114,106.2 126,117.8 138,129.1 150,140.1 162,150.8 174,161.2 186,171.3 198,181.0 210,190.5 222,199.6 234,208.5 246,217.0 258,225.2 270,233.1 282,240.7 294,248.0 306,255.0 318,261.6 330,268.0 342,274.0 354,279.8 366,285.2 378,290.3 390,295.1 402,299.6 414,303.8 426,307.7 438,311.2 450,314.5 462,317.4 474,320.1 486,322.4 498,324.4 510,326.1 522,327.5 534,328.6 546,329.4 558,329.8 570,330.0 582,329.8 594,329.4 606,328.6 618,327.5" fill="none" stroke="var(--text-muted)" stroke-width="1.8" stroke-dasharray="6 4" />
+  <polyline points="90,330.0 102,329.9 114,329.8 126,329.5 138,329.1 150,328.5 162,327.9 174,327.2 186,326.3 198,325.3 210,324.2 222,323.0 234,321.6 246,320.2 258,318.6 270,316.9 282,315.1 294,313.2 306,311.2 318,309.0 330,306.8 342,304.4 354,301.9 366,299.3 378,296.5 390,293.7 402,290.7 414,287.6 426,284.4 438,281.1 450,277.7 462,274.1 474,270.5 486,266.7 498,262.8 510,258.8 522,254.7 534,250.4 546,246.1 558,241.6 570,237.0 582,232.3 594,227.5 606,222.5 618,217.5" fill="none" stroke="var(--cool)" stroke-width="1.8" />
+  <polyline points="90,82.0 102,94.2 114,105.9 126,117.3 138,128.2 150,138.7 162,148.7 174,158.4 186,167.6 198,176.3 210,184.7 222,192.6 234,200.1 246,207.2 258,213.8 270,220.0 282,225.8 294,231.2 306,236.1 318,240.7 330,244.8 342,248.4 354,251.6 366,254.5 378,256.8 390,258.8 402,260.3 414,261.4 426,262.1 438,262.4 450,262.2 462,261.6 474,260.6 486,259.1 498,257.2 510,254.9 522,252.2 534,249.0 546,245.4 558,241.4 570,237.0 582,232.1 594,226.8 606,221.1 618,215.0" fill="none" stroke="var(--accent)" stroke-width="2.8" />
 
-  <text x="24" y="120" font-size="13" fill="var(--text)">0,5</text>
-  <text x="100" y="120" font-size="13" fill="var(--text)">−1,0000</text>
-  <text x="225" y="120" font-size="13" fill="var(--text)">1,0000</text>
-  <text x="350" y="120" font-size="13" fill="var(--text)">0,3750</text>
-  <text x="475" y="120" font-size="13" fill="var(--text)">1,3750</text>
+  <text x="190" y="290" font-size="13" fill="var(--text-muted)">yanlılık²</text>
+  <line x1="257" y1="283" x2="315" y2="264" stroke="var(--text-faint)" />
+  <text x="480" y="306" font-size="13" fill="var(--cool)">oynaklık</text>
+  <line x1="484" y1="294" x2="475" y2="274" stroke="var(--text-faint)" />
+  <text x="352" y="238" font-size="13" font-weight="bold" fill="var(--accent)">toplam</text>
 
-  <text x="24" y="148" font-size="13" font-weight="bold" fill="var(--accent)">0,7273</text>
-  <text x="100" y="148" font-size="13" font-weight="bold" fill="var(--accent)">−0,5455</text>
-  <text x="225" y="148" font-size="13" font-weight="bold" fill="var(--accent)">0,2975</text>
-  <text x="350" y="148" font-size="13" font-weight="bold" fill="var(--accent)">0,7934</text>
-  <text x="475" y="148" font-size="13" font-weight="bold" fill="var(--accent)">1,0909</text>
-  <text x="600" y="148" font-size="13" font-weight="bold" fill="var(--accent)">en iyi</text>
+  <circle cx="90" cy="82" r="4.5" fill="var(--text)" />
+  <text x="104" y="78" font-size="13" fill="var(--text)">c = 0: yanlılık² 4 · oynaklık 0</text>
 
-  <text x="24" y="172" font-size="13" fill="var(--text)">0,9</text>
-  <text x="100" y="172" font-size="13" fill="var(--text)">−0,2000</text>
-  <text x="225" y="172" font-size="13" fill="var(--text)">0,0400</text>
-  <text x="350" y="172" font-size="13" fill="var(--text)">1,2150</text>
-  <text x="475" y="172" font-size="13" fill="var(--text)">1,2550</text>
+  <circle cx="439.1" cy="262.4" r="5.5" fill="var(--accent)" />
+  <text x="380" y="176" font-size="13" font-weight="bold" fill="var(--accent)">en iyi: c = 0,7273</text>
+  <text x="380" y="194" font-size="13" fill="var(--text)">toplam 1,0909</text>
+  <line x1="439" y1="200" x2="439" y2="255" stroke="var(--text-faint)" />
 
-  <text x="24" y="196" font-size="13" fill="var(--text)">1</text>
-  <text x="100" y="196" font-size="13" fill="var(--text)">0,0000</text>
-  <text x="225" y="196" font-size="13" fill="var(--text)">0,0000</text>
-  <text x="350" y="196" font-size="13" fill="var(--text)">1,5000</text>
-  <text x="475" y="196" font-size="13" fill="var(--text)">1,5000</text>
-  <text x="600" y="196" font-size="13" fill="var(--cool)">yansız</text>
+  <circle cx="570" cy="237" r="5" fill="var(--text)" />
+  <text x="560" y="176" font-size="13" font-weight="bold" fill="var(--text)">yansız: c = 1</text>
+  <text x="560" y="194" font-size="13" fill="var(--text)">toplam 1,5000</text>
+  <line x1="570" y1="200" x2="570" y2="231" stroke="var(--text-faint)" />
 
-  <line x1="20" y1="214" x2="700" y2="214" stroke="var(--border)" />
-  <rect x="20" y="226" width="680" height="58" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="250" font-size="13" fill="var(--accent)">Yansız seçim 1,5000 veriyor; bilerek yanlı olan 1,0909 — yüzde 27,3 daha az.</text>
-  <text x="34" y="270" font-size="13" fill="var(--text)">Toplama indirgenemez hata 1,5000 olarak eklenir; hiçbir seçim altına inemez.</text>
-
-  <text x="20" y="310" font-size="13" fill="var(--text-faint)">Bütün değerler verilen iki sayıdan elle hesaplandı; ölçülmüş bir deney değildir.</text>
+  <text x="20" y="374" font-size="13" fill="var(--text-muted)">Eğriler iki sayıdan hesaplandı: yanlılık² = 4 × (1 − c)², oynaklık = 1,5 × c².</text>
+  <text x="20" y="396" font-size="13" fill="var(--text-faint)">Tahminde gürültünün kendisi (1,5) her noktaya eklenir; eğrilerin biçimini değiştirmez.</text>
 </svg>

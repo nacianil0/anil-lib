@@ -142,6 +142,44 @@ export const UI = {
   restoredNotice: "Kaldığın yere dönüldü",
   startOver: "Baştan başla",
   dismiss: "Kapat",
+
+  // Editorial revisions
+  revisionLabel: "Gözden geçirildi",
+  revisionSinceReadLabel: "Sen okuduktan sonra gözden geçirildi",
+  revisionMark: "yenilendi",
+  revisionMarkLong: "Sen okuduktan sonra gözden geçirildi",
+  revisionSinceReadShort: "Okuduktan sonra yenilendi",
+
+  // Series structure and the reader's place in it
+  chapterShort: (order: number, total: number) => `${pad(order)} / ${total}`,
+  phase: (number: number) => `Faz ${pad(number)}`,
+  phaseOf: (number: number, total: number) => `Faz ${number} / ${total}`,
+  phaseCount: (total: number) => `${total} faz`,
+  phaseListAriaLabel: "Fazlara göre okuma listesi",
+  phaseProgress: (done: number, total: number) => `${done} / ${total} tamamlandı`,
+  seriesProgress: (done: number, total: number) => `${done} / ${total} bölüm tamamlandı`,
+  inProgressCount: (count: number) => `${count} yarım`,
+  continueReading: "Kaldığın yerden devam et",
+  nextChapterLabel: "Sıradaki bölüm",
+  startSeries: "Seriye başla",
+  resumeLabel: "Kaldığın yer",
+  seriesDone: "Serinin yayımlanan bütün bölümlerini bitirdin.",
+  percentRead: (percent: number) => `%${percent} okundu`,
+  upNext: "sıradaki",
+  roadmap: "Yol haritası",
+
+  // Diagrams
+  enlargeFigure: "Şekli büyüt",
+  figureViewer: "Şekil",
+  figureFit: "Sığdır",
+  figureZoom: "Yakınlaştır",
+  figureStage: "Şekil alanı; kaydırarak gezin",
+  closeFigure: "Şekli kapat",
+
+  // Reading settings: the finer typography sits behind one disclosure
+  settingsReading: "Okuma",
+  settingsFine: "İnce ayarlar",
+  settingsFineChanged: (count: number) => `${count} değişiklik`,
 } as const;
 
 export function pad(order: number): string {

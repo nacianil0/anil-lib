@@ -12,9 +12,11 @@ tags:
   - onbellek
   - boru-hatti
   - ram-modeli
-content_hash: sha256:650272ef8c54111c6b5316c8d7474a9cda52b28ae50900fb7e41de56cbbb96dc
+content_hash: sha256:8f7dd789cf766cdf1ed94260711bbba20451bea692ff6cfb1d9ab3fcfeba5a39
 classification_version: 1
 classification_batch: 12
+revised_at: "2026-09-25"
+revision_note: "Bellek hiyerarşisi şekli tablo yerine logaritmik eksende yeniden çizildi; kesişim aralığı, sayfa boyutu ve boru hattı açıklamaları düzeltildi."
 ---
 ## Soyutlamanın altına inmek
 
@@ -36,15 +38,15 @@ Altı transistörle bir transistör arasındaki fark, aynı silikon alanına ka�
 
 Peki küçük bir hızlı bellek nasıl büyük bir hızlı bellek gibi davranabilir? Cevap, bellek yönetimi makalesinde tanımladığımız iki özelliktir. Zamansal yerellik, az önce kullanılan verinin yakında yine kullanılacağını söyler; uzamsal yerellik, bir adrese erişen programın komşu adreslere de erişeceğini. İkisi de programların gözlenmiş bir huyudur, bir teorem değil — ve bütün hiyerarşi bu huy üzerine bahis oynar.
 
-Kaynağın verdiği basit hesap bahsin ne kadar kazandırdığını gösteriyor: ana bellek erişimi 200 çevrim, önbellek erişimi 15 çevrim olsun. Yüz veri ögesine yüzer kez erişen bir kod, önbelleksiz 10.000 × 200 = 2.000.000 çevrim harcar. Önbellekle ilk yüz erişim ıskadır (100 × 200 = 20.000), kalan 9.900 erişim isabettir (9.900 × 15 = 148.500), toplam 168.500 çevrim. Aradaki fark yüzde 91,5. Aritmetiği kendim yeniden yaptım ve kaynağın verdiği yüzdeyle birebir aynı çıktı.
+Kaynağın verdiği basit hesap bahsin ne kadar kazandırdığını gösteriyor: ana bellek erişimi 200 çevrim, önbellek erişimi 15 çevrim olsun. Yüz veri ögesine yüzer kez erişen bir kod, önbelleksiz 10.000 × 200 = 2.000.000 çevrim harcar. Önbellekle ilk yüz erişim ıskadır (100 × 200 = 20.000), kalan 9.900 erişim isabettir (9.900 × 15 = 148.500), toplam 168.500 çevrim. Kaynak bunu yüzde 91,5'lik bir iyileşme olarak veriyor; aritmetiği kendim yeniden yaptığımda tam değer yüzde 91,575 çıktı, yani kaynak son basamağı atmış.
 
 ## Hiyerarşinin sayıları
 
-Soyut "daha hızlı" ve "daha yavaş" mülakatta yetmez; sayı istenir. Şekil 1 katmanları, tipik gecikmelerini ve boyutlarını bir arada veriyor.
+Soyut "daha hızlı" ve "daha yavaş" mülakatta yetmez; sayı istenir. Şekil 1 katmanları erişim maliyetlerine göre logaritmik bir eksene diziyor; eksende her aralık on kattır, bu yüzden katmanlar arasındaki uzaklık doğrudan kaç mertebe fark olduğunu gösterir.
 
-![Dört sütunlu bir tablo şeması: katman, erişim maliyeti, tipik kapasite ve bir üstteki katmana oran. Beş satır var ve satırların kutuları yukarıdan aşağıya genişliyor. Yazmaç satırı 1 çevrim, 1 kilobaytın altı kapasite ve oran yok. L1 veri önbelleği 3 çevrim, onlarca kilobayt, 3 kat. L2 önbelleği 14 çevrim, birkaç megabayt, 5 kat. Ana bellek satırı vurgulu çerçeveli: 240 çevrim, gigabayt mertebesi, 17 kat. Disk satırı ikinci bir vurgu rengiyle: 3 çarpı 10 üzeri 7 çevrim, terabayt mertebesi, 10 üzeri 5 kat. Tablonun üstünde çevrim sayılarının bir Pentium M için üreticinin verdiği değerler olduğu ve mertebe olarak okunması gerektiği yazıyor. Altında iki not: yukarı çıkıldıkça daha hızlı, daha pahalı ve daha küçük, aşağı inildikçe daha yavaş, daha ucuz ve daha büyük; disk satırının 10 milisaniye erişim ve 3 gigahertz saat varsayımıyla yapılmış kendi hesabım olduğu](assets/bellek-hiyerarsisi-katmanlari.svg "Şekil 1 — Bellek hiyerarşisi: her katmanın erişim maliyeti ve kapasitesi")
+![Yatay, logaritmik bir çevrim ekseni; eksen 1'den 10 üzeri 8'e kadar uzanıyor ve her aralık on kat. Eksen üzerinde beş nokta var ve her noktadan yukarı çıkan bir sapın ucunda katmanın adı, maliyeti ve kapasitesi yazıyor. Soldan sağa: yazmaç 1 çevrim, 1 kilobaytın altı; L1 veri önbelleği 3 çevrim, onlarca kilobayt; L2 önbelleği 14 çevrim, birkaç megabayt; vurgulu renkte ana bellek 240 çevrim, gigabayt mertebesi; ikinci vurgu renginde ve eksenin en sağında disk 3 çarpı 10 üzeri 7 çevrim, terabayt mertebesi. İlk dört nokta eksenin sol üçte birine sıkışmış, disk tek başına sağ uçta duruyor. Eksenin altında iki ayraç var: yazmaçtan ana belleğe yaklaşık 2,5 mertebe, ana bellekten diske yaklaşık 5 mertebe daha. Üstteki not çevrim sayılarının bir Pentium M için üreticinin verdiği değerler olduğunu, alttaki not disk değerinin 10 milisaniye erişim ve 3 gigahertz saat varsayımıyla yapılmış kendi hesabım olduğunu söylüyor](assets/bellek-hiyerarsisi-katmanlari.svg "Şekil 1 — Katmanlar arasındaki fark mertebe cinsindendir: yazmaçtan ana belleğe iki buçuk, ana bellekten diske beş mertebe daha")
 
-Tablodaki çevrim sayıları bir Pentium M için üreticinin açıkladığı değerler: yazmaç 1, birinci düzey veri önbelleği 3, ikinci düzey önbellek 14, ana bellek 240 çevrim. Aynı kaynağın gerçek bir ölçümü de var: çalışma kümesi büyütülerek yapılan rastgele erişim denemesinde eleman başına maliyet, veri birinci düzeye sığdığı sürece 10 çevrimin altında kalıyor, ikinci düzeye taştığında 28 çevrime fırlıyor, ikinci düzey de yetmediğinde 480 çevrim ve üstüne çıkıyor.
+Şekildeki çevrim sayıları bir Pentium M için üreticinin açıkladığı değerler: yazmaç 1, birinci düzey veri önbelleği 3, ikinci düzey önbellek 14, ana bellek 240 çevrim. Aynı kaynağın gerçek bir ölçümü de var: çalışma kümesi büyütülerek yapılan rastgele erişim denemesinde eleman başına maliyet, veri birinci düzeye sığdığı sürece 10 çevrimin altında kalıyor, ikinci düzeye taştığında 28 çevrime fırlıyor, ikinci düzey de yetmediğinde 480 çevrim ve üstüne çıkıyor.
 
 İki sayı kümesi arasındaki fark önemlidir ve mülakatta söylenmesi gerekir: ilki bir erişimin **yalın maliyeti**, ikincisi gerçek bir iş yükünün **ölçülmüş ortalamasıdır**. İkincisi daha büyüktür çünkü ıskaların yanında kirli satırların geri yazılması da vardır.
 
@@ -58,7 +60,7 @@ Sanal bellek makalesinde ölçütü tanımlamıştık: AMAT = bellek maliyeti + 
 AMAT = T_L1 + P_ıska(L1) × ( T_L2 + P_ıska(L2) × T_bellek )
 ```
 
-Az önceki çevrim tablosunu koyup üç senaryo hesaplayalım. Aritmetiğin tamamı benim; kaynak bu hesabı vermiyor.
+Az önceki çevrim sayılarını koyup üç senaryo hesaplayalım. Aritmetiğin tamamı benim; kaynak bu hesabı vermiyor.
 
 | Senaryo | L1 isabet | L1 ıskasında L2 isabet | AMAT (çevrim) |
 |---|---|---|---|
@@ -68,7 +70,7 @@ Az önceki çevrim tablosunu koyup üç senaryo hesaplayalım. Aritmetiğin tama
 
 İlk satır: 3 + 0,05 × (14 + 0,10 × 240) = 3 + 0,05 × 38 = 4,9. Üçüncü satır: 3 + 0,20 × (14 + 0,50 × 240) = 3 + 0,20 × 134 = 29,8.
 
-Buradaki cümle, bu makalenin bütün iddiasıdır: **üç satırda da komut sayısı aynıdır.** RAM modeli üçünü de birbirinin aynı sayar, çünkü model bellek erişimlerini birer adım olarak sayar ve hepsine aynı fiyatı biçer. Gerçek makinede aralarında altı kat vardır.
+Tablonun asıl söylediği şey şudur: **üç satırda da komut sayısı aynıdır.** RAM modeli üçünü de birbirinin aynı sayar, çünkü model bellek erişimlerini birer adım olarak sayar ve hepsine aynı fiyatı biçer. Gerçek makinede aralarında altı kat vardır.
 
 > **Sesli anlat:** "Bellek hiyerarşisi neden var, bir önbellek ıskası ne kadar pahalı, ve bu senin yazdığın algoritmayı nasıl değiştirir? Doksan saniye."
 >
@@ -108,27 +110,27 @@ program     program      komut        çevrim
 
 Yani **süre = komut sayısı × komut başına çevrim (cycles per instruction, CPI) × saat çevrimi süresi.** Üç çarpanın üçü de ayrı ayrı iyileştirilebilir ve üçü birbirine bağlıdır: saat frekansını yükseltmek çevrim süresini kısaltır ama bellek gecikmesi nanosaniye cinsinden sabit kaldığı için CPI'yi yükseltir. Mülakatta "daha hızlı işlemci aldım, program neden hızlanmadı?" sorusunun cevabı bu denklemin hangi çarpanının değiştiğidir.
 
-**Boru hattı (pipeline)** CPI'ye saldırır. Komutlar birbirini beklemek yerine aşamalarda örtüştürülür: biri çözülürken öteki getirilir. Kazanç iş miktarında değil, açıklıktadır — alt sınırlar makalesinde iş ile açıklık ayrımını tam bu biçimde kurmuştuk ve donanım paralelliği o ayrımın en somut örneğidir. Boru hattının bedeli, akışın bozulduğu yerde ortaya çıkar: yanlış kestirilen bir dal, hazırlanmış komutları çöpe atar. Kaynak, çözülmüş komutları önbelleğe almanın özellikle boru hattı yanlış kestirim yüzünden boşaldığında kazandırdığını söylüyor.
+**Boru hattı (pipeline)** CPI'ye saldırır. Komutlar birbirini beklemek yerine aşamalarda örtüştürülür: biri çözülürken öteki getirilir. Kazanç tek bir komutun süresinde değildir — her komut yine bütün aşamalardan geçer — birim zamanda biten komut sayısındadır (*throughput*). Alt sınırlar makalesindeki iş ile açıklık ayrımının donanımdaki akrabasıdır: toplam iş değişmez, birbirini beklemeyen parçalar örtüştüğü için toplam süre kısalır. Boru hattının bedeli, akışın bozulduğu yerde ortaya çıkar: yanlış kestirilen bir dal, hazırlanmış komutları çöpe atar. Kaynak, çözülmüş komutları önbelleğe almanın özellikle boru hattı yanlış kestirim yüzünden boşaldığında kazandırdığını söylüyor.
 
-Buradan karmaşıklık tarafına bir sonuç düşer ve asimptotik analiz makalesindeki **kesişim noktası** pinini öder. İki algoritma düşünelim: A, n² işlem yapıyor ve hepsi birinci düzey önbellekte (3 çevrim); B, 20n işlem yapıyor ama her biri ana belleğe iniyor (240 çevrim). RAM modelinde karşılaştırma n² ile 20n arasındadır ve kesişim n = 20'dedir. Çevrim cinsinden karşılaştırma 3n² ile 4.800n arasındadır ve kesişim n = 1.600'e kayar. Sabitler seksen kat büyümüştür; asimptotik sıralama değişmez, ama "hangisini kullanayım?" sorusunun cevabı n < 1.600 aralığının tamamında tersine döner. Bu hesap da kendimindir.
+Buradan karmaşıklık tarafına bir sonuç düşer ve asimptotik analiz makalesindeki **kesişim noktası** pinini öder. İki algoritma düşünelim: A, n² işlem yapıyor ve hepsi birinci düzey önbellekte (3 çevrim); B, 20n işlem yapıyor ama her biri ana belleğe iniyor (240 çevrim). RAM modelinde karşılaştırma n² ile 20n arasındadır ve kesişim n = 20'dedir. Çevrim cinsinden karşılaştırma 3n² ile 4.800n arasındadır ve kesişim n = 1.600'e kayar. Sabitler seksen kat büyümüştür; asimptotik sıralama değişmez, ama "hangisini kullanayım?" sorusunun cevabı 20 < n < 1.600 aralığında tersine döner: RAM modeli orada B'yi seçer, gerçek makinede A kazanır. Bu hesap da kendimindir.
 
 ## Üç eski borç
 
 **TLB bir önbellektir.** Bellek yönetimi makalesinde adres çevirisi önbelleğini "son çevirileri saklayan küçük bir donanım yapısı" diye tanıtmıştık. Artık tam adını koyabiliriz: sanal sayfa numarasını anahtar, sayfa tablosu girdisini değer alan, birkaç düzine girdilik, genellikle tam çağrışımlı bir önbellek. Aynı üç kavram aynen geçerlidir — isabet, ıska ve ıska cezası. Iska cezası burada bir bellek erişimi değil, sayfa tablosunun yürünmesidir.
 
-**Sayfa boyutunun iki yönlü takası.** Bellek yönetimi makalesinde büyük sayfanın iç parçalanmayı artırdığını söylemiştik; şimdi öteki yönü sayabiliriz. Bir TLB'nin kapsadığı bellek miktarı, girdi sayısı çarpı sayfa boyutudur. 64 girdilik bir TLB, 4 KB'lık sayfalarla 256 KB kapsar; aynı TLB 2 MB'lık sayfalarla 128 MB kapsar — beş yüz kat. Büyük veri üzerinde dolaşan bir program için bu fark, çeviri ıskasının bütünüyle ortadan kalkması anlamına gelebilir. Bedeli, her sayfanın yarısının boş kalması ve her sayfa hatasının 2 MB okuması olmasıdır. Takas budur ve yönü iş yüküne göre değişir. Kapsama hesabı kendimindir.
+**Sayfa boyutunun iki yönlü takası.** Bellek yönetimi makalesinde büyük sayfanın iç parçalanmayı artırdığını söylemiştik; şimdi öteki yönü sayabiliriz. Bir TLB'nin kapsadığı bellek miktarı, girdi sayısı çarpı sayfa boyutudur. 64 girdilik bir TLB, 4 KB'lık sayfalarla 256 KB kapsar; aynı TLB 2 MB'lık sayfalarla 128 MB kapsar — beş yüz kat. Büyük veri üzerinde dolaşan bir program için bu fark, çeviri ıskasının bütünüyle ortadan kalkması anlamına gelebilir. Bedeli iç parçalanmadır: bir bölgenin son sayfası ortalama yarı boş kalır ve 2 MB'lık sayfada bu yarım sayfa 1 MB demektir; ayrıca her sayfa hatası 4 KB yerine 2 MB'lık bir sayfayı hazırlamak zorundadır. Takas budur ve yönü iş yüküne göre değişir. Kapsama hesabı kendimindir.
 
 **Bağlam anahtarı neden çevrim cinsinden ucuzlamıyor?** Süreçler makalesinde ölçülmüş bir gözlem aktarmıştık: 1996'da 200 MHz'de yaklaşık 6 mikrosaniye, bugün mikrosaniyenin altı — ama çevrime çevrildiğinde 1.200'e karşı 1.500, yani düşme yok. Gerekçeyi donanım tarafına bırakmıştık.
 
 Gerekçe 1990 tarihli bir ölçüm çalışmasında duruyor. Çalışma, çekirdeğe giriş-çıkışı ve süreçler arası geçişi zorlayan küçük kıyas programlarını farklı makine ve işletim sistemlerinde koşturuyor ve sonuçları makinenin ham hızına **göreli** olarak veriyor. Boş bir sistem çağrısında göreli hız tipik olarak 0,5 ile 0,8 arasında; iki süreç arasında bir bayt gidip gelmesini ölçen bağlam anahtarı kıyasında ise 0,3 ile 0,5 arasında. Yani işlemci üç kat hızlandığında bu işler bir buçuk kat hızlanıyor.
 
-Çalışmanın kendi sonucu iki donanım başlığı sayıyor. Birincisi bellek bant genişliğinin işlemci hızına yetişememesi; ikincisi bağlam anahtarının yeni mimarilerde yaklaşık iki kat pahalılaşmış olması. Birinci başlık bu makalenin bütün konusudur: bağlam anahtarı yazmaç kopyalayan, çekirdek yığını değiştiren, sayfa tablosunu değiştiren ve bunu yaparken önbelleği ve adres çevirisi önbelleğini soğutan bir iştir. Yani **bellek yoğundur**, ve bellek hiyerarşisi işlemci kadar hızlı iyileşmemektedir. Süreçler makalesinde bıraktığımız borç budur.
+Çalışmanın kendi sonucu iki donanım başlığı sayıyor. Birincisi bellek bant genişliğinin işlemci hızına yetişememesi; ikincisi bağlam anahtarının yeni mimarilerde yaklaşık iki kat pahalılaşmış olması. Birinci başlık doğrudan bu makalenin konusuna bağlanır: bağlam anahtarı yazmaç kopyalayan, çekirdek yığını değiştiren, sayfa tablosunu değiştiren ve bunu yaparken önbelleği ve adres çevirisi önbelleğini soğutan bir iştir. Yani **bellek yoğundur**, ve bellek hiyerarşisi işlemci kadar hızlı iyileşmemektedir. Süreçler makalesinde bıraktığımız borç budur.
 
 ## Mülakatta nasıl görünür
 
 Takip zinciri genellikle üç halkalıdır. "Önbellek nedir?" diye başlar; "ıska maliyetini nasıl hesaplarsın?" ile devam eder ve AMAT'ı ister; "peki bu kodu nasıl hızlandırırsın?" ile biter ve erişim desenini ister. Üçüncü halkaya gelmeden ilk ikisini kapatmak iyi bir işarettir.
 
-Altı tipik hata var. **Önbelleği yazılım sanmak** — işlemci önbelleği donanımdadır ve programcı onu doğrudan yönetmez; işletim sisteminin sayfa önbelleği ise yazılımdır ve ikisi farklı katmanlardır. **Yerelliği bir garanti sanmak** — yerellik programların gözlenmiş huyudur; rastgele erişen bir iş yükünde hiyerarşinin bütün kazancı buharlaşır. **"Önbellek ıskası pahalıdır" deyip sayı verememek** — mertebe söylenmelidir: birinci düzey birkaç çevrim, ana bellek yüzlerce. **Çakışma ıskası ile kapasite ıskasını karıştırmak** — kapasitede yer yoktur, çakışmada yer vardır ama eşleme izin vermez. **Daha yüksek frekansı daha hızlı program sanmak** — süre üç çarpanın çarpımıdır ve frekansı yükseltmek CPI'yi bozabilir. **Asimptotik sıralamayı sabitlerden bağımsız sanmak** — sıralama değişmez ama kesişim noktası kayar, ve gerçek girdiler çoğu zaman kesişimin solundadır.
+Altı tipik hata var. **Önbelleği yazılım sanmak** — işlemci önbelleği donanımdadır ve programcı onu doğrudan yönetmez; işletim sisteminin sayfa önbelleği ise yazılımdır ve ikisi farklı katmanlardır. **Yerelliği bir garanti sanmak** — yerellik programların gözlenmiş huyudur; rastgele erişen bir iş yükünde hiyerarşinin bütün kazancı buharlaşır. **"Önbellek ıskası pahalıdır" deyip sayı verememek** — mertebe söylenmelidir: birinci düzey birkaç çevrim, ana bellek yüzlerce. **Çakışma ıskası ile kapasite ıskasını karıştırmak** — kapasitede yer yoktur, çakışmada yer vardır ama eşleme izin vermez. **Daha yüksek frekansı daha hızlı program sanmak** — süre üç çarpanın çarpımıdır ve frekansı yükseltmek CPI'yi bozabilir. **Asimptotik sıralamayı sabitlerden bağımsız sanmak** — sıralama değişmez ama kesişim noktası kayar, ve gerçek girdiler kaymış kesişimin solunda kalabilir.
 
 Bir de ölçü refleksi: "bu kod neden yavaş?" sorusuna verilecek ilk cevap komut saymak değil, erişim desenini tarif etmektir. Dizi mi dolaşıyorsun yoksa işaretçi mi kovalıyorsun — bu iki cümle, asimptotik sınıftan daha çok şey söyler.
 

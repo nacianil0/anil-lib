@@ -3,13 +3,21 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, Home, Map as MapIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { pad } from "@/lib/content/labels";
+import { pad, UI } from "@/lib/content/labels";
+import { readBeforeRevision } from "@/lib/content/revision";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import type { SeriesRoadmap } from "@/lib/content/series-roadmap";
+import {
+  nextStep,
+  outlinePhases,
+  phaseForOrder,
+  summarizePhases,
+} from "@/lib/content/series-progress";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
 import { LockButton } from "@/components/reader/lock-button";
 import { SyncStatus } from "@/components/reader/sync-status";
+import { PhaseProgress } from "./phase-progress";
 
 type Props = {
   roadmap: SeriesRoadmap;
@@ -23,22 +31,32 @@ type Props = {
 };
 
 function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Props) {
-  const { ready, statusOf } = useReaderData();
+  const { ready, statusOf, entryOf } = useReaderData();
   const bySlug = new Map(articles.map((article) => [article.slug, article]));
-  const published = roadmap.phases
-    .flatMap((phase) => phase.articles)
-    .filter((article) => article.status === "yayinda");
   const totalPlanned = roadmap.phases.reduce((sum, phase) => sum + phase.articles.length, 0);
+  const phases = outlinePhases(roadmap);
+  const summaries = summarizePhases(articles, phases, statusOf);
 
   const completedCount = articles.filter(
     (article) => statusOf(article.articleId) === "completed",
   ).length;
+  const inProgressCount = articles.filter(
+    (article) => statusOf(article.articleId) === "in-progress",
+  ).length;
 
-  const continueTarget =
-    articles.find((article) => statusOf(article.articleId) === "in-progress") ??
-    articles.find((article) => statusOf(article.articleId) !== "completed") ??
-    articles[0];
-  const started = ready && articles.some((article) => statusOf(article.articleId) !== "unread");
+  // One rule for "where next" across the home page and this one: the chapter left
+  // part-way, else the first unfinished chapter in reading order.
+  const step = ready
+    ? nextStep(articles, {
+        statusOf,
+        lastReadAt: (articleId) => entryOf(articleId).lastReadAt,
+      })
+    : null;
+  const continueTarget = step?.article ?? (ready ? null : articles[0]);
+  const stepPhase = step ? phaseForOrder(step.article.readingOrder, phases) : null;
+  const stepPercent =
+    step?.kind === "resume" ? Math.round(entryOf(step.article.articleId).scrollRatio * 100) : 0;
+  const started = ready && step?.kind !== "start";
 
   return (
     <div className="min-h-screen bg-bg text-text">
@@ -70,29 +88,63 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
         </p>
 
         {continueTarget && (
-          <Link
-            href={`${basePath}/${continueTarget.slug}`}
-            className="mt-7 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
-          >
-            {started ? "Kaldığın yerden devam et" : "Seriye başla"}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <div className={cn("mt-7", !ready && "invisible")} aria-busy={!ready}>
+            <Link
+              href={`${basePath}/${continueTarget.slug}`}
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
+            >
+              {started ? UI.continueReading : UI.startSeries}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            {/* Say where the button goes: recognising the chapter beats recalling it. */}
+            <p className="mt-2.5 font-sans text-sm text-text-muted">
+              <span className="tabular-nums text-text-faint">
+                {pad(continueTarget.readingOrder)}
+              </span>
+              <span className="px-1.5 text-text-faint">·</span>
+              <span className="font-serif text-base text-text">{continueTarget.title}</span>
+              {stepPercent > 0 && (
+                <>
+                  <span className="px-1.5 text-text-faint">·</span>
+                  {UI.percentRead(stepPercent)}
+                </>
+              )}
+            </p>
+          </div>
+        )}
+        {ready && !step && articles.length > 0 && (
+          <p className="mt-7 font-sans text-sm text-text-muted">{UI.seriesDone}</p>
         )}
 
-        <dl className="mt-10 grid max-w-md grid-cols-3 gap-2 border-y border-border py-4 text-center font-sans">
-          <div>
-            <dt className="text-2xs text-text-faint">Yayında</dt>
-            <dd className="mt-1 text-lg font-semibold tabular-nums">{published.length}</dd>
+        <div className="mt-10 max-w-2xl border-y border-border py-4 font-sans">
+          <PhaseProgress phases={summaries} markerOrder={step?.article.readingOrder} />
+          <div className="mt-2.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-xs text-text-muted">
+            <p className="min-w-0">
+              {/* Before the record loads, or once everything is read, there is no
+                  current phase: say how the series is built instead of guessing one. */}
+              {stepPhase ? (
+                <>
+                  <span className="font-medium text-text">
+                    {UI.phaseOf(stepPhase.number, phases.length)}
+                  </span>
+                  <span className="px-1.5 text-text-faint">·</span>
+                  {stepPhase.phase.title}
+                </>
+              ) : (
+                UI.phaseCount(phases.length)
+              )}
+            </p>
+            <p className="tabular-nums">
+              {ready
+                ? UI.phaseProgress(completedCount, articles.length)
+                : UI.articleCount(articles.length)}
+              {ready && inProgressCount > 0 && ` · ${UI.inProgressCount(inProgressCount)}`}
+              {articles.length < totalPlanned && (
+                <span className="text-text-faint"> · {totalPlanned} planlandı</span>
+              )}
+            </p>
           </div>
-          <div>
-            <dt className="text-2xs text-text-faint">Tamamladın</dt>
-            <dd className="mt-1 text-lg font-semibold tabular-nums">{completedCount}</dd>
-          </div>
-          <div>
-            <dt className="text-2xs text-text-faint">Planlanan</dt>
-            <dd className="mt-1 text-lg font-semibold tabular-nums">{totalPlanned}</dd>
-          </div>
-        </dl>
+        </div>
 
         <section className="mt-12" aria-labelledby="yol-haritasi-baslik">
           <div className="mb-6 flex items-center gap-2">
@@ -104,19 +156,21 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
 
           <ol className="flex flex-col gap-10">
             {roadmap.phases.map((phase, phaseIndex) => (
-              <li key={phase.id}>
+              <li key={phase.id} id={phase.id} className="scroll-mt-6">
                 <div className="flex items-baseline gap-3 border-b border-border pb-2">
-                  <span className="font-mono text-2xs font-semibold tabular-nums text-accent">
-                    Faz {pad(phaseIndex + 1)}
+                  <span className="shrink-0 font-mono text-2xs font-semibold tabular-nums text-accent">
+                    {UI.phase(phaseIndex + 1)}
                   </span>
-                  <div>
-                    <h3 className="font-serif text-lg font-semibold leading-snug">
-                      {phase.title}
-                    </h3>
-                    <p className="mt-0.5 font-sans text-2xs text-text-muted">
-                      {phase.description}
-                    </p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-serif text-lg font-semibold leading-snug">{phase.title}</h3>
+                    <p className="mt-0.5 font-sans text-xs text-text-muted">{phase.description}</p>
                   </div>
+                  {ready && summaries[phaseIndex].published > 0 && (
+                    <span className="shrink-0 font-sans text-xs tabular-nums text-text-muted">
+                      {summaries[phaseIndex].completed} / {summaries[phaseIndex].published}
+                      <span className="sr-only"> tamamlandı</span>
+                    </span>
+                  )}
                 </div>
                 <ol className="mt-2 flex flex-col">
                   {phase.articles.map((article) => {
@@ -125,6 +179,9 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
                         ? bySlug.get(article.slug)
                         : undefined;
                     const status = descriptor ? statusOf(descriptor.articleId) : "unread";
+                    const revisedSinceRead = descriptor
+                      ? readBeforeRevision(entryOf(descriptor.articleId), descriptor.revisedAt)
+                      : false;
 
                     if (!descriptor) {
                       return (
@@ -143,11 +200,20 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
                       );
                     }
 
+                    const isStep = step?.article.articleId === descriptor.articleId;
+                    const percent =
+                      status === "in-progress"
+                        ? Math.round(entryOf(descriptor.articleId).scrollRatio * 100)
+                        : 0;
                     return (
                       <li key={article.order}>
                         <Link
                           href={`${basePath}/${descriptor.slug}`}
-                          className="group grid grid-cols-[2rem_1fr_auto] items-baseline gap-x-2.5 rounded-md py-[0.45rem] pl-1 pr-2 transition-colors hover:bg-surface-muted"
+                          aria-current={isStep ? "step" : undefined}
+                          className={cn(
+                            "group grid grid-cols-[2rem_1fr_auto] items-baseline gap-x-2.5 rounded-md py-[0.45rem] pl-1 pr-2 transition-colors hover:bg-surface-muted",
+                            isStep && "bg-accent-soft",
+                          )}
                         >
                           <span className="font-sans text-2xs tabular-nums text-accent">
                             {pad(article.order)}
@@ -161,6 +227,15 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
                             )}
                           >
                             {article.title}
+                            {revisedSinceRead && (
+                              <span
+                                className="ml-1.5 whitespace-nowrap font-sans text-2xs font-medium text-accent"
+                                title={UI.revisionMarkLong}
+                              >
+                                <span aria-hidden="true">{UI.revisionMark}</span>
+                                <span className="sr-only">{UI.revisionMarkLong}</span>
+                              </span>
+                            )}
                           </span>
                           <span className="flex items-center gap-1.5">
                             {status === "completed" && (
@@ -170,11 +245,19 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
                                 aria-hidden="true"
                               />
                             )}
+                            {/* Part-read and next are said in words, not only in colour. */}
                             {status === "in-progress" && (
                               <span
-                                className="h-1.5 w-1.5 rounded-full bg-cool"
+                                className="font-sans text-2xs tabular-nums text-text-muted"
                                 aria-hidden="true"
-                              />
+                              >
+                                %{percent}
+                              </span>
+                            )}
+                            {isStep && status === "unread" && (
+                              <span className="font-sans text-2xs font-medium text-accent">
+                                {UI.upNext}
+                              </span>
                             )}
                             <ArrowUpRight
                               className="h-3.5 w-3.5 text-text-faint transition-colors group-hover:text-accent"
@@ -184,7 +267,7 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
                               {status === "completed"
                                 ? "Tamamlandı"
                                 : status === "in-progress"
-                                  ? "Devam ediyor"
+                                  ? `Devam ediyor, %${percent}`
                                   : "Okunmadı"}
                             </span>
                           </span>

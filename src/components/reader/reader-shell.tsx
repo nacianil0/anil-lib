@@ -1,8 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { readBeforeRevision } from "@/lib/content/revision";
 import { CATEGORY_LABELS, LEVEL_LABELS, UI } from "@/lib/content/labels";
 import type { AdjacentArticle, ArticleDescriptor, CurrentArticle } from "@/lib/content/types";
+import { phaseForOrder, type PhaseOutline } from "@/lib/content/series-progress";
 import { ReaderProgressProvider, useReaderProgress } from "@/lib/progress/use-reader-progress";
 import { useReaderData } from "@/lib/reader-data/use-reader-data";
 import {
@@ -16,7 +18,10 @@ import { ArticleNavigation, CompactArticleNavigation } from "./article-navigatio
 import { CompletionControl } from "./completion-control";
 import { ReadingSettings } from "./reading-settings";
 import { ArticleToc } from "./article-toc";
+import { ChapterHeader } from "./chapter-header";
+import { FigureViewer } from "./figure-viewer";
 import { ResumeNotice } from "./resume-notice";
+import { RevisionNotice } from "./revision-notice";
 import { SavedPlaceControl } from "./saved-place-control";
 import { ArticleMarks } from "./article-marks";
 import { HighlightLayer } from "./highlight-layer";
@@ -27,7 +32,7 @@ import { ReaderPager } from "./reader-pager";
 import { useReaderLayout } from "@/lib/reader-layout/use-reader-layout";
 import { useWheelPaging } from "@/lib/reader-layout/use-wheel-paging";
 import { resolveReadingAnchor } from "@/lib/reader-layout/reading-anchor";
-import { STARTED_RATIO } from "@/lib/reader/version";
+import { STARTED_RATIO, TOOLBAR_OFFSET_PX } from "@/lib/reader/version";
 import type { SavedPlaceRecord } from "@/lib/reader-data/schema";
 
 type Props = {
@@ -41,6 +46,13 @@ type Props = {
   listTitle?: string;
   listSubtitle?: string;
   homeHref?: string;
+  /** The series roadmap's phases; the reading list and the chapter header follow them. */
+  phases?: PhaseOutline[];
+  /**
+   * Series chapters keep their title in frontmatter and open on an `h2`, so the
+   * shell sets the title above the text. Archive articles carry their own `h1`.
+   */
+  showTitle?: boolean;
 };
 
 function ReaderShellInner({
@@ -53,10 +65,22 @@ function ReaderShellInner({
   listTitle,
   listSubtitle,
   homeHref,
+  phases,
+  showTitle = false,
 }: Props) {
-  const { ready, setCurrentArticle, recordPosition } = useReaderProgress();
-  const { progressOf, savedPlaceOf } = useReaderData();
+  const { ready, setCurrentArticle, recordPosition, entryOf } = useReaderProgress();
+  const { progressOf, savedPlaceOf, resetVersion } = useReaderData();
   const { preferences } = useReaderPreferences();
+  // Whether this reader had read the article before its last editorial revision.
+  // Decided once, in the render where progress becomes available — the same render
+  // that lets the saved position be restored — and frozen for the visit: reading on
+  // refreshes lastReadAt and must not flip the notice or the resume pill mid-article.
+  // A progress reset arriving mid-visit is the one exception: that reading is gone.
+  const revisedSinceRead = useMemo(
+    () => (ready ? readBeforeRevision(entryOf(current.articleId), current.revisedAt) : false),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- frozen per article on purpose
+    [ready, current.articleId, current.revisedAt, resetVersion],
+  );
   const bodyRef = useRef<HTMLDivElement>(null);
   const readingAreaRef = useRef<HTMLElement>(null);
   const [liveRatio, setLiveRatio] = useState(0);
@@ -95,6 +119,35 @@ function ReaderShellInner({
     reflowKey,
   });
 
+  // The chapter title sits above the text in the flowing layout. Once it has
+  // scrolled under the toolbar, the toolbar says it instead, so the reader can
+  // always tell which chapter this is; the paged frame has no room above its
+  // columns, so there the toolbar carries it throughout.
+  const chapterHeaderRef = useRef<HTMLElement>(null);
+  const [titleInView, setTitleInView] = useState(true);
+  const headerShown = showTitle && effectiveMode !== "paged";
+  useEffect(() => {
+    const element = chapterHeaderRef.current;
+    if (!headerShown || !element || typeof IntersectionObserver === "undefined") {
+      setTitleInView(false);
+      return;
+    }
+    setTitleInView(true);
+    const observer = new IntersectionObserver(([entry]) => setTitleInView(entry.isIntersecting), {
+      rootMargin: `-${TOOLBAR_OFFSET_PX}px 0px 0px 0px`,
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [headerShown, current.articleId]);
+  const currentPhase = phases ? phaseForOrder(current.readingOrder, phases) : null;
+  const toolbarContext = showTitle
+    ? titleInView
+      ? null
+      : current.title
+    : preferences.focusMode
+      ? null
+      : CATEGORY_LABELS[current.category];
+
   // In the paged layout the frame does not scroll, so a scroll over the article is
   // a page turn — one per gesture, however long its momentum runs on.
   useWheelPaging({
@@ -108,6 +161,12 @@ function ReaderShellInner({
   readyRef.current = ready;
   const restoringRef = useRef(false);
   const lastRecordRef = useRef(0);
+  // Whether the view was put at a stored position on this visit, and the reset version
+  // it was stored under; see the reset effect below.
+  const restoredFromStoreRef = useRef(false);
+  const seenResetRef = useRef<number | null>(null);
+  const resetVersionRef = useRef(resetVersion);
+  resetVersionRef.current = resetVersion;
   /**
    * Persisting is held back until the saved position has been put back on screen.
    * Without this a resize — a mobile URL bar collapsing is enough — or an early
@@ -192,6 +251,8 @@ function ReaderShellInner({
     const restore = restoreRef.current;
     if (restore.articleId === current.articleId && restore.mode === effectiveMode) return;
     restoreRef.current = { articleId: current.articleId, mode: effectiveMode, done: false };
+    restoredFromStoreRef.current = false;
+    const resetAtStart = resetVersionRef.current;
 
     const params = new URLSearchParams(window.location.search);
     const explicitPlace = params.has("place") ? savedPlaceOf(current.articleId) : null;
@@ -222,7 +283,16 @@ function ReaderShellInner({
     }
 
     const run = () => {
+      // A progress reset landed while the fonts loaded: the place read above is gone.
+      if (!explicitPlace && resetVersionRef.current !== resetAtStart) {
+        setLiveRatio(0);
+        setActiveHeadingId(null);
+        finish();
+        return;
+      }
       restoringRef.current = true;
+      // A saved place is a destination the reader picked; only progress is reset-bound.
+      restoredFromStoreRef.current = !explicitPlace;
       const root = bodyRef.current;
       const resolved = root && anchor ? resolveReadingAnchor(root, anchor, headingId) : null;
       // A resolved anchor is exact; heading + ratio is the fallback for records written
@@ -257,6 +327,23 @@ function ReaderShellInner({
     navigateToAnchor,
   ]);
 
+  // The account's reading was reset elsewhere, and this device learned it only after
+  // putting the reader back at a place stored before the reset. Left there, the next
+  // scroll would save that place — and the completion it implies — straight back. So
+  // the reader returns to the start, as after "Baştan başla". A view the reader
+  // reached on their own this visit is theirs and stays.
+  useEffect(() => {
+    if (!ready) return;
+    const seen = seenResetRef.current;
+    seenResetRef.current = resetVersion;
+    if (seen === null || resetVersion <= seen || !restoredFromStoreRef.current) return;
+    restoredFromStoreRef.current = false;
+    setShowNotice(false);
+    setRestoredPreview(null);
+    forgetAnchor();
+    navigateTo({ headingId: null, ratio: 0 }, "auto");
+  }, [ready, resetVersion, forgetAnchor, navigateTo]);
+
   return (
     <div
       className="reader-shell flex min-h-screen bg-bg"
@@ -278,6 +365,7 @@ function ReaderShellInner({
           title={listTitle}
           subtitle={listSubtitle}
           homeHref={homeHref}
+          phases={phases}
         />
       )}
 
@@ -292,17 +380,23 @@ function ReaderShellInner({
                 title={listTitle}
                 subtitle={listSubtitle}
                 homeHref={homeHref}
+                phases={phases}
               />
-              <p className="truncate font-sans text-2xs text-text-muted">
+              <p className="min-w-0 truncate font-sans text-2xs text-text-muted">
                 <span className="font-medium text-text">
-                  {UI.chapter(current.readingOrder, current.totalCount)}
+                  {/* A phone has ~75px here: "Bölüm 38 / 1…" lost the very number
+                      it exists to show, so the word is dropped visually there. */}
+                  <span className="sm:hidden" aria-hidden="true">
+                    {UI.chapterShort(current.readingOrder, current.totalCount)}
+                  </span>
+                  <span className="max-sm:sr-only">
+                    {UI.chapter(current.readingOrder, current.totalCount)}
+                  </span>
                 </span>
-                {!preferences.focusMode && (
-                  // Hidden on phones: the chapter number is the position the reader
-                  // needs, and both together leave it 4px of a 129px label.
+                {toolbarContext && (
                   <span className="hidden sm:inline">
                     <span className="px-1.5 text-text-faint">·</span>
-                    {CATEGORY_LABELS[current.category]}
+                    {toolbarContext}
                   </span>
                 )}
               </p>
@@ -314,7 +408,9 @@ function ReaderShellInner({
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
-              {!preferences.focusMode && (
+              {/* Series chapters show level and time under their title; the paged
+                  frame has no title block, so there the toolbar keeps them. */}
+              {!preferences.focusMode && !headerShown && (
                 <p className="mr-1 hidden items-center gap-2 font-sans text-2xs text-text-muted sm:flex">
                   <span>{LEVEL_LABELS[current.level]}</span>
                   <span className="text-text-faint">·</span>
@@ -352,6 +448,7 @@ function ReaderShellInner({
           articleId={current.articleId}
           show={showNotice}
           preview={restoredPreview}
+          revisedSinceRead={revisedSinceRead}
           onDismiss={() => setShowNotice(false)}
           onStartOver={() => {
             forgetAnchor();
@@ -361,6 +458,27 @@ function ReaderShellInner({
 
         <main ref={readingAreaRef} id="main" tabIndex={-1} className="flex-1 focus:outline-none">
           <article className="reader-area py-10">
+            {headerShown && (
+              <ChapterHeader
+                ref={chapterHeaderRef}
+                eyebrow={
+                  currentPhase
+                    ? `${UI.phase(currentPhase.number)} · ${currentPhase.phase.title}`
+                    : CATEGORY_LABELS[current.category]
+                }
+                title={current.title}
+                meta={[LEVEL_LABELS[current.level], UI.readingTime(current.readingMinutes)]}
+              />
+            )}
+            {current.revisedAt && current.revisionNote && (
+              <RevisionNotice
+                revisedAt={current.revisedAt}
+                note={current.revisionNote}
+                sinceRead={revisedSinceRead}
+                compact={effectiveMode === "paged"}
+                concealed={effectiveMode === "paged" && pageIndex > 0}
+              />
+            )}
             <div ref={bodyRef} className="prose-reader">
               {children}
             </div>
@@ -385,6 +503,7 @@ function ReaderShellInner({
               articleId={current.articleId}
             />
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
+            <FigureViewer containerRef={bodyRef} articleId={current.articleId} />
             {/* From `lg` up both of these live in the toolbar, where they are reachable
                 without leaving the text — and where the paged layout, which never
                 scrolls the page, can reach them at all. */}

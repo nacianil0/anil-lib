@@ -12,7 +12,7 @@ tags:
   - huffman
   - aralik-cizelgeleme
   - karsi-ornek
-content_hash: sha256:0efdf32db4df97fa85c797b89c40d25f03144d03e45988f5db40591e08658dff
+content_hash: sha256:7acd505dc38d8dab224b64278dc7ba16efc1c2941bf4d10f0941b360a28b1ce3
 classification_version: 1
 classification_batch: 6
 ---
@@ -70,7 +70,7 @@ Açgözlünün tehlikesi, doğru olduğu problemle yanlış olduğu problemin **
 
 **Ağırlıklı aralık çizelgeleme.** Aynı problem, tek fark: her isteğin bir w(i) ağırlığı var ve toplam ağırlığı en büyük yapan bağdaşan altkümeyi istiyoruz. Bu tek değişiklik açgözlüyü öldürür. En erken biten kısa bir istek, çok değerli bir uzun isteği elemeye değmeyebilir; hiçbir basit sıralama kuralı çalışmaz. Çözüm için alt problemleri saklayan bir yaklaşım gerekir.
 
-**Para üstü.** Verilen bir tutarı en az sayıda madenî parayla ödemek istiyoruz. Açgözlü kural "sığan en büyük parayı ver" olur ve tanıdık sistemlerde çalışır: 1, 5, 10, 25 ve 50 kuruşluk paralarla üç yüz kuruşa kadar bütün tutarlarda açgözlü seçim optimaldir. Ama bu, kuralın değil **sistemin** özelliğidir. Paralar 1, 3 ve 4 birim olsaydı 6 birim için açgözlü 4 + 1 + 1 verirdi — üç para; oysa 3 + 3 iki parayla ödüyor. Aynı kural, aynı algoritma, farklı girdi ailesi: kural artık yanlış.
+**Para üstü.** Verilen bir tutarı en az sayıda madenî parayla ödemek istiyoruz. Açgözlü kural "sığan en büyük parayı ver" olur ve tanıdık sistemlerde çalışır: 1, 5, 10, 25 ve 50 kuruşluk paralarla açgözlü seçimin 5.000 kuruşa kadar her tutarda optimal olduğunu kaba kuvvetle kendim denetledim. Açgözlünün her tutarda doğru çalıştığı böyle sistemlere **kanonik (canonical)** para sistemi denir. Ama bu, kuralın değil **sistemin** özelliğidir. Paralar 1, 3 ve 4 birim olsaydı 6 birim için açgözlü 4 + 1 + 1 verirdi — üç para; oysa 3 + 3 iki parayla ödüyor. Aynı kural, aynı algoritma, farklı girdi ailesi: kural artık yanlış.
 
 **Sırt çantası.** Kapasitesi 50 olan bir çantaya, ağırlık ve değerleri (10, 60), (20, 100) ve (30, 120) olan üç eşya koyacağız. Değer/ağırlık oranları sırasıyla 6, 5 ve 4. Eşyaları **bölebiliyorsan** — kesirli sırt çantası — açgözlü oran sırasıyla doldurur ve 60 + 100 + 80 = 240 ile optimali bulur. Eşyaları bölemiyorsan — 0/1 sırt çantası — aynı kural önce iki eşyayı alır, kalan 20 birime üçüncü sığmaz ve 160'ta kalır. Oysa ikinci ile üçüncü eşyayı almak tam 50 ağırlık ve **220** değer verir. Bölünebilirlik gibi masum görünen bir varsayım, açgözlüyü optimalden düşürüyor.
 
@@ -111,6 +111,8 @@ Dördüncü bir araç da her zaman elinin altındadır ve çoğu zaman en hızl�
 ## Mülakatta nasıl görünür
 
 Açgözlü bir çözüm önerdiğinde beklenen sıra sabittir. Kuralı tek cümlede söyle. Sonra ya ispatla — açgözlü seçim özelliği ve optimal altyapı, değişim argümanıyla — ya da doğrudan "bu kuralın doğru olduğundan emin değilim, karşı örnek arayayım" de ve arayışı sesli yap. İkisi de kabul edilebilir cevaplardır; kabul edilmeyen, ispatsız iddiadır.
+
+Takip zinciri çoğu zaman problemi bir adım değiştirerek gelir: "Neden en erken biten?" → "İspatın hangi adımı açgözlü seçim özelliği?" → "Her isteğin bir ağırlığı olsaydı kural yine çalışır mıydı?" Üçüncü halkanın cevabı hayırdır ve yukarıdaki "Nerede yanılır" bölümünde gördük; karşı örneği söyleyip "burada alt problemleri saklamam gerekir" demek yeter.
 
 Dört tipik hata var. Kuralı ispatlamadan "açgözlü çalışır" demek. Problemin küçük bir varyantının kuralı bozduğunu fark etmemek — ağırlık eklemek, bölünebilirliği kaldırmak, para sistemini değiştirmek. Optimal altyapıyı açgözlü seçim özelliğiyle karıştırmak; ikisi ayrı iddialardır ve dinamik programlama yalnızca ikinciyi ister. Ve açgözlünün "yaklaşık" bir yöntem olduğunu sanmak; doğru problemde açgözlü tam olarak optimaldir, üstelik çoğu zaman en hızlı çözümdür.
 

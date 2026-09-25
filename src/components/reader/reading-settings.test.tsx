@@ -47,6 +47,13 @@ describe("ReadingSettings", () => {
       }),
     );
 
+    // The finer typography waits behind one disclosure.
+    expect(controls.queryByRole("group", { name: "Paragraf aralığı" })).toBeNull();
+    const fine = controls.getByRole("button", { name: /İnce ayarlar/ });
+    expect(fine).toHaveAttribute("aria-expanded", "false");
+    fireEvent.click(fine);
+    expect(fine).toHaveAttribute("aria-expanded", "true");
+
     fireEvent.click(
       within(controls.getByRole("group", { name: "Paragraf aralığı" })).getByRole("button", {
         name: "Ferah",
@@ -93,6 +100,10 @@ describe("ReadingSettings", () => {
       );
       expect(document.documentElement).toHaveClass("sepia");
     });
+
+    // Changed fine settings stay visible when the disclosure is folded again.
+    fireEvent.click(controls.getByRole("button", { name: /İnce ayarlar/ }));
+    expect(controls.getByText("3 değişiklik")).toBeInTheDocument();
 
     const stored = JSON.parse(window.localStorage.getItem(PREFERENCES_STORAGE_KEY) ?? "{}");
     expect(stored).toMatchObject({

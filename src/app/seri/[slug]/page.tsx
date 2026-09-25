@@ -9,6 +9,8 @@ import {
   SERIES_SUBTITLE,
   SERIES_TITLE,
 } from "@/lib/content/series";
+import { loadSeriesRoadmap } from "@/lib/content/series-roadmap";
+import { outlinePhases } from "@/lib/content/series-progress";
 import { ReaderShell } from "@/components/reader/reader-shell";
 import { requireSessionUser } from "@/lib/auth/session-user";
 
@@ -61,6 +63,8 @@ export default async function SeriesArticlePage({
       listTitle={SERIES_TITLE}
       listSubtitle={SERIES_SUBTITLE}
       homeHref={SERIES_BASE_PATH}
+      phases={outlinePhases(loadSeriesRoadmap())}
+      showTitle
     >
       {rendered.content}
     </ReaderShell>

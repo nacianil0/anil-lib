@@ -12,9 +12,11 @@ tags:
   - donus
   - kirmizi-siyah-agac
   - b-agaci
-content_hash: sha256:7b51a5cd9cf22bf83a3490a1094d504f580972867e3f2a56519304bcc16b2117
+content_hash: sha256:3f8a507079ebd0e3314c35eddd5df3ee6c22713601393ebefb129f79f49923ae
 classification_version: 1
 classification_batch: 3
+revised_at: "2026-09-25"
+revision_note: "AVL onarımına 3, 1, 2 eklemeli çift dönüş örneği ve yeni bir şema eklendi; eklemede tek onarımın yettiği, silmede köke kadar sürebildiği açıklandı."
 ---
 ## Yükseklik tesadüfe bırakılamaz
 
@@ -44,15 +46,27 @@ Bu yerel kuralın küresel sonucu bir ispat ister ve ispat sayma makalesindeki r
 
 Şimdi kaba ama yeterli bir alt sınır alalım. F artan olduğu için F(h − 1) ≥ F(h − 2)'dir, dolayısıyla F(h) ≥ 2F(h − 2) yazabiliriz. Bunu tekrar tekrar uygulamak F(h) ≥ 2^(h/2) verir. Ağacımızda n düğüm varsa n ≥ F(h) ≥ 2^(h/2) olur ve iki tarafın logaritmasını alınca **h ≤ 2 log₂ n** çıkar: yükseklik dengesi, yüksekliğin logaritmik kalmasını garanti eder.
 
-Sınır daha da sıkılaştırılabilir ve bu, mülakatta cevabı bir seviye yukarı taşıyan ayrıntıdır. F(h) = 1 + F(h − 1) + F(h − 2) yinelemesi Fibonacci yinelemesinin kaydırılmış hâlidir; taban değerlerle birlikte çözümü F(h) = Fib(h + 3) − 1'dir. Fibonacci sayıları altın oran φ'nin kuvvetleri gibi büyüdüğü için sınır h ≤ log_φ n mertebesine iner ve log_φ 2 ≈ 1,4404 olduğundan bu, kabaca 1,44 log₂ n demektir. Bir milyon anahtar için: kaba sınır 2 log₂(10⁶) ≈ 39,9 der, sıkı sınır ≈ 28,7 der, gerçek en kötü değer ise 27'dir. Üçü de logaritmiktir; fark yalnızca sabit çarpandadır ve bu, karmaşıklık makalesinde konuştuğumuz "sabitler düşer ama yok olmaz" durumunun temiz bir örneğidir.
+Sınır daha da sıkılaştırılabilir ve bu, mülakatta cevabı bir seviye yukarı taşıyan ayrıntıdır. F(h) = 1 + F(h − 1) + F(h − 2) yinelemesi Fibonacci yinelemesinin kaydırılmış hâlidir; taban değerlerle birlikte çözümü F(h) = Fib(h + 3) − 1'dir. Fibonacci sayıları altın oran φ'nin kuvvetleri gibi büyüdüğü için sınır h ≤ log_φ n mertebesine iner ve log_φ 2 ≈ 1,4404 olduğundan bu, kabaca 1,44 log₂ n demektir. Bir milyon anahtar için: kaba sınır 2 log₂(10⁶) ≈ 39,9 der, sıkı sınır ≈ 28,7 der, gerçek en kötü değer ise 27'dir. Bu son sayı kendi hesabımdır: F(27) = Fib(30) − 1 = 832.039 düğüm bir milyonun altında kalır, F(28) = Fib(31) − 1 = 1.346.268 ise aşar. Üçü de logaritmiktir; fark yalnızca sabit çarpandadır ve bu, karmaşıklık makalesinde konuştuğumuz "sabitler düşer ama yok olmaz" durumunun temiz bir örneğidir.
 
-Onarım nasıl yapılır? Ekleme ya da silme ağacı yalnızca yaprak düzeyinde değiştirdiği için, dengesi bozulabilecek düğümler yalnızca değişen yaprağın **atalarıdır** ve yükseklikleri en fazla bir değişmiştir. Kökten aşağı değil, yapraktan yukarı yürüyerek dengesi bozulan **en alttaki** atayı bulur ve orada onarım yaparsın. Yerel onarım teoremi şunu söyler: farkı ikiye çıkmış bir düğümün alt ağacı, alt ağacındaki diğer bütün düğümler dengeliyse, **bir veya iki dönüşle** dengeye getirilebilir. İki dönüş gereken durum, bozulmanın "zikzak" olduğu, yani çocuğun eğiminin ters yönde olduğu durumdur; orada önce çocuğa bir dönüş uygulanıp bozulma tek yöne indirilir, sonra asıl dönüş yapılır.
+Onarım nasıl yapılır? Ekleme ya da silme yapıyı yalnızca tek bir noktada değiştirir: eklemede yeni bir yaprak asılır, silmede yapraktan ya da tek çocuklu bir düğümden bir halka kopar. Dengesi bozulabilecek düğümler yalnızca bu noktanın **atalarıdır** ve yükseklikleri en fazla bir değişmiştir. Kökten aşağı değil, oradan yukarı yürüyerek dengesi bozulan **en alttaki** atayı bulur ve orada onarım yaparsın. Yerel onarım teoremi şunu söyler: farkı ikiye çıkmış bir düğümün alt ağacı, alt ağacındaki diğer bütün düğümler dengeliyse, **bir veya iki dönüşle** dengeye getirilebilir. İki dönüş gereken durum, bozulmanın "zikzak" olduğu, yani çocuğun eğiminin ters yönde olduğu durumdur; orada önce çocuğa bir dönüş uygulanıp bozulma tek yöne indirilir, sonra asıl dönüş yapılır.
 
-Maliyet muhasebesi böylece kapanır: atalar zinciri en fazla h uzunluğundadır, her ata için sabit iş yapılır, h ise logaritmiktir. Sonuç: arama, ekleme ve silme **en kötü durumda** logaritmiktir. Bu, önceki makalenin veremediği garantidir.
+Ekleme ile silme burada ayrışır ve bu, mülakatçının sorabileceği ikinci sorudur. Eklemede tek bir onarım yeter: onarılan alt ağaç eklemeden önceki yüksekliğine döner, dolayısıyla daha yukarıdaki atalar hiçbir şey fark etmez. Silmede onarım alt ağacın yüksekliğini bir azaltabilir ve bu azalma bir üstteki atayı bozabilir; yürüyüş gerekirse köke kadar sürer ve her seviyede bir veya iki dönüş yapılabilir.
+
+**Problem.** Boş bir AVL ağacına sırasıyla 3, 1, 2 anahtarlarını ekle. Ağaç nerede bozulur ve nasıl onarılır?
+
+**Strateji.** Her eklemeden sonra yeni yapraktan köke doğru eğimleri hesapla; eğimi ±2 olan en alttaki atada dur, çocuğunun eğim yönüne bakarak tek mi çift mi dönüş gerektiğine karar ver.
+
+**Adımlar.** 3 kök olur, 1 onun sol çocuğu, 2 de 1'in sağ çocuğu olarak asılır. Boş alt ağacın yüksekliğini −1 sayarsak 2'nin eğimi 0, 1'in eğimi +1, 3'ün eğimi −2'dir: bozulma 3'te. 3 sola, çocuğu 1 sağa yatık; eğimler ters yönde, yani zikzak. Önce 1'de sola dönüş yapılır: 2 yukarı çıkar, 1 onun sol çocuğu olur ve ağaç 3 → 2 → 1 biçiminde tek yöne yatık bir zincire döner. Sonra 3'te sağa dönüş yapılır: 2 kök olur, 1 ile 3 onun çocukları olur ve bütün eğimler 0'a iner. Şekil 2 üç hâli yan yana gösteriyor.
+
+![Üç panelli AVL onarımı. Solda 3, 1, 2 eklendikten sonraki ağaç: kök 3 eğimi eksi iki ile vurgulu, sol çocuğu 1 eğimi artı bir, 1'in sağ çocuğu 2 eğimi sıfır. Ortada 1'de sola dönüşten sonra: kök 3 yine eksi iki, sol çocuğu 2 eksi bir, 2'nin sol çocuğu 1; ağaç tek yöne yatık bir zincir. Sağda 3'te sağa dönüşten sonra: kök 2, çocukları 1 ve 3, bütün eğimler sıfır. Paneller arasında oklar var. Altta eğimin sağ alt ağaç yüksekliği eksi sol alt ağaç yüksekliği olduğu, zikzakta önce çocuğun döndürüldüğü ve yalnızca 3'te sağa dönüşün yetmeyeceği, çünkü 1 kök olup eğiminin artı iki olacağı yazıyor](assets/avl-zikzak.svg "Şekil 2 — Zikzak bozulma: önce çocukta, sonra bozulan düğümde dönüş")
+
+**Savunma.** Her dönüş sıralı dolaşmayı korur, dolayısıyla üç hâlde de sıralı dolaşma 1, 2, 3'tür ve arama ağacı değişmezi hiç bozulmaz. Çift dönüşün neden gerektiğini tek dönüşü deneyerek görürsün: doğrudan 3'te sağa dönüş yapılsaydı 1 kök olur, 3 onun sağ çocuğu, 2 de 3'ün sol çocuğu olurdu; bu kez 1'in eğimi +2 çıkar ve bozulma yalnızca aynadaki yerine taşınmış olur. Anahtarlar 1, 2, 3 sırasıyla gelseydi bozulma tek yönlü olurdu ve 1'de tek bir sola dönüş yeterdi. İki durumda da iş sabit sayıda işaretçi değişikliğidir.
+
+Maliyet muhasebesi böylece kapanır: atalar zinciri en fazla h uzunluğundadır, her ata için sabit iş yapılır — silmede zincir boyunca birden çok dönüş gerekse bile — h ise logaritmiktir. Sonuç: arama, ekleme ve silme **en kötü durumda** logaritmiktir. Bu, önceki makalenin veremediği garantidir.
 
 > **Sesli anlat:** "Dengeli arama ağacı ne demek, AVL bunu nasıl garanti ediyor ve maliyeti ne? Doksan saniyede anlat."
 >
-> İyi bir cevabın omurgası: "Dengeli demek, yüksekliğin işlem sayısından bağımsız olarak logaritmik kalmasının garanti edilmesi demektir. AVL bunu yerel bir kuralla yapar: her düğümde sol ve sağ alt ağaçların yükseklik farkı en fazla birdir. Bu kuralın küresel sonucunu, verilen yüksekliği tutturan en seyrek ağacı sayarak ispatlarım: en az düğüm sayısı F(h) = 1 + F(h−1) + F(h−2) yinelemesini sağlar, buradan F(h) en az iki üzeri h bölü iki çıkar, yani yükseklik en fazla iki log iki n'dir; Fibonacci çözümüyle sabit yaklaşık 1,44'e iner. Onarım için dönüş kullanırım: dönüş sabit sayıda işaretçiyi yeniden bağlar ve sıralı dolaşmayı değiştirmez. Ekleme ya da silmeden sonra yapraktan köke doğru yürür, dengesi bozulan en alttaki atayı bir veya iki dönüşle düzeltirim. Atalar zinciri logaritmik olduğu için üç işlem de en kötü durumda logaritmiktir."
+> İyi bir cevabın omurgası: "Dengeli demek, yüksekliğin işlem sayısından bağımsız olarak logaritmik kalmasının garanti edilmesi demektir. AVL bunu yerel bir kuralla yapar: her düğümde sol ve sağ alt ağaçların yükseklik farkı en fazla birdir. Bu kuralın küresel sonucunu, verilen yüksekliği tutturan en seyrek ağacı sayarak ispatlarım: en az düğüm sayısı F(h) = 1 + F(h−1) + F(h−2) yinelemesini sağlar, buradan F(h) en az iki üzeri h bölü iki çıkar, yani yükseklik en fazla iki log iki n'dir; Fibonacci çözümüyle sabit yaklaşık 1,44'e iner. Onarım için dönüş kullanırım: dönüş sabit sayıda işaretçiyi yeniden bağlar ve sıralı dolaşmayı değiştirmez. Ekleme ya da silmeden sonra değişen noktadan köke doğru yürür, dengesi bozulan en alttaki atayı bir veya iki dönüşle düzeltirim; eklemede bu tek onarım yeter, silmede yürüyüş köke kadar sürebilir. Atalar zinciri logaritmik olduğu için üç işlem de en kötü durumda logaritmiktir."
 
 ## Aynı fikrin başka dengeleri
 
@@ -60,7 +74,7 @@ AVL tek şema değildir ve mülakatta genellikle adı geçen ikinci şema **kır
 
 Renk kurallarının nereden geldiğini anlamanın en kolay yolu **2-3 ağacından** geçer. 2-3 ağacında iki tür düğüm bulunur: bir anahtar ve iki bağ taşıyan 2-düğümü, iki anahtar ve üç bağ taşıyan 3-düğümü. Ağaç aşağı doğru değil **yukarı** doğru büyür: yeni anahtar bir yaprağa eklenir, yaprak taşarsa ortadaki anahtar ebeveyne yükselir ve bu taşma zinciri gerekirse köke kadar çıkar. Kök bölündüğünde bütün yapraklar aynı anda bir seviye derinleşir, dolayısıyla **bütün yapraklar her zaman aynı derinliktedir**. Bu mükemmele yakın dengenin karşılığı şudur: N anahtarlı bir 2-3 ağacında arama ve ekleme en fazla log₂ N düğüm ziyaret eder.
 
-Kırmızı-siyah ağaç, 2-3 ağacının ikili ağaç kılığındaki hâlidir: bir 3-düğümü, aralarında kırmızı bir bağ bulunan iki 2-düğümü olarak temsil edilir. Renk kuralları böylece 2-3 ağacının denge kuralının ikili ağaca çevrilmiş yazımı olur. İki şemayı tek cümlede karşılaştırmak gerekirse: AVL daha sıkı dengeler, bu yüzden aramada biraz daha hızlıdır ama ekleme ve silmede daha çok onarım yapar; kırmızı-siyah daha gevşek dengeler, onarım maliyeti daha düşüktür. İkisi de en kötü durumda logaritmiktir ve seçim, iş yükünün okuma ağırlıklı mı yazma ağırlıklı mı olduğuna bakar.
+Kırmızı-siyah ağaç, 2-3 ağacının ikili ağaç kılığındaki hâlidir: bir 3-düğümü, aralarında kırmızı bir bağ bulunan iki 2-düğümü olarak temsil edilir. Renk kuralları böylece 2-3 ağacının denge kuralının ikili ağaca çevrilmiş yazımı olur. İki şemayı tek cümlede karşılaştırmak gerekirse: AVL daha sıkı dengeler, bu yüzden aramada genellikle biraz daha hızlıdır ama ekleme ve silmede daha çok onarım yapar; kırmızı-siyah daha gevşek dengeler, onarım maliyeti daha düşüktür. İkisi de en kötü durumda logaritmiktir ve seçim, iş yükünün okuma ağırlıklı mı yazma ağırlıklı mı olduğuna bakar.
 
 ## Model değişiyor: blok, disk ve B-ağacı
 
@@ -76,9 +90,9 @@ Kazancı sayıya dökelim. Blok başına yaklaşık yüz çocuk sığdığını 
 
 Buradan çıkan asıl ders yapının kendisi değil, **modelin seçimidir**. Aynı problem — sıralı bir kümede arama — iki farklı maliyet modelinde iki farklı doğru cevap verir. Mülakatta "hangi ağaç?" sorusuna cevap verirken önce hangi modelde konuştuğunu söylemek, cevabı ezberden ayıran şeydir.
 
-Şekil 2 iki yapıyı aynı veri üzerinde karşılaştırıyor.
+Şekil 3 iki yapıyı aynı veri üzerinde karşılaştırıyor.
 
-![Solda dengeli ikili ağaç: her düğümde tek anahtar var, kökten yaprağa inen yol boyunca her düğüm ayrı bir blok olarak işaretlenmiş ve bir milyar anahtar için yaklaşık otuz seviye yazıyor. Sağda B-ağacı: her düğüm içinde çok sayıda anahtar bulunan geniş bir dikdörtgen ve bir blok olarak etiketli, kök ve iki seviye gösterilmiş, bir milyar anahtar ve düğüm başına yüz çocuk için beş seviye yazıyor](assets/b-agaci-blok.svg "Şekil 2 — Aynı veri, iki model: düğüm başına bir anahtar ile düğüm başına bir blok")
+![Solda dengeli ikili ağaç: her düğümde tek anahtar var, kökten yaprağa inen yol boyunca her düğüm ayrı bir blok olarak işaretlenmiş ve bir milyar anahtar için yaklaşık otuz seviye yazıyor. Sağda B-ağacı: her düğüm içinde çok sayıda anahtar bulunan geniş bir dikdörtgen ve bir blok olarak etiketli, kök ve iki seviye gösterilmiş, bir milyar anahtar ve düğüm başına yüz çocuk için beş seviye yazıyor](assets/b-agaci-blok.svg "Şekil 3 — Aynı veri, iki model: düğüm başına bir anahtar ile düğüm başına bir blok")
 
 > **Sesli anlat:** "Veritabanı indeksleri neden dengeli ikili ağaç değil de B-ağacı kullanır? Altmış saniyede açıkla."
 >
@@ -90,13 +104,13 @@ Takip zinciri genellikle önceki makalenin bıraktığı yerden başlar: "Yükse
 
 İlk soruya cevap, bir denge koşulu adlandırıp onun logaritmik yüksekliği neden zorladığını söylemektir; AVL'nin en seyrek ağaç argümanı bu iş için en kısa yoldur. İkinci soruya cevap, dönüşün sabit zamanlı olduğunu ve onarımın yalnızca atalar zincirinde yürüdüğünü söylemektir; buradan toplam maliyetin yine logaritmik olduğu çıkar. Üçüncü soruya cevap ise modeli değiştirmektir — ve bu, mülakatçının duymayı beklediği ama çoğu adayın söylemediği cümledir.
 
-Sık yapılan iki hataya dikkat. Birincisi, dengelemenin aramayı hızlandırdığını sanmak: dengeleme aramanın **garantisini** kurar, ortalama davranışı zaten iyi olan bir ağacı daha hızlı yapmaz. İkincisi, B-ağacını "daha çok anahtar tutan ağaç" diye anlatmak: asıl mesele anahtar sayısı değil, düğüm boyutunun blok boyutuna eşitlenmesidir.
+Sık yapılan iki hataya dikkat. Birincisi, dengelemenin aramayı hızlandırdığını sanmak: dengeleme aramanın **garantisini** kurar; rastgele sırayla kurulmuş, ortalama davranışı zaten logaritmik olan bir ağacı ancak sabit bir çarpan kadar hızlandırır. İkincisi, B-ağacını "daha çok anahtar tutan ağaç" diye anlatmak: asıl mesele anahtar sayısı değil, düğüm boyutunun blok boyutuna eşitlenmesidir.
 
-İngilizce karşılıklar hazır olmalıdır: *balanced search tree*, *rotation*, *AVL tree*, *height balance*, *red-black tree*, *2-3 tree*, *B-tree*, *block*, *external memory model*, *branching factor*, *worst-case guarantee*.
+İngilizce karşılıklar hazır olmalıdır: *balanced search tree*, *rotation*, *double rotation*, *AVL tree*, *height balance*, *red-black tree*, *2-3 tree*, *B-tree*, *block*, *external memory model*, *branching factor*, *worst-case guarantee*.
 
 ### Sırada ne var
 
-Bu iki makale bir soruyu çok iyi cevapladı: "bu anahtar burada mı ve komşuları kim?" Sıradaki makale farklı bir soruyu ele alıyor: "şu anda en küçüğü ver, sonra tekrar en küçüğü ver." Bu soru için tam sıralamayı korumak gereğinden fazla iş yapmaktır. Heap, arama ağacının değişmezini bilinçli olarak **zayıflatarak** — yalnızca ebeveyn ile çocuk arasında bir ilişki isteyerek — hem en küçüğü sabit zamanda bulur hem de bütün yapıyı tek bir dizide, hiç işaretçi kullanmadan saklar. Orada eski bir bilgiyi geri çağıracağız: tam ikili ağacın dizi üzerindeki temsili ve indis aritmetiği.
+Bu iki makale bir soruyu çok iyi cevapladı: "bu anahtar burada mı ve komşuları kim?" Sıradaki makale farklı bir soruyu ele alıyor: "şu anda en küçüğü ver, sonra tekrar en küçüğü ver." Bu soru için tam sıralamayı korumak gereğinden fazla iş yapmaktır. Heap, arama ağacının değişmezini bilinçli olarak **zayıflatarak** — yalnızca ebeveyn ile çocuk arasında bir ilişki isteyerek — hem en küçüğü sabit zamanda bulur hem de bütün yapıyı tek bir dizide, hiç işaretçi kullanmadan saklar. Orada temel yapılar makalesindeki indis aritmetiğini geri çağıracağız: bu kez ağacın şeklini taşımak için.
 
 ## Kaynakça
 

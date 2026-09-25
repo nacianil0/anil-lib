@@ -322,21 +322,14 @@ test.describe("precise resume on a phone", () => {
 
   test("the toolbar still shows which chapter is open", async ({ page }) => {
     const chapter = page.locator("header p").first();
+    // Screen readers still hear "Bölüm 01 / 18"; a phone shows "01 / 18", because
+    // the full label left only "Bölüm 01 / 1…" in the space between the drawer
+    // button and the icon row.
     await expect(chapter).toContainText("Bölüm");
-    // The label used to be squeezed to a few pixels between the drawer button and
-    // the icon row; it must render in full at this width.
-    const fits = await chapter.evaluate((element) => {
-      const inner = element.querySelector("span")!;
-      const probe = document.createElement("span");
-      probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
-      probe.className = element.className.replace("truncate", "");
-      probe.textContent = inner.textContent;
-      document.body.appendChild(probe);
-      const needed = Math.ceil(probe.getBoundingClientRect().width);
-      probe.remove();
-      return { needed, available: element.clientWidth };
-    });
-    expect(fits.available).toBeGreaterThanOrEqual(fits.needed);
+    await expect(chapter.locator("span[aria-hidden='true']").first()).toHaveText(/^\d+ \/ \d+$/);
+    // The label used to be squeezed to a few pixels; it must render in full.
+    const clipped = await chapter.evaluate((element) => element.scrollWidth > element.clientWidth);
+    expect(clipped).toBe(false);
   });
 
   test("the settings sheet covers the width without pushing the page sideways", async ({

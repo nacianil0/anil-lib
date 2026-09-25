@@ -12,7 +12,7 @@ tags:
   - ortusen-alt-problemler
   - sirt-cantasi
   - optimal-altyapi
-content_hash: sha256:3a1a75948c3b91a4f9f841500bdf2e6b28459bdfab01897347fc9b8a8cdf599e
+content_hash: sha256:42851649bb7fbf75a35b6ae02704c3cfab76f28a2f9b2f94daab9ce69983b7e2
 classification_version: 1
 classification_batch: 7
 ---
@@ -49,7 +49,7 @@ Bellekleyen sürüm iki satır fark eder:
 8      return F(n)                             # özgün problem
 ```
 
-Artık her alt problem bir kez çözülür, alt problem başına iş sabittir, toplam maliyet Θ(n) toplama olur. Küçük bir dürüstlük notu: Fibonacci sayıları Θ(n) bit uzunluğundadır ve sözcük boyutu w olan bir makinede her toplama O(⌈n/w⌉) sürer, yani gerçek maliyet O(n + n²/w)'dir. RAM modelinin "her aritmetik işlem sabit" varsayımı burada yalan söylüyor; karmaşıklık makalesinde kurduğumuz "n nedir?" disiplini bunu yakalar.
+Artık her alt problem bir kez çözülür, alt problem başına iş sabittir, toplam maliyet Θ(n) toplama olur. Bu sayımın bir sınırı var: Fibonacci sayıları Θ(n) bit uzunluğundadır ve sözcük boyutu w olan bir makinede her toplama O(⌈n/w⌉) sürer, yani gerçek maliyet O(n + n²/w)'dir. RAM modelinin "her aritmetik işlem sabit" varsayımı burada yalan söylüyor; karmaşıklık makalesinde kurduğumuz "n nedir?" disiplini bunu yakalar.
 
 ## Bellekleme ile tablolama
 
@@ -102,7 +102,7 @@ Somut bir örnek üzerinden gidelim. Beş toplantı isteği var; parantez içind
 | D | 13–15 | 5 |
 | E | 13–17 | 10 |
 
-Açgözlü makalesinde **ispatladığımız** kural "en erken biteni seç"ti. Burada A, B, D seçilir ve toplam **17** eder. En büyük değerliden başlayan kural C'yi alır, sonra yalnızca A sığar: **15**. Zaman birimi başına en çok değer veren kural yine A, B, D verir: **17**. En kısa süreni seçen kural da aynı üçlüyü verir: **17**. Optimal ise **22**'dir ve A + B + E'dir. Bu dört sonucu ve optimalin tekliğini kaba kuvvetle bütün altkümeler üzerinde denetledim.
+Açgözlü makalesinde **ispatladığımız** kural "en erken biteni seç"ti. Burada A, B, D seçilir ve toplam **17** eder. En büyük değerliden başlayan kural C'yi alır, sonra yalnızca A sığar: **15**. Saat başına en çok değer veren kural önce B'yi (saatte 4) alır, sonra C'yi eler; ama D ile E aynı orana (saatte 2,5) sahiptir ve sonuç eşitliğin nasıl bozulduğuna kalır: D seçilirse A, B, D ile **17**, E seçilirse şans eseri **22**. En kısa süreni seçen kural A, B, D'yi verir: **17**. Optimal ise **22**'dir ve A + B + E'dir. Bu dört sonucu ve optimalin tekliğini kaba kuvvetle bütün altkümeler üzerinde denetledim.
 
 Açgözlü neden çöktü? Çünkü **açgözlü seçim özelliği** kayboldu: en erken biten isteği içeren bir optimal çözüm olduğu artık doğru değil. Ama **optimal altyapı** duruyor — ve dinamik programlama zaten yalnızca onu ister. Bu ayrım, önceki makalenin ayırdığı iki iddianın tam olarak işe yaradığı yerdir.
 
@@ -151,6 +151,8 @@ Burada bir tuzak var ve mülakatta güzel bir takip sorusudur. **O(nC) polinom z
 Dinamik programlama sorusu tahtaya gelince beklenen sıra sabittir: alt problemi **kelimelerle** tanımla, bağıntıyı bir soruyu kaba kuvvetle deneyerek kur, topolojik sırayı gerekçelendir, taban durumları ver, özgün problemi göster, maliyeti alt problem sayısı × alt problem başına iş olarak hesapla. Altı satır, altı cümle.
 
 Beş tipik hata var. **Alt problemi parametresiz tanımlamak** — "alt problem, dizinin geri kalanı" bir tanım değildir; hangi parametrenin hangi aralıkta değiştiğini söylemek gerekir. **Topolojik sırayı savunmamak** — sıra bir DAG sırası değilse tablolama boş hücre okur. **Alt problem sayısını yanlış saymak** — iki parametreli bir alt problem uzayında maliyet çarpımdır, toplam değil. **Bellekleme denetimini unutmak** — hafızayı yazıp okumayı unutan kod hâlâ üsteldir ve bu, mülakatta en sık görülen sessiz hatadır. **Sözde polinomu polinom sanmak** — O(nC) girdi boyutunda polinom değildir.
+
+Takip zinciri çoğu zaman şu üç halkadır: "Alt problemin ne?" → "Kaç alt problem var, her biri ne kadar iş?" → "Bunu açgözlüyle çözemez miydin?" Üçüncü halkaya bu makaledeki tablo cevap verir: en erken biten kural 17'de kalır, çünkü açgözlü seçim özelliği bu problemde yoktur.
 
 Bir de kavram karışıklığı var: dinamik programlama ile açgözlüyü ayırt edememek. Ayrım tek cümledir: **açgözlü seçer, DP hatırlar.** Açgözlü her adımda bir seçim yapar ve dönmez, bunun için açgözlü seçim özelliğine ihtiyaç duyar; DP bütün seçenekleri hesaplar ve en iyisini saklar, bunun için yalnızca optimal altyapıya ihtiyaç duyar. Bir problemde açgözlü çalışıyorsa DP de çalışır ama gereksiz yere pahalıdır; açgözlü çalışmıyorsa geriye DP kalır.
 

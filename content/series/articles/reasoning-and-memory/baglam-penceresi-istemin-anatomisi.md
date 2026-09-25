@@ -12,7 +12,7 @@ tags:
   - durumsuzluk
   - etkin-uzunluk
   - uzun-baglam
-content_hash: sha256:b4bbaf649863a4a12f325c14e52756cac133874ef08042867786d3eeed239c9f
+content_hash: sha256:b4a7b4c93fe33db59845db0527abb86e2a24641169eae99dfae0fff9901a02bc
 classification_version: 1
 classification_batch: 4
 ---
@@ -62,7 +62,7 @@ Neden bir sınır var? Üç ayrı sebep aynı yere bakıyor.
 
 **Birincisi eğitim uzunluğu.** Bir model belirli bir uzunluktaki dizilerle eğitilir ve o uzunluğun ötesine kendiliğinden genellemez. Ofir Press, Noah Smith ve Mike Lewis'in ICLR 2022'de sunduğu çalışma bunu doğrudan ölçtü: 7\. makalede tanıştığımız klasik pozisyon kodlamasıyla eğitilmiş bir model, eğitildiği uzunluğun biraz ötesinde iyileşmeyi bırakıp hızla bozuluyor. Yazarların önerdiği alternatif — dikkat skorlarına uzaklıkla artan bir ceza eklemek — 1.024 token'la eğitilmiş bir modelin 2.048 token'da, doğrudan 2.048 ile eğitilmiş bir modelin perplexity değerini yakalamasını sağlıyor. Bugün yaygın kullanılan yöntem ise Jianlin Su ve arkadaşlarının önerdiği ve *Neurocomputing* dergisinde yayımlanan döndürmeli pozisyon kodlamasıdır; pencereyi eğitim uzunluğunun ötesine esnetmenin yollarını 25\. makalede ele alacağız.
 
-**İkincisi hesap.** 7\. makalede öz-dikkatin maliyetinin dizinin karesiyle büyüdüğünü görmüştük: masadaki kişi sayısı iki katına çıktığında konuşma çiftleri dört katına çıkar. Pencereyi 8 kat büyütmek, dikkat alt-katmanının işini **64 kat** artırır. Bu, uzun pencerenin neden bedava bir özellik olmadığının en sert sebebi.
+**İkincisi hesap.** 7\. makalede öz-dikkatin maliyetinin dizinin karesiyle büyüdüğünü görmüştük: masadaki kişi sayısı iki katına çıktığında konuşma çiftleri dört katına çıkar. Pencereyi 8 kat büyütmek, dikkat alt-katmanının işini **64 kat** artırır. Uzun pencerenin hesap bedeli buradan gelir.
 
 **Üçüncüsü bellek.** Yukarıda adı geçen anahtar-değer önbelleği, dizideki her token için yer tutar; yani bellek ihtiyacı uzunlukla doğrusal büyür ve aynı anda kaç kullanıcıya hizmet verilebileceğini doğrudan sınırlar.
 
@@ -104,7 +104,7 @@ Nelson Liu ve arkadaşlarının TACL'de yayımladığı çalışma bunu düzenli
 
 Sonuç bir U eğrisi. Doğru belge başta olduğunda ölçülen model yüzde 75,8 doğruluk veriyor; sonda olduğunda yüzde 63,2; **ortada** olduğunda yüzde 53,8.
 
-Asıl çarpıcı karşılaştırma ise bir sonraki satırda. Aynı modele hiç belge verilmediğinde, yani yalnızca kendi ağırlıklarındaki bilgiyle cevaplamaya bırakıldığında doğruluğu yüzde 56,1. Yani doğru cevabı içeren belgeyi yirmi belgenin ortasına koymak, modele **hiçbir şey vermemekten daha kötü** bir sonuç veriyor. Üst sınırı da görelim: yalnızca doğru belge verildiğinde doğruluk yüzde 88,3.
+Bu sayıları anlamlı kılan, aynı ölçümdeki iki referans düzeyi. Aynı modele hiç belge verilmediğinde, yani yalnızca kendi ağırlıklarındaki bilgiyle cevaplamaya bırakıldığında doğruluğu yüzde 56,1. Yani doğru cevabı içeren belgeyi yirmi belgenin ortasına koymak, modele **hiçbir şey vermemekten daha kötü** bir sonuç veriyor. Üst sınırı da görelim: yalnızca doğru belge verildiğinde doğruluk yüzde 88,3.
 
 ![Yatay eksende doğru belgenin yirmi belge arasındaki sırası, dikey eksende doğruluk yer alır; eğri başta yüksek başlar, ortada dibe iner ve sonda kısmen toparlanır. İki kesikli yatay çizgi, hiç belge verilmediğindeki ve yalnızca doğru belge verildiğindeki doğruluk düzeylerini işaretler ve ortadaki değerin birincisinin altında kaldığı görünür.](assets/ortadaki-bilgi.svg "Şekil 3 — Aynı bilgi, farklı yer, farklı sonuç")
 
@@ -114,11 +114,11 @@ Asıl çarpıcı karşılaştırma ise bir sonraki satırda. Aynı modele hiç b
 
 ## Uzunluğun kendisi bir yük
 
-Son bir ölçüm, tabloyu tamamlıyor ve en rahatsız edici olanı.
+Son ölçüm, yerden de ilgisiz metinden de bağımsız bir etkiyi ayırıyor.
 
 Mosh Levy, Alon Jacoby ve Yoav Goldberg'in ACL 2024'te sunduğu çalışma, akıl yürütme görevini sabit tutup yalnızca girdinin uzunluğunu değiştirdi. Üç ayrı görev türü, her biri 250'den 3.000 token'a kadar beş uzunluk düzeyinde; eklenen metin görevle ilgisiz dolgu. Yani zorluk aynı, uzunluk farklı.
 
-Bütün modellerde doğruluk düşüyor. Ölçülen en güçlü model 250 token'da görevi kusursuz çözerken 3.000 token'da yaklaşık 0,68 doğruluğa iniyor. Dikkat et: 3.000 token, o modelin ilan edilen sınırının yüzde biri bile değil. Bozulma teknik sınırın çok altında başlıyor.
+Bütün modellerde doğruluk düşüyor. Ölçülen modellerin ortalamasında doğruluk 250 token'da 0,92 iken 3.000 token'da 0,68'e iniyor; en güçlü model GPT-4 bile en kısa düzeyde görevleri neredeyse kusursuz çözüp uzadıkça geriliyor. Dikkat et: 3.000 token, bu modellerin ilan edilen sınırlarının küçük bir kesri; ölçülen GPT-4 sürümünün ilan ettiği 128.000 token'ın kırkta birinden az. Bozulma teknik sınırın çok altında başlıyor.
 
 Çalışmanın kaydettiği başarısızlık biçimleri de öğretici, çünkü hiçbiri "model daha az bildi" demiyor. Girdi uzadıkça modeller cevap vermeyi reddetmeye, iki seçenekten birine sistematik olarak kaymaya ve ara adımları yazmadan önce cevabı söylemeye başlıyor. Yani uzunluk yalnızca doğruluğu düşürmüyor, görevin yapılış biçimini de bozuyor. Dahası, eklenen dolgu görevle ilgili metinden seçildiğinde bile düşüş sürüyor: sorun tek başına ilgisiz metnin dikkat dağıtması değil, uzunluğun kendisi.
 

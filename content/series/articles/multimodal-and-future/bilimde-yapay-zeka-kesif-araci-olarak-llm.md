@@ -12,7 +12,7 @@ tags:
   - tekrarlanabilirlik
   - malzeme-kesfi
   - hipotez-uretimi
-content_hash: sha256:b54cf13056957b8cc9aafa235bb6134a56e130d4bb350c4fe2bca16f1506aab0
+content_hash: sha256:f5801841dc2749771b469ca5c08df121a2a9ef3010f8d4e2e9d60cf1dc230dca
 classification_version: 1
 classification_batch: 27
 ---
@@ -28,7 +28,7 @@ Bu makalenin tezi tek cümle: **yapay zekânın bir bilimde ne kadar işe yarad�
 
 ## Doğrulama kör ve deneysel olduğunda
 
-En temiz vaka protein yapısı tahmini, ve temiz olmasının sebebi modelin kendisi değil, alanın kırk yıl önce kurduğu bir düzen.
+En temiz vaka protein yapısı tahmini, ve temiz olmasının sebebi modelin kendisi değil, alanın 1994'ten beri işlettiği bir düzen.
 
 Yapı tahmini yarışması iki yılda bir toplanıyor. Deneysel olarak çözülmüş ama **henüz yayımlanmamış** yapılar seçiliyor; katılımcılara yalnızca amino asit dizisi veriliyor; tahminler gönderiliyor; sonra gerçek yapılar açıklanıp körlemesine puanlanıyor. 99\. makaledeki ön kaydın ve 102\. makaledeki bağımsız doğrulamanın kurumsallaşmış hâli — cevap anahtarı katılımcının elinde yok ve elde edildikten sonra değiştirilemiyor.
 
@@ -50,7 +50,7 @@ Yöntemin asıl özelliği bulunan şeyin biçimi. Elde edilen şey 512 vektörl
 
 > **Kendini yokla:** Bu düzende dil modelinin uydurması neden zarar vermiyor?
 
-Çünkü uydurma bir cevap değil, bir **aday** üretiyor ve adayı bir program eliyor. 35\. makalede doğrulayıcının arama baskısı altında kandırılabildiğini görmüştük; oradaki doğrulayıcı öğrenilmiş bir modeldi ve kendi hataları vardı. Burada doğrulayıcı öğrenilmiş bir şey değil: bir yapının tanımını kontrol eden sabit bir kod parçası. Kandırılamaz, çünkü kanısı yok. Modelin başarısı üretim tarafında, güvenilirlik doğrulama tarafında duruyor ve ikisi birbirine karışmıyor.
+Çünkü uydurma bir cevap değil, bir **aday** üretiyor ve adayı bir program eliyor. 35\. makalede doğrulayıcının arama baskısı altında kandırılabildiğini görmüştük; oradaki doğrulayıcı öğrenilmiş bir modeldi ve kendi hataları vardı. Burada doğrulayıcı öğrenilmiş bir şey değil: bir yapının tanımını kontrol eden sabit bir kod parçası. Tanımı doğru yazıldığı sürece ikna edilecek bir kanısı yok; kod hatalı yazılmışsa arama o hatayı da bulup sömürebilir, bu yüzden güvenin yükü değerlendiricinin doğruluğuna taşınıyor. Modelin başarısı üretim tarafında, güvenilirlik doğrulama tarafında duruyor ve ikisi birbirine karışmıyor.
 
 ## Doğrulayan bir insan olduğunda
 
@@ -62,13 +62,13 @@ Düğüm kuramındaki örnek yöntemin tamamını gösteriyor. Bir düğümün c
 
 Kanıt kimde? Matematikçide. Modelin ürettiği hiçbir şey sonucun kanıtı değil; model yalnızca nereye bakılacağını söyledi. Doğrulama maliyeti burada yüksek — bir teorem kanıtlamak aylar sürer — ama üretim tarafı da buna göre daraltılmış: model bir iddia değil, bir yön üretiyor.
 
-Aynı çalışmanın ikinci alanı bu ayrımı daha da keskinleştiriyor ve dürüstlük açısından önemli. Temsil kuramındaki açık bir sanı üzerinde elde edilen sonuç bir teorem değil, o sanının öngördüğü bir **aday algoritma**. Yani iki uygulamanın biri kanıtla kapanıyor, öteki kapanmıyor ve kapanmadığı da böyle yazılıyor. Bir aracın çıktısının ne olduğu — teorem mi, sanı mı, aday mı — yazıldığı sürece sorun değil; sorun, üçünün aynı cümlede aynı ağırlıkla sunulması.
+Aynı çalışmanın ikinci alanı bu ayrımı daha da keskinleştiriyor. Temsil kuramındaki açık bir sanı üzerinde elde edilen sonuç bir teorem değil, o sanının öngördüğü bir **aday algoritma**. Yani iki uygulamanın biri kanıtla kapanıyor, öteki kapanmıyor ve kapanmadığı da böyle yazılıyor. Bir aracın çıktısının ne olduğu — teorem mi, sanı mı, aday mı — yazıldığı sürece sorun değil; sorun, üçünün aynı cümlede aynı ağırlıkla sunulması.
 
 Bu üç vakanın ortak bir özelliği var ve dördüncüsünden ayrıldıkları yer tam orası: üçünde de doğrulama, üretimden **önce** hazırdı. Yarışmanın cevap anahtarı çözülmüş ve saklanmıştı; puanlama programı yazılıydı; matematikçi zaten oradaydı ve sanıyı kanıtlayacak aygıta sahipti. Doğrulamanın önceden var olması, üretimi ne kadar ölçeklersen ölçekle sonucun okunabilir kalmasını sağlıyor.
 
 ![Dört satırlı beş sütunlu bir tablo ve altında bir kutu. Üstte başlık: aynı soru, dört ayrı doğrulama maliyeti. Sütunlar vaka, modelin ürettiği, doğrulayan, doğrulamanın maliyeti ve geriye ne kaldı. Birinci satır protein yapısı: bir yapı tahmini üretir, doğrulayan önceden çözülmüş ama saklanmış deneysel yapıdır, maliyeti sıfırdır çünkü zaten yapılmıştır, geriye ortanca 0,96 ångströmlük omurga doğruluğu kalmıştır ve ikinci en iyi yöntem 2,8'dedir. İkinci satır matematikte program araması: çözümü üreten bir program üretir, doğrulayan sabit bir puanlama programıdır, maliyeti bir çalıştırmadır, geriye sekiz boyutta 512 elemanlı yeni bir yapı ve yirmi yılın en büyük asimptotik iyileştirmesi kalmıştır. Üçüncü satır sezgi kılavuzluğu: bir yön üretir, iddia üretmez; doğrulayan matematikçinin kanıtıdır; maliyeti aylardır; geriye kanıtlanmış bir teorem kalmıştır. Dördüncü satır vurguludur, malzeme keşfi: kararlı olduğu öngörülen kristal yapılar üretir, doğrulayan sentez ve kırınım analiziyle bir kimyagerdir, maliyeti hedef başına haftalar ve aylardır, geriye hakemli iki itiraz kalmıştır. Altta bir kutu durur: ölçüt modelin gücü değil, üretmenin maliyeti ile doğrulamanın maliyeti arasındaki orandır; ilk üç satırda doğrulama üretimden ucuz ya da kesindir, dördüncüde değildir. En altta bir kayıt: değerler sırasıyla Jumper, Romera-Paredes, Davies ve Merchant ile Szymanski ve arkadaşlarının çalışmalarından gelir.](assets/dogrulamanin-dort-maliyeti.svg "Şekil 1 — Belirleyici olan modelin gücü değil, oran")
 
-Şekil 1'in dördüncü satırı ötekilerden ayrılıyor ve bu makalenin asıl konusu orası.
+Şekil 1'in dördüncü satırı ötekilerden ayrılıyor: orada doğrulama ne üretimden ucuz ne de kesin.
 
 ## Doğrulama pahalı olduğunda
 
@@ -76,7 +76,7 @@ Dördüncü vaka malzeme keşfi ve burada oran tersine dönüyor: bir kristal ya
 
 Amil Merchant ve arkadaşlarının *Nature*'da yayımladığı çalışma öngörü tarafını ölçekliyor. Çizge ağlarıyla, termodinamik kararlılık sınırının — alandaki adıyla **dışbükey zarfın** (convex hull) — altında 2,2 milyon yapı buluyorlar; bunların 381 bini yeni kararlı kayıt olarak zarfa giriyor ve toplam 421 bine çıkıyor. Yazarlar 736 yapının bağımsız biçimde deneysel olarak elde edilmiş olduğunu da bildiriyor.
 
-Aynı sayıda *Nature*'da yayımlanan ikinci çalışma sentez tarafını otomatikleştiriyor. Nathan Szymanski ve arkadaşlarının kurduğu robotik laboratuvar, hesaplama, literatür verisi ve aktif öğrenmeyi birleştirip on yedi gün kesintisiz çalışıyor; özetlerinde 57 hedeften 36'sının elde edildiği yazılı. Sayım çalışmanın farklı yerlerinde farklı biçimlerde veriliyor — dergi özetinde 58 hedeften 41 —, ve eleştiri de bu yüzden ürünlerin tamamını tek tek sayarak ilerliyor.
+Aynı sayıda *Nature*'da yayımlanan ikinci çalışma sentez tarafını otomatikleştiriyor. Nathan Szymanski ve arkadaşlarının kurduğu robotik laboratuvar, hesaplama, literatür verisi ve aktif öğrenmeyi birleştirip on yedi gün kesintisiz çalışıyor. Çalışmanın 2023'teki ilk hâli bu sürede 58 hedeften 41 yeni bileşik elde edildiğini bildiriyordu. Aşağıdaki itirazların ardından Ocak 2026'da bir yazar düzeltmesi yayımlandı; makalenin bugünkü özeti 57 hedeften 36 bileşik diyor ve başlığı artık "yeni" değil "inorganik" malzemelerden söz ediyor. Sayımın bu kadar oynaması tartışmanın kendisinin bir parçası; eleştiri de bu yüzden ürünlerin tamamını tek tek sayarak ilerliyor.
 
 Şimdi hakemli itiraz. Ve iki tane var.
 
@@ -92,7 +92,7 @@ Bu iki cümle 110\. makalenin ölçütünü laboratuvara taşıyor. Orada bir mo
 
 Şekil 2'nin üçüncü satırı iki tarafı birbirine bağlıyor: itiraz bir suçlama değil, bir **mekanizma** öneriyor ve o mekanizma sınanabilir.
 
-Tarafların ikisini de dürüstçe yazmak gerekiyor. Öngörü hattı gerçek bir şey üretti: 736 yapının bağımsız biçimde elde edilmiş olması, kayda değer bir kesişim. İtirazlar bu sayıyı reddetmiyor; itirazları "kararlı öngörüldü" ile "yeni bir malzeme keşfedildi" arasındaki mesafeye. Ve o mesafe tam olarak doğrulama maliyetinin durduğu yer.
+İki tarafın da hakkını vermek gerekiyor. Öngörü hattı gerçek bir şey üretti: 736 yapının bağımsız biçimde elde edilmiş olması, kayda değer bir kesişim. İtirazlar bu sayıyı reddetmiyor; itirazları "kararlı öngörüldü" ile "yeni bir malzeme keşfedildi" arasındaki mesafeye. Ve o mesafe tam olarak doğrulama maliyetinin durduğu yer.
 
 O mesafeyi bir kez de sayıyla görmek gerekiyor; girdilerin ikisi de yukarıdaki paragraflarda duruyor ve bölme bize ait. Otonom laboratuvar on yedi günde 36 hedefi sentezledi: günde yaklaşık 2,1 sentez. Aynı hızla çalışan tek bir laboratuvar, öngörülen 381 bin yeni kararlı kaydı denemek için 381.000 ÷ 2,1 ≈ 180 bin gün, yani **yaklaşık 500 yıl** çalışırdı. Sayı büyüklük mertebesi olarak okunmalı — kimse bütün kayıtları sentezlemeye kalkışmıyor — ama makasın yönünü tartışmasız gösteriyor: öngörü hattı bir gecede ölçeklendi, doğrulama hattı ölçeklenmedi.
 
@@ -120,7 +120,7 @@ Lisa Messeri ile M. J. Crockett'in *Nature*'da yayımladığı değerlendirme ay
 
 **Kör ve önceden kaydedilmiş bir cevap anahtarı, bir sonucu tartışmadan çıkarıyor.** Yapı tahmininde kimse "gerçekten doğru mu" diye tartışmıyor, çünkü doğrulama yarışmanın kuralına yazılmış. 99 ve 102'nin disiplini bir alanın kurumu hâline geldiğinde ölçüm de tartışılmaz oluyor.
 
-**Doğrulayıcı bir program olduğunda uydurma zararsızdır.** Model çözümü değil onu üreten programı üretiyor, program çalıştırılıyor ve puanlanıyor; sekiz boyutta 512 elemanlı yeni bir yapı ve yirmi yılın en büyük asimptotik iyileştirmesi buradan çıktı.
+**Doğrulayıcı doğru yazılmış bir program olduğunda uydurma zararsızdır.** Model çözümü değil onu üreten programı üretiyor, program çalıştırılıyor ve puanlanıyor; sekiz boyutta 512 elemanlı yeni bir yapı ve yirmi yılın en büyük asimptotik iyileştirmesi buradan çıktı.
 
 **Model bir iddia değil bir yön üretebilir ve bu ayrı bir kullanım biçimidir.** Düğüm kuramındaki örnekte kanıt matematikçide kaldı; modelin katkısı üç geometrik büyüklüğe daraltma oldu.
 
@@ -143,6 +143,7 @@ Faz boyunca modeli sırayla bir gövdeye, bir ürüne ve bir laboratuvara bağla
 - Davies, A., Veličković, P., Buesing, L., Blackwell, S., Zheng, D., Tomašev, N. ve ark. (2021). *Advancing mathematics by guiding human intuition with AI*. Nature, 600(7887), s. 70–74. [Bağlantı](https://doi.org/10.1038/s41586-021-04086-x)
 - Merchant, A., Batzner, S., Schoenholz, S. S., Aykol, M., Cheon, G. & Cubuk, E. D. (2023). *Scaling deep learning for materials discovery*. Nature, 624(7990), s. 80–85. [Bağlantı](https://doi.org/10.1038/s41586-023-06735-9)
 - Szymanski, N. J., Rendy, B., Fei, Y., Kumar, R. E., He, T., Milsted, D. ve ark. (2023). *An autonomous laboratory for the accelerated synthesis of inorganic materials*. Nature, 624(7990), s. 86–91. [Bağlantı](https://doi.org/10.1038/s41586-023-06734-w)
+- Szymanski, N. J., Rendy, B., Fei, Y., Kumar, R. E., He, T. ve ark. (2026). *Author Correction: An autonomous laboratory for the accelerated synthesis of inorganic materials*. Nature, 650(8100), s. E1. [Bağlantı](https://doi.org/10.1038/s41586-025-09992-y)
 - Cheetham, A. K. & Seshadri, R. (2024). *Artificial Intelligence Driving Materials Discovery? Perspective on the Article: Scaling Deep Learning for Materials Discovery*. Chemistry of Materials, 36(8), s. 3490–3495. [Bağlantı](https://doi.org/10.1021/acs.chemmater.4c00643)
 - Leeman, J., Liu, Y., Stiles, J., Lee, S. B., Bhatt, P., Schoop, L. M. & Palgrave, R. G. (2024). *Challenges in High-Throughput Inorganic Materials Prediction and Autonomous Synthesis*. PRX Energy, 3(1), 011002. [Bağlantı](https://doi.org/10.1103/PRXEnergy.3.011002)
 - Si, C., Yang, D. & Hashimoto, T. (2025). *Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers*. International Conference on Learning Representations 2025. [Bağlantı](https://arxiv.org/abs/2409.04109)

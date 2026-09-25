@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Üç satırlı tablo; satırlar kılavuzluk katsayısı yok, 1,25 ve 1,50. Sütunlar FID, Inception puanı, kesinlik ve kapsama. Değerler sırasıyla: kılavuzluksuz 9,62 ve 121,50 ve 0,67 ve 0,67; katsayı 1,25 ile 3,22 ve 201,77 ve 0,76 ve 0,62; katsayı 1,50 ile 2,27 ve 278,24 ve 0,83 ve 0,57. Tablonun altında üç kayıt: üç satır aynı eğitilmiş modeldir, ölçüm ImageNet 256 çarpı 256 üzerindedir; kesinlik sadakati, kapsama çeşitliliği ölçer ve ikisi ters yönde hareket eder; FID ikisini birden içerdiği için ortada bir en küçük değeri vardır. En altta ikinci bir çalışmadan gelen uç örnek: katsayı ona çıkarıldığında kesinlik 0,88'e yükselirken kapsama 0,32'ye iniyor ve FID 4,59'dan 9,11'e geri kötüleşiyor.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Üç satırlı tablo; satırlar kılavuzluk katsayısı yok, 1,25 ve 1,50. Sütunlar FID, Inception puanı, kesinlik ve kapsama. Değerler sırasıyla: kılavuzluksuz 9,62 ve 121,50 ve 0,67 ve 0,67; katsayı 1,25 ile 3,22 ve 201,77 ve 0,76 ve 0,62; katsayı 1,50 ile 2,27 ve 278,24 ve 0,83 ve 0,57. Tablonun altında üç kayıt: üç satır aynı eğitilmiş modeldir, ölçüm ImageNet 256 çarpı 256 üzerindedir; kesinlik sadakati, kapsama çeşitliliği ölçer ve ikisi ters yönde hareket eder; FID ikisini birden içerdiği için ortada bir en küçük değeri vardır. En altta ikinci bir çalışmadan, sınıflandırıcı kılavuzluğuyla gelen uç örnek: ölçek ona çıkarıldığında kesinlik 0,88'e yükselirken kapsama 0,32'ye iniyor ve FID 4,59'dan 9,11'e geri kötüleşiyor.">
   <text x="30" y="24" font-size="13" font-weight="bold" fill="var(--text)">kılavuzluk</text>
   <text x="200" y="24" font-size="13" font-weight="bold" fill="var(--text)">FID</text>
   <text x="310" y="24" font-size="13" font-weight="bold" fill="var(--text)">Inception</text>
@@ -36,6 +36,6 @@
   <text x="20" y="224" font-size="13" fill="var(--text-muted)">FID ikisini birden içerdiği için ortada bir en küçük değeri var.</text>
 
   <line x1="20" y1="240" x2="700" y2="240" stroke="var(--border)" />
-  <text x="20" y="264" font-size="13" fill="var(--accent)">Uç örnek (ikinci bir çalışmadan): katsayı ona çıkarıldığında kesinlik</text>
+  <text x="20" y="264" font-size="13" fill="var(--accent)">Uç örnek (başka çalışma, sınıflandırıcı kılavuzluğu): ölçek ona çıkınca kesinlik</text>
   <text x="20" y="282" font-size="13" fill="var(--accent)">0,88'e yükseliyor, kapsama 0,32'ye iniyor, FID 4,59'dan 9,11'e dönüyor.</text>
 </svg>

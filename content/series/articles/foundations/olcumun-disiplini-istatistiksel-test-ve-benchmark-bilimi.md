@@ -12,9 +12,11 @@ tags:
   - oynaklik-kaynaklari
   - coklu-karsilastirma
   - tahminci-yanliligi
-content_hash: sha256:7a998839ed8ce318ff2e90dd94a4f4cf2c5631bd0012d436065c4de2227f52bf
+content_hash: sha256:43438238b9aa4a40dba680ee889eb7cdc6ec764e2abc4da428ef40a27f633a9d
 classification_version: 1
 classification_batch: 24
+revised_at: "2026-09-25"
+revision_note: "Eşleştirmenin neden işe yaradığı yazı tura örneğiyle kuruldu; hesap formülüyle gösterildi, pass@k yanlılığının nedeni eklendi."
 ---
 ## İki makalenin buraya bıraktığı borç
 
@@ -24,7 +26,7 @@ Bu makale o borcu ödüyor.
 
 Arada yol alındı. 71\. makale bir puanın **bir örneklem** olduğunu kurdu: doğruluk bir ortalamadır, ortalamanın belirsizliği standart hatadır ve o hata soru sayısının kareköküyle daralır — beş yüz soruda yaklaşık ±4, on dört bin soruda ±0,8 puan. Aynı makale bir deneyin gerçek bir farkı görebilme olasılığını, istatistiksel gücü de adlandırdı. 99\. makale deneyin nasıl kurulacağını konu edindi ve bir soruyu bilerek açık bıraktı: Şekil 3'te 0,003'lük farkı 0,005'lik sapmayla karşılaştırırken aslında sezgiyle davrandık.
 
-Eksik olan şey **karar**. Elinde iki sayı var; bunlardan hangi durumda "fark var" diyebilirsin, o cümleyi söyleyebilmek için kaç ölçüm gerekir, ve söylediğinde tam olarak neyi iddia etmiş olursun? Serideki 43., 93. ve 97. makalelerde "istatistiksel olarak anlamlı değil" ifadesini kullandık ama hiçbirinde ne demek olduğunu söylemedik. Burada söylüyoruz — 3\. makaledeki bilinçli formalizasyon alışkanlığının bu fazdaki karşılığı.
+Eksik olan şey **karar**. Elinde iki sayı var; bunlardan hangi durumda "fark var" diyebilirsin, o cümleyi söyleyebilmek için kaç ölçüm gerekir, ve söylediğinde tam olarak neyi iddia etmiş olursun? Serideki 43., 93. ve 97. makalelerde "istatistiksel olarak anlamlı değil" ifadesini kullandık ama hiçbirinde ne demek olduğunu söylemedik. Burada söylüyoruz — serinin bilinçli formalizasyon alışkanlığının bu fazdaki karşılığı: önce sezgiyle kullanılan bir kavram, şimdi biçimsel olarak kuruluyor.
 
 ## Sıfır hipotezi ve p değeri
 
@@ -50,9 +52,15 @@ Söylemez. 0,04, "gerçek fark sıfır" dünyasında bu kadar büyük bir farkı
 
 İki model bağımsız kümelerde ölçülmüşse, farkın belirsizliği iki ayrı belirsizliğin toplamıdır. Aynı soruları gördülerse soru başına **fark** hesaplanabilir ve soruların zorluğundan gelen ortak gürültü düşer. Buna **eşleştirilmiş karşılaştırma** (paired comparison) deniyor ve kazancı ölçülebilir.
 
+Mekanizmayı küçük bir örnekle görelim; sayılar bizim, açıklama amaçlı. Beş yüz soruluk bir kümede iki model var. 325 soruyu ikisi de doğru, 125 soruyu ikisi de yanlış cevaplıyor; 33 soruyu yalnızca A, 17 soruyu yalnızca B çözüyor. A'nın doğruluğu yüzde 71,6, B'ninki yüzde 68,4; fark 3,2 puan.
+
+Şimdi sıfır hipotezinin dünyasını kur: iki model aslında eşit. O dünyada ikisinin de doğru ya da ikisinin de yanlış cevapladığı 450 soru hiçbir şey söylemez — bu sorularda fark zaten sıfır. Bilgi yalnızca iki modelin ayrıştığı 50 soruda ve orada her ayrışma bir yazı tura: kazananın A ya da B olma olasılığı yarı yarıya. Soru şuna dönüşüyor: elli atışta en az 33 yazı (ya da en az 33 tura) gelme olasılığı nedir? Bu olasılık 0,033; p değeri budur ve 0,05'in altında kaldığı için fark anlamlı sayılır. Ayrışan örnekleri yazı tura gibi sayan bu testin adı McNemar testi; 1947'den beri eşleştirilmiş oranların klasik karşılaştırmasıdır.
+
+Aynı veriyi eşleştirmeden, iki bağımsız doğruluk oranı gibi karşılaştırırsan p değeri 0,27 çıkar ve fark anlamsız görünür. Sebebi, eşleştirilmemiş testin 450 ortak soruyu da gürültü diye saymasıdır: bir sorunun kolay ya da zor olması iki modelin puanını birlikte oynatır, ama test bunu iki ayrı çekilişin oynaması sanır.
+
 ![Beş satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı güçle ayırt edilebilen en küçük fark, puan cinsinden. Sütunlar soru sayısı, eşleştirilmemiş ve eşleştirilmiştir. Birinci satır 100 soru: eşleştirilmemişte 18,16, eşleştirilmişte 8,76. İkinci satır 500 soru: 8,12 ve 3,95. Üçüncü satır 1.000 soru: 5,74 ve 2,80. Dördüncü satır 5.000 soru: 2,57 ve 1,25. Beşinci satır vurguludur, 14.042 soru: 1,53 ve 0,75. Birinci kutuda oran durur: eşleştirme, ayırt edilebilir farkı her küme boyunda yaklaşık 2,05 kat daraltıyor ve aynı kazanç için kümeyi dört katına çıkarmak gerekirdi. İkinci kutuda hesabın koşulları durur: doğruluk 0,70, iki modelin farklı cevap verdiği örneklerin oranı 0,10, anlamlılık eşiği 0,05 iki yönlü ve güç 0,80. En altta bir kayıt: bu tablo kendi hesabımızdır, ölçülmüş bir deney değildir.](assets/eslestirmenin-getirisi.svg "Şekil 1 — Aynı kümede, iki karşılaştırma biçimi")
 
-Şekil 1'in sayıları bizim, kaynağın değil; girdiler şeklin içinde. Beş yüz soruluk bir kümede eşleştirilmemiş bir karşılaştırma ancak 8,12 puanlık bir farkı güvenilir biçimde yakalayabilirken, aynı kümede eşleştirilmiş karşılaştırma 3,95 puanı yakalıyor. Oran bütün satırlarda hemen hemen aynı: yaklaşık 2,05 kat. Bu, hiçbir ek soru yazmadan, hiçbir ek hesap harcamadan elde edilen bir kazanç — yalnızca doğru testi seçmenin karşılığı.
+Şekil 1 aynı mantığı genelleştiriyor; sayıları bizim, kaynağın değil, ve girdiler şeklin içinde. Hesabın iskeleti tek cümle: güvenilir biçimde yakalanabilen en küçük fark, bir güven katsayısı çarpı farkın standart hatasıdır. Katsayı, 0,05 eşiği için 1,96 ile yüzde 80 güç için 0,84'ün toplamı, yani 2,80. Standart hata ise tek bir sorunun ne kadar oynattığına bağlı. Eşleştirilmemiş karşılaştırmada her model kendi başına oynar; yüzde 70 doğrulukta soru başına varyans 0,7 × 0,3 = 0,21, iki model için 0,42. Eşleştirilmiş karşılaştırmada yalnızca ayrışan sorular oynar ve varyans kabaca ayrışma oranına, yani 0,10'a iner. Beş yüz soruda 2,80 × √(0,42 ÷ 500) = 8,12 puan, eşleştirilmiş hâlde 2,80 × √(0,10 ÷ 500) ≈ 3,96 puan; şekildeki 3,95 ile aradaki kırıntı, tabloyu üreten kesin formülün farkın kendisini de varyanstan düşmesinden geliyor ve yalnızca küçük kümelerde görünür. Oranın her satırda aynı çıkması da buradan: √(0,42 ÷ 0,10) ≈ 2,05, soru sayısından bağımsız. Bu, hiçbir ek soru yazmadan, hiçbir ek hesap harcamadan elde edilen bir kazanç — yalnızca doğru testi seçmenin karşılığı.
 
 Tersi de doğru ve daha az anılıyor: eşleştirme ancak iki sistem gerçekten aynı örnekleri gördüyse yapılabilir. Farklı bölmelerle, farklı istem biçimleriyle ya da farklı tohumlarla ölçülmüş iki sayı eşleştirilemez, ve eşleştirilmemiş karşılaştırmanın faturası yukarıdaki tabloda duruyor.
 
@@ -78,7 +86,7 @@ Kyle Gorman ve Steven Bedrick'in ACL 2019'da sunduğu çalışma, 2000 ile 2018 
 
 ![Beş satırlık bir tablo ve altında iki kutu. Üstte başlık: standart bölmenin verdiği karar ile yirmi rastgele bölmenin verdiği karar. Sütunlar karşılaştırılan iki etiketleyici, Penn Treebank üzerinde yirmi bölmenin kaçında ikincinin anlamlı biçimde önde olduğu ve OntoNotes üzerinde aynı sayıdır. Birinci satır TnT ile Collins: 20 ve 20. İkinci satır Collins ile LAPOS: 20 ve 7. Üçüncü satır vurguludur, LAPOS ile Stanford: 1 ve 0. Dördüncü satır Stanford ile NLP4J: 19 ve 20. Beşinci satır NLP4J ile Flair: 20 ve 20. Birinci kutu vurguludur ve üçüncü satırın anlamını taşır: bu fark standart bölmede anlamlı çıkıyordu, rastgele bölmelerde ise yön bile dönüyor — Penn Treebank'ta iki, OntoNotes'ta on dört bölmede Stanford daha kötü. İkinci kutuda yazarların kendi kestirimi durur: bu alanda yirmi yılın tamamı, işaret hatasında yüzde 1,28'lik bir mutlak azalma üretmiş ve en iyi etiketleyici, altısının birleşimiyle kurulan kâhin topluluğun yüzde 1,16 gerisinde. En altta bir kayıt: sayılar Gorman ve Bedrick'in üçüncü tablosundan alınmıştır ve çoklu karşılaştırma için Bonferroni düzeltmesi uygulanmıştır.](assets/yirmi-rastgele-bolme.svg "Şekil 3 — Standart bölme ne diyor, yirmi bölme ne diyor")
 
-Şekil 3'ün üçüncü satırı bu makalenin en keskin sonucu. Standart bölmede iki etiketleyici arasındaki fark anlamlı çıkıyor; yirmi rastgele bölmenin yalnızca birinde anlamlı kalıyor, ve bölmelerin bir kısmında yön tersine dönüyor. Yani yayımlanmış sıralama, bir veri kümesinin belirli bir bölünüşünün özelliği. Sabit bir test kümesi ne kadar uzun süre kullanılırsa, alan o kümenin tikelliklerine o kadar uyum sağlar — 72\. makaledeki kirlilik tartışmasının gürültü tarafındaki akrabası.
+Şekil 3'ün üçüncü satırında, standart bölmede iki etiketleyici arasındaki fark anlamlı çıkıyor; yirmi rastgele bölmenin yalnızca birinde anlamlı kalıyor, ve bölmelerin bir kısmında yön tersine dönüyor. Yani yayımlanmış sıralama, bir veri kümesinin belirli bir bölünüşünün özelliği. Sabit bir test kümesi ne kadar uzun süre kullanılırsa, alan o kümenin tikelliklerine o kadar uyum sağlar — 72\. makaledeki kirlilik tartışmasının gürültü tarafındaki akrabası.
 
 Bu kurulumda ikinci bir tuzak daha var. Yirmi bölmede yirmi ayrı test yapılıyor; her birinin yanılma olasılığı yüzde 5 ise, en az bir tanesinin tesadüfen "anlamlı" çıkma olasılığı yüzde 5 değil, yüzde 64,2'dir. Bu bizim hesabımız ve doğrudan bağımsızlık varsayımından geliyor: 1 − 0,95²⁰. Çare **çoklu karşılaştırma düzeltmesi**: en sade biçimi olan Bonferroni düzeltmesi eşiği test sayısına böler, yirmi test için 0,05 yerine 0,0025. Aynı yazarların dayandığı Dror ve arkadaşlarının TACL'de 2017'de yayımladığı çalışma bunun daha güçlü bir biçimini kuruyor ve alanın gerçek sorusunu soruyor: "kaç veri kümesinde gerçekten daha iyi?" Aynı incelemede bu da sayıldı — birden çok veri kümesi kullanan 110 bildirinin yalnızca 3'ü çoklu karşılaştırma için düzeltme yapmış.
 
@@ -86,11 +94,13 @@ Sorunun makine öğrenmesi tarafındaki klasik cevabı daha eski. Janez Demšar'
 
 ## Bir tahminci olarak pass@k
 
-Son bir yer, seride uzun süredir açık duran bir randevuyu kapatıyor ve ölçümün disiplinini bir tanıdık ölçü üzerinde gösteriyor.
+Son bir yer, 93\. makalede yarım bırakılmış bir gösterimi tamamlıyor ve ölçümün disiplinini tanıdık bir ölçü üzerinde gösteriyor.
 
 33\. makalede kapsamayı kurmuştuk: `k` denemenin en az birinde çözülen soruların oranı, gösterimi `pass@k`. Tek deneme başarı olasılığı `p` ise kapsama 1 − (1 − p)ᵏ. O formül doğru — ama `p` gerçek değer olduğu sürece. Pratikte `p` bilinmez; `n` deneme yapılır, `c` tanesi tutar ve `p` yerine `c/n` konur.
 
-İşte burada 93\. ve 96\. makalelerin ayrımı devreye giriyor. Bir tahmincinin **yanlılığı**, ortalamada gerçek değerden ne kadar saptığıdır. 1 − (1 − c/n)ᵏ ifadesi, `c/n` doğru bir tahmin olsa bile, ortalamada gerçek kapsamanın **altında** kalır.
+93\. makalede bu adımın bir **yanlılık** ürettiğini söylemiş ve tek bir örneklemde iki tahmincinin farklı sayı verdiğini görmüştük: 200 denemede 20 başarıyla, k = 10 için 0,6513 ile 0,6602. Ama tek bir örneklemdeki fark yanlılığı kanıtlamaz; yanlılık, ortalamada gerçek değerden sapmaktır ve ortalamayı görmek için bütün olası örneklemlere bakmak gerekir. Burada yaptığımız bu. 1 − (1 − c/n)ᵏ ifadesi, `c/n` kendisi yansız bir tahmin olsa bile, ortalamada gerçek kapsamanın **altında** kalır.
+
+Neden aşağı? Çünkü kapsama eğrisi bükük. `c/n` bazı çekilişlerde gerçek `p`'nin altına, bazılarında üstüne düşer; ama altına düştüğünde kapsama sert iner, üstüne çıktığında ise az yükselir, çünkü eğri bire yaklaştıkça yataylaşır. Aşağı yöndeki kayıplar yukarı yöndeki kazançlardan büyük olduğu için ortalama aşağıda kalır. Aşağıdaki örnekte on denemenin hiçbirinin tutmadığı çekilişler — olasılıkları 0,8¹⁰ ≈ 0,11 — kapsamayı sıfır gösteriyor, oysa gerçek değer 0,67; en şanslı çekiliş ise kapsamayı en fazla 1'e, yani 0,33 yukarı taşıyabiliyor.
 
 ![Üç satırlık bir tablo ve altında iki kutu. Üstte başlık: aynı kapsama, iki tahminci; her deneme 0,20 olasılıkla tutuyor, on deneme yapılıyor ve pass@5 tahmin ediliyor. Birinci satır gerçek değer: 1 eksi 0,8 üzeri 5, yani 0,67232. İkinci satır yansız tahmincinin ortalaması: 0,67232, gerçek değerle birebir aynı. Üçüncü satır vurguludur, yerine koyma tahmincisinin ortalaması: 0,59359, yani gerçek değerin 7,87 puan altında. Birinci kutuda iki formül durur: yerine koyma tahmincisi 1 eksi 1 eksi c bölü n, üssü k; yansız tahminci 1 eksi n eksi c'nin k'li kombinasyonu bölü n'in k'li kombinasyonu. On denemenin ikisinin tuttuğu tek bir çekilişte ikincisi 56 bölü 252 üzerinden 0,77778, birincisi 0,67232 veriyor. İkinci kutuda kural durur: aynı formül, gerçek olasılıkla yazıldığında doğru bir tanım, tahminle yazıldığında yanlı bir tahmincidir. En altta bir kayıt: tablodaki ortalamalar kendi hesabımızdır ve iki terimli dağılımın bütün sonuçları üzerinden alınmıştır; tahmincinin kendisi Chen ve arkadaşlarının çalışmasındandır.](assets/passk-tahminci-yanliligi.svg "Şekil 4 — Aynı ölçü, iki tahminci")
 
@@ -136,4 +146,5 @@ Bir farkın gürültüden büyük olduğunu söyleyebilmek, o farkın başka bir
 - Gorman, K. & Bedrick, S. (2019). *We Need to Talk about Standard Splits*. ACL 2019, 2786–2791. [Bağlantı](https://doi.org/10.18653/v1/P19-1267)
 - Chen, M., Tworek, J., Jun, H., Yuan, Q., Pinto, H. P. de O., Kaplan, J. ve ark. (2021). *Evaluating Large Language Models Trained on Code*. Hakemli olmayan ön çalışma (arXiv:2107.03374). [Bağlantı](https://arxiv.org/abs/2107.03374)
 - Demšar, J. (2006). *Statistical Comparisons of Classifiers over Multiple Data Sets*. Journal of Machine Learning Research 7, 1–30. [Bağlantı](https://jmlr.org/papers/v7/demsar06a.html)
+- McNemar, Q. (1947). *Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages*. Psychometrika 12(2), 153–157. [Bağlantı](https://doi.org/10.1007/BF02295996)
 - Koehn, P. (2004). *Statistical Significance Tests for Machine Translation Evaluation*. EMNLP 2004, 388–395. [Bağlantı](https://aclanthology.org/W04-3250/)

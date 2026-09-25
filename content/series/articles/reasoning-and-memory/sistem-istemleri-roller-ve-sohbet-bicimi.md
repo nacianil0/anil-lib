@@ -12,7 +12,7 @@ tags:
   - konusmaci-rolu
   - talimat-hiyerarsisi
   - cok-turlu
-content_hash: sha256:6cfffe49931d79ab13cc3e0f84a7ed24229ff0d2f5d751bfc96e19f3f803a996
+content_hash: sha256:8b8fb2903449bf9a85d8c5caa09a72004c97b46a47b3c5f94d49cc7eb40ca38f
 classification_version: 1
 classification_batch: 5
 ---
@@ -36,7 +36,7 @@ Meta'nın Llama 3 için yayımladığı resmî belgelendirme somut bir örnek ve
 
 İkincisi ve daha önemlisi: bu işaretlerin hepsi token. Sözlükte kendilerine ayrılmış birer satırları var ve model onları diğer bütün token'lar gibi işliyor. Mimaride "sistem kanalı" diye bir yer yok; 6\. ve 7\. makalede kurduğumuz dikkat mekanizması sistem istemine ayrı bir muamele yapmaz. Bir mesajın sistem isteminden geldiğini gösteren tek şey, önündeki başlık token'ının hangi kelimeyi sardığıdır.
 
-Burada küçük ama kritik bir mühendislik ayrıntısı var. Kullanıcı, mesajının içine tur sonu işaretinin metnini harfi harfine yazarsa ne olur — sohbeti kendisi bölüp yeni bir sistem mesajı açabilir mi? Cevap 4\. makaledeki tokenizer'da saklı. Bu işaretler sıradan metinden **üretilemeyen** sözlük girdileridir: kullanıcının yazdığı karakter dizisi normal alt-kelime kurallarıyla parçalanır ve o tek özel token'a asla dönüşmez. Yani biçimin bütünlüğünü koruyan şey modelin dikkati değil, tokenizer'ın kendisi. Sohbet biçimini kuran katman, güvenliğin de ilk katmanı.
+Burada küçük ama kritik bir mühendislik ayrıntısı var. Kullanıcı, mesajının içine tur sonu işaretinin metnini harfi harfine yazarsa ne olur — sohbeti kendisi bölüp yeni bir sistem mesajı açabilir mi? Cevap 4\. makaledeki tokenizer'da saklı, ama kendiliğinden gelmiyor. Bu işaretler sözlükte kendi satırları olan özel girdilerdir ve doğru kurulmuş bir işlem hattında kullanıcı metni tokenize edilirken özel token tanıma kapalı tutulur: kullanıcının yazdığı karakter dizisi normal alt-kelime kurallarıyla parçalanır ve o tek özel token'a dönüşmez. Bu davranış varsayılan değildir. Yaygın kullanılan Hugging Face tokenizer'ları, belgelendirmelerine göre, metinde geçen özel token yazımını varsayılan olarak **tek özel token** olarak tanır; kullanıcı metnini bu varsayılanla şablonun içine koyan bir uygulama, kullanıcıya sohbeti bölme imkânı verir. Yani biçimin bütünlüğünü koruyan şey modelin dikkati değil, kullanıcı metnini tokenize eden kodun bu ayarı. Sohbet biçimini kuran katman güvenliğin de ilk katmanıdır; ama yalnızca doğru yapılandırıldığında.
 
 Üç konuşmacı rolünün işlevleri de birbirinden ayrı. **Sistem** rolü uygulamayı kuran geliştiricinindir ve kullanıcıya görünmez; her turda dizinin başında durur. **Kullanıcı** rolü, arayüzün karşısındaki kişinin yazdığıdır. **Asistan** rolü modelin kendi önceki cevaplarıdır — ve bu üçüncüsü göründüğünden önemli, çünkü modelin geçmiş cevapları da bir sonraki turda girdi olarak önüne gelir. Bu makalenin son bölümü tam olarak bunun bedeliyle ilgili.
 
@@ -46,7 +46,7 @@ Bunun sonucu, temel modele bakınca netleşiyor. 11\. makaledeki temel model bu 
 
 > **Kendini yokla:** Sistem istemi de aynı dizide sıradan bir token dizisiyse, kullanıcı neden onu ezip geçemiyor?
 
-Çoğu zaman geçebiliyor — ve tam olarak bu yüzden ayrı bir eğitim aşaması gerekiyor. Sistem isteminin önceliği bir mimari kural değil, modele öğretilmiş bir davranış. Bir sonraki bölüm bu davranışın nasıl öğretildiğini ve ölçüldüğünde ne kadar tuttuğunu gösteriyor.
+Bu önceliği ayrıca öğrenmemiş bir modelde çoğu zaman geçebiliyor — ve bu yüzden ayrı bir eğitim aşaması gerekiyor. Sistem isteminin önceliği bir mimari kural değil, modele öğretilmiş bir davranış. Bir sonraki bölüm bu davranışın nasıl öğretildiğini ve ölçüldüğünde ne kadar tuttuğunu gösteriyor.
 
 ## Ayrıcalık nasıl kuruluyor
 
@@ -62,11 +62,11 @@ Bu "koşullu itaat" ayrıntısı çerçevenin en incelikli yeri. Kolay çözüm 
 
 ![Beş ölçüm için iki çubuk yan yana gösterilir: açık renkli çubuk hiyerarşi eğitimi almamış modelin dayanıklılığı, koyu çubuk aynı modelin hiyerarşi eğitiminden sonraki dayanıklılığıdır. İlk dört satırda koyu çubuk belirgin biçimde uzundur; sistem istemini sızdırma satırında fark en büyüktür. Beşinci satır ise bedeli gösterir: saldırıya benzeyen ama zararsız istemlere uyma oranı eğitimden sonra düşmüştür.](assets/talimat-hiyerarsisinin-kazanci.svg "Şekil 2 — Kazanç gerçek, bedeli de gerçek")
 
-Şekil 2'deki ilk satır en çarpıcı olanı. Sistem istemindeki gizli bilgiyi sızdırmaya çalışan saldırılara karşı dayanıklılık yüzde 32,8'den yüzde 95,9'a çıkıyor. Kullanıcının sistem istemiyle çelişen talimatlarına karşı yüzde 62,2'den yüzde 92,6'ya; talimat kaçırma saldırılarına karşı yüzde 59,2'den yüzde 79,2'ye.
+Şekil 2'deki en büyük fark ilk satırda. Sistem istemindeki gizli bilgiyi sızdırmaya çalışan saldırılara karşı dayanıklılık yüzde 32,8'den yüzde 95,9'a çıkıyor. Kullanıcının sistem istemiyle çelişen talimatlarına karşı yüzde 62,2'den yüzde 92,6'ya; talimat kaçırma saldırılarına karşı yüzde 59,2'den yüzde 79,2'ye.
 
 Daha da öğretici olan, eğitimde hiç gösterilmemiş saldırı türlerindeki sonuç. Parola sızdırmaya çalışan bir oyun kümesinde dayanıklılık yüzde 51,8'den yüzde 73,7'ye çıkıyor. Yani model tek tek saldırıları ezberlemiyor, hiyerarşiyi bir kural olarak içselleştiriyor.
 
-Ama Şekil 2'nin son satırı da aynı ölçümden. Saldırıya **benzeyen** ama aslında zararsız kullanıcı isteklerine uyma oranı yüzde 83,1'den yüzde 60,4'e düşüyor; sistem istemi hakkında soru soran zararsız mesajlarda yüzde 85,2'den yüzde 75,0'e. Model daha korunaklı hâle gelirken bir miktar da fazla temkinli oluyor. Bu, 11\. makaledeki hizalama vergisiyle aynı aileden bir maliyet: bir davranışı güçlendirmek, komşusunu zayıflatıyor.
+Ama Şekil 2'nin son satırı da aynı ölçümden. Saldırıya **benzeyen** ama aslında zararsız kullanıcı isteklerine uyma oranı yüzde 83,1'den yüzde 60,4'e düşüyor; sistem istemi hakkında soru soran zararsız mesajlarda yüzde 85,2'den yüzde 75,0'a. Model daha korunaklı hâle gelirken bir miktar da fazla temkinli oluyor. Bu, 11\. makaledeki hizalama vergisiyle aynı aileden bir maliyet: bir davranışı güçlendirmek, komşusunu zayıflatıyor.
 
 Ve şu kayıt önemli: parola sızdırma sınavında eğitimden **sonraki** sayı yüzde 73,7. Yani denenen saldırıların yaklaşık dörtte biri hâlâ sonuç alıyor. Sistem istemine yazılan bir sırrın kullanıcıdan gizli kalacağını varsaymak, ölçümün desteklemediği bir varsayım. Bu makalede kurulan ayrım — sistem istemi bir adrestir, bir kasa değil — 21\. makaledeki cümleyle aynı kapıya çıkıyor: ayrım bir duvar değil, bir eğilim.
 
@@ -120,9 +120,9 @@ Bu makaledeki üç ölçümden çıkan kurallar birbirini tamamlıyor.
 
 **Sohbet dağıldıysa yeniden başlat.** Yanlış bir erken cevap, sonraki bütün turların girdisidir. Onu diziden çıkarmanın yolu, diziyi yenilemektir.
 
-**Şablonu doğrula.** Modeli doğrudan çalıştırıyorsan, uyguladığın sohbet şablonunun o modelin belgelendirmesindekiyle birebir aynı olduğunu kontrol et. Bu, "talimatları dinlemiyor" şikâyetinin en sık ve en sessiz sebebi.
+**Şablonu doğrula.** Modeli doğrudan çalıştırıyorsan, uyguladığın sohbet şablonunun o modelin belgelendirmesindekiyle birebir aynı olduğunu kontrol et. Bu, "talimatları dinlemiyor" şikâyetinin en sık ve en sessiz sebebi. Aynı kontrolün ikinci yarısı, kullanıcı metninin özel token tanıma kapalıyken tokenize edildiğinden emin olmak.
 
-Bu makalenin bütününden çıkan tek cümle şu: sohbet bir yapı değil, bir gelenek. Roller dizinin içine yazılmış işaretler, sistem isteminin önceliği eğitimle kurulmuş bir eğilim, turların sırası ise modelin kendi hatalarını taşıyan bir kanal. Hiçbiri mimaride garanti altına alınmış değil — ve tam da bu yüzden hepsi ölçülebilir, hepsi bozulabilir.
+Özetle, sohbet bir yapı değil, bir gelenek. Roller dizinin içine yazılmış işaretler, sistem isteminin önceliği eğitimle kurulmuş bir eğilim, turların sırası ise modelin kendi hatalarını taşıyan bir kanal. Hiçbiri mimaride garanti altına alınmış değil — ve tam da bu yüzden hepsi ölçülebilir, hepsi bozulabilir.
 
 ### Sırada ne var
 
@@ -131,6 +131,7 @@ Bu makale ve öncekiler pencerenin içine ne konacağıyla ilgiliydi: örnekler,
 ## Kaynakça
 
 - Meta (2024). *Model Cards and Prompt Formats — Meta Llama 3*. Resmî belgelendirme. [Bağlantı](https://www.llama.com/docs/model-cards-and-prompt-formats/meta-llama-3/)
+- Hugging Face (2026). *Tokenizer* (`split_special_tokens` parametresi). Transformers kütüphanesinin resmî belgelendirmesi, Eylül 2026'daki hâli. [Bağlantı](https://huggingface.co/docs/transformers/main_classes/tokenizer)
 - Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J. & Beutel, A. (2024). *The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions*. OpenAI, hakemli olmayan ön çalışma (arXiv:2404.13208). [Bağlantı](https://arxiv.org/abs/2404.13208)
 - Zheng, M., Pei, J., Logeswaran, L., Lee, M. & Jurgens, D. (2024). *When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models*. Findings of EMNLP 2024, s. 15126–15154. [Bağlantı](https://aclanthology.org/2024.findings-emnlp.888/)
 - Laban, P., Hayashi, H., Zhou, Y. & Neville, J. (2026). *LLMs Get Lost In Multi-Turn Conversation*. ICLR 2026. [Bağlantı](https://openreview.net/forum?id=VKGTGGcwl6)

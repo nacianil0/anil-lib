@@ -1,44 +1,52 @@
-<svg viewBox="0 0 720 368" xmlns="http://www.w3.org/2000/svg">
-  <text x="15" y="22" font-size="13" fill="var(--text)">Her katmanın erişim maliyeti ve tipik kapasitesi</text>
+<svg viewBox="0 0 720 336" xmlns="http://www.w3.org/2000/svg">
+  <text x="15" y="22" font-size="13" fill="var(--text)">Bellek hiyerarşisi: erişim maliyeti logaritmik ölçekte (çevrim)</text>
   <text x="15" y="44" font-size="13" fill="var(--text-muted)">Çevrim sayıları bir Pentium M için üreticinin verdiği değerlerdir; mertebe olarak okunur</text>
 
-  <text x="40" y="74" font-size="13" fill="var(--text-faint)">Katman</text>
-  <text x="330" y="74" font-size="13" fill="var(--text-faint)">Erişim maliyeti</text>
-  <text x="480" y="74" font-size="13" fill="var(--text-faint)">Tipik kapasite</text>
-  <text x="608" y="74" font-size="13" fill="var(--text-faint)">Oran</text>
-  <line x1="25" y1="82" x2="695" y2="82" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="60" y1="80" x2="60" y2="226" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="66" y="84" font-size="13" fill="var(--text)">Yazmaç — 1 çevrim, 1 KB'ın altı</text>
 
-  <rect x="25" y="92" width="130" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
-  <text x="40" y="114" font-size="13" fill="var(--text)">Yazmaç</text>
-  <text x="330" y="114" font-size="13" fill="var(--text)">1 çevrim</text>
-  <text x="480" y="114" font-size="13" fill="var(--text-muted)">1 KB'ın altı</text>
-  <text x="608" y="114" font-size="13" fill="var(--text-faint)">—</text>
+  <line x1="96" y1="116" x2="96" y2="226" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="102" y="120" font-size="13" fill="var(--text)">L1 veri önbelleği — 3 çevrim, onlarca KB</text>
 
-  <rect x="25" y="136" width="170" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
-  <text x="40" y="158" font-size="13" fill="var(--text)">L1 veri önbelleği</text>
-  <text x="330" y="158" font-size="13" fill="var(--text)">3 çevrim</text>
-  <text x="480" y="158" font-size="13" fill="var(--text-muted)">onlarca KB</text>
-  <text x="608" y="158" font-size="13" fill="var(--text-faint)">3 kat</text>
+  <line x1="146" y1="152" x2="146" y2="226" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="152" y="156" font-size="13" fill="var(--text)">L2 önbelleği — 14 çevrim, birkaç MB</text>
 
-  <rect x="25" y="180" width="210" height="34" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
-  <text x="40" y="202" font-size="13" fill="var(--text)">L2 önbelleği</text>
-  <text x="330" y="202" font-size="13" fill="var(--text)">14 çevrim</text>
-  <text x="480" y="202" font-size="13" fill="var(--text-muted)">birkaç MB</text>
-  <text x="608" y="202" font-size="13" fill="var(--text-faint)">5 kat</text>
+  <line x1="239" y1="188" x2="239" y2="226" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="245" y="192" font-size="13" fill="var(--accent)">Ana bellek — 240 çevrim, GB mertebesi</text>
 
-  <rect x="25" y="224" width="250" height="34" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
-  <text x="40" y="246" font-size="13" fill="var(--text)">Ana bellek</text>
-  <text x="330" y="246" font-size="13" fill="var(--text)">240 çevrim</text>
-  <text x="480" y="246" font-size="13" fill="var(--text-muted)">GB mertebesi</text>
-  <text x="608" y="246" font-size="13" fill="var(--accent)">17 kat</text>
+  <line x1="621" y1="80" x2="621" y2="226" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="613" y="84" font-size="13" fill="var(--cool)" text-anchor="end">Disk — 3 × 10⁷ çevrim, TB mertebesi</text>
 
-  <rect x="25" y="268" width="290" height="34" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
-  <text x="40" y="290" font-size="13" fill="var(--text)">Disk</text>
-  <text x="330" y="290" font-size="13" fill="var(--text)">3 × 10⁷ çevrim</text>
-  <text x="480" y="290" font-size="13" fill="var(--text-muted)">TB mertebesi</text>
-  <text x="608" y="290" font-size="13" fill="var(--cool)">10⁵ kat</text>
+  <line x1="50" y1="230" x2="670" y2="230" stroke="var(--border)" stroke-width="1.4" />
+  <line x1="60" y1="230" x2="60" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="135" y1="230" x2="135" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="210" y1="230" x2="210" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="285" y1="230" x2="285" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="360" y1="230" x2="360" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="435" y1="230" x2="435" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="510" y1="230" x2="510" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="585" y1="230" x2="585" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <line x1="660" y1="230" x2="660" y2="236" stroke="var(--border)" stroke-width="1.2" />
+  <text x="60" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">1</text>
+  <text x="135" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10</text>
+  <text x="210" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10²</text>
+  <text x="285" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10³</text>
+  <text x="360" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10⁴</text>
+  <text x="435" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10⁵</text>
+  <text x="510" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10⁶</text>
+  <text x="585" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10⁷</text>
+  <text x="660" y="252" font-size="13" fill="var(--text-faint)" text-anchor="middle">10⁸</text>
 
-  <line x1="25" y1="318" x2="695" y2="318" stroke="var(--border)" stroke-width="1.2" />
-  <text x="25" y="338" font-size="13" fill="var(--text-muted)">Yukarı: daha hızlı, daha pahalı, daha küçük — aşağı: daha yavaş, daha ucuz, daha büyük</text>
-  <text x="25" y="358" font-size="13" fill="var(--text-faint)">Disk satırı kendi hesabımdır: 10 ms erişim, 3 GHz saat. Oran sütunu bir üstteki katmana göredir</text>
+  <circle cx="60" cy="230" r="4.5" fill="var(--text-muted)" />
+  <circle cx="96" cy="230" r="4.5" fill="var(--text-muted)" />
+  <circle cx="146" cy="230" r="4.5" fill="var(--text-muted)" />
+  <circle cx="239" cy="230" r="5.5" fill="var(--accent)" />
+  <circle cx="621" cy="230" r="5.5" fill="var(--cool)" />
+
+  <path d="M60 266 V272 H239 V266" fill="none" stroke="var(--accent)" stroke-width="1.3" />
+  <text x="150" y="290" font-size="13" fill="var(--accent)" text-anchor="middle">yaklaşık 2,5 mertebe</text>
+  <path d="M239 266 V272 H621 V266" fill="none" stroke="var(--cool)" stroke-width="1.3" />
+  <text x="430" y="290" font-size="13" fill="var(--cool)" text-anchor="middle">yaklaşık 5 mertebe daha</text>
+
+  <text x="15" y="324" font-size="13" fill="var(--text-faint)">Her aralık on kat. Disk değeri kendi hesabımdır: 10 ms erişim, 3 GHz saat.</text>
 </svg>

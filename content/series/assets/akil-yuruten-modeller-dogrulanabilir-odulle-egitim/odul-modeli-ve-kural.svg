@@ -26,7 +26,7 @@
   <line x1="539" y1="162" x2="539" y2="180" stroke="var(--accent)" stroke-width="1"/>
   <rect x="374" y="180" width="330" height="30" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
   <text x="539" y="200" font-size="13" text-anchor="middle" fill="var(--text)">doğru / yanlış</text>
-  <text x="374" y="234" font-size="13" text-anchor="start" fill="var(--text-muted)">kandırılamaz</text>
+  <text x="374" y="234" font-size="13" text-anchor="start" fill="var(--text-muted)">öğrenilmiş vekil yok; yalnızca sonucu sınar</text>
   <text x="374" y="256" font-size="13" text-anchor="start" fill="var(--text-faint)">yalnızca doğrulanabilir alanda kurulur</text>
 
   <line x1="16" y1="276" x2="704" y2="276" stroke="var(--border)" stroke-width="1"/>

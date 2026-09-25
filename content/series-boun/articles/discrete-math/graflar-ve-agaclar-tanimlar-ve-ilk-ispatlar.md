@@ -5,20 +5,20 @@ slug: graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar
 category: discrete-math
 level: intermediate
 reading_order: 7
-summary: "Bilgisayar mühendisliğinin en çok kullandığı yapıyı kurar: düğüm, kenar ve derece tanımları, el sıkışma lemmasının sayma refleksiyle ispatı ve tek dereceli düğüm sonucu, yürüyüş/yol/döngü/bağlılık dili, ağaçların yapısal tümevarımla kurulan üç denk karakterizasyonu ve kapsayan ağaç."
+summary: "Bilgisayar mühendisliğinin en çok kullandığı yapıyı kurar: düğüm, kenar ve derece tanımları, el sıkışma lemmasının sayma refleksiyle ispatı ve tek dereceli düğüm sonucu, yürüyüş/yol/döngü/bağlılık dili, ağaçların yaprak silerek tümevarımla kurulan üç denk karakterizasyonu ve kapsayan ağaç."
 tags:
   - graf
   - agac
   - derece
   - el-sikisma-lemmasi
   - kapsayan-agac
-content_hash: sha256:cfca4dcc5258600314bdcab77d68159ca12b475a02bcb0d0707dd664576ded76
+content_hash: sha256:2e29bfc2d64753c4531c30a6d96983bd5e2a83ee5d698c4a563babb97cecdd30
 classification_version: 1
 classification_batch: 2
 ---
 ## Neden graf dili?
 
-Önceki iki makalede iki ayrı araç kurduk: bağıntı dili (nesneler arasındaki ilişkileri konuşmak) ve sayma refleksi (bir koleksiyonun büyüklüğünü savunmak). Bu makalede ikisi aynı masada buluşuyor. **Graf (graph)**, bir küme üzerindeki simetrik bir bağıntının çizilmiş hâlidir; graf hakkındaki ilk teoremlerin ispatı ise neredeyse tamamen saymadır.
+Önceki iki makalede iki ayrı araç kurduk: bağıntı dili (nesneler arasındaki ilişkileri konuşmak) ve sayma refleksi (bir koleksiyonun büyüklüğünü savunmak). Bu makalede ikisi aynı masada buluşuyor. **Graf (graph)**, bir küme üzerindeki simetrik ve yansımasız (hiçbir elemanı kendisiyle ilişkilendirmeyen) bir bağıntının çizilmiş hâlidir; graf hakkındaki ilk teoremlerin ispatı ise neredeyse tamamen saymadır.
 
 Graf dilini bilmek mülakat açısından pahalı bir yatırım değil, zorunlu bir yatırımdır. Bilgisayar ağı, sosyal ağ, derleyicinin bağımlılık çözümü, işletim sisteminin kilitlenme tespiti, veri tabanı sorgu planı, dosya sistemindeki dizin ağacı, ikili arama ağacı, öncelik kuyruğunun altındaki heap — hepsi graf ya da graf özel hâlidir. "Bu problemi grafa çevirirsem ne olur?" sorusu, mülakatta en çok işe yarayan tek cümlelik hamledir.
 
@@ -84,7 +84,7 @@ Döngüsü olmayan graf **orman (forest)**, bağlı ve döngüsüz graf ise **a�
 
 Ağaç, bilgisayar mühendisliğinin en çok kullandığı yapıdır çünkü iki şeyi aynı anda verir: her düğüme erişilebilir (bağlı) ve fazlalık yoktur (döngüsüz). Dosya sistemi, sözdizim ağacı, ikili arama ağacı, heap ve karar ağacı bu iki özelliğin üzerine kurulur.
 
-İlk teoremi tümevarımla kuracağız. Sayaç düğüm sayısı olacak, ama tümevarım adımı sayıyı bir azaltmakla değil **yapıyı küçültmekle** yürüyecek: bir yaprağı silip elinde kalan şeyin yine bir ağaç olduğunu göstererek. Tümevarım makalesinde söz verdiğimiz yapısal kalıp tam olarak budur. Ama önce bir yardımcı sonuca ihtiyacımız var, çünkü tümevarım adımı bir yaprağı silmeye dayanıyor ve silinecek yaprağın var olduğunu bilmemiz gerekiyor.
+İlk teoremi tümevarımla kuracağız. Sayaç düğüm sayısı olacak, ama tümevarım adımı soyut bir "n'den n + 1'e" geçişle değil **yapıyı küçültmekle** yürüyecek: bir yaprağı silip elinde kalan şeyin yine bir ağaç olduğunu göstererek. Bu, tümevarım makalesindeki yapısal tümevarımın yakın akrabasıdır. Ağaçları "tek düğüm bir ağaçtır; bir ağaca yeni bir düğümü tek kenarla eklemek yine ağaç verir" diye özyinelemeli tanımlasaydık, aynı ispat o tanım üzerinde yapısal tümevarım olurdu. Ama bizim tanımımız "bağlı ve döngüsüz"; bu yüzden her ağacın bir yaprağı olduğunu, yani küçültmenin her zaman mümkün olduğunu ayrıca göstermemiz gerekiyor. Tümevarım adımı bir yaprağı silmeye dayandığı için önce şu yardımcı sonucu kuralım.
 
 **Lemma.** En az iki düğümü olan her ağacın en az iki yaprağı vardır.
 
@@ -150,11 +150,11 @@ Ağacı tanımlarken "bağlı ve döngüsüz" dedik. Ama pratikte bir yapının 
 
 ## Mülakatta nasıl görünür
 
-Graf soruları sözlü mülakatın en verimli konularıdır çünkü tek bir tanım hatası bütün cevabı çökertir ve mülakatçı bunu hızlı görür. En sık takip zinciri şudur: "Graf nedir?" → "Ağaç ile grafın farkı ne?" → "n düğümlü bir ağaçta kaç kenar var, neden?"
+Graf sorularında tek bir tanım hatası bütün cevabı çökertebilir ve bu hata sözlü ortamda hızla görünür. En sık takip zinciri şudur: "Graf nedir?" → "Ağaç ile grafın farkı ne?" → "n düğümlü bir ağaçta kaç kenar var, neden?"
 
 Üç hata sık yapılır. Birincisi **bağlılığı unutmak**: "döngüsüz graf ağaçtır" yanlıştır, o orman olur. İkincisi **kenar sayısını yeterli sanmak**: n − 1 kenar tek başına ağaç yapmaz, bağlılık da gerekir. Üçüncüsü **yürüyüş ile yolu karıştırmak**; bağlılık tanımında düğüm tekrarına izin verip vermemek fark etmez, ama döngü tanımında eder.
 
-Bir de dil uyarısı: mülakat İngilizce yürüyecekse "düğüm" için *vertex* ve *node*, "kenar" için *edge*, "derece" için *degree*, "yol" için *path*, "bağlı" için *connected*, "kapsayan ağaç" için *spanning tree* karşılıklarının ağzına yerleşmiş olması gerekir. Bu terimlerin telaffuzu, tanımı bilmek kadar hızlı gelmelidir.
+İngilizce karşılıklar hazır olmalıdır; telaffuzları tanımın kendisi kadar hızlı gelmeli: *simple graph*, *vertex / node*, *edge*, *endpoint*, *adjacent*, *self-loop*, *multigraph*, *degree*, *directed graph*, *complete graph*, *cycle graph*, *handshaking lemma*, *walk*, *path*, *cycle*, *connected*, *connected component*, *forest*, *tree*, *leaf*, *extremal argument*, *spanning tree*, *minimum spanning tree*.
 
 ### Sırada ne var
 

@@ -12,7 +12,7 @@ tags:
   - talep-sayfalama
   - degistirme-ilkeleri
   - thrashing
-content_hash: sha256:b9e1150362f9ed9731b1601e7f994023f727fe33f7ff7cbfd5ac7a60ddd07ff3
+content_hash: sha256:fbc94665ae2dc9ebcb71a9db3e903f6c46a6f79ce5e822aece697e2af814e5e4
 classification_version: 1
 classification_batch: 10
 ---
@@ -58,7 +58,7 @@ Bu iki sayı, konunun tamamını özetliyor. Disk, bellekten yüz bin kat yavaş
 
 ## Optimal, FIFO, LRU
 
-Bir ilkeyi değerlendirmenin en dürüst yolu onu en iyisiyle karşılaştırmaktır. **Optimal ilke**, geleceğe bakıp **en uzak zamanda kullanılacak** sayfayı çıkarır ve ıska sayısını en aza indirir. Uygulanamaz — geleceği bilmiyoruz — ama bir referans noktası olarak paha biçilmezdir: "ilkem yüzde 80 isabet veriyor" tek başına anlamsızdır, "optimal yüzde 82 veriyor" cümlesiyle birlikte anlamlı olur.
+Bir ilkeyi değerlendirmek için onu en iyisiyle karşılaştırırız. **Optimal ilke**, geleceğe bakıp **en uzak zamanda kullanılacak** sayfayı çıkarır ve ıska sayısını en aza indirir. Uygulanamaz — geleceği bilmiyoruz — ama bir referans noktası olarak paha biçilmezdir: "ilkem yüzde 80 isabet veriyor" tek başına anlamsızdır, "optimal yüzde 82 veriyor" cümlesiyle birlikte anlamlı olur.
 
 Üç ilkeyi aynı erişim dizisi üzerinde koşturalım: 0, 1, 2, 0, 1, 3, 0, 3, 1, 2, 1 ve üç çerçeve. İlk üç erişim kaçınılmaz olarak ıskadır, çünkü önbellek boş başlar; bunlara **zorunlu ıska (compulsory miss)** denir.
 
@@ -70,7 +70,7 @@ Sonuçlar şöyle: optimal 6 isabet (yüzde 54,5), FIFO 4 isabet (yüzde 36,4), 
 
 ![Üç satırlı bir ızgara şeması. En üstteki satır erişim diye etiketlenmiş ve on bir erişimin sayfa numaralarını sırayla veriyor: sıfır bir iki sıfır bir üç sıfır üç bir iki bir. Altındaki üç satır sırasıyla optimal, FIFO ve LRU diye etiketlenmiş ve her satırda on bir kare var; dolu kareler isabeti, boş kareler ıskayı gösteriyor. Optimal satırında ilk üç kare boş, dördüncü ve beşinci dolu, altıncı boş, yedinci sekizinci ve dokuzuncu dolu, onuncu boş, on birinci dolu; satırın sağında altı isabet yüzde elli dört virgül beş yazıyor. FIFO satırında ilk üç kare boş, dördüncü ve beşinci dolu, altıncı ve yedinci boş, sekizinci dolu, dokuzuncu ve onuncu boş, on birinci dolu; sağında dört isabet yüzde otuz altı virgül dört yazıyor. LRU satırı optimal satırıyla birebir aynı desende ve sağında altı isabet yüzde elli dört virgül beş yazıyor. Izgaranın altında dolu kare isabet, boş kare ıska açıklaması ve erişim dizisinin kendisi tekrar veriliyor. Şemanın en altında dört satır var: LRU bu dizide optimalle aynı sonucu veriyor ve FIFO sık kullanılanı yalnızca eski diye atıyor; Belady anomalisi, FIFO bir iki üç dört bir iki beş bir iki üç dört beş dizisinde üç çerçevede dokuz, dört çerçevede on ıska yapar; aynı dizide LRU üç çerçevede on, dört çerçevede sekiz ıska yapar ve kapsama özelliği anomaliyi engeller; sayılar kendi programımdan ve kaynağın verdiği isabet oranlarıyla birebir uyuşuyor](assets/degistirme-karsilastirmasi.svg "Şekil 2 — Aynı dizi, üç ilke: FIFO sayfanın önemini değil yaşını bilir")
 
-FIFO'nun bir tuhaflığı daha var ve mülakatın gözde sorularından biridir. Önbelleği büyütmek isabet oranını artırmalı, değil mi? FIFO'da **artırmayabilir.** 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5 dizisini kendi programımla koşturdum: FIFO üç çerçeveyle 9 ıska yapıyor, **dört çerçeveyle 10**. Buna **Belady anomalisi (Belady's anomaly)** denir. LRU'da bu imkânsızdır, çünkü LRU'nun **kapsama özelliği (stack property)** vardır: N + 1 boyutlu bir önbelleğin içeriği her zaman N boyutlunun içeriğini kapsar, dolayısıyla büyütmek isabet oranını ya korur ya artırır. Aynı diziyi LRU ile koşturduğumda üç çerçevede 10, dört çerçevede 8 ıska çıktı — beklendiği gibi. Terim uyarısı: bu özelliğin İngilizce adı *stack property*'dir ama veri yapısı olarak yığınla ilgisi yoktur; ad, ilkeleri sınıflandıran özgün çalışmadan gelir.
+FIFO'nun bir tuhaflığı daha var ve mülakatın gözde sorularından biridir. Önbelleği büyütmek isabet oranını artırmalı, değil mi? FIFO'da **artırmayabilir.** 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5 dizisini kendi programımla koşturdum: FIFO üç çerçeveyle 9 ıska yapıyor, **dört çerçeveyle 10**. Buna **Belady anomalisi (Belady's anomaly)** denir. LRU'da bu imkânsızdır, çünkü LRU'nun **kapsama özelliği (stack property)** vardır: N + 1 boyutlu bir önbelleğin içeriği her zaman N boyutlunun içeriğini kapsar, dolayısıyla büyütmek isabet oranını ya korur ya artırır. Aynı diziyi LRU ile koşturduğumda üç çerçevede 10, dört çerçevede 8 ıska çıktı — beklendiği gibi. Terim uyarısı: bu özelliğin İngilizce adı *stack property*'dir, ama buradaki "stack" sayfaları son kullanım sırasına göre dizen bir listedir; veri yapıları makalesindeki yalnızca tepeden ekleyip çıkaran yığın gibi çalışmaz — ortadaki bir sayfa kullanılınca en üste taşınır.
 
 ## İş yükü ilkeyi seçtirir
 
@@ -78,9 +78,9 @@ Küçük bir dizide iyi görünmek yetmez. Üç ayrı iş yükü üç ayrı ders
 
 **Yerelliği olmayan iş yükünde** — her erişim rastgele bir sayfaya — LRU, FIFO ve rastgele ilke **aynı** sonucu verir; isabet oranını yalnızca önbellek boyutu belirler. Buradan çıkan ders şudur: iş yükünde kullanılabilecek bir düzen yoksa geçmişe bakmanın hiçbir faydası yoktur.
 
-**Seksen-yirmi iş yükünde** — erişimlerin yüzde 80'i sayfaların yüzde 20'sine — LRU açık ara öne geçer, çünkü sıcak sayfaları elinde tutar. Burada ilke seçimi gerçekten para eder.
+**Seksen-yirmi iş yükünde** — erişimlerin yüzde 80'i sayfaların yüzde 20'sine — LRU, FIFO'dan ve rastgele ilkeden daha iyi sonuç verir, çünkü sıcak sayfaları elinde tutar. Farkın ne kadar önemli olduğu ise ıskanın bedeline bağlıdır: kaynağın kendi deyişiyle cevap "duruma göre"dir; ıska pahalıysa küçük bir isabet artışı bile toplam süreyi belirgin biçimde düşürür.
 
-**Döngüsel iş yükü** ise LRU'nun en kötü durumudur: 50 sayfa sırayla, sonra baştan. Bu iş yükünü 49 çerçeveyle kendi programımla koşturdum ve hem LRU hem FIFO **tam olarak sıfır isabet** verdi — 10.000 erişimin 10.000'i ıska. Sebep zarif bir talihsizliktir: her ilke, birazdan istenecek olan sayfayı atar. İlginç olan, aynı iş yükünde **rastgele** ilkenin daha iyi sonuç vermesidir; rastgeleliğin sessiz bir erdemi, tuhaf uç durumlarının olmamasıdır.
+**Döngüsel iş yükü** ise LRU'nun en kötü durumudur: 50 sayfa sırayla, sonra baştan. Bu iş yükünü 49 çerçeveyle kendi programımla koşturdum ve hem LRU hem FIFO **tam olarak sıfır isabet** verdi — 10.000 erişimin 10.000'i ıska. Sebep şudur: iki ilke de her seferinde, birazdan istenecek olan sayfayı atar. İlginç olan, aynı iş yükünde **rastgele** ilkenin daha iyi sonuç vermesidir; rastgeleliğin sessiz bir erdemi, tuhaf uç durumlarının olmamasıdır.
 
 Karmaşıklık makalesinde ortalama durumun her zaman bir dağılım varsayımı taşıdığını söylemiştik. Burası o cümlenin en somut örneklerinden biri: LRU'nun üstünlüğü bir teorem değil, iş yükü hakkında bir bahistir.
 
@@ -90,11 +90,11 @@ Kusursuz LRU'nun bir sorunu var: **her bellek erişiminde** muhasebe yapmak gere
 
 Burada dinamik programlama makalesindeki takasın bir akrabası çalışıyor: **sakla ya da yeniden hesapla.** Kusursuz LRU tam sırayı saklar ve pahalıya saklar; yaklaşık çözüm ise neredeyse hiçbir şey saklamaz ve sıralamayı çıkarma anında kabaca yeniden üretir.
 
-Bunun için donanımdan tek bir bit istenir: **kullanım biti (use bit)**. Bir sayfaya erişildiğinde donanım biti 1 yapar; biti sıfırlamak işletim sisteminin işidir. **Saat algoritması (clock algorithm)** bu biti şöyle kullanır: bütün sayfalar dairesel bir listeye dizilir ve bir "akrep" bir sayfayı gösterir. Çıkarma gerektiğinde akrebin gösterdiği sayfanın kullanım bitine bakılır. Bit 1 ise sayfa yakın zamanda kullanılmıştır; bit **sıfırlanır** ve akrep bir ilerler. Bit 0 ise o sayfa kurban seçilir. Böylece bütün belleği tarayan bir arama yapılmaz ve son turda kullanılmamış bir sayfa bulunur.
+Bunun için donanımdan tek bir bit istenir: **kullanım biti (use bit)**. Bir sayfaya erişildiğinde donanım biti 1 yapar; biti sıfırlamak işletim sisteminin işidir. **Saat algoritması (clock algorithm)** bu biti şöyle kullanır: bütün sayfalar dairesel bir listeye dizilir ve bir "akrep" bir sayfayı gösterir. Çıkarma gerektiğinde akrebin gösterdiği sayfanın kullanım bitine bakılır. Bit 1 ise sayfa yakın zamanda kullanılmıştır; bit **sıfırlanır** ve akrep bir ilerler. Bit 0 ise o sayfa kurban seçilir. Böylece her çıkarmada bütün belleği baştan taramak gerekmez; akrep kaldığı yerden devam eder ve son turunda kullanılmamış bir sayfa bulur. En kötü durumda — bütün bitler 1 ise — akrep tam bir tur atıp hepsini sıfırlar ve başladığı sayfaya döner.
 
 Bir iyileştirme daha yapılır. Çıkarılacak sayfa değiştirilmişse önce diske yazılmalıdır; değiştirilmemişse çerçeve doğrudan yeniden kullanılabilir. Bunu ayırt etmek için ikinci bir bit tutulur: **kirli bit (dirty bit)**. Saat algoritması önce hem kullanılmamış hem temiz bir sayfa arar, bulamazsa kullanılmamış ama kirli sayfalara döner.
 
-Dürüst bir not: saat algoritmasını yukarıdaki on bir erişimlik oyuncak dizide de koşturdum ve 4 isabet verdi, yani FIFO ile aynı. Bu, saatin kötü olduğunu göstermez; on bir erişimlik bir dizide bir yaklaştırmanın kendini gösteremeyeceğini gösterir. Yaklaşık LRU'nun kazancı, kaynağın seksen-yirmi gibi gerçekçi iş yüklerinde ölçtüğü yerdedir: kusursuz LRU kadar iyi değildir, ama geçmişe hiç bakmayan ilkelerden belirgin biçimde iyidir.
+Saat algoritmasını yukarıdaki on bir erişimlik oyuncak dizide de koşturdum ve 4 isabet verdi, yani FIFO ile aynı. Bu, saatin kötü olduğunu göstermez; on bir erişimlik bir dizide bir yaklaştırmanın kendini gösteremeyeceğini gösterir. Yaklaşık LRU'nun kazancı, kaynağın seksen-yirmi gibi gerçekçi iş yüklerinde ölçtüğü yerdedir: kusursuz LRU kadar iyi değildir, ama geçmişe hiç bakmayan ilkelerden belirgin biçimde iyidir.
 
 > **Sesli anlat:** "FIFO, LRU ve optimal ilkeleri karşılaştır; LRU gerçek sistemlerde nasıl uygulanır? Doksan saniye."
 >

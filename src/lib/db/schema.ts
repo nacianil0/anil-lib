@@ -135,6 +135,22 @@ export const highlights = pgTable(
   ],
 );
 
+/**
+ * One row per workspace whose reading progress an owner has reset. `reset_version`
+ * comes from the same sequence as every change, so it orders against the sync
+ * cursor and never depends on a clock. A device that syncs with an older version
+ * learns that its local progress is void, and its pending progress writes — made on
+ * top of that void state — are not applied.
+ */
+export const readingResets = pgTable("reading_resets", {
+  workspaceId: text("workspace_id").primaryKey(),
+  resetVersion: bigint("reset_version", { mode: "number" })
+    .notNull()
+    .default(sql`nextval('reader_change_version_seq')`),
+  resetAt: timestamp("reset_at", { withTimezone: true }).notNull().defaultNow(),
+  resetBy: uuid("reset_by").references((): AnyPgColumn => users.id),
+});
+
 export const syncMutations = pgTable(
   "sync_mutations",
   {

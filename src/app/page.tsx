@@ -10,7 +10,10 @@ import {
   BOUN_SUBTITLE,
   BOUN_TITLE,
   getBounDescriptors,
+  loadBounRoadmap,
 } from "@/lib/content/series-boun";
+import { loadSeriesRoadmap } from "@/lib/content/series-roadmap";
+import { outlinePhases } from "@/lib/content/series-progress";
 import { requireSessionUser } from "@/lib/auth/session-user";
 import { ReaderDashboard } from "@/components/dashboard/reader-dashboard";
 
@@ -38,6 +41,7 @@ export default async function HomePage() {
           subtitle: SERIES_SUBTITLE,
           basePath: SERIES_BASE_PATH,
           articles: getSeriesDescriptors(),
+          phases: outlinePhases(loadSeriesRoadmap()),
         },
         {
           key: "boun",
@@ -45,6 +49,7 @@ export default async function HomePage() {
           subtitle: BOUN_SUBTITLE,
           basePath: BOUN_BASE_PATH,
           articles: getBounDescriptors(),
+          phases: outlinePhases(loadBounRoadmap()),
         },
       ]}
     />

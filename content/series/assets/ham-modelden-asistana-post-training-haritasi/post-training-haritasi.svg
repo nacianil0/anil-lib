@@ -21,7 +21,7 @@
   <line x1="12" y1="84" x2="726" y2="84" stroke="var(--border)" stroke-width="1"/>
 
   <text x="12" y="112" font-size="13" text-anchor="start" fill="var(--text-faint)">veri</text>
-  <text x="241" y="112" font-size="13" text-anchor="middle" fill="var(--text)">trilyonlarca token</text>
+  <text x="241" y="112" font-size="13" text-anchor="middle" fill="var(--text)">300 milyar token</text>
   <text x="241" y="132" font-size="13" text-anchor="middle" fill="var(--text-muted)">web metni</text>
   <text x="441" y="112" font-size="13" text-anchor="middle" fill="var(--text)">12.725 istem</text>
   <text x="441" y="132" font-size="13" text-anchor="middle" fill="var(--text-muted)">insan yazımı cevaplar</text>

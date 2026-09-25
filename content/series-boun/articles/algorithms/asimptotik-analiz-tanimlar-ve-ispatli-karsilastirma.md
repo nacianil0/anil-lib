@@ -13,7 +13,7 @@ tags:
   - omega
   - alt-sinir
   - karar-agaci
-content_hash: sha256:9ac8b309f0adcac3f6973979533cd4ac7c505ada6ff16a6fb8fc17753f0f25fb
+content_hash: sha256:e2ef4477b67064e3f10bd080012e655cbe561f32b892e4559e38df95a0bb81f9
 classification_version: 1
 classification_batch: 5
 ---
@@ -33,7 +33,7 @@ Sezgisel tanım neden yetmiyor? Çünkü "daha hızlı büyümez" ifadesi sını
 
 Bu tanımın her parçası bir işe yarıyor. **c sabiti** sabit çarpanları görmezden gelmeyi sağlar: 100n² ile n²/2 aynı sınıfa düşer, çünkü aradaki fark bir c seçimiyle kapanır. **n₀ eşiği** küçük girdilerdeki istisnaları affeder: n = 1'de ne olduğu umurumuzda değildir, çünkü asimptotik analiz "girdi büyüdükçe" sorusunun cevabıdır. **Mutlak değer** f'nin negatif değerler aldığı durumları da kapsar; algoritma maliyetleri negatif olmadığı için pratikte fark etmez ama tanımı genel tutar.
 
-Şimdi bu makaledeki en önemli cümle geliyor: **niceleyicilerin sırası değiştirilemez.** Mantık makalesinde "her/bazı" tuzaklarını konuşurken kurduğumuz kural burada teknik bir araca dönüşüyor. Tanım "**bir c vardır ki her n için**" biçimindedir. Sırayı ters çevirip "**her n için bir c vardır ki**" dersen ifade bütün anlamını kaybeder: verilen her n için c = f(n)/g(n) seçebilirsin ve iddia hiçbir bilgi taşımadan doğru çıkar. Yani yanlış sıralanmış bir niceleyici, tanımı totolojiye çevirir.
+Tanımın en kolay atlanan parçası niceleyicilerin sırasıdır ve **bu sıra değiştirilemez.** Mantık makalesinde "her/bazı" tuzaklarını konuşurken kurduğumuz kural burada teknik bir araca dönüşüyor. Tanım "**bir c vardır ki her n için**" biçimindedir. Sırayı ters çevirip "**her n için bir c vardır ki**" dersen ifade bütün anlamını kaybeder: verilen her n için c = f(n)/g(n) seçebilirsin ve iddia hiçbir bilgi taşımadan doğru çıkar. Yani yanlış sıralanmış bir niceleyici, tanımı totolojiye çevirir.
 
 Sırayı doğru kurmanın pratik karşılığı şudur: c ve n₀, **n'den bağımsız** olarak, en baştan bir kez seçilir ve o eşikten sonrasının tamamı için çalışmak zorundadır. Mülakatta Big-O tanımını sorulduğunda cevabın omurgası bu bağımsızlıktır; "sabit bir kat" demek yetmez, sabitin girdiden bağımsız seçildiğini söylemek gerekir.
 
@@ -69,9 +69,9 @@ Big-O yalnızca yukarıdan sınırlar. Karmaşıklık makalesinde uyarmıştık:
 
 Üçünü tek bir resimde görmek en kalıcı olanıdır. Şekil 1 aynı f fonksiyonunu üç sınırla birlikte gösteriyor.
 
-![Yatay eksende n, dikey eksende maliyet olan bir grafik. Ortada koyu bir eğri f(n) yükseliyor. Onun üstünde daha dik bir eğri c iki çarpı g(n) etiketiyle, altında daha yatık bir eğri c bir çarpı g(n) etiketiyle uzanıyor; iki eğrinin arasında kalan bant taralı ve içinde f'nin sıkıştığı yazıyor. Eksende sağa doğru bir yerde dikey kesikli bir çizgi var ve altında n sıfır yazıyor; bu çizginin solunda kalan bölge soluk taranmış ve üzerinde tanımın bu bölge hakkında hiçbir şey iddia etmediği not düşülmüş. Çizginin solunda f eğrisi bir yerde üst sınır eğrisinin üstüne çıkıyor ve bunun tanımı bozmadığı vurgulanıyor. Sağ üstte üç satırlık bir özet var: üst eğri tek başına O, alt eğri tek başına omega, ikisi birden theta](assets/o-omega-theta.svg "Şekil 1 — O, Ω ve Θ: iki sabit, bir eşik ve eşiğin solunda hiçbir iddia")
+![Yatay eksende n, dikey eksende maliyet olan bir grafik. Başlıkta f(n) eşittir Θ(g(n)) ve iki sabit, bir eşik, eşiğin solunda hiçbir iddia yazıyor. Orijinden iki doğru çıkıyor: daha dik olanı c₂ · g(n), daha yatık olanı c₁ · g(n) etiketli. Koyu f(n) eğrisi ikisinin arasından yükseliyor. Eksende n₀ etiketli dikey kesikli bir çizgi var; çizginin sağında iki doğrunun arasındaki bant renkli, solundaki bölge soluk. Çizginin solunda f eğrisi bir süre c₂ · g(n) doğrusunun üstüne çıkıyor. Altta iki not: eşiğin solunda f üst sınırın üstüne çıkabilir, tanım orayı kapsamaz; üst eğri tek başına O, alt eğri tek başına Ω, ikisi birden Θ](assets/o-omega-theta.svg "Şekil 1 — O, Ω ve Θ: iki sabit, bir eşik ve eşiğin solunda hiçbir iddia")
 
-Şekildeki en öğretici ayrıntı, kesikli çizginin solundaki bölgedir. Orada f, üst sınırın üstüne çıkabilir ve bu tanımı bozmaz; çünkü tanım yalnızca n ≥ n₀ için konuşur. Asimptotik gösterimin küçük girdiler hakkında **hiçbir şey söylemediğini** anlamak, bu makalenin en pratik çıktısıdır.
+Şekildeki en öğretici ayrıntı, kesikli çizginin solundaki bölgedir. Orada f, üst sınırın üstüne çıkabilir ve bu tanımı bozmaz; çünkü tanım yalnızca n ≥ n₀ için konuşur. Pratik sonuç şu: asimptotik gösterim küçük girdiler hakkında **hiçbir şey söylemez**.
 
 Bir dil notu: Θ, "ortalama durum" demek değildir. Bu, mülakatta en sık karıştırılan iki eksenden biridir ve birazdan ayrı bir başlıkta ele alacağız.
 
@@ -115,7 +115,7 @@ Daha uç bir örnek, logaritma ile küçük kuvvetleri karşılaştırır. log�
 
 Şekil 2 bu iki kesişimi ve büyüme sınıflarının sıralamasını bir arada gösteriyor.
 
-![Solda bir grafik: yatay eksende n, dikey eksende maliyet. İki eğri var; biri doğrusal ve bin n etiketli, diğeri parabolik ve n kare etiketli. İki eğri n eşittir bin noktasında kesişiyor ve kesişim noktası işaretli. Kesişimin solunda n karenin altta kaldığı, sağında bin n'in altta kaldığı taranarak gösteriliyor; altta n yüz iken değerlerin yüz bin ve on bin olduğu yazıyor. Sağda dikey bir merdiven: aşağıdan yukarıya sabit, log n, kök n, n, n log n, n kare, n küp, iki üzeri n ve n faktöriyel basamakları sıralanmış; basamakların arasındaki oklarda küçük o bağıntısının geçerli olduğu belirtilmiş. Merdivenin altında üç kural yazıyor: a küçüktür b iken n üzeri a küçük o n üzeri b; her epsilon için log n küçük o n üzeri epsilon; a birden büyükken n üzeri b küçük o a üzeri n. En altta log iki n ile n üzeri sıfır virgül bir eğrilerinin ancak on üzeri on yedi virgül yedi civarında kesiştiği not düşülmüş](assets/buyume-siniflari-ve-kesisim.svg "Şekil 2 — Sabitlerin gizlediği kesişimler ve büyüme sınıflarının merdiveni")
+![İki bölümlü bir şema. Solda 1000n ile n² nerede kesişir başlıklı bir grafik: doğrusal 1000n eğrisi ile parabolik n² eğrisi, n eşittir 1000 etiketli kesikli çizginin üstünde işaretli bir noktada kesişiyor; kesişimin solunda n² altta, sağında 1000n altta kalıyor. Sağda büyüme sınıfları merdiveni: aşağıdan yukarıya sabit, log n, kök n, n, n log n, n², n³, 2ⁿ ve n! basamakları ve yanında yukarı çıktıkça daha hızlı büyür yazan tek bir ok. Altta üç satır: a küçüktür b iken nᵃ küçük o nᵇ, her epsilon için log n küçük o nᵋ, a birden büyükken nᵇ küçük o aⁿ; n eşittir 100 iken 1000n yüz bin ama n² on bin, kesişim tam n eşittir 1000'de; log₂ n ile n üzeri 0,1 ise ancak n yaklaşık 10 üzeri 17,7 dolayında kesişir](assets/buyume-siniflari-ve-kesisim.svg "Şekil 2 — Sabitlerin gizlediği kesişimler ve büyüme sınıflarının merdiveni")
 
 Pratik sonuç şudur: asimptotik sınıf, algoritma seçiminin **birinci** kriteridir ama tek kriteri değildir. Sıralama makalesinde gerçek kütüphanelerin küçük dizilerde eklemeli sıralamaya devretmesinin nedeni tam olarak budur ve mülakatta bunu adıyla söyleyebilmek cevabı bir seviye yukarı taşır.
 

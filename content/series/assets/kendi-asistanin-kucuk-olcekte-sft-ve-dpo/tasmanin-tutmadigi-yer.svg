@@ -1,76 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 468" role="img" aria-label="Altı satırlık yedi sütunlu bir tablo ve altında üç kutu. Üstte başlık: aynı kayıp eşiği, üç tohum, tercih dışındaki her şey. Sütunlar tohum, beta, delta, p bugün, doğru fiil önce, sonra ve derlem kaybı. Birinci satır tohum 7, beta 2,0: delta 0,766, p 0,6809, fiil 0,9990'dan 0,4999'a, derlem 1,67270. İkinci satır vurguludur, tohum 11, beta 2,0: delta 0,843, p 0,0011, fiil 0,9975'ten 0,9925'e, derlem 1,59842. Üçüncü satır tohum 42, beta 2,0: delta 0,775, p 0,6840, fiil 0,9980'den 0,9937'ye, derlem 0,49886. Dördüncü satır tohum 7, beta 1,0: delta 1,530, p 0,7003, fiil 0,9990'dan 0,4999'a, derlem 1,82731. Beşinci satır vurguludur, tohum 11, beta 1,0: delta 1,540, p 0,0006, fiil 0,9975'ten 0,9922'ye, derlem 2,49577. Altıncı satır tohum 42, beta 1,0: delta 1,505, p 0,8164, fiil 0,9980'den 0,9398'e, derlem 0,59280. Birinci kutuda şu durur: delta her tohumda aynı, yani kayıp hedefine her koşuda aynı biçimde ulaşıldı ve tercih tanımı gereği karşılandı. İkinci kutu vurguludur: modelin gerçekte yaptığı şey aynı değil, bugünün olasılığı üç koşuda 0,6809, 0,0011 ve 0,6840; ortadaki koşuda yeğlenen cevap binde bire indi çünkü delta iki cevabın oranını ölçüyor ve ikisini birden aşağı iterek o oran korunabiliyor. Üçüncü kutuda hasar durur: doğru fiil olasılığı bir tohumda 0,999'dan 0,500'e çöküyor, öteki ikisinde yerinde kalıyor; derlem kaybı üçünde de yükseliyor ama artış 0,04 ile 2,03 arasında. En altta bir kayıt: üç tohum bir yöntemi ölçmeye yetmez, yalnızca ayrışmanın üçünde de göründüğünü söyler.">
-  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı kayıp eşiği, üç tohum — tercih dışındaki her şey</text>
-  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 362" role="img" aria-label="İki panelli yatay çubuk grafik. Satırlar sözlüğün yedi token'ı. Sol panel DPO'dan önce: bugün 0,497 ve dün 0,501, öteki token'lar sıfıra yakın. Sağ panel DPO'dan sonra: uyudu 0,994, bugün 0,001, dün 0,0005, havladı 0,004. bugün ve dün satırları vurgulu. Altta: karşılaştırılan iki cevabın toplamı 0,998'den 0,002'ye indi, oran ise yeğlenen lehine yaklaşık 2,3.">
+  <text x="20" y="24" font-size="13" fill="var(--text)">Tohum 11, β 2,0: başla kedi bağlamında sıradaki token, DPO'dan önce ve sonra</text>
 
-  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">tohum</text>
-  <text x="96" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">β</text>
-  <text x="156" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">δ</text>
-  <text x="240" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">p(bugün)</text>
-  <text x="360" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">fiil önce</text>
-  <text x="470" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">sonra</text>
-  <text x="570" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">derlem</text>
-  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+  <rect x="20" y="154" width="680" height="60" fill="var(--accent-soft)" />
 
-  <text x="24" y="100" font-size="13" fill="var(--text)">7</text>
-  <text x="96" y="100" font-size="13" fill="var(--text)">2,0</text>
-  <text x="156" y="100" font-size="13" fill="var(--text)">0,766</text>
-  <text x="240" y="100" font-size="13" fill="var(--text)">0,6809</text>
-  <text x="360" y="100" font-size="13" fill="var(--text)">0,9990</text>
-  <text x="470" y="100" font-size="13" fill="var(--text)">0,4999</text>
-  <text x="570" y="100" font-size="13" fill="var(--text)">1,67270</text>
+  <text x="110" y="54" font-size="13" fill="var(--text-muted)">önce (referans)</text>
+  <text x="420" y="54" font-size="13" fill="var(--text-muted)">sonra</text>
+  <line x1="110" y1="62" x2="110" y2="274" stroke="var(--border)" />
+  <line x1="420" y1="62" x2="420" y2="274" stroke="var(--border)" />
 
-  <text x="24" y="126" font-size="13" font-weight="bold" fill="var(--accent)">11</text>
-  <text x="96" y="126" font-size="13" font-weight="bold" fill="var(--accent)">2,0</text>
-  <text x="156" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,843</text>
-  <text x="240" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,0011</text>
-  <text x="360" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,9975</text>
-  <text x="470" y="126" font-size="13" font-weight="bold" fill="var(--accent)">0,9925</text>
-  <text x="570" y="126" font-size="13" font-weight="bold" fill="var(--accent)">1,59842</text>
+  <text x="100" y="81" font-size="13" text-anchor="end" fill="var(--text)">başla</text>
+  <text x="100" y="111" font-size="13" text-anchor="end" fill="var(--text)">kedi</text>
+  <text x="100" y="141" font-size="13" text-anchor="end" fill="var(--text)">köpek</text>
+  <text x="100" y="171" font-size="13" text-anchor="end" fill="var(--text)">bugün</text>
+  <text x="100" y="201" font-size="13" text-anchor="end" fill="var(--text)">dün</text>
+  <text x="100" y="231" font-size="13" text-anchor="end" fill="var(--text)">uyudu</text>
+  <text x="100" y="261" font-size="13" text-anchor="end" fill="var(--text)">havladı</text>
 
-  <text x="24" y="152" font-size="13" fill="var(--text)">42</text>
-  <text x="96" y="152" font-size="13" fill="var(--text)">2,0</text>
-  <text x="156" y="152" font-size="13" fill="var(--text)">0,775</text>
-  <text x="240" y="152" font-size="13" fill="var(--text)">0,6840</text>
-  <text x="360" y="152" font-size="13" fill="var(--text)">0,9980</text>
-  <text x="470" y="152" font-size="13" fill="var(--text)">0,9937</text>
-  <text x="570" y="152" font-size="13" fill="var(--text)">0,49886</text>
+  <text x="116" y="81" font-size="13" fill="var(--text-faint)">0</text>
+  <text x="116" y="111" font-size="13" fill="var(--text-faint)">0,001</text>
+  <text x="116" y="141" font-size="13" fill="var(--text-faint)">0,0001</text>
+  <rect x="110" y="158" width="119" height="16" fill="var(--cool)" />
+  <text x="236" y="171" font-size="13" fill="var(--text)">0,497</text>
+  <rect x="110" y="188" width="120" height="16" fill="var(--cool)" />
+  <text x="237" y="201" font-size="13" fill="var(--text)">0,501</text>
+  <text x="116" y="231" font-size="13" fill="var(--text-faint)">0,001</text>
+  <text x="116" y="261" font-size="13" fill="var(--text-faint)">0</text>
 
-  <text x="24" y="178" font-size="13" fill="var(--text)">7</text>
-  <text x="96" y="178" font-size="13" fill="var(--text)">1,0</text>
-  <text x="156" y="178" font-size="13" fill="var(--text)">1,530</text>
-  <text x="240" y="178" font-size="13" fill="var(--text)">0,7003</text>
-  <text x="360" y="178" font-size="13" fill="var(--text)">0,9990</text>
-  <text x="470" y="178" font-size="13" fill="var(--text)">0,4999</text>
-  <text x="570" y="178" font-size="13" fill="var(--text)">1,82731</text>
+  <text x="426" y="81" font-size="13" fill="var(--text-faint)">0,0001</text>
+  <text x="426" y="111" font-size="13" fill="var(--text-faint)">0</text>
+  <text x="426" y="141" font-size="13" fill="var(--text-faint)">0</text>
+  <text x="426" y="171" font-size="13" fill="var(--text)">0,001</text>
+  <text x="426" y="201" font-size="13" fill="var(--text)">0,0005</text>
+  <rect x="420" y="218" width="239" height="16" fill="var(--accent)" />
+  <text x="664" y="231" font-size="13" fill="var(--text)">0,994</text>
+  <rect x="420" y="248" width="1" height="16" fill="var(--accent)" />
+  <text x="428" y="261" font-size="13" fill="var(--text-faint)">0,004</text>
 
-  <text x="24" y="204" font-size="13" font-weight="bold" fill="var(--accent)">11</text>
-  <text x="96" y="204" font-size="13" font-weight="bold" fill="var(--accent)">1,0</text>
-  <text x="156" y="204" font-size="13" font-weight="bold" fill="var(--accent)">1,540</text>
-  <text x="240" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,0006</text>
-  <text x="360" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,9975</text>
-  <text x="470" y="204" font-size="13" font-weight="bold" fill="var(--accent)">0,9922</text>
-  <text x="570" y="204" font-size="13" font-weight="bold" fill="var(--accent)">2,49577</text>
-
-  <text x="24" y="230" font-size="13" fill="var(--text)">42</text>
-  <text x="96" y="230" font-size="13" fill="var(--text)">1,0</text>
-  <text x="156" y="230" font-size="13" fill="var(--text)">1,505</text>
-  <text x="240" y="230" font-size="13" fill="var(--text)">0,8164</text>
-  <text x="360" y="230" font-size="13" fill="var(--text)">0,9980</text>
-  <text x="470" y="230" font-size="13" fill="var(--text)">0,9398</text>
-  <text x="570" y="230" font-size="13" fill="var(--text)">0,59280</text>
-
-  <line x1="20" y1="246" x2="700" y2="246" stroke="var(--border)" />
-
-  <rect x="20" y="258" width="680" height="36" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="282" font-size="13" fill="var(--text)">δ her tohumda aynı: kayıp hedefine her koşuda aynı biçimde ulaşıldı.</text>
-
-  <rect x="20" y="304" width="680" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="328" font-size="13" font-weight="bold" fill="var(--accent)">Modelin gerçekte yaptığı şey aynı değil</text>
-  <text x="34" y="350" font-size="13" fill="var(--text)">p(bugün) üç koşuda 0,6809 · 0,0011 · 0,6840. Ortadaki koşuda yeğlenen</text>
-  <text x="34" y="370" font-size="13" fill="var(--text)">cevap binde bire indi — δ iki cevabın oranını ölçüyor, düzeyini değil.</text>
-
-  <rect x="20" y="390" width="680" height="36" fill="var(--surface)" stroke="var(--border)" />
-  <text x="34" y="414" font-size="13" fill="var(--text-muted)">Hasar da tohuma göre: fiil bir koşuda çöküyor, ikisinde yerinde kalıyor.</text>
-
-  <text x="20" y="452" font-size="13" fill="var(--text-faint)">Üç tohum bir yöntemi ölçmez; yalnızca ayrışmanın üçünde de göründüğünü söyler.</text>
+  <text x="20" y="296" font-size="13" fill="var(--text)">Karşılaştırılan iki cevabın toplamı 0,998'den 0,002'ye indi; kütlenin</text>
+  <text x="20" y="314" font-size="13" fill="var(--text)">yüzde 99,4'ü karşılaştırmaya hiç girmeyen uyudu'ya kaçtı.</text>
+  <text x="20" y="334" font-size="13" fill="var(--text-muted)">Kaybın gördüğü tek şey oran ve o hâlâ yeğlenen lehine: 0,00112 ÷ 0,00049 ≈ 2,3.</text>
+  <text x="20" y="354" font-size="13" fill="var(--text-faint)">Olasılıklar modelin kendi dağılımından okundu; örnekleme yapılmadı.</text>
 </svg>

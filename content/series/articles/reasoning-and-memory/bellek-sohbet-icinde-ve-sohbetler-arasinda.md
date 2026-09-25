@@ -12,7 +12,7 @@ tags:
   - kalici-bellek
   - geri-cagirma-puani
   - bilgi-guncellemesi
-content_hash: sha256:409878aa792cb272ecd1044d4e3bbf8f8bddfdd8cb07b53fee21ba6e6f769320
+content_hash: sha256:d907c22326fc61aa9019f3e0ab0fb946798949c82f51ed9b391b82a6db831ce9
 classification_version: 1
 classification_batch: 9
 ---
@@ -74,7 +74,7 @@ Bu çerçevenin en önemli sonucu, ortadaki aşamanın adında saklı. Getirme, 
 
 ## Bulmak, okumaktan zor
 
-Aynı çalışma bu bedeli ölçüyor ve bu makalenin en öğretici sayısını veriyor. Değerlendirme kümesi 500 soruluk; her soru, uzun bir sohbet geçmişinin içine gizlenmiş bir bilgiyi gerektiriyor ve beş yeteneği ayrı ayrı sınıyor: bilgiyi çıkarma, birden çok oturum üzerinde akıl yürütme, zaman üzerine akıl yürütme, güncellenen bilgiyi izleme ve cevabı bilmediğinde çekimser kalma.
+Aynı çalışma bu bedeli ölçüyor. Değerlendirme kümesi 500 soruluk; her soru, uzun bir sohbet geçmişinin içine gizlenmiş bir bilgiyi gerektiriyor ve beş yeteneği ayrı ayrı sınıyor: bilgiyi çıkarma, birden çok oturum üzerinde akıl yürütme, zaman üzerine akıl yürütme, güncellenen bilgiyi izleme ve cevabı bilmediğinde çekimser kalma.
 
 Ölçüm iki koşulda yapılıyor. Birincisinde modele **yalnızca** cevabın geçtiği oturumlar veriliyor — buna kusursuz getirme koşulu diyelim. İkincisinde soru başına yaklaşık 115 bin token'lık tam geçmiş veriliyor ve modelin ilgili yeri kendisinin bulması bekleniyor.
 
@@ -88,9 +88,9 @@ Aynı çalışma bu bedeli ölçüyor ve bu makalenin en öğretici sayısını 
 
 ![İki sütun grubundan oluşan bir çubuk grafik; her model için yan yana iki çubuk vardır. Sol çubuk kusursuz getirme koşulundaki doğruluğu, sağ çubuk yüz on beş bin token'lık tam geçmiş koşulundaki doğruluğu gösterir ve her modelde sağ çubuk belirgin biçimde kısadır. Beş model soldan sağa şu sırayla dizilidir: GPT-4o çifti 0,870 ve 0,606; Llama 3.1 70B çifti 0,744 ve 0,334; Llama 3.1 8B çifti 0,710 ve 0,454; Phi-3 14B çifti 0,702 ve 0,380; Phi-3.5 Mini çifti 0,660 ve 0,342. Her çiftin üstünde düşüş oranı yüzde olarak yazılıdır. Şeklin altında iki koşulda da aynı modelin aynı soruları cevapladığı, değişen tek şeyin ilgili bilgiyi bulma işinin kime bırakıldığı belirtilir.](assets/kusursuz-getirme-ve-tam-gecmis.svg "Şekil 3 — Aynı soru, aynı model: fark yalnızca bulma işinde")
 
-Şekil 3'ün söylediği şey şu: bu modeller soruları **cevaplayabiliyor**. İlgili oturum önlerine konduğunda GPT-4o yüzde 87 doğrulukla çalışıyor. Aynı bilgi 115 bin token'ın içine gömüldüğünde doğruluk yüzde 60,6'ya düşüyor. Kaybedilen şey okuma yeteneği değil, bulma yeteneği. 21\. ve 25\. makalelerde uzun bağlamın ortasındaki bilginin kaybolduğunu ölçmüştük; burada aynı olgu bir bellek sorunu kılığında geri dönüyor.
+Şekil 3'ün söylediği şey şu: bu modeller soruları **cevaplayabiliyor**. İlgili oturum önlerine konduğunda GPT-4o yüzde 87 doğrulukla çalışıyor. Aynı bilgi 115 bin token'ın arasına karıştığında doğruluk yüzde 60,6'ya düşüyor. Kaybedilen şey okuma yeteneği değil, bulma yeteneği. 21\. ve 25\. makalelerde uzun bağlamın ortasındaki bilginin kaybolduğunu ölçmüştük; burada aynı olgu bir bellek sorunu kılığında geri dönüyor.
 
-Ticari sistemlerde tablo daha da sert. Aynı geçmişi doğrudan okuyan bir düzen yüzde 91,8 doğruluk verirken, bellek bileşeni olan iki ticari asistan aynı işte yüzde 57,7 ve yüzde 33,0'te kalıyor — yani belleği olan sistem, belleği olmayan ama her şeyi okuyan sistemin gerisinde. Bellek tasarımı bedavaya gelmiyor; kötü kurulmuş bir bellek, hiç bellek olmamasından kötü olabiliyor.
+Ticari sistemlerde tablo daha da sert. Aynı geçmişi doğrudan okuyan bir düzen yüzde 91,8 doğruluk verirken, bellek bileşeni olan iki ticari asistan aynı işte yüzde 57,7 ve yüzde 33,0'da kalıyor — yani belleği olan sistem, belleği olmayan ama her şeyi okuyan sistemin gerisinde. Bellek tasarımı bedavaya gelmiyor; kötü kurulmuş bir bellek, hiç bellek olmamasından kötü olabiliyor.
 
 ## Neyle aranacak, ne saklanacak
 
@@ -112,7 +112,7 @@ puan = tazelik + önem + ilgi
 
 Üç terimin her biri farklı bir şey ölçer. **Tazelik**, kaydın en son ne zaman kullanıldığına bakan üstel bir sönümdür; çalışmanın kullandığı sönüm çarpanı geçen saat başına 0,995'tir. **Önem**, kaydın oluşturulduğu anda modele "bu ne kadar kayda değer" diye sorularak 1–10 arasında bir sayıya çevrilir; çalışmanın örneklerinde "odayı toplamak" 2, "hoşlandığın kişiye çıkma teklif etmek" 8 alıyor. **İlgi**, kaydın ve sorgunun embedding'leri arasındaki kosinüs benzerliğidir — 29\. makaledeki nokta çarpımın ta kendisi.
 
-Sayıyla görelim. Elimizde iki kayıt olsun. Birincisi üç gün önce yazılmış, önemi düşük, sorguyla ilgisi yüksek bir not; ikincisi dün yazılmış, önemi yüksek, sorguyla ilgisi orta bir not. Sönüm çarpanı 0,995 ile üç gün, yani 72 saat sonra tazelik 0,995⁷² ≈ 0,70; bir gün, yani 24 saat sonra 0,995²⁴ ≈ 0,89. Ölçeklenmiş puanları sırasıyla (0,70 + 0,20 + 0,90) = 1,80 ve (0,89 + 0,80 + 0,55) = 2,24 diyelim. İkinci kayıt öne geçiyor — ilgisi daha düşük olduğu hâlde. Üçlü puanın bütün marifeti bu: yalnızca ilgiye bakan bir kural, dün söylenmiş önemli bir şeyi bugünkü soruyla kelime örtüşmesi az diye kaçırabilir.
+Sayıyla görelim. Elimizde iki kayıt olsun. Birincisi üç gündür hiç geri çağrılmamış, önemi düşük, sorguyla ilgisi yüksek bir not; ikincisi en son dün kullanılmış, önemi yüksek, sorguyla ilgisi orta bir not. Sönüm çarpanı 0,995 ile üç gün, yani 72 saat sonra tazelik 0,995⁷² ≈ 0,70; bir gün, yani 24 saat sonra 0,995²⁴ ≈ 0,89. Ölçeklenmiş puanları sırasıyla (0,70 + 0,20 + 0,90) = 1,80 ve (0,89 + 0,80 + 0,55) = 2,24 diyelim. İkinci kayıt öne geçiyor — ilgisi daha düşük olduğu hâlde. Üçlü puanın bütün marifeti bu: yalnızca ilgiye bakan bir kural, dün söylenmiş önemli bir şeyi bugünkü soruyla kelime örtüşmesi az diye kaçırabilir.
 
 Aynı çalışma ham kayıtların yetmediğini de gösteriyor. Yalnızca gözlemleri saklayan bir düzen "en çok kiminle vakit geçirdin" sorusuna, en sık karşılaştığı kişiyi söyleyerek cevap veriyor — oysa o karşılaşmaların hiçbiri derin değil. Çözüm olarak önerilen katman **yansıma**: model belirli aralıklarla kendi kayıtlarını okuyup daha üst düzey çıkarımlar yazıyor ve o çıkarımlar da depoya giriyor. Bileşenlerin katkısı ayrı ayrı ölçülmüş: tam mimari 29,89 puan alırken yansıma çıkarıldığında 26,88'e, yansıma ve planlama birlikte çıkarıldığında 25,64'e, bellek de çıkarıldığında 21,21'e iniyor.
 

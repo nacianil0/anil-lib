@@ -29,6 +29,6 @@
   <text x="600" y="144" font-size="13" text-anchor="start" fill="var(--text-faint)">eksik 0</text>
 
   <line x1="16" y1="240" x2="704" y2="240" stroke="var(--border)" stroke-width="1"/>
-  <text x="16" y="264" font-size="13" text-anchor="start" fill="var(--text-muted)">eksik cevapların yarısı doğruya, öteki yarısı uydurmaya dönüştü; uydurma eksi puan alır</text>
+  <text x="16" y="264" font-size="13" text-anchor="start" fill="var(--text-muted)">eksik 26,7 puan azaldı: net 10,1'i doğruya, 16,6'sı uydurmaya gitti; uydurma eksi puan alır</text>
   <text x="16" y="286" font-size="13" text-anchor="start" fill="var(--text-faint)">güvenilirlik düştü: getirme, çekimser bir modeli kendinden emin bir yanlışçıya çevirebilir</text>
 </svg>

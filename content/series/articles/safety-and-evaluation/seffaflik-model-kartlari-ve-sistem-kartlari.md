@@ -12,7 +12,7 @@ tags:
   - sistem-karti
   - belgeleme
   - denetim
-content_hash: sha256:af6772dc662e3a2643d3b6f3af52d302e87d5dfaa41ec5de59a4a791b3e64972
+content_hash: sha256:6604b0f9f7a59edffdbd448804eb871ad6b335197f86d77084728185ddfa0633
 classification_version: 1
 classification_batch: 19
 ---
@@ -80,7 +80,7 @@ Raji ve arkadaşlarının FAT* 2020'de sunduğu çalışma bir iç denetim çer�
 
 Denetimin neye bakacağı da ayrı bir soru. Jakob Mökander ve arkadaşlarının AI and Ethics'te 2023'te yayımladığı çalışma denetimi üç katmana ayırıyor ve ayrım pratikte işe yarıyor: **yönetişim denetimi** geliştirici kurumun kendi süreçlerine, hesap verme yapısına ve risk yönetimine bakar; **model denetimi** yayımlanmadan önce modelin kendi yeteneklerini ve sınırlarını ölçer; **uygulama denetimi** modelin belirli bir ürüne gömülmüş hâlini, o bağlamdaki etkisiyle birlikte inceler. Katmanların ayrılması bir belgenin neyi söyleyip neyi söylemediğini de netleştiriyor: sistem kartı ağırlıklı olarak model denetimi katmanının çıktısıdır; yönetişim katmanı için kurumun iç süreç kayıtları, uygulama katmanı için dağıtımı yapanın kendi ölçümleri gerekir. 70'in koşullu taahhütleri birinci katmana, 79'un sağlamlık ölçümleri ikinci katmana, 59'un insan–ajan devir ölçüleri üçüncüsüne düşer.
 
-Dışarıdan denetim tarafında iki ölçüm alanın hâlini veriyor. Victor Ojewale ve arkadaşlarının CHI 2025'te sunduğu çalışma 35 denetim uygulayıcısıyla görüşüp 435 aracı tarıyor ve boşluğu adlandırıyor: araçların çoğu standart koymaya ve değerlendirmeye yarıyor, zararın keşfine ve hesap verebilirliğe değil. Abeba Birhane ve arkadaşlarının bir IEEE güvenlik ve gizlilik konferansında 2024'te sunduğu çalışma denetim pratiklerini yapan kuruma göre sınıflandırıyor — düzenleyici, hukuk bürosu, sivil toplum, gazetecilik, akademi, danışmanlık — ve sonucu açık: denetimlerin yalnızca bir kısmı gerçek bir hesap verme sonucuna dönüşüyor. Ve 69'da gördüğümüz sınır burada da geçerli: kara kutu erişimiyle yapılan bir denetim, modelin ne yaptığını değil yalnızca ne cevapladığını görebiliyor.
+Dışarıdan denetim tarafında iki ölçüm alanın hâlini veriyor. Victor Ojewale ve arkadaşlarının CHI 2025'te sunduğu çalışma 35 denetim uygulayıcısıyla görüşüp 435 aracı tarıyor ve boşluğu adlandırıyor: araçların çoğu standart koymaya ve değerlendirmeye yarıyor, zararın keşfine ve hesap verebilirliğe değil. Abeba Birhane ve arkadaşlarının IEEE'nin güvenli ve güvenilir makine öğrenmesi konferansı SaTML'de 2024'te sunduğu çalışma denetim pratiklerini yapan kuruma göre sınıflandırıyor — düzenleyici, hukuk bürosu, sivil toplum, gazetecilik, akademi, danışmanlık — ve sonucu açık: denetimlerin yalnızca bir kısmı gerçek bir hesap verme sonucuna dönüşüyor. Ve 69'da gördüğümüz sınır burada da geçerli: kara kutu erişimiyle yapılan bir denetim, modelin ne yaptığını değil yalnızca ne cevapladığını görebiliyor.
 
 > **Kendini yokla:** Sistem kartı üçüncü taraf değerlendirmeleri içeriyorsa, bu denetim sorununu çözmez mi?
 
@@ -108,13 +108,12 @@ Buraya kadarki fazın tamamı — ölçmek, içine bakmak, kırılganlığı sı
 
 ## Kaynakça
 
-- Dodge, J., Sap, M., Marasović, A., Agnew, W., Ilharco, G., Groeneveld, D., Mitchell, M. & Gardner, M. (2021). *Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus*. EMNLP 2021. [Bağlantı](https://doi.org/10.18653/v1/2021.emnlp-main.98)
-- Mökander, J., Schuett, J., Kirk, H. R. & Floridi, L. (2023). *Auditing large language models: a three-layered approach*. AI and Ethics. [Bağlantı](https://doi.org/10.1007/s43681-023-00289-2)
 - Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D. & Gebru, T. (2019). *Model Cards for Model Reporting*. ACM FAT* 2019. [Bağlantı](https://doi.org/10.1145/3287560.3287596)
 - Raji, I. D. & Buolamwini, J. (2019). *Actionable Auditing: Investigating the Impact of Publicly Naming Biased Performance Results of Commercial AI Products*. AAAI/ACM AIES 2019. [Bağlantı](https://doi.org/10.1145/3306618.3314244)
 - Gebru, T., Morgenstern, J., Vecchione, B., Wortman Vaughan, J., Wallach, H., Daumé III, H. & Crawford, K. (2021). *Datasheets for Datasets*. Communications of the ACM 64(12). [Bağlantı](https://doi.org/10.1145/3458723)
 - Bender, E. M. & Friedman, B. (2018). *Data Statements for Natural Language Processing: Toward Mitigating System Bias and Enabling Better Science*. Transactions of the Association for Computational Linguistics 6. [Bağlantı](https://doi.org/10.1162/tacl_a_00041)
 - Pushkarna, M., Zaldivar, A. & Kjartansson, O. (2022). *Data Cards: Purposeful and Transparent Dataset Documentation for Responsible AI*. ACM FAccT 2022. [Bağlantı](https://doi.org/10.1145/3531146.3533231)
+- Dodge, J., Sap, M., Marasović, A., Agnew, W., Ilharco, G., Groeneveld, D., Mitchell, M. & Gardner, M. (2021). *Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus*. EMNLP 2021. [Bağlantı](https://doi.org/10.18653/v1/2021.emnlp-main.98)
 - Longpre, S., Mahari, R., Chen, A., Obeng-Marnu, N., Sileo, D., Brannon, W., Muennighoff, N., Khazam, N., Kabbara, J., Perisetla, K., Wu, X., Shippole, E., Bollacker, K., Wu, T., Villa, L., Pentland, S. & Hooker, S. (2024). *A large-scale audit of dataset licensing and attribution in AI*. Nature Machine Intelligence. [Bağlantı](https://doi.org/10.1038/s42256-024-00878-8)
 - Longpre, S., Mahari, R., Lee, A., Lund, C., Oderinwale, H., Brannon, W., Saxena, N., Obeng-Marnu, N., South, T., Hunter, C., Klyman, K., Klamm, C., Schoelkopf, H., Singh, N., Cherep, M. ve ark. (2024). *Consent in Crisis: The Rapid Decline of the AI Data Commons*. NeurIPS 2024 Datasets and Benchmarks. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/c3738949a80306cc48a8ea8ba0560f9d-Abstract-Datasets_and_Benchmarks_Track.html)
 - OpenAI (2024). *GPT-4o System Card*. Sağlayıcı yayını; hakemli değildir. [Bağlantı](https://arxiv.org/abs/2410.21276)
@@ -123,5 +122,6 @@ Buraya kadarki fazın tamamı — ölçmek, içine bakmak, kırılganlığı sı
 - Bhat, A., Coursey, A., Hu, G., Li, S., Nahar, N., Zhou, S., Kästner, C. & Guo, J. L. C. (2023). *Aspirations and Practice of ML Model Documentation: Moving the Needle with Nudging and Traceability*. ACM CHI 2023. [Bağlantı](https://doi.org/10.1145/3544548.3581518)
 - Avrupa Parlamentosu ve Konseyi (2024). *Regulation (EU) 2024/1689 — Yapay Zekâ Yasası, Ek IV: Madde 11(1)'de anılan teknik dokümantasyon*. Avrupa Birliği Resmî Gazetesi. [Bağlantı](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
 - Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J., Theron, D. & Barnes, P. (2020). *Closing the AI Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing*. ACM FAT* 2020. [Bağlantı](https://doi.org/10.1145/3351095.3372873)
+- Mökander, J., Schuett, J., Kirk, H. R. & Floridi, L. (2023). *Auditing large language models: a three-layered approach*. AI and Ethics. [Bağlantı](https://doi.org/10.1007/s43681-023-00289-2)
 - Ojewale, V., Steed, R., Vecchione, B., Birhane, A. & Raji, I. D. (2025). *Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling*. ACM CHI 2025. [Bağlantı](https://doi.org/10.1145/3706598.3713301)
 - Birhane, A., Steed, R., Ojewale, V., Vecchione, B. & Raji, I. D. (2024). *AI auditing: The Broken Bus on the Road to AI Accountability*. IEEE SaTML 2024. [Bağlantı](https://doi.org/10.1109/SaTML59370.2024.00037)

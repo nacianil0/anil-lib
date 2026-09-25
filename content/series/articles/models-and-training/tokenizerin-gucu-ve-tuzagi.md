@@ -12,7 +12,7 @@ tags:
   - sozluk-boyu
   - aritmetik
   - turkce
-content_hash: sha256:eea61b68c815422ab851c2f3d9b9b06d098734e91c4808364c7be141a873fdac
+content_hash: sha256:b5b2a9d7bea6d8ac6b78fc80f0ca273b6883e376fa771dfdd9ad9967f1ce3bd3
 classification_version: 1
 classification_batch: 3
 ---
@@ -20,7 +20,7 @@ classification_batch: 3
 
 Son dört makale boyunca tek bir birimle hesap yaptık. Ön eğitimin trilyonlarca token'ı, denetimli ince ayarın yedi yüz elli bin token'ı, tekrar eşiğini veren etkin token sayısı. Bütçeyi, veri duvarını, hesap-optimal tahsisi hep bu birimle konuştuk — ve 4\. makaleden beri bu birimin nereden geldiğini bir kez bile sorgulamadık.
 
-Hatırlatalım. 4\. makalede metnin ağa girmesi için geçtiği hattı kurmuştuk: bayt çifti kodlaması metni sık geçen parçalara böler, her parça bir kimlik numarası alır, her kimlik embedding tablosundan bir vektör açar. Aynı makalede rahatsız edici bir ölçüm de yapmıştık: İnsan Hakları Evrensel Bildirgesi'nin 1. maddesi İngilizce 33 token tutarken Türkçesi GPT-4'ün tokenizer'ında 60, GPT-4o'nunkinde 46 token tutuyordu. 8\. ve 14\. makaleler bu farkın **yeteneklere** nasıl yansıdığını bu makaleye borç bırakmıştı.
+Hatırlatalım. 4\. makalede metnin ağa girmesi için geçtiği hattı kurmuştuk: bayt çifti kodlaması metni sık geçen parçalara böler, her parça bir kimlik numarası alır, her kimlik embedding tablosundan bir vektör açar. Aynı makalede bir ölçüm de yapmıştık: İnsan Hakları Evrensel Bildirgesi'nin 1. maddesi İngilizce 33 token tutarken Türkçesi GPT-4'ün tokenizer'ında 60, GPT-4o'nunkinde 46 token tutuyordu. 8\. ve 14\. makaleler bu farkın **yeteneklere** nasıl yansıdığını bu makaleye borç bırakmıştı.
 
 Borcu ödemenin yolu, tokenizer'ı bir ön işleme adımı olarak görmeyi bırakmaktan geçiyor. Tokenizer nötr bir ayırıcı değil; modelin dünyayı hangi ızgaradan göreceğine karar veren bir tasarım tercihidir. Bu makalede o ızgaranın üç somut sonucunu ölçeceğiz — harfler, sayılar ve diller — ve sonra ızgaranın kendi boyunun bir bütçe kararı olduğunu göstereceğiz.
 
@@ -85,7 +85,7 @@ Sözlüğün ikinci, daha az konuşulan etkisi üretim tarafında. 10\. makalede
 
 Chaofan Tao ve arkadaşlarının NeurIPS 2024'te yayımladığı çalışma bu dengeyi ölçek yasası çerçevesinde kurdu. 33 milyondan 3 milyar parametreye kadar modelleri, 500 milyar karaktere kadar veriyle, farklı sözlük boylarıyla eğitip üç bağımsız yöntemle aynı soruyu sordular: verilen bir hesap bütçesinde sözlük ne kadar olmalı?
 
-Üç yöntem de aynı yere çıkıyor: **optimal sözlük boyu hesap bütçesine bağlıdır ve büyük modeller büyük sözlük ister.** Çarpıcı sonuç, bugünkü modellerin çoğunun bu tarafa az pay ayırmış olması. Çalışmanın tahminine göre 70 milyar parametreli bir modelin sözlüğü en az 216 bin olmalıydı; fiilen kullanılan 32 bindi — yaklaşık yedide biri. Tahmini sınadıklarında da doğrulandı: aynı 2,3×10²¹ FLOP bütçesiyle sözlüğü 32 binden 43 bine çıkarmak, ARC-Challenge adlı fen sorusu kümesindeki doğruluğu 29,1'den 32,0'a taşıdı.
+Üç yöntem de aynı yere çıkıyor: **optimal sözlük boyu hesap bütçesine bağlıdır ve büyük modeller büyük sözlük ister.** Buradan çıkan pratik sonuç, bugünkü modellerin çoğunun bu tarafa az pay ayırmış olması. Çalışmanın tahminine göre 70 milyar parametreli bir modelin sözlüğü en az 216 bin olmalıydı; fiilen kullanılan 32 bindi — yaklaşık yedide biri. Tahmini sınadıklarında da doğrulandı: aynı 2,3×10²¹ FLOP bütçesiyle sözlüğü 32 binden 43 bine çıkarmak, ARC-Challenge adlı fen sorusu kümesindeki doğruluğu 29,1'den 32,0'a taşıdı.
 
 ![Bir hesap bütçesi çubuğu iki parçaya bölünür: embedding tablosuna giden pay ile katmanlara giden pay; sözlük büyüdükçe embedding payı genişler, dizi uzunluğu kısalır ve toplam bütçenin sabit kaldığı işaretlenir.](assets/sozluk-boyu-tahsisi.svg "Şekil 3 — Sözlük boyu bir bütçe paylaşımıdır")
 
@@ -117,7 +117,7 @@ Buradan "tokenizer bitti" sonucu çıkmıyor; çıkan sonuç, sabit sözlüğün
 
 ### Sırada ne var
 
-Tokenizer'ın modelin neyi kolay, neyi zor bulduğunu belirlediğini gördük. Ama bu makalede kullandığımız her cümle bir ölçüme dayanıyordu: yüzde 72,8'lik fark, yüzde 84,4 ile 98,9 arası sıçrama, 29,1'den 32,0'a çıkan doğruluk. Bu sayılar nereden geliyor ve ne kadarına güvenilebilir? 5\. makalede perplexity'nin ancak aynı tokenizer'la hesaplanmışsa karşılaştırılabileceğini söylemiş, ölçmenin tuzaklarını buraya bırakmıştık — şimdi tokenizer'ın ne kadar değiştirdiğini de bildiğimize göre soru daha da keskin. Bir modelin "iyi" olduğunu söylediğimizde tam olarak neyi ölçmüş oluyoruz?
+Tokenizer'ın modelin neyi kolay, neyi zor bulduğunu belirlediğini gördük. Ama bu makalede kullandığımız her cümle bir ölçüme dayanıyordu: 72,8 puanlık fark, yüzde 84,4 ile 98,9 arası sıçrama, 29,1'den 32,0'a çıkan doğruluk. Bu sayılar nereden geliyor ve ne kadarına güvenilebilir? 5\. makalede perplexity'nin ancak aynı tokenizer'la hesaplanmışsa karşılaştırılabileceğini söylemiş, ölçmenin tuzaklarını buraya bırakmıştık — şimdi tokenizer'ın ne kadar değiştirdiğini de bildiğimize göre soru daha da keskin. Bir modelin "iyi" olduğunu söylediğimizde tam olarak neyi ölçmüş oluyoruz?
 
 ## Kaynakça
 

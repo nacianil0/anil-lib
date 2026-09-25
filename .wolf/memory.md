@@ -4241,3 +4241,1597 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 16:56 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch27-faz14-govde.md | — | ~858 |
 | 17:00 | Batch 27 tamamlandı: AI serisi 111–114 yayımlandı, case-studies klasörü açıldı, +1 state geçişi yapıldı | content/series/**, docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md | typecheck 0, 688 test, build exit 0, 117 rota 200, 22 şekil PNG'i incelendi | ~— |
 | 16:56 | Session end: 57 writes across 40 files (extract.py, surekli-ogrenme-ve-kisisellestirme.md, dort-guncelleme-yolu.svg, cerrahinin-uc-faturasi.svg, degisiklik-nereye-yazilir.svg) | 24 reads | ~57248 tok |
+
+## Session: 2026-09-13 22:14
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-14 08:23
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-25 19:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-25 19:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-25 20:02
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 20:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/stats.py | — | ~466 |
+| 20:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/patterns.py | — | ~560 |
+| 20:08 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/svgtext.py | — | ~732 |
+| 20:10 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/BRIEF.md | — | ~3831 |
+| 20:11 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/clusters.py | — | ~402 |
+| 20:13 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/workflows/scripts/iki-seri-editoryal-yenileme-wf_074b3edd-f41.js | modified join() | ~138 |
+| 20:13 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/workflows/scripts/iki-seri-editoryal-yenileme-wf_074b3edd-f41.js | 1→2 lines | ~80 |
+| 20:13 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/workflows/scripts/iki-seri-editoryal-yenileme-wf_074b3edd-f41.js | "${args.length} küme, ${ar" → "${args.length} küme, ${ar" | ~34 |
+| 20:13 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc51.cjs | — | ~331 |
+| 20:13 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/ai7180_words.cjs | — | ~356 |
+| 20:14 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc-boun18.cjs | — | ~360 |
+| 20:15 | Edited src/lib/content/schema.ts | added 1 condition(s) | ~668 |
+| 20:15 | Edited src/lib/content/schema.ts | added 1 condition(s) | ~240 |
+| 20:15 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc-ai6170.cjs | — | ~350 |
+| 20:15 | Edited src/lib/content/articles.ts | modified if() | ~68 |
+| 20:15 | Edited src/lib/content/articles.ts | 5→6 lines | ~47 |
+| 20:15 | Edited src/lib/content/articles.ts | inline fix | ~26 |
+| 20:15 | Edited src/lib/content/catalog.ts | modified revisionOf() | ~233 |
+| 20:15 | Edited src/lib/content/types.ts | 11→15 lines | ~142 |
+| 20:15 | Edited src/lib/content/series-content.ts | 3→4 lines | ~41 |
+| 20:15 | Edited src/lib/content/series-content.ts | 3→4 lines | ~25 |
+| 20:15 | Created src/lib/content/revision.ts | — | ~498 |
+| 20:15 | Created src/lib/content/revision.test.ts | — | ~600 |
+| 20:15 | Edited src/lib/content/labels.ts | expanded (+7 lines) | ~110 |
+| 20:16 | Created src/components/reader/revision-notice.tsx | — | ~711 |
+| 20:16 | Edited src/components/reader/revision-notice.tsx | expanded (+6 lines) | ~81 |
+| 20:17 | Edited src/app/globals.css | expanded (+30 lines) | ~292 |
+| 20:17 | Edited src/components/reader/reader-shell.tsx | expanded (+10 lines) | ~151 |
+| 20:17 | Edited src/components/reader/reader-shell.tsx | added 1 import(s) | ~29 |
+| 20:17 | Edited src/components/reader/reading-list.tsx | inline fix | ~15 |
+| 20:17 | Edited src/components/reader/reading-list.tsx | 2→6 lines | ~92 |
+| 20:17 | Edited src/components/reader/reading-list.tsx | expanded (+9 lines) | ~214 |
+| 20:17 | Edited src/components/reader/reading-list.tsx | added 1 import(s) | ~38 |
+| 20:17 | Edited src/components/series/series-landing.tsx | inline fix | ~16 |
+| 20:17 | Edited src/components/series/series-landing.tsx | modified statusOf() | ~78 |
+| 20:17 | Edited src/components/series/series-landing.tsx | expanded (+9 lines) | ~211 |
+| 20:17 | Edited src/components/series/series-landing.tsx | added 1 import(s) | ~31 |
+| 20:17 | Edited src/lib/content/schema.test.ts | expanded (+68 lines) | ~710 |
+| 20:17 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc10.cjs | — | ~430 |
+| 20:18 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~114 |
+| 20:18 | Created src/lib/content/catalog-match.test.ts | — | ~781 |
+| 20:18 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | expanded (+16 lines) | ~566 |
+| 20:18 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc-boun916.cjs | — | ~221 |
+| 20:18 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | inline fix | ~8 |
+| 20:18 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~29 |
+| 20:18 | Edited content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari.svg | inline fix | ~24 |
+| 20:18 | Edited content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md | inline fix | ~12 |
+| 20:18 | Edited content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md | "Her girdi için bir algori" → "Her girdi için onu doğru " | ~96 |
+| 20:18 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | inline fix | ~48 |
+| 20:18 | Edited content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md | 3→7 lines | ~260 |
+| 20:18 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | inline fix | ~82 |
+| 20:18 | Edited content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md | inline fix | ~23 |
+| 20:18 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | "¬q varsayalım... doğrudan" → "¬q varsayalım... (bu vars" | ~78 |
+| 20:18 | Edited content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | 3→7 lines | ~205 |
+| 20:18 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | inline fix | ~103 |
+| 20:18 | Edited tools/series/sync-series-hashes.cjs | expanded (+8 lines) | ~231 |
+| 20:18 | Edited content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | removed 5 lines | ~17 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | inline fix | ~90 |
+| 20:19 | Edited content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | inline fix | ~92 |
+| 20:19 | Edited tools/series/sync-series-hashes.cjs | added 4 condition(s) | ~276 |
+| 20:19 | Edited content/series-boun/assets/diziler-bagli-listeler-yigin-ve-kuyruk/amortize-buyutme.svg | inline fix | ~23 |
+| 20:19 | Edited tools/series/sync-series-hashes.cjs | added 5 condition(s) | ~269 |
+| 20:19 | Edited content/series-boun/assets/diziler-bagli-listeler-yigin-ve-kuyruk/amortize-buyutme.svg | inline fix | ~14 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | 1→5 lines | ~274 |
+| 20:19 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~65 |
+| 20:19 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~71 |
+| 20:19 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~46 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | "sık yapılan dört hata" → "açıkça görülüyor ki" | ~67 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | inline fix | ~148 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | inline fix | ~65 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "da öğrenmiştik: alan sabi" → "da öğrenmiştik: alan sabi" | ~122 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | expanded (+9 lines) | ~346 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | inline fix | ~46 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "si ölçtüğü olguyu tanımlı" → "zararsızlık" | ~274 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/hizalama-sorunu-ne-istedigimizi-soylemek-zor.md | inline fix | ~40 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md | inline fix | ~92 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md | inline fix | ~29 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md | inline fix | ~36 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md | inline fix | ~64 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md | 3→5 lines | ~363 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "nin sayıları bizim, kayna" → "te en büyüktür ve p 0" | ~274 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md | 1→3 lines | ~112 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "ye iniyor ve eğitim boyun" → "ye, yani yarıdan fazla in" | ~207 |
+| 20:19 | Edited content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md | inline fix | ~29 |
+| 20:19 | Created content/series-boun/assets/dengeli-arama-avlden-b-agacina/avl-zikzak.svg | — | ~1136 |
+| 20:19 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | "nin 2024/1689 sayılı Yapa" → "nin 2024/1689 sayılı Yapa" | ~271 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | inline fix | ~38 |
+| 20:20 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc98.cjs | — | ~352 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~16 |
+| 20:20 | Edited content/series-boun/assets/dengeli-arama-avlden-b-agacina/avl-zikzak.svg | inline fix | ~25 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~14 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "te sunduğu çalışma, psiko" → "te sunduğu çalışma bu kur" | ~357 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | inline fix | ~180 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~28 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~120 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | inline fix | ~28 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~76 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | inline fix | ~110 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~175 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~59 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md | inline fix | ~31 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~163 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~130 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | 1→2 lines | ~127 |
+| 20:20 | Edited content/series-boun/assets/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar/agac-karakterizasyonlari.svg | 2→2 lines | ~58 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | expanded (+12 lines) | ~858 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~95 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~22 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~91 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~50 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | "de sunduğu çalışma 13-gra" → "de sunduğu çalışma 13-gra" | ~163 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~57 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~56 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~16 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~51 |
+| 20:20 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~13 |
+| 20:20 | Edited content/series/assets/yonetisim-politika-standartlar-ve-regulasyon/yasanin-yolu.svg | inline fix | ~25 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | 2 → 3 | ~15 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~124 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | 2 → 3 | ~10 |
+| 20:20 | Edited content/series/assets/yonetisim-politika-standartlar-ve-regulasyon/yasanin-yolu.svg | inline fix | ~43 |
+| 20:20 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~20 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~32 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~50 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~43 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~20 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~29 |
+| 20:20 | Edited content/series-boun/assets/cebirsel-yapilar-ve-boolean-cebiri/altkume-kafesi.svg | 2→2 lines | ~55 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md | inline fix | ~10 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md | "nin tümleyeni olması için" → "nin tümleyeni olması için" | ~52 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md | inline fix | ~18 |
+| 20:20 | Created tests/e2e/series-revision.spec.ts | — | ~1812 |
+| 20:20 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~18 |
+| 20:20 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | modified revdir() | ~277 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md | inline fix | ~66 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md | inline fix | ~39 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md | inline fix | ~48 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | "nin üç sütunu üç log-doğr" → "nin üç sütunu aynı sezgiy" | ~343 |
+| 20:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~75 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-mimarileri.md | inline fix | ~14 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md | inline fix | ~56 |
+| 20:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~63 |
+| 20:20 | Edited content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md | inline fix | ~33 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-mimarileri.md | inline fix | ~18 |
+| 20:20 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | inline fix | ~34 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-mimarileri.md | inline fix | ~10 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md | inline fix | ~52 |
+| 20:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~68 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-mimarileri.md | inline fix | ~38 |
+| 20:20 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | inline fix | ~76 |
+| 20:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~33 |
+| 20:20 | Edited content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md | inline fix | ~41 |
+| 20:20 | Edited content/series/articles/agents-and-retrieval/ajan-mimarileri.md | inline fix | ~6 |
+| 20:20 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | inline fix | ~14 |
+| 20:21 | Edited content/series-boun/assets/hashing-sabit-zamanin-bedeli/karsilastirma-duvari.svg | inline fix | ~19 |
+| 20:21 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | 11→11 lines | ~439 |
+| 20:21 | Edited content/series/assets/ham-modelden-asistana-post-training-haritasi/post-training-haritasi.svg | inline fix | ~12 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | "de sunduğu çalışma standa" → "ın STOC 2020" | ~290 |
+| 20:21 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~17 |
+| 20:21 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~20 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md | inline fix | ~26 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md | inline fix | ~22 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md | inline fix | ~9 |
+| 20:21 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/render-boun18.cjs | — | ~259 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~79 |
+| 20:21 | Edited content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | inline fix | ~44 |
+| 20:21 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~39 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md | "i rol ve görev tanımından" → "i sistem tasarımından — r" | ~34 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~11 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md | inline fix | ~11 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~67 |
+| 20:21 | Edited content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | inline fix | ~71 |
+| 20:21 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~95 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~19 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~16 |
+| 20:21 | Edited content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md | inline fix | ~68 |
+| 20:21 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~23 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~160 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~13 |
+| 20:21 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~41 |
+| 20:21 | Session end: 179 writes across 69 files (stats.py, patterns.py, svgtext.py, BRIEF.md, clusters.py) | 152 reads | ~315608 tok |
+| 20:21 | Edited content/series/assets/talimatla-egitim-supervised-fine-tuning/sablonla-talimata.svg | inline fix | ~13 |
+| 20:21 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~24 |
+| 20:21 | Edited content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | inline fix | ~92 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~20 |
+| 20:21 | Edited content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | inline fix | ~25 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | 4→4 lines | ~173 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~39 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | "ın 2025" → "ın ICLR 2025" | ~14 |
+| 20:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc-ai41.cjs | — | ~338 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~226 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | 1→3 lines | ~306 |
+| 20:21 | Edited content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | inline fix | ~20 |
+| 20:21 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~39 |
+| 20:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~22 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~21 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~14 |
+| 20:21 | Edited content/series/assets/veriden-ogrenmek-model-parametre-ve-kayip/asiri-ogrenme.svg | 1→2 lines | ~58 |
+| 20:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~34 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~14 |
+| 20:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~30 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~75 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~34 |
+| 20:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~31 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~15 |
+| 20:21 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~37 |
+| 20:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~101 |
+| 20:21 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 3→3 lines | ~35 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | 2→3 lines | ~79 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | 3→5 lines | ~230 |
+| 20:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | "BFS mi DFS mi, DFS neden " → "BFS mi DFS mi, neden?" | ~7 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | 2→3 lines | ~101 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | "te yayımladığı ölçüt, biy" → "te yayımladığı ölçüt, biy" | ~290 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~49 |
+| 20:21 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~20 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~23 |
+| 20:21 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 2→4 lines | ~286 |
+| 20:21 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~19 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~7 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~14 |
+| 20:21 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | "da görevi kusursuz çözerk" → "da 0,92 iken 3.000 token" | ~91 |
+| 20:21 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/b1725-wc.cjs | — | ~345 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~29 |
+| 20:21 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | 13 → 14 | ~15 |
+| 20:21 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | inline fix | ~172 |
+| 20:21 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | 1→2 lines | ~51 |
+| 20:21 | Edited content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/insa-edilen-aldatma.svg | 2→2 lines | ~56 |
+| 20:21 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | "te 116, 2021" → "te 166, 2021" | ~46 |
+| 20:21 | Edited content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/insa-edilen-aldatma.svg | 2→2 lines | ~59 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~113 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~35 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~13 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~66 |
+| 20:22 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~15 |
+| 20:22 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | inline fix | ~26 |
+| 20:22 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | inline fix | ~18 |
+| 20:22 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~10 |
+| 20:22 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~8 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~18 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~19 |
+| 20:22 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | inline fix | ~23 |
+| 20:22 | Edited content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/insa-edilen-aldatma.svg | inline fix | ~22 |
+| 20:22 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | 1→5 lines | ~310 |
+| 20:22 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | inline fix | ~21 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~39 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~17 |
+| 20:22 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | inline fix | ~23 |
+| 20:22 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | inline fix | ~19 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~25 |
+| 20:22 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~13 |
+| 20:22 | Edited content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md | inline fix | ~22 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~19 |
+| 20:22 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~8 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~19 |
+| 20:22 | Edited content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/insa-edilen-aldatma.svg | 2→2 lines | ~33 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~18 |
+| 20:22 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~9 |
+| 20:22 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~9 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~15 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~13 |
+| 20:22 | Created content/series/assets/bilgisayar-kullanan-ajanlar/insan-ve-ajan-bes-ortam.svg | — | ~1033 |
+| 20:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc81.cjs | — | ~332 |
+| 20:22 | Edited content/series/articles/models-and-training/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi.md | "ye yansır ve kayıp 0" → "dur ve o çift artık nered" | ~109 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | "da saklı. Bu işaretler sı" → "da saklı, ama kendiliğind" | ~228 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md | inline fix | ~58 |
+| 20:22 | Edited content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | inline fix | ~26 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~30 |
+| 20:22 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~42 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | inline fix | ~31 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | "Şekil 3 — Beş ortam, aynı" → "te biter ve yanında Eylül" | ~221 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | inline fix | ~16 |
+| 20:22 | Edited content/series/assets/insan-tercihlerinden-ogrenmek-rlhf-ve-otesi/odul-dongusu-ve-kisayol.svg | inline fix | ~8 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | 2→3 lines | ~97 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md | inline fix | ~22 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~139 |
+| 20:22 | Edited content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | inline fix | ~169 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~16 |
+| 20:22 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | expanded (+6 lines) | ~357 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~19 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | 3→3 lines | ~99 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | inline fix | ~42 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~14 |
+| 20:22 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/render-boun916.cjs | — | ~352 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~13 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | inline fix | ~48 |
+| 20:22 | Edited content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | inline fix | ~190 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | 3→1 lines | ~42 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~28 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~8 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | 3→3 lines | ~27 |
+| 20:22 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/ai091_geom.py | — | ~1038 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~10 |
+| 20:22 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~251 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~35 |
+| 20:22 | Created content/series/assets/sinir-aglari-katmanlarin-icinde-ne-oluyor/geriye-yayilim-zinciri.svg | — | ~1234 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~15 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | 8→3 lines | ~38 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~15 |
+| 20:22 | Edited content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/insan-degerlendirmesinin-anatomisi.svg | 3→3 lines | ~69 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | "deki benzetme bir cetvel:" → "i bir cetvel gibi okuyabi" | ~143 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~37 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~12 |
+| 20:22 | Edited content/series/assets/insan-degerlendirmesi-ve-hakem-modeller/insan-degerlendirmesinin-anatomisi.svg | inline fix | ~22 |
+| 20:22 | Edited content/series/articles/reasoning-and-memory/uzun-baglam-pencereyi-buyutmenin-bedeli.md | inline fix | ~14 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | "inde yanıltıcı bir çözümü" → "ında yanıltıcı bir çözümü" | ~22 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~28 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~8 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~29 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~22 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~14 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~156 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~13 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~12 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~14 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | "te yayımladığı, hakemli o" → "te yayımladığı, hakemli o" | ~106 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~29 |
+| 20:22 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~19 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | "te kurmuştuk: bir dil mod" → "te kurmuştuk: bir dil mod" | ~143 |
+| 20:22 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~58 |
+| 20:22 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~59 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | 3→3 lines | ~297 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~54 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md | inline fix | ~23 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | inline fix | ~97 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | inline fix | ~44 |
+| 20:23 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | 5→7 lines | ~335 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | inline fix | ~136 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | expanded (+8 lines) | ~640 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | inline fix | ~52 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | "in kappası, ikiden çok et" → "şansın bıraktığı payın ne" | ~336 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | inline fix | ~127 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md | 1→2 lines | ~53 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~85 |
+| 20:23 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~84 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~31 |
+| 20:23 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | 1→2 lines | ~75 |
+| 20:23 | Created content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/tekrarin-getirisi.svg | — | ~998 |
+| 20:23 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | 1→5 lines | ~319 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | "ten 18,0" → "dan 18,0" | ~9 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~149 |
+| 20:23 | Edited content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/tekrarin-getirisi.svg | inline fix | ~23 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | 2→6 lines | ~415 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | inline fix | ~30 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | inline fix | ~43 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~29 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | "in ücretsiz çevrimiçi kit" → "in ücretsiz çevrimiçi kit" | ~46 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kv-cache-ve-cikarim-ekonomisi.md | inline fix | ~34 |
+| 20:23 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~14 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | inline fix | ~32 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~12 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md | inline fix | ~42 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~117 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | "sinden 59,8" → "ından 59,8" | ~17 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~21 |
+| 20:23 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~48 |
+| 20:23 | Edited content/series/assets/egitim-verisi-toplama-temizlik-karisim-ve-tekrar/tekrarin-getirisi.svg | inline fix | ~8 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | inline fix | ~8 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | modified log() | ~222 |
+| 20:23 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~12 |
+| 20:23 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | expanded (+8 lines) | ~446 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~32 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~64 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | inline fix | ~45 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | inline fix | ~27 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~19 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md | inline fix | ~15 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | inline fix | ~37 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~15 |
+| 20:23 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~120 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~108 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~9 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | expanded (+6 lines) | ~264 |
+| 20:23 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~34 |
+| 20:23 | Edited content/series/articles/foundations/sinir-aglari-katmanlarin-icinde-ne-oluyor.md | inline fix | ~13 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | inline fix | ~105 |
+| 20:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc-ai31.cjs | — | ~225 |
+| 20:23 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~18 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md | inline fix | ~62 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | reduced (-8 lines) | ~78 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md | inline fix | ~18 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | inline fix | ~10 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~17 |
+| 20:23 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~41 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | inline fix | ~77 |
+| 20:23 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~19 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | 2→4 lines | ~108 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~53 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | inline fix | ~18 |
+| 20:23 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | removed 11 lines | ~18 |
+| 20:23 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~31 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~13 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | 3→3 lines | ~14 |
+| 20:23 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~12 |
+| 20:23 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | "ten 0,21" → "den 0,21" | ~16 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | "ten 6,0" → "ten en zor sürümdeki 6,0" | ~78 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~30 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | inline fix | ~41 |
+| 20:23 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~205 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~20 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | inline fix | ~34 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | 1→2 lines | ~220 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~38 |
+| 20:23 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | inline fix | ~25 |
+| 20:23 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~15 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~67 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~18 |
+| 20:23 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | expanded (+8 lines) | ~444 |
+| 20:23 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~25 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~12 |
+| 20:23 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~33 |
+| 20:23 | Edited content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/ayni-soru-elli-surum.svg | 2→3 lines | ~80 |
+| 20:23 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | "in yaklaşık 3/2 katına çı" → "in yaklaşık 3/2 katına çı" | ~29 |
+| 20:23 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~13 |
+| 20:23 | Edited content/series/assets/akil-yurutme-nedir-tanim-olcum-ve-tartisma/ayni-soru-elli-surum.svg | 1→2 lines | ~88 |
+| 20:23 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~71 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~99 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md | inline fix | ~37 |
+| 20:24 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~87 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~43 |
+| 20:24 | Edited content/series/assets/dili-sayilara-cevirmek-token-ve-embedding/bpe-adimlari.svg | 18→18 lines | ~426 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~18 |
+| 20:24 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~38 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | inline fix | ~177 |
+| 20:24 | Edited content/series/assets/kuantizasyon-modeli-kucultme-sanati/bit-genisligi-ve-basari.svg | inline fix | ~14 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | "sini çözüyor — 51 ve 57" → "sini çözüyor ve saldırı a" | ~150 |
+| 20:24 | Edited content/series/assets/kuantizasyon-modeli-kucultme-sanati/bit-genisligi-ve-basari.svg | "0 0 720 334" → "0 0 720 356" | ~17 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~11 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~156 |
+| 20:24 | Edited content/series/assets/kuantizasyon-modeli-kucultme-sanati/bit-genisligi-ve-basari.svg | 1→2 lines | ~61 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~7 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~198 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | inline fix | ~39 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~33 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~103 |
+| 20:24 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~26 |
+| 20:24 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~75 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~13 |
+| 20:24 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~16 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | "un kendi tablosunda kılav" → "un kendi tablosunda — ora" | ~79 |
+| 20:24 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | 11→9 lines | ~679 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md | inline fix | ~129 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | 5→5 lines | ~129 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~41 |
+| 20:24 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | inline fix | ~42 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~24 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~24 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~50 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~9 |
+| 20:24 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | inline fix | ~74 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~7 |
+| 20:24 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | inline fix | ~16 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~12 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | 3→5 lines | ~144 |
+| 20:24 | Edited content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/derinlik-ve-sirali-hesap.svg | inline fix | ~9 |
+| 20:24 | Edited content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/devir-karari-dort-politika.svg | inline fix | ~14 |
+| 20:24 | Edited content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/derinlik-ve-sirali-hesap.svg | inline fix | ~8 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~26 |
+| 20:24 | Edited content/series/assets/insan-ajan-isbirligi-denetim-ve-devir/devir-karari-dort-politika.svg | inline fix | ~9 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~12 |
+| 20:24 | Edited content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md | inline fix | ~25 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~23 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~10 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | "Başlatmada neden doğru, s" → "Koruma adımında hangi var" | ~12 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~14 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | 1→5 lines | ~328 |
+| 20:24 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | inline fix | ~14 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~9 |
+| 20:24 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | inline fix | ~24 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~14 |
+| 20:24 | Edited content/series/assets/goruntu-ve-video-uretimi-difuzyona-giris/kilavuzlugun-takasi.svg | inline fix | ~24 |
+| 20:24 | Edited content/series/assets/goruntu-ve-video-uretimi-difuzyona-giris/kilavuzlugun-takasi.svg | inline fix | ~28 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | inline fix | ~111 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | 3→5 lines | ~454 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~100 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~115 |
+| 20:24 | Edited content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md | inline fix | ~32 |
+| 20:24 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~71 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~14 |
+| 20:24 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~16 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | inline fix | ~77 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~104 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~12 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | inline fix | ~19 |
+| 20:24 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~17 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~13 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~95 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | inline fix | ~58 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~45 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~28 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~100 |
+| 20:24 | Edited content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | inline fix | ~71 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~16 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md | inline fix | ~14 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~16 |
+| 20:24 | Edited content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/uc-ablasyon.svg | "0 0 720 300" → "0 0 720 324" | ~17 |
+| 20:24 | Created content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/dolayli-nesne-devresi.svg | — | ~1809 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~9 |
+| 20:24 | Edited content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | 2→4 lines | ~112 |
+| 20:24 | Edited content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/uc-ablasyon.svg | 1→2 lines | ~94 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | inline fix | ~33 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~113 |
+| 20:24 | Edited content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | inline fix | ~22 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~29 |
+| 20:24 | Created content/series/assets/matrisin-icini-okumak-rank-ozdeger-ve-svd/ozdeger-tekil-deger.svg | — | ~1164 |
+| 20:24 | Edited content/series/assets/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri/uc-ablasyon.svg | inline fix | ~21 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | inline fix | ~50 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | inline fix | ~13 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~12 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~66 |
+| 20:24 | Edited content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md | inline fix | ~41 |
+| 20:24 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~61 |
+| 20:24 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~16 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~76 |
+| 20:24 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | 2→4 lines | ~95 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md | "a bakıp tekrarın konumunu" → "de, S1" | ~253 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~221 |
+| 20:25 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~28 |
+| 20:25 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/ai106_114_figs.py | — | ~5918 |
+| 20:25 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~12 |
+| 20:25 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 3→3 lines | ~431 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~14 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md | inline fix | ~171 |
+| 20:25 | Created content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/token-yolculugu.svg | — | ~1505 |
+| 20:25 | Edited content/series/assets/matrisin-icini-okumak-rank-ozdeger-ve-svd/ozdeger-tekil-deger.svg | 5→5 lines | ~133 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~69 |
+| 20:25 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | 1→3 lines | ~159 |
+| 20:25 | Edited content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | inline fix | ~203 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~53 |
+| 20:25 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | "ten 17,3" → "ten 17,8" | ~16 |
+| 20:25 | Edited content/series/assets/mikro-gpt-bir-transformeri-elle-kurmak/token-yolculugu.svg | inline fix | ~15 |
+| 20:25 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/c51/render.cjs | — | ~242 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~87 |
+| 20:25 | Edited content/series/assets/matrisin-icini-okumak-rank-ozdeger-ve-svd/kesmenin-bedeli.svg | 2→3 lines | ~117 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~20 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | reduced (-7 lines) | ~44 |
+| 20:25 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | 9→9 lines | ~291 |
+| 20:25 | Edited content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | inline fix | ~102 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md | inline fix | ~214 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~15 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~74 |
+| 20:25 | Edited content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | 1→3 lines | ~112 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | "Sauron" → "Sala Baker, kötücül Sauro" | ~23 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~14 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~10 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~196 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | inline fix | ~40 |
+| 20:25 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | 5→7 lines | ~323 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md | inline fix | ~32 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | inline fix | ~56 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~95 |
+| 20:25 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~86 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~11 |
+| 20:25 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | inline fix | ~106 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | inline fix | ~93 |
+| 20:25 | Edited content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | inline fix | ~35 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | inline fix | ~24 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~89 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~11 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/embeddinglerin-donusu-anlamsal-arama.md | inline fix | ~52 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~52 |
+| 20:25 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~32 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~101 |
+| 20:25 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~36 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~12 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | reduced (-7 lines) | ~57 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~17 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~6 |
+| 20:25 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~52 |
+| 20:25 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | 3→5 lines | ~474 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~355 |
+| 20:25 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~27 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | reduced (-6 lines) | ~70 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~144 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~96 |
+| 20:25 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~94 |
+| 20:25 | Created content/series/assets/jailbreak-ve-kirmizi-takim/alti-saldiri-ailesi-uc-erisim.svg | — | ~1597 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~22 |
+| 20:25 | Created content/series/assets/dikkatin-otesi-ssm-ve-alternatif-mimariler/ayni-hesabin-iki-gorunusu.svg | — | ~1331 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~16 |
+| 20:25 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~26 |
+| 20:25 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~42 |
+| 20:25 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | inline fix | ~120 |
+| 20:25 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~15 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~71 |
+| 20:25 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~12 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~92 |
+| 20:25 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~28 |
+| 20:25 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | 3→3 lines | ~310 |
+| 20:25 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | inline fix | ~172 |
+| 20:25 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | 4→3 lines | ~8 |
+| 20:25 | Edited content/series/assets/jailbreak-ve-kirmizi-takim/alti-saldiri-ailesi-uc-erisim.svg | inline fix | ~10 |
+| 20:25 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~34 |
+| 20:25 | Edited content/series/assets/jailbreak-ve-kirmizi-takim/alti-saldiri-ailesi-uc-erisim.svg | inline fix | ~9 |
+| 20:25 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | 3→5 lines | ~501 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | inline fix | ~30 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | expanded (+12 lines) | ~747 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | inline fix | ~51 |
+| 20:26 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | inline fix | ~25 |
+| 20:26 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | removed 3 lines | ~6 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | 8→3 lines | ~67 |
+| 20:26 | Edited content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md | inline fix | ~37 |
+| 20:26 | Edited content/series/assets/ozellikler-ve-superpozisyon-modelin-ic-dili/superpozisyon-bes-ozellik-iki-boyut.svg | inline fix | ~18 |
+| 20:26 | Edited content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/hesap-takasi.svg | inline fix | ~17 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | reduced (-12 lines) | ~278 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | "da model 0" → "da 0" | ~139 |
+| 20:26 | Edited content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/hesap-takasi.svg | inline fix | ~18 |
+| 20:26 | Edited content/series/assets/ozellikler-ve-superpozisyon-modelin-ic-dili/superpozisyon-bes-ozellik-iki-boyut.svg | inline fix | ~29 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~35 |
+| 20:26 | Edited content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/hesap-takasi.svg | inline fix | ~33 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | inline fix | ~70 |
+| 20:26 | Edited content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/hesap-takasi.svg | inline fix | ~29 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | 3→3 lines | ~177 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | reduced (-6 lines) | ~39 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | inline fix | ~15 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | 3→3 lines | ~140 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~54 |
+| 20:26 | Edited content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/hesap-takasi.svg | inline fix | ~16 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | expanded (+16 lines) | ~906 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | inline fix | ~63 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~46 |
+| 20:26 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~100 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~131 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | 5→5 lines | ~396 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~107 |
+| 20:26 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | "i bir öğrenme sonucu deği" → "i bir öğrenme sonucu deği" | ~59 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | 1→3 lines | ~203 |
+| 20:26 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~13 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~18 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~187 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~210 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~25 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | inline fix | ~63 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | "in dördüncü satırı: açık " → "in ilk satırında, yalnızc" | ~156 |
+| 20:26 | Created content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/sinavin-tesviki.svg | — | ~675 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~59 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~50 |
+| 20:26 | Created content/series/assets/bilgi-kurami-entropi-capraz-entropi-ve-kl/kl-iki-yon.svg | — | ~1181 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | inline fix | ~37 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | "ın 2017" → "de neden terk edildikleri" | ~88 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~75 |
+| 20:26 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | 1→3 lines | ~252 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 3→3 lines | ~310 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~52 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~28 |
+| 20:26 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~119 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~8 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | 2 → 3 | ~11 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | "ten ¬x" → "Ancak ve ancak" | ~181 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~65 |
+| 20:26 | Edited content/series/assets/on-egitim-internet-olceginde-sonraki-token/ogrenme-orani-cizelgesi.svg | inline fix | ~18 |
+| 20:26 | Edited content/series/assets/halusinasyon-model-neden-ve-ne-zaman-uydurur/sinavin-tesviki.svg | "300" → "260" | ~10 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~26 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | 2 → 3 | ~15 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~28 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md | inline fix | ~218 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~30 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~56 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | inline fix | ~36 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md | inline fix | ~42 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~42 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~63 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~82 |
+| 20:26 | Edited content/series/articles/models-and-training/mikro-gpt-bir-transformeri-elle-kurmak.md | inline fix | ~30 |
+| 20:26 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | 1→5 lines | ~436 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | 3 → 4 | ~14 |
+| 20:26 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | 1→2 lines | ~192 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~15 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | 3 → 4 | ~11 |
+| 20:26 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | inline fix | ~85 |
+| 20:26 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | 3→3 lines | ~247 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | reduced (-8 lines) | ~68 |
+| 20:26 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~15 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | inline fix | ~17 |
+| 20:26 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | inline fix | ~138 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~27 |
+| 20:26 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~44 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | "da kurmuştuk: model token" → "da sayısıyla kurmuştuk: c" | ~164 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | inline fix | ~93 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~15 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~125 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | "i, 5" → "u değiştirilince başarı 0" | ~27 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~12 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~74 |
+| 20:26 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | 3→3 lines | ~152 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 14→14 lines | ~600 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~57 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | "in altında; dokuz dilin o" → "in altında, ve dilin eğit" | ~75 |
+| 20:26 | Edited content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md | inline fix | ~38 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~48 |
+| 20:26 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/ai106_114_alts.json | — | ~1292 |
+| 20:26 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~34 |
+| 20:26 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~12 |
+| 20:26 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 3→3 lines | ~81 |
+| 20:26 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~160 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~45 |
+| 20:27 | Created content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/bolumu-puanlamanin-uc-yolu.svg | — | ~1437 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | 3→1 lines | ~180 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | inline fix | ~98 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | inline fix | ~33 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~73 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 1→3 lines | ~182 |
+| 20:27 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~136 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~24 |
+| 20:27 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~53 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 3→5 lines | ~352 |
+| 20:27 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~39 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~28 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | 5→5 lines | ~182 |
+| 20:27 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~23 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | 3→3 lines | ~96 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | inline fix | ~11 |
+| 20:27 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~79 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~8 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~17 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | removed 5 lines | ~23 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | inline fix | ~28 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | inline fix | ~40 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | inline fix | ~21 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | inline fix | ~19 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | inline fix | ~20 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~75 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~15 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | 8→3 lines | ~26 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~70 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~12 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | inline fix | ~25 |
+| 20:27 | Edited content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md | 2→3 lines | ~103 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | inline fix | ~26 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | inline fix | ~16 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~41 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md | inline fix | ~19 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~18 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | 3→3 lines | ~246 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | inline fix | ~33 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | "te yayımladığı — hakemli " → "te yayımladığı — hakemli " | ~46 |
+| 20:27 | Created content/series/assets/cikarim-aninda-hesap-dusunme-suresi-satin-almak/doyan-egriler.svg | — | ~716 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | 3→3 lines | ~299 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~24 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~53 |
+| 20:27 | Created content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/yerel-karar-kuresel-sonuc.svg | — | ~806 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | yor() → yok() | ~217 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~45 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~59 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md | inline fix | ~39 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | removed 5 lines | ~7 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~22 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md | — | ~0 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | "Ankara" → "deki basitleştirilmiş örn" | ~65 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | 2→3 lines | ~91 |
+| 20:27 | Edited content/series/assets/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim/yerel-karar-kuresel-sonuc.svg | inline fix | ~23 |
+| 20:27 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~16 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~99 |
+| 20:27 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/render106.cjs | — | ~388 |
+| 20:27 | Edited content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md | 2→3 lines | ~70 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md | inline fix | ~23 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md | inline fix | ~10 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md | inline fix | ~24 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/yapilandirilmis-cikti-json-kod-ve-kisitli-uretim.md | "ıyla etiketlenmiş ve olas" → "ıyla etiketlenmiş ve olas" | ~182 |
+| 20:27 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | 1→3 lines | ~142 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md | inline fix | ~30 |
+| 20:27 | Created content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/cati-cizgisi-ve-iki-asama.svg | — | ~1166 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~81 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | inline fix | ~193 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~34 |
+| 20:27 | Edited content/series/assets/ajan-degerlendirmesi-basariyi-olcmek/bolumu-puanlamanin-uc-yolu.svg | inline fix | ~3 |
+| 20:27 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | "Şekil 2 — Ezberin bittiği" → "kapasite dolar" | ~156 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~20 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~27 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md | 3→3 lines | ~233 |
+| 20:27 | Edited content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/odul-modeli-ve-kural.svg | inline fix | ~22 |
+| 20:27 | Edited content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/cati-cizgisi-ve-iki-asama.svg | inline fix | ~28 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md | inline fix | ~59 |
+| 20:27 | Edited content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/cati-cizgisi-ve-iki-asama.svg | "372" → "350" | ~31 |
+| 20:27 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~54 |
+| 20:27 | Edited content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md | inline fix | ~46 |
+| 20:28 | Edited content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/odul-modeli-ve-kural.svg | inline fix | ~12 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md | inline fix | ~62 |
+| 20:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/boun2633_sim.py | — | ~559 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | "deki " → "en çok tekrarlanan sürüm" | ~38 |
+| 20:28 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | 16→20 lines | ~890 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | inline fix | ~11 |
+| 20:28 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/ai7180_render.cjs | — | ~342 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | inline fix | ~37 |
+| 20:28 | Created content/series/assets/bilgi-parametrelerde-nasil-durur-model-hafizasi/kapasite-ve-genelleme.svg | — | ~490 |
+| 20:28 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | 3→7 lines | ~465 |
+| 20:28 | Created content/series/assets/kendi-egitim-kosun-tokenizer-veri-ve-dongu/bes-tohum-iki-sonuc.svg | — | ~953 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | inline fix | ~28 |
+| 20:28 | Created content/series/assets/jailbreak-ve-kirmizi-takim/alti-saldiri-ailesi-uc-erisim.svg | — | ~1577 |
+| 20:28 | Edited content/series/articles/reasoning-and-memory/hiz-ve-maliyet-servis-yiginlama-ve-spekulatif-uretim.md | inline fix | ~30 |
+| 20:28 | Created content/series/assets/optimizasyonun-kurami-gradyanin-matematigi/kosul-sayisi-vergisi.svg | — | ~930 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | 5→5 lines | ~72 |
+| 20:28 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~213 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | inline fix | ~54 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md | inline fix | ~30 |
+| 20:28 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~107 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | removed 7 lines | ~36 |
+| 20:28 | Edited content/series/articles/models-and-training/olcek-yasalari-daha-buyuk-neden-daha-iyi.md | inline fix | ~15 |
+| 20:28 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~85 |
+| 20:28 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~30 |
+| 20:28 | Created content/series/assets/donanim-ekosistemi-gpudan-ozel-ciplere/uc-iraksayan-ustel.svg | — | ~1060 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | inline fix | ~12 |
+| 20:28 | Edited content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/dolayli-nesne-devresi.svg | 1→2 lines | ~50 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | inline fix | ~18 |
+| 20:28 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | 1→2 lines | ~151 |
+| 20:28 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/render-ai6170.cjs | — | ~352 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | 3→3 lines | ~208 |
+| 20:28 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | 2→4 lines | ~332 |
+| 20:28 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~12 |
+| 20:28 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~14 |
+| 20:28 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~45 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~100 |
+| 20:28 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~96 |
+| 20:28 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | 7→9 lines | ~643 |
+| 20:28 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | inline fix | ~35 |
+| 20:28 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~50 |
+| 20:28 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~21 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~16 |
+| 20:28 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~19 |
+| 20:28 | Edited content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/insa-edilen-aldatma.svg | inline fix | ~11 |
+| 20:28 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~36 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | 1→3 lines | ~355 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~97 |
+| 20:28 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~45 |
+| 20:28 | Edited content/series/assets/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak/agirliga-yazmak-mi-onune-koymak-mi.svg | inline fix | ~16 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | 3→3 lines | ~30 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~14 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | "de sunduğu çalışma bu fat" → "de sunduğu çalışma bu fat" | ~114 |
+| 20:28 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | inline fix | ~13 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~12 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~23 |
+| 20:28 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~35 |
+| 20:28 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~21 |
+| 20:28 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~21 |
+| 20:28 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | inline fix | ~49 |
+| 20:28 | Edited content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md | inline fix | ~99 |
+| 20:28 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | expanded (+6 lines) | ~643 |
+| 20:29 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | 1→3 lines | ~339 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | 1→3 lines | ~76 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~87 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~215 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~24 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~226 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | "nın Llama 3.1 için yayıml" → "te yayımlanan Llama 3.1 s" | ~101 |
+| 20:29 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | removed 7 lines | ~33 |
+| 20:29 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~7 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~17 |
+| 20:29 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~129 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | 3→3 lines | ~158 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~8 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~16 |
+| 20:29 | Edited content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/kapsama-egrileri.svg | 9→10 lines | ~291 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~43 |
+| 20:29 | Edited content/series/assets/akil-yuruten-modeller-dogrulanabilir-odulle-egitim/kapsama-egrileri.svg | "0 0 720 342" → "0 0 720 372" | ~17 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~40 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~90 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | "de 6 mikrosaniye **1.200 " → "de 6 mikrosaniye **1.200 " | ~51 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~93 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~50 |
+| 20:29 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~14 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~92 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~17 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~18 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~53 |
+| 20:29 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~96 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~46 |
+| 20:29 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | inline fix | ~34 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~97 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | "den 36,5" → "dan 36,5" | ~12 |
+| 20:29 | Edited content/series/articles/models-and-training/gpu-zihinsel-modeli-hesap-bellek-bant-genisligi.md | inline fix | ~30 |
+| 20:29 | Edited content/series-boun/assets/surecler-ve-is-parcaciklari/surec-ve-is-parcacigi-bellek.svg | inline fix | ~9 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | "teki ikinci ve üçüncü çub" → "teki ikinci ve üçüncü çub" | ~84 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~11 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/dogrulama-modelin-cevabini-kontrol-etmek.md | inline fix | ~19 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~68 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~22 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | 5→7 lines | ~505 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~21 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~69 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~62 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~47 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~11 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~21 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~51 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~27 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~29 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~36 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | "si**. Yani alanın en iyi " → "si**. Yani alanın en iyi " | ~171 |
+| 20:29 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 3→7 lines | ~364 |
+| 20:29 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~32 |
+| 20:29 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | expanded (+6 lines) | ~270 |
+| 20:29 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~10 |
+| 20:29 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~42 |
+| 20:29 | Created content/series/assets/genelleme-kurami-ezber-ile-ogrenme-arasinda/yanlilik-oynaklik-takasi.svg | — | ~1449 |
+| 20:30 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 3→5 lines | ~340 |
+| 20:30 | Edited content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md | inline fix | ~36 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | inline fix | ~107 |
+| 20:30 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | 1→3 lines | ~16 |
+| 20:30 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/wc-b34.cjs | — | ~336 |
+| 20:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/refs-ai41.cjs | — | ~410 |
+| 20:30 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | 7→9 lines | ~469 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | inline fix | ~179 |
+| 20:30 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~43 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | inline fix | ~168 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md | inline fix | ~23 |
+| 20:30 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 4→3 lines | ~15 |
+| 20:30 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~39 |
+| 20:30 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~60 |
+| 20:30 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | 5→7 lines | ~577 |
+| 20:30 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | inline fix | ~35 |
+| 20:30 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~115 |
+| 20:30 | Edited content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md | inline fix | ~21 |
+| 20:30 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | inline fix | ~24 |
+| 20:30 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | inline fix | ~56 |
+| 20:30 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~124 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~28 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | "ten 3,4" → "dan 3,4" | ~9 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~19 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~14 |
+| 20:30 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | 3→3 lines | ~36 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~105 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~9 |
+| 20:30 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 1→5 lines | ~450 |
+| 20:30 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~16 |
+| 20:30 | Created content/series/assets/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda/uc-bulgu-ve-donme.svg | — | ~1591 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | 1→2 lines | ~237 |
+| 20:31 | Created content/series/assets/kendi-asistanin-kucuk-olcekte-sft-ve-dpo/tasmanin-uzunlugu.svg | — | ~1158 |
+| 20:31 | Edited content/series/assets/surec-denetimi-adim-adim-odullendirme/en-iyi-n-egrileri.svg | inline fix | ~15 |
+| 20:31 | Edited content/series-boun/assets/senkronizasyon-kilit-semafor-ve-monitor/bekleme-ve-semafor.svg | 1→2 lines | ~58 |
+| 20:31 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~78 |
+| 20:31 | Created content/series/assets/goruntuyu-anlamak-goruntu-dil-modelleri/goruntuyu-baglamanin-uc-yolu.svg | — | ~2093 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~38 |
+| 20:31 | Edited content/series/assets/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda/uc-bulgu-ve-donme.svg | inline fix | ~9 |
+| 20:31 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~64 |
+| 20:31 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | "ın içine gömüldüğünde doğ" → "ın arasına karıştığında d" | ~22 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~47 |
+| 20:31 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | inline fix | ~12 |
+| 20:31 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | inline fix | ~44 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~18 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | "larının yanına konur; dil" → "ları var; görüntü kodlayı" | ~236 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~23 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~44 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | inline fix | ~56 |
+| 20:31 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | modified bir() | ~589 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~16 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~14 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~82 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md | inline fix | ~44 |
+| 20:31 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | inline fix | ~71 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md | inline fix | ~15 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~50 |
+| 20:31 | Edited content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md | inline fix | ~46 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md | inline fix | ~72 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~39 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md | inline fix | ~112 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~21 |
+| 20:31 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 9→7 lines | ~364 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~22 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | expanded (+6 lines) | ~412 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~77 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~19 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~14 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | inline fix | ~57 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~16 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | inline fix | ~71 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~28 |
+| 20:31 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 3→3 lines | ~323 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | removed 9 lines | ~21 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | inline fix | ~95 |
+| 20:31 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 3→3 lines | ~33 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~20 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~13 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | inline fix | ~91 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~20 |
+| 20:31 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~105 |
+| 20:31 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | "daki tabloyla doğrudan ka" → "daki tabloyla doğrudan ka" | ~146 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~75 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~98 |
+| 20:31 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~25 |
+| 20:31 | Edited content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md | inline fix | ~25 |
+| 20:31 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~21 |
+| 20:32 | Edited content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md | inline fix | ~44 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~48 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~66 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~8 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | 1→3 lines | ~298 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | inline fix | ~46 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~73 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~216 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~21 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | 5→3 lines | ~70 |
+| 20:32 | Edited content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md | inline fix | ~106 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | 1→3 lines | ~230 |
+| 20:32 | Created content/series/assets/kendi-asistanin-kucuk-olcekte-sft-ve-dpo/tasmanin-tutmadigi-yer.svg | — | ~922 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | inline fix | ~10 |
+| 20:32 | Edited content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md | inline fix | ~132 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | inline fix | ~18 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | expanded (+12 lines) | ~457 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~84 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | inline fix | ~31 |
+| 20:32 | Edited content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md | inline fix | ~55 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | inline fix | ~18 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | 3→3 lines | ~107 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~71 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~19 |
+| 20:32 | Edited content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md | "dir. Bayt başına bir işle" → "dir; 16 bitlik ağırlıklar" | ~116 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~51 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~63 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | removed 3 lines | ~29 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~47 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~43 |
+| 20:32 | Edited content/series/articles/models-and-training/dagitik-egitim-paralellik-stratejileri.md | inline fix | ~55 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~54 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | 3→5 lines | ~154 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~29 |
+| 20:32 | Edited content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md | inline fix | ~29 |
+| 20:32 | Edited content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md | inline fix | ~57 |
+| 20:32 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~23 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~22 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~16 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~55 |
+| 20:32 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | expanded (+8 lines) | ~148 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~148 |
+| 20:32 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~14 |
+| 20:32 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~187 |
+| 20:32 | Edited content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md | 3→7 lines | ~308 |
+| 20:32 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | inline fix | ~54 |
+| 20:32 | Edited content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md | inline fix | ~38 |
+| 20:32 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | expanded (+8 lines) | ~194 |
+| 20:32 | Edited content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md | inline fix | ~18 |
+| 20:32 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | 5→5 lines | ~59 |
+| 20:32 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/boun2633_render.cjs | — | ~380 |
+| 20:32 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~5 |
+| 20:32 | Created content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/carpimsal-dusus.svg | — | ~859 |
+| 20:32 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~128 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~48 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~65 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~15 |
+| 20:33 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~134 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~67 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | 3→5 lines | ~187 |
+| 20:33 | Edited content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/toparlanma-tavani.svg | inline fix | ~16 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | 1→3 lines | ~160 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | 3→5 lines | ~497 |
+| 20:33 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~36 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | 1→5 lines | ~355 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~100 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~34 |
+| 20:33 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~70 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | 7→11 lines | ~388 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~17 |
+| 20:33 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~11 |
+| 20:33 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~15 |
+| 20:33 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/shot.cjs | — | ~166 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~40 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~6 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~66 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~10 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~7 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~10 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~99 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~13 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~20 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~10 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~7 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~16 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~7 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | "R" → "R ≥ a" | ~76 |
+| 20:33 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/ai091_render.cjs | — | ~487 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~9 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~10 |
+| 20:33 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~91 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~8 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~9 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~8 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~6 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~48 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~6 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~20 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~10 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~9 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~11 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~106 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~8 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~6 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~55 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~12 |
+| 20:33 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~11 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~55 |
+| 20:33 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~27 |
+| 20:34 | Created content/series-boun/assets/bilgisayar-organizasyonu-osnin-altindaki-makine/bellek-hiyerarsisi-katmanlari.svg | — | ~1051 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md | expanded (+8 lines) | ~849 |
+| 20:34 | Edited content/series/assets/optimizasyonun-kurami-gradyanin-matematigi/kosul-sayisi-vergisi.svg | expanded (+7 lines) | ~494 |
+| 20:34 | Edited content/series/articles/reasoning-and-memory/cikarim-aninda-hesap-dusunme-suresi-satin-almak.md | "ı az olan bir hatta küçük" → "ı az olan bir hatta küçük" | ~139 |
+| 20:34 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/render-b34.cjs | — | ~302 |
+| 20:34 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~17 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md | inline fix | ~42 |
+| 20:34 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~55 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md | inline fix | ~36 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md | inline fix | ~20 |
+| 20:34 | Edited content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md | inline fix | ~72 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~45 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~13 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~10 |
+| 20:34 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~46 |
+| 20:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/render81.cjs | — | ~540 |
+| 20:34 | Edited content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md | inline fix | ~31 |
+| 20:34 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | 5→5 lines | ~369 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~13 |
+| 20:34 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~17 |
+| 20:34 | Edited tools/series/sync-series-hashes.cjs | modified hashBody() | ~115 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~9 |
+| 20:35 | Edited tools/series/sync-series-hashes.cjs | modified me() | ~47 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md | inline fix | ~12 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~11 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md | inline fix | ~11 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md | inline fix | ~13 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~118 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md | inline fix | ~124 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | "da yayımlanan yazar düzel" → "da bir yazar düzeltmesi y" | ~53 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~91 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | 1→2 lines | ~80 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~59 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~76 |
+| 20:35 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~20 |
+| 20:35 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | 3→3 lines | ~156 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | 1→5 lines | ~445 |
+| 20:35 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | inline fix | ~52 |
+| 20:35 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | inline fix | ~63 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~156 |
+| 20:35 | Edited content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md | inline fix | ~24 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~39 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | 7→7 lines | ~140 |
+| 20:35 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/report.py | — | ~827 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~36 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~76 |
+| 20:35 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~16 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~80 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | 1→3 lines | ~395 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~139 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~50 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~16 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~56 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~43 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~28 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~93 |
+| 20:36 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | 1→2 lines | ~267 |
+| 20:36 | Edited content/series-boun/assets/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu/tahta-dort-bolge.svg | 2→2 lines | ~53 |
+| 20:36 | Edited content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md | inline fix | ~25 |
+| 20:37 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~26 |
+| 20:37 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~42 |
+| 20:37 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~60 |
+| 20:37 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~70 |
+| 20:37 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~26 |
+| 20:37 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | inline fix | ~14 |
+| 20:37 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~40 |
+| 20:38 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~58 |
+| 20:38 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~43 |
+| 20:41 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_boun28.py | — | ~356 |
+| 20:41 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_ai8.py | — | ~231 |
+| 20:41 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/guard.py | — | ~686 |
+| 20:43 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_boun14.py | — | ~401 |
+| 20:45 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/summaries.py | — | ~1451 |
+| 20:45 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_ai95.py | — | ~308 |
+| 20:46 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/sweep.py | — | ~803 |
+| 20:47 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/mark_revisions.py | — | ~753 |
+| 20:48 | Edited tools/series/check-series-content.cjs | expanded (+8 lines) | ~292 |
+| 20:48 | Edited tools/series/check-series-content.cjs | expanded (+33 lines) | ~471 |
+| 20:48 | Edited tools/series/check-series-content.cjs | modified if() | ~32 |
+| 20:48 | Edited tools/series/check-series-content.cjs | added 8 condition(s) | ~550 |
+| 20:49 | Edited tools/series/check-series-content.cjs | added 2 condition(s) | ~112 |
+| 20:49 | Edited tools/series/check-series-content.cjs | 3→7 lines | ~116 |
+| 20:50 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/svg_bottom.py | — | ~455 |
+| 20:50 | Edited tools/series/check-series-svg.cjs | added 1 condition(s) | ~97 |
+| 20:51 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_yolharitasi.py | — | ~892 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~18 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~18 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md | inline fix | ~14 |
+| 20:52 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_yolharitasi.py | — | ~912 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md | inline fix | ~31 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md | "i doğru, bileşik soruları" → "i doğru, bileşik soruları" | ~26 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~15 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md | inline fix | ~16 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md | inline fix | ~28 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~12 |
+| 20:52 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_boun_terms.py | — | ~405 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md | inline fix | ~16 |
+| 20:52 | Edited content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md | inline fix | ~20 |
+| 20:53 | Edited docs/seri/SOZLESME.md | inline fix | ~27 |
+| 20:53 | Edited docs/seri/SOZLESME.md | 3→4 lines | ~104 |
+| 20:53 | Edited content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md | inline fix | ~11 |
+| 20:53 | Edited docs/seri/SOZLESME.md | 2→4 lines | ~101 |
+| 20:53 | Edited docs/seri/SOZLESME.md | 3→3 lines | ~70 |
+| 20:53 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~27 |
+| 20:53 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~13 |
+| 20:53 | Edited content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | inline fix | ~19 |
+| 20:53 | Edited docs/seri/SOZLESME.md | modified plar() | ~470 |
+| 20:53 | Edited content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md | inline fix | ~14 |
+| 20:53 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~19 |
+| 20:53 | Edited docs/seri/SOZLESME.md | modified katmanlama() | ~839 |
+| 20:53 | Edited content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md | inline fix | ~19 |
+| 20:53 | Edited content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md | inline fix | ~17 |
+| 20:53 | Edited docs/seri/SOZLESME.md | expanded (+25 lines) | ~702 |
+| 20:53 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~28 |
+| 20:53 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~20 |
+| 20:54 | Edited content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md | inline fix | ~15 |
+| 20:54 | Edited docs/seri/SOZLESME.md | modified kavram() | ~352 |
+| 20:54 | Edited docs/seri/SOZLESME.md | expanded (+14 lines) | ~406 |
+| 20:54 | Edited content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md | inline fix | ~12 |
+| 20:54 | Edited docs/seri/SOZLESME.md | somuttur() → ildir() | ~206 |
+| 20:54 | Edited content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md | inline fix | ~14 |
+| 20:54 | Edited docs/seri/SOZLESME.md | modified d() | ~297 |
+| 20:54 | Edited content/series/articles/foundations/veriden-ogrenmek-model-parametre-ve-kayip.md | inline fix | ~17 |
+| 20:54 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~14 |
+| 20:54 | Edited docs/seri/SOZLESME.md | modified nce() | ~392 |
+| 20:54 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~13 |
+| 20:54 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | "te sunduğu çalışma rahats" → "te sunduğu çalışmaya göre" | ~21 |
+| 20:54 | Edited content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md | inline fix | ~13 |
+| 20:54 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~17 |
+| 20:54 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~8 |
+| 20:54 | Edited docs/seri/SOZLESME.md | modified in() | ~1000 |
+| 20:54 | Edited content/series/articles/models-and-training/degerlendirme-101-benchmarklar-ne-olcer-ne-olcemez.md | inline fix | ~15 |
+| 20:55 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~19 |
+| 20:55 | Edited docs/seri/SOZLESME.md | modified 25() | ~521 |
+| 20:55 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~11 |
+| 20:55 | Edited content/series/articles/models-and-training/dikkat-mekanizmasi-baglami-tartmayi-ogrenmek.md | inline fix | ~14 |
+| 20:55 | Edited docs/seri/SOZLESME.md | 1→5 lines | ~105 |
+| 20:55 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | inline fix | ~24 |
+| 20:55 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | inline fix | ~11 |
+| 20:55 | Edited content/series/articles/models-and-training/egitim-verisi-toplama-temizlik-karisim-ve-tekrar.md | inline fix | ~16 |
+| 20:55 | Edited docs/seri-boun/SOZLESME.md | inline fix | ~27 |
+| 20:55 | Edited docs/seri-boun/SOZLESME.md | 3→6 lines | ~131 |
+| 20:55 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~22 |
+| 20:55 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~12 |
+| 20:55 | Edited docs/seri-boun/SOZLESME.md | 5→10 lines | ~247 |
+| 20:55 | Edited content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md | inline fix | ~15 |
+| 20:55 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | inline fix | ~10 |
+| 20:55 | Edited content/series/articles/models-and-training/ham-modelden-asistana-post-training-haritasi.md | inline fix | ~10 |
+| 20:55 | Edited docs/seri-boun/SOZLESME.md | modified erlidir() | ~704 |
+| 20:56 | Edited content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md | inline fix | ~27 |
+| 20:56 | Edited docs/seri-boun/SOZLESME.md | 5→9 lines | ~210 |
+| 20:56 | Edited docs/seri-boun/SOZLESME.md | expanded (+7 lines) | ~207 |
+| 20:56 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | inline fix | ~10 |
+| 20:56 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | inline fix | ~15 |
+| 20:56 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | inline fix | ~10 |
+| 20:56 | Edited docs/seri-boun/SOZLESME.md | modified 25() | ~309 |
+| 20:56 | Edited content/series/articles/models-and-training/kendi-egitim-kosun-tokenizer-veri-ve-dongu.md | inline fix | ~14 |
+| 20:56 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~12 |
+| 20:56 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~15 |
+| 20:56 | Edited content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md | inline fix | ~15 |
+| 20:56 | Edited content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md | inline fix | ~11 |
+| 20:56 | Edited content/series/articles/models-and-training/on-egitim-internet-olceginde-sonraki-token.md | inline fix | ~18 |
+| 20:56 | Edited content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md | inline fix | ~10 |
+| 20:57 | Edited content/series/articles/models-and-training/transformer-modern-dil-modellerinin-mimarisi.md | inline fix | ~10 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~12 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~26 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/bilimde-yapay-zeka-kesif-araci-olarak-llm.md | inline fix | ~11 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md | inline fix | ~9 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md | inline fix | ~16 |
+| 20:57 | Edited docs/seri/HANDOFF.md | inline fix | ~58 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~29 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md | inline fix | ~14 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | inline fix | ~25 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md | inline fix | ~18 |
+| 20:57 | Edited docs/seri/HANDOFF.md | modified zeltmeleri() | ~1005 |
+| 20:57 | Edited content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md | inline fix | ~19 |
+| 20:58 | Edited content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md | inline fix | ~15 |
+| 20:58 | Edited docs/seri/HANDOFF.md | expanded (+19 lines) | ~484 |
+| 20:58 | Edited content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md | inline fix | ~25 |
+| 20:58 | Edited content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md | inline fix | ~11 |
+| 20:58 | Edited docs/seri/HANDOFF.md | 1→6 lines | ~134 |
+| 20:58 | Edited content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md | inline fix | ~11 |
+| 20:58 | Edited content/series/articles/reasoning-and-memory/akil-yurutme-nedir-tanim-olcum-ve-tartisma.md | inline fix | ~30 |
+| 20:58 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~19 |
+| 20:58 | Edited content/series/articles/reasoning-and-memory/arama-ve-planlama-oz-tutarlilik-ve-agaclar.md | inline fix | ~14 |
+| 20:58 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_boun_handoff.py | — | ~1194 |
+| 20:58 | Edited content/series/articles/reasoning-and-memory/baglam-penceresi-istemin-anatomisi.md | inline fix | ~12 |
+| 20:58 | Edited content/series/articles/reasoning-and-memory/bellek-sohbet-icinde-ve-sohbetler-arasinda.md | inline fix | ~12 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/dusunce-zinciri-ara-adimlarin-gucu-ve-siniri.md | inline fix | ~14 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/in-context-learning-ornekle-ogrenme.md | inline fix | ~12 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~24 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~18 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~11 |
+| 20:59 | Created artifacts/editoryal-2026-09-25/render.config.ts | — | ~292 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/istem-muhendisligi-kanita-dayali-bir-bakis.md | inline fix | ~18 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/kuantizasyon-modeli-kucultme-sanati.md | inline fix | ~16 |
+| 20:59 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/make_figures.py | — | ~579 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/sistem-istemleri-roller-ve-sohbet-bicimi.md | inline fix | ~12 |
+| 20:59 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~21 |
+| 21:00 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~7 |
+| 21:00 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~14 |
+| 21:00 | Edited content/series/articles/reasoning-and-memory/surec-denetimi-adim-adim-odullendirme.md | inline fix | ~15 |
+| 21:00 | Edited content/series/articles/reasoning-and-memory/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik.md | inline fix | ~9 |
+| 21:00 | Created artifacts/editoryal-2026-09-25/figures.render.ts | — | ~1345 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md | inline fix | ~8 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md | inline fix | ~20 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md | inline fix | ~19 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md | inline fix | ~12 |
+| 21:00 | Created artifacts/editoryal-2026-09-25/revision-ui.render.ts | — | ~1928 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/constitutional-ai-ve-olceklenebilir-denetim.md | inline fix | ~20 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/constitutional-ai-ve-olceklenebilir-denetim.md | inline fix | ~13 |
+| 21:00 | Edited content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md | inline fix | ~18 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md | inline fix | ~16 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md | inline fix | ~39 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/hizalama-sorunu-ne-istedigimizi-soylemek-zor.md | inline fix | ~9 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md | inline fix | ~17 |
+| 21:01 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_cerebrum.py | — | ~1220 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md | inline fix | ~18 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~16 |
+| 21:01 | Edited content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md | inline fix | ~7 |
+| 21:01 | Edited content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md | inline fix | ~23 |
+| 21:01 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_buglog.py | — | ~837 |
+| 21:01 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~14 |
+| 21:01 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~17 |
+| 21:02 | Edited content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md | inline fix | ~23 |
+| 21:02 | Edited content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md | inline fix | ~12 |
+| 21:02 | Edited content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md | inline fix | ~15 |
+| 21:02 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~13 |
+| 21:02 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~16 |
+| 21:02 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | inline fix | ~20 |
+| 21:02 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~17 |
+| 21:02 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~19 |
+| 21:02 | Session end: 1308 writes across 286 files (stats.py, patterns.py, svgtext.py, BRIEF.md, clusters.py) | 238 reads | ~725973 tok |
+| 21:02 | Edited content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md | inline fix | ~27 |
+| 21:06 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_ai69.py | — | ~407 |
+| 21:07 | Created C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/bf073ece-266e-4e44-b980-230c04471820/scratchpad/edit_anatomy.py | — | ~584 |
+| 21:21 | Edited artifacts/editoryal-2026-09-25/figures.render.ts | added error handling | ~102 |
+
+## Session: 2026-09-25 21:26
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:29 | Created src/app/icon.svg | — | ~81 |
+| 21:30 | Edited src/components/reader/reader-shell.tsx | CSS: visit | ~231 |
+| 21:30 | Edited src/components/reader/reader-shell.tsx | added 1 import(s) | ~44 |
+| 21:30 | Edited src/components/reader/reader-shell.tsx | 3→4 lines | ~46 |
+| 21:30 | Edited src/components/reader/reader-shell.tsx | 5→4 lines | ~47 |
+| 21:30 | Created src/components/reader/revision-notice.tsx | — | ~572 |
+| 21:30 | Edited src/components/reader/resume-notice.tsx | added 1 condition(s) | ~596 |
+| 21:30 | Created src/components/reader/resume-notice.tsx | — | ~850 |
+| 21:31 | Edited tests/e2e/series-revision.spec.ts | expanded (+6 lines) | ~121 |
+| 21:31 | Edited docs/seri/SOZLESME.md | 5→7 lines | ~167 |
+
+## Session: 2026-09-25 21:33
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:37 | Edited .claude/launch.json | expanded (+6 lines) | ~100 |
+| 21:38 | Created ../anil-lib-ux/artifacts/ux/seed.mjs | — | ~1155 |
+| 21:38 | Created ../anil-lib-ux/artifacts/ux/shot.mjs | — | ~1818 |
+
+## Session: 2026-09-25 21:39
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:40 | Edited src/lib/content/labels.ts | "Gözden geçirildi ${date}" → "Okuduktan sonra yenilendi" | ~16 |
+| 21:40 | Edited src/components/reader/resume-notice.tsx | CSS: buttons | ~158 |
+| 21:40 | Created ../anil-lib-ux/artifacts/ux/zoom.mjs | — | ~500 |
+| 21:40 | Edited docs/seri/SOZLESME.md | 1→2 lines | ~30 |
+| 21:41 | Edited ../anil-lib-ux/artifacts/ux/zoom.mjs | modified if() | ~83 |
+| 21:42 | Edited src/components/reader/resume-notice.tsx | CSS: width | ~76 |
+
+## Session: 2026-09-25 21:42
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:45 | Edited .claude/launch.json | expanded (+12 lines) | ~201 |
+
+## Session summary: editoryal yenileme turu (2026-09-25)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:55 | İki serinin tam editoryal denetimi kapandı: 17 küme ajanı + ana oturum diff kabulü; AI 43 + BOUN 7 yazı revised_at/revision_note ile işaretlendi, iki katalog hash-senkron | content/series*/, docs/seri*/ | checkers + hash OK | — |
+| 21:55 | Revizyon işareti UI: RevisionNotice, resume pill mesajı, liste/landing "yenilendi"; ilerleme yazılmıyor | src/components/reader/*, src/lib/content/* | e2e 16/16, vitest 711 | — |
+| 21:55 | Mobil pill kesilmesi düzeltildi (nowrap düğme + kısa ifade), bug-648 | resume-notice.tsx, labels.ts, SOZLESME §12 | 375/768/1280 render OK | — |
+| 21:55 | artifacts/editoryal-2026-09-25 shots/ui/test-output silindi (15 MB), betikler kaldı | artifacts/ | — | — |
+| 21:46 | Created ../anil-lib-ux/artifacts/ux/probe.mjs | — | ~392 |
+| 21:46 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/editoryal-yenileme-2026-09-25.md | — | ~748 |
+| 21:46 | Created ../anil-lib-ux/artifacts/ux/p-popovers.js | — | ~313 |
+| 21:47 | Session end: 4 writes across 4 files (launch.json, probe.mjs, editoryal-yenileme-2026-09-25.md, p-popovers.js) | 16 reads | ~1736 tok |
+| 21:51 | Edited .claude/launch.json | removed 15 lines | ~8 |
+| 22:05 | Favicon kuruldu: bordo karo + kâğıt yer imi şeridi; 4 aday 16/32 px render edilip seçildi | src/app/icon.svg, src/app/favicon.ico, src/app/apple-icon.png | izole kopyada build 180/180, prod+dev'de ikonlar 200, gerçek Chrome 154 favicon2 ile açık/koyu + deep link/yenileme doğrulandı | ~25000 |
+| 22:05 | Geçici launch.json girdileri (anil-lib-favicon-prod/dev) ve D:\dev\.anil-lib-favicon-iso kaldırıldı; anil-lib-ux-iso girdisine dokunulmadı | .claude/launch.json | temiz | ~500 |
+| 21:52 | Session end: 5 writes across 4 files (launch.json, probe.mjs, editoryal-yenileme-2026-09-25.md, p-popovers.js) | 24 reads | ~2083 tok |
+| 21:52 | Created src/lib/content/series-progress.ts | — | ~1434 |
+| 21:52 | Created src/lib/content/series-progress.test.ts | — | ~1182 |
+| 21:53 | Edited src/lib/content/labels.ts | expanded (+30 lines) | ~377 |
+| 21:53 | Created src/components/series/phase-progress.tsx | — | ~566 |
+| 21:53 | Edited src/components/dashboard/reader-dashboard.tsx | expanded (+7 lines) | ~197 |
+| 21:53 | Edited src/components/dashboard/reader-dashboard.tsx | CSS: phases | ~60 |
+| 21:54 | Edited src/components/dashboard/reader-dashboard.tsx | added optional chaining | ~145 |
+| 21:54 | Edited src/components/dashboard/reader-dashboard.tsx | CSS: current | ~370 |
+| 21:54 | Edited src/components/dashboard/reader-dashboard.tsx | expanded (+7 lines) | ~233 |
+| 21:54 | Edited src/components/dashboard/reader-dashboard.tsx | 5→6 lines | ~81 |
+| 21:54 | Edited src/components/dashboard/reader-dashboard.tsx | 2→2 lines | ~15 |
+| 21:54 | Edited src/components/dashboard/reader-dashboard.tsx | added optional chaining | ~1242 |
+| 21:54 | Edited src/app/page.tsx | added 2 import(s) | ~76 |
+| 21:54 | Edited src/app/page.tsx | CSS: phases, phases | ~110 |
+| 21:54 | Edited src/components/series/series-landing.tsx | expanded (+7 lines) | ~186 |
+| 21:54 | Edited src/components/series/series-landing.tsx | added optional chaining | ~305 |
+| 21:55 | Edited src/components/series/series-landing.tsx | added optional chaining | ~741 |
+| 21:55 | Edited src/components/series/series-landing.tsx | pad() → phase() | ~330 |
+| 21:55 | Edited src/components/series/series-landing.tsx | added optional chaining | ~241 |
+| 21:55 | Edited src/components/series/series-landing.tsx | expanded (+8 lines) | ~213 |
+| 21:55 | Edited src/components/series/series-landing.tsx | 5→5 lines | ~78 |
+| 21:55 | Created src/components/reader/reading-list.tsx | — | ~2310 |
+| 21:56 | Edited src/components/reader/reader-sidebar.tsx | added 1 import(s) | ~50 |
+| 21:56 | Edited src/components/reader/reader-sidebar.tsx | modified ReaderSidebar() | ~68 |
+| 21:56 | Edited src/components/reader/reader-sidebar.tsx | 3→4 lines | ~28 |
+| 21:56 | Edited src/components/reader/mobile-reading-list.tsx | added 1 import(s) | ~50 |
+| 21:56 | Edited src/components/reader/mobile-reading-list.tsx | modified MobileReadingList() | ~150 |
+| 21:56 | Edited src/components/reader/mobile-reading-list.tsx | CSS: one | ~190 |
+| 21:56 | Edited src/components/reader/mobile-reading-list.tsx | 8→9 lines | ~105 |
+| 21:56 | Created src/components/reader/chapter-header.tsx | — | ~379 |
+| 21:57 | Created src/components/reader/figure-viewer.tsx | — | ~2292 |
+| 21:57 | Edited src/lib/content/rehype-inline-svg.ts | added 1 import(s) | ~40 |
+| 21:57 | Edited src/lib/content/rehype-inline-svg.ts | modified enlargeButton() | ~365 |
+| 21:57 | Edited src/lib/content/rehype-inline-svg.ts | 4→4 lines | ~73 |
+| 21:57 | Edited src/lib/content/rehype-inline-svg.ts | 5→6 lines | ~32 |
+| 21:57 | Edited src/components/reader/reader-shell.tsx | added 1 import(s) | ~89 |
+| 21:57 | Edited src/components/reader/reader-shell.tsx | added 2 import(s) | ~54 |
+| 21:57 | Edited src/components/reader/reader-shell.tsx | modified ReaderShellInner() | ~164 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | added 1 condition(s) | ~401 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | inline fix | ~21 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | 4→5 lines | ~32 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | CSS: here, max-sm | ~308 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | 7→7 lines | ~113 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | expanded (+12 lines) | ~168 |
+| 21:58 | Edited src/components/reader/reader-shell.tsx | 1→2 lines | ~50 |
+| 21:58 | Edited src/app/seri/[slug]/page.tsx | added 2 import(s) | ~73 |
+| 21:58 | Edited src/app/seri/[slug]/page.tsx | 3→5 lines | ~41 |
+| 21:58 | Edited src/app/boun/[slug]/page.tsx | added 1 import(s) | ~48 |
+| 21:58 | Edited src/app/boun/[slug]/page.tsx | 3→5 lines | ~39 |
+| 21:58 | Edited src/components/reader/article-toc.tsx | CSS: panels | ~153 |
+| 21:58 | Edited src/components/reader/reader-pager.tsx | modified ownsNavigationKeys() | ~128 |
+| 21:58 | Edited src/lib/db/schema.ts | modified references() | ~233 |
+| 21:58 | Edited src/components/reader/reading-settings.tsx | expanded (+22 lines) | ~201 |
+| 21:58 | Edited src/lib/reader-data/sync-contract.ts | expanded (+7 lines) | ~158 |
+| 21:58 | Edited src/components/reader/reading-settings.tsx | "min-w-0 truncate text-[11" → "min-w-0 truncate text-[11" | ~26 |
+| 21:58 | Edited src/lib/reader-data/sync-contract.ts | 2→4 lines | ~60 |
+| 21:58 | Edited src/components/reader/reading-settings.tsx | 3→7 lines | ~107 |
+| 21:58 | Edited src/lib/reader-data/schema.ts | 2→4 lines | ~72 |
+| 21:58 | Edited src/lib/reader-data/schema.ts | 2→3 lines | ~18 |
+| 21:59 | Edited src/lib/reader-data/merge.ts | expanded (+11 lines) | ~354 |
+| 21:59 | Edited src/lib/reader-data/use-reader-data.tsx | CSS: resetVersion | ~54 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | modified progressQuery() | ~383 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | modified savedPlaceQuery() | ~36 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | modified synchronizeReaderData() | ~63 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | modified if() | ~38 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | inline fix | ~25 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | 7→8 lines | ~80 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | modified Number() | ~56 |
+| 21:59 | Edited src/app/api/reader-sync/route.ts | inline fix | ~28 |
+| 21:59 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b60faeed-d52e-439a-ae92-4a123388a76a/scratchpad/settings-body.tsx | — | ~3041 |
+| 21:59 | Edited src/app/globals.css | CSS: 5 | ~66 |
+| 21:59 | Edited src/app/globals.css | 2→2 lines | ~14 |
+| 21:59 | Edited src/app/globals.css | 2→2 lines | ~14 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | modified Number() | ~295 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | 4→3 lines | ~12 |
+| 21:59 | Edited src/lib/reader-data/server/sync-service.ts | 5→3 lines | ~18 |
+| 22:00 | Edited src/app/globals.css | modified media() | ~279 |
+| 22:00 | Edited src/app/globals.css | expanded (+42 lines) | ~386 |
+| 22:00 | Edited src/app/globals.css | CSS: grid-column | ~39 |
+| 22:00 | Edited src/app/globals.css | modified media() | ~96 |
+| 22:00 | Edited src/app/globals.css | 4→5 lines | ~19 |
+| 22:00 | Edited src/components/reader/reading-settings.test.tsx | expanded (+7 lines) | ~180 |
+| 22:00 | Edited src/components/reader/reading-settings.test.tsx | CSS: name | ~111 |
+| 22:01 | Created src/lib/reader-data/server/reset-service.ts | — | ~1291 |
+| 22:01 | Edited src/components/reader/reading-list.test.tsx | added optional chaining | ~394 |
+| 22:01 | Created src/app/yonetim/reset-reading-state.ts | — | ~131 |
+| 22:01 | Edited src/app/yonetim/actions.ts | added 3 import(s) | ~140 |
+| 22:01 | Edited src/lib/content/rehype-inline-svg.test.ts | modified push() | ~299 |
+| 22:01 | Edited src/lib/content/series-assets.test.ts | modified for() | ~159 |
+| 22:01 | Created src/app/yonetim/reset-reading-form.tsx | — | ~1446 |
+| 22:01 | Edited src/app/yonetim/[userId]/page.tsx | expanded (+7 lines) | ~91 |
+| 22:01 | Edited src/app/yonetim/[userId]/page.tsx | added 1 import(s) | ~29 |
+| 22:02 | Edited src/lib/reader-data/merge.test.ts | 3→4 lines | ~34 |
+| 22:02 | Edited src/lib/reader-data/merge.test.ts | 3→4 lines | ~32 |
+| 22:02 | Edited src/lib/reader-data/merge.test.ts | added optional chaining | ~1236 |
+| 22:02 | Edited src/components/dashboard/reader-dashboard.tsx | 23→23 lines | ~381 |
+| 22:02 | Edited src/lib/reader-data/schema.test.ts | expanded (+34 lines) | ~374 |
+| 22:02 | Edited src/lib/reader-data/schema.test.ts | added 1 import(s) | ~33 |
+| 22:03 | Created src/lib/reader-data/server/sync-service.test.ts | — | ~1286 |
+| 22:03 | Created src/lib/reader-data/server/reset-service.test.ts | — | ~1287 |
+| 22:03 | Created src/app/yonetim/actions.test.ts | — | ~1331 |
+| 22:04 | Created src/app/yonetim/reset-reading-form.test.tsx | — | ~1085 |
+| 22:06 | Edited tailwind.config.ts | 2→6 lines | ~90 |
+| 22:07 | Edited tests/e2e/series-reader.spec.ts | expanded (+67 lines) | ~1137 |
+| 22:07 | Edited tests/e2e/reader.spec.ts | 3→5 lines | ~87 |
+| 22:07 | Edited tests/e2e/series-reader.spec.ts | expanded (+8 lines) | ~151 |
+| 22:07 | Edited tests/e2e/series-reader.spec.ts | added 1 condition(s) | ~498 |
+| 22:08 | Edited .claude/launch.json | expanded (+6 lines) | ~146 |
+| 22:08 | Edited src/app/yonetim/reset-reading-form.tsx | CSS: keys | ~530 |
+| 22:08 | Edited src/app/yonetim/reset-reading-form.tsx | added optional chaining | ~83 |
+| 22:08 | Edited src/app/yonetim/reset-reading-form.tsx | inline fix | ~20 |
+| 22:12 | Edited src/app/yonetim/reset-reading-form.test.tsx | expanded (+10 lines) | ~140 |
+| 22:13 | Session end: 117 writes across 46 files (launch.json, probe.mjs, editoryal-yenileme-2026-09-25.md, p-popovers.js, series-progress.ts) | 62 reads | ~59101 tok |
+| 22:13 | Edited tests/e2e/reader-resume.spec.ts | reduced (-7 lines) | ~174 |
+| 22:16 | Created ../anil-lib-ux/artifacts/ux/p-reflow.js | — | ~521 |
+| 22:19 | Created ../anil-lib-ux/artifacts/ux/focus.mjs | — | ~670 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | added optional chaining | ~578 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | 2→6 lines | ~105 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | CSS: null, here | ~280 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | 2→3 lines | ~38 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | reduced (-30 lines) | ~158 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | CSS: resetVersion | ~44 |
+| 22:20 | Edited src/lib/reader-data/use-reader-data.tsx | CSS: resetVersion | ~34 |
+| 22:20 | Edited src/lib/reader-data/merge.ts | modified mergeSyncResponse() | ~103 |
+| 22:20 | Edited src/lib/reader-data/merge.ts | inline fix | ~24 |
+| 22:20 | Edited src/lib/reader-data/sync-contract.ts | modified before() | ~199 |
+| 22:20 | Created ../anil-lib-ux/artifacts/ux/paged-viewer.mjs | — | ~505 |
+| 22:20 | Edited src/lib/reader-data/server/sync-service.ts | modified progressQuery() | ~144 |
+| 22:21 | Edited src/lib/reader-data/server/sync-service.ts | 5→8 lines | ~68 |
+| 22:21 | Edited src/lib/reader-data/server/sync-service.ts | 2→2 lines | ~27 |
+| 22:21 | Edited src/lib/reader-data/server/sync-service.ts | expanded (+8 lines) | ~160 |
+| 22:21 | Edited src/lib/reader-data/server/sync-service.ts | 1→2 lines | ~41 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | CSS: exception | ~239 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | 2→6 lines | ~90 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | 3→4 lines | ~40 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | 4→6 lines | ~98 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | CSS: loaded | ~142 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | 2→4 lines | ~54 |
+| 22:21 | Edited src/components/reader/reader-shell.tsx | CSS: headingId, ratio | ~279 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.tsx | 8→10 lines | ~111 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.tsx | own() → now() | ~178 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.tsx | 3→4 lines | ~29 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.tsx | 4→5 lines | ~47 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.tsx | 2→5 lines | ~44 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.test.tsx | modified later() | ~118 |
+| 22:22 | Edited src/app/yonetim/reset-reading-form.test.tsx | 9→11 lines | ~169 |
+| 22:22 | Edited src/lib/reader-data/merge.test.ts | added optional chaining | ~174 |
+| 22:22 | Edited src/lib/reader-data/server/sync-service.test.ts | added optional chaining | ~468 |
+| 22:23 | Created src/lib/reader-data/use-reader-data.test.tsx | — | ~1409 |
+| 22:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b60faeed-d52e-439a-ae92-4a123388a76a/scratchpad/buglog-append.cjs | — | ~1212 |
+| 22:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b60faeed-d52e-439a-ae92-4a123388a76a/scratchpad/cerebrum-append.md | — | ~1025 |
+| 22:24 | Created tests/e2e/reader-reset.spec.ts | — | ~1848 |
+| 22:24 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/okuma-odasi-ux-turu-2026-09-25.md | — | ~634 |
+| 22:24 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~90 |
+
+## Session: 2026-09-25 22:30 — Okuma Odası UX turu
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:30 | Ekran ekran UX denetimi + uygulama: faz ilerlemesi, nextStep, seri başlığı, şekil görüntüleyici, ayar açılımı, TOC taşması, text-faint kontrastı, sepia filtre hatası | src/components/{dashboard,series,reader}/*, src/lib/content/{series-progress,rehype-inline-svg,labels}.ts, globals.css, tailwind.config.ts, tests/e2e/* | vitest 752/752, e2e series-reader 7/7 + reader/resume/revision/auth yeşil, build OK | ~350k |
+| 22:24 | Session end: 158 writes across 56 files (launch.json, probe.mjs, editoryal-yenileme-2026-09-25.md, p-popovers.js, series-progress.ts) | 68 reads | ~85599 tok |
+| 22:24 | Session end: 158 writes across 56 files (launch.json, probe.mjs, editoryal-yenileme-2026-09-25.md, p-popovers.js, series-progress.ts) | 68 reads | ~85599 tok |
+| 22:25 | Edited tests/e2e/reader-reset.spec.ts | modified answerSync() | ~123 |
+| 22:25 | Edited tests/e2e/reader-reset.spec.ts | 5→6 lines | ~72 |
+| 22:25 | Edited tests/e2e/reader-reset.spec.ts | inline fix | ~16 |
+| 22:26 | Edited src/components/reader/reader-shell.tsx | inline fix | ~29 |
+| 22:26 | Edited src/components/reader/reader-shell.tsx | inline fix | ~25 |
+| 22:30 | Edited src/components/reader/figure-viewer.tsx | CSS: preventScroll | ~55 |
+| 22:30 | Edited src/components/reader/figure-viewer.tsx | CSS: last | ~188 |
+| 22:30 | Edited src/components/reader/figure-viewer.tsx | inline fix | ~16 |
+| 22:30 | Edited src/components/reader/figure-viewer.tsx | CSS: focus | ~113 |
+| 22:30 | Edited src/app/globals.css | 4→6 lines | ~73 |
+| 22:31 | Edited src/components/reader/reader-shell.tsx | 1→3 lines | ~64 |
+| 22:31 | Edited src/components/series/series-landing.tsx | 3→3 lines | ~42 |
+| 22:31 | Edited src/components/series/series-landing.tsx | CSS: unknown | ~188 |
+| 22:31 | Edited src/lib/content/labels.ts | 1→2 lines | ~35 |
+| 22:31 | Edited src/components/series/series-landing.tsx | CSS: phase | ~167 |
+| 22:31 | Edited src/components/dashboard/reader-dashboard.tsx | 1→3 lines | ~45 |
+| 22:31 | Edited src/components/dashboard/reader-dashboard.tsx | CSS: resumeLabel | ~268 |
+| 22:31 | Edited src/lib/content/series-assets.test.ts | 4→4 lines | ~43 |
+| 22:32 | Edited ../anil-lib-ux/artifacts/ux/paged-viewer.mjs | added optional chaining | ~146 |
+| 22:32 | Edited ../anil-lib-ux/artifacts/ux/paged-viewer.mjs | expanded (+13 lines) | ~76 |
+| 22:33 | Created ../anil-lib-ux/artifacts/ux/print-and-done.mjs | — | ~640 |
+| 22:37 | Edited .claude/launch.json | removed 15 lines | ~8 |
+| 22:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/b60faeed-d52e-439a-ae92-4a123388a76a/scratchpad/cerebrum-append2.md | — | ~143 |
+| 22:38 | Session end: 181 writes across 58 files (launch.json, probe.mjs, editoryal-yenileme-2026-09-25.md, p-popovers.js, series-progress.ts) | 70 reads | ~91317 tok |

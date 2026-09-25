@@ -12,7 +12,7 @@ tags:
   - dusmanca-ornek
   - degerlendirme
   - sertifikali-savunma
-content_hash: sha256:48c6f274d1640f530738b77f53d94b681cfba9629c6c46f7c519982ccb06f83a
+content_hash: sha256:c89cd9ea720b64b2e5468940793e483507957f22614e5da47f7fa1e0bce0aa5d
 classification_version: 1
 classification_batch: 19
 ---
@@ -44,11 +44,11 @@ Alanın kaymayı ölçme yolu iki koldan gelişti. Birinci kol sentetik: görün
 
 İkinci kol doğal: aynı yordamla yeni veri toplamak ya da zaten var olan zor veriyi bulmak. Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt ve Vaishaal Shankar'ın ICML 2019'da sunduğu çalışma birinci yolu deniyor — özgün veri kümesinin toplama yordamını olabildiğince aynı biçimde tekrarlayıp yeni bir test kümesi kuruyorlar. Sonuç iki katmanlı. Doğruluk düşüyor: ImageNet'te on bir ile on dört puan, CIFAR-10'da üç ile on beş puan; yazarların ifadesiyle, çok hareketli bir dönemde yaklaşık beş yıllık ilerlemeye denk bir kayıp. Ama sıralama neredeyse birebir korunuyor ve özgün kümede bir puanlık iyileşme yeni kümede daha büyük bir iyileşmeye çevriliyor — yani düşüşün nedeni test kümesine aşırı uyum sağlamak değil, biraz daha zor görüntülere genelleşememek. 72'de kirliliğin puanı nasıl şişirdiğini görmüştük; bu, kirliliksiz bir düşüş.
 
-Aynı ekibin çevresinden çıkan iki küme daha ucu daha da zorluyor: sınıflandırıcıların yanıldığı gerçek — hiç değiştirilmemiş — fotoğraflardan derlenen küme ve nesnelerin çizim, heykel, oyuncak gibi başka temsillerini toplayan küme. Birincisinde yaygın bir ağın doğruluğu yaklaşık yüzde 2'ye iniyor, yani doksan puana yakın bir düşüş; ve veri artırma yöntemleri bunu neredeyse hiç iyileştirmiyor, mimari değişikliği iyileştiriyor.
+Dan Hendrycks ve arkadaşlarının 2021'de CVPR'da ve ICCV'de sunduğu iki küme ucu daha da zorluyor: sınıflandırıcıların yanıldığı gerçek — hiç değiştirilmemiş — fotoğraflardan derlenen küme ve nesnelerin çizim, heykel, oyuncak gibi başka temsillerini toplayan küme. Birincisinde yaygın bir ağın doğruluğu yaklaşık yüzde 2'ye iniyor, yani doksan puana yakın bir düşüş; ve veri artırma yöntemleri bunu neredeyse hiç iyileştirmiyor, mimari değişikliği iyileştiriyor.
 
 Şimdi asıl soru: birinci kolda kazanılan sağlamlık ikinci kola taşınıyor mu? Rohan Taori ve arkadaşlarının NeurIPS 2020'de sunduğu çalışma bunu 204 model ve 213 test koşulundan oluşan bir düzenekte ölçtü. Ölçmek için önce bir taban gerekiyordu, çünkü dağılım dışı puanı yükselten en sıradan yol dağılım içi puanı yükseltmek: daha iyi bir model her yerde daha iyidir. Yazarlar bu yüzden **etkin sağlamlık** (effective robustness) diye bir büyüklük tanımlıyor — bir modelin dağılım dışı puanının, aynı dağılım içi puana sahip modellerin oluşturduğu eğrinin ne kadar üstünde olduğu. Bulgu net: sentetik bozulmalarda yüksek etkin sağlamlık gösteren modellerin doğal kaymada etkin sağlamlığı çoğu zaman sıfıra yakın. İncelenen sağlamlık müdahalelerinin neredeyse hiçbiri doğal kaymada kazandırmıyor; tek istisna daha büyük ve daha çeşitli veriyle eğitim, o da açığı kapatmaya yetmiyor.
 
-Peki dağılım dışı puanı ne öngörüyor? John Miller ve arkadaşlarının ICML 2021'de sunduğu çalışma şaşırtıcı biçimde düzenli bir yanıt veriyor: dağılım içi puanla dağılım dışı puan, uygun bir ölçekte çizildiğinde neredeyse bir doğru üzerinde duruyor — ve bu ilişki mimariden, hiperparametrelerden, eğitim kümesi boyundan ve eğitim süresinden bağımsız olarak koruyor. Yazarlar ilişkinin zayıfladığı yerleri de raporluyor: bazı sentetik bozulmalar ve hastaneler arası doku sınıflandırması. Yani "doğruluk doğru üstündedir" güçlü bir görgül düzenlilik, evrensel bir yasa değil.
+Peki dağılım dışı puanı ne öngörüyor? John Miller ve arkadaşlarının ICML 2021'de sunduğu çalışma şaşırtıcı biçimde düzenli bir yanıt veriyor: dağılım içi puanla dağılım dışı puan, uygun bir ölçekte çizildiğinde neredeyse bir doğru üzerinde duruyor — ve bu ilişki mimariden, hiperparametrelerden, eğitim kümesi boyundan ve eğitim süresinden bağımsız olarak korunuyor. Yazarlar ilişkinin zayıfladığı yerleri de raporluyor: bazı sentetik bozulmalar ve hastaneler arası doku sınıflandırması. Yani "doğruluk doğru üstündedir" güçlü bir görgül düzenlilik, evrensel bir yasa değil.
 
 > **Kendini yokla:** Dağılım içi ve dağılım dışı puanlar bir doğru üzerinde duruyorsa, ayrıca dağılım dışı ölçmenin ne anlamı var?
 

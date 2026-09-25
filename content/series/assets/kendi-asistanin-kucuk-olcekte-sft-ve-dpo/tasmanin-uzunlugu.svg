@@ -1,42 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 368" role="img" aria-label="Dört satırlık dört sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı kayba inen koşularda tasmanın uzunluğu, hedef kayıp 0,20 ve beta çarpı delta 1,5. Sütunlar beta, kuramın dediği delta, mikro modelde ölçülen ve geniş modelde ölçülen. Birinci satır beta 2,0: kuram 0,750, mikro 0,766, geniş 0,770. İkinci satır beta 1,0: kuram 1,500, mikro 1,530, geniş 1,522. Üçüncü satır beta 0,5: kuram 3,000, mikro 3,018, geniş 3,033. Dördüncü satır vurguludur, beta 0,2: kuram 7,500, mikro 7,565, geniş 7,569. Birinci kutuda sonuç durur: sekiz ölçümün hepsi kuramın verdiği değerin yüzde üçü içinde ve iki model boyu arasında fark yok, yani delta tam olarak 1,5 bölü betadır. İkinci kutuda anlamı durur: betayı beşe bölmek, aynı tercihi karşılamak için politikanın referanstan on kat daha uzağa gitmesini gerektirir. En altta bir kayıt: delta değerleri kendi koşularımızdan, 1,5 bölü beta ise kaybın kapalı formülünden gelir.">
-  <text x="20" y="30" font-size="13" fill="var(--text)">Aynı kayba inen koşularda tasmanın uzunluğu — hedef kayıp 0,20, β × δ = 1,5</text>
-  <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 376" role="img" aria-label="Yatay eksende beta, dikey eksende delta. Delta eşittir 1,5 bölü beta eğrisi soldan yukarıdan sağa aşağı inen bir hiperbol çiziyor. Dört ölçüm noktası eğrinin üstüne oturuyor: beta 0,2'de 7,57, beta 0,5'te 3,02, beta 1,0'da 1,53, beta 2,0'da 0,77. Mikro ve geniş modelin noktaları çakışıyor. Açıklama: beta onda birine inince delta on katına çıkıyor.">
+  <text x="20" y="22" font-size="13" fill="var(--text)">Aynı kayba (0,20) inen koşularda tasmanın uzunluğu</text>
+  <text x="20" y="46" font-size="13" fill="var(--text-muted)">δ — referanstan uzaklık</text>
 
-  <text x="24" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">β</text>
-  <text x="130" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">kuramın dediği δ</text>
-  <text x="350" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">mikro, 364</text>
-  <text x="530" y="66" font-size="13" font-weight="bold" fill="var(--text-muted)">geniş, 1.240</text>
-  <line x1="20" y1="76" x2="700" y2="76" stroke="var(--border)" />
+  <line x1="90" y1="60" x2="90" y2="300" stroke="var(--text)" stroke-width="1.2" />
+  <line x1="90" y1="300" x2="660" y2="300" stroke="var(--text)" stroke-width="1.2" />
+  <line x1="84" y1="60" x2="90" y2="60" stroke="var(--text)" />
+  <line x1="84" y1="120" x2="90" y2="120" stroke="var(--text)" />
+  <line x1="84" y1="180" x2="90" y2="180" stroke="var(--text)" />
+  <line x1="84" y1="240" x2="90" y2="240" stroke="var(--text)" />
+  <text x="78" y="65" font-size="13" text-anchor="end" fill="var(--text-muted)">8</text>
+  <text x="78" y="125" font-size="13" text-anchor="end" fill="var(--text-muted)">6</text>
+  <text x="78" y="185" font-size="13" text-anchor="end" fill="var(--text-muted)">4</text>
+  <text x="78" y="245" font-size="13" text-anchor="end" fill="var(--text-muted)">2</text>
+  <text x="78" y="305" font-size="13" text-anchor="end" fill="var(--text-muted)">0</text>
+  <line x1="219.5" y1="300" x2="219.5" y2="306" stroke="var(--text)" />
+  <line x1="349.1" y1="300" x2="349.1" y2="306" stroke="var(--text)" />
+  <line x1="478.6" y1="300" x2="478.6" y2="306" stroke="var(--text)" />
+  <line x1="608.2" y1="300" x2="608.2" y2="306" stroke="var(--text)" />
+  <text x="219.5" y="322" font-size="13" text-anchor="middle" fill="var(--text-muted)">0,5</text>
+  <text x="349.1" y="322" font-size="13" text-anchor="middle" fill="var(--text-muted)">1,0</text>
+  <text x="478.6" y="322" font-size="13" text-anchor="middle" fill="var(--text-muted)">1,5</text>
+  <text x="608.2" y="322" font-size="13" text-anchor="middle" fill="var(--text-muted)">2,0</text>
+  <text x="375" y="342" font-size="13" text-anchor="middle" fill="var(--text-muted)">β — tasmanın sıkılığı (büyük β, sıkı tasma)</text>
 
-  <text x="24" y="100" font-size="13" fill="var(--text)">2,0</text>
-  <text x="130" y="100" font-size="13" fill="var(--text)">0,750</text>
-  <text x="350" y="100" font-size="13" fill="var(--text)">0,766</text>
-  <text x="530" y="100" font-size="13" fill="var(--text)">0,770</text>
+  <path d="M 138.6 60.0 L 143.8 83.1 L 148.9 102.2 L 154.1 118.2 L 159.3 131.8 L 164.5 143.5 L 169.7 153.7 L 174.9 162.6 L 180.0 170.5 L 185.2 177.6 L 190.4 183.9 L 195.6 189.6 L 200.8 194.7 L 205.9 199.4 L 211.1 203.7 L 216.3 207.7 L 221.5 211.3 L 226.7 214.7 L 231.9 217.8 L 237.0 220.7 L 242.2 223.4 L 247.4 225.9 L 273.3 236.4 L 299.2 244.3 L 325.1 250.4 L 351.0 255.3 L 376.9 259.4 L 402.9 262.7 L 428.8 265.6 L 454.7 268.0 L 480.6 270.1 L 506.5 272.0 L 532.4 273.6 L 558.3 275.1 L 584.2 276.4 L 610.1 277.6 L 636.0 278.6" fill="none" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="180" y="140" font-size="13" fill="var(--cool)">eğri: δ = 1,5 ÷ β</text>
 
-  <text x="24" y="126" font-size="13" fill="var(--text)">1,0</text>
-  <text x="130" y="126" font-size="13" fill="var(--text)">1,500</text>
-  <text x="350" y="126" font-size="13" fill="var(--text)">1,530</text>
-  <text x="530" y="126" font-size="13" fill="var(--text)">1,522</text>
+  <circle cx="141.8" cy="73.0" r="4.5" fill="var(--accent)" />
+  <circle cx="141.8" cy="72.9" r="8" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="156" y="78" font-size="13" fill="var(--text)">β 0,2 → δ 7,57</text>
+  <circle cx="219.5" cy="209.5" r="4.5" fill="var(--accent)" />
+  <circle cx="219.5" cy="209.0" r="8" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="234" y="200" font-size="13" fill="var(--text)">β 0,5 → δ 3,02</text>
+  <circle cx="349.1" cy="254.1" r="4.5" fill="var(--accent)" />
+  <circle cx="349.1" cy="254.3" r="8" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="362" y="240" font-size="13" fill="var(--text)">β 1,0 → δ 1,53</text>
+  <circle cx="608.2" cy="277.0" r="4.5" fill="var(--accent)" />
+  <circle cx="608.2" cy="276.9" r="8" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="560" y="258" font-size="13" fill="var(--text)">β 2,0 → δ 0,77</text>
 
-  <text x="24" y="152" font-size="13" fill="var(--text)">0,5</text>
-  <text x="130" y="152" font-size="13" fill="var(--text)">3,000</text>
-  <text x="350" y="152" font-size="13" fill="var(--text)">3,018</text>
-  <text x="530" y="152" font-size="13" fill="var(--text)">3,033</text>
+  <text x="330" y="110" font-size="13" fill="var(--text)">β onda birine inince δ on katına çıkıyor</text>
+  <text x="330" y="128" font-size="13" fill="var(--text-muted)">(β 2,0 → 0,2; δ 0,77 → 7,57)</text>
 
-  <text x="24" y="178" font-size="13" font-weight="bold" fill="var(--accent)">0,2</text>
-  <text x="130" y="178" font-size="13" font-weight="bold" fill="var(--accent)">7,500</text>
-  <text x="350" y="178" font-size="13" font-weight="bold" fill="var(--accent)">7,565</text>
-  <text x="530" y="178" font-size="13" font-weight="bold" fill="var(--accent)">7,569</text>
-
-  <line x1="20" y1="194" x2="700" y2="194" stroke="var(--border)" />
-
-  <rect x="20" y="206" width="680" height="56" fill="var(--surface-muted)" stroke="var(--border)" />
-  <text x="34" y="230" font-size="13" fill="var(--text)">Sekiz ölçümün hepsi kuramın verdiği değerin %3'ü içinde ve iki model boyu</text>
-  <text x="34" y="250" font-size="13" fill="var(--text)">arasında fark yok: δ tam olarak 1,5 ÷ β.</text>
-
-  <rect x="20" y="272" width="680" height="36" fill="var(--surface)" stroke="var(--border)" />
-  <text x="34" y="296" font-size="13" fill="var(--text-muted)">β'yı beşe bölmek, politikanın on kat daha uzağa gitmesini gerektirir.</text>
-
-  <text x="20" y="336" font-size="13" fill="var(--text-faint)">δ değerleri kendi koşularımızdan; 1,5 ÷ β kaybın kapalı formülünden gelir.</text>
-  <text x="20" y="354" font-size="13" fill="var(--text-faint)">Her hücre tek bir koşudur; tohum etkisi gövdede ayrıca verilmiştir.</text>
+  <text x="20" y="366" font-size="13" fill="var(--text-faint)">Dolu nokta mikro model, halka geniş model; noktalar bizim koşularımız, eğri kaybın formülü.</text>
 </svg>
