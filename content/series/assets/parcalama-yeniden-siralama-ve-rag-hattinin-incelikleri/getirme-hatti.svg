@@ -62,6 +62,6 @@
   <text x="500" y="290" font-size="13" text-anchor="start" fill="var(--text)">0,446 · 11,7 sn</text>
 
   <line x1="16" y1="316" x2="704" y2="316" stroke="var(--border)" stroke-width="1"/>
-  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-muted)">son 0,017 puan, sorgu başına bir büyük dil modeli çağrısı: gecikme yaklaşık sekiz kat</text>
+  <text x="16" y="340" font-size="13" text-anchor="start" fill="var(--text-muted)">son 0,017 puanın 0,014'ü sorgu başına bir büyük dil modeli çağrısından: gecikme yaklaşık sekiz kat</text>
   <text x="16" y="362" font-size="13" text-anchor="start" fill="var(--text-faint)">hattan önce bir sınıflandırıcı, getirme gerekmeyen soruyu hattı hiç çalıştırmadan cevaplatır</text>
 </svg>

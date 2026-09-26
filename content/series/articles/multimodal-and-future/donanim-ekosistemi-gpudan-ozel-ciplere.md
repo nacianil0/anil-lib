@@ -12,7 +12,7 @@ tags:
   - bellek-duvari
   - alana-ozel-mimari
   - hassasiyet
-content_hash: sha256:e0ae9ebf350d22fa0fb0739801d08e7c38016d80e6f828601d0c509946a92761
+content_hash: sha256:4051618f1260886638764b61e2fb34a15bbf646030b10e9ff3042fabe2621dbf
 classification_version: 1
 classification_batch: 21
 revised_at: "2026-09-25"
@@ -100,7 +100,7 @@ Bu ikinci sayının yanındaki kayıt daha öğretici: kart başına elde edilen
 
 Bu eksenin hangi iş yükünde ne kadar zorlandığı da iş yükünün kendisine bağlı. 85\. makalede uzmanlar karışımının her katmanda bir hepsi-hepsiye iletişim doğurduğunu görmüştük. Donanım tarafından bakınca bunun neden pahalı olduğu netleşiyor: geri yayılımda kullanılan toplama deseni, kartların halka ya da ızgara biçiminde dizildiği topolojilere iyi oturur; hepsi-hepsiye deseni ise ağı ikiye böldüğünde iki yarı arasından geçmesi gereken bant genişliğini — kesim bandını — zorlar. Yani bir mimari kararı, kümenin kablolamasına kadar iniyor.
 
-Aynı sorun donanım tarafından da saldırılıyor. Jouppi ve arkadaşlarının ISCA 2023'te sunduğu çalışma, 4.096 çipli bir sistemde kartlar arası topolojiyi optik anahtarlarla çalışma anında yeniden yapılandırıyor; bunun bedeli sistem maliyetinin yüzde 5'inden, gücünün yüzde 3'ünden az ve bu esneklikle bir dil modeli tepe hızın ortalama yüzde 60'ında eğitilebiliyor. Aynı çipte, embedding tablolarını işleyen ayrı bir birim çip alanının ve gücünün yalnızca yüzde 5'ini kaplarken o iş sınıfını 5–7 kat hızlandırıyor: özelleşmenin ikinci kez, çipin içinde tekrarlanması.
+Aynı sorun donanım tarafından da saldırılıyor. Jouppi ve arkadaşlarının ISCA 2023'te sunduğu çalışma, 4.096 çipli bir sistemde kartlar arası topolojiyi optik anahtarlarla çalışma anında yeniden yapılandırıyor; bunun bedeli sistem maliyetinin yüzde 5'inden, gücünün yüzde 3'ünden az; önceki nesle göre dört kat büyük ölçek, bu esneklik ve erişilebilirlik birlikte bir dil modelinin tepe hızın ortalama yaklaşık yüzde 60'ında eğitilmesini sağlıyor. Aynı çipte, embedding tablolarını işleyen ayrı bir birim çip alanının ve gücünün yalnızca yüzde 5'ini kaplarken o iş sınıfını 5–7 kat hızlandırıyor: özelleşmenin ikinci kez, çipin içinde tekrarlanması.
 
 ## Donanım piyangosu
 

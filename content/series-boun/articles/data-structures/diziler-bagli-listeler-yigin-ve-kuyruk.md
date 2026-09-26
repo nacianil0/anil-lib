@@ -12,7 +12,7 @@ tags:
   - yigin
   - kuyruk
   - amortize-maliyet
-content_hash: sha256:d426e797366b6342c1a4d183e139988448fe2ebeec46e9451d031df559cb6500
+content_hash: sha256:43511cc224e05cda7b21af4f7c55ccc6691edfcabf92c4555bad27f7e116542e
 classification_version: 1
 classification_batch: 3
 ---
@@ -60,7 +60,7 @@ Dizi sabit zamanlı erişim verir ama boyutu sabittir. Sona ekleme yapabilmek i�
 
 Hesabı bir kere elle yapalım. Kapasite 1'den başlasın ve her dolduğunda ikiye katlansın. Bin kez sona ekleme yaparsan yeniden tahsisler kapasite 1, 2, 4, …, 512 iken olur ve kopyalanan toplam eleman sayısı 1 + 2 + 4 + ⋯ + 512 = 1023'tür. Bu, ikinin kuvvetlerinin toplamının bir sonraki kuvvetin bir eksiği olmasının doğrudan sonucudur; dolayısıyla toplam kopyalama işi her zaman 2n'in altında kalır. Bin eklemenin toplam maliyeti bin ekleme adımı artı 1023 kopyalama adımıdır, yani işlem başına üç adımın altında: **sabit**.
 
-Şekil 2 aynı muhasebeyi on altı eklemelik küçük bir örnekte çubuklarla gösteriyor: pahalı adımlar seyrek ve arası her seferinde iki katına çıkıyor, bu yüzden toplamın işlem sayısına oranı ikinin altında kalıyor.
+Şekil 2 aynı muhasebeyi on altı eklemelik küçük bir örnekte çubuklarla gösteriyor: pahalı adımlar seyrek ve arası her seferinde iki katına çıkıyor. Bu örnekte n = 16 ikinin kuvveti olduğu için oran 31/16 ≈ 1,94'tür; on yedinci ekleme on altı kopyalama tetikleyince oran 48/17 ≈ 2,82'ye çıkar, ama yukarıdaki hesabın gösterdiği gibi hiçbir n için üçü geçmez.
 
 ![Sona ekleme işlemlerinin tek tek maliyetini gösteren çubuklar: çoğu çubuk bir birim yüksekliğinde, kapasitenin katlandığı yerlerde tek tek yükselen sivri çubuklar var ve sivrilerin arası her seferinde iki katına çıkıyor. Altta aynı işlemlerin toplam maliyetini işlem sayısına bölen düz amortize çizgisi ve kopyalama toplamının iki n sınırının altında kaldığını gösteren hesap kutusu](assets/amortize-buyutme.svg "Şekil 2 — Dinamik dizi büyütmesinde tek işlem maliyeti ile amortize maliyet")
 
@@ -92,7 +92,7 @@ Kuyruk, işletim sistemleri fazında tekrar karşımıza çıkacak: hazır süre
 
 **Adımlar.** İki yığın tut, giriş ve çıkış. Kuyruğa ekleme, giriş yığınına eklemektir. Kuyruktan alma, çıkış yığını boş değilse doğrudan ondan almaktır; boşsa önce giriş yığınındaki bütün elemanlar tek tek alınıp çıkış yığınına konur, sonra çıkıştan alınır. Bir yığından alıp diğerine koymak sırayı ters çevirdiği için en eski eleman çıkışın tepesine gelir ve ilk giren ilk çıkar kuralı sağlanır.
 
-**Savunma.** Tek bir alma işlemi doğrusal olabilir, çünkü aktarma bütün elemanlara dokunur. Ama her eleman hayatı boyunca en fazla dört işlem görür: girişe konur, girişten alınır, çıkışa konur, çıkıştan alınır. n elemanlı bir işlem dizisinin toplam maliyeti bu yüzden 4n ile sınırlıdır, yani işlem başına amortize sabittir. Bu, dinamik dizideki muhasebenin aynısıdır: garanti tek işleme değil, dizinin toplamına verilir. Dikkat edilecek yer değişmezdir: aktarma yalnızca çıkış yığını boşken yapılmalıdır. Çıkışta hâlâ eski elemanlar varken aktarma yapılırsa daha yeni elemanlar onların üstüne biner ve bir sonraki alma işlemi en eskiyi değil daha yeni bir elemanı verir. Yani bu kural bir maliyet ayrıntısı değil, ilk giren ilk çıkar davranışının doğruluk koşuludur.
+**Savunma.** Tek bir alma işlemi doğrusal olabilir, çünkü aktarma bütün elemanlara dokunur. Ama her eleman hayatı boyunca en fazla dört işlem görür: girişe konur, girişten alınır, çıkışa konur, çıkıştan alınır. n elemanlı bir işlem dizisinin toplam maliyeti bu yüzden 4n ile sınırlıdır, yani işlem başına amortize sabittir. Bu, dinamik dizideki muhasebenin aynısıdır: garanti tek işleme değil, dizinin toplamına verilir. Dikkat edilecek yer değişmezdir: aktarma yalnızca çıkış yığını boşken yapılmalıdır. Çıkışta hâlâ eski elemanlar varken aktarma yapılırsa daha yeni elemanlar onların üstüne biner ve bir sonraki alma işlemi en eskiyi değil daha yeni bir elemanı verir. Küçük bir izlemeyle: 1 ve 2 eklenir, ilk alma aktarma yapıp 1'i verir ve çıkışta 2 kalır; sonra 3 eklenir. Çıkış boşalmadan aktarma yapılırsa 3 çıkışın tepesine biner ve sıradaki alma 2 yerine 3'ü verir. Yani bu kural bir maliyet ayrıntısı değil, ilk giren ilk çıkar davranışının doğruluk koşuludur.
 
 ## Dört yapının maliyet tablosu
 

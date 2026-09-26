@@ -12,7 +12,7 @@ tags:
   - model
   - tahmin
   - temeller
-content_hash: sha256:b3fd233e16334a3a6538f0029b081fd3182cd488187c7a5a18ea2f41c335f748
+content_hash: sha256:756e099b56525474d94dc8bf280b2478be03930b565417de3fc2f9958ed1faae
 classification_version: 1
 classification_batch: 0
 ---
@@ -34,7 +34,7 @@ Keras kütüphanesinin yaratıcısı François Chollet, *Deep Learning with Pyth
 
 Bu ters çevirmenin ilk ciddi gösterimi 1959'da geldi. IBM'de çalışan Arthur Samuel, dama oynayan bir program yazdı; ama programın marifeti dama oynaması değil, oynadıkça iyileşmesiydi. Program kendi kendine oynayarak konum değerlendirmesini ayarlıyordu ve makalesinin bildirdiğine göre sekiz-on saatlik makine oyun süresi sonunda, kendisini yazan kişiden daha iyi oynar hâle geliyordu. Alana adını veren de Samuel'in bu çalışmasıdır. Onun kendi çerçevesi şuydu — makine öğrenmesi, bir bilgisayarı, aynı davranış insanlarda ya da hayvanlarda görülseydi "öğrenme" diyeceğimiz biçimde davranacak şekilde programlamaktır.
 
-Burada bir uyarı borcum var. Türkçe kaynakların neredeyse tamamında Samuel'e atfedilen ve tırnak içinde verilen bir cümle dolaşır: bilgisayarlara açıkça programlanmadan öğrenme yeteneği kazandıran çalışma alanı. Bu cümlenin peşine düşenler, onu Samuel'in ne 1959 tarihli makalesinde ne de 1967'deki devamında bulabildiklerini bildiriyor; atıflar hep var olmayan bir sayfaya işaret ediyor. Bu tespiti yapan inceleme hakemli bir yayın değil, ama birincil kaynak taramasını yapmış olması ve hiçbir akademik kaynağın bu alıntıya sayfa numarası verememesi yeterince güçlü bir işaret. Dolayısıyla: fikir Samuel'indir, o cümle muhtemelen değildir. Serinin ilk sayfasında bunu söylememin sebebi, serinin geri kalanı boyunca aynı titizliği beklemen.
+Burada bir uyarı borcum var. Türkçe kaynakların neredeyse tamamında Samuel'e atfedilen ve tırnak içinde verilen bir cümle dolaşır: bilgisayarlara açıkça programlanmadan öğrenme yeteneği kazandıran çalışma alanı. Bu cümlenin peşine düşenler, onu Samuel'in ne 1959 tarihli makalesinde ne de 1967'deki devamında bulabildiklerini bildiriyor; atıflar hep var olmayan bir sayfaya işaret ediyor. Bu tespiti yapan inceleme — bir soru-cevap sitesinde verilmiş bir cevap — hakemli bir yayın değil, ama birincil kaynak taramasını yapmış olması ve hiçbir akademik kaynağın bu alıntıya sayfa numarası verememesi yeterince güçlü bir işaret. Dolayısıyla: fikir Samuel'indir, o cümle muhtemelen değildir. Serinin ilk sayfasında bunu söylememin sebebi, serinin geri kalanı boyunca aynı titizliği beklemen.
 
 Samuel'in gösterdiği şeyin tanımı, Tom Mitchell'in 1997 tarihli ders kitabında keskinleşti — bu kitap makine öğrenmesini bir hileler koleksiyonu olmaktan çıkarıp kendi biçimselliği olan bir disipline dönüştürdü. Mitchell'in tanımı üç harfe dayanır: bir program, T görev sınıfında, P performans ölçüsüne göre ölçülen başarısını E deneyimiyle artırıyorsa öğreniyordur. Sözle söylersek: neyi yapacağını (T), ne kadar iyi yaptığını nasıl ölçtüğünü (P) ve neye bakarak iyileştiğini (E) söyleyemiyorsan, ortada "öğrenme" yoktur. Spam filtresine uygulayalım — T: gelen iletiyi spam/spam değil diye sınıflandırmak; P: doğru sınıflandırılan ileti oranı; E: geçmişte insanlar tarafından etiketlenmiş e-postalar. Samuel'in programı için ise T: dama oynamak; P: kazanılan oyunların oranı; E: kendi kendine oynanan oyunlar.
 
@@ -123,7 +123,7 @@ Elimizde bir çerçeve var: girdiyi çıktıya bağlayan, üstünde ayar düğme
 - Google for Developers. *Machine Learning Crash Course — What is Machine Learning?*. Google. [Bağlantı](https://developers.google.com/machine-learning/intro-to-ml/what-is-ml)
 - Chollet, F. (2017). *Deep Learning with Python*. Manning. [Bağlantı](https://www.manning.com/books/deep-learning-with-python)
 - Samuel, A. L. (1959). *Some Studies in Machine Learning Using the Game of Checkers*. IBM Journal of Research and Development. [Bağlantı](https://www.cs.virginia.edu/~evans/greatworks/samuel.pdf)
-- "Source of Arthur Samuel's definition of machine learning" (2019). Blog incelemesi (hakemli değil). [Bağlantı](http://htydjtk.blogspot.com/2019/03/source-of-arthur-samuels-definition-of.html)
+- "Source of Arthur Samuel's definition of machine learning" (2019). Data Science Stack Exchange'de 2018'de sorulan bir soru ve 2019'da kabul edilen cevabı (hakemli değil). [Bağlantı](https://datascience.stackexchange.com/questions/37078/source-of-arthur-samuels-definition-of-machine-learning)
 - Mitchell, T. M. (1997). *Machine Learning*. McGraw Hill. [Bağlantı](http://www.cs.cmu.edu/~tom/mlbook.html)
 - Avrupa Birliği (2024). *Regulation (EU) 2024/1689 (Yapay Zekâ Yasası), Madde 3 — Tanımlar*. Avrupa Birliği Resmî Gazetesi. [Bağlantı](https://artificialintelligenceact.eu/article/3/)
 - Google for Developers. *Machine Learning Crash Course — Supervised Learning*. Google. [Bağlantı](https://developers.google.com/machine-learning/intro-to-ml/supervised)

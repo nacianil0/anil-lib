@@ -6,7 +6,7 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-26 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · kapsamın uzatılması kullanıcı kararıdır**
+Son güncelleme: 2026-09-26 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · bakım run'ı 1 tamamlandı (kararlar #265–#269) · kapsamın uzatılması kullanıcı kararıdır**
 
 ## Cursor ve güvenli başlangıç
 
@@ -83,13 +83,59 @@ Tur cursor'ı değiştirmedi; 115–118 ondan sonra Batch 28'de yayımlandı ve 
   Seri sayısı dili kullanılmadı.
 - **Kapsamın uzatılması kullanıcı kararıdır; verilmedi.** Uzatma istenirse sıra: yol haritasına faz ve
   başlıklar (SOZLESME §7), kategori ve level kararları, HANDOFF'un cursor'ı, TRIGGER'ın üretim kipine dönmesi.
-- **Sonraki bağlayıcı karar numarası #265'tir.**
+- **Sonraki bağlayıcı karar numarası #270'tir** (bakım run'ı 1 #265–#269'u kullandı).
 - **Batch 28'in yayımlanmış makalelere dokunuşu (karar #257, revizyon işaretsiz):** 58 (CaMeL → IEEE SaTML
   2026), 71 (HLE → Nature 649), 108:81 (atıf 101 → 96), 1 (Turing künyesine cilt/sayfa), 80 (Mökander yılı
   69 ile hizalandı). **49 bilerek değiştirilmedi** (karar #256).
 
+## Bakım run'ı 1 (2026-09-26) — kararlar #265–#269
+
+TRIGGER bakım kipinde ilk kez çalıştırıldı. Yeni makale ya da başlık üretilmedi; iş yalnızca aşağıdaki eski "Açık
+borçlar" listesinden ve SOZLESME §4'ün ön baskı durum kontrolünden alındı. Ayrıntı YOL-HARITASI kararları #265–#269'da.
+
+- **Ön baskı durum taraması (#265):** 211 benzersiz hakemsiz/ön baskı kalemi tarandı. **21'i hakemli çıktı** ve
+  künyeleriyle gövdedeki niteleme cümleleri değişti. 13'ü yalnızca hakemli çalıştay, 7'sinin etiketi başka nedenle
+  yanlıştı. Hepsi düzeltildi.
+- **Etiket, bağlantı ve bir yazar düzeltmesi (#266):**
+  - RAND raporlarının etiketi değişti, 1'in Samuel kaynağı özgün sayfaya taşındı.
+  - Jamba künyesi ICLR 2025 imzasına çekildi, 70'in ölü METR bağlantısı onarıldı.
+  - **Salvi ve ark.'nın 2026-09-03 yazar düzeltmesi 68'in sonucunu değiştirdi.**
+- **Sayı doğrulaması (#267):** 30 makale–kaynak çifti tarandı.
+  - 205 bulgunun 115'i doğru çıktı; 10 BLOCKER, 39 MAJOR, 37 MINOR düzeltildi.
+  - BLOCKER'lar ana oturumda birincil metinden yeniden doğrulandı.
+- **Revizyon işareti (#268):** 19, 41, 68, 81, 105, 109, 111, 112.
+- **Öteki kapanışlar:**
+  - 79–82 prerequisite satırları eklendi.
+  - 200 kelimeyi aşan dört alt metin ≤ 120'ye indi.
+  - 67'nin Şekil 3'ünde yayımlandığından beri eksik olan yedinci satır çizildi.
+  - 101'deki "110 bildirinin 3'ü" cümlesi kaynağına (ACL 2018, ACL 2017 bildirileri) bağlandı.
+  - 102'nin Gundersen–Kjensmo sayfa aralığı ve 37'nin Bellman sayı numarası tamamlandı.
+  - 12, 73 ve 87'deki Gudibande ve ark. bağlantısı tek kimliğe (ICLR proceedings) indi.
+- **Süreç (#269):** iki sınırlı workflow kullanıldı (10 + 4 salt okunur ajan). Kararlar ve düzeltmeler ana oturumda
+  verildi.
+  - İkinci workflow ana oturumun diff'inde 38 bulgu buldu (2 BLOCKER); çoğu eksik yayılımdı, hepsi uygulandı.
+  - **Kapılar:** iki repo kapısı temiz; `pnpm typecheck` 0; 764/764 test; `pnpm build` exit 0 (izole kopyada).
+  - **Render:** 21 şekil light/dark PNG; 20 sayfa × 3 genişlik × 3 temada DOM ölçümü sorunsuz.
+  - Commit yapılmadı; commit kullanıcıya ait.
+
 ## Açık borçlar
 
+- **Bakım run'ı 1'den devreden, tarihe bağlı yeniden bakışlar (hiçbiri kapı değil):**
+  - (a) **NeurIPS 2026 kabul listesi 2026-09-26'da henüz yayımlanmamıştı** (kararlar 24 Eylül'de açıklandı). Bir
+    sonraki taramada yeniden bakılacak ön baskılar: Beurer-Kellner ve ark. (58), Meinke ve ark. (67), Emmons ve ark.
+    (67), Biderman ve ark. (71), Hendrycks ve ark. 2025 ve ARC-AGI-2 raporu (117).
+  - (b) **ICML 2026'nın PMLR cildi çıkmadı.** Morris ve ark. (18) ile Barres ve ark. (57, 59, 60) şimdilik
+    `icml.cc/virtual/2026/poster/...` sayfasına bağlı. PMLR çıkınca bağlantı ve sayfa numarası oraya çevrilecek.
+  - (c) **COLM 2026 Ekim'de toplanıyor.** Cooper ve ark. (72) ile Krumdick ve ark. (73) "COLM 2026'ya kabul edilmiş"
+    diye duruyor. Konferanstan sonra "COLM 2026" künyesine çevrilecek.
+  - (d) 105'in Şekil 1 notu artık "zarf konumundaki dağılım" diyor. Değerlerin yalnızca `başla kedi` bağlamına mı,
+    `başla kedi` ile `başla köpek`in ortalamasına mı ait olduğu mikro-GPT yeniden koşulmadan kesinleşmiyor: 10 adım
+    satırı ikinci okumayla tutuyor.
+  - (e) 92'deki LASER sayısı: kaynak 29,2'yi bir yerde "ilk on tahmin" doğruluğu diye anıyor, ama 24,0'a göre 5,2
+    puanlık artış olarak hesaplıyor. Metin bu tutarsızlığı söylüyor; yazarların düzeltmesi çıkarsa yeniden bakılacak.
+- **SVG `aria-label` ↔ alt metin (bilgi notu, okura yansımıyor):** 346 şeklin 107'sinde SVG dosyasındaki
+  `aria-label` markdown alt metninden ayrışmış, 133'ünde hiç yok. Okuyucu render sırasında alt metni `aria-label`
+  olarak yazdığı için (`rehype-inline-svg.ts`) sayfada fark görünmez. Yalnızca bu run'da dokunulan şekiller eşitlendi.
 - **Araştırma ve ölçüm çalışma dizinleri kalıcı değil — bu bilinçli.** Batch 22'de paralel bir oturum
   `artifacts/` altını sildiği için (karar #208g), Batch 23–28 `artifacts/` altına **hiçbir şey yazmadı**;
   bütün kaynak metinleri, PDF'ler ve ölçer betikleri oturum scratchpad'inde kaldı. Bir bakım run'ı kendi
@@ -116,33 +162,42 @@ Tur cursor'ı değiştirmedi; 115–118 ondan sonra Batch 28'de yayımlandı ve 
   "Bu serinin bir sonraki makalesi yok." diye bitiyor (makale başına mekanik olarak tarandı). Kavram-tekrar
   defterinde 115–118'e planlanıp tahsil edilmeyen satırlar YOL-HARITASI'nda listelendi; hiçbiri okura
   verilmiş bir söz değildi, bakımda yalnızca aday gösterir.
-- **Prerequisite grafında 79–82 boşluğu.** YOL-HARITASI'ndaki graf satırları 78'de kesilip 83'ten devam
-  ediyor; Batch 19 kendi dörtlüsünün satırlarını eklememişti. Batch 20–28 kendi satırlarını ekledi.
-  Devrolan eksik; bakımda toplu kapatılabilir, hiçbir kapı buna bağlı değil. **Batch 27 kavram-tekrar
-  defterinde ayrı bölüm açmamıştı** (tahsili vaat paragrafında); Batch 28'in bölümü 115–118'e yönelik bütün
-  planları kapsıyor.
+- **Prerequisite grafında 79–82 boşluğu — KAPANDI (bakım run'ı 1).** Satırlar yayımlanmış dört metnin numaralı
+  geri göndermelerinden çıkarılıp YOL-HARITASI'na yazıldı; taslakta olup metinde kullanılmayan bağlar yazılmadı.
+  **Batch 27 kavram-tekrar defterinde ayrı bölüm açmamıştı** (tahsili vaat paragrafında); Batch 28'in bölümü
+  115–118'e yönelik bütün planları kapsıyor.
 - **Ertelenen inceleme bulguları:** Batch 1'den kalan ~29 MINOR'ın arşivi repo dışındaydı; 2026-09-25
   turu 1–10'u baştan okuduğu için bu kalem kapanmış sayılır.
-- **2026-09-25 turundan kalan bakım borçları (hiçbiri kapı değil):**
-  (1) **Alt metin uzunluğu:** SOZLESME §6'nın ileriye dönük hedefi ≤ 120 kelime; 200'ü aşan 4 AI alt
-  metni `check-series-content.cjs --warnings` ile listelenir. Toplu kısaltılmadı.
+- **2026-09-25 turundan kalan bakım borçları (hiçbiri kapı değil; bakım run'ı 1'de (1), (3) ve (4) kapandı, (2)
+  duruyor):**
+  (1) **Alt metin uzunluğu — KAPANDI:** 200'ü aşan dört alt metin (67, 70, 73, 111) 109–120 kelimeye indi;
+  `check-series-content.cjs --warnings` artık uyarı vermiyor. Öteki uzun alt metinler toplu kısaltılmadı.
   (2) **Hâlâ SVG'ye çizilmiş tablo olan şekiller** (yeniden çizime aday; ajan raporlarındaki
   sınıflandırma): 63 Ş2–4, 67 Ş3, 68 Ş2, 71 Ş3, 82/87/88'in üç şekli, 91 Ş3, 93 Ş1, 96 Ş3, 99 Ş3,
   102 Ş3, 103 Ş1, 104 Ş1–3, 105 Ş1, 106 `egitim-bellek-defteri.svg`, 111/113/114'ün şekilleri,
   70 `faz-yedi-haritasi.svg`, 84 `tek-sozlugun-defteri.svg`. Yeni kurala göre bir yazıda en fazla
   bir SVG-tablo; bu yazılar dokunulduğunda gözden geçirilir.
-  (3) **Bu turda yeniden açılmayan sayılar** (önceki batch'lerde doğrulanmış, bu tur kaynak yeniden
-  okunmadı): 15 (CUTE, Singh–Strouse), 19 (Ovadia), 41 (Longpre), 43–47 (Macdonald–Tonellotto,
+  (3) **Bu turda yeniden açılmayan sayılar — KAPANDI (karar #267; bütün çiftler birincil metinle okundu, 15, 19,
+  41, 43–47, 58, 61, 63, 76, 83, 85–87, 89, 94, 96, 105, 109, 111, 112'de düzeltmeler uygulandı; 58 ve 61'de hata
+  çıkmadı)** (önceki batch'lerde doğrulanmış, 2026-09-25 turunda kaynak yeniden okunmamıştı): 15 (CUTE, Singh–Strouse), 19 (Ovadia), 41 (Longpre), 43–47 (Macdonald–Tonellotto,
   Wang, Xu, Adlakha, Press, BFCL), 58 (AgentHarm), 61 (Singhal), 63 (Shen/Deng/Zeng), 76 (AxBench
   0,098), 83 (Dhariwal ölçek 10), 85–87, 89 (TPU v4 %60), 94 (Delétang), 96 (Zhang MLP), 105
   (Ivison), 109 (MegaScale), 111 (OXE ablasyonu), 112 (RippleEdits).
-  (4) **Doğrulanamayan mecra/künye:** 78 Snell ve ark. (COLM 2024/2025?), 75 Paulo–Belrose ve Heap
+  (4) **Doğrulanamayan mecra/künye — KAPANDI (karar #265–#267):** Snell COLM 2024; Paulo–Belrose ve Heap ICLR
+  2026 (doğru); "VLMs are blind" sayıları doğru, künyenin sayfası LNCS 293–309 ve iki deney yalnızca genişletilmiş
+  sürümde; 34'ün satırı AlpacaEval 2.0 kazanma oranı; 92 LASER'de kaynağın tutarsızlığı metne yazıldı (yeni borç
+  (e)); 105'in notu düzeltildi (yeni borç (d)); 101'in cümlesi ACL 2018'e bağlandı; 50'nin sayıları ölçünün
+  sağlaması. Eski kayıt: 78 Snell ve ark. (COLM 2024/2025?), 75 Paulo–Belrose ve Heap
   (ICLR 2026?), 81 "VLMs are blind" sayıları (CVF 403), 34 R1 tablosundaki "tercih arenası"
   satırının hangi kıyas olduğu, 92 LASER'in 29,2'sinin top-10 doğruluk olması, 105 Şekil 1'in "yedi
   bağlam ortalaması" notu ile değerlerin yalnızca `başla kedi` bağlamıyla tutması, 101'deki Dror
   "110 bildirinin 3'ü" cümlesinin hangi çalışmaya ait olduğu, 50'deki Weller "%99,9 / %17" cümlesinin
   anlamı.
-- **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(15) önceki batch'lerden (kararlar #21, #97, #104,
+- **Doğrulanamayan / kısmen doğrulanan künyeler — KAPANDI (bakım run'ı 1):** kararlardaki kalemler yeniden
+  denendi. Gerstgrasser ve GPQA COLM 2024 listesinde; Wiener 1960 alıntısı, Sheridan ölçeği (Parasuraman 2000
+  üzerinden), Vaccaro'nun yayımlanmış sayıları, Urbina aktarımı ve AIMA künyesi birincil metinle doğrulandı;
+  Bellman 6(4), Gundersen–Kjensmo 1644–1651 ve Karpicke–Aue'nin (tam metinden) üçüncü itirazı tamamlandı. Eski
+  kayıt: (1)–(15) önceki batch'lerden (kararlar #21, #97, #104,
   #106, #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20–28'de doğrulanamayan
   künye yok** (kararlar #191, #198, #207, #216, #224, #232, #239, #246, **#263**). Kısmi kalemler:
   Gundersen–Kjensmo'nun bitiş sayfası; **Batch 28'de** Karpicke–Aue 2015 (118) yalnızca ERIC özetinden,
@@ -150,8 +205,9 @@ Tur cursor'ı değiştirmedi; 115–118 ondan sonra Batch 28'de yayımlandı ve 
   Chen ve ark.'nın "%99,7"si kaynak metnindeki bir toplama hatası olarak kaydedildi (karar #258).
 - **Hakemsiz kaynak oranı Batch 28'de 53 kalemin 9'u (karar #263)** — beklendiği gibi 116 ve 117'de yoğun:
   MCP belirtimi (115); Kaplan 2020 ve Uluslararası Yapay Zekâ Güvenliği Raporu (116); Chollet 2019, OpenAI
-  kuruluş ilkeleri, Hendrycks ve ark. 2025, ARC ekibinin üç raporu (117). Hepsi işaretli. **Bakımda ilk
-  bakılacak ön baskılar bunlardır** (özellikle Hendrycks ve ark. 2025 ile ARC-AGI-2).
+  kuruluş ilkeleri, Hendrycks ve ark. 2025, ARC ekibinin üç raporu (117). Hepsi işaretli. **Bakım run'ı 1'de
+  bakıldı:** hiçbiri hakemli çıkmadı; Hendrycks ve ark. ile ARC-AGI-2 için NeurIPS 2026 listesi yayımlanınca yeniden
+  bakılacak (yukarıdaki (a)).
 - **49'un belirtim cümlesi (karar #256):** 49 MCP belirtiminin genel ilkeler bölümündeki küçük harfli
   "must"ı "almalıdır" diye aktarıyor; bağlayıcı araç cümlesi SHOULD. İlkeler metninin sadık çevirisi olduğu
   için dokunulmadı; normatif düzey 115'te yazıldı. Bakımda yeniden açılmaz.
@@ -173,11 +229,29 @@ okunur; `git status` ile paralel oturum kontrol edilir. (2) İş, yalnızca "Aç
 baskı kontrolünden ya da raporlanmış bir olgu hatasından alınır. (3) Düzeltme yayımlanmış makalede yapılır;
 anlamlıysa §12 revizyon işareti konur, tek künye ya da tek sayı düzeltmesiyse konmaz. (4) Gövdeye her
 dokunuştan sonra `sync-series-hashes.cjs --write`, ardından iki repo kapısı; render etkileniyorsa izole
-kopyada build ve PNG turu. (5) Karar numarası **#265**'ten devam eder; bu dosyanın başlığı ve geçmiş kaydı
+kopyada build ve PNG turu. (5) Karar numarası **#270**'ten devam eder; bu dosyanın başlığı ve geçmiş kaydı
 güncellenir. **Yeni makale, yeni başlık ya da yeni faz yalnızca kullanıcının kapsam uzatma kararıyla açılır.**
 
 **Uyarı (kararlar #214, #223, #231, #238, #245, #262):** ölçülmemiş eğri çizilmez. Batch 28'in tek eğrisi
 (116, Şekil 1) kapalı formülden hesaplandı ve şeklin içinde öyle yazıyor.
+
+**Bakım run'ı 1'in eki (toplu ön baskı taraması için).**
+- **Crossref genel havuzu saniyede 1 istek, eşzamanlılık 1.** Başlıkla arama istek başına 8–10 sn sürüyor; paralel
+  istek hemen 429 alıyor. Toplu tarama için uygun değil; DOI sorgusu için kullan.
+- **OpenAlex (`api.openalex.org`) 50 sorgudan sonra 429 verdi.** OpenAlex'in arXiv DOI filtresi hakemli sürümü
+  birleştirmiyor.
+- **arXiv API'si Python `urllib`'e 406 veriyor, `requests` ile çalışıyor.** `comment` / `journal_ref` alanları
+  zayıf sinyal: VALL-E'nin TASLP sürümü orada görünmüyordu.
+- **En verimli kanal konferansların kendi dökümleri.** `https://{icml,iclr,neurips}.cc/static/virtual/data/<konf>-<yıl>-orals-posters.json`
+  ve `colm.cc/static/virtual/data/colm-2026-orals-posters.json` tam kabul listesini verir; COLM 2024/2025 listeleri
+  `colmweb.org/<yıl>/AcceptedPapers.html` altında. ACL Anthology'nin toplu bib dosyası
+  (`aclanthology.org/anthology.bib.gz`) çalıştaylar dâhil yerelde başlık eşleştirmeye yarar; TMLR'nin tam listesi
+  `jmlr.org/tmlr/papers/` altında.
+- **Semantic Scholar'ın `paper/batch` ucu** (POST, 35 kimlik) ilk eleme için iyi, ama COLM, ICML 2026 ve bazı
+  NeurIPS birleşmelerini göstermiyor. "arXiv" demesi hakemsizlik kanıtı değildir.
+- **Crossref `updated-by` alanı bir düzeltmeyi bu yolla yakaladı** (Salvi 2026); DOI'li her kaynakta bakılmalı.
+- **`papers.nips.cc/paper_files/paper/2025` kök sayfası** yalnızca Creative AI kitabını listeliyor; ana konferans
+  `/paper_files/paper/2025/vol38-main-conference` altında.
 
 **Venue doğrulaması — Batch 27–28'in çalışan kanalları.** **Batch 28'in eki:** yayıncı sayfalarının çoğu
 betiğe 403 veriyor (PNAS, ACM, SAGE, Taylor & Francis, OUP, Science, HDSR) — bu ölü bağlantı değil bot
@@ -206,7 +280,7 @@ yazılmış olmalıdır (başlık değişecekse entegrasyondan **önce**); YOL-H
 kavram-tekrar defteri, terim defteri, vaat defteri ve bağlayıcı kararlar güncellenir; doğrulama kapıları
 çalıştırılır. Yeni fazın kategori ve level kararı o run'ın ilk kararıdır. **118'in son bölümü "Bu serinin bir
 sonraki makalesi yok." diye bitiyor** — uzatma kararıyla bu cümle ve `/seri` `footerNote`'u da değişir.
-**Sonraki bağlayıcı karar numarası #265'tir.**
+**Sonraki bağlayıcı karar numarası #270'tir.**
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -357,11 +431,18 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
 - Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa`,
   `**Bu`, `**zorundadır**.`). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
 - Batch 12–27'nin üretimi (51–114) ve 2026-09-25 editoryal turu kullanıcı tarafından commit edildi
-  (`8ec2fc9`). **Batch 28 (115–118, 58/71/108/1/80 düzeltmeleri, `/seri` footerNote, TRIGGER, HANDOFF,
-  YOL-HARITASI) çalışma ağacında commit edilmemiş** duruyor. Commit/push kullanıcı kararıdır (SOZLESME
-  kapsamı dışı).
+  (`8ec2fc9`). Batch 28 de kullanıcı tarafından commit edildi (`7b79ebb`). **Bakım run'ı 1'in değişiklikleri
+  (yaklaşık 50 makale, 20 SVG, `catalog.json`, HANDOFF, YOL-HARITASI) çalışma ağacında commit edilmemiş** duruyor.
+  Aynı sırada başka bir oturum BOUN dosyalarında ve `.wolf/*`'ta çalışıyordu; o değişiklikler bu run'a ait değil.
+  Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
+- **Bakım run'ı 1 (2026-09-26):** TRIGGER bakım kipinde ilk kez çalıştı; makale üretilmedi. SOZLESME §4 ön baskı
+  taraması (211 kalem, 21'i hakemli çıktı), eski "Açık borçlar"ın sayı ve künye doğrulaması (205 bulgu; 10 BLOCKER,
+  39 MAJOR, 37 MINOR düzeltildi), 8 revizyon işareti, 79–82 graf satırları, dört uzun alt metin, 67'nin eksik şekil
+  satırı. Kararlar #265–#269; sonraki numara **#270**. Kullanıcı ultracode ile başlattı; iki sınırlı workflow (10 + 4
+  salt okunur ajan), kararlar ve düzeltmeler ana oturumda. Kapılar ve render sonuçları #269'da ve bu dosyanın bakım
+  bölümünde.
 - **Batch 28 (2026-09-26):** Makale 115–118, **Faz 14'ün ve serinin kapanışı**: ürünün geri alınamaz kenarı →
   alanın bilmediklerinin üç türü → AGI'nin sekiz tanımı → iki kollu soru yordamı. `BATCH=4+1`; `+1` seriyi
   tamamlanmış state'e aldı (#254), TRIGGER bakım kipine geçti, `/seri` `footerNote`'u değişti. **Son

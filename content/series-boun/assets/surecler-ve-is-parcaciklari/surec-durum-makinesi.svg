@@ -40,7 +40,7 @@
   <rect x="115" y="236" width="140" height="26" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 3" />
   <text x="185" y="254" font-size="13" text-anchor="middle" fill="var(--text-faint)">zombi</text>
 
-  <text x="15" y="288" font-size="13" fill="var(--text)">her an en fazla bir süreç ÇALIŞAN durumdadır</text>
+  <text x="15" y="288" font-size="13" fill="var(--text)">tek işlemcide her an en çok bir ÇALIŞAN süreç</text>
   <text x="15" y="308" font-size="13" fill="var(--text-faint)">engellenmiş süreç, olayı gelmeden hazır olmaz</text>
 
   <line x1="362" y1="36" x2="362" y2="300" stroke="var(--border)" stroke-width="1" />

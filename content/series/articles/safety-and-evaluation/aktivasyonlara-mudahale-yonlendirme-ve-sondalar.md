@@ -12,7 +12,7 @@ tags:
   - sonda
   - kavram-silme
   - model-duzenleme
-content_hash: sha256:5fd9b2dc8ec05e4281e47f3f76f1a41a93df7065b78f9b47a04a9a0991b7d75a
+content_hash: sha256:7affca8ed378bf8cbb0388fbc6ca9981109bce92182317307d92c272a15e72c6
 classification_version: 1
 classification_batch: 18
 ---
@@ -98,7 +98,7 @@ Son bir kullanım biçimi müdahale bile değil: sondayı yalnızca **okumak** i
 
 **Ortalama değil dağılım okunur.** Kırk kümede yönlendirilebilirlik örnekten örneğe değişir, bazı kümelerde girdilerin yaklaşık yarısı ters yöne gider, ve yönlendirilebilirlik büyük ölçüde veri kümesinin özelliğidir.
 
-**Açık uçlu üretimde bugün en güçlü araç istemdir.** Ölçülen karşılaştırmada istem 0,894, temsil yöntemlerinin en iyisi 0,741, sabit yönler 0,239 ve altı. Aktivasyon müdahalesinin üstünlüğü başka yerdedir: istemin erişemediği yer, tersinirlik ve nedensel iddia kurabilme.
+**Açık uçlu üretimde bugün en güçlü araç istemdir.** Ölçülen karşılaştırmada istem 0,894, temsil yöntemlerinin en iyisi 0,741, öğrenilmiş tek bir yön 0,543, ortalama fark yönü ve öbür sabit yönler 0,239 ve altı. Aktivasyon müdahalesinin üstünlüğü başka yerdedir: istemin erişemediği yer, tersinirlik ve nedensel iddia kurabilme.
 
 **Üç kapı birbirinin yerine geçmez.** İstem ucuzdur ve her istekte yeniden verilir; aktivasyon çıkarım anında uygulanır ve geri alınır; ağırlık kalıcıdır ama ima edilen olguları güncellemez ve arka arkaya düzenlemede unutur.
 

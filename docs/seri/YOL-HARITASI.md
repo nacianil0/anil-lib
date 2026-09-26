@@ -627,9 +627,14 @@ kavram-tekrar tablolarına yazıldı.)
 - 76 ← 75 (kelepçeleme; sözlük parçasının çözücü yönü; yönlendirme teriminin gloss'u), 62 (**ret yönü**: tek yön silinince ret kalkıyor), 65 (Azaria'nın iç sınıflandırıcısı — **devrolan planlı tekrarın tahsili**), 66 (karakter vektörü; ince ayar kayması 0,76–0,97), 67 (temsil mühendisliği; sonda; uyuyan ajan sondası; Burns'ün etiketsiz ölçütü), 18 (ROME: ağırlık düzenleme ↔ aktivasyon müdahalesi; Hase), 24 (sistem istemi ↔ aktivasyon: aynı davranışın iki kapısı), 10 (üretim adımına müdahale — PPLM'in yeri), 63 (ağırlığa erişen saldırgan), 69 (denetimin iç erişimi), 72 ("yönlendirmeli tamamlama" çakışması), 74 (yeter ↔ gerekli; uyuyan yol yanılsaması) `[yayında]`
 - 77 ← 76 (değiştirmek ↔ açıklamak ayrımı), 45 ("atıf" sözcüğünün kaynak gösterme anlamı — çakışma adlandırıldı), 31 (sadakat tanımı; Turpin'in düzeneği), 66 (Turpin'in sayıları: 36,3 puan), 67 (Lanham; sonradan gerekçe), 74 (atıf yaması; dikkat açıklama değil; yorumlanabilirlik yanılsamaları), 75 (parçalardan kurulan çizge), 22 (istem duyarlılığı ↔ aksiyom adı olarak duyarlılık), 61 (izleyiciye göre yazılan ara adımlar — dolaylı) `[yayında]`
 - 78 ← 5 ve 9 (**78 koordinatı**: beliren yetenekler; ölçek yasaları; ikili cetvel), 71 (cetvel bir tasarım ürünüdür; ölçüte çalışmak; öngörülemezlik), 72 (test görevine eğitim; ezber ölçekle büyür), 74 (geç genelleme; ilerleme ölçüsü; indüksiyon başlarının faz geçişi), 16 (cetvel), 23 (örnekle öğrenme ölçekle belirir), 68 ve 70 (eşik ölçümü; yönetişimin dayandığı varsayım), 2 (kayıp ↔ yetenek) `[yayında]`
-> **Not:** 79–82'nin graf satırları Batch 19'da eklenmedi; o dörtlünün prerequisite'leri HANDOFF'un ilgili
-> "Next batch preparation" bölümünde ve Batch 19 öğrenme notlarında duruyor. Boşluk bilinçli değil, devrolan bir
-> eksiktir ve ileride toplu olarak kapatılabilir.
+**Batch 19 (79–82) — gerçekleşen graf (bakım run'ı 2026-09-26'da eklendi).** Batch 19 kendi satırlarını
+yazmamıştı; satırlar yayımlanmış dört metnin numaralı geri göndermelerinden çıkarıldı. Batch 18 HANDOFF'unun
+taslağında olup metinde kullanılmayan bağlar (79 için 17, 45, 27; 80 için 16, 68, 8; 81 için 3, 23, 75) yazılmadı.
+
+- 79 ← 78 ("bir sonraki makale" devri: bir sınavdaki başarının koşullar değişince sürüp sürmediği), 2 (genelleme; aynı dağılım varsayımının adı burada kondu), 65, 72 ve 76 (seride adsız geçen üç kayma örneği — kalibrasyonun bozulduğu yer, yeniden yazılan sınavda puanın düşmesi, yönlendirmenin eğitim dağılımı dışına genelleşmemesi — burada resmî olarak kuruldu), 63 (kasıtlı saldırı: kaymayı saldırganın seçtiği eksen), 58 (istem enjeksiyonu: girdiyi ne kullanıcının ne dünyanın seçtiği eksen), 71 (biçim ayrıntılarının açtığı 76 puanlık aralık: isteme dokunmak bir kayma türü), 36 (öz-tutarlılık: ilgisiz bilgi kümesinde ölçülmüş çözümlerden biri) `[yayında]`
+- 80 ← 79 ("bir sonraki makale" devri: puan koşulları olmadan taşınamaz; alt topluluk kaymasının 92,2 ↔ 56,0'ı gruplara bölünmüş raporlamanın gerekçesi oldu), 71 (protokol sonucun içindedir), 20 (model kartının adı orada kondu, içi burada açıldı), 69 (şeffaflık endeksi 37 → 58; denetimin erişimi), 70 (eşik–önlem çifti sistem kartının bir bölümü olarak), 63 (kırmızı takımın kurumsal hâli: sistem kartındaki sayılar), 14 (temizlik hattı: belgelenen web derlemesinin türü), 72 (kirliliğin belgeleme tarafından görünen hâli) `[yayında]`
+- 81 ← 54 (**numarasız işaretin tahsili**: "görüntüyü token'a çeviren modellerin mekanizması çoklu modalite fazının konusu" borcu burada ödendi), 80 (belgeleme boşluğu ölçülen verinin burada sonucu belirlemesi), 7 (mimarinin görüntüye uygulanması: yamalar), 6 (nokta çarpım iki modalite arasında benzerlik ölçüsü), 11 (zero-shot düzeninin görüntü hâli), 12 (sentetik talimat verisinin görüntü hâli), 8 (yığınlamanın görüntü hâli), 21 ve 26 (görsel token sayısının pencere payı ve ön dolum maliyeti), 17 (uydurmanın, önünde kaynak varken sürmesi), 19 (düşük ranklı uyarlama gövdeleri açınca sıralamanın dönmesi), 67 (sonda: bilgi kodlayıcıda var), 79 (Taori: doğal kaymada işe yarayan tek eksen daha çeşitli eğitim dağılımı), 55 ve 74 ("yama" sözcüğünün çakışması adlandırıldı) `[yayında]`
+- 82 ← 81 ("bir sonraki makale" devri: modaliteyi token'a çevirip dil modeline bağlamak; sonucun eğitim dağılımından gelmesi seste de çıktı), 6 (dikkatin hizalamayı öğrenmesi), 8 (öz-denetimli öğrenmenin ses hâli), 10 (otoregresif üretimin ses hâli), 15 (kapsanan dil sayısı ekseni), 16 ve 71 (değerlendirme kümesi mantığının temsile uygulanması ve aynı yordamın uyarısı), 23 (örnekle öğrenmenin ses hâli: üç saniyelik kayıt), 26 ve 60 (ön dolum ↔ adım adım üretim; gecikme ve maliyet hesabı), 43 (ürün kuantizasyonuyla aynı aileden kodlayıcı), 68 (kötüye kullanım tablosuna ses taklidi satırı), 79 (etkin sağlamlık) `[yayında]`
 
 - 83 ← 82 ("bir sonraki makale" devri: gürültüden geri temizleyen üretim), 10 (otoregresif üretim, örnekleme ve **sıcaklık** — kılavuzluğun karşılığı burada kuruldu), 2 (kayıp: ortalama karesel hata yeni bir soruya bağlandı), 26 (ön dolum ↔ adım adım üretim; adım sayısının bedeli), 81 (görüntü yaması; çapraz dikkat ters yönde kullanıldı), 4 (sıkıştırma ↔ sadakat takasının biçimi), 7 (U-Net yerine Transformer omurgası), 16 ve 71 (cetvelin denetimi: FID'in yanlılığı), 72 (çıkarılabilir ezber üretken modelde), 45 (**kesinlik** sözcüğünün çakışması adlandırıldı), 33 (**kapsama** sözcüğünün çakışması adlandırıldı), 6 (**skor** sözcüğünün çakışması adlandırıldı) `[yayında]`
 - 84 ← 83 (iki üretim düzeninin ayrımı; "bir sonraki makale" devri), 4 (tokenizasyon bir tasarım kararıdır; alt-kelime mantığı büyük sözlüğün ayrıştırılmasında yeniden çıktı), **30 (kısıtlı üretim — devrolan planlı tekrarın tahsil yeri; biçim garantisi burada mimari zorunluluk)**, 26 (ardışık adımın maliyeti; sıranın bedeli), 7 (nedensel maske sıra varsayımını taşır), 9 (VAR'ın güç yasası), 82 (akustik token'lar zaten ayrıktı — bedelin modaliteye göre değişmesi), 81 (bağlantı yollarının çıktı tarafında asimetrik kalması), 21 ve 25 (pencere bütçesi: görüntü başına 1024 token), 14 (karışım tartışmasının çok modlu hâli), 19/27 (**kuantizasyon** sözcüğünün çakışması adlandırıldı) `[yayında]`
@@ -3058,6 +3063,8 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
    ark. 2025, Backlund & Petersson 2025, Amodei ve ark. 2016, Clark & Amodei 2016, Krakovna ve ark. 2020,
    Manheim & Garrabrant 2018, Shah ve ark. 2022, Hubinger ve ark. 2019, Denison ve ark. 2024, Baker ve ark.
    2025, Askell ve ark. 2021, Leike ve ark. 2018, Touvron ve ark. 2023 (Llama 2).
+   Bakım run'ı 1'de (karar #265) bu listeden Kalai ve ark. (Nature 2026), Barres ve ark. (ICML 2026) ve Luo ve ark.
+   (NSDI '26) hakemli çıktı ve künyeleri değişti; liste tarihsel kayıt olarak duruyor.
 7. **Snell ve ark.** künyesi ICLR 2025 sürümüne göredir ("…than Scaling Parameters for Reasoning");
    arXiv v1 başlığı farklıdır ("…than Scaling Model Parameters"). Yayın yeri ICLR olduğu için
    başlık da ICLR sürümündendir.
@@ -3902,7 +3909,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     sonucu `ipython` rolüyle döner; `eom_id` mesaj sonu (araç sonucu bekleniyor), `eot_id` tur
     sonu; `Environment: ipython` satırı kipi açar; JSON çağrı `{"name": …, "parameters": …}`.
     Patil ve ark. (ICML 2025, PMLR 267:48371–48392): serbest metin kipi 4.251 örnekte ortalama
-    412,93 ↔ yapılandırılmış kip 182,5 ayrıştırma hatası; ayrıştırılabilenlerde çoklu kategoride
+    412,93 ↔ yapılandırılmış kip 182,5 ayrıştırma hatası (oran 2,26; kaynağın "üç kat" ifadesi kendi sayısıyla tutmuyor, 47 buna göre düzeltildi — #265); ayrıştırılabilenlerde çoklu kategoride
     yanlış çağrı 77,5 ↔ 21; kategoriler tek/çoklu/paralel/paralel çoklu/ilgisiz; 64.517 gerçek
     sorgu; sorgu başına ortalama 3 araç seçeneği (en çok 37), araç başına ortalama 4 parametre
     (en çok 28); gpt-4o FC tek turlu AST 77,2/93,5/93,0/86,0, ilgisiz 83,1, çok turlu temel 62,5,
@@ -3912,7 +3919,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Patil ve ark. (NeurIPS 2024): 1.645 API (94 TorchHub, 626 TF Hub, 925 HF); halüsinasyon = AST
     alt ağacı hiçbir API'ye uymayan çağrı; GPT-4 0-shot halüsinasyon TorchHub 36,55 / HF 37,16 /
     TF Hub 78,65; Gorilla 0-shot 6,98 / 10,95 / 5,40; oracle belgeyle TorchHub 0; getirici-farkında
-    eğitim +12,37 (TorchHub) ve +23,46 (HF); sınavda GPT-Index −29,20, BM25 −52,27 (oracle'a
+    eğitim +12,37 (TorchHub) ve +23,46 (HF; kaynağın Tablo 2'siyle tutmuyor, 47'den çıkarıldı — #265); sınavda TF Hub'da GPT-Index −29,20, BM25 −52,27 puan (oracle'a
     göre). Wang ve ark. (ICML 2024, PMLR 235:50208–50232) API-Bank atomik çağrı: Llama-2-70b kod
     35,6 / JSON 14,3 / metin 37,6; gpt-4-0613 75,4 / 82,0 / 74,4. Schick ve ark. (NeurIPS 2023):
     τf 0,5/1,0/2,0'de hesap makinesi 3.680/994/138, Wikipedia arama 207.241/60.974/13.944; LAMA'da
@@ -4527,7 +4534,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Mouton anlamlı fark yok; OpenAI 100 katılımcı, anlamsız artış; Claude 4 sistem kartı kontrol %25 ± 13 →
     %63 ± 13 ve %42 ± 11, 2,53× ve 1,70×; Spitale 697 katılımcı, 0,84 ↔ 0,72 ve 0,89 ↔ 0,92; Goldstein 8.221
     katılımcı, %24,4 → 43,5, gerçek 47,4; Hackenburg 8.587 katılımcı, hedefleme farkı anlamsız; Salvi 820
-    katılımcı, +%81,7; Costello 2.190 katılımcı, ≈ %20, iki ay; Hazell 600+ milletvekili, sentin kesri; Marchal
+    katılımcı, +%81,7 (ön baskı; dergi sürümü 900 katılımcı, +%81,2; 2026 yazar düzeltmesiyle kişiselleştirmenin ek katkısı anlamsız, P = 0,07 — #265); Costello 2.190 katılımcı, ≈ %20, iki ay; Hazell 600+ milletvekili, sentin kesri; Marchal
     ≈ 200 olay, %27; OpenAI beş operasyon, altı basamaklı ölçekte ≤ 2; WMDP 3.668 soru, 63,7 → 31,2 / 44,0 →
     28,2 / 58,1 → 57,1, rastgele 25; Deeb & Roger ≥ %88; Qi > %60. **69:** 10²⁵ işlem (Art. 51/2), 1 Ağustos
     2024 yürürlük, 2 Ağustos 2025 uygulama, 2 Ağustos 2027 eski modeller; iki hafta bildirim (Art. 52); şeffaflık
@@ -4813,7 +4820,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     7 kata varan hızlanma ve bir trilyonun üstü; GLaM 1,2 trilyon, enerjinin üçte biri, çıkarımda yarı işlem, 29 görev;
     uzman seçimi 8 milyar / 64 uzmanda iki kattan fazla hızlı yakınsama; Clark kesim noktaları 937 / 85 / 83 milyar;
     Ludziejewski 10²⁰ işlemde 20 kat, 10²⁵ üstünde 40 kattan fazla; DeepSpeed-MoE 4,5 kat hızlı ve 9 kat ucuz çıkarım;
-    Mixtral 47 / 13 milyar, ardışık token'ın aynı uzmana gitme oranı orta katmanlarda yüzde 22,7–28,4 ↔ rastgele 12,5;
+    Mixtral 47 / 13 milyar, ardışık token'ın aynı uzmana gitme oranı 15. katmanda yüzde 23,6–28,4 ↔ rastgele 12,5 (eski kayıttaki 22,7 son katmanın değeriydi — #265);
     OLMoE 64 uzman / top-8, ön eğitimin yüzde 40'ında doyma yüzde 80'e varıyor; DeepSeekMoE 16 milyar ≈ 7 milyarlık
     yoğun modelin yüzde 40 hesabıyla. **86:** BigBird 8 kata kadar uzun dizi; doğrusal dikkat 4000 kata varan hızlanma;
     S4 16.384 uzunluklu görevde yüzde 88; Mamba 5 kat üretim verimi ve iki katı boyutla eşitlenme; Jelassi 410 milyon ↔
@@ -5011,8 +5018,8 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     kayıp 1,609 nat → perplexity 5,00 (doğru token'a 0,2); 2,051 → 7,78 ve 1,937 → 6,94, fark 0,114 nat/token
     ↔ yüzde 12; Shannon 1951: yüz harfe kadar uzun menzilli etkilerle entropi harf başına yaklaşık bir bit,
     fazlalık kabaca yüzde 75; Cover–King 1978: yaklaşık 1,3 bit/simge; Brown ve ark. 1992: üst sınır
-    1,75 bit/karakter; Delétang: Chinchilla 70B ImageNet parçaları yüzde 43,4 (PNG 58,5) ve LibriSpeech
-    yüzde 16,4 (FLAC 30,3); Huang ve ark.: 31 model, 12 ölçüt, Pearson yaklaşık −0,95;
+    1,75 bit/karakter; Delétang: Chinchilla 70B ImageNet parçaları yüzde 48,0 (aynı parçalarda PNG 61,7) ve LibriSpeech
+    yüzde 21,0 (FLAC 30,3) — Tablo 1; özetteki 43,4 / 16,4 tabloyla tutmuyor, 94 buna göre düzeltildi (#265); Huang ve ark.: 31 model, 12 ölçüt, Pearson yaklaşık −0,95;
     KL_bon = log n − (n−1)/n → n = 4: 0,636 · n = 10: 1,403 · n = 1.000: 5,909 · n = 60.000: 10,002 nat.
 205. **Kendi hesabımız (Batch 22): dört yer.** (a) 91'deki üç cetvel tablosunun bütün sayıları (nokta çarpım,
     kosinüs, Öklit uzaklığı) kurulmuş üç vektörden elle hesaplandı ve şekle "elle hesaplandı" kaydı düşüldü.
@@ -5626,6 +5633,71 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     α_D'si, HLMI ↔ FAOL'un ayrı katılımcılara sorulması, Turing hükmünün kuraldan çok sorgucu topluluğuna bağlı
     çıkması, 118'in BOUN finaliyle aynı argüman sırasını taşıması (hatırlama bölümü baştan yazıldı: geri bildirim ve
     karmaşık malzeme tartışması eklendi, Cepeda çıkarıldı).
+
+265. **Bakım run'ı 1 (2026-09-26): hakemsiz kaynakların güncel durumu (SOZLESME §4).** Kaynakçalarda hakemsiz / ön
+    baskı / "doğrulanamadı" / kurumsal rapor etiketi taşıyan **211 benzersiz kalem** tarandı: 121'i hâlâ ön baskı, 49'u
+    hakem süreci beklenmeyen belge (sistem kartı, blog, belirtim, çerçeve), **21'i hakemli çıktı**, 13'ü yalnızca
+    hakemli bir çalıştayda, 7'sinin etiketi başka bir nedenle yanlıştı. Hakemli çıkanlar künyeye (yayın yılı, mecra,
+    DOI ya da bildiri sayfası; başlık değiştiyse "ön baskı adı") ve gövdedeki niteleme cümlesine işlendi: Kalai ve ark.
+    (Nature 2026, yeni başlıkla; 10, 17, 65), Morris ve ark. (ICML 2026; 18), Barres ve ark. (ICML 2026; 57, 59, 60 ve
+    60'ın Şekil 3'ü), Luo ve ark. (NSDI '26, sistemin yeni adı Agentix; 60), Robey ve ark. (TMLR 2025; 63), Durmus ve
+    ark. (COLM 2024; 66), Cheng ve ark. (ICLR 2026, ELEPHANT; 66), Sheshadri ve ark. (NeurIPS 2025; 67 ve Şekil 2'nin
+    notu), Zhu ve ark. CVE-Bench (ICML 2025; ilk yazarın adı ve yazar listesi de düzeltildi; 68), Gudibande ve ark.
+    (73 hâlâ hakemsiz diyordu), Rein ve ark. GPQA (COLM 2024; 71), Snell ve ark. (COLM 2024; 78), Cooper ve ark. (COLM
+    2026'ya kabul; 72), Dubois ve ark. (COLM 2024; 73), Rajamanoharan ve ark. Gated SAE (NeurIPS 2024; 75), Li ve ark.
+    (EMNLP 2025 Findings; 77), Chen–Wang ve ark. VALL-E (IEEE TASLP 2025; 82), Bar-Tal ve ark. Lumiere (SIGGRAPH Asia
+    2024; 83), Emu3 (Nature 2026; 84 — hakemli sürüm uzman modelleri "geçiyor" değil "eşitliyor" diyor, gövde buna
+    çekildi). Çalıştay kalemleri "<çalıştay>; ana konferans bildirisi değildir" biçimine çekildi (4, 5, 64, 67, 71, 73,
+    74, 79). Karar #6'daki hakemsiz listeden Kalai, Barres ve Luo düştü. Yeni başlıklar ve yıllar gövdeyle birlikte
+    değişti; `content_hash`'ler `sync-series-hashes.cjs --write` ile yeniden yazıldı.
+266. **Etiket ve bağlantı kararları (bakım run'ı 1).** RAND araştırma raporları "kurum içi hakem sürecinden geçer, dergi
+    ya da konferans yayını değildir" diye etiketlendi (68, 70; yayıncı raporların hakemden geçtiğini yazıyor). Feng ve
+    ark. bir enstitünün deneme dizisi (59); Weidinger ve ark. davetli bir dergi makalesi (71). 1'in Samuel kaynağı bir
+    içerik çiftliği kopyasıydı; özgün soru-cevap sayfasına taşındı. 86'nın Jamba künyesi ICLR 2025'teki "Jamba Team"
+    imzasına çekildi (sayılar ICLR metninde Jamba-1.5-Mini için geçiyor). 70'teki METR bağlantısı 404 veriyordu;
+    makalenin aktardığı cümleyi taşıyan Ağustos 2024 PDF'ine çevrildi. 63'teki Anthropic "many-shot" blogu ikinci bir
+    kimlik değil, gövdede ayrı bir iddiayı (sınıflandırıcıyla yüzde 61 → 2) taşıyor; bırakıldı. **Crossref `updated-by`
+    ilişkisi gerçek bir sonuç değiştirdi:** Salvi ve ark.'nın 2026-09-03 yazar düzeltmesiyle kişisel bilgiye erişen
+    modelin erişmeyene üstünlüğü anlamsız (P = 0,07); 68'in "çok turlu konuşmada hedefleme katkı getiriyor" cümlesi,
+    "Kendini yokla" cevabı ve özet maddesi buna göre yeniden yazıldı; dergi sürümünün sayıları (900 katılımcı, yüzde
+    81,2) ön baskınınkilerin yerine geçti.
+267. **Açık borç (3)–(4)'ün sayı doğrulaması (bakım run'ı 1).** 2026-09-25 turunda yeniden açılmayan 30 makale–kaynak
+    çifti ve doğrulanamayan mecra/künye kalemleri birincil metinle karşılaştırıldı: 205 bulgunun 115'i doğru çıktı; **10
+    BLOCKER, 39 MAJOR, 37 MINOR** düzeltildi; 4 çözülemeyen kalem kaynağın kendi tutarsızlığını söyleyen ifadeyle
+    kapatıldı. BLOCKER'lar ana oturumda birincil metinden yeniden doğrulandı: 94 Delétang (özetteki 43,4 / 16,4 tabloyla
+    tutmuyor; Tablo 1: 48 / 21), 41 Longpre (ezber oranı getirilen belge sayısıyla değil eğitimde kullanılan belgenin
+    sırasıyla artıyor), 47 BFCL (412,93 / 182,5 = 2,26, "üç kat" değil) ve Gorilla (23,46 tabloyla çelişiyor), 85
+    Mixtral (15. katmanda 23,6–28,4; 22,7 son katmanın), 87 Busbridge (en büyük öğretmen 12,6 milyar; "14 milyar"
+    eksen etiketi), 112 RippleEdits (yüzde 100 "aynı ilişkinin öteki nesneleri"; ilgisiz ilişkiler 55,4; "ölçütlerin
+    tamamında" değil ortalamada). Başlıca MAJOR'lar: 111 OXE (tek değişkenli çift 48,7 / 47 ↔ 0 / 1; sınavın adı), 109
+    MegaScale (izleme katmanlarının içeriği; adım başına kayıp/gradyan normu/öğrenme oranı kaynakta yok, "bizim
+    eklememiz" diye işaretlendi), 81 (doğrusal sonda ve boşluk deneyleri ACCV bildirisinde değil, hakemsiz genişletilmiş
+    sürümde; LNCS sayfası 293–309), 19 Ovadia ("tüm parametreler" iddiası kaynakta yok), 63 (Deng'in yüzde 99'u dokuz
+    dilden herhangi birinin tutması; Zeng'in "sıfır"ı üç denemede), 105 (Şekil 1'in KL notu ve derlem kaybı hesabının
+    tarifi), 34 ("tercih arenası" satırı AlpacaEval 2.0 kazanma oranı). **Kural (yinelendi):** kaynağın metni kendi
+    tablosuyla çelişirse tablo esas alınır ve bu metinde söylenir.
+268. **Revizyon işaretleri (bakım run'ı 1).** `revised_at: "2026-09-26"` sekiz yazıya kondu: 19, 41, 68, 81, 105, 109,
+    111, 112 — okurun öğrendiği şey değişti. Tek sayı, koşul ya da künye düzeltmesi olan öteki yazılar işaretsiz
+    (SOZLESME §12). 19, 81, 105, 109 ve 112'nin 2026-09-25 notları yenisiyle değişti.
+269. **Süreç (bakım run'ı 1).** Kullanıcı ultracode açıkken `/workflow-authoring` ile TRIGGER'ı çalıştırdı. İki sınırlı
+    workflow: (1) 10 salt okunur ajan — beş kaynak durumu taraması, bir mecra/künye borcu, dört sayı doğrulaması; (2)
+    dört salt okunur ajanla ana oturumun diff'inin karşıt doğrulaması. Ajanlar hiçbir dosyaya dokunmadı; bütün kararlar
+    ve düzeltmeler ana oturumda, her eski metnin dosyada tam bir kez geçtiği doğrulanarak uygulandı. Aynı run'da: 79–82
+    prerequisite satırları eklendi; 200 kelimeyi aşan dört alt metin ≤ 120'ye indi; **67'nin Şekil 3'ünde yayımlandığı
+    günden beri eksik olan yedinci satır (Schoen 2025) çizildi** — gövde "son satır Schoen" ve başlık "yedi ölçüm"
+    diyordu, SVG altı satırdı. Toplu tarama betiğiyle Crossref (saniyede 1 istek) ve OpenAlex (429) sınıra takıldı;
+    etkin kanal konferansların `static/virtual/data/<konf>-<yıl>-orals-posters.json` dökümleri ve ACL Anthology'nin
+    toplu bib dosyası oldu. İkinci workflow ana oturumun diff'inde **38 bulgu** buldu (2 BLOCKER, 14 MAJOR, 22
+    MINOR). Bunların çoğu **eksik yayılımdı**: düzeltilen olgu aynı makalenin özet maddesinde, disiplin maddesinde, şekil
+    kaydında ya da başka bir cümlesinde eski hâliyle kalmıştı (112'nin "kendi vaadini tutuyor" maddesi, 17'nin
+    "teknik rapor" cümlesi). BLOCKER'lardan biri de run'dan önce vardı: 79'da "on üç görev" aslında 8 görev ve 13 veri
+    kümesi. Hepsi ana oturumda değerlendirildi ve uygulandı. 85'te kaynağın "activated"ı için makalenin kendi terimi
+    "çalışan parametre" kullanıldı; "etkin parametre" o makalede Clark ve ark.'nın ölçüsünün adı. **Ders: bir olguyu
+    düzeltirken aynı makalenin özetini, özet maddelerini, şekil kaydını ve "Kendini yokla" cevabını da tara.** Kapılar:
+    `check-series-content` ve `check-series-svg` temiz, `pnpm typecheck` 0, 764/764 test, `pnpm build` exit 0
+    (`/seri/[slug]` 118 yol, izole kopyada); 21 şekil light/dark PNG olarak alınıp gözle incelendi; 20 sayfa × 3
+    genişlik × 3 temada DOM ölçümü sorunsuz; revizyon satırı tarayıcıda render ediliyor. **Sonraki bağlayıcı karar
+    numarası #270'tir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

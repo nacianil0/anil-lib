@@ -12,7 +12,7 @@ tags:
   - iyi-siralama
   - ozyineleme
   - yapisal-tumevarim
-content_hash: sha256:6c709feefcfe141fb34895e237b168dd5d8e3c1f84aa67716ec6a9ba9e2cd22d
+content_hash: sha256:5d76d13c66a0bcf1c2d65df36a66a8acd9a616080a965fb57d5ba02b7644eea4
 classification_version: 1
 classification_batch: 1
 ---
@@ -84,7 +84,7 @@ Buradan çıkan pratik kural: tümevarım adımını yazdıktan sonra **en küç
 
 ## Güçlü tümevarım
 
-Bazen n + 1 durumunu kurmak için yalnızca n durumu yetmez; daha küçük **birden çok** duruma ihtiyaç duyarsın. **Güçlü tümevarım (strong induction)** tam olarak buna izin verir: adımda P(n)'i değil, "n'den küçük bütün değerler için P doğrudur" ifadesini varsayarsın.
+Bazen n + 1 durumunu kurmak için yalnızca n durumu yetmez; daha küçük **birden çok** duruma ihtiyaç duyarsın. **Güçlü tümevarım (strong induction)** tam olarak buna izin verir: adımda yalnızca P(n)'i değil, "n + 1'den küçük bütün değerler için, yani tabandan n'ye kadar P doğrudur" ifadesini varsayarsın.
 
 Şekil 2 üç yaklaşımın hipotez kapsamını yan yana koyuyor: zayıf tümevarım tek bir önceki basamağı, güçlü tümevarım bütün önceki basamakları kullanır, iyi sıralama ilkesi ise en küçük karşı örnek üzerinden çelişki üretir.
 
@@ -118,7 +118,7 @@ Kullanımı çelişkiyle ispatın bir kalıbıdır: iddianın yanlış olduğunu
 
 Yapı tanıdık gelmeli: özyinelemeli tanımın taban durumu tümevarımın taban durumudur, özyineleme kuralı da tümevarım adımıdır. Bu yüzden **özyinelemeli olarak tanımlanmış bir nesne hakkındaki iddia neredeyse her zaman tümevarımla ispatlanır**; başka bir araç aramak gereksizdir.
 
-Somut bir örnek üzerinde yürütelim. Hanoi kuleleri probleminde n diski bir çubuktan diğerine taşıyan standart özyinelemeli çözüm şu adımlardan oluşur: üstteki n − 1 diski ara çubuğa taşı, en büyük diski hedefe koy, n − 1 diski üstüne taşı. Harcanan hamle sayısı T(1) = 1 ve T(n) = 2 · T(n − 1) + 1 özyinelemesini sağlar. Bu sayının aynı zamanda en azı olduğu da kısa bir argümanla görülür ve argümanın kendisi bir tümevarımdır. n diski taşımanın en az hamle sayısına M(n) diyelim. En büyük diski hareket ettirebilmek için diğer n − 1 diskin üçüncü çubukta toplanmış olması gerekir, bu en az M(n − 1) hamle eder; en büyük disk en az bir hamle yapar; sonra aynı n − 1 disk yeniden onun üstüne taşınır, bu da en az M(n − 1) hamle eder. Yani M(n) ≥ 2 · M(n − 1) + 1; M(1) = T(1) = 1 olduğundan her n için M(n) ≥ T(n), standart çözüm de tam T(n) hamle kullandığı için M(n) = T(n).
+Somut bir örnek üzerinde yürütelim. Hanoi kuleleri probleminde n diski bir çubuktan diğerine taşıyan standart özyinelemeli çözüm şu adımlardan oluşur: üstteki n − 1 diski ara çubuğa taşı, en büyük diski hedefe koy, n − 1 diski üstüne taşı. Harcanan hamle sayısı T(1) = 1 ve T(n) = 2 · T(n − 1) + 1 yineleme bağıntısını (recurrence) sağlar. Bu sayının aynı zamanda en azı olduğu da kısa bir argümanla görülür ve argümanın kendisi bir tümevarımdır. n diski taşımanın en az hamle sayısına M(n) diyelim. En büyük diski hareket ettirebilmek için diğer n − 1 diskin üçüncü çubukta toplanmış olması gerekir, bu en az M(n − 1) hamle eder; en büyük disk en az bir hamle yapar; sonra aynı n − 1 disk yeniden onun üstüne taşınır, bu da en az M(n − 1) hamle eder. Yani M(n) ≥ 2 · M(n − 1) + 1; M(1) = T(1) = 1 olduğundan her n için M(n) ≥ T(n), standart çözüm de tam T(n) hamle kullandığı için M(n) = T(n).
 
 **İddia.** Her n ≥ 1 için T(n) = 2ⁿ − 1.
 

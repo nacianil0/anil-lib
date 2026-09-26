@@ -12,7 +12,7 @@ tags:
   - ozdeger
   - dusuk-rank
   - matris-sikistirma
-content_hash: sha256:b7fe6d4bfae4f1b0f7c22f2f4eff3fd392c5057676e51fe0e57a01f6806837c2
+content_hash: sha256:434cd37f054cd3624708d804c65f3e19986e9f7c952b6dbacd69f005b01dc6a3
 classification_version: 1
 classification_batch: 22
 revised_at: "2026-09-25"
@@ -94,7 +94,7 @@ Eckart–Young teoremi "en iyi" derken belirli bir şeyi kastediyor: **matrisin 
 
 Xin Wang ve arkadaşlarının ICLR 2025'te sunduğu çalışma farkı ölçüyor. LLaMA 2-7B'nin WikiText-2 üzerindeki perplexity'si 5,47. Ağırlıklara doğrudan tekil değer kesmesi uygulayıp modeli yüzde 20 küçültürsen perplexity **18.192**'ye çıkıyor — model tamamen bozuluyor. Aynı sıkıştırma oranında, kesmenin kayba etkisini hesaba katan ve kesme sonrası ağırlıkları güncelleyen yöntemleriyle perplexity 7,73'te kalıyor. Aradaki uçurum teoremin yanlış olduğunu göstermiyor; teoremin **başka bir soruyu** cevapladığını gösteriyor.
 
-Ters yönde daha da şaşırtıcı bir ölçüm var. Pratyusha Sharma, Jordan Ash ve Dipendra Misra'nın ICLR 2024'te sunduğu çalışma, eğitilmiş bir modelde **seçilmiş katmanların** yüksek dereceli tekil bileşenlerini atmanın başarıyı artırdığını buluyor. GPT-J'nin CounterFact kümesindeki doğruluğu 13,1; tek bir katmanda yapılan en iyi kesmeden sonra 24,0; birkaç katmandaki kesmeler birleştirildiğinde 29,2. Ek parametre, ek veri ya da ek eğitim kullanılmıyor; yapılan tek şey bileşen silmek.
+Ters yönde daha da şaşırtıcı bir ölçüm var. Pratyusha Sharma, Jordan Ash ve Dipendra Misra'nın ICLR 2024'te sunduğu çalışma, eğitilmiş bir modelde **seçilmiş katmanların** yüksek dereceli tekil bileşenlerini atmanın başarıyı artırdığını buluyor. GPT-J'nin CounterFact kümesindeki doğruluğu, yani ilk tahminin doğru çıkma oranı, 13,1; tek bir katmanda yapılan en iyi kesmeden sonra 24,0; birkaç katmandaki kesmeler birleştirildiğinde 29,2. Kaynak bu son sayıyı bir cümlede ilk on tahminin doğruluğu diye anıyor, ama 24,0'a göre 5,2 puanlık artış olarak hesaplıyor. Ek parametre, ek veri ya da ek eğitim kullanılmıyor; yapılan tek şey bileşen silmek.
 
 > **Kendini yokla:** Aynı işlem — yüksek dereceli tekil bileşenleri atmak — neden bir çalışmada modeli bozup diğerinde iyileştiriyor?
 

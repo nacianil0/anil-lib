@@ -12,7 +12,7 @@ tags:
   - donus
   - kirmizi-siyah-agac
   - b-agaci
-content_hash: sha256:3f8a507079ebd0e3314c35eddd5df3ee6c22713601393ebefb129f79f49923ae
+content_hash: sha256:15b01245970f012f2d13bd43ab15b4bc11a0ca58ba31eb225f74367f599f6f1c
 classification_version: 1
 classification_batch: 3
 revised_at: "2026-09-25"
@@ -92,7 +92,7 @@ Buradan çıkan asıl ders yapının kendisi değil, **modelin seçimidir**. Ayn
 
 Şekil 3 iki yapıyı aynı veri üzerinde karşılaştırıyor.
 
-![Solda dengeli ikili ağaç: her düğümde tek anahtar var, kökten yaprağa inen yol boyunca her düğüm ayrı bir blok olarak işaretlenmiş ve bir milyar anahtar için yaklaşık otuz seviye yazıyor. Sağda B-ağacı: her düğüm içinde çok sayıda anahtar bulunan geniş bir dikdörtgen ve bir blok olarak etiketli, kök ve iki seviye gösterilmiş, bir milyar anahtar ve düğüm başına yüz çocuk için beş seviye yazıyor](assets/b-agaci-blok.svg "Şekil 3 — Aynı veri, iki model: düğüm başına bir anahtar ile düğüm başına bir blok")
+![Solda dengeli ikili ağaç: yedi düğümün her birinde tek anahtar var; altında her düğümün ayrı bir blok okuması olduğu, bloğun geri kalanının boşa gittiği ve bir milyar anahtar için yaklaşık otuz seviye, otuz blok yazıyor. Sağda B-ağacı: kökte anahtar 1'den anahtar 99'a kadar uzanan tek bir blok, altında doksan dokuzar anahtarlı üç çocuk düğüm; her düğümün bir bloğa tam oturduğu, arama alanının her adımda yüze bölündüğü ve bir milyar anahtar için beş seviye, beş blok yazıyor. En altta yüz tabanında on üzeri dokuzun logaritmasının 4,5 olduğu ve taban değişiminin otuz okumayı beşe indirdiği belirtiliyor](assets/b-agaci-blok.svg "Şekil 3 — Aynı veri, iki model: düğüm başına bir anahtar ile düğüm başına bir blok")
 
 > **Sesli anlat:** "Veritabanı indeksleri neden dengeli ikili ağaç değil de B-ağacı kullanır? Altmış saniyede açıkla."
 >

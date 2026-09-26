@@ -12094,6 +12094,621 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-26T04:21:07.770Z"
+    },
+    {
+      "id": "bug-731",
+      "timestamp": "2026-09-26T07:42:18.929Z",
+      "error_message": "Wrong return value",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/triage.py",
+      "root_cause": "Was returning: r.read().decode(\"utf-8\", \"replace\")",
+      "fix": "Now returns: r.text",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:42:18.929Z"
+    },
+    {
+      "id": "bug-732",
+      "timestamp": "2026-09-26T07:45:13.485Z",
+      "error_message": "Wrong reference: 100 should be 99",
+      "file": "content/series-boun/assets/dengeli-arama-avlden-b-agacina/b-agaci-blok.svg",
+      "root_cause": "Used \"100\" instead of \"99\"",
+      "fix": "Changed 100 → 99",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:45:13.485Z"
+    },
+    {
+      "id": "bug-733",
+      "timestamp": "2026-09-26T07:45:41.583Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→8 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:45:41.583Z"
+    },
+    {
+      "id": "bug-734",
+      "timestamp": "2026-09-26T07:45:45.254Z",
+      "error_message": "Wrong reference: sesde should be seste",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "Used \"sesde\" instead of \"seste\"",
+      "fix": "Changed sesde → seste",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:45:45.254Z"
+    },
+    {
+      "id": "bug-735",
+      "timestamp": "2026-09-26T07:54:41.684Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md",
+      "root_cause": "Had 'in onları belleğe taşıyarak rastgele erişimi tek ",
+      "fix": "Changed to 'den D4'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:54:41.684Z"
+    },
+    {
+      "id": "bug-736",
+      "timestamp": "2026-09-26T07:55:00.907Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
+      "root_cause": "Had 'in yetmiş beşten büyük ya da eşit olma olasılığı.",
+      "fix": "Changed to 'in en az 75 olma olasılığı. Eksen soldan sağa 1, ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:55:00.907Z"
+    },
+    {
+      "id": "bug-737",
+      "timestamp": "2026-09-26T07:55:18.138Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
+      "root_cause": "Had 'a eşitken bekler; tüketici sayaç sıfıra eşitken b",
+      "fix": "Changed to 'u bekleyip dolu'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:55:18.138Z"
+    },
+    {
+      "id": "bug-738",
+      "timestamp": "2026-09-26T08:16:41.599Z",
+      "error_message": "Wrong reference: Fiziksel should be iki",
+      "file": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
+      "root_cause": "Used \"Fiziksel\" instead of \"iki\"",
+      "fix": "Changed Fiziksel → iki",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:16:41.599Z"
+    },
+    {
+      "id": "bug-739",
+      "timestamp": "2026-09-26T08:17:54.201Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md",
+      "root_cause": "Had 'den küçük bütün değerler için P doğrudur\"",
+      "fix": "Changed to 'den küçük bütün değerler için, yani tabandan n'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:17:54.201Z"
+    },
+    {
+      "id": "bug-740",
+      "timestamp": "2026-09-26T08:20:57.028Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari.svg",
+      "root_cause": "Had \"0 0 720 372\"",
+      "fix": "Changed to \"0 0 720 348\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:20:57.028Z"
+    },
+    {
+      "id": "bug-741",
+      "timestamp": "2026-09-26T08:20:57.858Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/newalts.py",
+      "root_cause": "Had \"kutudan ince düzeltme, yok denecek kadar az. Ötek",
+      "fix": "Changed to \"kutudan ince düzeltme, yok denecek kadar az. Biri",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:20:57.858Z"
+    },
+    {
+      "id": "bug-742",
+      "timestamp": "2026-09-26T08:21:19.805Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/graf-iki-temsil.svg",
+      "root_cause": "Had \"0 0 720 336\"",
+      "fix": "Changed to \"0 0 720 260\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:21:19.805Z"
+    },
+    {
+      "id": "bug-743",
+      "timestamp": "2026-09-26T08:21:29.383Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/test-edildigini-bilmek.svg",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 4→17 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:21:29.383Z"
+    },
+    {
+      "id": "bug-744",
+      "timestamp": "2026-09-26T08:22:40.200Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 3→8 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:22:40.200Z"
+    },
+    {
+      "id": "bug-745",
+      "timestamp": "2026-09-26T08:35:42.424Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/build_results.py",
+      "root_cause": "Had \"olguyu değiştir ve gerisine dokunma\\\\\\\"",
+      "fix": "Changed to 'olguyu değiştir ve gerisine dokunma'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 7,
+      "last_seen": "2026-09-26T08:39:34.655Z"
+    },
+    {
+      "id": "bug-746",
+      "timestamp": "2026-09-26T08:36:09.740Z",
+      "error_message": "Wrong reference: Sorun should be a",
+      "file": "content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md",
+      "root_cause": "Used \"Sorun\" instead of \"a\"",
+      "fix": "Changed Sorun → a",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:36:09.740Z"
+    },
+    {
+      "id": "bug-747",
+      "timestamp": "2026-09-26T08:36:56.504Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/p-np-kapsama.svg",
+      "root_cause": "Had \"296\"",
+      "fix": "Changed to \"316\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-26T08:36:57.670Z"
+    },
+    {
+      "id": "bug-748",
+      "timestamp": "2026-09-26T08:38:21.639Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/results.json",
+      "root_cause": "Had \"Crossref'",
+      "fix": "Changed to \"Aynı 11 yazar, ama sıra farkı var: hem Crossref h",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:38:21.639Z"
+    },
+    {
+      "id": "bug-749",
+      "timestamp": "2026-09-26T08:38:42.949Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md",
+      "root_cause": "Had \"mikrosaniyenin altı\"",
+      "fix": "Changed to 'de **1.200**, 3 GHz'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:38:42.949Z"
+    },
+    {
+      "id": "bug-750",
+      "timestamp": "2026-09-26T08:39:55.372Z",
+      "error_message": "Significant refactor of ",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/build_results.py",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 5→3 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:39:55.372Z"
+    },
+    {
+      "id": "bug-751",
+      "timestamp": "2026-09-26T08:40:35.639Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
+      "root_cause": "Had 'e döndüğünde onun elinde hâlâ \"",
+      "fix": "Changed to 'e döner: bayrağı 1 yapar ve kritik kesime girer. ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:40:35.639Z"
+    },
+    {
+      "id": "bug-752",
+      "timestamp": "2026-09-26T08:41:39.653Z",
+      "error_message": "Wrong reference: text should be MAX",
+      "file": "content/series-boun/assets/klasik-eszamanlilik-problemleri-cozumu-savunmak/sinirli-tampon.svg",
+      "root_cause": "Used \"text\" instead of \"MAX\"",
+      "fix": "Changed text → MAX",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:41:39.653Z"
+    },
+    {
+      "id": "bug-753",
+      "timestamp": "2026-09-26T08:43:46.620Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
+      "root_cause": "Had ` = 100'",
+      "fix": "Changed to ` için `",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:43:46.620Z"
+    },
+    {
+      "id": "bug-754",
+      "timestamp": "2026-09-26T12:00:00Z",
+      "error_message": "BOUN 1 ve 40 mulakati 'bir oda, en az iki ogretim uyesi' diye anlatiyordu",
+      "file": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
+      "root_cause": "Resmi sayfanin tek cumlesi ('At least two faculty members conduct the scientific interview') okunmus, ayni paragraftaki 'at the interviewer's office' ve 'ready at the next office' cumleleri atlanmisti; bicim gorusmeci basina ayri ofis gorusmesidir",
+      "fix": "1'in acilisi, resmi gercek paragrafi ve omurgasi ile 40'in acilisi duzeltildi; 1 revised_at 2026-09-26 aldi; ARASTIRMA §1 ve §20.1 ile YOL-HARITASI guncellendi",
+      "tags": [
+        "boun",
+        "resmi-kaynak",
+        "okuma-hatasi",
+        "icerik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T12:00:00Z"
+    },
+    {
+      "id": "bug-755",
+      "timestamp": "2026-09-26T12:00:00Z",
+      "error_message": "BOUN 11: bir milyon anahtarli dengeli agacta 'yukseklik yaklasik 20, en kotu arama 21', 14: 'en az 19 karsilastirma'",
+      "file": "content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md",
+      "root_cause": "Yukseklik log2(n) yaklasik degerinden alinmis (tam deger ceil(log2(n+1)) - 1 = 19); bakim run'i 1 'elli bin'i bu yanlis 21'e hizalayip 'kirk yedi bin' yapmisti. 14'te yaprak sinirindan 20 cikar",
+      "fix": "11: yukseklik 19, arama 20, oran elli bin (govde, SVG, alt metin); 14: en az 20 ve 2^19 gerekcesi",
+      "tags": [
+        "boun",
+        "sayi",
+        "off-by-one",
+        "icerik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T12:00:00Z"
+    },
+    {
+      "id": "bug-756",
+      "timestamp": "2026-09-26T12:00:00Z",
+      "error_message": "BOUN 29: 'P islemi sonuc negatif olmayacaksa azaltir; olmayacaksa ... bekler' (kosul tersine donmus)",
+      "file": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
+      "root_cause": "Ikinci kosul ayni 'olmayacaksa' ile yazilmis; sekil ve omurga 'olacaksa' diyor",
+      "fix": "'negatif olacaksa azaltma yapilmaz ve cagiran bekler' yapildi",
+      "tags": [
+        "boun",
+        "tanim",
+        "icerik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T12:00:00Z"
+    },
+    {
+      "id": "bug-757",
+      "timestamp": "2026-09-26T12:00:00Z",
+      "error_message": "BOUN 30: kilit en distayken 14 durumun 'icinde bir kilitlenme' deniyordu, gercekte iki",
+      "file": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
+      "root_cause": "Yazarin artifacts/b9-research/model.py betigi yalnizca ilk takilan durumu kaydediyordu (stuck is None)",
+      "fix": "Iki kilitlenme ve model metne yazildi; ana oturum sayici artifacts/bakim2-2026-09-26/ana/tampon.py 10/0 ve 14/2 verdi",
+      "tags": [
+        "boun",
+        "durum-sayisi",
+        "model",
+        "icerik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T12:00:00Z"
+    },
+    {
+      "id": "bug-758",
+      "timestamp": "2026-09-26T12:00:00Z",
+      "error_message": "BOUN 28: 'yalnizca ilk uc kural varken uzun isler acliga duser'",
+      "file": "content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md",
+      "root_cause": "Aclik asagi indirme kuralini gerektirir; ilk uc kuralla herkes en ust kuyrukta round-robin doner (OSTEP ilk denemesi Rule 1-3 + 4a/4b)",
+      "fix": "Govde, omurga ve kaynakca maddesi duzeltildi",
+      "tags": [
+        "boun",
+        "mekanizma",
+        "icerik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T12:00:00Z"
+    },
+    {
+      "id": "bug-759",
+      "timestamp": "2026-09-26T12:00:00Z",
+      "error_message": "Workflow 'boun-bakim2-denetim' onceki oturum kapaninca yarida kaldi; k3/k4/k5 sonucu yok, alt metin duzenlemeleri diskte",
+      "file": "artifacts/bakim2-2026-09-26",
+      "root_cause": "Oturum sonu arka plandaki workflow'u durdurdu; journal.jsonl yalnizca bitmis ajanlarin sonucunu tutar",
+      "fix": "Bitmis uc sonuc journal'dan alindi; yalnizca yarim kalan uc kume, 'alt metinler zaten kisaltildi, dogrula' talimatiyla ikinci workflow'da yeniden kosuldu",
+      "tags": [
+        "workflow",
+        "kesinti",
+        "surec"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T12:00:00Z"
+    },
+    {
+      "id": "bug-760",
+      "timestamp": "2026-09-26T08:50:34.288Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-boun/HANDOFF.md",
+      "root_cause": "11 lines replaced/restructured",
+      "fix": "Rewrote 12→17 lines (11 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:50:34.288Z"
+    },
+    {
+      "id": "bug-761",
+      "timestamp": "2026-09-26T08:51:12.346Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py",
+      "root_cause": "Had 'Çalıştay taraması: neurips.cc/virtual 2022–2025 ç",
+      "fix": "Changed to 'Çalıştay taraması: neurips.cc/virtual 2022–2025, ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-26T08:52:09.680Z"
+    },
+    {
+      "id": "bug-762",
+      "timestamp": "2026-09-26T08:51:31.219Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/channel_notes.txt",
+      "root_cause": "Had \"arXiv.org\"",
+      "fix": "Changed to 'si döndü; hepsi venue \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "txt"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T08:51:31.219Z"
+    },
+    {
+      "id": "bug-763",
+      "timestamp": "2026-09-26T09:26:21.451Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→4 lines (3 removed) | Also: (`8ec2fc9`). **Batch 28 (115–118, 58/71/108/1/80 d; YOL-HARITASI) çalışma ağacında commit edilmemiş** ",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-26T09:27:01.813Z"
+    },
+    {
+      "id": "bug-764",
+      "timestamp": "2026-09-26T13:30:00.000Z",
+      "error_message": "Makale 67 Şekil 3: başlık 'yedi ölçüm' ve gövde 'son satır Schoen' derken SVG altı satırdı",
+      "file": "content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/test-edildigini-bilmek.svg",
+      "root_cause": "2026-09-06 yayınında yedinci satır (Schoen 2025) SVG'ye hiç çizilmemişti; alt metin ve başlık yedi satırı anlatıyordu, denetleyiciler görmedi",
+      "fix": "Schoen satırı x=20/200/380/600 sütunlarına çizildi, viewBox 522→596; alt metin yedi satıra göre ≤120 kelimeyle yeniden yazıldı; PNG light/dark doğrulandı",
+      "tags": [
+        "svg",
+        "figure",
+        "alt-text",
+        "series",
+        "missing-row"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T13:30:00.000Z"
+    },
+    {
+      "id": "bug-765",
+      "timestamp": "2026-09-26T13:30:00.000Z",
+      "error_message": "arXiv API HTTP Error 406: Not Acceptable (Python urllib)",
+      "file": "scratchpad/triage.py",
+      "root_cause": "export.arxiv.org API'si urllib isteğini (User-Agent/Accept ne olursa olsun) 406 ile reddediyor; curl ve requests 200 alıyor",
+      "fix": "HTTP çağrıları requests kütüphanesine taşındı",
+      "tags": [
+        "arxiv",
+        "http",
+        "406",
+        "urllib"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T13:30:00.000Z"
+    },
+    {
+      "id": "bug-766",
+      "timestamp": "2026-09-26T13:30:00.000Z",
+      "error_message": "Revizyon işareti 81'e yazılmadı ama betik 'replace' dedi",
+      "file": "scratchpad/revmark.py",
+      "root_cause": "Dosya CRLF; re.M ile '^revised_at: \".*\"$' CRLF satırında eşleşmedi, re.sub sessizce değişiklik yapmadı",
+      "fix": "Frontmatter satırlara bölünüp rstrip('\\r') ile anahtar bulundu, satır sonu korunarak yazıldı; grep ile 8 işaret sayıldı",
+      "tags": [
+        "crlf",
+        "regex",
+        "frontmatter",
+        "silent-noop"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T13:30:00.000Z"
+    },
+    {
+      "id": "bug-767",
+      "timestamp": "2026-09-26T13:30:00.000Z",
+      "error_message": "Heredoc ile yamanan revmark.py SyntaxError: unterminated string literal",
+      "file": "scratchpad/revmark.py",
+      "root_cause": "Bash heredoc içindeki Python kaynağında \\r\\n kaçışları gerçek satır sonuna dönüştü",
+      "fix": "Betik Write aracıyla baştan yazıldı",
+      "tags": [
+        "heredoc",
+        "backslash",
+        "python"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T13:30:00.000Z"
+    },
+    {
+      "id": "bug-768",
+      "timestamp": "2026-09-26T13:30:00.000Z",
+      "error_message": "Workflow ajanlarının dördü 'You've hit your session limit' ile düştü",
+      "file": "workflow wf_9c819616-097",
+      "root_cause": "Oturum kullanım sınırı; ajanlar sonuç döndürmedi",
+      "fix": "Sınır sıfırlanınca aynı betik resumeFromRunId ile yeniden koşuldu; 4/4 tamamlandı",
+      "tags": [
+        "workflow",
+        "session-limit",
+        "retry"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T13:30:00.000Z"
     }
   ]
 }

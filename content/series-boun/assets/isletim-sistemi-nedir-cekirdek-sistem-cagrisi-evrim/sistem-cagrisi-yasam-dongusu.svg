@@ -60,7 +60,7 @@
   <text x="560" y="196" font-size="13" fill="var(--text-faint)">yazmaçlar yığına</text>
   <text x="560" y="218" font-size="13" fill="var(--text-faint)">kip değişti</text>
   <text x="560" y="240" font-size="13" fill="var(--text-faint)">işleyici çalışır</text>
-  <text x="560" y="262" font-size="13" fill="var(--text)">zamanlayıcı karar</text>
+  <text x="560" y="262" font-size="13" fill="var(--text)">çekirdek karar verir</text>
 
   <text x="378" y="322" font-size="13" fill="var(--text-faint)">10 ms'de bir kesme, saniyede 100 kesme</text>
   <text x="378" y="342" font-size="13" fill="var(--text)">işleyici 1 µs ise ek yük yaklaşık %0,01</text>

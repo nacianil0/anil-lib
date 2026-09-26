@@ -38,6 +38,6 @@
   <text x="440" y="216" font-size="13" fill="var(--accent)">T(n) = 2T(n/2) + Θ(n) ⇒ Θ(n log n)</text>
 
   <line x1="20" y1="276" x2="700" y2="276" stroke="var(--border)" stroke-width="1" />
-  <text x="20" y="300" font-size="13" fill="var(--text)">alt problem sayısı a = 2 ve bölme çarpanı b = 2 iki durumda da aynıdır</text>
+  <text x="20" y="300" font-size="13" fill="var(--text)">alt problem sayısı a = 2 ve küçülme çarpanı b = 2 iki durumda da aynıdır</text>
   <text x="20" y="322" font-size="13" fill="var(--text)">değişen yalnızca birleştirme adımının maliyetidir — ve sınıfı o belirler</text>
 </svg>

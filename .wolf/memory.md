@@ -6117,3 +6117,438 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 07:20 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-batch28-seri-tamamlandi.md | — | ~564 |
 | 07:21 | Edited .claude/launch.json | removed 9 lines | ~8 |
 | 07:21 | Session end: 26 writes across 7 files (measure.mjs, shots.mjs, iki-kollu-yordam.svg, YOL-HARITASI.md, HANDOFF.md) | 10 reads | ~18837 tok |
+
+## Session: 2026-09-26 10:35
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-26 10:36
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/inventory.py | — | ~892 |
+| 10:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/unlabeled.py | — | ~332 |
+| 10:38 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/inventory.py | 1→3 lines | ~91 |
+| 10:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/prep_args.py | — | ~487 |
+| 10:41 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/triage.py | — | ~1245 |
+| 10:41 | Created artifacts/bakim2-2026-09-26/resmi/fetch.py | — | ~895 |
+| 10:42 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/triage.py | added 1 import(s) | ~40 |
+| 10:42 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/triage.py | modified range() | ~56 |
+| 10:43 | Created artifacts/bakim2-2026-09-26/linkler/scan.py | — | ~462 |
+| 10:44 | Created artifacts/bakim2-2026-09-26/durum-sayilari/motor.py | — | ~529 |
+| 10:44 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/backrefs.py | — | ~294 |
+| 10:44 | Created artifacts/bakim2-2026-09-26/durum-sayilari/a29_bayrak_tas.py | — | ~1132 |
+| 10:45 | Edited content/series-boun/assets/dengeli-arama-avlden-b-agacina/b-agaci-blok.svg | inline fix | ~13 |
+| 10:45 | Edited content/series-boun/assets/dengeli-arama-avlden-b-agacina/b-agaci-blok.svg | 3→3 lines | ~78 |
+| 10:45 | Created artifacts/bakim2-2026-09-26/durum-sayilari/a30_tampon.py | — | ~1118 |
+| 10:45 | Edited docs/seri/YOL-HARITASI.md | 3→8 lines | ~786 |
+| 10:45 | Edited docs/seri/YOL-HARITASI.md | inline fix | ~14 |
+| 10:45 | Created artifacts/bakim2-2026-09-26/durum-sayilari/a30_filozof.py | — | ~1027 |
+| 10:46 | Created artifacts/bakim2-2026-09-26/durum-sayilari/a31_iki_kilit.py | — | ~689 |
+| 10:46 | Edited docs/seri-boun/ARASTIRMA.md | modified Ek() | ~181 |
+| 10:46 | Edited docs/seri-boun/YOL-HARITASI.md | 1→2 lines | ~46 |
+| 10:46 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/triage2.py | — | ~1318 |
+| 10:46 | Session end: 22 writes across 16 files (inventory.py, unlabeled.py, prep_args.py, triage.py, fetch.py) | 18 reads | ~222535 tok |
+| 10:47 | Created artifacts/bakim2-2026-09-26/durum-sayilari/a20_medyan.py | — | ~2002 |
+| 10:47 | Created artifacts/bakim2-2026-09-26/durum-sayilari/a20_oran_arama.py | — | ~912 |
+| 10:48 | Created artifacts/bakim2-2026-09-26/k4-isletim-1/tek_kd.py | — | ~485 |
+| 10:51 | Created artifacts/bakim2-2026-09-26/k4-isletim-1/altlar.py | — | ~2512 |
+| 10:52 | Created artifacts/bakim2-2026-09-26/k4-isletim-1/altlar2.py | — | ~2171 |
+| 10:53 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~179 |
+| 10:53 | Edited content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | inline fix | ~146 |
+| 10:53 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~160 |
+| 10:53 | Created artifacts/bakim2-2026-09-26/k4-isletim-1/altlar3.py | — | ~2209 |
+| 10:53 | Edited content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | inline fix | ~155 |
+| 10:53 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~216 |
+| 10:53 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~167 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~183 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~225 |
+| 10:54 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~155 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~184 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~220 |
+| 10:54 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~174 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~236 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md | inline fix | ~191 |
+| 10:54 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~208 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~175 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~163 |
+| 10:54 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~187 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~174 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | "in onları belleğe taşıyar" → "den D4" | ~190 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~190 |
+| 10:54 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | inline fix | ~194 |
+| 10:55 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | "in yetmiş beşten büyük ya" → "in en az 75 olma olasılığ" | ~186 |
+| 10:55 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~193 |
+| 10:55 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~198 |
+| 10:55 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~199 |
+| 10:55 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | "a eşitken bekler; tüketic" → "u bekleyip dolu" | ~201 |
+| 10:55 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~191 |
+| 10:55 | Created artifacts/bakim2-2026-09-26/k4-isletim-1/hesaplar.py | — | ~379 |
+
+## Session: 2026-09-26 11:13
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-26 11:13
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:14 | Created artifacts/bakim2-2026-09-26/transcript_tail.py | — | ~338 |
+| 11:14 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/arxiv_meta.py | — | ~581 |
+| 11:16 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~79 |
+| 11:16 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~76 |
+| 11:16 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~36 |
+| 11:16 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~20 |
+| 11:16 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~51 |
+| 11:16 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | inline fix | ~35 |
+| 11:16 | Edited content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/seri-faz-haritasi.svg | inline fix | ~8 |
+| 11:17 | Edited content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md | 2→4 lines | ~59 |
+| 11:17 | Edited content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md | inline fix | ~33 |
+| 11:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/read_chunk.py | — | ~100 |
+| 11:17 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | inline fix | ~34 |
+| 11:17 | Edited content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md | inline fix | ~21 |
+| 11:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/show.py | — | ~120 |
+| 11:17 | Edited content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md | inline fix | ~43 |
+| 11:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/read_chunk.py | — | ~194 |
+| 11:17 | Edited content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md | inline fix | ~34 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/altshow.py | — | ~388 |
+| 11:18 | Edited content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md | inline fix | ~38 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/read_chunk.py | — | ~192 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/svgtext.py | — | ~135 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/debt-venue/fetch.py | — | ~947 |
+| 11:18 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~43 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/svgtext.py | — | ~170 |
+| 11:18 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~31 |
+| 11:18 | Edited content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md | inline fix | ~27 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/svgtext.py | — | ~203 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/fetch.py | — | ~320 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/s2batch.py | — | ~477 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/s2batch.py | — | ~371 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/s2batch.py | — | ~378 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/s2batch.py | — | ~349 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/s2_batch.py | — | ~393 |
+| 11:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/fetch.py | — | ~425 |
+| 11:19 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~56 |
+| 11:19 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~8 |
+| 11:19 | Edited content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md | inline fix | ~29 |
+| 11:19 | Edited content/series-boun/assets/agaclar-ve-ikili-arama-agaclari/bst-yukseklik.svg | inline fix | ~13 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/crossref.py | — | ~483 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/crossref.py | — | ~508 |
+| 11:19 | Edited content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | inline fix | ~74 |
+| 11:19 | Edited content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md | inline fix | ~77 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/fetch.py | — | ~416 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/fetch.py | — | ~857 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/pmc.py | — | ~242 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/fetch.py | — | ~530 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/fetch_url.py | — | ~294 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/fetchgrep.py | — | ~269 |
+| 11:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/results.json | — | ~25 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/rawctx.py | — | ~151 |
+| 11:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~59 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/confjson.py | — | ~444 |
+| 11:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~24 |
+| 11:20 | Edited content/series-boun/assets/heap-ve-oncelik-kuyrugu/heap-sizdirma.svg | inline fix | ~26 |
+| 11:20 | Edited content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md | inline fix | ~26 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/tok.py | — | ~131 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/g.py | — | ~244 |
+| 11:20 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~39 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/epmc.py | — | ~208 |
+| 11:20 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~32 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/newalts.py | — | ~1194 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/s2single.py | — | ~413 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/grep_last.py | — | ~123 |
+| 11:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/arxivabs.py | — | ~326 |
+| 11:20 | Edited content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari.svg | 4→2 lines | ~31 |
+| 11:20 | Edited content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari.svg | "0 0 720 372" → "0 0 720 348" | ~7 |
+| 11:20 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/newalts.py | "kutudan ince düzeltme, yo" → "kutudan ince düzeltme, yo" | ~16 |
+| 11:20 | Edited content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md | inline fix | ~38 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/fetch.py | — | ~314 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/cute_repo.py | — | ~312 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/grep_titles.py | — | ~346 |
+| 11:21 | Edited content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/graf-iki-temsil.svg | 6→2 lines | ~28 |
+| 11:21 | Edited content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/graf-iki-temsil.svg | "0 0 720 336" → "0 0 720 260" | ~7 |
+| 11:21 | Edited content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md | inline fix | ~45 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/match.py | — | ~484 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/sweep_indexes.py | — | ~530 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/imgs.py | — | ~122 |
+| 11:21 | Edited content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/test-edildigini-bilmek.svg | expanded (+13 lines) | ~343 |
+| 11:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/getpage.py | — | ~212 |
+| 11:21 | Edited content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md | inline fix | ~169 |
+| 11:22 | Created content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/aralikli-tekrar-takvimi.svg | — | ~383 |
+| 11:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/indexsweep.py | — | ~949 |
+| 11:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/shots.mjs | — | ~564 |
+| 11:22 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | modified aral() | ~73 |
+| 11:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/authscan.py | — | ~536 |
+| 11:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/sweep_kw.py | — | ~821 |
+| 11:22 | Edited content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md | modified i() | ~223 |
+| 11:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/measure.mjs | — | ~622 |
+| 11:22 | Session end: 89 writes across 55 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 53 reads | ~169159 tok |
+| 11:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/indexgrep.py | — | ~689 |
+| 11:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/pages.py | — | ~356 |
+| 11:23 | Created artifacts/bakim2-2026-09-26/ana/tampon.py | — | ~430 |
+| 11:23 | Created artifacts/bakim2-2026-09-26/ana/medyan_oran.py | — | ~272 |
+| 11:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/indexes.py | — | ~414 |
+| 11:26 | Session end: 94 writes across 60 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 64 reads | ~212831 tok |
+| 11:26 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | inline fix | ~29 |
+| 11:26 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~16 |
+| 11:26 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/indexsweep.py | 1→5 lines | ~96 |
+| 11:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/titlesearch.py | — | ~443 |
+| 11:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/crossref.py | — | ~461 |
+| 11:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/pdfhead.py | — | ~413 |
+| 11:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/orapi.py | — | ~319 |
+| 11:28 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~122 |
+| 11:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/aclsearch.py | — | ~360 |
+| 11:28 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~116 |
+| 11:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/ripple_gh.py | — | ~211 |
+| 11:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/notes_part1.md | — | ~534 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/arxivabs.py | — | ~364 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/wscrawl.py | — | ~617 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/venues.py | — | ~1644 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/crossref.py | — | ~733 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/acl.py | — | ~467 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/venues.py | — | ~549 |
+| 11:29 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/crossref.py | — | ~254 |
+| 11:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/tmlr.py | — | ~360 |
+| 11:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/bodygrep.py | — | ~199 |
+| 11:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/crossref.py | — | ~394 |
+| 11:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/body_grep.py | — | ~595 |
+| 11:30 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/colm.py | — | ~506 |
+| 11:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/indexes2.py | — | ~557 |
+| 11:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/debt-venue/render.cjs | — | ~170 |
+| 11:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/grep_conf.py | — | ~323 |
+| 11:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/acl.py | — | ~269 |
+| 11:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/crbib.py | — | ~526 |
+| 11:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/debt-venue/kl105.py | — | ~460 |
+| 11:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/linkcheck.py | — | ~364 |
+| 11:33 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/ctx.py | — | ~137 |
+| 11:34 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | inline fix | ~44 |
+| 11:34 | Edited content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md | inline fix | ~102 |
+| 11:34 | Edited content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md | inline fix | ~18 |
+| 11:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/crossref.py | — | ~309 |
+| 11:34 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~103 |
+| 11:34 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~122 |
+| 11:34 | Edited content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md | inline fix | ~4 |
+| 11:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/crossref.py | — | ~459 |
+| 11:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/build_results.py | — | ~11100 |
+| 11:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/crossuse.py | — | ~1036 |
+| 11:35 | Edited content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | inline fix | ~108 |
+| 11:35 | Edited content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md | 1→2 lines | ~126 |
+| 11:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/match_all.py | — | ~333 |
+| 11:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/results.json | — | ~10585 |
+| 11:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/check_old.py | — | ~111 |
+| 11:35 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/build_results.py | "olguyu değiştir ve gerisi" → "olguyu değiştir ve gerisi" | ~37 |
+| 11:35 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/build_results.py | "s.290 Modeller: GPT-2 XL," → "s.291 §5.1 Modeller: GPT-" | ~12 |
+| 11:35 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/build_results.py | "s.290 §5.1 (ICE GPT-2 ve " → "s.291 §5.1 (ICE GPT-2 ve " | ~14 |
+| 11:35 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/build_results.py | "s.290 §5.1 (yalnızca başa" → "s.290–291 §5.1 ve Tablo 2" | ~21 |
+| 11:35 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~30 |
+| 11:35 | Edited content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md | inline fix | ~12 |
+| 11:36 | Edited content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md | inline fix | ~54 |
+| 11:36 | Edited content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md | inline fix | ~42 |
+| 11:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/arxiv_authors.py | — | ~583 |
+| 11:36 | Edited content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/p-np-kapsama.svg | 5→6 lines | ~152 |
+| 11:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/author_names.py | — | ~301 |
+| 11:36 | Edited content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/p-np-kapsama.svg | inline fix | ~14 |
+| 11:36 | Edited content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/p-np-kapsama.svg | "0 0 720 320" → "0 0 720 344" | ~7 |
+| 11:36 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~66 |
+| 11:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/gorilla_brute.py | — | ~438 |
+| 11:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/aclentry.py | — | ~114 |
+| 11:37 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~35 |
+| 11:37 | Edited content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md | inline fix | ~24 |
+| 11:37 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~21 |
+| 11:37 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~14 |
+| 11:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/multi_lines.py | — | ~246 |
+| 11:37 | Edited content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md | inline fix | ~11 |
+| 11:37 | Edited content/series-boun/assets/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim/sistem-cagrisi-yasam-dongusu.svg | inline fix | ~8 |
+| 11:37 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/results.json | — | ~342 |
+| 11:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/results.json | — | ~11138 |
+| 11:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/build_results.py | — | ~7497 |
+| 11:38 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/results.json | inline fix | ~68 |
+| 11:38 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | "mikrosaniyenin altı" → "de **1.200**, 3 GHz" | ~159 |
+| 11:38 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~29 |
+| 11:38 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~61 |
+| 11:38 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~35 |
+| 11:38 | Edited content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md | inline fix | ~18 |
+| 11:38 | Edited content/series-boun/assets/surecler-ve-is-parcaciklari/surec-durum-makinesi.svg | inline fix | ~18 |
+| 11:39 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/body.py | — | ~214 |
+| 11:39 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/build_results.py | — | ~8611 |
+| 11:39 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~91 |
+| 11:39 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~84 |
+| 11:39 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/build_results.py | "Yalnızca arXiv (v3, 2024-" → "Yalnızca arXiv (v3, 2024-" | ~62 |
+| 11:39 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~27 |
+| 11:39 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~57 |
+| 11:39 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/build_results.py | inline fix | ~75 |
+| 11:39 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~77 |
+| 11:39 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/build_results.py | inline fix | ~45 |
+| 11:39 | Edited content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md | inline fix | ~31 |
+| 11:39 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/build_results.py | 5→3 lines | ~74 |
+| 11:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | — | ~7972 |
+| 11:40 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~30 |
+| 11:40 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~26 |
+| 11:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/results.json | — | ~11139 |
+| 11:40 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | "e döndüğünde onun elinde " → "e döner: bayrağı 1 yapar " | ~96 |
+| 11:40 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/check_results.py | — | ~159 |
+| 11:40 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~158 |
+| 11:40 | Edited content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md | inline fix | ~39 |
+| 11:41 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | inline fix | ~15 |
+| 11:41 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | inline fix | ~14 |
+| 11:41 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~31 |
+| 11:41 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~144 |
+| 11:41 | Edited content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md | inline fix | ~36 |
+| 11:41 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/channel_notes.txt | — | ~690 |
+| 11:41 | Edited content/series-boun/assets/klasik-eszamanlilik-problemleri-cozumu-savunmak/sinirli-tampon.svg | inline fix | ~11 |
+| 11:41 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/aclauthor.py | — | ~268 |
+| 11:41 | Edited content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md | inline fix | ~60 |
+| 11:42 | Edited content/series-boun/assets/dosya-sistemleri-ve-giris-cikis/ayirma-yontemleri.svg | inline fix | ~8 |
+| 11:42 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | inline fix | ~11 |
+| 11:42 | Edited content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md | inline fix | ~69 |
+| 11:42 | Edited content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md | inline fix | ~77 |
+| 11:42 | Edited content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md | inline fix | ~20 |
+| 11:42 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/bridgepdf.py | — | ~183 |
+| 11:42 | Edited content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md | inline fix | ~96 |
+| 11:43 | Created artifacts/bakim2-2026-09-26/ana/quickselect.py | — | ~284 |
+| 11:43 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/build_results.py | — | ~10567 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~24 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~47 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~30 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~19 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | inline fix | ~22 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md | "n" → "k" | ~92 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md | inline fix | ~26 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~51 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~27 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~76 |
+| 11:43 | Edited content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md | inline fix | ~58 |
+| 11:46 | Edited docs/seri-boun/ARASTIRMA.md | modified nda() | ~2426 |
+| 11:47 | Created artifacts/bakim2-2026-09-26/buglog_append.py | — | ~1204 |
+| 11:47 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/results.json | — | ~10871 |
+| 11:48 | Edited content/series-boun/assets/surecler-ve-is-parcaciklari/surec-durum-makinesi.svg | inline fix | ~15 |
+| 11:48 | Edited docs/seri-boun/HANDOFF.md | modified uldu() | ~105 |
+| 11:48 | Edited docs/seri-boun/HANDOFF.md | expanded (+34 lines) | ~770 |
+| 11:49 | Created artifacts/bakim2-2026-09-26/gates.sh | — | ~242 |
+| 11:49 | Edited docs/seri-boun/HANDOFF.md | 6→5 lines | ~125 |
+| 11:49 | Edited docs/seri-boun/HANDOFF.md | expanded (+10 lines) | ~184 |
+| 11:50 | Edited docs/seri-boun/HANDOFF.md | expanded (+22 lines) | ~526 |
+| 11:50 | Edited docs/seri-boun/HANDOFF.md | 12→17 lines | ~412 |
+| 11:50 | Edited docs/seri-boun/HANDOFF.md | modified 26() | ~228 |
+| 11:50 | Edited docs/seri-boun/HANDOFF.md | inline fix | ~11 |
+| 11:51 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | modified any() | ~168 |
+| 11:51 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | "Çalıştay taraması: neurip" → "Çalıştay taraması: neurip" | ~70 |
+| 11:51 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | "jmlr.org/tmlr, colmweb.or" → "jmlr.org/tmlr, colmweb.or" | ~43 |
+| 11:51 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/channel_notes.txt | "arXiv.org" → "si döndü; hepsi venue " | ~71 |
+| 11:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/debt-venue/build_results.py | — | ~15062 |
+| 11:51 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/boun-bakim-run2-2026-09-26.md | — | ~558 |
+| 11:51 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/channel_notes.txt | 1→2 lines | ~223 |
+| 11:51 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~80 |
+| 11:52 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/build_results.py | 2→2 lines | ~52 |
+| 11:52 | Session end: 245 writes across 127 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 96 reads | ~381850 tok |
+| 11:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/summ.py | — | ~611 |
+| 11:56 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/summ.py | — | ~806 |
+| 12:00 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/showlines.py | — | ~193 |
+| 12:01 | Edited docs/seri-boun/HANDOFF.md | expanded (+28 lines) | ~630 |
+| 12:01 | Edited docs/seri-boun/HANDOFF.md | 2→5 lines | ~119 |
+| 12:01 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/context_dump.py | — | ~686 |
+| 12:01 | Edited docs/seri-boun/HANDOFF.md | 2→4 lines | ~63 |
+| 12:40 | BOUN bakım run'ı 2 (2026-09-26) özeti: resmî 11 sayfa + 67 atıf doğrulandı; mülakat biçimi okuma yanlışı (1, 40) düzeltildi, 1 revised_at aldı; 8ec2fc9 yenileme farkının olgu denetimi (2 sınırlı workflow) ~45 düzeltme; 4 yenileme borcu kapandı (28 alt metin, SVG-tablo kuralı, durum sayıları, B-ağacı); kapılar: denetleyiciler temiz, bağımsız denetim 41/41, typecheck, vitest 764/764, build 184 (/boun 41), Playwright 60/1/3 (2 reader-data + gezici reader.spec:520, HEAD'de de düşüyor), geometri 83 SVG temiz, tema 135/135 | content/series-boun/**, docs/seri-boun/{ARASTIRMA,HANDOFF,YOL-HARITASI}.md, .wolf/{cerebrum,buglog}.md/json | tamam, commit yok | ~ |
+| 12:01 | Session end: 252 writes across 130 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 99 reads | ~385016 tok |
+| 12:02 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/apply_edits.py | — | ~441 |
+| 12:02 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/crcheck.py | — | ~271 |
+| 12:08 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_sweep.json | — | ~8626 |
+| 12:16 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_debt.json | — | ~10208 |
+| 12:17 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/syncalt.py | — | ~898 |
+| 12:17 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/syncalt.py | expanded (+9 lines) | ~308 |
+| 12:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_misc.json | — | ~76 |
+| 12:18 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/revmark.py | — | ~742 |
+| 12:19 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/revmark.py | — | ~803 |
+| 12:20 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_trim.json | — | ~452 |
+| 12:21 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_yol.json | — | ~429 |
+| 12:22 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_misc2.json | — | ~132 |
+| 12:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/split_diff.py | — | ~484 |
+| 12:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/inspect.py | — | ~187 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/dump_ev.py | — | ~202 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/grepjson.py | — | ~198 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/dump.py | — | ~288 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/grep_wf.py | — | ~208 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/byart.py | — | ~149 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/dump_sweep.py | — | ~129 |
+| 12:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/dump_sweep.py | — | ~145 |
+| 12:25 | Edited docs/seri/YOL-HARITASI.md | modified 1() | ~1664 |
+| 12:25 | Edited docs/seri/YOL-HARITASI.md | 1→3 lines | ~76 |
+| 12:25 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/aria_audit.py | — | ~195 |
+| 12:25 | Edited docs/seri/HANDOFF.md | inline fix | ~67 |
+| 12:26 | Edited docs/seri/HANDOFF.md | modified zeltmesi() | ~931 |
+| 12:26 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/kwic.py | — | ~138 |
+| 12:26 | Edited docs/seri/HANDOFF.md | 5→4 lines | ~101 |
+| 12:26 | Edited docs/seri/HANDOFF.md | 3→4 lines | ~91 |
+| 12:26 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~86 |
+| 12:26 | Edited docs/seri/HANDOFF.md | modified KAPANDI() | ~135 |
+| 12:26 | Edited docs/seri/HANDOFF.md | modified KAPANDI() | ~134 |
+| 12:26 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~68 |
+| 12:27 | Edited docs/seri/HANDOFF.md | modified 1() | ~281 |
+| 12:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/svgw.py | — | ~404 |
+| 12:27 | Edited docs/seri/HANDOFF.md | expanded (+18 lines) | ~435 |
+| 12:27 | Session end: 288 writes across 152 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 121 reads | ~601972 tok |
+| 12:27 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/salvi.py | — | ~366 |
+| 12:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/catcheck.py | — | ~617 |
+| 12:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/salvi2.py | — | ~214 |
+| 12:28 | Created .claude/launch.json | — | ~147 |
+| 12:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/measure.mjs | — | ~875 |
+| 12:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/alts.py | — | ~538 |
+| 12:28 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/linkcheck.py | — | ~303 |
+| 12:50 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/peek.py | — | ~203 |
+| 12:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/peek2.py | — | ~209 |
+| 12:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/ev.py | — | ~322 |
+| 12:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/peek3.py | — | ~183 |
+| 12:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/peek4.py | — | ~286 |
+| 12:51 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/sw.py | — | ~143 |
+| 12:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/meta.py | — | ~510 |
+| 12:52 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_fig4.json | — | ~175 |
+| 12:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/fetch_salvi.py | — | ~547 |
+| 12:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/links2.py | — | ~386 |
+| 12:53 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/fetch_salvi2.py | — | ~249 |
+| 12:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/nsdi.py | — | ~485 |
+| 12:54 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/catcheck.py | — | ~804 |
+| 12:55 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/metr.py | — | ~248 |
+| 12:56 | Session end: 309 writes across 170 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 144 reads | ~609845 tok |
+| 12:57 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/svgcheck.py | — | ~775 |
+| 12:57 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/svgcheck3.py | — | ~967 |
+| 12:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/measure.cjs | — | ~1059 |
+| 12:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/fetch2.py | — | ~578 |
+| 12:59 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/fetch_pr.py | — | ~312 |
+| 13:00 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/links.py | — | ~592 |
+| 13:00 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/links3.py | — | ~582 |
+| 13:00 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/svgcheck.py | — | ~776 |
+| 13:00 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/altcheck.py | — | ~349 |
+| 13:02 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/thakur.py | — | ~282 |
+| 13:02 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/links.py | — | ~758 |
+| 13:03 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/count.py | — | ~764 |
+| 13:03 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/run/counts.py | — | ~976 |
+| 13:04 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/count_old.py | — | ~684 |
+| 13:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/results.json | — | ~5413 |
+| 13:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/run/build_results.py | — | ~4300 |
+| 13:05 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/uniq.py | — | ~455 |
+| 13:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/results.json | — | ~4624 |
+| 13:07 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/results.json | — | ~3163 |
+| 13:09 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/build_wf2_edits.py | — | ~663 |
+| 13:10 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_trim2.json | — | ~75 |
+| 13:14 | Created .claude/launch.json | — | ~56 |
+| 13:14 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/edits_docs_final.json | — | ~653 |
+| 13:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wolf_update.py | — | ~1698 |
+| 13:15 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/memory_append.md | — | ~369 |
+
+## Session: 2026-09-26 10:36 — AI serisi bakım run'ı 1 (TRIGGER bakım kipi)
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:50 | 79–82 prerequisite graf satırları metnin geri göndermelerinden yazıldı | docs/seri/YOL-HARITASI.md | borç kapandı | ~3000 |
+| 11:20 | 10 ajanlık salt okunur workflow: 211 hakemsiz kalem + açık borç doğrulaması | scratchpad/wf | 21 hakemli çıktı; 205 bulgu | ~3.2M (ajan) |
+| 11:40 | 4 uzun alt metin kısaltıldı, 67 Şekil 3'e eksik yedinci satır çizildi | 67, 70, 73, 111 md+svg | uyarılar kalktı | ~6000 |
+| 12:05 | Sweep düzeltmeleri (92) ve borç düzeltmeleri (118) uygulandı | ~50 makale, 20 SVG, catalog.json | kapılar temiz | ~40000 |
+| 12:15 | 8 revizyon işareti (19, 41, 68, 81, 105, 109, 111, 112) | frontmatter + catalog | sync temiz | ~2000 |
+| 12:30 | Karar #265–#269, HANDOFF bakım bölümü ve açık borçlar | docs/seri/HANDOFF.md, YOL-HARITASI.md | #270'e geçildi | ~8000 |
+| 13:10 | 4 ajanlık diff doğrulaması (oturum sınırından sonra yeniden) | scratchpad/wf2 | 38 bulgu, hepsi uygulandı | ~1.5M (ajan) |
+| 13:25 | İzole kopyada typecheck/test/build, 21 şekil PNG, DOM ölçümü | D:/dev/anil-lib-maint-render (silindi) | 764/764, build 0, sorun yok | ~30000 |
+| 13:30 | cerebrum Do-Not-Repeat/Key Learnings, buglog bug-764–768 | .wolf/cerebrum.md, .wolf/buglog.json | kaydedildi | ~3000 |
+| 13:16 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-bakim-run1-2026-09-26.md | — | ~622 |
+| 13:16 | Session end: 335 writes across 189 files (transcript_tail.py, arxiv_meta.py, bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md, seri-faz-haritasi.svg, sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md) | 150 reads | ~641537 tok |

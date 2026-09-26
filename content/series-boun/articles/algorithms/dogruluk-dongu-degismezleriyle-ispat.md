@@ -12,7 +12,7 @@ tags:
   - ispat
   - sonlanma
   - eklemeli-siralama
-content_hash: sha256:f6da04ee511a41c9cb0b5e72b3818e61d7acd049726988f80be5a55b41510761
+content_hash: sha256:bf76575aa680ea573d5d86c0c443c290658db2aabe15a421cec0ad9bea594dbf
 classification_version: 1
 classification_batch: 6
 ---
@@ -64,7 +64,7 @@ Bir döngüde durumlar yineleme sınırlarıdır: her yinelemenin başında değ
 
 Başlatma adımı çoğu zaman bedavadır ve bunun nedeni mantık makalesinde tanımladığımız **boş doğruluk (vacuous truth)** kavramıdır: bir döngü henüz hiç dönmemişken üzerinde konuştuğun aralık boştur ve boş bir küme hakkındaki "her elemanı şu özelliği sağlar" iddiası ihlal eden eleman bulunmadığı için doğrudur.
 
-Sık atlanan bir uyarı: **üçlü yalnızca kısmi doğruluk verir.** Sonuçlanma adımı "döngü bittiğinde" diye başlar; döngünün bittiğini varsayar, ispatlamaz. Sonlanma ayrı bir iştir ve birazdan ayrıca yapacağız. Türkçede iki kelimenin birbirine benzemesi tuzağı büyütür: **sonuçlanma** değişmez ispatının üçüncü adımıdır, **sonlanma** ise döngünün gerçekten durduğu iddiasıdır. İngilizcede tuzak daha da derindir, çünkü mülakatçı üçüncü adıma CLRS'teki adıyla *termination* der ve o adımı yazarken çoğu zaman "döngü şu yüzden sonlanır" diye bir cümle de ekler. `for` döngüsünde bu cümle bedavadır, sayaç sınırına varır; `while` döngüsünde ise o cümle aşağıdaki ayrı sonlanma ispatının ta kendisidir ve atlanırsa ispat eksik kalır. Bu makalede iki işi iki ayrı kelimeyle tutmamızın nedeni budur.
+Sık atlanan bir uyarı: **üçlü yalnızca kısmi doğruluk verir.** Sonuçlanma adımı "döngü bittiğinde" diye başlar; döngünün bittiğini varsayar, ispatlamaz. Sonlanma ayrı bir iştir ve birazdan ayrıca yapacağız. Türkçede iki kelimenin birbirine benzemesi tuzağı büyütür: **sonuçlanma** değişmez ispatının üçüncü adımıdır, **sonlanma** ise döngünün gerçekten durduğu iddiasıdır. İngilizcede tuzak daha da derindir, çünkü mülakatçı üçüncü adıma CLRS'teki adıyla *termination* der ve o adımı yazarken çoğu zaman "döngü şu yüzden sonlanır" diye bir cümle de ekler. `for` döngüsünde bu cümle kendiliğinden gelir, sayaç sınırına varır; `while` döngüsünde ise o cümle aşağıdaki ayrı sonlanma ispatının ta kendisidir ve atlanırsa ispat eksik kalır. Bu makalede iki işi iki ayrı kelimeyle tutmamızın nedeni budur.
 
 Değişmez yazarken niceleyici disiplini de asimptotik makalesindeki gibi geçerlidir. "Dizinin başı sıralı" bir değişmez değildir; "her i için, i'inci yinelemenin başında A[1..i − 1] alt dizisi sıralıdır" bir değişmezdir. Neyin, ne zaman, hangi aralıkta doğru olduğu yazılmalıdır.
 

@@ -12,7 +12,7 @@ tags:
   - dfs
   - topolojik-siralama
   - bagli-bilesen
-content_hash: sha256:5f233900663be2ecde6847b925b1d341c9f369a4994022ecf422a16cce68eabc
+content_hash: sha256:e7c6c3585fbd9eeb9629e8e4de3b52f1d2c64e2587f5dd5ac2cb7c139bb4f683
 classification_version: 1
 classification_batch: 5
 ---
@@ -38,7 +38,7 @@ Toplam yer için sayma refleksini kullanalım. Bütün komşuluk listelerinin uz
 
 Şekil 1 aynı grafı iki temsille yan yana gösteriyor.
 
-![Solda altı düğümlü bir graf çizimi: a, b, c üstte, d, e, f altta; kenarlar a-b, a-c, b-c, b-d, c-e, d-e, d-f, e-f. Ortada aynı grafın komşuluk listeleri, her satırda bir düğüm ve ondan çıkan oklarla komşularının listesi: a için b ve c, b için a, c, d, c için a, b, e, d için b, e, f, e için c, d, f, f için d ve e; listelerin altında toplam uzunluğun on altı olduğu ve bunun iki çarpı sekiz kenar ettiği not düşülmüş. Sağda altıya altı komşuluk matrisi: satır ve sütun başlıkları a'dan f'ye, kenar olan hücrelerde bir, olmayanlarda sıfır; köşegen sıfırlarla dolu ve matrisin köşegene göre simetrik olduğu vurgulanmış. En altta iki satır: kenar var mı sorusunun matriste sabit, listede derece kadar sürdüğü; komşuları gezme işleminin matriste düğüm sayısı kadar, listede derece kadar sürdüğü yazıyor](assets/graf-iki-temsil.svg "Şekil 1 — Aynı graf, iki temsil: komşuluk listesi ve komşuluk matrisi")
+![Solda altı düğümlü bir graf çizimi: a, b, c üstte, d, e, f altta; kenarlar a-b, a-c, b-c, b-d, c-e, d-e, d-f, e-f. Ortada aynı grafın komşuluk listeleri, her satırda bir düğüm ve ondan çıkan oklarla komşularının listesi: a için b ve c, b için a, c, d, c için a, b, e, d için b, e, f, e için c, d, f, f için d ve e; listelerin altında toplam uzunluğun on altı olduğu ve bunun iki çarpı sekiz kenar ettiği not düşülmüş. Sağda altıya altı komşuluk matrisi: satır ve sütun başlıkları a'dan f'ye, kenar olan hücrelerde bir, olmayanlarda sıfır; köşegen sıfırlarla dolu ve matrisin köşegene göre simetrik olduğu vurgulanmış; altında otuz altı hücreden on altısının dolu olduğu yazıyor](assets/graf-iki-temsil.svg "Şekil 1 — Aynı graf, iki temsil: komşuluk listesi ve komşuluk matrisi")
 
 Maliyetleri tek tabloda toplayalım.
 
@@ -70,7 +70,7 @@ Algoritma her düğüm için iki şey saklar: uzaklık δ(s, v) ve **ebeveyn** P
 
 **Maliyeti** yine el sıkışma lemmasından çıkar. Her düğüm tam olarak bir katmana girer ve kuyruktan bir kez çıkar; kuyruktan çıktığında komşularını gezer, bu da deg(u) adımdır. Bütün düğümler üzerinde toplarsak Σ deg(u) = 2|E|. Buna, ulaşılamayan düğümlere sonsuz uzaklık atamak için gereken Θ(|V|) eklenir. Toplam: **O(|V| + |E|)**, yani graf boyutunda doğrusal.
 
-Küçük bir uyarı: BFS'in en kısa yol vermesi, kenarların **ağırlıksız** olmasına bağlıdır. Her kenar bir birim sayıldığı için "en az kenar" ile "en kısa" aynı şeydir. Kenarların ağırlığı olduğunda katman fikri çöker ve öncelik kuyruğuna ihtiyaç duyulur; heap makalesinde kurduğumuz yapının graf algoritmalarındaki asıl işi budur ve bu, ağırlıklı en kısa yollar makalesinin konusudur.
+Küçük bir uyarı: BFS'in en kısa yol vermesi, kenarların **ağırlıksız** olmasına bağlıdır. Her kenar bir birim sayıldığı için "en az kenar" ile "en kısa" aynı şeydir. Kenarların ağırlığı olduğunda katman fikri çöker ve ağırlıklar negatif değilse öncelik kuyruğuna ihtiyaç duyulur (negatif ağırlıkta o da yetmez); heap makalesinde kurduğumuz yapının graf algoritmalarındaki asıl işi budur ve bu, ağırlıklı en kısa yollar makalesinin konusudur.
 
 ## Derinlik öncelikli arama: yığınla derine
 
@@ -130,7 +130,7 @@ Son bir bağlantı: topolojik sıralama tek değildir. Yukarıdaki örnekte a il
 
 Graf soruları genellikle graf diliyle sorulmaz. "Şu bağımlılıkları hangi sırayla çalıştırırsın?", "İki kişi arasındaki en kısa tanışıklık zinciri kaç adım?", "Bu yapılandırmada döngüsel bağımlılık var mı?" — üçü de graf sorusudur ve ilk iş problemi grafa çevirmektir: düğümler ne, kenarlar ne, graf yönlü mü, ağırlıklı mı?
 
-Sonra sırayla üç şey söylenir. Temsil: graf seyrek mi yoğun mu, komşuluk listesi mi matris mi. Algoritma: BFS mi DFS mi, ve gerekçesi. Maliyet: Θ(|V| + |E|) ve bunun neden doğrusal sayıldığı. Takip zinciri çoğu zaman buradan yürür: "Neden liste, neden matris değil?" → "BFS mi DFS mi, neden?" → "Kenarlar ağırlıklı olsaydı?" Son halkanın iyi cevabı sınırı kendin söylemektir: ağırlıklar eşit değilse en az kenarlı yol en kısa yol olmayabilir, BFS'in katman argümanı çöker ve öncelik kuyruğuna geçilir.
+Sonra sırayla üç şey söylenir. Temsil: graf seyrek mi yoğun mu, komşuluk listesi mi matris mi. Algoritma: BFS mi DFS mi, ve gerekçesi. Maliyet: Θ(|V| + |E|) ve bunun neden doğrusal sayıldığı. Takip zinciri çoğu zaman buradan yürür: "Neden liste, neden matris değil?" → "BFS mi DFS mi, neden?" → "Kenarlar ağırlıklı olsaydı?" Son halkanın iyi cevabı sınırı kendin söylemektir: ağırlıklar eşit değilse en az kenarlı yol en kısa yol olmayabilir, BFS'in katman argümanı çöker; ağırlıklar negatif değilse öncelik kuyruğuna geçilir, negatif ağırlık varsa o da yetmez.
 
 Sık yapılan dört hata var. Birincisi, DFS'in bulduğu yolu en kısa yol sanmak. İkincisi, ziyaret işaretini koymayı unutmak — döngülü bir grafta bu sonsuz döngüdür ve tahtada kod yazarken en sık düşülen tuzaktır. Üçüncüsü, maliyeti yalnızca |V| cinsinden söylemek; graf algoritmalarında iki parametre vardır ve ikisi de söylenmelidir. Dördüncüsü, temsil seçimini hiç anmamak: aynı algoritma matris üzerinde Θ(|V|²), listeler üzerinde Θ(|V| + |E|) sürer ve seyrek grafta bu fark mertebelerdir.
 

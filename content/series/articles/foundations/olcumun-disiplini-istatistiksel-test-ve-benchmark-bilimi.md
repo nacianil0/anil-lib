@@ -12,7 +12,7 @@ tags:
   - oynaklik-kaynaklari
   - coklu-karsilastirma
   - tahminci-yanliligi
-content_hash: sha256:43438238b9aa4a40dba680ee889eb7cdc6ec764e2abc4da428ef40a27f633a9d
+content_hash: sha256:c306585287db9929f57d64aa1e1a92912396bb965939e94f1edb23c07bb07657
 classification_version: 1
 classification_batch: 24
 revised_at: "2026-09-25"
@@ -88,7 +88,7 @@ Kyle Gorman ve Steven Bedrick'in ACL 2019'da sunduğu çalışma, 2000 ile 2018 
 
 Şekil 3'ün üçüncü satırında, standart bölmede iki etiketleyici arasındaki fark anlamlı çıkıyor; yirmi rastgele bölmenin yalnızca birinde anlamlı kalıyor, ve bölmelerin bir kısmında yön tersine dönüyor. Yani yayımlanmış sıralama, bir veri kümesinin belirli bir bölünüşünün özelliği. Sabit bir test kümesi ne kadar uzun süre kullanılırsa, alan o kümenin tikelliklerine o kadar uyum sağlar — 72\. makaledeki kirlilik tartışmasının gürültü tarafındaki akrabası.
 
-Bu kurulumda ikinci bir tuzak daha var. Yirmi bölmede yirmi ayrı test yapılıyor; her birinin yanılma olasılığı yüzde 5 ise, en az bir tanesinin tesadüfen "anlamlı" çıkma olasılığı yüzde 5 değil, yüzde 64,2'dir. Bu bizim hesabımız ve doğrudan bağımsızlık varsayımından geliyor: 1 − 0,95²⁰. Çare **çoklu karşılaştırma düzeltmesi**: en sade biçimi olan Bonferroni düzeltmesi eşiği test sayısına böler, yirmi test için 0,05 yerine 0,0025. Aynı yazarların dayandığı Dror ve arkadaşlarının TACL'de 2017'de yayımladığı çalışma bunun daha güçlü bir biçimini kuruyor ve alanın gerçek sorusunu soruyor: "kaç veri kümesinde gerçekten daha iyi?" Aynı incelemede bu da sayıldı — birden çok veri kümesi kullanan 110 bildirinin yalnızca 3'ü çoklu karşılaştırma için düzeltme yapmış.
+Bu kurulumda ikinci bir tuzak daha var. Yirmi bölmede yirmi ayrı test yapılıyor; her birinin yanılma olasılığı yüzde 5 ise, en az bir tanesinin tesadüfen "anlamlı" çıkma olasılığı yüzde 5 değil, yüzde 64,2'dir. Bu bizim hesabımız ve doğrudan bağımsızlık varsayımından geliyor: 1 − 0,95²⁰. Çare **çoklu karşılaştırma düzeltmesi**: en sade biçimi olan Bonferroni düzeltmesi eşiği test sayısına böler, yirmi test için 0,05 yerine 0,0025. Aynı yazarların dayandığı Dror ve arkadaşlarının TACL'de 2017'de yayımladığı çalışma bunun daha güçlü bir biçimini kuruyor ve alanın gerçek sorusunu soruyor: "kaç veri kümesinde gerçekten daha iyi?" ACL 2018 incelemesi bunu da saydı — ACL 2017'de birden çok veri kümesi kullanan 110 bildirinin yalnızca 3'ü çoklu karşılaştırma için düzeltme yapmış.
 
 Sorunun makine öğrenmesi tarafındaki klasik cevabı daha eski. Janez Demšar'ın JMLR'de 2006'da yayımladığı inceleme, birçok veri kümesi üzerinde birçok sınıflandırıcıyı karşılaştırmanın doğru yolunu arıyor ve alanın yaygın alışkanlığını — doğrulukları kümeler boyunca ortalamak — reddediyor: kümelerin puan ölçekleri karşılaştırılabilir değil, dolayısıyla ortalama anlamlı bir sayı vermiyor. Yazarın önerisi dağılım varsayımı yapmayan sıra tabanlı testler: iki yöntem için işaretli sıra testi, ikiden çok yöntem için sıraları karşılaştıran bir test ve ardından ikili düzeltmeler. 97\. makaledeki 179 sınıflandırıcılık taramanın "en iyi iki aile arasındaki fark anlamlı değil" cümlesi bu soru ailesinin içinde duruyor.
 

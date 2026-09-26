@@ -12,11 +12,11 @@ tags:
   - kayip-maskesi
   - hizalama-vergisi
   - ortuk-odul
-content_hash: sha256:557d2822cadc994cd826f7a57c3297793e616b382df6aa250a76329bb726f052
+content_hash: sha256:beedc8031504a58027257b79ef10015933a167c335c37b1dea5212d560ec7681
 classification_version: 1
 classification_batch: 25
-revised_at: "2026-09-25"
-revision_note: "δ'nın tanımı ve DPO'nun yeğlenen cevabı düşürdüğü koşu elle hesaplandı; 1,5/β ilişkisinin kaybın aritmetiği olduğu ve SFT bedelinin kaynağı düzeltildi."
+revised_at: "2026-09-26"
+revision_note: "Şekil 1'in KL notu düzeltildi, değerler zarf konumunun KL'si; derlem kaybı hesabına aynı konumdaki bugün hedefleri eklendi, tercih verisinin kazancı puanla verildi."
 ---
 ## Doğru cevabı olmayan bir soru
 
@@ -54,9 +54,9 @@ Sonuç ölçülebilir. Aşağıdaki tabloda dört ayrı koşu var; her biri ayn�
 
 Neyin korunduğunun mekanik sebebi de görünüyor ve maskede duruyor. Fiil token'ı maskenin **içinde**; SFT her adımda biçimi kaydırırken fiil kuralını da yeniden pekiştiriyor.
 
-Ama bu verginin neyi ölçtüğüne bakmak gerekiyor. Derlem kaybındaki artışın nereden geldiğini elle bulabiliyoruz ve cevap sanıldığı yerde değil. Derlemin on iki hedefinden ikisi `dün`: `dün`lü iki cümlenin zarf konumu. 120 adımdan sonra `bugün` 0,9976 aldığına göre `dün`e en fazla 0,0024 kalıyor ve o iki hedefin her birinin kaybı −ln(0,0024) ≈ 6,03 nat'a çıkıyor; önceden ln 2 = 0,693'tü. Öteki on hedefi yerinde bırakıp yalnızca bu ikisini değiştirirsek ortalama 1,237 çıkıyor — ölçülen 1,23545'in neredeyse aynısı (bu hesap bizim). Yani derlem kaybının artışı, maskenin dışında kalan bir yeteneğin çürümesinden gelmiyor; neredeyse tamamı yeğlemenin kendisinin faturası. Derlem iki zarfı eşit sıklıkta gösteriyor, model artık birini yeğliyor ve derlem kaybı bu anlaşmazlığı ölçüyor.
+Ama bu verginin neyi ölçtüğüne bakmak gerekiyor. Derlem kaybındaki artışın nereden geldiğini elle bulabiliyoruz ve cevap sanıldığı yerde değil. Derlemin on iki hedefinden ikisi `dün`: `dün`lü iki cümlenin zarf konumu. 120 adımdan sonra `bugün` 0,9976 aldığına göre `dün`e en fazla 0,0024 kalıyor ve o iki hedefin her birinin kaybı −ln(0,0024) ≈ 6,03 nat'a çıkıyor; önceden ln 2 = 0,693'tü. Aynı konumdaki iki `bugün` hedefinin kaybı da 0,693'ten −ln(0,9976) ≈ 0,0024'e iniyor. Öteki sekiz hedefi yerinde bırakıp yalnızca bu dördünü değiştirirsek ortalama 1,238 çıkıyor — ölçülen 1,23545'e çok yakın (bu hesap bizim). Yani derlem kaybının artışı, maskenin dışında kalan bir yeteneğin çürümesinden gelmiyor; neredeyse tamamı yeğlemenin kendisinin faturası. Derlem iki zarfı eşit sıklıkta gösteriyor, model artık birini yeğliyor ve derlem kaybı bu anlaşmazlığı ölçüyor.
 
-![Dört satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: SFT, aynı temel model ve değişen tek şey adım sayısı. Sütunlar adım, p bugün, referanstan KL, doğru fiil ve derlem kaybı. Birinci satır temel model: 0,4996, 0,0000, 0,9990, 0,46286. İkinci satır 10 adım: 0,8601, 0,2787, 0,9984, 0,58008. Üçüncü satır 30 adım: 0,9926, 0,6504, 0,9991, 1,05479. Dördüncü satır vurguludur, 120 adım: 0,9976, 0,6761, 0,9986, 1,23545. Birinci kutunun başlığı üç sütun üç ayrı şey söylüyor: biçim taşındı, 0,4996'dan 0,9976'ya; bilgi yerinde kaldı, 0,9990'dan 0,9986'ya; bedel derlem kaybında ödendi, 0,46286'dan 1,23545'e. İkinci kutuda şu durur: fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. En altta iki kayıt: dört ayrı koşu vardır ve hepsi aynı temel modelden başlar; KL yedi bağlam üzerinden ortalanmıştır.](assets/sft-neyi-tasiyor.svg "Şekil 1 — Biçim taşındı, bilgi taşınmadı")
+![Dört satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: SFT, aynı temel model ve değişen tek şey adım sayısı. Sütunlar adım, p bugün, referanstan KL, doğru fiil ve derlem kaybı. Birinci satır temel model: 0,4996, 0,0000, 0,9990, 0,46286. İkinci satır 10 adım: 0,8601, 0,2787, 0,9984, 0,58008. Üçüncü satır 30 adım: 0,9926, 0,6504, 0,9991, 1,05479. Dördüncü satır vurguludur, 120 adım: 0,9976, 0,6761, 0,9986, 1,23545. Birinci kutunun başlığı üç sütun üç ayrı şey söylüyor: biçim taşındı, 0,4996'dan 0,9976'ya; bilgi yerinde kaldı, 0,9990'dan 0,9986'ya; bedel derlem kaybında ödendi, 0,46286'dan 1,23545'e. İkinci kutuda şu durur: fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. En altta iki kayıt: dört ayrı koşu vardır ve hepsi aynı temel modelden başlar; KL, zarf konumundaki dağılım üzerinden ölçülmüştür.](assets/sft-neyi-tasiyor.svg "Şekil 1 — Biçim taşındı, bilgi taşınmadı")
 
 Şekil 1'in okunacak yeri iki bitişik sütun: doğru fiil sütunu hiç oynamıyor, derlem kaybı sütunu iki buçuk katından fazlasına çıkıyor.
 
@@ -183,7 +183,7 @@ Gelmez. Model deterministik; değişen şey çekiliş. 10\. makalede üretimin b
 
 Kendi ölçümümüz bir yöntemi diğerine yeğlemeye yetmez. Yetenler ne diyor?
 
-Hamish Ivison ve arkadaşlarının NeurIPS 2024'te yayımladığı çalışma tercih eğitiminin bileşenlerini tek tek değiştirerek karşılaştırdı ve etki sırasını verdi: en büyük fark **tercih verisinin kalitesinden** geliyor, sonra öğrenme algoritmasının seçiminden, sonra ödül modelinin iyileştirilmesinden, en son da ek etiketsiz istem eklemekten. Sayılarla: iyi tercih verisi talimat takibi ve doğruluk ölçümlerinde yüzde 8'e varan iyileşme sağlıyor; PPO ise DPO'yu matematikte yüzde 2,5, genel alanlarda yüzde 1,2'ye kadar geçiyor. Yani algoritma seçimi önemli ama veriden sonra geliyor.
+Hamish Ivison ve arkadaşlarının NeurIPS 2024'te yayımladığı çalışma tercih eğitiminin bileşenlerini tek tek değiştirerek karşılaştırdı ve etki sırasını verdi: en büyük fark **tercih verisinin kalitesinden** geliyor, sonra öğrenme algoritmasının seçiminden, sonra ödül modelinin iyileştirilmesinden, en son da ek etiketsiz istem eklemekten. Sayılarla: iyi tercih verisi talimat takibinde ve TruthfulQA ölçümünde 8 puanı aşan iyileşme sağlıyor; PPO ise DPO'yu matematikte 2,5, genel alanlarda 1,2 puana kadar geçiyor. Yani algoritma seçimi önemli ama veriden sonra geliyor.
 
 13\. makalede aktardığımız Tajwar ve arkadaşlarının bulgusu da aynı yöne bakıyordu: asıl fark kaybın biçiminde değil, verinin nereden geldiğindedir. Bizim deneyimiz bu tabloya yalnızca bir şey ekliyor ve o da bir uyarı: tercih verisi, üzerinde hiçbir şey söylemediği davranışları korumaz.
 

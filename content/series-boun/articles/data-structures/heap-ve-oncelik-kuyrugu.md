@@ -12,7 +12,7 @@ tags:
   - heapsort
   - build-heap
   - tam-ikili-agac
-content_hash: sha256:e1cdc7e67fc1e09fc5d1492ab3fd3f8873b5745a2447e7f8a9040bcb31c4ea17
+content_hash: sha256:8b45c7498fdd6725824c03db15e77dc4c19dc07619c9bb7fb1b74e9a6f0ea8d0
 classification_version: 1
 classification_batch: 4
 ---
@@ -121,7 +121,7 @@ Somut bir iz sürelim. Şekil 1'deki [1, 3, 2, 7, 4, 9, 5] heap'ine 0 ekleyelim.
 
 Şekil 2 iki yordamı yan yana gösteriyor.
 
-![Dikey bir çizgiyle ayrılmış iki yarı. Solda yukarı sızdırma: yedi düğümlü bir heap ağacının en soluna yeni yaprak olarak eklenen 0 değeri, kesikli ve ok uçlu bir çizgiyle 7, sonra 3, sonra köke giden yol boyunca yukarı taşınıyor; yol üzerindeki dört düğüm vurgulu. Altında üç takasla köke çıktığı ve sonucun 0, 1, 2, 3, 4, 9, 5, 7 olduğu yazıyor. Sağda aşağı sızdırma: kökteki 5 değeri, iki çocuğunun küçüğü olan 2 ile takas edilerek bir seviye iniyor, yeni konumunda tek çocuğu 9 kendisinden büyük olduğu için duruyor. Altında küçük olan çocukla takas etmenin zorunlu olduğu, büyükle takas edilirse değişmezin onarılmadığı ve sonucun 2, 3, 5, 7, 4, 9 olduğu yazıyor. En altta her iki yordamın da kökten yaprağa giden tek bir yol boyunca yürüdüğü ve maliyetin yüksekliğe eşit olduğu belirtiliyor](assets/heap-sizdirma.svg "Şekil 2 — Yukarı ve aşağı sızdırma: onarım tek bir yol boyunca yürür")
+![Dikey bir çizgiyle ayrılmış iki yarı. Solda yukarı sızdırma: yedi düğümlü bir heap ağacının en soluna yeni yaprak olarak eklenen 0 değeri, kesikli ve ok uçlu bir çizgiyle 7, sonra 3, sonra köke giden yol boyunca yukarı taşınıyor; yol üzerindeki dört düğüm vurgulu. Altında üç takasla köke çıktığı ve sonucun 0, 1, 2, 3, 4, 9, 5, 7 olduğu yazıyor. Sağda aşağı sızdırma: kökteki 5 değeri, iki çocuğunun küçüğü olan 2 ile takas edilerek bir seviye iniyor, yeni konumunda tek çocuğu 9 kendisinden büyük olduğu için duruyor. Altında küçük olan çocukla takas etmenin zorunlu olduğu, büyükle takas edilirse değişmezin onarılmadığı ve sonucun 2, 3, 5, 7, 4, 9 olduğu yazıyor. En altta her iki yordamın da kökten yaprağa giden tek bir yol boyunca yürüdüğü ve maliyetin en fazla yükseklik kadar olduğu belirtiliyor](assets/heap-sizdirma.svg "Şekil 2 — Yukarı ve aşağı sızdırma: onarım tek bir yol boyunca yürür")
 
 Karşılaştırma sayısını sıkı biçimde de verebiliriz: n öğeli bir heap'te ekleme en fazla 1 + log₂ n karşılaştırma, en küçüğü alma en fazla 2 log₂ n karşılaştırma yapar. Alma işleminin katsayısının iki olmasının nedeni her seviyede iki karşılaştırma yapılmasıdır: önce hangi çocuğun küçük olduğu, sonra o çocuğun ebeveynden küçük olup olmadığı.
 
@@ -133,7 +133,7 @@ Daha iyisi var ve nedeni sayma refleksiyle görülür. Diziyi baştan **zaten bi
 
 Maliyeti neden düşük? Çünkü aşağı sızdırmanın maliyeti düğümün **derinliği** değil **yüksekliğidir** ve tam bir ağaçta düğümlerin ezici çoğunluğu yaprağa yakındır. Düğümlerin yaklaşık yarısı yapraktır (yükseklik 0, hiç iş yok), dörtte biri yükseklik 1'dir, sekizde biri yükseklik 2'dir. Toplam iş, her yükseklik seviyesindeki düğüm sayısıyla o yüksekliğin çarpımlarının toplamıdır. Yüksekliği h olan düğüm sayısı en fazla yaklaşık n/2^(h+1) olduğu için toplam n · (0/2 + 1/4 + 2/8 + 3/16 + ⋯) biçimindedir; parantezdeki seri 1'e yakınsar, yani toplam iş n'yi aşmaz.
 
-Sayılarla görelim. n = 1000 için derinlikler toplamı 7.987, yükseklikler toplamı 994. n = 10⁶ için derinlikler toplamı 17.951.445, yükseklikler toplamı 999.993. Bu sayılar kendi hesabımdır; yükseklikler toplamının her iki boyutta da n'nin hemen altında kaldığına dikkat et. Bir milyon elemanda aynı işi yapan iki yol arasında on sekiz kat fark var ve fark, hangi büyüklüğün toplandığından geliyor.
+Sayılarla görelim. n = 1000 için derinlikler toplamı 7.987, yükseklikler toplamı 994. n = 10⁶ için derinlikler toplamı 17.951.445, yükseklikler toplamı 999.993. Bu sayılar kendi hesabımdır: düğümleri seviye sırasıyla 1'den n'ye numaralarsan derinlikler toplamı Σ ⌊log₂ i⌋, yükseklikler toplamı ise n eksi n'nin ikili yazımındaki 1 sayısıdır (1000 = 1111101000₂ altı tane 1 taşır, 1000 − 6 = 994). Yükseklikler toplamının her iki boyutta da n'nin hemen altında kaldığına dikkat et. Bir milyon elemanda aynı işi yapan iki yol arasında on sekiz kat fark var ve fark, hangi büyüklüğün toplandığından geliyor.
 
 Burada bir ayrımı temiz tutmak gerekiyor, çünkü mülakatta karıştırılır. Bu **amortize bir sonuç değildir.** Dinamik dizide amortize maliyet, tek tek pahalı olabilen işlemlerin toplamını sınırlıyordu; burada ise her aşağı sızdırma zaten kendi düğümünün yüksekliği kadar iş yapar ve biz yalnızca **toplamı daha sıkı hesaplıyoruz**. Kaba hesap her düğüme log n biçiyor, sıkı hesap gerçek yükseklikleri topluyor. Sonuç en kötü durum için geçerli bir üst sınırdır, bir ortalama ya da muhasebe hilesi değildir.
 

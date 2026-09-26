@@ -12,7 +12,7 @@ tags:
   - erisim-matrisi
   - yetenekler
   - linux
-content_hash: sha256:49e0a79005b0e8755c8820bca7f6ebfb16304a82504c029eb676d1a19f910405
+content_hash: sha256:8cbdb6e0dd785ff062e9101cecb3bcb2d3c16e07e721c44bc96b500aa118dc3f
 classification_version: 1
 classification_batch: 11
 ---
@@ -77,7 +77,7 @@ Kaybı da hesapladım. Dokuz bit yalnızca **2⁹ = 512** ayrı izin durumu ifad
 
 Bitlerin sekizlik gösterimini de doğruladım: `chmod 600` `rw-------` verir, `644` `rw-r--r--`, `755` `rwxr-xr-x`. İki incelik mülakatta sorulur. Birincisi, dizinlerde **çalıştırma biti** farklı anlamdadır: dosyayı çalıştırmayı değil, dizinin **içine geçmeyi** sağlar. İkincisi, **süper kullanıcı (superuser, root)** bütün bu denetimlerin dışındadır; pratiktir ama en az ayrıcalık ilkesinin açık ihlalidir. Saldırganın nihai hedefi tam olarak budur: süper kullanıcı olabilen bir saldırgan her dosyayı okuyabilir, her programı değiştirebilir, her yapılandırmayı bozabilir — yani koruma tek bir noktadan çöker.
 
-Bir eksen daha var ve ötekilerden bağımsızdır. Erişimi kimin belirlediği sorusunda **isteğe bağlı erişim denetimi (discretionary access control)** sahibin karar verdiği modeldir; **zorunlu erişim denetimi (mandatory access control)** ise bir otoritenin koyduğu ve sahibin gevşetemediği modeldir. Android'in izin etiketleri bunun günlük hayattaki örneğidir: bir uygulamanın isteyebileceği izinler bildiriminde sabitlenir, kullanıcı bildirilmemiş bir izni veremez, verileni ise kısabilir — ve her uygulamaya ayrı bir kullanıcı kimliği verilir, yani en az ayrıcalık ilkesi doğrudan uygulanır.
+Bir eksen daha var ve ötekilerden bağımsızdır. Erişimi kimin belirlediği sorusunda **isteğe bağlı erişim denetimi (discretionary access control)** sahibin karar verdiği modeldir; **zorunlu erişim denetimi (mandatory access control)** ise bir otoritenin koyduğu ve sahibin gevşetemediği modeldir. Android'in izin etiketleri bunun günlük hayattaki örneğidir: bir uygulamanın isteyebileceği izinler bildiriminde sabitlenir, kullanıcı yalnızca bildirilmiş izinleri verebilir, verdiğini de kısabilir — ve her uygulamaya ayrı bir kullanıcı kimliği verilir, yani en az ayrıcalık ilkesi doğrudan uygulanır.
 
 ## Linux somutlaması: `open()` çağrısında ne oluyor
 

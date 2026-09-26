@@ -12,7 +12,7 @@ tags:
   - dusun-eyle-gozle
   - etkin-getirme
   - yansima-tokenlari
-content_hash: sha256:726de179b48e2e1609f94dcd8cd090e3f13d2f68d68c4f1c7415a9c9ef22b8a1
+content_hash: sha256:3a61214a58a24a4cd7c0c559c81d7097d43ce172905c177863a125cc51d3dfcb
 classification_version: 1
 classification_batch: 10
 ---
@@ -30,7 +30,7 @@ Alandaki adı **çok adımlı soru** (multi-hop question): cevabı birden çok b
 
 Ofir Press ve arkadaşlarının EMNLP 2023 bulguları programında sunduğu çalışma bunu doğrudan ölçtü. Ünlü kişilerin doğum yılı, doğum yeri gibi olgularını birleştiren iki adımlı sorular kurdular ve modele hem bileşik soruyu hem de iki alt soruyu ayrı ayrı sordular. Davinci-002, alt soruların büyük kısmını biliyor; bileşik soruların yüzde 45,4'ünü cevaplıyor. En zor kategoride alt soruların yüzde 80'i doğru, bileşik soruların ise yalnızca yüzde 1,2'si. Model her iki olguyu da "bilen" ama ikisini yan yana getiremeyen bir durumda.
 
-Yazarlar bu olguya **bileşim açığı** (compositionality gap) diyor: modelin alt soruları doğru cevaplayıp bileşik soruyu cevaplayamadığı soruların oranı. Ve çalışmanın asıl bulgusu, açığın ölçekle **kapanmaması**: küçükten büyüğe bütün model boylarında yaklaşık yüzde 40'ta sabit kalıyor. Model büyüdükçe daha çok olgu biliyor, ama bu olguları birleştirme yeteneği aynı hızda büyümüyor.
+Yazarlar bu olguya **bileşim açığı** (compositionality gap) diyor: modelin alt soruları doğru cevaplayıp bileşik soruyu cevaplayamadığı soruların oranı. Ve çalışmanın asıl bulgusu, açığın ölçekle **kapanmaması**: 1 milyardan 175 milyar parametreye kadar model boylarında yaklaşık yüzde 40'ta sabit kalıyor. Model büyüdükçe daha çok olgu biliyor, ama bu olguları birleştirme yeteneği aynı hızda büyümüyor.
 
 31\. makaledeki tartışmayı hatırla: modelin akıl yürütmesi, eğitimde görülmüş hesap parçalarını tanıyıp birleştirmeye ne kadar dayanıyor? Bileşim açığı bu sorunun getirme dünyasındaki ölçüsü. İki olguyu birleştirmek eğitimde görülmemiş bir parça olabilir; model iki parçayı da tanıyıp aradaki köprüyü kuramıyor.
 

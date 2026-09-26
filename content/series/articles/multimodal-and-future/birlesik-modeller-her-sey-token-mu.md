@@ -12,7 +12,7 @@ tags:
   - kuantizasyon
   - erken-kaynasma
   - kisitli-uretim
-content_hash: sha256:b88605c353e1002b4939700417bc7b6a57239eff1ed1eb2240fdc7de103b88a4
+content_hash: sha256:254e898a0dcdc88f8fe2285a71ecbd17571ed79ed7e87d8e57366d8c792a1ab7
 classification_version: 1
 classification_batch: 20
 ---
@@ -68,7 +68,7 @@ Bunu hafifletici bir dipnot olarak değil, iddianın fiyatı olarak okumak gerek
 
 İkinci bir fiyat bağlam penceresinde ödeniyor ve aritmetiği basit. Görüntü başına 1024 token demek, on görüntülük bir belgenin yalnızca görselleri için 10.240 token demek. 21\. makalede pencerenin neyi kapsadığını, 25 ve 26'da uzun bağlamın ve anahtar-değer önbelleğinin maliyetini görmüştük; birleşik bir modelde o maliyeti artık metin değil, görüntüler belirliyor. Bir modaliteyi sözlüğe sokmanın bedeli, o modalitenin pencerede kapladığı yerdir.
 
-Bu bedelin modaliteye göre değiştiğini de söylemek gerekiyor, çünkü bütün modaliteler aynı zorlukta değil. 82\. makaledeki akustik token'lar zaten ayrıktı: sinir ses kodlayıcısı sesi kendi işi gereği kod defterlerine indiriyordu, yani sesin "sözlüğe sokulması" birleşik model için ayrıca ödenen bir bedel değil, o alanda zaten var olan bir temsil. Görüntüde durum farklı; orada kuantizasyon yalnızca dizi modeline yaranmak için yapılıyor. Jun Zhan ve arkadaşlarının ACL 2024'te sunduğu çalışma bu gözlemi bir mimariye çeviriyor: metin, görüntü, konuşma ve müziği ayrı ayrı ayrık dizilere çevirip hepsini tek bir dil modeliyle, gövdeye hiç dokunmadan işliyorlar. Aynı iddianın en iddialı hâli ise Emu3 ekibinin 2024'te yayımladığı — hakemli bir yerde yayımlandığı doğrulanamayan — çalışmada: yalnızca sonraki token tahminiyle eğitilmiş tek bir model, görüntü üretiminde ve görüntü-dil anlamada kendi alanlarının güçlü uzmanlaşmış modellerini geçtiğini bildiriyor.
+Bu bedelin modaliteye göre değiştiğini de söylemek gerekiyor, çünkü bütün modaliteler aynı zorlukta değil. 82\. makaledeki akustik token'lar zaten ayrıktı: sinir ses kodlayıcısı sesi kendi işi gereği kod defterlerine indiriyordu, yani sesin "sözlüğe sokulması" birleşik model için ayrıca ödenen bir bedel değil, o alanda zaten var olan bir temsil. Görüntüde durum farklı; orada kuantizasyon yalnızca dizi modeline yaranmak için yapılıyor. Jun Zhan ve arkadaşlarının ACL 2024'te sunduğu çalışma bu gözlemi bir mimariye çeviriyor: metin, görüntü, konuşma ve müziği ayrı ayrı ayrık dizilere çevirip hepsini tek bir dil modeliyle, gövdeye hiç dokunmadan işliyorlar. Aynı iddianın en iddialı hâli ise Emu3 ekibinin 2024'te ön baskı olarak yayımladığı, 2026'da *Nature*'da hakemli olarak çıkan çalışmada: yalnızca sonraki token tahminiyle eğitilmiş tek bir model, görüntü üretiminde ve görüntü-dil anlamada kendi alanlarının köklü uzmanlaşmış modelleriyle eşit başarım bildiriyor. Ön baskı bu modelleri geçtiğini söylüyordu; hakemli sürümün iddiası eşitlik.
 
 ## 30'un borcu: biçim garantisi burada mimari bir zorunluluk
 
@@ -139,5 +139,5 @@ Bu makale boyunca bir şeyi sabit tuttuk: modelin her token için bütün parame
 - Li, T., Tian, Y., Li, H., Deng, M. & He, K. (2024). *Autoregressive Image Generation without Vector Quantization*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/66e226469f20625aaebddbe47f0ca997-Abstract-Conference.html)
 - Zhou, C., Yu, L., Babu, A., Tirumala, K., Yasunaga, M., Shamis, L., Kahn, J., Ma, X., Zettlemoyer, L. & Levy, O. (2025). *Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model*. ICLR 2025. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/12678c3948153f4bc391f51e2082bd6e-Abstract-Conference.html)
 - Zhan, J., Dai, J., Ye, J., Zhou, Y., Zhang, D., Liu, Z., Zhang, X., Yuan, R., Zhang, G., Li, L., Yan, H., Fu, J., Gui, T., Sun, T., Jiang, Y. & Qiu, X. (2024). *AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling*. ACL 2024. [Bağlantı](https://aclanthology.org/2024.acl-long.521/)
-- Emu3 Team (2024). *Emu3: Next-Token Prediction is All You Need*. Hakemli bir yerde yayımlandığı doğrulanamadı; okunan sürüm arXiv:2409.18869. [Bağlantı](https://arxiv.org/abs/2409.18869)
+- Emu3 Ekibi: Wang, X., Cui, Y., Wang, J., Zhang, F., Wang, Y. ve ark. (2026). *Multimodal learning with next-token prediction for large multimodal models* (ön baskı adı: *Emu3: Next-Token Prediction is All You Need*). Nature, 650, s. 327–333. [Bağlantı](https://doi.org/10.1038/s41586-025-10041-x)
 - Aghajanyan, A., Yu, L., Conneau, A., Hsu, W.-N., Hambardzumyan, K., Zhang, S., Roller, S., Goyal, N., Levy, O. & Zettlemoyer, L. (2023). *Scaling Laws for Generative Mixed-Modal Language Models*. ICML 2023. [Bağlantı](https://proceedings.mlr.press/v202/aghajanyan23a.html)

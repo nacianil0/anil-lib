@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-26T04:21:07.750Z
-> Files: 517 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-26T10:16:11.557Z
+> Files: 747 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -56,6 +56,230 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27096232-ef5b-4abb-acff-1fb931791f16/scratchpad/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/
+
+- `altshow.py` (~388 tok)
+- `apply_edits.py` — Apply reviewed exact-string edits. Usage: python apply_edits.py <edits.json> [--write] (~441 tok)
+- `aria_audit.py` — /*.md", recursive=True): (~195 tok)
+- `arxiv_meta.py` — f (~581 tok)
+- `backrefs.py` (~294 tok)
+- `build_wf2_edits.py` (~663 tok)
+- `context_dump.py` — read (~686 tok)
+- `crcheck.py` (~271 tok)
+- `edits_debt.json` (~10208 tok)
+- `edits_docs_final.json` (~653 tok)
+- `edits_fig4.json` (~175 tok)
+- `edits_misc.json` (~76 tok)
+- `edits_misc2.json` (~132 tok)
+- `edits_sweep.json` (~8626 tok)
+- `edits_trim.json` (~452 tok)
+- `edits_trim2.json` (~75 tok)
+- `edits_yol.json` (~429 tok)
+- `inventory.py` — /*.md", recursive=True)): (~948 tok)
+- `measure.mjs` — DOM measurement: node measure.mjs <baseUrl> <path> [...]  (3 widths x 3 themes) (~622 tok)
+- `memory_append.md` — Session: 2026-09-26 10:36 — AI serisi bakım run'ı 1 (TRIGGER bakım kipi) (~346 tok)
+- `newalts.py` (~1179 tok)
+- `prep_args.py` — /*.md", recursive=True): (~487 tok)
+- `revmark.py` (~803 tok)
+- `shots.mjs` — Figure PNGs in light/dark: node shots.mjs <baseUrl> <outDir> <slug>:<figIndex1> [...] (~564 tok)
+- `showlines.py` (~193 tok)
+- `split_diff.py` — slug_of (~484 tok)
+- `summ.py` (~806 tok)
+- `syncalt.py` — Set a new alt (optional) and copy markdown alt -> SVG aria-label for listed figures. (~1154 tok)
+- `triage.py` — get, norm, f (~1235 tok)
+- `triage2.py` — get, norm, f (~1318 tok)
+- `unlabeled.py` — /*.md", recursive=True)): (~332 tok)
+- `wolf_update.py` (~1698 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/debt-venue/
+
+- `build_results.py` — add (~15062 tok)
+- `fetch.py` — get, arxiv_abs, clean, pdf_text (~947 tok)
+- `kl105.py` (~460 tok)
+- `render.cjs` — Declares path (~170 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-1/
+
+- `build_results.py` — -*- coding: utf-8 -*- (~10567 tok)
+- `crossref.py` (~254 tok)
+- `fetch.py` (~425 tok)
+- `gorilla_brute.py` (~438 tok)
+- `notes_part1.md` — num-1 interim notes (articles 15, 19, 41) (~500 tok)
+- `svgtext.py` (~203 tok)
+- `tok.py` (~131 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-2/
+
+- `crossref.py` — cr (~394 tok)
+- `fetch.py` (~320 tok)
+- `imgs.py` (~122 tok)
+- `results.json` (~10585 tok)
+- `svgtext.py` (~170 tok)
+- `venues.py` — get, strip (~549 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-3/
+
+- `acl.py` — g (~269 tok)
+- `check_results.py` (~159 tok)
+- `crossref.py` (~309 tok)
+- `fetch_url.py` (~294 tok)
+- `fetch.py` (~857 tok)
+- `g.py` — page_of (~244 tok)
+- `results.json` (~11139 tok)
+- `svgtext.py` (~135 tok)
+- `venues.py` — meta, log (~1644 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/num-4/
+
+- `build_results.py` — add (~11108 tok)
+- `check_old.py` (~111 tok)
+- `fetch.py` — get, pdf2txt (~530 tok)
+- `pages.py` — show (~356 tok)
+- `results.json` (~25 tok)
+- `ripple_gh.py` (~211 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-1/
+
+- `arxiv_authors.py` (~583 tok)
+- `author_names.py` — strip (~301 tok)
+- `build_results.py` — add (~8036 tok)
+- `channel_notes.txt` (~890 tok)
+- `crossref.py` — get (~733 tok)
+- `fetch.py` (~314 tok)
+- `indexsweep.py` — norm (~1025 tok)
+- `match_all.py` — norm (~333 tok)
+- `multi_lines.py` (~246 tok)
+- `read_chunk.py` (~100 tok)
+- `s2batch.py` (~371 tok)
+- `s2single.py` (~413 tok)
+- `wscrawl.py` — norm (~617 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-2/
+
+- `acl.py` — norm (~467 tok)
+- `aclauthor.py` (~268 tok)
+- `aclentry.py` (~114 tok)
+- `authscan.py` — strip, norm, surnames (~536 tok)
+- `body.py` (~214 tok)
+- `bridgepdf.py` (~183 tok)
+- `colm.py` — norm (~506 tok)
+- `confjson.py` (~444 tok)
+- `crossref.py` (~459 tok)
+- `grep_conf.py` (~323 tok)
+- `match.py` — norm, load (~484 tok)
+- `results.json` (~10871 tok)
+- `s2batch.py` (~349 tok)
+- `show.py` (~120 tok)
+- `tmlr.py` — norm (~360 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-3/
+
+- `aclsearch.py` — norm (~360 tok)
+- `arxivabs.py` (~326 tok)
+- `build_results.py` — pre, add (~8522 tok)
+- `crbib.py` — norm (~526 tok)
+- `crossref.py` (~483 tok)
+- `crossuse.py` — /*.md', recursive=True) (~1036 tok)
+- `ctx.py` (~137 tok)
+- `epmc.py` (~208 tok)
+- `getpage.py` (~212 tok)
+- `indexes.py` (~414 tok)
+- `indexes2.py` (~557 tok)
+- `s2batch.py` (~477 tok)
+- `titlesearch.py` — norm (~443 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-4/
+
+- `body_grep.py` (~595 tok)
+- `crossref.py` (~461 tok)
+- `fetch.py` (~416 tok)
+- `grep_titles.py` — norm (~346 tok)
+- `rawctx.py` (~151 tok)
+- `read_chunk.py` (~192 tok)
+- `results.json` (~11136 tok)
+- `s2_batch.py` (~393 tok)
+- `sweep_indexes.py` — norm (~530 tok)
+- `sweep_kw.py` — norm (~821 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf/sweep-5/
+
+- `arxivabs.py` — f (~364 tok)
+- `bodygrep.py` (~199 tok)
+- `build_results.py` — ABS, add (~7497 tok)
+- `crossref.py` (~508 tok)
+- `fetchgrep.py` (~269 tok)
+- `grep_last.py` (~123 tok)
+- `indexgrep.py` (~689 tok)
+- `linkcheck.py` (~364 tok)
+- `orapi.py` — g (~319 tok)
+- `pdfhead.py` (~413 tok)
+- `pmc.py` (~242 tok)
+- `read_chunk.py` (~194 tok)
+- `s2batch.py` (~378 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-1/
+
+- `alts.py` (~538 tok)
+- `count_old.py` (~684 tok)
+- `dump_sweep.py` (~145 tok)
+- `dump.py` (~288 tok)
+- `kwic.py` (~138 tok)
+- `links2.py` (~386 tok)
+- `measure.mjs` — Declares require (~875 tok)
+- `metr.py` (~248 tok)
+- `nsdi.py` (~485 tok)
+- `results.json` (~4624 tok)
+- `svgw.py` (~404 tok)
+- `thakur.py` (~282 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-2/
+
+- `count.py` (~764 tok)
+- `dump_ev.py` (~202 tok)
+- `dump_sweep.py` (~129 tok)
+- `ev.py` — show (~322 tok)
+- `linkcheck.py` (~303 tok)
+- `links.py` (~592 tok)
+- `meta.py` — split, fm_val (~510 tok)
+- `results.json` (~5413 tok)
+- `svgcheck.py` (~775 tok)
+- `sw.py` (~143 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/
+
+- `byart.py` (~149 tok)
+- `catcheck.py` — fm (~617 tok)
+- `grepjson.py` (~198 tok)
+- `inspect.py` — walk (~187 tok)
+- `links3.py` (~582 tok)
+- `measure.cjs` — Declares fs (~1059 tok)
+- `svgcheck3.py` (~967 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-3/run/
+
+- `build_results.py` (~4300 tok)
+- `counts.py` (~976 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/27bd5fa2-b8ca-4f57-943a-a287c0666b07/scratchpad/wf2/check-4/
+
+- `altcheck.py` (~349 tok)
+- `catcheck.py` — fmv (~804 tok)
+- `fetch_pr.py` (~312 tok)
+- `fetch_salvi.py` — get (~547 tok)
+- `fetch_salvi2.py` (~249 tok)
+- `fetch2.py` — epmc (~578 tok)
+- `grep_wf.py` — hit (~208 tok)
+- `links.py` (~758 tok)
+- `peek.py` — show (~203 tok)
+- `peek2.py` (~209 tok)
+- `peek3.py` (~183 tok)
+- `peek4.py` (~286 tok)
+- `results.json` (~3163 tok)
+- `salvi.py` (~366 tok)
+- `salvi2.py` (~214 tok)
+- `svgcheck.py` (~776 tok)
+- `uniq.py` (~455 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/32dd4f14-333e-4d01-961e-edfc8de89f77/scratchpad/
 
@@ -403,15 +627,17 @@
 ## C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/
 
 - `boun-bakim-run1-borclar-kapandi.md` (~1124 tok)
+- `boun-bakim-run2-2026-09-26.md` (~551 tok)
 - `boun-batch10-faz-d-sanallastirma.md` (~938 tok)
 - `boun-batch11-faz-d-kapanis.md` (~1066 tok)
 - `boun-batch12-faz-e-konu-makaleleri.md` (~1209 tok)
 - `boun-batch13-seri-tamamlandi.md` (~1378 tok)
 - `boun-batch9-faz-d-govde.md` (~988 tok)
 - `editoryal-yenileme-2026-09-25.md` (~730 tok)
-- `MEMORY.md` — Memory index (~1998 tok)
+- `MEMORY.md` — Memory index (~2166 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `okuma-sifirlama-2026-09-25.md` (~542 tok)
+- `series-bakim-run1-2026-09-26.md` (~612 tok)
 - `series-batch22-faz10-acilis.md` — Declares into (~1184 tok)
 - `series-batch23-faz10-kapanis.md` (~1009 tok)
 - `series-batch24-faz11-kapanis.md` (~710 tok)
@@ -563,6 +789,44 @@
 - `render.config.ts` — BOUN bakım run'ı 2: yalıtılmış kopyada (D:/dev/anil-lib-bakim2) ayrı portta dev sunucusu. (~327 tok)
 - `themes.render.ts` — BOUN bakım run'ı 2 — /boun girişi ve seçili makaleler üç genişlik × üç temada; değişen şekillerin (~1975 tok)
 
+## artifacts/bakim2-2026-09-26/
+
+- `buglog_append.py` — BOUN bakim run'i 2 (2026-09-26): .wolf/buglog.json'a anlamli kayitlari ekle (OpenWolf protokolu). (~1204 tok)
+- `gates.sh` — BOUN bakim run'i 2 (2026-09-26): kapilar yalitilmis kopyada (D:/dev/anil-lib-bakim3) sirayla. (~242 tok)
+- `transcript_tail.py` — Yarida kalan workflow ajanlarinin son assistant metinlerini ve son arac cagrilarini ozetle. (~338 tok)
+
+## artifacts/bakim2-2026-09-26/ana/
+
+- `medyan_oran.py` — Ana oturumun bagimsiz kontrolu, makale 20 satir 111: T(n)/n dizileri. (~272 tok)
+- `quickselect.py` — Ana oturumun bagimsiz kontrolu, makale 36 satir 128: duz rastgele eksenli secimde toplam incelenen o (~284 tok)
+- `tampon.py` — Ana oturumun bagimsiz kontrolu: makale 30, MAX = 1 sinirli tampon, bir uretici + bir tuketici, ikisi (~430 tok)
+
+## artifacts/bakim2-2026-09-26/durum-sayilari/
+
+- `a20_medyan.py` — Makale 20 (bol-ve-yonet-kazanc-nereden-gelir.md, satır 97–111): (~2002 tok)
+- `a20_oran_arama.py` — Makale 20, satır 111: "üçerli grupla T(n)/n oranı ... 4,5 → 8,1 → 11,6 → 15,2 → 18,8 ... (~912 tok)
+- `a29_bayrak_tas.py` — Makale 29 (senkronizasyon-kilit-semafor-ve-monitor.md, satır 65 ve Şekil 1 alt notu): (~1132 tok)
+- `a30_filozof.py` — Makale 30 (klasik-eszamanlilik-problemleri-cozumu-savunmak.md, satır 101 ve 103, Şekil 2 alt notu): (~1027 tok)
+- `a30_tampon.py` — Makale 30 (klasik-eszamanlilik-problemleri-cozumu-savunmak.md, satır 63 ve Şekil 1 alt notu): (~1118 tok)
+- `a31_iki_kilit.py` — Makale 31 (kilitlenme-kosullar-ve-stratejiler.md, satır 31, 40, 132 ve Şekil 1 alt notu): (~689 tok)
+- `motor.py` — Küçük açık-durum (explicit-state) BFS motoru — bakım run'ı 2026-09-26, etiket durum-sayilari. (~529 tok)
+
+## artifacts/bakim2-2026-09-26/k4-isletim-1/
+
+- `altlar.py` — Yeni alt metin taslakları: kelime sayısı ve yasak karakter denetimi. (~2512 tok)
+- `altlar2.py` (~2171 tok)
+- `altlar3.py` (~2209 tok)
+- `hesaplar.py` — Küme 4 sayısal iddialarının yeniden hesabı. (~379 tok)
+- `tek_kd.py` — Tek koşul değişkenli (Mesa, while) sınırlı tampon: 1 üretici, 2 tüketici. (~485 tok)
+
+## artifacts/bakim2-2026-09-26/linkler/
+
+- `scan.py` — /*.md", recursive=True)): (~462 tok)
+
+## artifacts/bakim2-2026-09-26/resmi/
+
+- `fetch.py` — BOUN bakim run'i 2 (2026-09-26): resmi sayfalari cek, ARASTIRMA §1 / §19.1 alintilarini birebir ara. (~895 tok)
+
 ## artifacts/boun-render/
 
 - `login-b9.mjs` — Declares BASE (~418 tok)
@@ -609,41 +873,64 @@
 
 ## content/series-boun/articles/algorithms/
 
+- `acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md` — İleriye bakmayan algoritma (~5640 tok)
+- `alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md` — Üç yeni soru (~6071 tok)
+- `bol-ve-yonet-kazanc-nereden-gelir.md` — Analizden tasarıma (~5861 tok)
+- `dinamik-programlama-alt-problemi-bulmak.md` — İki çöküşün tek nedeni (~6192 tok)
+- `dogruluk-dongu-degismezleriyle-ispat.md` — Hızlı ama yanlış (~6028 tok)
+- `graf-algoritmalari-mst-ve-en-kisa-yollar.md` — İki soru, iki farklı ağaç (~6475 tok)
+- `np-tamlik-hesaplamanin-sinirlari.md` — Sınır artık modelin değil, problemin (~7665 tok)
+- `yinelemeler-ve-master-teoremi.md` — Özyinelemenin faturası (~6388 tok)
 
 ## content/series-boun/articles/data-structures/
 
+- `agaclar-ve-ikili-arama-agaclari.md` — Bir hücre doğrusal kalmıştı (~4242 tok)
+- `dengeli-arama-avlden-b-agacina.md` — Yükseklik tesadüfe bırakılamaz (~4938 tok)
+- `diziler-bagli-listeler-yigin-ve-kuyruk.md` — Arayüz bir söz, temsil bir faturadır (~4502 tok)
+- `graf-temsilleri-bfs-ve-dfs.md` — Grafı bir veri yapısı olarak görmek (~6002 tok)
+- `hashing-sabit-zamanin-bedeli.md` — Çakışma olunca ne yapıyoruz? (~5225 tok)
+- `heap-ve-oncelik-kuyrugu.md` — Tam sıralamaya ihtiyacın olmadığı zaman (~5694 tok)
+- `karmasiklik-big-o-ile-dusunmeye-baslamak.md` — "Kaç saniye sürüyor" neden yanlış soru (~4356 tok)
 
 ## content/series-boun/articles/discrete-math/
 
+- `cebirsel-yapilar-ve-boolean-cebiri.md` — Aynı kuralları paylaşan yapılar (~4176 tok)
+- `kumeler-fonksiyonlar-ve-bagintilar.md` — Mülakatın nesne dili (~4354 tok)
+- `sayma-kombinatorigin-temel-araclari.md` — Neden saymayı hatırlaman gerekiyor (~3949 tok)
+- `tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md` — Sonsuz aileler hakkındaki iddialar (~4727 tok)
 
 ## content/series-boun/articles/interview-method/
 
-- `kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md` — Kırk bir makalenin sonunda (~5674 tok)
-- `sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md` — Konu bitti, sıra anlatmada (~4949 tok)
+- `bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md` — Kapı çalınmadan önce (~4932 tok)
+- `kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md` — Kırk bir makalenin sonunda (~5624 tok)
+- `sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md` — Konu bitti, sıra anlatmada (~4954 tok)
 
 ## content/series-boun/articles/operating-systems/
 
-- `bellek-yonetimi-adres-cevirisi-ve-sayfalama.md` — Sıfırdan başladığını sanan program (~7190 tok)
-- `cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md` — Hazır kümesinden hangisi? (~8042 tok)
-- `dosya-sistemleri-ve-giris-cikis.md` — Diskin asıl işi (~7486 tok)
-- `kilitlenme-kosullar-ve-stratejiler.md` — Döngüyü kırdık, ama neden yeterliydi? (~7155 tok)
-- `klasik-eszamanlilik-problemleri-cozumu-savunmak.md` — Neyi ispatlamaya çalışıyoruz? (~6933 tok)
-- `koruma-guvenlik-ve-linux-somutlamasi.md` — İki farklı "güvenlik" (~7167 tok)
-- `sanal-bellek-talep-sayfalama-ve-degistirme.md` — Adres uzayı belleğe sığmazsa (~5980 tok)
-- `senkronizasyon-kilit-semafor-ve-monitor.md` — Kilidin ne söz verdiği (~7641 tok)
+- `bellek-yonetimi-adres-cevirisi-ve-sayfalama.md` — Sıfırdan başladığını sanan program (~6790 tok)
+- `cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md` — Hazır kümesinden hangisi? (~7799 tok)
+- `dosya-sistemleri-ve-giris-cikis.md` — Diskin asıl işi (~7144 tok)
+- `isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md` — Makine artık senin değil (~7315 tok)
+- `kilitlenme-kosullar-ve-stratejiler.md` — Döngüyü kırdık, ama neden yeterliydi? (~6866 tok)
+- `klasik-eszamanlilik-problemleri-cozumu-savunmak.md` — Neyi ispatlamaya çalışıyoruz? (~6756 tok)
+- `koruma-guvenlik-ve-linux-somutlamasi.md` — İki farklı "güvenlik" (~7193 tok)
+- `sanal-bellek-talep-sayfalama-ve-degistirme.md` — Adres uzayı belleğe sığmazsa (~5893 tok)
+- `senkronizasyon-kilit-semafor-ve-monitor.md` — Kilidin ne söz verdiği (~8021 tok)
+- `surecler-ve-is-parcaciklari.md` — Çekirdek neyi kaydediyor (~7122 tok)
 
 ## content/series-boun/articles/supporting-fundamentals/
 
-- `bilgisayar-organizasyonu-osnin-altindaki-makine.md` — Soyutlamanın altına inmek (~6577 tok)
-- `c-ve-bellek-sistem-programlama-penceresi.md` — Kavramın programcıdaki karşılığı (~6298 tok)
-- `olasilik-ve-istatistik-mulakat-icin-cekirdek.md` — Ertelenen koşul (~6999 tok)
-- `veritabanlari-iliskisel-model-indeks-ve-transaction.md` — Bütün mekanizmaların buluştuğu yer (~8549 tok)
+- `bilgisayar-organizasyonu-osnin-altindaki-makine.md` — Soyutlamanın altına inmek (~6773 tok)
+- `c-ve-bellek-sistem-programlama-penceresi.md` — Kavramın programcıdaki karşılığı (~6476 tok)
+- `olasilik-ve-istatistik-mulakat-icin-cekirdek.md` — Ertelenen koşul (~7824 tok)
+- `veritabanlari-iliskisel-model-indeks-ve-transaction.md` — Bütün mekanizmaların buluştuğu yer (~9585 tok)
 
 ## content/series-boun/assets/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir/
 
 
 ## content/series-boun/assets/agaclar-ve-ikili-arama-agaclari/
 
+- `bst-yukseklik.svg` (~1246 tok)
 
 ## content/series-boun/assets/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar/
 
@@ -663,6 +950,7 @@
 
 ## content/series-boun/assets/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor/
 
+- `seri-faz-haritasi.svg` (~965 tok)
 
 ## content/series-boun/assets/bol-ve-yonet-kazanc-nereden-gelir/
 
@@ -682,6 +970,7 @@
 
 ## content/series-boun/assets/dengeli-arama-avlden-b-agacina/
 
+- `b-agaci-blok.svg` (~1179 tok)
 
 ## content/series-boun/assets/dinamik-programlama-alt-problemi-bulmak/
 
@@ -702,6 +991,7 @@
 
 ## content/series-boun/assets/graf-temsilleri-bfs-ve-dfs/
 
+- `graf-iki-temsil.svg` (~3401 tok)
 
 ## content/series-boun/assets/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar/
 
@@ -711,20 +1001,23 @@
 
 ## content/series-boun/assets/heap-ve-oncelik-kuyrugu/
 
+- `heap-sizdirma.svg` (~1483 tok)
 
 ## content/series-boun/assets/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim/
 
+- `sistem-cagrisi-yasam-dongusu.svg` (~1189 tok)
 
 ## content/series-boun/assets/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle/
 
 
 ## content/series-boun/assets/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani/
 
-- `aralikli-tekrar-takvimi.svg` (~947 tok)
+- `aralikli-tekrar-takvimi.svg` (~383 tok)
 - `zayif-nokta-haritasi.svg` (~1299 tok)
 
 ## content/series-boun/assets/karmasiklik-big-o-ile-dusunmeye-baslamak/
 
+- `buyume-siniflari.svg` (~403 tok)
 
 ## content/series-boun/assets/kilitlenme-kosullar-ve-stratejiler/
 
@@ -734,7 +1027,7 @@
 ## content/series-boun/assets/klasik-eszamanlilik-problemleri-cozumu-savunmak/
 
 - `filozoflar-dongusu.svg` (~1278 tok)
-- `sinirli-tampon.svg` (~1147 tok)
+- `sinirli-tampon.svg` (~1151 tok)
 
 ## content/series-boun/assets/koruma-guvenlik-ve-linux-somutlamasi/
 
@@ -746,6 +1039,7 @@
 
 ## content/series-boun/assets/np-tamlik-hesaplamanin-sinirlari/
 
+- `p-np-kapsama.svg` (~806 tok)
 
 ## content/series-boun/assets/olasilik-ve-istatistik-mulakat-icin-cekirdek/
 
@@ -778,6 +1072,7 @@
 
 ## content/series-boun/assets/surecler-ve-is-parcaciklari/
 
+- `surec-durum-makinesi.svg` (~1295 tok)
 
 ## content/series-boun/assets/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu/
 
@@ -894,6 +1189,7 @@
 
 ## content/series/assets/aldatma-ve-durum-farkindaligi-tartismalari/
 
+- `test-edildigini-bilmek.svg` (~2105 tok)
 
 ## content/series/assets/arac-kullanimi-islev-cagrisi/
 
@@ -1257,17 +1553,17 @@
 
 ## docs/seri-boun/
 
-- `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~57447 tok)
-- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~9033 tok)
+- `ARASTIRMA.md` — BOUN CmpE Serisi — Resmî Kaynak ve Kanıt Defteri (~59849 tok)
+- `HANDOFF.md` — "Mülakat Aynası: Boğaziçi CmpE" — Handoff (~12076 tok)
 - `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~254 tok)
-- `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~30910 tok)
+- `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~30812 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~9938 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~11666 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~11457 tok)
 - `TRIGGER.md` — "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı (~275 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~178449 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~180824 tok)
 
 ## docs/superpowers/plans/
 

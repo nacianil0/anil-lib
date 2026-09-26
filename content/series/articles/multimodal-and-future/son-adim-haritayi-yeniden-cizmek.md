@@ -12,7 +12,7 @@ tags:
   - arastirmaci-ve-muhendis
   - geri-alma-maliyeti
   - hatirlama-pratigi
-content_hash: sha256:52222ebff7e403e221368e546d197c283d4ea07621fa505749c58dce492cc116
+content_hash: sha256:3b0ca522234d82bde7c67ac806d78edab427fd19c6c33e40e75b009810a3deb1
 classification_version: 1
 classification_batch: 28
 ---
@@ -100,7 +100,7 @@ Birinci gerekçe hatırlama pratiği. Henry Roediger ile Jeffrey Karpicke'nin *P
 
 İkinci gerekçe geri bildirim, ve kutulardaki cevabın hemen ardından gelmesinin nedeni bu. Shana Carpenter, Steven Pan ve Andrew Butler'ın *Nature Reviews Psychology*'de 2022'de yayımlanan derlemesi, hatırlama denemesinin ardından doğru cevabı görmenin etkiyi genellikle artırdığını yazıyor; kazanç özellikle doğru ya da eksiksiz hatırlayamadığın durumlardan geliyor, çünkü geri bildirim yanlışı düzeltiyor ve boşluğu dolduruyor. Aynı derleme, hatırlama oturumları günlerle ya da haftalarla aralıklandığında öğrenmenin daha kalıcı olduğunu da özetliyor. Makalenin içindeki kutular ise hemen sorulan, tek oturumluk bir pratikti; kalıcılık için sorulara günler sonra dönmek gerekiyor.
 
-Açık tartışma malzemenin karmaşıklığında, ve bu serinin yazıları tam o tarafta duruyor. Tamara van Gog ile John Sweller, *Educational Psychology Review*'un 2015'teki bir özel sayısında, birbiriyle etkileşen öğelerin sayısı arttıkça sınama etkisinin azaldığını ve çok karmaşık malzemede kaybolabildiğini savundu. Aynı sayıda Jeffrey Karpicke ile William Aue itiraz etti: karmaşıklığın ölçülebilir biçimde tanımlanmadığını, çalışılmış örnek deneylerinin karmaşıklığı hiç değiştirmediğini, etkiyi karmaşık malzemede gösteren çalışmaların derlemede atlandığını, ve etkinin görülmediği deneylerin ya tek tek sözcükleri ya da hemen ardından yığılmış bir pratiği sınadığını yazdılar. İki taraf da derleme ve yorum düzeyinde konuşuyor; karmaşıklığı ölçülebilir biçimde değiştirip iki tarafın koşulunu birlikte sınayan bir deney, Eylül 2026 itibarıyla bulabildiğimiz kadarıyla yok. Bu, 116'daki üçüncü türden bir soru: koşul — karmaşıklığın tanımı — netleşmeden erimeyecek.
+Açık tartışma malzemenin karmaşıklığında, ve bu serinin yazıları tam o tarafta duruyor. Tamara van Gog ile John Sweller, *Educational Psychology Review*'un 2015'teki bir özel sayısında, birbiriyle etkileşen öğelerin sayısı arttıkça sınama etkisinin azaldığını ve çok karmaşık malzemede kaybolabildiğini savundu. Aynı sayıda Jeffrey Karpicke ile William Aue itiraz etti: karmaşıklığın ölçülebilir biçimde tanımlanmadığını, çalışılmış örnek deneylerinin karmaşıklığı hiç değiştirmediğini, etkiyi karmaşık malzemede gösteren — aralarında malzemenin karmaşıklığını doğrudan değiştirenler de bulunan — çalışmaların derlemede atlandığını, ve etkinin görülmediği deneylerin ya tek tek sözcükleri ya da hemen ardından yığılmış bir pratiği sınadığını yazdılar. İki taraf da derleme ve yorum düzeyinde konuşuyor; karmaşıklığı ölçülebilir biçimde değiştirip iki tarafın koşulunu birlikte sınayan bir deney, Eylül 2026 itibarıyla bulabildiğimiz kadarıyla yok. Bu, 116'daki üçüncü türden bir soru: koşul — karmaşıklığın tanımı — netleşmeden erimeyecek.
 
 > **Kendini yokla:** Makalelerdeki soruların cevabı neden hemen bir sonraki paragrafta veriliyordu?
 

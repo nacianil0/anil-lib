@@ -12,7 +12,7 @@ tags:
   - hnsw
   - urun-kuantizasyonu
   - vektor-veritabani
-content_hash: sha256:897bdd35e67f94dcc46e75e4db5c09775d127124bf4674b988785ea996ffaf14
+content_hash: sha256:217a6b012847d9c29f61ef1af23f7f0d25a3917f9bd57e84822708caf83dbba0
 classification_version: 1
 classification_batch: 10
 revised_at: "2026-09-25"
@@ -110,7 +110,7 @@ Disk fikrinin kaynağı, Suhas Jayaram Subramanya ve arkadaşlarının NeurIPS 2
 
 Girişteki üçüncü soruya dönelim. Dizin bulma oranı 0,90 olan bir sistem, gerçek en yakın on komşudan birini kaçırıyor demektir. Bu, getirme kalitesinden yüzde 10 kaybettiğimiz anlamına mı geliyor?
 
-Craig Macdonald ve Nicola Tonellotto'nun CIKM 2021'de sunduğu çalışma bunu doğrudan ölçtü. Geç etkileşimli bir getiricide, dizinin yaklaşık puanlarıyla aday sayısını binlerden 200'e indirdiler. İlgili belgelerin bulma oranı yüzde 18 düştü — 0,77'den 0,59'a. Buna karşılık sıralama kalitesini ölçen üç ölçüde, nDCG@10 dahil, istatistiksel olarak anlamlı hiçbir fark çıkmadı; cevap süresi ise 406 milisaniyeden 202'ye indi. Kaçırılan belgeler vardı, ama üst sıraları belirleyen belgeler değildi.
+Craig Macdonald ve Nicola Tonellotto'nun CIKM 2021'de sunduğu çalışma bunu doğrudan ölçtü. Geç etkileşimli bir getiricide, dizinin yaklaşık puanlarıyla aday sayısını binlerden 200'e indirdiler. İlgili belgelerin bulma oranı 18 puan düştü — 0,77'den 0,59'a. Buna karşılık TREC 2019'un 43 sorgusunda sıralama kalitesini ölçen üç ölçüde, nDCG@10 dahil, istatistiksel olarak anlamlı hiçbir fark çıkmadı; 6.980 sorguluk MS MARCO kümesinde ise 1.000 adayda bile küçük MRR@10 düşüşü anlamlıydı; cevap süresi ise 406 milisaniyeden 202'ye indi. Kaçırılan belgeler vardı, ama üst sıraları belirleyen belgeler değildi.
 
 Leonardo Kuffo ve arkadaşlarının SIGIR 2026'da sunduğu çalışma bu olgunun mekanizmasını gösteriyor. Fikir şu: bir sorgunun tam taramayla bulunan en yakın komşularının hepsi ilgili değildir; bir kısmı yalnızca geometrik olarak yakındır. Yazarlar tam tarama sonuçlarını ilgili ve ilgisiz diye etiketleyip yalnızca ilgili olanların ne kadarının bulunduğunu ölçüyorlar. Bir web arama kümesinde aynı dizin ayarı için geleneksel dizin bulma oranı 0,863 iken ilgili komşuların bulma oranı 0,932; ilgili komşusu az olan sorgularda fark daha büyük — 0,762'ye karşı 0,903. Sebep ölçülmüş: ilgisiz komşular sorguya neredeyse aynı uzaklıkta duruyor, aralarındaki sıralama küçük dalgalanmalarla değişiyor ve dizin tam da onları birbirine karıştırıyor. İlgili komşuların puanları ise birbirinden belirgin biçimde ayrılıyor; dizin onları kaçırmıyor.
 

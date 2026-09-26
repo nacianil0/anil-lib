@@ -12,7 +12,7 @@ tags:
   - ram-modeli
   - buyume-siniflari
   - en-kotu-durum
-content_hash: sha256:ed80c4ef4acd176b010eb8715a8a199444855ffe0226626954862170ae0c307f
+content_hash: sha256:3c42280778b48bd4cf925e61ce1b9907acd1e5e1e788856507c3c842b0370b26
 classification_version: 1
 classification_batch: 2
 ---
@@ -75,7 +75,7 @@ Farklı büyüme sınıflarının arasındaki mesafeyi görmenin en hızlı yolu
 
 Şekil 2 aynı sınıfları eğri olarak yan yana koyuyor; üstel ve karesel eğrilerin tuvali ne kadar erken terk ettiğine dikkat et.
 
-![Beş büyüme eğrisinin aynı eksende karşılaştırması: logaritmik eğri neredeyse yatay kalır, doğrusal eğri düzgün yükselir, n log n daha dik yükselip tuvali terk eder, karesel ve üstel eğriler çok daha erken tepeye ulaşır. Her eğri kendi ucunda etiketlenmiş; eksen başlığı biçimin şematik, eksenlerin ölçeksiz olduğunu belirtiyor, altta n = 1000 için gerçek değerler yazılı](assets/buyume-siniflari.svg "Şekil 2 — Büyüme sınıflarının aynı eksende karşılaştırması")
+![Beş büyüme eğrisinin aynı eksende karşılaştırması: logaritmik eğri neredeyse yatay kalır, doğrusal eğri düzgün yükselir, n log n daha dik yükselip tuvali terk eder, karesel ve üstel eğriler çok daha erken tepeye ulaşır. Her eğri kendi ucunda etiketlenmiş; eksen başlığı biçimin şematik, eksenlerin ölçeksiz olduğunu belirtiyor; gerçek değerler şeklin altındaki tabloda](assets/buyume-siniflari.svg "Şekil 2 — Büyüme sınıflarının aynı eksende karşılaştırması")
 
 Son üç satırın ne demek olduğunu somutlaştıralım. Saniyede bir milyar temel işlem yapan bir makine düşün. 2¹⁰⁰ işlemi bitirmesi yaklaşık 4 × 10¹³ yıl sürer; evrenin yaşı yaklaşık 1,4 × 10¹⁰ yıl olduğuna göre bu, evrenin yaşının kabaca üç bin katıdır. Donanımı bin kat hızlandırmak bu tabloyu kurtarmaz; üstel büyümede sabit çarpanlar anlamsızdır. "Daha hızlı bilgisayar alalım" cevabının neden çalışmadığının teknik gerekçesi budur.
 

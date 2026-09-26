@@ -13,7 +13,7 @@ tags:
   - baginti
   - denklik-baginti
   - kismi-sira
-content_hash: sha256:20bbab4751af0dd891287eab29a3de5ad41b26387f683f5c56029d9bc4f8f917
+content_hash: sha256:96306a3d4f41eb634c262c3aced406ceee3c6d6f507bb191608a69572a4c0798
 classification_version: 1
 classification_batch: 1
 ---
@@ -124,7 +124,7 @@ Sonsuz kümelerin "boyutu" da fonksiyonlarla tanımlanır: iki küme arasında b
 
 Şaşırtıcı sonuçlar buradan gelir. Tam sayılar sayılabilirdir: 0, 1, −1, 2, −2 sırasıyla numaralandırılırlar. Rasyonel sayılar da sayılabilirdir. Ama gerçel sayılar **sayılamaz (uncountable)**; herhangi bir numaralandırma verildiğinde, köşegen üzerinde her basamağı değiştirerek listede olmayan bir sayı inşa edilebilir. Bu, ispat teknikleri makalesindeki karşı örnek disiplininin sonsuz kümelerdeki hâlidir.
 
-Bilgisayar mühendisliği için sonucu şudur: programlar sonlu alfabede sonlu dizilerdir, dolayısıyla **program kümesi sayılabilirdir**. Doğal sayılardan {0, 1} kümesine giden fonksiyonların kümesi ise sayılamazdır. Her fonksiyonu hesaplayan bir program olsaydı, sayılabilir program kümesinden sayılamaz fonksiyon kümesine örten bir eşleme kurmuş olurduk; bu imkânsızdır. Dolayısıyla **hiçbir programın hesaplayamadığı fonksiyonlar vardır**. Durma probleminin ve karar verilemezliğin arkasındaki sayma argümanı budur; hesaplamanın sınırlarını konuştuğumuz makalede bu köprüye geri döneceğiz.
+Bilgisayar mühendisliği için sonucu şudur: programlar sonlu alfabede sonlu dizilerdir, dolayısıyla **program kümesi sayılabilirdir**. Doğal sayılardan {0, 1} kümesine giden fonksiyonların kümesi ise sayılamazdır. Her fonksiyonu hesaplayan bir program olsaydı, sayılabilir program kümesinden sayılamaz fonksiyon kümesine örten bir eşleme kurmuş olurduk; bu imkânsızdır. Dolayısıyla **hiçbir programın hesaplayamadığı fonksiyonlar vardır**. Karar verilemez problemlerin var olduğunu gösteren sayma argümanı budur; durma problemi gibi somut bir örneği ise ayrı bir çelişki argümanı verir. Hesaplamanın sınırlarını konuştuğumuz makalede bu köprüye geri döneceğiz.
 
 ## Mülakatta nasıl görünür
 

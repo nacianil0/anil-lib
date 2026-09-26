@@ -12,7 +12,7 @@ tags:
   - arac-tanimi
   - uydurulmus-cagri
   - paralel-cagri
-content_hash: sha256:1aaa5498a98bb88bb37ab12f3238a6fac31e14201966edf9a26cfd0e828e04ff
+content_hash: sha256:863e3dd5b6c44a04ea28bbe868028bc50d9df79c608753ca71645fd369e63503
 classification_version: 1
 classification_batch: 11
 ---
@@ -50,7 +50,7 @@ Dördüncü durak sonucun geri dönüşü. Çalıştırıcı, aracın döndürd�
 
 Çağrı bir JSON'sa ve şeması belliyse, 30\. makalede kurduğumuz araç doğrudan uygulanabilir: çağrı üretilirken şema bir dilbilgisine çevrilir ve kod çözme anındaki maske geçersiz token'ları eler. Sağlayıcıların belgelendirmesinde **katı** (strict) diye geçen kip budur ve iki sonucunu 30'dan biliyoruz: çıktı her zaman ayrıştırılabilir, ve maske token hizalı kurulmazsa doğruluk düşer.
 
-Katı kipin ölçülmüş bir yan etkisi daha var. Shishir Patil ve arkadaşlarının ICML 2025'te sunduğu liderlik tablosu çalışmasında, çağrıyı serbest metinle isteyen düzen, yapılandırılmış çağrı kipine göre yaklaşık üç kat daha çok ayrıştırma hatası veriyor: 4.251 örnekte ortalama 412,93'e karşı 182,5. Ama ayrıştırılabilen cevaplara bakılınca tablo tersine dönüyor: birkaç araç arasından seçim gerektiren kategoride yapılandırılmış kip ortalama 77,5 yanlış çağrı üretirken serbest kip 21. Biçimi kilitlemek ayrıştırmayı kurtarıyor, seçimi değil.
+Katı kipin ölçülmüş bir yan etkisi daha var. Shishir Patil ve arkadaşlarının ICML 2025'te sunduğu liderlik tablosu çalışmasında, çağrıyı serbest metinle isteyen düzen, yapılandırılmış çağrı kipine göre iki kattan fazla ayrıştırma hatası veriyor: 4.251 örnekte ortalama 412,93'e karşı 182,5 — kendi hesabımızla yaklaşık 2,3 kat. Ama ayrıştırılabilen cevaplara bakılınca tablo tersine dönüyor: birkaç araç arasından seçim gerektiren kategoride yapılandırılmış kip ortalama 77,5 yanlış çağrı üretirken serbest kip 21. Biçimi kilitlemek ayrıştırmayı kurtarıyor, seçimi değil.
 
 Ve 30\. makalenin son uyarısı burada asıl ağırlığını kazanıyor: geçerlilik doğruluk değildir. Şema konum alanının bir dize olmasını zorlar; o dizenin var olan bir şehir olmasını değil. Bir sipariş numarası biçimce kusursuz ve tamamen uydurma olabilir.
 
@@ -62,7 +62,7 @@ Bunun ölçüsünü Zuxin Liu ve arkadaşlarının NeurIPS 2024'te sunduğu çal
 
 Biçimin en pahalı hatası ise var olmayan bir aracı çağırmak. Patil ve arkadaşlarının NeurIPS 2024'te sunduğu bir önceki çalışması bunu ölçülebilir kılmak için çağrıyı bir **soyut sözdizimi ağacına** (abstract syntax tree) çeviriyor: işlev adı kök, argümanlar dallar. Bir çağrı, veritabanındaki bir aracın ağacının alt ağacıysa doğrudur; hiçbir aracın alt ağacı değilse **uydurulmuş çağrı** sayılır — 17\. makaledeki uydurmanın araç biçimi ve yanlış argümanla yapılan çağrıdan ayrı bir sınıf. Üç makine öğrenmesi kütüphanesinden 1.645 araç çağrısıyla kurdukları kümede sayılar yüksek: doğrudan istendiğinde büyük bir ticari modelin çağrılarının yüzde 36,55'i ilk kütüphanede, yüzde 78,65'i üçüncüsünde var olmayan araçları çağırıyor. Aynı kümede eğitilmiş 7 milyarlık model aynı iki kütüphanede yüzde 6,98 ve yüzde 5,40'ta kalıyor; doğru araç belgesi isteme konduğunda ilkinde sıfıra iniyor.
 
-Çağrının biçimi tek başına da bir değişken. Xingyao Wang ve arkadaşlarının ICML 2024'te sunduğu çalışma aynı araç kümesini üç biçimde çağırttı: JSON, sabit kalıplı serbest metin ve Python kodu olarak bir işlev çağrısı. Açık ağırlıklı modellerde JSON sürekli en zayıf biçim — 70 milyarlık bir sohbet modelinde kod olarak yüzde 35,6 ve metin olarak yüzde 37,6 doğru çağrıya karşılık JSON'da yüzde 14,3 — ama ticari modellerde en iyi: bir modelde JSON yüzde 82,0, kod yüzde 75,4. Yazarların yorumu 24\. makalenin şablon dersini tekrarlıyor: çağrının doğal biçimi, modelin eğitimde gördüğü biçimdir. Ticari modeller JSON'a özel eğitilmiş, açık modeller kodu ön eğitimden tanıyor.
+Çağrının biçimi tek başına da bir değişken. Xingyao Wang ve arkadaşlarının ICML 2024'te sunduğu çalışma aynı araç kümesini üç biçimde çağırttı: JSON, sabit kalıplı serbest metin ve Python kodu olarak bir işlev çağrısı. Açık ağırlıklı modellerde JSON sürekli en zayıf biçim — 70 milyarlık bir sohbet modelinde kod olarak yüzde 35,6 ve metin olarak yüzde 37,6 doğru çağrıya karşılık JSON'da yüzde 14,3 — ama ticari modellerin çoğunda, dokuzun beşinde en iyi: bir modelde JSON yüzde 82,0, kod yüzde 75,4. Yazarların yorumu 24\. makalenin şablon dersini tekrarlıyor: çağrının doğal biçimi, modelin eğitimde gördüğü biçimdir. Ticari modeller JSON'a özel eğitilmiş, açık modeller kodu ön eğitimden tanıyor.
 
 > **Kendini yokla:** Biçim denetçisinden geçen bir çağrı neden hâlâ yanlış olabilir?
 
@@ -96,7 +96,7 @@ Minghao Li ve arkadaşlarının EMNLP 2023'te sunduğu çalışma sorunu üç ye
 
 Aracı getirmek, 29 ve 43\. makalelerin işidir: araç açıklamaları belgedir, soru sorgudur, aradaki şey bir ikili kodlayıcı ve bir vektör dizinidir. Yujia Qin ve arkadaşlarının ICLR 2024'te sunduğu çalışma bunu en büyük ölçekte kurdu: bir API pazarından 49 kategoride 16.464 gerçek araç topladılar ve araç açıklamaları üzerinde bir getirici eğittiler. Sonuç 42\. makalenin tablosunu andırıyor: ilk beş sonuçta nDCG, sözcük eşleşmesiyle 17,0, genel amaçlı bir embedding modeliyle 45,4, araç açıklamalarıyla eğitilmiş getiriciyle 84,9. Ve bir sürpriz: getiricinin bulduğu beş aracı vermek, insanın işaretlediği doğru araç kümesini vermekten daha iyi sonuç veriyor — geçme oranı 66,7'ye karşı 67,3 — çünkü doğru kümedeki bazı araçların daha iyi bir eşdeğeri var ve getirici onu buluyor.
 
-Getirmenin 41\. makaledeki uyarısı burada da geçerli: kötü getirici zarar verir. Patil ve arkadaşlarının 1.645 araçlık kümesinde, eğitim sırasında doğru araç belgesini isteme koymak sınav puanını iki kütüphanede 12,37 ve 23,46 puan yükseltiyor; ama sınavda doğru belge yerine sıradan bir getiricinin bulduğu belge verilince puan, doğru belgeye göre yüzde 29,20, sözcük eşleşmeli getiriciyle yüzde 52,27 düşüyor. Belgesiz eğitilmiş modele sınavda belge vermek de yardım etmiyor, sözcük eşleşmeli belge açıkça zarar veriyor. Yanlış araç açıklaması, 41'deki dikkat dağıtıcı belgenin araç hâli: hiç belge vermemekten kötü.
+Getirmenin 41\. makaledeki uyarısı burada da geçerli: kötü getirici zarar verir. Patil ve arkadaşlarının 1.645 araçlık kümesinde, eğitim sırasında doğru araç belgesini isteme koymak sınav puanını Torch Hub'da 12,37 puan yükseltiyor; ama sınavda doğru belge yerine sıradan bir getiricinin bulduğu belge verilince TensorFlow Hub'da puan, doğru belgeye göre 29,20 puan, sözcük eşleşmeli getiriciyle 52,27 puan düşüyor. Belgesiz eğitilmiş modele sınavda belge vermek de yardım etmiyor, sözcük eşleşmeli belge açıkça zarar veriyor. Yanlış araç açıklaması, 41'deki dikkat dağıtıcı belgenin araç hâli: hiç belge vermemekten kötü.
 
 ## Aynı anda, sırayla ve yanlış giden çağrılar
 

@@ -12,7 +12,7 @@ tags:
   - isaretci
   - malloc
   - fork
-content_hash: sha256:4ad2e73b235bcfed8ec1c4c0105ad8b1ce8df26502323bc236386c87c205f67d
+content_hash: sha256:fbaef8475c712555d278c76e3a5f25d813bc5e1be9926e93562d83f5779d122b
 classification_version: 1
 classification_batch: 12
 ---
@@ -26,7 +26,7 @@ Resmî dayanağın bir sınırı var. Bölümün sistem programlama dersinin kat
 
 ## Bir sürecin adres uzayı düzeni
 
-Süreçler makalesinde adres uzayını "sürecin gördüğü bellek" diye tanımlamış, bellek yönetimi makalesinde de onu sayfa tablosuyla fiziksel belleğe bağlamıştık. Şimdi içine bakalım. Şekil 1 bir eğitim işletim sisteminin gerçek düzenini gösteriyor.
+Süreçler makalesinde adres uzayını "sürecin gördüğü bellek" diye tanımlamış, bellek yönetimi makalesinde de onu sayfa tablosuyla fiziksel belleğe bağlamıştık. Şimdi içine bakalım. Şekil 1 bir sürecin kullanıcı adres uzayını klasik sırasıyla gösteriyor; izin etiketleri, tek sayfalık yığın ve trambolin bir eğitim işletim sisteminden (xv6) alınmıştır. xv6'nın kendi yerleşimi bir noktada farklıdır: tek sayfalık yığın veri bölgesinin hemen üstünde, arada koruma sayfasıyla durur ve heap yığının üstünden yukarı büyür.
 
 ![Solda dikey bir adres uzayı sütunu, sağda üç açıklama kutusu. Sütunun en üstünde en büyük sanal adres yazıyor ve aşağıya doğru şu bloklar sıralanıyor: kullanıcıya kapalı trambolin bloğu; vurgulu çerçeveli tek sayfalık yığın, yanında oku ve yaz izni ile aşağı büyür notu, içinde en üstte argüman metinleri ve dizisi bulunduğu yazıyor; kesik çizgili çerçeveyle çizilmiş erişilemez koruma sayfası; kesik çizgili eşlenmemiş boşluk; heap bölgesi, yanında oku ve yaz izni ile yukarı büyür notu; ilklenmiş veri, yanında oku ve yaz izni; en altta ikinci vurgu rengiyle kod bloğu, yanında yalnızca oku ve çalıştır izni. Sütunun en altında sanal adres sıfır yazıyor. Sağdaki üç kutunun başlıkları sırasıyla kod yazılamaz, veri çalıştırılamaz ve koruma sayfası geçersizdir; açıklamaları null işaretçiye yazmanın sıfırdaki komutu bozmayıp sayfa hatası doğurduğu, programın kendi verisinin ortasına atlayamadığı ve yığın taşmasının komşu veriyi sessizce bozmak yerine temiz bir çökmeyle bittiği. Şeklin altında iki not: heap'in yukarı büyüdüğü ve eşlenmemiş boşluğun onun bütçesi olduğu, yığının ise tek sayfa kalıp altındaki koruma sayfasıyla korunduğu; buradaki heap'in bir bölge, öncelik kuyruğu makalesindeki heap'in bir veri yapısı olduğu](assets/adres-uzayi-duzeni.svg "Şekil 1 — Bir sürecin adres uzayı düzeni ve izin bitlerinin işi")
 

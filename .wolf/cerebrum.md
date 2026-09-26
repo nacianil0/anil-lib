@@ -495,6 +495,28 @@ ode_modules`, sonra kopyayi sil.
 - [2026-09-26] Git Bash'te `/seri/...` gibi `/` ile başlayan argümanlar Windows yoluna çevrilir;
   `MSYS_NO_PATHCONV=1` kullan ve betiği göreli yolla çağır (mutlak `/c/...` yolu da bozulur).
 
+### BOUN bakım run'ı 2 (2026-09-26)
+
+- Boğaziçi M.Sc. sayfasında mülakat biçimi üç cümleye dağılmış: "at least two faculty members", "at
+  the interviewer's office" ve "ready at the next office". Biçim görüşmeci başına ayrı ofis
+  görüşmesidir; seri 1 ve 40'ta bunu "tek oda, iki kişi" okumuştu. Sayfa geçmişi Wayback CDX ile
+  (`web.archive.org/cdx/search/cdx?url=...`) alınıyor; 2026-06 metni "10 minutes per professor".
+- Ajan yazımı ve diff'le kabul edilmiş metin (2026-09-25 yenilemesi) bağımsız olgu denetiminde yirmiden
+  fazla gerçek hata verdi. Yenileme türü işlerin arkasından küme başına bir olgu denetçisi koşmak değerli.
+- Yalıtılmış kopya için `git archive HEAD | tar -x -C <kopya>` + kendi serinin içerik klasörünü bindir;
+  paralel oturumun commit'lenmemiş değişikliklerini kapılara taşımaz. e2e için `PLAYWRIGHT_PORT`'u boş
+  bir porta ver: 3100'de ilgisiz bir React sunucusu var ve `reuseExistingServer` onu kullanır.
+- `artifacts/bakim2-2026-09-26/render/` altındaki iki `.render.ts` testi BOUN render kapısının tamamıdır
+  (41 sayfa geometri + 3 tema × 3 genişlik); kendi dev sunucusunu kopyada kaldırır.
+- Workflow oturum kapanınca yarıda kalabilir: `journal.jsonl` yalnızca bitmiş ajanları tutar, yarım
+  kalanların dosya düzenlemeleri diskte kalır. Yalnızca yarım kalanları "zaten yapıldı, doğrula"
+  talimatıyla yeniden koş.
+
+- [2026-09-26] Hakemli sürüm bulmanın en verimli kanalı konferansların kendi dökümleri: `https://{icml,iclr,neurips}.cc/static/virtual/data/<konf>-<yıl>-orals-posters.json`, `colm.cc/static/virtual/data/colm-2026-orals-posters.json`, COLM 2024/2025 için `colmweb.org/<yıl>/AcceptedPapers.html`, ACL için `aclanthology.org/anthology.bib.gz`, TMLR için `jmlr.org/tmlr/papers/`. Semantic Scholar'ın "arXiv" demesi hakemsizlik kanıtı değil.
+- [2026-09-26] Crossref `updated-by` alanı yazar düzeltmelerini yakalar: Salvi ve ark. (Nature Human Behaviour 2025) 2026-09-03 düzeltmesiyle kişiselleştirme etkisi anlamsızlaştı ve 68'in sonucu değişti. DOI'li her kaynakta bakılmalı.
+- [2026-09-26] Okuyucu `rehype-inline-svg.ts` ile render sırasında markdown alt metnini SVG'nin `aria-label`'ına yazıyor; SVG dosyasındaki `aria-label` yalnızca dosya tek başına açılınca önemli (346 şeklin 107'si ayrışık, 133'ünde yok). `RevisionNotice` istemcide render ediliyor; curl ile HTML'de "Gözden geçirildi" aranmaz, tarayıcıda bakılır.
+- [2026-09-26] Ajan önerisini uygulamadan önce makalenin kendi terim tanımına bak: 85'te kaynağın "activated parameters"ı için "etkin" önerildi, ama makale "etkin parametre sayısı"nı Clark ve ark.'nın ölçüsü olarak tanımlıyor; doğru terim "çalışan parametre".
+
 ## Do-Not-Repeat
 
 - [2026-09-25] İki adımlı onayda "kur" düğmesi ile "onayla (submit)" düğmesini aynı çocuk yuvasında
@@ -786,6 +808,19 @@ ode_modules`, sonra kopyayi sil.
   bir fazla çıkar ve `cloneNode` hatası gelir.
 - [2026-09-26] Kapanış makalesini kardeş serinin (BOUN) finaliyle çakışma açısından da kontrol et; 118'in
   hatırlama bölümü ilk yazımda BOUN finalinin argüman sırasını izliyordu.
+- [2026-09-26] Bir sayıyı başka bir sayıya hizalamadan önce ikisini de makalenin kendi kuralından yeniden
+  hesapla. BOUN bakım run'ı 1 "elli bin"i yanlış bir 21'e hizalayıp "kırk yedi bin" yapmıştı; doğrusu
+  yükseklik 19, arama 20, elli bin.
+- [2026-09-26] Resmî bir sayfadan tek cümle alıntılayıp biçim çıkarma; aynı paragrafın bütün cümlelerini
+  oku (BOUN mülakatı "tek oda" diye okunmuştu, sayfa "next office" diyor).
+- [2026-09-26] "Hiçbiri … değil" olumsuz uyumdur; SOZLESME'nin yasakladığı çift olumsuz, olumsuz ortaç +
+  olumsuz yüklemdir ("bildirilmemiş bir izni veremez"). İlkini düzeltme.
+- [2026-09-26] Bir SVG notunu uzatırken komşu panelin x başlangıcını kontrol et: 13px Inter'de harf
+  başına ≈ 6,35 birim. BOUN 27'de "tek işlemcide" eki sağ panele 5,5 birim taştı; geometri testi yakaladı.
+- [2026-09-26] Bir olguyu düzeltirken yalnızca cümlenin kendisini değiştirme: aynı makalenin frontmatter özeti, özet/disiplin maddeleri, şekil kaydı (SVG görünür metni + alt metin) ve "Kendini yokla" cevabı aynı olguyu tekrar ediyor. Bakım run'ı 1'de ikinci doğrulama turunun 38 bulgusunun çoğu bu eksik yayılımdı (112'nin "kendi vaadini tutuyor" maddesi, 17'nin "teknik rapor" cümlesi). Düzeltmeden sonra yazar adı ve sayıyla makalenin tamamını grep'le.
+- [2026-09-26] CRLF/LF karışık dosyalarda `re.sub(r'^...$', flags=re.M)` CRLF satırında sessizce eşleşmiyor: 81'in revizyon notu ilk koşuda yazılmadı ama betik "replace" dedi. Frontmatter'ı satırlara bölüp `rstrip('\r')` ile karşılaştır, satır sonunu koruyarak yaz ve sonucu grep'le say.
+- [2026-09-26] Bash heredoc'una ters bölü içeren Python yine gömüldü (revmark yaması) ve betik bozuldu. Kural değişmedi: ters bölü ya da Türkçe içeren her betik Write aracıyla yazılır.
+- [2026-09-26] Toplu kaynak taramasını Crossref/OpenAlex başlık aramasıyla yapma: Crossref genel havuzu saniyede 1 istek ve eşzamanlılık 1 (başlık araması 8–10 sn), OpenAlex 50 sorguda 429. arXiv API'si Python urllib'e 406 veriyor, requests ile çalışıyor.
 
 ## Decision Log
 
@@ -1119,3 +1154,4 @@ otomatik türetmek — typo düzeltmesini de "yenilendi" gösterirdi.
   işleyicisinde dışarıdaki odağı içeri alma.
 - **[2026-09-25] Okuma sıfırlama tasarımı:** Kullanıcı "anil için tüm okumalar sıfırlansın" dedi. Canlı Neon'a erişim yok ve prod salt okunur kuralı geçerli, bu yüzden SQL betiği yerine owner-only `/yonetim/[userId]` → "Okuma geçmişini sıfırla" özelliği eklendi. Migration `vercel-build` içinde otomatik uygulanır; kullanıcı deploy edip kendisi basar. Yalnız SQL DELETE reddedildi: cihaz kopyaları kalıyordu. Tombstone kolonu da reddedildi: tüm tüketicilerde filtre gerektirirdi. Sayaç tabanlı `reset_version` (saatsiz) seçildi. Yer imi ve işaretler varsayılan korunur, kutucukla silinir. Tek sınırlı doğrulama workflow'u (3 lens) iki bağımsız ajanla aynı orta bulguyu (bayat restore) yakaladı.
 - **[2026-09-26] AI serisi Batch 28 — seri kapanışı:** 115–118 yayımlandı; `+1` seriyi tamamlanmış state'e aldı (#254), TRIGGER bakım kipine geçti, `/seri` footerNote seri sayısı dili kullanmadan değişti. 49/53 işaretinin iki okuması 115'te ödendi (#255); 49'un "must" çevirisi bilerek değiştirilmedi (#256); 58/71/108/1/80'de revizyon işaretsiz künye/atıf düzeltmesi (#257). Model çöküşünün "replace" düzeni "yerine koyma" değil "değiştirme" (33/99 ile çakışma). İki sınırlı workflow (araştırma + doğrulama), yazım ve kabul ana oturumda.
+- **[2026-09-26] BOUN bakım run'ı 2:** Makale 1 mülakat biçimi düzeltmesi için "gözden geçirildi" işareti aldı (önemli iddianın düzeltilmesi), 40 almadı (açılıştaki yan cümle). 7'nin "yapısal tümevarım" başlığı korundu (seri 17'de de aynı adı kullanıyor; SOZLESME §12 başlığı yalnızca olgusal hatada değiştirir). 29'daki `kilit-merdiveni.svg` iz/zaman çizelgesi sayıldı, makalenin tek SVG-tablosu `bekleme-ve-semafor.svg`. 41'in Cepeda tablosu SVG'den Markdown'a taşındı (makalede iki SVG-tablo olmasın diye). 20'nin T(n)/n dizileri yeniden üretilemediği için n < 2 iken T(n) = n tabanlı gerçel modelin sayılarıyla değişti ve model metne yazıldı. İki sınırlı workflow (biri oturum kapanınca yarıda kaldı ve yalnızca eksik üç küme yeniden koşuldu); bütün düzeltmeler ana oturumda doğrulanıp uygulandı.

@@ -5,18 +5,18 @@ slug: goruntuyu-anlamak-goruntu-dil-modelleri
 category: multimodal-and-future
 level: intermediate
 reading_order: 81
-summary: "54'te bir kara kutu olarak kullandığımız görüntü modelinin içini açar: bir görüntünün sabit boyutlu yamalara bölünüp her yamanın bir vektöre çevrilmesini ve token sayısının çözünürlükle nasıl büyüdüğünü — 336 piksellik bir karede 576 görsel token —; metinle görüntüyü aynı uzaya koyan karşıtsal ön eğitimi ve 400 milyon çiftle eğitilmiş bir modelin, bir sınıflandırma kümesinin 1,28 milyon örneğinin hiçbirini görmeden aynı doğruluğa ulaşmasını; görüntüyü dil modeline bağlamanın üç yolunu — doğrudan izdüşüm, öğrenilebilir sorgularla yeniden örnekleme (64 ve 32 token), kapılı çapraz dikkat — ve denetimli bir ablasyonda sıralamanın donuk gövdelerde çapraz dikkat lehine, düşük ranklı uyarlamayla tam otoregresif mimari lehine dönmesini; çözünürlüğün bir bütçe kararı olmasını; ve ölçütlerin nerede kırıldığını — üniversite düzeyinde 11,5 bin soruda yüzde 56 ile 59, dokuz temel görsel örüntüde insanın 95,7'sine karşı en iyi modelin 40,7'si, yedi basit çizim görevinde ortalama 58,07 ve doğrusal sondanın gösterdiği şey: bilgi kodlayıcıda var, dil modeline geçmiyor."
+summary: "54'te bir kara kutu olarak kullandığımız görüntü modelinin içini açar: bir görüntünün sabit boyutlu yamalara bölünüp her yamanın bir vektöre çevrilmesini ve token sayısının çözünürlükle nasıl büyüdüğünü — 336 piksellik bir karede 576 görsel token —; metinle görüntüyü aynı uzaya koyan karşıtsal ön eğitimi ve 400 milyon çiftle eğitilmiş bir modelin, bir sınıflandırma kümesinin 1,28 milyon örneğinin hiçbirini görmeden aynı doğruluğa ulaşmasını; görüntüyü dil modeline bağlamanın üç yolunu — doğrudan izdüşüm, öğrenilebilir sorgularla yeniden örnekleme (64 ve 32 token), kapılı çapraz dikkat — ve denetimli bir ablasyonda sıralamanın donuk gövdelerde çapraz dikkat lehine, düşük ranklı uyarlamayla tam otoregresif mimari lehine dönmesini; çözünürlüğün bir bütçe kararı olmasını; ve ölçütlerin nerede kırıldığını — üniversite düzeyinde 11,5 bin soruda yüzde 56 ile 59, dokuz temel görsel örüntüde insanın 95,7'sine karşı en iyi modelin 40,7'si, yedi basit çizim görevinde ortalama 58,07 ve yazarların genişletilmiş sürümündeki doğrusal sondanın gösterdiği şey: küçük açık modellerde bilgi kodlayıcıda var, dil modeline geçmiyor."
 tags:
   - coklu-modalite
   - goruntu-dil-modeli
   - gorsel-token
   - karsitsal-on-egitim
   - gorsel-olcutler
-content_hash: sha256:b64e1f3c5946a674501f780fa254f7fc8e6993f199fc0823cc54ad1cca668d6f
+content_hash: sha256:a98b8ab69891c8a59037a7e17a784b590b707100add59c5392f38b8a0cab0641
 classification_version: 1
 classification_batch: 19
-revised_at: "2026-09-25"
-revision_note: "Görüntüyü dil modeline bağlamanın üç yolu, görsel bilginin hangi kapıdan girdiğini ve diziyi ne kadar uzattığını gösteren yeni bir şemayla anlatıldı."
+revised_at: "2026-09-26"
+revision_note: "Doğrusal sonda ve boşluk deneylerinin ACCV bildirisinde değil yazarların hakemsiz genişletilmiş sürümünde olduğu, sondanın yalnızca küçük açık modellerde ölçüldüğü eklendi."
 ---
 ## Ekrandaki pikseller nasıl token olur
 
@@ -78,7 +78,7 @@ Alanın cevabı sabit kareyi bırakmak oldu. Mostafa Dehghani ve arkadaşların�
 
 Bu modeller neyi yapabiliyor? Ölçütler iki uçtan geliyor ve ikisi birlikte okunmalı. Şekil 3 dördünü topluyor.
 
-![Dört satırlı tablo; sütunlar ölçüt, neyi ölçer, sonuç. Üniversite düzeyinde sınav: altı alan, otuz konu ve 183 alt alandan 11,5 bin soru, otuz farklı görsel türü; en güçlü iki modelin puanı yüzde 56 ve 59. Görsel bağlamda matematik: 6.141 örnek; en iyi model yüzde 49,9 ve insanın 10,4 puan gerisinde. Temel görsel örüntüler: dokuz örüntüde 150 çift ve 300 soru, bir çift ancak iki sorusu da doğruysa sayılıyor; insan 95,7, en iyi iki model 40,7 ve 38,7, rastgele tahmin 25,0. Basit çizim görevleri: iki çember kesişiyor mu, iki çizgi kaç kez kesişiyor gibi yedi görev; dört modelin ortalaması 58,07, en iyisi 77,84, insanın beklenen doğruluğu 100. Altta iki kayıt: doğrusal sonda, bilginin görüntü kodlayıcısında bulunduğunu ve dil modeline geçmediğini gösteriyor; şekiller birbirinden uzaklaştırılınca aynı modeller yüzde yüze yakın doğruluk veriyor.](assets/gorsel-olcutlerde-ne-olculuyor.svg "Şekil 3 — Dört ölçüt, iki uç: yüksek düzey sınav ile temel görme")
+![Dört satırlı tablo; sütunlar ölçüt, neyi ölçer, sonuç. Üniversite düzeyinde sınav: altı alan, otuz konu ve 183 alt alandan 11,5 bin soru, otuz farklı görsel türü; en güçlü iki modelin puanı yüzde 56 ve 59. Görsel bağlamda matematik: 6.141 örnek; en iyi model yüzde 49,9 ve insanın 10,4 puan gerisinde. Temel görsel örüntüler: dokuz örüntüde 150 çift ve 300 soru, bir çift ancak iki sorusu da doğruysa sayılıyor; insan 95,7, en iyi iki model 40,7 ve 38,7, rastgele tahmin 25,0. Basit çizim görevleri: iki çember kesişiyor mu, iki çizgi kaç kez kesişiyor gibi yedi görev; dört modelin ortalaması 58,07, en iyisi 77,84, insanın beklenen doğruluğu 100. Altta iki kayıt, ikisi de yazarların genişletilmiş sürümünden: doğrusal sonda, küçük açık modellerde bilginin görüntü kodlayıcısında bulunduğunu ve dil modeline geçmediğini gösteriyor; şekiller uzaklaştırılınca en iyi modeller yüzde yüze yaklaşıyor.](assets/gorsel-olcutlerde-ne-olculuyor.svg "Şekil 3 — Dört ölçüt, iki uç: yüksek düzey sınav ile temel görme")
 
 Bir uçta bilgi ve akıl yürütme sınavları var. Xiang Yue ve arkadaşlarının CVPR 2024'te sunduğu ölçüt, altı alan, otuz konu ve 183 alt alandan gelen üniversite düzeyinde 11,5 bin soruyu, otuz farklı görsel türüyle — diyagram, tablo, kimyasal yapı, nota, tıbbi görüntü — birleştiriyor; o gün en güçlü iki modelin puanı yüzde 56 ve 59. Pan Lu ve arkadaşlarının ICLR 2024'te sunduğu ölçüt aynı şeyi matematik için yapıyor: 6.141 örnekte en iyi model yüzde 49,9 ve insan başarısının 10,4 puan gerisinde.
 
@@ -88,7 +88,7 @@ Bir de üretim tarafında ölçülen bir kusur var. Yifan Li ve arkadaşlarını
 
 > **Kendini yokla:** Basit çizim görevlerinde doğrusal sonda deneyi ne gösteriyor ve bu neden önemli?
 
-Görüntü kodlayıcısının ürettiği vektörlerden, küçük bir doğrusal sınıflandırıcıyla — 67'de tanımını verdiğimiz sonda — doğru cevabın okunabildiğini gösteriyor. Yani bilgi kodlayıcıda var; kaybolduğu yer, o bilginin dil modeline aktarılıp cevaba çevrildiği aşama. Bu önemli, çünkü kusuru "model görmüyor" diye özetlemek yanlış bir onarım yolu önerir: daha iyi bir kodlayıcı değil, kodlayıcı ile dil modeli arasındaki bağlantı ve o bağlantıyı eğiten veri sorunun bulunduğu yer. Aynı çalışmanın ikinci gözlemi bunu destekliyor: şekiller ve harfler arasına boşluk konduğunda aynı modeller yüzde yüze yakın doğruluk veriyor — sorun görmek değil, üst üste binen ayrıntıyı ayırt edip söze dökmek.
+Yazarların 2025'te arXiv'e koyduğu genişletilmiş ve hakemsiz sürümde, en küçük iki açık modelin görüntü kodlayıcısının ürettiği vektörlerden küçük bir doğrusal sınıflandırıcıyla — 67'de tanımını verdiğimiz sonda — iki görevde, iki çemberin kesişmesinde ve çizgi kesişimlerinin sayısında, doğru cevap yüzde 99'un üstünde okunabiliyor; ACCV bildirisinde bu deney yok. Yani bilgi, en azından o modellerde, kodlayıcıda var; kaybolduğu yer, o bilginin dil modeline aktarılıp cevaba çevrildiği aşama. Bu önemli, çünkü kusuru "model görmüyor" diye özetlemek yanlış bir onarım yolu önerir: daha iyi bir kodlayıcı değil, kodlayıcı ile dil modeli arasındaki bağlantı ve o bağlantıyı eğiten veri sorunun bulunduğu yer. Aynı sürümün ikinci gözlemi bunu destekliyor: şekiller ve harfler arasına boşluk konduğunda modellerin çoğu iyileşiyor, en iyileri yüzde 95 ile 100 arasına çıkıyor — sorun görmek değil, üst üste binen ayrıntıyı ayırt edip söze dökmek.
 
 ## Görüntüyü anlamanın disiplini
 
@@ -104,7 +104,7 @@ Görüntü kodlayıcısının ürettiği vektörlerden, küçük bir doğrusal s
 
 **Yüksek düzey sınavdaki puan, temel görmeyi garanti etmez.** Üniversite düzeyinde yüzde elli altı alan modeller, dokuz basit görsel örüntüde insanın 95,7'sine karşı 40,7'de ve yedi basit çizim görevinde 58,07'de kalıyor.
 
-**Kusurun yeri ölçülebilir.** Doğrusal sonda, bilginin kodlayıcıda bulunup dil modeline geçmediğini gösteriyor; "model görmüyor" özeti yanlış onarımı işaret eder.
+**Kusurun yeri ölçülebilir.** Doğrusal sonda, küçük açık modellerde bilginin kodlayıcıda bulunup dil modeline geçmediğini gösteriyor; "model görmüyor" özeti yanlış onarımı işaret eder.
 
 ### Sırada ne var
 
@@ -128,5 +128,5 @@ Bu makale bir modalitenin — görüntünün — token'a çevrilmesini ve bir di
 - Yue, X., Ni, Y., Zhang, K., Zheng, T., Liu, R., Zhang, G., Stevens, S., Jiang, D., Ren, W., Sun, Y., Wei, C., Yu, B., Yuan, R., Sun, R., Yin, M., Zheng, B., Yang, Z., Liu, Y., Huang, W., Sun, H., Su, Y. & Chen, W. (2024). *MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI*. CVPR 2024. [Bağlantı](https://openaccess.thecvf.com/content/CVPR2024/html/Yue_MMMU_A_Massive_Multi-discipline_Multimodal_Understanding_and_Reasoning_Benchmark_for_CVPR_2024_paper.html)
 - Lu, P., Bansal, H., Xia, T., Liu, J., Li, C., Hajishirzi, H., Cheng, H., Chang, K.-W., Galley, M. & Gao, J. (2024). *MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts*. ICLR 2024. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/663bce02a0050c4a11f1eb8a7f1429d3-Abstract-Conference.html)
 - Tong, S., Liu, Z., Zhai, Y., Ma, Y., LeCun, Y. & Xie, S. (2024). *Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs*. CVPR 2024. [Bağlantı](https://openaccess.thecvf.com/content/CVPR2024/html/Tong_Eyes_Wide_Shut_Exploring_the_Visual_Shortcomings_of_Multimodal_LLMs_CVPR_2024_paper.html)
-- Rahmanzadehgervi, P., Bolton, L., Taesiri, M. R. & Nguyen, A. T. (2024). *Vision language models are blind*. ACCV 2024, s. 3803–3818. [Bağlantı](https://openaccess.thecvf.com/content/ACCV2024/html/Rahmanzadehgervi_Vision_language_models_are_blind_ACCV_2024_paper.html)
+- Rahmanzadehgervi, P., Bolton, L., Taesiri, M. R. & Nguyen, A. T. (2024). *Vision language models are blind*. ACCV 2024, Lecture Notes in Computer Science, s. 293–309. Doğrusal sonda ve boşluk deneyleri yalnızca yazarların genişletilmiş sürümündedir (arXiv:2407.06581v6, 2025; hakemli değildir). [Bağlantı](https://openaccess.thecvf.com/content/ACCV2024/html/Rahmanzadehgervi_Vision_language_models_are_blind_ACCV_2024_paper.html)
 - Li, Y., Du, Y., Zhou, K., Wang, J., Zhao, W. X. & Wen, J.-R. (2023). *Evaluating Object Hallucination in Large Vision-Language Models*. EMNLP 2023. [Bağlantı](https://doi.org/10.18653/v1/2023.emnlp-main.20)

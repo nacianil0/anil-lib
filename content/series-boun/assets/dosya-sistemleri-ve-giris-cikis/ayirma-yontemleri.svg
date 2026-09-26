@@ -42,7 +42,7 @@
   <text x="474" y="134" font-size="13" text-anchor="middle" fill="var(--text)">D4</text>
   <text x="474" y="160" font-size="13" text-anchor="middle" fill="var(--text-faint)">son</text>
   <rect x="492" y="114" width="30" height="30" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
-  <text x="535" y="134" font-size="13" fill="var(--cool)">rastgele: ~128 okuma</text>
+  <text x="535" y="134" font-size="13" fill="var(--cool)">rastgele: 128,5 okuma</text>
   <text x="15" y="182" font-size="13" fill="var(--text-muted)">işaretçiler blokların içinde; FAT onları belleğe taşır ve rastgele erişimi 1 okumaya indirir</text>
 
   <!-- Panel 3: indeksli ayirma -->

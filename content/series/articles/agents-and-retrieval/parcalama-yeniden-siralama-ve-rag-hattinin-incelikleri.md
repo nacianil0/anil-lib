@@ -12,7 +12,7 @@ tags:
   - yeniden-siralama
   - baglam-yerlesimi
   - rag-hatti
-content_hash: sha256:f92d7580c5e70dbc7496aeb65eaaeb2dca4d0e9d66f830a42fea93de8fc66716
+content_hash: sha256:bec4e0f0f7dcb848b6657ff6614f97d567c27b20ea2197bd86166d8eac1f5ce8
 classification_version: 1
 classification_batch: 10
 ---
@@ -113,7 +113,7 @@ Fangyuan Xu, Weijia Shi ve Eunsol Choi'nin ICLR 2024'te sunduğu çalışma iki 
 | çıkarımcı sıkıştırıcı | 37 | 36,6 | 38 | 59,0 |
 | özetleyici sıkıştırıcı | 36 | 37,0 | 32 | 58,7 |
 
-Beş belgenin 660 token'ı 36 token'a iniyor — yüzde 6'ya — ve doğruluğun büyük kısmı korunuyor; tek belgelik 132 token'ın verdiğinden daha iyi. Aynı çalışmanın dil modelleme deneyinde bir ayrıntı daha var: ilk bir belgeyi eklemek, ilk beşi eklemekten daha iyi sonuç veriyor. Daha çok metin her zaman daha iyi değil; ilgisiz belge zarar veriyor — 41\. makaledeki ölçümün bir başka yüzü.
+Beş belgenin 660 token'ı 36 token'a iniyor — yüzde 5,5'e — ve doğruluğun büyük kısmı korunuyor; tek belgelik 132 token'ın verdiğinden daha iyi. Aynı çalışmanın dil modelleme deneyinde bir ayrıntı daha var: ilk bir belgeyi eklemek, ilk beşi eklemekten daha iyi sonuç veriyor. Daha çok metin her zaman daha iyi değil; ilgisiz belge zarar veriyor — 41\. makaledeki ölçümün bir başka yüzü.
 
 Wang ve arkadaşlarının hat taramasında sıkıştırma ortalama puanı 0,441'den 0,446'ya taşıyor; kazanç küçük, ama istem kısaldığı için 26 ve 28\. makalelerdeki maliyet düşüyor. Kararın bedeli de burada: sıkıştırıcının kendisi bir model çağrısıdır.
 
@@ -131,7 +131,7 @@ Peng Xu ve arkadaşlarının ICLR 2024'te sunduğu çalışma, aynı modelleri 4
 
 Beş kararı bir araya getirelim. Wang ve arkadaşlarının taraması, her modülü en iyi seçeneğine koyduğunda hattın nasıl göründüğünü ve neye mal olduğunu söylüyor.
 
-![Soldan sağa akan altı kutulu bir hat şeması. Kutular sırasıyla parçalama, sorguyu yeniden yaz, hibrit arama, yeniden sırala, yeniden paketle ve "sıkıştır, sonra isteme koy"dur ve oklarla bağlıdır; hibrit arama kutusu, 42 ve 43\. makalelerden gelen getiricidir. Her kutunun altında o kararın düğmesi yazılıdır: birim büyüklüğü, varsayımsal belge, sözcük eşleşmesi artı vektör, aday sayısı, en ilgili en sona, boş dönebilir. Şeklin alt bölümünde üç satırlık bir karşılaştırma vardır: getirmesiz model 0,351 puan ve 1,27 saniye; varsayımsal belgesiz tam hat 0,429 puan ve 1,45 saniye; varsayımsal belgeli tam hat 0,446 puan ve 11,7 saniye. Şeklin altında son 0,017 puanın yaklaşık sekiz katlık gecikmeye mal olduğu yazılıdır.](assets/getirme-hatti.svg "Şekil 3 — Beş karar, bir hat: her düğme ve bedeli")
+![Soldan sağa akan altı kutulu bir hat şeması. Kutular sırasıyla parçalama, sorguyu yeniden yaz, hibrit arama, yeniden sırala, yeniden paketle ve "sıkıştır, sonra isteme koy"dur ve oklarla bağlıdır; hibrit arama kutusu, 42 ve 43\. makalelerden gelen getiricidir. Her kutunun altında o kararın düğmesi yazılıdır: birim büyüklüğü, varsayımsal belge, sözcük eşleşmesi artı vektör, aday sayısı, en ilgili en sona, boş dönebilir. Şeklin alt bölümünde üç satırlık bir karşılaştırma vardır: getirmesiz model 0,351 puan ve 1,27 saniye; varsayımsal belgesiz tam hat 0,429 puan ve 1,45 saniye; varsayımsal belgeli tam hat 0,446 puan ve 11,7 saniye. Şeklin altında son 0,017 puanın 0,014'ünün sorgu başına bir model çağrısından geldiği ve yaklaşık sekiz katlık gecikmeye mal olduğu yazılıdır.](assets/getirme-hatti.svg "Şekil 3 — Beş karar, bir hat: her düğme ve bedeli")
 
 Şekil 3'ün alt satırları hattın ekonomisini veriyor. Getirmesiz model beş görevde 0,351 ortalama puan alıyor ve sorguya 1,27 saniyede cevap veriyor. 29\. makaledeki **hibrit aramayı** — sözcük eşleşmesiyle vektör aramasını birlikte çalıştıran ve sonuçlarını 42\. makaledeki gibi birleştiren düzeni — yeniden sıralama, paketleme ve sıkıştırmayla birlikte çalıştıran hat puanı 0,429'a taşıyor ve gecikmeyi neredeyse hiç değiştirmiyor: 1,45 saniye — bu dördü sorgu başına birer küçük model çağrısı. Üstüne varsayımsal belge eklenince puan 0,443'e, en iyi paketlemeyle 0,446'ya çıkıyor ama gecikme 11,7 saniyeye fırlıyor; sorgu başına bir büyük dil modeli çağrısının bedeli bu. Aynı taramanın önerdiği ilk modül, hattın hiç çalışmaması gerektiğini söyleyebilen bir sınıflandırıcı: soru getirme gerektirmiyorsa doğrudan cevap ver — 41\. makaledeki uyarlanabilir getirmenin hat başındaki karşılığı.
 
@@ -149,9 +149,9 @@ Beş kararı bir araya getirelim. Wang ve arkadaşlarının taraması, her modü
 
 **Doğru belge sorguya yakın durmalı.** Ortadaki belge kaybolur; en ilgili belgeyi listenin sonuna koymak ölçülen en ucuz kazançlardan biridir.
 
-**Daha çok metin daha iyi cevap değildir.** Beş belgenin token'larının yüzde 6'sı doğruluğun büyük kısmını taşıyor; atılanlar dikkat dağıtıcıydı.
+**Daha çok metin daha iyi cevap değildir.** Beş belgenin token'larının yüzde 5,5'i doğruluğun büyük kısmını taşıyor; atılanlar dikkat dağıtıcıydı.
 
-**Uzun pencere hattı emekliye ayırmıyor.** 4K pencere artı getirme, dört kat büyük pencereye yaklaşıyor; getirme en uzun pencereye de kazandırıyor.
+**Uzun pencere hattı emekliye ayırmıyor.** 4K pencere artı getirme, dört kat büyük pencereye yaklaşıyor; 70 milyarlık modelde getirme en uzun pencereye de kazandırıyor.
 
 ### Sırada ne var
 

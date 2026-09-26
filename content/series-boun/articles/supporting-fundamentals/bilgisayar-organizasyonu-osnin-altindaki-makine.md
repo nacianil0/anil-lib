@@ -12,7 +12,7 @@ tags:
   - onbellek
   - boru-hatti
   - ram-modeli
-content_hash: sha256:8f7dd789cf766cdf1ed94260711bbba20451bea692ff6cfb1d9ab3fcfeba5a39
+content_hash: sha256:808c8f3abd283e7e11fb4293029e07ff2733ae0044f7b7b4355ebe1a1cc34d35
 classification_version: 1
 classification_batch: 12
 revised_at: "2026-09-25"
@@ -38,7 +38,7 @@ Altı transistörle bir transistör arasındaki fark, aynı silikon alanına ka�
 
 Peki küçük bir hızlı bellek nasıl büyük bir hızlı bellek gibi davranabilir? Cevap, bellek yönetimi makalesinde tanımladığımız iki özelliktir. Zamansal yerellik, az önce kullanılan verinin yakında yine kullanılacağını söyler; uzamsal yerellik, bir adrese erişen programın komşu adreslere de erişeceğini. İkisi de programların gözlenmiş bir huyudur, bir teorem değil — ve bütün hiyerarşi bu huy üzerine bahis oynar.
 
-Kaynağın verdiği basit hesap bahsin ne kadar kazandırdığını gösteriyor: ana bellek erişimi 200 çevrim, önbellek erişimi 15 çevrim olsun. Yüz veri ögesine yüzer kez erişen bir kod, önbelleksiz 10.000 × 200 = 2.000.000 çevrim harcar. Önbellekle ilk yüz erişim ıskadır (100 × 200 = 20.000), kalan 9.900 erişim isabettir (9.900 × 15 = 148.500), toplam 168.500 çevrim. Kaynak bunu yüzde 91,5'lik bir iyileşme olarak veriyor; aritmetiği kendim yeniden yaptığımda tam değer yüzde 91,575 çıktı, yani kaynak son basamağı atmış.
+Kaynağın verdiği basit hesap bahsin ne kadar kazandırdığını gösteriyor: ana bellek erişimi 200 çevrim, önbellek erişimi 15 çevrim olsun. Yüz veri ögesine yüzer kez erişen bir kod, önbelleksiz 10.000 × 200 = 2.000.000 çevrim harcar. Önbellekle ilk yüz erişim ıskadır (100 × 200 = 20.000), kalan 9.900 erişim isabettir (9.900 × 15 = 148.500), toplam 168.500 çevrim. Kaynak bunu yüzde 91,5'lik bir iyileşme olarak veriyor; aritmetiği kendim yeniden yaptığımda tam değer yüzde 91,575 çıktı, yani kaynak değeri tek ondalığa kesmiş (yuvarlasaydı 91,6 olurdu).
 
 ## Hiyerarşinin sayıları
 

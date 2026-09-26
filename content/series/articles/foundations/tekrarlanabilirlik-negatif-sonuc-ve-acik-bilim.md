@@ -12,7 +12,7 @@ tags:
   - veri-sizintisi
   - negatif-sonuc
   - belgeleme
-content_hash: sha256:66972739f0d3ca4452d44891caab78021638b8087cb21be074a114baaacb09dc
+content_hash: sha256:bad697a0d66724adb2567f148db4ff0088860fafe6b0b131c969f9e2a71c4404
 classification_version: 1
 classification_batch: 24
 ---
@@ -124,7 +124,7 @@ Bir yöntemi gerçekten anladığının en sert sınavı, onu başkasının kodu
 
 ## Kaynakça
 
-- Gundersen, O. E. & Kjensmo, S. (2018). *State of the Art: Reproducibility in Artificial Intelligence*. AAAI 2018 (Proceedings of the AAAI Conference on Artificial Intelligence 32(1)), s. 1644. [Bağlantı](https://doi.org/10.1609/aaai.v32i1.11503)
+- Gundersen, O. E. & Kjensmo, S. (2018). *State of the Art: Reproducibility in Artificial Intelligence*. AAAI 2018 (Proceedings of the AAAI Conference on Artificial Intelligence 32(1)), s. 1644–1651. [Bağlantı](https://doi.org/10.1609/aaai.v32i1.11503)
 - Bouthillier, X., Laurent, C. & Vincent, P. (2019). *Unreproducible Research is Reproducible*. ICML 2019, PMLR 97, 725–734. [Bağlantı](https://proceedings.mlr.press/v97/bouthillier19a.html)
 - Raff, E. (2019). *A Step Toward Quantifying Independently Reproducible Machine Learning Research*. NeurIPS 2019. [Bağlantı](https://papers.nips.cc/paper_files/paper/2019/hash/c429429bf1f2af051f2021dc92a8ebea-Abstract.html)
 - Pineau, J., Vincent-Lamarre, P., Sinha, K., Larivière, V., Beygelzimer, A., d'Alché-Buc, F., Fox, E. & Larochelle, H. (2021). *Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)*. Journal of Machine Learning Research 22(164), 1–20. [Bağlantı](https://jmlr.org/papers/v22/20-303.html)

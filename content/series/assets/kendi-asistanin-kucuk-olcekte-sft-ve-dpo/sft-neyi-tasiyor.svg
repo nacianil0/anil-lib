@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="Dört satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: SFT, aynı temel model ve değişen tek şey adım sayısı. Sütunlar adım, p bugün, referanstan KL, doğru fiil ve derlem kaybı. Birinci satır temel model: 0,4996, 0,0000, 0,9990, 0,46286. İkinci satır 10 adım: 0,8601, 0,2787, 0,9984, 0,58008. Üçüncü satır 30 adım: 0,9926, 0,6504, 0,9991, 1,05479. Dördüncü satır vurguludur, 120 adım: 0,9976, 0,6761, 0,9986, 1,23545. Birinci kutunun başlığı üç sütun üç ayrı şey söylüyor: biçim taşındı, 0,4996'dan 0,9976'ya; bilgi yerinde kaldı, 0,9990'dan 0,9986'ya; bedel derlem kaybında ödendi, 0,46286'dan 1,23545'e. İkinci kutuda şu durur: fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. En altta iki kayıt: dört ayrı koşu vardır ve hepsi aynı temel modelden başlar; KL yedi bağlam üzerinden ortalanmıştır.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="Dört satırlık beş sütunlu bir tablo ve altında iki kutu. Üstte başlık: SFT, aynı temel model ve değişen tek şey adım sayısı. Sütunlar adım, p bugün, referanstan KL, doğru fiil ve derlem kaybı. Birinci satır temel model: 0,4996, 0,0000, 0,9990, 0,46286. İkinci satır 10 adım: 0,8601, 0,2787, 0,9984, 0,58008. Üçüncü satır 30 adım: 0,9926, 0,6504, 0,9991, 1,05479. Dördüncü satır vurguludur, 120 adım: 0,9976, 0,6761, 0,9986, 1,23545. Birinci kutunun başlığı üç sütun üç ayrı şey söylüyor: biçim taşındı, 0,4996'dan 0,9976'ya; bilgi yerinde kaldı, 0,9990'dan 0,9986'ya; bedel derlem kaybında ödendi, 0,46286'dan 1,23545'e. İkinci kutuda şu durur: fiil maskenin içindeydi ve her adımda yeniden pekiştirildi. En altta iki kayıt: dört ayrı koşu vardır ve hepsi aynı temel modelden başlar; KL, zarf konumundaki dağılım üzerinden ölçülmüştür.">
   <text x="20" y="30" font-size="13" fill="var(--text)">SFT: aynı temel model, değişen tek şey adım sayısı</text>
   <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
 
@@ -44,5 +44,5 @@
   <text x="34" y="316" font-size="13" fill="var(--text-muted)">Fiil maskenin içindeydi; her adımda yeniden pekiştirildi.</text>
 
   <text x="20" y="352" font-size="13" fill="var(--text-faint)">Dört ayrı koşu; hepsi aynı temel modelden başlıyor.</text>
-  <text x="20" y="370" font-size="13" fill="var(--text-faint)">KL yedi bağlam üzerinden ortalanmıştır.</text>
+  <text x="20" y="370" font-size="13" fill="var(--text-faint)">KL, zarf konumundaki dağılım üzerinden ölçülmüştür.</text>
 </svg>

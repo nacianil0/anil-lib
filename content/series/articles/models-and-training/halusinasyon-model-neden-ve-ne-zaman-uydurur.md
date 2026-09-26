@@ -12,7 +12,7 @@ tags:
   - belirsizlik
   - olgusallik
   - degerlendirme
-content_hash: sha256:0b64860dec374512cd449fefb065128f98ad07db63a9b408675173bb4b1c220d
+content_hash: sha256:7290077adb6dcc4f912b98344872c2c2586a290be5e0520d732946992bb77281
 classification_version: 1
 classification_batch: 3
 revised_at: "2026-09-25"
@@ -76,7 +76,7 @@ Buradan iki bağ çıkıyor. Birincisi 14\. makaleye: tekilleştirme tartışmas
 
 Teorik taban bir zemin veriyor ama gözlenen oranların tamamını açıklamıyor. İkinci katman post-training'de ve doğrudan 16\. makaleye bağlanıyor.
 
-Kalai, Ofir Nachum, Vempala ve Edwin Zhang'ın 2025 tarihli çalışması argümanı şöyle kuruyor: modeller, iyi sınav verecek biçimde eniyileniyor ve belirsizken tahmin etmek sınav puanını yükseltiyor. Yazarların benzetmesi bir öğrenci: zor bir soruda emin değilsen boş bırakmak yerine bir şey yazarsın, çünkü boş kesinlikle sıfır getirir.
+Kalai, Ofir Nachum, Vempala ve Edwin Zhang'ın 2025'te ön baskı olarak yayımlanan, 2026'da *Nature*'da çıkan çalışması argümanı şöyle kuruyor: modeller, iyi sınav verecek biçimde eniyileniyor ve belirsizken tahmin etmek sınav puanını yükseltiyor. Yazarların benzetmesi bir öğrenci: zor bir soruda emin değilsen boş bırakmak yerine bir şey yazarsın, çünkü boş kesinlikle sıfır getirir.
 
 Bunu sayıyla yürütelim. Dört şıklı bir soruda modelin doğru cevabı bilme olasılığı yüzde 25 olsun.
 
@@ -96,7 +96,7 @@ Artık iki seçenek eşit; güven yüzde 25'in altına düştüğünde susmak k�
 
 ![Yatay eksen modelin doğru bilme olasılığı, 0'dan 1'e; dikey eksen tahmin etmenin beklenen puanı. "Bilmiyorum de" her durumda 0 olan kesikli yatay çizgidir. Yanlışın 0 puan aldığı ikili puanlamada tahmin çizgisi 0'dan 1'e çıkar ve hiçbir yerde sıfırın altına inmez; yüzde 25'te değeri 0,25'tir. Yanlışın 1/3 puan götürdüğü kuralda çizgi −1/3'ten başlar, yüzde 25 eşiğinde sıfırı keser ve 1'de öbür çizgiyle buluşur. Eşiğin solunda sıfırın altında kalan üçgen gölgelidir: orada susmak kârlıdır.](assets/sinavin-tesviki.svg "Şekil 2 — Puanlama kuralı davranışı belirler")
 
-Şekil 2 iki tabloyu bütün olasılıklara genişletiyor. İkili puanlamada tahmin çizgisi hiçbir yerde sıfırın altına inmiyor: model ne kadar az bilirse bilsin, tahmin etmek susmaktan kötü olmuyor. Ceza eklenince çizgi aşağı kayıyor ve yüzde 25'te sıfırı kesiyor; o noktanın solunda susmak kazandırıyor. Şeklin gösterdiği şey teknik değil kurumsal bir sorun. Çalışmanın önerdiği çözüm de buna uygun: yeni bir halüsinasyon değerlendirmesi eklemek yerine, liderlik tablolarına hâkim olan mevcut değerlendirmelerin **puanlamasını** değiştirmek. Bu çalışmanın hakem sürecinden geçmemiş bir teknik rapor olduğunu belirtelim; argümanın kendisi ise 16\. makalede ölçtüğümüz gerçeklerin doğrudan sonucudur.
+Şekil 2 iki tabloyu bütün olasılıklara genişletiyor. İkili puanlamada tahmin çizgisi hiçbir yerde sıfırın altına inmiyor: model ne kadar az bilirse bilsin, tahmin etmek susmaktan kötü olmuyor. Ceza eklenince çizgi aşağı kayıyor ve yüzde 25'te sıfırı kesiyor; o noktanın solunda susmak kazandırıyor. Şeklin gösterdiği şey teknik değil kurumsal bir sorun. Çalışmanın önerdiği çözüm de buna uygun: yeni bir halüsinasyon değerlendirmesi eklemek yerine, liderlik tablolarına hâkim olan mevcut değerlendirmelerin **puanlamasını** değiştirmek. Argümanın kendisi 16\. makalede ölçtüğümüz gerçeklerin doğrudan sonucudur.
 
 Öğrenci benzetmesi bir yerde fazla insanca: bir öğrenci puanı umursadığı için tahmin eder, modelin ise umursaması yoktur. Olan şey şudur: model, eğitimi sırasında değerlendirmeye benzeyen sinyallerle ayarlanır ve o sinyal tahmini ödüllendiriyorsa, ortaya çıkan davranış tahmin etmek olur. Niyet yoktur; teşvik vardır.
 
@@ -151,6 +151,6 @@ Bu bulgu bir soruyu kaçınılmaz kılıyor. Bilgi ön eğitimde ediniliyorsa, o
 - Ji, Z., Lee, N., Frieske, R. ve ark. (2023). *Survey of Hallucination in Natural Language Generation*. ACM Computing Surveys 55(12), 1–38. [Bağlantı](https://dl.acm.org/doi/10.1145/3571730)
 - Min, S., Krishna, K., Lyu, X. ve ark. (2023). *FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation*. EMNLP 2023, s. 12076–12100. [Bağlantı](https://aclanthology.org/2023.emnlp-main.741/)
 - Kalai, A. T. & Vempala, S. S. (2024). *Calibrated Language Models Must Hallucinate*. STOC 2024 (56. ACM Symposium on Theory of Computing). [Bağlantı](https://dl.acm.org/doi/10.1145/3618260.3649777)
-- Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2025). *Why Language Models Hallucinate*. OpenAI teknik raporu (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2509.04664)
+- Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2026). *Evaluating large language models for accuracy incentivizes hallucinations* (ön baskı adı: *Why Language Models Hallucinate*). Nature, 653, s. 1047–1051. [Bağlantı](https://doi.org/10.1038/s41586-026-10549-w)
 - Farquhar, S., Kossen, J., Kuhn, L. & Gal, Y. (2024). *Detecting hallucinations in large language models using semantic entropy*. Nature 630, 625–630. [Bağlantı](https://doi.org/10.1038/s41586-024-07421-0)
 - Gekhman, Z., Yona, G., Aharoni, R., Eyal, M., Feder, A., Reichart, R. & Herzig, J. (2024). *Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?*. EMNLP 2024, s. 7765–7784. [Bağlantı](https://aclanthology.org/2024.emnlp-main.444/)

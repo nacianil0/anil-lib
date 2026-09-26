@@ -50,5 +50,5 @@
   <text x="20" y="372" font-size="13" fill="var(--text-muted)">Her satır tabanıyla okunur: model olmasaydı sayı ne olurdu.</text>
   <text x="20" y="390" font-size="13" fill="var(--text-muted)">Biyolojik satırın iki sonucu düzenekte ayrışıyor:</text>
   <text x="20" y="408" font-size="13" fill="var(--text-muted)">güvenlik önlemleri kaldırılmış model ↔ kaldırılmamış.</text>
-  <text x="20" y="426" font-size="13" fill="var(--text-muted)">"hakemsiz" = hakemli olmayan ön çalışma, kurum ya da sağlayıcı raporu.</text>
+  <text x="20" y="426" font-size="13" fill="var(--text-muted)">"hakemsiz" = ön çalışma, kurum ya da sağlayıcı raporu; dergi ya da konferans yayını değil.</text>
 </svg>

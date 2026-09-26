@@ -12,7 +12,7 @@ tags:
   - talep-sayfalama
   - degistirme-ilkeleri
   - thrashing
-content_hash: sha256:fbc94665ae2dc9ebcb71a9db3e903f6c46a6f79ce5e822aece697e2af814e5e4
+content_hash: sha256:529b8a30c5bfe02de148fe28f996ab29f288ebc18769cfae8b9a9a8594d397b4
 classification_version: 1
 classification_batch: 10
 ---
@@ -52,7 +52,7 @@ Bir sayfayı getirmek için çoğu zaman bir sayfayı çıkarmak gerekir. Hangis
 AMAT = T_bellek + P_ıska × T_disk
 ```
 
-Sayı koyalım. Bellek erişimi 100 nanosaniye, disk erişimi 10 milisaniye olsun. İsabet oranı yüzde 90 ise AMAT = 100 ns + 0,1 × 10 ms ≈ **1 milisaniye**. İsabet oranı yüzde 99,9'a çıkarsa AMAT **10,1 mikrosaniyeye** iner — yaklaşık **yüz kat** hızlanma. İki hesabı da kendim yaptım ve kaynağın verdiği değerlerle birebir aynı çıktı.
+Sayı koyalım. Bellek erişimi 100 nanosaniye, disk erişimi 10 milisaniye olsun. İsabet oranı yüzde 90 ise AMAT = 100 ns + 0,1 × 10 ms = 1,0001 ms ≈ **1 milisaniye**. İsabet oranı yüzde 99,9'a çıkarsa AMAT = 100 ns + 0,001 × 10 ms = **10,1 mikrosaniyeye** iner — yaklaşık **yüz kat** hızlanma. İki hesabı da kendim yaptım; tam değerler kaynağın verdiği 1,0001 ms ve 10,1 mikrosaniyeyle aynıdır.
 
 Bu iki sayı, konunun tamamını özetliyor. Disk, bellekten yüz bin kat yavaş olduğu için **küçücük bir ıska oranı bile toplam maliyeti ele geçirir.** Sanal belleğin başarısı ilkelerin zekâsından çok, ıska oranını yüzde birin altına indirebilmesinden gelir.
 
@@ -68,7 +68,7 @@ Bir ilkeyi değerlendirmek için onu en iyisiyle karşılaştırırız. **Optima
 
 Sonuçlar şöyle: optimal 6 isabet (yüzde 54,5), FIFO 4 isabet (yüzde 36,4), LRU 6 isabet. Bu dizide LRU optimalle **aynı** sonucu veriyor. Sayıları kendi programımla ürettim ve kaynağın verdiği oranlarla birebir uyuştuğunu gördüm. Şekil 2 üç ilkenin erişim erişim davranışını yan yana koyuyor.
 
-![Üç satırlı bir ızgara şeması. En üstteki satır erişim diye etiketlenmiş ve on bir erişimin sayfa numaralarını sırayla veriyor: sıfır bir iki sıfır bir üç sıfır üç bir iki bir. Altındaki üç satır sırasıyla optimal, FIFO ve LRU diye etiketlenmiş ve her satırda on bir kare var; dolu kareler isabeti, boş kareler ıskayı gösteriyor. Optimal satırında ilk üç kare boş, dördüncü ve beşinci dolu, altıncı boş, yedinci sekizinci ve dokuzuncu dolu, onuncu boş, on birinci dolu; satırın sağında altı isabet yüzde elli dört virgül beş yazıyor. FIFO satırında ilk üç kare boş, dördüncü ve beşinci dolu, altıncı ve yedinci boş, sekizinci dolu, dokuzuncu ve onuncu boş, on birinci dolu; sağında dört isabet yüzde otuz altı virgül dört yazıyor. LRU satırı optimal satırıyla birebir aynı desende ve sağında altı isabet yüzde elli dört virgül beş yazıyor. Izgaranın altında dolu kare isabet, boş kare ıska açıklaması ve erişim dizisinin kendisi tekrar veriliyor. Şemanın en altında dört satır var: LRU bu dizide optimalle aynı sonucu veriyor ve FIFO sık kullanılanı yalnızca eski diye atıyor; Belady anomalisi, FIFO bir iki üç dört bir iki beş bir iki üç dört beş dizisinde üç çerçevede dokuz, dört çerçevede on ıska yapar; aynı dizide LRU üç çerçevede on, dört çerçevede sekiz ıska yapar ve kapsama özelliği anomaliyi engeller; sayılar kendi programımdan ve kaynağın verdiği isabet oranlarıyla birebir uyuşuyor](assets/degistirme-karsilastirmasi.svg "Şekil 2 — Aynı dizi, üç ilke: FIFO sayfanın önemini değil yaşını bilir")
+![Izgara şeması: 0 1 2 0 1 3 0 3 1 2 1 erişim dizisi ve üç çerçeve; optimal, FIFO ve LRU satırlarında her erişime bir kare, dolu kare isabet, boş kare ıska. Üç satırda da ilk üç kare boş. Optimal ile LRU aynı desende: dördüncü, beşinci, yedinci, sekizinci, dokuzuncu ve on birinci kare dolu, 6 isabet, yüzde 54,5. FIFO'da yalnızca dördüncü, beşinci, sekizinci ve on birinci dolu, 4 isabet, yüzde 36,4. Alt satırlar: Belady anomalisinde FIFO 1 2 3 4 1 2 5 1 2 3 4 5 dizisinde 3 çerçevede 9, 4 çerçevede 10 ıska yapar, LRU ise 10 ve 8; kapsama özelliği anomaliyi engeller](assets/degistirme-karsilastirmasi.svg "Şekil 2 — Aynı dizi, üç ilke: FIFO sayfanın önemini değil yaşını bilir")
 
 FIFO'nun bir tuhaflığı daha var ve mülakatın gözde sorularından biridir. Önbelleği büyütmek isabet oranını artırmalı, değil mi? FIFO'da **artırmayabilir.** 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5 dizisini kendi programımla koşturdum: FIFO üç çerçeveyle 9 ıska yapıyor, **dört çerçeveyle 10**. Buna **Belady anomalisi (Belady's anomaly)** denir. LRU'da bu imkânsızdır, çünkü LRU'nun **kapsama özelliği (stack property)** vardır: N + 1 boyutlu bir önbelleğin içeriği her zaman N boyutlunun içeriğini kapsar, dolayısıyla büyütmek isabet oranını ya korur ya artırır. Aynı diziyi LRU ile koşturduğumda üç çerçevede 10, dört çerçevede 8 ıska çıktı — beklendiği gibi. Terim uyarısı: bu özelliğin İngilizce adı *stack property*'dir, ama buradaki "stack" sayfaları son kullanım sırasına göre dizen bir listedir; veri yapıları makalesindeki yalnızca tepeden ekleyip çıkaran yığın gibi çalışmaz — ortadaki bir sayfa kullanılınca en üste taşınır.
 

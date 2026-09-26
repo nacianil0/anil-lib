@@ -69,5 +69,5 @@
   <text x="380" y="272" font-size="13" fill="var(--text-muted)">büyükle takas edilirse değişmez onarılmaz</text>
   <text x="380" y="294" font-size="13" fill="var(--text-muted)">sonuç: 2, 3, 5, 7, 4, 9</text>
 
-  <text x="20" y="342" font-size="13" fill="var(--text-muted)">her iki yordam da kökten yaprağa giden tek bir yol boyunca yürür; maliyet yüksekliğe eşittir</text>
+  <text x="20" y="342" font-size="13" fill="var(--text-muted)">iki yordam da tek bir kök–yaprak yolu üzerinde yürür; maliyet en fazla yükseklik kadardır</text>
 </svg>

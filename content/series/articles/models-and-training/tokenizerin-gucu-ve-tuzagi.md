@@ -12,7 +12,7 @@ tags:
   - sozluk-boyu
   - aritmetik
   - turkce
-content_hash: sha256:b5b2a9d7bea6d8ac6b78fc80f0ca273b6883e376fa771dfdd9ad9967f1ce3bd3
+content_hash: sha256:eefe320f8a3a095ed79a231ae398d82ac1d4a88e38a801a42cffe65fa0f48605
 classification_version: 1
 classification_batch: 3
 ---
@@ -40,9 +40,9 @@ Sonuç ikiye ayrılıyor ve bu ayrım makalenin en öğretici bulgusu.
 
 **Modeller token'larının nasıl yazıldığını biliyor.** Bir kelimeyi harflerine ayırma ve harflerden kelimeyi geri kurma görevlerinde başarı yüksek. Bilgi orada.
 
-**Ama o bilgiyi kullanamıyorlar.** Aynı modeller karakter düzeyinde ekleme, silme, değiştirme ve yer değiştirme görevlerinde çöküyor. Karakter ile kelime düzeyi arasındaki fark, ekleme görevinde bir modelde 72,8 puana kadar çıkıyor. Silme görevinde en iyi performans yüzde 72 civarında ve yazarlar bunun bile cömert bir ölçüm olduğunu not düşüyor: test yalnızca en sık geçen bin kelime üzerinde yapılmış.
+**Ama o bilgiyi kullanamıyorlar.** Aynı modeller karakter düzeyinde ekleme, silme, değiştirme ve yer değiştirme görevlerinde çöküyor. Karakter ile kelime düzeyi arasındaki fark, ekleme görevinde bir modelde 72,8 puana kadar çıkıyor. Silme görevinde en iyi modeller yüzde 72–74 civarında ve yazarlar bunun bile cömert bir ölçüm olduğunu not düşüyor: test yalnızca en sık geçen bin kelime üzerinde yapılmış.
 
-Bir ölçüm daha var ve doğrudan 4\. makaleye bağlanıyor. Modellere iki kelimeden hangisinin verilen kelimeye daha yakın olduğu soruldu — bir kez **anlamca**, bir kez **yazılışça**. Anlam sorusunda başarı yüzde 76 ile 93 arasında. Yazılış sorusunda ise modellerin çoğu rastgele seçim düzeyinde ya da altında kaldı. 4\. makalede embedding'in anlamı geometriye çevirdiğini söylemiştik; CUTE bunun ters yüzünü ölçüyor — aynı geometri yazılışı taşımıyor, çünkü onu taşımaya hiç zorlanmadı.
+Bir ölçüm daha var ve doğrudan 4\. makaleye bağlanıyor. Modellere iki kelimeden hangisinin verilen kelimeye daha yakın olduğu soruldu — bir kez **anlamca**, bir kez **yazılışça**. Anlam sorusunda başarı, Aya-8B dışında, yüzde 76 ile 93 arasında. Yazılış sorusunda ise modellerin çoğu rastgele seçim düzeyinde ya da altında kaldı. 4\. makalede embedding'in anlamı geometriye çevirdiğini söylemiştik; CUTE bunun ters yüzünü ölçüyor — aynı geometri yazılışı taşımıyor, çünkü onu taşımaya hiç zorlanmadı.
 
 Bu bulguları "modeller aptalca hatalar yapıyor" diye okumak yanıltıcı olur; doğru okuma, hangi görevlerin ızgaraya takıldığını bilmektir. Yazarların saydığı örnekler bu sınırı somutlaştırıyor: kelime bulmacaları, aliterasyon gibi ses tekrarına dayanan şiir biçimleri ve şifre çözme görevleri her karakterin açıkça kullanılmasını ister. Yazım düzeltme, çekim ekleri ve kod tamamlama da karakter düzeyi bilgiye dayanır — ama bu görevlerde anlam bilgisi de işin içine girdiği için sınır o kadar net görünmez. CUTE'un tasarım kararı tam da bu ayrımı yapmak: anlam bilgisini devre dışı bırakıp yalnızca ızgaranın ne engellediğini ölçmek.
 

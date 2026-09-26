@@ -12,7 +12,7 @@ tags:
   - embedding
   - bpe
   - dagilimsal-hipotez
-content_hash: sha256:28142a268f01cd356ef0a6edc3dadf1acbf28482ef0265b7681e9acf4aa9d932
+content_hash: sha256:e525e947d827a73a7be1936d038aeb0de080d2792a245bc9568a1de8af9bf8b1
 classification_version: 1
 classification_batch: 0
 ---
@@ -80,7 +80,7 @@ Somutlaştıralım: "çay" ve "kahve" kelimelerini düşün. İkisi de "içmek",
 
 ## word2vec: küçük ağ, dev derlem
 
-Dağılımsal hipotezi ucuz ve ölçeklenebilir biçimde sayılara döken atılım, 2013'te Tomáš Mikolov ve Google'daki ekibinden geldi. word2vec adıyla bilinen çalışma aslında iki ayrı makaledir ve ikisi farklı işler yapar. İlk makale — hakem sürecinden geçmemiş bir ön çalışma olarak yayımlanmıştır — iki basit mimari tanıttı: CBOW, çevredeki kelimelerden ortadaki kelimeyi tahmin eder; Skip-gram, ortadaki kelimeden çevresindekileri tahmin eder. Ağlar kasıtlı olarak küçüktü; asıl güç ölçekteydi: 1,6 milyar kelimelik metinden bir günden kısa sürede kaliteli vektörler öğrenilebiliyordu. Aynı yıl NeurIPS'te yayımlanan hakemli ikinci makale, eğitimi pratik kılan hileyi ekledi: koca sözlük üzerinden pahalı bir olasılık hesabı yerine, bir avuç "bu kelime bu bağlama uyar mı, uymaz mı?" kararıyla eğitmek (negative sampling).
+Dağılımsal hipotezi ucuz ve ölçeklenebilir biçimde sayılara döken atılım, 2013'te Tomáš Mikolov ve Google'daki ekibinden geldi. word2vec adıyla bilinen çalışma aslında iki ayrı makaledir ve ikisi farklı işler yapar. İlk makale — ICLR 2013'ün yalnızca hafifçe hakemlenen çalıştay kolunda sunulmuş, ana konferans bildirisi olmayan bir çalışmadır — iki basit mimari tanıttı: CBOW, çevredeki kelimelerden ortadaki kelimeyi tahmin eder; Skip-gram, ortadaki kelimeden çevresindekileri tahmin eder. Ağlar kasıtlı olarak küçüktü; asıl güç ölçekteydi: 1,6 milyar kelimelik metinden bir günden kısa sürede kaliteli vektörler öğrenilebiliyordu. Aynı yıl NeurIPS'te yayımlanan hakemli ikinci makale, eğitimi pratik kılan hileyi ekledi: koca sözlük üzerinden pahalı bir olasılık hesabı yerine, bir avuç "bu kelime bu bağlama uyar mı, uymaz mı?" kararıyla eğitmek (negative sampling).
 
 Sonuçların en ünlüsü bir aritmetik gösterisidir: kral − erkek + kadın vektör toplamı, uzayda "kraliçe"nin vektörüne yakın bir noktaya düşer. Küçük ama yaygın bir atıf hatasını düzeltelim: bu gösteri word2vec makalelerinden değil, aynı yıl Mikolov, Yih ve Zweig'in ayrı bir bildirisinden gelir; o çalışmanın önemi, kelimeler arasındaki ilişkilerin vektör farkları olarak temsil edildiğini ilk kez sistematik göstermesidir. Bir harita benzetmesiyle: "kuzey" bir yer değil, bir yöndür; kral − erkek farkı da uzayda bir tür "kraliyet yönü" tarif eder ve bu yönde kadından yürüyünce kraliçenin mahallesine varılır. Harita kadar temiz değil ama: haritada kuzeye yürümek seni kesin bir noktaya götürür; vektör uzayında mahalle kalabalıktır ve en yakın ev çoğu zaman yola çıktığın evdir.
 
@@ -116,7 +116,7 @@ Dil artık ağın kapısından geçebiliyor: token'lar, kimlikler ve öğrenilen
 - Rumbelow, J. & Watkins, M. (2023). *SolidGoldMagikarp (plus, prompt generation)*. LessWrong / AI Alignment Forum (hakemli olmayan araştırma notu). [Bağlantı](https://www.lesswrong.com/posts/aPeJE8bSo6rAFoLqg/solidgoldmagikarp-plus-prompt-generation)
 - Harris, Z. S. (1954). *Distributional Structure*. WORD 10(2–3), 146–162. [Bağlantı](https://www.tandfonline.com/doi/pdf/10.1080/00437956.1954.11659520)
 - Firth, J. R. (1957). *A Synopsis of Linguistic Theory, 1930–1955*. Studies in Linguistic Analysis, Blackwell, Oxford. Atıf tarihçesi için: [Bağlantı](https://quoteinvestigator.com/2022/09/18/word-company/)
-- Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). *Efficient Estimation of Word Representations in Vector Space*. arXiv ön çalışması, ICLR 2013 çalıştayı. [Bağlantı](https://arxiv.org/abs/1301.3781)
+- Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). *Efficient Estimation of Word Representations in Vector Space*. ICLR 2013 çalıştay kolu (ana konferans bildirisi değildir). [Bağlantı](https://arxiv.org/abs/1301.3781)
 - Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. (2013). *Distributed Representations of Words and Phrases and their Compositionality*. NeurIPS 2013. [Bağlantı](https://arxiv.org/abs/1310.4546)
 - Mikolov, T., Yih, W. & Zweig, G. (2013). *Linguistic Regularities in Continuous Space Word Representations*. NAACL-HLT 2013. [Bağlantı](https://aclanthology.org/N13-1090/)
 - Nissim, M., van Noord, R. & van der Goot, R. (2020). *Fair Is Better than Sensational: Man Is to Doctor as Woman Is to Doctor*. Computational Linguistics 46(2), 487–497. [Bağlantı](https://aclanthology.org/2020.cl-2.7/)

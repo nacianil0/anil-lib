@@ -12,11 +12,11 @@ tags:
   - model-duzenleme
   - felaket-unutmasi
   - getirme
-content_hash: sha256:5dbf5a17d5d2516f0a8d5927b29a9ee14abb68386ff6088e4144c333db028efe
+content_hash: sha256:598e941f8c4520d93c655f716eb8f7f18f855962a0c2fd3b799e2d5f85c13f68
 classification_version: 1
 classification_batch: 27
-revised_at: "2026-09-25"
-revision_note: "Rank-bir güncelleme önce sezgiyle ve yeni bir geometri şekliyle anlatıldı; gerçek anahtarların tam dik olmadığı eklendi, 'üç mertebe' 400 kat olarak düzeltildi."
+revised_at: "2026-09-26"
+revision_note: "Yüzde 100'ün ilgisiz bilgilerin değil aynı ilişkinin öteki nesnelerinin korunması olduğu düzeltildi; ilgisiz ilişkiler 55,4'te kalıyor, bağlama yazmanın üstünlüğü ortalamada."
 ---
 ## Dünya durmuyor, model duruyor
 
@@ -88,11 +88,11 @@ Buraya kadar hikâye temiz. Sorun, bu ölçütlerin neyi sormadığında.
 
 **Birinci fatura: değişiklik, sonuçlarını taşımıyor.**
 
-Roi Cohen ve arkadaşlarının *Transactions of the Association for Computational Linguistics*'te yayımlanan çalışması soruyu şöyle kuruyor. Bir olguyu değiştirdiysen, o olgudan çıkan öteki olgular da değişmeliydi. "Şu kişinin eşi artık bu kişidir" dediysen, "şu kişinin kayınbiraderi kimdir" sorusunun cevabı da değişmeliydi. Yazarlar bu türden altı ölçüt tanımlayıp 5.000 düzenlemelik bir küme kuruyor.
+Roi Cohen ve arkadaşlarının *Transactions of the Association for Computational Linguistics*'te yayımlanan çalışması soruyu şöyle kuruyor. Bir olguyu değiştirdiysen, o olgudan çıkan öteki olgular da değişmeliydi. "Şu kişinin eşi artık bu kişidir" dediysen, "şu kişinin kayınbiraderi kimdir" sorusunun cevabı da değişmeliydi. Yazarlar bu türden altı ölçüt tanımlayıp yaklaşık beş bin düzenlemelik bir küme kuruyor.
 
-Tablo iki yüzlü. Yüzeysel ölçütlerde düzenleme mükemmele yakın: öznenin başka adlarıyla sorulduğunda yüzde 86,8, düzenlemeyle ilgisiz bilgilerin korunmasında yüzde 100. Mantıksal sonuç ölçütünde aynı yöntem yüzde 20,2 alıyor. Bütün modeller ve yöntemler üzerinde ortalama yüzde 38 ile 66 arasında.
+Tablo iki yüzlü. GPT-2 XL'de, yakın tarihli olgular alt kümesinde, yüzeysel ölçütlerde düzenleme mükemmele yakın: öznenin başka adlarıyla sorulduğunda yüzde 86,8, aynı ilişkinin öteki nesnelerinin korunmasında yüzde 100. Mantıksal sonuç ölçütünde aynı yöntem yüzde 20,2 alıyor; öznenin düzenlemeyle ilgisiz öteki ilişkilerinin korunmasında ise yüzde 55,4. Ağırlık düzenleyen üç yöntemin ortalaması, bütün model ve alt kümelerde yüzde 38,8 ile 71,4 arasında.
 
-Bu iki sayı yan yana durduğunda mekanizma görünüyor: rank-bir güncelleme **cevabı** değiştiriyor, **inancı** değiştirmiyor. Model artık yeni nesneyi söylüyor ama o nesneden çıkan hiçbir şeyi yeniden hesaplamıyor.
+Yüzeysel ölçütlerle mantıksal sonuç yan yana durduğunda mekanizma görünüyor: rank-bir güncelleme **cevabı** değiştiriyor, **inancı** değiştirmiyor. Model artık yeni nesneyi söylüyor ama o nesneden çıkan hiçbir şeyi yeniden hesaplamıyor.
 
 **İkinci fatura: düzenlemeler birikince model çöküyor.**
 
@@ -108,15 +108,15 @@ Bu fatura yöntemin gerekçesini kesiyor. Yukarıdaki düzenleme yöntemi, neden
 
 110\. makaledeki cümlenin kardeşi: okunabilir bir temsil doğru bir dünya modeli demek değildi; burada da yerelleştirilebilir bir olgu düzenlenebilir bir olgu demek değil.
 
-![İki bölmeli şekil. Üstte iki sütunlu altı satırlı bir tablo; sütunlar ölçüt ve rank-bir düzenlemenin aldığı puan. Birinci satır düzenlenen olgunun kendisi doksan dokuz virgül sekiz. İkinci satır aynı olgunun başka sözcüklerle sorulmuş hâli seksen sekiz virgül bir. Üçüncü satır öznenin başka adları seksen altı virgül sekiz. Dördüncü satır ilgisiz bilgilerin korunması yüz. Beşinci satır vurguludur, olgudan çıkan mantıksal sonuç yirmi virgül iki. Altıncı satır bütün modeller ve yöntemler üzerinde ortalama otuz sekiz ile altmış altı arası. Altta üç kutu yan yana durur. Birinci kutunun başlığı sonuç taşınmıyor; içinde cevabın değiştiği ama inancın değişmediği, modelin yeni nesneyi söyleyip ondan çıkanı yeniden hesaplamadığı yazılıdır. İkinci kutunun başlığı birikince çöküyor; içinde tutma oranının yüz düzenleme kadar erken ya da bin düzenleme kadar geç düşmeye başladığı, devre dışı bırakan tek bir düzenlemenin ağırlıktaki uzaklığının sıradan düzenlemelerinkinin yaklaşık 400 katı olduğu ve aynı olgu ilk düzenleme olarak uygulandığında da modelin çöktüğü yazılıdır. Üçüncü kutunun başlığı yer bilmek yetmiyor; içinde bir olgunun iz sürmeyle bulunan yeri ile başarıyla düzenlenebildiği katman arasındaki bağıntının sıfıra yakın olduğu yazılıdır. En altta bir kayıt: ilk iki satır Meng ve arkadaşlarının, üçüncüden altıncıya Cohen ve arkadaşlarının, ikinci kutu Gupta ve arkadaşlarının, üçüncü kutu Hase ve arkadaşlarının ölçümüdür.](assets/cerrahinin-uc-faturasi.svg "Şekil 3 — Cevap değişiyor, inanç değişmiyor")
+![Üstte altı satırlı tablo; sütunlar ölçüt ve puan. Düzenlenen olgunun kendisi 99,8; aynı olgu başka sözcüklerle 88,1; öznenin başka adları 86,8; aynı ilişkinin öteki nesneleri 100; vurgulu satırda olgudan çıkan mantıksal sonuç 20,2; ağırlık düzenleyen yöntemlerin ortalaması 38,8 ile 71,4 arası. Altta üç kutu: sonuç taşınmıyor, cevap değişiyor ama inanç değişmiyor; birikince çöküyor, tutma oranı 100 ile 1.000 düzenleme arasında düşüyor ve devre dışı bırakanın izi yaklaşık 400 kat büyük; yer bilmek yetmiyor, iz sürmeyle bulunan yer ile düzenlenebildiği katman arasındaki bağıntı sıfıra yakın. En altta ilk iki satırın Meng, sonraki üçünün Cohen ve arkadaşlarının GPT-2 XL ölçümü, son satırın Cohen ve arkadaşlarının bütün modelleri, ikinci kutunun Gupta, üçüncü kutunun Hase ve arkadaşlarından olduğu yazılıdır.](assets/cerrahinin-uc-faturasi.svg "Şekil 3 — Cevap değişiyor, inanç değişmiyor")
 
-Şekil 3'ün beşinci satırı ile dördüncü satırı yan yana okunmalı: aynı yöntem, aynı düzenlemede, korumada yüz ve sonuç taşımada yirmi alıyor. Bu bir başarısızlık değil, bir **ölçüt farkı**: yöntemin kendi bildirisinde verdiği vaat "olguyu değiştir ve gerisine dokunma"ydı, ve o vaadi tutuyor. Ölçen çalışmaların sorduğu soru başkaydı.
+Şekil 3'ün beşinci satırı ile dördüncü satırı yan yana okunmalı: aynı yöntem, aynı alt kümede, aynı ilişkinin öteki nesnelerini korumada yüz ve sonuç taşımada yirmi alıyor. İki sayı iki ayrı soruya cevap verdiği için aralarındaki fark bir **ölçüt farkı**: yöntemin kendi bildirisinde verdiği vaat "olguyu değiştir ve gerisine dokunma"ydı, sonuç taşımak değil; ölçen çalışmaların sorduğu soru başkaydı. Ama vaadin kendisi de tam tutmuyor: Cohen ve arkadaşlarının ölçümünde öznenin düzenlemeyle ilgisiz öteki ilişkilerinin korunması aynı koşulda yüzde 55,4'te kalıyor.
 
 ## Değişikliğin sonuçları olmalı mı
 
 İşte ayrım burada. Bir güncellemeden ne beklediğin, hangi yolun doğru olduğunu belirliyor.
 
-Cohen ve arkadaşlarının kendi çalışmalarındaki en öğretici bulgu bir yöntem değil, bir taban çizgisi: yeni olguyu doğrudan isteme yazan yalın düzen, ölçütlerin tamamında ağırlık düzenleyen yöntemlerin hepsini geçiyor. Yani modelin dünyasını değiştirmenin en güvenilir yolu, ağırlığına değil penceresine yazmak.
+Cohen ve arkadaşlarının kendi çalışmalarındaki en öğretici bulgu bir yöntem değil, bir taban çizgisi: yeni olguyu doğrudan isteme yazan yalın düzen, altı ölçütün ortalamasında en iyi sonucu alıyor; üç alt kümenin ortalamasında aynı modelde denenen ağırlık düzenlemesini GPT-NeoX'te 10 puandan fazla, LLaMA'da 29 puan geçiyor; ama her ölçütte değil. Yani modelin dünyasını değiştirmenin en güvenilir yolu, ağırlığına değil penceresine yazmak.
 
 Bu ilk bakışta 39 ve 56'nın zaten söylediği şey. Fark, artık ölçüsünü biliyor olmamız: pencereye yazılan bir olgunun sonuçları **modelin akıl yürütmesi tarafından** taşınıyor, ağırlığa yazılan bir olgununki taşınmıyor. Çünkü pencereye yazılan şey modelin her adımda okuduğu bir girdi; ağırlığa yazılan şey tek bir eşlemenin çıktısı.
 
@@ -126,7 +126,7 @@ Sayının büyüklüğünden çok yönü önemli. Kişiselleştirmenin ağırlı
 
 Böylece kararın kendisi beş soruya iniyor ve Şekil 4 onları yan yana koyuyor.
 
-![Üç sütunlu, beş satırlı bir tablo ve altında bir kutu. Üstte başlık: bu değişiklik nereye yazılır. Sütunlar soru, ağırlığa yazmak ve bağlama yazmak. Birinci satır ne sıklıkta değişiyor: seyrek, sık olabilir. İkinci satır vurguludur, sonuçlarının taşınması gerekiyor mu: taşınmıyor, modelin akıl yürütmesi taşıyor. Üçüncü satır kaç kişi için geçerli: herkes için aynıysa, kişiye özelse. Dördüncü satır geri alınabilir mi: güncellemeyi geri almak ayrı bir güncelleme, kaydı silmek yeter. Beşinci satır bedeli nerede ödeniyor: bir kez eğitimde, her turda pencerede. Altta bir kutu durur: ölçülen çapa; yeni olguyu doğrudan isteme yazan yalın düzen, altı ölçütün tamamında ağırlık düzenleyen yöntemlerin hepsini geçiyor, ve kişiselleştirmede getirme ince ayarla birlikte göreli yüzde 23,5, ince ayarsız yüzde 12,2 kazandırıyor. En altta bir kayıt: ilk sayı Cohen ve arkadaşlarının, ikinci ve üçüncü Salemi ve arkadaşlarının ölçümüdür.](assets/degisiklik-nereye-yazilir.svg "Şekil 4 — Karar beş soruya iniyor")
+![Üç sütunlu, beş satırlı bir tablo ve altında bir kutu. Üstte başlık: bu değişiklik nereye yazılır. Sütunlar soru, ağırlığa yazmak ve bağlama yazmak. Birinci satır ne sıklıkta değişiyor: seyrek, sık olabilir. İkinci satır vurguludur, sonuçlarının taşınması gerekiyor mu: taşınmıyor, modelin akıl yürütmesi taşıyor. Üçüncü satır kaç kişi için geçerli: herkes için aynıysa, kişiye özelse. Dördüncü satır geri alınabilir mi: güncellemeyi geri almak ayrı bir güncelleme, kaydı silmek yeter. Beşinci satır bedeli nerede ödeniyor: bir kez eğitimde, her turda pencerede. Altta bir kutu durur: ölçülen çapa; yeni olguyu doğrudan isteme yazan yalın düzen, altı ölçüt ve üç alt küme üzerinden ortalamada aynı modelde denenen ağırlık düzenleme yöntemini geçiyor, ve kişiselleştirmede getirme ince ayarla birlikte göreli yüzde 23,5, ince ayarsız yüzde 12,2 kazandırıyor. En altta bir kayıt: ilk sayı Cohen ve arkadaşlarının, ikinci ve üçüncü Salemi ve arkadaşlarının ölçümüdür.](assets/degisiklik-nereye-yazilir.svg "Şekil 4 — Karar beş soruya iniyor")
 
 Tablonun ikinci satırı ötekileri belirliyor. Kalan dördü maliyet ve işletme soruları; ikincisi ise yöntemin yapabildiğiyle ilgili ve pazarlıkla değişmiyor.
 
@@ -140,13 +140,13 @@ Dördüncüsü, ve gerekçesi iki ölçütün kesişiminde. Sık değişim ağı
 
 **Eğitmeye devam etmenin bedeli kararlılıktır ve parametre başına ödenir.** Önemi ölçülüp her ağırlığa kendi sertliğinde bir yay takmak felaket unutmasını engelliyor; aynı cezayı bütün ağırlıklara eşit uygulamak engellemiyor. Kendi ölçümümüzde fatura 0,77'lik bir kayıp artışıydı.
 
-**Cerrahi düzenleme kendi vaadini tutuyor, daha fazlasını değil.** Olguyu değiştirmede yüzde 99,8, yeniden ifadede 88,1, ilgisizi korumada 100 — ve olgudan çıkan mantıksal sonuçta 20,2.
+**Cerrahi düzenleme kendi vaadini de tam tutmuyor.** Olguyu değiştirmede yüzde 99,8, yeniden ifadede 88,1, aynı ilişkinin öteki nesnelerini korumada 100, ama öznenin ilgisiz öteki ilişkilerini korumada 55,4 — ve olgudan çıkan mantıksal sonuçta 20,2.
 
 **Düzenlemelerin birikimi kademeli değil, kademeli sonra ani.** Tutma oranı 100 ile 1.000 düzenleme arasında bir yerde düşmeye başlıyor, ve tek bir devre dışı bırakan düzenleme modeli bitiriyor; o düzenlemenin ağırlıktaki izi ötekilerin yaklaşık 400 katı ve ilk düzenleme olarak uygulansa da aynı sonucu veriyor.
 
 **Bilginin yerini bulmak, onu düzenleyebilmek demek değil.** İz sürmenin gösterdiği yer ile başarıyla düzenlenen katman arasındaki bağıntı sıfıra yakın; başarıyı açıklayan şey katman seçimi.
 
-**Ölçülen en iyi "düzenleme yöntemi" bir düzenleme yöntemi değil.** Yeni olguyu doğrudan isteme yazmak, ağırlık düzenleyen yöntemlerin hepsini ölçütlerin tamamında geçiyor.
+**Ölçülen en iyi "düzenleme yöntemi" bir düzenleme yöntemi değil.** Yeni olguyu doğrudan isteme yazmak, altı ölçüt ve üç alt küme üzerinden ortalamada aynı modelde denenen ağırlık düzenlemesini geçiyor — her ölçütte ve her alt kümede değil.
 
 **Kişiselleştirme bir eğitim sorunu değil, bir getirme sorunudur.** Kullanıcının geçmişinden ilgili parçaları getirmek, ince ayarla birlikte göreli yüzde 23,5, ince ayarsız yüzde 12,2 kazandırıyor — ve kullanıcı başına ağırlık kopyası gerektirmiyor.
 

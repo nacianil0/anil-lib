@@ -26,7 +26,7 @@
 
   <text x="30" y="290" font-size="13" fill="var(--text)">yükseklik 2, en kötü arama 3 karşılaştırma</text>
   <text x="30" y="330" font-size="13" fill="var(--text-muted)">bir milyon anahtar dengeli dursaydı:</text>
-  <text x="30" y="352" font-size="13" fill="var(--text-muted)">yükseklik ≈ 20, en fazla 21 karşılaştırma</text>
+  <text x="30" y="352" font-size="13" fill="var(--text-muted)">yükseklik 19, en fazla 20 karşılaştırma</text>
 
   <line x1="360" y1="24" x2="360" y2="415" stroke="var(--border)" stroke-width="1.2" />
 

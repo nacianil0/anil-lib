@@ -12,7 +12,7 @@ tags:
   - cakisma
   - yuk-faktoru
   - evrensel-hash
-content_hash: sha256:78197df39db080fff7095e4eec52f00ed43876d9936bca30a2c8b893c0c517df
+content_hash: sha256:3cb1389fa72981ff88172803c234ea08423888c559d5c700afdd72aeda356bfc
 classification_version: 1
 classification_batch: 4
 ---
@@ -24,19 +24,19 @@ Ama önce daha temel bir soruyla başlamamız gerekiyor, çünkü hash tablosu y
 
 ## Karşılaştırma modelinin duvarı
 
-Bir modeli adlandıralım. **Karşılaştırma modelinde (comparison model)** algoritmanın öğeler hakkında öğrenebileceği tek şey, ikisini karşılaştırmasının sonucudur: küçük mü, büyük mü, eşit mi. Öğeler kara kutudur; içlerine bakılmaz, üzerlerinde aritmetik yapılmaz. Sıralı dizide ikili arama, ikili arama ağacı, dengeli arama ağacı — hepsi bu modeldedir.
+Bir modeli adlandıralım. **Karşılaştırma modelinde (comparison model)** algoritmanın öğeler hakkında öğrenebileceği tek şey, iki öğe hakkında sorduğu bir karşılaştırma sorusunun ("k < x mi?", "k = x mi?") evet ya da hayır cevabıdır. Öğeler kara kutudur; içlerine bakılmaz, üzerlerinde aritmetik yapılmaz. Sıralı dizide ikili arama, ikili arama ağacı, dengeli arama ağacı — hepsi bu modeldedir.
 
 Şimdi bu modeldeki **her** algoritmayı tek bir nesneyle temsil edelim: **karar ağacı (decision tree)**. İç düğümler yapılan bir karşılaştırmayı, iki dal karşılaştırmanın iki olası sonucunu, yapraklar ise algoritmanın verebileceği çıktıları gösterir. Kökten bir yaprağa giden yol, algoritmanın belirli bir girdideki çalışmasıdır ve o yolun uzunluğu yapılan karşılaştırma sayısıdır.
 
 Alt sınır üç adımda çıkar. **Birinci adım:** n öğe saklıyorsak arama işleminin en az n + 1 farklı çıktısı vardır — n öğeden her biri ya da "yok" — ve her çıktı için en az bir yaprak gerekir. **İkinci adım:** karşılaştırmanın iki sonucu olduğu için ağaç ikilidir; yüksekliği h olan bir ikili ağacın en fazla 2^h yaprağı olabilir, dolayısıyla en az n + 1 yaprak için h ≥ log₂(n + 1) olmalıdır. İkili arama ağaçları makalesinde tümevarımla kurduğumuz ⌈log₂(n + 1)⌉ − 1 sınırı aynı fikrin düğüm sayısıyla yazılmış hâlidir; eksi bir, yaprak yerine düğüm saymaktan gelir. **Üçüncü adım:** en kötü durumdaki karşılaştırma sayısı en uzun kök–yaprak yolunun uzunluğudur, yani yükseklik.
 
-Sonuç: **karşılaştırma modelinde hiçbir arama algoritması en kötü durumda logaritmadan hızlı olamaz.** Bir milyon öğe için bu en az 19 karşılaştırma demektir; sıralı dizide ikili arama ve dengeli arama ağacı bu sınıra zaten ulaşıyordu. Yapının daha akıllısını icat ederek bu duvarın öte tarafına geçilemez.
+Sonuç: **karşılaştırma modelinde hiçbir arama algoritması en kötü durumda logaritmadan hızlı olamaz.** Bir milyon öğe için bu en az 20 karşılaştırma demektir, çünkü 2¹⁹ = 524.288 yaprak bir milyon bir çıktıya yetmez; sıralı dizide ikili arama ve dengeli arama ağacı bu sınıra zaten ulaşıyordu. Yapının daha akıllısını icat ederek bu duvarın öte tarafına geçilemez.
 
 Duvarı aşmanın tek yolu ispatın içinde yazılı. Dal sayısı iki olduğu için yükseklik logaritmik çıktı; **dallanma çarpanını sabit olmaktan çıkarabilirsek** sınır düşer. B-ağacında bunu düğüm başına çok anahtar tutarak yapmıştık ve taban değişmişti, ama çarpan hâlâ sabitti. Gerçekten kırmak için tek adımda n yönden birine gidebilen bir işlem gerekiyor. Böyle bir işlem var ve karmaşıklık makalesinde RAM modelini tanımlarken zaten varsaymıştık: **diziye indisle erişim sabit zamanlıdır.**
 
 Şekil 1 iki dünyayı yan yana koyuyor.
 
-![Dikey bir çizgiyle ayrılmış iki yarı. Solda karar ağacı: kökte k küçüktür x bir sorusunu taşıyan bir kutu, ondan evet ve hayır etiketli iki dal, altlarında iki karşılaştırma kutusu daha ve en altta olası çıktıları temsil eden dört yaprak kutusu; altında iç düğümün karşılaştırma, yaprağın çıktı olduğu ve dallanma çarpanı iki iken yüksekliğin en az log iki n artı bir olduğu yazıyor. Sağda doğrudan erişim dizisi: anahtar k yazan bir kutudan çıkıp "indis = k" etiketli bir okla sekiz hücrelik bir şeridin içindeki tek bir vurgulu hücreye inen erişim; şeridin altında u hücre yazıyor ve yanında dallanma çarpanının u kadar büyük olduğu, erişimin sabit zamanlı ve karşılaştırmasız olduğu, bedelinin u hücrelik yer olduğu ve on harfli isimler için bunun yaklaşık on yedi virgül altı terabayt ettiği belirtiliyor. En altta iki modelin farkı özetleniyor: karşılaştırma yalnızca yön seçer, adres hesabı hedefi doğrudan bulur](assets/karsilastirma-duvari.svg "Şekil 1 — Karar ağacı ile doğrudan erişim dizisi: dallanma çarpanı neyi değiştirir")
+![Dikey bir çizgiyle ayrılmış iki yarı. Solda karar ağacı: kökte k küçüktür x bir sorusunu taşıyan bir kutu, ondan evet ve hayır etiketli iki dal, altlarında iki karşılaştırma kutusu daha ve en altta olası çıktıları temsil eden dört yaprak kutusu; altında iç düğümün karşılaştırma, yaprağın çıktı olduğu ve dallanma çarpanı iki iken yüksekliğin en az n artı birin iki tabanındaki logaritması olduğu yazıyor. Sağda doğrudan erişim dizisi: anahtar k yazan bir kutudan çıkıp "indis = k" etiketli bir okla sekiz hücrelik bir şeridin içindeki tek bir vurgulu hücreye inen erişim; şeridin altında u hücre yazıyor ve yanında dallanma çarpanının u kadar büyük olduğu, erişimin sabit zamanlı ve karşılaştırmasız olduğu, bedelinin u hücrelik yer olduğu ve on harfli isimler için bunun yaklaşık on yedi virgül altı terabayt ettiği belirtiliyor. En altta iki modelin farkı özetleniyor: karşılaştırma yalnızca yön seçer, adres hesabı hedefi doğrudan bulur](assets/karsilastirma-duvari.svg "Şekil 1 — Karar ağacı ile doğrudan erişim dizisi: dallanma çarpanı neyi değiştirir")
 
 ## Doğrudan erişim dizisi ve alan sorunu
 

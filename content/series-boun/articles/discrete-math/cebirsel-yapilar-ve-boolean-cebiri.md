@@ -12,7 +12,7 @@ tags:
   - monoid
   - kafes
   - boolean-cebiri
-content_hash: sha256:59afcc0847a4008ff8f28a0c871566c3eec6111709ca4c57ac5b64429da98457
+content_hash: sha256:eede12fec763e96f4901d0e6e98c4776e30460ce3b7b889c320933769e1648b9
 classification_version: 1
 classification_batch: 2
 ---
@@ -34,7 +34,7 @@ Bir S kümesi üzerinde **ikili işlem (binary operation)**, S'nin iki elemanın
 
 **Birim eleman (identity element).** Her a için a ∗ e = e ∗ a = a olan bir e var mı? Toplamada 0, çarpmada 1, dizi birleştirmede boş dizi, küme birleşiminde boş kümedir.
 
-**Ters eleman (inverse element).** Her a için a ∗ b = b ∗ a = e olan bir b var mı? Tam sayılarda toplamanın tersi −a'dır; çarpmanın tersi tam sayılarda yoktur, çünkü 1/2 tam sayı değildir.
+**Ters eleman (inverse element).** Her a için a ∗ b = b ∗ a = e olan bir b var mı? Tam sayılarda toplamanın tersi −a'dır; çarpmada ise tersi olan yalnızca 1 ile −1'dir: 2'nin tersi olan 1/2 tam sayı değildir.
 
 Beşinci bir soru daha vardır ama tanımların hiçbirinde zorunlu değildir: **değişme (commutativity)**, yani a ∗ b = b ∗ a. Fonksiyon bileşkesi ve dizi birleştirme değişmeli değildir; bu, onların daha zayıf yapılar olduğu anlamına gelmez, yalnızca sırayı koruman gerektiği anlamına gelir.
 

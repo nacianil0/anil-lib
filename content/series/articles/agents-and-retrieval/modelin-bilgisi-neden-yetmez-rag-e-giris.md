@@ -12,9 +12,11 @@ tags:
   - baglamsal-bilgi
   - uzun-kuyruk
   - bilgi-catismasi
-content_hash: sha256:965d6b61d0df0ff656bb2b641af1482e66ea27275ea46e20e3c87009f4617d4f
+content_hash: sha256:98c453fe2babcaeaa1551e24f3b2cf53f46247ae50e52ee4dc815f715e7f80af
 classification_version: 1
 classification_batch: 9
+revised_at: "2026-09-26"
+revision_note: "Ezber oranının getirilen belge sayısıyla değil eğitimde kullanılan belgenin sırasıyla arttığı düzeltildi; yüzde 20 ve 75'in hangi eğitim kümesine ait olduğu eklendi."
 ---
 ## Ağırlıklardaki kütüphane
 
@@ -120,7 +122,7 @@ Buradan doğal bir öneri çıkıyor ve çalışma onu **uyarlanabilir getirme**
 
 Getirme, 17\. makaledeki dışsal uydurmayı içsel uydurmaya çeviriyordu; yani sorunu denetlenebilir hâle getiriyordu. Denetlenebilir olmak, çözülmüş olmak değil.
 
-**Model getirileni okumayabilir.** Shayne Longpre ve arkadaşlarının EMNLP 2021'de sunduğu çalışma bunu ölçmek için basit bir düzenek kuruyor: bağlamdaki cevap varlığını başka bir varlıkla değiştirip modelin hangisini söylediğine bakıyorlar. "ABD Birinci Dünya Savaşı'nda kiminle savaştı?" sorusunun bağlamındaki "Almanya" ifadesi "Tayvan" ile değiştirildiğinde model hâlâ "Almanya" diyorsa, önündeki metni değil ezberini okuyor demektir. Ölçülen oran ezber oranı olarak adlandırılıyor ve düzeneğe göre modelin ezberlediği cevaba dönme sıklığı yüzde 20 ile yüzde 75 arasında değişiyor. Aynı çalışma iki uyarı daha veriyor: bu eğilim model büyüdükçe artıyor, ve getirilen belge sayısı arttıkça da artıyor — altın belgenin verildiği düzende ezber oranı yüzde 4 iken, yüz belge getirildiğinde yüzde 77'ye çıkıyor.
+**Model getirileni okumayabilir.** Shayne Longpre ve arkadaşlarının EMNLP 2021'de sunduğu çalışma bunu ölçmek için basit bir düzenek kuruyor: bağlamdaki cevap varlığını başka bir varlıkla değiştirip modelin hangisini söylediğine bakıyorlar. "ABD Birinci Dünya Savaşı'nda kiminle savaştı?" sorusunun bağlamındaki "Almanya" ifadesi "Tayvan" ile değiştirildiğinde model hâlâ "Almanya" diyorsa, önündeki metni değil ezberini okuyor demektir. Yazarlar ezberlenen cevabın, ezberlenen ve bağlamdaki cevapların toplamı içindeki payına ezber oranı diyor; bütün cevaplar içinde modelin bağlamı bırakıp ezberlediği cevabı söyleme sıklığı ise Natural Questions ile eğitilen modelde yüzde 20'ye, NewsQA ile eğitilen modelde yüzde 75'e kadar çıkıyor. Aynı çalışma iki uyarı daha veriyor: bu eğilim model büyüdükçe artıyor, ve model daha az ilgili belgelerle eğitildikçe de artıyor — altın belgeyle eğitilen modelde ezber oranı yüzde 4 iken, eğitimde getiricinin yüzüncü sıradaki belgesi kullanıldığında yüzde 77'ye çıkıyor.
 
 **Getirilen her belge yardımcı değil.** Florin Cuconasu ve arkadaşlarının SIGIR 2024'te sunduğu çalışma getirilen parçaları dört türe ayırıyor: cevabı içeren altın belge, cevabı içeren başka ilgili belgeler, cevabı içermeyen ama konuyla yakından ilgili **dikkat dağıtıcı** belgeler, ve tamamen ilgisiz rastgele belgeler. Dikkat dağıtıcı belgenin tanımı önemli: bunlar getiricinin en yüksek puan verdiği ama cevabı taşımayan parçalardır. Çalışmanın örneği açıklayıcı — Napolyon'un atının rengi soruluyorsa, eşinin atının rengini anlatan pasaj hem çok ilgili hem tamamen yanlıştır.
 

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 720 348"xmlns="http://www.w3.org/2000/svg">
   <text x="90" y="44" font-size="13" fill="var(--text-muted)">adım sayısı (biçim şematiktir; eksenler ölçekli değildir)</text>
 
   <line x1="90" y1="310" x2="640" y2="310" stroke="var(--border)" stroke-width="1.4" />
@@ -17,6 +17,4 @@
   <text x="610" y="288" font-size="14" fill="var(--text-muted)">log n</text>
 
   <text x="365" y="336" font-size="13" text-anchor="middle" fill="var(--text-muted)">girdi boyutu n</text>
-
-  <text x="360" y="364" font-size="13" text-anchor="middle" fill="var(--text-muted)">n = 1000 için: log n ≈ 10 · n log n ≈ 9.966 · n² = 1.000.000 · 2ⁿ ≈ 1,07 × 10³⁰¹</text>
 </svg>

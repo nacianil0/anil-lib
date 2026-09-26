@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 442" role="img" aria-label="Üç satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: gözlemin üç katmanı, ne ölçülür, ne yakalar, ne kadar sürede. Sütunlar katman, yakaladığı ve tepki. Birinci satır kalp atışı: duran çalışanı yakalar, koşu askıya alınır. İkinci satır tanı sınamaları: bozuk kart ya da bağı yakalar, on dakikadan az sürer. Üçüncü satır vurguludur, ince taneli ölçüm: geride kalan makineyi yakalar, ancak bakılırsa görünür. Birinci kutunun başlığı gösterge hangi frekanstaysa o katmanın arızasını yakalar; içinde dört satır durur — adım başına kayıp, gradyan normu, öğrenme oranı ve sıra başına adım süresi; saniye başına kalp atışı, sıcaklık, güç ve bellek hata sayaçları; milisaniye başına ağ tıkanıklığı ve yeniden gönderim sayaçları; koşu boyunca kullanım oranının eğilimi. İkinci kutunun başlığı ölçülen sonuç; içinde kesinti öncesi ilerlemeye 15 dakika içinde dönüldüğü ve etkin eğitim süresi oranının yüzde 90'ın üstünde kaldığı, yığın sabitken kart sayısı 3.072'den 12.288'e çıkınca kullanım oranının yüzde 59,1'den yüzde 55,2'ye indiği ve taban sistemde aynı ölçekte yüzde 41,2 olduğu yazılıdır. En altta bir kayıt: bütün değerler Jiang ve arkadaşlarının ölçümleridir.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 442" role="img" aria-label="Üç satırlık üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: gözlemin üç katmanı, ne ölçülür, ne yakalar, ne kadar sürede. Sütunlar katman, yakaladığı ve tepki. Birinci satır kalp atışı: duran çalışanı yakalar, koşu askıya alınır. İkinci satır tanı sınamaları: bozuk kart ya da bağı yakalar, ortalama on dakikadan az sürer. Üçüncü satır vurguludur, ince taneli ölçüm: geride kalan makineyi yakalar, ancak bakılırsa görünür. Birinci kutunun başlığı gösterge hangi frekanstaysa o katmanın arızasını yakalar; içinde dört satır durur — adım başına kayıp, gradyan normu, öğrenme oranı ve sıra başına adım süresi; saniye başına genel sağlık, ağ yapılandırması ve bağ kopmaları; milisaniye başına ağ tıkanıklığı ve aktarımın fiziksel sınıra dayanması; koşu boyunca kullanım oranının eğilimi. İkinci kutunun başlığı ölçülen sonuç; içinde kesinti öncesi ilerlemeye 15 dakika içinde dönüldüğü ve etkin eğitim süresi oranının yüzde 90'ın üstünde kaldığı, yığın sabitken kart sayısı 3.072'den 12.288'e çıkınca kullanım oranının yüzde 59,1'den yüzde 55,2'ye indiği ve taban sistemde aynı ölçekte yüzde 41,2 olduğu yazılıdır. En altta bir kayıt: değerler Jiang ve arkadaşlarının ölçümleridir; adım başına kayıp, gradyan normu ve öğrenme oranı bizim eklememizdir.">
   <text x="20" y="30" font-size="13" fill="var(--text)">Gözlemin üç katmanı — ne ölçülür, ne yakalar, ne kadar sürede</text>
   <line x1="20" y1="44" x2="700" y2="44" stroke="var(--border)" />
 
@@ -13,7 +13,7 @@
 
   <text x="24" y="126" font-size="13" fill="var(--text)">tanı sınamaları</text>
   <text x="200" y="126" font-size="13" fill="var(--text)">bozuk kart ya da bağ</text>
-  <text x="450" y="126" font-size="13" fill="var(--text)">10 dakikadan az</text>
+  <text x="450" y="126" font-size="13" fill="var(--text)">ortalama 10 dakikadan az</text>
 
   <text x="24" y="152" font-size="13" font-weight="bold" fill="var(--accent)">ince taneli ölçüm</text>
   <text x="200" y="152" font-size="13" font-weight="bold" fill="var(--accent)">geride kalan makine</text>
@@ -24,8 +24,8 @@
   <rect x="20" y="180" width="680" height="120" fill="var(--surface-muted)" stroke="var(--border)" />
   <text x="34" y="204" font-size="13" font-weight="bold" fill="var(--text)">Gösterge hangi frekanstaysa o katmanın arızasını yakalar</text>
   <text x="34" y="226" font-size="13" fill="var(--text)">adım başına — kayıp, gradyan normu, öğrenme oranı, sıra başına adım süresi</text>
-  <text x="34" y="246" font-size="13" fill="var(--text)">saniye başına — kalp atışı, sıcaklık, güç, bellek hata sayaçları</text>
-  <text x="34" y="266" font-size="13" fill="var(--text)">milisaniye başına — ağ tıkanıklığı ve yeniden gönderim sayaçları</text>
+  <text x="34" y="246" font-size="13" fill="var(--text)">saniye başına — genel sağlık, ağ yapılandırması, bağ kopmaları</text>
+  <text x="34" y="266" font-size="13" fill="var(--text)">milisaniye başına — ağ tıkanıklığı, aktarımın fiziksel sınıra dayanması</text>
   <text x="34" y="286" font-size="13" fill="var(--text)">koşu boyunca — kullanım oranının eğilimi</text>
 
   <rect x="20" y="312" width="680" height="96" fill="var(--surface)" stroke="var(--border)" />
@@ -34,5 +34,5 @@
   <text x="34" y="378" font-size="13" fill="var(--text-muted)">%90'ın üstünde kalıyor. Yığın sabitken kart sayısı 3.072'den 12.288'e çıkınca</text>
   <text x="34" y="398" font-size="13" fill="var(--text-muted)">kullanım oranı %59,1'den %55,2'ye iniyor; taban sistemde aynı ölçekte %41,2.</text>
 
-  <text x="20" y="428" font-size="13" fill="var(--text-faint)">Bütün değerler Jiang ve arkadaşlarının ölçümleridir.</text>
+  <text x="20" y="428" font-size="13" fill="var(--text-faint)">Değerler Jiang ve ark.'nın; adım başına kayıp, gradyan normu, öğrenme oranı bizim eklememiz.</text>
 </svg>

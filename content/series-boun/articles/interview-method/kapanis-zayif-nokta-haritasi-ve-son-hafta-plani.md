@@ -12,7 +12,7 @@ tags:
   - mulakat-gunu
   - dallanma-carpani
   - seri-kapanisi
-content_hash: sha256:c3b67d2f86798f0301f1eed9dc8a8750e2f93217a46e146cecdad70de951f11a
+content_hash: sha256:85f80dc098152b7514c0ae5cc75b604c0e1a3d308226095745a686681b1974d5
 classification_version: 1
 classification_batch: 13
 ---
@@ -80,11 +80,18 @@ Bu listeden kaç tanesine tek cümlelik bir devam getirebiliyorsan, haritandaki 
 
 Aralık uzunluğu için elimizde ölçülmüş bir sayı var. Cepeda ve arkadaşlarının 2008 tarihli çalışmasında binden fazla katılımcı bir bilgi kümesini öğrendi, değişken bir ara sonra tekrar gördü ve bir yıla varan gecikmelerle sınandı. Bulgu şu: ara arttıkça başarı önce yükseliyor, sonra düşüyor; yani bir **en iyi ara** var ve bu ara hedef aralığa bağlı.
 
-![Üstte dört satırlık bir tablo ve altında bir zaman çizgisi. Tablonun sütun başlıkları soldan sağa hedef aralık, ölçülen en iyi ara, ara değerli tahmin ve aralığın oranı. Satırlar sırasıyla şunları veriyor: yedi gün için bir gün, üç gün ve yüzde 43; otuz beş gün için on bir gün, sekiz gün ve yüzde 23; yetmiş gün için yirmi bir gün, on iki gün ve yüzde 17; üç yüz elli gün için yirmi bir gün, yirmi yedi gün ve yüzde 8. Otuz beş günlük satır vurgulu renktedir. Tablonun altında mülakat otuz beş gün sonraysa başlıklı yatay bir zaman çizgisi var. Çizgi üzerinde beş işaret duruyor: sıfırıncı günde ilk okuma, sekizinci günde ilk geri çağırma, yirminci günde ikinci tur, otuzuncu günde üçüncü tur ve otuz beşinci günde mülakat günü. Sıfır, sekiz ve otuz beşinci gün işaretleri dolu daire, yirmi ve otuzuncu gün işaretleri içi boş dairedir. En altta iki not var: tablodaki dört satır ve ara değerli tahminler kaynaktan alınmıştır; takvimin sekizinci günü tablodan gelir, içi boş daireyle gösterilen ikinci ve üçüncü tur kendi genişletmemdir](assets/aralikli-tekrar-takvimi.svg "Şekil 2 — Ölçülmüş en iyi aralar ve otuz beş günlük bir uygulama")
+| Hedef aralık | Ölçülen en iyi ara | Ara değerli tahmin | Aralığın oranı |
+|---|---|---|---|
+| 7 gün | 1 gün | 3 gün | %43 |
+| 35 gün | 11 gün | 8 gün | %23 |
+| 70 gün | 21 gün | 12 gün | %17 |
+| 350 gün | 21 gün | 27 gün | %8 |
 
-Şekil 2'deki tablo kaynağın sayılarını taşıyor. Yedi, 35, 70 ve 350 günlük hedef aralıklar için çalışmada sınanan aralar arasında en iyi sonucu sırasıyla 1, 11, 21 ve 21 gün verdi; verilere eğri uydurularak elde edilen daha hassas tahminler ise yaklaşık 3, 8, 12 ve 27 gün, yani hedef aralığın yüzde 43'ü, 23'ü, 17'si ve 8'i. Buradaki asıl bulgu oranın **sabit olmaması**: hedef uzadıkça en iyi ara mutlak olarak büyür ama oran olarak küçülür. Etkinin büyüklüğü de küçük değil; hiç ara vermemeye kıyasla hatırlama sırasıyla yüzde 10, 59, 111 ve 77 arttı.
+Tablo kaynağın sayılarını taşıyor. Yedi, 35, 70 ve 350 günlük hedef aralıklar için çalışmada sınanan aralar arasında en iyi sonucu sırasıyla 1, 11, 21 ve 21 gün verdi; verilere eğri uydurularak elde edilen daha hassas tahminler ise yaklaşık 3, 8, 12 ve 27 gün, yani hedef aralığın yüzde 43'ü, 23'ü, 17'si ve 8'i. Buradaki asıl bulgu oranın **sabit olmaması**: hedef uzadıkça en iyi ara mutlak olarak büyür ama oran olarak küçülür. Etkinin büyüklüğü de küçük değil; hiç ara vermemeye kıyasla hatırlama sırasıyla yüzde 10, 59, 111 ve 77 arttı.
 
-Mülakatın otuz beş gün sonraysa tablodan okunacak satır ikincisidir: ilk okumadan yaklaşık **sekiz gün sonra** geri çağır. Şekil 2'nin alt yarısındaki takvim bunu uyguluyor; içi boş dairelerle gösterilen yirminci ve otuzuncu gün turları benim genişletmemdir, kaynakta iki çalışma olayı var.
+Mülakatın otuz beş gün sonraysa tablodan okunacak satır ikincisidir: ilk okumadan yaklaşık **sekiz gün sonra** geri çağır. Şekil 2'deki takvim bunu uyguluyor; içi boş dairelerle gösterilen yirminci ve otuzuncu gün turları benim genişletmemdir, kaynakta iki çalışma olayı var.
+
+![Mülakat otuz beş gün sonraysa başlıklı yatay bir zaman çizgisi. Çizgi üzerinde beş işaret duruyor: sıfırıncı günde ilk okuma, sekizinci günde ilk geri çağırma, yirminci günde ikinci tur, otuzuncu günde üçüncü tur ve otuz beşinci günde mülakat günü. Sıfır, sekiz ve otuz beşinci gün işaretleri dolu daire, yirmi ve otuzuncu gün işaretleri içi boş dairedir. Altta iki not var: sekizinci gün, otuz beş günlük hedef için kaynağın ara değerli tahminidir; içi boş dairelerle gösterilen yirminci ve otuzuncu gün turları kendi genişletmemdir](assets/aralikli-tekrar-takvimi.svg "Şekil 2 — Otuz beş günlük bir aralıklı tekrar takvimi")
 
 Bu önerinin iki sınırı var. O çalışmadaki malzeme kısa olgulardı, bir işletim sistemi mekanizması değil; oran bir çıpadır, bir yasa değil. Ayrıca kaynak aralıklı **tekrarı** ölçüyor, aralıklı **geri çağırmayı** değil — ama ilk bölümdeki bulgu, aranın içini geri çağırmayla doldurmanın tekrar okumakla doldurmaktan iyi olduğunu söylüyor. İkisini birleştiren öneri şu: aralığı kaynaktan al, aranın içini hatırlama testiyle doldur.
 

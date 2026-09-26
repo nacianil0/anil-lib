@@ -38,14 +38,14 @@
   <line x1="555" y1="92" x2="665" y2="130" stroke="var(--border)" stroke-width="1.6" />
 
   <rect x="470" y="60" width="170" height="32" rx="5" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
-  <text x="555" y="81" font-size="13" text-anchor="middle" fill="var(--text)">anahtar 1 … anahtar 100</text>
+  <text x="555" y="81" font-size="13" text-anchor="middle" fill="var(--text)">anahtar 1 … anahtar 99</text>
 
   <rect x="384" y="130" width="90" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
   <rect x="502" y="130" width="90" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
   <rect x="620" y="130" width="90" height="30" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
-  <text x="429" y="150" font-size="13" text-anchor="middle" fill="var(--text)">100 anahtar</text>
-  <text x="547" y="150" font-size="13" text-anchor="middle" fill="var(--text)">100 anahtar</text>
-  <text x="665" y="150" font-size="13" text-anchor="middle" fill="var(--text)">100 anahtar</text>
+  <text x="429" y="150" font-size="13" text-anchor="middle" fill="var(--text)">99 anahtar</text>
+  <text x="547" y="150" font-size="13" text-anchor="middle" fill="var(--text)">99 anahtar</text>
+  <text x="665" y="150" font-size="13" text-anchor="middle" fill="var(--text)">99 anahtar</text>
   <text x="547" y="186" font-size="13" text-anchor="middle" fill="var(--text-faint)">. . .</text>
 
   <text x="380" y="272" font-size="13" fill="var(--text)">her düğüm bir bloğa tam oturur</text>

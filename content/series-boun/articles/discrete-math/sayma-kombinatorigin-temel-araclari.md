@@ -12,7 +12,7 @@ tags:
   - kombinasyon
   - binom-katsayisi
   - guvercin-yuvasi
-content_hash: sha256:0370c2f77b7ba01ba18442cb52ebff8a55d57d3d28bedf40fed37aff3f32adb4
+content_hash: sha256:ef6739b8c2747235268af73fc103a923da6bc9283b7e4eedda474127398daf32
 classification_version: 1
 classification_batch: 1
 ---
@@ -94,7 +94,7 @@ C(n, k) = C(n − 1, k − 1) + C(n − 1, k).
 
 Şekil 1 bunu üçgen üzerinde gösteriyor: her sayı, üstündeki iki sayının toplamıdır.
 
-![Solda altı satırlık Pascal üçgeni; sağ altta 10 değeri ile onu üreten 4 ve 6 değerleri vurgulanmış. Sağda Pascal özdeşliğinin formülü, sayısal örneği ve bir elemanı sabitlemeye dayanan kombinatoryal ispatın adımları](assets/pascal-ucgeni-ve-ozdeslik.svg "Şekil 1 — Pascal üçgeni ve özdeşliğin kombinatoryal ispatı")
+![Solda altı satırlık Pascal üçgeni; son satırdaki iki 10'dan soldakisi, yani C(5, 2), onu üreten 4 ve 6 değerleriyle birlikte vurgulanmış. Sağda Pascal özdeşliğinin formülü, sayısal örneği ve bir elemanı sabitlemeye dayanan kombinatoryal ispatın adımları](assets/pascal-ucgeni-ve-ozdeslik.svg "Şekil 1 — Pascal üçgeni ve özdeşliğin kombinatoryal ispatı")
 
 Özdeşliğin cebirsel ispatı faktöriyelleri açmakla yapılır ama **kombinatoryal ispatı** çok daha öğreticidir ve mülakatta daha iyi durur. Her iki taraf da aynı şeyi sayar: n elemanlı bir kümenin k elemanlı alt kümelerini. Kümedeki bir elemanı sabitle. Bir alt küme ya o elemanı içerir — geri kalan k − 1 eleman diğer n − 1 arasından seçilir, C(n − 1, k − 1) yol — ya da içermez — k elemanın hepsi diğer n − 1 arasından seçilir, C(n − 1, k) yol. İki durum ayrıktır ve hepsini kapsar; toplama kuralı sonucu verir.
 

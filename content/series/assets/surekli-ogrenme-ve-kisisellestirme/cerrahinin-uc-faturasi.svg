@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 470" role="img" aria-label="İki bölmeli şekil. Üstte iki sütunlu altı satırlı bir tablo; sütunlar ölçüt ve rank-bir düzenlemenin aldığı puan. Birinci satır düzenlenen olgunun kendisi doksan dokuz virgül sekiz. İkinci satır aynı olgunun başka sözcüklerle sorulmuş hâli seksen sekiz virgül bir. Üçüncü satır öznenin başka adları seksen altı virgül sekiz. Dördüncü satır ilgisiz bilgilerin korunması yüz. Beşinci satır vurguludur, olgudan çıkan mantıksal sonuç yirmi virgül iki. Altıncı satır bütün modeller ve yöntemler üzerinde ortalama otuz sekiz ile altmış altı arası. Altta üç kutu yan yana durur. Birinci kutunun başlığı sonuç taşınmıyor; içinde cevabın değiştiği ama inancın değişmediği, modelin yeni nesneyi söyleyip ondan çıkanı yeniden hesaplamadığı yazılıdır. İkinci kutunun başlığı birikince çöküyor; içinde tutma oranının yüz düzenleme kadar erken ya da bin düzenleme kadar geç düşmeye başladığı, devre dışı bırakan tek bir düzenlemenin ağırlıktaki uzaklığının sıradan düzenlemelerinkinin yaklaşık 400 katı olduğu ve aynı olgu ilk düzenleme olarak uygulandığında da modelin çöktüğü yazılıdır. Üçüncü kutunun başlığı yer bilmek yetmiyor; içinde bir olgunun iz sürmeyle bulunan yeri ile başarıyla düzenlenebildiği katman arasındaki bağıntının sıfıra yakın olduğu yazılıdır. En altta bir kayıt: ilk iki satır Meng ve arkadaşlarının, üçüncüden altıncıya Cohen ve arkadaşlarının, ikinci kutu Gupta ve arkadaşlarının, üçüncü kutu Hase ve arkadaşlarının ölçümüdür.">
-  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı düzenleme, altı ayrı ölçüt</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 470" role="img" aria-label="Üstte altı satırlı tablo; sütunlar ölçüt ve puan. Düzenlenen olgunun kendisi 99,8; aynı olgu başka sözcüklerle 88,1; öznenin başka adları 86,8; aynı ilişkinin öteki nesneleri 100; vurgulu satırda olgudan çıkan mantıksal sonuç 20,2; ağırlık düzenleyen yöntemlerin ortalaması 38,8 ile 71,4 arası. Altta üç kutu: sonuç taşınmıyor, cevap değişiyor ama inanç değişmiyor; birikince çöküyor, tutma oranı 100 ile 1.000 düzenleme arasında düşüyor ve devre dışı bırakanın izi yaklaşık 400 kat büyük; yer bilmek yetmiyor, iz sürmeyle bulunan yer ile düzenlenebildiği katman arasındaki bağıntı sıfıra yakın. En altta ilk iki satırın Meng, sonraki üçünün Cohen ve arkadaşlarının GPT-2 XL ölçümü, son satırın Cohen ve arkadaşlarının bütün modelleri, ikinci kutunun Gupta, üçüncü kutunun Hase ve arkadaşlarından olduğu yazılıdır.">
+  <text x="20" y="28" font-size="13" fill="var(--text)">Aynı yöntem, altı ayrı ölçüt</text>
   <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
 
   <text x="24" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">ölçüt</text>
@@ -15,14 +15,14 @@
   <text x="24" y="146" font-size="13" fill="var(--text)">öznenin başka adları</text>
   <text x="560" y="146" font-size="13" fill="var(--text)">86,8</text>
 
-  <text x="24" y="170" font-size="13" fill="var(--text)">ilgisiz bilgilerin korunması</text>
+  <text x="24" y="170" font-size="13" fill="var(--text)">aynı ilişkinin öteki nesneleri</text>
   <text x="560" y="170" font-size="13" fill="var(--text)">100</text>
 
   <text x="24" y="196" font-size="13" font-weight="bold" fill="var(--text)">olgudan çıkan mantıksal sonuç</text>
   <text x="560" y="196" font-size="13" font-weight="bold" fill="var(--accent)">20,2</text>
 
-  <text x="24" y="220" font-size="13" fill="var(--text)">bütün model ve yöntemlerde ortalama</text>
-  <text x="560" y="220" font-size="13" fill="var(--text)">38 – 66</text>
+  <text x="24" y="220" font-size="13" fill="var(--text)">ağırlık düzenleyen yöntemlerin ortalaması</text>
+  <text x="560" y="220" font-size="13" fill="var(--text)">38,8 – 71,4</text>
 
   <line x1="20" y1="236" x2="720" y2="236" stroke="var(--border)" />
 
@@ -50,6 +50,7 @@
   <text x="508" y="356" font-size="13" fill="var(--text)">arasındaki bağıntı</text>
   <text x="508" y="374" font-size="13" fill="var(--text)">sıfıra yakın.</text>
 
-  <text x="20" y="412" font-size="13" fill="var(--text-faint)">İlk iki satır Meng ve ark.'nın, üçüncüden altıncıya Cohen ve ark.'nın;</text>
-  <text x="20" y="430" font-size="13" fill="var(--text-faint)">ikinci kutu Gupta ve ark.'nın, üçüncü kutu Hase ve ark.'nın ölçümüdür.</text>
+  <text x="20" y="412" font-size="13" fill="var(--text-faint)">İlk iki satır Meng ve ark.'nın; üçüncüden beşinciye Cohen ve ark.'nın GPT-2 XL ölçümü;</text>
+  <text x="20" y="430" font-size="13" fill="var(--text-faint)">son satır Cohen ve ark.'nın bütün modelleri; ikinci kutu Gupta ve ark.'nın,</text>
+  <text x="20" y="448" font-size="13" fill="var(--text-faint)">üçüncü kutu Hase ve ark.'nın ölçümüdür.</text>
 </svg>

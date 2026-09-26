@@ -12,7 +12,7 @@ tags:
   - bilgi-catismasi
   - kaynak-guvenilirligi
   - atif-ve-uydurma
-content_hash: sha256:c5b13eefee40f530586f387e39bf9a5a565a074740bc16d83479c798af9f3adf
+content_hash: sha256:32b027f40749b9be263189aa0c0d2d718f53f40605c5dc079713f8e91b8b11eb
 classification_version: 1
 classification_batch: 11
 ---
@@ -76,7 +76,7 @@ Dizinden gelen belgenin yanlış olması, bir ölçüm hatası değil, bir sald�
 
 Çözüm yönünde iki yol var. Birincisi, kaynağa bir güvenilirlik etiketi vermek. Ruotong Pan ve arkadaşlarının EMNLP 2024'te sunduğu çalışma, getirilen her belgeye ilgililik, tazelik ve kaynak güvenilirliğinden türetilen bir **güvenilirlik** (credibility) notu ekliyor ve modeli bu notu gözeterek cevap vermeye eğitiyor. Ölçüm, yanlış bilgiyle doldurulmuş derlemlerde ve zamana duyarlı sorularda: notu isteme yazmak sıradan modellerde az işe yarıyor — yazarların bulgusu, büyük ticari modellerin bile güvenilirlik notuna az duyarlı olduğu; notla eğitilmiş 7 milyarlık model ise bir çok adımlı soru kümesinde tam eşleşmeyi aynı boyuttaki temel modele göre 26,6 puan artırıyor. Etiket tek başına yetmiyor; etiketi okumayı öğrenmek gerekiyor.
 
-İkinci yol, modelin bilgiyi nereden aldığını söyletmek. Orion Weller ve arkadaşlarının EACL 2024'te sunduğu çalışma bunun en ucuz biçimini ölçtü: isteme "ansiklopediye göre" gibi bir ibare eklemek. Ölçüsü, cevabın kaç kelimelik parçasının o kaynakta birebir geçtiği; ansiklopedi metninde bu oran yüzde 99,9, genel web derleminde yüzde 17. İbare, modelin kaynaktan birebir alıntıladığı payı modele göre yüzde 5 ile 105 arasında artırıyor ve çoğu kümede doğruluğu düşürmüyor, bazılarında yükseltiyor. Model, eğitiminde gördüğü metni hangi kaynaktan gördüğünü bir ölçüde biliyor ve söylenirse oraya yaslanıyor.
+İkinci yol, modelin bilgiyi nereden aldığını söyletmek. Orion Weller ve arkadaşlarının EACL 2024'te sunduğu çalışma bunun en ucuz biçimini ölçtü: isteme "ansiklopediye göre" gibi bir ibare eklemek. Ölçüsü, cevabın yaklaşık beş kelimelik parçalarının ne kadarının o kaynakta birebir geçtiği; ölçünün sağlamasında ansiklopedinin kendi sayfaları ansiklopediye karşı yüzde 99,9, karışık bir ön eğitim derleminden rastgele belgeler yüzde 17 alıyor. İbare, modelin kaynaktan birebir alıntıladığı payı modele ve kümeye göre yüzde 5 ile 105 arasında artırıyor ve çoğu kümede doğruluğu düşürmüyor, bazılarında yükseltiyor. Model, eğitiminde gördüğü metni hangi kaynaktan gördüğünü bir ölçüde biliyor ve söylenirse oraya yaslanıyor.
 
 ## Atıf ne kadar güven verir
 

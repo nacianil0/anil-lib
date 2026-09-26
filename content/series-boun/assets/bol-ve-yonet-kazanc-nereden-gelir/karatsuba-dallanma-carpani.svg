@@ -100,6 +100,6 @@
   <text x="375" y="272" font-size="13" fill="var(--accent)">⇒ Θ(n^1,585)</text>
 
   <line x1="20" y1="298" x2="700" y2="298" stroke="var(--border)" stroke-width="1" />
-  <text x="20" y="322" font-size="13" fill="var(--text)">değişen tek şey alt problem sayısıdır: bölme çarpanı b ve birleştirme maliyeti g(n) aynı kaldı</text>
+  <text x="20" y="322" font-size="13" fill="var(--text)">değişen tek şey alt problem sayısıdır: küçülme çarpanı b ve birleştirme maliyeti g(n) aynı kaldı</text>
   <text x="20" y="344" font-size="13" fill="var(--text)">n = 1024 basamakta yaprak sayısı 1.048.576'ya karşı 59.049 — yaklaşık 18 kat</text>
 </svg>

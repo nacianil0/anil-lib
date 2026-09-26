@@ -12,11 +12,11 @@ tags:
   - dusuk-rank
   - parametre-verimli-uyarlama
   - qlora
-content_hash: sha256:472048aa0268a07112435218b83efa7f92d06109a4d77993c9c7aee6664e1457
+content_hash: sha256:21883108acba1934c82b1055f4fd6f4f73b6f172e4c4457dcc3686eef8acabfb
 classification_version: 1
 classification_batch: 4
-revised_at: "2026-09-25"
-revision_note: "Rankın ne demek olduğu 3×3'lük bir rank-1 örnekle adım adım anlatıldı; ince ayarla bilgi yükleme sonucu ölçümle uyumlu biçimde yumuşatıldı."
+revised_at: "2026-09-26"
+revision_note: "Ovadia ve arkadaşlarının deneyinin tarifi kaynakla hizalandı: tam parametre iddiası kaldırıldı, 'tek geçiş' yerine tek yazım ile on yeniden yazımın karşılaştırması kondu."
 ---
 ## Sabit modelin sonu
 
@@ -124,7 +124,7 @@ Aynı çalışmanın en çok alıntılanan cümlesini ise 16\. makalenin disipli
 
 Geriye makalenin başta sorduğu ikinci soru kalıyor. 17\. makale ince ayarın uydurmayı artırabildiğini, 18\. makale olgusal bilginin ön eğitimde ve tekrarla yazıldığını göstermişti. LoRA bu tabloyu değiştiriyor mu?
 
-Oded Ovadia ve arkadaşlarının EMNLP 2024'te yayımladığı çalışma bunu doğrudan ölçtü. Modellerin eğitim kesim tarihinden sonraki bir döneme ait, 910 çoktan seçmeli sorudan oluşan bir küme hazırladılar — yani modellerin kesinlikle bilmediği olgular. Sonra aynı bilgiyi iki ayrı yoldan verdiler: ince ayarla ağırlıklara yazarak ve üretim anında metni modelin önüne koyarak. İnce ayar tarafında düşük rank kullanmadılar; bütün parametreleri serbest bırakıp ilgili belgeler üzerinde yukarıda tanımladığımız sürekli ön eğitimi yaptılar.
+Oded Ovadia ve arkadaşlarının EMNLP 2024'te yayımladığı çalışma bunu doğrudan ölçtü. Modellerin eğitim kesim tarihinden sonraki bir döneme ait, 910 çoktan seçmeli sorudan oluşan bir küme hazırladılar — yani modellerin büyük olasılıkla bilmediği olgular. Sonra aynı bilgiyi iki ayrı yoldan verdiler: ince ayarla ağırlıklara yazarak ve üretim anında metni modelin önüne koyarak. İnce ayar tarafında ilgili belgeler üzerinde yukarıda tanımladığımız sürekli ön eğitimi yaptılar; yöntem tarifinde düşük ranklı bir güncellemeden söz edilmiyor.
 
 Sayılar keskin. 7 milyar parametreli Mistral, hiçbir müdahale olmadan 0,481 doğruluk veriyor. İnce ayardan sonra 0,504 — yani neredeyse hiç kıpırdamıyor. Aynı bilgi üretim anında önüne konduğunda ise 0,875. Llama 2'de tablo daha da net: taban model 0,353 iken ince ayar doğruluğu **0,219'a düşürüyor**. Bu modelde bilgiyi ağırlıklara yazma girişimi, kazandırmak bir yana, var olan başarıyı da aşındırıyor.
 
@@ -134,7 +134,7 @@ Aynı çalışmanın ikinci deneyi mekanizmayı açıklıyor. Her bilgi parças�
 
 > **Kendini yokla:** Şekil 2'deki fark LoRA'nın rankının küçük olmasından mı kaynaklanıyor?
 
-Hayır — ve ayrımı görmek önemli. Ovadia ve arkadaşları bütün parametreleri serbest bırakmıştı; yani ölçtükleri şey ince ayarın kendisiydi, düşük rank değil. Biderman ve arkadaşlarının sürekli ön eğitim sonucu ise düşük rankın **ayrıca** bir sınır koyduğunu gösteriyor. İki etki üst üste biniyor: ince ayar zaten kötü bir bilgi kanalıdır, düşük ranklı ince ayar ise o kanalı daha da daraltır. Bu yüzden "LoRA ile modele kurumumun belgelerini öğretirim" cümlesi, kulağa makul gelse de ölçüldüğünde beklenenden çok zayıf çalışıyor: belgelerin tek geçişi neredeyse hiçbir şey kazandırmıyor, aynı olgunun on ayrı yazımı ise ancak bir kısmını.
+Hayır — ve ayrımı görmek önemli. Ovadia ve arkadaşlarının yöntem tarifinde düşük ranklı bir güncelleme yok; ölçtükleri şey sürekli ön eğitim biçimindeki ince ayarın kendisiydi. Biderman ve arkadaşlarının sürekli ön eğitim sonucu ise düşük rankın **ayrıca** bir sınır koyduğunu gösteriyor. İki etki üst üste biniyor: ince ayar zaten kötü bir bilgi kanalıdır, düşük ranklı ince ayar ise o kanalı daha da daraltır. Bu yüzden "LoRA ile modele kurumumun belgelerini öğretirim" cümlesi, kulağa makul gelse de ölçüldüğünde beklenenden çok zayıf çalışıyor: belgelerin tek, özgün yazımıyla ince ayar neredeyse hiçbir şey kazandırmıyor, aynı olgunun on ayrı yazımı ise ancak bir kısmını.
 
 O hâlde LoRA ne için iyi? Cevap 11\. ve 12\. makalelerin ayrımında: **davranış** ucuzdur, **bilgi** pahalıdır. Bir modele belirli bir biçimde cevap vermeyi, belirli bir alanın diliyle konuşmayı, belirli bir çıktı düzenine uymayı öğretmek düşük ranklı bir güncellemeyle yapılabilir — çünkü bunlar modelin zaten sahip olduğu yeteneklerin yeniden düzenlenmesidir. Modelin hiç görmediği olguları yüklemek ise başka bir iştir ve doğru çözümü ağırlıklarda değil, üretim anında modelin önüne konan metinde aranır. O çözümü 41\. makalede kuracağız.
 

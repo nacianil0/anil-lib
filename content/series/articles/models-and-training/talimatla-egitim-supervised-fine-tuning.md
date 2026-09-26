@@ -12,7 +12,7 @@ tags:
   - kayip-maskesi
   - lima
   - sentetik-veri
-content_hash: sha256:7183002f2f760a576f3fba291f757faed6709c9eb083a79cae0d2a63703c4c34
+content_hash: sha256:f9d548f809cd530f3b3d8d43065ad422b615b6924e8c648294d42d5081df4263
 classification_version: 1
 classification_batch: 2
 ---
@@ -154,5 +154,5 @@ SFT'nin yapabileceğinin sınırını gördük: model, kendisine gösterilen cev
 - Wei, J., Bosma, M., Zhao, V. Y., Guu, K., Yu, A. W., Lester, B., Du, N., Dai, A. M. & Le, Q. V. (2022). *Finetuned Language Models are Zero-Shot Learners*. ICLR 2022 (sözlü sunum). [Bağlantı](https://openreview.net/forum?id=gEZrGCozdqR)
 - Zhou, C., Liu, P., Xu, P., Iyer, S., Sun, J., Mao, Y., Ma, X., Efrat, A., Yu, P., Yu, L., Zhang, S., Ghosh, G., Lewis, M., Zettlemoyer, L. & Levy, O. (2023). *LIMA: Less Is More for Alignment*. Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2023/hash/ac662d74829e4407ce1d126477f4a03a-Abstract-Conference.html)
 - Touvron, H. ve ark. (2023). *LLaMA: Open and Efficient Foundation Language Models*. Meta AI teknik raporu, arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2302.13971)
-- Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. & Song, D. (2024). *The False Promise of Imitating Proprietary Language Models*. ICLR 2024 (ön baskısı 2023, arXiv:2305.15717). [Bağlantı](https://openreview.net/forum?id=Kz3yckpCN5)
+- Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. & Song, D. (2024). *The False Promise of Imitating Proprietary Language Models* (ön baskı adı: *The False Promise of Imitating Proprietary LLMs*). ICLR 2024 (ön baskısı 2023, arXiv:2305.15717). [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/4db16435e3a5a2ef3fc39b8f0d12498d-Abstract-Conference.html)
 - Wang, Y., Kordi, Y., Mishra, S., Liu, A., Smith, N. A., Khashabi, D. & Hajishirzi, H. (2023). *Self-Instruct: Aligning Language Models with Self-Generated Instructions*. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023), s. 13484–13508. [Bağlantı](https://aclanthology.org/2023.acl-long.754/)

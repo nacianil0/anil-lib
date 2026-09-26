@@ -12,7 +12,7 @@ tags:
   - ozyineleme-agaci
   - bol-ve-yonet
   - analiz
-content_hash: sha256:013a84e3777da95eb02534a8b2b4f34428c3a4f8ef2846b35376d5ce48ab99bb
+content_hash: sha256:b8a4a612802c9bcc812d4ae7794cca176ccfb54d9f250a36a3817f87cf7cd40e
 classification_version: 1
 classification_batch: 5
 revised_at: "2026-09-25"
@@ -123,7 +123,7 @@ Teoremi tanıdık yinelemelere uygulayalım.
 
 Üçüncü satırın düzenlilik koşulunu denetleyelim, çünkü mülakatta atlanan yer tam olarak orasıdır: a · g(n/b) = 2 · (n/2)² = n²/2 ve bu, c = 3/4 alınırsa c · g(n) = 3n²/4'ten küçüktür; c < 1 olduğu için koşul sağlanır.
 
-Bu denetimin neden geçtiğini bilmek, onu ezbere yapmaktan daha değerlidir. g(n) = nᵈ biçiminde bir polinomsa a · g(n/b) = (a/bᵈ) · g(n) olur; durum 3'ün ilk koşulu d > log_b a demektir, bu da a/bᵈ < 1 demektir. Yani **polinom bir g için düzenlilik koşulu kendiliğinden sağlanır**: a/bᵈ ile 1 arasındaki herhangi bir c iş görür ve yukarıdaki 3/4 de bu aralıktadır (orada a/bᵈ = 1/2). Koşulun gerçekten bir şey elediği yer, büyümesi salınan fonksiyonlardır. T(n) = T(n/2) + n(2 − cos n) yinelemesinde g(n) ≥ n olduğu için polinom koşulu ε = 1 ile sağlanır; ama cos n'in 1'e, cos(n/2)'nin −1'e yaklaştığı n değerlerinde g(n/2), g(n)'in yaklaşık 3/2 katına çıkar (bu çarpan kendi hesabımdır) ve 1'den küçük hiçbir c işe yaramaz. Teorem bu yineleme hakkında hiçbir şey söylemez.
+Bu denetimin neden geçtiğini bilmek, onu ezbere yapmaktan daha değerlidir. g(n) = nᵈ biçiminde bir polinomsa a · g(n/b) = (a/bᵈ) · g(n) olur; durum 3'ün ilk koşulu d > log_b a demektir, bu da a/bᵈ < 1 demektir. Yani **polinom bir g için düzenlilik koşulu kendiliğinden sağlanır**: a/bᵈ ile 1 arasındaki herhangi bir c iş görür ve yukarıdaki 3/4 de bu aralıktadır (orada a/bᵈ = 1/2). Koşulun gerçekten bir şey elediği yer, büyümesi salınan fonksiyonlardır. T(n) = T(n/2) + n(2 − cos n) yinelemesinde g(n) ≥ n olduğu için polinom koşulu ε = 1 ile sağlanır; ama cos n'in 1'e, cos(n/2)'nin −1'e yaklaştığı n değerlerinde g(n/2), g(n)'in yaklaşık 3/2 katına çıkar (kendi hesabım: cos(n/2) = −1 iken cos n = 2cos²(n/2) − 1 = 1 olur, dolayısıyla g(n/2) = (n/2) · 3 = 3n/2 ve g(n) = n) ve 1'den küçük hiçbir c işe yaramaz. Teorem bu yineleme hakkında hiçbir şey söylemez.
 
 Bir de sürüm farkı var ve mülakatçının ezberindeki teorem seninkiyle aynı olmayabilir. Yukarıdaki ifade, MIT'nin *Mathematics for Computer Science* notlarındaki ve CLRS'in dördüncü baskısındaki biçimdir: durum 2, herhangi bir k ≥ 0 için logᵏ n çarpanına izin verir. CLRS'in üçüncü baskısında ve ona dayanan birçok ders notunda durum 2 yalnızca k = 0 içindir, yani g(n) = Θ(n^(log_b a)) ister. Fark somut bir yinelemede görünür: T(n) = 2T(n/2) + n log n, üçüncü baskıya göre durum 2 ile 3 arasındaki boşluğa düşer ve kitap "teorem uygulanmaz" der; dördüncü baskıya göre k = 1 ile durum 2'dir ve sonuç Θ(n log² n)'dir. Düzenlilik koşulu iki baskıda da aynıdır: bir c < 1 ve yeterince büyük n için a · g(n/b) ≤ c · g(n). Genişletilmiş durum 2'yi kullanıyorsan bunu söyle: "logaritma çarpanlı genel hâliyle durum 2".
 
@@ -153,7 +153,7 @@ Hanoi ile birleştirmeli sıralamayı yan yana koy. Hanoi iki alt problem üreti
 
 Kural şu biçimde özetlenir: alt problem, girdiden **toplamsal** olarak küçükse (n − 1, n − 2 gibi) çözüm genellikle üsteldir; **çarpımsal** olarak küçükse (n/2, n/3 gibi) çözüm genellikle bir polinomla sınırlıdır.
 
-Alt problem **sayısına** duyarlılık da yüksektir. T(n) = a·T(n/2) + n − 1 bağıntısında a'yı değiştir: a < 2 için çözüm Θ(n), a = 2 için Θ(n log n), a > 2 için Θ(n^(log₂ a)). Yani a 1,99'dan 2,01'e giderken çözümün **biçimi** iki kez değişir. Aynı farkı sayıyla da görebilirsin; aşağıdaki oranlar kapalı ifadelerden kendi hesabımdır: n = 2²⁰ civarında girdiyi ikiye katlamak, a = 1 için maliyeti 2 katına, a = 2 için yaklaşık 2,1 katına, a = 3 için 3 katına çıkarır. a = 2'deki fazladan 0,1, n log n'deki logaritma çarpanının payıdır ve n büyüdükçe yavaşça 2'ye iner.
+Alt problem **sayısına** duyarlılık da yüksektir. T(n) = a·T(n/2) + n − 1 bağıntısında a'yı değiştir: a < 2 için çözüm Θ(n), a = 2 için Θ(n log n), a > 2 için Θ(n^(log₂ a)). Yani a 1,99'dan 2,01'e giderken çözümün **biçimi** iki kez değişir. Aynı farkı sayıyla da görebilirsin; aşağıdaki oranlar kendi hesabımdır ve T(1) = 0 ile çözülen kapalı ifadelerden gelir (a = 1 için 2n − log₂ n − 2, a = 2 için yukarıdaki n log₂ n − n + 1, a = 3 için (3/2) · 3^(log₂ n) − 2n + 1/2): n = 2²⁰ civarında girdiyi ikiye katlamak, a = 1 için maliyeti 2 katına, a = 2 için yaklaşık 2,1 katına (k = log₂ n iken oran yaklaşık 2k/(k − 1) = 40/19), a = 3 için 3 katına çıkarır. a = 2'deki fazladan 0,1, n log n'deki logaritma çarpanının payıdır ve n büyüdükçe yavaşça 2'ye iner.
 
 ## Mülakatta nasıl görünür
 

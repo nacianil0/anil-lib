@@ -12,7 +12,7 @@ tags:
   - bayes
   - chebyshev
   - istatistik
-content_hash: sha256:41d0c5c3296238ebffdaa4303c2d1438da1ca060131d25894156067464701548
+content_hash: sha256:6495a7136bcff6d1999b31ee435e86de4ef0dc1d4d18a6d65b9756c809650dd1
 classification_version: 1
 classification_batch: 11
 revised_at: "2026-09-25"
@@ -113,7 +113,7 @@ Aynı teknik veri yapıları makalesinin bıraktığı bir borcu ödüyor. `m` h
 
 ## Üç eski borç
 
-**Doğum günü.** Sayma makalesinde güvercin yuvası ilkesiyle "366 kişide çakışma kesindir" demiş, "kaç kişide muhtemeldir?" sorusunu ertelemiştik. Sezgi az önce kurduğumuz araçtan geliyor: çakışmayı kişiler değil **çiftler** üretir. `n` kişide `n(n−1)/2` çift vardır ve her çiftin aynı günde doğmuş olma olasılığı `1/d`'dir. Her çift için bir gösterge tanımlayıp toplarsan beklenen çakışan çift sayısı `n(n−1)/(2d)` çıkar — çiftler birbirinden bağımsız olmadığı hâlde, çünkü doğrusallık bağımsızlık istemez. `d` = 365 ve `n` = 23 için 253 çift ve beklenen 253/365 ≈ 0,69 çakışan çift vardır. Sezginin yanıldığı yer burasıdır: 23 kişi yılın küçük bir kesridir, ama 253 çift küçük bir sayı değildir.
+**Doğum günü.** Sayma makalesinde güvercin yuvası ilkesiyle "366 kişide çakışma kesindir" demiş, "kaç kişide muhtemeldir?" sorusunu ertelemiştik. Sezgi az önce kurduğumuz araçtan geliyor: çakışmayı kişiler değil **çiftler** üretir. `n` kişide `n(n−1)/2` çift vardır ve her çiftin aynı günde doğmuş olma olasılığı `1/d`'dir. Her çift için bir gösterge tanımlayıp toplarsan beklenen çakışan çift sayısı `n(n−1)/(2d)` çıkar. Çift olayları ikişerli bağımsızdır ama karşılıklı bağımsız değildir: 1 ile 2 ve 1 ile 3 aynı gündeyse 2 ile 3 de aynı gündedir. Doğrusallık bunların hiçbirini istemez. `d` = 365 ve `n` = 23 için 253 çift ve beklenen 253/365 ≈ 0,69 çakışan çift vardır. Sezginin yanıldığı yer burasıdır: 23 kişi yılın küçük bir kesridir, ama 253 çift küçük bir sayı değildir.
 
 Kesin hesap tümleyenden yapılır: `n` kişinin hepsinin farklı doğum günü olma olasılığı `d(d−1)…(d−n+1) / dⁿ`'dir — birinci kişi serbesttir, ikincisi kalan `d−1` günden birine, üçüncüsü kalan `d−2` günden birine düşmek zorundadır. Kesirli aritmetikle hesapladım: `n` = 23'te çakışma olasılığı **0,5073**, yani yarıyı geçen en küçük kişi sayısı 23'tür. Kaynak bu çarpımı `1 + x < eˣ` eşitsizliğiyle `e^(−n(n−1)/2d)` ile üstten sınırlar; üsteki sayı, az önce hesapladığımız beklenen çakışan çift sayısının ta kendisidir. Kaynağın pratik kuralı da buradan okunur: beklenen çift sayısı 1'e ulaştığında, yani yaklaşık `√(2d)` kişide, çakışma olasılığı kabaca `1 − 1/e ≈ 0,632` olur. `d` = 365 için `√730 ≈ 27` ve gerçek değeri **0,6269** buldum. (Kaynağın 95 kişi için verdiği "çakışmama olasılığı 1/200.000'den küçüktür" ifadesi de bu üst sınırdan gelir; tam değer 1/694.527'dir.)
 
@@ -125,7 +125,7 @@ Hash tablosuyla bağlantı doğrudandır ve kaynak da bu bağı kuruyor: `n` ana
 E[T(n)] ≤ E[T(3n/4)] + 2cn
 ```
 
-Bağıntıyı açtım: `2cn · (1 + 3/4 + (3/4)² + …) = 2cn · 4 = 8cn`, yani **Θ(n)**. Sıralamadan farklı olarak burada logaritmik çarpan yoktur, çünkü seçim her turda yalnızca **bir** parçaya iner. Sınırın gevşek olup olmadığını benzetimle ölçtüm: `n` = 100'den 100.000'e kadar toplam incelenen öğe sayısı `n`'in yaklaşık **3 katı** çıktı — gevşek sınırın epey altında, ama aynı büyüme sınıfında.
+Bağıntıyı açtım: `2cn · (1 + 3/4 + (3/4)² + …) = 2cn · 4 = 8cn`, yani **Θ(n)**. Sıralamadan farklı olarak burada logaritmik çarpan yoktur, çünkü seçim her turda yalnızca **bir** parçaya iner. Sınırın gevşek olup olmadığını benzetimle ölçtüm; ölçtüğüm algoritma kötü ekseni yeniden denemeyen düz rastgele seçimdir. Rastgele bir `k` için `n` = 100'den 100.000'e kadar toplam incelenen öğe sayısı `n`'in yaklaşık **3 katı** çıktı, aranan medyan olduğunda yaklaşık 3,3 katı — ikisi de gevşek sınırın epey altında, ama aynı büyüme sınıfında.
 
 Burada rastgeleleştirilmiş algoritmalar makalesinin ayrımı formalleşiyor: bu beklenti girdinin dağılımı hakkında **hiçbir şey** varsaymıyor. Her girdi için geçerlidir, çünkü rastgelelik algoritmanın kendi madenî parasındadır. Ortalama durum analizinden farkı tam olarak budur.
 
@@ -133,7 +133,7 @@ Burada rastgeleleştirilmiş algoritmalar makalesinin ayrımı formalleşiyor: b
 
 "Beklenen maliyet doğrusaldır" cümlesini söylediğinde iyi bir mülakatçının ikinci sorusu hazırdır: **ne sıklıkla bundan çok saparsın?** Beklenti tek başına bunu söylemez.
 
-En zayıf ama en az varsayım isteyen araç **Markov eşitsizliğidir**: negatif olmayan bir `R` için
+En zayıf ama en az varsayım isteyen araç **Markov eşitsizliğidir**: negatif olmayan bir `R` ve her `a > 0` için
 
 ```
 P(R ≥ a) ≤ E[R] / a
@@ -141,7 +141,7 @@ P(R ≥ a) ≤ E[R] / a
 
 Yalnızca beklentiyi bilmek yeter. Neden doğru olduğu tek cümledir: `R ≥ a` olan sonuçların toplam olasılığı `P(R ≥ a)`'dır ve her birinde değer en az `a` olduğu için bu sonuçlar beklentiye en az `a · P(R ≥ a)` katkı verir; `R` negatif olmadığı için geri kalan sonuçlar bu katkıyı azaltamaz, yani `a · P(R ≥ a) ≤ E[R]`.
 
-Daha iyisini istiyorsan ikinci bir sayı ödemelisin: **varyans**, `Var[R] = E[(R − E[R])²]`, yani değişkenin kendi ortalamasından uzaklığının karesinin ortalaması — ne kadar yayıldığının ölçüsü. Karekökü **standart sapmadır** ve değişkenle aynı birimdedir. Varyansı bilirsen **Chebyshev eşitsizliği** çalışır:
+Daha iyisini istiyorsan ikinci bir sayı ödemelisin: **varyans**, `Var[R] = E[(R − E[R])²]`, yani değişkenin kendi ortalamasından uzaklığının karesinin ortalaması — ne kadar yayıldığının ölçüsü. Karekökü **standart sapmadır** ve değişkenle aynı birimdedir. Varyansı bilirsen her `a > 0` için **Chebyshev eşitsizliği** çalışır:
 
 ```
 P(|R − E[R]| ≥ a) ≤ Var[R] / a²
@@ -149,9 +149,9 @@ P(|R − E[R]| ≥ a) ≤ Var[R] / a²
 
 Bu yeni bir fikir değildir: Markov'u `R`'ye değil, negatif olmayan `(R − E[R])²` değişkenine uygularsın. `|R − E[R]| ≥ a` olayı `(R − E[R])² ≥ a²` olayıyla aynıdır ve Markov bu olay için `E[(R − E[R])²] / a² = Var[R] / a²` sınırını verir.
 
-Somut örnek: adil bir madenî parayı 100 kez atalım ve `X` tura sayısı olsun. Her atış, beklentisi 1/2 ve varyansı `1/2 · 1/2 = 1/4` olan bir Bernoulli değişkenidir; beklentiler her zaman, varyanslar ise atışlar bağımsız olduğu için toplanır. Böylece `E[X] = 50`, `Var[X] = 100 · 1/4 = 25`, `σ = 5`. `P(X ≥ 75)` nedir? Üç cevabı da hesapladım. Markov `50/75` = **0,667** diyor — yani neredeyse hiçbir şey söylemiyor. Chebyshev'i uygulamak için `X ≥ 75` olayının `|X − 50| ≥ 25` olayının içinde kaldığını görmek yeter; sınır `25/25²` = **0,04**, on altı kat daha iyi. Gerçek değer, binom olasılıklarını toplayarak bulunur: **2,8 × 10⁻⁷**. Şekil 2 üçünü aynı ölçekte gösteriyor.
+Somut örnek: adil bir madenî parayı 100 kez atalım ve `X` tura sayısı olsun. Her atış, beklentisi 1/2 ve varyansı `1/2 · 1/2 = 1/4` olan bir Bernoulli değişkenidir; beklentiler her zaman, varyanslar ise atışlar bağımsız olduğu için toplanır. Böylece `E[X] = 50`, `Var[X] = 100 · 1/4 = 25`, `σ = 5`. `P(X ≥ 75)` nedir? Üç cevabı da hesapladım. Markov `50/75` = **0,667** diyor — yani neredeyse hiçbir şey söylemiyor. Chebyshev'i uygulamak için `X ≥ 75` olayının `|X − 50| ≥ 25` olayının içinde kaldığını görmek yeter; sınır `25/25²` = **0,04**, yaklaşık on yedi kat daha iyi (0,667 / 0,04 ≈ 16,7). Gerçek değer, binom olasılıklarını toplayarak bulunur: **2,8 × 10⁻⁷**. Şekil 2 üçünü aynı ölçekte gösteriyor.
 
-![Yatay ve logaritmik bir olasılık ekseni ve üstünde üç işaret var. Şeklin en üstünde başlık satırı, hemen altında kurulum satırı var; kurulumda şunlar yazıyor: X yüz adil para atışındaki tura sayısı, beklentisi elli, standart sapması beş ve sorulan X'in yetmiş beşten büyük ya da eşit olma olasılığı. Eksende beş etiket var: solda bir, sonra sırayla on üzeri eksi iki, on üzeri eksi dört, on üzeri eksi altı ve sağda on üzeri eksi sekiz; iki etiket arası yüz kat demektir. Eksenin üstünde üç dikey sap ve her sapın ucunda birer nokta var. Birinci sap eksenin en solunda, sıfır virgül altı yüz altmış yedi değerinde ve üstünde Markov küçük eşit sıfır virgül altı yüz altmış yedi yazıyor. İkinci sap biraz sağda, sıfır virgül sıfır dört değerinde ve daha yükseğe uzanıyor, üstünde Chebyshev küçük eşit sıfır virgül sıfır dört yazıyor. Üçüncü sap çok daha sağda, on üzeri eksi altı ile on üzeri eksi sekiz arasında ve üstünde gerçek iki virgül sekiz çarpı on üzeri eksi yedi yazıyor; bu sap başka bir renkte. Eksenin altında bir satır ekseni açıklıyor: sola doğru büyük olasılık, sağa doğru küçük olasılık, her aralık yüz kat. Onun altında üç satırlık çerçeveli bir kutu var: Markov yalnızca X'in negatif olmadığını ve beklentisini varsayar; Chebyshev ayrıca varyansı da bilir; gerçek değer dağılımın tamamını, yani binom olduğunu bilir. En altta tek satır: ne kadar çok varsayarsan sınır o kadar sıkı olur, ama varsayımın yanlışsa sınır da yanlıştır](assets/markov-chebyshev.svg "Şekil 2 — Aynı olasılık, üç cevap: sınırın sıkılığı varsayımın fiyatıdır")
+![Logaritmik olasılık ekseninde üç işaret. X, 100 adil para atışında tura sayısı, beklentisi 50, standart sapması 5; sorulan, X'in en az 75 olma olasılığı. Eksen soldan sağa 1, 10 üzeri eksi 2, eksi 4, eksi 6 ve eksi 8 diye etiketli; her aralık yüz kat, sağa doğru olasılık küçülür. Markov sınırı 0,667 en solda, Chebyshev sınırı 0,04 biraz sağında, başka renkteki gerçek değer 2,8 çarpı 10 üzeri eksi 7 ise 10 üzeri eksi 6 ile eksi 8 arasında. Alttaki kutu: Markov yalnızca X'in negatif olmadığını ve beklentisini varsayar, Chebyshev varyansı da bilir, gerçek değer dağılımın tamamını, binom olduğunu bilir. Son satır: ne kadar çok varsayarsan sınır o kadar sıkı olur](assets/markov-chebyshev.svg "Şekil 2 — Aynı olasılık, üç cevap: sınırın sıkılığı varsayımın fiyatıdır")
 
 Ders üç katmanlıdır. Markov hiçbir şey varsaymaz ve neredeyse hiçbir şey vermez. Chebyshev bir sayı daha ister ve çok daha iyisini verir. Gerçek değer ikisinden de çok küçüktür, çünkü `X` **bağımsız** değişkenlerin toplamıdır ve bağımsız toplamlar ortalamalarının çevresinde çok sert **yoğunlaşır (concentration)**. Mülakatta doğru cümle şudur: "beklenen maliyeti verebilirim, üstelik bağımsız katkıların toplamı olduğu için beklentiden uzağa düşme olasılığı da hızla küçülür."
 
@@ -159,7 +159,7 @@ Bu aynı zamanda rastgeleleştirilmiş algoritmalar makalesinin Monte Carlo/Las 
 
 > **Sesli anlat:** "Beklentinin doğrusallığı neden bu kadar güçlü ve beklentiyi bilmek neden yetmez? Doksan saniye."
 >
-> İyi bir cevabın omurgası: "Doğrusallık, toplamın beklentisinin beklentilerin toplamı olduğunu söyler ve kritik ayrıntı şudur: bağımsızlık gerektirmez. Bu yüzden zor problemleri gösterge değişkenlerine parçalayabiliriz — her olay için 1/0 değerli bir değişken tanımlarız, beklentisi doğrudan o olayın olasılığıdır ve toplarız. Şapka problemi kanonik örnektir: olaylar açıkça bağımlıdır, ama her kişinin kendi şapkasını alma olasılığı 1/n olduğu için beklenen sayı her n'de tam olarak 1 çıkar. Aynı teknik hash tablosunda beklenen zincir uzunluğunun yük faktörüne eşit olduğunu üç satırda verir. Ama beklenti tek başına bir dağılımı anlatmaz: aynı beklentiye sahip iki değişkenden biri hep ortalamasında durabilir, öteki uçlarda gezinebilir. Sapmayı sınırlamak için ikinci bir araç gerekir. Markov eşitsizliği yalnızca değişkenin negatif olmadığını ve beklentisini varsayar, karşılığında çok gevşek bir sınır verir; Chebyshev varyansı da ister ve belirgin biçimde sıkı bir sınır verir. Yüz para atışında P(X ≥ 75) için Markov 0,667, Chebyshev 0,04 verir; gerçek değer ise 2,8 çarpı on üzeri eksi yedi'dir, çünkü bağımsız toplamlar ortalamaları çevresinde çok sert yoğunlaşır. Yani doğru cevap beklentiyi vermek değil, beklentiyle birlikte yoğunlaşmayı da söylemektir."
+> İyi bir cevabın omurgası: "Doğrusallık, toplamın beklentisinin beklentilerin toplamı olduğunu söyler ve kritik ayrıntı şudur: bağımsızlık gerektirmez. Bu yüzden zor problemleri gösterge değişkenlerine parçalayabiliriz — her olay için 1/0 değerli bir değişken tanımlarız, beklentisi doğrudan o olayın olasılığıdır ve toplarız. Şapka problemi kanonik örnektir: olaylar açıkça bağımlıdır, ama her kişinin kendi şapkasını alma olasılığı 1/n olduğu için beklenen sayı her n'de tam olarak 1 çıkar. Aynı teknik hash tablosunda beklenen zincir uzunluğunun yük faktörüne eşit olduğunu iki satırda verir. Ama beklenti tek başına bir dağılımı anlatmaz: aynı beklentiye sahip iki değişkenden biri hep ortalamasında durabilir, öteki uçlarda gezinebilir. Sapmayı sınırlamak için ikinci bir araç gerekir. Markov eşitsizliği yalnızca değişkenin negatif olmadığını ve beklentisini varsayar, karşılığında çok gevşek bir sınır verir; Chebyshev varyansı da ister ve belirgin biçimde sıkı bir sınır verir. Yüz para atışında P(X ≥ 75) için Markov 0,667, Chebyshev 0,04 verir; gerçek değer ise 2,8 çarpı on üzeri eksi yedi'dir, çünkü bağımsız toplamlar ortalamaları çevresinde çok sert yoğunlaşır. Yani doğru cevap beklentiyi vermek değil, beklentiyle birlikte yoğunlaşmayı da söylemektir."
 
 ## Dağılımların adını bilmek
 

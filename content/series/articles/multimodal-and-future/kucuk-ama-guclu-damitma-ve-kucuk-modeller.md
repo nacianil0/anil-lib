@@ -12,7 +12,7 @@ tags:
   - budama
   - ogretmen-ogrenci
   - hesap-butcesi
-content_hash: sha256:13be1bc30f85ff21f283cb8657f250df1aa7d301c35dcfe3f56a5991c5f7c769
+content_hash: sha256:7fb59732823723004f660ea0ec00de3b9f49cb9398a68405ff874b61e6fa79c4
 classification_version: 1
 classification_batch: 21
 ---
@@ -48,9 +48,9 @@ Buraya kadarki anlatı "büyük model küçüğe bilgi aktarır" diyor. Üç öl
 
 Birincisi eski. Jimmy Ba ve Rich Caruana'nın NeurIPS 2014'te sunduğu çalışma, tek gizli katmanlı sığ ağların derin ağların öğrendiği karmaşık fonksiyonları öğrenebildiğini ve doğrudan etiketlerle ulaşamadıkları doğruluklara, derin bir ağın çıktısını taklit ederek ulaşabildiğini gösterdi — bazı durumlarda aynı parametre sayısıyla. Yani sığ ağın eksiği kapasite değil, hedefti.
 
-İkincisi Lucas Beyer ve arkadaşlarının CVPR 2022'de sunduğu çalışma. Yazarlar damıtmayı bir **fonksiyon eşleştirme** problemi olarak ele alıyorlar: öğretmen ile öğrenci **tam olarak aynı** girdiyi görmeli — aynı kırpma, aynı bozma, aynı artırma — ve eğitim çok uzun sürmeli. İki koşul da sezgiye aykırı: alışıldık düzende öğretmenin etiketleri bir kez hesaplanıp saklanır ve öğrenci kendi artırmalarını görür. Tutarlı görüntü ve sabırlı eğitimle, 9.600 dönemlik bir damıtmayla ImageNet'te bir ResNet-50'yi yüzde 82,8 doğruluğa çıkarıyorlar — aynı mimarinin olağan eğitimine göre 4,4 puan.
+İkincisi Lucas Beyer ve arkadaşlarının CVPR 2022'de sunduğu çalışma. Yazarlar damıtmayı bir **fonksiyon eşleştirme** problemi olarak ele alıyorlar: öğretmen ile öğrenci **tam olarak aynı** girdiyi görmeli — aynı kırpma, aynı bozma, aynı artırma — ve eğitim çok uzun sürmeli. İki koşul da sezgiye aykırı: alışıldık düzende öğretmenin etiketleri bir kez hesaplanıp saklanır ve öğrenci kendi artırmalarını görür. Tutarlı görüntü ve sabırlı eğitimle, 9.600 dönemlik bir damıtmayla ImageNet'te bir ResNet-50'yi yüzde 82,8 doğruluğa çıkarıyorlar — ImageNet-21k'de ön eğitilip aktarılmış aynı mimariye göre 4,4 puan.
 
-Üçüncüsü bir adım daha ileri gidiyor. Tommaso Furlanello ve arkadaşlarının ICML 2018'de sunduğu çalışma, öğrenciyi öğretmenle **aynı mimaride ve aynı boyutta** kuruyor. Sıkıştırma yok; tek fark, öğrencinin hedefinin öğretmenin çıktısı olması. CIFAR-10'da sonuçlar: 0,38 milyon parametreli ağda test hatası 6,69'dan 6,64'e, 1,48 milyonda 5,06'dan 4,86'ya, 9,16 milyonda 4,13'ten 4,03'e iniyor. Öğrenci öğretmenini geçiyor. En büyük yapılandırmada — 36 milyon parametre — yön tersine dönüyor: 3,77'den 3,86'ya. Yani kazanç ne evrensel ne de sıkıştırmadan geliyor.
+Üçüncüsü bir adım daha ileri gidiyor. Tommaso Furlanello ve arkadaşlarının ICML 2018'de sunduğu çalışma, öğrenciyi öğretmenle **aynı mimaride ve aynı boyutta** kuruyor. Sıkıştırma yok; tek fark, öğrencinin hedefinin öğretmenin çıktısı olması. CIFAR-10'da Wide-ResNet ailesinin sonuçları: 0,38 milyon parametreli ağda test hatası 6,69'dan 6,64'e, 1,48 milyonda 5,06'dan 4,86'ya, 9,16 milyonda 4,13'ten 4,03'e iniyor. Öğrenci öğretmenini geçiyor. En büyük yapılandırmada — 36 milyon parametre — yön tersine dönüyor: 3,77'den 3,86'ya. Yani kazanç ne evrensel ne de sıkıştırmadan geliyor.
 
 Bu üç ölçüm birlikte okununca damıtmanın tanımı değişiyor: öğrenci, öğretmenin **fonksiyonunu** örnekliyor ve bu fonksiyon, sert etiketlerin tanımladığı hedeften daha yumuşak, daha düzenli, öğrenilmesi daha kolay bir hedef. Furlanello ve arkadaşlarının gradyan çözümlemesi de bunu söylüyor: damıtma kaybının gradyanı, yanlış sınıflara dair bilgiyi taşıyan bir terim ile gerçek etiketten gelen gradyanın yeniden ölçeklenmiş hâlinin toplamı.
 
@@ -68,7 +68,7 @@ Birincisi bir tavan: yeterli veri ya da hesap verildiğinde damıtma, denetimli 
 
 Şekil 2 iki yolu ve yasanın üç kaydını bir arada veriyor; üstteki tablo tek bir üretim raporunun ablasyonundan, alttaki üç kayıt ise ayrı bir ölçek yasasından geliyor.
 
-Üçüncü kayıt **kapasite boşluğu** (capacity gap): öğretmen güçlendikçe öğrencinin kaybı önce düşüyor, bir en iyi noktadan sonra **yükselmeye başlıyor**. Çalışma bunu 143 ve 198 milyonluk öğrencileri 300 milyondan 14 milyara kadar öğretmenlerden damıtarak gösteriyor. Sebebi de ölçüyorlar: öğretmen kendi başarısını artırdıkça öğrencinin ona olan uzaklığı da artıyor; bir noktadan sonra öğrenci öğretmeni modelleyemiyor ve öğretmenin kazancından yararlanamıyor. Yazarların düzeltmesi önemli: boşluk yalnızca boyut farkı değil, **öğrenme kapasitesi** farkı; boyut bunun özel bir hâli.
+Üçüncü kayıt **kapasite boşluğu** (capacity gap): öğretmen güçlendikçe öğrencinin kaybı önce düşüyor, bir en iyi noktadan sonra **yükselmeye başlıyor**. Çalışma bunu 143 ve 198 milyonluk öğrencileri on ayrı boydaki öğretmenden damıtarak gösteriyor. Sebebi de ölçüyorlar: öğretmen kendi başarısını artırdıkça öğrencinin ona olan uzaklığı da artıyor; bir noktadan sonra öğrenci öğretmeni modelleyemiyor ve öğretmenin kazancından yararlanamıyor. Yazarların düzeltmesi önemli: boşluk yalnızca boyut farkı değil, **öğrenme kapasitesi** farkı; boyut bunun özel bir hâli.
 
 Alandaki pratik cevaplar bu bulgudan önce de vardı. Seyed Iman Mirzadeh ve arkadaşlarının AAAI 2020'de sunduğu çalışma araya bir "öğretmen asistanı" koyuyor: önce orta boy bir modele damıt, sonra ondan küçüğe. Jang Hyun Cho ve Bharath Hariharan'ın ICCV 2019'da sunduğu çalışma ise daha doğrudan bir öneri veriyor — öğretmeni erken durdurmak, yani onu bilerek daha az güçlü bırakmak.
 
@@ -112,7 +112,7 @@ DeepSeek-AI ekibinin Nature'da 2025'te yayımladığı çalışma — 34\. makal
 
 Damıtılan model AIME 2024'te ilk denemede yüzde 72,6, MATH-500'de 94,3, LiveCodeBench'te 57,2. Pekiştirmeli öğrenmeden geçen sürüm sırasıyla 47,0, 91,6 ve 40,2. Aynı boyuttaki bir başka akıl yürütme modeli 50,0, 90,6 ve 41,9. Fark küçük değil ve bütün ölçütlerde aynı yönde. Damıtılan 1,5 milyarlık model bile AIME'de yüzde 28,9 ile, karşılaştırma tabanı olarak konan iki büyük ticari modelin 9,3 ve 16,0'ının önüne geçiyor.
 
-Yazarların kendi çıkarımı iki cümle ve ikisi de kayıtlı: küçük modele doğrudan uygulanan büyük ölçekli pekiştirmeli öğrenme muazzam hesap istiyor ve damıtmanın başarısına ulaşamayabiliyor; fakat **zekânın sınırlarını ilerletmek** için hâlâ daha güçlü temel modeller ve daha büyük ölçekli pekiştirmeli öğrenme gerekebilir. Yani 34'ün işareti ödendi ve sınırı olduğu gibi duruyor: damıtma öğrencinin tavanını yükseltir, ama o tavanı öğretmenin nerede olduğu belirler. Bu son cümle yazarların ölçümü değil, iki çıkarımının birlikte okunuşu; damıtılmış bir öğrencinin öğretmenini hangi koşulda geçebileceği, yukarıdaki aynı boyutlu öğrenci deneyinin gösterdiği gibi, hâlâ açık bir soru.
+Yazarların kendi çıkarımı iki cümle ve ikisi de kayıtlı: küçük modele doğrudan uygulanan büyük ölçekli pekiştirmeli öğrenme muazzam hesap istiyor ve damıtmanın başarısına ulaşamayabiliyor; fakat **insan zekâsının sınırlarının ötesine geçmek** için hâlâ daha güçlü temel modeller ve daha büyük ölçekli pekiştirmeli öğrenme gerekebilir. Yani 34'ün işareti ödendi ve sınırı olduğu gibi duruyor: damıtma öğrencinin tavanını yükseltir, ama o tavanı öğretmenin nerede olduğu belirler. Bu son cümle yazarların ölçümü değil, iki çıkarımının birlikte okunuşu; damıtılmış bir öğrencinin öğretmenini hangi koşulda geçebileceği, yukarıdaki aynı boyutlu öğrenci deneyinin gösterdiği gibi, hâlâ açık bir soru.
 
 ## Damıtmanın disiplini
 

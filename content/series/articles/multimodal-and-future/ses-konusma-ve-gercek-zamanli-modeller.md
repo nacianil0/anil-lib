@@ -12,7 +12,7 @@ tags:
   - ses-tokenlari
   - gercek-zamanli
   - gecikme-butcesi
-content_hash: sha256:a790e7399368b68d2d28d804a1c592d4fd88a4425a5d572a089118c784f05094
+content_hash: sha256:080d32b663a8df2758fa2bcac4d9f313ec7ff1f8a8a41255947ee44cb2a035b3
 classification_version: 1
 classification_batch: 19
 ---
@@ -58,7 +58,7 @@ Bu çalışmanın buraya asıl ait olan kısmı 79'un diliyle yazılmış. Yazar
 
 Ters yön uzun süre üç parçalı bir hattı izledi: metni bir ara temsile — genellikle bir mel spektrograma — çeviren bir model, o temsili dalga biçimine çeviren bir **vokoder** (vocoder), ve ikisini birleştiren bir çözümleme. Jonathan Shen ve arkadaşlarının ICASSP 2018'de sunduğu çalışma birinci parçayı, Jungil Kong ve arkadaşlarının NeurIPS 2020'de sunduğu çalışma ikincisini bugünkü hâline getirdi; Jaehyeon Kim ve arkadaşlarının ICML 2021'de sunduğu çalışma ise ikisini tek bir uçtan uca modele indirdi.
 
-Token'lı düzen bu hattı da değiştirdi. Sesin akustik token'ları varsa, metinden sese dönüşüm bir dil modelleme problemine indirgenebilir: metni ve kısa bir örnek kaydı girdi olarak ver, akustik token'ları üret, kodekten geçirip sese çevir. Chengyi Wang ve arkadaşlarının 2023'te yayımladığı — hakemli bir yerde yayımlandığını doğrulayamadığımız — çalışma bunu, Alexandre Défossez ve arkadaşlarının Transactions on Machine Learning Research'te yayımladığı sinir ses kodeğinin akustik token'ları üzerinde ve 60 bin saatlik İngilizce sesle eğitip gösteriyor: modelin daha önce hiç duymadığı bir konuşmacının **üç saniyelik** kaydı isteme konduğunda, o konuşmacının sesiyle yeni cümleler üretiliyor. 23'teki örnekle öğrenmenin ses hâli: ağırlıklara dokunulmuyor, örnek isteme konuyor.
+Token'lı düzen bu hattı da değiştirdi. Sesin akustik token'ları varsa, metinden sese dönüşüm bir dil modelleme problemine indirgenebilir: metni ve kısa bir örnek kaydı girdi olarak ver, akustik token'ları üret, kodekten geçirip sese çevir. Sanyuan Chen, Chengyi Wang ve arkadaşlarının 2023'te ön baskı olarak yayımladığı, 2025'te IEEE Transactions on Audio, Speech and Language Processing'de çıkan çalışma bunu, Alexandre Défossez ve arkadaşlarının Transactions on Machine Learning Research'te yayımladığı sinir ses kodeğinin akustik token'ları üzerinde ve 60 bin saatlik İngilizce sesle eğitip gösteriyor: modelin daha önce hiç duymadığı bir konuşmacının **üç saniyelik** kaydı isteme konduğunda, o konuşmacının sesiyle yeni cümleler üretiliyor. 23'teki örnekle öğrenmenin ses hâli: ağırlıklara dokunulmuyor, örnek isteme konuyor.
 
 Bunun iki yüzü var ve ikisi de metinde durmalı. Bir yüzü erişilebilirlik ve kişiselleştirme; öteki yüzü 68'de gördüğümüz kötüye kullanım tablosuna yeni bir satır: üç saniyelik bir kayıt, bir sesin taklidi için yeterli bir bütçe.
 
@@ -122,7 +122,7 @@ Buraya kadar iki modalite de aynı biçimde ele alındı: dışarıdan gelen bir
 - Shen, J., Pang, R., Weiss, R. J., Schuster, M., Jaitly, N., Yang, Z., Chen, Z., Zhang, Y., Wang, Y., Skerry-Ryan, R., Saurous, R. A., Agiomyrgiannakis, Y. & Wu, Y. (2018). *Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions*. IEEE ICASSP 2018. [Bağlantı](https://doi.org/10.1109/ICASSP.2018.8461368)
 - Kong, J., Kim, J. & Bae, J. (2020). *HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/c5d736809766d46260d816d8dbc9eb44-Abstract.html)
 - Kim, J., Kong, J. & Son, J. (2021). *Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech*. ICML 2021. [Bağlantı](https://proceedings.mlr.press/v139/kim21f.html)
-- Wang, C., Chen, S., Wu, Y., Zhang, Z., Zhou, L., Liu, S., Chen, Z., Liu, Y., Wang, H., Li, J., He, L., Zhao, S. & Wei, F. (2023). *Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers*. Hakemli bir yerde yayımlandığı doğrulanamadı; okunan sürüm arXiv:2301.02111. [Bağlantı](https://arxiv.org/abs/2301.02111)
+- Chen, S., Wang, C., Wu, Y., Zhang, Z., Zhou, L., Liu, S., Chen, Z., Liu, Y., Wang, H., Li, J., He, L., Zhao, S. & Wei, F. (2025). *Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers*. IEEE Transactions on Audio, Speech and Language Processing, 33, s. 705–718. [Bağlantı](https://doi.org/10.1109/TASLPRO.2025.3530270)
 - Défossez, A., Mazaré, L., Orsini, M., Royer, A., Pérez, P., Jégou, H., Grave, E. & Zeghidour, N. (2024). *Moshi: a speech-text foundation model for real-time dialogue*. Hakemli bir yerde yayımlandığı doğrulanamadı; okunan sürüm arXiv:2410.00037. [Bağlantı](https://arxiv.org/abs/2410.00037)
 - Fang, Q., Guo, S., Zhou, Y., Ma, Z., Zhang, S. & Feng, Y. (2025). *LLaMA-Omni: Seamless Speech Interaction with Large Language Models*. ICLR 2025. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/90d1fc07f46e31387978b88e7e057a31-Abstract-Conference.html)
 - Pratap, V., Tjandra, A., Shi, B., Tomasello, P., Babu, A., Kundu, S., Elkahky, A., Ni, Z., Vyas, A., Fazel-Zarandi, M., Baevski, A., Adi, Y., Zhang, X., Hsu, W.-N., Conneau, A. & Auli, M. (2024). *Scaling Speech Technology to 1,000+ Languages*. Journal of Machine Learning Research 25. [Bağlantı](https://www.jmlr.org/papers/v25/23-1318.html)

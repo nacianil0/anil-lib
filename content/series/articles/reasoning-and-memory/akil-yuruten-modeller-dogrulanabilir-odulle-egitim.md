@@ -12,7 +12,7 @@ tags:
   - post-training
   - dogrulayici
   - yetenek-siniri
-content_hash: sha256:34b4a915e0b6433543daff9269733786f82c03e55a7639a9af83292cb2277e09
+content_hash: sha256:79a9dc0cd65e5324c773f58dcb496ca90fa493b22c8a0190585f249f1cac7a7e
 classification_version: 1
 classification_batch: 7
 revised_at: "2026-09-25"
@@ -97,11 +97,11 @@ R1-Zero'nun sorunları da açıkça yazılmış: okunabilirliği düşük ve dil
 | Ölçüm | R1-Zero | ilk ara sürüm | R1 |
 |---|---|---|---|
 | talimata uyma | 46,6 | 71,7 | 83,3 |
-| tercih arenası | 24,7 | 50,1 | 87,6 |
+| kullanıcı tercihi, kazanma oranı | 24,7 | 50,1 | 87,6 |
 | lisansüstü fen soruları | 75,8 | 66,1 | 71,5 |
 | kısa olgu soruları | 30,3 | 17,8 | 30,1 |
 
-Sağ sütuna doğru okunduğunda hikâye şu: akıl yürütmeye yönelik pekiştirmeli öğrenme akıl yürütme puanlarını yükseltiyor ama kullanıcı tercihi ölçen kümelerde neredeyse hiçbir şey yapmıyor; o kümelerdeki büyük sıçrama sonraki genel amaçlı aşamalardan geliyor. Üçüncü ve dördüncü satırlar ise ters yönde bir uyarı taşıyor: soğuk başlangıç verisiyle yapılan ilk ince ayar, akıl yürütme ve olgu sorularında geçici bir **gerileme** üretiyor. 11\. makaledeki hizalama vergisi burada da görünüyor.
+Sağ sütuna doğru okunduğunda hikâye şu: akıl yürütmeye yönelik pekiştirmeli öğrenme akıl yürütme puanlarını yükseltiyor ama kullanıcı tercihi ölçen kümelerde az şey yapıyor — tabloda gösterilmeyen o ara aşamada tercih satırı 50,1'den yalnızca 55,8'e çıkıyor; o kümelerdeki büyük sıçrama sonraki genel amaçlı aşamalardan geliyor. Üçüncü ve dördüncü satırlar ise ters yönde bir uyarı taşıyor: soğuk başlangıç verisiyle yapılan ilk ince ayar, akıl yürütme ve olgu sorularında geçici bir **gerileme** üretiyor. 11\. makaledeki hizalama vergisi burada da görünüyor.
 
 Ödül tasarımının bir maliyeti de kayda geçmiş. Dillerin karışmasını önlemek için ödüle üçüncü bir bileşen ekleniyor: cevabın hedef dildeki sözcük oranı. Çalışmanın kendi ablasyonu, bu bileşenin model başarısında hafif bir **gerileme** ürettiğini söylüyor; yine de insan tercihine uyduğu için tutuluyor. Bu, 11\. makaledeki hizalama vergisinin küçük ve çok net bir örneği: okunabilirlik bedava değil, ölçülebilir bir puan karşılığında satın alınıyor.
 

@@ -12,7 +12,7 @@ tags:
   - cift-inis
   - ezber
   - duzenlilestirme
-content_hash: sha256:7bdfa51982ce8ab2d0134950c75b7f2d8855254e2783d010ebed35bc086be28c
+content_hash: sha256:b667018d4ee9931255e293cede94a7fd1b347f5fe4ac84c7994cb008e51a68fe
 classification_version: 1
 classification_batch: 23
 revised_at: "2026-09-25"
@@ -52,9 +52,9 @@ Hayır. Her girdiye sabit bir sayı söyleyen modelin oynaklığı tam sıfırd�
 
 Geman ve arkadaşlarının çerçevesi bir tahminde bulunuyordu: kapasite büyüdükçe oynaklık kontrolden çıkar, dolayısıyla çok parametreli modeller zor problemler için gerçekçi olmayan miktarda veri ister. 2\. makalede bu tahminin yanlış çıktığını söylemiştik. Şimdi nasıl çürütüldüğünü kuralım.
 
-Chiyuan Zhang ve arkadaşlarının ICLR 2017'de sunduğu deneyi 72\. makalede ezber tartışmasının bir kanıtı olarak kullanmıştık. Burada asıl işini yapıyor: neyi çürüttüğünü göstermek. Yazarlar standart görüntü ağlarını iki kez eğitiyorlar — bir kez gerçek etiketlerle, bir kez etiketleri rastgele karıştırılmış aynı veriyle. Mimari aynı, eniyileyici aynı, hiperparametreler aynı.
+Chiyuan Zhang ve arkadaşlarının ICLR 2017'de sunduğu deneyi 72\. makalede ezber tartışmasının bir kanıtı olarak kullanmıştık. Burada asıl işini yapıyor: neyi çürüttüğünü göstermek. Yazarlar standart görüntü ağlarını iki kez eğitiyorlar — bir kez gerçek etiketlerle, bir kez etiketleri rastgele etiketlerle değiştirilmiş aynı veriyle. Mimari aynı, eniyileyici aynı, hiperparametreler aynı.
 
-![Altı satırlık bir tablo ve altında bir kutu. Üstte Zhang ve arkadaşlarının ICLR 2017 çalışmasının CIFAR-10 ölçümleri olduğu, mimarinin ve eniyileyicinin bütün satırlarda aynı olduğu yazılıdır. Sütunlar model, parametre sayısı, etiketler, eğitim doğruluğu ve test doğruluğu. Birinci satır Inception, 1.649.402 parametre, gerçek etiketler ve düzenlileştirme var, eğitim 100,0, test 89,05. İkinci satır aynı model, gerçek etiketler ve düzenlileştirme yok, eğitim 100,0, test 85,75. Üçüncü satır aynı model, rastgele etiketler, eğitim 100,0, test 9,78; bu satır vurguludur. Dördüncü satır MLP 1x512, 1.209.866 parametre, gerçek etiketler, eğitim 100,0, test 50,51. Beşinci satır aynı MLP, rastgele etiketler, eğitim 99,34, test 10,61. Altıncı satır ImageNet üzerinde rastgele bir milyon etiket için eğitim doğruluğu 95,20, test değeri verilmemiştir. Alttaki kutuda üç cümle durur: on sınıflı bir problemde rastgele tahminin doğruluğu yüzde 10'dur; aynı mimari aynı sıfır eğitim hatasına iki farklı dünyada ulaşıyor; ve yalnızca kapasiteye bakan bir sınır bu iki durumu ayırt edemez. En altta bir kayıt: bütün sayılar kaynağın birinci tablosundan alınmıştır.](assets/ayni-ag-iki-dunya.svg "Şekil 2 — Aynı sıfır eğitim hatası, iki farklı gerçek")
+![Altı satırlık bir tablo ve altında bir kutu. Üstte Zhang ve arkadaşlarının ICLR 2017 çalışmasının CIFAR-10 ölçümleri olduğu, mimarinin ve eniyileyicinin bütün satırlarda aynı olduğu yazılıdır. Sütunlar model, parametre sayısı, etiketler, eğitim doğruluğu ve test doğruluğu. Birinci satır Inception, 1.649.402 parametre, gerçek etiketler ve düzenlileştirme var, eğitim 100,0, test 89,05. İkinci satır aynı model, gerçek etiketler ve düzenlileştirme yok, eğitim 100,0, test 85,75. Üçüncü satır aynı model, rastgele etiketler, eğitim 100,0, test 9,78; bu satır vurguludur. Dördüncü satır MLP 1x512, 1.209.866 parametre, gerçek etiketler, eğitim 100,0, test 50,51. Beşinci satır aynı MLP, rastgele etiketler, eğitim 99,34, test 10,61. Altıncı satır ImageNet üzerinde rastgele bir milyon etiket için eğitim doğruluğu 95,20, test 0,11. Alttaki kutuda üç cümle durur: on sınıflı bir problemde rastgele tahminin doğruluğu yüzde 10'dur; aynı mimari aynı sıfır eğitim hatasına iki farklı dünyada ulaşıyor; ve yalnızca kapasiteye bakan bir sınır bu iki durumu ayırt edemez. En altta bir kayıt: CIFAR-10 satırları kaynağın birinci tablosundan, ImageNet satırı ekteki ikinci tablodan alınmıştır.](assets/ayni-ag-iki-dunya.svg "Şekil 2 — Aynı sıfır eğitim hatası, iki farklı gerçek")
 
 Şekil 2 sonucu veriyor. Aynı Inception ağı, rastgele etiketli veriyi de yüzde 100 eğitim doğruluğuyla öğreniyor; test doğruluğu ise 9,78, yani on sınıflı bir problemde rastgele tahminin düzeyi. ImageNet'te bir milyon rastgele etikette bile eğitim doğruluğu yüzde 95,20'ye çıkıyor.
 
@@ -64,7 +64,7 @@ Rastgele etiket deneyinin kırdığı yer tam burası. Aynı aile, aynı yordaml
 
 Vaishnavh Nagarajan ile Zico Kolter'ın NeurIPS 2019'da sunduğu çalışma bunu bir adım öteye taşıyor. İki bulgu veriyorlar. Birincisi ölçüm: literatürdeki sınırların birçoğu, eğitim kümesi **büyüdükçe** büyüyor — oysa daha çok veri daha iyi genelleme demek. İkincisi kurgu: gradyan inişiyle eğitilen aşırı parametreli doğrusal sınıflandırıcılarda, aileyi yalnızca gradyan inişinin gerçekten ürettiği ve test hatası küçük olan modellere daraltsan bile, düzgün yakınsama boş bir güvence veriyor. Yani sorun "yanlış aile seçildi" değil; yöntemin kendisi bu ortamda bilgi taşımıyor.
 
-Öğretici tarafı, ilk deneyin ne **kadar** basit olması. Yeni bir kuram değil; bir veri kümesinin etiketlerini karıştırıp aynı eğitimi tekrarlamak. Bir alanın yıllardır kullandığı çerçeve, kimsenin yapmadığı beş satırlık bir kontrol deneyiyle sınırına götürüldü.
+Öğretici tarafı, ilk deneyin ne **kadar** basit olması. Yeni bir kuram değil; bir veri kümesinin etiketlerini rastgele etiketlerle değiştirip aynı eğitimi tekrarlamak. Bir alanın yıllardır kullandığı çerçeve, kimsenin yapmadığı beş satırlık bir kontrol deneyiyle sınırına götürüldü.
 
 ## U eğrisinin sağ yarısı
 

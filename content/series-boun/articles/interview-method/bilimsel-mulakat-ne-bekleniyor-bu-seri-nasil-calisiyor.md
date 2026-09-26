@@ -12,13 +12,15 @@ tags:
   - yuksek-lisans
   - calisma-yontemi
   - scientific-preparation
-content_hash: sha256:3a5219ff0804cd3b2959f0792d47e55906e09520313a480f6b82ce12b73617bc
+content_hash: sha256:672b70f9777e6b1c0913cd6c5551267ba6239c430e39482513268ca899575b70
 classification_version: 1
 classification_batch: 0
+revised_at: "2026-09-26"
+revision_note: "Mülakatın biçimi resmî sayfaya göre düzeltildi: tek odada bir kurul değil, en az iki öğretim üyesinin kendi ofisinde ayrı ayrı yaptığı kısa görüşmeler."
 ---
 ## Kapı çalınmadan önce
 
-Bir odaya gireceksin. İçeride en az iki öğretim üyesi olacak. Konuşma on ya da on beş dakika sürecek. Bu sürenin sonunda karşındakilerin kafasında, senin yıllar boyunca topladığın her şeye dair bir izlenim oluşmuş olacak.
+Bir öğretim üyesinin ofisine gireceksin. Konuşma on ya da on beş dakika sürecek; sonra bir sonraki ofise geçeceksin, çünkü mülakatı en az iki öğretim üyesi ayrı ayrı yapıyor. Her görüşmenin sonunda karşındakinin kafasında, senin yıllar boyunca topladığın her şeye dair bir izlenim oluşmuş olacak.
 
 Kulağa haksız geliyor, çünkü bir bakıma öyle. Ama bu formatı anlamak, ona hazırlanmanın ilk adımı. Bu seri boyunca yeniden kuracağımız bütün teknik temelin tek bir amacı var: o on beş dakikada, unuttuğun şeyleri hatırlamak değil, bildiğin şeyleri **savunabilmek**.
 
@@ -26,7 +28,7 @@ Bu ilk makalede teknik bir konu öğretmeyeceğim. Bunun yerine üç işi bitire
 
 ## Resmî gerçek: sayfada ne yazıyor
 
-Boğaziçi Üniversitesi Bilgisayar Mühendisliği bölümünün yüksek lisans programı sayfası, sürecin bu kısmını açıkça anlatıyor. Ön değerlendirmeyi geçen adaylarla **bilimsel mülakat (scientific interview)** yapılıyor ve bu mülakatı en az iki öğretim üyesi yürütüyor. Her görüşme **on ya da on beş dakika** sürüyor ve görüşmecinin kendi ofisinde yapılıyor. Fiziksel olarak gelemeyecek adaylar görüşmeciye doğrudan yazarak telekonferans talep edebiliyor; görüşmecinin bu talebi kabul etme zorunluluğu yok.
+Boğaziçi Üniversitesi Bilgisayar Mühendisliği bölümünün yüksek lisans programı sayfası, sürecin bu kısmını açıkça anlatıyor. Ön değerlendirmeyi geçen adaylarla **bilimsel mülakat (scientific interview)** yapılıyor ve bu mülakatı en az iki öğretim üyesi yürütüyor. Her görüşme **on ya da on beş dakika** sürüyor ve görüşmecinin kendi ofisinde yapılıyor; iki görüşme arasında, adayın bir sonraki ofise geçebilmesi için en az on dakika bırakılıyor. Yani mülakat tek bir kurul oturumu değil, ayrı ofislerde yapılan kısa görüşmelerden oluşuyor. Fiziksel olarak gelemeyecek adaylar görüşmeciye doğrudan yazarak telekonferans talep edebiliyor; görüşmecinin bu talebi kabul etme zorunluluğu yok.
 
 Görüşmede neyin konuşulduğu da yazılı: adayın geçmiş akademik kaydı, araştırma yönü, beceri kümesi ve teknik bilgisi. İngilizce ifadeyle "past academic record, research direction, skillset, and technical knowledge". Bu dört başlık hazırlığının haritasıdır ve dördü aynı türden değildir: ilk ikisi senin hikâyen, son ikisi senin zeminin.
 
@@ -74,13 +76,13 @@ Bu üçlü neden önemli? Çünkü bölümün, "bir aday bu programa başlamadan
 
 Derslerin katalog tanımları kapsamı somutlaştırıyor. CmpE220 önkoşulsuzdur ve şunları kapsar: önerme mantığı ve ispatlar, küme kuramı, fonksiyonlar ve bağıntılar, cebirsel yapılar, gruplar ve yarı gruplar, graflar, kafesler ve Boolean cebiri. CmpE250 grafları, ileri sıralamayı, hashing'i, heap yapılarını, arama yapılarını, karmaşıklığı, paralel algoritmaları ve dosya organizasyonunu içerir; önkoşulu CmpE160'tır. CmpE322 ise işletim sistemlerinin evrimini, eşzamanlı süreçleri, CPU zamanlamayı, senkronizasyon ve kritik kesim problemini, kilitlenmeyi, bellek yönetimi ile sanal belleği, dosya sistemlerini, giriş/çıkışı, koruma ve güvenliği ve Linux vakalarını kapsar; önkoşulu CmpE250'dir.
 
-Buna bir ders daha ekliyoruz: **CMPE300 Analysis of Algorithms**. Güncel lisans müfredatında CmpE220 ile CmpE250 üçüncü dönemde, CMPE300 ile CmpE322 beşinci dönemde yer alıyor. CMPE300, CmpE250'nin müfredattaki doğal devamıdır ve "karmaşıklık savunması" dediğimiz şeyin — asimptotik analiz, yineleme çözümü, alt sınırlar — asıl kaynağıdır. Onu dışarıda bırakmak, beşinci yeteneği zayıf bırakmak olurdu.
+Buna bir ders daha ekliyoruz: **CMPE300 Analysis of Algorithms**. Güncel lisans müfredatında CmpE220 ile CmpE250 üçüncü dönemde, CMPE300 ile CmpE322 beşinci dönemde yer alıyor. CMPE300, CmpE250'nin müfredattaki doğal devamıdır ve "karmaşıklık savunması" dediğimiz şeyin — asimptotik analiz, yineleme çözümü, alt sınırlar — asıl kaynağıdır. Onu dışarıda bırakmak, dördüncü yeteneği, savunmayı, zayıf bırakmak olurdu.
 
 ## Serinin haritası
 
 Bu dört alan seriyi beş faza ayırıyor. Şekil 2 fazların sırasını ve aralarındaki önkoşul yönünü, yani hangi fazın hangisinin üzerine bindiğini gösteriyor.
 
-![Serinin beş fazı ve önkoşul yönleri: matematiksel temel fazından veri yapıları fazına, oradan algoritma analizi fazına giden ok zinciri; işletim sistemleri fazı veri yapılarının üzerine biner; destekleyici temeller ve prova fazı diğer dört fazı toplar](assets/seri-faz-haritasi.svg "Şekil 2 — Beş faz ve önkoşul yönü")
+![Serinin beş fazı ve önkoşul yönleri: mülakatın dili fazından veri yapıları fazına, oradan algoritmalar fazına giden ok zinciri; işletim sistemleri fazı veri yapılarının üzerine biner; destekleyici temeller ve prova fazı diğer dört fazı toplar](assets/seri-faz-haritasi.svg "Şekil 2 — Beş faz ve önkoşul yönü")
 
 **Faz A, mülakatın dili (1–8).** Mantık, ispat, tümevarım, kümeler, sayma, graf tanımları ve Boolean cebiri. Bu fazın konuları tek başına nadiren sorulur; ama sonraki her "tanımla ve ispatla" anının dili buradan gelir.
 
@@ -132,7 +134,7 @@ Beşinci adım en sıkıcı ve en önemli olanı. Aralıklı geri çağırma, ok
 
 > **Sesli anlat:** Bir arkadaşına "Boğaziçi'nin bilimsel mülakatı nasıl işliyor?" diye sorulduğunu düşün. Kaynağı belirterek altmış saniyede anlat ve sonunda bilmediğin bir şeyi de açıkça söyle.
 >
-> İyi bir cevabın omurgası: "En az iki öğretim üyesiyle, on ya da on beş dakikalık bir görüşme; geçmiş akademik kayıt, araştırma yönü, beceri kümesi ve teknik bilgi konuşuluyor. Kabul kararı mülakatın yanında transkript ve referansları da tartıyor. Yayımlanmış bir soru listesi yok; kapsam çıkarımı Scientific Preparation derslerine dayanıyor."
+> İyi bir cevabın omurgası: "En az iki öğretim üyesiyle, her biri kendi ofisinde on ya da on beş dakika süren ayrı görüşmeler; geçmiş akademik kayıt, araştırma yönü, beceri kümesi ve teknik bilgi konuşuluyor. Kabul kararı mülakatın yanında transkript ve referansları da tartıyor. Yayımlanmış bir soru listesi yok; kapsam çıkarımı Scientific Preparation derslerine dayanıyor."
 
 ## Dürüst sınırlar
 
@@ -148,7 +150,7 @@ Geriye kalan şey şu: unuttuğun temelleri, savunabileceğin biçimde yeniden k
 
 ## Mülakatta nasıl görünür
 
-Bu makalenin konusu mülakatın kendisi olduğu için takip zinciri de oradan kurulur. Aşağıdaki zincir bir "çıkmış soru" değildir; resmî sayfadaki dört başlığın — geçmiş akademik kayıt, araştırma yönü, beceri kümesi, teknik bilgi — bir konuşmada nasıl art arda gelebileceğini gösteren bir örnektir. "Transkriptinde veri yapıları dersi var, en çok hangi konuda rahatsın?" → "Hash tablosu diyorsun; arama maliyeti nedir?" → "Sabit zaman dedin; hangi durumda, hangi varsayımla?" Dikkat et: zincir hikâyenden başlayıp iki soruda zeminine iniyor. Bu yüzden transkriptindeki her ders, teknik bir soruya açılan bir kapıdır.
+Bu makalenin konusu mülakatın kendisi olduğu için takip zinciri de oradan kurulur. Aşağıdaki zincir bir "çıkmış soru" değildir; resmî sayfadaki dört başlıktan ikisinin — hikâye tarafındaki geçmiş akademik kaydın ve zemin tarafındaki teknik bilginin — bir konuşmada nasıl art arda gelebileceğini gösteren bir örnektir. "Transkriptinde veri yapıları dersi var, en çok hangi konuda rahatsın?" → "Hash tablosu diyorsun; arama maliyeti nedir?" → "Sabit zaman dedin; hangi durumda, hangi varsayımla?" Dikkat et: zincir hikâyenden başlayıp iki soruda zeminine iniyor. Bu yüzden transkriptindeki her ders, teknik bir soruya açılan bir kapıdır.
 
 Bu formatta puan kaybettiren alışkanlıklar, yukarıda anlattığımız on beş dakikalık bütçeden doğrudan çıkar:
 

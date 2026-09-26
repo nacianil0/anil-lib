@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 344" role="img" aria-label="Üç sütunlu, beş satırlı bir tablo ve altında bir kutu. Üstte başlık: bu değişiklik nereye yazılır. Sütunlar soru, ağırlığa yazmak ve bağlama yazmak. Birinci satır ne sıklıkta değişiyor: seyrek, sık olabilir. İkinci satır vurguludur, sonuçlarının taşınması gerekiyor mu: taşınmıyor, modelin akıl yürütmesi taşıyor. Üçüncü satır kaç kişi için geçerli: herkes için aynıysa, kişiye özelse. Dördüncü satır geri alınabilir mi: güncellemeyi geri almak ayrı bir güncelleme, kaydı silmek yeter. Beşinci satır bedeli nerede ödeniyor: bir kez eğitimde, her turda pencerede. Altta bir kutu durur: ölçülen çapa; yeni olguyu doğrudan isteme yazan yalın düzen, altı ölçütün tamamında ağırlık düzenleyen yöntemlerin hepsini geçiyor, ve kişiselleştirmede getirme ince ayarla birlikte göreli yüzde 23,5, ince ayarsız yüzde 12,2 kazandırıyor. En altta bir kayıt: ilk sayı Cohen ve arkadaşlarının, ikinci ve üçüncü Salemi ve arkadaşlarının ölçümüdür.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 344" role="img" aria-label="Üç sütunlu, beş satırlı bir tablo ve altında bir kutu. Üstte başlık: bu değişiklik nereye yazılır. Sütunlar soru, ağırlığa yazmak ve bağlama yazmak. Birinci satır ne sıklıkta değişiyor: seyrek, sık olabilir. İkinci satır vurguludur, sonuçlarının taşınması gerekiyor mu: taşınmıyor, modelin akıl yürütmesi taşıyor. Üçüncü satır kaç kişi için geçerli: herkes için aynıysa, kişiye özelse. Dördüncü satır geri alınabilir mi: güncellemeyi geri almak ayrı bir güncelleme, kaydı silmek yeter. Beşinci satır bedeli nerede ödeniyor: bir kez eğitimde, her turda pencerede. Altta bir kutu durur: ölçülen çapa; yeni olguyu doğrudan isteme yazan yalın düzen, altı ölçüt ve üç alt küme üzerinden ortalamada aynı modelde denenen ağırlık düzenleme yöntemini geçiyor, ve kişiselleştirmede getirme ince ayarla birlikte göreli yüzde 23,5, ince ayarsız yüzde 12,2 kazandırıyor. En altta bir kayıt: ilk sayı Cohen ve arkadaşlarının, ikinci ve üçüncü Salemi ve arkadaşlarının ölçümüdür.">
   <text x="20" y="28" font-size="13" fill="var(--text)">Bu değişiklik nereye yazılır</text>
   <line x1="20" y1="42" x2="720" y2="42" stroke="var(--border)" />
 
@@ -31,8 +31,8 @@
 
   <rect x="20" y="234" width="700" height="72" fill="var(--surface-muted)" stroke="var(--border)" />
   <text x="34" y="258" font-size="13" font-weight="bold" fill="var(--text)">Ölçülen çapa</text>
-  <text x="34" y="280" font-size="13" fill="var(--text)">Yeni olguyu doğrudan isteme yazan yalın düzen, altı ölçütün tamamında ağırlık</text>
-  <text x="34" y="298" font-size="13" fill="var(--text)">düzenleyenleri geçiyor; kişiselleştirmede getirme %23,5 ve %12,2 kazandırıyor.</text>
+  <text x="34" y="280" font-size="13" fill="var(--text)">Yeni olguyu doğrudan isteme yazan yalın düzen, ölçüt ve alt küme ortalamasında aynı modeldeki</text>
+  <text x="34" y="298" font-size="13" fill="var(--text)">ağırlık düzenlemesini geçiyor; kişiselleştirmede getirme %23,5 ve %12,2 kazandırıyor.</text>
 
   <text x="20" y="330" font-size="13" fill="var(--text-faint)">İlk sonuç Cohen ve ark.'nın, iki yüzde Salemi ve ark.'nın ölçümüdür.</text>
 </svg>

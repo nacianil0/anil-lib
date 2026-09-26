@@ -5,14 +5,14 @@ slug: bilgi-kurami-entropi-capraz-entropi-ve-kl
 category: foundations
 level: advanced
 reading_order: 94
-summary: "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 43,4'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli en fazla log n eksi (n eksi 1) bölü n nat."
+summary: "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 48'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli en fazla log n eksi (n eksi 1) bölü n nat."
 tags:
   - entropi
   - capraz-entropi
   - kl-iraksamasi
   - perplexity
   - sikistirma
-content_hash: sha256:5f100ea87362c855ad63b81df2f4f6eeb25517fab17edbe1e056e50139a730b3
+content_hash: sha256:d153240f08da6d0746e57ebd3df418431bfcfd85161019618c80b8f35a436c2b
 classification_version: 1
 classification_batch: 22
 revised_at: "2026-09-25"
@@ -86,7 +86,7 @@ Shannon'ın kendisi bu araçları hemen dile uyguladı. 1951 tarihli çalışmas
 
 Peter Brown ve arkadaşlarının 1992'de Computational Linguistics'te yayımladığı çalışma yöntemi tersine çevirdi ve bizim için en öğretici olanı yaptı: bir kelime üçlü modeli kurup **bu modelin metne göre çapraz entropisini** hesapladılar. Bulunan sayı 1,75 bit/karakter. Cümlenin tamamını oku: çapraz entropi hiçbir zaman entropiden küçük olamayacağına göre, herhangi bir modelin ölçülen kaybı gerçek entropinin bir **üst sınırıdır**. Yani "daha iyi bir dil modeli" demek, "daha sıkı bir üst sınır" demek.
 
-Bu bakış modern ölçekte de ölçüldü. Grégoire Delétang ve arkadaşlarının ICLR 2024'te sunduğu çalışma özdeşliği açıkça kuruyor: log-kaybı en küçültmek, aritmetik kodlamayla kayıpsız sıkıştırma oranını en küçültmekle aynı şey. Sayılar şöyle: metin üzerinde eğitilmiş Chinchilla 70B, ImageNet görüntü parçalarını özgün boyutunun yüzde 43,4'üne, LibriSpeech ses örneklerini yüzde 16,4'üne indiriyor — PNG'nin yüzde 58,5'i ve FLAC'ın yüzde 30,3'ü karşısında.
+Bu bakış modern ölçekte de ölçüldü. Grégoire Delétang ve arkadaşlarının ICLR 2024'te sunduğu çalışma özdeşliği açıkça kuruyor: log-kaybı en küçültmek, aritmetik kodlamayla kayıpsız sıkıştırma oranını en küçültmekle aynı şey. Sayılar şöyle: metin üzerinde eğitilmiş Chinchilla 70B, ImageNet görüntü parçalarını özgün boyutunun yüzde 48'ine, LibriSpeech ses örneklerini yüzde 21'ine indiriyor — aynı 2.048 baytlık parçalarda PNG'nin yüzde 61,7'si ve FLAC'ın yüzde 30,3'ü karşısında. Çalışmanın özeti bu iki sayıyı 43,4 ve 16,4 olarak veriyor; buradakiler kendi tablosundan.
 
 Bu oranlar model boyutu sıkıştırılmış boyuta katılmadan hesaplanıyor ve ölçünün sınırı tam burada. Sıkıştırma oranını hesaplarken sıkıştırıcının kendisini de saymak gerekir: bir gzip programı birkaç kilobayttır, 70 milyar parametreli bir model ise yüz gigabayt mertebesinde. Bir gigabaytlık veriyi sıkıştırırken model boyutunu koda katarsan tablo tersine döner ve klasik sıkıştırıcılar öne geçer. Yani "dil modeli en iyi sıkıştırıcıdır" cümlesi, ancak modelin bedeli sayılmadığında doğru.
 
@@ -94,7 +94,7 @@ Sıkıştırma ile yetenek arasındaki bağ ise ölçülmüş bir ilişki. Yuzhe
 
 Bir uyarı daha. Perplexity token başına tanımlıdır ve 15\. makalede gördüğümüz gibi token'lama modelden modele değişir. İki modelin perplexity'sini karşılaştırmak, ancak aynı token'lamayı kullanıyorlarsa anlamlıdır; farklı token'lamalarda karşılaştırılabilir olan şey karakter ya da bayt başına ölçülen sayıdır.
 
-Bu uyarının pratik çözümü de aynı yerden çıkıyor. Bir metnin bayt sayısı token'lamadan bağımsızdır; dolayısıyla toplam kaybı token sayısına değil **bayt sayısına** bölersen elde ettiğin sayı modeller arasında karşılaştırılabilir olur. Alanın kullandığı ad bayt başına bit ve tanımı doğrudan: bir metni kodlamak için harcanan toplam bit, metnin bayt uzunluğuna bölünür. Sıkıştırma oranı da bunun başka bir yazılışıdır — sekiz bit bir bayt ettiğine göre, bayt başına 2 bit demek özgün boyutun yüzde 25'ine inmek demektir. Delétang ve arkadaşlarının yüzde 43,4 gibi sayıları tam olarak bu ölçekte veriliyor ve bu yüzden farklı modalitelerdeki sonuçları yan yana koyabiliyorlar.
+Bu uyarının pratik çözümü de aynı yerden çıkıyor. Bir metnin bayt sayısı token'lamadan bağımsızdır; dolayısıyla toplam kaybı token sayısına değil **bayt sayısına** bölersen elde ettiğin sayı modeller arasında karşılaştırılabilir olur. Alanın kullandığı ad bayt başına bit ve tanımı doğrudan: bir metni kodlamak için harcanan toplam bit, metnin bayt uzunluğuna bölünür. Sıkıştırma oranı da bunun başka bir yazılışıdır — sekiz bit bir bayt ettiğine göre, bayt başına 2 bit demek özgün boyutun yüzde 25'ine inmek demektir. Delétang ve arkadaşlarının yüzde 48 gibi sayıları tam olarak bu ölçekte veriliyor ve bu yüzden farklı modalitelerdeki sonuçları yan yana koyabiliyorlar.
 
 ## KL simetrik değildir ve bu bir bütçe kurar
 

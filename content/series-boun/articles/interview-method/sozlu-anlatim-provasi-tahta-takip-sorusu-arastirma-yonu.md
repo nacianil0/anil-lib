@@ -12,13 +12,13 @@ tags:
   - takip-sorusu
   - tahta-kullanimi
   - arastirma-yonu
-content_hash: sha256:94851a2e8c38dfeece30966a14c943528406bffaa61ad7069863d44aecc34cfa
+content_hash: sha256:31026fe59e47407e78dcabd28225ea2a9fa4f4498d1d01f45a742583c9523aea
 classification_version: 1
 classification_batch: 13
 ---
 ## Konu bitti, sıra anlatmada
 
-Otuz dokuz makale boyunca hep aynı şeyi yaptık: bir kavramı kurduk, maliyetini saydık, doğruluğunu savunduk ve nerede bozulduğunu gösterdik. Şimdi elinde epeyce malzeme var. Ama seni değerlendirecek olan şey yazılı bir sınav değil; bir odada, iki kişinin karşısında, on ya da on beş dakika içinde söylediğin cümleler.
+Otuz dokuz makale boyunca hep aynı şeyi yaptık: bir kavramı kurduk, maliyetini saydık, doğruluğunu savunduk ve nerede bozulduğunu gösterdik. Şimdi elinde epeyce malzeme var. Ama seni değerlendirecek olan şey yazılı bir sınav değil; en az iki öğretim üyesinin ofisinde, her birinde on ya da on beş dakika içinde söylediğin cümleler.
 
 Bu fark küçük değil. Aynı şeyi bilen iki adaydan biri "hash tablosu sabit zamanlıdır" der ve ikinci soruda geri çekilmek zorunda kalır; diğeri aynı bilgiyi öyle bir sırayla söyler ki ikinci soru zaten cevabın içindedir. İkisinin arasındaki fark bilgi değil, biçimdir.
 

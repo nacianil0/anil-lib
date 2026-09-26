@@ -12,7 +12,7 @@ tags:
   - sicaklik
   - cekirdek-ornekleme
   - acgozlu-secim
-content_hash: sha256:9bfe419a0c9480b5d980f846ed8971e3c98ba90291b2b28a6bfe388b27f8a316
+content_hash: sha256:3f29fb5c18aac71a16cce57f3497c0c4cd1da5dcd787a7d53db889f400688326
 classification_version: 1
 classification_batch: 1
 ---
@@ -155,7 +155,7 @@ Yani "aynı soruyu sordum, başka cevap aldım" deneyiminin iki ayrı kaynağı 
 
 Bütün makale tek bir cümleye sığıyor: üretim bir çekiliştir. Buradan bir sınır çıkar: çekiliş kuralı, çekildiği dağılımdan daha iyi olamaz.
 
-Adam Tauman Kalai ve arkadaşlarının 2025 tarihli, hakem sürecinden geçmemiş ön çalışması bu sorunun kaynağını örnekleme ayarlarında değil, eğitim ve değerlendirme hedeflerinde arıyor: modeller belirsizliği kabul etmek yerine tahmin yürütmeye teşvik ediliyor, çünkü yaygın değerlendirmelerin çoğu ikili puanlıyor ve "bilmiyorum" cevabına hiç kredi vermiyor. İyi bir sınav çözücü olacak biçimde ayarlanan bir sistem, emin olmadığında susmaz, tahmin eder.
+Adam Tauman Kalai ve arkadaşlarının 2025'te ön baskı olarak yayımladığı, 2026'da *Nature*'da hakemli olarak çıkan çalışması bu sorunun kaynağını örnekleme ayarlarında değil, eğitim ve değerlendirme hedeflerinde arıyor: modeller belirsizliği kabul etmek yerine tahmin yürütmeye teşvik ediliyor, çünkü yaygın değerlendirmelerin çoğu ikili puanlıyor ve "bilmiyorum" cevabına hiç kredi vermiyor. İyi bir sınav çözücü olacak biçimde ayarlanan bir sistem, emin olmadığında susmaz, tahmin eder.
 
 İki olguyu yan yana koy. Model yanlış bir bilgiye en yüksek olasılığı atamışsa ve sıcaklık yalnızca zaten üretilmiş bir dağılımın şeklini değiştiriyorsa, sıcaklığı sıfıra çekmek o yanlışı tam olarak seçer — üstelik her seferinde ve en kararlı biçimde. Akıcı bir cümle, doğru bir cümle demek değildir; ikisini üreten mekanizma aynıdır. Bu olgunun adı halüsinasyon (hallucination) ve ciddiyetiyle 17. makalede ele alacağız.
 
@@ -174,4 +174,4 @@ Adam Tauman Kalai ve arkadaşlarının 2025 tarihli, hakem sürecinden geçmemi�
 - Schaeffer, R., Kazdan, J. & Denisov-Blanch, Y. (2025). *Min-p, Max Exaggeration: A Critical Analysis of Min-p Sampling in Language Models*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2506.13681)
 - Keskar, N. S., McCann, B., Varshney, L. R., Xiong, C. & Socher, R. (2019). *CTRL: A Conditional Transformer Language Model for Controllable Generation*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/1909.05858)
 - He, H. & Thinking Machines Lab (2025). *Defeating Nondeterminism in LLM Inference*. Thinking Machines Lab blog yazısı (hakemli değildir). [Bağlantı](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/)
-- Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2025). *Why Language Models Hallucinate*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2509.04664)
+- Kalai, A. T., Nachum, O., Vempala, S. S. & Zhang, E. (2026). *Evaluating large language models for accuracy incentivizes hallucinations* (ön baskı adı: *Why Language Models Hallucinate*). Nature, 653, s. 1047–1051. [Bağlantı](https://doi.org/10.1038/s41586-026-10549-w)

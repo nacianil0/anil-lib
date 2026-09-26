@@ -20,7 +20,8 @@ bir konu bu beş yeteneğe katkı vermiyorsa seride yer almaz.
 
 ## Resmî dayanak (özet; ayrıntı ve erişim tarihleri ARASTIRMA.md'de)
 
-- Resmî mülakat tanımı: en az iki öğretim üyesi, 10–15 dakika; "past academic record, research
+- Resmî mülakat tanımı: en az iki öğretim üyesi, her biri kendi ofisinde 10 ya da 15 dakikalık
+  ayrı görüşme (aralarında en az 10 dakika); "past academic record, research
   direction, skillset, and technical knowledge" konuşulur.
 - Scientific Preparation üçlüsü **CmpE220 (ayrık yapılar), CmpE250 (veri yapıları/algoritmalar),
   CmpE322 (işletim sistemleri)** çekirdek kapsamın en güçlü resmî sinyalidir; CMPE300 (algoritma

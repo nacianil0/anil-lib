@@ -18,7 +18,7 @@
         "tahmin",
         "temeller"
       ],
-      "contentHash": "sha256:b3fd233e16334a3a6538f0029b081fd3182cd488187c7a5a18ea2f41c335f748",
+      "contentHash": "sha256:756e099b56525474d94dc8bf280b2478be03930b565417de3fc2f9958ed1faae",
       "path": "content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -82,7 +82,7 @@
         "bpe",
         "dagilimsal-hipotez"
       ],
-      "contentHash": "sha256:28142a268f01cd356ef0a6edc3dadf1acbf28482ef0265b7681e9acf4aa9d932",
+      "contentHash": "sha256:e525e947d827a73a7be1936d038aeb0de080d2792a245bc9568a1de8af9bf8b1",
       "path": "content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -102,7 +102,7 @@
         "sonraki-token",
         "shannon"
       ],
-      "contentHash": "sha256:159f9dbdd5bd41d20fd70e3481705cfba9c6f87c31e0e5d3b8f07099fc8c8ca9",
+      "contentHash": "sha256:f2d3d06bcd816f7792a735c1f233a33b381707acc4fbebc6ce55a2b11e0bac17",
       "path": "content/series/articles/foundations/sonraki-kelimeyi-tahmin-etmek-dil-modelinin-dogusu.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -204,7 +204,7 @@
         "cekirdek-ornekleme",
         "acgozlu-secim"
       ],
-      "contentHash": "sha256:9bfe419a0c9480b5d980f846ed8971e3c98ba90291b2b28a6bfe388b27f8a316",
+      "contentHash": "sha256:3f29fb5c18aac71a16cce57f3497c0c4cd1da5dcd787a7d53db889f400688326",
       "path": "content/series/articles/models-and-training/metin-uretimi-ornekleme-sicaklik-ve-olasiliklar.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -244,7 +244,7 @@
         "lima",
         "sentetik-veri"
       ],
-      "contentHash": "sha256:7183002f2f760a576f3fba291f757faed6709c9eb083a79cae0d2a63703c4c34",
+      "contentHash": "sha256:f9d548f809cd530f3b3d8d43065ad422b615b6924e8c648294d42d5081df4263",
       "path": "content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -308,7 +308,7 @@
         "aritmetik",
         "turkce"
       ],
-      "contentHash": "sha256:b5b2a9d7bea6d8ac6b78fc80f0ca273b6883e376fa771dfdd9ad9967f1ce3bd3",
+      "contentHash": "sha256:eefe320f8a3a095ed79a231ae398d82ac1d4a88e38a801a42cffe65fa0f48605",
       "path": "content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -350,7 +350,7 @@
         "olgusallik",
         "degerlendirme"
       ],
-      "contentHash": "sha256:0b64860dec374512cd449fefb065128f98ad07db63a9b408675173bb4b1c220d",
+      "contentHash": "sha256:7290077adb6dcc4f912b98344872c2c2586a290be5e0520d732946992bb77281",
       "path": "content/series/articles/models-and-training/halusinasyon-model-neden-ve-ne-zaman-uydurur.md",
       "relatedArticleIds": [],
       "classificationBatch": 3,
@@ -372,7 +372,7 @@
         "bilgi-kapasitesi",
         "model-duzenleme"
       ],
-      "contentHash": "sha256:052e9a2ca62c645ae3a6601f7e8d5def0ed1a9f9d07e8418db5099ab236360de",
+      "contentHash": "sha256:900292885cd69dad32780a39e77b08678b4a7b2157970b1e5a5e447c37814943",
       "path": "content/series/articles/models-and-training/bilgi-parametrelerde-nasil-durur-model-hafizasi.md",
       "relatedArticleIds": [],
       "classificationBatch": 3,
@@ -394,12 +394,12 @@
         "parametre-verimli-uyarlama",
         "qlora"
       ],
-      "contentHash": "sha256:472048aa0268a07112435218b83efa7f92d06109a4d77993c9c7aee6664e1457",
+      "contentHash": "sha256:21883108acba1934c82b1055f4fd6f4f73b6f172e4c4457dcc3686eef8acabfb",
       "path": "content/series/articles/models-and-training/fine-tuning-ve-lora-modeli-kendi-isine-uyarlamak.md",
       "relatedArticleIds": [],
       "classificationBatch": 4,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Rankın ne demek olduğu 3×3'lük bir rank-1 örnekle adım adım anlatıldı; ince ayarla bilgi yükleme sonucu ölçümle uyumlu biçimde yumuşatıldı."
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Ovadia ve arkadaşlarının deneyinin tarifi kaynakla hizalandı: tam parametre iddiası kaldırıldı, 'tek geçiş' yerine tek yazım ile on yeniden yazımın karşılaştırması kondu."
     },
     {
       "articleId": "article_50c7623c-ebdb-4c81-ab42-8835193ad1d4",
@@ -702,7 +702,7 @@
         "dogrulayici",
         "yetenek-siniri"
       ],
-      "contentHash": "sha256:34b4a915e0b6433543daff9269733786f82c03e55a7639a9af83292cb2277e09",
+      "contentHash": "sha256:79a9dc0cd65e5324c773f58dcb496ca90fa493b22c8a0190585f249f1cac7a7e",
       "path": "content/series/articles/reasoning-and-memory/akil-yuruten-modeller-dogrulanabilir-odulle-egitim.md",
       "relatedArticleIds": [],
       "classificationBatch": 7,
@@ -764,7 +764,7 @@
         "deger-islevi",
         "kredi-atama"
       ],
-      "contentHash": "sha256:06235158d42d864f309671199c6430b72e30f5b2fd44190a02036a8a13e7ed2a",
+      "contentHash": "sha256:122b58fe6aa959d06cfc1f6ab26b3b0dfe1b6cdc610ccd6f3bf850add458088e",
       "path": "content/series/articles/reasoning-and-memory/pekistirmeli-ogrenmenin-temelleri-markov-karar-sureci.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
@@ -846,10 +846,12 @@
         "uzun-kuyruk",
         "bilgi-catismasi"
       ],
-      "contentHash": "sha256:965d6b61d0df0ff656bb2b641af1482e66ea27275ea46e20e3c87009f4617d4f",
+      "contentHash": "sha256:98c453fe2babcaeaa1551e24f3b2cf53f46247ae50e52ee4dc815f715e7f80af",
       "path": "content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md",
       "relatedArticleIds": [],
-      "classificationBatch": 9
+      "classificationBatch": 9,
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Ezber oranının getirilen belge sayısıyla değil eğitimde kullanılan belgenin sırasıyla arttığı düzeltildi; yüzde 20 ve 75'in hangi eğitim kümesine ait olduğu eklendi."
     },
     {
       "articleId": "article_fc782600-a7e3-4584-ab7f-db480d1a46ab",
@@ -888,7 +890,7 @@
         "urun-kuantizasyonu",
         "vektor-veritabani"
       ],
-      "contentHash": "sha256:897bdd35e67f94dcc46e75e4db5c09775d127124bf4674b988785ea996ffaf14",
+      "contentHash": "sha256:217a6b012847d9c29f61ef1af23f7f0d25a3917f9bd57e84822708caf83dbba0",
       "path": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
       "relatedArticleIds": [],
       "classificationBatch": 10,
@@ -910,7 +912,7 @@
         "baglam-yerlesimi",
         "rag-hatti"
       ],
-      "contentHash": "sha256:f92d7580c5e70dbc7496aeb65eaaeb2dca4d0e9d66f830a42fea93de8fc66716",
+      "contentHash": "sha256:bec4e0f0f7dcb848b6657ff6614f97d567c27b20ea2197bd86166d8eac1f5ce8",
       "path": "content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -930,7 +932,7 @@
         "hakem-model",
         "olcum-disiplini"
       ],
-      "contentHash": "sha256:b1300410954553e379454daba85cb4c6353b32730aa301ca0210b5b199b12465",
+      "contentHash": "sha256:340aa5b40495b52f7142da350223f689f113eae6d01985afbda5ff0f6bd1d2a1",
       "path": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -950,7 +952,7 @@
         "etkin-getirme",
         "yansima-tokenlari"
       ],
-      "contentHash": "sha256:726de179b48e2e1609f94dcd8cd090e3f13d2f68d68c4f1c7415a9c9ef22b8a1",
+      "contentHash": "sha256:3a61214a58a24a4cd7c0c559c81d7097d43ce172905c177863a125cc51d3dfcb",
       "path": "content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -970,7 +972,7 @@
         "uydurulmus-cagri",
         "paralel-cagri"
       ],
-      "contentHash": "sha256:1aaa5498a98bb88bb37ab12f3238a6fac31e14201966edf9a26cfd0e828e04ff",
+      "contentHash": "sha256:863e3dd5b6c44a04ea28bbe868028bc50d9df79c608753ca71645fd369e63503",
       "path": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1030,7 +1032,7 @@
         "kaynak-guvenilirligi",
         "atif-ve-uydurma"
       ],
-      "contentHash": "sha256:c5b13eefee40f530586f387e39bf9a5a565a074740bc16d83479c798af9f3adf",
+      "contentHash": "sha256:32b027f40749b9be263189aa0c0d2d718f53f40605c5dc079713f8e91b8b11eb",
       "path": "content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1172,7 +1174,7 @@
         "hakem-ajan",
         "kisayol-ve-hile"
       ],
-      "contentHash": "sha256:1c4d367d7fc1c12e685b3873d9d737af60edc5ca23f3ae2b2e16f528909a86cd",
+      "contentHash": "sha256:eb697ada9755daa3117d3aca9bccafcd72575102aef7c8792db8f067debcb94f",
       "path": "content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md",
       "relatedArticleIds": [],
       "classificationBatch": 13,
@@ -1214,7 +1216,7 @@
         "denetim",
         "tamamlayicilik"
       ],
-      "contentHash": "sha256:09b4ad0a95a81a34a1f98ab5eb4e0968cd5cb04721bb1fed71ecd7e95fb12c98",
+      "contentHash": "sha256:eb0954afa3a7e5b50b250508c7e6c6d8f32bb4c83348909157cff8112b4845c9",
       "path": "content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md",
       "relatedArticleIds": [],
       "classificationBatch": 14
@@ -1234,7 +1236,7 @@
         "gecikme",
         "guvenilirlik"
       ],
-      "contentHash": "sha256:0667d648baecd3a460668995565de053ce0fb77bdcbba7dd6a10dd43ffdc4270",
+      "contentHash": "sha256:9b7f81b20b5a0e1eb7b6868c93493ae6fb0be6b43c41fb3d18ad0847c49efbed",
       "path": "content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md",
       "relatedArticleIds": [],
       "classificationBatch": 14
@@ -1294,7 +1296,7 @@
         "gradyanla-eniyilenen-saldiri",
         "savunma-katmanlari"
       ],
-      "contentHash": "sha256:42595373c9b6a1e8e57d455b8c61303e650c804ccd62ba414930bd5897c419ad",
+      "contentHash": "sha256:c87efeffeba1ff22a21c6a3a4e675df31eeb15cb06808731f4297d589156c6a0",
       "path": "content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md",
       "relatedArticleIds": [],
       "classificationBatch": 15,
@@ -1316,7 +1318,7 @@
         "zayiftan-guclu-ye-genelleme",
         "tartisma-ile-denetim"
       ],
-      "contentHash": "sha256:e2a1e7b7c1c7a7d27e90161440338ed2623359ff20a3a54fda7248846ce38966",
+      "contentHash": "sha256:53822b8e45f8a0a5c9b46883befca29d9bb12929d7136a02abe2647df6570150",
       "path": "content/series/articles/safety-and-evaluation/constitutional-ai-ve-olceklenebilir-denetim.md",
       "relatedArticleIds": [],
       "classificationBatch": 15
@@ -1336,7 +1338,7 @@
         "anlamsal-entropi",
         "secici-tahmin"
       ],
-      "contentHash": "sha256:6459b696cb6bcc7b5e77a213bfba9238be6e9f380e30bb64973f8a3551703dd5",
+      "contentHash": "sha256:0d491b3c1f7cf1e18f00f11fa7303e77fe786a774c1b1c8d5e5f135d6c2c1792",
       "path": "content/series/articles/safety-and-evaluation/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md",
       "relatedArticleIds": [],
       "classificationBatch": 15
@@ -1356,7 +1358,7 @@
         "gerekce-sadakati",
         "karakter-egitimi"
       ],
-      "contentHash": "sha256:0c1750fed246d1e639b5826283d6c8aadc433e4fc48bd51fb02df0a4d02e7487",
+      "contentHash": "sha256:588c02dea8ff63c567fd10d263253da482792b9c0f315906a6c997b0b1d3c83f",
       "path": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
       "relatedArticleIds": [],
       "classificationBatch": 15
@@ -1376,7 +1378,7 @@
         "uyuyan-ajan",
         "yetenek-saklama"
       ],
-      "contentHash": "sha256:7575e784157f4c17b2a697c9ca349a06053019477e5cffc1ab1400537410645e",
+      "contentHash": "sha256:dbaecb8d5e09909734565b72f3098ed90c24a1a37118cdc2231519c7f3d31d9d",
       "path": "content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
@@ -1398,10 +1400,12 @@
         "biyolojik-risk",
         "bilgi-operasyonlari"
       ],
-      "contentHash": "sha256:ad620a491dd8c1e7a959d667e8894328b8cd4c8361d9f7ad7022a4d8c518c227",
+      "contentHash": "sha256:1d43a2a07459caa6a12b08f888e77cbd8725e152c5e93361ebe894c7a6729d72",
       "path": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
       "relatedArticleIds": [],
-      "classificationBatch": 16
+      "classificationBatch": 16,
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Münazara çalışmasının 2026 yazar düzeltmesi işlendi: kişisel bilgiye erişen modelin erişmeyene üstünlüğü anlamlı değil; hedeflemenin ek katkısı iki düzenekte de gösterilemedi."
     },
     {
       "articleId": "article_a0ac8483-2105-495b-baa4-0663cf3f8333",
@@ -1440,7 +1444,7 @@
         "guvenlik-savunmasi",
         "sinir-model"
       ],
-      "contentHash": "sha256:3f7cef4944a7bff6058090e2be41e7bb5ba4acd9f3c0e8eb1cc2acc565a6a04b",
+      "contentHash": "sha256:efb553abcea67ffb4ab1f618ee9f2ecbfc6ee7fbb904c72551f13795a2a8fbc1",
       "path": "content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 16
@@ -1460,7 +1464,7 @@
         "istem-duyarliligi",
         "olcut-omru"
       ],
-      "contentHash": "sha256:23014b120e7b0fc0f42923fb68abb57eb4e0ffa21c9b6f7c8c1e3f737bcf794d",
+      "contentHash": "sha256:7deb2589a2e39d0586f9a4678f87070c7fb734e0fff5d5ac5812db60b6315e24",
       "path": "content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1482,7 +1486,7 @@
         "yeniden-uretim",
         "test-gorevine-egitim"
       ],
-      "contentHash": "sha256:5573429c4c0f0a40b327a94d3285ce8eeb4e2d0e483e5e71c3794fcf014ae2b4",
+      "contentHash": "sha256:02cb1b79f93ef20d1d1f3c4af11ecc1d59defc09551c50772a565d83905563f5",
       "path": "content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1504,7 +1508,7 @@
         "hakem-yanliligi",
         "insan-capasi"
       ],
-      "contentHash": "sha256:ee78da85a532737e75aeddd924b7d5bf97739d6105def521018060ed6b55d65a",
+      "contentHash": "sha256:d8ed644ef1ec526157b99d35e28e62b16a92afe67ff8d772cea6017cf7267ae1",
       "path": "content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1526,7 +1530,7 @@
         "induksiyon-basi",
         "sonda"
       ],
-      "contentHash": "sha256:c1e0ab2dfff4b75b7f68fb2d5ac411d365dc2bff22cceacd7cf9e3ebb6a156ce",
+      "contentHash": "sha256:f0324df8886a8dcd4e4e3205639534a43f76bcf512481384fbf7fea00cf940f4",
       "path": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1540,7 +1544,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 75,
-      "summary": "74'ün açık bıraktığı soruyu yanıtlar: devrenin düğümleri nöron değilse nedir? Modelin nöron sayısından çok özelliği aynı yöne sıkıştırmasını — süperpozisyonu — oyuncak bir modelde kurar: seyreklik arttıkça beş özellik iki boyuta beşgen olarak yerleşir, bedeli girişimdir ve özellik başına düşen boyut 1, 1/2, 2/5 gibi basamaklara oturur. Sonra sıkıştırmayı çözme girişimini anlatır: bir aktivasyonu seyrek parçalara ayıran otokodlayıcı sözlüğü, yeniden kurma ile seyreklik arasındaki takas, 512 nöronluk bir katmandan 4.096 parça, üretim ölçeğinde 34 milyon parça ve GPT-4 üzerinde 16 milyon. Bulunanın özellik olduğunu iddia etmenin iki sınavını verir — kavram gerçekten orada mı, müdahale davranışı değiştiriyor mu — ve sözlüğün kendi sınavlarını: ölü ve emilmiş parçalar, aynı veriyle farklı tohumda yüzde 30 örtüşme, eksiklik ve bölünebilirlik, rastgele başlatılmış ağda da yüksek yorumlanabilirlik puanı, ve ölçüldüğünde istem ile ortalama farkının sözlüğü geçmesi.",
+      "summary": "74'ün açık bıraktığı soruyu yanıtlar: devrenin düğümleri nöron değilse nedir? Modelin nöron sayısından çok özelliği aynı yöne sıkıştırmasını — süperpozisyonu — oyuncak bir modelde kurar: seyreklik arttıkça beş özellik iki boyuta beşgen olarak yerleşir, bedeli girişimdir ve özellik başına düşen boyut 1, 1/2, 2/5 gibi basamaklara oturur. Sonra sıkıştırmayı çözme girişimini anlatır: bir aktivasyonu seyrek parçalara ayıran otokodlayıcı sözlüğü, yeniden kurma ile seyreklik arasındaki takas, 512 nöronluk bir katmandan 4.096 parça, üretim ölçeğinde 34 milyon parça ve GPT-4 üzerinde 16 milyon. Bulunanın özellik olduğunu iddia etmenin iki sınavını verir — kavram gerçekten orada mı, müdahale davranışı değiştiriyor mu — ve sözlüğün kendi sınavlarını: ölü ve emilmiş parçalar, aynı veriyle farklı tohumda yüzde 30 örtüşme, eksiklik ve bölünebilirlik, rastgele başlatılmış ağda da birçok ayarda yüksek yorumlanabilirlik puanı, ve ölçüldüğünde istem ile ortalama farkının sözlüğü geçmesi.",
       "tags": [
         "ozellik",
         "superpozisyon",
@@ -1548,7 +1552,7 @@
         "sozluk-ogrenme",
         "ozellik-emilimi"
       ],
-      "contentHash": "sha256:3ffc86b1584ed5521667f5a2b975f2572fdc70ddc10e95b7e85e3c64161fa33d",
+      "contentHash": "sha256:29f4770aa68e811538c7bc38c64e9e548abf4628e0a6dfcc8131591efc35ebef",
       "path": "content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md",
       "relatedArticleIds": [],
       "classificationBatch": 18,
@@ -1570,7 +1574,7 @@
         "kavram-silme",
         "model-duzenleme"
       ],
-      "contentHash": "sha256:5fd9b2dc8ec05e4281e47f3f76f1a41a93df7065b78f9b47a04a9a0991b7d75a",
+      "contentHash": "sha256:7affca8ed378bf8cbb0388fbc6ca9981109bce92182317307d92c272a15e72c6",
       "path": "content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1590,7 +1594,7 @@
         "etki-fonksiyonu",
         "gerekce-sadakati"
       ],
-      "contentHash": "sha256:a2bb889235381c1475fc19c43c3625c8f4fce364181dadbd70dd66de5ac282f5",
+      "contentHash": "sha256:18e6c02b54d4bd72a509851fc1f5bd0275eba619b2c3bc5faeb520ff27a9a2ca",
       "path": "content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1610,7 +1614,7 @@
         "faz-gecisi",
         "ongorulebilirlik"
       ],
-      "contentHash": "sha256:8c8b4d886a62c5842f40f9a8d2111d45fbd7f62b377f486529942d7a25740ab0",
+      "contentHash": "sha256:672d0ed51882a0ec73279e76e12150bd5f6b318cfdea53a80cb75a4f624d4c63",
       "path": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1630,7 +1634,7 @@
         "degerlendirme",
         "sertifikali-savunma"
       ],
-      "contentHash": "sha256:c89cd9ea720b64b2e5468940793e483507957f22614e5da47f7fa1e0bce0aa5d",
+      "contentHash": "sha256:a5d35a97025dc1134e7bafd584204d906a844f98edba0205eb06e5cc236e31ca",
       "path": "content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
@@ -1662,7 +1666,7 @@
       "category": "multimodal-and-future",
       "level": "intermediate",
       "readingOrder": 81,
-      "summary": "54'te bir kara kutu olarak kullandığımız görüntü modelinin içini açar: bir görüntünün sabit boyutlu yamalara bölünüp her yamanın bir vektöre çevrilmesini ve token sayısının çözünürlükle nasıl büyüdüğünü — 336 piksellik bir karede 576 görsel token —; metinle görüntüyü aynı uzaya koyan karşıtsal ön eğitimi ve 400 milyon çiftle eğitilmiş bir modelin, bir sınıflandırma kümesinin 1,28 milyon örneğinin hiçbirini görmeden aynı doğruluğa ulaşmasını; görüntüyü dil modeline bağlamanın üç yolunu — doğrudan izdüşüm, öğrenilebilir sorgularla yeniden örnekleme (64 ve 32 token), kapılı çapraz dikkat — ve denetimli bir ablasyonda sıralamanın donuk gövdelerde çapraz dikkat lehine, düşük ranklı uyarlamayla tam otoregresif mimari lehine dönmesini; çözünürlüğün bir bütçe kararı olmasını; ve ölçütlerin nerede kırıldığını — üniversite düzeyinde 11,5 bin soruda yüzde 56 ile 59, dokuz temel görsel örüntüde insanın 95,7'sine karşı en iyi modelin 40,7'si, yedi basit çizim görevinde ortalama 58,07 ve doğrusal sondanın gösterdiği şey: bilgi kodlayıcıda var, dil modeline geçmiyor.",
+      "summary": "54'te bir kara kutu olarak kullandığımız görüntü modelinin içini açar: bir görüntünün sabit boyutlu yamalara bölünüp her yamanın bir vektöre çevrilmesini ve token sayısının çözünürlükle nasıl büyüdüğünü — 336 piksellik bir karede 576 görsel token —; metinle görüntüyü aynı uzaya koyan karşıtsal ön eğitimi ve 400 milyon çiftle eğitilmiş bir modelin, bir sınıflandırma kümesinin 1,28 milyon örneğinin hiçbirini görmeden aynı doğruluğa ulaşmasını; görüntüyü dil modeline bağlamanın üç yolunu — doğrudan izdüşüm, öğrenilebilir sorgularla yeniden örnekleme (64 ve 32 token), kapılı çapraz dikkat — ve denetimli bir ablasyonda sıralamanın donuk gövdelerde çapraz dikkat lehine, düşük ranklı uyarlamayla tam otoregresif mimari lehine dönmesini; çözünürlüğün bir bütçe kararı olmasını; ve ölçütlerin nerede kırıldığını — üniversite düzeyinde 11,5 bin soruda yüzde 56 ile 59, dokuz temel görsel örüntüde insanın 95,7'sine karşı en iyi modelin 40,7'si, yedi basit çizim görevinde ortalama 58,07 ve yazarların genişletilmiş sürümündeki doğrusal sondanın gösterdiği şey: küçük açık modellerde bilgi kodlayıcıda var, dil modeline geçmiyor.",
       "tags": [
         "coklu-modalite",
         "goruntu-dil-modeli",
@@ -1670,12 +1674,12 @@
         "karsitsal-on-egitim",
         "gorsel-olcutler"
       ],
-      "contentHash": "sha256:b64e1f3c5946a674501f780fa254f7fc8e6993f199fc0823cc54ad1cca668d6f",
+      "contentHash": "sha256:a98b8ab69891c8a59037a7e17a784b590b707100add59c5392f38b8a0cab0641",
       "path": "content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 19,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Görüntüyü dil modeline bağlamanın üç yolu, görsel bilginin hangi kapıdan girdiğini ve diziyi ne kadar uzattığını gösteren yeni bir şemayla anlatıldı."
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Doğrusal sonda ve boşluk deneylerinin ACCV bildirisinde değil yazarların hakemsiz genişletilmiş sürümünde olduğu, sondanın yalnızca küçük açık modellerde ölçüldüğü eklendi."
     },
     {
       "articleId": "article_26aa2b32-fed6-4268-b761-7bdb70a2349e",
@@ -1692,7 +1696,7 @@
         "gercek-zamanli",
         "gecikme-butcesi"
       ],
-      "contentHash": "sha256:a790e7399368b68d2d28d804a1c592d4fd88a4425a5d572a089118c784f05094",
+      "contentHash": "sha256:080d32b663a8df2758fa2bcac4d9f313ec7ff1f8a8a41255947ee44cb2a035b3",
       "path": "content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
@@ -1712,7 +1716,7 @@
         "kilavuzluk",
         "ornekleyici"
       ],
-      "contentHash": "sha256:20310d3ec59b4cf49122a03f2c433ab3e3243731327211fea3debf0af7dd8508",
+      "contentHash": "sha256:45f92766a2c6a4b07f906020a71db02218f30b4882d079c865481bcf234c0a90",
       "path": "content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md",
       "relatedArticleIds": [],
       "classificationBatch": 20,
@@ -1734,7 +1738,7 @@
         "erken-kaynasma",
         "kisitli-uretim"
       ],
-      "contentHash": "sha256:b88605c353e1002b4939700417bc7b6a57239eff1ed1eb2240fdc7de103b88a4",
+      "contentHash": "sha256:254e898a0dcdc88f8fe2285a71ecbd17571ed79ed7e87d8e57366d8c792a1ab7",
       "path": "content/series/articles/multimodal-and-future/birlesik-modeller-her-sey-token-mu.md",
       "relatedArticleIds": [],
       "classificationBatch": 20
@@ -1746,7 +1750,7 @@
       "category": "multimodal-and-future",
       "level": "intermediate",
       "readingOrder": 85,
-      "summary": "20'de bırakılan borcu ödüyor: 671 milyar parametre taşıyıp her token için yalnızca 37 milyarını çalıştıran mimari nasıl kuruluyor. Parametre sayısı ile token başına hesabın nasıl ayrıldığını, seyrek kapılı katmanın ileri beslemeli katmanın yerine nasıl geçtiğini ve yönlendirmenin neden bir eğitim problemi olduğunu kuruyor — yük dengesizliği, kapasite, düşen token'lar, ve atamayı tersine çeviren çözüm. Ölçek yasasının değişip değişmediğini iki tarafın ölçümüyle bırakıyor: bir çalışma yönlendirmenin faydasının azaldığını ve 937 milyar parametrede kesildiğini söylüyor, bir başkası neyin sabit tutulduğunu değiştirip 10²⁰ işlemde yirmi kat tasarruf ölçüyor — 9'daki Kaplan-Chinchilla ayrımının aynı biçimi. Bedelin bellekte ve iletişimde ödendiğini, ve uzmanların gerçekten uzmanlaşıp uzmanlaşmadığının iki ayrı ölçümde iki ayrı cevap verdiğini gösteriyor.",
+      "summary": "20'de bırakılan borcu ödüyor: 671 milyar parametre taşıyıp her token için yalnızca 37 milyarını çalıştıran mimari nasıl kuruluyor. Parametre sayısı ile token başına hesabın nasıl ayrıldığını, seyrek kapılı katmanın ileri beslemeli katmanın yerine nasıl geçtiğini ve yönlendirmenin neden bir eğitim problemi olduğunu kuruyor — yük dengesizliği, kapasite, düşen token'lar, ve atamayı tersine çeviren çözüm. Ölçek yasasının değişip değişmediğini iki tarafın ölçümüyle bırakıyor: bir çalışma yönlendirmenin faydasının azaldığını ve en iyi teknikte 937 milyar parametrede kesildiğini söylüyor, bir başkası neyin sabit tutulduğunu değiştirip 10²⁰ işlemde yirmi kat tasarruf ölçüyor — 9'daki Kaplan-Chinchilla ayrımının aynı biçimi. Bedelin bellekte ve iletişimde ödendiğini, ve uzmanların gerçekten uzmanlaşıp uzmanlaşmadığının iki ayrı ölçümde iki ayrı cevap verdiğini gösteriyor.",
       "tags": [
         "uzmanlar-karisimi",
         "kosullu-hesaplama",
@@ -1754,7 +1758,7 @@
         "yuk-dengeleme",
         "olcek-yasalari"
       ],
-      "contentHash": "sha256:19ea027bd573d7dfa38ce5ccc4b8170c9a21fd6e242d677268f0e7a38c990f7b",
+      "contentHash": "sha256:d8cc24bfab0331ee229d9f15d4a9715671f3341bd003c3fc1a84d2e872701643",
       "path": "content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md",
       "relatedArticleIds": [],
       "classificationBatch": 20
@@ -1766,7 +1770,7 @@
       "category": "multimodal-and-future",
       "level": "intermediate",
       "readingOrder": 86,
-      "summary": "7 ve 15'te açık bırakılan kapıyı kapatıyor. Önce \"karesel\" sözcüğünü ikiye ayırıyor: eğitimde ikili sayısıyla büyüyen hesap ile çıkarımda uzunlukla büyüyen anahtar-değer önbelleği ayrı maliyetlerdir ve alternatifler farklı olanı hedefler. Üç aileyi kuruyor — seyreklik, doğrusal dikkat ve durum uzayı modelleri — ve durum uzayı modellerinin iki görünüşünü (eğitimde evrişim, çıkarımda yineleme) veriyor. Asıl mesele takas: dikkat her şeyi saklar, sabit durum bir özet tutar. Bedeli ölçülmüş — 410 milyon parametreli bir Transformer, rehber yeterince uzadığında 2,8 milyarlık bir durum uzayı modelini geçiyor, üstelik ikincisi Pile'da daha düşük perplexity verirken; ve boşluğun yüzde 82'si çağrışımsal geri çağırmadan geliyor. Kanıtlanan sınır ise beklentiyi bozuyor: yinelemeye rağmen bu modellerin ifade gücü Transformer'ınkiyle aynı sınıfta. Kapanışta melez mimariler ve baytları dinamik yamalara toplayan düzen.",
+      "summary": "7 ve 15'te açık bırakılan kapıyı kapatıyor. Önce \"karesel\" sözcüğünü ikiye ayırıyor: eğitimde ikili sayısıyla büyüyen hesap ile çıkarımda uzunlukla büyüyen anahtar-değer önbelleği ayrı maliyetlerdir ve alternatifler farklı olanı hedefler. Üç aileyi kuruyor — seyreklik, doğrusal dikkat ve durum uzayı modelleri — ve durum uzayı modellerinin iki görünüşünü (eğitimde evrişim, çıkarımda yineleme) veriyor. Asıl mesele takas: dikkat her şeyi saklar, sabit durum bir özet tutar. Bedeli ölçülmüş — 410 milyon parametreli bir Transformer, rehber yeterince uzadığında 2,8 milyarlık bir durum uzayı modelini geçiyor, üstelik ikincisi Pile'da daha düşük perplexity verirken; ve boşluğun ortalamada yüzde 82'si çağrışımsal geri çağırmadan geliyor. Kanıtlanan sınır ise beklentiyi bozuyor: yinelemeye rağmen bu modellerin ifade gücü Transformer'ınkiyle aynı sınıfta. Kapanışta melez mimariler ve baytları dinamik yamalara toplayan düzen.",
       "tags": [
         "durum-uzayi-modelleri",
         "dogrusal-dikkat",
@@ -1774,7 +1778,7 @@
         "melez-mimariler",
         "karesel-maliyet"
       ],
-      "contentHash": "sha256:5a0094419268644925c8a36e774bedbf695e5583cf3e2925e304bf302a6c24e3",
+      "contentHash": "sha256:ff096a30520de67c4761ce567f6e59b5270c87bcdafbe31e0e4132acddf8341e",
       "path": "content/series/articles/multimodal-and-future/dikkatin-otesi-ssm-ve-alternatif-mimariler.md",
       "relatedArticleIds": [],
       "classificationBatch": 20,
@@ -1796,7 +1800,7 @@
         "ogretmen-ogrenci",
         "hesap-butcesi"
       ],
-      "contentHash": "sha256:13be1bc30f85ff21f283cb8657f250df1aa7d301c35dcfe3f56a5991c5f7c769",
+      "contentHash": "sha256:7fb59732823723004f660ea0ec00de3b9f49cb9398a68405ff874b61e6fa79c4",
       "path": "content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 21
@@ -1836,7 +1840,7 @@
         "alana-ozel-mimari",
         "hassasiyet"
       ],
-      "contentHash": "sha256:e0ae9ebf350d22fa0fb0739801d08e7c38016d80e6f828601d0c509946a92761",
+      "contentHash": "sha256:4051618f1260886638764b61e2fb34a15bbf646030b10e9ff3042fabe2621dbf",
       "path": "content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md",
       "relatedArticleIds": [],
       "classificationBatch": 21,
@@ -1898,7 +1902,7 @@
         "dusuk-rank",
         "matris-sikistirma"
       ],
-      "contentHash": "sha256:b7fe6d4bfae4f1b0f7c22f2f4eff3fd392c5057676e51fe0e57a01f6806837c2",
+      "contentHash": "sha256:434cd37f054cd3624708d804c65f3e19986e9f7c952b6dbacd69f005b01dc6a3",
       "path": "content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md",
       "relatedArticleIds": [],
       "classificationBatch": 22,
@@ -1932,7 +1936,7 @@
       "category": "foundations",
       "level": "advanced",
       "readingOrder": 94,
-      "summary": "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 43,4'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli en fazla log n eksi (n eksi 1) bölü n nat.",
+      "summary": "9'da kayıp eğrilerini nat/token cinsinden okumuştuk; bu makale o birimin ne saydığını gösteriyor. Şaşkınlık eksi logaritmadır, entropi şaşkınlığın beklentisidir ve çapraz entropi tam olarak ikiye ayrılır: verinin kendi belirsizliği artı modelin fazladan ödediği ceza. Bu ayrım 13'te işleviyle kullandığımız KL ıraksamasının biçimsel kurulumudur ve borç burada kapanıyor. Perplexity kaybın üsteli, yani 'kaç eşit olasılıklı seçenek kadar' sorusunun cevabı; Kaplan ile Chinchilla arasındaki 0,114 nat/token farkı yaklaşık yüzde 12 perplexity farkına karşılık geliyor. Kayıp aynı zamanda sıkıştırma oranıdır: Chinchilla 70B, ImageNet parçalarını yüzde 48'e indirip PNG'yi geçiyor. KL simetrik değil ve bu bir bütçe kuruyor: n adaydan en iyisini seçmenin bedeli en fazla log n eksi (n eksi 1) bölü n nat.",
       "tags": [
         "entropi",
         "capraz-entropi",
@@ -1940,7 +1944,7 @@
         "perplexity",
         "sikistirma"
       ],
-      "contentHash": "sha256:5f100ea87362c855ad63b81df2f4f6eeb25517fab17edbe1e056e50139a730b3",
+      "contentHash": "sha256:d153240f08da6d0746e57ebd3df418431bfcfd85161019618c80b8f35a436c2b",
       "path": "content/series/articles/foundations/bilgi-kurami-entropi-capraz-entropi-ve-kl.md",
       "relatedArticleIds": [],
       "classificationBatch": 22,
@@ -1984,7 +1988,7 @@
         "ezber",
         "duzenlilestirme"
       ],
-      "contentHash": "sha256:7bdfa51982ce8ab2d0134950c75b7f2d8855254e2783d010ebed35bc086be28c",
+      "contentHash": "sha256:b667018d4ee9931255e293cede94a7fd1b347f5fe4ac84c7994cb008e51a68fe",
       "path": "content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md",
       "relatedArticleIds": [],
       "classificationBatch": 23,
@@ -2088,7 +2092,7 @@
         "coklu-karsilastirma",
         "tahminci-yanliligi"
       ],
-      "contentHash": "sha256:43438238b9aa4a40dba680ee889eb7cdc6ec764e2abc4da428ef40a27f633a9d",
+      "contentHash": "sha256:c306585287db9929f57d64aa1e1a92912396bb965939e94f1edb23c07bb07657",
       "path": "content/series/articles/foundations/olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md",
       "relatedArticleIds": [],
       "classificationBatch": 24,
@@ -2110,7 +2114,7 @@
         "negatif-sonuc",
         "belgeleme"
       ],
-      "contentHash": "sha256:66972739f0d3ca4452d44891caab78021638b8087cb21be074a114baaacb09dc",
+      "contentHash": "sha256:bad697a0d66724adb2567f148db4ff0088860fafe6b0b131c969f9e2a71c4404",
       "path": "content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md",
       "relatedArticleIds": [],
       "classificationBatch": 24
@@ -2174,12 +2178,12 @@
         "hizalama-vergisi",
         "ortuk-odul"
       ],
-      "contentHash": "sha256:557d2822cadc994cd826f7a57c3297793e616b382df6aa250a76329bb726f052",
+      "contentHash": "sha256:beedc8031504a58027257b79ef10015933a167c335c37b1dea5212d560ec7681",
       "path": "content/series/articles/models-and-training/kendi-asistanin-kucuk-olcekte-sft-ve-dpo.md",
       "relatedArticleIds": [],
       "classificationBatch": 25,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "δ'nın tanımı ve DPO'nun yeğlenen cevabı düşürdüğü koşu elle hesaplandı; 1,5/β ilişkisinin kaybın aritmetiği olduğu ve SFT bedelinin kaynağı düzeltildi."
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Şekil 1'in KL notu düzeltildi, değerler zarf konumunun KL'si; derlem kaybı hesabına aynı konumdaki bugün hedefleri eklendi, tercih verisinin kazancı puanla verildi."
     },
     {
       "articleId": "article_e6f42bd9-3589-452b-bf23-1344d9c9500e",
@@ -2260,12 +2264,12 @@
         "kayip-sicramasi",
         "gozlem"
       ],
-      "contentHash": "sha256:0fc1efb928f169554a07e57fe0c3d86a0e69a8055a5f24795124f1c273c3bc5e",
+      "contentHash": "sha256:9bd7881f894c6687e4e5cdc90e201d54ee6ee9b29b98b085c1e0709907a19db7",
       "path": "content/series/articles/models-and-training/kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md",
       "relatedArticleIds": [],
       "classificationBatch": 26,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Kontrol noktası aralığı iki kaybın dengesiyle sezgiden kuruldu ve U eğrisiyle çizildi; OPT'nin yeniden başlatma sayısının hangi arızaya ait olduğu düzeltildi."
+      "revisedAt": "2026-09-26",
+      "revisionNote": "İzleme katmanlarının içeriği kaynakla hizalandı: saniye ve milisaniye düzeyinde ne ölçüldüğü düzeltildi, bağ kopmasının kök nedeni eklendi, tanı süresinin ortalama olduğu belirtildi."
     },
     {
       "articleId": "article_60582af1-e07e-48e6-871d-829f774ebca3",
@@ -2302,10 +2306,12 @@
         "veri-kitligi",
         "benzetim"
       ],
-      "contentHash": "sha256:43f2125ccfc6aec619d17dbe5d459a41b9e4ce6f426a6138a40b2f40d4c25265",
+      "contentHash": "sha256:0eac6d93feecd644eb88cd4976780e3e8258652035acbce9583fd2b5f86a2410",
       "path": "content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md",
       "relatedArticleIds": [],
-      "classificationBatch": 27
+      "classificationBatch": 27,
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Ön eğitim ablasyonu tek değişkenli satır çiftine çekildi, 48,7 ve 47'ye karşı 0 ve 1; sınavın adı düzeltildi ve 91 puanlık sürümde mimarinin de değiştiği eklendi."
     },
     {
       "articleId": "article_7c1b9d42-3fa6-4e07-95c8-1d8b0f6e2a34",
@@ -2322,12 +2328,12 @@
         "felaket-unutmasi",
         "getirme"
       ],
-      "contentHash": "sha256:5dbf5a17d5d2516f0a8d5927b29a9ee14abb68386ff6088e4144c333db028efe",
+      "contentHash": "sha256:598e941f8c4520d93c655f716eb8f7f18f855962a0c2fd3b799e2d5f85c13f68",
       "path": "content/series/articles/multimodal-and-future/surekli-ogrenme-ve-kisisellestirme.md",
       "relatedArticleIds": [],
       "classificationBatch": 27,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Rank-bir güncelleme önce sezgiyle ve yeni bir geometri şekliyle anlatıldı; gerçek anahtarların tam dik olmadığı eklendi, 'üç mertebe' 400 kat olarak düzeltildi."
+      "revisedAt": "2026-09-26",
+      "revisionNote": "Yüzde 100'ün ilgisiz bilgilerin değil aynı ilişkinin öteki nesnelerinin korunması olduğu düzeltildi; ilgisiz ilişkiler 55,4'te kalıyor, bağlama yazmanın üstünlüğü ortalamada."
     },
     {
       "articleId": "article_4e58c1b7-62da-4a39-b0f1-8c37e29d5a61",
@@ -2444,7 +2450,7 @@
         "geri-alma-maliyeti",
         "hatirlama-pratigi"
       ],
-      "contentHash": "sha256:52222ebff7e403e221368e546d197c283d4ea07621fa505749c58dce492cc116",
+      "contentHash": "sha256:3b0ca522234d82bde7c67ac806d78edab427fd19c6c33e40e75b009810a3deb1",
       "path": "content/series/articles/multimodal-and-future/son-adim-haritayi-yeniden-cizmek.md",
       "relatedArticleIds": [],
       "classificationBatch": 28

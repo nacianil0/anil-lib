@@ -12,7 +12,7 @@ tags:
   - atif
   - hakem-model
   - olcum-disiplini
-content_hash: sha256:b1300410954553e379454daba85cb4c6353b32730aa301ca0210b5b199b12465
+content_hash: sha256:340aa5b40495b52f7142da350223f689f113eae6d01985afbda5ff0f6bd1d2a1
 classification_version: 1
 classification_batch: 10
 ---
@@ -20,7 +20,7 @@ classification_batch: 10
 
 44\. makale hattın her düğmesini bir "puan"la ölçtü ve puanın ne olduğunu sormadı. Şimdi soruyoruz, çünkü bir getirme hattı üç ayrı yerde yanlış yapabilir ve tek bir doğruluk sayısı bu üçünü birbirinden ayırmaz.
 
-Birinci hata getirmede: doğru belge hiç gelmemiştir. İkinci hata okumada: doğru belge gelmiş, ama model onu okumak yerine ezberinden cevap vermiştir — 41\. makalede bunun ölçülmüş oranını görmüştük, ezber oranı yüzde 20 ile 75 arasında değişiyordu. Üçüncü hata üretimde: model belgeyi okumuş, ama belgede olmayan bir şey eklemiştir. 17\. makalede bu üçüncü türe içsel uydurma demiş ve önemli bir şey söylemiştik: getirme, dışsal uydurmayı içsel uydurmaya çevirir, yani sorunu **denetlenebilir** hâle getirir. Bu makale o denetimin nasıl yapıldığını anlatıyor.
+Birinci hata getirmede: doğru belge hiç gelmemiştir. İkinci hata okumada: doğru belge gelmiş, ama model onu okumak yerine ezberinden cevap vermiştir — 41\. makalede bunun ölçülmüş oranını görmüştük: model ezberlediği cevaba Natural Questions ile eğitildiğinde yüzde 20'ye, NewsQA ile eğitildiğinde yüzde 75'e varan oranda dönüyordu. Üçüncü hata üretimde: model belgeyi okumuş, ama belgede olmayan bir şey eklemiştir. 17\. makalede bu üçüncü türe içsel uydurma demiş ve önemli bir şey söylemiştik: getirme, dışsal uydurmayı içsel uydurmaya çevirir, yani sorunu **denetlenebilir** hâle getirir. Bu makale o denetimin nasıl yapıldığını anlatıyor.
 
 Üç soru var. Her katmanı nasıl ayrı ölçeriz? Cevabın kaynağa bağlılığını — bu seride **kaynak sadakati** (groundedness) diyeceğiz; 31\. makalede bir açıklamanın sadakatinden söz etmiştik, sözcük aynı, nesne bu kez cevabın önündeki belge — nasıl sayarız? Ve ölçümü çoğu zaman bir dil modeli yaptığına göre, cetvele ne kadar güvenebiliriz?
 
@@ -42,7 +42,7 @@ Shahul Es ve arkadaşlarının EACL 2024 sistem gösterimleri programında sundu
 
 Katmanları ayırdık; şimdi en eski soruya dönelim. Cevap doğru mu?
 
-Vaibhav Adlakha ve arkadaşlarının Transactions of the Association for Computational Linguistics'te 2024'te yayımlanan çalışması, bu sorunun cetvelini sınadı. Eski soru-cevap ölçüleri kısa cevaplar için tasarlanmıştı: tam eşleşme, cevabın referansla birebir aynı olmasını ister. Talimat izleyen bir model ise cümleyle cevap verir — "Sorunun cevabı 1896'dır, çünkü…" — ve tam eşleşme bunu yanlış sayar. Yazarlar 1.800 model cevabını insanlara puanlattı ve otomatik ölçülerin insan kararıyla sıra ilişkisini hesapladı:
+Vaibhav Adlakha ve arkadaşlarının Transactions of the Association for Computational Linguistics'te 2024'te yayımlanan çalışması, bu sorunun cetvelini sınadı. Eski soru-cevap ölçüleri kısa cevaplar için tasarlanmıştı: tam eşleşme, cevabın referansla birebir aynı olmasını ister. Talimat izleyen bir model ise cümleyle cevap verir — "Sorunun cevabı 1896'dır, çünkü…" — ve tam eşleşme bunu yanlış sayar. Yazarlar 1.800 model cevabını insanlara puanlattı; doğruluk için bunların 1.200'ünde otomatik ölçülerin insan kararıyla sıra ilişkisini hesapladı:
 
 | ölçü | insan kararıyla sıra ilişkisi (Kendall τ) |
 |---|---|
@@ -51,7 +51,7 @@ Vaibhav Adlakha ve arkadaşlarının Transactions of the Association for Computa
 | bulma oranı (referansın token'ları cevapta var mı) | 55,6 |
 | GPT-4 hakem | 67,5 |
 
-Tam eşleşme, insan kararıyla en zayıf ilişkilenen ölçü. Referansın token'larının cevapta bulunup bulunmadığına bakan basit bir bulma oranı iki kat daha iyi; bir dil modeline sormak en iyisi, ama en pahalısı. Aynı çalışma kaynak sadakati için de ucuz bir cetvel öneriyor: cevabın token'larının ne kadarının bilgi parçasında geçtiği. Bu sayı insan kararıyla 43,4 ilişki veriyor; GPT-4 hakem 55,0 veriyor; cevap ile parça arasındaki F1 ise **negatif** — çünkü uzun ve doğru bir cevap parçadaki her şeyi tekrar etmez ve F1 bunu cezalandırır. 16\. makaledeki ders bir kez daha: cetvel bir tasarım ürünüdür ve neyi ödüllendirdiği ölçülmelidir.
+Bu dört ölçü arasında tam eşleşme, insan kararıyla en zayıf ilişkilenen ölçü. Referansın token'larının cevapta bulunup bulunmadığına bakan basit bir bulma oranı iki kat daha iyi; bir dil modeline sormak en iyisi, ama en pahalısı. Aynı çalışma kaynak sadakati için de ucuz bir cetvel öneriyor: cevabın token'larının ne kadarının bilgi parçasında geçtiği. Bu sayı insan kararıyla 43,4 ilişki veriyor; GPT-4 hakem 55,0 veriyor; cevap ile parça arasındaki F1 ise **negatif** — çünkü uzun ve doğru bir cevap parçadaki her şeyi tekrar etmez ve F1 bunu cezalandırır. 16\. makaledeki ders bir kez daha: cetvel bir tasarım ürünüdür ve neyi ödüllendirdiği ölçülmelidir.
 
 Cetvelin bir başka tasarım kararı, bilmemenin nasıl puanlanacağı. Xiao Yang ve arkadaşlarının NeurIPS 2024 veri kümeleri ve kıyaslamalar programında sunduğu çalışma, her cevabı dört sınıfa ayırıyor — kusursuz, kabul edilebilir, eksik, yanlış — ve bunları 1, 0,5, 0 ve **−1** ile puanlıyor. Yanlış cevap, "bilmiyorum" demekten daha kötüdür; 39\. makaledeki çekimserlik burada bir ölçüye dönüşüyor. Güvenilirlik puanı, doğru cevapların yüzdesinden uydurmaların yüzdesinin çıkarılmasıyla bulunur. Bu cetvelle ölçüldüğünde getirmenin etkisi Şekil 2'de: aynı model, aynı sorular, bir kez yalnızca kendi bilgisiyle, bir kez web getirmeli bir hatla.
 

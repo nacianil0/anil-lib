@@ -27,6 +27,12 @@ URL: <https://cmpe.bogazici.edu.tr/graduate/ms-program/>
 - Seçilen adaylarla **scientific interview** yapılır: "At least two faculty members conduct the
   scientific interview"; her görüşme **10 veya 15 dakika** sürer, görüşmecinin ofisinde yapılır;
   teleconference kabul edilirse uzaktan katılım mümkündür.
+  **Ek (2026-09-26 bakım run'ı 2, §20.1):** sayfa ayrıca "Between two interviews there is at least
+  a 10-minute period so the applicant can be ready at the next office." diyor; teleconference
+  talebi de "directly writing to the interviewer" ile tek görüşmeciye yapılıyor. Yani mülakat tek
+  bir kurul oturumu değil, **her biri bir görüşmecinin ofisinde geçen ayrı kısa görüşmelerdir**
+  (Wayback 2026-06-07 sürümü daha da açık: "The interview takes 10 minutes per professor at the
+  office of the professor."). Makale 1 ve 40 bunu "tek oda, en az iki kişi" diye okumuştu; düzeltildi.
 - Görüşmenin içeriği (birebir): "a discussion of the candidate's past academic record,
   research direction, skillset, and technical knowledge."
 - Nihai değerlendirme: mülakat performansı + öğretim üyesi değerlendirmeleri + transkript +
@@ -2821,3 +2827,120 @@ Security" (s. 33), 2.1 "Operating-System Services" (s. 55), 2.3 "System Calls" (
 "Operating-System Structure" (s. 81). Makale 26 onuncu baskıya atıf yapıyor ve **yedi alt bölüm adının
 hepsi doğrudur**. Ajanın kaynağı başka bir baskıydı. **Ders: teyit ajanı da baskı karıştırabilir;
 baskıya bağlı bir ad iddiası ancak o baskının kendi belgesiyle kapatılır.**
+
+## 20. Bakım run'ı 2'de doğrulanan kaynaklar ve düzeltmeler (2026-09-26)
+
+Yeni makale üretilmedi. Kanıt dosyaları `artifacts/bakim2-2026-09-26/` altında (repo dışı değil ama
+`.gitignore`'da): `resmi/` (sayfa çekimi ve alıntı araması), `linkler/` (atıf taraması), `ana/`
+(ana oturumun bağımsız hesapları), `durum-sayilari/` ve küme klasörleri (ajan betikleri), `render/`.
+
+### 20.1 Resmî sayfalar — alıntılar aynı, bir okuma yanlışı düzeltildi
+
+On bir sayfa çekildi (M.Sc. programı, lisans müfredatı, CMPE220/222/230/244/250/300/321/322/343
+ders sayfaları), hepsi HTTP 200. §1 ve §19.1'deki bütün alıntılar birebir bulundu: en az iki öğretim
+üyesi, "10 or 15 minutes", dört başlıklı içerik cümlesi, "(equivalent: Discrete Math)", en az 2.50,
+"at most two successive academic terms", Scientific Prep'in iki ek cümlesi. CMPE321 müfredat
+sayfasında hâlâ yok; CMPE322'nin katalog tanımı "LINUX case studies" ile bitiyor.
+
+**Okuma düzeltmesi.** Sayfa görüşmenin biçimini tek cümlede değil üç cümlede veriyor: "Each
+interview takes 10 or 15 minutes at the interviewer’s office", "Between two interviews there is at
+least a 10-minute period so the applicant can be ready at the next office" ve teleconference için
+"directly writing to the interviewer". Yani mülakat **görüşmeci başına ayrı ofis görüşmeleridir**, tek
+odada bir kurul değildir. Wayback'in 2026-06-07 kopyası (sayfanın önceki metni) bunu daha açık
+söylüyor: "The interview takes 10 minutes per professor at the office of the professor." Sayfa
+Haziran ile Ağustos 2026 arasında yeniden yazılmış; §1'in 2026-08-28 kaydı yeni metinden alınmıştı
+ve iki metin de aynı yapıyı anlatıyor. Makale 1 (açılış, resmî gerçek paragrafı, "Sesli anlat"
+omurgası) ve makale 40 (açılış) biçimi "bir oda, en az iki kişi" diye okumuştu; düzeltildi ve
+makale 1 "gözden geçirildi" işareti aldı.
+
+### 20.2 Atıf taraması — 67 adresin 67'si geçerli
+
+Makale gövdelerinde 67 benzersiz adres var (bakım run'ı 1'de 62). 61'i doğrudan 200 döndü. Altısı
+bot filtresi ve hepsi doğru esere gidiyor: `api.crossref.org` ile Roediger & Karpicke 2006
+(Psychological Science 17(3), 249–255), Cepeda ve ark. 2008 (19(11), 1095–1102), Dunlosky ve ark.
+2013 (Psychological Science in the Public Interest 14(1), 4–58) ve Fiorella & Mayer 2013
+(Contemporary Educational Psychology 38(4), 281–288, `10.1016/j.cedpsych.2013.06.001`); gerçek
+tarayıcıda MIT Press'in CLRS sayfaları "Third Edition" (`9780262033848`) ve "Fourth Edition"
+(`9780262046305`).
+
+**Yeni kaynak:** Kozen, D. & Zaks, S. *Optimal Bounds for the Change-Making Problem*, Theoretical
+Computer Science 123(2), 1994, s. 377–388 (Crossref). Teorem, açık erişimli DAIMI raporundan
+(PB-371, 1991) birebir: "if a counterexample exists, then the smallest one lies in the range
+c3 + 1 < x < cm + cm-1, and these bounds are tight"; kanonik sistemin tanımı da oradan. Makale
+21'in "5.000 kuruşa kadar denetledim, demek ki her tutarda doğru" köprüsü artık bu sınıra dayanıyor
+(1, 5, 10, 25, 50 için 75).
+
+### 20.3 Yenileme farkının olgu denetimi (commit `8ec2fc9`)
+
+2026-09-25 yenilemesinin eklediği metin ajanlarca yazılmış ve diff üzerinden kabul edilmişti;
+bağımsız olgu denetimi yapılmamıştı. Bu run iki sınırlı workflow ile yaptı (beş küme ajanı + bir
+durum sayısı ajanı; ilk workflow üç sonuç verdikten sonra oturum kapandığı için k3–k5 yeniden
+koşuldu). Ana oturum her bulguyu uygulamadan önce kaynağında okudu ya da kendi hesabıyla doğruladı.
+Uygulanan olgu düzeltmeleri:
+
+- **Makale 11:** bir milyon anahtarlı tam dengeli ağaçta yükseklik ⌈log₂(10⁶ + 1)⌉ − 1 = 19, en kötü
+  arama 20 karşılaştırma (2²⁰ − 1 = 1.048.575 ≥ 10⁶); metin, şekil ve alt metin "yaklaşık 20, yirmi
+  bir" diyordu. Oran 10⁶ / 20 = **elli bin**. Bakım run'ı 1'in "elli bin → kırk yedi bin" düzeltmesi
+  bu yanlış 21'e hizalanmıştı; makalenin kendi kuralı (yedi anahtar: yükseklik 2, arama 3) 20'yi verir.
+- **Makale 14:** h ≥ log₂(n + 1) sınırıyla bir milyon öğe için en az **20** karşılaştırma (2¹⁹ = 524.288
+  yaprak yetmez); metin 19 diyordu. Model tanımı üç sonuçlu karşılaştırma verip ispatta ikili ağaç
+  kullanıyordu; 6.006 Lecture 4'ün ikili (evet/hayır) tanımına çevrildi.
+- **Makale 29:** P işleminin tanımı "olmayacaksa … bekler" diye tersine dönmüştü (şekil ve omurga
+  "olacaksa" diyor); dönen kilidin bedeli şekildeki ve 94. satırdaki gibi **N − 1** zaman dilimi.
+- **Makale 30:** kilit en dıştayken 14 durumlu modelde **iki** kilitlenme var (ikincisi tampon
+  doluyken üreticinin `mutex`i tutup `bos`u beklemesi); ana oturumun bağımsız sayıcısı
+  (`ana/tampon.py`) 10/0 ve 14/2 verdi. "Üçü de uykuda" izi yalnızca tek hücreli tamponda (MAX = 1)
+  erişilebilir; OSTEP'in izi de tek tamponlu sürümdedir.
+- **Makale 27:** OSTEP bağlam anahtarı sonuçlarının "roughly tracking processor performance"
+  olduğunu ve modern sistemlerin "almost an order of magnitude better" olduğunu söyler; Ousterhout'un
+  bellek gözlemi ayrı bir uyarıdır. Makale çevrim sayısının sabit kalmasını bellek yoğunluğuna
+  bağlıyordu; kaynağın kurgusuna döndürüldü ve örnek 0,6 µs (1.200 / 1.800 çevrim) oldu.
+- **Makale 28:** açlık için aşağı indirme kuralı gerekir (OSTEP'in ilk denemesi Rule 1–3 + 4a/4b);
+  "yalnızca ilk üç kuralla açlık" yanlıştı. %5,7 değeri s/(q + s) paydasından gelir; kırmızı-siyah
+  ağaç en kötü durumda 2·log₂(n + 1) ≈ 24 adım (CLRS Lemma 13.1), on iki ideal dengedir.
+- **Makale 38:** Şekil 1 xv6'nın "gerçek düzenini" değil klasik Unix sırasını çiziyor; xv6 kitabı
+  rev4 Figure 2.3'te tek sayfalık yığın verinin hemen üstünde, heap onun üstündedir.
+- **Makale 39:** 25.000 bloklu tabloda 200.000 eşleşme ayrı bloklara düşemez; maliyet modeli "her
+  eşleşme için ayrı blok okuması, tamponda isabet yok" diye yazıldı. BCNF ölçütü süper anahtardır.
+- **Diğerleri:** 1'de "beşinci yetenek" → dördüncü (Savunabilmek); 4'te güçlü tümevarım hipotezi
+  "n + 1'den küçük" ve *recurrence* → "yineleme bağıntısı"; 5'te sayma argümanı ile durma
+  probleminin çelişki ispatı ayrıldı; 6'da vurgulu 10 son satırın soldakisi; 8'de 1 ve −1'in tersi
+  var; 10'da amortize oran yalnızca n ikinin kuvvetiyken 2'nin altında (17. eklemede 48/17 ≈ 2,82);
+  22'de şekil üst/alt panelli; 24'te Freivalds eşlemesinin tanım kümesi Dr = 0 veren r'ler; 25'te
+  "kriptografinin temeli" ve P = NP panelinde "iki önemsiz dil dışında"; 33'te 1,0001 ms; 34'te
+  ikinci sürücünün ara adımları ve 128,5; 36'da Markov/Chebyshev için a > 0, ikişerli ile karşılıklı
+  bağımsızlık, 16,7 kat, seçim benzetiminin modeli (ana oturum benzetimi: rastgele k ≈ 3,0, medyan
+  ≈ 3,2–3,4); 37'de 91,575'in tek ondalığa kesilmesi.
+
+**Uygulanmayan bulgular (gerekçeli):** 7'nin "## Ağacın kenar sayısı: yapısal tümevarım" başlığı
+kaldı — seri bu ispatı 17'de de "yapısal tümevarım" diye anıyor, gövde ilişkiyi açıklıyor ve
+SOZLESME §12 başlık değişikliğine yalnızca olgusal hatada izin veriyor. "Hiçbiri … değil" kalıpları
+(30, 31, 39) olumsuz uyumdur, çift olumsuz değildir; gerçek çift olumsuz yalnızca 35'teydi
+("bildirilmemiş bir izni veremez") ve düzeltildi. 29'daki `kilit-merdiveni.svg` bir izleme/zaman
+çizelgesi (kim ne zaman ne yapıyor) olarak kavram şekli sayıldı; makalede tek SVG-tablo
+`bekleme-ve-semafor.svg`'dir.
+
+### 20.4 Yazarın durum sayıları — borç kapandı
+
+29'un 57/5'i, 30'un 10/14 ile 82/70/11'i ve 31'in 19/16'sı açık durumlu BFS sayıcılarıyla **birebir**
+yeniden üretildi (`durum-sayilari/`; yazarın özgün betikleri `artifacts/b9-research/model.py` ve
+`artifacts/b10-research/kilitlenme.py` de aynı sayıları veriyor). 57 ile 5 farklı adım inceliğinde
+sayılmıştır (aynı incelikte bayrak 24 durum); metin artık modeli söylüyor. Makale 20: 294/706, 3/10,
+1/3, 2/7, 9/10 ve "en küçük tek g = 5" doğru; c ≥ 10s yalnızca tavansız ideal bağıntıda geçerli, tam
+bağıntıda n ≥ 140 için c ≥ 20s (CLRS 3e ve MIT 6.046 notu). T(n)/n dizileri tek bir tanımlı modelle
+üretilemedi; yerine gerçel değerli ve n < 2 iken T(n) = n tabanlı modelin sayıları yazıldı
+(`ana/medyan_oran.py`): üçerli 11,4 → 15,0 → 18,7 → 22,3 → 25,9 (onluk başına ≈ 3,6 = ln 10 bölü
+⅓ ln 3 + ⅔ ln 1,5), beşerli 6,9 → 7,9 → 8,5 → 9,0 → 9,3.
+
+### 20.5 Alt metinler, SVG-tablolar ve B-ağacı — borçlar kapandı
+
+200 kelimeyi aşan 28 alt metin 120'nin altına indirildi (en uzunu 119); ikinci bir ajan her birini
+SVG kaynağına karşı okudu ve üçünü düzeltti (25 `indirgeme-yonu`, 34 `ayirma-yontemleri` D4 "son",
+39 `b-arti-agaci-indeks` "dört katmanlı"). 83 şeklin sınıflandırması: SVG'ye çizilmiş tablo olan
+şekiller 2 `cikarim-kurallari`, 15 `kararlilik`, 23 `dijkstra-izleme-tablosu`, 29
+`bekleme-ve-semafor`, 31 `bankaci-guvenli-durum`, 33 `degistirme-karsilastirmasi`, 41
+`zayif-nokta-haritasi` — her makalede en fazla bir tane. Kural ihlalleri kapatıldı: 41'in ikinci
+şeklinin üst yarısı (Cepeda tablosu) Markdown tablosuna taşındı ve şekil yalnızca takvim oldu;
+Markdown tablosunu tekrar eden SVG satırları 9 (`n = 1000` satırı), 16 (iki maliyet satırı) ve 22
+(DP tablosunun saat sütunu) şekillerden çıkarıldı. 12'nin B-ağacı şekli metinle hizalandı (yüz çocuklu
+düğüm: "anahtar 1 … anahtar 99", çocuklarda "99 anahtar").

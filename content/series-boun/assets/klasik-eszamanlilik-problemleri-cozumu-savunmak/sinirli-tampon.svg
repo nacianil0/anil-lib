@@ -39,7 +39,7 @@
   <text x="378" y="22" font-size="13" fill="var(--text-muted)">İki hata, iki iz</text>
 
   <rect x="378" y="32" width="327" height="86" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
-  <text x="386" y="52" font-size="13" fill="var(--text)">Tek koşul değişkeni</text>
+  <text x="386" y="52" font-size="13" fill="var(--text)">Tek koşul değişkeni, MAX = 1 iken</text>
   <text x="386" y="72" font-size="13" fill="var(--text-muted)">tüketici bir öğe alıp bildirim yapar</text>
   <text x="386" y="90" font-size="13" fill="var(--text-muted)">bildirim öteki tüketiciye gider</text>
   <text x="386" y="108" font-size="13" fill="var(--text-faint)">o yeniden uyur: üçü de uykuda</text>

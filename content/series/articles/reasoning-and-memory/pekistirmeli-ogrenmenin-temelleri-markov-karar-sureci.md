@@ -12,7 +12,7 @@ tags:
   - politika
   - deger-islevi
   - kredi-atama
-content_hash: sha256:06235158d42d864f309671199c6430b72e30f5b2fd44190a02036a8a13e7ed2a
+content_hash: sha256:122b58fe6aa959d06cfc1f6ab26b3b0dfe1b6cdc610ccd6f3bf850add458088e
 classification_version: 1
 classification_batch: 8
 ---
@@ -148,7 +148,7 @@ Peki ödülü sonda değil, her adımda versek? Sonraki makale bunu ele alıyor:
 
 ## Kaynakça
 
-- Bellman, R. (1957). *A Markovian Decision Process*. Journal of Mathematics and Mechanics, 6, s. 679–684. [Bağlantı](http://www.iumj.indiana.edu/IUMJ/FULLTEXT/1957/6/56038)
+- Bellman, R. (1957). *A Markovian Decision Process*. Journal of Mathematics and Mechanics, 6(4), s. 679–684. [Bağlantı](http://www.iumj.indiana.edu/IUMJ/FULLTEXT/1957/6/56038)
 - Sutton, R. S. & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2. baskı). MIT Press. [Bağlantı](http://incompleteideas.net/book/the-book-2nd.html)
 - Williams, R. J. (1992). *Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning*. Machine Learning, 8, s. 229–256. [Bağlantı](https://doi.org/10.1007/BF00992696)
 - Sutton, R. S., McAllester, D., Singh, S. & Mansour, Y. (1999). *Policy Gradient Methods for Reinforcement Learning with Function Approximation*. NIPS 1999. [Bağlantı](https://papers.nips.cc/paper_files/paper/1999/hash/464d828b85b0bed98e80ade0a5c43b0f-Abstract.html)
