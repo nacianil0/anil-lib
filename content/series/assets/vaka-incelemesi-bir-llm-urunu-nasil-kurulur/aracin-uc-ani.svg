@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 360" role="img" aria-label="Soldan sağa üç duraklı bir zaman çizgisi: seçim, onaydan sonra ve her çağrı. Her durağın altında beş satır vardır. Güvenilen şey sırasıyla ad ve açıklama, tanımın değişmemesi ve kodun yalıtımı. Saldırı taklit ad ya da belge, onay sonrası değişim ve yalıtımdan kaçış. Ölçülen: seçim yüzde 96,7 ele geçiyor; üç dizin de kabul etti; üçüncü anda hakemli ölçüm yok. Denetim: ad önüne sunucu kimliği, belgeyi durdurmaz; tanım özetini sabitle, değişince yeniden onay; en az ayrıcalıklı kum havuzu. Belirtimde: öneri, yok, öneri. Altta bütün anlara yayılan araç zehirleme kutusu: yirmi ajan düzeninin ortalamasında başarı yüzde 36,5, en savunmasız modelde yüzde 72,8; taranan 73 gerçek sunucunun yüzde 5,5'inde, bizim hesabımızla 4 sunucuda, olası zehirleme.">
+  <defs>
+    <marker id="b115a-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+  <text x="20" y="26" font-size="13" fill="var(--text)">Bir aracın üç anı</text>
+  <line x1="20" y1="38" x2="720" y2="38" stroke="var(--border)" />
+
+  <line x1="120" y1="72" x2="712" y2="72" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b115a-ok)" />
+  <circle cx="214" cy="72" r="6" fill="var(--accent)" />
+  <circle cx="418" cy="72" r="6" fill="var(--accent)" />
+  <circle cx="622" cy="72" r="6" fill="var(--accent)" />
+  <text x="214" y="58" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">seçim</text>
+  <text x="418" y="58" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">onaydan sonra</text>
+  <text x="622" y="58" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">her çağrı</text>
+
+  <line x1="20" y1="92" x2="720" y2="92" stroke="var(--border)" />
+
+  <text x="20" y="114" font-size="13" font-weight="bold" fill="var(--text-muted)">güvenilen</text>
+  <text x="124" y="114" font-size="13" fill="var(--text)">ad ve açıklama</text>
+  <text x="328" y="114" font-size="13" fill="var(--text)">tanımın değişmemesi</text>
+  <text x="532" y="114" font-size="13" fill="var(--text)">kodun yalıtımı</text>
+
+  <text x="20" y="142" font-size="13" font-weight="bold" fill="var(--text-muted)">saldırı</text>
+  <text x="124" y="142" font-size="13" fill="var(--text)">taklit ad ya da belge</text>
+  <text x="328" y="142" font-size="13" fill="var(--text)">onay sonrası değişim</text>
+  <text x="532" y="142" font-size="13" fill="var(--text)">yalıtımdan kaçış</text>
+
+  <text x="20" y="170" font-size="13" font-weight="bold" fill="var(--text-muted)">ölçülen</text>
+  <text x="124" y="170" font-size="13" fill="var(--text)">seçim %96,7 ele geçiyor</text>
+  <text x="328" y="170" font-size="13" fill="var(--text)">üç dizin de kabul etti</text>
+  <text x="532" y="170" font-size="13" fill="var(--text)">hakemli ölçüm yok</text>
+
+  <text x="20" y="198" font-size="13" font-weight="bold" fill="var(--text-muted)">denetim</text>
+  <text x="124" y="198" font-size="13" fill="var(--text)">ad önüne sunucu kimliği</text>
+  <text x="124" y="216" font-size="13" fill="var(--text-muted)">belgeyi durdurmaz</text>
+  <text x="328" y="198" font-size="13" fill="var(--text)">tanım özetini sabitle,</text>
+  <text x="328" y="216" font-size="13" fill="var(--text)">değişince yeniden onay</text>
+  <text x="532" y="198" font-size="13" fill="var(--text)">en az ayrıcalıklı</text>
+  <text x="532" y="216" font-size="13" fill="var(--text)">kum havuzu</text>
+
+  <text x="20" y="244" font-size="13" font-weight="bold" fill="var(--text-muted)">belirtimde</text>
+  <text x="124" y="244" font-size="13" fill="var(--text)">öneri (SHOULD)</text>
+  <text x="328" y="244" font-size="13" font-weight="bold" fill="var(--accent)">yok</text>
+  <text x="532" y="244" font-size="13" fill="var(--text)">öneri (SHOULD)</text>
+
+  <line x1="20" y1="258" x2="720" y2="258" stroke="var(--border)" />
+
+  <rect x="20" y="270" width="700" height="76" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="292" font-size="13" font-weight="bold" fill="var(--text)">bütün anlarda: araç zehirleme, tanımın içindeki talimat</text>
+  <text x="32" y="312" font-size="13" fill="var(--text)">yirmi ajan düzeninin ortalamasında başarı %36,5, en savunmasız modelde %72,8</text>
+  <text x="32" y="332" font-size="13" fill="var(--text)">taranan 73 gerçek sunucunun %5,5'inde (bizim hesabımızla 4 sunucu) olası zehirleme</text>
+</svg>

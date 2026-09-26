@@ -472,8 +472,38 @@ ode_modules`, sonra kopyayi sil.
   genişlik viewport'un yarısıdır, telefonda pill min-content'e küçülür. Pill içine konan her düğme/etiket
   `whitespace-nowrap` olmalı, yoksa truncate metin aç kalır (bug-648). Pill metnini değiştirince 375px
   ekran görüntüsüne bak; e2e `toContainText` gizli span'leri de okuduğu için kesilmeyi yakalamaz.
+- Okuma sıfırlama protokolü (2026-09-25): `reading_progress` tombstone taşımaz; satır silmek cihazlardaki
+  localStorage'ı temizlemez. Çözüm `reading_resets.reset_version` (değişiklik sekansından) + istek/yanıtta
+  `resetVersion`. Geride kalan isteğin progress yazması onaylanır ama uygulanmaz ve cihaza cursor 0 ile tam
+  progress gönderilir. Hiç senkronize olmamış, boş cihaz `null` gönderip benimser. `mergeSyncResponse` sıfırlamada
+  progress + bekleyen progress op'larını düşürür; sağlayıcı açık makaleyi yeniden kaydeder; okuyucu yerelden
+  geri yüklenmiş eski konumdaysa başa döner. Senkron batch'i progress op'larını önce çalıştırır (reset ile
+  aynı kilit sırası).
+- E2E'de senkronu veritabanısız sınamak için `page.route("**/api/reader-sync")` ile yanıt uydur. Route'u
+  login sonrası kurarsan önceki sayfanın (/seri) isteği de yakalanır: kapıyı TÜM isteklere uygula,
+  "ilk istek" varsayma.
+- Playwright ekran görüntüsü hidrasyondan önce alınırsa input'lara `caret-color: transparent` enjekte eder
+  ve React "attributes didn't match" hidrasyon uyarısı verir; ürün hatası değildir.
+  `waitForLoadState("networkidle")` sonrası çek.
+- [2026-09-26] AI serisi tamamlandı (1–118, Batch 28). TRIGGER bakım kipinde; yeni makale/başlık yalnızca
+  kullanıcının kapsam uzatma kararıyla açılır. Sonraki bağlayıcı karar numarası #265 (HANDOFF).
+- [2026-09-26] Okuyucu kenar çubuğu artık faz başlığıyla öbekliyor ("Faz 14 · 0 / 9 · Sınır ve Sentez");
+  kategori farkı (115 `case-studies`) listeyi bölmüyor.
+- [2026-09-26] Yayıncı sayfalarının çoğu betiğe 403 verir (PNAS, ACM, SAGE, T&F, OUP, Science, HDSR):
+  bot duvarıdır, ölü bağlantı değil. Künye Crossref'ten, metin yazar PDF'i / ERIC / Europe PMC'den.
+  Ön baskının hakemli sürümü Crossref'te başlıkla aranır (CaMeL → SaTML 2026, HLE → Nature 649).
+- [2026-09-26] Git Bash'te `/seri/...` gibi `/` ile başlayan argümanlar Windows yoluna çevrilir;
+  `MSYS_NO_PATHCONV=1` kullan ve betiği göreli yolla çağır (mutlak `/c/...` yolu da bozulur).
 
 ## Do-Not-Repeat
+
+- [2026-09-25] İki adımlı onayda "kur" düğmesi ile "onayla (submit)" düğmesini aynı çocuk yuvasında
+  anahtarsız render etme: React aynı DOM `<button>`'ı yeniden kullanıp tıklama sürerken `type`'ı submit'e
+  çevirir ve ilk tıklama formu gönderir. jsdom bunu yakalamaz; gerçek Chromium render'ında dene. Farklı
+  `key` ver, kurma tıklamasında `preventDefault`, odağı güvenli seçeneğe taşı (bug-649).
+- [2026-09-25] Sunucudaki okuma verisini "silmek" tek başına sıfırlama değildir: istemci kopyaları ve
+  geri yüklenmiş viewport eski durumu geri yazar. Silme/sıfırlama tasarlarken her cihazın öğrenme ve
+  tepki yolunu (merge + açık okuyucu) birlikte kur (bug-650).
 
 - [2026-09-25] Paralel oturum aynı worktree'de dev/e2e sunucusu çalıştırırken ana dizinde `pnpm build` alma:
   paylaşılan `.next` birbirini siler (favicon run'ında build çıktısı 3100'deki e2e dev sunucusunca silindi).
@@ -746,6 +776,16 @@ ode_modules`, sonra kopyayi sil.
   Tek istisna olgusal olarak yanlış başlık (78) ve HANDOFF'a yazılır.
 - [2026-09-25] Bir bulguyu düzelttiğinde onu geri çağıran yazıları grep'le ve aynı turda hizala
   (30 → 31, 2 → 95); frontmatter özeti gövdeyle çelişirse özeti katalogla birlikte güncelle.
+- [2026-09-26] Kaynağın metnindeki toplam/oranı kendi tablosuyla toplamadan aktarma: Chen ve ark.'nın
+  "%99,7"si iki hücrenin toplamı (98,7) ile çelişiyordu; CaMeL'de metin 300, tablo 163 diyordu.
+- [2026-09-26] Bir kaynağı yeni makalede kullanırken onu anan eski makalelerin künyesini de kontrol et:
+  58 ve 71 "hakemsiz" diyordu, ikisi de 2026'da hakemli çıkmıştı.
+- [2026-09-26] Workflow betiğinde prompt metnini tek tırnaklı JS string'e koyma — Türkçe kesme işareti
+  (`'`) "Unexpected token" verir; template literal kullan.
+- [2026-09-26] shots.mjs'de ikinci temada şekil sayarken önceki `#__shot` klonunu önce kaldır; yoksa sayı
+  bir fazla çıkar ve `cloneNode` hatası gelir.
+- [2026-09-26] Kapanış makalesini kardeş serinin (BOUN) finaliyle çakışma açısından da kontrol et; 118'in
+  hatırlama bölümü ilk yazımda BOUN finalinin argüman sırasını izliyordu.
 
 ## Decision Log
 
@@ -1077,3 +1117,5 @@ otomatik türetmek — typo düzeltmesini de "yenilendi" gösterirdi.
   Bağımsız inceleme ajanı ayrıca şekil görüntüleyicide odak tuzağı sızıntısını yakaladı (başlığa
   tıklayınca odak body'ye düşüp sayfalı metni çeviriyordu): dialog köküne `tabIndex=-1` ve Tab
   işleyicisinde dışarıdaki odağı içeri alma.
+- **[2026-09-25] Okuma sıfırlama tasarımı:** Kullanıcı "anil için tüm okumalar sıfırlansın" dedi. Canlı Neon'a erişim yok ve prod salt okunur kuralı geçerli, bu yüzden SQL betiği yerine owner-only `/yonetim/[userId]` → "Okuma geçmişini sıfırla" özelliği eklendi. Migration `vercel-build` içinde otomatik uygulanır; kullanıcı deploy edip kendisi basar. Yalnız SQL DELETE reddedildi: cihaz kopyaları kalıyordu. Tombstone kolonu da reddedildi: tüm tüketicilerde filtre gerektirirdi. Sayaç tabanlı `reset_version` (saatsiz) seçildi. Yer imi ve işaretler varsayılan korunur, kutucukla silinir. Tek sınırlı doğrulama workflow'u (3 lens) iki bağımsız ajanla aynı orta bulguyu (bayat restore) yakaladı.
+- **[2026-09-26] AI serisi Batch 28 — seri kapanışı:** 115–118 yayımlandı; `+1` seriyi tamamlanmış state'e aldı (#254), TRIGGER bakım kipine geçti, `/seri` footerNote seri sayısı dili kullanmadan değişti. 49/53 işaretinin iki okuması 115'te ödendi (#255); 49'un "must" çevirisi bilerek değiştirilmedi (#256); 58/71/108/1/80'de revizyon işaretsiz künye/atıf düzeltmesi (#257). Model çöküşünün "replace" düzeni "yerine koyma" değil "değiştirme" (33/99 ile çakışma). İki sınırlı workflow (araştırma + doğrulama), yazım ve kabul ana oturumda.

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 438" role="img" aria-label="Solda tek bir düğüm: yapay genel zekâ. Ondan sekiz çizgi sekiz satıra gider; sütunlar tanım, sınav ve kimle kıyas. Turing 1950, ayırt edilemezlik: üç kişilik yazılı oyun; insan tanık. Legg ile Hutter 2007, geniş ortamlarda hedef: yok, hesaplanamaz; insan yok. Chollet 2019, beceri edinme verimliliği: ARC bulmacaları; sıradan insanlar. Kurum beyanı 2018, ekonomik işlerin çoğu: yok; insanlar. Anket soruları, her görev ya da meslek: yok, yalnızca soru; çalışanlar. Morris ve ark. 2024, seviye tablosu: henüz kurulmadı; nitelikli yetişkin, %50, %90, %99. Hendrycks ve ark. 2025, on bilişsel alan: el ile değerlendirme; iyi eğitimli yetişkin. Chollet 2024, karşıt görev üretimi: görev üretme yordamı; sıradan insanlar. Sınavı olmayan dört hücre vurgulu. Altta: dört satırda çalıştırılabilir bir sınav yok.">
+  <text x="20" y="26" font-size="13" fill="var(--text)">Bir ad, sekiz tanım: her biri başka sınav, başka insan</text>
+  <line x1="20" y1="38" x2="720" y2="38" stroke="var(--border)" />
+
+  <text x="176" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">tanım</text>
+  <text x="400" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">sınav</text>
+  <text x="568" y="64" font-size="13" font-weight="bold" fill="var(--text-muted)">kimle kıyas</text>
+  <line x1="170" y1="76" x2="720" y2="76" stroke="var(--border)" />
+
+  <rect x="20" y="216" width="130" height="48" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="85" y="236" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">yapay genel</text>
+  <text x="85" y="254" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">zekâ</text>
+
+  <line x1="150" y1="240" x2="168" y2="100" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="140" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="180" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="220" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="260" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="300" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="340" stroke="var(--border)" />
+  <line x1="150" y1="240" x2="168" y2="380" stroke="var(--border)" />
+
+  <text x="176" y="96" font-size="13" font-weight="bold" fill="var(--text)">Turing 1950</text>
+  <text x="176" y="112" font-size="13" fill="var(--text)">ayırt edilemezlik</text>
+  <text x="400" y="96" font-size="13" fill="var(--text)">üç kişilik yazılı</text>
+  <text x="400" y="112" font-size="13" fill="var(--text)">oyun</text>
+  <text x="568" y="96" font-size="13" fill="var(--text)">insan tanık</text>
+
+  <text x="176" y="136" font-size="13" font-weight="bold" fill="var(--text)">Legg ile Hutter 2007</text>
+  <text x="176" y="152" font-size="13" fill="var(--text)">geniş ortamlarda hedef</text>
+  <text x="400" y="136" font-size="13" font-weight="bold" fill="var(--accent)">yok: hesaplanamaz</text>
+  <text x="568" y="136" font-size="13" fill="var(--text)">insan yok</text>
+
+  <text x="176" y="176" font-size="13" font-weight="bold" fill="var(--text)">Chollet 2019</text>
+  <text x="176" y="192" font-size="13" fill="var(--text)">beceri edinme verimliliği</text>
+  <text x="400" y="176" font-size="13" fill="var(--text)">ARC bulmacaları</text>
+  <text x="568" y="176" font-size="13" fill="var(--text)">sıradan insanlar</text>
+
+  <text x="176" y="216" font-size="13" font-weight="bold" fill="var(--text)">kurum beyanı 2018</text>
+  <text x="176" y="232" font-size="13" fill="var(--text)">ekonomik işlerin çoğu</text>
+  <text x="400" y="216" font-size="13" font-weight="bold" fill="var(--accent)">yok</text>
+  <text x="568" y="216" font-size="13" fill="var(--text)">insanlar</text>
+
+  <text x="176" y="256" font-size="13" font-weight="bold" fill="var(--text)">anket soruları</text>
+  <text x="176" y="272" font-size="13" fill="var(--text)">her görev ya da meslek</text>
+  <text x="400" y="256" font-size="13" font-weight="bold" fill="var(--accent)">yok: yalnızca soru</text>
+  <text x="568" y="256" font-size="13" fill="var(--text)">çalışanlar</text>
+
+  <text x="176" y="296" font-size="13" font-weight="bold" fill="var(--text)">Morris ve ark. 2024</text>
+  <text x="176" y="312" font-size="13" fill="var(--text)">seviye tablosu</text>
+  <text x="400" y="296" font-size="13" font-weight="bold" fill="var(--accent)">henüz kurulmadı</text>
+  <text x="568" y="296" font-size="13" fill="var(--text)">nitelikli yetişkin</text>
+  <text x="568" y="312" font-size="13" fill="var(--text)">%50, %90, %99</text>
+
+  <text x="176" y="336" font-size="13" font-weight="bold" fill="var(--text)">Hendrycks ve ark. 2025</text>
+  <text x="176" y="352" font-size="13" fill="var(--text)">on bilişsel alan</text>
+  <text x="400" y="336" font-size="13" fill="var(--text)">el ile</text>
+  <text x="400" y="352" font-size="13" fill="var(--text)">değerlendirme</text>
+  <text x="568" y="336" font-size="13" fill="var(--text)">iyi eğitimli</text>
+  <text x="568" y="352" font-size="13" fill="var(--text)">yetişkin</text>
+
+  <text x="176" y="376" font-size="13" font-weight="bold" fill="var(--text)">Chollet 2024</text>
+  <text x="176" y="392" font-size="13" fill="var(--text)">karşıt görev üretimi</text>
+  <text x="400" y="376" font-size="13" fill="var(--text)">görev üretme</text>
+  <text x="400" y="392" font-size="13" fill="var(--text)">yordamı</text>
+  <text x="568" y="376" font-size="13" fill="var(--text)">sıradan insanlar</text>
+
+  <line x1="20" y1="404" x2="720" y2="404" stroke="var(--border)" />
+  <text x="20" y="422" font-size="13" fill="var(--text-muted)">Dört satırda çalıştırılabilir bir sınav yok (vurgulu hücreler).</text>
+</svg>

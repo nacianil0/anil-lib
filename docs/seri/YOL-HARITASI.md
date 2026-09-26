@@ -7,7 +7,7 @@
 > ve yayımlanmış numaralı vaatler asla). UI listesi `content/series/roadmap.json` ile başlık
 > düzeyinde senkron tutulur.
 
-Son güncelleme: 2026-09-13 · Yayında: 1–114 (Batch 0 … Batch 27) · Sıradaki güvenli başlangıç: 115
+Son güncelleme: 2026-09-26 · Yayında: 1–118 (Batch 0 … Batch 28) · **Seri tamamlandı:** yol haritasında yayımlanmamış başlık kalmadı; yeni başlık yalnızca kullanıcının açık talebiyle eklenir
 
 ## Serinin tezi
 
@@ -320,6 +320,8 @@ başına mekanik olarak tarandı — kendi numarasına gönderme yok, numaralı 
 
 **Numarasız ileri işaretler — Batch 27'de verildi.** Modeli bir ürün içinde güncel tutma sorusu (111 → 112, "bir sonraki makale"); bilginin henüz olmadığı yer (112 → 113, "bir sonraki makale"); ve zincirin üretim tarafından kullanım tarafına geçmesi (113 → 114 ve 114 → 115, "bir sonraki makale"). **Batch 27 üç işareti ödedi:** (a) **51'in eylem arayüzü işareti 111'de ödendi** — ALFWorld'ün dokuz şablonu tekrarlanmadan, gerçek bir kolda 256 kutu, sekiz tam sayı ve saniyede bir ile üç karar olarak; (b) **110'un "modeli bir gövdeye bağlamak" devri 111'de** karşılandı; (c) **39 ve 56'nın kalıcı bellek işareti 112'de ürün düzeyine taşındı** — üç aşama yeniden kurulmadı, "ağırlığa mı bağlama mı" kararına çevrildi ve kişiselleştirmede getirmenin ölçülmüş getirisiyle (%23,5 / %12,2) kapatıldı. Batch 27 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 113; 112–114 kendi kohortundaki önceki makalelere) yapıldı ve makale başına mekanik olarak tarandı — kendi numarasına gönderme yok, numaralı ileri gönderme yok. **Defterde açık numaralı koordinat yoktur.** Devrolan numarasız işaret: **49/53 → 115**. **Devrolan planlı tekrar yok.**
 
+**Numarasız ileri işaretler — Batch 28'de verildi ve seri kapandı.** 115 → 116 ("bir sonraki makale": alanın bilmediklerinin envanteri), 116 → 117 ("bir sonraki makale": "yapay genel zekâ" adının kaç şeyi adlandırdığı), 117 → 118 ("serinin son makalesi"). 118'in "Sırada ne var" bölümü bir sonraki makaleyi değil okurun kendi adımını işaret ediyor; bir sonraki makale **yok**. **Batch 28 kalan bütün işaretleri ödedi:** (a) **49/53 → 115** — defterdeki "MCP üçlüsü" (ana bilgisayar / istemci / sunucu) ile 49'un yalnızca "yerini işaretlediği" üç tehdit senaryosu (adı meşru bir sunucuya benzeyen sahte sunucu, kurulduktan sonra davranış değiştiren sunucu, yalıtımdan kaçış) bir aracın üç anı olarak kuruldu ve hakemli ölçümlerle karşılandı; 53'ün lojistik eğrisi ürün kararına çevrildi; denetim için tartışma, 64'teki ödemeye atıfla onay veren kullanıcının bilgi asimetrisine bağlandı. (b) **1'in "tarafların gerekçeleriyle karşılaşacaksın" işareti** 110'daki kısmi ödemeden sonra 116 ve 117'de kapandı: 117 "yapay genel zekâ" adının sekiz tanımını, her birinin sınavını ve iki tarafın ölçümünü verdi. (c) **1'in açılış sözü** (birincil çalışmaları okumak, deney tasarlayıp ölçmek, küçük bir modeli elle kurup maliyeti hesaplamak) ve **2 ile 3'ün "serinin sonuna kadar" işaretleri** 118'de adıyla karşılandı. Batch 28 yeni bir numaralı koordinat **açmadı**; dört makalenin metin içi numaralı göndermelerinin tamamı yayımlanmış makalelere (≤ 117) yapıldı ve makale başına mekanik olarak tarandı — kendi numarasına gönderme yok, numaralı ileri gönderme yok. **Defterde açık numaralı ya da numarasız işaret kalmadı; seri tamamlandı.**
+
 ## Fazlar ve başlıklar
 
 ### Faz 1 — Sıfırdan Modele: Öğrenmenin Temelleri (1–10)
@@ -486,10 +488,10 @@ farklıdır: yeni konu değil, kurulmuş bilginin tek bir vaka üzerinde sentezi
 112. **Sürekli Öğrenme ve Kişiselleştirme** — bir modeli güncel tutmanın dört yolu ve dört ayrı faturası; rank-bir güncellemenin kimliği (dik anahtarlara dokunmaz), sonuçların taşınmaması (99,8 ↔ 20,2), devre dışı bırakan düzenleme (3,339×10⁻⁴ ↔ 8,156×10⁻⁷) ve yerelleştirme–düzenleme bağıntısının sıfıra yakınlığı. **39/56'nın ürün düzeyi işareti ödendi.** `[yayında]`
 113. **Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM** — 35'in üretmek–doğrulamak asimetrisi laboratuvarda: doğrulama maliyetinin dört değeri (saklanmış deney, puanlama programı, matematikçinin kanıtı, kimyagerin ayları) ve hakemli iki itirazın mekanizma önerisi (düzensiz katı arama uzayında yok). `[yayında]`
 114. **Vaka İncelemesi: Bir Sınır Model Nasıl Yapılır?** — serinin ilk vaka incelemesi; tek bütçe, altı karar, iki ayrı sütun: maliyetin dağılımı ile geri alınamazlığın dağılımı ters. Post-training %1,78 tutup 1,3 ↔ 175 milyarı yeniyor. Kategori `case-studies` (karar #233), başlık Türkçeleştirildi (karar #240). `[yayında]`
-115. **Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?** — mühendislik sentezi (41–60'ın geri çağrımı).
-116. **Açık Sorular: Alanın Bilmedikleri** — dürüst envanter.
-117. **AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri** — kavramsal temizlik.
-118. **Son Adım: Haritayı Yeniden Çizmek** — serinin sentezi; okuyucunun araştırmacı/mühendis yol haritası.
+115. **Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?** — kullanım tarafının zinciri: model en kolay değişen halka (aynı ad altında 84,0 → 51,1; ortalama 0,17 kıpırdarken %10,27 ters dönüş), embedding modeli dizini bağlıyor ama geri alma maliyeti küçük, bir aracın üç anı (seçim, onaydan sonra, her çağrı) ve geri alınamaz kenar: yazan eylem, çıkan veri, gelen tanım. Kenara mimariyle konan denetim ölçüldüğü yerde güçlü, insan onayı zayıf. **49/53'ün numarasız işareti ödendi.** Kategori `case-studies` (karar #233). `[yayında]`
+116. **Açık Sorular: Alanın Bilmedikleri** — bilinmeyenin üç türü (ölçen aracı yok / ölçülmüş ama açıklanmamış / ölçümleri koşula göre ayrışan) ve türü değiştiren iş; değerlendirme farkındalığının etkisi modelden modele işaret değiştiriyor (−7,4 ↔ +21,7), ölçek yasasının açıklamalarını ayıran fark (0,006) iki ölçüm arasındaki farktan (0,007) küçük, öz-düzeltme tartışması koşul okununca eriyor. `[yayında]`
+117. **AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri** — bir ad, sekiz tanım; her tanımın sınavı ve kıyas insanı (dördünün çalıştırılabilir sınavı yok); Turing testi geçiliyor ama insana benzerliği ölçüyor; görev ufkunun eğimi sağlam, seviyesi eşiğe ve kıyas insanına bağlı; anketler tarih değil sözcüklere duyarlılığı ölçüyor. Kehanet yok. **1'in "tarafların gerekçeleri" işareti kapandı.** `[yayında]`
+118. **Son Adım: Haritayı Yeniden Çizmek** — serinin son makalesi: 100'ün haritası ve 114'ün zincirinden sonra üçüncü biçim, iki kollu bir yordam (iddia okurken / sistem kurarken; on iki soru, durma noktaları); yordam 115 ve 113'ün ölçümlerinde işletiliyor; ilk makalenin sözleri ve hatırlama pratiği. Yeni ölçüm yok. **Faz 14 ve seri tamamlandı.** `[yayında]`
 
 ## Eski fikirlerin entegrasyonu (2026-08-28 revizyonunun izlenebilirliği)
 
@@ -663,6 +665,10 @@ kavram-tekrar tablolarına yazıldı.)
 - 112 ← **111 ("dünya hareket ediyor" devrinin ürün katmanına taşınması)**, **39 ve 56 (BAĞLAYICI OLMAYAN İŞARET: kalıcı belleğin üç aşaması ve iç durum ORADA kuruldu; 112 tekrarlamadı, "ağırlığa mı bağlama mı" kararına çevirdi ve ölçüsünü verdi)**, **19 (unutma; sürekli ön eğitim ve düşük ranklı uyarlama)**, **68 (unutturma) ve 56 (seçici unutma) — üç sözcüğün ayrımı gövdede adlandırıldı**, **92 (rank-bir güncelleme; 112 iki satırlık sayısal örneğini kurdu)**, **74–77 (yerelleştirme araçları; "yer bilmek düzenleyebilmek değildir" oraya bağlandı)**, **110 (okunabilir temsil ↔ doğru model; kardeş cümle)**, 105 (hizalama vergisi 0,77 — ikinci yolun ölçülmüş faturası), 41–44 (getirme bir güncelleme alternatifi), 109 (kademeli sonra ani kopuşun biçimi), 71 (ölçütün bir vekil olması), 106–109 (baştan eğitmenin bedeli) `[yayında]`
 - 113 ← **112 ("bilgi eskiyor" ↔ "bilgi henüz yok" devri)**, **35 (üretmek–doğrulamak asimetrisi ORADA kuruldu; 113 onu laboratuvara taşıdı ve doğrulayıcıyı model olmaktan çıkardı)**, **99 ve 102 (ön kayıt ve bağımsız doğrulama; CASP ikisinin kurumsallaşmış hâli olarak okundu)**, **101 (güven aralığıyla verilen ölçüm)**, **110 (durum uzayı gerçek durumu içermiyorsa ölçüm ne söyler — düzensiz katı örneği)**, **17 (uydurma; değerlendiricinin varlık sebebi)**, 77 (gradyan tabanlı atıf bir sanıyı daraltmak için kullanıldı), 111 (yan ürün ↔ peşin ödenmiş altyapı ayrımının kardeşi), 16 ve 71 (ölçülemeyen iddianın ağırlığı), 98 (iddia, kanıt ve kanıtın menzili) `[yayında]`
 - 114 ← **8 (6ND ve 3,8×10²⁵; veri hattı)**, **9 (bütçenin bölünmesi; Chinchilla tahsisi)**, **15 (tokenizer: pay sıfır, bağlayıcılık en yüksek)**, **11–13 (post-training; %1,78 ve 1,3 ↔ 175 milyar)**, **106–109 (planın faturaya dönüştüğü halka; kullanım oranı ve `√(2δM)`)**, **72 (okunan geri okunmaz: değerlendirme kararı veri kararında alınır)**, **20 ve 61–70 (yayım: geri alınması kurumun elinde olmayan tek karar; yayım gradyanı ve yapısal erişim)**, **100 (AYRIM AÇIKÇA YAPILDI: 100 harita, 114 zincir — yer ↔ sıra)**, 26 ve 28 (çıkarım maliyetinin ömür boyu ödenmesi), 71 (geçerlilik zinciri), 102 ve 80 (hangi halkanın belgelendiği), 105 (0,77'lik vergi), 99 (geri alma maliyeti bir tasarım ölçütü), 64 (ilkeleri kimin yazdığı: FLOP'la tartılamayan halka) `[yayında]`
+- 115 ← **114 ("bir sonraki makale" devri: aynı iki soru masanın öbür tarafında; geri alma maliyeti)**, **49 ve 53 (BAĞLAYICI OLMAYAN İŞARET: MCP'nin üç rolü, üç tehdit senaryosu ve lojistik eğri — ödendi; 49'un numaraları tekrarlanmadı, aracın üç anı olarak yeniden kuruldu)**, 51 (dil modeli ajanı = model kullanan sistem), 52 (gönderilmiş e-posta, çalıştırılmış ödeme), 58 (kum havuzu katları; üç koşul; araç süzgeci), 59 (insan onayı; insan artı yapay zekâ ortalamada daha kötü), 60 (tur × pencere; basamaklama ve yönlendirici), 64 (tartışmanın kazancı bilgi asimetrisine bağlı), 66 (geri alınan güncelleme), 20 (kullanımdan kaldırma), 29 (aynı uzay koşulu), 101 (eşleştirilmiş karşılaştırma), 109 (gözlemin üç katmanı), 112 (ağırlık ↔ bağlam: silinebilirlik), 28 ve 47 (istek başına gecikme; pass^k).
+- 116 ← 115 ("bir sonraki makale" devri: "bu ölçülmedi" diye biten cümleler), **110 (tartışmada neyin kanıt sayılacağı)**, 9 (ölçek yasasının biçimsel statüsü), **96 (rastgele etiket testi — birinci türü ikinci türe çeviren araç)**, 23 (örnekle öğrenmenin açık hipotezi), **35 ve 14 (öz-düzeltme ve model çöküşü — koşul okunarak eriyen tartışmalar)**, 78 ve 34 (beliren yetenekler, pekiştirmenin sınırı), 67, 70, 79, 94 (ölçen aracı olmayan sorular), 109, 112, 75 (ölçülmüş ama açıklanmamış), 29, 108, 113 (koşulu içinde cevaplanmış), 114–115 (geri alma maliyeti ↔ kanıt ikilemi).
+- 117 ← **1 (BAĞLAYICI OLMAYAN İŞARET: alan tanımı, Turing'in hamlesi ve "tarafların gerekçeleriyle karşılaşacaksın" — kapandı)**, 116 (aynı adın iki işlemi taşıması), 110 (sınavın derinliği), 71 (yapı ↔ görevleştirme), 31 ("yeni" hedef), **40 (görev ufku: 207 gün, %80 ufku, adım başına hata modeli — yetmiş yedi makale aralıklı; kehanet için değil eğim ile seviyenin ayrımı için)**, 55 (−%19 alan deneyi), 61 (hizalama bir yetenek sorunu değildir), 111, 44, 112 (tanımların neyi "genel" saydığı).
+- 118 ← **1–117** (serinin kapanışı). Omurga: 16, 80, 97–102, 104, 110 (iddia okuma kolu), 35, 40, 47, 90, 108, 109, 111, 113–115 (sistem kararı kolu), **115 (yordamın işletildiği ölçüm: Chen ve ark.)**, **113 (sağ kolun işletildiği vaka: protein ↔ malzeme)**, **1–3 (açılış sözü ve "serinin sonuna kadar" işaretleri — adıyla karşılandı)**, 10 ve 65 (akıcılık ↔ doğruluk; kalibrasyon). **100 ve 114 ile çakışma bilinçli olarak önlendi:** haritadan ve zincirden sonra üçüncü biçim bir yordam.
 
 **Faz düzeyinde bağımlılıklar (yeni fazlar; makale-düzeyi satırlar ilgili batch hazırlığında yazılır):**
 
@@ -1606,6 +1612,81 @@ MCP üçlüsü (49/53 → 115).
 | Yetenek eşiği ve gerekli korumalar; kritik yetenek düzeyi; koşullu taahhüt | 70 | — | 71, 78, 116 |
 | Güvenlik savunması ve dört argüman: yapamaz, kontrol altında, güvenilir, danışılabilir | 70 | — | 71, 74, 77, 116 |
 | Yetenek çıkarma; erken uyarı eşiği; ağırlık güvenliği kademeleri | 70 | — | 71, 79, 80 |
+
+### Batch 28'de gerçekleşen tekrarlar (planlananların tahsili) — defterin son bölümü
+
+Batch 27 bu defterde ayrı bölüm açmadı; tahsili "Numarasız ileri işaretler — Batch 27'de verildi" paragrafında
+duruyor. Aşağıdaki liste defterin bütün tablolarında 115–118'e planlanmış satırların makale metinleriyle
+(geri gönderme numarası **ve** kavramın kendisi) eşlenmesinden çıktı; yalnızca numara anılıp kavram
+kurulmadıysa tahsil sayılmadı.
+
+- **Ölçek yasası (9 → 116), yüz yedi makale aralıklı — serinin en uzun ertelemesi.** 9'da biçimsel statüsü
+  "ampirik düzenlilik" diye bırakılmıştı; 116 onu ikinci türün (ölçülmüş, açıklanmamış) örneği yapıyor ve iki
+  kuramın ayırt edici tahminini (0,077 ↔ 0,083) koyuyor.
+- **Model çöküşü (14 → 116), yüz iki makale aralıklı: tekrar değil KOŞULA BAĞLAMA.** 14'te olgu kurulmuştu;
+  116 değiştirme ↔ biriktirme formülleriyle "çöküyor mu" sorusunu "hangi düzende" sorusuna çeviriyor.
+- **İlk token süresi ve çıktı token'ı başına süre (28 → 115):** ürün göstergelerinin istek başına katmanı.
+- **Tek vektörün boyut sınırı (29 → 116), yetmiş dokuz makale aralıklı:** "koşulu içinde cevaplanmış" türün
+  örneği. **Pekiştirmenin sınırı (34 → 116)** ve **beliren yetenekler (78 → 116):** "koşulları farklı
+  ölçümler" türünün iki örneği.
+- **Akıl yürütmenin tanımındaki "yeni" (31 → 117):** 116'ya planlanmıştı, 117'de Chollet'nin beceri edinme
+  verimliliğine bağlandı.
+- **Görev ufku (40 → 117), yetmiş yedi makale aralıklı:** zaman içinde izlenebilen tek ölçü; 207 günlük
+  ikiye katlanma ve kendi hesabımızla ekstrapolasyonun duyarlılığı. **Uzun pencere getirmeyi gereksiz kılmaz
+  (44 → 117):** bir kurum beyanının AGI yol haritasındaki "devasa bağlam penceresi" hamlesine karşı.
+- **Dil modeli ajanı = model kullanan sistem (51 → 115), çoklu ajanın gerekçeleri ve lojistik eğri (53 →
+  115), onay ve otomasyonun insan tarafı (59 → 115), fatura tur × pencere, basamaklama ve yönlendirici
+  (60 → 115), tartışma ↔ danışmanlık (64 → 115):** 115'in halkaları bu satırlardan kuruldu; 53'ün lojistik
+  eğrisi defterde "devir: 115" diye bekliyordu ve ödendi.
+- **Dalkavukluk (66 → 115): tekrar değil YENİ NESNE.** Dört biçim yeniden anlatılmadı; bir sağlayıcının
+  dalkavukluğu artıran güncellemesi sürüm sabitleme gerekçesine çevrildi.
+- **Değerlendirme farkındalığı / hizalama taklidi (67 → 116), yetenek çıkarımının tamlığı (70 → 116),
+  sertifikalı sağlamlık (79 → 116):** üçü de "aracı yok" türünün örnekleri oldu.
+- **Aşırı optimizasyon / vekil (13 → 118):** 116'ya planlanmıştı; 118'in beşinci sorusu oldu (13, 16, 110).
+- **FLOP bir zaman birimi değildir (108 → 116) ve hangi cetvelin geçerli olduğu (108 → 118).**
+- **Gözlemin üç katmanı (109 → 115)** ürün göstergelerine; **kayıp sıçraması (109 → 116)** örnekle öğrenmenin
+  kara kutusuna bağlandı.
+- **110'un dünya modeli işareti (110 → 117, 118):** 117 tartışmanın kalan kısmını aldı, 118 yeterince aranan
+  vekilin kırılmasını beşinci soruya koydu.
+- **Ön eğitim anlamsal yarıyı taşır (111 → 117); eylem arayüzü (111 → 118)** dördüncü soru oldu.
+- **Güncellemenin dört yolu ve ağırlık ↔ bağlam kararı (112 → 115):** geri alınabilir bölgenin halkaları.
+  **Yerelleştirilebilir olmak düzenlenebilir olmak değildir (112 → 116):** gösterge bulunamayan sıçramanın
+  yanında.
+- **Üretmek ↔ doğrulamak ve doğrulamanın önce hazır olması (113 → 116, 118):** 118'de "doğrulama hazır mı".
+- **Maliyet ↔ geri alınamazlık ters (114 → 115, 118):** 115'in tezinin kendisi ve 118'in ikinci sorusu.
+
+Planlanıp **tahsil edilmeden kapananlar** (seri tamamlandığı için devretmez): yüzeysel hizalama (12 → 116),
+veri rızası ve lisans (14 → 116), kuantizasyon kırılganlığı (27 → 116), sürekli yığınlama ve parçalı ön dolum
+(28 → 115), yerel maske (30 → 116), içerik etkisi (31 → 118), doğrusallaştırılmış alt grafik (31 → 116),
+çıkarım ↔ eğitim takası (33 → 115), arama ağacı (36 → 116), ürün anlamında bellek ve olaysal bellek (39, 56 →
+115; 115'te yalnızca "kayıt silinir" halkası olarak), rol oyunu ve işlem yordamı (53 → 115), insan hızlanması
+(55 → 115), insanla kıyasın bütçeye bağlılığı (57 → 115), tamamlayıcılık (59 → 115), seçici tahmin (65 → 115),
+kimin görüşü (66 → 115), ölçeklenebilir denetim (64 → 116), hizalama taklidi dışındaki 67 satırları (entrika,
+yetenek saklama → 116), yönetişim katmanları (69 → 116), sistem kartı ve üç katmanlı denetim (80 → 116),
+Myhill–Nerode ölçütleri ve eğitim dağılımının kapsamı (110 → 116, 117), ucuz kaynak ve metnin yan ürün olması
+(111 → 115, 116, 118), rank-bir güncelleme (112 → 116, 117), çeşitliliğin ucuzlamaması (113 → 116, 117),
+FLOP'la tartılamayan iki halka (114 → 115, 116, 118). Bunların hiçbiri yayımlanmış bir metinde **söz verilmiş**
+bir ödeme değildi — numaralı koordinat değil, plan satırıydı — o yüzden okura borç bırakmıyor. Bakım
+turlarında bir makaleye gerçek bir gerekçeyle girilirse bu liste aday gösterir; kendi başına iş üretmez.
+
+### Batch 28'de ilk kurulan kavramlar ve planlanan uzun aralıklı tekrarları
+
+| Kavram | Kuruldu | Yakın tekrar | Planlanan uzun aralıklı tekrar |
+|---|---|---|---|
+| Model en kolay değişen halkadır; sürüm sabitleme; ters dönüş | 115 | 118 (Chen ölçümü yordamın işletildiği örnek) | — (seri tamamlandı) |
+| Aracın üç anı: seçim, onaydan sonra, her çağrı; onay sonrası değişim | 115 | — | — |
+| Geri alınamaz kenar: yazan eylem, çıkan veri, gelen araç tanımı | 115 | 116 (kanıt ikilemine araç), 118 ("geri alınabilir mi") | — |
+| Geriye doldurma; dizin model sürümüne bağlıdır | 115 | — | — |
+| Bilinmeyenin üç türü ve türü değiştiren iş | 116 | 117 (iki ölçüm iki ayrı soruya cevap), 118 (okuma gündemi; hatırlama tartışması üçüncü türden) | — |
+| Ayırt edici tahmin; kanıt ikilemi | 116 | — | — |
+| Değiştirme ↔ biriktirme (n·u ↔ π²/6·u sınırı) | 116 | — | — |
+| Bir ad, sekiz tanım; tanımı sınav ve kıyas insanıyla okumak | 117 | — | — |
+| HLMI ↔ FAOL; soru biçiminin tahmini taşıması | 117 | — | — |
+| Beceri edinme verimliliği; yetenek çarpıtması | 117 | — | — |
+| İki kollu yordam: sıradaki soruyu önceki cevap seçer | 118 | — | — |
+
+Seri tamamlandığı için bu tablonun son sütunu boştur; yeni kurulan kavramlar için planlanmış uzun aralıklı
+tekrar yoktur.
 
 ### Batch 26'da gerçekleşen tekrarlar (planlananların tahsili)
 
@@ -2933,6 +3014,20 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | devre dışı bırakan düzenleme | (disabling edit) | 112 | modeli tek başına kullanılamaz hâle getiren tek bir güncelleme; ağırlıktaki izi sıradan düzenlemelerin yaklaşık 400 katı (3,339×10⁻⁴ ÷ 8,156×10⁻⁷ ≈ 409; 2026-09-25'te 'üç mertebe' düzeltildi) |
 | dışbükey zarf | (convex hull) | 113 | malzeme keşfinde termodinamik kararlılık sınırı; gövdede ilk geçişten sonra "kararlılık sınırı" ile eşanlamlı |
 | sınır model | (frontier model) | 70 | alanın en yetenekli modelleri. 114'ün başlığı bu yerleşik karşılıkla Türkçeleştirildi (karar #240); gövdelerde on sekiz geçişte zaten kullanılıyordu |
+| sürüm sabitleme | (version pinning) | 115 | takma ad yerine tarihli bir model sürümünü çağırmak ve geçişe kendin karar vermek |
+| ters dönüş | (negative flip) | 115 | eski modelin doğru, yenisinin yanlış cevapladığı örnek; oranı bütün örnekler üzerinden tanımlanır. 55'teki **gerileme testi** ile akrabadır, aynı şey değildir |
+| geriye doldurma | (backfilling) | 115 | embedding modeli değişince dizindeki bütün eski belgeleri yeni modelle yeniden hesaplamak. "Yeniden gömme" **yasak** ("gömme" yasaklı biçim) |
+| onay sonrası değişim | (rug pull) | 115 | kurulumda onaylanan araç tanımının sonradan değişmesi; 49'daki "kurulduktan sonra davranış değiştiren sunucu" |
+| geri alınamaz kenar | — | 115 | ürünün dünyaya değdiği yer: yazan eylem, dışarı çıkan veri, dışarıdan gelen araç tanımı. İçerideki her şey yeniden koşulabilir |
+| yetenek çıkarımı | (capability elicitation) | 70 | bir ölçümün elde edilebilir en yüksek yeteneği çıkardığını göstermek; 116'da ölçen aracı olmayan soruların örneği |
+| ayırt edici tahmin | — | 116 | rakip açıklamaların farklı sonuç verdiği sayı; aynı eğriye uyan açıklamaları ancak o ayırır |
+| kanıt ikilemi | (evidence dilemma) | 116 | Uluslararası Yapay Zekâ Güvenliği Raporu'nun (hakemli değildir) adlandırması: sınırlı kanıtla hareket etmek ↔ güçlü kanıtı beklemek |
+| yapay genel zekâ | (artificial general intelligence, AGI) | 117 | "AGI" kısaltması serbest. Tek bir tanımı yok; 117 sekiz tanımı sınavları ve kıyas insanlarıyla ayırır |
+| yüksek düzey makine zekâsı | (high-level machine intelligence, HLMI) | 117 | Grace ve ark. anketinde: her görevin makinelerce insanlardan daha iyi ve daha ucuz yapılabilmesi |
+| işlerin tam otomasyonu | (full automation of labor, FAOL) | 117 | aynı ankette: her mesleğin otomasyonu; HLMI ile arasındaki fark yazarlarca çerçeveleme etkisi olarak okunur |
+| beceri edinme verimliliği | (skill-acquisition efficiency) | 117 | Chollet'nin (hakemli olmayan) zekâ tanımı; ARC'nin dayandığı tanım |
+| yetenek çarpıtması | (capability contortion) | 117 | Hendrycks ve ark. (hakemli değildir): bir eksikliği başka bir yetenekle kapatmak, ör. uzun süreli bellek yerine devasa bağlam penceresi |
+| taklit oyunu | (imitation game) | 1, 117 | Turing testinin özgün adı; 117'de üç kişilik yazılı biçimi kuruldu |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -5417,6 +5512,153 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     çizgisiyle kuruldu. (f) **Sayım tutarsızlığı dürüstçe yazıldı:** otonom laboratuvar çalışmasının özeti
     57 hedeften 36, dergi özeti 58'den 41, itiraz ise 43 ürün diyor; 113 makalenin kendi özetindeki sayıyı
     kullandı ve sayımın farklı yerlerde farklı verildiğini söyledi.
+
+247–253. **2026-09-25 editoryal yenileme turunun kararları** (revizyon işareti, LF'ye normalleştirilmiş hash, şekil
+    tabanı 1, mekanik kapılar, terim kararları, 78'in başlık istisnası, özet hizalaması). Ayrıntı HANDOFF'un
+    "Editoryal yenileme turu" bölümünde ve SOZLESME v2.2 değişiklik notunda; numara sürekliliği için burada anılıyor.
+
+254. **Seri tamamlandı (Batch 28, 2026-09-26).** 118 yol haritasının son başlığıydı; `roadmap.json`'da `planlandi`
+    satırı kalmadı. SOZLESME §7'nin "kalan makale `N`'den azsa doldurma konusu icat edilmez" hükmü gereği yeni başlık
+    **icat edilmedi**. `docs/seri/TRIGGER.md` BOUN'un 2026-09-12 emsaliyle **bakım kipine** alındı: `BATCH` satırı
+    tarihsel olarak duruyor, trigger artık yeni makale üretmiyor. Kapsamın uzatılması kullanıcı kararıdır ve HANDOFF'ta
+    soru olarak değil state olarak yazıldı. Tek kod dokunuşu `/seri` giriş sayfasının `footerNote`'u oldu
+    (`src/app/seri/page.tsx`): "Seri tamamlandı; bundan sonrası düzeltme ve güncellemedir. Gözden geçirilen yazılar
+    metnin üstünde işaretlenir." — seri sayısı dili kullanılmadan (SOZLESME §2'nin ruhu; BOUN'un notu sayı taşıyordu).
+
+255. **49/53 işaretinin iki okuması, ikisi de 115'te ödendi.** Kavram-tekrar defterindeki "MCP üçlüsü" satırı
+    (ana bilgisayar / istemci / sunucu; sunucu sohbeti görmez) ile HANDOFF'un tarif ettiği üç tehdit senaryosu (benzer
+    adlı sahte sunucu, kurulduktan sonra davranış değiştiren sunucu, yalıtımdan kaçış) aynı işaretin iki okumasıydı;
+    115 ikisini de kurdu: üçlü, "aracın üç anı"nın zemini; senaryolar, üç anın saldırıları. 53'ün lojistik eğrisi ürün
+    kararına çevrildi; **denetim için tartışma 64'te zaten ödenmişti** (Kenton ve ark.), 115 yalnızca onay veren
+    kullanıcının bilgi asimetrisine bağladı ve 48 → 76 / 60 → 88 sayılarını tekrarlamadı.
+
+256. **49'un belirtim cümlesi değiştirilmedi.** 49 belirtimin genel ilkeler bölümündeki küçük harfli "must"ı
+    "almalıdır" diye aktarıyor; belirtim kendi kuralı gereği yalnızca büyük harfli anahtar sözcükleri bağlayıcı sayıyor
+    ve araç bölümündeki bağlayıcı cümle SHOULD. 49'un cümlesi ilkeler metninin sadık çevirisi olduğu için dokunulmadı;
+    normatif düzey 115'te açıkça yazıldı ("genel ilkeler bölümü aynı şeyi daha kesin bir dille yazıyor…"). İki
+    doğrulayıcı ajan da bunu 49'a düzeltme önerisi olarak not etti; karar gerekçesiyle burada.
+
+257. **Yayımlanmış makalelerde künye ve atıf düzeltmeleri (revizyon işareti YOK — SOZLESME §12 "tek bir künye
+    düzeltmesi").** (a) **58:** CaMeL (Debenedetti ve ark.) hakemsiz ön çalışma değil, **IEEE SaTML 2026, s. 587–618**;
+    gövde cümlesi ve künye güncellendi. (b) **71:** Humanity's Last Exam hakemsiz değil, **Nature 649 (2026)**; gövde,
+    künye ve yazar sırası (Crossref sırası: Phan, Gatti, Li, Khoja…) güncellendi. (c) **108:81** "cevap hangi cetveli
+    seçtiğine bağlı" cümlesini 101'e atfediyordu; cümle 96:27'de (ve 100, 102'de) — atıf **96**'ya çevrildi.
+    (d) **1:** Turing künyesine cilt ve sayfa eklendi (Mind 59(236), 433–460). (e) **80:** Mökander ve ark. yılı 69 ile
+    hizalandı (AI and Ethics 4, 2024; çevrim içi 2023). Hepsinin hash'i `sync-series-hashes.cjs --write` ile
+    senkronlandı. Kaynağın güncel durumunu kontrol etme kuralı (SOZLESME §4) bu run'da üç kalemi yakaladı.
+
+258. **Kaynak metnindeki bir toplama hatası kaydedildi.** Chen, Zaharia ve Zou (HDSR 2024) Haziran GPT-4'ünün
+    sayıların "%99,7"sine bileşik dediğini yazıyor, ama kendi şeklindeki iki hücrenin toplamı 49,9 + 48,8 = **98,7**;
+    99,7, aynı paragraftaki 51,1 doğrulukla aritmetik olarak bağdaşmıyor (tavan 50,3 olurdu). 115 ve 118 **98,7**'yi
+    kullanıyor ve kaynağın metnindeki sayının bir toplama hatası olduğunu açıkça yazıyor. Bu, doğrulama ajanının
+    aritmetik tutarlılık denetiminden çıktı; araştırma dosyası sayıyı kaynaktan olduğu gibi aktarmıştı.
+
+259. **Terim kararları (Batch 28).** Yeni kurulanlar: "sürüm sabitleme (version pinning)", "ters dönüş (negative
+    flip)", "geriye doldurma (backfilling)" — "yeniden gömme" yasaklı biçim olduğu için kurulmadı —, "onay sonrası
+    değişim (rug pull)", "geri alınamaz kenar" (115); "ayırt edici tahmin", "kanıt ikilemi (evidence dilemma)" (116);
+    "yapay genel zekâ (artificial general intelligence, AGI)", "yüksek düzey makine zekâsı (HLMI)", "işlerin tam
+    otomasyonu (FAOL)", "beceri edinme verimliliği (skill-acquisition efficiency)", "yetenek çarpıtması (capability
+    contortion)", "taklit oyunu" (117). **118 yeni terim kurmadı.** **Çakışmalar:** (a) 116'da model çöküşünün
+    "replace" düzeni için "yerine koyma" **kullanılmadı**, çünkü seride (33, 99) yerine koyarak örnekleme anlamı taşıyor;
+    düzen "değiştirme" diye adlandırıldı ve şekil etiketi buna çekildi. (b) "Kayma" (79'da dağılım kayması) model sürüm
+    değişimi için kullanılmadı; "davranış değişimi" denildi. (c) "Gözlemlenebilirlik" (67'de izlenebilirlik akrabası)
+    yerine 109'un "gösterge / katman" dili sürdürüldü. (d) "Sızıntı" (102'de veri sızıntısı) mahremiyet için
+    kullanılmadı; 58'in "veri sızdırma"sı sürdürüldü. (e) "Yetenek çıkarımı" (70) ilk kez deftere satır olarak girdi.
+
+260. **Sayılar (Batch 28).** **115:** Chen ve ark. 84,0 → 51,1 (bin sayı, CoT, Mart → Haziran 2023), bileşik oranı
+    98,7 (kaynak metni 99,7), talimat uyumu 99,5 → 0,5; MUSCLE HellaSwag 72,74 → 72,91, ters dönüş %10,27 (bütün
+    örnekler üzerinden); Shen IJB-C 59,34 / 0,0 / 76,88; Hu %22–31; Morris 35 dolar (ada-002, 2023 fiyatı), geri kurma
+    GTR-base %92, ada-002 %60,9 ve uzun metinde %8; ToolHijacker (GPT-4o, MetaTool) saldırısız doğru seçim 99,6, tek belge eklenince saldırganın aracını
+    seçme 96,7 (ToolBench 88,2); Song 3/3 dizin,
+    15/20 seçim, 12/20 en az birini tanıma, 1/20 dördünü; MCPTox 45 / 353 / 1.348 / 20 düzen, %36,5 ortalama, o1-mini
+    %72,8, ret <%3; Hasan 583'ten rastgele, taranan 73'ün %5,5'i; AgentDojo 57,69 → 6,84, yarar 69,0 → 73,13, süzgecin
+    sınırı %17; CaMeL politikasız ayrımla 949 saldırının başarılıları sıfıra (kaynak metni 300, tablosu 163), yarar o3
+    84,5 → 77,3, Gemini 2.5 Pro 73,2 → 41,2, politika tetiklenmesi NORMAL %33,87 / STRICT %53,23 (model belirtilmemiş).
+    **116:** Abdelnabi–Salem QwQ-32B 70 ↔ 36 (150 çiftlik araç çağrısı kümesi), bastırma QwQ −7,4, Qwen3 +21,7,
+    güçlendirme üçünde de artış; Zhang CIFAR-10 Inception 85,75 ↔ 9,78; Michaud α_N ≈ 0,083 (Pythia ilk altı),
+    Kaplan α_N 0,076 ve **α_D 0,095** (erken durdurmalı); tahminler 0,077 ↔ 0,083; Huang GPT-4 GSM8K 95,5 → 89,0
+    (200 soru); SCoRe MATH500 52,6 → 41,4 ve 60,0 → 64,4, 32 örnekte 7,4 ↔ 10,5; Gerstgrasser n·u ↔ u·Σ1/i² ≤ 1,645u;
+    Dohmatob binde bir (gözetimli regresyon kuramı); Kazdan R² 0,59 ↔ 0,34 (Gemma 2 2B SFT). **117:** Jones–Bergen
+    GPT-4.5 persona %73, persona yok %36, LLaMa-3.1-405B %38, ELIZA %23, bilgi sorusu soran sorgucu %12; persona yok
+    Prolific 42,1 / 47,1, üniversite 27,7 / 26,4; ARC iki kişi 97–98 (gizli küme), H-ARC 946 kişi ~%65 (açık küme);
+    o3-önizleme Aralık 2024 yarı gizli kümede ~200 $ ile %76, ~20.000 $ ile %88; HLE 2.500 soru; Kwa 207 gün (166–240),
+    2 sn → 110 dk, %80 ufku 4–6 kat kısa, bakımcı ↔ yüklenici 5–18 kat (dört işlik iç deney), dağınıklık 3,2/16;
+    Grace Ekim 2023 N = 2.778, katılım %15, HLMI 1.714 kişi ↔ FAOL 774 kişi (rastgele ayrık alt kümeler), 24 ↔ 93 yıl,
+    sabit yıl 34 ↔ sabit olasılık 17, 2022 → 2023 kayması 13 yıl; Armstrong 95 tahmin, SS 26 ↔ 27 (2100 sonrası
+    hariç); Hendrycks GPT-4 %27, GPT-5 %57. **118:** yeni ölçüm yok; 115'in Chen sayıları ve 113'ün 0,96 Å /
+    381 bin / 36 hedef 17 gün sayıları yeniden kullanıldı; Roediger–Karpicke 2. deney 180 öğrenci, bir haftada 61 ↔ 40.
+
+261. **Kendi hesabımız (Batch 28).** Hepsi metinde girdileriyle ve işaretle duruyor: (a) 115 — sabit cevap tabanı
+    500 ÷ 1.000 = %50 ve 51,1 − 50 = 1,1; bileşik oranının toplamı 49,9 + 48,8 = 98,7; ters dönüşten düzelen payı
+    10,27 + 0,17 = 10,44 ve bozulan doğruların payı 10,27 ÷ 72,74 ≈ 1/7; Hasan'ın 4/73'ü ve Wilson aralığı %2,2–13,3;
+    günde bin görevde en az 339 onay (hacim varsayım). (b) 116 — 0,083 ÷ 1,083 ≈ 0,077 ve 0,006 fark; Gerstgrasser
+    formüllerinden 1,46u ve 1,55u; 4,4 − (−11,2) = 15,6 ve 64,4 − 52,6 = 11,8; 95,5 − 89,0 = 6,5. (c) 117 —
+    log₂3.300 = 11,7 ve 11,7 × 207 ≈ 2.420 gün ≈ 6,6 yıl (aralık 5,3–7,7; gerçek süre ~6,2 yıl); 110 ÷ 6 ve 110 ÷ 4;
+    ln 0,5 ÷ ln 0,8 ≈ 3,1; 93 − 24 = 69 ve 34 − 17 = 17. (d) 118 — 115 ve 113'ün hesapları, yeniden işaretlenerek.
+
+262. **Şekil kararları (Batch 28).** Yedi şekil: 115'te iki (aracın üç anı — zaman çizgisi; ürünün iki bölgesi —
+    kenarı kesen üç ok), 116'da iki (**serinin uzun bir aradan sonraki ilk formülden hesaplanmış eğrisi**: değiştirme n·u
+    ↔ biriktirme u·Σ1/i², π²/6 kesikli çizgisiyle; bilinmeyenin türleri — dört durum ve geçişler), 117'de bir (bir ad,
+    sekiz tanım: sınav ve kıyas insanı sütunları), 118'de bir (iki kollu yordam: on iki soru, sekiz çıkış, iki "dur").
+    **118'in şekli 100'ün haritasının ve 114'ün zincirinin kopyası değil:** üçüncü biçim, dallanan bir yordam.
+    Doğrulama turundan sonra şekillerde dürüstlük düzeltmeleri yapıldı: 115'te "insana bırakılan onay" etiketi
+    "sunucu seçiminde insan"a çevrildi (ölçüm bir onay deneyi değildi), "300 başarılı saldırı" "planı ayırmak"a
+    bağlandı, ad önekinin belgeyi durdurmadığı yazıldı ve "4 sunucu" kendi hesabımız diye işaretlendi; 117'de Turing
+    satırının kıyası "insan tanık", kurum beyanınınki "insanlar" oldu; 118'de gerçek durma noktaları çizildi ve lejant
+    çıkışların ne yaptığını doğru söyleyecek biçimde yazıldı.
+
+263. **Kaynak politikası (Batch 28).** 115'te 15, 116'da 14, 117'de 15, 118'de 9: **53 kalem, 44 hakemli, 9 hakemsiz**.
+    Hakemsizler işaretli: MCP belirtimi (115); Kaplan 2020 ve Uluslararası Yapay Zekâ Güvenliği Raporu (116); Chollet
+    2019, OpenAI kuruluş ilkeleri, Hendrycks ve ark. 2025, ARC ekibinin üç raporu (117). HANDOFF'un öngördüğü gibi
+    117'nin hakemsiz oranı yüksek — tanım tartışması kurum beyanlarına ve düzenleyici raporlarına dayanıyor; hepsi
+    "tanımı temsil ettiği için" kullanıldı ve öyle yazıldı. **Doğrulanamayan künye yok**; bütün künyeler
+    Crossref ya da mecranın kendi dizininden doğrulandı. **Beklenenin tersine hakemli çıkanlar:** Jones–Bergen
+    (PNAS 2026), HLE (Nature 2026), H-ARC (Sci Data 2025), Grace ve ark. (JAIR 2025), Kwa ve ark. (NeurIPS 2025),
+    CaMeL (SaTML 2026). 118'in kaynaklarından Carpenter ve ark. 2022 yazarın sitesindeki PDF'ten, Karpicke–Aue 2015
+    ERIC özetinden okundu.
+
+264. **Süreç (Batch 28).** Kullanıcı ultracode açıkken `/workflow-authoring` ile run'ı başlattı; bu kez **iki sınırlı
+    workflow** kullanıldı: (1) araştırma — altı ajan (115, 116 için geri çağırma + kaynak; 117; 118 envanteri),
+    (2) bağımsız doğrulama — makale başına bir salt okunur ajan. **Yazım, bütün kararlar ve kabul ana oturumda** kaldı
+    (SOZLESME §9). Doğrulama turu **5 BLOCKER, 32 MAJOR, 51 MINOR** buldu; hepsi kanıtıyla ana oturumda tek tek
+    değerlendirildi ve düzeltildi, en büyükleri: Chen'in toplama hatası, CaMeL'in katı kipi ve 300 → 0'ın koşulu,
+    Song'un deneyinin onay deneyi olmaması, Abdelnabi'nin küme ve yön koşulu, ölçek yasası örneğinde Kaplan'ın
+    α_D'si, HLMI ↔ FAOL'un ayrı katılımcılara sorulması, Turing hükmünün kuraldan çok sorgucu topluluğuna bağlı
+    çıkması, 118'in BOUN finaliyle aynı argüman sırasını taşıması (hatırlama bölümü baştan yazıldı: geri bildirim ve
+    karmaşık malzeme tartışması eklendi, Cepeda çıkarıldı).
+
+## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
+
+- **Son dört makale yeni bilgi değil, bilginin durumunu sınıfladı.** 115 bir ürünün halkalarını geri alma
+  maliyetine göre, 116 alanın bilmediklerini bilinmezliğin türüne göre, 117 bir kavramın tanımlarını sınavına
+  ve kıyas insanına göre, 118 okurun sorularını bir önceki cevaba göre sıraladı. Dördünde de tez sınıflamanın
+  kendisinden çıktı; Batch 27'nin "sıralama farkı tezdir" dersi burada seri ölçeğinde işledi.
+- **Bir kaynağın metnindeki sayıyı aktarmadan önce kendi tablosuyla toplamak gerekiyor.** Chen ve ark.'nın
+  "%99,7"si kendi şeklindeki iki hücrenin toplamıyla (98,7) ve aynı paragraftaki doğrulukla bağdaşmıyordu;
+  araştırma dosyası sayıyı olduğu gibi taşımıştı, yakalayan doğrulama ajanının aritmetik denetimi oldu.
+  CaMeL'de de metin (300 başarılı saldırı) ile tablo (163) ayrıştı. **Metin ↔ tablo tutarlılığı ayrı bir
+  denetim kalemidir.**
+- **Hakemli durumun güncellenmesi bu kez yayımlanmış makalelerde iş çıkardı.** 58'in CaMeL'i ve 71'in HLE'si
+  "hakemsiz" diye duruyordu; ikisi de 2026'da hakemli çıkmıştı (SaTML, Nature). Kaynak yeni makalede yeniden
+  kullanılınca eski künyesi de kontrol edilmeli — yeni makale doğru, eskisi yanlış kalırsa seri kendisiyle
+  çelişir.
+- **Terim çakışması en çok yeni bir alanın sözcüğü eski bir alanın sözcüğüne denk geldiğinde çıkıyor.**
+  Model çöküşünün "replace" düzeni için doğal Türkçe karşılık "yerine koyma" seride örnekleme anlamını
+  taşıyordu; terim defterine bakmadan yazılsaydı 33 ve 99 ile çakışacaktı. Kural değişmedi: yeni terimden
+  önce defter.
+- **Bir kapanış makalesi başka bir serinin kapanışıyla aynı argüman sırasını taşıyabiliyor.** 118'in hatırlama
+  bölümü ilk yazımda BOUN finalinin sırasını (geri çağırma → güven → akıcılık → aralık) izliyordu; doğrulama
+  bunu yakaladı ve bölüm geri bildirim ile karmaşık malzeme tartışması üzerinden yeniden kuruldu. **Kardeş
+  seriler birbirinin çakışma kontrolüne dahildir.**
+- **Şekildeki etiket ölçülen şeyden daha güçlü bir iddia taşıyabiliyor.** 115'te "insana bırakılan onay"
+  etiketi aslında bir sunucu seçimi deneyini adlandırıyordu; 117'de Turing satırının kıyası "insan tanık"
+  olmalıydı. PNG turu ve doğrulayıcılar bunları metinden değil şekilden yakaladı — **şekil etiketleri de
+  kaynakla eşlenir.**
+- **SVG'nin iç başlığı figcaption'ı birebir tekrarlamamalı.** 118'in şeklinde ikisi aynıydı; iç başlık
+  şeklin yapısını ("iki kollu yordam: on iki soru, sekiz dal"), figcaption tezini taşıyacak biçimde ayrıldı.
+- **İki sınırlı workflow yetti ve bölünme doğruydu:** araştırma paralel, doğrulama makale başına bağımsız;
+  yazım ve kabul ana oturumda. Doğrulamanın 88 bulgusunun hiçbiri otomatik uygulanmadı, hepsi kaynağına
+  bakılarak tek tek karara bağlandı.
 
 ## Batch 27 öğrenme notları (yazım tamamlandı)
 

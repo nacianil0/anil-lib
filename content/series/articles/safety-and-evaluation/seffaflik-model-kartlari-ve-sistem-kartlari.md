@@ -12,7 +12,7 @@ tags:
   - sistem-karti
   - belgeleme
   - denetim
-content_hash: sha256:6604b0f9f7a59edffdbd448804eb871ad6b335197f86d77084728185ddfa0633
+content_hash: sha256:84da2c3700c9436e1d4c03c5ab8fa545559c1e0092d3f8bf52585e752e775102
 classification_version: 1
 classification_batch: 19
 ---
@@ -122,6 +122,6 @@ Buraya kadarki fazın tamamı — ölçmek, içine bakmak, kırılganlığı sı
 - Bhat, A., Coursey, A., Hu, G., Li, S., Nahar, N., Zhou, S., Kästner, C. & Guo, J. L. C. (2023). *Aspirations and Practice of ML Model Documentation: Moving the Needle with Nudging and Traceability*. ACM CHI 2023. [Bağlantı](https://doi.org/10.1145/3544548.3581518)
 - Avrupa Parlamentosu ve Konseyi (2024). *Regulation (EU) 2024/1689 — Yapay Zekâ Yasası, Ek IV: Madde 11(1)'de anılan teknik dokümantasyon*. Avrupa Birliği Resmî Gazetesi. [Bağlantı](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
 - Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J., Theron, D. & Barnes, P. (2020). *Closing the AI Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing*. ACM FAT* 2020. [Bağlantı](https://doi.org/10.1145/3351095.3372873)
-- Mökander, J., Schuett, J., Kirk, H. R. & Floridi, L. (2023). *Auditing large language models: a three-layered approach*. AI and Ethics. [Bağlantı](https://doi.org/10.1007/s43681-023-00289-2)
+- Mökander, J., Schuett, J., Kirk, H. R. & Floridi, L. (2024). *Auditing large language models: a three-layered approach*. AI and Ethics 4, s. 1085–1115. [Bağlantı](https://doi.org/10.1007/s43681-023-00289-2)
 - Ojewale, V., Steed, R., Vecchione, B., Birhane, A. & Raji, I. D. (2025). *Towards AI Accountability Infrastructure: Gaps and Opportunities in AI Audit Tooling*. ACM CHI 2025. [Bağlantı](https://doi.org/10.1145/3706598.3713301)
 - Birhane, A., Steed, R., Ojewale, V., Vecchione, B. & Raji, I. D. (2024). *AI auditing: The Broken Bus on the Road to AI Accountability*. IEEE SaTML 2024. [Bağlantı](https://doi.org/10.1109/SaTML59370.2024.00037)

@@ -12,7 +12,7 @@ tags:
   - islem-birlestirme
   - karma-duyarlik
   - kullanim-orani
-content_hash: sha256:9baec65f08bb8e1fb405d2fecad9845e8a110a052ebae11c870e430568636e5e
+content_hash: sha256:48415bf0eb9bab7ecaa6c041d45ee305fb7663d822a4f157074438627fd09922
 classification_version: 1
 classification_batch: 26
 ---
@@ -78,7 +78,7 @@ Ivanov ve arkadaşları bellek tarafının cetvelini de kullanıyor: **bellek ku
 
 > **Kendini yokla:** Bir çekirdeğin kullanım oranı yüzde 5 çıkıyor. Kötü mü yazılmış?
 
-Bu sayıdan bilinmez. Çekirdek bellekle sınırlıysa yüzde 5 tavan olabilir: çip zamanının neredeyse tamamını veri taşıyarak geçiriyordur ve yapacak hesap zaten yoktur. Doğru soru "kaç işlem yaptı" değil, "taşıması gerekenden fazlasını taşıdı mı ve bandı doldurdu mu" sorusudur. Bellek kullanım verimi yüzde 90 olan bir normalleştirme çekirdeği, kullanım oranı yüzde 5 olsa da bitmiştir. Bir ölçüyü değil, hangi ölçünün geçerli olduğunu seçmek gerekiyor — 101\. makalenin dilinde: cevap hangi cetveli seçtiğine bağlı.
+Bu sayıdan bilinmez. Çekirdek bellekle sınırlıysa yüzde 5 tavan olabilir: çip zamanının neredeyse tamamını veri taşıyarak geçiriyordur ve yapacak hesap zaten yoktur. Doğru soru "kaç işlem yaptı" değil, "taşıması gerekenden fazlasını taşıdı mı ve bandı doldurdu mu" sorusudur. Bellek kullanım verimi yüzde 90 olan bir normalleştirme çekirdeği, kullanım oranı yüzde 5 olsa da bitmiştir. Bir ölçüyü değil, hangi ölçünün geçerli olduğunu seçmek gerekiyor — 96\. makalenin dilinde: cevap hangi cetveli seçtiğine bağlı.
 
 ![Beş satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: üç işlem iki düzende, GPT-3 ölçüleri, mikro yığın 1, tek katman. Sütunlar ölçü, ayrı çekirdekler ve birleştirilmiş. Birinci satır çekirdek sayısı: 3 ve 1. İkinci satır kart belleği turu: 6 ve 2. Üçüncü satır taşınan bayt: 302 MB ve 101 MB. Dördüncü satır vurguludur, 1,5 TB bölü saniyelik bantta süre: 201 mikrosaniye ve 67 mikrosaniye. Beşinci satır yapılan işlem sayısı: iki sütunda da aynı. Birinci kutunun başlığı ölçülen karşılıkları; içinde birleştirmenin aynı kurulumda kart başına verimi yüzde 19 ve yüzde 11 artırdığı, sistematik uygulandığında taşınan veriyi yüzde 22,91 azaltıp katmanı 1,30 kat ve uçtan uca eğitimi 1,19 kat hızlandırdığı yazılıdır. İkinci kutunun başlığı sınır; içinde iki madde durur: bir öncekinin tamamını bekleyen işlem aynı çekirdeğe konamaz, ve birleştirilen çekirdek çipte daha çok yer tuttuğu için eşzamanlı iş azalır. En altta bir kayıt: 50,3 MB, 302 MB, 101 MB ve iki süre bizim hesabımızdır, yüzdeler kaynaklardan.](assets/cekirdegin-gidis-gelisi.svg "Şekil 2 — Aynı aritmetik, farklı sayıda tur")
 

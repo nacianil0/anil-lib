@@ -55,6 +55,8 @@ function countOf(rows: unknown): number {
  *
  * One transaction. The table lock makes a progress write that is already in flight
  * either land before the delete (and be removed by it) or wait and see the new reset.
+ * A sync batch writes its progress first (see `synchronizeReaderData`), so both take
+ * reading_progress before any saved-place or highlight row and cannot deadlock.
  */
 export async function resetReadingProgress(
   sql: SqlClient,

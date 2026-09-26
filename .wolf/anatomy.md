@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-25T19:37:58.211Z
-> Files: 402 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-26T04:21:07.750Z
+> Files: 517 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -63,6 +63,109 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3646e9e5-8f9a-4078-abf2-b7b3cb24ea42/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/
+
+- `PLAN.md` — Batch 28 (BATCH=4+1) — 115–118 + series close (~394 tok)
+- `split_v.py` (~366 tok)
+- `split.py` (~609 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/research/a115-recall/
+
+- `items.json` — Declares mark (~12250 tok)
+- `recall.py` (~1033 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/research/a115-sources/
+
+- `h.py` — get, crossref, crossref_search, pdf_text (~896 tok)
+- `s1.py` (~440 tok)
+- `s10.py` — clean (~371 tok)
+- `s11.py` — TMLR listing for FrugalGPT (~359 tok)
+- `s2.py` (~134 tok)
+- `s3.py` — resolve DOI (~205 tok)
+- `s4.py` (~86 tok)
+- `s5.py` (~84 tok)
+- `s6.py` (~304 tok)
+- `s7.py` (~294 tok)
+- `s8.py` (~204 tok)
+- `s9.py` (~136 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/research/a116-recall/
+
+- `quotes.json` (~5449 tok)
+- `show.py` — find (~288 tok)
+- `verify.py` (~268 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/research/a116-sources/
+
+- `h.py` — get, crossref, crossref_search, pdf_text (~905 tok)
+- `s1_crossref.py` (~250 tok)
+- `s10_interp.py` (~292 tok)
+- `s11_bean.py` (~178 tok)
+- `s12_surveys.py` (~244 tok)
+- `s2_bahri.py` (~206 tok)
+- `s3_michaud.py` (~153 tok)
+- `s4_emerg.py` — TMLR index (~302 tok)
+- `s5_collapse.py` (~360 tok)
+- `s6_collapse2.py` (~236 tok)
+- `s7_rlvr.py` (~237 tok)
+- `s8_selfcorr.py` (~315 tok)
+- `s9_icl.py` (~242 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/research/a117/
+
+- `fetch.py` — get, crossref, crossref_search, pdf_text (~864 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/research/a118/
+
+- `closings.py` — /*.md", recursive=True) (~407 tok)
+- `crossref.py` (~337 tok)
+- `dl.py` (~285 tok)
+- `g.py` — /*.md", recursive=True) (~273 tok)
+- `recall.py` — /*.md", recursive=True): (~4024 tok)
+- `s2.py` — NoRedirect: redirect_request (~459 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/tools/
+
+- `measure.mjs` — DOM measurement across widths x themes (Batch 28 render check). (~944 tok)
+- `net.py` — Small network helper (HANDOFF -> net.py). (~818 tok)
+- `scan.cjs` — Pre-publication scans that the repo gate does not do (HANDOFF "Ölçer betikleri" -> scan.cjs). (~1265 tok)
+- `shots.mjs` — Figure screenshots with Playwright (HANDOFF -> shots.mjs). (~620 tok)
+- `svgcheck.cjs` — Second SVG gate (HANDOFF "Ölçer betikleri" -> svgcheck). Run ONLY on the new batch's folders. (~1139 tok)
+- `sweep.py` — Sliced route sweep against a running dev server (HANDOFF -> sweep.py). (~521 tok)
+- `syncalt.cjs` — Copies each figure's markdown alt text into its SVG root aria-label (HANDOFF -> syncalt). (~355 tok)
+- `wc.cjs` — Exact copy of tools/series/check-series-content.cjs countProseWords + stripFrontmatter. (~347 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/verify/v115/
+
+- `br.py` (~913 tok)
+- `cr.py` (~387 tok)
+- `g.py` (~191 tok)
+- `urls.py` (~262 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/verify/v116/
+
+- `alt.py` (~496 tok)
+- `cr.py` — get (~298 tok)
+- `curve.py` (~243 tok)
+- `g.py` — load, grep (~448 tok)
+- `kaplan.py` — get, pdf (~320 tok)
+- `nips.py` — get (~266 tok)
+- `nips2.py` — get (~227 tok)
+- `nips3.py` — get (~328 tok)
+- `urls.py` (~479 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/verify/v117/
+
+- `cr.py` — get (~542 tok)
+- `g.py` — load, g (~239 tok)
+- `urls.py` (~180 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/verify/v118/
+
+- `cr.py` (~233 tok)
+- `urls.py` — NoRedir: redirect_request (~309 tok)
+- `wc.py` (~299 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3f16d1e2-9271-46e4-851e-b522326f9e03/scratchpad/
 
 
@@ -119,6 +222,57 @@
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/8d7d5be6-3b1e-4d25-a92b-79b189509d45/scratchpad/b8/
 
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/links/
+
+- `scan.py` — probe (~458 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/official/
+
+- `check.py` — text (~629 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/alt-svg/
+
+- `check.py` — wc, norm (~599 tok)
+- `extract.py` — wc, svg_texts (~723 tok)
+- `final.py` (~689 tok)
+- `overrides.py` (~3368 tok)
+- `proposals.py` — index -> (new_alt, extra labels that must appear verbatim in SVG text) (~9477 tok)
+- `render.cjs` — Declares fs (~374 tok)
+- `show.py` (~186 tok)
+- `svg_tables.json` (~1060 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/kume-b/
+
+- `verify.py` — N: h, bal, show, ins + 10 more (~1108 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/kume-c/
+
+- `checks.py` — greedy, optimal_table, dijkstra, bellman_ford (~910 tok)
+- `dij3.py` — Enumerate 3-node digraphs (s=0, 1, 2) with weights in {-3..3} or absent, no negative cycles; (~638 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/kumeA/
+
+- `check.py` — d-ary heap, n = 1e6 (~382 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/repro/
+
+- `m20_ek.py` — Makale 20 ek: sayiyi veren okuma (taban n <= 200'de T(n) = n, maliyet terimi n, (~280 tok)
+- `m20_grup.py` — Makale 20 (Bol ve yonet): medyan bulmada grup boyutu. (~1153 tok)
+- `m29_kilit.py` — Makale 29 (Senkronizasyon): iki is parcacigi, "bayrak" kilidi ve test-and-set kilidi. (~1052 tok)
+- `m30_klasik.py` — Makale 30 (Klasik eszamanlilik problemleri). (~1559 tok)
+- `m30_tampon_ek.py` — Makale 30 ek: 14 durumlu okumada kac kilitlenme durumu var ve hangileri? (~629 tok)
+- `m31_kilitlenme.py` — Makale 31 (Kilitlenme): T1 = (L1, L2), T2 = (L2, L1) ters sira; ayni sira T1 = T2 = (L1, L2). (~818 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/skeptic-ab/
+
+- `check.py` — total, sums, enq, deq (~956 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/90ecd7c5-a165-40b0-84d8-19360e7af4d4/scratchpad/wf/skeptic-cd/
+
+- `checks.py` — C3: c*ceil(n/5) + c*(7n/10+6) + s*n <= c*n ? (~490 tok)
+- `dij.py` — bellman, dijkstra_all_orders, rec, run (~707 tok)
+- `dij4.py` — article example: s=0,a=1,b=2,c=3 (~129 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/93fb4c2a-83ad-45ed-bdc2-fb6de97973a6/scratchpad/
 
@@ -257,12 +411,14 @@
 - `editoryal-yenileme-2026-09-25.md` (~730 tok)
 - `MEMORY.md` — Memory index (~1998 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
+- `okuma-sifirlama-2026-09-25.md` (~542 tok)
 - `series-batch22-faz10-acilis.md` — Declares into (~1184 tok)
 - `series-batch23-faz10-kapanis.md` (~1009 tok)
 - `series-batch24-faz11-kapanis.md` (~710 tok)
 - `series-batch25-faz12-kapanis.md` (~844 tok)
 - `series-batch26-faz13-kapanis.md` (~710 tok)
 - `series-batch27-faz14-govde.md` (~827 tok)
+- `series-batch28-seri-tamamlandi.md` (~557 tok)
 
 ## C:/Users/anil.akman/AppData/Local/Temp/claude/D--dev-anil-lib/2b44744a-95c9-4284-8b91-bf366f98f51c/scratchpad/src/
 
@@ -399,6 +555,13 @@
 - `model.py` — Batch 9: kilit ve filozof cozumlerinin kaba kuvvet durum uzayi denetimi. (~1719 tok)
 - `roadmap-edit.py` — YOL-HARITASI.md'yi Batch 9 için güncelle (CRLF korunur). (~2082 tok)
 - `roadmap-edit2.py` — YOL-HARITASI.md: terim defteri ve kavram-tekrar defteri Batch 9 güncellemesi. (~2189 tok)
+
+## artifacts/bakim2-2026-09-25/
+
+- `denetim.py` — Repo araclarindan bagimsiz BOUN denetimi (bakim run'i 2, 2026-09-25). (~1515 tok)
+- `geometry.render.ts` — BOUN bakım run'ı 2 — 41 makale sayfasındaki BÜTÜN satır içi SVG'lerin gerçek render ölçümü: (~2159 tok)
+- `render.config.ts` — BOUN bakım run'ı 2: yalıtılmış kopyada (D:/dev/anil-lib-bakim2) ayrı portta dev sunucusu. (~327 tok)
+- `themes.render.ts` — BOUN bakım run'ı 2 — /boun girişi ve seçili makaleler üç genişlik × üç temada; değişen şekillerin (~1975 tok)
 
 ## artifacts/boun-render/
 
@@ -636,9 +799,11 @@
 
 ## content/series/articles/agents-and-retrieval/
 
+- `ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md` — Okunan her şey bir talimat olabilir (~7027 tok)
 
 ## content/series/articles/case-studies/
 
+- `vaka-incelemesi-bir-llm-urunu-nasil-kurulur.md` — Aynı iki soru, masanın öbür tarafında (~8257 tok)
 - `vaka-incelemesi-bir-sinir-model-nasil-yapilir.md` — Aynı parçalar, bu kez tek bir sıra (~5145 tok)
 
 ## content/series/articles/foundations/
@@ -652,6 +817,7 @@
 - `olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md` — Vektörden dağılıma (~4654 tok)
 - `olcumun-disiplini-istatistiksel-test-ve-benchmark-bilimi.md` — İki makalenin buraya bıraktığı borç (~5776 tok)
 - `optimizasyonun-kurami-gradyanin-matematigi.md` — Yönü kim seçiyor (~6149 tok)
+- `tahmin-makinesi-yapay-zekaya-ilk-bakis.md` — Kuralları yazmayı bir dene (~6017 tok)
 - `tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md` — Aynı sonuç, başka el (~5506 tok)
 - `vektorler-ve-matrisler-embeddingin-matematigi.md` — Sayı listesi mi, uzaydaki yön mü (~5067 tok)
 - `yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md` — Bir ara durak (~5095 tok)
@@ -664,13 +830,16 @@
 - `kendi-egitim-kosun-tokenizer-veri-ve-dongu.md` — Ağırlıkları kim yazacak (~5575 tok)
 - `kosunun-guvenilirligi-kontrol-noktasi-sicrama-ve-gozlem.md` — Hızlı adım, uzun koşu (~3726 tok)
 - `mikro-gpt-bir-transformeri-elle-kurmak.md` — Kâğıda sığan bir model (~5504 tok)
-- `performans-muhendisligi-dikkati-hizlandirmak.md` — Kartın içinde kalan kayıp (~4022 tok)
+- `performans-muhendisligi-dikkati-hizlandirmak.md` — Kartın içinde kalan kayıp (~5470 tok)
 
 ## content/series/articles/multimodal-and-future/
 
+- `acik-sorular-alanin-bilmedikleri.md` — Bir envanter neyle başlar (~6058 tok)
+- `agi-tartismasi-tanimlar-testler-zaman-cizelgeleri.md` — Birinci makalenin sorusu, yeniden (~5800 tok)
 - `bilimde-yapay-zeka-kesif-araci-olarak-llm.md` — Bilgi eskimiyor, henüz yok (~5903 tok)
 - `dunya-modelleri-metnin-otesinde-anlamak.md` — Dört makalelik "nasıl"dan sonra "ne" (~3260 tok)
 - `robotik-ve-somutlasmis-yapay-zeka.md` — Kavşaktan konuma (~6168 tok)
+- `son-adim-haritayi-yeniden-cizmek.md` — Haritalar eskir (~4827 tok)
 - `surekli-ogrenme-ve-kisisellestirme.md` — Dünya durmuyor, model duruyor (~5967 tok)
 
 ## content/series/articles/reasoning-and-memory/
@@ -678,12 +847,23 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `degerlendirme-bilimi-benchmarklarin-otesi.md` — Bir puan bir ölçümdür (~10230 tok)
+- `seffaflik-model-kartlari-ve-sistem-kartlari.md` — Sayının yanındaki belge (~6173 tok)
 
 ## content/series/assets/
 
 
 ## content/series/assets/acik-agirliklar-ve-model-ekosistemi/
 
+
+## content/series/assets/acik-sorular-alanin-bilmedikleri/
+
+- `bilinmeyenin-turleri.svg` (~1006 tok)
+- `yerine-koyma-biriktirme.svg` (~918 tok)
+
+## content/series/assets/agi-tartismasi-tanimlar-testler-zaman-cizelgeleri/
+
+- `bir-ad-sekiz-tanim.svg` (~1321 tok)
 
 ## content/series/assets/ajan-bellegi-ve-durum-yonetimi/
 
@@ -1005,6 +1185,10 @@
 ## content/series/assets/sistem-istemleri-roller-ve-sohbet-bicimi/
 
 
+## content/series/assets/son-adim-haritayi-yeniden-cizmek/
+
+- `iki-kollu-yordam.svg` (~2647 tok)
+
 ## content/series/assets/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri/
 
 
@@ -1034,6 +1218,11 @@
 
 ## content/series/assets/uzun-ufuk-cok-adimli-gorevlerde-tutarlilik/
 
+
+## content/series/assets/vaka-incelemesi-bir-llm-urunu-nasil-kurulur/
+
+- `aracin-uc-ani.svg` (~1194 tok)
+- `urunun-iki-bolgesi.svg` (~1436 tok)
 
 ## content/series/assets/vaka-incelemesi-bir-sinir-model-nasil-yapilir/
 
@@ -1075,15 +1264,21 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~7765 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~9938 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~11457 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~153490 tok)
+- `TRIGGER.md` — "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı (~275 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~178449 tok)
 
 ## docs/superpowers/plans/
 
 
 ## docs/superpowers/specs/
 
+- `2026-09-01-cok-kullanicili-owner-yonetimi-ve-istatistikler-design.md` — Çok kullanıcılı erişim, owner-only kullanıcı yönetimi ve istatistikler (~3057 tok)
+
+## drizzle/
+
+- `0003_reading_resets.sql` — reading_resets(workspace_id PK, reset_version seq, reset_at, reset_by FK users); applied by scripts/migrate.mjs in vercel-build. (~120 tok)
 
 ## inbox/
 
@@ -1126,6 +1321,7 @@
 
 ## src/app/seri/
 
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~347 tok)
 
 ## src/app/seri/[slug]/
 
@@ -1134,9 +1330,9 @@
 ## src/app/yonetim/
 
 - `actions.test.ts` — OWNER_ID: form (~1331 tok)
-- `actions.ts` — Renders a failure into something the owner can act on. This screen is owner-only, (~1014 tok)
+- `actions.ts` — Owner-only server actions: createUserAction and resetReadingAction (uuid-validated target, workspace from DB, audit log of ids/counts). (~1900 tok)
 - `reset-reading-form.test.tsx` — hoisted (~1357 tok)
-- `reset-reading-form.tsx` — A confirm this soon after arming is the tail of the arming gesture, not a decision. (~1794 tok)
+- `reset-reading-form.tsx` — Owner 'Okuma geçmişini sıfırla' form: two-step confirm (keyed buttons, focus to Vazgeç, 500 ms confirm delay), optional saved places/highlights. (~1794 tok)
 - `reset-reading-state.ts` — Shared shape for the reset-reading form result. Kept out of `actions.ts` for the (~131 tok)
 
 ## src/app/yonetim/ (2026-09-02 eklendi)
@@ -1206,13 +1402,13 @@
 - `schema.test.ts` — DEVICE: legacyProgress (~1521 tok)
 - `schema.ts` — A resolvable reading position inside an article. (~1759 tok)
 - `sync-contract.ts` — `resetVersion` is the last progress reset this device has applied (0 = none). A (~510 tok)
-- `use-reader-data.test.tsx` — hoisted (~1409 tok)
+- `use-reader-data.test.tsx` — Provider + mocked sync: reset clears pre-reset device and re-records open article; fresh browser adopts (resetVersion null). (~1409 tok)
 - `use-reader-data.tsx` — The account's latest progress reset this device has applied; rises when one lands. (~5935 tok)
 
 ## src/lib/reader-data/server/
 
 - `reset-service.test.ts` — Declares Call (~1287 tok)
-- `reset-service.ts` — Written as the device of the tombstones a reset leaves on saved places and (~1291 tok)
+- `reset-service.ts` — resetReadingProgress: owner-only; one txn = LOCK reading_progress, upsert reading_resets(nextval), DELETE progress, optional tombstones. (~1339 tok)
 - `sync-service.test.ts` — Call: progressWrite, selectOf (~1726 tok)
 - `sync-service.ts` — AI serisi ∪ BOUN serisi, owner workspace'inde ayrıca arşiv; bilinmeyen id reddedilir. (~4044 tok)
 

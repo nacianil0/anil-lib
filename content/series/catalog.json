@@ -18,7 +18,7 @@
         "tahmin",
         "temeller"
       ],
-      "contentHash": "sha256:9339d2867735d48b22326e6a4aaa9d4ff060225bb207f35d7c3691c0a128cf94",
+      "contentHash": "sha256:b3fd233e16334a3a6538f0029b081fd3182cd488187c7a5a18ea2f41c335f748",
       "path": "content/series/articles/foundations/tahmin-makinesi-yapay-zekaya-ilk-bakis.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -1194,7 +1194,7 @@
         "en-az-ayricalik",
         "saldiri-yuzeyi"
       ],
-      "contentHash": "sha256:464228d2d4938c10a3f9ad3623e77db760ff937990e5dfa3589e457d0aac75b2",
+      "contentHash": "sha256:af217e18612f648e10d34902df9535f9ce1237a5dd79c677eb3991459875b46b",
       "path": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
@@ -1460,7 +1460,7 @@
         "istem-duyarliligi",
         "olcut-omru"
       ],
-      "contentHash": "sha256:b1ce50023b1bbd8dada345976938a64a8c1d2b3b69034f4d3f51e7d48934e6a0",
+      "contentHash": "sha256:23014b120e7b0fc0f42923fb68abb57eb4e0ffa21c9b6f7c8c1e3f737bcf794d",
       "path": "content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1650,7 +1650,7 @@
         "belgeleme",
         "denetim"
       ],
-      "contentHash": "sha256:6604b0f9f7a59edffdbd448804eb871ad6b335197f86d77084728185ddfa0633",
+      "contentHash": "sha256:84da2c3700c9436e1d4c03c5ab8fa545559c1e0092d3f8bf52585e752e775102",
       "path": "content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
@@ -2240,7 +2240,7 @@
         "karma-duyarlik",
         "kullanim-orani"
       ],
-      "contentHash": "sha256:9baec65f08bb8e1fb405d2fecad9845e8a110a052ebae11c870e430568636e5e",
+      "contentHash": "sha256:48415bf0eb9bab7ecaa6c041d45ee305fb7663d822a4f157074438627fd09922",
       "path": "content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md",
       "relatedArticleIds": [],
       "classificationBatch": 26
@@ -2368,6 +2368,86 @@
       "path": "content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md",
       "relatedArticleIds": [],
       "classificationBatch": 27
+    },
+    {
+      "articleId": "article_7b6beb85-02e7-4d36-ac49-3a558fbedae9",
+      "title": "Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?",
+      "slug": "vaka-incelemesi-bir-llm-urunu-nasil-kurulur",
+      "category": "case-studies",
+      "level": "advanced",
+      "readingOrder": 115,
+      "summary": "Serinin ikinci vaka incelemesi zinciri kullanım tarafında yürütüyor: model seçimi, getirme dizini, araçlar, onay, döngü ve gözlem. Her halkaya 114'ün iki sorusunu soruyor — ne sıklıkla ödeniyor ve geri alması neye mal oluyor. Cevap üretim tarafındakinden başka bir yere düşüyor: model ve temsili, farklı fiyatlarla da olsa geri alınabiliyor; geri alınamazlık ürünün dünyaya değdiği kenarda — yazan eylemde, dışarı çıkan veride ve kurulan aracın tanımında — toplanıyor. Ölçümler, o kenara mimariyle konan denetimin insan onayından güçlü olduğunu gösteriyor.",
+      "tags": [
+        "vaka-incelemesi",
+        "llm-urunu",
+        "geri-alinamazlik",
+        "surum-sabitleme",
+        "arac-tedarik-zinciri"
+      ],
+      "contentHash": "sha256:b21ed5d12701abb655ef5f3dc851f7d3b241a02206ac966a9fbe2cd5d554fd69",
+      "path": "content/series/articles/case-studies/vaka-incelemesi-bir-llm-urunu-nasil-kurulur.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 28
+    },
+    {
+      "articleId": "article_4397ec39-4482-468b-a0a1-d1ba75775d47",
+      "title": "Açık Sorular: Alanın Bilmedikleri",
+      "slug": "acik-sorular-alanin-bilmedikleri",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 116,
+      "summary": "Alanın bilmediklerini konularına göre değil, eksik olan kanıtın türüne göre ayırıyor: ölçen aracı olmayan sorular, ölçülmüş ama açıklanmamış sorular ve ölçümleri koşula göre ayrışan sorular. Değerlendirme farkındalığının davranışa etkisinin modelden modele işaret değiştirdiğini, ölçek yasasının üç açıklamasını ayıracak sayının iki çalışmanın ölçüm farkından küçük olduğunu ve öz-düzeltme tartışmasının koşul okununca eridiğini sayılarla gösteriyor. Tezi: bir bilinmeyen, onu neyin kapatacağı söylenebildiği ölçüde bilinir.",
+      "tags": [
+        "acik-sorular",
+        "bilinmeyenin-turleri",
+        "kanit",
+        "olcek-yasalari",
+        "oz-duzeltme"
+      ],
+      "contentHash": "sha256:10efabffb84c140da44c46ef4997f118566e0c97162a315854db169451447c6c",
+      "path": "content/series/articles/multimodal-and-future/acik-sorular-alanin-bilmedikleri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 28
+    },
+    {
+      "articleId": "article_4f5d7963-b910-4600-b7fa-9fade6c4e80d",
+      "title": "AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri",
+      "slug": "agi-tartismasi-tanimlar-testler-zaman-cizelgeleri",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 117,
+      "summary": "\"Yapay genel zekâ\" tek bir ad ama en az sekiz tanım taşıyor, ve her tanım başka bir sınav ve başka bir kıyas insanı istiyor. Turing testinin geçildiği ölçümle ne ölçtüğünü, ARC'de insan tabanının hangi insana göre yüzde 65 ya da 98 çıktığını, görev ufkunun eğiminin sağlam ama seviyesinin eşiğe ve kıyas insanına bağlı olduğunu ve uzman anketlerinin tarih değil sorunun ifadesine duyarlılığı ölçtüğünü gösteriyor. Kehanet yok: yalnızca tanımlar, sınavlar ve ölçümler.",
+      "tags": [
+        "yapay-genel-zeka",
+        "tanim-ve-sinav",
+        "turing-testi",
+        "gorev-ufku",
+        "uzman-anketleri"
+      ],
+      "contentHash": "sha256:947bf78760fe271b8565a485ff84f323549f89d6a5ca8a1690aa2d3cde1c5647",
+      "path": "content/series/articles/multimodal-and-future/agi-tartismasi-tanimlar-testler-zaman-cizelgeleri.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 28
+    },
+    {
+      "articleId": "article_6dc26760-97db-40ea-843a-7ab16e3d4cdf",
+      "title": "Son Adım: Haritayı Yeniden Çizmek",
+      "slug": "son-adim-haritayi-yeniden-cizmek",
+      "category": "multimodal-and-future",
+      "level": "advanced",
+      "readingOrder": 118,
+      "summary": "Serinin son makalesi, sayıları eskidiğinde elde neyin kalacağını soruyor ve cevabı bir yordam olarak veriyor: bir iddia okurken ve bir sistem kurarken sorulacak soruların sırası, her sorunun hangi cevapta durdurduğu ve her sorunun serinin hangi makalesinde kurulduğu. Yordamı 115'teki bir ölçüm üzerinde işletiyor, ilk makalenin verdiği sözlerin nerede karşılandığını gösteriyor ve öğrenilenin nasıl tutulacağını, hatırlamaya dayalı çalışmanın ölçülmüş etkisiyle bitiriyor.",
+      "tags": [
+        "sentez",
+        "okuma-yordami",
+        "arastirmaci-ve-muhendis",
+        "geri-alma-maliyeti",
+        "hatirlama-pratigi"
+      ],
+      "contentHash": "sha256:52222ebff7e403e221368e546d197c283d4ea07621fa505749c58dce492cc116",
+      "path": "content/series/articles/multimodal-and-future/son-adim-haritayi-yeniden-cizmek.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 28
     }
   ]
 }

@@ -6,19 +6,20 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-25 · Durum: **1–114 yayında (kohort Batch 0 → Batch 27) · 2026-09-25 editoryal yenileme turu tamamlandı (bkz. aşağıdaki bölüm) · Sıradaki: 115 (ikinci vaka incelemesi) + 116–118'in açılışı**
+Son güncelleme: 2026-09-26 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · kapsamın uzatılması kullanıcı kararıdır**
 
 ## Cursor ve güvenli başlangıç
 
 | Alan | Değer |
 |---|---|
-| Yayımlanan son makale | 114 — `vaka-incelemesi-bir-sinir-model-nasil-yapilir` |
-| Sıradaki güvenli başlangıç | Makale 115 ("Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?"); run kapsamı SOZLESME §7'ye göre çözülür. `BATCH=4+1` ile 115, 116, 117 ve 118 üretilir — **bu, fazın ve büyük ihtimalle serinin kapanış dörtlüsüdür; bkz. "Sıradaki run'ın kararları".** **Bu run'da kategori sorusu YOKTUR** — karar #233 Faz 14'ün tamamını bağladı: **115 `case-studies`, 116–118 `multimodal-and-future`**. **Bağlayıcı numaralı koordinat YOKTUR.** Devrolan numarasız işaret: **49/53 → 115**. Devrolan planlı tekrar **yok** |
-| Sıradaki kohort | `classification_batch: 28` |
+| Yayımlanan son makale | 118 — `son-adim-haritayi-yeniden-cizmek` (yol haritasının son başlığı) |
+| Sıradaki güvenli başlangıç | **Yok — üretilecek makale kalmadı.** `docs/seri/TRIGGER.md` bakım kipindedir: yeni makale üretmez, yeni başlık icat etmez (SOZLESME §7). Bir bakım run'ı yalnızca aşağıdaki "Açık borçlar"dan, SOZLESME §4'ün ön baskı durum kontrolünden ya da §5/§12 düzeltmelerinden iş alır. **Bağlayıcı numaralı koordinat yok; numarasız işaret yok; devrolan planlı tekrar yok** (Batch 28 hepsini kapattı ya da seriyle birlikte kapattı; bkz. YOL-HARITASI "Batch 28'de gerçekleşen tekrarlar") |
+| Kapsamın uzatılması | **Kullanıcı kararıdır ve verilmedi.** Uzatma istenirse önce yol haritasına yeni faz ve başlıklar yazılır (SOZLESME §7), kategori ve level kararları verilir; ancak ondan sonra trigger üretim kipine döner. Sıradaki kohort o durumda `classification_batch: 29`, `readingOrder` 119 olur |
+| Sıradaki kohort | Yok (uzatma kararı verilirse `classification_batch: 29`) |
 | Rotalar | `/seri` (giriş + yol haritası), `/seri/[slug]` (okuyucu). **BOUN serisi `/boun` altındadır, `/seri-boun` değil** |
 | İçerik sözleşmesi | `content/series/catalog.json` + `content/series/articles/**` + `content/series/assets/<slug>/*.svg` |
 | Kod dokunuş noktaları | `src/lib/content/series.ts`, `series-roadmap.ts`, `rehype-inline-svg.ts`; ReaderShell `basePath/listTitle/listSubtitle/homeHref`; dashboard seri kartı; `validArticleIds` kataloglardan **kendiliğinden** türer |
-| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`. **Batch 27'nin ek ölçerleri oturum scratchpad'indeydi ve kalıcı değil** (bilerek; bkz. Açık borçlar). Yeniden yazılması gerekenler "Ölçer betikleri" bölümünde |
+| Araçlar | `tools/series/check-series-content.cjs`, `check-series-svg.cjs`, `sync-series-hashes.cjs`, `entegre-batch.cjs`. **Batch 27–28'in ek ölçerleri oturum scratchpad'indeydi ve kalıcı değil** (bilerek; bkz. Açık borçlar). Yeniden yazılması gerekenler "Ölçer betikleri" bölümünde |
 | Level bandı | 1–10 `beginner`; 11–90 `intermediate`; **91'den itibaren `advanced`** (kararlar #19, #201) |
 | Kategori bandı | 1–5 `foundations`; 6–20 `models-and-training`; 21–28, 30, 31–40 `reasoning-and-memory`; 29 ve 41–60 `agents-and-retrieval`; 61–80 `safety-and-evaluation`; 81–90 `multimodal-and-future`; 91–102 `foundations`; 103–109 `models-and-training`; 110–113 ve 116–118 `multimodal-and-future`; **114–115 `case-studies`** (kararlar #50, #65, #85, #98, #107, #122, #128, #135, #142, #148, #160, #168, #176, #192, #200, #209, #219, #225, #233). **`case-studies` klasörü Batch 27'de açıldı ve kod değişikliği gerekmedi (karar #241); kontrollü sözlükteki yedi kategorinin tamamı artık kullanımda.** Okuma listesinde Batch 27 kohortu iki öbeğe bölünüyor (111–113 `multimodal-and-future`, 114 `case-studies`) ve render'da doğrulandı; `reading-list-groups.test.ts` çalıştırıldı ve geçti |
 
@@ -28,7 +29,7 @@ Kullanıcının açık talebiyle 1–114'ün **tamamı** gerçek gövdeleri, şe
 yeniden okundu; düzeltmeler uygulandı ve kalıcı kurallar SOZLESME v2.2'ye yazıldı. Yöntem: faz
 başına bir denetim ajanı (AI'da 12 küme) okudu, gerekli yerde doğruladı ve düzeltti; kabul ana
 oturumda diff üzerinden verildi; kalan slogan kalıpları tek bir üslup ajanıyla temizlendi.
-Cursor değişmedi: sıradaki üretim yine 115'tir.
+Tur cursor'ı değiştirmedi; 115–118 ondan sonra Batch 28'de yayımlandı ve bu turun kuralları altında yazıldı.
 
 - **Sonuç:** 43 yazı anlamlı biçimde revize edildi ve "gözden geçirildi" işareti aldı
   (2, 3, 9, 13, 14, 16, 17, 18, 19, 28, 30, 33, 34, 40, 42, 43, 54, 57, 63, 67, 69, 71, 72, 73, 74,
@@ -67,52 +68,59 @@ Cursor değişmedi: sıradaki üretim yine 115'tir.
   (89), OPT'nin 35 yeniden başlatmasının donanım arızasına ait olması (8, 109), A-Lab düzeltmesi
   (113), Dijkstra'nın negatif kenar örneği ve Master teoreminin baskı farkı (BOUN).
 
-## Sıradaki run'ın kararları
+## Serinin tamamlanmış state'i (Batch 28, 2026-09-26) — kararlar #254–#264
 
-**Kategori kararı yok.** Karar #233 Faz 14'ün tamamını bağladı ve 115–118 o kararın kapsamındadır.
-Verilecek karar sınıfları: çıkarsa **terim** ve **başlık** kararları; ve bir tane daha büyüğü —
-**serinin kapanışı.** 118 yol haritasındaki son başlıktır. Onun yayımlanmasıyla seri, SOZLESME §7'nin
-tanımladığı "roadmap'te kalan makale sayısı `N`'den az" durumuna değil, **kalan makale kalmaması**
-durumuna geçer; `+1` fazında seri "tamamlanmış / yeniden planlama gerektirir" state'ine alınmalıdır.
-Yeni başlık icat edilmez; kapsamın uzatılıp uzatılmayacağı **kullanıcı kararıdır** ve HANDOFF'a soru
-olarak değil, state olarak yazılır. **Sonraki bağlayıcı karar numarası #254'tür** (#247–#253 editoryal
-yenileme turunda kullanıldı). 115–118 yazılırken SOZLESME v2.2'nin yeni hükümleri bağlayıcıdır:
-§3 "Formül katmanlama", §4 kaynak koşulu ve tarihleme, §6 şekil tabanı 1 ve tablo–şekil tekrarı
-yasağı, §11 "Anlam önce" ve yazan model için on soru, §12 revizyon işareti (yeni yazıya işaret
-konmaz). `check-series-content.cjs` artık kalıp listesini, ondalık ekini ve okura sızan üretim dilini
-reddeder.
+118 yol haritasının son başlığıydı ve yayımlandı; `roadmap.json`'da `planlandi` satırı kalmadı. Seri
+"tamamlanmış / yeniden planlama gerektirir" state'indedir (karar #254):
+
+- **Trigger bakım kipinde.** `docs/seri/TRIGGER.md` BOUN'un 2026-09-12 emsaliyle yeniden yazıldı; `BATCH`
+  satırı tarihsel olarak duruyor ama yeni makale üretmiyor. Bir bakım run'ının iş kaynakları: (1) aşağıdaki
+  "Açık borçlar", (2) SOZLESME §4'ün ön baskı durum kontrolü — özellikle 115–117'nin dokuz hakemsiz kalemi
+  (karar #263) ve daha eski batch'lerin hakemsiz kalemleri, (3) okurdan ya da denetimden gelen olgu hataları
+  (§5; anlamlı revizyonsa §12 işareti). Bakım run'ı yeni başlık **icat etmez**.
+- **Tek kod dokunuşu `/seri` giriş sayfasının `footerNote`'u oldu** (`src/app/seri/page.tsx`): "Seri
+  tamamlandı; bundan sonrası düzeltme ve güncellemedir. Gözden geçirilen yazılar metnin üstünde işaretlenir."
+  Seri sayısı dili kullanılmadı.
+- **Kapsamın uzatılması kullanıcı kararıdır; verilmedi.** Uzatma istenirse sıra: yol haritasına faz ve
+  başlıklar (SOZLESME §7), kategori ve level kararları, HANDOFF'un cursor'ı, TRIGGER'ın üretim kipine dönmesi.
+- **Sonraki bağlayıcı karar numarası #265'tir.**
+- **Batch 28'in yayımlanmış makalelere dokunuşu (karar #257, revizyon işaretsiz):** 58 (CaMeL → IEEE SaTML
+  2026), 71 (HLE → Nature 649), 108:81 (atıf 101 → 96), 1 (Turing künyesine cilt/sayfa), 80 (Mökander yılı
+  69 ile hizalandı). **49 bilerek değiştirilmedi** (karar #256).
 
 ## Açık borçlar
 
 - **Araştırma ve ölçüm çalışma dizinleri kalıcı değil — bu bilinçli.** Batch 22'de paralel bir oturum
-  `artifacts/` altını sildiği için (karar #208g), Batch 23–27 `artifacts/` altına **hiçbir şey yazmadı**;
-  bütün kaynak metinleri, PDF'ler ve ölçer betikleri oturum scratchpad'inde kaldı. Sonraki run kendi
-  betiklerini yeniden yazmak zorunda. **Batch 27 sırasında paralel BOUN oturumu aynı worktree'de
-  çalışıyordu** ve `content/series-boun/**` ile `.wolf/*` altına toplu düzenleme yapıyordu; 3114 portu
-  onundu, bu run 3213'ü seçti.
+  `artifacts/` altını sildiği için (karar #208g), Batch 23–28 `artifacts/` altına **hiçbir şey yazmadı**;
+  bütün kaynak metinleri, PDF'ler ve ölçer betikleri oturum scratchpad'inde kaldı. Bir bakım run'ı kendi
+  betiklerini yeniden yazmak zorunda. **Batch 28 sırasında da paralel bir oturum aynı worktree'deydi** — bu
+  kez okuma sıfırlama özelliği üzerinde (`.wolf/*`, `docs/superpowers/specs/…`,
+  `src/lib/reader-data/server/reset-service.ts`, silinmiş `src/app/zz-reset-preview/page.tsx`); o dosyalara
+  dokunulmadı, build ve render izole kopyada (`/d/dev/anil-lib-b28-render`, port 3214) koşuldu.
 - **Mikro-GPT'nin kodu kalıcı değil ama şartnamesi bağlayıcı (karar #226).** 103–105'in bütün sayıları saf
   Python'da yazılmış, skaler ters-mod otomatik türevli ~120 satırlık bir uygulamadan çıktı. Kod repoda
-  değil. **118 mikro modele atıfta bulunacaksa şartnameyi yeniden uygulamak zorunda**: sözlük 7, bağlam 4,
-  vektör boyu 4, 2 baş × 2, ileri besleme 8, 2 blok, ön-katman normalleştirme, GELU, bağlanmış çıktı →
-  364 parametre. Geniş sürüm: vektör boyu 8, ileri besleme 16 → 1.240 parametre.
+  değil. **118 mikro modeli yeniden koşmadı**; yalnızca 104'ün yayımlanmış beş tohum gözlemini andı. Bir
+  bakım düzeltmesi o sayılara dokunacaksa şartname yeniden uygulanır: sözlük 7, bağlam 4, vektör boyu 4,
+  2 baş × 2, ileri besleme 8, 2 blok, ön-katman normalleştirme, GELU, bağlanmış çıktı → 364 parametre.
+  Geniş sürüm: vektör boyu 8, ileri besleme 16 → 1.240 parametre.
 - **Faz başlıklarının dili — açık, karar verilmedi.** `roadmap.json`'daki faz başlıkları hâlâ İngilizce alan
   terimleri taşıyor ("Modelle Konuşmak: Inference, Prompt ve Bağlam", "Akıl Yürütme: Reasoning ve Test-Time
   Compute", "Bilgiyle Bağlamak: Retrieval ve Araçlar"). Makale başlıkları terim defterine göre
   Türkçeleştiriliyor (kararlar #51, #52, #66, #86, #99, #108, #115, #121, #135, #148, #154, #155, #162,
   #163, #169, #170, #171, #177, #178, #184, #185, #202, #210, #217, #218, #227, #234, **#240**). Katmanın
   tümden Türkçeleştirilip Türkçeleştirilmeyeceği kullanıcı kararıdır. Faz 8–14'ün başlıkları zaten Türkçe.
-- **Yayımlanmamış başlıklardaki İngilizce sözcükler — sıradaki dörtlüde aday YOK.** 115'in başlığındaki
-  "LLM" seride yerleşik bir kısaltmadır ve yayımlanmış bir başlıkta zaten geçer ("Uçta Yapay Zekâ: Telefonda
-  ve Cihazda LLM"); 116, 117 ve 118'in başlıkları Türkçedir ("AGI" bir özel kısaltmadır ve 117'nin konusudur).
-  **114'ün "Frontier"ı Batch 27'de Türkçeleştirildi (karar #240) ve bant temizlendi.**
-- **Yayımlanmış numaralı vaatler: DEFTER TEMİZ.** Bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış
-  vaatler"dedir ve **Batch 27'den sonra da açık numaralı koordinat yoktur** — 111–114'ün hiçbiri numaralı
-  ileri gönderme yapmadı (makale başına mekanik olarak tarandı). **Batch 27 üç işareti kapattı:** 51'in eylem
-  arayüzü işareti 111'de, 110'un gövde devri 111'de, 39/56'nın ürün düzeyi işareti 112'de. Kalan tek numarasız
-  işaret: **49/53 → 115** (araç/sunucu güvenilirliği ve ürün katmanı). **Devrolan planlı tekrar yok.**
+  **Yayımlanmamış başlık kalmadı**; 115'in "LLM"i ve 117'nin "AGI"si seride yerleşik kısaltmalardır.
+- **Yayımlanmış numaralı vaatler: DEFTER KAPANDI.** Bağlayıcı koordinat defteri YOL-HARITASI §"Yayımlanmış
+  vaatler"dedir; **açık numaralı koordinat yok, numarasız işaret yok.** Son numarasız işaret **49/53 → 115**
+  iki okumasıyla birlikte ödendi (karar #255). 115–118'in hiçbiri numaralı ileri gönderme yapmadı ve 118
+  "Bu serinin bir sonraki makalesi yok." diye bitiyor (makale başına mekanik olarak tarandı). Kavram-tekrar
+  defterinde 115–118'e planlanıp tahsil edilmeyen satırlar YOL-HARITASI'nda listelendi; hiçbiri okura
+  verilmiş bir söz değildi, bakımda yalnızca aday gösterir.
 - **Prerequisite grafında 79–82 boşluğu.** YOL-HARITASI'ndaki graf satırları 78'de kesilip 83'ten devam
-  ediyor; Batch 19 kendi dörtlüsünün satırlarını eklememişti. Batch 20–27 kendi satırlarını ekledi.
-  Devrolan eksik; ileride toplu kapatılabilir, hiçbir kapı buna bağlı değil.
+  ediyor; Batch 19 kendi dörtlüsünün satırlarını eklememişti. Batch 20–28 kendi satırlarını ekledi.
+  Devrolan eksik; bakımda toplu kapatılabilir, hiçbir kapı buna bağlı değil. **Batch 27 kavram-tekrar
+  defterinde ayrı bölüm açmamıştı** (tahsili vaat paragrafında); Batch 28'in bölümü 115–118'e yönelik bütün
+  planları kapsıyor.
 - **Ertelenen inceleme bulguları:** Batch 1'den kalan ~29 MINOR'ın arşivi repo dışındaydı; 2026-09-25
   turu 1–10'u baştan okuduğu için bu kalem kapanmış sayılır.
 - **2026-09-25 turundan kalan bakım borçları (hiçbiri kapı değil):**
@@ -135,75 +143,47 @@ reddeder.
   "110 bildirinin 3'ü" cümlesinin hangi çalışmaya ait olduğu, 50'deki Weller "%99,9 / %17" cümlesinin
   anlamı.
 - **Doğrulanamayan / kısmen doğrulanan künyeler:** (1)–(15) önceki batch'lerden (kararlar #21, #97, #104,
-  #106, #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20–27'de doğrulanamayan
-  künye yok** (kararlar #191, #198, #207, #216, #224, #232, #239, **#246**). Tek kısmi kalem: Gundersen–Kjensmo'nun
-  bitiş sayfası doğrulanamadı.
-- **Hakemsiz kaynak oranı Batch 27'de 29 kalemin 1'i (karar #246)** — yalnızca Llama 3 raporu, 8\. makaleden
-  devralınan ve işaretlenmiş kalem. Serinin en yüksek hakemli oranı. **Faz 14'ün kalanında profil yeniden
-  değişecek:** 115 ürün/sistem literatürüne (hakemli mecra bol), **116 ve 117 ise konum yazılarına ve
-  tanım tartışmalarına** dayanacağı için hakemsiz oranı orada yükselecek ve SOZLESME §4'ün işaretleme
-  kuralı sık sık uygulanacak.
-- **DBLP kapalı (Batch 18'den beri), OpenReview bot duvarında, Nature bot duvarına geçti, `proceedings.iclr.cc`
-  2022 için 404.** Çalışan kanallar aşağıda "Venue doğrulaması" bölümünde.
+  #106, #114, #120, #127, #134, #141, #147, #152, #159, #167, #175, #183). **Batch 20–28'de doğrulanamayan
+  künye yok** (kararlar #191, #198, #207, #216, #224, #232, #239, #246, **#263**). Kısmi kalemler:
+  Gundersen–Kjensmo'nun bitiş sayfası; **Batch 28'de** Karpicke–Aue 2015 (118) yalnızca ERIC özetinden,
+  Carpenter–Pan–Butler 2022 (118) yazarın sitesindeki PDF'ten okundu (künyeleri Crossref'le doğrulandı);
+  Chen ve ark.'nın "%99,7"si kaynak metnindeki bir toplama hatası olarak kaydedildi (karar #258).
+- **Hakemsiz kaynak oranı Batch 28'de 53 kalemin 9'u (karar #263)** — beklendiği gibi 116 ve 117'de yoğun:
+  MCP belirtimi (115); Kaplan 2020 ve Uluslararası Yapay Zekâ Güvenliği Raporu (116); Chollet 2019, OpenAI
+  kuruluş ilkeleri, Hendrycks ve ark. 2025, ARC ekibinin üç raporu (117). Hepsi işaretli. **Bakımda ilk
+  bakılacak ön baskılar bunlardır** (özellikle Hendrycks ve ark. 2025 ile ARC-AGI-2).
+- **49'un belirtim cümlesi (karar #256):** 49 MCP belirtiminin genel ilkeler bölümündeki küçük harfli
+  "must"ı "almalıdır" diye aktarıyor; bağlayıcı araç cümlesi SHOULD. İlkeler metninin sadık çevirisi olduğu
+  için dokunulmadı; normatif düzey 115'te yazıldı. Bakımda yeniden açılmaz.
+- **DBLP kapalı (Batch 18'den beri), OpenReview bot duvarında, Nature bot duvarında, `proceedings.iclr.cc`
+  2022 için 404; Batch 28'de PNAS, ACM, SAGE, Taylor & Francis, OUP, Science ve HDSR de betiğe 403 verdi.**
+  Çalışan kanallar aşağıda "Venue doğrulaması" bölümünde.
 
-## Next batch preparation — 115'ten devam (Faz 14'ün kapanışı ve serinin sonu)
+## Bakım run'ı nasıl çalışır (seri tamamlandıktan sonra)
 
-**Pedagojik hedefler.** Batch 27'nin sonunda okuyucu şunu biliyor: bir gövdede eylem arayüzü iki sayıya iner
-(256 kutu, saniyede üç karar) ve arayüzün yasakladığı şey modelin hatası gibi görünür; internetten gelen ön
-eğitim eylemin anlamsal yarısını taşır, motor yarısını taşımaz (görülmüş görevlerde 92 ↔ 91, görülmemişte
-32 ↔ 62, sıfırdan başlatılınca %0 ve %1); gövde verisi kıt çünkü metin bir yan ürün, yörünge değil — 111.
-Bir modeli güncel tutmanın dört yolu var ve en "temiz" görüneninin faturası en gizlisi: rank-bir güncelleme
-`k*`'ye dik olan her şeye dokunmaz, bu yüzden hem ilgisizi korur (100) hem sonucu taşımaz (20,2); sıralı
-düzenleme 100–1.000 arasında bir yerde çöker ve tek bir düzenleme modeli bitirebilir — 112. Bir bilimde yapay
-zekânın işe yaramasını belirleyen şey modelin gücü değil, üretmek ile doğrulamak arasındaki oran; doğrulama
-kör ve hazırsa ortanca 0,96 Å, bir kimyagerin aylarını alıyorsa hakemli iki itiraz — 113. Ve bir sınır model
-bir kararlar zinciridir; maliyetin dağılımı ile geri alınamazlığın dağılımı ters: post-training hesabın
-%1,78'ini tutup 1,3 milyarı 175 milyara tercih ettiriyor — 114.
+**Okuyucunun seriden çıkarken bildiği.** 115: bir üründe en kolay değişen halka modeldir ve geri
+alınamazlık modelin içinde değil ürünün dünyaya değdiği kenarda toplanır — yazan eylem, çıkan veri, gelen
+araç tanımı. 116: alanın bilmedikleri üç türdür (aracı yok; ölçülmüş ama açıklanmamış; koşulları farklı
+ölçümler) ve her türü değiştiren iş başkadır. 117: "AGI" tek bir kavram değil, her biri başka sınav ve başka
+kıyas insanı isteyen sekiz tanımdır; zaman çizelgesi tartışmasının tek ölçülebilir ekseni görev ufkudur.
+118: bir iddiayı okurken ve bir sistem kurarken sorulacak on iki soru; sıradaki soruyu önceki cevap seçer.
 
-**Sıradaki makaleler ve prerequisite'ler.** 115 ikinci vaka incelemesi, 116–118 serinin kapanış yayı.
-**115 ← 114** ("bir sonraki makale" devri: aynı disiplin masanın öbür tarafında), **41–60 (getirme ve ajan
-katmanlarının tamamı)**, **49 ve 53 (DİKKAT: NUMARASIZ İŞARET — sunucu adı çakışması, kurulumdan sonra
-davranış değiştiren sunucu, yalıtımdan kaçış ve tartışmanın denetim için kullanımı; 115 bunları ürün
-zincirinde ödemeli)**, 26–28 (çıkarım ekonomisi), 56 ve 112 (bellek ve güncelleme kararı ürün katmanında),
-59–60 (devir, maliyet, güvenilirlik), 58 (istem enjeksiyonu bir ürün kararıdır), 102 ve 80 (belgeleme).
-**116 ← 110 (ölçütün kendisi), 113 (alanın kendi itirazları), 78 (beliren yetenekler tartışmasının açıklığı),
-96–97 (kuramın sınırı), 71–73 (ölçemediğimiz şeyler)**; **116 bir envanterdir ve tezi "neyi bilmediğimizi
-nereden biliyoruz" olmalı.**
-**117 ← 1 (tanım sorusunun ilk hâli), 110 (dünya modeli ölçütü), 78 (beliren yetenekler), 40 (görev ufku:
-zaman çizelgesi tartışmasının tek ölçülebilir ekseni), 16/71 (ölçütün geçerliliği), 61 (hizalama)**;
-**117'nin işi kavramsal temizliktir, kehanet değil — SOZLESME §4'ün iki taraf kuralı burada en sert
-uygulanacak yerdir.**
-**118 ← bütün seri**; ama **100 ve 114 ile çakışma riski en yüksek makale budur: 100 harita, 114 zincir,
-118 ne olmalı?** Öneri: okuyucunun kendi yol haritası — araştırmacı ve mühendis olarak bundan sonra ne
-okuyacağı, hangi refleksi taşıyacağı ve serinin ona bıraktığı ölçme disiplini. **Yeni ölçüm eklenmemeli
-(karar #220'nin biçimi).**
+**Bir bakım run'ının sırası.** (1) SOZLESME, bu dosya ve YOL-HARITASI'nın ilgili karar ve terim satırları
+okunur; `git status` ile paralel oturum kontrol edilir. (2) İş, yalnızca "Açık borçlar"dan, SOZLESME §4'ün ön
+baskı kontrolünden ya da raporlanmış bir olgu hatasından alınır. (3) Düzeltme yayımlanmış makalede yapılır;
+anlamlıysa §12 revizyon işareti konur, tek künye ya da tek sayı düzeltmesiyse konmaz. (4) Gövdeye her
+dokunuştan sonra `sync-series-hashes.cjs --write`, ardından iki repo kapısı; render etkileniyorsa izole
+kopyada build ve PNG turu. (5) Karar numarası **#265**'ten devam eder; bu dosyanın başlığı ve geçmiş kaydı
+güncellenir. **Yeni makale, yeni başlık ya da yeni faz yalnızca kullanıcının kapsam uzatma kararıyla açılır.**
 
-**Yeniden çağrılacak eski kavramlar (planlı hatırlatmalar):**
-- Getirme hattı ve ajan döngüsü (41–60), 49/53'ün numarasız işareti, çıkarım ekonomisi (26–28) → 115.
-- Ölçütün kırıldığı yerler (71–73), kuramın sınırı (96–97), dünya modeli ölçütü (110) → 116.
-- Tanım tartışması (1), görev ufku (40), beliren yetenekler (78) → 117.
-- Serinin tek refleksi ve terim çakışmaları (100'ün biçimi, **kopyası değil**) → 118.
+**Uyarı (kararlar #214, #223, #231, #238, #245, #262):** ölçülmemiş eğri çizilmez. Batch 28'in tek eğrisi
+(116, Şekil 1) kapalı formülden hesaplandı ve şeklin içinde öyle yazıyor.
 
-**Araştırılacak güncel akademik alanlar.** **115:** ürün katmanı literatürü — getirme hattının üretimdeki
-ölçümü, önbellek ve maliyet (hakemli mecra bol: EMNLP/ACL sistem bildirileri, NSDI, OSDI, SoCC), ajan
-güvenilirliği ve insan devri. **116:** açık sorular envanteri; konum yazıları ve derlemeler ağırlıklı —
-**hakemsiz oran yükselecek, her kalem işaretlenmeli**; mümkün olan yerde hakemli derleme (Nature, Science,
-JMLR, CACM) tercih edilmeli. **117:** AGI tanımları ve zaman çizelgeleri — tanım çalışmaları, uzman anketleri
-(hakemli olanlar var), ve **iki tarafın ölçümü zorunlu**; kehanet alıntısı yasak, ölçülebilir eksen 40'ın
-görev ufkudur. **118:** yeni kaynak ihtiyacı **çok düşük**; serinin kendi sayıları yeterli.
-**Sayısal iddialar ve URL doğrulaması yazımdan bağımsız bir gözle çapraz denetlenir;** süreç kuralları
-SOZLESME §9'dadır.
-
-**Görselleştirme ihtiyaçları (öngörü):**
-- 115: ürün zincirinin kararları ve her birinin geri alma maliyeti — **114'ün tablosunun kopyası olmamalı**;
-  114 üretim tarafıydı, 115 kullanım tarafı ve orada geri alınamazlık başka yerde toplanıyor.
-- 116: bilinmeyenin türleri — ölçülemeyen, ölçülüp anlaşılmayan, tartışmalı; her satırda "kanıt ne olurdu".
-- 117: aynı sözcüğün kaç ayrı tanımı olduğu ve her tanımın hangi sınavı gerektirdiği.
-- 118: okuyucunun kendi yolu; **100'ün kavram haritası ve 114'ün karar zinciri ile üçüncü bir biçim olmalı.**
-- **Uyarı (kararlar #214, #223, #231, #238, #245):** bu fazda da ölçülmemiş eğri çizilmemeli. Batch 27'nin on
-  bir şeklinin **tamamı** tablo ya da blok listesiydi ve hiçbirinde eksen yoktu; aynı çizgi sürdürülmeli.
-
-**Venue doğrulaması — Batch 27'nin çalışan kanalları.** Klasik ve dergi künyeleri için **birincil kanal
+**Venue doğrulaması — Batch 27–28'in çalışan kanalları.** **Batch 28'in eki:** yayıncı sayfalarının çoğu
+betiğe 403 veriyor (PNAS, ACM, SAGE, Taylor & Francis, OUP, Science, HDSR) — bu ölü bağlantı değil bot
+duvarıdır; künye Crossref'ten, metin yazarın kendi sitesindeki PDF'ten, ERIC ya da Europe PMC özetinden
+okunur ve hangisinden okunduğu kaydedilir. arXiv sürüm geçmişi (`/abs/<id>v<N>`) bir ön baskının "tarih"
+sorusunu çözer; hakemli sürüm için Crossref'te başlıkla arama ilk adımdır (CaMeL ve HLE böyle bulundu). Klasik ve dergi künyeleri için **birincil kanal
 Crossref** (`api.crossref.org/works/<doi>`): başlık, dergi, cilt, sayı, sayfa, yıl ve yazar soyadları tek
 çağrıda gelir. Çalışan dizinler: `roboticsproceedings.org/rss<NN>` (RSS; `pNNN.html` ve `pNNN.pdf`),
 `proceedings.mlr.press/v<cilt>` (CoRL ve ICML), `papers.nips.cc/paper_files/paper/<yıl>`,
@@ -220,12 +200,13 @@ PDF'ler `pypdf` ile metne çevrilir; `arxiv.org/pdf/<id>` sürüm numarasız ist
 proceedings PDF'lerinin bir kısmı `pypdf` ile boş metin veriyor (π₀'ın RSS kopyası öyleydi); aynı çalışmanın
 arXiv PDF'i çalışıyor ve künye yine RSS dizininden yazılıyor.
 
-**Teknik plan.** Yeni makaleler catalog.json'a `classificationBatch: 28` ve `readingOrder` 115'ten
-kesintisiz devam ile eklenir; roadmap.json'da ilgili satırlar `yayinda` yapılır + slug eklenir (başlık
-değişecekse entegrasyondan **önce**); YOL-HARITASI prerequisite grafı, kavram-tekrar defteri, terim defteri,
-vaat defteri ve bağlayıcı kararlar güncellenir; doğrulama kapıları çalıştırılır; `+1` fazında bu dosya yeni
-cursor ve **serinin tamamlanmış state'iyle** güncellenir. **Kategori kararı yok (#233).** **Level `advanced`
-kalır** (karar #201). **Sonraki bağlayıcı karar numarası #247'dir.**
+**Teknik plan — yalnızca kapsam uzatılırsa.** Yeni makaleler catalog.json'a `classificationBatch: 29` ve
+`readingOrder` 119'dan kesintisiz devam ile eklenir; önce roadmap.json'a yeni faz ve `planlandi` satırları
+yazılmış olmalıdır (başlık değişecekse entegrasyondan **önce**); YOL-HARITASI prerequisite grafı,
+kavram-tekrar defteri, terim defteri, vaat defteri ve bağlayıcı kararlar güncellenir; doğrulama kapıları
+çalıştırılır. Yeni fazın kategori ve level kararı o run'ın ilk kararıdır. **118'in son bölümü "Bu serinin bir
+sonraki makalesi yok." diye bitiyor** — uzatma kararıyla bu cümle ve `/seri` `footerNote`'u da değişir.
+**Sonraki bağlayıcı karar numarası #265'tir.**
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -243,8 +224,8 @@ yer tutucu hash yazmak sorun değildir. `reading_order` frontmatter'da zorunludu
 başlığıyla birebir eşleşmek zorundadır. **Entegrasyondan sonra makale gövdesine her dokunuşta
 `sync-series-hashes.cjs --write` yeniden çalıştırılır.** SVG'nin **kendisi** hash'i etkilemez, şekil **alt
 metni** etkiler. Araçların üçü de varsayılan olarak yalnızca AI serisini işler. **Yeni bir kategori klasörü
-açmak kod değişikliği gerektirmez** (karar #241) — ama `case-studies` artık açık olduğu için 115'te bu adım
-da yok.
+açmak kod değişikliği gerektirmez** (karar #241). Bakım düzeltmelerinde `entegre-batch` gerekmez; başlık ya
+da özet değişmediyse yalnızca `sync-series-hashes.cjs --write` ve iki kapı yeter.
 
 ## Ölçer betikleri (yeniden yazılması gerekenler)
 
@@ -272,7 +253,14 @@ Kalıcı değiller; her run kendi scratchpad'inde yeniden yazar. Batch 27'de kul
 - **`sweep.py`** — rota taraması, **dilimli** (40 + 40 + 37, toplam ~103 sn), `resp.geturl()` karşılaştırmalı
   ve gövde uzunluğu denetimli.
 - **`shots.mjs`** — Playwright ile şekil PNG'leri; her `figure` 1.200 px'lik bir kaplayıcıya klonlanır ve
-  sayfanın kendi arka plan rengiyle light/dark çekilir.
+  sayfanın kendi arka plan rengiyle light/dark çekilir. **Batch 28 tuzağı:** şekil sayısı ikinci temada
+  sayılırken önceki klon (`#__shot`) hâlâ DOM'da olduğu için sayı bir fazla çıkıyor ve betik `cloneNode`
+  hatasıyla düşüyordu; saymadan önce klon kaldırılmalı.
+- **`measure.mjs`** (Batch 28) — tarayıcı panosu yerine Playwright ile DOM ölçümü: üç genişlik × üç tema,
+  yatay kaydırma, `figure` içindeki SVG'nin kabından taşması, `main` içinde taşan öge, metinde
+  `undefined`/`NaN`, önceki/sonraki gezinme metni, `/seri` altbilgisi ve `/api/reader-sync` dışındaki console
+  hataları. **Git Bash'te `/seri/...` gibi `/` ile başlayan argümanlar Windows yoluna çevrilir** —
+  `MSYS_NO_PATHCONV=1` ile çalıştırılır ve betik dosyası göreli yolla verilir (yoksa betik yolu da bozulur).
 
 **Yayın öncesi zorunlu taramalar.** Kapsam değişmedi: kelime sayısı, parantezli gloss listesi, yasaklı
 biçimler, kendi numarası ve numaralı ileri gönderme taramaları, `N\.` kaçış denetimi, bölüm başlıkları,
@@ -319,6 +307,8 @@ hatası veriyor hem de bazen dosyaya hiç yazmıyor** — Batch 27'de kesme işa
 böyle kırıldı; uzun betikler Write aracıyla **oturum scratchpad'ine** yazılıp `python <dosya>` ile
 çalıştırılmalı.
 
+**Batch 28'de:** 121 rota 40 + 40 + 40 + 1 dilimde (~141 sn) sorunsuz; DOM ölçümü `measure.mjs` ile
+(beş sayfa × üç genişlik × üç tema, sıfır sorun; 118'de yalnızca "Önceki bölüm" var); 7 şekil, 14 PNG.
 **Render doğrulama seti (Batch 27'de kullanılan).** Rota sweep'i Python `urllib` ile, **dilimli**: 117 rota
 40 + 40 + 37 dilim hâlinde, sunucu ayakta, toplam ~103 sn'de sorunsuz derlendi — **dilimleme kuralı
 korunmalı.** Sweep betiği durum kodunun yanında `resp.geturl()`i ve gövde uzunluğunu da karşılaştırmalı.
@@ -356,6 +346,9 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
   `multimodal-and-future` iki öbek (81–90, 110–113). **Batch 27 kohortu da tek başına iki öbeğe
   bölünüyor** (111–113 `multimodal-and-future`, 114 `case-studies`) ve render'da doğrulandı —
   `case-studies` öbeği ilk kez görünüyor. Kasıtlıdır; `reading-list-groups.test.ts` bunu sınar.
+  **Batch 28'de gözlenen:** okuyucu kenar çubuğu artık faz başlığıyla öbekliyor (2026-09-25 UX turu) —
+  "Faz 14 · 0 / 9 · Sınır ve Sentez" altında 110–118 tek öbek; 115'in `case-studies` kategorisi listeyi
+  bölmüyor.
 - Repoda ikinci bir seri (`content/series-boun/**`) ayrı bir üretim hattıyla ilerliyor ve rotası `/boun`.
   AI serisinin araçları o dizine dokunmaz. Build iki seriyi birden derler. **Batch 22–27 sırasında o hat
   aynı worktree'de eşzamanlı çalışıyordu**; `artifacts/`, `.claude/launch.json` ve `.wolf/*` paylaşılan
@@ -363,11 +356,24 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
   portunu tutuyordu; build bu yüzden izole kopyada koşuldu.
 - Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa`,
   `**Bu`, `**zorundadır**.`). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
-- Batch 12–25'in üretimi (51–106) kullanıcı tarafından commit edildi. **Batch 26 (107–110) ve Batch 27
-  (111–114) çalışma ağacında commit edilmemiş** duruyor. Commit/push kullanıcı kararıdır (SOZLESME
+- Batch 12–27'nin üretimi (51–114) ve 2026-09-25 editoryal turu kullanıcı tarafından commit edildi
+  (`8ec2fc9`). **Batch 28 (115–118, 58/71/108/1/80 düzeltmeleri, `/seri` footerNote, TRIGGER, HANDOFF,
+  YOL-HARITASI) çalışma ağacında commit edilmemiş** duruyor. Commit/push kullanıcı kararıdır (SOZLESME
   kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
+- **Batch 28 (2026-09-26):** Makale 115–118, **Faz 14'ün ve serinin kapanışı**: ürünün geri alınamaz kenarı →
+  alanın bilmediklerinin üç türü → AGI'nin sekiz tanımı → iki kollu soru yordamı. `BATCH=4+1`; `+1` seriyi
+  tamamlanmış state'e aldı (#254), TRIGGER bakım kipine geçti, `/seri` `footerNote`'u değişti. **Son
+  numarasız işaret 49/53 iki okumasıyla 115'te ödendi (#255); defterde açık hiçbir şey kalmadı.** Yayımlanmış
+  beş makalede künye/atıf düzeltmesi (#257). Kararlar #254–#264; sonraki numara **#265**. **53 kaynak
+  kaleminin 44'ü hakemli**; CaMeL, HLE, Jones–Bergen, H-ARC, Grace ve ark., Kwa ve ark. beklenenin aksine
+  hakemli çıktı. Kullanıcı ultracode ile başlattı; **iki sınırlı workflow** kullanıldı (araştırma: altı ajan;
+  doğrulama: makale başına bir salt okunur ajan), yazım ve kabul ana oturumda. Doğrulama 5 BLOCKER, 32 MAJOR,
+  51 MINOR buldu; hepsi karara bağlandı (Chen'in toplama hatası dahil, #258). Kapılar: `pnpm typecheck` (0),
+  **764 test** (37 dosya), `pnpm build` (exit 0, `/seri/[slug]` 118 yol, izole kopyada), 121 rotanın tamamı
+  200 (dört dilim), beş sayfa × üç genişlik × üç temada DOM ölçümü (sıfır sorun), 7 yeni diyagram Playwright
+  ile light/dark PNG olarak alınıp gözle doğrulandı. Paralel oturum (okuma sıfırlama) aynı worktree'deydi.
 - **Batch 27 (2026-09-13):** Makale 111–114, **Faz 14'ün gövdesi + serinin ilk vaka incelemesi**: gövdede
   eylem arayüzü → ürün katmanında güncelleme yolları → laboratuvarda doğrulama maliyeti → tek bütçenin
   karar zinciri. `BATCH=4+1`. **`case-studies` klasörü ilk kez açıldı (karar #241) ve kod değişikliği

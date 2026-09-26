@@ -12,7 +12,7 @@ tags:
   - model
   - tahmin
   - temeller
-content_hash: sha256:9339d2867735d48b22326e6a4aaa9d4ff060225bb207f35d7c3691c0a128cf94
+content_hash: sha256:b3fd233e16334a3a6538f0029b081fd3182cd488187c7a5a18ea2f41c335f748
 classification_version: 1
 classification_batch: 0
 ---
@@ -132,7 +132,7 @@ Elimizde bir çerçeve var: girdiyi çıktıya bağlayan, üstünde ayar düğme
 - Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS. [Bağlantı](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf)
 - Goodfellow, I., Bengio, Y. & Courville, A. (2016). *Deep Learning*, 1. bölüm. MIT Press. [Bağlantı](https://www.deeplearningbook.org/contents/intro.html)
 - LeCun, Y., Bengio, Y. & Hinton, G. (2015). *Deep Learning*. Nature. [Bağlantı](https://www.nature.com/articles/nature14539)
-- Turing, A. M. (1950). *Computing Machinery and Intelligence*. Mind. [Bağlantı](https://courses.cs.umbc.edu/471/papers/turing.pdf)
+- Turing, A. M. (1950). *Computing Machinery and Intelligence*. Mind, 59(236), s. 433–460. [Bağlantı](https://courses.cs.umbc.edu/471/papers/turing.pdf)
 - McCarthy, J., Minsky, M. L., Rochester, N. & Shannon, C. E. (2006 [1955]). *A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence*. AI Magazine. [Bağlantı](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904)
 - Stanford Encyclopedia of Philosophy. *The Turing Test*. Stanford University. [Bağlantı](https://plato.stanford.edu/entries/turing-test/)
 - Wolpert, D. H. (1996). *The Lack of A Priori Distinctions Between Learning Algorithms*. Neural Computation. [Bağlantı](https://direct.mit.edu/neco/article/8/7/1341/6016/)

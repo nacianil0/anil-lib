@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" role="img" aria-label="İki bölgeli bir şema. Solda ürünün içi, başlığı yeniden koşulabilir; dört kutu alt alta durur ve her birinin geri alma biçimi yazılıdır: model çağrısı, sürüme dönülür; getirme dizini, yeniden doldurulur; döngü ve ajan sayısı, ayar değişir; geçmiş ve bellek, kayıt silinir. Sağda dünya, başlığı geri alınamaz. İki bölgeyi kesikli bir çizgi ayırır ve üstünde kenar yazar. Kenarı üç ok keser ve her okun kenar üzerinde bir denetim kutusu vardır: dışarı giden yazan eylem, yani e-posta, ödeme, silme için yazma yetkisi yalnız plandaki araçta; dışarı giden çıkan veri, yani argüman, kayıt, vektör için yetki etiketi, veri nereye gidebilir; dışarıdan içeri gelen araç tanımı, sonradan değişebilir, için özet sabitleme ve kum havuzu. Altta iki satır: mimariyle konan denetimde hedefli saldırı yüzde 57,69'dan 6,84'e, planı ayırmakla başarılı saldırı sıfıra; sunucu seçiminde insan, 20 kişiden 15'i kötü niyetli sunucu seçti, 1'i dördünü birden tanıdı.">
+  <defs>
+    <marker id="b115b-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+  <text x="20" y="26" font-size="13" fill="var(--text)">Ürünün iki bölgesi</text>
+  <line x1="20" y1="38" x2="720" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="60" font-size="13" font-weight="bold" fill="var(--cool)">ürünün içi: yeniden koşulabilir</text>
+  <text x="370" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text-muted)">kenar</text>
+  <text x="536" y="60" font-size="13" font-weight="bold" fill="var(--accent)">dünya: geri alınamaz</text>
+
+  <rect x="12" y="70" width="244" height="212" fill="var(--surface-muted)" stroke="var(--border)" />
+  <rect x="24" y="80" width="220" height="44" fill="var(--surface)" stroke="var(--border)" />
+  <text x="36" y="99" font-size="13" font-weight="bold" fill="var(--text)">model çağrısı</text>
+  <text x="36" y="117" font-size="13" fill="var(--text-muted)">sürüme dönülür</text>
+  <rect x="24" y="130" width="220" height="44" fill="var(--surface)" stroke="var(--border)" />
+  <text x="36" y="149" font-size="13" font-weight="bold" fill="var(--text)">getirme dizini</text>
+  <text x="36" y="167" font-size="13" fill="var(--text-muted)">yeniden doldurulur</text>
+  <rect x="24" y="180" width="220" height="44" fill="var(--surface)" stroke="var(--border)" />
+  <text x="36" y="199" font-size="13" font-weight="bold" fill="var(--text)">döngü ve ajan sayısı</text>
+  <text x="36" y="217" font-size="13" fill="var(--text-muted)">ayar değişir</text>
+  <rect x="24" y="230" width="220" height="44" fill="var(--surface)" stroke="var(--border)" />
+  <text x="36" y="249" font-size="13" font-weight="bold" fill="var(--text)">geçmiş ve bellek</text>
+  <text x="36" y="267" font-size="13" fill="var(--text-muted)">kayıt silinir</text>
+
+  <line x1="370" y1="70" x2="370" y2="282" stroke="var(--text-muted)" stroke-dasharray="6 5" />
+
+  <line x1="256" y1="102" x2="532" y2="102" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b115b-ok)" />
+  <line x1="256" y1="176" x2="532" y2="176" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b115b-ok)" />
+  <line x1="534" y1="250" x2="260" y2="250" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b115b-ok)" />
+
+  <rect x="272" y="78" width="196" height="48" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="284" y="97" font-size="13" font-weight="bold" fill="var(--text)">yazma yetkisi</text>
+  <text x="284" y="116" font-size="13" fill="var(--text)">yalnız plandaki araçta</text>
+  <rect x="272" y="152" width="196" height="48" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="284" y="171" font-size="13" font-weight="bold" fill="var(--text)">yetki etiketi</text>
+  <text x="284" y="190" font-size="13" fill="var(--text)">veri nereye gidebilir</text>
+  <rect x="272" y="226" width="196" height="48" fill="var(--accent-soft)" stroke="var(--accent)" />
+  <text x="284" y="245" font-size="13" font-weight="bold" fill="var(--text)">özet sabitleme</text>
+  <text x="284" y="264" font-size="13" fill="var(--text)">ve kum havuzu</text>
+
+  <rect x="536" y="78" width="184" height="48" fill="var(--surface)" stroke="var(--border)" />
+  <text x="548" y="97" font-size="13" font-weight="bold" fill="var(--text)">yazan eylem</text>
+  <text x="548" y="116" font-size="13" fill="var(--text)">e-posta, ödeme, silme</text>
+  <rect x="536" y="152" width="184" height="48" fill="var(--surface)" stroke="var(--border)" />
+  <text x="548" y="171" font-size="13" font-weight="bold" fill="var(--text)">çıkan veri</text>
+  <text x="548" y="190" font-size="13" fill="var(--text)">argüman, kayıt, vektör</text>
+  <rect x="536" y="226" width="184" height="48" fill="var(--surface)" stroke="var(--border)" />
+  <text x="548" y="245" font-size="13" font-weight="bold" fill="var(--text)">gelen araç tanımı</text>
+  <text x="548" y="264" font-size="13" fill="var(--text)">sonradan değişebilir</text>
+
+  <text x="20" y="306" font-size="13" fill="var(--text)">mimariyle konan denetim: hedefli saldırı %57,69 → %6,84; planı ayırmak: başarılı saldırı → 0</text>
+  <text x="20" y="326" font-size="13" fill="var(--text)">sunucu seçiminde insan: 20 kişiden 15'i kötü niyetli seçti, 1'i dördünü birden tanıdı</text>
+</svg>

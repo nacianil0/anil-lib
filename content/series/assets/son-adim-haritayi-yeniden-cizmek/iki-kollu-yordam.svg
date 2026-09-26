@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 532" role="img" aria-label="İki kollu bir akış şeması; üstte başlık: iki kollu yordam, on iki soru, sekiz dal. Sol kol, bir iddia okurken: ölçülmüş mü, türetilmiş mi (98, 40); hangi koşulda (16, 80); taban çizgisi ne, adil mi (97, 99); fark gürültüden büyük mü (101, 104); ölçülen şey bir vekil mi (13, 110); kim yeniden elde etti (102); sonu koşuluyla kullan. Sağ kol, bir sistem kurarken: birim ne, sınır nerede (90, 108); geri alınabilir mi (114, 115); doğrulama hazır mı (35, 113); arayüz neyi yasaklıyor (111); hangi güvenilirlik çıtası (40, 47); düzeltme mi, açıklama mı (109); sonu geri alınabilir adımla dene ve ölç. Sekiz sorunun yanında vurgulu bir çıkış, ikisinde dur işareti, dördünün yanında not var.">
+  <defs>
+    <marker id="b118-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+  <text x="20" y="26" font-size="13" fill="var(--text)">İki kollu yordam: on iki soru, sekiz dal</text>
+  <line x1="20" y1="38" x2="720" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="60" font-size="13" font-weight="bold" fill="var(--cool)">bir iddia okurken</text>
+  <text x="380" y="60" font-size="13" font-weight="bold" fill="var(--accent)">bir sistem kurarken</text>
+
+  <rect x="20" y="72" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="91" font-size="13" fill="var(--text)">ölçülmüş mü, türetilmiş</text>
+  <text x="32" y="108" font-size="13" fill="var(--text)">mi? (98, 40)</text>
+  <line x1="220" y1="94" x2="234" y2="94" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="240" y="91" font-size="13" fill="var(--accent)">türetilmişse:</text>
+  <text x="240" y="108" font-size="13" fill="var(--accent)">varsayımını yaz</text>
+
+  <rect x="20" y="132" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="151" font-size="13" fill="var(--text)">hangi koşulda?</text>
+  <text x="32" y="168" font-size="13" fill="var(--text)">(16, 80)</text>
+  <text x="240" y="151" font-size="13" fill="var(--text-muted)">koşulu</text>
+  <text x="240" y="168" font-size="13" fill="var(--text-muted)">sayıyla taşı</text>
+
+  <rect x="20" y="192" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="211" font-size="13" fill="var(--text)">taban çizgisi ne,</text>
+  <text x="32" y="228" font-size="13" fill="var(--text)">adil mi? (97, 99)</text>
+  <line x1="220" y1="214" x2="234" y2="214" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="240" y="211" font-size="13" fill="var(--accent)">adil değilse:</text>
+  <text x="240" y="228" font-size="13" fill="var(--accent)">kazanç tanımsız</text>
+  <text x="240" y="245" font-size="13" font-weight="bold" fill="var(--accent)">dur</text>
+
+  <rect x="20" y="252" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="271" font-size="13" fill="var(--text)">fark gürültüden büyük</text>
+  <text x="32" y="288" font-size="13" fill="var(--text)">mü? (101, 104)</text>
+  <line x1="220" y1="274" x2="234" y2="274" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="240" y="271" font-size="13" fill="var(--accent)">değilse:</text>
+  <text x="240" y="288" font-size="13" fill="var(--accent)">ölçülemedi yaz</text>
+  <text x="240" y="305" font-size="13" font-weight="bold" fill="var(--accent)">dur</text>
+
+  <rect x="20" y="312" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="331" font-size="13" fill="var(--text)">ölçülen şey bir vekil</text>
+  <text x="32" y="348" font-size="13" fill="var(--text)">mi? (13, 110)</text>
+  <line x1="220" y1="334" x2="234" y2="334" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="240" y="331" font-size="13" fill="var(--accent)">vekilse:</text>
+  <text x="240" y="348" font-size="13" fill="var(--accent)">vekil diye an</text>
+
+  <rect x="20" y="372" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="391" font-size="13" fill="var(--text)">kim yeniden elde etti?</text>
+  <text x="32" y="408" font-size="13" fill="var(--text)">(102)</text>
+  <line x1="220" y1="394" x2="234" y2="394" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="240" y="391" font-size="13" fill="var(--accent)">yoksa:</text>
+  <text x="240" y="408" font-size="13" fill="var(--accent)">tek sonuç say</text>
+
+  <rect x="20" y="432" width="200" height="44" fill="var(--surface)" stroke="var(--cool)" stroke-width="1.5" />
+  <text x="32" y="459" font-size="13" font-weight="bold" fill="var(--cool)">koşuluyla kullan</text>
+
+  <line x1="120" y1="116" x2="120" y2="130" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="120" y1="176" x2="120" y2="190" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="120" y1="236" x2="120" y2="250" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="120" y1="296" x2="120" y2="310" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="120" y1="356" x2="120" y2="370" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="120" y1="416" x2="120" y2="430" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+
+  <rect x="380" y="72" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="392" y="91" font-size="13" fill="var(--text)">birim ne, sınır nerede?</text>
+  <text x="392" y="108" font-size="13" fill="var(--text)">(90, 108)</text>
+  <text x="600" y="91" font-size="13" fill="var(--text-muted)">FLOP bir zaman</text>
+  <text x="600" y="108" font-size="13" fill="var(--text-muted)">birimi değil</text>
+
+  <rect x="380" y="132" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="392" y="151" font-size="13" fill="var(--text)">geri alınabilir mi?</text>
+  <text x="392" y="168" font-size="13" fill="var(--text)">(114, 115)</text>
+  <line x1="580" y1="154" x2="594" y2="154" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="600" y="151" font-size="13" fill="var(--accent)">değilse:</text>
+  <text x="600" y="168" font-size="13" fill="var(--accent)">önce kanıt,</text>
+  <text x="600" y="185" font-size="13" fill="var(--accent)">sonra karar</text>
+
+  <rect x="380" y="192" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="392" y="211" font-size="13" fill="var(--text)">doğrulama hazır mı?</text>
+  <text x="392" y="228" font-size="13" fill="var(--text)">(35, 113)</text>
+  <line x1="580" y1="214" x2="594" y2="214" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="600" y="211" font-size="13" fill="var(--accent)">değilse:</text>
+  <text x="600" y="228" font-size="13" fill="var(--accent)">önce onu kur</text>
+
+  <rect x="380" y="252" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="392" y="271" font-size="13" fill="var(--text)">arayüz neyi yasaklıyor?</text>
+  <text x="392" y="288" font-size="13" fill="var(--text)">(111)</text>
+  <text x="600" y="271" font-size="13" fill="var(--text-muted)">hata önce</text>
+  <text x="600" y="288" font-size="13" fill="var(--text-muted)">arayüzde aranır</text>
+
+  <rect x="380" y="312" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="392" y="331" font-size="13" fill="var(--text)">hangi güvenilirlik</text>
+  <text x="392" y="348" font-size="13" fill="var(--text)">çıtası? (40, 47)</text>
+  <text x="600" y="331" font-size="13" fill="var(--text-muted)">ortalama değil,</text>
+  <text x="600" y="348" font-size="13" fill="var(--text-muted)">her deneme</text>
+
+  <rect x="380" y="372" width="200" height="44" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="392" y="391" font-size="13" fill="var(--text)">düzeltme mi, açıklama</text>
+  <text x="392" y="408" font-size="13" fill="var(--text)">mı? (109)</text>
+  <line x1="580" y1="394" x2="594" y2="394" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <text x="600" y="391" font-size="13" fill="var(--accent)">düzeltmeyse:</text>
+  <text x="600" y="408" font-size="13" fill="var(--accent)">açıklama sayma</text>
+
+  <rect x="380" y="432" width="200" height="44" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" />
+  <text x="392" y="451" font-size="13" font-weight="bold" fill="var(--accent)">geri alınabilir adımla</text>
+  <text x="392" y="468" font-size="13" font-weight="bold" fill="var(--accent)">dene ve ölç</text>
+
+  <line x1="480" y1="116" x2="480" y2="130" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="480" y1="176" x2="480" y2="190" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="480" y1="236" x2="480" y2="250" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="480" y1="296" x2="480" y2="310" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="480" y1="356" x2="480" y2="370" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+  <line x1="480" y1="416" x2="480" y2="430" stroke="var(--text-muted)" stroke-width="1.5" marker-end="url(#b118-ok)" />
+
+  <text x="20" y="500" font-size="13" fill="var(--text-muted)">Parantezdeki sayılar sorunun kurulduğu ya da derinleştiği makaleler.</text>
+  <text x="20" y="518" font-size="13" fill="var(--text-muted)">Vurgulu yan yazılar cevabın açtığı dal: okuma durur, sıra ya da sonucun adı değişir.</text>
+</svg>

@@ -11680,6 +11680,420 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-25T19:37:39.361Z"
+    },
+    {
+      "id": "bug-649",
+      "timestamp": "2026-09-25T19:10:00.000Z",
+      "error_message": "Reset form: the first press of the two-step 'Okuma geçmişini sıfırla' button already submitted the server action (render showed the action's error after one click)",
+      "file": "src/app/yonetim/reset-reading-form.tsx",
+      "root_cause": "The arming <button type=button> and the confirm <button type=submit> occupied the same child slot without keys. React unwraps the top-level fragment and reuses the same DOM button, switching its type to submit synchronously while the arming click is still being dispatched, so the click's activation behaviour submits the form. jsdom tests did not reproduce it; only a real Chromium render did.",
+      "fix": "Distinct keys (arm/confirm/cancel) plus preventDefault on the arming click. Then, after the adversarial review: focus moves to 'Vazgeç' on arming and confirm presses within 500 ms of arming are ignored, which covers double-click, double-tap and double Enter or a held Enter. Verified in Chromium at 375/768/1280 in light and dark: 0 submissions for single click, double-click, Enter-Enter and an 8×Enter burst; a deliberate confirm reaches the server.",
+      "tags": [
+        "react",
+        "form",
+        "two-step-confirm",
+        "button-type",
+        "reconciliation",
+        "keys",
+        "yonetim",
+        "reset"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:40:00.000Z"
+    },
+    {
+      "id": "bug-650",
+      "timestamp": "2026-09-25T19:40:00.000Z",
+      "error_message": "After an owner reset, a device that had not synced yet restored the pre-reset place; the next scroll re-saved it with completed=true, so the reset did not hold for that article",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "The restore runs as soon as local storage is read (ready), before the first sync. The merge then clears progress but the shell never reacts: the viewport stays at the old place, and recordPosition with previous=undefined derives completed from ratio >= 0.9.",
+      "fix": "The provider exposes resetVersion. The shell tracks whether the view came from a stored progress place (restoredFromStoreRef). When resetVersion rises it returns to the start like 'Baştan başla' and hides the pill. run() skips a restore if a reset landed while fonts loaded, and revisedSinceRead is recomputed on reset. The provider also re-records the open article afresh after a reset merge. Covered by e2e tests/e2e/reader-reset.spec.ts; with the reaction disabled the spec fails (scrollY stays 4033).",
+      "tags": [
+        "reader",
+        "sync",
+        "reset",
+        "restore",
+        "progress",
+        "multi-device"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:40:00.000Z"
+    },
+    {
+      "id": "bug-651",
+      "timestamp": "2026-09-25T19:40:00.000Z",
+      "error_message": "Possible deadlock (40P01) between a reset that includes saved places/highlights and a sync batch with [saved-place op, progress op]",
+      "file": "src/lib/reader-data/server/sync-service.ts",
+      "root_cause": "The reset takes reading_progress (table lock) and then saved_places/highlights rows. A sync batch in outbox order could take a saved_places row first and then reading_progress, the opposite order.",
+      "fix": "synchronizeReaderData runs progress ops first (stable order, entities are independent), so both sides lock reading_progress first. Unit test asserts the order.",
+      "tags": [
+        "postgres",
+        "deadlock",
+        "lock-order",
+        "sync",
+        "reset"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:40:00.000Z"
+    },
+    {
+      "id": "bug-652",
+      "timestamp": "2026-09-25T19:40:00.000Z",
+      "error_message": "A new browser (no local state) was treated as behind the account's reset, so the progress it wrote before its first sync answered was dropped",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "resetVersion default 0 meant both 'never saw a reset' and 'holds nothing that a reset could void'.",
+      "fix": "A blob that has never synced and holds no progress (holdsNoPriorProgress) sends resetVersion null. The server does not guard its writes, and the merge adopts the version without clearing (adoptReset). Unit tests cover provider, merge and sync-service.",
+      "tags": [
+        "sync",
+        "reset",
+        "fresh-device",
+        "protocol"
+      ],
+      "related_bugs": [
+        "bug-650"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T19:40:00.000Z"
+    },
+    {
+      "id": "bug-710",
+      "timestamp": "2026-09-25T20:35:44.533Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/acik-sorular-alanin-bilmedikleri.md",
+      "root_cause": "Had 'dan 10'",
+      "fix": "Changed to 'dan 10u'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T20:35:44.533Z"
+    },
+    {
+      "id": "bug-711",
+      "timestamp": "2026-09-25T20:40:21.097Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/agi-tartismasi-tanimlar-testler-zaman-cizelgeleri.md",
+      "root_cause": "Had 'de ise tartışmalı olan, kıyas insanının kendisi. ",
+      "fix": "Changed to 'de ise tartışmalı olan, kıyas insanının kendisi. ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-25T20:40:36.088Z"
+    },
+    {
+      "id": "bug-712",
+      "timestamp": "2026-09-25T20:49:02.140Z",
+      "error_message": "Wrong reference: 101 should be 96",
+      "file": "content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md",
+      "root_cause": "Used \"101\" instead of \"96\"",
+      "fix": "Changed 101 → 96",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T20:49:02.140Z"
+    },
+    {
+      "id": "bug-713",
+      "timestamp": "2026-09-25T20:49:09.411Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/case-studies/vaka-incelemesi-bir-llm-urunu-nasil-kurulur.md",
+      "root_cause": "Had 'de hakemsiz bir ön çalışma olarak andığımız ve so",
+      "fix": "Changed to 'de andığımız, IEEE SaTML 2026'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-25T20:49:09.411Z"
+    },
+    {
+      "id": "bug-714",
+      "timestamp": "2026-09-26T03:32:35.934Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/app/seri/page.tsx",
+      "root_cause": "Had \"Seri gruplar halinde yayımlanır; planlanan başlık",
+      "fix": "Changed to \"Seri tamamlandı; bundan sonrası düzeltme ve günce",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T03:32:35.934Z"
+    },
+    {
+      "id": "bug-715",
+      "timestamp": "2026-09-26T03:34:52.136Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 4→4 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T03:34:52.136Z"
+    },
+    {
+      "id": "bug-716",
+      "timestamp": "2026-09-26T03:50:04.501Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/case-studies/vaka-incelemesi-bir-llm-urunu-nasil-kurulur.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 7→7 lines (4 removed) | Also: Çıkan verinin geri alınamaz olduğunu 58\\. makalede; Ölçümlerin söylediği ikinci şey, kenara konan dene | Also: ama belirtim kendi kuralı gereği yalnızca büyük ha; İnsan onayının ne kadar yakaladığını dil modeli ür | Also: **Model geçişinin ölçüsü ortalama değil, ters döne; **Embedding modeli dizini bağlar, ama geri alma ma",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-09-26T03:51:12.216Z"
+    },
+    {
+      "id": "bug-717",
+      "timestamp": "2026-09-26T03:50:19.467Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/case-studies/vaka-incelemesi-bir-llm-urunu-nasil-kurulur.md",
+      "root_cause": "Had 'da sunduğu çalışma bunu 45 gerçek sunucunun 353 a",
+      "fix": "Changed to 'da sunduğu çalışma bunu 45 gerçek sunucunun 353 a",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-26T03:50:23.219Z"
+    },
+    {
+      "id": "bug-718",
+      "timestamp": "2026-09-26T03:51:28.427Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/assets/vaka-incelemesi-bir-llm-urunu-nasil-kurulur/aracin-uc-ani.svg",
+      "root_cause": "Had \"var(--text)\"",
+      "fix": "Changed to \"var(--text-muted)\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T03:51:28.427Z"
+    },
+    {
+      "id": "bug-719",
+      "timestamp": "2026-09-26T03:52:50.272Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/acik-sorular-alanin-bilmedikleri.md",
+      "root_cause": "Had 'ini, gerçek kılıkta yüzde 36'",
+      "fix": "Changed to 'inde aracı çağırıyor, gerçek kılıkta yüzde 36'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-26T03:53:40.650Z"
+    },
+    {
+      "id": "bug-720",
+      "timestamp": "2026-09-26T03:53:16.998Z",
+      "error_message": "Significant refactor of ",
+      "file": "content/series/articles/multimodal-and-future/acik-sorular-alanin-bilmedikleri.md",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 11→11 lines (6 removed) | Also: Açık kalan kısım daha dar: eğitilmiş öz-düzeltmeni; Hiçbiri. Biri eğitilmemiş bir modele kendini düzel",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-26T03:53:29.632Z"
+    },
+    {
+      "id": "bug-721",
+      "timestamp": "2026-09-26T03:53:43.652Z",
+      "error_message": "Wrong reference: kapanm should be cevaplanm",
+      "file": "content/series/articles/multimodal-and-future/acik-sorular-alanin-bilmedikleri.md",
+      "root_cause": "Used \"kapanm\" instead of \"cevaplanm\"",
+      "fix": "Changed kapanm → cevaplanm",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T03:53:43.652Z"
+    },
+    {
+      "id": "bug-722",
+      "timestamp": "2026-09-26T03:55:53.676Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/multimodal-and-future/agi-tartismasi-tanimlar-testler-zaman-cizelgeleri.md",
+      "root_cause": "Had 'un kapanış cümlesi burada da geçerli: soru \"",
+      "fix": "Changed to 'da Şekil 3'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T03:55:53.676Z"
+    },
+    {
+      "id": "bug-723",
+      "timestamp": "2026-09-26T04:10:03.501Z",
+      "error_message": "Null/undefined access in ",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/3cecdbbb-0489-4226-8bc3-856d8edbe563/scratchpad/tools/shots.mjs",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T04:10:03.501Z"
+    },
+    {
+      "id": "bug-724",
+      "timestamp": "2026-09-26T04:16:15.812Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 9→10 lines (4 removed) | Also: ## Sıradaki run'ın kararları; **Kategori kararı yok.** Karar #233 Faz 14'ün tama | Also: #106, #114, #120, #127, #134, #141, #147, #152, #1; künye yok** (kararlar #191, #198, #207, #216, #224 | Also: ## Next batch preparation — 115'ten devam (Faz 14'; **Pedagojik hedefler.** Batch 27'nin sonunda okuyu | Also: - Batch 12–25'in üretimi (51–106) kullanıcı tarafı; (111–114) çalışma ağacında commit edilmemiş** duru",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-09-26T04:19:00.344Z"
+    },
+    {
+      "id": "bug-725",
+      "timestamp": "2026-09-26T04:16:18.708Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'nin ek ölçerleri oturum scratchpad'",
+      "fix": "Changed to 'in ek ölçerleri oturum scratchpad'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-09-26T04:18:26.817Z"
+    },
+    {
+      "id": "bug-726",
+      "timestamp": "2026-09-26T07:30:00.000Z",
+      "error_message": "Chen ve ark. (HDSR 2024) metnindeki '%99,7 bileşik' sayısı makale taslağına olduğu gibi aktarıldı; kaynağın kendi iki hücresinin toplamı 49,9 + 48,8 = 98,7",
+      "file": "content/series/articles/case-studies/vaka-incelemesi-bir-llm-urunu-nasil-kurulur.md",
+      "root_cause": "Kaynak metnindeki toplama hatası; araştırma dosyası sayıyı tabloyla eşlemeden taşıdı",
+      "fix": "115 ve 118 98,7'yi kullanıyor ve kaynak metnindeki sayının toplama hatası olduğunu yazıyor (karar #258)",
+      "tags": [
+        "series",
+        "source-arithmetic",
+        "verification"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:30:00.000Z"
+    },
+    {
+      "id": "bug-727",
+      "timestamp": "2026-09-26T07:30:00.000Z",
+      "error_message": "58 CaMeL'i ve 71 Humanity's Last Exam'i hakemsiz ön baskı diye anıyordu; ikisi de 2026'da hakemli yayımlanmıştı (IEEE SaTML 2026; Nature 649)",
+      "file": "content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md",
+      "root_cause": "Yayımlanmış makalelerin künyeleri yazıldıkları tarihte doğruydu; SOZLESME §4 durum kontrolü yeniden kullanımda eski makalelere uygulanmamıştı",
+      "fix": "58 ve 71'in gövde cümleleri ve künyeleri güncellendi, hash'ler senkronlandı; revizyon işareti yok (karar #257)",
+      "tags": [
+        "series",
+        "stale-venue",
+        "preprint-status"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-26T07:30:00.000Z"
+    },
+    {
+      "id": "bug-728",
+      "timestamp": "2026-09-26T07:30:00.000Z",
+      "error_message": "108:81 'cevap hangi cetveli seçtiğine bağlı' cümlesini 101'e atfediyordu; cümle 96:27'de",
+      "file": "content/series/articles/models-and-training/performans-muhendisligi-dikkati-hizlandirmak.md",
+      "root_cause": "Geri gönderme numarası içerikle doğrulanmadan yazılmıştı (SOZLESME §5)",
+      "fix": "Atıf 96'ya çevrildi, hash senkronlandı",
+      "tags": [
+        "series",
+        "back-reference",
+        "misattribution"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:30:00.000Z"
+    },
+    {
+      "id": "bug-729",
+      "timestamp": "2026-09-26T07:40:00.000Z",
+      "error_message": "Workflow script parse error: Unexpected token (tek tırnaklı JS string içinde Türkçe kesme işareti); shots.mjs 'Cannot read properties of undefined (reading cloneNode)'; measure.mjs 'Cannot navigate to invalid URL http://localhost:3214C:/.../seri'",
+      "file": "scratchpad tools (workflow script, shots.mjs, measure.mjs)",
+      "root_cause": "(1) '...'nin' gibi kesme işaretleri string'i kapatıyordu; (2) ikinci temada şekil sayılırken önceki #__shot klonu DOM'daydı; (3) Git Bash MSYS yol dönüşümü '/seri/..' argümanını Windows yoluna çevirdi",
+      "fix": "(1) template literal; (2) saymadan önce klonu kaldır; (3) MSYS_NO_PATHCONV=1 ve betiği göreli yolla çağır",
+      "tags": [
+        "tooling",
+        "workflow",
+        "playwright",
+        "git-bash"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T07:40:00.000Z"
+    },
+    {
+      "id": "bug-730",
+      "timestamp": "2026-09-26T04:21:07.770Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-26T04:21:07.770Z"
     }
   ]
 }

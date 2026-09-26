@@ -29,7 +29,7 @@ export default async function SeriesPage() {
       articles={getSeriesDescriptors()}
       basePath={SERIES_BASE_PATH}
       intro="Hiçbir ön bilgi varsaymadan başlar; her makale bir öncekinin üzerine biner. Sıra önemlidir: en iyi sonucu baştan sona okuyarak alırsın."
-      footerNote="Seri gruplar halinde yayımlanır; planlanan başlıklar yeni gruplar hazırlanırken güncellenebilir."
+      footerNote="Seri tamamlandı; bundan sonrası düzeltme ve güncellemedir. Gözden geçirilen yazılar metnin üstünde işaretlenir."
     />
   );
 }

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" role="img" aria-label="Dört kutu ve aralarında oklar. Sol üstte aracı yok: gözlenmeyen davranış (67), yetenek çıkarımının tamlığı (70), dilde sertifikalı sağlamlık (79); kanıt: önce ölçen bir araç; araç kurulunca ikinci türe (96). Sağ üstte ölçülmüş, açıklanmamış: ölçek yasasının biçimi (9), büyük ağlarda genelleme (96), örnekle öğrenmenin mekanizması (23); kanıt: ayırt edici tahmin, sınanmış; sınanınca cevaba, fark 0,006. Sol altta koşulları farklı ölçümler: öz-düzeltme (35), model çöküşü (14), beliren yetenekler (78), pekiştirmenin sınırı (34); kanıt: eşleşmiş koşulda ölçüm; koşul okununca cevaba ya da ikinciye. Sağ altta koşulu içinde cevaplanmış: tek vektörün boyut sınırı (29), FLOP zaman birimi değildir (108), kör sınavda protein yapısı (113); sınır: cevap koşulun dışına taşınmaz. Oklar sol üstten sağ üste, sağ üstten sağ alta, sol alttan sağ alta ve sol alttan sağ üste gider. Altta: kutulara yerleştirme bizim okumamız; oklar türü değiştiren işi adlandırır.">
+  <defs>
+    <marker id="b116-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+  <text x="20" y="26" font-size="13" fill="var(--text)">Bilinmeyenin türleri ve türü değiştiren iş</text>
+  <line x1="20" y1="38" x2="720" y2="38" stroke="var(--border)" />
+
+  <rect x="20" y="50" width="320" height="144" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="72" font-size="13" font-weight="bold" fill="var(--text)">aracı yok</text>
+  <text x="32" y="94" font-size="13" fill="var(--text)">gözlenmeyen davranış (67)</text>
+  <text x="32" y="114" font-size="13" fill="var(--text)">yetenek çıkarımının tamlığı (70)</text>
+  <text x="32" y="134" font-size="13" fill="var(--text)">dilde sertifikalı sağlamlık (79)</text>
+  <text x="32" y="158" font-size="13" fill="var(--accent)">kanıt: önce ölçen bir araç</text>
+  <text x="32" y="180" font-size="13" fill="var(--text-muted)">→ araç kurulunca ikinci türe (96)</text>
+
+  <rect x="400" y="50" width="320" height="144" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="412" y="72" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş, açıklanmamış</text>
+  <text x="412" y="94" font-size="13" fill="var(--text)">ölçek yasasının biçimi (9)</text>
+  <text x="412" y="114" font-size="13" fill="var(--text)">büyük ağlarda genelleme (96)</text>
+  <text x="412" y="134" font-size="13" fill="var(--text)">örnekle öğrenmenin mekanizması (23)</text>
+  <text x="412" y="158" font-size="13" fill="var(--accent)">kanıt: ayırt edici tahmin, sınanmış</text>
+  <text x="412" y="180" font-size="13" fill="var(--text-muted)">→ sınanınca cevaba; fark 0,006</text>
+
+  <rect x="20" y="236" width="320" height="144" fill="var(--surface-muted)" stroke="var(--border)" />
+  <text x="32" y="258" font-size="13" font-weight="bold" fill="var(--text)">koşulları farklı ölçümler</text>
+  <text x="32" y="280" font-size="13" fill="var(--text)">öz-düzeltme (35), model çöküşü (14)</text>
+  <text x="32" y="300" font-size="13" fill="var(--text)">beliren yetenekler (78)</text>
+  <text x="32" y="320" font-size="13" fill="var(--text)">pekiştirmenin sınırı (34)</text>
+  <text x="32" y="344" font-size="13" fill="var(--accent)">kanıt: eşleşmiş koşulda ölçüm</text>
+  <text x="32" y="366" font-size="13" fill="var(--text-muted)">→ koşul okununca cevaba ya da ikinciye</text>
+
+  <rect x="400" y="236" width="320" height="144" fill="var(--surface)" stroke="var(--cool)" />
+  <text x="412" y="258" font-size="13" font-weight="bold" fill="var(--cool)">koşulu içinde cevaplanmış</text>
+  <text x="412" y="280" font-size="13" fill="var(--text)">tek vektörün boyut sınırı (29)</text>
+  <text x="412" y="300" font-size="13" fill="var(--text)">FLOP zaman birimi değildir (108)</text>
+  <text x="412" y="320" font-size="13" fill="var(--text)">kör sınavda protein yapısı (113)</text>
+  <text x="412" y="344" font-size="13" fill="var(--accent)">sınır: cevap koşulun dışına taşınmaz</text>
+
+  <line x1="342" y1="122" x2="396" y2="122" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b116-ok)" />
+  <line x1="560" y1="196" x2="560" y2="232" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b116-ok)" />
+  <line x1="342" y1="308" x2="396" y2="308" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b116-ok)" />
+  <line x1="326" y1="234" x2="404" y2="198" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#b116-ok)" />
+
+  <text x="20" y="404" font-size="13" fill="var(--text-muted)">Kutulara yerleştirme bizim okumamız; oklar türü değiştiren işi adlandırır.</text>
+</svg>

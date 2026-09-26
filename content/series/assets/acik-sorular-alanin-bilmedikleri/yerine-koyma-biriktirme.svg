@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 360" role="img" aria-label="Formülden hesaplanmış iki eğri. Üstte başlık: sınama hatası, ilk yinelemenin hatası u biriminde. Yatay eksen yineleme sayısı (n), 1'den 10'a; dikey eksen 0u'dan 10u'ya. Vurgulu eğri değiştirme: n × u, 1u'dan 10u'ya çıkan düz bir çizgi. Öbür eğri biriktirme: u × (1 + 1/4 + … + 1/n²); 1u'dan başlıyor, hemen düzleşiyor ve π² ÷ 6 ≈ 1,645u düzeyindeki kesikli çizginin altında kalıyor. Altta bir kayıt: kapalı formüllerden hesaplandı (doğrusal regresyon kuramı); dil modeli ölçümü değildir.">
+  <text x="20" y="26" font-size="13" fill="var(--text)">Sınama hatası, ilk yinelemenin hatası u biriminde</text>
+  <line x1="20" y1="38" x2="720" y2="38" stroke="var(--border)" />
+
+  <text x="20" y="62" font-size="13" fill="var(--text-muted)">sınama hatası</text>
+  <line x1="80" y1="70" x2="80" y2="280" stroke="var(--text-muted)" />
+  <line x1="80" y1="280" x2="700" y2="280" stroke="var(--text-muted)" />
+
+  <text x="70" y="284" font-size="13" text-anchor="end" fill="var(--text-muted)">0u</text>
+  <text x="70" y="244" font-size="13" text-anchor="end" fill="var(--text-muted)">2u</text>
+  <text x="70" y="204" font-size="13" text-anchor="end" fill="var(--text-muted)">4u</text>
+  <text x="70" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">6u</text>
+  <text x="70" y="124" font-size="13" text-anchor="end" fill="var(--text-muted)">8u</text>
+  <text x="70" y="84" font-size="13" text-anchor="end" fill="var(--text-muted)">10u</text>
+  <line x1="76" y1="240" x2="80" y2="240" stroke="var(--text-muted)" />
+  <line x1="76" y1="200" x2="80" y2="200" stroke="var(--text-muted)" />
+  <line x1="76" y1="160" x2="80" y2="160" stroke="var(--text-muted)" />
+  <line x1="76" y1="120" x2="80" y2="120" stroke="var(--text-muted)" />
+  <line x1="76" y1="80" x2="80" y2="80" stroke="var(--text-muted)" />
+
+  <text x="90" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
+  <text x="156.7" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">2</text>
+  <text x="223.3" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">3</text>
+  <text x="290" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">4</text>
+  <text x="356.7" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">5</text>
+  <text x="423.3" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">6</text>
+  <text x="490" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">7</text>
+  <text x="556.7" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">8</text>
+  <text x="623.3" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">9</text>
+  <text x="690" y="298" font-size="13" text-anchor="middle" fill="var(--text-muted)">10</text>
+  <text x="390" y="320" font-size="13" text-anchor="middle" fill="var(--text-muted)">yineleme sayısı (n)</text>
+
+  <line x1="90" y1="247.1" x2="690" y2="247.1" stroke="var(--text-muted)" stroke-dasharray="5 4" />
+  <text x="690" y="238" font-size="13" text-anchor="end" fill="var(--text-muted)">π² ÷ 6 ≈ 1,645u</text>
+
+  <polyline points="90,260 156.7,240 223.3,220 290,200 356.7,180 423.3,160 490,140 556.7,120 623.3,100 690,80" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <text x="680" y="72" font-size="13" font-weight="bold" text-anchor="end" fill="var(--accent)">değiştirme: n × u</text>
+
+  <polyline points="90,260 156.7,255 223.3,252.78 290,251.53 356.7,250.73 423.3,250.17 490,249.76 556.7,249.45 623.3,249.2 690,249" fill="none" stroke="var(--cool)" stroke-width="2.5" />
+  <text x="300" y="272" font-size="13" font-weight="bold" fill="var(--cool)">biriktirme: u × (1 + 1/4 + … + 1/n²)</text>
+
+  <text x="20" y="344" font-size="13" fill="var(--text-muted)">Kapalı formüllerden hesaplandı (doğrusal regresyon kuramı); dil modeli ölçümü değildir.</text>
+</svg>

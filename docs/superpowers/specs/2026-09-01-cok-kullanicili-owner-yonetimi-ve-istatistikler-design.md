@@ -127,3 +127,18 @@ Kapılar: `tsc --noEmit`, `vitest run`, `eslint`, `next build`.
 `DATABASE_URL` olmadan `users` tablosuna dokunan hiçbir uçtan uca senaryo koşulamaz. `@electric-sql/pglite`'ı devDependency olarak eklemek denendi, **kurulamadı**: repodaki `pnpm-workspace.yaml` `packages:` alanı taşımıyor ve kurulu pnpm bu yüzden `pnpm --version` dahil her komutta hata veriyor.
 
 Bu nedenle **kullanıcı oluşturma, ikinci hesapla giriş, iki hesabın izolasyonu ve istatistik tablosunun dolu hâli tarayıcıda doğrulanmadı**; yalnızca birim testleriyle (sahte sql client + saf toplama fonksiyonu) doğrulandı. Doğrulanmak istenirse: bir `DATABASE_URL` verilip `drizzle-kit migrate` çalıştırılması yeterli.
+
+## 9. Okuma geçmişini sıfırlama (2026-09-25)
+
+Owner, `/yonetim/[userId]` üzerinden bir hesabın okumasını sıfırlar. Tamamlanan bölümler, yüzdeler ve kaldığı yerler silinir; yer imleri ve işaretler ancak ayrıca işaretlenirse gider. İki adımlı onay kullanılır: ilk basış yalnızca kurar, odak "Vazgeç"e gider ve kurulduktan sonraki 500 ms içindeki onay yok sayılır.
+
+- **Neden silmek yetmez:** `reading_progress` tablosunda tombstone yok. Satır silinse de cihazların localStorage kopyası kalır ve cihazdaki bir sonraki yazma eski durumu geri taşır.
+- **Mekanizma:** `reading_resets(workspace_id, reset_version, reset_at, reset_by)` tablosu eklendi (`drizzle/0003`). `reset_version` değişiklik sekansından gelir, yani saatten bağımsızdır. Tek bir transaction'da sırasıyla şunlar olur:
+  1. `LOCK reading_progress`
+  2. reset satırının upsert'i
+  3. `DELETE reading_progress`
+  4. isteğe bağlı olarak yer imi ve işaret tombstone'ları
+- **Senkron sözleşmesi:** İstek `resetVersion` taşır; hiç senkronize olmamış ve progress'i olmayan cihaz `null` gönderir. Yanıt da `resetVersion` taşır. Sunucu, geride kalan bir istekteki progress yazmalarını onaylar ama uygulamaz. Böyle bir cihaza progress'in tamamını gönderir (cursor 0) ve sıfırlamayı değişikliklerden önce okur.
+- **İstemci:** `mergeSyncResponse`, yeni bir sıfırlamada yerel progress'i ve bekleyen progress yazmalarını düşürür. Sağlayıcı açık makaleyi temiz bir kayıtla yeniden işaretler. Okuyucu, sıfırlamadan önceki konumu geri yüklediyse başa döner; bu, o konumun ve "tamamlandı"nın geri yazılmasını önler. `null` gönderen cihaz sürümü temizlemeden benimser.
+- **Kilit sırası:** Senkron batch'i progress yazmalarını önce çalıştırır. Böylece reset ile batch aynı sırada kilitlenir ve deadlock oluşmaz.
+- **Doğrulama:** Birim testleri (sahte sql), sağlayıcı testleri ve `tests/e2e/reader-reset.spec.ts` var. Sonuncusu senkron yanıtını Playwright ile taklit eder, veritabanı gerektirmez. SQL gerçek bir Postgres'te çalıştırılmadı; ilk gerçek çalışma `vercel-build` migration'ıdır.

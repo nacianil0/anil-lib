@@ -213,10 +213,10 @@
         { "order": 112, "title": "Sürekli Öğrenme ve Kişiselleştirme", "status": "yayinda", "slug": "surekli-ogrenme-ve-kisisellestirme" },
         { "order": 113, "title": "Bilimde Yapay Zekâ: Keşif Aracı Olarak LLM", "status": "yayinda", "slug": "bilimde-yapay-zeka-kesif-araci-olarak-llm" },
         { "order": 114, "title": "Vaka İncelemesi: Bir Sınır Model Nasıl Yapılır?", "status": "yayinda", "slug": "vaka-incelemesi-bir-sinir-model-nasil-yapilir" },
-        { "order": 115, "title": "Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?", "status": "planlandi" },
-        { "order": 116, "title": "Açık Sorular: Alanın Bilmedikleri", "status": "planlandi" },
-        { "order": 117, "title": "AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri", "status": "planlandi" },
-        { "order": 118, "title": "Son Adım: Haritayı Yeniden Çizmek", "status": "planlandi" }
+        { "order": 115, "title": "Vaka İncelemesi: Bir LLM Ürünü Nasıl Kurulur?", "status": "yayinda", "slug": "vaka-incelemesi-bir-llm-urunu-nasil-kurulur" },
+        { "order": 116, "title": "Açık Sorular: Alanın Bilmedikleri", "status": "yayinda", "slug": "acik-sorular-alanin-bilmedikleri" },
+        { "order": 117, "title": "AGI Tartışması: Tanımlar, Testler, Zaman Çizelgeleri", "status": "yayinda", "slug": "agi-tartismasi-tanimlar-testler-zaman-cizelgeleri" },
+        { "order": 118, "title": "Son Adım: Haritayı Yeniden Çizmek", "status": "yayinda", "slug": "son-adim-haritayi-yeniden-cizmek" }
       ]
     }
   ]
