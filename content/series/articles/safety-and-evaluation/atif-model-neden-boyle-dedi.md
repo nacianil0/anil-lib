@@ -12,7 +12,7 @@ tags:
   - oznitelik-atfi
   - etki-fonksiyonu
   - gerekce-sadakati
-content_hash: sha256:18e6c02b54d4bd72a509851fc1f5bd0275eba619b2c3bc5faeb520ff27a9a2ca
+content_hash: sha256:8517b17ddb328977daaa6c5f2f2a85878b55e07259b2c36193f3324cf2629321
 classification_version: 1
 classification_batch: 18
 ---
@@ -116,12 +116,12 @@ Bu makaleyle birlikte 74'te açılan bandın borcu kapanıyor: devreler, özelli
 - Kramár, J., Lieberum, T., Shah, R. & Nanda, N. (2024). *AtP\*: An efficient and scalable method for localizing LLM behaviour to components*. Hakemli olmayan ön çalışma (arXiv:2403.00745). [Bağlantı](https://arxiv.org/abs/2403.00745)
 - Koh, P. W. & Liang, P. (2017). *Understanding Black-box Predictions via Influence Functions*. ICML 2017, PMLR 70. [Bağlantı](https://proceedings.mlr.press/v70/koh17a.html)
 - Pruthi, G., Liu, F., Kale, S. & Sundararajan, M. (2020). *Estimating Training Data Influence by Tracing Gradient Descent*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/e6385d39ec9394f2f3a354d9d2b88eec-Abstract.html)
-- Ilyas, A., Park, S. M., Engstrom, L., Leclerc, G. & Mądry, A. (2022). *Datamodels: Predicting Predictions from Training Data*. ICML 2022, PMLR 162. [Bağlantı](https://proceedings.mlr.press/v162/ilyas22a.html)
+- Ilyas, A., Park, S. M., Engstrom, L., Leclerc, G. & Mądry, A. (2022). *Datamodels: Understanding Predictions with Data and Data with Predictions* (ön baskı adı: *Datamodels: Predicting Predictions from Training Data*). ICML 2022, PMLR 162, s. 9525–9587. [Bağlantı](https://proceedings.mlr.press/v162/ilyas22a.html)
 - Park, S. M., Georgiev, K., Ilyas, A., Leclerc, G. & Mądry, A. (2023). *TRAK: Attributing Model Behavior at Scale*. ICML 2023, PMLR 202. [Bağlantı](https://proceedings.mlr.press/v202/park23c.html)
 - Grosse, R., Bae, J., Anil, C., Elhage, N., Tamkin, A., Tajdini, A., Steiner, B., Li, D., Durmus, E., Perez, E., Hubinger, E., Lukošiūtė, K., Nguyen, K., Joseph, N., McCandlish, S., Kaplan, J. & Bowman, S. R. (2023). *Studying Large Language Model Generalization with Influence Functions*. Hakemli olmayan ön çalışma (arXiv:2308.03296). [Bağlantı](https://arxiv.org/abs/2308.03296)
 - Basu, S., Pope, P. & Feizi, S. (2021). *Influence Functions in Deep Learning Are Fragile*. ICLR 2021. [Bağlantı](https://openreview.net/forum?id=xHKVVHGDOEk)
 - Li, Z., Zhao, W., Li, Y. & Sun, J. (2025). *Do Influence Functions Work on Large Language Models?*. EMNLP 2025 Findings, s. 14367–14382. [Bağlantı](https://doi.org/10.18653/v1/2025.findings-emnlp.775)
-- Liu, J., Blanton, T., Elazar, Y., Min, S., Chen, Y., Chheda-Kothary, A., Tran, H., Bischoff, B., Marsh, E., Schmitz, M., Trier, C., Sarnat, A., James, J., Borchardt, J., Kuehl, B., Cheng, E., Farley, K., Sreeram, S., Anderson, T., Albright, D., Schoenick, C., Soldaini, L., Groeneveld, D., Pang, R. Y., Koh, P. W., Smith, N. A., Lebrecht, S., Choi, Y., Hajishirzi, H., Farhadi, A. & Dodge, J. (2025). *OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens*. ACL 2025 sistem tanıtımları. [Bağlantı](https://doi.org/10.18653/v1/2025.acl-demo.66)
+- Liu, J., Blanton, T., Elazar, Y., Min, S., Chen, Y., Chheda-Kothary, A., Tran, H., Bischoff, B., Marsh, E., Schmitz, M., Trier, C., Sarnat, A., James, J., Borchardt, J., Kuehl, B., Cheng, E., Farley, K., Anderson, T., Albright, D., Schoenick, C., Soldaini, L., Groeneveld, D., Pang, R. Y., Koh, P. W., Smith, N. A., Lebrecht, S., Choi, Y., Hajishirzi, H., Farhadi, A. & Dodge, J. (2025). *OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens*. ACL 2025 sistem tanıtımları, s. 178–188. [Bağlantı](https://doi.org/10.18653/v1/2025.acl-demo.18)
 - Turpin, M., Michael, J., Perez, E. & Bowman, S. R. (2023). *Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract-Conference.html)
 - Chen, Y., Benton, J., Radhakrishnan, A., Uesato, J., Denison, C., Schulman, J., Somani, A., Hase, P., Wagner, M., Roger, F., Mikulik, V., Bowman, S. R., Leike, J., Kaplan, J. & Perez, E. (2025). *Reasoning Models Don't Always Say What They Think*. Hakemli olmayan ön çalışma (arXiv:2505.05410). [Bağlantı](https://arxiv.org/abs/2505.05410)
 - Arcuschin, I., Janiak, J., Krzyzanowski, R., Rajamanoharan, S., Nanda, N. & Conmy, A. (2026). *Chain-of-Thought Reasoning in the Wild Is Not Always Faithful*. ICML 2026, PMLR 306. [Bağlantı](https://arxiv.org/abs/2503.08679)

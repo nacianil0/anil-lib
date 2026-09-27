@@ -12,11 +12,11 @@ tags:
   - siber-yetenek
   - biyolojik-risk
   - bilgi-operasyonlari
-content_hash: sha256:1d43a2a07459caa6a12b08f888e77cbd8725e152c5e93361ebe894c7a6729d72
+content_hash: sha256:2d02227642c18624e8721c9aa147fad126279a2456a75941db992407d99dd96a
 classification_version: 1
 classification_batch: 16
-revised_at: "2026-09-26"
-revision_note: "Münazara çalışmasının 2026 yazar düzeltmesi işlendi: kişisel bilgiye erişen modelin erişmeyene üstünlüğü anlamlı değil; hedeflemenin ek katkısı iki düzenekte de gösterilemedi."
+revised_at: "2026-09-27"
+revision_note: "Münazara çalışmasının 2026 düzeltmesi işlendi (kişisel bilginin ek katkısı anlamlı değil); komplo inancı deneyi için derginin Haziran 2026 endişe notu eklendi."
 ---
 ## Modelin değil, saldırganın hesabı
 
@@ -64,7 +64,7 @@ Aidan Peppin ve arkadaşlarının ACM FAccT 2025'te sunduğu çalışma bu liter
 
 Sayılar dört hakemli çalışmadan geliyor. Giovanni Spitale, Nikola Biller-Andorno ve Federico Germani'nin Science Advances'ta 2023'te yayımladığı çalışma 697 katılımcıya organik ve sentetik tweetler gösteriyor: katılımcılar sentetik doğru bilgiyi organik doğru bilgiden daha iyi tanıyor (0,84'e karşı 0,72 puan), ama sentetik yanlış bilgiyi organik yanlış bilgiden daha az yakalıyor (0,89'a karşı 0,92) ve metnin üreticisini ayırt edemiyor. Josh Goldstein ve arkadaşlarının PNAS Nexus'ta 2024'te yayımladığı çalışma 8.221 katılımcıyla propaganda etkisini ölçüyor: yazıyı hiç görmeyenlerin yüzde 24,4'ü teze katılırken, gerçek bir yabancı propaganda yazısını okuyanların 47,4'ü, model üretimi yazıyı okuyanların 43,5'i katılıyor. Kobi Hackenburg ve Helen Margetts'in PNAS'ta 2024'te yayımladığı çalışma hedeflemeyi ayırıyor: 8.587 katılımcıda model üretimi mesajlar geniş ölçüde ikna edici ve bazı konularda desteği 12 yüzde puana kadar artırıyor, ama kişiye özel hedeflenmiş mesajların toplam etkisi hedeflenmemiş mesajlarınkinden istatistiksel olarak farklı değil (4,83'e karşı 6,20 yüzde puan). Francesco Salvi ve arkadaşlarının Nature Human Behaviour'da 2025'te yayımladığı çalışma tartışma düzeneğine bakıyor: 900 katılımcının canlı münazaralarında, rakibinin temel demografik bilgisine erişen model, karşısındakini münazara sonunda kendi görüşüne insan rakipten daha sık yaklaştırıyor, yazarların bildirdiği göreli artış yüzde 81,2; bilgiye erişmeyen modelin insana üstünlüğü ise anlamlı değil. Ama kişisel bilginin kendi katkısı, yani bilgiye erişen modelle erişmeyen modelin doğrudan farkı, yazarların 2026'da yayımladığı düzeltmeye göre anlamlı değil. İki çalışma bu yüzden çelişmiyor: hedeflemenin genel mesajın üstüne ne kattığı iki düzenekte de ayrıştırılamıyor; ölçülebilen, modelin ikna gücünün kendisi.
 
-Aynı ikna gücünün ters yönü de ölçüldü ve çift kullanımın en yalın örneği. Thomas Costello, Gordon Pennycook ve David Rand'in Science'ta 2024'te yayımladığı çalışma 2.190 komplo teorisi inanırını bir modelle kişiye özel, kanıta dayalı diyaloglara sokuyor: inanç yaklaşık yüzde 20 azalıyor, etki iki ay sonra da duruyor ve konuşulmayan başka komplolara da geçiyor. Aynı yetenek, ikna, bir tarafta bilgi operasyonunun aracı, öbür tarafta panzehiri.
+Aynı ikna gücünün ters yönü de ölçüldü ve çift kullanımın en yalın örneği. Thomas Costello, Gordon Pennycook ve David Rand'in Science'ta 2024'te yayımladığı çalışma 2.190 komplo teorisi inanırını bir modelle kişiye özel, kanıta dayalı diyaloglara sokuyor: inanç yaklaşık yüzde 20 azalıyor, etki iki ay sonra da duruyor ve konuşulmayan başka komplolara da geçiyor. Bu sayılar özgün makaleden ve dergi Haziran 2026'da çalışma için bir endişe notu (expression of concern) yayımladı: makaledeki bazı değerlerin yeniden üretilmesini zorlaştıran tutarsızlıklar bildirilince yazarlar, eleme ölçütlerinin makalede ve yayımlanan çözümleme kodunda farklı uygulandığını ve paylaşılan veri kümesine bir kod birleştirme hatasıyla fazladan satırlar karıştığını buldu. Yazarlara göre ham veriden yeniden kurulan çözümleme sonucun yönünü, istatistiksel anlamlılığını ve büyüklüğünü koruyor; güncellenmiş sonuçları dergi değerlendiriyor ve Eylül 2026 itibarıyla bir karar açıklanmadı. Aynı yetenek, ikna, bir tarafta bilgi operasyonunun aracı, öbür tarafta panzehiri.
 
 Ölçek tarafı iki kayıtla tamamlanıyor. Julian Hazell'in 2023'te yayımladığı, hakemli olmayan çalışma altı yüzden fazla milletvekili için kişiye özel oltalama mesajı üretiyor ve e-posta başına maliyetin bir sentin küçük bir kesri olduğunu ölçüyor. Bir sağlayıcının 2024'te yayımladığı, hakemli olmayan rapor üç ayda beş örtülü etki operasyonunu tespit edip kapattığını, ama hiçbirinin, altı basamaklı bir yayılım ölçeğinde ikinci basamağın üstüne çıkamadığını, yani gerçek topluluklara ulaşamadığını bildiriyor. Nahema Marchal ve arkadaşlarının 2024'te yayımladığı, hakemli olmayan çalışma iki yüze yakın gerçek kötüye kullanım olayını sınıflandırıyor ve en sık amacın kamuoyunu etkilemek olduğunu (olayların yüzde 27'si), en yaygın taktiğin insan benzerliğinin manipülasyonu, taklit ve sahte kimlikler olduğunu buluyor; asıl bulgu ise şu: olayların çoğu sistemlere yapılan gelişmiş saldırılar değil, kolayca erişilebilen yeteneklerin asgari teknik bilgiyle kullanılması.
 
@@ -96,7 +96,7 @@ Siberde marjinal risk en ölçülebilir ve bugünkü sınır dar: model bulunmu�
 
 **Bilgi operasyonlarında üretim ucuzladı, dağıtım ucuzlamadı.** Metin insanınkinden ayırt edilemiyor ve ikna ölçülebilir; hedeflemenin ek katkısı iki düzenekte de gösterilemedi; tespit edilen operasyonlar yayılım basamağında takılıyor.
 
-**Aynı yetenek iki yöne çalışır.** Kişiye özel diyalog komplo inancını yüzde 20 azaltıyor ve etki iki ay sürüyor; ikna, doğruluktan bağımsız bir kanaldır ve yönü kullananın.
+**Aynı yetenek iki yöne çalışır.** Kişiye özel diyalog komplo inancını özgün ölçümde yüzde 20 azaltıyor ve etki iki ay sürüyor (ölçüm, derginin endişe notunun ardından yeniden değerlendiriliyor); ikna, doğruluktan bağımsız bir kanaldır ve yönü kullananın.
 
 **Unutturma erişimi zorlaştırır, bilgiyi silmez.** Tehlikeli bilgi puanı rastgeleye yaklaşırken genel yetenek korunuyor; on ilgisiz örnek ya da tek bir yön çıkarma çoğunu geri getiriyor.
 
@@ -128,7 +128,7 @@ Bu makale boyunca her karar bir kurumun kararıydı: hangi eşiğin anlamlı say
 - Goldstein, J. A., Chao, J., Grossman, S., Stamos, A. & Tomz, M. (2024). *How persuasive is AI-generated propaganda?*. PNAS Nexus 3(2), pgae034. [Bağlantı](https://doi.org/10.1093/pnasnexus/pgae034)
 - Hackenburg, K. & Margetts, H. (2024). *Evaluating the persuasive influence of political microtargeting with large language models*. Proceedings of the National Academy of Sciences 121(24), e2403116121. [Bağlantı](https://doi.org/10.1073/pnas.2403116121)
 - Salvi, F., Horta Ribeiro, M., Gallotti, R. & West, R. (2025). *On the conversational persuasiveness of GPT-4*. Nature Human Behaviour 9(8), s. 1645–1653; yazarların 2026 tarihli düzeltmesiyle birlikte okunmuştur (doi:10.1038/s41562-026-02588-0). [Bağlantı](https://doi.org/10.1038/s41562-025-02194-6)
-- Costello, T. H., Pennycook, G. & Rand, D. G. (2024). *Durably reducing conspiracy beliefs through dialogues with AI*. Science 385(6714), eadq1814. Sayılar yazarların kabul edilmiş sürümünden. [Bağlantı](https://doi.org/10.1126/science.adq1814)
+- Costello, T. H., Pennycook, G. & Rand, D. G. (2024). *Durably reducing conspiracy beliefs through dialogues with AI*. Science 385(6714), eadq1814. Sayılar yazarların kabul edilmiş sürümünden; derginin 11 Haziran 2026 tarihli endişe notuyla birlikte okunmuştur (Science 392(6803), s. 1131; doi:10.1126/science.aej2383). [Bağlantı](https://doi.org/10.1126/science.adq1814)
 - Hazell, J. (2023). *Spear Phishing With Large Language Models*. Hakemli olmayan ön çalışma (arXiv:2305.06972). [Bağlantı](https://arxiv.org/abs/2305.06972)
 - OpenAI (2024). *Disrupting deceptive uses of AI by covert influence operations*. Sağlayıcı raporu (hakemli değildir). [Bağlantı](https://openai.com/index/disrupting-deceptive-uses-of-AI-by-covert-influence-operations/)
 - Marchal, N., Xu, R., Elasmar, R., Gabriel, I., Goldberg, B. & Isaac, W. (2024). *Generative AI Misuse: A Taxonomy of Tactics and Insights from Real-World Data*. Google DeepMind ve Jigsaw, hakemli olmayan ön çalışma (arXiv:2406.13843). [Bağlantı](https://arxiv.org/abs/2406.13843)

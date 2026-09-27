@@ -3033,6 +3033,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | beceri edinme verimliliği | (skill-acquisition efficiency) | 117 | Chollet'nin (hakemli olmayan) zekâ tanımı; ARC'nin dayandığı tanım |
 | yetenek çarpıtması | (capability contortion) | 117 | Hendrycks ve ark. (hakemli değildir): bir eksikliği başka bir yetenekle kapatmak, ör. uzun süreli bellek yerine devasa bağlam penceresi |
 | taklit oyunu | (imitation game) | 1, 117 | Turing testinin özgün adı; 117'de üç kişilik yazılı biçimi kuruldu |
+| endişe notu | (expression of concern) | 68 | derginin, yayımlanmış bir çalışmanın güvenilirliği değerlendirilirken okuru uyardığı resmî not; düzeltme ya da geri çekme değildir. Bakım run'ı 2'de (karar #271) Costello ve ark. için eklendi |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -4534,7 +4535,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Mouton anlamlı fark yok; OpenAI 100 katılımcı, anlamsız artış; Claude 4 sistem kartı kontrol %25 ± 13 →
     %63 ± 13 ve %42 ± 11, 2,53× ve 1,70×; Spitale 697 katılımcı, 0,84 ↔ 0,72 ve 0,89 ↔ 0,92; Goldstein 8.221
     katılımcı, %24,4 → 43,5, gerçek 47,4; Hackenburg 8.587 katılımcı, hedefleme farkı anlamsız; Salvi 820
-    katılımcı, +%81,7 (ön baskı; dergi sürümü 900 katılımcı, +%81,2; 2026 yazar düzeltmesiyle kişiselleştirmenin ek katkısı anlamsız, P = 0,07 — #265); Costello 2.190 katılımcı, ≈ %20, iki ay; Hazell 600+ milletvekili, sentin kesri; Marchal
+    katılımcı, +%81,7 (ön baskı; dergi sürümü 900 katılımcı, +%81,2; 2026 yazar düzeltmesiyle kişiselleştirmenin ek katkısı anlamsız, P = 0,07 — #265); Costello 2.190 katılımcı, ≈ %20, iki ay (özgün makale; Science'ın 11 Haziran 2026 endişe notu, değerlendirme sürüyor — #271); Hazell 600+ milletvekili, sentin kesri; Marchal
     ≈ 200 olay, %27; OpenAI beş operasyon, altı basamaklı ölçekte ≤ 2; WMDP 3.668 soru, 63,7 → 31,2 / 44,0 →
     28,2 / 58,1 → 57,1, rastgele 25; Deeb & Roger ≥ %88; Qi > %60. **69:** 10²⁵ işlem (Art. 51/2), 1 Ağustos
     2024 yürürlük, 2 Ağustos 2025 uygulama, 2 Ağustos 2027 eski modeller; iki hafta bildirim (Art. 52); şeffaflık
@@ -5698,6 +5699,67 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     (`/seri/[slug]` 118 yol, izole kopyada); 21 şekil light/dark PNG olarak alınıp gözle incelendi; 20 sayfa × 3
     genişlik × 3 temada DOM ölçümü sorunsuz; revizyon satırı tarayıcıda render ediliyor. **Sonraki bağlayıcı karar
     numarası #270'tir.**
+270. **Bakım run'ı 2 (2026-09-27): tarihe bağlı yeniden bakışlar ve ön baskı durumu (SOZLESME §4).** NeurIPS 2026'nın
+    kabul dökümü yayımlanmıştı (`neurips.cc/static/virtual/data/neurips-2026-orals-posters.json`, 9.133 kayıt: ana
+    konferans 7.796, Evaluations and Datasets 1.180, Position 157). Kaynakçaların 1.499 künyesinin tamamı başlık,
+    başlık benzerliği ve yazar soyadı örtüşmesiyle bu dökümle ve ICLR 2026, ICML 2026, COLM 2026, ECCV 2026, CVPR 2026
+    listeleriyle eşleştirildi. **Tek yeni hakemli kalem:** Chen ve ark. *Persona Vectors* (66) — künye "NeurIPS 2026'ya
+    kabul edilmiş bildiri; okunan sürüm arXiv:2507.21509", gövdedeki niteleme "NeurIPS 2026'ya kabul edilen çalışması"
+    (72–73'teki COLM 2026 biçimi); r = 0,76–0,97 arXiv v3'te yeniden okundu. HANDOFF borç (a)'daki altı kalemin (58
+    Beurer-Kellner, 67 Meinke ve Emmons, 71 Biderman, 117 Hendrycks ve ARC-AGI-2) hiçbiri NeurIPS 2026'da ya da öteki
+    listelerde yok; hakemsiz etiketleri doğru. ICLR ve COLM 2026 eşleşmelerinin hepsi zaten doğru etiketliydi. **(b)**
+    ICML 2026'nın PMLR cildi hâlâ yayında değil; camera-ready dipnotlarına göre cilt numarası **306** (77'deki Arcuschin
+    künyesinin "PMLR 306"sı bu yüzden doğru; `proceedings.mlr.press/v306` 2026-09-27'de 404). **(c)** COLM 2026 6–9
+    Ekim'de San Francisco'da. EMNLP 2026 (24–29 Ekim) kabul listesini sitesinde yayımlamadı; bildiri kitabı ACL
+    Anthology'ye girince taranır.
+271. **Crossref `updated-by` taraması (bakım run'ı 2): 327 benzersiz DOI'nin tamamı.** 325'i çözüldü ve Crossref
+    başlıkları künye başlıklarıyla karşılaştırıldı: hepsi doğru çalışmaya gidiyor. İki "404"ten biri ayrıştırma
+    kusuruydu (Brier 1950'nin parantezli DOI'si sağlam), öteki gerçek kırık kimlikti (OLMoTrace, #272). Yedi düzeltme
+    ilişkisinin hepsi birincil metinden okundu: Salvi (68) ve A-Lab (113, 118) önceden işlenmişti; Shumailov ve ark.
+    2024'ün düzeltmesi "Theoretical intuition" bölümünde αᵢ → βᵢ yazımıdır, 14 o sembolleri kullanmıyor; H-ARC'ın (117)
+    düzeltmesi ana metne yanlışlıkla konmuş öncül denklemleri kaldırıyor, 946 kişi / ~%65 etkilenmiyor;
+    Armstrong–Sotala 2014'ün (117) düzeltmesi yalnızca kurum bilgisidir; Ioannidis 2005'in (98) 2022 düzeltmesi Tablo
+    2'deki bir paranteztir ve 98 formülü kullanmıyor. **Yeni ve anlamlı olan:** Costello ve ark. 2024 (68) için
+    Science'ın **11 Haziran 2026 tarihli endişe notu** (Science 392(6803), s. 1131): yayımlanan veri kümesine kod
+    birleştirme hatasıyla fazladan satırlar karışmış, eleme ölçütleri makalede ve çözümleme kodunda farklı
+    uygulanmış; yazarlar düzeltilmiş çözümlemenin sonucu yön, anlamlılık ve büyüklük olarak koruduğunu bildiriyor,
+    dergi değerlendirmeyi sürdürüyor. Not iki denetim turunda görülmemişti, çünkü güncel durum taraması yalnızca
+    hakemsiz etiketli kalemlere bakıyordu. 68'in gövdesine (tarihli), "Aynı yetenek iki yöne çalışır" maddesine ve
+    künyesine işlendi; özet ölçümü doğru aktardığı için değişmedi. "Endişe notu (expression of concern)" terim
+    defterine girdi. **Revizyon işareti konuldu** (kanıt sınırının eklenmesi, §12): `revised_at: "2026-09-27"`; not
+    run 1'in Salvi notuyla birleştirildi.
+272. **Bağlantı hedefi taraması (bakım run'ı 2): DOI'siz 1.012 benzersiz bağlantı.** arXiv'in 223 kimliği export
+    API'siyle başlık karşılaştırmasından geçti: sıfır uyuşmazlık. OpenReview'un 142 kimliği ICLR 2021–2026, NeurIPS
+    2022/2026, ICML/COLM 2026 dökümleri, TMLR ve COLM 2024 listeleri, ICLR 2020'nin `iclr.cc/virtual_2020/poster_<id>.html`
+    sayfaları ve ICLR 2018–2019 program sayfalarıyla doğrulandı; **ICLR 2017'nin üç kimliği** (Zhang ve ark., Keskar ve
+    ark., Alain–Bengio; dört bağlantı) için bağımsız kanal yok — OpenReview ve API'si doğrulama sayfası gösteriyor.
+    Öteki sayfaların durum kodu ve başlığı okundu; betiğe 403/429/503 veren 25 adres bot duvarıydı: 15'i DOI'si
+    Crossref'te doğrulanan yayıncı sayfası, kalan 10'u tarayıcı panosu, Crossref ya da NCBI E-utilities ile tek tek
+    doğrulandı; beş bağlantı kopması ve EUR-Lex'in 202'si yeniden denemede 200 döndü. **Düzeltilen yayımlanmış hatalar (revizyon
+    işaretsiz, §12 "bağlantı onarımı / künye düzeltmesi"):** (a) NeurIPS 2024'e giden beş `papers.nips.cc` adresi 404
+    veriyordu — hash'lerin bir kısmı yalnızca son karakterlerde ayrışıyordu: 73 PRISM (başlık da tam hâline, 66'daki
+    künyeyle aynı kimliğe çekildi), 76 Tan ve ark. ile ReFT, 78 Du ve ark. ile Ruan ve ark.; (b) 76'daki CAST
+    bağlantısı ICLR 2025 kaydına değil başka bir OpenReview forumuna (`eLpJ0EIcAO`) gidiyordu; resmî ICLR 2025 verisindeki
+    kayıt `Oi47wc10sm`, bağlantı betikle doğrulanabilen `proceedings.iclr.cc` sayfasına çevrildi; (c) 77'deki OLMoTrace
+    künyesi var olmayan bir DOI (`2025.acl-demo.66`) ve arXiv sürümünün yazar listesini (Sreeram ACL bildirisinde yok)
+    taşıyordu → `2025.acl-demo.18`, s. 178–188, 30 yazar; (d) 77'deki Datamodels künyesi ICML 2022 bağlantısıyla ön
+    baskının başlığını taşıyordu → yayımlanmış başlık + "(ön baskı adı: …)", s. 9525–9587.
+273. **Borç (d) ve (e) kapandı — bilgi notu olarak (bakım run'ı 2).** (d) 105'in Şekil 1 notu: mikro-GPT'nin kodu
+    hiçbir yerde yok (repo, önceki oturumların scratchpad'leri ve kardeş dizinler tarandı); şartname (#226) mimariyi
+    sabitliyor ama başlatmayı ve tohum düzenini sabitlemiyor, dolayısıyla yeni bir uygulama başka sayılar verir ve
+    yayımlanmış değerlerin `başla kedi` bağlamına mı iki bağlamın ortalamasına mı ait olduğunu ayıramaz. Not iki
+    okumada da doğru; okura yansıyan bir hata yok. Ancak 103–105'in sayıları topluca yeniden üretilirse (kapsam
+    kararı) birlikte çözülür. (e) 92'deki LASER sayısı: ICLR 2024 bildiri PDF'i ve arXiv'in tek sürümü aynı tutarsızlığı
+    taşıyor, yazarların deposu 2024'ten beri değişmedi; metin tutarsızlığı zaten söylüyor. 66'nın iki SVG-tablosu (Ş1
+    dört dalkavukluk, Ş3 dört katman) HANDOFF'un yeniden çizim adayları listesine eklendi; bu run'daki künye dokunuşu
+    şekil yeniden çizimini gerektirmedi.
+274. **Süreç (bakım run'ı 2).** Kullanıcı TRIGGER'ı ultracode olmadan çalıştırdı; workflow ve yardımcı ajan kullanılmadı,
+    bütün taramalar, kararlar ve düzeltmeler ana oturumda. Düzeltmeler elle, satır satır; kabul diff üzerinden. Kapılar:
+    `sync-series-hashes --write` (altı makale), `check-series-content` (uyarılar dâhil) ve `check-series-svg` temiz,
+    `pnpm typecheck` 0, 764/764 test, `pnpm build` exit 0 (`/seri/[slug]` 118 yol, izole kopyada); değişen altı sayfa ×
+    üç genişlik × üç tema Playwright ile ölçüldü: 200, konsol hatası yok, yatay taşma yok, yeni metin ve bağlantıların
+    hepsi DOM'da, 68'in revizyon satırı "27 Eylül 2026" ile render ediliyor. **Sonraki bağlayıcı karar numarası
+    #275'tir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

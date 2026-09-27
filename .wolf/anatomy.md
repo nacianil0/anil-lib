@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-26T10:16:11.557Z
-> Files: 747 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-27T17:08:05.634Z
+> Files: 765 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -438,6 +438,20 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/791bd47e-e985-4412-bcb6-24c47570592c/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/7ed3753d-c162-4d6b-89e2-8af119d9a92c/scratchpad/
+
+- `art.cjs` — Usage: node art.cjs <n>[,<n>...] [regex]  -> prints path, and (optionally) lines matching regex with (~283 tok)
+- `bib.py` — Extract every bibliography entry of the AI series into bib.json. (~619 tok)
+- `buglog_add.py` — Append curated bug entries for maintenance run 2 to .wolf/buglog.json (keeps 2-space JSON, no traili (~1090 tok)
+- `crossref_sweep.py` — Crossref sweep: for every DOI, record updated-by / update-to / relation and basic metadata. (~644 tok)
+- `dois.py` — Collect DOIs from AI-series bibliography links (doi.org and publisher URLs that embed a DOI). (~506 tok)
+- `linkcheck.py` — Link-target check: does each non-DOI bibliography link point to the cited work? (~1455 tok)
+- `linkreport.py` — Report link-target mismatches from links.jsonl. (~478 tok)
+- `match.py` — Match bibliography titles against a conference orals-posters dump. (~893 tok)
+- `match2.py` — Second pass: catch renamed titles by >=2 shared author surnames + weak token overlap. (~894 tok)
+- `measure.mjs` — Render check for the pages touched in maintenance run 2. (~1378 tok)
+- `orcheck.py` — Verify OpenReview forum ids in the bibliography against conference dumps and listing pages. (~976 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/84c91739-9a4e-465b-bec5-b770bfc86161/scratchpad/
 
 
@@ -634,10 +648,11 @@
 - `boun-batch13-seri-tamamlandi.md` (~1378 tok)
 - `boun-batch9-faz-d-govde.md` (~988 tok)
 - `editoryal-yenileme-2026-09-25.md` (~730 tok)
-- `MEMORY.md` — Memory index (~2166 tok)
+- `MEMORY.md` — Memory index (~2283 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `okuma-sifirlama-2026-09-25.md` (~542 tok)
 - `series-bakim-run1-2026-09-26.md` (~612 tok)
+- `series-bakim-run2-2026-09-27.md` (~487 tok)
 - `series-batch22-faz10-acilis.md` — Declares into (~1184 tok)
 - `series-batch23-faz10-kapanis.md` (~1009 tok)
 - `series-batch24-faz11-kapanis.md` (~710 tok)
@@ -1142,7 +1157,13 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md` — Okumaktan müdahaleye (~6417 tok)
+- `atif-model-neden-boyle-dedi.md` — Üç ayrı "neden" (~7312 tok)
+- `beliren-yetenekler-tartismasi-aniden-mi-geliyor.md` — Beşinci makalenin açık bıraktığı soru (~6679 tok)
+- `dalkavukluk-ve-model-karakteri.md` — Hoşa giden ile doğru olan (~7690 tok)
 - `degerlendirme-bilimi-benchmarklarin-otesi.md` — Bir puan bir ölçümdür (~10230 tok)
+- `insan-degerlendirmesi-ve-hakem-modeller.md` — Anahtar yokken (~9079 tok)
+- `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8575 tok)
 - `seffaflik-model-kartlari-ve-sistem-kartlari.md` — Sayının yanındaki belge (~6173 tok)
 
 ## content/series/assets/
@@ -1560,10 +1581,10 @@
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~11666 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~13806 tok)
 - `SOZLESME.md` — "Sıfırdan Yüze: Yapay Zekâ" — Seri Sözleşmesi (~11457 tok)
 - `TRIGGER.md` — "Sıfırdan Yüze: Yapay Zekâ" — Üretim Trigger'ı (~275 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~180824 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~182886 tok)
 
 ## docs/superpowers/plans/
 

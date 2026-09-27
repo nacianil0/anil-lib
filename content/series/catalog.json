@@ -1358,7 +1358,7 @@
         "gerekce-sadakati",
         "karakter-egitimi"
       ],
-      "contentHash": "sha256:588c02dea8ff63c567fd10d263253da482792b9c0f315906a6c997b0b1d3c83f",
+      "contentHash": "sha256:6a84ada66b8d8f8c196690b344062fed00179250184786314854243c44c4253c",
       "path": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
       "relatedArticleIds": [],
       "classificationBatch": 15
@@ -1400,12 +1400,12 @@
         "biyolojik-risk",
         "bilgi-operasyonlari"
       ],
-      "contentHash": "sha256:1d43a2a07459caa6a12b08f888e77cbd8725e152c5e93361ebe894c7a6729d72",
+      "contentHash": "sha256:2d02227642c18624e8721c9aa147fad126279a2456a75941db992407d99dd96a",
       "path": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
-      "revisedAt": "2026-09-26",
-      "revisionNote": "Münazara çalışmasının 2026 yazar düzeltmesi işlendi: kişisel bilgiye erişen modelin erişmeyene üstünlüğü anlamlı değil; hedeflemenin ek katkısı iki düzenekte de gösterilemedi."
+      "revisedAt": "2026-09-27",
+      "revisionNote": "Münazara çalışmasının 2026 düzeltmesi işlendi (kişisel bilginin ek katkısı anlamlı değil); komplo inancı deneyi için derginin Haziran 2026 endişe notu eklendi."
     },
     {
       "articleId": "article_a0ac8483-2105-495b-baa4-0663cf3f8333",
@@ -1508,7 +1508,7 @@
         "hakem-yanliligi",
         "insan-capasi"
       ],
-      "contentHash": "sha256:d8ed644ef1ec526157b99d35e28e62b16a92afe67ff8d772cea6017cf7267ae1",
+      "contentHash": "sha256:455f1b596e98f6d7c496c97cbc6c9913e3ba7cf18951c496c52bfb265c584c1c",
       "path": "content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1574,7 +1574,7 @@
         "kavram-silme",
         "model-duzenleme"
       ],
-      "contentHash": "sha256:7affca8ed378bf8cbb0388fbc6ca9981109bce92182317307d92c272a15e72c6",
+      "contentHash": "sha256:169479c3684de0ccaf29dec77139bbe8cfcc82243852f53d9240f50a5dc445a8",
       "path": "content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1594,7 +1594,7 @@
         "etki-fonksiyonu",
         "gerekce-sadakati"
       ],
-      "contentHash": "sha256:18e6c02b54d4bd72a509851fc1f5bd0275eba619b2c3bc5faeb520ff27a9a2ca",
+      "contentHash": "sha256:8517b17ddb328977daaa6c5f2f2a85878b55e07259b2c36193f3324cf2629321",
       "path": "content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1614,7 +1614,7 @@
         "faz-gecisi",
         "ongorulebilirlik"
       ],
-      "contentHash": "sha256:672d0ed51882a0ec73279e76e12150bd5f6b318cfdea53a80cb75a4f624d4c63",
+      "contentHash": "sha256:f495435733bfdd18d054dbfc4321ddf8d262ae9183d600d4d263789702286fa2",
       "path": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 18

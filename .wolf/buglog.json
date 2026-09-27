@@ -12709,6 +12709,222 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-26T13:30:00.000Z"
+    },
+    {
+      "id": "bug-769",
+      "timestamp": "2026-09-27T16:20:20.294Z",
+      "error_message": "Significant refactor of ",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/7ed3753d-c162-4d6b-89e2-8af119d9a92c/scratchpad/match.py",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 10→16 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T16:20:20.294Z"
+    },
+    {
+      "id": "bug-770",
+      "timestamp": "2026-09-27T16:27:15.572Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/7ed3753d-c162-4d6b-89e2-8af119d9a92c/scratchpad/dois.py",
+      "root_cause": "Had \"nature\\.com/articles/(s\\d{5}-\\d{3}-\\d{5}-\\w)\"",
+      "fix": "Changed to \"nature\\.com/articles/(s\\d{5}-\\d{3}-\\d{5}-\\w|[a-z]",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-27T16:27:17.255Z"
+    },
+    {
+      "id": "bug-771",
+      "timestamp": "2026-09-27T16:27:59.883Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
+      "root_cause": "Had 'te yayımladığı — hakemli olmayan — çalışma, 62'",
+      "fix": "Changed to 'ya kabul edilen çalışması, 62'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T16:27:59.883Z"
+    },
+    {
+      "id": "bug-772",
+      "timestamp": "2026-09-27T16:38:56.843Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
+      "root_cause": "Had \"2026-09-26\"",
+      "fix": "Changed to \"2026-09-27\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T16:38:56.843Z"
+    },
+    {
+      "id": "bug-773",
+      "timestamp": "2026-09-27T16:43:07.632Z",
+      "error_message": "Wrong reference: Hazell should be zg",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "Used \"Hazell\" instead of \"zg\"",
+      "fix": "Changed Hazell → zg",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T16:43:07.632Z"
+    },
+    {
+      "id": "bug-774",
+      "timestamp": "2026-09-27T16:54:19.842Z",
+      "error_message": "Wrong reference: aaf3ecd91b1a0b26fb3adf1e35a89e8b should be fb3ad59a84799bfb8d700e56d19c231b",
+      "file": "content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md",
+      "root_cause": "Used \"aaf3ecd91b1a0b26fb3adf1e35a89e8b\" instead of \"fb3ad59a84799bfb8d700e56d19c231b\"",
+      "fix": "Changed aaf3ecd91b1a0b26fb3adf1e35a89e8b → fb3ad59a84799bfb8d700e56d19c231b",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-27T16:54:21.703Z"
+    },
+    {
+      "id": "bug-775",
+      "timestamp": "2026-09-27T16:54:22.901Z",
+      "error_message": "Wrong reference: 5474d9d43c0519aa176276ff2c1ca528 should be 5f1eee2509599faeeb3570a887016a64",
+      "file": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
+      "root_cause": "Used \"5474d9d43c0519aa176276ff2c1ca528\" instead of \"5f1eee2509599faeeb3570a887016a64\"",
+      "fix": "Changed 5474d9d43c0519aa176276ff2c1ca528 → 5f1eee2509599faeeb3570a887016a64",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-27T16:54:24.739Z"
+    },
+    {
+      "id": "bug-776",
+      "timestamp": "2026-09-27T17:04:56.926Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "13 lines replaced/restructured",
+      "fix": "Rewrote 18→58 lines (13 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T17:04:56.926Z"
+    },
+    {
+      "id": "bug-777",
+      "timestamp": "2026-09-27T17:05:06.100Z",
+      "error_message": "Wrong reference: 270 should be 275",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Used \"270\" instead of \"275\"",
+      "fix": "Changed 270 → 275",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-09-27T17:05:07.103Z"
+    },
+    {
+      "id": "bug-778",
+      "timestamp": "2026-09-27T17:10:00.000Z",
+      "error_message": "Five NeurIPS 2024 bibliography links returned 404 (papers.nips.cc hash URLs in 73, 76, 78)",
+      "file": "content/series/articles/safety-and-evaluation/{insan-degerlendirmesi-ve-hakem-modeller,aktivasyonlara-mudahale-yonlendirme-ve-sondalar,beliren-yetenekler-tartismasi-aniden-mi-geliyor}.md",
+      "root_cause": "Hash URLs were not copied from the proceedings index; some differed only in the last characters (PRISM be2e...a1b7ea7e vs be2e...a1b8cf35), others were wholly wrong. The pre-publication link check did not compare page titles.",
+      "fix": "Took the correct hash URLs from papers.nips.cc/paper_files/paper/2024 (4,493 entries), verified 200 + title + authors; aligned 73's PRISM title with 66's full title.",
+      "tags": [
+        "series",
+        "bibliography",
+        "broken-link",
+        "neurips",
+        "maintenance"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T17:10:00.000Z"
+    },
+    {
+      "id": "bug-779",
+      "timestamp": "2026-09-27T17:10:00.000Z",
+      "error_message": "76 linked 'Programming Refusal with Conditional Activation Steering' (ICLR 2025) to OpenReview forum eLpJ0EIcAO, which is not the ICLR 2025 record",
+      "file": "content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md",
+      "root_cause": "Forum id taken from a different submission; OpenReview is behind a challenge page so the id was never verifiable by script.",
+      "fix": "Official ICLR 2025 dump maps the paper to Oi47wc10sm; link switched to the script-verifiable proceedings.iclr.cc page (title + authors checked).",
+      "tags": [
+        "series",
+        "bibliography",
+        "wrong-link",
+        "openreview",
+        "maintenance"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T17:10:00.000Z"
+    },
+    {
+      "id": "bug-780",
+      "timestamp": "2026-09-27T17:10:00.000Z",
+      "error_message": "77's OLMoTrace citation used a non-existent DOI (10.18653/v1/2025.acl-demo.66) and the arXiv author list (31 names) while citing the ACL 2025 demo paper (30 names)",
+      "file": "content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md",
+      "root_cause": "Citation assembled from the arXiv page plus a guessed anthology id; DOI never resolved (doi.org handle responseCode 100).",
+      "fix": "DOI -> 10.18653/v1/2025.acl-demo.18, pages 178-188, Sreeram removed per ACL proceedings; also Datamodels title corrected to the ICML 2022 title with '(ön baskı adı: ...)'.",
+      "tags": [
+        "series",
+        "bibliography",
+        "doi",
+        "author-list",
+        "maintenance"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T17:10:00.000Z"
+    },
+    {
+      "id": "bug-781",
+      "timestamp": "2026-09-27T17:10:00.000Z",
+      "error_message": "68 cited Costello et al. (Science 2024) without Science's 11 June 2026 editorial expression of concern",
+      "file": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
+      "root_cause": "Source-status checks (SOZLESME §4) only scanned items labelled hakemsiz; Crossref updated-by was not queried for every DOI, so a notice on a peer-reviewed source went unseen through two audits.",
+      "fix": "Added the dated EoC sentence, qualified the discipline bullet, added the notice to the künye, term 'endişe notu (expression of concern)' registered, revision mark 2026-09-27; HANDOFF now requires updated-by on all DOIs.",
+      "tags": [
+        "series",
+        "source-status",
+        "expression-of-concern",
+        "crossref",
+        "maintenance"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-09-27T17:10:00.000Z"
     }
   ]
 }

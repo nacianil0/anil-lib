@@ -6,7 +6,7 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-09-26 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · bakım run'ı 1 tamamlandı (kararlar #265–#269) · kapsamın uzatılması kullanıcı kararıdır**
+Son güncelleme: 2026-09-27 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · bakım run'ı 2 tamamlandı (kararlar #270–#274) · kapsamın uzatılması kullanıcı kararıdır**
 
 ## Cursor ve güvenli başlangıç
 
@@ -83,7 +83,7 @@ Tur cursor'ı değiştirmedi; 115–118 ondan sonra Batch 28'de yayımlandı ve 
   Seri sayısı dili kullanılmadı.
 - **Kapsamın uzatılması kullanıcı kararıdır; verilmedi.** Uzatma istenirse sıra: yol haritasına faz ve
   başlıklar (SOZLESME §7), kategori ve level kararları, HANDOFF'un cursor'ı, TRIGGER'ın üretim kipine dönmesi.
-- **Sonraki bağlayıcı karar numarası #270'tir** (bakım run'ı 1 #265–#269'u kullandı).
+- **Sonraki bağlayıcı karar numarası #275'tir** (bakım run'ı 1 #265–#269'u, bakım run'ı 2 #270–#274'ü kullandı).
 - **Batch 28'in yayımlanmış makalelere dokunuşu (karar #257, revizyon işaretsiz):** 58 (CaMeL → IEEE SaTML
   2026), 71 (HLE → Nature 649), 108:81 (atıf 101 → 96), 1 (Turing künyesine cilt/sayfa), 80 (Mökander yılı
   69 ile hizalandı). **49 bilerek değiştirilmedi** (karar #256).
@@ -118,21 +118,61 @@ borçlar" listesinden ve SOZLESME §4'ün ön baskı durum kontrolünden alınd�
   - **Render:** 21 şekil light/dark PNG; 20 sayfa × 3 genişlik × 3 temada DOM ölçümü sorunsuz.
   - Commit yapılmadı; commit kullanıcıya ait.
 
+## Bakım run'ı 2 (2026-09-27) — kararlar #270–#274
+
+TRIGGER bakım kipinde ikinci kez çalıştırıldı; yeni makale ya da başlık üretilmedi. Kullanıcı ultracode demedi:
+workflow ve yardımcı ajan kullanılmadı, bütün taramalar, kararlar ve düzeltmeler ana oturumda. Ayrıntı YOL-HARITASI
+kararları #270–#274'te.
+
+- **Tarihe bağlı borçlar ve ön baskı durumu (#270):** NeurIPS 2026'nın kabul dökümü yayımlanmıştı. 1.499 künyenin
+  tamamı onunla ve ICLR, ICML, COLM, ECCV, CVPR 2026 listeleriyle eşleştirildi.
+  - Tek yeni hakemli kalem: **66'daki Persona Vectors → "NeurIPS 2026'ya kabul edilmiş bildiri"**.
+  - (a)'daki altı kalemin hiçbiri kabul edilmemiş; etiketleri doğru.
+  - ICML 2026'nın PMLR cildi (numarası 306) hâlâ yok; COLM 2026 6–9 Ekim'de.
+- **Crossref `updated-by` taraması (#271):** 327 DOI'nin tamamı sorgulandı; 325'inin başlığı künyeyle tutuyor.
+  - Yedi düzeltme ilişkisinin altısı ya işlenmişti ya da seriye dokunmuyor (Shumailov, H-ARC, Armstrong–Sotala,
+    Ioannidis).
+  - **Yeni:** Science'ın Costello ve ark. için 11 Haziran 2026 tarihli **endişe notu** 68'e işlendi.
+  - 68'e revizyon işareti kondu (kanıt sınırı, §12).
+- **Bağlantı hedefi taraması (#272):** DOI'siz 1.012 bağlantının hedefi künyeyle karşılaştırıldı.
+  - Beş NeurIPS 2024 adresi 404 veriyordu (73, 76, 78).
+  - 76'daki CAST bağlantısı başka bir OpenReview forumuna gidiyordu.
+  - 77'deki OLMoTrace DOI'si hiç yoktu ve yazar listesi arXiv sürümündendi.
+  - 77'deki Datamodels künyesi ön baskının başlığını taşıyordu.
+  - Hepsi düzeltildi, işaretsiz (bağlantı/künye onarımı).
+  - ICLR 2017'nin üç OpenReview kimliği için bağımsız kanal yok.
+- **Borç (d) ve (e) bilgi notuna indi (#273):**
+  - (d) Mikro-GPT'nin kodu hiçbir yerde yok ve şartname başlatmayı sabitlemiyor; yeniden koşmak soruyu çözemez.
+  - (e) LASER'in bildiri PDF'i ve arXiv sürümü aynı tutarsızlığı taşıyor.
+- **Kapılar (#274):** iki repo kapısı temiz; `pnpm typecheck` 0; 764/764 test; `pnpm build` exit 0 (izole kopyada).
+  Değişen altı sayfa × 3 genişlik × 3 temada Playwright ölçümü sorunsuz; 68'in revizyon satırı render ediliyor.
+  Commit yapılmadı.
+
 ## Açık borçlar
 
-- **Bakım run'ı 1'den devreden, tarihe bağlı yeniden bakışlar (hiçbiri kapı değil):**
-  - (a) **NeurIPS 2026 kabul listesi 2026-09-26'da henüz yayımlanmamıştı** (kararlar 24 Eylül'de açıklandı). Bir
-    sonraki taramada yeniden bakılacak ön baskılar: Beurer-Kellner ve ark. (58), Meinke ve ark. (67), Emmons ve ark.
-    (67), Biderman ve ark. (71), Hendrycks ve ark. 2025 ve ARC-AGI-2 raporu (117).
-  - (b) **ICML 2026'nın PMLR cildi çıkmadı.** Morris ve ark. (18) ile Barres ve ark. (57, 59, 60) şimdilik
-    `icml.cc/virtual/2026/poster/...` sayfasına bağlı. PMLR çıkınca bağlantı ve sayfa numarası oraya çevrilecek.
-  - (c) **COLM 2026 Ekim'de toplanıyor.** Cooper ve ark. (72) ile Krumdick ve ark. (73) "COLM 2026'ya kabul edilmiş"
-    diye duruyor. Konferanstan sonra "COLM 2026" künyesine çevrilecek.
-  - (d) 105'in Şekil 1 notu artık "zarf konumundaki dağılım" diyor. Değerlerin yalnızca `başla kedi` bağlamına mı,
-    `başla kedi` ile `başla köpek`in ortalamasına mı ait olduğu mikro-GPT yeniden koşulmadan kesinleşmiyor: 10 adım
-    satırı ikinci okumayla tutuyor.
-  - (e) 92'deki LASER sayısı: kaynak 29,2'yi bir yerde "ilk on tahmin" doğruluğu diye anıyor, ama 24,0'a göre 5,2
-    puanlık artış olarak hesaplıyor. Metin bu tutarsızlığı söylüyor; yazarların düzeltmesi çıkarsa yeniden bakılacak.
+- **Tarihe bağlı yeniden bakışlar (hiçbiri kapı değil; bakım run'ı 2'de güncellendi):**
+  - (a) **KAPANDI (#270):** NeurIPS 2026 listesi 2026-09-27'de tarandı. Beurer-Kellner (58), Meinke ve Emmons (67),
+    Biderman (71), Hendrycks ve ark. ile ARC-AGI-2 (117) kabul edilmemiş; hakemsiz etiketleri doğru. Bir sonraki
+    genel ön baskı taramasında öteki ön baskılarla birlikte yeniden bakılır.
+  - (b) **ICML 2026'nın PMLR cildi hâlâ çıkmadı** (2026-09-27'de `proceedings.mlr.press/v306` 404). Camera-ready
+    dipnotlarına göre cilt numarası **306**. Morris ve ark. (18) ile Barres ve ark. (57, 59, 60) şimdilik
+    `icml.cc/virtual/2026/poster/...` sayfasına bağlı; Arcuschin ve ark. (77) "ICML 2026, PMLR 306" diyor ve arXiv'e
+    bağlı. Cilt çıkınca beşi de `proceedings.mlr.press/v306/...` sayfasına ve sayfa numarasına çevrilir.
+  - (c) **COLM 2026 6–9 Ekim'de San Francisco'da.** Cooper ve ark. (72) ile Krumdick ve ark. (73) "COLM 2026'ya kabul
+    edilmiş" diye duruyor. Konferanstan sonra "COLM 2026" künyesine çevrilecek.
+  - (d) **KAPANDI — bilgi notu (#273):** 105'in Şekil 1 notu iki okumada da doğru. Mikro-GPT'nin kodu hiçbir yerde
+    yok (repo, önceki oturumların scratchpad'leri, kardeş dizinler tarandı). Şartname (#226) başlatmayı ve tohum
+    düzenini sabitlemediği için yeni bir uygulama başka sayılar verir ve soruyu çözemez. Yalnızca 103–105'in sayıları
+    topluca yeniden üretilirse (kapsam kararı) birlikte çözülür.
+  - (e) **KAPANDI — bilgi notu (#273):** LASER'in ICLR 2024 bildiri PDF'i ve arXiv'in tek sürümü aynı tutarsızlığı
+    taşıyor; yazarların deposu 2024'ten beri değişmedi. 92'nin metni tutarsızlığı zaten söylüyor.
+  - (f) **Persona Vectors (66):** NeurIPS 2026 Aralık'ta toplanıyor. Bildiri kitabı `papers.nips.cc`'ye girince künye
+    ve bağlantı oraya çevrilir; sayılar (r = 0,76–0,97) camera-ready sürümle yeniden okunur.
+  - (g) **Costello ve ark. (68):** Science güncellenmiş sonuçları değerlendiriyor. Crossref `updated-by`'da düzeltme
+    ya da geri çekme görünürse 68'in paragrafı, disiplin maddesi ve künyesi yeniden açılır; geri çekilirse örnek
+    başka bir ölçümle değiştirilir. (DOI: 10.1126/science.adq1814; endişe notu 10.1126/science.aej2383.)
+  - (h) **EMNLP 2026 (24–29 Ekim):** kabul listesi 2026-09-27'de sitede yok. Bildiri kitabı ACL Anthology'ye
+    (`anthology.bib.gz`) girince hakemsiz kalemler yeniden eşleştirilir.
 - **SVG `aria-label` ↔ alt metin (bilgi notu, okura yansımıyor):** 346 şeklin 107'sinde SVG dosyasındaki
   `aria-label` markdown alt metninden ayrışmış, 133'ünde hiç yok. Okuyucu render sırasında alt metni `aria-label`
   olarak yazdığı için (`rehype-inline-svg.ts`) sayfada fark görünmez. Yalnızca bu run'da dokunulan şekiller eşitlendi.
@@ -173,7 +213,7 @@ borçlar" listesinden ve SOZLESME §4'ün ön baskı durum kontrolünden alınd�
   (1) **Alt metin uzunluğu — KAPANDI:** 200'ü aşan dört alt metin (67, 70, 73, 111) 109–120 kelimeye indi;
   `check-series-content.cjs --warnings` artık uyarı vermiyor. Öteki uzun alt metinler toplu kısaltılmadı.
   (2) **Hâlâ SVG'ye çizilmiş tablo olan şekiller** (yeniden çizime aday; ajan raporlarındaki
-  sınıflandırma): 63 Ş2–4, 67 Ş3, 68 Ş2, 71 Ş3, 82/87/88'in üç şekli, 91 Ş3, 93 Ş1, 96 Ş3, 99 Ş3,
+  sınıflandırma; 66 Ş1 ve Ş3 bakım run'ı 2'de eklendi): 63 Ş2–4, 66 Ş1 ve Ş3, 67 Ş3, 68 Ş2, 71 Ş3, 82/87/88'in üç şekli, 91 Ş3, 93 Ş1, 96 Ş3, 99 Ş3,
   102 Ş3, 103 Ş1, 104 Ş1–3, 105 Ş1, 106 `egitim-bellek-defteri.svg`, 111/113/114'ün şekilleri,
   70 `faz-yedi-haritasi.svg`, 84 `tek-sozlugun-defteri.svg`. Yeni kurala göre bir yazıda en fazla
   bir SVG-tablo; bu yazılar dokunulduğunda gözden geçirilir.
@@ -206,8 +246,8 @@ borçlar" listesinden ve SOZLESME §4'ün ön baskı durum kontrolünden alınd�
 - **Hakemsiz kaynak oranı Batch 28'de 53 kalemin 9'u (karar #263)** — beklendiği gibi 116 ve 117'de yoğun:
   MCP belirtimi (115); Kaplan 2020 ve Uluslararası Yapay Zekâ Güvenliği Raporu (116); Chollet 2019, OpenAI
   kuruluş ilkeleri, Hendrycks ve ark. 2025, ARC ekibinin üç raporu (117). Hepsi işaretli. **Bakım run'ı 1'de
-  bakıldı:** hiçbiri hakemli çıkmadı; Hendrycks ve ark. ile ARC-AGI-2 için NeurIPS 2026 listesi yayımlanınca yeniden
-  bakılacak (yukarıdaki (a)).
+  bakıldı:** hiçbiri hakemli çıkmadı. **Bakım run'ı 2'de** Hendrycks ve ark. ile ARC-AGI-2 NeurIPS 2026 listesinde
+  de yok (yukarıdaki (a), #270); dokuzu da hakemsiz.
 - **49'un belirtim cümlesi (karar #256):** 49 MCP belirtiminin genel ilkeler bölümündeki küçük harfli
   "must"ı "almalıdır" diye aktarıyor; bağlayıcı araç cümlesi SHOULD. İlkeler metninin sadık çevirisi olduğu
   için dokunulmadı; normatif düzey 115'te yazıldı. Bakımda yeniden açılmaz.
@@ -229,8 +269,12 @@ okunur; `git status` ile paralel oturum kontrol edilir. (2) İş, yalnızca "Aç
 baskı kontrolünden ya da raporlanmış bir olgu hatasından alınır. (3) Düzeltme yayımlanmış makalede yapılır;
 anlamlıysa §12 revizyon işareti konur, tek künye ya da tek sayı düzeltmesiyse konmaz. (4) Gövdeye her
 dokunuştan sonra `sync-series-hashes.cjs --write`, ardından iki repo kapısı; render etkileniyorsa izole
-kopyada build ve PNG turu. (5) Karar numarası **#270**'ten devam eder; bu dosyanın başlığı ve geçmiş kaydı
+kopyada build ve PNG turu. (5) Karar numarası **#275**'ten devam eder; bu dosyanın başlığı ve geçmiş kaydı
 güncellenir. **Yeni makale, yeni başlık ya da yeni faz yalnızca kullanıcının kapsam uzatma kararıyla açılır.**
+**Bakım run'ı 2'den beri güncel durum taraması üç katmanlıdır:** hakemsiz kalemler için yeni kabul listeleri,
+DOI'li **bütün** kalemler için Crossref `updated-by` (düzeltme, geri çekme, endişe notu — Costello'nun notu yalnızca
+hakemsiz kalemlere bakılırken iki turda görülmemişti) ve bütün bağlantılar için hedef başlık karşılaştırması
+(bakım run'ı 2'de beş ölü NeurIPS adresi, bir yanlış forum ve bir var olmayan DOI çıktı).
 
 **Uyarı (kararlar #214, #223, #231, #238, #245, #262):** ölçülmemiş eğri çizilmez. Batch 28'in tek eğrisi
 (116, Şekil 1) kapalı formülden hesaplandı ve şeklin içinde öyle yazıyor.
@@ -252,6 +296,39 @@ güncellenir. **Yeni makale, yeni başlık ya da yeni faz yalnızca kullanıcın
 - **Crossref `updated-by` alanı bir düzeltmeyi bu yolla yakaladı** (Salvi 2026); DOI'li her kaynakta bakılmalı.
 - **`papers.nips.cc/paper_files/paper/2025` kök sayfası** yalnızca Creative AI kitabını listeliyor; ana konferans
   `/paper_files/paper/2025/vol38-main-conference` altında.
+
+**Bakım run'ı 2'nin eki (kanallar ve tuzaklar).**
+- **Yeni kabul listeleri:**
+  - NeurIPS 2026 dökümünde `sourceurl` alanı üç izi ayırır (Conference / Evaluations_and_Datasets_Track /
+    Position_Paper_Track); aynı bildiri poster ve oral olarak iki kez görünebilir.
+  - CVPR 2026'nın tam listesi `openaccess.thecvf.com/CVPR2026?day=all` HTML'inde (`dt.ptitle` + `query_author`);
+    `cvpr.thecvf.com` dökümü eksik. ECCV 2026: `eccv.ecva.net/static/virtual/data/eccv-2026-orals-posters.json`.
+- **Eşleştirme yöntemi:** başlık birebir, `difflib` ≥ 0,86, ilk yazar soyadı + kelime örtüşmesi ≥ 0,34 ve
+  "en az iki paylaşılan soyad" (sık soyadları çeyrek puan). `difflib`'den önce kelime dizini ön elemesi şart;
+  yoksa 1.499 × 9.133 karşılaştırma dakikalar sürer.
+- **Crossref `updated-by`:** `type` alanı `correction`, `retraction` ya da `expression_of_concern` olabilir; 327
+  DOI ≈ 20 dk (istek başına ~4 sn, eşzamanlılık 1). Düzeltme metni PMC'den okunur; `pmc.ncbi` reCAPTCHA verirse
+  Europe PMC `www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/fullTextXML`. Science ve Taylor & Francis sayfaları
+  tarayıcı panosunda açılıyor.
+- **`doi.org/api/handles/<doi>`:** `responseCode` 1 = var, 100 = yok. Crossref'te 404 veren DOI'yi ayrıştırıcı
+  kusurundan ayırır: Brier 1950'nin DOI'si parantez içerir ve `[^)]+` ile ayrıştırılan bağlantı kesilir.
+- **arXiv export API:** `export.arxiv.org/api/query?id_list=<40 kimlik>`, `requests` ile, istekler arası 3 sn;
+  223 kimlik altı istekte.
+- **OpenReview kimlikleri betikle doğrudan açılamaz** — site ve API (`api.openreview.net`, `api2`) artık tarayıcı
+  panosunda da doğrulama sayfası gösteriyor; geçilmez. Kanallar:
+  - ICLR 2021–2026 dökümlerinde `paper_url` / `eventmedia`;
+  - ICLR 2020 dökümünde kimlik yok, ama `iclr.cc/virtual_2020/poster_<id>.html` doğrular;
+  - ICLR 2018–2019'da `iclr.cc/Conferences/<yıl>/Schedule?type=Poster|Oral|Workshop` sayfalarında kimlik geçer;
+  - ICLR 2017 için kanal yok. ICLR 2024–2025 bağlantısı gerekiyorsa betikle doğrulanabilen `proceedings.iclr.cc`
+    tercih edilir.
+- **`papers.nips.cc/paper_files/paper/2024` kök sayfası 4.493 bildiriyi listeliyor.** Bu run'da düzeltilen yanlış
+  hash'lerin bir kısmı yalnızca son karakterlerde ayrışıyordu; adres dizinden kopyalanır, elle yazılmaz.
+- **Betiğe 403 veren yeni hostlar:**
+  - `direct.mit.edu`: tarayıcıda Cloudflare kendiliğinden geçiyor.
+  - `pubs.aip.org` ve `academic.oup.com`: tarayıcıda da etkileşimli kontrol çıkıyor; DOI Crossref'le doğrulanır.
+  - `pubmed.ncbi.nlm.nih.gov`: reCAPTCHA; NCBI E-utilities (`esummary.fcgi?db=pubmed&id=<pmid>&retmode=json`) kullanılır.
+  - `www.iso.org` ve `datascience.stackexchange.com`: tarayıcıda açılıyor.
+  - DBLP hâlâ bot duvarında.
 
 **Venue doğrulaması — Batch 27–28'in çalışan kanalları.** **Batch 28'in eki:** yayıncı sayfalarının çoğu
 betiğe 403 veriyor (PNAS, ACM, SAGE, Taylor & Francis, OUP, Science, HDSR) — bu ölü bağlantı değil bot
@@ -280,7 +357,7 @@ yazılmış olmalıdır (başlık değişecekse entegrasyondan **önce**); YOL-H
 kavram-tekrar defteri, terim defteri, vaat defteri ve bağlayıcı kararlar güncellenir; doğrulama kapıları
 çalıştırılır. Yeni fazın kategori ve level kararı o run'ın ilk kararıdır. **118'in son bölümü "Bu serinin bir
 sonraki makalesi yok." diye bitiyor** — uzatma kararıyla bu cümle ve `/seri` `footerNote`'u da değişir.
-**Sonraki bağlayıcı karar numarası #270'tir.**
+**Sonraki bağlayıcı karar numarası #275'tir.**
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -335,6 +412,18 @@ Kalıcı değiller; her run kendi scratchpad'inde yeniden yazar. Batch 27'de kul
   `undefined`/`NaN`, önceki/sonraki gezinme metni, `/seri` altbilgisi ve `/api/reader-sync` dışındaki console
   hataları. **Git Bash'te `/seri/...` gibi `/` ile başlayan argümanlar Windows yoluna çevrilir** —
   `MSYS_NO_PATHCONV=1` ile çalıştırılır ve betik dosyası göreli yolla verilir (yoksa betik yolu da bozulur).
+
+Bakım run'ı 2'de eklenenler (hepsi scratchpad'de, kalıcı değil):
+- **`bib.py`** — 118 makalenin kaynakçasını (1.499 künye) yazar, yıl, başlık, mecra ve bağlantı alanlarına ayırır;
+  hakemsiz etiketini mecradan ve arXiv bağlantısından türetir. Tarihsiz web kaynakları (13) ayrıştırılmaz.
+- **`match.py` / `match2.py`** — künyeleri bir kabul dökümüyle eşleştirir (yöntem "Bakım run'ı 2'nin eki"nde).
+- **`dois.py` + `crossref_sweep.py`** — `doi.org` ve yayıncı adreslerindeki DOI'leri toplar, Crossref'ten
+  `updated-by` / `update-to` / başlık alanlarını okur; kaldığı yerden sürer.
+- **`linkcheck.py` + `linkreport.py`** — DOI'siz bağlantıların hedef başlığını okur (arXiv toplu, öteki sayfalar tek
+  tek) ve künye başlığıyla karşılaştırır; 403/429/503 ayrı raporlanır, çünkü çoğu bot duvarıdır.
+- **`orcheck.py`** — OpenReview kimliklerini konferans dökümleri ve TMLR / COLM 2024 listeleriyle eşleştirir.
+- **`measure.mjs` (run 2 sürümü)** — değişen sayfalar için beklenen metin ve `href` listesi, `.revision-notice`
+  metni, üç genişlik × üç temada yatay taşma ve konsol hatası.
 
 **Yayın öncesi zorunlu taramalar.** Kapsam değişmedi: kelime sayısı, parantezli gloss listesi, yasaklı
 biçimler, kendi numarası ve numaralı ileri gönderme taramaları, `N\.` kaçış denetimi, bölüm başlıkları,
@@ -431,12 +520,18 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
 - Depo kökünde adı bozuk, sıfır baytlık birkaç dosya duruyor (`Karar`, `her`, `Yaşayan`, `yapılırsa`,
   `**Bu`, `**zorundadır**.`). Build'i etkilemiyor; temizlik AI serisinin kapsamı dışıdır.
 - Batch 12–27'nin üretimi (51–114) ve 2026-09-25 editoryal turu kullanıcı tarafından commit edildi
-  (`8ec2fc9`). Batch 28 de kullanıcı tarafından commit edildi (`7b79ebb`). **Bakım run'ı 1'in değişiklikleri
-  (yaklaşık 50 makale, 20 SVG, `catalog.json`, HANDOFF, YOL-HARITASI) çalışma ağacında commit edilmemiş** duruyor.
-  Aynı sırada başka bir oturum BOUN dosyalarında ve `.wolf/*`'ta çalışıyordu; o değişiklikler bu run'a ait değil.
-  Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
+  (`8ec2fc9`). Batch 28 de kullanıcı tarafından commit edildi (`7b79ebb`); bakım run'ı 1'in değişiklikleri de
+  (`0bc06e4`). **Bakım run'ı 2'nin değişiklikleri (altı makale — 66, 68, 73, 76, 77, 78 —, `catalog.json`, HANDOFF,
+  YOL-HARITASI) çalışma ağacında commit edilmemiş** duruyor. Bu run sırasında paralel oturum yoktu; `.wolf/*`'taki
+  değişiklikler bu oturumun kendi kayıtlarıdır. Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
+- **Bakım run'ı 2 (2026-09-27):** TRIGGER bakım kipinde ikinci kez çalıştı; makale üretilmedi. NeurIPS 2026
+  dökümüyle ve öteki 2026 listeleriyle 1.499 künye tarandı (tek yeni hakemli kalem 66'daki Persona Vectors); 327
+  DOI'nin Crossref `updated-by` taraması Costello ve ark. için Science'ın endişe notunu buldu (68, revizyon işareti);
+  1.012 bağlantının hedef taraması beş ölü NeurIPS adresini, yanlış bir OpenReview forumunu, var olmayan bir DOI'yi ve
+  iki künye başlığını düzeltti (73, 76, 77, 78). Borç (a) kapandı, (d) ve (e) bilgi notuna indi. Kararlar #270–#274;
+  sonraki numara **#275**. Workflow ve yardımcı ajan kullanılmadı. Kapılar ve render sonuçları #274'te.
 - **Bakım run'ı 1 (2026-09-26):** TRIGGER bakım kipinde ilk kez çalıştı; makale üretilmedi. SOZLESME §4 ön baskı
   taraması (211 kalem, 21'i hakemli çıktı), eski "Açık borçlar"ın sayı ve künye doğrulaması (205 bulgu; 10 BLOCKER,
   39 MAJOR, 37 MINOR düzeltildi), 8 revizyon işareti, 79–82 graf satırları, dört uzun alt metin, 67'nin eksik şekil

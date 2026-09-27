@@ -12,7 +12,7 @@ tags:
   - sonda
   - kavram-silme
   - model-duzenleme
-content_hash: sha256:7affca8ed378bf8cbb0388fbc6ca9981109bce92182317307d92c272a15e72c6
+content_hash: sha256:169479c3684de0ccaf29dec77139bbe8cfcc82243852f53d9240f50a5dc445a8
 classification_version: 1
 classification_batch: 18
 ---
@@ -116,13 +116,13 @@ Bu makale bir davranışı **değiştirmenin** araçlarını verdi. Ama okuyucun
 - Turner, A. M., Thiergart, L., Leech, G., Udell, D., Vazquez, J. J., Mini, U. & MacDiarmid, M. (2023). *Steering Language Models With Activation Engineering*. Hakemli olmayan ön çalışma (arXiv:2308.10248). [Bağlantı](https://arxiv.org/abs/2308.10248)
 - Ravfogel, S., Elazar, Y., Gonen, H., Twiton, M. & Goldberg, Y. (2020). *Null It Out: Guarding Protected Attributes by Iterative Nullspace Projection*. ACL 2020. [Bağlantı](https://doi.org/10.18653/v1/2020.acl-main.647)
 - Belrose, N., Schneider-Joseph, D., Ravfogel, S., Cotterell, R., Raff, E. & Biderman, S. (2023). *LEACE: Perfect linear concept erasure in closed form*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/d066d21c619d0a78c5b557fa3291a8f4-Abstract-Conference.html)
-- Lee, B. W., Padhi, I., Ramamurthy, K. N., Miehling, E., Dognin, P., Nagireddy, M. & Dhurandhar, A. (2025). *Programming Refusal with Conditional Activation Steering*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=eLpJ0EIcAO)
+- Lee, B. W., Padhi, I., Ramamurthy, K. N., Miehling, E., Dognin, P., Nagireddy, M. & Dhurandhar, A. (2025). *Programming Refusal with Conditional Activation Steering*. ICLR 2025. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/e2dd53601de57c773343a7cdf09fae1c-Abstract-Conference.html)
 - Li, K., Patel, O., Viégas, F., Pfister, H. & Wattenberg, M. (2023). *Inference-Time Intervention: Eliciting Truthful Answers from a Language Model*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/81b8390039b7302c909cb769f8b6cd93-Abstract-Conference.html)
 - Stolfo, A., Balachandran, V., Yousefi, S., Horvitz, E. & Nushi, B. (2025). *Improving Instruction-Following in Language Models through Activation Steering*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=wozhdnRCtw)
 - Zou, A., Phan, L., Wang, J., Duenas, D., Lin, M., Andriushchenko, M., Wang, R., Kolter, Z., Fredrikson, M. & Hendrycks, D. (2024). *Improving Alignment and Robustness with Circuit Breakers*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/97ca7168c2c333df5ea61ece3b3276e1-Abstract-Conference.html)
-- Tan, D., Chanin, D., Lynch, A., Paige, B., Kanoulas, D., Garriga-Alonso, A. & Kirk, R. (2024). *Analysing the Generalisation and Reliability of Steering Vectors*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/aaf3ecd91b1a0b26fb3adf1e35a89e8b-Abstract-Conference.html)
+- Tan, D., Chanin, D., Lynch, A., Paige, B., Kanoulas, D., Garriga-Alonso, A. & Kirk, R. (2024). *Analysing the Generalisation and Reliability of Steering Vectors*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/fb3ad59a84799bfb8d700e56d19c231b-Abstract-Conference.html)
 - Makelov, A., Lange, G. & Nanda, N. (2024). *Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=Ebt7JgMHv1)
 - Meng, K., Sharma, A. S., Andonian, A. J., Belinkov, Y. & Bau, D. (2023). *Mass-Editing Memory in a Transformer*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=MkbcAHIYgyS)
 - Cohen, R., Biran, E., Yoran, O., Globerson, A. & Geva, M. (2024). *Evaluating the Ripple Effects of Knowledge Editing in Language Models*. Transactions of the Association for Computational Linguistics 12, s. 283–298. [Bağlantı](https://doi.org/10.1162/tacl_a_00644)
 - Gupta, A., Rao, A. & Anumanchipalli, G. (2024). *Model Editing at Scale leads to Gradual and Catastrophic Forgetting*. Findings of ACL 2024. [Bağlantı](https://doi.org/10.18653/v1/2024.findings-acl.902)
-- Wu, Z., Arora, A., Wang, Z., Geiger, A., Jurafsky, D., Manning, C. D. & Potts, C. (2024). *ReFT: Representation Finetuning for Language Models*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/8f0a48d16cee9e669fdf541be3f0c774-Abstract-Conference.html)
+- Wu, Z., Arora, A., Wang, Z., Geiger, A., Jurafsky, D., Manning, C. D. & Potts, C. (2024). *ReFT: Representation Finetuning for Language Models*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/75008a0fba53bf13b0bb3b7bff986e0e-Abstract-Conference.html)

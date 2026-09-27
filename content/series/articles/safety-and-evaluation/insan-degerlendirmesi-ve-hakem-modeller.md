@@ -12,7 +12,7 @@ tags:
   - uzlasma
   - hakem-yanliligi
   - insan-capasi
-content_hash: sha256:d8ed644ef1ec526157b99d35e28e62b16a92afe67ff8d772cea6017cf7267ae1
+content_hash: sha256:455f1b596e98f6d7c496c97cbc6c9913e3ba7cf18951c496c52bfb265c584c1c
 classification_version: 1
 classification_batch: 17
 revised_at: "2026-09-25"
@@ -110,7 +110,7 @@ Bu fazın üç makalesi boyunca modele dışarıdan baktık: puanı, gürültüs
 - Karpinska, M., Akoury, N. & Iyyer, M. (2021). *The Perils of Using Mechanical Turk to Evaluate Open-Ended Text Generation*. EMNLP 2021, s. 1265–1285. [Bağlantı](https://doi.org/10.18653/v1/2021.emnlp-main.97)
 - Clark, E., August, T., Serrano, S., Haduong, N., Gururangan, S. & Smith, N. A. (2021). *All That's 'Human' Is Not Gold: Evaluating Human Evaluation of Generated Text*. ACL 2021, s. 7282–7296. [Bağlantı](https://doi.org/10.18653/v1/2021.acl-long.565)
 - Freitag, M., Foster, G., Grangier, D., Ratnakar, V., Tan, Q. & Macherey, W. (2021). *Experts, Errors, and Context: A Large-Scale Study of Human Evaluation for Machine Translation*. Transactions of the Association for Computational Linguistics 9, s. 1460–1474. [Bağlantı](https://doi.org/10.1162/tacl_a_00437)
-- Kirk, H. R., Whitefield, A., Röttger, P., Bean, A., Margatina, K., Ciro, J., Mosquera, R., Bartolo, M., Williams, A., He, H., Vidgen, B. & Hale, S. A. (2024). *The PRISM Alignment Dataset*. NeurIPS 2024, Datasets and Benchmarks Track. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/be2e1b68b44f2419e19f6c35a1b7ea7e-Abstract-Datasets_and_Benchmarks_Track.html)
+- Kirk, H. R., Whitefield, A., Röttger, P., Bean, A., Margatina, K., Ciro, J., Mosquera, R., Bartolo, M., Williams, A., He, H., Vidgen, B. & Hale, S. A. (2024). *The PRISM Alignment Dataset: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models*. NeurIPS 2024 Datasets and Benchmarks Track. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/be2e1b68b44f2419e19f6c35a1b8cf35-Abstract-Datasets_and_Benchmarks_Track.html)
 - Novikova, J., Dušek, O. & Rieser, V. (2018). *RankME: Reliable Human Ratings for Natural Language Generation*. NAACL 2018, s. 72–78. [Bağlantı](https://doi.org/10.18653/v1/N18-2012)
 - Hosking, T., Blunsom, P. & Bartolo, M. (2024). *Human Feedback is not Gold Standard*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=7W3GLNImfS)
 - Gudibande, A., Wallace, E., Snell, C., Geng, X., Liu, H., Abbeel, P., Levine, S. & Song, D. (2024). *The False Promise of Imitating Proprietary Language Models* (ön baskı adı: *The False Promise of Imitating Proprietary LLMs*). ICLR 2024 (ön baskısı 2023, arXiv:2305.15717). [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/4db16435e3a5a2ef3fc39b8f0d12498d-Abstract-Conference.html)

@@ -12,7 +12,7 @@ tags:
   - metrik-secimi
   - faz-gecisi
   - ongorulebilirlik
-content_hash: sha256:672d0ed51882a0ec73279e76e12150bd5f6b318cfdea53a80cb75a4f624d4c63
+content_hash: sha256:f495435733bfdd18d054dbfc4321ddf8d262ae9183d600d4d263789702286fa2
 classification_version: 1
 classification_batch: 18
 ---
@@ -108,7 +108,7 @@ Bu makale ölçeğin getirdiği yeteneğin ne zaman göründüğünü tartışt�
 - Anderson, P. W. (1972). *More Is Different*. Science 177(4047), s. 393–396. [Bağlantı](https://doi.org/10.1126/science.177.4047.393)
 - Ganguli, D., Hernandez, D., Lovitt, L., Askell, A., Bai, Y., Chen, A., Conerly, T., Dassarma, N., Drain, D., Elhage, N., El Showk, S., Fort, S., Hatfield-Dodds, Z., Henighan, T., Johnston, S., Jones, A., Joseph, N., Kernian, J., Kravec, S., Mann, B., Nanda, N., Ndousse, K., Olsson, C., Amodei, D., Brown, T., Kaplan, J., McCandlish, S., Olah, C., Amodei, D. & Clark, J. (2022). *Predictability and Surprise in Large Generative Models*. ACM FAccT 2022. [Bağlantı](https://doi.org/10.1145/3531146.3533229)
 - Schaeffer, R., Miranda, B. & Koyejo, S. (2023). *Are Emergent Abilities of Large Language Models a Mirage?*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/adc98a266f45005c403b8311ca7e8bd7-Abstract-Conference.html)
-- Du, Z., Zeng, A., Dong, Y. & Tang, J. (2024). *Understanding Emergent Abilities of Language Models from the Loss Perspective*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/5474d9d43c0519aa176276ff2c1ca528-Abstract-Conference.html)
+- Du, Z., Zeng, A., Dong, Y. & Tang, J. (2024). *Understanding Emergent Abilities of Language Models from the Loss Perspective*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/5f1eee2509599faeeb3570a887016a64-Abstract-Conference.html)
 - Hu, S., Liu, X., Han, X., Zhang, X., He, C., Zhao, W., Lin, Y., Ding, N., Ou, Z., Zeng, G., Liu, Z. & Sun, M. (2024). *Predicting Emergent Abilities with Infinite Resolution Evaluation*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=lDbjooxLkD)
 - Lu, S., Bigoulaeva, I., Sachdeva, R., Tayyar Madabushi, H. & Gurevych, I. (2024). *Are Emergent Abilities in Large Language Models just In-Context Learning?*. ACL 2024. [Bağlantı](https://doi.org/10.18653/v1/2024.acl-long.279)
 - Yu, D., Kaur, S., Gupta, A., Brown-Cohen, J., Goyal, A. & Arora, S. (2024). *Skill-Mix: a Flexible and Expandable Family of Evaluations for AI Models*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=Jf5gplvglq)
@@ -119,6 +119,6 @@ Bu makale ölçeğin getirdiği yeteneğin ne zaman göründüğünü tartışt�
 - Chen, A., Shwartz-Ziv, R., Cho, K., Leavitt, M. L. & Saphra, N. (2024). *Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=MO5PiKHELW)
 - Nanda, N., Chan, L., Lieberum, T., Smith, J. & Steinhardt, J. (2023). *Progress measures for grokking via mechanistic interpretability*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=9XFSbDPmdW)
 - Snell, C., Wallace, E., Klein, D. & Levine, S. (2024). *Predicting Emergent Capabilities by Finetuning*. Conference on Language Modeling (COLM 2024); okunan sürüm, erken sürümünün COLM 2024'te yer aldığını belirten genişletilmiş arXiv:2411.16035. [Bağlantı](https://arxiv.org/abs/2411.16035)
-- Ruan, Y., Maddison, C. J. & Hashimoto, T. (2024). *Observational Scaling Laws and the Predictability of Language Model Performance*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/2f0a6f6b1e4f6d5f5d1a2ad4d0e40e35-Abstract-Conference.html)
+- Ruan, Y., Maddison, C. J. & Hashimoto, T. (2024). *Observational Scaling Laws and the Predictability of Language Model Performance*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/1cded4f97cf5f01a284c574110b7e3b9-Abstract-Conference.html)
 - McKenzie, I. R., Lyzhov, A., Pieler, M., Parrish, A., Mueller, A., Prabhu, A., McLean, E., Kirtland, A., Ross, A., Liu, A., Gritsevskiy, A., Wurgaft, D., Kauffman, D., Recchia, G., Liu, J., Cavanagh, J., Weiss, M., Huang, S., Droid, T. F., Tseng, T., Korbak, T., Shen, X., Zhang, Y., Zhou, Z., Kim, N., Bowman, S. R. & Perez, E. (2023). *Inverse Scaling: When Bigger Isn't Better*. Transactions on Machine Learning Research (2023). [Bağlantı](https://openreview.net/forum?id=DwgRm72GQF)
 - Wei, J., Kim, N., Tay, Y. & Le, Q. V. (2023). *Inverse scaling can become U-shaped*. EMNLP 2023. [Bağlantı](https://doi.org/10.18653/v1/2023.emnlp-main.963)
