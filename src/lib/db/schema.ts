@@ -151,6 +151,24 @@ export const readingResets = pgTable("reading_resets", {
   resetBy: uuid("reset_by").references((): AnyPgColumn => users.id),
 });
 
+/** A reader may start one series over without invalidating their other reading. */
+export const readingSeriesResets = pgTable(
+  "reading_series_resets",
+  {
+    workspaceId: text("workspace_id").notNull(),
+    seriesId: text("series_id").notNull(),
+    resetVersion: bigint("reset_version", { mode: "number" })
+      .notNull()
+      .default(sql`nextval('reader_change_version_seq')`),
+    resetAt: timestamp("reset_at", { withTimezone: true }).notNull().defaultNow(),
+    resetBy: uuid("reset_by").references((): AnyPgColumn => users.id),
+  },
+  (table) => [
+    primaryKey({ columns: [table.workspaceId, table.seriesId] }),
+    check("reading_series_resets_series_check", sql`${table.seriesId} IN ('ai', 'boun')`),
+  ],
+);
+
 export const syncMutations = pgTable(
   "sync_mutations",
   {

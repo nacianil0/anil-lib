@@ -18,8 +18,11 @@ import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferen
 import { LockButton } from "@/components/reader/lock-button";
 import { SyncStatus } from "@/components/reader/sync-status";
 import { PhaseProgress } from "./phase-progress";
+import { SeriesProgressReset } from "./series-progress-reset";
+import type { SeriesId } from "@/lib/reader-data/series-reset";
 
 type Props = {
+  seriesId: SeriesId;
   roadmap: SeriesRoadmap;
   articles: ArticleDescriptor[];
   /** Rota tabanı, ör. "/seri" veya "/boun". */
@@ -30,7 +33,7 @@ type Props = {
   footerNote: string;
 };
 
-function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Props) {
+function LandingContent({ roadmap, articles, basePath, intro, footerNote, seriesId }: Props) {
   const { ready, statusOf, entryOf } = useReaderData();
   const bySlug = new Map(articles.map((article) => [article.slug, article]));
   const totalPlanned = roadmap.phases.reduce((sum, phase) => sum + phase.articles.length, 0);
@@ -144,6 +147,10 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote }: Prop
               )}
             </p>
           </div>
+        </div>
+
+        <div className="max-w-2xl">
+          <SeriesProgressReset seriesId={seriesId} />
         </div>
 
         <section className="mt-12" aria-labelledby="yol-haritasi-baslik">

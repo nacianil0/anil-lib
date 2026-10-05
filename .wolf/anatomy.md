@@ -1772,3 +1772,31 @@
 
 ## tools/series/
 
+- `check-series-content.cjs` — Read-only content/catalog/roadmap validation gate; selects AI or BOUN with `--series`. (~5000 tok)
+
+## Session navigation additions (2026-10-05)
+
+- `.wolf/cerebrum.md` — Persistent user preferences, project learnings, recurring pitfalls, and decisions. (~29000 tok)
+- `.wolf/memory.md` — Session activity log and historical verification records. (~100000 tok)
+- `.wolf/buglog.json` — Structured project and verification-tool failures with causes and fixes. (~100000 tok)
+- `CLAUDE.md` — Repository entry instructions for OpenWolf. (~80 tok)
+- `.env.example` — Example environment variable names for authentication and database setup. (~150 tok)
+- `next.config.mjs` — Next.js configuration and separate lint/build gate policy. (~350 tok)
+- `.anil-lib-reader.json` — Local reader workspace metadata. (~100 tok)
+- `.claude/launch.json` — Local development server launch configurations. (~100 tok)
+- `content/series/catalog.json` — AI series catalog of 118 published articles, paths, and content hashes. (~16000 tok)
+- `content/series/roadmap.json` — AI series phase outline and published/planned article state. (~8500 tok)
+- `content/series-boun/catalog.json` — BOUN series catalog of 41 published articles, paths, and content hashes. (~5500 tok)
+- `content/series-boun/roadmap.json` — BOUN series phase outline and published/planned article state. (~3000 tok)
+
+
+## 2026-10-05 — Manual series progress reset
+
+- `docs/superpowers/plans/2026-10-05-series-progress-reset.md` — Scoped reset implementation and verification checklist. (~1000 tok)
+- `drizzle/0004_series_reading_resets.sql` — Workspace/series reset epochs; deployment creates the table without resetting any reader. (~180 tok)
+- `src/lib/reader-data/series-reset.ts` — Validated series reset request/response and per-article reset epoch. (~350 tok)
+- `src/app/api/reader-reset/route.ts` — Authenticated, same-origin reset of the signed-in user's chosen series. (~650 tok)
+- `src/app/api/reader-reset/route.test.ts` — Authorization, scope, body validation and failure coverage. (~1900 tok)
+- `src/components/series/series-progress-reset.tsx` — Manual confirmation/cancel UI with focus, rapid-click guard and status messages. (~1000 tok)
+- `tests/e2e/series-reset.spec.ts` — Local desktop/mobile confirmation, preservation and failure checks for both series. (~2200 tok)
+

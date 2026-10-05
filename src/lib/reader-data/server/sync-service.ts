@@ -13,6 +13,7 @@ import {
   type SyncMutation,
 } from "@/lib/reader-data/schema";
 import type { SyncOperationError, SyncResponse } from "@/lib/reader-data/server/types";
+import { seriesIdSchema, type SeriesId, type SeriesReset } from "@/lib/reader-data/series-reset";
 
 type SqlClient = NeonQueryFunction<false, false>;
 
@@ -32,6 +33,13 @@ function validArticleIds(allowArchive: boolean): Set<string> {
     ids.push(...loadCatalog().articles.map((article) => article.articleId));
   }
   return new Set(ids);
+}
+
+function seriesArticleIds(): Record<SeriesId, string[]> {
+  return {
+    ai: loadSeriesCatalog().articles.map((article) => article.articleId),
+    boun: loadBounCatalog().articles.map((article) => article.articleId),
+  };
 }
 
 function timestampIsValid(value: string, now: number): boolean {
@@ -66,6 +74,8 @@ function progressQuery(
   workspaceId: string,
   mutation: SyncMutation,
   resetVersion: number | null,
+  seriesId: SeriesId | null,
+  seriesResetVersion: number | null,
 ) {
   if (mutation.entityType !== "progress") throw new Error("Unexpected mutation type");
   const value = mutation.payload;
@@ -87,6 +97,14 @@ function progressQuery(
          OR NOT EXISTS (
            SELECT 1 FROM reading_resets
            WHERE workspace_id = $1 AND reset_version > $11::bigint
+         )
+       )
+       AND (
+         $12::text IS NULL OR $13::bigint IS NULL
+         OR NOT EXISTS (
+           SELECT 1 FROM reading_series_resets
+           WHERE workspace_id = $1 AND series_id = $12::text
+             AND reset_version > $13::bigint
          )
        )
      ON CONFLICT (workspace_id, article_id) DO UPDATE SET
@@ -113,6 +131,8 @@ function progressQuery(
       value.clientUpdatedAt,
       anchorParameter(value.anchor),
       resetVersion,
+      seriesId,
+      seriesResetVersion,
     ],
   );
 }
@@ -267,10 +287,19 @@ export async function synchronizeReaderData(
   workspaceId: string,
   cursor: number,
   operations: SyncMutation[],
-  options: { allowArchive: boolean; resetVersion: number | null },
+  options: {
+    allowArchive: boolean;
+    resetVersion: number | null;
+    seriesResetVersions?: Partial<Record<SeriesId, number>>;
+  },
 ): Promise<SyncResponse> {
   const now = Date.now();
   const articleIds = validArticleIds(options.allowArchive);
+  const articlesBySeries = seriesArticleIds();
+  const articleSeries = new Map<string, SeriesId>();
+  for (const seriesId of ["ai", "boun"] as const) {
+    for (const articleId of articlesBySeries[seriesId]) articleSeries.set(articleId, seriesId);
+  }
   const errors: SyncOperationError[] = [];
   const accepted = operations.filter((operation) => {
     const articleId = operation.payload.articleId;
@@ -293,15 +322,36 @@ export async function synchronizeReaderData(
     ...accepted.filter((operation) => operation.entityType === "progress"),
     ...accepted.filter((operation) => operation.entityType !== "progress"),
   ];
-  const queries = ordered.map((operation) => {
-    if (operation.entityType === "progress") {
-      return progressQuery(sql, workspaceId, operation, options.resetVersion);
-    }
-    if (operation.entityType === "saved-place") {
-      return savedPlaceQuery(sql, workspaceId, operation);
-    }
-    return highlightQuery(sql, workspaceId, operation);
-  });
+  // Acquire this in its own statement before the write's READ COMMITTED snapshot.
+  // A write waiting for a reset's stronger lock then sees the committed reset.
+  const queries = ordered.some((operation) => operation.entityType === "progress")
+    ? [sql.query(`LOCK TABLE reading_progress IN ROW EXCLUSIVE MODE`)]
+    : [];
+  queries.push(
+    ...ordered.map((operation) => {
+      if (operation.entityType === "progress") {
+        const seriesId = articleSeries.get(operation.payload.articleId) ?? null;
+        const seriesResetVersion =
+          options.resetVersion === null
+            ? null
+            : seriesId
+              ? (options.seriesResetVersions?.[seriesId] ?? 0)
+              : 0;
+        return progressQuery(
+          sql,
+          workspaceId,
+          operation,
+          options.resetVersion,
+          seriesId,
+          seriesResetVersion,
+        );
+      }
+      if (operation.entityType === "saved-place") {
+        return savedPlaceQuery(sql, workspaceId, operation);
+      }
+      return highlightQuery(sql, workspaceId, operation);
+    }),
+  );
   if (queries.length > 0) await sql.transaction(queries);
 
   // Read the reset before the changes. A device behind it clears all of its progress
@@ -314,8 +364,28 @@ export async function synchronizeReaderData(
     [workspaceId],
   )) as Record<string, unknown>[];
   const resetVersion = resetRows[0] ? Number(resetRows[0].reset_version) : 0;
+  const seriesResetRows = (await sql.query(
+    `SELECT series_id, reset_version FROM reading_series_resets
+     WHERE workspace_id = $1 ORDER BY series_id ASC`,
+    [workspaceId],
+  )) as Record<string, unknown>[];
+  const seriesResets: SeriesReset[] = [];
+  for (const row of seriesResetRows) {
+    const parsed = seriesIdSchema.safeParse(row.series_id);
+    if (!parsed.success) continue;
+    seriesResets.push({
+      seriesId: parsed.data,
+      resetVersion: Number(row.reset_version),
+      articleIds: articlesBySeries[parsed.data],
+    });
+  }
   const behindReset = options.resetVersion !== null && options.resetVersion < resetVersion;
-  const progressCursor = behindReset ? 0 : cursor;
+  const behindSeriesReset =
+    options.resetVersion !== null &&
+    seriesResets.some(
+      (reset) => (options.seriesResetVersions?.[reset.seriesId] ?? 0) < reset.resetVersion,
+    );
+  const progressCursor = behindReset || behindSeriesReset ? 0 : cursor;
 
   const [progressRows, savedPlaceRows, highlightRows] = await Promise.all([
     sql.query(
@@ -351,6 +421,7 @@ export async function synchronizeReaderData(
   return {
     cursor: Math.max(...versions),
     resetVersion,
+    seriesResets,
     acknowledged: accepted.map((operation) => operation.operationId),
     errors,
     changes: { progress, savedPlaces, highlights },

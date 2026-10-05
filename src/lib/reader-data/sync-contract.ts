@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { seriesResetSchema, seriesResetVersionsSchema } from "./series-reset";
 import {
   highlightRecordSchema,
   progressRecordSchema,
@@ -18,6 +19,7 @@ import {
 export const syncRequestSchema = z.object({
   cursor: z.number().int().nonnegative().default(0),
   resetVersion: z.number().int().nonnegative().nullable().default(0),
+  seriesResetVersions: seriesResetVersionsSchema.optional(),
   operations: z.array(syncMutationSchema).max(100).default([]),
 });
 
@@ -30,6 +32,7 @@ export const syncResponseSchema = z.object({
   cursor: z.number().int().nonnegative(),
   /** The account's latest progress reset (0 = never reset). */
   resetVersion: z.number().int().nonnegative().default(0),
+  seriesResets: z.array(seriesResetSchema).max(2).optional(),
   acknowledged: z.array(z.string().uuid()),
   errors: z.array(syncOperationErrorSchema),
   changes: z.object({

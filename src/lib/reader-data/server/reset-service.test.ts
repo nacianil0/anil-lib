@@ -1,10 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import type { ReaderUser } from "@/lib/auth/user-schema";
+import { loadSeriesCatalog } from "@/lib/content/series";
+import { loadBounCatalog } from "@/lib/content/series-boun";
 import {
   RESET_DEVICE_ID,
   resetReadingProgress,
   ResetNotAllowedError,
+  resetSeriesReadingProgress,
+  SeriesResetNotAllowedError,
 } from "./reset-service";
 
 type Call = { text: string; params: unknown[] };
@@ -20,7 +24,13 @@ const owner: ReaderUser = {
   lastLoginAt: null,
   createdAt: "2026-06-01T08:00:00.000Z",
 };
-const reader: ReaderUser = { ...owner, id: READER_ID, username: "reader", workspaceId: READER_ID, role: "user" };
+const reader: ReaderUser = {
+  ...owner,
+  id: READER_ID,
+  username: "reader",
+  workspaceId: READER_ID,
+  role: "user",
+};
 
 const calls: Call[] = [];
 
@@ -31,6 +41,51 @@ const queryMock = vi.fn(async (text: string, params: unknown[] = []) => {
   if (text.includes("UPDATE saved_places")) return [{ count: 3 }];
   if (text.includes("UPDATE highlights")) return [{ count: 5 }];
   return [];
+});
+
+describe("resetSeriesReadingProgress", () => {
+  it("allows a regular reader to reset only their own canonical series", async () => {
+    const articleIds = loadSeriesCatalog().articles.map((article) => article.articleId);
+    const result = await resetSeriesReadingProgress(sql, reader, "ai");
+
+    expect(transactionMock).toHaveBeenCalledTimes(1);
+    expect(calls[0].text).toContain("LOCK TABLE reading_progress IN SHARE ROW EXCLUSIVE MODE");
+    expect(calls[1].text).toContain("INSERT INTO reading_series_resets");
+    expect(calls[1].text).toContain("nextval('reader_change_version_seq')");
+    expect(calls[1].params).toEqual([reader.workspaceId, "ai", reader.id]);
+    expect(calls[2].text).toContain("article_id = ANY($2::text[])");
+    expect(calls[2].params).toEqual([reader.workspaceId, articleIds]);
+    expect(result).toEqual({
+      reset: { seriesId: "ai", resetVersion: 57, articleIds },
+      progress: 12,
+    });
+    expect(calls.some((call) => call.text.includes("saved_places"))).toBe(false);
+    expect(calls.some((call) => call.text.includes("highlights"))).toBe(false);
+    expect(calls.some((call) => call.text.includes("INSERT INTO reading_resets"))).toBe(false);
+  });
+
+  it("uses the BOUN catalog when that series is selected", async () => {
+    const articleIds = loadBounCatalog().articles.map((article) => article.articleId);
+    const result = await resetSeriesReadingProgress(sql, owner, "boun");
+
+    expect(calls[1].params).toEqual(["owner", "boun", OWNER_ID]);
+    expect(calls[2].params).toEqual(["owner", articleIds]);
+    expect(result.reset.articleIds).toEqual(articleIds);
+  });
+
+  it("rejects anonymous readers and invalid series before issuing a query", async () => {
+    await expect(resetSeriesReadingProgress(sql, null, "ai")).rejects.toBeInstanceOf(
+      SeriesResetNotAllowedError,
+    );
+    await expect(resetSeriesReadingProgress(sql, reader, "archive" as "ai")).rejects.toThrow();
+    expect(queryMock).not.toHaveBeenCalled();
+    expect(transactionMock).not.toHaveBeenCalled();
+  });
+
+  it("records no UUID actor for the development owner", async () => {
+    await resetSeriesReadingProgress(sql, { ...owner, id: "owner" }, "ai");
+    expect(calls[1].params).toEqual(["owner", "ai", null]);
+  });
 });
 const transactionMock = vi.fn(async (queries: Promise<unknown>[]) => Promise.all(queries));
 const sql = {

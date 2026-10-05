@@ -11,14 +11,11 @@ import {
   type ReactNode,
 } from "react";
 import type { ReadingStatus } from "@/lib/content/types";
-import {
-  COMPLETION_THRESHOLD,
-  readerDataStorageKey,
-  STARTED_RATIO,
-} from "@/lib/reader/version";
+import { COMPLETION_THRESHOLD, readerDataStorageKey, STARTED_RATIO } from "@/lib/reader/version";
 import { clamp } from "@/lib/utils";
 import type { ArticleProgress, ReaderProgress } from "@/lib/progress/schema";
-import { mergeSyncResponse } from "./merge";
+import { applySeriesReset, mergeStoredReaderData, mergeSyncResponse } from "./merge";
+import { resetVersionForArticle, type SeriesId } from "./series-reset";
 import {
   emptyReaderData,
   type HighlightRecord,
@@ -35,7 +32,7 @@ import {
   readReaderData,
   writeReaderData,
 } from "./storage";
-import { requestReaderSync } from "./sync-client";
+import { requestReaderSync, requestSeriesReset } from "./sync-client";
 
 const SAVE_THROTTLE_MS = 250;
 const PLACEHOLDER_DEVICE_ID = "00000000-0000-4000-8000-000000000000";
@@ -50,6 +47,8 @@ export type ReaderDataContextValue = {
   syncStatus: SyncStatus;
   /** The account's latest progress reset this device has applied; rises when one lands. */
   resetVersion: number;
+  resetVersionOf: (articleId: string) => number;
+  resetSeries: (seriesId: SeriesId) => Promise<void>;
   entryOf: (articleId: string) => ArticleProgress;
   /** The stored record, including the resolvable reading anchor the shell restores. */
   progressOf: (articleId: string) => ProgressRecord | null;
@@ -230,6 +229,9 @@ export function ReaderDataProvider({
       const response = await requestReaderSync({
         cursor: snapshot.cursor,
         resetVersion: adoptReset ? null : snapshot.resetVersion,
+        seriesResetVersions: Object.fromEntries(
+          snapshot.seriesResets.map((reset) => [reset.seriesId, reset.resetVersion]),
+        ),
         operations: snapshot.outbox.slice(0, 100),
       });
       if (!mountedRef.current) return;
@@ -239,7 +241,12 @@ export function ReaderDataProvider({
       // The account was reset while an article is open here: the merge dropped this
       // visit along with everything else, so record it again, from nothing.
       const openArticleId = openArticleRef.current;
-      if (!adoptReset && response.resetVersion > before.resetVersion && openArticleId) {
+      if (
+        !adoptReset &&
+        openArticleId &&
+        resetVersionForArticle(merged, openArticleId) >
+          resetVersionForArticle(before, openArticleId)
+      ) {
         merged = withProgressWrite(
           merged,
           openedRecord(merged, openArticleId, new Date().toISOString()),
@@ -281,10 +288,23 @@ export function ReaderDataProvider({
   useEffect(() => {
     function onStorage(event: StorageEvent) {
       if (event.key !== readerDataStorageKey(workspaceId)) return;
-      const next = parseReaderData(event.newValue, workspaceId);
-      if (next) {
+      const incoming = parseReaderData(event.newValue, workspaceId);
+      if (incoming) {
+        const next = mergeStoredReaderData(dataRef.current, incoming);
+        freshRef.current = false;
         dataRef.current = next;
         setData(next);
+        // Repair a stale tab's durable copy once; the repaired epoch cannot regress.
+        if (
+          next.resetVersion > incoming.resetVersion ||
+          next.seriesResets.some(
+            (reset) =>
+              reset.resetVersion >
+              (incoming.seriesResets.find((item) => item.seriesId === reset.seriesId)
+                ?.resetVersion ?? 0),
+          )
+        )
+          writeReaderData(next);
       }
     }
     function onOnline() {
@@ -330,12 +350,7 @@ export function ReaderDataProvider({
   );
 
   const recordPosition = useCallback(
-    (
-      articleId: string,
-      headingId: string | null,
-      ratio: number,
-      anchor: ReadingAnchor | null,
-    ) => {
+    (articleId: string, headingId: string | null, ratio: number, anchor: ReadingAnchor | null) => {
       const current = dataRef.current;
       const previous = current.progress[articleId];
       const scrollRatio = clamp(ratio, 0, 1);
@@ -554,6 +569,17 @@ export function ReaderDataProvider({
     [persist, scheduleSync],
   );
 
+  const resetSeries = useCallback(
+    async (seriesId: SeriesId) => {
+      const response = await requestSeriesReset(seriesId);
+      if (!mountedRef.current) return;
+      freshRef.current = false;
+      persist(applySeriesReset(dataRef.current, response.reset));
+      finishLegacyMigration(workspaceId);
+    },
+    [persist, workspaceId],
+  );
+
   const value = useMemo<ReaderDataContextValue>(() => {
     const entryOf = (articleId: string): ArticleProgress => {
       const entry = data.progress[articleId];
@@ -582,6 +608,8 @@ export function ReaderDataProvider({
       data,
       progress,
       resetVersion: data.resetVersion,
+      resetVersionOf: (articleId: string) => resetVersionForArticle(data, articleId),
+      resetSeries,
       syncStatus,
       entryOf,
       progressOf: (articleId) => data.progress[articleId] ?? null,
@@ -624,6 +652,7 @@ export function ReaderDataProvider({
     addHighlight,
     removeHighlight,
     syncNow,
+    resetSeries,
   ]);
 
   return <ReaderDataContext.Provider value={value}>{children}</ReaderDataContext.Provider>;

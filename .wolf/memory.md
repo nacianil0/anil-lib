@@ -6614,3 +6614,5 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 20:08 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/series-bakim-run2-2026-09-27.md | — | ~489 |
 | 20:08 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | modified taramas() | ~124 |
 | 20:08 | Session end: 53 writes across 22 files (art.cjs, bib.py, match.py, match2.py, dois.py) | 5 reads | ~228705 tok |
+| 14:40 | Seri bazlı manuel ilerleme sıfırlama geliştirildi; kapsam, yetki, eski cihaz/sekme ve hata durumları test edildi | reader-data, series landing, reader-reset API, drizzle/0004 | Diğer seri ve notlar korunur; bakım otomatik sıfırlamaz; repo auditinde böyle çağrı bulunmadı | ~12000 |
+| 14:45 | Manuel seri sıfırlama son doğrulama ve bakım otomasyon çağrısı denetimi | feature files, drizzle/0004, series reset e2e | 798/798 unit, 7/7 Chromium desktop/mobile, typecheck, changed-file lint, isolated production build geçti; genel lint eski dosyalarda hatalı; canlıya erişilmedi | ~6000 |

@@ -69,7 +69,8 @@ function ReaderShellInner({
   showTitle = false,
 }: Props) {
   const { ready, setCurrentArticle, recordPosition, entryOf } = useReaderProgress();
-  const { progressOf, savedPlaceOf, resetVersion } = useReaderData();
+  const { progressOf, savedPlaceOf, resetVersionOf } = useReaderData();
+  const resetVersion = resetVersionOf(current.articleId);
   const { preferences } = useReaderPreferences();
   // Whether this reader had read the article before its last editorial revision.
   // Decided once, in the render where progress becomes available — the same render

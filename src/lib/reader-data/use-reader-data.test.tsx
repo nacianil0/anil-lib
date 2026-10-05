@@ -1,12 +1,16 @@
-import { cleanup, render, waitFor } from "@testing-library/react";
+import { act, cleanup, render, waitFor } from "@testing-library/react";
 import { useEffect } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { readerDataStorageKey } from "@/lib/reader/version";
 import type { SyncRequest, SyncResponse } from "./sync-contract";
+import { emptyReaderData } from "./schema";
+import type { SeriesReset } from "./series-reset";
 
 const hoisted = vi.hoisted(() => ({
   requests: [] as SyncRequest[],
   serverResetVersion: 5,
+  serverSeriesResets: [] as SeriesReset[],
+  resetFails: false,
 }));
 
 vi.mock("./sync-client", () => ({
@@ -15,11 +19,18 @@ vi.mock("./sync-client", () => ({
     return {
       cursor: 60 + hoisted.requests.length,
       resetVersion: hoisted.serverResetVersion,
+      seriesResets: hoisted.serverSeriesResets,
       acknowledged: request.operations.map((operation) => operation.operationId),
       errors: [],
       changes: { progress: [], savedPlaces: [], highlights: [] },
       serverTime: new Date().toISOString(),
     };
+  }),
+  requestSeriesReset: vi.fn(async () => {
+    if (hoisted.resetFails) throw new Error("offline");
+    const reset: SeriesReset = { seriesId: "ai", resetVersion: 70, articleIds: ["article-1"] };
+    hoisted.serverSeriesResets = [reset];
+    return { reset, progress: 1 };
   }),
 }));
 
@@ -70,7 +81,93 @@ beforeEach(() => {
   window.localStorage.clear();
   hoisted.requests.length = 0;
   hoisted.serverResetVersion = 5;
+  hoisted.serverSeriesResets = [];
+  hoisted.resetFails = false;
   latest = null;
+});
+
+describe("ReaderDataProvider per-series reset", () => {
+  function seed() {
+    const data = emptyReaderData(WORKSPACE, DEVICE);
+    data.progress = {
+      "article-1": record("article-1", 1, true),
+      "boun-1": record("boun-1", 0.4, false),
+    };
+    data.lastSyncAt = AT;
+    data.savedPlaces["article-1"] = {
+      articleId: "article-1",
+      scrollRatio: 0.8,
+      headingId: null,
+      anchor: null,
+      previewText: "saved",
+      clientUpdatedAt: AT,
+      deviceId: DEVICE,
+      changeVersion: 0,
+      deletedAt: null,
+    };
+    window.localStorage.setItem(readerDataStorageKey(WORKSPACE), JSON.stringify(data));
+    hoisted.serverResetVersion = 0;
+  }
+
+  it("applies a successful series reset immediately without touching the open other series", async () => {
+    seed();
+    renderOpen("boun-1");
+    await waitFor(() => expect(latest?.data.lastSyncAt).not.toBe(AT));
+    await act(async () => latest!.resetSeries("ai"));
+    expect(latest!.data.progress["article-1"]).toBeUndefined();
+    expect(latest!.data.progress["boun-1"].scrollRatio).toBe(0.4);
+    expect(latest!.savedPlaceOf("article-1")).not.toBeNull();
+    expect(latest!.resetVersionOf("article-1")).toBe(70);
+    expect(latest!.resetVersionOf("boun-1")).toBe(0);
+    expect(latest!.data.currentArticleId).toBe("boun-1");
+    const persisted = JSON.parse(window.localStorage.getItem(readerDataStorageKey(WORKSPACE))!);
+    expect(persisted.progress["article-1"]).toBeUndefined();
+  });
+
+  it("preserves progress when the reset request fails", async () => {
+    seed();
+    hoisted.resetFails = true;
+    renderOpen("boun-1");
+    await waitFor(() => expect(latest?.data.lastSyncAt).not.toBe(AT));
+    const before = structuredClone(latest!.data);
+    await act(async () => {
+      await expect(latest!.resetSeries("ai")).rejects.toThrow("offline");
+    });
+    expect(latest!.data).toEqual(before);
+  });
+
+  it("keeps a confirmed reset when a sibling tab writes an older storage snapshot", async () => {
+    seed();
+    renderOpen("boun-1");
+    await waitFor(() => expect(latest?.data.lastSyncAt).not.toBe(AT));
+    const old = JSON.stringify(latest!.data);
+    await act(async () => latest!.resetSeries("ai"));
+    act(() => {
+      window.localStorage.setItem(readerDataStorageKey(WORKSPACE), old);
+      window.dispatchEvent(
+        new StorageEvent("storage", {
+          key: readerDataStorageKey(WORKSPACE),
+          newValue: old,
+        }),
+      );
+    });
+    expect(latest!.resetVersionOf("article-1")).toBe(70);
+    expect(latest!.data.progress["article-1"]).toBeUndefined();
+    expect(latest!.data.progress["boun-1"]).toBeDefined();
+    const persisted = JSON.parse(window.localStorage.getItem(readerDataStorageKey(WORKSPACE))!);
+    expect(persisted.seriesResets[0].resetVersion).toBe(70);
+  });
+
+  it("learns a remote scoped reset and records an open reset article afresh", async () => {
+    seed();
+    hoisted.serverSeriesResets = [{ seriesId: "ai", resetVersion: 70, articleIds: ["article-1"] }];
+    renderOpen("article-1");
+    await waitFor(() => expect(latest?.resetVersionOf("article-1")).toBe(70));
+    await waitFor(() => expect(latest?.data.outbox).toEqual([]));
+    expect(latest!.data.progress["article-1"]).toMatchObject({ completed: false, scrollRatio: 0 });
+    expect(latest!.data.progress["boun-1"].scrollRatio).toBe(0.4);
+    expect(hoisted.requests.some((request) => request.seriesResetVersions?.ai === 70)).toBe(true);
+  });
 });
 
 describe("ReaderDataProvider and a server-side progress reset", () => {

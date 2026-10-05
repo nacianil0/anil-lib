@@ -49,7 +49,11 @@ export async function POST(request: NextRequest) {
       authorization.workspaceId,
       parsed.data.cursor,
       parsed.data.operations,
-      { allowArchive: authorization.isOwnerWorkspace, resetVersion: parsed.data.resetVersion },
+      {
+        allowArchive: authorization.isOwnerWorkspace,
+        resetVersion: parsed.data.resetVersion,
+        seriesResetVersions: parsed.data.seriesResetVersions,
+      },
     );
     return NextResponse.json(response, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {

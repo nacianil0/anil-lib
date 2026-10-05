@@ -24,6 +24,7 @@ export default async function BounPage() {
   const user = await requireSessionUser();
   return (
     <SeriesLanding
+      seriesId="boun"
       workspaceId={user.workspaceId}
       roadmap={loadBounRoadmap()}
       articles={getBounDescriptors()}

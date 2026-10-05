@@ -12925,6 +12925,91 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-09-27T17:10:00.000Z"
+    },
+    {
+      "id": "bug-782",
+      "timestamp": "2026-10-05T08:39:25.831Z",
+      "error_message": "A stale sibling-tab storage event could lower reset epochs and restore removed reading progress.",
+      "file": "src/lib/reader-data/use-reader-data.tsx",
+      "root_cause": "Storage listener replaced the entire reader blob without applying reset barriers.",
+      "fix": "Merge storage snapshots under monotonic global/series epochs and repair regressed durable snapshots; added provider and merge regressions.",
+      "tags": [
+        "reader-data",
+        "reset",
+        "storage",
+        "race"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-05T08:39:25.831Z"
+    },
+    {
+      "id": "bug-783",
+      "timestamp": "2026-10-05T08:39:25.831Z",
+      "error_message": "Incoming storage pending operations blocked their own records or were dropped after a newer series reset.",
+      "file": "src/lib/reader-data/merge.ts",
+      "root_cause": "Incoming operations were added before clearing pre-reset writes; pending keys blocked their own incoming records.",
+      "fix": "Merge current data first, then retain epoch-valid incoming writes and apply chosen payloads under timestamp/device ordering. Added new-record, post-reset and older synced-record regressions.",
+      "tags": [
+        "reader-data",
+        "reset",
+        "merge",
+        "pending"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-05T08:39:25.831Z"
+    },
+    {
+      "id": "bug-784",
+      "timestamp": "2026-10-05T08:39:25.831Z",
+      "error_message": "Initial regression tests failed before scoped reset implementation; intermediate patch contexts and e2e catalog cast required correction.",
+      "file": "src/lib/reader-data/merge.test.ts",
+      "root_cause": "Test-first introduction of a new reset API and an invalid multiline TypeScript cast in the new browser test.",
+      "fix": "Implemented scoped reset and corrected TypeScript cast; targeted tests, typecheck and changed-file lint pass.",
+      "tags": [
+        "verification",
+        "test-first",
+        "series-reset"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-05T08:39:25.831Z"
+    },
+    {
+      "id": "bug-785",
+      "timestamp": "2026-10-05T08:39:25.831Z",
+      "error_message": "Full repository lint failed on existing ignored artifacts, content/schema type-only declarations and legacy tools require imports.",
+      "file": "src/lib/content/schema.ts",
+      "root_cause": "Existing repository-wide lint covers local artifacts and pre-existing legacy rules; these files were outside feature scope.",
+      "fix": "Preserved unrelated files and verified lint for every changed/new feature TypeScript file; baseline full lint limitation remains documented.",
+      "tags": [
+        "verification",
+        "lint",
+        "baseline"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-05T08:39:25.831Z"
+    },
+    {
+      "id": "bug-786",
+      "timestamp": "2026-10-05T08:44:33.145Z",
+      "error_message": "Chromium rapid double click could blur confirmation focus; the initial browser assertion also assumed the second pointer could not safely cancel after layout changes.",
+      "file": "src/components/series/series-progress-reset.tsx",
+      "root_cause": "The confirmation rerender moves content under the pointer, and the second click can land on text or cancel; Next also provides its own alert region.",
+      "fix": "Guard immediate pointer focus, keep distinct keyed buttons and a separate delayed confirmation; browser tests prove double click never resets, verify explicit single-click cancel focus, and scope error alerts. Final7/7 browser tests pass.",
+      "tags": [
+        "reader-data",
+        "confirmation",
+        "focus",
+        "e2e"
+      ],
+      "related_bugs": [
+        "bug-649"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-10-05T08:44:33.145Z"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { mergeSyncResponse } from "./merge";
+import { applySeriesReset, mergeStoredReaderData, mergeSyncResponse } from "./merge";
 import { emptyReaderData, type ProgressRecord } from "./schema";
+import type { SyncResponse } from "./sync-contract";
 
 const DEVICE = "11111111-1111-4111-8111-111111111111";
 const WORKSPACE = "owner";
@@ -85,6 +86,168 @@ describe("mergeSyncResponse", () => {
   });
 });
 
+describe("per-series resets", () => {
+  const reset = { seriesId: "ai" as const, resetVersion: 50, articleIds: ["article-1"] };
+  function history() {
+    const data = emptyReaderData(WORKSPACE, DEVICE);
+    data.currentArticleId = "article-1";
+    for (const id of ["article-1", "boun-1", "archive-1"]) {
+      const record = progress({ articleId: id, completed: true });
+      data.progress[id] = record;
+      data.outbox.push({
+        operationId: crypto.randomUUID(),
+        entityType: "progress",
+        entityId: id,
+        operationType: "upsert",
+        deviceId: DEVICE,
+        clientUpdatedAt: record.clientUpdatedAt,
+        payload: record,
+      });
+    }
+    data.savedPlaces["article-1"] = {
+      articleId: "article-1",
+      headingId: null,
+      scrollRatio: 0.5,
+      anchor: null,
+      previewText: "saved",
+      deviceId: DEVICE,
+      deletedAt: null,
+      changeVersion: 0,
+      clientUpdatedAt: "2026-06-29T10:00:00.000Z",
+    };
+    data.outbox.push({
+      operationId: crypto.randomUUID(),
+      entityType: "saved-place",
+      entityId: "article-1",
+      operationType: "upsert",
+      deviceId: DEVICE,
+      clientUpdatedAt: data.savedPlaces["article-1"].clientUpdatedAt,
+      payload: data.savedPlaces["article-1"],
+    });
+    return data;
+  }
+  function answer(seriesResets = [reset]): SyncResponse {
+    return {
+      cursor: 51,
+      resetVersion: 0,
+      seriesResets,
+      acknowledged: [],
+      errors: [],
+      changes: { progress: [], savedPlaces: [], highlights: [] },
+      serverTime: "2026-06-29T10:01:00.000Z",
+    };
+  }
+
+  it("clears only the reset series and preserves unrelated pending writes and annotations", () => {
+    const current = history();
+    const next = applySeriesReset(current, reset);
+    expect(Object.keys(next.progress)).toEqual(["boun-1", "archive-1"]);
+    expect(next.currentArticleId).not.toBe("article-1");
+    expect(next.outbox.map((operation) => `${operation.entityType}:${operation.entityId}`)).toEqual(
+      ["progress:boun-1", "progress:archive-1", "saved-place:article-1"],
+    );
+    expect(next.savedPlaces).toEqual(current.savedPlaces);
+    expect(next.highlights).toEqual(current.highlights);
+    expect(next.resetVersion).toBe(0);
+  });
+
+  it("ignores an older in-flight response after immediate local reset", () => {
+    const current = applySeriesReset(history(), reset);
+    const old = answer([]);
+    old.changes.progress = [progress()];
+    const next = mergeSyncResponse(current, old);
+    expect(next.progress["article-1"]).toBeUndefined();
+    expect(next.seriesResets).toEqual([reset]);
+    expect(next.progress["boun-1"]).toBeDefined();
+  });
+
+  it("adopts a reset on a fresh device without clearing its new visit", () => {
+    const current = emptyReaderData(WORKSPACE, DEVICE);
+    current.progress["article-1"] = progress();
+    const next = mergeSyncResponse(current, answer(), { adoptReset: true });
+    expect(next.progress["article-1"]).toBeDefined();
+    expect(next.seriesResets).toEqual([reset]);
+  });
+
+  it("does not let an older tab lower the reset epoch or restore its queued progress", () => {
+    const oldTab = history();
+    const current = applySeriesReset(history(), reset);
+    const next = mergeStoredReaderData(current, oldTab);
+    expect(next.seriesResets).toEqual([reset]);
+    expect(next.progress["article-1"]).toBeUndefined();
+    expect(
+      next.outbox
+        .filter((operation) => operation.entityType === "progress")
+        .every((operation) => operation.entityId !== "article-1"),
+    ).toBe(true);
+    expect(next.progress["boun-1"]).toBeDefined();
+  });
+
+  it("learns a reset from another tab without losing unrelated unsent progress", () => {
+    const current = history();
+    const incoming = applySeriesReset(emptyReaderData(WORKSPACE, DEVICE), reset);
+    const next = mergeStoredReaderData(current, incoming);
+    expect(next.progress["article-1"]).toBeUndefined();
+    expect(next.progress["boun-1"]).toBeDefined();
+    expect(next.outbox.some((operation) => operation.entityId === "boun-1")).toBe(true);
+  });
+
+  it("adopts a sibling tab's new pending article and its matching local record", () => {
+    const current = emptyReaderData(WORKSPACE, DEVICE);
+    const incoming = history();
+    const next = mergeStoredReaderData(current, incoming);
+    expect(next.progress["boun-1"]).toEqual(incoming.progress["boun-1"]);
+    expect(next.outbox.some((operation) => operation.entityId === "boun-1")).toBe(true);
+  });
+
+  it("keeps unsent reading made by a sibling after its newer reset", () => {
+    const incoming = applySeriesReset(history(), reset);
+    const record = progress({ scrollRatio: 0.1, completed: false });
+    incoming.progress[record.articleId] = record;
+    incoming.outbox.push({
+      operationId: crypto.randomUUID(),
+      entityType: "progress",
+      entityId: record.articleId,
+      operationType: "upsert",
+      deviceId: DEVICE,
+      clientUpdatedAt: record.clientUpdatedAt,
+      payload: record,
+    });
+    const next = mergeStoredReaderData(history(), incoming);
+    expect(next.progress["article-1"]).toMatchObject({ scrollRatio: 0.1, completed: false });
+    expect(
+      next.outbox.some(
+        (operation) => operation.entityType === "progress" && operation.entityId === "article-1",
+      ),
+    ).toBe(true);
+  });
+
+  it("does not regress already-synced other-series progress from an older tab snapshot", () => {
+    const current = history();
+    current.progress["boun-1"] = progress({
+      articleId: "boun-1",
+      scrollRatio: 0.8,
+      clientUpdatedAt: "2026-06-30T10:00:00.000Z",
+    });
+    current.outbox = current.outbox.filter((operation) => operation.entityId !== "boun-1");
+    const next = mergeStoredReaderData(current, history());
+    expect(next.progress["boun-1"].scrollRatio).toBe(0.8);
+    expect(next.outbox.some((operation) => operation.entityId === "boun-1")).toBe(false);
+  });
+
+  it("keeps progress written after the reset and applies subsequent global resets", () => {
+    const current = applySeriesReset(history(), reset);
+    const newer = answer();
+    newer.changes.progress = [progress({ scrollRatio: 0.1, changeVersion: 51 })];
+    const next = mergeSyncResponse(current, newer);
+    expect(next.progress["article-1"].scrollRatio).toBe(0.1);
+    const global = mergeSyncResponse(next, { ...answer(), resetVersion: 60 });
+    expect(global.progress).toEqual({});
+    const stale = mergeSyncResponse(global, { ...newer, resetVersion: 0 });
+    expect(stale.progress).toEqual({});
+  });
+});
+
 describe("mergeSyncResponse after a server-side progress reset", () => {
   const SAVED_OPERATION = "33333333-3333-4333-8333-333333333333";
   const STALE_OPERATION = "44444444-4444-4444-8444-444444444444";
@@ -93,7 +256,11 @@ describe("mergeSyncResponse after a server-side progress reset", () => {
     const current = emptyReaderData(WORKSPACE, DEVICE);
     current.cursor = 40;
     current.currentArticleId = "article-1";
-    current.progress["article-1"] = progress({ completed: true, scrollRatio: 1, changeVersion: 30 });
+    current.progress["article-1"] = progress({
+      completed: true,
+      scrollRatio: 1,
+      changeVersion: 30,
+    });
     current.progress["article-2"] = progress({ articleId: "article-2", changeVersion: 31 });
     current.savedPlaces["article-2"] = {
       articleId: "article-2",

@@ -24,6 +24,7 @@ export default async function SeriesPage() {
   const user = await requireSessionUser();
   return (
     <SeriesLanding
+      seriesId="ai"
       workspaceId={user.workspaceId}
       roadmap={loadSeriesRoadmap()}
       articles={getSeriesDescriptors()}

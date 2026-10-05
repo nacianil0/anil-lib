@@ -2,6 +2,9 @@ import "server-only";
 
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import type { ReaderUser } from "@/lib/auth/user-schema";
+import { loadSeriesCatalog } from "@/lib/content/series";
+import { loadBounCatalog } from "@/lib/content/series-boun";
+import { seriesIdSchema, type SeriesId, type SeriesReset } from "@/lib/reader-data/series-reset";
 
 type SqlClient = NeonQueryFunction<false, false>;
 
@@ -22,6 +25,66 @@ export class ResetNotAllowedError extends Error {
     super("owner_only");
     this.name = "ResetNotAllowedError";
   }
+}
+
+export class SeriesResetNotAllowedError extends Error {
+  constructor() {
+    super("unauthorized");
+    this.name = "SeriesResetNotAllowedError";
+  }
+}
+
+export type SeriesResetResult = {
+  reset: SeriesReset;
+  progress: number;
+};
+
+/**
+ * Resets the signed-in reader's own series. Neither workspace nor article ids come
+ * from the client. A separate epoch keeps other series' progress and pending work
+ * intact, while the table lock orders this delete against every progress write.
+ */
+export async function resetSeriesReadingProgress(
+  sql: SqlClient,
+  actor: ReaderUser | null,
+  seriesId: SeriesId,
+): Promise<SeriesResetResult> {
+  if (!actor) throw new SeriesResetNotAllowedError();
+  const validatedSeriesId = seriesIdSchema.parse(seriesId);
+  const catalog = validatedSeriesId === "ai" ? loadSeriesCatalog() : loadBounCatalog();
+  const articleIds = catalog.articles.map((article) => article.articleId);
+  const resetBy = UUID_PATTERN.test(actor.id) ? actor.id : null;
+  const results = (await sql.transaction([
+    sql.query(`LOCK TABLE reading_progress IN SHARE ROW EXCLUSIVE MODE`),
+    sql.query(
+      `INSERT INTO reading_series_resets (workspace_id, series_id, reset_version, reset_at, reset_by)
+       VALUES ($1, $2, nextval('reader_change_version_seq'), now(), $3::uuid)
+       ON CONFLICT (workspace_id, series_id) DO UPDATE SET
+         reset_version = EXCLUDED.reset_version,
+         reset_at = EXCLUDED.reset_at,
+         reset_by = EXCLUDED.reset_by
+       RETURNING reset_version`,
+      [actor.workspaceId, validatedSeriesId, resetBy],
+    ),
+    sql.query(
+      `WITH removed AS (
+         DELETE FROM reading_progress
+         WHERE workspace_id = $1 AND article_id = ANY($2::text[])
+         RETURNING 1
+       )
+       SELECT count(*)::int AS count FROM removed`,
+      [actor.workspaceId, articleIds],
+    ),
+  ])) as unknown[];
+  const resetRow = (results[1] as Record<string, unknown>[] | undefined)?.[0];
+  return {
+    reset: {
+      seriesId: validatedSeriesId,
+      resetVersion: resetRow ? Number(resetRow.reset_version) : 0,
+      articleIds,
+    },
+    progress: countOf(results[2]),
+  };
 }
 
 export type ResetScope = {
