@@ -6616,3 +6616,17 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 20:08 | Session end: 53 writes across 22 files (art.cjs, bib.py, match.py, match2.py, dois.py) | 5 reads | ~228705 tok |
 | 14:40 | Seri bazlı manuel ilerleme sıfırlama geliştirildi; kapsam, yetki, eski cihaz/sekme ve hata durumları test edildi | reader-data, series landing, reader-reset API, drizzle/0004 | Diğer seri ve notlar korunur; bakım otomatik sıfırlamaz; repo auditinde böyle çağrı bulunmadı | ~12000 |
 | 14:45 | Manuel seri sıfırlama son doğrulama ve bakım otomasyon çağrısı denetimi | feature files, drizzle/0004, series reset e2e | 798/798 unit, 7/7 Chromium desktop/mobile, typecheck, changed-file lint, isolated production build geçti; genel lint eski dosyalarda hatalı; canlıya erişilmedi | ~6000 |
+
+## Session: 2026-10-19 11:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:56 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/890ea0df-91db-4bff-be3d-02f55153d8ba/scratchpad/archash.cjs | — | ~450 |
+| 11:57 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/890ea0df-91db-4bff-be3d-02f55153d8ba/scratchpad/strip-cite.cjs | — | ~246 |
+| 11:57 | Created src/lib/content/content-hygiene.test.ts | — | ~306 |
+| 11:58 | Created tests/e2e/zz-tmp-citation-check.spec.ts | — | ~522 |
+| 11:58 | Edited tests/e2e/zz-tmp-citation-check.spec.ts | — | ~0 |
+| 11:59 | Edited tests/e2e/zz-tmp-citation-check.spec.ts | 3→4 lines | ~74 |
+| 12:00 | Edited src/lib/content/content-hygiene.test.ts | inline fix | ~26 |
+| 12:06 | Arşivdeki ChatGPT atıf işaretleri temizlendi (415 cite + 2 navlist, 7 makale), 7 content_hash güncellendi, content-hygiene.test.ts eklendi; vitest 520, typecheck, lint, Playwright render (7 sayfa + desktop/mobil) temiz | content/articles/**, content/catalog.json, src/lib/content/content-hygiene.test.ts | ok | ~6000 |
+| 12:02 | Session end: 7 writes across 4 files (archash.cjs, strip-cite.cjs, content-hygiene.test.ts, zz-tmp-citation-check.spec.ts) | 3 reads | ~1979 tok |

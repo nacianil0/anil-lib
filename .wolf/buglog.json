@@ -13010,6 +13010,27 @@
       ],
       "occurrences": 1,
       "last_seen": "2026-10-05T08:44:33.145Z"
+    },
+    {
+      "id": "bug-787",
+      "timestamp": "2026-10-19T08:59:43.856Z",
+      "error_message": "Arşiv makalelerinde okuyucuda çöp metin: 'citeturn22search10turn36search0…' ve 'navlist…turn37news29'",
+      "file": "content/articles/** (7 arşiv makalesi), content/catalog.json",
+      "root_cause": "ChatGPT Deep Research dışa aktarımındaki iç atıf işaretleri (U+E200 cite U+E202 turnNsearchM U+E201 ve navlist widget'ı) ingestion sırasında gövdede kaldı. İşaretler yalnızca sohbet oturumu kimliği taşır, kaynak URL/künye taşımaz; renderer onları düz metin basar.",
+      "fix": "415 cite + 2 navlist işareti (önündeki boşlukla) mekanik olarak silindi; mechanistic makalesinde boşa düşen 'iki güvenilir haber:' tanıtım cümlesi de kaldırıldı. prompts/01 arşiv content_hash sözleşmesiyle 7 hash frontmatter ve catalog.json'da güncellendi. src/lib/content/content-hygiene.test.ts tüm content/**/*.md için tekrarını engeller.",
+      "tags": [
+        "content",
+        "archive",
+        "citation",
+        "chatgpt-export",
+        "pua",
+        "content_hash"
+      ],
+      "related_bugs": [
+        "bug-035"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-10-19T08:59:43.856Z"
     }
   ]
 }

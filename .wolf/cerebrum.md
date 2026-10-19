@@ -522,6 +522,10 @@ ode_modules`, sonra kopyayi sil.
 
 ## Do-Not-Repeat
 
+- [2026-10-19] Arşiv (`content/articles`) `content_hash` sözleşmesi seriden FARKLI: prompts/01'e göre LF + frontmatter çıkar + sondaki boş satırları sil + **tek LF ekle** (seri: trim). `sync-series-hashes.cjs` arşivi kapsamaz; arşiv gövdesi değişince hash'i bu kuralla hesaplayıp frontmatter + `content/catalog.json`'da birlikte güncelle (18/18 bu kuralla doğrulandı).
+- [2026-10-19] Write/Edit aracına yazılan `` kaçışı dosyaya **literal görünmez karakter** olarak düşebiliyor; kaynakta PUA regex'i için `\u{E200}` biçimini kullan ve `od -c` ile bayt kontrolü yap. Bash `node -e '…'` içinde Türkçe kesme işareti (`catalog.json'da`) tek tırnağı kapatır.
+- [2026-10-19] ChatGPT Deep Research dışa aktarımları `U+E200 cite U+E202 turn12search3 U+E201` ve `navlist` işaretleri bırakır; içerik alınırken bunları temizle. `content-hygiene.test.ts` artık build öncesi yakalar.
+
 - [2026-09-25] İki adımlı onayda "kur" düğmesi ile "onayla (submit)" düğmesini aynı çocuk yuvasında
   anahtarsız render etme: React aynı DOM `<button>`'ı yeniden kullanıp tıklama sürerken `type`'ı submit'e
   çevirir ve ilk tıklama formu gönderir. jsdom bunu yakalamaz; gerçek Chromium render'ında dene. Farklı
