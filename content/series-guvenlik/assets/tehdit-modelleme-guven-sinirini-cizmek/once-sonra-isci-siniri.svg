@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 418" role="img" aria-label="İki panel. Önce: mesajda dört alan var; tenantId ve documentId sunucunun ürettiği, objectKey ile contentType istemcinin beyanı. Mesaj tek bir sürece gider: işçi kodu, dönüştürücü ve kimlik bilgisi aynı süreçte; ad yolu kurar, beyan ayrıştırıcıyı seçer. Sonra: mesajda yalnızca documentId var. Kimlik bilgisini tutan işçi kiracıyı ve anahtarı veritabanından, türü ve pikseli dosyanın kendisinden yeniden türetir. Baytlar ikinci güven sınırının içindeki dönüştürücüye gider; dönüştürücüde ağ ve kimlik yoktur, PNG işçiye döner. Beyan veritabanında kalır, yalnızca karşılaştırılır.">
+  <defs>
+    <marker id="tm2-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="tm2-ok-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <line x1="360" y1="16" x2="360" y2="404" stroke="var(--border)" stroke-width="1.2" />
+
+  <text x="16" y="28" font-size="13" font-weight="bold" fill="var(--text)">önce: karışık mesaj, tek süreç</text>
+  <rect x="16" y="44" width="160" height="152" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="28" y="64" font-size="13" font-weight="bold" fill="var(--text)">mesaj</text>
+  <rect x="28" y="74" width="136" height="24" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1" />
+  <text x="36" y="91" font-size="13" fill="var(--text)">tenantId</text>
+  <rect x="28" y="104" width="136" height="24" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1" />
+  <text x="36" y="121" font-size="13" fill="var(--text)">documentId</text>
+  <rect x="28" y="134" width="136" height="24" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1" />
+  <text x="36" y="151" font-size="13" fill="var(--text)">objectKey: ad</text>
+  <rect x="28" y="164" width="136" height="24" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1" />
+  <text x="36" y="181" font-size="13" fill="var(--text)">contentType</text>
+
+  <line x1="176" y1="120" x2="212" y2="120" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#tm2-ok)" />
+  <rect x="216" y="72" width="128" height="96" rx="18" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="230" y="96" font-size="13" font-weight="bold" fill="var(--text)">tek süreç</text>
+  <text x="230" y="116" font-size="13" fill="var(--text)">işçi kodu</text>
+  <text x="230" y="136" font-size="13" fill="var(--text)">dönüştürücü</text>
+  <text x="230" y="156" font-size="13" fill="var(--text)">kimlik bilgisi</text>
+  <text x="28" y="224" font-size="13" fill="var(--text-muted)">ad yolu kurar, beyan ayrıştırıcıyı seçer</text>
+
+  <text x="376" y="28" font-size="13" font-weight="bold" fill="var(--text)">sonra: yalnızca kimlik, iki süreç</text>
+  <rect x="376" y="44" width="120" height="56" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="388" y="64" font-size="13" font-weight="bold" fill="var(--text)">mesaj</text>
+  <rect x="388" y="72" width="96" height="22" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1" />
+  <text x="396" y="88" font-size="13" fill="var(--text)">documentId</text>
+  <line x1="436" y1="100" x2="436" y2="124" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#tm2-ok)" />
+
+  <rect x="376" y="128" width="152" height="72" rx="18" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="390" y="150" font-size="13" font-weight="bold" fill="var(--text)">işçi</text>
+  <text x="390" y="170" font-size="13" fill="var(--text)">kimlik bilgisi</text>
+  <text x="390" y="190" font-size="13" fill="var(--text-muted)">yeniden türetir</text>
+
+  <rect x="560" y="128" width="132" height="56" fill="var(--surface-muted)" stroke="none" />
+  <line x1="560" y1="128" x2="692" y2="128" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="560" y1="184" x2="692" y2="184" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="560" y1="128" x2="560" y2="184" stroke="var(--text-muted)" stroke-width="1.4" />
+  <text x="572" y="150" font-size="13" font-weight="bold" fill="var(--text)">veritabanı</text>
+  <text x="572" y="170" font-size="13" fill="var(--text)">kiracı, anahtar</text>
+  <line x1="556" y1="156" x2="532" y2="156" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#tm2-ok)" />
+
+  <rect x="560" y="196" width="132" height="44" fill="var(--surface-muted)" stroke="none" />
+  <line x1="560" y1="196" x2="692" y2="196" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="560" y1="240" x2="692" y2="240" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="560" y1="196" x2="560" y2="240" stroke="var(--text-muted)" stroke-width="1.4" />
+  <text x="572" y="214" font-size="13" font-weight="bold" fill="var(--text)">dosyanın kendisi</text>
+  <text x="572" y="232" font-size="13" fill="var(--text)">tür, piksel</text>
+  <path d="M556,218 L520,218 L520,204" fill="none" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#tm2-ok)" />
+
+  <rect x="376" y="248" width="192" height="104" rx="4" fill="none" stroke="var(--text)" stroke-width="1.6" stroke-dasharray="8 6" />
+  <text x="580" y="296" font-size="13" font-weight="bold" fill="var(--text)">güven sınırı 2:</text>
+  <text x="580" y="314" font-size="13" font-weight="bold" fill="var(--text)">yalıtım</text>
+  <rect x="392" y="280" width="160" height="60" rx="18" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="406" y="302" font-size="13" font-weight="bold" fill="var(--text)">dönüştürücü</text>
+  <text x="406" y="322" font-size="13" fill="var(--text)">ağ yok, kimlik yok</text>
+
+  <line x1="430" y1="200" x2="430" y2="276" stroke="var(--accent)" stroke-width="2" marker-end="url(#tm2-ok-vurgu)" />
+  <text x="438" y="232" font-size="13" fill="var(--accent)">baytlar</text>
+  <line x1="500" y1="280" x2="500" y2="204" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#tm2-ok)" />
+  <text x="506" y="236" font-size="13" fill="var(--text-muted)">PNG</text>
+
+  <text x="376" y="376" font-size="13" fill="var(--text-muted)">beyan veritabanında kalır,</text>
+  <text x="376" y="396" font-size="13" fill="var(--text-muted)">yalnızca karşılaştırılır</text>
+
+  <rect x="16" y="366" width="16" height="14" rx="2" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1" />
+  <text x="40" y="378" font-size="13" fill="var(--text)">sunucunun ürettiği alan</text>
+  <rect x="16" y="390" width="16" height="14" rx="2" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1" />
+  <text x="40" y="402" font-size="13" fill="var(--text)">istemcinin beyanı</text>
+</svg>

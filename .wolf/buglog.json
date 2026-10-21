@@ -13800,6 +13800,170 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-10-21T09:36:05.369Z"
+    },
+    {
+      "id": "bug-835",
+      "timestamp": "2026-10-21T10:49:06.850Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/once-sonra-isci-siniri.svg",
+      "root_cause": "Had \"388\"",
+      "fix": "Changed to \"580\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T10:49:06.850Z"
+    },
+    {
+      "id": "bug-836",
+      "timestamp": "2026-10-21T10:55:28.281Z",
+      "error_message": "Wrong reference: run should be uploadAndHandle",
+      "file": "content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md",
+      "root_cause": "Used \"run\" instead of \"uploadAndHandle\"",
+      "fix": "Changed run → uploadAndHandle",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T10:55:28.281Z"
+    },
+    {
+      "id": "bug-837",
+      "timestamp": "2026-10-21T11:06:13.646Z",
+      "error_message": "Wrong reference: depo should be depolama",
+      "file": "content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md",
+      "root_cause": "Used \"depo\" instead of \"depolama\"",
+      "fix": "Changed depo → depolama",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-10-21T11:06:24.965Z"
+    },
+    {
+      "id": "bug-838",
+      "timestamp": "2026-10-21T11:20:36.777Z",
+      "error_message": "Wrong reference: izin should be izlenebilirlik",
+      "file": "docs/seri-guvenlik/YOL-HARITASI.md",
+      "root_cause": "Used \"izin\" instead of \"izlenebilirlik\"",
+      "fix": "Changed izin → izlenebilirlik",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:20:36.777Z"
+    },
+    {
+      "id": "bug-839",
+      "timestamp": "2026-10-21T11:21:53.165Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri-guvenlik/ARASTIRMA.md",
+      "root_cause": "Had \" geliştirme sürümü | `",
+      "fix": "Changed to \" geliştirme sürümü; `",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:21:53.165Z"
+    },
+    {
+      "id": "bug-840",
+      "timestamp": "2026-10-21T11:23:32.874Z",
+      "error_message": "Güven Sınırı yazı 3'te 'depo' nesne deposu, yazı 4'te ve Git hattında kod deposu anlamında kullanılıyordu",
+      "file": "content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md",
+      "root_cause": "Terim seçimi yalnızca yazının kendi içinde yapıldı; sonraki yazının ve Git hattının planlanan terimleri (uzak depo, kod deposu) kontrol edilmedi. SOZLESME §3 aynı sözcüğün iki kavram taşımasını yasaklıyor.",
+      "fix": "Yazı 3'te nesne depolaması 'nesne deposu', sıfat olarak 'depolama' yapıldı; 'depo' yalnızca kod deposu (karar #24). Şekil etiketleri ve alt metinler aynı turda hizalandı; yayımdan önce yakalandı.",
+      "tags": [
+        "seri",
+        "guvenlik",
+        "terim",
+        "tutarlilik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:23:32.874Z"
+    },
+    {
+      "id": "bug-841",
+      "timestamp": "2026-10-21T11:23:32.874Z",
+      "error_message": "SVG etiketleri oklar ve sınır çizgisiyle kesişiyordu (yazı 3 Şekil 2 'güven sınırı 2: yalıtım', yazı 4 Şekil 2 'inceleme')",
+      "file": "content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/once-sonra-isci-siniri.svg",
+      "root_cause": "Etiket, içinden dikey okların geçtiği bir sınır kutusunun içine ve bir okun tam sınırı kestiği aralığa konmuştu; repo SVG denetleyicisi çizgi-metin kesişmesini görmüyor.",
+      "fix": "Sınır etiketi kutunun dışına (sağına) taşındı, gereksiz ok etiketi kaldırıldı. artifacts/guvenlik-run2/figs.mjs getBBox ile çizgi-metin, metin-metin ve kutudan taşmayı üç temada ölçüyor.",
+      "tags": [
+        "svg",
+        "seri",
+        "guvenlik",
+        "sekil",
+        "cakisma"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:23:32.874Z"
+    },
+    {
+      "id": "bug-842",
+      "timestamp": "2026-10-21T11:23:32.874Z",
+      "error_message": "SyntaxError: Cannot use import statement outside a module (probe.ts)",
+      "file": "scratchpad/fh/probe.ts",
+      "root_cause": "npm init -y package.json'a \"type\": \"commonjs\" yazıyor; Node 24 tür ayıklaması .ts dosyasını CommonJS olarak yükledi.",
+      "fix": "Sonda .mts uzantısıyla çalıştırıldı (ESM + tür ayıklama).",
+      "tags": [
+        "node",
+        "typescript",
+        "esm",
+        "deney"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:23:32.874Z"
+    },
+    {
+      "id": "bug-843",
+      "timestamp": "2026-10-21T11:23:32.874Z",
+      "error_message": "artifacts/ altına indirilen libxmljs2 index.d.ts typecheck kapsamına giriyordu",
+      "file": "artifacts/guvenlik-run2/src/libxmljs2-index.d.ts",
+      "root_cause": "tsconfig include '**/*.ts' artifacts'ı dışlamıyor; kaynak olarak indirilen .d.ts derlenebilir dosya sayılıyor.",
+      "fix": "Dosya .d.ts.txt olarak yeniden adlandırıldı; indirilen kaynak tipleri .txt uzantısıyla saklanır.",
+      "tags": [
+        "typecheck",
+        "artifacts",
+        "tsconfig"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:23:32.874Z"
+    },
+    {
+      "id": "bug-844",
+      "timestamp": "2026-10-21T11:25:31.721Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run1-2026-10-21.md",
+      "root_cause": "Had `drizzle/0005_guvenlik_series_reset.sql`",
+      "fix": "Changed to `9e720b9`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T11:25:31.721Z"
     }
   ]
 }

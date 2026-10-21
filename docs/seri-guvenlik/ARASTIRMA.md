@@ -5,7 +5,8 @@
 > sürümle dayandığını ve neyin henüz doğrulanmadığını kaydeder. Her üretim run'ı kullandığı
 > kaynakları yeniden doğrular ve bu dosyayı günceller.
 
-Son güncelleme: 2026-10-21 (kurulum + run 1 + müfredat revizyonu: Git/GitHub hattı, §7–§11)
+Son güncelleme: 2026-10-21 (kurulum + run 1 + müfredat revizyonu: Git/GitHub hattı, §7–§11 + run 2:
+yazı 3–4, §12–§14)
 
 ---
 
@@ -20,17 +21,25 @@ ilgili bölümünün metinle eşleştirildiği yoldur; HTTP kodu tek başına do
 | OWASP Top 10 proje sayfası ve "Data 2025" sekmesi — https://owasp.org/projects/top-ten | OWASP | güncel sürüm 2025 | Sayfa metni | Veri çağrısı, katkı biçimi |
 | OWASP Top 10:2021 "How to use the OWASP Top 10 as a standard" — https://owasp.org/Top10/2021/A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/ | OWASP | 2021 edisyonu | Sayfa metni | Listenin standart olarak kullanım sınırı (2021 edisyonu diye işaretlenerek) |
 | OWASP ASVS — https://github.com/OWASP/ASVS/releases/tag/v5.0.0_release ve https://asvs.owasp.org/ | OWASP | **5.0.0**, yayın 2025-05-30 | Etiketteki Markdown bölümleri + resmî `…5.0.0_en.flat.json` | Doğrulanabilir gereksinim |
-| OWASP API Security Top 10 — https://owasp.org/API-Security/editions/2023/en/0x11-t10/ | OWASP API Security Project | **2023** | Sayfa metni | API'ye özgü risk farkındalığı |
-| OWASP WSTG — https://owasp.org/www-project-web-security-testing-guide/ (`wstg.owasp.org/stable/` → `/v4.2/`) | OWASP | **v4.2** kararlı (GitHub sürümü 2020-12-03); "latest" geliştirme sürümü | `stable` yönlendirmesi + v4.2 sayfaları + GitHub sürüm listesi | Test yöntemi |
+| OWASP API Security Top 10 — https://owasp.org/API-Security/editions/2023/en/0x11-t10/ | OWASP API Security Project | **2023** | Sayfa metni (run 2: API8:2023 sayfası) | API'ye özgü risk farkındalığı |
+| OWASP WSTG — https://owasp.org/www-project-web-security-testing-guide/ (`wstg.owasp.org/stable/` → `/v4.2/`) | OWASP | **v4.2** kararlı (GitHub sürümü 2020-12-03); "latest" geliştirme sürümü; `stable` 2026-10-21'de de `/v4.2/`'ye yönleniyor | `stable` yönlendirmesi + v4.2 sayfaları (run 2: BUSL-08, BUSL-09, CONF-02, CONF-05, INPV-07) + GitHub sürüm listesi | Test yöntemi |
 | OWASP Cheat Sheet Series — https://cheatsheetseries.owasp.org/ | OWASP | yaşayan sayfalar | Sayfa metni (Error Handling, Authorization, Threat Modeling) | Uygulama rehberi |
 | OWASP Top 10 Proactive Controls — https://top10proactive.owasp.org/ | OWASP | **2024** | Sayfa metni (giriş, C3) | Önleyici kontroller |
 | OWASP SAMM — https://owaspsamm.org/model/ | OWASP | **v2** | Sayfa metni | Program olgunluğu |
 | NIST SP 800-218 (SSDF) — https://csrc.nist.gov/pubs/sp/800/218/final | NIST | **v1.1, nihai**, Şubat 2022 (belge geçmişi: 2022-02-03) | CSRC yayın sayfası | Güvenli yazılım geliştirme çerçevesi |
 | NIST SP 800-218 Rev. 1 (SSDF v1.2) — https://csrc.nist.gov/pubs/sp/800/218/r1/ipd | NIST | **İlk kamu taslağı**, 2025-12-17; yorum dönemi 2026-01-30'da kapandı; `r1/final` sayfası yok (404, 2026-10-21) | CSRC yayın sayfası + `r1/final` yoklaması | Yalnızca taslak olarak anılır |
-| MITRE CWE — https://cwe.mitre.org/ | MITRE | **4.20** | Tanım sayfaları (209, 252, 390, 396, 636, 754, 755) | Zayıflık tanımları |
+| MITRE CWE — https://cwe.mitre.org/ | MITRE | **4.20** | Tanım sayfaları (209, 252, 390, 396, 636, 754, 755; run 2: 22, 215, 400, 409, 434, 489, 501, 611, 1188) | Zayıflık tanımları |
 | Envoy ext_authz — https://www.envoyproxy.io/docs/envoy/v1.40.0/api-v3/extensions/filters/http/ext_authz/v3/ext_authz.proto | Envoy Proxy | **v1.40.0** (sürüm 2026-10-13) | Sürümlü belge sayfası | `failure_mode_allow` varsayılanı |
 | Kubernetes Dynamic Admission Control — https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/ | Kubernetes | güncel belge (erişim tarihli) | Sayfa metni, "Failure policy" bölümü | `failurePolicy` varsayılanı |
 | RFC 9457 — https://www.rfc-editor.org/rfc/rfc9457 | IETF | Temmuz 2023; RFC 7807'yi geçersiz kılar | RFC metni | Hata yanıtı biçimi |
+| Threat Modeling Manifesto — https://www.threatmodelingmanifesto.org/ | Manifesto çalışma grubu (15 yazar) | ilk sürüm 2020-11-17 (GitHub sürümü `1`); CC BY 4.0 | Sayfa metni + GitHub sürüm listesi | Tehdit modellemenin dört sorusu, değerler, kalıplar (run 2) |
+| OWASP Cheat Sheet: Threat Modeling, File Upload, XML External Entity Prevention | OWASP | yaşayan sayfalar (erişim 2026-10-21); CC BY-SA 4.0 | Sayfa metni | Yöntem (3), dosya yükleme (3), XXE (4) |
+| OWASP Proactive Controls 2024 — C5 Secure By Default Configurations | OWASP | 2024 (site ana sayfası "Top 10 2024"; `archive/2024` yolu da var) | Sayfa metni | Güvenli varsayılanın tanımı, bildirimsel yapılandırma (4) |
+| libxml2 belgeleri, `parser.h` — https://gnome.pages.gitlab.gnome.org/libxml2/html/parser_8h.html | libxml2 projesi | güncel belge (2.15 sonrasını anlatıyor; erişim 2026-10-21) | Sayfa metni, `xmlParserOption` | `NOENT`, `NO_XXE` (2.13'ten beri), `NONET` anlamları (4) |
+| libxmljs2 — https://github.com/marudor/libxmljs2 | marudor | 0.37.0 (npm, 2025-06-01); `main` dalındaki `index.d.ts`, `src/xml_document.cc`, `test/xml_parser.test.js` | Kaynak kod | `noent` → `XML_PARSE_NOENT` eşlemesi (4) |
+| Express 5.x belgeleri, Error Handling — https://expressjs.com/en/guide/error-handling.html | Express | Express 5.3.0 (npm, 2026-10-09); `finalhandler ^2.1.0` | Sayfa metni + npm kaydı | Varsayılan hata işleyicisi (4) |
+| finalhandler 2.1.1 — https://github.com/pillarjs/finalhandler/blob/v2.1.1/index.js | pillarjs | 2.1.1 (npm, 2025-12-01) | Etiketteki kaynak: satır 73 (`opts.env \|\| process.env.NODE_ENV \|\| 'development'`), 160–162 | Ortam varsayılanı ve `err.stack` (4) |
+| W3C PNG Specification (Third Edition) — https://www.w3.org/TR/2025/REC-png-3-20250624/ | W3C | W3C Recommendation, 2025-06-24 | Yerleşik tarayıcıdan sayfa metni (betiğe 403) | İmza ve IHDR yerleşimi (3) |
 
 ## 2. Doğrulama kanalları ve bu run'da görülen tuzaklar
 
@@ -70,6 +79,11 @@ ilgili bölümünün metinle eşleştirildiği yoldur; HTTP kodu tek başına do
   metni girdi doğrulamaya ayrılmış; istisna işleme için yalnızca seri dışı veriye (deserialization)
   dair bir kayıt maddesi var. İstisna işleme gereksinimi ASVS V16.5'ten, uygulama rehberi Error
   Handling Cheat Sheet'ten alındı.
+- **Run 2 kanal notları:** W3C `TR` sayfaları betiğe (tarayıcı User-Agent'ı ve `Accept`
+  başlıklarıyla da) 403 döndü; yerleşik tarayıcı panosu metni okudu. GitHub API ve
+  `raw.githubusercontent.com` anahtarsız çalıştı (ASVS etiketi, libxmljs2, finalhandler); npm
+  kayıt API'si sürüm ve yayım tarihini verdi. ASVS bölüm dosyalarının adı API'den
+  (`/contents/5.0/en?ref=v5.0.0_release`) okundu, tahmin edilmedi.
 - **Kanal notları:** OWASP siteleri, CSRC, CWE, Envoy ve RFC Editor betikle (tarayıcı
   User-Agent'ıyla) açılıyor. GitHub API sürüm ve commit sorguları anahtarsız çalışıyor. ASVS'nin
   kesin metni için `raw.githubusercontent.com/OWASP/ASVS/v5.0.0_release/5.0/en/…` kullanıldı
@@ -147,6 +161,10 @@ yeni sıradır (eski 5–16 → 14–25); Git/GitHub hattının kaynakları §7�
   Markdown'ı V1, V2, V4, V6, V7, V8, V11, V13, V14, V15 ve V16 için indirildi, V3, V5, V9, V10 için
   indirilmedi. Yazıya alınacak kimlik metni etiketteki bölüm Markdown'ından okunur (§2 kanal notu).
   Yerel kopyalar `artifacts/` altında olduğundan (gitignore) kalıcı değildir.
+  **Run 2:** V1, V2, V5, V8, V13 ve V15 etiketten yeniden indirildi (`artifacts/guvenlik-run2/src/asvs5/`;
+  V13 run 1'deki kopyayla bayt bayt aynı). Yazıya giren kimlikler okundu: V1.5 (1.5.1), V5 (5.1.1,
+  5.2.1–5.2.6, 5.3.1–5.3.3), V8 (8.2.1, 8.2.2, 8.3.1, 8.4.1), V13 (kontrol hedefi, 13.2.2, 13.4.1–13.4.7),
+  V15 (15.1.1–15.1.5, 15.2.1–15.2.5). Hâlâ indirilmemiş bölümler: V3, V9, V10.
 
 ## 6. Açık araştırma borçları
 
@@ -165,6 +183,17 @@ yeni sıradır (eski 5–16 → 14–25); Git/GitHub hattının kaynakları §7�
   sonraki run'da bulunup künyeye yazılabilir; davranış (varsayılan `Fail`) uzun süredir aynı.
 - **Planlanan yazıların kaynakları** §5'teki listede; her biri kendi üretim run'ında doğrulanacak.
 - **Git/GitHub hattının borçları** §11'de.
+- **Run 2'nin sürüme bağlı iddiaları (bakım kalemi, karar #26):** yazı 4'teki finalhandler/Express
+  davranışı (finalhandler 2.x'in yeni bir ana sürümü ya da Express'in varsayılan işleyiciyi değiştirmesi
+  durumunda yeniden ölçülür); libxml2 belgesinin `NOENT`/`NO_XXE`/`NONET` ifadeleri; libxmljs2 0.37.0
+  seçenek adları. libxmljs2'nin içinde paketlediği libxml2 sürümü doğrulanmadı; yazı bu sürüme dayanan
+  bir iddia kurmuyor.
+- **Proactive Controls'un sonraki edisyonu:** sitede `archive/2024` yolu var, ana sayfa hâlâ "Top 10
+  2024" diyor (2026-10-21). Yeni edisyon yayımlanırsa yazı 4'ün C5 atfı tarihlenir.
+- **E2E kapsamı (isteğe bağlı):** `tests/e2e/series-reader.spec.ts`'in `ILLUSTRATED` listesi serinin en
+  geniş tablosunu yazı 1–2'de sayıyor; yazı 3'ün beş sütunlu tablosu listede değil. Run 2'de aynı kural
+  `artifacts/guvenlik-run2/render/paged.mjs` ile dört durumda doğrulandı; listeye eklemek küçük bir test
+  değişikliğidir (karar #27).
 
 ## 7. Git/GitHub hattı — kaynak kaydı (müfredat revizyonu, 2026-10-21)
 
@@ -399,3 +428,59 @@ Global ve sistem Git yapılandırması devre dışı (`GIT_CONFIG_GLOBAL` boş d
   girer.
 - **SLSA source track:** dal koruması ve inceleme için kaynak bütünlüğü düzeyleri; durumu (taslak /
   nihai) yazı 12 ve 22 için doğrulanacak.
+
+## 12. Yazı 3 — kanıt (Tehdit modelleme)
+
+Erişim tarihlerinin hepsi 2026-10-21; metinler `artifacts/guvenlik-run2/src/` altında.
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| Tehdit modelleme yapılandırılmış, tekrarlanabilir bir süreçtir: sistemi güvenlik açısından modellemek, tehditleri bulmak, cevap belirlemek; ideal olarak tasarımda; sistemle birlikte güncellenir | Threat Modeling Cheat Sheet, Overview | |
+| Dört soru | Threat Modeling Manifesto; Cheat Sheet Overview Manifesto'ya atıfla | Manifesto ilk sürüm 2020-11-17 |
+| DFD en yaygın yaklaşımdır; güven sınırları, veri akışları, veri depoları, süreçler ve dış varlıklar açıkça görünmeli | Cheat Sheet, System Modeling | |
+| STRIDE: Microsoft çalışanlarının geliştirdiği altı sınıf; her sınıf bir özelliğin ihlali (Repudiation ↔ Accounting) | Cheat Sheet, Threat Identification tablosu | Yazıda "hesap verebilirlik" |
+| Tehditler etkiledikleri bileşen, akış ya da sınırla kaydedilir | Cheat Sheet, Threat Identification | |
+| Cevaplar: azalt, ortadan kaldır, aktar, kabul et; azaltımlar uygulanabilir gereksinime çevrilir | Cheat Sheet, Response and Mitigations (Shostack'a atıfla) | |
+| Gözden geçirmenin son maddesi: azaltımlar test edilebiliyor mu | Cheat Sheet, Review and Validation | |
+| Değerler: sürekli iyileştirme, anlayış yolculuğu; kalıp: kusursuz temsil | Manifesto, Values; Anti-patterns | |
+| Güvensiz tasarım ≠ güvensiz uygulama; kusursuz uygulama eksik kontrolü düzeltmez; tehdit modelleme iş kalemi oturumlarında, veri akışı ve erişim denetimi değişikliklerine bakarak | A06:2025 Description, Secure Design | A06 tablosu: 39 CWE, maks. yaygınlık %22,18, ort. %1,86 (yazıda kullanılmadı) |
+| PW.1.1 risk modelleme (tehdit modelleme, saldırı modelleme, saldırı yüzeyi haritalama); PW.1.2 gereksinim, risk ve kararların izlenmesi | NIST SP 800-218 v1.1 | |
+| CWE-501 tanımı ve "programın içinden geçen çizgi" açıklaması | CWE 4.20 | |
+| CWE-409 sıkıştırma bombası; CWE-22 yol geçişi | CWE 4.20 | |
+| "Tehlikeli işlev" tanımı ve yüksek risk ifadesi; 15.1.3, 15.1.5, 15.2.2, 15.2.5 metinleri ve seviyeleri | ASVS 5.0.0 V15.1–V15.2 | |
+| 5.1.1, 5.2.1, 5.2.2, 5.2.3, 5.2.6, 5.3.2, 5.3.3 metinleri ve seviyeleri | ASVS 5.0.0 V5 | |
+| 8.4.1 kiracılar arası denetim (L2) | ASVS 5.0.0 V8.4 | |
+| Content-Type kullanıcıdan gelir, güvenilmez; yeniden yazım her kötü içeriği temizlemez, görüntü işleyici de güvenilmeyen girdi işler; açılmış boyut sınırı | File Upload Cheat Sheet | |
+| WSTG-BUSL-09: arşivle dizin geçişi, zip bombası, EICAR; bomba denemesi için riskleri değerlendirme ve yazılı onay; otomatik ölçeklemede maliyet | WSTG v4.2 | |
+| PNG imzası `89 50 4E 47 0D 0A 1A 0A`; IHDR ilk parça; genişlik ve yükseklik 4'er bayt | W3C PNG (Third Edition), §5.2, §11.2.1 | Kendi ürettiğimiz dosyada bayt 16–23 doğrulandı (§14) |
+| Sınırın yerini ağ değil, köken ve varılan sürecin yetkisi belirler | — | Bizim mühendislik ölçütümüz; yazıda öyle işaretli |
+
+## 13. Yazı 4 — kanıt (Güvenli varsayılanlar)
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| A02:2025 tanımı ve "uygulama açık olabilir" listesi; 5. sıradan 2.'ye; 16 CWE (CWE-611, CWE-489 dahil); ort. yaygınlık %3,00, maks. %27,70; tekrarlanabilir sertleştirme süreci olmayan sistemler daha yüksek risk altında | A02:2025 Background, tablo, Description, mapped CWEs | Arka planın "test edilen uygulamaların %100'ü" cümlesi yine kapsama sütununu okuyor (§2); yazıda kullanılmadı |
+| Önleme: ortamlar yalnız kimlik bilgileriyle farklı ve otomatik; bütün ortamlarda otomatik doğrulama; bulut depolama izinleri; otomatik değilse yılda bir | A02:2025 How to prevent | |
+| Güvenli varsayılanın tanımı; bildirimsel yapılandırma kaynak kod gibi yönetilir | Proactive Controls 2024 C5 | |
+| V13 kontrol hedefi; 13.4.2, 13.4.5 (L2); 15.2.3 (L2); 1.5.1 (L1) | ASVS 5.0.0 V13, V15, V1.5 | |
+| PW.9.1 güvenli temel çizgi; PW.9.2 varsayılanları uygulama ve belgeleme | NIST SP 800-218 v1.1 | |
+| CWE-1188, CWE-611, CWE-489 tanımları | CWE 4.20 | |
+| finalhandler: `env = opts.env \|\| process.env.NODE_ENV \|\| 'development'`; `env !== 'production'` ise gövde `err.stack` | finalhandler v2.1.1 `index.js` satır 73, 160–162 | Express 5.3.0 `finalhandler ^2.1.0`; ölçüm §14 |
+| Express varsayılan işleyicisi yığın izini üretim ortamında göndermez | Express 5.x Error Handling | |
+| libxml2 2.9'dan beri XXE varsayılan kapalı; `NOENT` ve `DTDLOAD` tanımlanmamalı | XXE Prevention Cheat Sheet, libxml2 | |
+| `NOENT`: adına rağmen yerine koymayı ve dış varlık yüklemeyi açar, tehlikeli; `NO_XXE` (2.13'ten beri) dış yüklemeyi kapatır; `NONET` yalnızca yerleşik HTTP/FTP istemcileri, 2.15'ten beri özel yükleyiciler dışında etkisiz | libxml2 `parser.h` belgesi | |
+| libxmljs2'de `noent` → `XML_PARSE_NOENT`, `nonet` → `XML_PARSE_NONET`; kendi testi `noent: true` ile iç varlığı yerine koyar | libxmljs2 `src/xml_document.cc`, `index.d.ts`, `test/xml_parser.test.js` | `main` dalı; npm 0.37.0 |
+| .NET: XmlDocument, XmlTextReader, XPathNavigator 4.5.2 öncesi açık, sonrası korumalı | XXE Prevention Cheat Sheet, .NET | |
+| DTD mümkünse kapatılır, DOCTYPE reddedilir; desteklenmeyen güvenlik ayarı yapılandırma hatasıdır | XXE Prevention Cheat Sheet, General Guidance | |
+| API8:2023: otomatik ve sürekli yapılandırma değerlendirmesi | API Security Top 10:2023 | |
+| WSTG-CONF-02 hedefleri; WSTG-CONF-05 gizli yönetim arayüzleri | WSTG v4.2 | |
+
+## 14. Run 2 ölçümleri (kendi hesabımız ve deneyimiz)
+
+Betikler scratchpad'de (oturuma özgü, kalıcı değil); sonuçlar yazılardadır.
+
+| Ölçüm | Ortam | Sonuç |
+|---|---|---|
+| Sıfırlarla dolu tek dosyalı zip, `ZIP_DEFLATED`, düzey 9 | Python 3.14.5, zlib 1.3.1.zlib-ng | 60 MiB → 61.287 bayt (≈1.027:1); 200 MiB → 203.974 bayt; 1 GiB → 1.043.770 bayt. Başka zlib uygulamasında birkaç bayt fark edebilir |
+| 20.000 × 20.000, 8 bit gri PNG (IDAT sıfır satırlar) | aynı | 388.871 bayt; çözülmüş piksel verisi 400.000.000 bayt; dört kanal 1,6 GB (hesap); bayt 16–23 = `00 00 4e 20 00 00 4e 20` |
+| finalhandler varsayılan hata gövdesi (`probe.mts`) | Node.js 24.14.0, finalhandler 2.1.1 | `NODE_ENV` yok / `staging` / `Production` → 500 + hata metni ve yığın izi; `production` → "Internal Server Error" |

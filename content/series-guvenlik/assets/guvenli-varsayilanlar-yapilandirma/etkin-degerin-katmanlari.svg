@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 512" role="img" aria-label="İki ayar için yapılandırma katmanları yukarıdan aşağıya sıralanır ve her katman bir öncekinin değerini ezebilir. Hata yanıtının ayrıntısında yalnızca çerçeve varsayılanı değer yazar: NODE_ENV yoksa development, yığın izi; uygulama kodu, kod deposundaki yapılandırma ve ortam değişkeni sessizdir; etkin değer istemciye yığın izidir. XML dış varlıklarında kütüphane varsayılanı güvenlidir, ama uygulama kodundaki noent: true onu ezer; etkin değer dış varlıkların yüklenmesidir. İki etkin değer de açılış denetimine gider; denetim hazırlıkta ya da üretimde güvensiz bir değer görürse süreç başlamaz.">
+  <defs>
+    <marker id="gv1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="28" font-size="13" font-weight="bold" fill="var(--text)">hata yanıtının ayrıntısı</text>
+  <text x="376" y="28" font-size="13" font-weight="bold" fill="var(--text)">XML dış varlıkları</text>
+
+  <rect x="16" y="44" width="328" height="48" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="28" y="64" font-size="13" font-weight="bold" fill="var(--text)">çerçeve varsayılanı</text>
+  <text x="28" y="83" font-size="13" fill="var(--text)">NODE_ENV yoksa development: yığın izi</text>
+  <rect x="16" y="112" width="328" height="48" rx="8" fill="none" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="28" y="132" font-size="13" fill="var(--text-muted)">uygulama kodu</text>
+  <text x="28" y="151" font-size="13" fill="var(--text-muted)">kendi hata işleyicisi yok</text>
+  <rect x="16" y="180" width="328" height="48" rx="8" fill="none" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="28" y="200" font-size="13" fill="var(--text-muted)">kod deposundaki yapılandırma</text>
+  <text x="28" y="219" font-size="13" fill="var(--text-muted)">NODE_ENV burada tanımlı değil</text>
+  <rect x="16" y="248" width="328" height="48" rx="8" fill="none" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="28" y="268" font-size="13" fill="var(--text-muted)">ortam değişkeni</text>
+  <text x="28" y="287" font-size="13" fill="var(--text-muted)">yeni imajda NODE_ENV yok</text>
+  <rect x="16" y="316" width="328" height="48" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="28" y="336" font-size="13" font-weight="bold" fill="var(--text)">etkin değer</text>
+  <text x="28" y="355" font-size="13" fill="var(--text)">istemciye yığın izi</text>
+
+  <rect x="376" y="44" width="328" height="48" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="388" y="64" font-size="13" font-weight="bold" fill="var(--text)">kütüphane varsayılanı</text>
+  <text x="388" y="83" font-size="13" fill="var(--text)">libxml2 2.9 ve sonrası: dış varlık yüklenmez</text>
+  <rect x="376" y="112" width="328" height="48" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="388" y="132" font-size="13" font-weight="bold" fill="var(--text)">uygulama kodu</text>
+  <text x="388" y="151" font-size="13" fill="var(--text)">noent: true, bir müşteri dosyası için</text>
+  <rect x="376" y="180" width="328" height="48" rx="8" fill="none" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="388" y="200" font-size="13" fill="var(--text-muted)">kod deposundaki yapılandırma</text>
+  <text x="388" y="219" font-size="13" fill="var(--text-muted)">ayrıştırıcı seçeneği burada değil</text>
+  <rect x="376" y="248" width="328" height="48" rx="8" fill="none" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <text x="388" y="268" font-size="13" fill="var(--text-muted)">ortam değişkeni</text>
+  <text x="388" y="287" font-size="13" fill="var(--text-muted)">bu ayara etkisi yok</text>
+  <rect x="376" y="316" width="328" height="48" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="388" y="336" font-size="13" font-weight="bold" fill="var(--text)">etkin değer</text>
+  <text x="388" y="355" font-size="13" fill="var(--text)">dış varlıklar yüklenir</text>
+
+  <line x1="180" y1="92" x2="180" y2="108" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="180" y1="160" x2="180" y2="176" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="180" y1="228" x2="180" y2="244" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="180" y1="296" x2="180" y2="312" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="540" y1="92" x2="540" y2="108" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="540" y1="160" x2="540" y2="176" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="540" y1="228" x2="540" y2="244" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="540" y1="296" x2="540" y2="312" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+
+  <line x1="180" y1="364" x2="180" y2="388" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <line x1="540" y1="364" x2="540" y2="388" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gv1-ok)" />
+  <rect x="16" y="392" width="688" height="56" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="28" y="414" font-size="13" font-weight="bold" fill="var(--text)">açılış denetimi, fail-closed</text>
+  <text x="28" y="434" font-size="13" fill="var(--text)">hazırlıkta ya da üretimde güvensiz bir değer varsa süreç başlamaz</text>
+
+  <text x="16" y="476" font-size="13" fill="var(--text-muted)">ok: alttaki katman üsttekinin değerini ezer · vurgulu kutu: etkin değeri yazan katman</text>
+  <text x="16" y="496" font-size="13" fill="var(--text-muted)">kesikli kutu: bu ayar için değer yazmayan katman</text>
+</svg>

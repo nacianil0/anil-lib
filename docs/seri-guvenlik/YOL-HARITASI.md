@@ -6,8 +6,8 @@
 > **yayımlanmış** yazının kimliği, slug'ı, sırası ve başlığı değişmez. Kaynak kanıtı
 > `ARASTIRMA.md`'de, güncel cursor `HANDOFF.md`'dedir.
 
-Son güncelleme: 2026-10-21 (müfredat revizyonu: Git/GitHub hattı) · Plan: **25 yazı, 10 faz**
-(tavan 25, karar #15) · Yayımlanan: 1–2 (ayrıntı `HANDOFF.md`)
+Son güncelleme: 2026-10-21 (run 2: yazı 3–4 yayımlandı) · Plan: **25 yazı, 10 faz**
+(tavan 25, karar #15) · Yayımlanan: 1–4 (ayrıntı `HANDOFF.md`)
 
 ---
 
@@ -245,6 +245,17 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 3. Tehdit Modelleme: Güven Sınırını Çizmek, Varsayımı Yazmak
 
+- **Durum:** yayında (run 2, kohort 1) · slug `tehdit-modelleme-guven-sinirini-cizmek` · iki şekil
+  (`onizleme-veri-akisi.svg`, `once-sonra-isci-siniri.svg`).
+- **Yayımlanan biçim (run 2):** senaryo 2'nin çok kiracılı belge ürününde önizleme hattı (imzalı
+  yükleme adresi → nesne deposu → kuyruk → işçi → aynı süreçteki dönüştürücü); kırılan varsayım
+  CWE-501 olarak mesajın alanlarının kökeni üzerinden kuruldu. Dört soru (Manifesto) yazının
+  iskeleti; STRIDE sınır geçişlerine uygulandı; izlenebilirlik tablosu `v5.0.0-8.4.1`, `5.2.2`,
+  `5.2.3`, `5.2.6`, `5.3.2`, `15.2.5`, `15.1.5`, `15.1.3`, `15.2.2`'ye bağlandı. Kendi hesabımız:
+  60 MiB'lık sıfır dosyanın zip'i 61.287 bayt, 20.000 × 20.000 PNG 388.871 bayt (`ARASTIRMA.md`
+  §14). Kiracılar arası negatif test, mesaj şemasının yalnızca belge kimliği taşıması ve anahtarın
+  veritabanından türetilmesiyle kuruldu. "Model değişiklikle yaşar" bölümü kanıt dosyası kapısını
+  (1) geri çağırdı.
 - **Hedef:** Okur, bir özelliğin veri akış diyagramını çizip güven sınırlarını işaretleyebilir,
   her sınır geçişi için tehditleri ve doğrulanabilir gereksinimleri çıkarabilir ve modeli tasarım
   incelemesinde yaşayan bir belge olarak tutar.
@@ -267,6 +278,15 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 4. Güvenli Varsayılanlar: Yapılandırma Bir Güvenlik Kararıdır
 
+- **Durum:** yayında (run 2, kohort 1) · slug `guvenli-varsayilanlar-yapilandirma` · iki şekil
+  (`etkin-degerin-katmanlari.svg`, `yapilandirmanin-iki-yolu.svg`).
+- **Yayımlanan biçim (run 2):** aynı önizleme özelliğinin sürüm öncesi yapılandırma incelemesinde dört
+  bulgu: `DEBUG_ROUTES` yokken açılan hata ayıklama uçları (CWE-489), bir müşteri dosyası için eklenen
+  `noent: true` (CWE-611; libxml2 belgesi: adına rağmen dış varlık yüklemeyi açar), `NODE_ENV`'siz
+  imajda yığın izi (finalhandler 2.1.1, kendi deneyimiz `ARASTIRMA.md` §14) ve konsoldan
+  genişletilen depolama rolü (kayma). Kaynaklar: Proactive Controls 2024 C5, ASVS V13 kontrol hedefi,
+  `v5.0.0-13.4.2`, `13.4.5`, `15.2.3`, `1.5.1`, SSDF PW.9.1–9.2, A02:2025, API8:2023,
+  `WSTG-CONF-02`/`-05` (v4.2), CWE-1188. "Sırada ne var" Git hattını açtı (karar #25).
 - **Hedef:** Okur, yapılandırmayı kodla aynı inceleme ve test disiplinine sokup ortamlar arası farkı,
   açık kalan hata ayıklama ve yönetim yüzeyini ve güvensiz ayrıştırıcı ayarlarını sürüm öncesi
   yakalayan bir kontrol kurabilir.
@@ -290,6 +310,12 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
   üzerinde commit yapıldığında ya da birleştirildiğinde ilerlediğini gösterebilir.
 - **Önkoşul:** 4 (yapılandırma da kod gibi sürümlenir). Git'i günlük kullanmış olmak yeter; iç yapı
   bilgisi beklenmez.
+- **Bağlayıcı köprü (run 2):** 4'ün "Sırada ne var" bölümü şunu sordu: XXE düzeltmesi tam olarak
+  nerede duruyor, üretime giden yapı onu içeriyor mu ve ana daldan önceden açılmış bir dal ana dala
+  sonradan giren bu düzeltmeyi kendiliğinden alır mı? Senaryodaki güvenlik yaması bu düzeltme
+  (içe aktarmada `DOCTYPE` reddi) olarak somutlanabilir (karar #25). "Dal (branch)" 4'te geçerken
+  kuruldu: 5 kavramı tanımlar ama parantezli gloss'u tekrar etmez; "kod deposu (repository)" de 4'te
+  kuruldu.
 - **Kavramlar:** commit = anlık görüntü + ebeveyn + üst veri, kimliği içerik özetidir; dal ve HEAD
   birer işaretçidir; çalışma ağacı / hazırlık alanı / depo.
 - **Senaryo:** kurgusal `ornek-sirket`'te bir servis deposu: geliştirici `main`'den
@@ -808,6 +834,30 @@ ilk geçişte Türkçe açıklanır, gloss verilmez.
 | devre kesici | circuit breaker | 2 | |
 | kontrollü bozulma | graceful degradation | 2 | "zarif" kullanılmaz (kalıp listesindeki dramatik sıfatla karışır) |
 | kabul denetimi kancası | admission webhook | 2 | Kubernetes bağlamı |
+| tehdit modelleme | threat modeling | 3 | 1 ve 2'de geçerken anıldı, 3'te tanımlandı |
+| güven sınırı ihlali | trust boundary violation (CWE-501) | 3 | güvenilen ve güvenilmeyen verinin aynı yapıda karışması |
+| güvensiz tasarım | Insecure Design | 3 | A06:2025'in adı |
+| veri akış diyagramı | data flow diagram, DFD | 3 | |
+| dış varlık / süreç / veri deposu / veri akışı | external entity / process / data store / data flow | 3 | DFD öğeleri |
+| kimlik sahteciliği / kurcalama / inkâr / bilgi ifşası / hizmet reddi / yetki yükseltme | spoofing / tampering / repudiation / information disclosure / denial of service / elevation of privilege | 3 | STRIDE İngilizce kalır; tablolarda İngilizce baş harfler (S, T, R, I, D, E) |
+| imzalı yükleme adresi | presigned URL | 3 | |
+| zehirli mesaj | poison message | 3 | |
+| sihirli bayt | magic bytes | 3 | dosya biçimi imzası |
+| sıkıştırma bombası | decompression bomb (CWE-409) | 3 | |
+| piksel seli | pixel flood | 3 | |
+| yol geçişi | path traversal (CWE-22) | 3 | |
+| tehlikeli işlev | dangerous functionality | 3 | ASVS 5.0.0 V15'in terimi |
+| yalıtılmış ortam | sandbox | 3 | "kum havuzu" kullanılmaz |
+| en az yetki | least privilege | 3 | |
+| ölü mektup kuyruğu | dead-letter queue | 3 | |
+| nesne deposu / depolama | object storage | 3 | "depo" tek başına kod deposu demektir (karar #24) |
+| güvenlik yapılandırma hatası | Security Misconfiguration | 4 | A02:2025'in adı |
+| güvenli varsayılan | secure by default | 4 | |
+| kod deposu | repository | 4 | Git hattında "depo" bu anlamda kullanılır |
+| XXE | XML External Entity | 4 | İngilizce kısaltma kalır |
+| yapılandırma kayması | configuration drift | 4 | |
+| saldırı yüzeyi envanteri | attack surface inventory | 4 | |
+| dal | branch | 4 (geçerken), 5 (tanım) | 4'ün "Sırada ne var" bölümünde gloss'landı; 5 parantezli gloss'u tekrar etmez |
 
 ### Planlanan terim kararları (Git/GitHub hattı)
 
@@ -819,7 +869,6 @@ deploy için "dağıtım" (karar #21).
 |---|---|---|---|
 | commit | commit | 5 | İngilizce kalır; "anlık görüntü + ebeveyn + üst veri" diye açıklanır |
 | commit kimliği / içerik özeti | object id / hash | 5 | SHA-1 (isteğe bağlı SHA-256) |
-| dal | branch | 5 | "dal bir işaretçidir" |
 | HEAD / ayrık HEAD | HEAD / detached HEAD | 5 / 8 | HEAD İngilizce kalır |
 | çalışma ağacı | working tree | 5 | |
 | hazırlık alanı | staging area (index) | 5 | "index" Git'in teknik adı olarak bir kez anılır |
@@ -862,6 +911,9 @@ deploy için "dağıtım" (karar #21).
 | Kısmi başarısızlıkta işlemin tamamı geri alınır | 2 | 8 (`--abort`), 10 (yarım dağıtım), 17 |
 | Güven sınırında doğrula, yetkilendir, sınırla | 3 | 9, 15, 18, 20, 22, 25 |
 | Güvenli varsayılan | 4 | 11 (temel yetki), 13 (`GITHUB_TOKEN`), 14, 21 |
+| Sınırın yerini ağ değil, verinin kökeni ve vardığı sürecin yetkisi belirler | 3 | 9 (inceleme), 13 (iş akışında güvenilmeyen girdi), 18, 20, 25 |
+| Eksik değer güvenli tarafa düşer; bilinmeyen değer süreci başlatmaz | 4 | 11 (temel yetki), 12 (kural tanımsızken), 13, 21 |
+| Değişiklik incelenen yoldan gelir; incelemesiz yol kayma doğurur | 4 | 9 (PR ve koruma), 10 (aynı yapı, iki ortam), 12 (bypass), 22 |
 | Dal bir işaretçidir; değişikliğin yeri grafikle kanıtlanır | 5 | 6, 7, 8, 10 |
 | Paylaşılmış geçmiş yeniden yazılmaz; geri almak yeni commit'tir | 7, 8 | 10, 12, 13 |
 | En az yetki ve sahiplik sürekliliği | 11 | 13, 15 |
@@ -878,7 +930,9 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 1 | "sistemin bir hata anında izin verici duruma düşmesi (fail-open), sıradaki yazının konusu" | 2 | evet (run 1) |
 | 1 | 403 mü 404 mü ve kiracı sınırının hangi katmanda zorunlu kılınacağı "yetkilendirme yazısının konusu" | 15 (eski 6) | hayır |
 | 2 | "bir güvenlik olayının nasıl kaydedileceği ve hangisinin uyarıya dönüşeceği, kendi yazısını hak eden ayrı bir tasarım sorusu" | 23 (eski 14) | hayır |
-| 2 | "Sırada ne var": dosya yükleme hattında veri akışı ve sınırlar, tehdit modelleme | 3 | hayır (sıradaki yazı) |
+| 2 | "Sırada ne var": dosya yükleme hattında veri akışı ve sınırlar, tehdit modelleme | 3 | evet (run 2) |
+| 3 | "Sırada ne var": aynı kodun iki ortamda farklı davranması; güvenli varsayılanlar | 4 | evet (run 2) |
+| 4 | "Sırada ne var": XXE düzeltmesinin yeri, üretime giden yapının onu içerip içermediği, ana daldan önceden açılmış dalın düzeltmeyi kendiliğinden alıp almadığı; dal bir işaretçidir | 5 | hayır (sıradaki run) |
 
 ## Gerçekleşen geri çağırmalar
 
@@ -886,6 +940,17 @@ yalnızca karşılayacak yazının numarası güncellendi.
 |---|---|---|
 | 2 | Kapsama ile yaygınlığın ayrı okunması (1) | A10:2025 tablosunun okunması |
 | 2 | "Sıfır bulgu" kanıtın kapsadığı kadar konuşur (1) | Hata matrisinin kanıtlamadığı yol |
+| 3 | Güven sınırı tanımı (1) | Adı konmuş sınır CWE-501 ile biçimselleştirildi |
+| 3 | Hata yolları (2) | DFD'de hata kenarı: sınırsız yeniden teslim, ölü mektup kuyruğu |
+| 3 | Kısmi başarısızlık (2) | Önizleme yazılıp durum güncellenmezse ne olur |
+| 3 | Fail-open (2) | "Yalıtım yanıt vermezse işçide dönüştür" geri dönüşü (Teşhis et) |
+| 3 | Kanıt kapsadığı kadar konuşur; kanıt dosyası kapısı (1) | Testlerin sınırı; tehdit kaydı bir kapının girdisi |
+| 4 | Genel hata yanıtı ve son çare işleyici (2) | Kararın çerçeve varsayılanına bırakılmaması |
+| 4 | Olumsuz koşul: yalnızca açık ret durdurur (2) | `DEBUG_ROUTES !== "false"` |
+| 4 | Fail-closed ve bedeli (2) | Açılış denetimi dağıtımı durdurur |
+| 4 | Hata enjeksiyonu ile dış test birbirinin yerine geçmez (2) | İçeriden envanter testi ile dışarıdan WSTG testi |
+| 4 | En az yetkili depolama politikası ve dört cevap (3) | Kayma bulgusu; ortadan kaldırmak (DTD) |
+| 4 | İç ağ bir güven derecesi değildir (3) | Hazırlık ortamı farkları (Teşhis et) |
 
 ## Karar kaydı
 
@@ -950,3 +1015,23 @@ yalnızca karşılayacak yazının numarası güncellendi.
 - **#22 (2026-10-21) Roadmap bütünlük testi:** `src/lib/content/series-guvenlik-roadmap.test.ts`
   tavanı (25), başlık sabitlerinin roadmap'le eşliğini, yayımlanmış yazıların sıranın başında
   durduğunu, başlıkların benzersizliğini ve katalog ↔ roadmap başlık/slug eşliğini denetler.
+- **#23 (2026-10-21, run 2) Ürün sürekliliği:** 2'nin çok kiracılı belge ürünü 3'te (önizleme hattı)
+  ve 4'te (aynı özelliğin sürüm öncesi yapılandırma incelemesi) sürdürüldü. Senaryolar birbirine
+  konu adıyla bağlanır; okur yeni bir ürün öğrenmek yerine aynı sistemin yeni bir sınırını görür.
+- **#24 (2026-10-21, run 2) "Depo" tek anlamlıdır:** `SOZLESME.md` §3 "aynı Türkçe sözcük iki kavramı
+  taşımaz" kuralı gereği "depo" yalnızca kod deposu (repository) anlamında kullanılır; Git hattındaki
+  "uzak depo" ve "deney deposu" da bu anlamdadır. Nesne depolaması "nesne deposu", sıfat olarak
+  "depolama" diye yazılır ("depolama rolü", "depolama kimlik bilgisi"). Yazı 3 yayımlanmadan önce
+  bu kurala göre düzeltildi.
+- **#25 (2026-10-21, run 2) 4 → 5 köprüsü:** 4'ün "Sırada ne var" bölümü Git hattını XXE
+  düzeltmesinin "nerede" olduğu sorusuyla açtı ve "dal (branch)" terimini geçerken kurdu; 5'in
+  senaryosundaki güvenlik yaması bu düzeltme olarak somutlanabilir.
+- **#26 (2026-10-21, run 2) Sürüme bağlı ürün davranışı tarihlenir:** 4'teki iddialar sürümle
+  yazıldı ve bakım kalemidir: finalhandler 2.1.1 (Express 5.3.0) `NODE_ENV` varsayılanı; libxml2
+  belgesindeki `XML_PARSE_NOENT`, `XML_PARSE_NO_XXE` (2.13'ten beri) ve `XML_PARSE_NONET` (2.15'te
+  yerleşik ağ istemcisi kaldırıldı) ifadeleri; libxmljs2 0.37.0 seçenek adları; Node.js 24.14 ile
+  alınan çıktılar.
+- **#27 (2026-10-21, run 2) Beş sütunlu izlenebilirlik tablosu:** 3'ün tehdit → karar → gereksinim
+  → test tablosu beş sütunda bırakıldı (izlenebilirlik sırası öğretici). Telefonda kendi kabında yatay kaydırır
+  (okuyucunun 5+ sütun için tasarladığı son çare); masaüstü akış, sayfalı sütunlar ve tablette taşma
+  yok. E2E sığma kuralının dört durumu `artifacts/guvenlik-run2/render/paged.mjs` ile doğrulandı.

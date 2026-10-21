@@ -6855,3 +6855,84 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-10-21 13:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:29 | Created artifacts/guvenlik-run2/urls-1.txt | — | ~749 |
+| 13:31 | Created artifacts/guvenlik-run2/cwe_desc.py | — | ~300 |
+| 13:36 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/bomb.py | — | ~483 |
+| 13:44 | Created artifacts/guvenlik-run2/hash-new.cjs | — | ~428 |
+| 13:47 | Created content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/onizleme-veri-akisi.svg | — | ~1873 |
+| 13:47 | Created content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/once-sonra-isci-siniri.svg | — | ~1768 |
+| 13:47 | Edited content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/once-sonra-isci-siniri.svg | 1→4 lines | ~99 |
+| 13:48 | Created artifacts/guvenlik-run2/figs.mjs | — | ~1512 |
+| 13:49 | Edited content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/once-sonra-isci-siniri.svg | 1→2 lines | ~51 |
+| 13:54 | Created content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | — | ~8908 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~161 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~75 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~38 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~49 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | 5→5 lines | ~61 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | run() → uploadAndHandle() | ~30 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | 3→3 lines | ~68 |
+| 13:55 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~47 |
+| 13:57 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/fh/probe.js | — | ~251 |
+| 13:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/fh/probe.ts | — | ~199 |
+| 13:58 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/fh/probe.mts | — | ~199 |
+| 14:01 | Created content/series-guvenlik/assets/guvenli-varsayilanlar-yapilandirma/etkin-degerin-katmanlari.svg | — | ~1638 |
+| 14:01 | Created content/series-guvenlik/assets/guvenli-varsayilanlar-yapilandirma/yapilandirmanin-iki-yolu.svg | — | ~1371 |
+| 14:02 | Edited content/series-guvenlik/assets/guvenli-varsayilanlar-yapilandirma/yapilandirmanin-iki-yolu.svg | 2→1 lines | ~31 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~44 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~28 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~21 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~20 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~19 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~13 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~14 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~27 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~24 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~16 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~22 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~19 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~14 |
+| 14:06 | Edited content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md | inline fix | ~15 |
+| 14:09 | Created content/series-guvenlik/articles/design-and-configuration/guvenli-varsayilanlar-yapilandirma.md | — | ~8294 |
+| 14:10 | Edited content/series-guvenlik/articles/design-and-configuration/guvenli-varsayilanlar-yapilandirma.md | inline fix | ~38 |
+| 14:10 | Edited content/series-guvenlik/articles/design-and-configuration/guvenli-varsayilanlar-yapilandirma.md | inline fix | ~54 |
+| 14:10 | Edited content/series-guvenlik/articles/design-and-configuration/guvenli-varsayilanlar-yapilandirma.md | inline fix | ~23 |
+| 14:13 | Created artifacts/guvenlik-run2/render/shoot.mjs | — | ~2588 |
+| 14:13 | Edited artifacts/guvenlik-run2/render/shoot.mjs | modified log() | ~72 |
+| 14:13 | Created .claude/launch.json | — | ~119 |
+| 14:17 | Created artifacts/guvenlik-run2/render/paged.mjs | — | ~1094 |
+| 14:19 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 2→2 lines | ~39 |
+| 14:19 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified im() | ~298 |
+| 14:19 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified im() | ~267 |
+| 14:19 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+6 lines) | ~166 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+24 lines) | ~545 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 3→2 lines | ~44 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 1→4 lines | ~130 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 1→3 lines | ~115 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+11 lines) | ~317 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+20 lines) | ~551 |
+| 14:20 | Edited docs/seri-guvenlik/YOL-HARITASI.md | inline fix | ~19 |
+| 14:20 | Edited docs/seri-guvenlik/ARASTIRMA.md | 1→2 lines | ~32 |
+| 14:20 | Edited docs/seri-guvenlik/ARASTIRMA.md | expanded (+8 lines) | ~536 |
+| 14:20 | Edited docs/seri-guvenlik/ARASTIRMA.md | 2→7 lines | ~141 |
+| 14:21 | Edited docs/seri-guvenlik/ARASTIRMA.md | 3→7 lines | ~179 |
+| 14:21 | Edited docs/seri-guvenlik/ARASTIRMA.md | expanded (+11 lines) | ~294 |
+| 14:21 | Edited docs/seri-guvenlik/ARASTIRMA.md | expanded (+56 lines) | ~1681 |
+| 14:21 | Edited docs/seri-guvenlik/ARASTIRMA.md | inline fix | ~50 |
+| 14:21 | Edited docs/seri-guvenlik/ARASTIRMA.md | 2→2 lines | ~155 |
+| 14:22 | Created docs/seri-guvenlik/HANDOFF.md | — | ~2810 |
+| 14:23 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/buglog-add.cjs | — | ~803 |
+| 14:24 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/memory-append.md | — | ~177 |
+| 14:30 | Güven Sınırı run 2 özeti: yazı 3 (tehdit modelleme) ve 4 (güvenli varsayılanlar) yazıldı, 4 şekil çizildi, entegre edildi (kohort 1); kapılar: içerik/SVG/XML/hash temiz, typecheck 0, vitest 826/826, lint tabanla aynı (14), build 188 sayfa (yalıtılmış kopya), render 54 ölçüm + e2e sığma kuralı 4 durum | content/series-guvenlik/**, docs/seri-guvenlik/{HANDOFF,YOL-HARITASI,ARASTIRMA}.md | başarılı; commit yok | ~ |
+| 14:30 | +1 state: HANDOFF cursor 5–6 / kohort 2, YOL-HARITASI terim-geri çağırma-ileri işaret defterleri ve karar #23–#27, ARASTIRMA §12–§14 ve borçlar; çapraz tutarlılık denetimi "Tutarlı" | docs/seri-guvenlik/*.md | başarılı | ~ |
+| 14:24 | Created .claude/launch.json | — | ~56 |
+| 14:25 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run2-2026-10-21.md | — | ~607 |
+| 14:25 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run1-2026-10-21.md | "drizzle/0005_guvenlik_ser" → "9e720b9" | ~61 |
+| 14:25 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run1-2026-10-21.md | inline fix | ~42 |
+| 14:25 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~117 |
+| 14:26 | Session end: 73 writes across 25 files (urls-1.txt, cwe_desc.py, bomb.py, hash-new.cjs, onizleme-veri-akisi.svg) | 26 reads | ~94952 tok |

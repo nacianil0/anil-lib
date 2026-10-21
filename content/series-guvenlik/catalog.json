@@ -42,6 +42,46 @@
       "path": "content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
+    },
+    {
+      "articleId": "article_b4fca595-5e96-4fc9-b14f-9180cc4834d1",
+      "title": "Tehdit Modelleme: Güven Sınırını Çizmek, Varsayımı Yazmak",
+      "slug": "tehdit-modelleme-guven-sinirini-cizmek",
+      "category": "design-and-configuration",
+      "level": "advanced",
+      "readingOrder": 3,
+      "summary": "Bir belge ürününün dosya yükleme ve önizleme hattını veri akış diyagramıyla çizer: kullanıcının seçtiği baytların API'ye uğramadan işçiye ve dönüştürücü kütüphaneye vardığını, 'işçi iç ağda, girdisi güvenilir' varsayımının bir güven sınırı ihlali olduğunu gösterir. Her sınır geçişini STRIDE ile bir tehdide, sürümlü bir ASVS 5.0.0 gereksinimine ve negatif teste bağlar; dönüştürücüyü yalıtmanın neyi değiştirdiğini ve modelin değişiklikle bayatlamasının nasıl önleneceğini tartışır.",
+      "tags": [
+        "tehdit-modelleme",
+        "guven-siniri",
+        "veri-akis-diyagrami",
+        "stride",
+        "dosya-yukleme"
+      ],
+      "contentHash": "sha256:a8f9049d77d554440d9f3ffc1455b943ea537b4df77ac1640416db5ab096753b",
+      "path": "content/series-guvenlik/articles/design-and-configuration/tehdit-modelleme-guven-sinirini-cizmek.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
+    },
+    {
+      "articleId": "article_92b34d29-8459-4373-b248-5b8bbe14bca5",
+      "title": "Güvenli Varsayılanlar: Yapılandırma Bir Güvenlik Kararıdır",
+      "slug": "guvenli-varsayilanlar-yapilandirma",
+      "category": "design-and-configuration",
+      "level": "advanced",
+      "readingOrder": 4,
+      "summary": "Önizleme özelliğinin üretime çıkmadan önceki yapılandırma incelemesinde çıkan dört bulguyu okur: ayar yokken açılan hata ayıklama uçları, adına rağmen dış varlık yüklemeyi açan bir XML ayrıştırıcı seçeneği, NODE_ENV eksik olduğu için yığın izi döndüren varsayılan hata işleyicisi ve konsoldan genişletilmiş bir depolama rolü. Etkin değerin hangi katmandan geldiğini, eksik bir ayarın hangi yöne düştüğünü ve ortamlar arası kaymanın nasıl yakalanacağını gösterir; yapılandırmayı açılışta fail-closed doğrulanan, saldırı yüzeyi envanteriyle sınanan ve kodla aynı incelemeden geçen bir sözleşmeye çevirir.",
+      "tags": [
+        "guvenli-varsayilan",
+        "yapilandirma",
+        "a02-2025",
+        "xxe",
+        "saldiri-yuzeyi"
+      ],
+      "contentHash": "sha256:a64eef0a0120be7f7ab48257a6ceaf0c7117b8085a7eca38a0052efb21e2b7e5",
+      "path": "content/series-guvenlik/articles/design-and-configuration/guvenli-varsayilanlar-yapilandirma.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 1
     }
   ]
 }

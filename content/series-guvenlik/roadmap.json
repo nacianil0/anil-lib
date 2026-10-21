@@ -17,8 +17,8 @@
       "title": "Güven Sınırını Görmek",
       "description": "Tehdit modeliyle sınırları çizmek; ortamın ve yapılandırmanın varsayımlarını kanıta bağlamak.",
       "articles": [
-        { "order": 3, "title": "Tehdit Modelleme: Güven Sınırını Çizmek, Varsayımı Yazmak", "status": "planlandi" },
-        { "order": 4, "title": "Güvenli Varsayılanlar: Yapılandırma Bir Güvenlik Kararıdır", "status": "planlandi" }
+        { "order": 3, "title": "Tehdit Modelleme: Güven Sınırını Çizmek, Varsayımı Yazmak", "status": "yayinda", "slug": "tehdit-modelleme-guven-sinirini-cizmek" },
+        { "order": 4, "title": "Güvenli Varsayılanlar: Yapılandırma Bir Güvenlik Kararıdır", "status": "yayinda", "slug": "guvenli-varsayilanlar-yapilandirma" }
       ]
     },
     {

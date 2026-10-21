@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T09:38:21.001Z
-> Files: 847 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T11:25:38.783Z
+> Files: 866 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -24,7 +24,7 @@
 
 ## .claude/
 
-- `launch.json` (~161 tok)
+- `launch.json` (~56 tok)
 
 ## .claude/rules/
 
@@ -656,6 +656,18 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/edd1cce2-097e-4338-ad72-8698dcf742a0/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/
+
+- `bomb.py` — Kendi hesabımız: sıfırlarla dolu tek dosyalı zip'in sıkışmış/açılmış boyutu ve (~483 tok)
+- `buglog-add.cjs` — Run 2'nin anlamlı hata kayıtlarını .wolf/buglog.json'a ekler (otomatik kayıtların yanına). (~803 tok)
+- `memory-append.md` — , docs/seri-guvenlik/{HANDOFF,YOL-HARITASI,ARASTIRMA}.md | başarılı; commit yok | ~ | (~166 tok)
+
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/f2ac87b9-3efa-45c5-922b-f666ba7317ce/scratchpad/fh/
+
+- `probe.js` — finalhandler 2.1.1'in NODE_ENV'e göre hata gövdesi: kendi deneyimiz. (~251 tok)
+- `probe.mts` — Her isteği bir hatayla bitirir ve hatayı varsayılan işleyiciye bırakır. (~199 tok)
+- `probe.ts` — Her isteği bir hatayla bitirir ve hatayı varsayılan işleyiciye bırakır. (~199 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/fc263103-4f75-4d36-bd76-58c81eaf86df/scratchpad/
 
 - `calc95.py` (~753 tok)
@@ -689,8 +701,9 @@
 - `boun-batch9-faz-d-govde.md` (~988 tok)
 - `commit-push-main-no-coauthor.md` (~250 tok)
 - `editoryal-yenileme-2026-09-25.md` (~730 tok)
-- `guvenlik-series-run1-2026-10-21.md` (~610 tok)
-- `MEMORY.md` — Memory index (~2381 tok)
+- `guvenlik-series-run1-2026-10-21.md` (~608 tok)
+- `guvenlik-series-run2-2026-10-21.md` (~597 tok)
+- `MEMORY.md` — Memory index (~2433 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `okuma-sifirlama-2026-09-25.md` (~542 tok)
 - `series-bakim-run1-2026-09-26.md` (~612 tok)
@@ -921,6 +934,18 @@
 
 - `render.config.ts` — Güven Sınırı müfredat revizyonu (2026-10-21): landing, ana sayfa ve yazı sayfasının gerçek render de (~336 tok)
 - `revizyon.render.ts` — Güven Sınırı müfredat revizyonu (2026-10-21): yeni ad, 25 yazılık / 10 fazlı yol haritası ve öteki (~2917 tok)
+
+## artifacts/guvenlik-run2/
+
+- `cwe_desc.py` — Print the Description / Extended Description sections of fetched CWE pages. (~300 tok)
+- `figs.mjs` — Güven Sınırı run 2: şekillerin okuyucudan bağımsız ön denetimi (yazım aşaması). (~1512 tok)
+- `hash-new.cjs` — Katalogda henüz olmayan seri yazılarının content_hash'ini hesaplar; --write ile frontmatter'a yazar. (~428 tok)
+- `urls-1.txt` — Yazı 3 — tehdit modelleme (~702 tok)
+
+## artifacts/guvenlik-run2/render/
+
+- `paged.mjs` — Güven Sınırı run 2: yazı 3–4'ün tablo ve şekillerini e2e "fits diagrams and tables" kuralının (~1094 tok)
+- `shoot.mjs` — Güven Sınırı run 2: yazı 3–4'ün gerçek render doğrulaması (yalıtılmış kopyadaki üretim sunucusu). (~2626 tok)
 
 ## artifacts/owasp-run1/
 
@@ -1184,10 +1209,20 @@
 
 - `roadmap.json` (~1682 tok)
 
+## content/series-guvenlik/articles/design-and-configuration/
+
+- `guvenli-varsayilanlar-yapilandirma.md` — Hazırlıkta çalışıyordu (~7792 tok)
+- `tehdit-modelleme-guven-sinirini-cizmek.md` — Önizleme işçisi neye güveniyor? (~8472 tok)
+
 ## content/series-guvenlik/articles/owasp-and-verification/
 
 - `hata-yolunda-guvenlik-a10-2025.md` — Yetki servisi cevap vermediğinde (~7574 tok)
 - `owasp-top-10-2025-i-okumak.md` — "Sıfır bulgu" ne söyler? (~6490 tok)
+
+## content/series-guvenlik/assets/guvenli-varsayilanlar-yapilandirma/
+
+- `etkin-degerin-katmanlari.svg` (~1638 tok)
+- `yapilandirmanin-iki-yolu.svg` (~1350 tok)
 
 ## content/series-guvenlik/assets/hata-yolunda-guvenlik-a10-2025/
 
@@ -1198,6 +1233,11 @@
 
 - `bir-siranin-girdileri.svg` (~1163 tok)
 - `sifir-bulgu-nereye-kadar.svg` (~635 tok)
+
+## content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/
+
+- `once-sonra-isci-siniri.svg` (~1856 tok)
+- `onizleme-veri-akisi.svg` (~1873 tok)
 
 ## content/series/
 
@@ -1680,11 +1720,11 @@
 
 ## docs/seri-guvenlik/
 
-- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~9120 tok)
-- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~2491 tok)
+- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~11622 tok)
+- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~2634 tok)
 - `SOZLESME.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Seri Sözleşmesi (~7438 tok)
 - `TRIGGER.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Üretim Trigger'ı (~483 tok)
-- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~16597 tok)
+- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~18500 tok)
 
 ## docs/seri/
 
