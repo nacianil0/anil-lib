@@ -12,6 +12,13 @@ import {
   getBounDescriptors,
   loadBounRoadmap,
 } from "@/lib/content/series-boun";
+import {
+  GUVENLIK_BASE_PATH,
+  GUVENLIK_SUBTITLE,
+  GUVENLIK_TITLE,
+  getGuvenlikDescriptors,
+  loadGuvenlikRoadmap,
+} from "@/lib/content/series-guvenlik";
 import { loadSeriesRoadmap } from "@/lib/content/series-roadmap";
 import { outlinePhases } from "@/lib/content/series-progress";
 import { requireSessionUser } from "@/lib/auth/session-user";
@@ -50,6 +57,14 @@ export default async function HomePage() {
           basePath: BOUN_BASE_PATH,
           articles: getBounDescriptors(),
           phases: outlinePhases(loadBounRoadmap()),
+        },
+        {
+          key: "guvenlik",
+          title: GUVENLIK_TITLE,
+          subtitle: GUVENLIK_SUBTITLE,
+          basePath: GUVENLIK_BASE_PATH,
+          articles: getGuvenlikDescriptors(),
+          phases: outlinePhases(loadGuvenlikRoadmap()),
         },
       ]}
     />

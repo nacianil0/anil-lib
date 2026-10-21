@@ -21,8 +21,12 @@
  *  - BOUN: "## Mülakatta nasıl görünür" bölümü "### Sırada ne var"dan önce durur ve
  *    içinde "İngilizce karşılıklar" satırı vardır (docs/seri-boun/SOZLESME.md §2).
  *  - Uyarı (hata değil): 200 kelimeden uzun şekil alt metni.
+ *  - Güven Sınırı (guvenlik, docs/seri-guvenlik/SOZLESME.md §3–§4): kod blokları düzyazı
+ *    sayılmaz ve yapı denetimine girmez; "## Karar kartı" bölümü "### Sırada ne var"dan önce
+ *    durur; mutlak güvenlik dili ("tamamen güvenli", "%100 güvenli", "hacklenemez") yasaktır;
+ *    kontrol kutusu "Teşhis et".
  *
- * Kullanım: node tools/series/check-series-content.cjs [--series=ai|boun] [klasör]
+ * Kullanım: node tools/series/check-series-content.cjs [--series=ai|boun|guvenlik] [klasör]
  */
 const { readFileSync, readdirSync, statSync, existsSync } = require("node:fs");
 const path = require("node:path");
@@ -46,7 +50,29 @@ const PROFILES = {
     checkpointLabel: "Sesli anlat",
     interviewSection: true,
   },
+  guvenlik: {
+    articlesDir: "../../content/series-guvenlik/articles",
+    minWords: 2000,
+    maxWords: 3600,
+    checkpointLabel: "Teşhis et",
+    interviewSection: false,
+    excludeCode: true,
+    decisionCard: true,
+    absoluteClaims: true,
+  },
 };
+
+/** Çitli kod blokları (``` ya da ~~~); kod düzyazı değildir ve başlık denetimini yanıltır. */
+function stripFencedCode(text) {
+  return text.replace(/^(```|~~~)[^\n]*\n[\s\S]*?^\1[ \t]*$/gm, "");
+}
+
+/** Hiçbir kontrolü bütün tehditlere karşı koruyormuş gibi anlatmayan yazı dili. */
+const ABSOLUTE_CLAIMS = [
+  [/\b(tamamen|tümüyle|yüzde yüz) güvenli/i, "mutlak güvenlik iddiası"],
+  [/%\s?100 güvenli/i, "mutlak güvenlik iddiası"],
+  [/kurşun geçirmez|hacklenemez/i, "mutlak güvenlik iddiası"],
+];
 
 const MIN_FIGURES = 1;
 const ALT_WARN_WORDS = 200;
@@ -134,6 +160,8 @@ function checkArticle(file) {
 
   const body = stripFrontmatter(readFileSync(file, "utf8")).trim();
   const lines = body.split("\n");
+  // Yapı ve kelime denetimi kodun içini görmez: kabuk yorumu "# " ile başlar ve H1 sanılır.
+  const prose = profile.excludeCode ? stripFencedCode(body) : body;
 
   // Çapraz referans tuzağı: "3. makalede" satır başında liste olur.
   lines.forEach((line, i) => {
@@ -144,7 +172,7 @@ function checkArticle(file) {
     }
   });
 
-  if (/^# /m.test(body)) add("gövdede H1 var; başlık frontmatter'da durur, gövde H2 ile başlar");
+  if (/^# /m.test(prose)) add("gövdede H1 var; başlık frontmatter'da durur, gövde H2 ile başlar");
   if (!lines[0].startsWith("## ")) add(`gövde H2 ile başlamalı (bulunan: "${lines[0].slice(0, 40)}")`);
 
   if (!body.includes("### Sırada ne var")) add('"### Sırada ne var" bölümü eksik');
@@ -156,7 +184,7 @@ function checkArticle(file) {
     add('"### Sırada ne var" bölümü "## Kaynakça" bölümünden önce gelmeli');
   }
 
-  const words = countProseWords(body);
+  const words = countProseWords(prose);
   if (words < profile.minWords || words > profile.maxWords) {
     add(
       `düzyazı kelime sayısı ${words} (hedef ${profile.minWords.toLocaleString("tr-TR")}–${profile.maxWords.toLocaleString("tr-TR")})`,
@@ -229,6 +257,22 @@ function checkArticle(file) {
     }
     const dz = text.match(DECIMAL_ZERO_SUFFIX);
     if (dz) add(`satır ${n}: "${dz[0]}" — ",0" sıfır diye okunur, ek ona uyar (ör. 18,0'a, 18,0'ın)`);
+    if (profile.absoluteClaims) {
+      for (const [re, what] of ABSOLUTE_CLAIMS) {
+        const m = text.match(re);
+        if (m) add(`satır ${n}: ${what} — "${m[0]}" (kontrolün neyi garanti etmediğini yaz)`);
+      }
+    }
+  }
+
+  if (profile.decisionCard) {
+    const cardIdx = lines.findIndex((l) => l.trim() === "## Karar kartı");
+    const nextLineIdx = lines.findIndex((l) => l.startsWith("### Sırada ne var"));
+    if (cardIdx === -1) {
+      add('"## Karar kartı" bölümü eksik');
+    } else if (nextLineIdx !== -1 && cardIdx > nextLineIdx) {
+      add('"## Karar kartı" bölümü "### Sırada ne var"dan önce gelmeli');
+    }
   }
 
   if (profile.interviewSection) {

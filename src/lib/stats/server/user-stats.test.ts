@@ -183,19 +183,25 @@ describe("getUserStatsDetail", () => {
     }
   });
 
-  it("lists every published article of both series, read or not", async () => {
+  it("lists every published article of every series, read or not", async () => {
     const result = await getUserStatsDetail(OWNER, READER_ID);
     if (result.status !== "ok") throw new Error("expected ok");
 
-    expect(result.detail.articles).toHaveLength(2);
-    expect(result.detail.articles[0].rows).toHaveLength(scopes[0].articles.length);
-    expect(result.detail.articles[1].rows).toHaveLength(scopes[1].articles.length);
+    expect(scopes.map((scope) => scope.key)).toEqual(["seri", "boun", "guvenlik"]);
+    expect(result.detail.articles).toHaveLength(scopes.length);
+    scopes.forEach((scope, index) => {
+      expect(result.detail.articles[index].rows).toHaveLength(scope.articles.length);
+    });
     expect(result.detail.articles[0].rows[0].order).toBe(1);
     expect(result.detail.articles[1].rows[0]).toMatchObject({
       articleId: BOUN_ARTICLE,
       completed: false,
       percent: 50,
     });
+    // The third series has no reading for this account: listed, not invented.
+    expect(result.detail.articles[2].rows.every((row) => !row.completed && row.percent === 0)).toBe(
+      true,
+    );
   });
 
   it("reports a missing account instead of leaking another one", async () => {

@@ -16,7 +16,7 @@ tools/
   publish/
     04-Publish-And-Zip.cmd -> production build + paket + zip
   series/
-    check-series-content.cjs -> seri makaleleri icin sozlesme denetimi (--series=ai|boun)
+    check-series-content.cjs -> seri makaleleri icin sozlesme denetimi (--series=ai|boun|guvenlik)
     check-series-svg.cjs     -> seri diyagramlari icin sozlesme denetimi (asset klasoru argumani)
     sync-series-hashes.cjs   -> content_hash dogrulama; --write ile frontmatter+katalog guncelleme
     entegre-batch.cjs        -> yeni batch makalelerini katalog+roadmap'e entegre etme (--write)
@@ -150,6 +150,25 @@ node tools/series/sync-series-hashes.cjs --series=boun
 ```
 
 Uretim akisi: `docs/seri-boun/HANDOFF.md`.
+
+### Ucuncu seri: Guven Siniri (`guvenlik`)
+
+`--series=guvenlik` "Guven Siniri: Guvenli Yazilim Muhendisligi" serisini
+(`content/series-guvenlik/`) hedefler. `check-series-content.cjs` profili: duzyazi
+2.000-3.600 kelime ve cizgili kod bloklari hem kelime sayimina hem baslik
+denetimine girmez; kontrol kutusu "Teshis et"; her yazida "## Karar karti"
+bolumu "### Sirada ne var"dan once durur; mutlak guvenlik dili ("tamamen
+guvenli", "%100 guvenli", "hacklenemez") reddedilir. Sira BOUN ile aynidir:
+
+```
+node tools/series/check-series-content.cjs --series=guvenlik
+node tools/series/check-series-svg.cjs content/series-guvenlik/assets
+node tools/series/sync-series-hashes.cjs --series=guvenlik --write
+node tools/series/entegre-batch.cjs --series=guvenlik --write
+node tools/series/sync-series-hashes.cjs --series=guvenlik
+```
+
+Uretim akisi: `docs/seri-guvenlik/TRIGGER.md` ve `HANDOFF.md` (ritim `BATCH=2+1`).
 
 ## Notlar
 

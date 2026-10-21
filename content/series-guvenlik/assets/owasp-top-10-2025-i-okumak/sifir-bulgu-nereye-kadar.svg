@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 404" role="img" aria-label="İç içe dört dikdörtgen: ürünün risk yüzeyi, Top 10:2025 kategorilerindeki zayıflıklar, aracın test edebildiği CWE'ler ve bu taramada test edilenler. Sıfır bulgu iddiası yalnızca en içteki kutu için geçerlidir; aracın kendiliğinden göremediği örnekler sağda, listenin dışında kalanlar üstte yazılıdır.">
+  <rect x="12" y="12" width="696" height="380" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="28" y="38" font-size="13" font-weight="bold" fill="var(--text)">ürünün risk yüzeyi</text>
+  <text x="204" y="38" font-size="13" fill="var(--text-muted)">listenin dışında: dayanıklılık (X01), ürüne özgü kötüye kullanım</text>
+
+  <rect x="32" y="56" width="656" height="322" rx="9" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="48" y="80" font-size="13" font-weight="bold" fill="var(--text)">Top 10:2025 kategorilerindeki zayıflıklar</text>
+
+  <text x="448" y="132" font-size="13" font-weight="bold" fill="var(--text)">aracın kendiliğinden</text>
+  <text x="448" y="150" font-size="13" font-weight="bold" fill="var(--text)">göremediği örnekler</text>
+  <text x="448" y="180" font-size="13" fill="var(--text)">kiracılar arası erişim (A01)</text>
+  <text x="448" y="204" font-size="13" fill="var(--text)">hata yolunda fail-open (A10)</text>
+  <text x="448" y="228" font-size="13" fill="var(--text)">uyarının işe yaraması (A09)</text>
+  <text x="448" y="252" font-size="13" fill="var(--text)">tasarım hatası (A06)</text>
+
+  <rect x="52" y="98" width="372" height="268" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="68" y="122" font-size="13" fill="var(--text)">aracın test edebildiği CWE'ler</text>
+  <text x="68" y="352" font-size="13" fill="var(--text-muted)">test edilebilir ama bu taramada dışarıda</text>
+
+  <rect x="72" y="140" width="332" height="190" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4" />
+  <text x="88" y="164" font-size="13" fill="var(--text)">bu taramada test edilenler</text>
+  <text x="238" y="236" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">“0 bulgu” yalnızca</text>
+  <text x="238" y="258" font-size="13" font-weight="bold" text-anchor="middle" fill="var(--text)">bu kutu için geçerli</text>
+</svg>

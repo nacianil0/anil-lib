@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { useReaderData } from "@/lib/reader-data/use-reader-data";
 import type { SeriesId } from "@/lib/reader-data/series-reset";
 
+/** Short series name used inside the confirmation sentence ("… serisindeki"). */
+const SERIES_LABELS: Record<SeriesId, string> = {
+  ai: "YZ",
+  boun: "Boğaziçi",
+  guvenlik: "Güven Sınırı",
+};
+
 export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
   const { ready, resetSeries } = useReaderData();
   const [armed, setArmed] = useState(false);
@@ -14,7 +21,7 @@ export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
   const busy = useRef(false);
   const cancelButton = useRef<HTMLButtonElement>(null);
   const armButton = useRef<HTMLButtonElement>(null);
-  const label = seriesId === "ai" ? "YZ" : "Boğaziçi";
+  const label = SERIES_LABELS[seriesId];
 
   useEffect(() => {
     if (armed) cancelButton.current?.focus();
@@ -86,8 +93,8 @@ export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
             id={`reset-description-${seriesId}`}
             className="max-w-xl text-sm leading-relaxed text-text-muted"
           >
-            {label} serisindeki okundu bilgilerin ve kaldığın konumlar silinecek. Diğer serideki
-            ilerlemen, yer imlerin ve vurguların korunacak. Bu işlem geri alınamaz.
+            {label} serisindeki okundu bilgilerin ve kaldığın konumlar silinecek. Diğer
+            serilerdeki ilerlemen, yer imlerin ve vurguların korunacak. Bu işlem geri alınamaz.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             <button

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 2,
+  "classificationVersion": 1,
+  "generatedAt": "2026-10-21T08:20:58.353Z",
+  "articles": [
+    {
+      "articleId": "article_af54bdf5-9a87-4253-89ca-d74188933c89",
+      "title": "OWASP Top 10:2025'i Okumak: Liste Neyi Ölçer, Neyi Ölçmez?",
+      "slug": "owasp-top-10-2025-i-okumak",
+      "category": "owasp-and-verification",
+      "level": "advanced",
+      "readingOrder": 1,
+      "summary": "OWASP Top 10:2025'in hangi veriden ve hangi yargıdan üretildiğini açar: yaygınlık, test kapsamı ve sıklık ayrımını, kategorinin bir zayıflık kümesi olduğunu, sıralamanın yayımlanan formülle birebir yeniden üretilemediğini ve listenin göremediklerini. Sonunda bir 'Top 10 uyumlu' sürüm iddiasının yerine sürümlü ASVS gereksinimlerine ve kanıta dayanan bir iddia kurar.",
+      "tags": [
+        "owasp-top-10",
+        "risk-farkindaligi",
+        "asvs",
+        "wstg",
+        "dogrulama"
+      ],
+      "contentHash": "sha256:0b2e5de713519b8e42984828b9669fc31e0c1e337d4a5419331bf8de26b7155e",
+      "path": "content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    },
+    {
+      "articleId": "article_c3e84f7f-8430-44d0-aed2-0310c75d4a95",
+      "title": "Hata Yolunda Güvenlik: A10:2025'ten Doğrulanabilir Gereksinime",
+      "slug": "hata-yolunda-guvenlik-a10-2025",
+      "category": "owasp-and-verification",
+      "level": "advanced",
+      "readingOrder": 2,
+      "summary": "A10:2025'i bir belge paylaşım servisinin hata yollarında okur: yetki servisi cevap vermediğinde kodun izin dalına düşmesi, iç ayrıntı sızdıran hata yanıtı ve yarım kalan işlem. Üçünü ASVS 5.0.0'ın V16.5 gereksinimlerine, hata enjeksiyonlu negatif testlere ve üretim sinyallerine çevirir; fail-closed kararının erişilebilirlik bedelini ve fail-open'ın hangi koşulda bilinçli bir ürün kararı olabileceğini tartışır.",
+      "tags": [
+        "a10-2025",
+        "fail-closed",
+        "hata-isleme",
+        "asvs",
+        "negatif-test"
+      ],
+      "contentHash": "sha256:bd88bc2427fc7ceb626ddfd528ad64d501c57823e4864216291fa70f77bbcf10",
+      "path": "content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 0
+    }
+  ]
+}

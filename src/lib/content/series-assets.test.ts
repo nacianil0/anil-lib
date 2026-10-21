@@ -15,11 +15,12 @@ import { rehypeInlineSvg } from "./rehype-inline-svg";
  * Amaç: marker/defs/path gibi öğelerin ve tema değişkenlerinin hast → React
  * dönüşümünde kaybolmadığını her batch için garanti altına almak
  * (docs/seri/SOZLESME.md §6; BOUN serisi aynı SVG sözleşmesini izler,
- * docs/seri-boun/SOZLESME.md §5).
+ * docs/seri-boun/SOZLESME.md §5; Güven Sınırı serisi docs/seri-guvenlik/SOZLESME.md §6).
  */
 const ASSET_ROOTS = [
   { series: "seri", dir: path.join(process.cwd(), "content", "series", "assets") },
   { series: "boun", dir: path.join(process.cwd(), "content", "series-boun", "assets") },
+  { series: "guvenlik", dir: path.join(process.cwd(), "content", "series-guvenlik", "assets") },
 ];
 
 function collectDiagrams(): Array<{ series: string; slug: string; file: string; dir: string }> {

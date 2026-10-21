@@ -27,14 +27,17 @@ const READER_PREFERENCES = {
 };
 
 /**
- * Chapters carrying the widest figures and the widest tables. Both series render
- * through the same pipeline and the same shell, so the second one is here to keep
- * the other consumer of that pipeline honest.
+ * Chapters carrying the widest figures and the widest tables. Every series renders
+ * through the same pipeline and the same shell, so the other two are here to keep
+ * the other consumers of that pipeline honest; the Güven Sınırı chapters also carry
+ * code blocks and the series' widest table.
  */
 const ILLUSTRATED = [
   "/seri/arac-kullanimi-islev-cagrisi",
   "/seri/getirme-aramanin-modern-hali",
   "/boun/yinelemeler-ve-master-teoremi",
+  "/guvenlik/owasp-top-10-2025-i-okumak",
+  "/guvenlik/hata-yolunda-guvenlik-a10-2025",
 ];
 
 async function authenticate(page: Page) {

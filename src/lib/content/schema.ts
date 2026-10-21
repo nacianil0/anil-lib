@@ -27,19 +27,38 @@ export const BOUN_CATEGORIES = [
   "supporting-fundamentals",
 ] as const;
 
+/**
+ * Güven Sınırı serisinin kontrollü kategori sözlüğü (docs/seri-guvenlik/SOZLESME.md §2).
+ * Anahtarlar fazlarla örtüşür ve öteki serilerin sözlükleriyle çakışmaz.
+ */
+export const GUVENLIK_CATEGORIES = [
+  "owasp-and-verification",
+  "design-and-configuration",
+  "version-control",
+  "collaboration-and-delivery",
+  "organization-governance",
+  "identity-and-access",
+  "data-flow-and-interpreters",
+  "secrets-and-integrity",
+  "operations-and-assurance",
+  "integrated-case",
+] as const;
+
 /** Every category a reader-facing article can carry, across all series. */
-export const ALL_CATEGORIES = [...CATEGORIES, ...BOUN_CATEGORIES] as const;
+export const ALL_CATEGORIES = [...CATEGORIES, ...BOUN_CATEGORIES, ...GUVENLIK_CATEGORIES] as const;
 
 /** Controlled difficulty vocabulary. */
 export const LEVELS = ["beginner", "intermediate", "advanced"] as const;
 
 export type LibraryCategory = (typeof CATEGORIES)[number];
 export type BounCategory = (typeof BOUN_CATEGORIES)[number];
+export type GuvenlikCategory = (typeof GUVENLIK_CATEGORIES)[number];
 export type Category = (typeof ALL_CATEGORIES)[number];
 export type Level = (typeof LEVELS)[number];
 
 export const categorySchema = z.enum(CATEGORIES);
 export const bounCategorySchema = z.enum(BOUN_CATEGORIES);
+export const guvenlikCategorySchema = z.enum(GUVENLIK_CATEGORIES);
 export const allCategorySchema = z.enum(ALL_CATEGORIES);
 export const levelSchema = z.enum(LEVELS);
 
@@ -166,6 +185,10 @@ export const frontmatterSchema = makeFrontmatterSchema(categorySchema);
 export const bounCatalogArticleSchema = makeCatalogArticleSchema(bounCategorySchema);
 export const bounCatalogSchema = makeCatalogSchema(bounCategorySchema);
 export const bounFrontmatterSchema = makeFrontmatterSchema(bounCategorySchema);
+
+/** Güven Sınırı series: content/series-guvenlik/catalog.json. */
+export const guvenlikCatalogSchema = makeCatalogSchema(guvenlikCategorySchema);
+export const guvenlikFrontmatterSchema = makeFrontmatterSchema(guvenlikCategorySchema);
 
 const anyCatalogArticleSchema = makeCatalogArticleSchema(allCategorySchema);
 const anyCatalogSchema = makeCatalogSchema(allCategorySchema);

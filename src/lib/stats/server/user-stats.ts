@@ -8,6 +8,11 @@ import {
   BOUN_TITLE,
   getBounDescriptors,
 } from "@/lib/content/series-boun";
+import {
+  GUVENLIK_BASE_PATH,
+  GUVENLIK_TITLE,
+  getGuvenlikDescriptors,
+} from "@/lib/content/series-guvenlik";
 import { getSeriesDescriptors, SERIES_BASE_PATH, SERIES_TITLE } from "@/lib/content/series";
 import { getDatabaseClient } from "@/lib/db/client";
 import {
@@ -36,7 +41,7 @@ function assertOwner(actor: ReaderUser | null): asserts actor is ReaderUser {
   if (!actor || actor.role !== "owner") throw new OwnerOnlyError();
 }
 
-/** The two learning series are the whole statistics surface; the archive is excluded. */
+/** The learning series are the whole statistics surface; the archive is excluded. */
 export function seriesScopes(): SeriesScope[] {
   return [
     {
@@ -54,6 +59,16 @@ export function seriesScopes(): SeriesScope[] {
       title: BOUN_TITLE,
       basePath: BOUN_BASE_PATH,
       articles: getBounDescriptors().map((article) => ({
+        articleId: article.articleId,
+        title: article.title,
+        slug: article.slug,
+      })),
+    },
+    {
+      key: "guvenlik",
+      title: GUVENLIK_TITLE,
+      basePath: GUVENLIK_BASE_PATH,
+      articles: getGuvenlikDescriptors().map((article) => ({
         articleId: article.articleId,
         title: article.title,
         slug: article.slug,

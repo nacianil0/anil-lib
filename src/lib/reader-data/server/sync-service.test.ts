@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import { loadSeriesCatalog } from "@/lib/content/series";
 import { loadBounCatalog } from "@/lib/content/series-boun";
+import { loadGuvenlikCatalog } from "@/lib/content/series-guvenlik";
 import { loadCatalog } from "@/lib/content/catalog";
 import type { SyncMutation } from "@/lib/reader-data/schema";
 import { synchronizeReaderData } from "./sync-service";
@@ -228,6 +229,41 @@ describe("synchronizeReaderData and series resets", () => {
       ["boun", 11],
       [null, 0],
     ]);
+  });
+
+  it("guards Güven Sınırı progress with its own epoch, not another series'", async () => {
+    const write = progressWrite();
+    write.payload.articleId = loadGuvenlikCatalog().articles[0].articleId;
+    const response = await synchronizeReaderData(sql, "owner", 0, [write], {
+      allowArchive: false,
+      resetVersion: 0,
+      seriesResetVersions: { ai: 42, boun: 11, guvenlik: 7 },
+    });
+    const insert = calls.find((entry) => entry.text.includes("INSERT INTO reading_progress"));
+    expect(insert?.params.slice(11)).toEqual(["guvenlik", 7]);
+    expect(response.acknowledged).toEqual([OPERATION]);
+    expect(response.errors).toEqual([]);
+  });
+
+  it("reports a Güven Sınırı reset with its catalog ids and skips rows of unknown series", async () => {
+    serverSeriesResets = [
+      { series_id: "guvenlik", reset_version: "70" },
+      { series_id: "future", reset_version: "80" },
+    ];
+    const response = await synchronizeReaderData(sql, "owner", 120, [], {
+      allowArchive: false,
+      resetVersion: 0,
+      seriesResetVersions: { guvenlik: 70 },
+    });
+    expect(response.seriesResets).toEqual([
+      {
+        seriesId: "guvenlik",
+        resetVersion: 70,
+        articleIds: loadGuvenlikCatalog().articles.map((article) => article.articleId),
+      },
+    ]);
+    // Adopted, so the incremental cursor stays.
+    expect(selectOf("reading_progress").params).toEqual(["owner", 120]);
   });
 
   it("allows a fresh browser to adopt both reset kinds without rejecting new progress", async () => {

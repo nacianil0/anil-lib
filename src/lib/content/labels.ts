@@ -16,6 +16,16 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   algorithms: "Algoritmalar",
   "operating-systems": "İşletim Sistemleri",
   "supporting-fundamentals": "Destekleyici Temeller",
+  "owasp-and-verification": "OWASP ve Doğrulama",
+  "design-and-configuration": "Tasarım ve Yapılandırma",
+  "version-control": "Sürüm Kontrolü",
+  "collaboration-and-delivery": "Ekip Akışı ve Teslim",
+  "organization-governance": "Organizasyon Yönetişimi",
+  "identity-and-access": "Kimlik ve Erişim",
+  "data-flow-and-interpreters": "Veri Akışı ve Yorumlayıcılar",
+  "secrets-and-integrity": "Sırlar ve Bütünlük",
+  "operations-and-assurance": "İşletim ve Güvence",
+  "integrated-case": "Bütünleşik Vaka",
 };
 
 export const LEVEL_LABELS: Record<Level, string> = {

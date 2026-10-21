@@ -2,8 +2,6 @@ import "server-only";
 
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import { loadCatalog } from "@/lib/content/catalog";
-import { loadSeriesCatalog } from "@/lib/content/series";
-import { loadBounCatalog } from "@/lib/content/series-boun";
 import {
   readingAnchorSchema,
   type HighlightRecord,
@@ -13,33 +11,32 @@ import {
   type SyncMutation,
 } from "@/lib/reader-data/schema";
 import type { SyncOperationError, SyncResponse } from "@/lib/reader-data/server/types";
-import { seriesIdSchema, type SeriesId, type SeriesReset } from "@/lib/reader-data/series-reset";
+import { seriesArticleIds } from "@/lib/reader-data/server/series-catalogs";
+import {
+  SERIES_IDS,
+  seriesIdSchema,
+  type SeriesId,
+  type SeriesReset,
+} from "@/lib/reader-data/series-reset";
 
 type SqlClient = NeonQueryFunction<false, false>;
 
 const MAX_FUTURE_SKEW_MS = 5 * 60 * 1000;
 
 /**
- * AI serisi ∪ BOUN serisi, owner workspace'inde ayrıca arşiv; bilinmeyen id reddedilir.
- * Arşiv yazıları normal kullanıcı arayüzünde yok, bu yüzden o id'lere ilerleme
+ * Bütün serilerin yazıları (SERIES_IDS), owner workspace'inde ayrıca arşiv; bilinmeyen id
+ * reddedilir. Arşiv yazıları normal kullanıcı arayüzünde yok, bu yüzden o id'lere ilerleme
  * yazılması da sunucu tarafında engellenir.
  */
-function validArticleIds(allowArchive: boolean): Set<string> {
-  const ids = [
-    ...loadSeriesCatalog().articles.map((article) => article.articleId),
-    ...loadBounCatalog().articles.map((article) => article.articleId),
-  ];
+function validArticleIds(
+  articlesBySeries: Record<SeriesId, string[]>,
+  allowArchive: boolean,
+): Set<string> {
+  const ids = SERIES_IDS.flatMap((seriesId) => articlesBySeries[seriesId]);
   if (allowArchive) {
     ids.push(...loadCatalog().articles.map((article) => article.articleId));
   }
   return new Set(ids);
-}
-
-function seriesArticleIds(): Record<SeriesId, string[]> {
-  return {
-    ai: loadSeriesCatalog().articles.map((article) => article.articleId),
-    boun: loadBounCatalog().articles.map((article) => article.articleId),
-  };
 }
 
 function timestampIsValid(value: string, now: number): boolean {
@@ -294,10 +291,10 @@ export async function synchronizeReaderData(
   },
 ): Promise<SyncResponse> {
   const now = Date.now();
-  const articleIds = validArticleIds(options.allowArchive);
   const articlesBySeries = seriesArticleIds();
+  const articleIds = validArticleIds(articlesBySeries, options.allowArchive);
   const articleSeries = new Map<string, SeriesId>();
-  for (const seriesId of ["ai", "boun"] as const) {
+  for (const seriesId of SERIES_IDS) {
     for (const articleId of articlesBySeries[seriesId]) articleSeries.set(articleId, seriesId);
   }
   const errors: SyncOperationError[] = [];

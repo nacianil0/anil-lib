@@ -3,6 +3,7 @@ import type { NeonQueryFunction } from "@neondatabase/serverless";
 import type { ReaderUser } from "@/lib/auth/user-schema";
 import { loadSeriesCatalog } from "@/lib/content/series";
 import { loadBounCatalog } from "@/lib/content/series-boun";
+import { loadGuvenlikCatalog } from "@/lib/content/series-guvenlik";
 import {
   RESET_DEVICE_ID,
   resetReadingProgress,
@@ -71,6 +72,21 @@ describe("resetSeriesReadingProgress", () => {
     expect(calls[1].params).toEqual(["owner", "boun", OWNER_ID]);
     expect(calls[2].params).toEqual(["owner", articleIds]);
     expect(result.reset.articleIds).toEqual(articleIds);
+  });
+
+  it("uses the Güven Sınırı catalog and never another series' articles", async () => {
+    const articleIds = loadGuvenlikCatalog().articles.map((article) => article.articleId);
+    const others = new Set([
+      ...loadSeriesCatalog().articles.map((article) => article.articleId),
+      ...loadBounCatalog().articles.map((article) => article.articleId),
+    ]);
+    const result = await resetSeriesReadingProgress(sql, reader, "guvenlik");
+
+    expect(articleIds.length).toBeGreaterThan(0);
+    expect(calls[1].params).toEqual([reader.workspaceId, "guvenlik", READER_ID]);
+    expect(calls[2].params).toEqual([reader.workspaceId, articleIds]);
+    expect(result.reset).toMatchObject({ seriesId: "guvenlik", articleIds });
+    expect(articleIds.some((id) => others.has(id))).toBe(false);
   });
 
   it("rejects anonymous readers and invalid series before issuing a query", async () => {

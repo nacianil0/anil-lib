@@ -165,7 +165,11 @@ export const readingSeriesResets = pgTable(
   },
   (table) => [
     primaryKey({ columns: [table.workspaceId, table.seriesId] }),
-    check("reading_series_resets_series_check", sql`${table.seriesId} IN ('ai', 'boun')`),
+    // Widened by drizzle/0005; must list every id in SERIES_IDS (src/lib/reader-data/series-reset.ts).
+    check(
+      "reading_series_resets_series_check",
+      sql`${table.seriesId} IN ('ai', 'boun', 'guvenlik')`,
+    ),
   ],
 );
 

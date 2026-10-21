@@ -11,6 +11,12 @@ function catalog(folder: string): Article[] {
 }
 const ai = catalog("series");
 const boun = catalog("series-boun");
+const guvenlik = catalog("series-guvenlik");
+const SERIES = {
+  ai: { articles: ai, basePath: "/seri" },
+  boun: { articles: boun, basePath: "/boun" },
+  guvenlik: { articles: guvenlik, basePath: "/guvenlik" },
+} as const;
 const key = "anil-lib:reader-data:v2:owner";
 const device = "11111111-1111-4111-8111-111111111111";
 const highlightId = "22222222-2222-4222-8222-222222222222";
@@ -81,7 +87,14 @@ async function prepare(page: Page) {
       device,
       highlightId,
       at,
-      ids: [ai[0].articleId, ai[1].articleId, boun[0].articleId, boun[1].articleId],
+      ids: [
+        ai[0].articleId,
+        ai[1].articleId,
+        boun[0].articleId,
+        boun[1].articleId,
+        guvenlik[0].articleId,
+        guvenlik[1].articleId,
+      ],
     },
   );
   await page.goto("/login?next=%2Fseri");
@@ -92,14 +105,16 @@ async function prepare(page: Page) {
 }
 
 for (const mobile of [false, true]) {
-  for (const seriesId of ["ai", "boun"] as const) {
+  for (const seriesId of ["ai", "boun", "guvenlik"] as const) {
     test(`${seriesId} scoped reset with confirmation (${mobile ? "mobile" : "desktop"})`, async ({
       page,
     }, testInfo) => {
       if (mobile) await page.setViewportSize({ width: 390, height: 844 });
-      const selected = seriesId === "ai" ? ai : boun;
-      const other = seriesId === "ai" ? boun : ai;
-      const basePath = seriesId === "ai" ? "/seri" : "/boun";
+      const selected = SERIES[seriesId].articles;
+      const basePath = SERIES[seriesId].basePath;
+      const others = (Object.keys(SERIES) as Array<keyof typeof SERIES>)
+        .filter((id) => id !== seriesId)
+        .map((id) => SERIES[id].articles);
       let resetCalls = 0;
       let seriesResets: Array<{ seriesId: string; resetVersion: number; articleIds: string[] }> =
         [];
@@ -131,7 +146,7 @@ for (const mobile of [false, true]) {
         await route.fulfill({ json: { reset, progress: 2 } });
       });
       await prepare(page);
-      if (seriesId === "boun") await page.goto(basePath);
+      if (seriesId !== "ai") await page.goto(basePath);
       const arm = page.getByRole("button", { name: "İlerlemeyi sıfırla", exact: true });
       await expect(arm).toBeEnabled();
       await arm.dblclick();
@@ -162,8 +177,10 @@ for (const mobile of [false, true]) {
       );
       const data = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), key);
       expect(selected.every((article) => !data.progress[article.articleId])).toBe(true);
-      expect(data.progress[other[0].articleId].completed).toBe(true);
-      expect(data.progress[other[1].articleId].scrollRatio).toBe(0.4);
+      for (const other of others) {
+        expect(data.progress[other[0].articleId].completed).toBe(true);
+        expect(data.progress[other[1].articleId].scrollRatio).toBe(0.4);
+      }
       expect(data.savedPlaces[ai[0].articleId].deletedAt).toBeNull();
       expect(data.highlights[highlightId].exactText).toBe("korunan vurgu");
       await page.screenshot({ path: testInfo.outputPath("success.png") });
@@ -198,6 +215,7 @@ test("failed series reset leaves existing reading intact", async ({ page }) => {
   const data = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), key);
   expect(data.progress[ai[0].articleId].completed).toBe(true);
   expect(data.progress[boun[0].articleId].completed).toBe(true);
+  expect(data.progress[guvenlik[0].articleId].completed).toBe(true);
   await expect(
     page.getByRole("button", { name: "Evet, bu seriyi sıfırla", exact: true }),
   ).toBeEnabled();

@@ -14,6 +14,7 @@
  * Kullanım: node tools/series/entegre-batch.cjs                  (kuru çalışma, denetim)
  *           node tools/series/entegre-batch.cjs --write          (yaz)
  *           node tools/series/entegre-batch.cjs --series=boun    (BOUN serisi)
+ *           node tools/series/entegre-batch.cjs --series=guvenlik (Güven Sınırı serisi)
  *
  * Katalog henüz yoksa (bir serinin ilk üretim run'ı) boş bir katalogdan başlanır:
  * ilk set reading_order 1'den ve classification_batch 0'dan devam etmek zorundadır.
@@ -25,7 +26,7 @@ const path = require("node:path");
 // ayrıştırıcı YAML'ın kaçırılmış tırnaklarını çözemez ve katalog başlığına ters bölü sızdırır.
 const matter = require("gray-matter");
 
-const SERIES_DIRS = { ai: "series", boun: "series-boun" };
+const SERIES_DIRS = { ai: "series", boun: "series-boun", guvenlik: "series-guvenlik" };
 
 const seriesArg = process.argv.find((a) => a.startsWith("--series="));
 const seriesKey = seriesArg ? seriesArg.slice("--series=".length) : "ai";

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { clampRatio } from "@/lib/progress/schema";
-import { seriesResetSchema } from "./series-reset";
+import { seriesResetListSchema } from "./series-reset";
 
 const isoDate = z.string().datetime({ offset: true });
 const nullableIsoDate = isoDate.nullable().default(null);
@@ -126,7 +126,7 @@ export const readerDataSchema = z.object({
   cursor: z.number().int().nonnegative().default(0),
   /** The last server-side progress reset this device has applied; 0 when none. */
   resetVersion: z.number().int().nonnegative().default(0),
-  seriesResets: z.array(seriesResetSchema).max(2).default([]),
+  seriesResets: seriesResetListSchema.default([]),
   currentArticleId: z.string().nullable().default(null),
   progress: z.record(z.string(), progressRecordSchema).default({}),
   savedPlaces: z.record(z.string(), savedPlaceRecordSchema).default({}),

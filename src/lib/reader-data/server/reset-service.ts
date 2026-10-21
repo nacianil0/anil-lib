@@ -2,8 +2,7 @@ import "server-only";
 
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import type { ReaderUser } from "@/lib/auth/user-schema";
-import { loadSeriesCatalog } from "@/lib/content/series";
-import { loadBounCatalog } from "@/lib/content/series-boun";
+import { seriesCatalog } from "@/lib/reader-data/server/series-catalogs";
 import { seriesIdSchema, type SeriesId, type SeriesReset } from "@/lib/reader-data/series-reset";
 
 type SqlClient = NeonQueryFunction<false, false>;
@@ -51,7 +50,7 @@ export async function resetSeriesReadingProgress(
 ): Promise<SeriesResetResult> {
   if (!actor) throw new SeriesResetNotAllowedError();
   const validatedSeriesId = seriesIdSchema.parse(seriesId);
-  const catalog = validatedSeriesId === "ai" ? loadSeriesCatalog() : loadBounCatalog();
+  const catalog = seriesCatalog(validatedSeriesId);
   const articleIds = catalog.articles.map((article) => article.articleId);
   const resetBy = UUID_PATTERN.test(actor.id) ? actor.id : null;
   const results = (await sql.transaction([

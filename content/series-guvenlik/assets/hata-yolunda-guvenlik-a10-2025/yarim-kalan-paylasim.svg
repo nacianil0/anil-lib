@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Üstte ayrı adımlar: paylaşım commit edildikten sonra denetim kaydı yazımı hata verir ve son durumda paylaşım var, kayıt yok. Altta tek işlem: paylaşım ve outbox satırı birlikte commit edilir, yayımlayıcı olayı denetim deposuna taşır; hata olursa geri alınır ve ikisi de yoktur.">
+  <defs>
+    <marker id="o2-ok-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="28" font-size="13" font-weight="bold" fill="var(--text)">ayrı adımlar: kırılgan sıra</text>
+  <rect x="16" y="40" width="200" height="56" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="28" y="62" font-size="13" fill="var(--text)">paylaşım yazılır</text>
+  <text x="28" y="82" font-size="13" fill="var(--text-muted)">commit edildi</text>
+  <line x1="216" y1="68" x2="248" y2="68" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#o2-ok-b)" />
+  <rect x="252" y="40" width="200" height="56" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="264" y="62" font-size="13" fill="var(--text)">denetim kaydı yazılır</text>
+  <text x="264" y="82" font-size="13" fill="var(--text-muted)">hata: kayıt servisi düştü</text>
+  <line x1="452" y1="68" x2="484" y2="68" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#o2-ok-b)" />
+  <rect x="488" y="40" width="216" height="56" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="500" y="62" font-size="13" font-weight="bold" fill="var(--text)">son durum</text>
+  <text x="500" y="82" font-size="13" fill="var(--text)">paylaşım var, kayıt yok</text>
+
+  <line x1="16" y1="120" x2="704" y2="120" stroke="var(--border)" />
+
+  <text x="16" y="148" font-size="13" font-weight="bold" fill="var(--text)">tek işlem: paylaşım ve outbox birlikte</text>
+  <rect x="16" y="160" width="200" height="56" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="28" y="182" font-size="13" fill="var(--text)">işlem başlar:</text>
+  <text x="28" y="202" font-size="13" fill="var(--text-muted)">paylaşım + outbox satırı</text>
+  <line x1="216" y1="188" x2="248" y2="188" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#o2-ok-b)" />
+  <rect x="252" y="160" width="200" height="56" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="264" y="182" font-size="13" fill="var(--text)">commit</text>
+  <text x="264" y="202" font-size="13" fill="var(--text-muted)">ikisi birlikte kalıcı</text>
+  <line x1="452" y1="188" x2="484" y2="188" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#o2-ok-b)" />
+  <rect x="488" y="160" width="216" height="56" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="500" y="182" font-size="13" font-weight="bold" fill="var(--text)">yayımlayıcı</text>
+  <text x="500" y="202" font-size="13" fill="var(--text)">outbox → denetim deposu</text>
+
+  <line x1="116" y1="216" x2="116" y2="244" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#o2-ok-b)" />
+  <rect x="16" y="248" width="200" height="56" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="28" y="270" font-size="13" fill="var(--text)">hata olursa geri alma:</text>
+  <text x="28" y="290" font-size="13" font-weight="bold" fill="var(--text)">ikisi de yok</text>
+  <text x="252" y="270" font-size="13" fill="var(--text-muted)">kayıt gecikebilir ama kaybolmaz:</text>
+  <text x="252" y="290" font-size="13" fill="var(--text-muted)">teslim yayımlayıcının yeniden denemesiyle</text>
+</svg>

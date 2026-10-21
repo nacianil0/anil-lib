@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-19T09:00:17.307Z
-> Files: 789 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T09:38:21.001Z
+> Files: 847 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -24,7 +24,7 @@
 
 ## .claude/
 
-- `launch.json` (~56 tok)
+- `launch.json` (~161 tok)
 
 ## .claude/rules/
 
@@ -38,6 +38,27 @@
 - `src/components/series/series-progress-reset.tsx` — Manual confirmation/cancel UI with focus, rapid-click guard and status messages. (~1000 tok)
 - `src/lib/reader-data/series-reset.ts` — Validated series reset request/response and per-article reset epoch. (~350 tok)
 - `tests/e2e/series-reset.spec.ts` — Local desktop/mobile confirmation, preservation and failure checks for both series. (~2200 tok)
+
+## 2026-10-21 — Güven Sınırı serisi (üçüncü seri) giriş haritası
+
+- `docs/seri-guvenlik/ARASTIRMA.md` — Kaynak kaydı (sürüm, erişim), Top 10:2025 tutarsızlıkları, formül yeniden üretimi, yazı başına kanıt, borçlar; §7–§11 Git/GitHub hattı: kaynak kaydı, doğrulanan ayrımlar, yerel Git deneyi, plan koşulları ve tutarsızlıklar, borçlar. (~9100 tok)
+- `docs/seri-guvenlik/HANDOFF.md` — Güncel cursor, son run, kanıt, açık borçlar, sonraki güvenli giriş. (~2500 tok)
+- `docs/seri-guvenlik/SOZLESME.md` — Serinin kalıcı kuralları (v1.1): kimlik ve iki eksen (güvenlik + kaynak kod yönetimi), tavan 25 ve istisnası, kapılar, editoryal/Git-GitHub ek kuralları, pedagojik/kaynak/SVG (commit grafiği) kuralları, ritim ve sonlanma, state sahipliği. (~7400 tok)
+- `docs/seri-guvenlik/TRIGGER.md` — Üretim girişi; `BATCH=2+1`, sıradaki en fazla iki yazı + yalnızca state olan +1. (~600 tok)
+- `docs/seri-guvenlik/YOL-HARITASI.md` — 25 yazılık plan (16 güvenlik + 9 Git/GitHub, 10 faz; 2026-10-21 revizyonu), eski/yeni plan tablosu, yazı başına tasarım kaydı, yönetici vakası eşlemesi, terim (planlanan Git terimleri dahil)/geri çağırma/ileri işaret defterleri, karar kaydı #1–#22. (~16600 tok)
+
+## 2026-10-21 — OWASP serisi bağlam aktarımı için keşfedilen kaynaklar
+
+- `.agents/skills/handoff/SKILL.md` — Bu projeye ait bağlam aktarımı becerisi. (~500 tok)
+- `docs/seri-boun/SOZLESME.md` — BOUN serisinin normatif editoryal, pedagojik, kaynak ve üretim sözleşmesi. (~9000 tok)
+- `package.json` — Uygulama bağımlılıkları ve doğrulama/üretim komutları. (~1000 tok)
+- `src/lib/content/schema.ts` — Makale ve seri bazlı frontmatter/katalog doğrulama şemaları. (~2400 tok)
+- `src/lib/content/series-boun.ts` — BOUN serisinin ortak fabrikayı kullanan yapılandırması. (~400 tok)
+- `src/lib/content/series-content.ts` — Birden çok seri için ortak sunucu içerik fabrikası. (~2500 tok)
+- `src/lib/content/series-roadmap.ts` — Seri yol haritası şeması ve AI/BOUN yükleyicileri. (~1500 tok)
+- `src/lib/content/series.ts` — AI serisinin ortak fabrikayı kullanan yapılandırması. (~400 tok)
+- `tools/series/check-series-svg.cjs` — SVG biçim, tema ve geometri kontrolleri; görsel incelemenin yerine geçmez. (~3000 tok)
+- `tools/series/entegre-batch.cjs` — Frontmatter dosyalarını seri kataloğu ve yol haritasına entegre eder. (~3500 tok)
 
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/03ccb4c3-d4f7-4d0a-86f1-65d9cd447984/scratchpad/
 
@@ -433,6 +454,10 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/56038114-cd40-448d-9567-155d5700d427/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/584e3279-ea3e-4479-a104-d1d51b11b572/scratchpad/
+
+- `git-sandbox.sh` — Yalıtılmış Git davranış denemesi: global/sistem ayarı yok, uzak depo yerel bir bare depo. (~1100 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/5eac0600-2634-4f13-801b-0ca9aaa90b5b/scratchpad/
 
 
@@ -662,8 +687,10 @@
 - `boun-batch12-faz-e-konu-makaleleri.md` (~1209 tok)
 - `boun-batch13-seri-tamamlandi.md` (~1378 tok)
 - `boun-batch9-faz-d-govde.md` (~988 tok)
+- `commit-push-main-no-coauthor.md` (~250 tok)
 - `editoryal-yenileme-2026-09-25.md` (~730 tok)
-- `MEMORY.md` — Memory index (~2283 tok)
+- `guvenlik-series-run1-2026-10-21.md` (~610 tok)
+- `MEMORY.md` — Memory index (~2381 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `okuma-sifirlama-2026-09-25.md` (~542 tok)
 - `series-bakim-run1-2026-09-26.md` (~612 tok)
@@ -881,6 +908,29 @@
 ## artifacts/editoryal-2026-09-25/
 
 - `figures.render.ts` — Geometry of one inline figure: text boxes against the viewBox and against each other. (~1403 tok)
+
+## artifacts/git-revizyon/
+
+- `body.py` — Print the article body of a saved GitHub Docs text rendering. (~255 tok)
+- `consistency.cjs` — Müfredat revizyonu çapraz tutarlılık denetimi (çalışma alanı betiği; depoya girmez). (~1222 tok)
+- `fetch_many.py` — Fetch a list of URLs and save a readable text rendering of each page. (~1059 tok)
+- `urls-1.txt` — Git: Pro Git (2. baskı, git-scm.com) (~535 tok)
+- `urls-2.txt` — GitHub: tarih ve iş akışı (~1201 tok)
+
+## artifacts/git-revizyon/render/
+
+- `render.config.ts` — Güven Sınırı müfredat revizyonu (2026-10-21): landing, ana sayfa ve yazı sayfasının gerçek render de (~336 tok)
+- `revizyon.render.ts` — Güven Sınırı müfredat revizyonu (2026-10-21): yeni ad, 25 yazılık / 10 fazlı yol haritası ve öteki (~2917 tok)
+
+## artifacts/owasp-run1/
+
+- `count-words.cjs` — Birebir kopya: tools/series/check-series-content.cjs içindeki stripFrontmatter, (~367 tok)
+- `fetch.py` — Fetch a URL and save both raw HTML and a readable text rendering. (~830 tok)
+- `t25_scores.py` — Recompute OWASP Top 10:2025 risk scores from the published score tables. (~622 tok)
+
+## artifacts/owasp-run1/render/
+
+- `shoot.mjs` — Güven Sınırı serisi render doğrulaması (run 1). Gate'siz dev sunucusuna karşı çalışır. (~2147 tok)
 
 ## artifacts/ux-render/
 
@@ -1129,6 +1179,25 @@
 
 ## content/series-boun/assets/yinelemeler-ve-master-teoremi/
 
+
+## content/series-guvenlik/
+
+- `roadmap.json` (~1682 tok)
+
+## content/series-guvenlik/articles/owasp-and-verification/
+
+- `hata-yolunda-guvenlik-a10-2025.md` — Yetki servisi cevap vermediğinde (~7574 tok)
+- `owasp-top-10-2025-i-okumak.md` — "Sıfır bulgu" ne söyler? (~6490 tok)
+
+## content/series-guvenlik/assets/hata-yolunda-guvenlik-a10-2025/
+
+- `uc-cevap-iki-politika.svg` (~1128 tok)
+- `yarim-kalan-paylasim.svg` (~1012 tok)
+
+## content/series-guvenlik/assets/owasp-top-10-2025-i-okumak/
+
+- `bir-siranin-girdileri.svg` (~1163 tok)
+- `sifir-bulgu-nereye-kadar.svg` (~635 tok)
 
 ## content/series/
 
@@ -1609,6 +1678,14 @@
 - `TRIGGER.md` — "Mülakat Aynası: Boğaziçi CmpE" — Üretim Trigger'ı (~254 tok)
 - `YOL-HARITASI.md` — "Mülakat Aynası: Boğaziçi CmpE" — Yol Haritası (~30812 tok)
 
+## docs/seri-guvenlik/
+
+- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~9120 tok)
+- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~2491 tok)
+- `SOZLESME.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Seri Sözleşmesi (~7438 tok)
+- `TRIGGER.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Üretim Trigger'ı (~483 tok)
+- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~16597 tok)
+
 ## docs/seri/
 
 - `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~13806 tok)
@@ -1626,6 +1703,7 @@
 ## drizzle/
 
 - `0003_reading_resets.sql` — reading_resets(workspace_id PK, reset_version seq, reset_at, reset_by FK users); applied by scripts/migrate.mjs in vercel-build. (~120 tok)
+- `0005_guvenlik_series_reset.sql` — Seri sıfırlama CHECK'ini 'guvenlik'i içerecek biçimde genişletir; tek atomik `ALTER TABLE` (DROP + ADD). Canlıya uygulanmadı; `vercel-build` deploy'da uygular. (~230 tok)
 
 ## inbox/
 
@@ -1643,7 +1721,7 @@
 
 - `globals.css` — Styles: 7 rules, 43 vars (~5692 tok)
 - `icon.svg` — Favicon: bordo karo + kâğıt yer imi; `prefers-color-scheme: dark` ile karo `#b5435a` (~81 tok)
-- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~485 tok)
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~606 tok)
 
 ## src/app/api/reader-sync/
 
@@ -1656,6 +1734,14 @@
 ## src/app/boun/[slug]/
 
 - `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~556 tok)
+
+## src/app/guvenlik/
+
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~440 tok)
+
+## src/app/guvenlik/[slug]/
+
+- `page.tsx` — Renders per request: the page resolves the signed-in account and scopes reader (~580 tok)
 
 ## src/app/login/
 
@@ -1713,6 +1799,7 @@
 
 - `phase-progress.tsx` — Phase-segmented series progress bar (segment width = planned chapters, fill = completed, hairline marker = continue target); aria-hidden, numbers written beside it. Used by home and series landing. (~566 tok)
 - `series-landing.tsx` — Rota tabanı, ör. "/seri" veya "/boun". (~3908 tok)
+- `series-progress-reset.tsx` — Short series name used inside the confirmation sentence ("… serisindeki"). (~1266 tok)
 
 ## src/lib/
 
@@ -1726,16 +1813,20 @@
 ## src/lib/content/
 
 - `content-hygiene.test.ts` — Scans every content/**/*.md for leftover ChatGPT citation markers (U+E200–E202, `turn12search3`). (~330 tok)
-- `labels.ts` — Turkish display labels for the controlled categories of every series. (~2019 tok)
+- `labels.ts` — Turkish display labels for the controlled categories of every series. (~2167 tok)
 - `rehype-inline-svg.test.ts` — assetsDir: transform, firstElement (~1773 tok)
 - `rehype-inline-svg.ts` — Rehype adımı: `assets/*.svg` kaynaklı Markdown imgelerini tema-uyumlu inline (~1942 tok)
-- `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~957 tok)
+- `schema.ts` — Controlled category vocabulary of the main library and the AI series, (~2292 tok)
+- `series-assets.test.ts` — Yayındaki her seri diyagramını gerçek render hattından geçirir. (~1000 tok)
+- `series-guvenlik-roadmap.test.ts` — Güven Sınırı roadmap bütünlüğü: plan tavanı (25), roadmap başlığı = GUVENLIK_TITLE/SUBTITLE, yayımlananlar sıranın başında, katalog ↔ roadmap sıra/başlık/slug, benzersiz başlıklar. (~545 tok)
+- `series-guvenlik.ts` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" serisinin içerik sözleşmesi. Öteki (~959 tok)
 - `series-progress.test.ts` — PhaseOutline: article, lookup (~1182 tok)
 - `series-progress.ts` — Client-safe series progress model: outlinePhases (roadmap → PhaseOutline), groupByPhase, nextStep (resume most recent / first unfinished), summarizePhases, phaseForOrder. (~1434 tok)
 
 ## src/lib/db/
 
-- `schema.ts` — Reader accounts. `workspace_id` is the tenant key every reader table is already (~1960 tok)
+- `schema.ts` — Reader accounts. `workspace_id` is the tenant key every reader table is already (~2159 tok)
+- `series-check.test.ts` — Kayma bekçisi: `reading_series_resets_series_check`'in Drizzle şemasındaki IN listesi ve kısıtı tanımlayan en yeni migration'ın listesi `SERIES_IDS` ile birebir aynı olmalı. (~560 tok)
 
 ## src/lib/preferences/
 
@@ -1748,17 +1839,20 @@
 - `merge.test.ts` — ProgressRecord: progress, readerWithHistory, response (~2155 tok)
 - `merge.ts` — `adoptReset`: the request came from a device with no progress from before (see (~740 tok)
 - `schema.test.ts` — DEVICE: legacyProgress (~1521 tok)
-- `schema.ts` — A resolvable reading position inside an article. (~1759 tok)
-- `sync-contract.ts` — `resetVersion` is the last progress reset this device has applied (0 = none). A (~510 tok)
+- `schema.ts` — A resolvable reading position inside an article. (~1748 tok)
+- `series-reset.test.ts` — SeriesReset: progress, blob (~1299 tok)
+- `series-reset.ts` — Every series whose reading can be reset on its own. Each schema below is derived (~712 tok)
+- `sync-contract.ts` — `resetVersion` is the last progress reset this device has applied (0 = none). A (~553 tok)
 - `use-reader-data.test.tsx` — Provider + mocked sync: reset clears pre-reset device and re-records open article; fresh browser adopts (resetVersion null). (~1409 tok)
 - `use-reader-data.tsx` — The account's latest progress reset this device has applied; rises when one lands. (~5935 tok)
 
 ## src/lib/reader-data/server/
 
-- `reset-service.test.ts` — Declares Call (~1287 tok)
-- `reset-service.ts` — resetReadingProgress: owner-only; one txn = LOCK reading_progress, upsert reading_resets(nextval), DELETE progress, optional tombstones. (~1339 tok)
-- `sync-service.test.ts` — Call: progressWrite, selectOf (~1726 tok)
-- `sync-service.ts` — AI serisi ∪ BOUN serisi, owner workspace'inde ayrıca arşiv; bilinmeyen id reddedilir. (~4044 tok)
+- `reset-service.test.ts` — Declares Call (~2233 tok)
+- `reset-service.ts` — Written as the device of the tombstones a reset leaves on saved places and (~1989 tok)
+- `series-catalogs.ts` — The catalog behind each resettable series. A `Record` over every id, so a series added to (~339 tok)
+- `sync-service.test.ts` — Call: progressWrite, selectOf (~3499 tok)
+- `sync-service.ts` — Bütün serilerin yazıları (SERIES_IDS), owner workspace'inde ayrıca arşiv; bilinmeyen id (~4589 tok)
 
 ## src/lib/reader-layout/
 
@@ -1774,6 +1868,8 @@
 
 ## src/lib/stats/server/
 
+- `user-stats.test.ts` — OWNER_ID: matchesWorkspace (~2011 tok)
+- `user-stats.ts` — Raised when a non-owner reaches this module. It is thrown *before* any query runs, (~2026 tok)
 
 ## src/test/
 
@@ -1783,14 +1879,17 @@
 
 ## tests/e2e/
 
+- `auth.spec.ts` — API routes: GET (2 endpoints) (~2431 tok)
 - `reader-reset.spec.ts` — An owner can reset an account's reading progress (/yonetim). Each device learns it (~1890 tok)
 - `reader-resume.spec.ts` — Toolbar offset + the gap the reader restores with; see `use-reader-layout`. (~4366 tok)
 - `reader.spec.ts` — The chapter links, wherever this viewport puts them. (~8746 tok)
-- `series-reader.spec.ts` — Chapters carrying the widest figures and the widest tables. Both series render (~3165 tok)
+- `series-reader.spec.ts` — Chapters carrying the widest figures and the widest tables. Every series renders (~3222 tok)
+- `series-reset.spec.ts` — Page: catalog, prepare (~2382 tok)
 - `series-revision.spec.ts` — Editorial revision notice (docs/seri/SOZLESME.md §12). The notice is read-only (~1890 tok)
 
 ## tools/
 
+- `README.md` — Project documentation (~1986 tok)
 
 ## tools/dev/
 
@@ -1803,4 +1902,6 @@
 
 ## tools/series/
 
-- `check-series-content.cjs` — Read-only content/catalog/roadmap validation gate; selects AI or BOUN with `--series`. (~5000 tok)
+- `check-series-content.cjs` — Seri makaleleri için sözleşme denetimi (docs/seri/SOZLESME.md §2, §3, §5, §6). (~3786 tok)
+- `entegre-batch.cjs` — Seri batch entegrasyonu (batch-bağımsız): katalogda henüz bulunmayan seri makalelerinin (~2109 tok)
+- `sync-series-hashes.cjs` — Seri makalelerinin content_hash değerlerini doğrular ve isteğe bağlı olarak yazar. (~2078 tok)

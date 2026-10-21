@@ -6630,3 +6630,228 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 12:00 | Edited src/lib/content/content-hygiene.test.ts | inline fix | ~26 |
 | 12:06 | Arşivdeki ChatGPT atıf işaretleri temizlendi (415 cite + 2 navlist, 7 makale), 7 content_hash güncellendi, content-hygiene.test.ts eklendi; vitest 520, typecheck, lint, Playwright render (7 sayfa + desktop/mobil) temiz | content/articles/**, content/catalog.json, src/lib/content/content-hygiene.test.ts | ok | ~6000 |
 | 12:02 | Session end: 7 writes across 4 files (archash.cjs, strip-cite.cjs, content-hygiene.test.ts, zz-tmp-citation-check.spec.ts) | 3 reads | ~1979 tok |
+| 12:02 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/commit-push-main-no-coauthor.md | — | ~236 |
+| 12:02 | Session end: 8 writes across 5 files (archash.cjs, strip-cite.cjs, content-hygiene.test.ts, zz-tmp-citation-check.spec.ts, commit-push-main-no-coauthor.md) | 3 reads | ~2231 tok |
+
+| 2026-10-21 09:56 | Anıl Lib için kısa proje tanıtımı hazırlandı; kapsam, iki öğrenme serisi ve okuyucu özellikleri mevcut bağlam notlarından derlendi. | .wolf/OPENWOLF.md, .wolf/anatomy.md, .wolf/cerebrum.md | Bilgilendirme; uygulama kodu değiştirilmedi. | ~3000 |
+
+| 2026-10-21 10:16 | OWASP ile başlayan üçüncü seri promptu için aktarılabilir bellek hazırlandı; iki seri sözleşmesi/state, seçilmiş hata kayıtları ve güncel teknik entegrasyon incelendi. | Temp/anil-lib-owasp-prompt-memory-2026-10-21.md, .wolf/anatomy.md, .wolf/cerebrum.md, .wolf/buglog.json | 31 yerel kaynak bağlantısı ve konu kapsamı doğrulandı; OWASP resmî sürüm kaynakları açıldı. Yeni seri/Claude görevi oluşturulmadı; uygulama kodu değişmedi. | ~20000 |
+
+## Session: 2026-10-21 10:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:32 | Created artifacts/owasp-run1/fetch.py | — | ~830 |
+| 10:47 | Created docs/seri-guvenlik/SOZLESME.md | — | ~5584 |
+| 10:50 | Created docs/seri-guvenlik/YOL-HARITASI.md | — | ~6423 |
+| 10:51 | Created content/series-guvenlik/roadmap.json | — | ~1058 |
+| 10:51 | Created artifacts/owasp-run1/t25_scores.py | — | ~622 |
+| 10:53 | Created docs/seri-guvenlik/ARASTIRMA.md | — | ~3687 |
+| 10:53 | Created docs/seri-guvenlik/TRIGGER.md | — | ~431 |
+| 10:53 | Created docs/seri-guvenlik/HANDOFF.md | — | ~270 |
+| 10:54 | Edited src/lib/content/schema.ts | expanded (+16 lines) | ~352 |
+| 10:54 | Edited src/lib/content/schema.ts | 2→6 lines | ~90 |
+| 10:54 | Edited src/lib/content/labels.ts | expanded (+7 lines) | ~131 |
+| 10:54 | Created src/lib/content/series-guvenlik.ts | — | ~884 |
+| 10:54 | Created src/app/guvenlik/page.tsx | — | ~412 |
+| 10:54 | Created src/app/guvenlik/[slug]/page.tsx | — | ~580 |
+| 10:54 | Edited src/app/page.tsx | expanded (+7 lines) | ~75 |
+| 10:54 | Edited src/app/page.tsx | expanded (+8 lines) | ~108 |
+| 10:55 | Created src/lib/reader-data/series-reset.ts | — | ~712 |
+| 10:55 | Edited src/lib/reader-data/schema.ts | inline fix | ~16 |
+| 10:55 | Edited src/lib/reader-data/schema.ts | inline fix | ~15 |
+| 10:55 | Edited src/lib/reader-data/sync-contract.ts | inline fix | ~24 |
+| 10:55 | Edited src/lib/reader-data/sync-contract.ts | inline fix | ~14 |
+| 10:55 | Created src/lib/reader-data/server/series-catalogs.ts | — | ~339 |
+| 10:55 | Edited src/lib/reader-data/server/sync-service.ts | 4→2 lines | ~18 |
+| 10:55 | Edited src/lib/reader-data/server/sync-service.ts | added 1 import(s) | ~267 |
+| 10:55 | Edited src/lib/reader-data/server/sync-service.ts | modified for() | ~70 |
+| 10:56 | Edited src/lib/reader-data/server/reset-service.ts | 4→3 lines | ~66 |
+| 10:56 | Edited src/lib/reader-data/server/reset-service.ts | inline fix | ~15 |
+| 10:56 | Edited src/lib/db/schema.ts | 1→5 lines | ~65 |
+| 10:56 | Created drizzle/0005_guvenlik_series_reset.sql | — | ~176 |
+| 10:56 | Edited src/components/series/series-progress-reset.tsx | modified SeriesProgressReset() | ~96 |
+| 10:56 | Edited src/components/series/series-progress-reset.tsx | inline fix | ~12 |
+| 10:56 | Edited src/components/series/series-progress-reset.tsx | 2→2 lines | ~53 |
+| 10:56 | Edited src/lib/stats/server/user-stats.ts | 1→6 lines | ~60 |
+| 10:56 | Edited src/lib/stats/server/user-stats.ts | inline fix | ~25 |
+| 10:56 | Edited src/lib/stats/server/user-stats.ts | expanded (+10 lines) | ~127 |
+| 10:56 | Edited tools/series/check-series-content.cjs | 4→8 lines | ~127 |
+| 10:56 | Edited tools/series/check-series-content.cjs | modified stripFencedCode() | ~249 |
+| 10:57 | Edited tools/series/check-series-content.cjs | modified stripFencedCode() | ~70 |
+| 10:57 | Edited tools/series/check-series-content.cjs | inline fix | ~27 |
+| 10:57 | Edited tools/series/check-series-content.cjs | inline fix | ~11 |
+| 10:57 | Edited tools/series/check-series-content.cjs | added 5 condition(s) | ~210 |
+| 10:57 | Edited tools/series/entegre-batch.cjs | 1→2 lines | ~45 |
+| 10:57 | Edited tools/series/entegre-batch.cjs | inline fix | ~24 |
+| 10:57 | Edited tools/series/sync-series-hashes.cjs | 1→2 lines | ~49 |
+| 10:57 | Edited tools/series/sync-series-hashes.cjs | inline fix | ~24 |
+| 10:57 | Created src/lib/reader-data/series-reset.test.ts | — | ~1283 |
+| 10:57 | Edited src/lib/reader-data/server/reset-service.test.ts | added 1 import(s) | ~40 |
+| 10:58 | Edited src/lib/reader-data/server/reset-service.test.ts | expanded (+15 lines) | ~263 |
+| 10:58 | Edited src/lib/reader-data/server/sync-service.test.ts | added 1 import(s) | ~52 |
+| 10:58 | Edited src/lib/reader-data/server/sync-service.test.ts | added optional chaining | ~436 |
+| 10:58 | Edited src/lib/content/series-assets.test.ts | 7→8 lines | ~132 |
+| 10:58 | Edited src/lib/reader-data/series-reset.test.ts | 5→5 lines | ~78 |
+| 10:58 | Edited src/lib/reader-data/series-reset.test.ts | 2→3 lines | ~21 |
+| 10:58 | Edited tests/e2e/series-reset.spec.ts | expanded (+6 lines) | ~83 |
+| 10:58 | Edited tests/e2e/series-reset.spec.ts | expanded (+7 lines) | ~54 |
+| 10:58 | Edited tests/e2e/series-reset.spec.ts | modified for() | ~151 |
+| 10:58 | Edited tests/e2e/series-reset.spec.ts | 2→2 lines | ~24 |
+| 10:58 | Edited tests/e2e/series-reset.spec.ts | modified for() | ~80 |
+| 10:58 | Edited tests/e2e/series-reset.spec.ts | 3→4 lines | ~61 |
+| 10:59 | Edited tests/e2e/series-reader.spec.ts | 10→13 lines | ~154 |
+| 11:08 | Created content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | — | ~6765 |
+| 11:09 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~27 |
+| 11:09 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~42 |
+| 11:09 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | "deki hizmet reddi kategor" → "de de liste dışında kalan" | ~98 |
+| 11:09 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | "u kodlama ya da test stan" → "u kodlama ya da test stan" | ~50 |
+| 11:10 | Created content/series-guvenlik/assets/owasp-top-10-2025-i-okumak/bir-siranin-girdileri.svg | — | ~1163 |
+| 11:10 | Created content/series-guvenlik/assets/owasp-top-10-2025-i-okumak/sifir-bulgu-nereye-kadar.svg | — | ~635 |
+| 11:10 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~247 |
+| 11:10 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | "lerdir ve alt kenarında t" → "ler; alt kenarında test e" | ~190 |
+| 11:11 | Created artifacts/owasp-run1/count-words.cjs | — | ~367 |
+| 11:11 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~51 |
+| 11:15 | Created content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | — | ~7911 |
+| 11:16 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~52 |
+| 11:16 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | "sıfır bulgu" → "u okuduğumuz yazıdaki " | ~34 |
+| 11:16 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~34 |
+| 11:16 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~65 |
+| 11:16 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | 1→2 lines | ~84 |
+| 11:16 | Created content/series-guvenlik/assets/hata-yolunda-guvenlik-a10-2025/uc-cevap-iki-politika.svg | — | ~1123 |
+| 11:16 | Created content/series-guvenlik/assets/hata-yolunda-guvenlik-a10-2025/yarim-kalan-paylasim.svg | — | ~1012 |
+| 11:17 | Edited content/series-guvenlik/assets/hata-yolunda-guvenlik-a10-2025/uc-cevap-iki-politika.svg | inline fix | ~26 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~25 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~24 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~90 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | "in kabul denetimi kancala" → "in kabul denetimi kancala" | ~23 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~25 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~16 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~54 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~66 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | "lerine göre gruplayıp her" → "nin Ulusal Açık Veritaban" | ~93 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~107 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~73 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~28 |
+| 11:18 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~31 |
+| 11:19 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~29 |
+| 11:19 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~44 |
+| 11:19 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | "dir (Aralık 2020); siteni" → "dir (Aralık 2020): siteni" | ~53 |
+| 11:19 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~110 |
+| 11:19 | Edited content/series-guvenlik/articles/owasp-and-verification/owasp-top-10-2025-i-okumak.md | inline fix | ~37 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~38 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~36 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~34 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~26 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~68 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~39 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~30 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~42 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~32 |
+| 11:20 | Edited content/series-guvenlik/articles/owasp-and-verification/hata-yolunda-guvenlik-a10-2025.md | inline fix | ~48 |
+| 11:21 | Edited src/lib/stats/server/user-stats.test.ts | expanded (+6 lines) | ~257 |
+| 11:23 | Created artifacts/owasp-run1/render/shoot.mjs | — | ~2133 |
+| 11:23 | Edited artifacts/owasp-run1/render/shoot.mjs | 6→6 lines | ~91 |
+| 11:24 | Edited docs/seri-guvenlik/ARASTIRMA.md | expanded (+6 lines) | ~432 |
+| 11:24 | Edited docs/seri-guvenlik/ARASTIRMA.md | inline fix | ~115 |
+| 11:24 | Edited docs/seri-guvenlik/ARASTIRMA.md | expanded (+13 lines) | ~337 |
+| 11:24 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+10 lines) | ~448 |
+| 11:24 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+10 lines) | ~232 |
+| 11:24 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 3→5 lines | ~62 |
+| 11:24 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 3→5 lines | ~63 |
+| 11:24 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified Kaynaklar() | ~201 |
+| 11:24 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 1→2 lines | ~32 |
+| 11:30 | Created .claude/launch.json | — | ~161 |
+| 11:36 | Edited tests/e2e/auth.spec.ts | modified for() | ~132 |
+| 11:38 | Edited tools/README.md | inline fix | ~27 |
+| 11:38 | Edited tools/README.md | expanded (+19 lines) | ~258 |
+
+## Session: 2026-10-21 11:41
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:44 | Created drizzle/0005_guvenlik_series_reset.sql | — | ~202 |
+| 11:45 | Created src/lib/db/series-check.test.ts | — | ~560 |
+| 11:47 | Edited docs/seri-guvenlik/ARASTIRMA.md | 2→6 lines | ~151 |
+| 11:48 | Created docs/seri-guvenlik/HANDOFF.md | — | ~2403 |
+| 11:48 | Edited docs/seri-guvenlik/HANDOFF.md | 2→2 lines | ~42 |
+| 11:49 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 1→6 lines | ~144 |
+| 11:52 | `+1` çapraz denetim: migration 0005 tek atomik ALTER TABLE, SERIES_IDS↔DB CHECK bekçi testi, ARASTIRMA §5 ASVS dosya kapsamı düzeltildi | drizzle/0005, src/lib/db/series-check.test.ts, docs/seri-guvenlik/ARASTIRMA.md | typecheck 0, vitest 41/817, lint 14 = baseline, auth e2e 17/17, içerik/SVG/hash kapıları üç seride temiz | ~6000 |
+| 11:55 | HANDOFF run 1 sonu state'iyle yeniden yazıldı; YOL-HARITASI #13; buglog bug-811–820; cerebrum (tercih, öğrenilen, Do-Not-Repeat, karar) | docs/seri-guvenlik/{HANDOFF,YOL-HARITASI}.md, .wolf/* | tamamlandı | ~9000 |
+
+### Oturum özeti (2026-10-21) — Güven Sınırı serisi kurulumu ve run 1
+
+- Üçüncü seri "Güven Sınırı: Güvenli Yazılım Mühendisliği" (`/guvenlik`, kimlik `guvenlik`) kuruldu: SOZLESME v1.0, YOL-HARITASI (16 yazı, 7 faz, tavan 20), ARASTIRMA, TRIGGER (`BATCH=2+1`), HANDOFF.
+- Run 1 aynı oturumda yürütüldü: yazı 1 (OWASP Top 10:2025'i okumak) ve 2 (A10:2025 hata yolunda güvenlik) yayında, kohort 0, dört SVG; üçüncü yazıya başlanmadı.
+- Platform geriye uyumlu genişletildi (içerik, rota, ana sayfa, istatistik, sıfırlama/senkron, araç profili, testler); migration 0005 hazır, uygulanmadı. Commit/push/deploy yapılmadı.
+- Sonraki güvenli giriş: TRIGGER → yazı 3–4, kohort 1 (`docs/seri-guvenlik/HANDOFF.md`).
+| 11:52 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run1-2026-10-21.md | — | ~547 |
+| 11:52 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~96 |
+| 11:53 | Session end: 8 writes across 7 files (0005_guvenlik_series_reset.sql, series-check.test.ts, ARASTIRMA.md, HANDOFF.md, YOL-HARITASI.md) | 7 reads | ~23310 tok |
+| 12:01 | Created artifacts/git-revizyon/fetch_many.py | — | ~1059 |
+| 12:01 | Created artifacts/git-revizyon/urls-1.txt | — | ~570 |
+| 12:01 | Created artifacts/git-revizyon/urls-2.txt | — | ~1281 |
+| 12:03 | Created artifacts/git-revizyon/body.py | — | ~255 |
+| 12:06 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/584e3279-ea3e-4479-a104-d1d51b11b572/scratchpad/git-sandbox.sh | — | ~1049 |
+| 12:06 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/584e3279-ea3e-4479-a104-d1d51b11b572/scratchpad/git-sandbox.sh | 2→3 lines | ~65 |
+| 12:06 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/584e3279-ea3e-4479-a104-d1d51b11b572/scratchpad/git-sandbox.sh | "merge exit kodu: $?" → "merge exit kodu: ${PIPEST" | ~21 |
+| 12:06 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/584e3279-ea3e-4479-a104-d1d51b11b572/scratchpad/git-sandbox.sh | "force-with-lease exit: $?" → "force-with-lease exit: ${" | ~24 |
+| 12:06 | Edited C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/584e3279-ea3e-4479-a104-d1d51b11b572/scratchpad/git-sandbox.sh | 2→2 lines | ~69 |
+| 12:16 | Edited docs/seri-guvenlik/SOZLESME.md | "Güven Sınırı: Güvenli Yaz" → "Güven Sınırı: Güvenli Yaz" | ~20 |
+| 12:16 | Edited docs/seri-guvenlik/SOZLESME.md | 1→2 lines | ~32 |
+| 12:16 | Edited docs/seri-guvenlik/SOZLESME.md | expanded (+11 lines) | ~505 |
+| 12:16 | Edited docs/seri-guvenlik/SOZLESME.md | 4→9 lines | ~189 |
+| 12:16 | Edited docs/seri-guvenlik/SOZLESME.md | 4→5 lines | ~117 |
+| 12:16 | Edited docs/seri-guvenlik/SOZLESME.md | 2→4 lines | ~94 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | expanded (+32 lines) | ~787 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | modified retim() | ~330 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | 3→5 lines | ~124 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | expanded (+9 lines) | ~269 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | expanded (+6 lines) | ~203 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | 3→5 lines | ~112 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | 3→7 lines | ~161 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | 2→7 lines | ~130 |
+| 12:17 | Edited docs/seri-guvenlik/SOZLESME.md | modified 21() | ~216 |
+| 12:18 | Edited docs/seri-guvenlik/SOZLESME.md | 2→4 lines | ~101 |
+| 12:22 | Created docs/seri-guvenlik/YOL-HARITASI.md | — | ~17704 |
+| 12:22 | Created content/series-guvenlik/roadmap.json | — | ~1682 |
+| 12:23 | Edited src/lib/content/schema.ts | 4→7 lines | ~58 |
+| 12:23 | Edited src/lib/content/labels.ts | 2→5 lines | ~72 |
+| 12:23 | Edited src/lib/content/series-guvenlik.ts | 9→11 lines | ~248 |
+| 12:23 | Edited src/app/guvenlik/page.tsx | 2→2 lines | ~170 |
+| 12:23 | Created src/lib/content/series-guvenlik-roadmap.test.ts | — | ~545 |
+| 12:24 | Edited docs/seri-guvenlik/ARASTIRMA.md | inline fix | ~25 |
+| 12:24 | Edited docs/seri-guvenlik/ARASTIRMA.md | 9→10 lines | ~198 |
+| 12:25 | Edited docs/seri-guvenlik/ARASTIRMA.md | modified dal() | ~5219 |
+| 12:26 | Edited docs/seri-guvenlik/ARASTIRMA.md | 4→5 lines | ~131 |
+| 12:26 | Edited docs/seri-guvenlik/ARASTIRMA.md | 2→3 lines | ~62 |
+| 12:26 | Edited docs/seri-guvenlik/TRIGGER.md | "Güven Sınırı: Güvenli Yaz" → "Güven Sınırı: Güvenli Yaz" | ~20 |
+| 12:26 | Edited docs/seri-guvenlik/TRIGGER.md | 1→2 lines | ~50 |
+| 12:26 | Edited docs/seri-guvenlik/TRIGGER.md | modified al() | ~124 |
+| 12:27 | Created artifacts/git-revizyon/consistency.cjs | — | ~1200 |
+| 12:27 | Edited artifacts/git-revizyon/consistency.cjs | 1→3 lines | ~57 |
+| 12:30 | Created artifacts/git-revizyon/render/render.config.ts | — | ~336 |
+| 12:31 | Created artifacts/git-revizyon/render/revizyon.render.ts | — | ~2738 |
+| 12:33 | Edited artifacts/git-revizyon/render/revizyon.render.ts | added 1 condition(s) | ~215 |
+| 12:33 | Edited artifacts/git-revizyon/render/revizyon.render.ts | 1→2 lines | ~55 |
+| 12:34 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run1-2026-10-21.md | — | ~619 |
+| 12:34 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | inline fix | ~61 |
+| 12:40 | Güven Sınırı müfredat revizyonu doğrulaması: tutarlılık betiği, entegre-batch kuru, hash/içerik kapıları, typecheck 0, vitest 42/822, lint 14 = taban, build 186 sayfa, render 45 ölçüm 0 sorun | docs/seri-guvenlik/*, content/series-guvenlik/roadmap.json, src/lib/content/{schema,labels,series-guvenlik}.ts, src/app/guvenlik/page.tsx, src/lib/content/series-guvenlik-roadmap.test.ts | geçti | ~20000 |
+
+### Oturum özeti (2026-10-21, ikinci görev) — Güven Sınırı'na Git/GitHub hattı
+
+- Görev: tamamlanmış run 1'in üstüne araştırma temelli müfredat revizyonu; yeni yazı üretilmedi, trigger çalıştırılmadı, gerçek GitHub organizasyonuna dokunulmadı.
+- Araştırma: 70 birincil sayfa metin olarak indirildi (Pro Git, Git başvuru kılavuzu 2.56, GitHub Docs, GitHub CLI, OWASP CI/CD Top 10, SSDF PDF, SemVer, DORA, Driessen); yerel Git 2.53 deneyi `fetch`/`pull`/squash/`--force-with-lease` davranışını doğruladı.
+- Plan: 25 yazı (16 güvenlik + 9 Git/GitHub), 10 faz ↔ 10 kategori; Git hattı 5–13; 1–4 yerinde; sonraki trigger yine 3–4. SOZLESME v1.1, YOL-HARITASI karar #14–#22, ARASTIRMA §7–§11, HANDOFF ve TRIGGER güncellendi; ad "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" (rota/kimlik aynı).
+- Kod: üç kategori + etiket, başlık sabitleri ve landing metni, roadmap bütünlük testi. Yayımlanmış iki yazı ve katalog bayt bayt aynı.
+- E2E `series-reset` + `series-reader` + `auth`: 31/31 geçti. Commit/push/deploy yapılmadı.
+| 12:35 | Created docs/seri-guvenlik/HANDOFF.md | — | ~2472 |
+| 12:36 | Edited docs/seri-guvenlik/HANDOFF.md | "render/report.json" → "/" | ~133 |
+| 12:37 | Session end: 58 writes across 23 files (0005_guvenlik_series_reset.sql, series-check.test.ts, ARASTIRMA.md, HANDOFF.md, YOL-HARITASI.md) | 27 reads | ~81896 tok |
+| 12:38 | Edited docs/seri-guvenlik/HANDOFF.md | 1→2 lines | ~86 |
+| 12:39 | Session end: 59 writes across 23 files (0005_guvenlik_series_reset.sql, series-check.test.ts, ARASTIRMA.md, HANDOFF.md, YOL-HARITASI.md) | 27 reads | ~81988 tok |
+
+## Session: 2026-10-21 13:20
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|

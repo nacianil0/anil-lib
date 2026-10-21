@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "seriesTitle": "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi",
+  "seriesSubtitle": "OWASP'tan başlayıp her riski bir varsayıma, güven sınırına, test edilebilir gereksinime ve üretimdeki kanıta dönüştüren; aynı disiplini Git ve GitHub'da kodun değişme yoluna uygulayan, senior ve üstü yazılımcılar için bir seri.",
+  "phases": [
+    {
+      "id": "faz-01",
+      "title": "OWASP'ı Mühendislik Aracına Çevirmek",
+      "description": "Risk listesinin neyi ölçtüğünü okumak ve bir kategoriyi doğrulanabilir gereksinime, teste ve kanıta çevirmek.",
+      "articles": [
+        { "order": 1, "title": "OWASP Top 10:2025'i Okumak: Liste Neyi Ölçer, Neyi Ölçmez?", "status": "yayinda", "slug": "owasp-top-10-2025-i-okumak" },
+        { "order": 2, "title": "Hata Yolunda Güvenlik: A10:2025'ten Doğrulanabilir Gereksinime", "status": "yayinda", "slug": "hata-yolunda-guvenlik-a10-2025" }
+      ]
+    },
+    {
+      "id": "faz-02",
+      "title": "Güven Sınırını Görmek",
+      "description": "Tehdit modeliyle sınırları çizmek; ortamın ve yapılandırmanın varsayımlarını kanıta bağlamak.",
+      "articles": [
+        { "order": 3, "title": "Tehdit Modelleme: Güven Sınırını Çizmek, Varsayımı Yazmak", "status": "planlandi" },
+        { "order": 4, "title": "Güvenli Varsayılanlar: Yapılandırma Bir Güvenlik Kararıdır", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-03",
+      "title": "Değişikliğin Zihinsel Modeli: Git",
+      "description": "Bir değişikliğin commit grafiğinde nerede durduğunu, uzak depoyla nasıl eşitlendiğini, nasıl birleştiğini ve kod kaybetmeden nasıl geri alındığını grafikle okumak.",
+      "articles": [
+        { "order": 5, "title": "Git'in Zihinsel Modeli: Dal Bir Kopya Değil, Bir İşaretçidir", "status": "planlandi" },
+        { "order": 6, "title": "Uzak Depoyla Eşitlenmek: fetch, pull, push ve origin/main Ne Zaman Değişir?", "status": "planlandi" },
+        { "order": 7, "title": "Ayrışan Geçmişi Birleştirmek: Merge, Rebase ve Squash Neyi Değiştirir?", "status": "planlandi" },
+        { "order": 8, "title": "Kod Kaybetmeden Geri Almak: Hangi Komut Neyi Değiştirir?", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-04",
+      "title": "GitHub'da Ekip Akışı ve Teslim",
+      "description": "Push, PR, inceleme, birleştirme ve dağıtımı ayrı kararlar olarak tasarlamak; bir sürümü değişmeyen bir commit'e ve geri dönüş yoluna bağlamak.",
+      "articles": [
+        { "order": 9, "title": "GitHub'da Ekip Akışı: Push, PR, Merge ve Dağıtım Ayrı Kararlardır", "status": "planlandi" },
+        { "order": 10, "title": "Sürüm ve Dağıtım: Etiket, GitHub Release ve Geri Dönüş Yolu", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-05",
+      "title": "Organizasyonu Yönetmek",
+      "description": "Bir GitHub organizasyonunda kimin neyi görüp değiştirebildiğini, hangi kuralın bypass edilemediğini ve makine kimliklerinin neye eriştiğini en az yetkiyle yönetmek.",
+      "articles": [
+        { "order": 11, "title": "Organizasyonda Erişim: Roller, Takımlar ve En Az Yetki", "status": "planlandi" },
+        { "order": 12, "title": "Kuralı Platforma Yazmak: Ruleset, Dal Koruması ve Bypass", "status": "planlandi" },
+        { "order": 13, "title": "Makine Kimlikleri ve Actions: Token, GitHub App ve İş Akışı Güvenliği", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-06",
+      "title": "Kimlik ve Erişim",
+      "description": "Kimliğin yaşam döngüsü, nesne ve kiracı düzeyinde yetki, API yüzeyi ve iş akışının eşzamanlılık altındaki davranışı.",
+      "articles": [
+        { "order": 14, "title": "Kimlik Doğrulama ve Oturum: Kimliğin Yaşam Döngüsü", "status": "planlandi" },
+        { "order": 15, "title": "Yetkilendirme: Nesne, Kiracı ve İşlev Düzeyinde Karar", "status": "planlandi" },
+        { "order": 16, "title": "API Yüzeyi: Alan Düzeyi Yetki, Hassas İş Akışları ve Kaynak Tüketimi", "status": "planlandi" },
+        { "order": 17, "title": "İş Mantığı ve Eşzamanlılık: Durum Makinesini Saldırgan Gözüyle Okumak", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-07",
+      "title": "Veri Akışı ve Yorumlayıcılar",
+      "description": "Verinin komuta dönüştüğü yerler: enjeksiyon, tarayıcının güven modeli ve sunucu adına yapılan istekler.",
+      "articles": [
+        { "order": 18, "title": "Enjeksiyon: Verinin Koda Dönüştüğü Sınır", "status": "planlandi" },
+        { "order": 19, "title": "Tarayıcının Güven Modeli: XSS, CSP, CSRF ve CORS", "status": "planlandi" },
+        { "order": 20, "title": "SSRF ve Çıkış Trafiği: Sunucu Adına Yapılan İstekler", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-08",
+      "title": "Sırlar ve Bütünlük",
+      "description": "Kriptografik kararlar, anahtarın yaşam döngüsü ve bağımlılıktan dağıtıma bütünlük zinciri.",
+      "articles": [
+        { "order": 21, "title": "Kriptografik Kararlar ve Anahtar Yaşam Döngüsü", "status": "planlandi" },
+        { "order": 22, "title": "Tedarik Zinciri ve Yapı Bütünlüğü: Bağımlılıktan Dağıtıma", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-09",
+      "title": "Kanıt ve İşletim",
+      "description": "Güvenlik olayını kaydetmek, uyarıya ve müdahaleye bağlamak; sürüm kapısında kanıt üretmek.",
+      "articles": [
+        { "order": 23, "title": "Güvenlik Kaydı, Uyarı ve Olay Müdahalesi", "status": "planlandi" },
+        { "order": 24, "title": "Güvenlik Testi ve Sürüm Kapıları: Kanıt Üreten Bir Hat", "status": "planlandi" }
+      ]
+    },
+    {
+      "id": "faz-10",
+      "title": "Sentez",
+      "description": "Bir özelliği tehdit modelinden üretime, değişikliğin depodan dağıtıma yoluyla ve yolda çıkan bir olayla birlikte uçtan uca taşımak.",
+      "articles": [
+        { "order": 25, "title": "Bütünleşik Vaka: Bir Özelliği Tehdit Modelinden Üretime Taşımak", "status": "planlandi" }
+      ]
+    }
+  ]
+}

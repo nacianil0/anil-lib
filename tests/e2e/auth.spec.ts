@@ -24,6 +24,17 @@ test.describe("password gate", () => {
     expect(url.searchParams.get("next")).toContain("/read/");
   });
 
+  test("the Güven Sınırı series stays behind the gate, landing and chapter alike", async ({
+    page,
+  }) => {
+    for (const path of ["/guvenlik", "/guvenlik/owasp-top-10-2025-i-okumak"]) {
+      await page.goto(path);
+      const url = new URL(page.url());
+      expect(url.pathname, path).toBe("/login");
+      expect(url.searchParams.get("next"), path).toBe(path);
+    }
+  });
+
   test("login page renders with the expected elements", async ({ page }) => {
     await page.goto("/login");
     await expect(page.locator("h1")).toContainText("Okuma Odası");

@@ -12,6 +12,7 @@
  * Kullanım:
  *   node tools/series/sync-series-hashes.cjs                 # AI serisini denetle
  *   node tools/series/sync-series-hashes.cjs --series=boun   # BOUN serisini denetle
+ *   node tools/series/sync-series-hashes.cjs --series=guvenlik  # Güven Sınırı serisini denetle
  *   node tools/series/sync-series-hashes.cjs --write         # frontmatter ve katalogu güncelle
  *
  * Katalog henüz yoksa (bir serinin ilk üretim run'ı) araç makale klasörünü gezer
@@ -30,7 +31,7 @@ const path = require("node:path");
 // Uygulamanın kullandığı ayrıştırıcı: tırnaksız bir YAML tarihi Date olarak gelir.
 const matter = require("gray-matter");
 
-const SERIES_DIRS = { ai: "series", boun: "series-boun" };
+const SERIES_DIRS = { ai: "series", boun: "series-boun", guvenlik: "series-guvenlik" };
 
 const seriesArg = process.argv.find((a) => a.startsWith("--series="));
 const seriesKey = seriesArg ? seriesArg.slice("--series=".length) : "ai";
