@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 552" role="img" aria-label="İki panel, aynı commit konumları. Oklar Git'in yönünde, her commit ebeveynini gösterir. Üst panel önce: HEAD main'de, yama commit edilmeden hemen önce. Ana çizgide 825fed9 XML ucu, 8a819d8 noent: true, 31ad836 1.4.0 adayı; üst sırada f8db4cb PDF şablonu, ebeveyni 31ad836. feature/fatura-pdf f8db4cb'yi, main 31ad836'yı gösteriyor; HEAD main'i gösteriyor. Sol üstte imaj 1.4.0-rc.1, revision: 31ad836; noktalı ok 31ad836'ya. Alt panel sonra: vurgulu yeni commit 85fdda1 XXE yaması, ebeveyni 31ad836; vurgulu main artık 85fdda1'i gösteriyor, HEAD yine main'de. feature/fatura-pdf değişmedi: f8db4cb; imaj kaydı değişmez.">
+  <defs>
+    <marker id="gz1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="gz1-ok-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
+    </marker>
+    <marker id="gz1-ok-kayit" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <!-- Üst panel: önce -->
+  <text x="16" y="28" font-size="13" font-weight="bold" fill="var(--text)">önce: HEAD main'de, yama commit edilmeden hemen önce</text>
+
+  <rect x="136" y="46" width="140" height="44" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="148" y="65" font-size="13" font-weight="bold" fill="var(--text)">imaj 1.4.0-rc.1</text>
+  <text x="148" y="82" font-size="13" fill="var(--text)">revision: 31ad836</text>
+  <path d="M278,68 L318,68 L318,126" fill="none" stroke="var(--cool)" stroke-width="1.4" stroke-dasharray="2 4" marker-end="url(#gz1-ok-kayit)" />
+
+  <rect x="424" y="46" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="436" y="65" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="436" y="82" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <line x1="432" y1="90" x2="386" y2="126" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <rect x="556" y="55" width="144" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="568" y="73" font-size="13" fill="var(--text)">feature/fatura-pdf</text>
+  <line x1="554" y1="68" x2="532" y2="68" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <rect x="16" y="130" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="149" font-size="13" font-weight="bold" fill="var(--text)">825fed9</text>
+  <text x="28" y="166" font-size="13" fill="var(--text-muted)">XML ucu</text>
+  <rect x="152" y="130" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="164" y="149" font-size="13" font-weight="bold" fill="var(--text)">8a819d8</text>
+  <text x="164" y="166" font-size="13" fill="var(--text-muted)">noent: true</text>
+  <rect x="288" y="130" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="300" y="149" font-size="13" font-weight="bold" fill="var(--text)">31ad836</text>
+  <text x="300" y="166" font-size="13" fill="var(--text-muted)">1.4.0 adayı</text>
+  <line x1="150" y1="152" x2="124" y2="152" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+  <line x1="286" y1="152" x2="260" y2="152" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <rect x="312" y="196" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="326" y="214" font-size="13" fill="var(--text)">main</text>
+  <line x1="340" y1="194" x2="340" y2="178" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+  <rect x="392" y="196" width="56" height="26" rx="4" fill="var(--text)" stroke="none" />
+  <text x="402" y="214" font-size="13" font-weight="bold" fill="var(--bg)">HEAD</text>
+  <line x1="390" y1="209" x2="372" y2="209" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <line x1="16" y1="246" x2="704" y2="246" stroke="var(--border)" stroke-width="1.2" />
+
+  <!-- Alt panel: sonra -->
+  <text x="16" y="290" font-size="13" font-weight="bold" fill="var(--text)">sonra: yama commit edildi; yalnızca HEAD'in gösterdiği main ilerledi</text>
+
+  <rect x="136" y="308" width="140" height="44" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="148" y="327" font-size="13" font-weight="bold" fill="var(--text)">imaj 1.4.0-rc.1</text>
+  <text x="148" y="344" font-size="13" fill="var(--text)">revision: 31ad836</text>
+  <path d="M278,330 L318,330 L318,388" fill="none" stroke="var(--cool)" stroke-width="1.4" stroke-dasharray="2 4" marker-end="url(#gz1-ok-kayit)" />
+  <text x="136" y="370" font-size="13" fill="var(--text-muted)">kayıt değişmez</text>
+
+  <rect x="424" y="308" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="436" y="327" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="436" y="344" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <line x1="432" y1="352" x2="386" y2="388" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <rect x="556" y="317" width="144" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="568" y="335" font-size="13" fill="var(--text)">feature/fatura-pdf</text>
+  <line x1="554" y1="330" x2="532" y2="330" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+  <text x="556" y="370" font-size="13" fill="var(--text-muted)">değişmedi: f8db4cb</text>
+
+  <rect x="16" y="392" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="411" font-size="13" font-weight="bold" fill="var(--text)">825fed9</text>
+  <text x="28" y="428" font-size="13" fill="var(--text-muted)">XML ucu</text>
+  <rect x="152" y="392" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="164" y="411" font-size="13" font-weight="bold" fill="var(--text)">8a819d8</text>
+  <text x="164" y="428" font-size="13" fill="var(--text-muted)">noent: true</text>
+  <rect x="288" y="392" width="104" height="44" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="300" y="411" font-size="13" font-weight="bold" fill="var(--text)">31ad836</text>
+  <text x="300" y="428" font-size="13" fill="var(--text-muted)">1.4.0 adayı</text>
+  <rect x="424" y="392" width="104" height="44" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="436" y="411" font-size="13" font-weight="bold" fill="var(--text)">85fdda1</text>
+  <text x="436" y="428" font-size="13" fill="var(--text)">XXE yaması</text>
+  <line x1="150" y1="414" x2="124" y2="414" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+  <line x1="286" y1="414" x2="260" y2="414" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+  <line x1="422" y1="414" x2="396" y2="414" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <rect x="448" y="458" width="56" height="26" rx="13" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="462" y="476" font-size="13" fill="var(--text)">main</text>
+  <line x1="476" y1="456" x2="476" y2="440" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#gz1-ok-vurgu)" />
+  <rect x="528" y="458" width="56" height="26" rx="4" fill="var(--text)" stroke="none" />
+  <text x="538" y="476" font-size="13" font-weight="bold" fill="var(--bg)">HEAD</text>
+  <line x1="526" y1="471" x2="508" y2="471" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz1-ok)" />
+
+  <text x="16" y="514" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde: her commit ebeveynini gösterir; zaman soldan sağa akar</text>
+  <text x="16" y="536" font-size="13" fill="var(--text-muted)">noktalı ok: imajın revision kaydı · koyu kutu: HEAD · yuvarlak kutu: dal · vurgu: değişen</text>
+</svg>

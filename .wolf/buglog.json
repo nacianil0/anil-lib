@@ -13964,6 +13964,255 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-10-21T11:25:31.721Z"
+    },
+    {
+      "id": "bug-845",
+      "timestamp": "2026-10-21T11:27:27.928Z",
+      "error_message": "Incorrect value in code",
+      "file": "C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run2-2026-10-21.md",
+      "root_cause": "Had 's multi-tenant document product. Run 2 is uncommi",
+      "fix": "Changed to 's multi-tenant document product. On the user'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-21T11:27:30.021Z"
+    },
+    {
+      "id": "bug-846",
+      "timestamp": "2026-10-21T11:55:22.760Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md",
+      "root_cause": "Had 'in sözlüğü commit nesnesini tam bu öğelerle tanım",
+      "fix": "Changed to 'in sözlüğü commit nesnesini bu öğelerle tanımlar:",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-10-21T11:58:43.486Z"
+    },
+    {
+      "id": "bug-847",
+      "timestamp": "2026-10-21T11:55:33.202Z",
+      "error_message": "Wrong reference: karmadan should be klondan",
+      "file": "content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md",
+      "root_cause": "Used \"karmadan\" instead of \"klondan\"",
+      "fix": "Changed karmadan → klondan",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-21T11:55:34.562Z"
+    },
+    {
+      "id": "bug-848",
+      "timestamp": "2026-10-21T12:12:55.412Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md",
+      "root_cause": "Had 'in yönünde. 31ad836 ve 85fdda1 XXE yaması ortak g",
+      "fix": "Changed to 'in yönünde. 31ad836 1.4.0 adayı ve 85fdda1 XXE ya",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-10-21T12:17:14.717Z"
+    },
+    {
+      "id": "bug-849",
+      "timestamp": "2026-10-21T12:14:59.601Z",
+      "error_message": "Wrong reference: 0000000000000000000000000000000000000000 should be 120d7b5e15ba0cba3df3d4a96ee998cff81a34ce",
+      "file": "content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md",
+      "root_cause": "Used \"0000000000000000000000000000000000000000\" instead of \"120d7b5e15ba0cba3df3d4a96ee998cff81a34ce\"",
+      "fix": "Changed 0000000000000000000000000000000000000000 → 120d7b5e15ba0cba3df3d4a96ee998cff81a34ce",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:14:59.601Z"
+    },
+    {
+      "id": "bug-850",
+      "timestamp": "2026-10-21T12:28:29.145Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 10→4 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:28:29.145Z"
+    },
+    {
+      "id": "bug-851",
+      "timestamp": "2026-10-21T12:29:32.540Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-guvenlik/YOL-HARITASI.md",
+      "root_cause": "13 lines replaced/restructured",
+      "fix": "Rewrote 14→4 lines (13 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:29:32.540Z"
+    },
+    {
+      "id": "bug-852",
+      "timestamp": "2026-10-21T12:30:39.655Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-guvenlik/ARASTIRMA.md",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→19 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:30:39.655Z"
+    },
+    {
+      "id": "bug-853",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "Şekil 2 (iraksama-iki-ret.svg) sayım kutusunda '1  1' yazıldı, PNG'de '11' göründü",
+      "file": "content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/iraksama-iki-ret.svg",
+      "root_cause": "SVG <text> varsayılan olarak ardışık boşlukları tek boşluğa indirir; iki sayıyı ayırmak için çift boşluk kullanılmıştı. getBBox denetimi bunu görmez",
+      "fix": "Metin 'sol 1 · sağ 1' yapıldı; alt metin ve aria-label aynı ifadeyle güncellendi",
+      "tags": [
+        "svg",
+        "whitespace",
+        "figure",
+        "guvenlik",
+        "png-only"
+      ]
+    },
+    {
+      "id": "bug-854",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "Yazı 6'nın açılışı yazı 5'in zaman çizelgesiyle çelişiyordu (toplantı 21 Ekim sabahı; 6 '20 Ekim öğleden sonra toplantı kararını uyguluyor' diyordu) ve geliştiricinin çıkarımı toplantıda söyleneni yalanlıyordu",
+      "file": "content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md",
+      "root_cause": "İkinci yazı taslağı, ilk yazının senaryo tarihleri tekrar okunmadan kuruldu",
+      "fix": "Açılış 'ertesi sabah, toplantının hemen ardından' diye ve geliştiricinin bayat main'den aday yapma çıkarımıyla yeniden yazıldı; iki yazıdaki bütün tarihler grep'le karşılaştırıldı; karar #33",
+      "tags": [
+        "series",
+        "continuity",
+        "timeline",
+        "guvenlik",
+        "editorial"
+      ]
+    },
+    {
+      "id": "bug-855",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "blok-dogrula.mjs '0 blok, 0 fark' dedi; hiçbir bash/text çifti bulunmadı",
+      "file": "artifacts/guvenlik-run3/blok-dogrula.mjs",
+      "root_cause": "Bir çitli bloğun sonu f.at + f.body.length ile hesaplanıyordu; açılış ve kapanış çitlerinin uzunluğu eklenmediği için iki blok arası boş görünmüyordu",
+      "fix": "Eşleşmenin sonu m.index + m[0].length ile tutuldu; ardından 11/11 ve 10/10 blok karşılaştırıldı",
+      "tags": [
+        "tooling",
+        "verification",
+        "regex",
+        "guvenlik"
+      ]
+    },
+    {
+      "id": "bug-856",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "git rev-parse --short main feature/fatura-pdf origin/main → fatal: Needed a single revision",
+      "file": "artifacts/guvenlik-run3/deney6-prova.sh",
+      "root_cause": "--short yalnızca tek bir revizyon kabul eder",
+      "fix": "Yazıda ayrı çağrılar ve git log -1 --format='%h' kullanıldı",
+      "tags": [
+        "git",
+        "cli",
+        "experiment"
+      ]
+    },
+    {
+      "id": "bug-857",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "page.goto: Cannot navigate to invalid URL http://localhost:3217C:/Users/.../Programs/Git/guvenlik/...",
+      "file": "artifacts/guvenlik-run3/render/metin.mjs",
+      "root_cause": "Git Bash (MSYS) '/guvenlik/...' ile başlayan argümanı Windows yoluna çevirdi",
+      "fix": "Komut MSYS_NO_PATHCONV=1 ile çalıştırıldı",
+      "tags": [
+        "msys",
+        "git-bash",
+        "windows",
+        "playwright",
+        "path"
+      ]
+    },
+    {
+      "id": "bug-858",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "Terim kuralı: 'birleştirme (merge)' yazı 5'te ilk geçişinde gloss'suzdu; rebase ve squash yazı 6'nın kapanışında Türkçe açıklamasız geçiyordu",
+      "file": "content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md",
+      "root_cause": "Planlanan terim tablosu birleştirmeyi 7'ye yazıyordu; 5 ve 6 kavramı ileri işaret olarak anarken ilk geçiş kuralı atlandı",
+      "fix": "5'te '**birleştirme (merge)**' ilk geçişte gloss'landı, 6'da rebase/squash birer cümleyle açıklandı; terim defteri '5 (geçerken), 7 (tanım)' diye güncellendi; hash'ler sync --write, render yeniden ölçüldü",
+      "tags": [
+        "series",
+        "terminology",
+        "gloss",
+        "guvenlik",
+        "editorial"
+      ]
+    },
+    {
+      "id": "bug-859",
+      "timestamp": "2026-10-21T12:34:25.601Z",
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T12:34:25.601Z",
+      "error_message": "Geçici deney klasörü temizliği tmp.* klasörlerini silmedi",
+      "file": "(kabuk komutu)",
+      "root_cause": "[ -f a ] || [ -f b ] && grep … ifadesi (A || B) && C diye değerlendirildi; tmp klasörlerinde run.sh olmadığı için koşul yanlış çıktı",
+      "fix": "Koşul açık gruplamayla ve klasör türüne göre ayrı döngülerle yeniden yazıldı; yalnız işaretli (bos.gitconfig + depo) klasörler silindi",
+      "tags": [
+        "bash",
+        "precedence",
+        "cleanup"
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@
 > kaynakları yeniden doğrular ve bu dosyayı günceller.
 
 Son güncelleme: 2026-10-21 (kurulum + run 1 + müfredat revizyonu: Git/GitHub hattı, §7–§11 + run 2:
-yazı 3–4, §12–§14)
+yazı 3–4, §12–§14 + run 3: yazı 5–6, §15–§17)
 
 ---
 
@@ -415,8 +415,22 @@ Global ve sistem Git yapılandırması devre dışı (`GIT_CONFIG_GLOBAL` boş d
 - **Üretimde açılacak sayfalar:** GitHub Docs "GitHub credential types reference" (token biçimleri ve
   ömürleri; yazı 13), "Managing bots and service accounts with two-factor authentication" (11),
   "Converting branch protections to rulesets" (12), "Securely using pull_request_target" ve
-  `GITHUB_TOKEN` varsayılan yetkileri (13), "Changing the default branch" (5), SAML SSO sayfası
-  (yalnızca Enterprise Cloud belgesi; 11'de plan notu olarak).
+  `GITHUB_TOKEN` varsayılan yetkileri (13), SAML SSO sayfası (yalnızca Enterprise Cloud belgesi; 11'de
+  plan notu olarak). "Changing the default branch" run 3'te açıldı ve 5'te kullanıldı (§15).
+- **Run 3'ün tarihli ve sürüme bağlı iddiaları (bakım kalemi):** Git 3.0'ın üç varsayılanı (yeni
+  depolarda `main`, `reftable`, SHA-256; BreakingChanges 2.55.0, "planlanmış yayım tarihi yok"); `git
+  init`'in `init.defaultBranch` yokken `master` vermesi ve ipucu metni (yerel Git 2.53.0.windows.2);
+  `git pull` varsayılanı `--ff-only` (git-pull 2.55.0); actions/checkout v7.0.1'in varsayılan tek commit
+  indirmesi; OCI image-spec v1.1.1 `revision` tanımı; GitHub'ın yeniden adlandırma etkileri (ham dosya
+  adresleri ve eski adla `git pull` yönlendirilmez, action'ı eski dal adıyla çağıranlar kırılır); `gh repo
+  list`'in `--limit` varsayılanı 30 (gh 2.98.0). Git 3.0 yayımlandığında 5'in "Ekim 2026 itibarıyla"
+  cümleleri ve kurulumdaki `--object-format=sha1` gerekçesi yeniden okunur; ref biçimi değişince `.git/refs`
+  bloğu Git 3.0'da dosya bulamaz (yazı bunu söylüyor).
+- **Kaynak içi tutarsızlık (Git kılavuzu, Ekim 2026):** `git-pull` (2.55.0) varsayılanı `--ff-only`
+  diye yazarken `git-push` (2.55.0) "Note about Fast-Forwards" bölümü "`git pull` bir birleştirme commit'i
+  oluşturur" der; ret iletisinin ipucu da "push'tan önce `git pull`" önerir. Yazı 6 `git-pull` sayfasını ve
+  yerel deneyi esas aldı, farkı adıyla yazdı. Pro Git 2.5 ve 3.5 de `pull`'u "getir ve birleştir" diye
+  anlatıyor (§10'daki sürüm farkı).
 - **Tarihli iddialar:** Git 3.0'ın yayım zamanı ve varsayılan dal değişikliği; GitHub ruleset ve
   birleştirme kuyruğu plan koşulları; 2FA zorunluluğunun üye/dış katkıcı davranışı (son yıllarda
   değişti); immutable releases'ın kapsamı. Her biri yazıldığı run'da yeniden doğrulanır ve "Ekim
@@ -484,3 +498,75 @@ Betikler scratchpad'de (oturuma özgü, kalıcı değil); sonuçlar yazılardad�
 | Sıfırlarla dolu tek dosyalı zip, `ZIP_DEFLATED`, düzey 9 | Python 3.14.5, zlib 1.3.1.zlib-ng | 60 MiB → 61.287 bayt (≈1.027:1); 200 MiB → 203.974 bayt; 1 GiB → 1.043.770 bayt. Başka zlib uygulamasında birkaç bayt fark edebilir |
 | 20.000 × 20.000, 8 bit gri PNG (IDAT sıfır satırlar) | aynı | 388.871 bayt; çözülmüş piksel verisi 400.000.000 bayt; dört kanal 1,6 GB (hesap); bayt 16–23 = `00 00 4e 20 00 00 4e 20` |
 | finalhandler varsayılan hata gövdesi (`probe.mts`) | Node.js 24.14.0, finalhandler 2.1.1 | `NODE_ENV` yok / `staging` / `Production` → 500 + hata metni ve yığın izi; `production` → "Internal Server Error" |
+
+## 15. Yazı 5 — kanıt (Git'in zihinsel modeli)
+
+Erişim tarihlerinin hepsi 2026-10-21; metinler `artifacts/guvenlik-run3/src/` altında (yeniden indirildi;
+müfredat revizyonundaki kopyalarla aynı gün). Git kılavuz sayfalarının "last updated in" sürümleri
+künyede. git-scm.com ana sayfası güncel kaynak sürümünü **2.56.0 (2026-09-28)** gösteriyor.
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| Commit nesnesi ebeveynler, commit'i yapan, yazar, tarih ve kök ağaçtan oluşur; nesne içeriğinin SHA-1'iyle tanımlanır, değiştirilemez; nesne adı genellikle 40 onaltılık karakter | gitglossary 2.56.0: commit object, object, object name | Sözlük "such as" der; yazı "bu öğelerle" diye aktarır |
+| Git veriyi anlık görüntü akışı olarak düşünür; neredeyse her işlem yereldir; dağıtık sistemde istemci bütün geçmişi aynalar; 2002 BitKeeper, 2005 ücretsiz kullanımın kalkması | Pro Git 1.1, 1.2, 1.3 | Tarih yalnızca "her klon tam geçmişi taşır" fikri için |
+| Dal hafif, taşınabilir bir işaretçidir; `master` özel değildir; dal 40 karakter + satır sonu, 41 bayt | Pro Git 3.1 | Deneyde `wc -c` = 41 |
+| Ref bir ada karşılık nesne adı ya da başka bir ref; HEAD bir symref; dalın ucu geliştirme yapıldıkça ilerler; etiketi commit komutu güncellemez | gitglossary: ref, HEAD, branch, tag | |
+| `git switch`: çalışma ağacı ve index dala göre güncellenir; yeni commit'ler bu dalın ucuna eklenir | git-switch 2.55.0, Description | "Experimental" uyarısı artık yok |
+| `init.defaultBranch` yoksa ilk dal "şu an `master`, Git 3.0'da `main`"; nesne biçimi varsayılanı `sha1`, `sha256` isteğe bağlı, birlikte çalışma yok; ref biçimi varsayılanı `files` (packed-refs ile), `reftable` seçenek | git-init 2.54.0 | Yerel ipucu metni de Git 3.0'ı anıyor (§17) |
+| Git 3.0: yeni depolarda SHA-256, `reftable`, `main`; SHA-1'e pratik saldırılar ve "bilinen saldırılara karşı korumalar var"; planlanmış yayım tarihi yok | BreakingChanges 2.55.0, "Git 3.0" | |
+| Çalışma ağacı = HEAD commit'inin ağacı + commit edilmemiş yerel değişiklikler (normalde); index çalışma ağacının saklanan bir sürümü | gitglossary: working tree, index | |
+| Üç bölüm (çalışma ağacı, hazırlık alanı, Git dizini); "index" teknik ad | Pro Git 1.3 | |
+| Kısa biçimde X index'in, Y çalışma ağacının durumu; `M ` index'te güncel, ` M` çalışma ağacı index'ten sonra değişti | git-status 2.53.0, Short Format | |
+| `--staged`, `--cached`'ın eş anlamlısı | git-diff | Yazıda künyeye girmedi; sınır açıklaması git-status ile kuruldu |
+| `--is-ancestor`: ata ise 0, değilse 1, hata 1 dışında sıfırdan farklı | git-merge-base 2.43.0 | Deneyde 128 |
+| `--contains` | git-branch 2.56.0 | |
+| Bir commit'in bütün ataları ondan ulaşılabilir | gitglossary: reachable | |
+| Varsayılan dal: ziyaretçinin gördüğü, klonun ilk çıkardığı, aksi belirtilmedikçe yeni PR ve commit'lerin tabanı; GitHub yeni depoda `main` adını verir | GitHub Docs "Branches" (eski "About branches"; karar #32) | Yazıda "PR" kullanılmadı ("yeni değişikliklerin tabanı") |
+| Organizasyon sahipleri yeni depoların varsayılan dal adını belirler (Repository → General → "Repository default branch"); kurumsal politika varsa organizasyon belirleyemez | GitHub Docs "Managing the default branch name for repositories in your organization" | Plan koşulu yazmıyor |
+| Var olan depoda varsayılan dalı değiştirmek depo yöneticisi erişimi ister; organizasyon/kurumsal ruleset hedefliyorsa organizasyon yöneticisi | GitHub Docs "Changing the default branch" | |
+| Yeniden adlandırma: dosya URL'leri yönlenir, ham dosya URL'leri ve eski adla `git pull` yönlenmez; koruma politikaları ve açık PR tabanları güncellenir; action'ı `@eski-ad` ile kullananlar kırılır | GitHub Docs "Renaming a branch" | |
+| `gh repo list` `--json defaultBranchRef`; `--limit` varsayılanı 30 | GitHub CLI kılavuzu, gh_repo_list | Yerel gh 2.98.0; gerçek organizasyona karşı çalıştırılmadı |
+| A03:2025: kod deposundaki değişikliklerin izlenmemesi risk; yapı çıktılarının bütünlüğü köken bilgisi, imza, zaman damgasıyla; ortam başına yeniden yapmak yerine terfi | A03:2025 Description, How to prevent | |
+| PS.1.1 (kodun her biçimi en az yetkiyle; örnek 2: değişikliklerin bireysel hesaba hesap verebilir izlenmesi); PS.3.2 (her sürümün bütün bileşenleri için köken bilgisi) | NIST SP 800-218 v1.1 | |
+| `org.opencontainers.image.revision`: paketlenen yazılımın kaynak denetimi revizyon tanımlayıcısı | OCI image-spec v1.1.1 (2025-03-03) `annotations.md` | github.com sayfası betiğe 429 verdi; etiketteki dosya raw.githubusercontent.com'dan okundu |
+| actions/checkout varsayılan olarak yalnızca tetikleyen tek commit'i indirir; bütün geçmiş `fetch-depth: 0` | actions/checkout v7.0.1 (2026-07-20) README | |
+
+## 16. Yazı 6 — kanıt (Uzak depoyla eşitlenmek)
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| Bare depo: dosyaların çıkarılmış kopyası olmayan, çoğunlukla `.git` uzantılı dizin | gitglossary: bare repository | |
+| Uzak izleme dalları uzak dalların durumuna yerel referanslardır; kullanıcı taşıyamaz, Git ağ iletişiminde taşır | Pro Git 3.5 | |
+| Uzak izleme dalı doğrudan değiştirilmemeli, üzerine yerel commit yapılmamalı | gitglossary: remote-tracking branch | |
+| `branch -vv` önde/geride sayıları son getirmeden beri; sunuculara ulaşmaz, yerel önbellek | Pro Git 3.5 | |
+| `ls-remote` uzak depodaki ref'leri ve commit kimliklerini listeler | git-ls-remote 2.48.0 | "Hiçbir şeyi değiştirmez" deneyle |
+| Refspec fetch/push'ta uzak ref ile yerel ref eşlemesi; yukarı akış dalı `branch.<ad>.remote` ve `.merge` ile; `origin` klonlanan sunucuya verilen varsayılan ad | gitglossary: refspec, upstream branch; Pro Git 2.5 | |
+| `fetch` ref'leri ve geçmişlerini tamamlayan nesneleri getirir, uzak izleme dallarını günceller; veriyi yalnızca indirir, işle birleştirmez | git-fetch 2.56.0; Pro Git 2.5 | |
+| `--prune` getirmeden önce uzak depoda olmayan uzak izleme ref'lerini siler | git-fetch 2.56.0 | |
+| `A...B` simetrik fark; `--left-right`, `--count` | gitrevisions 2.56.0; git-rev-list 2.56.0 | |
+| Getirme ve gönderme protokolleri paylaşılmayan veriyi kötü niyetli karşı taraftan korumak için tasarlanmadı; korunacak veri ayrı depoda; ad alanları okuma erişimi denetimi için etkili değil | git-push 2.55.0, Security | Yazıda "dal bir erişim sınırı değildir" çıkarımı olarak |
+| `pull`: önce aynı argümanlarla `fetch`, sonra argümansızsa geçerli dalın yukarı akışını bütünleştirir; dört yol; `--ff-only` varsayılan; `pull.rebase`, `pull.squash`, `pull.ff` | git-pull 2.55.0, Description | Kaynak içi fark §11 |
+| İleri sarma: bütünleştirilen dal torun ise birleştirme commit'i yapılmaz, dal aynı commit'e güncellenir | gitglossary: fast-forward | |
+| `origin/HEAD` (refs/remotes/<ad>/HEAD) uzak deponun varsayılan dalı | git-remote 2.53.0, set-head | |
+| `push` uzak ref'leri günceller, eksik nesneleri gönderir; `push.default=simple`; `--set-upstream` | git-push 2.55.0, Description, Options | |
+| Push kuralları: koruma olarak yalnız belirli güncellemeler; dala yalnızca ileri sarma (hedef kaynak commit'in atası); ileri sarma olmayan güncelleme geçmiş kaybettirir; `--force` geçmiş kaybetmeyi bilerek istenen durumlar için | git-push 2.55.0, Push Rules, Note about Fast-Forwards | "Safety feature" yazıda "koruma" |
+
+## 17. Run 3 deneyleri (yazarın çalıştırması; kendi deneyimiz)
+
+Ortam: Git **2.53.0.windows.2**, Git Bash; global ve sistem ayarı devre dışı (`GIT_CONFIG_GLOBAL` boş
+dosya, `GIT_CONFIG_NOSYSTEM=1`). Betikler ve çıktılar `artifacts/guvenlik-run3/` altında (gitignore;
+yalnızca bu makinede). WSL ve Docker bu makinede yok; başka bir platformda yeniden üretim yapılmadı,
+kimliklerin taşınabilirliği içerik adreslemenin tanımına dayanır (aynı baytlar → aynı kimlik).
+
+| Deney | Sonuç | Dosya |
+|---|---|---|
+| Yazı 5 kurulumu iki kez, ayrı klasörlerde | Aynı beş kimlik: `825fed9`, `8a819d8`, `31ad836`, `f8db4cb`, `85fdda1` | `deney5-kur.sh`, `deney5-cikti.txt` |
+| `cat-file commit HEAD \| hash-object -t commit --stdin` | `rev-parse HEAD` ile aynı; yazar adı değişince `741e27d…` | `deney5-okur-cikti.txt` |
+| `--is-ancestor` | dal: 1, `main`: 0, aday `31ad836`: 1, kendisi: 0, yazım hatalı kısa kimlik: "Not a valid object name" + 128, var olmayan tam kimlik: "Not a valid commit name" + 128 | aynı |
+| Sığ klon (`file://`, `--depth 1`) | `--is-shallow-repository` true; eksik ata 128; ata sonradan `fetch --depth 1` ile gelince yol kesik, yanlış 1; tam klonda 0 | aynı |
+| Yerel yolla `--depth` | "warning: --depth is ignored in local clones; use file:// instead." | `deney5-teshis2.txt` |
+| 5'in ikinci Teşhis'i (`! --is-ancestor 8a819d8 $REVISION`) | Sığ klonda iki yapı için de "temiz" (128 yutuldu); tam klonda iki yapı için de "kırılgan" | `deney5-teshis2.txt` |
+| Yazı 6 kurulumu (bare `origin.git`, `b` ve `a`) | Aynı beş kimlik; ıraksamada `eacea0f` (yerel), `120d7b5` (uzak) | `deney6-okur.sh`, `deney6-okur-cikti.txt` |
+| `fetch`, `pull`, `push`, ıraksama | `31ad836..85fdda1 main -> origin/main`; ileri sarma; feature'da "Already up to date" ve 1; `push` "fetch first" (1); `pull` "Need to specify how to reconcile divergent branches." (128) | aynı |
+| 6'nın ikinci Teşhis'i (`git fetch \|\| true`) | Erişilemeyen uzak depoda bayat `origin/main` ile "aday yapılıyor"; gönderilmemiş yerel commit varken de | `deney6-teshis2.sh`, `deney6-teshis2.txt` |
+| Yazılardaki her bash bloğu temiz klasörde sırayla | 5: 11/11, 6: 10/10 blok çıktısı metindekiyle aynı | `blok-dogrula.mjs`, `blok-dogrula-5.txt`, `blok-dogrula-6.txt` |

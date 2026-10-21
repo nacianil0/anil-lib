@@ -26,8 +26,8 @@
       "title": "Değişikliğin Zihinsel Modeli: Git",
       "description": "Bir değişikliğin commit grafiğinde nerede durduğunu, uzak depoyla nasıl eşitlendiğini, nasıl birleştiğini ve kod kaybetmeden nasıl geri alındığını grafikle okumak.",
       "articles": [
-        { "order": 5, "title": "Git'in Zihinsel Modeli: Dal Bir Kopya Değil, Bir İşaretçidir", "status": "planlandi" },
-        { "order": 6, "title": "Uzak Depoyla Eşitlenmek: fetch, pull, push ve origin/main Ne Zaman Değişir?", "status": "planlandi" },
+        { "order": 5, "title": "Git'in Zihinsel Modeli: Dal Bir Kopya Değil, Bir İşaretçidir", "status": "yayinda", "slug": "git-zihinsel-modeli-dal-bir-isaretcidir" },
+        { "order": 6, "title": "Uzak Depoyla Eşitlenmek: fetch, pull, push ve origin/main Ne Zaman Değişir?", "status": "yayinda", "slug": "uzak-depoyla-esitlenmek-fetch-pull-push" },
         { "order": 7, "title": "Ayrışan Geçmişi Birleştirmek: Merge, Rebase ve Squash Neyi Değiştirir?", "status": "planlandi" },
         { "order": 8, "title": "Kod Kaybetmeden Geri Almak: Hangi Komut Neyi Değiştirir?", "status": "planlandi" }
       ]

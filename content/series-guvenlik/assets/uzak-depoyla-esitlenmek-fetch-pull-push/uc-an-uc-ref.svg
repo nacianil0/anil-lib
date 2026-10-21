@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 636" role="img" aria-label="Üç panel, yalnızca a klonunun ref'leri; sağda her panelde uzak depo, origin.git, main: 85fdda1. Oklar Git'in yönünde, her commit ebeveynini gösterir; kesikli çerçeve uzak izleme dalı. Panel 1, b push etti, a henüz fetch etmedi: 8a819d8 ve 31ad836, üstte f8db4cb; main ve kesikli origin/main 31ad836'yı, feature/fatura-pdf f8db4cb'yi gösteriyor, HEAD main'de; not: a'da status: up to date, origin/main bayat. Panel 2, a'da git fetch: vurgulu yeni commit 85fdda1 XXE yaması indirildi, vurgulu origin/main 85fdda1'e kaydı, main 31ad836'da kaldı; not: status: behind 1, main ve feature yerinde. Panel 3, a'da git pull, main'de: vurgulu main 85fdda1'e ileri sarıldı, origin/main da orada; not: feature yine yerinde.">
+  <defs>
+    <marker id="ue1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="ue1-ok-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Panel 1: fetch öncesi -->
+  <text x="16" y="20" font-size="13" font-weight="bold" fill="var(--text)">1 · b push etti; a henüz fetch etmedi</text>
+  <rect x="280" y="32" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="292" y="49" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="292" y="65" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <line x1="286" y1="72" x2="242" y2="85" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="396" y="39" width="146" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="408" y="57" font-size="13" fill="var(--text)">feature/fatura-pdf</text>
+  <line x1="394" y1="52" x2="380" y2="52" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="16" y="88" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="105" font-size="13" font-weight="bold" fill="var(--text)">8a819d8</text>
+  <text x="28" y="121" font-size="13" fill="var(--text-muted)">noent: true</text>
+  <rect x="144" y="88" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="156" y="105" font-size="13" font-weight="bold" fill="var(--text)">31ad836</text>
+  <text x="156" y="121" font-size="13" fill="var(--text-muted)">1.4.0 adayı</text>
+  <line x1="142" y1="108" x2="116" y2="108" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="72" y="146" width="56" height="26" rx="4" fill="var(--text)" stroke="none" />
+  <text x="82" y="164" font-size="13" font-weight="bold" fill="var(--bg)">HEAD</text>
+  <line x1="130" y1="159" x2="144" y2="159" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="148" y="146" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="162" y="164" font-size="13" fill="var(--text)">main</text>
+  <line x1="176" y1="144" x2="176" y2="132" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="216" y="146" width="104" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="230" y="164" font-size="13" fill="var(--text)">origin/main</text>
+  <line x1="228" y1="144" x2="228" y2="132" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="560" y="32" width="144" height="60" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="572" y="50" font-size="13" font-weight="bold" fill="var(--text)">uzak depo</text>
+  <text x="572" y="67" font-size="13" fill="var(--text)">origin.git</text>
+  <text x="572" y="84" font-size="13" fill="var(--text)">main: 85fdda1</text>
+  <text x="480" y="118" font-size="13" fill="var(--text-muted)">a'da status: up to date</text>
+  <text x="480" y="136" font-size="13" fill="var(--text-muted)">origin/main bayat</text>
+
+  <line x1="16" y1="186" x2="704" y2="186" stroke="var(--border)" stroke-width="1.2" />
+
+  <!-- Panel 2: fetch -->
+  <text x="16" y="216" font-size="13" font-weight="bold" fill="var(--text)">2 · a'da git fetch: 85fdda1 indirildi, origin/main kaydı</text>
+  <rect x="280" y="228" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="292" y="245" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="292" y="261" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <line x1="286" y1="268" x2="242" y2="281" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="396" y="235" width="146" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="408" y="253" font-size="13" fill="var(--text)">feature/fatura-pdf</text>
+  <line x1="394" y1="248" x2="380" y2="248" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="16" y="284" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="301" font-size="13" font-weight="bold" fill="var(--text)">8a819d8</text>
+  <text x="28" y="317" font-size="13" fill="var(--text-muted)">noent: true</text>
+  <rect x="144" y="284" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="156" y="301" font-size="13" font-weight="bold" fill="var(--text)">31ad836</text>
+  <text x="156" y="317" font-size="13" fill="var(--text-muted)">1.4.0 adayı</text>
+  <rect x="280" y="284" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="292" y="301" font-size="13" font-weight="bold" fill="var(--text)">85fdda1</text>
+  <text x="292" y="317" font-size="13" fill="var(--text)">XXE yaması</text>
+  <line x1="142" y1="304" x2="116" y2="304" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <line x1="278" y1="304" x2="244" y2="304" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="72" y="342" width="56" height="26" rx="4" fill="var(--text)" stroke="none" />
+  <text x="82" y="360" font-size="13" font-weight="bold" fill="var(--bg)">HEAD</text>
+  <line x1="130" y1="355" x2="144" y2="355" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="148" y="342" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="162" y="360" font-size="13" fill="var(--text)">main</text>
+  <line x1="176" y1="340" x2="176" y2="328" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="280" y="342" width="104" height="26" rx="13" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 3" />
+  <text x="294" y="360" font-size="13" fill="var(--text)">origin/main</text>
+  <line x1="328" y1="340" x2="328" y2="328" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#ue1-ok-vurgu)" />
+
+  <rect x="560" y="228" width="144" height="60" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="572" y="246" font-size="13" font-weight="bold" fill="var(--text)">uzak depo</text>
+  <text x="572" y="263" font-size="13" fill="var(--text)">origin.git</text>
+  <text x="572" y="280" font-size="13" fill="var(--text)">main: 85fdda1</text>
+  <text x="480" y="314" font-size="13" fill="var(--text-muted)">status: behind 1</text>
+  <text x="480" y="332" font-size="13" fill="var(--text-muted)">main ve feature yerinde</text>
+
+  <line x1="16" y1="382" x2="704" y2="382" stroke="var(--border)" stroke-width="1.2" />
+
+  <!-- Panel 3: pull -->
+  <text x="16" y="412" font-size="13" font-weight="bold" fill="var(--text)">3 · a'da git pull, main'de: main ileri sarıldı</text>
+  <rect x="280" y="424" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="292" y="441" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="292" y="457" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <line x1="286" y1="464" x2="242" y2="477" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="396" y="431" width="146" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="408" y="449" font-size="13" fill="var(--text)">feature/fatura-pdf</text>
+  <line x1="394" y1="444" x2="380" y2="444" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="16" y="480" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="497" font-size="13" font-weight="bold" fill="var(--text)">8a819d8</text>
+  <text x="28" y="513" font-size="13" fill="var(--text-muted)">noent: true</text>
+  <rect x="144" y="480" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="156" y="497" font-size="13" font-weight="bold" fill="var(--text)">31ad836</text>
+  <text x="156" y="513" font-size="13" fill="var(--text-muted)">1.4.0 adayı</text>
+  <rect x="280" y="480" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="292" y="497" font-size="13" font-weight="bold" fill="var(--text)">85fdda1</text>
+  <text x="292" y="513" font-size="13" fill="var(--text-muted)">XXE yaması</text>
+  <line x1="142" y1="500" x2="116" y2="500" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <line x1="278" y1="500" x2="244" y2="500" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="204" y="538" width="56" height="26" rx="4" fill="var(--text)" stroke="none" />
+  <text x="214" y="556" font-size="13" font-weight="bold" fill="var(--bg)">HEAD</text>
+  <line x1="262" y1="551" x2="276" y2="551" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+  <rect x="280" y="538" width="56" height="26" rx="13" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="294" y="556" font-size="13" fill="var(--text)">main</text>
+  <line x1="308" y1="536" x2="308" y2="524" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#ue1-ok-vurgu)" />
+  <rect x="348" y="538" width="104" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="362" y="556" font-size="13" fill="var(--text)">origin/main</text>
+  <line x1="362" y1="536" x2="362" y2="524" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue1-ok)" />
+
+  <rect x="560" y="424" width="144" height="60" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="572" y="442" font-size="13" font-weight="bold" fill="var(--text)">uzak depo</text>
+  <text x="572" y="459" font-size="13" fill="var(--text)">origin.git</text>
+  <text x="572" y="476" font-size="13" fill="var(--text)">main: 85fdda1</text>
+  <text x="480" y="510" font-size="13" fill="var(--text-muted)">main ileri sarıldı</text>
+  <text x="480" y="528" font-size="13" fill="var(--text-muted)">feature yine yerinde</text>
+
+  <text x="16" y="600" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde: her commit ebeveynini gösterir · kesikli çerçeve: uzak izleme dalı</text>
+  <text x="16" y="620" font-size="13" fill="var(--text-muted)">koyu kutu: HEAD · vurgu: o adımda gelen ya da kayan</text>
+</svg>

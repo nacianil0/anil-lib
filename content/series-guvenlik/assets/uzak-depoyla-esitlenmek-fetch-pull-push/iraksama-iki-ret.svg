@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 346" role="img" aria-label="a klonu, git fetch sonrası: main ile origin/main ıraksadı. Oklar Git'in yönünde. 31ad836 1.4.0 adayı ve 85fdda1 XXE yaması ortak geçmiş; 85fdda1'in iki çocuğu var. Üstte eacea0f fatura notu: main ve HEAD onu gösteriyor, uzak depoda yok. Altta 120d7b5 1.4.0-rc.2: kesikli origin/main onu gösteriyor, a'nın main'inde yok. Sağda sayım: main...origin/main, sol 1 · sağ 1. Altta iki ret: git push, uzaktaki main'i eacea0f'e taşımak 120d7b5'i düşürürdü (fetch first); git pull (--ff-only), main'i 120d7b5'e taşımak eacea0f'i düşürürdü (çıkış 128). Son satır: ileri sarma ancak dalın şu anki commit'i yenisinin atasıysa mümkün; ıraksamada ikisi de değil.">
+  <defs>
+    <marker id="ue2-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">a klonu, git fetch sonrası: main ile origin/main ıraksadı</text>
+
+  <rect x="16" y="104" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="121" font-size="13" font-weight="bold" fill="var(--text)">31ad836</text>
+  <text x="28" y="137" font-size="13" fill="var(--text-muted)">1.4.0 adayı</text>
+  <rect x="144" y="104" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="156" y="121" font-size="13" font-weight="bold" fill="var(--text)">85fdda1</text>
+  <text x="156" y="137" font-size="13" fill="var(--text-muted)">XXE yaması</text>
+  <line x1="142" y1="124" x2="116" y2="124" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue2-ok)" />
+
+  <rect x="280" y="44" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="292" y="61" font-size="13" font-weight="bold" fill="var(--text)">eacea0f</text>
+  <text x="292" y="77" font-size="13" fill="var(--text)">fatura notu</text>
+  <line x1="286" y1="84" x2="242" y2="101" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue2-ok)" />
+  <rect x="280" y="164" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="292" y="181" font-size="13" font-weight="bold" fill="var(--text)">120d7b5</text>
+  <text x="292" y="197" font-size="13" fill="var(--text)">1.4.0-rc.2</text>
+  <line x1="286" y1="164" x2="242" y2="147" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue2-ok)" />
+
+  <rect x="396" y="51" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="410" y="69" font-size="13" fill="var(--text)">main</text>
+  <line x1="394" y1="64" x2="380" y2="64" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue2-ok)" />
+  <rect x="472" y="51" width="56" height="26" rx="4" fill="var(--text)" stroke="none" />
+  <text x="482" y="69" font-size="13" font-weight="bold" fill="var(--bg)">HEAD</text>
+  <line x1="470" y1="64" x2="456" y2="64" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue2-ok)" />
+  <text x="396" y="100" font-size="13" fill="var(--text-muted)">uzak depoda yok</text>
+
+  <rect x="396" y="171" width="104" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="410" y="189" font-size="13" fill="var(--text)">origin/main</text>
+  <line x1="394" y1="184" x2="380" y2="184" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ue2-ok)" />
+  <text x="396" y="220" font-size="13" fill="var(--text-muted)">a'nın main'inde yok</text>
+
+  <rect x="552" y="104" width="152" height="44" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="564" y="122" font-size="13" fill="var(--text)">main...origin/main</text>
+  <text x="564" y="139" font-size="13" font-weight="bold" fill="var(--text)">sol 1 · sağ 1</text>
+
+  <rect x="16" y="240" width="40" height="22" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="25" y="256" font-size="13" font-weight="bold" fill="var(--accent)">ret</text>
+  <text x="66" y="256" font-size="13" fill="var(--text)">git push: uzaktaki main'i eacea0f'e taşımak 120d7b5'i düşürürdü (fetch first)</text>
+  <rect x="16" y="268" width="40" height="22" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="25" y="284" font-size="13" font-weight="bold" fill="var(--accent)">ret</text>
+  <text x="66" y="284" font-size="13" fill="var(--text)">git pull (--ff-only): main'i 120d7b5'e taşımak eacea0f'i düşürürdü (çıkış 128)</text>
+  <text x="16" y="312" font-size="13" fill="var(--text-muted)">ileri sarma ancak dalın şu anki commit'i yenisinin atasıysa mümkün; ıraksamada ikisi de değil</text>
+  <text x="16" y="332" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde · kesikli çerçeve: uzak izleme dalı · koyu kutu: HEAD</text>
+</svg>

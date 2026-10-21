@@ -6,8 +6,8 @@
 > **yayımlanmış** yazının kimliği, slug'ı, sırası ve başlığı değişmez. Kaynak kanıtı
 > `ARASTIRMA.md`'de, güncel cursor `HANDOFF.md`'dedir.
 
-Son güncelleme: 2026-10-21 (run 2: yazı 3–4 yayımlandı) · Plan: **25 yazı, 10 faz**
-(tavan 25, karar #15) · Yayımlanan: 1–4 (ayrıntı `HANDOFF.md`)
+Son güncelleme: 2026-10-21 (run 3: yazı 5–6 yayımlandı) · Plan: **25 yazı, 10 faz**
+(tavan 25, karar #15) · Yayımlanan: 1–6 (ayrıntı `HANDOFF.md`)
 
 ---
 
@@ -304,6 +304,20 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 5. Git'in Zihinsel Modeli: Dal Bir Kopya Değil, Bir İşaretçidir
 
+- **Durum:** yayında (run 3, kohort 2) · slug `git-zihinsel-modeli-dal-bir-isaretcidir` · iki şekil
+  (`dal-yalnizca-isaretci.svg`, `degisikligin-duraklari.svg`).
+- **Yayımlanan biçim (run 3):** 4'ün XXE düzeltmesi (`noent` çıktı, `DOCTYPE` reddi) `main`'de; sürüm
+  toplantısının üç cümlesi sınanır ("yama `main`'de" doğru; "aday `main`'den yapıldı, yamayı içerir"
+  ve "dalım `main`'den açıldı, yama bende" yanlış). Deterministik deney deposu (karar #28): `825fed9`,
+  `8a819d8`, `31ad836` (1.4.0 adayı), `f8db4cb` (`feature/fatura-pdf`), `85fdda1` (yama).
+  `cat-file` + `hash-object` ile kimliğin içerik özeti olduğu; `.git/HEAD` ve 41 baytlık dal dosyası
+  (`files` biçimi; Git 3.0'da `reftable`); `init.defaultBranch` ve GitHub varsayılan dalı ("Kendi
+  organizasyonunda" kutusu: `gh repo list` salt okunur, yeniden adlandırmanın etkileri öneri);
+  üç alan ve `git status --short`'un iki harfi; `--is-ancestor` 0/1/128, imajın
+  `org.opencontainers.image.revision` kaydı (karar #30, #31), sürüm kapısı (1 "yama yok", 2 "karar
+  alınamadı"), sığ klonda 128 ve yanlış 1 (actions/checkout v7 varsayılanı tek commit), kanıt
+  merdiveni tablosu. İki "Teşhis et": revision alanında dal adı; kırılgan commit'in yokluğunu
+  `!` ile soran denetim (sığ klonda fail-open, tam klonda yamalı yapıya da "kırılgan").
 - **Hedef:** Okur, bir deponun durumunu commit grafiği (anlık görüntüler ve ebeveyn bağları), ref'ler
   (dal, etiket, HEAD) ve üç alan (çalışma ağacı, hazırlık alanı, depo) üzerinden okuyup bir
   değişikliğin nerede olduğunu kanıtla söyleyebilir; bir dalın başka bir dalı izlemediğini, yalnızca
@@ -348,6 +362,18 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 6. Uzak Depoyla Eşitlenmek: fetch, pull, push ve origin/main Ne Zaman Değişir?
 
+- **Durum:** yayında (run 3, kohort 2) · slug `uzak-depoyla-esitlenmek-fetch-pull-push` · iki şekil
+  (`uc-an-uc-ref.svg`, `iraksama-iki-ret.svg`).
+- **Yayımlanan biçim (run 3):** 5'in senaryosu iki klonla (`b` güvenlik, `a` fatura) ve yerel bare
+  `origin.git` ile; aynı beş kimlik. Geliştirici toplantıdan sonra `git status`'un "up to date"
+  cevabına güvenip adayı yerel `main`'den yapmayı düşünür. Üç `main` (yerel dal, uzak izleme dalı,
+  uzak depodaki dal), `ls-remote`, refspec ve yukarı akış ayarı; `fetch` yalnızca `origin/main`'i
+  taşır (`31ad836..85fdda1`), gelen değişikliği bütünleştirmeden okuma (`log main..origin/main`,
+  `diff main...origin/main`), git-push SECURITY: dal bir okuma sınırı değildir; `pull` (`--ff-only`
+  varsayılanı, kaynaklar arası fark yazıldı), ileri sarma; ıraksama (`eacea0f` yerel, `120d7b5`
+  uzak), `push` "fetch first" ve `pull` 128 ile iki ret. İki "Teşhis et": `feature`'da "Already up to
+  date"; `|| true` ile fetch'i yutan sürüm betiği (fail-open ve gönderilmemiş yerel commit) ve
+  düzeltilmiş `aday_kimligi`. Kendi organizasyonunda kutusu yok (GitHub ayarı önerilmedi).
 - **Hedef:** Okur, yerel dal, uzak izleme dalı (`origin/main`) ve uzak depodaki dal arasındaki farkı;
   `fetch`, `pull` ve `push`'un her birinin hangi ref'i değiştirdiğini; ahead/behind/diverged durumunu
   ve "`main`'e giren kod neden feature dalımda yok" sorusunun cevabını komut ve grafikle gösterebilir.
@@ -382,6 +408,13 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
   squash sonrası aynı dalda devam etmenin neden çatışma ürettiğini gösterebilir.
 - **Önkoşul:** 6. **Kavramlar:** birleştirme tabanı (merge base) ve üç yollu birleştirme; rebase'in
   commit'leri yeniden yazması (yeni kimlik); squash'ın ata ilişkisi kurmaması.
+- **Bağlayıcı köprü (run 3):** 6'nın "Sırada ne var" bölümü iki açık işi bu yazıya bıraktı: `a`
+  klonunda ıraksamış `main` (`eacea0f` "belge: fatura notu" yerel, `120d7b5` "sürüm: 1.4.0 adayı 2"
+  uzakta) ve yamayı (`85fdda1`) hâlâ almamış `feature/fatura-pdf` (`f8db4cb`). Deney deposu 6'nın son
+  durumundan, aynı kimliklerle sürdürülebilir (karar #28). 5 de "geçmişi yeniden yazan işlemlerin neden
+  yeni kimlik ürettiğini" bu yazıya bıraktı: rebase'te ebeveyn değişir, kimlik içerik özeti olduğu için
+  değişir (5'in `hash-object` deneyi). 6 "anlamsal çatışma"yı kalan riskte gloss'suz andı; 7 onu kurar.
+  "rebase" ve "squash" ilk kez burada Türkçe açıklanır; "birleştirme commit'i" 6'da gloss'suz geçti.
 - **Senaryo:** iki haftalık bir feature dalı ve `main`'de aynı dosyaya dokunan bir yama; PR'ı tabanla
   güncellemek (GitHub "Update branch": merge ya da rebase; `gh pr update-branch [--rebase]`); squash
   ile birleştirilen dal üzerinde devam eden iş.
@@ -857,7 +890,31 @@ ilk geçişte Türkçe açıklanır, gloss verilmez.
 | XXE | XML External Entity | 4 | İngilizce kısaltma kalır |
 | yapılandırma kayması | configuration drift | 4 | |
 | saldırı yüzeyi envanteri | attack surface inventory | 4 | |
-| dal | branch | 4 (geçerken), 5 (tanım) | 4'ün "Sırada ne var" bölümünde gloss'landı; 5 parantezli gloss'u tekrar etmez |
+| dal | branch | 4 (geçerken), 5 (tanım) | 4'ün "Sırada ne var" bölümünde gloss'landı; 5 parantezsiz tanımladı (run 3) |
+| yazılım tedarik zinciri hataları | Software Supply Chain Failures | 5 | A03:2025'in adı |
+| köken bilgisi | provenance | 5 | yapı çıktısının kaynağına dair kayıt; tedarik zinciri yazısı (22) gloss'u tekrar etmez |
+| commit | commit | 5 | İngilizce kalır; "anlık görüntü + ebeveyn + üst veri" diye açıklandı; fiil "commit etmek" |
+| anlık görüntü / ebeveyn | snapshot / parent | 5 | |
+| commit kimliği / içerik özeti | object id / hash | 5 | SHA-1 varsayılan, SHA-256 isteğe bağlı; Git 3.0'da yeni depolarda SHA-256 (tarihli) |
+| ref | ref | 5 | İngilizce kalır; "ad → nesne kimliği ya da başka bir ref" diye açıklandı |
+| HEAD | HEAD | 5 | İngilizce kalır; ayrık HEAD planlananlarda (8) |
+| etiket | tag | 5 (geçerken), 10 (tanım) | Git etiketi; 10 gloss'u tekrar etmez. OCI annotation için "ek açıklama" (karar #30) |
+| varsayılan dal | default branch | 5 | `main` ve `master` yalnızca ad; Git'te `init.defaultBranch`, GitHub'da depo ayarı |
+| çalışma ağacı | working tree | 5 | |
+| hazırlık alanı | staging area (index) | 5 | "index" Git'in teknik adı olarak bir kez anıldı |
+| ulaşılabilirlik / ata | reachability / ancestor | 5 | `git merge-base --is-ancestor` |
+| ek açıklama | annotation (OCI) | 5 | `org.opencontainers.image.revision`; "etiket" kullanılmaz |
+| sığ klon | shallow clone | 5 | |
+| birleştirme | merge | 5 (geçerken), 7 (tanım) | 5'te gloss'landı; 7 gloss'u tekrar etmez, birleştirme tabanını kurar |
+| iş akışı | workflow (GitHub Actions) | 5 (geçerken) | "Kendi organizasyonunda" kutusunda; makine kimlikleri ve Actions yazısı (13) gloss'u tekrar etmez |
+| uzak depo | remote | 5 (geçerken), 6 (tanım) | 5'in "Sırada ne var" bölümünde gloss'landı; `origin` adıyla |
+| bare depo | bare repository | 6 | "bare" İngilizce kalır |
+| uzak izleme dalı | remote-tracking branch | 6 | `origin/main`; şekillerde kesikli çerçeve |
+| refspec | refspec | 6 | İngilizce kalır; "uzak ref ile yerel ref arasındaki eşleme kuralı" diye açıklandı |
+| yukarı akış dalı | upstream branch | 6 | |
+| ileri sarma | fast-forward | 6 | |
+| ıraksama | divergence | 6 | ahead/behind İngilizce çıktı olarak gösterildi |
+| rebase / squash | rebase / squash | 6 (geçerken), 7 (tanım) | İngilizce kalır; 6'nın "Sırada ne var" bölümünde birer cümleyle Türkçe açıklandı |
 
 ### Planlanan terim kararları (Git/GitHub hattı)
 
@@ -867,26 +924,15 @@ deploy için "dağıtım" (karar #21).
 
 | Türkçe biçim | İngilizce | İlk kullanacak yazı | Not |
 |---|---|---|---|
-| commit | commit | 5 | İngilizce kalır; "anlık görüntü + ebeveyn + üst veri" diye açıklanır |
-| commit kimliği / içerik özeti | object id / hash | 5 | SHA-1 (isteğe bağlı SHA-256) |
-| HEAD / ayrık HEAD | HEAD / detached HEAD | 5 / 8 | HEAD İngilizce kalır |
-| çalışma ağacı | working tree | 5 | |
-| hazırlık alanı | staging area (index) | 5 | "index" Git'in teknik adı olarak bir kez anılır |
-| varsayılan dal | default branch | 5 | `main` ve `master` yalnızca ad |
-| uzak depo | remote | 6 | `origin` adıyla |
-| uzak izleme dalı | remote-tracking branch | 6 | `origin/main` |
-| yukarı akış dalı | upstream branch | 6 | |
-| ileri sarma | fast-forward | 6 | |
-| ıraksama | divergence | 6 | ahead/behind İngilizce çıktı olarak gösterilir |
-| birleştirme / birleştirme tabanı | merge / merge base | 7 | komut adı `merge` |
-| rebase / squash | rebase / squash | 7 | İngilizce kalır |
+| ayrık HEAD | detached HEAD | 8 | HEAD 5'te kuruldu |
+| birleştirme tabanı | merge base | 7 | "birleştirme (merge)" 5'te geçerken gloss'landı; komut adı `merge` |
+| birleştirme çatışması / anlamsal çatışma | merge conflict / semantic conflict | 7 | 5 ve 6 "çatışma"yı gloss'suz, genel anlamda andı; 7 terimi kurar |
 | geri döndürme / geri sarma | revert / reset | 8 | ikisi karıştırılmaz |
 | zorla push | force push | 8 | |
 | PR | pull request | 9 | İngilizce kısaltma; "çekme isteği" kullanılmaz |
 | kod sahibi | code owner (CODEOWNERS) | 9 | |
 | gerekli kontrol | required status check | 9 | |
 | birleştirme kuyruğu | merge queue | 9 | |
-| etiket | tag | 10 | |
 | GitHub Release / değişmez sürüm | GitHub Release / immutable release | 10 | ürün nesnesi adıyla |
 | sürüm / dağıtım | release / deploy | 10 | yayımlanmış yazılarla aynı; "yayın" kullanılmaz |
 | temel yetki | base permission | 11 | |
@@ -932,7 +978,16 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 2 | "bir güvenlik olayının nasıl kaydedileceği ve hangisinin uyarıya dönüşeceği, kendi yazısını hak eden ayrı bir tasarım sorusu" | 23 (eski 14) | hayır |
 | 2 | "Sırada ne var": dosya yükleme hattında veri akışı ve sınırlar, tehdit modelleme | 3 | evet (run 2) |
 | 3 | "Sırada ne var": aynı kodun iki ortamda farklı davranması; güvenli varsayılanlar | 4 | evet (run 2) |
-| 4 | "Sırada ne var": XXE düzeltmesinin yeri, üretime giden yapının onu içerip içermediği, ana daldan önceden açılmış dalın düzeltmeyi kendiliğinden alıp almadığı; dal bir işaretçidir | 5 | hayır (sıradaki run) |
+| 4 | "Sırada ne var": XXE düzeltmesinin yeri, üretime giden yapının onu içerip içermediği, ana daldan önceden açılmış dalın düzeltmeyi kendiliğinden alıp almadığı; dal bir işaretçidir | 5 | evet (run 3) |
+| 5 | "geçmişi yeniden yazan işlemlerin neden yeni kimlikler ürettiği; ayrışan geçmişleri birleştirmeyi işlerken buna döneceğiz" | 7 | hayır |
+| 5 | Dalı `main`'in yeni hâliyle bilerek bütünleştirmek: "ya bir birleştirme (merge) ya da geçmişi yeniden yazan bir alternatifi; yolları ve bedelleri, ayrışan geçmişleri birleştirme konusunun içeriği" | 7 | hayır |
+| 5 | "imzayı zorunlu kılan kuralı, kuralların platforma yazılmasını işlerken göreceğiz" (yazar alanı kimlik kanıtı değildir) | 12 | hayır |
+| 5 | Etiketler: "ayrıntısı sürüm ve dağıtım konusuna kalıyor" | 10 | hayır |
+| 5 | "Yapıyı kimin, hangi makinede ürettiği ve bu kaydın neden kanıt sayılabileceği ise tedarik zinciri ve yapı bütünlüğü konusunun sorusu" | 22 | hayır |
+| 5 | "Sırada ne var": paylaşılan uzak depo; `fetch`, `pull`, `push` hangi ref'i taşır, `origin/main` ne zaman değişir, "dalım güncel" ne zaman kanıttır | 6 | evet (run 3) |
+| 6 | Iraksamanın çözümü: "iki geçmişin bir birleştirme commit'iyle mi yoksa yeniden yazılarak mı bir araya geleceği ayrı bir karardır ve birleştirme konusunun içeriğidir" | 7 | hayır |
+| 6 | `--force` ile göndermek: "hangi koşulda ve nasıl güvenli yapıldığı ise kod kaybetmeden geri almayı işlerken ele alınacak" | 8 | hayır |
+| 6 | "Sırada ne var": ıraksayan `main` (`eacea0f` / `120d7b5`) ve yamayı almamış fatura dalı; birleştirme commit'i, rebase, squash grafikte ve kimliklerde neyi değiştirir | 7 | hayır (sıradaki run) |
 
 ## Gerçekleşen geri çağırmalar
 
@@ -951,6 +1006,14 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 4 | Hata enjeksiyonu ile dış test birbirinin yerine geçmez (2) | İçeriden envanter testi ile dışarıdan WSTG testi |
 | 4 | En az yetkili depolama politikası ve dört cevap (3) | Kayma bulgusu; ortadan kaldırmak (DTD) |
 | 4 | İç ağ bir güven derecesi değildir (3) | Hazırlık ortamı farkları (Teşhis et) |
+| 5 | Kanarya testi ve `DOCTYPE` reddi (4) | Atalık geçmişi kanıtlar, davranışı kanarya testi; terfi edilecek imaja karşı |
+| 5 | Kanıt kapsadığı kadar konuşur (1) | `--is-ancestor` geçmişi kanıtlar, yamanın etkisinin yerinde durduğunu değil |
+| 5 | Ret ≠ karar alınamadı (2) | Sürüm kapısının 1 ("yama yok") ve 2 ("karar alınamadı") dönüşleri; sığ klon |
+| 5 | Fail-open (2) | Kırılgan commit'in yokluğunu `!` ile soran denetim sığ klonda "temiz" der (Teşhis et) |
+| 6 | Kanıt kapsadığı kadar konuşur (1) | `git status`'un "up to date" cevabı iki yerel kaydın eşitliğidir; uzak depo hakkında konuşmaz |
+| 6 | Dal bir işaretçidir; değişikliğin yeri grafikle kanıtlanır (5) | `fetch` ve `pull` fatura dalına dokunmaz; `--is-ancestor origin/main feature/fatura-pdf` 1 |
+| 6 | Fail-open / karar alınamadı (2) | `git fetch || true` ile yutulan getirme hatası (Teşhis et); düzeltilmiş `aday_kimligi` 2 döner |
+| 6 | Yapı bir dal adından değil commit kimliğinden yapılır (5) | Aday `origin/main`'in çözümlenmiş tam kimliğinden; sürüm kapısı imajın kaydettiği commit'i sorgular |
 
 ## Karar kaydı
 
@@ -1035,3 +1098,33 @@ yalnızca karşılayacak yazının numarası güncellendi.
   → test tablosu beş sütunda bırakıldı (izlenebilirlik sırası öğretici). Telefonda kendi kabında yatay kaydırır
   (okuyucunun 5+ sütun için tasarladığı son çare); masaüstü akış, sayfalı sütunlar ve tablette taşma
   yok. E2E sığma kuralının dört durumu `artifacts/guvenlik-run2/render/paged.mjs` ile doğrulandı.
+- **#28 (2026-10-21, run 3) Deterministik deney deposu:** Git hattının deneyleri yalıtılmış ayarla
+  (`GIT_CONFIG_GLOBAL` boş dosya, `GIT_CONFIG_NOSYSTEM=1`), sabit yazar/e-posta/tarih (`kaydet`
+  yardımcısı) ve `git init -b main --object-format=sha1` ile kurulur; kimlikler okurun makinesinde de
+  aynı çıkar (iki ayrı kurulum aynı beş kimliği verdi). 5 ve 6 aynı beş commit'i paylaşır: `825fed9`,
+  `8a819d8`, `31ad836` (1.4.0 adayı), `f8db4cb` (`feature/fatura-pdf`), `85fdda1` (XXE yaması); 6'nın
+  sonu `eacea0f` (`a`'nın yerel `main`'i) ve `120d7b5` (uzak `main`). 7 ve 8 bu tabandan sürer;
+  yazar adları ASCII (`gelistirici-a`, `gelistirici-b`), alan `example.test`.
+- **#29 (2026-10-21, run 3) Komut bloğu biçimi:** `SOZLESME.md` §3'ün altı öğesi kod bloğunun başındaki
+  yorum satırlarında durur (Nerede · Önkoşul · Değişen durum · Veri kaybı riski · Doğrulama); beklenen
+  çıktı hemen ardından ayrı bir `text` bloğundadır. Her bash bloğu yayından önce
+  `artifacts/guvenlik-run3/blok-dogrula.mjs` ile temiz bir geçici klasörde sırayla koşturulur ve çıktısı
+  metindekiyle karşılaştırılır; geçici yol metinde "…" diye kısaltılır, sekme/boşluk farkı yok sayılır.
+  Ardında `text` bloğu olmayan bash parçaları (Teşhis et soruları) koşturulmaz; iddiaları ayrı
+  betiklerle kanıtlanır (`deney5-teshis2.txt`, `deney6-teshis2.txt`).
+- **#30 (2026-10-21, run 3) "Ek açıklama" ve "etiket":** OCI imaj ek açıklaması (annotation) "ek
+  açıklama", Git tag'i "etiket" diye yazılır; aynı Türkçe sözcük iki kavram taşımaz (#24'ün uzantısı).
+- **#31 (2026-10-21, run 3) Sürüm kapısı köken bilgisine dayanır:** "Yapı yamayı içeriyor mu?" sorusu
+  dal adıyla değil, imajın `org.opencontainers.image.revision` ek açıklamasındaki tam commit kimliği ve
+  tam klonda `git merge-base --is-ancestor` ile cevaplanır; 1 "yama yok", 2 "karar alınamadı" (sığ klon,
+  çözülemeyen kimlik) ayrı sayılır; davranış kanıtı kanarya testidir. 5'in doğrulanabilir özelliği SSDF
+  v1.1 PS.3.2. 22 (tedarik zinciri) bu kaydın kimin elinde güvenilir olduğunu işler.
+- **#32 (2026-10-21, run 3) GitHub "About branches" taşındı:** Sayfa "Branches" adıyla
+  `docs.github.com/en/pull-requests/reference/branches` adresinde; eski adres yönleniyor. Künye yeni
+  adresle verildi; 9 ve 12'de aynı sayfaya bu adresle gidilir.
+- **#33 (2026-10-21, run 3) Zaman çizelgesi:** 5'in sürüm toplantısı 21 Ekim sabahı; yama 20 Ekim'de
+  `main`'e girdi ve aday 19 Ekim'de `31ad836`'dan yapıldı. 6 aynı sabah toplantıdan hemen sonra açılır;
+  `120d7b5` 09.15'te, `eacea0f` 10.05'te. 6'nın açılışı run içinde bu çizelgeye göre düzeltildi.
+- **#34 (2026-10-21, run 3) "Kendi organizasyonunda" kutusu yalnız GitHub ayarı önerildiğinde:** 5'te
+  varsayılan dal adı için kutu var (salt okunur `gh repo list`, ayar sayfası; öneri: yeni depolar için ad,
+  yeniden adlandırmanın GitHub belgesindeki etkileri). 6'da GitHub ayarı önerilmediği için kutu yok.

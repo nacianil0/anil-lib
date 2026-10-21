@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T11:25:38.783Z
-> Files: 866 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T12:35:58.081Z
+> Files: 884 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -24,7 +24,7 @@
 
 ## .claude/
 
-- `launch.json` (~56 tok)
+- `launch.json` (~59 tok)
 
 ## .claude/rules/
 
@@ -467,6 +467,12 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/686dd6a6-3819-46c8-adc3-5dacf57eba08/scratchpad/boun-b4/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/6fd2322f-ef99-4384-b741-7749808004d2/scratchpad/
+
+- `arastirma-ek.md` — 15. Yazı 5 — kanıt (Git'in zihinsel modeli) (~2361 tok)
+- `buglog-ek.cjs` — .wolf/buglog.json'a Güven Sınırı run 3'ün hatalarını ekler (yapılandırılmış ekleme; mevcut kayıtlara (~1149 tok)
+- `memory-ek.md` (~400 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/789ba616-f817-46a6-8065-e9ce7f20ec03/scratchpad/b8/
 
 
@@ -702,8 +708,9 @@
 - `commit-push-main-no-coauthor.md` (~250 tok)
 - `editoryal-yenileme-2026-09-25.md` (~730 tok)
 - `guvenlik-series-run1-2026-10-21.md` (~608 tok)
-- `guvenlik-series-run2-2026-10-21.md` (~597 tok)
-- `MEMORY.md` — Memory index (~2433 tok)
+- `guvenlik-series-run2-2026-10-21.md` (~649 tok)
+- `guvenlik-series-run3-2026-10-21.md` (~660 tok)
+- `MEMORY.md` — Memory index (~2493 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `okuma-sifirlama-2026-09-25.md` (~542 tok)
 - `series-bakim-run1-2026-09-26.md` (~612 tok)
@@ -946,6 +953,20 @@
 
 - `paged.mjs` — Güven Sınırı run 2: yazı 3–4'ün tablo ve şekillerini e2e "fits diagrams and tables" kuralının (~1094 tok)
 - `shoot.mjs` — Güven Sınırı run 2: yazı 3–4'ün gerçek render doğrulaması (yalıtılmış kopyadaki üretim sunucusu). (~2626 tok)
+
+## artifacts/guvenlik-run3/
+
+- `blok-dogrula.mjs` — Yazıdaki her ```bash bloğunu sırayla tek bir kabukta koşturur ve hemen ardından gelen (~779 tok)
+- `deney5-gozlem.sh` — Yazı 5 gözlemleri: kurulumdan sonra okura gösterilen komutlar ve çıktıları. (~513 tok)
+- `deney5-kur.sh` — Yazı 5 deney deposu: okura gösterilen kurulum betiğinin birebir aynısı. (~400 tok)
+- `deney5-okur.sh` — Yazı 5'te gösterilen komut bloklarının sırasıyla koşturulması (kurulumdan sonra). (~732 tok)
+- `deney6-okur.sh` — Yazı 6'da gösterilen blokların birebir sırayla koşturulması (temiz bir klasörde). (~879 tok)
+- `deney6-prova.sh` — Yazı 6 deney provası: bare origin + iki klon; davranışları ve iletileri görmek için. (~944 tok)
+- `deney6-teshis2.sh` — Yazı 6, ikinci "Teşhis et" kutusundaki betiğin iddialarının kanıtı (yazıda gösterilmez). (~455 tok)
+
+## artifacts/guvenlik-run3/render/
+
+- `metin.mjs` — Yayındaki metinde belirli cümlelerin bulunduğunu doğrular (giriş: depodaki e2e test kimliği). (~364 tok)
 
 ## artifacts/owasp-run1/
 
@@ -1219,6 +1240,16 @@
 - `hata-yolunda-guvenlik-a10-2025.md` — Yetki servisi cevap vermediğinde (~7574 tok)
 - `owasp-top-10-2025-i-okumak.md` — "Sıfır bulgu" ne söyler? (~6490 tok)
 
+## content/series-guvenlik/articles/version-control/
+
+- `git-zihinsel-modeli-dal-bir-isaretcidir.md` — Güven Sınırı yazı 5 (kohort 2): XXE yaması `main`'de; commit = anlık görüntü + ebeveyn + üst veri, dal/HEAD işaretçi, üç alan, `--is-ancestor` ve imajın `org.opencontainers.image.revision` kaydıyla sürüm kapısı; deterministik deney deposu (11 doğrulanmış komut bloğu). (~9159 tok)
+- `uzak-depoyla-esitlenmek-fetch-pull-push.md` — Güven Sınırı yazı 6 (kohort 2): iki klon + bare origin; yerel dal / uzak izleme dalı / uzak dal, `fetch`/`pull`/`push` hangi ref'i taşır, ıraksama ve iki ret, "güncelim" ne zaman kanıt (10 doğrulanmış komut bloğu). (~7202 tok)
+
+## content/series-guvenlik/assets/git-zihinsel-modeli-dal-bir-isaretcidir/
+
+- `dal-yalnizca-isaretci.svg` — Yazı 5 Şekil 1: önce/sonra commit grafiği; yalnızca HEAD'in dalı (main) kayar, feature ve imaj kaydı yerinde. (~2292 tok)
+- `degisikligin-duraklari.svg` — Yazı 5 Şekil 2: çalışma ağacı → hazırlık alanı → depo → imaj; add/commit/switch ve `git status --short` iki harfi. (~1458 tok)
+
 ## content/series-guvenlik/assets/guvenli-varsayilanlar-yapilandirma/
 
 - `etkin-degerin-katmanlari.svg` (~1638 tok)
@@ -1238,6 +1269,11 @@
 
 - `once-sonra-isci-siniri.svg` (~1856 tok)
 - `onizleme-veri-akisi.svg` (~1873 tok)
+
+## content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/
+
+- `iraksama-iki-ret.svg` — Yazı 6 Şekil 2: ıraksayan main (eacea0f) ve origin/main (120d7b5); push ve pull --ff-only retleri. (~1364 tok)
+- `uc-an-uc-ref.svg` — Yazı 6 Şekil 1: a klonunda üç an (fetch öncesi, fetch, pull); yalnız origin/main sonra main kayar, feature yerinde. (~3189 tok)
 
 ## content/series/
 
@@ -1720,11 +1756,11 @@
 
 ## docs/seri-guvenlik/
 
-- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~11622 tok)
-- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~2634 tok)
+- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~11971 tok)
+- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~3516 tok)
 - `SOZLESME.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Seri Sözleşmesi (~7438 tok)
 - `TRIGGER.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Üretim Trigger'ı (~483 tok)
-- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~18500 tok)
+- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~21054 tok)
 
 ## docs/seri/
 

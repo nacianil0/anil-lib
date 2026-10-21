@@ -6936,3 +6936,86 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 14:25 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run1-2026-10-21.md | inline fix | ~42 |
 | 14:25 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~117 |
 | 14:26 | Session end: 73 writes across 25 files (urls-1.txt, cwe_desc.py, bomb.py, hash-new.cjs, onizleme-veri-akisi.svg) | 26 reads | ~94952 tok |
+| 14:27 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run2-2026-10-21.md | "s multi-tenant document p" → "s multi-tenant document p" | ~102 |
+| 14:27 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run2-2026-10-21.md | "Güven Sınırı run 2 publis" → "Güven Sınırı run 2 publis" | ~59 |
+| 14:27 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | inline fix | ~58 |
+| 14:27 | Session end: 76 writes across 25 files (urls-1.txt, cwe_desc.py, bomb.py, hash-new.cjs, onizleme-veri-akisi.svg) | 27 reads | ~95437 tok |
+
+## Session: 2026-10-21 14:29
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:38 | Created artifacts/guvenlik-run3/deney5-kur.sh | — | ~435 |
+| 14:38 | Created artifacts/guvenlik-run3/deney5-kur.sh | — | ~400 |
+| 14:40 | Created artifacts/guvenlik-run3/deney5-gozlem.sh | — | ~513 |
+| 14:44 | Created artifacts/guvenlik-run3/deney5-okur.sh | — | ~732 |
+| 14:53 | Created content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | — | ~9629 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | "in sözlüğü commit nesnesi" → "in sözlüğü commit nesnesi" | ~40 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~47 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~98 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~23 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~51 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~24 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~16 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | "da yeni depoların varsayı" → "da yeni depoların varsayı" | ~65 |
+| 14:55 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | 1→2 lines | ~96 |
+| 14:57 | Created content/series-guvenlik/assets/git-zihinsel-modeli-dal-bir-isaretcidir/dal-yalnizca-isaretci.svg | — | ~2292 |
+| 14:57 | Created content/series-guvenlik/assets/git-zihinsel-modeli-dal-bir-isaretcidir/degisikligin-duraklari.svg | — | ~1458 |
+| 14:58 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | "in yönünde, her commit eb" → "in yönünde, her commit eb" | ~204 |
+| 14:58 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | "ler, içinde HEAD: f8db4cb" → "te kayıt yok. Hazırlık al" | ~198 |
+| 14:59 | Created artifacts/guvenlik-run3/blok-dogrula.mjs | — | ~687 |
+| 14:59 | Edited artifacts/guvenlik-run3/blok-dogrula.mjs | modified slice() | ~113 |
+| 14:59 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~71 |
+| 15:04 | Created artifacts/guvenlik-run3/deney6-prova.sh | — | ~944 |
+| 15:06 | Created artifacts/guvenlik-run3/deney6-okur.sh | — | ~879 |
+| 15:06 | Created artifacts/guvenlik-run3/deney6-teshis2.sh | — | ~455 |
+| 15:09 | Created content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | — | ~7126 |
+| 15:10 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~35 |
+| 15:10 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~32 |
+| 15:11 | Created content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/uc-an-uc-ref.svg | — | ~3189 |
+| 15:12 | Created content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/iraksama-iki-ret.svg | — | ~1354 |
+| 15:12 | Edited content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/iraksama-iki-ret.svg | inline fix | ~26 |
+| 15:12 | Edited content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/iraksama-iki-ret.svg | inline fix | ~44 |
+| 15:12 | Edited content/series-guvenlik/assets/uzak-depoyla-esitlenmek-fetch-pull-push/iraksama-iki-ret.svg | inline fix | ~88 |
+| 15:12 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | "in yönünde. 31ad836 ve 85" → "in yönünde. 31ad836 1.4.0" | ~208 |
+| 15:12 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~46 |
+| 15:13 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~12 |
+| 15:13 | Edited artifacts/guvenlik-run3/blok-dogrula.mjs | expanded (+9 lines) | ~138 |
+| 15:14 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | expanded (+15 lines) | ~258 |
+| 15:14 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | modified aday_kimligi() | ~411 |
+| 15:14 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | 3→3 lines | ~22 |
+| 15:15 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~30 |
+| 15:15 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~29 |
+| 15:16 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~42 |
+| 15:16 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~129 |
+| 15:16 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | "in kılavuzu bir güvenlik " → "in kılavuzu bu kuralı bir" | ~72 |
+| 15:17 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | 3→3 lines | ~230 |
+| 15:20 | Edited .claude/launch.json | expanded (+6 lines) | ~73 |
+| 15:23 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 2→2 lines | ~39 |
+| 15:23 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified im() | ~371 |
+| 15:23 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified im() | ~325 |
+| 15:23 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+7 lines) | ~238 |
+| 15:24 | Edited content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md | inline fix | ~66 |
+| 15:24 | Edited content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md | inline fix | ~76 |
+| 15:28 | Created artifacts/guvenlik-run3/render/metin.mjs | — | ~364 |
+| 15:28 | Edited .claude/launch.json | removed 10 lines | ~9 |
+| 15:29 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+24 lines) | ~650 |
+| 15:29 | Edited docs/seri-guvenlik/YOL-HARITASI.md | area() → tirme() | ~104 |
+| 15:29 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 2→1 lines | ~9 |
+| 15:29 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+9 lines) | ~439 |
+| 15:29 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+8 lines) | ~309 |
+| 15:30 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+30 lines) | ~800 |
+| 15:30 | Edited docs/seri-guvenlik/ARASTIRMA.md | 2→2 lines | ~39 |
+| 15:30 | Edited docs/seri-guvenlik/ARASTIRMA.md | modified k() | ~486 |
+| 15:31 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/6fd2322f-ef99-4384-b741-7749808004d2/scratchpad/arastirma-ek.md | — | ~2518 |
+| 15:32 | Created docs/seri-guvenlik/HANDOFF.md | — | ~3751 |
+| 15:34 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/6fd2322f-ef99-4384-b741-7749808004d2/scratchpad/buglog-ek.cjs | — | ~1149 |
+| 15:35 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/6fd2322f-ef99-4384-b741-7749808004d2/scratchpad/memory-ek.md | — | ~427 |
+| 15:35 | Güven Sınırı run 3: yazı 5 (Git'in zihinsel modeli) ve 6 (uzak depoyla eşitlenmek) yazıldı, 4 şekil çizildi, deterministik deney deposu (aynı 5 kimlik) ve 21 komut bloğu temiz klasörde birebir doğrulandı | content/series-guvenlik/articles/version-control/*, assets/{git-zihinsel-modeli-dal-bir-isaretcidir,uzak-depoyla-esitlenmek-fetch-pull-push}/* | kapılar yeşil | ~60000 |
+| 15:35 | Entegrasyon: entegre-batch kuru → yazma (4 mevcut + 2 yeni), sync-series-hashes; metin düzeltmesinden sonra --write (5: 3e69002d9f08, 6: acc82161e816) | content/series-guvenlik/{catalog,roadmap}.json | idempotent, 0 yeni | ~2000 |
+| 15:35 | Doğrulama: typecheck 0, vitest 42/830, eslint 14 (run 2 tabanıyla aynı), next build iki kez (yalıtılmış kopya, 190 sayfa), 72 render ölçümü + 4 sığma durumu, şekil PNG'leri üç tema | artifacts/guvenlik-run3/ | yeni yazılarda sorun 0 | ~15000 |
+| 15:35 | +1: HANDOFF yeniden yazıldı (cursor 7–8, kohort 3), YOL-HARITASI (5–6 durum, 7 köprüsü, terim/ileri işaret/geri çağırma defterleri, karar #28–#34), ARASTIRMA (§11 borçlar, §15–§17) | docs/seri-guvenlik/{HANDOFF,YOL-HARITASI,ARASTIRMA}.md | tamam | ~9000 |
+| 15:35 | Temizlik: geçici launch.json girdisi çıkarıldı (dosya run öncesiyle aynı), D:\dev\.anil-lib-iso-guvenlik-run3 (önce junction) silindi, artifacts altındaki deney depoları (.ts) ve işaretli geçici klasörler silindi | .claude/launch.json | temiz | ~500 |
+| 15:35 | Oturum özeti: run 3 BATCH=2+1 tamam; commit/push/deploy yapılmadı; cerebrum (öğrenilenler, Do-Not-Repeat, karar özeti) ve buglog (bug-853…859) güncellendi | .wolf/* | — | ~1500 |
+| 15:35 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run3-2026-10-21.md | — | ~674 |
+| 15:35 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~120 |

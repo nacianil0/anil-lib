@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 356" role="img" aria-label="Dört kutu soldan sağa: çalışma ağacı, diskteki dosyalar, pdf.ts +2 satır, Git'te kayıt yok; hazırlık alanı, index, pdf.ts +1 satır, sonraki commit; depo (.git), commit ve ref'ler, HEAD: f8db4cb, pdf.ts eski hâl; imaj, temiz klondan, revision, commit kimliği. Üstte git add çalışma ağacından hazırlık alanına, git commit hazırlık alanından depoya. Depodan imaja yapı oku. Altta depodan iki alana dönen ok: git switch dal, iki alanı o commit'in anlık görüntüsüyle doldurur, HEAD'i taşır. En altta git status --short çıktısı: MM fatura/pdf.ts; 1. harf hazırlık alanı ile HEAD'in commit'i farkı, 2. harf çalışma ağacı ile hazırlık alanı farkı.">
+  <defs>
+    <marker id="gz2-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="gz2-ok-yapi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--cool)" />
+    </marker>
+  </defs>
+
+  <text x="155" y="42" font-size="13" font-weight="bold" fill="var(--text)">git add</text>
+  <path d="M120,70 L120,50 L240,50 L240,66" fill="none" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz2-ok)" />
+  <text x="332" y="42" font-size="13" font-weight="bold" fill="var(--text)">git commit</text>
+  <path d="M308,70 L308,50 L428,50 L428,66" fill="none" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz2-ok)" />
+
+  <rect x="16" y="70" width="140" height="120" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="28" y="92" font-size="13" font-weight="bold" fill="var(--text)">çalışma ağacı</text>
+  <text x="28" y="110" font-size="13" fill="var(--text-muted)">diskteki dosyalar</text>
+  <rect x="24" y="122" width="124" height="28" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" />
+  <text x="34" y="141" font-size="13" fill="var(--text)">pdf.ts +2 satır</text>
+  <text x="28" y="176" font-size="13" fill="var(--text-muted)">Git'te kayıt yok</text>
+
+  <rect x="204" y="70" width="140" height="120" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="216" y="92" font-size="13" font-weight="bold" fill="var(--text)">hazırlık alanı</text>
+  <text x="216" y="110" font-size="13" fill="var(--text-muted)">index</text>
+  <rect x="212" y="122" width="124" height="28" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" />
+  <text x="222" y="141" font-size="13" fill="var(--text)">pdf.ts +1 satır</text>
+  <text x="216" y="176" font-size="13" fill="var(--text-muted)">sonraki commit</text>
+
+  <rect x="392" y="70" width="140" height="120" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.4" />
+  <text x="404" y="92" font-size="13" font-weight="bold" fill="var(--text)">depo (.git)</text>
+  <text x="404" y="110" font-size="13" fill="var(--text-muted)">commit ve ref'ler</text>
+  <rect x="400" y="122" width="124" height="28" rx="6" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" />
+  <text x="410" y="141" font-size="13" fill="var(--text)">HEAD: f8db4cb</text>
+  <text x="404" y="176" font-size="13" fill="var(--text-muted)">pdf.ts eski hâl</text>
+
+  <line x1="534" y1="130" x2="576" y2="130" stroke="var(--cool)" stroke-width="1.6" marker-end="url(#gz2-ok-yapi)" />
+  <text x="541" y="122" font-size="13" fill="var(--cool)">yapı</text>
+
+  <rect x="580" y="70" width="124" height="120" rx="10" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.4" />
+  <text x="592" y="92" font-size="13" font-weight="bold" fill="var(--text)">imaj</text>
+  <text x="592" y="110" font-size="13" fill="var(--text-muted)">temiz klondan</text>
+  <rect x="588" y="122" width="108" height="28" rx="6" fill="var(--surface)" stroke="var(--cool)" stroke-width="1" />
+  <text x="598" y="141" font-size="13" fill="var(--text)">revision</text>
+  <text x="592" y="176" font-size="13" fill="var(--text-muted)">commit kimliği</text>
+
+  <path d="M462,190 L462,214 L86,214 L86,194" fill="none" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz2-ok)" />
+  <line x1="274" y1="214" x2="274" y2="194" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#gz2-ok)" />
+  <text x="16" y="238" font-size="13" fill="var(--text)">git switch &lt;dal&gt;: iki alanı o commit'in anlık görüntüsüyle doldurur, HEAD'i taşır</text>
+
+  <text x="16" y="272" font-size="13" fill="var(--text)">git status --short çıktısı: MM fatura/pdf.ts</text>
+  <line x1="274" y1="288" x2="462" y2="288" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="274" y1="282" x2="274" y2="294" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="462" y1="282" x2="462" y2="294" stroke="var(--text-muted)" stroke-width="1.4" />
+  <text x="274" y="310" font-size="13" fill="var(--text-muted)">1. harf: hazırlık alanı ile HEAD'in commit'i farkı</text>
+  <line x1="86" y1="322" x2="274" y2="322" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="86" y1="316" x2="86" y2="328" stroke="var(--text-muted)" stroke-width="1.4" />
+  <line x1="274" y1="316" x2="274" y2="328" stroke="var(--text-muted)" stroke-width="1.4" />
+  <text x="86" y="344" font-size="13" fill="var(--text-muted)">2. harf: çalışma ağacı ile hazırlık alanı farkı</text>
+</svg>

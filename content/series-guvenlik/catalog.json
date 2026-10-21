@@ -82,6 +82,46 @@
       "path": "content/series-guvenlik/articles/design-and-configuration/guvenli-varsayilanlar-yapilandirma.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
+    },
+    {
+      "articleId": "article_32c1b2f0-25e1-4e72-8ffe-306eb32edddf",
+      "title": "Git'in Zihinsel Modeli: Dal Bir Kopya Değil, Bir İşaretçidir",
+      "slug": "git-zihinsel-modeli-dal-bir-isaretcidir",
+      "category": "version-control",
+      "level": "advanced",
+      "readingOrder": 5,
+      "summary": "Yapılandırma incelemesinin XXE düzeltmesi ana dala girdikten sonra kurulan üç cümleyi sınar: yama ana dalda, sürüm adayı ana daldan yapıldığı için yamayı içeriyor, ana daldan önceden açılmış dal da yamayı aldı. Commit'i kimliği içeriğinden türeyen bir anlık görüntü, ebeveyn ve üst veri nesnesi olarak; dalı ve HEAD'i bu nesneleri gösteren işaretçiler olarak kurar; çalışma ağacı, hazırlık alanı ve depo ayrımını gösterir. Bir değişikliğin yerini dal adıyla değil ulaşılabilirlikle kanıtlar: imajın kaydettiği commit kimliği, git merge-base --is-ancestor, ayrı tutulan karar alınamadı sonucu ve sığ klonda hayır cevabının neden kanıt olmadığı.",
+      "tags": [
+        "git",
+        "commit-grafigi",
+        "dal",
+        "koken-bilgisi",
+        "a03-2025"
+      ],
+      "contentHash": "sha256:3e69002d9f082ec4d29ace3c3ed155b26615b7e3f732254e22ebd2a49cbd7d57",
+      "path": "content/series-guvenlik/articles/version-control/git-zihinsel-modeli-dal-bir-isaretcidir.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
+    },
+    {
+      "articleId": "article_8d22c85c-1e96-488e-844e-e5a38c854583",
+      "title": "Uzak Depoyla Eşitlenmek: fetch, pull, push ve origin/main Ne Zaman Değişir?",
+      "slug": "uzak-depoyla-esitlenmek-fetch-pull-push",
+      "category": "version-control",
+      "level": "advanced",
+      "readingOrder": 6,
+      "summary": "XXE yaması başka bir makineden paylaşılan uzak depoya gönderildikten sonra, fatura geliştiricisinin klonunda neyin değişip neyin değişmediğini iki klon ve yerel bir bare depoyla ölçer. Yerel dalı, uzak izleme dalını ve uzak depodaki dalı ayırır; fetch'in yalnızca origin/main'i, pull'un yalnızca geçerli dalı, push'un yalnızca ileri sarılabilen uzak dalı taşıdığını gösterir. git status'un güncel cevabının son fetch'in önbelleği olduğunu, ıraksamada pull ve push'un neden reddettiğini ve güncelim kararının hangi koşulda kanıt sayılacağını kurar.",
+      "tags": [
+        "git",
+        "uzak-depo",
+        "uzak-izleme-dali",
+        "fetch-pull-push",
+        "ileri-sarma"
+      ],
+      "contentHash": "sha256:acc82161e816a9ea2695562560dfd58311a292294e2263a5487e8ea31f30385b",
+      "path": "content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 2
     }
   ]
 }
