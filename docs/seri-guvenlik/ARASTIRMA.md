@@ -6,7 +6,7 @@
 > kaynakları yeniden doğrular ve bu dosyayı günceller.
 
 Son güncelleme: 2026-10-21 (kurulum + run 1 + müfredat revizyonu: Git/GitHub hattı, §7–§11 + run 2:
-yazı 3–4, §12–§14 + run 3: yazı 5–6, §15–§17)
+yazı 3–4, §12–§14 + run 3: yazı 5–6, §15–§17 + run 4: yazı 7–8, §18–§20)
 
 ---
 
@@ -431,6 +431,18 @@ Global ve sistem Git yapılandırması devre dışı (`GIT_CONFIG_GLOBAL` boş d
   oluşturur" der; ret iletisinin ipucu da "push'tan önce `git pull`" önerir. Yazı 6 `git-pull` sayfasını ve
   yerel deneyi esas aldı, farkı adıyla yazdı. Pro Git 2.5 ve 3.5 de `pull`'u "getir ve birleştir" diye
   anlatıyor (§10'daki sürüm farkı).
+- **Run 4'ün tarihli ve sürüme bağlı iddiaları (bakım kalemi):** GitHub'ın birleştirme yöntemi ayarları
+  ("General" → "Pull Requests"; yöntemler Maintain/Admin, otomatik dal silme Admin; belgede plan koşulu yok);
+  "Rebase and merge"ün her zaman yeni SHA üretmesi, baştan boş commit'leri atması ve imza doğrulamasız eklemesi;
+  "Update branch"in korumalı HEAD dalında kullanılamayabilmesi; "Restore branch" yalnız kapanmış PR'da; "Revert"
+  düğmesinin GitHub dışında birleşen PR için tek tek commit gerektirmesi; dolaylı birleştirme; korunan dalın plan
+  koşulu ve zorla push/silme engelinin varsayılanı; gh 2.98.0 JSON alanları (`mergeCommitAllowed`,
+  `squashMergeAllowed`, `rebaseMergeAllowed`, `deleteBranchOnMerge`). Git tarafında: `merge-tree` yeni kipi
+  2.38'den, `zdiff3` 2.35'ten, `--force-if-includes` 2.30'dan, "Reapply" mesajı 2.43'ten (sürüm notları);
+  yazılardaki ileti metinleri (`branch -d` ipucu, `merge --squash` iletileri) Git 2.53.0.windows.2 çıktısıdır
+  ve sürümle değişebilir, kimlikler değişmez. GitHub Docs'un `/en/pull-requests/` adres yapısı Ekim 2026'da
+  `get-started` / `how-tos` / `reference` diye yeniden düzenlenmiş; eski adresler (ör. "About pull request
+  merges") yönleniyor olabilir, künyeler yeni adreslerle verildi.
 - **Tarihli iddialar:** Git 3.0'ın yayım zamanı ve varsayılan dal değişikliği; GitHub ruleset ve
   birleştirme kuyruğu plan koşulları; 2FA zorunluluğunun üye/dış katkıcı davranışı (son yıllarda
   değişti); immutable releases'ın kapsamı. Her biri yazıldığı run'da yeniden doğrulanır ve "Ekim
@@ -570,3 +582,86 @@ kimliklerin taşınabilirliği içerik adreslemenin tanımına dayanır (aynı b
 | `fetch`, `pull`, `push`, ıraksama | `31ad836..85fdda1 main -> origin/main`; ileri sarma; feature'da "Already up to date" ve 1; `push` "fetch first" (1); `pull` "Need to specify how to reconcile divergent branches." (128) | aynı |
 | 6'nın ikinci Teşhis'i (`git fetch \|\| true`) | Erişilemeyen uzak depoda bayat `origin/main` ile "aday yapılıyor"; gönderilmemiş yerel commit varken de | `deney6-teshis2.sh`, `deney6-teshis2.txt` |
 | Yazılardaki her bash bloğu temiz klasörde sırayla | 5: 11/11, 6: 10/10 blok çıktısı metindekiyle aynı | `blok-dogrula.mjs`, `blok-dogrula-5.txt`, `blok-dogrula-6.txt` |
+
+## 18. Yazı 7 — kanıt (Ayrışan geçmişi birleştirmek)
+
+Erişim tarihlerinin hepsi 2026-10-21; metinler `artifacts/guvenlik-run4/src/` altında (gitignore; yalnızca bu
+makinede). GitHub Docs adresleri bölüm dizinlerinden kopyalandı (`src-idx/`): "Pull request merges" artık
+`/en/pull-requests/reference/pull-request-merges`, "Keeping your pull request in sync" `/how-tos/create-pull-requests/`
+altında, "About pull requests" `/get-started/` altında. git-scm.com ana sayfası güncel kaynak sürümünü 2.56.0 gösteriyor.
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| `merge-base`: üç yollu birleştirmede kullanılacak en iyi ortak ata; birden çok olabilir | git-merge-base 2.43.0, Description | |
+| Üç yollu birleştirme iki ucun anlık görüntüsü ve ortak atayla; birleştirme commit'i birden çok ebeveynli | Pro Git 3.2 Basic Merging | Pro Git örnek çıktısı "recursive" stratejisini gösterir; güncel kılavuzda tek uç için varsayılan `ort` (git-merge 2.54.0). Yazı yalnızca deneyin `ort` çıktısını gösterdi |
+| Bir tarafın değiştirdiği alan sonuca girer; iki taraf aynı alanı değiştirdiyse Git seçmez | git-merge 2.54.0, How Conflicts Are Presented | |
+| Birleştirme commit'i: ileri sarma değilse ebeveynleri birleştirilen dalların uçları | gitglossary 2.56.0, merge | |
+| Rebase: commit'leri başka bir başlangıç noktasına taşır; dalda olup hedefte olmayanları listeler, yeniden uygular, dalı son commit'e taşır | git-rebase 2.54.0, Description | |
+| Başkalarının üzerine iş kurduğu dalı yeniden yazmak kötü fikir; aşağıdaki herkes geçmişini elle düzeltir | git-rebase 2.54.0, Recovering from Upstream Rebase | |
+| "Deponun dışında var olan ve başkalarının üzerine iş kurmuş olabileceği commit'leri rebase etme"; rebase var olanları bırakıp benzer ama farklı yenilerini yaratır; aynı yazar, tarih ve mesajlı iki commit | Pro Git 3.6 The Perils of Rebasing | |
+| `--onto <newbase>` | git-rebase 2.54.0, Options | |
+| `--rebase` getirmeden sonra geçerli dalı yukarı akışın üstüne rebase eder; `pull.rebase` | git-pull 2.55.0, Options | "This is the default" `true` değerinin varsayılan oluşudur, `pull`'un varsayılanı değil |
+| `patch-id`: dosya farklarının, satır numaraları dışarıda, özetlerinin toplamı; olası kopya commit'leri bulmak için | git-patch-id 2.54.0, Description | Varsayılan `--unstable` |
+| `--squash`: birleştirme olmuş gibi ağacı ve hazırlığı hazırlar; commit yapmaz, HEAD'i taşımaz, MERGE_HEAD kaydetmez | git-merge 2.54.0, Options | |
+| `merge.conflictStyle`: `merge` (varsayılan), `diff3`, `zdiff3` | git-config 2.56.0; git-merge 2.54.0 | |
+| `merge-tree --write-tree`: çalışma ağacına ve index'e dokunmadan birleştirme, commit yok, yeni bir ağaç nesnesi yazar; çıkış 0 temiz, 1 çatışma, diğer: yapılamadı; `--name-only` | git-merge-tree 2.52.0 | Yazı "nesne veritabanına bir ağaç yazar" diye aktardı |
+| PR bir daldaki değişikliklerin başka dala birleştirilmesini önerir; inceleme ve kontroller üzerinde yürür | GitHub Docs "About pull requests" | 7'de geçerken gloss; tanım 9 |
+| Üç yöntem: "Merge pull request" `--no-ff`; squash tek commit; "Rebase and merge" her zaman committer'ı günceller ve yeni SHA üretir, baştan boş commit'leri atar | GitHub Docs "Pull request merges"; "About merge methods on GitHub" | |
+| Squash kısa ömürlü dalda iyi; aynı dalda devam edilirse squash edilenler yeni PR'da yeniden listelenir, aynı çatışmalar tekrar çözülebilir; uzun yaşayan dalda birleştirme commit'i ya da sonraki PR'dan önce rebase | Aynı iki sayfa | |
+| Squash'ın bedeli: değişikliklerin ne zaman ve kimce yazıldığı bilgisi kaybolur; "Rebase and merge" commit'leri imza doğrulaması olmadan ekler | "About merge methods on GitHub" | |
+| "Update branch" birleştirir, "Update with rebase" rebase eder; PR dalının deposunda yazma yetkisi; HEAD dalı korumalıysa düğme kullanılamayabilir | GitHub Docs "Keeping your pull request in sync with the base branch" | |
+| `gh pr update-branch`: varsayılan birleştirme commit'i, `--rebase` | GitHub CLI kılavuzu | gh 2.98.0 |
+| Yöntem ayarları depo ayarlarında "General" → "Pull Requests"; "Configure pull request merges" Maintain ve Admin; otomatik dal silme Admin | GitHub Docs "Configuring commit squashing/merging/rebasing", "Repository roles for an organization", "Managing the automatic deletion of branches" | Plan koşulu yazmıyor (Ekim 2026) |
+| `gh repo list/view --json` alanları: `mergeCommitAllowed`, `squashMergeAllowed`, `rebaseMergeAllowed`, `deleteBranchOnMerge` | GitHub CLI kılavuzu (gh_repo_view, gh_repo_list); yerel `gh repo list --json` alan listesi | Gerçek organizasyona karşı çalıştırılmadı |
+| Depo ayarıyla çelişen bir ruleset kuralı birleştirmeyi engeller | "About merge methods on GitHub" | 7'de "ruleset" adı geçmedi; 12'ye işaret |
+
+## 19. Yazı 8 — kanıt (Kod kaybetmeden geri almak)
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| Reset, restore, revert ayrımı (revert yeni commit; restore dalı güncellemez; reset dal ucunu taşır, geçmişi değiştirir) | git 2.56.0, "Reset, restore and revert" | |
+| `--soft`, `--mixed` (varsayılan), `--hard`, `--keep` | git-reset 2.54.0 | `--keep` deneyde çıkış 128 ile durdu |
+| `--hard` reset'in tek tehlikeli biçimi; Git'in veri yok ettiği az durumdan biri | Pro Git 7.7 | |
+| `restore`: varsayılan kaynak index, `--staged` ile HEAD | git-restore 2.55.0 | |
+| `revert` yeni commit'ler yazar; reset ve restore alternatifleri commit edilmemiş değişikliği atar | git-revert 2.54.0, Description | |
+| `-m`: birleştirmeyi geri döndürmek ağaç değişikliklerini bir daha istememeyi beyan eder; sonraki birleştirmeler yalnızca ata olmayan commit'leri getirir | git-revert 2.54.0, Options | |
+| Revert'ün revert'ü; dal yeni commit'lerle yeniden yapıldıysa gerekmez | "How to revert a faulty merge" (Linus Torvalds, Junio C Hamano, 2008), v2.56.0 etiketindeki `Documentation/howto/revert-a-faulty-merge.adoc` | git-scm.com/docs/howto sayfası GitHub'daki HEAD'e yönleniyor; künye sabit etiketle verildi |
+| Reflog: dal ve ref uçlarının yerel depoda ne zaman güncellendiği; HEAD günlüğü dal değişimini de tutar; `HEAD@{n}` | git-reflog 2.51.1, Description | |
+| `gc.reflogExpire` 90 gün, `gc.reflogExpireUnreachable` 30 gün, `gc.pruneExpire` iki hafta; nesne yaratan komutlar gc'yi kendiliğinden başlatır | git-gc 2.52.0; git-reflog 2.51.1 `--expire` | |
+| Ayrık HEAD: HEAD doğrudan commit'i gösterir; ref oluşturulmazsa commit rutin çöp toplamayla silinir | git-checkout 2.55.0, Detached HEAD | |
+| `switch --detach`: inceleme ve atılabilir denemeler için | git-switch 2.55.0 | |
+| `branch -d` yalnızca yukarı akışa ya da HEAD'e tamamen birleşmiş dalı siler | git-branch 2.56.0 | Squash'tan sonra deneyde reddetti |
+| `--lost-found`: sahipsiz nesneleri yazar, blob'un içeriğini dosyaya | git-fsck 2.53.0 | Teşhis deneyinde hazırlıktaki satır bulundu, yalnız çalışma ağacındaki yok |
+| `--force`: bütün denetimleri kapatır, uzak depoya commit kaybettirebilir | git-push 2.55.0 | |
+| `--force-with-lease` (beklenen değer verilmezse uzak izleme dalı); arka planda `fetch` çalıştıran her şeyle "çok kötü etkileşir" | git-push 2.55.0 | Deney: stale info → fetch → kabul, test commit'i düştü |
+| `--force-if-includes`: uzak izleme ucunun yerel dalın reflog girdilerinden ulaşılabilirliği; `push.useForceIfIncludes` | git-push 2.55.0; git-config 2.56.0 | Deney: "remote ref updated since checkout" |
+| `cherry-pick`: var olan commit'in değişikliğini yeni commit olarak uygular; `--abort` | git-cherry-pick 2.56.0 | |
+| `merge --abort` commit edilmemiş değişiklik varken eski durumu her zaman kuramaz | git-merge 2.54.0, Description | 2'nin kısmi başarısızlık ilkesinin geri çağrısı |
+| Kapanmış PR'ın dalı "Restore branch"; birleşmiş ya da kapanmış PR dalını silmek yazma yetkisi; açık PR'a bağlı dal silinemez | GitHub Docs "Deleting and restoring branches in a pull request" | Geri yüklemenin rolü belgede yazmıyor; yazı rol iddia etmedi |
+| "Revert" düğmesi birleştirme commit'ini geri döndüren yeni PR; yazma yetkisi; GitHub'da birleştirilmemişse tek tek commit | GitHub Docs "Reverting a pull request" | |
+| Dolaylı birleştirme: head commit'leri tabandan ulaşılabilir olunca PR birleşmiş işaretlenir, koruma sağlanmasa bile | GitHub Docs "Pull request merges", Indirect merges | 8'de tanımlandı; 9 kalan riskte geri çağırır |
+| Korumalı dalda zorla push ve silme varsayılan engelli; zorla push dal silebilir ya da PR'da onaylanmamış commit'leri gösterebilir; plan: herkese açık depoda Free, özelde Pro, Team, Enterprise | GitHub Docs "About protected branches" | 12'ye işaret |
+| Sızan sır: önce iptal ya da rotasyon; yeniden yazmanın yan etkileri; klon, çatal, önbellek görünümü ve PR'da kalabilir | GitHub Docs "Removing sensitive data from a repository" | 13'e işaret (Teşhis) |
+
+## 20. Run 4 deneyleri (yazarın çalıştırması; kendi deneyimiz)
+
+Ortam: Git **2.53.0.windows.2**, Git Bash; global ve sistem ayarı devre dışı. Betikler ve çıktılar
+`artifacts/guvenlik-run4/` altında (gitignore; yalnızca bu makinede). Kimlikler 5–6'nın beş commit'iyle ve
+6'nın `eacea0f`/`120d7b5` sonuyla aynı çıktı (karar #28 sürdü).
+
+| Deney | Sonuç | Dosya |
+|---|---|---|
+| Rebase ve ortam değişkenleri | `GIT_AUTHOR_*` verilse de rebase özgün yazarı korur, commit'i yapanı ortamdan alır; kimlik verilmezse makineye özgü kimlik yazar | oturum içi deneme |
+| 7: rebase | `eacea0f` → `66098e2` (tree, parent, committer değişti; patch-id `3ad660d…` aynı); eski commit'i içeren dal 0 | `deney7-kur.sh`, `deney7-kur-cikti.txt` |
+| 7: üç son | `08bfade` (birleştirme), `4f3df21` (squash), `9f65d7a` + `b1ba17d` (rebase); üç ağaç `90c95de`; ata 0/1/1 | aynı |
+| 7: paylaşılmış dalı güncellemek | Rebase'li gönderim "non-fast-forward" (1); birleştirme `3bfd1a1` (ebeveynler `ad2634c`, `66098e2`); `--is-ancestor 85fdda1` 0 | aynı |
+| 7: squash ve devam | squash `ac8d84d`, devam `ec788df`; `merge-tree` 1, `add/add`; `rebase --onto` → `b2dff87` | aynı |
+| 7: Teşhis (kendi tarafı) | Çatışma bölümü; `ebbce4d` (ebeveynler `b472cb6`, `ac8d84d`) için `--is-ancestor 85fdda1` 0, `git grep` yalnız `noent` satırı; `zdiff3` tabanı `31ad836` | `deney7-kur.sh` TESHIS bölümü; `deney7-teshis.sh`, `deney7-teshis.txt` |
+| 7: otomatik silme sonrası | Uzak dal başka klondan silinince yerel dal ve `origin/<dal>` `fetch --prune`'a kadar kalır; aynı adla push dalı yeniden yaratır | oturum içi deneme |
+| 8: reset biçimleri | ` M` → `MM` → ` M` → temiz; `8820cfa` günlükte, taslak satır hiçbir yerde | `deney8-kur.sh`, `deney8-kur-cikti.txt` |
+| 8: ayrık HEAD | `0594ea1` uyarıyla; `HEAD@{1}` ile `kanarya-testi`; `eacea0f main@{4}` | aynı |
+| 8: silinen dal | `-d` "not fully merged"; `-D` "(was ec788df)"; dalın günlüğü silindi, HEAD günlüğünde `ec788df` | aynı |
+| 8: zorla push | fetch first (1), stale info (1), fetch, remote ref updated since checkout (1), forced update `a578de5...8023fd7` (0); kurtarma `49e55e1` (yazar `gelistirici-b`) | aynı |
+| 8: yanlış birleştirme | `4021fbd` (ebeveynler `ac8d84d`, `49e55e1`); `revert -m 1` → `a87a8cd`; yeniden birleştirme "Already up to date" ve ata 0; "Reapply" `b921466` | aynı |
+| 8: Teşhis (reset --hard tarifi) | `--keep` 128 ile durdu; gönderilmemiş commit günlükte; hazırlıktaki satır `fsck --lost-found` ile sahipsiz blob olarak bulundu, yalnız çalışma ağacındaki satır yok | `deney8-teshis.sh`, `deney8-teshis.txt` |
+| Yazılardaki her bash bloğu temiz klasörde sırayla | 7: 9/9, 8: 11/11 blok çıktısı metindekiyle aynı | `blok-dogrula.mjs`, `blok-dogrula-7.txt`, `blok-dogrula-8.txt` |

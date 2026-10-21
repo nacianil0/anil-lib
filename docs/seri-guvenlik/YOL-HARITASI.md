@@ -6,8 +6,8 @@
 > **yayımlanmış** yazının kimliği, slug'ı, sırası ve başlığı değişmez. Kaynak kanıtı
 > `ARASTIRMA.md`'de, güncel cursor `HANDOFF.md`'dedir.
 
-Son güncelleme: 2026-10-21 (run 3: yazı 5–6 yayımlandı) · Plan: **25 yazı, 10 faz**
-(tavan 25, karar #15) · Yayımlanan: 1–6 (ayrıntı `HANDOFF.md`)
+Son güncelleme: 2026-10-21 (run 4: yazı 7–8 yayımlandı; Git çekirdeği fazı kapandı) · Plan: **25 yazı,
+10 faz** (tavan 25, karar #15) · Yayımlanan: 1–8 (ayrıntı `HANDOFF.md`)
 
 ---
 
@@ -402,6 +402,18 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 7. Ayrışan Geçmişi Birleştirmek: Merge, Rebase ve Squash Neyi Değiştirir?
 
+- **Durum:** yayında (run 4, kohort 3) · slug `ayrisan-gecmisi-birlestirmek-merge-rebase-squash` · iki şekil
+  (`uc-son-tek-agac.svg`, `squash-sonrasi-taban.svg`).
+- **Yayımlanan biçim (run 4):** 6'nın sonundan, 21 Ekim 10.30. Birleştirme tabanı `85fdda1`, üç yollu
+  birleştirme; gönderilmemiş `eacea0f` rebase'le `66098e2` (tree, parent, committer değişti, patch-id aynı;
+  5'in `hash-object` deneyi geri çağrıldı); `git pull --rebase`/`pull.rebase`. KDV commit'i `ad2634c`; GitHub'ın
+  üç yöntemi üç deneme dalında (`08bfade`, `4f3df21`, `9f65d7a`+`b1ba17d`): üç ağaç `90c95de`, ata 0/1/1; PR
+  ilk kez gloss'landı. Paylaşılmış dal "Update branch"/`gh pr update-branch` ile: rebase'li gönderim
+  non-fast-forward, birleştirme commit'i `3bfd1a1`, `--is-ancestor 85fdda1` 0 (5–6'dan açık soru kapandı). Teşhis:
+  "kendi tarafını seç" çatışma çözümü (`--is-ancestor` 0 ama `noent` geri geldi; `zdiff3` tabanı `31ad836`).
+  Yönetici vakası (squash'tan sonra yaşayan dal): squash `ac8d84d`, devam `ec788df`, yöneticinin `y` klonunda
+  `merge-tree` 1 (`add/add`), seçenekler, `rebase --onto` ile yeni dal `b2dff87`, otomatik silmenin sınırı;
+  anlamsal çatışma kalan risk. "Kendi organizasyonunda" kutusu (birleştirme yöntemleri, otomatik dal silme).
 - **Hedef:** Okur, ileri sarma ile birleştirme commit'i, rebase ile merge ve GitHub'daki üç PR
   birleştirme yönteminin (merge commit, squash, rebase) geçmişte ve commit kimliklerinde neyi
   değiştirdiğini grafikle açıklayıp ekip için bir güncelleme ve birleştirme politikası seçebilir;
@@ -442,6 +454,19 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 8. Kod Kaybetmeden Geri Almak: Hangi Komut Neyi Değiştirir?
 
+- **Durum:** yayında (run 4, kohort 3) · slug `kod-kaybetmeden-geri-almak` · bir şekil (`zorla-push-kira.svg`);
+  komut × etki tablosu Markdown'da.
+- **Yayımlanan biçim (run 4):** 22 Ekim sabahı, 7'nin son durumundan (kurulum 7'yi deneme dalları ve `y` klonu
+  olmadan sıkıştırır). Üç fiil (git(1) "Reset, restore and revert"), on satırlık tablo, `--abort` ile 2'nin kısmi
+  başarısızlık geri çağrısı; reset biçimleri ` M`/`MM`/` M`/temiz, `--hard` taslak satırı siler. Reflog:
+  `8820cfa` günlükte, `eacea0f main@{4}`; ayrık HEAD'de XXE kanaryası `0594ea1` → `kanarya-testi`; süreler
+  90/30 gün ve iki hafta. Yönetici vakası (silinen dal): `-d` squash yüzünden reddeder, `-D` kimliği bırakır,
+  dalın günlüğü gider, HEAD günlüğü kalır; GitHub "Restore branch". Teşhis: `fetch && reset --hard origin/main`
+  tarifi (hazırlıktaki içerik `fsck --lost-found` ile bulunur, yalnız çalışma ağacındaki bulunmaz; `--keep`).
+  Zorla push: fetch first, stale info, arka plan `fetch`, remote ref updated since checkout, yalnız kirayla
+  `a578de5` düştü; kurtarma `reflog show origin/...` + `cherry-pick` → `49e55e1`. Yönetici vakası (main'e
+  yanlışlıkla birleştirme `4021fbd`): `--first-parent`, dolaylı birleştirme, `revert -m 1` → `a87a8cd`,
+  yeniden birleştirme "Already up to date", "Reapply" `b921466`. Teşhis: geri döndürülen sızan anahtar.
 - **Hedef:** Okur, `restore`, `revert`, `reset` (`--soft`, `--mixed`, `--hard`), `stash`,
   `cherry-pick`, `reflog` ve zorla push biçimlerini hangi alanı ve hangi ref'i değiştirdiklerine göre
   sınıflandırıp paylaşılmış ve yerel geçmiş için güvenli geri alma yolunu seçebilir; hangi kaybın
@@ -486,6 +511,14 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
   (trunk tabanlı geliştirme, GitHub flow, sürüm dalları) seçebilir.
 - **Önkoşul:** 3 (inceleme bir güven sınırı kontrolüdür), 7, 8. **Kavramlar:** PR (head ve base);
   zorunlu inceleme ve kod sahipliği; gerekli kontrol ve birleştirme kuyruğu.
+- **Bağlayıcı köprü (run 4):** 8'in "Sırada ne var" bölümü sordu: push, PR, inceleme, birleştirme ve dağıtım
+  neden ayrı kararlardır; zorunlu inceleme, kod sahipliği, gerekli kontroller ve birleştirme kuyruğu bir
+  değişikliği `main`'e hangi kanıtla taşır? 7 iki işi buraya bıraktı: PR'ın ayrıntısı ve anlamsal çatışmayı
+  yakalayan, birleşmiş sonucu test eden kontrolün zorunlu kılınması. "PR (pull request)" 7'de gloss'landı; 9
+  gloss'u tekrar etmez, head/base'i kurar. "Dolaylı birleştirme (indirect merge)" 8'de tanımlandı; 9 kalan
+  riskte geri çağırır. 8'in iki kazası (incelenmemiş birleştirmenin `main`'e girmesi, paylaşılmış dalın zorla
+  push'la yeniden yazılması) 9'un açılış motivasyonu olabilir; korunan dalın zorla push/silme engeli 12'nin
+  işi (ileri işaret 8 → 12). Deney tabanı karar #42'de.
 - **Senaryo:** `ornek-sirket`'te ödeme servisinin deposu; iki takım, haftada çok sayıda PR; "testler
   PR'da yeşildi ama `main` kırıldı"; CODEOWNERS dosyasının kendisinin değiştirilebilmesi.
 - **Tarih:** GitHub'ın 10 Nisan 2008 lansmanı; PR'ın Git'in değil platformun kavramı olduğu.
@@ -914,7 +947,21 @@ ilk geçişte Türkçe açıklanır, gloss verilmez.
 | yukarı akış dalı | upstream branch | 6 | |
 | ileri sarma | fast-forward | 6 | |
 | ıraksama | divergence | 6 | ahead/behind İngilizce çıktı olarak gösterildi |
-| rebase / squash | rebase / squash | 6 (geçerken), 7 (tanım) | İngilizce kalır; 6'nın "Sırada ne var" bölümünde birer cümleyle Türkçe açıklandı |
+| rebase / squash | rebase / squash | 6 (geçerken), 7 (tanım) | İngilizce kalır; 6'nın "Sırada ne var" bölümünde birer cümleyle Türkçe açıklandı; 7 kılavuz tanımlarıyla kurdu (run 4) |
+| birleştirme tabanı | merge base | 7 | `git merge-base`; iki ucun en iyi ortak atası |
+| üç yollu birleştirme | three-way merge | 7 | iki uç + birleştirme tabanı |
+| birleştirme commit'i | merge commit | 6 (geçerken), 7 (tanım) | 6 gloss'suz andı; 7 gloss'ladı |
+| birleştirme çatışması | merge conflict | 7 | `add/add` ve içerik çatışması; `merge.conflictStyle=zdiff3` |
+| anlamsal çatışma | semantic conflict | 6 (geçerken), 7 (tanım) | metinde çatışmadan birleşip birlikte yanlış davranan iki değişiklik; 9 gerekli kontrol ve birleştirme kuyruğuyla bağlar |
+| PR | pull request | 7 (geçerken), 9 (tanım) | 7'de GitHub Docs tanımıyla gloss'landı; 9 gloss'u tekrar etmez, head/base'i kurar; "çekme isteği" kullanılmaz |
+| zorla push | force push | 7 (geçerken), 8 (tanım) | 7'de gloss'landı; fiil "zorla push etmek"; "zorla göndermek" kullanılmaz (karar #37) |
+| geri döndürme / geri sarma | revert / reset | 8 | git(1) "Reset, restore and revert" ayrımı; `restore` Türkçeleştirilmedi |
+| ayrık HEAD | detached HEAD | 8 | `git switch --detach` |
+| reflog / günlük | reflog (reference log) | 8 | İngilizce kalır; "ref günlüğü" diye açıklandı; "günlük" bu seride yalnız bu anlamda (karar #38) |
+| kira / içerme | lease / includes | 8 | `--force-with-lease` / `--force-if-includes` |
+| dolaylı birleştirme | indirect merge | 8 | GitHub Docs; 9 kalan riskte geri çağırır, gloss'u tekrar etmez |
+| stash / cherry-pick | stash / cherry-pick | 8 | komut adları İngilizce; tabloda ve kurtarmada Türkçe açıklandı |
+| sahipsiz nesne | dangling object | 8 | `git fsck --lost-found` (Teşhis) |
 
 ### Planlanan terim kararları (Git/GitHub hattı)
 
@@ -924,12 +971,6 @@ deploy için "dağıtım" (karar #21).
 
 | Türkçe biçim | İngilizce | İlk kullanacak yazı | Not |
 |---|---|---|---|
-| ayrık HEAD | detached HEAD | 8 | HEAD 5'te kuruldu |
-| birleştirme tabanı | merge base | 7 | "birleştirme (merge)" 5'te geçerken gloss'landı; komut adı `merge` |
-| birleştirme çatışması / anlamsal çatışma | merge conflict / semantic conflict | 7 | 5 ve 6 "çatışma"yı gloss'suz, genel anlamda andı; 7 terimi kurar |
-| geri döndürme / geri sarma | revert / reset | 8 | ikisi karıştırılmaz |
-| zorla push | force push | 8 | |
-| PR | pull request | 9 | İngilizce kısaltma; "çekme isteği" kullanılmaz |
 | kod sahibi | code owner (CODEOWNERS) | 9 | |
 | gerekli kontrol | required status check | 9 | |
 | birleştirme kuyruğu | merge queue | 9 | |
@@ -962,6 +1003,9 @@ deploy için "dağıtım" (karar #21).
 | Değişiklik incelenen yoldan gelir; incelemesiz yol kayma doğurur | 4 | 9 (PR ve koruma), 10 (aynı yapı, iki ortam), 12 (bypass), 22 |
 | Dal bir işaretçidir; değişikliğin yeri grafikle kanıtlanır | 5 | 6, 7, 8, 10 |
 | Paylaşılmış geçmiş yeniden yazılmaz; geri almak yeni commit'tir | 7, 8 | 10, 12, 13 |
+| Ata ilişkisi geçmişi kanıtlar, içeriği değil; çatışma çözümü birleşmiş sonuca karşı testle doğrulanır | 5, 7 | 9 (gerekli kontrol, birleştirme kuyruğu), 24 |
+| Squash ve rebase'li birleştirmede dalın birleştiğini Git değil PR kaydı söyler | 7 | 9 (dolaylı birleştirme), 12 (doğrusal geçmiş) |
+| Zorla push yalnızca kendi dalında, kira ve içermeyle; reflog yerel ve sürelidir | 8 | 12 (zorla push engeli, bypass), 23 (olay müdahalesinde kanıt) |
 | En az yetki ve sahiplik sürekliliği | 11 | 13, 15 |
 
 ## İleri işaret defteri
@@ -979,15 +1023,23 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 2 | "Sırada ne var": dosya yükleme hattında veri akışı ve sınırlar, tehdit modelleme | 3 | evet (run 2) |
 | 3 | "Sırada ne var": aynı kodun iki ortamda farklı davranması; güvenli varsayılanlar | 4 | evet (run 2) |
 | 4 | "Sırada ne var": XXE düzeltmesinin yeri, üretime giden yapının onu içerip içermediği, ana daldan önceden açılmış dalın düzeltmeyi kendiliğinden alıp almadığı; dal bir işaretçidir | 5 | evet (run 3) |
-| 5 | "geçmişi yeniden yazan işlemlerin neden yeni kimlikler ürettiği; ayrışan geçmişleri birleştirmeyi işlerken buna döneceğiz" | 7 | hayır |
-| 5 | Dalı `main`'in yeni hâliyle bilerek bütünleştirmek: "ya bir birleştirme (merge) ya da geçmişi yeniden yazan bir alternatifi; yolları ve bedelleri, ayrışan geçmişleri birleştirme konusunun içeriği" | 7 | hayır |
+| 5 | "geçmişi yeniden yazan işlemlerin neden yeni kimlikler ürettiği; ayrışan geçmişleri birleştirmeyi işlerken buna döneceğiz" | 7 | evet (run 4) |
+| 5 | Dalı `main`'in yeni hâliyle bilerek bütünleştirmek: "ya bir birleştirme (merge) ya da geçmişi yeniden yazan bir alternatifi; yolları ve bedelleri, ayrışan geçmişleri birleştirme konusunun içeriği" | 7 | evet (run 4) |
 | 5 | "imzayı zorunlu kılan kuralı, kuralların platforma yazılmasını işlerken göreceğiz" (yazar alanı kimlik kanıtı değildir) | 12 | hayır |
 | 5 | Etiketler: "ayrıntısı sürüm ve dağıtım konusuna kalıyor" | 10 | hayır |
 | 5 | "Yapıyı kimin, hangi makinede ürettiği ve bu kaydın neden kanıt sayılabileceği ise tedarik zinciri ve yapı bütünlüğü konusunun sorusu" | 22 | hayır |
 | 5 | "Sırada ne var": paylaşılan uzak depo; `fetch`, `pull`, `push` hangi ref'i taşır, `origin/main` ne zaman değişir, "dalım güncel" ne zaman kanıttır | 6 | evet (run 3) |
-| 6 | Iraksamanın çözümü: "iki geçmişin bir birleştirme commit'iyle mi yoksa yeniden yazılarak mı bir araya geleceği ayrı bir karardır ve birleştirme konusunun içeriğidir" | 7 | hayır |
-| 6 | `--force` ile göndermek: "hangi koşulda ve nasıl güvenli yapıldığı ise kod kaybetmeden geri almayı işlerken ele alınacak" | 8 | hayır |
-| 6 | "Sırada ne var": ıraksayan `main` (`eacea0f` / `120d7b5`) ve yamayı almamış fatura dalı; birleştirme commit'i, rebase, squash grafikte ve kimliklerde neyi değiştirir | 7 | hayır (sıradaki run) |
+| 6 | Iraksamanın çözümü: "iki geçmişin bir birleştirme commit'iyle mi yoksa yeniden yazılarak mı bir araya geleceği ayrı bir karardır ve birleştirme konusunun içeriğidir" | 7 | evet (run 4) |
+| 6 | `--force` ile göndermek: "hangi koşulda ve nasıl güvenli yapıldığı ise kod kaybetmeden geri almayı işlerken ele alınacak" | 8 | evet (run 4) |
+| 6 | "Sırada ne var": ıraksayan `main` (`eacea0f` / `120d7b5`) ve yamayı almamış fatura dalı; birleştirme commit'i, rebase, squash grafikte ve kimliklerde neyi değiştirir | 7 | evet (run 4) |
+| 7 | `eacea0f`'e dönüş ve orada kalma süresi "kod kaybetmeden geri almayı işlerken ele alınacak"; zorla push'un hangi biçiminin başkasının işini ezmediği "geri alma konusunun içeriği" | 8 | evet (run 4) |
+| 7 | PR: "Ayrıntısı ekip akışı konusunun içeriği" | 9 | hayır |
+| 7 | Anlamsal çatışmayı yakalayan, birleşmiş sonucu test eden kontrolün "birleştirmeden önce zorunlu kılınması ekip akışı konusunun içeriği" | 9 | hayır |
+| 7 | "Bir yöntemi belirli bir dal için bağlayıcı kılan kurallar da var ...; kuralların platforma yazılmasını işlerken buna döneceğiz" (Kendi organizasyonunda kutusu) | 12 | hayır |
+| 7 | "Sırada ne var": `revert` ile `reset`, ulaşılamaz commit'in ömrü, zorla push'un biçimleri, silinen dal | 8 | evet (run 4) |
+| 8 | Korunan dalda zorla push ve silme engeli: "Bu engellerin nasıl kurulduğuna kuralların platforma yazılmasını işlerken döneceğiz" | 12 | hayır |
+| 8 | "Sızan bir sırrın yönetici vakası, makine kimliklerini ve iş akışı güvenliğini işlerken bütünüyle ele alınacak" (Teşhis) | 13 | hayır |
+| 8 | "Sırada ne var": push, PR, inceleme, birleştirme ve dağıtım neden ayrı kararlar; zorunlu inceleme, kod sahipliği, gerekli kontroller ve birleştirme kuyruğu | 9 | hayır (sıradaki run) |
 
 ## Gerçekleşen geri çağırmalar
 
@@ -1014,6 +1066,20 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 6 | Dal bir işaretçidir; değişikliğin yeri grafikle kanıtlanır (5) | `fetch` ve `pull` fatura dalına dokunmaz; `--is-ancestor origin/main feature/fatura-pdf` 1 |
 | 6 | Fail-open / karar alınamadı (2) | `git fetch || true` ile yutulan getirme hatası (Teşhis et); düzeltilmiş `aday_kimligi` 2 döner |
 | 6 | Yapı bir dal adından değil commit kimliğinden yapılır (5) | Aday `origin/main`'in çözümlenmiş tam kimliğinden; sürüm kapısı imajın kaydettiği commit'i sorgular |
+| 7 | Commit kimliği içerik özetidir (5) | Rebase'te `eacea0f` → `66098e2`: tree, parent ve committer satırları değişti; `hash-object` deneyi anıldı; patch-id aynı |
+| 7 | Dal bir işaretçidir (5) | Üç deneme dalı "kopya değil, üç yer imi" |
+| 7 | Push yalnızca ileri sarar (6) | Rebase edilmiş dalın aynı ada gönderimi non-fast-forward ile reddedildi |
+| 7 | Ata ilişkisi geçmişi kanıtlar, davranışı değil (1, 5) | Teşhis: kendi tarafını seçen çözümde `--is-ancestor` 0, `noent` geri geldi |
+| 7 | Kanarya testi (4) | Çatışma çözümünün kanıtı birleşmiş sonuca karşı koşulan test |
+| 7 | Ret ≠ karar alınamadı (2) | `merge-tree` çıkışı 0, 1 ve diğer; üçüncüsü "temiz" sayılmaz |
+| 7 | Uzak izleme kaydı `fetch --prune`'a kadar kalır (6) | Otomatik dal silmenin sınırı |
+| 8 | Kısmi başarısızlıkta işlemin tamamı geri alınır (2) | `--abort` satırı ve `merge --abort`'un sınırı |
+| 8 | Üç alan ve `git status --short`'un iki harfi (5) | Reset biçimleri ` M` / `MM` / ` M` / temiz |
+| 8 | Dal bir işaretçidir (5) | Ayrık HEAD'de kalan commit'e yeni bir işaretçi yazmak |
+| 8 | Push yalnızca ileri sarar; uzak izleme dalı son iletişimin önbelleği (6) | "fetch first"; arka plandaki getirmeyle tazelenen kira |
+| 8 | Squash ata ilişkisi kurmaz (7) | `branch -d` reddi; denetimin aradığı yazar ve zaman bilgisi |
+| 8 | Paylaşılmış geçmiş yeniden yazılmaz (7) | `main`'deki yanlış birleştirme `revert -m 1` ile geri döndürüldü |
+| 8 | Kanarya testi (4) | Ayrık HEAD'de eski adaya karşı XXE kanaryası |
 
 ## Karar kaydı
 
@@ -1128,3 +1194,38 @@ yalnızca karşılayacak yazının numarası güncellendi.
 - **#34 (2026-10-21, run 3) "Kendi organizasyonunda" kutusu yalnız GitHub ayarı önerildiğinde:** 5'te
   varsayılan dal adı için kutu var (salt okunur `gh repo list`, ayar sayfası; öneri: yeni depolar için ad,
   yeniden adlandırmanın GitHub belgesindeki etkileri). 6'da GitHub ayarı önerilmediği için kutu yok.
+- **#35 (2026-10-21, run 4) 7'nin anlatı sırası:** GitHub'ın üç birleştirme yöntemi, fatura dalı birleştirme
+  commit'iyle güncellenmeden önce, `main`'in ucunda açılan üç deneme dalında gösterildi; böylece Şekil 1
+  sade kaldı (dalın geçmişinde birleştirme commit'i yok). Dal `main`'in ucundan ayrıldığı için yerel rebase
+  zaten yeniden yazdı; GitHub'ın "her zaman yeni SHA" davranışını taklit eden `--force-rebase` gereksizdi ve
+  çıkarıldı (taslaktaki "canlandırıyor" cümlesi yanıltıcıydı).
+- **#36 (2026-10-21, run 4) `olarak` yardımcısı:** Deney deposu `kaydet`'in yanına, herhangi bir Git komutunu
+  sabit yazar ve commit'i yapanla koşturan `olarak <kişi> <tarih> <komut…>` yardımcısını aldı (merge, rebase,
+  cherry-pick, revert, `--amend`). Deneyle doğrulandı: rebase ve `--amend` özgün yazarı korur, commit'i yapanı
+  ortamdan alır; kimlik verilmezse Git makineye özgü bir kimlik yazar ve kimlikler okurda tutmaz. Bash'e özgü
+  `${@:3}` yerine `shift 2` kullanıldı.
+- **#37 (2026-10-21, run 4) "Zorla push":** Planlanan terim 7'de ilk geçişte gloss'landı; fiil "zorla push
+  etmek". Taslakta beş yerde geçen "zorla göndermek/gönderim" biçimi terimle hizalandı.
+- **#38 (2026-10-21, run 4) "Günlük" tek anlamlı:** Seride "günlük" yalnızca reflog (ref günlüğü) anlamında
+  kullanılır; 7'deki sıfat "gündelik"e çevrildi. Uygulama ve güvenlik logları için "kayıt" (23 "güvenlik
+  kaydı"), GitHub audit log için "denetim kaydı" (12) kullanılır (#24, #30'un uzantısı).
+- **#39 (2026-10-21, run 4) Yönetici vakası biçimi:** `SOZLESME.md` §4'ün dört adımı, vakanın geçtiği
+  bölümde italik başlıklarla (*Gözlem ve kanıt.*, *Seçenekler.*, *Güvenli karar.*, *Kalan risk.*) taşınır;
+  ayrı bölüm açılmaz. 7'de bir vaka (çakışan uzun yaşayan dal: squash'tan sonra yaşayan dal), 8'de iki
+  (silinen dal; `main`'e yanlışlıkla birleştirme).
+- **#40 (2026-10-21, run 4) Teşhis kanıtı aynı dünyada:** 7'nin Teşhis'indeki çatışma bölümü ve çıktılar,
+  yazının deney deposuyla aynı uzak depo durumunda (`c` klonu, `ac8d84d` sonrası) üretildi; 8'in Teşhis
+  iddiaları (`--keep`, `fsck --lost-found`) ayrı betikle sınandı ve "hazırlıktaki içerik de kaybolur" taslak
+  cümlesi deneyle düzeltildi.
+- **#41 (2026-10-21, run 4) Dolaylı birleştirme 8'de:** `main`'e yanlışlıkla birleştirmenin gözleminde GitHub
+  Docs tanımıyla kuruldu; 9 kalan riskte geri çağırır, gloss'u tekrar etmez.
+- **#42 (2026-10-21, run 4) Deney deposu 9'a devrediliyor:** 8'in kurulumu 7'nin son durumunu deneme dalları
+  ve `y` klonu olmadan aynı kimliklerle kurar. 8'in sonunda `main` `b921466` ("Reapply"), uzak
+  `feature/fatura-kdv-oran` `49e55e1`, `feature/fatura-pdf` `ec788df` (geri yüklendi), yerelde
+  `kanarya-testi` `0594ea1`. 9 GitHub'a özgü özellikleri (inceleme, CODEOWNERS, gerekli kontrol, birleştirme
+  kuyruğu) yerel depoda gösteremez; yerelde kanıtlanabilen kısım (iki ayrı yeşil dalın birlikte kırılması,
+  CODEOWNERS dosya biçimi, `merge_group` olayı) bu tabandan ya da küçük bir yan depoyla kurulur.
+- **#43 (2026-10-21, run 4) "Kendi organizasyonunda" kutusu:** 7'de var (birleştirme yöntemleri ve otomatik dal
+  silme; salt okunur `gh repo list --json …MergeAllowed,deleteBranchOnMerge`; rol: yöntemler Maintain/Admin,
+  otomatik silme Admin; plan koşulu belgelerde yok). 8'de yok: ayar önerilmedi, korunan dal 12'ye işaret
+  edildi (#34).

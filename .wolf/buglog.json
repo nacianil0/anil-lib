@@ -14213,6 +14213,275 @@
         "precedence",
         "cleanup"
       ]
+    },
+    {
+      "id": "bug-860",
+      "timestamp": "2026-10-21T13:06:57.816Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md",
+      "root_cause": "Had 'leriyle aynı değişikliği taşıyor, kimlikleri fark",
+      "fix": "Changed to 'leriyle aynı değişikliği taşıyor, kimlikleri fark",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-21T13:07:08.926Z"
+    },
+    {
+      "id": "bug-861",
+      "timestamp": "2026-10-21T13:11:37.538Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/assets/ayrisan-gecmisi-birlestirmek-merge-rebase-squash/uc-son-tek-agac.svg",
+      "root_cause": "Had \"81\"",
+      "fix": "Changed to \"88\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:11:37.538Z"
+    },
+    {
+      "id": "bug-862",
+      "timestamp": "2026-10-21T13:30:37.438Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
+      "root_cause": "Had \" ile geri gelir, dalı silmek ve geri yüklemek dep",
+      "fix": "Changed to \" ile geri gelir; aynı belge, birleşmiş ya da kapa",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-10-21T13:32:51.102Z"
+    },
+    {
+      "id": "bug-863",
+      "timestamp": "2026-10-21T13:40:19.685Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:40:19.685Z"
+    },
+    {
+      "id": "bug-864",
+      "timestamp": "2026-10-21T13:42:01.830Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri-guvenlik/YOL-HARITASI.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→11 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:42:01.830Z"
+    },
+    {
+      "id": "bug-865",
+      "timestamp": "2026-10-21T13:44:10.654Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
+      "root_cause": "Had 'e kendisi \"",
+      "fix": "Changed to 'ten beri, bir geri döndürmeyi geri döndüren commi",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:44:10.654Z"
+    },
+    {
+      "id": "bug-866",
+      "timestamp": "2026-10-21T13:20:00.000Z",
+      "error_message": "Güven Sınırı yazı 7: üç son deneyinde --force-rebase kullanıldı ve metin 'GitHub davranışını yerelde canlandırıyor' dedi",
+      "file": "content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md",
+      "root_cause": "Fatura dalı main'in ucundan ayrıldığı için yerel git rebase zaten commit'leri yeniden yazıyordu; --force-rebase yalnız dal tabanın üstündeyken fark yaratır. Seçenek gereksizdi, cümle yanıltıcıydı.",
+      "fix": "--force-rebase bloktan çıkarıldı (kimlikler değişmedi, blok-dogrula 9/9); metin GitHub'ın 'dal tabanın üstünde olsa bile yeni SHA' davranışını yerel rebase'in o durumdaki davranışıyla ayırdı.",
+      "tags": [
+        "guvenlik-series",
+        "git",
+        "rebase",
+        "accuracy",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:20:00.000Z"
+    },
+    {
+      "id": "bug-867",
+      "timestamp": "2026-10-21T13:35:00.000Z",
+      "error_message": "Planlanan terim 'zorla push (force push)' yazı 7'de gloss'suz 'zorla göndermek/gönderim' diye beş yerde geçiyordu; 8'de de iki fiil biçimi",
+      "file": "content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md",
+      "root_cause": "Planlanan terim tablosunda 8'e yazılmış bir terim 7'de fiil biçimiyle anıldı; ilk geçiş kuralı (gloss + defter) uygulanmadı.",
+      "fix": "7'de ilk geçiş 'zorla push (force push)' diye gloss'landı, kalan geçişler 'zorla push' biçimine çevrildi; 8'deki iki fiil 'zorla push etmek' yapıldı; terim defteri 7 (geçerken), 8 (tanım); karar #37.",
+      "tags": [
+        "guvenlik-series",
+        "terminology",
+        "gloss",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T14:05:00.000Z"
+    },
+    {
+      "id": "bug-868",
+      "timestamp": "2026-10-21T14:00:00.000Z",
+      "error_message": "'Günlük' hem reflog (ref günlüğü) terimi hem sıfat ('Günlük işte') olarak kullanıldı",
+      "file": "content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md",
+      "root_cause": "Yazı 8 reflog için 'günlük' kısaltmasını kurdu; yazı 7'deki sıfat aynı sözcüktü (SOZLESME §3: aynı Türkçe sözcük iki kavram taşımaz).",
+      "fix": "7'deki sıfat 'gündelik' yapıldı; 'günlük' yalnız reflog anlamında (karar #38), uygulama logu için 'kayıt'.",
+      "tags": [
+        "guvenlik-series",
+        "terminology",
+        "homonym",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T14:00:00.000Z"
+    },
+    {
+      "id": "bug-869",
+      "timestamp": "2026-10-21T14:10:00.000Z",
+      "error_message": "Yazı 8 Teşhis cevabı: 'commit edilmemiş değişiklikler, hazırlık alanında olsun olmasın, kurtarılamaz biçimde kaybolur' yanlıştı",
+      "file": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
+      "root_cause": "git add içeriği nesne veritabanına blob olarak yazar; reset --hard sonrası bu blob sahipsiz kalır ve git fsck --lost-found onu bulur. Yalnız çalışma ağacındaki değişikliğin kopyası yoktur. İddia denenmeden yazılmıştı.",
+      "fix": "artifacts/guvenlik-run4/deney8-teshis.sh ile üç durum sınandı (günlükteki commit, sahipsiz blob, kayıp satır; --keep 128); cevap, tablo ('Çalışma ağacındaki değişiklik geri gelmez') ve karar kartı ('hazırlık alanına hiç eklenmemiş değişiklik') düzeltildi; künyeye git-fsck eklendi.",
+      "tags": [
+        "guvenlik-series",
+        "git",
+        "reset",
+        "fsck",
+        "accuracy",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T14:10:00.000Z"
+    },
+    {
+      "id": "bug-870",
+      "timestamp": "2026-10-21T14:45:00.000Z",
+      "error_message": "Yazı 8 kurulum önkoşulu 'Git 2.38 ya da sonrası' diyordu; son blok 'Reapply' mesajını ve b921466 kimliğini Git 2.43'ten önce üretemez",
+      "file": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
+      "root_cause": "Önkoşul sürümü yazı 7'den kopyalandı; git revert'ün revert'ü geri döndürürken yazdığı varsayılan mesaj Git 2.43.0'da değişti ve mesaj commit kimliğine girer.",
+      "fix": "Sürüm notları (v2.56.0 etiketindeki RelNotes 2.30/2.35/2.38/2.43) okundu; 8'in önkoşulu 2.43 yapıldı, 'Reapply' cümlesi sürümle tarihlendi, künyeye 2.43.0 sürüm notu; 7'nin 2.38 önkoşulu merge-tree için doğrulandı ve künyeye eklendi.",
+      "tags": [
+        "guvenlik-series",
+        "git",
+        "version",
+        "prerequisite",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T14:45:00.000Z"
+    },
+    {
+      "id": "bug-871",
+      "timestamp": "2026-10-21T13:58:00.000Z",
+      "error_message": "Yazı 8: GitHub 'Restore branch' için belgede yazmayan bir rol iddiası ('silmek ve geri yüklemek yazma yetkisi ister'); korunan dal anışında plan koşulu yoktu",
+      "file": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
+      "root_cause": "Belgenin silme için yazdığı yazma yetkisi koşulu geri yüklemeye genellendi; SOZLESME §3 GitHub özelliğinin plan ve rol koşulunu ister.",
+      "fix": "Cümle belgenin söylediğiyle sınırlandı (silme yazma yetkisi; açık PR'a bağlı dal silinemez; geri yükleme kapanmış PR'dan); korunan dal için 'Ekim 2026 itibarıyla herkese açık depoda Free, özelde Pro/Team/Enterprise' eklendi.",
+      "tags": [
+        "guvenlik-series",
+        "github",
+        "plan-conditions",
+        "accuracy",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:58:00.000Z"
+    },
+    {
+      "id": "bug-872",
+      "timestamp": "2026-10-21T13:40:00.000Z",
+      "error_message": "usage: git revert ... (deney8-kur.sh'de 'git revert -q' geçersiz seçenek)",
+      "file": "artifacts/guvenlik-run4/deney8-kur.sh",
+      "root_cause": "git revert'ün -q/--quiet seçeneği yok (merge ve rebase'in var).",
+      "fix": "-q çıkarıldı; revert'ün '[main <id>] Revert ...' ve 'Date:' satırları yazıdaki beklenen çıktıya alındı.",
+      "tags": [
+        "git",
+        "revert",
+        "tooling",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:40:00.000Z"
+    },
+    {
+      "id": "bug-873",
+      "timestamp": "2026-10-21T14:20:00.000Z",
+      "error_message": "/usr/bin/bash: -c: line 57: unexpected EOF while looking for matching `''",
+      "file": "docs/seri-guvenlik/ARASTIRMA.md",
+      "root_cause": "Bash aracında tırnaklı bir heredoc (cat >> ... <<'EOF') ile ikinci bir heredoc'u (python - <<'EOF') aynı komutta zincirlemek ayrıştırmayı bozdu; hiçbir şey yazılmadı.",
+      "fix": "Eklenecek metin Write ile scratchpad'e yazıldı, ardından cat >> ile eklendi; başlık satırı ayrı python -c ile güncellendi.",
+      "tags": [
+        "tooling",
+        "bash",
+        "heredoc",
+        "run4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T14:20:00.000Z"
+    },
+    {
+      "id": "bug-874",
+      "timestamp": "2026-10-21T13:50:32.668Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:50:32.668Z"
+    },
+    {
+      "id": "bug-875",
+      "timestamp": "2026-10-21T13:50:45.223Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri-guvenlik/HANDOFF.md",
+      "root_cause": "Had `build2.txt`",
+      "fix": "Changed to 'in 2.43 önkoşulu ve \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-21T13:50:45.223Z"
     }
   ]
 }

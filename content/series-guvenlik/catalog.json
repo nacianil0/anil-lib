@@ -122,6 +122,46 @@
       "path": "content/series-guvenlik/articles/version-control/uzak-depoyla-esitlenmek-fetch-pull-push.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
+    },
+    {
+      "articleId": "article_d744e106-9960-42fc-9d48-922c4a35e94c",
+      "title": "Ayrışan Geçmişi Birleştirmek: Merge, Rebase ve Squash Neyi Değiştirir?",
+      "slug": "ayrisan-gecmisi-birlestirmek-merge-rebase-squash",
+      "category": "version-control",
+      "level": "advanced",
+      "readingOrder": 7,
+      "summary": "Iraksamış yerel main ile XXE yamasını almamış fatura dalını aynı deney deposunda bir araya getirir. Birleştirme tabanını ve üç yollu birleştirmeyi kurar; rebase'in aynı değişikliği yeni kimlikli commit'lerle yazdığını, birleştirme commit'inin ata ilişkisi kurduğunu, squash'ın kurmadığını gösterir. GitHub'ın üç birleştirme yönteminin aynı dosya ağacını üç ayrı geçmişle ürettiğini, paylaşılmış dalın neden birleştirme commit'iyle güncellendiğini, kendi tarafını seçen çatışma çözümünün yamayı nasıl düşürdüğünü ve squash'tan sonra yaşayan dalın neden çatıştığını işler.",
+      "tags": [
+        "git",
+        "birlestirme-tabani",
+        "rebase",
+        "squash",
+        "birlestirme-catismasi"
+      ],
+      "contentHash": "sha256:698d11681c6223b4ef5bf7a69ae9bdda150057b30e065bf8d1e51ba56e754195",
+      "path": "content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
+    },
+    {
+      "articleId": "article_af8ce546-7282-45b8-bba1-6fcc3aa02614",
+      "title": "Kod Kaybetmeden Geri Almak: Hangi Komut Neyi Değiştirir?",
+      "slug": "kod-kaybetmeden-geri-almak",
+      "category": "version-control",
+      "level": "advanced",
+      "readingOrder": 8,
+      "summary": "Aynı deney deposunda bir sabahın kazalarını geri alır: reset biçimlerinin üç alana etkisi ve geri gelmeyen taslak satır, ayrık HEAD'de kalan commit, squash'tan sonra silinen dal, ekip arkadaşının commit'ini düşüren zorla push ve main'e yanlışlıkla gönderilen birleştirme. Geri döndürme ile geri sarmayı, reflog'un neyi ne kadar tuttuğunu, --force-with-lease'in arka plandaki bir fetch'le neden boşa düştüğünü ve --force-if-includes'un bunu nasıl yakaladığını gösterir; revert edilen bir birleştirmenin yeniden birleştirmede neden geri gelmediğini ve ne zaman revert'ün revert'üne gerek olduğunu kurar.",
+      "tags": [
+        "git",
+        "geri-alma",
+        "reflog",
+        "zorla-push",
+        "revert"
+      ],
+      "contentHash": "sha256:69261fdebc22fe7c6f4b3189266b727c14c69cf3bee5e6a35cf0aab450028b79",
+      "path": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 3
     }
   ]
 }

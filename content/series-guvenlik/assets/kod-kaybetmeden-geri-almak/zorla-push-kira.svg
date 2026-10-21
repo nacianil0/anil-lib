@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" role="img" aria-label="İki panel; commit konumları sabit, oklar Git'in yönünde, kesikli çerçeve uzak izleme dalı. Önce, a'nın arka planda getirmesinden sonra, 09.25: ac8d84d squash'ın üstünde b2dff87 KDV oran, onun üstünde a578de5 b'nin testi; vurgulu 8023fd7 --amend doğrudan ac8d84d'nin üstünde. uzak: feature/fatura-kdv-oran, kesikli a: origin/feature/fatura-kdv-oran ve b: feature/fatura-kdv-oran a578de5'i, a: feature/fatura-kdv-oran 8023fd7'yi gösteriyor. Notlar: getirmeden önce push fetch first, --force-with-lease stale info, kira b2dff87'deydi; getirmeden sonra kira ve içerme birlikte reddetti, a578de5 a'nın dalında hiç olmadı. Sonra, yalnız --force-with-lease ile zorla push: uzak dal, a'nın dalı ve kesikli kaydı 8023fd7'yi gösteriyor; b2dff87 ve a578de5 uzak depoda ulaşılamaz, b'nin dalı hâlâ a578de5'te. İzler: a'nın günlüğünde origin/feature/fatura-kdv-oran@{1} = a578de5.">
+  <defs>
+    <marker id="kg1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">Önce: a'nın arka planda getirmesinden sonra, 09.25</text>
+  <rect x="380" y="40" width="233" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="392" y="58" font-size="13" fill="var(--text)">uzak: feature/fatura-kdv-oran</text>
+  <line x1="378" y1="56" x2="359" y2="80" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="140" y="76" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="152" y="93" font-size="13" font-weight="bold" fill="var(--text)">b2dff87</text>
+  <text x="152" y="109" font-size="13" fill="var(--text-muted)">KDV oran</text>
+  <rect x="260" y="76" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="272" y="93" font-size="13" font-weight="bold" fill="var(--text)">a578de5</text>
+  <text x="272" y="109" font-size="13" fill="var(--text-muted)">b'nin testi</text>
+  <line x1="258" y1="96" x2="240" y2="96" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="380" y="83" width="262" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="392" y="101" font-size="13" fill="var(--text)">a: origin/feature/fatura-kdv-oran</text>
+  <line x1="378" y1="96" x2="360" y2="96" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="380" y="126" width="211" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="392" y="144" font-size="13" fill="var(--text)">b: feature/fatura-kdv-oran</text>
+  <line x1="378" y1="137" x2="359" y2="113" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="16" y="166" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="183" font-size="13" font-weight="bold" fill="var(--text)">ac8d84d</text>
+  <text x="28" y="199" font-size="13" fill="var(--text-muted)">squash</text>
+  <rect x="140" y="166" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="152" y="183" font-size="13" font-weight="bold" fill="var(--text)">8023fd7</text>
+  <text x="152" y="199" font-size="13" fill="var(--text)">--amend</text>
+  <line x1="148" y1="118" x2="108" y2="163" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <line x1="138" y1="186" x2="116" y2="186" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="260" y="173" width="211" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="272" y="191" font-size="13" fill="var(--text)">a: feature/fatura-kdv-oran</text>
+  <line x1="258" y1="186" x2="240" y2="186" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <text x="16" y="230" font-size="13" fill="var(--text-muted)">getirmeden önce: push → fetch first · --force-with-lease → stale info, kira b2dff87'deydi</text>
+  <text x="16" y="250" font-size="13" fill="var(--text-muted)">getirmeden sonra: kira ve içerme birlikte reddetti; a578de5 a'nın dalında hiç olmadı</text>
+
+  <text x="16" y="322" font-size="13" font-weight="bold" fill="var(--text)">Sonra: yalnız --force-with-lease ile zorla push</text>
+  <rect x="140" y="346" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="152" y="363" font-size="13" font-weight="bold" fill="var(--text-muted)">b2dff87</text>
+  <text x="152" y="379" font-size="13" fill="var(--text-muted)">KDV oran</text>
+  <rect x="260" y="346" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="272" y="363" font-size="13" font-weight="bold" fill="var(--text-muted)">a578de5</text>
+  <text x="272" y="379" font-size="13" fill="var(--text-muted)">b'nin testi</text>
+  <line x1="258" y1="366" x2="240" y2="366" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="380" y="353" width="211" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="392" y="371" font-size="13" fill="var(--text)">b: feature/fatura-kdv-oran</text>
+  <line x1="378" y1="366" x2="360" y2="366" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <text x="200" y="408" font-size="13" fill="var(--text-muted)">uzak depoda ulaşılamaz</text>
+  <rect x="16" y="436" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="453" font-size="13" font-weight="bold" fill="var(--text)">ac8d84d</text>
+  <text x="28" y="469" font-size="13" fill="var(--text-muted)">squash</text>
+  <rect x="140" y="436" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="152" y="453" font-size="13" font-weight="bold" fill="var(--text)">8023fd7</text>
+  <text x="152" y="469" font-size="13" fill="var(--text)">--amend</text>
+  <line x1="148" y1="388" x2="108" y2="433" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <line x1="138" y1="456" x2="116" y2="456" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="260" y="420" width="233" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="272" y="438" font-size="13" fill="var(--text)">uzak: feature/fatura-kdv-oran</text>
+  <line x1="258" y1="433" x2="241" y2="445" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#kg1-ok)" />
+  <rect x="260" y="452" width="211" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="272" y="470" font-size="13" fill="var(--text)">a: feature/fatura-kdv-oran</text>
+  <line x1="258" y1="465" x2="240" y2="458" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <rect x="260" y="484" width="262" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="272" y="502" font-size="13" fill="var(--text)">a: origin/feature/fatura-kdv-oran</text>
+  <line x1="258" y1="497" x2="241" y2="471" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#kg1-ok)" />
+  <text x="16" y="538" font-size="13" fill="var(--text)">izler: a'nın günlüğünde origin/feature/fatura-kdv-oran@{1} = a578de5</text>
+  <text x="16" y="558" font-size="13" fill="var(--text)">b'nin klonunda dal hâlâ a578de5; uzak depoda onu hiçbir dal göstermiyor</text>
+  <text x="16" y="588" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde · kesikli: uzak izleme dalı · uzak: uzak depodaki dal · a, b: klonlar</text>
+</svg>

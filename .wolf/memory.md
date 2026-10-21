@@ -7019,3 +7019,76 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 15:35 | Oturum özeti: run 3 BATCH=2+1 tamam; commit/push/deploy yapılmadı; cerebrum (öğrenilenler, Do-Not-Repeat, karar özeti) ve buglog (bug-853…859) güncellendi | .wolf/* | — | ~1500 |
 | 15:35 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run3-2026-10-21.md | — | ~674 |
 | 15:35 | Edited C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/MEMORY.md | 1→2 lines | ~120 |
+| 15:36 | Session end: 68 writes across 23 files (deney5-kur.sh, deney5-gozlem.sh, deney5-okur.sh, git-zihinsel-modeli-dal-bir-isaretcidir.md, dal-yalnizca-isaretci.svg) | 26 reads | ~119467 tok |
+
+## Session: 2026-10-21 15:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:52 | Created artifacts/guvenlik-run4/deney7-kur.sh | — | ~1050 |
+| 15:55 | Created artifacts/guvenlik-run4/deney7-kur.sh | — | ~1412 |
+| 15:56 | Created artifacts/guvenlik-run4/deney7-teshis.sh | — | ~878 |
+| 16:05 | Created content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | — | ~10107 |
+| 16:06 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | 2→2 lines | ~22 |
+| 16:06 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~122 |
+| 16:07 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~183 |
+| 16:07 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~44 |
+| 16:07 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~40 |
+| 16:07 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | 1→2 lines | ~102 |
+| 16:10 | Created content/series-guvenlik/assets/ayrisan-gecmisi-birlestirmek-merge-rebase-squash/uc-son-tek-agac.svg | — | ~2265 |
+| 16:11 | Created content/series-guvenlik/assets/ayrisan-gecmisi-birlestirmek-merge-rebase-squash/squash-sonrasi-taban.svg | — | ~1731 |
+| 16:11 | Edited content/series-guvenlik/assets/ayrisan-gecmisi-birlestirmek-merge-rebase-squash/uc-son-tek-agac.svg | 3→3 lines | ~87 |
+| 16:15 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~50 |
+| 16:15 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~11 |
+| 16:15 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~20 |
+| 16:15 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~102 |
+| 16:19 | Created artifacts/guvenlik-run4/deney8-kur.sh | — | ~1616 |
+| 16:27 | Created content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | — | ~9929 |
+| 16:29 | Created content/series-guvenlik/assets/kod-kaybetmeden-geri-almak/zorla-push-kira.svg | — | ~1947 |
+| 16:30 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~86 |
+| 16:30 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~82 |
+| 16:30 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | "tan önce uzak ucun commit" → "--force-if-includes" | ~49 |
+| 16:31 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | inline fix | ~12 |
+| 16:32 | Created artifacts/guvenlik-run4/deney8-teshis.sh | — | ~326 |
+| 16:32 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~168 |
+| 16:32 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~41 |
+| 16:32 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~33 |
+| 16:32 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~29 |
+| 16:32 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | 1→2 lines | ~95 |
+| 16:33 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~33 |
+| 16:33 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~23 |
+| 16:33 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~23 |
+| 16:33 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | inline fix | ~18 |
+| 16:36 | Edited .claude/launch.json | expanded (+6 lines) | ~82 |
+| 16:38 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/88e0b871-f830-4719-9c89-428d4f7c391f/scratchpad/arastirma-ek.md | — | ~3045 |
+| 16:40 | Edited .claude/launch.json | removed 9 lines | ~8 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 2→2 lines | ~47 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified im() | ~358 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | modified im() | ~378 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+14 lines) | ~472 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | removed 7 lines | ~13 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 1→4 lines | ~143 |
+| 16:41 | Edited docs/seri-guvenlik/YOL-HARITASI.md | 2→2 lines | ~100 |
+| 16:42 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+8 lines) | ~468 |
+| 16:42 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+14 lines) | ~443 |
+| 16:42 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+35 lines) | ~914 |
+| 16:43 | Edited docs/seri-guvenlik/YOL-HARITASI.md | expanded (+8 lines) | ~232 |
+| 16:44 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | 3→3 lines | ~77 |
+| 16:44 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | "e kendisi " → "ten beri, bir geri döndür" | ~40 |
+| 16:44 | Edited content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md | 1→2 lines | ~85 |
+| 16:44 | Edited content/series-guvenlik/articles/version-control/ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md | 1→2 lines | ~100 |
+| 16:45 | Created docs/seri-guvenlik/HANDOFF.md | — | ~4109 |
+| 16:46 | Edited docs/seri-guvenlik/ARASTIRMA.md | expanded (+12 lines) | ~357 |
+| 16:46 | Edited docs/seri-guvenlik/HANDOFF.md | inline fix | ~21 |
+| 16:47 | Edited .claude/launch.json | expanded (+6 lines) | ~82 |
+| 16:49 | Created C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/88e0b871-f830-4719-9c89-428d4f7c391f/scratchpad/buglog-run4.json | — | ~1898 |
+| 16:49 | Created C:/Users/anil.akman/.claude/projects/D--dev-anil-lib/memory/guvenlik-series-run4-2026-10-21.md | — | ~696 |
+| 16:50 | Edited .claude/launch.json | removed 9 lines | ~8 |
+| 16:50 | Edited docs/seri-guvenlik/HANDOFF.md | "build2.txt" → "in 2.43 önkoşulu ve " | ~124 |
+| 17:20 | Güven Sınırı run 4 (BATCH=2+1): yazı 7 (ayrışan geçmişi birleştirmek) ve 8 (kod kaybetmeden geri almak) yazıldı, kohort 3 olarak entegre edildi; 3 yeni SVG | content/series-guvenlik/** | bloklar 9/9 + 11/11, içerik/SVG/hash kapıları temiz | ~60000 |
+| 17:25 | Doğrulama: typecheck 0, vitest 42/833, lint 14 (run 3 tabanı), yalıtılmış build iki kez (192 sayfa), 90 render ölçümü x2, sığma kuralı 4 durum; kopya junction ayrı sökülerek silindi | artifacts/guvenlik-run4/** | yeni yazılarda 0 sorun | ~15000 |
+| 17:30 | +1: HANDOFF (cursor 8/25, sıradaki 9–10), YOL-HARITASI (kayıtlar, terim/geri çağırma/ileri işaret defterleri, karar #35–#43), ARASTIRMA §11 + §18–§20; cerebrum, buglog (bug-866…873), anatomy, bellek notu | docs/seri-guvenlik/*, .wolf/* | commit/push yapılmadı | ~12000 |
+| 16:51 | Session end: 60 writes across 16 files (deney7-kur.sh, deney7-teshis.sh, ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md, uc-son-tek-agac.svg, squash-sonrasi-taban.svg) | 16 reads | ~124064 tok |
+| 16:52 | Edited docs/seri-guvenlik/HANDOFF.md | inline fix | ~17 |
+| 16:52 | Edited docs/seri-guvenlik/HANDOFF.md | 1→3 lines | ~92 |
+| 17:40 | Kullanıcının isteğiyle run 4 main'e tek commit (co-author yok, .wolf dahil) ve origin main'e push; HANDOFF commit durumu güncellendi | docs/seri-guvenlik/HANDOFF.md, .wolf/* | commit + push | ~2000 |

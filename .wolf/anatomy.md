@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T12:35:58.081Z
-> Files: 884 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-10-21T13:52:11.402Z
+> Files: 896 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -499,6 +499,11 @@
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/883cb5bb-ed11-4944-95dd-d2b9ffa4d5d2/scratchpad/
 
 
+## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/88e0b871-f830-4719-9c89-428d4f7c391f/scratchpad/
+
+- `arastirma-ek.md` — 18. Yazı 7 — kanıt (Ayrışan geçmişi birleştirmek) (~2855 tok)
+- `buglog-run4.json` (~1898 tok)
+
 ## C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/D--dev-anil-lib/890ea0df-91db-4bff-be3d-02f55153d8ba/scratchpad/
 
 - `archash.cjs` — Arşiv content_hash sözleşmesi (prompts/01 §content_hash): LF, frontmatter çıkar, (~450 tok)
@@ -710,6 +715,7 @@
 - `guvenlik-series-run1-2026-10-21.md` (~608 tok)
 - `guvenlik-series-run2-2026-10-21.md` (~649 tok)
 - `guvenlik-series-run3-2026-10-21.md` (~660 tok)
+- `guvenlik-series-run4-2026-10-21.md` (~681 tok)
 - `MEMORY.md` — Memory index (~2493 tok)
 - `okuma-odasi-ux-turu-2026-09-25.md` — Declares name (~623 tok)
 - `okuma-sifirlama-2026-09-25.md` (~542 tok)
@@ -967,6 +973,13 @@
 ## artifacts/guvenlik-run3/render/
 
 - `metin.mjs` — Yayındaki metinde belirli cümlelerin bulunduğunu doğrular (giriş: depodaki e2e test kimliği). (~364 tok)
+
+## artifacts/guvenlik-run4/
+
+- `deney7-kur.sh` — Yazı 7 deneyi (sıra yazıdaki bloklarla aynı): 6'nın son durumu, rebase, üç son, dalın (~1412 tok)
+- `deney7-teshis.sh` — Yazı 7 "Teşhis et" kanıtı: yamadan önce açılmış ve aynı satıra dokunmuş bir dal güncellenirken (~878 tok)
+- `deney8-kur.sh` — Yazı 8 deneyi: 7'nin son durumunu sıkıştırılmış adımlarla aynı kimliklerle kurar, sonra geri alma (~1616 tok)
+- `deney8-teshis.sh` — Yazı 8 "Teşhis et" kanıtı (reset --hard tarifi): gönderilmemiş commit günlükte kalır; hazırlık (~326 tok)
 
 ## artifacts/owasp-run1/
 
@@ -1242,8 +1255,15 @@
 
 ## content/series-guvenlik/articles/version-control/
 
+- `ayrisan-gecmisi-birlestirmek-merge-rebase-squash.md` — Güven Sınırı yazı 7 (kohort 3): birleştirme tabanı ve üç yollu birleştirme; gönderilmemiş commit'in rebase'i (yeni kimlik, aynı patch-id); GitHub'ın üç yöntemi aynı ağaç/üç geçmiş; paylaşılmış dal birleştirme commit'iyle; Teşhis (kendi tarafını seçen çatışma çözümü); yönetici vakası squash'tan sonra yaşayan dal (`merge-tree`, `rebase --onto`); Kendi organizasyonunda kutusu (9 doğrulanmış komut bloğu). (~9762 tok)
 - `git-zihinsel-modeli-dal-bir-isaretcidir.md` — Güven Sınırı yazı 5 (kohort 2): XXE yaması `main`'de; commit = anlık görüntü + ebeveyn + üst veri, dal/HEAD işaretçi, üç alan, `--is-ancestor` ve imajın `org.opencontainers.image.revision` kaydıyla sürüm kapısı; deterministik deney deposu (11 doğrulanmış komut bloğu). (~9159 tok)
+- `kod-kaybetmeden-geri-almak.md` — Güven Sınırı yazı 8 (kohort 3): revert/restore/reset ve komut tablosu, reset biçimleri, reflog ve ayrık HEAD, silinen dal vakası, zorla push'ta kira tuzağı ve `--force-if-includes`, `main`'e yanlışlıkla birleştirme vakası (`revert -m 1`, Reapply); iki Teşhis (11 doğrulanmış komut bloğu). (~9566 tok)
 - `uzak-depoyla-esitlenmek-fetch-pull-push.md` — Güven Sınırı yazı 6 (kohort 2): iki klon + bare origin; yerel dal / uzak izleme dalı / uzak dal, `fetch`/`pull`/`push` hangi ref'i taşır, ıraksama ve iki ret, "güncelim" ne zaman kanıt (10 doğrulanmış komut bloğu). (~7202 tok)
+
+## content/series-guvenlik/assets/ayrisan-gecmisi-birlestirmek-merge-rebase-squash/
+
+- `squash-sonrasi-taban.svg` — Yazı 7 Şekil 2: y klonunda squash sonrası birleştirme tabanı 66098e2'de kalır (add/add, merge-tree 1); düzeltme paneli `rebase --onto` ile b2dff87. (~1731 tok)
+- `uc-son-tek-agac.svg` — Yazı 7 Şekil 1: üç satır (birleştirme commit'i, squash, rebase), aynı ağaç 90c95de, dal ucu ata mı 0/1/1. (~2265 tok)
 
 ## content/series-guvenlik/assets/git-zihinsel-modeli-dal-bir-isaretcidir/
 
@@ -1259,6 +1279,10 @@
 
 - `uc-cevap-iki-politika.svg` (~1128 tok)
 - `yarim-kalan-paylasim.svg` (~1012 tok)
+
+## content/series-guvenlik/assets/kod-kaybetmeden-geri-almak/
+
+- `zorla-push-kira.svg` — Yazı 8 Şekil 1: zorla push önce/sonra (commit konumları sabit); kira ve içerme retleri, yalnız kirayla a578de5 uzak daldan düşer, iz a'nın günlüğünde. (~1947 tok)
 
 ## content/series-guvenlik/assets/owasp-top-10-2025-i-okumak/
 
@@ -1756,11 +1780,11 @@
 
 ## docs/seri-guvenlik/
 
-- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~11971 tok)
-- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~3516 tok)
+- `ARASTIRMA.md` — "Güven Sınırı" — Kaynak ve Kanıt Defteri (~17507 tok)
+- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~4015 tok)
 - `SOZLESME.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Seri Sözleşmesi (~7438 tok)
 - `TRIGGER.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Üretim Trigger'ı (~483 tok)
-- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~21054 tok)
+- `YOL-HARITASI.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Yol Haritası (~23818 tok)
 
 ## docs/seri/
 

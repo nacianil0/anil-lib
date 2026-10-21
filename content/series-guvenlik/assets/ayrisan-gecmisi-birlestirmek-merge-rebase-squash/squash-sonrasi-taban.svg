@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="İki panel; oklar Git'in yönünde, her commit ebeveynini gösterir. Panel 1, y klonunda squash'tan sonra: üst çizgide f8db4cb, ad2634c, 3bfd1a1 ve vurgulu devam commit'i ec788df; kesikli origin/feature/fatura-pdf ec788df'i gösteriyor. Alt çizgide birleştirme tabanı 66098e2 ve vurgulu squash commit'i ac8d84d; kesikli origin/main ac8d84d'yi gösteriyor. 3bfd1a1'in ikinci ebeveyni 66098e2. Notlar: squash dalın commit'lerini kaydetmedi, ortak ata hâlâ 66098e2; fatura/pdf.ts tabanda yok, main kdv toplam, dal kdv oran-bazinda ekledi; aynı alanda iki farklı ekleme, add/add çatışması, merge-tree çıkışı 1. Panel 2, düzeltme: ac8d84d'nin üstünde vurgulu b2dff87, feature/fatura-kdv-oran onu gösteriyor; eski dal ec788df'de, kapanacak; git rebase --onto origin/main 3bfd1a1 yalnızca 3bfd1a1'den sonraki commit'i taşıdı.">
+  <defs>
+    <marker id="as2-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">y klonunda, squash'tan sonra: birleştirme tabanı 66098e2'de kaldı</text>
+
+  <rect x="446" y="36" width="204" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="460" y="54" font-size="13" fill="var(--text)">origin/feature/fatura-pdf</text>
+  <line x1="548" y1="64" x2="548" y2="78" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+
+  <rect x="140" y="82" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="152" y="99" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="152" y="115" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <rect x="260" y="82" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="272" y="99" font-size="13" font-weight="bold" fill="var(--text)">ad2634c</text>
+  <text x="272" y="115" font-size="13" fill="var(--text-muted)">KDV satırı</text>
+  <rect x="380" y="82" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="392" y="99" font-size="13" font-weight="bold" fill="var(--text)">3bfd1a1</text>
+  <text x="392" y="115" font-size="13" fill="var(--text-muted)">birleştirme</text>
+  <rect x="500" y="82" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="512" y="99" font-size="13" font-weight="bold" fill="var(--text)">ec788df</text>
+  <text x="512" y="115" font-size="13" fill="var(--text)">devam</text>
+  <line x1="258" y1="102" x2="240" y2="102" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+  <line x1="378" y1="102" x2="360" y2="102" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+  <line x1="498" y1="102" x2="480" y2="102" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+
+  <rect x="16" y="170" width="96" height="40" rx="10" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.6" />
+  <text x="28" y="187" font-size="13" font-weight="bold" fill="var(--text)">66098e2</text>
+  <text x="28" y="203" font-size="13" fill="var(--text)">fatura notu</text>
+  <text x="16" y="230" font-size="13" font-weight="bold" fill="var(--cool)">birleştirme tabanı</text>
+  <rect x="380" y="170" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="392" y="187" font-size="13" font-weight="bold" fill="var(--text)">ac8d84d</text>
+  <text x="392" y="203" font-size="13" fill="var(--text)">squash</text>
+  <line x1="378" y1="190" x2="116" y2="190" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+  <line x1="384" y1="125" x2="116" y2="167" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+  <rect x="500" y="177" width="104" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="514" y="195" font-size="13" fill="var(--text)">origin/main</text>
+  <line x1="498" y1="190" x2="480" y2="190" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+
+  <text x="16" y="256" font-size="13" fill="var(--text)">squash dalın commit'lerini kaydetmedi; ortak ata hâlâ 66098e2, 3bfd1a1'in ikinci ebeveyni</text>
+  <text x="16" y="276" font-size="13" fill="var(--text-muted)">fatura/pdf.ts tabanda yok; main kdv = "toplam", dal kdv = "oran-bazinda" ekledi</text>
+  <text x="16" y="296" font-size="13" font-weight="bold" fill="var(--accent)">aynı alanda iki farklı ekleme: add/add çatışması, merge-tree çıkışı 1</text>
+
+  <text x="16" y="332" font-size="13" font-weight="bold" fill="var(--text)">Düzeltme, a klonunda: yalnızca yeni commit yeni dala taşındı</text>
+  <rect x="16" y="346" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="363" font-size="13" font-weight="bold" fill="var(--text)">ac8d84d</text>
+  <text x="28" y="379" font-size="13" fill="var(--text-muted)">squash</text>
+  <rect x="136" y="346" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="148" y="363" font-size="13" font-weight="bold" fill="var(--text)">b2dff87</text>
+  <text x="148" y="379" font-size="13" fill="var(--text)">devam</text>
+  <line x1="134" y1="366" x2="116" y2="366" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+  <rect x="256" y="353" width="190" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="270" y="371" font-size="13" fill="var(--text)">feature/fatura-kdv-oran</text>
+  <line x1="254" y1="366" x2="236" y2="366" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as2-ok)" />
+  <text x="466" y="371" font-size="13" fill="var(--text-muted)">eski dal ec788df'de, kapanacak</text>
+  <text x="16" y="408" font-size="13" fill="var(--text-muted)">git rebase --onto origin/main 3bfd1a1: yalnızca 3bfd1a1'den sonraki commit taşındı</text>
+  <text x="16" y="428" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde · kesikli çerçeve: uzak izleme dalı · vurgulu: yeni commit</text>
+</svg>

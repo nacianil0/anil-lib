@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 574" role="img" aria-label="Üç satır, aynı başlangıç: main 66098e2, feature/fatura-pdf f8db4cb ve ad2634c. Oklar Git'in yönünde, her commit ebeveynini gösterir; vurgulu kutu yöntemin yazdığı yeni commit. 1, birleştirme commit'i, GitHub'da Create a merge commit, son/merge: 08bfade iki ebeveynli, 66098e2'yi ve ad2634c'yi gösteriyor; ağaç 90c95de, dal ucu ata mı: 0; f8db4cb ve ad2634c kendi kimlikleriyle geçmişte. 2, squash, Squash and merge, son/squash: 4f3df21 yalnızca 66098e2'yi gösteriyor; ağaç 90c95de, ata mı: 1; iki commit'in değişikliği tek commit'te, dala bağ yok. 3, rebase, Rebase and merge, son/rebase: 9f65d7a ve b1ba17d, 66098e2'nin üstünde; ağaç 90c95de, ata mı: 1; aynı değişiklik yeni kimlikle, dala bağ yok. Alt not: üç sonda dosyalar aynı, geçmiş farklı; fark, dal ucunun sondan ulaşılabilir olup olmadığında.">
+  <defs>
+    <marker id="as1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">Aynı başlangıç: main 66098e2 · feature/fatura-pdf f8db4cb, ad2634c</text>
+
+  <text x="16" y="60" font-size="13" fill="var(--text-muted)"><tspan font-weight="bold" fill="var(--text)">1 · Birleştirme commit'i</tspan> · GitHub: Create a merge commit · son/merge</text>
+  <rect x="180" y="72" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="192" y="89" font-size="13" font-weight="bold" fill="var(--text)">f8db4cb</text>
+  <text x="192" y="105" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <rect x="300" y="72" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="312" y="89" font-size="13" font-weight="bold" fill="var(--text)">ad2634c</text>
+  <text x="312" y="105" font-size="13" fill="var(--text-muted)">KDV satırı</text>
+  <line x1="298" y1="92" x2="280" y2="92" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <rect x="16" y="136" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="153" font-size="13" font-weight="bold" fill="var(--text)">66098e2</text>
+  <text x="28" y="169" font-size="13" fill="var(--text-muted)">fatura notu</text>
+  <rect x="420" y="136" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="432" y="153" font-size="13" font-weight="bold" fill="var(--text)">08bfade</text>
+  <text x="432" y="169" font-size="13" fill="var(--text)">birleştirme</text>
+  <line x1="418" y1="156" x2="116" y2="156" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <line x1="432" y1="134" x2="399" y2="115" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#as1-ok)" />
+  <rect x="424" y="79" width="88" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="436" y="97" font-size="13" fill="var(--text)">son/merge</text>
+  <line x1="468" y1="107" x2="468" y2="132" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <text x="16" y="196" font-size="13" fill="var(--text-muted)"><tspan font-weight="bold" fill="var(--text)">ağaç 90c95de · dal ucu ata mı: 0</tspan> · f8db4cb ve ad2634c kendi kimlikleriyle geçmişte</text>
+
+  <text x="16" y="218" font-size="13" fill="var(--text-muted)"><tspan font-weight="bold" fill="var(--text)">2 · Squash</tspan> · GitHub: Squash and merge · son/squash</text>
+  <rect x="180" y="230" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="192" y="247" font-size="13" font-weight="bold" fill="var(--text-muted)">f8db4cb</text>
+  <text x="192" y="263" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <rect x="300" y="230" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="312" y="247" font-size="13" font-weight="bold" fill="var(--text-muted)">ad2634c</text>
+  <text x="312" y="263" font-size="13" fill="var(--text-muted)">KDV satırı</text>
+  <line x1="298" y1="250" x2="280" y2="250" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <rect x="16" y="294" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="311" font-size="13" font-weight="bold" fill="var(--text)">66098e2</text>
+  <text x="28" y="327" font-size="13" fill="var(--text-muted)">fatura notu</text>
+  <rect x="420" y="294" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="432" y="311" font-size="13" font-weight="bold" fill="var(--text)">4f3df21</text>
+  <text x="432" y="327" font-size="13" fill="var(--text)">PDF + KDV</text>
+  <line x1="418" y1="314" x2="116" y2="314" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <rect x="424" y="237" width="88" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="436" y="255" font-size="13" fill="var(--text)">son/squash</text>
+  <line x1="468" y1="265" x2="468" y2="290" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <text x="16" y="354" font-size="13" fill="var(--text-muted)"><tspan font-weight="bold" fill="var(--text)">ağaç 90c95de · dal ucu ata mı: 1</tspan> · iki commit'in değişikliği tek commit'te, dala bağ yok</text>
+
+  <text x="16" y="376" font-size="13" fill="var(--text-muted)"><tspan font-weight="bold" fill="var(--text)">3 · Rebase</tspan> · GitHub: Rebase and merge · son/rebase</text>
+  <rect x="180" y="388" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="192" y="405" font-size="13" font-weight="bold" fill="var(--text-muted)">f8db4cb</text>
+  <text x="192" y="421" font-size="13" fill="var(--text-muted)">PDF şablonu</text>
+  <rect x="300" y="388" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="312" y="405" font-size="13" font-weight="bold" fill="var(--text-muted)">ad2634c</text>
+  <text x="312" y="421" font-size="13" fill="var(--text-muted)">KDV satırı</text>
+  <line x1="298" y1="408" x2="280" y2="408" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <rect x="16" y="452" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="469" font-size="13" font-weight="bold" fill="var(--text)">66098e2</text>
+  <text x="28" y="485" font-size="13" fill="var(--text-muted)">fatura notu</text>
+  <rect x="420" y="452" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="432" y="469" font-size="13" font-weight="bold" fill="var(--text)">9f65d7a</text>
+  <text x="432" y="485" font-size="13" fill="var(--text)">PDF şablonu</text>
+  <rect x="540" y="452" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="552" y="469" font-size="13" font-weight="bold" fill="var(--text)">b1ba17d</text>
+  <text x="552" y="485" font-size="13" fill="var(--text)">KDV satırı</text>
+  <line x1="418" y1="472" x2="116" y2="472" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <line x1="538" y1="472" x2="520" y2="472" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <rect x="544" y="395" width="88" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="556" y="413" font-size="13" fill="var(--text)">son/rebase</text>
+  <line x1="588" y1="423" x2="588" y2="448" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#as1-ok)" />
+  <text x="16" y="512" font-size="13" fill="var(--text-muted)"><tspan font-weight="bold" fill="var(--text)">ağaç 90c95de · dal ucu ata mı: 1</tspan> · aynı değişiklik yeni kimlikle, dala bağ yok</text>
+
+  <text x="16" y="542" font-size="13" fill="var(--text)">Üç sonda dosyalar aynı, geçmiş farklı: fark, dal ucunun sondan ulaşılabilir olup olmadığında</text>
+  <text x="16" y="562" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde, her commit ebeveynini gösterir · vurgulu: yöntemin yazdığı yeni commit</text>
+</svg>
