@@ -12,7 +12,7 @@ tags:
   - embedding
   - bpe
   - dagilimsal-hipotez
-content_hash: sha256:e525e947d827a73a7be1936d038aeb0de080d2792a245bc9568a1de8af9bf8b1
+content_hash: sha256:24f76a89f12ac462ad2294ba721cb4e6a2dfc27575a69963d4c742770f167c17
 classification_version: 1
 classification_batch: 0
 ---
@@ -117,12 +117,12 @@ Dil artık ağın kapısından geçebiliyor: token'lar, kimlikler ve öğrenilen
 - Harris, Z. S. (1954). *Distributional Structure*. WORD 10(2–3), 146–162. [Bağlantı](https://www.tandfonline.com/doi/pdf/10.1080/00437956.1954.11659520)
 - Firth, J. R. (1957). *A Synopsis of Linguistic Theory, 1930–1955*. Studies in Linguistic Analysis, Blackwell, Oxford. Atıf tarihçesi için: [Bağlantı](https://quoteinvestigator.com/2022/09/18/word-company/)
 - Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). *Efficient Estimation of Word Representations in Vector Space*. ICLR 2013 çalıştay kolu (ana konferans bildirisi değildir). [Bağlantı](https://arxiv.org/abs/1301.3781)
-- Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. (2013). *Distributed Representations of Words and Phrases and their Compositionality*. NeurIPS 2013. [Bağlantı](https://arxiv.org/abs/1310.4546)
+- Mikolov, T., Sutskever, I., Chen, K., Corrado, G. & Dean, J. (2013). *Distributed Representations of Words and Phrases and their Compositionality*. NeurIPS 2013. [Bağlantı](https://papers.nips.cc/paper_files/paper/2013/hash/9aa42b31882ec039965f3c4923ce901b-Abstract.html)
 - Mikolov, T., Yih, W. & Zweig, G. (2013). *Linguistic Regularities in Continuous Space Word Representations*. NAACL-HLT 2013. [Bağlantı](https://aclanthology.org/N13-1090/)
 - Nissim, M., van Noord, R. & van der Goot, R. (2020). *Fair Is Better than Sensational: Man Is to Doctor as Woman Is to Doctor*. Computational Linguistics 46(2), 487–497. [Bağlantı](https://aclanthology.org/2020.cl-2.7/)
 - Levy, O. & Goldberg, Y. (2014). *Linguistic Regularities in Sparse and Explicit Word Representations*. CoNLL 2014. [Bağlantı](https://aclanthology.org/W14-1618/)
 - Pennington, J., Socher, R. & Manning, C. D. (2014). *GloVe: Global Vectors for Word Representation*. EMNLP 2014. [Bağlantı](https://aclanthology.org/D14-1162/)
 - Schluter, N. (2018). *The Word Analogy Testing Caveat*. NAACL-HLT 2018. [Bağlantı](https://aclanthology.org/N18-2039/)
-- Park, K., Choe, Y. J. & Veitch, V. (2024). *The Linear Representation Hypothesis and the Geometry of Large Language Models*. ICML 2024. [Bağlantı](https://arxiv.org/abs/2311.03658)
+- Park, K., Choe, Y. J. & Veitch, V. (2024). *The Linear Representation Hypothesis and the Geometry of Large Language Models*. ICML 2024, PMLR 235. [Bağlantı](https://proceedings.mlr.press/v235/park24c.html)
 - Peters, M. E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K. & Zettlemoyer, L. (2018). *Deep Contextualized Word Representations*. NAACL 2018. [Bağlantı](https://aclanthology.org/N18-1202/)
 - Ethayarajh, K. (2019). *How Contextual are Contextualized Word Representations? Comparing the Geometry of BERT, ELMo, and GPT-2 Embeddings*. EMNLP-IJCNLP 2019. [Bağlantı](https://aclanthology.org/D19-1006/)

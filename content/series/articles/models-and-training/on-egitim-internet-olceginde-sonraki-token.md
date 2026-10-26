@@ -12,7 +12,7 @@ tags:
   - egitim-verisi
   - hesap-butcesi
   - tekillestirme
-content_hash: sha256:ed8e1ccfe53c30728e2e41f7f62da51c16d8fe74bc0eaf2185e760fa51f9e558
+content_hash: sha256:8ff724531cef01f704fa897c7d1dfda1eb5720fe7359a5d36ff9c1087a25b5c9
 classification_version: 1
 classification_batch: 1
 ---
@@ -169,10 +169,10 @@ Kapatmadan önce bir gerilimi işaretleyelim. Model eğitim verisini bir veritab
 - Gao, L. ve ark. (2020). *The Pile: An 800GB Dataset of Diverse Text for Language Modeling*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2101.00027)
 - Penedo, G., Kydlíček, H., Ben Allal, L., Lozhkov, A., Mitchell, M., Raffel, C., Von Werra, L. & Wolf, T. (2024). *The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale*. NeurIPS 2024, Datasets and Benchmarks Track. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2024/hash/370df50ccfdf8bde18f8f9c2d9151bda-Abstract-Datasets_and_Benchmarks_Track.html)
 - Lee, K., Ippolito, D., Nystrom, A., Zhang, C., Eck, D., Callison-Burch, C. & Carlini, N. (2022). *Deduplicating Training Data Makes Language Models Better*. ACL 2022, s. 8424–8445. [Bağlantı](https://aclanthology.org/2022.acl-long.577/)
-- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020 (arXiv:2005.14165). [Bağlantı](https://arxiv.org/abs/2005.14165)
+- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 - Brysbaert, M. (2019). *How many words do we read per minute? A review and meta-analysis of reading rate*. Journal of Memory and Language, 109, 104047. [Bağlantı](https://doi.org/10.1016/j.jml.2019.104047)
-- Loshchilov, I. & Hutter, F. (2019). *Decoupled Weight Decay Regularization*. ICLR 2019. [Bağlantı](https://arxiv.org/abs/1711.05101)
+- Loshchilov, I. & Hutter, F. (2019). *Decoupled Weight Decay Regularization*. ICLR 2019. [Bağlantı](https://openreview.net/forum?id=Bkg6RiCqY7)
 - Patterson, D., Gonzalez, J., Le, Q., Liang, C., Munguia, L.-M., Rothchild, D., So, D., Texier, M. & Dean, J. (2021). *Carbon Emissions and Large Neural Network Training*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2104.10350)
 - Zhang, S. ve ark. (2022). *OPT: Open Pre-trained Transformer Language Models*. Meta AI teknik raporu (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2205.01068)
 - Meta AI (2022). *OPT-175B Chronicles (eğitim günlüğü)*. metaseq deposu (hakemlenmemiş birincil kayıt). [Bağlantı](https://github.com/facebookresearch/metaseq/tree/main/projects/OPT/chronicles)
-- Carlini, N., Ippolito, D., Jagielski, M., Lee, K., Tramèr, F. & Zhang, C. (2023). *Quantifying Memorization Across Neural Language Models*. ICLR 2023. [Bağlantı](https://arxiv.org/abs/2202.07646)
+- Carlini, N., Ippolito, D., Jagielski, M., Lee, K., Tramèr, F. & Zhang, C. (2023). *Quantifying Memorization Across Neural Language Models*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=TatRHT_1cK)

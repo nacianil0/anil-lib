@@ -12,7 +12,7 @@ tags:
   - mmlu
   - olcum
   - siralama
-content_hash: sha256:79e282d3ad7f4c661b1d79fddb69c194235ffc78facd36e2bf3ce9154f4e592b
+content_hash: sha256:8c7c66ee71938e0b9d094c53fda1f339965f5bfc568f6e787b1bbcd672e64b80
 classification_version: 1
 classification_batch: 3
 revised_at: "2026-09-25"
@@ -124,7 +124,7 @@ Bu makale boyunca değerlendirmenin nasıl puanlandığına baktık ve bir ayrı
 
 - Hendrycks, D., Burns, C., Basart, S., Zou, A., Mazeika, M., Song, D. & Steinhardt, J. (2021). *Measuring Massive Multitask Language Understanding*. ICLR 2021. [Bağlantı](https://arxiv.org/abs/2009.03300)
 - Gema, A. P., Leang, J. O. J., Hong, G. ve ark. (2025). *Are We Done with MMLU?*. NAACL 2025, s. 5069–5096. [Bağlantı](https://aclanthology.org/2025.naacl-long.262/)
-- Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). *Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=RIu5lyNXjT)
+- Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). *Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=RIu5lyNXjT)
 - Alzahrani, N., Alyahya, H., Alnumay, Y. ve ark. (2024). *When Benchmarks are Targets: Revealing the Sensitivity of Large Language Model Leaderboards*. ACL 2024. [Bağlantı](https://aclanthology.org/2024.acl-long.744/)
 - Miller, E. (2024). *Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations*. Anthropic teknik raporu (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2411.00640)
 - Chiang, W.-L., Zheng, L., Sheng, Y. ve ark. (2024). *Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference*. ICML 2024. [Bağlantı](https://proceedings.mlr.press/v235/chiang24b.html)

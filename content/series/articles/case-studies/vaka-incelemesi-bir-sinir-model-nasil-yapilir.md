@@ -12,7 +12,7 @@ tags:
   - hesap-butcesi
   - karar-zinciri
   - geri-alinamazlik
-content_hash: sha256:62d4eb1c7549ef6247d7071f20a890000223efe18bda235549d80d5311473102
+content_hash: sha256:fe596ed875689e78da8081fd7bd411bdb43e5b9f7f985a31c1b14664baa41f51
 classification_version: 1
 classification_batch: 27
 ---
@@ -149,4 +149,4 @@ Bu makale zinciri modeli **üreten** tarafta izledi: bütçe, veri, sistem, post
 - Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P. ve ark. (2022). *Training language models to follow instructions with human feedback*. Advances in Neural Information Processing Systems 35. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html)
 - Dao, T. (2024). *FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning*. International Conference on Learning Representations 2024. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/98ed250b203d1ac6b24bbcf263e3d4a7-Abstract-Conference.html)
 - Young, J. W. (1974). *A First Order Approximation to the Optimum Checkpoint Interval*. Communications of the ACM, 17(9), s. 530–531. [Bağlantı](https://doi.org/10.1145/361147.361115)
-- Kapoor, S., Bommasani, R., Klyman, K., Longpre, S., Ramaswami, A., Cihon, P. ve ark. (2024). *On the Societal Impact of Open Foundation Models*. Proceedings of the 41st International Conference on Machine Learning, PMLR 235. [Bağlantı](https://proceedings.mlr.press/v235/kapoor24a.html)
+- Kapoor, S., Bommasani, R., Klyman, K., Longpre, S., Ramaswami, A., Cihon, P. ve ark. (2024). *Position: On the Societal Impact of Open Foundation Models*. Proceedings of the 41st International Conference on Machine Learning, PMLR 235, s. 23082–23104. [Bağlantı](https://proceedings.mlr.press/v235/kapoor24a.html)

@@ -12,7 +12,7 @@ tags:
   - sistem-karti
   - belgeleme
   - denetim
-content_hash: sha256:84da2c3700c9436e1d4c03c5ab8fa545559c1e0092d3f8bf52585e752e775102
+content_hash: sha256:0825ede6cc3583c90f1b43a21e5835cf2d0778b71c356a6103aef872131f166a
 classification_version: 1
 classification_batch: 19
 ---
@@ -117,7 +117,7 @@ Buraya kadarki fazın tamamı — ölçmek, içine bakmak, kırılganlığı sı
 - Longpre, S., Mahari, R., Chen, A., Obeng-Marnu, N., Sileo, D., Brannon, W., Muennighoff, N., Khazam, N., Kabbara, J., Perisetla, K., Wu, X., Shippole, E., Bollacker, K., Wu, T., Villa, L., Pentland, S. & Hooker, S. (2024). *A large-scale audit of dataset licensing and attribution in AI*. Nature Machine Intelligence. [Bağlantı](https://doi.org/10.1038/s42256-024-00878-8)
 - Longpre, S., Mahari, R., Lee, A., Lund, C., Oderinwale, H., Brannon, W., Saxena, N., Obeng-Marnu, N., South, T., Hunter, C., Klyman, K., Klamm, C., Schoelkopf, H., Singh, N., Cherep, M. ve ark. (2024). *Consent in Crisis: The Rapid Decline of the AI Data Commons*. NeurIPS 2024 Datasets and Benchmarks. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/c3738949a80306cc48a8ea8ba0560f9d-Abstract-Datasets_and_Benchmarks_Track.html)
 - OpenAI (2024). *GPT-4o System Card*. Sağlayıcı yayını; hakemli değildir. [Bağlantı](https://arxiv.org/abs/2410.21276)
-- Anthropic (2025). *Claude 4 System Card*. Sağlayıcı yayını; hakemli değildir. [Bağlantı](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf)
+- Anthropic (2025). *System Card: Claude Opus 4 & Claude Sonnet 4*. Sağlayıcı yayını; hakemli değildir. [Bağlantı](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf)
 - Liang, W., Rajani, N., Yang, X., Ozoani, E., Wu, E., Chen, Y., Smith, D. S. & Zou, J. (2024). *Systematic analysis of 32,111 AI model cards characterizes documentation practice in AI*. Nature Machine Intelligence. [Bağlantı](https://doi.org/10.1038/s42256-024-00857-z)
 - Bhat, A., Coursey, A., Hu, G., Li, S., Nahar, N., Zhou, S., Kästner, C. & Guo, J. L. C. (2023). *Aspirations and Practice of ML Model Documentation: Moving the Needle with Nudging and Traceability*. ACM CHI 2023. [Bağlantı](https://doi.org/10.1145/3544548.3581518)
 - Avrupa Parlamentosu ve Konseyi (2024). *Regulation (EU) 2024/1689 — Yapay Zekâ Yasası, Ek IV: Madde 11(1)'de anılan teknik dokümantasyon*. Avrupa Birliği Resmî Gazetesi. [Bağlantı](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)

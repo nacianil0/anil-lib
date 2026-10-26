@@ -12,7 +12,7 @@ tags:
   - olaysal-anlamsal-yordamsal
   - baglam-penceresi
   - secici-unutma
-content_hash: sha256:f80f28e3768bbdee0340700c60c894abd30a22dd134ff4e1d314a65e3284fdf9
+content_hash: sha256:7dab78bfc39c96c28ea41ba9975c273c251139547ba16e6394f2239def11ab54
 classification_version: 1
 classification_batch: 13
 ---
@@ -97,7 +97,7 @@ Bu makaledeki her ölçüm bir cetvel seçti: hangi dört yetenek, hangi soru k�
 ## Kaynakça
 
 - Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I. & Gonzalez, J. E. (2023). *MemGPT: Towards LLMs as Operating Systems*. Hakemli olmayan ön çalışma (arXiv:2310.08560). [Bağlantı](https://arxiv.org/abs/2310.08560)
-- Zhou, Z., Qu, A., Wu, Z., Kim, S., Prakash, A., Rus, D., Zhao, J., Low, B. K. H. & Liang, P. P. (2026). *MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents*. ICLR 2026. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5fc8b3bdfbb9167b5144df5d3fae4616-Abstract-Conference.html)
+- Zhou, Z., Qu, A., Wu, Z., Kim, S., Prakash, A., Rus, D., Low, B. K. H. & Liang, P. P. (2026). *MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents*. ICLR 2026. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5fc8b3bdfbb9167b5144df5d3fae4616-Abstract-Conference.html)
 - Zhao, A., Huang, D., Xu, Q., Lin, M., Liu, Y.-J. & Huang, G. (2024). *ExpeL: LLM Agents Are Experiential Learners*. AAAI 2024, 38(17), s. 19632–19642. [Bağlantı](https://doi.org/10.1609/aaai.v38i17.29936)
 - Chhikara, P., Khant, D., Aryan, S., Singh, T. & Yadav, D. (2025). *Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory*. ECAI 2025. [Bağlantı](https://doi.org/10.3233/FAIA251160)
 - Xu, W., Liang, Z., Mei, K., Gao, H., Tan, J. & Zhang, Y. (2025). *A-Mem: Agentic Memory for LLM Agents*. NeurIPS 2025. [Bağlantı](https://papers.nips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html)

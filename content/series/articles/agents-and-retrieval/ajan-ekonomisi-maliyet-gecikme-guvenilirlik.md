@@ -12,7 +12,7 @@ tags:
   - gecis-basina-bedel
   - gecikme
   - guvenilirlik
-content_hash: sha256:9b7f81b20b5a0e1eb7b6868c93493ae6fb0be6b43c41fb3d18ad0847c49efbed
+content_hash: sha256:d119eeb1bad58044109b0a3109be387401c79bd0ea2a5fc07caefff6f25a3278
 classification_version: 1
 classification_batch: 14
 ---
@@ -125,6 +125,6 @@ Faz 6 boyunca her ölçüm bir hedef varsaydı: puan, dolar, pass^k, hepsi göre
 - Luo, M., Shi, X., Cai, C., Zhang, T., Wong, J., Wang, Y., Wang, C., Huang, Y., Chen, Z., Gonzalez, J. E. & Stoica, I. (2026). *Agentix: An Efficient Serving Engine for LLM Agents as General Programs* (ön baskı adı: *Autellix: An Efficient Serving Engine for LLM Agents as General Programs*). 23rd USENIX Symposium on Networked Systems Design and Implementation (NSDI '26), s. 2443–2459. [Bağlantı](https://www.usenix.org/conference/nsdi26/presentation/luo)
 - Zheng, L., Yin, L., Xie, Z., Sun, C., Huang, J., Yu, C. H., Cao, S., Kozyrakis, C., Stoica, I., Gonzalez, J. E., Barrett, C. & Sheng, Y. (2024). *SGLang: Efficient Execution of Structured Language Model Programs*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/724be4472168f31ba1c9ac630f15dec8-Abstract-Conference.html)
 - Gim, I., Chen, G., Lee, S., Sarda, N., Khandelwal, A. & Zhong, L. (2024). *Prompt Cache: Modular Attention Reuse for Low-Latency Inference*. MLSys 2024. [Bağlantı](https://proceedings.mlsys.org/paper_files/paper/2024/hash/a66caa1703fe34705a4368c3014c1966-Abstract-Conference.html)
-- Barres, V., Dong, H., Ray, S., Si, X. & Narasimhan, K. (2026). *τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment*. ICML 2026. [Bağlantı](https://icml.cc/virtual/2026/poster/64377)
+- Barres, V., Dong, H., Ray, S., Si, X. & Narasimhan, K. (2026). *τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment*. ICML 2026, PMLR 306, s. 6736–6782. [Bağlantı](https://proceedings.mlr.press/v306/barres26a.html)
 - Sinha, A., Arun, A., Goel, S., Staab, S. & Geiping, J. (2026). *The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs*. ICLR 2026. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2026/hash/3b4e1336f775c3dba16ebbb8d2afd258-Abstract-Conference.html)
 - Backlund, A. & Petersson, L. (2025). *Vending-Bench: A Benchmark for Long-Term Coherence of Autonomous Agents*. Hakemli olmayan ön çalışma (arXiv:2502.15840). [Bağlantı](https://arxiv.org/abs/2502.15840)

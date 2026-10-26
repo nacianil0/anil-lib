@@ -12,7 +12,7 @@ tags:
   - gosterim
   - gorev-tanima
   - many-shot
-content_hash: sha256:52cb462d5947a1dd1605f63e2a4336ecab322f5d93f8a8643e8ae6bf7808d9ff
+content_hash: sha256:f40df7b43f0200e10b7ee16c7ef643ce1969231db58c39a048c128ed89b6b751
 classification_version: 1
 classification_batch: 5
 ---
@@ -138,7 +138,7 @@ Bu makale boyunca istemi tek parça bir metin gibi ele aldık: gösterimler, son
 
 ## Kaynakça
 
-- Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://arxiv.org/abs/2005.14165)
+- Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 - Min, S., Lyu, X., Holtzman, A., Artetxe, M., Lewis, M., Hajishirzi, H. & Zettlemoyer, L. (2022). *Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?*. EMNLP 2022, s. 11048–11064. [Bağlantı](https://aclanthology.org/2022.emnlp-main.759/)
 - Pan, J., Gao, T., Chen, H. & Chen, D. (2023). *What In-Context Learning "Learns" In-Context: Disentangling Task Recognition and Task Learning*. Findings of ACL 2023, s. 8298–8319. [Bağlantı](https://aclanthology.org/2023.findings-acl.527/)
 - Agarwal, R., Singh, A., Zhang, L. M., Bohnet, B., Rosias, L., Chan, S. ve ark. (2024). *Many-Shot In-Context Learning*. NeurIPS 2024. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2024/hash/8cb564df771e9eacbfe9d72bd46a24a9-Abstract-Conference.html)

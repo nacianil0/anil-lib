@@ -12,7 +12,7 @@ tags:
   - cok-basli-dikkat
   - pozisyon-kodlama
   - paralellik
-content_hash: sha256:15e4e5efb3a98f46387d5c3e23425a4a9229965f23643100c3e5cec8524ac682
+content_hash: sha256:7f283af673f1bf35270a36099589037887dc6639f70f21a07361f830a8acc02f
 classification_version: 1
 classification_batch: 1
 ---
@@ -174,11 +174,11 @@ Mimari hazır ve boş. Hedefi 5\. makaleden, döngüyü 2\. makaleden beri biliy
 - Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. & Sutskever, I. (2019). *Language Models are Unsupervised Multitask Learners*. OpenAI teknik raporu (hakemli değildir). [Bağlantı](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 - Xiong, R., Yang, Y., He, D., Zheng, K., Zheng, S., Xing, C., Zhang, H., Lan, Y., Wang, L. & Liu, T.-Y. (2020). *On Layer Normalization in the Transformer Architecture*. ICML 2020, PMLR 119, s. 10524–10533. [Bağlantı](https://proceedings.mlr.press/v119/xiong20b.html)
 - Lee, J., Lee, Y., Kim, J., Kosiorek, A. R., Choi, S. & Teh, Y. W. (2019). *Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks*. ICML 2019. [Bağlantı](https://arxiv.org/abs/1810.00825)
-- Su, J., Ahmed, M., Lu, Y., Pan, S., Bo, W. & Liu, Y. (2024). *RoFormer: Enhanced Transformer with Rotary Position Embedding*. Neurocomputing, 568, 127063. [Bağlantı](https://arxiv.org/abs/2104.09864)
+- Su, J., Ahmed, M., Lu, Y., Pan, S., Bo, W. & Liu, Y. (2024). *RoFormer: Enhanced transformer with Rotary Position Embedding*. Neurocomputing, 568, 127063. [Bağlantı](https://doi.org/10.1016/j.neucom.2023.127063)
 - Devlin, J., Chang, M.-W., Lee, K. & Toutanova, K. (2019). *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*. NAACL-HLT 2019, s. 4171–4186. [Bağlantı](https://aclanthology.org/N19-1423/)
 - Radford, A., Narasimhan, K., Salimans, T. & Sutskever, I. (2018). *Improving Language Understanding by Generative Pre-Training*. OpenAI teknik raporu (hakemli değildir). [Bağlantı](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
 - Wang, T., Roberts, A., Hesslow, D., Le Scao, T., Chung, H. W., Beltagy, I., Launay, J. & Raffel, C. (2022). *What Language Model Architecture and Pretraining Objective Works Best for Zero-Shot Generalization?*. ICML 2022, PMLR 162, s. 22964–22984. [Bağlantı](https://proceedings.mlr.press/v162/wang22u.html)
-- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020 (arXiv:2005.14165). [Bağlantı](https://arxiv.org/abs/2005.14165)
+- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 - Grattafiori, A. ve ark. (2024). *The Llama 3 Herd of Models*. Meta AI teknik raporu (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2407.21783)
 - OpenAI (2019). *GPT-2 model kartı*. GitHub (hakemli değildir). [Bağlantı](https://github.com/openai/gpt-2/blob/master/model_card.md)
 - Touvron, H. ve ark. (2023). *Llama 2: Open Foundation and Fine-Tuned Chat Models*. Meta AI teknik raporu (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2307.09288)

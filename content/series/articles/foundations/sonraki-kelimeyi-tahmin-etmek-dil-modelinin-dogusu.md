@@ -12,7 +12,7 @@ tags:
   - perplexity
   - sonraki-token
   - shannon
-content_hash: sha256:f2d3d06bcd816f7792a735c1f233a33b381707acc4fbebc6ce55a2b11e0bac17
+content_hash: sha256:939ed95be4a5f5df471f984e84ec911c0060afb83e0aced4cc339bd93eff0121
 classification_version: 1
 classification_batch: 0
 ---
@@ -134,11 +134,11 @@ Bu makalede embedding'leri Bengio'nun modeliyle tarihsel yerine oturttuk; ama 4.
 - Shannon, C. E. (1951). *Prediction and Entropy of Printed English*. Bell System Technical Journal. [Bağlantı](https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf)
 - Jurafsky, D. & Martin, J. H. (2026). *Speech and Language Processing* (3. baskı taslağı, Bölüm 3: N-gram Language Models). Stanford University. [Bağlantı](https://web.stanford.edu/~jurafsky/slp3/3.pdf)
 - Hayes, B. (2013). *First Links in the Markov Chain*. American Scientist, 101(2). [Bağlantı](https://www.americanscientist.org/article/first-links-in-the-markov-chain)
-- Jelinek, F., Mercer, R. L., Bahl, L. R. & Baker, J. K. (1977). *Perplexity — a measure of the difficulty of speech recognition tasks*. Journal of the Acoustical Society of America, 62(S1). [Bağlantı](https://pubs.aip.org/asa/jasa/article/62/S1/S63/642598/Perplexity-a-measure-of-the-difficulty-of-speech)
+- Jelinek, F., Mercer, R. L., Bahl, L. R. & Baker, J. K. (1977). *Perplexity—a measure of the difficulty of speech recognition tasks*. Journal of the Acoustical Society of America 62(S1), S63. [Bağlantı](https://pubs.aip.org/asa/jasa/article/62/S1/S63/642598/Perplexity-a-measure-of-the-difficulty-of-speech)
 - Bengio, Y., Ducharme, R., Vincent, P. & Jauvin, C. (2003). *A Neural Probabilistic Language Model*. Journal of Machine Learning Research, 3:1137–1155. [Bağlantı](https://www.jmlr.org/papers/v3/bengio03a.html)
 - Liu, J., Min, S., Zettlemoyer, L., Choi, Y. & Hajishirzi, H. (2024). *Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens*. COLM 2024. [Bağlantı](https://arxiv.org/abs/2401.17377)
 - Mikolov, T., Chen, K., Corrado, G. & Dean, J. (2013). *Efficient Estimation of Word Representations in Vector Space*. ICLR 2013 çalıştay kolu (ana konferans bildirisi değildir). [Bağlantı](https://arxiv.org/abs/1301.3781)
 - Mikolov, T., Karafiát, M., Burget, L., Černocký, J. & Khudanpur, S. (2010). *Recurrent neural network based language model*. INTERSPEECH 2010. [Bağlantı](https://www.isca-archive.org/interspeech_2010/mikolov10_interspeech.html)
-- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://arxiv.org/abs/2005.14165)
-- Wei, J. ve ark. (2022). *Emergent Abilities of Large Language Models*. Transactions on Machine Learning Research. [Bağlantı](https://arxiv.org/abs/2206.07682)
-- Schaeffer, R., Miranda, B. & Koyejo, S. (2023). *Are Emergent Abilities of Large Language Models a Mirage?* NeurIPS 2023. [Bağlantı](https://arxiv.org/abs/2304.15004)
+- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020; okunan sürüm arXiv:2005.14165. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
+- Wei, J. ve ark. (2022). *Emergent Abilities of Large Language Models*. Transactions on Machine Learning Research. [Bağlantı](https://openreview.net/forum?id=yzkSU5zdwD)
+- Schaeffer, R., Miranda, B. & Koyejo, S. (2023). *Are Emergent Abilities of Large Language Models a Mirage?* NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/adc98a266f45005c403b8311ca7e8bd7-Abstract-Conference.html)

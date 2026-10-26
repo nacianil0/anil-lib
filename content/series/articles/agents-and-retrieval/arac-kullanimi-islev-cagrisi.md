@@ -12,7 +12,7 @@ tags:
   - arac-tanimi
   - uydurulmus-cagri
   - paralel-cagri
-content_hash: sha256:863e3dd5b6c44a04ea28bbe868028bc50d9df79c608753ca71645fd369e63503
+content_hash: sha256:892a066393fec93e80ead24727ac416783afbfaf5a65fa4557534f7a7f0f1831
 classification_version: 1
 classification_batch: 11
 ---
@@ -141,7 +141,7 @@ Bu makalede araç bir soyutlamaydı: adı, şeması ve döndürdüğü metin. Am
 ## Kaynakça
 
 - Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Hambro, E., Zettlemoyer, L., Cancedda, N. & Scialom, T. (2023). *Toolformer: Language Models Can Teach Themselves to Use Tools*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html)
-- Meta (2024). *Model Cards and Prompt Formats — Llama 3.1*. Resmî belgelendirme. [Bağlantı](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/)
+- Meta (2024). *Model Cards and Prompt Formats — Llama 3.1*. Resmî belgelendirme. [Bağlantı](https://dev.meta.ai/llama/docs/model-cards-and-prompt-formats/llama3_1)
 - Anthropic (2026). *Tool use with Claude* ve *Define tools*. Resmî belgelendirme. [Bağlantı](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview)
 - Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J. & Beutel, A. (2024). *The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions*. OpenAI, hakemli olmayan ön çalışma (arXiv:2404.13208). [Bağlantı](https://arxiv.org/abs/2404.13208)
 - Patil, S. G., Mao, H., Yan, F., Ji, C. C.-J., Suresh, V., Stoica, I. & Gonzalez, J. E. (2025). *The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models*. ICML 2025, PMLR 267, s. 48371–48392. [Bağlantı](https://proceedings.mlr.press/v267/patil25a.html)

@@ -12,7 +12,7 @@ tags:
   - ozdeger
   - dusuk-rank
   - matris-sikistirma
-content_hash: sha256:434cd37f054cd3624708d804c65f3e19986e9f7c952b6dbacd69f005b01dc6a3
+content_hash: sha256:091d3bf2f1e40bbb8ed302d1204448aa90f3d9524aa6ecf05c47759fba06324e
 classification_version: 1
 classification_batch: 22
 revised_at: "2026-09-25"
@@ -130,7 +130,7 @@ Bu üç örnek bir arada okunduğunda rankın seride üç ayrı rol üstlendiği
 - Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L. & Chen, W. (2022). *LoRA: Low-Rank Adaptation of Large Language Models*. ICLR 2022. [Bağlantı](https://openreview.net/forum?id=nZeVKeeFYf9)
 - Martin, C. H. & Mahoney, M. W. (2021). *Implicit Self-Regularization in Deep Neural Networks: Evidence from Random Matrix Theory and Implications for Learning*. Journal of Machine Learning Research 22(165), 1–73. [Bağlantı](https://www.jmlr.org/papers/v22/20-410.html)
 - Lialin, V., Muckatira, S., Shivagunde, N. & Rumshisky, A. (2024). *ReLoRA: High-Rank Training Through Low-Rank Updates*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=DLJznSp6X3)
-- Zhang, Q., Chen, M., Bukharin, A., He, P., Cheng, Y., Chen, W. & Zhao, T. (2023). *AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=lq62uWRJjiY)
+- Zhang, Q., Chen, M., Bukharin, A., He, P., Cheng, Y., Chen, W. & Zhao, T. (2023). *Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=lq62uWRJjiY)
 - Wang, X., Zheng, Y., Wan, Z. & Zhang, M. (2025). *SVD-LLM: Truncation-aware Singular Value Decomposition for Large Language Model Compression*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=LNYIUouhdt)
 - Sharma, P., Ash, J. T. & Misra, D. (2024). *The Truth is in There: Improving Reasoning in Language Models with Layer-Selective Rank Reduction*. ICLR 2024. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/4c2092ec0b1370cce3fb5965ab255fae-Abstract-Conference.html)
 - Bhojanapalli, S., Yun, C., Rawat, A. S., Reddi, S. & Kumar, S. (2020). *Low-Rank Bottleneck in Multi-head Attention Models*. ICML 2020. [Bağlantı](https://proceedings.mlr.press/v119/bhojanapalli20a.html)

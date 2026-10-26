@@ -1,7 +1,156 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-26T06:25:06.879Z
-> Files: 252 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-10-26T07:45:03.614Z
+> Files: 362 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
+
+- `apply.py` — Apply accepted edits mechanically: exact single-line substring, must occur exactly once. (~459 tok)
+- `bug_hash68.json` (~334 tok)
+- `bug_more.py` — 2 (~519 tok)
+- `buglog_add.py` (~140 tok)
+- `cluster.py` — find, union, line_text (~802 tok)
+- `collect.py` (~180 tok)
+- `compare.py` — Compare this run's proposed edits with the earlier session's verifier edits (independent second opin (~926 tok)
+- `conv.py` (~362 tok)
+- `finalize.py` — Main-session decisions applied on top of the workflow's proposed edits -> wf3/final_edits.json (~1144 tok)
+- `memory_append.md` — , catalog.json | sync + iki kapı temiz | ~1M (ajan) | (~323 tok)
+- `mkgroups.py` (~470 tok)
+- `mkspec.py` (~496 tok)
+- `review.py` — Print every cluster verdict with a compact word diff of each edit, for main-session review. (~409 tok)
+- `summ.py` (~235 tok)
+- `tx.py` (~381 tok)
+- `urlcheck.py` — curl (~628 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/
+
+- `review_fixes.json` (~569 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/A-borclar/
+
+- `bibq.py` (~150 tok)
+- `build_results.py` — sayfa (~6729 tok)
+- `colm.py` (~705 tok)
+- `edits.py` (~2017 tok)
+- `emnlp.py` — strip_link, latex_clean, norm, surname_from_bibauthor (~1406 tok)
+- `fetch.py` (~390 tok)
+- `nips.py` — text (~482 tok)
+- `pmlr.py` (~655 tok)
+- `show.py` (~455 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/B-iki-kimlik-1/
+
+- `build.py` — E (~4374 tok)
+- `edits.py` — L (~2896 tok)
+- `fetch.py` — fetch (~373 tok)
+- `s1.py` — /*.md", recursive=True) + glob.glob(REPO + "docs/**/*.md", recursive=True) (~314 tok)
+- `s2.py` (~288 tok)
+- `s3.py` (~707 tok)
+- `s4.py` — raw (~382 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/C-iki-kimlik-2/
+
+- `body.py` (~620 tok)
+- `build_edits.py` (~1153 tok)
+- `cache_look.py` (~376 tok)
+- `cache2.py` (~357 tok)
+- `conv.py` — show (~345 tok)
+- `fetch.py` (~208 tok)
+- `find_occ.py` (~500 tok)
+- `lists_look.py` (~286 tok)
+- `others.py` (~281 tok)
+- `pdftext.py` — crude: decompress the first N flate streams and pull text from TJ/Tj operators (~441 tok)
+- `write_results.py` — ed, linkinghub (~6814 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/D-adres-bicimi/
+
+- `check_edits.py` (~704 tok)
+- `conv.py` (~377 tok)
+- `gather.py` — norm (~1046 tok)
+- `results.json` (~6596 tok)
+- `wb.py` (~520 tok)
+- `wb2.py` — NoRedir: get, redirect_request (~650 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/E-yazar-baslik-1/
+
+- `s1_cache.py` (~294 tok)
+- `s10_wb_r2e.py` (~275 tok)
+- `s11_edits.py` (~3280 tok)
+- `s12_results.py` — add (~5587 tok)
+- `s2_bib.py` (~271 tok)
+- `s3_cur.py` (~175 tok)
+- `s4_lists.py` (~280 tok)
+- `s5_fetch.py` (~720 tok)
+- `s6_arxiv.py` (~402 tok)
+- `s7_conv.py` (~201 tok)
+- `s8_fetch2.py` — get (~531 tok)
+- `s9_wayback.py` (~350 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/F1-yazar-baslik-2/
+
+- `bibsearch.py` (~133 tok)
+- `build.py` — line_of (~1108 tok)
+- `fetch.py` — get (~366 tok)
+- `lists.py` — norm (~412 tok)
+- `look.py` (~544 tok)
+- `results_build.py` — edits_for (~5299 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/F2-yazar-baslik-3/
+
+- `fetch.py` — get (~268 tok)
+- `results.json` (~666 tok)
+- `s1_lines.py` (~158 tok)
+- `s10_edits.py` (~952 tok)
+- `s11_build.py` — ed (~5681 tok)
+- `s2_cache.py` (~233 tok)
+- `s3_bib.py` (~288 tok)
+- `s4_meta.py` (~235 tok)
+- `s6_arx.py` (~226 tok)
+- `s7_pdf.py` — streams, unesc, text_of (~656 tok)
+- `s8_iclr23.py` (~256 tok)
+- `s9_pdfgrep.py` (~315 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/G1-olu-yanlis-hedef/
+
+- `bib_look.py` (~202 tok)
+- `build_results.py` — ed, de (~6973 tok)
+- `cache_look.py` (~362 tok)
+- `edits.py` (~1190 tok)
+- `fetch_books.py` — get (~674 tok)
+- `fetch_records.py` — getj (~1105 tok)
+- `fetch_records2.py` — getj (~840 tok)
+- `fetch_web.py` — NoRedirect: get, redirect_request, title_of (~1274 tok)
+- `pdfgrep.py` (~198 tok)
+- `show_records.py` (~651 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/G2-etiket-yeni-hakemli/
+
+- `build_results.py` (~5898 tok)
+- `cr.py` — get (~616 tok)
+- `edits.py` (~1248 tok)
+- `fetch.py` (~362 tok)
+- `lists.py` — norm (~228 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/olgu/
+
+- `findings.json` (~1055 tok)
+- `q1.py` (~499 tok)
+- `q2.py` — summ (~781 tok)
+- `q3.py` (~435 tok)
+- `q4.py` (~909 tok)
+- `q5.py` (~389 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/sozlesme/
+
+- `cross.py` — /*.md', recursive=True)) (~1166 tok)
+- `findings.json` (~1242 tok)
+- `fmt.py` (~742 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/yayilim/
+
+- `findings.json` (~1907 tok)
+- `occ.py` — /*.md', recursive=True) (~762 tok)
+- `occ2.py` — /*.md', recursive=True) (~1108 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/b2ff9965-4841-407d-911f-80e83f3a9f4b/scratchpad/
 
@@ -179,7 +328,7 @@
 
 ## .claude/
 
-- `launch.json` (~59 tok)
+- `launch.json` (~56 tok)
 
 ## .claude/rules/
 
@@ -1022,6 +1171,7 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `jailbreak-ve-kirmizi-takim.md` — Ret ilk token'lardaysa, ilk token'lar kimin (~9598 tok)
 - `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8741 tok)
 
 ## content/series/assets/
@@ -1360,6 +1510,8 @@
 
 ## docs/seri/
 
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~15994 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~186133 tok)
 
 ## docs/superpowers/plans/
 

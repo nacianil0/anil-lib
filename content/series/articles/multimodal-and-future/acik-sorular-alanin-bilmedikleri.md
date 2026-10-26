@@ -12,7 +12,7 @@ tags:
   - kanit
   - olcek-yasalari
   - oz-duzeltme
-content_hash: sha256:10efabffb84c140da44c46ef4997f118566e0c97162a315854db169451447c6c
+content_hash: sha256:8c3bac990d41b98445a26a6f47e553bb3f4d3ba72ea6fc25f6e517227c095244
 classification_version: 1
 classification_batch: 28
 ---
@@ -119,7 +119,7 @@ Bu makalede bir tartışma, aynı adın iki ayrı işlemi taşıdığı anlaşı
 ## Kaynakça
 
 - Anwar, U., Saparov, A., Rando, J. ve ark. (2024). *Foundational Challenges in Assuring Alignment and Safety of Large Language Models*. Transactions on Machine Learning Research. [Bağlantı](https://arxiv.org/abs/2404.09932)
-- Casper, S., Davies, X., Shi, C. ve ark. (2023). *Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback*. Transactions on Machine Learning Research. [Bağlantı](https://arxiv.org/abs/2307.15217)
+- Casper, S., Davies, X., Shi, C. ve ark. (2023). *Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback*. Transactions on Machine Learning Research. [Bağlantı](https://openreview.net/forum?id=bx24KpJ4Eb)
 - Abdelnabi, S. & Salem, A. (2025). *The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness*. Advances in Neural Information Processing Systems 38 (NeurIPS 2025). [Bağlantı](https://doi.org/10.52202/085713-4731)
 - Zhang, C., Bengio, S., Hardt, M., Recht, B. & Vinyals, O. (2021). *Understanding Deep Learning (Still) Requires Rethinking Generalization*. Communications of the ACM, 64(3), s. 107–115. [Bağlantı](https://doi.org/10.1145/3446776)
 - Bahri, Y., Dyer, E., Kaplan, J., Lee, J. & Sharma, U. (2024). *Explaining Neural Scaling Laws*. Proceedings of the National Academy of Sciences, 121(27), e2311878121. [Bağlantı](https://doi.org/10.1073/pnas.2311878121)

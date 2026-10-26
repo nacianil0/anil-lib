@@ -12,7 +12,7 @@ tags:
   - dikkat-cukuru
   - flashattention
   - etkin-uzunluk
-content_hash: sha256:ef077beaeefea84fb59fa78b57b3758b901c3f8e235e7a0ef9886520a56b1d46
+content_hash: sha256:54d77e0bc73e739ba75b231f0db0626df72157135ba1b9c8a4f03ad3cb828c99
 classification_version: 1
 classification_batch: 5
 ---
@@ -132,6 +132,6 @@ Bu makalede pencereyi büyütmenin eğitim tarafındaki bedelini gördük. Geriy
 
 - Chen, S., Wong, S., Chen, L. & Tian, Y. (2023). *Extending Context Window of Large Language Models via Positional Interpolation*. Hakemli olmayan ön çalışma (arXiv:2306.15595). [Bağlantı](https://arxiv.org/abs/2306.15595)
 - Peng, B., Quesnelle, J., Fan, H. & Shippole, E. (2024). *YaRN: Efficient Context Window Extension of Large Language Models*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=wHBfxhZu1u)
-- Dao, T., Fu, D. Y., Ermon, S., Rudra, A. & Ré, C. (2022). *FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*. NeurIPS 2022. [Bağlantı](https://openreview.net/forum?id=H4DqfPSibmx)
+- Dao, T., Fu, D. Y., Ermon, S., Rudra, A. & Ré, C. (2022). *FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*. NeurIPS 2022. [Bağlantı](https://papers.nips.cc/paper_files/paper/2022/hash/67d57c32e20fd0a7a302cb81d36e40d5-Abstract-Conference.html)
 - Xiao, G., Tian, Y., Chen, B., Han, S. & Lewis, M. (2024). *Efficient Streaming Language Models with Attention Sinks*. ICLR 2024. [Bağlantı](https://arxiv.org/abs/2309.17453)
 - Hsieh, C.-P., Sun, S., Kriman, S., Acharya, S., Rekesh, D., Jia, F., Zhang, Y. & Ginsburg, B. (2024). *RULER: What's the Real Context Size of Your Long-Context Language Models?*. COLM 2024. [Bağlantı](https://arxiv.org/abs/2404.06654)

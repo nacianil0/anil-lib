@@ -12,7 +12,7 @@ tags:
   - hesap-optimal-egitim
   - chinchilla
   - beliren-yetenekler
-content_hash: sha256:a9737b0cbb4281754d3f79f528d71926836c596f7d39cf7259209fdb2616284f
+content_hash: sha256:32fc391b4e9f283fda29dcd5f2abf135b401f111b8e1bcca5f96e47af10889b9
 classification_version: 1
 classification_batch: 1
 revised_at: "2026-09-25"
@@ -167,12 +167,12 @@ Hayır. Eğri kaybı ölçer; bir görevdeki başarı ise kaybın üstüne konan
 - Besiroglu, T., Erdil, E., Barnett, M. & You, J. (2024). *Chinchilla Scaling: A Replication Attempt*. arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2404.10102)
 - Villalobos, P., Ho, A., Sevilla, J., Besiroglu, T., Heim, L. & Hobbhahn, M. (2024). *Position: Will We Run Out of Data? Limits of LLM Scaling Based on Human-Generated Data*. ICML 2024 konum bildirisi, PMLR 235, s. 49523–49544. [Bağlantı](https://proceedings.mlr.press/v235/villalobos24a.html)
 - Muennighoff, N., Rush, A. M., Barak, B., Le Scao, T., Tazi, N., Piktus, A., Pyysalo, S., Wolf, T. & Raffel, C. (2023). *Scaling Data-Constrained Language Models*. NeurIPS 2023 (sözlü sunum). [Bağlantı](https://arxiv.org/abs/2305.16264)
-- Sardana, N., Portes, J., Doubov, S. & Frankle, J. (2024). *Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws*. ICML 2024. [Bağlantı](https://arxiv.org/abs/2401.00448)
+- Sardana, N., Portes, J., Doubov, S. & Frankle, J. (2024). *Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws*. ICML 2024. [Bağlantı](https://proceedings.mlr.press/v235/sardana24a.html)
 - Grattafiori, A. ve ark. (2024). *The Llama 3 Herd of Models*. Meta AI teknik raporu (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2407.21783)
 - Epoch AI (2025). *Training open-weight models is becoming more data intensive*. Epoch AI veri notu (hakemli değildir; araştırma kuruluşu derlemesi). [Bağlantı](https://epoch.ai/data-insights/training-tokens-per-parameter)
 - Belkin, M., Hsu, D., Ma, S. & Mandal, S. (2019). *Reconciling Modern Machine-Learning Practice and the Classical Bias–Variance Trade-off*. PNAS. [Bağlantı](https://www.pnas.org/doi/10.1073/pnas.1903070116)
-- Curth, A., Jeffares, A. & van der Schaar, M. (2023). *A U-turn on Double Descent: Rethinking Parameter Counting in Statistical Learning*. NeurIPS. [Bağlantı](https://arxiv.org/abs/2310.18988)
+- Curth, A., Jeffares, A. & van der Schaar, M. (2023). *A U-turn on Double Descent: Rethinking Parameter Counting in Statistical Learning*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/aec5e2847c5ae90f939ab786774856cc-Abstract-Conference.html)
 - Snell, C., Lee, J., Xu, K. & Kumar, A. (2025). *Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Parameters for Reasoning*. ICLR 2025 (sözlü sunum). [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b623663fd9b874366f3ce019fdfdd44-Abstract-Conference.html)
-- Wei, J. ve ark. (2022). *Emergent Abilities of Large Language Models*. Transactions on Machine Learning Research. [Bağlantı](https://arxiv.org/abs/2206.07682)
-- Schaeffer, R., Miranda, B. & Koyejo, S. (2023). *Are Emergent Abilities of Large Language Models a Mirage?* NeurIPS 2023. [Bağlantı](https://arxiv.org/abs/2304.15004)
-- Du, Z., Zeng, A., Dong, Y. & Tang, J. (2024). *Understanding Emergent Abilities of Language Models from the Loss Perspective*. NeurIPS 2024. [Bağlantı](https://arxiv.org/abs/2403.15796)
+- Wei, J. ve ark. (2022). *Emergent Abilities of Large Language Models*. Transactions on Machine Learning Research. [Bağlantı](https://openreview.net/forum?id=yzkSU5zdwD)
+- Schaeffer, R., Miranda, B. & Koyejo, S. (2023). *Are Emergent Abilities of Large Language Models a Mirage?* NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/adc98a266f45005c403b8311ca7e8bd7-Abstract-Conference.html)
+- Du, Z., Zeng, A., Dong, Y. & Tang, J. (2024). *Understanding Emergent Abilities of Language Models from the Loss Perspective*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/5f1eee2509599faeeb3570a887016a64-Abstract-Conference.html)

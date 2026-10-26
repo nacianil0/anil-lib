@@ -12,7 +12,7 @@ tags:
   - hata-payi
   - istem-duyarliligi
   - olcut-omru
-content_hash: sha256:7deb2589a2e39d0586f9a4678f87070c7fb734e0fff5d5ac5812db60b6315e24
+content_hash: sha256:98bfb9927457e8cd90be0ceeb0f2398c704b212d4874cf13767a251ed5d2c3a8
 classification_version: 1
 classification_batch: 17
 revised_at: "2026-09-25"
@@ -157,9 +157,9 @@ Bu makale boyunca sorular görünmeyen bir havuzdan çekilmiş bir örneklem gib
 - White, C., Dooley, S., Roberts, M., Pal, A., Feuer, B., Jain, S., Shwartz-Ziv, R., Jain, N., Saifullah, K., Dey, S., Shubh-Agrawal, Sandha, S. S., Naidu, S., Hegde, C., LeCun, Y., Goldstein, T., Neiswanger, W. & Goldblum, M. (2025). *LiveBench: A Challenging, Contamination-Limited LLM Benchmark*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=sKYHBTAxVa)
 - Dehghani, M., Tay, Y., Gritsenko, A. A., Zhao, Z., Houlsby, N., Diaz, F., Metzler, D. & Vinyals, O. (2021). *The Benchmark Lottery*. Hakemli olmayan ön çalışma (arXiv:2107.07002). [Bağlantı](https://arxiv.org/abs/2107.07002)
 - Ethayarajh, K. & Jurafsky, D. (2020). *Utility is in the Eye of the User: A Critique of NLP Leaderboards*. EMNLP 2020, s. 4846–4853. [Bağlantı](https://doi.org/10.18653/v1/2020.emnlp-main.393)
-- Weidinger, L., Raji, I. D., Wallach, H., Mitchell, M., Wang, A., Salaudeen, O., Bommasani, R., Koyejo, S. & Isaac, W. (2025). *Toward an Evaluation Science for Generative AI Systems*. The Bridge (ABD Ulusal Mühendislik Akademisi) 55(1); davetli makale, araştırma dergisi yayını değildir. Okunan sürüm arXiv:2503.05336. [Bağlantı](https://arxiv.org/abs/2503.05336)
+- Weidinger, L., Raji, I. D., Wallach, H., Mitchell, M., Wang, A., Salaudeen, O., Bommasani, R., Ganguli, D., Koyejo, S. & Isaac, W. (2025). *Toward an Evaluation Science for Generative AI Systems*. The Bridge (ABD Ulusal Mühendislik Akademisi) 55(1); davetli makale, araştırma dergisi yayını değildir. Okunan sürüm arXiv:2503.05336. [Bağlantı](https://arxiv.org/abs/2503.05336)
 - Eriksson, M., Purificato, E., Noroozian, A., Vinagre, J., Chaslot, G., Gomez, E. & Fernandez-Llorca, D. (2025). *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation*. AIES 2025. [Bağlantı](https://doi.org/10.1609/aies.v8i1.36595)
 - Gema, A. P., Leang, J. O. J., Hong, G. ve ark. (2025). *Are We Done with MMLU?*. NAACL 2025, s. 5069–5096. [Bağlantı](https://aclanthology.org/2025.naacl-long.262/)
-- Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). *Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=RIu5lyNXjT)
+- Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). *Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=RIu5lyNXjT)
 - Alzahrani, N., Alyahya, H., Alnumay, Y. ve ark. (2024). *When Benchmarks are Targets: Revealing the Sensitivity of Large Language Model Leaderboards*. ACL 2024. [Bağlantı](https://aclanthology.org/2024.acl-long.744/)
 - Singh, S., Nan, Y., Wang, A. ve ark. (2025). *The Leaderboard Illusion*. NeurIPS 2025, Datasets and Benchmarks Track. [Bağlantı](https://papers.neurips.cc/paper_files/paper/2025/hash/70a93f260a51123b3c0e33ecd1b4de97-Abstract-Datasets_and_Benchmarks_Track.html)

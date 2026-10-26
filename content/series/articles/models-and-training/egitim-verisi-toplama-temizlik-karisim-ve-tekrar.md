@@ -12,7 +12,7 @@ tags:
   - tekillestirme
   - sentetik-veri
   - model-cokusu
-content_hash: sha256:1baf362a37cbd142395497bf72242409d4dafa766fcf8f72edcd16b847789bed
+content_hash: sha256:da657f4d8576aff838337194c796022798e76574ce0681de29a4cae1d7e94c18
 classification_version: 1
 classification_batch: 2
 revised_at: "2026-09-25"
@@ -154,4 +154,4 @@ Veriyi topladık, temizledik, karıştırdık ve kaç kez okuyacağımıza karar
 - Wang, Y., Kordi, Y., Mishra, S., Liu, A., Smith, N. A., Khashabi, D. & Hajishirzi, H. (2023). *Self-Instruct: Aligning Language Models with Self-Generated Instructions*. ACL 2023, s. 13484–13508. [Bağlantı](https://aclanthology.org/2023.acl-long.754/)
 - Shumailov, I., Shumaylov, Z., Zhao, Y., Papernot, N., Anderson, R. & Gal, Y. (2024). *AI models collapse when trained on recursively generated data*. Nature, 631, 755–759. [Bağlantı](https://doi.org/10.1038/s41586-024-07566-y)
 - Gerstgrasser, M., Schaeffer, R., Dey, A. ve ark. (2024). *Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data*. Conference on Language Modeling (COLM 2024). [Bağlantı](https://arxiv.org/abs/2404.01413)
-- Longpre, S. ve ark. (2024). *Consent in Crisis: The Rapid Decline of the AI Data Commons*. NeurIPS 2024, Datasets and Benchmarks Track. [Bağlantı](https://arxiv.org/abs/2407.14933)
+- Longpre, S. ve ark. (2024). *Consent in Crisis: The Rapid Decline of the AI Data Commons*. NeurIPS 2024, Datasets and Benchmarks Track. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/c3738949a80306cc48a8ea8ba0560f9d-Abstract-Datasets_and_Benchmarks_Track.html)

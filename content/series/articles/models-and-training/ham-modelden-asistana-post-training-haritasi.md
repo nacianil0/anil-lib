@@ -12,7 +12,7 @@ tags:
   - talimat-takibi
   - hizalama-vergisi
   - instructgpt
-content_hash: sha256:03c7d1e42b5705578dc2c2faf71aff9b772932b05405f6d7dfcb5dde283c3bc1
+content_hash: sha256:4580be7fde453cd48dbef011e696492c0af9a73165a3dbd0934bdafdbb06e104
 classification_version: 1
 classification_batch: 2
 ---
@@ -142,7 +142,7 @@ Haritayı çizdik: üç durak, üç ayrı veri türü, üç ayrı etiket sahibi.
 ## Kaynakça
 
 - Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P., Zhang, C., Agarwal, S., Slama, K., Ray, A., Schulman, J., Hilton, J., Kelton, F., Miller, L., Simens, M., Askell, A., Welinder, P., Christiano, P., Leike, J. & Lowe, R. (2022). *Training language models to follow instructions with human feedback*. Advances in Neural Information Processing Systems 35 (NeurIPS 2022). [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html)
-- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020 (arXiv:2005.14165). [Bağlantı](https://arxiv.org/abs/2005.14165)
+- Brown, T. B. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 - Radford, A., Narasimhan, K., Salimans, T. & Sutskever, I. (2018). *Improving Language Understanding by Generative Pre-Training*. OpenAI teknik raporu (hakemli değildir). [Bağlantı](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
 - Bai, Y. ve ark. (2022). *Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback*. Anthropic teknik raporu, arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2204.05862)
 - Lin, S., Hilton, J. & Evans, O. (2022). *TruthfulQA: Measuring How Models Mimic Human Falsehoods*. Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (ACL 2022), s. 3214–3252. [Bağlantı](https://aclanthology.org/2022.acl-long.229/)

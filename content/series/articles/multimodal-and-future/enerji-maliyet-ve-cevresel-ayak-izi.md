@@ -12,7 +12,7 @@ tags:
   - olcum-kosullari
   - cikarim-maliyeti
   - veri-merkezi
-content_hash: sha256:5ef98af29bb32bda33f390846880a2e916f7638b9fcc74bd05d2ee648b7dc672
+content_hash: sha256:237bc783ec18d8fffdceb7f96ba3ea49d265e40b951f3c9e1b975c8a2aca41f9
 classification_version: 1
 classification_batch: 21
 ---
@@ -149,4 +149,4 @@ Bu makaleyle birlikte serinin dokuzuncu fazı kapanıyor. Buraya kadar hep aynı
 - Luccioni, S., Jernite, Y. & Strubell, E. (2024). *Power Hungry Processing: Watts Driving the Cost of AI Deployment?*. FAccT 2024, s. 85–99. [Bağlantı](https://doi.org/10.1145/3630106.3658542)
 - Google (2025). *Measuring the environmental impact of delivering AI at Google Scale*. Hakemli bir yerde yayımlanmamış kurumsal teknik rapor; okunan sürüm arXiv:2508.15734. [Bağlantı](https://arxiv.org/abs/2508.15734)
 - Masanet, E., Shehabi, A., Lei, N., Smith, S. & Koomey, J. (2020). *Recalibrating global data center energy-use estimates*. Science 367(6481), s. 984–986. [Bağlantı](https://doi.org/10.1126/science.aba3758)
-- Cottier, B., Rahman, R., Fattorini, L., Maslej, N. & Owen, D. (2024). *The rising costs of training frontier AI models*. Hakemli bir yerde yayımlandığı doğrulanamadı; okunan sürüm arXiv:2405.21015. [Bağlantı](https://arxiv.org/abs/2405.21015)
+- Cottier, B., Rahman, R., Fattorini, L., Maslej, N., Besiroglu, T. & Owen, D. (2024). *The rising costs of training frontier AI models*. Hakemli bir yerde yayımlandığı doğrulanamadı; okunan sürüm arXiv:2405.21015. [Bağlantı](https://arxiv.org/abs/2405.21015)

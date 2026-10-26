@@ -12,7 +12,7 @@ tags:
   - rol-istemi
   - kanit
   - olcum-disiplini
-content_hash: sha256:4aac26f876b111e6b68c3bb941ee0fda91d80e3da6a8f1d94f0ad1603bdc893e
+content_hash: sha256:c7eb930e1219b1e68f7aaf09e09f0f1163c89dcd418b8d6e8b1529b18f395aa2
 classification_version: 1
 classification_batch: 4
 ---
@@ -146,11 +146,11 @@ Bu makale boyunca isteme örnek koymanın etkisini ölçtük ama bir soruyu bili
 
 ## Kaynakça
 
-- Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). *Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=RIu5lyNXjT)
+- Sclar, M., Choi, Y., Tsvetkov, Y. & Suhr, A. (2024). *Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=RIu5lyNXjT)
 - Lu, Y., Bartolo, M., Moore, A., Riedel, S. & Stenetorp, P. (2022). *Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity*. ACL 2022, s. 8086–8098. [Bağlantı](https://aclanthology.org/2022.acl-long.556/)
 - Zheng, M., Pei, J., Logeswaran, L., Lee, M. & Jurgens, D. (2024). *When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models*. Findings of EMNLP 2024, s. 15126–15154. [Bağlantı](https://aclanthology.org/2024.findings-emnlp.888/)
 - Yin, Z., Wang, H., Horio, K., Kawahara, D. & Sekine, S. (2024). *Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance*. SICon 2024 çalıştayı, s. 9–35. [Bağlantı](https://aclanthology.org/2024.sicon-1.2/)
-- Sprague, Z., Yin, F., Rodriguez, J. D. ve ark. (2025). *To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=w6nlcS8Kkn)
+- Sprague, Z., Yin, F., Rodriguez, J. D. ve ark. (2025). *To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning*. ICLR 2025. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ead542f13a38179d1b55b88610f959a1-Abstract-Conference.html)
 - Zamfirescu-Pereira, J. D., Wong, R. Y., Hartmann, B. & Yang, Q. (2023). *Why Johnny Can't Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts*. CHI 2023. [Bağlantı](https://dl.acm.org/doi/10.1145/3544548.3581388)
 - Zhou, Y., Muresanu, A. I., Han, Z., Paster, K., Pitis, S., Chan, H. & Ba, J. (2023). *Large Language Models Are Human-Level Prompt Engineers*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=92gvk82DE-)
 - Kojima, T., Gu, S. S., Reid, M., Matsuo, Y. & Iwasawa, Y. (2022). *Large Language Models are Zero-Shot Reasoners*. NeurIPS 2022, s. 22199–22213. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/8bb0d291acd4acf06ef112099c16f326-Abstract-Conference.html)

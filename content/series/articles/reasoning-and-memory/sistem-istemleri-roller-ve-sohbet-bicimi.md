@@ -12,7 +12,7 @@ tags:
   - konusmaci-rolu
   - talimat-hiyerarsisi
   - cok-turlu
-content_hash: sha256:8b8fb2903449bf9a85d8c5caa09a72004c97b46a47b3c5f94d49cc7eb40ca38f
+content_hash: sha256:f49e909c5e39cad3eae735898fe30c862d62a5dc2362af67978b841fe3b64fe1
 classification_version: 1
 classification_batch: 5
 ---
@@ -130,7 +130,7 @@ Bu makale ve öncekiler pencerenin içine ne konacağıyla ilgiliydi: örnekler,
 
 ## Kaynakça
 
-- Meta (2024). *Model Cards and Prompt Formats — Meta Llama 3*. Resmî belgelendirme. [Bağlantı](https://www.llama.com/docs/model-cards-and-prompt-formats/meta-llama-3/)
+- Meta (2024). *Model Cards and Prompt Formats — Meta Llama 3*. Resmî belgelendirme. [Bağlantı](https://dev.meta.ai/llama/docs/model-cards-and-prompt-formats/meta-llama-3)
 - Hugging Face (2026). *Tokenizer* (`split_special_tokens` parametresi). Transformers kütüphanesinin resmî belgelendirmesi, Eylül 2026'daki hâli. [Bağlantı](https://huggingface.co/docs/transformers/main_classes/tokenizer)
 - Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J. & Beutel, A. (2024). *The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions*. OpenAI, hakemli olmayan ön çalışma (arXiv:2404.13208). [Bağlantı](https://arxiv.org/abs/2404.13208)
 - Zheng, M., Pei, J., Logeswaran, L., Lee, M. & Jurgens, D. (2024). *When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models*. Findings of EMNLP 2024, s. 15126–15154. [Bağlantı](https://aclanthology.org/2024.findings-emnlp.888/)

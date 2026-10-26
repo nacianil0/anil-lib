@@ -12,7 +12,7 @@ tags:
   - kuantizasyon
   - erken-kaynasma
   - kisitli-uretim
-content_hash: sha256:254e898a0dcdc88f8fe2285a71ecbd17571ed79ed7e87d8e57366d8c792a1ab7
+content_hash: sha256:bff63e9ca0dc6b9456d8de1a705a3dcd4642cd11f9e26d14e7c688d3f8455a51
 classification_version: 1
 classification_batch: 20
 ---
@@ -132,7 +132,7 @@ Bu makale boyunca bir şeyi sabit tuttuk: modelin her token için bütün parame
 
 - van den Oord, A., Vinyals, O. & Kavukcuoglu, K. (2017). *Neural Discrete Representation Learning*. NeurIPS 2017. [Bağlantı](https://papers.nips.cc/paper_files/paper/2017/hash/7a98af17e63a0ac09ce2e96d03992fbc-Abstract.html)
 - Esser, P., Rombach, R. & Ommer, B. (2021). *Taming Transformers for High-Resolution Image Synthesis*. IEEE/CVF CVPR 2021. [Bağlantı](https://openaccess.thecvf.com/content/CVPR2021/html/Esser_Taming_Transformers_for_High-Resolution_Image_Synthesis_CVPR_2021_paper.html)
-- Yu, L., Lezama, J., Gundavarapu, N. B., Versari, L., Sohn, K., Minnen, D., Cheng, Y., Birodkar, V., Gupta, A., Gu, X., Hauptmann, A. G., Gong, B., Yang, M.-H., Essa, I., Ross, D. A. & Jiang, L. (2024). *Language Model Beats Diffusion — Tokenizer is Key to Visual Generation*. ICLR 2024. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/036912a83bdbb1fd792baf6532f102d8-Abstract-Conference.html)
+- Yu, L., Lezama, J., Gundavarapu, N. B., Versari, L., Sohn, K., Minnen, D., Cheng, Y., Gupta, A., Gu, X., Hauptmann, A. G., Gong, B., Yang, M.-H., Essa, I., Ross, D. A. & Jiang, L. (2024). *Language Model Beats Diffusion — Tokenizer is Key to Visual Generation*. ICLR 2024. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2024/hash/036912a83bdbb1fd792baf6532f102d8-Abstract-Conference.html)
 - Chang, H., Zhang, H., Jiang, L., Liu, C. & Freeman, W. T. (2022). *MaskGIT: Masked Generative Image Transformer*. IEEE/CVF CVPR 2022. [Bağlantı](https://openaccess.thecvf.com/content/CVPR2022/html/Chang_MaskGIT_Masked_Generative_Image_Transformer_CVPR_2022_paper.html)
 - Tian, K., Jiang, Y., Yuan, Z., Peng, B. & Wang, L. (2024). *Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/9a24e284b187f662681440ba15c416fb-Abstract-Conference.html)
 - Chameleon Team (2024). *Chameleon: Mixed-Modal Early-Fusion Foundation Models*. Hakemli bir yerde yayımlandığı doğrulanamadı; okunan sürüm arXiv:2405.09818. [Bağlantı](https://arxiv.org/abs/2405.09818)

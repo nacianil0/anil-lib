@@ -3033,7 +3033,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | beceri edinme verimliliği | (skill-acquisition efficiency) | 117 | Chollet'nin (hakemli olmayan) zekâ tanımı; ARC'nin dayandığı tanım |
 | yetenek çarpıtması | (capability contortion) | 117 | Hendrycks ve ark. (hakemli değildir): bir eksikliği başka bir yetenekle kapatmak, ör. uzun süreli bellek yerine devasa bağlam penceresi |
 | taklit oyunu | (imitation game) | 1, 117 | Turing testinin özgün adı; 117'de üç kişilik yazılı biçimi kuruldu |
-| endişe notu | (expression of concern) | 68 | derginin, yayımlanmış bir çalışmanın güvenilirliği değerlendirilirken okuru uyardığı resmî not; düzeltme ya da geri çekme değildir. Bakım run'ı 2'de (karar #271) Costello ve ark. için eklendi |
+| endişe notu | (expression of concern) | 68 | derginin, yayımlanmış bir çalışmanın güvenilirliği değerlendirilirken okuru uyardığı resmî not; düzeltme ya da geri çekme değildir. Bakım run'ı 2'de (karar #271) Costello ve ark. için eklendi; bakım run'ı 3'te (#275) derginin düzeltmesiyle geri alındığı yazıldı, terim 68'de kalıyor |
 
 **Biçim kuralları:** Yüzdeler gövde metninde sözcükle yazılır ("yüzde 69"); tablo içinde `%` simgesi
 serbesttir. Ondalık ayırıcı virgüldür ("0,31"). Makale numarasına atıf satır başındaysa nokta
@@ -4535,7 +4535,7 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     Mouton anlamlı fark yok; OpenAI 100 katılımcı, anlamsız artış; Claude 4 sistem kartı kontrol %25 ± 13 →
     %63 ± 13 ve %42 ± 11, 2,53× ve 1,70×; Spitale 697 katılımcı, 0,84 ↔ 0,72 ve 0,89 ↔ 0,92; Goldstein 8.221
     katılımcı, %24,4 → 43,5, gerçek 47,4; Hackenburg 8.587 katılımcı, hedefleme farkı anlamsız; Salvi 820
-    katılımcı, +%81,7 (ön baskı; dergi sürümü 900 katılımcı, +%81,2; 2026 yazar düzeltmesiyle kişiselleştirmenin ek katkısı anlamsız, P = 0,07 — #265); Costello 2.190 katılımcı, ≈ %20, iki ay (özgün makale; Science'ın 11 Haziran 2026 endişe notu, değerlendirme sürüyor — #271); Hazell 600+ milletvekili, sentin kesri; Marchal
+    katılımcı, +%81,7 (ön baskı; dergi sürümü 900 katılımcı, +%81,2; 2026 yazar düzeltmesiyle kişiselleştirmenin ek katkısı anlamsız, P = 0,07 — #265); Costello ≈ %20, iki ay (özgün makale 2.190 katılımcı; Science'ın 11 Haziran 2026 endişe notu — #271; 22 Ekim 2026 düzeltmesiyle birinci deney 748, ikinci deney 1.346 katılımcı, etki 16,76 → 16,55 ve 12,30 → 12,84 puan, MK Ultra alt grubu farkı anlamsız, endişe notu geri alındı; gövde "iki deneyde iki binden fazla" der, çünkü düzeltilmiş özet 2.044 diyor — #275); Hazell 600+ milletvekili, sentin kesri; Marchal
     ≈ 200 olay, %27; OpenAI beş operasyon, altı basamaklı ölçekte ≤ 2; WMDP 3.668 soru, 63,7 → 31,2 / 44,0 →
     28,2 / 58,1 → 57,1, rastgele 25; Deeb & Roger ≥ %88; Qi > %60. **69:** 10²⁵ işlem (Art. 51/2), 1 Ağustos
     2024 yürürlük, 2 Ağustos 2025 uygulama, 2 Ağustos 2027 eski modeller; iki hafta bildirim (Art. 52); şeffaflık
@@ -5760,6 +5760,116 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     üç genişlik × üç tema Playwright ile ölçüldü: 200, konsol hatası yok, yatay taşma yok, yeni metin ve bağlantıların
     hepsi DOM'da, 68'in revizyon satırı "27 Eylül 2026" ile render ediliyor. **Sonraki bağlayıcı karar numarası
     #275'tir.**
+275. **Bakım run'ı 3 (2026-10-26): yarım kalan sabah oturumu ve Costello düzeltmesi (borç g kapandı).** Aynı gün sabah
+    bir oturum (e6106818) TRIGGER'ı çalıştırdı: dört tarayıcı ajanla 1.499 künyenin, 330 DOI'nin ve 1.166 DOI'siz
+    bağlantının taramasını bitirdi, 68'i Science'ın **22 Ekim 2026 düzeltmesiyle** (Science 394(6822), eaem1178;
+    doi:10.1126/science.aem1178) hizaladı ve doğrulama ajanları çalışırken kapandı. HANDOFF güncellenmedi, hash
+    senkronu "toplu yapılacak" diye ertelendi ve değişiklik `catalog.json` senkronlanmadan commit edildi (`5c0d242`):
+    `sync-series-hashes` main'de üç sorun veriyordu (bug-926; `check-series-content` hash'e bakmadığı için temizdi). Bu
+    run sabahın tarama sonuçlarını ve ham önbelleklerini yeniden kullandı, kararları ve düzeltmeleri baştan verdi.
+    **68'in düzeltmesi birincil metinle yeniden okundu** (kullanıcının sabah oturumuna yapıştırdığı erratum metni +
+    Crossref): eleme ölçütlerinin yanlış uygulanması iki deneyin bildirilen örneklemini etkiledi (ikinci deney 1.515
+    değil 1.346); yazarlar ayrıca birinci deneye girmemesi gereken 15 satır buldu (13'ü kimliksiz deneme oturumu),
+    birinci deneyin örneklemi 763 → 748; etki 16,76 → 16,55 ve 12,30 → 12,84 puan; ana sonuçlar değişmedi; anlamlılığını
+    yitiren tek iddia odak komplosu tartışmasız doğru olan alt grubun farkı (MK Ultra; −20,57 → −18,49, P = 0,111);
+    paylaşılan veri kümesindeki "gölge" satırlar çözümlemeye girmemişti; endişe notu (aej2383) **geri alındı** ve
+    Crossref başlığı "RESCINDED: …" oldu. Sabahki metin 15 satırı tek sorun gibi anlatıyordu; denetim ajanı yakaladı
+    ve cümle düzeltildi. **Toplam katılımcı:** erratum'un deney bazında sayılarının toplamı 748 + 1.346 = 2.094 (kendi
+    hesabımız), yayıncının Crossref'e yatırdığı düzeltilmiş özet 2.044 diyor; tutarsız olduğu için gövde "iki deneyde
+    iki binden fazla" der. Özet "yaklaşık yüzde 20" oldu (gövde ve disiplin maddesiyle aynı niceleyici; katalog kopyası
+    da). **Revizyon işareti** `revised_at: "2026-10-26"` (önemli iddianın düzeltilmesi, §12); not run 2'nin notunun yerine
+    geçti: "Komplo inancı deneyinin Ekim 2026 düzeltmesi işlendi: dergi endişe notunu geri aldı, ana sonuç değişmedi;
+    anlamlılığını yitiren tek yan bulgu yazıldı." Aynı makalede Salvi düzeltmesine baskı künyesi eklendi (Nature Human
+    Behaviour 10(10), s. 2047).
+276. **Tarihe bağlı borçlar (bakım run'ı 3).** **(b) KAPANDI:** ICML 2026'nın PMLR 306 cildi 29 Eylül 2026'da çıktı
+    (6.552 bildiri); Morris ve ark. (18, `morris26a`, s. 90392–90411), Barres ve ark. (57, 59, 60, `barres26a`,
+    s. 6736–6782) ve Arcuschin ve ark. (77, `arcuschin26b`, s. 3354–3405; `arcuschin26a` aynı ilk yazarın başka
+    bildirisi) "ICML 2026, PMLR 306, s. …" biçimine ve cilt dizinindeki sayfaya çevrildi; makalelerin aktardığı bütün
+    sayılar PMLR PDF'lerinde aynen var. Arcuschin'in başlığında yayımlanmış PDF'in "in the Wild" yazımı korundu (PMLR
+    üstverisi "In The Wild"). **(c) KAPANDI:** COLM 2026 toplandı ve bildiri kitabı `proceedings.colm.cc`'de yayında
+    (Cilt 3, ön bildiri kitabı; DOI Ocak 2027'de bekleniyor). Cooper ve ark. (72) ile Krumdick ve ark. (73) "COLM 2026."
+    künyesine, yıl mecra yılına (2025 → 2026, Snell/CaMeL emsali) ve **kitaptaki resmî sayfaya** çevrildi; sayılar kitap
+    PDF'inde aynen olduğu için "okunan sürüm" notu düştü; gövdeler "COLM 2026'da sunduğu çalışma". **Yeni kural:** COLM
+    2026'dan itibaren bağlantı betikle doğrulanabilen resmî bildiri kitabına verilir; COLM 2024/2025 satırlarının arXiv
+    geleneği bu run'da değiştirilmedi. **(f) AÇIK:** NeurIPS 2026 bildiri kitabı yok (`papers.nips.cc/.../2026` 404).
+    NeurIPS 2026 JSON dökümü artık **eksik** (Persona Vectors dökümde yok ama Downloads listesinde ve poster sayfasında
+    var): kabul taraması Downloads/2026 listesiyle yapılmalı. **(h) KAPANDI:** ACL Anthology'nin toplu bib'i
+    (2026-10-26 üretimi) EMNLP 2026'yı içeriyor (ana 2.704, Findings 2.478); 256 hakemsiz/ön baskı satırı 2026'nın
+    17.702 Anthology kaydıyla eşleştirildi: sıfır eşleşme. **Min-p (10):** TMLR gönderimi "Decision pending"; NeurIPS
+    2026 MLRC oturumunda listelenmesi bir yayın değildir; etiket doğru.
+277. **Ön baskı durumu taraması (bakım run'ı 3, SOZLESME §4 birinci katman).** Aday kümesi 350 künye / 293 çalışma
+    (221 hakemsiz etiketli künye, 229'u 12 aydan eski); ACL Anthology, COLM 2026, TMLR, NeurIPS 2026, PMLR 306, arXiv
+    `journal_ref`/`comment` ve Semantic Scholar ile eşleştirildi. **İki yeni hakemli kalem:** PowerInfer-2 (88) IEEE
+    Transactions on Computers'ta **NeuronInfer** adıyla erken erişimde (doi:10.1109/tc.2026.3743921; aynı altı yazar,
+    aynı özet; cilt/sayı atanmadı) → yayımlanmış başlık + "(ön baskı adı: …)", "okunan sürüm arXiv:2406.06282" korundu,
+    gövde "2024'te ön baskı olarak paylaştığı, 2026'da NeuronInfer adıyla IEEE Transactions on Computers'ta hakemli
+    olarak yayımlanan çalışma"; Das, Zhang ve Tramèr (72) DLSP 2025 çalıştayının arşivli kolunda (2025 IEEE SPW,
+    s. 118–125, doi:10.1109/spw67851.2025.00016) → çalıştay etiketi, gövde zaten "bir çalıştayda sunduğu" diyordu.
+    **Değişiklik yok:** Doshi-Velez ve Kim'in 2018 Springer bölümü başka başlık ve kapsamda (künye 2017 konum yazısını
+    doğru anıyor); Weidinger ve ark. ↔ Rauh ve ark. (AIES 2024) kardeş çalışma; Crossref'te "SuperIntelligence –
+    Robotics – Safety & Alignment" (Carlson Research LLC, önek 10.70777) adına görünen kayıtlar **yeniden yayım
+    dergisidir, hakem kanıtı değildir** (64, 69, 116) — sonraki taramalar bunları eşleşme saymaz.
+278. **Crossref `updated-by` (bakım run'ı 3, ikinci katman): 330 DOI'nin tamamı.** Kayıtların hepsi var; geri çekme yok.
+    Sekiz ilişkiden yeni olan yalnız Costello'nun düzeltmesi ve endişe notunun geri alınması (#275); öteki altısı
+    (Salvi, A-Lab, Shumailov, H-ARC, Armstrong–Sotala, Ioannidis) run 2'deki gibi. Yazar karşılaştırması iki gerçek fark
+    buldu: 68'deki *The Reality of AI and Biorisk* (Peppin ve ark., FAccT 2025) künyesinde Kolt ve Mindermann yoktu,
+    Frosst eksikti → 13 yazar; 73'teki Wang ve ark. (ACL 2024) künyesinde sekizinci yazar Kong eksikti.
+279. **Bağlantı ve kimlik (bakım run'ı 3, üçüncü katman).** **Ölü / yanlış hedef:** Meta, Llama belgelerini
+    `dev.meta.ai`'ye taşıdı ve eski adreslerin yönlendirmesi alt çizgiyi tireye çevirip 404 veriyor → 20 (Llama 3.1
+    lisansı) ve 47 (Llama 3.1 biçimleri) yeni resmî adrese; 24'teki Llama 3 adresi çalışıyordu ama aynı zincirde, önleyici
+    olarak çevrildi. 1'deki Samuel (1959) bağlantısı 1967 tarihli II. bölümün PDF'iydi (run 1'in "özgün sayfaya taşındı"
+    notu başka bir satıra aitti) → 1959 makalesinin DOI'si, 3(3), s. 210–229; 3'teki Minsky–Papert bağlantısı bir arama
+    sayfasıydı → MIT Press'in 2017 yeniden basımının DOI'si, "(2017 [1969])" (1'deki McCarthy emsali); 3'teki Rosenblatt
+    bağlantısı 1988 derlemesindeki yeniden basım bölümüne gidiyordu → Psychological Review DOI'si. **Bir çalışma, bir
+    kimlik (§4):** iki ayrı kimlikle bağlanan 19 çalışma resmî kayda birleştirildi: Brown ve ark. (yedi geçiş; 5'te PTB
+    20,5 yalnız arXiv'de olduğu için "okunan sürüm arXiv"), Curth, Mikolov, Park, Wei (TMLR forumu), Schaeffer, Du,
+    Loshchilov, RoFormer (dergi DOI'si), Carlini (ICLR 2023), Sardana, Holtzman, DPO, Longpre, Casper (TMLR), Sprague,
+    FlashAttention, GSM-Symbolic, Andriushchenko (ICLR 2025 için betikle doğrulanabilen `proceedings.iclr.cc`). **Takma
+    adlar değişmedi:** aynı DOI'nin yayıncı/Anthology biçimleri ve klasik eserlerin çalışan ücretsiz kopyaları (Shannon
+    1948/1951, Turing, Wolpert, Geman, Bishop, Jelinek, Jain–Wallace, Wiegreffe–Pinter, Lee, Dodge, Liu TACL, Gupta,
+    Narang, Kwa) — bunlar ikinci kimlik değildir. **Yazar ve başlık bağlanan sürüme göre:** FMTI (yedi yazar, Narayanan
+    yoktu; bağlantı TMLR forumu), Reflexion (Berman), MEM1 (Zhao), RE-Bench (Karnofsky), Langosco (Orseau), Yu ve ark.
+    (Birodkar) arXiv'in sonraki sürümlerinden kalmış fazla adlardı; Zou ve ark. GCG (Carlini, Nasr; 63'ün gövdesi "Andy
+    Zou, Zifan Wang ve arkadaşlarının" oldu), Reuel ve ark. (Bau, Bricman), Weidinger ve ark. (Ganguli), Cottier ve ark.
+    (Besiroglu, okunan v2), R2E-Gym (Zhang, T.; başlık kamera-hazır PDF'ten, kabul listesi başlığı notta) eksikti;
+    Seger ve ark.'nda üç yanlış ad vardı (Bluemke, Aird, Levermore, Hazell); McKenzie ve ark.'nda "Droid, T. F." bir
+    ekip takma adıydı ("The Floating Droid"); başlıklar: Sclar (alt başlık), OPTQ (ICLR kayıt başlığı + "ön baskı adı
+    GPTQ"), LLM.int8 (bildiri sayfası başlığı notta), Kapoor ("Position:" + PMLR 235 sayfaları), AdaLoRA (ICLR kaydında
+    önek yok), Claude Opus 4 & Sonnet 4 sistem kartı (68 ve 70'teki kapak başlığı). **Ad değişikliği:** 76'daki CAA
+    künyesi resmî ACL kaydındaki "Rimsky, N." oldu ve "birinci yazar sonraki yayınlarında Nina Panickssery adını
+    kullanıyor" notunu taşıyor; gövde yazarın bugünkü adını kullanmaya devam ediyor. **Bilinçli olarak değiştirilmeyen:**
+    bildiri sayfasının üstverisi bildirinin kendi yazar satırıyla çeliştiğinde PDF esastır — Pope ve ark. (Levskaya),
+    Carlini ve ark. 2023 (Awadalla, Lee), Clark ve ark. (Millican; üstveri teşekkür edilen Ranzato'yu yazıyor), Banbury
+    ve ark., Bouthillier ve ark., Kwa ve ark. (Painter); sonraki taramalar bunları yeniden bulgu sayabilir. 99/103'teki
+    "Fevry/Févry" farkı kişi adının aksanıdır, hata değildir. Bütün düzeltmeler revizyon işaretsiz (§12: künye, bağlantı,
+    etiket onarımı).
+280. **Olgu düzeltmesi (bakım run'ı 3, §5): 69'daki şeffaflık endeksi cümlesi.** 69, "altı ay sonraki turda **aynı** on
+    dört geliştirici ortalama 58 aldı" diyordu. FMTI 2024'ün özeti ilk turda 10, ikinci turda 14 geliştirici puanlandığını,
+    "aynı" olanın **100 gösterge** olduğunu söylüyor; 20 bunu zaten doğru anlatıyor. Cümle "İlk turda on geliştiricinin
+    ortalama puanı 100 üzerinden 37'ydi; altı ay sonraki turda aynı yüz göstergeyle puanlanan on dört geliştirici ortalama
+    58 aldı, 21 puanlık artış." oldu. Hem bu run'ın doğrulama ajanı hem sabah oturumunun doğrulayıcısı bağımsız olarak
+    buldu. Tek olgu düzeltmesi; revizyon işareti konmadı.
+281. **Süreç ve kapılar (bakım run'ı 3).** Kullanıcı TRIGGER'ı ultracode ve workflow-authoring ile çalıştırdı. Sabah
+    oturumunun dört tarayıcısının 113 bulgusu künye satırına göre 90 kümeye indirildi; altısı önceden işlenmiş
+    düzeltmeydi. Kalan 84 küme dokuz tematik **salt okunur** doğrulama ajanına gitti; ajanlar birincil kayıttan kesin
+    eski → yeni metin önerdi. Öneriler sabah oturumunun dört doğrulayıcısının dosyalarıyla konum bazında karşılaştırıldı:
+    48 konum birebir aynı, 17'si farklı, 12'si yalnız bu turda, 12'si yalnız sabah turunda. Bütün farklar ana oturumda
+    karara bağlandı. 77 öneriden 2'si reddedildi (Févry aksanı, CAA gövde adı), 7'si değiştirildi (Arcuschin başlık
+    yazımı, COLM bağlantıları, Rimsky notu, Llama 3 başlığı, NeuronInfer gövdesi, Das etiketi), 1'i eklendi (69 FMTI).
+    Getirilen 33 yeni bağlantı tek tek doğrulandı: 27'si 200 + başlık ya da DOI handle + Crossref başlığı, 6'sı resmî
+    dökümden OpenReview kimliği (5'i seride zaten kullanılıyordu). Ardından üç mercekli (yayılım, olgu, sözleşme) ikinci
+    bir salt okunur workflow ana oturumun diff'ini denetledi: BLOCKER yok, 1 MAJOR (68'in erratum özeti, #275) ve 5 MINOR
+    (68 özetinin niceleyicisi ve katalog kopyası, Rimsky notundaki "bugün", Jelinek künyesinin iki makalede eşitlenmesi,
+    Llama lisansının yayın yeri, HANDOFF ve YOL-HARITASI kayıtları). Hepsi uygulandı. 63'te iki yazar eklenince düzyazı
+    3.502 kelimeye çıktı; gövde "Andy Zou, Zifan Wang ve arkadaşlarının" oldu. **Kapılar:** `sync-series-hashes --write`
+    (44 makale), `sync-series-hashes` (yazmadan), `check-series-content --warnings` ve `check-series-svg` temiz;
+    `pnpm typecheck` 0; 841/841 test (43 dosya); `pnpm build` exit 0 (194 statik sayfa, `/seri/[slug]` 118 yol, izole
+    kopya `C:\dev\anil-lib-ai-bakim3`). **Render:** değişen 44 sayfa × üç genişlik × üç tema Playwright ile ölçüldü: 396
+    satırın hepsi 200; yatay kaydırma, şekil taşması ve konsol hatası yok; 64 yeni bağlantının ve 14 yeni metnin hepsi
+    DOM'da; 68'in revizyon satırı "Gözden geçirildi · 26 Ekim 2026" ile render ediliyor. Ölçerin iki işareti yanlış
+    alarm: 2'deki "NaN" metnin kendisinde ("kayıp NaN oldu"), 27'deki taşma ise dokunulmamış dokuz sütunlu tablonun
+    375 px'te `.table-scroll` kabı içinde kaymasıdır (sayfa taşmıyor). Commit yapılmadı. **Sonraki bağlayıcı karar
+    numarası #282'dir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

@@ -12,7 +12,7 @@ tags:
   - sicaklik
   - cekirdek-ornekleme
   - acgozlu-secim
-content_hash: sha256:3f29fb5c18aac71a16cce57f3497c0c4cd1da5dcd787a7d53db889f400688326
+content_hash: sha256:755639069c88f79f064b95b6d5b49b679b4bd87a4926d55cbcddcaa7668cdba9
 classification_version: 1
 classification_batch: 1
 ---
@@ -165,7 +165,7 @@ Adam Tauman Kalai ve arkadaşlarının 2025'te ön baskı olarak yayımladığı
 
 ## Kaynakça
 
-- Holtzman, A., Buys, J., Du, L., Forbes, M. & Choi, Y. (2020). *The Curious Case of Neural Text Degeneration*. ICLR 2020. [Bağlantı](https://arxiv.org/abs/1904.09751)
+- Holtzman, A., Buys, J., Du, L., Forbes, M. & Choi, Y. (2020). *The Curious Case of Neural Text Degeneration*. ICLR 2020. [Bağlantı](https://openreview.net/forum?id=rygGQyrFvH)
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł. & Polosukhin, I. (2017). *Attention Is All You Need*. Advances in Neural Information Processing Systems 30 (NIPS 2017). [Bağlantı](https://arxiv.org/abs/1706.03762)
 - Ackley, D. H., Hinton, G. E. & Sejnowski, T. J. (1985). *A Learning Algorithm for Boltzmann Machines*. Cognitive Science, 9(1), 147–169. [Bağlantı](https://www.cs.toronto.edu/~fritz/absps/cogscibm.pdf)
 - Peeperkorn, M., Kouwenhoven, T., Brown, D. & Jordanous, A. (2024). *Is Temperature the Creativity Parameter of Large Language Models?* Proceedings of the 15th International Conference on Computational Creativity (ICCC'24). [Bağlantı](https://arxiv.org/abs/2405.00492)

@@ -15295,6 +15295,91 @@
       "related_bugs": [],
       "occurrences": 4,
       "last_seen": "2026-10-26T06:25:06.898Z"
+    },
+    {
+      "timestamp": "2026-10-26T10:05:00+03:00",
+      "error_message": "sync-series-hashes.cjs: 3 sorun — kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari: katalog revizyonu frontmatter ile uyuşmuyor; frontmatter/katalog content_hash ≠ gövde hash (commit 5c0d242'de main kırmızı)",
+      "file": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
+      "root_cause": "Önceki bakım oturumu (e6106818) 68'in gövdesine ve revised_at/revision_note alanlarına Costello erratum düzeltmesini yazdı, hash senkronunu 'bütün düzeltmeler bitince toplu' diye erteledi ve doğrulama ajanları çalışırken kapandı; değişiklik catalog.json senkronlanmadan commit edildi. check-series-content.cjs hash'e bakmadığı için 'Sorun yok' dedi.",
+      "fix": "Bakım run'ı 3'te bütün düzeltmelerden sonra `node tools/series/sync-series-hashes.cjs --write`; gövdeye dokunan her oturum kapanmadan önce senkron çalıştırılır (kapanış riskine karşı ertelenmez).",
+      "tags": [
+        "seri",
+        "content_hash",
+        "catalog",
+        "sync-series-hashes",
+        "bakim-run-3",
+        "yarim-kalan-oturum"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T10:05:00+03:00",
+      "id": "bug-926"
+    },
+    {
+      "id": "bug-927",
+      "timestamp": "2026-10-26T07:35:35.238Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'ı 2'",
+      "fix": "Changed to 'ı 3'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-26T07:35:53.849Z"
+    },
+    {
+      "id": "bug-928",
+      "timestamp": "2026-10-26T07:35:52.201Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 7→15 lines (7 removed) | Also: (`0bc06e4`). **Bakım run'ı 2'nin değişiklikleri (a; YOL-HARITASI) çalışma ağacında commit edilmemiş** ",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-26T07:36:16.755Z"
+    },
+    {
+      "timestamp": "2026-10-26T10:25:00+03:00",
+      "error_message": "check-series-content: jailbreak-ve-kirmizi-takim.md düzyazı kelime sayısı 3502 (hedef 2.000–3.500)",
+      "file": "content/series/articles/safety-and-evaluation/jailbreak-ve-kirmizi-takim.md",
+      "root_cause": "GCG çalışmasının eksik iki yazarı (Carlini, Nasr) künyeyle birlikte gövdedeki yazar sayımına da eklenince 63 bandın üstüne çıktı.",
+      "fix": "Gövde 'Andy Zou, Zifan Wang ve arkadaşlarının' oldu (yazar listesi künyede tam); 3.496 kelime.",
+      "tags": [
+        "seri",
+        "kelime-bandi",
+        "check-series-content",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T10:25:00+03:00",
+      "id": "bug-929"
+    },
+    {
+      "timestamp": "2026-10-26T10:20:00+03:00",
+      "error_message": "69 (yonetisim-politika...) 'altı ay sonraki turda aynı on dört geliştirici ortalama 58 aldı' — olgu hatası",
+      "file": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
+      "root_cause": "FMTI 2024 özetindeki 'the same 100 indicators' geliştiricilere bağlanmış; ilk tur 10, ikinci tur 14 geliştirici.",
+      "fix": "'İlk turda on geliştiricinin ... aynı yüz göstergeyle puanlanan on dört geliştirici ortalama 58 aldı' (arXiv:2407.12929 özeti; 20 zaten doğru).",
+      "tags": [
+        "seri",
+        "olgu",
+        "fmti",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T10:20:00+03:00",
+      "id": "bug-930"
     }
   ]
 }

@@ -12,7 +12,7 @@ tags:
   - oz-yansima
   - eylem-agaci
   - hata-dongusu
-content_hash: sha256:3708aa764eff8edb308f17d9a2aaed9c6ef20a6a62e8c180e79eeb9663912d4e
+content_hash: sha256:c74956360095e2cfbf27be78f7c55c156077fb288c7be04fc96a1cb0beb81da7
 classification_version: 1
 classification_batch: 12
 ---
@@ -121,7 +121,7 @@ Bu makalede döngünün içinde tek bir karar verici vardı ve ikinci model gird
 ## Kaynakça
 
 - Prasad, A., Koller, A., Hartmann, M., Clark, P., Sabharwal, A., Bansal, M. & Khot, T. (2024). *ADaPT: As-Needed Decomposition and Planning with Language Models*. Findings of NAACL 2024. [Bağlantı](https://aclanthology.org/2024.findings-naacl.264/)
-- Shinn, N., Cassano, F., Berman, E., Gopinath, A., Narasimhan, K. & Yao, S. (2023). *Reflexion: Language Agents with Verbal Reinforcement Learning*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html)
+- Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K. & Yao, S. (2023). *Reflexion: Language Agents with Verbal Reinforcement Learning*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html)
 - Zhou, A., Yan, K., Shlapentokh-Rothman, M., Wang, H. & Wang, Y.-X. (2024). *Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models*. ICML 2024, PMLR 235. [Bağlantı](https://proceedings.mlr.press/v235/zhou24r.html)
 - Gou, Z., Shao, Z., Gong, Y., Shen, Y., Yang, Y., Duan, N. & Chen, W. (2024). *CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=Sx038qxjek)
 - Ma, C., Zhang, J., Zhu, Z., Yang, C., Yang, Y., Jin, Y., Lan, Z., Kong, L. & He, J. (2024). *AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents*. NeurIPS 2024 Datasets and Benchmarks Track. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/877b40688e330a0e2a3fc24084208dfa-Abstract-Datasets_and_Benchmarks_Track.html)

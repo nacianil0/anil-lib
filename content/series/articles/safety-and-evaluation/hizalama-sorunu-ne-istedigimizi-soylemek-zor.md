@@ -12,7 +12,7 @@ tags:
   - odul-hirsizligi
   - hedef-yanlis-genellemesi
   - vekil-odul
-content_hash: sha256:72e06f5233da4e2d4b4fa2b874a4a278ee84079f417c272ef6859ba719d18f49
+content_hash: sha256:f4d7f0b44a7ebcf666404220265976cca912626fdfda01107342bae14105426b
 classification_version: 1
 classification_batch: 14
 ---
@@ -111,7 +111,7 @@ Bu makalede hedefi üç sıfata indiren cümleyle karşılaştık: yardımsever,
 - Manheim, D. & Garrabrant, S. (2018). *Categorizing Variants of Goodhart's Law*. Hakemli olmayan ön çalışma (arXiv:1803.04585). [Bağlantı](https://arxiv.org/abs/1803.04585)
 - Skalse, J., Howe, N. H. R., Krasheninnikov, D. & Krueger, D. (2022). *Defining and Characterizing Reward Gaming*. NeurIPS 2022. [Bağlantı](https://papers.nips.cc/paper_files/paper/2022/hash/3d719fee332caa23d5038b8a90e81796-Abstract-Conference.html)
 - Pan, A., Bhatia, K. & Steinhardt, J. (2022). *The Effects of Reward Misspecification: Mapping and Mitigating Misaligned Models*. ICLR 2022. [Bağlantı](https://openreview.net/forum?id=JYtwGwIL7ye)
-- Langosco, L., Koch, J., Sharkey, L., Pfau, J., Orseau, L. & Krueger, D. (2022). *Goal Misgeneralization in Deep Reinforcement Learning*. ICML 2022, PMLR 162. [Bağlantı](https://proceedings.mlr.press/v162/langosco22a.html)
+- Langosco, L., Koch, J., Sharkey, L., Pfau, J. & Krueger, D. (2022). *Goal Misgeneralization in Deep Reinforcement Learning*. ICML 2022, PMLR 162. [Bağlantı](https://proceedings.mlr.press/v162/langosco22a.html)
 - Shah, R., Varma, V., Kumar, R., Phuong, M., Krakovna, V., Uesato, J. & Kenton, Z. (2022). *Goal Misgeneralization: Why Correct Specifications Aren't Enough For Correct Goals*. Hakemli olmayan ön çalışma (arXiv:2210.01790). [Bağlantı](https://arxiv.org/abs/2210.01790)
 - Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). *Risks from Learned Optimization in Advanced Machine Learning Systems*. Hakemli olmayan ön çalışma (arXiv:1906.01820). [Bağlantı](https://arxiv.org/abs/1906.01820)
 - Singhal, P., Goyal, T., Xu, J. & Durrett, G. (2024). *A Long Way to Go: Investigating Length Correlations in RLHF*. COLM 2024. [Bağlantı](https://arxiv.org/abs/2310.03716)

@@ -12,7 +12,7 @@ tags:
   - model
   - tahmin
   - temeller
-content_hash: sha256:756e099b56525474d94dc8bf280b2478be03930b565417de3fc2f9958ed1faae
+content_hash: sha256:0a400f2e60f7c892d5cfb1b694eed9182d2469405f651d304d72403ae3ef6232
 classification_version: 1
 classification_batch: 0
 ---
@@ -122,14 +122,14 @@ Elimizde bir çerçeve var: girdiyi çıktıya bağlayan, üstünde ayar düğme
 
 - Google for Developers. *Machine Learning Crash Course — What is Machine Learning?*. Google. [Bağlantı](https://developers.google.com/machine-learning/intro-to-ml/what-is-ml)
 - Chollet, F. (2017). *Deep Learning with Python*. Manning. [Bağlantı](https://www.manning.com/books/deep-learning-with-python)
-- Samuel, A. L. (1959). *Some Studies in Machine Learning Using the Game of Checkers*. IBM Journal of Research and Development. [Bağlantı](https://www.cs.virginia.edu/~evans/greatworks/samuel.pdf)
+- Samuel, A. L. (1959). *Some Studies in Machine Learning Using the Game of Checkers*. IBM Journal of Research and Development, 3(3), s. 210–229. [Bağlantı](https://doi.org/10.1147/rd.33.0210)
 - "Source of Arthur Samuel's definition of machine learning" (2019). Data Science Stack Exchange'de 2018'de sorulan bir soru ve 2019'da kabul edilen cevabı (hakemli değil). [Bağlantı](https://datascience.stackexchange.com/questions/37078/source-of-arthur-samuels-definition-of-machine-learning)
 - Mitchell, T. M. (1997). *Machine Learning*. McGraw Hill. [Bağlantı](http://www.cs.cmu.edu/~tom/mlbook.html)
 - Avrupa Birliği (2024). *Regulation (EU) 2024/1689 (Yapay Zekâ Yasası), Madde 3 — Tanımlar*. Avrupa Birliği Resmî Gazetesi. [Bağlantı](https://artificialintelligenceact.eu/article/3/)
 - Google for Developers. *Machine Learning Crash Course — Supervised Learning*. Google. [Bağlantı](https://developers.google.com/machine-learning/intro-to-ml/supervised)
 - Ng, A. & Ma, T. *CS229 Lecture Notes*. Stanford University. [Bağlantı](https://cs229.stanford.edu/main_notes.pdf)
 - Shannon, C. E. (1951). *Prediction and Entropy of Printed English*. Bell System Technical Journal. [Bağlantı](https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf)
-- Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS. [Bağlantı](https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf)
+- Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P. ve ark. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020. [Bağlantı](https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 - Goodfellow, I., Bengio, Y. & Courville, A. (2016). *Deep Learning*, 1. bölüm. MIT Press. [Bağlantı](https://www.deeplearningbook.org/contents/intro.html)
 - LeCun, Y., Bengio, Y. & Hinton, G. (2015). *Deep Learning*. Nature. [Bağlantı](https://www.nature.com/articles/nature14539)
 - Turing, A. M. (1950). *Computing Machinery and Intelligence*. Mind, 59(236), s. 433–460. [Bağlantı](https://courses.cs.umbc.edu/471/papers/turing.pdf)

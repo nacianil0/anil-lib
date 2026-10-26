@@ -12,7 +12,7 @@ tags:
   - genelleme
   - bilgi-kapasitesi
   - model-duzenleme
-content_hash: sha256:900292885cd69dad32780a39e77b08678b4a7b2157970b1e5a5e447c37814943
+content_hash: sha256:030f86c41001d2c2328eff0602c17df0dbdc6d2e18bba96e1bb0da112ad107f1
 classification_version: 1
 classification_batch: 3
 revised_at: "2026-09-25"
@@ -124,6 +124,6 @@ Bu makale bilginin nerede durduğunu, ne kadarının sığdığını ve nasıl k
 - Meng, K., Bau, D., Andonian, A. & Belinkov, Y. (2022). *Locating and Editing Factual Associations in GPT*. NeurIPS 2022. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/6f1d43d5a82a37e89b0665b33bf3a182-Abstract-Conference.html)
 - Hase, P., Bansal, M., Kim, B. & Ghandeharioun, A. (2023). *Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models*. NeurIPS 2023. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2023/hash/3927bbdcf0e8d1fa8aa23c26f358a281-Abstract-Conference.html)
 - Allen-Zhu, Z. & Li, Y. (2025). *Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws*. ICLR 2025. [Bağlantı](https://arxiv.org/abs/2404.05405)
-- Morris, J. X., Sitawarin, C., Guo, C. ve ark. (2026). *How much can language models memorize?* (ön baskı adı: *How much do language models memorize?*). ICML 2026. [Bağlantı](https://icml.cc/virtual/2026/poster/62989)
+- Morris, J. X., Sitawarin, C., Guo, C. ve ark. (2026). *How much can language models memorize?* (ön baskı adı: *How much do language models memorize?*). ICML 2026, PMLR 306, s. 90392–90411. [Bağlantı](https://proceedings.mlr.press/v306/morris26a.html)
 - Carlini, N., Ippolito, D., Jagielski, M., Lee, K., Tramèr, F. & Zhang, C. (2023). *Quantifying Memorization Across Neural Language Models*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=TatRHT_1cK)
 - Berglund, L., Tong, M., Kaufmann, M., Balesni, M., Stickland, A. C., Korbak, T. & Evans, O. (2024). *The Reversal Curse: LLMs trained on "A is B" fail to learn "B is A"*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=GPKTIktA0k)

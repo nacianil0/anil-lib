@@ -12,7 +12,7 @@ tags:
   - tercih-optimizasyonu
   - dpo
   - asiri-optimizasyon
-content_hash: sha256:300d3ba6899af859022c9b0160e64ed78d07b6aee2864f242755413353f40bf0
+content_hash: sha256:5498044dac374dfa94b376bc20e4e72cb64e97af603cea46835d86498f7e3a4f
 classification_version: 1
 classification_batch: 2
 revised_at: "2026-09-25"
@@ -142,6 +142,6 @@ Son bir yön: tercih etiketlerini insan yerine başka bir modelin üretmesi. Yaz
 - Stiennon, N., Ouyang, L., Wu, J., Ziegler, D., Lowe, R., Voss, C., Radford, A., Amodei, D. & Christiano, P. F. (2020). *Learning to summarize with human feedback*. Advances in Neural Information Processing Systems 33 (NeurIPS 2020). [Bağlantı](https://proceedings.neurips.cc/paper/2020/hash/1f89885d556929e98d3ef9b86448f951-Abstract.html)
 - Ouyang, L. ve ark. (2022). *Training language models to follow instructions with human feedback*. Advances in Neural Information Processing Systems 35 (NeurIPS 2022). [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html)
 - Gao, L., Schulman, J. & Hilton, J. (2023). *Scaling Laws for Reward Model Overoptimization*. Proceedings of the 40th International Conference on Machine Learning (ICML 2023), PMLR 202. [Bağlantı](https://proceedings.mlr.press/v202/gao23h.html)
-- Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D. & Finn, C. (2023). *Direct Preference Optimization: Your Language Model is Secretly a Reward Model*. Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [Bağlantı](https://arxiv.org/abs/2305.18290)
+- Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D. & Finn, C. (2023). *Direct Preference Optimization: Your Language Model is Secretly a Reward Model*. Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html)
 - Tajwar, F., Singh, A., Sharma, A., Rafailov, R., Schneider, J., Xie, T., Ermon, S., Finn, C. & Kumar, A. (2024). *Preference Fine-Tuning of LLMs Should Leverage Suboptimal, On-Policy Data*. Proceedings of the 41st International Conference on Machine Learning (ICML 2024). [Bağlantı](https://arxiv.org/abs/2404.14367)
 - Bai, Y. ve ark. (2022). *Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback*. Anthropic teknik raporu, arXiv ön baskısı (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2204.05862)

@@ -12,7 +12,7 @@ tags:
   - ozerklik-duzeyi
   - denetim
   - tamamlayicilik
-content_hash: sha256:eb0954afa3a7e5b50b250508c7e6c6d8f32bb4c83348909157cff8112b4845c9
+content_hash: sha256:5221f1f9b8ed19bc2e53554a74100ec3efa9fb5cd59c79d571f2b4383338157b
 classification_version: 1
 classification_batch: 14
 ---
@@ -137,7 +137,7 @@ Bu makalede her devir bir bedelle geldi: onay insanın zamanına, gözden geçir
 - Vijayvargiya, S., Zhou, X., Yerukola, A., Sap, M. & Neubig, G. (2026). *Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering*. ICLR 2026. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2026/hash/ed4deb2ba9d4640fb6a000c688c2972e-Abstract-Conference.html)
 - Wang, W., Shi, J., Ling, Z., Chan, Y.-K., Wang, C., Lee, C., Yuan, Y., Huang, J.-t., Jiao, W. & Lyu, M. R. (2025). *Learning to Ask: When LLM Agents Meet Unclear Instruction*. EMNLP 2025. [Bağlantı](https://doi.org/10.18653/v1/2025.emnlp-main.1104)
 - Zhang, X., Deng, Y., Ren, Z., Ng, S.-K. & Chua, T.-S. (2024). *Ask-before-Plan: Proactive Language Agents for Real-World Planning*. Findings of EMNLP 2024. [Bağlantı](https://doi.org/10.18653/v1/2024.findings-emnlp.636)
-- Barres, V., Dong, H., Ray, S., Si, X. & Narasimhan, K. (2026). *τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment*. ICML 2026. [Bağlantı](https://icml.cc/virtual/2026/poster/64377)
+- Barres, V., Dong, H., Ray, S., Si, X. & Narasimhan, K. (2026). *τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment*. ICML 2026, PMLR 306, s. 6736–6782. [Bağlantı](https://proceedings.mlr.press/v306/barres26a.html)
 - Becker, J., Rush, N., Barnes, E. & Rein, D. (2025). *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*. METR, hakemli olmayan ön çalışma (arXiv:2507.09089). [Bağlantı](https://arxiv.org/abs/2507.09089)
 - Steyvers, M., Tejeda, H., Kumar, A., Belem, C., Karny, S., Hu, X., Mayer, L. & Smyth, P. (2025). *What large language models know and what people think they know*. Nature Machine Intelligence 7(2), s. 221–231. [Bağlantı](https://doi.org/10.1038/s42256-024-00976-7)
 - Chan, A., Ezell, C., Kaufmann, M., Wei, K., Hammond, L., Bradley, H., Bluemke, E., Rajkumar, N., Krueger, D., Kolt, N., Heim, L. & Anderljung, M. (2024). *Visibility into AI Agents*. FAccT 2024. [Bağlantı](https://doi.org/10.1145/3630106.3658948)

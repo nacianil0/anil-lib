@@ -12,7 +12,7 @@ tags:
   - egitim-sonrasi-kuantizasyon
   - bit-genisligi
   - olcum-disiplini
-content_hash: sha256:71e9b0b31ddd0bbca73206123d3e7fb712fb72ffe5515b4a38edcb5923462fd0
+content_hash: sha256:ba77275fe03f4761b3d737d8157eed9a601f53c916462d73505fbd745a12e954
 classification_version: 1
 classification_batch: 6
 ---
@@ -143,8 +143,8 @@ Modeli küçülttük; bellek yükü de, taşınan bayt da azaldı. Ama 26\. maka
 
 ## Kaynakça
 
-- Dettmers, T., Lewis, M., Belkada, Y. & Zettlemoyer, L. (2022). *LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale*. NeurIPS 2022. [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/c3ba4962c05c49636d4c6206a97e9c8a-Abstract-Conference.html)
-- Frantar, E., Ashkboos, S., Hoefler, T. & Alistarh, D. (2023). *GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=tcbBPnfwxS)
+- Dettmers, T., Lewis, M., Belkada, Y. & Zettlemoyer, L. (2022). *LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale*. NeurIPS 2022 (bildiri sayfasındaki başlık *GPT3.int8(): 8-bit Matrix Multiplication for Transformers at Scale*). [Bağlantı](https://proceedings.neurips.cc/paper_files/paper/2022/hash/c3ba4962c05c49636d4c6206a97e9c8a-Abstract-Conference.html)
+- Frantar, E., Ashkboos, S., Hoefler, T. & Alistarh, D. (2023). *OPTQ: Accurate Quantization for Generative Pre-trained Transformers* (ön baskı adı: *GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers*). ICLR 2023. [Bağlantı](https://openreview.net/forum?id=tcbBPnfwxS)
 - Lin, J., Tang, J., Tang, H., Yang, S., Chen, W.-M., Wang, W.-C., Xiao, G., Dang, X., Gan, C. & Han, S. (2024). *AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration*. MLSys 2024. [Bağlantı](https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html)
 - Dettmers, T. & Zettlemoyer, L. (2023). *The case for 4-bit precision: k-bit Inference Scaling Laws*. ICML 2023, PMLR 202, s. 7750–7774. [Bağlantı](https://proceedings.mlr.press/v202/dettmers23a.html)
 - Allen-Zhu, Z. & Li, Y. (2025). *Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws*. ICLR 2025. [Bağlantı](https://arxiv.org/abs/2404.05405)

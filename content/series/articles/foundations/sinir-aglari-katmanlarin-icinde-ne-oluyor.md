@@ -12,7 +12,7 @@ tags:
   - geriye-yayilim
   - temsil-ogrenimi
   - derin-ogrenme
-content_hash: sha256:d1c4270099ebe7adb4afb41da1951630fa638199cc0552a67091edf20bbfe4dc
+content_hash: sha256:18c70e53b4f3066c990509a33ecf6afc7b7ee1a25d3a15770ee4c65375f40280
 classification_version: 1
 classification_batch: 0
 revised_at: "2026-09-25"
@@ -123,7 +123,7 @@ Elimizde artık güçlü bir makine var: sayıları alıp katman katman yeni tem
 ## Kaynakça
 
 - McCulloch, W. S. & Pitts, W. (1943). *A Logical Calculus of the Ideas Immanent in Nervous Activity*. Bulletin of Mathematical Biophysics. [Bağlantı](https://link.springer.com/article/10.1007/BF02478259)
-- Rosenblatt, F. (1958). *The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain*. Psychological Review. [Bağlantı](https://direct.mit.edu/books/edited-volume/5431/chapter/3958515/1958-F-Rosenblatt-The-perceptron-a-probabilistic)
+- Rosenblatt, F. (1958). *The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain*. Psychological Review. [Bağlantı](https://doi.org/10.1037/h0042519)
 - Cornell Chronicle (2019). *Professor's perceptron paved the way for AI — 60 years too soon*. Cornell University. [Bağlantı](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon)
 - Nielsen, M. (2015). *Neural Networks and Deep Learning*. Ücretsiz çevrimiçi kitap. [Bağlantı](http://neuralnetworksanddeeplearning.com/)
 - Bengio, Y., Simard, P. & Frasconi, P. (1994). *Learning Long-Term Dependencies with Gradient Descent is Difficult*. IEEE Transactions on Neural Networks. [Bağlantı](https://pubmed.ncbi.nlm.nih.gov/18267787/)
@@ -133,7 +133,7 @@ Elimizde artık güçlü bir makine var: sayıları alıp katman katman yeni tem
 - Zeiler, M. D. & Fergus, R. (2014). *Visualizing and Understanding Convolutional Networks*. ECCV. [Bağlantı](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf)
 - Bengio, Y., Courville, A. & Vincent, P. (2013). *Representation Learning: A Review and New Perspectives*. IEEE TPAMI. [Bağlantı](https://dl.acm.org/doi/10.1109/tpami.2013.50)
 - Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M. & Carter, S. (2020). *Zoom In: An Introduction to Circuits*. Distill. [Bağlantı](https://distill.pub/2020/circuits/zoom-in/)
-- Minsky, M. & Papert, S. (1969). *Perceptrons: An Introduction to Computational Geometry*. MIT Press. [Bağlantı](https://openlibrary.org/search?q=Perceptrons+Minsky+Papert)
+- Minsky, M. & Papert, S. (2017 [1969]). *Perceptrons: An Introduction to Computational Geometry*. MIT Press (1988 genişletilmiş baskısının yeniden basımı). [Bağlantı](https://doi.org/10.7551/mitpress/11301.001.0001)
 - Liu, Y. *The Perceptron Controversy*. Tarih denemesi (hakemli değil). [Bağlantı](https://yuxi.ml/essays/posts/perceptron-controversy/)
 - Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986). *Learning Representations by Back-Propagating Errors*. Nature. [Bağlantı](https://www.nature.com/articles/323533a0)
 - Schmidhuber, J. *Who Invented Backpropagation?* IDSIA (araştırmacı sayfası, hakemli değil). [Bağlantı](https://people.idsia.ch/~juergen/who-invented-backpropagation.html)

@@ -12,7 +12,7 @@ tags:
   - metrik-secimi
   - faz-gecisi
   - ongorulebilirlik
-content_hash: sha256:f495435733bfdd18d054dbfc4321ddf8d262ae9183d600d4d263789702286fa2
+content_hash: sha256:0388ece89d6f4158ba6f91511c7d124eb6a68bcb7da62f7bc61bb729ef849d57
 classification_version: 1
 classification_batch: 18
 ---
@@ -120,5 +120,5 @@ Bu makale ölçeğin getirdiği yeteneğin ne zaman göründüğünü tartışt�
 - Nanda, N., Chan, L., Lieberum, T., Smith, J. & Steinhardt, J. (2023). *Progress measures for grokking via mechanistic interpretability*. ICLR 2023. [Bağlantı](https://openreview.net/forum?id=9XFSbDPmdW)
 - Snell, C., Wallace, E., Klein, D. & Levine, S. (2024). *Predicting Emergent Capabilities by Finetuning*. Conference on Language Modeling (COLM 2024); okunan sürüm, erken sürümünün COLM 2024'te yer aldığını belirten genişletilmiş arXiv:2411.16035. [Bağlantı](https://arxiv.org/abs/2411.16035)
 - Ruan, Y., Maddison, C. J. & Hashimoto, T. (2024). *Observational Scaling Laws and the Predictability of Language Model Performance*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/1cded4f97cf5f01a284c574110b7e3b9-Abstract-Conference.html)
-- McKenzie, I. R., Lyzhov, A., Pieler, M., Parrish, A., Mueller, A., Prabhu, A., McLean, E., Kirtland, A., Ross, A., Liu, A., Gritsevskiy, A., Wurgaft, D., Kauffman, D., Recchia, G., Liu, J., Cavanagh, J., Weiss, M., Huang, S., Droid, T. F., Tseng, T., Korbak, T., Shen, X., Zhang, Y., Zhou, Z., Kim, N., Bowman, S. R. & Perez, E. (2023). *Inverse Scaling: When Bigger Isn't Better*. Transactions on Machine Learning Research (2023). [Bağlantı](https://openreview.net/forum?id=DwgRm72GQF)
+- McKenzie, I. R., Lyzhov, A., Pieler, M., Parrish, A., Mueller, A., Prabhu, A., McLean, E., Kirtland, A., Ross, A., Liu, A., Gritsevskiy, A., Wurgaft, D., Kauffman, D., Recchia, G., Liu, J., Cavanagh, J., Weiss, M., Huang, S., The Floating Droid, Tseng, T., Korbak, T., Shen, X., Zhang, Y., Zhou, Z., Kim, N., Bowman, S. R. & Perez, E. (2023). *Inverse Scaling: When Bigger Isn't Better*. Transactions on Machine Learning Research (2023). [Bağlantı](https://openreview.net/forum?id=DwgRm72GQF)
 - Wei, J., Kim, N., Tay, Y. & Le, Q. V. (2023). *Inverse scaling can become U-shaped*. EMNLP 2023. [Bağlantı](https://doi.org/10.18653/v1/2023.emnlp-main.963)

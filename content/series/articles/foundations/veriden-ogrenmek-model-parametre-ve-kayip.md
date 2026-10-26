@@ -12,7 +12,7 @@ tags:
   - gradyan-inisi
   - genelleme
   - asiri-ogrenme
-content_hash: sha256:9a2f9af43f29df5223289a9b997f7075467578fc907e149b6ef530f0a68f4e80
+content_hash: sha256:36e6d0537b1164d9aa88c8fadde2b3401d4cf9c4bbf8146fd5b395d5498ddc0f
 classification_version: 1
 classification_batch: 0
 revised_at: "2026-09-25"
@@ -183,5 +183,5 @@ Elimizde çalışan bir öğrenme makinesi var, ama modelimiz hâlâ tek bir do�
 - Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer (ücretsiz resmî PDF). [Bağlantı](https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 - Geman, S., Bienenstock, E. & Doursat, R. (1992). *Neural Networks and the Bias/Variance Dilemma*. Neural Computation. [Bağlantı](https://direct.mit.edu/neco/article/4/1/1/5624/Neural-Networks-and-the-Bias-Variance-Dilemma)
 - Belkin, M., Hsu, D., Ma, S. & Mandal, S. (2019). *Reconciling Modern Machine-Learning Practice and the Classical Bias–Variance Trade-off*. PNAS. [Bağlantı](https://www.pnas.org/doi/10.1073/pnas.1903070116)
-- Curth, A., Jeffares, A. & van der Schaar, M. (2023). *A U-turn on Double Descent: Rethinking Parameter Counting in Statistical Learning*. NeurIPS. [Bağlantı](https://arxiv.org/abs/2310.18988)
+- Curth, A., Jeffares, A. & van der Schaar, M. (2023). *A U-turn on Double Descent: Rethinking Parameter Counting in Statistical Learning*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/aec5e2847c5ae90f939ab786774856cc-Abstract-Conference.html)
 - Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986). *Learning Representations by Back-Propagating Errors*. Nature. [Bağlantı](https://www.nature.com/articles/323533a0)

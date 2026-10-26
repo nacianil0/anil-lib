@@ -12,7 +12,7 @@ tags:
   - maliyet-kontrollu-olcum
   - hakem-ajan
   - kisayol-ve-hile
-content_hash: sha256:eb697ada9755daa3117d3aca9bccafcd72575102aef7c8792db8f067debcb94f
+content_hash: sha256:455a1366e4f531c1830474019ae24e9cb6a75ba8ccfd4d4935abcabb6281545f
 classification_version: 1
 classification_batch: 13
 revised_at: "2026-09-25"
@@ -108,9 +108,9 @@ Bu makaledeki ajanlar kısayolu kendileri buldu. Peki kısayolu ajana bir başka
 - Xu, F. F., Song, Y., Li, B., Tang, Y., Jain, K., Bao, M., Wang, Z. Z., Zhou, X., Guo, Z., Cao, M., Yang, M., Lu, H. Y., Martin, A., Su, Z., Maben, L. M., Mehta, R., Chi, W., Jang, L., Xie, Y., Zhou, S. & Neubig, G. (2025). *TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks*. NeurIPS 2025 Datasets and Benchmarks Track. [Bağlantı](https://papers.nips.cc/paper_files/paper/2025/hash/0d744742f6fac4d1134c019b7cef3c8a-Abstract-Datasets_and_Benchmarks_Track.html)
 - Mialon, G., Fourrier, C., Swift, C., Wolf, T., LeCun, Y. & Scialom, T. (2024). *GAIA: A Benchmark for General AI Assistants*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=fibxvahvs3)
 - Zhuge, M., Zhao, C., Ashley, D. R., Wang, W., Khizbullin, D., Xiong, Y., Liu, Z., Chang, E., Krishnamoorthi, R., Tian, Y., Shi, Y., Chandra, V. & Schmidhuber, J. (2025). *Agent-as-a-Judge: Evaluate Agents with Agents*. ICML 2025, PMLR 267. [Bağlantı](https://proceedings.mlr.press/v267/zhuge25a.html)
-- Barres, V., Dong, H., Ray, S., Si, X. & Narasimhan, K. (2026). *τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment*. ICML 2026. [Bağlantı](https://icml.cc/virtual/2026/poster/64377)
+- Barres, V., Dong, H., Ray, S., Si, X. & Narasimhan, K. (2026). *τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment*. ICML 2026, PMLR 306, s. 6736–6782. [Bağlantı](https://proceedings.mlr.press/v306/barres26a.html)
 - Kapoor, S., Stroebl, B., Kirgis, P., Nadgir, N., Siegel, Z. S., Wei, B., Xue, T., Chen, Z., Chen, F., Utpala, S., Ndzomga, F., Oruganty, D., Luskin, S., Liu, K., Yu, B., Arora, A., Hahm, D., Trivedi, H., Sun, H., Lee, J., Jin, T., Mai, Y., Zhou, Y., Zhu, Y., Bommasani, R., Kang, D., Song, D., Henderson, P., Su, Y., Liang, P. & Narayanan, A. (2026). *Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation*. ICLR 2026. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a0928f924a344aaebbb7f6cd8d56e34c-Abstract-Conference.html)
-- Wijk, H., Lin, T., Becker, J., Jawhar, S., Parikh, N., Broadley, T., Chan, L., Chen, M., Clymer, J., Dhyani, J., Ericheva, E., Garcia, K., Goodrich, B., Jurkovic, N., Karnofsky, H., Kinniment, M., Lajko, A., Nix, S., Sato, L., Saunders, W., Taran, M., West, B. & Barnes, E. (2025). *RE-Bench: Evaluating Frontier AI R&D Capabilities of Language Model Agents against Human Experts*. ICML 2025, PMLR 267. [Bağlantı](https://proceedings.mlr.press/v267/wijk25a.html)
+- Wijk, H., Lin, T., Becker, J., Jawhar, S., Parikh, N., Broadley, T., Chan, L., Chen, M., Clymer, J., Dhyani, J., Ericheva, E., Garcia, K., Goodrich, B., Jurkovic, N., Kinniment, M., Lajko, A., Nix, S., Sato, L., Saunders, W., Taran, M., West, B. & Barnes, E. (2025). *RE-Bench: Evaluating Frontier AI R&D Capabilities of Language Model Agents against Human Experts*. ICML 2025, PMLR 267. [Bağlantı](https://proceedings.mlr.press/v267/wijk25a.html)
 - Kapoor, S., Stroebl, B., Siegel, Z. S., Nadgir, N. & Narayanan, A. (2025). *AI Agents That Matter*. Transactions on Machine Learning Research. [Bağlantı](https://openreview.net/forum?id=Zy4uFzMviZ)
 - Miserendino, S., Wang, M., Patwardhan, T. & Heidecke, J. (2025). *SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?*. ICML 2025, PMLR 267. [Bağlantı](https://proceedings.mlr.press/v267/miserendino25a.html)
 - Zhong, Z., Raghunathan, A. & Carlini, N. (2026). *ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases*. ICLR 2026. [Bağlantı](https://proceedings.iclr.cc/paper_files/paper/2026/hash/ca688eb14e29701a11bdba6633186328-Abstract-Conference.html)

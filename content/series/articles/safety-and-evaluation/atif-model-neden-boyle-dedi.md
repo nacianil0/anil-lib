@@ -12,7 +12,7 @@ tags:
   - oznitelik-atfi
   - etki-fonksiyonu
   - gerekce-sadakati
-content_hash: sha256:8517b17ddb328977daaa6c5f2f2a85878b55e07259b2c36193f3324cf2629321
+content_hash: sha256:1e765b3e0ca0dedf5c8760e90d28550adecd8e5b3055cb4bb6145af33ef37ce1
 classification_version: 1
 classification_batch: 18
 ---
@@ -124,7 +124,7 @@ Bu makaleyle birlikte 74'te açılan bandın borcu kapanıyor: devreler, özelli
 - Liu, J., Blanton, T., Elazar, Y., Min, S., Chen, Y., Chheda-Kothary, A., Tran, H., Bischoff, B., Marsh, E., Schmitz, M., Trier, C., Sarnat, A., James, J., Borchardt, J., Kuehl, B., Cheng, E., Farley, K., Anderson, T., Albright, D., Schoenick, C., Soldaini, L., Groeneveld, D., Pang, R. Y., Koh, P. W., Smith, N. A., Lebrecht, S., Choi, Y., Hajishirzi, H., Farhadi, A. & Dodge, J. (2025). *OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens*. ACL 2025 sistem tanıtımları, s. 178–188. [Bağlantı](https://doi.org/10.18653/v1/2025.acl-demo.18)
 - Turpin, M., Michael, J., Perez, E. & Bowman, S. R. (2023). *Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract-Conference.html)
 - Chen, Y., Benton, J., Radhakrishnan, A., Uesato, J., Denison, C., Schulman, J., Somani, A., Hase, P., Wagner, M., Roger, F., Mikulik, V., Bowman, S. R., Leike, J., Kaplan, J. & Perez, E. (2025). *Reasoning Models Don't Always Say What They Think*. Hakemli olmayan ön çalışma (arXiv:2505.05410). [Bağlantı](https://arxiv.org/abs/2505.05410)
-- Arcuschin, I., Janiak, J., Krzyzanowski, R., Rajamanoharan, S., Nanda, N. & Conmy, A. (2026). *Chain-of-Thought Reasoning in the Wild Is Not Always Faithful*. ICML 2026, PMLR 306. [Bağlantı](https://arxiv.org/abs/2503.08679)
+- Arcuschin, I., Janiak, J., Krzyzanowski, R., Rajamanoharan, S., Nanda, N. & Conmy, A. (2026). *Chain-of-Thought Reasoning in the Wild Is Not Always Faithful*. ICML 2026, PMLR 306, s. 3354–3405. [Bağlantı](https://proceedings.mlr.press/v306/arcuschin26b.html)
 - Doshi-Velez, F. & Kim, B. (2017). *Towards A Rigorous Science of Interpretable Machine Learning*. Hakemli olmayan ön çalışma (arXiv:1702.08608). [Bağlantı](https://arxiv.org/abs/1702.08608)
 - Lipton, Z. C. (2018). *The Mythos of Model Interpretability*. ACM Queue 16(3), s. 31–57. [Bağlantı](https://doi.org/10.1145/3236386.3241340)
 - Rudin, C. (2019). *Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*. Nature Machine Intelligence 1, s. 206–215. [Bağlantı](https://doi.org/10.1038/s42256-019-0048-x)

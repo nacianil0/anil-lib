@@ -12,7 +12,7 @@ tags:
   - lisans
   - seffaflik
   - model-ekosistemi
-content_hash: sha256:4f96cf038aa46fedde8c09b075b9bcc77782271e9edc5ac726d711ec79fb64d5
+content_hash: sha256:3044cc745c27885e3ce3eee9ae0c4b3183562c3fc50416f611f272c3f6156098
 classification_version: 1
 classification_batch: 4
 ---
@@ -143,8 +143,8 @@ Ve kullanım tarafında her şey tek bir kanaldan geçiyor. Model ister kendi di
 - DeepSeek-AI (2024). *DeepSeek-V3 Technical Report*. arXiv ön çalışması (hakemli değildir). [Bağlantı](https://arxiv.org/abs/2412.19437)
 - DeepSeek-AI, Guo, D., Yang, D. ve ark. (2025). *DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning*. Nature 645, s. 633–638. [Bağlantı](https://www.nature.com/articles/s41586-025-09422-z)
 - Liesenfeld, A. & Dingemanse, M. (2024). *Rethinking open source generative AI: open-washing and the EU AI Act*. ACM FAccT 2024. [Bağlantı](https://dl.acm.org/doi/10.1145/3630106.3659005)
-- Meta (2024). *Llama 3.1 Community License Agreement*. [Bağlantı](https://www.llama.com/llama3_1/license/)
+- Meta (2024). *Llama 3.1 Community License Agreement*. Resmî lisans metni. [Bağlantı](https://dev.meta.ai/llama/llama3_1/license)
 - Open Source Initiative (2024). *The Open Source AI Definition – 1.0*. [Bağlantı](https://opensource.org/ai/open-source-ai-definition)
 - Widder, D. G., Whittaker, M. & West, S. M. (2024). *Why 'open' AI systems are actually closed, and why this matters*. Nature 635, s. 827–833. [Bağlantı](https://www.nature.com/articles/s41586-024-08141-1)
-- Bommasani, R., Klyman, K., Longpre, S. ve ark. (2025). *The 2024 Foundation Model Transparency Index*. Transactions on Machine Learning Research. [Bağlantı](https://arxiv.org/abs/2407.12929)
+- Bommasani, R., Klyman, K., Kapoor, S. ve ark. (2025). *The 2024 Foundation Model Transparency Index*. Transactions on Machine Learning Research. [Bağlantı](https://openreview.net/forum?id=38cwP8xVxD)
 - Qi, X., Zeng, Y., Xie, T., Chen, P.-Y., Jia, R., Mittal, P. & Henderson, P. (2024). *Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=hTEGyKf0dZ)

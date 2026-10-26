@@ -12,7 +12,7 @@ tags:
   - sonda
   - kavram-silme
   - model-duzenleme
-content_hash: sha256:169479c3684de0ccaf29dec77139bbe8cfcc82243852f53d9240f50a5dc445a8
+content_hash: sha256:9e22b50333faacff32aa024b2dd45b7713b3f22abc4b968284be9ca7d2bd9d8a
 classification_version: 1
 classification_batch: 18
 ---
@@ -109,7 +109,7 @@ Bu makale bir davranışı **değiştirmenin** araçlarını verdi. Ama okuyucun
 ## Kaynakça
 
 - Arditi, A., Obeso, O., Syed, A., Paleka, D., Panickssery, N., Gurnee, W. & Nanda, N. (2024). *Refusal in Language Models Is Mediated by a Single Direction*. NeurIPS 2024. [Bağlantı](https://papers.nips.cc/paper_files/paper/2024/hash/f545448535dfde4f9786555403ab7c49-Abstract-Conference.html)
-- Panickssery, N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E. & Turner, A. M. (2024). *Steering Llama 2 via Contrastive Activation Addition*. ACL 2024. [Bağlantı](https://doi.org/10.18653/v1/2024.acl-long.828)
+- Rimsky, N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E. & Turner, A. M. (2024). *Steering Llama 2 via Contrastive Activation Addition*. ACL 2024; birinci yazar sonraki yayınlarında Nina Panickssery adını kullanıyor. [Bağlantı](https://doi.org/10.18653/v1/2024.acl-long.828)
 - Wu, Z., Arora, A., Geiger, A., Wang, Z., Huang, J., Jurafsky, D., Manning, C. D. & Potts, C. (2025). *AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse Autoencoders*. ICML 2025, PMLR 267. [Bağlantı](https://proceedings.mlr.press/v267/wu25a.html)
 - Dathathri, S., Madotto, A., Lan, J., Hung, J., Frank, E., Molino, P., Yosinski, J. & Liu, R. (2020). *Plug and Play Language Models: A Simple Approach to Controlled Text Generation*. ICLR 2020. [Bağlantı](https://openreview.net/forum?id=H1edEyBKDS)
 - Subramani, N., Suresh, N. & Peters, M. E. (2022). *Extracting Latent Steering Vectors from Pretrained Language Models*. Findings of ACL 2022. [Bağlantı](https://doi.org/10.18653/v1/2022.findings-acl.48)
