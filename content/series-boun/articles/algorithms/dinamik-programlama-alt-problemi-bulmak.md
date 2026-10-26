@@ -12,7 +12,7 @@ tags:
   - ortusen-alt-problemler
   - sirt-cantasi
   - optimal-altyapi
-content_hash: sha256:2f91ebdea43f238aadc387b03a2a8b1b530ee878d6750dda06f9b4d6b959e352
+content_hash: sha256:5d0edc784283882e7b58b1a1e49bb833775405680c93130ff009fadf793d64a8
 classification_version: 1
 classification_batch: 7
 ---
@@ -34,7 +34,7 @@ Kanonik teşhis örneği hâlâ Fibonacci'dir. `fib(n)` naif olarak `fib(n−1) 
 
 Teşhis refleksi şu iki soruyu yan yana sormaktır: **kaç farklı alt problem var** ve **kaç çağrı yapılıyor?** İkisi arasında büyük bir uçurum varsa örtüşme vardır ve dinamik programlama tam olarak o uçurumu kapatır. Şekil 1 aynı hesabı iki biçimde gösteriyor: üstte naif ağaç, altta tekrar eden düğümlerin tek düğüme indiği DAG.
 
-![İki panelli bir şema. Üst panel naif özyineleme ağacı, F(5) için 15 çağrı: kök F5'in çocukları F4 ve F3; ağaçta F3 iki kez, F2 üç kez, F1 beş kez hesaplanıyor ve yapraklar F1 ile F0. Yanında n = 30 için 2.692.537 çağrı, 31 alt problem yazıyor. Alt panel bellekleme sonrası: aynı hesap 6 düğümlü bir DAG, alt problem başına sabit iş. Soldan sağa F0'dan F5'e dizilmiş düğümlerde her düğümden bir sonrakine kısa, iki sonrakine uzun bir ok gidiyor; böylece F2'den F5'e her düğüm kendinden önceki iki düğümden ok alıyor. Panelin solunda topolojik sıra: artan i yazıyor](assets/fibonacci-agactan-daga.svg "Şekil 1 — Aynı hesap, iki şekil: örtüşen alt problemler ağacı DAG'a çökertiyor")
+![İki panelli bir şema. Üst panel naif özyineleme ağacı, F(5) için 15 çağrı: kök F5'in çocukları F4 ve F3; ağaçta F3 iki kez, F2 üç kez, F1 beş kez hesaplanıyor ve yapraklar F1 ile F0. Yanında n = 30 için 2.692.537 çağrı, 31 alt problem yazıyor. Alt panel bellekleme sonrası: aynı hesap 6 düğümlü bir DAG, alt problem başına sabit iş. Soldan sağa F0'dan F5'e dizilmiş düğümlerde F2'den F5'e her düğüm, bir önceki düğümden kısa, iki önceki düğümden uzun bir ok alıyor; taban durumlar F0 ile F1 ok almıyor. Panelin solunda topolojik sıra: artan i yazıyor](assets/fibonacci-agactan-daga.svg "Şekil 1 — Aynı hesap, iki şekil: örtüşen alt problemler ağacı DAG'a çökertiyor")
 
 Bellekleyen sürüm iki satır fark eder:
 
@@ -67,7 +67,7 @@ Aynı fikrin iki yüzü var ve mülakatta ikisinin adı da beklenir.
 5      return F[n]                             # özgün problem
 ```
 
-Hangisi ne zaman? Ayrım pratikte üç noktada belirir. Birincisi **erişilebilirlik**: bellekleme yalnızca gerçekten ihtiyaç duyulan alt problemleri çözer, tablolama hepsini çözer. Alt problem uzayı büyük ama seyrek kullanılıyorsa bellekleme kazanır: A = (3, 4, 3, 1) sayılarından 6 toplamı elde edilip edilemeyeceğini soran küçük bir **altküme toplamı (subset sum)** probleminde tablolama 35 hücrenin tamamını doldururken, bellekleme yalnızca erişilebilen **15** durumu çözer — bunu kendi kodumla saydım. İkincisi **yığın derinliği**: bellekleme özyinelemedir, çağrı yığını alt problem sayısı kadar derinleşebilir; n büyükse taşar. Üçüncüsü **sabitler**: tablolama bir dizi üzerinde döngüdür, sözlük araması ve çağrı yükü taşımaz; aynı asimptotik maliyette ölçülebilir biçimde hızlıdır.
+Hangisi ne zaman? Ayrım pratikte üç noktada belirir. Birincisi **erişilebilirlik**: bellekleme yalnızca gerçekten ihtiyaç duyulan alt problemleri çözer, tablolama hepsini çözer. Alt problem uzayı büyük ama seyrek kullanılıyorsa bellekleme kazanır: A = (3, 4, 3, 1) sayılarından 6 toplamı elde edilip edilemeyeceğini soran küçük bir **altküme toplamı (subset sum)** probleminde tablolama 35 hücrenin tamamını doldururken, bellekleme yalnızca erişilebilen **15** durumu çözer — bunu kendi kodumla saydım: ilk 0, 1, 2, 3 ve 4 sayıya karar verildiğinde sırasıyla 1, 2, 3, 4 ve 5 farklı kalan hedef çıkıyor (kalan hedef 0 olunca taban duruma varılır), 1 + 2 + 3 + 4 + 5 = 15. İkincisi **yığın derinliği**: bellekleme özyinelemedir, çağrı yığını alt problem sayısı kadar derinleşebilir; n büyükse taşar. Üçüncüsü **sabitler**: tablolama bir dizi üzerinde döngüdür, sözlük araması ve çağrı yükü taşımaz; aynı asimptotik maliyette ölçülebilir biçimde hızlıdır.
 
 Tablolamanın gizli bir borcu var ve bu borç doğruluk makalesinin aracıyla ödenir. Döngünün değişmezi şudur: *"i'inci yinelemenin başında, topolojik sırada i'den önce gelen bütün alt problemler doğru çözülmüştür."* Başlatma adımı taban durumlarla gelir; koruma adımı, bağıntının **yalnızca daha önce çözülmüş** alt problemlere baktığını kullanır; sonuçlanma adımı, döngü bittiğinde özgün problemin de çözülmüş olduğunu verir. Koruma adımının çalışması için döngü sırasının bir **topolojik sıra** olması zorunludur — graf makalesindeki DAG bilgisi burada bir doğruluk şartına dönüşüyor. Sıra yanlışsa bağıntı henüz doldurulmamış bir hücreyi okur ve değişmez daha ilk adımda kırılır.
 
@@ -104,7 +104,7 @@ Somut bir örnek üzerinden gidelim. Beş toplantı isteği var; parantez içind
 
 Açgözlü makalesinde **ispatladığımız** kural "en erken biteni seç"ti. Burada A, B, D seçilir ve toplam **17** eder. En büyük değerliden başlayan kural C'yi alır, sonra yalnızca A sığar: **15**. Saat başına en çok değer veren kural önce B'yi (saatte 4) alır, sonra C'yi eler; ama D ile E aynı orana (saatte 2,5) sahiptir ve sonuç eşitliğin nasıl bozulduğuna kalır: D seçilirse A, B, D ile **17**, E seçilirse şans eseri **22**. En kısa süreni seçen kural A, B, D'yi verir: **17**. Optimal ise **22**'dir ve A + B + E'dir. Bu dört sonucu ve optimalin tekliğini kaba kuvvetle bütün altkümeler üzerinde denetledim.
 
-Açgözlü neden çöktü? Çünkü **açgözlü seçim özelliği** kayboldu: en erken biten isteği içeren bir optimal çözüm olduğu artık doğru değil. Ama **optimal altyapı** duruyor — ve dinamik programlama zaten yalnızca onu ister. Bu ayrım, önceki makalenin ayırdığı iki iddianın tam olarak işe yaradığı yerdir.
+Açgözlü neden çöktü? Çünkü **açgözlü seçim özelliği** kayboldu: en erken biten isteği içeren bir optimal çözümün var olduğu artık garanti değil. Bu örnekte ilk seçim A optimal çözümün içindedir; kural, A ile B'den sonra kalan alt problemde kırılır: orada en erken biten D'dir, ama o alt problemin optimali E'dir (10 > 5). Ama **optimal altyapı** duruyor — ve dinamik programlama zaten yalnızca onu ister. Bu ayrım, önceki makalenin ayırdığı iki iddianın tam olarak işe yaradığı yerdir.
 
 Alt problemi kuralım. İstekleri bitiş zamanına göre sıralayalım (yukarıdaki tablo zaten sıralı). Her j isteği için **p(j)** = j'den önce biten ve j ile bağdaşan **en son** istek olsun; yoksa 0 yazalım. Alt problem tanımı: **OPT(j) = ilk j istek arasından seçilebilecek en büyük toplam ağırlık.** Bağıntı, tek bir sorunun kaba kuvvetle denenmesidir — *j'inci istek çözümde var mı?*
 
@@ -140,7 +140,7 @@ Taban durum, dizgilerden biri bittiğinde 0'dır; topolojik sıra azalan i + j'd
 
 x(i, c) = max{ x(i+1, c), v(i) + x(i+1, c − w(i)) } — ikinci seçenek yalnızca c ≥ w(i) ise. Taban durum x(n, c) = 0; topolojik sıra azalan i. Alt problem sayısı (n + 1)(C + 1) = 204, alt problem başına sabit iş. Tabloyu doldurup 220 çıktığını ve seçilen eşyaların ikinci ile üçüncü olduğunu bağımsız olarak denetledim; kaba kuvvet de aynı sonucu veriyor.
 
-Burada bir tuzak var ve mülakatta güzel bir takip sorusudur. **O(nC) polinom zaman mıdır?** Girdi n + 1 sayıdan oluşur; C sayısı girdide **bir sayı** olarak durur ve ⌈lg C⌉ bitle yazılır. C = 2⁶⁴ ise tablo 2⁶⁴ sütunludur. Yani O(nC), girdi **boyutunda** değil, girdi **değerlerinde** polinomdur; bunun adı **sözde polinom (pseudopolynomial)** zamandır. Sayma sıralaması ve radix sıralaması da aynı ailedendir: karmaşıklık makalesinde "girdi boyutu sayı mı basamak mı?" diye açtığımız pin tam olarak buraya çıkıyor. Sırt çantası problemi sözde polinom zamanda çözülebilir, ama gerçek polinom zamanda çözülüp çözülemeyeceği açık bir sorudur — o tartışma hesaplamanın sınırları makalesine ait.
+Burada bir tuzak var ve mülakatta güzel bir takip sorusudur. **O(nC) polinom zaman mıdır?** Girdi 2n + 1 sayıdan oluşur (n ağırlık, n değer ve C); C sayısı girdide **bir sayı** olarak durur ve ⌈lg C⌉ bitle yazılır. C = 2⁶⁴ ise tablo 2⁶⁴ sütunludur. Yani O(nC), girdi **boyutunda** değil, girdi **değerlerinde** polinomdur; bunun adı **sözde polinom (pseudopolynomial)** zamandır. Sayma sıralaması ve radix sıralaması da aynı ailedendir: karmaşıklık makalesinde "girdi boyutu sayı mı basamak mı?" diye açtığımız pin tam olarak buraya çıkıyor. Sırt çantası problemi sözde polinom zamanda çözülebilir, ama gerçek polinom zamanda çözülüp çözülemeyeceği açık bir sorudur — o tartışma hesaplamanın sınırları makalesine ait.
 
 > **Sesli anlat:** "Bir problemin dinamik programlamaya uygun olduğunu nereden anlarsın — hangi iki özelliği ararsın? Doksan saniye."
 >
@@ -150,7 +150,7 @@ Burada bir tuzak var ve mülakatta güzel bir takip sorusudur. **O(nC) polinom z
 
 Dinamik programlama sorusu tahtaya gelince beklenen sıra sabittir: alt problemi **kelimelerle** tanımla, bağıntıyı bir soruyu kaba kuvvetle deneyerek kur, topolojik sırayı gerekçelendir, taban durumları ver, özgün problemi göster, maliyeti alt problem sayısı × alt problem başına iş olarak hesapla. Altı satır, altı cümle.
 
-Beş tipik hata var. **Alt problemi parametresiz tanımlamak** — "alt problem, dizinin geri kalanı" bir tanım değildir; hangi parametrenin hangi aralıkta değiştiğini söylemek gerekir. **Topolojik sırayı savunmamak** — sıra bir DAG sırası değilse tablolama boş hücre okur. **Alt problem sayısını yanlış saymak** — iki parametreli bir alt problem uzayında maliyet çarpımdır, toplam değil. **Bellekleme denetimini unutmak** — hafızayı yazıp okumayı unutan kod hâlâ üsteldir ve bu, mülakatta en sık görülen sessiz hatadır. **Sözde polinomu polinom sanmak** — O(nC) girdi boyutunda polinom değildir.
+Beş tipik hata var. **Alt problemi parametresiz tanımlamak** — "alt problem, dizinin geri kalanı" bir tanım değildir; hangi parametrenin hangi aralıkta değiştiğini söylemek gerekir. **Topolojik sırayı savunmamak** — sıra bir DAG sırası değilse tablolama boş hücre okur. **Alt problem sayısını yanlış saymak** — iki parametreli bir alt problem uzayında maliyet çarpımdır, toplam değil. **Bellekleme denetimini unutmak** — hafızayı yazıp okumayı unutan kod hâlâ üsteldir ve cevabı yine doğru verdiği için bu hata sessiz kalır. **Sözde polinomu polinom sanmak** — O(nC) girdi boyutunda polinom değildir.
 
 Takip zinciri çoğu zaman şu üç halkadır: "Alt problemin ne?" → "Kaç alt problem var, her biri ne kadar iş?" → "Bunu açgözlüyle çözemez miydin?" Üçüncü halkaya bu makaledeki tablo cevap verir: en erken biten kural 17'de kalır, çünkü açgözlü seçim özelliği bu problemde yoktur.
 
@@ -162,7 +162,7 @@ Bir de kavram karışıklığı var: dinamik programlama ile açgözlüyü ayır
 
 Bu makalede alt problem grafının bir DAG olduğunu ve tablolamanın o DAG üzerinde topolojik sırada yürüdüğünü gördük. Sıradaki makalede aynı fikri tersinden okuyacağız: **DAG'ın kendisi bir graf olduğunda**, en kısa yol hesabı doğrudan bir dinamik programa dönüşür. Bellman-Ford algoritması, alt problemi "en fazla k kenar kullanarak s'ten v'ye en ucuz yol" diye tanımlayan bir DP'den başka bir şey değildir.
 
-Graf algoritmaları makalesi iki klasik problemi kuruyor: bütün düğümleri en ucuza bağlayan **minimum kapsayan ağaç** ve tek bir kaynaktan herkese giden **en kısa yollar ağacı**. İkisi aynı grafta **farklı** ağaçlar üretir ve bu fark, mülakatın en sevdiği karşı sezgilerden biridir. Heap makalesinin ödenmemiş `azalt_anahtar` borcu da orada kapanacak: hem Prim hem Dijkstra o işlemin üzerine kuruludur.
+Graf algoritmaları makalesi iki klasik problemi kuruyor: bütün düğümleri en ucuza bağlayan **minimum kapsayan ağaç** ve tek bir kaynaktan herkese giden **en kısa yollar ağacı**. İkisi aynı grafta **farklı** ağaçlar üretir ve bu fark, mülakatta savunman gerekebilecek bir karşı sezgidir. Heap makalesinin ödenmemiş `azalt_anahtar` borcu da orada kapanacak: hem Prim hem Dijkstra o işlemin üzerine kuruludur.
 
 ## Kaynakça
 

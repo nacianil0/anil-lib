@@ -1,5 +1,5 @@
 <svg viewBox="0 0 720 368" xmlns="http://www.w3.org/2000/svg">
-  <text x="20" y="24" font-size="13" fill="var(--text-muted)">T(n) = 2T(n/2) + n: her seviyede aynı iş, log₂ n seviye</text>
+  <text x="20" y="24" font-size="13" fill="var(--text-muted)">T(n) = 2T(n/2) + n: her seviyede aynı iş, log₂ n + 1 seviye</text>
 
   <text x="20" y="88" font-size="13" fill="var(--text-faint)">seviye 0</text>
   <text x="20" y="136" font-size="13" fill="var(--text-faint)">seviye 1</text>

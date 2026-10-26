@@ -61,7 +61,7 @@
 
   <text x="560" y="212" font-size="13" text-anchor="middle" fill="var(--text)">Kombinatoryal ispat:</text>
   <text x="560" y="234" font-size="13" text-anchor="middle" fill="var(--text-muted)">bir elemanı sabitle.</text>
-  <text x="560" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">k elemanlı altkümeler ya</text>
+  <text x="560" y="256" font-size="13" text-anchor="middle" fill="var(--text-muted)">k elemanlı alt kümeler ya</text>
   <text x="560" y="278" font-size="13" text-anchor="middle" fill="var(--text-muted)">onu içerir ya da içermez.</text>
 
   <text x="360" y="328" font-size="13" text-anchor="middle" fill="var(--text-muted)">Her sayı üstündeki iki sayının toplamıdır; satır toplamları 2 üzeri n verir</text>

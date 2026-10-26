@@ -12,7 +12,7 @@ tags:
   - iyi-siralama
   - ozyineleme
   - yapisal-tumevarim
-content_hash: sha256:5d76d13c66a0bcf1c2d65df36a66a8acd9a616080a965fb57d5ba02b7644eea4
+content_hash: sha256:eebb9ab188c89aecb12d85a5d110dff29f489afecd87a5ab6f0e3d1dea2a5d6a
 classification_version: 1
 classification_batch: 1
 ---
@@ -110,7 +110,7 @@ Zayıf ve güçlü tümevarım **güç bakımından denktir**; biriyle ispatlana
 
 Kullanımı çelişkiyle ispatın bir kalıbıdır: iddianın yanlış olduğunu varsay, karşı örneklerin kümesini kur, iyi sıralama ile **en küçük karşı örneği** al ve ondan daha küçük bir karşı örnek üreterek çelişkiye var. Aynı asal çarpanlara ayırma teoremi MIT ders notlarında (Teorem 2.3.1) tam olarak böyle ispatlanır: en küçük ayrıştırılamayan sayı ne asal olabilir ne de bileşik, çünkü bileşikse çarpanları daha küçüktür ve en küçüklük varsayımıyla çelişir.
 
-Üçünü bir arada tutan cümle şudur: **tümevarım, güçlü tümevarım ve iyi sıralama aynı gerçeğin üç sunumudur** — doğal sayılarda sonsuza kadar geriye gidilemez. Mülakatta bu cümleyi söyleyebilmek, üç tekniği ayrı ezberlemiş olmaktan daha güçlü bir sinyaldir.
+Üçünü bir arada tutan cümle şudur: **tümevarım, güçlü tümevarım ve iyi sıralama aynı gerçeğin üç sunumudur** — doğal sayılarda sonsuza kadar geriye gidilemez.
 
 ## Özyineleme: aynı fikrin ikinci yüzü
 
@@ -148,7 +148,7 @@ Bu, ileride sık kullanacağın bir alışkanlığın tohumudur. Ağaçlar, list
 
 Takip sorusu zinciri burada tipik olarak üç halkadır. Birincisi tanımı yoklar: "Tümevarım adımında ne varsayıyorsun, ne ispatlıyorsun?" İkincisi sınır durumunu yoklar: "Taban durumunu atlarsan ne olur, bir örnek verebilir misin?" Üçüncüsü seçimi yoklar: "Bu ispatta zayıf tümevarım yeter miydi?"
 
-Üçüncüsünün cevabı, ispatın parçalama adımına bakmakla verilir. Adım n + 1'den n'ye iniyorsa zayıfı yeter; n'den kontrol edilemeyen daha küçük değerlere iniyorsa güçlüsü gerekir. Birleştirmeli sıralamanın (merge sort) doğruluğu bu ikinci gruptadır, çünkü diziyi ikiye bölmek n − 1'e değil, kabaca n / 2'ye iner. Bu ayrımı söyleyebilmek, tekniği ezberlemekle kullanabilmek arasındaki farktır.
+Üçüncüsünün cevabı, ispatın parçalama adımına bakmakla verilir. Adım n + 1'den n'ye iniyorsa zayıfı yeter; n'den kontrol edilemeyen daha küçük değerlere iniyorsa güçlüsü gerekir. Birleştirmeli sıralamanın (merge sort) doğruluğu bu ikinci gruptadır, çünkü diziyi ikiye bölmek n − 1'e değil, kabaca n / 2'ye iner.
 
 Tümevarım ispatlarında sık görülen hatalar, yukarıdaki bölümlerden tek tek çıkıyor:
 

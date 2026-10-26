@@ -12,7 +12,7 @@ tags:
   - monoid
   - kafes
   - boolean-cebiri
-content_hash: sha256:eede12fec763e96f4901d0e6e98c4776e30460ce3b7b889c320933769e1648b9
+content_hash: sha256:c4f606acec28bc9e32a0a78f4d5e9cd54863437a1a676a66cc11cf37df6cc4a8
 classification_version: 1
 classification_batch: 2
 ---
@@ -20,7 +20,7 @@ classification_batch: 2
 
 Şimdiye kadar birbirinden bağımsız görünen birkaç yapıyla çalıştık. Tam sayılar toplama altında; kümeler birleşim ve kesişim altında; önermeler "ve" ile "veya" altında; fonksiyonlar bileşke altında. Bu makalenin iddiası şu: bunların hepsi *aynı birkaç kuralın* farklı kılıklarıdır ve o kuralları bir kez öğrenirsen her yeni yapıda hangi soruları soracağını bilirsin.
 
-Bu, matematiksel bir zarafet gösterisi değil, mülakatta doğrudan işe yarayan bir refleks. "Bu işlem birleşme özelliğine sahip mi?" sorusu, bir hesabı paralelleştirip paralelleştiremeyeceğini söyler. "Bu yapının birim elemanı var mı?" sorusu, boş girdide ne döndüreceğini söyler. "Tersi var mı?" sorusu, işlemi geri alıp alamayacağını söyler. Soyutlama, cevap sayısını azaltmak için değil, doğru soruları elde tutmak içindir.
+Bu, matematiksel bir süs değil, mülakatta doğrudan işe yarayan bir refleks. "Bu işlem birleşme özelliğine sahip mi?" sorusu, bir hesabı paralelleştirip paralelleştiremeyeceğini söyler. "Bu yapının birim elemanı var mı?" sorusu, boş girdide ne döndüreceğini söyler. "Tersi var mı?" sorusu, işlemi geri alıp alamayacağını söyler. Soyutlama, cevap sayısını azaltmak için değil, doğru soruları elde tutmak içindir.
 
 Bu aynı zamanda Faz A'nın kapanış makalesi. Boğaziçi'nin CMPE220 katalog tanımı "Algebraic structures. Groups and semi-groups. Graphs, lattices and Boolean algebra" diyor; graflar önceki makaledeydi, kalan üç başlık burada.
 
@@ -64,7 +64,7 @@ Aksiyomlar arasında birleşme, mülakatta en çok karşılığı olanıdır ç�
 
 Bir listeyi tek bir değere indirgediğini düşün: toplama, en büyüğü bulma, dizi birleştirme, iki kümenin birleşimi, bit dizilerinde XOR. İşlem birleşmeliyse listeyi istediğin yerden parçalara bölebilir, parçaları ayrı ayrı işleyip sonuçları birleştirebilirsin; sonuç değişmez. İşlem birleşmeli değilse — çıkarma gibi — bu bölme yasaktır ve indirgeme sırayla yürümek zorundadır.
 
-Birim eleman da aynı tabloda bir yer tutar: boş parçanın sonucudur. Bir işçiye boş bir dilim düştüğünde ne döndüreceği sorusunun cevabı birim elemandır. Yani "bu indirgeme paralelleştirilebilir mi?" sorusunun teknik hâli "bu işlem bir monoid mi kuruyor?" sorusudur.
+Birim eleman da aynı tabloda bir yer tutar: boş parçanın sonucudur. Bir işçiye boş bir dilim düştüğünde ne döndüreceği sorusunun cevabı birim elemandır. Yani "bu indirgeme paralelleştirilebilir mi?" sorusunun teknik hâli "bu işlem birleşmeli mi?" sorusudur; boş dilimlere de bir cevap vermek gerekiyorsa soru "bu işlem bir monoid mi kuruyor?" sorusuna dönüşür. Tam sayılarda en büyüğü bulmanın birim elemanı yoktur, ama boş olmayan parçalara bölünerek yine paralel yürür.
 
 İkinci somut örnek XOR'dur. n bitlik diziler XOR altında gruptur; birim eleman sıfır dizisi, her elemanın tersi ise kendisidir. Bu tek cümle, XOR tabanlı eşlik biti (parity), yedekleme disklerindeki kurtarma ve "aynı şeyle iki kez XOR'la, başladığın yere dön" numarasının hepsini birden açıklar.
 
@@ -116,7 +116,7 @@ Bir sınır örneği tanımın hangi koşulunun gerçekten çalıştığını g�
 
 ## Devre sadeleştirme
 
-Boolean cebirinin en görünür karşılığı devre tasarımıdır. Devre literatüründe ∨ yerine + ve ∧ yerine · yazılır, tümleyen ise üs işaretiyle gösterilir: x′. Bir Boolean fonksiyonunu daha az kapıyla gerçekleştirmek, doğrudan daha ucuz, daha küçük ve daha hızlı donanım demektir.
+Boolean cebirinin en görünür karşılığı devre tasarımıdır. Devre literatüründe ∨ yerine + ve ∧ yerine · yazılır, tümleyen ise üs işaretiyle gösterilir: x′. Bir Boolean fonksiyonunu daha az kapıyla gerçekleştirmek, doğrudan daha ucuz ve daha küçük donanım demektir; hız ise devrenin derinliğine bağlıdır.
 
 **Problem.** F(x, y) = x·y + x·y′ + x′·y fonksiyonunu sadeleştir ve kazancı say.
 

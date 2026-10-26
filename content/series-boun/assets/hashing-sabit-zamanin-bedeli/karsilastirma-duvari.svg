@@ -24,8 +24,8 @@
   <text x="105" y="127" font-size="13" text-anchor="middle" fill="var(--text)">k &lt; x₂ ?</text>
   <text x="235" y="127" font-size="13" text-anchor="middle" fill="var(--text)">k &lt; x₃ ?</text>
 
-  <text x="118" y="100" font-size="13" text-anchor="middle" fill="var(--text-faint)">evet</text>
-  <text x="226" y="100" font-size="13" text-anchor="middle" fill="var(--text-faint)">hayır</text>
+  <text x="118" y="92" font-size="13" text-anchor="middle" fill="var(--text-faint)">evet</text>
+  <text x="226" y="92" font-size="13" text-anchor="middle" fill="var(--text-faint)">hayır</text>
 
   <rect x="58" y="171" width="34" height="24" fill="var(--surface)" stroke="var(--border)" stroke-width="1.3" />
   <rect x="118" y="171" width="34" height="24" fill="var(--surface)" stroke="var(--border)" stroke-width="1.3" />

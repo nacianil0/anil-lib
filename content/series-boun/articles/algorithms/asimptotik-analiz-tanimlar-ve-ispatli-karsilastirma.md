@@ -13,7 +13,7 @@ tags:
   - omega
   - alt-sinir
   - karar-agaci
-content_hash: sha256:e2ef4477b67064e3f10bd080012e655cbe561f32b892e4559e38df95a0bb81f9
+content_hash: sha256:73384e6c67ff2d7830e8c277c5e7905d8e4e88b07d9c6c3b2d643be74c8826ed
 classification_version: 1
 classification_batch: 5
 ---
@@ -65,7 +65,7 @@ Big-O yalnızca yukarıdan sınırlar. Karmaşıklık makalesinde uyarmıştık:
 
 **Tanım.** f(n) = Ω(g(n)) demek, öyle bir c > 0 ve n₀ vardır ki her n ≥ n₀ için f(n) ≥ c · g(n) demektir. Yani Ω bir **alt sınırdır**.
 
-**Tanım.** f(n) = Θ(g(n)) demek, hem f = O(g) hem de f = Ω(g) demektir. Açık yazılışıyla: öyle c₁, c₂ > 0 sabitleri ve öyle bir n₀ vardır ki her n ≥ n₀ için c₁ · g(n) ≤ f(n) ≤ c₂ · g(n). Yani Θ, f'yi g'nin iki katı arasına **sıkıştırır**; "sabit çarpan dışında eşit" demenin kısa yolu budur.
+**Tanım.** f(n) = Θ(g(n)) demek, hem f = O(g) hem de f = Ω(g) demektir. Açık yazılışıyla: öyle c₁, c₂ > 0 sabitleri ve öyle bir n₀ vardır ki her n ≥ n₀ için c₁ · g(n) ≤ f(n) ≤ c₂ · g(n). Yani Θ, f'yi g'nin iki sabit katı arasına **sıkıştırır**; "sabit çarpan dışında eşit" demenin kısa yolu budur.
 
 Üçünü tek bir resimde görmek en kalıcı olanıdır. Şekil 1 aynı f fonksiyonunu üç sınırla birlikte gösteriyor.
 
@@ -111,7 +111,7 @@ Asimptotik gösterim sabitleri ve eşikleri **bilerek** atar. Bu bir kusur deği
 
 En bilinen örnek şu: 1000n mi küçüktür, n² mi? Asimptotik olarak 1000n kazanır, çünkü 1000n = o(n²). Ama iki fonksiyon tam olarak n = 1000'de kesişir; n = 100 iken 1000n = 100.000 ve n² = 10.000, yani n² on kat küçüktür. Girdilerin hep 1000'in altında olduğu bir uygulamada "asimptotik olarak daha iyi" olan algoritma her zaman daha yavaş çalışır.
 
-Daha uç bir örnek, logaritma ile küçük kuvvetleri karşılaştırır. log₂ n = o(n^0,1) doğrudur — logaritma her kuvvetten yavaştır. Ama kesişim n ≈ 10¹⁷,⁷ civarındadır. n = 10¹⁵'te log₂ n ≈ 49,8 iken n^0,1 ≈ 31,6'dır; yani logaritma hâlâ **daha büyüktür**. Ancak n = 10²⁰ dolayında sıralama tersine döner: 66,4'e karşı 100. Evrende o kadar çok girdi yok. Asimptotik olarak doğru olan bir cümle, pratikte hiçbir zaman geçerli olmayabilir.
+Daha uç bir örnek, logaritma ile küçük kuvvetleri karşılaştırır. log₂ n = o(n^0,1) doğrudur — logaritma her kuvvetten yavaştır. Ama kesişim n ≈ 10¹⁷,⁷ civarındadır. n = 10¹⁵'te log₂ n ≈ 49,8 iken n^0,1 ≈ 31,6'dır; yani logaritma hâlâ **daha büyüktür**. Ancak n = 10²⁰ dolayında sıralama tersine döner: 66,4'e karşı 100. Kesişimdeki n ≈ 5 × 10¹⁷ öğe, öğe başına tek bayt saysan bile yaklaşık 500 petabayt eder; tek bir algoritmaya bu boyutta girdi pratikte neredeyse hiç verilmez. Asimptotik olarak doğru olan bir cümle, pratikte hiçbir zaman geçerli olmayabilir.
 
 Şekil 2 bu iki kesişimi ve büyüme sınıflarının sıralamasını bir arada gösteriyor.
 
@@ -153,11 +153,11 @@ Takip zinciri genellikle şu üç halkadır: tanım → sınır durumu → trade
 
 Artık ölçüyü tanımladık. Sıradaki soru, o ölçüyü özyinelemeli algoritmalara nasıl uygulayacağımız.
 
-Bu fazın ikinci makalesi **yinelemeleri** ele alıyor. Tümevarım makalesinde Hanoi kulelerinin T(n) = 2T(n − 1) + 1 bağıntısını kurmuş, sıralama makalesinde birleştirmeli sıralamanın T(n) = 2T(n/2) + Θ(n) bağıntısını yazmıştık; ikisini de çözmeden bıraktık. Sıradaki makale bu bağıntıları çözmenin üç yolunu kuruyor: tahmin edip tümevarımla doğrulama, bağıntıyı açarak deseni yakalama ve özyineleme ağacıyla seviye seviye toplama. Sonunda da bunların çoğunu tek hamlede halleden **Master Teoremi** geliyor — CMPE300'ün katalog tanımında adı geçen araç tam olarak budur. Orada, bu makalede kurduğumuz O, Ω ve Θ tanımları teoremin üç durumunu ayıran ölçütler olarak doğrudan iş görecek.
+Sıradaki makale **yinelemeleri** ele alıyor. Tümevarım makalesinde Hanoi kulelerinin T(n) = 2T(n − 1) + 1 bağıntısını kurup çözümünün 2ⁿ − 1 olduğunu tümevarımla doğrulamış, sıralama makalesinde birleştirmeli sıralamanın T(n) = 2T(n/2) + Θ(n) bağıntısını özyineleme ağacıyla elle çözmüştük; ama bu tür bağıntıları çözmenin genel bir yöntemini henüz kurmadık. O makale bu bağıntıları çözmenin üç yolunu kuruyor: tahmin edip tümevarımla doğrulama, bağıntıyı açarak deseni yakalama ve özyineleme ağacıyla seviye seviye toplama. Sonunda da bunların çoğunu tek hamlede halleden **Master Teoremi** geliyor — CMPE300'ün ders çıktılarında adı geçen araç tam olarak budur. Orada, bu makalede kurduğumuz O, Ω ve Θ tanımları teoremin üç durumunu ayıran ölçütler olarak doğrudan iş görecek.
 
 ## Kaynakça
 
-- Lehman, E., Leighton, F. T. & Meyer, A. R. *Mathematics for Computer Science* (ders notları), 13.7 (Asymptotic Notation) — Tanım 13.7.1 küçük o'nun limitle tanımı; Lemma 13.7.2 (a < b iken xᵃ = o(xᵇ)), Lemma 13.7.3 (log x = o(xᵋ)) ve Sonuç 13.7.4 (a > 1 iken xᵇ = o(aˣ)); Tanım 13.7.5 Big-O'nun lim sup ile verilmiş hâli ve limitin var olmadığı durumların neden kapsanması gerektiği (oran 3 ile 5 arasında salınan örnek); Tanım 13.7.9 Big-O'nun sabit ve eşikle verilen standart tanımı; Tanım 13.7.13 Theta; Tanım 13.7.15 Omega ve Tanım 13.7.16 küçük omega; 13.7.4 Pitfalls with Asymptotic Notation — üstel yanılgı (4ˣ = O(2ˣ) sanmak), sabit karışıklığı ve Σi = O(n) yanlış teoremi, eşitlik yanılgısı ve "O(f) = g yazmayacağız" kuralı, "en az O(n²)" ifadesinin neden hatalı olduğu ve doğrusunun Ω olması. MIT OpenCourseWare 6.042J. [Bağlantı](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/)
+- Lehman, E., Leighton, F. T. & Meyer, A. R. *Mathematics for Computer Science* (ders notları), 13.7 (Asymptotic Notation) — Tanım 13.7.1 küçük o'nun limitle tanımı; Lemma 13.7.2 (a < b iken xᵃ = o(xᵇ)), Lemma 13.7.3 (log x = o(xᵋ)) ve Sonuç 13.7.4 (a > 1 iken xᵇ = o(aˣ)); Tanım 13.7.5 Big-O'nun lim sup ile verilmiş hâli ve limitin var olmadığı durumların neden kapsanması gerektiği (oran 3 ile 5 arasında salınan örnek); Tanım 13.7.9 Big-O'nun sabit ve eşikle verilen standart tanımı; Tanım 13.7.13 Theta; Tanım 13.7.15 Omega ve Tanım 13.7.16 küçük omega; 13.7.4 Pitfalls with Asymptotic Notation — üstel yanılgı (4ˣ = O(2ˣ) sanmak), sabit karışıklığı ve Σi = O(n) yanlış teoremi, eşitlik yanılgısı ve "O(f) = g yazmayacağız" kuralı; 13.7.5 Omega — "en az O(n²)" ifadesinin neden hatalı olduğu ve doğrusunun Ω olması. MIT OpenCourseWare 6.042J. [Bağlantı](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/)
 - Sedgewick, R. & Wayne, K. *Algorithms*, dördüncü baskı, 1.4 (Analysis of Algorithms) — çalışma süresinin ifade başına maliyet ve çalışma sıklığı çarpımıyla modellenmesi; tilde yaklaşımının tanımı (g(N) ~ f(N), oranın 1'e yakınsaması) ve düşük dereceli terimlerin atılması; büyüme mertebesi sınıflandırmasının N^b log^c N biçiminde toplanması; maliyet modelinin açıkça tanımlanması gereği; girdiye bağımlılıkla başa çıkmanın üç yolu — girdi modeli varsaymak, en kötü durum garantisi vermek ve rastgeleleştirme — ve amortize analizin işlem dizisi üzerinde en kötü durum garantisi vermesi. Addison-Wesley. [Bağlantı](https://algs4.cs.princeton.edu/14analysis/)
 - Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. *Introduction to Algorithms*, dördüncü baskı, 3. bölüm (Characterizing Running Times — O, Ω ve Θ gösterimlerinin formal tanımları ve asimptotik gösterimle çalışma kuralları). MIT Press, 2022. [Bağlantı](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 - Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *CMPE300 — Analysis of Algorithms* (ders çıktıları "the theory of complexity analysis" ve "lower bound theory" başlıklarını içerir; bu makalenin resmî dayanağı odur). Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/courses/cmpe300/)

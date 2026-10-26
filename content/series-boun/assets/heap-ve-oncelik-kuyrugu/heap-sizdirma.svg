@@ -39,7 +39,7 @@
   <text x="60" y="255" font-size="14" text-anchor="middle" fill="var(--text)">0</text>
 
   <text x="86" y="255" font-size="13" fill="var(--text-muted)">yeni yaprak</text>
-  <text x="20" y="292" font-size="13" fill="var(--text-muted)">0 üç takasla köke çıkar; yol uzunluğu = yükseklik</text>
+  <text x="20" y="292" font-size="13" fill="var(--text-muted)">0 üç adımda köke çıkar; yol uzunluğu = yükseklik</text>
   <text x="20" y="314" font-size="13" fill="var(--text-muted)">sonuç: 0, 1, 2, 3, 4, 9, 5, 7</text>
 
   <line x1="530" y1="85" x2="470" y2="140" stroke="var(--border)" stroke-width="1.5" />
@@ -65,8 +65,8 @@
   <text x="560" y="200" font-size="14" text-anchor="middle" fill="var(--text)">9</text>
 
   <text x="586" y="200" font-size="13" fill="var(--text-muted)">9 &gt; 5: durur</text>
-  <text x="380" y="250" font-size="13" fill="var(--text)">küçük olan çocukla takas etmek zorunludur:</text>
-  <text x="380" y="272" font-size="13" fill="var(--text-muted)">büyükle takas edilirse değişmez onarılmaz</text>
+  <text x="380" y="250" font-size="13" fill="var(--text)">küçük olan çocukla yer değiştirmek zorunludur:</text>
+  <text x="380" y="272" font-size="13" fill="var(--text-muted)">büyükle yer değiştirilirse değişmez onarılmaz</text>
   <text x="380" y="294" font-size="13" fill="var(--text-muted)">sonuç: 2, 3, 5, 7, 4, 9</text>
 
   <text x="20" y="342" font-size="13" fill="var(--text-muted)">iki yordam da tek bir kök–yaprak yolu üzerinde yürür; maliyet en fazla yükseklik kadardır</text>

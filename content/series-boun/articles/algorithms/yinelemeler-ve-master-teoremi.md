@@ -12,17 +12,17 @@ tags:
   - ozyineleme-agaci
   - bol-ve-yonet
   - analiz
-content_hash: sha256:b8a4a612802c9bcc812d4ae7794cca176ccfb54d9f250a36a3817f87cf7cd40e
+content_hash: sha256:5f7da3512cbb176ff5d684d5f92530d608b5974e500719c75b5c3c057a9605ce
 classification_version: 1
 classification_batch: 5
-revised_at: "2026-09-25"
-revision_note: "Master Teoremi'nin CLRS 3. ve 4. baskılarındaki farkı ile düzenlilik koşulunun polinomlarda neden kendiliğinden sağlandığı eklendi."
+revised_at: "2026-10-26"
+revision_note: "Omurgadaki açılım düzeltildi: T(1) = 1 tabanıyla 2T(n/2) + n bağıntısı n log₂ n + n verir; n log₂ n − n + 1 tam karşılaştırma sayısının sonucudur."
 ---
 ## Özyinelemenin faturası
 
 Özyinelemeli bir algoritmanın maliyetini yazmak kolaydır. Algoritma kendini çağırıyorsa, maliyeti de kendi cinsinden yazılır: bir alt problemin maliyeti çarpı kaç alt problem, artı bölme ve birleştirme için harcanan iş. Ortaya çıkan şeye **yineleme bağıntısı (recurrence)** denir.
 
-Bu seride iki tanesini zaten yazdık ve ikisini de çözmeden bıraktık. Tümevarım makalesinde Hanoi kulelerinin hamle sayısı için T(n) = 2T(n − 1) + 1 bağıntısını kurduk. Sıralama makalesinde birleştirmeli sıralamanın T(n) = 2T(n/2) + Θ(n) bağıntısını yazdık ve çözümünü "özyineleme ağacıyla görülür" diyerek elle gösterdik. Önceki makale ölçüyü tanımladı; artık bu bağıntıları düzgün çözebiliriz.
+Bu seride iki tanesini zaten yazdık ve ikisini de çözdük, ama kullandığımız yolları henüz genel bir yöntem olarak kurmadık. Tümevarım makalesinde Hanoi kulelerinin hamle sayısı için T(n) = 2T(n − 1) + 1 bağıntısını kurduk. Sıralama makalesinde birleştirmeli sıralamanın T(n) = 2T(n/2) + Θ(n) bağıntısını yazdık ve çözümünü "özyineleme ağacıyla görülür" diyerek elle gösterdik. Önceki makale ölçüyü tanımladı; artık bu bağıntıları düzgün çözebiliriz.
 
 Yineleme bir sayı dizisini **tanımlar** ama dizinin nasıl büyüdüğünü söylemez. "Yüzüncü terim kaç?" ya da "asimptotik büyüme sınıfı ne?" sorularının cevabı bağıntıya bakarak görülmez. Bu yüzden bir yinelemeyi **çözmek**, onu kapalı bir ifadeye — ya da algoritma analizi için çoğu zaman yeterli olan bir Θ sınıfına — dönüştürmek demektir.
 
@@ -91,7 +91,7 @@ Asıl güç, seviye toplamlarının **hangi yönde gittiğine** bakmakta. g(n) =
 
 > **Sesli anlat:** "T(n) = 2T(n/2) + n yinelemesini tahtada nasıl çözersin? Doksan saniye."
 >
-> İyi bir cevabın omurgası: "Özyineleme ağacı çizerim. Kök n boyutunda ve n birim iş yapar. Altında iki düğüm var, her biri n/2 boyutunda ve toplam n birim iş yapıyor. Bir alt seviyede dört düğüm, her biri n/4, yine toplam n. Yani her seviyedeki toplam iş n'dir; bu, alt problem sayısının ikiye katlanmasıyla boyutun yarıya inmesinin birbirini götürmesindendir. Boyut her seviyede yarılandığı için derinlik log₂ n'dir; yaprak sayısı da n'dir. Toplam iş, seviye başına n çarpı log₂ n + 1 seviye, yani Θ(n log n). İstersen aynı sonucu bağıntıyı açarak da alırım: k adım açınca T(n) = 2ᵏT(n/2ᵏ) + kn − 2ᵏ + 1 çıkar ve k = log₂ n koyunca kapalı ifade n log₂ n − n + 1 olur. Bu, birleştirmeli sıralamanın en kötü durumdaki karşılaştırma sayısıdır."
+> İyi bir cevabın omurgası: "Özyineleme ağacı çizerim. Kök n boyutunda ve n birim iş yapar. Altında iki düğüm var, her biri n/2 boyutunda ve toplam n birim iş yapıyor. Bir alt seviyede dört düğüm, her biri n/4, yine toplam n. Yani her seviyedeki toplam iş n'dir; bu, alt problem sayısının ikiye katlanmasıyla boyutun yarıya inmesinin birbirini götürmesindendir. Boyut her seviyede yarılandığı için derinlik log₂ n'dir; yaprak sayısı da n'dir. Toplam iş, seviye başına n çarpı log₂ n + 1 seviye, yani Θ(n log n). İstersen aynı sonucu bağıntıyı açarak da alırım: k adım açınca T(n) = 2ᵏT(n/2ᵏ) + kn çıkar ve k = log₂ n, T(1) = 1 koyunca ağaçtaki toplamın aynısı, n log₂ n + n olur. Birleştirme işini tam karşılaştırma sayısı olan n − 1 ile ve T(1) = 0 tabanıyla yazarsam açılıma −2ᵏ + 1 terimi eklenir ve kapalı ifade n log₂ n − n + 1 olur. Bu, birleştirmeli sıralamanın en kötü durumdaki karşılaştırma sayısıdır."
 
 ## Master Teoremi
 
@@ -123,11 +123,11 @@ Teoremi tanıdık yinelemelere uygulayalım.
 
 Üçüncü satırın düzenlilik koşulunu denetleyelim, çünkü mülakatta atlanan yer tam olarak orasıdır: a · g(n/b) = 2 · (n/2)² = n²/2 ve bu, c = 3/4 alınırsa c · g(n) = 3n²/4'ten küçüktür; c < 1 olduğu için koşul sağlanır.
 
-Bu denetimin neden geçtiğini bilmek, onu ezbere yapmaktan daha değerlidir. g(n) = nᵈ biçiminde bir polinomsa a · g(n/b) = (a/bᵈ) · g(n) olur; durum 3'ün ilk koşulu d > log_b a demektir, bu da a/bᵈ < 1 demektir. Yani **polinom bir g için düzenlilik koşulu kendiliğinden sağlanır**: a/bᵈ ile 1 arasındaki herhangi bir c iş görür ve yukarıdaki 3/4 de bu aralıktadır (orada a/bᵈ = 1/2). Koşulun gerçekten bir şey elediği yer, büyümesi salınan fonksiyonlardır. T(n) = T(n/2) + n(2 − cos n) yinelemesinde g(n) ≥ n olduğu için polinom koşulu ε = 1 ile sağlanır; ama cos n'in 1'e, cos(n/2)'nin −1'e yaklaştığı n değerlerinde g(n/2), g(n)'in yaklaşık 3/2 katına çıkar (kendi hesabım: cos(n/2) = −1 iken cos n = 2cos²(n/2) − 1 = 1 olur, dolayısıyla g(n/2) = (n/2) · 3 = 3n/2 ve g(n) = n) ve 1'den küçük hiçbir c işe yaramaz. Teorem bu yineleme hakkında hiçbir şey söylemez.
+Denetimin neden geçtiği genel olarak da görülebilir. g(n) = nᵈ biçiminde bir polinomsa a · g(n/b) = (a/bᵈ) · g(n) olur; durum 3'ün ilk koşulu d > log_b a demektir, bu da a/bᵈ < 1 demektir. Yani **polinom bir g için düzenlilik koşulu kendiliğinden sağlanır**: a/bᵈ ile 1 arasındaki herhangi bir c iş görür ve yukarıdaki 3/4 de bu aralıktadır (orada a/bᵈ = 1/2). Koşulun gerçekten bir şey elediği yer, büyümesi salınan fonksiyonlardır. T(n) = T(n/2) + n(2 − cos n) yinelemesinde g(n) ≥ n olduğu için polinom koşulu ε = 1 ile sağlanır; ama cos n'in 1'e, cos(n/2)'nin −1'e yaklaştığı n değerlerinde g(n/2), g(n)'in yaklaşık 3/2 katına çıkar (kendi hesabım: cos(n/2) = −1 iken cos n = 2cos²(n/2) − 1 = 1 olur, dolayısıyla g(n/2) = (n/2) · 3 = 3n/2 ve g(n) = n) ve 1'den küçük hiçbir c işe yaramaz. Teorem bu yineleme hakkında hiçbir şey söylemez.
 
 Bir de sürüm farkı var ve mülakatçının ezberindeki teorem seninkiyle aynı olmayabilir. Yukarıdaki ifade, MIT'nin *Mathematics for Computer Science* notlarındaki ve CLRS'in dördüncü baskısındaki biçimdir: durum 2, herhangi bir k ≥ 0 için logᵏ n çarpanına izin verir. CLRS'in üçüncü baskısında ve ona dayanan birçok ders notunda durum 2 yalnızca k = 0 içindir, yani g(n) = Θ(n^(log_b a)) ister. Fark somut bir yinelemede görünür: T(n) = 2T(n/2) + n log n, üçüncü baskıya göre durum 2 ile 3 arasındaki boşluğa düşer ve kitap "teorem uygulanmaz" der; dördüncü baskıya göre k = 1 ile durum 2'dir ve sonuç Θ(n log² n)'dir. Düzenlilik koşulu iki baskıda da aynıdır: bir c < 1 ve yeterince büyük n için a · g(n/b) ≤ c · g(n). Genişletilmiş durum 2'yi kullanıyorsan bunu söyle: "logaritma çarpanlı genel hâliyle durum 2".
 
-İkinci ve üçüncü satırın karşılaştırması özellikle öğreticidir. İkisinde de a = 2 ve b = 2; yani aynı bölme yapısı. Fark yalnızca birleştirme maliyetinde ve sonuç Θ(n log n) ile Θ(n²) arasında değişiyor. Aynı fark gerçek bir algoritmada da görülür: iki yarının konveks kabuklarını birleştirirken bütün nokta çiftlerine bakan naif yöntem T(n) = 2T(n/2) + Θ(n²) verir ve Θ(n²) çıkar; iki parmakla ilerleyen doğrusal birleştirme T(n) = 2T(n/2) + Θ(n) verir ve Θ(n log n) çıkar. Böl-yönet algoritmalarında iyileştirme neredeyse her zaman **birleştirme adımındadır**.
+İkinci ve üçüncü satırın karşılaştırması özellikle öğreticidir. İkisinde de a = 2 ve b = 2; yani aynı bölme yapısı. Fark yalnızca birleştirme maliyetinde ve sonuç Θ(n log n) ile Θ(n²) arasında değişiyor. Aynı fark gerçek bir algoritmada da görülür: iki yarının konveks kabuklarını birleştirirken bütün nokta çiftlerine bakan naif yöntem T(n) = 2T(n/2) + Θ(n²) verir ve Θ(n²) çıkar; iki parmakla ilerleyen doğrusal birleştirme T(n) = 2T(n/2) + Θ(n) verir ve Θ(n log n) çıkar. Bu iki örnekte iyileştirmenin tamamı **birleştirme adımındadır**; tablonun son iki satırı ise aynı birleştirme maliyetiyle alt problem sayısını dörtten üçe indirmenin de sınıfı değiştirdiğini gösterir.
 
 > **Sesli anlat:** "Master Teoreminin üç durumunu ne belirler ve teoremi nasıl hatırlıyorsun? Doksan saniye."
 >
@@ -157,9 +157,9 @@ Alt problem **sayısına** duyarlılık da yüksektir. T(n) = a·T(n/2) + n − 
 
 ## Mülakatta nasıl görünür
 
-Özyinelemeli bir algoritma anlattıktan sonra gelen soru neredeyse her zaman aynıdır: "Maliyeti ne?" Doğru cevabın sırası sabittir. Önce bağıntıyı **yaz** — a kaç, b kaç, birleştirme kaça mal oluyor. Sonra çöz ve hangi yöntemi kullandığını söyle. Sonucu Θ ile ver, O ile değil; önceki makaledeki ayrım burada iş görüyor.
+Özyinelemeli bir algoritma anlattıktan sonra gelecek doğal soru şudur: "Maliyeti ne?" Doğru cevabın sırası sabittir. Önce bağıntıyı **yaz** — a kaç, b kaç, birleştirme kaça mal oluyor. Sonra çöz ve hangi yöntemi kullandığını söyle. Sonucu Θ ile ver, O ile değil; önceki makaledeki ayrım burada iş görüyor.
 
-Master Teoremini kullanacaksan hangi durumda olduğunu ve **neden** o durumda olduğunu söyle. "Durum 2, çünkü g(n) tam olarak n^(log_b a) mertebesinde" cümlesi, teoremi ezberlemekle anlamak arasındaki farkı gösterir. Üçüncü durumda düzenlilik koşulunu denetlediğini de belirt.
+Master Teoremini kullanacaksan hangi durumda olduğunu ve **neden** o durumda olduğunu söyle. "Durum 2, çünkü g(n) tam olarak n^(log_b a) mertebesinde" cümlesi, hangi koşulun sağlandığını da söyler. Üçüncü durumda düzenlilik koşulunu denetlediğini de belirt.
 
 Takip zinciri çoğu zaman üç halkadır: "Bu yinelemenin çözümü ne?" → "Teorem burada neden uygulanıyor, hangi koşulu sağlıyorsun?" → "Peki T(n) = T(n − 1) + n ya da T(n) = 2T(n/2) + n log n olsaydı?" Son halkada ya teoremin sustuğunu görüp açarak çözmeye dönersin ya da hangi sürümü kullandığını söyleyerek genişletilmiş durum 2'yi uygularsın.
 
@@ -171,7 +171,7 @@ Sık yapılan dört hata var. Master Teoremini biçime uymayan bir bağıntıya 
 
 Artık bir algoritmanın **ne kadar sürdüğünü** hesaplayabiliyoruz. Cevaplanmamış soru şu: doğru sonucu verdiğini nereden biliyoruz?
 
-Bu seride doğruluğu şimdiye kadar hep tümevarımla savunduk ve bu, özyinelemeli algoritmalar için doğal bir araçtı: özyinelemenin yapısı tümevarımın yapısıyla birebir örtüşüyordu. Ama gerçek kodun büyük kısmı özyinelemeli değil, **döngülüdür**. Sıradaki makale, tümevarımın döngüler için giydiği kıyafeti kuruyor: **döngü değişmezi**. Üç adımı vardır — başlatma, koruma ve sonuçlanma — ve mantık makalesinde tanımladığımız boş doğruluk kavramı, başlatma adımının neden çoğu zaman bedava geldiğini açıklayacak. Eklemeli sıralamanın ve ikili aramanın doğruluğunu bu araçla, satır satır ispatlayacağız.
+Bu seride doğruluğu şimdiye kadar hep tümevarımla savunduk ve bu, özyinelemeli algoritmalar için doğal bir araçtı: özyinelemenin yapısı tümevarımın yapısıyla birebir örtüşüyordu. Ama gerçek kodun büyük kısmı özyinelemeli değil, **döngülüdür**. Sıradaki makale, tümevarımın döngüler için giydiği kıyafeti kuruyor: **döngü değişmezi**. Üç adımı vardır — başlatma, koruma ve sonuçlanma — ve mantık makalesinde tanımladığımız boş doğruluk kavramı, başlatma adımının neden çoğu zaman kendiliğinden sağlandığını açıklayacak. Eklemeli sıralamanın ve ikili aramanın doğruluğunu bu araçla, satır satır ispatlayacağız.
 
 ## Kaynakça
 

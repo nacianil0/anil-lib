@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 404" role="img" aria-label="Uzak depodaki (origin) commit grafiği; oklar Git'in yönünde: her commit ebeveynini gösterir, zaman soldan sağa. fd3505d, akış, 10.05'te main. Üstte f465c47, #41 head, dal feature/kdv-gosterimi; altta 45230c0, #42 head, dal feature/e-arsiv; ikisinin de ebeveyni fd3505d. 6b97c42, PR #41, 11.00'de main, ebeveynleri fd3505d ve f465c47. Vurgulu e97fb2e, PR #42, 11.30, test 1, ebeveynleri 6b97c42 ve 45230c0; main dalı onu gösteriyor. Notlar: #42'nin kontrolü, 10.05: fd3505d + 45230c0 → test 0; main, 11.30: 6b97c42 + 45230c0 → test 1; bu birleşimi hiçbir PR kontrolü görmedi.">
+  <defs>
+    <marker id="ea2-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">uzak depo (origin)</text>
+  <rect x="200" y="16" width="175" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="212" y="34" font-size="13" fill="var(--text)">feature/kdv-gosterimi</text>
+  <line x1="248" y1="42" x2="248" y2="53" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+
+  <rect x="200" y="56" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="212" y="73" font-size="13" font-weight="bold" fill="var(--text)">f465c47</text>
+  <text x="212" y="89" font-size="13" fill="var(--text-muted)">#41 head</text>
+
+  <rect x="24" y="136" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="36" y="153" font-size="13" font-weight="bold" fill="var(--text)">fd3505d</text>
+  <text x="36" y="169" font-size="13" fill="var(--text-muted)">akış</text>
+  <text x="24" y="196" font-size="13" fill="var(--text-muted)">10.05'te main</text>
+
+  <rect x="200" y="216" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="212" y="233" font-size="13" font-weight="bold" fill="var(--text)">45230c0</text>
+  <text x="212" y="249" font-size="13" fill="var(--text-muted)">#42 head</text>
+  <line x1="248" y1="266" x2="248" y2="259" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <rect x="200" y="266" width="132" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="212" y="284" font-size="13" fill="var(--text)">feature/e-arsiv</text>
+
+  <rect x="376" y="136" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="388" y="153" font-size="13" font-weight="bold" fill="var(--text)">6b97c42</text>
+  <text x="388" y="169" font-size="13" fill="var(--text-muted)">PR #41</text>
+  <text x="388" y="126" font-size="13" fill="var(--text-muted)">11.00'de main</text>
+
+  <rect x="570" y="100" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="582" y="118" font-size="13" fill="var(--text)">main</text>
+  <line x1="598" y1="126" x2="598" y2="133" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <rect x="552" y="136" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="564" y="153" font-size="13" font-weight="bold" fill="var(--text)">e97fb2e</text>
+  <text x="564" y="169" font-size="13" fill="var(--text)">PR #42</text>
+  <text x="552" y="196" font-size="13" fill="var(--accent)">11.30, test 1</text>
+
+  <line x1="200" y1="84" x2="124" y2="138" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <line x1="200" y1="228" x2="124" y2="174" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <line x1="376" y1="156" x2="124" y2="156" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <line x1="376" y1="146" x2="300" y2="92" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <line x1="552" y1="156" x2="476" y2="156" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+  <line x1="552" y1="170" x2="300" y2="232" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea2-ok)" />
+
+  <rect x="16" y="314" width="688" height="56" rx="6" fill="var(--surface-muted)" stroke="none" />
+  <text x="28" y="336" font-size="13" fill="var(--cool)">#42'nin kontrolü, 10.05: fd3505d + 45230c0 → test 0</text>
+  <text x="28" y="358" font-size="13" fill="var(--accent)">main, 11.30: 6b97c42 + 45230c0 → test 1; bu birleşimi hiçbir PR kontrolü görmedi</text>
+  <text x="16" y="392" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde: her commit ebeveynini gösterir · zaman soldan sağa</text>
+</svg>

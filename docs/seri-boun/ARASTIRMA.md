@@ -6,7 +6,10 @@
 > curriculum/course catalog/prerequisite/ders materyali, (3) standart textbook ve güvenilir
 > akademik kaynak, (4) açıkça etiketlenmiş informal/legacy sinyal.
 
-Erişim tarihi: **2026-09-13** (ilk bakım run'ı: on resmî sayfa yeniden çekildi ve §1'deki
+Erişim tarihi: **2026-10-26** (bakım run'ı 3: on bir resmî sayfa ve resmî Türkçe M.Sc. sayfası
+yeniden çekildi, içerik değişmemişti; makale 1'deki bir okuma yanlışı düzeltildi; 68 atıf adresi ve beş
+DOI tarandı; bütün korpus olgu denetiminden geçti — §21). Önceki bakımlar: 2026-09-26 (§20) ve
+2026-09-13 (ilk bakım run'ı: on resmî sayfa yeniden çekildi ve §1'deki
 alıntılarla birebir aynı bulundu; **beş açık kaynak borcunun beşi de kapandı** — §19). Bir önceki tam
 doğrulama **2026-09-12**'dir (Batch 13, serinin kapanış run'ı: **M.Sc. programı sayfası ve lisans
 müfredatı sayfası** son bir kez çekildi, §1'deki alıntılarla birebir aynı bulundu — §18). Kapsamı
@@ -41,6 +44,9 @@ URL: <https://cmpe.bogazici.edu.tr/graduate/ms-program/>
   Structures, **CmpE250** Data Structures, **CmpE322** Operating Systems — iki ardışık dönemde,
   en az 2.50 ortalamayla tamamlanmalıdır. **Ek (2026-09-12 doğrulaması, §18):** sayfa CmpE220'nin
   yanına parantez içinde "(equivalent: Discrete Math)" yazıyor.
+  **Ek (2026-10-26, §21.1):** dersler ana programa başlamadan önce alınır ("A student may be asked
+  to take the below courses before starting the Main Program:") ve bu sürede ana programın derslerine
+  kayıt yapılamaz; makale 1 bunu "yüksek lisans dersleriyle birlikte" diye aktarıyordu, düzeltildi.
 
 ### Güncel lisans müfredatı (2025 revizyonu)
 URL: <https://cmpe.bogazici.edu.tr/undergraduate/curriculum/>
@@ -399,10 +405,10 @@ Batch 3'te kaydedilmemiş olan şu bölüm numaraları da doğrulandı:
     "to get faster, need an operation that allows super-constant branching factor"; doğrudan erişim
     dizisi, O(u) alan ve on harfli isimler için 26¹⁰ ≈ 17,6 TB örneği; m < u iken güvercin yuvası
     ilkesiyle hiçbir hash fonksiyonunun birebir olamaması; zincirleme ile açık adresleme; bölme
-    yönteminin sezgisel oluşu ve m'nin ikinin ve onun kuvvetlerinden uzak asal seçilmesi; "if u ≫ n,
+    yönteminin sezgisel oluşu ve m'nin 2'nin ve 10'un kuvvetlerinden uzak asal seçilmesi; "if u ≫ n,
     every hash function will have some input set that will create O(n) size chain"; evrensel aile
     h(a,b)(k) = ((ak + b) mod p) mod m (p > u asal, a ≠ 0), çakışma olasılığının 1/m ile sınırlı
-    olması ve beklenen zincir uzunluğunun 1 + (n − 1)/m çıkması; yük faktörü α = n/m sabitken
+    olması ve h(kᵢ) hücresindeki beklenen zincir uzunluğunun 1 + (n − 1)/m ile sınırlı çıkması; yük faktörü α = n/m sabitken
     beklenen ve (yeniden boyutlandırma varsa) amortize O(1).
   - **Lecture 5: Linear Sorting** — karşılaştırmalı sıralama alt sınırı (yaprak sayısı ≥ n!,
     yükseklik ≥ log(n!) ≥ log((n/2)^(n/2)) = Ω(n log n)) ve "so merge sort is optimal in comparison
@@ -482,7 +488,7 @@ Batch 3'te kaydedilmemiş olan şu bölüm numaraları da doğrulandı:
 - **Doğrusal deneme ortalama deneme sayıları** (Önerme M'den hesaplandı; makale 14'teki tablo):
   α = 0,25 → 1,17 / 1,39; 0,50 → 1,50 / 2,50; 0,75 → 2,50 / 8,50; 0,90 → 5,50 / 50,50;
   0,95 → 10,50 / 200,50; 0,99 → 50,50 / 5.000,50 (isabetli / isabetsiz).
-- **Zincirlemede beklenen zincir uzunluğu** 1 + (n − 1)/m: n = m = 1000 → 1,999; n = m = 10⁶ → 2,000.
+- **Zincirlemede kayıtlı bir anahtarın zincirinin beklenen uzunluğu** 1 + (n − 1)/m: n = m = 1000 → 1,999; n = m = 10⁶ → 2,000.
 - **Karşılaştırma modeli arama alt sınırı** ⌈lg(n+1)⌉ − 1: n = 10³ → 9, n = 10⁶ → 19, n = 10⁹ → 29.
 - **lg(n!) ile n lg n oranı:** n = 10 → 21,8 / 33,2 (0,656); n = 10³ → 8.529 / 9.966 (0,856);
   n = 10⁶ → 18.488.885 / 19.931.569 (0,928). Stirling tarzı alt sınır (n/2)·lg(n/2) gerçekten altta
@@ -1581,8 +1587,7 @@ kaynaklara dayanır. Bütün URL'ler bu run'da HTTP 200 ile çekildi; PDF'ler in
   as we are concerned 'they could go to sleep'") ve tek işlemcili sistemde bekleyenin işlemciyi
   yemesinin neden kabul edilemez olduğu; §3.2: **semafor** tanımı ve **P ile V işlemlerinin**
   birebir tanımları, sıradan bir artırmanın neden yetmediğinin adım adım gösterimi, ikili ile genel
-  semafor ayrımı; §3.3: tek ikili semaforla N sürecin kritik kesim probleminin çözülmesi; §4.1 ve
-  §4.3: **sınırlı tamponun** genel semafor + ikili semaforla çözümü ve okura bırakılan iki
+  semafor ayrımı; §3.3: tek ikili semaforla N sürecin kritik kesim probleminin çözülmesi; §4.1: **sınırsız kapasiteli tamponla** üretici-tüketicinin genel semafor + ikili semaforla çözümü (§4.3'teki sınırlı tampon N ile başlayan üçüncü bir genel semafor, "number of empty positions", ekler ve yorumsuz verilir) ve okura bırakılan iki
   alıştırma ("a) the order of the two V-operations in the producer is immaterial b) the order of
   the two P-operations in the consumer is essential"), çözümün çok üretici/çok tüketiciye doğrudan
   genişlemesi; §6: "deadly embrace" adlandırması.
@@ -2332,7 +2337,7 @@ içindekiler düzeyinde kullanılan kaynaklar aşağıda açıkça öyle işaret
   `free(void *ptr)`'ın boyut parametresi almaması ve çoğu ayırıcının **başlık bloğunu** verilen bloğun
   hemen öncesine koyması, başlıkta boyut ve bütünlük denetimi için **sihirli sayı** bulunması,
   dolayısıyla kullanıcı N bayt istediğinde kütüphanenin **N artı başlık boyutu** kadar parça araması;
-  beş klasik hata — ayırmayı unutmak (bölütleme hatası), yetersiz ayırmak (**tampon taşması**, "the
+  yedi yaygın hata (14.4 Common Errors; son ikisi Freeing Memory Repeatedly / double free ve Calling free() Incorrectly / invalid free) — ayırmayı unutmak (bölütleme hatası), yetersiz ayırmak (**tampon taşması**, "the
   source of many security vulnerabilities"), ilklemeyi unutmak (**ilklenmemiş okuma**), serbest
   bırakmayı unutmak (**bellek sızıntısı**; çöp toplayan dillerde de başvuru duruyorsa sürer), erken
   serbest bırakmak (**sarkan işaretçi**); "IT COMPILED OR IT RAN = IT IS CORRECT" kutusu; süreç
@@ -2353,7 +2358,7 @@ içindekiler düzeyinde kullanılan kaynaklar aşağıda açıkça öyle işaret
   onlara işaret eden işaretçi dizisinin, hemen altında `main(argc, argv)` çağrılmış gibi görünmesini
   sağlayan değerlerin bulunması; yığının altındaki **koruma sayfasının** `PTE_U` temizlenerek
   erişilemez kılınması ve taşmanın sayfa hatası doğurması; adres uzayının tepesindeki **trambolin
-  sayfası**. **4.6 Page faults and page-table tricks** — naif `fork`'un `uvmcopy` ile gerçekten
+  sayfası**. **4.6 Page-fault exceptions** — naif `fork`'un `uvmcopy` ile gerçekten
   kopyalaması; **kopyalarken yazmanın** bütün fiziksel sayfaları paylaşıp `PTE_W` temizleyerek salt
   okunur eşlemesi, yazmada RISC-V'in **store page fault** üretmesi, çekirdeğin yeni sayfa ayırıp
   kopyalaması, girdiyi kopyaya yöneltip yazma iznini açması ve **hatayı doğuran komutun baştan
@@ -2590,7 +2595,7 @@ Alınan bulgular:
   olayı vardır (ilk çalışma + tek tekrar). Makale 41 bunu hem gövdede hem şekilde açıkça
   "kendi genişletmem" diye işaretler ve şekilde içi boş dairelerle ayırır.
 - **Kaynağın sınırı, makalede söylendi:** malzeme kısa olgulardır, bir sistem mekanizması değil;
-  ayrıca çalışma aralıklı **tekrarı** ölçer, aralıklı **geri çağırmayı** değil. Makale ikisini
+  ayrıca çalışmanın tekrar oturumu zaten geri bildirimli geri çağırmadır ("tested twice on each fact, and were shown the correct answer after they responded"), ama bu oturum yeniden okumayla karşılaştırılmaz. Makale ikisini
   birleştiren öneriyi kendi çıkarımı olarak sunar (aralığı kaynaktan al, aranın içini hatırlama
   testiyle doldur).
 
@@ -2619,9 +2624,9 @@ türetilmiştir.
    `A ∧ (B ∨ C)` 1 VEYA + 1 VE = **2 kapı**. Geniş hâl: n terimli ayrık birleşim **n + (n − 1) =
    2n − 1 kapı**, sadeleştirilmişi **(n − 1) + 1 = n kapı**. n = 8 için **15 → 8 kapı**. Derinlik:
    sol taraf 1 + ⌈log₂ 8⌉ = 4, sağ taraf ⌈log₂ 8⌉ + 1 = 4 — **değişmiyor**.
-2. **d-yollu heap, n = 10⁶.** Yükseklik `log_d n`: d = 2 → 19,93 ≈ **20**; d = 4 → 9,97 ≈ **10**;
-   d = 16 → 4,98 ≈ **5**. Aşağı süzülme `(d − 1) · log_d n`: **20**, **29,9 ≈ 30**, **74,7 ≈ 75**.
-   Yukarı yönlü işlem yükseklikle aynıdır: 20, 10, 5.
+2. **d-yollu heap, n = 10⁶.** Yükseklik `log_d n`: d = 2 → 19,93, tam yükseklik ⌊log₂ 10⁶⌋ = **19**; d = 4 → 9,97 ≈ **10**;
+   d = 16 → 4,98 ≈ **5**. Aşağı süzülme `(d − 1) · h`: **19**, **29,9 ≈ 30**, **74,7 ≈ 75**.
+   Yukarı yönlü işlem yükseklikle aynıdır: 19, 10, 5.
 3. **Cepeda oranlarının teyidi.** 3/7 = %42,9; 8/35 = %22,9; 12/70 = %17,1; 27/350 = %7,7 — kaynağın
    verdiği %43, %23, %17, %8 yuvarlamalarıyla tutarlı.
 
@@ -2944,3 +2949,182 @@ SVG kaynağına karşı okudu ve üçünü düzeltti (25 `indirgeme-yonu`, 34 `a
 Markdown tablosunu tekrar eden SVG satırları 9 (`n = 1000` satırı), 16 (iki maliyet satırı) ve 22
 (DP tablosunun saat sütunu) şekillerden çıkarıldı. 12'nin B-ağacı şekli metinle hizalandı (yüz çocuklu
 düğüm: "anahtar 1 … anahtar 99", çocuklarda "99 anahtar").
+
+## 21. Bakım run'ı 3'te doğrulanan kaynaklar ve düzeltmeler (2026-10-26)
+
+Yeni makale üretilmedi. Kanıt dosyaları `artifacts/bakim3-2026-10-26/` altında (`.gitignore`'da):
+`resmi/` (sayfa çekimi, alıntı ve iddia taraması), `linkler/` (atıf ve Crossref taraması), `denetim/`
+(bağımsız denetim betiği `denetim.py` ve öz-sınaması), `olgu/` ve `dogrulama/` (küme denetçileri ve
+şüpheci doğrulayıcıların betikleri), `uygula/` (kabul edilen düzenlemelerin tam listesi ve uygulama
+betikleri), `fark/` (fark incelemesi), `ana/` (ana oturumun bağımsız modelleri), `kapilar/` ve `render/`.
+
+### 21.1 Resmî sayfalar — içerik değişmemiş, bir okuma yanlışı düzeltildi
+
+On bir sayfa ve resmî Türkçe M.Sc. sayfası çekildi, hepsi HTTP 200. Defterdeki 43 alıntı ve olgudan
+41'i birebir; iki istisna beklenen ya da kayıt düzeltmesidir: Wayback 2026-06-07 cümlesi ("10 minutes
+per professor") canlı sayfada yok, ve §19.1'in "`CMPE321` dizesi müfredat sayfasının HTML kaynağında da
+yok" kaydı artık doğru değil — site 2026-09-27'de Hinode'dan Hextra temasına geçti ve her sayfanın
+HTML'inde bütün dersleri listeleyen bir kenar çubuğu var. CMPE321 müfredat metninde ve tablolarında
+hâlâ geçmiyor.
+
+Wayback'te 2026-06-07'den sonra kopya yok; yerine sitenin kaynak deposu (`bouncmpe/bouncmpe.github.io`)
+kullanıldı: ms-program İngilizce metni 2026-06-12'de (`ae3440c944`, §20.1'in "Haziran–Ağustos"u)
+yeniden yazılmış, run 2'den sonra yalnızca ön bilgi alanı ve kayıt bağlantısı değişmiş (`dadde4507c`).
+Aynı commit sayfanın tam resmî Türkçe çevirisini ekledi; içerik İngilizceyle aynı ("en az iki öğretim
+üyesi", "öğretim üyesinin ofisinde 10 veya 15 dakika", "Bilimsel Hazırlık"). Türkçe sayfa da eşiği
+"2.50" yazıyor; 1 ve 41'deki "2.50" bu yüzden resmî yazımın aynısı olarak kaldı.
+
+**Okuma düzeltmesi.** Makale 1, Scientific Prep derslerinin "yüksek lisans dersleriyle birlikte"
+alındığını söylüyordu. Sayfa: "A student may be asked to take the below courses before starting the
+Main Program:" ve "Students cannot register for Main Program courses during Scientific Prep." (Türkçe:
+"ana programa başlamadan önce"). Metin ilk commit'ten beri böyleydi; düzeltildi. §19.1 ikinci cümleyi
+kaydetmişti ama makaleye yansıtılmamıştı. Ayrıca 17 ve 24, master teoreminin ve alt sınır kuramının
+CMPE300'ün "katalog tanımında" geçtiğini söylüyordu; ikisi de yalnızca Course Learning Outcomes'ta
+(§10'un kaydı). Düzeltildi.
+
+Yeni ayrıntılar (kapsam değişikliği yok): CMPE343 AKTS'si müfredatta 6, ders sayfasında 5; CMPE222'nin
+katalog tanımı CMPE321'inkiyle birebir aynı; canlı sayfa yalnızca "Scientific Prep" kısaltmasını
+kullanıyor; üniversitenin başvuru sayfası 2027 Bahar için "Departmental Exams: 25, 28, 29 December 2026"
+diyor ve mülakat biçimi hakkında bilgi vermiyor. Künye etiketleri canlı başlıklara çevrildi: "M.Sc. in
+Computer Engineering" (1, 40, 41) ve "Curriculum 2025" (1).
+
+### 21.2 Atıf taraması — 68 adres, ölü yok
+
+Gövdelerde 68 benzersiz adres var (run 2'den sonra eklenen Kozen & Zaks DOI'siyle). 61'i doğrudan 200
+(ikisi doi.org → linkinghub yönlendirmesi, ikisi kalıcı 301). Altısı bot filtresi ve hepsi doğru esere
+gidiyor: MIT Press CLRS 3e ve 4e (gerçek tarayıcı), ScienceDirect Fiorella & Mayer (gerçek tarayıcı),
+üç SAGE adresi (Crossref başlık ve alt başlık + `doi.org/api/handles` kayıtlı adresi; SAGE artık yerleşik
+tarayıcıya da Cloudflare doğrulaması gösteriyor). Biri geçici: `encyclopediaofmath.org` bütün sitede
+502 verdi (15 deneme, 05:03–05:14 UTC); Wayback `20260712065039` kopyası alıntılanan tanımı birebir
+içeriyor. **Sonraki run'da hâlâ 5xx ise 8'in bağlantısı bu kopyaya çevrilir.**
+
+Atıf verilen beş DOI'nin hiçbirinde `updated-by` / `update-to` yok; adresle atıf verilen on klasik
+makalede de yok. Düzeltilen künyeler: 36'da 6.046J Bahar 2015'in eğitmenleri Demaine, Devadas, Lynch
+(Leiserson değil); 39'da Selinger ve ark.'nın yayın yeri Proc. ACM SIGMOD 1979, s. 23–34 (yazarların
+kurumu değil); 38'de başlık bloğu, sihirli sayı ve "N artı başlık boyutu" OSTEP 17. bölümdedir (14 değil)
+ve 17. bölüm kaynakçaya eklendi; OSTEP 14.4 yedi hata sayar (beş değil); xv6 rev4 4.6'nın adı
+"Page-fault exceptions"; 17'de MCS'nin "en az O(n²)" uyarısı 13.7.5 Omega'dadır; 30'da EWD 123 §4.1
+sınırsız kapasiteli tampondur, sınırlı tampon §4.3'te ikinci bir genel semaforla gelir; 31'de bankacı
+problemi Dijkstra'nın 1965 ders notlarına atfedildi. Birebir alıntıda sessizce atlanmış üç parantez geri
+kondu (20, 29, 35); 25'te birebir olmayan tırnaklı ifade kaynaktaki cümleyle değişti ve algs4 yayıncısı
+Addison-Wesley'e hizalandı; Dunlosky ve ark. ile Fiorella & Mayer'e sayfa aralıkları eklendi (1, 41);
+Codd PDF'inin kalıcı yönlendirme hedefi yazıldı (39).
+
+### 21.3 Bütün korpusun olgu denetimi
+
+Run 2 yalnızca 2026-09-25 yenilemesinin farkını denetlemişti; bu run 41 makalenin ve 83 şeklin
+**tamamını** denetledi. Yöntem: sekiz küme denetçisi (her sayıyı makalenin kendi kuralından yeniden
+hesaplayarak, atıfları kaynağında okuyarak) 156 bulgu verdi (31 önemli); küme başına bir şüpheci
+doğrulayıcı, emin olamadığında çürütme varsayılanıyla, 103'ünü doğruladı, 52'sini düzeltme metnini
+değiştirerek kısmen doğruladı, birini çürüttü (20'nin kaynakçasındaki "c ≥ 20a" 6.046 notunun kendi
+gösterimidir) ve 19 ek bulgu çıkardı. Ana oturum her düzenlemeyi bağlamında okuyup karar verdi: iki
+bulgu reddedildi (22'nin LCS tablosundaki hücre sayısı bir sayma tercihidir; 15'teki "takas" satırı
+zaten değişmiyordu), altı düzeltme metni yeniden yazıldı. Uygulamadan sonra altı fark inceleyicisi
+yalnızca yeni metni okudu ve 25 madde buldu: 11'i bu run'ın kendi metninden çıkmıştı (en önemlisi 30'da
+"birini sağlamak ötekini sağlamaz" — açlıksızlık kilitlenmesizliği içerir), 14'ü aynı sınıftan kalmış
+eski cümlelerdi. Hepsi düzeltildi.
+
+**Ana oturumun bağımsız modelleri** (`ana/`): 30'un filozof sayıları 82 durum / 1 kilitlenme, 70 / 0,
+11 / 0 ve en fazla iki yiyen filozof birebir yeniden üretildi. 31'in 19/16'sı yalnızca "ikinci alınan
+kilit önce bırakılır" varsayımıyla çıkıyor; öteki sırada 17/18 — model metne yazıldı.
+
+**Önemli olgu düzeltmeleri** (tam liste `uygula/edits.json` ve `uygula/uygula*.py`):
+
+- **1:** Scientific Prep zamanlaması (yukarıda); örnek takip zincirinde dengeli ağaç en küçük/en büyüğü
+  logaritmik, k elemanlı aralığı O(log n + k), sıralı gezinmeyi Θ(n) zamanda verir ("bunları logaritmik
+  verir" yanlıştı; 14'te de aynı cümle vardı).
+- **5:** Sayılabilirlik tanımı sonlu kümeleri dışlıyordu (MCS Def. 7.1.8, Rosen 2.5); derleme
+  bağımlılığı yansımasız olduğu için kesin kısmi sıradır.
+- **10:** Omurga, adresi bilinen düğümün tek yönlü listede sabit zamanda silinebildiğini söylüyordu;
+  önceki düğüm ya da çift yönlü liste gerekir. Küçültme kuralının neden "yarıya düşünce" çöktüğü
+  sekiz kapasiteli bir izlemeyle gösterildi.
+- **14:** 1 + (n − 1)/m, tabloda kayıtlı bir anahtarın bulunduğu zincirin beklenen uzunluğudur (rastgele
+  zincir α); %90 dolulukta "elli deneme" yalnızca doğrusal denemeye aittir (düzgün hash'te ≤ 10); hash
+  tablosunda sıralı gezinme doğrusal tarama değil, ayrıca sıralama ister.
+- **15:** Dış sıralama belleğe sığmayan veri içindir ("diske sığmayan" değil).
+- **17:** Hanoi ve birleştirmeli sıralama bağıntıları seride çözülmüştü ("çözmeden bıraktık" yanlıştı;
+  18'de de aynı cümle).
+- **18:** Omurgadaki açılım 2T(n/2) + n için yanlış formülü veriyordu; T(1) = 1 ile n log₂ n + n çıkar,
+  n log₂ n − n + 1 tam karşılaştırma sayılı bağıntıya aittir. Şekil başlığı log₂ n + 1 seviye.
+- **20:** Üçerli grupta garanti edilen eleme oranı 3/10'dan 1/3'e çıkar; sorun medyanların medyanı
+  özyinelemesinin n/3'e büyümesidir. "İyileştirme neredeyse her zaman birleştirme adımındadır"
+  genellemesi kaldırıldı (18'de de); Karatsuba/Strassen'de düşen alt problem sayısıdır.
+- **23:** Dijkstra omurgasında yön tersti: negatif olmayan ağırlıkta yolun geri kalanı maliyeti
+  **düşüremez**. Özet "çökme" değil "sessizce yanlış cevap" diyor; Bellman-Ford'un tablo okuması ile
+  yerinde güncelleyen sürüm ayrıldı (zincir izlemesiyle); negatif çevrim örneğinin grafı ve δ değerleri
+  yazıldı (ana oturum yeniden hesapladı: δ₂ = δ₃, çevrimle δ₅(s, a) = −2 < δ₄(s, a) = 0).
+- **24:** İş yasası sürenin tabanını verir, hızlanmanın değil; tam adım "en az P hazır düğüm"; paralel
+  birleştirmeli sıralamanın açıklığı Θ(lg³ n), yani polilogaritmik; sözde polinom tartışması 0/1 sırt
+  çantasınındır.
+- **28:** MLFQ omurgası gövdeyle çelişiyordu: işi aşağı indiren dördüncü kuraldır, iyimser olan
+  üçüncüsü; nice 5/10 oranı 335 / 445 = %75,28 diye gösterildi.
+- **30:** Kilitlenmesizlik de bir canlılık özelliğidir; asimetrik sıra ve Dijkstra'nın çözümü kilitlenmeyi
+  önler, açlığı önlemez; EWD 123 §4.1/§4.3; durum sayılarının modeli metne yazıldı.
+- **31:** Dört koşul gereklidir; 19 durumun yalnızca biri kilitlenmedir ve döngüsel bekleme yalnızca orada
+  kapanır, yani sayı "koda izin veren" kurulumun sayısıdır; hazırlık kilidi ancak her kod yolu onu önce
+  alırsa sırayı önemsizleştirir.
+- **34:** İndeksli ayırmada "en fazla iki okuma" adresler tek düzeyde kaldıkça geçerlidir; 1 GB dosyada
+  dengeli iki düzeyli ağaç da 257 blok tutar, dengesizliğin kazancı küçük dosyadadır; kapsayıcı koşul
+  örneği farklı sayıda tampon bekleyenlerle kuruldu; bağlı ayırmada dört bloklu dosyada rastgele erişim
+  ortalama 2,5 okumadır (şekil ve alt metin 128,5 diyordu).
+- **36:** Ağaçtaki çarpım kuralı (P(A ∩ B) = P(A)P(B | A)) bağımsızlık istemez; Markov negatif olmama
+  ister; Monte Carlo'nun süresi önceden sınırlıdır ("sabit" değil); 6.046J künyesi.
+- **37:** TLB kapsaması tam 512 kat; bağlam anahtarı 1.200–1.800 çevrim (süreçler makalesiyle aynı);
+  Ousterhout'un göreli hızlarından üç kat hızlı işlemcide 1,5–2,4 ve 0,9–1,5 kat (yazarın hesabı olarak
+  işaretli).
+- **38:** "Kopyalarken yazmayı hızlandırma hilesi sanmak" maddesi gövdeyle ve xv6'yla çelişiyordu; OSTEP'in
+  yedi hatası tamamlandı (double free, invalid free); fork/exec koşulları özete taşındı.
+- **39:** Veritabanının iki fazlı kilitlemesi (2PL) senkronizasyon makalesindeki iki fazlı kilitle
+  (önce dönüp sonra uyuyan) aynı şey değildir — "ta kendisi" yanlıştı; terim defterine ayrı satır eklendi.
+- **40:** Omurga üst sınırı 60 değil 90 saniye (Şekil 1 ve SOZLESME §3); seride 73 değil "kırk küsur"
+  omurga yazıyordu; sıralı eklemede yükseklik n − 1.
+- **41:** Bir milyon elemanlı ikili heap'in yüksekliği 19 (20 değil; §18.4'ün 19,93 ≈ 20 yuvarlaması
+  düzeltildi); indirgemenin ters yönü yeni problemin "kolay" olduğunu değil bilinen problemden zor
+  olmadığını gösterir; Cepeda ve ark.'nın tekrar oturumu zaten geri bildirimli sınamadır; Roediger &
+  Karpicke'nin grupları dört çalışma dönemiyle anlatıldı.
+
+**Kural düzeltmeleri.** SOZLESME §2 kalıp yasağının kalıntıları temizlendi (makale ve SVG'lerde HEAD →
+şimdi): "bedava" 14 → 0 (artı bir katalog özeti), "zarif / zarafet" 2 → 0, etiketli "Son bir uyarı:" /
+"Bir de … uyarısı:" / "Bir uyarı:" / "Terim uyarısı:" açılışları 17 → 0; "söyleyebilmek … sinyaldir"
+türü kapanışlar silindi ya da içerikli bir cümleyle değişti. Kaynaksız mülakat sıklığı ve değerlendirme
+iddiaları ("en sık sorulan", "en sevdiği", "en ayırt edici", "gözde", "nadiren sorulur", "neredeyse her
+zaman aynıdır") desenle 31 eşleşmeden 30'u kaldırıldı; kalan tek eşleşme Lu ve ark.'nın hata
+istatistiğine dayanıyor; adayların sık yaptığı hatayı anlatan cümleler ("sık yapılan hata") pedagojik araç olarak
+bırakıldı. Swap anlamındaki "takas" 13, 15, 19 ve 23'te "yer değiştirme" oldu (korpusta 94 → 60, kalanlar trade-off ve "takas alanı"); 13'ün kaynakçasında heap
+için "yığın" kalmadı. "Kendi hesabım" diyen altı yere ara adım eklendi (6, 22, 23, 25, 28, 37). Okura
+sızan üretim dili ("bu run'da", 6 makalede 7 yer) ve konum göndermesi ("bu fazın ikinci makalesi", 17)
+düzeltildi.
+
+**Mekanik kapının görmediği sınıflar (kayıt):** `check-series-content.cjs` "bedava"yı yalnızca tek
+kelimelik cümle olarak arıyor; "uyarı:" etiketlerini, sıklık iddialarını ve "## Kaynakça" sonrasındaki
+üretim dilini hiç aramıyor. Bağımsız `denetim.py` üretim dilini ve sayısal göndermeyi tarıyor.
+
+### 21.4 Şekiller ve gerçek render
+
+- **Run 2'nin bıraktığı XML kusuru:** commit `0bc06e4` üç SVG'nin açılış etiketinde `viewBox` ile `xmlns`
+  arasındaki boşluğu düşürmüştü (9 `buyume-siniflari`, 16 `graf-iki-temsil`, 25 `p-np-kapsama`).
+  Dosyalar iyi biçimli XML değildi; site SVG'yi HTML ayrıştırıcısıyla satır içine aldığı için render
+  etkilenmiyordu. Düzeltildi; 83 SVG'nin hepsi XML olarak ayrıştırılıyor. Repo denetleyicisi bunu görmez.
+- **Yeni ölçüm: metin–çizgi kesişmesi** (`render/geometry.mjs`). Altı SVG'de 24 aday bulundu ve yakından
+  görüntüyle doğrulandı; düzeltmeden sonra 0: 27 `surec-durum-makinesi` (çıkış yolu etiketlerin içinden
+  geçiyordu, ÇALIŞAN'ın sol kenarından dolaşacak biçimde çizildi), 23 MST ağacı (kalın kenarın üstündeki
+  "2" ve "7"), 20 (kesikli L çizgisi etiketlerde kesildi), 14, 21, 24 (soluk kenar çizgisindeki etiketler).
+- **22'nin DP tablosu:** "saat" sütunu çıkınca kalan 139 birimlik boşluk kapandı (al 380 → 305, alma
+  510 → 470; mürekkep boşlukları 64 / 64 / 67); başlık saat etiketlerinden 4,6 birim ayrıldı.
+- **25 `p-np-kapsama` alt metni** 129 kelimeydi (§20.5'in "en uzunu 119" kaydı bu şekil için yanlıştı);
+  114'e indi. 13 `heap-sizdirma` alt metni 117 kelime. 121–200 kelime arası 23 alt metin duruyor;
+  denetleyici eşiği 200'dür, 120 ileriye dönük hedeftir.
+- **Paylaşılan kod (BOUN içeriği değil; aynı gün kullanıcının talebiyle düzeltildi, aşağıda):** koyu temada `/boun`'daki "ilerlemeyi
+  sıfırla" onay düğmesi ve "Seriye başla" düğmesi beyaz metin / `#d98597` zemin, **2,71:1** (WCAG AA
+  4,5'in altında). Kaynak `src/components/series/series-progress-reset.tsx:115` (2026-10-05) ve
+  `series-landing.tsx:97` (2026-09-25); `reader/article-marks.tsx`'teki işaret rozeti de aynı kalıptaydı.
+  Üçü `bg-accent-fill`'e çevrildi; ölçülen kontrast koyu 5,36, açık 8,23, sepya 7,37. Koruma testi
+  `src/app/accent-contrast.test.ts`.
+
+### 21.5 Revizyon işaretleri
+
+Okurun öğrendiği şeyi değiştiren düzeltme alan 16 makaleye `revised_at: "2026-10-26"` kondu: 1, 5, 10,
+14, 18, 20, 23, 24, 28, 30, 31, 34, 36, 38, 39, 41 (1, 18, 36 ve 39'un eski notları yerini yenisine
+bıraktı; eski notlar §19–§20 ve HANDOFF'ta). Yazım, kalıp, tek sayı, künye ya da şekil etiketi
+düzeltmesi alan öteki yazılar işaret almadı (AI SOZLESME §12). İşaretli yazılar artık 20 tane:
+1, 5, 10, 12, 14, 18, 20, 23, 24, 25, 28, 29, 30, 31, 34, 36, 37, 38, 39, 41.

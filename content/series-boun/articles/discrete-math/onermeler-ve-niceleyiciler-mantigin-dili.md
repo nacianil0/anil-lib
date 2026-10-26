@@ -12,7 +12,7 @@ tags:
   - dogruluk-tablosu
   - niceleyici
   - cikarim-kurallari
-content_hash: sha256:8adf7122e038cb95ad876247b488d5b91e363447cdefcf474d1b57a9913ad923
+content_hash: sha256:ee94ebd52ce50d79d9da45980d84375a469d999586d31650016777f14597341c
 classification_version: 1
 classification_batch: 0
 ---
@@ -26,7 +26,7 @@ Bu makale o belirsizliği kesip atan aracı kuruyor. CmpE220 katalog tanımını
 
 Sezgisel tanım: **önerme (proposition)**, doğru ya da yanlış olan — ikisi birden olmayan — bir bildirim cümlesidir.
 
-Formal tanım: bir önerme, doğruluk değerler kümesi {D, Y} içinden tam olarak bir değer alan bildirimdir.
+Formal tanım: bir önerme, doğruluk değerleri kümesi {D, Y} içinden tam olarak bir değer alan bildirimdir.
 
 Örnekler yardımcı olur. "İstanbul Türkiye'dedir" bir önermedir ve doğrudur. "2 + 2 = 5" bir önermedir ve yanlıştır. "Bu diziyi sırala" bir önerme değildir, çünkü emir cümlesine doğru ya da yanlış diyemezsin. "Saat kaç?" da değildir.
 
@@ -65,7 +65,7 @@ Koşullunun bu tanımını savunmanın en kolay yolu, onu bir söz gibi düşün
 
 ## Koşullunun dört akrabası
 
-Mülakatta en sık yapılan mantık hatası, koşullu bir önermeyi yanlış yönde kullanmaktır. Bir p → q önermesinin üç akrabası vardır ve ikisi ona denk değildir.
+Mülakatta en sık yapılan mantık hatası, koşullu bir önermeyi yanlış yönde kullanmaktır. Bir p → q önermesi, kendisiyle birlikte dört üyeli bir aile kurar: üç akrabası vardır ve ikisi ona denk değildir.
 
 - **Karşıt (converse)**: q → p
 - **Ters (inverse)**: ¬p → ¬q

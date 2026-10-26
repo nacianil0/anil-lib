@@ -5,18 +5,18 @@ slug: bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor
 category: interview-method
 level: beginner
 reading_order: 1
-summary: "Boğaziçi CmpE yüksek lisans bilimsel mülakatının resmî çerçevesini kaynağıyla aktarır, on beş dakikalık formatın cevap biçimine ne yaptığını gösterir ve serinin beş yetenek hedefiyle sözlü çalışma yöntemini kurar."
+summary: "Boğaziçi CmpE yüksek lisans bilimsel mülakatının resmî çerçevesini kaynağıyla aktarır, on ya da on beş dakikalık formatın cevap biçimine ne yaptığını gösterir ve serinin beş yetenek hedefiyle sözlü çalışma yöntemini kurar."
 tags:
   - bogazici
   - bilimsel-mulakat
   - yuksek-lisans
   - calisma-yontemi
   - scientific-preparation
-content_hash: sha256:672b70f9777e6b1c0913cd6c5551267ba6239c430e39482513268ca899575b70
+content_hash: sha256:3038430103f9766168edb911cbab1058d63ecc6231fdf5c3600b3f61142e824a
 classification_version: 1
 classification_batch: 0
-revised_at: "2026-09-26"
-revision_note: "Mülakatın biçimi resmî sayfaya göre düzeltildi: tek odada bir kurul değil, en az iki öğretim üyesinin kendi ofisinde ayrı ayrı yaptığı kısa görüşmeler."
+revised_at: "2026-10-26"
+revision_note: "Mülakatın biçimi ve Scientific Prep derslerinin ana programdan önce alındığı resmî sayfaya göre düzeltildi; dengeli ağacın aralık ve sıralı gezinme maliyeti doğru yazıldı."
 ---
 ## Kapı çalınmadan önce
 
@@ -44,7 +44,7 @@ On beş dakika içinde selamlaşma, kendini tanıtma ve araştırma ilgin üzeri
 
 Bunun doğal sonucu, hazırlığın biriminin de küçük olması gerektiğidir. Ezberlenmiş yarım saatlik anlatımlar değil, **altmış ila doksan saniyede söylenebilen, üzerine soru sorulduğunda genişleyebilen cevap çekirdekleri**. Bir konuyu "biliyorum" demek burada yetmez; onu bir dakikada, tahtaya çizer gibi anlatabiliyor musun?
 
-Burada bir uyarı borcum var: bu paragraf resmî gerçek değil, benim resmî gerçekten çıkardığım bir tasarım sonucu. Süre ve konu başlıkları sayfada yazıyor; "o hâlde cevaplar kısa ve savunulabilir birimler hâlinde çalışılmalı" cümlesi bana ait. Seri boyunca bu ayrımı hep açık tutacağım: resmî olan başka, benim çıkarımım başka.
+Yukarıdaki paragraf resmî gerçek değil, benim resmî gerçekten çıkardığım bir tasarım sonucu. Süre ve konu başlıkları sayfada yazıyor; "o hâlde cevaplar kısa ve savunulabilir birimler hâlinde çalışılmalı" cümlesi bana ait. Seri boyunca bu ayrımı hep açık tutacağım: resmî olan başka, benim çıkarımım başka.
 
 ## Beş yetenek: iyi cevabın anatomisi
 
@@ -60,7 +60,7 @@ Mülakat tanımındaki "skillset ve technical knowledge" ifadesi tek bir beceriy
 
 **İspatlayabilmek.** Gerektiğinde formal tanımı yazmak ya da kısa bir ispat kurmak. Her soru ispat istemez; ama "neden doğru olduğunu biliyor musun?" sorusu geldiğinde susmamak gerekir.
 
-**Savunabilmek.** Doğruluk (correctness), karmaşıklık (complexity), bellek (memory), eşzamanlılık (concurrency) ve sistem takaslarını gerekçelendirmek. Mülakatın en ayırt edici kısmı genelde budur: iki çözümden hangisini neden seçtiğin.
+**Savunabilmek.** Doğruluk (correctness), karmaşıklık (complexity), bellek (memory), eşzamanlılık (concurrency) ve sistem takaslarını gerekçelendirmek. Savunmanın özü şudur: iki çözümden hangisini neden seçtiğin.
 
 **Dayanabilmek.** Takip sorularının altında sağlam kalmak. Görüşmeci çoğu zaman cevabını sınamak için itiraz eder; amaç seni yıkmak değil, zeminin nerede bittiğini görmektir.
 
@@ -70,7 +70,7 @@ Mülakat tanımındaki "skillset ve technical knowledge" ifadesi tek bir beceriy
 
 ## Kapsamı nereden çıkardık: Scientific Preparation
 
-"Neyi çalışmalıyım?" sorusunun resmî dayanağa en yakın cevabı, bölümün **Scientific Preparation** düzenlemesinde saklı. Gerekli görülen adaylardan, yüksek lisans dersleriyle birlikte üç lisans dersini tamamlaması isteniyor: **CmpE220 Discrete Computational Structures**, **CmpE250 Data Structures** ve **CmpE322 Operating Systems**. Bu dersler en fazla iki ardışık dönemde ve en az 2.50 ortalamayla bitirilmek zorunda.
+"Neyi çalışmalıyım?" sorusunun resmî dayanağa en yakın cevabı, bölümün **Scientific Preparation** düzenlemesinde saklı. Gerekli görülen adaylardan, ana yüksek lisans programına başlamadan önce üç lisans dersini tamamlaması isteniyor: **CmpE220 Discrete Computational Structures**, **CmpE250 Data Structures** ve **CmpE322 Operating Systems**. Bu dersler en fazla iki ardışık dönemde ve en az 2.50 ortalamayla bitirilmek zorunda.
 
 Bu üçlü neden önemli? Çünkü bölümün, "bir aday bu programa başlamadan önce şu temellere sahip olmalı" cümlesini kendi kelimeleriyle yazdığı tek yer burası. Mülakat syllabus'u değil, ama bölümün "temel" tanımının en güçlü resmî işareti.
 
@@ -84,7 +84,7 @@ Bu dört alan seriyi beş faza ayırıyor. Şekil 2 fazların sırasını ve ara
 
 ![Serinin beş fazı ve önkoşul yönleri: mülakatın dili fazından veri yapıları fazına, oradan algoritmalar fazına giden ok zinciri; işletim sistemleri fazı veri yapılarının üzerine biner; destekleyici temeller ve prova fazı diğer dört fazı toplar](assets/seri-faz-haritasi.svg "Şekil 2 — Beş faz ve önkoşul yönü")
 
-**Faz A, mülakatın dili (1–8).** Mantık, ispat, tümevarım, kümeler, sayma, graf tanımları ve Boolean cebiri. Bu fazın konuları tek başına nadiren sorulur; ama sonraki her "tanımla ve ispatla" anının dili buradan gelir.
+**Faz A, mülakatın dili (1–8).** Mantık, ispat, tümevarım, kümeler, sayma, graf tanımları ve Boolean cebiri. Bu fazın değeri, konularının tek başına sorulup sorulmamasında değil; sonraki her "tanımla ve ispatla" anının dili buradan gelir.
 
 **Faz B, veri yapıları (9–16).** Karmaşıklığa sezgisel giriş, temel yapılar, ağaçlar, dengeli arama, heap, hashing, sıralama ve graf dolaşmaları. Her yapı bir maliyet tablosuyla birlikte gelir.
 
@@ -106,7 +106,7 @@ Her makale aynı mekanik şablonu tekrarlamaz, ama şu araçları içeriğin ger
 
 **Takip sorusu zinciri.** Kritik kavramlarda "görüşmeci burada şunu sorar" deseniyle iki üç halkalı bir zincir gösterilir: önce tanım, sonra sınır durumu, sonra takas. Amaç zinciri ezberlemek değil, itiraz karşısında düşünme refleksini kurmaktır.
 
-Somutlaştıralım. Diyelim ki hash tablosundan söz ettin ve "arama sabit zamanda yapılır" dedin. Zincir tipik olarak şöyle ilerler. Birinci halka tanımı yoklar: "Sabit zaman derken hangi durumu kastediyorsun?" Beklenen cevap ortalama durumdur; en kötü durumda bütün anahtarlar aynı kovaya düşerse arama, eleman sayısıyla orantılı hâle gelir. İkinci halka sınır durumunu zorlar: "Anahtarları kim seçiyor? Girdiyi düşman seçiyorsa ne olur?" Burada çakışma çözümünün ve hash fonksiyonunun seçimi konuşulur. Üçüncü halka takasa geçer: "O hâlde neden her yerde hash tablosu kullanmıyoruz?" Cevap sıralı gezinme, en küçük ya da en büyük elemanı bulma ve aralık sorguları gibi işlemlerin hash tablosunda desteklenmemesidir; dengeli arama ağacı bunları logaritmik zamanda verir.
+Somutlaştıralım. Diyelim ki hash tablosundan söz ettin ve "arama sabit zamanda yapılır" dedin. Zincir tipik olarak şöyle ilerler. Birinci halka tanımı yoklar: "Sabit zaman derken hangi durumu kastediyorsun?" Beklenen cevap ortalama durumdur; en kötü durumda bütün anahtarlar aynı kovaya düşerse arama, eleman sayısıyla orantılı hâle gelir. İkinci halka sınır durumunu zorlar: "Anahtarları kim seçiyor? Girdiyi düşman seçiyorsa ne olur?" Burada çakışma çözümünün ve hash fonksiyonunun seçimi konuşulur. Üçüncü halka takasa geçer: "O hâlde neden her yerde hash tablosu kullanmıyoruz?" Cevap sıralı gezinme, en küçük ya da en büyük elemanı bulma ve aralık sorguları gibi işlemlerin hash tablosunda verimli biçimde desteklenmemesidir; dengeli arama ağacı ise en küçük ve en büyük elemanı logaritmik zamanda bulur, aralık sorgusunda logaritmik maliyete yalnızca aralıktaki eleman sayısı kadar iş ekler ve bütün elemanları sıralı olarak doğrusal zamanda verir.
 
 Dikkat et: üç halkanın hiçbiri yeni bir konu değil. Üçü de aynı cümlenin altını kazıyor. Mülakatta zorlanmanın en yaygın sebebi konuyu bilmemek değil, ilk cümleyi fazla iddialı kurup ikinci halkada geri çekilmek zorunda kalmaktır. Bu yüzden seri boyunca cevapları koşullarıyla birlikte söylemeyi tekrar edeceğiz.
 
@@ -170,10 +170,10 @@ Mülakatın konusu ne olursa olsun, cevabın dili aynı: bir iddiayı net söyle
 
 ## Kaynakça
 
-- Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *M.S. Program*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/graduate/ms-program/)
+- Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *M.Sc. in Computer Engineering*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/graduate/ms-program/)
 - Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *CMPE220 — Discrete Computational Structures*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/courses/cmpe220/)
 - Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *CMPE250 — Data Structures and Algorithms*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/courses/cmpe250/)
 - Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *CMPE322 — Operating Systems*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/courses/cmpe322/)
-- Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *Undergraduate Curriculum*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/undergraduate/curriculum/)
-- Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J. & Willingham, D. T. (2013). *Improving Students' Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology*. Psychological Science in the Public Interest, 14(1). [Bağlantı](https://journals.sagepub.com/doi/10.1177/1529100612453266)
-- Fiorella, L. & Mayer, R. E. (2013). *The relative benefits of learning by teaching and teaching expectancy*. Contemporary Educational Psychology, 38(4). [Bağlantı](https://www.sciencedirect.com/science/article/abs/pii/S0361476X13000209)
+- Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *Curriculum 2025*. Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/undergraduate/curriculum/)
+- Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J. & Willingham, D. T. (2013). *Improving Students' Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology*. Psychological Science in the Public Interest, 14(1), 4–58. [Bağlantı](https://journals.sagepub.com/doi/10.1177/1529100612453266)
+- Fiorella, L. & Mayer, R. E. (2013). *The relative benefits of learning by teaching and teaching expectancy*. Contemporary Educational Psychology, 38(4), 281–288. [Bağlantı](https://www.sciencedirect.com/science/article/abs/pii/S0361476X13000209)

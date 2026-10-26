@@ -12,9 +12,11 @@ tags:
   - yigin
   - kuyruk
   - amortize-maliyet
-content_hash: sha256:43511cc224e05cda7b21af4f7c55ccc6691edfcabf92c4555bad27f7e116542e
+content_hash: sha256:6a9adc7411979edb93ed10c6fe35e9482c67a5b69a75812e1017eb47804e8f53
 classification_version: 1
 classification_batch: 3
+revised_at: "2026-10-26"
+revision_note: "Omurgadaki silme iddiası düzeltildi: tek yönlü listede düğümü sabit zamanda silmek önceki düğümü ya da çift yönlü listeyi ister. Küçültme sınırı izlemeyle gösterildi."
 ---
 ## Arayüz bir söz, temsil bir faturadır
 
@@ -50,7 +52,7 @@ Bedeli erişimdedir. i'inci elemana gitmek için baştan başlayıp i kez ilerle
 
 > **Sesli anlat:** "Diziyle bağlı liste arasındaki maliyet farkını ve hangisini ne zaman seçtiğini doksan saniyede anlat."
 >
-> İyi bir cevabın omurgası: "Dizi elemanları bellekte bitişik durur, bu yüzden i'inci elemanın adresi taban adres artı i çarpı eleman boyutuyla hesaplanır ve indisle erişim sabit zamanlıdır; buna karşılık ortaya ekleme ve silme, arkadaki elemanları kaydırmayı gerektirdiği için doğrusaldır. Bağlı listede düğümler dağınık durur ve işaretçiyle bağlanır; elimde düğümün adresi varsa ekleme ve silme sabit zamanlıdır, ama i'inci elemana ulaşmak baştan yürümeyi gerektirir, yani doğrusaldır. Erişim ve tarama ağırlıklı, boyutu belli bir iş için diziyi; uçlardan ya da elimdeki düğümden sık ekleme ve silme yapan bir iş için bağlı listeyi seçerim. Bağlı liste düğüm başına ek işaretçi yeri öder ve dağınık yerleşimi yüzünden gerçek makinede önbellek davranışı daha kötüdür."
+> İyi bir cevabın omurgası: "Dizi elemanları bellekte bitişik durur, bu yüzden i'inci elemanın adresi taban adres artı i çarpı eleman boyutuyla hesaplanır ve indisle erişim sabit zamanlıdır; buna karşılık ortaya ekleme ve silme, arkadaki elemanları kaydırmayı gerektirdiği için doğrusaldır. Bağlı listede düğümler dağınık durur ve işaretçiyle bağlanır; elimde düğümün adresi varsa ondan sonraya ekleme sabit zamanlıdır, o düğümü sabit zamanda silmek için ise önceki düğümü de bilmem ya da çift yönlü liste kullanmam gerekir, ama i'inci elemana ulaşmak baştan yürümeyi gerektirir, yani doğrusaldır. Erişim ve tarama ağırlıklı, boyutu belli bir iş için diziyi; uçlardan ya da elimdeki düğümden sık ekleme ve silme yapan bir iş için çift yönlü bağlı listeyi seçerim. Bağlı liste düğüm başına ek işaretçi yeri öder ve dağınık yerleşimi yüzünden gerçek makinede önbellek davranışı daha kötüdür."
 
 ## Dinamik dizi ve amortize maliyet
 
@@ -68,7 +70,7 @@ Bu sonucun adı vardır: sona ekleme **amortize (amortized)** sabit zamanlıdır
 
 Buradaki ayrım mülakatın sevdiği tuzaklardan biridir ve karmaşıklık makalesinde bilerek askıya almıştık. **Amortize maliyet ile ortalama durum aynı şey değildir.** Ortalama durum bir **olasılık dağılımı** varsayar: girdiler şu dağılımdan gelirse beklenen maliyet budur. Amortize maliyet hiçbir olasılık varsayımı yapmaz; en kötü işlem dizisi için bile geçerli bir **muhasebe** sonucudur. Şanssız bir kullanıcı ortalamanın dışına düşebilir, ama amortize garantiyi delemez.
 
-Silme tarafı düşünülmeden yapı yarım kalır. Diziyi doluluk oranı yarının altına düştüğü anda yarıya indirirsen, tam sınırda ekleme ve silmeyi dönüşümlü yapan bir kullanıcı her adımda yeniden tahsis tetikler ve amortize garanti çöker. Standart çözüm iki eşiği ayırmaktır: küçültmeyi daha düşük bir doluluk oranında yap ve küçülttükten sonra diziyi tam dolu bırakma. Böylece pahalı bir adımdan sonra bir sonrakine kadar yine doğrusal sayıda ucuz adım yapılması **zorunlu** hâle gelir.
+Silme tarafı düşünülmeden yapı yarım kalır. Diziyi doluluk oranı yarıya düştüğü anda yarıya indirirsen, tam sınırda ekleme ve silmeyi dönüşümlü yapan bir kullanıcı her adımda yeniden tahsis tetikler ve amortize garanti çöker: 8 kapasiteli dolu dizide bir ekleme 8 elemanı kopyalayıp kapasiteyi 16'ya çıkarır, ardından gelen silme doluluğu 8/16'ya, yani tam yarıya indirir ve 8 elemanı kopyalayıp kapasiteyi 8'e düşürür; dizi yine doludur ve sıradaki ekleme aynı kopyalamayı tekrarlar. Standart çözüm iki eşiği ayırmaktır: küçültmeyi daha düşük bir doluluk oranında yap ve küçülttükten sonra diziyi tam dolu bırakma. Böylece pahalı bir adımdan sonra bir sonrakine kadar yine doğrusal sayıda ucuz adım yapılması **zorunlu** hâle gelir.
 
 > **Sesli anlat:** "Amortize maliyetle ortalama durumun farkını ve dinamik dizide sona eklemenin neden amortize sabit olduğunu altmış saniyede açıkla."
 >
@@ -76,11 +78,11 @@ Silme tarafı düşünülmeden yapı yarım kalır. Diziyi doluluk oranı yarın
 
 ## Yığın ve kuyruk: arayüzü kısıtlamak
 
-Yığın ve kuyruk yeni bir bellek düzeni getirmez; var olan düzenlerin üzerine **kısıtlanmış bir arayüz** koyar. İkisi de erişimi tek bir uca indirger ve karşılığında her işlemi sabit zamanlı yapar.
+Yığın ve kuyruk yeni bir bellek düzeni getirmez; var olan düzenlerin üzerine **kısıtlanmış bir arayüz** koyar. Yığın erişimi tek bir uca, kuyruk iki uca (birinden ekleme, ötekinden alma) indirger ve karşılığında her işlemi sabit zamanlı yapar; dinamik dizi üstündeki yığında bu süre amortize sabittir.
 
 **Yığın (stack)** son giren ilk çıkar kuralıyla çalışır: yalnızca sona ekler ve yalnızca sondan alırsın. Dinamik dizi üzerinde gerçekleştirildiğinde iki işlem de amortize sabit zamanlıdır. Yığının kanonik kullanımı, işi askıya alıp sonra kaldığın yerden devam etmendir; özyinelemeli çağrıların çerçevelerini tutan çağrı yığını da, parantez eşleştirme de, geri izlemeli arama da aynı desendir. Karmaşıklık makalesinde "özyineleme derinliği doğrudan bellek maliyetidir" derken kastedilen tam olarak bu yığındı.
 
-Bir uyarı: Türkçede *yığın* sözcüğü hem *stack* hem de *heap* için kullanılabiliyor. Bu seride **yığın = stack**'tir; öncelik kuyruğunu gerçekleştiren ağaç yapısına, karışıklık olmasın diye kendi makalesinde **heap** adıyla devam edeceğiz. Mülakat İngilizce yürüyeceği için ikisini İngilizce adlarıyla ayırabilmek zaten gereklidir.
+Türkçede *yığın* sözcüğü hem *stack* hem de *heap* için kullanılabiliyor. Bu seride **yığın = stack**'tir; öncelik kuyruğunu gerçekleştiren ağaç yapısına, karışıklık olmasın diye kendi makalesinde **heap** adıyla devam edeceğiz. Mülakat İngilizce yürüyeceği için ikisini İngilizce adlarıyla ayırabilmek zaten gereklidir.
 
 **Kuyruk (queue)** ilk giren ilk çıkar kuralıyla çalışır: sona ekler, baştan alırsın. Gerçekleştirmesi dikkat ister. Ham dizi üzerinde baştan almak bütün elemanları kaydırmak demektir ve doğrusal maliyet doğurur; bu, mülakatta sık yapılan hatadır. İki doğru yol vardır: baş ve son işaretçileri tutulan bağlı liste, ya da **dairesel tampon (circular buffer)** — sabit boyutlu bir dizide baş ve son indislerini modüler aritmetikle döndürerek kaydırmayı tamamen ortadan kaldırmak. İkisinde de her iki işlem sabit zamanlıdır.
 
@@ -105,7 +107,7 @@ Aşağıdaki tabloda maliyetler **en kötü durum** için verilmiştir; dinamik 
 | başa ekleme ve baştan silme | n | 1 | n |
 | sona ekleme | n | n | 1 (amortize) |
 | elde tutulan düğümden sonra ekleme | n | 1 | n |
-| ek bellek | yok | düğüm başına işaretçi | en fazla n boş hücre |
+| ek bellek | yok | düğüm başına işaretçi | yalnız eklemede en fazla n boş hücre; çeyrek dolulukta küçültülürse en fazla 3n |
 
 Yığın ve kuyruk bu tabloda ayrı bir satır değildir, çünkü ayrı bir temsil değildir: yığın dinamik dizi üstünde amortize sabit, kuyruk baş ve son işaretçili bağlı liste ya da dairesel tampon üstünde sabit zamanlı çalışır. Arayüzü daraltmanın karşılığı budur — daha az söz verirsin, verdiğin sözü daha ucuza tutarsın.
 

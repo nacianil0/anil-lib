@@ -2,7 +2,7 @@
   <text x="20" y="24" font-size="13" fill="var(--text)">İki yarının kabukları birleştiriliyor</text>
   <text x="20" y="46" font-size="13" fill="var(--text-muted)">üst ve alt teğet bulunur, aradaki kenarlar atılır</text>
 
-  <line x1="240" y1="72" x2="240" y2="240" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
+  <path d="M 240 72 L 240 81 M 240 100 L 240 215 M 240 234 L 240 240" fill="none" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="5 4" />
   <text x="246" y="256" font-size="13" fill="var(--text-faint)">L</text>
 
   <polyline points="70,160 100,110 150,100" fill="none" stroke="var(--border)" stroke-width="1.6" />

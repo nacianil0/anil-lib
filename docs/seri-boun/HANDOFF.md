@@ -6,10 +6,11 @@
 > (2) bu dosya, (3) YOL-HARITASI'nın ilgili bölümleri. Üretim trigger'ı:
 > `docs/seri-boun/TRIGGER.md`.
 
-Son güncelleme: 2026-09-26 · Durum: **SERİ TAMAMLANDI — 1–41 yayında; bakım run'ı 2 koşuldu
-(2026-09-26): mülakat biçiminin okuma yanlışı düzeltildi, yenileme farkının olgu denetiminde bulunan
-hatalar giderildi ve yenilemeden kalan dört bakım borcunun dördü de kapandı (bkz. aşağıdaki bölüm);
-2026-09-25 editoryal yenileme turu ve ilk bakım run'ı (2026-09-13) daha önce koşulmuştu** (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18, Batch 6: 19–21, Batch 7: 22–24, Batch 8: 25–27, Batch 9: 28–30, Batch 10: 31–33, Batch 11: 34–36, Batch 12: 37–39, Batch 13: 40–41) · Sıradaki makale: **yok**
+Son güncelleme: 2026-10-26 · Durum: **SERİ TAMAMLANDI — 1–41 yayında; bakım run'ı 3 koşuldu
+(2026-10-26): bütün korpus olgu denetiminden geçti, 41 makalenin hepsinde düzeltme yapıldı ve 16
+makale "gözden geçirildi" işareti aldı; resmî sayfalar değişmemişti, makale 1'deki Scientific Prep
+okuması düzeltildi (bkz. aşağıdaki bölüm); run 2 (2026-09-26), yenileme turu (2026-09-25) ve run 1
+(2026-09-13) daha önce koşulmuştu** (Batch 0: 1–3, Batch 1: 4–6, Batch 2: 7–9, Batch 3: 10–12, Batch 4: 13–15, Batch 5: 16–18, Batch 6: 19–21, Batch 7: 22–24, Batch 8: 25–27, Batch 9: 28–30, Batch 10: 31–33, Batch 11: 34–36, Batch 12: 37–39, Batch 13: 40–41) · Sıradaki makale: **yok**
 
 ## Cursor ve güvenli başlangıç
 
@@ -25,6 +26,51 @@ hatalar giderildi ve yenilemeden kalan dört bakım borcunun dördü de kapandı
 | Kullanılan kategoriler | 1 + 40–41 → `interview-method`, 2–8 → `discrete-math`, 9–16 → `data-structures`, 17–25 → `algorithms`, 26–35 → `operating-systems`, 36–39 → `supporting-fundamentals`. **Altı kategorinin hepsi kullanımdadır ve seride kategori kararı kalmamıştır.** |
 | Kod dokunuş noktaları | `src/lib/content/series-boun.ts` (seri örneği), `series-content.ts` (ortak fabrika), `schema.ts` (seri başına kategori sözlüğü), `labels.ts`; `SeriesLanding` `basePath/intro/footerNote` prop'ları; `ReaderDashboard` `series[]` prop'u; sync `validArticleIds` = ana ∪ AI ∪ BOUN (katalogdan türetilir) |
 | Araçlar | `node tools/series/check-series-content.cjs --series=boun`, `check-series-svg.cjs content/series-boun/assets`, `sync-series-hashes.cjs --series=boun [--write]`, `entegre-batch.cjs --series=boun [--write]` |
+
+## Bakım run'ı 3'te ne yapıldı (2026-10-26)
+
+Yeni makale üretilmedi; `TRIGGER.md`'nin bakım maddeleri koşuldu. Kanıt ve tam düzeltme listesi
+ARASTIRMA §21'de; betikler `artifacts/bakim3-2026-10-26/` altında. Depo 2026-10-22'de yeniden
+klonlanmıştı ve `artifacts/` `.gitignore`'da olduğu için run 1–2'nin bütün betikleri kayıptı; bu run
+hepsini yeniden kurdu (aşağıdaki "Bundan sonrası: bakım" yeni yolları verir).
+
+1. **Resmî sayfalar değişmemişti ama makale 1'de ikinci bir okuma yanlışı vardı.** On bir sayfa ve resmî
+   Türkçe M.Sc. sayfası çekildi; 43 kaydın 41'i birebir (iki istisna beklenen ya da kayıt düzeltmesi).
+   Makale 1, Scientific Prep derslerini "yüksek lisans dersleriyle birlikte" diye aktarıyordu; sayfa
+   "before starting the Main Program" ve "cannot register for Main Program courses during Scientific
+   Prep" diyor. Düzeltildi. 17 ve 24'teki "katalog tanımında" ifadeleri ders çıktılarına çevrildi.
+2. **Atıf taraması: 68 adres, ölü yok.** Altı bot filtresi Crossref, doi.org handle API'si ve gerçek
+   tarayıcıyla doğrulandı; `encyclopediaofmath.org` bütün sitede geçici 502 (Wayback yedeği kayıtlı).
+   Beş DOI'de düzeltme/geri çekme notu yok. Yedi künye düzeltildi (6.046J eğitmenleri, Selinger'in yayın
+   yeri, OSTEP 14/17. bölüm, xv6 4.6 adı, MCS 13.7.5, EWD 123 §4.1/§4.3).
+3. **Bütün korpusun olgu denetimi** (run 2 yalnızca yenileme farkını denetlemişti). Sekiz küme denetçisi
+   → küme başına şüpheci doğrulayıcı → ana oturumun düzenleme düzenleme kararı → altı fark inceleyicisi.
+   156 bulgunun 155'i doğrulandı (52'si düzeltme metni değişerek), 19 ek bulgu ve fark incelemesinin 25
+   maddesi eklendi; ana oturum iki bulguyu reddetti ve düzeltme metinlerinin bir kısmını kendisi yeniden yazdı. En önemli
+   düzeltmeler: 23'ün Dijkstra omurgasında yön ("artıramaz" → "düşüremez"), 18'in omurga açılımı, 20'nin
+   medyan grubu gerekçesi, 28'in MLFQ omurgası, 31'in "dört koşul" okuması, 30'un güvenlik/canlılık
+   sınıflaması, 34'ün indeksli ayırma ve kapsayıcı koşul örneği, 36'nın çarpım kuralı, 38'in COW maddesi,
+   39'un 2PL eşlemesi, 41'in heap yüksekliği (19), indirgeme yönü ve Cepeda yöntemi, 1/5/10/14'ün
+   omurga ve tanım hataları. Ana oturumun bağımsız modelleri 30'un 82/70/11'ini yeniden üretti ve 31'in
+   19/16'sının yalnızca "ikinci alınan kilit önce bırakılır" varsayımıyla çıktığını gösterdi (metne yazıldı).
+4. **Kural temizliği.** SOZLESME §2 kalıp yasağının kalıntıları ("bedava" 14, etiketli uyarı açılışları
+   17, "zarif/zarafet" 2, "sinyal" kapanışları) ve kaynaksız mülakat sıklığı iddiaları (30 yer) kaldırıldı;
+   swap anlamındaki "takas" "yer değiştirme" oldu; okura sızan "bu run'da" (7 yer) ve konum göndermesi
+   düzeltildi; "kendi hesabım" diyen altı yere ara adım eklendi.
+5. **Şekiller.** Run 2'nin üç SVG'de bıraktığı XML kusuru (`viewBox"xmlns`) düzeltildi; yeni metin–çizgi
+   ölçümünün bulduğu 24 aday altı SVG'de giderildi (27, 23, 20, 14, 21, 24); 22'nin DP tablosundaki boşluk
+   kapandı; 25 ve 13'ün alt metinleri 120 kelimenin altına indi.
+6. **16 makale "gözden geçirildi" işareti aldı** (`revised_at: "2026-10-26"`): 1, 5, 10, 14, 18, 20, 23,
+   24, 28, 30, 31, 34, 36, 38, 39, 41. İşaretli yazı sayısı 20.
+7. **İçerik:** `content/series-boun/` (41 makalenin hepsi, 23 SVG, katalog) ve `docs/seri-boun/`
+   (ARASTIRMA, HANDOFF, YOL-HARITASI terim ve tekrar defterleri).
+8. **Kod (kullanıcının açık talebiyle, aynı gün):** render kapısının bulduğu koyu tema kontrast kusuru
+   düzeltildi. Beyaz metin `bg-accent` (koyu temada #d98597, 2,71:1) yerine `bg-accent-fill` (5,36:1)
+   üstünde: `series-progress-reset.tsx` onay düğmesi, `series-landing.tsx` "Seriye başla" CTA'sı ve
+   `reader/article-marks.tsx` işaret rozeti; "İlerlemeyi sıfırla" etiketi `-ml-3` ile sütuna hizalandı.
+   Yeni statik koruma `src/app/accent-contrast.test.ts` üç temada `--accent-fill`'in beyazla ≥ 4,5:1
+   kaldığını ve hiçbir sınıf dizisinin `text-white` ile `bg-accent`'i birlikte kullanmadığını denetler
+   (eski kodda üç yeri yakaladı). Açık ve sepya temada görünüm değişmez (iki token aynı renk).
 
 ## Bakım run'ı 2'de ne yapıldı (2026-09-26)
 
@@ -169,7 +215,34 @@ Yeni makale üretilmedi; `TRIGGER.md`'nin bakım maddeleri sırayla koşuldu.
    id/slug/order/hash bilgileri ve kullanıcı progress/bookmark/highlight state'i değişmedi.
    `/boun` 39 → 41 sayfa.
 
-## Açık borçlar (2026-09-26 bakım run'ı 2'den sonra)
+## Açık borçlar (2026-10-26 bakım run'ı 3'ten sonra)
+
+**BOUN içeriğinde açık borç yoktur.** Run 3'ün bulduğu her içerik ve şekil kusuru kapandı. Borç olmayan
+ama kayıtta duran şeyler:
+
+- **[2026-10-26'da KAPANDI — run 3 bölümü madde 8]** **(Paylaşılan kod, BOUN içeriği değil)** Koyu temada `/boun`'daki "ilerlemeyi sıfırla" onay düğmesi
+  ("Evet, bu seriyi sıfırla") ve "Seriye başla" düğmesi beyaz metin / `#d98597` zemin, **2,71:1** —
+  WCAG AA'nın (4,5) altında. Kaynak `src/components/series/series-progress-reset.tsx:115`
+  (`bg-accent text-white`, 2026-10-05) ve `src/components/series/series-landing.tsx:97` (2026-09-25).
+  Öneri: beyaz metinli dolgularda `bg-accent-fill` (koyu temada 5,36:1; açık ve sepya temada değişmez).
+  Bu run koda dokunmadı; düzeltme kullanıcı kararı ve paralel oturumlarla eşgüdüm ister. Aynı satırdaki
+  küçük not: "İlerlemeyi sıfırla" etiketi sütun kenarından 12 px içeride (`px-3`), `-ml-3` hizalar.
+- **Geçici atıf kesintisi:** `encyclopediaofmath.org/wiki/Semi-group` (makale 8) 2026-10-26'da bütün
+  sitede 502 verdi. Sonraki run'da hâlâ 5xx ise bağlantı Wayback
+  `20260712065039` kopyasına çevrilir (tanım orada birebir).
+- **Mekanik kapının görmediği sınıflar:** `check-series-content.cjs` "bedava"yı yalnızca tek kelimelik
+  cümle olarak arıyor; etiketli "… uyarı(sı):" açılışlarını, kaynaksız mülakat sıklığı iddialarını,
+  "## Kaynakça" sonrasındaki üretim dilini ve SVG'nin XML geçerliliğini hiç denetlemiyor. Bunları
+  `artifacts/bakim3-2026-10-26/denetim/denetim.py` (üretim dili, sayısal gönderme) ve bu run'ın grep
+  desenleri (ARASTIRMA §21.3) yakalıyor. Kapıya eklemek `tools/` değişikliğidir (AI ve Güven Sınırı
+  serileriyle ortak araç); kullanıcı kararına bırakıldı.
+- **Alt metin uzunluğu:** 121–200 kelime arasında 23 alt metin var (en uzunu 200, 38 `kopyalarken-yazma`).
+  Denetleyici eşiği 200'dür, 120 ileriye dönük hedeftir; yazı başka bir nedenle açıldığında kısaltılır.
+- **Yedi SVG-tablo** (2, 15, 23, 29, 31, 33, 41) kurala uygun biçimde birer tane; değişmedi.
+- **9 `buyume-siniflari`:** "adım sayısı (…)" etiketi ile "n²" arasında 1,4 birimlik mürekkep boşluğu
+  (çakışma değil; görünür kusur yok).
+
+### Run 2'nin kaydı (2026-09-26)
 
 **Açık borç yoktur.** Run 2 yenilemeden kalan dört bakım borcunu kapattı (yukarıdaki bölüm). Borç
 olmayan ama kayıtta duran iki şey: (a) yedi makalede birer SVG-tablo var (2 `cikarim-kurallari`,
@@ -230,6 +303,34 @@ kullanıcının kararını bekler:
 
 ## Bilinen önceden-var sorunlar (batch kapısı DEĞİL)
 
+- **(Run 3) `artifacts/` yeniden klonda kaybolur.** Depo 2026-10-22'de `C:\dev\anil-lib`'e yeniden
+  klonlandı (eski yol `D:\dev\anil-lib`); `/artifacts/` `.gitignore`'da olduğu için run 1–2'nin bütün
+  betikleri yoktu. Run 3'ün betikleri `artifacts/bakim3-2026-10-26/` altında ve aynı nedenle kalıcı
+  değildir. Bir sonraki run onları bulamazsa ARASTIRMA §21 ve aşağıdaki tarif yeniden kurmaya yeter.
+- **(Run 3) Git Bash curl'ü (Schannel) `CRYPT_E_REVOCATION_OFFLINE (0x80092013)` verir** ve bu
+  `cmpe.bogazici.edu.tr`, `web.archive.org` ve 69 adresin 45'inde toplu "000" üretti — toplu bağlantı
+  ölümü sanılmamalı. `--ssl-no-revoke` (ya da `--ssl-revoke-best-effort`) ekle.
+- **(Run 3) Playwright takımı 72 teste büyüdü** (Güven Sınırı serisi ve ilerleme sıfırlama testleri).
+  Beklenen taban **69 geçti / 1 atlandı / 2 düştü** (`reader-data` çifti); gezici `reader.spec.ts:520`
+  düşerse 68/1/3. Atlanan test `reader.spec.ts:249`dur (AI kataloğuna bağlı koşullu atlama).
+- **(Run 3) Okuyucu değişti:** makale sayfalarında artık bir `h1` var (bölüm başlığı bloğu; gövde hâlâ
+  H2 ile başlar) ve `.series-figure-scroll`'un `min-width: 34rem`'i kalktı — 375 px'te şekiller 351 px'e
+  sığar, 13 birimlik etiket 6,34 px olur (büyütme düğmesi bunun içindir). Sayfa hidrasyondan sonra
+  genişler: ölçümden önce 1,5 sn bekle.
+- **(Run 3) Bu klonda `.env.local` yok.** Dev sunucusu parola kapısını yalnızca verilen ortam
+  değişkenleriyle açar; render betikleri bunları sunucuyu başlatırken verir (aşağıdaki tarif).
+- **(Run 3) Render betiklerini `.mjs` yaz, `.ts` değil.** `tsconfig.json` `**/*.ts` içerir; kopyadaki ya
+  da `artifacts/` altındaki bir `.ts` typecheck'i kırar. Betikler yalıtılmış kopyanın içinde
+  (`<kopya>/bakim3-render/`) durur ki `@playwright/test` kopyanın `node_modules` junction'ından çözülsün.
+- **(Run 3) Canvas metrikleri 13 px'te tam sayıya yuvarlanır** (Chrome); geometri betiği metni 10 kat
+  büyük ölçüp böler. Yeni ölçüm "metin–çizgi" (bir çizginin/yolun metin mürekkebinden geçmesi) repo
+  denetleyicisinin ve eski geometri testinin görmediği altı kusuru buldu.
+- **(Run 3) SAGE (`journals.sagepub.com`) yerleşik tarayıcıya da Cloudflare doğrulaması gösteriyor;**
+  doğrulama yolu Crossref başlığı + `doi.org/api/handles/<doi>` kayıtlı adresi. `pypdf` bu klonda yok;
+  sayfa sayısı için `pdftotext` çıktısındaki form feed'ler sayılır.
+- **(Run 3) Paralel oturum:** bu run sırasında Güven Sınırı oturumu aynı depoda `content/series-guvenlik/`
+  ve `docs/seri-guvenlik/` altında commit'lenmemiş iş tutuyordu. Kapılar `git archive HEAD` kopyasında
+  ve ayrı portlarda (3131 e2e, 3141 render) koştu; commit'te yalnızca BOUN yolları alınmalıdır.
 - `pnpm lint` ve `pnpm format:check` main'de zaten kırmızı (AI serisi HANDOFF'unda da kayıtlı).
 - Local'de `DATABASE_URL` yok; `/api/reader-sync` kimliksiz istekte 307, kimlikli istekte 503 döner ve
   uygulama çevrimdışı moduna düşer. Bu yüzden `tests/e2e/reader-data.spec.ts` içindeki **iki test
@@ -373,7 +474,40 @@ kullanıcının kararını bekler:
 - **(Run 2) "Hiçbiri … değil" olumsuz uyumdur, çift olumsuz değildir.** SOZLESME §3'ün hedeflediği
   çift olumsuz, olumsuz ortaç ile olumsuz yüklemin birleşimidir ("bildirilmemiş bir izni veremez").
 
-## Bu run'da doğrulananlar (bakım run'ı 2, 2026-09-26)
+## Bu run'da doğrulananlar (bakım run'ı 3, 2026-10-26)
+
+- **Depo denetleyicileri temiz:** içerik 41 makale (uyarı 0), SVG 83 diyagram, `sync-series-hashes`
+  `--write` sonrası fark yok, `entegre-batch` kuru çalışması 0 yeni makale / 0 roadmap satırı. 83 SVG'nin
+  hepsi XML olarak ayrıştırılıyor.
+- **Bağımsız denetim** (`artifacts/bakim3-2026-10-26/denetim/denetim.py`, repo araçlarını çağırmaz, 12
+  hata enjeksiyonlu öz-sınaması var): hash üçlüsü **41/41**, `reading_order` 1–41, kohort 13 × 3 + 1 × 2,
+  revizyon işaretli yazılar [1, 5, 10, 12, 14, 18, 20, 23, 24, 25, 28, 29, 30, 31, 34, 36, 37, 38, 39, 41],
+  83 SVG referanslı ve diskte, global article-id/slug **185/185** (ana 18 + AI 118 + BOUN 41 + Güven
+  Sınırı 8), "Sesli anlat" **78**, HARD 0.
+- **Kapılar yalıtılmış kopyada** (`git archive HEAD` + `content/series-boun/` bindirmesi, port 3131;
+  `artifacts/bakim3-2026-10-26/kapilar/run-gates.sh`), düzeltmeden önce ve sonra iki kez: `pnpm
+  typecheck` temiz · `pnpm test` **833/833** (42 dosya) · `pnpm build` başarılı, `/boun/[slug]` **41
+  yol**, hiçbir oturum sayfası önceden render edilmiyor (prerender manifest yalnızca 4 statik yol) ·
+  Playwright **69 geçti / 1 atlandı / 2 düştü** (yalnızca `reader-data` çifti). Taban koşusunda gezici
+  `reader.spec.ts:520` bir kez düştü, tek başına 3/3 ve betikle 3/3 geçti; `/read` rotasını kullanır.
+- **Gerçek render, geometri** (`render/geometry.mjs`, port 3141): 41 sayfa, 83 SVG, 2.073 metin;
+  `pageerror` 0; viewBox taşması, metin–metin ve metin–kutu çakışması, metin–çizgi kesişmesi **0**
+  (taban koşusunda 24 aday); en küçük alt mürekkep payı 5,2; bütün şekiller kabına sığıyor; "Sesli anlat"
+  78/78 bütün; revizyon satırları katalogla birebir (20 yazı, tarihler eşit); ilk/son makale gezintisi
+  doğru, sarkan bağ yok.
+- **Gerçek render, tema** (`render/themes.mjs`): `/boun` ve 41 makale × üç tema × üç genişlik = **378
+  kombinasyonun 375'i temiz**; üç kusur koyu temadaki paylaşılan sıfırlama onay düğmesinin kontrastıydı.
+  Kod düzeltmesinden sonra 377/378: onay düğmesi ve CTA koyu temada 5,36:1, açık 8,23, sepya 7,37;
+  kalan tek madde açık/375'te makale 1'de bir kez görülen `pageerror: Unexpected end of JSON input`dur
+  — aynı kombinasyon taze bağlamla 8 kez açıldı, 8'inde de hata yok (eşzamanlı build yükü altında
+  gezici dev sunucusu olayı; `render/pageerror-probe.mjs`). Düzeltmeli kod kopyada typecheck temiz,
+  837/837 test, build 41 yol, Playwright 69/1/2. `/boun`: 41 benzersiz bağ, "yakında" yok, kapanış notu ve resmî-bilgi uyarısı yerinde,
+  sıfırlama denetimi görünür ve komşularıyla çakışmıyor (onay hiç tıklanmadı). Düzeltilen altı şeklin
+  light/dark ekran görüntüsü gözle incelendi (`render/sonra/fig/`).
+- **Resmî sayfalar ve atıflar:** 11 + 1 resmî sayfa 200, alıntılar 41/43 birebir; 68 atıf adresinin 67'si
+  geçerli, biri geçici 502 (ARASTIRMA §21.1–21.2).
+
+### Run 2'nin doğrulama kaydı (2026-09-26)
 
 - **Depo denetleyicileri temiz:** içerik 41 makale (200 kelimeyi aşan alt metin uyarısı **0**; run
   başında 28), SVG 83 diyagram, `sync-series-hashes --write` sonrası fark yok, `entegre-batch` kuru
@@ -450,28 +584,42 @@ kullanıcının kararını bekler:
 ## Bundan sonrası: bakım
 
 Üretilecek makale yoktur. TRIGGER çalıştırılırsa yapılacak işler şunlardır ve hiçbiri yeni başlık üretmez.
+Run 3'ün betikleri `artifacts/bakim3-2026-10-26/` altındadır; klasör yoksa (yeniden klon) ARASTIRMA §21
+ve bu tarif onları yeniden kurmaya yeter.
 
 1. **Resmî kaynakları yeniden doğrula.** SOZLESME §4 resmî süreç bilgisinin değişebilir olmasını
    zorunlu kılar ve seri bunu okura da söyler. Kontrol edilecekler: M.Sc. programı sayfası (mülakat
-   süresi, görüşmeci sayısı, konu başlıkları, Scientific Preparation üçlüsü ve 2.50 şartı) ve lisans
-   müfredatı sayfası. Değişiklik varsa **ARASTIRMA §1 ve ilgili makale gövdeleri** güncellenir ve
-   `sync-series-hashes --write` çalıştırılır. **Paragrafın tamamını oku:** görüşmenin biçimi tek
-   cümlede değil, "interviewer's office" ve "next office" cümlelerindedir (run 2). Sayfa geçmişi için
-   Wayback CDX (`web.archive.org/cdx/search/cdx?url=...`) çalışıyor. Hazır betik:
-   `artifacts/bakim2-2026-09-26/resmi/fetch.py`.
-2. **Açık kaynak borcu kalmadı** (run 1 beş kaynak borcunu, run 2 yenilemeden kalan dört bakım
-   borcunu kapattı). Bundan sonra bu madde yalnızca **atıf bakımıdır**: bir kaynağın adresi ölürse
-   çalışan bir ayna bulunur ve kaynakça maddesi güncellenir. Bağlantı taraması:
-   `artifacts/bakim2-2026-09-26/linkler/scan.py`; bot filtresi veren bir adres **ölü sayılmaz**,
-   gerçek tarayıcı ve `api.crossref.org` ile teyit edilir.
+   süresi, görüşmeci sayısı, konu başlıkları, Scientific Prep üçlüsü, zamanlaması ve 2.50 şartı), resmî
+   Türkçe sayfası, lisans müfredatı ve ders sayfaları. Değişiklik varsa **ARASTIRMA §1 ve ilgili makale
+   gövdeleri** güncellenir ve `sync-series-hashes --write` çalıştırılır. **Paragrafın tamamını oku:**
+   görüşmenin biçimi (run 2) ve Scientific Prep'in zamanlaması (run 3) tek cümlede değil. Wayback'te
+   2026-06'dan sonra kopya yok; sayfa geçmişi için sitenin kaynak deposu `bouncmpe/bouncmpe.github.io`
+   (dosya başına commit geçmişi) kullanılır. Betikler: `resmi/extract.py`, `compare.py`,
+   `claims_grep.py` (curl'e `--ssl-no-revoke`).
+2. **Atıf bakımı.** Açık kaynak borcu yok. Bir adres ölürse çalışan bir ayna bulunur ve kaynakça maddesi
+   güncellenir; bot filtresi veren bir adres **ölü sayılmaz** (Crossref + `doi.org/api/handles` + gerçek
+   tarayıcı). Her DOI için Crossref `updated-by` sorgulanır. Betikler: `linkler/extract.py`, `fetch.py`,
+   `crossref.py`. **İlk iş:** makale 8'in `encyclopediaofmath.org` bağlantısı hâlâ 5xx mi?
 3. **Düzeltme.** Yazım hatası, bozuk bağlantı, render kusuru, olgu hatası. Gövde değişirse
-   `sync-series-hashes --write` zorunludur. **Render kusuru için denetleyicilere güvenme:**
-   `artifacts/bakim2-2026-09-26/render/` altındaki iki Playwright testi (`geometry.render.ts`: 41
-   sayfanın bütün SVG'leri için getBBox + canvas mürekkebi, metin çakışması, kaba sığma, "Sesli
-   anlat" bütünlüğü, alt metin uzunluğu, revizyon satırı; `themes.render.ts`: giriş ve değişen
-   makaleler üç tema × üç genişlik, değişen şekillerin ekran görüntüsü) yalıtılmış kopyada kendi dev
-   sunucusunu kaldırır: `pnpm exec playwright test --config artifacts/bakim2-2026-09-26/render/render.config.ts`.
-4. **Seriye başlık eklemek yalnızca kullanıcının açık talebiyle olur.** SOZLESME §6 doldurma konusu
+   `sync-series-hashes --write` zorunludur. Kapılar ve render için:
+   - `bash artifacts/bakim3-2026-10-26/kapilar/run-gates.sh` — yalıtılmış kopyayı (`C:/dev/anil-lib-bakim3-kapi`)
+     yeniler, çalışma ağacının `content/series-boun/`'unu bindirir, typecheck / test / build / beş
+     denetleyici / Playwright tam takımı koşar ve beklenmeyen her e2e hatasını tek başına 3 kez yeniden
+     dener. `SUMMARY.txt` VERDICT satırını yazar.
+   - Gerçek render: kopya `C:/dev/anil-lib-bakim3-render` (yoksa `git archive HEAD | tar -x`, BOUN
+     içeriğini bindir, PowerShell junction ile `node_modules`), betikleri `artifacts/bakim3-2026-10-26/render/*.mjs`
+     → `<kopya>/bakim3-render/`. Sunucu: kopyada `SITE_PASSWORD_SHA256=2e10d696…f2cef855
+     AUTH_COOKIE_SECRET=e2e-test-signing-secret-must-be-at-least-32-chars-long pnpm exec next dev -p 3141 -H localhost`
+     (işaret: `/boun` 307, `/login` 200). Sonra `node geometry.mjs` (41 sayfa; çakışma, taşma,
+     metin–çizgi, Sesli anlat, revizyon, alt metin) ve `node themes.mjs` (378 kombinasyon). İçerik ya da
+     SVG değişince kopyaya yeniden kopyala ve sunucuyu yeniden başlat (katalog süreç boyunca önbellekte).
+   - Bağımsız denetim: `python -X utf8 artifacts/bakim3-2026-10-26/denetim/denetim.py --quiet`.
+   - **Kopyaları silerken önce junction'ı kaldır:** `cmd //c rmdir C:\dev\anil-lib-bakim3-kapi\node_modules`
+     (render kopyası için de aynı); junction içinden `rm -rf` gerçek `node_modules`'u siler.
+4. **Olgu denetimi isteğe bağlıdır ama değerlidir.** Run 2 (yenileme farkı) ve run 3 (bütün korpus)
+   her seferinde gerçek hatalar buldu; ajan yazımı her düzeltme bağımsız bir fark incelemesinden geçmeli
+   (run 3'te fark incelemesi 11 yeni hata yakaladı). Desen ve sınıflar ARASTIRMA §21.3'te.
+5. **Seriye başlık eklemek yalnızca kullanıcının açık talebiyle olur.** SOZLESME §6 doldurma konusu
    icat edilmesini yasaklar; §7 yayımlanmış gerçeği en yüksek otorite sayar. Talep gelirse sıra
    şudur: YOL-HARITASI'na başlık ve prerequisite satırı eklenir, gerekiyorsa SOZLESME revize edilir
    (kullanıcının açık talebiyle, tarihli değişiklik notuyla), sonra üretim yapılır.
@@ -482,6 +630,17 @@ numaralı ya da konu adlı ileri gönderme **kalmamıştır**.
 
 ## Non-normative history
 
+- **2026-10-26 (bakım run'ı 3, makale üretilmedi):** Depo yeniden klonlanmıştı ve eski betikler
+  kayıptı; bütün bakım araçları yeniden kuruldu. Resmî sayfalar değişmemişti; makale 1'deki Scientific
+  Prep zamanlaması ve 17/24'teki "katalog tanımı" ifadeleri düzeltildi. 68 atıf adresinde ölü yok.
+  İlk kez **bütün korpus** olgu denetiminden geçti (8 küme denetçisi → şüpheci doğrulama → ana oturum
+  kararı → 6 fark inceleyicisi); 41 makalenin hepsinde düzeltme yapıldı, 16'sı işaret aldı. Kalıp
+  yasağı kalıntıları ve kaynaksız mülakat sıklığı iddiaları temizlendi. Run 2'nin üç SVG'de bıraktığı
+  XML kusuru ve yeni metin–çizgi ölçümünün bulduğu altı şekil düzeltildi; 22'nin DP boşluğu kapandı.
+  Aynı gün kullanıcının talebiyle paylaşılan koddaki koyu tema kontrast kusuru düzeltildi (üç bileşen +
+  statik koruma testi). Doğrulama: denetleyiciler
+  temiz, bağımsız denetim 41/41 ve 185/185, `pnpm test` 833/833, build 41 yol, Playwright 69/1/2,
+  geometri 41 sayfa / 83 SVG temiz, tema 378'de 375 (kalan üçü paylaşılan kod).
 - **2026-09-26 (bakım run'ı 2, makale üretilmedi):** Resmî on bir sayfa değişmemişti; ama aynı
   paragrafın "interviewer's office" ve "next office" cümleleri mülakatın **görüşmeci başına ayrı ofis
   görüşmeleri** olduğunu söylüyordu ve 1 ile 40 bunu "tek oda, iki kişi" diye okumuştu — düzeltildi,

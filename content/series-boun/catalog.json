@@ -10,7 +10,7 @@
       "category": "interview-method",
       "level": "beginner",
       "readingOrder": 1,
-      "summary": "Boğaziçi CmpE yüksek lisans bilimsel mülakatının resmî çerçevesini kaynağıyla aktarır, on beş dakikalık formatın cevap biçimine ne yaptığını gösterir ve serinin beş yetenek hedefiyle sözlü çalışma yöntemini kurar.",
+      "summary": "Boğaziçi CmpE yüksek lisans bilimsel mülakatının resmî çerçevesini kaynağıyla aktarır, on ya da on beş dakikalık formatın cevap biçimine ne yaptığını gösterir ve serinin beş yetenek hedefiyle sözlü çalışma yöntemini kurar.",
       "tags": [
         "bogazici",
         "bilimsel-mulakat",
@@ -18,12 +18,12 @@
         "calisma-yontemi",
         "scientific-preparation"
       ],
-      "contentHash": "sha256:672b70f9777e6b1c0913cd6c5551267ba6239c430e39482513268ca899575b70",
+      "contentHash": "sha256:3038430103f9766168edb911cbab1058d63ecc6231fdf5c3600b3f61142e824a",
       "path": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 0,
-      "revisedAt": "2026-09-26",
-      "revisionNote": "Mülakatın biçimi resmî sayfaya göre düzeltildi: tek odada bir kurul değil, en az iki öğretim üyesinin kendi ofisinde ayrı ayrı yaptığı kısa görüşmeler."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Mülakatın biçimi ve Scientific Prep derslerinin ana programdan önce alındığı resmî sayfaya göre düzeltildi; dengeli ağacın aralık ve sıralı gezinme maliyeti doğru yazıldı."
     },
     {
       "articleId": "article_8aee91f6-deeb-4218-a4fd-09f6f31c60b0",
@@ -40,7 +40,7 @@
         "niceleyici",
         "cikarim-kurallari"
       ],
-      "contentHash": "sha256:8adf7122e038cb95ad876247b488d5b91e363447cdefcf474d1b57a9913ad923",
+      "contentHash": "sha256:ee94ebd52ce50d79d9da45980d84375a469d999586d31650016777f14597341c",
       "path": "content/series-boun/articles/discrete-math/onermeler-ve-niceleyiciler-mantigin-dili.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -60,7 +60,7 @@
         "karsi-ornek",
         "kok-iki"
       ],
-      "contentHash": "sha256:339c162356c7ffce3c7745bac5d98fc261acb677259a9820023ca8299e3f9fc9",
+      "contentHash": "sha256:a388af90fd0d5ef741bda25813dd64362261370183ca4e0b0d962ea83f6116e3",
       "path": "content/series-boun/articles/discrete-math/ispat-teknikleri-dogrudan-celiskiyle-karsi-ornekle.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -80,7 +80,7 @@
         "ozyineleme",
         "yapisal-tumevarim"
       ],
-      "contentHash": "sha256:5d76d13c66a0bcf1c2d65df36a66a8acd9a616080a965fb57d5ba02b7644eea4",
+      "contentHash": "sha256:eebb9ab188c89aecb12d85a5d110dff29f489afecd87a5ab6f0e3d1dea2a5d6a",
       "path": "content/series-boun/articles/discrete-math/tumevarim-ve-ozyineleme-ayni-fikrin-iki-yuzu.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -101,10 +101,12 @@
         "denklik-baginti",
         "kismi-sira"
       ],
-      "contentHash": "sha256:96306a3d4f41eb634c262c3aced406ceee3c6d6f507bb191608a69572a4c0798",
+      "contentHash": "sha256:314b126768dd8d0d53d9c47b6c46eb5b276888085244f8cdbe3bcdc56bed3287",
       "path": "content/series-boun/articles/discrete-math/kumeler-fonksiyonlar-ve-bagintilar.md",
       "relatedArticleIds": [],
-      "classificationBatch": 1
+      "classificationBatch": 1,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Sayılabilirlik tanımı sonlu kümeleri de kapsayacak biçimde düzeltildi; derleme bağımlılığının kesin kısmi sıra olduğu eklendi."
     },
     {
       "articleId": "article_c9cea4e9-3a25-4cc5-a6a0-4c830ee5fc7c",
@@ -121,7 +123,7 @@
         "binom-katsayisi",
         "guvercin-yuvasi"
       ],
-      "contentHash": "sha256:ef6739b8c2747235268af73fc103a923da6bc9283b7e4eedda474127398daf32",
+      "contentHash": "sha256:2de8d0ed7aafb1e9b367f57953002854f8717c1731f574fb89d90e1607714421",
       "path": "content/series-boun/articles/discrete-math/sayma-kombinatorigin-temel-araclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 1
@@ -141,7 +143,7 @@
         "el-sikisma-lemmasi",
         "kapsayan-agac"
       ],
-      "contentHash": "sha256:2e29bfc2d64753c4531c30a6d96983bd5e2a83ee5d698c4a563babb97cecdd30",
+      "contentHash": "sha256:73e87f5fa09cf674f930165c66e3c6f50f7c7656f566796a41b200d3a3cbbe55",
       "path": "content/series-boun/articles/discrete-math/graflar-ve-agaclar-tanimlar-ve-ilk-ispatlar.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -161,7 +163,7 @@
         "kafes",
         "boolean-cebiri"
       ],
-      "contentHash": "sha256:eede12fec763e96f4901d0e6e98c4776e30460ce3b7b889c320933769e1648b9",
+      "contentHash": "sha256:c4f606acec28bc9e32a0a78f4d5e9cd54863437a1a676a66cc11cf37df6cc4a8",
       "path": "content/series-boun/articles/discrete-math/cebirsel-yapilar-ve-boolean-cebiri.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -181,7 +183,7 @@
         "buyume-siniflari",
         "en-kotu-durum"
       ],
-      "contentHash": "sha256:3c42280778b48bd4cf925e61ce1b9907acd1e5e1e788856507c3c842b0370b26",
+      "contentHash": "sha256:bdbb34c8a67e43d534f97c0f36c4260647cea45428f9faf67a0dd27284558a9d",
       "path": "content/series-boun/articles/data-structures/karmasiklik-big-o-ile-dusunmeye-baslamak.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -201,10 +203,12 @@
         "kuyruk",
         "amortize-maliyet"
       ],
-      "contentHash": "sha256:43511cc224e05cda7b21af4f7c55ccc6691edfcabf92c4555bad27f7e116542e",
+      "contentHash": "sha256:6a9adc7411979edb93ed10c6fe35e9482c67a5b69a75812e1017eb47804e8f53",
       "path": "content/series-boun/articles/data-structures/diziler-bagli-listeler-yigin-ve-kuyruk.md",
       "relatedArticleIds": [],
-      "classificationBatch": 3
+      "classificationBatch": 3,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Omurgadaki silme iddiası düzeltildi: tek yönlü listede düğümü sabit zamanda silmek önceki düğümü ya da çift yönlü listeyi ister. Küçültme sınırı izlemeyle gösterildi."
     },
     {
       "articleId": "article_8b402a30-5d8c-43c1-8b85-c61950e09a28",
@@ -221,7 +225,7 @@
         "yukseklik",
         "sirali-dolasma"
       ],
-      "contentHash": "sha256:6439f5afa2dfc789b6a224da629824b1588397a0b462bf62cb64656a501d901b",
+      "contentHash": "sha256:f1db3cb11d479d9b1e8627acb28725070cfeda35bc32444bd6aac3f911e1bf49",
       "path": "content/series-boun/articles/data-structures/agaclar-ve-ikili-arama-agaclari.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -241,7 +245,7 @@
         "kirmizi-siyah-agac",
         "b-agaci"
       ],
-      "contentHash": "sha256:15b01245970f012f2d13bd43ab15b4bc11a0ca58ba31eb225f74367f599f6f1c",
+      "contentHash": "sha256:8b97e65934c97d8b16bfcb21a2a7c79e65938907353fa33d6b5e8912d540c5c6",
       "path": "content/series-boun/articles/data-structures/dengeli-arama-avlden-b-agacina.md",
       "relatedArticleIds": [],
       "classificationBatch": 3,
@@ -263,7 +267,7 @@
         "build-heap",
         "tam-ikili-agac"
       ],
-      "contentHash": "sha256:8b45c7498fdd6725824c03db15e77dc4c19dc07619c9bb7fb1b74e9a6f0ea8d0",
+      "contentHash": "sha256:685746840177485523968ea8adf4ad2d0b1ef5c54f7620129170457ee7b4a039",
       "path": "content/series-boun/articles/data-structures/heap-ve-oncelik-kuyrugu.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -283,10 +287,12 @@
         "yuk-faktoru",
         "evrensel-hash"
       ],
-      "contentHash": "sha256:3cb1389fa72981ff88172803c234ea08423888c559d5c700afdd72aeda356bfc",
+      "contentHash": "sha256:18074049f92c9b9096ee1750797a5bf4c59d9eba86d7d342af6c34912f13a11e",
       "path": "content/series-boun/articles/data-structures/hashing-sabit-zamanin-bedeli.md",
       "relatedArticleIds": [],
-      "classificationBatch": 4
+      "classificationBatch": 4,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Zincir uzunluğu formülünün kayıtlı anahtarın zincirine ait olduğu ve yüzde doksan dolulukta elli denemenin doğrusal denemeye özgü olduğu düzeltildi."
     },
     {
       "articleId": "article_4b599b29-da33-4aac-9e36-113cf9039942",
@@ -303,7 +309,7 @@
         "kararlilik",
         "radix-sort"
       ],
-      "contentHash": "sha256:61d325186c5de27d2518a9902f9825146d93bb422e4c30394061b4e036df2bcb",
+      "contentHash": "sha256:ae6ba36d988555b025b4a7a73b5473d21d40b98809f87171428e0fe363b1ad4b",
       "path": "content/series-boun/articles/data-structures/siralama-algoritmalari-karsilastirmali-ve-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -323,7 +329,7 @@
         "topolojik-siralama",
         "bagli-bilesen"
       ],
-      "contentHash": "sha256:e7c6c3585fbd9eeb9629e8e4de3b52f1d2c64e2587f5dd5ac2cb7c139bb4f683",
+      "contentHash": "sha256:7902f47cd25b686b26f5b6750f0ea5c1707695f6cb59a7cc64e2560067374fc4",
       "path": "content/series-boun/articles/data-structures/graf-temsilleri-bfs-ve-dfs.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -344,7 +350,7 @@
         "alt-sinir",
         "karar-agaci"
       ],
-      "contentHash": "sha256:e2ef4477b67064e3f10bd080012e655cbe561f32b892e4559e38df95a0bb81f9",
+      "contentHash": "sha256:73384e6c67ff2d7830e8c277c5e7905d8e4e88b07d9c6c3b2d643be74c8826ed",
       "path": "content/series-boun/articles/algorithms/asimptotik-analiz-tanimlar-ve-ispatli-karsilastirma.md",
       "relatedArticleIds": [],
       "classificationBatch": 5
@@ -364,12 +370,12 @@
         "bol-ve-yonet",
         "analiz"
       ],
-      "contentHash": "sha256:b8a4a612802c9bcc812d4ae7794cca176ccfb54d9f250a36a3817f87cf7cd40e",
+      "contentHash": "sha256:5f7da3512cbb176ff5d684d5f92530d608b5974e500719c75b5c3c057a9605ce",
       "path": "content/series-boun/articles/algorithms/yinelemeler-ve-master-teoremi.md",
       "relatedArticleIds": [],
       "classificationBatch": 5,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Master Teoremi'nin CLRS 3. ve 4. baskılarındaki farkı ile düzenlilik koşulunun polinomlarda neden kendiliğinden sağlandığı eklendi."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Omurgadaki açılım düzeltildi: T(1) = 1 tabanıyla 2T(n/2) + n bağıntısı n log₂ n + n verir; n log₂ n − n + 1 tam karşılaştırma sayısının sonucudur."
     },
     {
       "articleId": "article_5720977d-9343-4f86-bee7-b4d9bfc0a034",
@@ -378,7 +384,7 @@
       "category": "algorithms",
       "level": "advanced",
       "readingOrder": 19,
-      "summary": "Bir algoritmanın doğru olduğunu ispatlamanın iki ayrı işe bölünmesi: kısmi doğruluk ve sonlanma. Floyd'un değişmez ilkesi, döngü değişmezinin üç adımı (başlatma, koruma, sonuçlanma) ve boş doğruluğun başlatma adımını neden bedava kıldığı; eklemeli sıralamanın ve ikili aramanın satır satır ispatı; sonlanmanın azalan bir ölçüyle ayrıca ispatlanması ve değişmezin korunduğu hâlde durmayan bir döngü; hızlı üs almanın kolay okunmayan değişmezi.",
+      "summary": "Bir algoritmanın doğru olduğunu ispatlamanın iki ayrı işe bölünmesi: kısmi doğruluk ve sonlanma. Floyd'un değişmez ilkesi, döngü değişmezinin üç adımı (başlatma, koruma, sonuçlanma) ve başlatma adımının boş doğrulukla neden çoğu zaman kendiliğinden sağlandığı; eklemeli sıralamanın ve ikili aramanın satır satır ispatı; sonlanmanın azalan bir ölçüyle ayrıca ispatlanması ve değişmezin korunduğu hâlde durmayan bir döngü; hızlı üs almanın kolay okunmayan değişmezi.",
       "tags": [
         "dogruluk",
         "dongu-degismezi",
@@ -386,7 +392,7 @@
         "sonlanma",
         "eklemeli-siralama"
       ],
-      "contentHash": "sha256:bf76575aa680ea573d5d86c0c443c290658db2aabe15a421cec0ad9bea594dbf",
+      "contentHash": "sha256:930785e121a79cc23c6bf92f075ae2a2122f1bd11993024c66fc4a61243fcb7c",
       "path": "content/series-boun/articles/algorithms/dogruluk-dongu-degismezleriyle-ispat.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -406,10 +412,12 @@
         "medyan-bulma",
         "ozyineleme-agaci"
       ],
-      "contentHash": "sha256:129f00ebbc233a87b4d69ed47ed05301111b7ac2f184fe7364ea54ee46dc036a",
+      "contentHash": "sha256:b2043402147def870685ade6ab163ff99a707b6c6f5ad5269d7c10c8d8f00559",
       "path": "content/series-boun/articles/algorithms/bol-ve-yonet-kazanc-nereden-gelir.md",
       "relatedArticleIds": [],
-      "classificationBatch": 6
+      "classificationBatch": 6,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Medyanların medyanında üçerli grubun eleme oranını düşürmediği, özyinelemeyi büyüttüğü düzeltildi; kazancın hep birleştirmede olduğu genellemesi kaldırıldı."
     },
     {
       "articleId": "article_95fcd2e4-41da-4870-958a-7e1886a9a5e3",
@@ -426,7 +434,7 @@
         "aralik-cizelgeleme",
         "karsi-ornek"
       ],
-      "contentHash": "sha256:e2f9b2b7b9b20fc1681134d194f9b6e53dc8187364107ac5a86e301abe6366b2",
+      "contentHash": "sha256:613cc0127a817c6a8bef6de11e6558d7508517026622020ab5684fc0fc8cb5f9",
       "path": "content/series-boun/articles/algorithms/acgozlu-algoritmalar-ne-zaman-ve-neden-calisir.md",
       "relatedArticleIds": [],
       "classificationBatch": 6
@@ -446,7 +454,7 @@
         "sirt-cantasi",
         "optimal-altyapi"
       ],
-      "contentHash": "sha256:2f91ebdea43f238aadc387b03a2a8b1b530ee878d6750dda06f9b4d6b959e352",
+      "contentHash": "sha256:5d0edc784283882e7b58b1a1e49bb833775405680c93130ff009fadf793d64a8",
       "path": "content/series-boun/articles/algorithms/dinamik-programlama-alt-problemi-bulmak.md",
       "relatedArticleIds": [],
       "classificationBatch": 7
@@ -458,7 +466,7 @@
       "category": "algorithms",
       "level": "advanced",
       "readingOrder": 23,
-      "summary": "Kenarların ağırlığı olunca iki farklı soru doğuyor ve aynı graf üzerinde iki farklı ağaç veriyor: minimum kapsayan ağaç ile en kısa yollar ağacı. Kesit teoreminin değişim argümanıyla ispatı, Prim ile Kruskal, heap makalesinden kalan azalt_anahtar borcunun kapanması; gevşetmenin güvenliği, Dijkstra'nın doğruluğu ve negatif kenarda çökmesi, Bellman-Ford'un bir dinamik programlama olarak okunması ve dört algoritmanın maliyet tablosu.",
+      "summary": "Kenarların ağırlığı olunca iki farklı soru doğuyor ve aynı graf üzerinde iki farklı ağaç veriyor: minimum kapsayan ağaç ile en kısa yollar ağacı. Kesit teoreminin değişim argümanıyla ispatı, Prim ile Kruskal, heap makalesinden kalan azalt_anahtar borcunun kapanması; gevşetmenin güvenliği, Dijkstra'nın doğruluğu ve negatif kenarda sessizce yanlış cevap vermesi, Bellman-Ford'un bir dinamik programlama olarak okunması ve dört algoritmanın maliyet tablosu.",
       "tags": [
         "minimum-kapsayan-agac",
         "en-kisa-yollar",
@@ -466,10 +474,12 @@
         "bellman-ford",
         "azalt-anahtar"
       ],
-      "contentHash": "sha256:dba791bbec1fff7e103aa61c94489874251413dc4f435506c1df50349fa24515",
+      "contentHash": "sha256:75699bea540192e553c8fb9bdee17d62ede01e5d34bae193a17a1bd2561f895b",
       "path": "content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md",
       "relatedArticleIds": [],
-      "classificationBatch": 7
+      "classificationBatch": 7,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Dijkstra omurgasındaki yön düzeltildi: negatif olmayan ağırlıkta yolun geri kalanı maliyeti düşüremez. Bellman-Ford'un tablo okuması yerinde güncellemeden ayrıldı."
     },
     {
       "articleId": "article_247248d5-746a-42d4-9fd7-e01241810ac1",
@@ -486,10 +496,12 @@
         "paralel-algoritmalar",
         "is-ve-derinlik"
       ],
-      "contentHash": "sha256:fabb42a22600234c119ca413a53f9759071ff52154c5aab163ad8d05af6e5361",
+      "contentHash": "sha256:748beebb2f50f117ee3d882de2761b13dce4f51f29882e1fc3bb15b6c6fdd622",
       "path": "content/series-boun/articles/algorithms/alt-sinirlar-olasiliksal-ve-paralel-algoritmalar.md",
       "relatedArticleIds": [],
-      "classificationBatch": 7
+      "classificationBatch": 7,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "İş ve açıklık yasalarının neyi sınırladığı düzeltildi; paralel birleştirmeli sıralamanın açıklığının polilogaritmik olduğu omurgaya yazıldı."
     },
     {
       "articleId": "article_80eba0f5-067c-4906-b677-9bc6fc56922c",
@@ -506,7 +518,7 @@
         "guclu-bagli-bilesenler",
         "sozde-polinom"
       ],
-      "contentHash": "sha256:a69fa9a39f91757d62939851a7f98f1d187954ca1d0bc1f4590e1ae4a7f55254",
+      "contentHash": "sha256:0a826feae92145e039538623a5f51ee0e7940f72c64d6a8ecbbbdfee3f1d0c1f",
       "path": "content/series-boun/articles/algorithms/np-tamlik-hesaplamanin-sinirlari.md",
       "relatedArticleIds": [],
       "classificationBatch": 8,
@@ -528,7 +540,7 @@
         "kullanici-modu",
         "zaman-paylasimi"
       ],
-      "contentHash": "sha256:ed84891055475c3bbd110ce494f0fc5aafd5b48e78c28c56830346362a992325",
+      "contentHash": "sha256:527a6189213b19071aa42a5f56c8acf317ebdc317910dc53d50cd6f808ef2e13",
       "path": "content/series-boun/articles/operating-systems/isletim-sistemi-nedir-cekirdek-sistem-cagrisi-evrim.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
@@ -548,7 +560,7 @@
         "yaris-kosulu",
         "kritik-kesim"
       ],
-      "contentHash": "sha256:78268eef1b11b59dbeda90b12c15cd623d224d4a813dd80ae114ad6591d84672",
+      "contentHash": "sha256:a622bebc462e381158e8961100e422857712deb962e1d89c399318f639c22598",
       "path": "content/series-boun/articles/operating-systems/surecler-ve-is-parcaciklari.md",
       "relatedArticleIds": [],
       "classificationBatch": 8
@@ -568,10 +580,12 @@
         "round-robin",
         "geri-besleme-kuyrugu"
       ],
-      "contentHash": "sha256:565dcf46cd11abf69f4477256b8dc4e7f06263a4d82a3a0ba6c36e4a6ab3b4c7",
+      "contentHash": "sha256:85931f315047b8ac0b0730f96c8f6868840e108723a117d903c6f31659891e5a",
       "path": "content/series-boun/articles/operating-systems/cpu-zamanlama-olcutler-kurallar-ve-geri-besleme.md",
       "relatedArticleIds": [],
-      "classificationBatch": 9
+      "classificationBatch": 9,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "MLFQ omurgası gövdeyle hizalandı: işi aşağı indiren dördüncü kuraldır, iyimser olan üçüncüsü. Nice 5 ile 10 hesabı gösterildi."
     },
     {
       "articleId": "article_1bc01092-4bf4-45a1-b988-21c19516d4d1",
@@ -588,7 +602,7 @@
         "kosul-degiskeni",
         "test-and-set"
       ],
-      "contentHash": "sha256:61eb35176e1c74006288ee216f2c4fb67a4d2b34f2dd524bcb591edad4346f88",
+      "contentHash": "sha256:e19bb84dc59b7992205090a03cf966a168c4995bb4714bdedacf6bcf39059090",
       "path": "content/series-boun/articles/operating-systems/senkronizasyon-kilit-semafor-ve-monitor.md",
       "relatedArticleIds": [],
       "classificationBatch": 9,
@@ -610,10 +624,12 @@
         "guvenlik-ve-canlilik",
         "kilitlenme"
       ],
-      "contentHash": "sha256:bab21f7e2a7d1ec8b2e971247dcc7263d3bd3caa29f67885b300f989dd8ccf04",
+      "contentHash": "sha256:669affe6c06a198c428e8d4d9b64e2b136b5fe16cf6e909fef5374962c35e546",
       "path": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
       "relatedArticleIds": [],
-      "classificationBatch": 9
+      "classificationBatch": 9,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Kilitlenmesizliğin de canlılık özelliği olduğu düzeltildi; Dijkstra'nın sınırsız ve sınırlı tampon çözümleri ayrıldı; durum sayılarının modeli yazıldı."
     },
     {
       "articleId": "article_80837c80-ea35-42cd-a1e0-a350f0c7aad9",
@@ -622,7 +638,7 @@
       "category": "operating-systems",
       "level": "advanced",
       "readingOrder": 31,
-      "summary": "Filozoflar makalesinde döngüyü tek bir oku çevirerek kırmıştık ama neden yeterli olduğunu söylememiştik. Bu makale kilitlenmeyi kuram düzeyine taşıyor: dört koşul aynı anda sağlanmadıkça kilitlenme olamaz, dolayısıyla her önleme tekniği bir koşulu hedefler. Ardından kaçınma geliyor — Dijkstra'nın 1965'te kendi kalemiyle yazdığı bankacı algoritması, güvenli ve güvensiz durum ayrımı ve doğruluk makalesindeki azalan ölçünün buradaki karşılığı. Sonra tespit ve kurtarma: kaynak atama grafında döngü aramak tek örnekli kaynaklarda kesin cevap verir, çok örnekli kaynaklarda vermez. Bütün sayılar kaba kuvvetle ya da kendi programımla doğrulandı.",
+      "summary": "Filozoflar makalesinde döngüyü tek bir oku çevirerek kırmıştık ama neden yeterli olduğunu söylememiştik. Bu makale kilitlenmeyi kuram düzeyine taşıyor: dört koşul aynı anda sağlanmadıkça kilitlenme olamaz, dolayısıyla her önleme tekniği bir koşulu hedefler. Ardından kaçınma geliyor — Dijkstra'nın 1965'te kendi kalemiyle yazdığı bankacı algoritması, güvenli ve güvensiz durum ayrımı ve doğruluk makalesindeki azalan ölçünün buradaki karşılığı. Sonra tespit ve kurtarma: kaynak atama grafında döngü aramak tek örnekli kaynaklarda kesin cevap verir, çok örnekli kaynaklarda vermez. Durum sayıları ve bankacı örneği kaba kuvvetle ya da kendi programımla doğrulandı; hata istatistikleri kaynaktan aktarılmıştır.",
       "tags": [
         "kilitlenme",
         "dort-kosul",
@@ -630,10 +646,12 @@
         "kilit-sirasi",
         "livelock"
       ],
-      "contentHash": "sha256:ce2e59913eadd265a41952f1f0ac529ff1bff73fb5b1f5c1c18a3f7d3e46233d",
+      "contentHash": "sha256:cb001e653d07068b77c6d2bf9be69ecb60a6a668a91aee412e2ed8a5ac61de00",
       "path": "content/series-boun/articles/operating-systems/kilitlenme-kosullar-ve-stratejiler.md",
       "relatedArticleIds": [],
-      "classificationBatch": 10
+      "classificationBatch": 10,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Dört koşulun gerekli olduğu ve 19 durumun neyi gösterdiği düzeltildi; modelin bırakma sırası eklendi ve bankacı fikrinin ilk metni adıyla anıldı."
     },
     {
       "articleId": "article_370107f0-5edb-4333-a0b2-9eca323aba8a",
@@ -650,7 +668,7 @@
         "sayfa-tablosu",
         "tlb"
       ],
-      "contentHash": "sha256:3154c6efbebc63e763840f653601f0e806dcf9aeea5cc109bd8b31be8579d862",
+      "contentHash": "sha256:74536463166f6ebd712fe43ef4ea740f38cf9b556415e44496b23564098159f9",
       "path": "content/series-boun/articles/operating-systems/bellek-yonetimi-adres-cevirisi-ve-sayfalama.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -670,7 +688,7 @@
         "degistirme-ilkeleri",
         "thrashing"
       ],
-      "contentHash": "sha256:529b8a30c5bfe02de148fe28f996ab29f288ebc18769cfae8b9a9a8594d397b4",
+      "contentHash": "sha256:68ba5373f8d35865643d4fb6b69b2cc4a0b05028c3f60296fe6709fbe792faf3",
       "path": "content/series-boun/articles/operating-systems/sanal-bellek-talep-sayfalama-ve-degistirme.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -682,7 +700,7 @@
       "category": "operating-systems",
       "level": "advanced",
       "readingOrder": 34,
-      "summary": "Önceki makalede disk yalnızca sayfaların sığınacağı bir kurtarma alanıydı. Burada asıl işini yapıyor: kalıcılık. Makale iki soyutlamayla başlıyor — dosya bir bayt dizisi, dizin ise (ad, i-numarası) çiftlerinden oluşan bir liste — ve sabit bağlantının neden silmeyi 'bağlantıyı kopar' diye adlandırdığını gösteriyor. Sonra diskin fiziği geliyor: rastgele bir 4 KB okuma 6 milisaniye, sıralı okuma ise iki yüz kat hızlı; bu tek oran dosya sistemi tasarımının tamamını yönetiyor. Üç ayırma yöntemi aynı dosya üzerinde karşılaştırılıyor, inode'un dolaylı blok aritmetiği elle hesaplanıyor, dizin ve boş alan yapıları kuruluyor ve bir dosya yaratmanın gerçekten kaç disk erişimi ettiği sayılıyor. Bütün sayılar kendi programımla üretildi.",
+      "summary": "Önceki makalede disk yalnızca sayfaların sığınacağı bir kurtarma alanıydı. Burada asıl işini yapıyor: kalıcılık. Makale iki soyutlamayla başlıyor — dosya bir bayt dizisi, dizin ise (ad, i-numarası) çiftlerinden oluşan bir liste — ve sabit bağlantının neden silmeyi 'bağlantıyı kopar' diye adlandırdığını gösteriyor. Sonra diskin fiziği geliyor: rastgele bir 4 KB okuma 6 milisaniye, sıralı okuma ise iki yüz kat hızlı; bu tek oran dosya sistemi tasarımının tamamını yönetiyor. Üç ayırma yöntemi aynı dosya üzerinde karşılaştırılıyor, inode'un dolaylı blok aritmetiği elle hesaplanıyor, dizin ve boş alan yapıları kuruluyor ve bir dosya yaratmanın gerçekten kaç disk erişimi ettiği sayılıyor. Hesaplanan bütün sayılar kendi programımla üretildi; sürücü künyeleri ve ölçüm sonuçları kaynaktandır.",
       "tags": [
         "dosya-sistemi",
         "inode",
@@ -690,10 +708,12 @@
         "disk",
         "giris-cikis"
       ],
-      "contentHash": "sha256:08a264e8a2135ee6d919aa9b310097de22d449b521b36675318e3f6214145ff6",
+      "contentHash": "sha256:a3468af2ea8d62b129995daf9383a39ee83cbc16f9fd8e63b9b99ed8424dd640",
       "path": "content/series-boun/articles/operating-systems/dosya-sistemleri-ve-giris-cikis.md",
       "relatedArticleIds": [],
-      "classificationBatch": 11
+      "classificationBatch": 11,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "İndeksli ayırmada iki okuma sınırının koşulu, dengesiz inode ağacının kazancının küçük dosyada olduğu ve kapsayıcı koşul örneği düzeltildi."
     },
     {
       "articleId": "article_bddae659-cf24-4e95-8ee4-bb58bd68f65c",
@@ -710,7 +730,7 @@
         "yetenekler",
         "linux"
       ],
-      "contentHash": "sha256:8cbdb6e0dd785ff062e9101cecb3bcb2d3c16e07e721c44bc96b500aa118dc3f",
+      "contentHash": "sha256:61e48382a8826365a3aa1023ca179d13f02655394ccf33d7053adaa5308e9ade",
       "path": "content/series-boun/articles/operating-systems/koruma-guvenlik-ve-linux-somutlamasi.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -722,7 +742,7 @@
       "category": "supporting-fundamentals",
       "level": "advanced",
       "readingOrder": 36,
-      "summary": "Bu seri boyunca her maliyet iddiasını koşuluyla söylemeye çalıştık, ama bir koşulu hep erteledik: 'ortalama durum' dediğimizde hangi dağılımı varsaydığımızı hiç adlandırmadık. Bu makale o borcu ödüyor. Olasılık uzayı ve dört adımlı yöntemle başlıyor, koşullu olasılıkla devam ediyor ve nadir bir hastalık testinde pozitif çıkan birinin hasta olma olasılığının neden yüzde dokuz olduğunu hesaplıyor. Sonra beklenen değer geliyor ve asıl araç kuruluyor: beklentinin doğrusallığı bağımsızlık istemez. Üç eski borç bu araçla ödeniyor — doğum günü çakışması, hash tablosunun beklenen zincir uzunluğu ve rastgeleleştirilmiş seçimin doğrusal beklenen maliyeti. Son bölüm beklentinin neden yetmediğini gösteriyor: Markov ve Chebyshev eşitsizlikleri aynı soruya üç ayrı cevap veriyor. Bütün sayılar kendi programımla üretildi.",
+      "summary": "Bu seri boyunca her maliyet iddiasını koşuluyla söylemeye çalıştık, ama bir koşulu hep erteledik: 'ortalama durum' dediğimizde hangi dağılımı varsaydığımızı hiç adlandırmadık. Bu makale o borcu ödüyor. Olasılık uzayı ve dört adımlı yöntemle başlıyor, koşullu olasılıkla devam ediyor ve nadir bir hastalık testinde pozitif çıkan birinin hasta olma olasılığının neden yüzde dokuz olduğunu hesaplıyor. Sonra beklenen değer geliyor ve asıl araç kuruluyor: beklentinin doğrusallığı bağımsızlık istemez. Üç eski borç bu araçla ödeniyor — doğum günü çakışması, hash tablosunun beklenen zincir uzunluğu ve rastgeleleştirilmiş seçimin doğrusal beklenen maliyeti. Son bölüm beklentinin neden yetmediğini gösteriyor: Markov eşitsizliği, Chebyshev eşitsizliği ve gerçek değer aynı soruya üç ayrı cevap veriyor. Kaynaktan aktarılan sınır ve yaklaşımlar dışındaki bütün sayılar kendi programımla üretildi.",
       "tags": [
         "olasilik",
         "beklenen-deger",
@@ -730,12 +750,12 @@
         "chebyshev",
         "istatistik"
       ],
-      "contentHash": "sha256:6495a7136bcff6d1999b31ee435e86de4ef0dc1d4d18a6d65b9756c809650dd1",
+      "contentHash": "sha256:5570eed8baa0092e12a86e3f77ee602d21a603f54e117bdb07583f0bf676e3bb",
       "path": "content/series-boun/articles/supporting-fundamentals/olasilik-ve-istatistik-mulakat-icin-cekirdek.md",
       "relatedArticleIds": [],
       "classificationBatch": 11,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Formüller sezgiyle katmanlandı: seri örneği ve Bayes adım adım hesaplandı, doğum günü çift sayımıyla, Markov ve Chebyshev tek cümlelik gerekçeyle anlatıldı."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Ağaçtaki çarpım kuralının bağımsızlık istemediği, Markov'un negatif olmama varsayımı ve 6.046J künyesi düzeltildi."
     },
     {
       "articleId": "article_10e5a169-82f9-49ef-8b2d-296c2f49149e",
@@ -752,7 +772,7 @@
         "boru-hatti",
         "ram-modeli"
       ],
-      "contentHash": "sha256:808c8f3abd283e7e11fb4293029e07ff2733ae0044f7b7b4355ebe1a1cc34d35",
+      "contentHash": "sha256:f38bb09b707e264869a236b96186d09452ca4255434ac2387de6f6a6f359bcd4",
       "path": "content/series-boun/articles/supporting-fundamentals/bilgisayar-organizasyonu-osnin-altindaki-makine.md",
       "relatedArticleIds": [],
       "classificationBatch": 12,
@@ -766,7 +786,7 @@
       "category": "supporting-fundamentals",
       "level": "advanced",
       "readingOrder": 38,
-      "summary": "Önceki makale donanımı dışarıdan gösterdi; bu makale aynı kavramları programcının elinde görünür kılıyor. Bir sürecin adres uzayı düzeni izin bitleriyle birlikte açılıyor: kod neden yazılamaz, koruma sayfası ne işe yarar, heap bölgesi hangi yönde büyür. Ardından işaretçinin gerçek maliyeti hesaplanıyor — aynı bir milyon tam sayı için dizi ile bağlı liste arasında, kendi aritmetiğimle, on üç kattan fazla fark çıkıyor. free çağrısının boyutu nereden bildiği ve beş klasik bellek hatası bir arada veriliyor. Son üçte bir, süreçler makalesinden devreden borcu ödüyor: fork iki kez dönüyor, exec hiç dönmüyor, kabuğun ikisini neden ayırdığı gösteriliyor ve sanal bellek makalesinde adı anılıp mekanizması açılmayan kopyalarken yazma sayfa hatasıyla birlikte kuruluyor.",
+      "summary": "Önceki makale donanımı dışarıdan gösterdi; bu makale aynı kavramları programcının elinde görünür kılıyor. Bir sürecin adres uzayı düzeni izin bitleriyle birlikte açılıyor: kod neden yazılamaz, koruma sayfası ne işe yarar, heap bölgesi hangi yönde büyür. Ardından işaretçinin gerçek maliyeti hesaplanıyor — aynı bir milyon tam sayı için dizi ile bağlı liste arasında, kendi aritmetiğimle, on üç kattan fazla fark çıkıyor. free çağrısının boyutu nereden bildiği ve yedi yaygın bellek hatası bir arada veriliyor. Son üçte bir, süreçler makalesinden devreden borcu ödüyor: fork başarılıysa iki kez dönüyor, başarılı bir exec hiç dönmüyor, kabuğun ikisini neden ayırdığı gösteriliyor ve sanal bellek makalesinde hiç açılmayan kopyalarken yazma sayfa hatasıyla birlikte kuruluyor.",
       "tags": [
         "c-dili",
         "adres-uzayi",
@@ -774,10 +794,12 @@
         "malloc",
         "fork"
       ],
-      "contentHash": "sha256:fbaef8475c712555d278c76e3a5f25d813bc5e1be9926e93562d83f5779d122b",
+      "contentHash": "sha256:597b2713426d8677af11e2f3a4daf59a5691f017cbed73743ab8a9fc9af293bf",
       "path": "content/series-boun/articles/supporting-fundamentals/c-ve-bellek-sistem-programlama-penceresi.md",
       "relatedArticleIds": [],
-      "classificationBatch": 12
+      "classificationBatch": 12,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Kopyalarken yazma maddesi gövdeyle hizalandı; kaynağın yedi yaygın bellek hatası tamamlandı; başlık bloğu atfı doğru bölüme taşındı."
     },
     {
       "articleId": "article_c7710554-6339-4421-93a4-575e15abc1bb",
@@ -794,12 +816,12 @@
         "transaction",
         "yalitim-duzeyi"
       ],
-      "contentHash": "sha256:cb50169cd40847c1ae6ef9252327bfe2b173383ae6bf382b29a50890c6d2e589",
+      "contentHash": "sha256:3bb01ce9534c3eb2bacc379d40379faeb0fa6d0b51c7708593ae73d1bf07880f",
       "path": "content/series-boun/articles/supporting-fundamentals/veritabanlari-iliskisel-model-indeks-ve-transaction.md",
       "relatedArticleIds": [],
       "classificationBatch": 12,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Normal biçimler bağımlılık örneğiyle, yalıtım tablosunun sınırı yazma çarpıklığı örneğiyle anlatıldı; indeks maliyet tablosu düzeltildi."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Veritabanındaki iki fazlı kilitlemenin senkronizasyondaki iki fazlı kilitten farklı bir kavram olduğu düzeltildi; Selinger künyesi düzeltildi."
     },
     {
       "articleId": "article_e8a46a1f-b783-48d8-a8e9-59137ba6084f",
@@ -816,7 +838,7 @@
         "tahta-kullanimi",
         "arastirma-yonu"
       ],
-      "contentHash": "sha256:31026fe59e47407e78dcabd28225ea2a9fa4f4498d1d01f45a742583c9523aea",
+      "contentHash": "sha256:066f3680c8a45821abd85adbfe8731c5ea36e999ce34e1962717cd1a2dd2e31c",
       "path": "content/series-boun/articles/interview-method/sozlu-anlatim-provasi-tahta-takip-sorusu-arastirma-yonu.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
@@ -836,10 +858,12 @@
         "dallanma-carpani",
         "seri-kapanisi"
       ],
-      "contentHash": "sha256:85f80dc098152b7514c0ae5cc75b604c0e1a3d308226095745a686681b1974d5",
+      "contentHash": "sha256:77aab0c3fb88fa597dcb88e70311c2a0132cabb8f10c89190dfa0d0da1dfd51a",
       "path": "content/series-boun/articles/interview-method/kapanis-zayif-nokta-haritasi-ve-son-hafta-plani.md",
       "relatedArticleIds": [],
-      "classificationBatch": 13
+      "classificationBatch": 13,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "İndirgemenin ters yönü, Cepeda ve arkadaşlarının yöntemi ve bir milyon elemanlı ikili heap'in yüksekliği (19) düzeltildi."
     }
   ]
 }

@@ -162,6 +162,46 @@
       "path": "content/series-guvenlik/articles/version-control/kod-kaybetmeden-geri-almak.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
+    },
+    {
+      "articleId": "article_062b627c-e52d-4b82-aa77-8ceca20616ae",
+      "title": "GitHub'da Ekip Akışı: Push, PR, Merge ve Dağıtım Ayrı Kararlardır",
+      "slug": "github-ekip-akisi-push-pr-merge-dagitim",
+      "category": "collaboration-and-delivery",
+      "level": "advanced",
+      "readingOrder": 9,
+      "summary": "İkisi de yeşil ve onaylı iki PR'ın birlikte main'i kırdığı bir sabahı yerel bir deney deposunda yeniden üretir. PR'ın kontrolünün head dalını değil, base'in o anki ucuyla kurulan deneme birleştirmesini sınadığını ve bu kanıtın base ilerleyince bayatladığını gösterir; sıkı gerekli kontrol ile birleştirme kuyruğunun aynı birleşimi main ilerlemeden nasıl sınadığını, CODEOWNERS'ın onayı değil inceleme isteğini getirdiğini, kontrolü tanımlayan iş akışı dosyasının PR'la birlikte değişebildiğini ve koşulla atlanan bir işin başarılı sayıldığını kurar. Push, PR, inceleme, birleştirme ve dağıtımı ayrı kanıtlar üreten ayrı kararlar olarak tasarlar.",
+      "tags": [
+        "github",
+        "pull-request",
+        "kod-sahipligi",
+        "gerekli-kontrol",
+        "birlestirme-kuyrugu"
+      ],
+      "contentHash": "sha256:73d357afbf76b69de9f2176870a418232a7067f30d4598f2472f7fbcb0e2006b",
+      "path": "content/series-guvenlik/articles/collaboration-and-delivery/github-ekip-akisi-push-pr-merge-dagitim.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
+    },
+    {
+      "articleId": "article_2bb514ae-50bc-4555-b83e-0855a87cf1ed",
+      "title": "Sürüm ve Dağıtım: Etiket, GitHub Release ve Geri Dönüş Yolu",
+      "slug": "surum-ve-dagitim-etiket-github-release",
+      "category": "collaboration-and-delivery",
+      "level": "advanced",
+      "readingOrder": 10,
+      "summary": "Bir sürüm gününün üç kazasını aynı deney deposunda izler: başarısız dağıtımdan sonra geri dönüş, sürüm numarası aynı kalsın diye taşınan etiket ve üretimdeki sürüme gereken acil düzeltme. Hafif ve açıklamalı etiketi, git push'un etiketleri neden göndermediğini, taşınan etiketin klonlarda neden sessizce ayrıştığını, GitHub Release ile değişmez sürümün neyi kilitlediğini ve SemVer'in bir güvence değil bir beyan olduğunu gösterir. Geri dönüşü revert'ten ayırır; taşınan etiketi kirayla geri koyar, sürüm dalında cherry-pick -x ile hotfix'i ve git cherry ile düzeltmenin main'e ulaştığının denetimini kurar.",
+      "tags": [
+        "git",
+        "etiket",
+        "github-release",
+        "semver",
+        "geri-donus"
+      ],
+      "contentHash": "sha256:1d48fdd1b8a173a89b28b21e6e466ec6ef99c25fec435fee8aaebf44a2c52fbf",
+      "path": "content/series-guvenlik/articles/collaboration-and-delivery/surum-ve-dagitim-etiket-github-release.md",
+      "relatedArticleIds": [],
+      "classificationBatch": 4
     }
   ]
 }

@@ -8,7 +8,7 @@
     </marker>
   </defs>
 
-  <text x="20" y="20" font-size="13" fill="var(--text-muted)">Beş istek, ağırlıklı: koyu olanlar optimal çözüm (A + B + E = 22)</text>
+  <text x="20" y="16" font-size="13" fill="var(--text-muted)">Beş istek, ağırlıklı: koyu olanlar optimal çözüm (A + B + E = 22)</text>
 
   <line x1="60" y1="38" x2="660" y2="38" stroke="var(--border)" stroke-width="1" />
   <text x="60" y="33" font-size="13" text-anchor="middle" fill="var(--text-faint)">9</text>
@@ -41,48 +41,48 @@
   <text x="45" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">j</text>
   <text x="100" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">istek</text>
   <text x="175" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">p(j)</text>
-  <text x="380" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">al: w(j) + OPT(p(j))</text>
-  <text x="510" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">alma: OPT(j−1)</text>
+  <text x="305" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">al: w(j) + OPT(p(j))</text>
+  <text x="470" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">alma: OPT(j−1)</text>
   <text x="600" y="262" font-size="13" text-anchor="middle" fill="var(--text-faint)">OPT(j)</text>
   <line x1="20" y1="270" x2="700" y2="270" stroke="var(--border)" stroke-width="1" />
 
   <text x="45" y="292" font-size="13" text-anchor="middle" fill="var(--text)">1</text>
   <text x="100" y="292" font-size="13" text-anchor="middle" fill="var(--text)">A</text>
   <text x="175" y="292" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
-  <text x="380" y="292" font-size="13" text-anchor="middle" fill="var(--text)">4 + 0 = 4</text>
-  <text x="510" y="292" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
+  <text x="305" y="292" font-size="13" text-anchor="middle" fill="var(--text)">4 + 0 = 4</text>
+  <text x="470" y="292" font-size="13" text-anchor="middle" fill="var(--text-muted)">0</text>
   <rect x="576" y="278" width="48" height="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
   <text x="600" y="292" font-size="13" text-anchor="middle" fill="var(--text)">4</text>
 
   <text x="45" y="316" font-size="13" text-anchor="middle" fill="var(--text)">2</text>
   <text x="100" y="316" font-size="13" text-anchor="middle" fill="var(--text)">B</text>
   <text x="175" y="316" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
-  <text x="380" y="316" font-size="13" text-anchor="middle" fill="var(--text)">8 + 4 = 12</text>
-  <text x="510" y="316" font-size="13" text-anchor="middle" fill="var(--text-muted)">4</text>
+  <text x="305" y="316" font-size="13" text-anchor="middle" fill="var(--text)">8 + 4 = 12</text>
+  <text x="470" y="316" font-size="13" text-anchor="middle" fill="var(--text-muted)">4</text>
   <rect x="576" y="302" width="48" height="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
   <text x="600" y="316" font-size="13" text-anchor="middle" fill="var(--text)">12</text>
 
   <text x="45" y="340" font-size="13" text-anchor="middle" fill="var(--text)">3</text>
   <text x="100" y="340" font-size="13" text-anchor="middle" fill="var(--text)">C</text>
   <text x="175" y="340" font-size="13" text-anchor="middle" fill="var(--text-muted)">1</text>
-  <text x="380" y="340" font-size="13" text-anchor="middle" fill="var(--text)">11 + 4 = 15</text>
-  <text x="510" y="340" font-size="13" text-anchor="middle" fill="var(--text-muted)">12</text>
+  <text x="305" y="340" font-size="13" text-anchor="middle" fill="var(--text)">11 + 4 = 15</text>
+  <text x="470" y="340" font-size="13" text-anchor="middle" fill="var(--text-muted)">12</text>
   <rect x="576" y="326" width="48" height="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
   <text x="600" y="340" font-size="13" text-anchor="middle" fill="var(--text)">15</text>
 
   <text x="45" y="364" font-size="13" text-anchor="middle" fill="var(--text)">4</text>
   <text x="100" y="364" font-size="13" text-anchor="middle" fill="var(--text)">D</text>
   <text x="175" y="364" font-size="13" text-anchor="middle" fill="var(--text-muted)">2</text>
-  <text x="380" y="364" font-size="13" text-anchor="middle" fill="var(--text)">5 + 12 = 17</text>
-  <text x="510" y="364" font-size="13" text-anchor="middle" fill="var(--text-muted)">15</text>
+  <text x="305" y="364" font-size="13" text-anchor="middle" fill="var(--text)">5 + 12 = 17</text>
+  <text x="470" y="364" font-size="13" text-anchor="middle" fill="var(--text-muted)">15</text>
   <rect x="576" y="350" width="48" height="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
   <text x="600" y="364" font-size="13" text-anchor="middle" fill="var(--text)">17</text>
 
   <text x="45" y="388" font-size="13" text-anchor="middle" fill="var(--text)">5</text>
   <text x="100" y="388" font-size="13" text-anchor="middle" fill="var(--text)">E</text>
   <text x="175" y="388" font-size="13" text-anchor="middle" fill="var(--text-muted)">2</text>
-  <text x="380" y="388" font-size="13" text-anchor="middle" fill="var(--text)">10 + 12 = 22</text>
-  <text x="510" y="388" font-size="13" text-anchor="middle" fill="var(--text-muted)">17</text>
+  <text x="305" y="388" font-size="13" text-anchor="middle" fill="var(--text)">10 + 12 = 22</text>
+  <text x="470" y="388" font-size="13" text-anchor="middle" fill="var(--text-muted)">17</text>
   <rect x="576" y="374" width="48" height="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
   <text x="600" y="388" font-size="13" text-anchor="middle" fill="var(--text)">22</text>
 

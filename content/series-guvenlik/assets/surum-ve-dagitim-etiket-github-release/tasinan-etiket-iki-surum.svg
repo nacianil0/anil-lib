@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 488" role="img" aria-label="İki panel, aynı commit konumları; oklar Git'in yönünde, her commit ebeveynini gösterir. Sırayla 703b5a1, rc.2, XXE, etiket v1.4.0-rc.2; 5c44797, PDF, KDV; 06994f8, e-arşiv; b58fd17, 1.4.0; vurgulu 3f2af4f, e-imza, 1.5; 7d8f549, düzeltme. Üst panel b'nin klonu, Pazartesi 09.00, getirmeden sonra: v1.4.0 · 4ba5541 ve main b58fd17'yi, kesikli çerçeveli origin/main 7d8f549'u gösteriyor; imaj 1.4.0, Cuma 15.00: revision b58fd17. Alt panel uzak depo ve a'nın klonu, Cuma 17.00'den sonra: vurgulu v1.4.0 · c608efd ve main 7d8f549'u gösteriyor. Notlar: b'de git fetch etiket hakkında sessiz, git fetch --tags would clobber existing tag; taşınan 1.4.0, yayımlanmamış 1.5 işini (3f2af4f) içeriyor. Köşeli kutu etiket, kesikli çerçeve uzak izleme dalı, vurgulu çerçeve taşınan ad ve onun soktuğu yayımlanmamış 1.5 işi.">
+  <defs>
+    <marker id="sd1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="sd1-ok-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">b'nin klonu, Pazartesi 09.00, getirmeden sonra</text>
+  <rect x="16" y="40" width="103" height="26" rx="4" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1" />
+  <text x="28" y="58" font-size="13" fill="var(--text)">v1.4.0-rc.2</text>
+  <line x1="64" y1="66" x2="64" y2="77" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <rect x="364" y="40" width="139" height="26" rx="4" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.6" />
+  <text x="376" y="58" font-size="13" fill="var(--text)">v1.4.0 · 4ba5541</text>
+  <line x1="412" y1="66" x2="412" y2="77" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+
+  <rect x="16" y="80" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="97" font-size="13" font-weight="bold" fill="var(--text)">703b5a1</text>
+  <text x="28" y="113" font-size="13" fill="var(--text-muted)">rc.2, XXE</text>
+  <rect x="132" y="80" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="144" y="97" font-size="13" font-weight="bold" fill="var(--text)">5c44797</text>
+  <text x="144" y="113" font-size="13" fill="var(--text-muted)">PDF, KDV</text>
+  <rect x="248" y="80" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="260" y="97" font-size="13" font-weight="bold" fill="var(--text)">06994f8</text>
+  <text x="260" y="113" font-size="13" fill="var(--text-muted)">e-arşiv</text>
+  <rect x="364" y="80" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="376" y="97" font-size="13" font-weight="bold" fill="var(--text)">b58fd17</text>
+  <text x="376" y="113" font-size="13" fill="var(--text-muted)">1.4.0</text>
+  <rect x="480" y="80" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="492" y="97" font-size="13" font-weight="bold" fill="var(--text)">3f2af4f</text>
+  <text x="492" y="113" font-size="13" fill="var(--text)">e-imza, 1.5</text>
+  <rect x="596" y="80" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="608" y="97" font-size="13" font-weight="bold" fill="var(--text)">7d8f549</text>
+  <text x="608" y="113" font-size="13" fill="var(--text-muted)">düzeltme</text>
+  <line x1="132" y1="100" x2="115" y2="100" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="248" y1="100" x2="231" y2="100" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="364" y1="100" x2="347" y2="100" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="480" y1="100" x2="463" y2="100" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="596" y1="100" x2="579" y2="100" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+
+  <line x1="412" y1="136" x2="412" y2="123" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <rect x="384" y="136" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="396" y="154" font-size="13" fill="var(--text)">main</text>
+  <line x1="644" y1="136" x2="644" y2="123" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <rect x="596" y="136" width="103" height="26" rx="13" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" stroke-dasharray="5 3" />
+  <text x="608" y="154" font-size="13" fill="var(--text)">origin/main</text>
+
+  <line x1="300" y1="176" x2="368" y2="124" stroke="var(--cool)" stroke-width="1.4" stroke-dasharray="2 3" marker-end="url(#sd1-ok)" />
+  <rect x="120" y="176" width="320" height="26" rx="6" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="132" y="194" font-size="13" fill="var(--text)">imaj 1.4.0, Cuma 15.00: revision b58fd17</text>
+
+  <line x1="16" y1="222" x2="704" y2="222" stroke="var(--border)" stroke-width="1" />
+
+  <text x="16" y="250" font-size="13" font-weight="bold" fill="var(--text)">Uzak depo ve a'nın klonu, Cuma 17.00'den sonra</text>
+  <rect x="16" y="266" width="103" height="26" rx="4" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1" />
+  <text x="28" y="284" font-size="13" fill="var(--text)">v1.4.0-rc.2</text>
+  <line x1="64" y1="292" x2="64" y2="303" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <rect x="553" y="266" width="139" height="26" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.8" />
+  <text x="565" y="284" font-size="13" fill="var(--text)">v1.4.0 · c608efd</text>
+  <line x1="644" y1="292" x2="644" y2="303" stroke="var(--accent)" stroke-width="1.6" marker-end="url(#sd1-ok-vurgu)" />
+
+  <rect x="16" y="306" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="323" font-size="13" font-weight="bold" fill="var(--text)">703b5a1</text>
+  <text x="28" y="339" font-size="13" fill="var(--text-muted)">rc.2, XXE</text>
+  <rect x="132" y="306" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="144" y="323" font-size="13" font-weight="bold" fill="var(--text)">5c44797</text>
+  <text x="144" y="339" font-size="13" fill="var(--text-muted)">PDF, KDV</text>
+  <rect x="248" y="306" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="260" y="323" font-size="13" font-weight="bold" fill="var(--text)">06994f8</text>
+  <text x="260" y="339" font-size="13" fill="var(--text-muted)">e-arşiv</text>
+  <rect x="364" y="306" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="376" y="323" font-size="13" font-weight="bold" fill="var(--text)">b58fd17</text>
+  <text x="376" y="339" font-size="13" fill="var(--text-muted)">1.4.0</text>
+  <rect x="480" y="306" width="96" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="492" y="323" font-size="13" font-weight="bold" fill="var(--text)">3f2af4f</text>
+  <text x="492" y="339" font-size="13" fill="var(--text)">e-imza, 1.5</text>
+  <rect x="596" y="306" width="96" height="40" rx="10" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="608" y="323" font-size="13" font-weight="bold" fill="var(--text)">7d8f549</text>
+  <text x="608" y="339" font-size="13" fill="var(--text-muted)">düzeltme</text>
+  <line x1="132" y1="326" x2="115" y2="326" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="248" y1="326" x2="231" y2="326" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="364" y1="326" x2="347" y2="326" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="480" y1="326" x2="463" y2="326" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="596" y1="326" x2="579" y2="326" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <line x1="644" y1="362" x2="644" y2="349" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#sd1-ok)" />
+  <rect x="616" y="362" width="56" height="26" rx="13" fill="var(--surface-muted)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="628" y="380" font-size="13" fill="var(--text)">main</text>
+
+  <text x="16" y="414" font-size="13" fill="var(--text)">b'de git fetch: etiket hakkında sessiz · git fetch --tags: would clobber existing tag</text>
+  <text x="16" y="436" font-size="13" fill="var(--accent)">taşınan 1.4.0, yayımlanmamış 1.5 işini (3f2af4f) içeriyor</text>
+  <text x="16" y="472" font-size="13" fill="var(--text-muted)">oklar Git'in yönünde · köşeli: etiket · kesikli: uzak izleme dalı · vurgulu: taşınan ad ve 1.5 işi</text>
+</svg>

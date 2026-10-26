@@ -12,7 +12,7 @@ tags:
   - ram-modeli
   - buyume-siniflari
   - en-kotu-durum
-content_hash: sha256:3c42280778b48bd4cf925e61ce1b9907acd1e5e1e788856507c3c842b0370b26
+content_hash: sha256:bdbb34c8a67e43d534f97c0f36c4260647cea45428f9faf67a0dd27284558a9d
 classification_version: 1
 classification_batch: 2
 ---
@@ -75,7 +75,7 @@ Farklı büyüme sınıflarının arasındaki mesafeyi görmenin en hızlı yolu
 
 Şekil 2 aynı sınıfları eğri olarak yan yana koyuyor; üstel ve karesel eğrilerin tuvali ne kadar erken terk ettiğine dikkat et.
 
-![Beş büyüme eğrisinin aynı eksende karşılaştırması: logaritmik eğri neredeyse yatay kalır, doğrusal eğri düzgün yükselir, n log n daha dik yükselip tuvali terk eder, karesel ve üstel eğriler çok daha erken tepeye ulaşır. Her eğri kendi ucunda etiketlenmiş; eksen başlığı biçimin şematik, eksenlerin ölçeksiz olduğunu belirtiyor; gerçek değerler şeklin altındaki tabloda](assets/buyume-siniflari.svg "Şekil 2 — Büyüme sınıflarının aynı eksende karşılaştırması")
+![Beş büyüme eğrisinin aynı eksende karşılaştırması: logaritmik eğri neredeyse yatay kalır, doğrusal eğri düzgün yükselir, n log n daha dik yükselip tuvali terk eder, karesel ve üstel eğriler çok daha erken tepeye ulaşır. Her eğri kendi ucunda etiketlenmiş; eksen başlığı biçimin şematik, eksenlerin ölçeksiz olduğunu belirtiyor; gerçek değerler şeklin üstündeki tabloda](assets/buyume-siniflari.svg "Şekil 2 — Büyüme sınıflarının aynı eksende karşılaştırması")
 
 Son üç satırın ne demek olduğunu somutlaştıralım. Saniyede bir milyar temel işlem yapan bir makine düşün. 2¹⁰⁰ işlemi bitirmesi yaklaşık 4 × 10¹³ yıl sürer; evrenin yaşı yaklaşık 1,4 × 10¹⁰ yıl olduğuna göre bu, evrenin yaşının kabaca üç bin katıdır. Donanımı bin kat hızlandırmak bu tabloyu kurtarmaz; üstel büyümede sabit çarpanlar anlamsızdır. "Daha hızlı bilgisayar alalım" cevabının neden çalışmadığının teknik gerekçesi budur.
 
@@ -93,7 +93,7 @@ Pratik sonuçları üç maddeye iner. Sabit çarpanlar düşer: 100n² de n²/2 
 
 Bu son nokta mülakatta en sık yakalanan yerdir. "Bu algoritma O(n²)" cümlesi teknik olarak doğru ama bilgi bakımından zayıf olabilir; söylenmek istenen genellikle "tam olarak karesel mertebede", yani hem üst hem alt sınır olarak karesel olduğudur. Bunun ayrı bir gösterimi vardır ve üst sınır, alt sınır ile sıkı sınır ayrımının formal tanımları asimptotik analiz makalesinde kurulacak. Şimdilik bilmen gereken, cümlenin hangi sınırı iddia ettiğine dikkat etmektir.
 
-Bir uyarı daha: Big-O bir çalışma süresi değildir, bir **büyüme sınıfıdır**. "O(n) saniye sürer" cümlesi anlamsızdır. Doğru cümle "adım sayısı n ile doğru orantılı büyür" biçimindedir.
+Big-O bir çalışma süresi değildir, bir **büyüme sınıfıdır**. "O(n) saniye sürer" cümlesi anlamsızdır. Doğru cümle "adım sayısı en fazla n ile doğru orantılı büyür" biçimindedir.
 
 ## En kötü, en iyi, ortalama durum
 
@@ -115,7 +115,7 @@ Ortalama durumun gizli maliyeti tam da budur: bir **olasılık dağılımı vars
 
 **Döngü sayısını sınıf sanmak.** İç içe iki döngü her zaman karesel değildir. İç döngü sayacını her turda ikiye bölerek ilerliyorsa (n, n/2, n/4, …) her dış adımda yaklaşık log₂n kez döner ve toplam n log n olur. Dış döngü i'yi ikiye bölerek ilerliyor ve iç döngü i kez dönüyorsa toplam n + n/2 + n/4 + ⋯ < 2n, yani doğrusaldır. Sayarken döngünün kaç kez döndüğüne bakılır, kaç tane döngü olduğuna değil.
 
-**Bellek maliyetini atlamak.** Karmaşıklık yalnızca zaman değildir. Bir çözümün zaman karmaşıklığını söyleyip **yer karmaşıklığını (space complexity)** söylememek, mülakatta en sık gelen takip sorusunu davet eder: "Peki ne kadar ek bellek kullanıyor?" Yer karmaşıklığında en çok unutulan kalem, özyinelemeli çağrıların yığında tuttuğu yerdir: her açık çağrı bir çerçeve tutar, dolayısıyla özyineleme derinliği doğrudan bellek maliyetidir. Aynı işi yapan döngülü bir çözüm sabit ek bellekle çalışırken özyinelemeli hâli derinlikle orantılı bellek isteyebilir. Zaman ile bellek arasındaki bu değiş tokuş, fazın tamamında tekrar eden temadır.
+**Bellek maliyetini atlamak.** Karmaşıklık yalnızca zaman değildir. Bir çözümün zaman karmaşıklığını söyleyip **yer karmaşıklığını (space complexity)** söylememek, mülakatçının doğrudan bir takip sorusunu davet eder: "Peki ne kadar ek bellek kullanıyor?" Yer karmaşıklığında en çok unutulan kalem, özyinelemeli çağrıların yığında tuttuğu yerdir: her açık çağrı bir çerçeve tutar, dolayısıyla özyineleme derinliği doğrudan bellek maliyetidir. Aynı işi yapan döngülü bir çözüm sabit ek bellekle çalışırken özyinelemeli hâli derinlikle orantılı bellek isteyebilir. Zaman ile bellek arasındaki bu değiş tokuş, fazın tamamında tekrar eden temadır.
 
 > **Sesli anlat:** "Doğrusal aramanın en iyi, en kötü ve ortalama durumunu söyle ve neden varsayılan olarak en kötü durumu kullandığımızı altmış saniyede açıkla."
 >
@@ -125,7 +125,7 @@ Ortalama durumun gizli maliyeti tam da budur: bir **olasılık dağılımı vars
 
 Karmaşıklık sorusu neredeyse hiç tek başına sorulmaz; bir çözüm anlattıktan sonra gelir ve cevabın kalitesini ölçer. Standart takip zinciri şudur: "Bu çözümün karmaşıklığı nedir?" → "Neden, nereden geliyor?" → "Daha iyisi mümkün mü, neden?"
 
-İyi bir cevabın yapısı sabittir. Önce girdi boyutunu tanımla. Sonra maliyeti nereden saydığını söyle — hangi döngü, kaç kez. Sonra sınıfı ver ve hangi durumu (en kötü mü, ortalama mı) kastettiğini belirt. En sonda bellek maliyetini ekle. Dört adımı bu sırayla söylemek, aynı cevabı ezberden söylemekten çok daha güçlü durur.
+İyi bir cevabın yapısı sabittir. Önce girdi boyutunu tanımla. Sonra maliyeti nereden saydığını söyle — hangi döngü, kaç kez. Sonra sınıfı ver ve hangi durumu (en kötü mü, ortalama mı) kastettiğini belirt. En sonda bellek maliyetini ekle. Dört adımı bu sırayla söylemek, zincirin ilk iki sorusunu tek cevapta kapatır: sınıfı da nereden geldiğini de mülakatçı sormadan vermiş olursun.
 
 Yukarıdaki iç içe döngü problemi için bu kalıbın nasıl konuştuğunu görelim: "n dizinin eleman sayısı. Dış döngü n kez dönüyor, iç döngü ortalama olarak yaklaşık n/2 kez; toplam iç işlem sayısı n(n − 1)/2, yani karesel mertebede. Bu en kötü durum değil, her durum: döngü girdiye bakmadan aynı sayıda dönüyor. Ek bellek sabit, çünkü yalnızca birkaç sayaç tutuyorum." Dört cümle, dört adım. Mülakatçının ardından soracağı şey büyük ihtimalle "daha iyisi mümkün mü?" olacaktır ve o soruya cevap verebilmek için önce bu dört cümlenin akıcı gelmesi gerekir.
 

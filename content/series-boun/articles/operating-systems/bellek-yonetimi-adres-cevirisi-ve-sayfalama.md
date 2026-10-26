@@ -12,7 +12,7 @@ tags:
   - sayfalama
   - sayfa-tablosu
   - tlb
-content_hash: sha256:3154c6efbebc63e763840f653601f0e806dcf9aeea5cc109bd8b31be8579d862
+content_hash: sha256:74536463166f6ebd712fe43ef4ea740f38cf9b556415e44496b23564098159f9
 classification_version: 1
 classification_batch: 10
 ---
@@ -38,13 +38,13 @@ Bir örnek: adres uzayı 16KB olan bir süreç fiziksel bellekte 32KB'den başla
 
 Sınır yazmacı korumayı sağlar: sanal adres sınırdan büyük ya da negatifse donanım bir istisna doğurur ve süreç genellikle sonlandırılır. Adres uzayı 4KB olan ve 16KB'ye yerleştirilmiş bir süreçte sanal 0 fiziksel 16KB'ye, 1KB → 17KB'ye, 3000 → 19384'e çevrilir; 4400 ise sınır dışıdır ve hatadır. Taban ve sınır yazmaçlarını değiştiren komutlar **ayrıcalıklı komutlardır**; işletim sistemi makalesinde koyduğumuz kullanıcı kipi / çekirdek kipi ayrımı olmasa bu düzenek beş dakika yaşamazdı.
 
-Bu çözüm hızlıdır ve neredeyse bedavadır. Tek bir kusuru var, ama büyüktür: adres uzayının **tamamı** bitişik olarak bellekte durmak zorundadır. Kod 1KB, yığın 1KB, heap 1KB tutsa bile aradaki kullanılmayan 13KB de yer kaplar. Buna **iç parçalanma (internal fragmentation)** denir — ayrılan birimin içinde israf edilen alan.
+Bu çözüm hızlıdır: donanım her erişimde yalnızca bir toplama ve bir sınır karşılaştırması yapar. Tek bir kusuru var, ama büyüktür: adres uzayının **tamamı** bitişik olarak bellekte durmak zorundadır. Kod 1KB, yığın 1KB, heap 1KB tutsa bile aradaki kullanılmayan 13KB de yer kaplar. Buna **iç parçalanma (internal fragmentation)** denir — ayrılan birimin içinde israf edilen alan.
 
 ## Bölütleme: parçaları ayrı ayrı yerleştir
 
 Doğal düzeltme şudur: tek bir taban–sınır çifti yerine, adres uzayının her mantıksal parçası için bir çift tut. Bu parçalara **bölüt (segment)** denir ve kanonik üçlü koddur, heap'tir, yığındır. Böylece üç parça fiziksel bellekte üç ayrı yere konur ve aradaki boşluk hiç yerleştirilmez.
 
-Örneğin kod 32K'da 2KB, heap 34K'da 3KB, yığın 28K'da 2KB yer kaplasın. Sanal adres 100 koddadır: 100 + 32K = 32868. Ama sanal adres 4200 heap'tedir ve buradaki incelik mülakatta sık sorulur: doğrudan 4200 + 34K yapılamaz. Heap sanal 4KB'den başladığı için önce **bölüt içindeki ofset** bulunur — 4200 − 4096 = 104 — ve taban ona eklenir: 34K + 104 = 34920. Donanım hangi bölüte bakacağını genellikle adresin en üst birkaç bitinden anlar; kalan bitler ofsettir ve sınır denetimi de doğrudan ofset üzerinde yapılır.
+Örneğin kod 32K'da 2KB, heap 34K'da 3KB, yığın 28K'da 2KB yer kaplasın. Sanal adres 100 koddadır: 100 + 32K = 32868. Ama sanal adres 4200 heap'tedir ve buradaki incelik şudur: doğrudan 4200 + 34K yapılamaz. Heap sanal 4KB'den başladığı için önce **bölüt içindeki ofset** bulunur — 4200 − 4096 = 104 — ve taban ona eklenir: 34K + 104 = 34920. Donanım hangi bölüte bakacağını genellikle adresin en üst birkaç bitinden anlar; kalan bitler ofsettir ve sınır denetimi de doğrudan ofset üzerinde yapılır.
 
 Bölüt sınırı dışına düşen bir erişim donanım tarafından yakalanır ve işletim sistemine bir tuzak doğurur. C programcılarının korktuğu **bölütleme hatası (segmentation fault)** adı buradan gelir; adres uzayı artık bölütlere ayrılmasa bile ad kalmıştır.
 
@@ -104,11 +104,11 @@ Burada süreçler makalesinden bir borç ödeniyor. TLB'deki çeviriler **yalnı
 
 İki çözüm vardır. Birincisi, bağlam anahtarında TLB'yi **boşaltmaktır**; donanım yönetimli bir TLB'de bu, işletim sistemi zaten değiştirmek zorunda olduğu sayfa tablosu taban yazmacını değiştirdiğinde otomatik yapılabilir. Doğrudur ama bedellidir: her süreç çalışmaya başladığında kendi kod ve veri sayfaları için baştan ıska yemeye başlar. İkincisi, TLB girdilerine bir **adres uzayı tanımlayıcısı (address space identifier, ASID)** eklemektir; süreç kimliğine benzer ama daha kısadır — sekiz bit tipiktir. Böylece iki sürecin girdileri TLB'de birlikte durabilir ve bağlam anahtarında yalnızca ayrıcalıklı bir yazmaca o anki ASID yazılır.
 
-Aynı yerde bir ayrım daha netleşiyor. Süreçler makalesinde "iş parçacıkları aynı adres uzayını paylaşır, bu yüzden aralarında geçiş yapmak sayfa tablosunu değiştirmez" demiştik. Şimdi bunun somut karşılığını söyleyebiliriz: aynı sürecin iki iş parçacığı arasındaki geçiş TLB'yi boşaltmayı gerektirmez; iki süreç arasındaki geçiş gerektirir. İş parçacığının süreçten ucuz olmasının en somut kalemlerinden biri budur.
+Aynı yerde bir ayrım daha netleşiyor. Süreçler makalesinde "iş parçacıkları aynı adres uzayını paylaşır, bu yüzden aralarında geçiş yapmak sayfa tablosunu değiştirmez" demiştik. Şimdi bunun somut karşılığını söyleyebiliriz: aynı sürecin iki iş parçacığı arasındaki geçiş TLB'ye dokunmaz; iki süreç arasındaki geçiş ise ASID yoksa TLB'yi boşaltmayı, ASID varsa en azından o anki ASID'i yazmayı gerektirir. İş parçacığının süreçten ucuz olmasının en somut kalemlerinden biri budur.
 
 > **Sesli anlat:** "Sayfa tablosu neden büyük bir problem ve iki çareyi anlat. Doksan saniye."
 >
-> İyi bir cevabın omurgası: "İki ayrı problem var, ikisini karıştırmamak gerekiyor. Birincisi yer: 32 bit adres uzayı ve 4KB sayfayla süreç başına yaklaşık bir milyon girdi, girdi başına 4 bayttan 4 MB tablo demek; yüz süreçte 400 MB. Bunun çaresi çok düzeyli tablodur — tabloyu sayfa boyutunda parçalara bölüp tamamı geçersiz olan parçaya hiç yer ayırmamak. Böylece lineer yapı bir dizi olmaktan çıkıp ağaç olur ve adres uzayının boş ortası ücretsiz hâle gelir; küçük bir örnekte 1024 bayt yerine 192 bayt, gerçek donanımda çok daha büyük bir oran. Bedeli, TLB ıskasında düzey sayısı kadar bellek erişimi ödemektir. İkinci problem zaman: tablo bellekte olduğu için her sanal erişim iki fiziksel erişime döner. Bunun çaresi TLB, yani çevirilerin donanım önbelleğidir; programların yerelliği sayesinde isabet oranı çok yüksektir, 4KB sayfada sıralı bir dizi taraması yüzde 99,9 verir ve iki kat yavaşlama binde birkaça iner. TLB'nin kendi problemi de var: girdileri yalnızca o an koşan süreç için anlamlıdır, o yüzden bağlam anahtarında ya boşaltılır ya da girdilere adres uzayı tanımlayıcısı eklenir. Aynı sürecin iki iş parçacığı arasında geçiş yaparken bu masraf yoktur, çünkü sayfa tablosu değişmez."
+> İyi bir cevabın omurgası: "İki ayrı problem var, ikisini karıştırmamak gerekiyor. Birincisi yer: 32 bit adres uzayı ve 4KB sayfayla süreç başına yaklaşık bir milyon girdi, girdi başına 4 bayttan 4 MB tablo demek; yüz süreçte 400 MB. Bunun çaresi çok düzeyli tablodur — tabloyu sayfa boyutunda parçalara bölüp tamamı geçersiz olan parçaya hiç yer ayırmamak. Böylece lineer yapı bir dizi olmaktan çıkıp ağaç olur ve adres uzayının boş ortası için tablo sayfası ayrılmaz; küçük bir örnekte 1024 bayt yerine 192 bayt, gerçek donanımda çok daha büyük bir oran. Bedeli, TLB ıskasında düzey sayısı kadar bellek erişimi ödemektir. İkinci problem zaman: tablo bellekte olduğu için her sanal erişim iki fiziksel erişime döner. Bunun çaresi TLB, yani çevirilerin donanım önbelleğidir; programların yerelliği sayesinde isabet oranı çok yüksektir, 4KB sayfada sıralı bir dizi taraması yüzde 99,9 verir ve iki kat yavaşlama binde birkaça iner. TLB'nin kendi problemi de var: girdileri yalnızca o an koşan süreç için anlamlıdır, o yüzden bağlam anahtarında ya boşaltılır ya da girdilere adres uzayı tanımlayıcısı eklenir. Aynı sürecin iki iş parçacığı arasında geçiş yaparken bu masraf yoktur, çünkü sayfa tablosu değişmez."
 
 ## Mülakatta nasıl görünür
 

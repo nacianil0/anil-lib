@@ -12,7 +12,7 @@ tags:
   - celiskiyle-ispat
   - karsi-ornek
   - kok-iki
-content_hash: sha256:339c162356c7ffce3c7745bac5d98fc261acb677259a9820023ca8299e3f9fc9
+content_hash: sha256:a388af90fd0d5ef741bda25813dd64362261370183ca4e0b0d962ea83f6116e3
 classification_version: 1
 classification_batch: 0
 ---
@@ -66,7 +66,7 @@ Bazen p'den q'ya yürümek zordur ama ¬q'dan ¬p'ye yürümek kolaydır. Mantı
 
 **İddia (Lemma).** n bir tam sayı ve n² çiftse, n de çifttir.
 
-Doğrudan denemek can sıkıcıdır: n² = 2m bilgisinden n hakkında bir şey çıkarmak için karekök almak gerekir ve karekökün tam sayı olduğunu bilmiyoruz. Karşıt tersi ise neredeyse yazılmış hâlde gelir.
+Doğrudan denemek can sıkıcıdır: n² = 2m bilgisinden yola çıkınca elimize yalnızca n = ±√(2m) geçer ve bu ifade n'nin çift olup olmadığı hakkında hiçbir şey söylemez; bunu söyleyecek olan, tam da ispatlamak istediğimiz önermedir. Karşıt tersi ise neredeyse yazılmış hâlde gelir.
 
 **Karşıt ters.** n çift değilse, n² de çift değildir. Yani: n tekse n² tektir.
 
@@ -94,7 +94,7 @@ ve yine parantez içi tam sayıdır.
 
 **Savunma.** İki durum birbirini dışlar ve birlikte bütün tam sayıları kapsar; dolayısıyla iddia her n için gösterilmiştir. Bu iki koşul durum ayrımının bütün yüküdür: durumlar örtüşürse ispat gereksiz uzar, evreni kapsamazsa ispat yanlış olur. Mülakatta "bütün durumları saydığından emin misin?" sorusu tam olarak ikincisini yoklar.
 
-Bu ispatın daha kısa bir yolu da vardır ve göstermeye değer: n² + n = n(n + 1) çarpanlarına ayrılır; ardışık iki tam sayıdan biri mutlaka çifttir, dolayısıyla çarpım çifttir. Aynı iddianın iki ispatı olması sık görülür ve mülakatta ikincisini de söyleyebilmek, konuyu ezberlemediğini gösteren en ucuz sinyaldir.
+Bu ispatın daha kısa bir yolu da vardır ve göstermeye değer: n² + n = n(n + 1) çarpanlarına ayrılır; ardışık iki tam sayıdan biri mutlaka çifttir, dolayısıyla çarpım çifttir. Aynı iddianın iki ispatı olması sık görülür; mülakatta ikinci ispat, birincisindeki bir adım sorgulandığında elindeki yedek yoldur.
 
 ## Çelişkiyle ispat
 
@@ -126,7 +126,7 @@ Aynı gerekçeyle b² çifttir, dolayısıyla b de çifttir.
 
 **Savunma.** İspatın kalbi, çiftlik lemmasının iki kez kullanılmasıdır; lemma olmadan "a² çift, öyleyse a çift" adımı boşlukta kalır. Mülakatta bu ispat istendiğinde en sık atlanan yer de burasıdır: lemmayı gerekçesiz kullanmak, ispatı yarım bırakmak demektir.
 
-Bir uyarı: çelişkiyle ispat güçlü olduğu için fazla kullanılmaya müsaittir. Bir iddiayı doğrudan ispatlayabiliyorken çelişkiye sarmak, ispatı okunması zor hâle getirir. "¬q varsayalım... (bu varsayımı hiç kullanmadan) p'den yürüyelim... q elde ettik, çelişki" biçimindeki ispatlar aslında gizlenmiş doğrudan ispatlardır ve öyle yazılmalıdır. Test basittir: çelişkiye giderken ¬q varsayımını gerçekten kullandın mı? Kullanmadıysan, çelişki kılığı gereksizdir.
+Çelişkiyle ispat güçlü olduğu için fazla kullanılmaya müsaittir. Bir iddiayı doğrudan ispatlayabiliyorken çelişkiye sarmak, ispatı okunması zor hâle getirir. "¬q varsayalım... (bu varsayımı hiç kullanmadan) p'den yürüyelim... q elde ettik, çelişki" biçimindeki ispatlar aslında gizlenmiş doğrudan ispatlardır ve öyle yazılmalıdır. Test basittir: çelişkiye giderken ¬q varsayımını gerçekten kullandın mı? Kullanmadıysan, çelişki kılığı gereksizdir.
 
 ## Karşı örnek disiplini
 

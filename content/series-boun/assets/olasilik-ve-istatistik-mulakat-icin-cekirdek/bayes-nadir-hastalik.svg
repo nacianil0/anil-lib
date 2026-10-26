@@ -34,5 +34,5 @@
   <text x="30" y="284" font-size="13" fill="var(--text-muted)">aynı test, yaygınlık %1 olsaydı %50; özgüllük %99,9 olsaydı %49,8 verirdi</text>
 
   <text x="15" y="330" font-size="13" fill="var(--text-muted)">Yanlış pozitifler gerçek pozitiflerden çok olduğu sürece pozitif bir test hasta</text>
-  <text x="15" y="350" font-size="13" fill="var(--text-muted)">olmak anlamına gelmez; belirleyici olan testin iyiliği değil, taban oranıdır.</text>
+  <text x="15" y="350" font-size="13" fill="var(--text-muted)">olmak anlamına gelmez; belirleyici olan tek başına testin iyiliği değil, taban oranıdır.</text>
 </svg>

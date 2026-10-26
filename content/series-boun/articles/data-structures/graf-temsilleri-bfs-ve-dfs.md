@@ -12,7 +12,7 @@ tags:
   - dfs
   - topolojik-siralama
   - bagli-bilesen
-content_hash: sha256:e7c6c3585fbd9eeb9629e8e4de3b52f1d2c64e2587f5dd5ac2cb7c139bb4f683
+content_hash: sha256:7902f47cd25b686b26f5b6750f0ea5c1707695f6cb59a7cc64e2560067374fc4
 classification_version: 1
 classification_batch: 5
 ---
@@ -30,7 +30,7 @@ Bütün makale boyunca grafı G = (V, E) diye yazacağız: V düğüm kümesi, E
 
 Grafın arayüzü aslında tek bir işlemden ibarettir: **bana u düğümünün komşularını ver.** Neredeyse bütün graf algoritmaları bu işlemin üstüne kurulur. Sorumuz, bu sözü hangi temsille daha ucuza tutabileceğimizdir.
 
-**Komşuluk matrisi (adjacency matrix).** |V| × |V| boyutunda bir tablo tut; A[u][v] hücresi, u ile v arasında kenar varsa 1, yoksa 0 olsun. Yönsüz grafta matris simetriktir. Bu temsil bir soruyu bedavaya getirir: "u ile v arasında kenar var mı?" tek bir hücre okumasıdır, yani sabit zamanlıdır. Karşılığında iki bedel öder. Yer her zaman |V|² hücredir — grafın kaç kenarı olduğu hiç fark etmez. Ve "u'nun komşularını gez" işlemi, u'nun kaç komşusu olursa olsun, bütün satırı taramayı gerektirir: Θ(|V|).
+**Komşuluk matrisi (adjacency matrix).** |V| × |V| boyutunda bir tablo tut; A[u][v] hücresi, u ile v arasında kenar varsa 1, yoksa 0 olsun. Yönsüz grafta matris simetriktir. Bu temsil bir soruyu çok ucuzlatır: "u ile v arasında kenar var mı?" tek bir hücre okumasıdır, yani sabit zamanlıdır. Karşılığında iki bedel öder. Yer her zaman |V|² hücredir — grafın kaç kenarı olduğu hiç fark etmez. Ve "u'nun komşularını gez" işlemi, u'nun kaç komşusu olursa olsun, bütün satırı taramayı gerektirir: Θ(|V|).
 
 **Komşuluk listesi (adjacency list).** Her düğüm için, komşularının listesini tut. Düğümler 0'dan |V| − 1'e numaralıysa bu listeleri bir dizide tutabilirsin; numaralı değillerse hash tablosu kullanırsın. Burada "u'nun komşularını gez" işlemi tam olarak u'nun derecesi kadar sürer, yani Θ(deg(u)) — hiçbir gereksiz iş yok. Buna karşılık "u ile v arasında kenar var mı?" sorusu u'nun listesini taramaktır: Θ(deg(u)).
 
@@ -50,7 +50,7 @@ Maliyetleri tek tabloda toplayalım.
 | Kenar ekle / sil | sabit | ekleme sabit, silme deg(u) |
 | Bütün grafı dolaş (BFS/DFS) | \|V\|² | \|V\| + \|E\| |
 
-Seçimi belirleyen tek şey grafın **yoğunluğudur**. Basit yönsüz bir grafta kenar sayısı en fazla C(|V|, 2) = |V|(|V| − 1)/2'dir; sayma makalesindeki o değer burada üst sınır olarak geri geliyor. |E| bu üst sınıra yakınsa graf **yoğundur (dense)** ve matris hem yerini hak eder hem de sabit zamanlı kenar sorgusunu bedava verir. |E| kabaca |V| mertebesindeyse graf **seyrektir (sparse)** ve matris neredeyse tamamen sıfır saklar.
+Seçimi belirleyen tek şey grafın **yoğunluğudur**. Basit yönsüz bir grafta kenar sayısı en fazla C(|V|, 2) = |V|(|V| − 1)/2'dir; sayma makalesindeki o değer burada üst sınır olarak geri geliyor. |E| bu üst sınıra yakınsa graf **yoğundur (dense)** ve matris hem yerini hak eder hem de sabit zamanlı kenar sorgusunu verir. |E| kabaca |V| mertebesindeyse graf **seyrektir (sparse)** ve matris neredeyse tamamen sıfır saklar.
 
 Somut bir hesap yapalım. |V| = 10⁶ düğüm ve |E| = 10⁷ kenar olan bir ağ düşün — ortalama derece 20; gerçek dünyadaki büyük ağların çoğu gibi seyrek bir profil. Matris 10¹² hücre ister; hücre başına yalnızca 1 bit saysan bile 1,25 × 10¹¹ bayt, yani 125 GB eder. Komşuluk listeleri ise 10⁶ + 2 × 10⁷ = 2,1 × 10⁷ girdi tutar. Yoğunluk oranı 10⁷ / (≈5 × 10¹¹) = 2 × 10⁻⁵; matrisin yüz binde ikisi doludur. Aynı fark dolaşma maliyetinde de görünür: matris üzerinde her düğümün komşularını bulmak bütün satırı taramak demektir ve toplam 10¹² adıma çıkar; listelerle her düğüme bir kez, her liste girdisine bir kez bakılır ve yaklaşık 2,1 × 10⁷ adım yeter.
 
@@ -70,7 +70,7 @@ Algoritma her düğüm için iki şey saklar: uzaklık δ(s, v) ve **ebeveyn** P
 
 **Maliyeti** yine el sıkışma lemmasından çıkar. Her düğüm tam olarak bir katmana girer ve kuyruktan bir kez çıkar; kuyruktan çıktığında komşularını gezer, bu da deg(u) adımdır. Bütün düğümler üzerinde toplarsak Σ deg(u) = 2|E|. Buna, ulaşılamayan düğümlere sonsuz uzaklık atamak için gereken Θ(|V|) eklenir. Toplam: **O(|V| + |E|)**, yani graf boyutunda doğrusal.
 
-Küçük bir uyarı: BFS'in en kısa yol vermesi, kenarların **ağırlıksız** olmasına bağlıdır. Her kenar bir birim sayıldığı için "en az kenar" ile "en kısa" aynı şeydir. Kenarların ağırlığı olduğunda katman fikri çöker ve ağırlıklar negatif değilse öncelik kuyruğuna ihtiyaç duyulur (negatif ağırlıkta o da yetmez); heap makalesinde kurduğumuz yapının graf algoritmalarındaki asıl işi budur ve bu, ağırlıklı en kısa yollar makalesinin konusudur.
+BFS'in en kısa yol vermesi, kenarların **ağırlıksız** olmasına bağlıdır. Her kenar bir birim sayıldığı için "en az kenar" ile "en kısa" aynı şeydir. Kenarların ağırlığı olduğunda katman fikri çöker ve ağırlıklar negatif değilse öncelik kuyruğuna ihtiyaç duyulur (negatif ağırlıkta o da yetmez); heap makalesinde kurduğumuz yapının graf algoritmalarındaki asıl işi budur ve bu, ağırlıklı en kısa yollar makalesinin konusudur.
 
 ## Derinlik öncelikli arama: yığınla derine
 
@@ -118,7 +118,7 @@ Algoritma şaşırtıcı derecede kısadır. Tam DFS çalıştır ve düğümler
 
 Somutlaştıralım. Şu bağımlılık grafını alalım: a → c, a → d, b → d, c → e, d → e, d → f, e → g, f → g. Düğümleri a'dan g'ye alfabetik sırayla deneyerek tam DFS çalıştırırsak bitiş sırası g, e, c, f, d, a, b çıkar. Tersi: **b, a, d, f, c, e, g.** Sekiz kenarın hepsini tek tek denetle — hepsinde kaynak, hedeften önce geliyor. Dikkat çekici olan, b'nin en son ziyaret edilmesine rağmen sırada başa geçmesidir; bu, "en son biten en başa gelir" kuralının doğal sonucudur.
 
-Aynı algoritma bedavaya **döngü tespiti** verir. Graf döngülüyse ters bitiş sırası topolojik sıralama olamaz; o hâlde sırayı bulduktan sonra her kenarı tek tek denetle — bir kenarın kaynağı hedefinden sonra geliyorsa graf döngülüdür. Denetim Θ(|E|) sürer. Yukarıdaki grafa g → a kenarını eklersek ters bitiş sırası aynı kalır ama o kenar kuralı ihlal eder ve döngü yakalanır.
+Aynı algoritma kenar başına sabit bir ek denetimle **döngü tespiti** de verir. Graf döngülüyse ters bitiş sırası topolojik sıralama olamaz; o hâlde sırayı bulduktan sonra her kenarı tek tek denetle — bir kenarın kaynağı hedefinden sonra geliyorsa graf döngülüdür. Denetim Θ(|E|) sürer. Yukarıdaki grafa g → a kenarını eklersek ters bitiş sırası aynı kalır ama o kenar kuralı ihlal eder ve döngü yakalanır.
 
 > **Sesli anlat:** "Topolojik sıralama nedir, ne zaman vardır ve nasıl bulursun? Doksan saniyede anlat ve doğruluğunu savun."
 >

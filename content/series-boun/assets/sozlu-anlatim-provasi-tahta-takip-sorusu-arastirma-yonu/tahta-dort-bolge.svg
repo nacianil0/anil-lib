@@ -27,7 +27,7 @@
   <text x="380" y="205" font-size="13" fill="var(--text-muted)">Burayı sen yazarsın</text>
   <rect x="380" y="213" width="299" height="44" rx="4" fill="var(--cool-soft)" stroke="var(--cool)" />
   <text x="394" y="233" font-size="13" fill="var(--text-muted)">sıralı eklemede yükseklik</text>
-  <text x="394" y="251" font-size="13" fill="var(--text-muted)">n olur, log n değil</text>
+  <text x="394" y="251" font-size="13" fill="var(--text-muted)">n − 1 olur, log n değil</text>
 
   <text x="21" y="296" font-size="13" fill="var(--text-muted)">Konuşurken yaz, yazdıktan sonra sus; karşındakinin okumasını bekle.</text>
   <text x="21" y="316" font-size="13" fill="var(--text-muted)">Kod yazma; en fazla üç satırlık, dil bağımsız sözde kod yaz.</text>

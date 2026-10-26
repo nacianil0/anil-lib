@@ -14482,6 +14482,819 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-10-21T13:50:45.223Z"
+    },
+    {
+      "id": "bug-876",
+      "timestamp": "2026-10-26T04:36:32.289Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/bib.py",
+      "root_cause": "Had \"hakem(li)? ?olmayan|hakemsiz|ön baskı|ön çalışma|",
+      "fix": "Changed to \"hakem(li)? ?olmayan|hakemsiz|hakemli değil|hakeml",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:36:32.289Z"
+    },
+    {
+      "id": "bug-877",
+      "timestamp": "2026-10-26T04:42:23.829Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/guvenlik-run5/blok-dogrula.mjs",
+      "root_cause": "Had \"set +e\\n\"",
+      "fix": "Changed to 'la aynı akışa, sırasıyla.\nlet betik = \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:42:23.829Z"
+    },
+    {
+      "id": "bug-878",
+      "timestamp": "2026-10-26T04:45:58.268Z",
+      "error_message": "Wrong reference: then should be dev",
+      "file": "artifacts/bakim3-2026-10-26/kapilar/run-gates.sh",
+      "root_cause": "Used \"then\" instead of \"dev\"",
+      "fix": "Changed then → dev",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "sh"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:45:58.268Z"
+    },
+    {
+      "id": "bug-879",
+      "timestamp": "2026-10-26T04:48:03.741Z",
+      "error_message": "Significant refactor of ",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/linkcheck/arxiv_q.py",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 8→11 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:48:03.741Z"
+    },
+    {
+      "id": "bug-880",
+      "timestamp": "2026-10-26T04:49:50.073Z",
+      "error_message": "Significant refactor of ",
+      "file": "../anil-lib-bakim3-render/bakim3-render/geometry.mjs",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 10→27 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:49:50.073Z"
+    },
+    {
+      "id": "bug-881",
+      "timestamp": "2026-10-26T04:50:46.347Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/linkcheck/net.py",
+      "root_cause": "Had \"gzip\"",
+      "fix": "Changed to \"\\x1f\\x8b\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:50:46.347Z"
+    },
+    {
+      "id": "bug-882",
+      "timestamp": "2026-10-26T04:50:54.350Z",
+      "error_message": "Significant refactor of ",
+      "file": "artifacts/bakim3-2026-10-26/denetim/denetim.py",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 6→14 lines (2 removed) | Also: f\"DEĞERLENDİR ({where}): {kind}\", match=m.group(0); review(\"F3-emoji\", a.rel, a.file_line(i), snippet( | Also: review(\"F4-proc\", a.rel, a.file_line(i), snippet(l; f\"DEĞERLENDİR ({tag}): {kind}\", match=m.group(0))",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-10-26T04:51:14.722Z"
+    },
+    {
+      "id": "bug-883",
+      "timestamp": "2026-10-26T04:51:22.661Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/bakim3-2026-10-26/denetim/denetim.py",
+      "root_cause": "Had \"\\bbu run\\b\"",
+      "fix": "Changed to \"\\b(?:bu\\s+run(?:['",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:51:22.661Z"
+    },
+    {
+      "id": "bug-884",
+      "timestamp": "2026-10-26T04:51:36.142Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/bakim3-2026-10-26/kapilar/pw-failures.cjs",
+      "root_cause": "Had `${spec.file}:${spec.line}`",
+      "fix": "Changed to \"tests/e2e/\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "cjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:51:36.142Z"
+    },
+    {
+      "id": "bug-885",
+      "timestamp": "2026-10-26T04:59:39.954Z",
+      "error_message": "Significant refactor of ",
+      "file": "artifacts/bakim3-2026-10-26/kapilar/run-gates.sh",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 11→23 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "sh"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:59:39.954Z"
+    },
+    {
+      "id": "bug-886",
+      "timestamp": "2026-10-26T04:59:48.627Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/bakim3-2026-10-26/kapilar/run-gates.sh",
+      "root_cause": "Had \"$LOG/05-failures.tsv\"",
+      "fix": "Changed to \"no Playwright JSON report\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "sh"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T04:59:48.627Z"
+    },
+    {
+      "id": "bug-887",
+      "timestamp": "2026-10-26T05:01:32.689Z",
+      "error_message": "Missing guard clause",
+      "file": "../anil-lib-bakim3-render/bakim3-render/geometry.mjs",
+      "root_cause": "No early return/throw for edge case: !cs.stroke || cs.stroke === \"none\" || sw === 0 || parseFloat",
+      "fix": "Added guard clause: if (!cs.stroke || cs.stroke === \"none\" || sw)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:01:32.689Z"
+    },
+    {
+      "id": "bug-888",
+      "timestamp": "2026-10-26T05:08:53.612Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/github-ekip-akisi-push-pr-merge-dagitim.md",
+      "root_cause": "Had 'in birleştirme anındaki ucuyla birleşimini sınamı",
+      "fix": "Changed to 'in birleştirme anındaki ucuyla birleşimini sınamı",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-26T05:08:56.081Z"
+    },
+    {
+      "id": "bug-889",
+      "timestamp": "2026-10-26T05:10:52.128Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/bakim3-2026-10-26/dogrulama/k3/k3_svg_xml.py",
+      "root_cause": "Had \"assets/\"",
+      "fix": "Changed to \"\\\\\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:10:52.128Z"
+    },
+    {
+      "id": "bug-890",
+      "timestamp": "2026-10-26T05:11:19.071Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/assets/github-ekip-akisi-push-pr-merge-dagitim/yesil-kontrol-baska-birlesim.svg",
+      "root_cause": "Had \"376\"",
+      "fix": "Changed to \"388\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "svg"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:11:19.071Z"
+    },
+    {
+      "id": "bug-891",
+      "timestamp": "2026-10-26T05:12:42.135Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/bakim3-2026-10-26/dogrulama/k2/pdf_metin.py",
+      "root_cause": "Had \"stream\\r?\\n(.*?)\\r?\\nendstream\"",
+      "fix": "Changed to \"stream\\r?\\n(.*?)endstream\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:12:42.135Z"
+    },
+    {
+      "id": "bug-892",
+      "timestamp": "2026-10-26T05:15:30.024Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/linkcheck/build_results.py",
+      "root_cause": "Had \", target if good else \"",
+      "fix": "Changed to \"%s: %s\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:15:30.024Z"
+    },
+    {
+      "id": "bug-893",
+      "timestamp": "2026-10-26T05:15:57.311Z",
+      "error_message": "Incorrect value in code",
+      "file": "artifacts/bakim3-2026-10-26/dogrulama/k3/k3_uygula_kontrol.py",
+      "root_cause": "Had \"zaten dizinin sonuna takas ediyordu;\"",
+      "fix": "Changed to \"Alma işlemi en uçtakini zaten dizinin sonuna taka",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-10-26T05:17:25.913Z"
+    },
+    {
+      "id": "bug-894",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "blok-dogrula: yayımlanmış 5–7 bloklarında FARK; beklenen fatal:/From satırları gelmedi",
+      "file": "artifacts/guvenlik-run5/blok-dogrula.mjs",
+      "root_cause": "Yeni doğrulayıcı yalnız stdout topluyordu; yayımlanmış çıktılar stderr satırlarını da içeriyor",
+      "fix": "Betiğin başına exec 2>&1 eklendi; 5–8 41/41 blok aynı",
+      "tags": [
+        "guvenlik",
+        "git",
+        "dogrulama",
+        "stderr"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-895",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "deney9: test çıkış kodu 128/0 yanlış raporlandı (grup 2 kırmızı olmalıyken 0)",
+      "file": "artifacts/guvenlik-run5/deney9.sh",
+      "root_cause": "echo içindeki $(git rev-parse) komut ikamesi $? değerini ezdi",
+      "fix": "node --test sonrası s=$? alınıp echo içinde $s kullanıldı",
+      "tags": [
+        "bash",
+        "exit-code",
+        "guvenlik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-896",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "deney9: deneme birleştirmeleri ileri sarma oldu, HEAD^2 yok",
+      "file": "artifacts/guvenlik-run5/deney9.sh",
+      "root_cause": "PR dalı main ucundan açıldığı için merge fast-forward yaptı",
+      "fix": "Deneme birleştirmesinde --no-ff",
+      "tags": [
+        "git",
+        "merge",
+        "guvenlik"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-897",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "deney9: ci klonundaki birleştirmeler eski main üstüne yapıldı (grafikte ba4b8de yan dalda)",
+      "file": "artifacts/guvenlik-run5/deney9.sh",
+      "root_cause": "ci klonu akış commit inden önce klonlanmıştı; yerel main ileri sarılmadı",
+      "fix": "Birleştirmeden önce git merge --ff-only origin/main",
+      "tags": [
+        "git",
+        "guvenlik",
+        "deney"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-898",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "main de test: 7 (beklenen 1)",
+      "file": "artifacts/guvenlik-run5/deney9.sh",
+      "root_cause": "grep -m1 boruyu erken kapattı, Node EPIPE ile 7 döndü; PIPESTATUS kararsız",
+      "fix": "sed -n /^SyntaxError/p ile bütün girdi okunuyor",
+      "tags": [
+        "bash",
+        "pipestatus",
+        "node"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-899",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "deney10: fatal: Needed a single revision",
+      "file": "artifacts/guvenlik-run5/deney10.sh",
+      "root_cause": "git rev-parse --short iki argüman aldı; --short --verify ima eder",
+      "fix": "Her revizyon ayrı rev-parse çağrısı",
+      "tags": [
+        "git",
+        "rev-parse"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-900",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "deney10: b deki git fetch taşınan etiketi reddetmedi, çıktı boş",
+      "file": "artifacts/guvenlik-run5/deney10.sh",
+      "root_cause": "Yerelde aynı adlı etiket varken varsayılan getirme onu güncellemez ve bir şey yazmaz; would clobber yalnız --tags ile",
+      "fix": "Blok git fetch (sessiz) ve git fetch --tags (ret) olarak ikiye ayrıldı; yazıda bu davranış öğretildi",
+      "tags": [
+        "git",
+        "tag",
+        "fetch"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-901",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "curl: (35) schannel CRYPT_E_REVOCATION_OFFLINE",
+      "file": "(ortam)",
+      "root_cause": "Windows schannel iptal sunucusuna ulaşamıyor",
+      "fix": "curl --ssl-no-revoke",
+      "tags": [
+        "curl",
+        "windows",
+        "tls"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-902",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "figs.mjs: Cannot find package playwright",
+      "file": "artifacts/guvenlik-run5/figs.mjs",
+      "root_cause": "Depoda yalnız @playwright/test kurulu",
+      "fix": "import { chromium } from \"@playwright/test\"",
+      "tags": [
+        "playwright",
+        "import"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-903",
+      "timestamp": "2026-10-26T09:00:00+03:00",
+      "error_message": "Şekil 2 (yazı 9): 9c20f33→ded20d6 kenarı 11.00 de main etiketini kesiyor",
+      "file": "content/series-guvenlik/assets/github-ekip-akisi-push-pr-merge-dagitim/yesil-kontrol-baska-birlesim.svg",
+      "root_cause": "Etiket düğümün altına, çapraz kenarın geçtiği yere kondu",
+      "fix": "Etiket düğümün üstüne taşındı; figs.mjs 0 sorun",
+      "tags": [
+        "svg",
+        "guvenlik",
+        "sekil"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:00:00+03:00"
+    },
+    {
+      "id": "bug-904",
+      "timestamp": "2026-10-26T05:40:51.273Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/kabul1/findings_data.json",
+      "root_cause": "Had ' diyor (tutarlı).\"",
+      "fix": "Changed to ' diyor (tutarlı). Semantic Scholar paper/batch (A",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:40:51.273Z"
+    },
+    {
+      "id": "bug-905",
+      "timestamp": "2026-10-26T05:47:02.625Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/surum-ve-dagitim-etiket-github-release.md",
+      "root_cause": "Had \"kapalı\"",
+      "fix": "Changed to 'ü tek başına \"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T05:47:02.625Z"
+    },
+    {
+      "id": "bug-906",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "SVG dosyası iyi biçimli XML değil: <svg viewBox=\"0 0 720 260\"xmlns=...> (öznitelikler arası boşluk yok)",
+      "file": "content/series-boun/assets/{karmasiklik-big-o-ile-dusunmeye-baslamak/buyume-siniflari,graf-temsilleri-bfs-ve-dfs/graf-iki-temsil,np-tamlik-hesaplamanin-sinirlari/p-np-kapsama}.svg",
+      "root_cause": "BOUN bakım run 2 (commit 0bc06e4) viewBox değerini düz metin değiştirmeyle uzatırken sonraki boşluğu düşürdü; site SVG'yi HTML ayrıştırıcısıyla satır içine aldığı için render etkilenmedi, check-series-svg.cjs XML geçerliliğine bakmıyor.",
+      "fix": "Boşluk geri kondu; 83 SVG'nin hepsi xml.dom.minidom ile ayrıştırılarak doğrulandı.",
+      "tags": [
+        "boun",
+        "svg",
+        "xml",
+        "regression",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-907",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Okura sızan üretim dili: Kaynakça'da \"Sayfa bu run'da (2026-09-01) yeniden çekildi\"",
+      "file": "content/series-boun/articles/{24,26,27,28,29,30}",
+      "root_cause": "Üretim run'larının kendi dili kaynakça cümlelerine yazılmış; check-series-content.cjs '## Kaynakça' sonrasını taramıyor ve 'run' desenini aramıyor.",
+      "fix": "Yedi yer \"26 Ekim 2026'da\" ile değiştirildi (sayfalar o gün yeniden doğrulandı).",
+      "tags": [
+        "boun",
+        "content",
+        "production-language",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-908",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Makale 1 Scientific Prep derslerini 'yüksek lisans dersleriyle birlikte' diye aktarıyor; resmî sayfa 'before starting the Main Program' diyor",
+      "file": "content/series-boun/articles/interview-method/bilimsel-mulakat-ne-bekleniyor-bu-seri-nasil-calisiyor.md",
+      "root_cause": "Resmî paragrafın tek cümlesi okunup zamanlamayı veren cümle atlanmış; ARASTIRMA §19.1 doğru cümleyi kaydetmiş ama makaleye yansıtılmamıştı.",
+      "fix": "Cümle 'ana yüksek lisans programına başlamadan önce' oldu; ARASTIRMA §1'e ek yazıldı; makale revizyon işareti aldı.",
+      "tags": [
+        "boun",
+        "official-source",
+        "misreading",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-909",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Dijkstra omurgası: 'yolun geri kalanının maliyeti artıramayacağı varsayımı' (yön ters)",
+      "file": "content/series-boun/articles/algorithms/graf-algoritmalari-mst-ve-en-kisa-yollar.md",
+      "root_cause": "Negatif olmayan ağırlıkta yolun geri kalanı maliyeti düşüremez; omurga gövdenin (satır 99) tersini söylüyordu.",
+      "fix": "'düşüremeyeceği' yazıldı; makale revizyon işareti aldı.",
+      "tags": [
+        "boun",
+        "fact-error",
+        "omurga",
+        "dijkstra",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-910",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Düzeltme yeni bir hata getirdi: 'kilitlenmesizlik ve açlıksızlık ... birini sağlamak ötekini sağlamaz'",
+      "file": "content/series-boun/articles/operating-systems/klasik-eszamanlilik-problemleri-cozumu-savunmak.md",
+      "root_cause": "Şüpheci doğrulayıcının yeniden yazdığı düzeltme iki yönlü bir bağımsızlık iddiası kurdu; açlıksızlık kilitlenmesizliği içerir. Fark incelemesi yakaladı.",
+      "fix": "'açlıksızlık kilitlenmesizliği de içerir, ama kilitlenmesizliği sağlamak açlıksızlığı sağlamaz' yazıldı.",
+      "tags": [
+        "boun",
+        "fix-introduced-error",
+        "two-way-claim",
+        "bakim-run-3"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-911",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "curl (Git Bash, Schannel) 69 adresin 45'inde 000: CRYPT_E_REVOCATION_OFFLINE (0x80092013)",
+      "file": "artifacts/bakim3-2026-10-26/linkler/fetch.py",
+      "root_cause": "Windows Schannel sertifika iptal denetimi çevrimdışıydı; toplu bağlantı ölümü gibi görünüyordu.",
+      "fix": "--ssl-no-revoke / --ssl-revoke-best-effort eklendi; bütün adresler doğru yanıt verdi.",
+      "tags": [
+        "curl",
+        "windows",
+        "schannel",
+        "link-scan",
+        "environment"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-912",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Python glob + 'git show HEAD:<yol>' bütün dosyalarda boş çıktı verdi (sayımlar 0)",
+      "file": "artifacts/bakim3-2026-10-26 (geçici sayım betiği)",
+      "root_cause": "Windows'ta glob.glob ters bölülü yol döndürüyor; git 'HEAD:content/series-boun\\articles\\...' yolunu bulamıyor ve sessizce boş döndürüyor.",
+      "fix": "Yollar '/' ile normalize edildi.",
+      "tags": [
+        "python",
+        "windows",
+        "git",
+        "paths"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-913",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Playwright elementHandle.screenshot zaman aşımı: 'element is not visible' (BOUN okuyucusu)",
+      "file": "C:/dev/anil-lib-bakim3-render/bakim3-render/fig-shot.mjs",
+      "root_cause": "Sayfalı okuyucuda 'article svg' seçicisi görünmeyen kopyaları da yakalıyor.",
+      "fix": "'.prose-reader figure.series-figure' seçicisi ve markdown'daki şekil sırasıyla eşleme kullanıldı.",
+      "tags": [
+        "playwright",
+        "reader",
+        "screenshot",
+        "boun"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:30:00.000Z"
+    },
+    {
+      "id": "bug-914",
+      "timestamp": "2026-10-26T06:30:00.000Z",
+      "error_message": "Koyu temada /boun sıfırlama onay düğmesi ve 'Seriye başla' kontrastı 2,71:1 (WCAG AA altı)",
+      "file": "src/components/series/series-progress-reset.tsx; src/components/series/series-landing.tsx; src/components/reader/article-marks.tsx",
+      "root_cause": "Beyaz metin bg-accent (#d98597) üzerinde; koyu temada --accent açık bir pembe.",
+      "fix": "Beyaz metinli üç dolgu bg-accent-fill'e çevrildi (koyu 5,36:1, açık/sepya değişmez); src/app/accent-contrast.test.ts token kontrastını ve text-white + bg-accent eşleşmesini statik olarak denetler.",
+      "tags": [
+        "a11y",
+        "contrast",
+        "dark-theme",
+        "shared-code",
+        "fixed",
+        "test-guard"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:20:00.000Z"
+    },
+    {
+      "id": "bug-915",
+      "timestamp": "2026-10-26T06:07:13.355Z",
+      "error_message": "Wrong reference: 104 should be 117",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/verify3/results.json",
+      "root_cause": "Used \"104\" instead of \"117\"",
+      "fix": "Changed 104 → 117",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:07:13.355Z"
+    },
+    {
+      "id": "bug-916",
+      "timestamp": "2026-10-26T06:08:01.224Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/dogrula-r3x/scripts/build.py",
+      "root_cause": "Had ' content/series/articles: yalnız 92 (künye satırı",
+      "fix": "Changed to ' content/series/articles: yalnız 92'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:08:01.224Z"
+    },
+    {
+      "id": "bug-917",
+      "timestamp": "2026-10-26T06:08:13.094Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/series/series-progress-reset.tsx",
+      "root_cause": "Had `${buttonClass} bg-accent text-white hover:bg-acce",
+      "fix": "Changed to `${buttonClass} bg-accent-fill text-white hover:op",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-26T06:08:14.358Z"
+    },
+    {
+      "id": "bug-918",
+      "timestamp": "2026-10-26T09:10:00+03:00",
+      "error_message": "İnceleme: yazı 10 kısa tabanında v1.4.0-rc.2 23 Ekim tarihli, kdvGosterimi ve e-arşiv taşıyan commit e atılmıştı; 1.3.0 da 19 Ekim de doğan fatura/pdf.ts yi taşıyordu",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/surum-ve-dagitim-etiket-github-release.md",
+      "root_cause": "Kısa taban kurulurken yayımlanmış dünyanın zaman çizelgesi (rc.2 = 21 Ekim 120d7b5) ile karşılaştırılmadı",
+      "fix": "Taban dört commit le yeniden kuruldu (85a4e4e, 703b5a1 rc.2 21 Ekim, 5c44797, 06994f8); bütün kimlikler, şekiller ve durum dosyaları güncellendi",
+      "tags": [
+        "guvenlik",
+        "sureklilik",
+        "deney-deposu"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:10:00+03:00"
+    },
+    {
+      "id": "bug-919",
+      "timestamp": "2026-10-26T09:10:00+03:00",
+      "error_message": "İnceleme: dağıtılan imajın revision kaydı b nin değişebilir etiketinden hesaplanıyordu",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/surum-ve-dagitim-etiket-github-release.md",
+      "root_cause": "Kanıt zinciri adla kuruldu; seri kuralı tam kimlik (#31)",
+      "fix": "revision dağıtım kaydındaki tam kimlik olarak sabitlendi",
+      "tags": [
+        "guvenlik",
+        "revision",
+        "kanit"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:10:00+03:00"
+    },
+    {
+      "id": "bug-920",
+      "timestamp": "2026-10-26T09:10:00+03:00",
+      "error_message": "İnceleme: taşınan etiket kirasız --force ile geri konuyordu (8 in kuralına aykırı)",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/surum-ve-dagitim-etiket-github-release.md",
+      "root_cause": "Paylaşılmış ref e zorla push kuralı geri çağrılmadı",
+      "fix": "--force-with-lease=refs/tags/v1.4.0:<taşınmış nesne>; düz --force-with-lease stale info verdiği deneyle gösterildi",
+      "tags": [
+        "git",
+        "force-with-lease",
+        "tag"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:10:00+03:00"
+    },
+    {
+      "id": "bug-921",
+      "timestamp": "2026-10-26T09:10:00+03:00",
+      "error_message": "İnceleme: yazı 9 un iş akışı main e push ta koşmuyordu; birleştirme sonrası kırmızı main sinyali GitHub da üretilemezdi",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/github-ekip-akisi-push-pr-merge-dagitim.md",
+      "root_cause": "Tetikleyiciler yalnız pull_request ve merge_group",
+      "fix": "push: branches: [main] eklendi; deney yeniden koşturuldu ve kimlikler yeniden eşlendi",
+      "tags": [
+        "github-actions",
+        "workflow",
+        "sinyal"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:10:00+03:00"
+    },
+    {
+      "id": "bug-922",
+      "timestamp": "2026-10-26T09:10:00+03:00",
+      "error_message": "İnceleme: doğrulanabilir özellik (deneme birleştirmesinin ilk ebeveyni = main ucu) birleştirme kuyruğunda yanlış alarm verirdi",
+      "file": "content/series-guvenlik/articles/collaboration-and-delivery/github-ekip-akisi-push-pr-merge-dagitim.md",
+      "root_cause": "Kuyrukta grup 2 nin ilk ebeveyni grup 1 dir",
+      "fix": "Ağaç eşitliğine çevrildi; deneyde #42 baeb685≠919ba76, #43 fbeb0e5=fbeb0e5",
+      "tags": [
+        "git",
+        "tree",
+        "merge-queue"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T09:10:00+03:00"
+    },
+    {
+      "id": "bug-923",
+      "timestamp": "2026-10-26T06:08:15.915Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Had \"inline-flex items-center gap-2 rounded-md bg-acce",
+      "fix": "Changed to \"inline-flex items-center gap-2 rounded-md bg-acce",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:08:15.915Z"
+    },
+    {
+      "id": "bug-924",
+      "timestamp": "2026-10-26T06:14:07.079Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T06:14:07.079Z"
+    },
+    {
+      "id": "bug-925",
+      "timestamp": "2026-10-26T06:21:57.978Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
+      "root_cause": "Had \"2026-09-27\"",
+      "fix": "Changed to \"2026-10-26\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-10-26T06:25:06.898Z"
     }
   ]
 }

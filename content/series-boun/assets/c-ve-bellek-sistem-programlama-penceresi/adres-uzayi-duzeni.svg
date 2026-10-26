@@ -45,7 +45,7 @@
   <text x="450" y="228" font-size="13" fill="var(--text-muted)">atlayamaz</text>
 
   <rect x="436" y="252" width="262" height="72" rx="5" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1.3" />
-  <text x="450" y="274" font-size="13" fill="var(--text)">Koruma sayfası geçersizdir</text>
+  <text x="450" y="274" font-size="13" fill="var(--text)">Koruma sayfası erişilemez</text>
   <text x="450" y="294" font-size="13" fill="var(--text-muted)">Yığın taşması komşu veriyi sessizce</text>
   <text x="450" y="314" font-size="13" fill="var(--text-muted)">bozmaz, temiz bir çökmeyle biter</text>
 

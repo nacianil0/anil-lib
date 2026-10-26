@@ -76,7 +76,7 @@ export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
           ref={armButton}
           type="button"
           disabled={!ready}
-          className={`${buttonClass} text-text-muted hover:bg-surface-muted hover:text-text`}
+          className={`${buttonClass} -ml-3 text-text-muted hover:bg-surface-muted hover:text-text`}
           onClick={(event) => {
             event.preventDefault();
             armedAt.current = Date.now();
@@ -112,7 +112,7 @@ export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
               type="button"
               disabled={pending}
               aria-describedby={`reset-description-${seriesId}`}
-              className={`${buttonClass} bg-accent text-white hover:bg-accent-fill`}
+              className={`${buttonClass} bg-accent-fill text-white hover:opacity-90`}
               onClick={() => void confirm()}
             >
               {pending ? "Sıfırlanıyor…" : "Evet, bu seriyi sıfırla"}

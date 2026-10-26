@@ -5,8 +5,8 @@
 > sürümle dayandığını ve neyin henüz doğrulanmadığını kaydeder. Her üretim run'ı kullandığı
 > kaynakları yeniden doğrular ve bu dosyayı günceller.
 
-Son güncelleme: 2026-10-21 (kurulum + run 1 + müfredat revizyonu: Git/GitHub hattı, §7–§11 + run 2:
-yazı 3–4, §12–§14 + run 3: yazı 5–6, §15–§17 + run 4: yazı 7–8, §18–§20)
+Son güncelleme: 2026-10-26 (kurulum + run 1 + müfredat revizyonu: Git/GitHub hattı, §7–§11 + run 2:
+yazı 3–4, §12–§14 + run 3: yazı 5–6, §15–§17 + run 4: yazı 7–8, §18–§20 + run 5: yazı 9–10, §21–§24)
 
 ---
 
@@ -443,6 +443,17 @@ Global ve sistem Git yapılandırması devre dışı (`GIT_CONFIG_GLOBAL` boş d
   ve sürümle değişebilir, kimlikler değişmez. GitHub Docs'un `/en/pull-requests/` adres yapısı Ekim 2026'da
   `get-started` / `how-tos` / `reference` diye yeniden düzenlenmiş; eski adresler (ör. "About pull request
   merges") yönleniyor olabilir, künyeler yeni adreslerle verildi.
+- **Run 5'in tarihli ve sürüme bağlı iddiaları (bakım kalemi):** birleştirme kuyruğunun plan koşulu (kuruluşa ait herkese
+  açık depo, GHEC özel depo, GHES kuruluş deposu), dal koruması ve kod sahiplerinin plan koşulu, ortam koruma kurallarının
+  plan koşulu (Free/Pro/Team'de incelemeci ve bekleme süresi yalnız herkese açık depoda) ve yönetici muafiyetinin
+  kapatılabilirliği; sıkı/gevşek gerekli kontrol ve beklenen kaynak; koşulla atlanan işin "Success", filtreyle atlananın
+  "Pending" sayılması; `pull_request`'in `refs/pull/N/merge`'ü `actions/checkout` varsayılanıyla sınaması; değişmez sürümün
+  davranışı ve "plan koşulu yok" tespiti (GA 2025-10-28); `gh release create`'in yerelde kalan etiket iletisi (gh 2.103.0
+  ikilisinde görüldü, kılavuzda yok); action sabitleri (checkout v7.0.1, setup-node v7.1.0; yeni sürümler çıktıkça yazı 9'un
+  örneği eskir, kimlik doğru kalır); Node.js'in tip ayıklama varsayılanı. Git tarafında: etiket getirmenin 2.20 kuralı,
+  `versionsort.suffix` davranışı, ileti metinleri ("already exists", "would clobber existing tag", "stale info") Git
+  2.55.0.windows.5 çıktısı. Değişmez sürümün kapatılınca önceki Release'lere etkisi yalnızca changelog'da; GitHub Docs'a
+  girerse yazı 10'un kutusundaki geri dönüş cümlesi kesinleştirilir.
 - **Tarihli iddialar:** Git 3.0'ın yayım zamanı ve varsayılan dal değişikliği; GitHub ruleset ve
   birleştirme kuyruğu plan koşulları; 2FA zorunluluğunun üye/dış katkıcı davranışı (son yıllarda
   değişti); immutable releases'ın kapsamı. Her biri yazıldığı run'da yeniden doğrulanır ve "Ekim
@@ -665,3 +676,136 @@ Ortam: Git **2.53.0.windows.2**, Git Bash; global ve sistem ayarı devre dışı
 | 8: yanlış birleştirme | `4021fbd` (ebeveynler `ac8d84d`, `49e55e1`); `revert -m 1` → `a87a8cd`; yeniden birleştirme "Already up to date" ve ata 0; "Reapply" `b921466` | aynı |
 | 8: Teşhis (reset --hard tarifi) | `--keep` 128 ile durdu; gönderilmemiş commit günlükte; hazırlıktaki satır `fsck --lost-found` ile sahipsiz blob olarak bulundu, yalnız çalışma ağacındaki satır yok | `deney8-teshis.sh`, `deney8-teshis.txt` |
 | Yazılardaki her bash bloğu temiz klasörde sırayla | 7: 9/9, 8: 11/11 blok çıktısı metindekiyle aynı | `blok-dogrula.mjs`, `blok-dogrula-7.txt`, `blok-dogrula-8.txt` |
+
+## 21. Run 5 kaynak kanalları ve tuzaklar (2026-10-26)
+
+Bütün erişimler 2026-10-26. Ham metinler `artifacts/guvenlik-run5/src/<grup>/` altında (gitignore; yalnızca bu makinede,
+kalıcı değil); gruplar: `pr-events`, `reviews-codeowners`, `merge-queue`, `releases-deploy`, `git-tags`, `standards`, `plans`,
+`oci`. Kaynak doğrulaması yedi paralel okuyucuyla yapıldı; yazılara giren her iddia ana oturumda kaydedilen metinde grep'le
+yeniden eşleştirildi (rapor üzerinden kabul yok).
+
+- **Kanal:** GitHub Docs sayfalarının Markdown gövdesi `https://docs.github.com/api/article/body?pathname=/en/<yol>` ile
+  alındı; yollar `https://docs.github.com/api/pagelist/en/free-pro-team@latest` listesinden kopyalandı (3.198 yol). "Who can
+  use this feature?" kutusu gövde, `meta` ve `article` API'lerinde yok; yalnızca işlenmiş HTML'deki `__NEXT_DATA__`'da
+  (`*.availability.txt`). Bu makinede `curl` Windows schannel iptal denetiminde düştü (`CRYPT_E_REVOCATION_OFFLINE`);
+  `--ssl-no-revoke` ile çalışıldı (sertifika doğrulaması açık, yalnızca iptal sorgusu kapalı).
+- **Sayfa taşınmaları (Ekim 2026):** "About pull requests"ın eski adresi `/en/pull-requests/reference/pull-requests`'e
+  yönleniyor; yeni "About pull requests" `/get-started/` altında. "About comparing branches in pull requests" →
+  `/reference/branches`; "About status checks" → `/reference/status-checks`; "About pull request reviews" → kısa
+  `/reference/pull-request-reviews`; "Approving a pull request with required reviews" `/how-tos/review-pull-requests/`
+  altında; "Managing environments for deployment" `/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments`;
+  değişmez sürüm sayfaları `/code-security/concepts/…` ve `/how-tos/…` altında. OWASP CI/CD Top 10 proje sayfası
+  `owasp.org/projects/top-10-cicd-security-risks`'e, CICD-SEC sayfaları `owasp.github.io/www-project-top-10-ci-cd-security-risks/…`'a
+  308 ile yönleniyor.
+- **Sürümler:** git-scm.com güncel kaynak sürümü 2.56.0 (2026-09-28). Kılavuz sayfalarının "last updated in" değerleri:
+  `git-tag` 2.55.0, `git-fetch` 2.56.0, `git-push` 2.55.0, `git-describe` 2.55.0, `git-cherry` 2.0.5 (metin o günden beri
+  aynı), `git-cherry-pick` 2.56.0, `git-show-ref` 2.46.0, `gitrevisions` 2.56.0, `gitglossary` 2.56.0, `git-config` 2.56.0,
+  `git-request-pull` 2.56.0 (yalnızca biçim değişikliği), `git-merge-tree` 2.52.0. GitHub CLI indirmeleri v2.103.2; yerelde
+  gh 2.103.0. Node.js belgeleri: latest v26.12.1, latest-v24 v24.22.1, latest-v22 v22.23.4. GHES belgelerinin son sürümü 3.22.
+- **Action sabitleri (yazı 9'un iş akışı):** `actions/checkout` v7.0.1 = `3d3c42e5aac5ba805825da76410c181273ba90b1`
+  (yayım 2026-07-20), `actions/setup-node` v7.1.0 = `949feb2413d6458794dcd2491c4babbbce0c15c1` (yayım 2026-10-08); GitHub
+  API'sinin herkese açık `releases/latest` ve `git/ref/tags/<etiket>` uçlarından (ikisi de doğrudan commit'i gösteren
+  etiket). `setup-node`'un `node-version` girdisi ve `checkout`'un `fetch-depth: 1` varsayılanı o kimliklerdeki
+  `action.yml`'den okundu; API yanıtları `src/actions/` altında (`kanit.txt`). GitHub Docs örnekleri Ekim 2026'da hâlâ
+  `actions/checkout@v6` gösteriyor; belge örneği sürüm kaynağı sayılmadı. Node.js TypeScript belgesi: tip ayıklama v22.18.0 ve v23.6.0'dan beri varsayılan açık, v24.3.0 ve
+  v22.18.0'dan beri deneysel uyarı yok; `.ts` uzantısı içe aktarmada zorunlu; `node --test`'in varsayılan örüntülerine `.ts`
+  de girer. Yazı 9'un önkoşulu bu yüzden "Node.js 22.18+ ya da 24.3+".
+
+### Kaynak içi tutarsızlıklar (GitHub Docs, Ekim 2026)
+
+- **Sıkı gerekli kontrol "varsayılan" mı?** "About protected branches" tablosu sıkı biçimi "the default behavior for
+  required status checks" diye anar; "Managing a branch protection rule" aynı ayarı isteğe bağlı bir onay kutusu olarak
+  sunar. Yazı 9 "varsayılan" demedi; iki biçimi ve gevşek biçimin uyarısını aktardı.
+- **`pull_request_target`'ın ref'i:** Olaylar sayfası ve "Securely using pull_request_target" varsayılan dal der (2025-12-08
+  değişikliği); Değişkenler başvurusu hâlâ "base branch" der. Yazı 9 bu tetikleyiciyi işlemedi (13'ün konusu).
+- **Kontrolü kim oluşturabilir?** "Status checks" sayfası yazma yetkisi olanların API ile kontrol ve commit durumu
+  oluşturabileceğini, REST "check runs" sayfası check run oluşturmanın yalnızca GitHub App'lere açık olduğunu yazar. Yazı 9
+  "durumunu ayarlayabilir" ifadesini "About protected branches"ın cümlesinden aldı (status ayarı).
+- **Birleştirme kuyruğu:** geçici dal öneki `gh-readonly-queue/{base_branch}`; sayfanın örnekleri `main/pr-1` der, önekten
+  sonrası belgelenmemiş. Yapı eşzamanlılığı yönetim sayfasında 1–100, ruleset sayfasında ve REST şemasında 0'a izin
+  veriliyor. **Testi geçen grup commit'inin hedef dala aynı kimlikle ileri sarıldığı hiçbir sayfada yazmıyor**; belge
+  yalnızca geçici dalın hedef dala "birleştirileceğini" söyler. Yazı 9 bu yüzden kuyruk grubunu ayrı kimlikle canlandırdı
+  ve "test edilen commit `main`'e giren commit'tir" iddiasını kurmadı. Free-pro-team "Available rules for rulesets"
+  sayfasında "Require merge queue" bölümü yok, GHEC sürümünde var (yalnızca depo düzeyi).
+- **Organizasyon düzeyi ruleset ve push ruleset planı:** §10'daki tutarsızlık sürüyor (Team+Enterprise / yalnızca
+  Enterprise; push ruleset fpt'de Team, GHEC/GHES'te Enterprise Cloud). 9 ve 10 bu koşulu kullanmadı; 12'de yeniden.
+- **Değişmez sürüm:** belgeler etiketin "Release var oldukça" silinemeyeceğini yazar; `gh release create` kılavuzu
+  koşulsuz "değiştirilemez ya da silinemez" der. Dosya ekleme yasağı bir sayfada yazılı, kavram sayfasında yalnızca
+  "değiştirme ya da silme" var. Plan/görünürlük koşulu hiçbir sayfada yok. Değişmezliği kapatmanın önceki sürümlere
+  etkisi yalnızca changelog'da; yazı 10 bunu ürün davranışı olarak aktarmadı.
+- **CODEOWNERS örneği:** belgenin kendi örnek dosyasındaki yorumlar "onay gerektirir" der; bu yalnızca "Require review
+  from Code Owners" açıkken doğru (sayfanın 9–11. satırları).
+
+## 22. Yazı 9 — kanıt (GitHub'da ekip akışı)
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| GitHub 10 Nisan 2008'de "officially live" | GitHub Blog, "We Launched" (Chris Wanstrath) | JSON-LD zamanı UTC'de 11 Nisan 01.13; sayfa 10 Nisan gösterir |
+| `git request-pull` üst projeye çekme isteği metni üretir, standart çıktıya yazar | git-request-pull 2.56.0 | "hiçbir yere göndermez" çıkarım (stdout) |
+| PR bir daldan başka dala birleştirmeyi önerir; base/head/compare | GitHub Docs "About pull requests", "GitHub glossary" | |
+| PR farkı üç noktalı (birleştirme tabanı) | "Branches" (reference) | |
+| `pull_request`: `GITHUB_REF` `refs/pull/N/merge`, `GITHUB_SHA` son birleştirme commit'i; açık ve birleştirilebilir PR'da testler birleşmiş sonuca karşı; çatışmada iş akışı çalışmaz | "Events that trigger workflows" | |
+| Varsayılan etkinlik türleri opened/synchronize/reopened; synchronize = head güncellendi | aynı sayfa; "Webhook events and payloads" | "base ilerleyince yeniden koşmaz" bizim çıkarımımız, yazıda öyle işaretlendi |
+| En son commit'te geçmeli; deneme birleştirmesinin durumu varsa o geçmeli | "Troubleshooting required status checks" | |
+| Sıkı/gevşek gerekli kontrol; gevşekte "Status checks may fail after you merge your branch if there are incompatible changes" | "About protected branches" | |
+| Yazma yetkisi olan herkes durum ayarlayabilir; beklenen kaynak (GitHub App) seçilirse başkasının ayarladığı durum birleştirmeye izin vermez | aynı sayfa | |
+| Koşulla atlanan iş "Success", gerekli kontrol olsa da engellemez; yol/dal filtresiyle atlanan iş akışı "Pending" kalır ve engeller | "Status checks"; "Troubleshooting required status checks" tablosu | |
+| Kuyruk güvencesi, `gh-readonly-queue/<base>` öneki, başarısızlıkta çıkarma ve yeniden kurma, `merge_group` şartı ("The merge will fail as the required status check will not be reported"), "Only merge non-failing pull requests", joker karakter yasağı, yönetici yapılandırır, yazma yetkisi ekler | "Managing a merge queue", "Merging a pull request with a merge queue", Olaylar sayfası | Plan: kuruluşa ait herkese açık depo + GHEC özel depo; GHES'te kuruluşa ait her depo (yalnızca GHES 3.22 sayfası) |
+| Onay ayarları: yazar kendini onaylayamaz; yalnızca yazma yetkisi olanların onayı sayılır; eski onayları düşürme (birleştirme tabanı yeni değişiklik getirince de); son push'u başkası onaylar; "hijacking" kaygısında düşürmek daha güvenli | "About protected branches", "Approving a pull request with required reviews" | |
+| CODEOWNERS: konum sırası, base dalındaki sürüm, yazma yetkisi ve görünür takım, var olmayan sahip sessizce atanmaz, geçersiz satır atlanır, 3 MB, son eşleşen örüntü, otomatik istek (taslakta yok), onay zorunluluğu ayarla, sahiplerden birinin onayı yeter, dosyanın kendisine sahip | "About code owners" | Plan: dal korumasıyla aynı |
+| İş akışı sürümü olayın commit'inden; `pull_request` birleştirme commit'inden | "Workflows" (concepts); "Securely using pull_request_target" | |
+| Ortam koruma kuralları: en çok 6 incelemeci, biri yeter, kendini onaylamayı engelleme, bekleme süresi, dal/etiket kısıtı; iş çalıştırıcıya gitmeden geçilmeli; yöneticiler varsayılan olarak atlar | "Deployments and environments" (reference) | Plan: Free/Pro/Team'de incelemeci ve bekleme süresi yalnızca herkese açık depoda; özel/iç depoda Enterprise |
+| Dal korumasını ve ruleset'i Admin yönetir | "Repository roles for an organization" (tablo) | Özel rol (edit repository rules) yalnızca GHEC |
+| `codeowners/errors` (Contents okuma; varsayılan dalın dosyası, `ref` ile başka), `rules/branches/{dal}` (Metadata okuma; etkin ruleset kuralları; klasik korumayı içerip içermediği yazmıyor), `branches/{dal}` (`protected`, `protection.required_status_checks`), `branches/{dal}/protection` (Administration okuma) | REST başvurusu | Gerçek bir organizasyona karşı çalıştırılmadı |
+| A03:2025: "No single person should be able to write code and promote it all the way to production without oversight from another human being"; kod deposu (dal koruması), CI/CD (görev ayrılığı) | Top 10:2025 A03 | |
+| CICD-SEC-1 tanımı ve dal koruması önerisi; lab projesi, v1.0 (Eylül/Ekim 2022) | OWASP Top 10 CI/CD Security Risks | CODEOWNERS'ı CICD-SEC-1'e atfetmedik (sayfada yok) |
+| SSDF v1.1 PS.1.1 ve Örnek 4 (kod sahibinin başkalarının değişikliklerini incelemesi) | NIST SP 800-218 v1.1, s. 18–19 | |
+| DORA: günde en az bir birleştirme, ≤3 etkin dal, dal birkaç saat, kod dondurma yok; 2016–2017 verisi | DORA "Trunk-based development" | Sayfada tarih yok; görüş/araştırma özeti diye anıldı |
+| GitHub flow'un altı adımı | "GitHub flow" | |
+| Driessen 2020 notu: dogma; sürekli teslimde GitHub flow gibi basit akış; açıkça sürümlenen ya da sahada çok sürümlü yazılımda git-flow hâlâ uygun olabilir | nvie.com | |
+
+## 23. Yazı 10 — kanıt (Sürüm ve dağıtım)
+
+| İddia | Kaynak ve bölüm | Not |
+|---|---|---|
+| Açıklamalı etiket nesnesi (tarih, etiketleyen, mesaj, isteğe bağlı imza); hafif etiket bir ad; açıklamalı sürüm için, hafif özel/geçici; `git describe` hafifi varsayılan olarak görmez | git-tag 2.55.0; git-describe 2.55.0 | İmza arka ucu `gpg.format` (OpenPGP varsayılan) |
+| `^{}` özyinelemeli soyma | gitrevisions 2.56.0; git-show-ref | |
+| `git push` etiketleri varsayılan olarak göndermez; `--follow-tags` ulaşılabilir ve uzakta olmayan açıklamalı etiketler | Pro Git 2.6; git-push 2.55.0 | "varsayılan olarak göndermez" açıkça yalnızca Pro Git'te; kılavuz refspec kurallarıyla ima eder |
+| Push: `refs/tags/*` güncellemeleri reddedilir, `--force`/`+` aşar; silme ve oluşturma güncelleme sayılmaz | git-push PUSH RULES | |
+| Fetch: Git 2.20'den beri var olan etiket `+`/`--force` olmadan güncellenmez; "tags are supposed to be unmoving anchoring points" | git-fetch 2.56.0; Git 2.20.0 sürüm notu (`RelNotes/2.20.0.adoc`) | "would clobber existing tag" ve "already exists" iletileri kılavuzda değil, kaynak kodunda (`builtin/fetch.c`, `transport.c`); yerel çıktıyla doğrulandı |
+| Varsayılan getirme getirilen geçmişe işaret eden etiketleri de alır | git-fetch, TAGS | Yerelde aynı adlı etiketi sessizce güncellememesi deneyle görüldü, yazıda öyle işaretlendi |
+| "On Re-tagging": Git etiketleri kullanıcının arkasından değiştirmez; akıllıca olan "X.1"; akılsızca olan `tag -f`; güvenlik meselesi; alıcı `git tag -d X` + `git fetch origin tag X` | git-tag 2.55.0 | |
+| `versionsort.suffix`: aynı tabanlı farklı sonekler sözlük sırasıyla, ön sürüm ana sürümden sonra ("1.0-rc1" after "1.0") | git-config 2.56.0 | Teşhis yerelde `teshis10.sh` ile doğrulandı |
+| `cherry-pick -x` satırı yalnızca çatışmasız alımlarda; özel daldan almada kullanma | git-cherry-pick 2.56.0 | |
+| `git cherry`: `-` eşdeğeri üst dalda var, `+` yok; eşdeğerlik boşluk ve satır numarası atılmış farkla | git-cherry 2.0.5; git-patch-id 2.54.0 | |
+| Release etikete dayanır, notlar ve ikili dosyalar; görmek okuma, yönetmek yazma | "About releases", "Managing releases in a repository" | |
+| `gh release create`: etiket yoksa varsayılan dalın son hâlinden oluşturur; `--verify-tag` uzakta yoksa durdurur | GitHub CLI kılavuzu | |
+| Değişmez sürüm: etiket kilitli, Release var oldukça taşınamaz/silinemez; dosya eklenemez/değiştirilemez/silinemez; silinse de ad yeniden kullanılamaz (depo yeniden açılsa bile); başlık/notlar/işaretler düzenlenebilir; tasdik (etiket, commit, dosyalar); yalnızca sonraki sürümler; taslak değişebilir, önce taslak önerisi | "Immutable releases", "Preventing changes to your releases", `gh release create` | Plan koşulu yok; GA 28 Ekim 2025 (changelog, yalnızca tarih); GHES 3.20+ tasdiksiz |
+| `gh release verify` / `verify-asset`; kaynak arşivleri indirme anında üretildiği için denetlenemez | "Verifying the integrity of a release"; gh kılavuzu | "Etiketi taşımak değişmez olmayan Release'in kaynak arşivini de değiştirir" bizim çıkarımımız, yazıda öyle işaretlendi |
+| Actions'ta taşınan ana sürüm etiketleri için Release oluşturmama önerisi | "Using immutable releases and tags to manage your action's releases" | |
+| Depo ayarı uç noktası yönetici okuma; organizasyon politikası `admin:org` | REST repos / orgs | Gerçek bir organizasyona karşı çalıştırılmadı |
+| SemVer 2.0.0 madde 1, 3, 6–8, 9, 11; SSS: "v1.2.3" anlamsal sürüm değil, etiket adı; CC BY 3.0 | semver.org | `rc.2 < rc.10` belirtimin 11.4.1 kuralından türetildi (örnek değil) |
+| SSDF v1.1 PS.2.1, PS.3, PS.3.1 metni | NIST SP 800-218 v1.1, s. 18–19 | Tasdiki PS.2.1'in GitHub'daki bir biçimi saymak bizim eşlememiz |
+| OCI: `digest` içerik tanımlayıcısıdır, içerikten hesaplanır | OCI image-spec v1.1.1 `descriptor.md` | |
+| Driessen 2010: hotfix ilgili etiketten açılır, hem ana dala hem develop'a birleştirilir | nvie.com | |
+
+## 24. Run 5 deneyleri (yazarın çalıştırması; kendi deneyimiz)
+
+Ortam: Git **2.55.0.windows.5** (run 4'te 2.53), Git Bash (bash 5.3.15), Node.js **24.22.1**; global ve sistem Git ayarı devre
+dışı. Betikler ve çıktılar `artifacts/guvenlik-run5/` altında (gitignore; yalnızca bu makinede).
+
+| Deney | Sonuç | Dosya |
+|---|---|---|
+| Yayımlanmış 5–8'in bütün bash blokları Git 2.55 ile | 11/11, 10/10, 9/9, 11/11 çıktı metinle aynı (bakım kanıtı; kimlikler ve iletiler değişmedi) | `blok-dogrula.mjs`, `blok-cikti/` |
+| 9: kısa taban | Tek commit `5313039`, ağacı `f59542e` = 8'in sonundaki `b921466`'nın ağacı | `deney9.sh`, `deney9-cikti.txt` |
+| 9: iki PR, deneme birleştirmeleri | `d2b0938` = `fd3505d` + `f465c47`, `f7fd59b` = `fd3505d` + `45230c0`, ikisi de test 0 | aynı |
+| 9: birleştirme | `merge-tree` 0; `6b97c42`, `e97fb2e`; `main`'de test 1, `SyntaxError: … does not provide an export named 'kdv'` | aynı |
+| 9: birlikte sınamak | güncellenmiş #42 `b92009d` 1; kuyruk grubu 1 `0751329` 0, grup 2 `1e028ad` 1 | aynı |
+| 9: düzeltme | deneme `ac3c2d6` 0; `312b004`; `main`'de test 0; ağaç eşitliği: #42'de `main` `baeb685`, sınanan `919ba76`; #43'te ikisi `fbeb0e5` | aynı |
+| 9: iş akışına `push: main` | Akış commit'i `fd3505d` (önceki taslakta `ba4b8de`); bütün 9 kimlikleri bundan türedi | aynı |
+| 10: taban ve etiket | `85a4e4e` (v1.3.0), `703b5a1` (hafif v1.4.0-rc.2, 21 Ekim), `5c44797`, `06994f8`, `b58fd17` + etiket nesnesi `4ba5541`; düz push etiketi göndermedi, `--follow-tags` gönderdi | `deney10.sh`, `deney10-cikti.txt` |
+| 10: revert ≠ geri dönüş | `v1.3.0` ile fark 3 dosya (VERSION, `fatura/pdf.ts`, `import/xml.ts`) | aynı |
+| 10: taşınan etiket | "already exists" (1), `--force` ile `4ba5541...c608efd`; b'de düz `fetch` sessiz (0), `--tags` "would clobber existing tag" (1); kirasız `--force-with-lease` "stale info", beklenen değerle (`refs/tags/v1.4.0:<c608efd…>`) geri koyma `c608efd...4ba5541`, a'da `tag -d` + `fetch origin tag` | aynı |
+| 10: hotfix | `d4919e6` (cherry-pick -x `7d8f549`), `5064c40` (1.4.1); `git cherry` `-` / `+`; ata 0 | aynı |
+| 10: Teşhis ("en son etiket") | varsayılan sıralama `v1.4.0-rc.2`; `versionsort.suffix=-rc` ile `v1.4.0`; `v1.5.0-rc.1` eklenince ikisi de aday | `teshis10.sh`, `teshis10.txt` |
+| Node ile `.ts` testi | Node 24.22.1'de uyarısız; `grep -m1` ile boru erken kapanınca Node çıkışı 7 olabildi, `sed -n '/…/p'` ile kararlı 1 | oturum içi |

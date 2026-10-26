@@ -549,8 +549,54 @@ ode_modules`, sonra kopyayi sil.
 - [2026-10-21, run 4] e2e test kimliği `playwright.config.ts`'te `TEST_PASSWORD_HASH` ve `TEST_COOKIE_SECRET` sabitlerinde (webServer.env bunlara bağlı); kopyanın `.env.production.local`'ı bu sabitlerden, değer ekrana basılmadan yazılır. Sunucu `node <kopya>/node_modules/next/dist/bin/next start <kopya> -p 3217` ile, `launch.json`'da cwd gerekmeden açılır.
 - [2026-10-21, run 4] `render/shoot.mjs`'in "i18n adayı" denetimi noktalı kod adlarını (`org.opencontainers.image.revision`, `kdv.test.ts`) da işaretler; Git yazılarında bunlar hata değildir, kabul ölçütü ham anahtar olmamasıdır.
 
+- [2026-10-26, Güven Sınırı run 5] GitHub Docs sayfasının Markdown gövdesi: `https://docs.github.com/api/article/body?pathname=/en/<yol>`; yollar `https://docs.github.com/api/pagelist/en/free-pro-team@latest`'ten kopyalanır. "Who can use this feature?" kutusu bu API'lerde yok, yalnızca HTML'deki `__NEXT_DATA__`'da. Bu makinede `curl` schannel iptal denetiminde düşer (`CRYPT_E_REVOCATION_OFFLINE`); `--ssl-no-revoke` kullan.
+- [2026-10-26, run 5] Komut bloğu doğrulayıcısı stderr'i stdout'la aynı akışta toplamalı (`exec 2>&1`): yayımlanmış blokların beklenen çıktısı `fatal:` ve `From …` gibi stderr satırlarını içerir. `artifacts/` run'lar arasında silinebiliyor; `blok-dogrula.mjs`, `figs.mjs`, `render/shoot.mjs`, `render/paged.mjs`, `hash-new.cjs` her run'da gerekirse yeniden yazılır (run 5 sürümleri `artifacts/guvenlik-run5/`).
+- [2026-10-26, run 5] Git: `git rev-parse --short` `--verify` ima eder, tek revizyon alır (iki argümanla "Needed a single revision"). Yerelde aynı adlı etiket varken düz `git fetch` taşınmış uzak etiketi sessizce yok sayar; "would clobber existing tag" yalnızca `--tags` ya da açık refspec'le görünür. Push'ta etiket silip yeniden oluşturmak `--force` istemez.
+- [2026-10-26, run 5] Bash'te `echo "… $(git rev-parse …) … $?"` yanlış çıkış kodu verir: `$?` aynı satırdaki komut ikamesinin kodudur. Önce `s=$?` al. `cmd | grep -m1 …; echo ${PIPESTATUS[0]}` Node'da 7 (EPIPE) verebilir; `sed -n '/…/p'` bütün girdiyi okur.
+- [2026-10-26, run 5] Node 24'te `.ts` test dosyası derlemesiz koşar (`node --test fatura/*.test.ts`); içe aktarmada `.ts` uzantısı zorunlu. Git deneyinde gerçek bir "gerekli kontrol" kurmak için yeterli.
+
+### BOUN bakım run'ı 3 (2026-10-26)
+
+- `artifacts/` `.gitignore`'da: depo yeniden klonlanınca (2026-10-22, `D:` → `C:\dev\anil-lib`) bütün bakım
+  betikleri kayboldu. Run 3'ün betikleri `artifacts/bakim3-2026-10-26/` altında ve kalıcı değil;
+  `docs/seri-boun/HANDOFF.md` "Bundan sonrası: bakım" ve ARASTIRMA §21 yeniden kurmaya yetecek tarifi taşır.
+- Boğaziçi sitesinin kaynağı açık: `github.com/bouncmpe/bouncmpe.github.io` (dosya başına commit geçmişi).
+  Wayback'te 2026-06'dan sonra kopya yokken sayfa geçmişi buradan okunur. Resmî Türkçe M.Sc. sayfası
+  2026-09-27'den beri var ve eşiği "2.50" yazıyor.
+- Bütün korpus olgu denetimi (8 küme denetçisi → küme başına şüpheci → ana oturum → 6 fark inceleyicisi)
+  41 makalenin hepsinde düzeltme buldu; fark incelemesi şüphecinin yazdığı düzeltmelerde 11 yeni hata
+  yakaladı. Ajan yazımı her düzeltme metni ayrıca taze gözle okunmalı.
+- Kaynaksız mülakat sıklığı iddiaları ("en sık sorulan", "en sevdiği/sevilen", "en ayırt edici", "gözde",
+  "nadiren sorulur", "neredeyse her zaman aynıdır") SOZLESME §1–§2'ye aykırı ve korpusta 30 yerdeydi;
+  edilgen ("en sevilen") ve dolaylı biçimler basit grep'ten kaçar. Adayların sık yaptığı hatayı anlatan
+  cümleler ("sık yapılan hata") pedagojik araçtır, kaldırılmaz.
+- Render geometri ölçümüne "metin–çizgi" eklendi: bir çizgi/yolun metin mürekkep kutusundan geçmesi.
+  Repo denetleyicisinin ve eski testin görmediği altı şekil kusurunu buldu (27, 23, 20, 14, 21, 24).
+  Chrome 13 px'te canvas metriklerini tam sayıya yuvarlar; 10 kat büyük ölç, böl.
+- BOUN makale sayfalarında artık bir `h1` (bölüm başlığı bloğu) var ve şekil kabının `min-width: 34rem`'i
+  kalktı: 375 px'te SVG 351 px'e sığar. Eski "main h1 yoktur" notu geçersiz.
+- Beyaz metin yalnızca `bg-accent-fill` üstünde durur: açık ve sepya temada `--accent` ile `--accent-fill`
+  aynı renk olduğu için `bg-accent text-white` hatası yalnızca koyu temada görünür (2,71:1). Koruma testi
+  `src/app/accent-contrast.test.ts` hem token kontrastını hem sınıf eşleşmesini statik olarak denetler.
+- Kilit modelinin durum sayısı bırakma sırasına bağlı: iki kilit, iki iş parçacığı, LIFO bırakmada 19/16,
+  FIFO'da 17/18. Model cümlesi bırakma sırasını söylemeli (`artifacts/bakim3-2026-10-26/ana/kilit_model.py`).
+
+- [2026-10-26, Güven Sınırı run 5] Yazı incelemesi için işe yarayan düzen: beş mercek (kaynak, sözleşme, teknik+şekil, pedagoji, süreklilik) paralel, her merceğin ardından bulguları çürütmeye çalışan bir şüpheci; sonra ikinci, daha dar bir yeniden denetim (kimlik tutarlılığı ve yeni hata). 63 bulgunun çoğu doğrulandı; ikinci tur düzeltmelerin getirdiği 17 küçük kusuru ve bir olgu hatasını (`main` / `origin/main`) buldu.
+
 ## Do-Not-Repeat
 
+- [2026-10-26] SVG'nin `viewBox` değerini düz metin değiştirmeyle düzenlerken sonraki boşluğu koru:
+  BOUN run 2 `viewBox="0 0 720 260"xmlns=` bıraktı ve üç dosya geçerli XML olmaktan çıktı; site HTML
+  ayrıştırıcısıyla gösterdiği için kimse görmedi. Düzenlemeden sonra her SVG'yi bir XML ayrıştırıcısıyla aç.
+- [2026-10-26] İki yönlü bir ilişkiyi "birini sağlamak ötekini sağlamaz" diye yazmadan önce iki yönü de
+  sına: açlıksızlık kilitlenmesizliği içerir. Şüpheci doğrulayıcının yazdığı düzeltme bu hatayı getirdi.
+- [2026-10-26] Windows'ta Python `glob` ters bölülü yol döndürür; `git show HEAD:<yol>` ona sessizce boş
+  döner. Git'e verilen yolları `/` ile normalize et.
+- [2026-10-26] Git Bash curl'ünün toplu "000" sonucunu bağlantı ölümü sanma: Schannel iptal denetimi
+  (`CRYPT_E_REVOCATION_OFFLINE`); `--ssl-no-revoke` ekle.
+- [2026-10-26] Paylaşılan okuyucu/giriş kodundaki bir kusuru (koyu tema kontrastı) seri bakım run'ında
+  sessizce düzeltme: koda dokunmak kullanıcı kararıdır ve paralel oturumlar aynı bileşeni değiştiriyor
+  olabilir. Kayda geçir, öner.
 - [2026-10-21, Güven Sınırı run 4] Yalıtılmış kopyayı silmeden önce `node_modules` junction'ını `cmd /c rmdir <kopya>\node_modules` ile ayrı sök ve asıl `node_modules`'un yerinde olduğunu doğrula; doğrudan `rm -rf`/`rmdir /S` junction'ı izleyip asıl depodaki `node_modules`'u silebilir.
 - [2026-10-21, run 4] Bash aracında tırnaklı iki heredoc'u aynı komutta zincirleme (ayrıştırma hatası, hiçbir şey yazılmadı). Uzun metni Write ile scratchpad'e yaz, `cat >>` ile ekle.
 - [2026-10-21, run 4] Sonraki yazıya planlanmış bir terimi fiil biçimiyle bile anma ("zorla göndermek" ≠ "zorla push"): ilk geçişte gloss ver, defteri "N (geçerken), M (tanım)" yap. Bir sözcüğü hem terim hem sıfat olarak kullanma ("günlük" = reflog; sıfat "gündelik").
@@ -883,7 +929,20 @@ ode_modules`, sonra kopyayi sil.
 - [2026-10-21, run 2] SVG'de bir etiketi içinden ok geçen bir sınır kutusunun içine ya da bir okun sınırı kestiği aralığa koyma (iki şekilde oldu); repo denetleyicisi çizgi-metin kesişmesini görmez. Etiketi okların koridorunun dışına al ve `figs.mjs` ile ölç.
 - [2026-10-21, run 2] İndirilen `.d.ts` kaynaklarını `artifacts/` altında `.ts` uzantısıyla bırakma: tsconfig `**/*.ts` artifacts'ı kapsar. `.d.ts.txt` olarak sakla.
 
+- [2026-10-26, run 5] Birleştirme kuyruğunun testi geçen grup commit'ini hedef dala aynı kimlikle taşıdığını yazma: GitHub Docs bunu söylemiyor ("merged in to the target branch"). Deneyde kuyruk grubunu gerçek birleştirmeyle aynı mesaj/tarihle kurarsan kimlikler eşit çıkar ve bu yanlış izlenimi verir; ayrı mesaj kullan.
+- [2026-10-26, run 5] Yerel bir "CI klonu"nda PR birleştirmesini canlandırmadan önce yerel `main`'i `origin/main`'e ileri sar: aksi hâlde birleştirme eski `main`'in üstüne yapılır ve grafik yanlış çıkar.
+- [2026-10-26, run 5] Güven Sınırı'nda "etiket" yalnız Git tag; konteyner imajı için "imaj etiketi" yazma, "imaj adı" / "imaj özeti (image digest)" yaz. Bir terimi bir yazıda gloss'ladıysan sonraki yazıda parantezli gloss'u tekrar etme (10'da "sürüm dalı (release branch)" tekrarı yakalandı).
+
+- [2026-10-26, Güven Sınırı run 5] Kısa deney tabanı kurarken yayımlanmış yazıların zaman çizelgesiyle karşılaştır: hangi dosya hangi gün doğdu, hangi etiket hangi commit'teydi (ör. 1.4.0-rc.2 = 21 Ekim `120d7b5`, `fatura/pdf.ts` 19 Ekim). Taslakta rc.2 23 Ekim commit'ine atılmıştı; süreklilik incelemesi yakaladı.
+- [2026-10-26, run 5] "Üretimde ne çalışıyor" kanıtını hiçbir zaman bir etiketten (`rev-parse v1.4.0^{commit}`) türetme; dağıtım kaydındaki tam revision kimliğini sabit yaz. Paylaşılmış ref'i (etiket dahil) geri koymak da zorla push'tur: `--force-with-lease=refs/tags/<ad>:<beklenen>`; etiketin uzak izleme kaydı olmadığı için düz `--force-with-lease` "stale info" verir.
+- [2026-10-26, run 5] Bir iş akışı `main` sinyali üretecekse `push: branches: [main]` tetikleyicisi olmalı; `pull_request` ve `merge_group` birleştirmeden sonra `main`'de koşmaz. "Kontrol main'i sınadı" yerine "kontrolün sınadığı ağaç = birleştirmeden sonraki main ağacı" (kuyrukta ilk ebeveyn ölçütü yanlış alarm verir).
+
 ## Decision Log
+
+- [2026-10-26] BOUN bakım run'ı 3: "gözden geçirildi" işareti yalnızca okurun öğrendiği şeyi değiştiren 16
+  makaleye kondu (AI SOZLESME §12); kalıp, yazım, tek sayı, künye ve şekil etiketi düzeltmeleri işaret
+  almadı. Mekanik kapıya yeni desen eklemek (`tools/series/check-series-content.cjs`) ortak araç
+  değişikliği olduğu için yapılmadı, kullanıcı kararına bırakıldı.
 
 - [2026-09-10] BOUN Batch 10, terim kararları: *livelock* Türkçeleştirilmedi, çünkü "canlı
   kilitlenme" 30'da kurulan **canlılık özelliği** (*liveness*) terimiyle çakışıyor; *stack property*

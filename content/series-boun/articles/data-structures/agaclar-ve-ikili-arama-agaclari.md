@@ -12,7 +12,7 @@ tags:
   - degismez
   - yukseklik
   - sirali-dolasma
-content_hash: sha256:6439f5afa2dfc789b6a224da629824b1588397a0b462bf62cb64656a501d901b
+content_hash: sha256:f1db3cb11d479d9b1e8627acb28725070cfeda35bc32444bd6aac3f911e1bf49
 classification_version: 1
 classification_batch: 3
 ---
@@ -62,7 +62,7 @@ Buradan doğru denetim yöntemi de çıkar. Kökten aşağı inerken her düğü
 
 **Silme** üç duruma ayrılır ve mülakatta en çok bu ayrım sorulur. Silinecek düğüm yapraksa doğrudan koparılır. Tek çocuğu varsa, o çocuk düğümün yerine geçer; alt ağaç bütünüyle yukarı kayar ve sıra bozulmaz. İki çocuğu varsa düğüm doğrudan koparılamaz, çünkü yerine iki alt ağacı birden koyacak tek bir yer yoktur. Çözüm, düğümün **sıralı ardılını (in-order successor)** bulmaktır: sağ alt ağacın en küçük düğümü. Ardılın anahtarı silinecek anahtardan büyük olduğu için sol alt ağaçtaki her anahtardan büyüktür; sağ alt ağacın en küçüğü olduğu için de sağda kalan her anahtardan küçüktür. Onu silinecek düğümün yerine yazarsan değişmez bu yüzden bozulmaz. Ardından ardılın kendisi silinir ve burada iş kolaydır: sağ alt ağacın en küçük düğümünün tanım gereği sol çocuğu yoktur, dolayısıyla ikinci silme mutlaka birinci ya da ikinci duruma düşer. Toplam maliyet yine h ile orantılıdır.
 
-Bu üç işlemin yanına iki tanesini daha koyunca yapının asıl değeri görünür: sıralı dolaşma doğrusal zamanda **sıralı çıktı** verir ve bir anahtarın ardılı ile öncülü h ile orantılı zamanda bulunur. Sıralı diziyle karşılaştır: dizide arama ve ardıl ucuzdur ama ekleme doğrusaldır. Bağlı listeyle karşılaştır: listede ekleme ucuzdur ama arama doğrusaldır. İkili arama ağacı beşinin hepsini aynı ölçüye, h'ye bağlar. Bütün mesele artık tek bir soruya indi: **h ne kadar?**
+Bu üç işlemin yanına iki tanesini daha koyunca yapının asıl değeri görünür: sıralı dolaşma doğrusal zamanda **sıralı çıktı** verir ve bir anahtarın ardılı ile öncülü h ile orantılı zamanda bulunur. Sıralı diziyle karşılaştır: dizide arama ve ardıl ucuzdur ama ekleme doğrusaldır. Bağlı listeyle karşılaştır: listede ekleme ucuzdur ama arama doğrusaldır. İkili arama ağacı arama, ekleme, silme, ardıl ve öncülün beşini de aynı ölçüye, h'ye bağlar; sıralı dolaşma ise her düğüme bir kez dokunduğu için doğrusaldır. Bütün mesele artık tek bir soruya indi: **h ne kadar?**
 
 ## Yükseklik: h ile n arasındaki gerçek ilişki
 

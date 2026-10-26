@@ -1,5 +1,5 @@
 <svg viewBox="0 0 720 316" xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="32" font-size="13" fill="var(--text-muted)">kayıtlar nota göre sıralanıyor; eşit notlu kayıtlar vurgulu</text>
+  <text x="40" y="32" font-size="13" fill="var(--text-muted)">kayıtlar nota göre sıralanıyor; notu 1 olan iki kayıt vurgulu</text>
 
   <text x="40" y="58" font-size="13" fill="var(--text)">girdi</text>
   <text x="270" y="58" font-size="13" fill="var(--text)">kararlı sıralama</text>

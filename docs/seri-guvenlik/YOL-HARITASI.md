@@ -6,8 +6,8 @@
 > **yayımlanmış** yazının kimliği, slug'ı, sırası ve başlığı değişmez. Kaynak kanıtı
 > `ARASTIRMA.md`'de, güncel cursor `HANDOFF.md`'dedir.
 
-Son güncelleme: 2026-10-21 (run 4: yazı 7–8 yayımlandı; Git çekirdeği fazı kapandı) · Plan: **25 yazı,
-10 faz** (tavan 25, karar #15) · Yayımlanan: 1–8 (ayrıntı `HANDOFF.md`)
+Son güncelleme: 2026-10-26 (run 5: yazı 9–10 yayımlandı; "GitHub'da Ekip Akışı ve Teslim" fazı kapandı) · Plan:
+**25 yazı, 10 faz** (tavan 25, karar #15) · Yayımlanan: 1–10 (ayrıntı `HANDOFF.md`)
 
 ---
 
@@ -504,6 +504,22 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 9. GitHub'da Ekip Akışı: Push, PR, Merge ve Dağıtım Ayrı Kararlardır
 
+- **Durum:** yayında (run 5, kohort 4) · slug `github-ekip-akisi-push-pr-merge-dagitim` · iki şekil
+  (`iki-taraf-bes-karar.svg`, `yesil-kontrol-baska-birlesim.svg`).
+- **Yayımlanan biçim (run 5):** 8'in kazalarından sonra 22 Ekim akşamı "main yalnız PR'la" kararı (4'ün "incelemesiz yol kayma
+  doğurur" ilkesi geri çağrıldı); 23 Ekim'de iki PR (#41 `kdv` → `kdvGosterimi`, #42 e-arşiv satırı `kdv`'yi okuyor; #42'yi XXE
+  yamasını yazan güvenlik geliştiricisi `gelistirici-b` açıyor) ayrı ayrı yeşil, birlikte `main` kırmızı. Kısa taban (karar #44):
+  `5313039`, ağacı 8'in `b921466`'sının ağacı `f59542e`; akış commit'i `fd3505d` (iş akışı: `pull_request` + `merge_group` +
+  `push: main`, `permissions: contents: read`, action'lar tam SHA'yla; CODEOWNERS; çalışan KDV testi). PR'ın GitHub nesnesi
+  olduğu (2008 lansmanı, `git request-pull`), base/head, base ile birleştirme tabanının ayrımı, üç noktalı fark; deneme
+  birleştirmesi (`refs/pull/N/merge`, `actions/checkout` varsayılanıyla; karar #45) `d2b0938`/`f7fd59b` test 0; `merge-tree` 0;
+  `6b97c42`, `e97fb2e`, test 1 (`SyntaxError`). Gerekli kontrol sıkı/gevşek; birleşimi önceden sınamak: güncellenmiş #42
+  `b92009d` 1, kuyruk grupları `0751329` 0 / `1e028ad` 1 (karar #46); düzeltme #43 `312b004`; doğrulanabilir özellik ağaç
+  eşitliği: #42'de `baeb685` ≠ `919ba76`, #43'te `fbeb0e5` = `fbeb0e5` (karar #53). Zorunlu inceleme ayarları ve ödünleşimi, kod
+  sahipliği; iki Teşhis: CODEOWNERS sırası ("ilk eşleşen kazanır" modeli), `if:` ile atlanan işin "Success" sayılması
+  (`merge_group`'ta `head_ref` boş). Dal stratejisi (DORA, GitHub flow, Driessen 2020), dağıtım koruma kuralları (plan ve
+  rol koşuluyla), kalan risk (dolaylı birleştirme geri çağrıldı, yönetici muafiyeti). "Kendi organizasyonunda" kutusu
+  (karar #48).
 - **Hedef:** Okur, Git ile GitHub'ın ayrımını (dağıtık sürüm kontrolü ↔ onun üzerinde işbirliği ve
   yönetişim platformu) ve push, PR, inceleme, birleştirme ve dağıtımın ayrı kararlar olduğunu
   açıklayabilir; PR tabanını, gerekli incelemeyi, CODEOWNERS'ı, gerekli durum kontrollerini ve
@@ -548,6 +564,21 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 
 ### 10. Sürüm ve Dağıtım: Etiket, GitHub Release ve Geri Dönüş Yolu
 
+- **Durum:** yayında (run 5, kohort 4) · slug `surum-ve-dagitim-etiket-github-release` · iki şekil
+  (`tasinan-etiket-iki-surum.svg`, `surum-dali-hotfix.svg`).
+- **Yayımlanan biçim (run 5):** 23 Ekim Cuma sürüm günü ve 26 Ekim Pazartesi; "sürüm numarası / sürüm (release) / dağıtım
+  (deploy)" ayrımı açıkça kuruldu. Kendi kısa tabanı (karar #44): `85a4e4e` (v1.3.0, açıklamalı), `703b5a1` (21 Ekim adayı,
+  hafif v1.4.0-rc.2), `5c44797`, `06994f8`. Açıklamalı/hafif etiket, etiket nesnesi `4ba5541` → `b58fd17`, `^{}`, düz push'un
+  etiketi göndermemesi ve `--follow-tags`. Yönetici vakası (başarısız dağıtım): geri dönüş = önceki yapı çıktısını özetiyle
+  yeniden dağıtmak, ileri düzeltme; revert'in 1.3.0'a dönmediği (`diff --stat v1.3.0` 3 dosya); hedefe 5'in kapısı ("durdur:
+  yama yok") ve davranış kanıtı (kanaryanın ikinci beklentisi; `DOCTYPE` reddi 1.3.0'da yok, bir savunma katmanı geri alınıyor);
+  veri şeması ve yarım kalan dağıtım. Taşınan etiket: `tag -f` + `push --force` (`4ba5541...c608efd`), b'de düz `fetch` etiket
+  hakkında sessiz, `--tags` "would clobber"; revision dağıtım kaydından tam kimlikle; "On Re-tagging"; Release artık tanık
+  değil; geri koyma kirasız `--force-with-lease` "stale info", beklenen değerle kabul (8'in kuralı geri çağrıldı); a'da
+  `tag -d` + `fetch origin tag`. GitHub Release, `gh release create` tuzağı ve `--verify-tag`, değişmez sürüm ve tasdik.
+  SemVer bir söz; Teşhis: "en son etiket" seçen betik ve `versionsort.suffix`, düzeltmesi açıklamalı etiket denetimi. Yönetici
+  vakası (acil hotfix): `release/1.4`, `cherry-pick -x` → `d4919e6`, `v1.4.1` `5064c40`, `git cherry` `-`/`+`; sürüm dalının
+  da korunması (12'ye işaret). "Kendi organizasyonunda" kutusu (karar #48).
 - **Hedef:** Okur, dal stratejisini dağıtımdan ayırıp bir sürümü değişmeyen bir commit kimliğine ve
   etikete bağlayabilir; hafif ve açıklamalı etiket, GitHub Release ve değişmez sürüm (immutable
   release), SemVer'in sözleşme anlamı ve sınırı, sürüm dalı ve hotfix akışı, geri dönüşte yeniden
@@ -585,6 +616,14 @@ durum üretim run'ında yeniden doğrulanır (`ARASTIRMA.md` borçları).
 - **Önkoşul:** 4 (güvenli varsayılan), 9. **Kavramlar:** katmanlı rol modeli (organizasyon → takım
   → depo; daha yüksek erişim temel yetkiyi geçersiz kılar); dış katkıcı ve deploy anahtarı;
   sahiplik sürekliliği.
+- **Bağlayıcı köprü (run 5):** 10'un "Sırada ne var" bölümü sordu: kim hangi depoyu neden görüp yazabiliyor, roller,
+  takımlar ve temel yetki bu cevabı nasıl üretiyor, erişim en az yetkiye göre nasıl yeniden tasarlanır? 10'da etiketi
+  taşıyan da geri koyan da yazma yetkisini kullandı; değişmez sürümü açmak depoda Admin ister (somut açılış malzemesi).
+  9'da dal korumasını ve ruleset'i Admin'in yönettiği, kuyruğu Admin'in yapılandırıp yazma yetkisinin eklediği, onayların
+  yalnızca yazma yetkisi olanlardan sayıldığı ve kod sahibinin yazma yetkisi taşıması gerektiği kuruldu; 11 rolleri bu
+  kararlara bağlayabilir. "Dal koruması (branch protection)" 9'da gloss'landı, ruleset 9'da geçerken açıklandı; 11 ve 12
+  gloss'u tekrar etmez. 9–10'un deney depoları kısa tabanlıydı (karar #44); 11 GitHub organizasyonu yazısı olduğu için
+  yerel deney yerine kurgusal `ornek-sirket` ve salt okunur denetim ağırlıklı kurulabilir.
 - **Senaryo:** kurgusal `ornek-sirket`: temel yetki herkese "Write", taşeron ekip dış katkıcı, tek
   owner; yeni ekip üyesi ve ayrılan taşeron.
 - **Düzeltilecek yanlış model:** "Kullanıcıyı organizasyondan çıkarmak erişimi bitirir" (deploy
@@ -962,6 +1001,24 @@ ilk geçişte Türkçe açıklanır, gloss verilmez.
 | dolaylı birleştirme | indirect merge | 8 | GitHub Docs; 9 kalan riskte geri çağırır, gloss'u tekrar etmez |
 | stash / cherry-pick | stash / cherry-pick | 8 | komut adları İngilizce; tabloda ve kurtarmada Türkçe açıklandı |
 | sahipsiz nesne | dangling object | 8 | `git fsck --lost-found` (Teşhis) |
+| base / head (PR'ın) | base / head (compare) branch | 9 | İngilizce kalır; GitHub sözlüğünün tanımıyla açıklandı; "compare" arayüzdeki ad |
+| deneme birleştirmesi | test merge commit (`refs/pull/N/merge`) | 9 | `pull_request` kontrolünün sınadığı commit; yerel benzeri `ci` klonunda, kimlikleri GitHub'ınkiyle aynı değil |
+| dal koruması | branch protection | 9 (geçerken), 12 (tanım) | 9'da gloss'landı; ruleset 9'da "adlandırılmış kural kümesi" diye geçerken açıklandı; 12 gloss'u tekrar etmez |
+| gerekli kontrol | required status check | 9 | sıkı (güncel dal) / gevşek biçim; beklenen kaynak (GitHub App) |
+| birleştirme kuyruğu | merge queue | 9 | `merge_group` olayı; `gh-readonly-queue/<base>` öneki |
+| kod sahibi | code owner (CODEOWNERS) | 9 | dosya inceleme ister; onayı zorunlu kılan ayardır |
+| trunk tabanlı geliştirme | trunk-based development | 9 | DORA özeti, görüş olarak |
+| sürüm dalı | release branch | 9 (geçerken), 10 (kullanım) | hotfix akışı 10'da |
+| ortam / dağıtım koruma kuralı | environment / deployment protection rule | 9 | GitHub Actions; plan koşulu yazıldı |
+| hafif / açıklamalı etiket | lightweight / annotated tag | 10 | "etiket" 5'te gloss'landı; 10 türleri tanımladı |
+| GitHub Release / değişmez sürüm | GitHub Release / immutable release | 10 | ürün nesnesi adıyla; "Release" İngilizce kalır |
+| sürüm tasdiki | release attestation | 10 | değişmez sürümün ürettiği doğrulanabilir kayıt |
+| geri dönüş | rollback | 10 | önceki yapı çıktısını yeniden dağıtmak; geri döndürme (revert) ve geri sarma (reset) ile karıştırılmaz |
+| imaj özeti | image digest | 10 | OCI; imaj adı ("etiket" değil) yeniden atanabilir, özet içerikten hesaplanır (karar #30, #49) |
+| sürüm numarası / sürüm / dağıtım | version / release / deploy | 1–4 (kullanım), 10 (ayrım) | yayımlanmış yazılarla aynı; "yayın" kullanılmaz (karar #21); 10 "sürüm numarası"nı ayrı adlandırdı |
+| hotfix | hotfix | 10 | İngilizce kalır; "üretimdeki sürüm için acil düzeltme" diye açıklandı |
+| ileri düzeltme | roll forward | 10 | geri dönüşün ve geri döndürmenin üçüncü seçeneği |
+| anlamsal sürümleme | Semantic Versioning (SemVer) | 10 | belirtim adıyla; "sürüm numarası" ile birlikte |
 
 ### Planlanan terim kararları (Git/GitHub hattı)
 
@@ -971,15 +1028,10 @@ deploy için "dağıtım" (karar #21).
 
 | Türkçe biçim | İngilizce | İlk kullanacak yazı | Not |
 |---|---|---|---|
-| kod sahibi | code owner (CODEOWNERS) | 9 | |
-| gerekli kontrol | required status check | 9 | |
-| birleştirme kuyruğu | merge queue | 9 | |
-| GitHub Release / değişmez sürüm | GitHub Release / immutable release | 10 | ürün nesnesi adıyla |
-| sürüm / dağıtım | release / deploy | 10 | yayımlanmış yazılarla aynı; "yayın" kullanılmaz |
 | temel yetki | base permission | 11 | |
 | dış katkıcı | outside collaborator | 11 | |
 | sahiplik sürekliliği | ownership continuity | 11 | |
-| ruleset / dal koruması | ruleset / branch protection | 12 | ruleset İngilizce kalır |
+| ruleset | ruleset | 9 (geçerken), 12 (tanım) | İngilizce kalır; 9'da "depoya ya da organizasyona yazılan adlandırılmış kural kümesi" diye geçti; dal koruması 9'da gloss'landı |
 | bypass | bypass | 12 | İngilizce kalır; "kural dışı geçiş izni" diye açıklanır |
 | denetim kaydı | audit log | 12 | |
 | kişisel erişim token'ı | personal access token (PAT) | 13 | |
@@ -1026,20 +1078,28 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 5 | "geçmişi yeniden yazan işlemlerin neden yeni kimlikler ürettiği; ayrışan geçmişleri birleştirmeyi işlerken buna döneceğiz" | 7 | evet (run 4) |
 | 5 | Dalı `main`'in yeni hâliyle bilerek bütünleştirmek: "ya bir birleştirme (merge) ya da geçmişi yeniden yazan bir alternatifi; yolları ve bedelleri, ayrışan geçmişleri birleştirme konusunun içeriği" | 7 | evet (run 4) |
 | 5 | "imzayı zorunlu kılan kuralı, kuralların platforma yazılmasını işlerken göreceğiz" (yazar alanı kimlik kanıtı değildir) | 12 | hayır |
-| 5 | Etiketler: "ayrıntısı sürüm ve dağıtım konusuna kalıyor" | 10 | hayır |
+| 5 | Etiketler: "ayrıntısı sürüm ve dağıtım konusuna kalıyor" | 10 | evet (run 5) |
 | 5 | "Yapıyı kimin, hangi makinede ürettiği ve bu kaydın neden kanıt sayılabileceği ise tedarik zinciri ve yapı bütünlüğü konusunun sorusu" | 22 | hayır |
 | 5 | "Sırada ne var": paylaşılan uzak depo; `fetch`, `pull`, `push` hangi ref'i taşır, `origin/main` ne zaman değişir, "dalım güncel" ne zaman kanıttır | 6 | evet (run 3) |
 | 6 | Iraksamanın çözümü: "iki geçmişin bir birleştirme commit'iyle mi yoksa yeniden yazılarak mı bir araya geleceği ayrı bir karardır ve birleştirme konusunun içeriğidir" | 7 | evet (run 4) |
 | 6 | `--force` ile göndermek: "hangi koşulda ve nasıl güvenli yapıldığı ise kod kaybetmeden geri almayı işlerken ele alınacak" | 8 | evet (run 4) |
 | 6 | "Sırada ne var": ıraksayan `main` (`eacea0f` / `120d7b5`) ve yamayı almamış fatura dalı; birleştirme commit'i, rebase, squash grafikte ve kimliklerde neyi değiştirir | 7 | evet (run 4) |
 | 7 | `eacea0f`'e dönüş ve orada kalma süresi "kod kaybetmeden geri almayı işlerken ele alınacak"; zorla push'un hangi biçiminin başkasının işini ezmediği "geri alma konusunun içeriği" | 8 | evet (run 4) |
-| 7 | PR: "Ayrıntısı ekip akışı konusunun içeriği" | 9 | hayır |
-| 7 | Anlamsal çatışmayı yakalayan, birleşmiş sonucu test eden kontrolün "birleştirmeden önce zorunlu kılınması ekip akışı konusunun içeriği" | 9 | hayır |
+| 7 | PR: "Ayrıntısı ekip akışı konusunun içeriği" | 9 | evet (run 5) |
+| 7 | Anlamsal çatışmayı yakalayan, birleşmiş sonucu test eden kontrolün "birleştirmeden önce zorunlu kılınması ekip akışı konusunun içeriği" | 9 | evet (run 5) |
 | 7 | "Bir yöntemi belirli bir dal için bağlayıcı kılan kurallar da var ...; kuralların platforma yazılmasını işlerken buna döneceğiz" (Kendi organizasyonunda kutusu) | 12 | hayır |
 | 7 | "Sırada ne var": `revert` ile `reset`, ulaşılamaz commit'in ömrü, zorla push'un biçimleri, silinen dal | 8 | evet (run 4) |
 | 8 | Korunan dalda zorla push ve silme engeli: "Bu engellerin nasıl kurulduğuna kuralların platforma yazılmasını işlerken döneceğiz" | 12 | hayır |
 | 8 | "Sızan bir sırrın yönetici vakası, makine kimliklerini ve iş akışı güvenliğini işlerken bütünüyle ele alınacak" (Teşhis) | 13 | hayır |
-| 8 | "Sırada ne var": push, PR, inceleme, birleştirme ve dağıtım neden ayrı kararlar; zorunlu inceleme, kod sahipliği, gerekli kontroller ve birleştirme kuyruğu | 9 | hayır (sıradaki run) |
+| 8 | "Sırada ne var": push, PR, inceleme, birleştirme ve dağıtım neden ayrı kararlar; zorunlu inceleme, kod sahipliği, gerekli kontroller ve birleştirme kuyruğu | 9 | evet (run 5) |
+| 9 | `permissions` ve action'ları tam commit kimliğiyle sabitlemenin "ayrıntısı makine kimliklerini ve iş akışı güvenliğini işlerken gelecek" | 13 | hayır |
+| 9 | Dal koruması kuralının "kurulması, katmanlanması ve kimin muaf tutulacağı kuralların platforma yazılmasını işlerken ele alınacak"; kutuda "Kuralı ruleset olarak yazmak, katmanlamak ve muafiyet listesini daraltmak" | 12 | hayır |
+| 9 | "İş akışlarının güvenliği makine kimliklerini işlerken ayrıntılanacak" (beklenen kaynak, PR'ın iş akışını değiştirmesi) | 13 | hayır |
+| 9 | Sürüm dalı: "ayrıntısı sürüm ve dağıtım konusunun içeriği" | 10 | evet (run 5) |
+| 9 | "Sırada ne var": etiket bir commit'i nasıl adlandırır ve ne zaman değişebilir, GitHub Release ve değişmez sürüm, SemVer, geri dönüşün revert olmaması | 10 | evet (run 5) |
+| 10 | "Etiketleri bir kuralla korumak, yani kimin etiket oluşturup silebileceğini sınırlamak, kuralların platforma yazılmasının konusu" | 12 | hayır |
+| 10 | Sürüm dallarının da korunması: "aynı kural sürüm dallarına da uygulanmalı ve bunun bir örüntüyle nasıl yazıldığı kuralların platforma yazılmasının konusu" | 12 | hayır |
+| 10 | "Sırada ne var": kim hangi depoyu neden görüp yazabiliyor; roller, takımlar, temel yetki, en az yetki | 11 | hayır (sıradaki run) |
 
 ## Gerçekleşen geri çağırmalar
 
@@ -1080,6 +1140,24 @@ yalnızca karşılayacak yazının numarası güncellendi.
 | 8 | Squash ata ilişkisi kurmaz (7) | `branch -d` reddi; denetimin aradığı yazar ve zaman bilgisi |
 | 8 | Paylaşılmış geçmiş yeniden yazılmaz (7) | `main`'deki yanlış birleştirme `revert -m 1` ile geri döndürüldü |
 | 8 | Kanarya testi (4) | Ayrık HEAD'de eski adaya karşı XXE kanaryası |
+| 9 | Kanıt kapsadığı kadar konuşur (1) | `f7fd59b`'un yeşili 10.05'teki `main` artı #42 hakkında; birleştirmeden sonraki `main` hakkında değil |
+| 9 | Birleştirme tabanı (7) | PR'ın üç noktalı farkı inceleyicinin ekranını belirliyor; "Update branch" sıkı kontrolde |
+| 9 | Anlamsal çatışma; temiz birleşme yakalamaz (6, 7) | `merge-tree` 0, birleşik `main` test 1 |
+| 9 | Güven sınırının yeri: kökeni ve vardığı sürecin yetkisi (3) | İş akışı dosyasını PR yazarı seçer, birleştirme kararına varır; sınır `.github/` |
+| 9 | Fail-open / fail-closed (2) | Koşulla atlanan iş "Success" (açık), filtreyle atlanan "Pending" (kapalı) |
+| 9 | Dolaylı birleştirme (8) | Kalan risk: PR koruma geçmeden birleşmiş görünebilir |
+| 9 | Değişiklik incelenen yoldan gelir; incelemesiz yol kayma doğurur (4) | Girişte konu adıyla: `main`'e doğrudan push kodun incelemesiz yolu; akış commit'i kural açılmadan önceki son doğrudan push |
+| 10 | Bir adın içeriği söylediği varsayımı (5) | Etiket, sürüm numarası, imaj adı ↔ commit kimliği, imaj özeti |
+| 10 | Etiket bir ref'tir, commit onu ilerletmez (5) | Açıklamalı/hafif etiketin tanımına giriş |
+| 10 | Revision ek açıklaması ve sürüm kapısı (5) | Dağıtım kaydındaki `b58fd17`; geri dönüş hedefine yama ve açığı getiren commit soruları |
+| 10 | Aynı çıktının terfisi (5, A03:2025) | Geri dönüş önceki çıktıyı özetiyle yeniden kullanır |
+| 10 | Geri döndürme (8) | Revert'in 1.3.0'a dönmediği, sınanmamış üçüncü sürüm |
+| 10 | Kısmi başarısızlık (2) | Yarım kalan dağıtım: filonun iki sürümde kalması |
+| 10 | Base (9) | Hotfix PR'ının base'i `release/1.4` |
+| 10 | Patch-id (7) | `git cherry`'nin eşdeğerlik ölçütü |
+| 10 | Zorla push yalnızca kirayla; paylaşılmış ref'te yasak (8) | Taşıma kazası o yasağın çiğnenmesi; geri koyma beklenen değerli `--force-with-lease` ile |
+| 10 | Kayma ve aynı yapı, iki ortam (4) | İkinci güven sınırı; geri dönüşte aynı çıktının yeniden kullanılması |
+| 10 | Kanarya testi (4, 5) | Geri dönüş hedefinde davranış kanıtı; `DOCTYPE` reddinin 1.3.0'da olmadığı |
 
 ## Karar kaydı
 
@@ -1229,3 +1307,44 @@ yalnızca karşılayacak yazının numarası güncellendi.
   silme; salt okunur `gh repo list --json …MergeAllowed,deleteBranchOnMerge`; rol: yöntemler Maintain/Admin,
   otomatik silme Admin; plan koşulu belgelerde yok). 8'de yok: ayar önerilmedi, korunan dal 12'ye işaret
   edildi (#34).
+- **#44 (2026-10-26, run 5) Kısa deney tabanları:** 9 ve 10, 5–8'in zincirini (8'in kurulumu 33 satırdı, 9'unki ~50
+  olacaktı) yeniden oynatmak yerine kendi kısa tabanlarıyla kuruldu. 9'un tabanı tek commit `5313039`; ağacı 8'in sonundaki
+  `b921466`'nın ağacıyla aynı (`f59542e`), süreklilik ağaç kimliğiyle kanıtlanıyor. 10'un tabanı dört commit (`85a4e4e`
+  v1.3.0; `703b5a1` 21 Ekim adayı rc.2, XXE yamasıyla, dünyanın `120d7b5`'iyle aynı anlam; `5c44797` fatura; `06994f8` e-arşiv) ve
+  9'un sonundaki e-arşiv satırını taşıyor; 1.3.0'ın içeriği temsilî, PR birleştirmeleri doğrudan push'la canlandırılıyor. Kimlikler yeni ve her yazı kendi
+  başına koşuyor; dünya (belge-servisi, kişiler, tarihler, XXE hikâyesi) sürüyor. 11'den sonrası için de yerel deney gerekirse
+  kısa taban tercih edilir.
+- **#45 (2026-10-26, run 5) "Deneme birleştirmesi":** GitHub'ın `refs/pull/N/merge`'ü (belgedeki adı test merge commit)
+  Türkçede "deneme birleştirmesi" diye adlandırıldı. Yerelde `ci` klonu ve `platform` kimliği GitHub'ın işini canlandırır;
+  yazı kimliklerin GitHub'ınkilerle aynı olmayacağını, sınanan anlık görüntünün içeriğinin aynı olduğunu söyler.
+- **#46 (2026-10-26, run 5) Kuyruğun "testi geçen commit main'e girer" iddiası kurulmadı:** GitHub Docs geçici dalın hedef
+  dala "birleştirileceğini" yazıyor; aynı kimlikle ileri sarıldığını yazmıyor (`ARASTIRMA.md` §21). Kuyruk grupları deneyde
+  ayrı mesaj ve kimlikle (`0751329`, `1e028ad`) canlandırıldı.
+- **#47 (2026-10-26, run 5) Gerekli kontrol gerçek bir test:** 9'un kontrolü `node --test fatura/*.test.ts`; Node.js'in
+  tip ayıklaması (v22.18+/v23.6+ varsayılan, v24.3+ uyarısız) `.ts`'yi derlemesiz çalıştırıyor. Önkoşul "Node.js 22.18+
+  ya da 24.3+". Çıktıda süre gibi değişken satırlar gösterilmez; yalnızca çıkış kodu ve `SyntaxError` satırı.
+  `${PIPESTATUS[0]}` ile `grep -m1` kullanılmaz (Node erken kapanan boruda 7 dönebiliyor); `sed -n '/…/p'` kullanılır.
+- **#48 (2026-10-26, run 5) "Kendi organizasyonunda" kutusu 9 ve 10'da var:** 9 dal koruması/kod sahibi/kuyruk ayarı, 10
+  değişmez sürüm önerdi (#34). Salt okunur adımlar `gh api … GET` ve `gh release view/list/verify`; değiştiren adım ilk
+  değil; rol (Admin), etkilenenler, duyuru ve geri dönüş yazıldı. Gerçek bir organizasyona karşı çalıştırılmadı.
+- **#49 (2026-10-26, run 5) "Etiket" yalnızca Git tag'idir (#30'un uzantısı):** konteyner imajının adındaki sürüm "imaj
+  adı", içerik kimliği "imaj özeti (image digest)" diye yazıldı; "imaj etiketi" kullanılmadı. Kayıt sunucusu (registry)
+  adlandırılmadı; "kayıt" log anlamına ayrılmış durumda (#38).
+- **#50 (2026-10-26, run 5) Zaman çizelgesi:** 1.3.0 9 Ekim; akış kararı 22 Ekim 16.00; iki PR 23 Ekim 09.30/10.00,
+  birleştirmeler 11.00/11.30, düzeltme 12.20; 1.4.0 23 Ekim 14.00 (etiket 14.05), dağıtım 15.00, hata 15.20, geri dönüş 15.30,
+  e-imza 16.00, düzeltme 16.30, etiket taşıma 17.00; 26 Ekim Pazartesi 09.00 iki 1.4.0, 09.30 geri koyma, 10.00 hotfix ve
+  v1.4.1. 9 ve 10 aynı Cuma'yı farklı saatlerle anlatıyor: 9'un PR'ları öğlene kadar, 10'un sürümü öğleden sonra.
+- **#51 (2026-10-26, run 5) Yalıtılmış kopya aynı sürücüde:** `SOZLESME.md` §7 "aynı sürücüdeki yalıtılmış kopya" der; run 4
+  kopyayı D:'de kurmuştu. Run 5 `C:\dev\.anil-lib-iso-guvenlik-run5`'i kullandı; `node_modules` junction ile, silmeden önce
+  junction ayrı sökülür.
+- **#52 (2026-10-26, run 5) Yayımlanmış 5–8'in komut blokları Git 2.55 ile yeniden koşturuldu:** dört yazının 41 bloğunun
+  hepsi aynı çıktıyı verdi; bakım kalemi gerekmedi. Doğrulayıcı stderr'i stdout'la aynı akışta toplar (okurun terminali
+  gibi); run 4'ün betiği de böyle çalışıyordu.
+- **#53 (2026-10-26, run 5) Beş mercekli inceleme ve doğrulanabilir özellik:** Yazılar yayından önce beş ayrı mercekle (kaynak,
+  sözleşme, teknik ve şekil, pedagoji, süreklilik) incelendi; her merceğin bulguları ayrı bir şüpheci tarafından çürütülmeye
+  çalışıldı, kalan bulgular uygulandı ve iki yazı ikinci kez denetlendi. Sonuçlar: 9'un iş akışına `push: main` eklendi (yoksa
+  "birleştirmeden sonra `main` kırmızı" sinyali GitHub'da üretilmezdi); doğrulanabilir özellik ilk ebeveyn eşitliğinden ağaç
+  eşitliğine çevrildi (kuyrukta grup 2'nin ilk ebeveyni grup 1'dir, ilk ebeveyn ölçütü yanlış alarm verirdi); 10'un tabanı
+  dünyayla çelişmesin diye yeniden kuruldu (rc.2 21 Ekim'in adayı, 1.3.0'da `fatura/` yok); taşınan etiket kirayla geri kondu;
+  geri dönüş hedefinin kapısı 5'in tek sorusuna ve davranış kanıtına bağlandı; `b`/`gelistirici-b` 6–7'deki gibi güvenlik
+  geliştiricisi. Çürütülen bulgular (action SHA'larının kaynağı, CICD-SEC-1'in "hattın sonu" ifadesi) yerinde bırakıldı.

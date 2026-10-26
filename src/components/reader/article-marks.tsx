@@ -61,7 +61,7 @@ export function ArticleMarks({
       >
         <Highlighter className="h-4 w-4" aria-hidden="true" />
         {count > 0 && (
-          <span className="absolute -right-1.5 -top-1.5 min-w-4 rounded-full bg-accent px-1 font-mono text-[9px] leading-4 text-white">
+          <span className="absolute -right-1.5 -top-1.5 min-w-4 rounded-full bg-accent-fill px-1 font-mono text-[9px] leading-4 text-white">
             {count}
           </span>
         )}

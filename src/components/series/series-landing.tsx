@@ -94,7 +94,7 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
           <div className={cn("mt-7", !ready && "invisible")} aria-busy={!ready}>
             <Link
               href={`${basePath}/${continueTarget.slug}`}
-              className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-accent-fill"
+              className="inline-flex items-center gap-2 rounded-md bg-accent-fill px-4 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
               {started ? UI.continueReading : UI.startSeries}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

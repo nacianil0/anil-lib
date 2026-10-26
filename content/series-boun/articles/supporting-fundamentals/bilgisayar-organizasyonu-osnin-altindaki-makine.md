@@ -12,7 +12,7 @@ tags:
   - onbellek
   - boru-hatti
   - ram-modeli
-content_hash: sha256:808c8f3abd283e7e11fb4293029e07ff2733ae0044f7b7b4355ebe1a1cc34d35
+content_hash: sha256:f38bb09b707e264869a236b96186d09452ca4255434ac2387de6f6a6f359bcd4
 classification_version: 1
 classification_batch: 12
 revised_at: "2026-09-25"
@@ -22,7 +22,7 @@ revision_note: "Bellek hiyerarşisi şekli tablo yerine logaritmik eksende yenid
 
 Karmaşıklık makalesinde bir model kurduk ve bütün maliyet hesaplarımızı onun üstüne yığdık: RAM modeli, bellekteki her hücreye erişimin aynı fiyatta olduğunu varsayar. O modelin ne kadar işe yaradığını gördük — makineden bağımsız, tek bir sayıyla karşılaştırma yapmayı mümkün kılan şey bu varsayımdı.
 
-Ama işletim sistemleri fazı boyunca aynı varsayımı üç kez elimizle bozduk. Dengeli arama makalesinde veri diske taştığında modeli açıkça terk edip blok saymaya geçtik. Bellek yönetimi makalesinde bir adres çevirisinin donanımda ek bir bellek erişimi olduğunu gördük. Sanal bellek makalesinde fiziksel belleği bir önbellek gibi ele alıp ıska olasılığını maliyete kattık. Her seferinde "aslında her erişim aynı fiyat değil" dedik ve nedenini bir üst kata bıraktık.
+Ama veri yapıları ve işletim sistemleri fazlarında aynı varsayımı üç kez elimizle bozduk. Dengeli arama makalesinde veri diske taştığında modeli açıkça terk edip blok saymaya geçtik. Bellek yönetimi makalesinde bir adres çevirisinin donanımda ek bir bellek erişimi olduğunu gördük. Sanal bellek makalesinde fiziksel belleği bir önbellek gibi ele alıp ıska olasılığını maliyete kattık. Her seferinde "aslında her erişim aynı fiyat değil" dedik ve nedenini bir üst kata bıraktık.
 
 Bu makale o kata iniyor. Sorusu şu: **bellek erişimleri neden aynı fiyatta değil, fark ne kadar, ve bu fark yazdığın algoritmayı nasıl değiştirir?** Resmî dayanak da yerinde; bölümün bilgisayar organizasyonu dersinin öğrenme çıktıları arasında hiyerarşik bellek sistemlerinin tasarım ilkeleri ve makine komutlarının yürütülmesi açıkça sayılıyor.
 
@@ -34,7 +34,7 @@ Cevap teknolojide, tasarımda değil. Bellek hücresi iki ayrı biçimde kurulab
 
 **Dinamik bellek (dynamic RAM, DRAM)** hücresi ise tek bir transistör ve tek bir kondansatörden ibarettir. Değer kondansatördeki yükte durur. Okumak için erişim hattı kaldırılır ve kondansatörün yeterince boşalması beklenir — bu bekleme dinamik belleğin ne kadar hızlanabileceğini doğrudan sınırlar. Üstelik yük sızdığı için hücrenin düzenli olarak **tazelenmesi (refresh)** gerekir.
 
-Altı transistörle bir transistör arasındaki fark, aynı silikon alanına kaç bit sığdığının farkıdır. Sorunun "neden hepsi statik bellek değil?" biçimi mülakatta sık sorulur ve cevabı tek kelimedir: maliyet. Hızlı bellek pahalıdır, ucuz bellek yavaştır, ve hiçbir bütçe ikisini birden alamaz.
+Altı transistörle bir transistör arasındaki fark, aynı silikon alanına kaç bit sığdığının farkıdır. Sorunun "neden hepsi statik bellek değil?" biçiminin cevabı tek kelimedir: maliyet. Hızlı bellek pahalıdır, ucuz bellek yavaştır, ve hiçbir bütçe ikisini birden alamaz.
 
 Peki küçük bir hızlı bellek nasıl büyük bir hızlı bellek gibi davranabilir? Cevap, bellek yönetimi makalesinde tanımladığımız iki özelliktir. Zamansal yerellik, az önce kullanılan verinin yakında yine kullanılacağını söyler; uzamsal yerellik, bir adrese erişen programın komşu adreslere de erişeceğini. İkisi de programların gözlenmiş bir huyudur, bir teorem değil — ve bütün hiyerarşi bu huy üzerine bahis oynar.
 
@@ -98,7 +98,7 @@ Buradan bir terim çıkıyor ve sanal bellek makalesinde tanımladığımız kav
 
 ## Komut yürütme ve zamanın denklemi
 
-Bir işlemcinin bir komutu işlemesi üç adımdır: getir, çöz, yürüt. Bu adımların her biri birleşimsel devrelerden kurulur — ayrık matematik makalesinde sadeleştirdiğimiz Boole ifadeleri, donanımda tam olarak bunlardır. Bir Boole ifadesini iki terim kısaltmak, o devrede daha az kapı ve daha kısa gecikme demektir; sadeleştirmenin "zarif" değil **ölçülebilir** bir kazanç olmasının nedeni budur.
+Bir işlemcinin bir komutu işlemesi üç adımdır: getir, çöz, yürüt. Bu adımların her biri birleşimsel devrelerden kurulur — ayrık matematik makalesinde sadeleştirdiğimiz Boole ifadeleri, donanımda tam olarak bunlardır. Bir Boole ifadesini iki terim kısaltmak, o devrede daha az kapı demektir ve sadeleştirmenin estetik değil **ölçülebilir** bir kazanç olmasının nedeni budur; gecikme ise devrenin derinliğine bağlıdır ve her kısaltmada azalmaz.
 
 Programın süresini veren ilişki bir birim sadeleştirmesinden çıkar ve türetmesini kendim yazıyorum:
 
@@ -118,11 +118,11 @@ Buradan karmaşıklık tarafına bir sonuç düşer ve asimptotik analiz makales
 
 **TLB bir önbellektir.** Bellek yönetimi makalesinde adres çevirisi önbelleğini "son çevirileri saklayan küçük bir donanım yapısı" diye tanıtmıştık. Artık tam adını koyabiliriz: sanal sayfa numarasını anahtar, sayfa tablosu girdisini değer alan, birkaç düzine girdilik, genellikle tam çağrışımlı bir önbellek. Aynı üç kavram aynen geçerlidir — isabet, ıska ve ıska cezası. Iska cezası burada bir bellek erişimi değil, sayfa tablosunun yürünmesidir.
 
-**Sayfa boyutunun iki yönlü takası.** Bellek yönetimi makalesinde büyük sayfanın iç parçalanmayı artırdığını söylemiştik; şimdi öteki yönü sayabiliriz. Bir TLB'nin kapsadığı bellek miktarı, girdi sayısı çarpı sayfa boyutudur. 64 girdilik bir TLB, 4 KB'lık sayfalarla 256 KB kapsar; aynı TLB 2 MB'lık sayfalarla 128 MB kapsar — beş yüz kat. Büyük veri üzerinde dolaşan bir program için bu fark, çeviri ıskasının bütünüyle ortadan kalkması anlamına gelebilir. Bedeli iç parçalanmadır: bir bölgenin son sayfası ortalama yarı boş kalır ve 2 MB'lık sayfada bu yarım sayfa 1 MB demektir; ayrıca her sayfa hatası 4 KB yerine 2 MB'lık bir sayfayı hazırlamak zorundadır. Takas budur ve yönü iş yüküne göre değişir. Kapsama hesabı kendimindir.
+**Sayfa boyutunun iki yönlü takası.** Bellek yönetimi makalesinde büyük sayfanın iç parçalanmayı artırdığını söylemiştik; şimdi öteki yönü sayabiliriz. Bir TLB'nin kapsadığı bellek miktarı, girdi sayısı çarpı sayfa boyutudur. 64 girdilik bir TLB, 4 KB'lık sayfalarla 256 KB kapsar; aynı TLB 2 MB'lık sayfalarla 128 MB kapsar — beş yüz on iki kat. Büyük veri üzerinde dolaşan bir program için bu fark, çeviri ıskasının bütünüyle ortadan kalkması anlamına gelebilir. Bedeli iç parçalanmadır: bir bölgenin son sayfası ortalama yarı boş kalır ve 2 MB'lık sayfada bu yarım sayfa 1 MB demektir; ayrıca her sayfa hatası 4 KB yerine 2 MB'lık bir sayfayı hazırlamak zorundadır. Takas budur ve yönü iş yüküne göre değişir. Kapsama hesabı kendimindir.
 
-**Bağlam anahtarı neden çevrim cinsinden ucuzlamıyor?** Süreçler makalesinde ölçülmüş bir gözlem aktarmıştık: 1996'da 200 MHz'de yaklaşık 6 mikrosaniye, bugün mikrosaniyenin altı — ama çevrime çevrildiğinde 1.200'e karşı 1.500, yani düşme yok. Gerekçeyi donanım tarafına bırakmıştık.
+**Bağlam anahtarı neden çevrim cinsinden ucuzlamıyor?** Süreçler makalesinde ölçülmüş bir gözlem aktarmıştık: 1996'da 200 MHz'de yaklaşık 6 mikrosaniye, bugün mikrosaniyenin altı — ama çevrime çevrildiğinde 1.200'e karşı 1.200–1.800 (2–3 GHz'de 0,6 mikrosaniye), yani düşme yok. Gerekçeyi donanım tarafına bırakmıştık.
 
-Gerekçe 1990 tarihli bir ölçüm çalışmasında duruyor. Çalışma, çekirdeğe giriş-çıkışı ve süreçler arası geçişi zorlayan küçük kıyas programlarını farklı makine ve işletim sistemlerinde koşturuyor ve sonuçları makinenin ham hızına **göreli** olarak veriyor. Boş bir sistem çağrısında göreli hız tipik olarak 0,5 ile 0,8 arasında; iki süreç arasında bir bayt gidip gelmesini ölçen bağlam anahtarı kıyasında ise 0,3 ile 0,5 arasında. Yani işlemci üç kat hızlandığında bu işler bir buçuk kat hızlanıyor.
+Gerekçe 1990 tarihli bir ölçüm çalışmasında duruyor. Çalışma, çekirdeğe giriş-çıkışı ve süreçler arası geçişi zorlayan küçük kıyas programlarını farklı makine ve işletim sistemlerinde koşturuyor ve sonuçları makinenin ham hızına **göreli** olarak veriyor. Boş bir sistem çağrısında göreli hız tipik olarak 0,5 ile 0,8 arasında; iki süreç arasında bir bayt gidip gelmesini ölçen bağlam anahtarı kıyasında ise 0,3 ile 0,5 arasında. Yani işlemci üç kat hızlandığında boş sistem çağrısı yalnızca 1,5–2,4 kat hızlanıyor; bağlam anahtarı kıyası 0,9–1,5 kat, yani alt uçta hızlanmak yerine biraz yavaşlıyor. Bu çarpımlar kaynağın göreli hızlarından benim hesabımdır (3 × 0,5 = 1,5; 3 × 0,3 = 0,9).
 
 Çalışmanın kendi sonucu iki donanım başlığı sayıyor. Birincisi bellek bant genişliğinin işlemci hızına yetişememesi; ikincisi bağlam anahtarının yeni mimarilerde yaklaşık iki kat pahalılaşmış olması. Birinci başlık doğrudan bu makalenin konusuna bağlanır: bağlam anahtarı yazmaç kopyalayan, çekirdek yığını değiştiren, sayfa tablosunu değiştiren ve bunu yaparken önbelleği ve adres çevirisi önbelleğini soğutan bir iştir. Yani **bellek yoğundur**, ve bellek hiyerarşisi işlemci kadar hızlı iyileşmemektedir. Süreçler makalesinde bıraktığımız borç budur.
 
@@ -140,7 +140,7 @@ Bir de ölçü refleksi: "bu kod neden yavaş?" sorusuna verilecek ilk cevap kom
 
 Bu makale donanımı gösterdi ama hepsine dışarıdan baktık: çevrim tabloları, eşleme düzenleri, ölçülmüş kıyaslar. Programcının elinde bunların hiçbiri görünmüyor — ta ki bellekle doğrudan konuşan bir dil kullanana kadar.
 
-Sıradaki makale aynı kavramları koda indiriyor: bir sürecin adres uzayı düzeninin C'de nasıl göründüğü, işaretçinin gerçek maliyeti, heap'ten yer almanın ve geri vermenin ne demek olduğu ve süreç yaratan çağrıların kendisi. Süreçler makalesinde ertelediğimiz `fork()`, `exec()` ve `wait()` üçlüsü ile sanal bellek makalesinde adını anıp mekanizmasını açmadığımız kopyalarken yazma orada ödenecek.
+Sıradaki makale aynı kavramları koda indiriyor: bir sürecin adres uzayı düzeninin C'de nasıl göründüğü, işaretçinin gerçek maliyeti, heap'ten yer almanın ve geri vermenin ne demek olduğu ve süreç yaratan çağrıların kendisi. Süreçler makalesinde ertelediğimiz `fork()`, `exec()` ve `wait()` üçlüsü ile sanal bellek makalesinde hiç açmadığımız kopyalarken yazma orada ödenecek.
 
 ## Kaynakça
 

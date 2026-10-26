@@ -12,7 +12,7 @@ tags:
   - takip-sorusu
   - tahta-kullanimi
   - arastirma-yonu
-content_hash: sha256:31026fe59e47407e78dcabd28225ea2a9fa4f4498d1d01f45a742583c9523aea
+content_hash: sha256:066f3680c8a45821abd85adbfe8731c5ea36e999ce34e1962717cd1a2dd2e31c
 classification_version: 1
 classification_batch: 13
 ---
@@ -26,11 +26,11 @@ Bu makale yeni bir konu öğretmiyor. Serinin her makalesinde kurduğumuz omurga
 
 ## Omurganın dört parçası
 
-Serideki her "Sesli anlat" kutusunun altında bir omurga var ve kırk küsur omurganın hepsi aynı dört parçadan oluşuyor. Parçaları adlandıralım.
+Serideki her "Sesli anlat" kutusunun altında bir omurga var ve yetmişi aşkın omurganın hepsi aynı dört parçadan oluşuyor. Parçaları adlandıralım.
 
 **Bir: iddia.** Sonucu tek cümlede söyle. Cümle kısa olsun ve bir şey iddia etsin — "bu konu ilginçtir" bir iddia değildir.
 
-**İki: koşul.** İddianın hangi şartlarda doğru olduğunu söyle. Üç şey vardır burada: hangi **durum** (en kötü, ortalama, beklenen, amortize), hangi **model** (karşılaştırma modeli, RAM modeli, dış bellek modeli) ve hangi **varsayım** (düzgün dağılım, negatif olmayan ağırlıklar, önkesmeli zamanlayıcı). Koşulsuz iddia, mülakatçının ikinci sorusunu davet eden şeydir.
+**İki: koşul.** İddianın hangi şartlarda doğru olduğunu söyle. Üç şey vardır burada: hangi **durum** (en kötü, ortalama, beklenen, amortize), hangi **model** (karşılaştırma modeli, RAM modeli, dış bellek modeli) ve hangi **varsayım** (düzgün dağılım, negatif olmayan ağırlıklar, önkesmeli çizelgeleyici). Koşulsuz iddia, mülakatçının ikinci sorusunu davet eden şeydir.
 
 **Üç: mekanizma.** Maliyetin ya da doğruluğun nereden geldiğini bir cümlede söyle. "Logaritmiktir" yetmez; "her adımda arama aralığı yarıya iniyor" mekanizmadır.
 
@@ -38,7 +38,7 @@ Serideki her "Sesli anlat" kutusunun altında bir omurga var ve kırk küsur omu
 
 Şekil 1'in üst şeridi bu dört parçayı, alt şeridi ise bunun üzerine gelen takip zincirini gösteriyor.
 
-![İki şeritten oluşan bir şema. Üst şeridin başında bir etiket var: altmış-doksan saniyelik omurga, dört parça. Altında soldan sağa dört kutu ve aralarında sağa bakan oklar duruyor. Birinci kutuda bir rakamı ve iddia yazıyor, altında tek cümlelik sonuç. İkinci kutuda iki rakamı ve koşul yazıyor, altında durum, model, varsayım. Üçüncü kutuda üç rakamı ve mekanizma yazıyor, altında maliyet nereden geliyor. Vurgulu renkte olan dördüncü kutuda dört rakamı ve bozulma yazıyor, altında iddia nerede çöker. Alt şeridin başında takip zinciri üç halka etiketi var ve altında yine soldan sağa üç kutu ile aralarında oklar duruyor: birinci halka tanım, altında bu tam olarak nedir; ikinci vurgu renginde olan ikinci halka sınır durumu, altında ya en kötü durumda; üçüncü halka takas, altında neden başkası değil. İkinci halkanın üstünden kesik çizgili bir ok çıkıyor, önce yukarı sonra sağa gidiyor ve üst şerideki dördüncü kutunun altına dayanıyor; okun yatay parçasının üstünde bir not var: ikinci halka cevabın içine taşınır. En altta bir satır daha: omurganın dördüncü parçası, zincirin ikinci halkasını cevabın içine taşır](assets/cevap-omurgasi-ve-takip-zinciri.svg "Şekil 1 — Cevabın dört parçalı omurgası ve üzerine binen üç halkalı takip zinciri")
+![İki şeritten oluşan bir şema. Üst şeridin başında bir etiket var: altmış-doksan saniyelik omurga, dört parça. Altında soldan sağa dört kutu ve aralarında sağa bakan oklar duruyor. Birinci kutuda bir rakamı ve iddia yazıyor, altında tek cümlelik sonuç. İkinci kutuda iki rakamı ve koşul yazıyor, altında durum, model, varsayım. Üçüncü kutuda üç rakamı ve mekanizma yazıyor, altında maliyet nereden geliyor. Vurgulu renkte olan dördüncü kutuda dört rakamı ve bozulma yazıyor, altında iddia nerede çöker. Alt şeridin başında takip zinciri üç halka etiketi var ve altında yine soldan sağa üç kutu ile aralarında oklar duruyor: birinci halka tanım, altında bu tam olarak nedir; ikinci vurgu renginde olan ikinci halka sınır durumu, altında ya en kötü durumda; üçüncü halka takas, altında neden başkası değil. İkinci halkanın üstünden kesik çizgili bir ok çıkıyor, önce yukarı sonra sağa gidiyor ve üst şeritteki dördüncü kutunun altına dayanıyor; okun yatay parçasının üstünde bir not var: ikinci halka cevabın içine taşınır. En altta bir satır daha: omurganın dördüncü parçası, zincirin ikinci halkasını cevabın içine taşır](assets/cevap-omurgasi-ve-takip-zinciri.svg "Şekil 1 — Cevabın dört parçalı omurgası ve üzerine binen üç halkalı takip zinciri")
 
 Somutlaştıralım. Kötü cevap: "Hash tablosunda arama O(1)'dir." Bu cümle üç saniye sürer ve arkasından gelen soruyu garanti eder.
 
@@ -52,7 +52,7 @@ Yirmi beş saniye. Dört parça da yerinde. Ve dikkat et: bu cevap, tipik ikinci
 
 ## İki sabit sıra: maliyet ve doğruluk
 
-Mülakatta en sık gelen iki soru türünün cevabı ezberlenmez, **sırası** ezberlenir. Sırayı bilirsen konuyu bilmediğin anda bile boş konuşmazsın.
+Maliyet ve doğruluk sorularının cevabı ezberlenmez, **sırası** ezberlenir. Sırayı bilirsen konuyu bilmediğin anda bile boş konuşmazsın.
 
 **Maliyet cevabının sırası dörttür.** Önce girdi boyutunu tanımla: "n nedir?" Grafta bu neredeyse her zaman iki sayıdır, düğüm ve kenar; sayılarda basamak sayısı mı değerin kendisi mi olduğu kritiktir. Sonra maliyeti nereden saydığını söyle: hangi döngü, kaç kez dönüyor, iç işlem kaç adım. Sonra sınıfı ve durumu ver: Θ mu O mu, en kötü mü ortalama mı. Sonunda bellek maliyetini ekle ve özyineleme derinliğini unutma.
 
@@ -72,7 +72,7 @@ Birinci halka tanımı yoklar: "Bunu tam olarak nasıl tanımlarsın?" İkinci h
 
 Dikkat et, bu üçlü bir sınav sırası değil, bir **düşünme sırası**. Prova ederken bunu tersten kullan: bir cevabı kurduktan sonra kendine ikinci ve üçüncü halkayı sor, cevaplarını bul ve ikinci halkanın cevabını **ilk cevabın içine taşı**. Omurganın dördüncü parçası tam olarak budur. Şekil 1'deki kesik çizgili ok bu taşımayı gösteriyor.
 
-Üçüncü halka cevabın içine taşınmaz, çünkü taşınırsa cevap uzar ve altmış saniyeyi aşar. Onu hazır tut, sorulunca ver.
+Üçüncü halka cevabın içine taşınmaz, çünkü taşınırsa cevap uzar ve doksan saniyeyi aşar. Onu hazır tut, sorulunca ver.
 
 > **Sesli anlat:** Bir cevabını söyle, sonra kendi kendine "peki ya en kötü durumda?" diye sor ve cevabını genişlet. Genişletme sırasında yeni bir konu açmadığını, yalnızca ilk cümlenin koşulunu değiştirdiğini fark et.
 >
@@ -82,9 +82,9 @@ Dikkat et, bu üçlü bir sınav sırası değil, bir **düşünme sırası**. P
 
 Görüşme bir ofiste geçiyor ve büyük ihtimalle elinin altında bir tahta ya da bir kâğıt olacak. Tahta bir sunum aracı değil, bir hafıza uzantısıdır: konuşurken taşıyamayacağın şeyi oraya bırakırsın.
 
-Altmış saniyede yazabileceğin şey çok azdır. Bu yüzden ne yazacağına önceden karar vermelisin. Şekil 2 dört bölgelik bir düzen öneriyor ve bu düzen, yukarıdaki iki sabit sırayla birebir uyuşuyor.
+Altmış saniyede yazabileceğin şey çok azdır. Bu yüzden ne yazacağına önceden karar vermelisin. Şekil 2 dört bölgelik bir düzen öneriyor. Üst iki bölge yukarıdaki iki sabit sıranın tahtaya yazılan kısmıdır: solda tanım ya da doğruluk sırasının ilk adımı olan değişmez, sağda maliyet sırasının ilk üç adımı. Alt bölgeler küçük örneğe ve omurganın dördüncü parçasına ayrılmıştır.
 
-![Üstünde tahta ya da kâğıt, altmış saniyede yazılabilecek kadarı etiketi bulunan dikdörtgen bir çerçeve; çerçeve bir dikey ve bir yatay çizgiyle dört bölgeye ayrılmış. Sol üst bölgede tanım ya da değişmez başlığı, altında tek cümle tam yazılır notu ve nötr renkli bir örnek kutusu var: soldaki bütün anahtarlar düğümden küçük, sağdakiler büyük. Sağ üst bölgede maliyet muhasebesi başlığı, altında n nedir kaç kez hangi sınıf notu ve vurgulu renkte bir örnek kutusu var: n eleman, her adımda yarıya iner, log n adım. Sol alt bölgede küçük örnek başlığı, altında gerçek sayılarla en fazla yedi eleman notu ve nötr renkli bir örnek kutusu var: yedi sayılık bir dizi ve elle izlenebilir notu. Sağ alt bölgede bozulma noktası başlığı, altında burayı sen yazarsın notu ve ikinci vurgu renginde bir örnek kutusu var: sıralı eklemede yükseklik n olur, log n değil. Çerçevenin altında üç kural satırı duruyor: konuşurken yaz, yazdıktan sonra sus ve karşındakinin okumasını bekle; kod yazma, en fazla üç satırlık dil bağımsız sözde kod yaz; yanlış yazdıysan silme, üstünü çiz ve yanına doğrusunu yazıp nedenini söyle](assets/tahta-dort-bolge.svg "Şekil 2 — Tahtanın dört bölgesi ve hangi bölgeye ne yazıldığı")
+![Üstünde tahta ya da kâğıt, altmış saniyede yazılabilecek kadarı etiketi bulunan dikdörtgen bir çerçeve; çerçeve bir dikey ve bir yatay çizgiyle dört bölgeye ayrılmış. Sol üst bölgede tanım ya da değişmez başlığı, altında tek cümle tam yazılır notu ve nötr renkli bir örnek kutusu var: soldaki bütün anahtarlar düğümden küçük, sağdakiler büyük. Sağ üst bölgede maliyet muhasebesi başlığı, altında n nedir kaç kez hangi sınıf notu ve vurgulu renkte bir örnek kutusu var: n eleman, her adımda yarıya iner, log n adım. Sol alt bölgede küçük örnek başlığı, altında gerçek sayılarla en fazla yedi eleman notu ve nötr renkli bir örnek kutusu var: yedi sayılık bir dizi ve elle izlenebilir notu. Sağ alt bölgede bozulma noktası başlığı, altında burayı sen yazarsın notu ve ikinci vurgu renginde bir örnek kutusu var: sıralı eklemede yükseklik n − 1 olur, log n değil. Çerçevenin altında üç kural satırı duruyor: konuşurken yaz, yazdıktan sonra sus ve karşındakinin okumasını bekle; kod yazma, en fazla üç satırlık dil bağımsız sözde kod yaz; yanlış yazdıysan silme, üstünü çiz ve yanına doğrusunu yazıp nedenini söyle](assets/tahta-dort-bolge.svg "Şekil 2 — Tahtanın dört bölgesi ve hangi bölgeye ne yazıldığı")
 
 **Sol üst: tanım ya da değişmez.** Yanlış söylenmemesi gereken tek cümle burada durur. Ağaç sorusunda arama ağacı değişmezi, döngü sorusunda döngü değişmezi, olasılık sorusunda örneklem uzayı.
 
@@ -94,7 +94,7 @@ Altmış saniyede yazabileceğin şey çok azdır. Bu yüzden ne yazacağına ö
 
 **Sağ alt: bozulma noktası.** Omurganın dördüncü parçası. Buraya bir şey yazmış olman, sınır durumunu düşündüğünün kanıtıdır.
 
-Üç kural var. Birincisi: konuşurken yaz, yazdıktan sonra sus. Yazma sesi altında söylenen cümle duyulmaz. İkincisi: kod yazma. Tam bir fonksiyon yazmak iki dakika alır ve o iki dakikada sen konuşmuyorsundur; en fazla üç satırlık, dil bağımsız sözde kod yaz. Üçüncüsü: sildiğin şey konuşmadan kayboldu demektir; yanlış yazdıysan üstünü çizip yanına doğrusunu yaz ve neden değiştirdiğini söyle. Bir hatayı kendi bulup düzeltmek, hiç hata yapmamaktan daha güçlü bir sinyaldir.
+Üç kural var. Birincisi: konuşurken yaz, yazdıktan sonra sus. Yazma sesi altında söylenen cümle duyulmaz. İkincisi: kod yazma. Tam bir fonksiyon yazmak iki dakika alır ve o iki dakikada sen konuşmuyorsundur; en fazla üç satırlık, dil bağımsız sözde kod yaz. Üçüncüsü: sildiğin şey konuşmadan kayboldu demektir; yanlış yazdıysan üstünü çizip yanına doğrusunu yaz ve neden değiştirdiğini söyle.
 
 ## İki refleks: erişim deseni ve katman
 
@@ -126,7 +126,7 @@ Resmî tanım dört şey sayıyor: geçmiş akademik kayıt, araştırma yönü,
 
 Kalıp yine aynı: iddia, koşul, mekanizma, bozulma noktası. "Şu alanla ilgileniyorum" iddiadır; "çünkü lisansta şu dersi alırken şu problem dikkatimi çekti" koşuldur; "özellikle şu kısmı merak ediyorum" mekanizmadır; "ama bu alanın hangi kısmının bana uyacağını henüz bilmiyorum, o yüzden esneğim" bozulma noktasıdır. Son cümleyi söylemek seni zayıf göstermez; dürüst gösterir ve dürüstlük bu konuşmada ölçülen şeylerden biridir.
 
-Bir uyarı: bölümün gerçekten çalıştığı alanlara bak ve kendi ilgi alanınla gerçekten örtüşen yeri söyle. Uydurulmuş bir örtüşme, ilk takip sorusunda ortaya çıkar — tıpkı uydurulmuş bir teknik cevap gibi.
+Bölümün gerçekten çalıştığı alanlara bak ve kendi ilgi alanınla gerçekten örtüşen yeri söyle. Uydurulmuş bir örtüşme, ilk takip sorusunda ortaya çıkar — tıpkı uydurulmuş bir teknik cevap gibi.
 
 > **Sesli anlat:** Araştırma yönünü iki cümlede anlat. Birinci cümlede problem sınıfı, ikinci cümlede yaklaşım olsun. Sonra üçüncü bir cümle ekle: henüz bilmediğin şey ne?
 >
@@ -138,7 +138,7 @@ Bu makalenin konusu anlatmanın kendisi olduğu için takip zinciri de anlatma �
 
 Altı tipik hata var. **Koşulsuz iddia kurmak** — "O(1)'dir", "en hızlısıdır", "daha iyidir"; hepsi ikinci soruyu davet eder. **Modelini söylememek** — "sıralama n log n'in altına inemez" eksiktir, "karşılaştırma modelinde" tamdır. **Sınır durumunu mülakatçıya bırakmak** — bozulma noktasını sen söylemezsen o soracaktır ve o zaman bu bir sınır bilinci değil, bir açık olur. **Tahtaya kod yazmak** — iki dakika gider, konuşma durur ve yazılan şey nadiren okunur. **İtiraz gelince cevabı baştan kurmak** — itiraz çoğunlukla koşulu hedefler; koşulu değiştir, konuyu değil. **Bilmediğini gizlemek** — takip zinciri zaten sınırı bulmak için var, sınırı kendin söylemek bir maliyet değil bir sinyaldir.
 
-Bir de zaman ölçüsü: kendini kaydet ve süreni ölç. Altmış saniyeyi aşan bir omurga, omurga değil anlatımdır; otuz saniyenin altında kalan bir cevap ise büyük ihtimalle koşul parçasını atlamıştır.
+Bir de zaman ölçüsü: kendini kaydet ve süreni ölç. Doksan saniyeyi aşan bir omurga, omurga değil anlatımdır; birkaç saniyede biten bir cevap ise — hash örneğindeki üç saniyelik kötü cevap gibi — büyük ihtimalle koşul parçasını atlamıştır.
 
 Bu makale yeni bir terim kurmuyor, o yüzden aşağıdaki liste bir tekrar listesidir: omurganın koşul ve bozulma parçalarını İngilizce kurarken lazım olacak, seri boyunca yerleşmiş karşılıklar ile resmî tanımın kendi ifadeleri. *Worst case*, *average case*, *expected time*, *amortized*, *comparison model*, *external memory model*, *assumption*, *invariant*, *loop invariant*, *partial correctness*, *termination*, *trade-off*, *edge case*, *access pattern*, *research direction*, *past academic record*, *skillset*.
 
@@ -148,5 +148,5 @@ Elinde artık bir kalıp var, ama kalıbın hangi konuda tuttuğunu hangi konuda
 
 ## Kaynakça
 
-- Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *M.S. Program* — bilimsel mülakatı en az iki öğretim üyesinin yürütmesi, her görüşmenin görüşmecinin ofisinde 10 ya da 15 dakika sürmesi, telekonferansın adaya değil görüşmeciye bağlı olması ve görüşmenin içeriğinin birebir tanımı: "The interview involves a discussion of the candidate's past academic record, research direction, skillset, and technical knowledge." Kabul kararının mülakat performansının yanında öğretim üyesi değerlendirmeleri, transkriptler ve referans mektuplarıyla birlikte verilmesi. Sayfa bu makale yazılırken yeniden doğrulandı; resmî süreç bilgisi değişebilir, karar vermeden önce güncel hâlini kendin kontrol et. [Bağlantı](https://cmpe.bogazici.edu.tr/graduate/ms-program/)
+- Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *M.Sc. in Computer Engineering* — bilimsel mülakatı en az iki öğretim üyesinin yürütmesi, her görüşmenin görüşmecinin ofisinde 10 ya da 15 dakika sürmesi, telekonferansın adaya değil görüşmeciye bağlı olması ve görüşmenin içeriğinin birebir tanımı: "The interview involves a discussion of the candidate's past academic record, research direction, skillset, and technical knowledge." Kabul kararının mülakat performansının yanında öğretim üyesi değerlendirmeleri, transkriptler ve referans mektuplarıyla birlikte verilmesi. Sayfa bu makale yazılırken yeniden doğrulandı; resmî süreç bilgisi değişebilir, karar vermeden önce güncel hâlini kendin kontrol et. [Bağlantı](https://cmpe.bogazici.edu.tr/graduate/ms-program/)
 - Fiorella, L. & Mayer, R. E. *The relative benefits of learning by teaching and teaching expectancy*, Contemporary Educational Psychology, cilt 38, sayı 4, 2013, s. 281–288 — bir konuyu sonradan anlatma beklentisiyle çalışmanın kavrama testindeki ölçülebilir katkısı ve gerçekten anlatmanın kazanımı kalıcı kılması. Bu makaledeki "sesli prova" disiplininin dayanağıdır; buradaki hiçbir sayı bu kaynaktan alınmamıştır. [Bağlantı](https://doi.org/10.1016/j.cedpsych.2013.06.001)

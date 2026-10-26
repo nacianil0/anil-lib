@@ -73,6 +73,6 @@
   <text x="341" y="324" font-size="13" text-anchor="middle" fill="var(--text)">n/4</text>
 
   <text x="410" y="276" font-size="13" fill="var(--text-muted)">her seviyede toplam iş: n</text>
-  <text x="410" y="300" font-size="13" fill="var(--text-muted)">seviye sayısı: log₂ n</text>
+  <text x="410" y="300" font-size="13" fill="var(--text-muted)">birleştirme yapılan seviye: log₂ n</text>
   <text x="410" y="324" font-size="13" fill="var(--text)">toplam: n · log₂ n</text>
 </svg>

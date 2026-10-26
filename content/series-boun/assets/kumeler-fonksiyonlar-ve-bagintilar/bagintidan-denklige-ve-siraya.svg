@@ -5,7 +5,7 @@
     </marker>
   </defs>
 
-  <text x="360" y="30" font-size="15" text-anchor="middle" fill="var(--text)">İkili bağıntı R, A × A altkümesi</text>
+  <text x="360" y="30" font-size="15" text-anchor="middle" fill="var(--text)">İkili bağıntı R: A × A'nın bir alt kümesi</text>
 
   <rect x="30" y="46" width="150" height="34" rx="6" fill="var(--surface-muted)" stroke="var(--border)" />
   <text x="105" y="68" font-size="13" text-anchor="middle" fill="var(--text)">yansımalı</text>

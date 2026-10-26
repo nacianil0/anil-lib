@@ -12,7 +12,7 @@ tags:
   - kombinasyon
   - binom-katsayisi
   - guvercin-yuvasi
-content_hash: sha256:ef6739b8c2747235268af73fc103a923da6bc9283b7e4eedda474127398daf32
+content_hash: sha256:2de8d0ed7aafb1e9b367f57953002854f8717c1731f574fb89d90e1607714421
 classification_version: 1
 classification_batch: 1
 ---
@@ -30,7 +30,7 @@ Algoritma analizinin tamamı bir sayma işidir. "Bu algoritma kaç adımda biter
 
 İkisi birlikte hemen her sayma probleminin iskeletini verir. Kalıp şudur: problemi **ya bağımsız adımlara böl** (çarp) **ya da ayrık durumlara böl** (topla). Mülakatta bir sayma sorusuna başlarken söylemen gereken ilk cümle, hangisini yaptığındır.
 
-Önceki makaledeki güç kümesi sonucunu şimdi ispatlayabiliriz. n elemanlı bir kümenin alt kümelerini saymak için her elemanı sırayla ele al ve "içeride mi, dışarıda mı?" diye sor: n adımın her birinde iki seçenek vardır, çarpma kuralıyla toplam 2ⁿ. Bu tek satır, bütün alt kümeleri deneyen kaba kuvvet algoritmalarının neden 2ⁿ adımda çalıştığını da açıklar.
+Önceki makaledeki güç kümesi sonucunu şimdi ispatlayabiliriz. n elemanlı bir kümenin alt kümelerini saymak için her elemanı sırayla ele al ve "içeride mi, dışarıda mı?" diye sor: n adımın her birinde iki seçenek vardır, çarpma kuralıyla toplam 2ⁿ. Bu tek satır, bütün alt kümeleri deneyen kaba kuvvet algoritmalarının neden en az 2ⁿ aday incelediğini de açıklar.
 
 ## Eşleyerek sayma
 
@@ -122,7 +122,7 @@ Doğum günü örneğinin kesin hâli de buradadır: yılın 365 gününü kutu 
 
 > **Sesli anlat:** "Güvercin yuvası ilkesini bir sistem tasarımı kararıyla bağla ve doksan saniyede anlat."
 >
-> İyi bir cevabın omurgası: "İlke, nesne sayısı kutu sayısını aştığında bir kutuda birden fazla nesne olmak zorunda olduğunu söyler; formal hâli, daha büyük sonlu bir kümeden daha küçüğüne birebir fonksiyon olamayacağıdır. Hash tablosunda anahtar uzayı kova sayısından büyüktür, dolayısıyla çakışma bir olasılık değil bir zorunluluktur. Bu yüzden tasarım kararı çakışmayı önlemek değil, çakışma çözümünü ve en kötü durum maliyetini seçmektir: zincirleme mi, açık adresleme mi, yük faktörünü nerede tutuyorum. Aynı argüman kayıpsız sıkıştırmanın her girdiyi küçültemeyeceğini de gösterir."
+> İyi bir cevabın omurgası: "İlke, nesne sayısı kutu sayısını aştığında bir kutuda birden fazla nesne olmak zorunda olduğunu söyler; formal hâli, daha büyük sonlu bir kümeden daha küçüğüne birebir fonksiyon olamayacağıdır. Hash tablosunda anahtar uzayı kova sayısından büyüktür, dolayısıyla aynı kovaya düşen iki farklı anahtarın var olması bir olasılık değil bir zorunluluktur; tabloya hangi anahtarların gireceğini önceden bilmediğimiz için çakışmayı tasarımla dışlayamayız. Bu yüzden tasarım kararı çakışmayı önlemek değil, çakışma çözümünü ve en kötü durum maliyetini seçmektir: zincirleme mi, açık adresleme mi, yük faktörünü nerede tutuyorum. Aynı argüman kayıpsız sıkıştırmanın her girdiyi küçültemeyeceğini de gösterir."
 
 ## Sayma refleksi: analizde nerede işe yarar
 
@@ -136,11 +136,11 @@ Doğum günü örneğinin kesin hâli de buradadır: yılın 365 gününü kutu 
 
 Bu üç sayıyı büyüklük sırasıyla söyleyebilmek, karmaşıklık tartışmasının hazırlığıdır. Sayma ayrıca **alt sınır** argümanlarının da malzemesidir: karşılaştırmalı sıralamanın n! olası çıktı sıralamasını ayırt etmek zorunda olması, ilerideki fazda kuracağımız alt sınır ispatının çekirdeğidir.
 
-Bir uyarı da olasılık tarafına: sayma ile olasılık aynı şey değildir. Güvercin yuvası "366 kişide çakışma **kesindir**" der. Buna karşılık doğum günü ilkesi, olasılık tarafında çok daha erken bir eşik verir: MIT ders notlarındaki biçimiyle, yılda d gün varsa ve odada yaklaşık 2d sayısının karekökü kadar kişi varsa, iki kişinin doğum gününün çakışma olasılığı yaklaşık 1 − 1/e ≈ 0,632 olur. d = 365 için bu, kabaca 27 kişi demektir; 27 kişide en az bir çakışma olasılığını kendi hesabımla 0,627 buldum. Kesinlik ile olasılık arasındaki bu uçurum, mülakatta ayırt edilmesi beklenen bir ayrımdır; olasılık araçlarını destekleyici temeller fazında ayrıca kuracağız.
+Sayma ile olasılık aynı şey değildir. Güvercin yuvası "366 kişide çakışma **kesindir**" der. Buna karşılık doğum günü ilkesi, olasılık tarafında çok daha erken bir eşik verir: MIT ders notlarındaki biçimiyle, yılda d gün varsa ve odada yaklaşık 2d sayısının karekökü kadar kişi varsa, iki kişinin doğum gününün çakışma olasılığı yaklaşık 1 − 1/e ≈ 0,632 olur. d = 365 için bu, kabaca 27 kişi demektir; 27 kişide hiç çakışma olmama olasılığı (365 · 364 ⋯ 339) / 365²⁷ ≈ 0,373 olduğundan, en az bir çakışma olasılığını kendi hesabımla 1 − 0,373 ≈ 0,627 buldum (MIT notları aynı olasılığı yaklaşık 0,626 diye verir; dört basamakta 0,6269). Kesinlik ile olasılık arasındaki bu uçurum, mülakatta ayırt edilmesi beklenen bir ayrımdır; olasılık araçlarını destekleyici temeller fazında ayrıca kuracağız.
 
 ## Mülakatta nasıl görünür
 
-Sayma soruları mülakatın en sevilen küçük problemleridir, çünkü on dakikaya sığar ve düşünme biçimini açığa çıkarır. Takip zinciri genellikle şudur: "Kaç tane var?" → "Nasıl saydın, çarpma mı toplama mı?" → "Sıra önemli miydi, neden?"
+Sayma soruları mülakat formatına uygun küçük problemlerdir, çünkü on dakikaya sığar ve düşünme biçimini açığa çıkarır. Takip zinciri genellikle şudur: "Kaç tane var?" → "Nasıl saydın, çarpma mı toplama mı?" → "Sıra önemli miydi, neden?"
 
 En sık yapılan üç hata bellidir. Birincisi **çift sayma**: örtüşen durumları toplamak. İkincisi **sıra karışıklığı**: sırasız bir seçimi permütasyonla saymak, yani sonucu r! kat fazla bulmak. Üçüncüsü **bağımsızlık varsayımı**: ikinci adımın seçenek sayısı birinci adımın sonucuna bağlıysa çarpma kuralı doğrudan uygulanamaz.
 

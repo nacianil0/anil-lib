@@ -13,9 +13,11 @@ tags:
   - baginti
   - denklik-baginti
   - kismi-sira
-content_hash: sha256:96306a3d4f41eb634c262c3aced406ceee3c6d6f507bb191608a69572a4c0798
+content_hash: sha256:314b126768dd8d0d53d9c47b6c46eb5b276888085244f8cdbe3bcdc56bed3287
 classification_version: 1
 classification_batch: 1
+revised_at: "2026-10-26"
+revision_note: "Sayılabilirlik tanımı sonlu kümeleri de kapsayacak biçimde düzeltildi; derleme bağımlılığının kesin kısmi sıra olduğu eklendi."
 ---
 ## Mülakatın nesne dili
 
@@ -29,7 +31,7 @@ Sezgisel tanım: küme, sırasız ve tekrarsız bir nesne topluluğudur. {1, 2, 
 
 Birinci tuzak **üyelik ile alt küme farkıdır**. x ∈ A ifadesi x'in A'nın bir **elemanı** olduğunu, B ⊆ A ifadesi B'nin her elemanının aynı zamanda A'nın elemanı olduğunu söyler. A = {1, {2, 3}} kümesini düşün: burada {2, 3} ∈ A doğrudur ama 2 ∈ A yanlıştır. Boş küme her kümenin alt kümesidir (∅ ⊆ A her zaman), ama ∅ ∈ A yalnızca boş küme açıkça A'nın içinde listelenmişse doğrudur. Mülakatta bu ayrımı karıştırmak, dikkatli dinleyen bir görüşmecinin hemen yakaladığı bir sinyaldir.
 
-İkinci tuzak **güç kümesidir (power set)**: A'nın bütün alt kümelerinin kümesi. n elemanlı bir kümenin güç kümesinin 2ⁿ elemanı vardır, çünkü her eleman için bağımsız olarak "içeride" veya "dışarıda" kararı verilir. Bu, sıradaki makalede kuracağımız çarpma kuralının ilk kullanımıdır ve kaba kuvvet algoritmalarının neden 2ⁿ adımda çalıştığını da açıklar. Kartezyen çarpım A × B ise sıralı ikililerin kümesidir ve |A × B| = |A| · |B| sağlar.
+İkinci tuzak **güç kümesidir (power set)**: A'nın bütün alt kümelerinin kümesi. n elemanlı bir kümenin güç kümesinin 2ⁿ elemanı vardır, çünkü her eleman için bağımsız olarak "içeride" veya "dışarıda" kararı verilir. Bu, sıradaki makalede kuracağımız çarpma kuralının ilk kullanımıdır ve bütün alt kümeleri deneyen kaba kuvvet algoritmalarının neden en az 2ⁿ aday incelediğini de açıklar. Kartezyen çarpım A × B ise sıralı ikililerin kümesidir ve |A × B| = |A| · |B| sağlar.
 
 Küme işlemleriyle mantıksal bağlaçlar arasında birebir bir karşılık vardır: birleşim "veya", kesişim "ve", tümleyen ise "değil" ile aynı doğruluk davranışını gösterir. Mantık makalesindeki De Morgan kuralları bu yüzden kümelerde de aynen geçerlidir.
 
@@ -59,7 +61,7 @@ Sınır örneği tanımın iki yarısını da yoklar: f(x) = 1 / x kuralı ℝ �
 
 **Örten (surjective):** değer kümesinde karşılıksız eleman kalmaz. İspat kalıbı: rastgele bir b ∈ B al, f(a) = b sağlayan bir a **inşa et**. Bu, ispat teknikleri makalesindeki yapıcı ispatın tipik bir örneğidir.
 
-**Birebir örten (bijective):** ikisi birden. Bir fonksiyonun **tersinin var olması, birebir örten olmasıyla aynı şeydir** — mülakatın en sık sorulan karakterizasyonlarından biridir.
+**Birebir örten (bijective):** ikisi birden. Bir fonksiyonun **tersinin var olması, birebir örten olmasıyla aynı şeydir** — mülakatta sorulabilecek bir karakterizasyondur.
 
 Şekil 1 üç durumu yan yana koyuyor.
 
@@ -100,7 +102,7 @@ Kanonik örnek modüler denkliktir: n pozitif bir tam sayı olmak üzere, a ile 
 
 Denklik bağıntılarının asıl teoremi şudur: **bir denklik bağıntısının denklik sınıfları, kümenin bir parçalanışını (partition) oluşturur.** Yani sınıflar boş değildir, ikişer ikişer ayrıktır ve birleşimleri bütün kümeyi verir. MIT ders notlarında bu Teorem 9.10.4 olarak verilir ve mod 5 örneğiyle somutlaştırılır: tam sayılar, kalanına göre tam beş sınıfa ayrılır.
 
-Sınır örneği bu tanımın en sevilen mülakat sorusudur: "simetrik ve geçişli olmak yansımalılığı gerektirmez mi? x R y ise y R x, geçişlilikle x R x çıkar." Argüman, x'in **hiçbir** elemanla ilişkili olmadığı durumda çöker; boş bağıntı, boş olmayan bir küme üzerinde simetrik ve geçişlidir ama yansımalı değildir. Üç koşulun ayrı ayrı istenmesinin sebebi tam olarak budur.
+Sınır örneği bu tanımı en iyi yoklayan sorudur: "simetrik ve geçişli olmak yansımalılığı gerektirmez mi? x R y ise y R x, geçişlilikle x R x çıkar." Argüman, x'in **hiçbir** elemanla ilişkili olmadığı durumda çöker; boş bağıntı, boş olmayan bir küme üzerinde simetrik ve geçişlidir ama yansımalı değildir. Üç koşulun ayrı ayrı istenmesinin sebebi tam olarak budur.
 
 > **Sesli anlat:** "Denklik bağıntısının üç koşulunu ve üçünün de gerçekten gerekli olduğunu gösteren bir sınır örneğini doksan saniyede anlat."
 >
@@ -108,7 +110,7 @@ Sınır örneği bu tanımın en sevilen mülakat sorusudur: "simetrik ve geçi�
 
 ## Kısmi sıralar
 
-Yansımalı, **ters simetrik** ve geçişli bir bağıntıya **kısmi sıra (partial order)** denir. Tek harf değişti — simetrik yerine ters simetrik — ve anlam tamamen değişti: denklik bağıntısı eşitliği gevşetir, kısmi sıra sıralamayı gevşetir.
+Yansımalı, **ters simetrik** ve geçişli bir bağıntıya **kısmi sıra (partial order)** denir. Tek bir koşul değişti — simetrik yerine ters simetrik — ve anlam tamamen değişti: denklik bağıntısı eşitliği gevşetir, kısmi sıra sıralamayı gevşetir.
 
 Şekil 2 bu ayrımı özet hâlinde gösteriyor.
 
@@ -116,11 +118,11 @@ Yansımalı, **ters simetrik** ve geçişli bir bağıntıya **kısmi sıra (par
 
 "Kısmi" sözcüğü kritik bilgiyi taşır: iki eleman **karşılaştırılamaz** olabilir. Pozitif tam sayılarda bölünebilirlik bağıntısını al: 2 ile 3 arasında hiçbir yönde ilişki yoktur, ama ikisi de 6'yı böler. Bir kümenin alt kümeleri üzerindeki kapsama bağıntısı da böyledir. Her eleman çiftinin karşılaştırılabildiği özel duruma **tam sıra (total order)** denir; gerçel sayılarda ≤ bunun örneğidir.
 
-Mühendislikteki en yakın karşılığı bağımlılık grafıdır. Derleme sistemindeki "A, B'den önce derlenmelidir" ilişkisi bir kısmi sıradır; karşılaştırılamaz çiftler bağımsız işlerdir ve paralel çalıştırılabilirler. Topolojik sıralama, bu kısmi sırayı onunla uyumlu bir tam sıraya genişletme işlemidir — dolayısıyla tek bir doğru sıralama olmaması bir hata değil, kısmi sıranın doğal sonucudur. Bu konuyu graf dolaşmaları makalesinde algoritmasıyla birlikte açacağız.
+Mühendislikteki en yakın karşılığı bağımlılık grafıdır. Derleme sistemindeki "A, B'den önce derlenmelidir" ilişkisi, bağımlılıklarda döngü olmadığı sürece geçişli ve yansımasızdır (hiçbir iş kendisinden önce derlenmez); böyle bir bağıntıya **kesin kısmi sıra (strict partial order)** denir ve her iş kendisiyle de ilişkili sayılınca yukarıdaki anlamda bir kısmi sıra elde edilir; karşılaştırılamaz çiftler bağımsız işlerdir ve paralel çalıştırılabilirler. Topolojik sıralama, bu kısmi sırayı onunla uyumlu bir tam sıraya genişletme işlemidir — dolayısıyla tek bir doğru sıralama olmaması bir hata değil, kısmi sıranın doğal sonucudur. Bu konuyu graf dolaşmaları makalesinde algoritmasıyla birlikte açacağız.
 
 ## Sayılabilirlik: küçük ama önemli bir bakış
 
-Sonsuz kümelerin "boyutu" da fonksiyonlarla tanımlanır: iki küme arasında birebir örten bir fonksiyon varsa aynı boyuttadırlar. Doğal sayılarla eşlenebilen kümelere **sayılabilir (countable)** denir.
+Sonsuz kümelerin "boyutu" da fonksiyonlarla tanımlanır: iki küme arasında birebir örten bir fonksiyon varsa aynı boyuttadırlar. Sonlu olan ya da doğal sayılarla birebir örten biçimde eşlenebilen kümelere **sayılabilir (countable)** denir; ikinci türe sayılabilir sonsuz (countably infinite) denir.
 
 Şaşırtıcı sonuçlar buradan gelir. Tam sayılar sayılabilirdir: 0, 1, −1, 2, −2 sırasıyla numaralandırılırlar. Rasyonel sayılar da sayılabilirdir. Ama gerçel sayılar **sayılamaz (uncountable)**; herhangi bir numaralandırma verildiğinde, köşegen üzerinde her basamağı değiştirerek listede olmayan bir sayı inşa edilebilir. Bu, ispat teknikleri makalesindeki karşı örnek disiplininin sonsuz kümelerdeki hâlidir.
 
@@ -130,7 +132,7 @@ Bilgisayar mühendisliği için sonucu şudur: programlar sonlu alfabede sonlu d
 
 Takip zinciri burada genellikle şöyle işler. Birinci halka tanımı yoklar: "Denklik bağıntısı nedir?" İkinci halka sınırı yoklar: "Üç koşuldan birini atarsan ne bozulur?" Üçüncü halka uygulamayı yoklar: "Bunu kodda nerede görürsün?"
 
-Üçüncüsünün iyi cevabı somut olmalıdır: bir önbellekte anahtarları "aynı kovaya düşenler" diye gruplamak bir denklik bağıntısıdır ve kovalar denklik sınıflarıdır. Bir görev planlayıcıdaki bağımlılık ilişkisi kısmi sıradır. Bir sıralama karşılaştırıcısını (comparator) yanlış yazmak — örneğin geçişliliği bozmak — sıralama kütüphanelerinde gerçek hatalara yol açar, çünkü sıralama algoritmaları karşılaştırıcının geçişli ve kendi içinde tutarlı bir sıra tanımladığını varsayar.
+Üçüncüsünün iyi cevabı somut olmalıdır: bir önbellekte anahtarları "aynı kovaya düşenler" diye gruplamak bir denklik bağıntısıdır ve kovalar denklik sınıflarıdır. Bir görev planlayıcıdaki bağımlılık ilişkisi, döngü olmadığı sürece kesin kısmi sıradır. Bir sıralama karşılaştırıcısını (comparator) yanlış yazmak — örneğin geçişliliği bozmak — sıralama kütüphanelerinde gerçek hatalara yol açar, çünkü sıralama algoritmaları karşılaştırıcının geçişli ve kendi içinde tutarlı bir sıra tanımladığını varsayar.
 
 Bu makalenin tanımları kısa olduğu için ezberlenmeye çok müsaittir ve ezber en çok sınır örneği istendiğinde çöker. Sık görülen hatalar da bu sınırlarda toplanır. **Üyelik ile alt kümeyi karıştırmak**: ∅ ⊆ A her zaman doğruyken ∅ ∈ A'yı da doğru sanmak. **Fonksiyonu formülden ibaret saymak**: birebirlik ya da örtenlik sorulurken tanım ve değer kümesini söylememek. **Simetrik ile ters simetriği zıt sanmak**: eşitlik ikisini birden sağlar. **Simetri ve geçişlilikten yansımalılık türetmek**: boş bağıntı bu argümanı çürütür. Her tanımın yanına bir sağlayan ve bir sağlamayan örnek koymadan çalışmayı bitmiş sayma.
 

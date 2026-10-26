@@ -12,7 +12,7 @@ tags:
   - derece
   - el-sikisma-lemmasi
   - kapsayan-agac
-content_hash: sha256:2e29bfc2d64753c4531c30a6d96983bd5e2a83ee5d698c4a563babb97cecdd30
+content_hash: sha256:73e87f5fa09cf674f930165c66e3c6f50f7c7656f566796a41b200d3a3cbbe55
 classification_version: 1
 classification_batch: 2
 ---
@@ -32,7 +32,7 @@ Tanımın iki sonucu doğrudan gelir ve mülakatta sorulur. Kenar iki *farklı* 
 
 Bir düğümün **derecesi (degree)**, ona değen kenarların sayısıdır ve derece(v) diye yazılır. Derece sıfır olabilir: hiçbir kenara değmeyen düğüm yalıtıktır.
 
-Kenarların yönü olduğunda yapı **yönlü graf (directed graph, digraph)** olur ve kenarlar sıralı ikililere döner. Bu, önceki makaledeki bağıntı tanımının aynısıdır: bir kümedeki ikili bağıntı ile yönlü graf aynı nesnenin iki adıdır. Simetrik bağıntı yönsüz grafa, yansımalı olmayan ve döngüsüz bir bağıntı ise bir bağımlılık grafına karşılık gelir. Bu yazıda yönsüz graflarla çalışacağız.
+Kenarların yönü olduğunda yapı **yönlü graf (directed graph, digraph)** olur ve kenarlar sıralı ikililere döner. Bu, kümeler makalesindeki bağıntı tanımının aynısıdır: bir kümedeki ikili bağıntı ile yönlü graf aynı nesnenin iki adıdır. Simetrik bağıntı yönsüz grafa, yansımalı olmayan ve döngüsüz bir bağıntı ise bir bağımlılık grafına karşılık gelir. Bu yazıda yönsüz graflarla çalışacağız.
 
 İki graf ailesi sık sık isimleriyle anılır. **Tam graf (complete graph)** Kₙ, n düğümün her ikilisi arasında kenar taşır; kenar sayısı doğrudan önceki makaledeki sayma sonucudur: C(n, 2) = n(n − 1) / 2. Beş düğümlü K₅'in on kenarı vardır. **Döngü grafı (cycle graph)** Cₙ ise n düğümü tek bir halka hâlinde dizer ve n kenarı vardır.
 
@@ -76,7 +76,7 @@ Graf üzerinde hareket etmenin dili üç kelimeyle kurulur ve bu üçünün fark
 
 Bu tanımların pratik karşılığı doğrudandır: bir ağın bağlı olması "her makineden her makineye erişilebilir" demektir, bileşen sayısı ise ağın kaç yalıtık adaya bölündüğünü söyler. Bileşenleri bulmanın algoritması graf dolaşmaları makalesinin konusu olacak; burada tanımı ve neden bu tanımın seçildiğini kuruyoruz.
 
-Tanımda gizlenen bir incelik var: bağlılık bir **denklik bağıntısıdır**. Her düğüm kendine bağlıdır (yansımalı), u'dan v'ye yol varsa tersi de vardır (simetrik), u'dan v'ye ve v'den w'ye yol varsa birleştirip u'dan w'ye bir yürüyüş elde edersin ve tekrar eden düğümleri kesip atarak yol yaparsın (geçişli). Önceki makalede kurduğumuz teoremi hatırla: bir denklik bağıntısı kümeyi parçalara ayırır. Bağlı bileşenler tam olarak o parçalardır. Yeni bir teorem ispatlamamıza gerek kalmadı; eski teoremi tanıdık.
+Tanımda gizlenen bir incelik var: bağlılık bir **denklik bağıntısıdır**. Her düğüm kendine bağlıdır (yansımalı), u'dan v'ye yol varsa tersi de vardır (simetrik), u'dan v'ye ve v'den w'ye yol varsa birleştirip u'dan w'ye bir yürüyüş elde edersin ve tekrar eden düğümleri kesip atarak yol yaparsın (geçişli). Kümeler makalesinde kurduğumuz teoremi hatırla: bir denklik bağıntısı kümeyi parçalara ayırır. Bağlı bileşenler tam olarak o parçalardır. Yeni bir teorem ispatlamamıza gerek kalmadı; eski teoremi tanıdık.
 
 ## Ağaçlar ve yapraklar
 
@@ -150,7 +150,7 @@ Ağacı tanımlarken "bağlı ve döngüsüz" dedik. Ama pratikte bir yapının 
 
 ## Mülakatta nasıl görünür
 
-Graf sorularında tek bir tanım hatası bütün cevabı çökertebilir ve bu hata sözlü ortamda hızla görünür. En sık takip zinciri şudur: "Graf nedir?" → "Ağaç ile grafın farkı ne?" → "n düğümlü bir ağaçta kaç kenar var, neden?"
+Graf sorularında tek bir tanım hatası bütün cevabı çökertebilir ve bu hata sözlü ortamda hızla görünür. Bir takip zinciri şöyle kurulabilir: "Graf nedir?" → "Ağaç ile grafın farkı ne?" → "n düğümlü bir ağaçta kaç kenar var, neden?"
 
 Üç hata sık yapılır. Birincisi **bağlılığı unutmak**: "döngüsüz graf ağaçtır" yanlıştır, o orman olur. İkincisi **kenar sayısını yeterli sanmak**: n − 1 kenar tek başına ağaç yapmaz, bağlılık da gerekir. Üçüncüsü **yürüyüş ile yolu karıştırmak**; bağlılık tanımında düğüm tekrarına izin verip vermemek fark etmez, ama döngü tanımında eder.
 

@@ -12,7 +12,7 @@ tags:
   - heapsort
   - build-heap
   - tam-ikili-agac
-content_hash: sha256:8b45c7498fdd6725824c03db15e77dc4c19dc07619c9bb7fb1b74e9a6f0ea8d0
+content_hash: sha256:685746840177485523968ea8adf4ad2d0b1ef5c54f7620129170457ee7b4a039
 classification_version: 1
 classification_batch: 4
 ---
@@ -105,23 +105,23 @@ Yüksekliği de buradan okuruz. Derinlik d seviyesinde en fazla 2^d düğüm bul
 
 Değişmez bozulduğunda onarmanın iki yönü vardır ve ikisi de tek bir yol boyunca yürür.
 
-**Yukarı sızdırma (sift-up / swim).** Bir düğümün anahtarı ebeveynininkinden küçükse ikisini takas et ve aynı denetimi ebeveynde tekrarla; ebeveyn küçük ya da eşit çıkana kadar veya köke varana kadar sürer. Yürünen yol kökten o düğüme giden yoldur, dolayısıyla en fazla yükseklik kadar adım atılır.
+**Yukarı sızdırma (sift-up / swim).** Bir düğümün anahtarı ebeveynininkinden küçükse ikisinin yerini değiştir ve aynı denetimi ebeveynde tekrarla; ebeveyn küçük ya da eşit çıkana kadar veya köke varana kadar sürer. Yürünen yol kökten o düğüme giden yoldur, dolayısıyla en fazla yükseklik kadar adım atılır.
 
-**Aşağı sızdırma (sift-down / sink).** Bir düğümün anahtarı çocuklarından birinden büyükse, **iki çocuğun küçük olanıyla** takas et ve aynı denetimi o çocukta tekrarla. Küçük olanla takas etmek zorunludur: büyük olanla takas edersen yeni ebeveyn, diğer kardeşten büyük kalır ve değişmez onarılmaz. Yine en fazla yükseklik kadar adım atılır.
+**Aşağı sızdırma (sift-down / sink).** Bir düğümün anahtarı çocuklarından birinden büyükse, **iki çocuğun küçük olanıyla** yer değiştir ve aynı denetimi o çocukta tekrarla. Küçük olanla yer değiştirmek zorunludur: büyük olanla yer değiştirirsen yeni ebeveyn, diğer kardeşten büyük kalır ve değişmez onarılmaz. Yine en fazla yükseklik kadar adım atılır.
 
 İki işlem bu iki yordamla yazılır:
 
 **Ekleme.** Yeni öğeyi dizinin sonuna koy — okuma sırasında sıradaki yaprak orasıdır — ve yukarı sızdır. Dizinin sonuna eklemek dinamik dizide amortize sabittir, sızdırma logaritmiktir; toplam logaritmik.
 
-**En küçüğü alma.** En küçük köktedir ama dizinin ortasından hücre silmek pahalıdır; ucuz olan sondan silmektir. O yüzden kökü son öğeyle takas et, sonuncuyu (artık eski kök) çıkar, ve yeni kökü aşağı sızdır. Yine logaritmik.
+**En küçüğü alma.** En küçük köktedir ama dizinin ortasından hücre silmek pahalıdır; ucuz olan sondan silmektir. O yüzden kökle son öğenin yerini değiştir, sonuncuyu (artık eski kök) çıkar, ve yeni kökü aşağı sızdır. Yine logaritmik.
 
-Somut bir iz sürelim. Şekil 1'deki [1, 3, 2, 7, 4, 9, 5] heap'ine 0 ekleyelim. 0, 7. hücreye yazılır; ebeveyni ⌊6/2⌋ = 3. hücredeki 7'dir, 0 < 7 olduğu için takas olur. Şimdi 0, 3. hücrededir; ebeveyni ⌊2/2⌋ = 1. hücredeki 3'tür, takas olur. Şimdi 0, 1. hücrededir; ebeveyni kökteki 1'dir, takas olur. Sonuç [0, 1, 2, 3, 4, 9, 5, 7]: üç takas, ağacın yüksekliği ⌊log₂ 8⌋ = 3.
+Somut bir iz sürelim. Şekil 1'deki [1, 3, 2, 7, 4, 9, 5] heap'ine 0 ekleyelim. 0, 7. hücreye yazılır; ebeveyni ⌊6/2⌋ = 3. hücredeki 7'dir, 0 < 7 olduğu için yer değiştirirler. Şimdi 0, 3. hücrededir; ebeveyni ⌊2/2⌋ = 1. hücredeki 3'tür, yer değiştirirler. Şimdi 0, 1. hücrededir; ebeveyni kökteki 1'dir, yer değiştirirler. Sonuç [0, 1, 2, 3, 4, 9, 5, 7]: üç yer değiştirme, ağacın yüksekliği ⌊log₂ 8⌋ = 3.
 
-Şimdi baştaki heap'ten en küçüğü alalım. Kökteki 1 ile son hücredeki 5 takas edilir, 1 çıkarılır ve dizi [5, 3, 2, 7, 4, 9] olur. Kökteki 5 aşağı sızar: çocukları 3 ve 2, küçüğü 2'dir ve 2 < 5, takas → [2, 3, 5, 7, 4, 9]. Yeni konumunda 5'in tek çocuğu 9'dur ve 9 > 5, durulur. İki karşılaştırma turu, bir takas.
+Şimdi baştaki heap'ten en küçüğü alalım. Kökteki 1 ile son hücredeki 5 yer değiştirir, 1 çıkarılır ve dizi [5, 3, 2, 7, 4, 9] olur. Kökteki 5 aşağı sızar: çocukları 3 ve 2, küçüğü 2'dir ve 2 < 5, yer değiştirme → [2, 3, 5, 7, 4, 9]. Yeni konumunda 5'in tek çocuğu 9'dur ve 9 > 5, durulur. İki karşılaştırma turu, bir yer değiştirme.
 
 Şekil 2 iki yordamı yan yana gösteriyor.
 
-![Dikey bir çizgiyle ayrılmış iki yarı. Solda yukarı sızdırma: yedi düğümlü bir heap ağacının en soluna yeni yaprak olarak eklenen 0 değeri, kesikli ve ok uçlu bir çizgiyle 7, sonra 3, sonra köke giden yol boyunca yukarı taşınıyor; yol üzerindeki dört düğüm vurgulu. Altında üç takasla köke çıktığı ve sonucun 0, 1, 2, 3, 4, 9, 5, 7 olduğu yazıyor. Sağda aşağı sızdırma: kökteki 5 değeri, iki çocuğunun küçüğü olan 2 ile takas edilerek bir seviye iniyor, yeni konumunda tek çocuğu 9 kendisinden büyük olduğu için duruyor. Altında küçük olan çocukla takas etmenin zorunlu olduğu, büyükle takas edilirse değişmezin onarılmadığı ve sonucun 2, 3, 5, 7, 4, 9 olduğu yazıyor. En altta her iki yordamın da kökten yaprağa giden tek bir yol boyunca yürüdüğü ve maliyetin en fazla yükseklik kadar olduğu belirtiliyor](assets/heap-sizdirma.svg "Şekil 2 — Yukarı ve aşağı sızdırma: onarım tek bir yol boyunca yürür")
+![Solda yukarı sızdırma: yedi düğümlü bir heap ağacının en soluna yeni yaprak olarak eklenen 0 değeri 7, sonra 3, sonra köke giden yol boyunca yukarı taşınıyor; yol üzerindeki dört düğüm vurgulu. Altında üç adımda köke çıktığı ve sonucun 0, 1, 2, 3, 4, 9, 5, 7 olduğu yazıyor. Sağda aşağı sızdırma: kökteki 5 değeri, iki çocuğunun küçüğü olan 2 ile yer değiştirerek bir seviye iniyor, yeni konumunda tek çocuğu 9 kendisinden büyük olduğu için duruyor. Altında küçük olan çocukla yer değiştirmenin zorunlu olduğu, büyükle yer değiştirilirse değişmezin onarılmadığı ve sonucun 2, 3, 5, 7, 4, 9 olduğu yazıyor. En altta iki yordamın da tek bir kök–yaprak yolu üzerinde yürüdüğü ve maliyetin en fazla yükseklik kadar olduğu belirtiliyor](assets/heap-sizdirma.svg "Şekil 2 — Yukarı ve aşağı sızdırma: onarım tek bir yol boyunca yürür")
 
 Karşılaştırma sayısını sıkı biçimde de verebiliriz: n öğeli bir heap'te ekleme en fazla 1 + log₂ n karşılaştırma, en küçüğü alma en fazla 2 log₂ n karşılaştırma yapar. Alma işleminin katsayısının iki olmasının nedeni her seviyede iki karşılaştırma yapılmasıdır: önce hangi çocuğun küçük olduğu, sonra o çocuğun ebeveynden küçük olup olmadığı.
 
@@ -141,9 +141,9 @@ Burada bir ayrımı temiz tutmak gerekiyor, çünkü mülakatta karıştırılı
 
 Öncelik kuyruğu sıralaması desenini heap ile çalıştırınca **heapsort** çıkar: önce heap'i kur, sonra n kez en uçtakini al. Maliyet O(n log n)'dir; doğrusal kurma bu sonucu değiştirmez, çünkü ikinci faz zaten n logaritmik işlem yapar.
 
-Heapsort'un ayırt edici özelliği **yerinde (in-place)** çalışmasıdır. Yöntem şu: heap'i sıralanacak dizinin bir öneki olarak tut. Alma işlemi en uçtakini zaten dizinin sonuna takas ediyordu; onu silmek yerine heap'in sınırını bir azaltırsan, çıkarılan öğeler dizinin arkasında sıralı bir kuyruk oluşturur. Bir max-heap ile yapıldığında dizi artan sırada biter. Ek bellek sabittir. Karşılaştırma ve takas sayısı 2n log₂ n'nin altında kalır.
+Heapsort'un ayırt edici özelliği **yerinde (in-place)** çalışmasıdır. Yöntem şu: heap'i sıralanacak dizinin bir öneki olarak tut. Alma işlemi en uçtakini zaten son öğeyle yer değiştirerek dizinin sonuna taşıyordu; onu silmek yerine heap'in sınırını bir azaltırsan, çıkarılan öğeler dizinin arkasında sıralı bir kuyruk oluşturur. Bir max-heap ile yapıldığında dizi artan sırada biter. Ek bellek sabittir. Karşılaştırma ve yer değiştirme sayısı 2n log₂ n'nin altında kalır.
 
-İki not, mülakat için kritik. Birincisi, heapsort **kararlı değildir**: takaslar uzak hücreler arasında yapılır ve eşit anahtarlı öğelerin göreli sırası korunmaz. İkincisi, en kötü durumda da O(n log n)'dir — bu, sıralama makalesinde göreceğimiz gibi her algoritmanın veremediği bir garantidir.
+İki not, mülakat için kritik. Birincisi, heapsort **kararlı değildir**: yer değiştirmeler uzak hücreler arasında yapılır ve eşit anahtarlı öğelerin göreli sırası korunmaz. İkincisi, en kötü durumda da O(n log n)'dir — bu, sıralama makalesinde göreceğimiz gibi her algoritmanın veremediği bir garantidir.
 
 > **Sesli anlat:** "Heap neden bir dizide saklanır ve heap kurmak neden doğrusal zamanda mümkün? Altmış saniyede açıkla."
 >
@@ -170,6 +170,6 @@ Sıradaki makale bu duvarı yıkıyor, ama bunun için karşılaştırma yapmay�
 ## Kaynakça
 
 - Demaine, E., Ku, J. & Solomon, J. *6.006 Introduction to Algorithms*, Lecture 8: Binary Heaps — öncelik kuyruğu arayüzü ve kullanım örnekleri (yönlendirici, çekirdek zamanlaması, kesikli olay benzetimi, graf algoritmaları); öncelik kuyruğu sıralamasının sırasız diziyle seçmeli, sıralı diziyle eklemeli sıralamaya dönüşmesi; dizinin tam ikili ağaç olarak yorumlanması ve indis aritmetiği (sol 2i + 1, sağ 2i + 2, ebeveyn ⌊(i − 1)/2⌋); max-heap özelliği ve "her düğüm kendi alt ağacındaki bütün düğümlerden büyüktür" iddiasının derinlik farkı üzerinden tümevarımla ispatı; yukarı/aşağı sızdırmanın doğruluğu ve logaritmik maliyeti; yerinde öncelik kuyruğu sıralaması; tek tek eklemenin derinlikler toplamı ile doğrusal kurmanın yükseklikler toplamı karşılaştırması. MIT OpenCourseWare, Bahar 2020. [Bağlantı](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/)
-- Sedgewick, R. & Wayne, K. *Algorithms*, dördüncü baskı, 2.4 (Priority Queues) — öncelik kuyruğunun temel işlemleri; bütün ilkel gerçekleştirimlerde ekleme ya da en uçtakini alma işleminden birinin en kötü durumda doğrusal olması; yığın-sıralı ikili ağaç tanımı ve en büyük anahtarın kökte bulunması önermesi; ikili yığının tam ikili ağacın seviye sırasıyla dizide tutulması olarak tanımı; `swim` ve `sink` yordamları; n öğeli bir öncelik kuyruğunda eklemenin en fazla 1 + lg n, en uçtakini almanın en fazla 2 lg n karşılaştırma yapması; aşağı sızdırma tabanlı kurmanın doğrusal zamanlı olması; heapsort'un ek bellek istemeden çalışması ve 2n lg n'den az karşılaştırma ve takas yapması; çok yollu yığınların dallanma çarpanı takası. Addison-Wesley. [Bağlantı](https://algs4.cs.princeton.edu/24pq/)
-- Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. *Introduction to Algorithms*, dördüncü baskı, 6. bölüm (Heapsort — yığın özellikleri, sızdırma yordamı, yığın kurma, heapsort ve öncelik kuyrukları). MIT Press, 2022. [Bağlantı](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
+- Sedgewick, R. & Wayne, K. *Algorithms*, dördüncü baskı, 2.4 (Priority Queues) — öncelik kuyruğunun temel işlemleri; bütün ilkel gerçekleştirimlerde ekleme ya da en uçtakini alma işleminden birinin en kötü durumda doğrusal olması; heap-sıralı (heap-ordered) ikili ağaç tanımı ve en büyük anahtarın kökte bulunması önermesi; ikili heap'in tam ikili ağacın seviye sırasıyla dizide tutulması olarak tanımı; `swim` ve `sink` yordamları; n öğeli bir öncelik kuyruğunda eklemenin en fazla 1 + lg n, en uçtakini almanın en fazla 2 lg n karşılaştırma yapması; aşağı sızdırma tabanlı kurmanın doğrusal zamanlı olması; heapsort'un ek bellek istemeden çalışması ve 2n lg n'den az karşılaştırma ve yer değiştirme yapması; çok yollu heap'lerin dallanma çarpanı takası. Addison-Wesley. [Bağlantı](https://algs4.cs.princeton.edu/24pq/)
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L. & Stein, C. *Introduction to Algorithms*, dördüncü baskı, 6. bölüm (Heapsort — heap özellikleri, sızdırma yordamı, heap kurma, heapsort ve öncelik kuyrukları). MIT Press, 2022. [Bağlantı](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
 - Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü. *CMPE250 — Data Structures and Algorithms* (katalog tanımı "Heap Structures" başlığını içerir; bu makalenin resmî dayanağı odur). Boğaziçi Üniversitesi. [Bağlantı](https://cmpe.bogazici.edu.tr/courses/cmpe250/)

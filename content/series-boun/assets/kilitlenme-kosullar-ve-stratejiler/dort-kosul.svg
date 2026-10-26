@@ -42,7 +42,7 @@
   <text x="392" y="210" font-size="13" fill="var(--accent)">kaldır: küresel kilit sırası koy</text>
   <text x="378" y="230" font-size="13" fill="var(--text-muted)">Pratikte en çok kullanılan dördüncüsüdür.</text>
 
-  <text x="15" y="262" font-size="13" fill="var(--text)">Dördünden biri sağlanmazsa kilitlenme olamaz; dördü birden sağlansa bile olmak zorunda değildir.</text>
+  <text x="15" y="262" font-size="13" fill="var(--text)">Dördünden biri sağlanmazsa kilitlenme olamaz; dördüne izin veren kodda bile zorunlu değildir.</text>
   <text x="15" y="280" font-size="13" fill="var(--text-muted)">Kaba kuvvetle taradım: ters sırada 19 erişilebilir durumun yalnızca 1'i kilitlenme;</text>
   <text x="15" y="296" font-size="13" fill="var(--text-muted)">aynı sırada alındığında 16 durumun hiçbiri kilitlenme değil.</text>
 </svg>

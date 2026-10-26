@@ -12,7 +12,7 @@ tags:
   - huffman
   - aralik-cizelgeleme
   - karsi-ornek
-content_hash: sha256:e2f9b2b7b9b20fc1681134d194f9b6e53dc8187364107ac5a86e301abe6366b2
+content_hash: sha256:613cc0127a817c6a8bef6de11e6558d7508517026622020ab5684fc0fc8cb5f9
 classification_version: 1
 classification_batch: 6
 ---
@@ -58,7 +58,7 @@ Açgözlünün ilk seçtiği istek i₁'dir ve kural gereği f(i₁) ≤ f(j₁)
 
 Geriye optimal altyapı kalıyor. i₁ seçildikten sonra elde kalan alt problem, başlangıcı f(i₁)'den erken olmayan isteklerdir. Değiştirilmiş optimal çözümün geri kalan k isteği bu alt problem için optimaldir; tümevarım hipotezine göre açgözlü de o alt problemde k istek seçer. Toplam k + 1 eder ve ispat kapanır.
 
-Aynı ispatı önceki makalenin diliyle de okuyabilirsin ve bu okuma mülakatta çok işe yarar: açgözlü algoritmanın koruduğu **değişmez**, "şu ana kadar seçilen küme, bir optimal çözümün alt kümesidir" cümlesidir. Başlatma adımı boş kümeyle bedava gelir, koruma adımı yukarıdaki değişim argümanıdır, sonuçlanma adımı ise elde istek kalmadığında seçilen kümenin artık optimal çözümün kendisi olduğunu verir.
+Aynı ispatı önceki makalenin diliyle de okuyabilirsin ve bu okuma mülakatta çok işe yarar: açgözlü algoritmanın koruduğu **değişmez**, "şu ana kadar seçilen küme, bir optimal çözümün alt kümesidir" cümlesidir. Başlatma adımı boş kümeyle kendiliğinden sağlanır, koruma adımı yukarıdaki değişim argümanıdır, sonuçlanma adımı ise elde istek kalmadığında seçilen kümenin artık optimal çözümün kendisi olduğunu verir.
 
 > **Sesli anlat:** "Bir açgözlü algoritmanın optimal olduğunu nasıl ispatlarsın? Doksan saniye."
 >
@@ -94,7 +94,7 @@ Bu kuralın optimal olduğu — yani hiçbir önek-serbest kodun daha az bit har
 
 Bir incelik mülakatta güzel bir takip sorusudur: **her optimal önek-serbest kod bir Huffman kodu değildir.** Frekanslar A: 26, B: 24, C: 14, D: 13, E: 12, F: 11 olsun. Huffman 250 bitlik bir kod üretir. Ama A = 00, B = 01, C = 100, D = 101, E = 110, F = 111 kodu da tam 250 bit harcar ve dolayısıyla o da optimaldir — oysa bu kodda A ile B **aynı bitle başlar**; Huffman'ın birleştirme sırası burada zorunludur (önce E + F = 23, sonra C + D = 27, sonra 23 + B = 47, sonra 27 + A = 53), yani A ile B kökün iki ayrı alt ağacına düşer ve hiçbir Huffman ağacında aynı bitle başlayamaz. Optimal çözüm tek değildir; açgözlü kural onlardan **birini** bulur.
 
-Son bir uyarı: aynı problemi yukarıdan aşağıya çözmek — simgeleri frekansları kabaca eşit iki gruba bölüp özyinelemeye girmek — Shannon ve Fano'nun önerdiği yöntemdir ve **optimal değildir.** Huffman'ı çalıştıran şey aşağıdan yukarıya, en seyrekten başlayan sıradır.
+Aynı problemi yukarıdan aşağıya çözmek — simgeleri frekansları kabaca eşit iki gruba bölüp özyinelemeye girmek — Shannon ve Fano'nun önerdiği yöntemdir ve **optimal değildir.** Huffman'ı çalıştıran şey aşağıdan yukarıya, en seyrekten başlayan sıradır.
 
 ## Üç ispat kalıbı
 
@@ -114,7 +114,7 @@ Açgözlü bir çözüm önerdiğinde beklenen sıra sabittir. Kuralı tek cüml
 
 Takip zinciri çoğu zaman problemi bir adım değiştirerek gelir: "Neden en erken biten?" → "İspatın hangi adımı açgözlü seçim özelliği?" → "Her isteğin bir ağırlığı olsaydı kural yine çalışır mıydı?" Üçüncü halkanın cevabı hayırdır ve yukarıdaki "Nerede yanılır" bölümünde gördük; karşı örneği söyleyip "burada alt problemleri saklamam gerekir" demek yeter.
 
-Dört tipik hata var. Kuralı ispatlamadan "açgözlü çalışır" demek. Problemin küçük bir varyantının kuralı bozduğunu fark etmemek — ağırlık eklemek, bölünebilirliği kaldırmak, para sistemini değiştirmek. Optimal altyapıyı açgözlü seçim özelliğiyle karıştırmak; ikisi ayrı iddialardır ve dinamik programlama yalnızca ikinciyi ister. Ve açgözlünün "yaklaşık" bir yöntem olduğunu sanmak; doğru problemde açgözlü tam olarak optimaldir, üstelik çoğu zaman en hızlı çözümdür.
+Dört tipik hata var. Kuralı ispatlamadan "açgözlü çalışır" demek. Problemin küçük bir varyantının kuralı bozduğunu fark etmemek — ağırlık eklemek, bölünebilirliği kaldırmak, para sistemini değiştirmek. Optimal altyapıyı açgözlü seçim özelliğiyle karıştırmak; ikisi ayrı iddialardır ve dinamik programlama bu ikisinden yalnızca optimal altyapıyı ister. Ve açgözlünün "yaklaşık" bir yöntem olduğunu sanmak; doğru problemde açgözlü tam olarak optimaldir, üstelik çoğu zaman en hızlı çözümdür.
 
 İngilizce karşılıklar hazır olmalıdır: *greedy algorithm*, *greedy-choice property*, *optimal substructure*, *exchange argument*, *greedy stays ahead*, *cut and paste*, *interval scheduling*, *compatible*, *prefix-free code*, *fractional knapsack*.
 
@@ -122,7 +122,7 @@ Dört tipik hata var. Kuralı ispatlamadan "açgözlü çalışır" demek. Probl
 
 Bu makalede açgözlünün çöktüğü üç yer gördük ve üçünde de aynı şey oldu: doğru cevabı bulmak için **birden fazla olasılığı aynı anda taşımak** gerekiyordu. Ağırlıklı aralık çizelgelemede bir isteği almak ile almamak arasındaki karar, ancak ikisinin de sonuçları hesaplandıktan sonra verilebilir.
 
-Böl ve yönet makalesinde de bir çöküş görmüştük: naif Fibonacci özyinelemesi, aynı alt problemi milyonlarca kez çözüyordu çünkü alt problemler **örtüşüyordu**. Sıradaki makale bu iki çöküşün aynı çözüme baktığını gösteriyor. Her alt problemi bir kez çöz ve sakla; sonra ihtiyaç duyduğunda hesaplama, hatırla. Bu desenin adı **dinamik programlamadır** ve iki yüzü vardır: yukarıdan aşağı bellekleme ile aşağıdan yukarı tablolama. Mülakatın en klasik takip sorusu da orada karşımıza çıkacak: "bunu açgözlüyle çözemez miydin?"
+Böl ve yönet makalesinde de bir çöküş görmüştük: naif Fibonacci özyinelemesi, aynı alt problemi milyonlarca kez çözüyordu çünkü alt problemler **örtüşüyordu**. Sıradaki makale bu iki çöküşün aynı çözüme baktığını gösteriyor. Her alt problemi bir kez çöz ve sakla; sonra ihtiyaç duyduğunda hesaplama, hatırla. Bu desenin adı **dinamik programlamadır** ve iki yüzü vardır: yukarıdan aşağı bellekleme ile aşağıdan yukarı tablolama. Doğal bir takip sorusu da orada karşımıza çıkacak: "bunu açgözlüyle çözemez miydin?"
 
 ## Kaynakça
 

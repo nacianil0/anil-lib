@@ -36,7 +36,7 @@
   <text x="278" y="160" font-size="13" fill="var(--text-faint)">giriş/çıkış</text>
   <text x="278" y="178" font-size="13" fill="var(--text-faint)">bitti</text>
 
-  <path d="M 45 131 L 45 250 L 111 250" fill="none" stroke="var(--text-faint)" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#boun-a27-ok-soluk)" />
+  <path d="M 25 108 L 8 108 L 8 250 L 111 250" fill="none" stroke="var(--text-faint)" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#boun-a27-ok-soluk)" />
   <rect x="115" y="236" width="140" height="26" rx="4" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 3" />
   <text x="185" y="254" font-size="13" text-anchor="middle" fill="var(--text-faint)">zombi</text>
 

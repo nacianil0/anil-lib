@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 528" role="img" aria-label="İki şerit, aralarında kesikli dikey çizgi: güven sınırı, head ↔ base. Solda PR yazarının elinde: head. push: head dalı ilerler, uzak depoda yeni bir commit; PR açar: head'den base'e, main'e, öneri, henüz hiçbir şey birleşmedi; vurgulu kutu: iş akışı dosyası da head'de, kontrol PR'daki hâliyle çalışır; onaydan sonra yeni push, onaylanan commit artık uç değil. Sağda base'in tarafında: main, yukarıdan aşağı: karşılaştırma, birleştirme tabanından üç noktalı fark; kontrol: deneme birleştirmesi, base'in o anki ucu + head; inceleme: kod sahibinden istek, onay ancak ayar açıksa zorunlu; birleştirme: main ilerler, güncel dal ya da kuyruk sınar; dağıtım: ayrı karar, ortamın kuralı, ayrı onay. Sınırı geçen oklar: PR açmaktan karşılaştırmaya; vurgulu, iş akışı dosyasından kontrole; kesikli, ayara bağlı, yeni push'tan incelemeye.">
+  <defs>
+    <marker id="ea1-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-muted)" />
+    </marker>
+    <marker id="ea1-ok-vurgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <text x="16" y="24" font-size="13" font-weight="bold" fill="var(--text)">PR yazarının elinde: head</text>
+  <text x="392" y="24" font-size="13" font-weight="bold" fill="var(--text)">Base'in tarafında: main</text>
+  <line x1="368" y1="36" x2="368" y2="466" stroke="var(--text)" stroke-width="1.4" stroke-dasharray="7 5" />
+
+  <rect x="16" y="40" width="330" height="48" rx="8" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="60" font-size="13" font-weight="bold" fill="var(--text)">push: head dalı ilerler</text>
+  <text x="28" y="78" font-size="13" fill="var(--text-muted)">uzak depoda yeni bir commit</text>
+  <line x1="181" y1="88" x2="181" y2="111" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea1-ok)" />
+
+  <rect x="16" y="114" width="330" height="48" rx="8" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="134" font-size="13" font-weight="bold" fill="var(--text)">PR açar: head'den base'e, main'e</text>
+  <text x="28" y="152" font-size="13" fill="var(--text-muted)">öneri; henüz hiçbir şey birleşmedi</text>
+  <line x1="346" y1="138" x2="389" y2="138" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea1-ok)" />
+
+  <rect x="16" y="188" width="330" height="48" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" />
+  <text x="28" y="208" font-size="13" font-weight="bold" fill="var(--text)">iş akışı dosyası da head'de</text>
+  <text x="28" y="226" font-size="13" fill="var(--text)">kontrol PR'daki hâliyle çalışır</text>
+  <line x1="346" y1="212" x2="389" y2="212" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#ea1-ok-vurgu)" />
+
+  <rect x="16" y="262" width="330" height="48" rx="8" fill="var(--surface)" stroke="var(--text-muted)" stroke-width="1.2" />
+  <text x="28" y="282" font-size="13" font-weight="bold" fill="var(--text)">onaydan sonra yeni push</text>
+  <text x="28" y="300" font-size="13" fill="var(--text-muted)">onaylanan commit artık uç değil</text>
+  <line x1="346" y1="286" x2="389" y2="286" stroke="var(--text-muted)" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ea1-ok)" />
+
+  <rect x="392" y="114" width="312" height="48" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="404" y="134" font-size="13" font-weight="bold" fill="var(--text)">karşılaştırma</text>
+  <text x="404" y="152" font-size="13" fill="var(--text-muted)">birleştirme tabanından üç noktalı fark</text>
+  <line x1="548" y1="162" x2="548" y2="185" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea1-ok)" />
+
+  <rect x="392" y="188" width="312" height="48" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="404" y="208" font-size="13" font-weight="bold" fill="var(--text)">kontrol: deneme birleştirmesi</text>
+  <text x="404" y="226" font-size="13" fill="var(--text-muted)">base'in o anki ucu + head</text>
+  <line x1="548" y1="236" x2="548" y2="259" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea1-ok)" />
+
+  <rect x="392" y="262" width="312" height="48" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="404" y="282" font-size="13" font-weight="bold" fill="var(--text)">inceleme: kod sahibinden istek</text>
+  <text x="404" y="300" font-size="13" fill="var(--text-muted)">onay ancak ayar açıksa zorunlu</text>
+  <line x1="548" y1="310" x2="548" y2="333" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea1-ok)" />
+
+  <rect x="392" y="336" width="312" height="48" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="404" y="356" font-size="13" font-weight="bold" fill="var(--text)">birleştirme: main ilerler</text>
+  <text x="404" y="374" font-size="13" fill="var(--text-muted)">güncel dal ya da kuyruk sınar</text>
+  <line x1="548" y1="384" x2="548" y2="407" stroke="var(--text-muted)" stroke-width="1.4" marker-end="url(#ea1-ok)" />
+
+  <rect x="392" y="410" width="312" height="48" rx="8" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1.2" />
+  <text x="404" y="430" font-size="13" font-weight="bold" fill="var(--text)">dağıtım: ayrı karar</text>
+  <text x="404" y="448" font-size="13" fill="var(--text-muted)">ortamın kuralı, ayrı onay</text>
+
+  <text x="368" y="488" font-size="13" text-anchor="middle" fill="var(--text)">güven sınırı: head ↔ base</text>
+  <text x="16" y="514" font-size="13" fill="var(--text-muted)">vurgulu ok: kontrolü tanımlayan girdi head'den gelir · kesikli ok: ayara bağlı</text>
+</svg>

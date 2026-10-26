@@ -37,8 +37,8 @@
       "title": "GitHub'da Ekip Akışı ve Teslim",
       "description": "Push, PR, inceleme, birleştirme ve dağıtımı ayrı kararlar olarak tasarlamak; bir sürümü değişmeyen bir commit'e ve geri dönüş yoluna bağlamak.",
       "articles": [
-        { "order": 9, "title": "GitHub'da Ekip Akışı: Push, PR, Merge ve Dağıtım Ayrı Kararlardır", "status": "planlandi" },
-        { "order": 10, "title": "Sürüm ve Dağıtım: Etiket, GitHub Release ve Geri Dönüş Yolu", "status": "planlandi" }
+        { "order": 9, "title": "GitHub'da Ekip Akışı: Push, PR, Merge ve Dağıtım Ayrı Kararlardır", "status": "yayinda", "slug": "github-ekip-akisi-push-pr-merge-dagitim" },
+        { "order": 10, "title": "Sürüm ve Dağıtım: Etiket, GitHub Release ve Geri Dönüş Yolu", "status": "yayinda", "slug": "surum-ve-dagitim-etiket-github-release" }
       ]
     },
     {
