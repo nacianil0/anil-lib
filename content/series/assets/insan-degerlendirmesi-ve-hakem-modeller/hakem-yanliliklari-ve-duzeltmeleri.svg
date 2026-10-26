@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Beş satırlı tablo; sütunlar yanlılık, ölçülmüş etki, düzeltme. Konum: 15 hakem, 22 görev, 150 binden fazla karar; uygun sırayla 13 milyarlık bir model 80 sorunun 66'sında hakemi geçiyor; iki sırayla sorup tutarlı kararı saymak uzlaşmayı 9,8 ve 14,3 puan artırıyor. Uzunluk: hakem uzun cevabı insandan çok yeğliyor; uzunluk kontrolü arenayla ilişkiyi 0,94'ten 0,98'e çıkarıyor. Kendini kayırma: en büyük model kendi çıktısını yüzde 73,5 tanıyor ve kayırma tanımayı doğrusal izliyor; düzeltme farklı ailelerden bir kurul. Sürü ve otorite: 15 hakemin 11'i sahte bir yüzde 85 çoğunluk cümlesine kararların yüzde 70'inden fazlasında uyuyor. Evrensel ifade: kısa bir ifade puanı şişiriyor ve görülmemiş hakeme aktarılıyor. Altta her düzeltmenin yanlılığı azalttığı, sıfırlamadığı yazılıdır.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Beş satırlı tablo; sütunlar yanlılık, ölçülmüş etki, düzeltme. Konum: 15 hakem, 22 görev, 150 binden fazla karar; uygun sırayla 13 milyarlık bir model 80 sorunun 66'sında hakemi geçiyor; hakeme önce gerekçe yazdırıp iki sıradaki ve birkaç örnekteki puanların ortalamasını almak uzlaşmayı 9,8 ve 14,3 puan artırıyor. Uzunluk: hakem uzun cevabı insandan çok yeğliyor; uzunluk kontrolü arenayla ilişkiyi 0,94'ten 0,98'e çıkarıyor. Kendini kayırma: en büyük model kendi çıktısını yüzde 73,5 tanıyor ve kayırma tanımayı doğrusal izliyor; düzeltme farklı ailelerden bir kurul. Sürü ve otorite: 15 hakemin 11'i sahte bir yüzde 85 çoğunluk cümlesine kararların yüzde 70'inden fazlasında uyuyor. Evrensel ifade: kısa bir ifade puanı şişiriyor ve görülmemiş hakeme aktarılıyor. Altta her düzeltmenin yanlılığı azalttığı, sıfırlamadığı yazılıdır.">
   <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">yanlılık</text>
   <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülmüş etki</text>
   <text x="510" y="28" font-size="13" font-weight="bold" fill="var(--text)">düzeltme</text>
@@ -9,8 +9,8 @@
   <text x="150" y="68" font-size="13" fill="var(--text)">15 hakem, 22 görev, &gt; 150 bin karar: tutarlılık</text>
   <text x="150" y="86" font-size="13" fill="var(--text)">kalite farkına bağlı; uygun sırayla 13 milyarlık</text>
   <text x="150" y="104" font-size="13" fill="var(--text)">model 80 sorunun 66'sında hakemi geçiyor</text>
-  <text x="510" y="68" font-size="13" fill="var(--text)">iki sırayla sor, tutarlı</text>
-  <text x="510" y="86" font-size="13" fill="var(--text)">kararı say: uzlaşma</text>
+  <text x="510" y="68" font-size="13" fill="var(--text)">gerekçe önce; iki sıra ve</text>
+  <text x="510" y="86" font-size="13" fill="var(--text)">örnek ortalaması: uzlaşma</text>
   <text x="510" y="104" font-size="13" fill="var(--text)">+9,8 ve +14,3 puan</text>
 
   <rect x="20" y="130" width="680" height="76" fill="var(--surface-muted)" />

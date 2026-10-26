@@ -15380,6 +15380,205 @@
       "occurrences": 1,
       "last_seen": "2026-10-26T10:20:00+03:00",
       "id": "bug-930"
+    },
+    {
+      "id": "bug-931",
+      "timestamp": "2026-10-26T13:22:12.607Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g71-80/edits.json",
+      "root_cause": "Had \"Küme açıldığında var olan modeller yüzde 9'",
+      "fix": "Changed to \"Ölçüt kamuya açıldığında var olan modeller yüzde ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-10-26T13:22:17.827Z"
+    },
+    {
+      "id": "bug-932",
+      "timestamp": "2026-10-26T17:00:00+03:00",
+      "error_message": "catalog.json summaries of AI series 115–118 differed from their frontmatter since Batch 28 (readers saw draft summaries)",
+      "file": "content/series/catalog.json",
+      "root_cause": "Batch 28 edited frontmatter summaries after entegre-batch had copied them; sync-series-hashes syncs only hash and revision fields, and assertCatalogMatch compares title/slug/hash but not summary, so nothing flagged the drift",
+      "fix": "Copied all 19 differing frontmatter summaries into catalog.json (15 changed in run 4 + 115–118) with a CRLF/2-space round-trip script; no tool change (a summary comparison in assertCatalogMatch or sync-series-hashes would prevent recurrence)",
+      "tags": [
+        "series",
+        "catalog",
+        "summary",
+        "drift",
+        "sync-series-hashes"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T17:00:00+03:00"
+    },
+    {
+      "id": "bug-933",
+      "timestamp": "2026-10-26T17:00:00+03:00",
+      "error_message": "Crossref /works query returned HTTP 400 for every bibliographic search in the status sweep",
+      "file": "scratchpad/net.py (session script)",
+      "root_cause": "'subtype' is not a selectable field in Crossref's select parameter; one invalid field fails the whole request",
+      "fix": "Removed subtype from select (DOI,title,container-title,type,published,author,relation,publisher)",
+      "tags": [
+        "crossref",
+        "api",
+        "select",
+        "400",
+        "maintenance-sweep"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T17:00:00+03:00"
+    },
+    {
+      "id": "bug-934",
+      "timestamp": "2026-10-26T17:00:00+03:00",
+      "error_message": "OpenAlex returned 429 for 93 of 198 title searches at ~1.2 s spacing",
+      "file": "scratchpad/status_sweep.py (session script)",
+      "root_cause": "OpenAlex rate limit on the polite pool is tighter than one request per ~1.2 s for filter=title.search",
+      "fix": "Retried failed items with 4 s spacing and 20/40/60 s backoff on 429 (oa_retry.py)",
+      "tags": [
+        "openalex",
+        "rate-limit",
+        "429",
+        "maintenance-sweep"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T17:00:00+03:00"
+    },
+    {
+      "id": "bug-935",
+      "timestamp": "2026-10-26T17:00:00+03:00",
+      "error_message": "git warns 'LF will be replaced by CRLF' / ls-files shows w/mixed for articles after sync-series-hashes --write",
+      "file": "tools/series/sync-series-hashes.cjs",
+      "root_cause": "The content_hash replace regex /^content_hash:\\s*\\S+\\s*$/m swallows the trailing \\r and the replacement has none; catalog.json is written with LF",
+      "fix": "Not changed (cosmetic: core.autocrlf=true normalizes to LF in the index, content identical). Fix would be [^\\S\\r\\n]* instead of \\s* before $",
+      "tags": [
+        "eol",
+        "crlf",
+        "sync-series-hashes",
+        "cosmetic"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T17:00:00+03:00"
+    },
+    {
+      "id": "bug-936",
+      "timestamp": "2026-10-26T17:00:00+03:00",
+      "error_message": "Maintenance run 4 fact audit: 172 confirmed errors in AI series 61–80 (+10 time-bound in other articles); 4 BLOCKER incl. swapped CoCoNot columns (62), reversed Fanous finding (66), outdated 'bugünkü sınır' cyber claim (68)",
+      "file": "content/series/articles/safety-and-evaluation/*.md",
+      "root_cause": "Numbers transcribed without the source table's condition (model, subset, protocol), quantifiers sharpened ('hiçbir', 'çoğu ayarda'), interpretations stated as the source's finding, and undated present-tense status claims that later events overtook",
+      "fix": "257 edits applied after auditor → adversarial skeptic → main-session review; 9 revision marks; three articles trimmed back under 3.500 words",
+      "tags": [
+        "series",
+        "fact-check",
+        "maintenance",
+        "sozlesme-4"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T17:00:00+03:00"
+    },
+    {
+      "id": "bug-937",
+      "timestamp": "2026-10-26T17:00:00+03:00",
+      "error_message": "Article word count exceeded the 3.500 band after corrections (67: 3576, 71: 3627, 72: 3518)",
+      "file": "content/series/articles/safety-and-evaluation/{aldatma…,degerlendirme-bilimi…,kirlilik…}.md",
+      "root_cause": "Condition-carrying corrections lengthen sentences; articles were already near the upper bound",
+      "fix": "Trimmed recap/bridge sentences and tightened the new wording without dropping any correction; all three back under 3.500",
+      "tags": [
+        "series",
+        "word-count",
+        "check-series-content"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T17:00:00+03:00"
+    },
+    {
+      "id": "bug-938",
+      "timestamp": "2026-10-26T16:19:43.100Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/revmarks4.py",
+      "root_cause": "Had \"CoCoNot tablosunun iki sütun başlığı yer değiştir",
+      "fix": "Changed to \"Brahman'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-26T16:19:48.681Z"
+    },
+    {
+      "id": "bug-939",
+      "timestamp": "2026-10-26T16:23:23.363Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "Had 'ı alt metne eşitlendi; 64, 69/70, 71, 73, 74, 77,",
+      "fix": "Changed to 'ı alt metne eşitlendi; şekil dosyası değişen yazı",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-10-26T16:25:25.118Z"
+    },
+    {
+      "id": "bug-940",
+      "timestamp": "2026-10-26T16:23:52.207Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'dir** (bakım run'",
+      "fix": "Changed to 'dur** (bakım run'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T16:23:52.207Z"
+    },
+    {
+      "id": "bug-941",
+      "timestamp": "2026-10-26T16:25:00.860Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 3→4 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T16:25:00.860Z"
+    },
+    {
+      "id": "bug-942",
+      "timestamp": "2026-10-26T16:30:43.584Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 4→7 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-10-26T16:30:43.584Z"
     }
   ]
 }

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Sol panelde üç dikey çubuk: zayıf denetçi, zayıf etiketle eğitilen güçlü öğrenci, gerçek etiketle eğitilen güçlü tavan; ilk çubukla üçüncü arasındaki açık ve ikinci çubuğun o açıkta kapattığı pay bir ayraçla işaretli, altında geri kazanılan pay eşittir öğrencinin denetçiyi geçtiği miktar bölü tavanla denetçi arasındaki açık yazar ve çubuk yüksekliklerinin şematik olduğu belirtilir. Sağ panelde dört satır: dil görevleri, düz ince ayar, yaklaşık yüzde 50, GPT-2 düzeyi denetçiden GPT-4 düzeyi öğrenciye; dil görevleri artı güven kaybı, yaklaşık yüzde 80, en küçük denetçiyle en büyük öğrencide 25'ten 80'e; satranç bulmacaları, karışık, küçük denetçide sıfıra yakın, denetçi büyüdükçe 40'ın üstü; sohbet ödül modeli, yaklaşık yüzde 10, hiçbir çiftte yüzde 20'yi geçmiyor. Altta değerlerin Burns ve arkadaşlarının metnindeki yaklaşık paylar olduğu yazılıdır.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Sol panelde üç dikey çubuk: zayıf denetçi, zayıf etiketle eğitilen güçlü öğrenci, gerçek etiketle eğitilen güçlü tavan; ilk çubukla üçüncü arasındaki açık ve ikinci çubuğun o açıkta kapattığı pay bir ayraçla işaretli, altında geri kazanılan pay eşittir öğrencinin denetçiyi geçtiği miktar bölü tavanla denetçi arasındaki açık yazar ve çubuk yüksekliklerinin şematik olduğu belirtilir. Sağ panelde dört satır: dil görevleri, düz ince ayar, yaklaşık yüzde 50, GPT-2 düzeyi denetçiden GPT-4 düzeyi öğrenciye; dil görevleri artı güven kaybı, yaklaşık yüzde 80, en küçük denetçiyle en büyük öğrencide 25'ten 80'e; satranç bulmacaları, karışık, küçük denetçide sıfıra yakın, denetçi büyüdükçe 40'ın üstü; sohbet ödül modeli, yaklaşık yüzde 10, neredeyse hiçbir çiftte yüzde 20'yi geçmiyor. Altta değerlerin Burns ve arkadaşlarının metnindeki yaklaşık paylar olduğu yazılıdır.">
   <text x="20" y="24" font-size="13" font-weight="bold" fill="var(--text)">tanım (şematik)</text>
   <line x1="30" y1="250" x2="300" y2="250" stroke="var(--border)" />
 
@@ -30,7 +30,7 @@
 
   <text x="20" y="312" font-size="13" fill="var(--text)">geri kazanılan pay = kazanılan ÷ açık</text>
   <text x="20" y="330" font-size="13" fill="var(--text-muted)">0: öğrenci denetçiyi taklit eder; 1: açık kapanır.</text>
-  <text x="20" y="348" font-size="13" fill="var(--text-muted)">Çubuk yükseklikleri şematiktir; ölçülen olan paylardır.</text>
+  <text x="20" y="348" font-size="13" fill="var(--text-muted)">Çubuk yükseklikleri şematik; ölçülen paylar.</text>
 
   <line x1="340" y1="16" x2="340" y2="356" stroke="var(--border)" />
 
@@ -51,10 +51,10 @@
   <rect x="352" y="214" width="356" height="46" fill="var(--accent-soft)" />
   <text x="360" y="234" font-size="13" font-weight="bold" fill="var(--text)">sohbet ödül modeli (13'teki)</text>
   <text x="700" y="234" font-size="13" font-weight="bold" text-anchor="end" fill="var(--text)">≈ %10</text>
-  <text x="360" y="252" font-size="13" fill="var(--text-muted)">hiçbir denetçi–öğrenci çiftinde %20'yi geçmiyor</text>
+  <text x="360" y="252" font-size="13" fill="var(--text-muted)">neredeyse hiçbir çiftte %20'yi geçmiyor</text>
 
   <text x="360" y="300" font-size="13" fill="var(--text-muted)">Paylar yazarların metnindeki yaklaşık değerler;</text>
-  <text x="360" y="318" font-size="13" fill="var(--text-muted)">düz ince ayar en küçük denetçiyle bile %20'nin</text>
+  <text x="360" y="318" font-size="13" fill="var(--text-muted)">dil görevlerinde en küçük denetçiyle bile %20'nin</text>
   <text x="360" y="336" font-size="13" fill="var(--text-muted)">üstünde. Ödül modeli satırı vurgulu: bu makalenin</text>
   <text x="360" y="354" font-size="13" fill="var(--text-muted)">sorusu tam orada.</text>
 </svg>

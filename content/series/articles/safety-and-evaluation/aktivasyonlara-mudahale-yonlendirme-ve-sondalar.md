@@ -12,7 +12,7 @@ tags:
   - sonda
   - kavram-silme
   - model-duzenleme
-content_hash: sha256:9e22b50333faacff32aa024b2dd45b7713b3f22abc4b968284be9ca7d2bd9d8a
+content_hash: sha256:15aadc5e31bc089bbfa202aa87e6e69bc057afd56d37abce10cff4d066d893f3
 classification_version: 1
 classification_batch: 18
 ---
@@ -62,7 +62,7 @@ Olumlu taraf somut. Ret deneyinde 13 modelin hepsinde tek bir yön bulunuyor; y�
 
 Kenneth Li ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma yönü doğruluk için kuruyor: az sayıda dikkat başında, doğruluk yönü boyunca kaydırma yapan bir çıkarım anı müdahalesi, komut ayarlı bir modelin doğruluk puanını yüzde 32,5'ten 65,1'e çıkarıyor, ve bunun için birkaç yüz örnek yetiyor. Yazarlar takası da yazıyor: müdahale gücü arttıkça doğruluk artıyor, yardımseverlik düşüyor. Alessandro Stolfo ve arkadaşlarının ICLR 2025'te sunduğu çalışma yönü talimata bağlıyor — bir kısıt verilen ve verilmeyen istemlerin aktivasyon farkı — ve biçim, uzunluk, sözcük içerme gibi kısıtların istem olmadan da uygulatılabildiğini, üstelik birkaçının aynı anda toplanabildiğini gösteriyor.
 
-Aynı fikrin savunma tarafındaki kullanımı Andy Zou ve arkadaşlarının NeurIPS 2024'te sunduğu çalışmada: model zararlı çıktı üretirken içerideki temsil başka bir yöne yeniden yönlendiriliyor, yazarların adıyla devre kesici. Ölçüm, 63'ün diliyle konuşuyor: eğitimde görülmemiş saldırı ailelerinde saldırı başarı oranı belirgin düşerken standart yetenek ölçütlerindeki puan büyük ölçüde korunuyor, ve aynı düzenek araç çağıran ajan kurulumunda da çalışıyor. 66'nın karakter vektörü de aynı ailedendi: ince ayarın karakterde yaptığı kaymanın o yön üzerindeki izdüşümle 0,76 ile 0,97 arasında ilişkili olduğu ölçülmüş, ve kayma eğitim sırasında ters yönde itilerek önlenebilmişti.
+Aynı fikrin savunma tarafındaki kullanımı Andy Zou ve arkadaşlarının NeurIPS 2024'te sunduğu çalışmada: model zararlı çıktı üretirken içerideki temsil başka bir yöne yeniden yönlendiriliyor, yazarların adıyla devre kesici. Ölçüm, 63'ün diliyle konuşuyor: eğitimde görülmemiş saldırı ailelerinde saldırı başarı oranı belirgin düşerken standart yetenek ölçütlerindeki puan büyük ölçüde korunuyor, ve aynı düzenek araç çağıran ajan kurulumunda da çalışıyor. 66'nın karakter vektörü de aynı ailedendi: ince ayarın karakterde yaptığı kaymanın o yön üzerindeki izdüşümle 0,76 ile 0,97 arasında ilişkili olduğu ölçülmüş, ve kayma eğitim sırasında modeli kasıtlı olarak aynı yöne iterek büyük ölçüde sınırlanabilmişti.
 
 Şimdi öbür taraf. Daniel Tan, David Chanin ve arkadaşlarının NeurIPS 2024'te sunduğu çalışma yönlendirme vektörlerinin güvenilirliğini sistematik olarak ölçüyor: kırk davranış kümesi, örnek örnek yönlendirilebilirlik. Üç bulgu. Birincisi, dağılım içinde bile yönlendirilebilirlik örnekten örneğe çok değişiyor; bazı kümelerde girdilerin neredeyse yarısı **ters** yöne gidiyor, yani müdahale amaçlananın tersini yapıyor. İkincisi, ters giden kümelerde çıkarılan vektörün davranışı değil, istem şablonuna bağlı yan etkenleri kodladığına dair kanıt var. Üçüncüsü, yönlendirilebilirlik büyük ölçüde modelin değil **veri kümesinin** özelliği; aynı ölçüm birden çok modelde tekrarlandığında sıralama kümeye göre belirleniyor. Dağılım dışına çıkıldığında vektörler çoğu zaman makul biçimde genelleşiyor ama bazı kavramlarda isteme yapılan küçük eklemelerle kırılıyor.
 

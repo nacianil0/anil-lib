@@ -12,7 +12,7 @@ tags:
   - cift-inis
   - ezber
   - duzenlilestirme
-content_hash: sha256:b667018d4ee9931255e293cede94a7fd1b347f5fe4ac84c7994cb008e51a68fe
+content_hash: sha256:786f6b4c0b6347417ed5d2737a08efdc277b8d6f90c1a5e0bb197b0896ff0997
 classification_version: 1
 classification_batch: 23
 revised_at: "2026-09-25"
@@ -138,7 +138,7 @@ Son bir hatırlatma, çünkü bu makalenin tamamı tek bir varsayım üzerine ku
 
 ### Sırada ne var
 
-İki makaledir tek bir model ailesinden konuşuyoruz: gradyanla eğitilen, çok parametreli sinir ağları. Oysa bu makalede kurduğumuz hiçbir şey onlara özgü değil — yanlılık, oynaklık, ezber ve varsayım her tahmin yordamının kalemleri. Alanın elinde sinir ağlarından çok daha eski, varsayımları çok daha açık ve bugün hâlâ birçok problemde önde olan bir yöntem ailesi var. Bir sonraki makale o aileyi geziyor: dört yöntem, dört varsayım ve tablo verisinde neden hâlâ ağaçların kazandığının ölçülmüş açıklaması.
+İki makaledir tek bir model ailesinden konuşuyoruz: gradyanla eğitilen, çok parametreli sinir ağları. Oysa bu makalede kurduğumuz hiçbir şey onlara özgü değil — yanlılık, oynaklık, ezber ve varsayım her tahmin yordamının kalemleri. Alanın elinde sinir ağlarından çok daha eski, varsayımları çok daha açık ve bugün hâlâ birçok problemde önde olan bir yöntem ailesi var. Bir sonraki makale o aileyi geziyor: dört yöntem, dört varsayım ve 2022'de orta ölçekli tablo verisinde ağaçların neden kazandığının ölçülmüş açıklaması.
 
 ## Kaynakça
 

@@ -2733,7 +2733,7 @@ Batch 0'da "korpus/derlem" sapması tam da defterde satır olmadığı için olu
 | karakter vektörü | (persona vector) | 66 | |
 | beliren hizalanmama | (emergent misalignment) | 66 | Betley ve ark.; "beliren" 5'in beliren yetenekleriyle aynı sözcük |
 | aldatma | (deception) | 67 | doğruluk dışı bir hedefin peşinde sistematik yanlış inanç oluşturmak; 17'nin uydurmasından ve 66'nın dalkavukluğundan ayrımı 67'de yapıldı |
-| model organizması | (model organism) | 67 | incelenmek için bilerek üretilmiş hizalanmamışlık örneği |
+| model organizması | (model organism) | 67 | incelenmek için bilerek üretilmiş hizalanmamışlık örneği; 74'te (bakım run'ı 4, #283) yorumlanabilirlikteki ikinci anlamıyla da geçer: biyolojideki meyve sineği gibi derinlemesine incelenen ortak model (ör. modüler toplama modeli), ve 74 iki anlamı açıkça ayırır |
 | uyuyan ajan | (sleeper agent) | 67 | koşul gelene kadar normal davranan model |
 | arka kapı; tetikleyici | (backdoor; trigger) | 67 | 58'deki saldırı ailesinden farkı: davranış eğitimle konur |
 | hizalama taklidi | (alignment faking) | 67 | eğitim hedefine yalnızca eğitimde uymak |
@@ -4408,7 +4408,8 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     10,2 / 16,8 / 1,4 / 6,3 / 9,9 / 80,16; Llama 3 70B 17,5 / 29,9 / 4,9 / 17,5 / 22,0 / 86,5; Tulu 2 70B
     dpo 12,0 / 7,6 / 1,4 / 8,1 / 6,1 / 84,2); Ji ve ark. (NeurIPS 2023 D&B): 333.963 / 361.903; Dai ve ark.
     (ICLR 2024): 53,08 → 2,45; Elo +244,91 / +363,86 ve +268,31 / +237,98; Mu ve ark. (NeurIPS 2024): F1
-    97,1 ↔ 91,7; aşırı ret −%16; Qi ve ark. (ICLR 2025): %96,1; Tablo 1 (68,6 / 16,4 / 5,4 / 14,4 / 2,1 /
+    97,1 ↔ 91,7; aşırı ret −%16 (bakım run'ı 4: o oran orta boy modellerin karşılaştırmasıydı; 62 artık ana modelin
+    reddetmeme oranını veriyor, 84,7 ↔ 97,0); Qi ve ark. (ICLR 2025): %96,1; Tablo 1 (68,6 / 16,4 / 5,4 / 14,4 / 2,1 /
     8,1; 85,4 / 8,7 / 2,7 / 14,1 / 1,0 / 3,9); 42,1 / 51,5 / 56,1 / 57,0 → 2,8 / 2,9 / 3,4 / 4,5; GCG 36,5 →
     18,4; 84,3 → 1,0; Arditi ve ark. (NeurIPS 2024): 13 model, tek yön; Qi ve ark. (ICLR 2024): 1,8 → 88,8
     / 87,0 / 91,8; 0,3 → 50,0 / 80,3 / 80,0; kimlik 0 → 7,3 / 49,1 / 87,3 ve 0 → 54,2 / 72,1 / 68,2; Alpaca
@@ -4546,7 +4547,8 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
 158. **Kendi hesabımız (Batch 16): yok.** Dört makalede de kaynağın vermediği türetilmiş sayı kullanılmadı;
     karşılaştırmalar kaynakların kendi verdiği oranlarla yazıldı (ör. Fang'ın "2,8 kat ucuz" ifadesi kendi
     metnindendir, bizim bölmemiz değil).
-159. **Kaynak politikası (Batch 16).** 67'de 30, 68'de 31, 69'da 24, 70'te 14 kaynak (99 kalem). Dağılım:
+159. **Kaynak politikası (Batch 16).** 67'de 30, 68'de 31, 69'da 24, 70'te 14 kaynak (99 kalem; bakım run'ı 4'te
+    68'e üç, 69'a bir, 70'e iki hakemsiz kaynak eklendi). Dağılım:
     36 hakemli (67'de 11, 68'de 15, 69'da 10, 70'te 0), 9 resmî belge, 54 hakemsiz ve işaretlenmiş kalem.
     **70'in hiçbir kaynağı hakemli değil** ve bu, makalenin kendi bulgusudur: sağlayıcıların yazdığı çerçeveleri
     okuyan bir makalenin birincil kaynağı tanım gereği hakemsizdir; gövde bunu açıkça söyler. Hakemsiz ama
@@ -4596,17 +4598,20 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     metninde yasaklı "sıfır atışlı" yerine İngilizce bırakıldı.
 165. **Sayılar (Batch 17).** **71:** Wallach ve ark. tartışmalı yapı %47,8, hipotezle çözüm %67; kolaycı
     örnekleme %12; tam eşleşme %81,3; etiket hatası %6,49, on kümede ≥ %3,3 (Northcutt); Zheng Tablo 1 doğru
-    cevap A'ya taşınınca llama-30B 53,1 → 68,2, gpt-3.5-turbo 67,2 → 65,3; seçim yanlılığı ölçüsü 5,5 → 1,0;
+    cevap A'ya taşınınca llama-30B 53,1 → 68,2, gpt-3.5-turbo 67,2 → 65,3; seçim yanlılığı ölçüsü 5,5 → 1,0 (yalnız gpt-3.5-turbo, şık metnini
+    yazdırma protokolü; açık modellerde harfleri kaldırmak doğruluğu çoğunlukla düşürüyor, llama-30B 53,1 → 49,3 —
+    bakım run'ı 4, #282);
     Sclar biçim 76 puan; 45'in sayımı ölçütlerin %17'si hakem, %13'ü insan; MMLU 14.042 soru. **72:** 317 test
     kümesi olayı; hedef metinlerin %1,87–24,88'i birebir; yeniden yazılmış test kümesiyle 13 milyarlık model 85,9;
-    255 makalenin %42'si 4,7 milyon örnek gönderdi; 82 yama; yönlendirmeli tamamlama %92–100; silinen yanlış
+    255 makale tarandı, ilgili bulunan 212'sinin %42'si 4,7 milyon örnek gönderdi (bakım run'ı 4); 82 yama; yönlendirmeli tamamlama %92–100; silinen yanlış
     şık %57; en düşük olasılıklı token testi 0,72; ezber büyük modelde 2–5 kat; 10 kez geçen dizi ≈ 1.000 kat;
     50 token önek %33, 450 token %65; GSM8k → GSM1k düşüşleri Yi-6B-Chat 8,0, math-shepherd 7,2, phi-2 6,3,
     Llama-3-8B 6,2 … gemini-1.5-pro 0,6; düşüş ↔ üretme olasılığı 0,36 sıra ilişkisi. **73:** işçilerin %42'si
     < 40 sn; ayırt etme %50 → %55; sohbet modeli kitle işçisini ≈ 25 puan geçiyor, etiket başına < 0,003 dolar;
-    ham uzlaşma %90'ı aşsa da puanlar 10 puandan fazla ayrışabiliyor (2026-09-25 düzeltmesi); ikili tercihte insan–insan %63–66; Bavaresco Tablo 1: akıl yürütme
+    ham uzlaşma %90'ı aşsa da puanlar 10 puandan fazla ayrışabiliyor (2026-09-25 düzeltmesi); ikili tercihte insan–insan %66 (bakım run'ı 4: 63 başka koşulun sayısıydı); Bavaresco Tablo 1: akıl yürütme
     adımları 0,82/0,83, diyalog güvenliği −0,24/−0,17 (insan 0,27); ortalama kappa 0,28, sıra ilişkisi 0,50; Shi
-    15 hakem 22 görev > 150 bin karar; Wang 80 sorunun 66'sı; iki sırayla sorma +9,8 ve +14,3; uzunluk kontrolü
+    15 hakem 22 görev > 150 bin karar; Wang 80 sorunun 66'sı; gerekçe önce + iki sıranın ve birkaç örneğin ortalaması birlikte +9,8 (GPT-4) ve +14,3
+    (ChatGPT) — yalnız iki sırayla sormanın etkisi değil (bakım run'ı 4); uzunluk kontrolü
     0,94 → 0,98; kendini tanıma > %50, en büyüğü %73,5, 500 örnekle > %90; 15 hakemin 11'i sahte "%85" cümlesine
     > %70 uyuyor; Dorner: insan verisinin iki katından fazlasının yerine geçemez. **74:** 12 × 12 = 144 baştan
     26 baş, 7 sınıf; logit farkı 3,56, devre %87'sini taşır, %99,3; faz geçişi 2,5–5 milyar token, 0,15 → ≈ 0,4
@@ -4738,11 +4743,12 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     öz-tutarlılıkla makro 30,0; GSM-NoOp yüzde 65'e varan düşüş; Madry CIFAR-10 geniş ağ 95,2 → 3,5 (sıradan) ve
     87,3 → 45,8 (düşmanca eğitilmiş); Cohen 0,5 yarıçapında kanıtlanabilir doğruluk yüzde 49; Athalye dokuz savunmanın
     yedisi, altısı tamamen bir kısmen kırıldı; RobustBench 120'yi aşkın model. **80:** denetimden yedi ay sonra üç
-    hedefin üçü de yeni sürüm; en karanlık tenli kadın altkümesinde hata düşüşü yüzde 17,7–30,4, genel hatada 5,72–8,3;
+    hedefin üçü de yeni sürüm; koyu tenli kadın altkümesinde (bakım run'ı 4: "en karanlık" değil) hata düşüşü yüzde 17,7–30,4, genel hatada 5,72–8,3;
     denetlenmeyen ikisi genel 8,66 ve 6,60, aynı altkümede 31,37 ve 22,50; köken denetimi 1.800+ küme, lisansların
     yüzde 70'inden fazlası belirtilmemiş, kayıtlı olanlarda hata yüzde 50'nin üzerinde, elle izlemeyle yüzde 72 → 30;
     izin denetimi 14.000 alan adı, C4'ün token'larının yüzde 5'i ve en canlı kaynaklarının yüzde 28'i kapalı, kullanım
-    koşullarıyla yüzde 45; 32.111 kart / 74.970 depo = yüzde 44,2, eğitim 74,3, sınırlar 17,4, değerlendirme 15,4,
+    koşullarıyla yüzde 45; 32.111 kart / 74.970 depo = yüzde 42,8 (kaynağın Şekil 1 başlığı; metindeki 44,2 kaynağın iç kayması,
+    #258 emsali — bakım run'ı 4), eğitim 74,3, sınırlar 17,4, değerlendirme 15,4,
     atıf 14,4, çevresel etki 2,0 (639 kart); sistem kartları 33 ve 123 sayfa, yüzden fazla dış kırmızı takım üyesi,
     45 dil, 29 ülke; denetim araç taraması 35 uygulayıcı, 435 araç. **81:** 16×16 yama; 14 piksellik yamada 224 → 256,
     336 → 576 token; CLIP 400 milyon çift, 1,28 milyon örnek kullanmadan eşit doğruluk, 30+ küme; yeniden örnekleyici
@@ -5870,6 +5876,96 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     alarm: 2'deki "NaN" metnin kendisinde ("kayıp NaN oldu"), 27'deki taşma ise dokunulmamış dokuz sütunlu tablonun
     375 px'te `.table-scroll` kabı içinde kaymasıdır (sayfa taşmıyor). Commit yapılmadı. **Sonraki bağlayıcı karar
     numarası #282'dir.**
+282. **Bakım run'ı 4 (2026-10-26, öğleden sonra): kapsam ve dördüncü katman.** Run 3 aynı sabah bitip kullanıcı
+    tarafından commit edilmişti (`e323271`); bu run onun üç katmanını tekrarlamadı. Açık borçlar yeniden denendi ve
+    değişmedi: (f) NeurIPS 2026 bildiri kitabı hâlâ 404 (poster sayfası ve Downloads listesi kabulü gösteriyor), (i) Min-p
+    eleştirisinin TMLR kararı yok (TMLR listesinde değil), (j) NeuronInfer'in Crossref kaydında cilt/sayı yok. **Yeni
+    katman: birincil kaynak olgu denetimi döngüsü** (SOZLESME §4'ün "sayısal iddialar bağımsız doğrulanır" kuralı ve
+    "denetimden gelen olgu hatası" iş kaynağı). Seçim gerekçesi: Faz 7–8 (61–80) serinin makale başına en çok dış kaynak
+    taşıyan bölgesi (ortalama ~25 künye), run 3'ün tek olgu hatası (69 FMTI) oradan çıktı ve §4'ün örnek kuralları
+    (65, 67, 73) oradan doğdu. Run 1'in kaynakları okunmuş çiftleri ve üç kez elden geçen 68 dışarıda bırakıldı (61, 63,
+    68, 76); denetlenen 16 makale: 62, 64, 65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 77, 78, 79, 80. **Döngünün sırası
+    (bağlayıcı değil, öneri):** sonraki run'lar 41–60 (run 1'in çiftleri hariç), ardından 81–102, 1–40 ve 103–118'i
+    alır; her run kapsadığı aralığı HANDOFF'a yazar. Ayrıca bütün seride 611 zamana bağlı cümle (henüz, hâlâ, bugün,
+    sürüyor, yürürlük, "2026'da", "en güçlü model" …) 2026-10-26 durumuna karşı tarandı.
+283. **Olgu denetiminin sonuçları (bakım run'ı 4).** Denetçiler 16 makalede 1.316 iddiayı birincil kaynakla okudu
+    (1.168'i doğru) ve zaman taramasıyla birlikte 186 bulgu verdi (4 BLOCKER, 44 MAJOR, 138 MINOR). Her bulgu ikinci,
+    bağımsız ve çürütmeye yönelik bir şüpheci tarafından kaynağı yeniden açılarak sınandı: 87 doğrulandı, 85 düzeltilerek
+    doğrulandı, 10'u önemsiz (okuru yanıltmıyor), 4'ü çürütüldü. Ana oturum bütün düzenlemeleri bağlamında okuyup karar
+    verdi (bir yinelenen düzenleme düşürüldü, 69 ve 70'teki çakışan önerileri kendisi birleştirdi, dört ifadeyi değiştirdi):
+    257 düzenleme. **Örnek düzeltmeler:** 62'de Brahman ve ark. tablosunun "Güvensiz" ve "İnsanlaştıran" sütun başlıkları
+    yer değiştirmişti ve tablodan çıkarılan sonuç tersine dönmüştü (güvensiz isteklere en az uyan model karşı kümede en çok
+    yanlış reddeden model); 66'da Fanous ve ark.'nın bulgusu ters aktarılmıştı (kaynak gösteren itiraz modeli **en çok**
+    yanıltıyor) ve disiplin maddesi "kaynaklı itiraza uymak öğrenmedir" diyordu → ayıran şey kaynağın doğruluğu; 71'de
+    Zheng ve ark.'nın 5,5 → 1,0 sonucu yalnız ticari modele ait ve harfleri kaldırmak açık modellerde doğruluğu çoğunlukla
+    düşürüyor (llama-30B 53,1 → 49,3), "harfi kaldırmak yanlılığı siler, doğruluğa dokunmaz" disiplini kaldırıldı; 64'te
+    Dromedary karşılaştırmasındaki elli iki bin örnek insan değil öğretmen model yazımıydı ve sandviç deneyinin kazancı
+    "yirmi" değil yaklaşık on puan; 73'te insan uzlaşması %63–66 değil %66, Wang ve ark.'nın +9,8/+14,3'ü yalnız iki sırayla
+    sormanın değil üç düzeltmenin birlikte etkisi, kendini kayırma ile tanıma arasındaki bağ "nedensel" değil nedensellik
+    lehine ilk kanıt; 80'de veri künyesi maddesi genel amaçlı model yükümlülüğünün (Ek XI) değil yüksek riskli sistemin
+    (Ek IV) teknik belgesinde, depoların yüzde 42,8'i (kaynağın Şekil 1'i; metindeki 44,2 kaynağın iç kayması); 67'de
+    Pacchiardi dedektörü dalkavuk yalanlarda 0,42'ye, rastgelenin altına düşüyor, Bürger'in %94'ü tek modelde, Meinke'nin
+    "beş model" sonucu en az bir düzenekte entrika; 69'da Raji ve ark.'nın listesi beş tasarım bileşeni (kaynakta "kaynak"
+    maddesi yok), 96 gösterge notu kalan dört göstergede hiçbir geliştiricinin puan almadığını da söylüyor; 70'te METR'in
+    ortak öğe sayısı üç değil sekiz; 65'te GPT-4 raporunun ve Kadavath'ın sonuçları tek modelin hikâyesi gibi birleşmişti;
+    74'te Wiegreffe–Pinter'in düşman dağılımı sonucu ters okunmuştu; 77'de "çoğu ayarda" → "sık sık" (kaynak "often"); 78'de
+    %92'nin BIG-Bench koşulu; 79'da WILDS'in en kötü grup ve yüzdelik sayıları koşuluyla. **Yayılım (§5):** düzeltmeler 20,
+    63, 66, 67, 70, 72, 73, 76, 80 ve 96'daki geri çağırmalara, özetlere, şekil alt metinlerine ve SVG metinlerine taşındı.
+    **Önceden var olan bir geri gönderme hatası:** 110 Othello sondasını "77. makalede kurulmuştu" diyordu; doğrusu 74.
+    Bağlayıcı olgu kayıtları (#146, #159, #165, #180) ve terim defterinin "model organizması" satırı işlendi.
+284. **Zamana bağlı iddialar (bakım run'ı 4).** 611 cümlenin 301'i dünya durumu iddiası değildi, 261'i tarihli ya da
+    değişmez; 25'i bugünkü durumla doğrulandı, 9'u kontrol edilemedi; 18 bulgu çıktı. **Önemliler:** 68'in "bugünkü
+    sınır dar: model bulunmuş açığı uyguluyor, bulunmamışı bulmuyor" cümlesi yazıldığı sırada bile eskimişti: DARPA AIxCC
+    (8 Ağustos 2025) takımların sistemlerinin 18 gerçek açık bulduğunu, bir sağlayıcının hakemsiz raporu (5 Şubat 2026)
+    500'ü aşkın yüksek önemde açığı doğruladığını, aynı sağlayıcının Şubat 2026 sistem kartı Cybench alt kümesinde 0,93 ve
+    ölçütün doyduğunu bildiriyor → cümleler 2024 ölçümüne bağlandı, sonraki raporlar hakemsiz diye işaretlenerek eklendi;
+    54'te masaüstü ajan farkı kapandı (Mayıs 2026 sistem kartı: doğrulanmış sürümde 83,4, insan 72,4 ama insan yeniden
+    ölçülmedi ve düzenek değişti); 69 ve 20'de şeffaflık endeksinin hakemsiz 2025 turu ortalamayı 58'den 40'a indirdi
+    (iki turda da puanlanan dokuz şirketin yedisi düştü); 70'te iki çerçeve yenilendi (sorumlu ölçekleme politikası 24
+    Şubat 2026'da baştan yazıldı, Ekim 2026 itibarıyla 3.4; sınır güvenliği çerçevesi 17 Nisan 2026'da 3.1) — metin 2025
+    sürümlerini okuduğunu söylüyor, işaret konmadı; 15, 47, 52, 82, 88, 95, 97, 110'da tarihsiz "bugün/hâlâ/en iyi model"
+    kaynağın yılına bağlandı. Yeni kaynakların hepsi ana oturumda birincil sayfadan ayrıca okundu.
+285. **Ön baskı durumu: yeni iki kanal (bakım run'ı 4).** 237 hakemsiz künye / 198 çalışma OpenAlex'in birleştirilmiş
+    konumlarıyla ve Crossref'in bibliyografik aramasıyla tarandı (run 1–3'ün kullanmadığı iki kanal; Crossref 193/193
+    başlık, OpenAlex 182/193 — 11 başlık özel karakter yüzünden 400 aldı). 11 aday çıktı; hepsi künyede zaten doğru
+    etiketliydi (Kalai Nature, Emu3 Nature, HLE Nature, Gated SAE NeurIPS 2024, PromptRobust LAMPS, "VLMs are blind" ACCV,
+    NeuronInfer, Troubling Trends ACM Queue "hakemli değil") ya da OpenAlex'in yanlış birleştirmesiydi (GPT-4 teknik raporu
+    → LIPIcs). **Yeni hakemli kalem yok.** OpenAlex artık anahtarsız isteklere IP başına paylaşılan küçük bir günlük bütçe
+    veriyor (ilk geçişte sorguların yarısı 429 aldı, bütçe yenilenince tamamlandı); ücretsiz anahtar kullanıcı hesabı
+    gerektirir, açılmadı.
+286. **Revizyon işaretleri (bakım run'ı 4, §12).** On yazıya `revised_at: "2026-10-26"`: 54, 62, 64, 66, 67, 68, 69, 71,
+    73, 80. Gerekçeler: 62 sütun başlıkları ve sonuç; 64 Dromedary'nin öğretmen model verisi; 66 Fanous; 67 üç okuma
+    yolunun kanıt sınırları (diff denetimi işaret istedi, ana oturum kabul etti); 68 siber sınır (run 3'ün Costello notuyla
+    birleşik not); 69 FMTI 2025; 71 şık harfi disiplini; 73 nedensellik ve %66; 80 AB yasası ekleri; 54 masaüstü farkı. Not
+    metinleri gövdede adı geçmeyen kaynak adı taşımıyor (62 ve 64'ün ilk notları "CoCoNot"/"Dromedary" diyordu, değiştirildi).
+    **İşaret konmayanlar:** 20, 65, 70, 72, 74, 75, 77, 78, 79 ve zaman düzeltmeleri — tek sayı, koşul, künye ya da tarih
+    düzeltmesi. Üzerine yazılan eski notlar HANDOFF'un bakım run'ı 4 bölümünde birebir duruyor.
+287. **Katalog, şekil ve kelime bandı (bakım run'ı 4).** **Özet kayması (bug-932):** 115–118'in katalogdaki özetleri
+    Batch 28'den beri frontmatter'ın taslak öncesi hâlindeydi ve okura o gösteriliyordu; `sync-series-hashes` yalnız hash ve
+    revizyon alanlarını, `assertCatalogMatch` başlık/slug/hash'i karşılaştırıyor, özeti karşılaştıran yok. Bu run'da
+    değişen 15 özetle birlikte 19 özet frontmatter'dan kataloğa kopyalandı; araç değişikliği yapılmadı (öneri: özet
+    karşılaştırması). **Şekiller:** dokunulan 15 şeklin `aria-label`'ı alt metne eşitlendi; şekil dosyası değişen yazılar 64, 66,
+    70, 71, 72, 73, 74, 77, 78, 79, 80 ve 82 (bir kısmında yalnız `aria-label`, ötekilerde görünen metin düğümü). 75'te şekle yeni basamak çizmek yerine metin şeklin 3/8 dışındaki basamakları
+    gösterdiğini söylüyor. **Kelime bandı:** düzeltmeler 67'yi 3.576, 71'i 3.627, 72'yi 3.518 kelimeye çıkardı; tekrar eden
+    köprü ve özet cümleleri kısaltıldı, hiçbir düzeltme geri alınmadı (71'de giriş köprüsü üç numaralı geri çağırmaya indi,
+    tarihsiz "Bugünün uzman yazımı ölçütleri…" cümlesi çıktı). Son sayımlar 67 ≤ 3.500, 71 ≤ 3.500, 72 ≤ 3.500.
+288. **Süreç ve kapılar (bakım run'ı 4).** Kullanıcı TRIGGER'ı ultracode ve workflow-authoring ile çalıştırdı. Üç sınırlı,
+    salt okunur workflow: denetim (8 denetçi + 2 zaman tarayıcı), şüpheci doğrulama (10), diff denetimi (3 mercek:
+    yayılım, olgu, sözleşme). Kararlar ve düzenlemeler ana oturumda. Diff denetimi BLOCKER bulmadı; 33 bulgu (5 MAJOR: 70 ve 80'de
+    69'un eski hâlini çağıran cümleler, 67'nin eksik revizyon işareti; 28 MINOR). Yinelenenler birleştirilerek 26 düzenleme
+    uygulandı, 67'ye işaret kondu, terim defteri güncellendi; 75'in şekline basamak çizme önerisi yerine metin düzeltildi.
+    Run ortasında bilgisayar kapandı; diff denetimi sonuçsuz kalmıştı ve yeniden koşuldu, öteki işler kayıpsızdı.
+    **Kapılar:** `sync-series-hashes --write`, yazmadan `sync-series-hashes`, `check-series-content --warnings`,
+    `check-series-svg` temiz; izole kopyada (`C:\dev\anil-lib-ai-bakim4`) `pnpm typecheck` 0, 841/841 test (43 dosya),
+    `pnpm build` exit 0 (194 statik sayfa, `/seri/[slug]` 118 yol). **Render:** değişen 29 sayfa × üç genişlik × üç tema
+    Playwright ile ölçüldü (izole kopyada `next dev`, port 3224): 261 satırın hepsi 200; yatay kaydırma, şekil taşması ve
+    konsol hatası yok; 14 yeni bağlantı DOM'da; on yeni revizyon satırı "Gözden geçirildi · 26 Ekim 2026" ile render
+    ediliyor; beklenen 237 metin parçasının 216'sı gövdede, kalan 21'i şekil alt metniydi ve 21'i de SVG `aria-label`'ında
+    bulundu. Üç yanlış alarm: 95'teki "NaN" metnin kendisinde ("kayıp NaN oldu"); 62 ve 67'de 375 px'te taşan öğelerin hepsi
+    `.table-scroll` kabının içinde, sayfa kaymıyor. **Şekil PNG turu:** görünen metni değişen 16 SVG light/dark çekilip
+    gözle incelendi; 64'ün Şekil 3'ünde önceden var olan bir kusur (sol paneldeki "Çubuk yükseklikleri şematiktir; ölçülen
+    olan paylardır." satırı panel ayracına değiyordu) kısaltılarak giderildi ve yeniden çekildi. Yeni yedi bağlantının
+    hepsi 200 ve başlıkları künyeyle tutuyor. Commit yapılmadı. **Sonraki bağlayıcı karar numarası #289'dur.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

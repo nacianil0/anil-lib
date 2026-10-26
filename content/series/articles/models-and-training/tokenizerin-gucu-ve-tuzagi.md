@@ -12,7 +12,7 @@ tags:
   - sozluk-boyu
   - aritmetik
   - turkce
-content_hash: sha256:eefe320f8a3a095ed79a231ae398d82ac1d4a88e38a801a42cffe65fa0f48605
+content_hash: sha256:a453633047031264c421b1c89d4308d881bcf8bd5969e44432b09bc68a416572
 classification_version: 1
 classification_batch: 3
 ---
@@ -85,7 +85,7 @@ Sözlüğün ikinci, daha az konuşulan etkisi üretim tarafında. 10\. makalede
 
 Chaofan Tao ve arkadaşlarının NeurIPS 2024'te yayımladığı çalışma bu dengeyi ölçek yasası çerçevesinde kurdu. 33 milyondan 3 milyar parametreye kadar modelleri, 500 milyar karaktere kadar veriyle, farklı sözlük boylarıyla eğitip üç bağımsız yöntemle aynı soruyu sordular: verilen bir hesap bütçesinde sözlük ne kadar olmalı?
 
-Üç yöntem de aynı yere çıkıyor: **optimal sözlük boyu hesap bütçesine bağlıdır ve büyük modeller büyük sözlük ister.** Buradan çıkan pratik sonuç, bugünkü modellerin çoğunun bu tarafa az pay ayırmış olması. Çalışmanın tahminine göre 70 milyar parametreli bir modelin sözlüğü en az 216 bin olmalıydı; fiilen kullanılan 32 bindi — yaklaşık yedide biri. Tahmini sınadıklarında da doğrulandı: aynı 2,3×10²¹ FLOP bütçesiyle sözlüğü 32 binden 43 bine çıkarmak, ARC-Challenge adlı fen sorusu kümesindeki doğruluğu 29,1'den 32,0'a taşıdı.
+Üç yöntem de aynı yere çıkıyor: **optimal sözlük boyu hesap bütçesine bağlıdır ve büyük modeller büyük sözlük ister.** Buradan çıkan pratik sonuç, çalışmanın yayımlandığı 2024'te yaygın modellerin çoğunun bu tarafa az pay ayırmış olması. Çalışmanın tahminine göre 70 milyar parametreli bir modelin sözlüğü en az 216 bin olmalıydı; fiilen kullanılan 32 bindi — yaklaşık yedide biri. Tahmini sınadıklarında da doğrulandı: aynı 2,3×10²¹ FLOP bütçesiyle sözlüğü 32 binden 43 bine çıkarmak, ARC-Challenge adlı fen sorusu kümesindeki doğruluğu 29,1'den 32,0'a taşıdı.
 
 ![Bir hesap bütçesi çubuğu iki parçaya bölünür: embedding tablosuna giden pay ile katmanlara giden pay; sözlük büyüdükçe embedding payı genişler, dizi uzunluğu kısalır ve toplam bütçenin sabit kaldığı işaretlenir.](assets/sozluk-boyu-tahsisi.svg "Şekil 3 — Sözlük boyu bir bütçe paylaşımıdır")
 

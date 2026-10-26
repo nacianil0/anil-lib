@@ -12,11 +12,11 @@ tags:
   - erisilebilirlik-agaci
   - oge-konumlandirma
   - web-ajani
-content_hash: sha256:6c74945260e92530347b94584360e7f8ae0ec8a0705847af9d5ebd6bec74c2bb
+content_hash: sha256:0b79efb04afaae8b3f5e6b7daf8071b89281aaa1f69459bf9d349436d3249c3a
 classification_version: 1
 classification_batch: 12
-revised_at: "2026-09-25"
-revision_note: "İnsan ile ajan arasındaki farkın ölçüm tarihine bağlı olduğu eklendi; Şekil 3 masaüstünde Eylül 2025'te bildirilen 61,4'ü koşuluyla gösteriyor."
+revised_at: "2026-10-26"
+revision_note: "Masaüstünde Mayıs 2026'da bildirilen 83,4 eklendi: eski insan ölçümünün üstünde, ama insan yeniden ölçülmedi ve değerlendirme düzeneği değişti."
 ---
 ## İnsan için çizilmiş arayüz
 
@@ -70,7 +70,7 @@ Numaralı kutular her yerde işe yaramıyor. Tianbao Xie ve arkadaşlarının Ne
 
 Sayılar: Zhou ve arkadaşlarının 812 görevlik web ortamında insan yüzde 78,2, en iyi ajan 14,4. Jing Yu Koh ve arkadaşlarının ACL 2024'te sunduğu ve görsel bilgi gerektiren 910 görevlik sürümünde insan 88,7, görüntü alabilen en iyi model 16,4. Xie ve arkadaşlarının 369 görevlik masaüstü ortamında insan 72,4 — ve bir görevi ortanca 112 saniyede bitiriyor, web ortamındaki 35 saniyeye karşı —, en iyi ajan 12,2. Christopher Rawles ve arkadaşlarının ICLR 2025'te sunduğu 116 görevlik telefon ortamında insan 80,0, en iyi ajan 30,6. Hongliang He ve arkadaşlarının ACL 2024'te sunduğu 643 görevlik canlı site kümesinde görüntü artı metinle 59,1; bu kümede insan ölçülmedi ve puan 45\. makaledeki gibi bir hakem modelle verildi, insan hakemle uyumu yüzde 85,3.
 
-Bu sayıları okurken bir koşulu akılda tutmak gerekiyor: her biri kendi çalışmasının yayımlandığı andaki en iyi ajanın sayısı, 2024 ve 2025'in modelleriyle, ve bu alanda en hızlı eskiyen sayılar bunlar. Masaüstü ortamı en açık örnek. Anthropic'in Eylül 2025'teki model duyurusu — hakemli olmayan bir laboratuvar bildirimi — ortamın görevleri düzeltilmiş doğrulanmış sürümünde, en çok 100 adım ve dört koşunun ortalamasıyla yüzde 61,4 bildiriyor ve dört ay önceki liderin 42,2 olduğunu yazıyor. Bu, Şekil 3'teki 12,2'nin beş katı ve insanın 72,4'üne yakın; ama düzenek aynı değil: görevler düzeltilmiş, adım sınırı farklı, insan yeniden ölçülmemiş. Uçurumun genişliği bir tarih bilgisidir. Aşağıdaki üç neden ise uçurumun nereden geldiğini söylüyor ve uçurum daralırken de kalan hataların haritasıdır.
+Bu sayıları okurken bir koşulu akılda tutmak gerekiyor: her biri kendi çalışmasının yayımlandığı andaki en iyi ajanın sayısı, 2024 ve 2025'in modelleriyle, ve bu alanda en hızlı eskiyen sayılar bunlar. Masaüstü ortamı en açık örnek. Anthropic'in Eylül 2025'teki model duyurusu — hakemli olmayan bir laboratuvar bildirimi — ortamın görevleri düzeltilmiş doğrulanmış sürümünde, en çok 100 adım ve dört koşunun ortalamasıyla yüzde 61,4 bildiriyor ve dört ay önceki liderin 42,2 olduğunu yazıyor. Bu, Şekil 3'teki 12,2'nin beş katı ve insanın 72,4'üne yakın; ama düzenek aynı değil: görevler düzeltilmiş, adım sınırı farklı, insan yeniden ölçülmemiş. Aynı laboratuvarın Mayıs 2026'daki sistem kartı — o da hakemli değil — değerlendirmeyi yürütme biçimini değiştirdikten sonra aynı doğrulanmış sürümde, en çok 100 adım ve beş koşunun ortalamasıyla yüzde 83,4 bildiriyor: insanın 72,4'ünün üstünde, ama insan yeniden ölçülmemiş. Uçurumun genişliği bir tarih bilgisidir. Aşağıdaki üç neden ise uçurumun nereden geldiğini söylüyor ve uçurum daralırken de kalan hataların haritasıdır.
 
 Uçurumun üç nedeni ölçülmüş.
 
@@ -98,7 +98,7 @@ Ekranın öbür gösterimi değişti. Telefonda erişilebilirlik ağacı işleti
 
 **İşaretleme her yerde işe yaramaz.** Seyrek web sayfasında numaralı kutular kazandırır; yoğun masaüstü ekranında gürültü olur. Çözünürlük, görüntü modelinin eğitildiği ölçeğe uydurulur.
 
-**Uçurum üç yerden gelir.** Yanlış tıklama ve onun açtığı gürültü; yapılabilir görevi yapılamaz ilan etme; platformun gösterim kalitesi. Yayın anlarındaki ölçümde insan beş ortamda yüzde 72 ile 89 arasında, en iyi ajan 12 ile 31; uçurumun genişliği tarihe bağlıdır, masaüstünde Eylül 2025'te bildirilen sayı 61,4.
+**Uçurum üç yerden gelir.** Yanlış tıklama ve onun açtığı gürültü; yapılabilir görevi yapılamaz ilan etme; platformun gösterim kalitesi. Yayın anlarındaki ölçümde insan beş ortamda yüzde 72 ile 89 arasında, en iyi ajan 12 ile 31; uçurumun genişliği tarihe bağlıdır, masaüstünde Eylül 2025'te bildirilen sayı 61,4, Mayıs 2026'da bildirilen 83,4 — insanın 72,4'ünün üstünde; ama insan yeniden ölçülmedi ve düzenek değişti.
 
 **Görüntü, öbür gösterimin boşluğunu dolduruyorsa kazandırır.** Ağaç eksiksizse görüntü kaybettirir; ağaç kusurluysa görüntü tek eksiksiz kaynaktır.
 
@@ -121,4 +121,5 @@ Bu makaledeki ajan ekranı gördü ve tıkladı; ama 48'de bir arayüzün daha e
 - Rawles, C., Clinckemaillie, S., Chang, Y., Waltz, J., Lau, G., Fair, M., Li, A., Bishop, W., Li, W., Campbell-Ajala, F., Toyama, D., Berry, R., Tyamagundlu, D., Lillicrap, T. & Riva, O. (2025). *AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=il5yUQsrjC)
 - He, H., Yao, W., Ma, K., Yu, W., Dai, Y., Zhang, H., Lan, Z. & Yu, D. (2024). *WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models*. ACL 2024. [Bağlantı](https://aclanthology.org/2024.acl-long.371/)
 - Anthropic (2025). *Introducing Claude Sonnet 4.5*. Resmî model duyurusu, hakemli değil (29 Eylül 2025). [Bağlantı](https://www.anthropic.com/news/claude-sonnet-4-5)
+- Anthropic (2026). *System Card: Claude Opus 4.8*. Resmî sistem kartı, hakemli değil (28 Mayıs 2026). [Bağlantı](https://www.anthropic.com/claude-opus-4-8-system-card)
 - Agashe, S., Han, J., Gan, S., Yang, J., Li, A. & Wang, X. E. (2025). *Agent S: An Open Agentic Framework that Uses Computers Like a Human*. ICLR 2025. [Bağlantı](https://openreview.net/forum?id=lIVRgt4nLv)

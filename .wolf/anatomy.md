@@ -1,321 +1,144 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-26T07:45:03.614Z
-> Files: 362 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-10-26T16:31:22.401Z
+> Files: 35 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
 
-- `apply.py` — Apply accepted edits mechanically: exact single-line substring, must occur exactly once. (~459 tok)
-- `bug_hash68.json` (~334 tok)
-- `bug_more.py` — 2 (~519 tok)
-- `buglog_add.py` (~140 tok)
-- `cluster.py` — find, union, line_text (~802 tok)
-- `collect.py` (~180 tok)
-- `compare.py` — Compare this run's proposed edits with the earlier session's verifier edits (independent second opin (~926 tok)
-- `conv.py` (~362 tok)
-- `finalize.py` — Main-session decisions applied on top of the workflow's proposed edits -> wf3/final_edits.json (~1144 tok)
-- `memory_append.md` — , catalog.json | sync + iki kapı temiz | ~1M (ajan) | (~323 tok)
-- `mkgroups.py` (~470 tok)
-- `mkspec.py` (~496 tok)
-- `review.py` — Print every cluster verdict with a compact word diff of each edit, for main-session review. (~409 tok)
-- `summ.py` (~235 tok)
-- `tx.py` (~381 tok)
-- `urlcheck.py` — curl (~628 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/
 
-- `review_fixes.json` (~569 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/A-borclar/
 
-- `bibq.py` (~150 tok)
-- `build_results.py` — sayfa (~6729 tok)
-- `colm.py` (~705 tok)
-- `edits.py` (~2017 tok)
-- `emnlp.py` — strip_link, latex_clean, norm, surname_from_bibauthor (~1406 tok)
-- `fetch.py` (~390 tok)
-- `nips.py` — text (~482 tok)
-- `pmlr.py` (~655 tok)
-- `show.py` (~455 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/B-iki-kimlik-1/
 
-- `build.py` — E (~4374 tok)
-- `edits.py` — L (~2896 tok)
-- `fetch.py` — fetch (~373 tok)
-- `s1.py` — /*.md", recursive=True) + glob.glob(REPO + "docs/**/*.md", recursive=True) (~314 tok)
-- `s2.py` (~288 tok)
-- `s3.py` (~707 tok)
-- `s4.py` — raw (~382 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/C-iki-kimlik-2/
 
-- `body.py` (~620 tok)
-- `build_edits.py` (~1153 tok)
-- `cache_look.py` (~376 tok)
-- `cache2.py` (~357 tok)
-- `conv.py` — show (~345 tok)
-- `fetch.py` (~208 tok)
-- `find_occ.py` (~500 tok)
-- `lists_look.py` (~286 tok)
-- `others.py` (~281 tok)
-- `pdftext.py` — crude: decompress the first N flate streams and pull text from TJ/Tj operators (~441 tok)
-- `write_results.py` — ed, linkinghub (~6814 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/D-adres-bicimi/
 
-- `check_edits.py` (~704 tok)
-- `conv.py` (~377 tok)
-- `gather.py` — norm (~1046 tok)
-- `results.json` (~6596 tok)
-- `wb.py` (~520 tok)
-- `wb2.py` — NoRedir: get, redirect_request (~650 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/E-yazar-baslik-1/
 
-- `s1_cache.py` (~294 tok)
-- `s10_wb_r2e.py` (~275 tok)
-- `s11_edits.py` (~3280 tok)
-- `s12_results.py` — add (~5587 tok)
-- `s2_bib.py` (~271 tok)
-- `s3_cur.py` (~175 tok)
-- `s4_lists.py` (~280 tok)
-- `s5_fetch.py` (~720 tok)
-- `s6_arxiv.py` (~402 tok)
-- `s7_conv.py` (~201 tok)
-- `s8_fetch2.py` — get (~531 tok)
-- `s9_wayback.py` (~350 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/F1-yazar-baslik-2/
 
-- `bibsearch.py` (~133 tok)
-- `build.py` — line_of (~1108 tok)
-- `fetch.py` — get (~366 tok)
-- `lists.py` — norm (~412 tok)
-- `look.py` (~544 tok)
-- `results_build.py` — edits_for (~5299 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/F2-yazar-baslik-3/
 
-- `fetch.py` — get (~268 tok)
-- `results.json` (~666 tok)
-- `s1_lines.py` (~158 tok)
-- `s10_edits.py` (~952 tok)
-- `s11_build.py` — ed (~5681 tok)
-- `s2_cache.py` (~233 tok)
-- `s3_bib.py` (~288 tok)
-- `s4_meta.py` (~235 tok)
-- `s6_arx.py` (~226 tok)
-- `s7_pdf.py` — streams, unesc, text_of (~656 tok)
-- `s8_iclr23.py` (~256 tok)
-- `s9_pdfgrep.py` (~315 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/G1-olu-yanlis-hedef/
 
-- `bib_look.py` (~202 tok)
-- `build_results.py` — ed, de (~6973 tok)
-- `cache_look.py` (~362 tok)
-- `edits.py` (~1190 tok)
-- `fetch_books.py` — get (~674 tok)
-- `fetch_records.py` — getj (~1105 tok)
-- `fetch_records2.py` — getj (~840 tok)
-- `fetch_web.py` — NoRedirect: get, redirect_request, title_of (~1274 tok)
-- `pdfgrep.py` (~198 tok)
-- `show_records.py` (~651 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/G2-etiket-yeni-hakemli/
 
-- `build_results.py` (~5898 tok)
-- `cr.py` — get (~616 tok)
-- `edits.py` (~1248 tok)
-- `fetch.py` (~362 tok)
-- `lists.py` — norm (~228 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/olgu/
 
-- `findings.json` (~1055 tok)
-- `q1.py` (~499 tok)
-- `q2.py` — summ (~781 tok)
-- `q3.py` (~435 tok)
-- `q4.py` (~909 tok)
-- `q5.py` (~389 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/sozlesme/
 
-- `cross.py` — /*.md', recursive=True)) (~1166 tok)
-- `findings.json` (~1242 tok)
-- `fmt.py` (~742 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/yayilim/
 
-- `findings.json` (~1907 tok)
-- `occ.py` — /*.md', recursive=True) (~762 tok)
-- `occ2.py` — /*.md', recursive=True) (~1108 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/
+
+- `apply.py` — Apply accepted edits mechanically: exact single-line substring, must occur exactly once. (~530 tok)
+- `buglog4.py` — Append run-4 bug entries to .wolf/buglog.json without reformatting the rest of the file. (~1328 tok)
+- `factcheck4.py` — Main-session spot check of the time-bound fixes: fetch each source, grep the key phrases. (~647 tok)
+- `finalize4.py` — Main-session decisions on top of the skeptics' edits -> wf4/final_edits.json. (~915 tok)
+- `mkspec4.py` — Build the Playwright measurement spec for run 4's changed pages: slug, expected new texts, new hrefs (~629 tok)
+- `net.py` — Tiny stdlib HTTP helper for the maintenance run (urllib; no third-party deps). (~526 tok)
+- `postcheck4.py` — Post-apply checks for run 4: new URLs, alt↔aria-label for touched figures, forbidden forms in added (~824 tok)
+- `preview4.py` — Show edited text in context: apply the edit list in memory and print each changed span with context. (~280 tok)
+- `review4.py` — Build the accepted-edit list and print a compact word-diff review per article. (~708 tok)
+- `revmarks4.py` — Set §12 revision fields (revised_at + revision_note) for run 4; preserves CRLF/LF and BOM. (~1023 tok)
+- `scope.py` — /*.md", recursive=True)): (~1179 tok)
+- `status_sweep.py` — Peer-review status sweep for not-peer-reviewed works via two channels runs 1-3 did not use: (~1182 tok)
+- `syncalt4.py` — /*.md", recursive=True): (~354 tok)
+- `syncsummary.cjs` — Copy frontmatter `summary` into content/series/catalog.json where they differ (CRLF, 2-space round-t (~281 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/
+
+- `round2.json` (~2179 tok)
+- `trim67.json` (~872 tok)
+- `trim71.json` (~1461 tok)
+- `trim7172.json` (~559 tok)
+- `trim71b.json` (~411 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/audit-77-65/tools/
+
+- `check_old.py` (~176 tok)
+- `clean_latex.py` (~131 tok)
+- `olds.json` (~626 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g67-66/scripts/
+
+- `edits.py` — ve (~3608 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g71-80/
+
+- `chk.py` (~130 tok)
+- `dry.py` (~267 tok)
+- `edits.json` (~4994 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g73/
+
+- `check.py` (~362 tok)
+- `edits.json` (~2316 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g74-62/
+
+- `edits.json` (~2124 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g74-62/scripts/
+
+- `chk.py` (~320 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g77-65/tools/
+
+- `check.py` (~265 tok)
+- `edits.json` (~1842 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/b2ff9965-4841-407d-911f-80e83f3a9f4b/scratchpad/
 
-- `arastirma-run5.md` — 21. Run 5 kaynak kanalları ve tuzaklar (2026-10-26) (~4137 tok)
-- `avail.py` (~270 tok)
-- `h2t.py` — P: handle_starttag, handle_endtag, handle_startendtag, handle_data (~889 tok)
-- `html2txt.py` — P: handle_starttag, handle_endtag, handle_data, main (~599 tok)
-- `restperm.py` — text (~409 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/
 
-- `bib.py` — /*.md", recursive=True)): (~975 tok)
-- `measure.mjs` — DOM measurement for changed series pages: 3 widths x 3 themes. (~984 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/borc_bcf/
 
-- `author_pass.py` — Second pass: first-author surname + title token overlap against a proceedings list. (~543 tok)
-- `fetch.py` — Fetch a URL into the dl/ folder (untrusted data). Usage: python -I fetch.py <url> <outname> (~425 tok)
-- `match_nips_downloads.py` — norm (~432 tok)
-- `parse_colm.py` — norm (~624 tok)
-- `parse_pmlr.py` — norm (~838 tok)
-- `pdftext.py` — Crude PDF text extraction (FlateDecode + Tj/TJ). Usage: python -I pdftext.py <pdf> <out.txt> [maxstr (~506 tok)
-- `results.json` (~6610 tok)
-- `select.py` (~293 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/crossref_rel/
 
-- `analyze.py` — Analyse sweep.jsonl: update relations, title/author/year mismatches, nonexistent DOIs. (~1921 tok)
-- `authors.py` — Compare kunye author lists with Crossref author lists (family names, count, order). (~930 tok)
-- `build_results.py` (~6564 tok)
-- `dois.py` — Collect every DOI from bib.json (links re-parsed from raw so nested parentheses survive). (~881 tok)
-- `epmc_sweep.py` — Second channel: Europe PMC commentCorrection list for every DOI (resumable). (~614 tok)
-- `epmc.py` — Europe PMC: find a DOI's record (PMID/PMCID), print abstract and full text (if open). (~560 tok)
-- `extra.py` — Extra: kunyes whose publisher link carries no DOI -> look the DOI up in Crossref by title, read upda (~811 tok)
-- `handles.py` — doi.org handle API for every DOI (existence + resolving URL); resumable. (~524 tok)
-- `notices.py` — Fetch Crossref records of every update notice found in analysis.json (sequential, 1 req/s). (~643 tok)
-- `survey.py` (~300 tok)
-- `sweep.py` — Resumable Crossref sweep: /works/<doi> + /works?filter=updates:<doi>; 404 -> doi.org handle API (+ D (~1369 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/dogrula-r3-x7/
 
-- `check_edits.py` (~185 tok)
-- `cr.py` — get, brief (~661 tok)
-- `fetch.py` — fetch, summarize (~703 tok)
-- `results_full.json` — Declares journal (~14596 tok)
-- `results.json` (~1050 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/dogrula-r3x/scripts/
 
-- `build.py` — E (~15059 tok)
-- `cr.py` — auth, show (~507 tok)
-- `ctx.py` (~204 tok)
-- `fetch.py` (~518 tok)
-- `meta.py` (~130 tok)
-- `urls_arxiv.txt` (~53 tok)
-- `urls_cost.txt` (~182 tok)
-- `urls_crossref.txt` (~277 tok)
-- `urls_pdf.txt` (~129 tok)
-- `urls_web.txt` (~409 tok)
-- `urls_web2.txt` (~110 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/dogrula-v3/
 
-- `arx.py` (~373 tok)
-- `build_results.py` — R (~9293 tok)
-- `colm.py` (~349 tok)
-- `colm2.py` (~473 tok)
-- `dumps.py` (~416 tok)
-- `edits_check.py` (~4619 tok)
-- `getpdf.py` (~281 tok)
-- `govai.py` (~270 tok)
-- `llama.py` — title (~503 tok)
-- `net.py` — NoRedir: fetch, redirect_request (~705 tok)
-- `pages.py` — meta, title (~740 tok)
-- `xref.py` (~685 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/kabul1/
 
-- `acl_parse.py` — Parse anthology.bib.gz into a compact JSONL of (key, title, authors, booktitle/journal, year, url, d (~576 tok)
-- `aclcheck.py` — ACL-family labels vs Anthology: find same-title record; compare venue family (main/findings/workshop (~731 tok)
-- `analyze.py` — venue_tokens (~531 tok)
-- `arxiv_api.py` — Query export.arxiv.org for every arXiv id in bib.json (40 per call, 3 s apart). Resumable: arxiv.jso (~717 tok)
-- `arxiv_report.py` (~439 tok)
-- `authcmp.py` — Compare bib author surname sequence with the official list record (exact title matches only). (~789 tok)
-- `author_pass.py` — Author-only pass: for non-peer-reviewed bib entries, list records (2024+) sharing first author + >=2 (~815 tok)
-- `build_lists.py` — Parse every downloaded acceptance list into lists.jsonl: {src, venue, year, title, authors[], url, e (~2955 tok)
-- `build_results.py` — Assemble results.json for the StructuredOutput (data in findings_data.json + coverage_data.json). (~262 tok)
-- `cands.py` (~573 tok)
-- `candset.py` (~612 tok)
-- `coverage_data.json` — 64 dosya, docs/seri-boun, docs/seri-guvenlik, content/series-guvenlik altında yeni klasörler, .wolf/ (~3124 tok)
-- `crossref_dois.py` (~356 tok)
-- `crossref_report.py` — norm (~350 tok)
-- `crossref_title.py` — Crossref bibliographic search for non-peer-reviewed bib entries (journal/proceedings versions). Sequ (~875 tok)
-- `explore.py` (~216 tok)
-- `fetch_many.py` — fetch_many.py LISTFILE : each line 'url outname'; skips existing nonempty files; logs to fetchlog.js (~356 tok)
-- `fetch.py` — fetch.py URL OUTPATH [--head] : download with browser-like UA, print status/size/final url. (~434 tok)
-- `findings_data.json` (~9882 tok)
-- `inspect_json.py` (~202 tok)
-- `labelcheck.py` — Systematic reverse check: every bib entry labelled with a venue+year we hold a full list for must ap (~1019 tok)
-- `list1.txt` (~329 tok)
-- `list2.txt` (~121 tok)
-- `list3.txt` (~130 tok)
-- `match.py` — Match every bib entry against lists.jsonl (run-2 method). Output matches.jsonl. (~1605 tok)
-- `openalex26.py` — OpenAlex fallback for the arXiv ids Semantic Scholar did not return: list every location/source of t (~380 tok)
-- `orcheck.py` — Map every OpenReview forum id in bib.json to the official dumps/lists; compare label (venue family/y (~810 tok)
-- `pdfhead.py` — Crude first-page text from a PDF (Flate streams, TJ/Tj strings). Usage: pdfhead.py file.pdf [nstream (~241 tok)
-- `peercheck.py` — Reverse check: peer-labelled bib entries vs strong list matches (venue family / year / track). (~1660 tok)
-- `s2_batch.py` — Semantic Scholar paper/batch for every arXiv id (small batches, backoff on 429). Resumable: s2.jsonl (~452 tok)
-- `s2_report.py` (~510 tok)
-- `titlediff.py` — For peer-labelled entries: same-venue/year list record with first-author hit but different title -> (~528 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/linkcheck/
 
-- `alt_channels.py` — Alternative official channels for walled / unreachable targets: doi.org handles, NCBI E-utilities, W (~1006 tok)
-- `arxiv_q.py` — Query export.arxiv.org for every arXiv id in batches of 40 (3 s gap). Resumable. (~878 tok)
-- `arxiv_report.py` (~425 tok)
-- `arxiv_title.py` — arXiv API title search for a few works, printing author lists (3 s between calls). (~378 tok)
-- `author_check.py` — Compare bibliography author lists with the target page's author list (citation_author / arXiv). (~891 tok)
-- `author_detail.py` (~261 tok)
-- `build_results.py` — Assemble results.json (findings + coverage) for the link-target layer. (~9323 tok)
-- `common.py` — Shared helpers for the link-target check (read-only over the repo). (~834 tok)
-- `doi_check.py` — Existence check for every DOI via doi.org/api/handles (responseCode 1 = exists, 100 = not found). Re (~560 tok)
-- `dupes.py` — Same work (normalized title) linked under different identities across the series. (~739 tok)
-- `links.py` — Build the unique-URL table with categories. (~720 tok)
-- `name_in_page.py` — Fetch pages and report whether given surnames occur anywhere in the body (visible text or PDF first (~709 tok)
-- `net.py` — HTTP fetch helper: status, final URL, title, PDF first lines. (~2296 tok)
-- `or_check.py` — Verify OpenReview ids against conference dumps and lists (no openreview.net access). (~1422 tok)
-- `or_fetch.py` — Download conference dumps / lists used to verify OpenReview ids (to ../linkcheck_src/). (~395 tok)
-- `pdfgrep.py` — pdfgrep.py <url> [first_page last_page] [regex] : run pdftotext on the cached download of url. (~287 tok)
-- `pmlr306.py` — Match ICML 2026 items against the new PMLR v306 index. (~709 tok)
-- `retry.py` — Retry selected URLs (urllib then curl). Usage: retry.py [--curl] url1 url2 ... | retry.py --auto (~469 tok)
-- `sweep_web.py` — Fetch every non-DOI, non-arXiv, non-OpenReview link once (resumable). Per-host serial, 1.2 s gap. (~459 tok)
-- `web_report.py` — Compare fetched page titles with bibliography titles; flag suspects. (~764 tok)
-- `write_results.py` — sayfalar, sayfadaki (~2464 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/verify3/
 
-- `arxiv_parse.py` (~286 tok)
-- `dryrun.py` (~224 tok)
-- `fetch.py` — NoRedirect: redirect_request, fetch (~696 tok)
-- `results.json` (~12278 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/e6106818-ba07-4599-83c4-cae30bc2a6dc/scratchpad/verify_bulgu_b/
 
-- `crossref.py` — Crossref lookups, 1 req/s sequential. Usage: python -I crossref.py <doi> [<doi> ...] (~492 tok)
-- `fetch.py` — fetch, save (~497 tok)
-- `grephtml.py` — Grep an HTML file (tags kept) for a needle and print raw context. Usage: python -I grephtml.py <file (~177 tok)
-- `insp_cooper.py` — txt (~449 tok)
-- `pdftext.py` — Minimal PDF text grep: decompress Flate streams and pull text from TJ/Tj operators. (~547 tok)
-- `qdump.py` — Query a conference orals-posters dump. Usage: python -I qdump.py <dumpfile> <field> <needle> (~255 tok)
 
 ## ../anil-lib-bakim3-render/bakim3-render/
 
-- `common.mjs` — Logs in once (Server Action form) and stores the session; reuses it if still valid. (~1290 tok)
-- `cta-contrast.mjs` — Compares the landing CTA (bg-accent text-white, pre-existing) with the reset confirm button. (~464 tok)
-- `dp-gap.mjs` — Article 22, agirlikli-aralik-dp-tablosu.svg: real ink extents of the table columns (rows y >= 250), (~1114 tok)
-- `fig-shot.mjs` — Seçilen makalelerdeki seçilen şekillerin light/dark ekran görüntüsü (bakım run 3 doğrulaması). (~437 tok)
-- `geometry.mjs` — BOUN real-render geometry gate (maintenance run 3, 2026-10-26). (~6497 tok)
-- `ink-boxes.mjs` — Prints ink boxes (10x canvas metrics) of the text runs of one SVG whose y lies in a range. (~550 tok)
-- `pageerror-probe.mjs` — Bir sayfayı taze bağlamlarla N kez açıp pageerror ve 4xx/5xx yanıtları toplar (gezici hata ayrımı). (~320 tok)
-- `probe.mjs` — Declares browser (~644 tok)
-- `probe2.mjs` — Method check: list text runs whose SVG advance differs from canvas width, or whose (~506 tok)
-- `themes.mjs` — BOUN real-render theme gate (maintenance run 3, 2026-10-26). (~5416 tok)
-- `w375.mjs` — Rendered figure widths and effective 13-unit label size per viewport width (article 23 + global min) (~336 tok)
-- `zoom.mjs` — Zoomed visual confirmation of geometry.mjs "metin-çizgi" candidates (text ink box entered by a strok (~805 tok)
 
 ## ../anil-lib-ux/artifacts/ux/
 
@@ -683,196 +506,93 @@
 
 ## artifacts/bakim3-2026-10-26/ana/
 
-- `arastirma_yaz.py` — ARASTIRMA.md: başlık paragrafını güncelle ve §21'i sona ekle (CRLF korunur). (~289 tok)
-- `arastirma-21.md` — 21. Bakım run'ı 3'te doğrulanan kaynaklar ve düzeltmeler (2026-10-26) (~3493 tok)
-- `etiket_kaydir.py` — Kenar çizgisine binen kısa etiketler için gereken yatay kaydırmayı hesaplar. (~703 tok)
-- `filozof_model.py` — Makale 30'un filozof modellerini sayar: her filozof 0 = ilk çatalı bekliyor/düşünüyor, (~500 tok)
-- `handoff_yaz.py` — HANDOFF.md'yi run 3 için günceller (CRLF korunur). (~952 tok)
-- `handoff-bakim.md` — Bundan sonrası: bakım (~942 tok)
-- `handoff-borclar.md` — Açık borçlar (2026-10-26 bakım run'ı 3'ten sonra) (~538 tok)
-- `handoff-dogrulama.md` — Bu run'da doğrulananlar (bakım run'ı 3, 2026-10-26) (~618 tok)
-- `handoff-run3.md` — Bakım run'ı 3'te ne yapıldı (2026-10-26) (~869 tok)
-- `handoff-sorunlar.md` (~668 tok)
-- `kilit_model.py` — Makale 31'in iki kilitli modelini bırakma sırasına göre sayar (ana oturumun bağımsız hesabı). (~430 tok)
-- `kontrast_kayit.py` — Koyu tema kontrast düzeltmesinin kayıtları: HANDOFF, ARASTIRMA §21.4, OpenWolf. (~1642 tok)
-- `wolf_yaz.py` — OpenWolf kayıtları: buglog (yeni girdiler), cerebrum (öğrenimler, tekrar etme, karar), memory satırl (~2809 tok)
 
 ## artifacts/bakim3-2026-10-26/denetim/
 
-- `denetim.py` — -*- coding: utf-8 -*- (~14090 tok)
-- `selftest.py` — -*- coding: utf-8 -*- (~1866 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/
 
-- `birlestir.py` — Bulgular + şüpheci hükümlerini birleştirir, kısa tablo basar. (~408 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k1/
 
-- `alinti_denetle.py` — k1 bulgularının alıntılarını ve yayılım alıntılarını dosyada birebir arar; gövde kelime sayısını yaz (~1264 tok)
-- `dogum_gunu.py` — k1-15: 27 kişide doğum günü çakışma olasılığının tam değeri (kesirli aritmetikle). (~261 tok)
-- `pdf_ara.py` — Bir PDF'in metnini çıkarıp verilen düzenli ifadelerin çevresini yazar. (~218 tok)
-- `uyari_acilislari.py` — BOUN korpusunda paragraf başında 'uyarı' etiketiyle açılan satırları listeler (k1-07 yayılımı). (~183 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k2/
 
-- `alinti_denetim.py` — k2: bulgu alintilari ve yayilim alintilari dosyada birebir (ve tek) geciyor mu? (~1692 tok)
-- `ezber_kapanis.py` — Ezber kapanisi varyantlarinin paragraf sonu olup olmadigini ve son iki cumlesini yazdirir. (~428 tok)
-- `hesap_dogrulama_k2.py` — k2 kumesi icin bagimsiz hesaplar (dogrulayici, 2026-10-26). (~1623 tok)
-- `kelime_say.py` — k2 makalelerinin duzyazi kelime sayisi (check-series-content.cjs mantiginin Python esi). (~336 tok)
-- `pdf_metin.py` — Basit PDF metin cikarici: FlateDecode akislarini acar, Tj/TJ metnini toplar. (~434 tok)
-- `svg_parse.py` — k2 dogrulama: BOUN SVG'lerinin hepsini XML olarak ayristir. (~135 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k3/
 
-- `k3_hesap.py` — k3 kümesi bağımsız doğrulama hesapları (bakım 3, 2026-10-26) (~798 tok)
-- `k3_svg_xml.py` — k3-18: BOUN SVG'lerinin XML iyi biçimliliği (bağımsız tarama) (~153 tok)
-- `k3_uygula_kontrol.py` — k3: önerilen son düzeltmeleri ve yayılım değişikliklerini BELLEKTE uygular (diske yazmaz); (~3954 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k4/
 
-- `k4_metin_kontrol.py` — k4: alt metin kelime sayısı ve önerilen metinlerin dosyada birebir bulunduğunun denetimi. (~779 tok)
-- `k4_skeptik.py` — k4 kümesi şüpheci doğrulaması — bağımsız hesaplar (denetçinin betikleri kullanılmadı). (~1836 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k5/
 
-- `k5_3sat_bagimsiz_kume.py` — k5-12 bağımsız doğrulama: 3SAT -> bağımsız küme indirgemesi. (~758 tok)
-- `k5_bellman_ford.py` — k5-02 / k5-03 bağımsız doğrulama (skeptik). (~888 tok)
-- `k5_kelime_bandi.py` — check-series-content.cjs countProseWords mantığının Python taklidi; düzeltme öncesi/sonrası bant den (~1728 tok)
-- `k5_sayilar.py` — k5-04 / k5-05 / k5-06 / k5-18 bağımsız sayısal denetimler. (~316 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k6/
 
-- `alinti_kontrol.py` — verify that each k6 finding quote and each propagation quote occurs verbatim in its file (~714 tok)
-- `k6_dogrulama.py` — k6 skeptic verification script (independent of the auditor's scripts) (~1410 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k7/
 
-- `k7_alt_sayim.py` — k7-04 ve k7-17 alt metin kelime sayımı (düzeltme öncesi/sonrası) ve alıntı eşleşmesi. (~401 tok)
-- `k7_dogrulama.py` — k7 kümesi için bağımsız sayısal doğrulama (denetçinin betikleri kullanılmadı). (~1340 tok)
 
 ## artifacts/bakim3-2026-10-26/dogrulama/k8/
 
-- `alinti_k8.py` — k8: bulguların alıntıları dosyada birebir geçiyor mu, hangi satırda, kaç kez (~1282 tok)
-- `kelime_k8.py` — k8: dört makalenin düzyazı kelime sayısı (denetleyicinin kuralına benzer kendi sayımım) (~314 tok)
-- `sayim_k8.py` — k8 skeptik doğrulama: omurga/kutu sayımı, heap yüksekliği, kapı derinliği (~552 tok)
 
 ## artifacts/bakim3-2026-10-26/fark/g1-6/
 
-- `dogum_gunu.py` (~86 tok)
 
 ## artifacts/bakim3-2026-10-26/fark/g15-20/
 
-- `asimptotik.py` — crossing of log2 n and n^0.1 (large root) (~111 tok)
-- `medyan.py` — make, solve, T (~188 tok)
 
 ## artifacts/bakim3-2026-10-26/fark/g21-25/
 
-- `kontrol.py` — f, comp, bf (~1133 tok)
 
 ## artifacts/bakim3-2026-10-26/fark/g26-33/
 
-- `durumlar.py` — Bakim 3 fark denetimi, grup 26-33: durum sayilarini yeniden hesapla. (~1007 tok)
 
 ## artifacts/bakim3-2026-10-26/fark/g34-41/
 
-- `alt_words.py` — g34-41: count words in changed alt texts and figure titles; check title punctuation and note lengths (~654 tok)
-- `svg-measure.mjs` — g34-41 fresh-eyes check: measure text extents of changed SVGs (working tree + HEAD) with Inter 420. (~652 tok)
 
 ## artifacts/bakim3-2026-10-26/fark/g7-14/
 
-- `dogrula.py` — sim (~698 tok)
 
 ## artifacts/bakim3-2026-10-26/kapilar/
 
-- `prerender-summary.cjs` — Summarize .next/prerender-manifest.json of a built copy. (~567 tok)
-- `pw-failures.cjs` — Read a Playwright JSON report and print stats plus non-passing tests. (~519 tok)
-- `run-gates.sh` — BOUN maintenance run 3 (2026-10-26) - re-runnable verification gates on an isolated copy. (~3232 tok)
 
 ## artifacts/bakim3-2026-10-26/linkler/
 
-- `cites.py` — Dump citing Kaynakça lines per URL, and PDF page counts via pdftotext form feeds. (~632 tok)
-- `crossref.py` — Query Crossref for every cited DOI (and, supplementary, DOIs of classic papers cited by URL). (~1327 tok)
-- `crossref2.py` — Full Crossref work records (incl. updated-by / relation) for supplementary DOIs. (~616 tok)
-- `ctx.py` — Print context snippets: python ctx.py <idx> <regex> [width] [maxhits] (~200 tok)
-- `eom_watch.py` — Retry encyclopediaofmath.org every 60 s for up to 12 attempts; log to eom_watch.log. (~307 tok)
-- `extract.py` — Extract every http(s) URL and DOI from BOUN series articles and SVG assets. (~1505 tok)
-- `fetch.py` — Fetch every unique URL with curl (desktop Chrome UA), one retry on failure. (~975 tok)
-- `final.py` — Build final TSV + results.json (one row per unique URL) from fetch.json, titles.json and manual verd (~4959 tok)
-- `needles.py` — Targeted content checks: search fetched bodies (HTML stripped / pdftotext) for needles. (~1162 tok)
-- `ocwpdf.py` — Resolve OCW resource pages to their PDF and print the first lines of page 1. (~514 tok)
-- `ostep.py` — OSTEP: map cited 'Chapter N: Title' to the chapter PDF linked from the home page, (~807 tok)
-- `qpdf.py` — Check quotes of one cite line against a set of local PDFs; report which PDF holds each quote. (~425 tok)
-- `quotes.py` — Check quoted English strings in citing Kaynakça entries against the fetched source text. (~621 tok)
-- `seccheck.py` — Check explicit section/definition claims against a book text (first-occurrence based, TOC-aware). (~805 tok)
-- `titles.py` — Extract HTML <title> / PDF first-page lines for each fetched body. (~653 tok)
-- `toccheck.py` — Check 'N.M Title' and 'N. bölüm (Title' claims in Kaynakça entries against publisher TOCs. (~638 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/
 
-- `goster.py` — Seçilen bulguları tam metinle basar. Kullanım: goster.py onemli | goster.py k1-01 k3-04 ... (~250 tok)
-- `topla.py` — Olgu denetimi workflow çıktısını tek dosyaya toplar ve kısa tablo basar. (~344 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k1/
 
-- `hesap_k1.py` — k1 küme (makale 1-6) sayısal iddialarının bağımsız yeniden hesabı. (~1604 tok)
-- `html_text.py` — Extract visible text from downloaded official pages and print relevant passages. (~253 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k2/
 
-- `hesap_k2_ek.py` — k2 ek hesaplar: 2-3 ağacı seviye sınırı, AVL 10^9 yüksekliği, ikili ağaç 10^9 seviyesi (~286 tok)
-- `hesap_k2.py` — k2 kümesi (makale 7–12) sayısal denetim betiği — bakım run 3, 2026-10-26 (~2262 tok)
-- `pdf_metin.py` — Basit PDF metin çıkarıcı (FlateDecode akışlarındaki Tj/TJ dizgileri) — yalnız okuma amaçlı (~318 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k3/
 
-- `hesap.py` — k3 küme olgu denetimi — bağımsız hesaplar (13–17) (~1605 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k4/
 
-- `k4_hesap.py` — k4 olgu denetimi: makale 18-22 sayısal iddiaları (~2592 tok)
-- `k4_medyan_oran.py` — Makale 20: grup boyutu g için garanti edilen eleme oranı ve pay toplamı (~354 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k5/
 
-- `bf_ornek.py` — 23: Bellman-Ford bes dugumlu ornek onerisi ve 25: 3SAT -> bagimsiz kume ornegi (~556 tok)
-- `k5_hesap.py` — k5 olgu denetimi: 23-27 makalelerinin sayisal iddialarinin yeniden hesabi (~2479 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k6/
 
-- `filozoflar.py` — Makale 30: yemek yiyen filozoflar durum sayıları (82 / 70 / 11) için olası model. (~540 tok)
-- `kilitlenme_dongu.py` — Makale 31: iki kilitli model (her iş parçacığı bir kez: al, al, bırak, bırak). (~778 tok)
-- `sayilar.py` — Küme k6 (makale 28–32): makalelerin kendi tanımlarından sayıların yeniden hesabı. (~835 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k7/
 
-- `a33_sayfa_degistirme.py` — k7 / makale 33: sayfa degistirme izleri, Belady, dongusel is yuku, saat, AMAT (~809 tok)
-- `a34_disk_inode.py` — k7 / makale 34: disk sureleri, bagli ayirma ortalamasi, inode aritmetigi, bit eslemi, erisim sayimla (~663 tok)
-- `a35_a37_hesap.py` — k7 / makale 35 ve 37 hesaplari (~561 tok)
-- `a36_olasilik.py` — k7 / makale 36: kesirli aritmetik ve tam hesaplar (~890 tok)
 
 ## artifacts/bakim3-2026-10-26/olgu/k8/
 
-- `alinti_kontrol.py` — Bulgu alıntılarının dosyada birebir geçtiğini ve satır numarasını doğrular (~1220 tok)
-- `hesap_k8.py` — k8 olgu denetimi — hesap betiği (makale 38, 39, 40, 41) (~828 tok)
 
 ## artifacts/bakim3-2026-10-26/resmi/
 
-- `article_quotes.py` — /*.md"), recursive=True)) (~898 tok)
-- `claims_grep.py` — /*.md"), recursive=True)) (~752 tok)
-- `compare.py` — Search every ledger quote (ARASTIRMA.md §1/§10/§16/§17/§18.1/§19.1/§20.1) in the live text. (~2716 tok)
-- `extract.py` — Extract plain text from the <main id=content> region of saved CmpE pages. (~897 tok)
-- `fields.py` — Tabulate course-page fields and curriculum rows; run absence checks. (~787 tok)
-- `unrecorded.py` — List sentences of the ms-program Application / Pre-evaluation / Scientific Interview / (~509 tok)
 
 ## artifacts/bakim3-2026-10-26/uygula/
 
-- `kur.py` — Doğrulanmış bulgulardan düzenleme listesi kurar; çakışmaları ve eşleşmeyen alıntıları raporlar. (~936 tok)
-- `uygula_docs.py` — Defter (ARASTIRMA) ve yol haritası (YOL-HARITASI) düzeltmeleri: edits.json'daki docs/ girdileri. (~225 tok)
-- `uygula_docs2.py` — YOL-HARITASI'nda makalelerle hizalanması gereken dört ifade. (~256 tok)
-- `uygula.py` — Bakım run 3: ana oturumun onayladığı düzenlemeleri uygular. (~5263 tok)
-- `uygula2.py` — İkinci geçiş: kalıp taramasında kalan dört etiket/sıklık iddiası. (~354 tok)
-- `uygula3.py` — Üçüncü geçiş: kaynaksız mülakat sıklığı iddiaları (SOZLESME §1, §2). (~292 tok)
-- `uygula4.py` — Dördüncü geçiş: fark incelemesinin kabul edilen bulguları ve aynı sınıftaki kaynaksız mülakat (~2677 tok)
 
 ## artifacts/boun-render/
 
@@ -903,16 +623,9 @@
 
 ## artifacts/guvenlik-run5/
 
-- `blok-dogrula.mjs` — Yazıdaki her ```bash bloğunu (ardında ```text bloğu varsa) tek bir bash sürecinde sırayla koşturur (~973 tok)
-- `deney10.sh` — Declares parseOptions (~1137 tok)
-- `deney9.sh` — Declares parseOptions (~1660 tok)
-- `figs.mjs` — Şekil ön denetimi: her SVG'yi üç temanın CSS değişkenleri ve Inter ile tek başına çizer, getBBox ile (~1930 tok)
-- `hash-new.cjs` — Katalogda henüz olmayan yazının content_hash'ini sync-series-hashes.cjs ile aynı kuralla hesaplar (~264 tok)
 
 ## artifacts/guvenlik-run5/render/
 
-- `paged.mjs` — E2E sığma kuralının dört durumu (tests/e2e/series-reader.spec.ts "fits diagrams and tables"), (~992 tok)
-- `shoot.mjs` — Gerçek render ölçümü: yalıtılmış kopyada çalışan üretim sunucusuna depodaki e2e test kimliğiyle gire (~1677 tok)
 
 ## artifacts/owasp-run1/
 
@@ -1099,8 +812,6 @@
 
 ## content/series-guvenlik/articles/collaboration-and-delivery/
 
-- `github-ekip-akisi-push-pr-merge-dagitim.md` — Yeşil iki PR, kırmızı bir main (~11341 tok)
-- `surum-ve-dagitim-etiket-github-release.md` — Aynı ad, iki içerik (~9995 tok)
 
 ## content/series-guvenlik/articles/design-and-configuration/
 
@@ -1119,8 +830,6 @@
 
 ## content/series-guvenlik/assets/github-ekip-akisi-push-pr-merge-dagitim/
 
-- `iki-taraf-bes-karar.svg` (~1595 tok)
-- `yesil-kontrol-baska-birlesim.svg` (~1285 tok)
 
 ## content/series-guvenlik/assets/guvenli-varsayilanlar-yapilandirma/
 
@@ -1136,8 +845,6 @@
 
 ## content/series-guvenlik/assets/surum-ve-dagitim-etiket-github-release/
 
-- `surum-dali-hotfix.svg` (~1632 tok)
-- `tasinan-etiket-iki-surum.svg` (~2319 tok)
 
 ## content/series-guvenlik/assets/tehdit-modelleme-guven-sinirini-cizmek/
 
@@ -1171,8 +878,6 @@
 
 ## content/series/articles/safety-and-evaluation/
 
-- `jailbreak-ve-kirmizi-takim.md` — Ret ilk token'lardaysa, ilk token'lar kimin (~9598 tok)
-- `kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md` — Modelin değil, saldırganın hesabı (~8741 tok)
 
 ## content/series/assets/
 
@@ -1506,12 +1211,11 @@
 
 ## docs/seri-guvenlik/
 
-- `HANDOFF.md` — "Güven Sınırı: Güvenli Yazılım ve Kaynak Kod Yönetimi" — Handoff (~4214 tok)
 
 ## docs/seri/
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~15994 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~186133 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~18322 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~189069 tok)
 
 ## docs/superpowers/plans/
 
@@ -1536,7 +1240,6 @@
 
 ## src/app/
 
-- `accent-contrast.test.ts` — White text may only sit on `--accent-fill`, never on `--accent`. In light and sepia (~895 tok)
 
 ## src/app/api/reader-sync/
 
@@ -1582,12 +1285,9 @@
 
 ## src/components/reader/
 
-- `article-marks.tsx` — ArticleMarks (~1794 tok)
 
 ## src/components/series/
 
-- `series-landing.tsx` — Rota tabanı, ör. "/seri" veya "/boun". (~4072 tok)
-- `series-progress-reset.tsx` — Short series name used inside the confirmation sentence ("… serisindeki"). (~1306 tok)
 
 ## src/lib/
 

@@ -32,7 +32,7 @@
 
   <path d="M 469 94 L 469 112 L 339 112 L 339 100" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3" />
   <polygon points="339,94 335,102 343,102" fill="var(--accent)" />
-  <text x="404" y="126" font-size="13" text-anchor="middle" fill="var(--accent)">4 kez, her seferinde başka ilke</text>
+  <text x="404" y="126" font-size="13" text-anchor="middle" fill="var(--accent)">4 kez, her seferinde rastgele ilke</text>
 
   <text x="20" y="152" font-size="13" fill="var(--text-muted)">182.831 istem (42.496 insan + 140.335 model üretimi); 16 ilke; zararsızlıkta insan etiketi yok.</text>
 

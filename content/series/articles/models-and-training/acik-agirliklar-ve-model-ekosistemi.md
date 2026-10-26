@@ -12,7 +12,7 @@ tags:
   - lisans
   - seffaflik
   - model-ekosistemi
-content_hash: sha256:3044cc745c27885e3ce3eee9ae0c4b3183562c3fc50416f611f272c3f6156098
+content_hash: sha256:83ec6f6fdfe59108a115bcbeb90f7a72e518c52348ffe2200de2e8134f162b30
 classification_version: 1
 classification_batch: 4
 ---
@@ -96,7 +96,7 @@ Kısmen. Ağırlıklar elindeyse modelin bir girdiye ne yanıt verdiğini istedi
 
 Yöntem sade ve 16\. makaledeki cetvel tartışmasının içine oturuyor: yüz ayrı şeffaflık göstergesi tanımlanıyor, sağlayıcılar bu göstergelerde tek tek puanlanıyor. 2023 Ekim'indeki ilk turda on temel model sağlayıcısı puanlandı ve ortalama 100 üzerinden 37'ydi. Mayıs 2024'teki ikinci turda, sağlayıcıların kendi şeffaflık raporlarını sunduğu düzende on dört sağlayıcı puanlandı ve ortalama **58** oldu. İki turdaki sağlayıcı kümesi birebir aynı olmadığı için bu 21 puanlık farkı bir eğilim olarak okumak gerekiyor, tek tek şirketlerin ilerlemesi olarak değil. Çalışmanın hakem sürecinden geçmiş sürümü 2025'te TMLR'de yayımlandı.
 
-Artışın nedeni öğretici: sağlayıcılar, ölçüldüklerini bilerek daha önce hiç açıklamadıkları bilgileri açıkladılar. Ölçüm, ölçtüğü şeyi değiştirdi — bu kez olumlu yönde.
+Artışın nedeni öğretici: sağlayıcılar, ölçüldüklerini bilerek daha önce hiç açıklamadıkları bilgileri açıkladılar. Ölçüm, ölçtüğü şeyi değiştirdi — o iki turda olumlu yönde; Alexander Wan ve arkadaşlarının hakemli olmayan 2025 turunda, gösterge seti değişmişken, ortalama 40'a indi.
 
 Ama nerede iyileşmediği de aynı ölçüde öğretici. En düşük puanlı alanlar iki turda da aynı kaldı: eğitim verisinin telif durumu, veriye erişim, veriyi etiketleyen insan emeğinin koşulları ve modelin aşağı akıştaki etkisi. Yani şeffaflık, ticari riski en düşük olan yerlerde artıyor. Bu, 13\. makalede tanıştığımız aşırı optimizasyon örüntüsünün bir başka yüzü: bir gösterge kümesi hedefe dönüştüğünde, ölçülen boyutlarda ilerleme ölçülmeyenlerin pahasına gelebilir. FAccT çalışmasının kendi uyarısı da bu yöndedir — bir açıklık ölçüsünü tek bir sayıya indirmek, o sayıyı iyileştirmenin en ucuz yolunu aramayı davet eder.
 
@@ -147,4 +147,5 @@ Ve kullanım tarafında her şey tek bir kanaldan geçiyor. Model ister kendi di
 - Open Source Initiative (2024). *The Open Source AI Definition – 1.0*. [Bağlantı](https://opensource.org/ai/open-source-ai-definition)
 - Widder, D. G., Whittaker, M. & West, S. M. (2024). *Why 'open' AI systems are actually closed, and why this matters*. Nature 635, s. 827–833. [Bağlantı](https://www.nature.com/articles/s41586-024-08141-1)
 - Bommasani, R., Klyman, K., Kapoor, S. ve ark. (2025). *The 2024 Foundation Model Transparency Index*. Transactions on Machine Learning Research. [Bağlantı](https://openreview.net/forum?id=38cwP8xVxD)
+- Wan, A., Klyman, K., Kapoor, S., Maslej, N., Longpre, S., Xiong, B., Liang, P. & Bommasani, R. (2025). *The 2025 Foundation Model Transparency Index*. Hakemli olmayan ön çalışma (arXiv:2512.10169). [Bağlantı](https://arxiv.org/abs/2512.10169)
 - Qi, X., Zeng, Y., Xie, T., Chen, P.-Y., Jia, R., Mittal, P. & Henderson, P. (2024). *Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=hTEGyKf0dZ)

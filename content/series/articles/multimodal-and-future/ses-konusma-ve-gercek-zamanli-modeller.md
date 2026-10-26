@@ -5,14 +5,14 @@ slug: ses-konusma-ve-gercek-zamanli-modeller
 category: multimodal-and-future
 level: intermediate
 reading_order: 82
-summary: "Bir önceki makalenin hamlesini sese taşır ve üstüne zamanı ekler: sesin iki ayrı token ailesine — öz-denetimli eğitilmiş anlamsal token'lar ve sinir ses kodlayıcısının artık vektör kuantizasyonuyla ürettiği akustik token'lar — bölünmesini ve ikisini birleştiren melez düzeni; tanımanın öz-denetimden zayıf denetime geçişini ve 680 bin saatlik bir modelin, aynı referans kümede eşit puana sahip denetimli bir modele karşı öteki kümelerde yüzde 55,2 daha az hata yapmasını — 79'un etkin sağlamlık ölçüsünün ses hâli —; üretimin ardışık hattını ve üç saniyelik bir kayıttan ses taklit eden kodek dil modellerini; ve konuşmanın gecikme bütçesini: on dilde ölçülen sıra geçiş boşluğunun modu 0, ortalaması 208 milisaniye iken dört bileşenli bir hattın saniyelere çıkması, buna karşılık uçtan uca bir modelin 12,5 Hz çerçeve hızıyla 160 milisaniyelik kuramsal gecikmeye inmesi. Kapanışta ölçümün nerede durduğunu verir: 27 beceride insan 82,23 iken en iyi model 54,90."
+summary: "Bir önceki makalenin hamlesini sese taşır ve üstüne zamanı ekler: sesin iki ayrı token ailesine — öz-denetimli eğitilmiş anlamsal token'lar ve sinir ses kodlayıcısının artık vektör kuantizasyonuyla ürettiği akustik token'lar — bölünmesini ve ikisini birleştiren melez düzeni; tanımanın öz-denetimden zayıf denetime geçişini ve 680 bin saatlik bir modelin, aynı referans kümede eşit puana sahip denetimli bir modele karşı öteki kümelerde yüzde 55,2 daha az hata yapmasını — 79'un etkin sağlamlık ölçüsünün ses hâli —; üretimin ardışık hattını ve üç saniyelik bir kayıttan ses taklit eden kodek dil modellerini; ve konuşmanın gecikme bütçesini: on dilde ölçülen sıra geçiş boşluğunun modu 0, ortalaması 208 milisaniye iken dört bileşenli bir hattın saniyelere çıkması, buna karşılık uçtan uca bir modelin 12,5 Hz çerçeve hızıyla 160 milisaniyelik kuramsal gecikmeye inmesi. Kapanışta ölçümün nerede durduğunu verir: 27 beceride insan 82,23 iken ön baskının 2024'teki ilk sürümündeki en güçlü model 54,90."
 tags:
   - ses
   - konusma-tanima
   - ses-tokenlari
   - gercek-zamanli
   - gecikme-butcesi
-content_hash: sha256:080d32b663a8df2758fa2bcac4d9f313ec7ff1f8a8a41255947ee44cb2a035b3
+content_hash: sha256:46f885ef573821ab8a59c8c63224706346bab57579924d068184cad829675860
 classification_version: 1
 classification_batch: 19
 ---
@@ -80,7 +80,7 @@ Bütçeyi kısaltmanın ikinci yolu beklemek yerine kestirmek. Erik Ekstedt ve G
 
 Kelime hata oranı uzun süre tek cetveldi ve konuşma tanıma için hâlâ merkezde. Ama sesi anlayan bir modelden beklenen şey yazıya çevirmekten fazlası: kim konuşuyor, hangi tonda, arkada ne sesi var, müziğin ölçüsü ne. Şekil 3 üç ayrı ölçüm katmanını ve bulunduğumuz yeri veriyor.
 
-![Üç satırlı tablo; sütunlar ölçüm katmanı, neyi ölçer, bulunulan yer. Tanıma: kelime hata oranı; aynı referans kümede eşit puana sahip iki modelden zero-shot olanı on iki başka kümede yüzde 55,2 daha az hata yapıyor ve en iyi modeller insanın sağlamlık aralığına giriyor. Temsil kalitesi: dondurulmuş temsilin üstüne küçük başlıklar takılarak on ayrı görevde ölçme; öz-denetimli modelleri aynı yordamla sıralayan ortak bir tahta, ama görev seçimi ölçülen şeyi tanımlıyor. Anlama ve akıl yürütme: konuşma, çevresel ses ve müzikte 27 beceriye yayılan 10 bin klip; insan 82,23, en iyi model 54,90, rastgele tahmin yaklaşık 26. Altta iki kayıt: kelime hata oranı doğru yazılmış ama yanlış anlaşılmış bir cevabı cezalandırmaz; ve yazıya geçmeyen duygu ile vurgu, kusursuz bir transkriptte bile kaybolur.](assets/ses-olcutlerinde-ne-olculuyor.svg "Şekil 3 — Üç ölçüm katmanı: tanıma, temsil, anlama")
+![Üç satırlı tablo; sütunlar ölçüm katmanı, neyi ölçer, bulunulan yer. Tanıma: kelime hata oranı; aynı referans kümede eşit puana sahip iki modelden zero-shot olanı on iki başka kümede yüzde 55,2 daha az hata yapıyor ve en iyi modeller insanın sağlamlık aralığına giriyor. Temsil kalitesi: dondurulmuş temsilin üstüne küçük başlıklar takılarak on ayrı görevde ölçme; öz-denetimli modelleri aynı yordamla sıralayan ortak bir tahta, ama görev seçimi ölçülen şeyi tanımlıyor. Anlama ve akıl yürütme: konuşma, çevresel ses ve müzikte 27 beceriye yayılan 10 bin klip; insan 82,23, ön baskının ilk sürümündeki en güçlü model 54,90, rastgele tahmin yaklaşık 26. Altta iki kayıt: kelime hata oranı doğru yazılmış ama yanlış anlaşılmış bir cevabı cezalandırmaz; ve yazıya geçmeyen duygu ile vurgu, kusursuz bir transkriptte bile kaybolur.](assets/ses-olcutlerinde-ne-olculuyor.svg "Şekil 3 — Üç ölçüm katmanı: tanıma, temsil, anlama")
 
 Shu-wen Yang ve arkadaşlarının Interspeech 2021'de sunduğu ortak tahta, öz-denetimli temsilleri karşılaştırmak için kuruldu: temsil dondurulur, üstüne göreve özgü küçük bir başlık takılır, ve on ayrı görevde aynı yordamla ölçülür. Fikir 16'daki değerlendirme kümesi mantığının temsile uygulanmış hâli — ve 71'in uyarısı burada da geçerli: aynı yordam bütün görevlerde kullanıldığı için karşılaştırma adil, ama görev seçimi ölçülen şeyi tanımlıyor.
 
@@ -104,7 +104,7 @@ Shu-wen Yang ve arkadaşlarının Interspeech 2021'de sunduğu ortak tahta, öz-
 
 **Gecikme bir mimari kısıttır, bir eniyileme ayrıntısı değil.** İnsan sohbetinde sıra geçiş boşluğunun ortak ortalaması 208 milisaniye; bir düzenin bu bütçeye sığıp sığmadığı, bileşen sayısıyla ve çerçeve hızıyla belirlenir.
 
-**Cetvel katmanını adlandırır.** Kelime hata oranı tanımayı ölçer, dondurulmuş temsil tahtası temsili, çok becerili ölçüt anlamayı; 27 becerili sınavda insan 82,23 iken en iyi model 54,90'da.
+**Cetvel katmanını adlandırır.** Kelime hata oranı tanımayı ölçer, dondurulmuş temsil tahtası temsili, çok becerili ölçüt anlamayı; 27 becerili sınavda insan 82,23 iken ön baskının 2024'teki ilk sürümündeki en güçlü model 54,90'daydı.
 
 ### Sırada ne var
 

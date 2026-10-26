@@ -12,7 +12,7 @@ tags:
   - kuantizasyon
   - enerji-butcesi
   - melez-calistirma
-content_hash: sha256:82ec0d64b57821dcc9f8717569e39fef08c4deb8afdbe9e796264d74d6e55bb2
+content_hash: sha256:2526bf1049613be0dac46b75a179bdc7e3c45bcd2c963620209a469e98caed7f
 classification_version: 1
 classification_batch: 21
 ---
@@ -84,7 +84,7 @@ Cihazda çalıştırmanın üç somut gerekçesi var ve üçü de mimariyle ilgi
 
 İkinci gerekçe, üzerinde durmayı hak eden bir kayıt taşıyor. "Cihazda çalışıyor" cümlesi tek başına gizlilik garantisi değildir: modelin ağırlıkları cihazdaysa da istem, uygulamanın kendisine, işletim sistemine ve — melez bir düzende — sunucuya gidebilir. Gizlilik iddiası, hangi verinin hangi sınırı geçtiğine dair somut bir cümleyle birlikte anlamlıdır; 80\. makaledeki belgeleme tartışmasının cihaz tarafındaki karşılığı budur.
 
-Karşı taraf da ölçülmüş. Birincisi kalite tavanı: 87\. makalenin sınırı burada bağlayıcı, çünkü cihaza sığan model küçüktür ve küçük model öğretmeninin ötesine geçmez. İkincisi süreklilik: yukarıdaki ısı ve güç ölçümleri, bir dil modelini arka planda sürekli çalışır tutmanın bugün mümkün olmadığını söylüyor. MobiCom çalışmasının kendi cümlesi bunu iyi özetliyor — bir şeyin çalıştırılabilir olması, dağıtılabilir olduğu anlamına gelmiyor.
+Karşı taraf da ölçülmüş. Birincisi kalite tavanı: 87\. makalenin sınırı burada bağlayıcı, çünkü cihaza sığan model küçüktür ve küçük model öğretmeninin ötesine geçmez. İkincisi süreklilik: yukarıdaki ısı ve güç ölçümleri, bir dil modelini arka planda sürekli çalışır tutmanın, 2024'te ölçülen telefonlarda mümkün olmadığını söylüyor. MobiCom çalışmasının kendi cümlesi bunu iyi özetliyor — bir şeyin çalıştırılabilir olması, dağıtılabilir olduğu anlamına gelmiyor.
 
 Pratikte kurulan düzen bu yüzden melez: kısa, gecikmeye duyarlı ve gizli işler cihazda; uzun, zor ve büyük model isteyen işler sunucuda. Yukarıdaki raporun iki ayrı model yayımlamasının sebebi de bu.
 

@@ -12,7 +12,7 @@ tags:
   - degerlendirme
   - pekistirmeli-ogrenme
   - saglamlik
-content_hash: sha256:9f9f646c4c1a447752f084dfd23826e4699eec6e746c8d254352a2e807c4b271
+content_hash: sha256:3f97eb25245c3b078465a2f218153ca601c1e0c668679dc7b7081ee275c73cc6
 classification_version: 1
 classification_batch: 26
 ---
@@ -32,7 +32,7 @@ Birincisi pekiştirmeli öğrenmeden. 37\. makalede Markov karar sürecini kurmu
 
 David Ha ve Jürgen Schmidhuber'in NeurIPS 2018'de sunduğu çalışma bunu uç bir biçimde gösteriyor. Ajan önce çevreyi gözlemliyor, sonra gördüklerinden bir geçiş modeli öğreniyor; ardından politika **tamamen o modelin ürettiği hayalî çevrenin içinde** eğitiliyor ve gerçek çevreye geri taşınıyor. Bir araba yarışı görevinde tam dünya modelli ajan 100 rastgele denemede 906 ± 21 puan alıyor; o tarihte bildirilen en iyi sonuç 838 ± 11, yaygın bir derin pekiştirmeli öğrenme yöntemininki 343 ± 18 idi.
 
-Bu soyun bugünkü hâli Danijar Hafner, Jurgis Pasukonis, Jimmy Ba ve Timothy Lillicrap'in 2025'te *Nature*'da yayımladığı çalışma. Yöntem yine aynı iskelet — çevrenin bir modelini öğren, davranışı o modelin içinde hayal ederek iyileştir — ama iddia farklı: **tek bir sabit yapılandırmayla** yüz elliden fazla farklı görevde, her biri için ayrı ayarlanmış uzman yöntemlerin üstüne çıkıyor. Aynı yöntem, insan verisi ya da kademeli müfredat olmadan, açık bir oyun dünyasında elmas toplamayı başaran ilk sistem olmuş; bu, seyrek ödül altında uzun vadeli plan gerektiren bir hedef olduğu için alanda bir ölçüt sayılıyordu.
+Bu soyun yakın tarihli bir hâli Danijar Hafner, Jurgis Pasukonis, Jimmy Ba ve Timothy Lillicrap'in 2025'te *Nature*'da yayımladığı çalışma. Yöntem yine aynı iskelet — çevrenin bir modelini öğren, davranışı o modelin içinde hayal ederek iyileştir — ama iddia farklı: **tek bir sabit yapılandırmayla** yüz elliden fazla farklı görevde, her biri için ayrı ayarlanmış uzman yöntemlerin üstüne çıkıyor. Aynı yöntem, insan verisi ya da kademeli müfredat olmadan, açık bir oyun dünyasında elmas toplamayı başaran ilk sistem olmuş; bu, seyrek ödül altında uzun vadeli plan gerektiren bir hedef olduğu için alanda bir ölçüt sayılıyordu.
 
 İkinci soy dil modellerinden ve burada açık bir geçiş fonksiyonu **yok**. Model yalnızca sonraki token'ı tahmin etmek üzere eğitiliyor. Soru şu: bu eğitim, dizilerin ardındaki dünyanın bir modelini **örtük** olarak kurdurur mu? İki soyun ortak yanı "dünya modeli" sözcüğü; ayrıldıkları yer, birinde modelin bir bileşen, ötekinde bir hipotez olması.
 
@@ -50,7 +50,7 @@ Bu, 13\. makaledeki aşırı optimizasyonun ta kendisi. Orada ödül modeli ger�
 
 ## Okunabilir olmak, doğru olmak değildir
 
-Şimdi ikinci soya, dil modellerine dönelim. Bu soruyu ölçmenin bilinen yolu 77\. makalede kurulmuştu: Kenneth Li ve arkadaşlarının ICLR 2023 çalışması, yalnızca Othello hamlelerinin dizisiyle eğitilmiş bir modelde tahta durumunun bir sondayla okunabildiğini, üstelik sonda üzerinden temsile müdahale edilince modelin hamlelerinin buna göre değiştiğini gösteriyordu. Okuma artı müdahale — o tarihten beri bu alandaki en güçlü kanıt biçimi.
+Şimdi ikinci soya, dil modellerine dönelim. Bu soruyu ölçmenin bilinen yolu 74\. makalede kurulmuştu: Kenneth Li ve arkadaşlarının ICLR 2023 çalışması, yalnızca Othello hamlelerinin dizisiyle eğitilmiş bir modelde tahta durumunun bir sondayla okunabildiğini, üstelik sonda üzerinden temsile müdahale edilince modelin hamlelerinin buna göre değiştiğini gösteriyordu. Okuma artı müdahale — o tarihten beri bu alandaki en güçlü kanıt biçimi.
 
 Peki bu kanıt ne kadarını kanıtlıyor? Keyon Vafa, Justin Y. Chen, Ashesh Rambachan, Jon Kleinberg ve Sendhil Mullainathan'ın NeurIPS 2024'te sunduğu çalışma tam bu soruyu soruyor ve cevabı, okunabilirliğin yetmediği yönünde.
 

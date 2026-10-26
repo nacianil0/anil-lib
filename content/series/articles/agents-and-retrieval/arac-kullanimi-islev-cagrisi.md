@@ -12,7 +12,7 @@ tags:
   - arac-tanimi
   - uydurulmus-cagri
   - paralel-cagri
-content_hash: sha256:892a066393fec93e80ead24727ac416783afbfaf5a65fa4557534f7a7f0f1831
+content_hash: sha256:e77ccef5d0be193eb3360c5795eb19f6f83bd6cafd337c11bd74a60cc14374ee
 classification_version: 1
 classification_batch: 11
 ---
@@ -78,7 +78,7 @@ Mekanizma şöyle. Sıradan bir metin parçası al. Modele birkaç gösterimle b
 
 Shibo Hao ve arkadaşlarının NeurIPS 2023'te sunduğu çalışma başka bir cevap veriyor: her aracı sözlüğe **bir token** olarak ekliyor — çıktı katmanında, sıradan sözcüklerin embedding'lerinin yanında araç başına bir satır — ve modelin geri kalanını dondurup yalnızca bu satırları eğitiyor. Model bir araç token'ı seçince araç kipine geçip argümanları yazıyor; 24\. makaledeki özel token'ların araç hâli. Kazanç araç sayısı artınca görünüyor: dört işlemli sıradan matematik sorularında düşün–eyle–gözle düzeniyle fark yok (0,32'ye karşı 0,33), on üç işlemli bir kümenin çok adımlı sorularında 0,06'ya karşı 0,15. Sebep 21\. makaleden: on üç aracın hepsi için gösterim isteme sığmıyor ve gösterimi olmayan araç ya hiç çağrılmıyor ya yanlış argümanla çağrılıyor; araç token'ının eğitimi ise gösterimle sınırlı değil.
 
-Ters yöndeki hata da ölçülüyor: hiç gerekmediği hâlde çağırmak. Patil ve arkadaşlarının liderlik tablosu bunun için ayrı bir kategori tutuyor — araçlar tanımlı ama sorunun hiçbiriyle ilgisi yok, doğru davranış çağırmamak — ve bir adım ötesini de: çok turlu bir sohbette hiçbir aracın isteği karşılayamadığını fark etmek. Tek turlu kategorilerde en iyi modeller yüzde 80 ile 95 bandındayken, eksik işlevi fark etmesi gereken kategoride aynı modelin puanı çağrı kipine göre yüzde 6 ile 41 arasında. Çağırmamayı öğrenmek, çağırmayı öğrenmekten zor.
+Ters yöndeki hata da ölçülüyor: hiç gerekmediği hâlde çağırmak. Patil ve arkadaşlarının liderlik tablosu bunun için ayrı bir kategori tutuyor — araçlar tanımlı ama sorunun hiçbiriyle ilgisi yok, doğru davranış çağırmamak — ve bir adım ötesini de: çok turlu bir sohbette hiçbir aracın isteği karşılayamadığını fark etmek. Bildirinin 2025 tablosunda tek turlu kategorilerde en iyi modeller yüzde 80 ile 95 bandındayken, eksik işlevi fark etmesi gereken kategoride aynı modelin puanı çağrı kipine göre yüzde 6 ile 41 arasında. Çağırmamayı öğrenmek, çağırmayı öğrenmekten zor.
 
 ## Doğru aracı seçmek: kaç araç, hangi araç
 

@@ -12,7 +12,7 @@ tags:
   - adam
   - momentum
   - ogrenme-orani
-content_hash: sha256:665ece40db551e0f4664f74296a17bd539fbaab1b93d6b9946654853c6c17106
+content_hash: sha256:1e34252818c540153b46a956d98c57a76df636594fcadce202c1f03c03e50488
 classification_version: 1
 classification_batch: 23
 revised_at: "2026-09-25"
@@ -130,7 +130,7 @@ Hao Li ve arkadaşlarının NeurIPS 2018'de sunduğu çalışma bunun görselle�
 
 Çünkü düzlük parametrelerin nasıl yazıldığına bağlıdır ve aynı fonksiyon farklı yazımlarda farklı düzlük değeri verir. Cümlenin bilgi taşıması için ölçünün hangi normalleştirmeyle alındığı söylenmeli. 94\. makaledeki KL uyarısıyla aynı kalıp: yönü ya da ölçeği belirtilmemiş bir sayı, sayı değildir.
 
-Bu belirsizlik pratikte seçim yapmayı da zorlaştırıyor. Robin Schmidt, Frank Schneider ve Philipp Hennig'in ICML 2021'de sundukları karşılaştırma, on beş yaygın eniyileyiciyi standart bir düzenekte 50.000'den fazla koşuyla sınıyor ve iki sonuç veriyor: hiçbir yöntem bütün görevlerde açık ara önde değil, ve **birkaç eniyileyiciyi varsayılan ayarlarıyla denemek, tek bir eniyileyicinin hiperparametrelerini ayarlamakla aşağı yukarı aynı sonucu veriyor.** Adam hâlâ güçlü bir aday; sonraki yöntemler onu tutarlı biçimde geçemiyor.
+Bu belirsizlik pratikte seçim yapmayı da zorlaştırıyor. Robin Schmidt, Frank Schneider ve Philipp Hennig'in ICML 2021'de sundukları karşılaştırma, on beş yaygın eniyileyiciyi standart bir düzenekte 50.000'den fazla koşuyla sınıyor ve iki sonuç veriyor: hiçbir yöntem bütün görevlerde açık ara önde değil, ve **birkaç eniyileyiciyi varsayılan ayarlarıyla denemek, tek bir eniyileyicinin hiperparametrelerini ayarlamakla aşağı yukarı aynı sonucu veriyor.** Yazarların 2021'deki hükmü: Adam güçlü bir aday, sonraki yöntemler onu tutarlı biçimde geçemiyor.
 
 ### Sırada ne var
 

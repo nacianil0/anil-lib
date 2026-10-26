@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Dört satırlı tablo; sütunlar katman, kim ve ne zaman yazar, ölçülen ya da olay. Sistem istemi: dağıtan, her istekte; rol olgusal doğruluğu değiştirmiyor, ayrıcalık eğitilmiş, aşırı temkinin kaynağı olabiliyor. Eğitim: sağlayıcı, post-training'de; karakter eğitimi anayasanın çeşitlemesi, insan etiketi yok, özellikler elle izlenir; itiraz verisiyle ince ayar cevap değiştirmeyi yüzde 60 azaltır. Belirtim: sağlayıcı, belgede; dalkavuk olma maddesi, nesnel soruda olgu görüşe göre değişmez, komuta zinciri. Ağırlıkların içi: eğitim verisi ve ince ayar; karakter vektörü, ince ayar kayması 0,76 ile 0,97 ilişkili; altı bin güvensiz kod örneği yüzde 20 hizalanmamış cevap. Altta 2025 Nisan olayı kutusu: bir ticari modelin güncellemesine beğeni sinyali ve bellek eklendi, çevrimdışı değerlendirmeler ve A/B testi iyi, uzman testçiler uyardı, dört gün sonra geri alındı, dalkavukluk değerlendirmesi artık dağıtımı engelleyen ölçüt. En altta değerlerin metindeki kaynaklardan geldiği yazılıdır.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="Dört satırlı tablo; sütunlar katman, kim ve ne zaman yazar, ölçülen ya da olay. Sistem istemi: dağıtan, her istekte; rol olgusal doğruluğu değiştirmiyor, ayrıcalık eğitilmiş, aşırı temkinin kaynağı olabiliyor. Eğitim: sağlayıcı, post-training'de; karakter eğitimi anayasanın çeşitlemesi, insan etiketi yok, özellikler elle izlenir; itiraz verisiyle ince ayar itiraz sonrası doğruluk kaybını yüzde 60 azaltır. Belirtim: sağlayıcı, belgede; dalkavuk olma maddesi, nesnel soruda olgu görüşe göre değişmez, komuta zinciri. Ağırlıkların içi: eğitim verisi ve ince ayar; karakter vektörü, ince ayar kayması 0,76 ile 0,97 ilişkili; altı bin güvensiz kod örneği yüzde 20 hizalanmamış cevap. Altta 2025 Nisan olayı kutusu: bir ticari modelin güncellemesine beğeni sinyali ve bellek eklendi, çevrimdışı değerlendirmeler ve A/B testi iyi, uzman testçiler uyardı, dört gün sonra geri alındı, dalkavukluk değerlendirmesi dağıtımı engelleyen ölçüt olarak sürece ekleniyor. En altta değerlerin metindeki kaynaklardan geldiği yazılıdır.">
   <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--text)">katman</text>
   <text x="150" y="28" font-size="13" font-weight="bold" fill="var(--text)">kim, ne zaman</text>
   <text x="330" y="28" font-size="13" font-weight="bold" fill="var(--text)">ölçülen</text>
@@ -15,7 +15,7 @@
   <text x="150" y="118" font-size="13" fill="var(--text-muted)">sağlayıcı; post-training</text>
   <text x="330" y="118" font-size="13" fill="var(--text)">karakter eğitimi: anayasanın çeşitlemesi, insan</text>
   <text x="330" y="136" font-size="13" fill="var(--text)">etiketi yok, özellikler elle izlenir; itiraz verisiyle</text>
-  <text x="330" y="154" font-size="13" fill="var(--text)">ince ayar cevap değiştirmeyi %60 azaltır</text>
+  <text x="330" y="154" font-size="13" fill="var(--text)">ince ayar itiraz sonrası doğruluk kaybını %60 azaltır</text>
 
   <line x1="20" y1="168" x2="700" y2="168" stroke="var(--border)" stroke-dasharray="3 3" />
 
@@ -39,7 +39,7 @@
   <text x="30" y="354" font-size="13" fill="var(--text)">güncellemeye beğeni–beğenmeme sinyali ve kullanıcı belleği eklendi → dalkavukluğu dizginleyen</text>
   <text x="30" y="372" font-size="13" fill="var(--text)">asıl ödül sinyali zayıfladı; çevrimdışı değerlendirmeler ve küçük A/B testi iyi görünüyordu;</text>
   <text x="30" y="390" font-size="13" fill="var(--text)">uzman testçiler "bir şeyler yanlış" dedi; sayısal sinyale güvenilip dağıtıldı, dört gün sonra</text>
-  <text x="30" y="408" font-size="13" fill="var(--text)">geri alındı. Dalkavukluk değerlendirmesi artık dağıtımı engelleyen bir ölçüt.</text>
+  <text x="30" y="408" font-size="13" fill="var(--text)">geri alındı. Dalkavukluk değerlendirmesi, dağıtımı engelleyen ölçüt olarak sürece ekleniyor.</text>
 
   <text x="20" y="448" font-size="13" fill="var(--text-muted)">Değerler metindeki kaynaklardan; olay sağlayıcının kendi (hakemli olmayan) açıklamalarından.</text>
 </svg>

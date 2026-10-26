@@ -12,7 +12,7 @@ tags:
   - oz-yansima
   - eylem-agaci
   - hata-dongusu
-content_hash: sha256:c74956360095e2cfbf27be78f7c55c156077fb288c7be04fc96a1cb0beb81da7
+content_hash: sha256:b20124e2a2e9c8f0a9804caff2dad7f78274652d6648773d8043de66e3896d6b
 classification_version: 1
 classification_batch: 12
 ---
@@ -110,7 +110,7 @@ Birincisi, dersleri bir kütüphaneye biriktirir. Guanzhi Wang ve arkadaşların
 
 **Hata döngüsü içeriden kırılmaz.** Sayaç, dış gözlem, bölüm sonu dersi ve ilerleme ölçüsü — dördü de modelin dışında birer sensördür. Araçsız öz-düzeltme kazandırmaz; yorumlayıcısız düzeltme puan düşürebilir.
 
-**İlerlemeyi ölç, yalnızca sonucu değil.** Başarı oranı takılmış döngü ile hâlâ ilerleyen döngüyü ayırt etmez; ilerleme oranı eder. En güçlü model görevlerin yarısında bir yere kadar gelip duruyor.
+**İlerlemeyi ölç, yalnızca sonucu değil.** Başarı oranı takılmış döngü ile hâlâ ilerleyen döngüyü ayırt etmez; ilerleme oranı eder. 2024'teki ölçümde en güçlü model görevlerin yarısında bir yere kadar gelip duruyordu.
 
 **Döngü ağırlıklara yazılabilir.** Dersler kod olarak birikebilir, pahalı model gerektiğinde çağrılabilir, başarısız izler tercih çiftine dönüşebilir. Mimari yalnızca istemde değil, modelin içinde de yaşar.
 

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="İki bölmeli şekil. Üstte model kartı bölümlerinin doldurulma oranları yatay çubuklarla: eğitim yüzde 74,3, sınırlar yüzde 17,4, değerlendirme yüzde 15,4, atıf yüzde 14,4, çevresel etki yüzde 2,0. Çubukların altında kayıt: kartların kendisi depoların yüzde 44,2'sinde var, toplam 32.111 kart incelendi. Altta ikinci bölme, dışarıdan okuyanın en çok ihtiyaç duyduğu üç bölüm ve karşılıkları: nerede çalışmıyor sorusu sınırlar bölümüne karşılık gelir ve yüzde 17,4 doldurulmuştur; hangi koşulda ölçüldü sorusu değerlendirme bölümüne karşılık gelir ve yüzde 15,4 doldurulmuştur; kaça mal oldu sorusu çevresel etki bölümüne karşılık gelir ve yüzde 2,0 doldurulmuştur. En altta kayıt: en kolay yazılan bölüm en çok, en gerekli üç bölüm en az dolduruluyor.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 384" role="img" aria-label="İki bölmeli şekil. Üstte model kartı bölümlerinin doldurulma oranları yatay çubuklarla: eğitim yüzde 74,3, sınırlar yüzde 17,4, değerlendirme yüzde 15,4, atıf yüzde 14,4, çevresel etki yüzde 2,0; altında kayıt, kart incelenen depoların yüzde 42,8'inde var ve toplam 32.111 kart incelendi. Altta ikinci bölme, dışarıdan okuyanın sorduğu üç soru ve karşılık geldikleri bölümler: nerede çalışmıyor sorusu sınırlar bölümüne ve yüzde 17,4'e; hangi koşulda ölçüldü sorusu değerlendirme bölümüne ve yüzde 15,4'e; kaça mal oldu sorusu çevresel etki bölümüne ve yüzde 2,0'a. En altta kayıt: en kolay yazılan bölüm en çok, en gerekli üç bölüm en az dolduruluyor.">
   <text x="30" y="26" font-size="13" font-weight="bold" fill="var(--text)">model kartı bölümü</text>
   <text x="250" y="26" font-size="13" font-weight="bold" fill="var(--text)">doldurulma oranı</text>
   <line x1="20" y1="36" x2="700" y2="36" stroke="var(--border)" />
@@ -23,7 +23,7 @@
   <rect x="250" y="171" width="9" height="14" fill="var(--accent)" />
   <text x="267" y="182" font-size="13" fill="var(--text)">yüzde 2,0</text>
 
-  <text x="30" y="212" font-size="13" fill="var(--text-muted)">Kart, incelenen depoların yüzde 44,2'sinde var; toplam 32.111 kart.</text>
+  <text x="30" y="212" font-size="13" fill="var(--text-muted)">Kart, incelenen depoların yüzde 42,8'inde var; toplam 32.111 kart.</text>
   <line x1="20" y1="228" x2="700" y2="228" stroke="var(--border)" />
 
   <text x="30" y="252" font-size="13" font-weight="bold" fill="var(--text)">dışarıdan okuyanın sorduğu üç soru</text>

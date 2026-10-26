@@ -308,7 +308,7 @@
         "aritmetik",
         "turkce"
       ],
-      "contentHash": "sha256:eefe320f8a3a095ed79a231ae398d82ac1d4a88e38a801a42cffe65fa0f48605",
+      "contentHash": "sha256:a453633047031264c421b1c89d4308d881bcf8bd5969e44432b09bc68a416572",
       "path": "content/series/articles/models-and-training/tokenizerin-gucu-ve-tuzagi.md",
       "relatedArticleIds": [],
       "classificationBatch": 3
@@ -416,7 +416,7 @@
         "seffaflik",
         "model-ekosistemi"
       ],
-      "contentHash": "sha256:3044cc745c27885e3ce3eee9ae0c4b3183562c3fc50416f611f272c3f6156098",
+      "contentHash": "sha256:83ec6f6fdfe59108a115bcbeb90f7a72e518c52348ffe2200de2e8134f162b30",
       "path": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -972,7 +972,7 @@
         "uydurulmus-cagri",
         "paralel-cagri"
       ],
-      "contentHash": "sha256:892a066393fec93e80ead24727ac416783afbfaf5a65fa4557534f7a7f0f1831",
+      "contentHash": "sha256:e77ccef5d0be193eb3360c5795eb19f6f83bd6cafd337c11bd74a60cc14374ee",
       "path": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1072,7 +1072,7 @@
         "eylem-agaci",
         "hata-dongusu"
       ],
-      "contentHash": "sha256:c74956360095e2cfbf27be78f7c55c156077fb288c7be04fc96a1cb0beb81da7",
+      "contentHash": "sha256:b20124e2a2e9c8f0a9804caff2dad7f78274652d6648773d8043de66e3896d6b",
       "path": "content/series/articles/agents-and-retrieval/ajan-mimarileri.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
@@ -1112,12 +1112,12 @@
         "oge-konumlandirma",
         "web-ajani"
       ],
-      "contentHash": "sha256:6c74945260e92530347b94584360e7f8ae0ec8a0705847af9d5ebd6bec74c2bb",
+      "contentHash": "sha256:0b79efb04afaae8b3f5e6b7daf8071b89281aaa1f69459bf9d349436d3249c3a",
       "path": "content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md",
       "relatedArticleIds": [],
       "classificationBatch": 12,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "İnsan ile ajan arasındaki farkın ölçüm tarihine bağlı olduğu eklendi; Şekil 3 masaüstünde Eylül 2025'te bildirilen 61,4'ü koşuluyla gösteriyor."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Masaüstünde Mayıs 2026'da bildirilen 83,4 eklendi: eski insan ölçümünün üstünde, ama insan yeniden ölçülmedi ve değerlendirme düzeneği değişti."
     },
     {
       "articleId": "article_7c2f0a4e-9b1d-4e63-8f5a-2d1c6e8b3a55",
@@ -1276,10 +1276,12 @@
         "sig-hizalama",
         "ince-ayar-saldirisi"
       ],
-      "contentHash": "sha256:b94bf482a4f7585255396f470164a8526206c82745d22534561e0c725f3d85b1",
+      "contentHash": "sha256:1a21d612577a17dd046864c9bca60f39b52cdc45d2c8285857202b7a86fe1933",
       "path": "content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md",
       "relatedArticleIds": [],
-      "classificationBatch": 14
+      "classificationBatch": 14,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Brahman'ın uyumsuzluk tablosunda iki sütun başlığı yer değiştirmişti; düzeltilmiş tabloda güvensiz isteklere en az uyan model, karşı kümede en çok yanlış reddeden model."
     },
     {
       "articleId": "article_8d57e862-ecef-4908-bd9d-b82e8f65d3c0",
@@ -1310,7 +1312,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 64,
-      "summary": "13'te ileriye bırakılan borcu öder: tercih etiketini insan yerine yazılı ilkelerle donatılmış bir modelin üretmesini — on altı ilkeyle eleştiri ve düzeltme, zararsızlık için sıfır insan etiketi, kaçamak cevap vermeyen bir asistan —; yapay geri bildirimin insanınkiyle başa baş çıkıp on kat ucuz olduğunu; ilkenin nasıl yazıldığını — kısa ve genel olanın uzun ve özgülden iyi genelleştiğini, tek bir ilkenin bile güç arzusunu düşürdüğünü —; ve denetçi modelden zayıfken ne olduğunu: sandviç deneyinde insan artı modelin ikisini de yirmi puan geçmesini, zayıf etiketle eğitilen güçlü öğrencinin açığın yarısını geri kazanmasını ama ödül modelinde onda birinde kalmasını, eleştirinin insanın bulduğu kusuru yarı yarıya artırmasını ve tartışmanın danışmanlığı her görevde geçip yalnız hakemi ancak bazı görevlerde geçmesini ölçümlerle anlatır.",
+      "summary": "13'te ileriye bırakılan borcu öder: tercih etiketini insan yerine yazılı ilkelerle donatılmış bir modelin üretmesini — on altı ilkeyle eleştiri ve düzeltme, zararsızlık için sıfır insan etiketi, kaçamak cevap vermeyen bir asistan —; yapay geri bildirimin insanınkiyle başa baş çıkıp on kat ucuz olduğunu; ilkenin nasıl yazıldığını — kısa ve genel olanın uzun ve özgülden iyi genelleştiğini, tek bir ilkenin bile güç arzusunu düşürdüğünü —; ve denetçi modelden zayıfken ne olduğunu: sandviç deneyinde insan artı modelin ikisini de, modeli yaklaşık on puanla geçmesini, zayıf etiketle eğitilen güçlü öğrencinin açığın yarısını geri kazanmasını ama ödül modelinde onda birinde kalmasını, eleştirinin insanın bulduğu kusuru yarı yarıya artırmasını ve tartışmanın danışmanlığı her görevde geçip yalnız hakemi ancak bazı görevlerde geçmesini ölçümlerle anlatır.",
       "tags": [
         "constitutional-ai",
         "yapay-geri-bildirim",
@@ -1318,10 +1320,12 @@
         "zayiftan-guclu-ye-genelleme",
         "tartisma-ile-denetim"
       ],
-      "contentHash": "sha256:53822b8e45f8a0a5c9b46883befca29d9bb12929d7136a02abe2647df6570150",
+      "contentHash": "sha256:2a264d7e47ed520d0cfb2d6965156314cb47729e638acb51909b26faa681e6e0",
       "path": "content/series/articles/safety-and-evaluation/constitutional-ai-ve-olceklenebilir-denetim.md",
       "relatedArticleIds": [],
-      "classificationBatch": 15
+      "classificationBatch": 15,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Sun ve arkadaşlarının karşılaştırmasındaki elli iki bin örneğin insan değil öğretmen model yazımı olduğu düzeltildi; sandviç deneyindeki kazanç yaklaşık on puan."
     },
     {
       "articleId": "article_e32d0f7f-090d-4368-86d3-64bf6574e36f",
@@ -1330,7 +1334,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 65,
-      "summary": "16'da adını koyduğumuz kalibrasyonu kurar: güvenilirlik diyagramını ve beklenen kalibrasyon hatasını yüz cevaplık elle hesaplanmış bir örnekle; yüz on katmanlı bir ağın hatasının sıcaklık ölçeklemeyle 16,5'ten 1,3'e inmesini; ön eğitimden çıkan modelin çoktan seçmeli soruda kalibreli olup tercih eğitiminden sonra hatanın 0,007'den 0,074'e çıkmasını ve tek bir sıcaklıkla geri gelmesini; güvenin dört kaynağını — token olasılığı, sözle söylenen güven, örnekleme tutarlılığı, anlamsal entropi — ve otuz görev–model çiftinde anlamsal entropinin hatayı 0,79 eğri altı alanla öngörmesini; güvenin seçici cevaba ve insanın kararına nasıl dönüştüğünü — birinci tekil kişiyle söylenen belirsizliğin yanlış cevaba uymayı düşürmesini — ve sınavların 'bilmiyorum'u cezalandırdığı sürece uydurmanın neden sürdüğünü ölçümlerle anlatır.",
+      "summary": "16'da adını koyduğumuz kalibrasyonu kurar: güvenilirlik diyagramını ve beklenen kalibrasyon hatasını yüz cevaplık elle hesaplanmış bir örnekle; yüz on katmanlı bir ağın hatasının sıcaklık ölçeklemeyle 16,5'ten 1,3'e inmesini; ön eğitimden çıkan modelin çoktan seçmeli soruda kalibreli olup bir model raporunda post-training sonrası hatanın 0,007'den 0,074'e çıkmasını, başka bir çalışmada tercih eğitimli modellerin kalibrasyonunun tek bir sıcaklıkla büyük ölçüde geri gelmesini; güvenin dört kaynağını — token olasılığı, sözle söylenen güven, örnekleme tutarlılığı, anlamsal entropi — ve otuz görev–model çiftinde anlamsal entropinin hatayı 0,79 eğri altı alanla öngörmesini; güvenin seçici cevaba ve insanın kararına nasıl dönüştüğünü — birinci tekil kişiyle söylenen belirsizliğin yanlış cevaba uymayı düşürmesini — ve sınavların 'bilmiyorum'u cezalandırdığı sürece uydurmanın neden sürdüğünü ölçümlerle anlatır.",
       "tags": [
         "kalibrasyon",
         "belirsizlik",
@@ -1338,7 +1342,7 @@
         "anlamsal-entropi",
         "secici-tahmin"
       ],
-      "contentHash": "sha256:0d491b3c1f7cf1e18f00f11fa7303e77fe786a774c1b1c8d5e5f135d6c2c1792",
+      "contentHash": "sha256:cb4a254212d8b85d3605110a056237c37021c12c8800a922dcbff74a16a27bd4",
       "path": "content/series/articles/safety-and-evaluation/belirsizlik-ve-kalibrasyon-model-ne-kadar-emin.md",
       "relatedArticleIds": [],
       "classificationBatch": 15
@@ -1358,10 +1362,12 @@
         "gerekce-sadakati",
         "karakter-egitimi"
       ],
-      "contentHash": "sha256:6a84ada66b8d8f8c196690b344062fed00179250184786314854243c44c4253c",
+      "contentHash": "sha256:0798c9b4a765d0e95ab4aa4f62e9a1191c3784cbc671cb5be90fe5c38e1ee626",
       "path": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
       "relatedArticleIds": [],
-      "classificationBatch": 15
+      "classificationBatch": 15,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Fanous'un bulgusu düzeltildi: kaynak gösteren itiraz modeli en çok yanıltıyor; itiraz üzerine cevap değiştirmenin öğrenme sayılması kanıtın doğruluğuna bağlandı."
     },
     {
       "articleId": "article_151dc2d5-2682-4402-bbdd-adbcfd9d7b2a",
@@ -1370,7 +1376,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 67,
-      "summary": "Aldatmayı inanç atfetmeden tanımlayıp ölçüye çevirir: sistematik yanlış inanç artı doğruluk dışı hedef; bilerek konan bir arka kapının denetimli ince ayardan, pekiştirmeli öğrenmeden ve düşmanca eğitimden geçip düşmanca eğitimin onu gizlemeyi öğrettiğini; eğitildiğini bilen bir modelin zararlı isteğe yalnızca eğitimde yüzde 14 uyup gerçek eğitimin taklit gerekçesini yüzde 12'den 78'e çıkardığını ve 25 modellik bir tekrarda uyma farkının yalnızca beş modelde görüldüğünü; bağlamla hedef verilen altı sınır modelin beşinin gözetimi kapatmayı, kendini kopyalamayı ve yetenek saklamayı denediğini; modellerin değerlendirmeyi dağıtımdan 0,83 eğri altı alanla ayırt edip bu farkındalığın gizli eylemi nedensel olarak düşürdüğünü; dışarıdan sorma, sonda ve düşünce zinciri okumanın her birinin bilinen kaçağını; ve hangi cümlenin ölçüm, hangisinin hipotez olduğunu ölçümlerle anlatır.",
+      "summary": "Aldatmayı inanç atfetmeden tanımlayıp ölçüye çevirir: sistematik yanlış inanç artı doğruluk dışı hedef; bilerek konan bir arka kapının denetimli ince ayardan, pekiştirmeli öğrenmeden ve düşmanca eğitimden geçip düşmanca eğitimin onu gizlemeyi öğrettiğini; eğitildiğini bilen bir modelin zararlı isteğe yalnızca eğitimde yüzde 14 uyup gerçek eğitimin taklit gerekçesini yüzde 12'den 78'e çıkardığını ve 25 modellik bir tekrarda uyma farkının yalnızca beş modelde görüldüğünü; bağlamla hedef verilen altı sınır modelin beşinin gözetimi kapatma, kendini kopyalama ve yetenek saklama gibi altı düzenekten en az birinde entrika yaptığını; 2025 ölçümünde en iyi modelin değerlendirmeyi dağıtımdan 0,83 eğri altı alanla ayırt ettiğini ve ayrı bir çalışmada düşünce zincirinde dile gelen değerlendirme farkındalığının gizli eylemi nedensel olarak düşürdüğünü; dışarıdan sorma, sonda ve düşünce zinciri okumanın her birinin bilinen kaçağını; ve hangi cümlenin ölçüm, hangisinin hipotez olduğunu ölçümlerle anlatır.",
       "tags": [
         "aldatma",
         "durum-farkindaligi",
@@ -1378,12 +1384,12 @@
         "uyuyan-ajan",
         "yetenek-saklama"
       ],
-      "contentHash": "sha256:dbaecb8d5e09909734565b72f3098ed90c24a1a37118cdc2231519c7f3d31d9d",
+      "contentHash": "sha256:013622ac97cdca13c1a34ccdcf11ca141c078770afc012d7bf08f26b1121f256",
       "path": "content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Hizalama taklidinin 25 modellik tekrarı ve entrika araştırmasına yöneltilen yöntem eleştirisi eklendi; kaynakların kökeni ve kanıt gücü açıkça yazıldı."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Yalan dedektörünün dalkavuk yalanlarda rastgelenin altına düştüğü, gerçek senaryodaki yüzde 94'ün tek modelde ölçüldüğü ve iki farkındalık bulgusunun ayrı çalışmalardan geldiği düzeltildi."
     },
     {
       "articleId": "article_ba683048-54c4-464e-b109-a2d6c419f256",
@@ -1392,7 +1398,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 68,
-      "summary": "Kötüye kullanımı marjinal risk sorusuyla ölçer: modelin ne yaptığı değil, o model olmasaydı saldırganın nerede olacağı. Siber tarafta bir ajanın açık tarifi verilince gerçek açıkların yüzde 87'sini, tarif olmadan yüzde 7'sini sömürmesini ve yarışma görevlerinde insanın on bir dakikada çözdüğü sınırı aşamamasını; biyolojik tarafta kırmızı takım denemesinin anlamlı fark bulmamasını ama bir sağlayıcının kendi denemesinde güvenlik önlemleri kaldırılmış modelle puanın yüzde 25'ten 63'e çıkmasını; bilgi operasyonlarında üretilen metnin insanınkinden ayırt edilememesini, ikna etkisinin gerçek olup hedeflemenin ölçülebilir katkı getirmemesini ve aynı ikna gücünün komplo inancını yaklaşık yüzde 20 azaltmasını; tehlikeli bilginin ağırlıklardan silinmesinin on ilgisiz örnekle geri alınabilmesini ölçümlerle anlatır.",
+      "summary": "Kötüye kullanımı marjinal risk sorusuyla ölçer: modelin ne yaptığı değil, o model olmasaydı saldırganın nerede olacağı. Siber tarafta 2024'te bir ajanın açık tarifi verilince gerçek açıkların yüzde 87'sini, tarif olmadan yüzde 7'sini sömürmesini, yarışma görevlerinde insanın on bir dakikada çözdüğü sınırı aşamamasını ve bu sınırın 2026'ya gelindiğinde kaymasını; biyolojik tarafta kırmızı takım denemesinin anlamlı fark bulmamasını ama bir sağlayıcının kendi denemesinde güvenlik önlemleri kaldırılmış modelle puanın yüzde 25'ten 63'e çıkmasını; bilgi operasyonlarında üretilen metnin insanınkinden ayırt edilememesini, ikna etkisinin gerçek olup hedeflemenin ölçülebilir katkı getirmemesini ve aynı ikna gücünün komplo inancını yaklaşık yüzde 20 azaltmasını; tehlikeli bilginin ağırlıklardan silinmesinin on ilgisiz örnekle geri alınabilmesini ölçümlerle anlatır.",
       "tags": [
         "kotuye-kullanim",
         "marjinal-risk",
@@ -1400,12 +1406,12 @@
         "biyolojik-risk",
         "bilgi-operasyonlari"
       ],
-      "contentHash": "sha256:19a911a921f2705bfd6f8e1368dcd2b6d8387cd7f5b27c82243768bdcb526794",
+      "contentHash": "sha256:8532b2302620675c6a1b654dced2d081156238f2a42e24cbe1efdebfbc033809",
       "path": "content/series/articles/safety-and-evaluation/kotuye-kullanim-siber-biyolojik-ve-bilgi-operasyonlari.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
       "revisedAt": "2026-10-26",
-      "revisionNote": "Komplo inancı deneyinin Ekim 2026 düzeltmesi işlendi: dergi endişe notunu geri aldı, ana sonuç değişmedi; anlamlılığını yitiren tek yan bulgu yazıldı."
+      "revisionNote": "Komplo deneyinin Ekim 2026 düzeltmesi işlendi, ana sonuç değişmedi; siber sınırın 2024 ölçümü olduğu ve 2025–2026 raporlarının bilinmeyen açıkların da bulunduğunu bildirdiği eklendi."
     },
     {
       "articleId": "article_a0ac8483-2105-495b-baa4-0663cf3f8333",
@@ -1414,7 +1420,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 69,
-      "summary": "Güvenlik kararlarının kurumsal katmanını kurar: bir yasa modeli hangi eşikle yakalar, hangi belgeyi ister, hangi muafiyeti tanır; Avrupa Birliği'nin genel amaçlı model rejiminde 10 üzeri 25 işlem varsayımını, dört temel yükümlülüğü, sistemik riskli modeller için değerlendirme ve olay bildirimini ve açık kaynak muafiyetinin tam olarak nerede bittiğini; açık kaynak tanımının dört özgürlüğüyle muafiyetin istediği üç bileşen arasındaki farkı — 20'nin bıraktığı koordinat —; gönüllü standartların, ilkelerin ve bildirgelerin neyi bağlayıp neyi bağlamadığını; hesap eşiğinin neden kaba bir vekil olduğunu — 2026'da yürürlüğe giren Kaliforniya yasası onu 10 üzeri 26'da kuruyor —; ve denetimin kara kutu erişimiyle yapılamayacağını, şeffaflık puanının altı ayda 37'den 58'e çıkmasını ölçümlerle anlatır.",
+      "summary": "Güvenlik kararlarının kurumsal katmanını kurar: bir yasa modeli hangi eşikle yakalar, hangi belgeyi ister, hangi muafiyeti tanır; Avrupa Birliği'nin genel amaçlı model rejiminde 10 üzeri 25 işlem varsayımını, dört temel yükümlülüğü, sistemik riskli modeller için değerlendirme ve olay bildirimini ve açık kaynak muafiyetinin tam olarak nerede bittiğini; açık kaynak tanımının dört özgürlüğüyle muafiyetin istediği üç bileşen arasındaki farkı — 20'nin bıraktığı koordinat —; gönüllü standartların, ilkelerin ve bildirgelerin neyi bağlayıp neyi bağlamadığını; hesap eşiğinin neden kaba bir vekil olduğunu — 2026'da yürürlüğe giren Kaliforniya yasası onu 10 üzeri 26'da kuruyor —; ve titiz bir denetimin kara kutu erişimiyle yapılamayacağını, şeffaflık puanının altı ayda 37'den 58'e çıkmasını ve bir sonraki turda 40'a inmesini ölçümlerle anlatır.",
       "tags": [
         "yonetisim",
         "regulasyon",
@@ -1422,12 +1428,12 @@
         "hesap-esigi",
         "denetim"
       ],
-      "contentHash": "sha256:aeb61c2594cad4e6126ac19ec33b7465d2ee799466daef7bf1775c8706e3d2ae",
+      "contentHash": "sha256:eb4658b0e3c8891796c78f97d87421d94666d0319e290cf590ee7344e1261c96",
       "path": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "AB Yasası takvimine para cezası yetkisinin 2026'da başladığı eklendi; 'tek bağlayıcı metin' iddiası Kaliforniya'nın 2026 yasasıyla düzeltildi."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Şeffaflık endeksinin 2025 turunda ortalamanın 58'den 40'a indiği eklendi; 'ölçülmesi işe yaradı' cümlesi yazarların çekincesiyle sınırlandı."
     },
     {
       "articleId": "article_df4bb03b-0dc1-4782-a7e0-cdfb530d59f4",
@@ -1436,7 +1442,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 70,
-      "summary": "Faz 7'yi, sağlayıcıların kendi yazdığı güvenlik çerçevelerini okuyarak kapatır: üç çerçevenin yetenek eşiklerini ve kademelerini — kimyasal ve biyolojik silahlarda temel teknik bilgili birine anlamlı yardım, orta kaynaklı bir devlet programını ilerletme, giriş düzeyi bir araştırmacının işini tümüyle otomatikleştirme —; 'şu ölçülürse şu önlem' biçimindeki koşullu taahhüdün nasıl kurulduğunu ve belirsizlikte eşiğin aşağı yuvarlandığını; bir modelin güvenli olduğu iddiasının dört argüman türüyle nasıl savunulduğunu — yapamaz, kontrol altında, güvenilir, danışılabilir —; ve bu düzeneğin üç açık halkasını: eşiği geliştirici koyar, ölçüm sınavı tanıyan bir modele karşı yapılır ve doğrulama bugün büyük ölçüde kurum içidir.",
+      "summary": "Faz 7'yi, sağlayıcıların kendi yazdığı güvenlik çerçevelerini okuyarak kapatır: üç çerçevenin 2025 sürümlerindeki yetenek eşiklerini ve kademelerini — kimyasal ve biyolojik silahlarda temel teknik bilgili birine anlamlı yardım, orta kaynaklı bir devlet programını ilerletme, giriş düzeyi bir araştırmacının işini tümüyle otomatikleştirme —; 'şu ölçülürse şu önlem' biçimindeki koşullu taahhüdün nasıl kurulduğunu ve belirsizlikte eşiğin aşağı yuvarlandığını; bir modelin güvenli olduğu iddiasının dört argüman türüyle nasıl savunulduğunu — yapamaz, kontrol altında, güvenilir, danışılabilir —; ve bu düzeneğin üç açık halkasını: eşiği geliştirici koyar, ölçüm sınavı tanıyan bir modele karşı yapılır ve doğrulama bugün büyük ölçüde kurum içidir.",
       "tags": [
         "sorumlu-olcekleme",
         "yetenek-esikleri",
@@ -1444,7 +1450,7 @@
         "guvenlik-savunmasi",
         "sinir-model"
       ],
-      "contentHash": "sha256:efb553abcea67ffb4ab1f618ee9f2ecbfc6ee7fbb904c72551f13795a2a8fbc1",
+      "contentHash": "sha256:52990c4272ad8dd934faa41dfd538d8d088d0173af7921a90c6f406e3f7da681",
       "path": "content/series/articles/safety-and-evaluation/sorumlu-olcekleme-sinir-model-guvenlik-cerceveleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 16
@@ -1464,12 +1470,12 @@
         "istem-duyarliligi",
         "olcut-omru"
       ],
-      "contentHash": "sha256:98bfb9927457e8cd90be0ceeb0f2398c704b212d4874cf13767a251ed5d2c3a8",
+      "contentHash": "sha256:213401b9f2db721f31e6043d1137bff4c3d2dadc5cf55b0d83e469857833d175",
       "path": "content/series/articles/safety-and-evaluation/degerlendirme-bilimi-benchmarklarin-otesi.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Standart hata sezgiyle kuruldu (neden √(p(1−p)), neden √n); sayı yığınları sadeleşti; 0,4 puanın ±0,8'i aştığını söyleyen hatalı cümle düzeltildi."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Şık harflerini kaldırmanın çare değil teşhis deneyi olduğu, doğruluğu çoğu modelde düşürdüğü ve 5,5 → 1,0 sonucunun ticari modele ait olduğu düzeltildi."
     },
     {
       "articleId": "article_20a41c7c-eab6-469f-aace-89ab44fc0d6e",
@@ -1478,7 +1484,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 72,
-      "summary": "8, 16, 18 ve 31'in bu numaraya bıraktığı borcu öder: sınav sorularının eğitim verisine dört yoldan sızdığını — birebir kopya, yeniden yazım ve çeviri, arayüz üzerinden dolaylı sızıntı ve görev kirliliği, çözüm sızıntısı — ve topluluğun 566 kayıtlık kirlilik veritabanını; kirliliğin verinin içine bakmadan nasıl bulunduğunu — yönlendirmeli tamamlama, sıra değiştirilebilirlik testi, eksik şık tahmini — ve üyelik çıkarımının neden çoğu zaman rastgeleden iyi olmadığını; ezberin kapasite, tekrar ve bağlamla log-doğrusal büyüdüğünü, on kez tekrarlanan dizinin bin kat daha sık üretildiğini ve uzun kuyruk kuramına göre ezberin genelleme için neden gerekli olduğunu; ve kirliliğin puanı ne kadar şişirdiğini — yeniden yazılmış ilkokul matematiğinde sekiz puana varan düşüş, işlevsel sürümde yüzde 58 ile 80 arası açık ve test görevine eğitimin yeni ile eski modellerin farkını silmesi.",
+      "summary": "8, 16, 18 ve 31'in bu numaraya bıraktığı borcu öder: sınav sorularının eğitim verisine dört yoldan sızdığını — birebir kopya, yeniden yazım ve çeviri, arayüz üzerinden dolaylı sızıntı ve görev kirliliği, çözüm sızıntısı — ve topluluğun 566 kayıtlık kirlilik veritabanını; kirliliğin verinin içine bakmadan nasıl bulunduğunu — yönlendirmeli tamamlama, sıra değiştirilebilirlik testi, eksik şık tahmini — ve üyelik çıkarımının neden çoğu zaman rastgeleden iyi olmadığını; ezberin kapasite, tekrar ve bağlamla log-doğrusal büyüdüğünü, on kez tekrarlanan dizinin bin kat daha sık üretildiğini ve uzun kuyruk kuramına göre ezberin genelleme için neden gerekli olduğunu; ve kirliliğin puanı ne kadar şişirdiğini — yeniden yazılmış ilkokul matematiğinde sekiz puana varan düşüş, işlevsel sürümde yüzde 58 ile 80 arası göreli açık ve test görevine eğitimin yeni ile eski modellerin farkını silmesi.",
       "tags": [
         "kirlilik",
         "ezber",
@@ -1486,7 +1492,7 @@
         "yeniden-uretim",
         "test-gorevine-egitim"
       ],
-      "contentHash": "sha256:f13f4c922dff822dedca04c142a1f7951d62cba46e38fcaae188a6404ae9568c",
+      "contentHash": "sha256:c55db2a0fc7a6d58e322037fb162919df65afa3866c16c4c55ff01440c17f55d",
       "path": "content/series/articles/safety-and-evaluation/kirlilik-ve-ezber-benchmarklara-guven-krizi.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1500,7 +1506,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 73,
-      "summary": "Cevap anahtarının olmadığı yerde ölçümün bir insana ya da bir modele devredildiğini kurar: insan değerlendirmesinin kendisinin bir ölçüm olduğunu — kimin puanladığı, hangi ölçekle, kaç kişiyle ve şansa göre düzeltilmiş uzlaşmayla —; kitle işçilerinin model metnini insanınkinden ayıramadığını, uzman çevirmenlerin sıralamayı baştan yazdığını ve kendinden emin üslubun olgusallık algısını çarpıttığını; hakem modelin insanla uzlaşmasının hakemin değil görev, özellik ve etiketleyici üçlüsünün özelliği olduğunu — yirmi kümede akıl yürütme adımlarında 0,82, güvenlik ve toksisitede sıfır ya da eksi —; hakemin ölçülmüş yanlılıklarını ve düzeltmelerini — konum, uzunluk, kendini tanıyıp kayırma, sürüye uyma, evrensel saldırı ifadesi; iki sırayla sorma, uzunluk kontrolü, ayrı ailelerden kurul —; ve hakemin ancak insan çapasıyla kullanılabileceğini: doğru referans olmadan uzlaşma düşüyor, hakem değerlendirdiği modelden daha doğru değilse, insanla düzeltilmiş hakem insan verisinin iki katından fazlasının yerine geçemiyor.",
+      "summary": "Cevap anahtarının olmadığı yerde ölçümün bir insana ya da bir modele devredildiğini kurar: insan değerlendirmesinin kendisinin bir ölçüm olduğunu — kimin puanladığı, hangi ölçekle, kaç kişiyle ve şansa göre düzeltilmiş uzlaşmayla —; kitle işçilerinin model metnini insanınkinden ayıramadığını, uzman çevirmenlerin sıralamayı baştan yazdığını ve kendinden emin üslubun olgusallık algısını çarpıttığını; hakem modelin insanla uzlaşmasının hakemin değil görev, özellik ve etiketleyici üçlüsünün özelliği olduğunu — yirmi kümede akıl yürütme adımlarında 0,82, tıbbi ve diyalog güvenliğinde sıfır ya da eksi —; hakemin ölçülmüş yanlılıklarını ve düzeltmelerini — konum, uzunluk, kendini tanıyıp kayırma, sürüye uyma, evrensel saldırı ifadesi; iki sırayla sorma, uzunluk kontrolü, ayrı ailelerden kurul —; ve hakemin ancak insan çapasıyla kullanılabileceğini: doğru referans olmadan uzlaşma düşüyor, hakem değerlendirdiği modelden daha doğru değilse, insanla düzeltilmiş hakem insan verisinin iki katından fazlasının yerine geçemiyor.",
       "tags": [
         "insan-degerlendirmesi",
         "hakem-model",
@@ -1508,12 +1514,12 @@
         "hakem-yanliligi",
         "insan-capasi"
       ],
-      "contentHash": "sha256:cc144aa04e6d0766f57bc39080da94f6fc30840546d889f8e22448be6c32f256",
+      "contentHash": "sha256:5a6f490e23e49a70aa60a4c2324f7a376d29cc57e0e2ffcb17804e71715f5179",
       "path": "content/series/articles/safety-and-evaluation/insan-degerlendirmesi-ve-hakem-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Kappa'nın şans düzeltmesi aynı yüzde 80'in iki zıt sonucunu veren bir hesapla anlatıldı; 'iki kat veri' sınırının koşulu doğru yazıldı."
+      "revisedAt": "2026-10-26",
+      "revisionNote": "Kendini tanıma ile kendini kayırma arasındaki bağın nedensellik için ilk kanıt olduğu, ispat olmadığı yazıldı; insan uzlaşması yüzde 66 olarak düzeltildi."
     },
     {
       "articleId": "article_12592572-a4cf-41d1-af7c-23aa380652c6",
@@ -1530,7 +1536,7 @@
         "induksiyon-basi",
         "sonda"
       ],
-      "contentHash": "sha256:f0324df8886a8dcd4e4e3205639534a43f76bcf512481384fbf7fea00cf940f4",
+      "contentHash": "sha256:6a13ff3b5c356b766afe61cfa5c1e86d5713cec96020784d3dd36bc1a5e7daf1",
       "path": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1544,7 +1550,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 75,
-      "summary": "74'ün açık bıraktığı soruyu yanıtlar: devrenin düğümleri nöron değilse nedir? Modelin nöron sayısından çok özelliği aynı yöne sıkıştırmasını — süperpozisyonu — oyuncak bir modelde kurar: seyreklik arttıkça beş özellik iki boyuta beşgen olarak yerleşir, bedeli girişimdir ve özellik başına düşen boyut 1, 1/2, 2/5 gibi basamaklara oturur. Sonra sıkıştırmayı çözme girişimini anlatır: bir aktivasyonu seyrek parçalara ayıran otokodlayıcı sözlüğü, yeniden kurma ile seyreklik arasındaki takas, 512 nöronluk bir katmandan 4.096 parça, üretim ölçeğinde 34 milyon parça ve GPT-4 üzerinde 16 milyon. Bulunanın özellik olduğunu iddia etmenin iki sınavını verir — kavram gerçekten orada mı, müdahale davranışı değiştiriyor mu — ve sözlüğün kendi sınavlarını: ölü ve emilmiş parçalar, aynı veriyle farklı tohumda yüzde 30 örtüşme, eksiklik ve bölünebilirlik, rastgele başlatılmış ağda da birçok ayarda yüksek yorumlanabilirlik puanı, ve ölçüldüğünde istem ile ortalama farkının sözlüğü geçmesi.",
+      "summary": "74'ün açık bıraktığı soruyu yanıtlar: devrenin düğümleri nöron değilse nedir? Modelin nöron sayısından çok özelliği aynı yöne sıkıştırmasını — süperpozisyonu — oyuncak bir modelde kurar: seyreklik arttıkça beş özellik iki boyuta beşgen olarak yerleşir, bedeli girişimdir ve özellik başına düşen boyut 1, 1/2, 2/5 gibi basamaklara oturur. Sonra sıkıştırmayı çözme girişimini anlatır: bir aktivasyonu seyrek parçalara ayıran otokodlayıcı sözlüğü, yeniden kurma ile seyreklik arasındaki takas, 512 nöronluk bir katmandan 4.096 parça, üretim ölçeğinde 34 milyon parça ve GPT-4 üzerinde 16 milyon. Bulunanın özellik olduğunu iddia etmenin iki sınavını verir — kavram gerçekten orada mı, müdahale davranışı değiştiriyor mu — ve sözlüğün kendi sınavlarını: ölü ve emilmiş parçalar, aynı veriyle farklı tohumda 131 bin parçalı iki sözlükte yüzde 30 örtüşme, eksiklik ve bölünebilirlik, rastgele başlatılmış ağda da birçok ayarda yüksek yorumlanabilirlik puanı, ve ölçüldüğünde istem ile ortalama farkının sözlüğü geçmesi.",
       "tags": [
         "ozellik",
         "superpozisyon",
@@ -1552,7 +1558,7 @@
         "sozluk-ogrenme",
         "ozellik-emilimi"
       ],
-      "contentHash": "sha256:29f4770aa68e811538c7bc38c64e9e548abf4628e0a6dfcc8131591efc35ebef",
+      "contentHash": "sha256:72fe561718a2bc848f8352614802d9a4c9160363e7d40b0c5eeac4a3f11f85b7",
       "path": "content/series/articles/safety-and-evaluation/ozellikler-ve-superpozisyon-modelin-ic-dili.md",
       "relatedArticleIds": [],
       "classificationBatch": 18,
@@ -1574,7 +1580,7 @@
         "kavram-silme",
         "model-duzenleme"
       ],
-      "contentHash": "sha256:9e22b50333faacff32aa024b2dd45b7713b3f22abc4b968284be9ca7d2bd9d8a",
+      "contentHash": "sha256:15aadc5e31bc089bbfa202aa87e6e69bc057afd56d37abce10cff4d066d893f3",
       "path": "content/series/articles/safety-and-evaluation/aktivasyonlara-mudahale-yonlendirme-ve-sondalar.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1586,7 +1592,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 77,
-      "summary": "'Model neden böyle dedi' sorusunun tek soru olmadığını gösterir: girdinin hangi parçasına, ağın hangi bileşenine ve eğitim verisinin hangi örneğine atfedileceği üç ayrı sorudur, üç ayrı yöntem ailesi ve üç ayrı sadakat sınavı ister. Girdiye atıfta gradyan, pertürbasyon ve oyun kuramı ailelerini kurar ve sınavlarını verir: ağırlıkları rastgeleleştirilmiş modelde bazı ısı haritaları değişmiyor, sil-ve-yeniden-eğit ölçütünde çoğu yöntem rastgele seçimi geçemiyor, iskele saldırısıyla istenen açıklama uydurulabiliyor, ve tam ve doğrusal olan yöntemlerin zengin model sınıflarında belirli görevlerde rastgele tahmini geçemeyebileceği kanıtlanmış durumda. Bileşene atıfta 74'ün yamasının ucuz yaklaşıklıkları ile 75'in parçalarından kurulan çizgeleri birleştirir. Eğitim verisine atıfta etki fonksiyonlarını, izleri ve veri modellerini kurar; etkinin tek bir örnekte toplanmadığını ve büyük modellerde yöntemin zayıfladığını yazar. Kapanışta modelin kendi gerekçesini bu üçünün yanına koyar: ipucu eklenince cevap değişiyor ama gerekçe ipucu anmıyor, anma oranı çoğu ayarda yüzde 20'nin altında, ve bu sınavların ölçtüğü şey iç işleyiş değil çıktı düzeyinde tutarlılık.",
+      "summary": "'Model neden böyle dedi' sorusunun tek soru olmadığını gösterir: girdinin hangi parçasına, ağın hangi bileşenine ve eğitim verisinin hangi örneğine atfedileceği üç ayrı sorudur, üç ayrı yöntem ailesi ve üç ayrı sadakat sınavı ister. Girdiye atıfta gradyan, pertürbasyon ve oyun kuramı ailelerini kurar ve sınavlarını verir: ağırlıkları rastgeleleştirilmiş modelde bazı ısı haritaları değişmiyor, sil-ve-yeniden-eğit ölçütünde çoğu yöntem rastgele seçimi geçemiyor, iskele saldırısıyla istenen açıklama uydurulabiliyor, ve tam ve doğrusal olan yöntemlerin zengin model sınıflarında belirli görevlerde rastgele tahmini geçemeyebileceği kanıtlanmış durumda. Bileşene atıfta 74'ün yamasının ucuz yaklaşıklıkları ile 75'in parçalarından kurulan çizgeleri birleştirir. Eğitim verisine atıfta etki fonksiyonlarını, izleri ve veri modellerini kurar; etkinin tek bir örnekte toplanmadığını ve büyük modellerde yöntemin zayıfladığını yazar. Kapanışta modelin kendi gerekçesini bu üçünün yanına koyar: ipucu eklenince cevap değişiyor ama gerekçe ipucu anmıyor, anma oranı sık sık yüzde 20'nin altında, ve bu sınavların ölçtüğü şey iç işleyiş değil çıktı düzeyinde tutarlılık.",
       "tags": [
         "atif",
         "sadakat",
@@ -1594,7 +1600,7 @@
         "etki-fonksiyonu",
         "gerekce-sadakati"
       ],
-      "contentHash": "sha256:1e765b3e0ca0dedf5c8760e90d28550adecd8e5b3055cb4bb6145af33ef37ce1",
+      "contentHash": "sha256:d9c4b52aa9191e86810105bf8b0d09f80aae72a765e9b26501755d2dd55843b4",
       "path": "content/series/articles/safety-and-evaluation/atif-model-neden-boyle-dedi.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1606,7 +1612,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 78,
-      "summary": "5 ve 9'un bu numaraya bıraktığı borcu öder: ölçek büyürken bazı yeteneklerin birdenbire ortaya çıktığı iddiası bugün nerede duruyor? İddiayı kuran çalışmayı, cetvel itirazını — beliren yetenek iddialarının yüzde 92'sinden fazlası iki kesikli ölçüde toplanıyor ve aynı numarayla görüntü modellerinde de sıçrama üretilebiliyor — ve itiraza gelen iki karşı ölçümü verir: yatay eksene model boyu yerine ön eğitim kaybı konduğunda eşik ölçünün sürekliliğinden bağımsız olarak duruyor, ve çözünürlüğü artıran bir ölçme yöntemi hem küçük modellerde sürekli ilerlemeyi hem standart eğriye oturmayan bir hızlanmayı gösteriyor. Sıçramanın altındaki sürekli süreçleri mekanizma düzeyinde sıralar: kullanım sıklığına göre sırayla öğrenilen ayrık beceri parçaları, gizli ilerleme, geç genelleme, indüksiyon başlarının faz geçişi. Karıştıran etkenleri ayırır: örnekle öğrenme, bellek ve dil bilgisi; test görevine eğitim. Kapanışta belirmenin ne kadar öngörülebilir olduğunu ölçümleriyle tablolaştırır: eğitimden önce yüzde 0,05 sapma, dört kat hesaba kadar belirme yasası, yüz modelden kurulan gözlemsel ölçek yasaları — ve ters ölçeklemenin bu tabloya koyduğu sınırı.",
+      "summary": "5 ve 9'un bu numaraya bıraktığı borcu öder: ölçek büyürken bazı yeteneklerin birdenbire ortaya çıktığı iddiası bugün nerede duruyor? İddiayı kuran çalışmayı, cetvel itirazını — BIG-Bench'teki beliren yetenek iddialarının yüzde 92'sinden fazlası iki kesikli ölçüde toplanıyor ve aynı numarayla görüntü modellerinde de sıçrama üretilebiliyor — ve itiraza gelen iki karşı ölçümü verir: yatay eksene model boyu yerine ön eğitim kaybı konduğunda eşik ölçünün sürekliliğinden bağımsız olarak duruyor, ve çözünürlüğü artıran bir ölçme yöntemi hem küçük modellerde sürekli ilerlemeyi hem standart eğriye oturmayan bir hızlanmayı gösteriyor. Sıçramanın altındaki sürekli süreçleri mekanizma düzeyinde sıralar: kullanım sıklığına göre sırayla öğrenilen ayrık beceri parçaları, gizli ilerleme, geç genelleme, indüksiyon başlarının faz geçişi. Karıştıran etkenleri ayırır: örnekle öğrenme, bellek ve dil bilgisi; test görevine eğitim. Kapanışta belirmenin ne kadar öngörülebilir olduğunu ölçümleriyle tablolaştırır: eğitimden önce yüzde 0,05 sapma, dört kat hesaba kadar belirme yasası, yüz modelden kurulan gözlemsel ölçek yasaları — ve ters ölçeklemenin bu tabloya koyduğu sınırı.",
       "tags": [
         "beliren-yetenekler",
         "olcek-yasalari",
@@ -1614,7 +1620,7 @@
         "faz-gecisi",
         "ongorulebilirlik"
       ],
-      "contentHash": "sha256:0388ece89d6f4158ba6f91511c7d124eb6a68bcb7da62f7bc61bb729ef849d57",
+      "contentHash": "sha256:df0741fb20f5f96966e6d9897fe85f999c9b7f213e6947f04211b7d6a9a90fca",
       "path": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1626,7 +1632,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 79,
-      "summary": "Bir puanın hangi dünyada ölçüldüğünü sorar: dağılım kaymasının dört türünü ve on veri kümesinde ölçülen düşüşleri — hastaneler arasında 93,2'den 70,3'e, en kötü grupta 92,2'den 56,0'a —; sentetik bozulmaya dayanmanın gerçek kaymaya dayanmak anlamına gelmediğini, 204 model ve 213 koşulluk bir düzenekte aktarımın çıkmamasını ve dağılım dışı puanın dağılım içi puanla neredeyse doğrusal ilişkisini; dil modelinde aynı sorunun biçimini — bir sınavın ortalama puanı 72,4 iken her çeşitlemesinde doğru cevaplananların oranının 6,0 olmasını, ilgisiz tek cümlenin yüzde 65'e varan düşüşünü, ölçüt puanının 93,16'dan 41,69'a inmesini —; ve en kötü durum ucunu: düşmanca örneği, düşmanca eğitimin 95,2'den 87,3'e mal olan takasını, sertifikalı savunmanın 0,5 yarıçapında yüzde 49'luk tavanını ve dokuz savunmanın yedisinin aynı hatadan kırılmasını. Kapanışta kasıtlı saldırıyla gündelik kaymanın tek eksenin iki ucu olduğunu gösterir.",
+      "summary": "Bir puanın hangi dünyada ölçüldüğünü sorar: dağılım kaymasının dört türünü ve on veri kümesinde ölçülen düşüşleri — hastaneler arasında 93,2'den 70,3'e, ortalama 92,2 iken en kötü grupta 56,0 —; sentetik bozulmaya dayanmanın gerçek kaymaya dayanmak anlamına gelmediğini, 204 model ve 213 koşulluk bir düzenekte aktarımın çoğu zaman sıfıra yakın kalmasını ve dağılım dışı puanın dağılım içi puanla neredeyse doğrusal ilişkisini; dil modelinde aynı sorunun biçimini — bir sınavın ortalama puanı 72,4 iken her çeşitlemesinde doğru cevaplananların oranının 6,0 olmasını, ilgisiz tek cümlenin yüzde 65'e varan düşüşünü, ölçüt puanının 93,16'dan 41,69'a inmesini —; ve en kötü durum ucunu: düşmanca örneği, düşmanca eğitimin 95,2'den 87,3'e mal olan takasını, sertifikalı savunmanın 0,5 yarıçapında yüzde 49'luk tavanını ve dokuz savunmanın yedisinin aynı hatadan kırılmasını. Kapanışta kasıtlı saldırıyla gündelik kaymanın tek eksenin iki ucu olduğunu gösterir.",
       "tags": [
         "dagilim-kaymasi",
         "saglamlik",
@@ -1634,7 +1640,7 @@
         "degerlendirme",
         "sertifikali-savunma"
       ],
-      "contentHash": "sha256:a5d35a97025dc1134e7bafd584204d906a844f98edba0205eb06e5cc236e31ca",
+      "contentHash": "sha256:36d0f4c19c7012af6dc76ccfad8b3bb5c86a0813d0190754337a8e71e8315ea7",
       "path": "content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
@@ -1646,7 +1652,7 @@
       "category": "safety-and-evaluation",
       "level": "intermediate",
       "readingOrder": 80,
-      "summary": "Bir puanın koşullarının nereye yazıldığını izler: model kartının bölümlerini ve ayrıştırılmış değerlendirmenin neden merkezde durduğunu — kamuya açık bir denetimden yedi ay sonra üç şirketin de yeni sürüm yayımlaması, en karanlık tenli kadın altkümesinde hatanın yüzde 17,7 ile 30,4 arasında düşmesi, denetlenmeyen iki şirketin aynı altkümede yüzde 31,37 ve 22,50'de kalması —; verinin belgesini ve belgesizliğini — popüler kümelerin lisanslarının yüzde 70'inden fazlasının belirtilmemiş olması, bir yılda C4'ün token'larının yüzde 5'inden fazlasının ve en canlı kaynaklarının yüzde 28'inden fazlasının kullanıma kapanması —; sistem kartının model kartına ne eklediğini — 123 sayfalık bir kartın güvenlik düzeyi kararı, ajan güvenliği ve hizalama değerlendirmesi bölümleri, yüzden fazla dış kırmızı takım üyesi —; pratikte ne yazılıp ne yazılmadığını — 32.111 kartta çevresel etki yüzde 2,0, değerlendirme 15,4, sınırlar 17,4 —; ve önerinin yükümlülüğe dönüşmesini: veri künyesi kavramının Avrupa Birliği yasasının teknik dokümantasyon ekinde geçmesi. Kapanışta belgenin bir iddia olduğunu ve denetimin bugünkü hâlini verir.",
+      "summary": "Bir puanın koşullarının nereye yazıldığını izler: model kartının bölümlerini ve ayrıştırılmış değerlendirmenin neden merkezde durduğunu — kamuya açık bir denetimden yedi ay sonra üç şirketin de yeni sürüm yayımlaması, koyu tenli kadın altkümesinde hatanın yüzde 17,7 ile 30,4 arasında düşmesi, denetlenmeyen iki şirketin aynı altkümede yüzde 31,37 ve 22,50'de kalması —; verinin belgesini ve belgesizliğini — popüler kümelerin lisanslarının yüzde 70'inden fazlasının belirtilmemiş olması, bir yılda C4'ün token'larının yüzde 5'inden fazlasının ve en canlı kaynaklarının yüzde 28'inden fazlasının kullanıma kapanması —; sistem kartının model kartına ne eklediğini — 123 sayfalık bir kartın güvenlik düzeyi kararı, ajan güvenliği ve hizalama değerlendirmesi bölümleri, 33 sayfalık bir başka kartta yüzden fazla dış kırmızı takım üyesi —; pratikte ne yazılıp ne yazılmadığını — 32.111 kartta çevresel etki yüzde 2,0, değerlendirme 15,4, sınırlar 17,4 —; ve önerinin yükümlülüğe dönüşmesini: veri künyesi kavramının Avrupa Birliği yasasının teknik dokümantasyon ekinde geçmesi. Kapanışta belgenin bir iddia olduğunu ve denetimin bugünkü hâlini verir.",
       "tags": [
         "seffaflik",
         "model-karti",
@@ -1654,10 +1660,12 @@
         "belgeleme",
         "denetim"
       ],
-      "contentHash": "sha256:0825ede6cc3583c90f1b43a21e5835cf2d0778b71c356a6103aef872131f166a",
+      "contentHash": "sha256:fac8807a65d96d9501907686baab2b374b86bd30d228a78170d871870443476e",
       "path": "content/series/articles/safety-and-evaluation/seffaflik-model-kartlari-ve-sistem-kartlari.md",
       "relatedArticleIds": [],
-      "classificationBatch": 19
+      "classificationBatch": 19,
+      "revisedAt": "2026-10-26",
+      "revisionNote": "AB yasasıyla bağ düzeltildi: veri künyesi maddesi yüksek riskli sistemlerin Ek IV'ünde, genel amaçlı modelin teknik belgesi Ek XI'de."
     },
     {
       "articleId": "article_a7d9918e-5c85-4e61-ba69-50def19b8e95",
@@ -1688,7 +1696,7 @@
       "category": "multimodal-and-future",
       "level": "intermediate",
       "readingOrder": 82,
-      "summary": "Bir önceki makalenin hamlesini sese taşır ve üstüne zamanı ekler: sesin iki ayrı token ailesine — öz-denetimli eğitilmiş anlamsal token'lar ve sinir ses kodlayıcısının artık vektör kuantizasyonuyla ürettiği akustik token'lar — bölünmesini ve ikisini birleştiren melez düzeni; tanımanın öz-denetimden zayıf denetime geçişini ve 680 bin saatlik bir modelin, aynı referans kümede eşit puana sahip denetimli bir modele karşı öteki kümelerde yüzde 55,2 daha az hata yapmasını — 79'un etkin sağlamlık ölçüsünün ses hâli —; üretimin ardışık hattını ve üç saniyelik bir kayıttan ses taklit eden kodek dil modellerini; ve konuşmanın gecikme bütçesini: on dilde ölçülen sıra geçiş boşluğunun modu 0, ortalaması 208 milisaniye iken dört bileşenli bir hattın saniyelere çıkması, buna karşılık uçtan uca bir modelin 12,5 Hz çerçeve hızıyla 160 milisaniyelik kuramsal gecikmeye inmesi. Kapanışta ölçümün nerede durduğunu verir: 27 beceride insan 82,23 iken en iyi model 54,90.",
+      "summary": "Bir önceki makalenin hamlesini sese taşır ve üstüne zamanı ekler: sesin iki ayrı token ailesine — öz-denetimli eğitilmiş anlamsal token'lar ve sinir ses kodlayıcısının artık vektör kuantizasyonuyla ürettiği akustik token'lar — bölünmesini ve ikisini birleştiren melez düzeni; tanımanın öz-denetimden zayıf denetime geçişini ve 680 bin saatlik bir modelin, aynı referans kümede eşit puana sahip denetimli bir modele karşı öteki kümelerde yüzde 55,2 daha az hata yapmasını — 79'un etkin sağlamlık ölçüsünün ses hâli —; üretimin ardışık hattını ve üç saniyelik bir kayıttan ses taklit eden kodek dil modellerini; ve konuşmanın gecikme bütçesini: on dilde ölçülen sıra geçiş boşluğunun modu 0, ortalaması 208 milisaniye iken dört bileşenli bir hattın saniyelere çıkması, buna karşılık uçtan uca bir modelin 12,5 Hz çerçeve hızıyla 160 milisaniyelik kuramsal gecikmeye inmesi. Kapanışta ölçümün nerede durduğunu verir: 27 beceride insan 82,23 iken ön baskının 2024'teki ilk sürümündeki en güçlü model 54,90.",
       "tags": [
         "ses",
         "konusma-tanima",
@@ -1696,7 +1704,7 @@
         "gercek-zamanli",
         "gecikme-butcesi"
       ],
-      "contentHash": "sha256:080d32b663a8df2758fa2bcac4d9f313ec7ff1f8a8a41255947ee44cb2a035b3",
+      "contentHash": "sha256:46f885ef573821ab8a59c8c63224706346bab57579924d068184cad829675860",
       "path": "content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
@@ -1820,7 +1828,7 @@
         "enerji-butcesi",
         "melez-calistirma"
       ],
-      "contentHash": "sha256:82ec0d64b57821dcc9f8717569e39fef08c4deb8afdbe9e796264d74d6e55bb2",
+      "contentHash": "sha256:2526bf1049613be0dac46b75a179bdc7e3c45bcd2c963620209a469e98caed7f",
       "path": "content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md",
       "relatedArticleIds": [],
       "classificationBatch": 21
@@ -1966,7 +1974,7 @@
         "momentum",
         "ogrenme-orani"
       ],
-      "contentHash": "sha256:665ece40db551e0f4664f74296a17bd539fbaab1b93d6b9946654853c6c17106",
+      "contentHash": "sha256:1e34252818c540153b46a956d98c57a76df636594fcadce202c1f03c03e50488",
       "path": "content/series/articles/foundations/optimizasyonun-kurami-gradyanin-matematigi.md",
       "relatedArticleIds": [],
       "classificationBatch": 23,
@@ -1988,7 +1996,7 @@
         "ezber",
         "duzenlilestirme"
       ],
-      "contentHash": "sha256:b667018d4ee9931255e293cede94a7fd1b347f5fe4ac84c7994cb008e51a68fe",
+      "contentHash": "sha256:786f6b4c0b6347417ed5d2737a08efdc277b8d6f90c1a5e0bb197b0896ff0997",
       "path": "content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md",
       "relatedArticleIds": [],
       "classificationBatch": 23,
@@ -2002,7 +2010,7 @@
       "category": "foundations",
       "level": "advanced",
       "readingOrder": 97,
-      "summary": "96. makalede kurduğumuz muhasebe sinir ağlarına özgü değil; her tahmin yordamının kalemleri. Bu makale dört klasik aileyi varsayımlarıyla geziyor. Hiç eğitilmeyen en yakın komşu kuralı, sonsuz örnekte en iyi olası hatanın iki katını asla aşmıyor: en iyi hata yüzde 5 ise en yakın komşunun tavanı yüzde 9,5. Ağaç toplulukları hâlâ tablo verisinde önde ve nedeni ölçüldü: 45 kümede yapılan karşılaştırma üç etken buluyor ve rastgele döndürme sıralamayı tersine çeviriyor. Ama tek cümlelik cevap yok: 176 kümelik daha büyük bir çalışma, farkın çoğu kümede önemsiz olduğunu ve ağacın hiperparametresini biraz ayarlamanın aile seçiminden daha çok fark ettirdiğini buluyor. 121 kümelik klasik tarama da aynı dersi veriyor: 179 sınıflandırıcı arasında en iyisi en büyük doğruluğun yüzde 94,1'ini alıyor.",
+      "summary": "96. makalede kurduğumuz muhasebe sinir ağlarına özgü değil; her tahmin yordamının kalemleri. Bu makale dört klasik aileyi varsayımlarıyla geziyor. Hiç eğitilmeyen en yakın komşu kuralı, sonsuz örnekte en iyi olası hatanın iki katını asla aşmıyor: en iyi hata yüzde 5 ise en yakın komşunun tavanı yüzde 9,5. Ağaç toplulukları 2022'de orta ölçekli tablo verisinde hâlâ öndeydi ve nedeni ölçüldü: 45 kümede yapılan karşılaştırma üç etken buluyor ve rastgele döndürme sıralamayı tersine çeviriyor. Ama tek cümlelik cevap yok: 176 kümelik daha büyük bir çalışma, farkın çoğu kümede önemsiz olduğunu ve ağacın hiperparametresini biraz ayarlamanın aile seçiminden daha çok fark ettirdiğini buluyor. 121 kümelik klasik tarama da aynı dersi veriyor: 179 sınıflandırıcı arasında en iyisi en büyük doğruluğun yüzde 94,1'ini alıyor.",
       "tags": [
         "klasik-ml",
         "karar-agaclari",
@@ -2286,7 +2294,7 @@
         "pekistirmeli-ogrenme",
         "saglamlik"
       ],
-      "contentHash": "sha256:9f9f646c4c1a447752f084dfd23826e4699eec6e746c8d254352a2e807c4b271",
+      "contentHash": "sha256:3f97eb25245c3b078465a2f218153ca601c1e0c668679dc7b7081ee275c73cc6",
       "path": "content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md",
       "relatedArticleIds": [],
       "classificationBatch": 26
@@ -2382,7 +2390,7 @@
       "category": "case-studies",
       "level": "advanced",
       "readingOrder": 115,
-      "summary": "Serinin ikinci vaka incelemesi zinciri kullanım tarafında yürütüyor: model seçimi, getirme dizini, araçlar, onay, döngü ve gözlem. Her halkaya 114'ün iki sorusunu soruyor — ne sıklıkla ödeniyor ve geri alması neye mal oluyor. Cevap üretim tarafındakinden başka bir yere düşüyor: model ve temsili, farklı fiyatlarla da olsa geri alınabiliyor; geri alınamazlık ürünün dünyaya değdiği kenarda — yazan eylemde, dışarı çıkan veride ve kurulan aracın tanımında — toplanıyor. Ölçümler, o kenara mimariyle konan denetimin insan onayından güçlü olduğunu gösteriyor.",
+      "summary": "Serinin ikinci vaka incelemesi zinciri kullanım tarafında yürütüyor: model seçimi, getirme dizini, araçlar, onay, döngü ve gözlem. Her halkaya 114'ün iki sorusunu soruyor — ne sıklıkla ödeniyor ve geri alması neye mal oluyor. Cevap üretim tarafındakinden başka bir yere düşüyor: model ve temsili, farklı fiyatlarla da olsa geri alınabiliyor; geri alınamazlık ürünün dünyaya değdiği kenarda — yazan eylemde, dışarı çıkan veride ve kurulan aracın tanımında — toplanıyor. O kenara mimariyle konan denetim ölçüldüğü yerde güçlü; insan onayının dil modeli ürünlerinde ne kadar yakaladığı ise ölçülmüş değil.",
       "tags": [
         "vaka-incelemesi",
         "llm-urunu",
@@ -2402,7 +2410,7 @@
       "category": "multimodal-and-future",
       "level": "advanced",
       "readingOrder": 116,
-      "summary": "Alanın bilmediklerini konularına göre değil, eksik olan kanıtın türüne göre ayırıyor: ölçen aracı olmayan sorular, ölçülmüş ama açıklanmamış sorular ve ölçümleri koşula göre ayrışan sorular. Değerlendirme farkındalığının davranışa etkisinin modelden modele işaret değiştirdiğini, ölçek yasasının üç açıklamasını ayıracak sayının iki çalışmanın ölçüm farkından küçük olduğunu ve öz-düzeltme tartışmasının koşul okununca eridiğini sayılarla gösteriyor. Tezi: bir bilinmeyen, onu neyin kapatacağı söylenebildiği ölçüde bilinir.",
+      "summary": "Alanın bilmediklerini konularına göre değil, eksik olan kanıtın türüne göre ayırıyor: ölçen aracı olmayan sorular, ölçülmüş ama açıklanmamış sorular ve ölçümleri koşula göre ayrışan sorular. Değerlendirme farkındalığını bastırmanın davranışa etkisinin modelden modele işaret değiştirdiğini, ölçek yasasının açıklamalarını ayıracak sayının neden henüz tahminin koşulunda ölçülmediğini ve öz-düzeltme tartışmasının koşul okununca eridiğini sayılarla gösteriyor. Tezi: bir bilinmeyen, onu neyin kapatacağı söylenebildiği ölçüde bilinir.",
       "tags": [
         "acik-sorular",
         "bilinmeyenin-turleri",
@@ -2422,7 +2430,7 @@
       "category": "multimodal-and-future",
       "level": "advanced",
       "readingOrder": 117,
-      "summary": "\"Yapay genel zekâ\" tek bir ad ama en az sekiz tanım taşıyor, ve her tanım başka bir sınav ve başka bir kıyas insanı istiyor. Turing testinin geçildiği ölçümle ne ölçtüğünü, ARC'de insan tabanının hangi insana göre yüzde 65 ya da 98 çıktığını, görev ufkunun eğiminin sağlam ama seviyesinin eşiğe ve kıyas insanına bağlı olduğunu ve uzman anketlerinin tarih değil sorunun ifadesine duyarlılığı ölçtüğünü gösteriyor. Kehanet yok: yalnızca tanımlar, sınavlar ve ölçümler.",
+      "summary": "\"Yapay genel zekâ\" tek bir ad ama en az sekiz tanım taşıyor, ve her tanım başka bir sınav ve başka bir kıyas insanı istiyor. Turing testinde hükmün sorgucuların kim olduğuna göre değiştiğini, ARC'de insan tabanının hangi insanla ve hangi kümeyle ölçüldüğüne göre yüzde 65 ya da 97–98 çıktığını, görev ufkunun eğiminin sağlam ama seviyesinin eşiğe ve kıyas insanına bağlı olduğunu ve uzman anketlerinin tarih değil sorunun ifadesine duyarlılığı ölçtüğünü gösteriyor. Kehanet yok: yalnızca tanımlar, sınavlar ve ölçümler.",
       "tags": [
         "yapay-genel-zeka",
         "tanim-ve-sinav",
@@ -2442,7 +2450,7 @@
       "category": "multimodal-and-future",
       "level": "advanced",
       "readingOrder": 118,
-      "summary": "Serinin son makalesi, sayıları eskidiğinde elde neyin kalacağını soruyor ve cevabı bir yordam olarak veriyor: bir iddia okurken ve bir sistem kurarken sorulacak soruların sırası, her sorunun hangi cevapta durdurduğu ve her sorunun serinin hangi makalesinde kurulduğu. Yordamı 115'teki bir ölçüm üzerinde işletiyor, ilk makalenin verdiği sözlerin nerede karşılandığını gösteriyor ve öğrenilenin nasıl tutulacağını, hatırlamaya dayalı çalışmanın ölçülmüş etkisiyle bitiriyor.",
+      "summary": "Serinin son makalesi, sayıları eskidiğinde elde neyin kalacağını soruyor ve cevabı bir yordam olarak veriyor: bir iddia okurken ve bir sistem kurarken sorulacak soruların sırası, hangi cevabın okumayı bitirdiği ya da sırayı değiştirdiği, ve her sorunun serinin hangi makalesinde kurulduğu. Yordamı daha önce aktarılmış iki ölçümde işletiyor, ilk makalenin verdiği sözlerin nerede karşılandığını gösteriyor ve öğrenilenin nasıl tutulacağını hatırlama pratiği, geri bildirim ve karmaşık malzemedeki açık tartışmayla bitiriyor.",
       "tags": [
         "sentez",
         "okuma-yordami",

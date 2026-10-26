@@ -23,6 +23,14 @@
 
 ## Key Learnings
 
+- [2026-10-26] **AI serisi bakım run'ı 4 — olgu denetimi döngüsü:** künyeleri doğru makalelerde bile birincil kaynakla
+  okunan iddiaların ~%11'i düzeltme gerektirdi (61–80, 1.316 iddia). Hatalar en çok kaynağın tablo koşulunun düşmesinde,
+  niceleyicinin keskinleşmesinde ve tarihsiz şimdiki zamanda. Verimli düzen: makale çifti başına salt okunur denetçi →
+  bulgu grubu başına çürütmeye çalışan şüpheci (kesin `old/new`) → ana oturum bağlamında karar → üç mercekli diff denetimi.
+  Sıradaki aralık HANDOFF "Açık borçlar"da (41–60).
+- [2026-10-26] **Bu makinede (C:\dev\anil-lib):** Python 3.14'te requests/pypdf yok (stdlib urllib yeter), `pdftotext`
+  Git'in mingw64'ünde; Git Bash `curl` bazı hostlarda 000 döndürüyor; OpenAlex anahtarsız istekleri IP başına küçük bir
+  günlük bütçeyle sınırlıyor; Crossref `select` içinde `subtype` 400 verir.
 - [2026-09-25] **Favicon, Next dosya kuralıyla `src/app/` altında:** `favicon.ico` (16/32/48), `icon.svg`
   (koyu tema `@media (prefers-color-scheme: dark)` ile `#b5435a`), `apple-icon.png` (180, opak). Next head'e
   kendisi `/favicon.ico sizes=16x16` (ICO'nun ilk girdisi), `/icon.svg?hash sizes=any`, `apple-touch-icon` ekler;
@@ -585,6 +593,15 @@ ode_modules`, sonra kopyayi sil.
 
 ## Do-Not-Repeat
 
+- [2026-10-26] AI serisinde frontmatter `summary`'yi değiştirdiğinde `catalog.json`'daki kopyayı da elle senkronla ve iki
+  tarafı karşılaştır: `sync-series-hashes` yalnız hash + revizyon alanlarını taşır, `assertCatalogMatch` özeti
+  denetlemez; okura gösterilen özet katalogdakidir. 115–118 Batch 28'den beri taslak özeti gösteriyordu (bug-932).
+- [2026-10-26] Kelime bandı için düzeltilmiş bir cümleyi kısaltırken tarih çıpasını ("dergi sürümünde", "2025'te") ve
+  öznesi belirsizleşecek kısaltmaları ("Denetimin…", "Bu makale parçaları…") düşürme; bakım run'ı 4'te diff denetimi
+  üçünü yakaladı.
+- [2026-10-26] Bir makaledeki iddiayı düzelttiğinde onu "N'de gördüğümüz" diye geri çağıran öteki makaleleri grep et:
+  run 4'te 69'un Raji listesi düzeltilince 70'teki iki geri çağırma ve 69'un FMTI cümlesi düzeltilince 80 ve 20 eski
+  hâlde kaldı (şüphecinin yayılım listesi boştu).
 - [2026-10-26] SVG'nin `viewBox` değerini düz metin değiştirmeyle düzenlerken sonraki boşluğu koru:
   BOUN run 2 `viewBox="0 0 720 260"xmlns=` bıraktı ve üç dosya geçerli XML olmaktan çıktı; site HTML
   ayrıştırıcısıyla gösterdiği için kimse görmedi. Düzenlemeden sonra her SVG'yi bir XML ayrıştırıcısıyla aç.
