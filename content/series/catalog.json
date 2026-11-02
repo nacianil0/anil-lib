@@ -82,7 +82,7 @@
         "bpe",
         "dagilimsal-hipotez"
       ],
-      "contentHash": "sha256:24f76a89f12ac462ad2294ba721cb4e6a2dfc27575a69963d4c742770f167c17",
+      "contentHash": "sha256:95615b3b337bae9cd3651e0c925219ca511804891af473b052926236f3abdf40",
       "path": "content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md",
       "relatedArticleIds": [],
       "classificationBatch": 0
@@ -244,7 +244,7 @@
         "lima",
         "sentetik-veri"
       ],
-      "contentHash": "sha256:f9d548f809cd530f3b3d8d43065ad422b615b6924e8c648294d42d5081df4263",
+      "contentHash": "sha256:5770a421e8bd906b44fbb342032b91c1d713089478160add7fe6ad64f504312a",
       "path": "content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md",
       "relatedArticleIds": [],
       "classificationBatch": 2
@@ -416,7 +416,7 @@
         "seffaflik",
         "model-ekosistemi"
       ],
-      "contentHash": "sha256:83ec6f6fdfe59108a115bcbeb90f7a72e518c52348ffe2200de2e8134f162b30",
+      "contentHash": "sha256:9f85d0b423cc806b9b4e334f9815cacf0d953c7d993fce9f2400f3ad68b7df35",
       "path": "content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md",
       "relatedArticleIds": [],
       "classificationBatch": 4
@@ -868,7 +868,7 @@
         "gec-etkilesim",
         "siralamayla-birlestirme"
       ],
-      "contentHash": "sha256:c667a72d0476430ed717c722273f7bada754e44e9a07b8afda26da78c4fdfa6a",
+      "contentHash": "sha256:124088145a0e83f2c11bb855b85066777d051737071c8b5b8bb482f7e68fa10d",
       "path": "content/series/articles/agents-and-retrieval/getirme-aramanin-modern-hali.md",
       "relatedArticleIds": [],
       "classificationBatch": 9,
@@ -992,7 +992,7 @@
         "dosya-sistemi",
         "depo-duzeyi-getirme"
       ],
-      "contentHash": "sha256:6e9523b05a37ef9b12e3a02d087a38b081f6c30a2735ffee7a9c69f910bc9c9c",
+      "contentHash": "sha256:45cfa398d4dccb0d1805ba2f77a3dfe58148f5645e43e228850c5d81ce01a3bd",
       "path": "content/series/articles/agents-and-retrieval/web-kod-ve-dosyalarla-calisan-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1012,7 +1012,7 @@
         "arac-getirme",
         "arac-zehirleme"
       ],
-      "contentHash": "sha256:f36e0b56a62752af7bb7388ba921406b8a6fae63b69abc66ab2eea0ea9484c5f",
+      "contentHash": "sha256:ade11d5a027e716d18ca652a37b9bcc42b5c0c3a316d1a2a6d50192122b54035",
       "path": "content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1032,7 +1032,7 @@
         "kaynak-guvenilirligi",
         "atif-ve-uydurma"
       ],
-      "contentHash": "sha256:32b027f40749b9be263189aa0c0d2d718f53f40605c5dc079713f8e91b8b11eb",
+      "contentHash": "sha256:7f4fc938f4d7387f272cf2b8a6fb96fc07c403bc920e5c8c7aaaff759facc938",
       "path": "content/series/articles/agents-and-retrieval/bilgi-tazeligi-guncellik-kaynak-guveni-ve-atif.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1052,10 +1052,12 @@
         "gecerli-eylem",
         "durma-karari"
       ],
-      "contentHash": "sha256:5f2469f0c1ecd6371892694df3235521ab454eb1de4cdcee06832538d4036d07",
+      "contentHash": "sha256:2cbff1af4e48d9f0c83e9462969e8c0c8717e68b3412acbc7997e4b35d67f437",
       "path": "content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md",
       "relatedArticleIds": [],
-      "classificationBatch": 12
+      "classificationBatch": 12,
+      "revisedAt": "2026-11-02",
+      "revisionNote": "Durma kararının ölçümü düzeltildi: bütçe, başarısız bölümlerin hepsini değil bütün görevlerin yaklaşık üçte birini kesiyor; bir başarısız düzenleme sonrakinin şansını yarıya değil üçte bir düşürüyor."
     },
     {
       "articleId": "article_b16b4d33-25fb-4f40-a5b9-8f86caa89da5",
@@ -1072,7 +1074,7 @@
         "eylem-agaci",
         "hata-dongusu"
       ],
-      "contentHash": "sha256:b20124e2a2e9c8f0a9804caff2dad7f78274652d6648773d8043de66e3896d6b",
+      "contentHash": "sha256:bec11f1f2c06dddfd2acc62b1e6beb0795382caff294b9cc60895232f93a542b",
       "path": "content/series/articles/agents-and-retrieval/ajan-mimarileri.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
@@ -1092,7 +1094,7 @@
         "orkestrasyon",
         "ajan-basarisizligi"
       ],
-      "contentHash": "sha256:91a5c2b9c6d283a92053478c6b62281f907944ae1bbdf18488f27fabb3bcdfe6",
+      "contentHash": "sha256:767ffc125c1db971c55318c95be911df837f9d1788a644a8fecb91735c0b6e31",
       "path": "content/series/articles/agents-and-retrieval/coklu-ajan-sistemleri-isbirligi-ve-orkestrasyon.md",
       "relatedArticleIds": [],
       "classificationBatch": 12
@@ -1104,7 +1106,7 @@
       "category": "agents-and-retrieval",
       "level": "intermediate",
       "readingOrder": 54,
-      "summary": "Ajanı insan için çizilmiş arayüze koyar: ekranın üç gösterimini — sayfa kaynağı, erişilebilirlik ağacı, ekran görüntüsü — ve her birinin token bedelini ve eksikliğini; eylemin kimlikle mi koordinatla mı verildiğini; planın doğru, tıklamanın yanlış olduğu yerin adını, öğe konumlandırmayı, ve bunun için ayrıca eğitilmiş modellerin kazancını; işaretlemenin nerede işe yaradığını nerede zarar verdiğini; beş ortamda ajanla insan arasındaki uçurumu ve uçurumun üç nedenini; aynı ekran görüntüsünün webde neden kazandırıp telefonda neden kaybettirdiğini ölçümlerle anlatır.",
+      "summary": "Ajanı insan için çizilmiş arayüze koyar: ekranın üç gösterimini — sayfa kaynağı, erişilebilirlik ağacı, ekran görüntüsü — ve her birinin token bedelini ve eksikliğini; eylemin kimlikle mi koordinatla mı verildiğini; planın doğru, tıklamanın yanlış olduğu yerin adını, öğe konumlandırmayı, ve bunun için ayrıca eğitilmiş modellerin kazancını; işaretlemenin nerede işe yaradığını nerede zarar verdiğini; insanın ölçüldüğü dört ortamda ajanla insan arasındaki uçurumu ve uçurumun üç nedenini; aynı ekran görüntüsünün webde neden kazandırıp telefonda neden kaybettirdiğini ölçümlerle anlatır.",
       "tags": [
         "bilgisayar-kullanimi",
         "ekran-gosterimi",
@@ -1112,7 +1114,7 @@
         "oge-konumlandirma",
         "web-ajani"
       ],
-      "contentHash": "sha256:0b79efb04afaae8b3f5e6b7daf8071b89281aaa1f69459bf9d349436d3249c3a",
+      "contentHash": "sha256:c9b5153f151a5e3a022bce24e228c8b75bd9081259e2c2930e9032d3b24d0573",
       "path": "content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md",
       "relatedArticleIds": [],
       "classificationBatch": 12,
@@ -1134,7 +1136,7 @@
         "ajansiz-hat",
         "yazilim-muhendisligi"
       ],
-      "contentHash": "sha256:003986c0abdaa9be086f64fd1c78666c94679c7633e1c92a552f20ae741969e0",
+      "contentHash": "sha256:b921af0d7434531855f789f964f5928fe22502a54c8b5786911dea582670a3c3",
       "path": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
@@ -1154,7 +1156,7 @@
         "baglam-penceresi",
         "secici-unutma"
       ],
-      "contentHash": "sha256:7dab78bfc39c96c28ea41ba9975c273c251139547ba16e6394f2239def11ab54",
+      "contentHash": "sha256:16aa965732fa98d0ecad7f4fd703b772baa7793f0b60ca992aea4879636a1ad4",
       "path": "content/series/articles/agents-and-retrieval/ajan-bellegi-ve-durum-yonetimi.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
@@ -1174,7 +1176,7 @@
         "hakem-ajan",
         "kisayol-ve-hile"
       ],
-      "contentHash": "sha256:455a1366e4f531c1830474019ae24e9cb6a75ba8ccfd4d4935abcabb6281545f",
+      "contentHash": "sha256:83aaf8268a629c82bac233ce91ebd362875c385bee41dfc11042a97b5b00da99",
       "path": "content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md",
       "relatedArticleIds": [],
       "classificationBatch": 13,
@@ -1196,7 +1198,7 @@
         "en-az-ayricalik",
         "saldiri-yuzeyi"
       ],
-      "contentHash": "sha256:af217e18612f648e10d34902df9535f9ce1237a5dd79c677eb3991459875b46b",
+      "contentHash": "sha256:854371e7734d57709666778391be6b5e647fe0d8855b65d88dd5dddfc723b85f",
       "path": "content/series/articles/agents-and-retrieval/ajan-guvenligi-istem-enjeksiyonu-ve-kum-havuzu.md",
       "relatedArticleIds": [],
       "classificationBatch": 13
@@ -1208,7 +1210,7 @@
       "category": "agents-and-retrieval",
       "level": "intermediate",
       "readingOrder": 59,
-      "summary": "Ajanla insanın iş bölümünü ölçer: özerkliğin bir yetenek değil bir tasarım kararı olduğunu ve beş düzeyinin her birinde neyin büyüdüğünü; devir kararının bir kayıp hesabı olduğunu ve kazancın insanın modelle aynı yerde mi yanıldığına bağlı kaldığını; yüz altı deneyin meta-analizinde insan artı yapay zekânın en iyi tek başınadan ortalama daha kötü çıktığını ve hangi koşulda daha iyi olduğunu; açıklamanın doğruluğu değil uyumu artırdığını; eksik belirtimde ajanın sormadığını ama sorunca kaybın yüzde 89'unu geri aldığını; kullanıcının döngüye girmesinin güvenilirliği nasıl düşürdüğünü; izi okuyan insanın uzun açıklamaya kanmasını; ve kalibrasyonun devir için gerekli ama yeterli olmadığını ölçümlerle anlatır.",
+      "summary": "Ajanla insanın iş bölümünü ölçer: özerkliğin bir yetenek değil bir tasarım kararı olduğunu ve beş düzeyinin her birinde neyin büyüdüğünü; devir kararının bir kayıp hesabı olduğunu ve kazancın insanın modelle aynı yerde mi yanıldığına bağlı kaldığını; yüz altı deneyin meta-analizinde insan artı yapay zekânın en iyi tek başınadan ortalama daha kötü çıktığını ve hangi koşulda daha iyi olduğunu; açıklamanın doğruluğu değil uyumu artırdığını; eksik belirtimde ajanın sormadığını ama sorunca en iyi modelin tam belirtimdeki puanının yüzde 89'una ulaştığını; kullanıcının döngüye girmesinin güvenilirliği nasıl düşürdüğünü; izi okuyan insanın uzun açıklamaya kanmasını; ve kalibrasyonun devir için gerekli ama yeterli olmadığını ölçümlerle anlatır.",
       "tags": [
         "insan-ajan-isbirligi",
         "devir-karari",
@@ -1216,7 +1218,7 @@
         "denetim",
         "tamamlayicilik"
       ],
-      "contentHash": "sha256:5221f1f9b8ed19bc2e53554a74100ec3efa9fb5cd59c79d571f2b4383338157b",
+      "contentHash": "sha256:445d187733d2c35f541e5e4e3985aaaec87e551a3d2f54440dd7cd301a268a24",
       "path": "content/series/articles/agents-and-retrieval/insan-ajan-isbirligi-denetim-ve-devir.md",
       "relatedArticleIds": [],
       "classificationBatch": 14
@@ -1236,7 +1238,7 @@
         "gecikme",
         "guvenilirlik"
       ],
-      "contentHash": "sha256:d119eeb1bad58044109b0a3109be387401c79bd0ea2a5fc07caefff6f25a3278",
+      "contentHash": "sha256:aa2d601fc9ac1e727d6360e7b77ee2966bbb194f48beb1b386e3356cfcacfda5",
       "path": "content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md",
       "relatedArticleIds": [],
       "classificationBatch": 14
@@ -1428,7 +1430,7 @@
         "hesap-esigi",
         "denetim"
       ],
-      "contentHash": "sha256:eb4658b0e3c8891796c78f97d87421d94666d0319e290cf590ee7344e1261c96",
+      "contentHash": "sha256:93f9249dfbdd27ea82abb01e9d60ec05f549b542fb49eb4e951cbb6266c66aaf",
       "path": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
@@ -1682,7 +1684,7 @@
         "karsitsal-on-egitim",
         "gorsel-olcutler"
       ],
-      "contentHash": "sha256:a98b8ab69891c8a59037a7e17a784b590b707100add59c5392f38b8a0cab0641",
+      "contentHash": "sha256:98823befceae42a889f84f3ab6e1e841aa1b61e4b0707d76f31dab213fd5e9c3",
       "path": "content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 19,
@@ -1704,7 +1706,7 @@
         "gercek-zamanli",
         "gecikme-butcesi"
       ],
-      "contentHash": "sha256:46f885ef573821ab8a59c8c63224706346bab57579924d068184cad829675860",
+      "contentHash": "sha256:14b78fda10eb5556bae6157323cbd45b07e7cbf76d89fc94f1c164f3da25afcb",
       "path": "content/series/articles/multimodal-and-future/ses-konusma-ve-gercek-zamanli-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 19
@@ -1724,7 +1726,7 @@
         "kilavuzluk",
         "ornekleyici"
       ],
-      "contentHash": "sha256:45f92766a2c6a4b07f906020a71db02218f30b4882d079c865481bcf234c0a90",
+      "contentHash": "sha256:30985ab02d2bc5be2ed238e4f95ef7aefd88bc14ae5188f5e3e08c79d186febb",
       "path": "content/series/articles/multimodal-and-future/goruntu-ve-video-uretimi-difuzyona-giris.md",
       "relatedArticleIds": [],
       "classificationBatch": 20,
@@ -1766,7 +1768,7 @@
         "yuk-dengeleme",
         "olcek-yasalari"
       ],
-      "contentHash": "sha256:d8cc24bfab0331ee229d9f15d4a9715671f3341bd003c3fc1a84d2e872701643",
+      "contentHash": "sha256:88fc4cbd915ec194438fdceb55d1692443b3958cb7dbf3db02d89bcd5e8d4037",
       "path": "content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md",
       "relatedArticleIds": [],
       "classificationBatch": 20
@@ -1808,7 +1810,7 @@
         "ogretmen-ogrenci",
         "hesap-butcesi"
       ],
-      "contentHash": "sha256:7fb59732823723004f660ea0ec00de3b9f49cb9398a68405ff874b61e6fa79c4",
+      "contentHash": "sha256:34e907f7ab3592a7293d2a5a1f7c0e0c4d8006da36331c63a83a9d83ad3dfa9c",
       "path": "content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md",
       "relatedArticleIds": [],
       "classificationBatch": 21
@@ -1828,7 +1830,7 @@
         "enerji-butcesi",
         "melez-calistirma"
       ],
-      "contentHash": "sha256:2526bf1049613be0dac46b75a179bdc7e3c45bcd2c963620209a469e98caed7f",
+      "contentHash": "sha256:db5c1983974870f1e2bb824cf915e0c9e9ec19f67d68971e52452273e3ab2456",
       "path": "content/series/articles/multimodal-and-future/ucta-yapay-zeka-telefonda-ve-cihazda-llm.md",
       "relatedArticleIds": [],
       "classificationBatch": 21
@@ -1848,7 +1850,7 @@
         "alana-ozel-mimari",
         "hassasiyet"
       ],
-      "contentHash": "sha256:4051618f1260886638764b61e2fb34a15bbf646030b10e9ff3042fabe2621dbf",
+      "contentHash": "sha256:cba97dc32c7b18b65000f3851b6c2e2c48dc2c819f2d51219b30cb5a941faf3c",
       "path": "content/series/articles/multimodal-and-future/donanim-ekosistemi-gpudan-ozel-ciplere.md",
       "relatedArticleIds": [],
       "classificationBatch": 21,
@@ -1870,7 +1872,7 @@
         "cikarim-maliyeti",
         "veri-merkezi"
       ],
-      "contentHash": "sha256:237bc783ec18d8fffdceb7f96ba3ea49d265e40b951f3c9e1b975c8a2aca41f9",
+      "contentHash": "sha256:bf2eb2f10c966acf74e104f57fd569a473cbd870eacd374046024a7afaaa4163",
       "path": "content/series/articles/multimodal-and-future/enerji-maliyet-ve-cevresel-ayak-izi.md",
       "relatedArticleIds": [],
       "classificationBatch": 21
@@ -1890,7 +1892,7 @@
         "esyonsuzluk",
         "matris-ayristirmasi"
       ],
-      "contentHash": "sha256:53a9214368040aaec5f8f79fb8a1a8d8d05c31d8f7a05dbefb5dbd247d9dfc77",
+      "contentHash": "sha256:755f3d5a01ebd3ca138e39a8eae85401e3fa8d0591b7267c957a5b02027575a3",
       "path": "content/series/articles/foundations/vektorler-ve-matrisler-embeddingin-matematigi.md",
       "relatedArticleIds": [],
       "classificationBatch": 22
@@ -1910,7 +1912,7 @@
         "dusuk-rank",
         "matris-sikistirma"
       ],
-      "contentHash": "sha256:091d3bf2f1e40bbb8ed302d1204448aa90f3d9524aa6ecf05c47759fba06324e",
+      "contentHash": "sha256:240a800f21c0b67b05f2d0b4c63f77d1bd6c70a6c9fa8f740ab9ee7e4cf76d85",
       "path": "content/series/articles/foundations/matrisin-icini-okumak-rank-ozdeger-ve-svd.md",
       "relatedArticleIds": [],
       "classificationBatch": 22,
@@ -1932,7 +1934,7 @@
         "softmax",
         "yansiz-tahminci"
       ],
-      "contentHash": "sha256:9aae9ab4c4d378470a92df35792f810438e69205b0f8e4b8545d199d528c0e8b",
+      "contentHash": "sha256:47686701cf26e228e46f8f178c24b3d3aa6f5a31aeebd33839c07bc88ed82a3c",
       "path": "content/series/articles/foundations/olasiligin-dili-dagilimlar-beklenti-ve-en-buyuk-olabilirlik.md",
       "relatedArticleIds": [],
       "classificationBatch": 22
@@ -1996,7 +1998,7 @@
         "ezber",
         "duzenlilestirme"
       ],
-      "contentHash": "sha256:786f6b4c0b6347417ed5d2737a08efdc277b8d6f90c1a5e0bb197b0896ff0997",
+      "contentHash": "sha256:aa8af23fb7b305988f28d6222dc83131861b9f6beb54e52a724d962479fea505",
       "path": "content/series/articles/foundations/genelleme-kurami-ezber-ile-ogrenme-arasinda.md",
       "relatedArticleIds": [],
       "classificationBatch": 23,
@@ -2018,7 +2020,7 @@
         "kumeleme",
         "taban-cizgisi"
       ],
-      "contentHash": "sha256:405874d16554054abe478e5ce3edc59c890e93180c041aec01db561df8e549bb",
+      "contentHash": "sha256:92dc561d16808e551d7e6cccbb70c8a1f88c0bf0eb580acfea2d27b98beec947",
       "path": "content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md",
       "relatedArticleIds": [],
       "classificationBatch": 23,
@@ -2040,7 +2042,7 @@
         "taban-cizgisi",
         "on-baski"
       ],
-      "contentHash": "sha256:8c573b6f5a0daeebc827cf446d7131b31f252ee99144471afa319844581eef87",
+      "contentHash": "sha256:09368a27d2030f809e9928330fbb45cf98b3352d86a621dda1119c7bc41e1087",
       "path": "content/series/articles/foundations/bir-calismayi-okumak-iddia-kanit-ve-hakemlik.md",
       "relatedArticleIds": [],
       "classificationBatch": 23
@@ -2060,7 +2062,7 @@
         "ablasyon",
         "arama-butcesi"
       ],
-      "contentHash": "sha256:f376adf75f27090bd50da81cdd646d2a94cfc2d77e60804eb3253eaf85e22264",
+      "contentHash": "sha256:b85fd0dfd04a21783667993f38c64598fa2e6564cee8d8342d4a8dbd64bedf21",
       "path": "content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md",
       "relatedArticleIds": [],
       "classificationBatch": 24
@@ -2080,7 +2082,7 @@
         "olcut-secimi",
         "arastirma-pratigi"
       ],
-      "contentHash": "sha256:09e9ffac30cb9b9cf5823df5749de83d374cdba0103990c864cf711345897836",
+      "contentHash": "sha256:673f4e3fde6b2b7528c4782b6212fea41678d35005924afaca4208eb985df5e8",
       "path": "content/series/articles/foundations/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi.md",
       "relatedArticleIds": [],
       "classificationBatch": 24
@@ -2122,7 +2124,7 @@
         "negatif-sonuc",
         "belgeleme"
       ],
-      "contentHash": "sha256:bad697a0d66724adb2567f148db4ff0088860fafe6b0b131c969f9e2a71c4404",
+      "contentHash": "sha256:677cbaf4da11b3f183e97c139f3319c15dd8fd2d9316de3ed36e49a6bfcfab9b",
       "path": "content/series/articles/foundations/tekrarlanabilirlik-negatif-sonuc-ve-acik-bilim.md",
       "relatedArticleIds": [],
       "classificationBatch": 24
@@ -2294,7 +2296,7 @@
         "pekistirmeli-ogrenme",
         "saglamlik"
       ],
-      "contentHash": "sha256:3f97eb25245c3b078465a2f218153ca601c1e0c668679dc7b7081ee275c73cc6",
+      "contentHash": "sha256:50103d459f2b2c76232b03bdd185b6bcc1c8a60246a3467e18e83ebe8ad538be",
       "path": "content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md",
       "relatedArticleIds": [],
       "classificationBatch": 26
@@ -2314,7 +2316,7 @@
         "veri-kitligi",
         "benzetim"
       ],
-      "contentHash": "sha256:0eac6d93feecd644eb88cd4976780e3e8258652035acbce9583fd2b5f86a2410",
+      "contentHash": "sha256:e19760f7fd1b02d9f4783c55cb86e57424a17774682470b2dd8fec7133c22027",
       "path": "content/series/articles/multimodal-and-future/robotik-ve-somutlasmis-yapay-zeka.md",
       "relatedArticleIds": [],
       "classificationBatch": 27,
@@ -2378,7 +2380,7 @@
         "karar-zinciri",
         "geri-alinamazlik"
       ],
-      "contentHash": "sha256:fe596ed875689e78da8081fd7bd411bdb43e5b9f7f985a31c1b14664baa41f51",
+      "contentHash": "sha256:1247b56d28aa68d7b96c08d44a39376b843e9d3ffe1b012742182055e0d8befc",
       "path": "content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md",
       "relatedArticleIds": [],
       "classificationBatch": 27

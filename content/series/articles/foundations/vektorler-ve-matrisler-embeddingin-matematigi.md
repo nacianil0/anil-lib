@@ -12,7 +12,7 @@ tags:
   - kosinus-benzerligi
   - esyonsuzluk
   - matris-ayristirmasi
-content_hash: sha256:53a9214368040aaec5f8f79fb8a1a8d8d05c31d8f7a05dbefb5dbd247d9dfc77
+content_hash: sha256:755f3d5a01ebd3ca138e39a8eae85401e3fa8d0591b7267c957a5b02027575a3
 classification_version: 1
 classification_batch: 22
 ---
@@ -74,9 +74,9 @@ Kosinüs: a'nın normu 5, b'nin normu 10, c'nin normu 2,83. Kosinüs benzerliği
 
 ![Üç sütunlu bir tablo şekli. Satırlar sabit a vektörü üç dört ile iki aday arasındaki ölçümleri verir. Birinci aday b eşittir on sıfır: normu on, nokta çarpım otuz, kosinüs benzerliği sıfır virgül altı yüz, Öklit uzaklığı sekiz virgül sıfır altı. İkinci aday c eşittir iki iki: normu iki virgül seksen üç, nokta çarpım on dört, kosinüs benzerliği sıfır virgül dokuz yüz doksan, Öklit uzaklığı iki virgül yirmi dört. Altta üç cetvelin sıralaması yazılıdır: nokta çarpıma göre b önde, kosinüse göre c önde, Öklit uzaklığına göre c önde. En altta bir kayıt vardır: nokta çarpım uzunluğu da hesaba katar, kosinüs yalnızca açıyı ölçer, Öklit uzaklığı ikisini birden görür; hangisinin doğru olduğu ölçmek istediğin şeye bağlıdır ve sayılar bu üç vektörden elle hesaplanmıştır.](assets/uc-cetvel-iki-siralama.svg "Şekil 3 — Aynı üçlü, birbirine zıt iki sıralama")
 
-Şekil 3'teki tablonun pratik sonucu şu: nokta çarpım ile kosinüs **aynı çift üzerinde zıt sıralama verebilir** ve bu bir hata değildir. Nokta çarpım "büyük ve aynı yönde" arar, kosinüs "yalnızca aynı yönde" arar. 29\. makaledeki anlamsal aramada uzun belgelerin normu büyür; hangi cetveli seçtiğin, uzunluğun sıralamaya girip girmeyeceğine karar verir.
+Şekil 3'teki tablonun pratik sonucu şu: nokta çarpım ile kosinüs **aynı çift üzerinde zıt sıralama verebilir** ve bu bir hata değildir. Nokta çarpım "büyük ve aynı yönde" arar, kosinüs "yalnızca aynı yönde" arar. 29\. makaledeki anlamsal arama iki vektörü nokta çarpımla karşılaştırıyordu; orada belge vektörünün normu da skora girer, kosinüs ise onu dışarıda bırakır — hangi cetveli seçtiğin, vektör uzunluğunun sıralamaya girip girmeyeceğine karar verir.
 
-Bir de üç cetvelin ikisini birbirine indirgeyen özel bir durum var ve pratikte en çok kullanılan durum o. Vektörleri normlarına bölüp uzunluklarını 1 yaparsan — yani birim küre üzerine izdüşürürsen — iki vektör arasındaki Öklit uzaklığının karesi 2 eksi 2 çarpı nokta çarpım olur. Yani nokta çarpım büyüdükçe uzaklık küçülür; iki cetvel **aynı sıralamayı** verir. 43\. makaledeki vektör dizinlerinin çoğu bu yüzden vektörleri normalleştirerek saklar: en büyük nokta çarpımı aramak ile en yakın komşuyu aramak, birim kürede tek ve aynı problemdir. Normalleştirmeden bunu varsaymak ise yukarıdaki b–c örneğindeki ters sıralamayı üretir.
+Bir de üç cetvelin ikisini birbirine indirgeyen özel bir durum var ve pratikte en çok kullanılan durum o. Vektörleri normlarına bölüp uzunluklarını 1 yaparsan — yani birim küre üzerine izdüşürürsen — iki vektör arasındaki Öklit uzaklığının karesi 2 eksi 2 çarpı nokta çarpım olur. Yani nokta çarpım büyüdükçe uzaklık küçülür; iki cetvel **aynı sıralamayı** verir. 43\. makaledeki gibi bir vektör dizininde vektörleri önceden normalleştirmenin sebebi budur: en büyük nokta çarpımı aramak ile en yakın komşuyu aramak, birim kürede tek ve aynı problemdir. Normalleştirmeden bunu varsaymak ise yukarıdaki b–c örneğindeki ters sıralamayı üretir.
 
 Bunun ölçülmüş bir uyarısı da var. Harald Steck, Chaitanya Ekanadham ve Nathan Kallus'un 2024'te Web Konferansı'nın eşlik eden bildirilerinde yayımladığı çalışma, kapalı biçimde çözülebilen düzenlileştirilmiş doğrusal modellerde kosinüs benzerliğinin **keyfî** değerler üretebildiğini analitik olarak gösteriyor: bazı kurulumlarda benzerlik tek bile değil, düzenlileştirmenin seçimine göre değişiyor. Yazarların sonucu ölçülü: kosinüs benzerliği düşünmeden uygulanacak bir ölçü değildir.
 

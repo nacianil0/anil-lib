@@ -12,7 +12,7 @@ tags:
   - geri-cagirma
   - olcut-secimi
   - arastirma-pratigi
-content_hash: sha256:09e9ffac30cb9b9cf5823df5749de83d374cdba0103990c864cf711345897836
+content_hash: sha256:673f4e3fde6b2b7528c4782b6212fea41678d35005924afaca4208eb985df5e8
 classification_version: 1
 classification_batch: 24
 ---
@@ -56,7 +56,7 @@ Ve zincirin son halkası ölçüyü değiştiriyor. 89\. makalede donanımın ke
 
 İkinci uzun zincir, modele ne istediğimizi söyleme biçimiyle ilgili.
 
-11\. makalede ham modelden asistana geçişin aşamalarını kurduk ve orada bir oran vardı: asistanlaştırma aşaması, ön eğitimin harcadığı hesabın yüzde 1,6'sı kadar hesap harcıyordu. 12\. makalede az sayıda ama iyi seçilmiş örneğin ne yapabildiğini, 13\. makalede tercihlerin bir ödül sinyaline çevrilmesini gördük. O makalede kullanılan ceza teriminin biçimsel kimliği ise seksen bir makale sonra, 94\. makalede tanımlandı: KL ıraksaması, çapraz entropi eksi entropi.
+11\. makalede ham modelden asistana geçişin aşamalarını kurduk ve orada bir oran vardı: tercihlerle eğitilen üçüncü aşama, ön eğitimin harcadığı hesabın yüzde 1,6'sı kadar hesap harcıyordu — ince ayarla birlikte bütün post-training yüzde 1,8. 12\. makalede az sayıda ama iyi seçilmiş örneğin ne yapabildiğini, 13\. makalede tercihlerin bir ödül sinyaline çevrilmesini gördük. O makalede kullanılan ceza teriminin biçimsel kimliği ise seksen bir makale sonra, 94\. makalede tanımlandı: KL ıraksaması, çapraz entropi eksi entropi.
 
 Aynı zincirin ikinci yarısı amacın **yanlış** yazılmasıyla ilgili. 61\. makalede hizalama sorununun kendisi, 62\. makalede reddetmenin öğretilmesi, 63'te saldırıların uyarlanır hâli kuruldu; 64\. makalede ilkelerin yazılması ve denetimin ölçeklenmesi — 13'ün elli bir makale önce verdiği sözün karşılığı. Ve bütün bu düzenin dayandığı varsayım 71\. makalede sınandı: hizalamanın ölçüldüğü cetvelin kendisi geçerli mi?
 

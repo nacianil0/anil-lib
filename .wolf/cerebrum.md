@@ -6,6 +6,10 @@
 
 ## User Preferences
 
+- [2026-11-02] Kullanıcı, Claude Code'ye aktaracağı bakım promptunun amacını tek paragrafta, kısa ve öz ifade etmemi istedi; uzun prosedür ve açıklamalar yerine temel kapsam, tek run ve compact sonrası devam koşulları korunmalı.
+
+- [2026-11-02] AI serisinin bir sonraki bakım assignment'ı için kullanıcı, kalan dört denetim aralığı dahil yapılabilir bakımın tek mantıksal run'da tamamlanmasını istiyor; aralıklar arasında yeni trigger istemek yerine disk kontrol noktaları ve compact/autocompact sonrası aynı run'ın sürdürülmesiyle bağlam korunmalı. Bu istek diğer serilere veya tüm gelecek run'lara otomatik genellenmez.
+
 <!-- How the user likes things done. Code style, tools, patterns, communication. -->
 
 - Execute explicit setup and GitHub publishing requests promptly, and report the verified state directly.
@@ -23,6 +27,28 @@
 
 ## Key Learnings
 
+- [2026-11-02] **AI bakım run'ı 6 — tek run, kontrol dosyası:** kullanıcının tek run talimatıyla kalan dört olgu denetimi
+  aralığı (41–60'ın kalanı, 81–102, 1–40, 103–118; 86 makale, 842 künye) ana oturumda, ajansız ve compact'lar arasında
+  `docs/seri/BAKIM-RUN6.md` kontrol dosyasıyla bitti: 92 düzenleme, 15'i geri gönderme. Kontrol dosyası compact sonrası ilk
+  okunan dosyadır; makale satırı "tamam" olmadan sonrakine geçilmez. Düzeltme yoğunluğu aralığa göre çok değişiyor: 1–40'ta 40
+  makalede 1, 41–60'ta 14 makalede 93, 61–80'de 16 makalede 257 (run 4).
+- [2026-11-02] **Render ölçeri `measure5.mjs` yalnız `main.innerText`'e bakıyor:** alt metin SVG `aria-label`'ına yazıldığı için
+  beklenen alt metin dizgeleri "eksik", kendi `table-scroll` kabında kayan tablo hücreleri `overflowEls` görünür; ikisi
+  tarayıcıda (`aria-label` araması, sayfa `scrollWidth`'i) ayrılır. Kopyadaki `next dev` içerik değişince sayfayı önbellekte
+  tutuyor; kopya senkronlandıktan sonra `preview_stop` + `preview_start` gerekiyor.
+- [2026-11-02] **Frontmatter `summary` ↔ katalog karşılaştırması regex'le yapılmaz:** kaçışlı `\"` tırnaklar yüzünden üç sahte
+  fark verdi; `r4/syncsummary.cjs` (gray-matter) `--write`'sız çalıştırılınca doğru sonucu verir (0 fark).
+- [2026-11-02] **AI bakım run'ı 5 — ana oturumda olgu denetimi:** ultracode yokken yardımcı ajan kullanılmadı; ana oturum
+  altı makaleyi (51, 53, 55, 56, 59, 60) 94 künyenin 88'ini tam metinle okuyarak denetledi, 49 düzenleme çıktı. Verimli düzen:
+  `src5.py` ile makalenin bütün kaynaklarını indir (arXiv PDF → `pdftotext -layout`), `q5.py` ile sayıları grep'le, tabloyu
+  arXiv HTML'den oku (`tab5.py`), düzeltmeleri `apply.py` ile uygula ve her makaleden sonra hash'i senkronla.
+- [2026-11-02] **arXiv HTML tabloları güvenilir, PDF metni değil:** `arxiv.org/html/<id>` (LaTeXML) `<table>`/`ltx_tabular`
+  satırlarını temiz verir; `pdftotext -layout` çok satırlı hücrelerde değeri bir satır kaydırıyor (Agentless Tablo 1'de
+  maliyet sütunu, SWE-agent Tablo 1'de maliyetler yanlış satıra düştü). Tablo hücresinden sayı doğrularken HTML'i esas al.
+- [2026-11-02] **TMLR'nin kendi listesi (`jmlr.org/tmlr/papers/`) tek HTML'de ~5.000 makaleyi ay bilgisiyle veriyor** ve
+  OpenReview'un bot duvarına takılmadan hakemli durumu doğruluyor; FMTI 2025 (Ağustos 2026) bu yolla bulundu. OpenAlex'in
+  anahtarsız bütçesi ~100 sorguda bitti; Crossref bibliyografik araması 199 sorguyu 1,2 sn aralıkla sorunsuz taşıdı.
+- [2026-11-02] AI serisi bakımında sabit toplam run sayısı yoktur; `TRIGGER.md` içindeki `BATCH=4+1` tarihsel üretim ayarıdır. YOL-HARITASI #282'deki 41–60 → 81–102 → 1–40 → 103–118 olgu denetimi aralıkları bağlayıcı olmayan öneridir; bunlardan kesin bitiş run numarası çıkarılmaz.
 - [2026-10-26] **AI serisi bakım run'ı 4 — olgu denetimi döngüsü:** künyeleri doğru makalelerde bile birincil kaynakla
   okunan iddiaların ~%11'i düzeltme gerektirdi (61–80, 1.316 iddia). Hatalar en çok kaynağın tablo koşulunun düşmesinde,
   niceleyicinin keskinleşmesinde ve tarihsiz şimdiki zamanda. Verimli düzen: makale çifti başına salt okunur denetçi →
@@ -593,6 +619,25 @@ ode_modules`, sonra kopyayi sil.
 
 ## Do-Not-Repeat
 
+- [2026-11-02] `src5.py`'nin başlıkla indirdiği tam metne kimlik denetimi yapmadan güvenme: genel başlıklarda ("Machine
+  Learning", "Deep Learning", "Model Compression", "Convex Optimization") beş yanlış makale indi. İlk yazarın soyadını tam
+  metnin başında harf sınırıyla ara — `\b` "Gholami1" gibi kurum rakamlarında bozuluyor (bug-955).
+- [2026-11-02] Bir şekilde ölçü adını düzeltince yalnız değişen satırı değil şeklin bütün hücrelerini yeni adla yeniden oku: 110'da
+  kutu düzeltilmişti ama "sonuç" hücresi ("dizi tabanlı ölçütler: hiçbir model iyi değil") kaynağın sıkıştırma/ayrım ayrımını
+  silmeye devam ediyordu; PNG incelemesi yakaladı (bug-957).
+- [2026-11-02] Geri göndermede hedefe tırnaklı ya da terimleşmiş bir ifade yükleme ("bellek duvarı", "cetvel arayışı", "bağımsız
+  tekrar" tanımı): run 6'nın 15 yanlış geri göndermesinin çoğu buydu. Hedefte birebir grep'le, Türkçe büyük harfi gözet (bug-956).
+- [2026-11-02] `r4/apply.py` düzenleme dosyasında anahtar `path`'tir, `file` değil (yanlış anahtar KeyError verir). Bash aracında
+  `cd <dizin>` sonraki komutların çalışma dizinini değiştirebiliyor; scratchpad ve repo için mutlak yol kullan.
+- [2026-11-02] Bakım run'ında bir kaynağı "hakemsiz" etiketiyle eklerken o anda TMLR listesine ve konferans dökümlerine bak:
+  run 4 FMTI 2025'i 2026-10-26'da "hakemli olmayan" diye ekledi, oysa TMLR Ağustos 2026'da yayımlamıştı (bug-945).
+- [2026-11-02] "N'de gördük" geri göndermesini hedef makalede grep'lemeden yazma ya da kabul etme: run 5'te 57 ve 60 SWE-agent'ın
+  altı koşusunu 55'te olmayan bir bilgi gibi çağırıyordu, 56 51'de olmayan bir 3.500 token sınırını, 60 49'un SHOULD'unu
+  "şart koşma", 52'nin iki mimarisini "küçük/büyük model" diye aktarıyordu (bug-946, bug-947).
+- [2026-11-02] Aynı sistem için iki çalışmanın maliyet hesabını birleştirme: SWE-agent'ın kendi tablosu Lite'ta 1,67 $,
+  AutoCodeRover'ın 245 bin token'dan hesabı 2,51 $; şekil bir çalışmanın tablosunu, metin öbürünü taşıyorsa ikisini adlandır.
+- [2026-11-02] Tarama betiklerinde kullanıcının e-postasını (UA `mailto:`, OpenAlex `mailto=`) gönderme; run 3–4 betiklerinde
+  vardı, run 5'te kopyalar temizlendi. Eski scratchpad betiğini yeniden kullanmadan önce oku.
 - [2026-10-26] AI serisinde frontmatter `summary`'yi değiştirdiğinde `catalog.json`'daki kopyayı da elle senkronla ve iki
   tarafı karşılaştır: `sync-series-hashes` yalnız hash + revizyon alanlarını taşır, `assertCatalogMatch` özeti
   denetlemez; okura gösterilen özet katalogdakidir. 115–118 Batch 28'den beri taslak özeti gösteriyordu (bug-932).
@@ -961,6 +1006,15 @@ ode_modules`, sonra kopyayi sil.
 
 ## Decision Log
 
+- [2026-11-02] AI bakım run'ı 6: kullanıcı tek run istedi → kalan dört olgu denetimi aralığı aynı run'ın iş paketleri, ana
+  oturumda, kontrol dosyasıyla; commit/push/deploy yok. Revizyon işareti konmadı (düzeltmelerin hepsi koşul, niceleyici, sayı,
+  ölçü adı, geri gönderme ya da bağlantı onarımı; ders değişmedi). Gage bağlantısı süresi dolmuş sertifika yüzünden Wayback'e
+  taşındı (işaretsiz). Olgu denetimi döngüsünün ilk turu bitti; ikinci tur kullanıcı kararı (adaylar: tam denetlenmeyen 41,
+  43–47, 61, 63, 68, 76 ve yoğunluğun yüksek olduğu 41–80). Kararlar YOL-HARITASI #295–#301.
+- [2026-11-02] AI bakım run'ı 5: kullanıcı TRIGGER'ı ultracode olmadan çalıştırdı → workflow ve yardımcı ajan yok (run 2
+  emsali); olgu denetimi aralığı ana oturumun kapasitesine göre altı makaleyle sınırlandı (51, 53, 55, 56, 59, 60), 41–60'ın
+  kalanı (42, 48, 49, 50, 52, 54, 57, 58) sıradaki run'a kaldı. Revizyon işareti yalnız 51'e (durma ölçümü okurun modelini
+  değiştirdi); koşul, sayı, künye ve geri gönderme düzeltmeleri işaretsiz. Kararlar YOL-HARITASI #289–#294.
 - [2026-10-26] BOUN bakım run'ı 3: "gözden geçirildi" işareti yalnızca okurun öğrendiği şeyi değiştiren 16
   makaleye kondu (AI SOZLESME §12); kalıp, yazım, tek sayı, künye ve şekil etiketi düzeltmeleri işaret
   almadı. Mekanik kapıya yeni desen eklemek (`tools/series/check-series-content.cjs`) ortak araç

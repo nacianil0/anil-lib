@@ -15579,6 +15579,478 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-10-26T16:30:43.584Z"
+    },
+    {
+      "id": "bug-943",
+      "timestamp": "2026-11-02T05:52:28.161Z",
+      "error_message": "Incorrect value in code",
+      "file": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
+      "root_cause": "Had 'te yayımladığı, hakemli olmayan üçüncü tur çalışm",
+      "fix": "Changed to 'te açıkladığı ve 2026'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T05:52:28.161Z"
+    },
+    {
+      "id": "bug-944",
+      "timestamp": "2026-11-02",
+      "error_message": "apply_patch verification failed: Failed to find expected lines in .wolf/cerebrum.md",
+      "file": ".wolf/cerebrum.md",
+      "root_cause": "Yama User Preferences başlığı ile ilk madde arasındaki mevcut HTML yorumunu atladığı için bağlam eşleşmedi.",
+      "fix": "Güncel bölüm başı kontrol edildi ve yama yalnız başlık ile boş satırı çıpa alacak şekilde daraltıldı.",
+      "tags": [
+        "patch-context",
+        "openwolf",
+        "prompt-preparation"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02"
+    },
+    {
+      "id": "bug-945",
+      "timestamp": "2026-11-02T10:00:00Z",
+      "error_message": "FMTI 2025 (20, 69) 'hakemli olmayan ön çalışma' etiketiyle duruyordu; TMLR listesi Ağustos 2026'da yayımlandığını gösteriyor",
+      "file": "content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md",
+      "root_cause": "Bakım run'ı 4 kaynağı 2026-10-26'da eklerken yalnız arXiv sürümüne baktı; TMLR'nin kendi listesi (jmlr.org/tmlr/papers/) taranmadı",
+      "fix": "20 ve 69'da künye TMLR + okunan sürüm arXiv, bağlantı OpenReview forumu; gövdedeki 'hakemli olmayan' nitelemesi kaldırıldı",
+      "tags": [
+        "seri",
+        "hakemsiz",
+        "tmlr",
+        "kunye",
+        "bakim-run-5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "bug-946",
+      "timestamp": "2026-11-02T10:00:00Z",
+      "error_message": "57 ve 60 SWE-agent'ın altı koşusunu (17,33–18,67; pass@6 32,67) '55'te gördük' diye çağırıyordu; veri 55'te hiç yok",
+      "file": "content/series/articles/agents-and-retrieval/ajan-degerlendirmesi-basariyi-olcmek.md",
+      "root_cause": "Geri gönderme içeriğiyle doğrulanmamış; veri SWE-agent ek Tablo 10'da, hiçbir makalede sunulmamıştı",
+      "fix": "57 veriyi John Yang ve ark.'na doğrudan atfediyor ve künyeyi ekliyor; 60 '57'de gördüğümüz gibi' diyor",
+      "tags": [
+        "seri",
+        "geri-gonderme",
+        "propagation",
+        "bakim-run-5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "bug-947",
+      "timestamp": "2026-11-02T10:00:00Z",
+      "error_message": "60: '49'da protokolün araç sırasını şart koşması', '47'de ilk tanımın en pahalı olması', '52'de küçük model 757 / büyük 1.971' geri çağırmaları yanlıştı",
+      "file": "content/series/articles/agents-and-retrieval/ajan-ekonomisi-maliyet-gecikme-guvenilirlik.md",
+      "root_cause": "Geri çağırmalar hedef makalenin cümlesiyle karşılaştırılmamıştı: 49 SHOULD diyor, 47'nin ilk-tanım bedeli önbellekten değil çerçeve metinden, 52'nin 757/1.971'i iki mimari",
+      "fix": "Üçü hedef makalelerin ifadesine çekildi; ayrıca kaynakta olmayan 'beş koşunun ortalaması' cümlesi çıkarıldı",
+      "tags": [
+        "seri",
+        "geri-gonderme",
+        "must-should",
+        "bakim-run-5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "bug-948",
+      "timestamp": "2026-11-02T10:00:00Z",
+      "error_message": "55: SWE-agent'ın Lite maliyeti 2,51 $ diye kendi çalışmasına atfedilmişti (kendi tablosu 1,67 $); 'üçte bir maliyet' oranı 0,70/3,34 ile tutmuyordu; Şekil 2'deki H noktası 'sağ alt' deniyordu",
+      "file": "content/series/articles/agents-and-retrieval/kod-yazan-ajanlar-yazilim-muhendisliginde-llm.md",
+      "root_cause": "İki ayrı çalışmanın maliyet hesabı aynı paragrafta birleşmiş; oran ve konum hesapla/şekille sınanmamış",
+      "fix": "1,67 kendi tablosundan, 2,51 AutoCodeRover/Xia hesabı olarak ayrıldı; 'yaklaşık beşte bir'; 'H noktası'; model koşulları eklendi",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "kosul",
+        "oran",
+        "bakim-run-5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "bug-949",
+      "timestamp": "2026-11-02T10:00:00Z",
+      "error_message": "51: sprey şişesi örneği 'beş dış eylem' diyordu (kaynakta altı); SWE-agent'ta başarısız bölümlerin durma kararının bütçeden geldiği ve hatanın şansı 'yarıya' indirdiği yazıyordu",
+      "file": "content/series/articles/agents-and-retrieval/ajan-nedir-kontrol-dongusu-olarak-llm.md",
+      "root_cause": "Örnek kaynaktaki iz satır satır sayılmamış; %69 genel teslim oranından başarısızlar için çıkarım yapılmamış; 90,5→57,2 oran olarak hesaplanmamış",
+      "fix": "Altı eylem; bütün görevlerin üçte biri bütçeyle kesiliyor; düşüş üçte birden fazla; disiplin maddesi niceleyicisi; 56'daki 'beş turda beş gözlem' de düzeltildi; revizyon işareti",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "niceleyici",
+        "bakim-run-5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "bug-950",
+      "timestamp": "2026-11-02T10:00:00Z",
+      "error_message": "pdftotext -layout çok satırlı tablo hücrelerini satır kaydırarak çıkarıyor; Agentless Tablo 1'inde maliyet sütunu yanlış satıra düşüyordu",
+      "file": "scratchpad/tab5.py",
+      "root_cause": "PDF metin katmanında çok satırlı hücreler dikey olarak kayıyor",
+      "fix": "Tablolar arXiv HTML sürümünden (arxiv.org/html/<id>) ltx_tabular/tr ayrıştırılarak okundu (tab5.py)",
+      "tags": [
+        "arac",
+        "pdf",
+        "tablo",
+        "arxiv-html",
+        "bakim-run-5"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "bug-951",
+      "timestamp": "2026-11-02T06:37:26.682Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'dur** (bakım run'",
+      "fix": "Changed to 'tir** (bakım run'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 5,
+      "last_seen": "2026-11-02T06:39:20.631Z"
+    },
+    {
+      "id": "bug-952",
+      "timestamp": "2026-11-02T06:37:51.679Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 4→6 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T06:37:51.679Z"
+    },
+    {
+      "id": "bug-953",
+      "timestamp": "2026-11-02T06:48:50.280Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py",
+      "root_cause": "Had \"\\b(\\d{1,3})(?:\\. makale|['",
+      "fix": "Changed to \"\\b(\\d{1,3})(?:\\\\?\\. ?makale|['",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T06:48:50.280Z"
+    },
+    {
+      "id": "bug-954",
+      "timestamp": "2026-11-02T07:42:26.640Z",
+      "error_message": "Incorrect value in code",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/idchk6.py",
+      "root_cause": "Had \"\\b\"",
+      "fix": "Changed to 'yi bozar; yalnızca harf sınırına bakılır\n        ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T07:42:26.640Z"
+    },
+    {
+      "id": "bug-955",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "src5.py başlıkla arXiv araması tek ya da iki kelimelik genel başlıklarda yanlış makale indirdi: 87 Buciluă 'Model Compression' → 2105.10059, 95 Boyd–Vandenberghe 'Convex Optimization' → Rusça ders notu 2106.01946, 1'de Mitchell 1997 'Machine Learning' → 2512.11133, Goodfellow 2016 ve LeCun 2015 'Deep Learning' → Polson–Sokolov 1807.07987",
+      "file": "scratchpad/src5.py",
+      "root_cause": "arxiv_match=1.0 yalnız başlık benzerliğine bakıyor; kitaplar ve genel başlıklar için yazar denetimi yoktu",
+      "fix": "idchk6.py: her tam metnin ilk 4000 karakterinde ilk yazarın soyadı aranıyor (harf sınırı; kurum rakamları \\b'yi bozuyordu); beş yanlış indirme resmî kopyalarla (Cornell, Stanford, CMU, deeplearningbook.org, Toronto) değiştirildi; denetimde hiçbir makale yanlış kaynakla okunmadı",
+      "tags": [
+        "arac",
+        "indirme",
+        "kimlik",
+        "arxiv",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-956",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "Geri göndermelerde hedef makalede olmayan içerik ya da tırnaklı ifade: 48→34, 50→45, 52→48/47, 57→56, 58→54 (aralık A); 85/89→27 'bellek duvarı', 91→29 'uzun belgelerin normu', 91→43 'dizinlerin çoğu normalleştirir', 93→45/60 'beklenen maliyet/çağrı', 97→16 'cetvel arayışı', 102→9 'bağımsız tekrar' tanımı, 88→87 eşitleme (aralık B); 100→11 '%1,6 asistanlaştırma' (aralık D)",
+      "file": "content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md",
+      "root_cause": "Geri çağırmalar yazılırken hedef makale grep'lenmemiş; terim ya da tırnak hedefte yok",
+      "fix": "Her biri hedef makalenin kendi ifadesine çekildi ya da çıkarıldı; fc6.py --ref kök örtüşmesiyle aday üretiyor, karar hedefin grep'iyle",
+      "tags": [
+        "seri",
+        "geri-gonderme",
+        "sozlesme-5",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-957",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "110: Vafa ve ark.'nın %50'si 'ayırt eden diziler/tam ayrım kümesi'ne bağlanmıştı; kaynakta %50 sıkıştırma isabeti, aynı model ayrımda 0,99/1,00",
+      "file": "content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md",
+      "root_cause": "Tablo 1'in sütunları (sıkıştırma isabeti ↔ ayrım isabeti/duyarlığı) karıştırılmış; gövde, alt metin ve SVG aynı ifadeyi taşıyordu",
+      "fix": "Gövde, alt metin ve SVG metni 'aynı duruma giden öneklerin devamları' diye düzeltildi; ayrımda modelin iyi olduğu eklendi; aria-label eşitlendi; P6 PNG incelemesinde aynı şeklin 'sonuç' hücresi ('dizi tabanlı ölçütler: hiçbir model iyi değil') kaynağın 'a model can perform well on one metric and poorly on the other' ayrımını siliyordu → 'sıkıştırmada hiçbir model iyi değil' (SVG + alt metin). Ders: bir ölçü düzeltmesinde şeklin bütün hücreleri yeni ölçü adıyla yeniden okunur, yalnız değişen satır değil",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "svg",
+        "tablo-sutunu",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-958",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "114: Chinchilla 'dört kat küçük ama yirmi kat çok token' — gerçekte 1,4T/300B ≈ 4,7 kat",
+      "file": "content/series/articles/case-studies/vaka-incelemesi-bir-sinir-model-nasil-yapilir.md",
+      "root_cause": "'parametre başına yirmi token' oranı Gopher'a göre token katı ile karıştırılmış",
+      "fix": "'dört kattan fazla token'",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "oran",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-959",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "87: Hinton'ın damıtma örneğinde 3 ile 7 yer değiştirmişti (kaynak: 2 görüntüsünde 3'e 10^-6, 7'ye 10^-9)",
+      "file": "content/series/articles/multimodal-and-future/kucuk-ama-guclu-damitma-ve-kucuk-modeller.md",
+      "root_cause": "Örnek kaynaktan değil bellekten aktarılmış",
+      "fix": "İki cümle kaynağa göre düzeltildi",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-960",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "81: Idefics2 ablasyonunda kaynağın metni (12,9 ve 7 puan) kendi tablosuyla (9,2 ve 6,4) çelişiyor; makale metni izliyordu",
+      "file": "content/series/articles/multimodal-and-future/goruntuyu-anlamak-goruntu-dil-modelleri.md",
+      "root_cause": "Kaynağın kendi iç tutarsızlığı; tablo okunmadan metin aktarılmıştı",
+      "fix": "Batch 28 Chen emsaliyle tablo esas alındı, fark metinde söylendi; SVG metni ve alt metin eşitlendi",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "kaynak-ici-celiski",
+        "svg",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-961",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "Niceleyici ve koşul kaymaları: 57 GAIA 'otuzun altında' (30,3), DevAI 'üç ajanın' (iki), 58 'çoğu modelde' (yarısında), 96 Jiang 'çoğu' ('many' + stokastik koşul), 99 Kaplan–Irvin nedensellik ('may have contributed'), 98 '75 puan'/'bir yıl sonra'/'yalnızca sözlü', 111 RT-2 'görülmemiş nesneler' (ortalama)",
+      "file": "content/series/articles/foundations/arastirma-sorusu-ve-deney-tasarimi-hipotez-taban-cizgisi-ablasyon.md",
+      "root_cause": "Özetleyici cümlelerde kaynağın niceleyicisi/koşulu düşmüş ya da nedensellik dili güçlenmiş",
+      "fix": "Her biri kaynağın kendi ifadesine çekildi (SOZLESME §4); revizyon işareti gerekmedi",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "niceleyici",
+        "kosul",
+        "sozlesme-4",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-962",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "Sağlayıcı belgeleri tarihsizdi ve biri değişmişti (54 bilgisayar kullanımı: 1024x768 önerisi kalkmış); 49 ve 58'deki belgeler tarihlendi",
+      "file": "content/series/articles/agents-and-retrieval/bilgisayar-kullanan-ajanlar.md",
+      "root_cause": "Hakemsiz belge kaynakları zamanla değişiyor; okunduğu tarih yazılmamıştı",
+      "fix": "Üç belge Kasım 2026'da yeniden okundu, 'Kasım 2026'da yeniden okundu' ile tarihlendi; 54'ün içeriği belgenin bugünkü hâline çekildi",
+      "tags": [
+        "seri",
+        "hakemsiz",
+        "tarih",
+        "sozlesme-4",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-963",
+      "timestamp": "2026-11-02T12:00:00Z",
+      "error_message": "derczynski.com'un sertifikası (29 Ekim 2026) 2 Kasım'da hâlâ dolmuş; 4'teki Gage 1994 bağlantısı tarayıcı uyarısı veriyordu",
+      "file": "content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md",
+      "root_cause": "Üçüncü taraf sitenin Let's Encrypt yenilemesi yapılmamış",
+      "fix": "Bağlantı aynı belgenin 21 Ekim 2026 tarihli Wayback kopyasına taşındı (içerik doğrulandı; işaretsiz bağlantı onarımı)",
+      "tags": [
+        "seri",
+        "baglanti",
+        "ssl",
+        "wayback",
+        "bakim-run-6"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "bug-964",
+      "timestamp": "2026-11-02T08:53:24.027Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "Had 'u üç ajandan yalnız en iyi ikisi tutturuyor, τ-be",
+      "fix": "Changed to 'unu üç ajandan yalnız en iyi ikisi karşılıyor\n   ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T08:53:24.027Z"
+    },
+    {
+      "id": "bug-965",
+      "timestamp": "2026-11-02T08:54:12.329Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'ı 5 tamamlandı (kararlar #289–#294; olgu denetimi",
+      "fix": "Changed to 'ı 6 tamamlandı (kararlar #295–#301; olgu denetimi",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-02T08:54:35.327Z"
+    },
+    {
+      "id": "bug-966",
+      "timestamp": "2026-11-02T08:55:06.495Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 7→9 lines (7 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T08:55:06.495Z"
+    },
+    {
+      "id": "bug-967",
+      "timestamp": "2026-11-02T09:01:35.390Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 4→6 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T09:01:35.390Z"
+    },
+    {
+      "id": "bug-968",
+      "timestamp": "2026-11-02T09:01:38.911Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'da sıkıştırma ve ayrım ölçüleri karışmıştı (gövde",
+      "fix": "Changed to 'da sıkıştırma ve ayrım ölçüleri karışmıştı (gövde",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-02T09:01:40.516Z"
+    },
+    {
+      "id": "bug-969",
+      "timestamp": "2026-11-02T09:02:41.272Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T09:02:41.272Z"
+    },
+    {
+      "id": "bug-970",
+      "timestamp": "2026-11-02T09:05:41.697Z",
+      "error_message": "Wrong reference: bekliyor should be tamam",
+      "file": "docs/seri/BAKIM-RUN6.md",
+      "root_cause": "Used \"bekliyor\" instead of \"tamam\"",
+      "fix": "Changed bekliyor → tamam",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-02T09:05:41.697Z"
     }
   ]
 }

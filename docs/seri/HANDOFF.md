@@ -6,7 +6,7 @@
 > SIRASIYLA okur: (1) SOZLESME, (2) bu dosya, (3) YOL-HARITASI'nın sıradaki batch'le ilgili
 > bölümleri. Üretim trigger'ı: `docs/seri/TRIGGER.md`.
 
-Son güncelleme: 2026-10-26 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · bakım run'ı 4 tamamlandı (kararlar #282–#288; olgu denetimi döngüsü 61–80'de) · kapsamın uzatılması kullanıcı kararıdır**
+Son güncelleme: 2026-11-02 · Durum: **SERİ TAMAMLANDI — 1–118 yayında (kohort Batch 0 → Batch 28) · roadmap'te `planlandi` satırı yok · trigger bakım kipinde · bakım run'ı 6 tamamlandı (kararlar #295–#301; olgu denetimi döngüsünün ilk turu 1–118'de bitti) · kapsamın uzatılması kullanıcı kararıdır**
 
 ## Cursor ve güvenli başlangıç
 
@@ -83,7 +83,7 @@ Tur cursor'ı değiştirmedi; 115–118 ondan sonra Batch 28'de yayımlandı ve 
   Seri sayısı dili kullanılmadı.
 - **Kapsamın uzatılması kullanıcı kararıdır; verilmedi.** Uzatma istenirse sıra: yol haritasına faz ve
   başlıklar (SOZLESME §7), kategori ve level kararları, HANDOFF'un cursor'ı, TRIGGER'ın üretim kipine dönmesi.
-- **Sonraki bağlayıcı karar numarası #289'dur** (bakım run'ı 4 #282–#288'i; bakım run'ı 1 #265–#269'u, bakım run'ı 2 #270–#274'ü, bakım run'ı 3
+- **Sonraki bağlayıcı karar numarası #295'tir** (bakım run'ı 5 #289–#294'ü; bakım run'ı 4 #282–#288'i; bakım run'ı 1 #265–#269'u, bakım run'ı 2 #270–#274'ü, bakım run'ı 3
   #275–#281'i kullandı).
 - **Batch 28'in yayımlanmış makalelere dokunuşu (karar #257, revizyon işaretsiz):** 58 (CaMeL → IEEE SaTML
   2026), 71 (HLE → Nature 649), 108:81 (atıf 101 → 96), 1 (Turing künyesine cilt/sayfa), 80 (Mökander yılı
@@ -227,10 +227,70 @@ ortasında bilgisayar kapandı; diff denetimi yeniden koşuldu, öteki işler ka
 - **Kapılar (#288):** üç repo kapısı temiz; `pnpm typecheck` 0; 841/841 test; `pnpm build` exit 0 (`/seri/[slug]`
   118 yol, izole kopyada). Render sonucu #288'de. Commit yapılmadı.
 
+## Bakım run'ı 5 (2026-11-02) — kararlar #289–#294
+
+TRIGGER bakım kipinde beşinci kez çalıştırıldı; yeni makale ya da başlık üretilmedi. Kullanıcı ultracode demedi: run 2'nin
+emsaliyle workflow ve yardımcı ajan kullanılmadı, taramalar, okumalar, kararlar ve düzenlemeler ana oturumda. Run 4'ten bir
+hafta sonra üç katmanlı tarama yenilendi, borçlar yeniden denendi ve olgu denetimi 41–60'tan altı makaleyle sürdü. Ayrıntı
+YOL-HARITASI #289–#294'te.
+
+- **Borçlar (#290):** (f), (i), (j) 2026-11-02'de yeniden denendi, değişmedi.
+- **Ön baskı durumu (#290):** TMLR'nin kendi listesi bir yeni hakemli kalem verdi: **Wan ve ark., The 2025 Foundation Model
+  Transparency Index — TMLR, Ağustos 2026.** 20 ve 69'da künye ve gövde güncellendi (sayılar arXiv v1'den). Run 4 bu kaynağı
+  eklerken TMLR'ye bakmamıştı (bug-945). ACL Anthology, PMLR v300–350, Crossref bibliyografik arama (199) ve OpenAlex (100/199)
+  yeni kalem vermedi. Peng (2023) ve Becker (2025) hâlâ ön baskı; 55'teki cümle tarihlendi.
+- **Crossref ve bağlantılar (#291):** 336 DOI'de yeni `updated-by` yok. 653 web bağlantısından yalnız `derczynski.com`'un
+  sertifikası 29 Ekim 2026'da dolmuş (4'teki Gage kopyası; izlemede).
+- **Olgu denetimi (#292):** 51, 53, 55, 56, 59, 60 — 94 künyenin 88'i tam metinle; 49 düzenleme. Ağır olanlar:
+  - 55'te SWE-agent'ın Lite maliyeti kendi tablosunda 1,67 $ (2,51 AutoCodeRover'ın hesabı), "üçte bir maliyet" aslında beşte
+    bir, Şekil 2'nin H noktası "sağ altta" deniyordu.
+  - 51'de bütçe başarısız bölümlerin hepsini değil bütün görevlerin üçte birini kesiyor; sprey örneği altı eylem.
+  - 57 ve 60 SWE-agent'ın altı koşusunu 55'te olmayan bir bilgi gibi çağırıyordu; 56 51'de olmayan bir sınırı, 60 49'un
+    SHOULD'unu "şart koşma" diye aktarıyordu.
+  - 60'ta önbellek belgeleri Kasım 2026'ya tarihlendi (bir sağlayıcının en yeni modellerinde okuma 0,05/0,025).
+- **Revizyon işareti (#293):** yalnız 51 → `2026-11-02`. 59'un özeti gövdeyle hizalanıp kataloğa taşındı.
+- **Kapılar (#294):** iki repo kapısı ve hash senkronu temiz; `pnpm typecheck` 0; 841/841 test; `pnpm build` exit 0 (izole
+  kopyada). Render: değişen 9 sayfa × 3 genişlik × 3 tema, 81 satır sorunsuz; 51'in revizyon satırı görünüyor. SVG'ye
+  dokunulmadı. Commit yapılmadı.
+
+## Bakım run'ı 6 (2026-11-02) — kararlar #295–#301
+
+TRIGGER bakım kipinde altıncı kez çalıştırıldı; yeni makale ya da başlık üretilmedi. Kullanıcı tek run istedi: olgu denetimi
+döngüsünün kalan dört aralığı ayrı run ya da "devam" beklemeden aynı run'ın iş paketleri. Ultracode yoktu; workflow ve
+yardımcı ajan kullanılmadı, okumalar, kararlar ve düzenlemeler ana oturumda. Run, compact'lar arasında
+`docs/seri/BAKIM-RUN6.md` kontrol dosyasıyla taşındı (paket ve makale bazında durum, kanıt, engel, günlük). Run 5'in commit
+edilmemiş değişikliklerine dokunulmadı. Ayrıntı YOL-HARITASI #295–#301'de.
+
+- **Olgu denetimi (#295–#299):** 86 makale, 842 künye, 92 düzenleme; döngünün ilk turu 1–118'de tamamlandı.
+  - A — 42, 48, 49, 50, 52, 54, 57, 58 (44 düzenleme): 52'de LATS'in en iyi-k'si elli, 57'de GAIA 30,3 ve DevAI'de yalnız iki
+    ajan, 58'de ARE'nin yansıma (%15) ve ağaç (%20) sayıları karışmıştı; 54'ün sağlayıcı belgesi değişmişti (özet ve katalog dâhil); 57'nin
+    SVG metni.
+  - B — 81–102 (38 düzenleme): 87'de Hinton örneğinin 3 ile 7'si yer değiştirmişti; 81'de Idefics2'nin metni kendi tablosuyla
+    çelişiyor (tablo esas, SVG metni dâhil); 90'da PUE'nin kapsamı; 99'da nedensellik dili; 98'de üç sayı ve koşul.
+  - C — 1–40 (1 düzenleme): 12'de "on üç bine yakın"; 39 makale düzeltmesiz.
+  - D — 103–118 (7 düzenleme + 1 yayılım): 110'da sıkıştırma ve ayrım ölçüleri karışmıştı (gövde, alt metin, SVG'nin
+    kutusu ve "sonuç" hücresi — sonuncusu PNG incelemesinde yakalandı); 114'te
+    Chinchilla "yirmi kat token" değil dört kattan fazla; 111'de RT-2'nin ortalaması; 100'ün 11'e geri göndermesi.
+  - 15 yanlış ya da fazla güçlü geri gönderme (§5). `src5.py` beş kaynağı yanlış indirdi; kimlik denetimi hepsini yakaladı,
+    hiçbir makale yanlış kaynakla denetlenmedi (bug-955).
+- **Borçlar ve dış denetimler (#300):** (f), (i), (j) 11:42'de yeniden denendi, değişmedi; OpenReview API'si 403 verdi.
+  `derczynski.com`'un sertifikası hâlâ dolmuş → 4'ün Gage bağlantısı aynı belgenin Wayback kopyasına taşındı (kapandı).
+  OpenAlex'in kalan 99 çalışması tamamlanamadı (429, anahtarsız günlük bütçe). AAAI OJS'nin bot doğrulama sayfası
+  atlatılmadı; başka kopyalar kullanıldı.
+- **Revizyon işareti (#301):** konmadı — düzeltmelerin hepsi koşul, niceleyici, sayı, ölçü adı, geri gönderme ya da bağlantı
+  onarımı; hiçbirinde okurun çıkardığı ders değişmedi.
+- **Kapılar (#301):** hash senkronu, `check-series-content --warnings` ve `check-series-svg` (346 diyagram) her aralık sonunda
+  temiz; izole kopyada `pnpm typecheck` 0, 841/841 test (43 dosya), `pnpm build` exit 0 (194 statik sayfa); son düzeltmeden
+  sonra üçü yeniden koşuldu, aynı sonuç. Render: değişen 30 sayfa × 3 genişlik × 3 tema, 270 satır temiz (ölçerin "eksik"
+  saydığı 5 dizge alt metin olarak `aria-label`'da, 42'nin 375 px'teki 20 öğesi kendi kabında kayan tablo — ikisi de
+  tarayıcıda doğrulandı). Değişen üç SVG açık ve koyu temada çekildi; 110'un incelemesi şeklin "sonuç" hücresindeki
+  genellemeyi yakaladı, düzeltildi. Commit yapılmadı.
+
 ## Açık borçlar
 
 - **Tarihe bağlı yeniden bakışlar (hiçbiri kapı değil; bakım run'ı 3'te güncellendi — (b), (c), (g), (h) kapandı;
-  bakım run'ı 4'te (f), (i), (j) 2026-10-26 öğleden sonra yeniden denendi ve değişmedi):**
+  bakım run'ı 4'te (f), (i), (j) 2026-10-26 öğleden sonra, bakım run'ı 5'te ve 6'da 2026-11-02'de yeniden denendi ve
+  değişmedi):**
   - (a) **KAPANDI (#270):** NeurIPS 2026 listesi 2026-09-27'de tarandı. Beurer-Kellner (58), Meinke ve Emmons (67),
     Biderman (71), Hendrycks ve ark. ile ARC-AGI-2 (117) kabul edilmemiş; hakemsiz etiketleri doğru. Bir sonraki
     genel ön baskı taramasında öteki ön baskılarla birlikte yeniden bakılır.
@@ -246,8 +306,8 @@ ortasında bilgisayar kapandı; diff denetimi yeniden koşuldu, öteki işler ka
     topluca yeniden üretilirse (kapsam kararı) birlikte çözülür.
   - (e) **KAPANDI — bilgi notu (#273):** LASER'in ICLR 2024 bildiri PDF'i ve arXiv'in tek sürümü aynı tutarsızlığı
     taşıyor; yazarların deposu 2024'ten beri değişmedi. 92'nin metni tutarsızlığı zaten söylüyor.
-  - (f) **Persona Vectors (66) — AÇIK:** NeurIPS 2026 Aralık'ta toplanıyor; 2026-10-26'da `papers.nips.cc/.../2026`
-    404. Bildiri kitabı girince künye "(2026) … NeurIPS 2026." ve dizinden kopyalanan hash sayfası olur, 66'daki gövde
+  - (f) **Persona Vectors (66) — AÇIK:** NeurIPS 2026 Aralık'ta toplanıyor; 2026-10-26'da ve 2026-11-02'de
+    `papers.nips.cc/.../2026` 404 (kök dizin 2025'te bitiyor). Bildiri kitabı girince künye "(2026) … NeurIPS 2026." ve dizinden kopyalanan hash sayfası olur, 66'daki gövde
     "NeurIPS 2026'da sunduğu" kalıbına geçer, sayılar (r = 0,76–0,97) camera-ready sürümle yeniden okunur. **Dikkat:**
     NeurIPS 2026 JSON dökümü artık eksik (bu bildiri dökümde yok); kabul kanıtı Downloads/2026 listesi ve poster
     sayfasıdır (`neurips.cc/virtual/2026/poster/152713`).
@@ -256,27 +316,42 @@ ortasında bilgisayar kapandı; diff denetimi yeniden koşuldu, öteki işler ka
     künyesi ve revizyon işareti (`2026-10-26`) işlendi. İleride Crossref'te yeni bir `updated-by` görünürse yeniden açılır.
   - (h) **KAPANDI (#276):** EMNLP 2026 ACL Anthology'de; hakemsiz kalemlerin hiçbiri eşleşmedi. EMNLP 2026'nın bazı
     ortak çalıştay ciltleri henüz girmemiş olabilir; "çalıştay" etiketli kalemlere sonraki genel taramada yeniden bakılır.
-  - (i) **Min-p, Max Exaggeration (10) — AÇIK:** TMLR gönderimi (OpenReview `rCupWGkP6W`) "Decision pending";
+  - (i) **Min-p, Max Exaggeration (10) — AÇIK:** 2026-11-02'de TMLR'nin kendi listesinde (`jmlr.org/tmlr/papers/`,
+    run 5'te 5.021, run 6'da 5.050 makale) yok. TMLR gönderimi (OpenReview `rCupWGkP6W`) son okumada "Decision pending"
+    (run 6'da OpenReview API'si betiğe 403 verdi, forum yeniden okunamadı);
     NeurIPS 2026 MLRC oturumunda listelenmesi yayın değil. TMLR kabul ederse künye "(2026) … Transactions on Machine
     Learning Research." + forum bağlantısı, 10'daki "hakem sürecinden geçmemiş" nitelemesi güncellenir.
-  - (j) **NeuronInfer (88) — AÇIK:** IEEE Transactions on Computers'ta erken erişim; cilt/sayı atanınca künyeye eklenir
+  - (j) **NeuronInfer (88) — AÇIK:** IEEE Transactions on Computers'ta erken erişim (Crossref kaydı 2026-10-16'da
+    güncellenmiş; run 6'da da cilt/sayı yok, sayfa 1–14); cilt/sayı atanınca künyeye eklenir
     ("erken erişim (cilt ve sayı henüz atanmadı)" ifadesi kalkar). Dergi tam metni okunmadı; sayılar arXiv v3'ten.
-- **Olgu denetimi döngüsü — AÇIK, kapı değil (#282):** her bakım run'ı birincil kaynakla bir aralığı denetler; bulgu
-  denetçi → çürütmeye çalışan şüpheci → ana oturum zincirinden geçer. **Yapılan:** 62, 64–67, 69–75, 77–80 (bakım run'ı 4).
-  **Sıradaki önerilen aralık:** 41–60 (run 1'in okuduğu çiftler hariç: 41, 43–47, 58'in o kaynakları), sonra 81–102,
-  1–40, 103–118. Run 4'te bu 16 makalede 1.316 iddianın %11'i bir düzeltme gerektirdi; aralığın kalanında da benzer bir
-  oran beklenmeli. **Dışarıda kalan ama bilinen:** 75'in Şekil 1'i 3/8 basamağını çizmiyor (metin bunu söylüyor;
+- **Olgu denetimi döngüsü — İLK TUR TAMAMLANDI (bakım run'ı 6, #295–#299); kapı değil (#282):** her bakım run'ı birincil
+  kaynakla bir aralığı denetler; bulgu denetçi → çürütmeye çalışan şüpheci → ana oturum zincirinden geçer (ultracode yoksa
+  bütün zincir ana oturumda). **Yapılan:** 62, 64–67, 69–75, 77–80 (bakım run'ı 4); 51, 53, 55, 56, 59, 60 ve yayılımla 57'nin
+  bir cümlesi (bakım run'ı 5); 42, 48, 49, 50, 52, 54, 57, 58, 81–102, 1–40, 103–118 (bakım run'ı 6, ana oturum, tek run).
+  **Döngüde tam denetlenmeyenler:** 41, 43–47 (run 1'de yalnız belirli çiftleri okunmuştu; run 5'in kapsam kararı) ve 61, 63,
+  68, 76 (#282). **Düzeltme yoğunluğu:** 61–80'de 16 makalede 257 düzenleme (run 4), 41–60'ta 14 makalede 93 (run 5–6),
+  81–102'de 22 makalede 39 (biri D'den yayılım), 103–118'de 16 makalede 7, 1–40'ta 40 makalede 1; run 5–6'da 19 yanlış ya da
+  fazla güçlü geri gönderme. **Sıradaki önerilen aralık yok;** ikinci tur açılması kullanıcı kararıdır — açılırsa ilk adaylar
+  tam denetlenmeyen on makale ve yoğunluğun en yüksek olduğu 41–80'dir. **Dışarıda kalan ama bilinen:** 75'in Şekil 1'i 3/8 basamağını çizmiyor (metin bunu söylüyor;
   şekle eklemek yeniden çizim işidir).
 - **Özet karşılaştırması yok — bilgi notu (bug-932):** `sync-series-hashes` özeti kataloğa taşımıyor, `assertCatalogMatch`
   özeti karşılaştırmıyor. Özet değişen her bakım run'ı kataloğu elle (betikle) senkronlar ve sonra iki tarafı karşılaştırır.
   Araca özet denetimi eklemek kod kararıdır, yapılmadı.
+- **Süresi dolmuş sertifika — KAPANDI (bakım run'ı 6, #300):** 4'teki Gage 1994 (BPE) kopyası
+  `www.derczynski.com/papers/archive/BPE_Gage.pdf`; sitenin Let's Encrypt sertifikası 29 Ekim 2026'da dolmuştu ve 2 Kasım'da
+  hâlâ dolmuş. Bağlantı aynı belgenin 21 Ekim 2026 tarihli Wayback kopyasına
+  (`web.archive.org/web/20261021171202/https://www.derczynski.com/papers/archive/BPE_Gage.pdf`) taşındı; içerik doğrulandı,
+  bağlantı onarımı işaretsiz.
 - **OpenAlex anahtarı — bilgi notu:** OpenAlex artık anahtarsız isteklere IP başına paylaşılan küçük bir günlük bütçe
-  veriyor; toplu sorgunun yarısı 429 aldı. Ücretsiz anahtar bir hesap gerektiriyor; açılmadı. Kullanıcı bir anahtar
+  veriyor; run 4'te toplu sorgunun yarısı 429 aldı, run 5'te bütçe 100 sorguda bitti (Crossref aynı listeyi sorunsuz taşıdı),
+  run 6'da kalan 99 çalışmanın ilk üç isteği 429 aldı — **bu 99 çalışmanın OpenAlex katmanı hâlâ eksik (engel)**; Crossref
+  katmanı run 5'te tamamdı. Ücretsiz anahtar bir hesap gerektiriyor; açılmadı. Kullanıcı bir anahtar
   verirse `api_key=` ile kullanılır.
 - **SVG `aria-label` ↔ alt metin (bilgi notu, okura yansımıyor):** 346 şeklin 107'sinde SVG dosyasındaki
   `aria-label` markdown alt metninden ayrışmış, 133'ünde hiç yok. Okuyucu render sırasında alt metni `aria-label`
   olarak yazdığı için (`rehype-inline-svg.ts`) sayfada fark görünmez. Yalnızca o run'da dokunulan şekiller eşitlenir
-  (bakım run'ı 4'te 15 şekil daha; 2026-10-26 sonunda ayrışmış 96, `aria-label`'ı olmayan 133).
+  (bakım run'ı 4'te 15 şekil daha; 2026-10-26 sonunda ayrışmış 96, `aria-label`'ı olmayan 133; bakım run'ı 6'da 57, 81 ve
+  110'un şekilleri eşitlendi — 2026-11-02 sonunda 346 şeklin 118'inde eşit, 95'inde ayrışmış, 133'ünde yok).
 - **Araştırma ve ölçüm çalışma dizinleri kalıcı değil — bu bilinçli.** Batch 22'de paralel bir oturum
   `artifacts/` altını sildiği için (karar #208g), Batch 23–28 `artifacts/` altına **hiçbir şey yazmadı**;
   bütün kaynak metinleri, PDF'ler ve ölçer betikleri oturum scratchpad'inde kaldı. Bir bakım run'ı kendi
@@ -372,7 +447,7 @@ anlamlıysa §12 revizyon işareti konur, tek künye ya da tek sayı düzeltmesi
 dokunuştan sonra `sync-series-hashes.cjs --write`, ardından iki repo kapısı; render etkileniyorsa izole
 kopyada build ve PNG turu. **Hash senkronu ertelenmez:** oturum her an kapanabilir; bakım run'ı 3'ün sabah
 oturumu senkronu "bütün düzeltmeler bitince" diye bıraktı ve main senkronsuz commit edildi (bug-926). (5) Karar
-numarası **#289**'dan devam eder; bu dosyanın başlığı ve geçmiş kaydı güncellenir. Run yarıda kalırsa sonraki oturum
+numarası **#302**'den devam eder; bu dosyanın başlığı ve geçmiş kaydı güncellenir. Run yarıda kalırsa sonraki oturum
 önce `git log` ve `.wolf/memory.md`'yi okur: bir önceki oturumun scratchpad'i ve workflow journal'ı
 (`~/.claude/projects/<proje>/<oturum>/subagents/workflows/<run>/journal.jsonl`) yeniden kullanılabilir veri taşır. **Yeni makale, yeni başlık ya da yeni faz yalnızca kullanıcının kapsam uzatma kararıyla açılır.**
 **Bakım run'ı 2'den beri güncel durum taraması üç katmanlıdır:** hakemsiz kalemler için yeni kabul listeleri,
@@ -384,6 +459,26 @@ atıf ve tarih birincil kaynakla okunur (Açık borçlar'daki döngü). Run 4'ü
 (hangi model, hangi alt küme, hangi protokol), **niceleyicinin keskinleşmesinde** ("hiçbir", "çoğu ayarda" ↔ kaynakta
 "often") ve **tarihsiz şimdiki zamanda** toplanıyor; bir düzeltme, onu geri çağıran öteki makalelere, özete, disiplin
 maddesine, alt metne ve SVG metnine aynı turda taşınmazsa diff denetimi onları yakalıyor (run 4'te 70 ve 80).
+**Bakım run'ı 5'in dersleri:** (a) Olgu denetimi **geri göndermeleri de** okur: "N'de gördük" diyen her cümle N'de grep'lenir;
+run 5'te altı makalede dört yanlış geri gönderme çıktı (ikisi hiçbir makalede sunulmamış bir veriyi çağırıyordu). (b) Bakımda
+yeni bir kaynak "hakemsiz" diye eklenirken TMLR listesi ve konferans dökümleri o anda taranır (FMTI 2025, bug-945). (c) Aynı
+sistem için iki çalışmanın sayısı (maliyet, puan) aynı paragrafta birleşmez; şekil bir tablonun, metin ötekinin sayısını
+taşıyorsa ikisi adlandırılır. (d) Tablo hücresi PDF metninden değil arXiv HTML'den okunur (bug-950). (e) Ultracode yoksa ana
+oturum bir run'da altı makale denetleyebiliyor; aralık buna göre seçilir.
+**Bakım run'ı 6'nın dersleri:** (a) **Kimlik denetimi:** `src5.py`'nin başlıkla arXiv araması tek ya da iki kelimelik genel
+başlıklarda ("Machine Learning", "Deep Learning", "Model Compression", "Convex Optimization") yanlış makale indirir; her tam
+metinde ilk yazarın soyadı ilk sayfalarda harf sınırıyla aranır (`\b` kurum rakamlarıyla bozuluyor), tutmayan kalem resmî
+kopyayla değiştirilir (bug-955). (b) **Geri gönderme grep'i** hedefte birebir ve Türkçe büyük harfi gözeterek yapılır ("Sisli
+vadide", "Şaşkınlığı ölçmek"); run 6'nın 15 yanlışının çoğu tırnaklı ya da terimleşmiş bir ifadeyi ("bellek duvarı", "cetvel
+arayışı") hedefe yüklüyordu. (c) Kaynağın metni kendi tablosuyla çelişirse tablo esas alınır, fark metinde söylenir (Batch 28
+Chen, run 6 Idefics2). (d) Künye hangi sürümü veriyorsa sayı ondan okunur (82: LLaMA-Omni ICLR'de 236 ms, arXiv v1'de 226).
+(e) Bir ölçü adı düzeltildiğinde şeklin **bütün hücreleri** yeni adla yeniden okunur: 110'da kutu düzeltilmiş ama aynı şeklin
+"sonuç" hücresi eski genellemeyi taşıyordu; PNG incelemesi yakaladı. (f) Run'ın kontrol dosyası (`docs/seri/BAKIM-RUN<N>.md`:
+paket ve makale satırı, kanıt, engel, sıradaki adım, günlük) compact'lar arasında run'ı taşır; ana oturum bu düzenle 86
+makaleyi tek run'da bitirdi. (g) Render ölçeri (`measure5.mjs`) yalnız `main.innerText`'e bakar: alt metin SVG'nin
+`aria-label`'ına yazıldığı için beklenen alt metin dizgeleri "eksik" görünür, kendi `table-scroll` kabında kayan tablo
+hücreleri de `overflowEls` sayar — ikisi tarayıcıda `aria-label` ve sayfa `scrollWidth`'i ile ayrılır. (h) AAAI OJS'nin bot
+doğrulama sayfası atlatılmaz; Wayback, yazar ya da kurum kopyası kullanılır.
 
 **Uyarı (kararlar #214, #223, #231, #238, #245, #262):** ölçülmemiş eğri çizilmez. Batch 28'in tek eğrisi
 (116, Şekil 1) kapalı formülden hesaplandı ve şeklin içinde öyle yazıyor.
@@ -510,7 +605,7 @@ yazılmış olmalıdır (başlık değişecekse entegrasyondan **önce**); YOL-H
 kavram-tekrar defteri, terim defteri, vaat defteri ve bağlayıcı kararlar güncellenir; doğrulama kapıları
 çalıştırılır. Yeni fazın kategori ve level kararı o run'ın ilk kararıdır. **118'in son bölümü "Bu serinin bir
 sonraki makalesi yok." diye bitiyor** — uzatma kararıyla bu cümle ve `/seri` `footerNote`'u da değişir.
-**Sonraki bağlayıcı karar numarası #289'dur.**
+**Sonraki bağlayıcı karar numarası #295'tir.**
 
 **Entegrasyon sırası (repo içi araçlarla):**
 ```
@@ -607,6 +702,17 @@ Bakım run'ı 4'te eklenenler (scratchpad'de, kalıcı değil):
   şekillerde alt ↔ `aria-label`.
 - **`mkspec4.py`** + **`measure.mjs`** — değişen sayfalar için beklenen metin/bağlantı listesi ve 3 genişlik × 3 tema
   ölçümü; **`gates4*.sh`** — izole kopyayı senkronlayıp typecheck, test, build.
+
+Bakım run'ı 5'te eklenenler (scratchpad'de, kalıcı değil; run 3–4 betikleri yanlarında yeniden kullanıldı):
+- **`src5.py`** — bir makalenin bütün künyelerinin tam metnini indirir: arXiv kimliği yoksa başlıkla arXiv'de arar, sonra
+  resmî PDF (ACL, PMLR, NeurIPS, ICLR), en son sayfa metni; `dl5/a<makale>/` altında `.txt` + `index.json`.
+- **`q5.py`** — bir kaynak metninde düzenli ifadeleri bağlamıyla basar (sayı doğrulamanın ana aracı).
+- **`tab5.py`** — arXiv HTML'deki (`arxiv.org/html/<id>`) tabloları başlığa göre seçip satır satır basar; PDF metninin
+  kaydırdığı tablolar için esas kanal.
+- **`match5.py`** + **`pmlr5.py`** — hakemsiz çalışmaları TMLR listesi, ACL Anthology toplu bib'i ve PMLR cilt dizinleriyle
+  (v300–350) eşleştirir; **`status5.py`** — Crossref bibliyografik arama + OpenAlex (bütçe bitince kendini kapatır).
+- **`mkspec5.py`** + **`measure5.mjs`**, **`revmarks5.py`**, **`buglog5.py`** (buglog'a metin olarak ekler; dosyanın biçimi
+  `json.dump` ile birebir dönmüyor).
 
 **Yayın öncesi zorunlu taramalar.** Kapsam değişmedi: kelime sayısı, parantezli gloss listesi, yasaklı
 biçimler, kendi numarası ve numaralı ileri gönderme taramaları, `N\.` kaçış denetimi, bölüm başlıkları,
@@ -706,12 +812,23 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
   (`8ec2fc9`). Batch 28 de kullanıcı tarafından commit edildi (`7b79ebb`); bakım run'ı 1'in değişiklikleri de
   (`0bc06e4`), bakım run'ı 2'ninkiler de (`549c352`). Bakım run'ı 3'ün sabah oturumunun 68 düzeltmesi `5c0d242`'de
   hash senkronu olmadan commit edildi; senkron run 3'te yapıldı. Bakım run'ı 3'ün değişiklikleri `e323271`'de commit
-  edildi. **Bakım run'ı 4'ün değişiklikleri (29 makale, 19 SVG, `catalog.json`, HANDOFF, YOL-HARITASI) çalışma ağacında
-  commit edilmemiş** duruyor. Aynı gün BOUN bakım run'ı 3 ve Güven Sınırı run 5 başka oturumlarda koştu ve bitti; run
+  edildi. Bakım run'ı 4'ün değişiklikleri kullanıcı tarafından `0854021`'de commit edildi. **Bakım run'ı 5'in değişiklikleri
+  (9 makale, `catalog.json`, HANDOFF, YOL-HARITASI) çalışma ağacında commit edilmemiş** duruyor; SVG'ye dokunulmadı. Aynı gün BOUN bakım run'ı 3 ve Güven Sınırı run 5 başka oturumlarda koştu ve bitti; run
   4'ün dokunduğu dosyalar yalnız AI serisinindir (ve `.claude/launch.json`'daki geçici girdi, run sonunda silindi).
   `.wolf/*`'taki değişiklikler oturumların kendi kayıtlarıdır. Commit/push kullanıcı kararıdır (SOZLESME kapsamı dışı).
 
 ## Non-normative history (tarihsel kayıt; aktif komut değildir)
+- **Bakım run'ı 6 (2026-11-02):** TRIGGER bakım kipinde altıncı kez çalıştı; makale üretilmedi. Kullanıcı tek run istedi ve
+  olgu denetimi döngüsünün kalan dört aralığı (41–60'ın kalanı, 81–102, 1–40, 103–118) aynı run'da, ana oturumda,
+  `docs/seri/BAKIM-RUN6.md` kontrol dosyasıyla compact'lar arasında bitti: 86 makale, 842 künye, 92 düzenleme (15'i geri
+  gönderme; 3 SVG metni; 1 özet), revizyon işareti yok; döngünün ilk turu tamamlandı. Gage bağlantısı Wayback'e taşındı;
+  OpenAlex'in 99 çalışması ve OpenReview API'si erişim engelinde kaldı. Kararlar #295–#301; sonraki numara **#302**. Kapılar ve
+  render sonuçları #301'de. Commit yapılmadı.
+- **Bakım run'ı 5 (2026-11-02):** TRIGGER bakım kipinde beşinci kez çalıştı; makale üretilmedi. Ultracode yoktu: bütün iş ana
+  oturumda. Üç katmanlı tarama yenilendi (TMLR listesi FMTI 2025'i hakemli çıkardı: 20, 69; Crossref'te yeni ilişki yok;
+  bağlantılarda yalnız bir süresi dolmuş sertifika), olgu denetimi 51, 53, 55, 56, 59, 60'ta 49 düzenleme verdi (dördü yanlış
+  geri gönderme; 57'ye ve 56'ya yayılım), 51'e revizyon işareti kondu, 59'un özeti hizalandı. Kararlar #289–#294; sonraki
+  numara **#295**. Kapılar ve render sonuçları #294'te.
 - **Bakım run'ı 4 (2026-10-26, öğleden sonra):** TRIGGER bakım kipinde dördüncü kez çalıştı; makale üretilmedi. Run 3'ün
   üç katmanı tekrarlanmadı; dördüncü katman olarak birincil kaynakla olgu denetimi açıldı (61–80'den 16 makale, 1.316
   iddia) ve 611 zamana bağlı cümle tarandı. Denetçi → şüpheci → ana oturum zincirinden 257 + 26 düzenleme; 10 revizyon

@@ -12,7 +12,7 @@ tags:
   - video-uretimi
   - kilavuzluk
   - ornekleyici
-content_hash: sha256:45f92766a2c6a4b07f906020a71db02218f30b4882d079c865481bcf234c0a90
+content_hash: sha256:30985ab02d2bc5be2ed238e4f95ef7aefd88bc14ae5188f5e3e08c79d186febb
 classification_version: 1
 classification_batch: 20
 revised_at: "2026-09-25"
@@ -76,7 +76,7 @@ Adım sayısını daha da aşağı çekmenin yolu damıtma. Tim Salimans ve Jona
 
 İkinci bedel ağın **neyin üzerinde** çalıştığından geliyor. Piksel uzayında difüzyon pahalı, ve pahalılığın ölçüsü Robin Rombach ve arkadaşlarının CVPR 2022'de sunduğu çalışmanın açılışında yazılı: o dönemin en güçlü difüzyon modellerini eğitmek 150 ile 1000 V100 günü arasında sürüyor, ve eğitilmiş bir modelden elli bin örnek üretmek tek bir A100'de yaklaşık beş gün alıyor.
 
-Çalışmanın hamlesi şu: önce bir otokodlayıcı eğit, görüntüyü daha küçük bir gizil ızgaraya indir, difüzyonu orada çalıştır. İndirgeme çarpanı bir tasarım değişkeni ve çalışma onu tarıyor: çarpan 1 (yani piksel uzayı) eğitimi çok yavaşlatıyor, çarpan 32 algısal olarak fazla şey siliyor, 4 ile 8 arası en iyi dengeyi veriyor. Takasın biçimi tanıdık olmalı: 81\. makalede görüntü yamasının boyutu, token sayısı ile ayrıntı arasında aynı türden bir takas kuruyordu. Sıkıştırma her yerde aynı soruyu soruyor — neyi atmaya razısın.
+Çalışmanın hamlesi şu: önce bir otokodlayıcı eğit, görüntüyü daha küçük bir gizil ızgaraya indir, difüzyonu orada çalıştır. İndirgeme çarpanı bir tasarım değişkeni ve çalışma onu tarıyor: çarpan 1 (yani piksel uzayı) eğitimi çok yavaşlatıyor, çarpan 32 algısal olarak fazla şey siliyor, 4 ile 16 arası verimlilik ile algısal sadakat arasında iyi bir denge kuruyor, en kaliteli sonuçlar 4 ve 8'de. Takasın biçimi tanıdık olmalı: 81\. makalede görüntü yamasının boyutu, token sayısı ile ayrıntı arasında aynı türden bir takas kuruyordu. Sıkıştırma her yerde aynı soruyu soruyor — neyi atmaya razısın.
 
 Omurga tarafında da bir değişim var. Difüzyon modelleri uzun süre U-Net adı verilen evrişimli bir omurga kullandı. William Peebles ve Saining Xie'nin ICCV 2023'te sunduğu çalışma onu 7\. makalenin mimarisiyle değiştirdi: gizil ızgara yamalara bölünüp bir Transformer'a diziliyor. Bulgu iki katmanlı. Birincisi ölçek düzenli davranıyor — omurganın hesabı arttıkça FID düşüyor. İkincisi ve daha ilginci, U-Net'in taşıdığı varsayımın **zorunlu olmadığı**: 118,6 Gflop'luk en büyük sürüm, ImageNet 256×256'da o günün en iyisi olan 2,27 FID'e ulaşıyor. Patrick Esser ve arkadaşlarının ICML 2024'te sunduğu çalışma aynı omurgayı 8 milyar parametreye taşıyor ve gürültüden veriye düz bir yol öğrenen bir eğitim biçimini — doğrultulmuş akış — sistematik olarak karşılaştırıp öne çıkarıyor. Bu ailenin pratik vaadi de adım sayısıyla ilgili: yol ne kadar düzse, onu izlemek için o kadar az adım gerekir.
 

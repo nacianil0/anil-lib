@@ -12,7 +12,7 @@ tags:
   - iddia-kanit
   - taban-cizgisi
   - on-baski
-content_hash: sha256:8c573b6f5a0daeebc827cf446d7131b31f252ee99144471afa319844581eef87
+content_hash: sha256:09368a27d2030f809e9928330fbb45cf98b3352d86a621dda1119c7bc41e1087
 classification_version: 1
 classification_batch: 23
 ---
@@ -48,7 +48,7 @@ Okumanın en basit ve en verimli disiplini şu: özetteki her cümleyi ayrı bir
 
 Aynı gözle bakılacak ikinci yer kapsam cümlesidir. Bu çalışma çözümlemesini sayısal değişkenli ve orta ölçekli sınıflandırma kümeleriyle sınırlıyor ve bunu açıkça yazıyor. 97\. makalede üç çalışmanın çelişmediğini, kapsamlarının farklı olduğunu söylemiştik; o karşılaştırmayı mümkün kılan şey tam olarak bu cümlelerdi.
 
-Eşlemenin ters yönü de öğretici. 96\. makalede kullandığımız rastgele etiket deneyini düşün: özetteki iddia "derin ağlar rastgele etiketleri kolayca uyduruyor" ve kanıtı doğrudan bir tabloda, sıfır eğitim hatasıyla duruyor — eşleşme tam. Ama aynı özetin ikinci cümlesi çok daha büyük bir şey söylüyordu: klasik genelleme çerçevesi bu modelleri açıklamakta yetersiz. Bu cümlenin kanıtı bir tablo değil, bir **çıkarım zinciri**: eğer kapasite ölçüsü iki durumda da aynıysa ve sonuçlar yetmiş beş puan farklıysa, o ölçü ayırt edemiyor demektir. Zincir sağlam; ama bir tablodan okunan sayı ile bir muhakemeden çıkan sonucu aynı raftan almamak gerekiyor. Bir yıl sonra o zinciri daha da sıkılaştıran ayrı bir çalışmanın yayımlanmış olması — 96\. makaledeki düzgün yakınsama sonucu — tam da bunun kanıtı.
+Eşlemenin ters yönü de öğretici. 96\. makalede kullandığımız rastgele etiket deneyini düşün: özetteki iddia "derin ağlar rastgele etiketleri kolayca uyduruyor" ve kanıtı doğrudan bir tabloda, sıfır eğitim hatasıyla duruyor — eşleşme tam. Ama aynı özetin ikinci cümlesi çok daha büyük bir şey söylüyordu: klasik genelleme çerçevesi bu modelleri açıklamakta yetersiz. Bu cümlenin kanıtı bir tablo değil, bir **çıkarım zinciri**: eğer kapasite ölçüsü iki durumda da aynıysa ve sonuçlar yaklaşık yetmiş altı puan farklıysa, o ölçü ayırt edemiyor demektir. Zincir sağlam; ama bir tablodan okunan sayı ile bir muhakemeden çıkan sonucu aynı raftan almamak gerekiyor. İki yıl sonra o zinciri daha da sıkılaştıran ayrı bir çalışmanın yayımlanmış olması — 96\. makaledeki düzgün yakınsama sonucu — tam da bunun kanıtı.
 
 > **Kendini yokla:** Özetteki bir cümlenin gövdede karşılığı yoksa, bu cümle yanlış mıdır?
 
@@ -66,7 +66,7 @@ Sorunun ölçülmüş bir cevabı var, üstelik ölçümü alanın kendisi yapt�
 
 Bu "yarı"nın ne kadar kötü olduğunu anlamak için bir kıyas noktası gerekiyor. Raporun kullandığı taban çizgisi, kabul oranı aynı kalmak koşuluyla kararlarını yazı turayla veren iki komite. Böyle iki komitede bir bildirinin öbür tarafta reddedilme olasılığı yalnızca kabul oranına bağlıdır: kabul oranı yüzde 25 ise, kabul edilenlerin yüzde 75'i öbür tarafta reddedilir (bu örnek sayı bizim, raporun değil). Gerçek komitelerin yüzde 50,6'sı bu rastgele düzeyden yüzde 35 daha iyi; şekildeki "iyileşme" satırı bu kıyastır.
 
-Asıl öğretici bulgu alttaki kutuda. Yazarlar eşiği oynatıp ne olacağını hesaplıyorlar ve sezgiye aykırı bir sonuç çıkıyor: **süreç ne kadar seçici olursa o kadar keyfîleşiyor.** Yalnızca sözlü sunumlar kabul edilseydi, kabul edilenlerin yüzde 88,8'i öbür komitede reddedilirdi; rastgele komiteye göre iyileşme yüzde 35'ten yüzde 8'e düşerdi. Sebebi anlaşılır: eşik yükseldikçe karar, hakemler arası gürültünün büyük olduğu dar bir aralıkta veriliyor. Kabul oranı birkaç yüzdeye indiğinde rastgele komite de kabul ettiklerinin neredeyse tamamını öbür tarafta kaybeder; gerçek komitenin yüzde 88,8'i o tavana yakın duruyor.
+Asıl öğretici bulgu alttaki kutuda. Yazarlar eşiği oynatıp ne olacağını hesaplıyorlar ve sezgiye aykırı bir sonuç çıkıyor: **süreç ne kadar seçici olursa o kadar keyfîleşiyor.** Yalnızca sözlü ve öne çıkan sunumlar kabul edilseydi, kabul edilenlerin yüzde 88,8'i öbür komitede reddedilirdi; rastgele komiteye göre iyileşme yüzde 35'ten yüzde 8'e düşerdi. Sebebi anlaşılır: eşik yükseldikçe karar, hakemler arası gürültünün büyük olduğu dar bir aralıkta veriliyor. Kabul oranı birkaç yüzdeye indiğinde rastgele komite de kabul ettiklerinin neredeyse tamamını öbür tarafta kaybeder; gerçek komitenin yüzde 88,8'i o tavana yakın duruyor.
 
 Bunu doğru okumak önemli. Sonuç "hakemlik işe yaramıyor" değil. Cortes ve Lawrence'ın 2014 deneyini yedi yıl sonra yeniden inceledikleri çalışma daha ölçülü bir cümle kuruyor: puanlardaki değişkenliğin yaklaşık yarısı öznel kaynaklı, ve süreç **kötü bildirileri elemekte iyi, iyi bildirileri seçmekte zayıf**. Yani hakemlik bir alt sınır güvencesi veriyor, bir kalite sıralaması vermiyor.
 

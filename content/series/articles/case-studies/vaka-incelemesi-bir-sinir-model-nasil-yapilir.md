@@ -12,7 +12,7 @@ tags:
   - hesap-butcesi
   - karar-zinciri
   - geri-alinamazlik
-content_hash: sha256:fe596ed875689e78da8081fd7bd411bdb43e5b9f7f985a31c1b14664baa41f51
+content_hash: sha256:1247b56d28aa68d7b96c08d44a39376b843e9d3ffe1b012742182055e0d8befc
 classification_version: 1
 classification_batch: 27
 ---
@@ -30,7 +30,7 @@ Zinciri bir bütçeyle yürüteceğiz, çünkü her karar sonunda aynı tek say�
 
 Başlangıç noktası bir FLOP miktarı. 8\. makaledeki kestirimle, N parametreli bir modeli D token üzerinde eğitmenin maliyeti yaklaşık 6ND'dir. Aaron Grattafiori ve arkadaşlarının Llama 3 teknik raporu — hakemli olmayan bir rapordur ve seride baştan beri böyle işaretlenir — 405 milyar parametre ve 15,6 trilyon token bildiriyor; 6 × 4,05×10¹¹ × 1,56×10¹³ = 3,79×10²⁵, raporun kendi verdiği değer 3,8×10²⁵.
 
-İlk karar bu sayıyı ikiye bölmek: ne kadar model, ne kadar veri. Jordan Hoffmann ve arkadaşlarının NeurIPS 2022'de sunduğu çalışma bu bölmenin ölçülmüş cevabını vermişti ve 9\. makalede görmüştük — sabit bir bütçede parametre başına yaklaşık yirmi token; dört kat küçük ama yirmi kat çok token görmüş model, elli yedi konulu bir sınavda yüzde 67,6 ile yüzde 60,0'ın önüne geçiyordu.
+İlk karar bu sayıyı ikiye bölmek: ne kadar model, ne kadar veri. Jordan Hoffmann ve arkadaşlarının NeurIPS 2022'de sunduğu çalışma bu bölmenin ölçülmüş cevabını vermişti ve 9\. makalede görmüştük — sabit bir bütçede parametre başına yaklaşık yirmi token; dört kat küçük ama dört kattan fazla token görmüş model, elli yedi konulu bir sınavda yüzde 67,6 ile yüzde 60,0'ın önüne geçiyordu.
 
 Bu kararın kapattığı şey, karar anında görünmeyen yerde. Seçilen N yalnızca eğitim maliyetini değil **çıkarım maliyetini de ömür boyu** belirliyor: 26 ve 28\. makalelerde gördüğümüz gibi her kullanıcı isteği, her turda o N parametreyi okumak zorunda. Eğitim bir kez ödenir, çıkarım her gün ödenir. Yani bütçeyi bölen karar aslında iki ayrı bütçeyi birden bölüyor ve ikincisi faturaya yıllarca yayılıyor.
 

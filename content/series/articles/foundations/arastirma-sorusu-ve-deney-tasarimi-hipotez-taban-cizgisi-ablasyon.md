@@ -12,7 +12,7 @@ tags:
   - taban-cizgisi
   - ablasyon
   - arama-butcesi
-content_hash: sha256:f376adf75f27090bd50da81cdd646d2a94cfc2d77e60804eb3253eaf85e22264
+content_hash: sha256:b85fd0dfd04a21783667993f38c64598fa2e6564cee8d8342d4a8dbd64bedf21
 classification_version: 1
 classification_batch: 24
 ---
@@ -32,7 +32,7 @@ Sınanabilir hâle getirmek, deneyden **önce** dört şeyi yazmak demek: hangi 
 
 Brian Nosek ve arkadaşlarının PNAS'ta 2018'de yayımladığı çalışma bu ayrımı iki sözcükle adlandırıyor: **öngörü** (prediction) ile **sonradan açıklama** (postdiction). Öngörü, hangi çözümlemenin yapılacağının sonuçlar görülmeden belirlenmesidir; sonradan açıklama, veriye baktıktan sonra hangi çözümlemenin bildirileceğine karar vermektir. İkisi de meşru iştir — birincisi sınar, ikincisi hipotez üretir — ama aynı kanıt gücüne sahip değillerdir, ve sıralamaları görünmediğinde okuyucu ikisini ayırt edemez. Çözüm olarak önerilen pratiğin adı **ön kayıt** (preregistration): çözümleme planını, sonuçlar bilinmeden bağımsız bir kayda yazmak.
 
-Bunun etkisi alan dışında ölçüldü. Robert Kaplan ve Veronica Irvin'in PLOS ONE'da 2015'te yayımladığı çalışma, ABD'nin ulusal kalp-akciğer-kan enstitüsünün 1970–2012 arasında desteklediği 55 büyük klinik denemeyi tarıyor. 2000 öncesinde yayımlanan 30 denemenin 17'si (yüzde 57) birincil sonuç değişkeninde anlamlı bir yarar bildiriyor; 2000 sonrasında yayımlanan 25 denemenin yalnızca 2'si (yüzde 8). Arada değişen şey tedaviler değil, birincil sonucun denemeden önce kamuya kaydedilmesi zorunluluğu.
+Bunun etkisi alan dışında ölçüldü. Robert Kaplan ve Veronica Irvin'in PLOS ONE'da 2015'te yayımladığı çalışma, ABD'nin ulusal kalp-akciğer-kan enstitüsünün 1970–2012 arasında desteklediği 55 büyük klinik denemeyi tarıyor. 2000 öncesinde yayımlanan 30 denemenin 17'si (yüzde 57) birincil sonuç değişkeninde anlamlı bir yarar bildiriyor; 2000 sonrasında yayımlanan 25 denemenin yalnızca 2'si (yüzde 8). Yazarların sınadığı açıklamalar arasında bu düşüşle en güçlü ilişkili çıkan, birincil sonucun denemeden önce kamuya kaydedilmesi zorunluluğu; tedavi ve bakımın iyileşmesi gibi başka açıklamaları da tartışıyorlar ve kayıt için "katkıda bulunmuş olabilir" diyorlar.
 
 Nosek'te aktarılan bir yan bulgu da kaydın neyi yakaladığını gösteriyor: ön kayıtlı çalışmaların yayımlanmış makalelerinin yüzde 40'ı deney koşullarından en az birini, yüzde 70'i sonuç değişkenlerinden en az birini bildirmemiş. Sürekli anlamlı çıkan bulguların yüzde 96'sı makaleye girerken, boş çıkan etkilerin yüzde 65'i girmemiş. Yani kayıt olmasa bu ayıklama görünmezdi.
 
@@ -104,7 +104,7 @@ Bunun bir ön koşulu da var ve atlandığında deney anlamını yitiriyor: bozu
 
 **Hipotez bir yasak taşımalı.** Hangi ölçü, hangi küme, hangi karşılaştırma, ne büyüklükte fark — dördü deneyden önce yazılmadıysa hiçbir sonuç hipotezle çelişemez.
 
-**Öngörü ile sonradan açıklama ayrı raflardır.** İkisi de gereklidir; sırası görünmezse okuyucu ikisini ayırt edemez. Klinik denemelerde birincil sonucun önceden kaydedilmesi, anlamlı yarar bildiren çalışma oranını yüzde 57'den yüzde 8'e indirdi.
+**Öngörü ile sonradan açıklama ayrı raflardır.** İkisi de gereklidir; sırası görünmezse okuyucu ikisini ayırt edemez. Klinik denemelerde birincil sonucun önceden kaydedilmesi zorunlu hâle geldikten sonra anlamlı yarar bildiren çalışma oranı yüzde 57'den yüzde 8'e indi; yazarlar bu zorunluluğu düşüşle en güçlü ilişkili açıklama sayıyor.
 
 **Taban çizgisi seçmek kazancı tanımlamaktır.** Zayıf ya da ayarlanmamış bir taban çizgisi, farkın bir kısmını yöntemin hanesine yazar. Budama literatüründe bildirilerin dörtte birinden fazlası hiçbir başka yöntemle karşılaştırılmamış.
 

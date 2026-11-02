@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-10-26T16:31:22.401Z
-> Files: 35 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-02T09:06:17.733Z
+> Files: 92 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
 
@@ -44,6 +44,58 @@
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/wf3/denetim/yayilim/
 
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/
+
+- `altcount6.py` — /*.md", recursive=True): (~285 tok)
+- `buglog5.py` — Append run 5's bug entries to .wolf/buglog.json (round-trip checked; no trailing newline, as the fil (~1266 tok)
+- `buglog6.py` — Append run 6's bug entries to .wolf/buglog.json (round-trip checked; keeps the file's newline style) (~1730 tok)
+- `buglog6b.py` — Patch run 6's bug-956 and bug-957 in .wolf/buglog.json after the late 110 figure fix (round-trip che (~394 tok)
+- `ctl6.py` — Update docs/seri/BAKIM-RUN6.md. Usage: (~522 tok)
+- `edits102.json` (~126 tok)
+- `edits110.json` (~466 tok)
+- `edits12.json` (~78 tok)
+- `edits4.json` (~91 tok)
+- `edits48.json` (~640 tok)
+- `edits49.json` (~150 tok)
+- `edits50.json` (~198 tok)
+- `edits51.json` (~527 tok)
+- `edits52.json` (~746 tok)
+- `edits53.json` (~186 tok)
+- `edits54.json` (~436 tok)
+- `edits55.json` (~1588 tok)
+- `edits56.json` (~366 tok)
+- `edits57.json` (~825 tok)
+- `edits58.json` (~641 tok)
+- `edits59.json` (~415 tok)
+- `edits60.json` (~1402 tok)
+- `edits81.json` (~799 tok)
+- `edits88.json` (~570 tok)
+- `edits89.json` (~174 tok)
+- `edits90.json` (~283 tok)
+- `edits91.json` (~299 tok)
+- `edits92.json` (~176 tok)
+- `edits93.json` (~219 tok)
+- `edits96.json` (~102 tok)
+- `edits97.json` (~96 tok)
+- `edits98.json` (~299 tok)
+- `edits99.json` (~298 tok)
+- `editsD1.json` (~291 tok)
+- `editsD2.json` (~195 tok)
+- `fc6.py` — Fact-audit helper (run 6). Usage: python -X utf8 -I fc6.py <order> [--ctx 110] [--para N-M] (~2255 tok)
+- `fcsum.py` — fc6 çıktısını süzer: kaynağa atfedilmiş paragraflarda bulunmayan sayılar, '?' ile eşleşen (atıfsız) (~412 tok)
+- `fetch6.py` — Tek bir kaynağı elle indirir ve dl5/a<sıra>/<anahtar>.txt olarak yazar; index.json'u günceller. (~585 tok)
+- `gates6b.sh` — Re-run of the run 6 gates after the late 110 figure fix; reuses the existing isolated copy (~223 tok)
+- `idchk6.py` — Kimlik denetimi: indirilen her tam metnin ilk 4000 karakterinde ilk yazarın soyadı geçiyor mu? (~515 tok)
+- `match5.py` — Match not-peer-reviewed works against acceptance lists (TMLR list HTML, ACL Anthology bib, generic J (~1215 tok)
+- `memrow.txt` — , docs/seri/*, .wolf/* | commit yok, sonraki karar #295 | ~400k | (~159 tok)
+- `mkspec5.py` — Build the Playwright measurement spec for run 5's changed pages: slug, expected new texts, new hrefs (~945 tok)
+- `oa6.py` — Run 6: OpenAlex for the works run 5 skipped (anonymous daily budget). Reuses status5.openalex; no e- (~640 tok)
+- `p1_6.py` — Run 6 P1 external checks: debts (f), (i), (j), derczynski certificate. No e-mail in any request. (~647 tok)
+- `pmlr5.py` — Collect paper titles/authors from PMLR volume index pages (v300..v350) into dl5/pmlr300.json. (~354 tok)
+- `q5.py` — Grep a source text for patterns with context. Usage: python q5.py <a55/key> <ctx> <regex> [<regex> . (~320 tok)
+- `src5.py` — Fetch full texts of an article's sources for the fact audit (run 5). Usage: python src5.py <order> [ (~1672 tok)
+- `status5.py` — Run 5 peer-review status sweep for not-peer-reviewed works: Crossref bibliographic search (+ OpenAle (~1285 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/
 
@@ -145,15 +197,19 @@
 
 ## ./
 
+- `CLAUDE.md` — Claude Code için OpenWolf giriş talimatı; `.wolf/OPENWOLF.md`, anatomy ve cerebrum okumalarını işaret eder. (~60 tok)
 
 ## .agents/skills/handoff/
 
 
 ## .claude/
 
-- `launch.json` (~56 tok)
+- `launch.json` (~59 tok)
 
 ## .claude/rules/
+
+
+## .wolf/ — bakım promptu oturumu navigasyonu (2026-11-02)
 
 
 ## 2026-10-05 — Manual series progress reset
@@ -869,6 +925,7 @@
 
 ## content/series/articles/models-and-training/
 
+- `acik-agirliklar-ve-model-ekosistemi.md` — Ağırlıklar kimin elinde (~5004 tok)
 
 ## content/series/articles/multimodal-and-future/
 
@@ -878,6 +935,7 @@
 
 ## content/series/articles/safety-and-evaluation/
 
+- `yonetisim-politika-standartlar-ve-regulasyon.md` — Kararı kim veriyor (~7641 tok)
 
 ## content/series/assets/
 
@@ -1214,7 +1272,15 @@
 
 ## docs/seri/
 
+- `BAKIM-RUN6.md` — Bakım run'ı 6 — kontrol dosyası (~12931 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~21294 tok)
+- `SOZLESME.md` — AI serisinin teknik, editoryal, kaynak/atıf, yaşayan state ve revizyon kuralları; §1 doğrulama kapılarını, §4 kaynak doğrulamayı, §8 state sahipliğini, §12 revizyon işaretini tanımlar. (~11600 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~193968 tok)
+
+## docs/seri/ — devam
+
 - `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~18322 tok)
+- `TRIGGER.md` — Seri tamamlandıktan sonra açık borçları, kaynak güncelliğini ve düzeltmeleri ele alan bakım giriş noktası; toplam bakım run sayısı tanımlamaz, `BATCH=4+1` tarihsel kalmıştır. (~301 tok)
 - `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~189069 tok)
 
 ## docs/superpowers/plans/

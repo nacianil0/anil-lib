@@ -12,7 +12,7 @@ tags:
   - gorsel-token
   - karsitsal-on-egitim
   - gorsel-olcutler
-content_hash: sha256:a98b8ab69891c8a59037a7e17a784b590b707100add59c5392f38b8a0cab0641
+content_hash: sha256:98823befceae42a889f84f3ab6e1e841aa1b61e4b0707d76f31dab213fd5e9c3
 classification_version: 1
 classification_batch: 19
 revised_at: "2026-09-26"
@@ -58,11 +58,11 @@ Birinci yol en yalın. Haotian Liu, Chunyuan Li ve arkadaşlarının NeurIPS 202
 
 Üç yol da çalışıyorsa, hangisi ne zaman daha iyi? Hugo Laurençon ve arkadaşlarının NeurIPS 2024'te sunduğu çalışma bu soruyu denetimli bir ablasyonla soruyor: aynı veri, aynı bütçe, değişen tek şey mimari ve neyin dondurulduğu. Şekil 2 sonuçları veriyor.
 
-![İki bölmeli şekil. Üstte beş satırlık ablasyon tablosu; sütunlar mimari, gövdelerin eğitimi, ortalama puan. Tam otoregresif ve yeniden örnekleyicisiz, gövdeler donuk: 51,8. Tam otoregresif, gövdeler donuk: 60,3. Çapraz dikkat, gövdeler donuk: 66,7. Çapraz dikkat, düşük ranklı uyarlama: 67,3. Tam otoregresif, düşük ranklı uyarlama: 69,5. Tablonun altında iki not: donuk gövdelerde çapraz dikkat yaklaşık yedi puan önde ama 1,3 milyar fazla eğitilebilir parametre taşıyor ve çıkarımda yüzde 10 daha çok işlem yapıyor; gövdeler açıldığında tam otoregresif mimari 12,9 puan, çapraz dikkat 0,6 puan kazanıyor ve sıralama dönüyor. Altta ikinci bölme, başka bir denetimli çalışmadan üç bulgu: çok aşamalı eğitim performans kaybı olmadan kaldırılabiliyor ve hesabın yüzde 20 ile 25'i geri kazanılıyor; iki farklı görüntü kodlayıcısının özelliklerini birleştirmek her ölçütte daha iyi model veriyor; kırpmak açıkça kötü, en iyi seçenek en-boy oranını bozarak yeniden boyutlandırmak. En altta kayıt: sayılar sabit veri ve sabit bütçeli ablasyonlardan gelir, başka bütçelerde sıralama değişebilir.](assets/tasarim-uzayi-ablasyonu.svg "Şekil 2 — Aynı veri, değişen mimari: sıralama neye göre dönüyor")
+![İki bölmeli şekil. Üstte beş satırlık ablasyon tablosu; sütunlar mimari, gövdelerin eğitimi, ortalama puan. Tam otoregresif ve yeniden örnekleyicisiz, gövdeler donuk: 51,8. Tam otoregresif, gövdeler donuk: 60,3. Çapraz dikkat, gövdeler donuk: 66,7. Çapraz dikkat, düşük ranklı uyarlama: 67,3. Tam otoregresif, düşük ranklı uyarlama: 69,5. Tablonun altında iki not: donuk gövdelerde çapraz dikkat 6,4 puan önde ama 1,3 milyar fazla eğitilebilir parametre taşıyor ve çıkarımda yüzde 10 daha çok işlem yapıyor; gövdeler açıldığında tam otoregresif mimari 9,2 puan, çapraz dikkat 0,6 puan kazanıyor ve sıralama dönüyor. Altta ikinci bölme, başka bir denetimli çalışmadan üç bulgu: çok aşamalı eğitim performans kaybı olmadan kaldırılabiliyor ve hesabın yüzde 20 ile 25'i geri kazanılıyor; iki farklı görüntü kodlayıcısının özelliklerini birleştirmek neredeyse her ölçütte daha iyi model veriyor; kırpmak açıkça kötü, en iyi seçenek en-boy oranını bozarak yeniden boyutlandırmak. En altta kayıt: sayılar sabit veri ve sabit bütçeli ablasyonlardan gelir, başka bütçelerde sıralama değişebilir.](assets/tasarim-uzayi-ablasyonu.svg "Şekil 2 — Aynı veri, değişen mimari: sıralama neye göre dönüyor")
 
-Tablo tek bir cümleyle özetlenemiyor ve öğretici olan da bu. İki gövde de donmuşken çapraz dikkat mimarisi yaklaşık yedi puan önde; ama bunu 1,3 milyar fazla eğitilebilir parametreyle ve çıkarımda yüzde 10 daha çok işlemle satın alıyor. Gövdeler 19'da gördüğümüz düşük ranklı uyarlamayla açıldığında sıralama tersine dönüyor: tam otoregresif mimari 12,9 puan kazanıyor, çapraz dikkat yalnızca 0,6. Yazarların ilk bulgusu ise ikisinden de bağımsız: sabit parametre bütçesinde dil gövdesinin kalitesi, görüntü gövdesinin kalitesinden daha belirleyici.
+Tablo tek bir cümleyle özetlenemiyor ve öğretici olan da bu. İki gövde de donmuşken çapraz dikkat mimarisi tablodaki değerlerle 6,4 puan önde; ama bunu 1,3 milyar fazla eğitilebilir parametreyle ve çıkarımda yüzde 10 daha çok işlemle satın alıyor. Gövdeler 19'da gördüğümüz düşük ranklı uyarlamayla açıldığında sıralama tersine dönüyor: tam otoregresif mimari tablodaki değerlerle 9,2 puan kazanıyor — yazarların metni 12,9 diyor ve farkı açıklamıyor —, çapraz dikkat yalnızca 0,6. Yazarların ilk bulgusu ise ikisinden de bağımsız: sabit parametre bütçesinde dil gövdesinin kalitesi, görüntü gövdesinin kalitesinden daha belirleyici.
 
-Siddharth Karamcheti ve arkadaşlarının ICML 2024'te sunduğu çalışma aynı disiplini başka eksenlerde uyguluyor ve üç sonuç veriyor: alanda standart sayılan çok aşamalı eğitim, performans kaybı olmadan kaldırılabiliyor ve hesabın yüzde 20 ile 25'i geri kazanılıyor; iki farklı görüntü kodlayıcısının — biri metinle, biri yalnızca görüntüyle eğitilmiş — özelliklerini birleştirmek her ölçütte daha iyi model veriyor; ve görüntüyü kareye kırpmak açıkça kötü, en iyi seçenek en–boy oranını bozarak yeniden boyutlandırmak.
+Siddharth Karamcheti ve arkadaşlarının ICML 2024'te sunduğu çalışma aynı disiplini başka eksenlerde uyguluyor ve üç sonuç veriyor: alanda standart sayılan çok aşamalı eğitim, performans kaybı olmadan kaldırılabiliyor ve hesabın yüzde 20 ile 25'i geri kazanılıyor; iki farklı görüntü kodlayıcısının — biri metinle, biri yalnızca görüntüyle eğitilmiş — özelliklerini birleştirmek neredeyse her ölçütte daha iyi model veriyor; ve görüntüyü kareye kırpmak açıkça kötü, en iyi seçenek en–boy oranını bozarak yeniden boyutlandırmak.
 
 > **Kendini yokla:** Gövdeler donmuşken çapraz dikkat önde, açıldığında geride kalıyor. Bu ters dönüş neyi söylüyor?
 
@@ -98,7 +98,7 @@ Yazarların 2025'te arXiv'e koyduğu genişletilmiş ve hakemsiz sürümde, en k
 
 **Bağlama yolu bir bütçe kararıdır.** Doğrudan izdüşüm pencereden token yer, sabit sayıda sorguyla yeniden örnekleme token sayısını çözünürlükten bağımsız kılar, çapraz dikkat metin dizisini hiç uzatmaz ama dil modelinin gövdesine dokunur.
 
-**Mimari karşılaştırması, neyin eğitildiği söylenmeden okunmaz.** Donuk gövdelerde bir mimari yedi puan önde, düşük ranklı uyarlamayla sıralama tersine dönüyor; ve sabit bütçede dil gövdesinin kalitesi görüntü gövdesininkinden daha belirleyici.
+**Mimari karşılaştırması, neyin eğitildiği söylenmeden okunmaz.** Donuk gövdelerde bir mimari altı puandan fazla önde, düşük ranklı uyarlamayla sıralama tersine dönüyor; ve sabit bütçede dil gövdesinin kalitesi görüntü gövdesininkinden daha belirleyici.
 
 **Çözünürlük içerikle birlikte kararlaştırılır.** Sabit kareye kırpmak bilgi atar, kareye doldurmak boş piksel üretir; kendi oranıyla işleyen düzenler token bütçesini içeriğe göre dağıtır.
 

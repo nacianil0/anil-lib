@@ -12,7 +12,7 @@ tags:
   - budama
   - ogretmen-ogrenci
   - hesap-butcesi
-content_hash: sha256:7fb59732823723004f660ea0ec00de3b9f49cb9398a68405ff874b61e6fa79c4
+content_hash: sha256:34e907f7ab3592a7293d2a5a1f7c0e0c4d8006da36331c63a83a9d83ad3dfa9c
 classification_version: 1
 classification_batch: 21
 ---
@@ -24,9 +24,9 @@ Bu yolun adı **damıtma** ve seride ilk kez 34\. makalede geçmişti. Orada bir
 
 ## Sert etiketin söylemedikleri
 
-Bir sınıflandırma modelini olağan biçimde eğitirken hedef, doğru sınıfa 1, geri kalan her şeye 0 veren bir vektördür. Buna **sert etiket** diyelim. Sert etiket bir şeyi söyler, çok şeyi söylemez: bir "2" görüntüsünün hangi "7"lere benzediğini, hangi "3"lerden uzak durduğunu söylemez.
+Bir sınıflandırma modelini olağan biçimde eğitirken hedef, doğru sınıfa 1, geri kalan her şeye 0 veren bir vektördür. Buna **sert etiket** diyelim. Sert etiket bir şeyi söyler, çok şeyi söylemez: bir "2" görüntüsünün hangi "3"lere benzediğini, hangi "7"lerden uzak durduğunu söylemez.
 
-Eğitilmiş büyük bir model ise tam olarak bunu söyler. Çıkışındaki softmax bütün sınıflara bir olasılık dağıtır ve bu dağılımdaki küçük sayılar — 2'ye verilen 0,9'un yanında 7'ye verilen 10⁻⁶ ile 3'e verilen 10⁻⁹ — modelin öğrendiği benzerlik yapısını taşır. Sorun şu ki bu sayılar softmax'tan sonra o kadar küçüktür ki eğitim sinyaline neredeyse hiç katkı yapmazlar.
+Eğitilmiş büyük bir model ise tam olarak bunu söyler. Çıkışındaki softmax bütün sınıflara bir olasılık dağıtır ve bu dağılımdaki küçük sayılar — 2'ye verilen 0,9'un yanında 3'e verilen 10⁻⁶ ile 7'ye verilen 10⁻⁹ — modelin öğrendiği benzerlik yapısını taşır. Sorun şu ki bu sayılar softmax'tan sonra o kadar küçüktür ki eğitim sinyaline neredeyse hiç katkı yapmazlar.
 
 Geoffrey Hinton, Oriol Vinyals ve Jeff Dean'in 2015'te yayımladığı — hakemli bir konferans bildirisi değil, bir çalıştay çalışması olan — kısa metin bu sorunu tek bir müdahaleyle çözüyor: 10\. makalede kurduğumuz **sıcaklık**. Softmax'a girmeden önce logit'leri `T`'ye bölersen dağılım yumuşar; küçük olasılıklar büyür ve okunur hâle gelir. Öğretmen modelin yüksek sıcaklıkta ürettiği bu dağılıma **yumuşak etiket** (soft target) denir ve öğrenci aynı sıcaklıkta ona uymaya çalışır. Eğitim bittiğinde sıcaklık 1'e döner. Küçük bir örnek, kendi hesabımız: logit'ler 6, 2 ve 0 ise `T = 1`'de olasılıklar yaklaşık 0,980 / 0,018 / 0,002; `T = 4`'te 0,63 / 0,23 / 0,14. Sıralama değişmedi, ama ikinci ve üçüncü sınıf arasındaki fark — hangi yanlışın "daha az yanlış" olduğu — artık gözle görülür büyüklükte ve eğitim sinyaline katılıyor.
 

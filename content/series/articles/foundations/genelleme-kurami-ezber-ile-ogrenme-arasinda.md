@@ -12,7 +12,7 @@ tags:
   - cift-inis
   - ezber
   - duzenlilestirme
-content_hash: sha256:786f6b4c0b6347417ed5d2737a08efdc277b8d6f90c1a5e0bb197b0896ff0997
+content_hash: sha256:aa8af23fb7b305988f28d6222dc83131861b9f6beb54e52a724d962479fea505
 classification_version: 1
 classification_batch: 23
 revised_at: "2026-09-25"
@@ -120,7 +120,7 @@ Alan boş durmadı: kapasiteye bakan sınırların yerine, eğitilmiş modelin k
 
 Yiding Jiang ve arkadaşlarının ICLR 2020'de sunduğu çalışma soruyu ölçüye çevirdi: hiperparametreleri sistematik olarak değiştirerek **10.000'den fazla** ağ eğittiler ve her biri için literatürdeki **40'tan fazla** karmaşıklık ölçüsünü hesaplayıp genelleme açığıyla sıralama ilişkisine baktılar.
 
-Üç sonuç çıktı. Keskinlik tabanlı ölçüler ve PAC-Bayes sınırları genel olarak en iyi performansı gösterdi. Eniyileme yordamına bakan ölçüler — gradyan gürültüsü, yakınsama hızı — öngörü gücü taşıdı. Ve norm tabanlı ölçülerin çoğu yalnızca zayıf kalmadı, **ters yönde** ilişki verdi: katmanların spektral normlarının çarpımına dayanan sınır, genellemeyle güçlü biçimde negatif ilişkili çıktı, üstelik derinlik değiştikçe en sert biçimde.
+Üç sonuç çıktı. Keskinlik tabanlı ölçüler ve PAC-Bayes sınırları genel olarak en iyi performansı gösterdi. Eniyileme yordamına bakan ölçüler — gradyan gürültüsü, yakınsama hızı — öngörü gücü taşıdı. Ve norm tabanlı ölçülerin birçoğu yalnızca zayıf kalmadı, eniyileme yordamı rastgelelik kattığında **ters yönde** ilişki verdi: katmanların spektral normlarının çarpımına dayanan sınır, genellemeyle güçlü biçimde negatif ilişkili çıktı, üstelik derinlik değiştikçe en sert biçimde.
 
 Cümleyi tam okuyalım. Bu ölçü keyfî bir sezgi değil; test hatasına kuramsal bir **üst sınır** olarak türetilmiş bir büyüklük. Ölçüldüğünde modelleri ters sıralıyor. Sınırın kendisi yanlış değil — matematiği doğru — ama o kadar gevşek ki, sıraladığı şey genelleme değil.
 

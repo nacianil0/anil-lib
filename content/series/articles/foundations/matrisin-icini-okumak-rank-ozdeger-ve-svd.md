@@ -12,7 +12,7 @@ tags:
   - ozdeger
   - dusuk-rank
   - matris-sikistirma
-content_hash: sha256:091d3bf2f1e40bbb8ed302d1204448aa90f3d9524aa6ecf05c47759fba06324e
+content_hash: sha256:240a800f21c0b67b05f2d0b4c63f77d1bd6c70a6c9fa8f740ab9ee7e4cf76d85
 classification_version: 1
 classification_batch: 22
 revised_at: "2026-09-25"
@@ -72,7 +72,7 @@ Hatanın tam olarak hangi sayıya eşit olduğu, onu hangi cetvelle ölçtüğü
 
 Şekil 3 hesabı adım adım gösteriyor. Bir sayı daha: A'nın Frobenius normunun karesi 20 ve bu, tekil değerlerin kareleri toplamına eşit (16 artı 4). Tuttuğumuz payın oranı 16 bölü 20, yani yüzde 80. "Tekil değer spektrumunun ne kadarını tuttun" sorusu bu yüzden anlamlıdır: spektrum, bilginin nasıl dağıldığını okunur biçimde verir.
 
-Bu teoremin ilk büyük dil uygulaması sinir ağlarından çok önce geldi. Scott Deerwester ve arkadaşlarının 1990'da yayımladığı çalışma, terimleri satır belgeleri sütun yapan dev ve seyrek bir matris kuruyor, sonra tekil değer ayrışımını baştan keserek onu birkaç yüz boyuta indiriyordu. Kesmenin kendisi yöntemin amacıydı: aynı konudan söz eden farklı kelimeler, kesilmiş uzayda birbirine yaklaşıyor ve sorguda geçmeyen bir kelimeyi içeren belge de bulunabiliyordu. 42\. makaledeki sözcük eşleşmesinin yapısal kusuruna verilen ilk cevap budur ve 91\. makalede gördüğümüz "embedding aslında bir matris ayrıştırmasıdır" sonucunun da atasıdır.
+Bu teoremin ilk büyük dil uygulaması sinir ağlarından çok önce geldi. Scott Deerwester ve arkadaşlarının 1990'da yayımladığı çalışma, terimleri satır belgeleri sütun yapan dev ve seyrek bir matris kuruyor, sonra tekil değer ayrışımını baştan keserek onu 50 ile 100 arası boyuta indiriyordu. Kesmenin kendisi yöntemin amacıydı: aynı konudan söz eden farklı kelimeler, kesilmiş uzayda birbirine yaklaşıyor ve sorguda geçmeyen bir kelimeyi içeren belge de bulunabiliyordu. 42\. makaledeki sözcük eşleşmesinin yapısal kusuruna verilen erken cevaplardan biri budur ve 91\. makalede gördüğümüz "embedding aslında bir matris ayrıştırmasıdır" sonucunun da atasıdır.
 
 ## Ağırlıklar gerçekten düşük ranklı mı
 

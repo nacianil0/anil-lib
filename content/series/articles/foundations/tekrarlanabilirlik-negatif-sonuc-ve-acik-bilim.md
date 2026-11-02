@@ -12,13 +12,13 @@ tags:
   - veri-sizintisi
   - negatif-sonuc
   - belgeleme
-content_hash: sha256:bad697a0d66724adb2567f148db4ff0088860fafe6b0b131c969f9e2a71c4404
+content_hash: sha256:677cbaf4da11b3f183e97c139f3319c15dd8fd2d9316de3ed36e49a6bfcfab9b
 classification_version: 1
 classification_batch: 24
 ---
 ## Aynı sonuç, başka el
 
-101\. makale bir farkın gürültüden büyük olup olmadığına karar vermeyi kurdu. Ama bir farkın senin elinde gerçek olması, başka bir elde de çıkacağı anlamına gelmiyor — ve 9\. makalede **yeniden üretme** (replication) terimini "bir çalışmanın bağımsız tekrarı" diye tanımlarken bu ayrımı henüz açmamıştık.
+101\. makale bir farkın gürültüden büyük olup olmadığına karar vermeyi kurdu. Ama bir farkın senin elinde gerçek olması, başka bir elde de çıkacağı anlamına gelmiyor — ve 9\. makalede **yeniden üretme** (replication) terimini bir çalışmanın başka bir ekipçe bağımsız tekrarı için kullanırken bu ayrımı henüz açmamıştık.
 
 Bu makale onu açıyor ve fazı kapatıyor. Sorusu şu: **bir sonucu yeniden elde etmek ne demek, alan bunu ne kadar başarıyor ve başarısız olduğunda sebep nerede?**
 

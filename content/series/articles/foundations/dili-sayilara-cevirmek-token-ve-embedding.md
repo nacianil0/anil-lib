@@ -12,7 +12,7 @@ tags:
   - embedding
   - bpe
   - dagilimsal-hipotez
-content_hash: sha256:24f76a89f12ac462ad2294ba721cb4e6a2dfc27575a69963d4c742770f167c17
+content_hash: sha256:95615b3b337bae9cd3651e0c925219ca511804891af473b052926236f3abdf40
 classification_version: 1
 classification_batch: 0
 ---
@@ -107,7 +107,7 @@ Dil artık ağın kapısından geçebiliyor: token'lar, kimlikler ve öğrenilen
 ## Kaynakça
 
 - Bengio, Y., Ducharme, R., Vincent, P. & Jauvin, C. (2003). *A Neural Probabilistic Language Model*. Journal of Machine Learning Research 3, 1137–1155. [Bağlantı](https://www.jmlr.org/papers/v3/bengio03a.html)
-- Gage, P. (1994). *A New Algorithm for Data Compression*. The C Users Journal, Şubat 1994. [Bağlantı](https://www.derczynski.com/papers/archive/BPE_Gage.pdf)
+- Gage, P. (1994). *A New Algorithm for Data Compression*. The C Users Journal, Şubat 1994. [Bağlantı](https://web.archive.org/web/20261021171202/https://www.derczynski.com/papers/archive/BPE_Gage.pdf)
 - Sennrich, R., Haddow, B. & Birch, A. (2016). *Neural Machine Translation of Rare Words with Subword Units*. ACL 2016. [Bağlantı](https://aclanthology.org/P16-1162/)
 - Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. & Sutskever, I. (2019). *Language Models are Unsupervised Multitask Learners*. OpenAI teknik raporu. [Bağlantı](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 - OpenAI. *tiktoken: BPE tokenizer kütüphanesi* (makaledeki Türkçe/İngilizce token ölçümlerinde kullanıldı). GitHub. [Bağlantı](https://github.com/openai/tiktoken)

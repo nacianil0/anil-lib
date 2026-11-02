@@ -12,7 +12,7 @@ tags:
   - olcum-kosullari
   - cikarim-maliyeti
   - veri-merkezi
-content_hash: sha256:237bc783ec18d8fffdceb7f96ba3ea49d265e40b951f3c9e1b975c8a2aca41f9
+content_hash: sha256:bf2eb2f10c966acf74e104f57fd569a473cbd870eacd374046024a7afaaa4163
 classification_version: 1
 classification_batch: 21
 ---
@@ -28,7 +28,7 @@ classification_batch: 21
 
 Birinci halka, işlemden kart-saatine. 9\. makaledeki 6ND kestirimi toplam işlem sayısını verir; bunu kartın gerçekte ulaştığı hıza böldüğünde kart-saati çıkar. 89\. makalede gördük ki bu hız tepe hızın yarısı mertebesinde olabiliyor, dolayısıyla hangi verimin kullanıldığı sonucu ikiye katlayabilir.
 
-İkinci halka, kart-saatinden kilovat-saate. Burada iki yol var: kartın anma gücünü (üreticinin bildirdiği tasarım gücü) kullanmak ya da gerçekte çekilen gücü ölçmek. İkisi aynı değildir — aşağıda döneceğimiz BLOOM ölçümünde, modeli arayüz ardında sunan kartların ölçülen çekimi 400 vatlık anma gücünün karşısında 78 ile 171 vat arasında kalmış. Sonra veri merkezinin kendi payı: soğutma ve dağıtım için harcanan elektriği hesaba katan çarpana **PUE** (power usage effectiveness) deniyor ve modern veri merkezlerinde 1,08 ile 1,2 arasında değişiyor.
+İkinci halka, kart-saatinden kilovat-saate. Burada iki yol var: kartın anma gücünü (üreticinin bildirdiği tasarım gücü) kullanmak ya da gerçekte çekilen gücü ölçmek. İkisi aynı değildir — aşağıda döneceğimiz BLOOM ölçümünde, modeli arayüz ardında sunan kartların ölçülen çekimi 400 vatlık anma gücünün karşısında 78 ile 171 vat arasında kalmış. Sonra veri merkezinin kendi payı: soğutma ve dağıtım için harcanan elektriği hesaba katan çarpana **PUE** (power usage effectiveness) deniyor ve aşağıda karşılaştıracağımız büyük eğitim koşularının veri merkezlerinde 1,08 ile 1,2 arasında değişiyor; ABD veri merkezlerinin 2020 ortalaması ise 1,59'du.
 
 Üçüncü halka, kilovat-saatten karbona. Şebekenin karbon yoğunluğu — kilovat-saat başına gram karbondioksit eşdeğeri — bölgeye ve saate göre kat kat değişir. Dahası iki ayrı muhasebe biçimi var: **bulunduğu yere göre** sayım, bölgesel şebekenin ortalama karışımını kullanır; **satın alınan enerjiye göre** sayım, kurumun aldığı karbonsuz enerji sözleşmelerini de hesaba katar. Aynı elektrik, iki yöntemle iki ayrı karbon sayısı verir.
 
@@ -88,7 +88,7 @@ Sonra eşitlik noktasını hesaplıyorlar: bir modelin eğitim ve ince ayar ener
 
 ![İki bölmeli şekil. Üst bölmede bin çıkarım için harcanan ortalama enerji, kilovat-saat cinsinden, dört görev için: metin sınıflandırma 0,002, görüntü sınıflandırma 0,007, metin üretimi 0,047, görüntü üretimi 2,907. Ölçek için bir telefonu tam şarj etmek 0,022 kilovat-saat; incelenen on görevin en düşüğü ile en yükseği arasındaki oran 1.450'yi aşıyor. Alt bölmede aynı model ailesindeki dört boyut için maliyet eşitliği, yani çıkarım enerjisinin eğitim ve ince ayar enerjisine ulaşması için gereken çıkarım sayısı: 560 milyonluk modelde 205 milyon, 1 milyarlıkta 292 milyon, 3 milyarlıkta 396 milyon, 7 milyarlıkta 593 milyon çıkarım. En altta bir kayıt: sayılar tek bir çalışmanın ölçtüğü modellere aittir ve donanıma, yığınlamaya ve bölgeye göre değişir.](assets/cikarimin-payi.svg "Şekil 2 — Ne zaman eşitleniyorlar")
 
-Şekil 2 iki bölmeyi bir arada veriyor: üstte görev başına enerjinin dağılımı, altta maliyet eşitliği. Bir sayı daha var ve 26 ile 28\. makalelerdeki bütün servis mühendisliğinin gerekçesini yeniden yazıyor. Yukarıda andığımız BLOOM ölçümünde, modeli arayüz ardında hazır tutan makine, on dakikalık bir aralıkta **hiç istek gelmezken bile** yaklaşık 0,28 kilovat-saat harcıyordu; toplam enerjinin yaklaşık dörtte üçü, modeli bellekte tutmaya gidiyordu. Yığınlama ve çizelgeleme yalnızca hız için değil, bu boşta yanan enerjiyi işe çevirmek için de var.
+Şekil 2 iki bölmeyi bir arada veriyor: üstte görev başına enerjinin dağılımı, altta maliyet eşitliği. Bir sayı daha var ve 26 ile 28\. makalelerdeki bütün servis mühendisliğinin gerekçesini yeniden yazıyor. Yukarıda andığımız BLOOM ölçümünde, modeli arayüz ardında hazır tutan makine, on dakikalık bir aralıkta **neredeyse hiç istek gelmezken bile** yaklaşık 0,28 kilovat-saat harcıyordu; toplam enerjinin yaklaşık dörtte üçü, modeli bellekte tutmaya gidiyordu. Yığınlama ve çizelgeleme yalnızca hız için değil, bu boşta yanan enerjiyi işe çevirmek için de var.
 
 ## Aynı istem, iki sınır
 
@@ -96,7 +96,7 @@ Sonra eşitlik noktasını hesaplıyorlar: bir modelin eğitim ve ince ayar ener
 
 Google'ın 2025'te yayımladığı — hakemli olmayan, kendi altyapısına dair — teknik rapor, bir yapay zekâ asistanının ortanca metin isteminin enerji, karbon ve su ayak izini üretim ortamında ölçüyor. İlginç olan sonucun kendisi değil, iki ayrı sınırla iki kez verilmesi.
 
-**Dar sınır** — literatürdeki çoğu ölçümün yaptığı gibi yalnızca hızlandırıcının etkin gücünü sayan ve en verimli veri merkezlerinden örnekleyen yordam — istem başına 0,10 vat-saat veriyor. **Geniş sınır** — bütün filodan örnekleyen, ana işlemciyi ve belleği, güvenilirlik için boşta bekletilen makineleri ve veri merkezi giderini de sayan yordam — 0,24 vat-saat. Aynı istem, aynı model, aynı gün: 2,4 kat fark, tamamen ölçümün sınırından.
+**Dar sınır** — literatürdeki çoğu ölçümün yaptığı gibi yalnızca hızlandırıcının etkin gücünü sayan ve en verimli veri merkezlerinden örnekleyen yordam — istem başına 0,10 vat-saat veriyor. **Geniş sınır** — bütün filodan örnekleyen, ana işlemciyi ve belleği, güvenilirlik için boşta bekletilen makineleri ve veri merkezi giderini de sayan yordam — 0,24 vat-saat. Aynı istem, aynı model, aynı ay: 2,4 kat fark, tamamen ölçümün sınırından.
 
 ![İki sütunlu tablo; sütunlar aynı istemin dar ve geniş ölçüm sınırıyla verilmiş değerleri. Hızlandırıcının etkin gücü satırında dar sınırda 0,10, geniş sınırda 0,14 vat-saat. Ana işlemci ve bellek satırında 0,04 ve 0,06. Boşta bekletilen makineler satırında 0,02 ve 0,02. Veri merkezi gideri satırında 0,01 ve 0,02; dar sınırda bu üç kalem ölçülüyor fakat toplama katılmıyor ve yıldızla işaretli. Toplam satırında dar sınır yalnızca hızlandırıcıyı saydığı için 0,10, geniş sınır hepsini saydığı için 0,24 vat-saat. Altta aynı iki sınırla karbon 0,02 ve 0,03 gram karbondioksit eşdeğeri, su 0,12 ve 0,26 mililitre. En altta bir kayıt: aradaki 2,4 katlık fark modelden değil, sınırın nereye çizildiğinden geliyor; ve kamuya açık öbür tahminler istem başına 0,3 vat-saatten 7 vat-saate kadar uzanıyor.](assets/ayni-istem-iki-sinir.svg "Şekil 3 — Fark modelde değil, sınırda")
 

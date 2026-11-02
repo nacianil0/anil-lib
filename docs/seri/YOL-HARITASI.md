@@ -5966,6 +5966,169 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     gözle incelendi; 64'ün Şekil 3'ünde önceden var olan bir kusur (sol paneldeki "Çubuk yükseklikleri şematiktir; ölçülen
     olan paylardır." satırı panel ayracına değiyordu) kısaltılarak giderildi ve yeniden çekildi. Yeni yedi bağlantının
     hepsi 200 ve başlıkları künyeyle tutuyor. Commit yapılmadı. **Sonraki bağlayıcı karar numarası #289'dur.**
+289. **Bakım run'ı 5 (2026-11-02): kapsam ve süreç.** Run 4 kullanıcı tarafından `0854021`'de commit edilmişti. Kullanıcı
+    TRIGGER'ı ultracode olmadan çalıştırdı; run 2'nin emsaliyle workflow ve yardımcı ajan kullanılmadı, bütün taramalar,
+    okumalar, kararlar ve düzenlemeler ana oturumda. Run 4'ten bir hafta sonra üç katmanlı durum taraması yenilendi (kabul
+    listeleri ve bibliyografik arama, Crossref `updated-by`, bağlantı hedefleri), açık borçlar yeniden denendi ve olgu denetimi
+    döngüsü 41–60 aralığından ana oturumun taşıyabileceği altı makaleyle sürdü: 51, 53, 55, 56, 59, 60 (57'ye yayılım).
+    Önceki run'ların scratchpad betikleri (bib.py, Crossref ve bağlantı taraması, apply.py, measure.mjs) okunup yeniden
+    kullanıldı; içlerindeki kullanıcı e-postası istek başlıklarından çıkarıldı.
+290. **Borçlar ve ön baskı durumu (bakım run'ı 5).** (f) NeurIPS 2026 bildiri kitabı hâlâ 404 (`papers.nips.cc` kök dizini
+    2025'te bitiyor); (i) Min-p eleştirisi TMLR'nin kendi listesinde yok; (j) NeuronInfer'in Crossref kaydında (2026-10-16)
+    cilt/sayı yok. **Yeni hakemli kalem:** Wan ve ark., *The 2025 Foundation Model Transparency Index*, TMLR, Ağustos 2026
+    (OpenReview `1jT253Xtyf`). 20 ve 69'da künye "Transactions on Machine Learning Research; okunan sürüm arXiv:2512.10169"
+    ve forum bağlantısı oldu, gövdedeki "hakemli olmayan" nitelemesi kaldırıldı; sayılar arXiv v1'den (TMLR PDF'i betiğe 403).
+    Run 4 kaynağı 2026-10-26'da eklerken TMLR'ye bakmamıştı (bug-945). Öteki kanallar yeni kalem vermedi: TMLR listesi (5.021
+    makale), ACL Anthology toplu bib (30 Ekim 2026), PMLR v300–350 (9.456 bildiri), Crossref bibliyografik arama (199/199
+    çalışma), OpenAlex (anahtarsız bütçe 100/199'da bitti). Adaylar zaten doğru etiketliydi (Kalai Nature, Emu3 Nature, Gated
+    SAE NeurIPS 2024, PromptRobust LAMPS, "VLMs are blind" ACCV, NeuronInfer, Troubling Trends ACM Queue); "Defeating
+    Nondeterminism"in Crossref'teki rapor DOI'si hakem kanıtı değil. Peng ve ark. (2023) ile Becker ve ark. (2025) hâlâ yalnız
+    ön baskı; 55'teki "henüz hakem sürecinden geçmedi" cümlesi "Kasım 2026 itibarıyla" diye tarihlendi.
+291. **Crossref ve bağlantılar (bakım run'ı 5).** 336 DOI'nin tamamı 200; run 3'ün taramasıyla karşılaştırınca yeni `updated-by`,
+    düzeltme, geri çekme ya da endişe notu yok. 653 web bağlantısının 624'ü 200; run 3'e göre değişen ikisi SSL:
+    `derczynski.com`'un sertifikası 29 Ekim 2026'da dolmuş (4'teki Gage 1994 kopyası; belge yerinde, izlemede),
+    `princeton.edu` Shannon 1951 yalnız Python'un güven zincirinde (curl açıyor). `ojs.aaai.org` artık bot sayfası gösteriyor
+    (Dartmouth önerisi; ölü değil). 203 arXiv kimliğinde geri çekme ya da yeni `journal_ref` yok. Bağlantı değiştirilmedi.
+292. **Olgu denetimi sonuçları (bakım run'ı 5).** Altı makalenin 94 künyesinin 88'i tam metinle okundu (arXiv PDF, resmî PDF,
+    yayıncı ve belge sayfaları; CACM tarayıcı panosunda); tablo değerleri arXiv HTML'den doğrulandı, çünkü `pdftotext -layout`
+    çok satırlı hücreleri kaydırıyor (bug-950). 49 düzenleme: 55'te 19, 60'ta 9, 56'da 5, 51'de 4, 59'da 4 (özet dâhil), 53'te 2,
+    57'de 2, 20 ve 69'da 4. **Örnekler:** 55'te SWE-agent'ın Lite maliyeti kendi tablosunda 1,67 $ (2,51 AutoCodeRover'ın 245
+    bin token hesabı; Şekil 2'deki F noktası bu hesabı taşıyor ve metin bunu söylüyor), "üçte bir maliyet" 0,70/3,34 ile
+    yaklaşık beşte bir, "sağ alttaki nokta" sol alttaki H, GenProg'un 414 → 110'u, LiveCodeBench'te iki değil üç model, EvalPlus'ta
+    %10 değil %11, model koşulları (GPT-4 Turbo, Claude 3.5 Sonnet, GPT-4, GPT-4o); 51'de sprey şişesi örneği beş değil altı
+    eylem, bütçe başarısız bölümlerin hepsini değil bütün görevlerin üçte birini kesiyor (%69 kendi teslimi), bir başarısız
+    düzenleme sonrakinin şansını yarıya değil üçte birden fazla düşürüyor; 53'te MetaGPT tamlıkta tek ajan tabanının altında
+    (0,4834 < 0,5022), özetleme "beş ve daha çok" ajanda; 56'da A-MEM sayılarına GPT-4o-mini koşulu, zaman sorularında 2,5 kat;
+    59'da Ambig-SWE'nin istisnası (iki Claude Sonnet modeli %89 ve %84 ayırt ediyor), hataların "gerçek kullanıcı taleplerinde"
+    olduğu, Claude Code izin belgesi Kasım 2026'da yeniden okundu ve tarihlendi; 60'ta önbellek belgeleri Kasım 2026'ya
+    tarihlendi (bir sağlayıcının en yeni modellerinde okuma 0,05/0,025 katı), özetleme cümlesi belgenin bugünkü ifadesine
+    çekildi, kaynakta olmayan "beş koşunun ortalaması" çıkarıldı, RouteLLM'in "%90 hedefi" ve SGLang'in "çok turlu sohbet"
+    koşulu düzeltildi. **Geri göndermeler (§5):** 57 ve 60 SWE-agent'ın altı koşusunu (17,33–18,67; en az birinde 32,67) "55'te"
+    diye çağırıyordu ama veri hiçbir makalede yoktu → 57 kaynağına doğrudan atfediyor (Yang ve ark. künyesi eklendi), 60 "57'de";
+    56'nın "51'de 3.500 token" cümlesi çıktı ("üç kez ölçüldü" → iki); 60'ın 47 (ilk tanımın bedeli), 49 (SHOULD → "şart koşma")
+    ve 52 (iki mimari → "küçük/büyük model") çağrıları hedeflerin ifadesine çekildi; 51'in düzeltilen örneği 56'ya taşındı
+    (bug-946, bug-947). Değişmeden tutan bölümler: AgentBench'in sekiz ortamı ve bitiş dağılımı, Du, Liang, MoA, MAST, AgentVerse,
+    MacNet, HAL, Cost-of-Pass, Efficient Agents, τ²-bench, Vending-Bench, Sinha, MemoryAgentBench, Vaccaro, Bansal, Steyvers.
+293. **Revizyon işareti (bakım run'ı 5, §12).** Yalnız 51'e `revised_at: "2026-11-02"` (önceden işareti yoktu): "başarısız
+    olduğunda durma kararı bütçeden gelir" bulgusu okurun modelini değiştirdi. Not: "Durma kararının ölçümü düzeltildi: bütçe,
+    başarısız bölümlerin hepsini değil bütün görevlerin yaklaşık üçte birini kesiyor; bir başarısız düzenleme sonrakinin
+    şansını yarıya değil üçte bir düşürüyor." Öteki düzeltmeler koşul, sayı, künye, tarih ya da geri gönderme düzeltmesi;
+    işaret konmadı (55'te ders değişmedi: ajansız hat zayıf modelde döngüyü maliyetin küçük bir kesriyle geçiyor). 59'un özeti
+    gövdeyle hizalanıp kataloğa taşındı; frontmatter ↔ katalog özet karşılaştırması 0 fark.
+294. **Kapılar ve render (bakım run'ı 5).** `sync-series-hashes --write` her makaleden sonra, yazmadan doğrulama,
+    `check-series-content --warnings` (118 makale) ve `check-series-svg` (346 diyagram) temiz; izole kopyada
+    (`C:\dev\anil-lib-ai-bakim5`) `pnpm typecheck` 0, 841/841 test (43 dosya), `pnpm build` exit 0 (194 statik sayfa,
+    `/seri/[slug]`). **Render:** değişen 9 sayfa × üç genişlik × üç tema Playwright ile ölçüldü (izole kopyada `next dev`, port
+    3225): 81 satırın hepsi 200; yatay kaydırma, şekil taşması, `undefined`/`NaN` ve konsol hatası yok; beklenen 44 metin
+    parçası ve 3 yeni bağlantı DOM'da; 51'in revizyon satırı "Gözden geçirildi · 2 Kasım 2026" ile render ediliyor. SVG'ye
+    dokunulmadığı için PNG turu gerekmedi. İzole kopya ve `launch.json` girdisi temizlendi. Commit yapılmadı. **Sonraki
+    bağlayıcı karar numarası #295'tir.**
+295. **Bakım run'ı 6 (2026-11-02, run 5'in ardından): kapsam ve süreç.** Run 5'in değişiklikleri commit edilmemişti; run 6
+    onların üstünde çalıştı ve onlara dokunmadı. Kullanıcı TRIGGER'ı tek run talimatıyla verdi: olgu denetimi döngüsünün kalan
+    dört aralığı (#282'nin sırasıyla A: 41–60'ın kalanı, B: 81–102, C: 1–40, D: 103–118) ayrı run ya da "devam" beklemeden
+    aynı run'ın iş paketleri; commit, push ve deploy yok. Ultracode verilmedi; workflow ve yardımcı ajan kullanılmadı
+    (cerebrum'daki kullanıcı tercihi), bütün okumalar, kararlar ve düzenlemeler ana oturumda. Run'ın durumu compact'lar
+    arasında `docs/seri/BAKIM-RUN6.md` kontrol dosyasında tutuldu (paket ve makale bazında durum, kanıt, engel, sıradaki
+    adım, günlük). Run 1'in okuduğu çiftler ve #282'nin dışladığı 41, 43–47, 61, 63, 68, 76 yeniden okunmadı; üç katmanlı
+    durum taraması run 5'te aynı gün yapıldığı için tekrarlanmadı (yalnız OpenAlex'in kalanı yeniden denendi, #300).
+    **Toplam:** 86 makale, 842 künye; 92 düzenleme (A 44, B 38, C 1 + 1 bağlantı onarımı, D 7 + 1 yayılım), 15'i yanlış ya da
+    fazla güçlü geri gönderme (§5). **Araç tuzağı:** `src5.py`'nin başlıkla arXiv araması tek ya da iki kelimelik genel
+    başlıklarda yanlış makale indirdi (87 Buciluă, 95 Boyd–Vandenberghe, 1'de Mitchell, Goodfellow ve LeCun); `idchk6.py` her
+    tam metinde ilk yazarın soyadını arayarak beşini de yakaladı, resmî kopyalar indirildi ve hiçbir makale yanlış kaynakla
+    denetlenmedi (bug-955).
+296. **Olgu denetimi — aralık A (bakım run'ı 6).** 41–60'ın kalan sekiz makalesi: 42, 48, 49, 50, 52, 54, 57, 58; 95 künyenin
+    tamamı tam metinle (arXiv PDF'i ve HTML'i ya da ar5iv, yazar ve yayıncı PDF'leri, MCP belirtiminin alt sayfaları,
+    sağlayıcı belgeleri; 58'in AgentHarm çifti run 1'de okunmuştu). 44 düzenleme: 52'de 10, 57'de 10, 58'de 7, 48'de 6, 54'te
+    4 (özet dâhil), 42'de 3, 49'da 2, 50'de 2. **Örnekler:** 52'de LATS'in HotpotQA'daki en iyi-k'si otuz değil elli, Reflexion
+    ablasyonu Rust'la yazılan görevlerde, AgentBoard'un insan puanlarıyla korelasyonu sınanan her ortamda en az 0,95, ajanlar
+    ilerlemeyi "hiç" değil belli bir adım dolayında bırakıyor, ETO'nun sayıları görülmüş ve görülmemiş görevlerde; 57'de GAIA'nın
+    en kolay düzeyi "30'un altında" değil 30,3, DevAI'de gereksinimlerin %29'unu üç ajandan yalnız en iyi ikisi karşılıyor
+    (üçüncüsü hiçbir görevi bitirmiyor), τ-bench'in "en az üç
+    koşu"su öneri değil yazarların kendi uygulaması, TheAgentCompany'nin iskelesi OpenHands'in iki sürümü (0.14.2 ve 0.28.1;
+    gövde, alt metin, şekil başlığı ve SVG metni); 58'de AgentDojo'daki 10–25 puanlık düşüş "çoğu modelde" değil modellerin
+    yarısında, ARE'de değerlendiricinin ele geçirilmesi saldırı başarısını göreli %15, ağaç aramasının değer işlevininki %20
+    artırıyor (metin ikisini karıştırıyordu; "en zayıf halka" kaynakta yok), istem katmanları saldırıyı en çok yarı yarıya
+    azaltıyor; 54'te sağlayıcının bilgisayar kullanımı belgesi değişmiş (1024×768 önerisi kalkmış) → belgenin Kasım 2026 hâli,
+    insan beş değil dört ortamda ölçülmüş (özet ve katalog dâhil), Agent S "üçte birinden az"; 48'de Mind2Web'in görülmemiş
+    görev koşulu ve %7,1 tavanı, Codex (PAL, Self-Debug) ve GPT-3.5-Turbo (RepoCoder) koşulları, RepoBench'in kolay/zor
+    ayrımının aday sayısı olduğu; 42'de SPLADE'in FLOPS farkı yaklaşık beş buçuk kat (0,73/0,13), BEIR Hole@10 örnekleri
+    tablodaki modellerle (TAS-B 31,8, DPR 30,6); 49'da paralel çağrı tavanına hiçbir model ulaşmıyor (o3 0,359, gpt-5 0,339);
+    50'de Xie'nin 3,7/8,9'u iki belgenin ikisi de karşı-bellekken. **Geri göndermeler (§5) — altı:** 48 34'te geçmeyen
+    "reddetmeli örnekleme"yi, 50 45'te olmayan bir ayrımı, 52 47'nin ağacına "yalnızca okuma çağrıları" sınırını çağırıyordu;
+    52'nin 90,5 → 57,2'si 48'in ajanına ait ama sayı 51'de; 57 56'da olmayan bir şablon dışı ölçümü, 58 54'e "üçte bir"i (54'te
+    web ortamında beşte bir) yüklüyordu; hepsi hedefin ifadesine çekildi ya da çıkarıldı (bug-956). 49 ve 58'deki sağlayıcı
+    belgeleri Kasım 2026'da yeniden okunup tarihlendi; #256'nın 49 cümlesine dokunulmadı.
+297. **Olgu denetimi — aralık B (bakım run'ı 6).** 81–102'nin 22 makalesi, 286 künye; run 1'in okuduğu çiftler (81 "VLMs are
+    blind", 83 Dhariwal, 85–87, 89 TPU v4, 94 Delétang, 96 Zhang MLP) yeniden okunmadı. 38 düzenleme: 81'de 9, 88'de 6, 90 ve
+    98'de 3'er, 87, 91, 92, 93 ve 99'da 2'şer, 82, 83, 85, 89, 96, 97 ve 102'de birer; 84, 86, 94, 95, 100 ve 101 bu aralıkta
+    düzeltmesiz (100 #299'da bir yayılım aldı). **Örnekler:** 87'de Hinton'ın damıtma örneğinde 3 ile 7 yer değiştirmişti (bir 2
+    görüntüsü 3'e 10⁻⁶, 7'ye 10⁻⁹ olasılık veriyor); 81'de Idefics2 ablasyonunda kaynağın metni (12,9 ve yaklaşık 7 puan) kendi
+    tablosuyla (9,2 ve 6,4) çelişiyor → Batch 28'in Chen emsaliyle tablo esas alındı, fark metinde söylendi (gövde, alt metin,
+    `tasarim-uzayi-ablasyonu.svg`); 90'da PUE 1,08–1,2 "modern veri merkezlerinin" değil karşılaştırılan büyük eğitim
+    koşularının (ABD veri merkezlerinin 2020 ortalaması 1,59), "hiç istek gelmezken" → neredeyse hiç, "aynı gün" → aynı ay;
+    88'de "kaynağın vermediği" denen süre kaynakta var (saniyede 10 token'la iki saatten az; ara adımlar kendi hesabımız), 490 ile
+    591 aynı telefonun iki çalıştırma çerçevesi, 3 bitin sebebi ve "ilk iş" yazarların nitelemesi; 99'da Kaplan–Irvin'in
+    nedensellik dili kaynağın diline çekildi ("katkıda bulunmuş olabilir", "en güçlü ilişkili"; bakımın iyileşmesi de
+    tartışılıyor); 98'de "75 puan" → 96'daki gibi yaklaşık 76 (85,75 − 9,78), "bir yıl sonra" → iki yıl, "yalnızca sözlü" →
+    sözlü ve öne çıkan; 96'da Jiang'ın norm ölçüleri "çoğu" değil "birçoğu" ve eniyileme rastgelelik kattığında ters yönde; 92'de
+    LSI "birkaç yüz" değil 50–100 boyut, "ilk cevap" değil erken cevaplardan biri; 83'te LDM'nin çarpanı 4–16 arası denge, en
+    kaliteli 4 ve 8; 82'de LLaMA-Omni'nin gecikmesi ICLR sürümünde 236 ms; 93'te Jurafsky–Martin'in perplexity bölümü 3.3.
+    **Geri göndermeler (§5) — sekiz:** 85 ve 89 27'ye "bellek duvarı" diye gönderiyordu (terim 27'de yok) → "27'de hesabını
+    kurduğumuz bellek ve taşıma yükü"; 91'in 29'a ("uzun belgelerin normu büyür") ve 43'e ("dizinlerin çoğu normalleştirir")
+    çağrıları hedeflerde yok; 93 45'e "beklenen maliyet", 60'a "beklenen çağrı sayısı" bağlıyordu (60'ta beklenen maliyet ve
+    beklenen deneme sayısı var); 97 16'ya tırnaklı "cetvel arayışı"nı, 102 9'a tırnaklı bir "bağımsız tekrar" tanımını
+    yüklüyordu; 88'in 87'ye çağrısı 87'nin cümlesine (küçük modelin tavanını öğretmeni belirler) eşitlendi. 95'te yanlış inen
+    Boyd–Vandenberghe resmî Stanford PDF'iyle okundu (#295); 102'de Gundersen'in AAAI OJS sayfası bot korumalı, Wayback
+    kopyası kullanıldı.
+298. **Olgu denetimi — aralık C (bakım run'ı 6).** 1–40'ın 40 makalesi, 326 künye; run 1'in okuduğu çiftler (15 CUTE ve
+    Singh–Strouse, 19 Ovadia) yeniden okunmadı. Tek içerik düzenlemesi 12'de: özet cümlesindeki "on iki bin istem" → on üç bine
+    yakın (InstructGPT'nin SFT kümesi 12.725 = 11.295 + 1.430; kaynak "about 13k"). 39 makale düzeltmesiz; elle hesaplar
+    (2'nin kayıp ve gradyan tabloları, 9'un Chinchilla ve Kaplan tahsisi ile Besiroglu yeniden uydurması, 13'ün KL cezası,
+    14'ün Muennighoff R*'ı, 16'nın standart hatası) yeniden hesaplandı ve tuttu. 1'de `src5.py` üç kaynağı yanlış indirmişti;
+    Mitchell 1997 CMU, Goodfellow 2016 deeplearningbook.org, LeCun 2015 Toronto kopyasıyla okundu, Mitchell'in E/T/P tanımı
+    birebir. McCarthy önerisinin AAAI OJS kopyası bot korumalı bir sayfa döndürdü; atlatılmadı, Stanford kopyası kullanıldı.
+    4'ün tiktoken ölçümü kendi ölçümümüz, yeniden koşulmadı; 4'ün Gage bağlantısı #300'de onarıldı.
+299. **Olgu denetimi — aralık D (bakım run'ı 6).** 103–118'in 16 makalesi, 135 künye; run 1'in okuduğu çiftler (105 Ivison,
+    109 MegaScale, 111 OXE, 112 RippleEdits) yeniden okunmadı. 103–105'in mikro-GPT ölçümleri #226 şartnamesine bağlı ve kodu
+    yok; yeniden koşulmadı, aritmetikleri tuttu. 7 düzenleme ve 1 yayılım: **110'da** Vafa ve ark.'nın %50'si "ayırt eden
+    dizilere / tam ayrım kümesine" bağlanmıştı; kaynağın Tablo 1'inde %50 sıkıştırma isabeti (aynı duruma giden öneklerin
+    devamları), aynı model ayrımda 0,99/1,00 → gövde, alt metin ve `iki-sinav-iki-cevap.svg` metni düzeltildi; şeklin "sonuç"
+    hücresi ("dizi tabanlı ölçütler: hiçbir model iyi değil") kaynağın "a model can perform well on one metric and poorly on
+    the other" ayrımını siliyordu ve PNG incelemesinde (#301) "sıkıştırmada hiçbir model iyi değil" oldu (SVG ve alt metin);
+    `aria-label` eşitlendi (bug-957); **111'de** RT-2'nin 32'ye karşı 62'si "görülmemiş nesnelerin" değil görülmemiş nesne, arka plan ve
+    ortamların ortalaması (gövde ve alt metin zaten doğruydu); **114'te** Chinchilla "yirmi kat çok token" değil dört kattan
+    fazla (1,4T/300B ≈ 4,7; "parametre başına yirmi token" oranıyla karışmıştı, bug-958). **Yayılım (§5):** 100'ün 11'e geri
+    göndermesi ("asistanlaştırma aşaması %1,6") 11'in ayrımına çekildi: tercihlerle eğitilen üçüncü aşama %1,6, ince ayarla
+    birlikte bütün post-training %1,8. 115'te Bansal 2019'un AAAI OJS sayfası bot korumalı; atlatılmadı, iddia genel olduğu için
+    başka kopya gerekmedi.
+300. **Borçlar, dış denetimler ve engeller (bakım run'ı 6).** 2026-11-02 11:42'de: (f) `papers.nips.cc/paper_files/paper/2026`
+    hâlâ 404 (dizin 2025'te bitiyor); (i) TMLR'nin kendi listesi 5.050 makale, Min-p eleştirisi yok — OpenReview API'si
+    (`api2.openreview.net`) betiğe 403 verdi, forumun karar durumu okunamadı; (j) NeuronInfer'in Crossref kaydında cilt/sayı
+    yine yok (s. 1–14, kayıt 2026-10-16). `derczynski.com`'un sertifikası hâlâ dolmuş → 4'ün Gage 1994 bağlantısı aynı belgenin
+    21 Ekim 2026 tarihli Wayback kopyasına taşındı, kopyanın içeriği doğrulandı (işaretsiz bağlantı onarımı, bug-963).
+    **OpenAlex:** run 5'te bütçesi biten 99 çalışmanın ilk üç isteği 429 aldı (anahtarsız günlük bütçe); betik durdu, sonuç
+    yok — engel: ertesi gün ya da kullanıcının vereceği ücretsiz anahtarla tamamlanır. **AAAI OJS** (`ojs.aaai.org`) bot
+    korumalı bir doğrulama sayfası döndürüyor; atlatılmadı, Wayback, Stanford ve arXiv kopyaları kullanıldı. Hiçbir istekte
+    e-posta gönderilmedi.
+301. **Revizyon işareti, kapılar ve render (bakım run'ı 6).** **§12:** işaret konmadı. Düzeltmelerin hepsi koşul, niceleyici,
+    sayı, ölçü adı, atıf dili, geri gönderme ya da bağlantı onarımı; hiçbirinde okurun çıkardığı ders değişmedi — 87'de örnek
+    yine "karanlık bilgi"yi gösteriyor (yalnız rakamlar yer değiştirdi), 110'da tek token'lık sınavda kusursuz model ikinci
+    sınavda yarıya düşüyor (değişen, düşüşün hangi ölçüde olduğu), 81'de sıralama aynı (gövdeler açılınca tam otoregresif öne
+    geçiyor), 99'da ön kayıt hâlâ düşüşle en güçlü ilişkili açıklama. Özet değişen tek makale 54 (12'deki cümle gövdede);
+    frontmatter ↔ katalog özet karşılaştırması 0 fark. **Kapılar:** `sync-series-hashes --write` her makaleden sonra;
+    `check-series-content --warnings` (118 makale) ve `check-series-svg` (346 diyagram) her aralık sonunda ve son düzeltmeden
+    sonra temiz; izole kopyada (`C:\dev\anil-lib-ai-bakim6`) `pnpm typecheck` 0, 841/841 test (43 dosya), `pnpm build` exit 0
+    (194 statik sayfa) — 110'un son düzeltmesinden sonra kopya senkronlanıp üçü yeniden koşuldu, aynı sonuç. **Render:**
+    değişen 30 sayfa × üç genişlik × üç tema Playwright ile ölçüldü (kopyada `next dev`, port 3226): 270 satırın hepsi 200;
+    yatay kaydırma, şekil taşması, `undefined`/`NaN` ve konsol hatası yok; 82 beklenen metnin 77'si görünür metinde, 5'i (57,
+    81 ve 110'un alt metinleri) SVG `aria-label`'ında — ölçer yalnız `innerText`'e baktığı için "eksik" görünmüşlerdi,
+    tarayıcıda doğrulandı; 42'de 375 px'te sayılan 20 öğe BM25 tablosunun kendi `table-scroll` kabında (sayfa `scrollWidth`
+    375; tabloya dokunulmadı). Önceden var olan 10 revizyon satırı değişmeden render ediliyor. Değişen üç SVG (57
+    `tam-basari-kismi-puan-adim-maliyet`, 81 `tasarim-uzayi-ablasyonu`, 110 `iki-sinav-iki-cevap`) açık ve koyu temada çekilip
+    gözle incelendi; 110'un incelemesi "sonuç" hücresindeki genellemeyi yakaladı (#299), şekil düzeltilip yeniden çekildi ve
+    sayfa yeniden ölçüldü. Üç şeklin `aria-label`'ı alt metinle eşit; 346 şeklin 118'inde eşit, 95'inde ayrışmış, 133'ünde yok
+    (bilgi notu, okura yansımıyor). İzole kopya, junction ve `launch.json` girdisi temizlendi. Commit yapılmadı. **Sonraki
+    bağlayıcı karar numarası #302'dir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

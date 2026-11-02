@@ -7706,3 +7706,161 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 19:30 | Edited docs/seri/YOL-HARITASI.md | expanded (+7 lines) | ~252 |
 | 19:31 | Created .claude/launch.json | — | ~56 |
 | 19:45 | AI bakım run 4 tamamlandı: diff denetimi 33 bulgu → 26 düzenleme + 67 işareti; 10 revizyon işareti; render 29 sayfa × 9 = 261 satır sorunsuz (21 alt metin aria-label'da doğrulandı, 3 yanlış alarm); 16 şekil PNG; 64 Ş3 eski taşma giderildi; kapılar temiz, 841/841, build 0; izole kopya ve launch.json girdisi temizlendi; HANDOFF + YOL-HARITASI #282–#288, cerebrum, buglog 932–937 | content/series/**, docs/seri/* | commit yok, sonraki karar #289 | ~60k |
+
+## Session: 2026-11-02 08:45
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 08:49 | 2026-11-02 oturum özeti: kullanıcının bakım run sayısı sorusu için TRIGGER, HANDOFF ve #282 incelendi; sabit toplam yok, dört önerilen denetim aralığı var; bakım çalıştırılmadı. | docs/seri/TRIGGER.md, docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md, .wolf/anatomy.md, .wolf/cerebrum.md | Açıklama doğrulandı | ~2500 |
+| 08:50 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/status5.py | — | ~1285 |
+| 08:51 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/match5.py | — | ~1215 |
+| 08:52 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~43 |
+| 08:52 | Edited content/series/articles/models-and-training/acik-agirliklar-ve-model-ekosistemi.md | inline fix | ~75 |
+| 08:52 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | "te yayımladığı, hakemli o" → "te açıkladığı ve 2026" | ~55 |
+| 08:52 | Edited content/series/articles/safety-and-evaluation/yonetisim-politika-standartlar-ve-regulasyon.md | inline fix | ~75 |
+| 08:53 | 2026-11-02 oturum özeti: tek run içinde kalan AI bakımını bitirme promptu hazırlandı; kapsam, disk checkpoint/kanıt defteri, compact sonrası devam ve dış bağımlılık ayrımı tanımlandı. Claude Code 2.1.302 ve resmi compact belgeleri kontrol edildi; bakım başlatılmadı. | docs/seri/HANDOFF.md, docs/seri/SOZLESME.md, .wolf/cerebrum.md, .wolf/anatomy.md, .wolf/buglog.json | Kullanıcıya aktarılacak prompt; yama bağlam hatası bug-944 olarak kaydedildi | ~5000 |
+| 08:53 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/pmlr5.py | — | ~354 |
+| 08:54 | Kullanıcının düzeltmesiyle Claude Code bakım assignment promptu tek paragrafa kısaltıldı; kısa/öz aktarım tercihi cerebrum'a kaydedildi. | .wolf/cerebrum.md | Tek run, diskte ilerleme kaydı ve compact sonrası devam kapsamı korundu | ~250 |
+| 08:55 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/src5.py | — | ~1672 |
+| 08:59 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/q5.py | — | ~320 |
+| 09:10 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits55.json | — | ~1588 |
+| 09:17 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits60.json | — | ~1402 |
+| 09:21 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits51.json | — | ~527 |
+
+## Session: 2026-11-02 09:22
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:25 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits59.json | — | ~415 |
+| 09:27 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits53.json | — | ~186 |
+| 09:30 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits56.json | — | ~366 |
+| 09:33 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/mkspec5.py | — | ~945 |
+| 09:35 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/buglog5.py | — | ~1266 |
+| 09:35 | Created .claude/launch.json | — | ~134 |
+| 09:37 | Edited docs/seri/HANDOFF.md | inline fix | ~79 |
+| 09:37 | Edited docs/seri/HANDOFF.md | "dur** (bakım run" → "tir** (bakım run" | ~46 |
+| 09:37 | Edited docs/seri/HANDOFF.md | modified lar() | ~643 |
+| 09:37 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~46 |
+| 09:37 | Edited docs/seri/HANDOFF.md | 1→2 lines | ~59 |
+| 09:37 | Edited docs/seri/HANDOFF.md | 1→2 lines | ~50 |
+| 09:37 | Edited docs/seri/HANDOFF.md | 4→6 lines | ~171 |
+| 09:37 | Edited docs/seri/HANDOFF.md | modified izlemede() | ~165 |
+| 09:38 | Edited docs/seri/YOL-HARITASI.md | modified 5() | ~1863 |
+| 09:39 | Edited docs/seri/HANDOFF.md | modified lar() | ~73 |
+| 09:39 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~39 |
+| 09:39 | Edited docs/seri/HANDOFF.md | expanded (+6 lines) | ~216 |
+| 09:39 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~40 |
+| 09:39 | Edited docs/seri/HANDOFF.md | modified eklenenler() | ~320 |
+| 09:39 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~64 |
+| 09:39 | Edited docs/seri/HANDOFF.md | modified 5() | ~164 |
+| 09:39 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/memrow.txt | — | ~170 |
+| 09:40 | AI bakım run 5 tamamlandı (ana oturum, ultracode yok): borçlar (f)(i)(j) değişmedi; TMLR listesi FMTI 2025'i hakemli çıkardı (20, 69); Crossref 336 DOI'de yeni ilişki yok; 653 bağlantıda yalnız derczynski.com sertifikası (izlemede); olgu denetimi 51, 53, 55, 56, 59, 60 → 49 düzenleme (4 yanlış geri gönderme, 57 ve 56'ya yayılım); 51'e revizyon işareti; 59 özeti hizalandı; kapılar temiz, 841/841, build 0; render 81 satır sorunsuz; izole kopya ve launch.json girdisi temizlendi; HANDOFF + YOL-HARITASI #289–#294, cerebrum, buglog 945–950 | content/series/**, docs/seri/*, .wolf/* | commit yok, sonraki karar #295 | ~400k |
+
+## Session: 2026-11-02 09:41
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 09:46 | Created docs/seri/BAKIM-RUN6.md | — | ~1218 |
+| 09:47 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py | — | ~1637 |
+| 09:48 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py | "\b(\d{1,3})(?:\. makale|[" → "\b(\d{1,3})(?:\\?\. ?maka" | ~15 |
+| 09:48 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py | inline fix | ~20 |
+| 09:49 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py | modified fromkeys() | ~149 |
+| 09:49 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py | expanded (+8 lines) | ~204 |
+| 09:49 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fc6.py | modified not() | ~94 |
+| 09:54 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/ctl6.py | — | ~522 |
+| 09:58 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits48.json | — | ~640 |
+| 10:02 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits49.json | — | ~150 |
+| 10:06 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits50.json | — | ~198 |
+| 10:10 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits52.json | — | ~746 |
+| 10:14 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits54.json | — | ~436 |
+| 10:17 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits57.json | — | ~825 |
+| 10:21 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits58.json | — | ~641 |
+| 10:21 | AI bakım run 6 aralık A (42, 48, 49, 50, 52, 54, 57, 58) olgu denetimi: 44 düzenleme, 6 yanlış geri gönderme, 57 SVG metni; kontrol dosyası docs/seri/BAKIM-RUN6.md | content/series/**, docs/seri/BAKIM-RUN6.md | kapılar temiz, sürüyor | ~350k |
+| 10:24 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits81.json | — | ~799 |
+
+## Session: 2026-11-02 10:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:41 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits88.json | — | ~570 |
+| 10:42 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/idchk6.py | — | ~485 |
+| 10:42 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/idchk6.py | 1→2 lines | ~51 |
+| 10:43 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fetch6.py | — | ~585 |
+| 10:46 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits89.json | — | ~174 |
+| 10:49 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits90.json | — | ~283 |
+| 10:52 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits91.json | — | ~299 |
+| 10:55 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits92.json | — | ~176 |
+| 10:57 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits93.json | — | ~219 |
+| 11:03 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits96.json | — | ~102 |
+| 11:05 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits97.json | — | ~96 |
+| 11:07 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits98.json | — | ~299 |
+| 11:09 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits99.json | — | ~298 |
+| 11:16 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits102.json | — | ~126 |
+| 11:17 | Bakım run 6: aralık B (81–102) olgu denetimi bitti — 38 düzenleme, 8 yanlış geri gönderme, Boyd yanlış indirmesi düzeltildi; kapılar temiz | content/series/articles/{multimodal-and-future,foundations}/*, catalog.json, docs/seri/BAKIM-RUN6.md | tamam | ~60k |
+| 11:22 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fcsum.py | — | ~412 |
+| 11:26 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits12.json | — | ~78 |
+| 11:36 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits110.json | — | ~466 |
+| 11:38 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/editsD1.json | — | ~291 |
+
+## Session: 2026-11-02 11:41
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:42 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/p1_6.py | — | ~647 |
+| 11:43 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits4.json | — | ~91 |
+| 11:43 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oa6.py | — | ~640 |
+| 11:46 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/buglog6.py | — | ~1730 |
+
+## Session: 2026-11-02 11:48
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:49 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~92 |
+| 11:49 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~15 |
+| 11:49 | Edited .claude/launch.json | expanded (+6 lines) | ~85 |
+| 11:53 | Edited docs/seri/YOL-HARITASI.md | modified 6() | ~2767 |
+| 11:53 | Edited docs/seri/YOL-HARITASI.md | 1→2 lines | ~48 |
+| 11:54 | Edited docs/seri/HANDOFF.md | "ı 5 tamamlandı (kararlar " → "ı 6 tamamlandı (kararlar " | ~44 |
+| 11:54 | Edited docs/seri/HANDOFF.md | modified denetimi() | ~729 |
+| 11:54 | Edited docs/seri/HANDOFF.md | inline fix | ~25 |
+| 11:54 | Edited docs/seri/HANDOFF.md | 1→2 lines | ~36 |
+| 11:54 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~83 |
+| 11:54 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~55 |
+| 11:55 | Edited docs/seri/HANDOFF.md | modified il() | ~292 |
+| 11:55 | Edited docs/seri/HANDOFF.md | izlemede() → KAPANDI() | ~120 |
+| 11:55 | Edited docs/seri/HANDOFF.md | 1→3 lines | ~74 |
+| 11:58 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/editsD2.json | — | ~195 |
+| 12:00 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/gates6b.sh | — | ~223 |
+| 12:00 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~31 |
+| 12:00 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~120 |
+| 12:00 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~45 |
+| 12:01 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~243 |
+| 12:01 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~51 |
+| 12:01 | Edited docs/seri/BAKIM-RUN6.md | 1→5 lines | ~143 |
+| 12:01 | Edited docs/seri/BAKIM-RUN6.md | 1→4 lines | ~199 |
+| 12:01 | Edited docs/seri/YOL-HARITASI.md | inline fix | ~34 |
+| 12:01 | Edited docs/seri/YOL-HARITASI.md | 4→6 lines | ~176 |
+| 12:01 | Edited docs/seri/HANDOFF.md | inline fix | ~29 |
+| 12:01 | Edited docs/seri/HANDOFF.md | modified 118() | ~52 |
+| 12:01 | Edited docs/seri/HANDOFF.md | inline fix | ~34 |
+| 12:01 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/buglog6b.py | — | ~394 |
+| 12:02 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/altcount6.py | — | ~285 |
+| 12:02 | Edited .claude/launch.json | removed 9 lines | ~8 |
+| 12:02 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~31 |
+| 12:02 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~119 |
+| 12:03 | Edited docs/seri/YOL-HARITASI.md | expanded (+19 lines) | ~644 |
+| 12:03 | Edited docs/seri/HANDOFF.md | 2→5 lines | ~142 |
+| 12:03 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~39 |
+| 12:04 | Edited docs/seri/HANDOFF.md | expanded (+14 lines) | ~501 |
+| 12:04 | Edited docs/seri/HANDOFF.md | 1→2 lines | ~62 |
+| 12:04 | Edited docs/seri/HANDOFF.md | modified 6() | ~201 |
+| 11:32 | Bakım run 6: aralık C (1–40) olgu denetimi bitti — 40 makale, 326 künye, 1 düzenleme (12 'on üç bine yakın'); 1'de üç src5 yanlış indirmesi resmî kopyalarla değiştirildi | content/series/articles/models-and-training/talimatla-egitim-supervised-fine-tuning.md, docs/seri/BAKIM-RUN6.md | hash, içerik, SVG kapıları temiz | ~60k |
+| 11:41 | Bakım run 6: aralık D (103–118) olgu denetimi bitti — 110 sıkıştırma/ayrım (gövde+alt+SVG), 111 RT-2 ortalaması, 114 Chinchilla 'dört kattan fazla', 100'e yayılım | content/series/articles/multimodal-and-future/{dunya-modelleri-…,robotik-…}.md, case-studies/vaka-…md, foundations/yuzuncu-adim-….md, assets/…/iki-sinav-iki-cevap.svg | kapılar temiz | ~45k |
+| 11:43 | Bakım run 6 P1: (f) NeurIPS 2026 404, (i) TMLR 5.050'de Min-p yok + OpenReview API 403, (j) NeuronInfer cilt/sayı yok; derczynski sertifikası → 4'ün Gage bağlantısı Wayback'e; OpenAlex 99 iş 429 (engel) | content/series/articles/foundations/dili-sayilara-cevirmek-token-ve-embedding.md | engeller kaydedildi | ~15k |
+| 12:01 | Bakım run 6 P6: izole kopyada typecheck 0, 841/841, build 194/194; render 270 satır temiz (alt metin aria-label'da, 42 tablo kendi kabında); 3 SVG × 2 tema PNG; 110 'sonuç' hücresi yayılımı düzeltildi, kapılar yeniden koşuldu ve temiz; kopya/junction/launch.json temizlendi | content/series/articles/multimodal-and-future/dunya-modelleri-metnin-otesinde-anlamak.md, assets/…/iki-sinav-iki-cevap.svg | temiz | ~70k |
+| 12:06 | Bakım run 6 P7 ve oturum özeti: HANDOFF (run 6 bölümü, Açık borçlar: döngünün ilk turu tamam, derczynski kapandı, OpenAlex/OpenReview engel, dersler, karar #302), YOL-HARITASI #295–#301, cerebrum, buglog bug-955–963; 86 makale, 92 düzenleme, revizyon işareti yok; commit/push/deploy yok | docs/seri/HANDOFF.md, docs/seri/YOL-HARITASI.md, docs/seri/BAKIM-RUN6.md, .wolf/* | run tamamlandı | ~40k |
+| 12:05 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~38 |
+| 12:05 | Edited docs/seri/BAKIM-RUN6.md | inline fix | ~163 |
+| 12:05 | Edited docs/seri/BAKIM-RUN6.md | modified engeller() | ~101 |
+| 12:05 | Edited docs/seri/BAKIM-RUN6.md | 1→3 lines | ~126 |
+| 12:06 | Edited docs/seri/BAKIM-RUN6.md | modified takvimi() | ~97 |

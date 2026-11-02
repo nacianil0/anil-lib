@@ -12,7 +12,7 @@ tags:
   - en-buyuk-olabilirlik
   - softmax
   - yansiz-tahminci
-content_hash: sha256:9aae9ab4c4d378470a92df35792f810438e69205b0f8e4b8545d199d528c0e8b
+content_hash: sha256:47686701cf26e228e46f8f178c24b3d3aa6f5a31aeebd33839c07bc88ed82a3c
 classification_version: 1
 classification_batch: 22
 ---
@@ -28,7 +28,7 @@ Ama iki koşul, dağılımı bir **sayı listesi** olmaktan çıkarır ve üzeri
 
 ## Beklenti: seride hep kullandığımız kelimenin tanımı
 
-37\. makalede "beklenen getiri" dedik, 45'te "beklenen maliyet", 65'te "beklenen kalibrasyon hatası", 60'ta ajanın "beklenen çağrı sayısı". Aynı kelime, tek bir işlem.
+37\. makalede "beklenen getiri" dedik, 65'te "beklenen kalibrasyon hatası", 60'ta bir doğru çözümün "beklenen maliyeti" ve ona kadar "beklenen deneme sayısı". Aynı kelime, tek bir işlem.
 
 Bir dağılımın **beklentisi** (expectation), her sonucun değerinin o sonucun olasılığıyla çarpılıp toplanmasıdır. Yani ağırlıklı ortalama — ağırlıklar olasılıklar. Christopher Bishop'un ders kitabı bunu 1.2.2 bölümünde (s. 19) tanımlar.
 
@@ -122,7 +122,7 @@ Artık kaybın nereden geldiğini biliyoruz: veriyi en olası kılan parametrele
 
 - Fisher, R. A. (1922). *On the Mathematical Foundations of Theoretical Statistics*. Philosophical Transactions of the Royal Society A 222, 309–368. [Bağlantı](https://doi.org/10.1098/rsta.1922.0009)
 - Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer; olasılık kuramı 1.2 (s. 12–30), beklenti ve kovaryans 1.2.2 (s. 19), ikili değişkenler ve en büyük olabilirlik 2.1 (s. 68–71). [Bağlantı](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/)
-- Jurafsky, D. & Martin, J. H. (2025). *N-gram Language Models*, bölüm 3 (perplexity 3.5, yumuşatma 3.6). *Speech and Language Processing*, 3. baskı taslağı. [Bağlantı](https://web.stanford.edu/~jurafsky/slp3/)
+- Jurafsky, D. & Martin, J. H. (2025). *N-gram Language Models*, bölüm 3 (perplexity 3.3, yumuşatma 3.6). *Speech and Language Processing*, 3. baskı taslağı. [Bağlantı](https://web.stanford.edu/~jurafsky/slp3/)
 - Berger, A. L., Della Pietra, S. A. & Della Pietra, V. J. (1996). *A Maximum Entropy Approach to Natural Language Processing*. Computational Linguistics 22(1), 39–71. [Bağlantı](https://aclanthology.org/J96-1002/)
 - Holtzman, A., Buys, J., Du, L., Forbes, M. & Choi, Y. (2020). *The Curious Case of Neural Text Degeneration*. ICLR 2020. [Bağlantı](https://openreview.net/forum?id=rygGQyrFvH)
 - Hewitt, J., Manning, C. D. & Liang, P. (2022). *Truncation Sampling as Language Model Desmoothing*. EMNLP 2022 Findings. [Bağlantı](https://aclanthology.org/2022.findings-emnlp.249/)

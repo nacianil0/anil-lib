@@ -12,7 +12,7 @@ tags:
   - ogrenilmis-seyrek
   - gec-etkilesim
   - siralamayla-birlestirme
-content_hash: sha256:c667a72d0476430ed717c722273f7bada754e44e9a07b8afda26da78c4fdfa6a
+content_hash: sha256:124088145a0e83f2c11bb855b85066777d051737071c8b5b8bb482f7e68fa10d
 classification_version: 1
 classification_batch: 9
 revised_at: "2026-09-25"
@@ -107,7 +107,7 @@ Sonuç, ters dizinde çalışan ama anlamı gören bir getirici. Aşağıdaki il
 | öğrenilmiş seyrek | 0,322 | 0,955 | 0,813 | 0,73 |
 | yoğun (en iyi) | 0,335 | 0,964 | 0,720 | — |
 
-TREC DL sütunu tablonun en öğretici yeri. Bu küme aynı derlemi kullanır ama ayrı yazılmış ve çok daha derin etiketlenmiş sorgular taşır; yani alan dışı değildir, ama farklı ve daha titiz etiketlenmiş bir ölçümdür. Orada BM25'in bulma oranı 0,745, yoğun modelinki 0,720 — klasik yöntem hâlâ önde. Öğrenilmiş seyrek model ise 0,813 ile ikisini de geçiyor ve bunu ters dizinle yapıyor. Bedeli sütunun son hanesinde: sorgu başına ortalama işlem sayısı BM25'in kabaca beş katı, ama yaklaşık komşu araması gerektiren yoğun dizinlerin dünyasına hiç girmiyor.
+TREC DL sütunu tablonun en öğretici yeri. Bu küme aynı derlemi kullanır ama ayrı yazılmış ve çok daha derin etiketlenmiş sorgular taşır; yani alan dışı değildir, ama farklı ve daha titiz etiketlenmiş bir ölçümdür. Orada BM25'in bulma oranı 0,745, yoğun modelinki 0,720 — klasik yöntem hâlâ önde. Öğrenilmiş seyrek model ise 0,813 ile ikisini de geçiyor ve bunu ters dizinle yapıyor. Bedeli sütunun son hanesinde: sorgu başına ortalama işlem sayısı BM25'in yaklaşık beş buçuk katı (0,73 ⁄ 0,13), ama yaklaşık komşu araması gerektiren yoğun dizinlerin dünyasına hiç girmiyor.
 
 ## İkinci yol: etkileşimi geciktirmek
 
@@ -160,7 +160,7 @@ Son uyarı cetvelin kendisiyle ilgili.
 
 Bir getirme değerlendirme kümesi kurulurken hangi belgelerin ilgili olduğunu insanlar etiketler. Ama bütün derlemi etiketlemek imkânsız olduğu için, etiketlenecek adaylar mevcut sistemlerin getirdikleri arasından seçilir. O sistemler ağırlıklı olarak sözcük eşleşmesine dayanıyorsa, sonuç öngörülebilir: yoğun bir getiricinin bulduğu ama hiçbir klasik sistemin bulmadığı bir belge **hiç etiketlenmez** ve otomatik olarak ilgisiz sayılır.
 
-Aynı BEIR çalışması bunu bir kümede ölçtü. İlk on sonucu içinde hiç etiketlenmemiş belge oranı BM25'te yüzde 6,4, belge genişletmeli seyrek modelde yüzde 2,8, buna karşılık iki yoğun modelde yüzde 14,4 ve yüzde 31,8. Sonra eksik etiketler — 980 sorgu-belge çifti — özgün etiketleme yönergesine göre, belgeyi hangi sistemin getirdiği bilinmeden elle tamamlandı.
+Aynı BEIR çalışması bunu bir kümede ölçtü. İlk on sonucu içinde hiç etiketlenmemiş belge oranı BM25'te yüzde 6,4, belge genişletmeli seyrek modelde yüzde 2,8, buna karşılık aşağıdaki tablodaki iki yoğun modelde yüzde 31,8 ve yüzde 30,6. Sonra eksik etiketler — 980 sorgu-belge çifti — özgün etiketleme yönergesine göre, belgeyi hangi sistemin getirdiği bilinmeden elle tamamlandı.
 
 | sistem | eksik etiketlerle | tamamlandıktan sonra |
 |---|---|---|
@@ -180,7 +180,7 @@ Sözcük eşleşmesinin puanı neredeyse hiç değişmiyor; yoğun modellerinki 
 
 **Parametreler türetilmez, ölçülür.** Kaynak çalışma bunu açıkça söyler: model `k₁` ve `b` için yol göstermez.
 
-**Alan içi sıralama alan dışında korunmuyor.** Eğitim kümesinde iki kat öne geçen bir model, alan dışında taban çizgisinin gerisine düşebiliyor.
+**Alan içi sıralama alan dışında korunmuyor.** Eğitim kümesinde neredeyse iki kat öne geçen bir model, alan dışında taban çizgisinin gerisine düşebiliyor.
 
 **BM25'i alan dışında geçmenin üç yolu var** ve üçü de bir bedel ödüyor: terimleri genişletmek işlem sayısını artırır, etkileşimi geciktirmek depolamayı artırır, ikinci aşama eklemek her sorguya gecikme yazar.
 

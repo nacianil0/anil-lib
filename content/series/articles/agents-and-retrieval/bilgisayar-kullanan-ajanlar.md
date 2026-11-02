@@ -5,14 +5,14 @@ slug: bilgisayar-kullanan-ajanlar
 category: agents-and-retrieval
 level: intermediate
 reading_order: 54
-summary: "Ajanı insan için çizilmiş arayüze koyar: ekranın üç gösterimini — sayfa kaynağı, erişilebilirlik ağacı, ekran görüntüsü — ve her birinin token bedelini ve eksikliğini; eylemin kimlikle mi koordinatla mı verildiğini; planın doğru, tıklamanın yanlış olduğu yerin adını, öğe konumlandırmayı, ve bunun için ayrıca eğitilmiş modellerin kazancını; işaretlemenin nerede işe yaradığını nerede zarar verdiğini; beş ortamda ajanla insan arasındaki uçurumu ve uçurumun üç nedenini; aynı ekran görüntüsünün webde neden kazandırıp telefonda neden kaybettirdiğini ölçümlerle anlatır."
+summary: "Ajanı insan için çizilmiş arayüze koyar: ekranın üç gösterimini — sayfa kaynağı, erişilebilirlik ağacı, ekran görüntüsü — ve her birinin token bedelini ve eksikliğini; eylemin kimlikle mi koordinatla mı verildiğini; planın doğru, tıklamanın yanlış olduğu yerin adını, öğe konumlandırmayı, ve bunun için ayrıca eğitilmiş modellerin kazancını; işaretlemenin nerede işe yaradığını nerede zarar verdiğini; insanın ölçüldüğü dört ortamda ajanla insan arasındaki uçurumu ve uçurumun üç nedenini; aynı ekran görüntüsünün webde neden kazandırıp telefonda neden kaybettirdiğini ölçümlerle anlatır."
 tags:
   - bilgisayar-kullanimi
   - ekran-gosterimi
   - erisilebilirlik-agaci
   - oge-konumlandirma
   - web-ajani
-content_hash: sha256:0b79efb04afaae8b3f5e6b7daf8071b89281aaa1f69459bf9d349436d3249c3a
+content_hash: sha256:c9b5153f151a5e3a022bce24e228c8b75bd9081259e2c2930e9032d3b24d0573
 classification_version: 1
 classification_batch: 12
 revised_at: "2026-10-26"
@@ -60,7 +60,7 @@ Konumlandırma darboğazsa, onu ayrıca öğrenmek gerekir. Kanzhi Cheng ve arka
 
 Gou ve arkadaşları aynı yolu ölçekledi. Web sayfalarının kaynağından öğelerin konumlarını ve betimlemelerini otomatik çıkarıp 1,3 milyon ekran görüntüsünde 10 milyon öğelik bir eğitim kümesi kurdular — 12\. makaledeki sentetik verinin ekran hâli; etiketi insan değil, sayfanın kendi kaynağı yazıyor. Aynı ölçütte 7 milyarlık model yüzde 86,3'e, 72 milyarlık 89,4'e çıkıyor; ve hiç masaüstü görüntüsü görmemiş model masaüstünde de çalışıyor. Sonra bu modeli bir ajanın eli yaptılar: planı yazan model yalnızca ekran görüntüsü görür, hiç kaynak ya da ağaç okumaz, niyeti konumlandırma modeli koordinata çevirir. 48'deki web kümesinde öğe doğruluğu yalnızca pikselle 44,8; kaynak listesinden seçen metin yöntemiyle 42,3; numaralı kutularla 25,6. İnsan gibi yalnızca ekrana bakan bir ajan, kaynağı okuyan ajana yetişti.
 
-Numaralı kutular her yerde işe yaramıyor. Tianbao Xie ve arkadaşlarının NeurIPS 2024 veri kümeleri ve ölçütler programında sunduğu masaüstü ortamında, en iyi modelin görüntüsüne kutular çizmek puanı görüntü artı ağaç düzenine göre **düşürüyor**. Yazarların açıklaması iki parçalı: masaüstü ekranı bir web sayfasından çok daha yoğun — bir hesap tablosunun her hücresi bir öğe — ve kutular yardım yerine gürültü oluyor; ayrıca bazı görevler kutuyla değil koordinatla verilir, bir hücrenin içindeki nokta gibi. Çözünürlük de bir düğme: ekran 1920'ye 1080 ve yalnızca görüntüyle çalışan düzende çözünürlüğü düşürmek puanı düşürüyor; ama işaretli düzende görüntüyü 768'e 432'ye küçültmek puanı **artırıyor** ve daha da küçültmek yeniden düşürüyor. Görüntüyü token'a çeviren model kendi eğitildiği çözünürlükte iyi görüyor; ekranı ona uydurmak, 48'deki yüz satırlık pencerenin piksel hâli. Bir sağlayıcının belgelendirmesi — hakemli değil, kendi modeli için — aynı dersi bir kural olarak yazıyor: ekranı 1024'e 768 ya da 1280'e 720 gibi bir çözünürlükte tut, büyük ekranı küçültüp döndürülen koordinatları geri ölçekle, küçük yazıyı okumak için ekranın bir bölgesini tam çözünürlükte yakınlaştır.
+Numaralı kutular her yerde işe yaramıyor. Tianbao Xie ve arkadaşlarının NeurIPS 2024 veri kümeleri ve ölçütler programında sunduğu masaüstü ortamında, en iyi modelin görüntüsüne kutular çizmek puanı görüntü artı ağaç düzenine göre **düşürüyor**. Yazarların açıklaması iki parçalı: masaüstü ekranı bir web sayfasından çok daha yoğun — bir hesap tablosunun her hücresi bir öğe — ve kutular yardım yerine gürültü oluyor; ayrıca bazı görevler kutuyla değil koordinatla verilir, bir hücrenin içindeki nokta gibi. Çözünürlük de bir düğme: ekran 1920'ye 1080 ve yalnızca görüntüyle çalışan düzende çözünürlüğü düşürmek puanı düşürüyor; ama işaretli düzende görüntüyü 768'e 432'ye küçültmek puanı **artırıyor** ve daha da küçültmek yeniden düşürüyor. Görüntüyü token'a çeviren model kendi eğitildiği çözünürlükte iyi görüyor; ekranı ona uydurmak, 48'deki yüz satırlık pencerenin piksel hâli. Bir sağlayıcının belgelendirmesi — hakemli değil, kendi modeli için; Kasım 2026'da yeniden okundu — aynı dersi bir kural olarak yazıyor: ekran görüntüsünü modelin görüntü sınırına sığacak biçimde küçült, döndürülen koordinatları özgün ekrana geri ölçekle, küçük yazıyı okumak için ekranın bir bölgesini tam çözünürlükte yakınlaştır.
 
 ## Neden hâlâ insanın gerisinde
 
@@ -80,7 +80,7 @@ Birincisi konumlandırma. Xie ve arkadaşlarının hata incelemesi en sık hatay
 
 Üçüncüsü gösterimin platforma bağlı olması, ve burada iki ölçüm birbiriyle çelişiyor gibi görünüyor. He ve arkadaşlarının canlı site kümesinde görüntü artı metin 59,1 alırken yalnızca erişilebilirlik ağacı 40,1 alıyor: ekran görüntüsü on dokuz puan kazandırıyor. Rawles ve arkadaşlarının telefon ortamında ise aynı ajanın yalnızca ağaç okuyan sürümü 30,6, ağaca ekran görüntüsü ve numaralı kutular eklenen sürümü 25,4: görüntü beş puan **kaybettiriyor**. Çelişkinin en yalın okuması gösterimin kalitesi; bu serinin yorumu, iki çalışmanın ortak ölçümü değil. Telefonun erişilebilirlik ağacı işletim sisteminin kendi görünüm hiyerarşisinden gelir ve telefon ekranı seyrektir; web sayfasınınkini sayfayı yapan kişi üretir ve yüzde 95,9'u kusurludur. Ağaç iyiyse görüntü gürültüdür; ağaç kötüyse görüntü tek eksiksiz kaynaktır. Gösterim kararı platformun kararıdır.
 
-Uçurumu kapatmaya başlayan şey ise 52'den tanıdık. Saaket Agashe ve arkadaşlarının ICLR 2025'te sunduğu çalışma, masaüstü ortamında aynı modeli bir bellekle donatıyor: görevi alt görevlere bölen bir plan, her alt görev için geçmiş bölümlerden getirilen deneyim özetleri, ve bölüm sonunda deneyimin belleğe yazılması — 52'deki ders ve beceri kütüphanesi, ekran için. Aynı modelle başarı 11,21'den 20,58'e çıkıyor; neredeyse iki kat, ama insanın hâlâ üçte biri.
+Uçurumu kapatmaya başlayan şey ise 52'den tanıdık. Saaket Agashe ve arkadaşlarının ICLR 2025'te sunduğu çalışma, masaüstü ortamında aynı modeli bir bellekle donatıyor: görevi alt görevlere bölen bir plan, her alt görev için geçmiş bölümlerden getirilen deneyim özetleri, ve bölüm sonunda deneyimin belleğe yazılması — 52'deki ders ve beceri kütüphanesi, ekran için. Aynı modelle başarı 11,21'den 20,58'e çıkıyor; neredeyse iki kat, ama insanın hâlâ üçte birinden az.
 
 > **Kendini yokla:** Ekran görüntüsü canlı sitelerde on dokuz puan kazandırıp telefonda beş puan kaybettiriyor. Görüntü mü değişti, ekran mı?
 
@@ -98,7 +98,7 @@ Ekranın öbür gösterimi değişti. Telefonda erişilebilirlik ağacı işleti
 
 **İşaretleme her yerde işe yaramaz.** Seyrek web sayfasında numaralı kutular kazandırır; yoğun masaüstü ekranında gürültü olur. Çözünürlük, görüntü modelinin eğitildiği ölçeğe uydurulur.
 
-**Uçurum üç yerden gelir.** Yanlış tıklama ve onun açtığı gürültü; yapılabilir görevi yapılamaz ilan etme; platformun gösterim kalitesi. Yayın anlarındaki ölçümde insan beş ortamda yüzde 72 ile 89 arasında, en iyi ajan 12 ile 31; uçurumun genişliği tarihe bağlıdır, masaüstünde Eylül 2025'te bildirilen sayı 61,4, Mayıs 2026'da bildirilen 83,4 — insanın 72,4'ünün üstünde; ama insan yeniden ölçülmedi ve düzenek değişti.
+**Uçurum üç yerden gelir.** Yanlış tıklama ve onun açtığı gürültü; yapılabilir görevi yapılamaz ilan etme; platformun gösterim kalitesi. Yayın anlarındaki ölçümde insanın ölçüldüğü dört ortamda insan yüzde 72 ile 89 arasında, en iyi ajan 12 ile 31; uçurumun genişliği tarihe bağlıdır, masaüstünde Eylül 2025'te bildirilen sayı 61,4, Mayıs 2026'da bildirilen 83,4 — insanın 72,4'ünün üstünde; ama insan yeniden ölçülmedi ve düzenek değişti.
 
 **Görüntü, öbür gösterimin boşluğunu dolduruyorsa kazandırır.** Ağaç eksiksizse görüntü kaybettirir; ağaç kusurluysa görüntü tek eksiksiz kaynaktır.
 

@@ -12,7 +12,7 @@ tags:
   - degerlendirme
   - pekistirmeli-ogrenme
   - saglamlik
-content_hash: sha256:3f97eb25245c3b078465a2f218153ca601c1e0c668679dc7b7081ee275c73cc6
+content_hash: sha256:50103d459f2b2c76232b03bdd185b6bcc1c8a60246a3467e18e83ebe8ad538be
 classification_version: 1
 classification_batch: 26
 ---
@@ -74,7 +74,7 @@ Yeni ölçütlerle sonuç çöküyor. Hiçbir model sıkıştırma ölçütünde
 
 > **Kendini yokla:** Bir model, bir sonraki adımı neredeyse her zaman geçerli üretiyorsa hangi hatayı hâlâ yapabilir?
 
-İki farklı geçmişi aynı duruma götürdüğü hâlde onları ayrı durumlar sanabilir — ya da tersini. Bir adımlık sınav bunu göremez, çünkü iki durum aynı geçerli hamle kümesine sahip olabilir ve ancak birkaç hamle sonra ayrışabilirler. Sınavın derinliği cevabı belirliyor: yazarların ölçümünde rastgele yürüyüşlerle eğitilen model tek token uzunluğundaki ayrımlarda yüzde 100 alırken, tam ayrım kümesine bakıldığında yüzde 50'ye düşüyor.
+İki farklı geçmişi aynı duruma götürdüğü hâlde onları ayrı durumlar sanabilir — ya da tersini. Bir adımlık sınav bunu göremez, çünkü iki durum aynı geçerli hamle kümesine sahip olabilir ve ancak birkaç hamle sonra ayrışabilirler. Sınavın derinliği cevabı belirliyor: yazarların ölçümünde rastgele yürüyüşlerle eğitilen model tek token'lık sınavda yüzde 100 alırken, aynı duruma götüren iki geçmişin bütün devamlarda aynı davranıp davranmadığına bakıldığında yüzde 50'ye düşüyor; farklı durumları birbirinden ayırmada ise aynı model iyi kalıyor.
 
 > **Kendini yokla:** Aynı boydaki iki modelden biri en kısa yollarla, öteki rastgele yürüyüşlerle eğitilmiş. Hangisinin daha tutarlı bir harita kurmasını beklersin, neden?
 
@@ -99,7 +99,7 @@ Rastgele yürüyüşlerle eğitileninkini — ve ölçüm de öyle diyor. Sebebi
 
 Bu sonucun neden önemli olduğunu görmek için sapma tablosunu ajan diline çevirmek yeter. 51–60\. makalelerde kurduğumuz ajan döngüsü tam olarak budur: bir plan yapılır, bir eylem denenir, dünya beklenenden farklı cevap verir ve plan yeniden kurulur. Sapma oranı, o döngüde ne sıklıkta beklenmedik bir cevap geldiğinin ölçüsüdür — ve gerçek bir ortamda yüzde birin çok üstündedir. Bir modelin eğitildiği görevdeki puanı, onun bir ajanın içinde ne kadar dayanacağını söylemiyor; söyleyen şey, dünyasının tutarlı olup olmadığı.
 
-![Dört satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı modeller, iki ayrı sınav. Sütunlar soru, bilinen sınavlar ve dizi tabanlı ölçütler. Birinci satır ne sorar: sonraki token geçerli mi, ve aynı duruma götüren iki önek aynı devamları mı veriyor. İkinci satır neye erişir: modelin içine, ve yalnızca çıktıya. Üçüncü satır vurguludur, sonuç: geçerlilik neredeyse yüzde 100 ve sonda yüzde 90'ın üstünde, buna karşılık hiçbir model iyi değil. Dördüncü satır kurulan harita: bilinen sınavlarda sorulmuyor, dizi tabanlı ölçütlerde olmayan sokaklar ve üst geçitler çıkıyor. Birinci kutunun başlığı cevabı sınavın derinliği belirliyor; içinde rastgele yürüyüşlerle eğitilen modelin tek token'lık ayrımlarda yüzde 100 aldığı, ayırt eden dizilerin tamamına bakıldığında yüzde 50'ye indiği yazılıdır. İkinci kutunun başlığı başka bir alanda aynı tablo; içinde oturma düzeni bulmacalarında hiçbir modelin sıkıştırma isabetinin yüzde 40'ı, ayrım duyarlığının 0,60'ı geçmediği yazılıdır. En altta bir kayıt: bütün değerler Vafa ve arkadaşlarının ölçümleridir.](assets/iki-sinav-iki-cevap.svg "Şekil 3 — Aynı model, iki sınav, iki cevap")
+![Dört satırlı üç sütunlu bir tablo ve altında iki kutu. Üstte başlık: aynı modeller, iki ayrı sınav. Sütunlar soru, bilinen sınavlar ve dizi tabanlı ölçütler. Birinci satır ne sorar: sonraki token geçerli mi, ve aynı duruma götüren iki önek aynı devamları mı veriyor. İkinci satır neye erişir: modelin içine, ve yalnızca çıktıya. Üçüncü satır vurguludur, sonuç: geçerlilik neredeyse yüzde 100 ve sonda yüzde 90'ın üstünde, buna karşılık sıkıştırmada hiçbir model iyi değil. Dördüncü satır kurulan harita: bilinen sınavlarda sorulmuyor, dizi tabanlı ölçütlerde olmayan sokaklar ve üst geçitler çıkıyor. Birinci kutunun başlığı cevabı sınavın derinliği belirliyor; içinde rastgele yürüyüşlerle eğitilen modelin tek token'lık sınavda yüzde 100 aldığı, aynı duruma giden öneklerin devamlarına bakıldığında yüzde 50'ye indiği yazılıdır. İkinci kutunun başlığı başka bir alanda aynı tablo; içinde oturma düzeni bulmacalarında hiçbir modelin sıkıştırma isabetinin yüzde 40'ı, ayrım duyarlığının 0,60'ı geçmediği yazılıdır. En altta bir kayıt: bütün değerler Vafa ve arkadaşlarının ölçümleridir.](assets/iki-sinav-iki-cevap.svg "Şekil 3 — Aynı model, iki sınav, iki cevap")
 
 Şekil 3'ün iki sütunu yan yana durduğunda soru kendiliğinden değişiyor: "model dünya modeli kurdu mu" değil, "hangi derinlikte sınadın".
 

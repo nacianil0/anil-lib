@@ -12,7 +12,7 @@ tags:
   - eylem-arayuzu
   - veri-kitligi
   - benzetim
-content_hash: sha256:0eac6d93feecd644eb88cd4976780e3e8258652035acbce9583fd2b5f86a2410
+content_hash: sha256:e19760f7fd1b02d9f4783c55cb86e57424a17774682470b2dd8fec7133c22027
 classification_version: 1
 classification_batch: 27
 revised_at: "2026-09-26"
@@ -124,7 +124,7 @@ Bunun ikinci bir sonucu var ve 101\. makalenin disiplinini doğrudan ilgilendiri
 
 **Arayüz dünyanın değil, tasarımın özelliğidir ve iki sayıya iner.** Kaç kutu ve saniyede kaç karar. 256 kutu, hareket aralığının 256'da birinden ince bir düzeltmeyi temsil edilemez kılar; saniyede üç karar, iki karar arasında 333 milisaniye bırakır. Modelin "beceremediği" şeylerin bir kısmı, arayüzün baştan yasakladığı şeylerdir.
 
-**İnternetten gelen ön eğitim, eylemin anlamsal yarısını taşıyor, motor yarısını taşımıyor.** Görülmüş görevlerde 92'ye karşı 91 — fark yok. Görülmemiş nesnelerde 32'ye karşı 62, anlamsal talimatlarda 17'ye karşı 60. Buna karşılık sapından tutmak, yeni bir hareket yapmak ve havlu katlamak listede başarısızlık olarak duruyor.
+**İnternetten gelen ön eğitim, eylemin anlamsal yarısını taşıyor, motor yarısını taşımıyor.** Görülmüş görevlerde 92'ye karşı 91 — fark yok. Görülmemiş nesne, arka plan ve ortamların ortalamasında 32'ye karşı 62, anlamsal talimatlarda 17'ye karşı 60. Buna karşılık sapından tutmak, yeni bir hareket yapmak ve havlu katlamak listede başarısızlık olarak duruyor.
 
 **Ön eğitimin katkısı bir ablasyonla kesindir.** Aynı model, aynı robot verisi, aynı geçmiş: ön eğitimliyken yüzde 48,7 ve 47, sıfırdan başlatıldığında yüzde 0 ve 1.
 

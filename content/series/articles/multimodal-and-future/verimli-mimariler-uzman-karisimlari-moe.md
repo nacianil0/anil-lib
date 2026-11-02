@@ -12,7 +12,7 @@ tags:
   - yonlendirme
   - yuk-dengeleme
   - olcek-yasalari
-content_hash: sha256:d8cc24bfab0331ee229d9f15d4a9715671f3341bd003c3fc1a84d2e872701643
+content_hash: sha256:88fc4cbd915ec194438fdceb55d1692443b3958cb7dbf3db02d89bcd5e8d4037
 classification_version: 1
 classification_batch: 20
 ---
@@ -78,7 +78,7 @@ Pratik bir soru daha var: sıfırdan mı eğitilmeli? Aran Komatsuzaki ve arkada
 
 ## Bedel bellekte ve iletişimde ödenir
 
-Uzmanlar karışımının hesabı ucuzlatması, maliyeti yok etmesi değil, **taşıması** anlamına geliyor. Taşındığı yer 27\. makalede kurduğumuz bellek duvarı.
+Uzmanlar karışımının hesabı ucuzlatması, maliyeti yok etmesi değil, **taşıması** anlamına geliyor. Taşındığı yer, 27\. makalede hesabını kurduğumuz bellek ve taşıma yükü.
 
 Üç somut biçimde ödeniyor. Birincisi bellek: token başına iki uzman çalışsa da, hangi token'ın hangi uzmana gideceği önceden bilinmediği için **bütün** uzmanların bellekte hazır olması gerekir. 671 milyar parametreli bir modelin 37 milyarı çalışıyor olabilir, ama 671 milyarının tamamı yüklüdür.
 

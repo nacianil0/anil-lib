@@ -12,7 +12,7 @@ tags:
   - destek-vektor-makineleri
   - kumeleme
   - taban-cizgisi
-content_hash: sha256:405874d16554054abe478e5ce3edc59c890e93180c041aec01db561df8e549bb
+content_hash: sha256:92dc561d16808e551d7e6cccbb70c8a1f88c0bf0eb580acfea2d27b98beec947
 classification_version: 1
 classification_batch: 23
 revised_at: "2026-09-25"
@@ -126,7 +126,7 @@ Bu makalenin pratik çıktısı bir yöntem tavsiyesi değil, bir alışkanlık.
 
 Ölçülmüş hâli de var. Manuel Fernández-Delgado ve arkadaşlarının JMLR'de 2014'te yayımladığı tarama, 17 aileden 179 sınıflandırıcıyı 121 veri kümesinde çalıştırdı. En iyi aile rastgele orman oldu: en iyi sürümü, her kümede ulaşılabilen en yüksek doğruluğun ortalama yüzde 94,1'ini alıyor ve kümelerin yüzde 84,3'ünde bu oranı yüzde 90'ın üstünde tutuyor. Ama ikinci sıradaki Gauss çekirdekli destek vektör makinesiyle arasındaki fark — yüzde 92,3 — istatistiksel olarak anlamlı değil.
 
-16\. makalede "cetvel arayışı" derken kurduğumuz disiplinin buradaki karşılığı şu: yeni bir yöntemin değeri, **iyi ayarlanmış** bir klasik taban çizgisine göre ölçülür. Ayarlanmamış bir taban çizgisini geçmek bir sonuç değildir.
+16\. makalede cetvelin kendisine dikkatle bakarken kurduğumuz disiplinin buradaki karşılığı şu: yeni bir yöntemin değeri, **iyi ayarlanmış** bir klasik taban çizgisine göre ölçülür. Ayarlanmamış bir taban çizgisini geçmek bir sonuç değildir.
 
 Seçimin ölçütü de yalnızca doğruluk değil. 1\. makalede modeli "ayarlanabilir bir fonksiyon", 2\. makalede öğrenmeyi "tek bir sayıyı küçültmek" diye tanımlamıştık; o tanım hangi aileden model kurduğuna bakmaz. Ama tanımın dışında kalan üç kalem karar verir: kaç örneğin var, çıkarımın ne kadar ucuz olmalı, ve kararın nasıl açıklanacak. Birkaç bin satırlık bir kümede milyar parametreli bir model eğitmek 96\. makalenin oynaklık kalemini şişirir; milisaniyelik bir bütçede tek bir ağaç topluluğu bir sinir ağından kat kat ucuzdur; ve bir kredi kararının hangi eşikten geçtiğini söylemek gerekiyorsa, eksene paralel bölmelerden oluşan bir yapı doğrudan okunabilir. Bunlar "eski yöntem" tavizleri değil, problemin kendi kısıtları.
 

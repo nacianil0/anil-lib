@@ -12,7 +12,7 @@ tags:
   - bellek-duvari
   - alana-ozel-mimari
   - hassasiyet
-content_hash: sha256:4051618f1260886638764b61e2fb34a15bbf646030b10e9ff3042fabe2621dbf
+content_hash: sha256:cba97dc32c7b18b65000f3851b6c2e2c48dc2c819f2d51219b30cb5a941faf3c
 classification_version: 1
 classification_batch: 21
 revised_at: "2026-09-25"
@@ -58,7 +58,7 @@ Bunun çatı çizgisindeki anlamı doğrudan hesaplanabilir. Sırt noktası tepe
 
 Aynı çalışmanın iki ölçümü tabloyu modele bağlıyor. Büyük Transformer modellerinin parametre sayısı 2018–2022 aralığında iki yılda 410 kat büyürken, tek bir hızlandırıcının belleği iki yılda yalnızca 2 kat büyüdü. Eğitim için gereken hesap ise iki yılda 750 kat arttı. Model, ona hizmet eden çipin belleğinden hızlı büyüdükçe iş birden çok karta bölünmek zorunda kalır ve yükün bir kısmı en yavaş büyüyen eğriye, kartlar arası banda biner.
 
-Bu ayrışma, serinin bu bölümünde ayrı ayrı gördüğümüz şeylerin ortak kaynağı. 26\. makaledeki "adım adım üretim bellek bant genişliğiyle sınırlıdır", 27\. makaledeki bellek duvarı, 85\. makaledeki hepsi-hepsiye iletişim maliyeti, 86\. makaledeki "işlem sayısını azaltmak duvar saatini azaltmıyor" uyarısı ve 88\. makaledeki cihaz bütçesi — hepsi aynı üç eğrinin ayrışmasının farklı yerlerdeki görünüşü.
+Bu ayrışma, serinin bu bölümünde ayrı ayrı gördüğümüz şeylerin ortak kaynağı. 26\. makaledeki "adım adım üretim bellek bant genişliğiyle sınırlıdır", 27\. makalede hesabını kurduğumuz bellek ve taşıma yükü, 85\. makaledeki hepsi-hepsiye iletişim maliyeti, 86\. makaledeki "işlem sayısını azaltmak duvar saatini azaltmıyor" uyarısı ve 88\. makaledeki cihaz bütçesi — hepsi aynı üç eğrinin ayrışmasının farklı yerlerdeki görünüşü.
 
 > **Kendini yokla:** Yeni bir mimari, aynı kaliteyi yarı işlemle veriyor. Bu, çalışma süresinin de yarıya ineceği anlamına gelir mi?
 

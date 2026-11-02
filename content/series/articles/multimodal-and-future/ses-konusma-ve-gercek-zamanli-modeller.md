@@ -12,7 +12,7 @@ tags:
   - ses-tokenlari
   - gercek-zamanli
   - gecikme-butcesi
-content_hash: sha256:46f885ef573821ab8a59c8c63224706346bab57579924d068184cad829675860
+content_hash: sha256:14b78fda10eb5556bae6157323cbd45b07e7cbf76d89fc94f1c164f3da25afcb
 classification_version: 1
 classification_batch: 19
 ---
@@ -70,7 +70,7 @@ Bunun iki yüzü var ve ikisi de metinde durmalı. Bir yüzü erişilebilirlik v
 
 Ardışık hattın üç ayrı bedeli var. Birincisi gecikme: bileşenler toplanınca bütçe saniyelere çıkabiliyor. İkincisi bilgi kaybı: ara temsil yazı olduğu için, anlamı değiştiren dilsel olmayan bilgi — duygu, vurgu, iç çekiş, gülme — zincirin ilk adımında siliniyor. Üçüncüsü ve en az fark edileni yapısal: düzen konuşmayı konuşmacı sıralarına bölüyor, oysa gerçek sohbette söz kesilir, üst üste binilir, araya "hı hı" girer.
 
-Alexandre Défossez ve arkadaşlarının 2024'te yayımladığı — hakemli bir yerde yayımlandığını doğrulayamadığımız — çalışma üçünü birden hedefliyor. Model sesten sese çalışıyor: bir metin dil modeli gövdesinden başlayıp, sinir ses kodeğinin artık kuantizasyonundan gelen token'ları üretiyor. İki yeniliği var. Birincisi çerçeve hızının düşürülmesi: saniyede 12,5 çerçeve, yani bir saniyelik ses on iki buçuk adım. İkincisi çok akışlılık: model giren ve çıkan ses akışlarını **aynı anda**, iki ayrı otoregresif token akışı olarak işliyor; böylece konuşmacı sırası kavramı ortadan kalkıyor ve model karşı taraf konuşurken de "dinlemeye" devam ediyor. Bildirilen kuramsal gecikme 160 milisaniye — yukarıdaki insan ortalamasının altında. Qingkai Fang ve arkadaşlarının ICLR 2025'te sunduğu çalışma daha ılımlı bir düzenle — bir konuşma kodlayıcısını bir dil modeline bağlayıp konuşma birimlerini akış hâlinde üreterek — 226 milisaniyeye inen bir cevap gecikmesi bildiriyor.
+Alexandre Défossez ve arkadaşlarının 2024'te yayımladığı — hakemli bir yerde yayımlandığını doğrulayamadığımız — çalışma üçünü birden hedefliyor. Model sesten sese çalışıyor: bir metin dil modeli gövdesinden başlayıp, sinir ses kodeğinin artık kuantizasyonundan gelen token'ları üretiyor. İki yeniliği var. Birincisi çerçeve hızının düşürülmesi: saniyede 12,5 çerçeve, yani bir saniyelik ses on iki buçuk adım. İkincisi çok akışlılık: model giren ve çıkan ses akışlarını **aynı anda**, iki ayrı otoregresif token akışı olarak işliyor; böylece konuşmacı sırası kavramı ortadan kalkıyor ve model karşı taraf konuşurken de "dinlemeye" devam ediyor. Bildirilen kuramsal gecikme 160 milisaniye — yukarıdaki insan ortalamasının altında. Qingkai Fang ve arkadaşlarının ICLR 2025'te sunduğu çalışma daha ılımlı bir düzenle — bir konuşma kodlayıcısını bir dil modeline bağlayıp konuşma birimlerini akış hâlinde üreterek — 236 milisaniyeye inen bir cevap gecikmesi bildiriyor.
 
 Bütçeyi kısaltmanın ikinci yolu beklemek yerine kestirmek. Erik Ekstedt ve Gabriel Skantze'nin Interspeech 2022'de sunduğu çalışma, sıra alma kararını sessizlik eşiğine bırakmak yerine bir tahmin problemi olarak kuruyor: model, gelecek pencerede iki konuşmacının hangi anlarda ses çıkaracağını öngörmeyi öğreniyor, ve bu hedef etiket gerektirmiyor — kayıttan kendiliğinden çıkıyor, yani 8'deki öz-denetimin sıra alma hâli. Öğrenilen model sıra değişimini ve araya girecek kısa onaylamaları hiç eğitilmeden sorulan görevlerde kestirebiliyor. Sessizlik eşiğiyle çalışan bir sistem, cevaba ancak karşı taraf sustuktan sonra başlayabilir; kestiren bir sistem, insanın yaptığı gibi, karşı taraf konuşurken hazırlanabilir.
 

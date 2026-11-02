@@ -12,7 +12,7 @@ tags:
   - kayip-maskesi
   - lima
   - sentetik-veri
-content_hash: sha256:f9d548f809cd530f3b3d8d43065ad422b615b6924e8c648294d42d5081df4263
+content_hash: sha256:5770a421e8bd906b44fbb342032b91c1d713089478160add7fe6ad64f504312a
 classification_version: 1
 classification_batch: 2
 ---
@@ -90,7 +90,7 @@ Ama aynı çalışmanın en öğretici bulgusu bir başarı değil, bir başarı
 
 ## Bin örnek yeter mi?
 
-Buraya kadar sayı büyüdü: 62 veri kümesi, on iki bin istem. Chunting Zhou ve arkadaşlarının NeurIPS 2023'te yayımlanan LIMA çalışması tersini denedi ve sonuç alanın varsayımını sarstı.
+Buraya kadar sayı büyüdü: 62 veri kümesi, on üç bine yakın istem. Chunting Zhou ve arkadaşlarının NeurIPS 2023'te yayımlanan LIMA çalışması tersini denedi ve sonuç alanın varsayımını sarstı.
 
 LIMA, 65 milyar parametreli bir LLaMa temel modelini yalnızca **1.000 örnekle** ince ayara soktu; pekiştirmeli öğrenme, ödül modeli, tercih verisi yok. Örnekler elle seçildi: 200'ü fen ve mühendislik konulu Stack Exchange sorusu, 200'ü diğer konulardan Stack Exchange, 200'ü wikiHow, 150'si bir yazma forumundan, 50'si mevcut bir talimat kümesinden ve 200'ü doğrudan yazarların kendi kalemlerinden. Toplam yaklaşık 750.000 token — kıyas için, aynı temel modelin ön eğitimi 1,4 trilyon token gördü. Oran 1.400.000.000.000 ÷ 750.000 = 1.866.667, yani yaklaşık 1,9 milyon kat.
 
