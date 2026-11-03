@@ -7,25 +7,40 @@ import {
 } from "@/lib/content/series";
 import { loadSeriesRoadmap } from "@/lib/content/series-roadmap";
 import { SeriesLanding } from "@/components/series/series-landing";
-import { requireSessionUser } from "@/lib/auth/session-user";
+import { LOCAL_WORKSPACE_ID } from "@/lib/auth/access";
+import { getSessionUser } from "@/lib/auth/session-user";
+import { OG_IMAGE, SITE_NAME } from "@/lib/site";
 
 /**
- * Renders per request: the page resolves the signed-in account and scopes reader
- * state to it, so it must never be prerendered into shared static HTML.
+ * Public: the AI series is readable without an account. Still rendered per request,
+ * because a signed-in reader's page carries their own workspace — it must never be
+ * prerendered into HTML that someone else could be served.
  */
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: SERIES_TITLE,
   description: SERIES_SUBTITLE,
+  alternates: { canonical: SERIES_BASE_PATH },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "tr_TR",
+    title: SERIES_TITLE,
+    description: SERIES_SUBTITLE,
+    url: SERIES_BASE_PATH,
+    images: [OG_IMAGE],
+  },
 };
 
 export default async function SeriesPage() {
-  const user = await requireSessionUser();
+  const viewer = await getSessionUser();
   return (
     <SeriesLanding
       seriesId="ai"
-      workspaceId={user.workspaceId}
+      workspaceId={viewer?.workspaceId ?? LOCAL_WORKSPACE_ID}
+      mode={viewer ? "account" : "local"}
       roadmap={loadSeriesRoadmap()}
       articles={getSeriesDescriptors()}
       basePath={SERIES_BASE_PATH}

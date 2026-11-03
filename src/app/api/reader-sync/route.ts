@@ -1,6 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { authorizeReaderRequest } from "@/lib/auth/require-reader-session";
+import { canRead } from "@/lib/auth/access";
+import { authorizeReaderRequest, readerSessionIsCurrent } from "@/lib/auth/require-reader-session";
 import { getDatabaseClient } from "@/lib/db/client";
+import { SERIES_IDS } from "@/lib/reader-data/series-reset";
 import { syncRequestSchema } from "@/lib/reader-data/sync-contract";
 import { synchronizeReaderData } from "@/lib/reader-data/server/sync-service";
 
@@ -44,6 +46,12 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    if (!(await readerSessionIsCurrent(sql, authorization))) {
+      return NextResponse.json(
+        { error: "unauthorized" },
+        { status: 401, headers: { "Cache-Control": "no-store" } },
+      );
+    }
     const response = await synchronizeReaderData(
       sql,
       authorization.workspaceId,
@@ -51,6 +59,10 @@ export async function POST(request: NextRequest) {
       parsed.data.operations,
       {
         allowArchive: authorization.isOwnerWorkspace,
+        // A self-registered reader may only record reading in the series it may read.
+        seriesScope: authorization.isReaderWorkspace
+          ? SERIES_IDS.filter((seriesId) => canRead("reader", seriesId))
+          : SERIES_IDS,
         resetVersion: parsed.data.resetVersion,
         seriesResetVersions: parsed.data.seriesResetVersions,
       },

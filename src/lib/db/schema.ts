@@ -5,6 +5,7 @@ import {
   check,
   doublePrecision,
   index,
+  integer,
   jsonb,
   pgSequence,
   pgTable,
@@ -41,6 +42,53 @@ export const users = pgTable(
       "users_legacy_scheme_owner_only",
       sql`${table.hashScheme} <> 'env-sha256' OR ${table.role} = 'owner'`,
     ),
+  ],
+);
+
+/**
+ * Self-registered external readers (drizzle/0006). Kept apart from `users` so no
+ * existing account changes and an older build, which never reads this table, cannot
+ * resolve a reader's cookie to any account. The workspace is `r:<id>`: the reader APIs
+ * narrow the scope from the signed cookie alone (see `lib/auth/access.ts`).
+ */
+export const readerAccounts = pgTable(
+  "reader_accounts",
+  {
+    id: uuid("id").primaryKey(),
+    username: text("username").notNull().unique(),
+    workspaceId: text("workspace_id").notNull().unique(),
+    passwordHash: text("password_hash").notNull(),
+    /** SHA-256 of the one-time offline recovery code; replaced on every recovery. */
+    recoveryCodeHash: text("recovery_code_hash").notNull(),
+    /** Bumped by a password change or recovery; cookies minted before stop resolving. */
+    sessionVersion: integer("session_version").notNull().default(1),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+    passwordChangedAt: timestamp("password_changed_at", { withTimezone: true }),
+  },
+  (table) => [
+    check(
+      "reader_accounts_workspace_prefix_check",
+      sql`${table.workspaceId} = 'r:' || ${table.id}::text`,
+    ),
+    check("reader_accounts_session_version_check", sql`${table.sessionVersion} >= 1`),
+  ],
+);
+
+/**
+ * Fixed-window counters for sign-in, sign-up and recovery limits (drizzle/0006).
+ * `bucket` is an HMAC of the subject, never a raw IP address or username.
+ */
+export const authRateLimits = pgTable(
+  "auth_rate_limits",
+  {
+    bucket: text("bucket").notNull(),
+    windowStart: timestamp("window_start", { withTimezone: true }).notNull(),
+    hits: integer("hits").notNull().default(0),
+  },
+  (table) => [
+    primaryKey({ name: "auth_rate_limits_pk", columns: [table.bucket, table.windowStart] }),
+    index("auth_rate_limits_window_idx").on(table.windowStart),
   ],
 );
 

@@ -7,7 +7,7 @@ import {
   loadBounRoadmap,
 } from "@/lib/content/series-boun";
 import { SeriesLanding } from "@/components/series/series-landing";
-import { requireSessionUser } from "@/lib/auth/session-user";
+import { requireCollectionAccess } from "@/lib/auth/session-user";
 
 /**
  * Renders per request: the page resolves the signed-in account and scopes reader
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BounPage() {
-  const user = await requireSessionUser();
+  const user = await requireCollectionAccess("boun", "/boun");
   return (
     <SeriesLanding
       seriesId="boun"

@@ -33,22 +33,45 @@ import {
   writeReaderData,
 } from "./storage";
 import { requestReaderSync, requestSeriesReset } from "./sync-client";
+import { isLocalTrackingEnabled } from "./local-tracking";
 
 const SAVE_THROTTLE_MS = 250;
 const PLACEHOLDER_DEVICE_ID = "00000000-0000-4000-8000-000000000000";
 
-export type SyncStatus = "idle" | "syncing" | "pending" | "offline" | "error" | "unavailable";
+/**
+ * `account`: the signed-in reader's state, synced through `/api/reader-sync`.
+ * `local`: a visitor without an account. The same reader, but the state stays in this
+ * browser — no request ever leaves for the server, and nothing is queued for one.
+ */
+export type ReaderDataMode = "account" | "local";
+
+export type SyncStatus =
+  | "idle"
+  | "syncing"
+  | "pending"
+  | "offline"
+  | "error"
+  | "unavailable"
+  /** Local mode: nothing to sync, by design. */
+  | "local";
 
 export type ReaderDataContextValue = {
   ready: boolean;
   storageAvailable: boolean;
+  mode: ReaderDataMode;
+  /** Local mode only: whether the visitor lets this browser keep their reading. */
+  keepsLocalReading: boolean;
   data: ReaderData;
   progress: ReaderProgress;
   syncStatus: SyncStatus;
   /** The account's latest progress reset this device has applied; rises when one lands. */
   resetVersion: number;
   resetVersionOf: (articleId: string) => number;
-  resetSeries: (seriesId: SeriesId) => Promise<void>;
+  /**
+   * Starts a series over. An account asks the server, which knows the series' articles;
+   * local mode resets them here, so it needs `articleIds`.
+   */
+  resetSeries: (seriesId: SeriesId, articleIds?: string[]) => Promise<void>;
   entryOf: (articleId: string) => ArticleProgress;
   /** The stored record, including the resolvable reading anchor the shell restores. */
   progressOf: (articleId: string) => ProgressRecord | null;
@@ -169,16 +192,22 @@ function holdsNoPriorProgress(data: ReaderData): boolean {
 export function ReaderDataProvider({
   children,
   workspaceId,
+  mode = "account",
 }: {
   children: ReactNode;
   workspaceId: string;
+  mode?: ReaderDataMode;
 }) {
+  const localOnly = mode === "local";
   const [data, setData] = useState<ReaderData>(() =>
     emptyReaderData(workspaceId, PLACEHOLDER_DEVICE_ID),
   );
   const [ready, setReady] = useState(false);
   const [storageAvailable, setStorageAvailable] = useState(true);
-  const [syncStatus, setSyncStatus] = useState<SyncStatus>("idle");
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>(localOnly ? "local" : "idle");
+  // Local mode with the visitor's "keep my reading" switch off: everything stays in memory.
+  const [keepsLocalReading, setKeepsLocalReading] = useState(true);
+  const storeRef = useRef(true);
   const dataRef = useRef(data);
   dataRef.current = data;
   const syncInFlightRef = useRef(false);
@@ -192,30 +221,41 @@ export function ReaderDataProvider({
   // The article open on this page, so a reset learned mid-visit can record it again.
   const openArticleRef = useRef<string | null>(null);
 
-  const persist = useCallback((next: ReaderData, immediate = true) => {
-    dataRef.current = next;
-    setData(next);
-    if (immediate) {
-      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-      saveTimerRef.current = null;
-      lastWriteRef.current = Date.now();
-      writeReaderData(next);
-      return;
-    }
-    const delay = Math.max(0, SAVE_THROTTLE_MS - (Date.now() - lastWriteRef.current));
-    if (delay === 0) {
-      lastWriteRef.current = Date.now();
-      writeReaderData(next);
-    } else if (!saveTimerRef.current) {
-      saveTimerRef.current = setTimeout(() => {
-        saveTimerRef.current = null;
-        lastWriteRef.current = Date.now();
-        writeReaderData(dataRef.current);
-      }, delay);
-    }
+  /** The one way to the durable copy, so local mode's switch holds everywhere. */
+  const store = useCallback((next: ReaderData) => {
+    if (storeRef.current) writeReaderData(next);
   }, []);
 
+  const persist = useCallback(
+    (incoming: ReaderData, immediate = true) => {
+      // Local mode never syncs, so a queued mutation would only ever grow.
+      const next = localOnly && incoming.outbox.length > 0 ? { ...incoming, outbox: [] } : incoming;
+      dataRef.current = next;
+      setData(next);
+      if (immediate) {
+        if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+        saveTimerRef.current = null;
+        lastWriteRef.current = Date.now();
+        store(next);
+        return;
+      }
+      const delay = Math.max(0, SAVE_THROTTLE_MS - (Date.now() - lastWriteRef.current));
+      if (delay === 0) {
+        lastWriteRef.current = Date.now();
+        store(next);
+      } else if (!saveTimerRef.current) {
+        saveTimerRef.current = setTimeout(() => {
+          saveTimerRef.current = null;
+          lastWriteRef.current = Date.now();
+          store(dataRef.current);
+        }, delay);
+      }
+    },
+    [localOnly, store],
+  );
+
   const syncNow = useCallback(async () => {
+    if (localOnly) return;
     if (!ready || syncInFlightRef.current || !mountedRef.current) return;
     if (typeof navigator !== "undefined" && !navigator.onLine) {
       setSyncStatus("offline");
@@ -264,22 +304,26 @@ export function ReaderDataProvider({
     } finally {
       syncInFlightRef.current = false;
     }
-  }, [persist, ready, workspaceId]);
+  }, [localOnly, persist, ready, workspaceId]);
 
   const scheduleSync = useCallback(() => {
+    if (localOnly) return;
     setSyncStatus((current) => (current === "syncing" ? current : "pending"));
     queueMicrotask(() => void syncNow());
-  }, [syncNow]);
+  }, [localOnly, syncNow]);
 
   useEffect(() => {
     setReady(false);
-    const stored = readReaderData(workspaceId);
+    const keep = !localOnly || isLocalTrackingEnabled();
+    storeRef.current = keep;
+    setKeepsLocalReading(keep);
+    const stored = keep ? readReaderData(workspaceId) : emptyReaderData(workspaceId);
     freshRef.current = holdsNoPriorProgress(stored);
     dataRef.current = stored;
     setData(stored);
-    setStorageAvailable(isReaderDataStorageAvailable());
+    setStorageAvailable(keep && isReaderDataStorageAvailable());
     setReady(true);
-  }, [workspaceId]);
+  }, [localOnly, workspaceId]);
 
   useEffect(() => {
     if (ready) void syncNow();
@@ -289,7 +333,7 @@ export function ReaderDataProvider({
     function onStorage(event: StorageEvent) {
       if (event.key !== readerDataStorageKey(workspaceId)) return;
       const incoming = parseReaderData(event.newValue, workspaceId);
-      if (incoming) {
+      if (incoming && storeRef.current) {
         const next = mergeStoredReaderData(dataRef.current, incoming);
         freshRef.current = false;
         dataRef.current = next;
@@ -304,7 +348,7 @@ export function ReaderDataProvider({
                 ?.resetVersion ?? 0),
           )
         )
-          writeReaderData(next);
+          store(next);
       }
     }
     function onOnline() {
@@ -321,16 +365,16 @@ export function ReaderDataProvider({
       window.removeEventListener("online", onOnline);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [syncNow, workspaceId]);
+  }, [store, syncNow, workspaceId]);
 
   useEffect(() => {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-      writeReaderData(dataRef.current);
+      store(dataRef.current);
     };
-  }, []);
+  }, [store]);
 
   const mutateProgress = useCallback(
     (record: ProgressRecord, immediate = false, currentArticleId?: string) => {
@@ -570,14 +614,25 @@ export function ReaderDataProvider({
   );
 
   const resetSeries = useCallback(
-    async (seriesId: SeriesId) => {
+    async (seriesId: SeriesId, articleIds?: string[]) => {
+      if (localOnly) {
+        if (!articleIds) throw new Error("local_reset_needs_article_ids");
+        const current = dataRef.current;
+        // No server hands out epochs here; any version above every one applied will do.
+        const applied = Math.max(
+          current.resetVersion,
+          ...current.seriesResets.map((reset) => reset.resetVersion),
+        );
+        persist(applySeriesReset(current, { seriesId, resetVersion: applied + 1, articleIds }));
+        return;
+      }
       const response = await requestSeriesReset(seriesId);
       if (!mountedRef.current) return;
       freshRef.current = false;
       persist(applySeriesReset(dataRef.current, response.reset));
       finishLegacyMigration(workspaceId);
     },
-    [persist, workspaceId],
+    [localOnly, persist, workspaceId],
   );
 
   const value = useMemo<ReaderDataContextValue>(() => {
@@ -605,6 +660,8 @@ export function ReaderDataProvider({
     return {
       ready,
       storageAvailable,
+      mode,
+      keepsLocalReading,
       data,
       progress,
       resetVersion: data.resetVersion,
@@ -641,6 +698,8 @@ export function ReaderDataProvider({
   }, [
     ready,
     storageAvailable,
+    mode,
+    keepsLocalReading,
     data,
     syncStatus,
     setCurrentArticle,
@@ -662,4 +721,9 @@ export function useReaderData(): ReaderDataContextValue {
   const context = useContext(ReaderDataContext);
   if (!context) throw new Error("useReaderData, ReaderDataProvider içinde kullanılmalı");
   return context;
+}
+
+/** For controls that also render outside a provider: `account` when there is none. */
+export function useReaderDataMode(): ReaderDataMode {
+  return useContext(ReaderDataContext)?.mode ?? "account";
 }

@@ -116,10 +116,32 @@ function isUniqueViolation(error: unknown): boolean {
  * per user without touching any existing row. The owner keeps the literal `owner`
  * workspace it has always had.
  */
+/**
+ * A self-registered reader (`reader_accounts`) may already hold the name. The two
+ * tables cannot share a unique index, so this is checked here; sign-in looks in
+ * `users` first, so even a racing duplicate could never shadow an owner-created
+ * account. Before drizzle/0006 has run the table is absent, and nothing can collide.
+ */
+async function readerHoldsUsername(sql: SqlClient, username: string): Promise<boolean> {
+  try {
+    const rows = (await sql.query(`SELECT 1 FROM reader_accounts WHERE username = $1`, [
+      username,
+    ])) as unknown[];
+    return rows.length > 0;
+  } catch (error) {
+    const code =
+      (error as { code?: unknown } | null)?.code ??
+      (error as { sourceError?: { code?: unknown } } | null)?.sourceError?.code;
+    if (code === "42P01") return false;
+    throw error;
+  }
+}
+
 export async function createStandardUser(
   sql: SqlClient,
   input: { username: string; password: string; createdBy: string | null },
 ): Promise<ReaderUser> {
+  if (await readerHoldsUsername(sql, input.username)) throw new DuplicateUsernameError();
   const id = randomUUID();
   const passwordHash = await hashPassword(input.password);
   // The synthetic no-database owner has a non-uuid id; record no author rather than

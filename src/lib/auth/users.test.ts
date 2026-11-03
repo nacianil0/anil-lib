@@ -15,9 +15,16 @@ type Call = { text: string; params: unknown[] };
 const calls: Call[] = [];
 let nextRows: Record<string, unknown>[] = [];
 let nextError: unknown = null;
+/** Fails only the statement whose text matches, so a check before it can still run. */
+let failWhen: { pattern: RegExp; error: unknown } | null = null;
 
 const queryMock = vi.fn(async (text: string, params: unknown[] = []) => {
   calls.push({ text, params });
+  if (failWhen && failWhen.pattern.test(text)) {
+    const { error } = failWhen;
+    failWhen = null;
+    throw error;
+  }
   if (nextError) {
     const error = nextError;
     nextError = null;
@@ -34,6 +41,7 @@ beforeEach(() => {
   calls.length = 0;
   nextRows = [];
   nextError = null;
+  failWhen = null;
   queryMock.mockClear();
 });
 
@@ -62,7 +70,7 @@ describe("createStandardUser", () => {
     expect(user.workspaceId).toBe(user.id);
     expect(user.lastLoginAt).toBeNull();
 
-    const [insert] = calls;
+    const insert = calls.find((call) => call.text.includes("INSERT INTO users"))!;
     // No RETURNING: the driver's INSERT result shape is never relied upon.
     expect(insert.text).not.toContain("RETURNING");
     expect(insert.params[1]).toBe("reader");
@@ -81,7 +89,7 @@ describe("createStandardUser", () => {
       password: "abcd",
       createdBy: OWNER_ID,
     });
-    expect(calls[0].params[4]).toBe(OWNER_ID);
+    expect(calls.find((call) => call.text.includes("INSERT INTO users"))!.params[4]).toBe(OWNER_ID);
   });
 
   it("stores no author when the caller has the synthetic no-database id", async () => {
@@ -91,7 +99,22 @@ describe("createStandardUser", () => {
       createdBy: "owner",
     });
     // "owner" is not a uuid; sending it would fail the ::uuid cast.
-    expect(calls[0].params[4]).toBeNull();
+    expect(calls.find((call) => call.text.includes("INSERT INTO users"))!.params[4]).toBeNull();
+  });
+
+  it("refuses a name a self-registered reader already holds, before inserting", async () => {
+    nextRows = [{ "?column?": 1 }];
+    await expect(
+      createStandardUser(sql, { username: "reader", password: "abcd", createdBy: OWNER_ID }),
+    ).rejects.toBeInstanceOf(DuplicateUsernameError);
+    expect(calls[0].text).toContain("FROM reader_accounts");
+    expect(calls.some((call) => call.text.includes("INSERT INTO users"))).toBe(false);
+  });
+
+  it("treats a missing reader table (before migration 0006) as no collision", async () => {
+    failWhen = { pattern: /FROM reader_accounts/, error: { code: "42P01" } };
+    await createStandardUser(sql, { username: "reader", password: "abcd", createdBy: OWNER_ID });
+    expect(calls.some((call) => call.text.includes("INSERT INTO users"))).toBe(true);
   });
 
   it.each([
@@ -99,14 +122,17 @@ describe("createStandardUser", () => {
     ["a wrapped code", { sourceError: { code: "23505" } }],
     ["a named constraint", { constraint: "users_username_unique" }],
   ])("maps a unique violation (%s) to DuplicateUsernameError", async (_label, error) => {
-    nextError = error;
+    failWhen = { pattern: /INSERT INTO users/, error };
     await expect(
       createStandardUser(sql, { username: "reader", password: "abcd", createdBy: OWNER_ID }),
     ).rejects.toBeInstanceOf(DuplicateUsernameError);
   });
 
   it("rethrows an unrelated database error untouched", async () => {
-    nextError = { code: "42P01", message: 'relation "users" does not exist' };
+    failWhen = {
+      pattern: /INSERT INTO users/,
+      error: { code: "42P01", message: 'relation "users" does not exist' },
+    };
     await expect(
       createStandardUser(sql, { username: "reader", password: "abcd", createdBy: OWNER_ID }),
     ).rejects.toMatchObject({ code: "42P01" });

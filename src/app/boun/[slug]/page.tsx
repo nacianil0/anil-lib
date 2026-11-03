@@ -12,7 +12,8 @@ import {
 } from "@/lib/content/series-boun";
 import { outlinePhases } from "@/lib/content/series-progress";
 import { ReaderShell } from "@/components/reader/reader-shell";
-import { requireSessionUser } from "@/lib/auth/session-user";
+import { canRead } from "@/lib/auth/access";
+import { getSessionUser, requireCollectionAccess } from "@/lib/auth/session-user";
 
 /**
  * Renders per request: the page resolves the signed-in account and scopes reader
@@ -32,6 +33,10 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  // Metadata renders even when the page itself answers 404, so it checks access too:
+  // a title must not tell a reader without access what the collection contains.
+  const viewer = await getSessionUser();
+  if (!viewer || !canRead(viewer.role, "boun")) return { title: "Bölüm bulunamadı" };
   const article = getBounArticleBySlug(slug);
   if (!article) return { title: "Bölüm bulunamadı" };
   return {
@@ -46,7 +51,7 @@ export default async function BounArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const user = await requireSessionUser();
+  const user = await requireCollectionAccess("boun", `/boun/${slug}`);
   const rendered = await renderBounArticleBySlug(slug);
   if (!rendered) notFound();
 

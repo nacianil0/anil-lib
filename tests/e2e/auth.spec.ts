@@ -37,10 +37,20 @@ test.describe("password gate", () => {
 
   test("login page renders with the expected elements", async ({ page }) => {
     await page.goto("/login");
-    await expect(page.locator("h1")).toContainText("Okuma Odası");
+    await expect(page.locator("h1")).toContainText("Giriş yap");
     await expect(page.locator('input[name="username"]')).toBeVisible();
     await expect(page.locator('input[name="password"]')).toBeVisible();
-    await expect(page.locator('button[type="submit"]')).toContainText("Kilidi aç");
+    // Unticked by default: a session that outlives the browser is the reader's explicit choice.
+    await expect(page.getByLabel(/Beni hatırla/)).not.toBeChecked();
+    await expect(page.locator('button[type="submit"]')).toContainText("Giriş yap");
+    await expect(page.getByRole("link", { name: /Ücretsiz hesap aç/ })).toHaveAttribute(
+      "href",
+      "/kayit",
+    );
+    await expect(page.getByRole("link", { name: /Kurtarma koduyla gir/ })).toHaveAttribute(
+      "href",
+      "/hesap-kurtar",
+    );
   });
 
   test("wrong password shows a generic error and does not set a cookie", async ({ page }) => {
@@ -74,6 +84,26 @@ test.describe("password gate", () => {
 
     const jsAccess = await page.evaluate(() => document.cookie);
     expect(jsAccess).not.toContain("anil_lib_auth");
+
+    // Without "Beni hatırla" it is a browser-session cookie: no expiry of its own.
+    const cookie = (await page.context().cookies()).find((c) => c.name === "anil_lib_auth");
+    expect(cookie?.httpOnly).toBe(true);
+    expect(cookie?.sameSite).toBe("Lax");
+    expect(cookie?.expires).toBe(-1);
+  });
+
+  test("ticking Beni hatırla sets a seven-day cookie", async ({ page }) => {
+    await page.goto("/login?next=/");
+    await page.locator('input[name="username"]').fill(TEST_USERNAME);
+    await page.locator('input[name="password"]').fill(TEST_PASSWORD);
+    await page.getByLabel(/Beni hatırla/).check();
+    await page.locator('button[type="submit"]').click();
+    await page.waitForURL((url) => url.pathname === "/");
+
+    const cookie = (await page.context().cookies()).find((c) => c.name === "anil_lib_auth");
+    const days = ((cookie?.expires ?? 0) * 1000 - Date.now()) / 86_400_000;
+    expect(days).toBeGreaterThan(6.9);
+    expect(days).toBeLessThanOrEqual(7.01);
   });
 
   test("the username is accepted case-insensitively and with surrounding space", async ({
@@ -101,13 +131,19 @@ test.describe("password gate", () => {
     expect(cookies.find((c) => c.name === "anil_lib_auth")).toBeUndefined();
   });
 
-  test("root dashboard preserves through login", async ({ page }) => {
+  test("the root is the public front page without a session and the dashboard with one", async ({
+    page,
+  }) => {
     await page.goto("/");
-    const url = new URL(page.url());
-    if (url.pathname === "/login") {
-      await loginWith(page, TEST_USERNAME, TEST_PASSWORD);
-      await page.waitForURL((nextUrl) => nextUrl.pathname === "/");
-    }
+    expect(new URL(page.url()).pathname).toBe("/");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(
+      "Yapay zekâyı sıfırdan, kaynağıyla okumak.",
+    );
+    await expect(page.getByRole("heading", { name: "Kaldığım yerler" })).toHaveCount(0);
+
+    await page.goto("/login?next=/");
+    await loginWith(page, TEST_USERNAME, TEST_PASSWORD);
+    await page.waitForURL((nextUrl) => nextUrl.pathname === "/");
     await expect(page.getByRole("heading", { name: "Kaldığım yerler" })).toBeVisible();
   });
 });

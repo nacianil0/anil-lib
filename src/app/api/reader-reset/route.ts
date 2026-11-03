@@ -3,7 +3,10 @@ import { authorizeReaderRequest } from "@/lib/auth/require-reader-session";
 import { getSessionUser } from "@/lib/auth/session-user";
 import { getDatabaseClient } from "@/lib/db/client";
 import { seriesResetRequestSchema } from "@/lib/reader-data/series-reset";
-import { resetSeriesReadingProgress } from "@/lib/reader-data/server/reset-service";
+import {
+  resetSeriesReadingProgress,
+  SeriesResetNotAllowedError,
+} from "@/lib/reader-data/server/reset-service";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -60,6 +63,9 @@ export async function POST(request: NextRequest) {
     });
     return NextResponse.json(result, { headers: NO_STORE });
   } catch (error) {
+    if (error instanceof SeriesResetNotAllowedError) {
+      return NextResponse.json({ error: "forbidden" }, { status: 403, headers: NO_STORE });
+    }
     console.error("[reader-reset] database operation failed", error);
     return NextResponse.json({ error: "reset_unavailable" }, { status: 503, headers: NO_STORE });
   }

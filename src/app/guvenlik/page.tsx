@@ -7,7 +7,7 @@ import {
   loadGuvenlikRoadmap,
 } from "@/lib/content/series-guvenlik";
 import { SeriesLanding } from "@/components/series/series-landing";
-import { requireSessionUser } from "@/lib/auth/session-user";
+import { requireCollectionAccess } from "@/lib/auth/session-user";
 
 /**
  * Renders per request: the page resolves the signed-in account and scopes reader
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function GuvenlikPage() {
-  const user = await requireSessionUser();
+  const user = await requireCollectionAccess("guvenlik", "/guvenlik");
   return (
     <SeriesLanding
       seriesId="guvenlik"

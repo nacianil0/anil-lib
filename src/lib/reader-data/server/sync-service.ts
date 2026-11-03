@@ -31,8 +31,9 @@ const MAX_FUTURE_SKEW_MS = 5 * 60 * 1000;
 function validArticleIds(
   articlesBySeries: Record<SeriesId, string[]>,
   allowArchive: boolean,
+  seriesScope: readonly SeriesId[] = SERIES_IDS,
 ): Set<string> {
-  const ids = SERIES_IDS.flatMap((seriesId) => articlesBySeries[seriesId]);
+  const ids = seriesScope.flatMap((seriesId) => articlesBySeries[seriesId]);
   if (allowArchive) {
     ids.push(...loadCatalog().articles.map((article) => article.articleId));
   }
@@ -286,13 +287,18 @@ export async function synchronizeReaderData(
   operations: SyncMutation[],
   options: {
     allowArchive: boolean;
+    /**
+     * Series whose articles this workspace may record. Every series by default; a
+     * self-registered reader passes only the ones it may read (`lib/auth/access.ts`).
+     */
+    seriesScope?: readonly SeriesId[];
     resetVersion: number | null;
     seriesResetVersions?: Partial<Record<SeriesId, number>>;
   },
 ): Promise<SyncResponse> {
   const now = Date.now();
   const articlesBySeries = seriesArticleIds();
-  const articleIds = validArticleIds(articlesBySeries, options.allowArchive);
+  const articleIds = validArticleIds(articlesBySeries, options.allowArchive, options.seriesScope);
   const articleSeries = new Map<string, SeriesId>();
   for (const seriesId of SERIES_IDS) {
     for (const articleId of articlesBySeries[seriesId]) articleSeries.set(articleId, seriesId);

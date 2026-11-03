@@ -93,6 +93,8 @@ export const UI = {
   syncOffline: "Çevrimdışı",
   syncError: "Senkron başarısız",
   retrySync: "Senkronu yeniden dene",
+  localReadingKept: "Hesapsız okuyorsun; ilerlemen yalnızca bu tarayıcıda saklanıyor",
+  localReadingOff: "Hesapsız okuyorsun; ilerlemeni kaydetmeyi kapattın",
   textSize: "Metin boyutu",
   lineSpacing: "Satır aralığı",
   paragraphSpacing: "Paragraf aralığı",

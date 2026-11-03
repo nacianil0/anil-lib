@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { AccessRole } from "@/lib/auth/access";
 
 /** Accounts are keyed by the workspace column every reader table is already partitioned by. */
 export const OWNER_WORKSPACE_ID = "owner";
@@ -12,7 +13,11 @@ export const LOCAL_OWNER_USER_ID = "owner";
 
 export const DEFAULT_OWNER_USERNAME = "anil";
 
-export type UserRole = "owner" | "user";
+/**
+ * `owner` and `user` live in `users`; `reader` is a self-registered account in
+ * `reader_accounts` (see `reader-accounts.ts`). What each may read: `access.ts`.
+ */
+export type UserRole = AccessRole;
 export type HashScheme = "scrypt" | "env-sha256";
 
 /** Public shape. Never carries a password hash — see `users.ts`. */

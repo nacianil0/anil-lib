@@ -4,7 +4,11 @@ import type { ReactNode } from "react";
 import type { ReadingStatus } from "@/lib/content/types";
 import type { ArticleProgress, ReaderProgress } from "./schema";
 import type { ReadingAnchor } from "@/lib/reader-data/schema";
-import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
+import {
+  ReaderDataProvider,
+  useReaderData,
+  type ReaderDataMode,
+} from "@/lib/reader-data/use-reader-data";
 
 export type ProgressContextValue = {
   ready: boolean;
@@ -29,11 +33,17 @@ export type ProgressContextValue = {
 export function ReaderProgressProvider({
   children,
   workspaceId,
+  mode,
 }: {
   children: ReactNode;
   workspaceId: string;
+  mode?: ReaderDataMode;
 }) {
-  return <ReaderDataProvider workspaceId={workspaceId}>{children}</ReaderDataProvider>;
+  return (
+    <ReaderDataProvider workspaceId={workspaceId} mode={mode}>
+      {children}
+    </ReaderDataProvider>
+  );
 }
 
 export function useReaderProgress(): ProgressContextValue {

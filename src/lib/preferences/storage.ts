@@ -64,6 +64,10 @@ export function readPreferences(): ReaderPreferences {
   const legacyTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
   const prefs: ReaderPreferences = { ...DEFAULT_PREFERENCES };
 
+  // Nothing stored and nothing to migrate: the defaults apply without writing them.
+  // Settings reach storage only once the reader changes one (see /gizlilik).
+  if (legacyTheme === null) return prefs;
+
   if (legacyTheme === "light" || legacyTheme === "dark" || legacyTheme === "system") {
     prefs.theme = legacyTheme;
   }

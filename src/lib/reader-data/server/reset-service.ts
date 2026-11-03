@@ -1,5 +1,6 @@
 import "server-only";
 
+import { canRead } from "@/lib/auth/access";
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import type { ReaderUser } from "@/lib/auth/user-schema";
 import { seriesCatalog } from "@/lib/reader-data/server/series-catalogs";
@@ -50,9 +51,11 @@ export async function resetSeriesReadingProgress(
 ): Promise<SeriesResetResult> {
   if (!actor) throw new SeriesResetNotAllowedError();
   const validatedSeriesId = seriesIdSchema.parse(seriesId);
+  if (!canRead(actor.role, validatedSeriesId)) throw new SeriesResetNotAllowedError();
   const catalog = seriesCatalog(validatedSeriesId);
   const articleIds = catalog.articles.map((article) => article.articleId);
-  const resetBy = UUID_PATTERN.test(actor.id) ? actor.id : null;
+  // `reset_by` references `users`; a self-registered reader is not in that table.
+  const resetBy = actor.role !== "reader" && UUID_PATTERN.test(actor.id) ? actor.id : null;
   const results = (await sql.transaction([
     sql.query(`LOCK TABLE reading_progress IN SHARE ROW EXCLUSIVE MODE`),
     sql.query(
