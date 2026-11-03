@@ -190,17 +190,16 @@ export const bounFrontmatterSchema = makeFrontmatterSchema(bounCategorySchema);
 export const guvenlikCatalogSchema = makeCatalogSchema(guvenlikCategorySchema);
 export const guvenlikFrontmatterSchema = makeFrontmatterSchema(guvenlikCategorySchema);
 
-const anyCatalogArticleSchema = makeCatalogArticleSchema(allCategorySchema);
-const anyCatalogSchema = makeCatalogSchema(allCategorySchema);
-const anyFrontmatterSchema = makeFrontmatterSchema(allCategorySchema);
-
 /**
  * Series-agnostic shapes. Every per-series schema above is a narrowing of these,
- * so a validated catalog of any series is assignable to `Catalog`.
+ * so a validated catalog of any series is assignable to `Catalog`. Only the types are
+ * needed, so they come straight from the factories rather than from schemas built at
+ * runtime for nothing.
  */
-export type CatalogArticle = z.infer<typeof anyCatalogArticleSchema>;
-export type Catalog = z.infer<typeof anyCatalogSchema>;
-export type Frontmatter = z.infer<typeof anyFrontmatterSchema>;
+type AllCategory = typeof allCategorySchema;
+export type CatalogArticle = z.infer<ReturnType<typeof makeCatalogArticleSchema<AllCategory>>>;
+export type Catalog = z.infer<ReturnType<typeof makeCatalogSchema<AllCategory>>>;
+export type Frontmatter = z.infer<ReturnType<typeof makeFrontmatterSchema<AllCategory>>>;
 
 /** Render a ZodError into a compact, human-readable, multi-line string. */
 export function formatZodError(error: z.ZodError): string {
