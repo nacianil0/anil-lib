@@ -1,10 +1,14 @@
 import { describe, expect, it } from "vitest";
 import {
   clampPage,
+  commandedPageHolds,
+  PAGE_COMMAND_GRACE_MS,
+  PAGE_COMMAND_MAX_MS,
   pageForLogicalOffset,
   pageForRatio,
   pageMetrics,
   ratioForPage,
+  SCROLL_IDLE_MS,
   scrollLeftForPage,
 } from "./pagination";
 
@@ -56,5 +60,46 @@ describe("reader pagination", () => {
     expect(scrollLeftForPage(2, metrics)).toBe(1632);
     expect(scrollLeftForPage(99, metrics)).toBe(2448);
     expect(pageForLogicalOffset(1700, metrics)).toBe(2);
+  });
+});
+
+describe("commanded page", () => {
+  const pastGrace = PAGE_COMMAND_GRACE_MS + 400;
+
+  it("holds while the scroll is still pages short of it, however long that takes", () => {
+    // The offset the e2e run caught the race at: the last of nine pages commanded and
+    // the smooth scroll still at 5754px on a 987px page step, past the old 600 ms
+    // window. Read at face value that is the seventh page, and a forward flick from
+    // there went back to the eighth.
+    const lagging = pageMetrics(8340, 936, 5754, 51);
+    expect(lagging.pageCount).toBe(9);
+    expect(lagging.pageIndex).toBe(6);
+    const landed = Math.abs(5754 - scrollLeftForPage(8, lagging)) <= 1;
+    expect(landed).toBe(false);
+    expect(commandedPageHolds({ landed, age: 1000, stillFor: 0 })).toBe(true);
+    expect(commandedPageHolds({ landed, age: 3000, stillFor: SCROLL_IDLE_MS - 1 })).toBe(true);
+  });
+
+  it("holds before the scroll has started moving", () => {
+    expect(commandedPageHolds({ landed: false, age: 0, stillFor: 0 })).toBe(true);
+    expect(
+      commandedPageHolds({ landed: false, age: PAGE_COMMAND_GRACE_MS - 1, stillFor: 500 }),
+    ).toBe(true);
+  });
+
+  it("lets go once the scroll lands on its page", () => {
+    expect(commandedPageHolds({ landed: true, age: 0, stillFor: 0 })).toBe(false);
+  });
+
+  it("lets go once rendered frames show the scroll stopped short of it", () => {
+    expect(commandedPageHolds({ landed: false, age: pastGrace, stillFor: SCROLL_IDLE_MS })).toBe(
+      false,
+    );
+  });
+
+  it("never holds past the ceiling", () => {
+    expect(commandedPageHolds({ landed: false, age: PAGE_COMMAND_MAX_MS, stillFor: 0 })).toBe(
+      false,
+    );
   });
 });

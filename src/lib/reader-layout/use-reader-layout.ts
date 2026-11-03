@@ -15,6 +15,7 @@ import {
 } from "./reading-anchor";
 import {
   clampPage,
+  commandedPageHolds,
   pageForLogicalOffset,
   pageForRatio,
   pageMetrics,
@@ -24,6 +25,41 @@ import {
 } from "./pagination";
 import type { PageTurn } from "./wheel-paging";
 
+/** What rendered frames have shown of the article's offset since the last page command. */
+type ScrollMotion = { left: number; movedAt: number; seenAt: number };
+
+/**
+ * Records what a rendered frame shows of the article: its offset, and whether that
+ * moved since the frame before. Only rendered frames count as looking: a machine too
+ * busy to render one has not shown a scroll stopping, however long it went quiet.
+ */
+function noteFrame(element: HTMLElement, motion: ScrollMotion): void {
+  const now = Date.now();
+  if (element.scrollLeft !== motion.left) {
+    motion.left = element.scrollLeft;
+    motion.movedAt = now;
+  }
+  motion.seenAt = now;
+}
+
+/** Whether a page command still decides the page; see `commandedPageHolds`. */
+function commandHolds(
+  element: HTMLElement,
+  metrics: PageMetrics,
+  target: { index: number; issuedAt: number },
+  motion: ScrollMotion,
+): boolean {
+  return commandedPageHolds({
+    // Landing is measured against the exact offset, not the rounded page: a smooth
+    // scroll rounds to its destination halfway through, and treating that as arrival
+    // would hand the next gesture a page the reader is still leaving.
+    landed: Math.abs(element.scrollLeft - scrollLeftForPage(target.index, metrics)) <= 1,
+    age: Date.now() - target.issuedAt,
+    // An offset that moved since the last frame was looked at is still on the move.
+    stillFor: element.scrollLeft === motion.left ? motion.seenAt - motion.movedAt : 0,
+  });
+}
+
 export type ReadingPosition = { ratio: number; headingId: string | null };
 type NavigableTarget = { getBoundingClientRect(): DOMRect };
 
@@ -31,12 +67,6 @@ type NavigableTarget = { getBoundingClientRect(): DOMRect };
 const READING_LINE_PX = TOOLBAR_OFFSET_PX + 4;
 /** Breathing room left above a restored position so it does not hug the toolbar. */
 const RESTORE_GAP_PX = 12;
-/**
- * How long a commanded page stays the authoritative one. A smooth scroll reports
- * offsets between two pages while it runs; taking those at face value would flicker
- * the page counter and let the next gesture turn from a page nobody is on.
- */
-const PAGE_SETTLE_MS = 600;
 
 function columnGapOf(element: HTMLElement): number {
   const value = Number.parseFloat(window.getComputedStyle(element).columnGap);
@@ -109,8 +139,15 @@ export function useReaderLayout({
    * paragraph afterwards without re-resolving any text.
    */
   const lastAnchorRef = useRef<ResolvedReadingAnchor | null>(null);
-  /** The page a scroll was commanded to, and the moment that command goes stale. */
-  const pageTargetRef = useRef<{ index: number; until: number } | null>(null);
+  /**
+   * The page a scroll was commanded to. A smooth scroll reports offsets between two
+   * pages while it runs; taking those at face value would flicker the page counter and
+   * let the next gesture turn from a page nobody is on. The command stays the
+   * authoritative page while that scroll is still on its way (`commandedPageHolds`).
+   */
+  const pageTargetRef = useRef<{ index: number; issuedAt: number } | null>(null);
+  /** Tells a scroll still running from one that stopped; see `noteFrame`. */
+  const scrollMotionRef = useRef<ScrollMotion>({ left: 0, movedAt: 0, seenAt: 0 });
   /** Mode + preference signature of the last layout that settled; see the reflow effect. */
   const settledKeyRef = useRef<string | null>(null);
   /**
@@ -189,7 +226,9 @@ export function useReaderLayout({
       if (behavior === "auto") element.scrollLeft = left;
       else element.scrollTo({ left, behavior });
       const index = clampPage(pageIndex, metrics.pageCount);
-      pageTargetRef.current = { index, until: Date.now() + PAGE_SETTLE_MS };
+      const issuedAt = Date.now();
+      pageTargetRef.current = { index, issuedAt };
+      scrollMotionRef.current = { left: element.scrollLeft, movedAt: issuedAt, seenAt: issuedAt };
       setPageState({ pageIndex: index, pageCount: metrics.pageCount });
       return index;
     },
@@ -211,12 +250,8 @@ export function useReaderLayout({
     const target = pageTargetRef.current;
     if (target) {
       // Ignore the intermediate offsets of a scroll that is still on its way to the
-      // page it was sent to; drop the command once it lands there or times out.
-      // Landing is measured against the exact offset, not the rounded page: a
-      // smooth scroll rounds to its destination halfway through, and treating that
-      // as arrival would hand the next gesture a page the reader is still leaving.
-      const landed = Math.abs(element.scrollLeft - scrollLeftForPage(target.index, metrics)) <= 1;
-      if (!landed && Date.now() < target.until) return;
+      // page it was sent to; drop the command once it lands there or stops short.
+      if (commandHolds(element, metrics, target, scrollMotionRef.current)) return;
       pageTargetRef.current = null;
     }
     setPageState((current) =>
@@ -345,7 +380,8 @@ export function useReaderLayout({
   /**
    * Moves one page in either direction. The base is the page that was last
    * commanded rather than the live scroll offset, so a second gesture arriving
-   * mid-animation still turns to the page after the one already on its way.
+   * mid-animation — however long the animation takes — still turns to the page
+   * after the one already on its way.
    */
   const turnPage = useCallback(
     (direction: PageTurn) => {
@@ -353,7 +389,10 @@ export function useReaderLayout({
       if (!element || effectiveMode !== "paged" || direction === 0) return;
       const metrics = metricsOf(element);
       const target = pageTargetRef.current;
-      const base = target && Date.now() < target.until ? target.index : metrics.pageIndex;
+      const base =
+        target && commandHolds(element, metrics, target, scrollMotionRef.current)
+          ? target.index
+          : metrics.pageIndex;
       // At a cover this re-seats the page it is already on rather than doing nothing:
       // a smooth scroll the reader cut short can leave the column a few pixels off,
       // and pushing against the edge is exactly when that should be put right.
@@ -366,12 +405,17 @@ export function useReaderLayout({
     const element = containerRef.current;
     if (!element || effectiveMode !== "paged") return;
     let frame = 0;
+    const watch = () => {
+      frame = 0;
+      noteFrame(element, scrollMotionRef.current);
+      updatePageState();
+      // A scroll that stops short of its page sends no further event, so while a
+      // command is out every frame is looked at, not just those a scroll event
+      // arrives in: the counter follows the scroll once frames show it standing still.
+      if (pageTargetRef.current) frame = window.requestAnimationFrame(watch);
+    };
     const update = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        updatePageState();
-      });
+      if (!frame) frame = window.requestAnimationFrame(watch);
     };
     const onResize = () => {
       // A resize reflows the columns, so the page a scroll was sent to no longer

@@ -64,3 +64,35 @@ export function pageForLogicalOffset(offset: number, metrics: PageMetrics): numb
   if (metrics.pageStep <= 0) return 0;
   return clampPage(Math.floor(Math.max(0, offset) / metrics.pageStep), metrics.pageCount);
 }
+
+/** A page command always holds this long: the smooth scroll may not have started moving yet. */
+export const PAGE_COMMAND_GRACE_MS = 600;
+/** A scroll rendered frames have shown standing still this long has stopped, wherever it is. */
+export const SCROLL_IDLE_MS = 200;
+/** Past this, a command never holds, whatever keeps the article scrolling. */
+export const PAGE_COMMAND_MAX_MS = 4000;
+
+/**
+ * Whether the page a scroll was last commanded to is still the page the reader is on.
+ *
+ * A smooth scroll reports offsets between pages while it runs, and how long it runs is
+ * not fixed: a long jump, or a busy machine, can take well over a second. Judging by a
+ * fixed time window let a gesture arriving after the window but before the scroll got
+ * there turn from a page nobody was on — at the last page, a forward flick moved the
+ * reader back one. So the command holds until the scroll lands on its page or is seen
+ * to stop short of it, with a short grace period before the first movement and a hard
+ * ceiling. Seen means over rendered frames, not elapsed time: a machine too busy to
+ * render has not shown the scroll stopping, however long it went quiet.
+ */
+export function commandedPageHolds(input: {
+  /** The article sits on the commanded page's offset. */
+  landed: boolean;
+  /** Time since the command was issued. */
+  age: number;
+  /** How long rendered frames have shown the article's offset not changing. */
+  stillFor: number;
+}): boolean {
+  const { landed, age, stillFor } = input;
+  if (landed || age >= PAGE_COMMAND_MAX_MS) return false;
+  return age < PAGE_COMMAND_GRACE_MS || stillFor < SCROLL_IDLE_MS;
+}
