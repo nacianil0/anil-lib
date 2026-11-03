@@ -52,9 +52,17 @@ a content directory `content/series-demo/` and a route such as `/demo`.
 **Content and docs**
 
 1. `content/series-demo/roadmap.json` — start from [`templates/series/roadmap.json`](templates/series/roadmap.json):
-   phases, then planned articles with `"status": "planlandi"`.
+   phases, then planned articles with `"status": "planlandi"`. Keep **one article per line**, as
+   in the template: `entegre-batch.cjs` rewrites that line when the article is published and
+   refuses ("kompakt satır bulunamadı") if the file was reformatted.
 2. `content/series-demo/articles/<category>/<slug>.md` — the first article, from
-   [`templates/series/article.md`](templates/series/article.md).
+   [`templates/series/article.md`](templates/series/article.md), and its figure in
+   `content/series-demo/assets/<slug>/` (start from
+   [`templates/series/first-figure.svg`](templates/series/first-figure.svg)). The content checker
+   applies the same structure to every series: the body opens with an H2, has at least one figure
+   that the prose names ("Şekil 1"), one to three `> **Kendini yokla:**` boxes (the label is set
+   per series in the checker), and `### Sırada ne var` right before `## Kaynakça`. The template
+   already passes these checks.
 3. `docs/seri-demo/SOZLESME.md`, `HANDOFF.md`, `TRIGGER.md` (and `YOL-HARITASI.md` once you plan in
    detail) — from [`templates/series/`](templates/series/).
 
@@ -74,14 +82,18 @@ a content directory `content/series-demo/` and a route such as `/demo`.
    it. If it should be public after launch, also extend `isPublicPath`.
 9. `src/lib/reader-data/series-reset.ts` — add the key to `SERIES_IDS`;
    `src/lib/reader-data/server/series-catalogs.ts` — map it to its catalog loader. Both are
-   `Record`s over the series keys, so the compiler points at anything you miss.
+   `Record`s over the series keys, so the compiler points at anything you miss. The test
+   `src/lib/reader-data/series-reset.test.ts` pins the list on purpose; add the key there too.
 10. A migration `drizzle/000N_demo_series_reset.sql` widening
     `reading_series_resets_series_check` (copy `drizzle/0005_guvenlik_series_reset.sql`), and the
     same list in `src/lib/db/schema.ts` (`src/lib/db/series-check.test.ts` compares them).
 11. `src/app/page.tsx` — a dashboard entry; `src/components/series/series-progress-reset.tsx` —
     its short label.
 12. `tools/series/*.cjs` — the key in `SERIES_DIRS` (`sync-series-hashes`, `entegre-batch`) and a
-    rule set in `check-series-content.cjs` (copy the `guvenlik` block and adjust).
+    rule set in `check-series-content.cjs` (copy the `guvenlik` block and adjust the word band and
+    the self-check label).
+13. Optional: owner statistics (`src/lib/stats/server/user-stats.ts` lists the series it reports
+    on) and the browser tests (`tests/e2e/`), if you want the new series covered there.
 
 **Validate**
 
@@ -141,5 +153,10 @@ diffs.
 ## Verified on a clean clone
 
 The steps in sections 1 and 3 were run on a fresh clone of this repository (2026-11-03,
-Windows, Node 24, pnpm 10.22). The record of that run — commands, outputs and what had to be
-adjusted — is in [docs/platform/ACIK-KAYNAK.md](platform/ACIK-KAYNAK.md).
+Windows, Node 24, pnpm 10.22): install, `pnpm check`, the content tools, the three local modes
+(open, closed, launched), and a series `demo` added by following section 3 step by step — its
+content tools, `pnpm check`, migration and pages all passed, and the existing series' content,
+catalogs and docs were unchanged (`git diff` empty). Three gaps that run found are fixed in this
+guide and the templates: the one-line roadmap layout, the article structure the checker requires,
+and the test that pins the series list. The record — commands, outputs and adjustments — is in
+[docs/platform/ACIK-KAYNAK.md](platform/ACIK-KAYNAK.md) (Turkish).

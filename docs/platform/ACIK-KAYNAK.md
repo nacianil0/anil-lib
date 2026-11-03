@@ -52,3 +52,20 @@ açık kaynak projeye dönüştür ve güvenli main entegrasyonunu tamamla" prom
 
 - 15:30 Başlangıç doğrulamaları ve tarama.
 - 15:40 Lansman anahtarı, migration koruması ve belgeler yazıldı. tsc 0, vitest 948/948, eslint 0.
+- 15:45 Temiz klon (`git clone --branch lansman/public-okuma`, ayrı klasör) kanıtı:
+  - `pnpm install --frozen-lockfile` 17 sn. Kodda yazara özel servis, adres ya da anahtar yok (grep boş).
+  - `pnpm check` çıkış 0 (948 test, derleme). İçerik araçları (`ai`, `guvenlik`, SVG, hash) "Sorun yok".
+  - (a) Ortam değişkeni yokken `pnpm dev`: bütün yollar 200 (sahip olarak açık).
+  - (b) Kapı açık, `PUBLIC_LAUNCH` yokken `next start`: `/`, `/seri`, yazı, `/kayit`, `/hesap-kurtar`, `/gizlilik`, `/sitemap.xml` → 307 `/login`. `robots.txt` `Disallow: /`. Girişte kayıt bağlantısı yok.
+  - (c) `PUBLIC_LAUNCH=1`: `/`, `/seri`, yazı, `/gizlilik`, `/kayit` 200. `/guvenlik`, `/boun`, `/read`, `/yonetim` → 307 `/login`. Sitemap 121 adres.
+- 15:55 Yeni seri `demo`, `docs/FORKING.md` §3 adım adım uygulandı (betik: scratchpad `oss/add_demo_series.py`). İlk denemede üç eksik çıktı; rehber ve şablonlar düzeltildi:
+  - `entegre-batch` `roadmap.json`'ı satır satır düzenliyor; yeniden biçimlendirilmiş dosyada "kompakt satır bulunamadı" verip durdu. Rehbere "yazı başına tek satır" kuralı eklendi.
+  - İçerik denetleyicisi her seride en az bir şekil (metinde "Şekil N" diye anılan), 1–3 "Kendini yokla" kutusu ve "Sırada ne var" bölümü istiyor. Şablon yazı buna göre yeniden yazıldı; `first-figure.svg` şablonu eklendi.
+  - `series-reset.test.ts` seri listesini bilerek sabitliyor. Rehbere adım olarak eklendi.
+- Düzeltmelerden sonra:
+  - Araçlar: `entegre-batch --write` katalog ve yol haritasını yazdı; hash, içerik ve SVG denetimleri "Sorun yok".
+  - `pnpm check` çıkış 0. Derlemede `/demo` ve `/demo/ilk-yazi` var.
+  - Dev'de `/demo` ve `/demo/ilk-yazi` 200 (başlık, şekil, kaynakça). Panel seriyi listeliyor; mevcut seri sayfaları 200.
+  - `git diff`: mevcut serilerin içeriği, katalogları ve belgeleri değişmedi.
+  - `0007` migration'ı PostgreSQL 17.5'te (PGlite) uygulandı; kısıt `demo`'yu kabul etti, bilinmeyen seriyi reddetti (23514).
+

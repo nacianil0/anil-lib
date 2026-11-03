@@ -246,3 +246,5 @@ Push yapılmadı, commit yapılmadı, deploy yapılmadı. Uygulama dağıtıma h
   - `eslint.config.mjs`: git dışı çıktı klasörleri (`artifacts/`, `dist/`, `build/`, `out/`, `.vercel/`, `.cache/`, `.pnpm-store/`) yok sayıldı; `**/*.cjs` için CommonJS ayarı eklendi (`require` serbest).
   - `src/lib/content/schema.ts`: yalnız tip için kurulan üç zod şeması kaldırıldı. Tipler fabrikalardan örnekleme ifadesiyle türetiliyor; eski ve yeni tiplerin birebir aynı olduğu geçici bir tip eşitliği denetimiyle kanıtlandı (yanlış eşleştirme hata verdi).
   - Sonuç: `eslint .` 147 → 0. `pnpm check` (tsc + lint + 943 test + build) çıkış 0. Commit yok.
+- 15:58 (açık kaynak işi, `docs/platform/ACIK-KAYNAK.md`) Lansman artık koddan da kapalı: `PUBLIC_LAUNCH=1` verilmedikçe site eski özel kütüphane gibi davranır. Kodun `main`'e girmesi siteyi açmaz; açmak için ortam değişkeni ve yeniden deploy gerekir (yukarıdaki adımlara ek: Vercel Production'a `PUBLIC_LAUNCH=1`). Önizleme derlemeleri artık migration çalıştırmaz (`MIGRATE_ON_PREVIEW=1` hariç).
+
