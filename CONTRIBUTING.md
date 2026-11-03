@@ -1,8 +1,8 @@
 # Contributing
 
 Thanks for looking. Two kinds of change land here — code and content — and they have different
-gates. Please read the [Licensing](README.md#licensing) section first: no license has been chosen
-yet, so the terms under which a contribution would be accepted are not settled. Opening an issue
+gates. Contributions are accepted under the repository's licenses: code under
+[MIT](LICENSE), article and figure content under [CC BY 4.0](LICENSE-CONTENT.md). Opening an issue
 before larger work is the safest start.
 
 ## Setup

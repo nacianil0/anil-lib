@@ -10,7 +10,7 @@ The series, the interface and the content tools' messages are in Turkish; identi
 code comments, this README and the [fork guide](docs/FORKING.md) are in English.
 
 > **Status:** private library, not yet publicly launched (see [Launch switch](#launch-switch)).
-> **License:** none chosen yet — see [Licensing](#licensing) before reusing anything.
+> **License:** code under [MIT](LICENSE); articles and figures under [CC BY 4.0](LICENSE-CONTENT.md). See [Licensing](#licensing).
 
 ## What is in here
 
@@ -181,10 +181,11 @@ pass the content tools, and article corrections follow the series contract.
 
 ## Licensing
 
-**No license has been chosen for this repository yet.** Until one is added, the default
-copyright applies: GitHub's terms let you view and fork it on GitHub, but grant no right to
-reuse, modify or redistribute the code or the articles elsewhere. Code and article content may
-end up under different licenses. Third-party material keeps its own terms: the articles quote
+- **Code** (everything outside `content/` and `docs/templates/`): [MIT License](LICENSE).
+- **Articles, catalogs, SVG figures and series templates** (`content/`, `docs/templates/`):
+  [CC BY 4.0](LICENSE-CONTENT.md). Credit "Anıl Lib" with a link to this repository.
+
+Third-party material keeps its own terms: the articles quote
 and cite external sources (see each *Kaynakça*); the fonts (Inter, Newsreader, JetBrains Mono),
 fetched from Google Fonts at build time by `next/font`, are under the SIL Open Font License 1.1;
 the direct npm dependencies are under MIT, ISC or Apache-2.0, and their transitive dependencies

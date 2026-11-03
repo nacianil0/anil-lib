@@ -5,10 +5,10 @@ with agent-driven runs. Every command here was run on a clean clone (see
 [Verified on a clean clone](#verified-on-a-clean-clone)); where the project has a limit, it is
 stated rather than papered over.
 
-> **License first.** No license has been chosen for this repository yet (see
-> [Licensing](../README.md#licensing)). GitHub's terms let you fork it on GitHub, but grant no
-> right to run, modify or deploy the code or the articles elsewhere until a license says so. The
-> guide describes how the project works; it is not a grant of rights.
+> **License.** The code is under the [MIT License](../LICENSE); the articles and figures are
+> under [CC BY 4.0](../LICENSE-CONTENT.md), so a fork that republishes them must credit the
+> source. Quoted third-party material keeps its own terms (see
+> [Licensing](../README.md#licensing)).
 
 ## 1. Run your fork locally
 
