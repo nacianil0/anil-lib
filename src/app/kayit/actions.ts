@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { clientIpFrom } from "@/lib/auth/client-ip";
 import { formTokenIsValid } from "@/lib/auth/form-token";
 import { getGateConfig, safeNextPath } from "@/lib/auth/password-gate";
@@ -65,7 +66,9 @@ export async function registerAction(
 async function register(formData: FormData): Promise<RegisterState> {
   const config = getGateConfig();
   const sql = getDatabaseClient();
-  if (!config || !sql) {
+  // Closed until launch: a server action is reachable through any path, so the page
+  // being unreachable is not enough.
+  if (!publicLaunchEnabled() || !config || !sql) {
     return { status: "error", message: "Hesap açma şu anda kullanılamıyor." };
   }
 

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   canRead,
   isPublicPath,
+  publicLaunchEnabled,
   isReaderWorkspace,
   LOCAL_WORKSPACE_ID,
   READER_WORKSPACE_PREFIX,
@@ -41,7 +42,7 @@ describe("canRead", () => {
   });
 });
 
-describe("isPublicPath", () => {
+describe("isPublicPath once launched", () => {
   it.each([
     "/",
     "/seri",
@@ -53,7 +54,7 @@ describe("isPublicPath", () => {
     "/robots.txt",
     "/sitemap.xml",
   ])("lets %s through without a session", (path) => {
-    expect(isPublicPath(path)).toBe(true);
+    expect(isPublicPath(path, true)).toBe(true);
   });
 
   it.each([
@@ -78,7 +79,7 @@ describe("isPublicPath", () => {
     "/kayit/x",
     "",
   ])("keeps %s behind the gate", (path) => {
-    expect(isPublicPath(path)).toBe(false);
+    expect(isPublicPath(path, true)).toBe(false);
   });
 });
 
@@ -90,5 +91,33 @@ describe("workspaces", () => {
     expect(isReaderWorkspace("owner")).toBe(false);
     expect(isReaderWorkspace("00000000-0000-4000-8000-000000000001")).toBe(false);
     expect(isReaderWorkspace(LOCAL_WORKSPACE_ID)).toBe(false);
+  });
+});
+
+describe("before the launch", () => {
+  it("is closed unless PUBLIC_LAUNCH is exactly 1", () => {
+    expect(publicLaunchEnabled({})).toBe(false);
+    expect(publicLaunchEnabled({ PUBLIC_LAUNCH: "" })).toBe(false);
+    expect(publicLaunchEnabled({ PUBLIC_LAUNCH: "true" })).toBe(false);
+    expect(publicLaunchEnabled({ PUBLIC_LAUNCH: "0" })).toBe(false);
+    expect(publicLaunchEnabled({ PUBLIC_LAUNCH: "1" })).toBe(true);
+  });
+
+  it("lets only the sign-in page and robots.txt through without a session", () => {
+    expect(isPublicPath("/login", false)).toBe(true);
+    expect(isPublicPath("/robots.txt", false)).toBe(true);
+    for (const path of [
+      "/",
+      "/seri",
+      "/seri/tahmin-makinesi-yapay-zekaya-ilk-bakis",
+      "/kayit",
+      "/hesap-kurtar",
+      "/gizlilik",
+      "/sitemap.xml",
+      "/guvenlik",
+      "/yonetim",
+    ]) {
+      expect(isPublicPath(path, false), path).toBe(false);
+    }
   });
 });

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getSeriesDescriptors, SERIES_BASE_PATH } from "@/lib/content/series";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { absoluteUrl } from "@/lib/site";
 
 /**
@@ -8,6 +9,7 @@ import { absoluteUrl } from "@/lib/site";
  * control either way: those pages answer with a login redirect or a 404 on their own.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (!publicLaunchEnabled()) return [];
   return [
     { url: absoluteUrl("/"), changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl(SERIES_BASE_PATH), changeFrequency: "weekly", priority: 0.9 },

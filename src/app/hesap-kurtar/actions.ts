@@ -1,6 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { clientIpFrom } from "@/lib/auth/client-ip";
 import { getGateConfig } from "@/lib/auth/password-gate";
 import { hashPassword } from "@/lib/auth/password";
@@ -42,7 +43,7 @@ export async function recoverAction(
 async function recover(formData: FormData): Promise<RecoverState> {
   const config = getGateConfig();
   const sql = getDatabaseClient();
-  if (!config || !sql) {
+  if (!publicLaunchEnabled() || !config || !sql) {
     return { status: "error", message: "Hesap kurtarma şu anda kullanılamıyor." };
   }
 

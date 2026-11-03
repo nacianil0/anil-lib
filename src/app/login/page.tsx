@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Lock } from "lucide-react";
 import { login } from "./actions";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { getGateConfig, safeNextPath } from "@/lib/auth/password-gate";
 
 type SearchParams = Promise<{
@@ -28,6 +29,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
   const error = firstParam(params.error);
   const notice = firstParam(params.notice);
   const isConfigured = Boolean(getGateConfig());
+  // Before the launch there is no sign-up and nothing to read without an account.
+  const launched = publicLaunchEnabled();
   const registerHref = next === "/" ? "/kayit" : `/kayit?${new URLSearchParams({ next })}`;
 
   return (
@@ -49,8 +52,9 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
             Giriş yap
           </h1>
           <p className="mt-3 font-sans text-sm leading-relaxed text-text-muted">
-            Hesabınla Güven Sınırı serisini de okursun ve ilerlemen cihazların arasında eşitlenir.
-            Yapay zekâ serisi hesapsız da açık.
+            {launched
+              ? "Hesabınla Güven Sınırı serisini de okursun ve ilerlemen cihazların arasında eşitlenir. Yapay zekâ serisi hesapsız da açık."
+              : "Okuma listesine erişmek için kullanıcı adını ve şifreni gir."}
           </p>
         </div>
 
@@ -155,17 +159,25 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
           </button>
         </form>
 
-        <nav aria-label="Hesap seçenekleri" className="mt-6 flex flex-col gap-2 font-sans text-sm">
-          <Link href={registerHref} className="text-accent underline-offset-4 hover:underline">
-            Hesabın yok mu? Ücretsiz hesap aç
-          </Link>
-          <Link href="/hesap-kurtar" className="text-text-muted underline-offset-4 hover:underline">
-            Parolanı mı unuttun? Kurtarma koduyla gir
-          </Link>
-          <Link href="/seri" className="text-text-muted underline-offset-4 hover:underline">
-            Hesapsız okumaya dön
-          </Link>
-        </nav>
+        {launched && (
+          <nav
+            aria-label="Hesap seçenekleri"
+            className="mt-6 flex flex-col gap-2 font-sans text-sm"
+          >
+            <Link href={registerHref} className="text-accent underline-offset-4 hover:underline">
+              Hesabın yok mu? Ücretsiz hesap aç
+            </Link>
+            <Link
+              href="/hesap-kurtar"
+              className="text-text-muted underline-offset-4 hover:underline"
+            >
+              Parolanı mı unuttun? Kurtarma koduyla gir
+            </Link>
+            <Link href="/seri" className="text-text-muted underline-offset-4 hover:underline">
+              Hesapsız okumaya dön
+            </Link>
+          </nav>
+        )}
       </div>
     </main>
   );

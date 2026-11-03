@@ -35,6 +35,9 @@ export default defineConfig({
     env: {
       SITE_PASSWORD_SHA256: TEST_PASSWORD_HASH,
       AUTH_COOKIE_SECRET: TEST_COOKIE_SECRET,
+      // The suite exercises the launched site (anonymous reading, sign-up); the closed,
+      // pre-launch default is covered by src/lib/auth/access.test.ts.
+      PUBLIC_LAUNCH: "1",
     },
   },
 });

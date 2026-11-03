@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isPublicPath } from "@/lib/auth/access";
+import { isPublicPath, publicLaunchEnabled } from "@/lib/auth/access";
 import {
   AUTH_COOKIE_NAME,
   getGateConfig,
@@ -11,12 +11,17 @@ import {
 const PUBLIC_FILE = /\.(?:avif|gif|ico|jpg|jpeg|png|svg|webp|woff2?)$/i;
 
 /**
- * Public pages (the AI series, the home page, sign-up and the policy page) pass
- * without a session; the page itself decides what an anonymous visitor sees. Every
- * other path — the other series, management, the reader APIs — still needs one.
+ * Once launched (`PUBLIC_LAUNCH=1`), public pages (the AI series, the home page,
+ * sign-up and the policy page) pass without a session; the page itself decides what an
+ * anonymous visitor sees. Before that only the sign-in page does. Every other path —
+ * the other series, management, the reader APIs — always needs a session.
  */
 function passesWithoutSession(pathname: string): boolean {
-  return isPublicPath(pathname) || pathname.startsWith("/_next/") || PUBLIC_FILE.test(pathname);
+  return (
+    isPublicPath(pathname, publicLaunchEnabled()) ||
+    pathname.startsWith("/_next/") ||
+    PUBLIC_FILE.test(pathname)
+  );
 }
 
 export async function middleware(request: NextRequest) {

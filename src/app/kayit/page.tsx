@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AccountShell } from "@/components/account/account-shell";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { issueFormToken } from "@/lib/auth/form-token";
 import { getGateConfig, safeNextPath } from "@/lib/auth/password-gate";
 import { getSessionUser } from "@/lib/auth/session-user";
@@ -28,7 +29,7 @@ export default async function RegisterPage({ searchParams }: { searchParams: Sea
   const signedIn = Boolean(await getSessionUser());
 
   const config = getGateConfig();
-  const available = Boolean(config && getDatabaseClient());
+  const available = Boolean(publicLaunchEnabled() && config && getDatabaseClient());
 
   return (
     <AccountShell

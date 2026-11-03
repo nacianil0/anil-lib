@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { absoluteUrl } from "@/lib/site";
 
 /**
@@ -7,6 +8,8 @@ import { absoluteUrl } from "@/lib/site";
  * request, never a way of hiding anything.
  */
 export default function robots(): MetadataRoute.Robots {
+  // Before the launch nothing is public, so nothing is worth crawling.
+  if (!publicLaunchEnabled()) return { rules: { userAgent: "*", disallow: "/" } };
   return {
     rules: {
       userAgent: "*",

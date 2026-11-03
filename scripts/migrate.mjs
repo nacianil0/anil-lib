@@ -68,6 +68,16 @@ async function main() {
     return;
   }
 
+  // A Vercel preview build must not change a database it may share with production:
+  // whether Preview has its own DATABASE_URL is a project setting this script cannot
+  // see. Previews skip migrations unless MIGRATE_ON_PREVIEW=1 says their database is
+  // their own (for example a per-preview Neon branch). Production and local runs
+  // (VERCEL_ENV unset) are unaffected.
+  if (process.env.VERCEL_ENV === "preview" && process.env.MIGRATE_ON_PREVIEW !== "1") {
+    log("Vercel preview: migration atlanıyor (MIGRATE_ON_PREVIEW=1 değil).");
+    return;
+  }
+
   const url = process.env.DATABASE_URL?.trim();
   if (!url) {
     // Local builds and previews without a database must still succeed; the app

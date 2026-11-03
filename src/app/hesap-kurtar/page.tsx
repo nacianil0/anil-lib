@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AccountShell } from "@/components/account/account-shell";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { getGateConfig } from "@/lib/auth/password-gate";
 import { getDatabaseClient } from "@/lib/db/client";
 import { RecoverForm } from "./recover-form";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function RecoverPage() {
-  const available = Boolean(getGateConfig() && getDatabaseClient());
+  const available = Boolean(publicLaunchEnabled() && getGateConfig() && getDatabaseClient());
   return (
     <AccountShell
       eyebrow="Parolanı mı unuttun?"

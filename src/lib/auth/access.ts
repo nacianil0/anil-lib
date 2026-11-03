@@ -51,7 +51,22 @@ export const LOCAL_WORKSPACE_ID = "local";
 
 const SLUG_SEGMENT = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
-/** Pages anyone may request without a session. Everything else stays behind the gate. */
+/**
+ * Deploying the code and opening the site to the public are separate decisions. Until
+ * `PUBLIC_LAUNCH=1` is set for an environment, the site behaves as it always did: every
+ * page but the sign-in asks for an account, and nobody can sign up. Closed by default,
+ * so a deploy without the setting can never open anything by accident.
+ */
+export function publicLaunchEnabled(
+  env: Record<string, string | undefined> = process.env,
+): boolean {
+  return env.PUBLIC_LAUNCH === "1";
+}
+
+/** Before the launch: the sign-in page, and robots.txt to keep crawlers out. */
+const PRE_LAUNCH_PUBLIC_PAGES = new Set(["/login", "/robots.txt"]);
+
+/** Pages anyone may request without a session once launched. Everything else stays behind the gate. */
 const PUBLIC_PAGES = new Set([
   "/",
   "/seri",
@@ -68,7 +83,8 @@ const PUBLIC_PAGES = new Set([
  * only — `/seri/<slug>` is public, `/seri/<slug>/anything` and `/serix` are not —
  * and the page itself still decides what an anonymous visitor sees.
  */
-export function isPublicPath(pathname: string): boolean {
+export function isPublicPath(pathname: string, launched: boolean): boolean {
+  if (!launched) return PRE_LAUNCH_PUBLIC_PAGES.has(pathname);
   if (PUBLIC_PAGES.has(pathname)) return true;
   if (pathname.startsWith("/seri/")) {
     return SLUG_SEGMENT.test(pathname.slice("/seri/".length));

@@ -39,8 +39,8 @@ yazılır.
   deploy (`vercel[bot]` kayıtları). Son deploy: `5d8d837`, 2026-11-02, success.
 - **Canlı erişim:**
   - `anil-lib.vercel.app` → `DEPLOYMENT_NOT_FOUND`. GitHub'daki homepage alanı eskimiş.
-  - Proje alan adları (`anil-lib-naci-anls-projects.vercel.app`, `-git-main-`, deployment URL'si) Vercel
-    SSO'ya 302 yönlendiriyor; yani Vercel Deployment Protection açık.
+  - Projenin Vercel alan adları (üretim takma adı, `main` dal adresi, deployment URL'si) Vercel SSO'ya
+    302 yönlendiriyor; yani Vercel Deployment Protection açık.
   - Özel alan adı kaydı bulunamadı. Vercel CLI yok, `.vercel` bağlantısı yok.
 - **Depo görünürlüğü:** GitHub deposu **public**. Uygulamanın kapalı tuttuğu her içerik (Boğaziçi serisi,
   arşiv, Güven Sınırı taslakları, `docs/`) GitHub'da okunabiliyor. Uygulama katmanındaki erişim politikası
@@ -149,7 +149,7 @@ Bu iş sırasında bulunup düzeltilen kusurlar:
 Push yapılmadı, commit yapılmadı, deploy yapılmadı. Uygulama dağıtıma hazır. Güvenli yayını engelleyen somut nedenler:
 
 1. **Production adresine anonim erişim Vercel'de kapalı.**
-   - `anil-lib-naci-anls-projects.vercel.app`, `-git-main-` adresi ve deployment URL'si Vercel SSO'ya 302 veriyor (Deployment Protection açık).
+   - Projenin Vercel üretim takma adı, `main` dal adresi ve deployment URL'si Vercel SSO'ya 302 veriyor (Deployment Protection açık).
    - `anil-lib.vercel.app` → `DEPLOYMENT_NOT_FOUND`; GitHub'daki homepage alanı eski.
    - `main`'e push yeni kodu yayımlar ama site yine korumanın arkasında kalır. Yayımlanan gerçek URL'den anonim smoke test bu yüzden mümkün değil. Korumayı atlatmak kapsam dışı; ayarı değiştirmek kullanıcının kararı.
 2. **Aydınlatma metninde veri sorumlusu yok.** `src/lib/site.ts` → `DATA_CONTROLLER = null`; `/gizlilik` bunu açıkça "henüz eklenmedi" diye gösteriyor. KVKK 2022/1358'de eksik aydınlatma metni yaptırım konusu oldu. Kişisel veri toplayan bir kaydı bu eksikle açmak yanlış olur.
