@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-03T12:11:48.082Z
-> Files: 188 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-03T13:25:09.558Z
+> Files: 205 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
 
@@ -124,6 +124,10 @@
 - `status5.py` — Run 5 peer-review status sweep for not-peer-reviewed works: Crossref bibliographic search (+ OpenAle (~1285 tok)
 - `yh7.txt` (~2288 tok)
 
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/factcheck/
+
+- `licscan.cjs` — Read-only: scan node_modules/.pnpm of the repo given as argv[2] for package licenses. (~317 tok)
+
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/e2e-db/
 
 - `access-matrix.db.spec.ts` — Database-backed access matrix against the real app (next dev) talking to a real (~6378 tok)
@@ -141,6 +145,17 @@
 - `prod-smoke.mjs` — Production-mode smoke: registers a reader through the real form, records every request (~641 tok)
 - `shots.mjs` — Screenshots of the launch pages for visual review. Usage: node shots.mjs <baseUrl> <outDir> (~467 tok)
 - `wolf_records.py` — Append the public-launch session's records to .wolf (cerebrum, buglog). Round-trip checked. (~2481 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/
+
+- `add_demo_series.py` — Every category a reader-facing article can carry, across all series. */", (~2129 tok)
+- `edit_flag.py` — Pages anyone may request without a session. Everything else stays behind the gate. (~1696 tok)
+- `fix_docs_b.py` — Apply the documentation fact-check findings (reviewer B). Exits on the first unmatched edit. (~5890 tok)
+- `fix_forking.py` (~1115 tok)
+- `fork_modes.sh` — Exercise the three local modes of a fresh clone. Usage: fork_modes.sh <clone-dir> (~682 tok)
+- `pr-body.md` — What changes (~889 tok)
+- `secret_scan.py` — Scan the working tree (tracked + untracked, not ignored) and the full git history for secrets (~1070 tok)
+- `wolf_oss.py` — insert_after (~1544 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/
 
@@ -243,8 +258,11 @@
 ## ./
 
 - `CLAUDE.md` — Claude Code için OpenWolf giriş talimatı; `.wolf/OPENWOLF.md`, anatomy ve cerebrum okumalarını işaret eder. (~60 tok)
+- `CONTRIBUTING.md` — Contributing (~501 tok)
 - `eslint.config.mjs` (~489 tok)
 - `next.config.mjs` — Declares nextConfig (~396 tok)
+- `README.md` — Project documentation (~2400 tok)
+- `SECURITY.md` — Security policy (~428 tok)
 
 ## .agents/skills/handoff/
 
@@ -1311,8 +1329,13 @@
 ## content/series/assets/yuzuncu-adim-sezgiden-bilime-haritanin-sentezi/
 
 
+## docs/
+
+- `FORKING.md` — Fork guide (~2106 tok)
+
 ## docs/platform/
 
+- `ACIK-KAYNAK.md` — Açık kaynak ve main entegrasyonu: kontrol dosyası (~822 tok)
 - `LANSMAN.md` — Public lansman — kontrol dosyası (~1847 tok)
 
 ## docs/seri-boun/
@@ -1353,6 +1376,7 @@
 
 ## scripts/
 
+- `migrate.mjs` — Applies pending SQL migrations from `drizzle/` before the app is built. (~1448 tok)
 
 ## src/
 
@@ -1400,6 +1424,7 @@
 
 ## src/app/kayit/
 
+- `actions.test.ts` — Declares mocks (~509 tok)
 - `actions.ts` — Names nobody signs up under: they would read as the site speaking, or as its owner. (~1561 tok)
 - `page.tsx` — dynamic (~786 tok)
 - `register-form.tsx` — RegisterForm — renders form (~915 tok)
@@ -1488,6 +1513,7 @@
 
 - `series-stats.test.ts` — Declares markdown (~425 tok)
 - `series-stats.ts` — Figures the public home page states about the AI series, counted from the (~509 tok)
+- `series-template.test.ts` — The fork guide's starter files (docs/templates/series/) must stay valid against the real (~362 tok)
 
 ## src/lib/db/
 

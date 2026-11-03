@@ -6,6 +6,11 @@
 
 ## User Preferences
 
+- [2026-11-03] Kullanıcı açık kaynak + main entegrasyonu işinde hızlandırma için **en fazla üç subagent'a** izin verdi:
+  yalnız gerçekten ayrışabilen işler (ör. ayrı klonda tam e2e, salt okunur belge denetimi); aynı dosya, Git index,
+  port, migration ya da build çıktısında yarış yok; birleştirme ve deploy tek koordinatörde, eksik kanıtla merge yok.
+  Önceki "workflow/subagent yok" tercihinin bu tür işler için güncellemesi.
+
 - [2026-11-02] Kullanıcı, Claude Code'ye aktaracağı bakım promptunun amacını tek paragrafta, kısa ve öz ifade etmemi istedi; uzun prosedür ve açıklamalar yerine temel kapsam, tek run ve compact sonrası devam koşulları korunmalı.
 
 - [2026-11-02] AI serisinin bir sonraki bakım assignment'ı için kullanıcı, kalan dört denetim aralığı dahil yapılabilir bakımın tek mantıksal run'da tamamlanmasını istiyor; aralıklar arasında yeni trigger istemek yerine disk kontrol noktaları ve compact/autocompact sonrası aynı run'ın sürdürülmesiyle bağlam korunmalı. Bu istek diğer serilere veya tüm gelecek run'lara otomatik genellenmez.
@@ -26,6 +31,18 @@
 - [2026-10-21] Kullanıcı Git/GitHub'da gerçek bir bilgi açığı olduğunu ve Eroğlu GitHub organizasyonunun yönetiminden sorumlu olduğunu söyledi; Güven Sınırı serisi yalnız OWASP/güvenlik serisi kalmamalı, Git/GitHub kendi içinde tutarlı bir öğrenme hattı olmalı. Hedef komut ezberi değil muhakeme; düzeltilecek merkez yanlış: "main'den açılan dal main'i otomatik izler". 20 tavanı yalnız bu hat için aşılabilir (plan 25). Gerçek organizasyona hiçbir zaman dokunulmaz, ayarı/üyesi/planı uydurulmaz; okura öneriler "salt okunur denetim" ve "öneri" diye ayrı verilir. Rutin editoryal kararlar soru sorulmadan verilir.
 
 ## Key Learnings
+
+- [2026-11-03] **Açık kaynak + lansman anahtarı:** `PUBLIC_LAUNCH=1` olmadıkça (varsayılan) middleware yalnız `/login` ve
+  `/robots.txt`'yi oturumsuz geçirir; kayıt ve kurtarma eylemleri kendileri reddeder (server action her yoldan
+  çağrılabilir); robots her şeyi yasaklar, sitemap boş. robots ve sitemap derleme anında üretilir: değişiklik yeniden deploy
+  ister. `scripts/migrate.mjs` `VERCEL_ENV=preview` iken `MIGRATE_ON_PREVIEW=1` olmadıkça bağlanmaz. Kayıt:
+  `docs/platform/ACIK-KAYNAK.md`, rehber: `docs/FORKING.md`.
+- [2026-11-03] Yeni seri eklemek kodla olur (rota, şema, kategori etiketi, `access.ts`, `SERIES_IDS` +
+  `series-catalogs`, DB check migration'ı, pano, araçların `SERIES_DIRS`'i). Gerçek reçete: `git show --stat 9e720b9`.
+  Temiz klonda kanıtlandı. Tuzaklar:
+  - `entegre-batch.cjs` `roadmap.json`'ı satır satır düzenler; yazı başına tek satır şart.
+  - `check-series-content` her seride şekil ("Şekil N" metinde anılmalı), 1–3 kontrol kutusu ve "### Sırada ne var" ister.
+  - `series-reset.test.ts` seri listesini sabitler.
 
 - [2026-11-03] `pnpm check` artık yeşil (bug-997). ESLint: git dışı `artifacts/` ve çıktı klasörleri ignore'da, `**/*.cjs`
   CommonJS (`require` serbest). typescript-eslint v8 yalnız tipte kullanılan değeri `no-unused-vars` sayar: tip için şema
@@ -1076,6 +1093,10 @@ ode_modules`, sonra kopyayi sil.
 - [2026-10-26, AI bakım run 3] Kabul taramasında NeurIPS 2026 JSON dökümüne güvenme: döküm eksik (Persona Vectors yok), Downloads/2026 listesi ve poster sayfası tam. Crossref'te "SuperIntelligence – Robotics – Safety & Alignment" (10.70777) adına görünen ön baskılar yeniden yayım dergisidir, hakem kanıtı sayılmaz. Meta Llama belgeleri `dev.meta.ai`'ye taşındı; eski llama.com adreslerinin yönlendirmesi alt çizgiyi tireye çevirip 404 verir.
 
 ## Decision Log
+
+- [2026-11-03] Lisans seçilmedi (kullanıcı kararı; README > Licensing "no license yet"); LICENSE dosyası eklenmedi.
+  Private vulnerability reporting kapalı, açılmadı (ayar değişikliği). Kökteki 7 boş kazara dosya silindi. Vercel takım
+  alan adı belgeden çıkarıldı; push edilmiş dal geçmişinde kalıyor (force push yok).
 
 - [2026-11-03] Public lansman: kod tamam, CANLIYA ALINMADI. Sebep: production alan adları Vercel SSO arkasında (anonim smoke
   imkânsız, koruma atlatılmaz), veri sorumlusu bilgisi yok (KVKK aydınlatma), Run 7 değişiklikleri commit edilmemiş, GitHub

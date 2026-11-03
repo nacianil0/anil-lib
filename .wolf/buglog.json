@@ -16525,6 +16525,108 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-11-03T15:25:00Z"
+    },
+    {
+      "id": "bug-998",
+      "timestamp": "2026-11-03T12:35:17.364Z",
+      "error_message": "Wrong condition in logic",
+      "file": "scripts/migrate.mjs",
+      "root_cause": "Condition was: if (!url)",
+      "fix": "Changed to: if (process.env.VERCEL_ENV === \"preview\" && process.en)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:35:17.364Z"
+    },
+    {
+      "id": "bug-999",
+      "timestamp": "2026-11-03T12:54:21.842Z",
+      "error_message": "Significant refactor of ",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/add_demo_series.py",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 6→8 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:54:21.842Z"
+    },
+    {
+      "id": "bug-1000",
+      "timestamp": "2026-11-03T16:20:00Z",
+      "error_message": "Fork rehberindeki yeni seri adımları temiz klonda üç yerde takıldı",
+      "file": "docs/FORKING.md",
+      "root_cause": "Rehber ve şablon araçların gerçek beklentileriyle sınanmadan yazılmıştı: entegre-batch tek satırlık roadmap ister, içerik denetleyicisi şekil/kontrol kutusu/'Sırada ne var' ister, series-reset.test.ts seri listesini sabitler",
+      "fix": "Temiz klonda demo serisiyle adım adım uygulandı; rehbere tek satır kuralı ve test adımı, şablona denetleyiciye uyan yapı ve first-figure.svg eklendi; şablon testi (series-template.test.ts) eklendi; demo serisi tools + pnpm check + sayfalar + migration ile geçti",
+      "tags": [
+        "fork",
+        "docs",
+        "templates",
+        "series",
+        "acik-kaynak"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:20:00Z"
+    },
+    {
+      "id": "bug-1001",
+      "timestamp": "2026-11-03T16:20:00Z",
+      "error_message": "Vercel preview derlemesi production veritabanına migration uygulayabilirdi",
+      "file": "scripts/migrate.mjs",
+      "root_cause": "vercel-build her ortamda migrate.mjs çalıştırıyor; Preview'un ayrı DATABASE_URL'i olup olmadığı proje ayarı ve görülemiyor",
+      "fix": "VERCEL_ENV=preview iken MIGRATE_ON_PREVIEW=1 olmadıkça bağlanmadan çıkış; elle doğrulandı (dry-run öncesi log), .env.example ve README'de belgelendi",
+      "tags": [
+        "vercel",
+        "migration",
+        "preview",
+        "acik-kaynak"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:20:00Z"
+    },
+    {
+      "id": "bug-1002",
+      "timestamp": "2026-11-03T16:20:00Z",
+      "error_message": "Kodun main'e girmesi siteyi herkese açacaktı (lansman koşulları eksikken)",
+      "file": "src/lib/auth/access.ts",
+      "root_cause": "Herkese açık yollar koşulsuzdu; veri sorumlusu bilgisi, alan adı ve koruma kararı verilmeden production deploy anonim okuma ve kaydı açardı (Vercel SSO tek engeldi)",
+      "fix": "PUBLIC_LAUNCH anahtarı (varsayılan kapalı): middleware, kayıt/kurtarma eylemleri, robots, sitemap, giriş sayfası; access.test ve kayit/actions.test; temiz klonda kapalı/açık modlar probe edildi",
+      "tags": [
+        "launch",
+        "access",
+        "middleware",
+        "acik-kaynak"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:20:00Z"
+    },
+    {
+      "id": "bug-1003",
+      "timestamp": "2026-11-03T16:30:00Z",
+      "error_message": "reader.spec.ts:520 'turns exactly one page per scroll gesture and stops at the covers' tam pakette 'Sayfa 8 / 9' gördü (beklenen 9/9); tek başına 5/5 geçti",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "turnPage, komut edilen sayfayı yalnız PAGE_SETTLE_MS=600 boyunca otorite sayıyor; sonra yumuşak kaydırmanın o anki ara offset'inden sayıyor. Yük altında kaydırma geride kalınca son sayfadaki ileri hareket bir sayfa geri götürüyor (ajan izi: scrollLeft 5754 → round(5754/987)+1=7 → sayfa 8). Kod 2026-09-06'dan beri değişmedi; main'de de var",
+      "fix": "Bu PR'da düzeltilmedi (kapsam dışı, eski kod). Öneri: zaman penceresi yerine hedef sayfaya varılana (scrollend ya da hedef offset'e yakınsama) kadar komut edilen sayfayı otorite say; wheel-paging ve reader.spec ile doğrula",
+      "tags": [
+        "reader",
+        "paging",
+        "race",
+        "flaky",
+        "e2e"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:30:00Z"
     }
   ]
 }

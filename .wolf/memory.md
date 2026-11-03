@@ -8021,3 +8021,23 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 15:11 | Edited eslint.config.mjs | modified definition() | ~110 |
 
 | 15:25 | Eski lint borcu kapatıldı: eslint ignore (artifacts/ ve git dışı çıktı), **/*.cjs CommonJS override, schema.ts tip türetme (birebir aynı tip kanıtlı) | eslint.config.mjs, src/lib/content/schema.ts | eslint 147→0; pnpm check exit 0 | ~6k |
+| 15:32 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/secret_scan.py | — | ~1070 |
+| 15:34 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/edit_flag.py | — | ~1696 |
+| 15:35 | Edited scripts/migrate.mjs | added 1 condition(s) | ~167 |
+| 15:36 | Created src/app/kayit/actions.test.ts | — | ~509 |
+| 15:38 | Created README.md | — | ~2560 |
+| 15:38 | Created docs/FORKING.md | — | ~2246 |
+| 15:39 | Created src/lib/content/series-template.test.ts | — | ~362 |
+| 15:39 | Created CONTRIBUTING.md | — | ~534 |
+| 15:39 | Created SECURITY.md | — | ~457 |
+| 15:40 | Created docs/platform/ACIK-KAYNAK.md | — | ~877 |
+| 15:44 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/fork_modes.sh | — | ~682 |
+| 15:53 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/add_demo_series.py | — | ~2072 |
+| 15:54 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/add_demo_series.py | 6→8 lines | ~184 |
+| 15:58 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/fix_forking.py | — | ~1115 |
+| 16:05 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/pr-body.md | — | ~948 |
+| 16:07 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/wolf_oss.py | — | ~1544 |
+
+| 16:20 | Açık kaynak: README/FORKING/CONTRIBUTING/SECURITY/şablonlar, PUBLIC_LAUNCH anahtarı, preview migration koruması, temiz klon fork + demo seri kanıtı | README.md, docs/FORKING.md, src/lib/auth/access.ts, scripts/migrate.mjs | pnpm check 0 (948), e2e 35/35, DB matrisi 9/9, a11y 0 ihlal; PR #1 açık | ~60k |
+| 16:09 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/factcheck/licscan.cjs | — | ~317 |
+| 16:25 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/fix_docs_b.py | — | ~5890 |
