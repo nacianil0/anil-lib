@@ -16616,7 +16616,7 @@
       "error_message": "reader.spec.ts:520 'turns exactly one page per scroll gesture and stops at the covers' tam pakette 'Sayfa 8 / 9' gördü (beklenen 9/9); tek başına 5/5 geçti",
       "file": "src/lib/reader-layout/use-reader-layout.ts",
       "root_cause": "turnPage, komut edilen sayfayı yalnız PAGE_SETTLE_MS=600 boyunca otorite sayıyor; sonra yumuşak kaydırmanın o anki ara offset'inden sayıyor. Yük altında kaydırma geride kalınca son sayfadaki ileri hareket bir sayfa geri götürüyor (ajan izi: scrollLeft 5754 → round(5754/987)+1=7 → sayfa 8). Kod 2026-09-06'dan beri değişmedi; main'de de var",
-      "fix": "Bu PR'da düzeltilmedi (kapsam dışı, eski kod). Öneri: zaman penceresi yerine hedef sayfaya varılana (scrollend ya da hedef offset'e yakınsama) kadar komut edilen sayfayı otorite say; wheel-paging ve reader.spec ile doğrula",
+      "fix": "Düzeltildi: c7ba2d5 (okuyucu: sayfa komutu kaydırma varana dek geçerli). Sabit pencere kaldırıldı; commandedPageHolds (pagination.ts) komutu kaydırma hedef offset'e varana (±1 px) ya da çizilen kareler onu 200 ms yerinde gösterene dek otorite sayar (600 ms ilk-hareket toleransı, 4 s tavan); use-reader-layout.ts komut açıkken her kareyi noteFrame ile izler. Kanıt (16 çekirdekte 15 meşgul iş parçacığı, CPU %95-100, --repeat-each=10): yarış testi önce 5/10 düştü, sonra iki koşuda 10/10; beş sayfalama testi 49/50 (tek hata Modern Standby, bug-1008; o test temiz tekrarda 10/10); reader.spec 18 geçti/1 atlandı",
       "tags": [
         "reader",
         "paging",
@@ -16624,9 +16624,95 @@
         "flaky",
         "e2e"
       ],
+      "related_bugs": [
+        "bug-1008"
+      ],
+      "occurrences": 2,
+      "last_seen": "2026-11-03T13:38:00Z"
+    },
+    {
+      "id": "bug-1004",
+      "timestamp": "2026-11-03T13:50:01.838Z",
+      "error_message": "Wrong reference: SCROLL_IDLE_MS should be scrollLeftForPage",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Used \"SCROLL_IDLE_MS\" instead of \"scrollLeftForPage\"",
+      "fix": "Changed SCROLL_IDLE_MS → scrollLeftForPage",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-11-03T13:50:13.174Z"
+    },
+    {
+      "id": "bug-1005",
+      "timestamp": "2026-11-03T13:50:07.807Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 17→34 lines (4 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
       "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-11-03T16:30:00Z"
+      "last_seen": "2026-11-03T13:50:07.807Z"
+    },
+    {
+      "id": "bug-1006",
+      "timestamp": "2026-11-03T13:50:09.474Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T13:50:09.474Z"
+    },
+    {
+      "id": "bug-1007",
+      "timestamp": "2026-11-03T13:50:35.194Z",
+      "error_message": "Type error",
+      "file": "src/lib/reader-layout/pagination.test.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T13:50:35.194Z"
+    },
+    {
+      "id": "bug-1008",
+      "timestamp": "2026-11-03T15:27:00Z",
+      "error_message": "reader.spec.ts:763 'preserves paged preference while using the mobile flow fallback' (repeat3), yük altındaki 50'lik sayfalama koşusunda: Test timeout of 30000ms exceeded",
+      "file": "tests/e2e/reader.spec.ts",
+      "root_cause": "Kod değil ortam: makine 17:00:04'te Modern Standby'a girdi, 18:20:23'te çıktı (System günlüğü, Kernel-Power 506/507). İz: test 16:59:46'da başladı, son eylemi 17:00:06; 30 sn zaman aşımı uyku boyunca doldu",
+      "fix": "Kod değişikliği yok. Kalan işler için request_keep_awake istendi; aynı test aynı yük altında temiz tekrarda 10/10 geçti",
+      "tags": [
+        "e2e",
+        "timeout",
+        "environment",
+        "standby",
+        "windows"
+      ],
+      "related_bugs": [
+        "bug-1003"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:27:00Z"
     }
   ]
 }

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-03T13:25:09.558Z
-> Files: 205 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-03T15:34:03.172Z
+> Files: 1 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
 
@@ -47,174 +47,48 @@
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/
 
-- `a11y7.mjs` — Run 7 accessibility checks for changed series pages (DOM rules; axe-core is not installed and is not (~1175 tok)
-- `altcount6.py` — /*.md", recursive=True): (~285 tok)
-- `br7.py` — /*.md", recursive=True): (~1321 tok)
-- `buglog5.py` — Append run 5's bug entries to .wolf/buglog.json (round-trip checked; no trailing newline, as the fil (~1266 tok)
-- `buglog6.py` — Append run 6's bug entries to .wolf/buglog.json (round-trip checked; keeps the file's newline style) (~1730 tok)
-- `buglog6b.py` — Patch run 6's bug-956 and bug-957 in .wolf/buglog.json after the late 110 figure fix (round-trip che (~394 tok)
-- `buglog7.py` — Append run 7's bug entries to .wolf/buglog.json and amend bug-956 (run 6's 97→16 item was a false al (~2208 tok)
-- `ctl6.py` — Update docs/seri/BAKIM-RUN6.md. Usage: (~522 tok)
-- `edits102.json` (~126 tok)
-- `edits110.json` (~466 tok)
-- `edits12.json` (~78 tok)
-- `edits4.json` (~91 tok)
-- `edits41.json` (~750 tok)
-- `edits43.json` (~859 tok)
-- `edits43b.json` (~450 tok)
-- `edits43c.json` (~616 tok)
-- `edits46.json` (~185 tok)
-- `edits47.json` (~203 tok)
-- `edits48.json` (~640 tok)
-- `edits49.json` (~150 tok)
-- `edits50.json` (~198 tok)
-- `edits51.json` (~527 tok)
-- `edits52.json` (~746 tok)
-- `edits53.json` (~186 tok)
-- `edits54.json` (~436 tok)
-- `edits55.json` (~1588 tok)
-- `edits56.json` (~366 tok)
-- `edits57.json` (~825 tok)
-- `edits58.json` (~641 tok)
-- `edits59.json` (~415 tok)
-- `edits60.json` (~1402 tok)
-- `edits61.json` (~220 tok)
-- `edits74.json` (~212 tok)
-- `edits74b.json` (~105 tok)
-- `edits74c.json` (~480 tok)
-- `edits79.json` (~123 tok)
-- `edits81.json` (~799 tok)
-- `edits88.json` (~570 tok)
-- `edits89.json` (~174 tok)
-- `edits90.json` (~283 tok)
-- `edits91.json` (~299 tok)
-- `edits92.json` (~176 tok)
-- `edits93.json` (~219 tok)
-- `edits96.json` (~102 tok)
-- `edits97.json` (~96 tok)
-- `edits98.json` (~299 tok)
-- `edits99.json` (~298 tok)
-- `editsD1.json` (~291 tok)
-- `editsD2.json` (~195 tok)
-- `editsS2.json` (~321 tok)
-- `fc6.py` — Fact-audit helper (run 6). Usage: python -X utf8 -I fc6.py <order> [--ctx 110] [--para N-M] (~2255 tok)
-- `fcsum.py` — fc6 çıktısını süzer: kaynağa atfedilmiş paragraflarda bulunmayan sayılar, '?' ile eşleşen (atıfsız) (~412 tok)
-- `fetch6.py` — Tek bir kaynağı elle indirir ve dl5/a<sıra>/<anahtar>.txt olarak yazar; index.json'u günceller. (~585 tok)
-- `gates6b.sh` — Re-run of the run 6 gates after the late 110 figure fix; reuses the existing isolated copy (~223 tok)
-- `idchk6.py` — Kimlik denetimi: indirilen her tam metnin ilk 4000 karakterinde ilk yazarın soyadı geçiyor mu? (~515 tok)
-- `inspect7.mjs` — Separate render/a11y false alarms from real defects (run 7). Usage: node inspect7.mjs <baseUrl> (~898 tok)
-- `lc7.py` — Run 7 link check for the articles changed in this run (git diff vs HEAD): every markdown link in bod (~854 tok)
-- `match5.py` — Match not-peer-reviewed works against acceptance lists (TMLR list HTML, ACL Anthology bib, generic J (~1215 tok)
-- `memrow.txt` — , docs/seri/*, .wolf/* | commit yok, sonraki karar #295 | ~400k | (~159 tok)
-- `mkctl7.py` — /*.md", recursive=True): (~1904 tok)
-- `mkspec5.py` — Build the Playwright measurement spec for run 5's changed pages: slug, expected new texts, new hrefs (~945 tok)
-- `oa6.py` — Run 6: OpenAlex for the works run 5 skipped (anonymous daily budget). Reuses status5.openalex; no e- (~640 tok)
-- `oa7.py` — Run 7: OpenAlex for the 99 works run 5-6 could not query (anonymous daily budget). No e-mail is sent (~766 tok)
-- `p1_6.py` — Run 6 P1 external checks: debts (f), (i), (j), derczynski certificate. No e-mail in any request. (~647 tok)
-- `p1_7.py` — Run 7 P3 external checks for debts (f), (i), (j). The certificate issue closed in run 6 is not re-ch (~599 tok)
-- `pmlr5.py` — Collect paper titles/authors from PMLR volume index pages (v300..v350) into dl5/pmlr300.json. (~354 tok)
-- `prop7.py` — /*.md", recursive=True): (~1159 tok)
-- `q5.py` — Grep a source text for patterns with context. Usage: python q5.py <a55/key> <ctx> <regex> [<regex> . (~320 tok)
-- `recheck_br7.py` — /*.md", recursive=True): (~662 tok)
-- `s2chk.py` — /*.md", recursive=True): (~667 tok)
-- `s45chk.py` — /*.md", recursive=True)): (~624 tok)
-- `s45ctx.py` — /*.md", recursive=True): (~688 tok)
-- `shots7.json` (~110 tok)
-- `src5.py` — Fetch full texts of an article's sources for the fact audit (run 5). Usage: python src5.py <order> [ (~1672 tok)
-- `status5.py` — Run 5 peer-review status sweep for not-peer-reviewed works: Crossref bibliographic search (+ OpenAle (~1285 tok)
-- `yh7.txt` (~2288 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/factcheck/
 
-- `licscan.cjs` — Read-only: scan node_modules/.pnpm of the repo given as argv[2] for package licenses. (~317 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/fix/
+
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/e2e-db/
 
-- `access-matrix.db.spec.ts` — Database-backed access matrix against the real app (next dev) talking to a real (~6378 tok)
-- `pw-db.config.ts` — Declares PORT (~380 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/
 
-- `a11y-launch.mjs` — Accessibility checks for the launch pages: axe-core (WCAG 2.0/2.1/2.2 A+AA rules) per page × theme × (~1161 tok)
-- `edit_api_scope.py` — A self-registered reader: narrower scope, and the session must be re-checked. (~2018 tok)
-- `edit_local_mode.py` — `account`: the signed-in reader's state, synced through `/api/reader-sync`. (~2777 tok)
-- `finalize_lansman.py` — /page.tsx`, `src/app/read/[slug]/page.tsx`, `src/app/login/{page,actions}.ts(x)` (~3603 tok)
-- `neon-fetch-redirect.cjs` — Preloaded with NODE_OPTIONS=--require into the test server and the migration runner: (~212 tok)
-- `neon-shim.mjs` — Minimal stand-in for Neon's SQL-over-HTTP endpoint, backed by PGlite (real Postgres (~1084 tok)
-- `og-image.cjs` — Renders the site's OpenGraph card (1200×630) with the project's own Playwright Chromium. (~636 tok)
-- `prod-smoke.mjs` — Production-mode smoke: registers a reader through the real form, records every request (~641 tok)
-- `shots.mjs` — Screenshots of the launch pages for visual review. Usage: node shots.mjs <baseUrl> <outDir> (~467 tok)
-- `wolf_records.py` — Append the public-launch session's records to .wolf (cerebrum, buglog). Round-trip checked. (~2481 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/
 
-- `add_demo_series.py` — Every category a reader-facing article can carry, across all series. */", (~2129 tok)
-- `edit_flag.py` — Pages anyone may request without a session. Everything else stays behind the gate. (~1696 tok)
-- `fix_docs_b.py` — Apply the documentation fact-check findings (reviewer B). Exits on the first unmatched edit. (~5890 tok)
-- `fix_forking.py` (~1115 tok)
-- `fork_modes.sh` — Exercise the three local modes of a fresh clone. Usage: fork_modes.sh <clone-dir> (~682 tok)
-- `pr-body.md` — What changes (~889 tok)
-- `secret_scan.py` — Scan the working tree (tracked + untracked, not ignored) and the full git history for secrets (~1070 tok)
-- `wolf_oss.py` — insert_after (~1544 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/
 
-- `apply.py` — Apply accepted edits mechanically: exact single-line substring, must occur exactly once. (~530 tok)
-- `buglog4.py` — Append run-4 bug entries to .wolf/buglog.json without reformatting the rest of the file. (~1328 tok)
-- `factcheck4.py` — Main-session spot check of the time-bound fixes: fetch each source, grep the key phrases. (~647 tok)
-- `finalize4.py` — Main-session decisions on top of the skeptics' edits -> wf4/final_edits.json. (~915 tok)
-- `mkspec4.py` — Build the Playwright measurement spec for run 4's changed pages: slug, expected new texts, new hrefs (~629 tok)
-- `net.py` — Tiny stdlib HTTP helper for the maintenance run (urllib; no third-party deps). (~526 tok)
-- `postcheck4.py` — Post-apply checks for run 4: new URLs, alt↔aria-label for touched figures, forbidden forms in added (~824 tok)
-- `preview4.py` — Show edited text in context: apply the edit list in memory and print each changed span with context. (~280 tok)
-- `review4.py` — Build the accepted-edit list and print a compact word-diff review per article. (~708 tok)
-- `revmarks4.py` — Set §12 revision fields (revised_at + revision_note) for run 4; preserves CRLF/LF and BOM. (~1023 tok)
-- `scope.py` — /*.md", recursive=True)): (~1179 tok)
-- `status_sweep.py` — Peer-review status sweep for not-peer-reviewed works via two channels runs 1-3 did not use: (~1182 tok)
-- `syncalt4.py` — /*.md", recursive=True): (~354 tok)
-- `syncsummary.cjs` — Copy frontmatter `summary` into content/series/catalog.json where they differ (CRLF, 2-space round-t (~281 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/
 
-- `round2.json` (~2179 tok)
-- `trim67.json` (~872 tok)
-- `trim71.json` (~1461 tok)
-- `trim7172.json` (~559 tok)
-- `trim71b.json` (~411 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/audit-77-65/tools/
 
-- `check_old.py` (~176 tok)
-- `clean_latex.py` (~131 tok)
-- `olds.json` (~626 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g67-66/scripts/
 
-- `edits.py` — ve (~3608 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g71-80/
 
-- `chk.py` (~130 tok)
-- `dry.py` (~267 tok)
-- `edits.json` (~4994 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g73/
 
-- `check.py` (~362 tok)
-- `edits.json` (~2316 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g74-62/
 
-- `edits.json` (~2124 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g74-62/scripts/
 
-- `chk.py` (~320 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/766dfbdf-c612-453d-9432-6a92f336d046/scratchpad/wf4/skeptic-g77-65/tools/
 
-- `check.py` (~265 tok)
-- `edits.json` (~1842 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/b2ff9965-4841-407d-911f-80e83f3a9f4b/scratchpad/
 
@@ -257,19 +131,12 @@
 
 ## ./
 
-- `CLAUDE.md` — Claude Code için OpenWolf giriş talimatı; `.wolf/OPENWOLF.md`, anatomy ve cerebrum okumalarını işaret eder. (~60 tok)
-- `CONTRIBUTING.md` — Contributing (~501 tok)
-- `eslint.config.mjs` (~489 tok)
-- `next.config.mjs` — Declares nextConfig (~396 tok)
-- `README.md` — Project documentation (~2400 tok)
-- `SECURITY.md` — Security policy (~428 tok)
 
 ## .agents/skills/handoff/
 
 
 ## .claude/
 
-- `launch.json` (~59 tok)
 
 ## .claude/rules/
 
@@ -990,7 +857,6 @@
 
 ## content/series/articles/models-and-training/
 
-- `acik-agirliklar-ve-model-ekosistemi.md` — Ağırlıklar kimin elinde (~5004 tok)
 
 ## content/series/articles/multimodal-and-future/
 
@@ -1000,7 +866,6 @@
 
 ## content/series/articles/safety-and-evaluation/
 
-- `yonetisim-politika-standartlar-ve-regulasyon.md` — Kararı kim veriyor (~7641 tok)
 
 ## content/series/assets/
 
@@ -1331,12 +1196,10 @@
 
 ## docs/
 
-- `FORKING.md` — Fork guide (~2106 tok)
 
 ## docs/platform/
 
-- `ACIK-KAYNAK.md` — Açık kaynak ve main entegrasyonu: kontrol dosyası (~822 tok)
-- `LANSMAN.md` — Public lansman — kontrol dosyası (~1847 tok)
+- `ACIK-KAYNAK.md` — Açık kaynak ve main entegrasyonu: kontrol dosyası (~2465 tok)
 
 ## docs/seri-boun/
 
@@ -1346,17 +1209,9 @@
 
 ## docs/seri/
 
-- `BAKIM-RUN6.md` — Bakım run'ı 6 — kontrol dosyası (~12931 tok)
-- `BAKIM-RUN7.md` — Bakım run'ı 7 — kontrol dosyası: tam denetlenmeyen on makale (41, 43–47, 61, 63, 68, 76), 41–80'in ikinci denetimi S1–S5, dış borçlar, kapılar; tamamlandı, kararlar #302–#307 (~8500 tok)
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~23003 tok)
-- `SOZLESME.md` — AI serisinin teknik, editoryal, kaynak/atıf, yaşayan state ve revizyon kuralları; §1 doğrulama kapılarını, §4 kaynak doğrulamayı, §8 state sahipliğini, §12 revizyon işaretini tanımlar. (~11600 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~193968 tok)
 
 ## docs/seri/ — devam
 
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~18322 tok)
-- `TRIGGER.md` — Seri tamamlandıktan sonra açık borçları, kaynak güncelliğini ve düzeltmeleri ele alan bakım giriş noktası; toplam bakım run sayısı tanımlamaz, `BATCH=4+1` tarihsel kalmıştır. (~301 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~189069 tok)
 
 ## docs/superpowers/plans/
 
@@ -1366,7 +1221,6 @@
 
 ## drizzle/
 
-- `0006_reader_accounts.sql` — Self-registered external readers and the counters that rate-limit sign-in, sign-up and (~462 tok)
 
 ## inbox/
 
@@ -1376,17 +1230,12 @@
 
 ## scripts/
 
-- `migrate.mjs` — Applies pending SQL migrations from `drizzle/` before the app is built. (~1448 tok)
 
 ## src/
 
-- `middleware.ts` — Public pages (the AI series, the home page, sign-up and the policy page) pass (~510 tok)
 
 ## src/app/
 
-- `page.tsx` — Renders per request: a signed-in reader gets their own dashboard here, scoped to (~1329 tok)
-- `robots.ts` — Crawl hints only. Access is enforced by the middleware and the pages themselves (~154 tok)
-- `sitemap.ts` — Only what anyone may read: the front page, the AI series and its articles, and the (~286 tok)
 
 ## src/app/api/reader-sync/
 
@@ -1399,8 +1248,6 @@
 
 ## src/app/gizlilik/
 
-- `page.tsx` — Written from the code, not from a template: every cookie and storage key named here (~3596 tok)
-- `privacy-controls.tsx` — The visitor's own controls over what this browser keeps. Nothing here talks to the server. (~1220 tok)
 
 ## src/app/guvenlik/
 
@@ -1410,30 +1257,15 @@
 
 ## src/app/hesap-kurtar/
 
-- `actions.ts` — Compared against when there is no account, so a miss costs what a hit costs. (~1393 tok)
-- `page.tsx` — dynamic (~474 tok)
-- `recover-form.tsx` — RecoverForm — renders form (~829 tok)
-- `recover-state.ts` — Put back into the form after a failed attempt. Never a password or a code. (~140 tok)
 
 ## src/app/hesap/
 
-- `account-forms.tsx` — Outcome — renders form (~1592 tok)
-- `account-state.ts` — Exports AccountActionState, initialAccountActionState (~75 tok)
-- `actions.ts` — Every change here needs the current password, checked on the server against the (~1904 tok)
-- `page.tsx` — Renders per request: it shows the signed-in account and must never be prerendered. (~628 tok)
 
 ## src/app/kayit/
 
-- `actions.test.ts` — Declares mocks (~509 tok)
-- `actions.ts` — Names nobody signs up under: they would read as the site speaking, or as its owner. (~1561 tok)
-- `page.tsx` — dynamic (~786 tok)
-- `register-form.tsx` — RegisterForm — renders form (~915 tok)
-- `register-state.ts` — The recovery code travels to the browser exactly once, in this state. (~106 tok)
 
 ## src/app/login/
 
-- `actions.ts` — Failed sign-ins are counted per address and per username (whether or not that (~1081 tok)
-- `page.tsx` — metadata — renders form (~2017 tok)
 
 ## src/app/read/
 
@@ -1443,11 +1275,9 @@
 
 ## src/app/seri/
 
-- `page.tsx` — Public: the AI series is readable without an account. Still rendered per request, (~493 tok)
 
 ## src/app/seri/[slug]/
 
-- `page.tsx` — Public: the article is readable without an account and its full text is in the (~1067 tok)
 
 ## src/app/yonetim/
 
@@ -1460,64 +1290,36 @@
 
 ## src/components/account/
 
-- `account-shell.tsx` — The narrow single-column page the account forms (sign-up, recovery, account) share. (~311 tok)
-- `form-field.tsx` — The message to show under the field when it is the one at fault. (~621 tok)
-- `recovery-code-panel.tsx` — Shows a recovery code the one time it exists in readable form. It is never sent (~746 tok)
 
 ## src/components/dashboard/
 
 
 ## src/components/home/
 
-- `continue-reading.tsx` — "Kaldığın yerden devam et" for a visitor without an account, from this browser's own record. (~814 tok)
-- `public-home.tsx` — The public front page. Everything it states about the series is read from the (~4022 tok)
 
 ## src/components/reader/
 
-- `lock-button.tsx` — Ends the session, or — for a visitor reading without an account — offers to sign (~366 tok)
-- `sync-status.tsx` — SyncStatus (~540 tok)
 
 ## src/components/series/
 
 
 ## src/components/site/
 
-- `site-footer.tsx` — SiteFooter (~349 tok)
-- `site-header.tsx` — Header of the public pages: the site's name, and the way in for a visitor without an account. (~377 tok)
 
 ## src/lib/
 
-- `site.ts` — The public site's identity: its name and the origin canonical links, the sitemap, (~484 tok)
 
 ## src/lib/auth/
 
-- `access.test.ts` — Declares AccessRole (~726 tok)
-- `access.ts` — Who may read what. The single source of truth for collection access: the Edge (~807 tok)
-- `client-ip.ts` — The address a request came from, for rate limiting only — never stored as given (~193 tok)
-- `form-token.test.ts` — Declares SECRET (~410 tok)
-- `form-token.ts` — A signed issue time for the public account forms. A form posted sooner than a (~374 tok)
-- `password-policy.test.ts` (~466 tok)
-- `password-policy.ts` — Password rules for accounts people open themselves (sign-up, recovery, change). (~620 tok)
-- `rate-limit.test.ts` — Declares Call (~883 tok)
-- `rate-limit.ts` — Fixed-window counters in Postgres, the one store every serverless instance shares. (~976 tok)
-- `reader-accounts.test.ts` — Declares ReaderAccount (~1883 tok)
-- `reader-accounts.ts` — Self-registered external accounts. They live in their own table, apart from the (~2415 tok)
-- `recovery-code.test.ts` — Declares code (~548 tok)
-- `recovery-code.ts` — Offline account recovery for self-registered readers (OWASP Forgot Password Cheat (~666 tok)
-- `session-cookie.ts` — Sets the session cookie. Without `remember` it is a browser-session cookie (no (~378 tok)
 
 ## src/lib/auth/ (2026-09-02 genişletildi)
 
 
 ## src/lib/content/
 
-- `series-stats.test.ts` — Declares markdown (~425 tok)
-- `series-stats.ts` — Figures the public home page states about the AI series, counted from the (~509 tok)
-- `series-template.test.ts` — The fork guide's starter files (docs/templates/series/) must stay valid against the real (~362 tok)
 
 ## src/lib/db/
 
-- `schema.ts` — Reader accounts. `workspace_id` is the tenant key every reader table is already (~2785 tok)
 
 ## src/lib/preferences/
 
@@ -1527,8 +1329,6 @@
 
 ## src/lib/reader-data/
 
-- `local-mode.test.tsx` — hoisted (~1615 tok)
-- `local-tracking.ts` — The visitor's own switch for reading without an account. On (the default), the (~466 tok)
 
 ## src/lib/reader-data/server/
 
@@ -1556,7 +1356,6 @@
 
 ## tests/e2e/
 
-- `public-access.spec.ts` — What a visitor without an account gets: the front page and the whole AI series, (~2812 tok)
 
 ## tools/
 

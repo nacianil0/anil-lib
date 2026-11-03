@@ -1,6 +1,6 @@
 # Açık kaynak ve main entegrasyonu: kontrol dosyası
 
-Başlangıç: 2026-11-03 15:30 (TST) · Durum: **SÜRÜYOR**. Kapsam: kullanıcının "Anıl-Lib'i fork edilebilir
+Başlangıç: 2026-11-03 15:30 (TST) · Bitiş: 16:35 · Durum: **MAIN'E ALINDI; lansman kapalı**. Kapsam: kullanıcının "Anıl-Lib'i fork edilebilir
 açık kaynak projeye dönüştür ve güvenli main entegrasyonunu tamamla" promptu.
 
 ## Doğrulanan başlangıç durumu
@@ -81,4 +81,32 @@ açık kaynak projeye dönüştür ve güvenli main entegrasyonunu tamamla" prom
   - Başarısızlardan ikisi `reader-data.spec.ts:97` ve `:117`. Veritabanı yok, `/api/reader-sync` 503 dönüyor; PGlite ile geçtikleri daha önce gösterildi.
   - Üçüncüsü `reader.spec.ts:520`, sayfa çevirme. Yük altında bir zamanlama yarışı; tek başına 5/5 geçti. Kök neden `use-reader-layout.ts`'te: `turnPage`'in 600 ms penceresi dolunca hesap kaydırmanın ara konumundan yapılıyor.
   - Bu kod ve test bu dalda değişmedi (en son 2026-09-06); kusur `main`'de de var. **Yeşil sayılmadı**; ayrı işe bırakıldı.
+- 16:20 Ajan B (belge iddialarını koda karşı salt okunur denetledi): 20 yanlış ve eksik buldu. Hepsi `3b232ad`'de düzeltildi. Başlıcaları:
+  - Seri profili `ai` bloğundan kopyalanmalı, `guvenlik`'ten değil.
+  - Herkese açık seri için gereken adımlar eksikti.
+  - Lisans uyarısı yoktu.
+  - Ağ erişimi anlatılmamıştı (next/font, Next telemetrisi).
+  - SECURITY'de oran sınırı ve roller yanlıştı.
+  - Gerçek test kapsamı fazla gösterilmişti.
+  - Katalog doğrulamasının ne zaman yapıldığı yanlıştı.
+  - Çapalar bozuktu; lisans ayrıntıları eksikti.
+- 16:28 PR #1 birleştirme commit'iyle alındı. Force push yok, koruma atlatılmadı.
+  - `origin/main` = `3c08f64`.
+  - Dal başı `268ad79`; Vercel önizlemesi başarılı.
+- 16:29 Production deployment `7520026603` (`3c08f64`): "Deployment has completed".
+  - `vercel-build` migration hatasında durduğu için migration adımı hatasız geçti.
+  - `0006`'nın bu derlemede mi uygulandığı, yoksa daha önceki bir önizlemede mi uygulandığı Vercel günlüğü olmadan ayırt edilemez. İki durumda da sonuç aynı.
+- 16:31 Production takma adları anonim isteğe Vercel SSO'ya 302 veriyor (`/`, `/seri`, `/kayit`, `/robots.txt`). Erişim platform düzeyinde kapalı.
+  - Uygulama düzeyinde de kapalı: `PUBLIC_LAUNCH` Vercel'de tanımlı değil (değişken yeni).
+  - Uygulama yanıtı SSO arkasında olduğundan dışarıdan ölçülemedi.
+- Yerel `main` `3c08f64`'e ileri sarıldı. Test sunucuları kapalı.
+- Bu son satırlar o an commit edilmedi: yalnız kayıt için `main`'e push yeni bir production deploy tetiklerdi. Aşağıdaki işle birlikte gönderildi.
+- 16:33 Lisansı kullanıcı kendisi seçip `main`'e gönderdi: `cb0a771` "lisans: kod MIT, içerik CC BY 4.0". Bu çalışmada lisans seçilmedi; yukarıdaki "lisans yok" tespitleri o saate kadar geçerli.
+- Sayfa çevirme yarışı (yukarıda yeşil sayılmayan `reader.spec.ts:520`, bug-1003) ayrı işte düzeltildi: `c7ba2d5`.
+  - Komut edilen sayfa artık kaydırma hedef offset'e varana ya da çizilen kareler onu 200 ms yerinde gösterene dek geçerli (600 ms tolerans, 4 s tavan).
+  - Yük altında (16 çekirdekte 15 meşgul iş parçacığı, CPU %95–100, `--repeat-each=10`) yarış testi önce 10'da 5 düştü; düzeltmeyle iki ayrı koşuda 10/10.
+  - Beş sayfalama testi aynı yükte 50 koşunun 49'unu geçti. Tek hata makinenin 17:00–18:20 Modern Standby'ına denk geldi (bug-1008); o test temiz tekrarda 10/10.
+  - `reader.spec.ts` tamamı yüksüz: 18 geçti, 1 atlandı (fikstürde ikinci kohort yok).
+  - `pnpm check` gönderilen ağaçta (`c7ba2d5`, `cb0a771` üstüne) yeşil: typecheck, lint, 53 test dosyası, build (197 sayfa).
+- Kullanıcının talimatıyla ("her şey tamamlandığında tüm çalışmayı main'e pushla") düzeltme ve bu kayıtlar `main`'e ileri sarmalı push edildi. PR açılmadı (`main` korumasız, ruleset ve CI yok); force push yok. Deploy sonucu oturum raporunda; buraya yazmak yeni bir deploy gerektirirdi.
 

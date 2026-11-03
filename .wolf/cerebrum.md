@@ -29,6 +29,7 @@
 - [2026-10-21] Yeni seri için prompt hazırlığı: kullanıcı ilk yazıları OWASP ile başlayan, kendisi için senior veya üstü düzeyde, en fazla 20 yazılık bağımsız seri istiyor. Mevcut kalite/hata hafızası ve trigger düzeni değerlendirilecek; promptu hazırlayan model de Claude Code de araştıracak, Claude gerekçeli tasarım kararlarında özgür olacak. Bu oturumdaki istek yalnızca diğer modele aktarılacak bellek; seri üretimi henüz başlatılmadı.
 - [2026-10-21] Güven Sınırı serisi (üçüncü seri, `docs/seri-guvenlik/`) run 1 ile başlatıldı. Ritmi `BATCH=2+1`'dir (öteki serilerin `5+1`'i bu seriye uygulanmaz; override yalnız o run'daki mesajda tam `BATCH=N+1` satırı). Her çağrı tek run yapar ve durur: otomatik ardışık run, cron ya da arka plan kuyruğu yok. `+1` makale değildir. Commit/push/deploy ve migration uygulama yalnız açık yetkiyle.
 - [2026-10-21] Kullanıcı Git/GitHub'da gerçek bir bilgi açığı olduğunu ve Eroğlu GitHub organizasyonunun yönetiminden sorumlu olduğunu söyledi; Güven Sınırı serisi yalnız OWASP/güvenlik serisi kalmamalı, Git/GitHub kendi içinde tutarlı bir öğrenme hattı olmalı. Hedef komut ezberi değil muhakeme; düzeltilecek merkez yanlış: "main'den açılan dal main'i otomatik izler". 20 tavanı yalnız bu hat için aşılabilir (plan 25). Gerçek organizasyona hiçbir zaman dokunulmaz, ayarı/üyesi/planı uydurulmaz; okura öneriler "salt okunur denetim" ve "öneri" diye ayrı verilir. Rutin editoryal kararlar soru sorulmadan verilir.
+- [2026-11-03] Sayfa çevirme düzeltmesinde kullanıcı "her şey tamamlandığında tüm çalışmayı main'e pushla" dedi: doğrulama bitmeden push yok; "tüm çalışma" commit edilmemiş kayıt satırlarını da (ACIK-KAYNAK.md, .wolf) kapsar. Bu o işe özel bir izindi; sonraki işlerde push/deploy için yeniden açık talimat gerekir.
 
 ## Key Learnings
 
@@ -681,6 +682,8 @@ ode_modules`, sonra kopyayi sil.
   FIFO'da 17/18. Model cümlesi bırakma sırasını söylemeli (`artifacts/bakim3-2026-10-26/ana/kilit_model.py`).
 
 - [2026-10-26, Güven Sınırı run 5] Yazı incelemesi için işe yarayan düzen: beş mercek (kaynak, sözleşme, teknik+şekil, pedagoji, süreklilik) paralel, her merceğin ardından bulguları çürütmeye çalışan bir şüpheci; sonra ikinci, daha dar bir yeniden denetim (kimlik tutarlılığı ve yeni hata). 63 bulgunun çoğu doğrulandı; ikinci tur düzeltmelerin getirdiği 17 küçük kusuru ve bir olgu hatasını (`main` / `origin/main`) buldu.
+- [2026-11-03, sayfa çevirme yarışı] Sayfalı okuyucuda komut edilen sayfa (`pageTargetRef`), yumuşak kaydırma hedef offset'e varana (±1 px) ya da çizilen kareler onu 200 ms yerinde gösterene dek otoritedir: `commandedPageHolds` (`pagination.ts`; 600 ms ilk-hareket toleransı, 4 s tavan). Komut açıkken `use-reader-layout.ts` her kareyi `noteFrame` ile izler; hareketsizlik duvar saatiyle değil karelerle sayılır. Yük altında Chrome'un yumuşak kaydırması 600 ms'yi rahatça aşar: e2e izinde son sayfa komut edildikten sonra offset hâlâ 5754 (sayfa adımı 987) idi.
+- [2026-11-03] Zamanlama yarışını yeniden üretme: 16 çekirdekte 15 meşgul `worker_threads` döngüsü (`while (Date.now() < bitiş)`) + `playwright test -g <test> --repeat-each=10 --reporter=line`; yükü `os.cpus()` örnekleyerek kanıtla (%95–100). Yüksüz tek koşu yarışı göstermedi; yük altında eski kod 10'da 5 düştü. e2e webServer `next dev` (port 3100) ve `reuseExistingServer` açık: koşudan önce portun boş olduğunu kontrol et, yoksa eski kodu sınarsın.
 
 ## Do-Not-Repeat
 
@@ -1091,12 +1094,23 @@ ode_modules`, sonra kopyayi sil.
 - [2026-10-26, AI bakım run 3] Bildiri sayfasının üstverisi (citation_author, döküm JSON'u) yayımlanmış PDF'in yazar satırıyla çelişirse PDF esastır: Clark ve ark.'nın PMLR üstverisi teşekkür edilen Ranzato'yu yazar gösteriyor, Pope/Carlini/Banbury/Bouthillier/Kwa'da üstveri ad düşürüyor. Üstveriye göre "düzeltme" yazar silmek olur.
 - [2026-10-26, AI bakım run 3] Bir düzeltme notunu (erratum) özetlerken neyin neye yol açtığını kaynağın cümle yapısıyla aktar: Costello erratum'unda eleme hatası iki deneyin örneklemini etkiliyor, 15 satır "ayrıca" bulunan ayrı sorun; sabah metni ikisini tek nedene bağlamıştı.
 - [2026-10-26, AI bakım run 3] Kabul taramasında NeurIPS 2026 JSON dökümüne güvenme: döküm eksik (Persona Vectors yok), Downloads/2026 listesi ve poster sayfası tam. Crossref'te "SuperIntelligence – Robotics – Safety & Alignment" (10.70777) adına görünen ön baskılar yeniden yayım dergisidir, hakem kanıtı sayılmaz. Meta Llama belgeleri `dev.meta.ai`'ye taşındı; eski llama.com adreslerinin yönlendirmesi alt çizgiyi tireye çevirip 404 verir.
+- [2026-11-03] Bir kaydırmanın durduğuna son scroll olayından beri geçen duvar saati süresiyle karar verme; sabit zaman penceresi de kullanma (bug-1003). Ana iş parçacığı meşgulken ne olay ne kare gelir, kaydırma kompozitörde sürer: sessizlik durma kanıtı değildir. Durmayı çizilen karelerde (rAF'te offset değişmedi mi) ölç.
+- [2026-11-03] Uzun e2e koşusunda "Test timeout of 30000ms exceeded" görünce kodu suçlamadan önce Windows güç olaylarına bak (`Get-WinEvent` System, Kernel-Power 506/507 = Modern Standby giriş/çıkış) ve izdeki eylem saatlerini uyku aralığıyla karşılaştır: 17:00–18:20 uykusu bir mobil sayfalama testini düşürdü. Uzun koşudan önce `request_keep_awake` iste; kapak kapanırsa makine yine uyur.
 
 ## Decision Log
 
 - [2026-11-03] Lisans seçilmedi (kullanıcı kararı; README > Licensing "no license yet"); LICENSE dosyası eklenmedi.
   Private vulnerability reporting kapalı, açılmadı (ayar değişikliği). Kökteki 7 boş kazara dosya silindi. Vercel takım
   alan adı belgeden çıkarıldı; push edilmiş dal geçmişinde kalıyor (force push yok).
+- [2026-11-03 16:33] Lisansı kullanıcı kendisi seçip `main`'e gönderdi: `cb0a771` "lisans: kod MIT, içerik CC BY 4.0"
+  (LICENSE, LICENSE-CONTENT.md). Üstteki "lisans seçilmedi" kaydı o saate kadar geçerliydi; lisans dosyalarına bu
+  oturumda dokunulmadı.
+- [2026-11-03] Sayfa komutunu bırakmak için `scrollend` yerine kare-tabanlı durma ölçümü seçildi: programatik kaydırma
+  yeniden hedeflendiğinde ara bir `scrollend` gelip gelmediği tarayıcılar arasında doğrulanmadı; kare ölçümü her
+  tarayıcıda aynı çalışır ve meşgul makinede yanlış "durdu" demez.
+- [2026-11-03] Sayfa çevirme düzeltmesi PR'sız gönderildi: kullanıcı doğrulama bitince `main`'e push istedi; `main` korumasız,
+  ruleset ve CI yok. Dal (hiç push edilmemişti) `cb0a771` üstüne rebase edildi ve `main` ileri sarıldı; force push yok.
+  Push production deploy tetikler; `PUBLIC_LAUNCH` kapalı kaldı.
 
 - [2026-11-03] Public lansman: kod tamam, CANLIYA ALINMADI. Sebep: production alan adları Vercel SSO arkasında (anonim smoke
   imkânsız, koruma atlatılmaz), veri sorumlusu bilgisi yok (KVKK aydınlatma), Run 7 değişiklikleri commit edilmemiş, GitHub
