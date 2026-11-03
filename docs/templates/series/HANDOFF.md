@@ -1,6 +1,7 @@
 # "<Series title>" — handoff
 
-> Current operational state only. Rules: `SOZLESME.md`. Plan and decisions: `YOL-HARITASI.md`.
+> Current operational state only. Rules: `SOZLESME.md`. Plan and decisions: `YOL-HARITASI.md`
+> (once you keep one).
 > Trigger: `docs/seri-<key>/TRIGGER.md`.
 
 Last updated: <date> · Status: <what the last run finished>.

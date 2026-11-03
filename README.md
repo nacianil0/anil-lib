@@ -6,8 +6,8 @@ bookmarks and highlights. This repository holds the application **and** the cont
 currently serves, plus the written contracts and prompt files that keep the series consistent
 when an AI coding agent writes or maintains them.
 
-The series themselves are in Turkish; the code, this README and the [fork guide](docs/FORKING.md)
-are in English.
+The series, the interface and the content tools' messages are in Turkish; identifiers, most
+code comments, this README and the [fork guide](docs/FORKING.md) are in English.
 
 > **Status:** private library, not yet publicly launched (see [Launch switch](#launch-switch)).
 > **License:** none chosen yet — see [Licensing](#licensing) before reusing anything.
@@ -25,7 +25,8 @@ The articles are **educational compilations, not original research or peer-revie
 They were written with large language models under a written series contract
 (`docs/seri*/SOZLESME.md`) and are re-checked against their sources in maintenance runs;
 corrections that change what a reader takes away are dated at the top of the article. Every
-article ends with a *Kaynakça* (bibliography) linking the works it relies on.
+series article ends with a *Kaynakça* (bibliography) linking the works it relies on; the older
+archive articles predate the contracts.
 
 What the application does:
 
@@ -47,8 +48,8 @@ Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS 3 · Postgres 
 serverless HTTP driver (`@neondatabase/serverless`) with a Drizzle schema · Zod ·
 unified/remark/rehype for Markdown · Vitest + Testing Library · Playwright.
 
-Requirements: **Node.js ≥ 20** and **pnpm 10** (`corepack enable` gives you the pinned version).
-A database is optional for local work.
+Requirements: **Node.js 20.11 or later** and **pnpm 10** (`corepack enable` gives you the pinned
+version). A database is optional for local work.
 
 ## Quick start
 
@@ -75,8 +76,9 @@ PUBLIC_LAUNCH=1
 A SHA-256 hex digest can be made with
 `node -e "console.log(require('crypto').createHash('sha256').update(process.argv[1]).digest('hex'))" 'your password'`.
 Sign in at `/login` with the owner username (`anil` unless `OWNER_USERNAME` is set) and that
-password. Accounts other than the owner, sign-up and cross-device sync need `DATABASE_URL`
-(any Postgres reachable through Neon's HTTP endpoint; apply migrations with `pnpm db:apply`).
+password. Accounts other than the owner, sign-up and cross-device sync need `DATABASE_URL`: the
+app uses Neon's serverless HTTP driver, so that means a Neon database (or a Neon-compatible HTTP
+proxy in front of Postgres). Apply migrations with `pnpm db:apply`.
 
 ## Environment
 
@@ -85,9 +87,9 @@ All variables are documented in [`.env.example`](.env.example).
 | Variable | Needed for | Default when unset |
 | --- | --- | --- |
 | `DATABASE_URL` | accounts, sync, sign-up, rate limits | single-owner mode, local-only progress |
-| `SITE_PASSWORD_SHA256`, `AUTH_COOKIE_SECRET` | sign-in (set both) | open in `pnpm dev`; production refuses to serve |
+| `SITE_PASSWORD_SHA256`, `AUTH_COOKIE_SECRET` | sign-in (set both) | open as the owner in `pnpm dev`; in production every non-public page redirects to `/login`, which reports the missing configuration |
 | `OWNER_USERNAME` | owner's username | `anil` |
-| `PUBLIC_LAUNCH` | opening the site to the public (`1`) | closed: everything but `/login` needs an account |
+| `PUBLIC_LAUNCH` | opening the site to the public (`1`) | closed: everything but `/login` and `/robots.txt` needs an account |
 | `SITE_URL` | canonical links, sitemap, previews | Vercel production domain, else `http://localhost:3000` |
 | `MIGRATE_ON_PREVIEW` | migrations on Vercel preview builds (`1`) | previews skip migrations |
 
@@ -99,16 +101,16 @@ All variables are documented in [`.env.example`](.env.example).
 | `pnpm typecheck` | `tsc --noEmit` |
 | `pnpm lint` | ESLint over the repository |
 | `pnpm test` | unit and component tests (Vitest) |
-| `pnpm test:e2e` | browser tests (Playwright; starts its own dev server on port 3100) |
+| `pnpm test:e2e` | browser tests (Playwright; starts its own dev server on port 3100; run `pnpm exec playwright install chromium` once) |
 | `pnpm build` / `pnpm start` | production build and server |
 | `pnpm check` | typecheck + lint + test + build — the gate to pass before a pull request |
 | `pnpm db:apply` | apply pending SQL migrations from `drizzle/` (`scripts/migrate.mjs`) |
-| `pnpm db:generate`, `pnpm db:check` | Drizzle Kit, for schema work |
+| `pnpm db:generate`, `pnpm db:check` | Drizzle Kit, for schema work (migrations `0004` onwards are hand-written SQL, so review what `db:generate` emits) |
 
 Content tools (plain Node scripts, no database, nothing leaves the machine):
 
 ```bash
-node tools/series/check-series-content.cjs --series=ai     # contract checks: length, structure, figures, sources
+node tools/series/check-series-content.cjs --series=ai     # contract checks: length, structure, figures, required sections
 node tools/series/check-series-svg.cjs content/series/assets
 node tools/series/sync-series-hashes.cjs --series=ai       # verify content_hash; --write to update
 node tools/series/entegre-batch.cjs --series=ai            # add new articles to catalog/roadmap; --write to apply
@@ -132,9 +134,11 @@ docs/<series-docs>/
   TRIGGER.md            the prompt that starts a production or maintenance run
 ```
 
-The build validates every catalog against its frontmatter; the content tools enforce the rest
-of the contract. Series are registered in code (routes, schemas, access rules, a database check
-constraint) — adding one is a checklist, described in the [fork guide](docs/FORKING.md#add-a-series).
+Catalogs are schema-checked whenever they load (also during `next build`), and an article's
+frontmatter is compared with its catalog entry when it renders; the content tools check hashes,
+revision fields, roadmap consistency and the structural rules. Series are registered in code
+(routes, schemas, access rules, a database check constraint) — adding one is a checklist,
+described in the [fork guide](docs/FORKING.md#3-add-a-series).
 
 ## Agent-driven runs ("triggers")
 
@@ -143,8 +147,9 @@ used Claude Code) started by handing the agent a series' `TRIGGER.md`. The trigg
 agent what to read (contract → handoff → plan), to reconcile the plan with what is actually
 published, to produce the next batch or to maintain, to pass the gates, and to update the
 handoff so the next run can resume. There is no scheduler or CLI behind it: the files are the
-interface, and the run is only as good as the review of its diff. Runs never commit, push or
-deploy by themselves. Details and a starter template: [docs/FORKING.md](docs/FORKING.md#agent-driven-runs).
+interface, and the run is only as good as the review of its diff. Committing, pushing and
+deploying stay with you (the Güven Sınırı trigger forbids them outright). Details and a starter
+template: [docs/FORKING.md](docs/FORKING.md#4-agent-driven-runs).
 
 ## Deployment
 
@@ -155,7 +160,8 @@ The project deploys to Vercel with a Neon database. `pnpm vercel-build` runs
 ### Launch switch
 
 Shipping code and opening the site are separate decisions. Without `PUBLIC_LAUNCH=1` the
-middleware keeps every page but `/login` behind an account, sign-up and recovery refuse,
+middleware keeps every page but `/login` (and `/robots.txt`) behind an account, sign-up and
+recovery refuse,
 `robots.txt` disallows everything and the sitemap is empty — the site behaves as the private
 library it was. Before setting it, fill in the data controller on the privacy page
 (`DATA_CONTROLLER` in `src/lib/site.ts`); the remaining launch steps are in
@@ -164,8 +170,9 @@ library it was. Before setting it, fill in the data controller on the privacy pa
 ## Security
 
 Access control is enforced on the server — middleware, every page, the APIs and the sitemap all
-read the same policy — and covered by unit, browser and database-backed tests. Please report
-vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+read the same policy — and covered by unit tests (database calls mocked) and Playwright browser
+tests (run without a database). Please report vulnerabilities privately as described in
+[SECURITY.md](SECURITY.md).
 
 ## Contributing
 
@@ -178,6 +185,8 @@ pass the content tools, and article corrections follow the series contract.
 copyright applies: GitHub's terms let you view and fork it on GitHub, but grant no right to
 reuse, modify or redistribute the code or the articles elsewhere. Code and article content may
 end up under different licenses. Third-party material keeps its own terms: the articles quote
-and cite external sources (see each *Kaynakça*), the bundled fonts (Inter, Newsreader,
-JetBrains Mono) are under the SIL Open Font License, and the npm dependencies are under MIT,
-ISC or Apache-2.0 licenses.
+and cite external sources (see each *Kaynakça*); the fonts (Inter, Newsreader, JetBrains Mono),
+fetched from Google Fonts at build time by `next/font`, are under the SIL Open Font License 1.1;
+the direct npm dependencies are under MIT, ISC or Apache-2.0, and their transitive dependencies
+add other licenses, including BSD, 0BSD, CC-BY-4.0 (`caniuse-lite`) and LGPL-3.0-or-later
+(sharp's libvips binaries, an optional dependency of Next.js).

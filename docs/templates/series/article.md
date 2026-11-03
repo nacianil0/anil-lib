@@ -20,8 +20,9 @@ it is: `node tools/series/sync-series-hashes.cjs --series=<key> --write` fills i
 
 The body starts with an H2, never an H1: the title comes from the frontmatter. The content checker
 also wants at least one figure, one to three self-check boxes, and a "what comes next" section
-right before the bibliography, as below. The section names are the series' own (here the AI
-series' Turkish ones); change them in `tools/series/check-series-content.cjs` if yours differ.
+right before the bibliography, as below. `### Sırada ne var` and `## Kaynakça` are required of
+every series; only the self-check label (`Kendini yokla` here) is set per series, in the
+checker's `PROFILES`.
 
 ![A figure's alt text states the figure's claim, so a reader who cannot see it gets the same point](assets/first-figure.svg "Şekil 1 — What the figure shows")
 

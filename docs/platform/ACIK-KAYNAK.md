@@ -68,4 +68,17 @@ açık kaynak projeye dönüştür ve güvenli main entegrasyonunu tamamla" prom
   - Dev'de `/demo` ve `/demo/ilk-yazi` 200 (başlık, şekil, kaynakça). Panel seriyi listeliyor; mevcut seri sayfaları 200.
   - `git diff`: mevcut serilerin içeriği, katalogları ve belgeleri değişmedi.
   - `0007` migration'ı PostgreSQL 17.5'te (PGlite) uygulandı; kısıt `demo`'yu kabul etti, bilinmeyen seriyi reddetti (23514).
+- 16:05 Kapılar (dal `bc9025f`): `pnpm check` çıkış 0 (948 test, derleme). E2E `public-access` + `auth` 35/35. Veritabanlı erişim matrisi 9/9. Dalın `main`'e göre farkında gizli bilgi taraması temiz.
+- 16:06 Kullanıcının hızlandırma talimatı: bağımsız işler paralel yürüyor.
+  - Ajan A: tam e2e paketi, ayrı klonda ve 3150 portunda.
+  - Ajan B: belge iddialarını koda karşı salt okunur denetliyor.
+  - Ana oturum: push, PR, Vercel ve birleştirme.
+  - Birleştirme A ve B'nin sonucunu bekler.
+- 16:12 PR açıldı: https://github.com/nacianil0/anil-lib/pull/1 (head `bc9025f`, base `main`). GitHub mergeable; dal koruması ya da zorunlu kontrol yok.
+  - Vercel Preview deployment `7519508374` "success". Bu derleme `VERCEL_ENV=preview` olduğu için migration'ı atlamış olmalı; Vercel günlüğüne erişim yok, çıkarım koddan.
+- 16:15 Lansman kapalıyken axe: `/login`, `/seri`, `/kayit` × açık/koyu × 1440/375 = 12 satır, 0 ihlal. Hepsi `/login`'e iniyor, kayıt bağlantısı yok, taşma yok.
+- 16:30 Ajan A, tam e2e paketi (ayrı klon `bc9025f`, port 3150, veritabanısız): 90 test, 86 geçti, 3 başarısız, 1 atlandı (`reader.spec.ts:249`, fikstürde ikinci kohort yok).
+  - Başarısızlardan ikisi `reader-data.spec.ts:97` ve `:117`. Veritabanı yok, `/api/reader-sync` 503 dönüyor; PGlite ile geçtikleri daha önce gösterildi.
+  - Üçüncüsü `reader.spec.ts:520`, sayfa çevirme. Yük altında bir zamanlama yarışı; tek başına 5/5 geçti. Kök neden `use-reader-layout.ts`'te: `turnPage`'in 600 ms penceresi dolunca hesap kaydırmanın ara konumundan yapılıyor.
+  - Bu kod ve test bu dalda değişmedi (en son 2026-09-06); kusur `main`'de de var. **Yeşil sayılmadı**; ayrı işe bırakıldı.
 

@@ -23,9 +23,18 @@ and third-party services (Vercel, Neon, GitHub) — report those to their vendor
 
 - Sessions are HMAC-signed, `HttpOnly`, `SameSite=Lax`, `Secure` in production; a session that
   outlives the browser exists only if the reader ticks "Beni hatırla".
-- Roles are read from the database, never from the cookie. A self-registered reader can read the
-  AI and Güven Sınırı series only; anything else answers with a redirect to sign-in or a 404.
-- Passwords are stored with scrypt; recovery codes as SHA-256 digests of 125-bit random codes.
-  Sign-in, sign-up and recovery are rate-limited per address and per username; addresses are kept
-  only as HMAC digests.
-- Until `PUBLIC_LAUNCH=1`, every page but `/login` requires an account and sign-up is closed.
+- The cookie carries no role: pages, owner tools and the reset API read it from the account row
+  (with no database the only account is the environment-configured owner). The sync API scopes
+  writes by the HMAC-signed workspace and re-checks self-registered readers in the database.
+- A self-registered reader can read the AI and Güven Sınırı series only. Pages answer anything
+  else with a redirect to sign-in or a 404; the reset API answers 403 and the sync API rejects
+  writes outside those series.
+- Account passwords are stored with scrypt. The owner starts from the unsalted SHA-256 in
+  `SITE_PASSWORD_SHA256`, replaced by scrypt at the first sign-in when a database is configured.
+  Recovery codes are stored as SHA-256 digests of 125-bit random codes.
+- Failed sign-ins and recovery attempts are rate-limited per address and per username; sign-ups
+  per address and by a global hourly ceiling. The limits need the database: a limiter failure lets
+  sign-in proceed but closes sign-up and recovery. Addresses and usernames are kept only as HMAC
+  digests.
+- Until `PUBLIC_LAUNCH=1`, every page but `/login` and `/robots.txt` requires an account and
+  sign-up is closed.

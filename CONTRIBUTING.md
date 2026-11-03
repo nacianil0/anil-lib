@@ -18,7 +18,8 @@ No environment variables are needed for most work; see `.env.example` for the re
 ## Code changes
 
 - `pnpm check` (typecheck, lint, unit tests, production build) must pass. Run `pnpm test:e2e`
-  when you touch routing, the reader, sign-in or anything the browser tests cover.
+  when you touch routing, the reader, sign-in or anything the browser tests cover (once per
+  machine: `pnpm exec playwright install chromium`).
 - Access control lives in `src/lib/auth/access.ts` and is enforced on the server in the
   middleware, the pages and the API routes. A change to who can read what needs tests at those
   layers, not only in the UI.
