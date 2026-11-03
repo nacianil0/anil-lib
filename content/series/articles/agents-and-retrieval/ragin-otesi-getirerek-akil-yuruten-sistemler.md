@@ -12,7 +12,7 @@ tags:
   - dusun-eyle-gozle
   - etkin-getirme
   - yansima-tokenlari
-content_hash: sha256:3a61214a58a24a4cd7c0c559c81d7097d43ce172905c177863a125cc51d3dfcb
+content_hash: sha256:53a81f6b72d8dd1771084daa1cea16f776694fb4d6c36dfcbb64f67e2e846d3a
 classification_version: 1
 classification_batch: 10
 ---
@@ -81,11 +81,11 @@ Bu yüzden tablonun son satırı HotpotQA'da en iyisi: önce döngü çalışıy
 
 Mekanizma şöyle. Model bir sonraki cümleyi geçici olarak üretir. Cümledeki token'lardan herhangi birinin olasılığı bir eşiğin altındaysa — model o cümleden emin değilse — cümle sorgu olarak kullanılıp getirme yapılır ve cümle getirilen parçalarla yeniden üretilir; eminse cümle olduğu gibi kalır ve arama yapılmaz. 16\. makaledeki kalibrasyon burada bir düğmeye dönüşüyor: modelin kendi güveni, ne zaman dışarı bakacağını söylüyor. 41\. makaledeki uyarlanabilir getirme sorunun popülerliğine bakıyordu; bu düzen cümle cümle, üretim sırasında bakıyor.
 
-Kazanç ölçülmüş. İki adımlı bir soru kümesinde tam eşleşme: getirmesiz 28,2; sorunun başında tek getirme 39,4; her cümleden önce önceki cümleyle getirme 39,0; önceki pencereyle 43,2; soruyu alt sorulara ayırıp her biri için getirme 47,8; ileriye bakan etkin getirme **51,0**. İnce ayrım öğretici: önceki cümleyle aramak neredeyse hiç kazandırmıyor, çünkü önceki cümle bir sonraki cümlenin ihtiyacını söylemez. Henüz yazılmamış cümlenin taslağıyla aramak kazandırıyor; 40\. makaledeki "hatayı oluştuğu yerde yakalamak" fikrinin getirme hâli.
+Kazanç ölçülmüş. İki adımlı bir soru kümesinde tam eşleşme: getirmesiz 28,2; sorunun başında tek getirme 39,4; her cümleden önce önceki cümleyle getirme 39,0; önceki pencereyle 43,2; soruyu alt sorulara ayırıp her biri için getirme 47,8; ileriye bakan etkin getirme **51,0**. İnce ayrım öğretici: önceki cümleyle aramak neredeyse hiç kazandırmıyor, çünkü önceki cümle bir sonraki cümlenin ihtiyacını söylemez. Henüz yazılmamış cümlenin taslağıyla aramak kazandırıyor; 40\. makaledeki, hatayı sonunda değil oluştuğu yerde görünür kılma fikrinin getirme hâli.
 
 ## Hakemi döngünün içine almak
 
-45\. makale hakemi hattın dışında tutuyordu: cevap bitince ölçülüyordu. Akari Asai ve arkadaşlarının ICLR 2024'te sunduğu çalışma hakemi üretimin içine alıyor ve bunu 30\. makaledeki araçla yapıyor — özel token'larla.
+45\. makale hakemi hattın dışında tutuyordu: cevap bitince ölçülüyordu. Akari Asai ve arkadaşlarının ICLR 2024'te sunduğu çalışma hakemi üretimin içine alıyor ve bunu 24\. makaledeki araçla yapıyor — özel token'larla.
 
 Model, sıradan sözcüklerin yanında dört tür **yansıma token'ı** (reflection token) üretmeyi öğreniyor. Birincisi getirme kararı: şimdi getir, getirme, ya da devam et. İkincisi ilgililik: getirilen parça soruya yararlı mı. Üçüncüsü destek: üretilen bölüm parçayla tamamen, kısmen destekleniyor mu, yoksa desteklenmiyor mu. Dördüncüsü fayda: bölüm cevap için ne kadar işe yaradı. Bu token'lar 45\. makaledeki üç ölçünün — bağlam ilgililiği, kaynak sadakati, cevap ilgililiği — üretim anındaki karşılıkları.
 

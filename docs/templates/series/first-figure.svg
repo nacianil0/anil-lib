@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-label="Two boxes joined by an arrow: a question on the left leads to its answer on the right.">
+  <rect x="20" y="40" width="240" height="110" rx="8" fill="var(--surface)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="40" y="100" font-size="16" fill="var(--text)">the question</text>
+  <line x1="270" y1="95" x2="370" y2="95" stroke="var(--accent)" stroke-width="2" />
+  <rect x="380" y="40" width="240" height="110" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="400" y="100" font-size="16" fill="var(--text)">its answer</text>
+</svg>

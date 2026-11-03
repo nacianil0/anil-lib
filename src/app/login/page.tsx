@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Lock } from "lucide-react";
 import { login } from "./actions";
+import { publicLaunchEnabled } from "@/lib/auth/access";
 import { getGateConfig, safeNextPath } from "@/lib/auth/password-gate";
 
 type SearchParams = Promise<{
   error?: string | string[];
   next?: string | string[];
+  notice?: string | string[];
 }>;
 
 export const metadata: Metadata = {
@@ -17,11 +20,18 @@ function firstParam(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
 }
 
+const inputClass =
+  "h-10 rounded border border-border bg-surface px-3 font-sans text-sm text-text outline-none transition-colors placeholder:text-text-faint focus:border-accent focus:ring-1 focus:ring-accent disabled:cursor-not-allowed disabled:opacity-50";
+
 export default async function LoginPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
   const next = safeNextPath(firstParam(params.next));
   const error = firstParam(params.error);
+  const notice = firstParam(params.notice);
   const isConfigured = Boolean(getGateConfig());
+  // Before the launch there is no sign-up and nothing to read without an account.
+  const launched = publicLaunchEnabled();
+  const registerHref = next === "/" ? "/kayit" : `/kayit?${new URLSearchParams({ next })}`;
 
   return (
     <main className="grid min-h-screen place-items-center bg-bg px-6 py-12">
@@ -34,15 +44,36 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
 
         <div className="pb-2 pt-4">
           <p className="font-mono text-2xs uppercase tracking-[0.2em] text-text-faint">
-            Özel kütüphane
+            <Link href="/" className="hover:text-text">
+              Anıl Lib
+            </Link>
           </p>
           <h1 className="mt-3 font-serif text-[1.75rem] font-semibold leading-tight text-text">
-            Okuma Odası
+            Giriş yap
           </h1>
           <p className="mt-3 font-sans text-sm leading-relaxed text-text-muted">
-            Okuma listesine erişmek için kullanıcı adını ve şifreni gir.
+            {launched
+              ? "Hesabınla Güven Sınırı serisini de okursun ve ilerlemen cihazların arasında eşitlenir. Yapay zekâ serisi hesapsız da açık."
+              : "Okuma listesine erişmek için kullanıcı adını ve şifreni gir."}
           </p>
         </div>
+
+        {notice === "recovered" && (
+          <p
+            role="status"
+            className="mt-4 rounded border border-cool-soft bg-cool-soft px-3 py-2 font-sans text-2xs leading-snug text-cool"
+          >
+            Parolan değişti ve eski oturumların kapandı. Yeni parolanla giriş yap.
+          </p>
+        )}
+        {notice === "deleted" && (
+          <p
+            role="status"
+            className="mt-4 rounded border border-cool-soft bg-cool-soft px-3 py-2 font-sans text-2xs leading-snug text-cool"
+          >
+            Hesabın ve hesaba bağlı okuma verilerin silindi.
+          </p>
+        )}
 
         <form action={login} className="mt-6 flex flex-col gap-4">
           <input type="hidden" name="next" value={next} />
@@ -56,7 +87,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
               autoComplete="username"
               autoCorrect="off"
               autoFocus
-              className="h-10 rounded border border-border bg-surface px-3 font-sans text-sm text-text outline-none transition-colors placeholder:text-text-faint focus:border-accent disabled:cursor-not-allowed disabled:opacity-50"
+              className={inputClass}
               disabled={!isConfigured}
               name="username"
               required
@@ -71,7 +102,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
             </span>
             <input
               autoComplete="current-password"
-              className="h-10 rounded border border-border bg-surface px-3 font-sans text-sm text-text outline-none transition-colors placeholder:text-text-faint focus:border-accent disabled:cursor-not-allowed disabled:opacity-50"
+              className={inputClass}
               disabled={!isConfigured}
               name="password"
               required
@@ -79,10 +110,32 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
             />
           </label>
 
+          <label className="flex items-start gap-2.5 font-sans text-sm text-text">
+            <input
+              className="mt-0.5 h-4 w-4 shrink-0 accent-accent-fill"
+              disabled={!isConfigured}
+              name="remember"
+              type="checkbox"
+              aria-describedby="remember-help"
+            />
+            <span>
+              Beni hatırla
+              <span id="remember-help" className="block text-2xs leading-snug text-text-muted">
+                7 gün açık kalır ve bunun için çerez kullanır. İşaretlemezsen tarayıcıyı kapatınca
+                oturum kapanır.
+              </span>
+            </span>
+          </label>
+
           <div aria-live="polite" className="min-h-[2.5rem]">
             {error === "invalid" && (
               <p className="rounded border border-accent-soft bg-accent-soft px-3 py-2 font-sans text-2xs leading-snug text-accent">
                 Kullanıcı adı veya şifre hatalı.
+              </p>
+            )}
+            {error === "throttled" && (
+              <p className="rounded border border-accent-soft bg-accent-soft px-3 py-2 font-sans text-2xs leading-snug text-accent">
+                Çok fazla başarısız deneme oldu. Birkaç dakika bekleyip tekrar dene.
               </p>
             )}
             {error === "unavailable" && (
@@ -98,13 +151,33 @@ export default async function LoginPage({ searchParams }: { searchParams: Search
           </div>
 
           <button
-            className="h-10 rounded bg-accent-fill font-sans text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+            className="h-10 rounded bg-accent-fill font-sans text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50"
             disabled={!isConfigured}
             type="submit"
           >
-            Kilidi aç
+            Giriş yap
           </button>
         </form>
+
+        {launched && (
+          <nav
+            aria-label="Hesap seçenekleri"
+            className="mt-6 flex flex-col gap-2 font-sans text-sm"
+          >
+            <Link href={registerHref} className="text-accent underline-offset-4 hover:underline">
+              Hesabın yok mu? Ücretsiz hesap aç
+            </Link>
+            <Link
+              href="/hesap-kurtar"
+              className="text-text-muted underline-offset-4 hover:underline"
+            >
+              Parolanı mı unuttun? Kurtarma koduyla gir
+            </Link>
+            <Link href="/seri" className="text-text-muted underline-offset-4 hover:underline">
+              Hesapsız okumaya dön
+            </Link>
+          </nav>
+        )}
       </div>
     </main>
   );

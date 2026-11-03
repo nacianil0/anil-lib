@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAdjacent, getDescriptors, getArticleBySlug } from "@/lib/content/catalog";
 import { renderArticleBySlug } from "@/lib/content/articles";
 import { ReaderShell } from "@/components/reader/reader-shell";
-import { requireOwnerUser } from "@/lib/auth/session-user";
+import { getOwnerUser, requireOwnerUser } from "@/lib/auth/session-user";
 import { ARCHIVE_BASE_PATH, ARCHIVE_SUBTITLE, ARCHIVE_TITLE } from "@/lib/content/archive";
 
 /**
@@ -24,6 +24,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  // Metadata renders even when the page answers 404; the archive's titles are owner-only.
+  if (!(await getOwnerUser())) return { title: "Bölüm bulunamadı" };
   const article = getArticleBySlug(slug);
   if (!article) return { title: "Bölüm bulunamadı" };
   return {

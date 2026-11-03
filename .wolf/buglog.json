@@ -15802,19 +15802,21 @@
     {
       "id": "bug-956",
       "timestamp": "2026-11-02T12:00:00Z",
-      "error_message": "Geri göndermelerde hedef makalede olmayan içerik ya da tırnaklı ifade: 48→34, 50→45, 52→48/47, 57→56, 58→54 (aralık A); 85/89→27 'bellek duvarı', 91→29 'uzun belgelerin normu', 91→43 'dizinlerin çoğu normalleştirir', 93→45/60 'beklenen maliyet/çağrı', 97→16 'cetvel arayışı', 102→9 'bağımsız tekrar' tanımı, 88→87 eşitleme (aralık B); 100→11 '%1,6 asistanlaştırma' (aralık D)",
+      "error_message": "Geri göndermelerde hedef makalede olmayan içerik ya da tırnaklı ifade: 48→34, 50→45, 52→48/47, 57→56, 58→54 (aralık A); 85/89→27 'bellek duvarı', 91→29 'uzun belgelerin normu', 91→43 'dizinlerin çoğu normalleştirir', 93→45/60 'beklenen maliyet/çağrı', 102→9 'bağımsız tekrar' tanımı, 88→87 eşitleme (aralık B); 100→11 '%1,6 asistanlaştırma' (aralık D)",
       "file": "content/series/articles/multimodal-and-future/verimli-mimariler-uzman-karisimlari-moe.md",
       "root_cause": "Geri çağırmalar yazılırken hedef makale grep'lenmemiş; terim ya da tırnak hedefte yok",
-      "fix": "Her biri hedef makalenin kendi ifadesine çekildi ya da çıkarıldı; fc6.py --ref kök örtüşmesiyle aday üretiyor, karar hedefin grep'iyle",
+      "fix": "Her biri hedef makalenin kendi ifadesine çekildi ya da çıkarıldı; fc6.py --ref kök örtüşmesiyle aday üretiyor, karar hedefin grep'iyle — Run 7 düzeltmesi (2026-11-03): ilk kayıttaki 97→16 'cetvel arayışı' maddesi yanlış alarmdı (16'nın H2 başlığı; bug-976); listeden çıkarıldı, run 6'nın yanlış geri gönderme sayısı 14.",
       "tags": [
         "seri",
         "geri-gonderme",
         "sozlesme-5",
         "bakim-run-6"
       ],
-      "related_bugs": [],
+      "related_bugs": [
+        "bug-976"
+      ],
       "occurrences": 1,
-      "last_seen": "2026-11-02T12:00:00Z"
+      "last_seen": "2026-11-03T12:00:00Z"
     },
     {
       "id": "bug-957",
@@ -16051,6 +16053,580 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-11-02T09:05:41.697Z"
+    },
+    {
+      "id": "bug-971",
+      "timestamp": "2026-11-03T08:25:48.210Z",
+      "error_message": "Incorrect value in code",
+      "file": ".claude/launch.json",
+      "root_cause": "Had \"-c\"",
+      "fix": "Changed to \"-lc\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T08:25:48.210Z"
+    },
+    {
+      "id": "bug-972",
+      "timestamp": "2026-11-03T08:36:03.724Z",
+      "error_message": "Significant refactor of ",
+      "file": ".claude/launch.json",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 9→3 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "json"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T08:36:03.724Z"
+    },
+    {
+      "id": "bug-973",
+      "timestamp": "2026-11-03T08:37:18.050Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had `src5.py`",
+      "fix": "Changed to \"cetvel arayışı\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 4,
+      "last_seen": "2026-11-03T08:37:45.879Z"
+    },
+    {
+      "id": "bug-974",
+      "timestamp": "2026-11-03T08:38:16.913Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "9 lines replaced/restructured",
+      "fix": "Rewrote 9→14 lines (9 removed) | Also: vadide\", \"Şaşkınlığı ölçmek\"); run 6'nın 15 yanlış; arayışı\") hedefe yüklüyordu.",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-03T08:38:33.991Z"
+    },
+    {
+      "id": "bug-975",
+      "timestamp": "2026-11-03T08:38:29.902Z",
+      "error_message": "Wrong reference: 302 should be 308",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Used \"302\" instead of \"308\"",
+      "fix": "Changed 302 → 308",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T08:38:29.902Z"
+    },
+    {
+      "id": "bug-976",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "Run 6'nın 97→16 'cetvel arayışı' geri gönderme düzeltmesi yanlış alarmdı: 16'nın H2 başlığı '## Cetvel arayışı'",
+      "file": "content/series/articles/foundations/klasik-makine-ogrenmesi-turu-llmden-once-ve-yaninda.md",
+      "root_cause": "Run 6'nın hedef grep'i büyük/küçük harfe duyarlıydı ve başlığı kaçırdı; 'hedefte yok' kararı doğrulanmadan uygulandı",
+      "fix": "recheck_br7.py ile run 5–6'nın geri gönderme kararları büyük/küçük harf ve İ/ı duyarsız, başlıklar dâhil yeniden tarandı: yalnız bu biri yanlış. 97'nin yeni ifadesi 16'yla tutarlı olduğu için metin geri alınmadı; YOL-HARITASI #305, HANDOFF (run 6 bölümü, ders b, yoğunluk maddesi), bug-956 ve cerebrum düzeltildi; run 6 sayısı 15→14, run 5–6 toplamı 19→18",
+      "tags": [
+        "seri",
+        "geri-gonderme",
+        "yanlis-alarm",
+        "grep",
+        "buyuk-harf",
+        "bakim-run-7"
+      ],
+      "related_bugs": [
+        "bug-956"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-977",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "İndirici bot ve doğrulama sayfalarını başarılı indirme diye kaydetti: INRIA HAL Anubis (43 Jégou 2011), AAAI OJS Anubis (66 SycEval), OpenReview 'Verifying your browser' (67 Pacchiardi, 69 FMTI 2024/2025, 71 Zheng, 73 LLMBar, 78 McKenzie), EUR-Lex 202 (80 AB Yasası); ayrıca 68 Hackenburg–Margetts için arXiv araması künyenin DOI'sindeki çalışma yerine başka makaleyi indirdi",
+      "file": "scratchpad/src5.py",
+      "root_cause": "HTTP 200/202 dönen koruma sayfası içerik sanıldı; başlıkla arXiv araması DOI'yi kontrol etmiyor",
+      "fix": "idchk6.py 'EKSİK' işaretiyle yakalandı; sayfalar silindi, künyenin okunan sürümü (arXiv, Europe PMC PMC11181035, Yayın Ofisi Cellar'ı) indirildi; Jégou 2011 alınamadı, PQ iddiaları FAISS'ten doğrulandı. Hiçbir koruma atlatılmadı, hiçbir makale bu sayfalarla denetlenmedi",
+      "tags": [
+        "arac",
+        "indirme",
+        "bot-korumasi",
+        "openreview",
+        "anubis",
+        "kimlik",
+        "bakim-run-7"
+      ],
+      "related_bugs": [
+        "bug-955"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-978",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "74 aktivasyon-yamasi-iki-yon.svg: sol paneldeki 'temiz hesap geri konur' 350,6'da bitiyor, kutu ve panel 350'de (öteki kutularda ~10 birim boşluk)",
+      "file": "content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/aktivasyon-yamasi-iki-yon.svg",
+      "root_cause": "2026-09-25 çiziminde kutu panelin kenarına dayanmış; check-series-svg yalnız viewBox taşmasını denetliyor, kutu/panel taşmasını görmüyor",
+      "fix": "Metne dokunmadan yerleşim: ilk kutu 136 genişlik, ok x=172, ikinci kutu 188–344, metin x=196 (getComputedTextLength ile metin 336,6'da bitiyor); açık ve koyu temada yeniden çekildi, sayfa 9 satırda yeniden ölçüldü",
+      "tags": [
+        "seri",
+        "svg",
+        "yerlesim",
+        "png-inceleme",
+        "bakim-run-7"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-979",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "74: alt metin ve aktivasyon-yamasi-iki-yon.svg bozma yöntemi olarak kaynakta olmayan bir liste (sıfırlama, ortalama, yeniden örnekleme) taşıyordu; gövde run 4'te düzeltilmişti",
+      "file": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
+      "root_cause": "Run 4'ün gövde düzeltmesi alt metne ve SVG metnine taşınmamıştı (yansıma)",
+      "fix": "Alt metin ve SVG satırı kaynağın iki yöntemine (Gauss gürültüsü, yakın token'la değiştirme) çekildi, aria-label eşitlendi; prop7.py yansıma taraması yakaladı",
+      "tags": [
+        "seri",
+        "yansima",
+        "alt-metin",
+        "svg",
+        "bakim-run-7"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-980",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "43: Big-ANN Şekil 2'nin sayıları iki parkurun en iyisi değil taban çizgileri; iki taban çizgisi ayrı dizinler (FAISS ters dosya + PQ ↔ DiskANN); şekil 'fark algoritmadan değil bütçeden' diyordu",
+      "file": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "root_cause": "Kaynağın şekli taban çizgisi olarak etiketlenmişti; makale onları sonuç gibi ve tek bir yöntem ailesi gibi okuttu",
+      "fix": "Gövde, alt metin, SVG metni ve aria-label düzeltildi; yorum 'bizim okumamızla' işaretlendi; DiskANN SIFT1B koşulu, Kuffo ~%35 MSMARCO; revizyon işareti 2026-11-03; kelime bandı 3.528→≤3.500 sıkılaştırıldı",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "sekil",
+        "taban-cizgisi",
+        "revizyon",
+        "bakim-run-7"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-981",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "Model ya da koşul adı düşmüş sayılar: 41 LAMA tablosu (BERT-large) ve 63,5 (DrQA), Mallen öbekleri (davinci-003 + Contriever); 44 RankGPT öğretmeni (ChatGPT, GPT-4 değil); 45 RGB (ChatGPT İngilizce), RAGTruth 378 (Mistral-7B), veriden metinde 0,27 (GPT-4, 'en iyi model' değil); 62 Brahman tablosu (sistem istemi olmadan); 79 Andriushchenko %12/%100 (R2D2)",
+      "file": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
+      "root_cause": "SOZLESME §4'ün en sık hatası: sayı aktarılırken modelin ve ölçüm koşulunun adı düşmüş",
+      "fix": "Her sayıya kaynağın tablosundaki model ve koşul yazıldı; revizyon işareti gerekmedi",
+      "tags": [
+        "seri",
+        "olgu-denetimi",
+        "kosul",
+        "sozlesme-4",
+        "bakim-run-7"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-982",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "Geri göndermelerde hedefte olmayan tırnaklı ifade ya da yanlış hedef: 46→40 tırnak, 46→30 (doğrusu 24), 47→46 'belirsizsen ara', 61→16 Goodhart (terim 13'te), 66→32 'sadakat' (31'de), 67→64 'müzakereci hizalama', 78→71 'ölçüte çalışmak', 78→70 eşik cümlesi",
+      "file": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
+      "root_cause": "Geri çağırmalar hedef makale grep'lenmeden yazılmış (run 4 bu dersten önceydi)",
+      "fix": "Her biri hedefin kendi ifadesine çekildi; br7.py adayları üretti, karar hedefte büyük/küçük harf duyarsız okumayla",
+      "tags": [
+        "seri",
+        "geri-gonderme",
+        "sozlesme-5",
+        "bakim-run-7"
+      ],
+      "related_bugs": [
+        "bug-956"
+      ],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-983",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "Erişilebilirlik ölçeri a11y7.mjs her sayfada 3 'role/aria-label'sız SVG saydı",
+      "file": "scratchpad/a11y7.mjs",
+      "root_cause": "'main figure svg' seçicisi şekil kabındaki yakınlaştırma düğmesinin aria-hidden simgelerini de saydı",
+      "fix": "aria-hidden SVG'ler ayrı sayıldı (39 dekoratif simge), düğme adları denetime eklendi; düzeltilmiş koşu 39 satırda 0 sorun",
+      "tags": [
+        "arac",
+        "erisilebilirlik",
+        "yanlis-alarm",
+        "bakim-run-7"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-984",
+      "timestamp": "2026-11-03T12:00:00Z",
+      "error_message": "Düzeltmeler kelime bandını aştı (43: 3.528, 67: 3.502) ve 74'ün ilk SVG satırı viewBox'tan taştı",
+      "file": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
+      "root_cause": "Koşul eklemek metni uzatıyor; SVG satırı ilk yazımda fazla uzundu",
+      "fix": "Düzeltmeler korunarak cümleler sıkılaştırıldı (43c/43d, 67-01b); SVG satırı kısaltıldı (74b); check-series-content --warnings ve check-series-svg temiz",
+      "tags": [
+        "seri",
+        "kelime-bandi",
+        "svg",
+        "kapi",
+        "bakim-run-7"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:00:00Z"
+    },
+    {
+      "id": "bug-985",
+      "timestamp": "2026-11-03T10:43:51.221Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/middleware.ts",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 19→25 lines (3 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T10:43:51.221Z"
+    },
+    {
+      "id": "bug-986",
+      "timestamp": "2026-11-03T10:46:23.976Z",
+      "error_message": "Type error",
+      "file": "src/lib/db/schema.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T10:46:23.976Z"
+    },
+    {
+      "id": "bug-987",
+      "timestamp": "2026-11-03T10:46:24.905Z",
+      "error_message": "Wrong reference: jsonb should be integer",
+      "file": "src/lib/db/schema.ts",
+      "root_cause": "Used \"jsonb\" instead of \"integer\"",
+      "fix": "Changed jsonb → integer",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T10:46:24.905Z"
+    },
+    {
+      "id": "bug-988",
+      "timestamp": "2026-11-03T11:17:47.354Z",
+      "error_message": "Function not marked async",
+      "file": "next.config.mjs",
+      "root_cause": "Function uses await but wasn't declared async",
+      "fix": "Added async modifier",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T11:17:47.354Z"
+    },
+    {
+      "id": "bug-989",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "Kayıt sonrası kurtarma kodu hiç görünmüyordu; kullanıcı doğrudan panele düşüyordu",
+      "file": "src/app/kayit/page.tsx",
+      "root_cause": "Server action session çerezini kurunca Next mevcut sayfayı yeniden render etti; /kayit 'giriş yapmışsa redirect' kuralıyla panele yönlendirdi, useActionState'teki kod kayboldu",
+      "fix": "Sayfa redirect etmiyor; RegisterForm her durumda aynı konumda render ediliyor ve 'created' state'ini koruyor, giriş yapmış ziyaretçiye 'Zaten giriş yaptın' gösteriyor. Veritabanlı e2e (PGlite) yakaladı ve doğruladı",
+      "tags": [
+        "nextjs",
+        "server-action",
+        "cookies",
+        "rerender",
+        "kayit",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-990",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "Tarayıcı depolamayı tamamen engellediğinde okuyucu sayfası çöküyordu (localStorage erişimi fırlatıyor)",
+      "file": "src/lib/reader-data/storage.ts",
+      "root_cause": "readReaderData localStorage.getItem çağrısını try/catch dışında yapıyordu; bloklu depolamada SecurityError provider effect'inde fırlıyordu",
+      "fix": "readReaderData gövdesi try/catch'e alındı, hata halinde boş veri döner. local-mode.test.tsx ve public-access e2e (localStorage getter'ı fırlatan init script) doğruladı",
+      "tags": [
+        "localStorage",
+        "blocked-storage",
+        "reader",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-991",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "Okuyucu (reader) hesabının seri sıfırlaması 503 verecekti",
+      "file": "src/lib/reader-data/server/reset-service.ts",
+      "root_cause": "reading_series_resets.reset_by users(id)'ye FK; reader hesabının uuid'i users'ta yok → 23503",
+      "fix": "Reader için reset_by NULL; ayrıca canRead ile okunamayan seri (boun) SeriesResetNotAllowedError → route 403",
+      "tags": [
+        "fk",
+        "reset",
+        "reader",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-992",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "Yazı sayfalarında og:image yoktu (paylaşım önizlemesi görselsiz)",
+      "file": "src/app/seri/[slug]/page.tsx",
+      "root_cause": "Segment kendi openGraph'ını tanımlayınca Next kök opengraph-image'ı devralmıyor",
+      "fix": "src/lib/site.ts OG_IMAGE; /seri ve /seri/[slug] openGraph.images + twitter.images",
+      "tags": [
+        "nextjs",
+        "metadata",
+        "opengraph",
+        "seo",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-993",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "axe: link-in-text-block (1,28:1) ve scrollable-region-focusable (/gizlilik tabloları, 375 px)",
+      "file": "src/app/gizlilik/page.tsx",
+      "root_cause": "Metin içi bağlantılar yalnız renkle ayrışıyordu; overflow-x tablo kapları klavyeyle odaklanamıyordu",
+      "fix": "Metin içi bağlantılar daima altı çizili; tablo kapları role=region + aria-label + tabIndex=0. Yeniden koşu: 40 satırda 0 ihlal",
+      "tags": [
+        "a11y",
+        "axe",
+        "wcag",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-994",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "readPreferences ilk okumada varsayılan tercihleri localStorage'a yazıyordu",
+      "file": "src/lib/preferences/storage.ts",
+      "root_cause": "Eski tema göçü kodu, göç edilecek bir şey yokken de yazıyordu",
+      "fix": "Göç edilecek eski anahtar yoksa yazmadan varsayılanı döndürür; tercih yalnız kullanıcı bir ayarı değiştirince saklanır (/gizlilik metniyle tutarlı)",
+      "tags": [
+        "privacy",
+        "localStorage",
+        "preferences",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-995",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "Veritabanlı e2e'de /api/reader-sync 503: 'Invalid input for boolean type'",
+      "file": "scratchpad/lans/tools/neon-shim.mjs",
+      "root_cause": "PGlite parametreleri tipe göre serialize ediyor ve metin 'false'u boolean için reddediyor; Neon ise metni Postgres'e verip ayrıştırtıyor (uygulama kusuru değil)",
+      "fix": "Taklit, PGlite'a serializers Proxy ile parametreleri metin olarak geçiriyor",
+      "tags": [
+        "pglite",
+        "neon",
+        "test-harness",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-996",
+      "timestamp": "2026-11-03T15:00:00Z",
+      "error_message": "public-access e2e 'kaldığın yer' testi aralıklı başarısız (scrollRatio 0)",
+      "file": "tests/e2e/public-access.spec.ts",
+      "root_cause": "mouse.wheel imleç (0,0)'dayken kenar çubuğunu kaydırıyor; ayrıca dev modda kaydırma hidrasyondan önce gidince okuyucu başa dönüyor",
+      "fix": "scrollArticle (imleç makale sütununa) + waitForReader (yerel kayıtta currentArticleId) yardımcıları; 35/35",
+      "tags": [
+        "e2e",
+        "playwright",
+        "flaky",
+        "hydration",
+        "lansman"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:00:00Z"
+    },
+    {
+      "id": "bug-997",
+      "timestamp": "2026-11-03T15:25:00Z",
+      "error_message": "pnpm lint (eslint .) 147 hatayla kırmızıydı; pnpm check bu yüzden HEAD'de de geçmiyordu",
+      "file": "eslint.config.mjs",
+      "root_cause": "ESLint git dışı artifacts/ klasörünü tarıyordu (133 hata); tools/series/*.cjs CommonJS dosyalarına ESM kuralı (no-require-imports) uygulanıyordu (11); schema.ts'teki üç zod şeması yalnız tip için kuruluyordu (no-unused-vars, 3)",
+      "fix": "eslint ignores'a artifacts/ ve diğer git dışı çıktı klasörleri; **/*.cjs için sourceType commonjs + no-require-imports kapalı; schema.ts tipleri ReturnType<typeof makeX<AllCategory>> ile türetildi (tip eşitliği geçici Same<> denetimiyle kanıtlandı). eslint 147→0, pnpm check exit 0",
+      "tags": [
+        "eslint",
+        "lint",
+        "cjs",
+        "typescript",
+        "pnpm-check"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T15:25:00Z"
+    },
+    {
+      "id": "bug-998",
+      "timestamp": "2026-11-03T12:35:17.364Z",
+      "error_message": "Wrong condition in logic",
+      "file": "scripts/migrate.mjs",
+      "root_cause": "Condition was: if (!url)",
+      "fix": "Changed to: if (process.env.VERCEL_ENV === \"preview\" && process.en)",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "mjs"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:35:17.364Z"
+    },
+    {
+      "id": "bug-999",
+      "timestamp": "2026-11-03T12:54:21.842Z",
+      "error_message": "Significant refactor of ",
+      "file": "../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/add_demo_series.py",
+      "root_cause": "6 lines replaced/restructured",
+      "fix": "Rewrote 6→8 lines (6 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "py"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T12:54:21.842Z"
+    },
+    {
+      "id": "bug-1000",
+      "timestamp": "2026-11-03T16:20:00Z",
+      "error_message": "Fork rehberindeki yeni seri adımları temiz klonda üç yerde takıldı",
+      "file": "docs/FORKING.md",
+      "root_cause": "Rehber ve şablon araçların gerçek beklentileriyle sınanmadan yazılmıştı: entegre-batch tek satırlık roadmap ister, içerik denetleyicisi şekil/kontrol kutusu/'Sırada ne var' ister, series-reset.test.ts seri listesini sabitler",
+      "fix": "Temiz klonda demo serisiyle adım adım uygulandı; rehbere tek satır kuralı ve test adımı, şablona denetleyiciye uyan yapı ve first-figure.svg eklendi; şablon testi (series-template.test.ts) eklendi; demo serisi tools + pnpm check + sayfalar + migration ile geçti",
+      "tags": [
+        "fork",
+        "docs",
+        "templates",
+        "series",
+        "acik-kaynak"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:20:00Z"
+    },
+    {
+      "id": "bug-1001",
+      "timestamp": "2026-11-03T16:20:00Z",
+      "error_message": "Vercel preview derlemesi production veritabanına migration uygulayabilirdi",
+      "file": "scripts/migrate.mjs",
+      "root_cause": "vercel-build her ortamda migrate.mjs çalıştırıyor; Preview'un ayrı DATABASE_URL'i olup olmadığı proje ayarı ve görülemiyor",
+      "fix": "VERCEL_ENV=preview iken MIGRATE_ON_PREVIEW=1 olmadıkça bağlanmadan çıkış; elle doğrulandı (dry-run öncesi log), .env.example ve README'de belgelendi",
+      "tags": [
+        "vercel",
+        "migration",
+        "preview",
+        "acik-kaynak"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:20:00Z"
+    },
+    {
+      "id": "bug-1002",
+      "timestamp": "2026-11-03T16:20:00Z",
+      "error_message": "Kodun main'e girmesi siteyi herkese açacaktı (lansman koşulları eksikken)",
+      "file": "src/lib/auth/access.ts",
+      "root_cause": "Herkese açık yollar koşulsuzdu; veri sorumlusu bilgisi, alan adı ve koruma kararı verilmeden production deploy anonim okuma ve kaydı açardı (Vercel SSO tek engeldi)",
+      "fix": "PUBLIC_LAUNCH anahtarı (varsayılan kapalı): middleware, kayıt/kurtarma eylemleri, robots, sitemap, giriş sayfası; access.test ve kayit/actions.test; temiz klonda kapalı/açık modlar probe edildi",
+      "tags": [
+        "launch",
+        "access",
+        "middleware",
+        "acik-kaynak"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:20:00Z"
+    },
+    {
+      "id": "bug-1003",
+      "timestamp": "2026-11-03T16:30:00Z",
+      "error_message": "reader.spec.ts:520 'turns exactly one page per scroll gesture and stops at the covers' tam pakette 'Sayfa 8 / 9' gördü (beklenen 9/9); tek başına 5/5 geçti",
+      "file": "src/lib/reader-layout/use-reader-layout.ts",
+      "root_cause": "turnPage, komut edilen sayfayı yalnız PAGE_SETTLE_MS=600 boyunca otorite sayıyor; sonra yumuşak kaydırmanın o anki ara offset'inden sayıyor. Yük altında kaydırma geride kalınca son sayfadaki ileri hareket bir sayfa geri götürüyor (ajan izi: scrollLeft 5754 → round(5754/987)+1=7 → sayfa 8). Kod 2026-09-06'dan beri değişmedi; main'de de var",
+      "fix": "Bu PR'da düzeltilmedi (kapsam dışı, eski kod). Öneri: zaman penceresi yerine hedef sayfaya varılana (scrollend ya da hedef offset'e yakınsama) kadar komut edilen sayfayı otorite say; wheel-paging ve reader.spec ile doğrula",
+      "tags": [
+        "reader",
+        "paging",
+        "race",
+        "flaky",
+        "e2e"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-03T16:30:00Z"
     }
   ]
 }

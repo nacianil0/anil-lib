@@ -15,6 +15,14 @@ export default tseslint.config(
       "next-env.d.ts",
       "pnpm-lock.yaml",
       ".wolf/**",
+      // Gitignored output (see .gitignore): run artifacts and build folders are not source.
+      "artifacts/**",
+      "dist/**",
+      "build/**",
+      "out/**",
+      ".vercel/**",
+      ".cache/**",
+      ".pnpm-store/**",
     ],
   },
   js.configs.recommended,
@@ -47,6 +55,17 @@ export default tseslint.config(
     files: ["**/*.{js,mjs,cjs}"],
     languageOptions: {
       globals: { ...globals.node },
+    },
+  },
+  {
+    // A .cjs file is CommonJS by definition (the tools/series scripts): `require` is its
+    // module system, not a style lapse.
+    files: ["**/*.cjs"],
+    languageOptions: {
+      sourceType: "commonjs",
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 );

@@ -102,6 +102,27 @@ describe("resetSeriesReadingProgress", () => {
     await resetSeriesReadingProgress(sql, { ...owner, id: "owner" }, "ai");
     expect(calls[1].params).toEqual(["owner", "ai", null]);
   });
+
+  const external: ReaderUser = {
+    ...reader,
+    id: "00000000-0000-4000-8000-0000000000c1",
+    workspaceId: "r:00000000-0000-4000-8000-0000000000c1",
+    role: "reader",
+  };
+
+  it("lets a self-registered reader reset a series it reads, recording no users row as author", async () => {
+    await resetSeriesReadingProgress(sql, external, "guvenlik");
+    // `reset_by` references `users`; the reader is not in it, so the author stays empty.
+    expect(calls[1].params).toEqual([external.workspaceId, "guvenlik", null]);
+  });
+
+  it("refuses a self-registered reader the series it cannot read, before any query", async () => {
+    await expect(resetSeriesReadingProgress(sql, external, "boun")).rejects.toBeInstanceOf(
+      SeriesResetNotAllowedError,
+    );
+    expect(queryMock).not.toHaveBeenCalled();
+    expect(transactionMock).not.toHaveBeenCalled();
+  });
 });
 const transactionMock = vi.fn(async (queries: Promise<unknown>[]) => Promise.all(queries));
 const sql = {

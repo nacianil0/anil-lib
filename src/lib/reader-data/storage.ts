@@ -44,7 +44,16 @@ export function parseReaderData(value: string | null, workspaceId: string): Read
  */
 export function readReaderData(workspaceId: string): ReaderData {
   if (typeof window === "undefined") return emptyReaderData(workspaceId);
+  try {
+    return readStoredReaderData(workspaceId);
+  } catch {
+    // Storage blocked by the browser (every access throws) or unreadable: the reader
+    // still works, starting from nothing, rather than failing to render.
+    return emptyReaderData(workspaceId);
+  }
+}
 
+function readStoredReaderData(workspaceId: string): ReaderData {
   const current = parseReaderData(
     window.localStorage.getItem(readerDataStorageKey(workspaceId)),
     workspaceId,

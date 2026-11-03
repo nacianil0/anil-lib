@@ -3,6 +3,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
 import type { ReaderUser } from "@/lib/auth/user-schema";
+import { SeriesResetNotAllowedError } from "@/lib/reader-data/server/reset-service";
 import { POST } from "./route";
 
 const mocks = vi.hoisted(() => ({
@@ -17,6 +18,7 @@ vi.mock("@/lib/auth/session-user", () => ({ getSessionUser: mocks.session }));
 vi.mock("@/lib/db/client", () => ({ getDatabaseClient: mocks.database }));
 vi.mock("@/lib/reader-data/server/reset-service", () => ({
   resetSeriesReadingProgress: mocks.reset,
+  SeriesResetNotAllowedError: class SeriesResetNotAllowedError extends Error {},
 }));
 
 const actor: ReaderUser = {
@@ -123,6 +125,13 @@ describe("POST /api/reader-reset", () => {
     const response = await POST(request());
     expect(response.status).toBe(503);
     expect(mocks.reset).not.toHaveBeenCalled();
+  });
+
+  it("refuses a series the account may not read with 403, not a 503", async () => {
+    mocks.reset.mockRejectedValue(new SeriesResetNotAllowedError());
+    const response = await POST(request());
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({ error: "forbidden" });
   });
 
   it("returns a controlled error when the reset transaction fails", async () => {

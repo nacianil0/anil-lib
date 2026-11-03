@@ -9,6 +9,8 @@ import {
   isGateIntended,
   verifySignedSession,
 } from "@/lib/auth/password-gate";
+import { canRead, isReaderWorkspace, type ReadableCollection } from "@/lib/auth/access";
+import { findReaderById } from "@/lib/auth/reader-accounts";
 import { findUserById } from "@/lib/auth/users";
 import {
   LOCAL_OWNER_USER_ID,
@@ -60,6 +62,28 @@ export const getSessionUser = cache(async function getSessionUser(): Promise<Rea
   // it reaches a `::uuid` cast.
   if (!UUID_PATTERN.test(claims.userId)) return null;
 
+  if (isReaderWorkspace(claims.workspaceId)) {
+    // A self-registered reader. The session version must match the stored one: a
+    // password change or a recovery moves it on and so signs every older cookie out.
+    let reader;
+    try {
+      reader = await findReaderById(sql, claims.userId);
+    } catch (error) {
+      console.error("[auth] reader session lookup failed", error);
+      return null;
+    }
+    if (!reader || reader.workspaceId !== claims.workspaceId) return null;
+    if (claims.sessionVersion !== reader.sessionVersion) return null;
+    return {
+      id: reader.id,
+      username: reader.username,
+      workspaceId: reader.workspaceId,
+      role: "reader",
+      lastLoginAt: reader.lastLoginAt,
+      createdAt: reader.createdAt,
+    };
+  }
+
   // A database hiccup must not become a 500 on every page and server action; treat
   // it as "no session" so the request lands on the login screen instead.
   let user;
@@ -85,6 +109,21 @@ export async function getOwnerUser(): Promise<ReaderUser | null> {
 export async function requireSessionUser(): Promise<ReaderUser> {
   const user = await getSessionUser();
   if (!user) redirect("/login");
+  return user;
+}
+
+/**
+ * For a collection's pages. Without an account: to login, back to `returnTo` after.
+ * With an account that may not read it: 404, like the owner pages, so a reader
+ * cannot even learn that the collection exists.
+ */
+export async function requireCollectionAccess(
+  collection: ReadableCollection,
+  returnTo: string,
+): Promise<ReaderUser> {
+  const user = await getSessionUser();
+  if (!user) redirect(`/login?${new URLSearchParams({ next: returnTo }).toString()}`);
+  if (!canRead(user.role, collection)) notFound();
   return user;
 }
 

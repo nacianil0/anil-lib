@@ -13,7 +13,11 @@ import {
   phaseForOrder,
   summarizePhases,
 } from "@/lib/content/series-progress";
-import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
+import {
+  ReaderDataProvider,
+  useReaderData,
+  type ReaderDataMode,
+} from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
 import { LockButton } from "@/components/reader/lock-button";
 import { SyncStatus } from "@/components/reader/sync-status";
@@ -150,7 +154,10 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
         </div>
 
         <div className="max-w-2xl">
-          <SeriesProgressReset seriesId={seriesId} />
+          <SeriesProgressReset
+            seriesId={seriesId}
+            articleIds={articles.map((article) => article.articleId)}
+          />
         </div>
 
         <section className="mt-12" aria-labelledby="yol-haritasi-baslik">
@@ -296,10 +303,14 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
   );
 }
 
-export function SeriesLanding({ workspaceId, ...props }: Props & { workspaceId: string }) {
+export function SeriesLanding({
+  workspaceId,
+  mode,
+  ...props
+}: Props & { workspaceId: string; mode?: ReaderDataMode }) {
   return (
     <ReaderPreferencesProvider>
-      <ReaderDataProvider workspaceId={workspaceId}>
+      <ReaderDataProvider workspaceId={workspaceId} mode={mode}>
         <LandingContent {...props} />
       </ReaderDataProvider>
     </ReaderPreferencesProvider>

@@ -12,7 +12,7 @@ tags:
   - aktivasyon-yamasi
   - induksiyon-basi
   - sonda
-content_hash: sha256:6a13ff3b5c356b766afe61cfa5c1e86d5713cec96020784d3dd36bc1a5e7daf1
+content_hash: sha256:d30791adf089628a4531e5ae364a372ec1822a845613b62717e8ea4489656766
 classification_version: 1
 classification_batch: 17
 revised_at: "2026-09-25"
@@ -42,7 +42,7 @@ Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris ve Jacob Steinhar
 
 Devre bulmanın temel aracı 18'de bir kez kullandığımız düzeneğin genel hâli: **aktivasyon yaması** (activation patching), bir çalıştırmadaki bir ara hesabı başka bir çalıştırmadan alınan değerle değiştirip çıktının nasıl oynadığını ölçmek. Şekil 2 iki yönünü koyuyor.
 
-![İki panel. Sol panelde üç çalıştırma: temiz girdi, bozulmuş girdi ve yamalı çalıştırma; yamalı çalıştırmada bozulmuş girdi işlenirken tek bir bileşenin aktivasyonu temiz çalıştırmadan geri konur ve çıktının ne kadar geri geldiği ölçülür; adı gürültü giderme, sorusu bu bileşen yeter mi, 18'deki nedensel izleme bu yön. Sağ panelde tersi: temiz girdi işlenirken tek bir bileşenin aktivasyonu bozulmuş çalıştırmadan konur ve çıktının ne kadar bozulduğu ölçülür; adı gürültüleme, sorusu bu bileşen gerekli mi. Altta ölçünün ne olduğu: doğru ile yanlış cevabın logit farkı, olasılığa yeğlenir, çünkü olasılık ters yönde çalışan bileşenleri kaçırabilir; bozma yöntemi de sonucu değiştirir, sıfırlama, ortalama, yeniden örnekleme. En altta otomatik keşfin adı: yamayı doğrusal yaklaşıklıkla kestirip kenarları budamak.](assets/aktivasyon-yamasi-iki-yon.svg "Şekil 2 — Aktivasyon yamasının iki yönü: gürültü giderme 'yeter mi' sorar, gürültüleme 'gerekli mi'")
+![İki panel. Sol panelde üç çalıştırma: temiz girdi, bozulmuş girdi ve yamalı çalıştırma; yamalı çalıştırmada bozulmuş girdi işlenirken tek bir bileşenin aktivasyonu temiz çalıştırmadan geri konur ve çıktının ne kadar geri geldiği ölçülür; adı gürültü giderme, sorusu bu bileşen yeter mi, 18'deki nedensel izleme bu yön. Sağ panelde tersi: temiz girdi işlenirken tek bir bileşenin aktivasyonu bozulmuş çalıştırmadan konur ve çıktının ne kadar bozulduğu ölçülür; adı gürültüleme, sorusu bu bileşen gerekli mi. Altta ölçünün ne olduğu: doğru ile yanlış cevabın logit farkı, olasılığa yeğlenir, çünkü olasılık ters yönde çalışan bileşenleri kaçırabilir; bozma yöntemi de sonucu değiştirir: girdiye Gauss gürültüsü eklemek ile kilit token'ı yakın bir token'la değiştirmek farklı bileşenler bulur. En altta otomatik keşfin adı: yamayı doğrusal yaklaşıklıkla kestirip kenarları budamak.](assets/aktivasyon-yamasi-iki-yon.svg "Şekil 2 — Aktivasyon yamasının iki yönü: gürültü giderme 'yeter mi' sorar, gürültüleme 'gerekli mi'")
 
 Stefan Heimersheim ve Neel Nanda'nın 2024'te yayımladığı, hakemli olmayan kılavuz Şekil 2'nin iki yönünü adlandırıyor ve simetrik olmadıklarını vurguluyor: **gürültü giderme** (denoising), bozulmuş çalıştırmaya temiz aktivasyon koyup neyin yettiğini ölçer, 18'in nedensel izlemesi buydu; **gürültüleme** (noising), temiz çalıştırmaya bozulmuş aktivasyon koyup neyin gerekli olduğunu ölçer. İki soru iki farklı devre verebilir. Ölçü de bir tasarım kararı: Fred Zhang ve Neel Nanda'nın ICLR 2024'te sunduğu çalışma, doğru ile yanlış cevabın logit farkını olasılığa yeğliyor, çünkü olasılık ters yönde çalışan, Şekil 1'deki olumsuz taşıyıcılar gibi, bileşenleri kaçırıyor; ve bozmanın nasıl yapıldığı, girdiye Gauss gürültüsü eklemek ya da kilit token'ı anlamca yakın bir token'la değiştirmek, aynı görevde farklı bileşenler işaret ediyor. 71'in cümlesi burada da geçerli: protokol sonucun içinde.
 

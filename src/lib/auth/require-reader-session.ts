@@ -1,13 +1,24 @@
 import "server-only";
 
 import type { NextRequest } from "next/server";
+import { isReaderWorkspace } from "@/lib/auth/access";
 import { AUTH_COOKIE_NAME, getGateConfig, verifySignedSession } from "@/lib/auth/password-gate";
+import { findReaderById } from "@/lib/auth/reader-accounts";
+import type { SqlClient } from "@/lib/auth/users";
 import { OWNER_WORKSPACE_ID } from "@/lib/auth/user-schema";
 
 export { OWNER_WORKSPACE_ID as READER_WORKSPACE_ID };
 
 export type ReaderAuthorization =
-  | { ok: true; workspaceId: string; isOwnerWorkspace: boolean }
+  | {
+      ok: true;
+      workspaceId: string;
+      isOwnerWorkspace: boolean;
+      /** A self-registered reader: narrower scope, and the session must be re-checked. */
+      isReaderWorkspace: boolean;
+      userId: string;
+      sessionVersion: number | null;
+    }
   | { ok: false; status: 401 | 403 | 503; code: string };
 
 /**
@@ -54,5 +65,26 @@ export async function authorizeReaderRequest(
     ok: true,
     workspaceId: claims.workspaceId,
     isOwnerWorkspace: claims.workspaceId === OWNER_WORKSPACE_ID,
+    isReaderWorkspace: isReaderWorkspace(claims.workspaceId),
+    userId: claims.userId,
+    sessionVersion: claims.sessionVersion,
   };
+}
+
+/**
+ * A reader's cookie is only as good as the account behind it: a deleted account, or a
+ * password changed or recovered since the cookie was minted, must stop the APIs too,
+ * not only the pages. Owner-created accounts keep the cookie-only fast path above.
+ */
+export async function readerSessionIsCurrent(
+  sql: SqlClient,
+  authorization: Extract<ReaderAuthorization, { ok: true }>,
+): Promise<boolean> {
+  if (!authorization.isReaderWorkspace) return true;
+  const reader = await findReaderById(sql, authorization.userId);
+  return (
+    reader !== null &&
+    reader.workspaceId === authorization.workspaceId &&
+    reader.sessionVersion === authorization.sessionVersion
+  );
 }

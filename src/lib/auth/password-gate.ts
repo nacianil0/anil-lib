@@ -1,5 +1,12 @@
 export const AUTH_COOKIE_NAME = "anil_lib_auth";
+/** "Beni hatırla": a persistent cookie the reader explicitly asked for at sign-in. */
 export const AUTH_COOKIE_MAX_AGE_SECONDS = 60 * 60 * 24 * 7;
+/**
+ * Server-side lifetime of a session the reader did not ask to be remembered. Its
+ * cookie carries no Max-Age, so the browser drops it on close; the signed expiry
+ * still bounds a browser that restores session cookies on restart.
+ */
+export const AUTH_SESSION_ONLY_SECONDS = 60 * 60 * 12;
 
 const encoder = new TextEncoder();
 
@@ -18,12 +25,19 @@ type SessionPayload = {
   uid: string;
   ws: string;
   exp: number;
+  /**
+   * Credential generation of a self-registered account. A password change or an
+   * account recovery bumps the stored value, which voids every cookie minted before.
+   * Absent for owner-created accounts, whose cookies predate it.
+   */
+  sv?: number;
 };
 
 export type SessionClaims = {
   userId: string;
   workspaceId: string;
   expiresAt: number;
+  sessionVersion: number | null;
 };
 
 function bytesToHex(bytes: ArrayBuffer): string {
@@ -122,14 +136,16 @@ export async function verifyLegacyPasswordHash(
 
 export async function buildSignedSession(
   secret: string,
-  session: { userId: string; workspaceId: string },
+  session: { userId: string; workspaceId: string; sessionVersion?: number },
   nowMs = Date.now(),
+  lifetimeSeconds = AUTH_COOKIE_MAX_AGE_SECONDS,
 ): Promise<string> {
   const payload = base64UrlEncode(
     JSON.stringify({
       uid: session.userId,
       ws: session.workspaceId,
-      exp: nowMs + AUTH_COOKIE_MAX_AGE_SECONDS * 1000,
+      exp: nowMs + lifetimeSeconds * 1000,
+      ...(session.sessionVersion !== undefined ? { sv: session.sessionVersion } : {}),
     } satisfies SessionPayload),
   );
   const sig = await sign(payload, secret);
@@ -164,7 +180,12 @@ export async function verifySignedSession(
     if (typeof parsed.exp !== "number" || nowMs > parsed.exp) return null;
     if (typeof parsed.uid !== "string" || parsed.uid.length === 0) return null;
     if (typeof parsed.ws !== "string" || parsed.ws.length === 0) return null;
-    return { userId: parsed.uid, workspaceId: parsed.ws, expiresAt: parsed.exp };
+    return {
+      userId: parsed.uid,
+      workspaceId: parsed.ws,
+      expiresAt: parsed.exp,
+      sessionVersion: Number.isInteger(parsed.sv) ? (parsed.sv as number) : null,
+    };
   } catch {
     return null;
   }

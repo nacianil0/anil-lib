@@ -1,6 +1,7 @@
 import { describe, expect, it, beforeEach, afterEach } from "vitest";
 import {
   AUTH_COOKIE_MAX_AGE_SECONDS,
+  AUTH_SESSION_ONLY_SECONDS,
   buildSignedSession,
   getGateConfig,
   hashLegacyPassword,
@@ -231,5 +232,24 @@ describe("isGateIntended", () => {
     delete process.env.SITE_PASSWORD_SHA256;
     delete process.env.AUTH_COOKIE_SECRET;
     expect(isGateIntended()).toBe(false);
+  });
+});
+
+describe("session versions and lifetimes", () => {
+  it("carries a reader's session version through the signed cookie", async () => {
+    const token = await buildSignedSession(TEST_SECRET, { ...SESSION, sessionVersion: 4 });
+    expect(await verifySignedSession(token, TEST_SECRET)).toMatchObject({ sessionVersion: 4 });
+  });
+
+  it("reports no session version for cookies that carry none", async () => {
+    const token = await buildSignedSession(TEST_SECRET, SESSION);
+    expect(await verifySignedSession(token, TEST_SECRET)).toMatchObject({ sessionVersion: null });
+  });
+
+  it("expires a session-only cookie's payload after twelve hours", async () => {
+    const now = 1_790_000_000_000;
+    const token = await buildSignedSession(TEST_SECRET, SESSION, now, AUTH_SESSION_ONLY_SECONDS);
+    expect(await verifySignedSession(token, TEST_SECRET, now + 11 * 3600 * 1000)).not.toBeNull();
+    expect(await verifySignedSession(token, TEST_SECRET, now + 13 * 3600 * 1000)).toBeNull();
   });
 });

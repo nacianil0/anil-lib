@@ -12,7 +12,7 @@ tags:
   - baglamsal-bilgi
   - uzun-kuyruk
   - bilgi-catismasi
-content_hash: sha256:98c453fe2babcaeaa1551e24f3b2cf53f46247ae50e52ee4dc815f715e7f80af
+content_hash: sha256:f86b4d6c0de0594c7d18a2b6370b63b94c84a72e4b662f0ab5bc24347a3129e5
 classification_version: 1
 classification_batch: 9
 revised_at: "2026-09-26"
@@ -30,9 +30,9 @@ O hammaddenin sınırlarını aslında iki kez ölçmüştük. 18\. makalede ağ
 
 İlk cevap alanın erken bir çalışmasından geliyor. Fabio Petroni ve arkadaşlarının EMNLP 2019'da sunduğu çalışma, dil modellerine olguları boşluk doldurma sorusu olarak sordu: "Dante [boşluk] şehrinde doğdu." Amaç, ağırlıklara yazılmış ilişkisel bilgiyi hiçbir ince ayar yapmadan ölçmekti.
 
-Sonuç iki yüzlüydü. Bir yandan model şaşırtıcı derecede iyiydi: açık alan soru cevaplamada ilk on tahmin içinde doğru cevabı yüzde 57,1 oranında yakalıyor, aynı işi özel olarak kurulmuş bir bilgi tabanı yüzde 63,5 ile yapıyordu. Bir dil modeli, hiç öyle tasarlanmadığı hâlde bir bilgi tabanına yaklaşıyordu.
+Sonuç iki yüzlüydü. Bir yandan en iyi model, BERT-large, şaşırtıcı derecede iyiydi: açık alan soru cevaplamada ilk on tahmin içinde doğru cevabı yüzde 57,1 oranında yakalıyor, aynı soruları belge getirip okumak üzere denetimli eğitilmiş bir sistem, DrQA, yüzde 63,5 ile cevaplıyordu — çalışmanın giriş bölümü bu karşılaştırmayı bir bilgi tabanıyla yapılmış gibi anlatıyor, ölçüm bölümündeki sistem DrQA. Bir dil modeli, hiç öyle tasarlanmadığı hâlde bu iş için kurulmuş bir sisteme yaklaşıyordu.
 
-Öbür yandan aynı tablo derin bir çatlağı gösteriyordu. Sonuçlar ilişki türüne göre ayrıldığında:
+Öbür yandan aynı tablo derin bir çatlağı gösteriyordu. BERT-large'ın sonuçları ilişki türüne göre ayrıldığında:
 
 | ilişki türü | ilk tahminde doğruluk |
 |---|---|
@@ -57,7 +57,7 @@ Getirmeye neden ihtiyaç duyduğumuzu Şekil 1'in sol ucu gösteriyor. Orada, ö
 
 Birincisi daha çok veri. Ama farklı yöntemlerle toplanmış beş ayrı ön eğitim derleminde aynı soruların ilgili belge sayıları arasındaki sıra ilişkisi 0,87 ile 0,97 arasında. Yani derlemler birbirini tekrar ediyor: internete daha çok bakmak, uzun kuyruğu doldurmuyor.
 
-İkincisi daha büyük model. Çalışma bunu da ölçüyor: nadir sorulardaki doğruluk model boyunun logaritmasıyla çok düzgün bir doğru üzerinde ilerliyor (R² = 0,98). O doğruyu, güçlü bir denetimli sistemin ya da insanın seviyesine uzatınca çıkan sayı **10¹⁸ parametre** — bir kentilyon. Bu, "ölçekle çözülür" cevabının pratikte cevap olmadığının sayısal ifadesi.
+İkincisi daha büyük model. Çalışma bunu da ölçüyor: nadir sorulardaki doğruluk model boyunun logaritmasıyla çok düzgün bir doğru üzerinde ilerliyor (R² = 0,98). O doğruyu, güçlü bir denetimli sistemin ya da insanın seviyesine uzatınca çıkan sayı **10¹⁸ parametrenin üstünde** — bir kentilyondan fazla. Bu, "ölçekle çözülür" cevabının pratikte cevap olmadığının sayısal ifadesi.
 
 > **Kendini yokla:** Ön eğitim derlemine yeni bir kaynak eklemek uzun kuyruğu neden doldurmuyor?
 
@@ -100,13 +100,13 @@ Köşegendeki yüksek sayılarla köşegen dışındaki düşük sayılar aynı 
 
 18\. makaledeki tabloyla karşılaştır. Orada bir olguyu değiştirmek için ağırlıklara müdahale etmek gerekiyordu ve o müdahalenin nereye dokunduğunu bilmenin, düzenlemeyi bilmek anlamına gelmediğini görmüştük. Burada aynı iş bir dosyayı değiştirerek yapılıyor. Parametrik olmayan belleğin asıl vaadi doğruluk artışı değil, **düzenlenebilirlik**.
 
-Aynı çalışmanın insan değerlendirmesi bunu bir başka eksende gösteriyor. Üretilen metinlerin olgusal doğruluğu karşılaştırıldığında, değerlendiriciler bu mimarinin çıktısını yüzde 42,7 oranında daha olgusal buluyor; yalnızca parametrik bilgiye dayanan taban modelin çıktısı yüzde 7,1 oranında öne çıkıyor.
+Aynı çalışmanın insan değerlendirmesi bunu bir başka eksende gösteriyor. Jeopardy tarzı soru üretiminde 452 çıktı çifti karşılaştırıldığında, değerlendiriciler bu mimarinin çıktısını vakaların yüzde 42,7'sinde daha olgusal buluyor; yalnızca parametrik bilgiye dayanan taban modelin çıktısı vakaların yüzde 7,1'inde öne çıkıyor.
 
 ## Ne zaman zarar veriyor
 
 Buraya kadarki ölçümler getirmenin her zaman kazandırdığını düşündürebilir; öyle değil.
 
-Alex Mallen ve arkadaşlarının ACL 2023'te sunduğu çalışma, uzun kuyruk sorularından oluşan 14 binlik bir küme kurup her soruyu iki kez soruyor: getirme ile ve getirme olmadan. Sonra soruları dört öbeğe ayırıyor ve her öbekte getirilen ilk belgenin cevabı içerme oranına — **bulma** oranına — bakıyor. Dört öbek ve her birinin bulma oranı Şekil 3'te.
+Alex Mallen ve arkadaşlarının ACL 2023'te sunduğu çalışma, uzun kuyruk sorularından oluşan 14 binlik bir küme kurup her soruyu iki kez soruyor: getirme ile ve getirme olmadan. Sonra soruları en büyük modelin, GPT-3 davinci-003'ün, iki cevabına göre dört öbeğe ayırıyor ve her öbekte Contriever'ın getirdiği ilk belgenin cevabı içerme oranına — **bulma** oranına — bakıyor. Dört öbek ve her birinin bulma oranı Şekil 3'te.
 
 ![Dört gözlü bir tablo şeması. Satırlar modelin getirme olmadan doğru ya da yanlış cevap verdiğini, sütunlar getirmeli düzenin doğru ya da yanlış cevap verdiğini gösterir. Sol üst göz soruların yüzde 24'ünü ve 0,83 bulma oranını taşır ve nötr renktedir. Sağ üst göz yüzde 10 ve 0,14 bulma oranını taşır, vurgulu renktedir ve yanında getirmenin zarar verdiği yazar. Sol alt göz yüzde 17 ve 0,88 bulma oranını taşır, vurgulu renktedir ve yanında getirmenin kazandırdığı yazar. Sağ alt göz yüzde 49 ve 0,11 bulma oranını taşır ve nötr renktedir. Şeklin altında iki vurgulu gözün bulma oranları arasındaki büyük farkın, getirmenin kalitesinin sonucu belirlediğini gösterdiği yazılıdır.](assets/getirme-fayda-zarar.svg "Şekil 3 — Getirmenin kazandırdığı ve kaybettirdiği sorular")
 

@@ -7864,3 +7864,180 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 12:05 | Edited docs/seri/BAKIM-RUN6.md | modified engeller() | ~101 |
 | 12:05 | Edited docs/seri/BAKIM-RUN6.md | 1→3 lines | ~126 |
 | 12:06 | Edited docs/seri/BAKIM-RUN6.md | modified takvimi() | ~97 |
+
+## Session: 2026-11-03 10:04
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:09 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/mkctl7.py | — | ~1904 |
+| 10:09 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/p1_7.py | — | ~599 |
+| 10:10 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oa7.py | — | ~766 |
+| 10:11 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/br7.py | — | ~1107 |
+| 10:12 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/br7.py | — | ~1321 |
+| 10:12 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/prop7.py | — | ~1159 |
+| 10:18 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits74.json | — | ~212 |
+| 10:19 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits74b.json | — | ~105 |
+| 10:26 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits41.json | — | ~750 |
+| 10:29 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits43.json | — | ~859 |
+| 10:30 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits43b.json | — | ~450 |
+| 10:31 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits43c.json | — | ~616 |
+| 10:42 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/recheck_br7.py | — | ~662 |
+| 10:45 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits46.json | — | ~92 |
+| 10:45 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits46.json | — | ~185 |
+| 10:48 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits47.json | — | ~203 |
+| 10:49 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/s2chk.py | — | ~667 |
+| 10:51 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/editsS2.json | — | ~321 |
+| 10:52 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/s45chk.py | — | ~624 |
+| 10:52 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/s45ctx.py | — | ~688 |
+| 10:59 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits61.json | — | ~220 |
+
+## Session: 2026-11-03 10:59
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:10 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/a11y7.mjs | — | ~1175 |
+
+## Session: 2026-11-03 11:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:21 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits79.json | — | ~123 |
+| 11:23 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lc7.py | — | ~854 |
+| 11:25 | Edited .claude/launch.json | expanded (+6 lines) | ~75 |
+| 11:25 | Edited .claude/launch.json | inline fix | ~33 |
+| 11:26 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/shots7.json | — | ~110 |
+| 11:30 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/inspect7.mjs | — | ~898 |
+| 11:33 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/edits74c.json | — | ~480 |
+| 11:35 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/yh7.txt | — | ~2441 |
+| 11:36 | Edited .claude/launch.json | removed 9 lines | ~8 |
+| 11:37 | Edited docs/seri/HANDOFF.md | inline fix | ~93 |
+| 11:37 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~83 |
+| 11:37 | Edited docs/seri/HANDOFF.md | modified denetim() | ~823 |
+| 11:37 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~44 |
+| 11:37 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~50 |
+| 11:37 | Edited docs/seri/HANDOFF.md | 3→3 lines | ~89 |
+| 11:37 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~59 |
+| 11:38 | Edited docs/seri/HANDOFF.md | modified il() | ~428 |
+| 11:38 | Edited docs/seri/HANDOFF.md | modified KAPANDI() | ~163 |
+| 11:38 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~92 |
+| 11:38 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~39 |
+| 11:38 | Edited docs/seri/HANDOFF.md | modified zeltmesi() | ~128 |
+| 11:38 | Edited docs/seri/HANDOFF.md | modified b() | ~552 |
+| 11:38 | Edited docs/seri/HANDOFF.md | modified 7() | ~216 |
+| 11:40 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/buglog7.py | — | ~2208 |
+| 11:42 | Bakım run 7 P1: 41, 43–47, 61, 63, 68, 76 tam denetimi — 32 düzenleme (43'e revizyon 2026-11-03: Big-ANN şekli taban çizgisi/iki dizin; 41 BERT-large/DrQA; 44 öğretmen ChatGPT; 45 model koşulları + CRAG SVG etiketi; 46, 47, 61'de 4 geri gönderme); 63, 68, 76 düzeltmesiz | content/series/articles/{agents-and-retrieval,safety-and-evaluation}/*, 2 SVG | tamam; kapılar temiz | ~60000 |
+| 11:42 | Bakım run 7 P2: 41–80 ikinci denetimi S1–S5 — S1 run 4'ün 14 makalelik düzeltmeleri tutuyor (62 ve 79'a koşul), S2 309 açık geri göndermede 4 hata (66, 67, 78×2), S3 535 eski dizgede 74 alt metin+SVG yayılımı, S4–S5 0; run 6'nın 97→16 kararı yanlış alarm (metin korundu, kayıtlar düzeltildi) | content/series/articles/safety-and-evaluation/*, 1 SVG | tamam | ~50000 |
+| 11:42 | Bakım run 7 P3: OpenAlex 99/99 (yoklama 200, 429 yok) → borç kapandı; (f), (i), (j) değişmedi; HAL/OJS Anubis, OpenReview doğrulama, EUR-Lex 202 atlatılmadı (arXiv, Europe PMC, Yayın Ofisi Cellar) | — | tamam | ~8000 |
+| 11:42 | Bakım run 7 P4: izole kopya typecheck 0, 841/841, build 194/194 (74 SVG onarımından sonra tazelenip yeniden); render 13×3×3=117 satır 200 (33 ölçer yanlış alarmı ayrıldı); erişilebilirlik 39 satır 0 sorun; 228 bağlantı, 21'i yayıncı bot koruması (Crossref başlıkları tutuyor); PNG'de 74'ün kutu taşması bulundu ve yerleşimle onarıldı; sunucu, junction, kopya, launch.json girdisi temizlendi | content/series/assets/mekanistik-yorumlanabilirlik-devreleri-okumak/aktivasyon-yamasi-iki-yon.svg | tamam | ~30000 |
+| 11:42 | Bakım run 7 P5 ve oturum özeti: YOL-HARITASI #302–#307 (sonraki #308), HANDOFF (run 7 bölümü, run 6 15→14 ve 19→18, Açık borçlar, dersler), BAKIM-RUN7.md TAMAMLANDI, cerebrum (6 öğrenme, 5 Do-Not-Repeat, karar), buglog bug-976–984 + bug-956 düzeltmesi, anatomy | docs/seri/{HANDOFF,YOL-HARITASI,BAKIM-RUN7}.md, .wolf/* | tamam; commit/push/deploy yok | ~25000 |
+
+## Session: 2026-11-03 11:47
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 13:42 | Created docs/platform/LANSMAN.md | — | ~1971 |
+| 13:43 | Created src/lib/auth/access.ts | — | ~807 |
+| 13:43 | Edited src/middleware.ts | modified passesWithoutSession() | ~258 |
+| 13:45 | Created src/lib/auth/recovery-code.ts | — | ~666 |
+| 13:45 | Created src/lib/auth/password-policy.ts | — | ~620 |
+| 13:45 | Created src/lib/auth/rate-limit.ts | — | ~976 |
+| 13:45 | Created src/lib/auth/client-ip.ts | — | ~193 |
+| 13:46 | Created src/lib/auth/reader-accounts.ts | — | ~2415 |
+| 13:46 | Created drizzle/0006_reader_accounts.sql | — | ~462 |
+| 13:46 | Edited src/lib/db/schema.ts | expanded (+44 lines) | ~577 |
+| 13:46 | Edited src/lib/db/schema.ts | 2→3 lines | ~8 |
+| 13:47 | Created src/lib/auth/session-cookie.ts | — | ~378 |
+| 13:48 | Created src/app/login/actions.ts | — | ~1081 |
+| 13:48 | Created src/app/login/page.tsx | — | ~2017 |
+| 13:49 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/edit_api_scope.py | — | ~2018 |
+| 13:50 | Created src/lib/reader-data/local-tracking.ts | — | ~466 |
+| 13:51 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/edit_local_mode.py | — | ~2777 |
+| 13:51 | Created src/components/reader/sync-status.tsx | — | ~540 |
+| 13:51 | Created src/components/reader/lock-button.tsx | — | ~366 |
+| 13:52 | Created src/lib/site.ts | — | ~484 |
+| 13:52 | Created src/app/seri/page.tsx | — | ~493 |
+| 13:52 | Created src/app/seri/[slug]/page.tsx | — | ~1067 |
+| 13:53 | Created src/lib/content/series-stats.ts | — | ~509 |
+| 13:54 | Created src/components/site/site-header.tsx | — | ~377 |
+| 13:54 | Created src/components/site/site-footer.tsx | — | ~349 |
+| 13:54 | Created src/components/home/continue-reading.tsx | — | ~814 |
+| 13:55 | Created src/components/home/public-home.tsx | — | ~4022 |
+| 13:55 | Created src/app/page.tsx | — | ~1329 |
+| 13:56 | Created src/lib/auth/form-token.ts | — | ~374 |
+| 13:56 | Created src/app/kayit/register-state.ts | — | ~106 |
+| 13:57 | Created src/app/kayit/actions.ts | — | ~1561 |
+| 13:57 | Created src/components/account/recovery-code-panel.tsx | — | ~746 |
+| 13:57 | Created src/components/account/form-field.tsx | — | ~621 |
+| 13:57 | Created src/components/account/account-shell.tsx | — | ~311 |
+| 13:57 | Created src/app/kayit/page.tsx | — | ~786 |
+| 13:58 | Created src/app/kayit/register-form.tsx | — | ~915 |
+| 13:58 | Created src/app/hesap-kurtar/recover-state.ts | — | ~140 |
+| 13:58 | Created src/app/hesap-kurtar/actions.ts | — | ~1393 |
+| 13:58 | Created src/app/hesap-kurtar/recover-form.tsx | — | ~829 |
+| 13:59 | Created src/app/hesap-kurtar/page.tsx | — | ~474 |
+| 13:59 | Created src/app/hesap/account-state.ts | — | ~75 |
+| 13:59 | Created src/app/hesap/actions.ts | — | ~1904 |
+| 13:59 | Created src/app/hesap/account-forms.tsx | — | ~1592 |
+| 14:00 | Created src/app/hesap/page.tsx | — | ~628 |
+| 14:01 | Created src/app/gizlilik/privacy-controls.tsx | — | ~1220 |
+| 14:02 | Created src/app/gizlilik/page.tsx | — | ~3596 |
+| 14:02 | Created src/app/sitemap.ts | — | ~286 |
+| 14:02 | Created src/app/robots.ts | — | ~154 |
+| 14:03 | Created src/lib/auth/access.test.ts | — | ~726 |
+| 14:03 | Created src/lib/auth/recovery-code.test.ts | — | ~548 |
+| 14:03 | Created src/lib/auth/password-policy.test.ts | — | ~466 |
+| 14:03 | Created src/lib/auth/form-token.test.ts | — | ~410 |
+| 14:04 | Created src/lib/auth/rate-limit.test.ts | — | ~883 |
+| 14:04 | Created src/lib/auth/reader-accounts.test.ts | — | ~1883 |
+| 14:05 | Created src/lib/reader-data/local-mode.test.tsx | — | ~1615 |
+| 14:06 | Created src/lib/content/series-stats.test.ts | — | ~425 |
+| 14:08 | Created tests/e2e/public-access.spec.ts | — | ~2812 |
+| 14:11 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/neon-shim.mjs | — | ~1084 |
+| 14:11 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/neon-fetch-redirect.cjs | — | ~212 |
+| 14:12 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/e2e-db/pw-db.config.ts | — | ~380 |
+| 14:13 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/e2e-db/access-matrix.db.spec.ts | — | ~6378 |
+| 14:14 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/og-image.cjs | — | ~636 |
+| 14:15 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/a11y-launch.mjs | — | ~1161 |
+| 14:17 | Edited next.config.mjs | modified headers() | ~268 |
+
+## Session: 2026-11-03 14:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 14:39 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/prod-smoke.mjs | — | ~641 |
+| 14:41 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/shots.mjs | — | ~467 |
+| 15:01 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/finalize_lansman.py | — | ~3603 |
+| 15:02 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/tools/wolf_records.py | — | ~2481 |
+
+| 15:05 | Public lansman: erişim politikası (access.ts), anonim AI serisi, ana sayfa, yerel okuma takibi, e-postasız kayıt + kurtarma kodu + hız sınırı (migration 0006), /gizlilik, SEO, güvenlik başlıkları | src/**, drizzle/0006, tests/e2e/public-access.spec.ts, docs/platform/LANSMAN.md | tsc 0; vitest 943/943; build ok; e2e 35/35 (+tam paket 87/90, 2 DB-bağımlı); DB'li e2e 9/9 + 4/4 (PGlite); axe 40 satır 0 ihlal | ~400k |
+| 15:06 | Yayın kararı: canlıya ALINMADI (Vercel SSO, veri sorumlusu yok, Run 7 commit'siz, repo public); commit/push yok | docs/platform/LANSMAN.md | dağıtıma hazır; kullanıcı adımları kontrol dosyasında | ~2k |
+| 15:06 | .wolf kayıtları: bug-989–996, cerebrum öğrenim/do-not-repeat/karar | .wolf/buglog.json, .wolf/cerebrum.md | tamam | ~3k |
+
+## Session: 2026-11-03 15:09
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:11 | Edited eslint.config.mjs | modified output() | ~82 |
+| 15:11 | Edited eslint.config.mjs | modified definition() | ~110 |
+
+| 15:25 | Eski lint borcu kapatıldı: eslint ignore (artifacts/ ve git dışı çıktı), **/*.cjs CommonJS override, schema.ts tip türetme (birebir aynı tip kanıtlı) | eslint.config.mjs, src/lib/content/schema.ts | eslint 147→0; pnpm check exit 0 | ~6k |
+| 15:32 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/secret_scan.py | — | ~1070 |
+| 15:34 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/edit_flag.py | — | ~1696 |
+| 15:35 | Edited scripts/migrate.mjs | added 1 condition(s) | ~167 |
+| 15:36 | Created src/app/kayit/actions.test.ts | — | ~509 |
+| 15:38 | Created README.md | — | ~2560 |
+| 15:38 | Created docs/FORKING.md | — | ~2246 |
+| 15:39 | Created src/lib/content/series-template.test.ts | — | ~362 |
+| 15:39 | Created CONTRIBUTING.md | — | ~534 |
+| 15:39 | Created SECURITY.md | — | ~457 |
+| 15:40 | Created docs/platform/ACIK-KAYNAK.md | — | ~877 |
+| 15:44 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/fork_modes.sh | — | ~682 |
+| 15:53 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/add_demo_series.py | — | ~2072 |
+| 15:54 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/add_demo_series.py | 6→8 lines | ~184 |
+| 15:58 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/fix_forking.py | — | ~1115 |
+| 16:05 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/pr-body.md | — | ~948 |
+| 16:07 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/wolf_oss.py | — | ~1544 |
+
+| 16:20 | Açık kaynak: README/FORKING/CONTRIBUTING/SECURITY/şablonlar, PUBLIC_LAUNCH anahtarı, preview migration koruması, temiz klon fork + demo seri kanıtı | README.md, docs/FORKING.md, src/lib/auth/access.ts, scripts/migrate.mjs | pnpm check 0 (948), e2e 35/35, DB matrisi 9/9, a11y 0 ihlal; PR #1 açık | ~60k |
+| 16:09 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/factcheck/licscan.cjs | — | ~317 |
+| 16:25 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/oss/fix_docs_b.py | — | ~5890 |

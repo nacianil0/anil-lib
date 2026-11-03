@@ -266,6 +266,37 @@ describe("synchronizeReaderData and series resets", () => {
     expect(selectOf("reading_progress").params).toEqual(["owner", 120]);
   });
 
+  it("keeps a self-registered reader's writes inside the series it may read", async () => {
+    const reader = "r:33333333-3333-4333-8333-333333333333";
+    const scope = ["ai", "guvenlik"] as const;
+    const boun = progressWrite();
+    boun.payload.articleId = loadBounCatalog().articles[0].articleId;
+    boun.entityId = boun.payload.articleId;
+    const archive = { ...progressWrite(), operationId: "44444444-4444-4444-8444-444444444444" };
+    archive.payload = { ...archive.payload, articleId: loadCatalog().articles[0].articleId };
+    archive.entityId = archive.payload.articleId;
+    const guvenlik = { ...progressWrite(), operationId: "55555555-5555-4555-8555-555555555555" };
+    guvenlik.payload = {
+      ...guvenlik.payload,
+      articleId: loadGuvenlikCatalog().articles[0].articleId,
+    };
+    guvenlik.entityId = guvenlik.payload.articleId;
+
+    const response = await synchronizeReaderData(sql, reader, 0, [boun, archive, guvenlik], {
+      allowArchive: false,
+      seriesScope: scope,
+      resetVersion: 0,
+    });
+    expect(response.errors).toEqual([
+      { operationId: boun.operationId, code: "unknown_article" },
+      { operationId: archive.operationId, code: "unknown_article" },
+    ]);
+    expect(response.acknowledged).toEqual([guvenlik.operationId]);
+    const inserts = calls.filter((entry) => entry.text.includes("INSERT INTO reading_progress"));
+    expect(inserts).toHaveLength(1);
+    expect(inserts[0].params[0]).toBe(reader);
+  });
+
   it("allows a fresh browser to adopt both reset kinds without rejecting new progress", async () => {
     serverResetVersion = 10;
     serverSeriesResets = [{ series_id: "ai", reset_version: "42" }];

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
+import { SITE_DESCRIPTION, SITE_NAME, siteOrigin } from "@/lib/site";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
@@ -22,12 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteOrigin()),
+  applicationName: SITE_NAME,
   title: {
-    default: "Okuma Odası",
-    template: "%s — Okuma Odası",
+    default: SITE_NAME,
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    "Kişisel okuma odası: yapay zekâ ve bilgisayar mühendisliği üzerine sıralı öğrenme serileri.",
+  description: SITE_DESCRIPTION,
+  // Closed by default: a page is indexed only when it opts in, and only the public
+  // ones do (home, the AI series, the privacy page). Anything behind an account can
+  // never become indexable by forgetting a line.
   robots: { index: false, follow: false },
 };
 

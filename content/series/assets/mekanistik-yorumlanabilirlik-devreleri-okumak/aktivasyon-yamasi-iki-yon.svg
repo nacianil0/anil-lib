@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="İki panel. Sol panel gürültü giderme: temiz girdi ve bozulmuş girdi ayrı çalıştırılır; yamalı çalıştırmada bozulmuş girdi işlenirken tek bir bileşenin aktivasyonu temiz çalıştırmadan geri konur ve çıktının ne kadar geri geldiği ölçülür; soru bu bileşen yeter mi; 18'deki nedensel izleme bu yön. Sağ panel gürültüleme: temiz girdi işlenirken tek bir bileşenin aktivasyonu bozulmuş çalıştırmadan konur ve çıktının ne kadar bozulduğu ölçülür; soru bu bileşen gerekli mi. Altta ölçünün doğru ile yanlış cevabın logit farkı olduğu, olasılığa yeğlendiği çünkü olasılığın ters yönde çalışan bileşenleri kaçırabildiği; bozma yönteminin sıfırlama, ortalama ya da yeniden örnekleme olarak sonucu değiştirdiği; ve otomatik keşfin yamayı doğrusal yaklaşıklıkla kestirip kenarları budamak olduğu yazılıdır.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="İki panel. Sol panelde üç çalıştırma: temiz girdi, bozulmuş girdi ve yamalı çalıştırma; yamalı çalıştırmada bozulmuş girdi işlenirken tek bir bileşenin aktivasyonu temiz çalıştırmadan geri konur ve çıktının ne kadar geri geldiği ölçülür; adı gürültü giderme, sorusu bu bileşen yeter mi, 18'deki nedensel izleme bu yön. Sağ panelde tersi: temiz girdi işlenirken tek bir bileşenin aktivasyonu bozulmuş çalıştırmadan konur ve çıktının ne kadar bozulduğu ölçülür; adı gürültüleme, sorusu bu bileşen gerekli mi. Altta ölçünün ne olduğu: doğru ile yanlış cevabın logit farkı, olasılığa yeğlenir, çünkü olasılık ters yönde çalışan bileşenleri kaçırabilir; bozma yöntemi de sonucu değiştirir: girdiye Gauss gürültüsü eklemek ile kilit token'ı yakın bir token'la değiştirmek farklı bileşenler bulur. En altta otomatik keşfin adı: yamayı doğrusal yaklaşıklıkla kestirip kenarları budamak.">
   <rect x="20" y="20" width="330" height="230" fill="var(--surface-muted)" />
   <text x="30" y="42" font-size="13" font-weight="bold" fill="var(--text)">gürültü giderme (denoising)</text>
   <text x="30" y="60" font-size="13" fill="var(--text-muted)">18'deki nedensel izleme bu yön</text>
   <rect x="30" y="76" width="200" height="40" fill="var(--accent-soft)" />
   <text x="40" y="94" font-size="13" fill="var(--text)">temiz girdi</text>
   <text x="40" y="110" font-size="13" fill="var(--text)">→ aktivasyonlar kaydedilir</text>
-  <rect x="30" y="128" width="140" height="40" fill="var(--bg)" stroke="var(--border)" />
+  <rect x="30" y="128" width="136" height="40" fill="var(--bg)" stroke="var(--border)" />
   <text x="40" y="146" font-size="13" fill="var(--text)">bozulmuş girdi</text>
   <text x="40" y="162" font-size="13" fill="var(--text)">→ cevap kaybolur</text>
-  <text x="184" y="150" font-size="13" fill="var(--text-muted)">→</text>
-  <rect x="200" y="128" width="150" height="40" fill="var(--accent-soft)" />
-  <text x="210" y="146" font-size="13" fill="var(--text)">bozuk koşuya TEK</text>
-  <text x="210" y="162" font-size="13" fill="var(--text)">temiz hesap geri konur</text>
+  <text x="172" y="150" font-size="13" fill="var(--text-muted)">→</text>
+  <rect x="188" y="128" width="156" height="40" fill="var(--accent-soft)" />
+  <text x="196" y="146" font-size="13" fill="var(--text)">bozuk koşuya TEK</text>
+  <text x="196" y="162" font-size="13" fill="var(--text)">temiz hesap geri konur</text>
   <text x="30" y="196" font-size="13" fill="var(--text)">ölçülen: cevap ne kadar geri geldi?</text>
   <text x="30" y="216" font-size="13" font-weight="bold" fill="var(--text)">sorusu: bu bileşen yeter mi?</text>
   <text x="30" y="236" font-size="13" fill="var(--text-muted)">yedek başlar burada görünmez</text>
@@ -36,7 +36,7 @@
   <line x1="20" y1="266" x2="700" y2="266" stroke="var(--border)" />
   <text x="20" y="290" font-size="13" font-weight="bold" fill="var(--text)">ölçü ve bozma yöntemi sonucun içindedir</text>
   <text x="20" y="310" font-size="13" fill="var(--text)">ölçü: doğru ↔ yanlış cevabın logit farkı; olasılık, ters yönde çalışan bileşenleri kaçırabilir</text>
-  <text x="20" y="328" font-size="13" fill="var(--text)">bozma: sıfırlama, ortalamayla değiştirme, başka örnekten yeniden örnekleme → farklı bileşenler</text>
+  <text x="20" y="328" font-size="13" fill="var(--text)">bozma: kilit token'a Gauss gürültüsü ya da yakın token'la değiştirme → farklı bileşenler</text>
   <text x="20" y="356" font-size="13" font-weight="bold" fill="var(--text)">otomatik keşif</text>
   <text x="20" y="376" font-size="13" fill="var(--text)">her kenarı yamalayıp ölçüyü bozmayanı budamak; yamayı gradyanla doğrusal yaklaşıklamak</text>
 </svg>

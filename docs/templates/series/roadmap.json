@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "seriesTitle": "Your Series Title",
+  "seriesSubtitle": "One sentence on who the series is for and where it takes them.",
+  "phases": [
+    {
+      "id": "faz-01",
+      "title": "First phase",
+      "description": "What this phase covers, in one sentence.",
+      "articles": [
+        { "order": 1, "title": "First article", "status": "planlandi" },
+        { "order": 2, "title": "Second article", "status": "planlandi" }
+      ]
+    }
+  ]
+}

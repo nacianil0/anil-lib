@@ -12,7 +12,7 @@
   <rect x="200" y="112" width="159" height="12" fill="var(--surface-muted)" stroke="var(--border)" stroke-width="1"/>
   <text x="400" y="122" font-size="13" text-anchor="start" fill="var(--text-muted)">eksik 53,0</text>
 
-  <text x="190" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">web getirmeli hat</text>
+  <text x="190" y="164" font-size="13" text-anchor="end" fill="var(--text-muted)">web + bilgi grafiği hattı</text>
   <rect x="200" y="142" width="131" height="12" fill="var(--cool-soft)" stroke="var(--cool)" stroke-width="1"/>
   <text x="400" y="152" font-size="13" text-anchor="start" fill="var(--text)">doğru 43,6</text>
   <rect x="200" y="158" width="90" height="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>

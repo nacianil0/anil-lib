@@ -12,7 +12,7 @@ tags:
   - asiri-guvenlik
   - sig-hizalama
   - ince-ayar-saldirisi
-content_hash: sha256:1a21d612577a17dd046864c9bca60f39b52cdc45d2c8285857202b7a86fe1933
+content_hash: sha256:76bfd552f89126557f0fa9d8e3e21ae6b524c42d6de872561cf65fee8921b99b
 classification_version: 1
 classification_batch: 14
 revised_at: "2026-10-26"
@@ -42,7 +42,7 @@ Ayrımı. Yüzlerce örnek modele "bu tür istekleri reddet" kalıbını öğret
 
 ## Reddetmek yalnızca güvenlik değil
 
-Buraya kadar ret, zararlı isteğe hayır demekti. Faeze Brahman, Sachin Kumar ve arkadaşlarının NeurIPS 2024 veri kümeleri ve ölçütler programında sunduğu çalışma reddin kapsamını genişletiyor: model, zararlı olmayan pek çok isteğe de olduğu gibi uymamalı. Yazarların **bağlamsal uyumsuzluk** (contextual noncompliance) sınıflandırması beş kategori: **eksik** istekler — cevaplanamayacak kadar az bilgi, yanlış öncül —; **desteklenmeyen** istekler — modelin yapamayacağı şey, bir diyagram çizmek gibi —; **belirlenemez** istekler — cevabı bilinmeyen, geleceğe ya da öznel yargıya bağlı sorular —; **insanlaştıran** istekler — modele duygu ya da kişisel deneyim atfeden sorular —; ve güvensiz istekler. Uymamak her kategoride ret demek değil: eksik istekte eksiği söylemek ya da sormak — 59'daki netleştirme sorusu —, belirlenemez istekte belirsizliği söylemek — 39'daki çekimserlik —, desteklenmeyen istekte sınırı söylemek. Bin istemlik değerlendirme kümesi ve aşırı reddi yakalamak için uyulması gereken bir karşı küme var. Tablo, dört modelin yanlış uyum oranını veriyor; son sütun karşı kümede doğru uyum.
+Buraya kadar ret, zararlı isteğe hayır demekti. Faeze Brahman, Sachin Kumar ve arkadaşlarının NeurIPS 2024 veri kümeleri ve ölçütler programında sunduğu çalışma reddin kapsamını genişletiyor: model, zararlı olmayan pek çok isteğe de olduğu gibi uymamalı. Yazarların **bağlamsal uyumsuzluk** (contextual noncompliance) sınıflandırması beş kategori: **eksik** istekler — cevaplanamayacak kadar az bilgi, yanlış öncül —; **desteklenmeyen** istekler — modelin yapamayacağı şey, bir diyagram çizmek gibi —; **belirlenemez** istekler — cevabı bilinmeyen, geleceğe ya da öznel yargıya bağlı sorular —; **insanlaştıran** istekler — modele duygu ya da kişisel deneyim atfeden sorular —; ve güvensiz istekler. Uymamak her kategoride ret demek değil: eksik istekte eksiği söylemek ya da sormak — 59'daki netleştirme sorusu —, belirlenemez istekte belirsizliği söylemek — 39'daki çekimserlik —, desteklenmeyen istekte sınırı söylemek. Bin istemlik değerlendirme kümesi ve aşırı reddi yakalamak için uyulması gereken bir karşı küme var. Tablo, dört modelin sistem istemi olmadan ölçülen yanlış uyum oranını veriyor; son sütun karşı kümede doğru uyum.
 
 | Model | Eksik | Desteklenmeyen | Belirlenemez | Güvensiz | İnsanlaştıran | Karşı kümede uyum |
 |---|---|---|---|---|---|---|

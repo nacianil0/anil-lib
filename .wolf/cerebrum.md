@@ -6,6 +6,11 @@
 
 ## User Preferences
 
+- [2026-11-03] Kullanıcı açık kaynak + main entegrasyonu işinde hızlandırma için **en fazla üç subagent'a** izin verdi:
+  yalnız gerçekten ayrışabilen işler (ör. ayrı klonda tam e2e, salt okunur belge denetimi); aynı dosya, Git index,
+  port, migration ya da build çıktısında yarış yok; birleştirme ve deploy tek koordinatörde, eksik kanıtla merge yok.
+  Önceki "workflow/subagent yok" tercihinin bu tür işler için güncellemesi.
+
 - [2026-11-02] Kullanıcı, Claude Code'ye aktaracağı bakım promptunun amacını tek paragrafta, kısa ve öz ifade etmemi istedi; uzun prosedür ve açıklamalar yerine temel kapsam, tek run ve compact sonrası devam koşulları korunmalı.
 
 - [2026-11-02] AI serisinin bir sonraki bakım assignment'ı için kullanıcı, kalan dört denetim aralığı dahil yapılabilir bakımın tek mantıksal run'da tamamlanmasını istiyor; aralıklar arasında yeni trigger istemek yerine disk kontrol noktaları ve compact/autocompact sonrası aynı run'ın sürdürülmesiyle bağlam korunmalı. Bu istek diğer serilere veya tüm gelecek run'lara otomatik genellenmez.
@@ -27,6 +32,66 @@
 
 ## Key Learnings
 
+- [2026-11-03] **Açık kaynak + lansman anahtarı:** `PUBLIC_LAUNCH=1` olmadıkça (varsayılan) middleware yalnız `/login` ve
+  `/robots.txt`'yi oturumsuz geçirir; kayıt ve kurtarma eylemleri kendileri reddeder (server action her yoldan
+  çağrılabilir); robots her şeyi yasaklar, sitemap boş. robots ve sitemap derleme anında üretilir: değişiklik yeniden deploy
+  ister. `scripts/migrate.mjs` `VERCEL_ENV=preview` iken `MIGRATE_ON_PREVIEW=1` olmadıkça bağlanmaz. Kayıt:
+  `docs/platform/ACIK-KAYNAK.md`, rehber: `docs/FORKING.md`.
+- [2026-11-03] Yeni seri eklemek kodla olur (rota, şema, kategori etiketi, `access.ts`, `SERIES_IDS` +
+  `series-catalogs`, DB check migration'ı, pano, araçların `SERIES_DIRS`'i). Gerçek reçete: `git show --stat 9e720b9`.
+  Temiz klonda kanıtlandı. Tuzaklar:
+  - `entegre-batch.cjs` `roadmap.json`'ı satır satır düzenler; yazı başına tek satır şart.
+  - `check-series-content` her seride şekil ("Şekil N" metinde anılmalı), 1–3 kontrol kutusu ve "### Sırada ne var" ister.
+  - `series-reset.test.ts` seri listesini sabitler.
+
+- [2026-11-03] `pnpm check` artık yeşil (bug-997). ESLint: git dışı `artifacts/` ve çıktı klasörleri ignore'da, `**/*.cjs`
+  CommonJS (`require` serbest). typescript-eslint v8 yalnız tipte kullanılan değeri `no-unused-vars` sayar: tip için şema
+  kurmak yerine `z.infer<ReturnType<typeof makeX<T>>>` (örnekleme ifadesi) kullan; tip eşitliğini geçici `Same<A,B>`
+  denetimiyle kanıtla (yanlış eşleştirme hata vermeli).
+
+- [2026-11-03] **Public lansman (kontrol dosyası `docs/platform/LANSMAN.md`):** erişim kuralı tek modülde
+  (`src/lib/auth/access.ts`): anonim → yalnız `ai`; `reader` (kendi kaydolan) → `ai`+`guvenlik`; `user` → +`boun`; `owner` →
+  +arşiv+yönetim. Middleware yalnız `isPublicPath` yollarını oturumsuz geçirir; sayfalar `requireCollectionAccess`, API'ler
+  workspace önekiyle (`r:`) kapsam daraltır. Dış hesaplar `reader_accounts` tablosunda (migration 0006): eski kod onları hiç
+  okumaz, geri dönüşte yetki kazanamazlar. Anonim okuyucu `ReaderDataProvider mode="local"`, workspace `local`, ağ yok.
+- [2026-11-03] Next 15 server action'ında `cookies().set/delete` mevcut sayfayı eylem yanıtında YENİDEN RENDER eder. O sayfada
+  "giriş yapmışsa redirect" varsa eylemin döndürdüğü state (ör. bir kez gösterilecek kurtarma kodu) kaybolur. Sayfa redirect
+  etmemeli; client form bileşeni aynı konumda kalmalı ki `useActionState` korunsun ({ids[0]}).
+- [2026-11-03] Next metadata: bir segment kendi `openGraph`'ını tanımlarsa üst segmentin `opengraph-image` dosyası DEVRALINMAZ
+  (shallow replace). Böyle sayfalarda `images: [OG_IMAGE]` açıkça yazılmalı (`src/lib/site.ts`) ({ids[3]}).
+- [2026-11-03] `force-dynamic` + `generateStaticParams` build tablosunda ● gösterir ama prerender ETMEZ;
+  `.next/prerender-manifest.json`'a bakarak doğrula (seri sayfaları orada yok).
+- [2026-11-03] Veritabanlı e2e için yerel Postgres/Docker yok: scratchpad'de PGlite (Postgres 17.5 WASM) + Neon `/sql` HTTP
+  protokolünü taklit eden `neon-shim.mjs` + `NODE_OPTIONS=--require neon-fetch-redirect.cjs` (DATABASE_URL host
+  `*.neonshim.local`). Uygulama kodu değişmez; `scripts/migrate.mjs` ve `next dev/start` gerçek sürücüyle çalışır. PGlite'a
+  parametreleri metin geçir (`serializers` Proxy), yoksa boolean metni reddeder.
+- [2026-11-03] KVKK Çerez Rehberi: 5.2 tarayıcı oturumları arasında süren kimlik doğrulama çerezini Kriter B dışında sayar →
+  "Beni hatırla" kutusu (varsayılan boş) eklendi; 1.2 `localStorage`'ı kapsam dışı tutar. 2022/1358 kararı: eksik aydınlatma
+  metni yaptırım konusu — veri sorumlusu (`DATA_CONTROLLER`) boşken kayıt açılmamalı.
+
+- [2026-11-03] **AI bakım run'ı 7 — tam denetim boşluğu ve 41–80'in ikinci denetimi:** ana oturumda, ajansız, compact'lar
+  arasında `docs/seri/BAKIM-RUN7.md` ile. 41, 43–47, 61, 63, 68, 76 tam denetimi 32 düzenleme verdi (43'e revizyon: Big-ANN
+  şekli taban çizgilerini "parkurun en iyisi" ve tek dizin ailesi gibi okutuyordu). İkinci denetimin işe yarayan seçimi
+  S1–S5: run 4'ün anlam değiştiren düzeltmelerini kaynağın tablosundan, önceki sonuca bakmadan yeniden okumak (14 makalede
+  hepsi tuttu, iki eksik koşul); 61–80'in açık geri göndermelerini (`br7.py`) hedefte okumak (4 hata); önceki run'ların
+  diff'inden silinen ayırt edici dizgeleri seride aramak (`prop7.py`, 74'te alt metin + SVG yayılımı); şekil ↔ alt metin ↔
+  gövde ve özet ↔ gövde sayı karşılaştırması (`s45chk.py`, aday üretir, düzeltme çıkmadı).
+- [2026-11-03] **AB mevzuatının resmî metni EUR-Lex'in 202 meydan okumasına takılmadan** Avrupa Birliği Yayın Ofisi'nin
+  Cellar dağıtımından alınır: `http://publications.europa.eu/resource/celex/32024R1689` + `Accept: application/xhtml+xml`,
+  `Accept-Language: eng` → 200, resmî XHTML (Ek IV/XI ve 13 Haziran / 12.7.2024 tarihleri birebir).
+- [2026-11-03] **OpenReview'un "Verifying your browser" sayfası, AAAI OJS ve INRIA HAL'in Anubis sayfası 200 dönebilir** ve
+  indirici bunları başarılı indirme sayar; dosya boyu ~300 bayt ve başlık "Verifying your browser" ise kaynak okunmamıştır.
+  Künyenin okunan sürümü (çoğu zaman arXiv) indirilir; koruma atlatılmaz.
+- [2026-11-03] **SVG denetleyicisi (`check-series-svg`) yalnız viewBox taşmasını yakalıyor;** metnin kutusundan ya da
+  panelinden taşması PNG incelemesinde görülür (74'te 2026-09-25'ten beri). Metin genişliği tarayıcıda
+  `getComputedTextLength()` ile kullanıcı biriminde ölçülür (`tlen7.mjs`); kutuda ~10 birim iç boşluk serinin düzeni.
+- [2026-11-03] **Okuyucunun şekil kabında yakınlaştırma düğmesi var;** düğmenin SVG simgesi `aria-hidden="true"`. "main figure
+  svg" sayan erişilebilirlik ölçeri bunları ayrı saymalı; her makalede 3 şekil + 3 simge = 6 SVG. axe-core repoda yok,
+  eklenmedi; DOM kuralları `a11y7.mjs`'te (lang, role/aria-label, img alt, başlık sırası, bağlantı/düğme adı, `th`, kontrast).
+- [2026-11-03] **`preview_start` yapılandırılmış port meşgul derse başka port bildirir ama `-p` ile sabitlenmiş Next yine
+  yapılandırılan porta bağlanabilir** (run 7: araç 3228 dedi, Next 3227'de dinledi). Ölçer betikleri `netstat` ve `curl` ile
+  gerçek portu bulup ona gider. Git Bash'i `launch.json`'dan çalıştırırken `-lc` (login) gerekiyor; `-c` ile `sed`, `dirname`
+  bulunamıyor ve `corepack` düşüyor — `node node_modules/next/dist/bin/next dev -p <port>` doğrudan çalışıyor.
 - [2026-11-02] **AI bakım run'ı 6 — tek run, kontrol dosyası:** kullanıcının tek run talimatıyla kalan dört olgu denetimi
   aralığı (41–60'ın kalanı, 81–102, 1–40, 103–118; 86 makale, 842 künye) ana oturumda, ajansız ve compact'lar arasında
   `docs/seri/BAKIM-RUN6.md` kontrol dosyasıyla bitti: 92 düzenleme, 15'i geri gönderme. Kontrol dosyası compact sonrası ilk
@@ -619,14 +684,37 @@ ode_modules`, sonra kopyayi sil.
 
 ## Do-Not-Repeat
 
+- [2026-11-03] Playwright `mouse.wheel` olayı imlecin altındaki öğeye gider; (0,0)'da okuyucunun kenar çubuğu listesini
+  kaydırır. Önce imleci makale sütununa taşı ve okuyucunun hidrasyonunu bekle (yerel kayıtta `currentArticleId`), yoksa
+  ölçülen ilerleme 0 kalır ({ids[7]}).
+- [2026-11-03] `next dev` e2e koşusu `.next`'i dev çıktısıyla değiştirir; ardından `next start` "production build yok" der.
+  Üretim smoke'unu `next build`'den hemen sonra, e2e'den önce koş.
+- [2026-11-03] Bash heredoc içinde uzun Python düzenleme betikleri (backtick ve tırnak karışık) "unexpected EOF" verebiliyor;
+  betiği Write ile scratchpad'e yazıp `python -X utf8 -I dosya.py` ile çalıştır.
+- [2026-11-03] `getByRole("alert")` Next'in `__next-route-announcer__` öğesini de bulur; form mesajını `main p[role=alert]`
+  ile seç. Alan hatası hem görünür hem `sr-only` kopyada olduğu için `#<alan>-error` ile seç.
+
 - [2026-11-02] `src5.py`'nin başlıkla indirdiği tam metne kimlik denetimi yapmadan güvenme: genel başlıklarda ("Machine
   Learning", "Deep Learning", "Model Compression", "Convex Optimization") beş yanlış makale indi. İlk yazarın soyadını tam
   metnin başında harf sınırıyla ara — `\b` "Gholami1" gibi kurum rakamlarında bozuluyor (bug-955).
 - [2026-11-02] Bir şekilde ölçü adını düzeltince yalnız değişen satırı değil şeklin bütün hücrelerini yeni adla yeniden oku: 110'da
   kutu düzeltilmişti ama "sonuç" hücresi ("dizi tabanlı ölçütler: hiçbir model iyi değil") kaynağın sıkıştırma/ayrım ayrımını
   silmeye devam ediyordu; PNG incelemesi yakaladı (bug-957).
-- [2026-11-02] Geri göndermede hedefe tırnaklı ya da terimleşmiş bir ifade yükleme ("bellek duvarı", "cetvel arayışı", "bağımsız
-  tekrar" tanımı): run 6'nın 15 yanlış geri göndermesinin çoğu buydu. Hedefte birebir grep'le, Türkçe büyük harfi gözet (bug-956).
+- [2026-11-02, run 7'de düzeltildi] Geri göndermede hedefe tırnaklı ya da terimleşmiş bir ifade yükleme ("bellek duvarı",
+  "bağımsız tekrar" tanımı): run 6'nın 14 yanlış geri göndermesinin çoğu buydu. Hedefte birebir grep'le, Türkçe büyük harfi gözet
+  (bug-956). Bu maddenin ilk hâli "cetvel arayışı"nı da örnek veriyordu; o yanlış alarmdı (16'nın H2 başlığı, bug-976).
+- [2026-11-03] Bir geri göndermeyi "hedefte yok" diye değiştirmeden önce hedefi büyük/küçük harf ve Türkçe İ/ı duyarsız,
+  **başlıklar dâhil** ara: run 6, 97'nin "cetvel arayışı"nı 16'da bulamayıp kaldırdı, oysa 16'nın başlığı "## Cetvel arayışı"
+  (grep büyük harfi kaçırdı). Yanlış alarm da düzeltme üretir; önceki run'ın kararlarını düzeltilmiş araçla yeniden tara
+  (`recheck_br7.py`), metin hâlâ doğruysa geri alma, kaydı düzelt (bug-976).
+- [2026-11-03] İndirilen tam metni boyuna ve başlığına bakmadan "okundu" sayma: OpenReview "Verifying your browser", AAAI OJS
+  ve INRIA HAL Anubis, EUR-Lex 202 sayfaları 200 ile iniyor (run 7'de 8 kaynak). Kimlik denetimi (`idchk6.py`) bunları
+  "EKSİK" diye işaretler; sayfayı sil, künyenin okunan sürümünü indir (bug-977).
+- [2026-11-03] Künyenin DOI'si ile arXiv başlık araması farklı çalışmayı getirebilir (68 Hackenburg–Margetts: DOI mikro
+  hedefleme, arama ölçek yasası makalesi). Sayıyı künyenin gösterdiği sürümden oku; arXiv sürümleri EMNLP/Findings
+  tablolarından farklı olabilir (44'te Wang ve ark., monoT5).
+- [2026-11-03] Değişen bir SVG'yi yalnız denetleyiciyle onaylama; açık ve koyu temada PNG'sini çek ve bak — 74'te kutusundan
+  taşan bir satırı yalnız çekim gösterdi (bug-978).
 - [2026-11-02] `r4/apply.py` düzenleme dosyasında anahtar `path`'tir, `file` değil (yanlış anahtar KeyError verir). Bash aracında
   `cd <dizin>` sonraki komutların çalışma dizinini değiştirebiliyor; scratchpad ve repo için mutlak yol kullan.
 - [2026-11-02] Bakım run'ında bir kaynağı "hakemsiz" etiketiyle eklerken o anda TMLR listesine ve konferans dökümlerine bak:
@@ -1006,6 +1094,15 @@ ode_modules`, sonra kopyayi sil.
 
 ## Decision Log
 
+- [2026-11-03] Lisans seçilmedi (kullanıcı kararı; README > Licensing "no license yet"); LICENSE dosyası eklenmedi.
+  Private vulnerability reporting kapalı, açılmadı (ayar değişikliği). Kökteki 7 boş kazara dosya silindi. Vercel takım
+  alan adı belgeden çıkarıldı; push edilmiş dal geçmişinde kalıyor (force push yok).
+
+- [2026-11-03] Public lansman: kod tamam, CANLIYA ALINMADI. Sebep: production alan adları Vercel SSO arkasında (anonim smoke
+  imkânsız, koruma atlatılmaz), veri sorumlusu bilgisi yok (KVKK aydınlatma), Run 7 değişiklikleri commit edilmemiş, GitHub
+  deposu public. Commit/push yapılmadı. Kayıt e-postasız (posta altyapısı yok; ücretli servis eklenmedi), kurtarma çevrimdışı
+  kodla. Güven Sınırı anonime açılmadı (yayın kararı yok). Analitik yok → rıza banner'ı yok; bilgilendirme `/gizlilik`.
+
 - [2026-11-02] AI bakım run'ı 6: kullanıcı tek run istedi → kalan dört olgu denetimi aralığı aynı run'ın iş paketleri, ana
   oturumda, kontrol dosyasıyla; commit/push/deploy yok. Revizyon işareti konmadı (düzeltmelerin hepsi koşul, niceleyici, sayı,
   ölçü adı, geri gönderme ya da bağlantı onarımı; ders değişmedi). Gage bağlantısı süresi dolmuş sertifika yüzünden Wayback'e
@@ -1359,6 +1456,7 @@ otomatik türetmek — typo düzeltmesini de "yenilendi" gösterirdi.
 - **[2026-10-21] Güven Sınırı run 3 (`BATCH=2+1`):** Git hattı açıldı: yazı 5 (Git'in zihinsel modeli: commit, işaretçi, üç alan, ulaşılabilirlik, imajın revision kaydıyla sürüm kapısı) ve 6 (uzak depo: üç `main`, fetch/pull/push'un taşıdığı ref, ıraksama ve iki ret) kohort 2. Deterministik deney deposu iki yazıda aynı kimlikleri verir (#28); komut bloğu altı öğeyi başlık yorumunda taşır ve her blok yayından önce temiz klasörde birebir koşturulur (#29); OCI annotation = "ek açıklama" (#30); sürüm kapısı köken bilgisine dayanır, 1 "yok" ve 2 "karar alınamadı" ayrı (#31); GitHub "Branches" adresi (#32); zaman çizelgesi (#33); "Kendi organizasyonunda" kutusu yalnız GitHub ayarı önerildiğinde (#34). Sıradaki run 7–8, kohort 3.
 - **[2026-10-21] Güven Sınırı run 4 (`BATCH=2+1`):** Git çekirdeği fazı kapandı: yazı 7 (birleştirme tabanı, rebase'in yeni kimliği, GitHub'ın üç yöntemi aynı ağaç/üç geçmiş, paylaşılmış dal birleştirme commit'iyle, squash'tan sonra yaşayan dal vakası) ve 8 (revert/reset, reflog ve ayrık HEAD, silinen dal vakası, zorla push'ta kira tuzağı ve `--force-if-includes`, `main`'e yanlışlıkla birleştirme vakası) kohort 3. Üç son deneme dallarında, dal birleştirme commit'i almadan önce (#35); `olarak` yardımcısı (#36); "zorla push" 7'de gloss'landı (#37); "günlük" yalnız reflog (#38); yönetici vakası bölüm içinde italik dört adım (#39); Teşhis kanıtı aynı dünyada (#40); dolaylı birleştirme 8'de (#41); deney tabanı 9'a (#42); kutu 7'de var, 8'de yok (#43). Sıradaki run 9–10, kohort 4, `collaboration-and-delivery` ilk kez.
 - **[2026-10-26] AI serisi bakım run 3:** Yarım kalan sabah oturumunun taraması yeniden kullanıldı; dokuz doğrulama + üç diff denetimi ajanı (salt okunur), bütün kararlar ana oturumda. Politika: bir çalışma bir kimlik (arXiv ↔ resmî kayıt farkı birleştirilir, 19 çalışma); aynı DOI'nin takma adları ve klasik eserlerin çalışan ücretsiz kopyaları ikinci kimlik sayılmaz (değişmez); künyenin yazar/başlığı bağlandığı sürümü izler; COLM 2026'dan itibaren bağlantı `proceedings.colm.cc` (2024/2025 arXiv geleneği değişmedi); ICLR 2024–2025'te betikle doğrulanabilen `proceedings.iclr.cc`. Ad değişikliğinde künye resmî kaydın adını taşır, gövde kişinin bugünkü adını kullanır (Rimsky/Panickssery); aksan farkı (Févry) hata değil. 68 revizyon işareti 2026-10-26 (Costello erratum'u, endişe notu geri alındı); öteki 43 makale işaretsiz. Kararlar #275–#281, sonraki #282.
+- **[2026-11-03] AI serisi bakım run 7:** Kullanıcı "bağımsız ikinci denetim" istedi; ultracode yoktu, bu yüzden ajan değil ana oturum ve "bağımsız" = önceki run'ın sonucuna bakmadan kaynağı yeniden açmak. İkinci denetim körlemesine 118 makale yerine riskli noktalara (S1–S5) yöneltildi, gerekçe kontrol dosyasında. Run 6'nın 97→16 düzeltmesi yanlış alarmdı ama 97'nin yeni ifadesi 16'yla tutarlı olduğu için metin geri alınmadı (önceki run'ların değişiklikleri ezilmez), yalnız kayıtlar (#305, HANDOFF, bug-956, bu dosya) düzeltildi. 43'e revizyon işareti (şekil yanlış zihinsel model kuruyordu); öteki 12 makale işaretsiz. 74'ün SVG'sinde önceden var olan kutu taşması metne dokunmadan yerleşimle onarıldı. OpenAlex borcu kapandı. Kararlar #302–#307, sonraki #308.
 
 ## 2026-10-05 — Manual series reading reset
 

@@ -11,8 +11,15 @@ const SERIES_LABELS: Record<SeriesId, string> = {
   guvenlik: "Güven Sınırı",
 };
 
-export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
-  const { ready, resetSeries } = useReaderData();
+export function SeriesProgressReset({
+  seriesId,
+  articleIds,
+}: {
+  seriesId: SeriesId;
+  /** The series' published articles; a visitor without an account resets them in place. */
+  articleIds: string[];
+}) {
+  const { ready, resetSeries, mode } = useReaderData();
   const [armed, setArmed] = useState(false);
   const [pending, setPending] = useState(false);
   const [message, setMessage] = useState("");
@@ -40,7 +47,7 @@ export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
     setPending(true);
     setError("");
     try {
-      await resetSeries(seriesId);
+      await resetSeries(seriesId, articleIds);
       setArmed(false);
       setMessage("İlerlemen sıfırlandı. Seriye ilk yazıdan başlayabilirsin.");
       requestAnimationFrame(() => armButton.current?.focus());
@@ -93,8 +100,9 @@ export function SeriesProgressReset({ seriesId }: { seriesId: SeriesId }) {
             id={`reset-description-${seriesId}`}
             className="max-w-xl text-sm leading-relaxed text-text-muted"
           >
-            {label} serisindeki okundu bilgilerin ve kaldığın konumlar silinecek. Diğer
-            serilerdeki ilerlemen, yer imlerin ve vurguların korunacak. Bu işlem geri alınamaz.
+            {label} serisindeki okundu bilgilerin ve kaldığın konumlar silinecek
+            {mode === "local" ? " (yalnızca bu tarayıcıda)" : ""}. Diğer serilerdeki ilerlemen,
+            yer imlerin ve vurguların korunacak. Bu işlem geri alınamaz.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             <button

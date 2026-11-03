@@ -36,6 +36,6 @@
   <text x="596" y="169" font-size="13" text-anchor="start" fill="var(--text-muted)">1.500 sorgu/sn</text>
 
   <line x1="16" y1="284" x2="704" y2="284" stroke="var(--border)" stroke-width="1"/>
-  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-muted)">iki bütçe, aynı veri, aynı taban çizgisi ailesi: fark algoritmadan değil harcanan bütçeden geliyor</text>
+  <text x="16" y="308" font-size="13" text-anchor="start" fill="var(--text-muted)">iki bütçe, iki taban çizgisi: bellekte FAISS (ters dosya + ürün kuantizasyonu), diskte DiskANN</text>
   <text x="16" y="330" font-size="13" text-anchor="start" fill="var(--text-faint)">belleğe sığmak için sıkıştırılan dizin, gerçek komşuların yaklaşık üçte birini kaçırıyor</text>
 </svg>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Users } from "lucide-react";
+import { ArrowRight, UserRound, Users } from "lucide-react";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import { pad, UI } from "@/lib/content/labels";
 import {
@@ -48,6 +48,8 @@ type DashboardProps = {
    */
   archive: ArticleDescriptor[];
   isOwner: boolean;
+  /** A self-registered reader manages their own account (password, recovery code, deletion). */
+  showAccountLink?: boolean;
   username: string;
 };
 
@@ -75,7 +77,13 @@ const STEP_LABELS: Record<NextStep["kind"], string> = {
   start: "İlk bölüm",
 };
 
-function DashboardContent({ series, archive, isOwner, username }: DashboardProps) {
+function DashboardContent({
+  series,
+  archive,
+  isOwner,
+  showAccountLink = false,
+  username,
+}: DashboardProps) {
   const { ready, data, statusOf } = useReaderData();
   const lookup = {
     statusOf,
@@ -162,6 +170,15 @@ function DashboardContent({ series, archive, isOwner, username }: DashboardProps
               >
                 <Users className="h-3.5 w-3.5" aria-hidden="true" />
                 Kullanıcılar
+              </Link>
+            )}
+            {showAccountLink && (
+              <Link
+                href="/hesap"
+                className="mr-1 inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:text-text"
+              >
+                <UserRound className="h-3.5 w-3.5" aria-hidden="true" />
+                Hesabım
               </Link>
             )}
             <SyncStatus />

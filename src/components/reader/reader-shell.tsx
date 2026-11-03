@@ -6,7 +6,7 @@ import { CATEGORY_LABELS, LEVEL_LABELS, UI } from "@/lib/content/labels";
 import type { AdjacentArticle, ArticleDescriptor, CurrentArticle } from "@/lib/content/types";
 import { phaseForOrder, type PhaseOutline } from "@/lib/content/series-progress";
 import { ReaderProgressProvider, useReaderProgress } from "@/lib/progress/use-reader-progress";
-import { useReaderData } from "@/lib/reader-data/use-reader-data";
+import { useReaderData, type ReaderDataMode } from "@/lib/reader-data/use-reader-data";
 import {
   ReaderPreferencesProvider,
   useReaderPreferences,
@@ -519,10 +519,14 @@ function ReaderShellInner({
   );
 }
 
-export function ReaderShell({ workspaceId, ...props }: Props & { workspaceId: string }) {
+export function ReaderShell({
+  workspaceId,
+  mode,
+  ...props
+}: Props & { workspaceId: string; mode?: ReaderDataMode }) {
   return (
     <ReaderPreferencesProvider>
-      <ReaderProgressProvider workspaceId={workspaceId}>
+      <ReaderProgressProvider workspaceId={workspaceId} mode={mode}>
         <ReaderShellInner {...props} />
       </ReaderProgressProvider>
     </ReaderPreferencesProvider>
