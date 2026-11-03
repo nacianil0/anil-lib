@@ -846,7 +846,7 @@
         "uzun-kuyruk",
         "bilgi-catismasi"
       ],
-      "contentHash": "sha256:98c453fe2babcaeaa1551e24f3b2cf53f46247ae50e52ee4dc815f715e7f80af",
+      "contentHash": "sha256:f86b4d6c0de0594c7d18a2b6370b63b94c84a72e4b662f0ab5bc24347a3129e5",
       "path": "content/series/articles/agents-and-retrieval/modelin-bilgisi-neden-yetmez-rag-e-giris.md",
       "relatedArticleIds": [],
       "classificationBatch": 9,
@@ -890,12 +890,12 @@
         "urun-kuantizasyonu",
         "vektor-veritabani"
       ],
-      "contentHash": "sha256:217a6b012847d9c29f61ef1af23f7f0d25a3917f9bd57e84822708caf83dbba0",
+      "contentHash": "sha256:dfc3bd0bc5f1d5001d540068d5a2f465bd8b87372138f47c7827ec72a07930ee",
       "path": "content/series/articles/agents-and-retrieval/vektor-veritabanlari-ve-dizinleme.md",
       "relatedArticleIds": [],
       "classificationBatch": 10,
-      "revisedAt": "2026-09-25",
-      "revisionNote": "Ürün kuantizasyonu neden vektörü böldüğüyle sezgiden kuruldu; örnekteki hata açıklaması ve şekli düzeltildi, hoşgörülü bulma oranı tanımlandı."
+      "revisedAt": "2026-11-03",
+      "revisionNote": "Şekil 2'deki sayıların iki parkurun en iyisi değil taban çizgileri olduğu ve bellek ile disk parkurunda iki ayrı dizinin karşılaştırıldığı düzeltildi."
     },
     {
       "articleId": "article_494762df-8293-487d-863a-ba2be95c1913",
@@ -912,7 +912,7 @@
         "baglam-yerlesimi",
         "rag-hatti"
       ],
-      "contentHash": "sha256:bec4e0f0f7dcb848b6657ff6614f97d567c27b20ea2197bd86166d8eac1f5ce8",
+      "contentHash": "sha256:7c83156884a2b92cb851db26a1b35542c11c88440317a9ef2700d269ac31f5a0",
       "path": "content/series/articles/agents-and-retrieval/parcalama-yeniden-siralama-ve-rag-hattinin-incelikleri.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -932,7 +932,7 @@
         "hakem-model",
         "olcum-disiplini"
       ],
-      "contentHash": "sha256:340aa5b40495b52f7142da350223f689f113eae6d01985afbda5ff0f6bd1d2a1",
+      "contentHash": "sha256:b699d9dcbc3a376cc0d464780abcc3cb1f3ae93f8f363e0f1a7387cfb185a411",
       "path": "content/series/articles/agents-and-retrieval/rag-degerlendirmesi-dogruluk-ve-kaynak-sadakati.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -952,7 +952,7 @@
         "etkin-getirme",
         "yansima-tokenlari"
       ],
-      "contentHash": "sha256:3a61214a58a24a4cd7c0c559c81d7097d43ce172905c177863a125cc51d3dfcb",
+      "contentHash": "sha256:53a81f6b72d8dd1771084daa1cea16f776694fb4d6c36dfcbb64f67e2e846d3a",
       "path": "content/series/articles/agents-and-retrieval/ragin-otesi-getirerek-akil-yuruten-sistemler.md",
       "relatedArticleIds": [],
       "classificationBatch": 10
@@ -972,7 +972,7 @@
         "uydurulmus-cagri",
         "paralel-cagri"
       ],
-      "contentHash": "sha256:e77ccef5d0be193eb3360c5795eb19f6f83bd6cafd337c11bd74a60cc14374ee",
+      "contentHash": "sha256:3d1df30e484379da4408dce5e80b15e8fb6e92114cce95c4d6769cc27378cace",
       "path": "content/series/articles/agents-and-retrieval/arac-kullanimi-islev-cagrisi.md",
       "relatedArticleIds": [],
       "classificationBatch": 11
@@ -1258,7 +1258,7 @@
         "hedef-yanlis-genellemesi",
         "vekil-odul"
       ],
-      "contentHash": "sha256:f4d7f0b44a7ebcf666404220265976cca912626fdfda01107342bae14105426b",
+      "contentHash": "sha256:909525ce76d29c321fa67df6662a3206acc8178ba7bd2987eba367e4fb361aa9",
       "path": "content/series/articles/safety-and-evaluation/hizalama-sorunu-ne-istedigimizi-soylemek-zor.md",
       "relatedArticleIds": [],
       "classificationBatch": 14
@@ -1278,7 +1278,7 @@
         "sig-hizalama",
         "ince-ayar-saldirisi"
       ],
-      "contentHash": "sha256:1a21d612577a17dd046864c9bca60f39b52cdc45d2c8285857202b7a86fe1933",
+      "contentHash": "sha256:76bfd552f89126557f0fa9d8e3e21ae6b524c42d6de872561cf65fee8921b99b",
       "path": "content/series/articles/safety-and-evaluation/guvenlik-egitimi-reddetme-sinirlar-ve-dengeler.md",
       "relatedArticleIds": [],
       "classificationBatch": 14,
@@ -1364,7 +1364,7 @@
         "gerekce-sadakati",
         "karakter-egitimi"
       ],
-      "contentHash": "sha256:0798c9b4a765d0e95ab4aa4f62e9a1191c3784cbc671cb5be90fe5c38e1ee626",
+      "contentHash": "sha256:fd26e660dcab73b9d38fd6cac031d833ecef40275ca30dcceea29c9affe95f1f",
       "path": "content/series/articles/safety-and-evaluation/dalkavukluk-ve-model-karakteri.md",
       "relatedArticleIds": [],
       "classificationBatch": 15,
@@ -1386,7 +1386,7 @@
         "uyuyan-ajan",
         "yetenek-saklama"
       ],
-      "contentHash": "sha256:013622ac97cdca13c1a34ccdcf11ca141c078770afc012d7bf08f26b1121f256",
+      "contentHash": "sha256:a14e6d832e60df9f6d475c1b57cf87354f4fcf62dc0153f6fc6fc57df15dfdd6",
       "path": "content/series/articles/safety-and-evaluation/aldatma-ve-durum-farkindaligi-tartismalari.md",
       "relatedArticleIds": [],
       "classificationBatch": 16,
@@ -1538,7 +1538,7 @@
         "induksiyon-basi",
         "sonda"
       ],
-      "contentHash": "sha256:6a13ff3b5c356b766afe61cfa5c1e86d5713cec96020784d3dd36bc1a5e7daf1",
+      "contentHash": "sha256:d30791adf089628a4531e5ae364a372ec1822a845613b62717e8ea4489656766",
       "path": "content/series/articles/safety-and-evaluation/mekanistik-yorumlanabilirlik-devreleri-okumak.md",
       "relatedArticleIds": [],
       "classificationBatch": 17,
@@ -1622,7 +1622,7 @@
         "faz-gecisi",
         "ongorulebilirlik"
       ],
-      "contentHash": "sha256:df0741fb20f5f96966e6d9897fe85f999c9b7f213e6947f04211b7d6a9a90fca",
+      "contentHash": "sha256:c3bf833d492da040bf4e2c13e7738a5463171c04b8b743782a3c0face8d5670a",
       "path": "content/series/articles/safety-and-evaluation/beliren-yetenekler-tartismasi-aniden-mi-geliyor.md",
       "relatedArticleIds": [],
       "classificationBatch": 18
@@ -1642,7 +1642,7 @@
         "degerlendirme",
         "sertifikali-savunma"
       ],
-      "contentHash": "sha256:36d0f4c19c7012af6dc76ccfad8b3bb5c86a0813d0190754337a8e71e8315ea7",
+      "contentHash": "sha256:670088f876e5c4ba523aad671d82ec70ac515fec2d9e3aee58062c4ddf547d46",
       "path": "content/series/articles/safety-and-evaluation/saglamlik-dagilim-kaymasi-ve-dusmanca-girdiler.md",
       "relatedArticleIds": [],
       "classificationBatch": 19

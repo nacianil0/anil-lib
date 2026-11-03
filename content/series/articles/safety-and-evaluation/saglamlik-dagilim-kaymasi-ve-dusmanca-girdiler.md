@@ -12,7 +12,7 @@ tags:
   - dusmanca-ornek
   - degerlendirme
   - sertifikali-savunma
-content_hash: sha256:36d0f4c19c7012af6dc76ccfad8b3bb5c86a0813d0190754337a8e71e8315ea7
+content_hash: sha256:670088f876e5c4ba523aad671d82ec70ac515fec2d9e3aee58062c4ddf547d46
 classification_version: 1
 classification_batch: 19
 ---
@@ -94,7 +94,7 @@ Bir de garanti verebilen kol var. Jeremy Cohen, Elan Rosenfeld ve Zico Kolter'in
 
 Eksen 63'ün bulgularını da yerine oturtuyor. Gradyanla eniyilenen sonek, evrensel saldırı ifadesi ve kırmızı takımın elle yazdığı kalıplar, hepsi eksenin en sağ ucundaki ölçümlerdir: girdiyi arayan bir saldırgan var ve bulduğu şey ortalama bir kullanıcının yazacağı şey değil. 58'deki istem enjeksiyonu ise ekseni bir kez daha ikiye ayırır — orada girdiyi seçen ne kullanıcı ne dünyadır, modelin okuduğu üçüncü taraf belgedir.
 
-İki uç arasındaki en önemli asimetri savunma tarafında. Görüntüde en kötü durum ucunun bir sertifikası var: bozulmanın büyüklüğü bir sayıyla — bir uzaklık yarıçapıyla — sınırlanabildiği için, o yarıçap içinde kanıt verilebiliyor. Dil modelinde anlamı koruyan değişiklikleri kapsayan böyle bir yarıçap yok: girdi ayrık, ve "anlamı bozmayan değişiklik" kümesinin matematiksel bir tanımı yok. Bu yüzden 63'teki savunmaların hepsi görgüldür ve orada gördüğümüz sonuç burada bir kural olarak okunmalı: belirli bir saldırıya karşı eğitim o saldırıyı kapatır, öbürlerini kapatmaz — Andriushchenko ve arkadaşlarının ölçümünde aynı modelde rastgele aramayla eniyilenen sonek yüzde 12'de kalırken, istemin yapısını değiştiren uyarlanır bir arama yüzde 100'e çıkıyor.
+İki uç arasındaki en önemli asimetri savunma tarafında. Görüntüde en kötü durum ucunun bir sertifikası var: bozulmanın büyüklüğü bir sayıyla — bir uzaklık yarıçapıyla — sınırlanabildiği için, o yarıçap içinde kanıt verilebiliyor. Dil modelinde anlamı koruyan değişiklikleri kapsayan böyle bir yarıçap yok: girdi ayrık, ve "anlamı bozmayan değişiklik" kümesinin matematiksel bir tanımı yok. Bu yüzden 63'teki savunmaların hepsi görgüldür ve orada gördüğümüz sonuç burada bir kural olarak okunmalı: belirli bir saldırıya karşı eğitim o saldırıyı kapatır, öbürlerini kapatmaz — Andriushchenko ve arkadaşlarının ölçümünde, GCG sonek saldırısına karşı düşmanca eğitilmiş R2D2 modelinde rastgele aramayla eniyilenen sonek yüzde 12'de kalırken, istemin yapısını değiştiren uyarlanır bir arama yüzde 100'e çıkıyor.
 
 Eksenin pratikteki dersi ölçüm dilinde. 71 protokolün sonucun içinde durduğunu söylüyordu; buraya bir cümle daha ekleniyor: **girdi dağılımı da sonucun içindedir.** Bir modelin "yüzde 90 doğru" olduğu cümlesi, hangi dağılımdan çekilmiş kaç örnekte ve kimin seçtiği girdilerle ölçüldüğü söylenmedikçe eksiktir.
 

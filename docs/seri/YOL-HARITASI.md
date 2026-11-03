@@ -6129,6 +6129,111 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     sayfa yeniden ölçüldü. Üç şeklin `aria-label`'ı alt metinle eşit; 346 şeklin 118'inde eşit, 95'inde ayrışmış, 133'ünde yok
     (bilgi notu, okura yansımıyor). İzole kopya, junction ve `launch.json` girdisi temizlendi. Commit yapılmadı. **Sonraki
     bağlayıcı karar numarası #302'dir.**
+302. **Bakım run'ı 7 (2026-11-03): kapsam ve süreç.** Run 5–6'nın değişiklikleri kullanıcı tarafından `5d8d837`'de commit
+    edilmişti; çalışma ağacında yalnız `.wolf/memory.md`'nin hook satırları vardı. Kullanıcının run 7 talimatı: ilk olgu
+    denetimi turunda tam denetlenmeyen on makaleyi (41, 43–47, 61, 63, 68, 76) önceliklendir; ardından 41–80'de körlemesine
+    değil, riskli noktalara kaynak temelli bağımsız ikinci denetim uygula, kapsamı ve seçim gerekçesini yaz; OpenAlex'in 99
+    çalışmasını önce erişilebilirliği yoklayarak ve 429'a uyarak dene; (f), (i), (j)'yi yalnız doğrulanabilir yeni durum varsa
+    güncelle; bot korumasını ve erişim sınırını aşma, anahtar isteme ya da üretme; commit, push, deploy ve yeni makale yok;
+    tek run, ayrı kontrol dosyası. Ultracode verilmedi: workflow ve yardımcı ajan kullanılmadı (cerebrum'daki kullanıcı
+    tercihi); "bağımsız", ilk denetimin vardığı sonuca dayanmadan kaynağı yeniden açmak diye uygulandı. Run'ın durumu
+    compact'lar arasında `docs/seri/BAKIM-RUN7.md`'de tutuldu; `BAKIM-RUN6.md` geçmiş kanıt olarak değiştirilmedi. **İkinci
+    denetimin seçimi (#304):** S1 run 4'ün anlam değiştiren düzeltmeleri (61–80'de 14 makale; denetçi → şüpheci ajan
+    zinciriyle üretilmişti, yanlışsa makale bugün yanlış dersi öğretiyor), S2 61–80'in bütün açık geri göndermeleri (run 4
+    §5 dersinden önceydi), S3 run 4–6 düzeltmelerinin eski dizgelerinin seride kalıp kalmadığı (yansıma), S4 şekil ↔ alt
+    metin ↔ gövde sayıları, S5 özet ↔ gövde. **Toplam:** 13 makalede 40 düzenleme (P1 32, S1 2, S2 4, S3 2; üçü SVG metni)
+    ve bir SVG yerleşim onarımı (#307); revizyon işareti yalnız 43'te.
+303. **Olgu denetimi — tam denetlenmeyen on makale (bakım run'ı 7).** 41, 43–47, 61, 63, 68, 76; 168 künyenin erişilebilenleri
+    tam metinle (kapalı kalanlar: Jégou ve ark. 2011'in INRIA HAL kopyası Anubis bot sayfası döndürdü, atlatılmadı, PQ
+    iddiaları FAISS makalesinden doğrulandı; Wiener 1960; Bommasani 2024'ün Science yazısı; Costello düzeltmesinin Science
+    sayfası 403 — 68'in o sayıları run 3'ün okumasına dayanıyor). Run 1'in okuduğu çiftler yeniden okunmadı. 32 düzenleme:
+    43'te 11, 45'te 8, 41'de 5, 44, 46, 47 ve 61'de 2'şer; 63, 68 ve 76 düzeltmesiz. **Örnekler:** 43'te Big-ANN Şekil 2'nin
+    sayıları iki parkurun en iyisi değil taban çizgileri ve iki taban çizgisi ayrı dizinler (bellekte FAISS ters dosya + ürün
+    kuantizasyonu, diskte DiskANN) — şekil farkı "algoritmadan değil bütçeden" diye okutuyordu (gövde, alt metin, SVG;
+    "büyük iyileşme beklenmiyor" kaynağın, gerisi "bizim okumamızla"), DiskANN'ın SIFT1B koşulu, Kuffo'nun ~%35'i
+    MSMARCO'nun; 41'de LAMA tablosu BERT-large'ın, 63,5 "bilgi tabanı" değil DrQA (kaynağın girişi ile ölçüm bölümü
+    çelişiyor; ölçüm esas, fark metinde), Kandpal "10¹⁸'in üstünde", RAG'in insan değerlendirmesi Jeopardy soru üretimi
+    (452 çift, vakaların %42,7'si), Mallen'in öbekleri GPT-3 davinci-003 + Contriever; 44'te RankGPT öğrencisinin öğretmeni
+    GPT-4 değil ChatGPT, "170 soru" yaklaşık; 45'te RGB sayıları ChatGPT'nin İngilizce sonucu, RAGTruth'un 378'i Mistral-7B'nin,
+    veriden metinde 0,27 "en iyi model" değil GPT-4, Liu'nun r'si sıra ilişkisi değil ilişki katsayısı, CRAG Görev 3 web +
+    bilgi grafiği (gövde, alt metin, SVG etiketi), eRAG tablosunun koşulu (BM25, MAP, τ, küçük T5); 47'de sağlayıcı belgesi
+    Kasım 2026'da yeniden okunup tarihlendi (sayılar aynı); 61'de Ngo ve ark.'nın "2025'e kadarki gözlemleri" Mart 2025 arXiv
+    güncellemesinin. **Künye sürümü:** 44'te Wang ve ark. ile monoT5'in sayıları künyedeki EMNLP 2024 ve Findings of EMNLP
+    2020 sürümlerinden (arXiv sürümleri başka tablolar taşıyor). **Geri göndermeler (§5) — dört:** 46'nın 40'a tırnaklı
+    ifadesi 40'ta birebir yok, Self-RAG'in özel token'ları için 30'a gönderme yanlış hedef (doğrusu 24); 47'nin 46'ya
+    tırnaklı "belirsizsen ara"sı 46'da yok; 61 Goodhart yasasını 16'ya bağlıyordu (terim 13'te) — hepsi hedefin ifadesine
+    çekildi.
+304. **İkinci denetim — 41–80'in riskli noktaları (bakım run'ı 7).** Seçim gerekçesi #302'de. **S1 — run 4'ün anlam
+    değiştiren düzeltmeleri:** 62, 64, 65, 66, 67, 69, 70, 71, 73, 74, 77, 78, 79, 80 kaynağın tablosundan ya da metninden, run
+    4'ün sonucuna bakmadan yeniden okundu; hepsi tutuyor. İki koşul eklendi: 62'de Brahman tablosunun "sistem istemi olmadan"
+    koşulu; 79'da Andriushchenko ve ark.'nın %12 ↔ %100'ünün modeli adsızdı ("aynı modelde") → GCG sonek saldırısına karşı
+    düşmanca eğitilmiş R2D2 (§4). Kaynağın iç tutarsızlığı iki yerde görüldü, makale doğru tarafta: 80'de Liang ve ark.'nın
+    gövdesi %44,2 diyor, Şekil 1'i ve aritmetiği (32.111/74.970) %42,8; 69'da 2025 şeffaflık endeksinin dipnotu altı düşüş
+    sayıyor, ama AI21 de 2024'te ortalamanın bir standart sapma üstündeyken (≥72) 2025'te 66 → "dokuzun yedisi" doğru. 78'de
+    "iki kesikli ölçü" öğe başına 0/1 puan anlamında tutuyor (Schaeffer'in süreksiz/doğrusal olmayan ayrımı token hatasının
+    fonksiyonu için). **S2 — geri göndermeler:** 61–80'de 309 açık geri gönderme (`br7.py`: "N. makale…" ya da geri
+    çağırma fiilli "N'de…"), 84 aday; P1'in dışındakiler hedefte büyük/küçük harf duyarsız okundu. Dört düzeltme: 66'nın
+    "sadakat"i 32'de değil 31'de tanımlanıyor; 67'nin "64'te gördüğümüz müzakereci hizalama"sı 64'te yok → 64'ün tarifi
+    (belirtimle düşünme eğitimi); 78'in 71'e tırnaklı "ölçüte çalışmak"ı 71'de yok → "ölçüt piyangosu"; 78'in 70'e tırnaklı
+    eşik cümlesi → 70'in "şu ölçülürse şu önlem"i. **S3 — yansıma:** run 4 (`0854021`) ve run 5–6 (`5d8d837`) diff'lerinden
+    41–80 makaleleri ve SVG'lerinde silinen 535 ayırt edici dizge; aynı makalede, SVG'de ya da katalogda kalan 55 yer tek tek
+    okundu: 54'ü bilinçli ya da ilgisiz, biri gerçek yayılım hatası — 74'ün alt metni ve `aktivasyon-yamasi-iki-yon.svg`, run
+    4'te gövdede düzeltilen bozma yöntemleri yerine kaynakta olmayan bir liste (sıfırlama, ortalama, yeniden örnekleme)
+    taşıyordu; kaynağın iki yöntemine (Gauss gürültüsü, yakın token'la değiştirme) çekildi, `aria-label` eşitlendi. **S4 —
+    şekil ↔ alt metin ↔ gövde:** 32 aday; hepsi eksen etiketi, etiketsiz çizilen değer, şekil içi hesap örneği ya da
+    kaynakçadaki çalışmanın sayısı — düzeltme yok. **S5 — özet ↔ gövde:** iki aday, ikisi de tutuyor (65'in 16,5→1,3'ü
+    gövdedeki 16,53→1,26'nın yuvarlanmışı; 80'in "123 sayfalık"ı gövdede yazıyla); özet ↔ katalog 0 fark.
+305. **Düzeltme kaydı — run 6'nın 97→16 kararı yanlış alarmdı (#295, #297).** #297 "97 16'ya tırnaklı 'cetvel arayışı'nı
+    yüklüyordu" demişti; 16'nın H2 başlıklarından biri tam olarak "## Cetvel arayışı". Run 6'nın grep'i büyük/küçük harfe
+    duyarlı olduğu için başlığı kaçırmıştı. Run 5–6'nın geri gönderme kararları (18 vaka) `recheck_br7.py` ile büyük/küçük
+    harf ve Türkçe İ/ı duyarsız, başlıklar dâhil yeniden tarandı: yalnız bu biri yanlış alarm. 97'nin run 6'daki yeni ifadesi
+    ("cetvelin kendisine dikkatle bakarken") 16'yla hâlâ tutarlı olduğu için metne dokunulmadı (önceki run'ın değişikliği geri
+    alınmaz, okura yanlış bir şey söylemiyor). Sayılar düzeltildi: run 6'da yanlış ya da fazla güçlü geri gönderme 15 değil
+    **14** (#297'deki B aralığında sekiz değil yedi), run 5–6 toplamı 19 değil **18**. HANDOFF'un run 6 bölümü, run 6 dersi
+    (b) ve "Düzeltme yoğunluğu" maddesi, bug-956 ve cerebrum'un 2026-11-02 Do-Not-Repeat maddesi aynı turda düzeltildi;
+    #295 ve #297'nin metni tarihsel kayıt olarak bırakıldı, bu karar onları düzeltir.
+306. **Borçlar, dış denetimler ve engeller (bakım run'ı 7).** 2026-11-03 10:09'da: (f) `papers.nips.cc/paper_files/paper/2026`
+    hâlâ 404 (dizin 2025'te bitiyor); (i) TMLR'nin kendi listesi 5.053 makale, Min-p eleştirisi yok — OpenReview API'si yine
+    403; (j) NeuronInfer'in Crossref kaydında cilt/sayı yok (s. 1–14; kayıt 2026-11-02'de yeniden dizinlenmiş, içerik aynı).
+    Üçü değişmedi, künyelere dokunulmadı. **OpenAlex — KAPANDI:** tek yoklama isteği 200 döndü; run 5–6'dan kalan 99
+    çalışmanın 99'u yanıtlandı, 429 yok (anahtar kullanılmadı, e-posta gönderilmedi). Yayımlanmış konum gösteren iki aday
+    künyede zaten doğru (71 ve 117'de HLE Nature 649; 75'te Gated SAE NeurIPS 2024); yeni hakemli kalem yok. **Erişim
+    engelleri (hiçbiri atlatılmadı):** INRIA HAL'in Anubis sayfası (43, Jégou 2011); AAAI OJS'nin Anubis sayfası (66,
+    SycEval → arXiv); OpenReview'un "Verifying your browser" sayfası (67 Pacchiardi, 69 FMTI 2024 ve 2025, 71 Zheng, 73 LLMBar,
+    78 McKenzie → arXiv); EUR-Lex'in 202 meydan okuması (80, AB Yasası → Avrupa Birliği Yayın Ofisi'nin resmî Cellar
+    dağıtımı, `publications.europa.eu/resource/celex/32024R1689`); ACM, Science, PNAS ve Nature'ın 403'ü ya da ödeme duvarı →
+    arXiv, Europe PMC ve PsyArXiv kopyaları. **Araç tuzakları:** indirici bot ve doğrulama sayfalarını başarılı indirme diye
+    kaydetti; kimlik denetimi yakaladı, sayfalar silinip gerçek kopyalar indirildi, hiçbir makale bu sayfalarla
+    denetlenmedi. Bir indirme yanlış çalışmaydı (68 Hackenburg–Margetts: künyenin DOI'si mikro hedefleme, arXiv araması ölçek
+    yasası makalesini getirdi) → Europe PMC tam metni (PMC11181035).
+307. **Revizyon işareti, kapılar ve render (bakım run'ı 7).** **§12:** yalnız 43 → `2026-11-03` ("Şekil 2'deki sayıların iki
+    parkurun en iyisi değil taban çizgileri olduğu ve bellek ile disk parkurunda iki ayrı dizinin karşılaştırıldığı
+    düzeltildi."); şekil okura yanlış bir zihinsel model kuruyordu (fark "algoritmadan değil bütçeden"). Üzerine yazılan eski
+    not (2026-09-25) HANDOFF'un run 7 bölümünde. Öteki 12 makalenin düzenlemeleri koşul, niceleyici, model adı, tarih, geri
+    gönderme ya da yansıma; okurun çıkardığı ders değişmedi (74'te bozma yöntemlerinin listesi düzeldi, "bozma yöntemi sonucu
+    değiştirir" dersi aynı). Özeti değişen makale yok; özet ↔ katalog 0 fark. **Kapılar:** `sync-series-hashes --write` her
+    makaleden sonra; `check-series-content --warnings` (118 makale) ve `check-series-svg` (346 diyagram) her paketten sonra
+    temiz; izole kopyada (`C:\dev\anil-lib-ai-bakim7`, içerik ve `src` ana ağaçla `diff -rq` özdeş) `pnpm typecheck` 0,
+    841/841 test (43 dosya), `pnpm build` exit 0 (194 statik sayfa) — 74'ün SVG onarımından sonra kopya tazelenip üçü yeniden
+    koşuldu, aynı sonuç. **Bağlantılar:** run 7 bağlantı eklemedi ya da değiştirmedi; değişen 13 makalenin 228 benzersiz
+    bağlantısı tek tek istendi: 207'si 2xx/3xx, 21'i ACM, IEEE, Science, PNAS ve MIT Press'in betiklere verdiği 403/202 — DOI
+    doğru yayıncı sayfasına yönleniyor ve 21'inin Crossref başlığı künyeyle eşleşti, yanlış alarm. **Render:** değişen 13
+    sayfa × üç genişlik × üç tema (kopyada `next dev`, port 3227): 117 satırın hepsi 200; yatay kaydırma, şekil taşması,
+    `undefined`/`NaN` ve konsol hatası yok; ölçerin 33 uyarısı yanlış alarm — 27'si 74, 45 ve 43'ün alt metin dizgesi (SVG
+    `aria-label`'ında, tarayıcıda doğrulandı), 6'sı 62 ve 67'nin 375 px'teki tabloları (kendi `table-scroll` kabında, sayfa
+    `scrollWidth` 375). 43'ün revizyon satırı "Gözden geçirildi · 3 Kasım 2026" ile render ediliyor; önceden var olan beş
+    revizyon satırı değişmedi. **Erişilebilirlik** (axe-core kurulu değil, eklenmedi; DOM kuralları, `a11y7.mjs`): 13 sayfa ×
+    üç tema, 0 sorun — `lang="tr"`, 39 şeklin hepsi `role="img"` ve dolu `aria-label`, 39 yakınlaştırma simgesi
+    `aria-hidden`, başlık sırası atlamıyor, bağlantı ve düğmelerin adı var, tablolarda `th`, en düşük kontrast paragrafta 5,17
+    (sepya) ve şekil yazısında 5,55 (AA 4,5). İlk koşu her sayfada üç "etiketsiz SVG" saymıştı: yakınlaştırma düğmesinin
+    gizli simgeleri — ölçer hatası, düzeltildi. **PNG turu:** değişen üç SVG (74 `aktivasyon-yamasi-iki-yon`, 43
+    `iki-butce-iki-bulma-orani`, 45 `getirme-ne-degistirdi`) açık ve koyu temada çekilip incelendi. **Gerçek kusur (önceden
+    var):** 74'ün sol panelinde "temiz hesap geri konur" 350,6'da bitiyordu, kutu ve panel 350'de (öteki kutularda ~10 birim
+    boşluk; SVG denetleyicisi yalnız viewBox taşmasına bakıyor) → metne dokunmadan kutu 188–344, ok 172, metin 196 (metin
+    336,6'da bitiyor); yeniden çekildi, sayfa yeniden ölçüldü. Değişen üç şeklin `aria-label`'ı alt metinle eşit; 346 şeklin
+    119'unda eşit, 94'ünde ayrışmış, 133'ünde yok (bilgi notu, okura yansımıyor). Sunucu durduruldu, junction `cmd rmdir`
+    ile kaldırıldı (ana `node_modules` sağlam), izole kopya silindi, `launch.json` HEAD hâline döndü. Commit yapılmadı.
+    **Sonraki bağlayıcı karar numarası #308'dir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

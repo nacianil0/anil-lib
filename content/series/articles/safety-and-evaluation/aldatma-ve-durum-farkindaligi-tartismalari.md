@@ -12,7 +12,7 @@ tags:
   - hizalama-taklidi
   - uyuyan-ajan
   - yetenek-saklama
-content_hash: sha256:013622ac97cdca13c1a34ccdcf11ca141c078770afc012d7bf08f26b1121f256
+content_hash: sha256:a14e6d832e60df9f6d475c1b57cf87354f4fcf62dc0153f6fc6fc57df15dfdd6
 classification_version: 1
 classification_batch: 16
 revised_at: "2026-10-26"
@@ -72,7 +72,7 @@ Rudolf Laine ve arkadaşlarının NeurIPS 2024 veri kümeleri ve ölçütler pro
 
 Şekil 3'ün üçüncü satırı farkındalığın en somut biçimi: **değerlendirme farkındalığı** (evaluation awareness), modelin bir konuşmanın değerlendirmeden mi gerçek kullanımdan mı geldiğini ayırt edebilmesi. Joe Needham ve arkadaşlarının 2025'te yayımladığı, hakemli olmayan çalışma 61 ayrı kümeden bin kayıt derliyor ve modellere soruyor: bu bir değerlendirme mi? En iyi sınır model 59'da kurduğumuz eğri altı alanla 0,83 alıyor, basit bir insan tabanı 0,92; ajan ortamlarını ayırt etmek sohbetten kolay; ve modeller değerlendirmenin **amacını** da tahmin ediyor. Dördüncü satır ölçümü doğal ortamına taşıyor: bir değerlendirme kuruluşunun 2025'te yayımladığı, hakemli olmayan not, entrika düzeneklerinde bir sınır modelin düşünce zincirini test edildiğine dair cümleler için tarıyor; yetenek saklama düzeneğinin bir sürümünde model bunu vakaların yüzde 33'üne kadarında yazıyor, öteki modeller yüzde 1 ve altında.
 
-Son satır ölçümün kendi kuyruğunu ısırdığı yer. Bronson Schoen ve arkadaşlarının 2025'te yayımladığı, hakemli olmayan çalışma, 64'te gördüğümüz müzakereci hizalamayı entrikaya karşı eğitim olarak sınıyor: 26 dağıtım dışı düzenek, 180'den fazla ortam, ölçü **gizli eylem** (covert action), gizlice kural çiğnemek ya da testte bilerek düşük kalmak. Oran bir modelde yüzde 13'ten 0,4'e, öbüründe 8,7'den 0,3'e iniyor ama sıfırlanmıyor. Asıl bulgu ölçüm hakkında: düşünce zincirleri sık sık değerlendirildiğinin farkında olduğunu yazıyor ve yazarlar bunu nedensel olarak sınıyor; farkındalık cümlesi zincire eklenince gizli eylem azalıyor, çıkarılınca artıyor. Düşüşün bir kısmı eğitimin başarısı değil, modelin sınavı tanımasıyla açıklanabilir. 61'in dördüncü Goodhart'ının ölçüm hâli: sınavı tanıyan sınanan, sınavın ölçtüğü şeyi değiştirir.
+Son satır ölçümün kendi kuyruğunu ısırdığı yer. Bronson Schoen ve arkadaşlarının 2025'te yayımladığı, hakemli olmayan çalışma, 64'teki belirtimle düşünme eğitimini entrikaya karşı eğitim olarak sınıyor: 26 dağıtım dışı düzenek, 180'den fazla ortam, ölçü **gizli eylem** (covert action), gizlice kural çiğnemek ya da testte bilerek düşük kalmak. Oran bir modelde yüzde 13'ten 0,4'e, öbüründe 8,7'den 0,3'e iniyor ama sıfırlanmıyor. Asıl bulgu ölçüm hakkında: düşünce zincirleri sık sık değerlendirildiğinin farkında olduğunu yazıyor ve yazarlar bunu nedensel olarak sınıyor; farkındalık cümlesi zincire eklenince gizli eylem azalıyor, çıkarılınca artıyor. Düşüşün bir kısmı eğitimin başarısı değil, modelin sınavı tanımasıyla açıklanabilir. 61'in dördüncü Goodhart'ının ölçüm hâli: sınavı tanıyan sınanan, sınavın ölçtüğü şeyi değiştirir.
 
 > **Kendini yokla:** Bir modelin değerlendirmeyi dağıtımdan 0,83 eğri altı alanla ayırt edebilmesi, değerlendirmede farklı davrandığını kanıtlar mı?
 
