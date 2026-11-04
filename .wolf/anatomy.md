@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-04T07:58:26.891Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-04T08:02:03.228Z
 > Files: 3 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
@@ -1309,7 +1309,7 @@
 
 ## src/lib/
 
-- `site.ts` — The public site's identity: its name and the origin canonical links, the sitemap, (~758 tok)
+- `site.ts` — The public site's identity: its name and the origin canonical links, the sitemap, (~769 tok)
 
 ## src/lib/auth/
 

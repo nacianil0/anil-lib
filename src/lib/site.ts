@@ -50,11 +50,12 @@ export function jsonLdScript(data: unknown): string {
 
 /**
  * The data controller named on the privacy page (KVKK art. 10), as the owner gave it.
- * The owner chose to publish the name alone; a contact is shown only when one is set.
+ * The contact is where KVKK art. 11 requests go; it is shown only when one is set.
  * While the whole entry is empty, the page says so plainly.
  */
 export const DATA_CONTROLLER: { name: string; contact?: string } | null = {
   name: "Naci Anıl Akman",
+  contact: "nacianilakman@gmail.com",
 };
 
 /** The day the privacy page last changed in substance. */
