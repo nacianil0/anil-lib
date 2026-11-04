@@ -8086,3 +8086,15 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 18:32 | Edited docs/platform/ACIK-KAYNAK.md | modified offset() | ~271 |
 | 18:34 | Edited docs/platform/ACIK-KAYNAK.md | 1→3 lines | ~133 |
 | 18:34 | Sayfa çevirme yarışı düzeltildi ve doğrulandı: yük altında yarış testi 10/10 (önce 5/10), sayfalama 49/50 (+1 standby, temiz tekrar 10/10), reader.spec 18 geçti/1 atlandı, pnpm check yeşil; main'e push hazır | src/lib/reader-layout/*, .wolf/*, docs/platform/ACIK-KAYNAK.md | c7ba2d5 + kayıt commit'i | ~60000 |
+| 18:37 | main'e ileri sarmalı push (cb0a771..d09e173, force yok); production deploy 7523138739 success; ekip takma adı /, /seri, /kayit, /robots.txt hâlâ 302 → Vercel SSO; anil-lib.vercel.app DEPLOYMENT_NOT_FOUND (16:31'deki gibi) | main | tamam; bu satır commit'siz (push yeni deploy tetikler) | ~3000 |
+
+## Session: 2026-11-03 19:10
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-11-04 10:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 10:52 | Kullanıcının "tüm her şeyi main'e pushla" talimatıyla commit'siz kalan memory satırları da main'e gönderildi | .wolf/memory.md | push | ~1000 |
