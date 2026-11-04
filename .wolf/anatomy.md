@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-03T15:34:03.172Z
-> Files: 1 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-04T07:58:26.891Z
+> Files: 3 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
 
@@ -1248,6 +1248,7 @@
 
 ## src/app/gizlilik/
 
+- `page.tsx` — Written from the code, not from a template: every cookie and storage key named here (~3892 tok)
 
 ## src/app/guvenlik/
 
@@ -1308,6 +1309,7 @@
 
 ## src/lib/
 
+- `site.ts` — The public site's identity: its name and the origin canonical links, the sitemap, (~758 tok)
 
 ## src/lib/auth/
 

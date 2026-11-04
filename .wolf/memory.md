@@ -8098,3 +8098,5 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 10:52 | Kullanıcının "tüm her şeyi main'e pushla" talimatıyla commit'siz kalan memory satırları da main'e gönderildi | .wolf/memory.md | push | ~1000 |
+| 10:58 | Edited src/lib/site.ts | 6→8 lines | ~100 |
+| 10:58 | Edited src/app/gizlilik/page.tsx | 3→4 lines | ~45 |

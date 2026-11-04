@@ -49,11 +49,13 @@ export function jsonLdScript(data: unknown): string {
 }
 
 /**
- * The data controller named on the privacy page (KVKK art. 10). Left empty on
- * purpose: the owner fills in their own name and a contact before the site goes
- * public — it is not something to guess. While empty, the page says so plainly.
+ * The data controller named on the privacy page (KVKK art. 10), as the owner gave it.
+ * The owner chose to publish the name alone; a contact is shown only when one is set.
+ * While the whole entry is empty, the page says so plainly.
  */
-export const DATA_CONTROLLER: { name: string; contact: string } | null = null;
+export const DATA_CONTROLLER: { name: string; contact?: string } | null = {
+  name: "Naci Anıl Akman",
+};
 
 /** The day the privacy page last changed in substance. */
 export const PRIVACY_UPDATED_AT = "2026-11-03";

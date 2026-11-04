@@ -244,7 +244,8 @@ export default async function PrivacyPage() {
             <strong className="font-semibold text-text">Veri sorumlusu ve iletişim:</strong>{" "}
             {DATA_CONTROLLER ? (
               <>
-                {DATA_CONTROLLER.name} · {DATA_CONTROLLER.contact}
+                {DATA_CONTROLLER.name}
+                {DATA_CONTROLLER.contact ? ` · ${DATA_CONTROLLER.contact}` : null}
               </>
             ) : (
               <span className="rounded bg-accent-soft px-1.5 py-0.5 text-accent">
