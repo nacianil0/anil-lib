@@ -8101,3 +8101,56 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 10:58 | Edited src/lib/site.ts | 6→8 lines | ~100 |
 | 10:58 | Edited src/app/gizlilik/page.tsx | 3→4 lines | ~45 |
 | 11:02 | Edited src/lib/site.ts | 6→7 lines | ~84 |
+| 11:08 | Lansman canlı: anil-lib.vercel.app anonim smoke — /, /seri, yazı, /gizlilik (KVKK satırı), /kayit, /sitemap.xml, /robots.txt 200; /guvenlik, /boun, /read, /yonetim, /hesap, /api → /login; canonical anil-lib.vercel.app | canlı | tamam (commit'siz kayıt) | ~3000 |
+
+## Session: 2026-11-04 11:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-11-05 08:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-11-09 16:03
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:11 | Edited src/app/globals.css | expanded (+14 lines) | ~192 |
+| 16:11 | Edited src/app/globals.css | expanded (+17 lines) | ~203 |
+| 16:11 | Edited src/app/globals.css | modified highlight() | ~774 |
+| 16:11 | Created src/lib/reader-layout/scroll-lock.ts | — | ~360 |
+| 16:11 | Created src/lib/reader-layout/scroll-lock.test.ts | — | ~588 |
+| 16:11 | Edited src/components/reader/mobile-reading-list.tsx | 6→6 lines | ~58 |
+| 16:11 | Edited src/components/reader/mobile-reading-list.tsx | added 1 import(s) | ~42 |
+| 16:11 | Edited src/components/reader/figure-viewer.tsx | 3→2 lines | ~22 |
+| 16:11 | Edited src/components/reader/figure-viewer.tsx | 2→2 lines | ~23 |
+| 16:11 | Edited src/components/reader/figure-viewer.tsx | added 1 import(s) | ~31 |
+| 16:17 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/measure.js | — | ~3458 |
+| 16:18 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/summarize.js | — | ~731 |
+| 16:18 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/surfaces/scan.js | — | ~6648 |
+| 16:20 | Created tests/e2e/scrollbars.spec.ts | — | ~5433 |
+| 16:23 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/visual/run.js | — | ~12039 |
+| 16:24 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/extra.js | — | ~1450 |
+| 16:25 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/visual/sheets.js | — | ~2090 |
+| 16:25 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/visual/probe.js | — | ~827 |
+| 16:26 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/surfaces/scan2.js | — | ~5291 |
+| 16:27 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/dyn.cjs | — | ~2302 |
+| 16:28 | Edited ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/visual/run.js | added 1 condition(s) | ~102 |
+| 16:29 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/wkjump.cjs | — | ~789 |
+| 16:29 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/surfaces/scan3.js | — | ~2214 |
+| 16:30 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/caps.js | — | ~748 |
+| 16:30 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/rootfix.cjs | — | ~535 |
+| 16:33 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/ffsim.js | — | ~983 |
+| 16:33 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/edge.cjs | — | ~740 |
+| 16:34 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/sweep.js | — | ~1048 |
+| 16:34 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/switch.cjs | — | ~824 |
+| 16:34 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/surfaces/chain.js | — | ~763 |
+| 16:38 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/visual/probe2.js | — | ~1428 |
+| 16:42 | Created src/lib/reader-layout/scrollbar-probe.ts | — | ~296 |
+| 16:42 | Created src/lib/reader-layout/scrollbar-probe.test.ts | — | ~378 |
+| 16:42 | Edited src/app/layout.tsx | inline fix | ~27 |
+| 16:42 | Edited src/app/layout.tsx | added 1 import(s) | ~42 |
+| 16:42 | Edited src/components/reader/mobile-reading-list.tsx | CSS: lg, min-width | ~201 |
+| 17:10 | Kaydırma çubukları Portal standardı: globals.css token+kurallar, scrollbar-probe (classic-scrollbars), lockPageScroll, mobil liste kırılım kapanışı, overscroll-contain, scrollbars.spec (14) | src/app/globals.css, src/app/layout.tsx, src/lib/reader-layout/*, src/components/reader/*, tests/e2e/scrollbars.spec.ts | vitest 960/960, tsc+eslint temiz, scrollbars 14/14 (+Chrome/Edge 28/28), tam e2e 101 geçti + 2 bilinen DB (reader-data), build OK; Firefox bu makinede açılmıyor | ~250000 |

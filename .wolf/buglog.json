@@ -16745,6 +16745,40 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-11-04T07:58:26.902Z"
+    },
+    {
+      "id": "bug-1011",
+      "timestamp": "2026-11-09T14:10:00.000Z",
+      "error_message": "Mobil okuma listesi açıkken pencere 1024px üstüne büyütülünce sayfa kilitli kalıyor (tekerlek/PageDown 0px), yeni padding-right ile sağda 10px şerit",
+      "file": "src/components/reader/mobile-reading-list.tsx",
+      "root_cause": "Çekmece ve tetikleyicisi lg:hidden; open state'i yalnız Escape/arka plan/kapat/focusMode ile false oluyordu, kırılımı izleyen yok; kilit (body overflow hidden) open true kaldıkça sürüyor",
+      "fix": "Açıkken matchMedia('(min-width: 1024px)') change dinleniyor, eşleşince setOpen(false); kilit lockPageScroll ile alınıp bırakılıyor. E2E: 'lets the page go when the window grows past the drawer's breakpoint'",
+      "tags": [
+        "scroll-lock",
+        "breakpoint",
+        "drawer",
+        "scrollbar"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-09T14:10:00.000Z"
+    },
+    {
+      "id": "bug-1012",
+      "timestamp": "2026-11-09T14:10:00.000Z",
+      "error_message": "eslint no-control-regex: Unexpected control character(s) in regular expression: \b",
+      "file": "tests/e2e/scrollbars.spec.ts",
+      "root_cause": "Spec'e Git Bash heredoc içindeki Python ile yazılan '\\b' regex kaçışı dosyaya gerçek backspace (0x08) olarak düştü; Read aracı kontrol karakterini göstermiyor",
+      "fix": "PowerShell ile [char]8 → '\b' değiştirildi; TS/JS dosyasına regex yazarken heredoc+python yerine Edit/Write aracını kullan",
+      "tags": [
+        "eslint",
+        "regex",
+        "heredoc",
+        "encoding"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-09T14:10:00.000Z"
     }
   ]
 }

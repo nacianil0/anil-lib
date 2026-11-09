@@ -1,7 +1,38 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-04T08:02:03.228Z
-> Files: 3 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-09T13:42:32.092Z
+> Files: 24 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/
+
+- `dyn.cjs` — pw: open (~2302 tok)
+- `edge.cjs` — Declares pw (~740 tok)
+- `rootfix.cjs` — Declares pw (~535 tok)
+- `switch.cjs` — Declares pw (~824 tok)
+- `wkjump.cjs` — Declares pw (~789 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/surfaces/
+
+- `chain.js` — Scroll chaining: does wheeling past the end of an inner scroller move the page behind? (~763 tok)
+- `scan.js` — Live scan of every scrolling surface with real (non-hidden) scrollbars. (~6648 tok)
+- `scan2.js` — Follow-up checks: drawer, drawer+resize, injected code/table overflow, paged figure, (~5291 tok)
+- `scan3.js` — Code-block surfaces (only in the signed-in series) in flow and paged mode. (~2214 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/visual/
+
+- `probe.js` — fs: measure (~827 tok)
+- `probe2.js` — Declares fs (~1428 tok)
+- `run.js` — fs: save, launch, prefsJSON + 10 more (~12088 tok)
+- `sheets.js` — fs: img, summary, sheet (~2090 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/xbrowser/
+
+- `caps.js` — WebKit root-bar end caps: try fixes injected before first paint. (~748 tok)
+- `extra.js` — Extra checks: WebKit root-bar end caps (fix candidates) and paged-mode hidden bar. (~1450 tok)
+- `ffsim.js` — Simulate the Firefox branch in Chromium: drop the webkit @supports block and apply the (~983 tok)
+- `measure.js` — Cross-engine scrollbar measurement for Anil Lib (xbrowser lane). (~3458 tok)
+- `summarize.js` — Declares fs (~731 tok)
+- `sweep.js` — Sweep pages in a given engine: scrollbar-color/width non-auto count, doc bar, every overflowing scro (~1048 tok)
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/2b81788c-e045-4fb5-a1dd-b6e547d4fd81/scratchpad/
 
@@ -1236,6 +1267,7 @@
 
 ## src/app/
 
+- `layout.tsx` — Kök düzen: fontlar, metadata, <head>'de boyamadan önce tema betiği + SCROLLBAR_PROBE_SCRIPT (~650 tok)
 
 ## src/app/api/reader-sync/
 
@@ -1248,7 +1280,6 @@
 
 ## src/app/gizlilik/
 
-- `page.tsx` — Written from the code, not from a template: every cookie and storage key named here (~3892 tok)
 
 ## src/app/guvenlik/
 
@@ -1300,6 +1331,7 @@
 
 ## src/components/reader/
 
+- `mobile-reading-list.tsx` — FOCUSABLE (~1977 tok)
 
 ## src/components/series/
 
@@ -1309,7 +1341,6 @@
 
 ## src/lib/
 
-- `site.ts` — The public site's identity: its name and the origin canonical links, the sitemap, (~769 tok)
 
 ## src/lib/auth/
 
@@ -1337,6 +1368,10 @@
 
 ## src/lib/reader-layout/
 
+- `scroll-lock.ts` — `lockPageScroll()`: modal katman açıkken body overflow hidden + kaybolan sayfa çubuğu genişliği kadar padding-right; bırakma bulduğu inline stilleri geri koyar (figure-viewer, mobile-reading-list) (~330 tok)
+- `scroll-lock.test.ts` — lockPageScroll: padding telafisi, çubuksuz sayfa, mevcut padding, iç içe kilit sırası (~520 tok)
+- `scrollbar-probe.ts` — SCROLLBAR_PROBE_SCRIPT: <head>'de gizli probla platform çubuğu yer kaplıyorsa <html>'e `classic-scrollbars`; globals.css Portal çubuk kuralları bu sınıfa bağlı (~296 tok)
+- `scrollbar-probe.test.ts` — prob: klasik çubukta sınıf, overlay'de yok, probu kaldırır, diğer sınıfları korur (~378 tok)
 
 ## src/lib/reader/
 
@@ -1358,6 +1393,7 @@
 
 ## tests/e2e/
 
+- `scrollbars.spec.ts` — A long chapter with code blocks and diagrams: the page scrolls well past one screen. (~5433 tok)
 
 ## tools/
 
