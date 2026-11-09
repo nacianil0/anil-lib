@@ -61,7 +61,7 @@ export function ReaderSidebar({
       <div className="shrink-0 border-y border-border">
         <ProgressMeter articleIds={articleIds} />
       </div>
-      <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto pt-3">
+      <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain pt-3">
         <ReadingList
           articles={articles}
           currentArticleId={currentArticleId}

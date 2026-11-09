@@ -28,6 +28,20 @@
   --reader-line-band: rgba(27, 29, 31, 0.05);
 
   --toolbar-offset: 4.75rem;
+
+  /* Scrollbars — the Portal Dashboard standard in this site's own colours (see the
+     scrollbar section at the end of this file). The thumb is the theme's accent, the
+     track the muted surface washed with a few percent of it; hover and press lean
+     the thumb toward the text colour, so every theme flips with no rule of its own. */
+  --scrollbar-size: 10px;
+  --scrollbar-inset: 2px;
+  --scrollbar-thumb-min: 32px;
+  --scrollbar-track-tint: 5%;
+  --scrollbar-track: var(--surface-muted);
+  --scrollbar-thumb: var(--accent);
+  --scrollbar-thumb-hover: var(--accent);
+  --scrollbar-thumb-active: var(--text);
+
   color-scheme: light;
 }
 
@@ -48,7 +62,24 @@
 
   --reader-line-band: rgba(233, 232, 228, 0.06);
 
+  /* A dark surface carries a little more of the accent, as in Portal's dark family. */
+  --scrollbar-track-tint: 6%;
+
   color-scheme: dark;
+}
+
+/* Custom properties are always valid when declared, so a color-mix() fallback has to
+   be chosen here rather than by declaring the token twice. */
+@supports (color: color-mix(in srgb, red 50%, blue)) {
+  :root {
+    --scrollbar-track: color-mix(
+      in srgb,
+      var(--accent) var(--scrollbar-track-tint),
+      var(--surface-muted)
+    );
+    --scrollbar-thumb-hover: color-mix(in srgb, var(--accent) 80%, var(--text));
+    --scrollbar-thumb-active: color-mix(in srgb, var(--accent) 64%, var(--text));
+  }
 }
 
 .sepia {
@@ -720,4 +751,93 @@
 .reader-shell[data-line-guide="true"] ::highlight(reader-line-guide) {
   color: inherit;
   background-color: var(--reader-line-band);
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbars — one look for every scrolling surface: the page, the reading
+   list, menus and panels, the figure viewer, code and tables.
+
+   The page keeps the browser's own scrolling (wheel, keys, touch, find, anchors
+   and the reader's saved position all stay native); only the chrome changes.
+   Chromium and Safari draw the Portal bar through ::-webkit-scrollbar: a 10px
+   track, a square thumb inset by 2px, no arrow buttons. Firefox has no such
+   selector and gets the standard thin bar in the same colours. The two paths
+   are kept apart on purpose — from Chromium 121 a scrollbar-color anywhere up
+   the tree (it inherits) switches the webkit rules off and brings the arrow
+   buttons back on Windows.
+
+   Only bars that take room are restyled. The pre-paint script in layout.tsx
+   measures the platform's own bar and marks <html> with `classic-scrollbars`
+   when it has width — Windows and Linux, a Windows tablet included. Overlay
+   bars (phones, macOS by default) take no width and fade on their own, so they
+   are left alone, as is everything when scripts do not run. Forced-colours
+   mode keeps the system's bars. A surface that hides its bar on purpose (the
+   paged reader's columns) out-specifies these rules and stays hidden.
+-------------------------------------------------------------------------- */
+@media (forced-colors: none) {
+  @supports selector(::-webkit-scrollbar) {
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar {
+      width: var(--scrollbar-size);
+      height: var(--scrollbar-size);
+    }
+
+    /* WebKit takes the page's bar from <body> and paints the track's end gaps
+       with its own base colour unless the bar itself has a background. */
+    .classic-scrollbars body::-webkit-scrollbar {
+      background-color: var(--bg);
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-track);
+    }
+
+    /* Portal's track stops 4px short of each end, clear of rounded corners. */
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-track:vertical {
+      margin-block: 4px;
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-track:horizontal {
+      margin-inline: 4px;
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb);
+      border: var(--scrollbar-inset) solid var(--scrollbar-track);
+      border-radius: 0;
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-thumb:vertical {
+      min-height: var(--scrollbar-thumb-min);
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-thumb:horizontal {
+      min-width: var(--scrollbar-thumb-min);
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-thumb:hover {
+      background-color: var(--scrollbar-thumb-hover);
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-thumb:active {
+      background-color: var(--scrollbar-thumb-active);
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-corner {
+      background-color: var(--scrollbar-track);
+    }
+
+    :is(.classic-scrollbars, .classic-scrollbars *)::-webkit-scrollbar-button {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    .classic-scrollbars,
+    .classic-scrollbars * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    }
+  }
 }

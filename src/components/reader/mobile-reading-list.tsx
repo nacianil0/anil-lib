@@ -10,6 +10,7 @@ import { LockButton } from "./lock-button";
 import { ReadingList } from "./reading-list";
 import { ProgressMeter } from "./progress-meter";
 import { useReaderPreferences } from "@/lib/preferences/use-reader-preferences";
+import { lockPageScroll } from "@/lib/reader-layout/scroll-lock";
 
 type Props = {
   articles: ArticleDescriptor[];
@@ -91,11 +92,21 @@ export function MobileReadingList({
       }
     }
 
+    // The drawer and its button are hidden from the desktop breakpoint up (`lg:`), where
+    // the sidebar takes over. A window widened past it while the drawer is open would
+    // otherwise keep the page locked behind an invisible drawer.
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    function onBreakpoint() {
+      if (desktop.matches) setOpen(false);
+    }
+
     document.addEventListener("keydown", onKeyDown);
-    document.body.style.overflow = "hidden";
+    desktop.addEventListener("change", onBreakpoint);
+    const releaseScroll = lockPageScroll();
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
+      desktop.removeEventListener("change", onBreakpoint);
+      releaseScroll();
     };
   }, [open, close]);
 

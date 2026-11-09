@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from "re
 import { createPortal } from "react-dom";
 import { Minimize2, X, ZoomIn } from "lucide-react";
 import { UI } from "@/lib/content/labels";
+import { lockPageScroll } from "@/lib/reader-layout/scroll-lock";
 
 type OpenFigure = {
   svg: SVGSVGElement;
@@ -137,8 +138,7 @@ function Viewer({ figure, onClose }: { figure: OpenFigure; onClose: () => void }
   // Modal behaviour: focus inside, Tab kept inside, Escape closes, page held still.
   useEffect(() => {
     closeRef.current?.focus();
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const releaseScroll = lockPageScroll();
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -169,7 +169,7 @@ function Viewer({ figure, onClose }: { figure: OpenFigure; onClose: () => void }
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
+      releaseScroll();
     };
   }, []);
 

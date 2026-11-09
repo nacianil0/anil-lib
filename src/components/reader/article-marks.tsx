@@ -72,7 +72,7 @@ export function ArticleMarks({
           ref={panelRef}
           role="dialog"
           aria-label={UI.articleMarks}
-          className="absolute right-0 top-full z-50 mt-2 max-h-[calc(100vh-5rem)] w-[21rem] overflow-y-auto rounded-lg border border-border bg-surface p-3 font-sans shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:max-h-[70dvh] max-sm:w-full max-sm:rounded-b-none"
+          className="absolute right-0 top-full z-50 mt-2 max-h-[calc(100vh-5rem)] w-[21rem] overflow-y-auto overscroll-contain rounded-lg border border-border bg-surface p-3 font-sans shadow-xl max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:max-h-[70dvh] max-sm:w-full max-sm:rounded-b-none"
         >
           <div className="mb-3 flex items-center justify-between border-b border-border pb-2">
             <p className="text-sm font-semibold text-text">{UI.articleMarks}</p>

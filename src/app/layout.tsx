@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, siteOrigin } from "@/lib/site";
+import { SCROLLBAR_PROBE_SCRIPT } from "@/lib/reader-layout/scrollbar-probe";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
@@ -46,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: themeScript + SCROLLBAR_PROBE_SCRIPT }} />
       </head>
       <body className="bg-bg font-sans text-text antialiased">{children}</body>
     </html>
