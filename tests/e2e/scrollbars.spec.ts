@@ -151,7 +151,9 @@ test.describe("scrollbars on a pointer screen", () => {
     });
   }
 
-  test("gives the desktop reading list its own bar and its own scrolling", async ({ page }) => {
+  // Portal's standing rule for navigation rails: the list scrolls natively with no
+  // visible bar, and every way of moving through it still works.
+  test("scrolls the desktop reading list natively, with its bar hidden", async ({ page }) => {
     await seedPreferences(page, { theme: "light" });
     await openChapter(page, LONG_CHAPTER);
     const size = await lengthToken(page, "--scrollbar-size");
@@ -160,7 +162,7 @@ test.describe("scrollbars on a pointer screen", () => {
     await expect(list).toBeVisible();
     const fits = await list.evaluate((element) => element.scrollHeight <= element.clientHeight);
     expect(fits, "the reading list should be longer than the window").toBe(false);
-    expect(await verticalBar(list)).toBe(size);
+    expect(await verticalBar(list)).toBe(0);
 
     await list.evaluate((element) => {
       element.scrollTop = 0;
@@ -175,6 +177,30 @@ test.describe("scrollbars on a pointer screen", () => {
     // The wheel was the list's; the page stays where the reader left it.
     expect(await page.evaluate(() => window.scrollY)).toBe(pageBefore);
     expect(await pageBar(page)).toBe(size);
+
+    // At the end of the list the wheel stops there instead of scrolling the article.
+    await list.evaluate((element) => {
+      element.scrollTop = element.scrollHeight;
+    });
+    await page.mouse.wheel(0, 480);
+    await expect.poll(() => list.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
+    expect(await page.evaluate(() => window.scrollY)).toBe(pageBefore);
+
+    // Keyboard focus brings a chapter that is out of view into the list's view.
+    await list.evaluate((element) => {
+      element.scrollTop = 0;
+    });
+    const lastLink = list.getByRole("link").last();
+    await lastLink.focus();
+    await expect
+      .poll(() =>
+        lastLink.evaluate((link) => {
+          const row = link.getBoundingClientRect();
+          const view = link.closest(".overflow-y-auto")!.getBoundingClientRect();
+          return row.top >= view.top - 1 && row.bottom <= view.bottom + 1;
+        }),
+      )
+      .toBe(true);
   });
 
   test("keeps an overflowing panel on screen, with the same bar", async ({ page }) => {
@@ -409,8 +435,9 @@ test.describe("scrollbars on a touch-first Windows screen", () => {
     const size = await lengthToken(page, "--scrollbar-size");
     await expect(page.locator("html")).toHaveClass(/\bclassic-scrollbars\b/);
     await expect.poll(() => pageBar(page)).toBe(size);
+    // The reading list keeps Portal's hidden rail bar here too.
     const list = page.locator('aside[aria-label="Okuma listesi"] .overflow-y-auto');
-    expect(await verticalBar(list)).toBe(size);
+    expect(await verticalBar(list)).toBe(0);
     expect(await pageOverflowX(page)).toBeLessThanOrEqual(0);
   });
 });

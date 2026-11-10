@@ -8154,3 +8154,11 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 16:42 | Edited src/app/layout.tsx | added 1 import(s) | ~42 |
 | 16:42 | Edited src/components/reader/mobile-reading-list.tsx | CSS: lg, min-width | ~201 |
 | 17:10 | Kaydırma çubukları Portal standardı: globals.css token+kurallar, scrollbar-probe (classic-scrollbars), lockPageScroll, mobil liste kırılım kapanışı, overscroll-contain, scrollbars.spec (14) | src/app/globals.css, src/app/layout.tsx, src/lib/reader-layout/*, src/components/reader/*, tests/e2e/scrollbars.spec.ts | vitest 960/960, tsc+eslint temiz, scrollbars 14/14 (+Chrome/Edge 28/28), tam e2e 101 geçti + 2 bilinen DB (reader-data), build OK; Firefox bu makinede açılmıyor | ~250000 |
+
+## Session: 2026-11-10 15:18
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:20 | Edited src/components/reader/reader-shell.tsx | inline fix | ~28 |
+| 15:23 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/rail-shot.cjs | — | ~533 |
+| 17:40 | Header ArticleProgress kaldırıldı (liveRatio state ile); okuma listesi rayı Portal sidebar diline taşındı (gizli çubuk, gömük zemin, header hizalı band, 14px dolgu, 2px vurgu pini; spine kaldırıldı) | reader-shell, reader-sidebar, mobile-reading-list, reading-list, progress-meter, globals.css, scrollbars.spec | tsc/eslint temiz, vitest 960/960, e2e 101 geçti + 2 bilinen DB, build OK | ~60000 |

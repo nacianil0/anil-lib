@@ -54,31 +54,24 @@ function ArticleItem({
         href={`${basePath}/${article.slug}`}
         aria-current={isActive ? "page" : undefined}
         onClick={onNavigate}
+        // Portal's row: flat, full width, 14px in from the edge; the current chapter
+        // is a soft accent wash with a 2px accent pin on its leading edge.
         className={cn(
-          "group grid grid-cols-[1.3rem_1fr_1rem] items-start gap-x-2.5 rounded-md py-[0.4rem] pl-7 pr-2 transition-colors",
-          isActive ? "bg-accent-soft" : "hover:bg-surface-muted",
+          "group relative grid min-h-9 grid-cols-[1.25rem_1fr_1rem] items-start gap-x-[9px] px-[14px] py-[9px] font-sans text-[13px] leading-[1.35] transition-colors focus-visible:outline-offset-[-2px]",
+          isActive
+            ? "bg-accent-soft font-medium text-text before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-accent before:content-['']"
+            : "text-text-muted hover:bg-surface hover:text-text",
         )}
       >
         <span
-          className="spine-node"
-          data-status={status}
-          data-current={isActive || undefined}
-          aria-hidden="true"
-        />
-        <span
           className={cn(
-            "pt-px font-sans text-2xs tabular-nums",
-            isActive ? "text-accent" : "text-text-faint",
+            "pt-px text-[11px] tabular-nums",
+            isActive ? "text-accent" : "text-text-muted",
           )}
         >
           {pad(article.readingOrder)}
         </span>
-        <span
-          className={cn(
-            "font-serif text-[0.95rem] leading-snug",
-            isActive ? "font-semibold text-accent" : "text-text-muted group-hover:text-text",
-          )}
-        >
+        <span>
           {article.title}
           {revisedSinceRead && (
             <span
@@ -117,10 +110,9 @@ export function ReadingList({
 
   if (phaseGroups) {
     return (
-      <nav aria-label={UI.phaseListAriaLabel} className="relative px-2 pb-6">
-        <span className="spine-rail" aria-hidden="true" />
-        <div className="flex flex-col gap-6">
-          {phaseGroups.map((group, index) => {
+      <nav aria-label={UI.phaseListAriaLabel} className="pb-2">
+        <div className="flex flex-col gap-3.5">
+          {phaseGroups.map((group) => {
             const done = group.articles.filter(
               (article) => statusOf(article.articleId) === "completed",
             ).length;
@@ -130,21 +122,18 @@ export function ReadingList({
                 <h2
                   id={headingId}
                   aria-label={`${UI.phase(group.number)}: ${group.phase.title} — ${UI.phaseProgress(done, group.articles.length)}`}
-                  className="mb-1.5 pl-7 pr-2 font-sans"
+                  className="px-[14px] pb-[5px] font-sans"
                 >
-                  {index > 0 && (
-                    <span className="mb-3 block w-full border-t border-border" aria-hidden="true" />
-                  )}
                   <span className="flex items-baseline justify-between gap-3" aria-hidden="true">
-                    <span className="font-mono text-[0.68rem] font-semibold tabular-nums tracking-[0.08em] text-accent">
+                    <span className="text-[10.5px] font-medium uppercase leading-none tracking-[0.08em] text-accent">
                       {UI.phase(group.number)}
                     </span>
-                    <span className="text-2xs tabular-nums text-text-muted">
+                    <span className="text-[10.5px] tabular-nums leading-none text-text-muted">
                       {done} / {group.articles.length}
                     </span>
                   </span>
                   <span
-                    className="mt-0.5 block text-xs font-medium leading-snug text-text"
+                    className="mt-1.5 block text-xs font-medium leading-snug text-text"
                     aria-hidden="true"
                   >
                     {group.phase.title}
@@ -170,16 +159,14 @@ export function ReadingList({
   }
 
   return (
-    <nav aria-label={UI.batchAriaLabel} className="relative px-2 pb-6">
-      <span className="spine-rail" aria-hidden="true" />
-      <div className="flex flex-col gap-8">
+    <nav aria-label={UI.batchAriaLabel} className="pb-2">
+      <div className="flex flex-col gap-5">
         {batches.map((batchGroup) => (
-          <div key={`batch-${batchGroup.batch}`} className="flex flex-col gap-5">
+          <div key={`batch-${batchGroup.batch}`} className="flex flex-col gap-3.5">
             <h2
               aria-label={UI.batchHeader(batchGroup.batch, batchGroup.articleCount)}
-              className="pl-7 font-sans text-xs font-medium text-text-muted"
+              className="px-[14px] font-sans text-xs font-medium text-text-muted"
             >
-              <span className="mb-3 block w-full border-t border-border" aria-hidden="true" />
               <span className="inline-flex items-baseline gap-1.5" aria-hidden="true">
                 <span>{UI.classification}</span>
                 <span className="font-mono text-[0.68rem] font-semibold tabular-nums tracking-[0.08em] text-text">
@@ -197,7 +184,7 @@ export function ReadingList({
               >
                 <h3
                   id={`${idPrefix}-batch-${batchGroup.batch}-${group.key}`}
-                  className="mb-1 pl-7 font-sans text-2xs font-semibold uppercase tracking-[0.13em] text-text-faint"
+                  className="px-[14px] pb-[5px] font-sans text-[10.5px] font-medium uppercase leading-none tracking-[0.08em] text-text-muted"
                 >
                   {CATEGORY_LABELS[group.category]}
                 </h3>

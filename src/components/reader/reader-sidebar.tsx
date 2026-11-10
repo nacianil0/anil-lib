@@ -51,17 +51,26 @@ export function ReaderSidebar({
 
   return (
     <aside
-      className="sticky top-0 hidden h-screen w-[19rem] shrink-0 flex-col border-r border-border bg-surface lg:flex"
+      className="reading-rail sticky top-0 hidden h-screen w-[19rem] shrink-0 flex-col border-r border-border lg:flex"
       aria-label={UI.readingList}
     >
-      <div className="shrink-0 px-5 pb-3 pt-6">
-        <p className="font-serif text-lg font-semibold leading-tight text-text">{title}</p>
-        <p className="mt-1 font-sans text-2xs leading-snug text-text-muted">{subtitle}</p>
+      {/* Identity band, as tall as the reader's toolbar (3.5rem + its 1px rule) so the
+          two hairlines meet across the page, as Portal's brand band meets its top bar. */}
+      <div className="flex h-[calc(3.5rem+1px)] shrink-0 flex-col justify-center border-b border-border pl-[18px] pr-4">
+        <p className="truncate font-serif text-[0.98rem] font-semibold leading-tight text-text">
+          {title}
+        </p>
+        <p
+          className="mt-0.5 truncate font-sans text-[0.68rem] leading-snug text-text-muted"
+          title={subtitle}
+        >
+          {subtitle}
+        </p>
       </div>
-      <div className="shrink-0 border-y border-border">
+      <div className="shrink-0">
         <ProgressMeter articleIds={articleIds} />
       </div>
-      <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain pt-3">
+      <div ref={scrollRef} className="reading-rail-scroll min-h-0 flex-1 overflow-y-auto pb-4 pt-1">
         <ReadingList
           articles={articles}
           currentArticleId={currentArticleId}
@@ -70,7 +79,7 @@ export function ReaderSidebar({
           phases={phases}
         />
       </div>
-      <div className="flex shrink-0 items-center justify-between border-t border-border px-5 py-3">
+      <div className="flex h-12 shrink-0 items-center justify-between border-t border-border pl-[18px] pr-3">
         <Link
           href={homeHref}
           className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"

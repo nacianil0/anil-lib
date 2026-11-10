@@ -139,28 +139,33 @@ export function MobileReadingList({
             role="dialog"
             aria-modal="true"
             aria-label={UI.readingList}
-            className="absolute inset-y-0 left-0 flex w-[min(20rem,86vw)] flex-col border-r border-border bg-surface shadow-xl"
+            className="reading-rail absolute inset-y-0 left-0 flex w-[min(20rem,86vw)] flex-col border-r border-border shadow-xl"
           >
-            <div className="flex shrink-0 items-center justify-between gap-2 border-b border-border px-4 py-3">
-              <div>
-                <p className="font-serif text-base font-semibold leading-tight text-text">
+            <div className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border pl-[18px] pr-3">
+              <div className="min-w-0">
+                <p className="truncate font-serif text-base font-semibold leading-tight text-text">
                   {title}
                 </p>
-                <p className="mt-0.5 font-sans text-2xs text-text-muted">{subtitle}</p>
+                <p className="mt-0.5 truncate font-sans text-2xs text-text-muted" title={subtitle}>
+                  {subtitle}
+                </p>
               </div>
               <button
                 type="button"
                 onClick={close}
                 aria-label={UI.closeReadingList}
-                className="rounded-md border border-border p-1.5 text-text-muted transition-colors hover:border-border-strong hover:text-text"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[3px] text-text-muted transition-colors hover:bg-surface hover:text-text"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>
             </div>
-            <div className="shrink-0 border-b border-border">
+            <div className="shrink-0">
               <ProgressMeter articleIds={articleIds} />
             </div>
-            <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain pt-3">
+            <div
+              ref={listRef}
+              className="reading-rail-scroll min-h-0 flex-1 overflow-y-auto pb-4 pt-1"
+            >
               <ReadingList
                 articles={articles}
                 currentArticleId={currentArticleId}
@@ -170,7 +175,7 @@ export function MobileReadingList({
                 phases={phases}
               />
             </div>
-            <div className="flex shrink-0 items-center justify-between border-t border-border px-4 py-3">
+            <div className="flex h-12 shrink-0 items-center justify-between border-t border-border pl-[18px] pr-3">
               <Link
                 href={homeHref}
                 onClick={close}

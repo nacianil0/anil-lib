@@ -42,6 +42,9 @@
   --scrollbar-thumb-hover: var(--accent);
   --scrollbar-thumb-active: var(--text);
 
+  /* The reading-list rail sits a step below the page, like Portal's sunk sidebar. */
+  --sidebar-surface: #f5f3ef;
+
   color-scheme: light;
 }
 
@@ -64,6 +67,8 @@
 
   /* A dark surface carries a little more of the accent, as in Portal's dark family. */
   --scrollbar-track-tint: 6%;
+
+  --sidebar-surface: #0e1013;
 
   color-scheme: dark;
 }
@@ -98,6 +103,8 @@
   --cool-soft: #dbe4e3;
 
   --reader-line-band: rgba(44, 38, 30, 0.055);
+
+  --sidebar-surface: #eee7da;
 
   color-scheme: light;
 }
@@ -178,52 +185,29 @@
   }
 
   /* --------------------------------------------------------------------------
-     The reading spine — the page's signature element.
-     A continuous hairline threads every numbered chapter; it fills with the
-     burgundy accent up to the reader's current position in the curriculum.
+     Reading-list rail — the Portal Dashboard sidebar in this site's colours: a
+     sunk surface with a hairline edge, an identity band exactly as tall as the
+     reader's toolbar so their rules meet, flat full-width rows with a 2px accent
+     pin on the current chapter. The list scrolls natively with its bar hidden,
+     Portal's standing rule for navigation rails: wheel, touch and Tab (focus
+     scrolls a row into view) still reach every chapter. The selectors out-
+     specify the site-wide scrollbar rules at the end of this file.
   -------------------------------------------------------------------------- */
-  .spine-rail {
-    position: absolute;
-    left: 0.625rem;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: var(--border-strong);
+  .reading-rail {
+    background-color: var(--sidebar-surface);
   }
 
-  .spine-rail[data-filled="true"] {
-    background-color: var(--accent);
-    opacity: 0.55;
+  .reading-rail .reading-rail-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
   }
 
-  .spine-node {
-    position: absolute;
-    left: 0.625rem;
-    top: 1.15rem;
-    width: 9px;
-    height: 9px;
-    transform: translate(-50%, -50%);
-    border-radius: 9999px;
-    background-color: var(--bg);
-    border: 1.5px solid var(--border-strong);
-    transition:
-      border-color 150ms ease,
-      background-color 150ms ease;
-  }
-
-  .spine-node[data-status="completed"] {
-    background-color: var(--accent-fill);
-    border-color: var(--accent-fill);
-  }
-
-  .spine-node[data-status="in-progress"] {
-    border-color: var(--cool);
-    background-color: var(--cool-soft);
-  }
-
-  .spine-node[data-current="true"] {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-soft);
+  .reading-rail .reading-rail-scroll::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
   }
 
   /* --------------------------------------------------------------------------

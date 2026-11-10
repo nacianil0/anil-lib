@@ -13,7 +13,6 @@ import {
 } from "@/lib/preferences/use-reader-preferences";
 import { ReaderSidebar } from "./reader-sidebar";
 import { MobileReadingList } from "./mobile-reading-list";
-import { ArticleProgress } from "./article-progress";
 import { ArticleNavigation, CompactArticleNavigation } from "./article-navigation";
 import { CompletionControl } from "./completion-control";
 import { ReadingSettings } from "./reading-settings";
@@ -84,7 +83,6 @@ function ReaderShellInner({
   );
   const bodyRef = useRef<HTMLDivElement>(null);
   const readingAreaRef = useRef<HTMLElement>(null);
-  const [liveRatio, setLiveRatio] = useState(0);
   const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
   const [showNotice, setShowNotice] = useState(false);
   const [restoredPreview, setRestoredPreview] = useState<string | null>(null);
@@ -193,14 +191,13 @@ function ReaderShellInner({
     setCurrentArticle(current.articleId);
   }, [ready, current.articleId, setCurrentArticle]);
 
-  // Track scroll: live ratio every frame, persisted position at a gentler cadence.
+  // Track scroll: the active heading every frame, the persisted position at a gentler cadence.
   useEffect(() => {
     let frame = 0;
     let recordTimer: ReturnType<typeof setTimeout> | null = null;
 
     function capturePosition(persist: boolean) {
       const { ratio, headingId } = measure();
-      setLiveRatio(ratio);
       setActiveHeadingId(headingId);
       if (!persist || !readyRef.current) return;
       const restore = restoreRef.current;
@@ -261,7 +258,6 @@ function ReaderShellInner({
     const headingId = entry?.headingId ?? null;
     const ratio = entry?.scrollRatio ?? 0;
     const anchor = entry?.anchor ?? null;
-    setLiveRatio(ratio);
     setActiveHeadingId(headingId);
 
     const finish = () => {
@@ -286,7 +282,6 @@ function ReaderShellInner({
     const run = () => {
       // A progress reset landed while the fonts loaded: the place read above is gone.
       if (!explicitPlace && resetVersionRef.current !== resetAtStart) {
-        setLiveRatio(0);
         setActiveHeadingId(null);
         finish();
         return;
@@ -442,7 +437,6 @@ function ReaderShellInner({
               <SyncStatus />
             </div>
           </div>
-          <ArticleProgress ratio={liveRatio} />
         </header>
 
         <ResumeNotice
