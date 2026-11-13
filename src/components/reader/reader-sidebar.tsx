@@ -2,10 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Home } from "lucide-react";
+import { Map as MapIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { UI } from "@/lib/content/labels";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import type { PhaseOutline } from "@/lib/content/series-progress";
+import { navLink } from "@/components/ui/classes";
 import { LockButton } from "./lock-button";
 import { ReadingList } from "./reading-list";
 import { ProgressMeter } from "./progress-meter";
@@ -17,6 +19,8 @@ type Props = {
   title?: string;
   subtitle?: string;
   homeHref?: string;
+  /** What `homeHref` is: the series' roadmap, or the archive's index. */
+  homeLabel?: string;
   phases?: PhaseOutline[];
 };
 
@@ -27,6 +31,7 @@ export function ReaderSidebar({
   title = UI.libraryTitle,
   subtitle = UI.librarySubtitle,
   homeHref = "/",
+  homeLabel = UI.roadmap,
   phases,
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -36,17 +41,14 @@ export function ReaderSidebar({
     const container = scrollRef.current;
     const active = container?.querySelector<HTMLElement>('[aria-current="page"]');
     if (!container || !active) return;
-    // Bring the current chapter into view inside the list only. `scrollIntoView` walks
-    // up every scrollable ancestor, so it also drags the article down by a couple of
-    // hundred pixels on load — undoing the reading position that is about to be
-    // restored. This is the same "nearest" behaviour, scoped to the list.
+    // Put the current chapter a third of the way down the list, as the phone's drawer
+    // does: what comes next is what the reader looks for, and "nearest" left it on the
+    // bottom edge with every following chapter out of sight. Scoped to the list —
+    // `scrollIntoView` walks up every scrollable ancestor and would also drag the
+    // article away from the reading position that is about to be restored.
     const listRect = container.getBoundingClientRect();
     const activeRect = active.getBoundingClientRect();
-    if (activeRect.top < listRect.top) {
-      container.scrollTop += activeRect.top - listRect.top;
-    } else if (activeRect.bottom > listRect.bottom) {
-      container.scrollTop += activeRect.bottom - listRect.bottom;
-    }
+    container.scrollTop += activeRect.top - listRect.top - container.clientHeight / 3;
   }, [currentArticleId]);
 
   return (
@@ -79,17 +81,12 @@ export function ReaderSidebar({
           phases={phases}
         />
       </div>
-      <div className="flex h-12 shrink-0 items-center justify-between border-t border-border pl-[18px] pr-3">
-        <Link
-          href={homeHref}
-          className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"
-        >
-          <Home className="h-3.5 w-3.5" aria-hidden="true" />
-          {UI.home}
+      <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-t border-border pl-[10px] pr-2">
+        <Link href={homeHref} className={cn(navLink, "min-h-8 px-2 text-xs")}>
+          <MapIcon className="h-3.5 w-3.5" aria-hidden="true" />
+          {homeLabel}
         </Link>
-        <div className="flex items-center gap-1">
-          <LockButton />
-        </div>
+        <LockButton />
       </div>
     </aside>
   );

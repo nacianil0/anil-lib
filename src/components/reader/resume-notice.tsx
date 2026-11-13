@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { UI } from "@/lib/content/labels";
 import { useReaderProgress } from "@/lib/progress/use-reader-progress";
@@ -28,9 +28,15 @@ export function ResumeNotice({
   onStartOver,
 }: Props) {
   const { resetPosition } = useReaderProgress();
+  // The pill leaves on its own, but never from under a pointer or a focused button:
+  // a reader on the way to "Baştan başla" must not see it vanish (WCAG 2.2.1). The
+  // clock restarts in full once they move on.
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const held = hovered || focused;
 
   useEffect(() => {
-    if (!show) return;
+    if (!show || held) return;
     const timer = setTimeout(
       () => {
         onDismiss();
@@ -38,7 +44,13 @@ export function ResumeNotice({
       revisedSinceRead ? 9000 : 6000,
     );
     return () => clearTimeout(timer);
-  }, [show, onDismiss, revisedSinceRead]);
+  }, [show, held, onDismiss, revisedSinceRead]);
+
+  useEffect(() => {
+    if (show) return;
+    setHovered(false);
+    setFocused(false);
+  }, [show]);
 
   if (!show) return null;
 
@@ -48,9 +60,15 @@ export function ResumeNotice({
     <div
       role="status"
       data-revised-since-read={revisedSinceRead || undefined}
+      onPointerEnter={() => setHovered(true)}
+      onPointerLeave={() => setHovered(false)}
+      onFocus={() => setFocused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
+      }}
       // Below the sticky header's stacking context (z-40): the settings panel and
       // the popovers that live in the header must cover this pill, not sit under it.
-      className="fixed left-1/2 top-[5.5rem] z-30 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-sm shadow-md sm:max-w-[calc(100vw-2rem)] sm:gap-4 sm:px-4"
+      className="fixed left-1/2 top-[5.5rem] z-30 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-surface py-1 pl-3 pr-1.5 text-sm shadow-md sm:max-w-[calc(100vw-2rem)] sm:gap-3 sm:pl-4"
     >
       {revisedSinceRead ? (
         // On a phone only the short wording fits beside the buttons: the revision is
@@ -82,7 +100,7 @@ export function ResumeNotice({
         }}
         // nowrap keeps this label in the pill's min-content width: the pill is centred
         // with left-1/2, so on a phone it sizes to min-content and would starve the text.
-        className="shrink-0 whitespace-nowrap font-medium text-accent hover:underline"
+        className="shrink-0 whitespace-nowrap rounded-full px-1.5 py-1 font-medium text-accent hover:underline"
       >
         {UI.startOver}
       </button>
@@ -90,9 +108,9 @@ export function ResumeNotice({
         type="button"
         onClick={onDismiss}
         aria-label={UI.dismiss}
-        className="shrink-0 text-text-muted hover:text-text sm:ml-1"
+        className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-text-muted transition-colors hover:bg-surface-muted hover:text-text"
       >
-        <X className="h-4 w-4" />
+        <X className="h-4 w-4" aria-hidden="true" />
       </button>
     </div>
   );

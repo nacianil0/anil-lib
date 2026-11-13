@@ -57,7 +57,7 @@ export function ArticleMarks({
         aria-expanded={open}
         aria-haspopup="dialog"
         onClick={() => setOpen((value) => !value)}
-        className="relative inline-flex items-center rounded-md border border-border px-2.5 py-1.5 text-text-muted transition-colors hover:border-border-strong hover:text-text"
+        className="relative inline-flex items-center rounded-md border border-border px-2.5 py-1.5 text-text-muted transition-colors hover:border-border-strong hover:text-text max-[359px]:px-2"
       >
         <Highlighter className="h-4 w-4" aria-hidden="true" />
         {count > 0 && (

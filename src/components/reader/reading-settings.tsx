@@ -224,7 +224,7 @@ export function ReadingSettings({
           setOpen(!open);
           setResetConfirm(false);
         }}
-        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:border-border-strong hover:text-text"
+        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:border-border-strong hover:text-text max-[359px]:px-2"
         aria-label={UI.readingSettings}
         aria-expanded={open}
         aria-haspopup="dialog"

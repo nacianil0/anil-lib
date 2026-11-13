@@ -54,7 +54,7 @@ export function SavedPlaceControl({
           : previewNearViewport(root);
         savePlace(articleId, position.headingId, position.ratio, preview, anchor);
       }}
-      className={`inline-flex items-center rounded-md border px-2.5 py-1.5 transition-colors ${
+      className={`inline-flex items-center rounded-md border px-2.5 py-1.5 transition-colors max-[359px]:px-2 ${
         saved
           ? "border-accent/60 bg-accent-soft text-accent"
           : "border-border text-text-muted hover:border-border-strong hover:text-text"

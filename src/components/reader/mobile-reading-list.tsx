@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Home, ListTree, X } from "lucide-react";
+import { ListTree, Map as MapIcon, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { UI } from "@/lib/content/labels";
+import { navLink } from "@/components/ui/classes";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import type { PhaseOutline } from "@/lib/content/series-progress";
 import { LockButton } from "./lock-button";
@@ -19,6 +21,8 @@ type Props = {
   title?: string;
   subtitle?: string;
   homeHref?: string;
+  /** What `homeHref` is: the series' roadmap, or the archive's index. */
+  homeLabel?: string;
   phases?: PhaseOutline[];
 };
 
@@ -31,6 +35,7 @@ export function MobileReadingList({
   title = UI.libraryTitle,
   subtitle = UI.librarySubtitle,
   homeHref = "/",
+  homeLabel = UI.roadmap,
   phases,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -119,7 +124,7 @@ export function MobileReadingList({
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={UI.openReadingList}
-        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:border-border-strong hover:text-text max-sm:gap-0 lg:hidden"
+        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-xs text-text-muted transition-colors hover:border-border-strong hover:text-text max-sm:gap-0 max-[359px]:px-2 lg:hidden"
       >
         <ListTree className="h-4 w-4" aria-hidden="true" />
         <span className="max-sm:sr-only">{UI.readingList}</span>
@@ -175,14 +180,10 @@ export function MobileReadingList({
                 phases={phases}
               />
             </div>
-            <div className="flex h-12 shrink-0 items-center justify-between border-t border-border pl-[18px] pr-3">
-              <Link
-                href={homeHref}
-                onClick={close}
-                className="inline-flex items-center gap-1.5 font-sans text-xs text-text-muted"
-              >
-                <Home className="h-4 w-4" aria-hidden="true" />
-                {UI.home}
+            <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-t border-border pl-[10px] pr-2">
+              <Link href={homeHref} onClick={close} className={cn(navLink, "min-h-8 px-2 text-xs")}>
+                <MapIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                {homeLabel}
               </Link>
               <LockButton />
             </div>

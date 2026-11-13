@@ -5,6 +5,7 @@ import { renderArticleBySlug } from "@/lib/content/articles";
 import { ReaderShell } from "@/components/reader/reader-shell";
 import { getOwnerUser, requireOwnerUser } from "@/lib/auth/session-user";
 import { ARCHIVE_BASE_PATH, ARCHIVE_SUBTITLE, ARCHIVE_TITLE } from "@/lib/content/archive";
+import { UI } from "@/lib/content/labels";
 
 /**
  * Renders per request: the page resolves the signed-in account and scopes reader
@@ -57,6 +58,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       listTitle={ARCHIVE_TITLE}
       listSubtitle={ARCHIVE_SUBTITLE}
       homeHref={ARCHIVE_BASE_PATH}
+      homeLabel={UI.archive}
     >
       {rendered.content}
     </ReaderShell>

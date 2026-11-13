@@ -18,6 +18,7 @@ import { CompletionControl } from "./completion-control";
 import { ReadingSettings } from "./reading-settings";
 import { ArticleToc } from "./article-toc";
 import { ChapterHeader } from "./chapter-header";
+import { ChapterEnd } from "./chapter-end";
 import { FigureViewer } from "./figure-viewer";
 import { ResumeNotice } from "./resume-notice";
 import { RevisionNotice } from "./revision-notice";
@@ -45,6 +46,8 @@ type Props = {
   listTitle?: string;
   listSubtitle?: string;
   homeHref?: string;
+  /** What `homeHref` is: the series' roadmap (default), or the archive's index. */
+  homeLabel?: string;
   /** The series roadmap's phases; the reading list and the chapter header follow them. */
   phases?: PhaseOutline[];
   /**
@@ -64,6 +67,7 @@ function ReaderShellInner({
   listTitle,
   listSubtitle,
   homeHref,
+  homeLabel = UI.roadmap,
   phases,
   showTitle = false,
 }: Props) {
@@ -361,14 +365,15 @@ function ReaderShellInner({
           title={listTitle}
           subtitle={listSubtitle}
           homeHref={homeHref}
+          homeLabel={homeLabel}
           phases={phases}
         />
       )}
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 border-b border-border bg-bg">
-          <div className="reader-area flex h-14 items-center justify-between gap-3">
-            <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <div className="reader-area flex h-14 items-center justify-between gap-3 max-[359px]:gap-2">
+            <div className="flex min-w-0 items-center gap-2 max-[359px]:gap-1.5 sm:gap-3">
               <MobileReadingList
                 articles={articles}
                 currentArticleId={current.articleId}
@@ -376,6 +381,7 @@ function ReaderShellInner({
                 title={listTitle}
                 subtitle={listSubtitle}
                 homeHref={homeHref}
+                homeLabel={homeLabel}
                 phases={phases}
               />
               <p className="min-w-0 truncate font-sans text-2xs text-text-muted">
@@ -403,7 +409,7 @@ function ReaderShellInner({
                 <CompactArticleNavigation prev={prev} next={next} basePath={basePath} />
               </div>
             </div>
-            <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
+            <div className="flex shrink-0 items-center gap-1.5 max-[359px]:gap-1 sm:gap-3">
               {/* Series chapters show level and time under their title; the paged
                   frame has no title block, so there the toolbar keeps them. */}
               {!preferences.focusMode && !headerShown && (
@@ -499,6 +505,14 @@ function ReaderShellInner({
             />
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
             <FigureViewer containerRef={bodyRef} articleId={current.articleId} />
+            {effectiveMode !== "paged" && (
+              <ChapterEnd
+                next={next}
+                basePath={basePath}
+                homeHref={homeHref}
+                homeLabel={homeLabel === UI.archive ? UI.backToArchive : UI.backToRoadmap}
+              />
+            )}
             {/* From `lg` up both of these live in the toolbar, where they are reachable
                 without leaving the text — and where the paged layout, which never
                 scrolls the page, can reach them at all. */}

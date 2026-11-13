@@ -50,8 +50,11 @@ function ArticleItem({
   const revisedSinceRead = readBeforeRevision(entryOf(article.articleId), article.revisedAt);
   return (
     <li className="relative">
+      {/* No prefetch: every visible row used to ask the server to render its chapter
+          (eighteen dynamic renders per page view) for a route it cannot cache. */}
       <Link
         href={`${basePath}/${article.slug}`}
+        prefetch={false}
         aria-current={isActive ? "page" : undefined}
         onClick={onNavigate}
         // Portal's row: flat, full width, 14px in from the edge; the current chapter

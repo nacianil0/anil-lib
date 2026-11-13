@@ -133,13 +133,16 @@ export function ArticleToc({
         ref={triggerRef}
         type="button"
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:border-border-strong hover:text-text"
+        className="inline-flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5 font-sans text-xs text-text-muted transition-colors hover:border-border-strong hover:text-text max-[359px]:px-2"
         aria-label={UI.tableOfContents}
         aria-expanded={open}
         aria-haspopup="dialog"
         title={UI.tableOfContents}
       >
         <List className="h-4 w-4" aria-hidden="true" />
+        {/* The way around a long chapter, so it is named wherever the toolbar has the
+            room; on a phone the icon stands alone beside the others. */}
+        <span className="hidden md:inline">{UI.tableOfContents}</span>
       </button>
 
       {open && (
@@ -165,6 +168,7 @@ export function ArticleToc({
                 <li key={h.id} className="flex">
                   <a
                     href={`#${h.id}`}
+                    aria-current={isActive ? "location" : undefined}
                     onClick={(event) => {
                       if (onNavigate) {
                         event.preventDefault();
