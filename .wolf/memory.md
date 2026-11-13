@@ -8162,3 +8162,92 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 15:20 | Edited src/components/reader/reader-shell.tsx | inline fix | ~28 |
 | 15:23 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/rail-shot.cjs | — | ~533 |
 | 17:40 | Header ArticleProgress kaldırıldı (liveRatio state ile); okuma listesi rayı Portal sidebar diline taşındı (gizli çubuk, gömük zemin, header hizalı band, 14px dolgu, 2px vurgu pini; spine kaldırıldı) | reader-shell, reader-sidebar, mobile-reading-list, reading-list, progress-meter, globals.css, scrollbars.spec | tsc/eslint temiz, vitest 960/960, e2e 101 geçti + 2 bilinen DB, build OK | ~60000 |
+
+## Session: 2026-11-11 08:32
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-11-12 15:30
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-11-13 11:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-11-13 11:27
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 11:33 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/608cef14-2446-4d4b-9b35-c18865b94cee/scratchpad/shots.mjs | — | ~1805 |
+| 11:40 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/608cef14-2446-4d4b-9b35-c18865b94cee/scratchpad/perf.mjs | — | ~1205 |
+| 11:42 | UX premium turu: envanter + önce görüntüleri (128 kare, 4 genişlik × 2 tema, anon+sahip) ve lab ölçümü (LCP ~1.2s, /seri CLS 0.060, mobil liste açma 216ms); 18 RSC prefetch/makale bulundu | scratchpad/before | analiz tamam | ~40k |
+| 11:45 | Created src/components/ui/classes.ts | — | ~475 |
+| 11:45 | Created src/components/site/sign-out-button.tsx | — | ~293 |
+| 11:45 | Created src/components/site/site-header.tsx | — | ~1071 |
+| 11:45 | Created src/components/site/site-footer.tsx | — | ~577 |
+| 11:45 | Created src/components/reader/lock-button.tsx | — | ~353 |
+| 11:46 | Created src/components/site/sign-out-button.tsx | — | ~294 |
+| 11:46 | Created src/components/reader/lock-button.tsx | — | ~328 |
+| 11:46 | Edited src/lib/content/labels.ts | 8→10 lines | ~122 |
+| 11:46 | Edited src/lib/content/labels.ts | expanded (+7 lines) | ~108 |
+| 11:46 | Created src/app/not-found.tsx | — | ~440 |
+| 11:46 | Created src/app/error.tsx | — | ~376 |
+| 11:47 | Edited src/components/series/series-landing.tsx | 4→4 lines | ~55 |
+| 11:47 | Edited src/components/series/series-landing.tsx | added 2 import(s) | ~107 |
+| 11:47 | Edited src/components/series/series-landing.tsx | CSS: reset | ~132 |
+| 11:47 | Edited src/components/series/series-landing.tsx | CSS: focus | ~154 |
+| 11:47 | Edited src/components/series/series-landing.tsx | 4→1 lines | ~26 |
+| 11:47 | Edited src/components/series/series-landing.tsx | 3→6 lines | ~160 |
+| 11:47 | Edited src/components/series/series-landing.tsx | CSS: alone, hover | ~199 |
+| 11:47 | Edited src/components/series/series-landing.tsx | CSS: prefetch | ~125 |
+| 11:47 | Edited src/components/series/series-landing.tsx | 4→6 lines | ~112 |
+| 11:47 | Edited src/components/series/series-landing.tsx | expanded (+13 lines) | ~203 |
+| 11:48 | Edited src/components/series/series-progress-reset.tsx | added nullish coalescing | ~375 |
+| 11:48 | Edited src/components/series/series-progress-reset.tsx | 5→4 lines | ~47 |
+| 11:48 | Edited src/components/series/series-progress-reset.tsx | 3→4 lines | ~22 |
+| 11:48 | Edited src/components/series/series-progress-reset.tsx | 3→4 lines | ~20 |
+| 11:48 | Edited src/components/series/series-progress-reset.tsx | CSS: focus | ~55 |
+| 11:48 | Edited src/components/dashboard/reader-dashboard.tsx | added 2 import(s) | ~140 |
+| 11:48 | Edited src/components/dashboard/reader-dashboard.tsx | CSS: md, Oturum, focus | ~293 |
+| 11:48 | Edited src/components/dashboard/reader-dashboard.tsx | 6→4 lines | ~58 |
+| 11:48 | Edited src/components/dashboard/reader-dashboard.tsx | 1→3 lines | ~96 |
+| 11:49 | Edited src/components/dashboard/reader-dashboard.tsx | modified phaseProgress() | ~198 |
+| 11:49 | Edited src/components/dashboard/reader-dashboard.tsx | modified ReaderDashboard() | ~35 |
+| 11:49 | Created src/components/reader/reader-sidebar.tsx | — | ~1008 |
+| 11:50 | Edited src/components/reader/reading-list.tsx | CSS: prefetch | ~96 |
+| 11:50 | Created src/components/reader/chapter-end.tsx | — | ~752 |
+| 11:50 | Edited src/lib/content/labels.ts | 1→2 lines | ~20 |
+| 11:50 | Edited src/components/reader/reader-shell.tsx | added 1 import(s) | ~41 |
+| 11:50 | Edited src/components/reader/reader-shell.tsx | CSS: is | ~70 |
+| 11:50 | Edited src/components/reader/reader-shell.tsx | 5→6 lines | ~28 |
+| 11:50 | Edited src/components/reader/reader-shell.tsx | 5→6 lines | ~41 |
+| 11:50 | Edited src/components/reader/reader-shell.tsx | 4→5 lines | ~47 |
+| 11:50 | Edited src/components/reader/reader-shell.tsx | CSS: backToArchive | ~133 |
+| 11:51 | Edited src/components/reader/article-toc.tsx | CSS: md | ~194 |
+| 11:51 | Edited src/components/reader/article-toc.tsx | 3→4 lines | ~49 |
+| 11:51 | Edited src/components/reader/mobile-reading-list.tsx | "inline-flex items-center " → "inline-flex items-center " | ~62 |
+| 11:51 | Edited src/components/reader/resume-notice.tsx | 2→2 lines | ~23 |
+| 11:51 | Edited src/components/reader/resume-notice.tsx | CSS: button | ~471 |
+| 11:51 | Edited src/components/reader/resume-notice.tsx | 12→12 lines | ~142 |
+| 11:52 | Edited src/app/globals.css | CSS: --scroll-shadow | ~77 |
+| 11:52 | Edited src/app/globals.css | CSS: --scroll-shadow | ~28 |
+| 11:52 | Edited src/app/globals.css | CSS: --scroll-shadow | ~29 |
+| 11:52 | Edited src/app/globals.css | expanded (+38 lines) | ~477 |
+| 11:53 | Created src/components/account/account-shell.tsx | — | ~498 |
+| 11:53 | Edited src/app/kayit/page.tsx | 3→5 lines | ~37 |
+| 11:53 | Created src/app/login/page.tsx | — | ~1718 |
+| 11:55 | Created .claude/launch.json | — | ~213 |
+| 11:57 | Created tests/e2e/navigation.spec.ts | — | ~2647 |
+| 12:04 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/608cef14-2446-4d4b-9b35-c18865b94cee/scratchpad/compare.mjs | — | ~722 |
+| 12:07 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/608cef14-2446-4d4b-9b35-c18865b94cee/scratchpad/a11y.mjs | — | ~1320 |
+| 12:22 | Edited src/app/globals.css | CSS: 85, 28 | ~42 |
+| 12:22 | Edited src/app/accent-contrast.test.ts | modified contrast() | ~262 |
+| 12:22 | Created src/components/reader/scroll-regions.tsx | — | ~734 |
+| 12:22 | Edited src/components/reader/reader-pager.tsx | CSS: too | ~124 |
+| 12:22 | Edited tests/e2e/navigation.spec.ts | modified escape() | ~394 |
+| 12:27 | UX turu: 6 commit (site kabuğu, seri/panel, okuyucu, tipografi, e2e, erişilebilirlik); e2e 113+1 geçti (2 DB-bağımlı test PGlite ile 4/4), erişim matrisi 9/9, axe 56 satır 12→0 bulgu, /seri CLS 0.0606→0.0010, makale RSC prefetch 18-31→5 | src/components/site, reader, series, dashboard | doğrulama sürüyor | ~120k |
+| 12:35 | Created artifacts/ux-premium-2026-11-13/OKU-BENI.md | — | ~293 |

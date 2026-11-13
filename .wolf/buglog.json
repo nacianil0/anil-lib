@@ -16779,6 +16779,388 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-11-09T14:10:00.000Z"
+    },
+    {
+      "id": "bug-1013",
+      "timestamp": "2026-11-13T08:47:26.114Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "16 lines replaced/restructured",
+      "fix": "Rewrote 22→17 lines (16 removed) | Also: <div className=\"max-w-2xl\">; <SeriesProgressReset",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-13T08:47:46.903Z"
+    },
+    {
+      "id": "bug-1014",
+      "timestamp": "2026-11-13T08:47:52.885Z",
+      "error_message": "Type error",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:47:52.885Z"
+    },
+    {
+      "id": "bug-1015",
+      "timestamp": "2026-11-13T08:48:04.882Z",
+      "error_message": "Null/undefined access in ",
+      "file": "src/components/series/series-progress-reset.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety (optional chaining or null check)",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:48:04.882Z"
+    },
+    {
+      "id": "bug-1016",
+      "timestamp": "2026-11-13T08:48:48.707Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "21 lines replaced/restructured",
+      "fix": "Rewrote 34→33 lines (21 removed) | Also: <Link; href={hrefFor(current)}",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-13T08:48:50.555Z"
+    },
+    {
+      "id": "bug-1017",
+      "timestamp": "2026-11-13T08:48:52.526Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/dashboard/reader-dashboard.tsx",
+      "root_cause": "Had \"mt-2.5 flex flex-wrap items-baseline justify-betw",
+      "fix": "Changed to \"mt-2.5 flex flex-col gap-1 font-sans text-xs text",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:48:52.526Z"
+    },
+    {
+      "id": "bug-1018",
+      "timestamp": "2026-11-13T08:50:43.181Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Had \"./figure-viewer\"",
+      "fix": "Changed to \"./chapter-end\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:50:43.181Z"
+    },
+    {
+      "id": "bug-1019",
+      "timestamp": "2026-11-13T08:50:50.940Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:50:50.940Z"
+    },
+    {
+      "id": "bug-1020",
+      "timestamp": "2026-11-13T08:51:23.728Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/article-toc.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:51:23.728Z"
+    },
+    {
+      "id": "bug-1021",
+      "timestamp": "2026-11-13T08:51:25.596Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/components/reader/mobile-reading-list.tsx",
+      "root_cause": "Had \"inline-flex items-center gap-2 rounded-md border ",
+      "fix": "Changed to \"inline-flex items-center gap-2 rounded-md border ",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:51:25.596Z"
+    },
+    {
+      "id": "bug-1022",
+      "timestamp": "2026-11-13T08:51:37.875Z",
+      "error_message": "Type error",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:51:37.875Z"
+    },
+    {
+      "id": "bug-1023",
+      "timestamp": "2026-11-13T08:51:40.712Z",
+      "error_message": "CSS fix: hover",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "hover: text-text sm:ml-1\" → bg-surface-muted hover:text-text\"",
+      "fix": "Changed hover: text-text sm:ml-1\" → bg-surface-muted hover:text-text\"",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T08:51:40.712Z"
+    },
+    {
+      "id": "bug-1024",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "404 sayfasının tek bağlantısı 'Okumaya baştan başla' → /read/<ilk yazı>; anonim ziyaretçi giriş duvarına, okuyucu hesabı erişemediği arşive düşüyordu",
+      "file": "src/app/not-found.tsx",
+      "root_cause": "not-found.tsx katalogdaki ilk arşiv yazısına bağlanıyordu; /read yalnız owner'a açık (access.ts), 404 ise oturumu bilmeden render ediliyor.",
+      "fix": "404 artık SiteHeader minimal + 'Sayfa bulunamadı' + yalnız herkese açık hedefler (/ ve /seri); e2e navigation.spec ve reader.spec 404 testi /read bağlantısı olmadığını doğruluyor.",
+      "tags": [
+        "404",
+        "not-found",
+        "access",
+        "ux",
+        "navigation"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1025",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "/seri mobilde CLS 0.060 (lab, 4x CPU): ilerleme satırı hidrasyondan sonra iki satıra kırılıp yol haritasını 20px itiyordu",
+      "file": "src/components/series/series-landing.tsx",
+      "root_cause": "Hazır olmadan '14 faz / 118 makale' kısa metni tek satıra sığıyordu; okuma kaydı yüklenince 'Faz 1 / 14 · <faz adı>' + 'x / 118 tamamlandı' satırı flex-wrap ile ikinci satıra taşıyordu. Aynı desen panelde (reader-dashboard) de vardı.",
+      "fix": "Satır telefonda her durumda iki satır (flex-col, sm:flex-row); panelde ikinci satır hazır olmadan da dolu (makale sayısı). Sıfırlama düğmesi sayfa sonuna taşındı (görünmesi hiçbir şeyi itmiyor).",
+      "tags": [
+        "cls",
+        "layout-shift",
+        "hydration",
+        "series-landing",
+        "dashboard"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1026",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "Her makale açılışında kenar çubuğundaki görünür ~18 bölüm bağlantısı RSC prefetch isteği atıyordu (/seri'de 13)",
+      "file": "src/components/reader/reading-list.tsx",
+      "root_cause": "next/link varsayılan prefetch'i görünür bağlantıları önceden getirir; rotalar force-dynamic olduğu için her istek sunucuda dinamik render tetikliyor ama sayfa içeriği önbelleğe alınamıyor.",
+      "fix": "Uzun liste bağlantılarında (okuma listesi, yol haritası satırları, ana sayfa faz listesi, arşiv dizini) prefetch={false}; önceki/sonraki ve tekil bağlantılar varsayılan kaldı.",
+      "tags": [
+        "performance",
+        "prefetch",
+        "next-link",
+        "rsc",
+        "reading-list"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1027",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "320px'te okuyucu araç çubuğundaki bölüm numarası kırpılıyordu ('67 / 118' → '6…', 25px)",
+      "file": "src/components/reader/reader-shell.tsx",
+      "root_cause": "280px içerik genişliğine liste düğmesi + bölüm etiketi + 5 araç düğmesi + aralıklar sığmıyordu; etiket min-w-0 truncate olduğu için sessizce kesiliyordu (eşitleme düğmesinin 32px'e çıkması 6px ekledi).",
+      "fix": "Yalnız max-[359px] için grup aralıkları ve düğme yatay dolgusu daraltıldı; 320/360/375/768/1024'te headerOverflow=0, chapterClipped=0 ölçüldü.",
+      "tags": [
+        "reflow",
+        "320px",
+        "wcag-1.4.10",
+        "toolbar",
+        "truncate"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1028",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "Seri sayfası hiç ilerlemesi olmayan ilk ziyaretçiye de 'İlerlemeyi sıfırla' gösteriyordu",
+      "file": "src/components/series/series-progress-reset.tsx",
+      "root_cause": "Düğme yalnız ready'ye bağlıydı, sıfırlanacak kayıt olup olmadığına bakmıyordu.",
+      "fix": "available prop'u (serinin herhangi bir yazısı için progress kaydı var mı); onay ve sonuç mesajı ekranda kalır; sıfırlama sonrası düğme kalkınca odak role=status mesajına taşınır.",
+      "tags": [
+        "progressive-disclosure",
+        "reset",
+        "focus",
+        "series-landing"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1029",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "Oturum kapatma 'Kilidi kapat' etiketli kilit simgesiydi; okuyucu kenar çubuğundaki 'Ana sayfa' bağlantısı seri sayfasına gidiyordu",
+      "file": "src/components/reader/lock-button.tsx",
+      "root_cause": "Parola kapısı döneminden kalan etiket/simge; homeHref seri tabanını gösterirken etiket UI.home sabitti.",
+      "fix": "SignOutButton ('Çıkış yap', LogOut) ve görünür metinli 'Giriş yap'; kenar çubuğu/çekmece alt bandı homeLabel ile 'Yol haritası' (arşivde 'Arşiv'). e2e seçicileri yeni ada güncellendi.",
+      "tags": [
+        "copy",
+        "labels",
+        "logout",
+        "sidebar",
+        "ux-writing"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1030",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "Giriş sayfası 'Şifre' diyordu (ürünün geri kalanı 'Parola'); hata mesajı alanlarla ilişkilendirilmemişti ve 11px büyük harf etiketler kullanıyordu",
+      "file": "src/app/login/page.tsx",
+      "root_cause": "Giriş sayfası AccountShell/FormField dışında ayrı yazılmıştı; aria-live bölgesi sayfa yüklenirken zaten dolu olduğu için duyurulmuyordu.",
+      "fix": "AccountShell + FormField (44px alanlar, okunaklı etiketler), 'Parola'; alert tonundaki hata formun başında role=alert ve iki alanda aria-describedby=login-error (+ invalid'de aria-invalid). Ön lansmanda minimal başlık, footer yok.",
+      "tags": [
+        "login",
+        "a11y",
+        "forms",
+        "copy",
+        "consistency"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1031",
+      "timestamp": "2026-11-13T09:02:09Z",
+      "error_message": "Devam bildirimi kapatma düğmesi 16x16 hedefti ve fare/odak üstündeyken de 6-9 sn sonra kapanıyordu",
+      "file": "src/components/reader/resume-notice.tsx",
+      "root_cause": "Kapatma düğmesinin dolgusu yoktu; zamanlayıcı hover/focus'u hesaba katmıyordu (WCAG 2.2.1/2.5.8).",
+      "fix": "28px yuvarlak hedef, pill dikey dolgusu dengelendi (yükseklik aynı); pointer/focus içindeyken zamanlayıcı durur, çıkınca baştan başlar.",
+      "tags": [
+        "a11y",
+        "target-size",
+        "timing",
+        "resume-notice"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:02:09Z"
+    },
+    {
+      "id": "bug-1032",
+      "timestamp": "2026-11-13T09:22:07.263Z",
+      "error_message": "CSS fix: --cool",
+      "file": "src/app/globals.css",
+      "root_cause": "--cool: #5b9dbf → #68a7c7",
+      "fix": "Changed --cool: #5b9dbf → #68a7c7",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:22:07.263Z"
+    },
+    {
+      "id": "bug-1033",
+      "timestamp": "2026-11-13T09:22:12.971Z",
+      "error_message": "Type error",
+      "file": "src/app/accent-contrast.test.ts",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:22:12.971Z"
+    },
+    {
+      "id": "bug-1034",
+      "timestamp": "2026-11-13T09:22:27.058Z",
+      "error_message": "Significant refactor of ",
+      "file": "src/components/reader/reader-pager.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 7→8 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:22:27.058Z"
+    },
+    {
+      "id": "bug-1035",
+      "timestamp": "2026-11-13T09:22:46.737Z",
+      "error_message": "Missing await",
+      "file": "tests/e2e/navigation.spec.ts",
+      "root_cause": "Async call without await — returned Promise instead of value",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T09:22:46.737Z"
     }
   ]
 }

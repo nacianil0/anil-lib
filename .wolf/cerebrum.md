@@ -6,6 +6,8 @@
 
 ## User Preferences
 
+- [2026-11-13] UX premium modernizasyonu: kullanıcı InteriaPrice'ın sadelik, işlevin kolay keşfi, az adım ve tutarlılık anlayışını kopyalamadan Anıl Lib'e uyarlamayı istedi (Apple HIG, NN/g, WCAG 2.2 AA, Core Web Vitals referans). Analiz → önce/sonra kanıtı → uygulama → test/build → dalda commit → doğrulama tamamsa main'e push bekleniyor; ayrıca deploy istenmedi (main'e push Vercel üretimini tetikler, raporda söylenir).
+
 - [2026-11-10] Okuyucunun sidebar'ı (okuma listesi rayı) Portal Dashboard sidebar'ına benzemeli: görünür kaydırma çubuğu YOK (native kaydırma, gizli çubuk), Portal'ın boşluk/kenarlık dili (gömük zemin + sağ kenar çizgisi, header'la hizalı kimlik bandı, 14px yatay dolgu, 10.5px büyük harf bölüm başlıkları, düz satırlar, etkin satırda vurgu tonu + solda 2px vurgu çizgisi). Header'da bölüm içi okuma ilerleme çubuğu istenmiyor (kaldırıldı). İlk turda sidebar'a görünür çubuk vermiştim; kullanıcı düzeltti.
 - [2026-11-03] Kullanıcı açık kaynak + main entegrasyonu işinde hızlandırma için **en fazla üç subagent'a** izin verdi:
   yalnız gerçekten ayrışabilen işler (ör. ayrı klonda tam e2e, salt okunur belge denetimi); aynı dosya, Git index,
@@ -35,6 +37,15 @@
 - [2026-11-04] Lansman: kullanıcı veri sorumlusunu "Naci Anıl Akman", başvuru kanalını `nacianilakman@gmail.com` olarak verdi (önce yalnız ad, sonra e-postayı ekletti); Vercel ayarlarını (alan adı `anil-lib.vercel.app`, `SITE_URL`, `PUBLIC_LAUNCH`, Deployment Protection, redeploy) kendisi yapıyor, ben kodu gönderip canlıyı doğruluyorum. Vercel'de `PUBLIC_` önekli değişken Secret olamaz, Config seçilmeli.
 
 ## Key Learnings
+
+- [2026-11-13] Taşan kod bloğu/tablo erişilebilirliği: `components/reader/scroll-regions.tsx` yalnız gerçekten taşan `pre`/`.table-scroll`'a `data-scroll-region` + `tabindex=0` + `role=region` + `aria-label` verir, sığınca kaldırır (ResizeObserver + resize + fonts.ready + layoutVersion). `reader-pager` `[data-scroll-region]` içindeki tuşlara sayfa çevirmez. Yalnız öznitelik; textContent ofsetleri (okuma çıpası, işaretler) değişmez.
+- [2026-11-13] Doğrulama araçları önceki oturum scratchpad'inde duruyor (`C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/`): `tools/neon-shim.mjs` + `tools/neon-fetch-redirect.cjs` + `pgl/` (PGlite 0.3.14) ile veritabanlı e2e, `axe/node_modules/axe-core` 4.10.2 ile WCAG denetimi, `e2e-db/access-matrix.db.spec.ts` (9 test, rol/kayıt/kurtarma/silme). 3200 portu artık başka projenin Vite'ında; kopya config 3210 kullanır.
+
+- [2026-11-13] Site kabuğu tek kaynaktan: `SiteHeader` (signedIn / minimal / returnTo / actions / onDashboard / current / width) + `SiteFooter` (signedIn / width) + `components/ui/classes.ts`. Okuyucu dışındaki her sayfa `<main id="main" tabIndex={-1}>` render eder; başlıktaki atlama bağlantısının hedefi budur. Seri sayfası, panel, arşiv, yönetim, giriş, 404 ve hata sayfası artık aynı başlığı kullanır.
+- [2026-11-13] `next/link` varsayılan prefetch'i force-dynamic rotalarda görünür her bağlantı için sunucuda dinamik render tetikler ve sayfa içeriğini önceden getirmez: makale başına 18, /seri'de 13 RSC isteği ölçüldü. Uzun bölüm listelerinde `prefetch={false}`.
+- [2026-11-13] Bu Windows klonunda `prettier --check src` 160 dosyayı işaretler: çalışma kopyası `core.autocrlf=true` ile CRLF, depodaki blob'lar LF. Yalnız değişen dosyaları `prettier --write` ile biçimlendir; uyarı satır sonundan, kod stilinden değil.
+- [2026-11-13] Next App Router'ın rota duyurucusu da `role="alert"` taşır; Playwright'ta `getByRole("alert")` sayfa kapsamına (`main`) daraltılır.
+- [2026-11-13] Lab performansı: scratchpad `perf.mjs` (CDP 4x CPU + ~1.6 Mbps/150 ms, mobil 375px; LCP, CLS, event timing ile etkileşim gecikmesi, 3 koşu medyanı) ve CLS kaynağı için `layout-shift` `sources` probe'u. Saha verisi değildir; raporda öyle adlandır.
 
 - [2026-11-10] Okuma listesi rayı (`reader-sidebar.tsx`, `mobile-reading-list.tsx`, `reading-list.tsx`, `progress-meter.tsx`) Portal sidebar ölçülerinde: `.reading-rail` zemini `--sidebar-surface` (light #f5f3ef, sepya #eee7da, koyu #0e1013 — sayfadan bir ton gömük), kimlik bandı `h-[calc(3.5rem+1px)]` (header `h-14` + 1px çizgi; iki alt çizgi 57px'te buluşur), satır `px-[14px] py-[9px] text-[13px]` sans, etkin satır `bg-accent-soft` + `before:` 2px `bg-accent`. Eski 'reading spine' (`.spine-rail/.spine-node`) kaldırıldı. Rayda küçük yazıda `text-faint` kullanma: sepya ray zemininde ~4.0:1 kalıyor, `text-muted` kullan. Header'daki `ArticleProgress` ve onu her karede güncelleyen `liveRatio` state'i kaldırıldı (konum kaydı `measure()`'dan ratio'yu yine alır).
 - [2026-11-09] Kaydırma çubukları Portal Dashboard standardındadır (globals.css sonu + `:root` `--scrollbar-*` token'ları): 10px iz, 2px iz renginde kenarlıkla 6px köşesiz thumb = `--accent`, hover/active metin rengine %80/%64 karışır, iz = `--surface-muted` + %5 vurgu (koyu %6), iz uçlarında 4px boşluk, thumb min 32px, ok düğmesi yok, köşe iz renginde. Chromium/Safari `@supports selector(::-webkit-scrollbar)` ile webkit yolundan, Firefox `not selector(...)` ile `scrollbar-width: thin` + `scrollbar-color` yolundan gider. Kurallar `html.classic-scrollbars` sınıfına bağlı: `src/lib/reader-layout/scrollbar-probe.ts` `<head>`'de gizli probla platform çubuğu yer kaplıyorsa sınıfı koyar (Windows dokunmatik-birincil cihaz dahil); overlay çubuklar (telefon, macOS varsayılanı), forced-colors ve JS'siz durum native kalır. Belge (window) kaydırması bilinçli olarak native: okuma konumu/çapa/scrollRatio/sayfa çevirme ona bağlı, Portal'daki gibi JS overlay'e taşınmadı. Koruma: `tests/e2e/scrollbars.spec.ts` (14 test, `ignoreDefaultArgs: ["--hide-scrollbars"]`).
@@ -697,6 +708,12 @@ ode_modules`, sonra kopyayi sil.
 
 ## Do-Not-Repeat
 
+- [2026-11-13] `scrollable-region-focusable` için her `pre`/tabloya körlemesine `tabindex=0` verme: sığan bloklar da Tab durağı olur (kodlu bir makalede 46 fazladan durak). Yalnız taşanı işaretle, sığınca geri al; sayfalı düzende o bölgenin ok tuşlarını sayfalayıcıdan koru.
+
+- [2026-11-13] Hidrasyondan sonra uzayan metni `flex-wrap` bir satıra koyma: yer tutucu tek satıra sığıp gerçek metin ikiye kırılınca altındaki her şey kayar (/seri mobil CLS 0.060). Telefonda satır sayısını sabitle (flex-col) ya da yer tutucuyu gerçek metinle aynı biçimde doldur.
+- [2026-11-13] 404/hata sayfasından yalnız herkese açık hedeflere bağlan: not-found oturumu bilmez; `/read` gibi owner-only rotalar anonimi giriş duvarına, okuyucu hesabını yetkisiz sayfaya yollar.
+- [2026-11-13] Tarayıcı panosu gizliyken `fonts.ready → requestAnimationFrame` ile render olan İçindekiler düğmesi hiç görünmez; bölmede "yok" görünen rAF'e bağlı bir öğeyi kusur saymadan önce Playwright'ta doğrula.
+
 - [2026-11-09] Çubuk kapısını `@media (pointer: fine)` ile kurma: Windows'ta birincil işaretçisi dokunmatik cihazlar (klavyesiz Surface, dokunmatik monitör) `pointer: coarse` bildirir ama yer kaplayan, ok düğmeli 15px çubuk çizer — kaldırılmak istenen görünüm geri gelir. Kapı çubuğun gerçekten yer kaplamasına (ölçüm) bağlanır.
 - [2026-11-09] TS/JS dosyasına Git Bash heredoc içindeki Python ile `\b` gibi kaçışlı regex yazma: dosyaya gerçek backspace (0x08) düştü, Read aracı kontrol karakterini göstermedi, eslint `no-control-regex` verdi (bug-1012). Kod düzenlemesini Edit/Write ile yap.
 - [2026-11-09] Paralel doğrulama hatları aynı makinede `playwright install` koşturmasın: kurulum ortak ms-playwright önbelleğini temizleyip başka hattın tarayıcısını dakikalarca sildi. Ortak `test-results` yerine her koşuya kendi `--output` klasörü verilir.
@@ -1111,6 +1128,13 @@ ode_modules`, sonra kopyayi sil.
 - [2026-11-03] Uzun e2e koşusunda "Test timeout of 30000ms exceeded" görünce kodu suçlamadan önce Windows güç olaylarına bak (`Get-WinEvent` System, Kernel-Power 506/507 = Modern Standby giriş/çıkış) ve izdeki eylem saatlerini uyku aralığıyla karşılaştır: 17:00–18:20 uykusu bir mobil sayfalama testini düşürdü. Uzun koşudan önce `request_keep_awake` iste; kapak kapanırsa makine yine uyur.
 
 ## Decision Log
+
+### UX premium turu (2026-11-13)
+- **Karar — tek site kabuğu.** Beş ayrı üst başlık (ana sayfa, seri sayfası, panel, arşiv, yönetim) ve ayrı tasarımlı giriş sayfası tek `SiteHeader`/`SiteFooter`'a indi; marka her yerde ana sayfaya gider, giriş/hesap aç bağlantıları geldiği sayfaya `?next=` ile döner. Ön lansmanda giriş sayfası `minimal` (yalnız ad, footer yok).
+- **Karar — masaüstü makale sonu "Sıradaki bölüm".** 2026-09-06 kararı (sayfalı düzende kontroller header'da, footer yalnız lg altında) korunarak eklendi: blok yalnız akış düzeninde ve lg+, ayrı bir region (nav değil); "Bölümler arası gezinme" landmark'ı tek kalır, `main footer` lg'de gizli kalır.
+- **Karar — "İlerlemeyi sıfırla" sayfa sonunda ve yalnız kayıt varken.** İlk ziyaretçiye silinecek bir şey yokken yıkıcı eylem gösterilmez; hidrasyondan sonra belirmesi yukarıdaki içeriği itmez (CLS).
+- **Karar — kaynakça sola yaslı** (`h2[id$="kaynakça"] ~ ul > li`); makale gövdesinin iki yana yaslı + heceleme kararı (2026-09-03) değişmedi.
+- **Bilinçli dokunulmayan:** %90 kaydırmada otomatik tamamlama (`COMPLETION_THRESHOLD`), `measure.standard` 84ch, mobilde iki yana yaslı metin; ilerleme hesabı ve senkron sözleşmesi aynen.
 
 - **[2026-11-09] Kaydırma çubukları — Portal standardı, native kaydırma:** Portal ana alanda JS overlay (`CustomScrollbarOverlay`) kullanıyor; Anıl Lib'de ana kaydırıcı window olduğu ve okuma konumu/çapa/sayfa çevirme ona bağlı olduğu için overlay'e taşımak kaydırma sahipliğini değiştirirdi. Bunun yerine aynı görünüm (10px iz, 6px köşesiz vurgu thumb, ok yok) Chromium/Safari'de `::-webkit-scrollbar`, Firefox'ta standart ince çubukla verildi. **[2026-11-10 kullanıcı düzeltmesi]** Okuma listesi rayı (masaüstü sidebar + mobil çekmece) Portal sidebar'ı gibi çubuksuz: native kayar, çubuk chrome'u gizli (`.reading-rail .reading-rail-scroll`), tekerlek/dokunma/Tab çalışır.
 - [2026-11-03] Lisans seçilmedi (kullanıcı kararı; README > Licensing "no license yet"); LICENSE dosyası eklenmedi.

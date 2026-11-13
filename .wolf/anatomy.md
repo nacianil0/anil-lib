@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-10T12:23:45.484Z
-> Files: 2 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-13T09:35:26.828Z
+> Files: 1 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/
 
@@ -137,7 +137,9 @@
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/
 
-- `rail-shot.cjs` — Screenshots of the reading-list rail in real Chrome with real scrollbars. (~533 tok)
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/608cef14-2446-4d4b-9b35-c18865b94cee/scratchpad/
+
 
 ## ../anil-lib-bakim3-render/bakim3-render/
 
@@ -433,6 +435,9 @@
 ## Session navigation additions (2026-10-05)
 
 
+## UX premium turu (2026-11-13) — site kabuğu ve okuyucu gezinmesi
+
+
 ## Yeni içerik/yardımcılar (2026-09-02)
 
 
@@ -636,6 +641,10 @@
 
 ## artifacts/owasp-run1/render/
 
+
+## artifacts/ux-premium-2026-11-13/
+
+- `OKU-BENI.md` — UX premium turu — kanıtlar (2026-11-13) (~274 tok)
 
 ## artifacts/ux-render/
 
@@ -1314,12 +1323,14 @@
 
 ## src/components/reader/
 
-- `reader-shell.tsx` — Route base for article links; the series reader passes "/seri". (~6265 tok)
 
 ## src/components/series/
 
 
 ## src/components/site/
+
+
+## src/components/ui/
 
 
 ## src/lib/
