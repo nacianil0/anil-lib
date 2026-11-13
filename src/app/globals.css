@@ -45,6 +45,9 @@
   /* The reading-list rail sits a step below the page, like Portal's sunk sidebar. */
   --sidebar-surface: #f5f3ef;
 
+  /* The soft edge a code block shows where more of it is scrolled out of view. */
+  --scroll-shadow: rgba(27, 29, 31, 0.16);
+
   color-scheme: light;
 }
 
@@ -69,6 +72,8 @@
   --scrollbar-track-tint: 6%;
 
   --sidebar-surface: #0e1013;
+
+  --scroll-shadow: rgba(0, 0, 0, 0.55);
 
   color-scheme: dark;
 }
@@ -105,6 +110,8 @@
   --reader-line-band: rgba(44, 38, 30, 0.055);
 
   --sidebar-surface: #eee7da;
+
+  --scroll-shadow: rgba(44, 38, 30, 0.18);
 
   color-scheme: light;
 }
@@ -464,6 +471,34 @@
     line-height: 1.6;
   }
 
+  /*
+     A code block cut off at its edge looks complete: on a phone the overlay scrollbar
+     is not drawn until the block is touched. So the block shows a soft shadow on the
+     side where more of it is hidden. The two covers scroll with the code (`local`)
+     and the two shadows stay with the box (`scroll`); at either end a cover lies over
+     its shadow, so a block that fits, or one scrolled to its end, shows none. Pure
+     paint: the text, its selection and the reading anchors are untouched.
+  */
+  .prose-reader pre {
+    background-image:
+      linear-gradient(to right, var(--surface-muted) 35%, transparent),
+      linear-gradient(to left, var(--surface-muted) 35%, transparent),
+      radial-gradient(farthest-side at 0 50%, var(--scroll-shadow), transparent),
+      radial-gradient(farthest-side at 100% 50%, var(--scroll-shadow), transparent);
+    background-position:
+      left center,
+      right center,
+      left center,
+      right center;
+    background-size:
+      2.5rem 100%,
+      2.5rem 100%,
+      0.875rem 100%,
+      0.875rem 100%;
+    background-repeat: no-repeat;
+    background-attachment: local, local, scroll, scroll;
+  }
+
   .prose-reader pre code {
     font-family: inherit;
     background: none;
@@ -471,6 +506,16 @@
     padding: 0;
     font-size: inherit;
     color: var(--text);
+  }
+
+  /*
+     The bibliography is set ragged-right. Its entries are long runs of names,
+     initials and identifiers that justification can only space apart, and a
+     reference is looked up, not read as prose. The article text stays justified.
+  */
+  .prose-reader h2[id$="kaynakça"] ~ ul > li {
+    text-align: left;
+    hyphens: manual;
   }
 
   /*
