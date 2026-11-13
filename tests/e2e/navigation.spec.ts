@@ -226,6 +226,38 @@ test.describe("narrow screens", () => {
   });
 });
 
+test.describe("wide tables on a phone", () => {
+  test.use({ viewport: { width: 375, height: 812 } });
+
+  test("a block wider than the column is a focusable region the arrow keys scroll", async ({
+    page,
+  }) => {
+    await page.goto("/seri/kendi-egitim-kosun-tokenizer-veri-ve-dongu");
+    const regions = page.locator(".prose-reader [data-scroll-region]");
+    await expect.poll(() => regions.count()).toBeGreaterThan(0);
+    // Exactly the blocks that overflow are regions; the rest stay out of the tab order.
+    const blocks = await page.evaluate(() =>
+      [
+        ...document.querySelectorAll<HTMLElement>(".prose-reader pre, .prose-reader .table-scroll"),
+      ].map((element) => ({
+        overflows: element.scrollWidth > element.clientWidth + 1,
+        region:
+          element.getAttribute("role") === "region" &&
+          element.getAttribute("tabindex") === "0" &&
+          Boolean(element.getAttribute("aria-label")),
+      })),
+    );
+    expect(blocks.length).toBeGreaterThan(0);
+    for (const block of blocks) expect(block.region).toBe(block.overflows);
+
+    const first = regions.first();
+    await first.focus();
+    await expect(first).toBeFocused();
+    await page.keyboard.press("ArrowRight");
+    await expect.poll(() => first.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+  });
+});
+
 function escape(text: string): string {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

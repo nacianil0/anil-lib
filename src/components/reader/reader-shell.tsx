@@ -23,6 +23,7 @@ import { FigureViewer } from "./figure-viewer";
 import { ResumeNotice } from "./resume-notice";
 import { RevisionNotice } from "./revision-notice";
 import { SavedPlaceControl } from "./saved-place-control";
+import { ScrollRegions } from "./scroll-regions";
 import { ArticleMarks } from "./article-marks";
 import { HighlightLayer } from "./highlight-layer";
 import { LineGuideLayer } from "./line-guide-layer";
@@ -504,6 +505,7 @@ function ReaderShellInner({
               articleId={current.articleId}
             />
             <HighlightSelectionAction articleId={current.articleId} containerRef={bodyRef} />
+            <ScrollRegions containerRef={bodyRef} layoutVersion={layoutVersion} />
             <FigureViewer containerRef={bodyRef} articleId={current.articleId} />
             {effectiveMode !== "paged" && (
               <ChapterEnd

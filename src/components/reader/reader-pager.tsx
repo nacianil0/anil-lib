@@ -7,10 +7,11 @@ import { UI } from "@/lib/content/labels";
 function ownsNavigationKeys(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false;
   // Inside a panel or the figure viewer the arrows belong to it; turning the page
-  // behind an open dialog would move the text the reader is not looking at.
+  // behind an open dialog would move the text the reader is not looking at. A wide
+  // code block or table the reader has focused keeps them too: they scroll it.
   return Boolean(
     target.closest(
-      "a, button, input, select, textarea, summary, [contenteditable='true'], [role='button'], [role='dialog']",
+      "a, button, input, select, textarea, summary, [contenteditable='true'], [role='button'], [role='dialog'], [data-scroll-region]",
     ),
   );
 }

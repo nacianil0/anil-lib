@@ -53,10 +53,13 @@ const ACCENT_BG = /\bbg-accent(?![-\w])/;
 describe("white text on the accent colour", () => {
   const css = readFileSync(GLOBALS_CSS, "utf8");
 
-  it.each([":root", ".dark", ".sepia"])("--accent-fill keeps 4.5:1 under white text in %s", (theme) => {
-    const fill = themeToken(css, theme, "accent-fill");
-    expect(contrastWithWhite(fill), `${theme} --accent-fill ${fill}`).toBeGreaterThanOrEqual(4.5);
-  });
+  it.each([":root", ".dark", ".sepia"])(
+    "--accent-fill keeps 4.5:1 under white text in %s",
+    (theme) => {
+      const fill = themeToken(css, theme, "accent-fill");
+      expect(contrastWithWhite(fill), `${theme} --accent-fill ${fill}`).toBeGreaterThanOrEqual(4.5);
+    },
+  );
 
   it("never pairs text-white with bg-accent", () => {
     const offenders = collectFiles(SOURCE_ROOT).flatMap((file) => {
@@ -66,5 +69,25 @@ describe("white text on the accent colour", () => {
         .map((m) => `${path.relative(process.cwd(), file)}: ${m[2].trim()}`);
     });
     expect(offenders, "use bg-accent-fill for white text").toEqual([]);
+  });
+});
+
+/**
+ * The information notices (account service unavailable, password changed, sign-up
+ * closed) set `text-cool` on `bg-cool-soft`. In the dark theme that pair measured
+ * 4.28:1 in an axe audit of /kayit and /hesap-kurtar, below WCAG 1.4.3's 4.5:1.
+ */
+describe("notice text on the cool tint", () => {
+  const css = readFileSync(GLOBALS_CSS, "utf8");
+
+  function contrast(a: string, b: string): number {
+    const [light, dark] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+    return (light + 0.05) / (dark + 0.05);
+  }
+
+  it.each([":root", ".dark", ".sepia"])("--cool keeps 4.5:1 on --cool-soft in %s", (theme) => {
+    const cool = themeToken(css, theme, "cool");
+    const soft = themeToken(css, theme, "cool-soft");
+    expect(contrast(cool, soft), `${theme} ${cool} on ${soft}`).toBeGreaterThanOrEqual(4.5);
   });
 });

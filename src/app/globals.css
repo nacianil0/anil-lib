@@ -63,7 +63,8 @@
   --accent: #d98597;
   --accent-fill: #b5435a;
   --accent-soft: #36222a;
-  --cool: #5b9dbf;
+  /* 4.85:1 on --cool-soft, where the notices put it (#5b9dbf was 4.28:1). */
+  --cool: #68a7c7;
   --cool-soft: #233440;
 
   --reader-line-band: rgba(233, 232, 228, 0.06);
