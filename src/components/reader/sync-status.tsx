@@ -17,9 +17,9 @@ export function SyncStatus() {
         href="/gizlilik#yerel-okuma"
         aria-label={label}
         title={label}
-        className="rounded p-1.5 text-text-faint transition-colors hover:text-text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+        className="inline-flex h-8 w-8 items-center justify-center rounded-md text-text-faint transition-colors hover:bg-surface-muted hover:text-text-muted"
       >
-        <HardDrive className="h-3.5 w-3.5" aria-hidden="true" />
+        <HardDrive className="h-4 w-4" aria-hidden="true" />
       </Link>
     );
   }
@@ -42,12 +42,12 @@ export function SyncStatus() {
       onClick={() => void syncNow()}
       aria-label={failed ? `${label}. ${UI.retrySync}` : label}
       title={failed ? `${label} · ${UI.retrySync}` : label}
-      className={`rounded p-1.5 transition-colors ${
+      className={`inline-flex h-8 w-8 items-center justify-center rounded-md transition-colors hover:bg-surface-muted ${
         failed ? "text-accent" : "text-text-faint hover:text-text-muted"
       }`}
     >
       <Icon
-        className={`h-3.5 w-3.5 ${syncStatus === "syncing" ? "animate-spin" : ""}`}
+        className={`h-4 w-4 ${syncStatus === "syncing" ? "animate-spin" : ""}`}
         aria-hidden="true"
       />
     </button>

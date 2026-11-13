@@ -14,10 +14,16 @@ const SERIES_LABELS: Record<SeriesId, string> = {
 export function SeriesProgressReset({
   seriesId,
   articleIds,
+  available = true,
 }: {
   seriesId: SeriesId;
   /** The series' published articles; a visitor without an account resets them in place. */
   articleIds: string[];
+  /**
+   * Whether there is any reading of this series to reset. Without it the control is
+   * not offered at all; a confirmation already open, and its outcome, stay on screen.
+   */
+  available?: boolean;
 }) {
   const { ready, resetSeries, mode } = useReaderData();
   const [armed, setArmed] = useState(false);
@@ -28,11 +34,19 @@ export function SeriesProgressReset({
   const busy = useRef(false);
   const cancelButton = useRef<HTMLButtonElement>(null);
   const armButton = useRef<HTMLButtonElement>(null);
+  const statusRef = useRef<HTMLParagraphElement>(null);
   const label = SERIES_LABELS[seriesId];
 
   useEffect(() => {
     if (armed) cancelButton.current?.focus();
   }, [armed]);
+
+  // After a reset there is nothing left to reset, so the button that held focus is
+  // gone; the confirmation sentence takes it instead of letting it fall to the page.
+  useEffect(() => {
+    if (!message) return;
+    (armButton.current ?? statusRef.current)?.focus();
+  }, [message]);
 
   function cancel() {
     if (busy.current) return;
@@ -50,7 +64,6 @@ export function SeriesProgressReset({
       await resetSeries(seriesId, articleIds);
       setArmed(false);
       setMessage("İlerlemen sıfırlandı. Seriye ilk yazıdan başlayabilirsin.");
-      requestAnimationFrame(() => armButton.current?.focus());
     } catch {
       setError("İlerleme sıfırlanamadı. Bağlantını kontrol edip tekrar dene.");
     } finally {
@@ -78,22 +91,24 @@ export function SeriesProgressReset({
       }}
     >
       {!armed ? (
-        <button
-          key="arm"
-          ref={armButton}
-          type="button"
-          disabled={!ready}
-          className={`${buttonClass} -ml-3 text-text-muted hover:bg-surface-muted hover:text-text`}
-          onClick={(event) => {
-            event.preventDefault();
-            armedAt.current = Date.now();
-            setMessage("");
-            setError("");
-            setArmed(true);
-          }}
-        >
-          İlerlemeyi sıfırla
-        </button>
+        available && (
+          <button
+            key="arm"
+            ref={armButton}
+            type="button"
+            disabled={!ready}
+            className={`${buttonClass} -ml-3 text-text-muted hover:bg-surface-muted hover:text-text`}
+            onClick={(event) => {
+              event.preventDefault();
+              armedAt.current = Date.now();
+              setMessage("");
+              setError("");
+              setArmed(true);
+            }}
+          >
+            İlerlemeyi sıfırla
+          </button>
+        )
       ) : (
         <div className="rounded-md border border-border bg-surface p-4" aria-busy={pending}>
           <p
@@ -101,8 +116,8 @@ export function SeriesProgressReset({
             className="max-w-xl text-sm leading-relaxed text-text-muted"
           >
             {label} serisindeki okundu bilgilerin ve kaldığın konumlar silinecek
-            {mode === "local" ? " (yalnızca bu tarayıcıda)" : ""}. Diğer serilerdeki ilerlemen,
-            yer imlerin ve vurguların korunacak. Bu işlem geri alınamaz.
+            {mode === "local" ? " (yalnızca bu tarayıcıda)" : ""}. Diğer serilerdeki ilerlemen, yer
+            imlerin ve vurguların korunacak. Bu işlem geri alınamaz.
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             <button
@@ -128,7 +143,12 @@ export function SeriesProgressReset({
           </div>
         </div>
       )}
-      <p role="status" className="text-xs leading-relaxed text-text-muted">
+      <p
+        ref={statusRef}
+        role="status"
+        tabIndex={-1}
+        className="text-xs leading-relaxed text-text-muted focus:outline-none"
+      >
         {message}
       </p>
       {error && (

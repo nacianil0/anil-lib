@@ -13,9 +13,11 @@ import {
 } from "@/lib/content/series-progress";
 import { ReaderDataProvider, useReaderData } from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
-import { LockButton } from "@/components/reader/lock-button";
 import { SyncStatus } from "@/components/reader/sync-status";
 import { PhaseProgress } from "@/components/series/phase-progress";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
+import { buttonPrimary, navLink } from "@/components/ui/classes";
 
 function formatDate(value: string): string {
   try {
@@ -155,39 +157,38 @@ function DashboardContent({
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
   return (
-    <div className="min-h-screen bg-bg text-text">
-      <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <div className="min-w-0">
-            <p className="font-serif text-xl font-semibold leading-tight">{UI.libraryTitle}</p>
-            <p className="mt-0.5 truncate font-sans text-2xs text-text-muted">{username}</p>
-          </div>
-          <div className="flex shrink-0 items-center gap-1">
+    <div className="flex min-h-screen flex-col bg-bg text-text">
+      <SiteHeader
+        signedIn
+        onDashboard
+        actions={
+          <>
+            <span className="hidden max-w-[10rem] truncate px-1 font-sans text-xs text-text-faint md:inline">
+              <span className="sr-only">Oturum: </span>
+              {username}
+            </span>
             {isOwner && (
-              <Link
-                href="/yonetim"
-                className="mr-1 inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:text-text"
-              >
-                <Users className="h-3.5 w-3.5" aria-hidden="true" />
+              <Link href="/yonetim" className={navLink}>
+                <Users className="h-4 w-4" aria-hidden="true" />
                 Kullanıcılar
               </Link>
             )}
             {showAccountLink && (
-              <Link
-                href="/hesap"
-                className="mr-1 inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 font-sans text-2xs text-text-muted transition-colors hover:text-text"
-              >
-                <UserRound className="h-3.5 w-3.5" aria-hidden="true" />
+              <Link href="/hesap" className={navLink}>
+                <UserRound className="h-4 w-4" aria-hidden="true" />
                 Hesabım
               </Link>
             )}
             <SyncStatus />
-            <LockButton />
-          </div>
-        </div>
-      </header>
+          </>
+        }
+      />
 
-      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
+      <main
+        id="main"
+        tabIndex={-1}
+        className="mx-auto w-full max-w-5xl flex-1 px-5 py-10 focus:outline-none sm:px-8 sm:py-14"
+      >
         {/* Until the reading record has loaded the page cannot know which chapter to
             lead with; the block keeps its place but shows nothing rather than a
             first chapter that is swapped out a moment later. */}
@@ -228,11 +229,9 @@ function DashboardContent({
                   </>
                 )}
               </p>
-              <Link
-                href={hrefFor(current)}
-                className="mt-6 inline-flex items-center rounded-md bg-accent-fill px-4 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              >
+              <Link href={hrefFor(current)} className={`mt-6 ${buttonPrimary}`}>
                 {heroAction}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </>
           ) : (
@@ -275,7 +274,9 @@ function DashboardContent({
                   </p>
                   <div className="mt-5">
                     <PhaseProgress phases={summaries} markerOrder={step?.article.readingOrder} />
-                    <div className="mt-2.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 font-sans text-xs text-text-muted">
+                    {/* Two lines on a phone in every state, so the row does not grow
+                        once the record has loaded (see the series page). */}
+                    <div className="mt-2.5 flex flex-col gap-1 font-sans text-xs text-text-muted sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
                       <p className="min-w-0">
                         {stepPhase ? (
                           <>
@@ -290,11 +291,13 @@ function DashboardContent({
                           completed === entry.articles.length ? (
                           UI.seriesDone
                         ) : (
-                          UI.articleCount(entry.articles.length)
+                          UI.phaseCount(entry.phases.length)
                         )}
                       </p>
                       <p className="tabular-nums">
-                        {ready && UI.phaseProgress(completed, entry.articles.length)}
+                        {ready
+                          ? UI.phaseProgress(completed, entry.articles.length)
+                          : UI.articleCount(entry.articles.length)}
                         {ready && inProgress > 0 && ` · ${UI.inProgressCount(inProgress)}`}
                       </p>
                     </div>
@@ -473,6 +476,8 @@ function DashboardContent({
           </div>
         )}
       </main>
+
+      <SiteFooter signedIn />
     </div>
   );
 }

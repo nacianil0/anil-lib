@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Home, Map as MapIcon } from "lucide-react";
+import { ArrowRight, Check, ChevronRight, Map as MapIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { pad, UI } from "@/lib/content/labels";
 import { readBeforeRevision } from "@/lib/content/revision";
@@ -19,8 +19,10 @@ import {
   type ReaderDataMode,
 } from "@/lib/reader-data/use-reader-data";
 import { ReaderPreferencesProvider } from "@/lib/preferences/use-reader-preferences";
-import { LockButton } from "@/components/reader/lock-button";
 import { SyncStatus } from "@/components/reader/sync-status";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
+import { buttonPrimary } from "@/components/ui/classes";
 import { PhaseProgress } from "./phase-progress";
 import { SeriesProgressReset } from "./series-progress-reset";
 import type { SeriesId } from "@/lib/reader-data/series-reset";
@@ -38,7 +40,11 @@ type Props = {
 };
 
 function LandingContent({ roadmap, articles, basePath, intro, footerNote, seriesId }: Props) {
-  const { ready, statusOf, entryOf } = useReaderData();
+  const { ready, statusOf, entryOf, data, mode, keepsLocalReading } = useReaderData();
+  const signedIn = mode === "account";
+  // Something to reset: a reading record for any chapter of this series. A visitor
+  // who has read nothing here is not offered to erase nothing.
+  const hasProgress = ready && articles.some((article) => data.progress[article.articleId]);
   const bySlug = new Map(articles.map((article) => [article.slug, article]));
   const totalPlanned = roadmap.phases.reduce((sum, phase) => sum + phase.articles.length, 0);
   const phases = outlinePhases(roadmap);
@@ -66,24 +72,19 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
   const started = ready && step?.kind !== "start";
 
   return (
-    <div className="min-h-screen bg-bg text-text">
-      <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"
-          >
-            <Home className="h-3.5 w-3.5" aria-hidden="true" />
-            Ana sayfa
-          </Link>
-          <div className="flex items-center gap-1">
-            <SyncStatus />
-            <LockButton />
-          </div>
-        </div>
-      </header>
+    <div className="flex min-h-screen flex-col bg-bg text-text">
+      <SiteHeader
+        width="narrow"
+        signedIn={signedIn}
+        returnTo={basePath}
+        actions={signedIn ? <SyncStatus /> : undefined}
+      />
 
-      <main className="mx-auto max-w-4xl px-5 py-10 sm:px-8 sm:py-14">
+      <main
+        id="main"
+        tabIndex={-1}
+        className="mx-auto w-full max-w-4xl flex-1 px-5 py-10 focus:outline-none sm:px-8 sm:py-14"
+      >
         <p className="mb-3 font-mono text-2xs uppercase tracking-[0.22em] text-accent">
           {totalPlanned} makalelik seri
         </p>
@@ -96,10 +97,7 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
 
         {continueTarget && (
           <div className={cn("mt-7", !ready && "invisible")} aria-busy={!ready}>
-            <Link
-              href={`${basePath}/${continueTarget.slug}`}
-              className="inline-flex items-center gap-2 rounded-md bg-accent-fill px-4 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
-            >
+            <Link href={`${basePath}/${continueTarget.slug}`} className={buttonPrimary}>
               {started ? UI.continueReading : UI.startSeries}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
@@ -125,7 +123,10 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
 
         <div className="mt-10 max-w-2xl border-y border-border py-4 font-sans">
           <PhaseProgress phases={summaries} markerOrder={step?.article.readingOrder} />
-          <div className="mt-2.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-xs text-text-muted">
+          {/* Two lines on a phone in every state. Before the record loads the line is
+              short and fit on one; once the phase name arrived it wrapped, and pushed
+              the whole roadmap down under the reader's eyes. */}
+          <div className="mt-2.5 flex flex-col gap-1 text-xs text-text-muted sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
             <p className="min-w-0">
               {/* Before the record loads, or once everything is read, there is no
                   current phase: say how the series is built instead of guessing one. */}
@@ -153,12 +154,19 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
           </div>
         </div>
 
-        <div className="max-w-2xl">
-          <SeriesProgressReset
-            seriesId={seriesId}
-            articleIds={articles.map((article) => article.articleId)}
-          />
-        </div>
+        {/* Without an account the reading lives in this browser alone: said in a
+            sentence where the progress is, rather than by an icon in the header. */}
+        {!signedIn && (
+          <p className="mt-3 max-w-2xl font-sans text-xs leading-relaxed text-text-muted">
+            {ready && !keepsLocalReading ? `${UI.localReadingOff}.` : UI.localReadingNote}{" "}
+            <Link
+              href="/gizlilik#yerel-okuma"
+              className="text-accent underline underline-offset-4 hover:no-underline"
+            >
+              {UI.localReadingMore}
+            </Link>
+          </p>
+        )}
 
         <section className="mt-12" aria-labelledby="yol-haritasi-baslik">
           <div className="mb-6 flex items-center gap-2">
@@ -221,8 +229,11 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
                         : 0;
                     return (
                       <li key={article.order}>
+                        {/* No prefetch: a hundred chapter links would each ask the server
+                            to render a dynamic route the moment they scroll into view. */}
                         <Link
                           href={`${basePath}/${descriptor.slug}`}
+                          prefetch={false}
                           aria-current={isStep ? "step" : undefined}
                           className={cn(
                             "group grid grid-cols-[2rem_1fr_auto] items-baseline gap-x-2.5 rounded-md py-[0.45rem] pl-1 pr-2 transition-colors hover:bg-surface-muted",
@@ -273,7 +284,9 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
                                 {UI.upNext}
                               </span>
                             )}
-                            <ArrowUpRight
+                            {/* A chevron, the sign for "opens here": the diagonal arrow
+                                reads as a link leaving the site. */}
+                            <ChevronRight
                               className="h-3.5 w-3.5 text-text-faint transition-colors group-hover:text-accent"
                               aria-hidden="true"
                             />
@@ -295,10 +308,23 @@ function LandingContent({ roadmap, articles, basePath, intro, footerNote, series
           </ol>
         </section>
 
-        <p className="mt-12 border-t border-border pt-6 font-sans text-2xs leading-relaxed text-text-faint">
-          {footerNote}
-        </p>
+        <div className="mt-12 border-t border-border pt-6">
+          <p className="max-w-2xl font-sans text-xs leading-relaxed text-text-faint">
+            {footerNote}
+          </p>
+          {/* Rare and destructive, so it waits at the end of the page — where appearing
+              once the record has loaded moves nothing the reader is looking at. */}
+          <div className="max-w-2xl">
+            <SeriesProgressReset
+              seriesId={seriesId}
+              articleIds={articles.map((article) => article.articleId)}
+              available={hasProgress}
+            />
+          </div>
+        </div>
       </main>
+
+      <SiteFooter signedIn={signedIn} width="narrow" />
     </div>
   );
 }
