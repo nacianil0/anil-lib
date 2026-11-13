@@ -17323,8 +17323,40 @@
         "md"
       ],
       "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-13T11:45:58.140Z"
+    },
+    {
+      "id": "bug-1046",
+      "timestamp": "2026-11-13T11:46:02.796Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/YOL-HARITASI.md",
+      "root_cause": "Had 'e\n    alma ve push kullanıcı kararıdır. **Sonraki",
+      "fix": "Changed to `27c435c`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
       "occurrences": 1,
-      "last_seen": "2026-11-13T11:41:04.351Z"
+      "last_seen": "2026-11-13T11:46:02.796Z"
+    },
+    {
+      "id": "bug-1047",
+      "timestamp": "2026-11-13T11:46:05.176Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had ` dalında commit edildi; main'",
+      "fix": "Changed to ` dalında commit edildi (`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-13T11:46:08.425Z"
     }
   ]
 }

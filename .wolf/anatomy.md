@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-13T11:41:07.017Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-13T11:46:10.115Z
 > Files: 16 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/
@@ -1248,9 +1248,9 @@
 
 ## docs/seri/
 
-- `BAKIM-RUN8.md` — Bakım run'ı 8 — kontrol dosyası (~2804 tok)
-- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~24857 tok)
-- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~199456 tok)
+- `BAKIM-RUN8.md` — Bakım run'ı 8 — kontrol dosyası (~2853 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~24871 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~199466 tok)
 
 ## docs/seri/ — devam
 

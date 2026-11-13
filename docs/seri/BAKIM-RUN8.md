@@ -54,7 +54,7 @@ run 7'nin betikleri `r7/` altına kopyalandı, okundu (e-posta ya da anahtar yok
 
 ## Sıradaki somut adım
 
-- Run 8 bitti; yeniden yapılacak adım yok. Değişiklikler kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi. Kullanıcı kararları: (1) dalı main'e ileri sarmak ve `origin/main`'e push etmek (push Vercel üretim dağıtımını tetikler); (2) olgu denetiminin ikinci turunun 1–40 ve 81–118'e açılması. Dış borçlar ((f), (i), (j)) takvime bağlı; NeurIPS 2026 bildiri kitabı Aralık'ta bekleniyor. Sonraki run `analyze.py`'ye cilt/sayı/sayfa karşılaştırmasını eklemeli.
+- Run 8 bitti; yeniden yapılacak adım yok. Değişiklikler kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi (`27c435c`, `5e42310`), sonra main bu dala ileri sarılıp `origin/main`'e push edildi (Vercel üretim dağıtımı). Kullanıcı kararı: olgu denetiminin ikinci turunun 1–40 ve 81–118'e açılması. Dış borçlar ((f), (i), (j)) takvime bağlı; NeurIPS 2026 bildiri kitabı Aralık'ta bekleniyor. Sonraki run `analyze.py`'ye cilt/sayı/sayfa karşılaştırmasını eklemeli.
 
 ## Günlük
 
@@ -71,3 +71,4 @@ run 7'nin betikleri `r7/` altına kopyalandı, okundu (e-posta ya da anahtar yok
 - 14:33 49 düzeltildi, hash senkronlandı, üç kapı temiz; 49 dokuz satırda render temiz; typecheck/test/build yeniden koşuldu (aynı sonuç).
 - 14:40 P5: YOL-HARITASI #308–#314, HANDOFF, cerebrum, buglog, memory. Run 8 kapandı; commit, push, deploy yapılmadı.
 - Kullanıcı commit istedi: main'de doğrudan commit yerine `seri/bakim-run-8` dalı açıldı (repo düzeni: dal → main'e ileri sarma); iki commit — içerik + belgeler (run 7'nin `c70a1c1` düzeni), OpenWolf kayıtları. Push yapılmadı.
+- Kullanıcı "Merge and push" dedi: `origin/main` hâlâ `b1a6f7e`'ydi (fetch ile doğrulandı); kayıtlar güncellendi, main dala ileri sarıldı ve `origin/main`'e push edildi; birleşen dal silindi.

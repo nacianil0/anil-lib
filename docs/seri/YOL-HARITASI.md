@@ -6311,8 +6311,8 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     gizli panoda `requestAnimationFrame` duruyor — başsız Playwright'ta (`regions8.mjs`) 375 px'te taşan tablo `tabindex=0`,
     `role=region`, "Tablo, yana kaydırılır" ile işaretli, 1440 px'te taşmıyor ve işaretsiz: kusur yok. Düzeltmeden sonra 49
     üç genişlik × üç temada yeniden ölçüldü: 9 satır temiz, yeni künye ve DOI bağlantısı sayfada. SVG'ye dokunulmadı.
-    Geliştirme sunucusu durduruldu. Run sonunda kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi; main'e
-    alma ve push kullanıcı kararıdır. **Sonraki bağlayıcı karar numarası #315'tir.**
+    Geliştirme sunucusu durduruldu. Run sonunda kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi (`27c435c`,
+    `5e42310`), main bu dala ileri sarılıp `origin/main`'e push edildi. **Sonraki bağlayıcı karar numarası #315'tir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 

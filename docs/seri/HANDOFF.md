@@ -345,7 +345,8 @@ Ayrıntı YOL-HARITASI #308–#314'te.
   (55 dosya), `pnpm build` exit 0 (197 sayfa, `/seri/[slug]` 118) — düzeltmeden önce ve sonra. UX turu okuyucuyu değiştirdiği
   için duman testi: 6 sayfa × 3 genişlik × 3 tema, 54 satır temiz; 62'nin taşan tablosu kendi kabında ve klavyeyle
   kaydırılabilir bölge olarak işaretli (başsız Playwright'ta); düzeltilen 49 dokuz satırda temiz. Revizyon işareti yok. Run
-  sonunda kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi; main'e alma ve push kullanıcı kararıdır.
+  sonunda kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi (`27c435c`, `5e42310`), main'e ileri sarılıp push
+  edildi.
 
 ## Açık borçlar
 
@@ -931,8 +932,8 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
   edildi. Bakım run'ı 4'ün değişiklikleri kullanıcı tarafından `0854021`'de commit edildi. Bakım run'ı 5–6'nın değişiklikleri
   `5d8d837`'de, run 7'ninkiler `c70a1c1`'de commit edildi. **Bakım run'ı 8'in değişiklikleri** (49'un künyesi ve hash'i,
   `catalog.json`, HANDOFF, YOL-HARITASI, `BAKIM-RUN8.md`, `.wolf/*`) kullanıcının isteğiyle `seri/bakim-run-8` dalında iki
-  commit'e alındı (içerik + belgeler; OpenWolf kayıtları); **main'e alınmadı, push yapılmadı** — main'e ileri sarma ve push
-  kullanıcı kararıdır (push Vercel üretim dağıtımını tetikler). SVG'ye dokunulmadı. Run 8 kapıları ana
+  commit'e alındı (`27c435c` içerik + belgeler; `5e42310` OpenWolf kayıtları), sonra kullanıcının isteğiyle main bu dala
+  ileri sarılıp `origin/main`'e push edildi (push Vercel üretim dağıtımını tetikler). SVG'ye dokunulmadı. Run 8 kapıları ana
   ağaçta koştu (bu projenin geliştirme sunucusu ve paralel oturumu yoktu); `.claude/launch.json`'daki `anil-lib-reader`
   girdisi değiştirilmeden kullanıldı. `.wolf/*`'taki değişiklikler oturumların kendi kayıtlarıdır. Commit/push kullanıcı
   kararıdır (SOZLESME kapsamı dışı).
@@ -945,7 +946,7 @@ için ağ hiç boşalmıyor; `domcontentloaded` + sabit bekleme kullan.
   205 hakemsiz çalışma yedi kanalda (yeni hakemli kalem yok), 336 DOI Crossref'te (yeni düzeltme ilişkisi yok; cilt/sayı
   karşılaştırması 49'daki ACM künyesini düzeltti), 1.307 bağlantı (ölü bağlantı yok). (f), (i), (j) değişmedi. Kapılar ve
   duman testi temiz. Kararlar #308–#314; sonraki numara **#315**. Kullanıcının isteğiyle `seri/bakim-run-8` dalında commit
-  edildi; push yapılmadı.
+  edildi, main'e ileri sarılıp push edildi.
 - **Bakım run'ı 7 (2026-11-03):** TRIGGER bakım kipinde yedinci kez çalıştı; makale üretilmedi. Kullanıcı tek run istedi:
   ilk turda tam denetlenmeyen on makale (41, 43–47, 61, 63, 68, 76; 32 düzenleme, 43'e revizyon işareti) ve 41–80'in riskli
   noktalarına kaynak temelli ikinci denetim (S1–S5; 8 düzenleme) ana oturumda, `docs/seri/BAKIM-RUN7.md` ile. Run 6'nın

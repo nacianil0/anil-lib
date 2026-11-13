@@ -8307,3 +8307,10 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 14:41 | Edited docs/seri/BAKIM-RUN8.md | "in değişikliklerini (49" → "seri/bakim-run-8" | ~66 |
 | 14:41 | Edited docs/seri/BAKIM-RUN8.md | 1→2 lines | ~92 |
 | 14:41 | Kullanıcı commit istedi: main yerine seri/bakim-run-8 dalı açıldı; iki commit (seri bakım run'ı 8: içerik + belgeler; OpenWolf kayıtları); push yok (üretim dağıtımını tetikler, kullanıcı kararı) | git | tamam | ~3k |
+| 14:45 | Edited docs/seri/BAKIM-RUN8.md | inline fix | ~83 |
+| 14:46 | Edited docs/seri/BAKIM-RUN8.md | 1→2 lines | ~77 |
+| 14:46 | Edited docs/seri/YOL-HARITASI.md | 2→2 lines | ~65 |
+| 14:46 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~69 |
+| 14:46 | Edited docs/seri/HANDOFF.md | 3→3 lines | ~94 |
+| 14:46 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~45 |
+| 14:46 | Kullanıcı 'Merge and push': origin/main hâlâ b1a6f7e (fetch); kayıtlar main/push durumuna güncellendi; main seri/bakim-run-8'e ileri sarılıp origin/main'e push ediliyor (Vercel üretim dağıtımı); birleşen dal silinecek | git, docs/seri | tamam | ~3k |
