@@ -8251,3 +8251,5 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 12:22 | Edited tests/e2e/navigation.spec.ts | modified escape() | ~394 |
 | 12:27 | UX turu: 6 commit (site kabuğu, seri/panel, okuyucu, tipografi, e2e, erişilebilirlik); e2e 113+1 geçti (2 DB-bağımlı test PGlite ile 4/4), erişim matrisi 9/9, axe 56 satır 12→0 bulgu, /seri CLS 0.0606→0.0010, makale RSC prefetch 18-31→5 | src/components/site, reader, series, dashboard | doğrulama sürüyor | ~120k |
 | 12:35 | Created artifacts/ux-premium-2026-11-13/OKU-BENI.md | — | ~293 |
+| 12:37 | Oturum özeti: UX premium turu main'e ileri sarma ile push edildi (bd67227..95716df, 7 commit); Vercel dağıtımı success, canlıda /seri başlığı, 404, giriş 'Parola' ve makale sonu bloğu doğrulandı; geçici dal ve worktree silindi; kanıt artifacts/ux-premium-2026-11-13 | main | tamam | ~150k |
+| 12:38 | Kullanıcı düzeltmesi: görev bitince main'e push = .wolf kayıtları dahil hiçbir satır commit'siz kalmaz; cerebrum'a tercih + Do-Not-Repeat yazıldı, kalan kayıtlar commit'lenip main'e push ediliyor | .wolf/cerebrum.md, .wolf/memory.md | tamam | ~3k |

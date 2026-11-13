@@ -6,6 +6,8 @@
 
 ## User Preferences
 
+- [2026-11-13] Kullanıcı UX turunun sonunda "görev tamamlandığında main'e pushlaman lazım" diye düzeltti: kod commit'leri push edilmişti ama `.wolf/memory.md`'deki oturum özeti satırı commit'siz kalmıştı. "Main'e push" çalışma ağacında hiçbir kayıt bırakmamak demektir: oturum özeti, cerebrum/buglog/anatomy güncellemeleri son commit'ten ÖNCE yazılır, hepsi commit'lenip `origin/main`'e push edilir ve rapor `git status` temizken verilir.
+
 - [2026-11-13] UX premium modernizasyonu: kullanıcı InteriaPrice'ın sadelik, işlevin kolay keşfi, az adım ve tutarlılık anlayışını kopyalamadan Anıl Lib'e uyarlamayı istedi (Apple HIG, NN/g, WCAG 2.2 AA, Core Web Vitals referans). Analiz → önce/sonra kanıtı → uygulama → test/build → dalda commit → doğrulama tamamsa main'e push bekleniyor; ayrıca deploy istenmedi (main'e push Vercel üretimini tetikler, raporda söylenir).
 
 - [2026-11-10] Okuyucunun sidebar'ı (okuma listesi rayı) Portal Dashboard sidebar'ına benzemeli: görünür kaydırma çubuğu YOK (native kaydırma, gizli çubuk), Portal'ın boşluk/kenarlık dili (gömük zemin + sağ kenar çizgisi, header'la hizalı kimlik bandı, 14px yatay dolgu, 10.5px büyük harf bölüm başlıkları, düz satırlar, etkin satırda vurgu tonu + solda 2px vurgu çizgisi). Header'da bölüm içi okuma ilerleme çubuğu istenmiyor (kaldırıldı). İlk turda sidebar'a görünür çubuk vermiştim; kullanıcı düzeltti.
@@ -707,6 +709,8 @@ ode_modules`, sonra kopyayi sil.
 - [2026-11-03] Zamanlama yarışını yeniden üretme: 16 çekirdekte 15 meşgul `worker_threads` döngüsü (`while (Date.now() < bitiş)`) + `playwright test -g <test> --repeat-each=10 --reporter=line`; yükü `os.cpus()` örnekleyerek kanıtla (%95–100). Yüksüz tek koşu yarışı göstermedi; yük altında eski kod 10'da 5 düştü. e2e webServer `next dev` (port 3100) ve `reuseExistingServer` açık: koşudan önce portun boş olduğunu kontrol et, yoksa eski kodu sınarsın.
 
 ## Do-Not-Repeat
+
+- [2026-11-13] Oturum özetini `.wolf/memory.md`'ye son push'tan SONRA yazıp raporda "yalnız otomatik satır commit'siz kaldı" deme. Sıra: kayıtlar → commit → push → `git status` temiz doğrulaması → rapor.
 
 - [2026-11-13] `scrollable-region-focusable` için her `pre`/tabloya körlemesine `tabindex=0` verme: sığan bloklar da Tab durağı olur (kodlu bir makalede 46 fazladan durak). Yalnız taşanı işaretle, sığınca geri al; sayfalı düzende o bölgenin ok tuşlarını sayfalayıcıdan koru.
 
