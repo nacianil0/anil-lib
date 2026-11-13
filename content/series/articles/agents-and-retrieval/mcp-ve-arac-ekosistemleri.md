@@ -12,7 +12,7 @@ tags:
   - arac-ekosistemi
   - arac-getirme
   - arac-zehirleme
-content_hash: sha256:ade11d5a027e716d18ca652a37b9bcc42b5c0c3a316d1a2a6d50192122b54035
+content_hash: sha256:04cc6148abc8d1e5648cfc2ae84047436903a02fe407cd77494c25cc93dc1950
 classification_version: 1
 classification_batch: 11
 ---
@@ -108,7 +108,7 @@ Bu makalede araçlar dünyaya bağlanıyordu; peki dünyadan gelen şey ne kadar
 
 - Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., Zeng, Z., Zhou, X., Huang, Y., Xiao, C., Han, C., Fung, Y. R., Su, Y., Wang, H., Qian, C., Tian, R., Zhu, K., Liang, S., Shen, X., Xu, B., Zhang, Z., Ye, Y., Li, B., Tang, Z., Yi, J., Zhu, Y., Dai, Z., Yan, L., Cong, X., Lu, Y., Zhao, W., Huang, Y., Yan, J., Han, X., Sun, X., Li, D., Phang, J., Yang, C., Wu, T., Ji, H., Li, G., Liu, Z. & Sun, M. (2025). *Tool Learning with Foundation Models*. ACM Computing Surveys 57(4), s. 1–40. [Bağlantı](https://doi.org/10.1145/3704435)
 - Model Context Protocol (2026). *Specification, revision 2026-07-28* ve *The MCP Registry*. Resmî belirtim ve belgelendirme. [Bağlantı](https://modelcontextprotocol.io/specification/2026-07-28)
-- Hou, X., Zhao, Y., Wang, S. & Wang, H. (2026). *Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions*. ACM Transactions on Software Engineering and Methodology, makale 3796519. [Bağlantı](https://doi.org/10.1145/3796519)
+- Hou, X., Zhao, Y., Wang, S. & Wang, H. (2026). *Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions*. ACM Transactions on Software Engineering and Methodology 35(10), s. 1–37. [Bağlantı](https://doi.org/10.1145/3796519)
 - Guo, Z., Cheng, S., Wang, H., Liang, S., Qin, Y., Li, P., Liu, Z., Sun, M. & Liu, Y. (2024). *StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models*. Findings of ACL 2024, s. 11143–11156. [Bağlantı](https://aclanthology.org/2024.findings-acl.664/)
 - Shen, Y., Song, K., Tan, X., Li, D., Lu, W. & Zhuang, Y. (2023). *HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face*. NeurIPS 2023. [Bağlantı](https://papers.nips.cc/paper_files/paper/2023/hash/77c33e6a367922d003ff102ffb92b658-Abstract-Conference.html)
 - Cai, T., Wang, X., Ma, T., Chen, X. & Zhou, D. (2024). *Large Language Models as Tool Makers*. ICLR 2024. [Bağlantı](https://openreview.net/forum?id=qV83K9d5WB)

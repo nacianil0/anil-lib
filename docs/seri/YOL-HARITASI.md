@@ -6234,6 +6234,85 @@ Yayımlanmış makalelerde verilmiş, gelecekteki makalelerin çelişemeyeceği 
     119'unda eşit, 94'ünde ayrışmış, 133'ünde yok (bilgi notu, okura yansımıyor). Sunucu durduruldu, junction `cmd rmdir`
     ile kaldırıldı (ana `node_modules` sağlam), izole kopya silindi, `launch.json` HEAD hâline döndü. Commit yapılmadı.
     **Sonraki bağlayıcı karar numarası #308'dir.**
+308. **Bakım run'ı 8 (2026-11-13): kapsam ve süreç.** Kullanıcı yalnız `docs/seri/TRIGGER.md`'yi çalıştırdı; ek talimat
+    yok. Run 7 `c70a1c1`'de commit edilmişti; ondan sonra main'e public lansman (`800e148`) ve UX premium turu
+    (`bd67227..b1a6f7e`) girdi, seri içeriğine dokunulmadı. Çalışma ağacında yalnız oturum kancasının `.wolf/*` satırları
+    vardı; bu projeye ait çalışan geliştirme sunucusu ya da paralel oturum yoktu (3200/3300 portları başka projenin). Kapsam
+    TRIGGER'ın dört işi: borçlar, SOZLESME §4'ün durum kontrolü (12 aydan eski hakemsiz kaynaklar + bütün DOI'lerde Crossref
+    `updated-by` + bağlantı hedefleri), bulunursa §5/§12 düzeltmesi, kapılar. **Olgu denetimi açılmadı:** ikinci turun 1–40 ve
+    81–118'e açılması kullanıcı kararıdır. Ultracode yoktu; workflow ve yardımcı ajan kullanılmadı. Run `docs/seri/BAKIM-RUN8.md`
+    kontrol dosyasıyla taşındı; run 7'nin betikleri oturum scratchpad'ine kopyalanıp okundu (e-posta, anahtar yok) ve yolları
+    güncellendi. GitHub deposunda okur bildirimi yok (açık issue 0).
+309. **Borçlar (bakım run'ı 8).** 2026-11-13 12:45'te: (f) `papers.nips.cc/paper_files/paper/2026` 404, kök dizin 2025'te
+    bitiyor; neurips.cc'nin poster, Downloads/2026 ve Conferences/2026 sayfaları gün boyu 500 verdi (yerleşik tarayıcıda da —
+    site çapında kesinti), statik JSON dökümü çalıştı: 9.276 kayıt ve **Persona Vectors dökümde yeniden var** (`decision`
+    "Accept (poster)", `sourceurl` NeurIPS.cc/2026/Conference) — run 3'ün "döküm eksik" gözlemi kalıcı değilmiş; kabul kanıtı
+    `decision` + `sourceurl` alanlarıdır. (i) TMLR'nin kendi listesi 5.090 makale (run 7'de 5.053), Min-p eleştirisi yok;
+    OpenReview API'si 403, forum "Verifying your browser". Min-p dökümde de var, ama `decision`, `sourceurl`, `sourceid` ve
+    `paper_url` alanları boş bir poster (Sydney oturumu) — run 3'ün "MLRC listelemesi yayın değildir" kararı geçerli. (j)
+    NeuronInfer'in Crossref kaydında cilt/sayı yok (s. 1–14; kayıt 2026-11-02, dizin 2026-11-10). Üçü değişmedi, künyelere
+    dokunulmadı.
+310. **Ön baskı durumu (bakım run'ı 8, SOZLESME §4 birinci katman).** `bib.py` 1.508 künye (118 makale), `scope5.py` 205
+    hakemsiz/ön baskı çalışması (170'i 2025-11-13'ten eski; beşi yılsız web kaynağı — ders notu, deneme, soru-cevap — ve
+    başlıksız ayrıştı; run 7'ye göre tek yeni satır 55'teki SWE-Bench+, AIware 2026 — hakemli, "arXiv:" ibaresi yüzünden
+    listede). Kanallar: TMLR listesi (5.090) → yeni kalem yok (tek gerçek eşleşme künyede zaten TMLR olan FMTI 2025); ACL
+    Anthology toplu bib'i (2026-11-11 üretimi, 139.388 kayıt) → yok; PMLR v300–350 (9.507 bildiri, run 5'ten sonra eklenen
+    ciltler dâhil) → yok (Morris zaten ICML 2026); NeurIPS 2026 JSON dökümü → yok; Semantic Scholar `paper/batch` (143 arXiv
+    kimliği) → yalnız zaten hakemli kalemler ya da yeniden yayım (64 Deliberative Alignment için 10.70777 "Robotics" dergisi,
+    #277; 68 için SSRN); arXiv export API (202 kimlik) `journal_ref`/`comment` → yeni mecra bilgisi yok. OpenAlex (yoklama 200)
+    200 başlıklı çalışmanın 99'unu yanıtladı, sonra anonim günlük bütçe bitti (üç 429, durdu); üç ipucu künyede zaten doğru
+    (98 Lipton–Steinhardt ACM Queue "hakemli değil", 81 ACCV 2024 LNCS, 5 NeurIPS 2020). **Kalan 101 çalışma aynı run'da
+    Crossref bibliyografik aramayla tarandı** (101/101 yanıt): yedi eşleşmenin yedisi künyede zaten doğru (10, 17, 65 Kalai ve
+    ark. Nature 653; 84 Emu3 Nature 650; 75 Gated SAE NeurIPS 2024; 79 PromptRobust LAMPS '24; 55 SWE-Bench+ AIware 2026; 88
+    NeuronInfer; 10'daki Thinking Machines yazısının kendi DOI'si 10.64434/tml.20250910 bir blog yayınının — künye "hakemli
+    değildir" diyor). **Yeni hakemli kalem yok.**
+311. **Crossref (bakım run'ı 8, ikinci katman): 336 DOI'nin tamamı.** Hepsi kayıtlı (Crossref'te olmayan DOI yok). Sekiz
+    düzeltme ilişkisinin sekizi de önceki run'larda işlendi (Ioannidis 2022, Shumailov 2025, H-ARC 2025, Armstrong–Sotala
+    2014, A-Lab 2026-01, Salvi 2026-09-03, Costello endişe notu 2026-06-11 — Crossref başlığı artık "RESCINDED: Editorial
+    Expression of Concern", 68'in künyesi notun geri alındığını zaten söylüyor — ve Costello düzeltmesi 2026-10-22);
+    2026-11-02'den sonra yeni `updated-by` yok. Önceki taramayla (run 5) alan alan karşılaştırma: yalnız üstveri eklentileri
+    (üç kitap bölümü DOI'sine `is-part-of`, Ioannidis'e şekil DOI'leri). Başlık, yazar ve yıl farkları bilinen biçim
+    kararları (kurumsal yazar: DeepSeek-AI, Phan/CAIS, Emu3 Ekibi, OpenAI: Andrychowicz, NIST; 68'in satırındaki notlar).
+    **Bu run'da eklenen denetim — Crossref cilt/sayı/sayfa ↔ künye:** 29 satırda Crossref'in cilt ya da sayfası künyede yok;
+    28'i serinin izin verdiği kısa biçim (mecra adı cilt/sayfasız: LeCun 2015 "Nature.", Belkin "PNAS." gibi) ya da makale
+    içi sayfalama; **biri gerçek: #312.** `analyze.py` run 3'ten beri yalnız başlık, yazar ve yıla bakıyordu.
+312. **Künye düzeltmesi — 49'da Hou ve ark. (bakım run'ı 8, §4).** MCP taraması 2026-09-04'te "ACM Transactions on Software
+    Engineering and Methodology, makale 3796519" diye girmişti: 3796519 makale numarası değil DOI'nin sonekiydi ve çalışma o
+    sırada cilt almamıştı. Crossref kaydı 2026-09-16'dan beri cilt 35, sayı 10 (Ekim 2026), s. 1–37 veriyor (yazarlar ve
+    başlık aynı; ACM DL betiğe 403, tarayıcıda Cloudflare doğrulama kutusu — doldurulmadı, ACM makale numarası Crossref'te
+    yok). Künye "ACM Transactions on Software Engineering and Methodology 35(10), s. 1–37." oldu — aynı kaynakçadaki Qin ve
+    ark.'nın ACM Computing Surveys 57(4), s. 1–40 biçimiyle. Gövdedeki "ACM Transactions on Software Engineering and
+    Methodology'de 2026'da yayımlanan çalışması" doğru, dokunulmadı. Tek künye düzeltmesi: revizyon işareti yok (§12); hash
+    hemen senkronlandı.
+313. **Bağlantı hedefleri (bakım run'ı 8, üçüncü katman).** `lc8.py` serinin 1.307 benzersiz bağlantısını tek tek istedi
+    (host başına sıralı, 0,6 sn arayla; aynı anda en çok sekiz host). 313 `doi.org` bağlantısı #311'in Crossref kaydına
+    bırakıldı. 202 arXiv kimliğinin 202'si export API'de var ve başlıklar künyeyle tutuyor (tek "fark" 77'deki `AtP\*`
+    kaçışının ayrıştırıcı kalıntısı). Öteki 792 bağlantıdan 38'i 2xx/3xx dışıydı ya da şüpheliydi; hepsi okundu, **ölü
+    bağlantı yok**: ACM (11), OUP, PNAS, Taylor & Francis, AIP, MIT Press (2), Stack Exchange, EUR-Lex (2, 202), DBLP (bot
+    sayfası) bilinen yayıncı ve bot duvarları; openai.com (4, 403) ve leginfo SB 53 (403) Wayback CDX'te Ekim–Kasım 2026'da
+    200 kopya veriyor; Anthropic'in dört bağlantısı ilk istekte zaman aşımı, yeniden denemede 200 (`docs.anthropic.com` →
+    `platform.claude.com` yönlendirmesi çalışıyor, bağlantı değiştirilmedi); UMBC'deki Turing PDF'i yalnız Python'un sertifika
+    deposunda hata veriyor (curl 200); American Scientist'in 503'ü otomatik bir JS denetimi — yerleşik tarayıcıda makale
+    açıldı (Claude in Chrome bağlı değildi); Gallica Cloudflare "insan mısın" kutusu gösterdi (doldurulmadı; Wayback'te
+    Şubat–Nisan 2026'da 200); neurips.cc'nin Checklist rehberi bugünkü site kesintisinde 500 (2026-11-01 kopyası 200); dört
+    "yumuşak 404" ölçer yanlış alarmıydı (başlığında "Error" geçen iki ACL ve bir NeurIPS D&B sayfası, Nature'ın çerez
+    yönlendirmesi). Bağlantı değişmedi.
+314. **Kapılar, render ve revizyon (bakım run'ı 8).** **§12:** revizyon işareti yok — tek değişiklik #312'nin künye
+    düzeltmesi. `sync-series-hashes --write` düzeltmeden hemen sonra; `check-series-content --warnings` (118 makale) ve
+    `check-series-svg` (346 diyagram) düzeltmeden önce ve sonra temiz; özet ↔ katalog 0 fark (`syncsummary.cjs`). Bu projeye
+    ait geliştirme sunucusu olmadığı için kapılar ana ağaçta koştu: `pnpm typecheck` 0, 963/963 test (55 dosya; run 7'de
+    841/43 — fark lansman ve UX turunun testleri), `pnpm build` exit 0 (197 statik sayfa, `/seri/[slug]` 118 yol);
+    düzeltmeden sonra üçü yeniden koşuldu, aynı sonuç (typecheck 0, 963/963, build 0, 197 sayfa). **Render:** aynı gün UX turu okuyucuyu değiştirdiği için serinin kendi
+    öğeleri duman testiyle yeniden ölçüldü — 1, 43, 62, 68, 110, 118 × üç genişlik × üç tema (`next dev`, port 3000,
+    `measure8.mjs`): 54 satırın hepsi 200; yatay kaydırma, şekil taşması, `undefined`/`NaN`, konsol hatası yok; 43, 62, 68'in
+    revizyon satırları doğru notla görünüyor, 118 "Bu serinin bir sonraki makalesi yok." ile bitiyor, üç temanın arka planı
+    ayrışıyor. Üç uyarı 62'nin 375 px'teki tablosu: 23 hücrenin hepsi kendi `.table-scroll` kabında, sayfa `scrollWidth` 375 —
+    yanlış alarm. Yerleşik tarayıcı panosu gizliyken bu tablo "klavyeyle kaydırılabilir bölge" diye işaretlenmemiş göründü;
+    gizli panoda `requestAnimationFrame` duruyor — başsız Playwright'ta (`regions8.mjs`) 375 px'te taşan tablo `tabindex=0`,
+    `role=region`, "Tablo, yana kaydırılır" ile işaretli, 1440 px'te taşmıyor ve işaretsiz: kusur yok. Düzeltmeden sonra 49
+    üç genişlik × üç temada yeniden ölçüldü: 9 satır temiz, yeni künye ve DOI bağlantısı sayfada. SVG'ye dokunulmadı.
+    Geliştirme sunucusu durduruldu. Run sonunda kullanıcının isteğiyle `seri/bakim-run-8` dalında commit edildi; main'e
+    alma ve push kullanıcı kararıdır. **Sonraki bağlayıcı karar numarası #315'tir.**
 
 ## Batch 28 öğrenme notları (yazım tamamlandı — seri kapandı)
 
