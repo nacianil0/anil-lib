@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-13T09:35:26.828Z
-> Files: 1 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-13T11:41:07.017Z
+> Files: 16 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/77e06880bb6399e5/1dc4b465-f7a1-4d6e-9080-2c163e8e71f5/scratchpad/review/
 
@@ -140,6 +140,21 @@
 
 ## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/608cef14-2446-4d4b-9b35-c18865b94cee/scratchpad/
 
+
+## ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/
+
+- `buglog8.py` — Append run 8's bug entries to .wolf/buglog.json. Round-trip checked; keeps the file's newline style. (~1056 tok)
+- `crb8.py` — Run 8: Crossref bibliographic search for the not-peer-reviewed works OpenAlex did not answer (oa8.js (~664 tok)
+- `debts8.py` — Run 8 / P1: retry open debts (f) Persona Vectors @ NeurIPS 2026 proceedings, (i) Min-p critique @ TM (~812 tok)
+- `handoff8_section.md` — Bakım run'ı 8 (2026-11-13) — kararlar #308–#313 (~563 tok)
+- `lc8.py` — /*.md", recursive=True)): (~1913 tok)
+- `lc8report.py` — Summarise lc8.jsonl: every row that is not a plain 2xx/3xx (or is a soft 404), grouped by host, plus (~866 tok)
+- `memrow8.txt` (~347 tok)
+- `oa8.py` — Run 8: OpenAlex title search for every not-peer-reviewed work (older-than-12-months first). Anonymou (~723 tok)
+- `regions8.mjs` — Run 8: are overflowing tables/code blocks on series pages marked as keyboard-scrollable regions? (~416 tok)
+- `s2_8.py` — Run 8: Semantic Scholar paper/batch for the arXiv ids of not-peer-reviewed works (first-pass filter (~778 tok)
+- `spec8.json` (~185 tok)
+- `yh8_draft.md` (~1600 tok)
 
 ## ../anil-lib-bakim3-render/bakim3-render/
 
@@ -644,7 +659,6 @@
 
 ## artifacts/ux-premium-2026-11-13/
 
-- `OKU-BENI.md` — UX premium turu — kanıtlar (2026-11-13) (~274 tok)
 
 ## artifacts/ux-render/
 
@@ -873,6 +887,7 @@
 
 ## content/series/articles/agents-and-retrieval/
 
+- `mcp-ve-arac-ekosistemleri.md` — Çarpım problemi (~5354 tok)
 
 ## content/series/articles/case-studies/
 
@@ -1233,6 +1248,9 @@
 
 ## docs/seri/
 
+- `BAKIM-RUN8.md` — Bakım run'ı 8 — kontrol dosyası (~2804 tok)
+- `HANDOFF.md` — "Sıfırdan Yüze: Yapay Zekâ" — Handoff (~24857 tok)
+- `YOL-HARITASI.md` — "Sıfırdan Yüze: Yapay Zekâ" — Yol Haritası ve Kalıcı Öğrenme Defteri (~199456 tok)
 
 ## docs/seri/ — devam
 

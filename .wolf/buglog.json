@@ -17161,6 +17161,170 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-11-13T09:22:46.737Z"
+    },
+    {
+      "id": "bug-1036",
+      "timestamp": "2026-11-13T11:16:32.255Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/BAKIM-RUN8.md",
+      "root_cause": "Had `updated-by`",
+      "fix": "Changed to `lc8.py`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:16:32.255Z"
+    },
+    {
+      "id": "bug-1037",
+      "timestamp": "2026-11-13T11:35:35.987Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "Had 'i; bakım run'",
+      "fix": "Changed to 'yi; bakım run'",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-13T11:35:37.703Z"
+    },
+    {
+      "id": "bug-1038",
+      "timestamp": "2026-11-13T11:36:11.806Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/HANDOFF.md",
+      "root_cause": "4 lines replaced/restructured",
+      "fix": "Rewrote 5→7 lines (4 removed) | Also: edildi. Bakım run'ı 4'ün değişiklikleri kullanıcı ; (9 makale, `catalog.json`, HANDOFF, YOL-HARITASI) ",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-11-13T11:37:15.233Z"
+    },
+    {
+      "id": "bug-1039",
+      "timestamp": "2026-11-13T11:38:08.562Z",
+      "error_message": "Significant refactor of ",
+      "file": "docs/seri/BAKIM-RUN8.md",
+      "root_cause": "7 lines replaced/restructured",
+      "fix": "Rewrote 18→29 lines (7 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:38:08.562Z"
+    },
+    {
+      "id": "bug-1040",
+      "timestamp": "2026-11-13T11:40:00Z",
+      "error_message": "lc8report.py: TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'",
+      "file": "scratchpad/lc8report.py",
+      "root_cause": "`ok = lambda r: r['code'] and ...` bağlantı hatasında (code None) None döndürdü; sum() None'ı toplayamadı",
+      "fix": "Lambda bool(...) ile sarıldı; rapor 994 satırı (956 ok) verdi",
+      "tags": [
+        "arac",
+        "python",
+        "bakim-run-8"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:40:00Z"
+    },
+    {
+      "id": "bug-1041",
+      "timestamp": "2026-11-13T11:40:00Z",
+      "error_message": "Bağlantı taraması dört gerçek sayfayı 'yumuşak 404' saydı: ACL 2024.acl-long.409 (Trial and Error), 2025.acl-long.50 (ProcessBench: … Process Errors), NeurIPS D&B 2021 (Pervasive Label Errors), Nature 323533a0 (çerez yönlendirmesi)",
+      "file": "scratchpad/lc8.py",
+      "root_cause": "Yumuşak 404 düzenli ifadesi 'error' içeriyordu ve başlığında Error(s) geçen sayfaları yakaladı; Nature çerez yönlendirmesi '?error=cookies_not_supported' ekliyor",
+      "fix": "Dördü elle okundu, başlıklar künyeyle aynı; kural: yalnız 404|not found|page not found|does not exist ve köke yönlendirme",
+      "tags": [
+        "arac",
+        "baglanti",
+        "yanlis-alarm",
+        "bakim-run-8"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:40:00Z"
+    },
+    {
+      "id": "bug-1042",
+      "timestamp": "2026-11-13T11:40:00Z",
+      "error_message": "62'nin 375 px'te taşan tablosu yerleşik tarayıcıda 'klavyeyle kaydırılabilir bölge' olarak işaretsiz göründü (tabindex/role/aria-label yok)",
+      "file": "src/components/reader/scroll-regions.tsx",
+      "root_cause": "Tarayıcı panosu gizliydi; gizli sayfada requestAnimationFrame durur ve ScrollRegions'ın güncellemesi hiç koşmaz — kusur değil ölçüm koşulu",
+      "fix": "Başsız Playwright'ta (regions8.mjs) ölçüldü: 375 px'te tablo tabindex=0, role=region, 'Tablo, yana kaydırılır'; 1440 px'te taşmıyor ve işaretsiz. Koda dokunulmadı",
+      "tags": [
+        "olcum",
+        "yanlis-alarm",
+        "erisilebilirlik",
+        "tarayici-panosu",
+        "bakim-run-8"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:40:00Z"
+    },
+    {
+      "id": "bug-1043",
+      "timestamp": "2026-11-13T11:40:00Z",
+      "error_message": "Crossref updated-by taramasını 'bugün çok yavaş (DOI başına ~15 sn)' diye kontrol dosyasına yazdım; tarama aslında 14:06'da başlamıştı ve normal hızdaydı (~4 sn/DOI)",
+      "file": "docs/seri/BAKIM-RUN8.md",
+      "root_cause": "Geçen süreyi oturumun anlatısından tahmin ettim; arka plan işinin başlangıç zamanına bakmadım",
+      "fix": "Süreç CreationDate'i (Win32_Process) ve görev çıktısının zamanı okundu; kontrol dosyasındaki ifade düzeltildi",
+      "tags": [
+        "surec",
+        "zamanlama",
+        "bakim-run-8"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:40:00Z"
+    },
+    {
+      "id": "bug-1044",
+      "timestamp": "2026-11-13T11:40:00Z",
+      "error_message": "UMBC'deki Turing PDF'i (1) Python urllib'de CERTIFICATE_VERIFY_FAILED verdi",
+      "file": "scratchpad/lc8.py",
+      "root_cause": "Sunucu ara sertifikayı göndermiyor; Python'un deposu tamamlayamıyor, curl ve tarayıcılar tamamlıyor",
+      "fix": "curl 200 (ssl_verify_result 0) — ölü bağlantı değil; bağlantı değişmedi",
+      "tags": [
+        "arac",
+        "tls",
+        "yanlis-alarm",
+        "bakim-run-8"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:40:00Z"
+    },
+    {
+      "id": "bug-1045",
+      "timestamp": "2026-11-13T11:41:04.351Z",
+      "error_message": "Incorrect value in code",
+      "file": "docs/seri/BAKIM-RUN8.md",
+      "root_cause": "Had 'in değişikliklerini (49'",
+      "fix": "Changed to `seri/bakim-run-8`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "md"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-13T11:41:04.351Z"
     }
   ]
 }

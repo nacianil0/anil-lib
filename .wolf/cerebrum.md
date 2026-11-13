@@ -40,6 +40,24 @@
 
 ## Key Learnings
 
+- [2026-11-13] **AI bakım run'ı 8 — yalnız durum taraması:** TRIGGER'dan başka talimat yokken run olgu denetimi açmadı;
+  §4'ün üç katmanını (kabul listeleri, bütün DOI'lerde Crossref `updated-by`, bütün bağlantılar) yeniledi, borçları denedi,
+  kapıları koştu — ana oturumda, ajansız, `docs/seri/BAKIM-RUN8.md` ile. Farklı hostlardaki taramalar (bağlantı, OpenAlex,
+  Semantic Scholar, kabul listeleri) arka planda paralel koşabiliyor; Crossref'in iki taraması sıralı:
+  `until grep -q 'CR SWEEP EXIT' cr_sweep.log; do sleep 5; done; python crb8.py`. Betikler `lc8.py` (host başına sıralı bağlantı
+  taraması + arXiv export API), `oa8.py`, `crb8.py`, `s2_8.py`, `regions8.mjs` oturum scratchpad'inde.
+- [2026-11-13] **OpenAlex anonim bütçesi yine ~100 sorguda bitti** (run 8: 99/200 başlıklı çalışma; run 5: 100). Kalanı ertesi
+  güne bırakmak yerine aynı run'da Crossref bibliyografik aramayla tara (`crb8.py`, eşzamanlılık 1, 1,2 sn) — 101 çalışma ~4 dk.
+- [2026-11-13] **NeurIPS 2026 JSON dökümünün içeriği zamanla değişiyor:** run 3'te Persona Vectors yoktu, 2026-11-13'te var
+  (9.276 kayıt). Kabul kanıtı `decision` ("Accept (poster)") + `sourceurl` (NeurIPS.cc/2026/Conference); Min-p eleştirisi gibi
+  bu alanları boş poster kayıtları konferans bildirisi değildir. neurips.cc 2026-11-13'te site çapında 500 verdi; statik
+  döküm (`/static/virtual/data/neurips-2026-orals-posters.json`) çalıştı.
+- [2026-11-13] **Bot duvarlı bağlantının canlılığı Wayback CDX ile:** `web.archive.org/cdx/search/cdx?url=<u>&output=json&fl=timestamp,statuscode&limit=-4`
+  — openai.com'un 200/403 karışık son kopyaları sayfanın var, 403'ün koruma olduğunu gösterir. Otomatik JS denetimi (American
+  Scientist 503) tarayıcıda birkaç saniyede kendiliğinden geçiyor; Cloudflare "insan mısın" kutusu (Gallica) doldurulmaz.
+- [2026-11-13] **Gizli tarayıcı panosunda `requestAnimationFrame` duruyor:** `ScrollRegions` gibi rAF'la güncellenen öznitelikler
+  pano gizliyken hiç yazılmaz ve kusur gibi görünür; bu öznitelikler başsız Playwright'ta ölçülür (`regions8.mjs`). Pano
+  durumu `tabs_context`'in son satırında yazıyor.
 - [2026-11-13] Taşan kod bloğu/tablo erişilebilirliği: `components/reader/scroll-regions.tsx` yalnız gerçekten taşan `pre`/`.table-scroll`'a `data-scroll-region` + `tabindex=0` + `role=region` + `aria-label` verir, sığınca kaldırır (ResizeObserver + resize + fonts.ready + layoutVersion). `reader-pager` `[data-scroll-region]` içindeki tuşlara sayfa çevirmez. Yalnız öznitelik; textContent ofsetleri (okuma çıpası, işaretler) değişmez.
 - [2026-11-13] Doğrulama araçları önceki oturum scratchpad'inde duruyor (`C:/Users/ANIL~1.AKM/AppData/Local/Temp/claude/C--dev-anil-lib/74841fa6-c5b9-410c-a1f8-f91c39b111e2/scratchpad/lans/`): `tools/neon-shim.mjs` + `tools/neon-fetch-redirect.cjs` + `pgl/` (PGlite 0.3.14) ile veritabanlı e2e, `axe/node_modules/axe-core` 4.10.2 ile WCAG denetimi, `e2e-db/access-matrix.db.spec.ts` (9 test, rol/kayıt/kurtarma/silme). 3200 portu artık başka projenin Vite'ında; kopya config 3210 kullanır.
 
@@ -710,6 +728,15 @@ ode_modules`, sonra kopyayi sil.
 
 ## Do-Not-Repeat
 
+- [2026-11-13, AI bakım run 8] Arka plan işinin süresini oturumun akışından tahmin etme: Crossref taramasını "çok yavaş (DOI
+  başına ~15 sn)" diye kontrol dosyasına yazdım; tarama 14:06'da başlamıştı ve normal hızdaydı (~4 sn). Başlangıcı süreç
+  `CreationDate`'inden (Win32_Process) ya da görev çıktısı dosyasının zamanından oku.
+- [2026-11-13, AI bakım run 8] Bağlantı taramasında "yumuşak 404" düzenli ifadesine `error` koyma: başlığında "Error(s)" geçen
+  gerçek sayfaları (ACL "Trial and Error", "ProcessBench … Process Errors", NeurIPS D&B "Pervasive Label Errors") ölü saydı.
+  Yalnız `404|not found|page not found|does not exist` ve derin yoldan köke yönlendirme.
+- [2026-11-13, AI bakım run 8] Python'un `CERTIFICATE_VERIFY_FAILED` hatasını ölü bağlantı sayma: UMBC'deki Turing PDF'i ara
+  sertifikayı göndermiyor, curl ve tarayıcı tamamlıyor (200). Python'da toplamaya giren `lambda r: r["code"] and …` `None`
+  döndürebilir; `bool(...)` ile sar.
 - [2026-11-13] Oturum özetini `.wolf/memory.md`'ye son push'tan SONRA yazıp raporda "yalnız otomatik satır commit'siz kaldı" deme. Sıra: kayıtlar → commit → push → `git status` temiz doğrulaması → rapor.
 
 - [2026-11-13] `scrollable-region-focusable` için her `pre`/tabloya körlemesine `tabindex=0` verme: sığan bloklar da Tab durağı olur (kodlu bir makalede 46 fazladan durak). Yalnız taşanı işaretle, sığınca geri al; sayfalı düzende o bölgenin ok tuşlarını sayfalayıcıdan koru.
@@ -1132,6 +1159,16 @@ ode_modules`, sonra kopyayi sil.
 - [2026-11-03] Uzun e2e koşusunda "Test timeout of 30000ms exceeded" görünce kodu suçlamadan önce Windows güç olaylarına bak (`Get-WinEvent` System, Kernel-Power 506/507 = Modern Standby giriş/çıkış) ve izdeki eylem saatlerini uyku aralığıyla karşılaştır: 17:00–18:20 uykusu bir mobil sayfalama testini düşürdü. Uzun koşudan önce `request_keep_awake` iste; kapak kapanırsa makine yine uyur.
 
 ## Decision Log
+
+### AI bakım run'ı 8 (2026-11-13)
+- **Karar — olgu denetimi açılmadı.** Kullanıcı yalnız TRIGGER'ı çalıştırdı; HANDOFF ikinci turun 1–40 ve 81–118'e açılmasını
+  kullanıcı kararı sayıyor. Run §4'ün üç katmanlı taramasıyla, borçlarla ve kapılarla sınırlı kaldı (YOL-HARITASI #308–#313).
+- **Karar — render yalnız duman testi.** Run içerik değiştirmedi, ama UX turu aynı gün okuyucuyu değiştirmişti; serinin kendi
+  öğeleri (revizyon satırı, şekil kabı, `table-scroll`, son makalenin kapanış cümlesi) 6 sayfa × 3 genişlik × 3 temada yeniden
+  ölçüldü. Kapılar ana ağaçta koştu: bu projenin çalışan geliştirme sunucusu ya da paralel oturumu yoktu.
+- **Karar — bot duvarı aşılmadı, canlılık başka kanaldan.** Bağlantıların 403/503'ü Wayback CDX ve yerleşik tarayıcıda otomatik
+  denetimin bitmesiyle ayrıldı; Gallica'nın "insan mısın" kutusu doldurulmadı. Ölü bağlantı çıkmadığı için bağlantı değişmedi
+  (`docs.anthropic.com` → `platform.claude.com` yönlendirmesi çalıştığı için o da).
 
 ### UX premium turu (2026-11-13)
 - **Karar — tek site kabuğu.** Beş ayrı üst başlık (ana sayfa, seri sayfası, panel, arşiv, yönetim) ve ayrı tasarımlı giriş sayfası tek `SiteHeader`/`SiteFooter`'a indi; marka her yerde ana sayfaya gider, giriş/hesap aç bağlantıları geldiği sayfaya `?next=` ile döner. Ön lansmanda giriş sayfası `minimal` (yalnız ad, footer yok).

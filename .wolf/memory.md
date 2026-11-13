@@ -8253,3 +8253,57 @@ metin–metin ve metin–kutu çakışmalarını tarar.
 | 12:35 | Created artifacts/ux-premium-2026-11-13/OKU-BENI.md | — | ~293 |
 | 12:37 | Oturum özeti: UX premium turu main'e ileri sarma ile push edildi (bd67227..95716df, 7 commit); Vercel dağıtımı success, canlıda /seri başlığı, 404, giriş 'Parola' ve makale sonu bloğu doğrulandı; geçici dal ve worktree silindi; kanıt artifacts/ux-premium-2026-11-13 | main | tamam | ~150k |
 | 12:38 | Kullanıcı düzeltmesi: görev bitince main'e push = .wolf kayıtları dahil hiçbir satır commit'siz kalmaz; cerebrum'a tercih + Do-Not-Repeat yazıldı, kalan kayıtlar commit'lenip main'e push ediliyor | .wolf/cerebrum.md, .wolf/memory.md | tamam | ~3k |
+
+## Session: 2026-11-13 12:41
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 12:45 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/debts8.py | — | ~812 |
+| 14:05 | Created docs/seri/BAKIM-RUN8.md | — | ~1122 |
+| 14:08 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/lc8.py | — | ~1913 |
+| 14:09 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/s2_8.py | — | ~778 |
+| 14:11 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/oa8.py | — | ~723 |
+| 14:12 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/lc8report.py | — | ~866 |
+| 14:12 | Edited docs/seri/BAKIM-RUN8.md | inline fix | ~244 |
+| 14:16 | Edited docs/seri/BAKIM-RUN8.md | "updated-by" → "lc8.py" | ~396 |
+| 14:17 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/spec8.json | — | ~185 |
+| 14:20 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/regions8.mjs | — | ~416 |
+| 14:21 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/crb8.py | — | ~664 |
+| 14:23 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/yh8_draft.md | — | ~1707 |
+| 14:24 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/buglog8.py | — | ~1056 |
+| 14:24 | Edited docs/seri/BAKIM-RUN8.md | inline fix | ~47 |
+| 14:28 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/handoff8_section.md | — | ~600 |
+| 14:33 | Edited content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md | inline fix | ~32 |
+| 14:35 | Edited docs/seri/YOL-HARITASI.md | modified 8() | ~2450 |
+| 14:35 | Edited docs/seri/YOL-HARITASI.md | inline fix | ~30 |
+| 14:35 | Edited docs/seri/HANDOFF.md | inline fix | ~103 |
+| 14:35 | Edited docs/seri/HANDOFF.md | 2→3 lines | ~75 |
+| 14:35 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~40 |
+| 14:35 | Edited docs/seri/HANDOFF.md | modified notu() | ~738 |
+| 14:36 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~53 |
+| 14:36 | Edited docs/seri/HANDOFF.md | eksik() → Accept() | ~219 |
+| 14:36 | Edited docs/seri/HANDOFF.md | 7→8 lines | ~239 |
+| 14:36 | Edited docs/seri/HANDOFF.md | ntemle() → bitti() | ~110 |
+| 14:36 | Edited docs/seri/HANDOFF.md | 1→2 lines | ~39 |
+| 14:36 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~52 |
+| 14:36 | Edited docs/seri/HANDOFF.md | expanded (+13 lines) | ~476 |
+| 14:37 | Edited docs/seri/HANDOFF.md | modified eklenenler() | ~383 |
+| 14:37 | Edited docs/seri/HANDOFF.md | modified 963() | ~391 |
+| 14:37 | Edited docs/seri/BAKIM-RUN8.md | inline fix | ~34 |
+| 14:37 | Edited docs/seri/BAKIM-RUN8.md | inline fix | ~292 |
+| 14:38 | Edited docs/seri/BAKIM-RUN8.md | modified 49() | ~1099 |
+| 14:38 | Edited docs/seri/BAKIM-RUN8.md | inline fix | ~23 |
+| 14:38 | Created ../../Users/ANIL~1.AKM/AppData/Local/Temp/claude/f5662fe50e5ac8e1/d48c0b82-efe2-4d08-8e8e-a7bedea0eff5/scratchpad/memrow8.txt | — | ~370 |
+| 12:45 | AI bakım run 8 başladı (TRIGGER bakım kipi, ek talimat yok): borçlar (f)(i)(j) yeniden denendi, değişmedi; kontrol dosyası açıldı | docs/seri/BAKIM-RUN8.md | tamam | ~40k |
+| 14:31 | §4 üç katman: 205 hakemsiz çalışma (TMLR, ACL, PMLR, NeurIPS dökümü, S2, arXiv, OpenAlex 99 + Crossref bibliyografik 101) → yeni hakemli kalem yok; Crossref updated-by 336 DOI → yeni ilişki yok; 1.307 bağlantı → ölü bağlantı yok | scratchpad (lc8, oa8, crb8, s2_8, crossref_rel) | tamam | ~60k |
+| 14:33 | Crossref cilt/sayı ↔ künye karşılaştırması: 49'da Hou ve ark. "makale 3796519" (DOI soneki) → 35(10), s. 1–37; hash senkronu, revizyon işareti yok | content/series/articles/agents-and-retrieval/mcp-ve-arac-ekosistemleri.md, content/series/catalog.json | tamam | ~5k |
+| 14:34 | Kapılar: hash/içerik/SVG/özet temiz; typecheck 0; 963/963 test; build 0 (197 sayfa) — düzeltmeden önce ve sonra; duman testi 54 + 9 satır temiz; 62 tablo bölge işareti başsız Playwright'ta doğru | — | tamam | ~15k |
+| 14:40 | Kayıtlar: YOL-HARITASI #308–#314 (sonraki #315), HANDOFF (run 8 bölümü, borçlar, dersler, betikler, eski #295 satırları), BAKIM-RUN8, cerebrum, buglog bug-1040–1044 | docs/seri, .wolf | tamam | ~25k |
+| 14:41 | Oturum özeti: AI bakım run 8 tamamlandı — §4 taraması temiz, tek düzeltme 49'un künyesi; commit/push yapılmadı (kullanıcı kararı, run sonunda soruldu) | — | tamam | ~150k |
+| 14:40 | Edited docs/seri/YOL-HARITASI.md | 1→2 lines | ~55 |
+| 14:40 | Edited docs/seri/HANDOFF.md | 2→2 lines | ~64 |
+| 14:41 | Edited docs/seri/HANDOFF.md | 2→4 lines | ~120 |
+| 14:41 | Edited docs/seri/HANDOFF.md | 1→2 lines | ~40 |
+| 14:41 | Edited docs/seri/BAKIM-RUN8.md | "in değişikliklerini (49" → "seri/bakim-run-8" | ~66 |
+| 14:41 | Edited docs/seri/BAKIM-RUN8.md | 1→2 lines | ~92 |
+| 14:41 | Kullanıcı commit istedi: main yerine seri/bakim-run-8 dalı açıldı; iki commit (seri bakım run'ı 8: içerik + belgeler; OpenWolf kayıtları); push yok (üretim dağıtımını tetikler, kullanıcı kararı) | git | tamam | ~3k |
