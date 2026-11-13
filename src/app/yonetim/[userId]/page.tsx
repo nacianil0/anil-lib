@@ -6,6 +6,7 @@ import { requireOwnerUser } from "@/lib/auth/session-user";
 import { getUserStatsDetail } from "@/lib/stats/server/user-stats";
 import { formatDate, formatDateTime } from "@/lib/stats/format";
 import { pad } from "@/lib/content/labels";
+import { SiteHeader } from "@/components/site/site-header";
 import { ResetReadingForm } from "../reset-reading-form";
 
 export const dynamic = "force-dynamic";
@@ -15,11 +16,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function UserDetailPage({
-  params,
-}: {
-  params: Promise<{ userId: string }>;
-}) {
+export default async function UserDetailPage({ params }: { params: Promise<{ userId: string }> }) {
   const owner = await requireOwnerUser();
   const { userId } = await params;
   const result = await getUserStatsDetail(owner, userId);
@@ -38,20 +35,21 @@ export default async function UserDetailPage({
   const { stats, articles } = result.detail;
 
   return (
-    <div className="min-h-screen bg-bg text-text">
-      <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link
-            href="/yonetim"
-            className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
-            Kullanıcılar
-          </Link>
-        </div>
-      </header>
+    <div className="flex min-h-screen flex-col bg-bg text-text">
+      <SiteHeader signedIn width="narrow" />
 
-      <main className="mx-auto max-w-4xl px-5 py-8 sm:px-8 sm:py-12">
+      <main
+        id="main"
+        tabIndex={-1}
+        className="mx-auto w-full max-w-4xl flex-1 px-5 py-8 focus:outline-none sm:px-8 sm:py-12"
+      >
+        <Link
+          href="/yonetim"
+          className="-ml-2 mb-6 inline-flex min-h-9 items-center gap-1.5 rounded-md px-2 font-sans text-sm text-text-muted transition-colors hover:bg-surface-muted hover:text-text"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          Kullanıcılar
+        </Link>
         <p className="mb-2 font-mono text-2xs uppercase tracking-[0.22em] text-accent">
           {stats.user.role === "owner" ? "owner" : "kullanıcı"}
         </p>
@@ -84,9 +82,7 @@ export default async function UserDetailPage({
           </div>
           <div>
             <dt className="text-2xs text-text-faint">Son giriş</dt>
-            <dd className="mt-1 text-sm font-medium">
-              {formatDateTime(stats.user.lastLoginAt)}
-            </dd>
+            <dd className="mt-1 text-sm font-medium">{formatDateTime(stats.user.lastLoginAt)}</dd>
           </div>
           <div className="col-span-2">
             <dt className="text-2xs text-text-faint">Kaldığı yer</dt>

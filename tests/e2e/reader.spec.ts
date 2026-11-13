@@ -686,7 +686,15 @@ test.describe("desktop reader", () => {
   test("returns a real 404 for an unknown slug", async ({ page }) => {
     const response = await page.goto("/read/bilinmeyen-bir-slug");
     expect(response?.status()).toBe(404);
-    await expect(page.getByText("Bölüm bulunamadı")).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Sayfa bulunamadı");
+    // The way out leads only to pages anyone may open, never to one behind an account.
+    const main = page.locator("main");
+    await expect(main.getByRole("link", { name: "Ana sayfaya dön" })).toHaveAttribute("href", "/");
+    await expect(main.getByRole("link", { name: "Yapay Zekâ Serisi" })).toHaveAttribute(
+      "href",
+      "/seri",
+    );
+    await expect(main.locator('a[href^="/read"]')).toHaveCount(0);
   });
 });
 

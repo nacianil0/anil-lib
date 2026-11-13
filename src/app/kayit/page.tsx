@@ -34,6 +34,8 @@ export default async function RegisterPage({ searchParams }: { searchParams: Sea
   return (
     <AccountShell
       signedIn={signedIn}
+      current="kayit"
+      returnTo={next}
       eyebrow="Ücretsiz okuyucu hesabı"
       title="Hesap aç"
       intro={

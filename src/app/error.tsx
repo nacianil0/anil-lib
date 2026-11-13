@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { UI } from "@/lib/content/labels";
+import { SiteHeader } from "@/components/site/site-header";
+import { buttonPrimary, buttonSecondary } from "@/components/ui/classes";
 
 export default function Error({
   error,
@@ -15,16 +18,26 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-bg px-6 text-center">
-      <h1 className="font-serif text-2xl font-semibold text-text">{UI.errorTitle}</h1>
-      <p className="max-w-sm font-sans text-sm text-text-muted">{UI.errorBody}</p>
-      <button
-        type="button"
-        onClick={reset}
-        className="mt-2 rounded-md border border-border px-4 py-2 font-sans text-sm text-text transition-colors hover:border-border-strong hover:bg-surface-muted"
-      >
-        {UI.retry}
-      </button>
-    </main>
+    <div className="flex min-h-screen flex-col bg-bg text-text">
+      <SiteHeader minimal />
+      <main id="main" tabIndex={-1} className="flex flex-1 items-center focus:outline-none">
+        <div className="mx-auto w-full max-w-5xl px-5 py-16 sm:px-8">
+          <h1 className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">
+            {UI.errorTitle}
+          </h1>
+          <p className="mt-3 max-w-md font-sans text-sm leading-relaxed text-text-muted">
+            {UI.errorBody}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <button type="button" onClick={reset} className={buttonPrimary}>
+              {UI.retry}
+            </button>
+            <Link href="/" className={buttonSecondary}>
+              {UI.goHome}
+            </Link>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }

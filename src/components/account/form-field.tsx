@@ -1,13 +1,13 @@
 import type { InputHTMLAttributes } from "react";
+import { buttonPrimary, buttonSecondary } from "@/components/ui/classes";
 
 export const inputClass =
   "h-11 w-full rounded border border-border bg-surface px-3 font-sans text-sm text-text outline-none transition-colors placeholder:text-text-faint focus:border-accent focus:ring-1 focus:ring-accent aria-[invalid=true]:border-accent disabled:cursor-not-allowed disabled:opacity-50";
 
-export const primaryButtonClass =
-  "inline-flex min-h-11 items-center justify-center rounded-md bg-accent-fill px-5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-wait disabled:opacity-60";
+/** The site-wide button styles, under the names the account forms already use. */
+export const primaryButtonClass = buttonPrimary;
 
-export const secondaryButtonClass =
-  "inline-flex min-h-11 items-center justify-center rounded-md border border-border-strong px-5 font-sans text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent disabled:cursor-wait disabled:opacity-60";
+export const secondaryButtonClass = buttonSecondary;
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string;

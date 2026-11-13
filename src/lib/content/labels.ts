@@ -68,13 +68,15 @@ export const UI = {
   themeDark: "Koyu tema",
   themeSystem: "Sistem teması",
   theme: "Tema",
-  lockClose: "Kilidi kapat",
+  signIn: "Giriş yap",
+  signOut: "Çıkış yap",
   loading: "Okuma listen hazırlanıyor…",
-  notFoundTitle: "Bölüm bulunamadı",
-  notFoundBody: "Aradığın okuma listede yok ya da taşınmış olabilir.",
-  backToReading: "Okumaya baştan başla",
+  notFoundTitle: "Sayfa bulunamadı",
+  notFoundBody: "Aradığın bölüm ya da sayfa taşınmış veya hiç yayımlanmamış olabilir.",
+  goHome: "Ana sayfaya dön",
+  aiSeries: "Yapay Zekâ Serisi",
   errorTitle: "Bir şeyler ters gitti",
-  errorBody: "Bu bölüm yüklenirken bir sorun oluştu.",
+  errorBody: "Sayfa yüklenirken bir sorun oluştu. Yeniden denemek çoğu zaman yeter.",
   retry: "Yeniden dene",
   
   // Reader preferences & controls
@@ -179,6 +181,14 @@ export const UI = {
   percentRead: (percent: number) => `%${percent} okundu`,
   upNext: "sıradaki",
   roadmap: "Yol haritası",
+  archive: "Arşiv",
+  // The end of a chapter: where the reader goes from here.
+  chapterEnd: "Bölümün sonu",
+  lastChapter: "Serinin yayımlanan son bölümündesin.",
+  backToRoadmap: "Yol haritasına dön",
+  backToArchive: "Arşive dön",
+  localReadingNote: "Hesapsız okuyorsun; ilerlemen yalnızca bu tarayıcıda saklanır.",
+  localReadingMore: "Nasıl çalışır?",
 
   // Diagrams
   enlargeFigure: "Şekli büyüt",

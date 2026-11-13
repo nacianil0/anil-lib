@@ -57,7 +57,7 @@ test.describe("password gate", () => {
     await page.goto("/login?next=/");
     await loginWith(page, TEST_USERNAME, WRONG_PASSWORD);
     await page.waitForURL(/error=invalid/);
-    await expect(page.getByText("Kullanıcı adı veya şifre hatalı.")).toBeVisible();
+    await expect(page.getByText("Kullanıcı adı veya parola hatalı.")).toBeVisible();
 
     const cookies = await page.context().cookies();
     expect(cookies.find((c) => c.name === "anil_lib_auth")).toBeUndefined();
@@ -68,7 +68,7 @@ test.describe("password gate", () => {
     await page.goto("/login?next=/");
     await loginWith(page, "nobody-here", TEST_PASSWORD);
     await page.waitForURL(/error=invalid/);
-    await expect(page.getByText("Kullanıcı adı veya şifre hatalı.")).toBeVisible();
+    await expect(page.getByText("Kullanıcı adı veya parola hatalı.")).toBeVisible();
 
     const cookies = await page.context().cookies();
     expect(cookies.find((c) => c.name === "anil_lib_auth")).toBeUndefined();
@@ -124,7 +124,7 @@ test.describe("password gate", () => {
   test("lock button clears session and returns to login", async ({ page }) => {
     await authenticate(page);
 
-    await page.locator('aside button[aria-label="Kilidi kapat"]').click();
+    await page.locator("aside").getByRole("button", { name: "Çıkış yap" }).click();
     await page.waitForURL(/\/login/);
 
     const cookies = await page.context().cookies();
@@ -238,7 +238,7 @@ test.describe("password gate mobile", () => {
     await expect(dialog).toBeVisible();
 
     await dialog
-      .locator('button[aria-label="Kilidi kapat"]')
+      .getByRole("button", { name: "Çıkış yap" })
       .evaluate((b) => (b as HTMLButtonElement).closest("form")?.requestSubmit());
     await page.waitForURL(/\/login/);
   });

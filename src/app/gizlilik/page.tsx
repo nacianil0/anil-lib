@@ -272,7 +272,7 @@ export default async function PrivacyPage() {
           </p>
         </article>
       </main>
-      <SiteFooter />
+      <SiteFooter signedIn={signedIn} />
     </div>
   );
 }

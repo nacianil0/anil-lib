@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { LEVEL_LABELS, pad } from "@/lib/content/labels";
 import type { ArticleDescriptor } from "@/lib/content/types";
 import type { SeriesRoadmap } from "@/lib/content/series-roadmap";
 import type { SeriesStats } from "@/lib/content/series-stats";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { buttonPrimary, buttonSecondary } from "@/components/ui/classes";
 import { ContinueReading } from "./continue-reading";
 
 export type SampleReading = {
@@ -73,18 +74,12 @@ export function PublicHome({ ai, guvenlik }: Props) {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             {first && (
-              <Link
-                href={`${ai.basePath}/${first.slug}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-md bg-accent-fill px-5 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              >
+              <Link href={`${ai.basePath}/${first.slug}`} className={buttonPrimary}>
                 Seriye baştan başla
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             )}
-            <Link
-              href={ai.basePath}
-              className="inline-flex min-h-11 items-center rounded-md border border-border-strong px-5 py-2.5 font-sans text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
-            >
+            <Link href={ai.basePath} className={buttonSecondary}>
               Bütün yazılar
             </Link>
           </div>
@@ -136,6 +131,7 @@ export function PublicHome({ ai, guvenlik }: Props) {
                       {opening ? (
                         <Link
                           href={`${ai.basePath}/${opening.slug}`}
+                          prefetch={false}
                           className="font-serif text-lg font-semibold leading-snug hover:text-accent"
                         >
                           {phase.title}
@@ -190,9 +186,12 @@ export function PublicHome({ ai, guvenlik }: Props) {
                   <span className="mt-2 line-clamp-6 flex-1 font-sans text-sm leading-relaxed text-text-muted">
                     {article.summary}
                   </span>
-                  <span className="mt-4 inline-flex items-center gap-1 font-sans text-2xs text-text-muted">
+                  <span className="mt-4 flex items-center justify-between gap-2 font-sans text-xs text-text-muted">
                     {LEVEL_LABELS[article.level]}
-                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    <ArrowRight
+                      className="h-4 w-4 text-text-faint transition-colors group-hover:text-accent"
+                      aria-hidden="true"
+                    />
                   </span>
                 </Link>
               </li>
@@ -216,16 +215,10 @@ export function PublicHome({ ai, guvenlik }: Props) {
                 gruplar hâlinde sürüyor. Ücretsiz bir hesapla okunur.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/kayit?next=%2Fguvenlik"
-                  className="inline-flex min-h-11 items-center rounded-md bg-accent-fill px-5 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                >
+                <Link href="/kayit?next=%2Fguvenlik" className={buttonPrimary}>
                   Hesap aç
                 </Link>
-                <Link
-                  href="/login?next=%2Fguvenlik"
-                  className="inline-flex min-h-11 items-center rounded-md border border-border-strong px-5 py-2.5 font-sans text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
-                >
+                <Link href="/login?next=%2Fguvenlik" className={buttonSecondary}>
                   Giriş yap
                 </Link>
               </div>

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Home, Users } from "lucide-react";
+import { ChevronRight, Users } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getSessionUser } from "@/lib/auth/session-user";
 import { getUserStatsOverview, type OverviewResult } from "@/lib/stats/server/user-stats";
 import { formatDateTime } from "@/lib/stats/format";
+import { SiteHeader } from "@/components/site/site-header";
 import { CreateUserForm } from "./create-user-form";
 
 export const dynamic = "force-dynamic";
@@ -82,23 +83,23 @@ export default async function ManagementPage() {
   const scopeTitles = stats[0]?.series.map((entry) => entry.title) ?? [];
 
   return (
-    <div className="min-h-screen bg-bg text-text">
-      <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 font-sans text-2xs text-text-muted hover:text-text"
-          >
-            <Home className="h-3.5 w-3.5" aria-hidden="true" />
-            Ana sayfa
-          </Link>
-          <span className="font-mono text-2xs uppercase tracking-[0.2em] text-text-faint">
+    <div className="flex min-h-screen flex-col bg-bg text-text">
+      <SiteHeader
+        signedIn
+        width="wide"
+        actions={
+          <span className="hidden px-1 font-sans text-xs text-text-faint md:inline">
+            <span className="sr-only">Oturum: </span>
             {owner.username}
           </span>
-        </div>
-      </header>
+        }
+      />
 
-      <main className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
+      <main
+        id="main"
+        tabIndex={-1}
+        className="mx-auto w-full max-w-6xl flex-1 px-5 py-8 focus:outline-none sm:px-8 sm:py-12"
+      >
         <p className="mb-3 font-mono text-2xs uppercase tracking-[0.22em] text-accent">
           Yalnızca sana görünür
         </p>
@@ -107,8 +108,8 @@ export default async function ManagementPage() {
           Kullanıcılar
         </h1>
         <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-text-muted">
-          Sayılar yalnızca iki öğrenme serisinden gelir; arşiv yazıları bu tabloya
-          karışmaz. Ekran salt okunurdur.
+          Sayılar yalnızca iki öğrenme serisinden gelir; arşiv yazıları bu tabloya karışmaz. Ekran
+          salt okunurdur.
         </p>
 
         <div className="mt-8">
@@ -120,9 +121,9 @@ export default async function ManagementPage() {
             role="status"
             className="mt-8 rounded border border-cool-soft bg-cool-soft px-4 py-3 font-sans text-sm leading-relaxed text-cool"
           >
-            Kullanıcı listesi ve istatistikler şu anda okunamıyor. Ya{" "}
-            <code>DATABASE_URL</code> tanımlı değil, ya veritabanına ulaşılamıyor, ya da{" "}
-            <code>users</code> tablosunu oluşturan migration henüz uygulanmadı.
+            Kullanıcı listesi ve istatistikler şu anda okunamıyor. Ya <code>DATABASE_URL</code>{" "}
+            tanımlı değil, ya veritabanına ulaşılamıyor, ya da <code>users</code> tablosunu
+            oluşturan migration henüz uygulanmadı.
           </p>
         ) : (
           <section className="mt-10" aria-labelledby="kullanici-tablosu">
@@ -189,12 +190,8 @@ export default async function ManagementPage() {
                           )}
                         </td>
                       ))}
-                      <td className="px-4 py-3 text-right tabular-nums">
-                        {entry.savedPlaceCount}
-                      </td>
-                      <td className="px-4 py-3 text-right tabular-nums">
-                        {entry.highlightCount}
-                      </td>
+                      <td className="px-4 py-3 text-right tabular-nums">{entry.savedPlaceCount}</td>
+                      <td className="px-4 py-3 text-right tabular-nums">{entry.highlightCount}</td>
                       <td className="px-4 py-3 text-2xs text-text-muted">
                         {formatDateTime(entry.lastActivityAt)}
                       </td>
@@ -207,7 +204,7 @@ export default async function ManagementPage() {
                           className="inline-flex items-center gap-1 font-sans text-2xs text-accent hover:underline"
                         >
                           Detay
-                          <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
                         </Link>
                       </td>
                     </tr>
@@ -218,17 +215,14 @@ export default async function ManagementPage() {
 
             <ul className="mt-4 flex flex-col gap-1 font-sans text-2xs leading-relaxed text-text-faint">
               <li>
-                Tamamlanan sayıları okuyucunun kendi kayıtlarından gelir; yüzde,
-                serinin yayımlanmış makale sayısına oranıdır.
+                Tamamlanan sayıları okuyucunun kendi kayıtlarından gelir; yüzde, serinin yayımlanmış
+                makale sayısına oranıdır.
               </li>
               <li>
-                “Son etkinlik” sunucunun kaydı kabul ettiği andır, tarayıcı saatinden
-                bağımsızdır. “Son giriş” hiç giriş yapılmadıysa boştur.
+                “Son etkinlik” sunucunun kaydı kabul ettiği andır, tarayıcı saatinden bağımsızdır.
+                “Son giriş” hiç giriş yapılmadıysa boştur.
               </li>
-              <li>
-                Okuma süresi, oturum sayısı gibi ölçümler tutulmadığı için
-                gösterilmiyor.
-              </li>
+              <li>Okuma süresi, oturum sayısı gibi ölçümler tutulmadığı için gösterilmiyor.</li>
             </ul>
           </section>
         )}
